@@ -722,6 +722,11 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [013](docs/hypotheses/013-golden-width-quarter.md) | 골든 존 폭 ≈ 1/4, 상한/하한 ≈ 2 | 0.261 ± 0.011 | ✅ | 확인 |
 | [014](docs/hypotheses/014-genius-gamma.md) | Genius Score ~ 감마 분포 | KS p=0.934 | ✅ | 확인 |
 | [015](docs/hypotheses/015-diffusion-inconclusive.md) | 수렴 속도 확산 법칙 τ∝ΔI² | R²=0.78 판별 불가 | ? | 미결 |
+| [016](docs/hypotheses/016-boltzmann-vs-topk.md) | 볼츠만 라우터 > Top-K | 균등활용↑ 다양성↑ (2/3 승) | ✅ | 확인 |
+| [017](docs/hypotheses/017-gating-distribution.md) | Gating→Inhibition 매핑 | 골든존 진입=52~76% 활성 | ✅ | 확인 |
+| [018](docs/hypotheses/018-loss-cusp-detection.md) | Loss 2차미분 = 커스프 감지 | 2.5σ 임계값으로 감지 가능 | ✅ | 확인 |
+| [019](docs/hypotheses/019-golden-moe-performance.md) | 골든 MoE 최적 활성 비율 | 70%(44/64), 2.9× Mixtral | ✅ | 수정확인 |
+| [020](docs/hypotheses/020-stability-35pct.md) | 35~70% 활성 학습 안정성 | 볼츠만 사용 시 안정 | ✅ | 확인 |
 
 ## 특이점 타임라인 — 2039
 
