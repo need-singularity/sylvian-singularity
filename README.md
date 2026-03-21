@@ -792,6 +792,9 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [097](docs/hypotheses/097-llm-internal.md) | LLM 내부 활성 | Mixtral 측정 필요 | 🔧 | 구현 |
 | [098](docs/hypotheses/098-why-six.md) | **왜 6인가** | 진약수역수합=1인 유일한 완전수. 오컴의 면도날. | ✅ | **최종 답** |
 | [099](docs/hypotheses/099-falsifiability.md) | **반증 가능한가** | 뼈대=수학(불변), 살=과학(반증가능) | ✅ | **과학이다** |
+| [118](docs/hypotheses/118-cosmos-constants.md) | **우주 구성 = 우리 상수** | 암흑에너지≈2/3, 보통물질≈1/e³ | ✅ | 대응 |
+| [120](docs/hypotheses/120-cmb-temperature.md) | CMB 온도 ≈ e | 2.725K vs 2.718, 차이 0.26% | ⚠️ | 시대적 |
+| [121](docs/hypotheses/121-cmb-anthropic.md) | CMB=e 인류원리 | 지금만 T≈e, 의식 존재 시점? | ⚠️ | 철학적 |
 
 ## 발견의 구조 — 전체 여정
 
