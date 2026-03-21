@@ -273,12 +273,218 @@ def save_compass_log(d, p, i, score, z, cusp, boltz, compass):
         f.write(entry)
 
 
+def run_convergence_scan(grid_steps, n_samples):
+    """3개 모델 공통 특이점 영역 탐색"""
+    deficits = np.linspace(0.05, 0.95, grid_steps)
+    plasticities = np.linspace(0.1, 0.95, grid_steps)
+    inhibitions = np.linspace(0.05, 0.95, grid_steps)
+    total = grid_steps ** 3
+
+    print()
+    print("═" * 60)
+    print("   🧭 나침반 공통 특이점 영역 탐색")
+    print("═" * 60)
+    print(f"  격자: {grid_steps}³ = {total:,}개 조합")
+
+    # 모집단 사전 계산
+    rng = np.random.default_rng(42)
+    pop_d = rng.beta(2, 5, n_samples).clip(0.01, 0.99)
+    pop_p = rng.beta(5, 2, n_samples).clip(0.01, 0.99)
+    pop_i = rng.beta(5, 2, n_samples).clip(0.05, 0.99)
+    pop_scores = genius_score(pop_d, pop_p, pop_i)
+    pop_mean, pop_std = pop_scores.mean(), pop_scores.std()
+
+    # 결과 저장
+    results = []
+
+    for di in deficits:
+        for pi in plasticities:
+            for ii in inhibitions:
+                score = genius_score(di, pi, ii)
+                z = (score - pop_mean) / pop_std
+
+                cusp = cusp_analysis(di, ii)
+                boltz = boltzmann_analysis(di, pi, ii)
+
+                # 3개 모델 독립 판정
+                m1_singular = abs(z) > 2.0                        # 우리 모델: Z > 2σ
+                m2_critical = cusp['distance_to_critical'] < 0.2 and cusp['direction_sign'] > 0  # 커스프: 임계점 근접 + 상향
+                m3_genius = boltz['p_genius'] > boltz['p_normal'] and boltz['p_genius'] > boltz['p_decline']  # 볼츠만: 천재성 최우세
+
+                n_agree = sum([m1_singular, m2_critical, m3_genius])
+
+                results.append({
+                    'd': di, 'p': pi, 'i': ii,
+                    'score': score, 'z': z,
+                    'cusp_dist': cusp['distance_to_critical'],
+                    'cusp_dir': cusp['direction_sign'],
+                    'p_genius': boltz['p_genius'],
+                    'p_normal': boltz['p_normal'],
+                    'entropy': boltz['entropy'],
+                    'm1': m1_singular, 'm2': m2_critical, 'm3': m3_genius,
+                    'n_agree': n_agree,
+                })
+
+    # 분석
+    r = results
+    agree_0 = sum(1 for x in r if x['n_agree'] == 0)
+    agree_1 = sum(1 for x in r if x['n_agree'] == 1)
+    agree_2 = sum(1 for x in r if x['n_agree'] == 2)
+    agree_3 = sum(1 for x in r if x['n_agree'] == 3)
+
+    m1_count = sum(1 for x in r if x['m1'])
+    m2_count = sum(1 for x in r if x['m2'])
+    m3_count = sum(1 for x in r if x['m3'])
+
+    print()
+    print("─" * 60)
+    print("  [ 개별 모델 특이점 판정 ]")
+    print("─" * 60)
+    print(f"    우리 모델 (Z>2σ)           : {m1_count:>6,}개 ({m1_count/total*100:5.1f}%)")
+    print(f"    커스프 (임계근접+상향)       : {m2_count:>6,}개 ({m2_count/total*100:5.1f}%)")
+    print(f"    볼츠만 (천재성 최우세)       : {m3_count:>6,}개 ({m3_count/total*100:5.1f}%)")
+
+    print()
+    print("─" * 60)
+    print("  [ 모델 합의도 ]")
+    print("─" * 60)
+    print(f"    0개 합의 (정상)     : {agree_0:>6,}개 ({agree_0/total*100:5.1f}%)")
+    print(f"    1개 합의 (약한 신호) : {agree_1:>6,}개 ({agree_1/total*100:5.1f}%)")
+    print(f"    2개 합의 (강한 신호) : {agree_2:>6,}개 ({agree_2/total*100:5.1f}%)")
+    print(f"    3개 합의 (공통 특이점): {agree_3:>6,}개 ({agree_3/total*100:5.1f}%) ★")
+
+    # 3개 합의 영역의 파라미터 분포 분석
+    triple = [x for x in r if x['n_agree'] == 3]
+
+    if triple:
+        t_d = [x['d'] for x in triple]
+        t_p = [x['p'] for x in triple]
+        t_i = [x['i'] for x in triple]
+
+        print()
+        print("─" * 60)
+        print("  [ ★ 3개 모델 공통 특이점 영역 ]")
+        print("─" * 60)
+        print(f"    Deficit     범위: {min(t_d):.2f} ~ {max(t_d):.2f}  (평균 {np.mean(t_d):.2f})")
+        print(f"    Plasticity  범위: {min(t_p):.2f} ~ {max(t_p):.2f}  (평균 {np.mean(t_p):.2f})")
+        print(f"    Inhibition  범위: {min(t_i):.2f} ~ {max(t_i):.2f}  (평균 {np.mean(t_i):.2f})")
+
+        # Deficit별 분포
+        print()
+        print("  Deficit별 3중 합의 비율:")
+        for dv in deficits:
+            cnt = sum(1 for x in triple if abs(x['d'] - dv) < 0.01)
+            max_cnt = grid_steps * grid_steps
+            ratio = cnt / max_cnt * 100
+            bar = "█" * int(ratio / 2) + "░" * (50 - int(ratio / 2))
+            print(f"    D={dv:.2f} │{bar}│ {ratio:5.1f}%")
+
+        # Inhibition별 분포
+        print()
+        print("  Inhibition별 3중 합의 비율:")
+        for iv in inhibitions:
+            cnt = sum(1 for x in triple if abs(x['i'] - iv) < 0.01)
+            max_cnt = grid_steps * grid_steps
+            ratio = cnt / max_cnt * 100
+            bar = "█" * int(ratio / 2) + "░" * (50 - int(ratio / 2))
+            print(f"    I={iv:.2f} │{bar}│ {ratio:5.1f}%")
+
+        # Top 10
+        triple_sorted = sorted(triple, key=lambda x: x['z'], reverse=True)[:10]
+        print()
+        print("  [ Top 10 공통 특이점 ]")
+        print(f"  {'Rank':>4} │ {'D':>5} │ {'P':>5} │ {'I':>5} │ {'Z-Score':>8} │ {'커스프거리':>8} │ {'천재성%':>6}")
+        print(f"  {'─'*4}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*8}─┼─{'─'*8}─┼─{'─'*6}")
+        for rank, x in enumerate(triple_sorted, 1):
+            print(f"  {rank:>4} │ {x['d']:>5.2f} │ {x['p']:>5.2f} │ {x['i']:>5.2f} │ {x['z']:>7.2f}σ │ {x['cusp_dist']:>8.4f} │ {x['p_genius']*100:>5.1f}%")
+
+        # 2개 합의 vs 3개 합의 벤 다이어그램
+        m1_m2 = sum(1 for x in r if x['m1'] and x['m2'] and not x['m3'])
+        m1_m3 = sum(1 for x in r if x['m1'] and x['m3'] and not x['m2'])
+        m2_m3 = sum(1 for x in r if x['m2'] and x['m3'] and not x['m1'])
+
+        print()
+        print("─" * 60)
+        print("  [ 모델 교차 분석 (벤 다이어그램) ]")
+        print("─" * 60)
+        print(f"    우리모델 ∩ 커스프   (볼츠만 제외): {m1_m2:>5,}개")
+        print(f"    우리모델 ∩ 볼츠만   (커스프 제외): {m1_m3:>5,}개")
+        print(f"    커스프   ∩ 볼츠만   (우리모델 제외): {m2_m3:>5,}개")
+        print(f"    ★ 3중 교집합                     : {agree_3:>5,}개")
+
+        # 핵심 결론: 공통 영역의 "골든 존" 정의
+        print()
+        print("─" * 60)
+        print("  [ 🎯 골든 존 (Golden Zone) ]")
+        print("─" * 60)
+        print(f"    Deficit     : {min(t_d):.2f} ~ {max(t_d):.2f}")
+        print(f"    Plasticity  : {min(t_p):.2f} ~ {max(t_p):.2f}")
+        print(f"    Inhibition  : {min(t_i):.2f} ~ {max(t_i):.2f}")
+        print()
+        print(f"    AI 아키텍처 번역:")
+        print(f"    Dropout Rate     : {min(t_d):.0%} ~ {max(t_d):.0%}")
+        print(f"    LR Multiplier    : ×{1/max(max(t_i),0.01):.1f} ~ ×{1/max(min(t_i),0.01):.1f}")
+        print(f"    MoE Active Ratio : {min(x['p_genius'] for x in triple):.0%} ~ {max(x['p_genius'] for x in triple):.0%}")
+        print(f"    Active Experts   : {int(64*min(x['p_genius'] for x in triple))} ~ {int(64*max(x['p_genius'] for x in triple))} / 64")
+
+    else:
+        print()
+        print("  ⚠️ 3개 모델 공통 특이점 영역 없음")
+
+    print()
+    print("═" * 60)
+
+    # 보고서 저장
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    conv_file = os.path.join(RESULTS_DIR, "convergence_report.md")
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    with open(conv_file, 'a', encoding='utf-8') as f:
+        f.write(f"# 나침반 공통 특이점 분석 [{now}]\n\n")
+        f.write(f"격자: {grid_steps}³ = {total:,}개 조합\n\n")
+        f.write(f"## 개별 모델 판정\n\n")
+        f.write(f"| 모델 | 특이점 수 | 비율 |\n|---|---|---|\n")
+        f.write(f"| 우리 모델 (Z>2σ) | {m1_count:,} | {m1_count/total*100:.1f}% |\n")
+        f.write(f"| 커스프 (임계근접+상향) | {m2_count:,} | {m2_count/total*100:.1f}% |\n")
+        f.write(f"| 볼츠만 (천재성 최우세) | {m3_count:,} | {m3_count/total*100:.1f}% |\n\n")
+        f.write(f"## 합의도\n\n")
+        f.write(f"| 합의 수 | 개수 | 비율 |\n|---|---|---|\n")
+        f.write(f"| 0 (정상) | {agree_0:,} | {agree_0/total*100:.1f}% |\n")
+        f.write(f"| 1 (약한 신호) | {agree_1:,} | {agree_1/total*100:.1f}% |\n")
+        f.write(f"| 2 (강한 신호) | {agree_2:,} | {agree_2/total*100:.1f}% |\n")
+        f.write(f"| **3 (공통 특이점)** | **{agree_3:,}** | **{agree_3/total*100:.1f}%** |\n\n")
+
+        if triple:
+            f.write(f"## 🎯 골든 존\n\n")
+            f.write(f"| 파라미터 | 범위 | AI 매핑 |\n|---|---|---|\n")
+            f.write(f"| Deficit | {min(t_d):.2f} ~ {max(t_d):.2f} | Dropout {min(t_d):.0%}~{max(t_d):.0%} |\n")
+            f.write(f"| Plasticity | {min(t_p):.2f} ~ {max(t_p):.2f} | LR 계수 |\n")
+            f.write(f"| Inhibition | {min(t_i):.2f} ~ {max(t_i):.2f} | Gating {min(t_i):.0%}~{max(t_i):.0%} |\n\n")
+
+            f.write(f"## Top 10 공통 특이점\n\n")
+            f.write(f"| Rank | D | P | I | Z-Score | 커스프거리 | 천재성% |\n|---|---|---|---|---|---|---|\n")
+            for rank, x in enumerate(triple_sorted, 1):
+                f.write(f"| {rank} | {x['d']:.2f} | {x['p']:.2f} | {x['i']:.2f} | {x['z']:.2f}σ | {x['cusp_dist']:.4f} | {x['p_genius']*100:.1f}% |\n")
+
+        f.write(f"\n---\n\n")
+
+    print(f"  📁 수렴 보고서 → results/convergence_report.md")
+    print()
+
+
 def main():
     parser = argparse.ArgumentParser(description="SingularityNet 아키텍처 나침반")
     parser.add_argument('--deficit', type=float, default=0.7, help="구조적 결손 (Dropout Rate)")
     parser.add_argument('--plasticity', type=float, default=0.8, help="신경가소성 (Learning Rate 계수)")
     parser.add_argument('--inhibition', type=float, default=0.15, help="억제 수준 (Gating 강도)")
+    parser.add_argument('--convergence', action='store_true', help="3모델 공통 특이점 영역 탐색")
+    parser.add_argument('--grid', type=int, default=20, help="격자 해상도")
+    parser.add_argument('--samples', type=int, default=50000, help="모집단 샘플 수")
     args = parser.parse_args()
+
+    if args.convergence:
+        run_convergence_scan(args.grid, args.samples)
+        return
 
     d = np.clip(args.deficit, 0.01, 0.99)
     p = np.clip(args.plasticity, 0.01, 0.99)
