@@ -705,18 +705,23 @@ python3 compass.py --convergence --grid 30 --samples 50000
 
 각 가설은 별도 문서로 관리. 경로: `docs/hypotheses/`
 
-| # | 가설 | 핵심 매칭 | 상태 |
-|---|---|---|---|
-| [001](docs/hypotheses/001-riemann-hypothesis.md) | 리만 가설과 골든 존의 구조적 동치 | 임계선 Re(s)=1/2 ↔ 골든존 상한 0.48 | 검토 중 |
-| [002](docs/hypotheses/002-golden-zone-universality.md) | 골든 존 보편성 — 1/e는 자연 상수인가 | 골든존 중심 0.36 ≈ 1/e(0.368) | 검토 중 |
-| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 3위상 전이 + 이력현상 | 검토 중 |
-| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | Inhibition = 역온도(1/kT) | 지수적 감소 + 자유에너지 일치 | 검토 중 |
-| [005](docs/hypotheses/005-one-third-law.md) | 1/3 법칙 — 구조적 상수 | 33.2% 수렴 ↔ Donoho-Tanner 전이 | 검토 중 |
-| [006](docs/hypotheses/006-riemann-falsification-failed.md) | 리만 가설 반증 시도 | 골든존 밖 안정 특이점 없음 → 반증 실패 | 완료 |
-| [007](docs/hypotheses/007-llm-singularity.md) | LLM에서 특이점 발생 | Expert 35% 활성(I≈1/e)에서 특이점 | 검토 중 |
-| [008](docs/hypotheses/008-golden-moe-design.md) | 골든 MoE 아키텍처 설계 | e 하나로 모든 파라미터 통일 | 설계 완료 |
-| [009](docs/hypotheses/009-singularity-2039.md) | 특이점 시점 = 2039년 | 모든 시나리오에서 I≈1/e 수렴 | 🎯 지지 |
-| [010](docs/hypotheses/010-math-verification.md) | 수학적 미검증 가설 일괄 | A:1/3❌ B:Z86σ C:ln3✅ E:1/4✅ G:감마✅ | 3✅ 2❌ 2? |
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [001](docs/hypotheses/001-riemann-hypothesis.md) | 리만 가설과 골든 존의 구조적 동치 | 임계선 Re(s)=1/2 ↔ 골든존 상한 0.48 | | 검토 중 |
+| [002](docs/hypotheses/002-golden-zone-universality.md) | 골든 존 보편성 — 1/e는 자연 상수인가 | 골든존 중심 0.36 ≈ 1/e(0.368) | | 검토 중 |
+| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 3위상 전이 + 이력현상 | | 검토 중 |
+| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | Inhibition = 역온도(1/kT) | 지수적 감소 + 자유에너지 일치 | | 검토 중 |
+| [005](docs/hypotheses/005-one-third-law.md) | 1/3 법칙 — 구조적 상수 | 33.2% 수렴 ↔ Donoho-Tanner 전이 | ❌ | 010에서 반증 |
+| [006](docs/hypotheses/006-riemann-falsification-failed.md) | 리만 가설 반증 시도 | 골든존 밖 안정 특이점 없음 | ❌ | 반증 실패 → 리만 지지 |
+| [007](docs/hypotheses/007-llm-singularity.md) | LLM에서 특이점 발생 | Expert 35% 활성(I≈1/e)에서 특이점 | | 검토 중 |
+| [008](docs/hypotheses/008-golden-moe-design.md) | 골든 MoE 아키텍처 설계 | e 하나로 모든 파라미터 통일 | | 설계 완료 |
+| [009](docs/hypotheses/009-singularity-2039.md) | 특이점 시점 = 2039년 | 모든 시나리오에서 I≈1/e 수렴 | ✅ | 🎯 지지 |
+| [010](docs/hypotheses/010-one-third-refuted.md) | 1/3 법칙은 정확히 1/3이 아니다 | 30.17% — 분포 의존적 | ✅ | 반증 확인 |
+| [011](docs/hypotheses/011-z-max-86.md) | Z_max 수렴값 = 86σ | G_max/σ = 19.60/0.224 | ✅ | 확인 |
+| [012](docs/hypotheses/012-entropy-ln3.md) | 엔트로피 = ln(3) 준불변량 | 10K 랜덤 파라미터에서 σ=0.014 | ✅ | 확인 |
+| [013](docs/hypotheses/013-golden-width-quarter.md) | 골든 존 폭 ≈ 1/4, 상한/하한 ≈ 2 | 0.261 ± 0.011 | ✅ | 확인 |
+| [014](docs/hypotheses/014-genius-gamma.md) | Genius Score ~ 감마 분포 | KS p=0.934 | ✅ | 확인 |
+| [015](docs/hypotheses/015-diffusion-inconclusive.md) | 수렴 속도 확산 법칙 τ∝ΔI² | R²=0.78 판별 불가 | ? | 미결 |
 
 ## 특이점 타임라인 — 2039
 
