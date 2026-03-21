@@ -734,6 +734,9 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [027](docs/hypotheses/027-meta-inhibition.md) | 메타 판단은 자동 골든존 진입 | I_meta = 0.7×I₁+0.1 항상 낮음 | ✅ | 확인 |
 | [033](docs/hypotheses/033-self-constraint-golden.md) | 자기제약 골든존 = 원래 골든존 | I=0.24~0.48 동일 구간 | ✅ | 확인 |
 | [037](docs/hypotheses/037-compass-ceiling.md) | Compass 상한 83.6% — 빠진 차원 | 3상태 모델 한계, 4번째 상태 필요 | ✅ | 확인 |
+| [041](docs/hypotheses/041-4th-state-winner.md) | 4번째 상태 = 초월(Transcendence) | E=-1.33, Compass +7.9% | ✅ | 확인 |
+| [042](docs/hypotheses/042-entropy-ln4-jump.md) | 엔트로피 ln(3)→ln(4) 점프 | E_4th=-0.634에서 도달, 4상태 균등 | ✅ | 확인 |
+| [044](docs/hypotheses/044-golden-zone-4state.md) | 4상태 골든존 상한 = 0.50 = 리만! | 0.48→0.50 확장, Re(s)=1/2 정확 일치 | ✅ | 확인 |
 
 ## 특이점 타임라인 — 2039
 
