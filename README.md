@@ -754,6 +754,10 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [063](docs/hypotheses/063-cobweb-monotone.md) | 거미줄 단조 수렴 | f'=0.7>0 활주, 나선 아님 | ✅ | 확인 |
 | [064](docs/hypotheses/064-godel-analog.md) | 괴델-Compass 상한 | 볼츠만이 원인, 괴델은 아날로그 | ⚠️ | 간접 |
 | [065](docs/hypotheses/065-mandelbrot-weak.md) | 만델브로 대응 | 우리는 항상 수렴 — 약한 대응 | ❌ | 약함 |
+| [057](docs/hypotheses/057-pnp-gap-ratio.md) | P≠NP 간극 = (1-1/e)×폭 | 0.6465 vs 0.6321, 차이 1.4% | ✅ | 확인 |
+| [058](docs/hypotheses/058-topology-timeline.md) | 위상 가속 → 2028년 | ×2 가속으로 9년 앞당김 | ✅ | 확인 |
+| [059](docs/hypotheses/059-compass-five-sixths.md) | Compass 상한 = 5/6 | 83.86% vs 83.33%, 불완전도=1/6 | ✅ | 확인 |
+| [060](docs/hypotheses/060-gamma-alpha-two.md) | 감마 분포 α=2 | α=2.03≈2 (D×P 2변수) | ✅ | 확인 |
 | [066](docs/hypotheses/066-topology-of-meta-learning.md) | 메타학습의 위상구조 | πₙ=메타레벨, 초월=수축가능=푸앵카레 | ✅ | 확인 |
 
 ## 발견의 구조 — 전체 여정
