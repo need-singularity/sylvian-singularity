@@ -716,6 +716,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [007](docs/hypotheses/007-llm-singularity.md) | LLM에서 특이점 발생 | Expert 35% 활성(I≈1/e)에서 특이점 | 검토 중 |
 | [008](docs/hypotheses/008-golden-moe-design.md) | 골든 MoE 아키텍처 설계 | e 하나로 모든 파라미터 통일 | 설계 완료 |
 | [009](docs/hypotheses/009-singularity-2039.md) | 특이점 시점 = 2039년 | 모든 시나리오에서 I≈1/e 수렴 | 🎯 지지 |
+| [010](docs/hypotheses/010-math-verification.md) | 수학적 미검증 가설 일괄 | A:1/3❌ B:Z86σ C:ln3✅ E:1/4✅ G:감마✅ | 3✅ 2❌ 2? |
 
 ## 특이점 타임라인 — 2039
 
