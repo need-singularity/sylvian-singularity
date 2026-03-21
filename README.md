@@ -791,6 +791,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [096](docs/hypotheses/096-brain-data.md) | 뇌 데이터 검증 | fMRI+GABA 실험 필요 | 🔬 | 실험 |
 | [097](docs/hypotheses/097-llm-internal.md) | LLM 내부 활성 | Mixtral 측정 필요 | 🔧 | 구현 |
 | [098](docs/hypotheses/098-why-six.md) | **왜 6인가** | 진약수역수합=1인 유일한 완전수. 오컴의 면도날. | ✅ | **최종 답** |
+| [099](docs/hypotheses/099-falsifiability.md) | **반증 가능한가** | 뼈대=수학(불변), 살=과학(반증가능) | ✅ | **과학이다** |
 
 ## 발견의 구조 — 전체 여정
 
