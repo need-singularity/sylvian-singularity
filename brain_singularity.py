@@ -173,36 +173,12 @@ def append_to_singularities(d, p, i, score, z, percentile, phase):
         f.write(entry)
 
 
-def main():
-    parser = argparse.ArgumentParser(description="뇌 비정형 구조 통계 시뮬레이터")
-    parser.add_argument('--deficit', type=float, default=0.7, help="구조적 결손 정도 (0.0~1.0)")
-    parser.add_argument('--plasticity', type=float, default=0.8, help="신경가소성 계수 (0.0~1.0)")
-    parser.add_argument('--inhibition', type=float, default=0.15, help="전두엽 억제 수준 (0.01~1.0)")
-    parser.add_argument('--samples', type=int, default=10000, help="시뮬레이션 샘플 수")
-    args = parser.parse_args()
-
-    d = np.clip(args.deficit, 0.0, 1.0)
-    p = np.clip(args.plasticity, 0.0, 1.0)
-    i = np.clip(args.inhibition, 0.01, 1.0)
-
-    # 1. 개인 점수 계산
+def run_single(d, p, i, pop_scores, curve_d, curve_s, critical_idx, crit_low, crit_high, verbose=True):
+    """단일 파라미터 분석 + 기록. 결과 dict 반환."""
     score = genius_score(d, p, i)
-
-    # 2. 모집단 시뮬레이션
-    pop_scores = simulate_population(args.samples)
     z = (score - pop_scores.mean()) / pop_scores.std()
     percentile = (1 - stats.norm.cdf(z)) * 100
 
-    # 3. 임계점 탐지
-    curve_d, curve_s, d2, critical_idx = find_critical_points()
-
-    if len(critical_idx) > 0:
-        crit_low = curve_d[critical_idx[0]]
-        crit_high = curve_d[critical_idx[-1]] if len(critical_idx) > 1 else crit_low + 0.15
-    else:
-        crit_low, crit_high = 0.5, 0.7
-
-    # 4. 위상 판정
     if d < crit_low:
         phase = "일반적 범위 (보상 동기 부족)"
         phase_icon = "○"
@@ -215,48 +191,234 @@ def main():
 
     is_singular = abs(z) > 2.0
 
-    # 5. 터미널 출력
-    chart_text = ascii_chart(curve_d, curve_s, d, score, critical_idx)
+    if verbose:
+        chart_text = ascii_chart(curve_d, curve_s, d, score, critical_idx)
+        print()
+        print("═" * 50)
+        print("   뇌 비정형 구조 특이점 분석")
+        print("═" * 50)
+        print()
+        print(f"  입력 파라미터:")
+        print(f"    Deficit(결손)     = {d:.2f}")
+        print(f"    Plasticity(가소성) = {p:.2f}")
+        print(f"    Inhibition(억제)  = {i:.2f}")
+        print()
+        print("─" * 50)
+        print(f"  Genius Score: {score:.2f}")
+        print(f"  Z-Score: {z:.2f}σ  {'⚡ 통계적 특이점!' if is_singular else '○ 정상 범위'}")
+        print(f"  백분위: 상위 {percentile:.2f}%")
+        print("─" * 50)
+        print(f"  임계점 구간: Deficit {crit_low:.2f} ~ {crit_high:.2f}")
+        print(f"  위상 판정: {phase_icon} {phase}")
+        print("─" * 50)
+        print()
+        print("  [ 능력 곡선 (Deficit vs Genius Score) ]")
+        print()
+        print(chart_text)
+        print()
+        print("─" * 50)
+        print(f"  모집단 통계 (n={len(pop_scores):,})")
+        print(f"    평균: {pop_scores.mean():.2f}")
+        print(f"    표준편차: {pop_scores.std():.2f}")
+        print(f"    최소/최대: {pop_scores.min():.2f} / {pop_scores.max():.2f}")
+        print("═" * 50)
+
+        append_to_log(d, p, i, score, z, percentile, phase, phase_icon,
+                      crit_low, crit_high, is_singular, chart_text,
+                      pop_scores.mean(), pop_scores.std(), len(pop_scores))
+
+    return {
+        'd': d, 'p': p, 'i': i,
+        'score': score, 'z': z, 'percentile': percentile,
+        'phase': phase, 'phase_icon': phase_icon,
+        'is_singular': is_singular,
+    }
+
+
+def run_grid_scan(d_steps, p_steps, i_steps, n_samples):
+    """3차원 파라미터 격자 스캔"""
+    deficits = np.linspace(0.05, 0.95, d_steps)
+    plasticities = np.linspace(0.1, 0.95, p_steps)
+    inhibitions = np.linspace(0.05, 0.95, i_steps)
+
+    total = d_steps * p_steps * i_steps
+    print()
+    print("═" * 60)
+    print("   대량 격자 스캔 (Grid Scan)")
+    print("═" * 60)
+    print(f"  D: {d_steps}단계 × P: {p_steps}단계 × I: {i_steps}단계 = {total:,}개 조합")
+    print(f"  모집단 샘플: {n_samples:,}")
+    print("─" * 60)
+
+    pop_scores = simulate_population(n_samples)
+    pop_mean = pop_scores.mean()
+    pop_std = pop_scores.std()
+
+    curve_d, curve_s, d2, critical_idx = find_critical_points()
+    if len(critical_idx) > 0:
+        crit_low = curve_d[critical_idx[0]]
+        crit_high = curve_d[critical_idx[-1]] if len(critical_idx) > 1 else crit_low + 0.15
+    else:
+        crit_low, crit_high = 0.5, 0.7
+
+    # 벡터화 연산으로 전체 격자 한번에 계산
+    D, P, I = np.meshgrid(deficits, plasticities, inhibitions, indexing='ij')
+    scores = genius_score(D, P, I)
+    z_scores = (scores - pop_mean) / pop_std
+
+    # 특이점 마스크
+    singular_mask = np.abs(z_scores) > 2.0
+    n_singular = singular_mask.sum()
+    n_strong = (np.abs(z_scores) > 3.0).sum()
+    n_extreme = (np.abs(z_scores) > 5.0).sum()
+
+    print(f"\n  스캔 완료!")
+    print(f"  ─────────────────────────────────")
+    print(f"  전체 조합:       {total:>8,}개")
+    print(f"  🟡 특이점 (>2σ): {n_singular:>8,}개 ({n_singular/total*100:.1f}%)")
+    print(f"  🟠 강한   (>3σ): {n_strong:>8,}개 ({n_strong/total*100:.1f}%)")
+    print(f"  🔴 극단적 (>5σ): {n_extreme:>8,}개 ({n_extreme/total*100:.1f}%)")
+    print(f"  ─────────────────────────────────")
+
+    # 특이점 경계면 분석: 각 축별 임계값
+    print(f"\n  [ 특이점 경계면 분석 ]")
+    print()
+
+    # Deficit 축: 특이점 비율 변화
+    print(f"  Deficit별 특이점 비율:")
+    for di, dv in enumerate(deficits):
+        slice_singular = singular_mask[di, :, :].sum()
+        slice_total = p_steps * i_steps
+        ratio = slice_singular / slice_total * 100
+        bar = "█" * int(ratio / 2) + "░" * (50 - int(ratio / 2))
+        print(f"    D={dv:.2f} │{bar}│ {ratio:5.1f}%")
+
+    # Inhibition 축: 특이점 비율 변화
+    print(f"\n  Inhibition별 특이점 비율:")
+    for ii, iv in enumerate(inhibitions):
+        slice_singular = singular_mask[:, :, ii].sum()
+        slice_total = d_steps * p_steps
+        ratio = slice_singular / slice_total * 100
+        bar = "█" * int(ratio / 2) + "░" * (50 - int(ratio / 2))
+        print(f"    I={iv:.2f} │{bar}│ {ratio:5.1f}%")
+
+    # Top 10 특이점
+    print(f"\n  [ Top 10 극단적 특이점 ]")
+    print(f"  {'Rank':>4} │ {'Deficit':>7} │ {'Plastic':>7} │ {'Inhibit':>7} │ {'Score':>8} │ {'Z-Score':>8} │ 등급")
+    print(f"  {'─'*4}─┼─{'─'*7}─┼─{'─'*7}─┼─{'─'*7}─┼─{'─'*8}─┼─{'─'*8}─┼─{'─'*10}")
+
+    flat_idx = np.argsort(z_scores.ravel())[::-1][:10]
+    for rank, fi in enumerate(flat_idx, 1):
+        di, pi, ii = np.unravel_index(fi, z_scores.shape)
+        dv, pv, iv = deficits[di], plasticities[pi], inhibitions[ii]
+        sv = scores[di, pi, ii]
+        zv = z_scores[di, pi, ii]
+        if abs(zv) > 5:
+            grade = "🔴 극단적"
+        elif abs(zv) > 3:
+            grade = "🟠 강한"
+        else:
+            grade = "🟡"
+        print(f"  {rank:>4} │ {dv:>7.2f} │ {pv:>7.2f} │ {iv:>7.2f} │ {sv:>8.2f} │ {zv:>7.2f}σ │ {grade}")
 
     print()
-    print("═" * 50)
-    print("   뇌 비정형 구조 특이점 분석")
-    print("═" * 50)
-    print()
-    print(f"  입력 파라미터:")
-    print(f"    Deficit(결손)     = {d:.2f}")
-    print(f"    Plasticity(가소성) = {p:.2f}")
-    print(f"    Inhibition(억제)  = {i:.2f}")
-    print()
-    print("─" * 50)
-    print(f"  Genius Score: {score:.2f}")
-    print(f"  Z-Score: {z:.2f}σ  {'⚡ 통계적 특이점!' if is_singular else '○ 정상 범위'}")
-    print(f"  백분위: 상위 {percentile:.2f}%")
-    print("─" * 50)
-    print(f"  임계점 구간: Deficit {crit_low:.2f} ~ {crit_high:.2f}")
-    print(f"  위상 판정: {phase_icon} {phase}")
-    print("─" * 50)
-    print()
-    print("  [ 능력 곡선 (Deficit vs Genius Score) ]")
-    print()
-    print(chart_text)
-    print()
+    print("═" * 60)
 
-    print("─" * 50)
-    print(f"  모집단 통계 (n={args.samples:,})")
-    print(f"    평균: {pop_scores.mean():.2f}")
-    print(f"    표준편차: {pop_scores.std():.2f}")
-    print(f"    최소/최대: {pop_scores.min():.2f} / {pop_scores.max():.2f}")
-    print("═" * 50)
-
-    # 6. 결과 기록
+    # 결과를 scan_report.md 로 저장
     ensure_results_dir()
-    append_to_log(d, p, i, score, z, percentile, phase, phase_icon,
-                  crit_low, crit_high, is_singular, chart_text,
-                  pop_scores.mean(), pop_scores.std(), args.samples)
+    scan_file = os.path.join(RESULTS_DIR, "scan_report.md")
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    if is_singular:
-        append_to_singularities(d, p, i, score, z, percentile, phase)
+    with open(scan_file, 'a', encoding='utf-8') as f:
+        f.write(f"# Grid Scan Report [{now}]\n\n")
+        f.write(f"- 격자: D={d_steps} × P={p_steps} × I={i_steps} = **{total:,}개** 조합\n")
+        f.write(f"- 모집단: n={n_samples:,} / 평균={pop_mean:.2f} / σ={pop_std:.2f}\n\n")
+        f.write(f"## 특이점 통계\n\n")
+        f.write(f"| 등급 | 기준 | 개수 | 비율 |\n")
+        f.write(f"|---|---|---|---|\n")
+        f.write(f"| 🟡 특이점 | >2σ | {n_singular:,} | {n_singular/total*100:.1f}% |\n")
+        f.write(f"| 🟠 강한 특이점 | >3σ | {n_strong:,} | {n_strong/total*100:.1f}% |\n")
+        f.write(f"| 🔴 극단적 특이점 | >5σ | {n_extreme:,} | {n_extreme/total*100:.1f}% |\n\n")
+
+        f.write(f"## Top 10 극단적 특이점\n\n")
+        f.write(f"| Rank | Deficit | Plasticity | Inhibition | Score | Z-Score | 등급 |\n")
+        f.write(f"|---|---|---|---|---|---|---|\n")
+        for rank, fi in enumerate(flat_idx, 1):
+            di, pi, ii = np.unravel_index(fi, z_scores.shape)
+            dv, pv, iv = deficits[di], plasticities[pi], inhibitions[ii]
+            sv = scores[di, pi, ii]
+            zv = z_scores[di, pi, ii]
+            grade = "🔴" if abs(zv) > 5 else ("🟠" if abs(zv) > 3 else "🟡")
+            f.write(f"| {rank} | {dv:.2f} | {pv:.2f} | {iv:.2f} | {sv:.2f} | {zv:.2f}σ | {grade} |\n")
+
+        f.write(f"\n## Deficit별 특이점 비율\n\n")
+        f.write(f"| Deficit | 특이점 수 | 비율 |\n")
+        f.write(f"|---|---|---|\n")
+        for di, dv in enumerate(deficits):
+            cnt = singular_mask[di, :, :].sum()
+            f.write(f"| {dv:.2f} | {cnt} | {cnt/(p_steps*i_steps)*100:.1f}% |\n")
+
+        f.write(f"\n## Inhibition별 특이점 비율\n\n")
+        f.write(f"| Inhibition | 특이점 수 | 비율 |\n")
+        f.write(f"|---|---|---|\n")
+        for ii, iv in enumerate(inhibitions):
+            cnt = singular_mask[:, :, ii].sum()
+            f.write(f"| {iv:.2f} | {cnt} | {cnt/(d_steps*p_steps)*100:.1f}% |\n")
+
+        f.write(f"\n---\n\n")
+
+    print(f"  📁 스캔 보고서 → results/scan_report.md")
+    print()
+
+    # 특이점들을 singularities.md에도 기록 (Top 10만)
+    for fi in flat_idx:
+        di, pi, ii = np.unravel_index(fi, z_scores.shape)
+        dv, pv, iv = deficits[di], plasticities[pi], inhibitions[ii]
+        sv = scores[di, pi, ii]
+        zv = z_scores[di, pi, ii]
+        pctile = (1 - stats.norm.cdf(zv)) * 100
+        if dv < crit_low:
+            phase = "일반적 범위"
+        elif dv > crit_high + 0.1:
+            phase = "과도한 결손"
+        else:
+            phase = "임계점 내"
+        append_to_singularities(dv, pv, iv, sv, zv, pctile, phase)
+
+
+def main():
+    parser = argparse.ArgumentParser(description="뇌 비정형 구조 통계 시뮬레이터")
+    parser.add_argument('--deficit', type=float, default=0.7, help="구조적 결손 정도 (0.0~1.0)")
+    parser.add_argument('--plasticity', type=float, default=0.8, help="신경가소성 계수 (0.0~1.0)")
+    parser.add_argument('--inhibition', type=float, default=0.15, help="전두엽 억제 수준 (0.01~1.0)")
+    parser.add_argument('--samples', type=int, default=10000, help="시뮬레이션 샘플 수")
+    parser.add_argument('--scan', action='store_true', help="격자 스캔 모드")
+    parser.add_argument('--grid', type=int, default=20, help="격자 해상도 (각 축 단계 수, 기본 20)")
+    args = parser.parse_args()
+
+    ensure_results_dir()
+
+    if args.scan:
+        run_grid_scan(args.grid, args.grid, args.grid, args.samples)
+        return
+
+    d = np.clip(args.deficit, 0.0, 1.0)
+    p = np.clip(args.plasticity, 0.0, 1.0)
+    i = np.clip(args.inhibition, 0.01, 1.0)
+
+    pop_scores = simulate_population(args.samples)
+    curve_d, curve_s, d2, critical_idx = find_critical_points()
+
+    if len(critical_idx) > 0:
+        crit_low = curve_d[critical_idx[0]]
+        crit_high = curve_d[critical_idx[-1]] if len(critical_idx) > 1 else crit_low + 0.15
+    else:
+        crit_low, crit_high = 0.5, 0.7
+
+    result = run_single(d, p, i, pop_scores, curve_d, curve_s, critical_idx, crit_low, crit_high)
+
+    if result['is_singular']:
+        append_to_singularities(d, p, i, result['score'], result['z'], result['percentile'], result['phase'])
         print(f"\n  📁 특이점 기록 → results/singularities.md")
 
     print(f"  📁 전체 기록 → results/log.md")
