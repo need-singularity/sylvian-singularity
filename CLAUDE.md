@@ -64,6 +64,28 @@ results/
 - 🟠 Z > 3σ: 강한 특이점
 - 🔴 Z > 5σ: 극단적 특이점
 
+## 가설 검토 문서
+
+가설 검토는 **별도 개별 문서**로 관리한다.
+
+- 경로: `docs/hypotheses/NNN-가설명.md`
+- 목록: `docs/hypotheses/INDEX.md`
+- 각 문서 구조: 가설 → 배경 → 대응 관계 → 실측 검증 → 한계 → 검증 방향
+- 새 가설 발견 시 다음 번호로 문서 생성 후 INDEX.md에 추가
+- 가설 제시 시 **autopilot으로 검증 실행** 후 결과를 문서에 반영
+
+### 가설 검증 방법
+```bash
+# autopilot으로 가설 파라미터 탐색
+python3 compass.py --autopilot --deficit 0.5 --plasticity 0.6 --inhibition 0.4
+
+# 학습률/반복 조절
+python3 compass.py --autopilot --deficit 0.3 --plasticity 0.5 --inhibition 0.5 --lr 0.2 --iterations 50
+
+# 공통 특이점 영역 확인
+python3 compass.py --convergence --grid 30 --samples 50000
+```
+
 ## 파라미터 범위
 - Deficit (결손): 0.0 ~ 1.0
 - Plasticity (가소성): 0.0 ~ 1.0
