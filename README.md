@@ -759,6 +759,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [059](docs/hypotheses/059-compass-five-sixths.md) | Compass 상한 = 5/6 | 83.86% vs 83.33%, 불완전도=1/6 | ✅ | 확인 |
 | [060](docs/hypotheses/060-gamma-alpha-two.md) | 감마 분포 α=2 | α=2.03≈2 (D×P 2변수) | ✅ | 확인 |
 | [066](docs/hypotheses/066-topology-of-meta-learning.md) | 메타학습의 위상구조 | πₙ=메타레벨, 초월=수축가능=푸앵카레 | ✅ | 확인 |
+| [067](docs/hypotheses/067-constant-relations.md) | **1/2+1/3=5/6 상수관계** | 리만+메타=상한, 1/6=차이=곱 | ✅ | **대발견** |
 
 ## 발견의 구조 — 전체 여정
 
