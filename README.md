@@ -707,13 +707,13 @@ python3 compass.py --convergence --grid 30 --samples 50000
 
 | # | 가설 | 핵심 매칭 | T/F | 상태 |
 |---|---|---|---|---|
-| [001](docs/hypotheses/001-riemann-hypothesis.md) | 리만 가설과 골든 존의 구조적 동치 | 임계선 Re(s)=1/2 ↔ 골든존 상한 0.48 | | 검토 중 |
-| [002](docs/hypotheses/002-golden-zone-universality.md) | 골든 존 보편성 — 1/e는 자연 상수인가 | 골든존 중심 0.36 ≈ 1/e(0.368) | | 검토 중 |
-| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 3위상 전이 + 이력현상 | | 검토 중 |
-| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | Inhibition = 역온도(1/kT) | 지수적 감소 + 자유에너지 일치 | | 검토 중 |
-| [005](docs/hypotheses/005-one-third-law.md) | 1/3 법칙 — 구조적 상수 | 33.2% 수렴 ↔ Donoho-Tanner 전이 | ❌ | 010에서 반증 |
+| [001](docs/hypotheses/001-riemann-hypothesis.md) | 리만 가설과 골든 존의 구조적 동치 | 047+054+044 → 상한=1/2 확정 | ✅ | 확인 |
+| [002](docs/hypotheses/002-golden-zone-universality.md) | 골든 존 보편성 — 1/e 근사 | 중심=0.371, 차이=ln(27/26)=AGI폭 | ⚠️ | 수정 |
+| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 018+066+041 → 구조적 동치 확인 | ✅ | 확인 |
+| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | Inhibition = 역온도(1/kT) | 지수적 감소 + 자유에너지 일치 | ✅ | 확인 |
+| [005](docs/hypotheses/005-one-third-law.md) | 1/3 법칙 — 구조적 상수 | 010: 30.17% 분포 의존적 | ❌ | 반증 |
 | [006](docs/hypotheses/006-riemann-falsification-failed.md) | 리만 가설 반증 시도 | 골든존 밖 안정 특이점 없음 | ❌ | 반증 실패 → 리만 지지 |
-| [007](docs/hypotheses/007-llm-singularity.md) | LLM에서 특이점 발생 | Expert 35% 활성(I≈1/e)에서 특이점 | | 검토 중 |
+| [007](docs/hypotheses/007-llm-singularity.md) | LLM에서 특이점 발생 | 019 v2: 44/64(70%), 058: 2028년 | ✅ | 확인 (v2) |
 | [008](docs/hypotheses/008-golden-moe-design.md) | 골든 MoE 아키텍처 설계 | e 하나로 모든 파라미터 통일 | | 설계 완료 |
 | [009](docs/hypotheses/009-singularity-2039.md) | 특이점 시점 = 2039년 | 모든 시나리오에서 I≈1/e 수렴 | ✅ | 🎯 지지 |
 | [010](docs/hypotheses/010-one-third-refuted.md) | 1/3 법칙은 정확히 1/3이 아니다 | 30.17% — 분포 의존적 | ✅ | 반증 확인 |
@@ -745,7 +745,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [050](docs/hypotheses/050-navier-stokes-convergence.md) | 나비에-스토크스 수렴성 | 100/100 수렴, 발산 0건 | ✅ | 확인 |
 | [051](docs/hypotheses/051-hodge-completeness.md) | 호지 원소 완전성 | 1000/1000 분해 가능 | ✅ | 확인 |
 | [052](docs/hypotheses/052-bsd-no-structure.md) | BSD 유리수 구조 | 집중 없음, 균등 분포 | ❌ | 반증 |
-| [053](docs/hypotheses/053-poincare-recheck.md) | 푸앵카레 단순연결 | 수렴 1%, 시뮬레이션 설계 문제 | ⚠️ | 재검토 |
+| [053](docs/hypotheses/053-poincare-recheck.md) | 푸앵카레 단순연결 | 066: 메타반복=리치흐름→수축가능 | ✅ | 확인 (066) |
 | [054](docs/hypotheses/054-grid-resolution-convergence.md) | 격자 해상도 수렴 — 3상수 발견 | 상한=1/2, 폭=ln(4/3), 중심≈1/e | ✅ | 확인 |
 | [055](docs/hypotheses/055-needle-eye.md) | AGI 바늘구멍 | N=26 폭=0.038, I=0.462~0.500 | ✅ | 확인 |
 | [056](docs/hypotheses/056-meta-recursion-transcendence.md) | 메타 반복 = 초월 | I→1/3 수렴, 초월확률 36.1% 최대 | ✅ | 확인 |
