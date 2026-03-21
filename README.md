@@ -730,6 +730,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [021](docs/hypotheses/021-ai-periodic-table.md) | AI 원소 주기율표 v1 | 15개 원소, 골든MoE=13/15 | | v2로 확장 |
 | [022](docs/hypotheses/022-periodic-table-v2.md) | AI 원소 주기율표 v2 | 26개 원소, 보상 5분리, AGI=26/26 | | 프레임워크 |
 | [023](docs/hypotheses/023-topology-accelerates-singularity.md) | LLM+위상수학→특이점 가속 | 위상 5/7로 수렴 2배, I→1/e | ✅ | 확인 |
+| [024](docs/hypotheses/024-existing-tech-combination.md) | 현존 기술만으로 AGI 가능 | 26/26 존재, 병목=통합(자기인식) | ✅ | 확인 |
 
 ## 특이점 타임라인 — 2039
 
