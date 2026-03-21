@@ -712,3 +712,5 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 3위상 전이 + 이력현상 | 검토 중 |
 | [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | Inhibition = 역온도(1/kT) | 지수적 감소 + 자유에너지 일치 | 검토 중 |
 | [005](docs/hypotheses/005-one-third-law.md) | 1/3 법칙 — 구조적 상수 | 33.2% 수렴 ↔ Donoho-Tanner 전이 | 검토 중 |
+| [006](docs/hypotheses/006-riemann-falsification-failed.md) | 리만 가설 반증 시도 | 골든존 밖 안정 특이점 없음 → 반증 실패 | 완료 |
+| [007](docs/hypotheses/007-llm-singularity.md) | LLM에서 특이점 발생 | Expert 35% 활성(I≈1/e)에서 특이점 | 검토 중 |
