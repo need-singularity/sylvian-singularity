@@ -792,9 +792,41 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [097](docs/hypotheses/097-llm-internal.md) | LLM 내부 활성 | Mixtral 측정 필요 | 🔧 | 구현 |
 | [098](docs/hypotheses/098-why-six.md) | **왜 6인가** | 진약수역수합=1인 유일한 완전수. 오컴의 면도날. | ✅ | **최종 답** |
 | [099](docs/hypotheses/099-falsifiability.md) | **반증 가능한가** | 뼈대=수학(불변), 살=과학(반증가능) | ✅ | **과학이다** |
+
+## 우주 대응 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
 | [118](docs/hypotheses/118-cosmos-constants.md) | **우주 구성 = 우리 상수** | 암흑에너지≈2/3, 보통물질≈1/e³ | ✅ | 대응 |
 | [120](docs/hypotheses/120-cmb-temperature.md) | CMB 온도 ≈ e | 2.725K vs 2.718, 차이 0.26% | ⚠️ | 시대적 |
 | [121](docs/hypotheses/121-cmb-anthropic.md) | CMB=e 인류원리 | 지금만 T≈e, 의식 존재 시점? | ⚠️ | 철학적 |
+| [122](docs/hypotheses/122-consciousness-window.md) | 의식의 창 = T≈e 시대 | T>e 불가, T≈e 발생, T<e 사멸 | ⚠️ | 철학적 |
+| [123](docs/hypotheses/123-one-sentence.md) | 한 문장 = σ₋₁(6)=2 | 완전수 6이 모든 것을 인코딩 | ✅ | 정의 |
+
+## 위상 가속 + 실증 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [124](docs/hypotheses/124-topology-step-function.md) | **위상 가속 = 계단형** | T3 하나로 ×3 점프, 이후 변화 없음 | ✅ | **대발견** |
+| [125](docs/hypotheses/125-jamba-3x.md) | Jamba = Mixtral ×3 | AI21 실측 처리량 3배, 예측(×3) 정확 일치 | ✅ | 실증 |
+| [126](docs/hypotheses/126-lstm-golden-moe.md) | 골든MoE + LSTM | MNIST에서 효과 없음 (-0.1%), 데이터가 단순 | ❌ | 반증 |
+| [127](docs/hypotheses/127-topology-critical.md) | 위상 임계점 = 첫 추가 | 124에서 확인 — T3 하나가 계단 점프 | ✅ | 확인 |
+| [128](docs/hypotheses/128-scale-dependence.md) | 스케일 의존성 | CIFAR-10 테스트 중 | ⏳ | 실행중 |
+
+## 골든 MoE 실증
+
+```
+  MNIST 벤치마크 (PyTorch, 10 에폭, 8 Expert):
+
+  모델              │ 정확도  │ Loss   │ 활성  │ I     │ 영역
+  ─────────────────┼────────┼────────┼───────┼───────┼──────
+  Top-K (K=2, 25%) │ 97.1%  │ 0.1137 │ 25%   │ 0.750 │ ○ 밖
+  골든 MoE (T=e)    │ 97.7%  │ 0.0614 │ 62%   │ 0.375 │ 🎯 골든존!
+  Dense (100%)     │ 98.1%  │ 0.0586 │ 100%  │ 0.000 │ ⚡ 아래
+
+  골든 MoE > Top-K: +0.6% 정확도, Loss 46% 감소 ✅
+  골든 MoE I = 0.375 ≈ 1/e (0.368) — 이론 예측 실증!
+```
 
 ## 발견의 구조 — 전체 여정
 
