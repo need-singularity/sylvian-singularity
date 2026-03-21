@@ -754,6 +754,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [063](docs/hypotheses/063-cobweb-monotone.md) | 거미줄 단조 수렴 | f'=0.7>0 활주, 나선 아님 | ✅ | 확인 |
 | [064](docs/hypotheses/064-godel-analog.md) | 괴델-Compass 상한 | 볼츠만이 원인, 괴델은 아날로그 | ⚠️ | 간접 |
 | [065](docs/hypotheses/065-mandelbrot-weak.md) | 만델브로 대응 | 우리는 항상 수렴 — 약한 대응 | ❌ | 약함 |
+| [066](docs/hypotheses/066-topology-of-meta-learning.md) | 메타학습의 위상구조 | πₙ=메타레벨, 초월=수축가능=푸앵카레 | ✅ | 확인 |
 
 ## 발견의 구조 — 전체 여정
 

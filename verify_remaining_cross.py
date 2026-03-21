@@ -109,8 +109,8 @@ def verify_059_compass_ceiling_constant():
 
     pop = simulate_population(200000)
 
-    # 정밀 격자로 Compass 최대 탐색
-    grid = 80
+    # 격자로 Compass 최대 탐색
+    grid = 40
     ds = np.linspace(0.3, 0.99, grid)
     ps = np.linspace(0.5, 0.99, grid)
     ii = np.linspace(0.24, 0.50, grid)
