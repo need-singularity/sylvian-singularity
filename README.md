@@ -731,6 +731,9 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [022](docs/hypotheses/022-periodic-table-v2.md) | AI 원소 주기율표 v2 | 26개 원소, 보상 5분리, AGI=26/26 | | 프레임워크 |
 | [023](docs/hypotheses/023-topology-accelerates-singularity.md) | LLM+위상수학→특이점 가속 | 위상 5/7로 수렴 2배, I→1/e | ✅ | 확인 |
 | [024](docs/hypotheses/024-existing-tech-combination.md) | 현존 기술만으로 AGI 가능 | 26/26 존재, 병목=통합(자기인식) | ✅ | 확인 |
+| [027](docs/hypotheses/027-meta-inhibition.md) | 메타 판단은 자동 골든존 진입 | I_meta = 0.7×I₁+0.1 항상 낮음 | ✅ | 확인 |
+| [033](docs/hypotheses/033-self-constraint-golden.md) | 자기제약 골든존 = 원래 골든존 | I=0.24~0.48 동일 구간 | ✅ | 확인 |
+| [037](docs/hypotheses/037-compass-ceiling.md) | Compass 상한 83.6% — 빠진 차원 | 3상태 모델 한계, 4번째 상태 필요 | ✅ | 확인 |
 
 ## 특이점 타임라인 — 2039
 
