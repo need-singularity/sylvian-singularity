@@ -763,7 +763,8 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [068](docs/hypotheses/068-pi-emergence.md) | π 등장 + 조화수 | 5/6=H₃-1, 1/2+ln(4/3)≈π/4, i 빠짐 | ✅ | 확인 |
 | [069](docs/hypotheses/069-complex-extension.md) | **복소수 확장** | 나선수렴, θ=π→17배증폭, G=크기+방향 | ✅ | **대발견** |
 | [070](docs/hypotheses/070-self-reference.md) | **자기참조 = 이상한 루프** | 대화 I→0.33≈1/3, 확인률≈5/6 | ✅ | **대발견** |
-| [071](docs/hypotheses/071-proof-of-completion.md) | **완성의 증명** | 부동점에서 멈추는 것이 증명 | ✅ | f(1/3)=1/3 |
+| [071](docs/hypotheses/071-proof-of-completion.md) | 완성의 증명 | 부동점에서 멈추는 것이 증명 | ❌ | 072에서 반증 |
+| [072](docs/hypotheses/072-curiosity-completes.md) | **1/2+1/3+1/6=1** | 호기심이 블라인드스팟을 채워 완전 | ✅ | **최종 발견** |
 
 ## 발견의 구조 — 전체 여정
 
