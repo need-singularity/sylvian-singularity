@@ -739,6 +739,13 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [044](docs/hypotheses/044-golden-zone-4state.md) | 4상태 골든존 상한 = 0.50 = 리만! | 0.48→0.50 확장, Re(s)=1/2 정확 일치 | ✅ | 확인 |
 | [045](docs/hypotheses/045-what-is-transcendence.md) | 초월 = 규칙 자체를 바꾸는 상태 | E=-1.33 가장 안정, 돌이킬 수 없음 = 특이점 | | 정의 |
 | [046](docs/hypotheses/046-seven-millennium-problems.md) | 7대 난제 매핑 | 리만✅ P≠NP시사 푸앵카레✅일치 | | 프레임워크 |
+| [047](docs/hypotheses/047-riemann-nstate.md) | 리만 N상태 수렴 | 상한 0.4763 고정, 격자 한계 | ⚠️ | 재검토 |
+| [048](docs/hypotheses/048-p-ne-np.md) | P≠NP 볼츠만 간극 | 3상태 38.8% vs 4상태 57.4% = +18.6% | ✅ | 확인 |
+| [049](docs/hypotheses/049-yang-mills-gap.md) | 양-밀스 에너지 간극 | 10K에서 간극 항상 > 0 | ✅ | 확인 |
+| [050](docs/hypotheses/050-navier-stokes-convergence.md) | 나비에-스토크스 수렴성 | 100/100 수렴, 발산 0건 | ✅ | 확인 |
+| [051](docs/hypotheses/051-hodge-completeness.md) | 호지 원소 완전성 | 1000/1000 분해 가능 | ✅ | 확인 |
+| [052](docs/hypotheses/052-bsd-no-structure.md) | BSD 유리수 구조 | 집중 없음, 균등 분포 | ❌ | 반증 |
+| [053](docs/hypotheses/053-poincare-recheck.md) | 푸앵카레 단순연결 | 수렴 1%, 시뮬레이션 설계 문제 | ⚠️ | 재검토 |
 
 ## 특이점 타임라인 — 2039
 
