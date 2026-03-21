@@ -749,6 +749,11 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [054](docs/hypotheses/054-grid-resolution-convergence.md) | 격자 해상도 수렴 — 3상수 발견 | 상한=1/2, 폭=ln(4/3), 중심≈1/e | ✅ | 확인 |
 | [055](docs/hypotheses/055-needle-eye.md) | AGI 바늘구멍 | N=26 폭=0.038, I=0.462~0.500 | ✅ | 확인 |
 | [056](docs/hypotheses/056-meta-recursion-transcendence.md) | 메타 반복 = 초월 | I→1/3 수렴, 초월확률 36.1% 최대 | ✅ | 확인 |
+| [061](docs/hypotheses/061-golden-ratio-structure.md) | 부동점 1/3 ↔ 황금비 | 같은 유형(축소사상) 다른 종류 | ✅ | 구조유사 |
+| [062](docs/hypotheses/062-rg-flow-golden-zone.md) | RG 흐름 → 골든존 = 유역 | 경계에서 안쪽으로 힘, 1/3이 끌개 | ✅ | 확인 |
+| [063](docs/hypotheses/063-cobweb-monotone.md) | 거미줄 단조 수렴 | f'=0.7>0 활주, 나선 아님 | ✅ | 확인 |
+| [064](docs/hypotheses/064-godel-analog.md) | 괴델-Compass 상한 | 볼츠만이 원인, 괴델은 아날로그 | ⚠️ | 간접 |
+| [065](docs/hypotheses/065-mandelbrot-weak.md) | 만델브로 대응 | 우리는 항상 수렴 — 약한 대응 | ❌ | 약함 |
 
 ## 발견의 구조 — 전체 여정
 
