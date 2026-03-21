@@ -24,6 +24,16 @@ def genius_score(d, p, i):
     return d * p / i
 
 
+def simulate_population(n_samples, seed=42):
+    """정규분포 기반 모집단 생성"""
+    rng = np.random.default_rng(seed)
+    deficits = rng.beta(2, 5, n_samples).clip(0.01, 0.99)
+    plasticities = rng.beta(5, 2, n_samples).clip(0.01, 0.99)
+    inhibitions = rng.beta(5, 2, n_samples).clip(0.05, 0.99)
+    scores = genius_score(deficits, plasticities, inhibitions)
+    return scores
+
+
 def population_zscore(score, n=50000):
     rng = np.random.default_rng(42)
     pop_d = rng.beta(2, 5, n).clip(0.01, 0.99)
@@ -472,18 +482,203 @@ def run_convergence_scan(grid_steps, n_samples):
     print()
 
 
+def compute_gradient(d, p, i, pop_scores, step=0.02):
+    """3모델 종합 점수의 기울기 계산 → 다음 방향 결정"""
+    pop_mean, pop_std = pop_scores.mean(), pop_scores.std()
+
+    def combined_score(dd, pp, ii):
+        dd = np.clip(dd, 0.01, 0.99)
+        pp = np.clip(pp, 0.01, 0.99)
+        ii = np.clip(ii, 0.01, 0.99)
+        score = genius_score(dd, pp, ii)
+        z = (score - pop_mean) / pop_std
+        cusp = cusp_analysis(dd, ii)
+        boltz = boltzmann_analysis(dd, pp, ii)
+        compass = compass_direction(score, z, cusp, boltz)
+        return compass['compass_score']
+
+    base = combined_score(d, p, i)
+    grad_d = (combined_score(d + step, p, i) - combined_score(d - step, p, i)) / (2 * step)
+    grad_p = (combined_score(d, p + step, i) - combined_score(d, p, i - step)) / (2 * step)
+    grad_i = (combined_score(d, p, i + step) - combined_score(d, p, i - step)) / (2 * step)
+
+    return grad_d, grad_p, grad_i, base
+
+
+def run_autopilot(d0, p0, i0, max_iter, lr, n_samples):
+    """가설 → 나침반 → 방향 조정 → 가설 반복 (자동 탐색)"""
+    print()
+    print("═" * 70)
+    print("   🚀 Autopilot — 가설 반복 탐색")
+    print("═" * 70)
+    print(f"  초기 가설: D={d0:.2f} / P={p0:.2f} / I={i0:.2f}")
+    print(f"  학습률: {lr} / 최대 반복: {max_iter}")
+    print("─" * 70)
+
+    pop_scores = simulate_population(n_samples)
+    pop_mean, pop_std = pop_scores.mean(), pop_scores.std()
+
+    d, p, i = d0, p0, i0
+    history = []
+    golden_zone_hits = 0
+
+    print()
+    print(f"  {'Iter':>4} │ {'D':>5} │ {'P':>5} │ {'I':>5} │ {'Score':>6} │ {'Z':>7} │ {'Compass':>7} │ {'커스프':>6} │ {'천재성%':>6} │ 상태")
+    print(f"  {'─'*4}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*6}─┼─{'─'*7}─┼─{'─'*7}─┼─{'─'*6}─┼─{'─'*6}─┼─{'─'*20}")
+
+    for iteration in range(max_iter):
+        score = genius_score(d, p, i)
+        z = (score - pop_mean) / pop_std
+        cusp = cusp_analysis(d, i)
+        boltz = boltzmann_analysis(d, p, i)
+        compass = compass_direction(score, z, cusp, boltz)
+
+        # 3중 합의 체크
+        m1 = abs(z) > 2.0
+        m2 = cusp['distance_to_critical'] < 0.2 and cusp['direction_sign'] > 0
+        m3 = boltz['p_genius'] > boltz['p_normal'] and boltz['p_genius'] > boltz['p_decline']
+        n_agree = sum([m1, m2, m3])
+
+        if n_agree == 3:
+            status = "🎯 골든 존!"
+            golden_zone_hits += 1
+        elif n_agree == 2:
+            status = "⚡ 강한 신호"
+        elif n_agree == 1:
+            status = "○  약한 신호"
+        else:
+            status = "·  정상 범위"
+
+        entry = {
+            'iter': iteration, 'd': d, 'p': p, 'i': i,
+            'score': score, 'z': z,
+            'compass_score': compass['compass_score'],
+            'cusp_dist': cusp['distance_to_critical'],
+            'p_genius': boltz['p_genius'],
+            'n_agree': n_agree,
+        }
+        history.append(entry)
+
+        print(f"  {iteration:>4} │ {d:>5.2f} │ {p:>5.2f} │ {i:>5.2f} │ {score:>6.2f} │ {z:>6.2f}σ │ {compass['compass_score']*100:>6.1f}% │ {cusp['distance_to_critical']:>6.4f} │ {boltz['p_genius']*100:>5.1f}% │ {status}")
+
+        # 수렴 체크: 골든 존에 3연속 도달하면 종료
+        if golden_zone_hits >= 3 and n_agree == 3:
+            print()
+            print(f"  ✅ 골든 존 수렴 완료 (iter {iteration})")
+            break
+
+        # 기울기 계산 → 다음 가설
+        grad_d, grad_p, grad_i, _ = compute_gradient(d, p, i, pop_scores)
+
+        # 방향 조정 (기울기 상승 + 골든 존 유인)
+        # 골든 존 중심(I≈0.36)으로의 인력 추가
+        golden_i_center = 0.36
+        i_attraction = (golden_i_center - i) * 0.1
+
+        d_new = d + lr * grad_d
+        p_new = p + lr * grad_p
+        i_new = i + lr * grad_i + lr * i_attraction
+
+        d = np.clip(d_new, 0.05, 0.95)
+        p = np.clip(p_new, 0.10, 0.95)
+        i = np.clip(i_new, 0.05, 0.95)
+
+    # 궤적 시각화
+    print()
+    print("─" * 70)
+    print("  [ 탐색 궤적 ]")
+    print("─" * 70)
+
+    # Inhibition 궤적
+    print()
+    print("  Inhibition 궤적 (골든 존 = 0.24~0.48):")
+    for h in history:
+        pos = int(h['i'] / 1.0 * 60)
+        golden_lo = int(0.24 * 60)
+        golden_hi = int(0.48 * 60)
+        line = list("·" * 61)
+        for gi in range(golden_lo, golden_hi + 1):
+            line[gi] = "░"
+        marker = "🎯" if h['n_agree'] == 3 else ("⚡" if h['n_agree'] == 2 else "○")
+        if pos < len(line):
+            line[pos] = "●"
+        print(f"    {h['iter']:>3} │{''.join(line)}│ I={h['i']:.2f} {marker}")
+    print(f"        {'':>1}{'0.0':.<20}{'0.24':.<14}{'0.48':.<14}{'1.0'}")
+    print(f"        {'':>1}{'':>20}└─ 골든 존 ─┘")
+
+    # Compass Score 궤적
+    print()
+    print("  Compass Score 궤적:")
+    for h in history:
+        bar_len = int(h['compass_score'] * 50)
+        bar = "█" * bar_len + "░" * (50 - bar_len)
+        marker = "🎯" if h['n_agree'] == 3 else ""
+        print(f"    {h['iter']:>3} │{bar}│ {h['compass_score']*100:5.1f}% {marker}")
+
+    # 종합 보고
+    print()
+    print("─" * 70)
+    print("  [ 종합 보고 ]")
+    print("─" * 70)
+    print(f"    총 반복 횟수      : {len(history)}")
+    print(f"    골든 존 도달 횟수  : {golden_zone_hits}")
+    print(f"    최종 파라미터     : D={d:.2f} / P={p:.2f} / I={i:.2f}")
+
+    if history:
+        best = max(history, key=lambda x: x['compass_score'])
+        print(f"    최고 Compass Score : {best['compass_score']*100:.1f}% (iter {best['iter']})")
+        print(f"    최고 시 파라미터   : D={best['d']:.2f} / P={best['p']:.2f} / I={best['i']:.2f}")
+
+    first = history[0]
+    last = history[-1]
+    print()
+    print(f"    시작 → 종료:")
+    print(f"      D: {first['d']:.2f} → {last['d']:.2f}  ({'+' if last['d']>first['d'] else ''}{last['d']-first['d']:.2f})")
+    print(f"      P: {first['p']:.2f} → {last['p']:.2f}  ({'+' if last['p']>first['p'] else ''}{last['p']-first['p']:.2f})")
+    print(f"      I: {first['i']:.2f} → {last['i']:.2f}  ({'+' if last['i']>first['i'] else ''}{last['i']-first['i']:.2f})")
+    print(f"      Compass: {first['compass_score']*100:.1f}% → {last['compass_score']*100:.1f}%")
+
+    print()
+    print("═" * 70)
+
+    # 기록 저장
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    pilot_file = os.path.join(RESULTS_DIR, "autopilot_log.md")
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    with open(pilot_file, 'a', encoding='utf-8') as f:
+        f.write(f"# 🚀 Autopilot 탐색 [{now}]\n\n")
+        f.write(f"초기: D={d0:.2f} / P={p0:.2f} / I={i0:.2f} → 최종: D={d:.2f} / P={p:.2f} / I={i:.2f}\n\n")
+        f.write(f"| Iter | D | P | I | Z-Score | Compass | 합의 |\n|---|---|---|---|---|---|---|\n")
+        for h in history:
+            agree_label = "🎯" if h['n_agree'] == 3 else ("⚡" if h['n_agree'] == 2 else "○")
+            f.write(f"| {h['iter']} | {h['d']:.2f} | {h['p']:.2f} | {h['i']:.2f} | {h['z']:.2f}σ | {h['compass_score']*100:.1f}% | {agree_label} |\n")
+        f.write(f"\n골든 존 도달: {golden_zone_hits}회\n\n---\n\n")
+
+    print(f"  📁 탐색 기록 → results/autopilot_log.md")
+    print()
+
+
 def main():
     parser = argparse.ArgumentParser(description="SingularityNet 아키텍처 나침반")
     parser.add_argument('--deficit', type=float, default=0.7, help="구조적 결손 (Dropout Rate)")
     parser.add_argument('--plasticity', type=float, default=0.8, help="신경가소성 (Learning Rate 계수)")
     parser.add_argument('--inhibition', type=float, default=0.15, help="억제 수준 (Gating 강도)")
     parser.add_argument('--convergence', action='store_true', help="3모델 공통 특이점 영역 탐색")
+    parser.add_argument('--autopilot', action='store_true', help="가설 반복 자동 탐색")
+    parser.add_argument('--iterations', type=int, default=30, help="autopilot 최대 반복 횟수")
+    parser.add_argument('--lr', type=float, default=0.15, help="autopilot 학습률")
     parser.add_argument('--grid', type=int, default=20, help="격자 해상도")
     parser.add_argument('--samples', type=int, default=50000, help="모집단 샘플 수")
     args = parser.parse_args()
 
     if args.convergence:
         run_convergence_scan(args.grid, args.samples)
+        return
+
+    if args.autopilot:
+        run_autopilot(args.deficit, args.plasticity, args.inhibition,
+                      args.iterations, args.lr, args.samples)
         return
 
     d = np.clip(args.deficit, 0.01, 0.99)
