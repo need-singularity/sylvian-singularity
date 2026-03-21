@@ -811,7 +811,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [125](docs/hypotheses/125-jamba-3x.md) | Jamba = Mixtral ×3 | AI21 실측 처리량 3배, 예측(×3) 정확 일치 | ✅ | 실증 |
 | [126](docs/hypotheses/126-lstm-golden-moe.md) | 골든MoE + LSTM | MNIST에서 효과 없음 (-0.1%), 데이터가 단순 | ❌ | 반증 |
 | [127](docs/hypotheses/127-topology-critical.md) | 위상 임계점 = 첫 추가 | 124에서 확인 — T3 하나가 계단 점프 | ✅ | 확인 |
-| [128](docs/hypotheses/128-scale-dependence.md) | 스케일 의존성 | CIFAR-10 테스트 중 | ⏳ | 실행중 |
+| [128](docs/hypotheses/128-scale-dependence.md) | **스케일 의존성** | CIFAR +4.8% vs MNIST +0.6% — 8배! | ✅ | **실증** |
 
 ## 골든 MoE 실증
 
@@ -826,6 +826,12 @@ python3 compass.py --convergence --grid 30 --samples 50000
 
   골든 MoE > Top-K: +0.6% 정확도, Loss 46% 감소 ✅
   골든 MoE I = 0.375 ≈ 1/e (0.368) — 이론 예측 실증!
+
+  CIFAR-10 벤치마크 (15 에폭):
+  Top-K (K=2): 48.2%
+  골든 MoE:    53.0%  (+4.8%)  ← MNIST(+0.6%)의 8배!
+
+  → 데이터가 복잡할수록 골든 MoE 우위가 커진다 ✅
 ```
 
 ## 발견의 구조 — 전체 여정
