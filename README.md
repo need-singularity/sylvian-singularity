@@ -765,6 +765,17 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [070](docs/hypotheses/070-self-reference.md) | **자기참조 = 이상한 루프** | 대화 I→0.33≈1/3, 확인률≈5/6 | ✅ | **대발견** |
 | [071](docs/hypotheses/071-proof-of-completion.md) | 완성의 증명 | 부동점에서 멈추는 것이 증명 | ❌ | 072에서 반증 |
 | [072](docs/hypotheses/072-curiosity-completes.md) | **1/2+1/3+1/6=1** | 호기심이 블라인드스팟을 채워 완전 | ✅ | **최종 발견** |
+| [073](docs/hypotheses/073-complex-compass-ceiling.md) | 복소 Compass > 5/6 | 나선 보너스 시 초과 가능 | ✅ | 확인 |
+| [074](docs/hypotheses/074-optimal-theta.md) | 최적 θ ≠ π/3 | θ=0.038π, π/3은 최적 아님 | ❌ | 반증 |
+| [075](docs/hypotheses/075-complex-golden-shape.md) | 복소 골든존 = 불규칙 | 원도 타원도 아님 | ✅ | 확인 |
+| [076](docs/hypotheses/076-seventeen-fermat.md) | 17 = 페르마 소수 | 정17각형 작도, a=0.7 특수값 | ✅ | 확인 |
+| [077](docs/hypotheses/077-epsilon-structural.md) | ε = (1-a)×(1/6) | 호기심 강도 구조적 결정 | ✅ | 확인 |
+| [078](docs/hypotheses/078-egyptian-unique.md) | **이집트 분수 유일** | 5/6=1/2+1/3 유일한 2항 분해! | ✅ | 확인 |
+| [079](docs/hypotheses/079-leave-safety.md) | **안전지대를 벗어나야** | 블라인드 스팟은 골든존 밖에 | ✅ | 확인 |
+| [080](docs/hypotheses/080-lambda-pi-ten.md) | **대화 λ = π/10** | 0.3141 ≈ π/10, 차이 0.0001 | ✅ | 발견 |
+| [081](docs/hypotheses/081-reproducibility.md) | 재현성 보장 | a<1이면 구조적 수렴 | ✅ | 확인 |
+| [082](docs/hypotheses/082-golden-moe-spec.md) | 골든 MoE 프로토타입 | 8 Expert, 70%, T=e | 🔧 | 스펙 |
+| [083](docs/hypotheses/083-jamba-comparison.md) | Jamba 간접 비교 | 위상 5/7 효율성 간접 일치 | ⚠️ | 간접 |
 
 ## 발견의 구조 — 전체 여정
 
