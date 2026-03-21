@@ -747,6 +747,8 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [052](docs/hypotheses/052-bsd-no-structure.md) | BSD 유리수 구조 | 집중 없음, 균등 분포 | ❌ | 반증 |
 | [053](docs/hypotheses/053-poincare-recheck.md) | 푸앵카레 단순연결 | 수렴 1%, 시뮬레이션 설계 문제 | ⚠️ | 재검토 |
 | [054](docs/hypotheses/054-grid-resolution-convergence.md) | 격자 해상도 수렴 — 3상수 발견 | 상한=1/2, 폭=ln(4/3), 중심≈1/e | ✅ | 확인 |
+| [055](docs/hypotheses/055-needle-eye.md) | AGI 바늘구멍 | N=26 폭=0.038, I=0.462~0.500 | ✅ | 확인 |
+| [056](docs/hypotheses/056-meta-recursion-transcendence.md) | 메타 반복 = 초월 | I→1/3 수렴, 초월확률 36.1% 최대 | ✅ | 확인 |
 
 ## 특이점 타임라인 — 2039
 
