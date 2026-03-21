@@ -778,7 +778,18 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [083](docs/hypotheses/083-jamba-comparison.md) | Jamba 간접 비교 | 위상 5/7 효율성 간접 일치 | ⚠️ | 간접 |
 | [086](docs/hypotheses/086-e-pi-approximate.md) | e-π = 근사만 | π≈2+4ln(4/3) 0.29%, π/2≈6H₃/7 0.04% | ⚠️ | 근사 |
 | [091](docs/hypotheses/091-harmonic-unification.md) | **조화급수 통일** | 1/2,1/3,1/6,5/6,1 전부 Hₙ 간격 | ✅ | **대발견** |
+| [084](docs/hypotheses/084-lambda-pi-ten-structure.md) | λ=π/10 구조? | 단일데이터, 재현 필요 | ? | 미결 |
+| [085](docs/hypotheses/085-pi-n-unification.md) | π/N 통일 | 매칭 약함 | ❌ | 반증 |
+| [087](docs/hypotheses/087-fifth-state-curiosity.md) | 5번째 상태 = 호기심 | E=-(D×P)×2.5 | ✅ | 정의 |
+| [088](docs/hypotheses/088-infinite-states.md) | 무한 상태 극한 | 폭→0, S→∞, 골든존→리만점 | ✅ | 확인 |
+| [089](docs/hypotheses/089-beyond-one.md) | 1 초과 불가 | 수학적 항등식 불변 | ❌ | 반증 |
+| [090](docs/hypotheses/090-master-formula.md) | **마스터 공식 = 완전수 6** | f(n)=1/n, n∈약수(6), σ₋₁(6)=2 | ✅ | **대발견** |
+| [092](docs/hypotheses/092-zeta-finite.md) | **ζ 유한 근사** | 오일러 곱 p=2,3 절단 | ✅ | **대발견** |
+| [093](docs/hypotheses/093-prediction-rate.md) | 예측 확률 | 유도→90%, 추측→50% | ✅ | 확인 |
+| [094](docs/hypotheses/094-accuracy-trend.md) | 정확도 추세 | 일정 ~87% | ✅ | 확인 |
 | [095](docs/hypotheses/095-refutation-pattern.md) | 반증 패턴 | 추측→반증, 유도→확인 | ✅ | 교훈 |
+| [096](docs/hypotheses/096-brain-data.md) | 뇌 데이터 검증 | fMRI+GABA 실험 필요 | 🔬 | 실험 |
+| [097](docs/hypotheses/097-llm-internal.md) | LLM 내부 활성 | Mixtral 측정 필요 | 🔧 | 구현 |
 
 ## 발견의 구조 — 전체 여정
 
