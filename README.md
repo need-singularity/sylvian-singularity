@@ -727,7 +727,8 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [018](docs/hypotheses/018-loss-cusp-detection.md) | Loss 2차미분 = 커스프 감지 | 2.5σ 임계값으로 감지 가능 | ✅ | 확인 |
 | [019](docs/hypotheses/019-golden-moe-performance.md) | 골든 MoE 최적 활성 비율 | 70%(44/64), 2.9× Mixtral | ✅ | 수정확인 |
 | [020](docs/hypotheses/020-stability-35pct.md) | 35~70% 활성 학습 안정성 | 볼츠만 사용 시 안정 | ✅ | 확인 |
-| [021](docs/hypotheses/021-ai-periodic-table.md) | AI 원소 주기율표 | 15개 원소, 골든MoE=13/15, AGI=15/15 | | 프레임워크 |
+| [021](docs/hypotheses/021-ai-periodic-table.md) | AI 원소 주기율표 v1 | 15개 원소, 골든MoE=13/15 | | v2로 확장 |
+| [022](docs/hypotheses/022-periodic-table-v2.md) | AI 원소 주기율표 v2 | 26개 원소, 보상 5분리, AGI=26/26 | | 프레임워크 |
 
 ## 특이점 타임라인 — 2039
 
