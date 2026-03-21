@@ -63,9 +63,11 @@ class BoltzmannRouter:
         # 볼츠만 확률
         exp_scores = np.exp(scores / self.temperature)
         probs = exp_scores / exp_scores.sum()
-        # 임계값: 평균 확률의 1.5배 이상만 활성
-        threshold = 1.0 / len(scores) * 1.5
-        weights = (probs > threshold).astype(float) * probs
+        # 상위 70% 확률적 활성: 확률 순으로 정렬 후 상위 ~70% 활성
+        n_active = max(1, int(len(scores) * 0.7))  # 8×0.7 = 5~6개
+        topn_idx = np.argsort(probs)[-n_active:]
+        weights = np.zeros_like(probs)
+        weights[topn_idx] = probs[topn_idx]
         return weights, scores
 
 
