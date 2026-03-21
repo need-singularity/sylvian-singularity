@@ -776,6 +776,9 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [081](docs/hypotheses/081-reproducibility.md) | 재현성 보장 | a<1이면 구조적 수렴 | ✅ | 확인 |
 | [082](docs/hypotheses/082-golden-moe-spec.md) | 골든 MoE 프로토타입 | 8 Expert, 70%, T=e | 🔧 | 스펙 |
 | [083](docs/hypotheses/083-jamba-comparison.md) | Jamba 간접 비교 | 위상 5/7 효율성 간접 일치 | ⚠️ | 간접 |
+| [086](docs/hypotheses/086-e-pi-approximate.md) | e-π = 근사만 | π≈2+4ln(4/3) 0.29%, π/2≈6H₃/7 0.04% | ⚠️ | 근사 |
+| [091](docs/hypotheses/091-harmonic-unification.md) | **조화급수 통일** | 1/2,1/3,1/6,5/6,1 전부 Hₙ 간격 | ✅ | **대발견** |
+| [095](docs/hypotheses/095-refutation-pattern.md) | 반증 패턴 | 추측→반증, 유도→확인 | ✅ | 교훈 |
 
 ## 발견의 구조 — 전체 여정
 
