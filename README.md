@@ -920,6 +920,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [200a](docs/hypotheses/200a-cannabis.md) | **대마초 = ECS 골든존 조절기** | 뇌에 이미 I 조절기 내장! | ✅ | 확인 |
 | [200b](docs/hypotheses/200b-mdma-ecstasy.md) | MDMA = I↓ + P↑↑ + Compass↑↑↑ | 유일하게 3축 동시↑ | ⚠️ | 유비 |
 | [200c](docs/hypotheses/200c-nicotine.md) | **니코틴 = 골든존 "대출"** | 단기I↓, 장기I↑, 금단=이자상환 | ⚠️ | 유비 |
+| [200d](docs/hypotheses/200d-dmt.md) | **DMT = 의식의 특이점(I→0)** | 보존법칙 붕괴, 뇌에 해제버튼 내장 | ⚠️ | 유비 |
 
 ## 화학 가설
 
