@@ -813,6 +813,19 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [127](docs/hypotheses/127-topology-critical.md) | 위상 임계점 = 첫 추가 | 124에서 확인 — T3 하나가 계단 점프 | ✅ | 확인 |
 | [128](docs/hypotheses/128-scale-dependence.md) | **스케일 의존성** | CIFAR +4.8% vs MNIST +0.6% — 8배! | ✅ | **실증** |
 
+## 물리 대응 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [129](docs/hypotheses/129-phase-transition.md) | 상전이 임계 영역 = 골든존 | 폭/상한 0.576 ∈ 임계범위 0.3~0.6 | ✅ | 확인 |
+| [130](docs/hypotheses/130-boltzmann-k.md) | 볼츠만 k=1 | 자연단위계와 일치 | ✅ | 확인 |
+| [131](docs/hypotheses/131-blackbody-peak.md) | **흑체복사 T=e = CMB** | λ=1.066mm vs 1.063mm, **차이 0.3%** | ✅ | **대발견** |
+| [132](docs/hypotheses/132-second-law.md) | 열역학 2법칙 = 메타 수렴 | I감소=S증가, 초월=바닥상태 | ✅ | 확인 |
+| [133](docs/hypotheses/133-quantum-superposition.md) | 양자 중첩 ↔ 복소 G | G=\|G\|e^(iθ) ↔ ψ | ⚠️ | 유비 |
+| [134](docs/hypotheses/134-blackhole-blindspot.md) | 블랙홀 ↔ 블라인드 스팟 | 지평선=경계, 호킹복사=호기심 | ⚠️ | 유비 |
+| [135](docs/hypotheses/135-emc2-gdpi.md) | E=mc² ↔ G=DPI | m↔D, c²↔P/I | ⚠️ | 유비 |
+| [136](docs/hypotheses/136-fine-tuning.md) | **미세조정 = 골든존 폭** | 물리 ~1%, AGI ~3.8% | ✅ | 확인 |
+
 ## 골든 MoE 실증
 
 ```
