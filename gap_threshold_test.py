@@ -20,7 +20,6 @@ import os
 import numpy as np
 
 # ── consciousness_calc.py에서 핵심 함수 import ──
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tools"))
 from consciousness_calc import lorenz_simulate, run_cct, judge
 
 

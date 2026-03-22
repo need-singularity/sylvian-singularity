@@ -26,7 +26,6 @@ import sys
 import numpy as np
 
 # ── consciousness_calc.py 에서 CCT 함수 가져오기 ──
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tools"))
 from consciousness_calc import (
     run_cct,
     judge,

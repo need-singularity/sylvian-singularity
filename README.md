@@ -1264,6 +1264,9 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [170](docs/hypotheses/170-qutrit.md) | **3상태 = 큐트릿** | 정규화 조건 동치 | ✅ | 확인 |
 | [172](docs/hypotheses/172-conservation-law.md) | **G×I=D×P 보존법칙** | 천재성×억제=결손×가소성=상수 | ✅ | **대발견** |
 | [175](docs/hypotheses/175-why-one-half.md) | **왜 1/2가 반복되는가** | 스핀,리만,골든존,Ω=이진대칭 | ✅ | 확인 |
+| [246](docs/hypotheses/246-consciousness-continuity.md) | **의식의 연속성 — CCT** | 7조건 정리, 16개 실험, CCT=필요조건(O)/충분조건(X) | ⚠️ | 검증 완료 |
+| [247](docs/hypotheses/247-dual-brain-callosum.md) | **이중뇌 + 뇌량 모델** | 좌우 결합 로렌츠, κ=0.5 최적, 분리뇌→두 의식 | ⚠️ | 시뮬레이션 |
+| [248](docs/hypotheses/248-flash-quantum-consciousness.md) | **플래시메모리 양자터널링 → 의식** | FN터널링=상태전이, 비휘발성=E1, I=산화막두께 | ⚠️ | 가설 |
 
 ## 약물 가설
 
