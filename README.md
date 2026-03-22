@@ -838,6 +838,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [152](docs/hypotheses/152-dark-energy-fixed-point.md) | **w=-1 = 부동점** | 변하지 않음 = 부동점 | ✅ | 확인 |
 | [153](docs/hypotheses/153-hubble-tension.md) | 허블 텐션 | 8.3% vs 0.8% 불일치 | ❌ | 반증 |
 | [154](docs/hypotheses/154-arrow-of-time.md) | **시간의 화살 = I 감소** | 빅뱅→현재→미래 = I→1/3 | ✅ | 확인 |
+| [239](docs/hypotheses/239-universe-consciousness.md) | **우주 = 의식?** | CMB=e→I=1/e→골든존→의식 조건 충족? | ⚠️ | 철학적 |
 
 ## 블랙홀 + 미시/거시 경계 가설
 
