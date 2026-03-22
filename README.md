@@ -826,6 +826,26 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [135](docs/hypotheses/135-emc2-gdpi.md) | E=mc² ↔ G=DPI | m↔D, c²↔P/I | ⚠️ | 유비 |
 | [136](docs/hypotheses/136-fine-tuning.md) | **미세조정 = 골든존 폭** | 물리 ~1%, AGI ~3.8% | ✅ | 확인 |
 
+## 블랙홀 + 미시/거시 경계 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [143](docs/hypotheses/143-blackhole-entropy.md) | 블랙홀 엔트로피 = 경계 면적 | 홀로그래피: 내부정보=경계에 인코딩 | ⚠️ | 유비 |
+| [144](docs/hypotheses/144-hawking-radiation-curiosity.md) | 호킹 복사 = 호기심(F2e) | 느린 정보 방출, Page시간=골든존 하한 | ⚠️ | 유비 |
+| [145](docs/hypotheses/145-micro-macro-boundary.md) | **미시-거시 경계 = 골든존** | I<0.5 양자, I>0.5 고전, 경계=리만 | ✅ | 프레임워크 |
+| [146](docs/hypotheses/146-decoherence-inhibition.md) | 디코히런스 = Inhibition | 세포~뇌 규모에서 I≈골든존 | ⚠️ | 유비 |
+
+## CS(컴퓨터 과학) 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [137](docs/hypotheses/137-np-heuristic.md) | NP 휴리스틱에 골든존 적용 | SA 온도=I, 최적 온도=1/e? | 🔧 | 실험필요 |
+| [138](docs/hypotheses/138-shannon-ln3.md) | Shannon = ln(3) | 3심볼 최대 엔트로피와 동일 | ✅ | 확인 |
+| [139](docs/hypotheses/139-edge-of-chaos.md) | **골든존 = 혼돈의 가장자리** | Langton λ_c≈0.27 = I_transition! | ✅ | **대발견** |
+| [140](docs/hypotheses/140-algorithm-complexity.md) | 알고리즘 복잡도 | 볼츠만 O(NlogN) vs Top-K O(N), 실측 차이 없음 | ✅ | 확인 |
+| [141](docs/hypotheses/141-information-bottleneck.md) | 정보 병목 ↔ 골든존 | IB의 β = I, 볼츠만 분포와 동일 형태 | ✅ | 확인 |
+| [142](docs/hypotheses/142-halting-problem.md) | 할팅 문제 ↔ 메타 수렴 | 축소사상→항상정지, 튜링완전 아님 | ✅ | 확인 |
+
 ## 골든 MoE 실증
 
 ```
