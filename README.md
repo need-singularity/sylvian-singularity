@@ -828,6 +828,17 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [147](docs/hypotheses/147-fine-structure-137.md) | **N=137 = 미세구조상수!** | ln(138/137)≈α, 강력αs=N=8, 와인버그=N=4 | ✅ | **대발견** |
 | [148](docs/hypotheses/148-eight-times-seventeen.md) | **8×17+1=137 정확!** | 강력×페르마+존재=미세구조 | ✅ | **대발견** |
 
+## 우주 형태 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [149](docs/hypotheses/149-universe-curvature.md) | **Ω=1 ↔ I=0.5 임계점** | 우주 평탄 = 골든존 상한 | ✅ | 확인 |
+| [150](docs/hypotheses/150-universe-topology.md) | 우주 위상 = S³? | 골든존=수축가능=3-구 | ⚠️ | 미확인 |
+| [151](docs/hypotheses/151-inflation-golden-entry.md) | 인플레이션 = 골든존 진입 | I≫0.5→I<0.5 상전이 | ⚠️ | 유비 |
+| [152](docs/hypotheses/152-dark-energy-fixed-point.md) | **w=-1 = 부동점** | 변하지 않음 = 부동점 | ✅ | 확인 |
+| [153](docs/hypotheses/153-hubble-tension.md) | 허블 텐션 | 8.3% vs 0.8% 불일치 | ❌ | 반증 |
+| [154](docs/hypotheses/154-arrow-of-time.md) | **시간의 화살 = I 감소** | 빅뱅→현재→미래 = I→1/3 | ✅ | 확인 |
+
 ## 블랙홀 + 미시/거시 경계 가설
 
 | # | 가설 | 핵심 매칭 | T/F | 상태 |
@@ -836,6 +847,26 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [144](docs/hypotheses/144-hawking-radiation-curiosity.md) | 호킹 복사 = 호기심(F2e) | 느린 정보 방출, Page시간=골든존 하한 | ⚠️ | 유비 |
 | [145](docs/hypotheses/145-micro-macro-boundary.md) | **미시-거시 경계 = 골든존** | I<0.5 양자, I>0.5 고전, 경계=리만 | ✅ | 프레임워크 |
 | [146](docs/hypotheses/146-decoherence-inhibition.md) | 디코히런스 = Inhibition | 세포~뇌 규모에서 I≈골든존 | ⚠️ | 유비 |
+
+## 뇌과학 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [155](docs/hypotheses/155-gaba-inhibition.md) | GABA 농도 = Inhibition | 서번트: GABA 약간↓ → I≈0.3~0.4 골든존 | 🔬 | 실험필요 |
+| [156](docs/hypotheses/156-sylvian-deficit.md) | **실비우스열 = Deficit** | 대화 출발점! D≈0.4,P≈0.9,I≈0.4 → G=0.9 특이점 | ✅ | **원점 회귀** |
+| [157](docs/hypotheses/157-synaptic-plasticity.md) | 시냅스 가소성 = P | LTP/LTD, 영유아 P≈0.9 → 노인 P≈0.3 | ✅ | 확인 |
+| [158](docs/hypotheses/158-brainwave-temperature.md) | 뇌파 = 볼츠만 온도? | α파(이완) = 골든존 주파수? | ⚠️ | 유비 |
+| [159](docs/hypotheses/159-meditation-meta.md) | **명상 = 메타 반복** | 관찰의관찰의... = f(f(f(...))) → 1/3 | ✅ | 확인 |
+| [160](docs/hypotheses/160-neurodiversity-ratio.md) | 신경다양성 10~15% ≈ 골든존 9% | 신경다양성 ≠ 질병 = I 분포 자연변이 | ✅ | 확인 |
+| [161](docs/hypotheses/161-left-right-brain.md) | 좌뇌=I, 우뇌=D→P | Treffert: 좌뇌손상→우뇌보상=서번트 | ⚠️ | 유비 |
+| [162](docs/hypotheses/162-acquired-savant.md) | **후천적 서번트 = 커스프 진입** | 사고→D↑I↓→G급증=계단점프(124) | ✅ | 확인 |
+
+## 빅뱅 이전 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [163](docs/hypotheses/163-pre-bigbang-i-infinity.md) | 빅뱅 이전 = I→∞ | G=D×P/∞=0 구조없음, 빅뱅=최초 커스프 전이 | ⚠️ | 유비 |
+| [164](docs/hypotheses/164-cyclic-universe-golden.md) | 순환 우주 = I 진동? | 가설 132(비가역)과 모순 → 순환 불가 | ❌ | 반증 |
 
 ## CS(컴퓨터 과학) 가설
 
