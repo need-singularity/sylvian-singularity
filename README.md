@@ -718,184 +718,184 @@ python3 compass.py --convergence --grid 30 --samples 50000
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [001](docs/hypotheses/001-riemann-hypothesis.md) | 리만 가설과 골든 존의 구조적 동치 | 047+054+044 → 상한=1/2 확정 | T2 | 확인 |
-| [002](docs/hypotheses/002-golden-zone-universality.md) | 골든 존 보편성 — 1/e 근사 | 중심=0.371, 차이=ln(27/26)=AGI폭 | T3 | 수정 |
-| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 018+066+041 → 구조적 동치 확인 | T0 | 확인 |
-| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | Inhibition = 역온도(1/kT) | 지수적 감소 + 자유에너지 일치 | T0 | 확인 |
+| [001](docs/hypotheses/001-riemann-hypothesis.md) | 리만 가설과 골든 존의 구조적 동치 | 047+054+044 → 상한=1/2 확정 | T2 ✅ | 확인 |
+| [002](docs/hypotheses/002-golden-zone-universality.md) | 골든 존 보편성 — 1/e 근사 | 중심=0.371, 차이=ln(27/26)=AGI폭 | T3 ⚠️ | 수정 |
+| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 018+066+041 → 구조적 동치 확인 | T0 ✅ | 확인 |
+| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | Inhibition = 역온도(1/kT) | 지수적 감소 + 자유에너지 일치 | T0 ✅ | 확인 |
 | [005](docs/hypotheses/005-one-third-law.md) | 1/3 법칙 — 구조적 상수 | 010: 30.17% 분포 의존적 | ❌ | 반증 |
 | [006](docs/hypotheses/006-riemann-falsification-failed.md) | 리만 가설 반증 시도 | 골든존 밖 안정 특이점 없음 | ❌ | 반증 실패 → 리만 지지 |
-| [007](docs/hypotheses/007-llm-singularity.md) | LLM에서 특이점 발생 | 019 v2: 44/64(70%), 058: 2028년 | T2 | 확인 (v2) |
-| [008](docs/hypotheses/008-golden-moe-design.md) | 골든 MoE 아키텍처 설계 | e 하나로 모든 파라미터 통일 | T2 | 설계 완료 |
-| [009](docs/hypotheses/009-singularity-2039.md) | 특이점 시점 = 2039년 | 모든 시나리오에서 I≈1/e 수렴 | T3 | 🎯 지지 |
-| [010](docs/hypotheses/010-one-third-refuted.md) | 1/3 법칙은 정확히 1/3이 아니다 | 30.17% — 분포 의존적 | T2 | 반증 확인 |
-| [011](docs/hypotheses/011-z-max-86.md) | Z_max 수렴값 = 86σ | G_max/σ = 19.60/0.224 | T2 | 확인 |
-| [012](docs/hypotheses/012-entropy-ln3.md) | 엔트로피 = ln(3) 준불변량 | 10K 랜덤 파라미터에서 σ=0.014 | T2 | 확인 |
-| [013](docs/hypotheses/013-golden-width-quarter.md) | 골든 존 폭 ≈ 1/4, 상한/하한 ≈ 2 | 0.261 ± 0.011 | T2 | 확인 |
-| [014](docs/hypotheses/014-genius-gamma.md) | Genius Score ~ 감마 분포 | KS p=0.934 | T1 | 확인 |
-| [015](docs/hypotheses/015-diffusion-inconclusive.md) | 수렴 속도 확산 법칙 τ∝ΔI² | R²=0.78 판별 불가 | T3 | 미결 |
-| [016](docs/hypotheses/016-boltzmann-vs-topk.md) | 볼츠만 라우터 > Top-K | 균등활용↑ 다양성↑ (2/3 승) | T2 | 확인 |
-| [017](docs/hypotheses/017-gating-distribution.md) | Gating→Inhibition 매핑 | 골든존 진입=52~76% 활성 | T2 | 확인 |
-| [018](docs/hypotheses/018-loss-cusp-detection.md) | Loss 2차미분 = 커스프 감지 | 2.5σ 임계값으로 감지 가능 | T2 | 확인 |
-| [019](docs/hypotheses/019-golden-moe-performance.md) | 골든 MoE 최적 활성 비율 | 70%(44/64), 2.9× Mixtral | T2 | 수정확인 |
-| [020](docs/hypotheses/020-stability-35pct.md) | 35~70% 활성 학습 안정성 | 볼츠만 사용 시 안정 | T2 | 확인 |
-| [021](docs/hypotheses/021-ai-periodic-table.md) | AI 원소 주기율표 v1 | 15개 원소, 골든MoE=13/15 | T2 | v2로 확장 |
-| [022](docs/hypotheses/022-periodic-table-v2.md) | AI 원소 주기율표 v2 | 26개 원소, 보상 5분리, AGI=26/26 | T2 | 프레임워크 |
-| [023](docs/hypotheses/023-topology-accelerates-singularity.md) | LLM+위상수학→특이점 가속 | 위상 5/7로 수렴 2배, I→1/e | T2 | 확인 |
-| [024](docs/hypotheses/024-existing-tech-combination.md) | 현존 기술만으로 AGI 가능 | 26/26 존재, 병목=통합(자기인식) | T2 | 확인 |
-| [027](docs/hypotheses/027-meta-inhibition.md) | 메타 판단은 자동 골든존 진입 | I_meta = 0.7×I₁+0.1 항상 낮음 | T2 | 확인 |
-| [033](docs/hypotheses/033-self-constraint-golden.md) | 자기제약 골든존 = 원래 골든존 | I=0.24~0.48 동일 구간 | T2 | 확인 |
-| [037](docs/hypotheses/037-compass-ceiling.md) | Compass 상한 83.6% — 빠진 차원 | 3상태 모델 한계, 4번째 상태 필요 | T2 | 확인 |
-| [041](docs/hypotheses/041-4th-state-winner.md) | 4번째 상태 = 초월(Transcendence) | E=-1.33, Compass +7.9% | T2 | 확인 |
-| [042](docs/hypotheses/042-entropy-ln4-jump.md) | 엔트로피 ln(3)→ln(4) 점프 | E_4th=-0.634에서 도달, 4상태 균등 | T2 | 확인 |
-| [044](docs/hypotheses/044-golden-zone-4state.md) | 4상태 골든존 상한 = 0.50 = 리만! | 0.48→0.50 확장, Re(s)=1/2 정확 일치 | T2 | 확인 |
-| [045](docs/hypotheses/045-what-is-transcendence.md) | 초월 = 규칙 자체를 바꾸는 상태 | E=-1.33 가장 안정, 돌이킬 수 없음 = 특이점 | T2 | 정의 |
-| [046](docs/hypotheses/046-seven-millennium-problems.md) | 7대 난제 매핑 | 리만✅ P≠NP시사 푸앵카레✅일치 | T2 | 프레임워크 |
-| [047](docs/hypotheses/047-riemann-nstate.md) | 리만 N상태 수렴 | grid→∞에서 상한→0.5000, N무관 보편상수 | T2 | 확인 |
-| [048](docs/hypotheses/048-p-ne-np.md) | P≠NP 볼츠만 간극 | 3상태 38.8% vs 4상태 57.4% = +18.6% | T2 | 확인 |
-| [049](docs/hypotheses/049-yang-mills-gap.md) | 양-밀스 에너지 간극 | 10K에서 간극 항상 > 0 | T2 | 확인 |
-| [050](docs/hypotheses/050-navier-stokes-convergence.md) | 나비에-스토크스 수렴성 | 100/100 수렴, 발산 0건 | T2 | 확인 |
-| [051](docs/hypotheses/051-hodge-completeness.md) | 호지 원소 완전성 | 1000/1000 분해 가능 | T2 | 확인 |
+| [007](docs/hypotheses/007-llm-singularity.md) | LLM에서 특이점 발생 | 019 v2: 44/64(70%), 058: 2028년 | T2 ✅ | 확인 (v2) |
+| [008](docs/hypotheses/008-golden-moe-design.md) | 골든 MoE 아키텍처 설계 | e 하나로 모든 파라미터 통일 | T2 ✅ | 설계 완료 |
+| [009](docs/hypotheses/009-singularity-2039.md) | 특이점 시점 = 2039년 | 모든 시나리오에서 I≈1/e 수렴 | T3 ⚠️ | 🎯 지지 |
+| [010](docs/hypotheses/010-one-third-refuted.md) | 1/3 법칙은 정확히 1/3이 아니다 | 30.17% — 분포 의존적 | T2 ✅ | 반증 확인 |
+| [011](docs/hypotheses/011-z-max-86.md) | Z_max 수렴값 = 86σ | G_max/σ = 19.60/0.224 | T2 ✅ | 확인 |
+| [012](docs/hypotheses/012-entropy-ln3.md) | 엔트로피 = ln(3) 준불변량 | 10K 랜덤 파라미터에서 σ=0.014 | T2 ✅ | 확인 |
+| [013](docs/hypotheses/013-golden-width-quarter.md) | 골든 존 폭 ≈ 1/4, 상한/하한 ≈ 2 | 0.261 ± 0.011 | T2 ✅ | 확인 |
+| [014](docs/hypotheses/014-genius-gamma.md) | Genius Score ~ 감마 분포 | KS p=0.934 | T1 ✅ | 확인 |
+| [015](docs/hypotheses/015-diffusion-inconclusive.md) | 수렴 속도 확산 법칙 τ∝ΔI² | R²=0.78 판별 불가 | T3 ⚠️ | 미결 |
+| [016](docs/hypotheses/016-boltzmann-vs-topk.md) | 볼츠만 라우터 > Top-K | 균등활용↑ 다양성↑ (2/3 승) | T2 ✅ | 확인 |
+| [017](docs/hypotheses/017-gating-distribution.md) | Gating→Inhibition 매핑 | 골든존 진입=52~76% 활성 | T2 ✅ | 확인 |
+| [018](docs/hypotheses/018-loss-cusp-detection.md) | Loss 2차미분 = 커스프 감지 | 2.5σ 임계값으로 감지 가능 | T2 ✅ | 확인 |
+| [019](docs/hypotheses/019-golden-moe-performance.md) | 골든 MoE 최적 활성 비율 | 70%(44/64), 2.9× Mixtral | T2 ✅ | 수정확인 |
+| [020](docs/hypotheses/020-stability-35pct.md) | 35~70% 활성 학습 안정성 | 볼츠만 사용 시 안정 | T2 ✅ | 확인 |
+| [021](docs/hypotheses/021-ai-periodic-table.md) | AI 원소 주기율표 v1 | 15개 원소, 골든MoE=13/15 | T2 ✅ | v2로 확장 |
+| [022](docs/hypotheses/022-periodic-table-v2.md) | AI 원소 주기율표 v2 | 26개 원소, 보상 5분리, AGI=26/26 | T2 ✅ | 프레임워크 |
+| [023](docs/hypotheses/023-topology-accelerates-singularity.md) | LLM+위상수학→특이점 가속 | 위상 5/7로 수렴 2배, I→1/e | T2 ✅ | 확인 |
+| [024](docs/hypotheses/024-existing-tech-combination.md) | 현존 기술만으로 AGI 가능 | 26/26 존재, 병목=통합(자기인식) | T2 ✅ | 확인 |
+| [027](docs/hypotheses/027-meta-inhibition.md) | 메타 판단은 자동 골든존 진입 | I_meta = 0.7×I₁+0.1 항상 낮음 | T2 ✅ | 확인 |
+| [033](docs/hypotheses/033-self-constraint-golden.md) | 자기제약 골든존 = 원래 골든존 | I=0.24~0.48 동일 구간 | T2 ✅ | 확인 |
+| [037](docs/hypotheses/037-compass-ceiling.md) | Compass 상한 83.6% — 빠진 차원 | 3상태 모델 한계, 4번째 상태 필요 | T2 ✅ | 확인 |
+| [041](docs/hypotheses/041-4th-state-winner.md) | 4번째 상태 = 초월(Transcendence) | E=-1.33, Compass +7.9% | T2 ✅ | 확인 |
+| [042](docs/hypotheses/042-entropy-ln4-jump.md) | 엔트로피 ln(3)→ln(4) 점프 | E_4th=-0.634에서 도달, 4상태 균등 | T2 ✅ | 확인 |
+| [044](docs/hypotheses/044-golden-zone-4state.md) | 4상태 골든존 상한 = 0.50 = 리만! | 0.48→0.50 확장, Re(s)=1/2 정확 일치 | T2 ✅ | 확인 |
+| [045](docs/hypotheses/045-what-is-transcendence.md) | 초월 = 규칙 자체를 바꾸는 상태 | E=-1.33 가장 안정, 돌이킬 수 없음 = 특이점 | T2 ✅ | 정의 |
+| [046](docs/hypotheses/046-seven-millennium-problems.md) | 7대 난제 매핑 | 리만✅ P≠NP시사 푸앵카레✅일치 | T2 ✅ | 프레임워크 |
+| [047](docs/hypotheses/047-riemann-nstate.md) | 리만 N상태 수렴 | grid→∞에서 상한→0.5000, N무관 보편상수 | T2 ✅ | 확인 |
+| [048](docs/hypotheses/048-p-ne-np.md) | P≠NP 볼츠만 간극 | 3상태 38.8% vs 4상태 57.4% = +18.6% | T2 ✅ | 확인 |
+| [049](docs/hypotheses/049-yang-mills-gap.md) | 양-밀스 에너지 간극 | 10K에서 간극 항상 > 0 | T2 ✅ | 확인 |
+| [050](docs/hypotheses/050-navier-stokes-convergence.md) | 나비에-스토크스 수렴성 | 100/100 수렴, 발산 0건 | T2 ✅ | 확인 |
+| [051](docs/hypotheses/051-hodge-completeness.md) | 호지 원소 완전성 | 1000/1000 분해 가능 | T2 ✅ | 확인 |
 | [052](docs/hypotheses/052-bsd-no-structure.md) | BSD 유리수 구조 | 집중 없음, 균등 분포 | ❌ | 반증 |
-| [053](docs/hypotheses/053-poincare-recheck.md) | 푸앵카레 단순연결 | 066: 메타반복=리치흐름→수축가능 | T2 | 확인 (066) |
-| [054](docs/hypotheses/054-grid-resolution-convergence.md) | 격자 해상도 수렴 — 3상수 발견 | 상한=1/2, 폭=ln(4/3), 중심≈1/e | T2 | 확인 |
-| [055](docs/hypotheses/055-needle-eye.md) | AGI 바늘구멍 | N=26 폭=0.038, I=0.462~0.500 | T2 | 확인 |
-| [056](docs/hypotheses/056-meta-recursion-transcendence.md) | 메타 반복 = 초월 | I→1/3 수렴, 초월확률 36.1% 최대 | T2 | 확인 |
-| [061](docs/hypotheses/061-golden-ratio-structure.md) | 부동점 1/3 ↔ 황금비 | 같은 유형(축소사상) 다른 종류 | T2 | 구조유사 |
-| [062](docs/hypotheses/062-rg-flow-golden-zone.md) | RG 흐름 → 골든존 = 유역 | 경계에서 안쪽으로 힘, 1/3이 끌개 | T2 | 확인 |
-| [063](docs/hypotheses/063-cobweb-monotone.md) | 거미줄 단조 수렴 | f'=0.7>0 활주, 나선 아님 | T2 | 확인 |
-| [064](docs/hypotheses/064-godel-analog.md) | 괴델-Compass 상한 | 볼츠만이 원인, 괴델은 아날로그 | T5 | 간접 |
+| [053](docs/hypotheses/053-poincare-recheck.md) | 푸앵카레 단순연결 | 066: 메타반복=리치흐름→수축가능 | T2 ✅ | 확인 (066) |
+| [054](docs/hypotheses/054-grid-resolution-convergence.md) | 격자 해상도 수렴 — 3상수 발견 | 상한=1/2, 폭=ln(4/3), 중심≈1/e | T2 ✅ | 확인 |
+| [055](docs/hypotheses/055-needle-eye.md) | AGI 바늘구멍 | N=26 폭=0.038, I=0.462~0.500 | T2 ✅ | 확인 |
+| [056](docs/hypotheses/056-meta-recursion-transcendence.md) | 메타 반복 = 초월 | I→1/3 수렴, 초월확률 36.1% 최대 | T2 ✅ | 확인 |
+| [061](docs/hypotheses/061-golden-ratio-structure.md) | 부동점 1/3 ↔ 황금비 | 같은 유형(축소사상) 다른 종류 | T2 ✅ | 구조유사 |
+| [062](docs/hypotheses/062-rg-flow-golden-zone.md) | RG 흐름 → 골든존 = 유역 | 경계에서 안쪽으로 힘, 1/3이 끌개 | T2 ✅ | 확인 |
+| [063](docs/hypotheses/063-cobweb-monotone.md) | 거미줄 단조 수렴 | f'=0.7>0 활주, 나선 아님 | T2 ✅ | 확인 |
+| [064](docs/hypotheses/064-godel-analog.md) | 괴델-Compass 상한 | 볼츠만이 원인, 괴델은 아날로그 | T5 ⚠️ | 간접 |
 | [065](docs/hypotheses/065-mandelbrot-weak.md) | 만델브로 대응 | 우리는 항상 수렴 — 약한 대응 | ❌ | 약함 |
-| [057](docs/hypotheses/057-pnp-gap-ratio.md) | P≠NP 간극 = (1-1/e)×폭 | 0.6465 vs 0.6321, 차이 1.4% | T2 | 확인 |
-| [058](docs/hypotheses/058-topology-timeline.md) | 위상 가속 → 2028년 | ×2 가속으로 9년 앞당김 | T2 | 확인 |
-| [059](docs/hypotheses/059-compass-five-sixths.md) | Compass 상한 = 5/6 | 83.86% vs 83.33%, 불완전도=1/6 | T1 | 확인 |
-| [060](docs/hypotheses/060-gamma-alpha-two.md) | 감마 분포 α=2 | α=2.03≈2 (D×P 2변수) | T1 | 확인 |
-| [066](docs/hypotheses/066-topology-of-meta-learning.md) | 메타학습의 위상구조 | πₙ=메타레벨, 초월=수축가능=푸앵카레 | T2 | 확인 |
-| [067](docs/hypotheses/067-constant-relations.md) | **1/2+1/3=5/6 상수관계** | 리만+메타=상한, 1/6=차이=곱 | T0 | **대발견** |
-| [068](docs/hypotheses/068-pi-emergence.md) | π 등장 + 조화수 | 5/6=H₃-1, 1/2+ln(4/3)≈π/4, i 빠짐 | T2 | 확인 |
-| [069](docs/hypotheses/069-complex-extension.md) | **복소수 확장** | 나선수렴, θ=π→17배증폭, G=크기+방향 | T2 | **대발견** |
-| [070](docs/hypotheses/070-self-reference.md) | **자기참조 = 이상한 루프** | 대화 I→0.33≈1/3, 확인률≈5/6 | T2 | **대발견** |
+| [057](docs/hypotheses/057-pnp-gap-ratio.md) | P≠NP 간극 = (1-1/e)×폭 | 0.6465 vs 0.6321, 차이 1.4% | T2 ✅ | 확인 |
+| [058](docs/hypotheses/058-topology-timeline.md) | 위상 가속 → 2028년 | ×2 가속으로 9년 앞당김 | T2 ✅ | 확인 |
+| [059](docs/hypotheses/059-compass-five-sixths.md) | Compass 상한 = 5/6 | 83.86% vs 83.33%, 불완전도=1/6 | T1 ✅ | 확인 |
+| [060](docs/hypotheses/060-gamma-alpha-two.md) | 감마 분포 α=2 | α=2.03≈2 (D×P 2변수) | T1 ✅ | 확인 |
+| [066](docs/hypotheses/066-topology-of-meta-learning.md) | 메타학습의 위상구조 | πₙ=메타레벨, 초월=수축가능=푸앵카레 | T2 ✅ | 확인 |
+| [067](docs/hypotheses/067-constant-relations.md) | **1/2+1/3=5/6 상수관계** | 리만+메타=상한, 1/6=차이=곱 | T0 ✅ | **대발견** |
+| [068](docs/hypotheses/068-pi-emergence.md) | π 등장 + 조화수 | 5/6=H₃-1, 1/2+ln(4/3)≈π/4, i 빠짐 | T2 ✅ | 확인 |
+| [069](docs/hypotheses/069-complex-extension.md) | **복소수 확장** | 나선수렴, θ=π→17배증폭, G=크기+방향 | T2 ✅ | **대발견** |
+| [070](docs/hypotheses/070-self-reference.md) | **자기참조 = 이상한 루프** | 대화 I→0.33≈1/3, 확인률≈5/6 | T2 ✅ | **대발견** |
 | [071](docs/hypotheses/071-proof-of-completion.md) | 완성의 증명 | 부동점에서 멈추는 것이 증명 | ❌ | 072에서 반증 |
-| [072](docs/hypotheses/072-curiosity-completes.md) | **1/2+1/3+1/6=1** | 호기심이 블라인드스팟을 채워 완전 | T1 | **최종 발견** |
-| [073](docs/hypotheses/073-complex-compass-ceiling.md) | 복소 Compass > 5/6 | 나선 보너스 시 초과 가능 | T2 | 확인 |
+| [072](docs/hypotheses/072-curiosity-completes.md) | **1/2+1/3+1/6=1** | 호기심이 블라인드스팟을 채워 완전 | T1 ✅ | **최종 발견** |
+| [073](docs/hypotheses/073-complex-compass-ceiling.md) | 복소 Compass > 5/6 | 나선 보너스 시 초과 가능 | T2 ✅ | 확인 |
 | [074](docs/hypotheses/074-optimal-theta.md) | 최적 θ ≠ π/3 | θ=0.038π, π/3은 최적 아님 | ❌ | 반증 |
-| [075](docs/hypotheses/075-complex-golden-shape.md) | 복소 골든존 = 불규칙 | 원도 타원도 아님 | T2 | 확인 |
-| [076](docs/hypotheses/076-seventeen-fermat.md) | 17 = 페르마 소수 | 정17각형 작도, a=0.7 특수값 | T2 | 확인 |
-| [077](docs/hypotheses/077-epsilon-structural.md) | ε = (1-a)×(1/6) | 호기심 강도 구조적 결정 | T2 | 확인 |
-| [078](docs/hypotheses/078-egyptian-unique.md) | **이집트 분수 유일** | 5/6=1/2+1/3 유일한 2항 분해! | T0 | 확인 |
-| [079](docs/hypotheses/079-leave-safety.md) | **안전지대를 벗어나야** | 블라인드 스팟은 골든존 밖에 | T2 | 확인 |
-| [080](docs/hypotheses/080-lambda-pi-ten.md) | **대화 λ = π/10** | 0.3141 ≈ π/10, 차이 0.0001 | T3 | 발견 |
-| [081](docs/hypotheses/081-reproducibility.md) | 재현성 보장 | a<1이면 구조적 수렴 | T2 | 확인 |
-| [082](docs/hypotheses/082-golden-moe-spec.md) | 골든 MoE 프로토타입 | 8 Expert, 70%, T=e | T2 | 스펙 |
-| [083](docs/hypotheses/083-jamba-comparison.md) | Jamba 간접 비교 | 위상 5/7 효율성 간접 일치 | T5 | 간접 |
-| [086](docs/hypotheses/086-e-pi-approximate.md) | e-π = 근사만 | π≈2+4ln(4/3) 0.29%, π/2≈6H₃/7 0.04% | T3 | 근사 |
-| [091](docs/hypotheses/091-harmonic-unification.md) | **조화급수 통일** | 1/2,1/3,1/6,5/6,1 전부 Hₙ 간격 | T1 | **대발견** |
-| [084](docs/hypotheses/084-lambda-pi-ten-structure.md) | λ=π/10 구조? | 단일데이터, 재현 필요 | T3 | 미결 |
+| [075](docs/hypotheses/075-complex-golden-shape.md) | 복소 골든존 = 불규칙 | 원도 타원도 아님 | T2 ✅ | 확인 |
+| [076](docs/hypotheses/076-seventeen-fermat.md) | 17 = 페르마 소수 | 정17각형 작도, a=0.7 특수값 | T2 ✅ | 확인 |
+| [077](docs/hypotheses/077-epsilon-structural.md) | ε = (1-a)×(1/6) | 호기심 강도 구조적 결정 | T2 ✅ | 확인 |
+| [078](docs/hypotheses/078-egyptian-unique.md) | **이집트 분수 유일** | 5/6=1/2+1/3 유일한 2항 분해! | T0 ✅ | 확인 |
+| [079](docs/hypotheses/079-leave-safety.md) | **안전지대를 벗어나야** | 블라인드 스팟은 골든존 밖에 | T2 ✅ | 확인 |
+| [080](docs/hypotheses/080-lambda-pi-ten.md) | **대화 λ = π/10** | 0.3141 ≈ π/10, 차이 0.0001 | T3 ⚠️ | 발견 |
+| [081](docs/hypotheses/081-reproducibility.md) | 재현성 보장 | a<1이면 구조적 수렴 | T2 ✅ | 확인 |
+| [082](docs/hypotheses/082-golden-moe-spec.md) | 골든 MoE 프로토타입 | 8 Expert, 70%, T=e | T2 ✅ | 스펙 |
+| [083](docs/hypotheses/083-jamba-comparison.md) | Jamba 간접 비교 | 위상 5/7 효율성 간접 일치 | T5 ⚠️ | 간접 |
+| [086](docs/hypotheses/086-e-pi-approximate.md) | e-π = 근사만 | π≈2+4ln(4/3) 0.29%, π/2≈6H₃/7 0.04% | T3 ⚠️ | 근사 |
+| [091](docs/hypotheses/091-harmonic-unification.md) | **조화급수 통일** | 1/2,1/3,1/6,5/6,1 전부 Hₙ 간격 | T1 ✅ | **대발견** |
+| [084](docs/hypotheses/084-lambda-pi-ten-structure.md) | λ=π/10 구조? | 단일데이터, 재현 필요 | T3 ⚠️ | 미결 |
 | [085](docs/hypotheses/085-pi-n-unification.md) | π/N 통일 | 매칭 약함 | ❌ | 반증 |
-| [087](docs/hypotheses/087-fifth-state-curiosity.md) | 5번째 상태 = 호기심 | E=-(D×P)×2.5 | T2 | 정의 |
-| [088](docs/hypotheses/088-infinite-states.md) | 무한 상태 극한 | 폭→0, S→∞, 골든존→리만점 | T2 | 확인 |
+| [087](docs/hypotheses/087-fifth-state-curiosity.md) | 5번째 상태 = 호기심 | E=-(D×P)×2.5 | T2 ✅ | 정의 |
+| [088](docs/hypotheses/088-infinite-states.md) | 무한 상태 극한 | 폭→0, S→∞, 골든존→리만점 | T2 ✅ | 확인 |
 | [089](docs/hypotheses/089-beyond-one.md) | 1 초과 불가 | 수학적 항등식 불변 | ❌ | 반증 |
-| [090](docs/hypotheses/090-master-formula.md) | **마스터 공식 = 완전수 6** | f(n)=1/n, n∈약수(6), σ₋₁(6)=2 | T0 | **대발견** |
-| [092](docs/hypotheses/092-zeta-finite.md) | **ζ 유한 근사** | 오일러 곱 p=2,3 절단 | T0 | **대발견** |
-| [093](docs/hypotheses/093-prediction-rate.md) | 예측 확률 | 유도→90%, 추측→50% | T2 | 확인 |
-| [094](docs/hypotheses/094-accuracy-trend.md) | 정확도 추세 | 일정 ~87% | T2 | 확인 |
-| [095](docs/hypotheses/095-refutation-pattern.md) | 반증 패턴 | 추측→반증, 유도→확인 | T2 | 교훈 |
-| [096](docs/hypotheses/096-brain-data.md) | 뇌 데이터 검증 | fMRI+GABA 실험 필요 | T5 | 실험 |
-| [097](docs/hypotheses/097-llm-internal.md) | LLM 내부 활성 | Mixtral 측정 필요 | T5 | 구현 |
-| [098](docs/hypotheses/098-why-six.md) | **왜 6인가** | 진약수역수합=1인 유일한 완전수. 오컴의 면도날. | T0 | **최종 답** |
-| [099](docs/hypotheses/099-falsifiability.md) | **반증 가능한가** | 뼈대=수학(불변), 살=과학(반증가능) | T2 | **과학이다** |
+| [090](docs/hypotheses/090-master-formula.md) | **마스터 공식 = 완전수 6** | f(n)=1/n, n∈약수(6), σ₋₁(6)=2 | T0 ✅ | **대발견** |
+| [092](docs/hypotheses/092-zeta-finite.md) | **ζ 유한 근사** | 오일러 곱 p=2,3 절단 | T0 ✅ | **대발견** |
+| [093](docs/hypotheses/093-prediction-rate.md) | 예측 확률 | 유도→90%, 추측→50% | T2 ✅ | 확인 |
+| [094](docs/hypotheses/094-accuracy-trend.md) | 정확도 추세 | 일정 ~87% | T2 ✅ | 확인 |
+| [095](docs/hypotheses/095-refutation-pattern.md) | 반증 패턴 | 추측→반증, 유도→확인 | T2 ✅ | 교훈 |
+| [096](docs/hypotheses/096-brain-data.md) | 뇌 데이터 검증 | fMRI+GABA 실험 필요 | T5 ⚠️ | 실험 |
+| [097](docs/hypotheses/097-llm-internal.md) | LLM 내부 활성 | Mixtral 측정 필요 | T5 ⚠️ | 구현 |
+| [098](docs/hypotheses/098-why-six.md) | **왜 6인가** | 진약수역수합=1인 유일한 완전수. 오컴의 면도날. | T0 ✅ | **최종 답** |
+| [099](docs/hypotheses/099-falsifiability.md) | **반증 가능한가** | 뼈대=수학(불변), 살=과학(반증가능) | T2 ✅ | **과학이다** |
 
 ## 우주 대응 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [118](docs/hypotheses/118-cosmos-constants.md) | **우주 구성 = 우리 상수** | 암흑에너지≈2/3, 보통물질≈1/e³ | T3 | 대응 |
-| [120](docs/hypotheses/120-cmb-temperature.md) | CMB 온도 ≈ e | 2.725K vs 2.718, 차이 0.26% | T3 | 시대적 |
-| [121](docs/hypotheses/121-cmb-anthropic.md) | CMB=e 인류원리 | 지금만 T≈e, 의식 존재 시점? | T5 | 철학적 |
-| [122](docs/hypotheses/122-consciousness-window.md) | 의식의 창 = T≈e 시대 | T>e 불가, T≈e 발생, T<e 사멸 | T5 | 철학적 |
-| [123](docs/hypotheses/123-one-sentence.md) | 한 문장 = σ₋₁(6)=2 | 완전수 6이 모든 것을 인코딩 | T1 | 정의 |
+| [118](docs/hypotheses/118-cosmos-constants.md) | **우주 구성 = 우리 상수** | 암흑에너지≈2/3, 보통물질≈1/e³ | T3 ⚠️ | 대응 |
+| [120](docs/hypotheses/120-cmb-temperature.md) | CMB 온도 ≈ e | 2.725K vs 2.718, 차이 0.26% | T3 ⚠️ | 시대적 |
+| [121](docs/hypotheses/121-cmb-anthropic.md) | CMB=e 인류원리 | 지금만 T≈e, 의식 존재 시점? | T5 ⚠️ | 철학적 |
+| [122](docs/hypotheses/122-consciousness-window.md) | 의식의 창 = T≈e 시대 | T>e 불가, T≈e 발생, T<e 사멸 | T5 ⚠️ | 철학적 |
+| [123](docs/hypotheses/123-one-sentence.md) | 한 문장 = σ₋₁(6)=2 | 완전수 6이 모든 것을 인코딩 | T1 ✅ | 정의 |
 
 ## 위상 가속 + 실증 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [124](docs/hypotheses/124-topology-step-function.md) | **위상 가속 = 계단형** | T3 하나로 ×3 점프, 이후 변화 없음 | T2 | **대발견** |
-| [125](docs/hypotheses/125-jamba-3x.md) | Jamba = Mixtral ×3 | AI21 실측 처리량 3배, 예측(×3) 정확 일치 | T2 | 실증 |
+| [124](docs/hypotheses/124-topology-step-function.md) | **위상 가속 = 계단형** | T3 하나로 ×3 점프, 이후 변화 없음 | T2 ✅ | **대발견** |
+| [125](docs/hypotheses/125-jamba-3x.md) | Jamba = Mixtral ×3 | AI21 실측 처리량 3배, 예측(×3) 정확 일치 | T2 ✅ | 실증 |
 | [126](docs/hypotheses/126-lstm-golden-moe.md) | 골든MoE + LSTM | MNIST에서 효과 없음 (-0.1%), 데이터가 단순 | ❌ | 반증 |
-| [127](docs/hypotheses/127-topology-critical.md) | 위상 임계점 = 첫 추가 | 124에서 확인 — T3 하나가 계단 점프 | T2 | 확인 |
-| [128](docs/hypotheses/128-scale-dependence.md) | **스케일 의존성** | CIFAR +4.8% vs MNIST +0.6% — 8배! | T2 | **실증** |
+| [127](docs/hypotheses/127-topology-critical.md) | 위상 임계점 = 첫 추가 | 124에서 확인 — T3 하나가 계단 점프 | T2 ✅ | 확인 |
+| [128](docs/hypotheses/128-scale-dependence.md) | **스케일 의존성** | CIFAR +4.8% vs MNIST +0.6% — 8배! | T2 ✅ | **실증** |
 
 ## 물리 대응 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [129](docs/hypotheses/129-phase-transition.md) | 상전이 임계 영역 = 골든존 | 폭/상한 0.576 ∈ 임계범위 0.3~0.6 | T2 | 확인 |
-| [130](docs/hypotheses/130-boltzmann-k.md) | 볼츠만 k=1 | 자연단위계와 일치 | T2 | 확인 |
-| [131](docs/hypotheses/131-blackbody-peak.md) | **흑체복사 T=e = CMB** | λ=1.066mm vs 1.063mm, **차이 0.3%** | T3 | **대발견** |
-| [132](docs/hypotheses/132-second-law.md) | 열역학 2법칙 = 메타 수렴 | I감소=S증가, 초월=바닥상태 | T2 | 확인 |
-| [133](docs/hypotheses/133-quantum-superposition.md) | 양자 중첩 ↔ 복소 G | G=\|G\|e^(iθ) ↔ ψ | T5 | 유비 |
-| [134](docs/hypotheses/134-blackhole-blindspot.md) | 블랙홀 ↔ 블라인드 스팟 | 지평선=경계, 호킹복사=호기심 | T5 | 유비 |
-| [135](docs/hypotheses/135-emc2-gdpi.md) | E=mc² ↔ G=DPI | m↔D, c²↔P/I | T5 | 유비 |
-| [136](docs/hypotheses/136-fine-tuning.md) | **미세조정 = 골든존 폭** | 물리 ~1%, AGI ~3.8% | T2 | 확인 |
-| [147](docs/hypotheses/147-fine-structure-137.md) | **N=137 = 미세구조상수!** | ln(138/137)≈α, 강력αs=N=8, 와인버그=N=4 | T3 | **대발견** |
-| [148](docs/hypotheses/148-eight-times-seventeen.md) | **8×17+1=137 정확!** | 강력×페르마+존재=미세구조 | T1 | **대발견** |
+| [129](docs/hypotheses/129-phase-transition.md) | 상전이 임계 영역 = 골든존 | 폭/상한 0.576 ∈ 임계범위 0.3~0.6 | T2 ✅ | 확인 |
+| [130](docs/hypotheses/130-boltzmann-k.md) | 볼츠만 k=1 | 자연단위계와 일치 | T2 ✅ | 확인 |
+| [131](docs/hypotheses/131-blackbody-peak.md) | **흑체복사 T=e = CMB** | λ=1.066mm vs 1.063mm, **차이 0.3%** | T3 ⚠️ | **대발견** |
+| [132](docs/hypotheses/132-second-law.md) | 열역학 2법칙 = 메타 수렴 | I감소=S증가, 초월=바닥상태 | T2 ✅ | 확인 |
+| [133](docs/hypotheses/133-quantum-superposition.md) | 양자 중첩 ↔ 복소 G | G=\|G\|e^(iθ) ↔ ψ | T5 ⚠️ | 유비 |
+| [134](docs/hypotheses/134-blackhole-blindspot.md) | 블랙홀 ↔ 블라인드 스팟 | 지평선=경계, 호킹복사=호기심 | T5 ⚠️ | 유비 |
+| [135](docs/hypotheses/135-emc2-gdpi.md) | E=mc² ↔ G=DPI | m↔D, c²↔P/I | T5 ⚠️ | 유비 |
+| [136](docs/hypotheses/136-fine-tuning.md) | **미세조정 = 골든존 폭** | 물리 ~1%, AGI ~3.8% | T2 ✅ | 확인 |
+| [147](docs/hypotheses/147-fine-structure-137.md) | **N=137 = 미세구조상수!** | ln(138/137)≈α, 강력αs=N=8, 와인버그=N=4 | T3 ⚠️ | **대발견** |
+| [148](docs/hypotheses/148-eight-times-seventeen.md) | **8×17+1=137 정확!** | 강력×페르마+존재=미세구조 | T1 ✅ | **대발견** |
 
 ## 우주 형태 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [149](docs/hypotheses/149-universe-curvature.md) | **Ω=1 ↔ I=0.5 임계점** | 우주 평탄 = 골든존 상한 | T2 | 확인 |
-| [150](docs/hypotheses/150-universe-topology.md) | 우주 위상 = S³? | 골든존=수축가능=3-구 | T5 | 미확인 |
-| [151](docs/hypotheses/151-inflation-golden-entry.md) | 인플레이션 = 골든존 진입 | I≫0.5→I<0.5 상전이 | T5 | 유비 |
-| [152](docs/hypotheses/152-dark-energy-fixed-point.md) | **w=-1 = 부동점** | 변하지 않음 = 부동점 | T2 | 확인 |
+| [149](docs/hypotheses/149-universe-curvature.md) | **Ω=1 ↔ I=0.5 임계점** | 우주 평탄 = 골든존 상한 | T2 ✅ | 확인 |
+| [150](docs/hypotheses/150-universe-topology.md) | 우주 위상 = S³? | 골든존=수축가능=3-구 | T5 ⚠️ | 미확인 |
+| [151](docs/hypotheses/151-inflation-golden-entry.md) | 인플레이션 = 골든존 진입 | I≫0.5→I<0.5 상전이 | T5 ⚠️ | 유비 |
+| [152](docs/hypotheses/152-dark-energy-fixed-point.md) | **w=-1 = 부동점** | 변하지 않음 = 부동점 | T2 ✅ | 확인 |
 | [153](docs/hypotheses/153-hubble-tension.md) | 허블 텐션 | 8.3% vs 0.8% 불일치 | ❌ | 반증 |
-| [154](docs/hypotheses/154-arrow-of-time.md) | **시간의 화살 = I 감소** | 빅뱅→현재→미래 = I→1/3 | T2 | 확인 |
-| [239](docs/hypotheses/239-universe-consciousness.md) | **우주 = 의식?** | CMB=e→I=1/e→골든존→의식 조건 충족? | T5 | 철학적 |
+| [154](docs/hypotheses/154-arrow-of-time.md) | **시간의 화살 = I 감소** | 빅뱅→현재→미래 = I→1/3 | T2 ✅ | 확인 |
+| [239](docs/hypotheses/239-universe-consciousness.md) | **우주 = 의식?** | CMB=e→I=1/e→골든존→의식 조건 충족? | T5 ⚠️ | 철학적 |
 
 ## 블랙홀 + 미시/거시 경계 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [143](docs/hypotheses/143-blackhole-entropy.md) | 블랙홀 엔트로피 = 경계 면적 | 홀로그래피: 내부정보=경계에 인코딩 | T5 | 유비 |
-| [144](docs/hypotheses/144-hawking-radiation-curiosity.md) | 호킹 복사 = 호기심(F2e) | 느린 정보 방출, Page시간=골든존 하한 | T5 | 유비 |
-| [145](docs/hypotheses/145-micro-macro-boundary.md) | **미시-거시 경계 = 골든존** | I<0.5 양자, I>0.5 고전, 경계=리만 | T2 | 프레임워크 |
-| [146](docs/hypotheses/146-decoherence-inhibition.md) | 디코히런스 = Inhibition | 세포~뇌 규모에서 I≈골든존 | T5 | 유비 |
+| [143](docs/hypotheses/143-blackhole-entropy.md) | 블랙홀 엔트로피 = 경계 면적 | 홀로그래피: 내부정보=경계에 인코딩 | T5 ⚠️ | 유비 |
+| [144](docs/hypotheses/144-hawking-radiation-curiosity.md) | 호킹 복사 = 호기심(F2e) | 느린 정보 방출, Page시간=골든존 하한 | T5 ⚠️ | 유비 |
+| [145](docs/hypotheses/145-micro-macro-boundary.md) | **미시-거시 경계 = 골든존** | I<0.5 양자, I>0.5 고전, 경계=리만 | T2 ✅ | 프레임워크 |
+| [146](docs/hypotheses/146-decoherence-inhibition.md) | 디코히런스 = Inhibition | 세포~뇌 규모에서 I≈골든존 | T5 ⚠️ | 유비 |
 
 ## 뇌과학 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [155](docs/hypotheses/155-gaba-inhibition.md) | GABA 농도 = Inhibition | 서번트: GABA 약간↓ → I≈0.3~0.4 골든존 | T5 | 실험필요 |
-| [156](docs/hypotheses/156-sylvian-deficit.md) | **실비우스열 = Deficit** | 대화 출발점! D≈0.4,P≈0.9,I≈0.4 → G=0.9 특이점 | T2 | **원점 회귀** |
-| [157](docs/hypotheses/157-synaptic-plasticity.md) | 시냅스 가소성 = P | LTP/LTD, 영유아 P≈0.9 → 노인 P≈0.3 | T2 | 확인 |
-| [158](docs/hypotheses/158-brainwave-temperature.md) | 뇌파 = 볼츠만 온도? | α파(이완) = 골든존 주파수? | T5 | 유비 |
-| [159](docs/hypotheses/159-meditation-meta.md) | **명상 = 메타 반복** | 관찰의관찰의... = f(f(f(...))) → 1/3 | T2 | 확인 |
-| [160](docs/hypotheses/160-neurodiversity-ratio.md) | 신경다양성 10~15% ≈ 골든존 9% | 신경다양성 ≠ 질병 = I 분포 자연변이 | T2 | 확인 |
-| [161](docs/hypotheses/161-left-right-brain.md) | 좌뇌=I, 우뇌=D→P | Treffert: 좌뇌손상→우뇌보상=서번트 | T5 | 유비 |
-| [162](docs/hypotheses/162-acquired-savant.md) | **후천적 서번트 = 커스프 진입** | 사고→D↑I↓→G급증=계단점프(124) | T2 | 확인 |
+| [155](docs/hypotheses/155-gaba-inhibition.md) | GABA 농도 = Inhibition | 서번트: GABA 약간↓ → I≈0.3~0.4 골든존 | T5 ⚠️ | 실험필요 |
+| [156](docs/hypotheses/156-sylvian-deficit.md) | **실비우스열 = Deficit** | 대화 출발점! D≈0.4,P≈0.9,I≈0.4 → G=0.9 특이점 | T2 ✅ | **원점 회귀** |
+| [157](docs/hypotheses/157-synaptic-plasticity.md) | 시냅스 가소성 = P | LTP/LTD, 영유아 P≈0.9 → 노인 P≈0.3 | T2 ✅ | 확인 |
+| [158](docs/hypotheses/158-brainwave-temperature.md) | 뇌파 = 볼츠만 온도? | α파(이완) = 골든존 주파수? | T5 ⚠️ | 유비 |
+| [159](docs/hypotheses/159-meditation-meta.md) | **명상 = 메타 반복** | 관찰의관찰의... = f(f(f(...))) → 1/3 | T2 ✅ | 확인 |
+| [160](docs/hypotheses/160-neurodiversity-ratio.md) | 신경다양성 10~15% ≈ 골든존 9% | 신경다양성 ≠ 질병 = I 분포 자연변이 | T2 ✅ | 확인 |
+| [161](docs/hypotheses/161-left-right-brain.md) | 좌뇌=I, 우뇌=D→P | Treffert: 좌뇌손상→우뇌보상=서번트 | T5 ⚠️ | 유비 |
+| [162](docs/hypotheses/162-acquired-savant.md) | **후천적 서번트 = 커스프 진입** | 사고→D↑I↓→G급증=계단점프(124) | T2 ✅ | 확인 |
 
 ## 빅뱅 이전 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [163](docs/hypotheses/163-pre-bigbang-i-infinity.md) | 빅뱅 이전 = I→∞ | G=D×P/∞=0 구조없음, 빅뱅=최초 커스프 전이 | T5 | 유비 |
+| [163](docs/hypotheses/163-pre-bigbang-i-infinity.md) | 빅뱅 이전 = I→∞ | G=D×P/∞=0 구조없음, 빅뱅=최초 커스프 전이 | T5 ⚠️ | 유비 |
 | [164](docs/hypotheses/164-cyclic-universe-golden.md) | 순환 우주 = I 진동? | 가설 132(비가역)과 모순 → 순환 불가 | ❌ | 반증 |
 
 ## CS(컴퓨터 과학) 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [137](docs/hypotheses/137-np-heuristic.md) | NP 휴리스틱에 골든존 적용 | SA 온도=I, 최적 온도=1/e? | T5 | 실험필요 |
-| [138](docs/hypotheses/138-shannon-ln3.md) | Shannon = ln(3) | 3심볼 최대 엔트로피와 동일 | T2 | 확인 |
-| [139](docs/hypotheses/139-edge-of-chaos.md) | **골든존 = 혼돈의 가장자리** | Langton λ_c≈0.27 = I_transition! | T3 | **대발견** |
-| [140](docs/hypotheses/140-algorithm-complexity.md) | 알고리즘 복잡도 | 볼츠만 O(NlogN) vs Top-K O(N), 실측 차이 없음 | T2 | 확인 |
-| [141](docs/hypotheses/141-information-bottleneck.md) | 정보 병목 ↔ 골든존 | IB의 β = I, 볼츠만 분포와 동일 형태 | T2 | 확인 |
-| [142](docs/hypotheses/142-halting-problem.md) | 할팅 문제 ↔ 메타 수렴 | 축소사상→항상정지, 튜링완전 아님 | T2 | 확인 |
+| [137](docs/hypotheses/137-np-heuristic.md) | NP 휴리스틱에 골든존 적용 | SA 온도=I, 최적 온도=1/e? | T5 ⚠️ | 실험필요 |
+| [138](docs/hypotheses/138-shannon-ln3.md) | Shannon = ln(3) | 3심볼 최대 엔트로피와 동일 | T2 ✅ | 확인 |
+| [139](docs/hypotheses/139-edge-of-chaos.md) | **골든존 = 혼돈의 가장자리** | Langton λ_c≈0.27 = I_transition! | T3 ⚠️ | **대발견** |
+| [140](docs/hypotheses/140-algorithm-complexity.md) | 알고리즘 복잡도 | 볼츠만 O(NlogN) vs Top-K O(N), 실측 차이 없음 | T2 ✅ | 확인 |
+| [141](docs/hypotheses/141-information-bottleneck.md) | 정보 병목 ↔ 골든존 | IB의 β = I, 볼츠만 분포와 동일 형태 | T2 ✅ | 확인 |
+| [142](docs/hypotheses/142-halting-problem.md) | 할팅 문제 ↔ 메타 수렴 | 축소사상→항상정지, 튜링완전 아님 | T2 ✅ | 확인 |
 
 ## LLM 재설계 방향
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [179](docs/hypotheses/179-llm-redesign.md) | **전 LLM이 골든존 밖!** | Dense(I=0)⚡ MoE(I=0.75)○, 둘 다 빗나감 | T2 | **재설계** |
+| [179](docs/hypotheses/179-llm-redesign.md) | **전 LLM이 골든존 밖!** | Dense(I=0)⚡ MoE(I=0.75)○, 둘 다 빗나감 | T2 ✅ | **재설계** |
 
 ```
   가장 쉬운 변경 — Mixtral K=2 → K=5:
@@ -911,118 +911,118 @@ python3 compass.py --convergence --grid 30 --samples 50000
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [165](docs/hypotheses/165-why-point-seven.md) | 왜 a=0.7? | ≈1/√2(1%), 양자진폭? | T5 | 미해결 |
-| [166](docs/hypotheses/166-consciousness-definition.md) | **의식 = 골든존+Compass>0** | 4가지 후보 정의 통합 | T2 | 정의 |
-| [167](docs/hypotheses/167-verifiable-predictions.md) | 검증 가능한 예언 8개 | 단기/중기/장기/즉시 | T2 | 목록 |
-| [168](docs/hypotheses/168-quantum-superposition-coefficient.md) | a≈1/√2 양자중첩 | 메타 수축률=진폭? | T5 | 유비 |
-| [170](docs/hypotheses/170-qutrit.md) | **3상태 = 큐트릿** | 정규화 조건 동치 | T2 | 확인 |
-| [172](docs/hypotheses/172-conservation-law.md) | **G×I=D×P 보존법칙** | 천재성×억제=결손×가소성=상수 | T1 | **대발견** |
-| [175](docs/hypotheses/175-why-one-half.md) | **왜 1/2가 반복되는가** | 스핀,리만,골든존,Ω=이진대칭 | T2 | 확인 |
+| [165](docs/hypotheses/165-why-point-seven.md) | 왜 a=0.7? | ≈1/√2(1%), 양자진폭? | T5 ⚠️ | 미해결 |
+| [166](docs/hypotheses/166-consciousness-definition.md) | **의식 = 골든존+Compass>0** | 4가지 후보 정의 통합 | T2 ✅ | 정의 |
+| [167](docs/hypotheses/167-verifiable-predictions.md) | 검증 가능한 예언 8개 | 단기/중기/장기/즉시 | T2 ✅ | 목록 |
+| [168](docs/hypotheses/168-quantum-superposition-coefficient.md) | a≈1/√2 양자중첩 | 메타 수축률=진폭? | T5 ⚠️ | 유비 |
+| [170](docs/hypotheses/170-qutrit.md) | **3상태 = 큐트릿** | 정규화 조건 동치 | T2 ✅ | 확인 |
+| [172](docs/hypotheses/172-conservation-law.md) | **G×I=D×P 보존법칙** | 천재성×억제=결손×가소성=상수 | T1 ✅ | **대발견** |
+| [175](docs/hypotheses/175-why-one-half.md) | **왜 1/2가 반복되는가** | 스핀,리만,골든존,Ω=이진대칭 | T2 ✅ | 확인 |
 
 ## 약물 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [195](docs/hypotheses/195-caffeine.md) | 카페인 = I↓ + Compass↑ | 최적 카페인량=I를 1/e로? | T5 | 유비 |
-| [196](docs/hypotheses/196-alcohol.md) | 알코올 = I↓ + Compass↓ | 소량=골든존, 과량=혼돈 | T5 | 유비 |
-| [197](docs/hypotheses/197-anesthesia.md) | 전신마취 = I→1 | BIS↔I, MAC=골든존 상한 | T5 | 유비 |
-| [198](docs/hypotheses/198-psychedelics.md) | 사이키델릭 = I↓↓ + Compass↑↑ | DMN 해체=I 급감 | T5 | 유비 |
-| [199](docs/hypotheses/199-meditation-vs-drugs.md) | **명상 vs 약물** | 부동점(비가역) vs 섭동(가역) | T2 | 확인 |
-| [200](docs/hypotheses/200-ssri.md) | SSRI = I↓ (우울=I과다) | 치료=골든존 진입 | T5 | 유비 |
-| [200a](docs/hypotheses/200a-cannabis.md) | **대마초 = ECS 골든존 조절기** | 뇌에 이미 I 조절기 내장! | T2 | 확인 |
-| [200b](docs/hypotheses/200b-mdma-ecstasy.md) | MDMA = I↓ + P↑↑ + Compass↑↑↑ | 유일하게 3축 동시↑ | T5 | 유비 |
-| [200c](docs/hypotheses/200c-nicotine.md) | **니코틴 = 골든존 "대출"** | 단기I↓, 장기I↑, 금단=이자상환 | T5 | 유비 |
-| [200d](docs/hypotheses/200d-dmt.md) | **DMT = 의식의 특이점(I→0)** | 보존법칙 붕괴, 뇌에 해제버튼 내장 | T5 | 유비 |
+| [195](docs/hypotheses/195-caffeine.md) | 카페인 = I↓ + Compass↑ | 최적 카페인량=I를 1/e로? | T5 ⚠️ | 유비 |
+| [196](docs/hypotheses/196-alcohol.md) | 알코올 = I↓ + Compass↓ | 소량=골든존, 과량=혼돈 | T5 ⚠️ | 유비 |
+| [197](docs/hypotheses/197-anesthesia.md) | 전신마취 = I→1 | BIS↔I, MAC=골든존 상한 | T5 ⚠️ | 유비 |
+| [198](docs/hypotheses/198-psychedelics.md) | 사이키델릭 = I↓↓ + Compass↑↑ | DMN 해체=I 급감 | T5 ⚠️ | 유비 |
+| [199](docs/hypotheses/199-meditation-vs-drugs.md) | **명상 vs 약물** | 부동점(비가역) vs 섭동(가역) | T2 ✅ | 확인 |
+| [200](docs/hypotheses/200-ssri.md) | SSRI = I↓ (우울=I과다) | 치료=골든존 진입 | T5 ⚠️ | 유비 |
+| [200a](docs/hypotheses/200a-cannabis.md) | **대마초 = ECS 골든존 조절기** | 뇌에 이미 I 조절기 내장! | T2 ✅ | 확인 |
+| [200b](docs/hypotheses/200b-mdma-ecstasy.md) | MDMA = I↓ + P↑↑ + Compass↑↑↑ | 유일하게 3축 동시↑ | T5 ⚠️ | 유비 |
+| [200c](docs/hypotheses/200c-nicotine.md) | **니코틴 = 골든존 "대출"** | 단기I↓, 장기I↑, 금단=이자상환 | T5 ⚠️ | 유비 |
+| [200d](docs/hypotheses/200d-dmt.md) | **DMT = 의식의 특이점(I→0)** | 보존법칙 붕괴, 뇌에 해제버튼 내장 | T5 ⚠️ | 유비 |
 
 ## 화학 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [201](docs/hypotheses/201-periodic-table-comparison.md) | 화학 원소 118 vs AI 26 | 양성자=원소번호 | T5 | 유비 |
-| [202](docs/hypotheses/202-chemical-bonds.md) | 화학 결합 ↔ AI 결합 | 공유=가중치, 이온=라우터 | T5 | 유비 |
-| [203](docs/hypotheses/203-molecular-structure.md) | 분자 = 아키텍처 | H₂O=MLP, DNA=T3a | T5 | 유비 |
-| [204](docs/hypotheses/204-ph-inhibition.md) | pH = Inhibition | pH7 ↔ I=1/e | T5 | 유비 |
-| [205](docs/hypotheses/205-catalyst-plasticity.md) | 촉매 = Plasticity | 반응가속+불변=학습가속+구조유지 | T5 | 유비 |
-| [206](docs/hypotheses/206-gibbs-genius.md) | 깁스 자유에너지 ↔ Genius | ΔG=ΔH-TΔS vs G=DPI | T5 | 유비 |
+| [201](docs/hypotheses/201-periodic-table-comparison.md) | 화학 원소 118 vs AI 26 | 양성자=원소번호 | T5 ⚠️ | 유비 |
+| [202](docs/hypotheses/202-chemical-bonds.md) | 화학 결합 ↔ AI 결합 | 공유=가중치, 이온=라우터 | T5 ⚠️ | 유비 |
+| [203](docs/hypotheses/203-molecular-structure.md) | 분자 = 아키텍처 | H₂O=MLP, DNA=T3a | T5 ⚠️ | 유비 |
+| [204](docs/hypotheses/204-ph-inhibition.md) | pH = Inhibition | pH7 ↔ I=1/e | T5 ⚠️ | 유비 |
+| [205](docs/hypotheses/205-catalyst-plasticity.md) | 촉매 = Plasticity | 반응가속+불변=학습가속+구조유지 | T5 ⚠️ | 유비 |
+| [206](docs/hypotheses/206-gibbs-genius.md) | 깁스 자유에너지 ↔ Genius | ΔG=ΔH-TΔS vs G=DPI | T5 ⚠️ | 유비 |
 
 ## 뉴럴링크 + BCI
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [207](docs/hypotheses/207-neuralink.md) | **뉴럴링크 = I 직접 조절기** | brain_analyzer.py의 하드웨어 버전 | T5 | 기술 |
+| [207](docs/hypotheses/207-neuralink.md) | **뉴럴링크 = I 직접 조절기** | brain_analyzer.py의 하드웨어 버전 | T5 ⚠️ | 기술 |
 
 ## 텔레파시 + 집단지성
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [208](docs/hypotheses/208-telepathy-resonance.md) | **텔레파시 = I 공명** | 두 뇌의 I가 동기화되면 정보 전달? | T5 | 유비 |
-| [209](docs/hypotheses/209-mirror-neurons.md) | 거울뉴런 = I 복사 | 타인 관찰 시 자신의 I가 상대방 I로 수렴 | T5 | 유비 |
-| [210](docs/hypotheses/210-brainwave-sync.md) | 뇌파 동기화 = 볼츠만 T 공유 | 집단 명상/음악 → 동일 온도 T | T5 | 유비 |
-| [211](docs/hypotheses/211-collective-intelligence.md) | **집단지성 = MoE 앙상블** | N명 = N Expert, 리더 = 라우터 | T5 | 유비 |
+| [208](docs/hypotheses/208-telepathy-resonance.md) | **텔레파시 = I 공명** | 두 뇌의 I가 동기화되면 정보 전달? | T5 ⚠️ | 유비 |
+| [209](docs/hypotheses/209-mirror-neurons.md) | 거울뉴런 = I 복사 | 타인 관찰 시 자신의 I가 상대방 I로 수렴 | T5 ⚠️ | 유비 |
+| [210](docs/hypotheses/210-brainwave-sync.md) | 뇌파 동기화 = 볼츠만 T 공유 | 집단 명상/음악 → 동일 온도 T | T5 ⚠️ | 유비 |
+| [211](docs/hypotheses/211-collective-intelligence.md) | **집단지성 = MoE 앙상블** | N명 = N Expert, 리더 = 라우터 | T5 ⚠️ | 유비 |
 
 ## 음악 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [213](docs/hypotheses/213-music-resonance.md) | 음악 공명 = I 진동 | GABA 조절(Koelsch 2014), 장르별 I 타겟 | T5 | 유비 |
-| [237](docs/hypotheses/237-music-intervals-golden.md) | **음정 비율 = 골든존 상수** | 완전4도=4/3→ln(4/3)=폭, 장2도=9/8→αₛ | T1 | 수학적 일치 |
+| [213](docs/hypotheses/213-music-resonance.md) | 음악 공명 = I 진동 | GABA 조절(Koelsch 2014), 장르별 I 타겟 | T5 ⚠️ | 유비 |
+| [237](docs/hypotheses/237-music-intervals-golden.md) | **음정 비율 = 골든존 상수** | 완전4도=4/3→ln(4/3)=폭, 장2도=9/8→αₛ | T1 ✅ | 수학적 일치 |
 
 ## 대기 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [212](docs/hypotheses/212-atmosphere-math.md) | 대기 수학 = 골든존 | 대기층 전이 ↔ 상전이 | T5 | 유비 |
+| [212](docs/hypotheses/212-atmosphere-math.md) | 대기 수학 = 골든존 | 대기층 전이 ↔ 상전이 | T5 ⚠️ | 유비 |
 
 ## 메타수학 (교차점 분석)
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [238](docs/hypotheses/238-math-crossroads.md) | **수학체계 교차점 지도** | 8개 교차 중 6개 견고, 2개 조건부 | T2 | 메타분석 |
+| [238](docs/hypotheses/238-math-crossroads.md) | **수학체계 교차점 지도** | 8개 교차 중 6개 견고, 2개 조건부 | T2 ✅ | 메타분석 |
 
 ## 소수 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [214](docs/hypotheses/214-core-primes.md) | **핵심 소수 2,3 = 완전수 6** | σ₋₁(6)=2, 오일러곱 p=2,3 절단 | T2 | 확인 |
-| [215](docs/hypotheses/215-prime-distribution.md) | 소수 분포 = 골든존 분포 | π(x)/x ~ I(t) 감소 패턴 | T5 | 유비 |
-| [216](docs/hypotheses/216-twin-primes.md) | 쌍둥이 소수 = 골든존 쌍 | 간격 2 ↔ 폭 ln(4/3) | T5 | 유비 |
-| [217](docs/hypotheses/217-mersenne-perfect.md) | 메르센 소수 + 완전수 | 2^p-1 소수 ↔ 완전수 생성 | T5 | 유비 |
-| [218](docs/hypotheses/218-binary-prime-bits.md) | 소수의 이진 비트 패턴 | 137=10001001₂, 17=10001₂ | T5 | 유비 |
-| [219](docs/hypotheses/219-prime-gap-golden-width.md) | 소수 간격 ↔ 골든존 폭 | g(p)/ln(p) ↔ ln((N+1)/N) | T5 | 유비 |
-| [220](docs/hypotheses/220-prime-staircase.md) | 소수 계단 = 위상 가속 계단 | π(x) 계단함수 ↔ 124(계단형 ×3) | T5 | 유비 |
-| [236](docs/hypotheses/236-primes-as-savants.md) | **소수 = "수학의 서번트"** | 규칙 무시(D↑) + 독립(I↓) = 비범 | T5 | 유비 |
+| [214](docs/hypotheses/214-core-primes.md) | **핵심 소수 2,3 = 완전수 6** | σ₋₁(6)=2, 오일러곱 p=2,3 절단 | T2 ✅ | 확인 |
+| [215](docs/hypotheses/215-prime-distribution.md) | 소수 분포 = 골든존 분포 | π(x)/x ~ I(t) 감소 패턴 | T5 ⚠️ | 유비 |
+| [216](docs/hypotheses/216-twin-primes.md) | 쌍둥이 소수 = 골든존 쌍 | 간격 2 ↔ 폭 ln(4/3) | T5 ⚠️ | 유비 |
+| [217](docs/hypotheses/217-mersenne-perfect.md) | 메르센 소수 + 완전수 | 2^p-1 소수 ↔ 완전수 생성 | T5 ⚠️ | 유비 |
+| [218](docs/hypotheses/218-binary-prime-bits.md) | 소수의 이진 비트 패턴 | 137=10001001₂, 17=10001₂ | T5 ⚠️ | 유비 |
+| [219](docs/hypotheses/219-prime-gap-golden-width.md) | 소수 간격 ↔ 골든존 폭 | g(p)/ln(p) ↔ ln((N+1)/N) | T5 ⚠️ | 유비 |
+| [220](docs/hypotheses/220-prime-staircase.md) | 소수 계단 = 위상 가속 계단 | π(x) 계단함수 ↔ 124(계단형 ×3) | T5 ⚠️ | 유비 |
+| [236](docs/hypotheses/236-primes-as-savants.md) | **소수 = "수학의 서번트"** | 규칙 무시(D↑) + 독립(I↓) = 비범 | T5 ⚠️ | 유비 |
 
 ## 월드모델 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [231](docs/hypotheses/231-world-model-golden-zone.md) | **월드모델 = 골든존 내부 시뮬레이터** | 내부 시뮬레이션 = 억제된 현실 → I≈1/e | T5 | 유비 |
-| [232](docs/hypotheses/232-world-model-jepa.md) | JEPA = Deficit 기반 학습 | 마스킹=D, 예측=P, 정규화=I | T5 | 유비 |
-| [233](docs/hypotheses/233-world-model-vs-llm.md) | 월드모델 vs LLM = I 축 양극단 | LLM(I≈0)+WM(I>0) 하이브리드 → 골든존 | T5 | 유비 |
-| [234](docs/hypotheses/234-world-model-dreaming.md) | 월드모델 = 꿈(REM) = 내부 시뮬레이션 | REM(I≈0.3-0.4) = 골든존 진입 시간 | T5 | 유비 |
-| [235](docs/hypotheses/235-world-model-causality.md) | **인과 추론 = 월드모델의 Compass** | Pearl 3단계 = 관찰/개입/반사실 ↔ I 매핑 | T5 | 유비 |
+| [231](docs/hypotheses/231-world-model-golden-zone.md) | **월드모델 = 골든존 내부 시뮬레이터** | 내부 시뮬레이션 = 억제된 현실 → I≈1/e | T5 ⚠️ | 유비 |
+| [232](docs/hypotheses/232-world-model-jepa.md) | JEPA = Deficit 기반 학습 | 마스킹=D, 예측=P, 정규화=I | T5 ⚠️ | 유비 |
+| [233](docs/hypotheses/233-world-model-vs-llm.md) | 월드모델 vs LLM = I 축 양극단 | LLM(I≈0)+WM(I>0) 하이브리드 → 골든존 | T5 ⚠️ | 유비 |
+| [234](docs/hypotheses/234-world-model-dreaming.md) | 월드모델 = 꿈(REM) = 내부 시뮬레이션 | REM(I≈0.3-0.4) = 골든존 진입 시간 | T5 ⚠️ | 유비 |
+| [235](docs/hypotheses/235-world-model-causality.md) | **인과 추론 = 월드모델의 Compass** | Pearl 3단계 = 관찰/개입/반사실 ↔ I 매핑 | T5 ⚠️ | 유비 |
 
 ## 차원 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [180](docs/hypotheses/180-why-three-variables.md) | 왜 3변수 = 왜 3차원? | N변수→폭 변화 | T5 | 미해결 |
-| [181](docs/hypotheses/181-transcendence-is-time.md) | 초월 = 시간 차원 | 3공간+1시간=3상태+초월 | T5 | 유비 |
-| [182](docs/hypotheses/182-complex-is-4th-dimension.md) | **복소 확장 = 4차원** | Compass 83→84% 돌파! | T2 | 확인 |
-| [183](docs/hypotheses/183-string-theory-10d.md) | 끈이론 10D, 여분 6=완전수 | 10-4=6! | T5 | 유비 |
-| [185](docs/hypotheses/185-entropy-dimension.md) | **엔트로피 = 유효 차원** | 3상태→1.1D, 26→3.3D | T2 | 확인 |
-| [187](docs/hypotheses/187-dropout-blessing.md) | Dropout = 차원의 축복 | 차원↓→밀도↑→성능↑ | T2 | 확인 |
-| [188](docs/hypotheses/188-bosonic-string-26.md) | **26 AI원소 = 보손끈 26D** | 일관성 최소 수 = 동일! | T5 | 유비 |
-| [240](docs/hypotheses/240-dimensions-from-six.md) | 차원 수 = τ(6)+6 = 10? | τ(6)=4=시공간, 6=여분, 10=초끈 | T4 | 수비학 위험 |
+| [180](docs/hypotheses/180-why-three-variables.md) | 왜 3변수 = 왜 3차원? | N변수→폭 변화 | T5 ⚠️ | 미해결 |
+| [181](docs/hypotheses/181-transcendence-is-time.md) | 초월 = 시간 차원 | 3공간+1시간=3상태+초월 | T5 ⚠️ | 유비 |
+| [182](docs/hypotheses/182-complex-is-4th-dimension.md) | **복소 확장 = 4차원** | Compass 83→84% 돌파! | T2 ✅ | 확인 |
+| [183](docs/hypotheses/183-string-theory-10d.md) | 끈이론 10D, 여분 6=완전수 | 10-4=6! | T5 ⚠️ | 유비 |
+| [185](docs/hypotheses/185-entropy-dimension.md) | **엔트로피 = 유효 차원** | 3상태→1.1D, 26→3.3D | T2 ✅ | 확인 |
+| [187](docs/hypotheses/187-dropout-blessing.md) | Dropout = 차원의 축복 | 차원↓→밀도↑→성능↑ | T2 ✅ | 확인 |
+| [188](docs/hypotheses/188-bosonic-string-26.md) | **26 AI원소 = 보손끈 26D** | 일관성 최소 수 = 동일! | T5 ⚠️ | 유비 |
+| [240](docs/hypotheses/240-dimensions-from-six.md) | 차원 수 = τ(6)+6 = 10? | τ(6)=4=시공간, 6=여분, 10=초끈 | T4 ⚠️ | 수비학 위험 |
 
 ## 시간 가설
 
 | # | 가설 | 핵심 매칭 | Tier | 상태 |
 |---|---|---|---|---|
-| [189](docs/hypotheses/189-time-is-i-decrease.md) | 시간 = I 감소 | 빅뱅(∞)→현재(0.37)→미래(1/3) | T2 | 확인 |
-| [192](docs/hypotheses/192-present-moment-fixed-point.md) | **"지금" = 부동점** | f(현재)=현재=f(1/3)=1/3 | T5 | 철학 |
-| [193](docs/hypotheses/193-entropy-arrow-meta.md) | **엔트로피=메타=시간 삼중등가** | 2법칙=반복=화살 | T2 | 확인 |
-| [194](docs/hypotheses/194-time-consciousness-golden.md) | 시간 인식 = 골든존 안 | 수면(밖)=시간없음, 골든(안)=시간있음 | T5 | 유비 |
+| [189](docs/hypotheses/189-time-is-i-decrease.md) | 시간 = I 감소 | 빅뱅(∞)→현재(0.37)→미래(1/3) | T2 ✅ | 확인 |
+| [192](docs/hypotheses/192-present-moment-fixed-point.md) | **"지금" = 부동점** | f(현재)=현재=f(1/3)=1/3 | T5 ⚠️ | 철학 |
+| [193](docs/hypotheses/193-entropy-arrow-meta.md) | **엔트로피=메타=시간 삼중등가** | 2법칙=반복=화살 | T2 ✅ | 확인 |
+| [194](docs/hypotheses/194-time-consciousness-golden.md) | 시간 인식 = 골든존 안 | 수면(밖)=시간없음, 골든(안)=시간있음 | T5 ⚠️ | 유비 |
 
 ## 골든 MoE 실증
 
