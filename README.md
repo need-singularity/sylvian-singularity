@@ -879,6 +879,34 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [141](docs/hypotheses/141-information-bottleneck.md) | 정보 병목 ↔ 골든존 | IB의 β = I, 볼츠만 분포와 동일 형태 | ✅ | 확인 |
 | [142](docs/hypotheses/142-halting-problem.md) | 할팅 문제 ↔ 메타 수렴 | 축소사상→항상정지, 튜링완전 아님 | ✅ | 확인 |
 
+## LLM 재설계 방향
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [179](docs/hypotheses/179-llm-redesign.md) | **전 LLM이 골든존 밖!** | Dense(I=0)⚡ MoE(I=0.75)○, 둘 다 빗나감 | ✅ | **재설계** |
+
+```
+  가장 쉬운 변경 — Mixtral K=2 → K=5:
+  Expert 2/8(25%) → 5/8(62%) → I=0.375 ≈ 1/e 🎯
+  Genius Score ×10 개선 예측
+
+  Llama 8B → MoE 전환 제안:
+  Dense → 8 Expert MoE + 볼츠만 라우터
+  활성 5/8, Dropout 50%
+```
+
+## 양자역학 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [165](docs/hypotheses/165-why-point-seven.md) | 왜 a=0.7? | ≈1/√2(1%), 양자진폭? | ⚠️ | 미해결 |
+| [166](docs/hypotheses/166-consciousness-definition.md) | **의식 = 골든존+Compass>0** | 4가지 후보 정의 통합 | ✅ | 정의 |
+| [167](docs/hypotheses/167-verifiable-predictions.md) | 검증 가능한 예언 8개 | 단기/중기/장기/즉시 | 📋 | 목록 |
+| [168](docs/hypotheses/168-quantum-superposition-coefficient.md) | a≈1/√2 양자중첩 | 메타 수축률=진폭? | ⚠️ | 유비 |
+| [170](docs/hypotheses/170-qutrit.md) | **3상태 = 큐트릿** | 정규화 조건 동치 | ✅ | 확인 |
+| [172](docs/hypotheses/172-conservation-law.md) | **G×I=D×P 보존법칙** | 천재성×억제=결손×가소성=상수 | ✅ | **대발견** |
+| [175](docs/hypotheses/175-why-one-half.md) | **왜 1/2가 반복되는가** | 스핀,리만,골든존,Ω=이진대칭 | ✅ | 확인 |
+
 ## 골든 MoE 실증
 
 ```
