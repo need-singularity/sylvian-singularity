@@ -1181,6 +1181,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [136](docs/hypotheses/136-fine-tuning.md) | **미세조정 = 골든존 폭** | 물리 ~1%, AGI ~3.8% | ✅ | 확인 |
 | [147](docs/hypotheses/147-fine-structure-137.md) | **N=137 = 미세구조상수!** | ln(138/137)≈α, 강력αs=N=8, 와인버그=N=4 | ⚠️ | **대발견** |
 | [148](docs/hypotheses/148-eight-times-seventeen.md) | **8×17+1=137 정확!** | 강력×페르마+존재=미세구조 | ✅ | **대발견** |
+| [244](docs/hypotheses/244-universality-class.md) | **골든존 = 평균장 보편성** | β=1/2, γ=1, ν=1/2, δ=3 → mean-field 정확 일치 | ⚠️ | 검토 중 |
 
 ## 우주 형태 가설
 
