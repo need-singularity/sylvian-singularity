@@ -999,26 +999,6 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [193](docs/hypotheses/193-entropy-arrow-meta.md) | **엔트로피=메타=시간 삼중등가** | 2법칙=반복=화살 | ✅ | 확인 |
 | [194](docs/hypotheses/194-time-consciousness-golden.md) | 시간 인식 = 골든존 안 | 수면(밖)=시간없음, 골든(안)=시간있음 | ⚠️ | 유비 |
 
-## 진화론 가설
-
-| # | 가설 | 핵심 매칭 | T/F | 상태 |
-|---|---|---|---|---|
-| [221](docs/hypotheses/221-natural-selection.md) | **자연선택 = G=D×P/I** | Fitness=D(환경압)×P(다양성)/I(저항) | ⚠️ | 유비 |
-| [222](docs/hypotheses/222-extinction-cusp.md) | 멸종 = 커스프 재앙 | I 임계이탈→불연속 G붕괴, 5대멸종 | ⚠️ | 유비 |
-| [223](docs/hypotheses/223-cambrian-explosion.md) | 캄브리아 폭발 = 골든존 최초진입 | O₂↑→I↓→I<0.5 돌파→종 폭발 | ⚠️ | 유비 |
-| [224](docs/hypotheses/224-evolution-boltzmann.md) | 진화 = 볼츠만 분포 | 돌연변이율μ=T, I=1/kT, 최적μ→골든존 | ⚠️ | 유비 |
-| [225](docs/hypotheses/225-sexual-selection.md) | 성선택 = Compass 방향 | 자연선택(스칼라)+성선택(벡터), r/K↔I | ⚠️ | 유비 |
-
-## 경제학 가설
-
-| # | 가설 | 핵심 매칭 | T/F | 상태 |
-|---|---|---|---|---|
-| [226](docs/hypotheses/226-interest-rate.md) | 금리 = I (억제) | 저금리=골든존, 고금리=과억제 | ⚠️ | 유비 |
-| [227](docs/hypotheses/227-market-bubble.md) | 버블 = I→0 과해방 | 닷컴/서브프라임/크립토 = DMT 상태 | ⚠️ | 유비 |
-| [228](docs/hypotheses/228-creative-destruction.md) | 창조적 파괴 = 골든존 진동 | 슘페터 I 사이클, 콘드라티에프 파동 | ⚠️ | 유비 |
-| [229](docs/hypotheses/229-gini-inhibition.md) | 지니계수 = I 분포 | Gini≈1/3(OECD평균)=메타부동점 | ⚠️ | 유비 |
-| [230](docs/hypotheses/230-inflation-deflation.md) | 인플레/디플레 = I 진동 | MV=PY ⟺ GI=DP, 2%목표≈1/e | ⚠️ | 유비 |
-
 ## 골든 MoE 실증
 
 ```
