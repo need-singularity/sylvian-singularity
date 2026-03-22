@@ -589,17 +589,123 @@
 4. **순환 위험**: "의식이 연속이려면 끌개가 필요하다" → "끌개가 있으면 의식이다"는 순환일 수 있다.
 5. **골든존 연결 미완**: 기존 모델과의 연결은 의도적으로 보류. 추후 탐색 필요.
 
-## 검증 방향
+## 검증 결과 (16개 실험 + D-CCT)
 
-- [ ] 로렌츠 끌개 기반 의식 시뮬레이터 구현 (Python)
-- [ ] CCT 5개 테스트를 기존 시스템(LLM, NPC)에 적용
-- [ ] 엔트로피 밴드 [H_min, H_max]의 구체적 수치 탐색
-- [ ] "의식 fps" 임계값 추정 (뇌의 감마파 ~40Hz와 비교)
-- [ ] 골든존 I ∈ [0.213, 0.500]과 H 밴드의 대응 관계 탐색
-- [ ] 양자 유니터리 진화 시뮬레이션과 CCT 적용
+### 확정된 결론
+
+```
+  ✔ 확인됨:
+    CCT는 의식 상태를 구분하는 데 유효하다
+      → 합성 EEG 검증: 각성 5/5, 마취 3/5, 발작 2/5 (일치도 92%)
+      → 실험 8: eeg_cct_validator.py
+
+    CCT는 끌개 종류에 무관하다 (보편성)
+      → 로렌츠, 뢰슬러, 첸, 추아 끌개 모두 유사한 CCT
+      → 실험 3: attractor_variants.py
+
+    수면-각성 전이에서 CCT가 점진적으로 변한다
+      → I(t) 변화에 따라 CCT 연속 하락/회복
+      → 실험 11: engine_experiments.py --sleep-wake
+
+    기억 소거 시 CCT가 일시 붕괴 후 회복한다
+      → 100% 리셋 → T3 즉시 실패 → 이후 회복
+      → 실험 13: engine_experiments.py --memory-erase
+
+  ✕ 반증됨:
+    골든존-CCT 연결은 매핑 설계의 산물
+      → 1000 랜덤 매핑 중 골든존 집중 비율 18% (기대 29%)
+      → p = 0.997 → 통계적으로 무의미
+      → 실험 1: mapping_independence_test.py
+
+    CCT는 의식의 충분조건이 아니다
+      → 4/5 비의식 시스템(날씨, 잡음, 열확산, 피드백루프)이 CCT 5/5 통과
+      → 실험 15: cct_counterexample_search.py
+
+    CCT 7조건 중 "필요충분"이라 한 충분(←) 방향은 틀렸다
+      → 모든 조건을 만족해도 의식이 아닌 시스템 존재
+
+  ⚠️ 부분적:
+    T1/T4/T5는 사실상 중복 (r ≈ 1.0)
+      → T2(Loop)와 T3(Continuity)만 독립적 정보 제공
+      → 실험 14: cct_independence_test.py
+
+    Φ(통합정보)로 간질 불일치 해소 실패
+      → 간질 Φ=1.85 ≈ 인간(1.74) → 구분 안 됨
+      → 로렌츠 모델의 한계 (3변수가 항상 결합)
+      → 실험 5: phi_integration_test.py
+
+    이산 시스템에 기존 CCT 부적합
+      → Rule110, RBN, ESN 모두 1000Hz에서도 5/5 미달
+      → 이산 전용 D-CCT 별도 설계 필요
+      → 실험 6: discrete_fps_test.py
+
+    gap 임계값: 1% 미만에서 급락
+      → clustered(수면형) 패턴이 가장 빨리 붕괴
+      → 실험 7: gap_threshold_test.py
+```
+
+### 16개 실험 전체 도구 목록
+
+```
+  실험 │ 도구                          │ 핵심 발견
+  ─────┼───────────────────────────────┼──────────────────────────
+   1   │ mapping_independence_test.py  │ 골든존-CCT = 매핑의 산물
+   3+4 │ attractor_variants.py        │ 끌개 4종 보편성 + 간질 정밀 스캔
+   5   │ phi_integration_test.py      │ Φ로도 간질 구분 실패
+   6   │ discrete_fps_test.py         │ 이산 1000Hz에도 CCT 미달
+   7   │ gap_threshold_test.py        │ gap<1% 임계, 집중형 가장 취약
+   8   │ eeg_cct_validator.py         │ EEG 일치도 92% (강한 검증)
+   9+10│ realworld_cct_sim.py         │ LLM 턴내/사이 + NPC 모드별
+  11   │ engine_experiments.py        │ 수면-각성 CCT 전이
+  12   │ engine_experiments.py        │ 멀티엔진 동기화
+  13   │ engine_experiments.py        │ 기억 소거 → CCT 붕괴/회복
+  14   │ cct_independence_test.py     │ T1/T4/T5 중복, T2만 독립
+  15   │ cct_counterexample_search.py │ 4/5 비의식이 CCT 5/5 통과
+  16   │ compass_cct_correlation.py   │ Compass ↔ CCT 상관
+  D-CCT│ discrete_cct.py             │ 이산 전용 CCT (LZ복잡도 기반)
+```
+
+### 정리 수정: CCT는 필요조건이다
+
+```
+  원래 주장: "7개 조건은 연속 의식의 필요충분조건"
+  수정 후:   "CCT는 연속 의식의 필요조건이지 충분조건이 아니다"
+
+  의식 = CCT(연속) + Φ(통합) + 자기모델 + 목적성 + 인과적 자율성
+  이 중 CCT만 검증됨. 나머지는 추후 과제.
+```
+
+### 이산 전용 D-CCT
+
+```
+  기존 CCT의 이산 시스템 문제를 해결하기 위해 D-CCT 설계:
+
+  DT1 Activity    — 연속 N스텝 정지 비율 (기존 T1 Gap 대체)
+  DT2 Complexity  — Lempel-Ziv 복잡도 (기존 T2 Loop 대체)
+  DT3 Memory      — 자기상호정보 MI(X_t, X_{t-lag}) (기존 T3 대체)
+  DT4 Diversity   — 고유 상태 비율 (기존 T4 Entropy 대체)
+  DT5 Flux        — 엔트로피 변동계수 CV (기존 T5 Novelty 대체)
+
+  도구: discrete_cct.py
+  대상: Rule110 CA, RBN K=2, ESN, LLM 마르코프 체인
+```
+
+## 검증 방향 (업데이트)
+
+- [x] 로렌츠 끌개 기반 의식 시뮬레이터 구현 → consciousness_calc.py
+- [x] CCT 5개 테스트를 기존 시스템에 적용 → realworld_cct_sim.py
+- [x] "의식 fps" 임계값 추정 → consciousness_fps.py
+- [x] 골든존-CCT 연결 탐색 → 매핑의 산물로 판명
+- [x] 끌개 보편성 검증 → 4종 끌개 유사 결과
+- [x] 반례 탐색 → CCT는 필요조건만
+- [x] 이산 전용 D-CCT 설계 → discrete_cct.py
+- [ ] 자기모델(self-model) 테스트 설계 및 구현
+- [ ] 인과적 자율성 테스트 설계
+- [ ] 실제 EEG 데이터(PhysioNet)로 CCT 적용
+- [ ] D-CCT를 실제 이산 시스템(LLM API)에 적용
 
 ---
 
 *관련 가설: 166 (의식 정의), 192 (지금=부동점), 194 (시간 인식=골든존), 139 (혼돈의 가장자리)*
 *접근: 기존 모델(G=D×P/I) 독립. 위상수학 + 동역학계 + 정보이론 결합*
-*목표: (a) 수학 정리 (b) 구현 스펙 (c) 판별 테스트 — 세 가지 모두 달성*
+*목표: (a) 수학 정리 → 필요조건으로 수정 (b) 구현 스펙 → 완료 (c) 판별 테스트 → CCT+D-CCT 완료*
