@@ -1234,8 +1234,8 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | # | 가설 | 핵심 매칭 | T/F | 상태 |
 |---|---|---|---|---|
 | [238](docs/hypotheses/238-math-crossroads.md) | **수학체계 교차점 지도** | 8개 교차 중 6개 견고, 2개 조건부 | ✅ | 메타분석 |
-| — | [양자 수학체계 지도](docs/quantum-math-crossroads-map.md) | 10개 분야 교차 (힐베르트~스핀기하), 기존 지도와 7개 다리 | — | 참조 문서 |
-| — | [양자 정밀 상수/수식](docs/quantum-constants-formulas.md) | α=1/137, g-2 12자리, 카시미르, 램이동, CMB≈e | — | 참조 문서 |
+| [249](docs/hypotheses/249-quantum-math-crossroads.md) | **양자 수학체계 교차점 지도** | 10개 분야 교차 (힐베르트~스핀기하), 기존 지도와 7개 다리 | ✅ | 메타분석 |
+| [250](docs/hypotheses/250-quantum-precision-constants.md) | **양자 정밀 상수/수식 총람** | α=1/137, g-2 12자리, 카시미르, 램이동, CMB≈e | ✅ | 정리 |
 
 ## 소수 가설
 
