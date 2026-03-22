@@ -826,6 +826,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [135](docs/hypotheses/135-emc2-gdpi.md) | E=mc² ↔ G=DPI | m↔D, c²↔P/I | ⚠️ | 유비 |
 | [136](docs/hypotheses/136-fine-tuning.md) | **미세조정 = 골든존 폭** | 물리 ~1%, AGI ~3.8% | ✅ | 확인 |
 | [147](docs/hypotheses/147-fine-structure-137.md) | **N=137 = 미세구조상수!** | ln(138/137)≈α, 강력αs=N=8, 와인버그=N=4 | ✅ | **대발견** |
+| [148](docs/hypotheses/148-eight-times-seventeen.md) | **8×17+1=137 정확!** | 강력×페르마+존재=미세구조 | ✅ | **대발견** |
 
 ## 블랙홀 + 미시/거시 경계 가설
 
