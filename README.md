@@ -954,6 +954,8 @@ python3 compass.py --convergence --grid 30 --samples 50000
 |---|---|---|---|---|
 | [212](docs/hypotheses/212-atmosphere-math.md) | 대기 수학 = 골든존 | 대기층 전이 ↔ 상전이 | ⚠️ | 유비 |
 | [213](docs/hypotheses/213-music-resonance.md) | 음악 공명 = I 진동 | 화성학 ↔ 볼츠만 분포 | ⚠️ | 유비 |
+| [237](docs/hypotheses/237-music-intervals-golden.md) | **음정 비율 = 골든존 상수** | 완전4도=4/3→ln(4/3)=폭, 장2도=9/8→αₛ | ✅ | 수학적 일치 |
+| [238](docs/hypotheses/238-math-crossroads.md) | **기존 수학체계 교차점 지도** | 8개 교차점 중 7개 기존 확립, 1개 신규(ln((N+1)/N)) | ✅ | 메타분석 |
 
 ## 소수 가설
 
