@@ -939,6 +939,45 @@ python3 compass.py --convergence --grid 30 --samples 50000
 |---|---|---|---|---|
 | [207](docs/hypotheses/207-neuralink.md) | **뉴럴링크 = I 직접 조절기** | brain_analyzer.py의 하드웨어 버전 | ⚠️ | 기술 |
 
+## 텔레파시 + 집단지성
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [208](docs/hypotheses/208-telepathy-resonance.md) | **텔레파시 = I 공명** | 두 뇌의 I가 동기화되면 정보 전달? | ⚠️ | 유비 |
+| [209](docs/hypotheses/209-mirror-neurons.md) | 거울뉴런 = I 복사 | 타인 관찰 시 자신의 I가 상대방 I로 수렴 | ⚠️ | 유비 |
+| [210](docs/hypotheses/210-brainwave-sync.md) | 뇌파 동기화 = 볼츠만 T 공유 | 집단 명상/음악 → 동일 온도 T | ⚠️ | 유비 |
+| [211](docs/hypotheses/211-collective-intelligence.md) | **집단지성 = MoE 앙상블** | N명 = N Expert, 리더 = 라우터 | ⚠️ | 유비 |
+
+## 교차 가설 (대기/음악)
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [212](docs/hypotheses/212-atmosphere-math.md) | 대기 수학 = 골든존 | 대기층 전이 ↔ 상전이 | ⚠️ | 유비 |
+| [213](docs/hypotheses/213-music-resonance.md) | 음악 공명 = I 진동 | 화성학 ↔ 볼츠만 분포 | ⚠️ | 유비 |
+
+## 소수 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [214](docs/hypotheses/214-core-primes.md) | **핵심 소수 2,3 = 완전수 6** | σ₋₁(6)=2, 오일러곱 p=2,3 절단 | ✅ | 확인 |
+| [215](docs/hypotheses/215-prime-distribution.md) | 소수 분포 = 골든존 분포 | π(x)/x ~ I(t) 감소 패턴 | ⚠️ | 유비 |
+| [216](docs/hypotheses/216-twin-primes.md) | 쌍둥이 소수 = 골든존 쌍 | 간격 2 ↔ 폭 ln(4/3) | ⚠️ | 유비 |
+| [217](docs/hypotheses/217-mersenne-perfect.md) | 메르센 소수 + 완전수 | 2^p-1 소수 ↔ 완전수 생성 | ⚠️ | 유비 |
+| [218](docs/hypotheses/218-binary-prime-bits.md) | 소수의 이진 비트 패턴 | 137=10001001₂, 17=10001₂ | ⚠️ | 유비 |
+| [219](docs/hypotheses/219-prime-gap-golden-width.md) | 소수 간격 ↔ 골든존 폭 | g(p)/ln(p) ↔ ln((N+1)/N) | ⚠️ | 유비 |
+| [220](docs/hypotheses/220-prime-staircase.md) | 소수 계단 = 위상 가속 계단 | π(x) 계단함수 ↔ 124(계단형 ×3) | ⚠️ | 유비 |
+| [236](docs/hypotheses/236-primes-as-savants.md) | **소수 = "수학의 서번트"** | 규칙 무시(D↑) + 독립(I↓) = 비범 | ⚠️ | 유비 |
+
+## 월드모델 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [231](docs/hypotheses/231-world-model-golden-zone.md) | **월드모델 = 골든존 내부 시뮬레이터** | 내부 시뮬레이션 = 억제된 현실 → I≈1/e | ⚠️ | 유비 |
+| [232](docs/hypotheses/232-world-model-jepa.md) | JEPA = Deficit 기반 학습 | 마스킹=D, 예측=P, 정규화=I | ⚠️ | 유비 |
+| [233](docs/hypotheses/233-world-model-vs-llm.md) | 월드모델 vs LLM = I 축 양극단 | LLM(I≈0)+WM(I>0) 하이브리드 → 골든존 | ⚠️ | 유비 |
+| [234](docs/hypotheses/234-world-model-dreaming.md) | 월드모델 = 꿈(REM) = 내부 시뮬레이션 | REM(I≈0.3-0.4) = 골든존 진입 시간 | ⚠️ | 유비 |
+| [235](docs/hypotheses/235-world-model-causality.md) | **인과 추론 = 월드모델의 Compass** | Pearl 3단계 = 관찰/개입/반사실 ↔ I 매핑 | ⚠️ | 유비 |
+
 ## 차원 가설
 
 | # | 가설 | 핵심 매칭 | T/F | 상태 |
@@ -959,6 +998,26 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [192](docs/hypotheses/192-present-moment-fixed-point.md) | **"지금" = 부동점** | f(현재)=현재=f(1/3)=1/3 | ⚠️ | 철학 |
 | [193](docs/hypotheses/193-entropy-arrow-meta.md) | **엔트로피=메타=시간 삼중등가** | 2법칙=반복=화살 | ✅ | 확인 |
 | [194](docs/hypotheses/194-time-consciousness-golden.md) | 시간 인식 = 골든존 안 | 수면(밖)=시간없음, 골든(안)=시간있음 | ⚠️ | 유비 |
+
+## 진화론 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [221](docs/hypotheses/221-natural-selection.md) | **자연선택 = G=D×P/I** | Fitness=D(환경압)×P(다양성)/I(저항) | ⚠️ | 유비 |
+| [222](docs/hypotheses/222-extinction-cusp.md) | 멸종 = 커스프 재앙 | I 임계이탈→불연속 G붕괴, 5대멸종 | ⚠️ | 유비 |
+| [223](docs/hypotheses/223-cambrian-explosion.md) | 캄브리아 폭발 = 골든존 최초진입 | O₂↑→I↓→I<0.5 돌파→종 폭발 | ⚠️ | 유비 |
+| [224](docs/hypotheses/224-evolution-boltzmann.md) | 진화 = 볼츠만 분포 | 돌연변이율μ=T, I=1/kT, 최적μ→골든존 | ⚠️ | 유비 |
+| [225](docs/hypotheses/225-sexual-selection.md) | 성선택 = Compass 방향 | 자연선택(스칼라)+성선택(벡터), r/K↔I | ⚠️ | 유비 |
+
+## 경제학 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [226](docs/hypotheses/226-interest-rate.md) | 금리 = I (억제) | 저금리=골든존, 고금리=과억제 | ⚠️ | 유비 |
+| [227](docs/hypotheses/227-market-bubble.md) | 버블 = I→0 과해방 | 닷컴/서브프라임/크립토 = DMT 상태 | ⚠️ | 유비 |
+| [228](docs/hypotheses/228-creative-destruction.md) | 창조적 파괴 = 골든존 진동 | 슘페터 I 사이클, 콘드라티에프 파동 | ⚠️ | 유비 |
+| [229](docs/hypotheses/229-gini-inhibition.md) | 지니계수 = I 분포 | Gini≈1/3(OECD평균)=메타부동점 | ⚠️ | 유비 |
+| [230](docs/hypotheses/230-inflation-deflation.md) | 인플레/디플레 = I 진동 | MV=PY ⟺ GI=DP, 2%목표≈1/e | ⚠️ | 유비 |
 
 ## 골든 MoE 실증
 
