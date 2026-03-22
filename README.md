@@ -19,6 +19,10 @@
 > ```
 > 실행: `/ralph-loop` 또는 `proof_engine.py` 확장
 > 목표: 섬 A↔C, A↔D 연결하는 다리 발견 → ⚡ 돌파구
+>
+> ```
+> /ralph-loop:ralph-loop 🟩 초록색 상수 재귀적 깊이 우선 탐색(DFS). README의 상수 연결 현황과 docs/proofs/를 읽고, 미연결 쌍을 사칙연산·log·exp·거듭제곱으로 연결 시도. 새 발견 시 docs/proofs/에 기록하고 그 결과를 상수에 추가해서 먼저 탐색. 섬 간 다리 발견이 최우선. 새 🟩 발견하면 <promise>FOUND</promise> 출력. --max-iterations 20 --completion-promise FOUND
+> ```
 
 ## 수학체계 지도
 
