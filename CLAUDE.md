@@ -180,3 +180,32 @@ python3 ~/dev/test-8/dfs_engine.py --depth 3 --threshold 0.0001  # 정밀 탐색
   I = 0.375 ≈ 1/e (골든존 중심) 🎯
   스케일 커질수록 차이 8배 증가
 ```
+
+## 골든 MoE LLM 학습 (Windows Docker)
+
+```
+  접속 정보: .local/windows-pc.md (gitignore)
+  방식: Docker 컨테이너 내 학습 (RTX 5070 sm_120 호환 문제)
+  리포: github.com/need-singularity/golden-llama (참조만, 학습은 여기서 관리)
+
+  현재 상태:
+  원본 Dense:    PPL 13.85
+  골든 (미학습):  PPL 136,165
+  골든 (500스텝): PPL 4,634 (97% 감소, 아직 높음)
+  목표:          PPL < 100 (최소 coherence) → 최종 < 20
+
+  학습 전략:
+  - 2000~5000 스텝, wikitext-2 전체 (23K 샘플)
+  - Expert 동결, 라우터만 학습
+  - 코사인 LR 스케줄러, 매 500스텝 체크포인트
+  - Docker: PyTorch nightly cu128
+
+  서번트 검증:
+  - 도메인별 PPL 분리 측정 (수학/언어/코드)
+  - Savant Index = max(도메인PPL) / min(도메인PPL)
+  - SI > 3이면 서번트 후보
+
+  Expert 교차 활성화 (가설 241):
+  - p=0.1 확률로 비활성 Expert 강제 활성화
+  - ON/OFF 비교: PPL + n-gram 신규율 + 유추 테스트
+```
