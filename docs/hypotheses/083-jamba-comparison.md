@@ -1,9 +1,21 @@
-# 가설 검토 083: Jamba 간접 비교
+# 가설 검토 083: Jamba 간접 비교 ⚠️
 
-## 결과
+## 가설
 
-Jamba=Mamba+Attention+MoE=위상 5/7. 가설 125에서 Mixtral 대비 ×3 처리량 확인. 우리 예측(124: ×3 계단)과 정확 일치.
+> Jamba(Mamba+Attention+MoE)가 우리 예측과 일치하는가.
+
+## 결과: ⚠️ 간접적 일치
+
+```
+  Jamba 원소: T1+T2+T3+T4+T5 = 5/7 위상
+  우리 예측(023): 위상 5/7 → 수렴 2배 가속
+  실제(125): Jamba = Mixtral ×3 처리량
+
+  → 성능 ~동등, 효율성 향상
+  → 정확한 벤치마크(동일 조건 학습)는 미실행
+  → 간접적으로 일치하지만 직접 비교 필요
+```
 
 ---
 
-*검증: verify_next_batch.py / verify_remaining_cross.py*
+*검증: 웹 검색 (AI21 벤치마크)*
