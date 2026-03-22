@@ -896,6 +896,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | # | 가설 | 핵심 매칭 | T/F | 상태 |
 |---|---|---|---|---|
 | [179](docs/hypotheses/179-llm-redesign.md) | **전 LLM이 골든존 밖!** | Dense(I=0)⚡ MoE(I=0.75)○, 둘 다 빗나감 | ✅ | **재설계** |
+| [241](docs/hypotheses/241-expert-cross-activation.md) | **Expert 교차 활성화 = 인위적 서번트** | 실비우스열 결여의 AI 버전, 의미 재조합 시도 | 🔧 | 설계 |
 
 ```
   가장 쉬운 변경 — Mixtral K=2 → K=5:
