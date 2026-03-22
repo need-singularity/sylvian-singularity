@@ -948,14 +948,24 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [210](docs/hypotheses/210-brainwave-sync.md) | 뇌파 동기화 = 볼츠만 T 공유 | 집단 명상/음악 → 동일 온도 T | ⚠️ | 유비 |
 | [211](docs/hypotheses/211-collective-intelligence.md) | **집단지성 = MoE 앙상블** | N명 = N Expert, 리더 = 라우터 | ⚠️ | 유비 |
 
-## 교차 가설 (대기/음악)
+## 음악 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [213](docs/hypotheses/213-music-resonance.md) | 음악 공명 = I 진동 | GABA 조절(Koelsch 2014), 장르별 I 타겟 | ⚠️ | 유비 |
+| [237](docs/hypotheses/237-music-intervals-golden.md) | **음정 비율 = 골든존 상수** | 완전4도=4/3→ln(4/3)=폭, 장2도=9/8→αₛ | ✅ | 수학적 일치 |
+
+## 대기 가설
 
 | # | 가설 | 핵심 매칭 | T/F | 상태 |
 |---|---|---|---|---|
 | [212](docs/hypotheses/212-atmosphere-math.md) | 대기 수학 = 골든존 | 대기층 전이 ↔ 상전이 | ⚠️ | 유비 |
-| [213](docs/hypotheses/213-music-resonance.md) | 음악 공명 = I 진동 | 화성학 ↔ 볼츠만 분포 | ⚠️ | 유비 |
-| [237](docs/hypotheses/237-music-intervals-golden.md) | **음정 비율 = 골든존 상수** | 완전4도=4/3→ln(4/3)=폭, 장2도=9/8→αₛ | ✅ | 수학적 일치 |
-| [238](docs/hypotheses/238-math-crossroads.md) | **기존 수학체계 교차점 지도** | 8개 교차점 중 7개 기존 확립, 1개 신규(ln((N+1)/N)) | ✅ | 메타분석 |
+
+## 메타수학 (교차점 분석)
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [238](docs/hypotheses/238-math-crossroads.md) | **수학체계 교차점 지도** | 8개 교차 중 6개 견고, 2개 조건부 | ✅ | 메타분석 |
 
 ## 소수 가설
 
