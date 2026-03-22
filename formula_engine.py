@@ -71,25 +71,27 @@ MATH_TARGETS = {
 def safe_ops(a, b):
     """두 값에 대한 안전한 연산 목록 반환"""
     results = []
-    results.append((a + b, f'({a[1]}+{b[1]})'))
-    results.append((a[0] - b[0], f'({a[1]}-{b[1]})'))
-    results.append((b[0] - a[0], f'({b[1]}-{a[1]})'))
-    results.append((a[0] * b[0], f'({a[1]}×{b[1]})'))
+    av, an = a
+    bv, bn = b
+    results.append((av + bv, f'({an}+{bn})'))
+    results.append((av - bv, f'({an}-{bn})'))
+    results.append((bv - av, f'({bn}-{an})'))
+    results.append((av * bv, f'({an}×{bn})'))
 
-    if b[0] != 0:
-        results.append((a[0] / b[0], f'({a[1]}/{b[1]})'))
-    if a[0] != 0:
-        results.append((b[0] / a[0], f'({b[1]}/{a[1]})'))
+    if bv != 0:
+        results.append((av / bv, f'({an}/{bn})'))
+    if av != 0:
+        results.append((bv / av, f'({bn}/{an})'))
 
-    if a[0] > 0 and abs(b[0]) < 10:
+    if av > 0 and abs(bv) < 10:
         try:
-            val = a[0] ** b[0]
+            val = av ** bv
             if np.isfinite(val) and abs(val) < 1e10:
-                results.append((val, f'({a[1]}^{b[1]})'))
+                results.append((val, f'({an}^{bn})'))
         except:
             pass
 
-    return [(v, expr) for v, expr in results if np.isfinite(v) and abs(v) < 1e10]
+    return [(v, expr) for v, expr in results if isinstance(v, (int, float)) and np.isfinite(v) and abs(v) < 1e10]
 
 
 def unary_ops(a):
@@ -209,7 +211,7 @@ def main():
     parser = argparse.ArgumentParser(description="공식 생성 엔진")
     parser.add_argument('--target', type=float, default=None, help="특정 값을 만드는 공식 탐색")
     parser.add_argument('--depth', type=int, default=2, help="탐색 깊이 (기본 2)")
-    parser.add_argument('--threshold', type=float, default=0.01, help="오차 임계값 (기본 1%)")
+    parser.add_argument('--threshold', type=float, default=0.01, help="오차 임계값 (기본 0.01)")
     parser.add_argument('--significance', action='store_true', help="텍사스 명사수 검정")
     parser.add_argument('--physics', action='store_true', help="물리 상수 타겟")
     parser.add_argument('--math', action='store_true', help="수학 상수 타겟")
