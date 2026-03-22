@@ -82,13 +82,14 @@ G × I = D × P (정의에서 유도, 모델 자체가 미검증)
   → 구조적 발견 확인
 ```
 
-## 도구 목록 (25개)
+## 도구 목록 (26개)
 
 ```
   핵심:          brain_singularity.py, compass.py, timeline.py
   골든MoE:       golden_moe.py, golden_moe_torch.py, golden_moe_cifar.py
   분석:          formula_engine.py, texas_sharpshooter.py, complex_compass.py
                  nstate_calculator.py, brain_analyzer.py, llm_expert_analyzer.py
+  DFS 탐색:      dfs_engine.py
   검증:          verify_*.py (11개)
   세션:          session_briefing.py
 ```
@@ -115,6 +116,10 @@ python3 ~/dev/test-8/llm_expert_analyzer.py --redesign
 
 # 뇌 프로필
 python3 ~/dev/test-8/brain_analyzer.py --all
+
+# DFS 자동 탐색 (ralph-loop 대체)
+python3 ~/dev/test-8/dfs_engine.py --depth 2 --threshold 0.001
+python3 ~/dev/test-8/dfs_engine.py --depth 3 --threshold 0.0001  # 정밀 탐색
 ```
 
 ## 백그라운드 실행
