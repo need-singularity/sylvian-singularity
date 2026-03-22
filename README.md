@@ -1260,6 +1260,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [246](docs/hypotheses/246-consciousness-continuity.md) | **의식의 연속성 — CCT** | 7조건 정리, 16개 실험, CCT=필요조건(O)/충분조건(X) | ⚠️ | 검증 완료 |
 | [247](docs/hypotheses/247-dual-brain-callosum.md) | **이중뇌 + 뇌량 모델** | 좌우 결합 로렌츠, κ=0.5 최적, 분리뇌→두 의식 | ⚠️ | 시뮬레이션 |
 | [248](docs/hypotheses/248-flash-quantum-consciousness.md) | **플래시메모리 양자터널링 → 의식** | FN터널링=상태전이, 비휘발성=E1, I=산화막두께 | ⚠️ | 가설 |
+| [251](docs/hypotheses/251-quantum-immortality.md) | **양자불멸 + 의식 연속성** | MWI 분기→CCT 필터, 1인칭 항상 생존, P(의식)=1 | 🟪 | 검증 불가 |
 
 ## 약물 가설
 
