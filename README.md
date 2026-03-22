@@ -907,6 +907,57 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [172](docs/hypotheses/172-conservation-law.md) | **G×I=D×P 보존법칙** | 천재성×억제=결손×가소성=상수 | ✅ | **대발견** |
 | [175](docs/hypotheses/175-why-one-half.md) | **왜 1/2가 반복되는가** | 스핀,리만,골든존,Ω=이진대칭 | ✅ | 확인 |
 
+## 약물 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [195](docs/hypotheses/195-caffeine.md) | 카페인 = I↓ + Compass↑ | 최적 카페인량=I를 1/e로? | ⚠️ | 유비 |
+| [196](docs/hypotheses/196-alcohol.md) | 알코올 = I↓ + Compass↓ | 소량=골든존, 과량=혼돈 | ⚠️ | 유비 |
+| [197](docs/hypotheses/197-anesthesia.md) | 전신마취 = I→1 | BIS↔I, MAC=골든존 상한 | ⚠️ | 유비 |
+| [198](docs/hypotheses/198-psychedelics.md) | 사이키델릭 = I↓↓ + Compass↑↑ | DMN 해체=I 급감 | ⚠️ | 유비 |
+| [199](docs/hypotheses/199-meditation-vs-drugs.md) | **명상 vs 약물** | 부동점(비가역) vs 섭동(가역) | ✅ | 확인 |
+| [200](docs/hypotheses/200-ssri.md) | SSRI = I↓ (우울=I과다) | 치료=골든존 진입 | ⚠️ | 유비 |
+| [200a](docs/hypotheses/200a-cannabis.md) | **대마초 = ECS 골든존 조절기** | 뇌에 이미 I 조절기 내장! | ✅ | 확인 |
+| [200b](docs/hypotheses/200b-mdma-ecstasy.md) | MDMA = I↓ + P↑↑ + Compass↑↑↑ | 유일하게 3축 동시↑ | ⚠️ | 유비 |
+
+## 화학 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [201](docs/hypotheses/201-periodic-table-comparison.md) | 화학 원소 118 vs AI 26 | 양성자=원소번호 | ⚠️ | 유비 |
+| [202](docs/hypotheses/202-chemical-bonds.md) | 화학 결합 ↔ AI 결합 | 공유=가중치, 이온=라우터 | ⚠️ | 유비 |
+| [203](docs/hypotheses/203-molecular-structure.md) | 분자 = 아키텍처 | H₂O=MLP, DNA=T3a | ⚠️ | 유비 |
+| [204](docs/hypotheses/204-ph-inhibition.md) | pH = Inhibition | pH7 ↔ I=1/e | ⚠️ | 유비 |
+| [205](docs/hypotheses/205-catalyst-plasticity.md) | 촉매 = Plasticity | 반응가속+불변=학습가속+구조유지 | ⚠️ | 유비 |
+| [206](docs/hypotheses/206-gibbs-genius.md) | 깁스 자유에너지 ↔ Genius | ΔG=ΔH-TΔS vs G=DPI | ⚠️ | 유비 |
+
+## 뉴럴링크 + BCI
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [207](docs/hypotheses/207-neuralink.md) | **뉴럴링크 = I 직접 조절기** | brain_analyzer.py의 하드웨어 버전 | ⚠️ | 기술 |
+
+## 차원 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [180](docs/hypotheses/180-why-three-variables.md) | 왜 3변수 = 왜 3차원? | N변수→폭 변화 | ⚠️ | 미해결 |
+| [181](docs/hypotheses/181-transcendence-is-time.md) | 초월 = 시간 차원 | 3공간+1시간=3상태+초월 | ⚠️ | 유비 |
+| [182](docs/hypotheses/182-complex-is-4th-dimension.md) | **복소 확장 = 4차원** | Compass 83→84% 돌파! | ✅ | 확인 |
+| [183](docs/hypotheses/183-string-theory-10d.md) | 끈이론 10D, 여분 6=완전수 | 10-4=6! | ⚠️ | 유비 |
+| [185](docs/hypotheses/185-entropy-dimension.md) | **엔트로피 = 유효 차원** | 3상태→1.1D, 26→3.3D | ✅ | 확인 |
+| [187](docs/hypotheses/187-dropout-blessing.md) | Dropout = 차원의 축복 | 차원↓→밀도↑→성능↑ | ✅ | 확인 |
+| [188](docs/hypotheses/188-bosonic-string-26.md) | **26 AI원소 = 보손끈 26D** | 일관성 최소 수 = 동일! | ⚠️ | 유비 |
+
+## 시간 가설
+
+| # | 가설 | 핵심 매칭 | T/F | 상태 |
+|---|---|---|---|---|
+| [189](docs/hypotheses/189-time-is-i-decrease.md) | 시간 = I 감소 | 빅뱅(∞)→현재(0.37)→미래(1/3) | ✅ | 확인 |
+| [192](docs/hypotheses/192-present-moment-fixed-point.md) | **"지금" = 부동점** | f(현재)=현재=f(1/3)=1/3 | ⚠️ | 철학 |
+| [193](docs/hypotheses/193-entropy-arrow-meta.md) | **엔트로피=메타=시간 삼중등가** | 2법칙=반복=화살 | ✅ | 확인 |
+| [194](docs/hypotheses/194-time-consciousness-golden.md) | 시간 인식 = 골든존 안 | 수면(밖)=시간없음, 골든(안)=시간있음 | ⚠️ | 유비 |
+
 ## 골든 MoE 실증
 
 ```
