@@ -1216,6 +1216,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [160](docs/hypotheses/160-neurodiversity-ratio.md) | 신경다양성 10~15% ≈ 골든존 9% | 신경다양성 ≠ 질병 = I 분포 자연변이 | ✅ | 확인 |
 | [161](docs/hypotheses/161-left-right-brain.md) | 좌뇌=I, 우뇌=D→P | Treffert: 좌뇌손상→우뇌보상=서번트 | ⚠️ | 유비 |
 | [162](docs/hypotheses/162-acquired-savant.md) | **후천적 서번트 = 커스프 진입** | 사고→D↑I↓→G급증=계단점프(124) | ✅ | 확인 |
+| [243](docs/hypotheses/243-brain-data-survey.md) | **신경과학 문헌 서베이** | GABA/실비우스열/DMN/명상/TMS 7개 영역 종합 | 🔬 | 문헌조사 |
 
 ## 빅뱅 이전 가설
 
