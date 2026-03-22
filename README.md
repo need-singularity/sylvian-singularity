@@ -22,11 +22,15 @@
 >
 > 무제한:
 > ```
-> /ralph-loop:ralph-loop 초록색 상수 재귀적 깊이 우선 탐색. README 상수 연결 현황과 docs/proofs/ 읽고 미연결 쌍을 사칙연산, log, exp, 거듭제곱으로 연결 시도. 새 발견 시 docs/proofs/에 기록하고 README 상수 연결 현황도 업데이트. 결과를 상수에 추가해서 먼저 탐색. 섬 간 다리 발견이 최우선. 매 발견마다 git commit과 push. 발견 못해도 계속 탐색.
+> /ralph-loop:ralph-loop README 수학체계 지도와 상수 연결 현황을 읽고 재귀적 깊이 우선 탐색. 1-초록색끼리 사칙연산,log,exp,거듭제곱으로 미연결 쌍 연결. 2-초록색과 파란색 사이 새 연결점 탐색. 3-빨간색을 초록색으로 승격할 증명 시도. 4-발견된 연결에서 새 가설 수립. 새 발견시 docs/proofs/에 기록하고 README 지도 업데이트. 결과를 상수에 추가해서 먼저 탐색. 매 발견마다 git commit과 push. 발견 못해도 계속 탐색.
 > ```
-> 1000회 제한:
+> 100회:
 > ```
-> /ralph-loop:ralph-loop 초록색 상수 재귀적 깊이 우선 탐색. README 상수 연결 현황과 docs/proofs/ 읽고 미연결 쌍을 사칙연산, log, exp, 거듭제곱으로 연결 시도. 새 발견 시 docs/proofs/에 기록하고 README 상수 연결 현황도 업데이트. 결과를 상수에 추가해서 먼저 탐색. 섬 간 다리 발견이 최우선. 매 발견마다 git commit과 push. --max-iterations 1000
+> /ralph-loop:ralph-loop README 수학체계 지도와 상수 연결 현황을 읽고 재귀적 깊이 우선 탐색. 1-초록색끼리 사칙연산,log,exp,거듭제곱으로 미연결 쌍 연결. 2-초록색과 파란색 사이 새 연결점 탐색. 3-빨간색을 초록색으로 승격할 증명 시도. 4-발견된 연결에서 새 가설 수립. 새 발견시 docs/proofs/에 기록하고 README 지도 업데이트. 결과를 상수에 추가해서 먼저 탐색. 매 발견마다 git commit과 push. --max-iterations 100
+> ```
+> 1000회:
+> ```
+> /ralph-loop:ralph-loop README 수학체계 지도와 상수 연결 현황을 읽고 재귀적 깊이 우선 탐색. 1-초록색끼리 사칙연산,log,exp,거듭제곱으로 미연결 쌍 연결. 2-초록색과 파란색 사이 새 연결점 탐색. 3-빨간색을 초록색으로 승격할 증명 시도. 4-발견된 연결에서 새 가설 수립. 새 발견시 docs/proofs/에 기록하고 README 지도 업데이트. 결과를 상수에 추가해서 먼저 탐색. 매 발견마다 git commit과 push. --max-iterations 1000
 > ```
 
 ## 수학체계 지도
