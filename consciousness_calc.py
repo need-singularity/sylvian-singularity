@@ -14,6 +14,7 @@ CCT(Consciousness Continuity Test) 5개 테스트로 의식 연속성을 판정�
 import argparse
 import os
 import sys
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from datetime import datetime
 
 import numpy as np
@@ -634,12 +635,25 @@ def main():
 
     if args.all:
         all_results = {}
-        for name, preset in PRESETS.items():
-            params = dict(preset)
-            results, lyap, _ = run_system(name, params, args.steps, args.dt, do_plot=args.plot)
-            all_results[name] = (results, lyap)
-            if args.plot:
-                print(f"  [plot] {name} 저장 완료")
+        items = list(PRESETS.items())
+        n_workers = min(len(items), os.cpu_count() or 4)
+
+        print(f"  [병렬] {len(items)}개 시스템, {n_workers} workers")
+
+        with ProcessPoolExecutor(max_workers=n_workers) as pool:
+            futures = {
+                pool.submit(run_system, name, dict(preset), args.steps, args.dt, args.plot): name
+                for name, preset in items
+            }
+            for future in as_completed(futures):
+                name = futures[future]
+                results, lyap, plot_path = future.result()
+                all_results[name] = (results, lyap)
+                if plot_path:
+                    print(f"  [plot] {name} 저장 완료")
+
+        # 원래 순서 유지
+        all_results = {name: all_results[name] for name, _ in items if name in all_results}
 
         print_all(all_results)
         return
