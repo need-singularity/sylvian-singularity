@@ -1002,6 +1002,7 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [185](docs/hypotheses/185-entropy-dimension.md) | **엔트로피 = 유효 차원** | 3상태→1.1D, 26→3.3D | ✅ | 확인 |
 | [187](docs/hypotheses/187-dropout-blessing.md) | Dropout = 차원의 축복 | 차원↓→밀도↑→성능↑ | ✅ | 확인 |
 | [188](docs/hypotheses/188-bosonic-string-26.md) | **26 AI원소 = 보손끈 26D** | 일관성 최소 수 = 동일! | ⚠️ | 유비 |
+| [240](docs/hypotheses/240-dimensions-from-six.md) | 차원 수 = τ(6)+6 = 10? | τ(6)=4=시공간, 6=여분, 10=초끈 | ⚠️ | 수비학 위험 |
 
 ## 시간 가설
 
