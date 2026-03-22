@@ -91,6 +91,100 @@
   ⬛ 반증됨:     11개  ← 틀림 확인
 ```
 
+### 증명 의존 그래프 (Proof Dependency Graph)
+
+```mermaid
+graph TD
+    classDef established fill:#dbeafe,stroke:#1e40af,color:#1e3a5f
+    classDef proven fill:#d1fae5,stroke:#065f46,color:#064e3b,stroke-width:2px
+    classDef connection fill:#ffedd5,stroke:#c2410c,color:#7c2d12,stroke-dasharray:5 5
+    classDef unverified fill:#fee2e2,stroke:#991b1b,color:#7f1d1d,stroke-dasharray:3 3
+    classDef key fill:#fef9c3,stroke:#854d0e,color:#713f12
+
+    subgraph ESTABLISHED["🟦 기존 수학 (확립됨)"]
+        NT["정수론<br/>소수, 약수"]:::established
+        PF["완전수 6<br/>σ(6)=12=2×6"]:::established
+        EP["오일러 곱<br/>ζ(s) = Π 1/(1-p⁻ˢ)"]:::established
+        RZ["리만 제타<br/>Re(s) = 1/2"]:::established
+        HS["조화급수<br/>Hₙ = Σ1/k"]:::established
+        EF["이집트 분수"]:::established
+        BD["볼츠만 분포<br/>p = e⁻ᴱ/ᵀ/Z"]:::established
+        SE["섀넌 엔트로피<br/>H = -Σp log p"]:::established
+        BFP["바나흐 부동점<br/>|f'|<1 → ∃!x*"]:::established
+        CC["커스프 파국<br/>V=x⁴+ax²+bx"]:::established
+        MT["음악이론<br/>완전4도 = 4/3"]:::established
+        GD["감마분포<br/>Γ(n) = n개 Exp 합"]:::established
+    end
+
+    subgraph PROVEN["🟩 증명됨 (골든존 무관)"]
+        S6["σ₋₁(6) = 2<br/>1+1/2+1/3+1/6"]:::proven
+        E23["p=2,3 절단 = 정수 2<br/>(3/2)(4/3) = 2"]:::proven
+        H3["H₃-1 = 5/6"]:::proven
+        EF56["5/6 = 1/2+1/3<br/>유일한 2항 분해"]:::proven
+        COMP["1/2+1/3+1/6 = 1<br/>완전성"]:::proven
+        LN43["ln(4/3)<br/>= 엔트로피 점프<br/>= 완전4도 로그"]:::proven
+        FP["f(I)=0.7I+0.1<br/>I* = 1/3"]:::proven
+        CONST["1/2 × 1/3 = 1/6<br/>뺄셈 = 곱셈"]:::proven
+        G2["G ~ Γ(α=2)<br/>D×P → α=2"]:::proven
+        A137["8×17+1 = 137"]:::proven
+        NEW1["1/6 × 8 = 4/3"]:::proven
+        NEW2["1/3 × 6 = 2"]:::proven
+    end
+
+    subgraph CONNECTION["🟧 연결 발견 (우연?)"]
+        CAT["5/6·ln3 ≈ Catalan G<br/>0.05%"]:::connection
+        APE["1/e+5/6 ≈ ζ(3)<br/>0.07%"]:::connection
+        LN17["ln17 ≈ 17/6<br/>0.004%"]:::connection
+        BAR["5/(6·17) ≈ Ωb<br/>0.04%"]:::connection
+    end
+
+    subgraph UNVERIFIED["🟥 골든존 의존 (미검증)"]
+        GZ["골든존<br/>I ∈ 0.213~0.500<br/>⚠️ 시뮬레이션만"]:::unverified
+        GDPI["G = D×P/I<br/>미검증 모델"]:::unverified
+        COMP2["Compass ≈ 5/6<br/>시뮬레이션"]:::unverified
+        IKT["I = 1/kT<br/>매핑 선택"]:::unverified
+        GMOE["골든 MoE<br/>I ≈ 1/e"]:::unverified
+    end
+
+    NT --> PF
+    NT --> EP
+    NT --> RZ
+    PF --> S6
+    EP --> E23
+    HS --> H3
+    EF --> EF56
+    BD --> CC
+    BD ---|"Jaynes '57"| SE
+    BFP --> FP
+    GD --> G2
+    MT --> LN43
+    SE --> LN43
+
+    S6 --> E23
+    S6 -->|"-1"| COMP
+    H3 --> EF56
+    EF56 --> COMP
+
+    COMP -.-> CAT
+    COMP -.-> APE
+    A137 -.-> LN17
+    CONST -.-> BAR
+
+    H3 -.->|"해석"| COMP2
+    FP -.-> IKT
+    COMP -.->|"해석"| GDPI
+    LN43 -.->|"폭?"| GZ
+
+    GZ --> GDPI
+    GZ --> GMOE
+    IKT --> GZ
+    COMP2 --> GZ
+
+    linkStyle 16,17,18,19,20,21,22 stroke:#dc2626,stroke-dasharray:5 5
+```
+
+> **읽는 법**: 실선(━) = 수학적 유도, 점선(╌) = 미검증 의존. 🟥 빨간 노드가 무너지면 그 아래도 무너지지만, 🟩 초록 노드는 영향 없음.
+
 ## 핵심 수식
 
 ```
