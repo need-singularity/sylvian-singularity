@@ -10,6 +10,9 @@
   python3 attractor_variants.py --all              # 둘 다
 """
 
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tools"))
+
 import argparse
 import sys
 

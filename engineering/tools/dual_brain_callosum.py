@@ -21,6 +21,9 @@
   python3 dual_brain_callosum.py --plot              # matplotlib 저장
 """
 
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tools"))
+
 import argparse
 import os
 import sys

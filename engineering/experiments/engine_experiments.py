@@ -12,6 +12,9 @@
   python3 engine_experiments.py --all            # 전부
 """
 
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tools"))
+
 import argparse
 import sys
 
