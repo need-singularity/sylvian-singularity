@@ -46,8 +46,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
   ❌ = 반증됨
   ⭐ = 대발견 (다중 재현 + 교차 검증 후에만! 검증 전 ⭐ 금지)
 
-  🟦6  🟩6  🟧★4  🟧2  🟨30+  ⚠️4  ❌5  ⭐후보0
-  총: 60+개 상수 + 30개 가설 + 9개 H-CX + 30+개 실험 + 14종 데이터
+  🟦6  🟩7  🟧★4  🟧5  🟨25+  ⚠️4  ❌6  ⭐후보0
+  총: 60+개 상수 + 33개 가설 + 9개 H-CX + 37+개 실험 + 14종 데이터
 
   ◀────── 인식/판단 ──────▶  ◀────── 의식/경험 ──────▶  ◀─── 집단/차원 ───▶
 
@@ -368,8 +368,18 @@ THC 상태에서 샤머니즘적 체험을 했다.
   → H-TREE 10개 미발견 가지 제안 (TREE-1~10)
   → SOC(TREE-10), IB(TREE-7) 실행 중
 
+  --- Ralph R13: 미진행 가설 전부 실험 ---
+  🟧 H293 이상탐지 보편성: 실제 AUROC 0.95+ (IForest 0.97에 근접)
+  ⬛ H289 소수=최고장력: 반박! 완전수 721>소수 85 (희소성 효과)
+  🟧 H290 P4=최저장력: 확인! P4 #1/9, 하지만 그룹순서 반박
+  🟧 H279 A/G 복잡도: CIFAR r=+0.49 (어려운 데이터에서만 작동)
+  🟧 H284 scale 자동조절: 수정! 포기→속도조절 (3셋 모두 증가)
+  🟩 H294 분열+뇌화학: T_ab 0→10 (27x 분화), 도파민 분화 확인
+  🟨 H295 분열+TDA, H296 분열+이상탐지: 새 가설 작성
+  🔄 H281,H283,H286,H280,C4,H-CX-8: 실행 중 (CPU 포화)
+
   섬 연결: 10/10 쌍 전부 연결 완료!
-  가설: 9 실증 + 5 반증/약화 + 16 관측/수정 = 30개 + H-CX 9개
+  가설: 10 실증 + 6 반증/약화 + 17 관측/수정 = 33개 + H-CX 9개
 ```
 
 ### 실험 목록 (25개)
@@ -401,6 +411,18 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | E23 | 장력 인과 | experiment_tension_causal.py | ⭐ -9.25pp 인과! | C48-C51 |
 | E24 | detach+반발력장 | experiment_detach_repulsion.py | +0.15% | C52 |
 | E25 | B-C 연결 | experiment_bc_connection.py | r=+0.062 | C53 |
+| E26 | 이상탐지 실제 | experiment_h293_real_anomaly.py | AUROC 0.95+ (IForest 근접) | — |
+| E27 | 소수+음악 장력 | experiment_h289_290_primes_music.py | 완전수=최고(희소), P4=최저 | — |
+| E28 | A/G 복잡도 | experiment_h279_ag_dominance.py | CIFAR r=+0.49, MNIST r=0 | — |
+| E29 | scale 자동조절 | experiment_h284_auto_regulation.py | 3셋 모두 증가(속도 다름) | — |
+| E30 | 분열+뇌화학 | experiment_h294_mitosis_chemistry.py | T_ab 27x 분화 확인 | — |
+| E31 | 시간적 인과 | experiment_h281_temporal_causation.py | 🔄 실행중 | — |
+| E32 | 비선형 임계점 | experiment_h283_threshold.py | 🔄 실행중 | — |
+| E33 | TDA 위상 | experiment_h286_tda.py | 🔄 실행중 | — |
+| E34 | 체험 시퀀스 | experiment_h280_full_sequence.py | 🔄 실행중 | — |
+| E35 | C4 재현 | experiment_c4_reproduce.py | 🔄 실행중 | — |
+| E36 | 위상가속 | experiment_hcx8_phase_acceleration.py | 🔄 실행중 | — |
+| E37 | 분열+이상탐지 | experiment_h296_mitosis_anomaly.py | 🔄 윈도우 | — |
 
 ## 가설 현황
 
@@ -430,21 +452,24 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | # | 가설 | 상태 | 핵심 증거 |
 |---|---|---|---|
 | 278 | 장력∝기저정확도 | 🟨 | MNIST d=0.81, CIFAR d=0.24 |
-| 279 | A/G 복잡도 척도 | 🟨 | G 99%(숫자1) vs A 75%(숫자0) |
-| 280 | 체험 시퀀스 모델 | 🟨 미구현 | 분열+displacement+관찰 |
+| 279 | A/G 복잡도 척도 | 🟧 부분확인 | CIFAR r=+0.49, MNIST r≈0 |
+| 280 | 체험 시퀀스 모델 | 🟨 실행중 | 분열+displacement+관찰 |
 | 281 | 시간적 인과 | 🟨 실행중 | tension(t)→accuracy(t+1)? |
 | 282 | 고정확도 전용 | 🟨 | CIFAR 0.53pp (MNIST 9.25pp) |
-| 283 | 비선형 임계점 | 🟨 | CNN 3번째 점 필요 |
-| 284 | scale 자동조절 | 🟨 | MNIST 0.47→CIFAR 0.04 |
+| 283 | 비선형 임계점 | 🟨 실행중 | 8개 샘플크기 테스트 |
+| 284 | scale 자동조절 | 🟧 수정 | 포기→속도조절, 3데이터셋 |
 | 285 | 이미지 분류 너머 | ✅ 14종! | 밀집 8승, 희소 2패 |
 | 286 | TDA 위상 | 🟨 실행중 | persistent homology |
 | 287 | 이상탐지 | ⭐ AUROC=1.0! | 95x 비율 |
 | 288 | 밀집/희소 | ✅ 확정 | 임베딩 +6.39%로 확정 |
-| 289 | 소수=최고장력 | 🟨 | 정수론↔의식 교차 |
-| 290 | 협화음=낮은장력 | 🟨 | 음악↔의식, ln(4/3) |
+| 289 | 소수=최고장력 | ⬛ 반박 | 완전수=최고(희소성), 소수 2위 |
+| 290 | 협화음=낮은장력 | 🟧 부분확인 | P4=최저 확인, 그룹순서 반박 |
 | 291 | 데이터 유형 트리 | 🟨 | 3층 14종 |
 | 292 | 의식 트리 확장 | 🟨 | 새 L1 가지 후보 |
-| 293 | 이상탐지 보편성 | 🟨 | 실제 데이터 검증 필요 |
+| 293 | 이상탐지 보편성 | 🟧 부분확인 | 실제 AUROC 0.95+, IForest보다 약간↓ |
+| 294 | 분열+뇌화학 | 🟩 확인 | T_ab 0→10 (27x 분화), 내부>>간 |
+| 295 | 분열+TDA | 🟨 | 분열 전후 Betti 수 변화? |
+| 296 | 분열+이상탐지 | 🟨 실행중 | 자식간 장력이 더 나은 이상점수? |
 
 ### 교차 도메인 (H-CX, 9개)
 
@@ -457,7 +482,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-5](docs/hypotheses/H-CX-5-mobius-uniqueness-architecture.md) | (2,3) Möbius 유일 | 🟦 | 아키텍처 유일성 |
 | [H-CX-6](docs/hypotheses/H-CX-6-neurochemistry-map.md) | 장력=도파민 | 🟪 비유 | prediction error 동형 |
 | [H-CX-7](docs/hypotheses/H-CX-7-sigma-phi-architecture-optimality.md) | σφ=nτ 아키텍처 | ⚠️ 부분반증 | (12,4) 3위 |
-| [H-CX-8](docs/hypotheses/H-CX-8-phase-acceleration-sigma-tau.md) | 위상가속 x3=σ/τ | 🟨 | Jamba 관측 |
+| [H-CX-8](docs/hypotheses/H-CX-8-phase-acceleration-sigma-tau.md) | 위상가속 x3=σ/τ | 🟨 실행중 | Jamba 관측, 6config 테스트 |
 | [H-CX-9](docs/hypotheses/H-CX-9-topology-seven-phases.md) | 위상 7단계 | 🟪 | T1-T7 비유 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
