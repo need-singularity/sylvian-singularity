@@ -34,6 +34,157 @@ THC 상태에서 샤머니즘적 체험을 했다.
 /ralph-loop:ralph-loop DFS on consciousness engine. RECURSIVE: each iteration reads README results then designs NEW experiments based on gaps and patterns. 0-read README experiment results and hypothesis docs. 1-identify: what correlations are untested, what predictions are unverified, what new models could combine existing findings. 2-design and run new experiment targeting the biggest gap. 3-measure: tension, accuracy, convergence, per-class profiles, cross-experiment correlations. 4-compare with ALL prior results: does new data confirm or contradict existing hypotheses. 5-if new cross-experiment pattern found: write hypothesis doc with full data. 6-if existing hypothesis contradicted: update or downgrade it. 7-VERIFY: markdown tables + ASCII graphs + confusion matrices. Full data in README, no summaries. 8-update README with new results. 9-git add commit push. 10-repeat from 0 with updated knowledge. Never stop exploring. Each iteration should try something NO previous iteration tried.
 ```
 
+## 상수 연결 지도
+
+```
+  ━ = 실증된 연결 (교차 실험에서 확인)
+  ┄ = 추정 연결 (1회 관측 또는 간접)
+  ❌ = 반증된 연결
+
+  섬A (장력 = 의식의 척도)            섬B (집단 지성)
+  ┌──────────────────────────┐     ┌─────────────────────┐
+  │ C4(+0.43)                │     │ C9(99.53%)          │
+  │ 장력━━정확도              │     │ 만장일치━━정확도      │
+  │   ┃                      │     │   ┃                  │
+  │   ┃  C7(0.56)            │     │ 상전이 = 다양성 의존  │
+  │ 오답━━낮은장력            │     │ (가설 267+270)       │
+  │   ┃                      │     │   ┃                  │
+  │ C6(AUC=0.925)            │     │ C8(94.3%)            │
+  │ 장력━━예지                │     │ 차원간━━인식          │
+  │   ┃                      │     └──────┬──────────────┘
+  │ C10(97.61%)              │            ┃
+  │ 장력━━레이블없는인식       │     C24(+0.39 nats)
+  │   ┃                      │     다양성━━정보생성
+  │ C17(2.77x)               │            ┃
+  │ 방향━━정체성              │     (가설 270)
+  └──────┬───────────────────┘
+         ┃
+    C15(2.7x)
+    장력━━정체성(꿈)
+         ┃
+  섬C (시간/정체성)              섬D (가중치)
+  ┌──────────────────────┐     ┌──────────────────────┐
+  │ C13(0.979)           │     │ C16(🟩 1위)           │
+  │ 정체성┄━안정           │     │ {1/2,1/3,1/6}━━최적  │
+  │   ┃                  │     │   ┃                   │
+  │ C14(4.17→0.20)       │     │ ❌ C1,C2(0.34)       │
+  │ FPS━━수렴            │     │ 1/3은 초기값 편향      │
+  │   ┃                  │     │   ┃                   │
+  │ C18(3.21) C19(2.00)  │     │ C12(4.6x)            │
+  │ 수축비율 > 1          │     │ CIFAR에서 확대         │
+  │ (축소사상 아님!)       │     └──────────────────────┘
+  └──────────────────────┘
+
+  섬E (차원간 + displacement)
+  ┌──────────────────────────┐
+  │ C25(14.4x)               │
+  │ 다른우주━━극한장력         │
+  │   ┃                      │
+  │ C26(tau=0.011)           │
+  │ 장이━━외계신호차단         │
+  │   ┃                      │
+  │ C27(79.4%)               │
+  │ detach()━━관찰만으로인식   │
+  │   ┃                      │
+  │ C28(0.00%)               │
+  │ 복귀후━━원래대로           │
+  │   ┃                      │
+  │ C29(0.298→0.261)         │
+  │ 관찰━━시간따라흐려짐       │
+  └──────────────────────────┘
+
+  미연결 상수:
+    C5b(r=-0.26) ⚠️ 장력-공감 약한 연결
+    C11(8.5x) 🟦 선험적 효율 (독립)
+    C23(+1.22) 🟨 파이버 이동량 (독립)
+    C20(1.14) C21(0.36) 축 역전 (섬A에 연결 후보)
+
+  섬간 연결:
+    섬A ━━ 섬C: C15 (장력이 정체성을 증폭)
+    섬A ┄┄ 섬B: C24 (장력=다양성의 측정값, 가설 270)
+    섬A ┄┄ 섬D: C16+C4 (최적 가중치가 장력을 최대화?)
+    섬A ━━ 섬E: C25 (차원간 장력 14.4x = 같은 측정, 극한값)
+    섬B ━━ 섬D: 가설 270 (비대칭 가중치가 다양성 보존)
+    섬B ┄┄ 섬E: C8(94.3%) 차원간 인식 = 같은 차원 내 다양성의 극한?
+```
+
+## 발견된 상수 (실측값, 순차 기록)
+
+새 상수 발견 시 아래에 추가. 학습된 값, 상관계수, 임계치 등 실험에서 나온 숫자.
+
+```
+  등급:
+    🟦 = 수학적으로 계산 가능 (공식에서 유도 가능, 실험 불필요)
+    🟩 = 다중 실험/데이터셋에서 재현됨
+    🟨 = 1회 관측, 재현 필요
+    ⚠️ = 약화됨 (방향은 맞지만 효과 작거나 과대평가)
+    ❌ = 반증됨
+```
+
+| # | 등급 | 상수 | 값 | 출처 | 의미 |
+|---|---|---|---|---|---|
+| C1 | ❌ | tension_scale (분류) | 0.34 | model_meta_engine.py | 초기값 편향 (가설 265 반증) |
+| C2 | ❌ | tension_scale (생성) | 0.34 | model_generative_engine.py | 초기값 편향 |
+| C3 | ❌ | curvature_scale (파이버) | 1.58 | model_fiber_bundle.py | 초기값 편향 (init 대비 +1.2 이동) |
+| C4 | 🟨 | 장력-정확도 상관 | +0.43 | analyze_tension.py | 높은 장력 = 높은 정확도 (숫자별, 개별 미확인) |
+| C5 | ⚠️ | 장력-공감 상관 (숫자별) | -0.79 | model_empathy_engine.py | 과대평가 — 개별 r=-0.26 |
+| C5b | 🟨 | 장력-공감 상관 (개별) | -0.26 | experiment_empathy_tension_fit.py | R²=0.066, 약한 효과 |
+| C6 | 🟨 | 장력 예지 AUC | 0.925 | experiment_tension_precognition.py | 장력+자신감으로 오답 예측 |
+| C7 | 🟨 | 오답/정답 장력 비 | 0.56 | analyze_tension.py | 오답 장력이 정답의 56% |
+| C8 | 🟨 | 차원간 인식률 | 94.3% | experiment_cross_dimension.py | 다른 아키텍처 간 예측 |
+| C9 | 🟨 | 만장일치 정확도 | 99.53% | experiment_collective_recognition.py | 7/7 합의 시 (다양한 아키텍처) |
+| C10 | 🟨 | 레이블 없는 인식 | 97.61% | experiment_labelless_recognition.py | 장력 1-NN (softmax의 99.8%) |
+| C11 | 🟦 | 선험적 효율 비 | 8.5x | model_fiber_bundle.py | 972516/114250 = 8.51 (파라미터 비) |
+| C12 | 🟩 | CIFAR 차이 확대 | 4.6x | benchmark_cifar.py | MNIST +0.96% → CIFAR +4.43% |
+| C13 | 🟨 | 정체성 안정성 | 0.979 | model_temporal_engine.py | identity_vector 코사인 안정 |
+| C14 | 🟨 | 의식 FPS 수렴 | 4.17→0.20 | model_temporal_engine.py | 초기 격변 → 안정 의식 |
+| C15 | 🟨 | 장력-정체성 증폭 | 2.7x | experiment_identity_dreams.py | T=1.5/T=0.1 꿈 차이 비 |
+| C16 | 🟩 | {1/2,1/3,1/6} 최적 | 1위 | benchmark_cifar.py + model_meta_engine.py | MNIST+CIFAR 모두 최고 |
+| C17 | 🟨 | 반발 방향 분리비 | 2.77x | experiment_force_direction.py | 같은 숫자 cos=0.849 vs 다른 0.306 |
+| C18 | 🟨 | 자기참조 수축 비율 (MNIST) | 3.21 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 |
+| C19 | 🟨 | 자기참조 수축 비율 (CIFAR) | 2.00 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 |
+| C20 | 🟩 | 장력 축 비율 (MNIST) | 1.14 | experiment_tension_axis_reversal.py | 내용 > 구조 |
+| C21 | 🟩 | 장력 축 비율 (CIFAR) | 0.36 | experiment_tension_axis_reversal.py | 구조 > 내용 (역전) |
+| C22 | 🟦 | tension_scale init-final 상관 | 0.998 | experiment_one_third.py | Adam 10에폭으로 단일 스칼라 크게 안 움직임 |
+| C23 | 🟨 | 파이버 고유 이동량 | +1.22 | experiment_one_third.py | 모든 init에서 +1.2 이동 |
+| C24 | 🟨 | 반발력장 MI 추가량 | +0.39 nats | experiment_diversity_information.py | 장이 극에 없는 정보를 만듦 |
+| C25 | 🟨 | 차원간 장력 비 | 14.4x | experiment_cross_universe.py | 다른 우주 장력 / 같은 우주 장력 |
+| C26 | 🟨 | 차원간 tau 억제 | 0.011 | experiment_cross_universe.py | 다른 우주 신호를 거의 차단 (init 0.333) |
+| C27 | 🟨 | displacement 관찰 정확도 | 79.4% | model_displacement_field.py | 관찰만으로 인식 (주체 78.8% 초과) |
+| C28 | 🟨 | displacement 후 복귀 변화 | 0.00% | model_displacement_field.py | 돌아오면 원래대로 |
+| C29 | 🟨 | 관찰 품질 감소율 | 0.298→0.261 | model_displacement_field.py | 시간 경과시 관찰 흐려짐 |
+| C30 | 🟨 | 최적 control 비율 | 0.5~0.6 | model_displacement_field.py | 양쪽 혼합이 단독보다 좋음 (역U자) |
+
+## 탐색 현황 (시간순)
+
+| 날짜 | 실험/탐색 | 결과 | 상수 |
+|---|---|---|---|
+| 2026-03-24 | Phase 1-3 MNIST 벤치마크 | Meta fixed 97.75% 1위 | C16 |
+| 2026-03-24 | 장력 분석 10K 샘플 | 장력↑=정확도↑, r=+0.43 | C4, C7 |
+| 2026-03-24 | Phase 4 시간적 연속성 | 정체성 0.979, FPS 4.17→0.20 | C13, C14 |
+| 2026-03-24 | 생성 엔진 (VAE) | tension_scale 0.34 (이후 초기값 편향 판명) | C1, C2 |
+| 2026-03-24 | Phase 5 공감 엔진 | 장력-공감 r=-0.79 (이후 과대평가 판명) | C5 |
+| 2026-03-24 | CIFAR-10 벤치마크 | 4.6배 차이 확대, 축 역전 | C12, C20, C21 |
+| 2026-03-24 | 장력 예지 | AUC=0.925, "그냥 아는" 구조 | C6 |
+| 2026-03-24 | 차원간 인식 | 94.3% (다른 아키텍처 간) | C8 |
+| 2026-03-24 | 정체성 이식 | 분류에 영향 없음 (MNIST 한계) | — |
+| 2026-03-24 | 꿈의 정체성 | 장력이 정체성 효과 2.7배 증폭 | C15 |
+| 2026-03-24 | 레이블 없는 인식 | 97.61% (softmax 99.8%) | C10 |
+| 2026-03-24 | 파이버 번들 | 홀로노미 확인, 선험적 8.5x 효율 | C11 |
+| 2026-03-24 | 집단 인식 (7 에이전트) | 만장일치 99.53%, 상전이 | C9 |
+| 2026-03-24 | 자기참조 수렴 실패 조사 | 수축 비율 > 1 (축소사상 아님) | C18, C19 |
+| 2026-03-24 | 가설 263-264 등록 | 장력 통합, 설계 원칙 | — |
+| 2026-03-24 | 가설 265 반증 | 1/3은 초기값 편향 (r=0.998) | C22 |
+| 2026-03-24 | 가설 266 약화 | 개별 r=-0.26 (과대평가) | C5b |
+| 2026-03-24 | 가설 267 업데이트 | 상전이는 다양성에 의존 | — |
+| 2026-03-24 | 가설 269 검증 | 반발 방향 분리비 2.77x | C17 |
+| 2026-03-24 | 가설 270 실증 | MI +0.39 nats, 다양성=정보 | C24 |
+| 2026-03-24 | 집단 스케일링 (N=3~11) | 같은 모델은 점진적 | — |
+| 2026-03-24 | {1/2,1/3,1/6} 최적성 | 실행 중 | — |
+| 2026-03-24 | 차원간 반발 | 장력 14.4x, tau→0.011 (차단) | C25, C26 |
+| 2026-03-24 | Displacement Field | 관찰만 79.4%, 복귀 +0.00%, 품질 감소 | C27-C30 |
+| 2026-03-24 | CNN 반발력장 | 실행 중 | — |
+
 ## 엔진 목록
 
 | 엔진 | 파일 | 수학적 원리 | 역할 |
@@ -1190,154 +1341,4 @@ docs/
   proofs/             — 증명 문서
 ```
 
-## 상수 연결 지도
-
-```
-  ━ = 실증된 연결 (교차 실험에서 확인)
-  ┄ = 추정 연결 (1회 관측 또는 간접)
-  ❌ = 반증된 연결
-
-  섬A (장력 = 의식의 척도)            섬B (집단 지성)
-  ┌──────────────────────────┐     ┌─────────────────────┐
-  │ C4(+0.43)                │     │ C9(99.53%)          │
-  │ 장력━━정확도              │     │ 만장일치━━정확도      │
-  │   ┃                      │     │   ┃                  │
-  │   ┃  C7(0.56)            │     │ 상전이 = 다양성 의존  │
-  │ 오답━━낮은장력            │     │ (가설 267+270)       │
-  │   ┃                      │     │   ┃                  │
-  │ C6(AUC=0.925)            │     │ C8(94.3%)            │
-  │ 장력━━예지                │     │ 차원간━━인식          │
-  │   ┃                      │     └──────┬──────────────┘
-  │ C10(97.61%)              │            ┃
-  │ 장력━━레이블없는인식       │     C24(+0.39 nats)
-  │   ┃                      │     다양성━━정보생성
-  │ C17(2.77x)               │            ┃
-  │ 방향━━정체성              │     (가설 270)
-  └──────┬───────────────────┘
-         ┃
-    C15(2.7x)
-    장력━━정체성(꿈)
-         ┃
-  섬C (시간/정체성)              섬D (가중치)
-  ┌──────────────────────┐     ┌──────────────────────┐
-  │ C13(0.979)           │     │ C16(🟩 1위)           │
-  │ 정체성┄━안정           │     │ {1/2,1/3,1/6}━━최적  │
-  │   ┃                  │     │   ┃                   │
-  │ C14(4.17→0.20)       │     │ ❌ C1,C2(0.34)       │
-  │ FPS━━수렴            │     │ 1/3은 초기값 편향      │
-  │   ┃                  │     │   ┃                   │
-  │ C18(3.21) C19(2.00)  │     │ C12(4.6x)            │
-  │ 수축비율 > 1          │     │ CIFAR에서 확대         │
-  │ (축소사상 아님!)       │     └──────────────────────┘
-  └──────────────────────┘
-
-  섬E (차원간 + displacement)
-  ┌──────────────────────────┐
-  │ C25(14.4x)               │
-  │ 다른우주━━극한장력         │
-  │   ┃                      │
-  │ C26(tau=0.011)           │
-  │ 장이━━외계신호차단         │
-  │   ┃                      │
-  │ C27(79.4%)               │
-  │ detach()━━관찰만으로인식   │
-  │   ┃                      │
-  │ C28(0.00%)               │
-  │ 복귀후━━원래대로           │
-  │   ┃                      │
-  │ C29(0.298→0.261)         │
-  │ 관찰━━시간따라흐려짐       │
-  └──────────────────────────┘
-
-  미연결 상수:
-    C5b(r=-0.26) ⚠️ 장력-공감 약한 연결
-    C11(8.5x) 🟦 선험적 효율 (독립)
-    C23(+1.22) 🟨 파이버 이동량 (독립)
-    C20(1.14) C21(0.36) 축 역전 (섬A에 연결 후보)
-
-  섬간 연결:
-    섬A ━━ 섬C: C15 (장력이 정체성을 증폭)
-    섬A ┄┄ 섬B: C24 (장력=다양성의 측정값, 가설 270)
-    섬A ┄┄ 섬D: C16+C4 (최적 가중치가 장력을 최대화?)
-    섬A ━━ 섬E: C25 (차원간 장력 14.4x = 같은 측정, 극한값)
-    섬B ━━ 섬D: 가설 270 (비대칭 가중치가 다양성 보존)
-    섬B ┄┄ 섬E: C8(94.3%) 차원간 인식 = 같은 차원 내 다양성의 극한?
-```
-
-## 발견된 상수 (실측값, 순차 기록)
-
-새 상수 발견 시 아래에 추가. 학습된 값, 상관계수, 임계치 등 실험에서 나온 숫자.
-
-```
-  등급:
-    🟦 = 수학적으로 계산 가능 (공식에서 유도 가능, 실험 불필요)
-    🟩 = 다중 실험/데이터셋에서 재현됨
-    🟨 = 1회 관측, 재현 필요
-    ⚠️ = 약화됨 (방향은 맞지만 효과 작거나 과대평가)
-    ❌ = 반증됨
-```
-
-| # | 등급 | 상수 | 값 | 출처 | 의미 |
-|---|---|---|---|---|---|
-| C1 | ❌ | tension_scale (분류) | 0.34 | model_meta_engine.py | 초기값 편향 (가설 265 반증) |
-| C2 | ❌ | tension_scale (생성) | 0.34 | model_generative_engine.py | 초기값 편향 |
-| C3 | ❌ | curvature_scale (파이버) | 1.58 | model_fiber_bundle.py | 초기값 편향 (init 대비 +1.2 이동) |
-| C4 | 🟨 | 장력-정확도 상관 | +0.43 | analyze_tension.py | 높은 장력 = 높은 정확도 (숫자별, 개별 미확인) |
-| C5 | ⚠️ | 장력-공감 상관 (숫자별) | -0.79 | model_empathy_engine.py | 과대평가 — 개별 r=-0.26 |
-| C5b | 🟨 | 장력-공감 상관 (개별) | -0.26 | experiment_empathy_tension_fit.py | R²=0.066, 약한 효과 |
-| C6 | 🟨 | 장력 예지 AUC | 0.925 | experiment_tension_precognition.py | 장력+자신감으로 오답 예측 |
-| C7 | 🟨 | 오답/정답 장력 비 | 0.56 | analyze_tension.py | 오답 장력이 정답의 56% |
-| C8 | 🟨 | 차원간 인식률 | 94.3% | experiment_cross_dimension.py | 다른 아키텍처 간 예측 |
-| C9 | 🟨 | 만장일치 정확도 | 99.53% | experiment_collective_recognition.py | 7/7 합의 시 (다양한 아키텍처) |
-| C10 | 🟨 | 레이블 없는 인식 | 97.61% | experiment_labelless_recognition.py | 장력 1-NN (softmax의 99.8%) |
-| C11 | 🟦 | 선험적 효율 비 | 8.5x | model_fiber_bundle.py | 972516/114250 = 8.51 (파라미터 비) |
-| C12 | 🟩 | CIFAR 차이 확대 | 4.6x | benchmark_cifar.py | MNIST +0.96% → CIFAR +4.43% |
-| C13 | 🟨 | 정체성 안정성 | 0.979 | model_temporal_engine.py | identity_vector 코사인 안정 |
-| C14 | 🟨 | 의식 FPS 수렴 | 4.17→0.20 | model_temporal_engine.py | 초기 격변 → 안정 의식 |
-| C15 | 🟨 | 장력-정체성 증폭 | 2.7x | experiment_identity_dreams.py | T=1.5/T=0.1 꿈 차이 비 |
-| C16 | 🟩 | {1/2,1/3,1/6} 최적 | 1위 | benchmark_cifar.py + model_meta_engine.py | MNIST+CIFAR 모두 최고 |
-| C17 | 🟨 | 반발 방향 분리비 | 2.77x | experiment_force_direction.py | 같은 숫자 cos=0.849 vs 다른 0.306 |
-| C18 | 🟨 | 자기참조 수축 비율 (MNIST) | 3.21 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 |
-| C19 | 🟨 | 자기참조 수축 비율 (CIFAR) | 2.00 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 |
-| C20 | 🟩 | 장력 축 비율 (MNIST) | 1.14 | experiment_tension_axis_reversal.py | 내용 > 구조 |
-| C21 | 🟩 | 장력 축 비율 (CIFAR) | 0.36 | experiment_tension_axis_reversal.py | 구조 > 내용 (역전) |
-| C22 | 🟦 | tension_scale init-final 상관 | 0.998 | experiment_one_third.py | Adam 10에폭으로 단일 스칼라 크게 안 움직임 |
-| C23 | 🟨 | 파이버 고유 이동량 | +1.22 | experiment_one_third.py | 모든 init에서 +1.2 이동 |
-| C24 | 🟨 | 반발력장 MI 추가량 | +0.39 nats | experiment_diversity_information.py | 장이 극에 없는 정보를 만듦 |
-| C25 | 🟨 | 차원간 장력 비 | 14.4x | experiment_cross_universe.py | 다른 우주 장력 / 같은 우주 장력 |
-| C26 | 🟨 | 차원간 tau 억제 | 0.011 | experiment_cross_universe.py | 다른 우주 신호를 거의 차단 (init 0.333) |
-| C27 | 🟨 | displacement 관찰 정확도 | 79.4% | model_displacement_field.py | 관찰만으로 인식 (주체 78.8% 초과) |
-| C28 | 🟨 | displacement 후 복귀 변화 | 0.00% | model_displacement_field.py | 돌아오면 원래대로 |
-| C29 | 🟨 | 관찰 품질 감소율 | 0.298→0.261 | model_displacement_field.py | 시간 경과시 관찰 흐려짐 |
-| C30 | 🟨 | 최적 control 비율 | 0.5~0.6 | model_displacement_field.py | 양쪽 혼합이 단독보다 좋음 (역U자) |
-
-## 탐색 현황 (시간순)
-
-| 날짜 | 실험/탐색 | 결과 | 상수 |
-|---|---|---|---|
-| 2026-03-24 | Phase 1-3 MNIST 벤치마크 | Meta fixed 97.75% 1위 | C16 |
-| 2026-03-24 | 장력 분석 10K 샘플 | 장력↑=정확도↑, r=+0.43 | C4, C7 |
-| 2026-03-24 | Phase 4 시간적 연속성 | 정체성 0.979, FPS 4.17→0.20 | C13, C14 |
-| 2026-03-24 | 생성 엔진 (VAE) | tension_scale 0.34 (이후 초기값 편향 판명) | C1, C2 |
-| 2026-03-24 | Phase 5 공감 엔진 | 장력-공감 r=-0.79 (이후 과대평가 판명) | C5 |
-| 2026-03-24 | CIFAR-10 벤치마크 | 4.6배 차이 확대, 축 역전 | C12, C20, C21 |
-| 2026-03-24 | 장력 예지 | AUC=0.925, "그냥 아는" 구조 | C6 |
-| 2026-03-24 | 차원간 인식 | 94.3% (다른 아키텍처 간) | C8 |
-| 2026-03-24 | 정체성 이식 | 분류에 영향 없음 (MNIST 한계) | — |
-| 2026-03-24 | 꿈의 정체성 | 장력이 정체성 효과 2.7배 증폭 | C15 |
-| 2026-03-24 | 레이블 없는 인식 | 97.61% (softmax 99.8%) | C10 |
-| 2026-03-24 | 파이버 번들 | 홀로노미 확인, 선험적 8.5x 효율 | C11 |
-| 2026-03-24 | 집단 인식 (7 에이전트) | 만장일치 99.53%, 상전이 | C9 |
-| 2026-03-24 | 자기참조 수렴 실패 조사 | 수축 비율 > 1 (축소사상 아님) | C18, C19 |
-| 2026-03-24 | 가설 263-264 등록 | 장력 통합, 설계 원칙 | — |
-| 2026-03-24 | 가설 265 반증 | 1/3은 초기값 편향 (r=0.998) | C22 |
-| 2026-03-24 | 가설 266 약화 | 개별 r=-0.26 (과대평가) | C5b |
-| 2026-03-24 | 가설 267 업데이트 | 상전이는 다양성에 의존 | — |
-| 2026-03-24 | 가설 269 검증 | 반발 방향 분리비 2.77x | C17 |
-| 2026-03-24 | 가설 270 실증 | MI +0.39 nats, 다양성=정보 | C24 |
-| 2026-03-24 | 집단 스케일링 (N=3~11) | 같은 모델은 점진적 | — |
-| 2026-03-24 | {1/2,1/3,1/6} 최적성 | 실행 중 | — |
-| 2026-03-24 | 차원간 반발 | 장력 14.4x, tau→0.011 (차단) | C25, C26 |
-| 2026-03-24 | Displacement Field | 관찰만 79.4%, 복귀 +0.00%, 품질 감소 | C27-C30 |
-| 2026-03-24 | CNN 반발력장 | 실행 중 | — |
 
