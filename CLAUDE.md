@@ -333,6 +333,8 @@ DFS on consciousness engine and math/docs/hypotheses/H-CX-*. RECURSIVE: each ite
     3. 실행 결과는 완료 알림 후 Read로 확인
     4. 포그라운드 실행 절대 금지 (사용자 대화 차단됨)
     5. 병렬 실행 가능한 것은 항상 병렬로
+    8. TaskOutput block=true 절대 금지! (사용자 대화 차단됨)
+       항상 block=false + timeout=5000 사용
     6. 실험 시작 전 CPU/RAM 체크 필수:
        - CPU idle < 15% → 새 실험 추가 금지, 문서 작업만
        - Python 프로세스 > 5개 → 완료 대기 후 시작

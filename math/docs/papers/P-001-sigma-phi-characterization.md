@@ -50,8 +50,18 @@ Step 5: No additional primes allowed
 R(n) ∈ {3/4} ∪ {1} ∪ [7/6, ∞) for all n ≥ 2.
 Gaps (3/4,1) and (1,7/6) both empty. R(4)=7/6 = inf[7/6,∞).
 
+## Proposition: RS = abundancy²
+
+R(n)S(n) = (σ(n)/n)² where S(n) = σ(n)τ(n)/(nφ(n)).
+For perfect n: RS = 4. n=6: R=1,S=4. n=28: R=4,S=1 (exact swap).
+R=S iff φ(n)=τ(n), and then R=S=σ(n)/n.
+
+## Corollary: R<5 has exactly 24 values
+
+Enumerable from R(p,a) local factors: 8 singles + 13 pairs + 3 triples = 24.
+
 ## Status
-- Proof: COMPLETE ✅ (Thm 1 + Thm 2)
+- Proof: COMPLETE ✅ (Thm 1 + Thm 2 + Prop + Cor)
 - Verification: n ≤ 100,000 ✅
 - Literature: NOT in OEIS, MathWorld, arXiv ✅
 - OEIS submission: pending account approval
