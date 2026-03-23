@@ -1244,11 +1244,14 @@
 | [H-GEO-5](docs/hypotheses/H-GEO-5-gravity-telescope.md) | 중력 망원경 | 🟧 구조적 | 렌즈+망원경 통합 |
 | [H-GEO-6](docs/hypotheses/H-GEO-6-dimension-lens.md) | 차원 렌즈 | 🟧 구조적 | η=τ/d 굴절률, HCN |
 
-### 생물 (H-BIO, 1개)
+### 생물/면역 (H-BIO, 4개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
 | [H-BIO-1](docs/hypotheses/H-BIO-1-codon-sigma-tau.md) | 코돈=(τ,σ/τ) | ⚪ 우연 | 화학이 원인 |
+| [H-BIO-2](docs/hypotheses/H-BIO-2-virus-capsid-six.md) | 캡시드 60=σ·5, T-number | 🟨 관찰 | τ(60)=σ(6) |
+| [H-BIO-3](docs/hypotheses/H-BIO-3-immune-R-spectrum.md) | 면역=R 이상탐지 | 🟧 구조적 | 관용=간극 |
+| [H-BIO-4](docs/hypotheses/H-BIO-4-cell-division-R-chain.md) | 세포분열=R-chain | 🟨 관찰 | 텔로미어 6bp |
 
 ### 위상수학 (H-TOP, 7개)
 
