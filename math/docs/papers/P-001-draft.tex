@@ -161,6 +161,28 @@ All six sets contain $n=1$; all involve the prime $2$.
 In each case, $f(2,1) < 1$ is the unique sub-unity local factor,
 and the cancellation prime $q$ is determined by $f(2,1) \cdot f(q,1) = 1$.
 
+\begin{theorem}\label{thm:sigma-omega}
+$\sigma(n)\omega(n) = n\tau(n)$ if and only if $n = 6$,
+where $\omega(n)$ counts distinct prime factors.
+\end{theorem}
+
+\begin{proof}
+Define $g(p,a) = (p^{a+1}-1)/(p^a(p-1)(a+1))$.
+Then $\sigma(n)\omega(n)/(n\tau(n)) = \omega(n) \prod_{p^a\|n} g(p,a)$.
+The equation becomes $\prod g(p_i,a_i) = 1/\omega(n)$.
+
+For squarefree $n$ with $k$ primes: $g(p,1)=(p+1)/(2p)$, so
+$(p_1\!+\!1)\cdots(p_k\!+\!1)/(2^k p_1\cdots p_k) = 1/k$.
+When $k=1$: $(p+1)/(2p)=1$ gives $p=1$, impossible.
+When $k=2$: $(p+1)(q+1)=2pq$ simplifies to $(p-1)(q-1)=2$,
+yielding $(p,q)=(2,3)$, i.e., $n=6$.
+When $k \geq 3$: $g(p,1) \leq 3/4$ and $\prod g \leq (3/4)(2/3)\cdots < 1/2 \leq 1/k$.
+
+For prime powers ($k=1$): $g(p,a)<1$ for all $p,a \geq 1$ but never equals $1$.
+For non-squarefree composites: $g(p,a)$ decreases in $a$,
+making $\prod g < 1/k$ even more stringent.
+\end{proof}
+
 \begin{theorem}\label{thm:decrease}
 $R(n) < n$ for all $n \geq 2$. In particular, every integer $R$-chain
 $n_0, n_1 = R(n_0), n_2 = R(n_1), \ldots$ converges to $1$.

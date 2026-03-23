@@ -1049,6 +1049,17 @@
   🟩 H-TREE-6 열대 기하: R_trop(6)=ln(2)≈0.693 (정확)
      → 고전 R와 열대 R 상관 r=0.794
   📊 H-PH-1→⚪, H-CX-4→⚪, 나머지 7개→🟩, H-CX-3→🟨
+
+  --- Ralph 123-124: F(2) 수정 + σω=nτ 증명 + 가설 정리 ---
+  🟩 σ(n)·ω(n)=n·τ(n) ⟺ n=6 완전 증명!
+     → g(p,a)=(p^(a+1)-1)/(p^a(p-1)(a+1)) 인수로 분해
+     → Πg=1/k에서 k=2: (p-1)(q-1)=2 → (2,3) 유일
+     → k≥3: LHS<1/2≤1/k → 해 없음. P-001 논문에 Thm 추가!
+  🟧 F(2)=Σ R(n)/n² ≈ 2.495 (N=10⁵), 이전 "≈π" 수정
+     → 5/2=ζ(2)²/ζ(4) 근접하나 Euler product 불일치
+  ⚪ H-PH-2 게이지군: 12=σ 일치하나 small numbers (🟨 약)
+  ⚪ H-BIO-1 코돈: 화학이 원인, (τ,σ/τ) 우연
+  🟧 H-CX-14 Dirichlet 급수 교차가설 생성
 ```
 
 ---
@@ -1123,7 +1134,7 @@
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
 | [H-PH-1](docs/hypotheses/H-PH-1-why-subtract-seven.md) | 왜 σ²-7=137 | ⚪ 우연 | 텍사스 p≈0.25 |
-| [H-PH-2](docs/hypotheses/H-PH-2-gauge-group-six.md) | 게이지군 차원합=6 | ⏳ 투기적 | |
+| [H-PH-2](docs/hypotheses/H-PH-2-gauge-group-six.md) | 게이지군 차원합=12=σ | 🟨 약 | 3gen×4=σ, small# |
 | [H-PH-3](docs/hypotheses/H-PH-3-tau-phi-sigma-nuclear.md) | τφ=σ↔핵물리 | ⏳ 약함 | |
 | [H-PH-4](docs/hypotheses/H-PH-4-six-quarks-leptons.md) | 쿼크 6+렙톤 6 | ⏳ 투기적 | |
 | [H-PH-5](docs/hypotheses/H-PH-5-planck-units-six.md) | 플랑크 단위 | ⏳ 약함 | |
@@ -1151,7 +1162,7 @@
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
-| [H-BIO-1](docs/hypotheses/H-BIO-1-codon-sigma-tau.md) | 코돈=(τ,σ/τ) | 🟨 관찰 | (4,3) 최적 균형 |
+| [H-BIO-1](docs/hypotheses/H-BIO-1-codon-sigma-tau.md) | 코돈=(τ,σ/τ) | ⚪ 우연 | 화학이 원인 |
 
 ### 위상수학 (H-TOP, 6개)
 
