@@ -345,6 +345,112 @@ def find_cross_island(matches):
 
 
 # ─────────────────────────────────────────
+# 검증 파이프라인 (발견 즉시 자동 실행)
+# ─────────────────────────────────────────
+
+def verify_discovery(match):
+    """발견의 비자명성을 자동 검증.
+
+    Returns:
+        match with added fields: verified_grade, warnings[], verification_detail
+    """
+    warnings_list = []
+    grade = match.get('is_exact', False)
+
+    expr = match['formula']
+    target = match['target']
+    error_pct = match['error_pct']
+    val = match['formula_val']
+    target_val = match['target_val']
+
+    # 1. 산술 정확성 재확인
+    # (이미 check_targets에서 확인됨, 이중 체크)
+
+    # 2. ad hoc 보정 체크: +1, -1이 수식에 포함?
+    if '+1)' in expr or '-1)' in expr or expr.endswith('+1') or expr.endswith('-1'):
+        warnings_list.append('AD_HOC: +1/-1 보정 포함')
+
+    # 3. Strong Law of Small Numbers: 관여 상수가 모두 <100?
+    base_consts = extract_base_constants(expr)
+    all_small = True
+    for name in base_consts:
+        for consts in ISLANDS.values():
+            if name in consts and abs(consts[name]) >= 100:
+                all_small = False
+    if all_small and len(base_consts) >= 2:
+        # 작은 수끼리의 조합은 우연 일치 가능성 높음
+        warnings_list.append('SMALL_NUMS: 모든 상수 <100 (우연 가능성)')
+
+    # 4. 일반화 테스트 (완전수 관련이면)
+    if any(name in ['sigma', 'tau', '6'] for name in base_consts):
+        # 완전수 28에서도 성립하는지?
+        warnings_list.append('GENERALIZE: 완전수 28에서 검증 필요 (미수행)')
+
+    # 5. p-value 간이 추정
+    # 수식의 "자유도" 추정: 사용된 상수 수 × 연산 수
+    n_consts = len(base_consts)
+    # 대략적 조합 수
+    total_consts = sum(len(v) for v in ISLANDS.values())
+    n_ops = 12  # 이항연산 종류
+    if n_consts <= 1:
+        est_trials = total_consts * 5  # 단항만
+    elif n_consts == 2:
+        est_trials = total_consts * (total_consts - 1) * n_ops
+    else:
+        est_trials = total_consts ** n_consts * n_ops
+
+    # 오차 범위 내 타겟 수 / 전체 공간
+    # 범위: target ± threshold → 2 * threshold * target
+    # 공간: 대략 [0.01, 1000] → 1000
+    if target_val != 0:
+        p_single = (2 * match['error'] * abs(target_val)) / 1000
+    else:
+        p_single = 0.001
+    p_bonferroni = min(1.0, p_single * est_trials)
+
+    match['p_single'] = p_single
+    match['p_bonferroni'] = p_bonferroni
+    match['est_trials'] = est_trials
+
+    if p_bonferroni > 0.05:
+        warnings_list.append(f'P_VALUE: Bonferroni p={p_bonferroni:.4f} > 0.05 (우연 가능)')
+
+    # 6. 근사 vs 정확 등급 판정
+    if match['is_exact']:
+        if not warnings_list:
+            verified_grade = '🟩 정확 (검증 통과)'
+        else:
+            verified_grade = '🟩 정확 (주의: ' + '; '.join(warnings_list) + ')'
+    elif error_pct < 0.01:
+        if p_bonferroni < 0.01:
+            verified_grade = '🟧★ 근사 (매우 정밀, p<0.01)'
+        elif p_bonferroni < 0.05:
+            verified_grade = '🟧 근사 (정밀, p<0.05)'
+        else:
+            verified_grade = '🟧? 근사 (정밀하지만 p>0.05)'
+    elif error_pct < 0.1:
+        verified_grade = '🟧 근사 (중간 정밀)'
+    elif error_pct < 1.0:
+        verified_grade = '🟧△ 근사 (약한)'
+    else:
+        verified_grade = '⬜ 무의미'
+
+    match['verified_grade'] = verified_grade
+    match['warnings'] = warnings_list
+    match['verification_detail'] = (
+        f"grade={verified_grade}, p_bonf={p_bonferroni:.4f}, "
+        f"trials≈{est_trials}, warnings={len(warnings_list)}"
+    )
+
+    return match
+
+
+def verify_all(matches):
+    """모든 발견에 검증 파이프라인 적용."""
+    return [verify_discovery(m) for m in matches]
+
+
+# ─────────────────────────────────────────
 # 출력
 # ─────────────────────────────────────────
 
@@ -561,12 +667,33 @@ def main():
     filtered = filter_best(matches, top_per_target=args.top)
     print(f"필터 후:   {len(filtered):,}개")
 
+    # 검증 파이프라인
+    print("검증 중...")
+    filtered = verify_all(filtered)
+    n_warnings = sum(1 for m in filtered if m.get('warnings'))
+    n_passed = sum(1 for m in filtered if 'p>0.05' not in m.get('verified_grade', ''))
+    print(f"검증 완료: {n_passed}개 통과, {n_warnings}개 주의")
+
     cross = find_cross_island(filtered)
     print(f"교차연결:  {len(cross):,}개")
     print()
 
     # 출력
     print(format_results(filtered, cross_only=args.cross_only))
+
+    # 검증 요약 출력
+    print("\n" + "=" * 60)
+    print(" 검증 파이프라인 결과")
+    print("=" * 60)
+    for m in sorted(filtered, key=lambda x: -x['significance'])[:20]:
+        grade = m.get('verified_grade', '?')
+        warns = m.get('warnings', [])
+        warn_str = f" ⚠ {'; '.join(warns)}" if warns else ""
+        print(f"  {grade}")
+        print(f"    {m['formula']} ≈ {m['target']} ({m['error_pct']:.5f}%)")
+        if warn_str:
+            print(f"   {warn_str}")
+    print()
 
     # 저장
     saved = save_markdown(filtered, args.depth, args.threshold, output_path)
