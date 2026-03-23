@@ -418,13 +418,13 @@ def main():
             return out[1]
         return torch.tensor(0.0)
 
-    result = train_and_evaluate(
+    train_losses, test_accs = train_and_evaluate(
         model, train_loader, test_loader,
         epochs=10, lr=0.001,
         aux_loss_fn=aux_fn, aux_lambda=0.1,
         flatten=True, verbose=True,
     )
-    print(f"    Final accuracy: {result['test_acc']:.2f}%")
+    print(f"    Final accuracy: {test_accs[-1]:.2f}%")
     print(f"    Training time: {time.time() - t0:.1f}s")
     sys.stdout.flush()
 
