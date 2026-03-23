@@ -1188,12 +1188,18 @@
 
 | # | 대상 | 제목 | 상태 | 문서 |
 |---|---|---|---|---|
-| P-001 | arXiv math.NT | sigma\*phi=n\*tau iff n=1,6 (12 results) | LaTeX ready | [outline](docs/papers/P-001-sigma-phi-characterization.md) [tex](docs/papers/P-001-draft.tex) |
+| P-001 | arXiv math.NT | Characterization of perfect numbers via σφ=nτ (23 results) | LaTeX ready | [tex](docs/papers/P-001-draft.tex) |
 | R-001 | OEIS A062354 | sigma\*phi=n\*tau comment | pending | - |
 | R-002 | OEIS new seq | n where sigma\*phi=n\*tau: 1,6 | pending | - |
 | R-003 | OEIS new seq | n where tau\*phi=sigma: 1,3,14,42 | pending | - |
 | R-004 | OEIS new seq | n where phi^2=(phi\*phi): 1,3,10,30 | pending | - |
 | R-005 | OEIS new seq | n where R(n) integer prime: 54,96,196,360 | pending | - |
+| R-006 | OEIS new seq | n where sigma\*omega=n\*tau: 6 | pending | - |
+| R-007 | OEIS new seq | n where phi=omega: 2,6 | pending | - |
+| R-008 | OEIS new seq | n where sigma^2=n^2\*tau: 6 | pending | - |
+| R-009 | OEIS new seq | n where sigma+phi+tau=3n: 2,4,6,90,408,5856,... | pending | - |
+| R-010 | OEIS new seq | n where prod R(d\|n)=1: 1,6 | pending | - |
+| R-011 | OEIS new seq | R(n) integer: 6,28,54,96,120,135,196,... | pending | - |
 
 ## 미해결 난제 (Open Problems)
 
