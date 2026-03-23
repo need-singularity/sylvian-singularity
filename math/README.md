@@ -1114,7 +1114,7 @@
 |---|---|---|---|
 | [H-BIO-1](docs/hypotheses/H-BIO-1-codon-sigma-tau.md) | 코돈=(τ,σ/τ) | 🟨 관찰 | (4,3) 최적 균형 |
 
-### 위상수학 (H-TOP, 5개)
+### 위상수학 (H-TOP, 6개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1123,6 +1123,7 @@
 | [H-TOP-3](docs/hypotheses/H-TOP-3-knot-invariants-six.md) | Trefoil T(2,3)↔σ,τ | ⏳ | B₃→PSL₂→weight12 |
 | [H-TOP-4](docs/hypotheses/H-TOP-4-R-spectrum-topology.md) | R 스펙트럼 위상 | ⏳ 미검증 | Cantor-like |
 | [H-TOP-5](docs/hypotheses/H-TOP-5-fractal-topology-R-spectrum.md) | 프랙탈+위상 조합 | 🟧 구조적 | d_box≈0.155, PH |
+| [H-TOP-6](docs/hypotheses/H-TOP-6-resolution-observer-topology.md) | 해상도 관측기 | 🟧 구조적 | ε_c=1/6 전이 |
 
 ### 새 가지 탐색 (H-TREE, 6개)
 
