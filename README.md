@@ -487,6 +487,10 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-7](docs/hypotheses/H-CX-7-sigma-phi-architecture-optimality.md) | σφ=nτ 아키텍처 | ⚠️ 부분반증 | (12,4) 3위 |
 | [H-CX-8](docs/hypotheses/H-CX-8-phase-acceleration-sigma-tau.md) | 위상가속 x3=σ/τ | 🟨 실행중 | Jamba 관측, 6config 테스트 |
 | [H-CX-9](docs/hypotheses/H-CX-9-topology-seven-phases.md) | 위상 7단계 | 🟪 | T1-T7 비유 |
+| [H-CX-10](docs/hypotheses/H-CX-10-sparsity-tension-entropy.md) | 희소성=장력=정보 | 🟨 | I(x)=-ln(p), 완전수 최고 |
+| [H-CX-11](docs/hypotheses/H-CX-11-tda-euler-characteristic.md) | 오일러 χ↔분류성능 | 🟨 | χ=-111K, CIFAR 검증필요 |
+| [H-CX-12](docs/hypotheses/H-CX-12-mitosis-golden-ratio.md) | 분열 27x=(σ/τ)³ | 🟨 | 3³=27 근접, scale 의존? |
+| [H-CX-13](docs/hypotheses/H-CX-13-shamanic-enhancement.md) | 체험=IB 통과 | 🟨 | detach=강제압축→일반화↑ |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
