@@ -1000,5 +1000,20 @@
 |---|---|---|---|
 | [H-BIO-1](docs/hypotheses/H-BIO-1-codon-sigma-tau.md) | 코돈=(τ,σ/τ) | 🟨 관찰 | (4,3) 최적 균형 |
 
+### 위상수학 (H-TOP, 3개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-TOP-1](docs/hypotheses/H-TOP-1-betti-numbers-six.md) | CY3 Betti↔σ,τ | ⏳ 극고 | 끈이론 6차원 |
+| [H-TOP-2](docs/hypotheses/H-TOP-2-euler-char-six.md) | χ(M)=6 다양체 | ⏳ 극고 | |
+| [H-TOP-3](docs/hypotheses/H-TOP-3-knot-invariants-six.md) | Trefoil T(2,3)↔σ,τ | ⏳ | B₃→PSL₂→weight12 |
+
+### 위상가속 (H-CX-6,7)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CX-6](docs/hypotheses/H-CX-6-phase-acceleration-sigma-tau.md) | 위상가속 ×3=σ/τ | ⏳ | Jamba ×3 실측 |
+| [H-CX-7](docs/hypotheses/H-CX-7-topology-seven-levels.md) | 위상 7단계=M₃ | ⏳ | T1-T7 약수분류 |
+
 ---
 
