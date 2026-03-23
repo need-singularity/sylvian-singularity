@@ -382,7 +382,7 @@ DFS on consciousness engine and math/docs/hypotheses/H-CX-*. RECURSIVE: each ite
     - 루트 README.md = 유일한 진실의 원천 (상수, 지도, DFS 현황)
     - docs/experiments/E*.md = 실험 전체 출력 원본만
     - docs/experiments/README.md = 실험 목록+링크만 (상수/지도 중복 금지)
-    - docs/hypotheses/*.md = 가설 문서
+    - docs/hypotheses/*.md = 가설 문서 (ASCII 도식 + 수치 테이블 필수)
 
   실험 결과를 기록하거나 보고할 때 요약하지 말 것.
   실행 출력의 원본 데이터를 그대로 기록한다.
