@@ -1180,6 +1180,12 @@ docs/
 
 ## DFS 탐색 (복사용)
 
+### 기존 수학체계 연결 DFS
+
+```
+/ralph-loop:ralph-loop DFS on established mathematics connections. GOAL: find where our constants and identities already appear in known math. 0-read docs/pure-math/README.md math map and 5-island connection status. 1-pick one green or star result that lacks a blue connection. 2-web search for the constant or identity in established theorems: number theory, combinatorics, representation theory, algebraic geometry, topology, physics. 3-if known theorem found: record blue link with citation. 4-if our result generalizes or specializes a known theorem: write hypothesis doc with proof sketch. 5-check missing bridges: C-E and D-E islands have NO direct connection yet -- prioritize these. 6-for each candidate connection VERIFY: python3 arithmetic check then check if relationship holds for perfect number 28 then texas p-value. 7-record verified with grade in docs/pure-math/README.md island map. Failed goes white circle. 8-git add commit push every iteration. Keep searching even if nothing found. Focus on EXISTING math not new numerology.
+```
+
 ### 수학 DFS
 
 ```
