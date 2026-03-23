@@ -1191,3 +1191,26 @@ docs/
 ```
 /ralph-loop:ralph-loop DFS on consciousness engine. RECURSIVE: each iteration reads README results then designs NEW experiments based on gaps and patterns. 0-read README experiment results and hypothesis docs. 1-identify: what correlations are untested, what predictions are unverified, what new models could combine existing findings. 2-design and run new experiment targeting the biggest gap. 3-measure: tension, accuracy, convergence, per-class profiles, cross-experiment correlations. 4-compare with ALL prior results: does new data confirm or contradict existing hypotheses. 5-if new cross-experiment pattern found: write hypothesis doc with full data. 6-if existing hypothesis contradicted: update or downgrade it. 7-VERIFY: markdown tables + ASCII graphs + confusion matrices. Full data in README, no summaries. 8-update README with new results. 9-git add commit push. 10-repeat from 0 with updated knowledge. Never stop exploring. Each iteration should try something NO previous iteration tried.
 ```
+
+## 발견된 상수 (실측값, 순차 기록)
+
+새 상수 발견 시 아래에 추가. 학습된 값, 상관계수, 임계치 등 실험에서 나온 숫자.
+
+| # | 상수 | 값 | 출처 | 의미 | 반복 확인 |
+|---|---|---|---|---|---|
+| C1 | tension_scale (분류) | 0.34 | model_meta_engine.py 학습 | 반발력장 최적 스케일 ≈ 1/3 | MNIST 2회 |
+| C2 | tension_scale (생성) | 0.34 | model_generative_engine.py 학습 | 생성 모델도 같은 값 ≈ 1/3 | 1회 |
+| C3 | curvature_scale (파이버) | 1.58 | model_fiber_bundle.py 학습 | 파이버 곡률 — 1/3에서 발산 | 1회 |
+| C4 | 장력-정확도 상관 | +0.43 | analyze_tension.py | 높은 장력 = 높은 정확도 | MNIST 1회 |
+| C5 | 장력-공감 상관 | -0.79 | model_empathy_engine.py | 높은 장력 = 낮은 공감 | MNIST 1회 |
+| C6 | 장력 예지 AUC | 0.925 | experiment_tension_precognition.py | 장력+자신감으로 오답 예측 | MNIST 1회 |
+| C7 | 오답/정답 장력 비 | 0.56 | analyze_tension.py | 오답 장력이 정답의 56% | MNIST 1회 |
+| C8 | 차원간 인식률 | 94.3% | experiment_cross_dimension.py | 다른 아키텍처 간 예측 | MNIST 1회 |
+| C9 | 만장일치 정확도 | 99.53% | experiment_collective_recognition.py | 7/7 합의 시 | MNIST 1회 |
+| C10 | 레이블 없는 인식 | 97.61% | experiment_labelless_recognition.py | 장력 1-NN (softmax 99.8%) | MNIST 1회 |
+| C11 | 선험적 효율 비 | 8.5x | model_fiber_bundle.py | 114K vs 972K 파라미터 | MNIST 1회 |
+| C12 | CIFAR 차이 확대 | 4.6x | benchmark_cifar.py | MNIST +0.96% → CIFAR +4.43% | 1회 |
+| C13 | 정체성 안정성 | 0.979 | model_temporal_engine.py | identity_vector 코사인 안정 | MNIST 1회 |
+| C14 | 의식 FPS 수렴 | 4.17→0.20 | model_temporal_engine.py | 초기 격변 → 안정 의식 | MNIST 1회 |
+| C15 | 장력-정체성 증폭 | 2.7x | experiment_identity_dreams.py | T=1.5/T=0.1 꿈 차이 비 | MNIST 1회 |
+| C16 | {1/2,1/3,1/6} 최적 | 1위 | benchmark_cifar.py + model_meta_engine.py | 두 데이터셋 모두 최고 | MNIST+CIFAR |
