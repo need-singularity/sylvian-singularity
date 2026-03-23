@@ -194,11 +194,34 @@ python3 ~/dev/test-8/dfs_engine.py --depth 3 --threshold 0.0001  # 정밀 탐색
   골든 (500스텝): PPL 4,634 (97% 감소, 아직 높음)
   목표:          PPL < 100 (최소 coherence) → 최종 < 20
 
-  학습 전략:
-  - 2000~5000 스텝, wikitext-2 전체 (23K 샘플)
-  - Expert 동결, 라우터만 학습
+  변환 완료:
+  - Llama 3.1 8B → Golden MoE 8B (32/32 레이어, I=0.375 골든존)
+  - 라우터 파라미터: 1,048,576 (0.013%)
+  - 저장: Docker /workspace/golden-8b/
+
+  학습 전략 — 전체 학습 (Expert + 라우터):
+  - 5000 스텝, wikitext-2 전체 (23K 샘플)
   - 코사인 LR 스케줄러, 매 500스텝 체크포인트
-  - Docker: PyTorch nightly cu128
+  - Docker: CUDA 12.8, PyTorch cu128
+  - finetune_full.py 사용
+
+  GPU 활용 방법 (8B float16 = ~16GB > VRAM 12GB):
+
+  방법 A: device_map="auto" (CPU+GPU 분산)
+  - accelerate가 자동으로 레이어별 GPU/CPU 분배
+  - 구현: model 로드 시 device_map="auto"
+  - 장점: 간단, 안정적
+  - 단점: CPU↔GPU 전송 오버헤드
+  - 속도: CPU only 대비 ~3-5배
+
+  방법 B: gradient checkpointing + 8bit optimizer
+  - gradient checkpointing: forward 2번으로 activation 메모리 절약
+  - 8bit optimizer: bitsandbytes AdamW8bit로 optimizer 메모리 절반
+  - 장점: 더 많은 레이어를 GPU에, 속도 ~5-10배
+  - 단점: bitsandbytes sm_120(Blackwell) 미지원 위험
+  - 구현: model.gradient_checkpointing_enable() + bnb.optim.AdamW8bit
+
+  추천: 방법 A 먼저 시도, 안 되면 B
 
   서번트 검증:
   - 도메인별 PPL 분리 측정 (수학/언어/코드)
