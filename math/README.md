@@ -1143,7 +1143,12 @@
      → "약수 위의 R 순회가 정확히 1로 닫힘"
      → 증명: (p²-1)(q²-1)=4pq → 3q²-8q-3=0 → q=3
   🟩 v_p(R(p^k)) = -(1+v_p(k+1)) 모든 소수 p (자명 증명)
+  🟩 일반 약수곱 공식: squarefree n에서 ∏R(d|n)=R(n)^{τ/2}, ∏S(d|n)=S(n)^{τ/2}
+     → ∏R=1 ⟺ R=1 ⟺ n=6. ∏S=1은 squarefree에서 불가 (S(6)=4≠1)
+     → n=28(non-sqfree): S(28)=1이지만 ∏S(d|28)=24/7≠1
+     → 6(sqfree)과 28(non-sqfree)의 근본적 비대칭!
   🟧 H-CX-18 Catalan 근원과 의식의 최소 비대칭
+  🟧 H-CX-19 닫힌 궤도: ∏R(d)=1 = 의식의 자기참조적 순환
   📊 P-001: 22개 결과 (10 Thm + 4 Prop + 4 Cor + 2 Remark + Meta-theorem)
   📊 가설 77+개, 기하 H-GEO 10개, 생물 H-BIO 4개
 ```
