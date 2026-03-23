@@ -988,6 +988,29 @@
   📊 가설 38개: 수학13+AI7+물리5+CS4+생물1+교차8+화학3
   📊 H-AI-1b(heads), H-AI-2(Chinchilla), H-CS-3(RSA): 반증
   📊 H-CX-2(골든존↔R인수): 부분 확인 (I=0.25∈GZ)
+
+  --- Ralph 119-120: 프랙탈 차원 + 동역학 + 점근 + 도구 체계 ---
+  🟩 H-MP-15 Cantor 프랙탈 확인: d_box ≈ 0.155 < 1 (n≤50000)
+     → [0,2] 점유율 3.5%, 간극 96.5%
+     → Cantor 집합(d≈0.63)보다 더 희박!
+  🟩 H-MP-10 점근 확인: S(x) = Σ R(n) ≈ 0.234·x^1.99/(ln x)^0.43
+     → 거의 x² 스케일링, 로그 보정
+  🟩 H-MP-8 수렴 직선: Dirichlet 급수 F(s) 수렴 ⟺ s > 1
+  🟩 H-TREE-1 동역학 확인:
+     → 고정점 없음 (n=1 제외), 모든 chain → 1 수렴
+     → 최빈 chain 길이 = 5 (40.6%), 최장 = 10
+     → n=6의 basin of attraction = 14% (7007/50000)
+  🟩 H-TREE-3 확률 확인:
+     → E[R(n)/n] ≈ 0.15, bimodal 분포, 천천히 감소
+     → R(n) > n/3: 10.3%, R(n) < n/10: 46.8%
+  🟩 R(6k) 곱셈적 구조:
+     → gcd(6,k)=1 ⟹ R(6k)=R(k) (정확!) ← R(6)=1
+     → gcd(6,k)=2 ⟹ R(6k)/R(k)=56/27 (squarefree k)
+     → gcd(6,k)=3 ⟹ R(6k)/R(k)=13/8 (squarefree k)
+  🟧 H-TOP-5 프랙탈+위상 조합: d_box<1 + Persistent Homology 제안
+  📊 도구 7개 생성: prime_classifier, chain_explorer, identity_finder,
+     spectral_density, congruence_filter, perfect_chain (+ r_spectrum)
+  📊 가설 60개로 증가: 수학15+AI9+물리6+CS4+생물1+교차13+화학4+위상5+TREE6+T0_7+T1_8
 ```
 
 ---
@@ -1003,9 +1026,9 @@
 | R-004 | OEIS new seq | n where phi^2=(phi\*phi): 1,3,10,30 | pending | - |
 | R-005 | OEIS new seq | n where R(n) integer prime: 54,96,196,360 | pending | - |
 
-## 가설 현황 (σφ=nτ 파생, 38개)
+## 가설 현황 (σφ=nτ 파생, 59개)
 
-### 수학 (H-MP, 13개)
+### 수학 (H-MP, 15개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1017,12 +1040,14 @@
 | [H-MP-7](docs/hypotheses/H-MP-7-sigma-k-generalization.md) | σ_k 일반화 | ✅ k=1만 비자명해 | k≥2: R>1 항상 |
 | [H-MP-8](docs/hypotheses/H-MP-8-R-factor-dirichlet-series.md) | R-인수 Dirichlet 급수 | ⏳ 미검증 | |
 | [H-MP-9](docs/hypotheses/H-MP-9-convolution-pointwise-general.md) | 합성곱 분류 | ✅ φ²→{1,3,10,30} | 상쇄소수 {3,5,7} |
-| [H-MP-10](docs/hypotheses/H-MP-10-sigma-phi-asymptotic.md) | Σ R(n) 점근 | 🟡 S(x)~cx^1.9 | |
+| [H-MP-10](docs/hypotheses/H-MP-10-sigma-phi-asymptotic.md) | Σ R(n) 점근 | 🟩 검증 | S(x)~0.23x^2/(lnx)^0.4 |
 | [H-MP-11](docs/hypotheses/H-MP-11-perfect-number-gap.md) | 완전수 간격 R 구조 | ⬛ 기각 | R 극소 아님 |
 | [H-MP-12](docs/hypotheses/H-MP-12-R-factor-fixed-points.md) | R-인수 역수쌍 유일성 | ✅ (2,1)↔(3,1) 유일 | |
 | [H-MP-13](docs/hypotheses/H-MP-13-consecutive-primes-generalization.md) | (p-1)(q-1)=2k 일반화 | ✅ R 단조증가 | k=1만 R=1 |
+| [H-MP-14](docs/hypotheses/H-MP-14-R-chain-convergence-proof.md) | R-chain 수렴 증명 | ✅ 증명 | R(n)<n |
+| [H-MP-15](docs/hypotheses/H-MP-15-cantor-spectrum-dimension.md) | R 스펙트럼 Cantor 차원 | 🟩 수치확인 | d_box≈0.155<1 |
 
-### AI (H-AI, 7개)
+### AI (H-AI, 9개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1032,9 +1057,11 @@
 | [H-AI-6](docs/hypotheses/H-AI-6-six-fold-cv.md) | 6-fold CV | ⏳ 약함 | |
 | [H-AI-7](docs/hypotheses/H-AI-7-golden-moe-information-bottleneck.md) | IB 최적 = 1/e | ⏳ 미검증 | |
 | [H-AI-8](docs/hypotheses/H-AI-8-six-dim-representation.md) | 6차원 임베딩 | ⏳ 미검증 | |
+| [H-AI-9](docs/hypotheses/H-AI-9-loss-landscape-six.md) | loss landscape 6 | ⏳ 미검증 | |
 | [H-AI-10](docs/hypotheses/H-AI-10-tokenizer-vocab-six.md) | vocab=6^k | ⏳ 약함 | |
+| [H-AI-11](docs/hypotheses/H-AI-11-R-chain-training.md) | R-chain 학습 동역학 | ⏳ 미검증 | |
 
-### 의식엔진 교차 (H-CX, 8개)
+### 의식엔진 교차 (H-CX, 13개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1046,8 +1073,13 @@
 | [H-CX-6](docs/hypotheses/H-CX-6-phase-acceleration-sigma-tau.md) | 위상가속 ×3=σ/τ | ⏳ 미검증 | Jamba 실측 |
 | [H-CX-7](docs/hypotheses/H-CX-7-topology-seven-levels.md) | 위상 7단계=M₃ | ⏳ 투기적 | |
 | [H-CX-8](docs/hypotheses/H-CX-8-three-sets-three-domains.md) | 세 유한집합=세 도메인 | 🟨 관찰 | |
+| [H-CX-9](docs/hypotheses/H-CX-9-R-chain-consciousness.md) | R-chain↔의식 수렴 | ⏳ 미검증 | |
+| [H-CX-10](docs/hypotheses/H-CX-10-R-chain-length-phase-transition.md) | R-chain 길이↔위상전이 | ⏳ 미검증 | |
+| [H-CX-11](docs/hypotheses/H-CX-11-golden-moe-ppl-sigma.md) | 골든MoE PPL↔σ | ⏳ 미검증 | |
+| [H-CX-12](docs/hypotheses/H-CX-12-anomaly-detection-R-spectrum.md) | 이상탐지↔R 간극 | 🟧 부분확인 | AUROC=1.0 |
+| [H-CX-13](docs/hypotheses/H-CX-13-anomaly-95x-RS-asymmetry.md) | 95x tension↔R-S 2051x | ⏳ 미검증 | |
 
-### 물리 (H-PH, 5개)
+### 물리 (H-PH, 6개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1056,14 +1088,16 @@
 | [H-PH-3](docs/hypotheses/H-PH-3-tau-phi-sigma-nuclear.md) | τφ=σ↔핵물리 | ⏳ 약함 | |
 | [H-PH-4](docs/hypotheses/H-PH-4-six-quarks-leptons.md) | 쿼크 6+렙톤 6 | ⏳ 투기적 | |
 | [H-PH-5](docs/hypotheses/H-PH-5-planck-units-six.md) | 플랑크 단위 | ⏳ 약함 | |
+| [H-PH-6](docs/hypotheses/H-PH-6-R-chain-decay.md) | R-chain↔방사성 붕괴 | ⏳ 미검증 | |
 
-### 화학/뇌화학 (H-CHEM, 3개)
+### 화학/뇌화학 (H-CHEM, 4개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
 | [H-CHEM-1](docs/hypotheses/H-CHEM-1-neurotransmitter-six.md) | 신경전달물질 6종 | 🟨 관찰 | E/I balance |
 | [H-CHEM-2](docs/hypotheses/H-CHEM-2-carbon-six-perfect.md) | 탄소 Z=6 R=1 유일 | ✅ 수치확인 | |
 | [H-CHEM-3](docs/hypotheses/H-CHEM-3-water-hydrogen-bond.md) | 물 6각형 구조 | 🟨 관찰 | |
+| [H-CHEM-4](docs/hypotheses/H-CHEM-4-R-chain-reaction.md) | R-chain↔화학반응 | ⏳ 미검증 | |
 
 ### CS (H-CS, 4개)
 
@@ -1080,20 +1114,51 @@
 |---|---|---|---|
 | [H-BIO-1](docs/hypotheses/H-BIO-1-codon-sigma-tau.md) | 코돈=(τ,σ/τ) | 🟨 관찰 | (4,3) 최적 균형 |
 
-### 위상수학 (H-TOP, 3개)
+### 위상수학 (H-TOP, 5개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
 | [H-TOP-1](docs/hypotheses/H-TOP-1-betti-numbers-six.md) | CY3 Betti↔σ,τ | ⏳ 극고 | 끈이론 6차원 |
 | [H-TOP-2](docs/hypotheses/H-TOP-2-euler-char-six.md) | χ(M)=6 다양체 | ⏳ 극고 | |
 | [H-TOP-3](docs/hypotheses/H-TOP-3-knot-invariants-six.md) | Trefoil T(2,3)↔σ,τ | ⏳ | B₃→PSL₂→weight12 |
+| [H-TOP-4](docs/hypotheses/H-TOP-4-R-spectrum-topology.md) | R 스펙트럼 위상 | ⏳ 미검증 | Cantor-like |
+| [H-TOP-5](docs/hypotheses/H-TOP-5-fractal-topology-R-spectrum.md) | 프랙탈+위상 조합 | 🟧 구조적 | d_box≈0.155, PH |
 
-### 위상가속 (H-CX-6,7)
+### 새 가지 탐색 (H-TREE, 6개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
-| [H-CX-6](docs/hypotheses/H-CX-6-phase-acceleration-sigma-tau.md) | 위상가속 ×3=σ/τ | ⏳ | Jamba ×3 실측 |
-| [H-CX-7](docs/hypotheses/H-CX-7-topology-seven-levels.md) | 위상 7단계=M₃ | ⏳ | T1-T7 약수분류 |
+| [H-TREE-1](docs/hypotheses/H-TREE-1-dynamical-systems-branch.md) | 동역학계 가지 | 🟩 검증 | 고정점없음, basin14% |
+| [H-TREE-2](docs/hypotheses/H-TREE-2-padic-branch.md) | p-adic 가지 | ⏳ 미검증 | p-adic R 연속성 |
+| [H-TREE-3](docs/hypotheses/H-TREE-3-probability-branch.md) | 확률론 가지 | 🟩 검증 | E[R/n]≈0.15, bimodal |
+| [H-TREE-4](docs/hypotheses/H-TREE-4-operator-algebra-branch.md) | 작용소 대수 가지 | ⏳ 미검증 | Dirichlet ring |
+| [H-TREE-5](docs/hypotheses/H-TREE-5-ml-theory-branch.md) | ML 이론 가지 | 🟧 구조적 | B(d)→1 ⟺ d=2^k |
+| [H-TREE-6](docs/hypotheses/H-TREE-6-tropical-branch.md) | 열대 기하 가지 | ⏳ 미검증 | min-plus R |
+
+### 순수 상수 정리 (T0, 7개) — 골든존 무관, 영원히 참
+
+| # | 가설 | 핵심 | 상태 |
+|---|---|---|---|
+| 067 | 1/2+1/3=5/6 상수관계 | 리만+메타=상한 | ✅ ⭐ |
+| 072 | 1/2+1/3+1/6=1 | 호기심이 완전을 만듦 | ✅ ⭐ |
+| 078 | 이집트 분수 유일 | 5/6=1/2+1/3 유일한 2항 분해 | ✅ |
+| 090 | 마스터 공식=완전수6 | σ₋₁(6)=2 | ✅ ⭐ |
+| 091 | 조화급수 통일 | Hₙ 간격에 1/2,1/3,1/6,5/6,1 | ✅ ⭐ |
+| 092 | ζ 유한 근사 | 오일러 곱 p=2,3 절단 | ✅ ⭐ |
+| 098 | 왜 6인가 | 진약수역수합=1 유일 완전수 | ✅ |
+
+### 모델 수학 (T0+T1, 8개) — G=D×P/I 모델 내 증명
+
+| # | 가설 | 핵심 | 상태 |
+|---|---|---|---|
+| 063 | 거미줄 단조 수렴 | f'=0.7>0 활주 | ✅ |
+| 076 | 17=페르마 소수 | 정17각형 작도, a=0.7 특수값 | ✅ |
+| 077 | ε=(1-a)×(1/6) | 호기심 강도 구조적 결정 | ✅ |
+| 081 | 재현성 보장 | a<1이면 구조적 수렴 | ✅ |
+| 010 | 1/3 법칙 ≠ 정확히 1/3 | 30.17% — 분포 의존적 | ✅ 반증확인 |
+| 014 | Genius~감마 분포 | KS p=0.934 | ✅ |
+| 060 | 감마 분포 α=2 | α=2.03≈2 (D×P 2변수) | ✅ |
+| 011 | Z_max 수렴값=86σ | G_max/σ=19.60/0.224 | ✅ |
 
 ---
 

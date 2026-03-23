@@ -294,7 +294,7 @@ def R_class_label(r_val):
     if r_val < 1:
         return "R < 1 (sub-unitary)"
     elif r_val == 1:
-        return "R = 1 (prime or prime power)"
+        return "R = 1 (e.g. perfect number 6)"
     elif r_val < seven_sixths:
         return "1 < R < 7/6"
     elif r_val == seven_sixths:
