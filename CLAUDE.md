@@ -202,6 +202,24 @@ python3 ~/dev/test-8/texas_quantum.py
   - 일반화 안 되는 것을 일반 법칙처럼 기록하기
 ```
 
+## Ralph Loop 우선순위 규칙
+
+```
+  가설/실험 우선순위 (높은 순):
+    1. 증명 가능 + 문헌에 없음 (arXiv/OEIS 가치) → 즉시 실행
+    2. 교차 도메인 (수학↔AI↔의식엔진) → 새 가설 생성 우선
+    3. 검증 가능한 기존 가설 (docs/hypotheses) → Agent 병렬 실행
+    4. 기존 결과 보강/일반화 → 포화 시에만
+    5. Small Numbers / 자명한 관찰 → 기록만, 시간 투자 금지
+
+  실행 규칙:
+    - 매 iteration마다 우선순위 1-2 먼저 확인
+    - 3회 연속 무발견 시 우선순위 2(교차 가설) 강제 실행
+    - Agent 병렬: 최소 2개 동시 실행 시도
+    - GPU 필요 시: Windows 1순위, RunPod 2순위
+    - CPU 포화 시: Windows WSL로 전송
+```
+
 ## Ralph Loop 표준 프롬프트 (복사용)
 
 ### 수학 DFS (기존)
