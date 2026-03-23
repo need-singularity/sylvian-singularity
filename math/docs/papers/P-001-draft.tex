@@ -364,8 +364,12 @@ More generally, for all $n$:
   \quad F(p,a) = \prod_{j=1}^{a} \frac{p^{j+1}-1}{p(j+1)}.
 \]
 For squarefree $n$ this simplifies to $R(n)^{\tau(n)/2}$.
-This explains why $\prod R(d \mid 6) = 1$ ($R(6) = 1$, squarefree)
-while $\prod R(d \mid 28) = 216/7 \neq 1$ ($28$ is not squarefree).
+For perfect $P_p = 2^{p-1}(2^p-1)$,
+$v_{M_p}\!\bigl(\prod_{d \mid P_p} R(d)\bigr) = -(p-2)$,
+since $M_p$ enters the denominator $p$ times via $f(M_p,1)$
+and the numerator twice via $f(2,p\!-\!1) = M_p/(2p)$.
+At $p=2$: exponent $0$, giving $\prod R = 1$ and $\Lambda(6) = 0$.
+At $p \geq 3$: exponent $< 0$, so $\Lambda(P_p) > 0$.
 \end{corollary}
 
 The pairs $(3,4)$ and $(8,9) = (2^3, 3^2)$ are both instances of
