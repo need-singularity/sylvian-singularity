@@ -1284,7 +1284,7 @@
 | [H-PH-5](docs/hypotheses/H-PH-5-planck-units-six.md) | 플랑크 단위 | ⚪ 기각 | 무관 |
 | [H-PH-6](docs/hypotheses/H-PH-6-R-chain-decay.md) | R-chain↔방사성 붕괴 | ⚪ 기각 | 피상적 비유 |
 
-### 화학/뇌화학 (H-CHEM, 4개)
+### 화학/뇌화학/약리 (H-CHEM, 5개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1292,6 +1292,7 @@
 | [H-CHEM-2](docs/hypotheses/H-CHEM-2-carbon-six-perfect.md) | 탄소 Z=6 R=1 유일 | ✅ 수치확인 | |
 | [H-CHEM-3](docs/hypotheses/H-CHEM-3-water-hydrogen-bond.md) | 물 6각형 구조 | 🟨 관찰 | |
 | [H-CHEM-4](docs/hypotheses/H-CHEM-4-R-chain-reaction.md) | R-chain↔화학반응 | ⚪ 기각 | 피상적 비유 |
+| [H-CHEM-5](docs/hypotheses/H-CHEM-5-thc-cannabinoid-six.md) | THC↔카나비노이드↔6 | 🟨 관찰 | C₂₁=3×7, CB₁=7-TM |
 
 ### CS (H-CS, 4개)
 
@@ -1317,7 +1318,7 @@
 | [H-GEO-9](docs/hypotheses/H-GEO-9-lens-aberration-classification.md) | 렌즈 수차 분류 | 🟧 구조적 | 색수차+구면+비점+코마 |
 | [H-GEO-10](docs/hypotheses/H-GEO-10-multi-lens-interference.md) | 다중 렌즈 간섭 | 🟧 구조적 | 완전수 렌즈 중첩 |
 
-### 생물/면역 (H-BIO, 4개)
+### 생물/면역/송과체 (H-BIO, 6개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1325,6 +1326,8 @@
 | [H-BIO-2](docs/hypotheses/H-BIO-2-virus-capsid-six.md) | 캡시드 60=σ·5, T-number | 🟨 관찰 | τ(60)=σ(6) |
 | [H-BIO-3](docs/hypotheses/H-BIO-3-immune-R-spectrum.md) | 면역=R 이상탐지 | 🟧 구조적 | 관용=간극 |
 | [H-BIO-4](docs/hypotheses/H-BIO-4-cell-division-R-chain.md) | 세포분열=R-chain | 🟨 관찰 | 텔로미어 6bp |
+| [H-BIO-5](docs/hypotheses/H-BIO-5-pineal-gland-six.md) | 송과체 구조↔6 | 🟨 관찰 | 24h=σφ, Ajna=6th |
+| [H-BIO-6](docs/hypotheses/H-BIO-6-pineal-melatonin-R-cycle.md) | 멜라토닌-세로토닌=R-S | 🟧 구조적 | RS=4 순환 |
 
 ### 위상수학 (H-TOP, 7개)
 
