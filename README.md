@@ -226,7 +226,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | E24 | detach+반발력장 | experiment_detach_repulsion.py | +0.15% | C52 |
 | E25 | B-C 연결 | experiment_bc_connection.py | r=+0.062 | C53 |
 
-### DFS 탐색 현황 (Ralph 1~28)
+### DFS 탐색 현황 (발견 시 즉시 기록)
 
 ```
   ═══ DFS 시간순 기록 ═══
