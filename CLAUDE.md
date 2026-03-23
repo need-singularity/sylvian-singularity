@@ -222,7 +222,16 @@ DFS on consciousness engine. RECURSIVE: each iteration reads README results then
 `unknown file attribute` 오류 발생. ASCII 영문만 사용할 것.
 
 ## 백그라운드 실행
-시뮬레이션은 항상 **백그라운드로 실행**한다. Bash 도구의 `run_in_background: true` 옵션을 사용할 것.
+시뮬레이션과 실험은 **무조건 백그라운드로 실행**한다. 예외 없음.
+
+```
+  규칙:
+    1. 모든 python3 실험/학습 스크립트 → run_in_background: true 필수
+    2. 에이전트로 코드 생성 시 → 생성 후 반드시 백그라운드로 실행
+    3. 실행 결과는 완료 알림 후 Read로 확인
+    4. 포그라운드 실행 절대 금지 (사용자 대화 차단됨)
+    5. 병렬 실행 가능한 것은 항상 병렬로
+```
 
 ## 트러블슈팅
 
