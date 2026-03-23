@@ -135,6 +135,27 @@ The only perfect number in the image of $R$ is $6$: $R(120) = 6$.
 No $n$ satisfies $R(n) = 28$ or $R(n) = 496$.
 \end{corollary}
 
+\section{Three finite solution sets}
+
+Applying the same ``pointwise = convolution value'' analysis to
+other pairs of arithmetic functions:
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Identity & Solutions where pointwise${}={}$convolution & Cancellation prime\\
+\hline
+$\sigma\varphi = n\tau$ & $\{1, 6\}$ & $q=3$ \\
+$\tau\varphi = \sigma$  & $\{1, 3, 14, 42\}$ & $q=7$ (Mersenne) \\
+$\varphi^2 = (\varphi*\varphi)$ & $\{1, 3, 10, 30\}$ & $q=5$ (Fermat) \\
+\hline
+\end{tabular}
+\end{center}
+
+The cancellation primes $\{3,5,7\}$ are the three smallest odd primes.
+In each case, $f(2,1) < 1$ is the unique sub-unity local factor,
+and the cancellation prime $q$ is determined by $f(2,1) \cdot f(q,1) = 1$.
+
 \begin{theorem}\label{thm:decrease}
 $R(n) < n$ for all $n \geq 2$. In particular, every integer $R$-chain
 $n_0, n_1 = R(n_0), n_2 = R(n_1), \ldots$ converges to $1$.
