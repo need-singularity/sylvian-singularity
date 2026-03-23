@@ -188,6 +188,37 @@ $R(n) < n$ for all $n \geq 2$. In particular, every integer $R$-chain
 $n_0, n_1 = R(n_0), n_2 = R(n_1), \ldots$ converges to $1$.
 \end{theorem}
 
+\begin{proposition}[Euler factor closed form]\label{prop:euler}
+The Dirichlet series $F(s) = \sum_{n=1}^\infty R(n) n^{-s}$
+has Euler product $F(s) = \prod_p E_p(s)$ with
+\[
+  E_p(2) = p \ln\!\left(\frac{p+1}{p}\right) + \frac{1}{p}.
+\]
+Since $E_p(2) \sim 1 + 1/(2p)$ for large $p$, the product diverges
+and $F(2) \sim \tfrac{1}{2}\ln\ln N$ as $N \to \infty$.
+\end{proposition}
+
+\begin{proof}
+$E_p(s) = 1 + \sum_{a \geq 1} f(p,a)/p^{as}$.
+For $s=2$: using $\sum_{a \geq 1} t^a/(a+1) = (-\ln(1-t)-t)/t$
+with $t = 1/p$ and $t = 1/p^2$, one obtains
+$E_p(2) = p[\ln(p/(p-1)) - \ln(p^2/(p^2-1))] + 1/p = p\ln((p+1)/p) + 1/p$.
+\end{proof}
+
+\begin{theorem}\label{thm:phi-omega}
+$\varphi(n) = \omega(n)$ if and only if $n \in \{2, 6\}$.
+In particular, $\sigma\varphi = n\tau$ and $\sigma\omega = n\tau$
+have the same solution set $\{1, 6\}$.
+\end{theorem}
+
+\begin{proof}
+For $n = p$: $\varphi = p-1$, $\omega = 1$, so $p = 2$.
+For squarefree $n = p_1 \cdots p_k$: $\prod(p_i - 1) = k$.
+At $k=2$: $(p-1)(q-1) = 2$ gives $(p,q) = (2,3)$.
+At $k \geq 3$: $\prod(p_i-1) \geq 1 \cdot 2 \cdot 4 = 8 > k$. No solution.
+Non-squarefree: $\varphi(p^a) = p^{a-1}(p-1) \geq 2 > \omega$ for $a \geq 2$.
+\end{proof}
+
 \begin{remark}[Cantor-like spectrum]
 The image of $R$ restricted to $[0,10]$ consists of only $63$
 distinct rational values (for $n \leq 50000$),
