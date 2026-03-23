@@ -98,11 +98,13 @@ class RepulsionFieldAutoencoder(nn.Module):
         recon, tension = self.forward(x)
         recon_loss = nn.functional.mse_loss(recon, x)
 
-        # Repulsion regularizer: encourage poles to maintain some difference
-        # (prevents collapse to identical poles)
-        repulsion_reg = -torch.log(tension.mean() + 1e-8)
+        # KEY INSIGHT: For anomaly detection, we MINIMIZE tension on normal data.
+        # Both poles should AGREE on normal inputs (low tension).
+        # On unseen anomalies, poles will naturally disagree (high tension).
+        # This is the "consensus = normality" principle.
+        tension_reg = tension.mean()
 
-        total_loss = recon_loss + self.repulsion_weight * repulsion_reg
+        total_loss = recon_loss + self.repulsion_weight * tension_reg
         return total_loss, recon_loss.item(), tension.mean().item()
 
 
