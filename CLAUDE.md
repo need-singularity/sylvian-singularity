@@ -342,11 +342,12 @@ DFS on consciousness engine and cross-domain H-CX hypotheses. RECURSIVE: each it
        - CPU idle < 15% → 새 실험 추가 금지, 문서 작업만
        - Python 프로세스 > 5개 → 완료 대기 후 시작
        - 체크 명령: top -l 1 -n 0 | grep idle && ps aux | grep python | grep -v grep | wc -l
-    7. CPU 포화 시 → 윈도우(RTX 5070) 또는 RunPod으로 실험 실행
+    7. CPU 포화 시 → 윈도우(RTX 5070)로 즉시 실행! 보류 금지!
        - 윈도우: sshpass -p 'qwe123123' ssh aiden@100.112.63.23
+       - 전송: scp 파일 → wsl -e python 실행
        - 상세: logout_test/CLAUDE.md 참조
-       - 로컬에서는 수학 계산, 문서 기록, 지도 업데이트만
-       - 장기 학습(>10분)은 반드시 윈도우/RunPod으로
+       - 로컬 포화 = 자동으로 윈도우 전환 (판단 불필요)
+       - "보류"라고 쓰지 말고 윈도우에서 실행하라
 ```
 
 ## 트러블슈팅
