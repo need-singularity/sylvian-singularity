@@ -1218,7 +1218,7 @@
 | [H-CS-5](docs/hypotheses/H-CS-5-graph-coloring-six.md) | Ramsey-완전수 | 🟧★ 유의 | R(3,3)=6,R(3,8)=28 p=0.047 |
 | [H-CS-6](docs/hypotheses/H-CS-6-hash-collision-six.md) | 해시 충돌 | ⏳ 약함 | |
 
-### 기하학 (H-GEO, 5개)
+### 기하학 (H-GEO, 6개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1227,6 +1227,7 @@
 | [H-GEO-3](docs/hypotheses/H-GEO-3-gravitational-lensing-R-spectrum.md) | 중력렌즈 비유 | 🟧 구조적 | 간극=그림자 |
 | [H-GEO-4](docs/hypotheses/H-GEO-4-dimension-telescope.md) | 차원 망원경 | 🟧 구조적 | F(s)=다초점 관측 |
 | [H-GEO-5](docs/hypotheses/H-GEO-5-gravity-telescope.md) | 중력 망원경 | 🟧 구조적 | 렌즈+망원경 통합 |
+| [H-GEO-6](docs/hypotheses/H-GEO-6-dimension-lens.md) | 차원 렌즈 | 🟧 구조적 | η=τ/d 굴절률, HCN |
 
 ### 생물 (H-BIO, 1개)
 
@@ -1238,9 +1239,9 @@
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
-| [H-TOP-1](docs/hypotheses/H-TOP-1-betti-numbers-six.md) | CY3 Betti↔σ,τ | ⏳ 극고 | 끈이론 6차원 |
-| [H-TOP-2](docs/hypotheses/H-TOP-2-euler-char-six.md) | χ(M)=6 다양체 | ⏳ 극고 | |
-| [H-TOP-3](docs/hypotheses/H-TOP-3-knot-invariants-six.md) | Trefoil T(2,3)↔σ,τ | ⏳ | B₃→PSL₂→weight12 |
+| [H-TOP-1](docs/hypotheses/H-TOP-1-betti-numbers-six.md) | CY3 Betti↔σ,τ | ⚪ 반증 | χ=6∧Σb=12 양립불가 (h¹¹=3.5) |
+| [H-TOP-2](docs/hypotheses/H-TOP-2-euler-char-six.md) | χ(M)=6 다양체 | 🟩 확인 | Gr(2,4): χ=C(τ,φ)=6, dim=τ=4 |
+| [H-TOP-3](docs/hypotheses/H-TOP-3-knot-invariants-six.md) | Trefoil T(2,3)↔σ,τ | 🟨 약한 | Small Numbers p=0.30 |
 | [H-TOP-4](docs/hypotheses/H-TOP-4-R-spectrum-topology.md) | R 스펙트럼 위상 | ⏳ 미검증 | Cantor-like |
 | [H-TOP-5](docs/hypotheses/H-TOP-5-fractal-topology-R-spectrum.md) | 프랙탈+위상 조합 | 🟧 구조적 | d_box≈0.155, PH |
 | [H-TOP-6](docs/hypotheses/H-TOP-6-resolution-observer-topology.md) | 해상도 관측기 | 🟧 구조적 | ε_c=1/6 전이 |

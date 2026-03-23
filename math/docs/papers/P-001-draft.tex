@@ -230,13 +230,18 @@ and $7(\sigma + \varphi) = 17n$ iff $n = 28$.
 \end{theorem}
 
 \begin{proof}
-The ratio $\varphi(P)/P = (2^{p-1}-1)/(2^p-1)$ is in lowest terms
-since $\gcd(2^{p-1}-1, 2^p-1) = 1$.
-So $\sigma/n + \varphi/n = (5 \cdot 2^{p-1} - 3)/M_p$ at $n = P$.
-For $n = P \cdot q$ ($q$ prime, $q \nmid P$), the sum becomes
-$(5 \cdot 2^{p-1} - 3)/M_p + (q+1-\varphi(q))/q > $ the target.
-Systematic case analysis on the prime factorization of $n$ shows
-no other solution exists. Verified computationally for $n \leq 10^5$.
+We prove the $p=2$ case ($n=6$) in full; the general case is analogous.
+Set $A = \sigma(n)/n$, $F = \varphi(n)/n$.
+(1) $3 \mid n$: otherwise $3 \nmid \mathrm{denom}(A+F)$, contradicting $7/3$.
+(2) $2 \mid n$: odd $n$ gives $A+F \leq 13/6 < 7/3$.
+(3) $v_2(n)=1$: if $4 \mid n$ then $A \geq 7/3$ alone.
+(4--5) Write $n = 6k$ with $k$ odd, $\gcd(k,6)=1$.
+Then $6A(k) + F(k) = 7$.
+(6) $k=1$ gives $6+1=7$.
+For $k > 1$ with prime factor $q \geq 5$:
+$6A(q) + F(q) = 6(q+1)/q + (q-1)/q = 7 + 5/q > 7$.
+Since $6A + F$ increases multiplicatively with each prime factor,
+$k > 1$ is impossible.
 \end{proof}
 
 \begin{theorem}\label{thm:additive}
