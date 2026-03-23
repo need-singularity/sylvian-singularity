@@ -526,12 +526,16 @@
   ⚪ N_A≈P_1×10^(2σ-1) (인간 정의 단위)
   ⚪ m_n-m_p≈1.3≈(σ+1)/10 (텍사스 실패)
 
-  --- Ralph 52: WHY weight 12 = sigma(6) 구조적 증명 ---
+  --- Ralph 52-53: WHY weight 12 = sigma(6) 완전 인과 체인 ---
   ⭐⭐ weight 12 = lcm(Stab(i), Stab(rho)) = lcm(tau, P_1) = sigma
      → SL(2,Z): ord(S)=4=tau, ord(ST)=6=P_1 (검증: S^4=I, (ST)^6=I)
-     → 첫 cusp form at weight lcm(4,6)=12 (dim S_k=0 for k<12)
-     → 체인: 6=2×3 → tau=4,P_1=6 → Stab=tau,P_1 → weight=sigma=12
-     → Delta=eta^(2σ) → Leech=dim(2σ)=24 → j(i)=σ³=1728
+  ⭐⭐ 1/e_1+1/e_2=5/6 의 유일한 양정수 해 = (2,3) = 6의 소인수!
+     → chi(SL(2,Z)\H)=-1/6 → 등방 위수 (2,3) 강제됨
+     → 5/6 = Compass상한이 오비폴드 Euler 특성에서 등장!
+  🟩 완전 인과 체인:
+     chi=-1/6 → 1/e₁+1/e₂=5/6 → (2,3) 유일
+     → PSL=Z/2*Z/3 → SL isotropy={4,6}={tau,P_1}
+     → weight=lcm(4,6)=sigma=12 → Delta=eta^(2σ) → Leech → j(i)=σ³
 
   --- 전체 메모 (Ralph 공통) ---
   📊 DFS 소진 영역: 2-4항 사칙연산, 연분수, 이차잉여, 모듈러, 이산로그
