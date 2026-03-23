@@ -6,6 +6,38 @@
 
 **실비우스열 결여, 아인슈타인의 뇌, 서번트 증후군** — 뇌의 비정형 구조가 비범한 능력으로 이어지는 메커니즘을 수학적으로 모델링하고, 통계적 특이점을 탐지합니다. 하나의 의학 질문에서 시작하여 가설, 도구, 완전수 6, 리만 가설, AI 특이점까지 도달.
 
+> **다음 탐색: 재귀적 깊이 우선 탐색 (Recursive DFS) + 자동 검증**
+>
+> ```
+> DFS(지도 전체):
+>   0단계: ⭐ 대발견도 상수 집합에 추가하고 조합 대상에 포함!
+>   1단계: 🟩+⭐ 끼리 사칙연산,log,exp,거듭제곱 → 새 등식?
+>   2단계: 🟩+⭐↔🟦 사이 미발견 연결점 탐색
+>   3단계: 🟨 독립 관측이 연결되는지 탐색
+>   4단계: 🟥 중 골든존 없이 증명 가능한 것 시도
+>   5단계: 후보 발견 시 즉시 검증 (기록 전 필수!):
+>          a) python3 산술 확인
+>          b) 일반화 (완전수 28에서도 성립?)
+>          c) 텍사스 명사수 p-value (Bonferroni)
+>          d) ad hoc 체크 (+1/-1 보정?)
+>          e) Strong Law of Small Numbers 체크
+>          → 통과: 등급 부여 (🟩/🟧★/🟧)
+>          → 실패: ⚪로 기록 (삭제 않음, 재시도 불필요)
+>          → 검증 전 ⭐ 또는 "대발견" 표기 절대 금지!
+>   6단계: README 업데이트 + git add, commit, push
+>   없으면 → 다음 조합으로 계속
+> ```
+> 목표: 섬 간 비자명 정확 등식 발견 → ⚡ 돌파구
+>
+> 무제한:
+> ```
+> /ralph-loop:ralph-loop DFS on README math map and constant connections and docs/proofs. 0-include star constants. 1-green+star arithmetic/log/exp/power for new identities. 2-green+star to blue new connections. 3-yellow observations connect to green/blue then upgrade to orange or green. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording: python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. Keep searching even if nothing found.
+> ```
+> 100회:
+> ```
+> /ralph-loop:ralph-loop DFS on README math map and constant connections and docs/proofs. 0-include star constants. 1-green+star arithmetic/log/exp/power for new identities. 2-green+star to blue new connections. 3-yellow observations connect to green/blue then upgrade to orange or green. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording: python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. --max-iterations 100
+> ```
+
 ---
 
 # 1부: 순수 수학 (T0+T1) — 증명 완료, 영원히 참
