@@ -309,6 +309,13 @@ DFS on consciousness engine. RECURSIVE: each iteration reads README results then
     3. 실행 결과는 완료 알림 후 Read로 확인
     4. 포그라운드 실행 절대 금지 (사용자 대화 차단됨)
     5. 병렬 실행 가능한 것은 항상 병렬로
+    6. 실험 시작 전 CPU/RAM 체크 필수:
+       - CPU idle < 15% → 새 실험 추가 금지, 문서 작업만
+       - Python 프로세스 > 5개 → 완료 대기 후 시작
+       - 체크 명령: top -l 1 -n 0 | grep idle && ps aux | grep python | grep -v grep | wc -l
+    7. CPU 포화 시 → RunPod GPU 또는 윈도우 원격으로 실험 실행
+       - 로컬에서는 수학 계산, 문서 기록, 지도 업데이트만
+       - 무거운 학습은 윈도우/RunPod으로 분산
 ```
 
 ## 트러블슈팅
