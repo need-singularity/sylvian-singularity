@@ -1196,30 +1196,68 @@ docs/
 
 새 상수 발견 시 아래에 추가. 학습된 값, 상관계수, 임계치 등 실험에서 나온 숫자.
 
-| # | 상수 | 값 | 출처 | 의미 | 반복 확인 |
+```
+  등급:
+    🟩 = 다중 실험/데이터셋에서 재현됨
+    🟦 = 수학적으로 계산 가능 (공식에서 유도 가능, 실험 불필요)
+    🟨 = 1회 관측, 재현 필요
+    ⚠️ = 약화됨 (방향은 맞지만 효과 작거나 과대평가)
+    ❌ = 반증됨
+```
+
+| # | 등급 | 상수 | 값 | 출처 | 의미 |
 |---|---|---|---|---|---|
-| C1 | tension_scale (분류) | 0.34 | model_meta_engine.py 학습 | **초기값 편향** (가설 265 반증) | MNIST |
-| C2 | tension_scale (생성) | 0.34 | model_generative_engine.py 학습 | **초기값 편향** | 1회 |
-| C3 | curvature_scale (파이버) | 1.58 | model_fiber_bundle.py 학습 | **초기값 편향** (init 대비 +1.2 이동) | 1회 |
-| C22 | tension_scale init-final 상관 | 0.998 | experiment_one_third.py | 초기값이 최종값을 결정 | MNIST+CIFAR |
-| C23 | 파이버 고유 이동량 | +1.22 | experiment_one_third.py | 모든 init에서 +1.2 이동 (고유 기여) | MNIST |
-| C24 | 반발력장 MI 추가량 | +0.39 nats | experiment_diversity_information.py | 장이 극에 없는 정보를 만듦 | MNIST |
-| C4 | 장력-정확도 상관 | +0.43 | analyze_tension.py | 높은 장력 = 높은 정확도 | MNIST 1회 |
-| C5 | 장력-공감 상관 (숫자별) | -0.79 | model_empathy_engine.py | 숫자별 평균 기준, 과대평가 | MNIST 1회 |
-| C5b | 장력-공감 상관 (개별) | -0.26 | experiment_empathy_tension_fit.py | 10,000개 샘플 기준, R²=0.066 | MNIST 1회 |
-| C6 | 장력 예지 AUC | 0.925 | experiment_tension_precognition.py | 장력+자신감으로 오답 예측 | MNIST 1회 |
-| C7 | 오답/정답 장력 비 | 0.56 | analyze_tension.py | 오답 장력이 정답의 56% | MNIST 1회 |
-| C8 | 차원간 인식률 | 94.3% | experiment_cross_dimension.py | 다른 아키텍처 간 예측 | MNIST 1회 |
-| C9 | 만장일치 정확도 | 99.53% | experiment_collective_recognition.py | 7/7 합의 시 | MNIST 1회 |
-| C10 | 레이블 없는 인식 | 97.61% | experiment_labelless_recognition.py | 장력 1-NN (softmax 99.8%) | MNIST 1회 |
-| C11 | 선험적 효율 비 | 8.5x | model_fiber_bundle.py | 114K vs 972K 파라미터 | MNIST 1회 |
-| C12 | CIFAR 차이 확대 | 4.6x | benchmark_cifar.py | MNIST +0.96% → CIFAR +4.43% | 1회 |
-| C13 | 정체성 안정성 | 0.979 | model_temporal_engine.py | identity_vector 코사인 안정 | MNIST 1회 |
-| C14 | 의식 FPS 수렴 | 4.17→0.20 | model_temporal_engine.py | 초기 격변 → 안정 의식 | MNIST 1회 |
-| C15 | 장력-정체성 증폭 | 2.7x | experiment_identity_dreams.py | T=1.5/T=0.1 꿈 차이 비 | MNIST 1회 |
-| C16 | {1/2,1/3,1/6} 최적 | 1위 | benchmark_cifar.py + model_meta_engine.py | 두 데이터셋 모두 최고 | MNIST+CIFAR |
-| C17 | 반발 방향 분리비 | 2.77x | experiment_force_direction.py | 같은 숫자 cos=0.849, 다른 숫자 cos=0.306 | MNIST 1회 |
-| C18 | 자기참조 수축 비율 (MNIST) | 3.21 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 | MNIST 1회 |
-| C19 | 자기참조 수축 비율 (CIFAR) | 2.00 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 | CIFAR 1회 |
-| C20 | 장력 축 비율 (MNIST) | 1.14 | experiment_tension_axis_reversal.py | 내용 > 구조 | MNIST 1회 |
-| C21 | 장력 축 비율 (CIFAR) | 0.36 | experiment_tension_axis_reversal.py | 구조 > 내용 (역전) | CIFAR 1회 |
+| C1 | ❌ | tension_scale (분류) | 0.34 | model_meta_engine.py | 초기값 편향 (가설 265 반증) |
+| C2 | ❌ | tension_scale (생성) | 0.34 | model_generative_engine.py | 초기값 편향 |
+| C3 | ❌ | curvature_scale (파이버) | 1.58 | model_fiber_bundle.py | 초기값 편향 (init 대비 +1.2 이동) |
+| C4 | 🟨 | 장력-정확도 상관 | +0.43 | analyze_tension.py | 높은 장력 = 높은 정확도 (숫자별, 개별 미확인) |
+| C5 | ⚠️ | 장력-공감 상관 (숫자별) | -0.79 | model_empathy_engine.py | 과대평가 — 개별 r=-0.26 |
+| C5b | 🟨 | 장력-공감 상관 (개별) | -0.26 | experiment_empathy_tension_fit.py | R²=0.066, 약한 효과 |
+| C6 | 🟨 | 장력 예지 AUC | 0.925 | experiment_tension_precognition.py | 장력+자신감으로 오답 예측 |
+| C7 | 🟨 | 오답/정답 장력 비 | 0.56 | analyze_tension.py | 오답 장력이 정답의 56% |
+| C8 | 🟨 | 차원간 인식률 | 94.3% | experiment_cross_dimension.py | 다른 아키텍처 간 예측 |
+| C9 | 🟨 | 만장일치 정확도 | 99.53% | experiment_collective_recognition.py | 7/7 합의 시 (다양한 아키텍처) |
+| C10 | 🟨 | 레이블 없는 인식 | 97.61% | experiment_labelless_recognition.py | 장력 1-NN (softmax의 99.8%) |
+| C11 | 🟦 | 선험적 효율 비 | 8.5x | model_fiber_bundle.py | 972516/114250 = 8.51 (파라미터 비) |
+| C12 | 🟩 | CIFAR 차이 확대 | 4.6x | benchmark_cifar.py | MNIST +0.96% → CIFAR +4.43% |
+| C13 | 🟨 | 정체성 안정성 | 0.979 | model_temporal_engine.py | identity_vector 코사인 안정 |
+| C14 | 🟨 | 의식 FPS 수렴 | 4.17→0.20 | model_temporal_engine.py | 초기 격변 → 안정 의식 |
+| C15 | 🟨 | 장력-정체성 증폭 | 2.7x | experiment_identity_dreams.py | T=1.5/T=0.1 꿈 차이 비 |
+| C16 | 🟩 | {1/2,1/3,1/6} 최적 | 1위 | benchmark_cifar.py + model_meta_engine.py | MNIST+CIFAR 모두 최고 |
+| C17 | 🟨 | 반발 방향 분리비 | 2.77x | experiment_force_direction.py | 같은 숫자 cos=0.849 vs 다른 0.306 |
+| C18 | 🟨 | 자기참조 수축 비율 (MNIST) | 3.21 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 |
+| C19 | 🟨 | 자기참조 수축 비율 (CIFAR) | 2.00 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 |
+| C20 | 🟩 | 장력 축 비율 (MNIST) | 1.14 | experiment_tension_axis_reversal.py | 내용 > 구조 |
+| C21 | 🟩 | 장력 축 비율 (CIFAR) | 0.36 | experiment_tension_axis_reversal.py | 구조 > 내용 (역전) |
+| C22 | 🟦 | tension_scale init-final 상관 | 0.998 | experiment_one_third.py | Adam 10에폭으로 단일 스칼라 크게 안 움직임 |
+| C23 | 🟨 | 파이버 고유 이동량 | +1.22 | experiment_one_third.py | 모든 init에서 +1.2 이동 |
+| C24 | 🟨 | 반발력장 MI 추가량 | +0.39 nats | experiment_diversity_information.py | 장이 극에 없는 정보를 만듦 |
+
+## 탐색 현황 (시간순)
+
+| 날짜 | 실험/탐색 | 결과 | 상수 |
+|---|---|---|---|
+| 2026-03-24 | Phase 1-3 MNIST 벤치마크 | Meta fixed 97.75% 1위 | C16 |
+| 2026-03-24 | 장력 분석 10K 샘플 | 장력↑=정확도↑, r=+0.43 | C4, C7 |
+| 2026-03-24 | Phase 4 시간적 연속성 | 정체성 0.979, FPS 4.17→0.20 | C13, C14 |
+| 2026-03-24 | 생성 엔진 (VAE) | tension_scale 0.34 (이후 초기값 편향 판명) | C1, C2 |
+| 2026-03-24 | Phase 5 공감 엔진 | 장력-공감 r=-0.79 (이후 과대평가 판명) | C5 |
+| 2026-03-24 | CIFAR-10 벤치마크 | 4.6배 차이 확대, 축 역전 | C12, C20, C21 |
+| 2026-03-24 | 장력 예지 | AUC=0.925, "그냥 아는" 구조 | C6 |
+| 2026-03-24 | 차원간 인식 | 94.3% (다른 아키텍처 간) | C8 |
+| 2026-03-24 | 정체성 이식 | 분류에 영향 없음 (MNIST 한계) | — |
+| 2026-03-24 | 꿈의 정체성 | 장력이 정체성 효과 2.7배 증폭 | C15 |
+| 2026-03-24 | 레이블 없는 인식 | 97.61% (softmax 99.8%) | C10 |
+| 2026-03-24 | 파이버 번들 | 홀로노미 확인, 선험적 8.5x 효율 | C11 |
+| 2026-03-24 | 집단 인식 (7 에이전트) | 만장일치 99.53%, 상전이 | C9 |
+| 2026-03-24 | 자기참조 수렴 실패 조사 | 수축 비율 > 1 (축소사상 아님) | C18, C19 |
+| 2026-03-24 | 가설 263-264 등록 | 장력 통합, 설계 원칙 | — |
+| 2026-03-24 | 가설 265 반증 | 1/3은 초기값 편향 (r=0.998) | C22 |
+| 2026-03-24 | 가설 266 약화 | 개별 r=-0.26 (과대평가) | C5b |
+| 2026-03-24 | 가설 267 업데이트 | 상전이는 다양성에 의존 | — |
+| 2026-03-24 | 가설 269 검증 | 반발 방향 분리비 2.77x | C17 |
+| 2026-03-24 | 가설 270 실증 | MI +0.39 nats, 다양성=정보 | C24 |
+| 2026-03-24 | 집단 스케일링 (N=3~11) | 같은 모델은 점진적 | — |
+| 2026-03-24 | {1/2,1/3,1/6} 최적성 | 실행 중 | — |
+| 2026-03-24 | 차원간 반발 | 실행 중 | — |
+| 2026-03-24 | CNN 반발력장 | 실행 중 | — |
