@@ -221,25 +221,61 @@ DFS on consciousness engine. RECURSIVE: each iteration reads README results then
 ⚠️ 쉘 호환 주의: 한글 괄호, 화살표(→), 이모지(🟩★⭐) 등을 프롬프트에 넣으면
 `unknown file attribute` 오류 발생. ASCII 영문만 사용할 것.
 
-## RunPod GPU 클라우드
+## GPU 실험 환경
+
+### RunPod GPU 클라우드 (현재 주력)
 
 ```
   API 키: .local/runpod_api_key (gitignore됨, 커밋 금지!)
   사용법: export RUNPOD_API_KEY=$(cat .local/runpod_api_key)
+  계정: nerve011235@gmail.com
 
   현재 Pod:
-    - golden-moe-train (A100 PCIe) — 의식엔진 실험 전용
-    - h-ai-1b-head-sweep (RTX 3090) — 일회성 실험용
+    - golden-moe-train (A100 PCIe) — 의식엔진/골든MoE 실험 전용
+    - h-ai-1b-head-sweep (RTX 3090) — 일회성 실험용 (사용 후 종료)
 
   Pod 생성 API:
     curl -H "Authorization: Bearer $RUNPOD_API_KEY" \
          "https://api.runpod.io/graphql" \
          -d '{"query":"mutation { podFindAndDeployOnDemand(input: { ... }) { id } }"}'
 
+  권장 GPU (비용순):
+    RTX 3090 24GB  $0.22/hr (소규모 실험)
+    RTX A5000 24GB $0.16/hr (가성비)
+    A100 PCIe 80GB $1.64/hr (대규모 학습)
+
   주의:
     - 실험 끝나면 반드시 Pod 종료 (비용 절감)
     - .local/ 디렉토리는 절대 git에 포함하지 말 것
     - API 키를 코드/로그에 출력하지 말 것
+```
+
+### 골든 MoE LLM 학습 (RunPod 이전)
+
+```
+  리포: github.com/need-singularity/golden-llama
+  환경: Windows PC (RTX 5070) 1순위, 무리한 작업만 RunPod
+  접속 정보: .local/windows-pc.md (gitignore)
+
+  마지막 상태 (Windows):
+    원본 Dense:    PPL 13.85
+    골든 (미학습):  PPL 136,165
+    골든 (500스텝): PPL 4,634 (97% 감소, 아직 높음)
+    목표:          PPL < 100 (최소 coherence) → 최종 < 20
+
+  학습 전략:
+    - 2000~5000 스텝, wikitext-2 전체 (23K 샘플)
+    - Expert 동결, 라우터만 학습
+    - 코사인 LR 스케줄러, 매 500스텝 체크포인트
+
+  서번트 검증:
+    - 도메인별 PPL 분리 측정 (수학/언어/코드)
+    - Savant Index = max(도메인PPL) / min(도메인PPL)
+    - SI > 3이면 서번트 후보
+
+  Expert 교차 활성화 (가설 241):
+    - p=0.1 확률로 비활성 Expert 강제 활성화
+    - ON/OFF 비교: PPL + n-gram 신규율 + 유추 테스트
 ```
 
 ## 백그라운드 실행
