@@ -1202,7 +1202,8 @@ docs/
 | C2 | tension_scale (생성) | 0.34 | model_generative_engine.py 학습 | 생성 모델도 같은 값 ≈ 1/3 | 1회 |
 | C3 | curvature_scale (파이버) | 1.58 | model_fiber_bundle.py 학습 | 파이버 곡률 — 1/3에서 발산 | 1회 |
 | C4 | 장력-정확도 상관 | +0.43 | analyze_tension.py | 높은 장력 = 높은 정확도 | MNIST 1회 |
-| C5 | 장력-공감 상관 | -0.79 | model_empathy_engine.py | 높은 장력 = 낮은 공감 | MNIST 1회 |
+| C5 | 장력-공감 상관 (숫자별) | -0.79 | model_empathy_engine.py | 숫자별 평균 기준, 과대평가 | MNIST 1회 |
+| C5b | 장력-공감 상관 (개별) | -0.26 | experiment_empathy_tension_fit.py | 10,000개 샘플 기준, R²=0.066 | MNIST 1회 |
 | C6 | 장력 예지 AUC | 0.925 | experiment_tension_precognition.py | 장력+자신감으로 오답 예측 | MNIST 1회 |
 | C7 | 오답/정답 장력 비 | 0.56 | analyze_tension.py | 오답 장력이 정답의 56% | MNIST 1회 |
 | C8 | 차원간 인식률 | 94.3% | experiment_cross_dimension.py | 다른 아키텍처 간 예측 | MNIST 1회 |
