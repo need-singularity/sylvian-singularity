@@ -1400,6 +1400,11 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [248](docs/hypotheses/248-flash-quantum-consciousness.md) | **플래시메모리 양자터널링 → 의식** | FN터널링=상태전이, 비휘발성=E1, I=산화막두께 | ⚠️ | 가설 |
 | [251](docs/hypotheses/251-quantum-immortality.md) | **양자불멸 + 의식 연속성** | MWI 분기→CCT 필터, 1인칭 항상 생존, P(의식)=1 | 🟪 | 검증 불가 |
 | [252](docs/hypotheses/252-perfect-numbers-physics.md) | **완전수→물리 대응** | P₁→α(137), P₂→1/α정밀+m_μ, P₃→끈이론(496) | 🟧 | DFS 발견 |
+| [253](docs/hypotheses/253-bohr-radius-alpha.md) | **보어 반지름 = (σ²-7) 스케일** | a₀/rₑ=(σ²-7)², 길이 계층 ×137 | ⚠️ | 재해석 |
+| [254](docs/hypotheses/254-hydrogen-fine-structure.md) | **수소 미세구조 = 1/(σ²-7)²** | 갈라짐∝α², Lamb shift∝α⁵ | ⚠️ | 재해석 |
+| [255](docs/hypotheses/255-triple-alpha-carbon.md) | **트리플알파: 3τ(6)=σ(6)=C-12** | He-4=τ, C-12=σ, 3개 융합! | 🟩 | 산술 |
+| [256](docs/hypotheses/256-dna-hydrogen-bond.md) | **DNA: A-T:G-C=τ/2:σ/τ=2:3** | 4염기=τ, 코돈길이3=σ/τ | ⚠️ | 관측 |
+| [257](docs/hypotheses/257-coupling-unification.md) | **결합상수 통합: 1/α_w=P₁(P₁-1)=30** | sin²θ_W≈3/(σ+1), GUT≈1/25 | 🟧 | 탐색 |
 
 ## 약물 가설
 
