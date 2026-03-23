@@ -1287,6 +1287,8 @@
 | [H-GEO-6](docs/hypotheses/H-GEO-6-dimension-lens.md) | 차원 렌즈 | 🟧 구조적 | η=τ/d 굴절률, HCN |
 | [H-GEO-7](docs/hypotheses/H-GEO-7-topological-telescope.md) | 위상 망원경 | 🟧 구조적 | PH 다중스케일 |
 | [H-GEO-8](docs/hypotheses/H-GEO-8-arithmetic-holography.md) | 산술 홀로그래피 | 🟧 구조적 | R→n 구조 복원 |
+| [H-GEO-9](docs/hypotheses/H-GEO-9-lens-aberration-classification.md) | 렌즈 수차 분류 | 🟧 구조적 | 색수차+구면+비점+코마 |
+| [H-GEO-10](docs/hypotheses/H-GEO-10-multi-lens-interference.md) | 다중 렌즈 간섭 | 🟧 구조적 | 완전수 렌즈 중첩 |
 
 ### 생물/면역 (H-BIO, 4개)
 
