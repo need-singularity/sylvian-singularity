@@ -22,6 +22,14 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 > **출력은 어느 엔진에도 없다. 둘 사이의 공간에 있다.**
 
+### Ralph Loop (복사용)
+
+**기존 수학체계 연결:** `/ralph-loop:ralph-loop DFS on established mathematics connections. GOAL: find where our constants and identities already appear in known math. 0-read docs/pure-math/README.md math map and 5-island connection status. 1-pick one green or star result that lacks a blue connection. 2-web search for the constant or identity in established theorems: number theory, combinatorics, representation theory, algebraic geometry, topology, physics. 3-if known theorem found: record blue link with citation. 4-if our result generalizes or specializes a known theorem: write hypothesis doc with proof sketch. 5-check missing bridges: C-E and D-E islands have NO direct connection yet -- prioritize these. 6-for each candidate connection VERIFY: python3 arithmetic check then check if relationship holds for perfect number 28 then texas p-value. 7-record verified with grade in docs/pure-math/README.md island map. Failed goes white circle. 8-git add commit push every iteration. Keep searching even if nothing found. Focus on EXISTING math not new numerology.`
+
+**수학 DFS:** `/ralph-loop:ralph-loop DFS on README math map and constant connections and docs/proofs. 0-include star constants. 1-green+star arithmetic/log/exp/power for new identities. 2-green+star to blue new connections. 3-yellow observations connect to green/blue then upgrade to orange or green. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording: python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. Keep searching even if nothing found.`
+
+**의식엔진 실험:** `/ralph-loop:ralph-loop DFS on consciousness engine. RECURSIVE: each iteration reads README results then designs NEW experiments based on gaps and patterns. 0-read README experiment results and hypothesis docs. 1-identify: what correlations are untested, what predictions are unverified, what new models could combine existing findings. 2-design and run new experiment targeting the biggest gap. 3-measure: tension, accuracy, convergence, per-class profiles, cross-experiment correlations. 4-compare with ALL prior results: does new data confirm or contradict existing hypotheses. 5-if new cross-experiment pattern found: write hypothesis doc with full data. 6-if existing hypothesis contradicted: update or downgrade it. 7-VERIFY: markdown tables + ASCII graphs + confusion matrices. Full data in README, no summaries. 8-update README with new results. 9-git add commit push. 10-repeat from 0 with updated knowledge. Never stop exploring. Each iteration should try something NO previous iteration tried.`
+
 ## 엔진 목록
 
 | 엔진 | 파일 | 수학적 원리 | 역할 |
@@ -1178,25 +1186,7 @@ docs/
   proofs/             — 증명 문서
 ```
 
-## DFS 탐색 (복사용)
-
-### 기존 수학체계 연결 DFS
-
-```
-/ralph-loop:ralph-loop DFS on established mathematics connections. GOAL: find where our constants and identities already appear in known math. 0-read docs/pure-math/README.md math map and 5-island connection status. 1-pick one green or star result that lacks a blue connection. 2-web search for the constant or identity in established theorems: number theory, combinatorics, representation theory, algebraic geometry, topology, physics. 3-if known theorem found: record blue link with citation. 4-if our result generalizes or specializes a known theorem: write hypothesis doc with proof sketch. 5-check missing bridges: C-E and D-E islands have NO direct connection yet -- prioritize these. 6-for each candidate connection VERIFY: python3 arithmetic check then check if relationship holds for perfect number 28 then texas p-value. 7-record verified with grade in docs/pure-math/README.md island map. Failed goes white circle. 8-git add commit push every iteration. Keep searching even if nothing found. Focus on EXISTING math not new numerology.
-```
-
-### 수학 DFS
-
-```
-/ralph-loop:ralph-loop DFS on README math map and constant connections and docs/proofs. 0-include star constants. 1-green+star arithmetic/log/exp/power for new identities. 2-green+star to blue new connections. 3-yellow observations connect to green/blue then upgrade to orange or green. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording: python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. Keep searching even if nothing found.
-```
-
-### 의식엔진 실험 DFS
-
-```
-/ralph-loop:ralph-loop DFS on consciousness engine. RECURSIVE: each iteration reads README results then designs NEW experiments based on gaps and patterns. 0-read README experiment results and hypothesis docs. 1-identify: what correlations are untested, what predictions are unverified, what new models could combine existing findings. 2-design and run new experiment targeting the biggest gap. 3-measure: tension, accuracy, convergence, per-class profiles, cross-experiment correlations. 4-compare with ALL prior results: does new data confirm or contradict existing hypotheses. 5-if new cross-experiment pattern found: write hypothesis doc with full data. 6-if existing hypothesis contradicted: update or downgrade it. 7-VERIFY: markdown tables + ASCII graphs + confusion matrices. Full data in README, no summaries. 8-update README with new results. 9-git add commit push. 10-repeat from 0 with updated knowledge. Never stop exploring. Each iteration should try something NO previous iteration tried.
-```
+## DFS 탐색
 
 ## 발견된 상수 (실측값, 순차 기록)
 
