@@ -1,0 +1,81 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\title{A characterization of 6 via arithmetic functions}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove that $\sigma(n)\varphi(n) = n\tau(n)$ if and only if $n \in \{1,6\}$,
+providing a new characterization of the smallest perfect number using only the
+four basic arithmetic functions $\sigma$, $\varphi$, $\tau$, and the identity.
+The dual equation $\sigma(n)\tau(n) = n\varphi(n)$ characterizes $n=28$.
+We establish a spectral gap: the ratio $R(n) = \sigma(n)\varphi(n)/(n\tau(n))$
+lies in $\{3/4\} \cup \{1\} \cup [7/6, \infty)$, with both intervals $(3/4,1)$
+and $(1,7/6)$ empty.
+\end{abstract}
+
+\section{Introduction}
+
+Let $\sigma(n)$, $\tau(n)$, and $\varphi(n)$ denote the sum of divisors,
+number of divisors, and Euler's totient function, respectively. Define
+\[
+  R(n) = \frac{\sigma(n)\varphi(n)}{n\,\tau(n)}.
+\]
+
+\begin{theorem}\label{thm:main}
+$R(n) = 1$ if and only if $n \in \{1, 6\}$.
+\end{theorem}
+
+\begin{theorem}\label{thm:gap}
+For all $n \geq 2$,
+\[
+  R(n) \in \left\{\tfrac{3}{4}\right\} \cup \{1\} \cup \left[\tfrac{7}{6}, \infty\right).
+\]
+In particular, both $(3/4, 1)$ and $(1, 7/6)$ are empty.
+\end{theorem}
+
+\begin{theorem}\label{thm:dual}
+$\sigma(n)\tau(n) = n\varphi(n)$ if and only if $n \in \{1, 28\}$.
+\end{theorem}
+
+\section{Proof of Theorem~\ref{thm:main}}
+
+Since $\sigma$, $\varphi$, $\tau$ are multiplicative and $n \mapsto n$ is
+completely multiplicative, $R$ is multiplicative on squarefree integers and
+factors as
+\[
+  R(n) = \prod_{p^a \| n} f(p,a), \quad
+  f(p,a) = \frac{p^{a+1}-1}{p(a+1)}.
+\]
+
+\textbf{Step 1.} $f(2,1) = 3/4$ is the unique value below 1.
+
+For $a=1$: $f(p,1) = (p^2-1)/(2p) \geq 4/3$ when $p \geq 3$.
+For $a \geq 2$: $f(p,a) \geq f(2,2) = 7/6 > 1$.
+
+\textbf{Step 2.} $R(n)=1$ requires $2 \| n$.
+
+If $2 \nmid n$, all factors exceed 1. If $4 \mid n$, the 2-part contributes
+$f(2,a) \geq 7/6 > 1$.
+
+\textbf{Step 3.} The remaining product equals $4/3$.
+
+We need $f(q,1) = 4/3$, giving $(q^2-1)/(2q) = 4/3$, so $3q^2 - 8q - 3 = 0$,
+with unique prime solution $q = 3$.
+
+\textbf{Step 4.} No further factors allowed.
+
+Any additional $f(r,b) \geq 4/3$ pushes the product above $4/3$.
+Hence $n = 2 \times 3 = 6$.  \qed
+
+% TODO: Complete sections 3-8
+
+\end{document}
