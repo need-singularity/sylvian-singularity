@@ -88,12 +88,28 @@ def generate_noise():
 
 
 def extract_fft_features(signal):
-    """Extract FFT magnitude features (first N_FFT_BINS bins)."""
+    """Extract FFT magnitude features.
+
+    FFT bin resolution = SAMPLE_RATE / N_SAMPLES = 1 Hz/bin for 8kHz/8000pts.
+    Our signals are at 200, 500, 1000 Hz, so we need bins 0..~1500.
+    We take the full spectrum up to Nyquist (4000 Hz), then downsample
+    to N_FFT_BINS by averaging adjacent bins.
+    """
     fft = np.fft.rfft(signal)
-    magnitudes = np.abs(fft)[:N_FFT_BINS]
+    magnitudes = np.abs(fft)  # 4001 bins (0 to 4000 Hz)
+
     # Log scale for better dynamic range
     magnitudes = np.log1p(magnitudes)
-    return magnitudes
+
+    # Downsample to N_FFT_BINS by averaging blocks
+    n_total = len(magnitudes)
+    block_size = n_total // N_FFT_BINS
+    features = np.array([
+        magnitudes[i * block_size:(i + 1) * block_size].mean()
+        for i in range(N_FFT_BINS)
+    ], dtype=np.float32)
+
+    return features
 
 
 def generate_dataset(n_per_class=N_PER_CLASS, noise_level=0.1):
