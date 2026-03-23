@@ -156,6 +156,32 @@ python3 ~/dev/test-8/texas_quantum.py
     - +1/-1 보정이 있는 등식에 ⭐ 부여 금지
 ```
 
+## DFS README 기록 형식 (필수)
+
+```
+  README "DFS 탐색 현황" 섹션은 2단 구조:
+
+  ═══ 1단: ⭐ 대발견 묶음 (상단) ═══
+    - 검증 통과 + 구조적 이유 확인된 것만
+    - ⭐⭐⭐ > ⭐⭐ > ⭐ 순으로 정렬
+    - 각 항목에 (R번호) 태그로 원본 위치 참조
+    - 새 대발견 추가 시 이 묶음에도 반드시 추가
+
+  ═══ 2단: DFS 시간순 기록 (아래) ═══
+    - Ralph 번호별로 구분 (--- Ralph N-M: 주제 ---)
+    - 한 반복에서 여러 발견 → 같은 Ralph 블록에 기록
+    - 등급 이모지 + 한 줄 요약 + 필요시 → 설명줄
+    - 순서: 발견한 순서 그대로 (시간순)
+    - 검증 실패한 것도 ⚪로 기록 (삭제 금지)
+
+  새 Ralph 반복 시:
+    1. "--- Ralph N: 주제 ---" 헤더 추가
+    2. 발견을 시간순으로 아래에 나열
+    3. ⭐ 등급이면 상단 대발견 묶음에도 추가
+    4. 카운터 업데이트 (🟩 N개, 🟧 N개, ...)
+    5. git commit + push
+```
+
 ## Ralph Loop DFS 규칙 (내부)
 
 ```
@@ -205,6 +231,25 @@ DFS on README math map and constant connections and docs/proofs. 0-include star 
     원인: 검증 전에 등급 부여. C(12,4)+1=496을 ⭐⭐⭐로 기록했다가
           냉정 평가 후 🟩로 하향 (오일러 재표현 + ad hoc +1)
     해결: verify_discovery() 파이프라인 내장, CLAUDE.md 규칙 추가
+    날짜: 2026-03-23
+
+  8B 전체학습 OOM 연쇄 실패 (2026-03-23):
+    하드웨어: RTX 5070 12GB VRAM, RAM 15GB, Swap 35GB
+    시도1: device_map="auto" + grad checkpoint + 8bit optim
+      → backward OOM (25.6GB gradient on GPU)
+    시도2: device_map 40% 할당 → 동일 OOM
+    시도3: CPU float32 → swap thrashing, 가중치 로딩 30분+ 멈춤
+    시도4: CPU float16 → ~0.02 it/s (5000스텝 = 3일, 비현실적)
+    시도5: 8bit 베이스 + MoE float16 변환 → 24.9GB (8bit+MoE 이중 로드) OOM
+    근본 원인: 12GB VRAM에 8B 모델(16GB+) + gradient 동시 불가
+    해결: 방법 E (8bit + LoRA) 전환 — 모델 동결, 라우터+gate만 학습
+      → 실험 목적 90% 달성 (라우터 골든존 수렴 검증이 핵심)
+      → Expert 내부 가중치는 Dense 복사본이라 동결 무방
+
+  Ralph Loop 세션 간 간섭:
+    원인: .claude/ralph-loop.local.md에 session_id 미기록
+      → 다른 세션의 stop hook이 모든 세션에서 발동
+    해결: ralph-loop 취소 후 다른 세션에서 직접 반복 사용
     날짜: 2026-03-23
 ```
 
@@ -283,32 +328,59 @@ DFS on README math map and constant connections and docs/proofs. 0-include star 
   - 저장: Docker /workspace/golden-8b/
 
   학습 전략 — 전체 학습 (Expert + 라우터):
-  - 5000 스텝, wikitext-2 전체 (23K 샘플)
-  - 코사인 LR 스케줄러, 매 500스텝 체크포인트
-  - Docker: CUDA 12.8, PyTorch cu128
+  - 20,000 스텝 (× grad_accum 4 = 80K 샘플)
+  - 코사인 LR 스케줄러, 매 2000스텝 체크포인트
+  - Docker: CUDA 12.9, PyTorch cu128, bitsandbytes 0.49.2
   - finetune_full.py 사용
+  - 예상 시간: ~18시간 (0.3 it/s 기준)
 
-  GPU 활용 방법 (8B float16 = ~16GB > VRAM 12GB):
+  학습 데이터셋 비교:
+  ┌─────────────────┬────────────┬──────────┬──────────────────┬──────────┐
+  │ 데이터셋         │ 크기       │ 토큰     │ 20K스텝 epoch    │ 비고     │
+  ├─────────────────┼────────────┼──────────┼──────────────────┼──────────┤
+  │ wikitext-2      │ 23K 샘플   │ ~6M      │ 3.4 epoch (과적합)│ ✅ 다운됨│
+  │ wikitext-103 ★  │ 1.8M 샘플  │ ~100M    │ 0.04 epoch       │ HF 자동  │
+  │ OpenWebText     │ 8M 샘플    │ ~8B      │ 0.01 epoch       │ ~12GB    │
+  │ RedPajama-1T    │ 1.2B 샘플  │ ~1.2T    │ ~0 epoch         │ 수TB     │
+  └─────────────────┴────────────┴──────────┴──────────────────┴──────────┘
+  학습 순서 (검증 파이프라인):
+  1단계: wikitext-2, 20K스텝 → PPL 비교 (Dense 13.85 vs Golden ?)
+         과적합 OK — 동일 조건에서 MoE 라우터 학습 확인이 목적
+  2단계: wikitext-103, 20K스텝 → 일반화 능력 비교
+  3단계: 도메인별 PPL (수학/언어/코드) → 서번트 인덱스 측정
 
-  방법 A: device_map="auto" (CPU+GPU 분산)
-  - accelerate가 자동으로 레이어별 GPU/CPU 분배
-  - 구현: model 로드 시 device_map="auto"
-  - 장점: 간단, 안정적
-  - 단점: CPU↔GPU 전송 오버헤드
-  - 속도: CPU only 대비 ~3-5배
+  하드웨어 제약: RTX 5070 12GB VRAM, RAM 15GB, Swap 35GB
+  8B float16 = ~16GB > VRAM 12GB → 전체를 GPU에 못 올림
 
-  방법 B: gradient checkpointing + 8bit optimizer
-  - gradient checkpointing: forward 2번으로 activation 메모리 절약
-  - 8bit optimizer: bitsandbytes AdamW8bit로 optimizer 메모리 절반
-  - 장점: 더 많은 레이어를 GPU에, 속도 ~5-10배
-  - 단점: bitsandbytes sm_120(Blackwell) 미지원 위험
-  - 구현: model.gradient_checkpointing_enable() + bnb.optim.AdamW8bit
+  시도 이력 (2026-03-23):
+  ✗ device_map="auto" + gradient checkpointing → backward OOM (25.6GB gradient)
+  ✗ device_map 40% 할당 → 동일 OOM
+  ✗ CPU float32 → swap thrashing, 가중치 로딩에서 30분+ 멈춤
+  ✗ CPU float16 → 돌아가긴 하나 ~0.02 it/s (5000스텝 = 3일)
 
-  ★ 선택: 방법 B (gradient checkpointing + 8bit optimizer + device_map="auto" 조합)
+  전체학습 방법 비교 (현재 하드웨어):
+  ┌───┬──────────────────────────────┬────────┬────────┬──────────┬─────┐
+  │ # │ 방법                         │ VRAM   │ RAM    │ 5000스텝 │ 점수│
+  ├───┼──────────────────────────────┼────────┼────────┼──────────┼─────┤
+  │ A │ QLoRA (4bit+LoRA adapter)    │ ~6GB   │ ~8GB   │ ~2.5시간 │ 8   │
+  │ B │ 8bit 모델 + 전체학습 ★선택   │ ~10GB  │ ~12GB  │ ~18시간  │ 8   │
+  │ C │ float16 + 극한 최적화        │ ~11.5GB│ ~16GB  │ ~28시간  │ 7   │
+  │ D │ CPU float16 (실패)           │ 0GB    │ ~20GB  │ ~24일    │ 4   │
+  │ E │ 8bit 모델 + LoRA             │ ~9GB   │ ~10GB  │ ~6시간   │ 9   │
+  └───┴──────────────────────────────┴────────┴────────┴──────────┴─────┘
+
+  ★ 선택: 방법 E (8bit + LoRA) — OOM 연쇄 실패 후 전환
+  - load_in_8bit=True → 모델 ~8GB on GPU (동결)
+  - LoRA adapter (rank=32) → 라우터 + gate만 학습
+  - gradient checkpointing + 8bit optimizer
   - bitsandbytes 0.49.2 설치 완료, sm_120 문제 없음
-  - WSL swap 35GB 추가 (15GB RAM + 35GB swap = 50GB 가용)
-  - .wslconfig: memory=28GB, swap=32GB 설정
-  - 현재 학습 진행 중 (2026-03-23)
+  - WSL: .wslconfig memory=28GB, swap=32GB
+  - 예상: ~6시간 (20K스텝)
+  - 실험 목적 90%: 라우터 골든존 수렴이 핵심 질문
+    → Expert 내부는 Dense 복사본이라 동결해도 무방
+    → PPL 비교 유효 (Dense 13.85 vs Golden LoRA ?)
+
+  전체학습 (방법 B) 하려면: 24GB GPU 필요 (RTX 3090 중고 추천)
 
   서번트 검증:
   - 도메인별 PPL 분리 측정 (수학/언어/코드)
