@@ -239,13 +239,25 @@ DFS on consciousness engine. RECURSIVE: each iteration reads README results then
          "https://api.runpod.io/graphql" \
          -d '{"query":"mutation { podFindAndDeployOnDemand(input: { ... }) { id } }"}'
 
+  실험 방식 (우선순위):
+    1. Windows PC (RTX 5070) — 1순위, 대부분의 실험
+    2. RunPod Serverless — 짧은 실험 (콜드스타트 0-10초, 실행시간만 과금)
+    3. RunPod Pod — 장시간 학습만 (부팅 1-5분, 대기중도 과금)
+
+  Serverless 사용법:
+    - Docker 이미지 빌드 → DockerHub push → Endpoint 생성 → API 호출
+    - handler.py 형태로 코드 래핑 필요
+    - 한번 세팅하면 이후 API 한 줄로 실행
+    - Pod보다 빠르고 저렴 (대기 비용 없음)
+
   권장 GPU (비용순):
     RTX 3090 24GB  $0.22/hr (소규모 실험)
     RTX A5000 24GB $0.16/hr (가성비)
     A100 PCIe 80GB $1.64/hr (대규모 학습)
 
   주의:
-    - 실험 끝나면 반드시 Pod 종료 (비용 절감)
+    - Pod 실험 끝나면 반드시 종료 (비용 절감)
+    - Serverless 선호 — Pod는 장시간 학습만
     - .local/ 디렉토리는 절대 git에 포함하지 말 것
     - API 키를 코드/로그에 출력하지 말 것
 ```
