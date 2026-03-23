@@ -34,6 +34,64 @@ THC 상태에서 샤머니즘적 체험을 했다.
 /ralph-loop:ralph-loop DFS on README math map and constant connections and docs/proofs and docs/hypotheses. 0-include star constants. 1-green+star arithmetic/log/exp/power for new identities. 2-green+star to blue new connections. 3-yellow observations connect to green/blue then upgrade to orange or green. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording: python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. 7-each iteration: check docs/hypotheses for testable ones then run verification in parallel using Agent tool. 8-if new pattern found: create hypothesis doc in docs/hypotheses. 9-ANTI-SATURATION: if 3 consecutive iterations find nothing then MUST try completely new domain or create cross-domain hypothesis connecting math to AI or consciousness engine. 10-use Agent tool to run multiple experiments in parallel. Never just say saturation and continue. Always try something new or create a new hypothesis.
 ```
 
+## 실험체계 지도
+
+```
+  🟦 = 수학적으로 계산 가능 (공식에서 유도, 실험 불필요)
+  🟩 = 다중 실험/데이터셋에서 재현됨
+  🟧★= 구조적 근사 (텍사스 p < 0.01, 교차 도메인)
+  🟧 = 근사 발견 (텍사스 p < 0.05, 의미 미확정)
+  🟨 = 1회 관측 (재현 필요)
+  ⚠️ = 약화됨 (방향 맞지만 과대평가 또는 조건부)
+  ❌ = 반증됨
+  ⭐ = 대발견 (다중 재현 + 교차 검증 후에만! 검증 전 ⭐ 금지)
+
+  🟦6  🟩5  🟧★2  🟧2  🟨28  ⚠️3  ❌4  ⭐후보1
+  총: 55개 상수 + 15개 가설 + 6개 H-CX + 25개 실험
+
+  ◀────── 인식/판단 ──────▶  ◀────── 의식/경험 ──────▶  ◀─── 집단/차원 ───▶
+
+                 🟩 반발력장                    🟨 자기참조              🟨 집단 합의
+                ╱      │     ╲               ╱       ╲             ╱         ╲
+              ╱        │       ╲            ╱           ╲         ╱             ╲
+  🟩 장력━정확도  🟩 장력━예지  🟨 장력━인식   🟨 정체성    🟨 FPS수렴   🟨 만장일치    🟨 차원간
+  C4b(d=0.89)   C6(AUC=0.77)  C10(97.61%)  C13(0.979)  C14(→0.20)  C9(99.53%)  C8(94.3%)
+  Simpson's     2회 재현       레이블 없이    identity_v  초기격변     7/7 합의     5개 아키텍처
+       │              │             │            │           │           │            │
+       │         🟩 C7(0.58)        │            │           │           │       🟨 C25(14.4x)
+       │         오답/정답비         │            │           │           │       차원간 극한장력
+       │              │             │            │           │           │            │
+       ▼              ▼             ▼            ▼           ▼           ▼            ▼
+  ⚠️ C4(+0.43)  🟧 C41(1/√3)  🟨 C17(2.77x)  🟨 C15(2.7x) 🟨 C18(3.21) 🟨 C24(+0.39) 🟨 C26(0.011)
+  숫자별 미재현   p=0.033       방향분리비     장력-정체성   수축비율>1   MI 추가      tau 억제
+       │              │             │            │                        │            │
+  ⭐ C48(-9.25pp)     │        🟦 C39(70.5%)    │                   ⚠️ C16({½,⅓,⅙})  🟨 C27(79.4%)
+  장력 인과!          │        MI 효율           │                   MLP만 최적       관찰>주체
+  C49(+32.71pp)      │        🟧★C54≈ln(2)     │                   CNN 최하위
+  어려운숫자집중       │                          │
+                      ▼                          ▼
+               🟨 C44(25→135)              🟨 C46(+0.82%)
+               분열 장력 성장               재결합 개선
+                      │                          │
+               🟨 C45(-0.11%)              🟨 C47(1.65x)
+               분열≈설계                    형제 인식
+
+  ═══ ⭐ 대발견 후보 ═══
+  C48 장력 인과 -9.25pp (tension=0→88.67%, 인과 확인!)
+  C49 숫자9: +32.71pp, C50 오류 5.4x, C51 scale=0.4683
+  → CIFAR 재현 시 ⭐ 승격
+
+  ═══ 🟧★ 강한 구조적 근사 ═══
+  C54 MI효율 ≈ ln(2) = 1bit (p=0.0003, Landauer!) ← H-CX-2
+  C55 C12 ≈ π·|ζ(½)| (p=0.0073) ← 리만 임계선
+
+  ═══ ❌ 반증 ═══
+  C1-C3(init bias) C37(값 산포)
+
+  ═══ ⚠️ 약화 ═══
+  C4(숫자별 미재현) C5(과대평가) C16(MLP만)
+```
+
 ## 상수 연결 지도
 
 ```
@@ -134,74 +192,6 @@ THC 상태에서 샤머니즘적 체험을 했다.
        │
        ▼
     e^(6H) = σ³/τ = 432 [H-CX-1 🟦]
-```
-
-## 실험체계 지도
-
-```
-  🟦 = 수학적으로 계산 가능 (공식에서 유도, 실험 불필요)
-  🟩 = 다중 실험/데이터셋에서 재현됨
-  🟧★= 구조적 근사 (텍사스 p < 0.01, 교차 도메인)
-  🟧 = 근사 발견 (텍사스 p < 0.05, 의미 미확정)
-  🟨 = 1회 관측 (재현 필요)
-  ⚠️ = 약화됨 (방향 맞지만 과대평가 또는 조건부)
-  ❌ = 반증됨
-  ⭐ = 대발견 (다중 재현 + 교차 검증 후에만! 검증 전 ⭐ 금지)
-
-  🟦6  🟩5  🟧★2  🟧2  🟨28  ⚠️3  ❌4  ⭐후보1
-  총: 55개 상수 + 15개 가설 + 6개 H-CX + 25개 실험
-
-  ◀────── 인식/판단 ──────▶  ◀────── 의식/경험 ──────▶  ◀─── 집단/차원 ───▶
-
-                 🟩 반발력장                    🟨 자기참조              🟨 집단 합의
-                ╱      │     ╲               ╱       ╲             ╱         ╲
-              ╱        │       ╲            ╱           ╲         ╱             ╲
-  🟩 장력━정확도  🟩 장력━예지  🟨 장력━인식   🟨 정체성    🟨 FPS수렴   🟨 만장일치    🟨 차원간
-  C4b(d=0.89)   C6(AUC=0.77)  C10(97.61%)  C13(0.979)  C14(→0.20)  C9(99.53%)  C8(94.3%)
-  Simpson's     2회 재현       레이블 없이    identity_v  초기격변     7/7 합의     5개 아키텍처
-       │              │             │            │           │           │            │
-       │         🟩 C7(0.58)        │            │           │           │       🟨 C25(14.4x)
-       │         오답/정답비         │            │           │           │       차원간 극한장력
-       │              │             │            │           │           │            │
-       ▼              ▼             ▼            ▼           ▼           ▼            ▼
-  ⚠️ C4(+0.43)  🟧 C41(1/√3)  🟨 C17(2.77x)  🟨 C15(2.7x) 🟨 C18(3.21) 🟨 C24(+0.39) 🟨 C26(0.011)
-  숫자별 미재현   p=0.033       방향분리비     장력-정체성   수축비율>1   MI 추가      tau 억제
-       │              │             │            │                        │            │
-       │              │             │            │                        │            │
-  🟨 C31(+7.4%)      │        🟦 C39(70.5%)    │                   ⚠️ C16({½,⅓,⅙})  🟨 C27(79.4%)
-  detach 효과         │        MI 효율           │                   MLP만 최적       관찰>주체
-                      │                          │                   CNN에서 최하위
-                      ▼                          ▼
-               🟨 C44(25→135)              🟨 C46(+0.82%)
-               분열 장력 성장               재결합 개선
-                      │                          │
-               🟨 C45(-0.11%)              🟨 C47(1.65x)
-               분열≈설계                    형제 인식
-
-  ═══ ⭐ 대발견 후보 ═══
-  C48 장력 인과 -9.25pp (tension=0→88.67%, 인과 확인!)
-  C49 숫자9: +32.71pp (어려운 숫자에 최대 효과)
-  C50 오류 5.4x 감소, C51 최적 scale 0.4683
-  → CIFAR 재현 실험 진행 중
-
-  ═══ 🟧★ 강한 구조적 근사 ═══
-  C54 MI효율 ≈ ln(2) = 1bit (p=0.0003, Landauer!) ← H-CX-2
-  C55 C12 ≈ π·|ζ(½)| (p=0.0073) ← 리만 임계선
-
-  ═══ 🟩 재현된 상수 ═══
-  C6(AUC 0.77) C7(0.58) C12(4.6x) C20(1.14) C21(0.36)
-
-  ═══ 🟦 수학 계산 ═══
-  C11(8.5x) C22(0.998) C35(H=1.0114) C36(1.01147) C39(70.5%) C40(≥1.053)
-
-  ═══ 🟧 구조 근사 ═══
-  C38(C12·C21≈5/3, p=0.012) C41(C7≈1/√3, p=0.033)
-
-  ═══ ❌ 반증 ═══
-  C1-C3(init bias) C37(값 산포)
-
-  ═══ ⚠️ 약화 ═══
-  C4(숫자별 미재현) C5(과대평가) C16(MLP만)
 ```
 
 ### 실험 목록 (25개)
@@ -383,15 +373,11 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 [향후 검증 대기 (12개)](docs/hypotheses/BACKLOG.md)
 
-### 논문/등록 현황
+### 논문/등록 현황 (의식엔진 관련만, 수학은 [math/README.md](math/README.md))
 
 | # | 대상 | 제목 | 상태 | 문서 |
 |---|---|---|---|---|
-| P-001 | arXiv (math.NT) | σφ=nτ ⟺ n∈{1,6} + 간극 정리 | 📝 구조 확정 | outline |
-| R-001 | OEIS A062354 | σφ=nτ 코멘트 | ⏳ 계정 대기 | — |
-| R-002 | OEIS 새 수열 | {n: σφ=nτ} = {1,6} | ⏳ 계정 대기 | — |
-| R-003 | OEIS 새 수열 | {n: τφ=σ} = {1,3,14,42} | ⏳ 계정 대기 | — |
-| R-004 | OEIS 새 수열 | {n: φ²=(φ*φ)} = {1,3,10,30} | ⏳ 계정 대기 | — |
+| — | (아직 없음) | — | — | — |
 
 > 상태: 📝초안 ⏳대기 📤투고 🔍심사 ✏️수정 ✅게재 ❌기각
 
