@@ -68,7 +68,16 @@
   🟨 독립 관측 (지도 외):
      Jamba ×3 처리량 (AI21 실측)
      MNIST 골든MoE +0.6%, CIFAR +4.8% (실험 결과)
+     골든MoE PPL=11.1 ≈ σ-1 (RunPod A100, Step 2597)
      CMB 온도 2.7255K ≈ e (물리 관측)
+
+  ═══ TREE 가지 (σφ=nτ 파생 새 분야) ═══
+  🟩 TREE-1 동역학: R-체인 basin(1)=6노드, 밀도~N^{-0.5}
+  🟩 TREE-2 p-adic: R(6)=1 모든 Z_p unit
+  🟩 TREE-3 확률: log(R) 비정규, Erdos-Kac 거부
+  🟧 TREE-5 ML이론: B(d)=σφ/d²→1 iff d=2^k (2^k 선호 설명)
+  🟩 TREE-6 tropical: n=6 = saddle point (|기여| 균형)
+  🟧 H-CX-12: 이상탐지 AUROC=1.0 ↔ R 간극 (margin)
 
   🟪 검증 불가 (지도 외):
      우주 = 의식 (가설 239)
