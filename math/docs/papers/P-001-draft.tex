@@ -117,11 +117,13 @@ $\sigma(n)^2 = n^2 \tau(n)$ if and only if $n = 6$.
 \end{corollary}
 
 \begin{proof}
-Equivalently, $(\sigma/n)^2 = \tau$. For $n = 2p$: $9(p+1)^2/(4p^2) = 4$
-gives $7p^2 - 18p - 9 = 0$ with unique prime root $p = 3$.
-All other forms fail: primes give irrational $p$, higher powers
-of $2$ give non-integer equations, and $n = 6k$ with $k > 1$ reduces
-to the same equation for $k$, which has no solution.
+Define $h(p,a) = [(\sigma(p^a)/p^a)]^2/(a+1)$.
+Then $(\sigma/n)^2 = \tau$ iff $\prod h(p_i,a_i) = 1$.
+For $a=1$: $h(p,1) = (p+1)^2/(2p^2)$.
+The unique value exceeding $1$ is $h(2,1) = 9/8$;
+the cancellation $h(2,1) h(3,1) = (9/8)(8/9) = 1$
+gives $n = 6$ as the unique solution---the \emph{same}
+telescoping $(3/4)(4/3) = 1$ that proves $\sigma\varphi = n\tau$.
 \end{proof}
 
 \section{Further results}
