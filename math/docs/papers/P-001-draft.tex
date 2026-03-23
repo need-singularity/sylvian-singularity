@@ -76,6 +76,56 @@ with unique prime solution $q = 3$.
 Any additional $f(r,b) \geq 4/3$ pushes the product above $4/3$.
 Hence $n = 2 \times 3 = 6$.  \qed
 
-% TODO: Complete sections 3-8
+\section{Proof of Theorem~\ref{thm:gap}}
+
+We show $R(n) \geq 7/6$ for $n \geq 3$, $n \neq 6$.
+
+\textbf{Case A: $n$ odd.} All $f(p,a) \geq f(3,1) = 4/3 > 7/6$.
+
+\textbf{Case B: $2 \| n$, $n \neq 6$.}
+$R = \frac{3}{4} \cdot \prod f(q_j, b_j)$ with at least one odd factor $\neq f(3,1)$.
+If the odd part is a single prime $q \geq 5$: $R \geq \frac{3}{4} \cdot \frac{12}{5} = \frac{9}{5} > \frac{7}{6}$.
+If two or more odd primes: $R \geq \frac{3}{4} \cdot \left(\frac{4}{3}\right)^2 = \frac{4}{3} > \frac{7}{6}$.
+
+\textbf{Case C: $4 \| n$.}
+$f(2,2) = 7/6$. If $n=4$: $R = 7/6$ (equality). If $n = 4m$ with $m > 1$:
+$R \geq \frac{7}{6} \cdot \frac{4}{3} > \frac{7}{6}$.
+
+\textbf{Case D: $8 \mid n$.}
+$f(2,a) \geq f(2,3) = 15/8 > 7/6$. \qed
+
+\section{Proof of Theorem~\ref{thm:dual}}
+
+Define $S(n) = \sigma(n)\tau(n)/(n\varphi(n))$. Then $R(n)S(n) = (\sigma(n)/n)^2$.
+For perfect numbers, $\sigma/n = 2$, so $RS = 4$.
+$S(n) = 1$ iff $R(n) = 4$ iff $\sigma(n)/n = 2$ and $\tau/\varphi = 1/2$.
+For $n = 2^{p-1}(2^p-1)$: $\varphi/\tau = 2^{p-2}(2^{p-1}-1)/p$.
+Setting this equal to $2$: $2^{p-2}(2^{p-1}-1) = 2p$, which gives $p = 3$,
+hence $n = 28$.  \qed
+
+\section{Further results}
+
+\begin{proposition}
+$R(n)S(n) = (\sigma(n)/n)^2$ for all $n$. In particular, $R = S$ iff $\varphi(n) = \tau(n)$.
+\end{proposition}
+
+\begin{proposition}
+There are exactly $24$ distinct values of $R(n) < 5$, enumerable from local factors.
+\end{proposition}
+
+\begin{corollary}
+For odd $n$ with $\omega(n)$ distinct prime factors,
+$\varphi(n)/\tau(n) \geq (4/3)^{\omega(n)}/2$.
+\end{corollary}
+
+\begin{corollary}
+$R(n!) \in \mathbb{Z}$ for $n \geq 2$ iff $n \in \{3, 5\}$.
+Then $R(3!) = R(6) = 1$ and $R(5!) = R(120) = 6$.
+\end{corollary}
+
+\begin{corollary}
+The only perfect number in the image of $R$ is $6$: $R(120) = 6$.
+No $n$ satisfies $R(n) = 28$ or $R(n) = 496$.
+\end{corollary}
 
 \end{document}
