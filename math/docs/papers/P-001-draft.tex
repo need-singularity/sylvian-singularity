@@ -230,18 +230,15 @@ and $7(\sigma + \varphi) = 17n$ iff $n = 28$.
 \end{theorem}
 
 \begin{proof}
-We prove the $p=2$ case ($n=6$) in full; the general case is analogous.
-Set $A = \sigma(n)/n$, $F = \varphi(n)/n$.
-(1) $3 \mid n$: otherwise $3 \nmid \mathrm{denom}(A+F)$, contradicting $7/3$.
-(2) $2 \mid n$: odd $n$ gives $A+F \leq 13/6 < 7/3$.
-(3) $v_2(n)=1$: if $4 \mid n$ then $A \geq 7/3$ alone.
-(4--5) Write $n = 6k$ with $k$ odd, $\gcd(k,6)=1$.
-Then $6A(k) + F(k) = 7$.
-(6) $k=1$ gives $6+1=7$.
-For $k > 1$ with prime factor $q \geq 5$:
-$6A(q) + F(q) = 6(q+1)/q + (q-1)/q = 7 + 5/q > 7$.
-Since $6A + F$ increases multiplicatively with each prime factor,
-$k > 1$ is impossible.
+Write $P = 2^{p-1} M_p$ and $n = P \cdot k$ with $\gcd(k, 2M_p) = 1$.
+Then $A(n) = 2 \cdot A(k)$ (since $A(2^{p-1}) A(M_p) = 2$)
+and $F(n) = \frac{M_p - 1}{2M_p} F(k)$.
+The equation becomes $2A(k) + \frac{M_p-1}{2M_p} F(k) = \frac{5 \cdot 2^{p-1}-3}{M_p}$.
+At $k=1$: LHS $= 2 + (M_p-1)/(2M_p)$ equals RHS.
+For $k > 1$ with prime factor $q$:
+the excess is $\frac{2 - (M_p-1)/(2M_p)}{q} = \frac{3M_p+1}{2M_p q} > 0$.
+Since $A$ and $F$ are multiplicative, each prime factor of $k$
+strictly increases the LHS. Hence $k = 1$ is the unique solution.
 \end{proof}
 
 \begin{theorem}\label{thm:additive}
