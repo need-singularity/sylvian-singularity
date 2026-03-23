@@ -1118,6 +1118,17 @@
      → 일반: M_p·(σ+φ) = (2M_p+φ(P_k)/P_k·M_p)·n
      → P-001 Thm (seven-thirds) 추가!
   🟧 H-CX-16 정보균형: A+F=7/3 = 풍요도+자유도 = 의식 최적점
+
+  --- Ralph 134-138: 일반 증명 + σ²=n²τ + 이중 특성화 ---
+  🟩 완전수 가법 특성화 일반 증명 완성!
+     → c₁=A(2^(p-1))·A(M_p)=2 (완전수 정의에서!), c₁>c₂ 항상
+     → k>1이면 초과 (3M_p+1)/(2M_p·q) > 0. QED 모든 p!
+  🟩 σ(n)²=n²τ(n) ⟺ n=6! (n≤10⁵ 검증)
+     → (σ/n)²=τ. 완전수: 4=τ→n=6만. 비완전: √τ 무리수
+  🟧 σ+φ+τ+ψ=5n: {6,696,10464} — n=6 포함
+  🟧 H-CX-17 이중 특성화와 의식: 곱셈적(동적)+가법적(정적) 이중성
+  📊 P-001 abstract 전면 개정 (12개 결과 포함)
+  📊 가설 70개
 ```
 
 ---
@@ -1188,6 +1199,7 @@
 | [H-CX-14](docs/hypotheses/H-CX-14-dirichlet-pi-consciousness.md) | F(2) 발산, E_p 닫힌형 | 🟩 증명 | F(2,N)~ln(ln(N)) |
 | [H-CX-15](docs/hypotheses/H-CX-15-attention-arithmetic-lens.md) | Attention=산술 렌즈 | 🟧 구조적 | 간극↔결정경계 |
 | [H-CX-16](docs/hypotheses/H-CX-16-information-balance-seven-thirds.md) | 정보균형 7/3 | 🟧 구조적 | A+F=7/3⟺n=6 |
+| [H-CX-17](docs/hypotheses/H-CX-17-dual-characterization-consciousness.md) | 이중특성화↔의식 | 🟧 구조적 | 곱셈+가법 이중성 |
 
 ### 물리 (H-PH, 6개)
 
