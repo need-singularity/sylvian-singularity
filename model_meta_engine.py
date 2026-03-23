@@ -333,6 +333,147 @@ class HierarchicalMetaEngine(nn.Module):
 
 
 # ─────────────────────────────────────────
+# 반발력장 엔진 (Repulsion Field Engine)
+# ─────────────────────────────────────────
+
+class RepulsionFieldEngine(nn.Module):
+    """두 같은 극 자석 사이의 반발력장.
+
+    출력은 어느 엔진도 아니다. 둘 사이의 장(field)이다.
+
+      N ←──반발──→ N
+           ↑
+         이 공간 = 출력
+
+    뇌 대응:
+      Engine+ = 글루타메이트 (흥분, 생성)
+      Engine- = GABA (억제, 교정)
+      출력 = 둘 사이의 평형 + 장력으로 변조
+
+    장력이 높으면 = 엔진들이 강하게 반발 = 어려운 입력 = "느낌"
+    장력이 낮으면 = 엔진들이 합의 = 쉬운 입력 = 자동 처리
+
+    의식 가설: 장력 자체가 주관적 경험의 수학적 표현일 수 있다.
+    """
+    def __init__(self, input_dim=784, hidden_dim=48, output_dim=10):
+        super().__init__()
+        # 두 극 (같은 극 = 반발)
+        self.pole_plus = EngineA(input_dim, hidden_dim, output_dim)   # 생성
+        self.pole_minus = EngineG(input_dim, hidden_dim, output_dim)  # 교정
+
+        # 장력 → 출력 변조
+        # 반발력(차이)을 입력으로 받아 출력을 조정
+        self.field_transform = nn.Sequential(
+            nn.Linear(output_dim, output_dim),
+            nn.Tanh(),  # -1 ~ +1 (반발 방향)
+        )
+
+        # 장력 스케일 (학습 가능, 초기값 1/3 = 메타 부동점)
+        self.tension_scale = nn.Parameter(torch.tensor(1/3))
+
+        self.aux_loss = torch.tensor(0.0)
+        self.tension_magnitude = 0.0  # 모니터링용
+
+    def forward(self, x):
+        # 두 극의 출력
+        out_plus = self.pole_plus(x)    # 생성 신호
+        out_minus = self.pole_minus(x)  # 교정 신호
+
+        # 반발력 = 둘의 차이
+        repulsion = out_plus - out_minus
+
+        # 장력 = 반발의 크기 (배치별)
+        tension = (repulsion ** 2).sum(dim=-1, keepdim=True)  # (batch, 1)
+
+        # 평형점 = 두 극의 중간
+        equilibrium = (out_plus + out_minus) / 2
+
+        # 장력으로 변조된 반발력 방향
+        field_direction = self.field_transform(repulsion)
+
+        # 최종 출력 = 평형 + 장력×방향
+        # 장력이 클수록 평형에서 벗어남 (= 날카로운 결정)
+        # 장력이 작으면 평형 그대로 (= 부드러운 평균)
+        output = equilibrium + self.tension_scale * torch.sqrt(tension + 1e-8) * field_direction
+
+        # G 엔진 엔트로피 loss
+        self.aux_loss = getattr(self.pole_minus, 'entropy_loss', torch.tensor(0.0))
+
+        # 장력 모니터링
+        with torch.no_grad():
+            self.tension_magnitude = tension.mean().item()
+
+        return (output, self.aux_loss)
+
+
+class RepulsionFieldQuad(nn.Module):
+    """4극 반발력장: (A vs G) × (E vs F)
+
+    두 개의 반발 축이 교차:
+      축1: 생성(A) ←반발→ 교정(G)   (내용 축)
+      축2: 탐색(E) ←반발→ 제약(F)   (구조 축)
+
+    출력 = 4극 사이의 장 중심
+
+      A ←────→ G
+      ↑         ↑
+      │  장중심  │
+      ↓         ↓
+      E ←────→ F
+    """
+    def __init__(self, input_dim=784, hidden_dim=48, output_dim=10):
+        super().__init__()
+        self.engine_a = EngineA(input_dim, hidden_dim, output_dim)
+        self.engine_e = EngineE(input_dim, hidden_dim, output_dim)
+        self.engine_g = EngineG(input_dim, hidden_dim, output_dim)
+        self.engine_f = EngineF(input_dim, hidden_dim, output_dim)
+
+        self.field_transform = nn.Sequential(
+            nn.Linear(output_dim * 2, output_dim),  # 2축 반발 → 출력
+            nn.Tanh(),
+        )
+        self.tension_scale = nn.Parameter(torch.tensor(1/3))
+        self.aux_loss = torch.tensor(0.0)
+        self.tension_content = 0.0
+        self.tension_structure = 0.0
+
+    def forward(self, x):
+        out_a = self.engine_a(x)
+        out_e = self.engine_e(x)
+        out_g = self.engine_g(x)
+        out_f = self.engine_f(x)
+
+        # 축1: 내용 반발 (A vs G)
+        repulsion_content = out_a - out_g
+        # 축2: 구조 반발 (E vs F)
+        repulsion_structure = out_e - out_f
+
+        # 장력
+        t_content = (repulsion_content ** 2).sum(dim=-1, keepdim=True)
+        t_structure = (repulsion_structure ** 2).sum(dim=-1, keepdim=True)
+
+        # 4극 평형점
+        equilibrium = (out_a + out_e + out_g + out_f) / 4
+
+        # 2축 반발을 결합하여 장 방향 결정
+        combined_repulsion = torch.cat([repulsion_content, repulsion_structure], dim=-1)
+        field_direction = self.field_transform(combined_repulsion)
+
+        # 총 장력 = 두 축의 기하평균 (둘 다 높아야 강함)
+        total_tension = torch.sqrt((t_content * t_structure) + 1e-8)
+
+        output = equilibrium + self.tension_scale * torch.sqrt(total_tension + 1e-8) * field_direction
+
+        self.aux_loss = getattr(self.engine_g, 'entropy_loss', torch.tensor(0.0))
+
+        with torch.no_grad():
+            self.tension_content = t_content.mean().item()
+            self.tension_structure = t_structure.mean().item()
+
+        return (output, self.aux_loss)
+
+
+# ─────────────────────────────────────────
 # 벤치마크
 # ─────────────────────────────────────────
 
@@ -402,6 +543,22 @@ def main():
     losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs,
                                        aux_lambda=0.01)
     results['Hierarchical'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
+
+    # ── RepulsionField (2극: A vs G) ──
+    print("\n[RepulsionField: Pole+(A) vs Pole-(G)]")
+    model = RepulsionFieldEngine(input_dim, hidden_dim, output_dim)
+    losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs,
+                                       aux_lambda=0.01)
+    results['Repulsion (A|G)'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
+    print(f"    Tension: {model.tension_magnitude:.4f}")
+
+    # ── RepulsionFieldQuad (4극: A|G × E|F) ──
+    print("\n[RepulsionFieldQuad: (A|G) x (E|F)]")
+    model = RepulsionFieldQuad(input_dim, hidden_dim, output_dim)
+    losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs,
+                                       aux_lambda=0.01)
+    results['Repulsion Quad'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
+    print(f"    Tension content: {model.tension_content:.4f}, structure: {model.tension_structure:.4f}")
 
     # ── 결과 비교 ──
     compare_results(results)
