@@ -438,6 +438,16 @@ DFS on consciousness engine and math/docs/hypotheses/H-CX-*. RECURSIVE: each ite
 - 가설 제시 시 **즉시 검증 착수** (질문하지 않고 바로 실행)
 - **가설 생성 시 README.md 등록 필수**. 새 가설 파일 생성 후 반드시 README.md 가설 테이블에 항목을 추가할 것. 새 카테고리면 섹션도 추가. 빠뜨리지 말 것.
 
+## 논문 관리
+
+```
+  논문 후보 발생 시:
+    1. README.md "논문 후보" 테이블에 제목+핵심결과+투고대상+상태 기록
+    2. 상태: 초안/작성중/투고/심사중/수정/게재/기각
+    3. 논문 파일: docs/papers/P01-title.md 형식
+    4. 논문에 포함할 상수/가설/실험 번호 명시
+```
+
 ## 격자 해상도 가이드
 
 | grid | 오차 | 용도 |
