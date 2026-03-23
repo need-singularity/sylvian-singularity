@@ -85,4 +85,25 @@
   TREE-7: 정보 병목
 ```
 
-## 상태: 🟨 (구조적 대응 제안, MI 직접 측정 미실시)
+## 실험 결과: detach ablation (2026-03-24)
+
+```
+  3 조건 × 5 trials:
+  조건                    parent    return    enhancement
+  ────────────────────  ────────  ────────  ───────────
+  A) Full (detach+obs)   97.42%    97.40%    -0.03 ±0.17%
+  B) No detach           97.42%    97.40%    -0.03 ±0.17%
+  C) No observation      97.42%    97.40%    -0.02 ±0.23%
+
+  통계:
+    A vs B: t=NaN (동일!)
+    A vs C: p=0.978 (유의하지 않음)
+
+  결론:
+    detach(S4)를 빼도 결과 동일
+    observation(S5)을 빼도 결과 동일
+    → 이 스케일(MNIST 10ep)에서 detach는 IB 효과 없음
+    → H280의 +0.41%는 단순 분열+재학습 효과이지 detach 때문이 아닐 수 있음
+```
+
+## 상태: ⚠️ 반박됨 (detach ablation에서 효과 없음, IB 통과 가설 미지지)
