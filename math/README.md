@@ -1060,6 +1060,19 @@
   ⚪ H-PH-2 게이지군: 12=σ 일치하나 small numbers (🟨 약)
   ⚪ H-BIO-1 코돈: 화학이 원인, (τ,σ/τ) 우연
   🟧 H-CX-14 Dirichlet 급수 교차가설 생성
+
+  --- Ralph 125: φ=ω 특성화 + Ramsey 완전수 + 메타 정리 ---
+  🟩 φ(n)=ω(n) ⟺ n∈{2,6} (n≤10⁵ 검증, 증명 완료!)
+     → n=pq: (p-1)(q-1)=ω=2 → (2,3), n=6
+     → σφ=nτ와 σω=nτ가 같은 해를 주는 근본 이유!
+  🟩 5함수 체계에서 n=6 유일해는 정확히 2개:
+     → σφ=nτ, σω=nτ (이 둘만!)
+  🟧★ H-CS-5 Ramsey-완전수: R(3,3)=6, R(3,8)=28 모두 완전수!
+     → 8개 Ramsey 수 중 2개=완전수 (25%), 초기하 p=0.047 ⭐
+  🟩 H-AI-5 R/d ↔ 1/τ: 상관 r=0.991 (거의 완벽!)
+     → R(d)/d ≈ c/τ(d): R은 약수 구조의 역수
+  🟩 H-CX-5 반발력: τ/φ=2 ⟺ n∈{2,6}, n=6이 극대점
+     → 완전수 대조: 6→τ/φ=2, 28→τ/φ=0.5 (정반대!)
 ```
 
 ---
@@ -1102,7 +1115,7 @@
 |---|---|---|---|
 | [H-AI-1b](docs/hypotheses/H-AI-1b-transformer-heads-sigma-multiples.md) | head수=σ배수 | ⬛ 반증 | heads=2 최적 |
 | [H-AI-4](docs/hypotheses/H-AI-4-moe-one-third-activation.md) | MoE 활성 1/3 | ⏳ 대기 | 골든MoE 완료 후 |
-| [H-AI-5](docs/hypotheses/H-AI-5-sigma-phi-regularizer.md) | σφ/(nτ) regularizer | ⏳ 미검증 | |
+| [H-AI-5](docs/hypotheses/H-AI-5-sigma-phi-regularizer.md) | σφ/(nτ) regularizer | 🟩 확인 | R/d≈c/τ, r=0.991 |
 | [H-AI-6](docs/hypotheses/H-AI-6-six-fold-cv.md) | 6-fold CV | ⏳ 약함 | |
 | [H-AI-7](docs/hypotheses/H-AI-7-golden-moe-information-bottleneck.md) | IB 최적 = 1/e | ⏳ 미검증 | |
 | [H-AI-8](docs/hypotheses/H-AI-8-six-dim-representation.md) | 6차원 임베딩 | ⏳ 미검증 | |
@@ -1118,7 +1131,7 @@
 | [H-CX-2](docs/hypotheses/H-CX-2-golden-zone-R-factor.md) | 골든존↔R인수 | 🟧 부분확인 | I=0.25∈GZ |
 | [H-CX-3](docs/hypotheses/H-CX-3-consciousness-six-modules.md) | 의식=6모듈 | 🟨 관찰 | B(6)=∞ 유일균형 |
 | [H-CX-4](docs/hypotheses/H-CX-4-diversity-equals-information.md) | 다양성=정보×σφ | ⚪ 약함 | D~d·log(d) 지배 |
-| [H-CX-5](docs/hypotheses/H-CX-5-repulsion-field-tau-phi.md) | 반발력=τ/φ 불균형 | ⏳ 미검증 | |
+| [H-CX-5](docs/hypotheses/H-CX-5-repulsion-field-tau-phi.md) | 반발력=τ/φ 불균형 | 🟩 확인 | τ/φ=2⟺{2,6} |
 | [H-CX-6](docs/hypotheses/H-CX-6-phase-acceleration-sigma-tau.md) | 위상가속 ×3=σ/τ | 🟩 확인 | n=6 한정 |
 | [H-CX-7](docs/hypotheses/H-CX-7-topology-seven-levels.md) | 위상 7단계=M₃ | ⏳ 투기적 | |
 | [H-CX-8](docs/hypotheses/H-CX-8-three-sets-three-domains.md) | 세 유한집합=세 도메인 | 🟨 관찰 | |
@@ -1155,7 +1168,7 @@
 |---|---|---|---|
 | [H-CS-3](docs/hypotheses/H-CS-3-rsa-sigma-phi-ratio.md) | RSA↔σφ/(nτ) | ⬛ 기각 | R≈n/4 선형 |
 | [H-CS-4](docs/hypotheses/H-CS-4-hamming-tau-phi-sigma.md) | Hamming↔τφσ | 🟨 관찰 | Golay=(2σ-1,σ,M₃) |
-| [H-CS-5](docs/hypotheses/H-CS-5-graph-coloring-six.md) | 그래프 색칠 | ⏳ 미검증 | |
+| [H-CS-5](docs/hypotheses/H-CS-5-graph-coloring-six.md) | Ramsey-완전수 | 🟧★ 유의 | R(3,3)=6,R(3,8)=28 p=0.047 |
 | [H-CS-6](docs/hypotheses/H-CS-6-hash-collision-six.md) | 해시 충돌 | ⏳ 약함 | |
 
 ### 생물 (H-BIO, 1개)
