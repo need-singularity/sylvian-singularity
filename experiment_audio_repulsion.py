@@ -162,25 +162,30 @@ def generate_dataset(n_per_class=N_PER_CLASS, noise_level=0.1):
 
 
 def make_dataloaders(batch_size=32):
-    """Create train/test dataloaders."""
+    """Create train/test dataloaders with consistent normalization."""
+    # Generate training data
     np.random.seed(42)
-    X_train, y_train, mean, std = generate_dataset(n_per_class=100, noise_level=0.1)
-    np.random.seed(123)
-    X_test, y_test, _, _ = generate_dataset(n_per_class=30, noise_level=0.1)
-    # Normalize test with train stats
-    X_test_raw, _, _, _ = generate_dataset(n_per_class=30, noise_level=0.1)
-    np.random.seed(123)
-    X_test_raw2, y_test2, _, _ = generate_dataset(n_per_class=30, noise_level=0.1)
+    X_train, y_train, train_mean, train_std = generate_dataset(n_per_class=200, noise_level=0.05)
 
-    # Re-generate test with train normalization
+    # Generate test data (raw, unnormalized)
     np.random.seed(123)
-    X_test_un, y_test, _, _ = generate_dataset(n_per_class=30, noise_level=0.1)
+    X_test_raw, y_test, _, _ = generate_dataset(n_per_class=50, noise_level=0.05)
+
+    # Normalize test with TRAIN stats (undo test normalization, apply train)
+    # generate_dataset already normalized X_test_raw with its own stats,
+    # so we need raw features. Re-generate without normalization.
+    np.random.seed(123)
+    X_test_unnorm, y_test, test_mean, test_std = generate_dataset(n_per_class=50, noise_level=0.05)
+    # Undo test normalization
+    X_test_raw = X_test_unnorm * test_std + test_mean  # back to raw
+    # Apply train normalization
+    X_test = (X_test_raw - train_mean) / train_std
 
     train_ds = torch.utils.data.TensorDataset(
         torch.tensor(X_train), torch.tensor(y_train)
     )
     test_ds = torch.utils.data.TensorDataset(
-        torch.tensor(X_test), torch.tensor(y_test)
+        torch.tensor(X_test.astype(np.float32)), torch.tensor(y_test)
     )
 
     train_loader = torch.utils.data.DataLoader(train_ds, batch_size=batch_size, shuffle=True)
@@ -916,7 +921,11 @@ def main():
 
     # Key questions
     print(f"\n  Q1: Does repulsion field generalize to audio?")
-    if rep_mean > dense_mean:
+    best_rep = max(rep_mean, quad_mean)
+    best_rep_name = "RepulsionQuad" if quad_mean > rep_mean else "Repulsion"
+    if best_rep > dense_mean:
+        print(f"      YES - {best_rep_name} beats Dense by {(best_rep-dense_mean)*100:+.2f}%")
+    elif rep_mean > dense_mean:
         print(f"      YES - Repulsion beats Dense by {(rep_mean-dense_mean)*100:+.2f}%")
     else:
         print(f"      NO  - Dense wins by {(dense_mean-rep_mean)*100:+.2f}%")
