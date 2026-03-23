@@ -1198,9 +1198,12 @@ docs/
 
 | # | 상수 | 값 | 출처 | 의미 | 반복 확인 |
 |---|---|---|---|---|---|
-| C1 | tension_scale (분류) | 0.34 | model_meta_engine.py 학습 | 반발력장 최적 스케일 ≈ 1/3 | MNIST 2회 |
-| C2 | tension_scale (생성) | 0.34 | model_generative_engine.py 학습 | 생성 모델도 같은 값 ≈ 1/3 | 1회 |
-| C3 | curvature_scale (파이버) | 1.58 | model_fiber_bundle.py 학습 | 파이버 곡률 — 1/3에서 발산 | 1회 |
+| C1 | tension_scale (분류) | 0.34 | model_meta_engine.py 학습 | **초기값 편향** (가설 265 반증) | MNIST |
+| C2 | tension_scale (생성) | 0.34 | model_generative_engine.py 학습 | **초기값 편향** | 1회 |
+| C3 | curvature_scale (파이버) | 1.58 | model_fiber_bundle.py 학습 | **초기값 편향** (init 대비 +1.2 이동) | 1회 |
+| C22 | tension_scale init-final 상관 | 0.998 | experiment_one_third.py | 초기값이 최종값을 결정 | MNIST+CIFAR |
+| C23 | 파이버 고유 이동량 | +1.22 | experiment_one_third.py | 모든 init에서 +1.2 이동 (고유 기여) | MNIST |
+| C24 | 반발력장 MI 추가량 | +0.39 nats | experiment_diversity_information.py | 장이 극에 없는 정보를 만듦 | MNIST |
 | C4 | 장력-정확도 상관 | +0.43 | analyze_tension.py | 높은 장력 = 높은 정확도 | MNIST 1회 |
 | C5 | 장력-공감 상관 (숫자별) | -0.79 | model_empathy_engine.py | 숫자별 평균 기준, 과대평가 | MNIST 1회 |
 | C5b | 장력-공감 상관 (개별) | -0.26 | experiment_empathy_tension_fit.py | 10,000개 샘플 기준, R²=0.066 | MNIST 1회 |
