@@ -165,6 +165,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | C32 | 🟨 | detach 효과 (주체) | +7.3% | experiment_observer_advantage.py | detach가 주체도 개선 (간섭 제거) |
 | C33 | 🟨 | 관찰자 우위 성장 | +0.1%→+0.7% | experiment_observer_advantage.py | 10ep→20ep, 시간 경과시 우위 확대 |
 | C34 | 🟨 | 명상 효과 | +0.4% | experiment_observer_advantage.py | 행동→관찰→행동 vs 행동만 (연속보다 못함) |
+| C35 | 🟦 | H({1/2,1/3,1/6}) | 1.0114 nats | 산술 | = 2/3·ln2 + 1/2·ln3 = ln(2^(2/3)·√3) ≈ 1 nat (1.1%) |
+| C36 | 🟦 | 2^(2/3)·√3 / e | 1.01147 | 산술 | {1/2,1/3,1/6} 엔트로피의 지수 ≈ e (1.1% 차이) |
 
 ## 탐색 현황 (시간순)
 
