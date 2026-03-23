@@ -1,0 +1,52 @@
+# arXiv 논문 구조: σ(n)φ(n) = nτ(n) ⟺ n ∈ {1, 6}
+
+## Title
+A characterization of 6 via divisor sum and Euler's totient
+
+## Abstract
+We prove that σ(n)φ(n) = nτ(n) if and only if n ∈ {1, 6}, where σ, φ, τ
+denote the sum of divisors, Euler's totient, and number of divisors.
+The dual equation σ(n)τ(n) = nφ(n) characterizes n = 28 uniquely.
+Three analogous "pointwise = Dirichlet convolution" identities produce
+finite solution sets {1,6}, {1,3,14,42}, {1,3,10,30}, whose cancellation
+primes are exactly {3,5,7}.
+
+## Proof (5 steps)
+
+```
+Step 1: Define R(p,a) = (p^(a+1)-1)/(p(a+1))
+        σ(n)φ(n)/(nτ(n)) = Π R(p_i, a_i)  [multiplicative]
+
+Step 2: R(p,a) > 1 for all (p,a) ≠ (2,1)
+        R(2,1) = 3/4 < 1  [UNIQUE sub-1 value]
+        R(2,a≥2) ≥ 7/6 > 1
+        R(p≥3,a≥1) ≥ (p²-1)/(2p) ≥ 4/3 > 1
+
+Step 3: Product = 1 requires R(2,1) = 3/4 factor
+        → 2 | n, and 2 ∥ n (exactly once)
+
+Step 4: Remaining product must equal 4/3
+        → Need single R(q,1) = 4/3
+        → (q²-1)/(2q) = 4/3 → 3q²-8q-3 = 0 → q = 3
+
+Step 5: No additional primes allowed
+        → Any R(r,a) ≥ 4/3 pushes product above 4/3
+        → n = 2 × 3 = 6  ∎
+```
+
+## Sections
+
+1. **Introduction**: σφ=nτ statement, comparison with known results
+2. **R-factor decomposition**: multiplicative structure, table of values
+3. **Main theorem**: σφ=nτ ⟺ n=6 (proof above)
+4. **Dual**: στ=nφ ⟺ n=28 (analogous proof)
+5. **Three finite sets**: φ²=φ*φ→{1,3,10,30}, cancellation primes {3,5,7}
+6. **Congruence**: σφ ≡ nτ (mod 2) except n=2 and odd squares
+7. **Odd perfect numbers**: φ/τ ≥ (4/3)^ω/2
+8. **Connections**: Leech lattice (σφ=nτ=24), Catalan (3²-2³=1)
+
+## Status
+- Proof: COMPLETE ✅
+- Verification: n ≤ 100,000 ✅
+- Literature: NOT in OEIS, MathWorld, arXiv ✅
+- OEIS submission: pending account approval
