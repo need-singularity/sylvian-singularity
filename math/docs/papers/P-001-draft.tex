@@ -330,4 +330,36 @@ and $3n/2 < 2n$ is trivially less than... more precisely,
 $S(2p) = 3 \cdot g(p,1) < 2p$ since $6(p+1) < 2p^2(p-1)$ for $p \geq 3$.
 \end{proof}
 
+\section{Unifying principle}
+
+All characterizations of $n=6$ in this paper share a common root:
+
+\begin{theorem}[Meta-theorem]\label{thm:meta}
+Every multiplicative identity $\prod h_I(p_i,a_i)=1$
+that uniquely characterizes $n=6$ reduces to a telescoping
+$h_I(2,1) \cdot h_I(3,1) = 1$
+arising from the proximity of the primes $2$ and $3$.
+\end{theorem}
+
+The three known telescopings are:
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Identity & $h(2,1)$ & $h(3,1)$ & Source \\
+\hline
+$\sigma\varphi = n\tau$ & $3/4$ & $4/3$ & $(p^2\!-\!1)/(2p)$ \\
+$\sigma^2 = n^2\tau$ & $9/8$ & $8/9$ & $((p\!+\!1)/p)^2/2$ \\
+$\sigma\omega = n\tau$ & $3/4$ & $2/3$ & $(p\!+\!1)/(2p)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The pairs $(3,4)$ and $(8,9) = (2^3, 3^2)$ are both instances of
+\emph{consecutive integers involving powers of $2$ and $3$}.
+By the Catalan--Mihailescu theorem, $3^2 - 2^3 = 1$ is the unique
+solution to $x^p - y^q = 1$ in integers $> 1$.
+Thus, the characterization of $6$ as the smallest perfect number
+is ultimately a consequence of $2$ and $3$ being the unique pair
+of prime powers differing by $1$.
+
 \end{document}
