@@ -244,6 +244,11 @@ DFS on consciousness engine. RECURSIVE: each iteration reads README results then
     2. RunPod Serverless — 짧은 실험 (콜드스타트 0-10초, 실행시간만 과금)
     3. RunPod Pod — 장시간 학습만 (부팅 1-5분, 대기중도 과금)
 
+  실험 전 필수 체크:
+    - Mac CPU/RAM 상태 확인 후, 포화 상태면 Windows PC로 전송
+    - 순수 수학 계산도 Mac 포화 시 Windows WSL로 실행
+    - GPU 필요: Windows 1순위, 무리하면 RunPod
+
   Serverless 사용법:
     - Docker 이미지 빌드 → DockerHub push → Endpoint 생성 → API 호출
     - handler.py 형태로 코드 래핑 필요
