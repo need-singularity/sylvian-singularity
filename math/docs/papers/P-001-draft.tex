@@ -359,6 +359,10 @@ $\prod_{d \mid n} R(d) = 1$ if and only if $n = 6$ (verified for $n \leq 10000$)
 For squarefree $n$, $\prod_{d \mid n} R(d) = R(n)^{\tau(n)/2}$,
 so the product equals $1$ iff $R(n) = 1$ iff $n \in \{1, 6\}$.
 Non-squarefree cases are excluded computationally.
+This identity explains a fundamental asymmetry:
+$6 = 2 \cdot 3$ is squarefree, so $\prod R(d \mid 6) = 1$;
+but $28 = 2^2 \cdot 7$ is not, and $\prod R(d \mid 28) = 216/7 \neq 1$
+despite $S(28) = 1$.
 \end{corollary}
 
 The pairs $(3,4)$ and $(8,9) = (2^3, 3^2)$ are both instances of
