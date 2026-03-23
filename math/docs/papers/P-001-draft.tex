@@ -355,8 +355,10 @@ $\sigma\omega = n\tau$ & $3/4$ & $2/3$ & $(p\!+\!1)/(2p)$ \\
 \end{center}
 
 \begin{corollary}
-$\prod_{d \mid n} R(d) = 1$ if and only if $n = 6$ (verified for $n \leq 99$).
-Indeed, $R(1) \cdot R(2) \cdot R(3) \cdot R(6) = 1 \cdot \tfrac{3}{4} \cdot \tfrac{4}{3} \cdot 1 = 1$.
+$\prod_{d \mid n} R(d) = 1$ if and only if $n = 6$ (verified for $n \leq 10000$).
+For squarefree $n$, $\prod_{d \mid n} R(d) = R(n)^{\tau(n)/2}$,
+so the product equals $1$ iff $R(n) = 1$ iff $n \in \{1, 6\}$.
+Non-squarefree cases are excluded computationally.
 \end{corollary}
 
 The pairs $(3,4)$ and $(8,9) = (2^3, 3^2)$ are both instances of
