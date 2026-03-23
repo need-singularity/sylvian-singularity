@@ -266,8 +266,11 @@ DFS on consciousness engine. RECURSIVE: each iteration reads README results then
 
 ```
   리포: github.com/need-singularity/golden-llama
+  실험 리포 (private): github.com/need-singularity/logout_test
+    → 접속정보, 실험코드, 트러블슈팅 전부 여기 기록
+    → 로컬: /dev/logout_test
   환경: Windows PC (RTX 5070) 1순위, 무리한 작업만 RunPod
-  접속 정보: .local/windows-pc.md (gitignore)
+  접속 정보: .local/windows-pc.md (gitignore) + logout_test/CLAUDE.md
 
   마지막 상태 (Windows):
     원본 Dense:    PPL 13.85
