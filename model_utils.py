@@ -143,6 +143,18 @@ class DenseModel(nn.Module):
 # ─────────────────────────────────────────
 # 데이터 로더
 # ─────────────────────────────────────────
+def load_cifar10(batch_size=128, data_dir='data'):
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+    ])
+    train_ds = datasets.CIFAR10(data_dir, train=True, download=True, transform=transform)
+    test_ds = datasets.CIFAR10(data_dir, train=False, transform=transform)
+    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=0)
+    test_loader = DataLoader(test_ds, batch_size=batch_size, shuffle=False, num_workers=0)
+    return train_loader, test_loader
+
+
 def load_mnist(batch_size=128, data_dir='data'):
     transform = transforms.Compose([
         transforms.ToTensor(),
