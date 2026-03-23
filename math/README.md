@@ -1080,9 +1080,11 @@
      → 수렴 직선 σ_c=2 (F(s) 수렴 ⟺ s>2)
      → P-001 논문에 Proposition + Theorem (φ=ω) 추가
   🟩 σ+φ=2n ⟺ n은 소수 (자명하지만 깔끔!)
-  🟧 σ+φ+τ=3n: {2,4,6,90,408,5856} — 10⁵까지 6개만!
-     → n=6 포함! 유한 집합 가능성 (검증 중)
-     → 모두 짝수, 2·3·(prime) 형태
+  🟩 σ+φ+τ=3n: 무한히 많은 해! 일반항 발견!
+     → 산발 해: {2,4,6,90} + 계열 해: n=2^a·3·(7·2^(a-2)+a)
+     → p=7·2^(a-2)+a 소수일 때: a=3→408, a=5→5856, a=17→9×10¹⁰, ...
+     → 소수 정리에 의해 무한히 많은 해 예상 (Bunyakovsky)
+     → 7번째 해 발견: n=90200997888=2¹⁷·3·229393 (검증 완료!)
   🟩 σφ-nτ=k 분류: k=0→{6}, k=-1→{2}, k=2→{3,4}
   📊 기하학 섹션 신설: H-GEO-1~4 (simplex, 정다면체, 중력렌즈, 차원망원경)
 
@@ -1110,7 +1112,7 @@
 | R-004 | OEIS new seq | n where phi^2=(phi\*phi): 1,3,10,30 | pending | - |
 | R-005 | OEIS new seq | n where R(n) integer prime: 54,96,196,360 | pending | - |
 
-## 가설 현황 (σφ=nτ 파생, 66개)
+## 가설 현황 (σφ=nτ 파생, 67개)
 
 ### 수학 (H-MP, 15개)
 
@@ -1209,7 +1211,7 @@
 |---|---|---|---|
 | [H-BIO-1](docs/hypotheses/H-BIO-1-codon-sigma-tau.md) | 코돈=(τ,σ/τ) | ⚪ 우연 | 화학이 원인 |
 
-### 위상수학 (H-TOP, 6개)
+### 위상수학 (H-TOP, 7개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1219,6 +1221,7 @@
 | [H-TOP-4](docs/hypotheses/H-TOP-4-R-spectrum-topology.md) | R 스펙트럼 위상 | ⏳ 미검증 | Cantor-like |
 | [H-TOP-5](docs/hypotheses/H-TOP-5-fractal-topology-R-spectrum.md) | 프랙탈+위상 조합 | 🟧 구조적 | d_box≈0.155, PH |
 | [H-TOP-6](docs/hypotheses/H-TOP-6-resolution-observer-topology.md) | 해상도 관측기 | 🟧 구조적 | ε_c=1/6 전이 |
+| [H-TOP-7](docs/hypotheses/H-TOP-7-topological-lens.md) | 위상 렌즈 | 🟧 구조적 | PH 바코드+간극 |
 
 ### 새 가지 탐색 (H-TREE, 6개)
 
