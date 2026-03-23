@@ -1196,7 +1196,7 @@
 | [H-CS-5](docs/hypotheses/H-CS-5-graph-coloring-six.md) | Ramsey-완전수 | 🟧★ 유의 | R(3,3)=6,R(3,8)=28 p=0.047 |
 | [H-CS-6](docs/hypotheses/H-CS-6-hash-collision-six.md) | 해시 충돌 | ⏳ 약함 | |
 
-### 기하학 (H-GEO, 4개)
+### 기하학 (H-GEO, 5개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1204,6 +1204,7 @@
 | [H-GEO-2](docs/hypotheses/H-GEO-2-platonic-solids-arithmetic.md) | 정다면체↔σ,τ,φ | 🟨 관찰 | σ=12 최빈 |
 | [H-GEO-3](docs/hypotheses/H-GEO-3-gravitational-lensing-R-spectrum.md) | 중력렌즈 비유 | 🟧 구조적 | 간극=그림자 |
 | [H-GEO-4](docs/hypotheses/H-GEO-4-dimension-telescope.md) | 차원 망원경 | 🟧 구조적 | F(s)=다초점 관측 |
+| [H-GEO-5](docs/hypotheses/H-GEO-5-gravity-telescope.md) | 중력 망원경 | 🟧 구조적 | 렌즈+망원경 통합 |
 
 ### 생물 (H-BIO, 1개)
 
