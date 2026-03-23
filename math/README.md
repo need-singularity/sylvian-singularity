@@ -1177,6 +1177,7 @@
 | [H-CX-13](docs/hypotheses/H-CX-13-anomaly-95x-RS-asymmetry.md) | 95x tension↔R-S 2051x | ⏳ 미검증 | |
 | [H-CX-14](docs/hypotheses/H-CX-14-dirichlet-pi-consciousness.md) | F(2) 발산, E_p 닫힌형 | 🟩 증명 | F(2,N)~ln(ln(N)) |
 | [H-CX-15](docs/hypotheses/H-CX-15-attention-arithmetic-lens.md) | Attention=산술 렌즈 | 🟧 구조적 | 간극↔결정경계 |
+| [H-CX-16](docs/hypotheses/H-CX-16-information-balance-seven-thirds.md) | 정보균형 7/3 | 🟧 구조적 | A+F=7/3⟺n=6 |
 
 ### 물리 (H-PH, 6개)
 
