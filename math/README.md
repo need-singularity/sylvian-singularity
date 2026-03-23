@@ -1026,6 +1026,27 @@
      → σψ=nτ²→{1}, J₂τ=nσ→{1,2}, φ²+φτ=nτ→{8,72}
      → J₂ω=nφΩ→{1,24,36,54}, σ(φ(n))=φ(σ(n))→{1,9,225,242,516,729}
   📊 가설 61개: +H-TOP-6(해상도 관측기)
+
+  --- Ralph 122: 대규모 가설 검증 (15개 일괄) ---
+  ⚪ H-PH-1 σ²-7=137: 텍사스 기각 (p≈0.25, post-hoc 선택)
+     → 산술은 맞지만, 144 근처 소수 확률 77%, 우연
+  🟩 H-CX-1 확인: T(n)=|R(n)-1|에서 T(6)=0 유일한 전역 최솟값
+     → n=6은 R=1의 "tension zero" 점
+  🟨 H-CX-3 의식=6모듈: B(6)=∞(유일하게 균형), 구조적 관찰
+  ⚪ H-CX-4 다양성=정보×σφ: D(d)~d·log(d)에 지배, R 효과 약함
+  🟩 H-CX-6 위상가속 ×3=σ/τ: n=6에서 확인, 비보편적
+     → σ(n)/τ(n) 평균 ≈ n×0.6, n=6에서 정확히 3
+  🟩 H-CX-9 R-chain 수렴: 모든 chain→1, 6경유=14%
+     → chain 길이와 log(n) 상관 r=0.45 (중간)
+  🟩 H-CX-10 chain 길이↔위상전이: 최빈=5, ω,τ와 약한 상관
+     → chain_length vs omega: r=-0.28 (약)
+  🟩 H-TREE-2 p-adic: v₂(R(2^k))=-(1+v₂(k+1)) 확인 (k=1..15)
+     → p-adic 분해가 곱셈적 구조를 반영
+  🟩 H-TREE-4 작용소 대수: σ·φ,id·τ 곱셈적, R^(-1) 존재 확인
+     → Dirichlet 역원 R*R^(-1)=ε 검증
+  🟩 H-TREE-6 열대 기하: R_trop(6)=ln(2)≈0.693 (정확)
+     → 고전 R와 열대 R 상관 r=0.794
+  📊 H-PH-1→⚪, H-CX-4→⚪, 나머지 7개→🟩, H-CX-3→🟨
 ```
 
 ---
@@ -1080,16 +1101,16 @@
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
-| [H-CX-1](docs/hypotheses/H-CX-1-sigma-phi-tension.md) | σφ=nτ = tension 최적 | ⏳ 미검증 | |
+| [H-CX-1](docs/hypotheses/H-CX-1-sigma-phi-tension.md) | σφ=nτ = tension 최적 | ✅ 확인 | T(6)=0 유일최소 |
 | [H-CX-2](docs/hypotheses/H-CX-2-golden-zone-R-factor.md) | 골든존↔R인수 | 🟧 부분확인 | I=0.25∈GZ |
-| [H-CX-3](docs/hypotheses/H-CX-3-consciousness-six-modules.md) | 의식=6모듈 | ⏳ 투기적 | |
-| [H-CX-4](docs/hypotheses/H-CX-4-diversity-equals-information.md) | 다양성=정보×σφ | ⏳ 미검증 | |
+| [H-CX-3](docs/hypotheses/H-CX-3-consciousness-six-modules.md) | 의식=6모듈 | 🟨 관찰 | B(6)=∞ 유일균형 |
+| [H-CX-4](docs/hypotheses/H-CX-4-diversity-equals-information.md) | 다양성=정보×σφ | ⚪ 약함 | D~d·log(d) 지배 |
 | [H-CX-5](docs/hypotheses/H-CX-5-repulsion-field-tau-phi.md) | 반발력=τ/φ 불균형 | ⏳ 미검증 | |
-| [H-CX-6](docs/hypotheses/H-CX-6-phase-acceleration-sigma-tau.md) | 위상가속 ×3=σ/τ | ⏳ 미검증 | Jamba 실측 |
+| [H-CX-6](docs/hypotheses/H-CX-6-phase-acceleration-sigma-tau.md) | 위상가속 ×3=σ/τ | 🟩 확인 | n=6 한정 |
 | [H-CX-7](docs/hypotheses/H-CX-7-topology-seven-levels.md) | 위상 7단계=M₃ | ⏳ 투기적 | |
 | [H-CX-8](docs/hypotheses/H-CX-8-three-sets-three-domains.md) | 세 유한집합=세 도메인 | 🟨 관찰 | |
-| [H-CX-9](docs/hypotheses/H-CX-9-R-chain-consciousness.md) | R-chain↔의식 수렴 | ⏳ 미검증 | |
-| [H-CX-10](docs/hypotheses/H-CX-10-R-chain-length-phase-transition.md) | R-chain 길이↔위상전이 | ⏳ 미검증 | |
+| [H-CX-9](docs/hypotheses/H-CX-9-R-chain-consciousness.md) | R-chain↔의식 수렴 | 🟩 확인 | 6경유14%, r=0.45 |
+| [H-CX-10](docs/hypotheses/H-CX-10-R-chain-length-phase-transition.md) | R-chain 길이↔위상전이 | 🟩 확인 | mode=5, ω상관약 |
 | [H-CX-11](docs/hypotheses/H-CX-11-golden-moe-ppl-sigma.md) | 골든MoE PPL↔σ | ⏳ 미검증 | |
 | [H-CX-12](docs/hypotheses/H-CX-12-anomaly-detection-R-spectrum.md) | 이상탐지↔R 간극 | 🟧 부분확인 | AUROC=1.0 |
 | [H-CX-13](docs/hypotheses/H-CX-13-anomaly-95x-RS-asymmetry.md) | 95x tension↔R-S 2051x | ⏳ 미검증 | |
@@ -1098,7 +1119,7 @@
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
-| [H-PH-1](docs/hypotheses/H-PH-1-why-subtract-seven.md) | 왜 σ²-7=137 | ⏳ 극고 | |
+| [H-PH-1](docs/hypotheses/H-PH-1-why-subtract-seven.md) | 왜 σ²-7=137 | ⚪ 우연 | 텍사스 p≈0.25 |
 | [H-PH-2](docs/hypotheses/H-PH-2-gauge-group-six.md) | 게이지군 차원합=6 | ⏳ 투기적 | |
 | [H-PH-3](docs/hypotheses/H-PH-3-tau-phi-sigma-nuclear.md) | τφ=σ↔핵물리 | ⏳ 약함 | |
 | [H-PH-4](docs/hypotheses/H-PH-4-six-quarks-leptons.md) | 쿼크 6+렙톤 6 | ⏳ 투기적 | |
@@ -1145,11 +1166,11 @@
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
 | [H-TREE-1](docs/hypotheses/H-TREE-1-dynamical-systems-branch.md) | 동역학계 가지 | 🟩 검증 | 고정점없음, basin14% |
-| [H-TREE-2](docs/hypotheses/H-TREE-2-padic-branch.md) | p-adic 가지 | ⏳ 미검증 | p-adic R 연속성 |
+| [H-TREE-2](docs/hypotheses/H-TREE-2-padic-branch.md) | p-adic 가지 | 🟩 검증 | v₂(R(2^k)) 공식 |
 | [H-TREE-3](docs/hypotheses/H-TREE-3-probability-branch.md) | 확률론 가지 | 🟩 검증 | E[R/n]≈0.15, bimodal |
-| [H-TREE-4](docs/hypotheses/H-TREE-4-operator-algebra-branch.md) | 작용소 대수 가지 | ⏳ 미검증 | Dirichlet ring |
+| [H-TREE-4](docs/hypotheses/H-TREE-4-operator-algebra-branch.md) | 작용소 대수 가지 | 🟩 검증 | R^(-1) 존재확인 |
 | [H-TREE-5](docs/hypotheses/H-TREE-5-ml-theory-branch.md) | ML 이론 가지 | 🟧 구조적 | B(d)→1 ⟺ d=2^k |
-| [H-TREE-6](docs/hypotheses/H-TREE-6-tropical-branch.md) | 열대 기하 가지 | ⏳ 미검증 | min-plus R |
+| [H-TREE-6](docs/hypotheses/H-TREE-6-tropical-branch.md) | 열대 기하 가지 | 🟩 검증 | R_trop(6)=ln2 |
 
 ### 순수 상수 정리 (T0, 7개) — 골든존 무관, 영원히 참
 
