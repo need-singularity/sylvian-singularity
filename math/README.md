@@ -1149,8 +1149,10 @@
      → 6(sqfree)과 28(non-sqfree)의 근본적 비대칭!
   🟧 H-CX-18 Catalan 근원과 의식의 최소 비대칭
   🟧 H-CX-19 닫힌 궤도: ∏R(d)=1 = 의식의 자기참조적 순환
-  📊 P-001: 22개 결과 (10 Thm + 4 Prop + 4 Cor + 2 Remark + Meta-theorem)
-  📊 가설 77+개, 기하 H-GEO 10개, 생물 H-BIO 4개
+  📊 P-001: 23개 결과 (10 Thm + 4 Prop + 5 Cor + 2 Remark + Meta-theorem)
+  📊 가설 80+개, 기하 H-GEO 10개, 생물 H-BIO 4개
+  📊 GPU 필요 가설 → 윈도우 PC로 전송 예정:
+     H-AI-4(MoE 1/3), H-AI-7(IB 1/e), H-CX-11(골든MoE PPL)
 ```
 
 ---
