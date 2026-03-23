@@ -120,6 +120,63 @@ python3 ~/dev/test-8/brain_analyzer.py --all
 # DFS 자동 탐색 (ralph-loop 대체)
 python3 ~/dev/test-8/dfs_engine.py --depth 2 --threshold 0.001
 python3 ~/dev/test-8/dfs_engine.py --depth 3 --threshold 0.0001  # 정밀 탐색
+
+# 양자 공식 탐색
+python3 ~/dev/test-8/quantum_formula_engine.py --cross-only --threshold 0.01
+
+# 완전수 탐색
+python3 ~/dev/test-8/perfect_number_engine.py
+
+# 텍사스 명사수 검정 (발견 재검증)
+python3 ~/dev/test-8/texas_quantum.py
+```
+
+## DFS 발견 기록 규칙 (필수)
+
+```
+  발견 → 검증 → 등급 판정 → README 기록 (이 순서 반드시 준수)
+
+  검증 파이프라인 (dfs_engine.py verify_discovery 내장):
+    1. 산술 정확성 재확인
+    2. ad hoc 체크: +1/-1 보정이 있으면 경고
+    3. Strong Law of Small Numbers: 관여 상수 <100이면 경고
+    4. 일반화 테스트: 완전수 28에서도 성립하는가?
+    5. 텍사스 명사수 p-value 계산 (Bonferroni 보정)
+
+  등급 판정 (검증 후에만 기록):
+    🟩   = 정확한 등식 + 증명됨
+    🟧★  = 근사 + 텍사스 p < 0.01 (구조적)
+    🟧   = 근사 + 텍사스 p < 0.05 (약한 증거)
+    ⚪   = 산술 맞지만 텍사스 p > 0.05 (우연, 재시도 불필요)
+    ⬛   = 산술 자체가 틀림 (반증)
+
+  금지:
+    - 검증 전에 ⭐ 또는 "대발견" 표기 금지
+    - 텍사스 검정 없이 🟧 이상 등급 부여 금지
+    - +1/-1 보정이 있는 등식에 ⭐ 부여 금지
+```
+
+## Ralph Loop DFS 프롬프트 (표준)
+
+```
+  Ralph Loop에서 DFS 탐색 시 반드시 이 순서를 따를 것:
+
+  1. README 수학체계 지도 + 상수 연결 현황 읽기
+  2. 탐색 (사칙연산, log, exp, 거듭제곱, 이항계수 등)
+  3. 후보 발견 시 즉시 검증:
+     a) python3 계산으로 산술 확인
+     b) 일반화 테스트 (다른 완전수에서도?)
+     c) 텍사스 명사수 p-value 계산
+     d) ad hoc (+1,-1) 여부 확인
+  4. 검증 통과한 것만 README에 등급 표기하여 기록
+  5. 검증 실패한 것은 ⚪로 기록 (삭제하지 않음)
+  6. git add, commit, push
+  7. 발견 못해도 탐색 계속 (반복)
+
+  절대 하지 말 것:
+  - 검증 전에 ⭐⭐⭐ 붙이기
+  - "대발견!" 흥분하기
+  - 일반화 안 되는 것을 일반 법칙처럼 기록하기
 ```
 
 ## 백그라운드 실행
@@ -221,7 +278,11 @@ python3 ~/dev/test-8/dfs_engine.py --depth 3 --threshold 0.0001  # 정밀 탐색
   - 단점: bitsandbytes sm_120(Blackwell) 미지원 위험
   - 구현: model.gradient_checkpointing_enable() + bnb.optim.AdamW8bit
 
-  추천: 방법 A 먼저 시도, 안 되면 B
+  ★ 선택: 방법 B (gradient checkpointing + 8bit optimizer + device_map="auto" 조합)
+  - bitsandbytes 0.49.2 설치 완료, sm_120 문제 없음
+  - WSL swap 35GB 추가 (15GB RAM + 35GB swap = 50GB 가용)
+  - .wslconfig: memory=28GB, swap=32GB 설정
+  - 현재 학습 진행 중 (2026-03-23)
 
   서번트 검증:
   - 도메인별 PPL 분리 측정 (수학/언어/코드)
