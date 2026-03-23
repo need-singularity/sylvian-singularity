@@ -909,3 +909,82 @@
 
 ---
 
+## 가설 현황 (σφ=nτ 파생, 38개)
+
+### 수학 (H-MP, 13개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-MP-1a](docs/hypotheses/H-MP-1a-odd-perfect-sigma-phi.md) | 홀수 n: σφ>nτ 항상 | ✅ 증명+10만검증 | 문헌에 없음! |
+| [H-MP-3](docs/hypotheses/H-MP-3-dirichlet-pointwise.md) | Dirichlet 합성곱 vs 점별곱 | ✅ R-인수 완전증명 | τφ=σ→{1,3,14,42} |
+| [H-MP-4](docs/hypotheses/H-MP-4-odd-perfect-impossibility.md) | 홀수 완전수 불가능 기여 | 🟡 부분검증 | Euler 하한 ~10^16 |
+| [H-MP-5](docs/hypotheses/H-MP-5-tau-phi-sigma-finiteness.md) | τφ=σ 해 유한성 | ✅ 증명+10^6검증 | {1,3,14,42} 완전 |
+| [H-MP-6](docs/hypotheses/H-MP-6-near-solutions-density.md) | σφ/(nτ)≈1 밀도 | ✅ 검증 | |R-1|<0.1: n=6만 |
+| [H-MP-7](docs/hypotheses/H-MP-7-sigma-k-generalization.md) | σ_k 일반화 | ✅ k=1만 비자명해 | k≥2: R>1 항상 |
+| [H-MP-8](docs/hypotheses/H-MP-8-R-factor-dirichlet-series.md) | R-인수 Dirichlet 급수 | ⏳ 미검증 | |
+| [H-MP-9](docs/hypotheses/H-MP-9-convolution-pointwise-general.md) | 합성곱 분류 | ✅ φ²→{1,3,10,30} | 상쇄소수 {3,5,7} |
+| [H-MP-10](docs/hypotheses/H-MP-10-sigma-phi-asymptotic.md) | Σ R(n) 점근 | 🟡 S(x)~cx^1.9 | |
+| [H-MP-11](docs/hypotheses/H-MP-11-perfect-number-gap.md) | 완전수 간격 R 구조 | ⬛ 기각 | R 극소 아님 |
+| [H-MP-12](docs/hypotheses/H-MP-12-R-factor-fixed-points.md) | R-인수 역수쌍 유일성 | ✅ (2,1)↔(3,1) 유일 | |
+| [H-MP-13](docs/hypotheses/H-MP-13-consecutive-primes-generalization.md) | (p-1)(q-1)=2k 일반화 | ✅ R 단조증가 | k=1만 R=1 |
+
+### AI (H-AI, 7개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-AI-1b](docs/hypotheses/H-AI-1b-transformer-heads-sigma-multiples.md) | head수=σ배수 | ⬛ 반증 | heads=2 최적 |
+| [H-AI-4](docs/hypotheses/H-AI-4-moe-one-third-activation.md) | MoE 활성 1/3 | ⏳ 대기 | 골든MoE 완료 후 |
+| [H-AI-5](docs/hypotheses/H-AI-5-sigma-phi-regularizer.md) | σφ/(nτ) regularizer | ⏳ 미검증 | |
+| [H-AI-6](docs/hypotheses/H-AI-6-six-fold-cv.md) | 6-fold CV | ⏳ 약함 | |
+| [H-AI-7](docs/hypotheses/H-AI-7-golden-moe-information-bottleneck.md) | IB 최적 = 1/e | ⏳ 미검증 | |
+| [H-AI-8](docs/hypotheses/H-AI-8-six-dim-representation.md) | 6차원 임베딩 | ⏳ 미검증 | |
+| [H-AI-10](docs/hypotheses/H-AI-10-tokenizer-vocab-six.md) | vocab=6^k | ⏳ 약함 | |
+
+### 의식엔진 교차 (H-CX, 8개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CX-1](docs/hypotheses/H-CX-1-sigma-phi-tension.md) | σφ=nτ = tension 최적 | ⏳ 미검증 | |
+| [H-CX-2](docs/hypotheses/H-CX-2-golden-zone-R-factor.md) | 골든존↔R인수 | 🟧 부분확인 | I=0.25∈GZ |
+| [H-CX-3](docs/hypotheses/H-CX-3-consciousness-six-modules.md) | 의식=6모듈 | ⏳ 투기적 | |
+| [H-CX-4](docs/hypotheses/H-CX-4-diversity-equals-information.md) | 다양성=정보×σφ | ⏳ 미검증 | |
+| [H-CX-5](docs/hypotheses/H-CX-5-repulsion-field-tau-phi.md) | 반발력=τ/φ 불균형 | ⏳ 미검증 | |
+| [H-CX-6](docs/hypotheses/H-CX-6-phase-acceleration-sigma-tau.md) | 위상가속 ×3=σ/τ | ⏳ 미검증 | Jamba 실측 |
+| [H-CX-7](docs/hypotheses/H-CX-7-topology-seven-levels.md) | 위상 7단계=M₃ | ⏳ 투기적 | |
+| [H-CX-8](docs/hypotheses/H-CX-8-three-sets-three-domains.md) | 세 유한집합=세 도메인 | 🟨 관찰 | |
+
+### 물리 (H-PH, 5개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-PH-1](docs/hypotheses/H-PH-1-why-subtract-seven.md) | 왜 σ²-7=137 | ⏳ 극고 | |
+| [H-PH-2](docs/hypotheses/H-PH-2-gauge-group-six.md) | 게이지군 차원합=6 | ⏳ 투기적 | |
+| [H-PH-3](docs/hypotheses/H-PH-3-tau-phi-sigma-nuclear.md) | τφ=σ↔핵물리 | ⏳ 약함 | |
+| [H-PH-4](docs/hypotheses/H-PH-4-six-quarks-leptons.md) | 쿼크 6+렙톤 6 | ⏳ 투기적 | |
+| [H-PH-5](docs/hypotheses/H-PH-5-planck-units-six.md) | 플랑크 단위 | ⏳ 약함 | |
+
+### 화학/뇌화학 (H-CHEM, 3개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CHEM-1](docs/hypotheses/H-CHEM-1-neurotransmitter-six.md) | 신경전달물질 6종 | 🟨 관찰 | E/I balance |
+| [H-CHEM-2](docs/hypotheses/H-CHEM-2-carbon-six-perfect.md) | 탄소 Z=6 R=1 유일 | ✅ 수치확인 | |
+| [H-CHEM-3](docs/hypotheses/H-CHEM-3-water-hydrogen-bond.md) | 물 6각형 구조 | 🟨 관찰 | |
+
+### CS (H-CS, 4개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CS-3](docs/hypotheses/H-CS-3-rsa-sigma-phi-ratio.md) | RSA↔σφ/(nτ) | ⬛ 기각 | R≈n/4 선형 |
+| [H-CS-4](docs/hypotheses/H-CS-4-hamming-tau-phi-sigma.md) | Hamming↔τφσ | 🟨 관찰 | Golay=(2σ-1,σ,M₃) |
+| [H-CS-5](docs/hypotheses/H-CS-5-graph-coloring-six.md) | 그래프 색칠 | ⏳ 미검증 | |
+| [H-CS-6](docs/hypotheses/H-CS-6-hash-collision-six.md) | 해시 충돌 | ⏳ 약함 | |
+
+### 생물 (H-BIO, 1개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-BIO-1](docs/hypotheses/H-BIO-1-codon-sigma-tau.md) | 코돈=(τ,σ/τ) | 🟨 관찰 | (4,3) 최적 균형 |
+
+---
+
