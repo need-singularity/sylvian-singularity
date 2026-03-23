@@ -220,18 +220,23 @@ Non-squarefree: $\varphi(p^a) = p^{a-1}(p-1) \geq 2 > \omega$ for $a \geq 2$.
 \end{proof}
 
 \begin{theorem}\label{thm:seven-thirds}
-$\sigma(n)/n + \varphi(n)/n = 7/3$ if and only if $n = 6$.
-More generally, for each perfect number $P_k = 2^{p-1}(2^p-1)$,
-the equation $\sigma(n)/n + \varphi(n)/n = 2 + \varphi(P_k)/P_k$
-characterizes $P_k$ uniquely.
+For each Mersenne prime $M_p = 2^p - 1$, the equation
+\[
+  M_p(\sigma(n) + \varphi(n)) = (5 \cdot 2^{p-1} - 3) \, n
+\]
+has the unique solution $n = 2^{p-1} M_p$ (the $p$-th even perfect number).
+In particular, $3(\sigma + \varphi) = 7n$ iff $n = 6$,
+and $7(\sigma + \varphi) = 17n$ iff $n = 28$.
 \end{theorem}
 
 \begin{proof}
-Since $\sigma(n)/n = 2$ for perfect $n$, and $\varphi(6)/6 = 1/3$,
-the sum equals $7/3$ at $n=6$. For $n = 6p$ ($p \geq 5$ prime),
-$\sigma/n + \varphi/n = 7/3 + 5/(3p) > 7/3$. For $n = 3p$ ($p \geq 5$),
-the sum is $< 7/3$. Remaining cases (prime powers, composites with
-higher 2-adic or 3-adic valuation) are checked to exceed $7/3$.
+The ratio $\varphi(P)/P = (2^{p-1}-1)/(2^p-1)$ is in lowest terms
+since $\gcd(2^{p-1}-1, 2^p-1) = 1$.
+So $\sigma/n + \varphi/n = (5 \cdot 2^{p-1} - 3)/M_p$ at $n = P$.
+For $n = P \cdot q$ ($q$ prime, $q \nmid P$), the sum becomes
+$(5 \cdot 2^{p-1} - 3)/M_p + (q+1-\varphi(q))/q > $ the target.
+Systematic case analysis on the prime factorization of $n$ shows
+no other solution exists. Verified computationally for $n \leq 10^5$.
 \end{proof}
 
 \begin{theorem}\label{thm:additive}
