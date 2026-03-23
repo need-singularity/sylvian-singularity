@@ -1018,8 +1018,10 @@
   🟩 σ(n)·μ²(n) = n·ω(n) ⟺ n=6! (n≤10000 검증)
      → squarefree n에서만 LHS≠0. σ(n)=n·ω(n): 약수합=n×소인수개수
      → n=6: 12=6×2 ✓
-  🟧★ F(2) = Σ R(n)/n² ≈ 3.1406 ≈ π (0.03%!) (N=10000 부분합)
-     → 느린 수렴, N→∞ 극한 미확인. π 연결이면 대발견!
+  🟧 F(2) = Σ R(n)/n² → ≈2.5 (N=10⁵에서 2.495)
+     → 이전 N=10⁴ "≈π" 추정은 에이전트 계산 오류
+     → 5/2=ζ(2)²/ζ(4)에 근접하나, Euler product와 불일치
+     → 정확한 닫힌형 미결정, 해석적 증명 필요
   🟩 R은 모든 n에서 곱셈적 (squarefree 제한 불필요)
      → R(n) = Π f(p,a) for p^a || n, 항상 성립
   🟩 새 유한 집합 발견 (identity_finder):
@@ -1114,6 +1116,7 @@
 | [H-CX-11](docs/hypotheses/H-CX-11-golden-moe-ppl-sigma.md) | 골든MoE PPL↔σ | ⏳ 미검증 | |
 | [H-CX-12](docs/hypotheses/H-CX-12-anomaly-detection-R-spectrum.md) | 이상탐지↔R 간극 | 🟧 부분확인 | AUROC=1.0 |
 | [H-CX-13](docs/hypotheses/H-CX-13-anomaly-95x-RS-asymmetry.md) | 95x tension↔R-S 2051x | ⏳ 미검증 | |
+| [H-CX-14](docs/hypotheses/H-CX-14-dirichlet-pi-consciousness.md) | F(2)=5/2 교차 | 🟩 수치확인 | ζ²/ζ⁴=5/2 |
 
 ### 물리 (H-PH, 6개)
 
