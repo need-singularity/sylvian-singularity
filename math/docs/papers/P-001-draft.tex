@@ -128,4 +128,17 @@ The only perfect number in the image of $R$ is $6$: $R(120) = 6$.
 No $n$ satisfies $R(n) = 28$ or $R(n) = 496$.
 \end{corollary}
 
+\begin{theorem}\label{thm:decrease}
+$R(n) < n$ for all $n \geq 2$. In particular, every integer $R$-chain
+$n_0, n_1 = R(n_0), n_2 = R(n_1), \ldots$ converges to $1$.
+\end{theorem}
+
+\begin{proof}
+For each prime power $p^a \| n$, we have
+$f(p,a) = \frac{p^{a+1}-1}{p(a+1)} < p^a$,
+since this is equivalent to $1 - p^{-(a+1)} < a+1$,
+where the left side is less than $1$ and the right side is at least $2$.
+Therefore $R(n) = \prod f(p_i, a_i) < \prod p_i^{a_i} = n$.
+\end{proof}
+
 \end{document}
