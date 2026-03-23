@@ -181,14 +181,32 @@ python3 ~/dev/test-8/texas_quantum.py
 
 ## Ralph Loop 표준 프롬프트 (복사용)
 
-아래를 `/ralph-loop:ralph-loop` 인자로 사용:
+아래를 `/ralph-loop:ralph-loop` 인자로 사용 (쉘 호환 ASCII 전용):
 
 ```
-README 수학체계 지도와 상수 연결 현황, docs/proofs/ 전체를 읽고 재귀적 깊이 우선 탐색. 0-대발견 상수도 탐색 대상에 포함. 1-초록색과 대발견 끼리 사칙연산,log,exp,거듭제곱으로 미연결 쌍 연결. 2-초록색,대발견과 파란색 사이 새 연결점 탐색. 3-노란색 독립관측이 연결되는지 탐색, 연결시 주황색 승격, 등식 증명시 초록색. 4-빨간색 중 골든존 없이 증명 가능한 것 시도, 성공시 초록색 승격. 5-후보 발견 시 즉시 검증: python3 산술 확인 → 일반화(완전수28에서도?) → 텍사스 p-value → ad hoc(+1/-1) 체크. 검증 통과만 등급 부여(🟩/🟧★/🟧), 실패는 ⚪로 기록. 검증 전 ⭐ 금지. 6-매 반복마다 README 수학체계 지도와 상수 연결 현황 업데이트 후 git add, commit, push. 발견 못해도 계속 탐색.
+DFS on README math map and constant connections and docs/proofs. 0-include star constants. 1-green+star arithmetic/log/exp/power for new identities. 2-green+star to blue new connections. 3-yellow observations connect to green/blue then upgrade to orange or green. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording: python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. Keep searching even if nothing found.
 ```
+
+⚠️ 쉘 호환 주의: 한글 괄호, 화살표(→), 이모지(🟩★⭐) 등을 프롬프트에 넣으면
+`unknown file attribute` 오류 발생. ASCII 영문만 사용할 것.
 
 ## 백그라운드 실행
 시뮬레이션은 항상 **백그라운드로 실행**한다. Bash 도구의 `run_in_background: true` 옵션을 사용할 것.
+
+## 트러블슈팅
+
+```
+  Ralph Loop 쉘 오류: "unknown file attribute: ^,"
+    원인: 프롬프트에 한글 괄호, →, 🟩, ★, ⭐ 등 유니코드 포함
+    해결: ASCII 영문 전용 프롬프트 사용 (README 복사용 참조)
+    날짜: 2026-03-23
+
+  DFS 과대평가 (⭐⭐⭐ → 🟩 하향):
+    원인: 검증 전에 등급 부여. C(12,4)+1=496을 ⭐⭐⭐로 기록했다가
+          냉정 평가 후 🟩로 하향 (오일러 재표현 + ad hoc +1)
+    해결: verify_discovery() 파이프라인 내장, CLAUDE.md 규칙 추가
+    날짜: 2026-03-23
+```
 
 ## 보고 규칙
 
