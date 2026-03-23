@@ -1110,7 +1110,7 @@
 | R-004 | OEIS new seq | n where phi^2=(phi\*phi): 1,3,10,30 | pending | - |
 | R-005 | OEIS new seq | n where R(n) integer prime: 54,96,196,360 | pending | - |
 
-## 가설 현황 (σφ=nτ 파생, 65개)
+## 가설 현황 (σφ=nτ 파생, 66개)
 
 ### 수학 (H-MP, 15개)
 
@@ -1162,7 +1162,8 @@
 | [H-CX-11](docs/hypotheses/H-CX-11-golden-moe-ppl-sigma.md) | 골든MoE PPL↔σ | ⏳ 미검증 | |
 | [H-CX-12](docs/hypotheses/H-CX-12-anomaly-detection-R-spectrum.md) | 이상탐지↔R 간극 | 🟧 부분확인 | AUROC=1.0 |
 | [H-CX-13](docs/hypotheses/H-CX-13-anomaly-95x-RS-asymmetry.md) | 95x tension↔R-S 2051x | ⏳ 미검증 | |
-| [H-CX-14](docs/hypotheses/H-CX-14-dirichlet-pi-consciousness.md) | F(2)=5/2 교차 | 🟩 수치확인 | ζ²/ζ⁴=5/2 |
+| [H-CX-14](docs/hypotheses/H-CX-14-dirichlet-pi-consciousness.md) | F(2) 발산, E_p 닫힌형 | 🟩 증명 | F(2,N)~ln(ln(N)) |
+| [H-CX-15](docs/hypotheses/H-CX-15-attention-arithmetic-lens.md) | Attention=산술 렌즈 | 🟧 구조적 | 간극↔결정경계 |
 
 ### 물리 (H-PH, 6개)
 
