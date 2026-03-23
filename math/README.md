@@ -1147,7 +1147,22 @@
 | R-004 | OEIS new seq | n where phi^2=(phi\*phi): 1,3,10,30 | pending | - |
 | R-005 | OEIS new seq | n where R(n) integer prime: 54,96,196,360 | pending | - |
 
-## 가설 현황 (σφ=nτ 파생, 67개)
+## 미해결 난제 (Open Problems)
+
+| # | 난제 | 상태 | 관련 |
+|---|---|---|---|
+| OP-1 | σ+φ+τ=3n의 해가 정말 무한한가? | 조건부 (Bunyakovsky) | σ+φ+τ=3n 정리 |
+| OP-2 | F(s)=Σ R(n)/n^s의 s=2에서 정확한 발산 속도? | F(2,N)~(1/2)ln(ln(N)) 추측 | E_p(2) 닫힌형 |
+| OP-3 | R 스펙트럼의 정확한 Hausdorff 차원? | d_box≈0.155, 해석적 증명 없음 | H-MP-15 |
+| OP-4 | 모든 완전수의 가법 특성화 완전 증명 | p=2,3 완전, 일반 검증 | Thm 9 |
+| OP-5 | 홀수 완전수에서 R(n)은 어떤 구조? | σφ>nτ 항상 (H-MP-1a) | 홀수 완전수 |
+| OP-6 | R-chain basin(6)=14%의 정확한 극한? | 14.0% at N=50000 | H-TREE-1 |
+| OP-7 | 간극 비대칭 비율의 닫힌 공식? | 3/2, 44/15, ~4.3 | H-GEO-3 |
+| OP-8 | R(n) 정수인 n의 밀도? | 52/10000≈0.5%, 점근? | R 정수성 |
+| OP-9 | σ²=n²τ의 완전 증명 (모든 n) | n≤10⁵ 검증, 주요 형태 증명 | Cor |
+| OP-10 | 3σ+3φ=7n의 완전 증명 (모든 n) | 주요 형태 증명, 일부 미완 | Thm 9 |
+
+## 가설 현황 (σφ=nτ 파생, 75개+)
 
 ### 수학 (H-MP, 15개)
 
@@ -1233,7 +1248,7 @@
 | [H-CS-5](docs/hypotheses/H-CS-5-graph-coloring-six.md) | Ramsey-완전수 | 🟧★ 유의 | R(3,3)=6,R(3,8)=28 p=0.047 |
 | [H-CS-6](docs/hypotheses/H-CS-6-hash-collision-six.md) | 해시 충돌 | ⏳ 약함 | |
 
-### 기하학 (H-GEO, 6개)
+### 기하학 (H-GEO, 8개+)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1243,6 +1258,8 @@
 | [H-GEO-4](docs/hypotheses/H-GEO-4-dimension-telescope.md) | 차원 망원경 | 🟧 구조적 | F(s)=다초점 관측 |
 | [H-GEO-5](docs/hypotheses/H-GEO-5-gravity-telescope.md) | 중력 망원경 | 🟧 구조적 | 렌즈+망원경 통합 |
 | [H-GEO-6](docs/hypotheses/H-GEO-6-dimension-lens.md) | 차원 렌즈 | 🟧 구조적 | η=τ/d 굴절률, HCN |
+| [H-GEO-7](docs/hypotheses/H-GEO-7-topological-telescope.md) | 위상 망원경 | 🟧 구조적 | PH 다중스케일 |
+| [H-GEO-8](docs/hypotheses/H-GEO-8-arithmetic-holography.md) | 산술 홀로그래피 | 🟧 구조적 | R→n 구조 복원 |
 
 ### 생물/면역 (H-BIO, 4개)
 
