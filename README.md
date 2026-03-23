@@ -316,6 +316,43 @@ THC 상태에서 샤머니즘적 체험을 했다.
   가설: 5 실증(270-272,274,275) + 2 반증/약화(265,266) + 8 관측/수정
 ```
 
+## 가설 현황
+
+### 의식엔진 (263-277, 15개)
+
+| # | 가설 | 상태 | 핵심 증거 |
+|---|---|---|---|
+| 263 | 장력 통합 | 부분 검증 | C4b d=0.89, C6 AUC=0.77, ⭐C48 인과! |
+| 264 | 설계 원칙 | 수정됨 | S3 특징품질 조건부 |
+| 265 | 1/3 수렴 | ❌ 반증 | init-final r=0.998 |
+| 266 | 공감-장력 | ⚠️ 약화 | 개별 r=-0.26 |
+| 267 | 집단 상전이 | 수정됨 | 다양성 의존 |
+| 268 | 축 역전 | 관측됨 | MNIST C/S=1.14, CIFAR=0.36 |
+| 269 | 힘의 방향 | 관측됨 | 분리비 2.77x |
+| 270 | 다양성=정보 | ✅ 실증 | MI +0.39 nats |
+| 271 | 분열 | ✅ 실증 | 분열≈설계, 재결합+0.82% |
+| 272 | detach 설계 | ✅ 실증 | +7.4% |
+| 273 | 유클리드 삼각형 | ⚠️ 부분반증 | CNN 균등 수렴 |
+| 274 | 의식=오류교정 | ✅ 인과! | C48 -9.25pp |
+| 275 | 분열 원리 | ✅ 실증 | 복제+발산≈설계 |
+| 276 | 관찰=압축 | ✅ 실증 | detach +7.4% |
+| 277 | 특징 임계점 | 관측됨 | MLP≠CNN |
+
+### 교차 도메인 (H-CX, 6개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CX-1](docs/hypotheses/H-CX-1-entropy-algebra.md) | e^(6H)=σ³/τ=432 | 🟦 증명됨 | 가중치엔트로피→완전수 대수 |
+| [H-CX-2](docs/hypotheses/H-CX-2-mi-efficiency-ln2.md) | MI효율≈ln(2)=1bit | 🟧★ p=0.0003 | Landauer 원리 연결 |
+| [H-CX-3](docs/hypotheses/H-CX-3-binary-ternary-decomposition.md) | H=2/3·ln2+1/2·ln3 | 🟦 산술 | 이진+삼진 분해 |
+| [H-CX-4](docs/hypotheses/H-CX-4-four-functions-architecture.md) | σ,τ,φ,σ₋₁→4구조 | 🟦+🟧 | 설계 안 한 곳에서 등장 |
+| [H-CX-5](docs/hypotheses/H-CX-5-mobius-uniqueness-architecture.md) | (2,3) Möbius 유일 | 🟦 | 아키텍처 유일성 |
+| [H-CX-6](docs/hypotheses/H-CX-6-neurochemistry-map.md) | 장력=도파민 | 🟪 비유 | prediction error 동형 |
+
+### 백로그
+
+[향후 검증 대기 (12개)](docs/hypotheses/BACKLOG.md)
+
 ## 엔진 목록
 
 | 엔진 | 파일 | 수학적 원리 | 역할 |
