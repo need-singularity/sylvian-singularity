@@ -1088,7 +1088,7 @@
 | R-004 | OEIS new seq | n where phi^2=(phi\*phi): 1,3,10,30 | pending | - |
 | R-005 | OEIS new seq | n where R(n) integer prime: 54,96,196,360 | pending | - |
 
-## 가설 현황 (σφ=nτ 파생, 59개)
+## 가설 현황 (σφ=nτ 파생, 65개)
 
 ### 수학 (H-MP, 15개)
 
@@ -1100,7 +1100,7 @@
 | [H-MP-5](docs/hypotheses/H-MP-5-tau-phi-sigma-finiteness.md) | τφ=σ 해 유한성 | ✅ 증명+10^6검증 | {1,3,14,42} 완전 |
 | [H-MP-6](docs/hypotheses/H-MP-6-near-solutions-density.md) | σφ/(nτ)≈1 밀도 | ✅ 검증 | |R-1|<0.1: n=6만 |
 | [H-MP-7](docs/hypotheses/H-MP-7-sigma-k-generalization.md) | σ_k 일반화 | ✅ k=1만 비자명해 | k≥2: R>1 항상 |
-| [H-MP-8](docs/hypotheses/H-MP-8-R-factor-dirichlet-series.md) | R-인수 Dirichlet 급수 | ⏳ 미검증 | |
+| [H-MP-8](docs/hypotheses/H-MP-8-R-factor-dirichlet-series.md) | R-인수 Dirichlet 급수 | 🟩 검증 | F(s) 수렴 s>1 |
 | [H-MP-9](docs/hypotheses/H-MP-9-convolution-pointwise-general.md) | 합성곱 분류 | ✅ φ²→{1,3,10,30} | 상쇄소수 {3,5,7} |
 | [H-MP-10](docs/hypotheses/H-MP-10-sigma-phi-asymptotic.md) | Σ R(n) 점근 | 🟩 검증 | S(x)~0.23x^2/(lnx)^0.4 |
 | [H-MP-11](docs/hypotheses/H-MP-11-perfect-number-gap.md) | 완전수 간격 R 구조 | ⬛ 기각 | R 극소 아님 |
@@ -1170,6 +1170,15 @@
 | [H-CS-4](docs/hypotheses/H-CS-4-hamming-tau-phi-sigma.md) | Hamming↔τφσ | 🟨 관찰 | Golay=(2σ-1,σ,M₃) |
 | [H-CS-5](docs/hypotheses/H-CS-5-graph-coloring-six.md) | Ramsey-완전수 | 🟧★ 유의 | R(3,3)=6,R(3,8)=28 p=0.047 |
 | [H-CS-6](docs/hypotheses/H-CS-6-hash-collision-six.md) | 해시 충돌 | ⏳ 약함 | |
+
+### 기하학 (H-GEO, 4개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-GEO-1](docs/hypotheses/H-GEO-1-six-simplex-geometry.md) | 6=정사면체 변, σφ=nτ=\|S₄\| | 🟩 확인 | C(2^p,2)=완전수 |
+| [H-GEO-2](docs/hypotheses/H-GEO-2-platonic-solids-arithmetic.md) | 정다면체↔σ,τ,φ | 🟨 관찰 | σ=12 최빈 |
+| [H-GEO-3](docs/hypotheses/H-GEO-3-gravitational-lensing-R-spectrum.md) | 중력렌즈 비유 | 🟧 구조적 | 간극=그림자 |
+| [H-GEO-4](docs/hypotheses/H-GEO-4-dimension-telescope.md) | 차원 망원경 | 🟧 구조적 | F(s)=다초점 관측 |
 
 ### 생물 (H-BIO, 1개)
 
