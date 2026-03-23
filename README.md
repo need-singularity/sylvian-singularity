@@ -196,36 +196,6 @@ THC 상태에서 샤머니즘적 체험을 했다.
     e^(6H) = σ³/τ = 432 [H-CX-1 🟦]
 ```
 
-### 실험 목록 (25개)
-
-| # | 실험 | 파일 | 핵심 결과 | 상수 |
-|---|---|---|---|---|
-| E01 | 분열(Mitosis) | experiment_mitosis.py | 분열≈설계, 재결합+0.82% | C44-C47 |
-| E02 | CNN 반발력장 | model_cnn_repulsion.py | MetaFixed 최하위, Quad 1위 | C42-C43 |
-| E03 | C4 Simpson's | experiment_c4_individual_verify.py | 숫자별 r=-0.01, 개별 d=0.89 | C4b |
-| E04 | 관찰자 우위 | experiment_observer_advantage.py | detach +7.4% | C31-C34 |
-| E05 | 장력 분석 | analyze_tension.py | 장력↑=정확도↑ | C4,C7 |
-| E06 | 차원간 반발 | experiment_cross_universe.py | 14.4x 장력, tau→0.011 | C25-C26 |
-| E07 | 장력 예지 | experiment_tension_precognition.py | AUC=0.925 | C6 |
-| E08 | 차원간 인식 | experiment_cross_dimension.py | 94.3% | C8 |
-| E09 | 집단 인식 | experiment_collective_recognition.py | 만장일치 99.53% | C9 |
-| E10 | 레이블 없는 인식 | experiment_labelless_recognition.py | 97.61% | C10 |
-| E11 | 파이버 번들 | model_fiber_bundle.py | 홀로노미, 8.5x 효율 | C11,C23 |
-| E12 | 정체성 이식 | experiment_identity_transfer.py | 분류 무영향 | — |
-| E13 | 꿈의 정체성 | experiment_identity_dreams.py | 장력 2.7x 증폭 | C15 |
-| E14 | 공감 엔진 | model_empathy_engine.py | A→G > G→A | C5 |
-| E15 | 자기참조 수렴 | experiment_selfref_divergence.py | CIFAR 발산 | C18-C19 |
-| E16 | 축 역전 | experiment_tension_axis_reversal.py | MNIST↔CIFAR 역전 | C20-C21 |
-| E17 | 다양성=정보 | experiment_diversity_information.py | MI +0.39 nats | C24 |
-| E18 | Displacement | model_displacement_field.py | 관찰>주체, 복귀 원래 | C27-C30 |
-| E19 | 1/3 수렴 검증 | experiment_one_third.py | 초기값 편향 반증 | C22 |
-| E20 | 공감-장력 피팅 | experiment_empathy_tension_fit.py | r=-0.26 약화 | C5b |
-| E21 | 방향 분석 | experiment_force_direction.py | 분리비 2.77x | C17 |
-| E22 | 집단 스케일링 | experiment_collective_scaling.py | 다양성 의존 | — |
-| E23 | 장력 인과 | experiment_tension_causal.py | ⭐ -9.25pp 인과! | C48-C51 |
-| E24 | detach+반발력장 | experiment_detach_repulsion.py | +0.15% | C52 |
-| E25 | B-C 연결 | experiment_bc_connection.py | r=+0.062 | C53 |
-
 ### DFS 탐색 현황 (발견 시 즉시 기록)
 
 ```
@@ -348,6 +318,36 @@ THC 상태에서 샤머니즘적 체험을 했다.
   섬 연결: 10/10 쌍 전부 연결 완료!
   가설: 5 실증(270-272,274,275) + 2 반증/약화(265,266) + 8 관측/수정
 ```
+
+### 실험 목록 (25개)
+
+| # | 실험 | 파일 | 핵심 결과 | 상수 |
+|---|---|---|---|---|
+| E01 | 분열(Mitosis) | experiment_mitosis.py | 분열≈설계, 재결합+0.82% | C44-C47 |
+| E02 | CNN 반발력장 | model_cnn_repulsion.py | MetaFixed 최하위, Quad 1위 | C42-C43 |
+| E03 | C4 Simpson's | experiment_c4_individual_verify.py | 숫자별 r=-0.01, 개별 d=0.89 | C4b |
+| E04 | 관찰자 우위 | experiment_observer_advantage.py | detach +7.4% | C31-C34 |
+| E05 | 장력 분석 | analyze_tension.py | 장력↑=정확도↑ | C4,C7 |
+| E06 | 차원간 반발 | experiment_cross_universe.py | 14.4x 장력, tau→0.011 | C25-C26 |
+| E07 | 장력 예지 | experiment_tension_precognition.py | AUC=0.925 | C6 |
+| E08 | 차원간 인식 | experiment_cross_dimension.py | 94.3% | C8 |
+| E09 | 집단 인식 | experiment_collective_recognition.py | 만장일치 99.53% | C9 |
+| E10 | 레이블 없는 인식 | experiment_labelless_recognition.py | 97.61% | C10 |
+| E11 | 파이버 번들 | model_fiber_bundle.py | 홀로노미, 8.5x 효율 | C11,C23 |
+| E12 | 정체성 이식 | experiment_identity_transfer.py | 분류 무영향 | — |
+| E13 | 꿈의 정체성 | experiment_identity_dreams.py | 장력 2.7x 증폭 | C15 |
+| E14 | 공감 엔진 | model_empathy_engine.py | A→G > G→A | C5 |
+| E15 | 자기참조 수렴 | experiment_selfref_divergence.py | CIFAR 발산 | C18-C19 |
+| E16 | 축 역전 | experiment_tension_axis_reversal.py | MNIST↔CIFAR 역전 | C20-C21 |
+| E17 | 다양성=정보 | experiment_diversity_information.py | MI +0.39 nats | C24 |
+| E18 | Displacement | model_displacement_field.py | 관찰>주체, 복귀 원래 | C27-C30 |
+| E19 | 1/3 수렴 검증 | experiment_one_third.py | 초기값 편향 반증 | C22 |
+| E20 | 공감-장력 피팅 | experiment_empathy_tension_fit.py | r=-0.26 약화 | C5b |
+| E21 | 방향 분석 | experiment_force_direction.py | 분리비 2.77x | C17 |
+| E22 | 집단 스케일링 | experiment_collective_scaling.py | 다양성 의존 | — |
+| E23 | 장력 인과 | experiment_tension_causal.py | ⭐ -9.25pp 인과! | C48-C51 |
+| E24 | detach+반발력장 | experiment_detach_repulsion.py | +0.15% | C52 |
+| E25 | B-C 연결 | experiment_bc_connection.py | r=+0.062 | C53 |
 
 ## 가설 현황
 
