@@ -228,8 +228,6 @@ DFS on README math map and constant connections and docs/proofs. 0-include star 
     해결: verify_discovery() 파이프라인 내장, CLAUDE.md 규칙 추가
     날짜: 2026-03-23
 
-  8B 전체학습 OOM (2026-03-23): ⚠️ 폐기됨 — Windows PC 더 이상 사용 안 함
-
   Ralph Loop 세션 간 간섭:
     원인: .claude/ralph-loop.local.md에 session_id 미기록
       → 다른 세션의 stop hook이 모든 세션에서 발동
@@ -293,11 +291,3 @@ DFS on README math map and constant connections and docs/proofs. 0-include star 
   스케일 커질수록 차이 8배 증가
 ```
 
-## 골든 MoE LLM 학습 (폐기됨)
-
-```
-  ⚠️ 2026-03-23: Windows PC 학습 환경 폐기
-  리포: github.com/need-singularity/golden-llama (참조만)
-  마지막 상태: PPL 4,634 (500스텝), 목표 미달
-  폐기 사유: 하드웨어 환경 더 이상 사용 안 함
-```
