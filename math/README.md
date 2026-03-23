@@ -1279,10 +1279,10 @@
 |---|---|---|---|
 | [H-PH-1](docs/hypotheses/H-PH-1-why-subtract-seven.md) | 왜 σ²-7=137 | ⚪ 우연 | 텍사스 p≈0.25 |
 | [H-PH-2](docs/hypotheses/H-PH-2-gauge-group-six.md) | 게이지군 차원합=12=σ | 🟨 약 | 3gen×4=σ, small# |
-| [H-PH-3](docs/hypotheses/H-PH-3-tau-phi-sigma-nuclear.md) | τφ=σ↔핵물리 | ⏳ 약함 | |
-| [H-PH-4](docs/hypotheses/H-PH-4-six-quarks-leptons.md) | 쿼크 6+렙톤 6 | ⏳ 투기적 | |
-| [H-PH-5](docs/hypotheses/H-PH-5-planck-units-six.md) | 플랑크 단위 | ⏳ 약함 | |
-| [H-PH-6](docs/hypotheses/H-PH-6-R-chain-decay.md) | R-chain↔방사성 붕괴 | ⏳ 미검증 | |
+| [H-PH-3](docs/hypotheses/H-PH-3-tau-phi-sigma-nuclear.md) | τφ=σ↔핵물리 | ⚪ 기각 | magic# 불일치 |
+| [H-PH-4](docs/hypotheses/H-PH-4-six-quarks-leptons.md) | 쿼크 6+렙톤 6 | 🟨 약 | 12=σ 일치만 |
+| [H-PH-5](docs/hypotheses/H-PH-5-planck-units-six.md) | 플랑크 단위 | ⚪ 기각 | 무관 |
+| [H-PH-6](docs/hypotheses/H-PH-6-R-chain-decay.md) | R-chain↔방사성 붕괴 | ⚪ 기각 | 피상적 비유 |
 
 ### 화학/뇌화학 (H-CHEM, 4개)
 
@@ -1291,7 +1291,7 @@
 | [H-CHEM-1](docs/hypotheses/H-CHEM-1-neurotransmitter-six.md) | 신경전달물질 6종 | 🟨 관찰 | E/I balance |
 | [H-CHEM-2](docs/hypotheses/H-CHEM-2-carbon-six-perfect.md) | 탄소 Z=6 R=1 유일 | ✅ 수치확인 | |
 | [H-CHEM-3](docs/hypotheses/H-CHEM-3-water-hydrogen-bond.md) | 물 6각형 구조 | 🟨 관찰 | |
-| [H-CHEM-4](docs/hypotheses/H-CHEM-4-R-chain-reaction.md) | R-chain↔화학반응 | ⏳ 미검증 | |
+| [H-CHEM-4](docs/hypotheses/H-CHEM-4-R-chain-reaction.md) | R-chain↔화학반응 | ⚪ 기각 | 피상적 비유 |
 
 ### CS (H-CS, 4개)
 
