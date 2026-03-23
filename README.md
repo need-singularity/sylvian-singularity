@@ -154,6 +154,10 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | C28 | 🟨 | displacement 후 복귀 변화 | 0.00% | model_displacement_field.py | 돌아오면 원래대로 |
 | C29 | 🟨 | 관찰 품질 감소율 | 0.298→0.261 | model_displacement_field.py | 시간 경과시 관찰 흐려짐 |
 | C30 | 🟨 | 최적 control 비율 | 0.5~0.6 | model_displacement_field.py | 양쪽 혼합이 단독보다 좋음 (역U자) |
+| C31 | 🟨 | detach 효과 (관찰자) | +7.4% | experiment_observer_advantage.py | detach 있음 73.3% vs 없음 66.0% |
+| C32 | 🟨 | detach 효과 (주체) | +7.3% | experiment_observer_advantage.py | detach가 주체도 개선 (간섭 제거) |
+| C33 | 🟨 | 관찰자 우위 성장 | +0.1%→+0.7% | experiment_observer_advantage.py | 10ep→20ep, 시간 경과시 우위 확대 |
+| C34 | 🟨 | 명상 효과 | +0.4% | experiment_observer_advantage.py | 행동→관찰→행동 vs 행동만 (연속보다 못함) |
 
 ## 탐색 현황 (시간순)
 
@@ -183,6 +187,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 2026-03-24 | {1/2,1/3,1/6} 최적성 | 실행 중 | — |
 | 2026-03-24 | 차원간 반발 | 장력 14.4x, tau→0.011 (차단) | C25, C26 |
 | 2026-03-24 | Displacement Field | 관찰만 79.4%, 복귀 +0.00%, 품질 감소 | C27-C30 |
+| 2026-03-24 | 관찰자>주체 가설 검증 | detach +7.4%, 관심사 분리가 핵심 | C31-C34 |
 | 2026-03-24 | CNN 반발력장 | 실행 중 | — |
 
 ## 엔진 목록
