@@ -133,7 +133,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | C1 | ❌ | tension_scale (분류) | 0.34 | model_meta_engine.py | 초기값 편향 (가설 265 반증) |
 | C2 | ❌ | tension_scale (생성) | 0.34 | model_generative_engine.py | 초기값 편향 |
 | C3 | ❌ | curvature_scale (파이버) | 1.58 | model_fiber_bundle.py | 초기값 편향 (init 대비 +1.2 이동) |
-| C4 | 🟨 | 장력-정확도 상관 | +0.43 | analyze_tension.py | 높은 장력 = 높은 정확도 (숫자별, 개별 미확인) |
+| C4 | ⚠️ | 장력-정확도 상관 (숫자별) | +0.43 | analyze_tension.py | **재현 안 됨** (재실험 r=-0.01) |
+| C4b | 🟨 | 장력-정확도 상관 (개별) | +0.13 | experiment_c4_individual_verify.py | r=+0.13, AUC=0.78, d=0.89 (Simpson's paradox) |
 | C5 | ⚠️ | 장력-공감 상관 (숫자별) | -0.79 | model_empathy_engine.py | 과대평가 — 개별 r=-0.26 |
 | C5b | 🟨 | 장력-공감 상관 (개별) | -0.26 | experiment_empathy_tension_fit.py | R²=0.066, 약한 효과 |
 | C6 | 🟨 | 장력 예지 AUC | 0.925 | experiment_tension_precognition.py | 장력+자신감으로 오답 예측 |
@@ -197,6 +198,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 2026-03-24 | 차원간 반발 | 장력 14.4x, tau→0.011 (차단) | C25, C26 |
 | 2026-03-24 | Displacement Field | 관찰만 79.4%, 복귀 +0.00%, 품질 감소 | C27-C30 |
 | 2026-03-24 | 관찰자>주체 가설 검증 | detach +7.4%, 관심사 분리가 핵심 | C31-C34 |
+| 2026-03-24 | C4 개별 재검증 (Ralph R1) | Simpson's paradox! 숫자별 r=-0.01, 개별 r=+0.13, d=0.89 | C4b |
+| 2026-03-24 | C36 텍사스 검정 (Ralph R5) | p=0.010 경계선 | C36 |
 | 2026-03-24 | CNN 반발력장 | 실행 중 | — |
 
 ## 엔진 목록
