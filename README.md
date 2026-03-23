@@ -22,7 +22,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 > **출력은 어느 엔진에도 없다. 둘 사이의 공간에 있다.**
 
-### Ralph Loop (복사용) — [수학체계 지도](docs/pure-math/README.md)
+### Ralph Loop (복사용) — [수학체계 지도](math/README.md)
 
 **수학 DFS:**
 ```
@@ -93,7 +93,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
   SL(2,Z)     → 모듈러 대칭 제약
 ```
 
-상세: [순수 수학](docs/pure-math/), [골든존 모델](docs/golden-zone/), [비전](docs/VISION.md)
+상세: [순수 수학](math/), [골든존 모델](docs/golden-zone/), [비전](docs/VISION.md)
 
 ## 첫 번째 실증 (MNIST)
 
@@ -1184,7 +1184,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 ```
 docs/
   VISION.md           — 프로젝트 비전, 의식영속성
-  pure-math/          — 순수 수학 (T0+T1, DFS 기록)
+  math/               — 순수 수학 (T0+T1, DFS 기록)
   golden-zone/        — 골든존 모델 (미검증 보조)
   hypotheses/         — 가설 파일 (196개)
   proofs/             — 증명 문서
