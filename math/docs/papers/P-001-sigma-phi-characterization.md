@@ -60,8 +60,22 @@ R=S iff φ(n)=τ(n), and then R=S=σ(n)/n.
 
 Enumerable from R(p,a) local factors: 8 singles + 13 pairs + 3 triples = 24.
 
+## Complete Results (11)
+
+Thm 1: σφ=nτ ⟺ n∈{1,6}
+Thm 2: R∈{3/4}∪{1}∪[7/6,∞) (spectral gap)
+Thm 3: στ=nφ ⟺ n∈{1,28} (dual)
+Prop 1: RS=(σ/n)²
+Prop 2: R<5 has exactly 24 values
+Prop 3: σφ≡nτ (mod 2) except n=2,(odd)²
+Cor 1: φ/τ≥(4/3)^ω/2 for odd n
+Cor 2: R(n!)=integer iff n∈{3,5}
+Cor 3: Im(R)∩{perfect numbers}={6}
+Table: σ/τ=k classification
+Table: Three finite pointwise=convolution sets
+
 ## Status
-- Proof: COMPLETE ✅ (Thm 1 + Thm 2 + Prop + Cor)
-- Verification: n ≤ 100,000 ✅
+- Proof: COMPLETE ✅
+- Verification: n ≤ 100,000+ ✅
 - Literature: NOT in OEIS, MathWorld, arXiv ✅
 - OEIS submission: pending account approval
