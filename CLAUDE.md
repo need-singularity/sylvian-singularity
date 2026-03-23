@@ -269,6 +269,7 @@ DFS on consciousness engine. RECURSIVE: each iteration reads README results then
   실험 리포 (private): github.com/need-singularity/logout_test
     → 접속정보, 실험코드, 트러블슈팅 전부 여기 기록
     → 로컬: /dev/logout_test
+    → 이론은 이 리포(logout), 실험은 logout_test에 기록
   환경: Windows PC (RTX 5070) 1순위, 무리한 작업만 RunPod
   접속 정보: .local/windows-pc.md (gitignore) + logout_test/CLAUDE.md
 
