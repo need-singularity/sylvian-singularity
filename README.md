@@ -137,8 +137,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | C4b | 🟨 | 장력-정확도 상관 (개별) | +0.13 | experiment_c4_individual_verify.py | r=+0.13, AUC=0.78, d=0.89 (Simpson's paradox) |
 | C5 | ⚠️ | 장력-공감 상관 (숫자별) | -0.79 | model_empathy_engine.py | 과대평가 — 개별 r=-0.26 |
 | C5b | 🟨 | 장력-공감 상관 (개별) | -0.26 | experiment_empathy_tension_fit.py | R²=0.066, 약한 효과 |
-| C6 | 🟨 | 장력 예지 AUC | 0.925 | experiment_tension_precognition.py | 장력+자신감으로 오답 예측 |
-| C7 | 🟨 | 오답/정답 장력 비 | 0.56 | analyze_tension.py | 오답 장력이 정답의 56% |
+| C6 | 🟩 | 장력 예지 AUC | 0.925 (장력only 0.75~0.78) | experiment_tension_precognition.py + c4_verify | 장력 단독 AUC 2회 재현 |
+| C7 | 🟩 | 오답/정답 장력 비 | 0.56~0.60 | analyze_tension.py + c4_verify | 2회 독립 재현 (7% 편차) |
 | C8 | 🟨 | 차원간 인식률 | 94.3% | experiment_cross_dimension.py | 다른 아키텍처 간 예측 |
 | C9 | 🟨 | 만장일치 정확도 | 99.53% | experiment_collective_recognition.py | 7/7 합의 시 (다양한 아키텍처) |
 | C10 | 🟨 | 레이블 없는 인식 | 97.61% | experiment_labelless_recognition.py | 장력 1-NN (softmax의 99.8%) |
