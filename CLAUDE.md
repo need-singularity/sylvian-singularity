@@ -375,9 +375,15 @@ DFS on consciousness engine and math/docs/hypotheses/H-CX-*. RECURSIVE: each ite
 - 정상 범위(Z ≤ 2σ)는 간결하게 한 줄로 보고한다.
 - 다중 실행 완료 시 결과를 표로 비교 요약한다.
 
-### 실험 결과 기록 규칙 (README + 대화 모두 적용, 필수)
+### 실험 결과 기록 규칙 (필수)
 
 ```
+  기록 위치:
+    - 루트 README.md = 유일한 진실의 원천 (상수, 지도, DFS 현황)
+    - docs/experiments/E*.md = 실험 전체 출력 원본만
+    - docs/experiments/README.md = 실험 목록+링크만 (상수/지도 중복 금지)
+    - docs/hypotheses/*.md = 가설 문서
+
   실험 결과를 기록하거나 보고할 때 요약하지 말 것.
   실행 출력의 원본 데이터를 그대로 기록한다.
 
