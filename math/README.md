@@ -1270,7 +1270,7 @@
 
 ## 가설 현황 (σφ=nτ 파생, 75개+)
 
-### 수학 (H-MP, 15개)
+### 수학 (H-MP, 17개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1288,6 +1288,8 @@
 | [H-MP-13](docs/hypotheses/H-MP-13-consecutive-primes-generalization.md) | (p-1)(q-1)=2k 일반화 | ✅ R 단조증가 | k=1만 R=1 |
 | [H-MP-14](docs/hypotheses/H-MP-14-R-chain-convergence-proof.md) | R-chain 수렴 증명 | ✅ 증명 | R(n)<n |
 | [H-MP-15](docs/hypotheses/H-MP-15-cantor-spectrum-dimension.md) | R 스펙트럼 Cantor 차원 | 🟩 수치확인 | d_box≈0.155<1 |
+| [H-MP-16](docs/hypotheses/H-MP-16-prime-factorization-R-decomposition.md) | R 소인수 분해 구조 | 🟩 증명 | v_{Mp}=-(p-2) |
+| [H-MP-17](docs/hypotheses/H-MP-17-omega-R-monotonicity.md) | ω↔R 단조성 | 🟩 하한 | R≥(4/3)^{ω-1}·3/4 |
 
 ### AI (H-AI, 9개)
 
