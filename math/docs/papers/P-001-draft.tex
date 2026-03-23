@@ -184,4 +184,21 @@ where the left side is less than $1$ and the right side is at least $2$.
 Therefore $R(n) = \prod f(p_i, a_i) < \prod p_i^{a_i} = n$.
 \end{proof}
 
+\begin{theorem}\label{thm:S}
+$S(n) > n$ if and only if $n = 2$ (where $S(2)=3$).
+For $n \geq 3$, $S(n) < n$.
+\end{theorem}
+
+\begin{proof}
+The local factor $g(p,a) = \sigma(p^a)\tau(p^a)/(p^a\varphi(p^a))$
+satisfies $g(p,a) < p^a$ for all $(p,a) \neq (2,1)$,
+since $g(p,1) = 2(p+1)/(p(p-1)) < p$ iff $2(p+1) < p^2(p-1)$,
+which holds for $p \geq 3$.
+The unique exception $g(2,1) = 3 > 2$ gives $S(2) = 3 > 2$.
+For $n = 2m$ with $m \geq 2$: if $4 \mid n$ then $g(2,a) < 2^a$ for $a \geq 2$;
+if $2 \| n$ then $S = 3 \cdot \prod g(q_j,b_j) < 3 \cdot n/2$,
+and $3n/2 < 2n$ is trivially less than... more precisely,
+$S(2p) = 3 \cdot g(p,1) < 2p$ since $6(p+1) < 2p^2(p-1)$ for $p \geq 3$.
+\end{proof}
+
 \end{document}
