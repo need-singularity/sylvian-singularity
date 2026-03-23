@@ -219,6 +219,24 @@ At $k \geq 3$: $\prod(p_i-1) \geq 1 \cdot 2 \cdot 4 = 8 > k$. No solution.
 Non-squarefree: $\varphi(p^a) = p^{a-1}(p-1) \geq 2 > \omega$ for $a \geq 2$.
 \end{proof}
 
+\begin{theorem}\label{thm:additive}
+Among integers of the form $n = 2^a \cdot 3 \cdot p$ ($p$ prime, $p > 3$),
+$\sigma(n) + \varphi(n) + \tau(n) = 3n$ if and only if
+$p = 7 \cdot 2^{a-2} + a$ (with $a \geq 2$).
+This gives infinitely many solutions (conditionally on Bunyakovsky's conjecture),
+including $n = 408$ ($a=3$, $p=17$), $n = 5856$ ($a=5$, $p=61$),
+and $n = 90200997888$ ($a=17$, $p=229393$).
+The sporadic solutions $n \in \{2, 4, 6, 90\}$ arise from separate families.
+\end{theorem}
+
+\begin{proof}
+For $n = 2^a \cdot 3 \cdot p$:
+$\sigma + \varphi + \tau = p(9 \cdot 2^a - 4) + 7 \cdot 2^a + 4a$
+and $3n = 9 \cdot 2^a p$.
+Equating gives $4p = 7 \cdot 2^a + 4a$, i.e., $p = 7 \cdot 2^{a-2} + a$.
+The cases $n = p$, $n = p^2$, $n = 2p$, $n = 2 \cdot 3^b q$ are checked separately.
+\end{proof}
+
 \begin{remark}[Cantor-like spectrum]
 The image of $R$ restricted to $[0,10]$ consists of only $63$
 distinct rational values (for $n \leq 50000$),
