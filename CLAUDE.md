@@ -249,6 +249,12 @@ DFS on consciousness engine. RECURSIVE: each iteration reads README results then
     - 순수 수학 계산도 Mac 포화 시 Windows WSL로 실행
     - GPU 필요: Windows 1순위, 무리하면 RunPod
 
+  Windows 빠른 실행 (.local/, gitignore):
+    .local/run-on-windows.sh script.py  → WSL venv으로 실행
+    .local/run-on-docker.sh script.py   → NGC Docker로 실행
+    RTX 5070 (sm_120): PyTorch 2.7.0+cu128 또는 NGC pytorch:25.02-py3
+    JAX, llama.cpp도 sm_120 지원
+
   Serverless 사용법:
     - Docker 이미지 빌드 → DockerHub push → Endpoint 생성 → API 호출
     - handler.py 형태로 코드 래핑 필요
