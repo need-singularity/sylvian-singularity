@@ -184,6 +184,15 @@ where the left side is less than $1$ and the right side is at least $2$.
 Therefore $R(n) = \prod f(p_i, a_i) < \prod p_i^{a_i} = n$.
 \end{proof}
 
+\begin{proposition}[R-S asymmetry]\label{prop:asymmetry}
+The spectra of $R$ and $S$ are drastically different:
+$|\{R(n) < 5 : n \leq N\}| = 24$ (fixed), while
+$|\{S(n) < 5 : n \leq N\}| \sim N$ (grows linearly).
+The ratio exceeds $2000\times$ for $N = 50000$.
+This is because $f(p,1) \sim p/2 \to \infty$ (R-factors grow)
+while $g(p,1) \sim 2/p \to 0$ (S-factors shrink).
+\end{proposition}
+
 \begin{theorem}\label{thm:S}
 $S(n) > n$ if and only if $n = 2$ (where $S(2)=3$).
 For $n \geq 3$, $S(n) < n$.
