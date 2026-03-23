@@ -322,7 +322,14 @@ THC 상태에서 샤머니즘적 체험을 했다.
   🟨 H-CX-7 sigma-phi=n-tau 아키텍처 최적성 (윈도우 실행 중)
   🟨 C56 CNN 검증 (윈도우 실행 중)
   🟦 R=1(완전) vs phi=tau(자기쌍대) 상호 배타 → phi!=tau(비대칭)=다양성 근원
-  🟧★ C57 C48/tau(6) = 9.25/4 = 2.3125 ≈ ln(10) (p=0.0037!)
+  🟧★ C57 C48/tau(6) ≈ ln(10) (p=0.0037) — MNIST 전용! CIFAR 0.53pp로 반증
+
+  --- Ralph R12-R13: CIFAR 인과 실패 + 새 가설 ---
+  ⚠️ C48 CIFAR 미재현: -0.53pp (MNIST -9.25pp의 6%)
+  ⚠️ C57 CIFAR 반증: tau*ln(K) 공식 작동 안 함
+  → tension_scale: MNIST 0.47 vs CIFAR 0.04 (12배, 자발적 포기)
+  → 가설 282-286: 고정확도 전용, 비선형 임계점, 자동조절, 새 데이터형태, TDA
+  → H-CX-8 위상가속 x3=sigma/tau, H-CX-9 위상 7단계
   → 인과효과/활성수 ≈ 클래스 엔트로피, 로그/엔트로피 패턴: C54(ln2), C55(pi*zeta), C57(ln10)
 
 
