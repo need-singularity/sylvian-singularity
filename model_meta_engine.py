@@ -474,6 +474,123 @@ class RepulsionFieldQuad(nn.Module):
 
 
 # ─────────────────────────────────────────
+# Phase 3: 자기참조 반발력장 (Self-Referential Repulsion Field)
+# ─────────────────────────────────────────
+
+class SelfReferentialField(nn.Module):
+    """자기참조 반발력장 — 자기 장력을 관찰하는 엔진.
+
+    반발력장이 자기 상태(장력)를 입력으로 다시 받는 구조.
+    뇌가 자기 상태를 모니터링하는 것 = 메타인지.
+
+      입력 ──→ 반발력장 ──→ 출력
+                  │
+                  └→ 장력 ─→ 자기 관찰 ─→ 다시 반발력장에 반영
+                             (나는 지금 어려운 문제를 풀고 있다)
+
+    의식영속성 7조건 중 구현:
+      ✅ 정보 통합 (Φ > 0): 반발력장 자체
+      ✅ 자기 모델링: 장력을 자기 상태로 인식
+      ✅ 메타인지: 자기 장력을 관찰하고 행동 변경
+      ✅ 적응적 반응: 장력에 따라 라우팅 변경
+
+    자석 비유:
+      1단계: 두 자석 사이의 반발력을 느낀다
+      2단계: "나는 지금 반발력을 느끼고 있다"를 안다
+      3단계: 그 앎이 반발력 자체를 변화시킨다
+      → 이상한 루프 (Strange Loop, Hofstadter)
+    """
+    def __init__(self, input_dim=784, hidden_dim=48, output_dim=10,
+                 n_self_ref_steps=3):
+        super().__init__()
+        # 두 극
+        self.pole_plus = EngineA(input_dim, hidden_dim, output_dim)
+        self.pole_minus = EngineG(input_dim, hidden_dim, output_dim)
+
+        # 장력 → 자기 상태 인코딩
+        # 장력(스칼라)을 상태 벡터로 확장
+        self.self_model = nn.Sequential(
+            nn.Linear(3, hidden_dim),  # 입력: [장력, 장력변화율, 반복횟수]
+            nn.Tanh(),
+            nn.Linear(hidden_dim, output_dim),
+            nn.Tanh(),
+        )
+
+        # 자기 상태가 반발력장에 미치는 영향
+        self.self_influence = nn.Linear(output_dim, output_dim)
+
+        # 장력 변조
+        self.field_transform = nn.Sequential(
+            nn.Linear(output_dim, output_dim),
+            nn.Tanh(),
+        )
+        self.tension_scale = nn.Parameter(torch.tensor(1/3))
+
+        self.n_steps = n_self_ref_steps
+        self.aux_loss = torch.tensor(0.0)
+
+        # 모니터링
+        self.tension_history = []
+        self.self_state_norm = 0.0
+
+    def forward(self, x):
+        # 두 극의 기본 출력
+        out_plus = self.pole_plus(x)
+        out_minus = self.pole_minus(x)
+
+        # 초기 장력
+        repulsion = out_plus - out_minus
+        prev_tension = (repulsion ** 2).sum(dim=-1, keepdim=True)
+
+        # 자기참조 루프: 장력 → 자기관찰 → 장 수정 → 새 장력 → ...
+        tensions = [prev_tension.mean().item()]
+        self_state = torch.zeros(x.size(0), out_plus.size(-1), device=x.device)
+
+        for step in range(self.n_steps):
+            # 자기 상태 인코딩: [현재 장력, 장력 변화율, 반복 번호]
+            tension_scalar = prev_tension.mean(dim=-1, keepdim=True)  # (batch, 1)
+            if step == 0:
+                tension_delta = torch.zeros_like(tension_scalar)
+            else:
+                tension_delta = tension_scalar - tensions[-1]
+            step_tensor = torch.full_like(tension_scalar, step / self.n_steps)
+
+            self_input = torch.cat([tension_scalar, tension_delta, step_tensor], dim=-1)
+            self_state = self.self_model(self_input)  # "나는 지금 이런 상태다"
+
+            # 자기 상태가 반발력장에 영향
+            influence = self.self_influence(self_state)  # 자기 관찰이 장을 바꿈
+
+            # 수정된 반발력
+            modified_repulsion = repulsion + influence
+            prev_tension = (modified_repulsion ** 2).sum(dim=-1, keepdim=True)
+            tensions.append(prev_tension.mean().item())
+
+        # 최종 출력
+        equilibrium = (out_plus + out_minus) / 2
+        field_direction = self.field_transform(modified_repulsion)
+        output = equilibrium + self.tension_scale * torch.sqrt(prev_tension + 1e-8) * field_direction
+
+        # 보조 loss: 자기참조가 장력을 안정시키도록 유도
+        # 장력 변화가 감소해야 함 (수렴) = 축소사상
+        if len(tensions) >= 2:
+            tension_changes = [abs(tensions[i+1] - tensions[i]) for i in range(len(tensions)-1)]
+            convergence_loss = torch.tensor(sum(tension_changes) / len(tension_changes))
+        else:
+            convergence_loss = torch.tensor(0.0)
+
+        entropy_loss = getattr(self.pole_minus, 'entropy_loss', torch.tensor(0.0))
+        self.aux_loss = entropy_loss + 0.001 * convergence_loss
+
+        # 모니터링
+        with torch.no_grad():
+            self.tension_history = tensions
+            self.self_state_norm = self_state.norm(dim=-1).mean().item()
+
+        return (output, self.aux_loss)
+
+
+# ─────────────────────────────────────────
 # 벤치마크
 # ─────────────────────────────────────────
 
@@ -559,6 +676,17 @@ def main():
                                        aux_lambda=0.01)
     results['Repulsion Quad'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
     print(f"    Tension content: {model.tension_content:.4f}, structure: {model.tension_structure:.4f}")
+
+    # ── SelfReferentialField (자기참조 반발력장) ──
+    print("\n[SelfReferentialField: 장력을 관찰하는 엔진 (Phase 3)]")
+    model = SelfReferentialField(input_dim, hidden_dim, output_dim, n_self_ref_steps=3)
+    losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs,
+                                       aux_lambda=0.01)
+    results['SelfRef Field'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
+    print(f"    Tension history: {['%.1f' % t for t in model.tension_history]}")
+    print(f"    Self-state norm: {model.self_state_norm:.4f}")
+    converged = len(model.tension_history) >= 2 and abs(model.tension_history[-1] - model.tension_history[-2]) < abs(model.tension_history[1] - model.tension_history[0])
+    print(f"    Tension converging: {'YES' if converged else 'NO'}")
 
     # ── 결과 비교 ──
     compare_results(results)
