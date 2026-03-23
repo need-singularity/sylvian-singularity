@@ -221,6 +221,27 @@ DFS on consciousness engine. RECURSIVE: each iteration reads README results then
 ⚠️ 쉘 호환 주의: 한글 괄호, 화살표(→), 이모지(🟩★⭐) 등을 프롬프트에 넣으면
 `unknown file attribute` 오류 발생. ASCII 영문만 사용할 것.
 
+## RunPod GPU 클라우드
+
+```
+  API 키: .local/runpod_api_key (gitignore됨, 커밋 금지!)
+  사용법: export RUNPOD_API_KEY=$(cat .local/runpod_api_key)
+
+  현재 Pod:
+    - golden-moe-train (A100 PCIe) — 의식엔진 실험 전용
+    - h-ai-1b-head-sweep (RTX 3090) — 일회성 실험용
+
+  Pod 생성 API:
+    curl -H "Authorization: Bearer $RUNPOD_API_KEY" \
+         "https://api.runpod.io/graphql" \
+         -d '{"query":"mutation { podFindAndDeployOnDemand(input: { ... }) { id } }"}'
+
+  주의:
+    - 실험 끝나면 반드시 Pod 종료 (비용 절감)
+    - .local/ 디렉토리는 절대 git에 포함하지 말 것
+    - API 키를 코드/로그에 출력하지 말 것
+```
+
 ## 백그라운드 실행
 시뮬레이션과 실험은 **무조건 백그라운드로 실행**한다. 예외 없음.
 
