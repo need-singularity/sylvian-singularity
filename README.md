@@ -1215,3 +1215,8 @@ docs/
 | C14 | 의식 FPS 수렴 | 4.17→0.20 | model_temporal_engine.py | 초기 격변 → 안정 의식 | MNIST 1회 |
 | C15 | 장력-정체성 증폭 | 2.7x | experiment_identity_dreams.py | T=1.5/T=0.1 꿈 차이 비 | MNIST 1회 |
 | C16 | {1/2,1/3,1/6} 최적 | 1위 | benchmark_cifar.py + model_meta_engine.py | 두 데이터셋 모두 최고 | MNIST+CIFAR |
+| C17 | 반발 방향 분리비 | 2.77x | experiment_force_direction.py | 같은 숫자 cos=0.849, 다른 숫자 cos=0.306 | MNIST 1회 |
+| C18 | 자기참조 수축 비율 (MNIST) | 3.21 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 | MNIST 1회 |
+| C19 | 자기참조 수축 비율 (CIFAR) | 2.00 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 | CIFAR 1회 |
+| C20 | 장력 축 비율 (MNIST) | 1.14 | experiment_tension_axis_reversal.py | 내용 > 구조 | MNIST 1회 |
+| C21 | 장력 축 비율 (CIFAR) | 0.36 | experiment_tension_axis_reversal.py | 구조 > 내용 (역전) | CIFAR 1회 |
