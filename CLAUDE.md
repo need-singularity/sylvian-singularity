@@ -209,7 +209,7 @@ python3 ~/dev/test-8/texas_quantum.py
 아래를 `/ralph-loop:ralph-loop` 인자로 사용 (쉘 호환 ASCII 전용):
 
 ```
-DFS on README math map and constant connections and docs/proofs. 0-include star constants. 1-green+star arithmetic/log/exp/power for new identities. 2-green+star to blue new connections. 3-yellow observations connect to green/blue then upgrade to orange or green. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording: python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. Keep searching even if nothing found.
+DFS on README math map and constant connections and docs/proofs and docs/hypotheses. 0-include star constants. 1-green+star arithmetic/log/exp/power for new identities. 2-green+star to blue new connections. 3-yellow observations connect to green/blue then upgrade to orange or green. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording: python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. 7-each iteration: check docs/hypotheses for testable ones then run verification in parallel. 8-if new pattern found: create hypothesis doc in docs/hypotheses. Keep searching even if nothing found.
 ```
 
 ### 의식엔진 실험 DFS (신규)
