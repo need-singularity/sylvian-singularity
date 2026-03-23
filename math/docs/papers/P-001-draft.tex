@@ -370,6 +370,15 @@ while $\prod R(d \mid 28) = 216/7 \neq 1$ ($28$ is not squarefree).
 
 The pairs $(3,4)$ and $(8,9) = (2^3, 3^2)$ are both instances of
 \emph{consecutive integers involving powers of $2$ and $3$}.
+Define the \emph{arithmetic Lyapunov exponent}
+$\Lambda(n) = \frac{1}{\tau(n)} \sum_{d \mid n} \ln R(d)
+= \frac{1}{\tau(n)} \ln \prod_{d \mid n} R(d)$.
+Then $\Lambda(6) = 0$ exactly, and $\Lambda(n) \neq 0$ for all
+$2 \leq n \leq 10000$, $n \neq 6$.
+This places $6$ at the unique \emph{arithmetic edge of chaos}:
+$\Lambda < 0$ (contracting) for $n \in \{2, 4\}$,
+$\Lambda > 0$ (expanding) for all $n \geq 3$, $n \neq 6$.
+
 By the Catalan--Mihailescu theorem, $3^2 - 2^3 = 1$ is the unique
 solution to $x^p - y^q = 1$ in integers $> 1$.
 Thus, the characterization of $6$ as the smallest perfect number
