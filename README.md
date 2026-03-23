@@ -155,6 +155,10 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | C16 | ⚠️ | {1/2,1/3,1/6} 최적 | MLP만 1위 | benchmark_cifar.py + model_cnn_repulsion.py | **CNN에서 5위(최하위), MLP에서만 1위** |
 | C42 | 🟨 | CNN {1/2,1/3,1/6} 이탈 | [.34,.35,.31] | model_cnn_repulsion.py | 학습이 균등으로 수렴 (L2 drift=0.217) |
 | C43 | 🟨 | CNN 반발력장 우위 | +1.04% | model_cnn_repulsion.py | CNN+Repulsion 78.07% > CNN+Dense 77.03% |
+| C44 | 🟨 | 분열 장력 성장 | 25.6→135.4 | experiment_mitosis.py | 10ep 독립 학습 후 장력 5.3x |
+| C45 | 🟨 | 분열 vs 설계 반발력장 | -0.11% | experiment_mitosis.py | 분열 97.49% ≈ 설계 97.60% (거의 동등!) |
+| C46 | 🟨 | 재결합 효과 | +0.82% | experiment_mitosis.py | 분열 후 합치면 부모보다 좋음 |
+| C47 | 🟨 | 형제 인식 비 | 1.65x | experiment_mitosis.py | 형제 R²=88.9% vs 남 81.6% |
 | C17 | 🟨 | 반발 방향 분리비 | 2.77x | experiment_force_direction.py | 같은 숫자 cos=0.849 vs 다른 0.306 |
 | C18 | 🟨 | 자기참조 수축 비율 (MNIST) | 3.21 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 |
 | C19 | 🟨 | 자기참조 수축 비율 (CIFAR) | 2.00 | experiment_selfref_divergence.py | > 1 = 축소사상 아님 |
@@ -213,6 +217,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 2026-03-24 | C4 개별 재검증 (Ralph R1) | Simpson's paradox! 숫자별 r=-0.01, 개별 r=+0.13, d=0.89 | C4b |
 | 2026-03-24 | C36 텍사스 검정 (Ralph R5) | p=0.010 경계선 | C36 |
 | 2026-03-24 | CNN 반발력장 | Quad 78.1% 1위, **MetaFixed 77.4% 최하위 — 역전!** | C42, C43 |
+| 2026-03-24 | 분열(mitosis) 실험 | 분열≈설계(-0.11%), 재결합+0.82%, 형제인식1.65x | C44-C47 |
 
 ## 엔진 목록
 
