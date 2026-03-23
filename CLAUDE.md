@@ -90,6 +90,7 @@ G × I = D × P (정의에서 유도, 모델 자체가 미검증)
   분석:          formula_engine.py, texas_sharpshooter.py, complex_compass.py
                  nstate_calculator.py, brain_analyzer.py, llm_expert_analyzer.py
   물리/화학:     physics_constant_engine.py, chemistry_engine.py, nuclear_engine.py
+  구조분류:      congruence_chain_engine.py
   DFS 탐색:      dfs_engine.py
   검증:          verify_*.py (11개)
   세션:          session_briefing.py

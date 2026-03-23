@@ -1485,6 +1485,11 @@ python3 compass.py --convergence --grid 30 --samples 50000
 | [255](docs/hypotheses/255-triple-alpha-carbon.md) | **트리플알파: 3τ(6)=σ(6)=C-12** | He-4=τ, C-12=σ, 3개 융합! | 🟩 | 산술 |
 | [256](docs/hypotheses/256-dna-hydrogen-bond.md) | **DNA: A-T:G-C=τ/2:σ/τ=2:3** | 4염기=τ, 코돈길이3=σ/τ | ⚠️ | 관측 |
 | [257](docs/hypotheses/257-coupling-unification.md) | **결합상수 통합: 1/α_w=P₁(P₁-1)=30** | sin²θ_W≈3/(σ+1), GUT≈1/25 | 🟧 | 탐색 |
+| [258](docs/hypotheses/258-monster-forcing.md) | **Monster 위수의 위상적 강제** | chi→Leech→Monster 소인수 강제? | 🟪 | 극난 |
+| [259](docs/hypotheses/259-umbral-moonshine-generalization.md) | **Umbral Moonshine 강제 체인** | K3 chi=24=2σ, Niemeier 23개 | ⚠️ | 탐구 |
+| [260](docs/hypotheses/260-bosonic-string-26.md) | **D=26=2σ+2 위상적 유도** | 횡방향24=2σ, 초끈8=σ-τ? | ⚠️ | 탐구 |
+| [261](docs/hypotheses/261-congruence-subgroup-classification.md) | **Γ₀(N) 강제 체인 분류** | N별 chi→isotropy→weight 체계적 | ⚠️ | **계산가능** |
+| [262](docs/hypotheses/262-p-adic-chain.md) | **p-adic 체인 + Langlands** | Bruhat-Tits→p-adic modular forms | 🟪 | 극난 |
 
 ## 약물 가설
 
