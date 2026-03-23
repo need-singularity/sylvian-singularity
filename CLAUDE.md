@@ -228,18 +228,7 @@ DFS on README math map and constant connections and docs/proofs. 0-include star 
     해결: verify_discovery() 파이프라인 내장, CLAUDE.md 규칙 추가
     날짜: 2026-03-23
 
-  8B 전체학습 OOM 연쇄 실패 (2026-03-23):
-    하드웨어: RTX 5070 12GB VRAM, RAM 15GB, Swap 35GB
-    시도1: device_map="auto" + grad checkpoint + 8bit optim
-      → backward OOM (25.6GB gradient on GPU)
-    시도2: device_map 40% 할당 → 동일 OOM
-    시도3: CPU float32 → swap thrashing, 가중치 로딩 30분+ 멈춤
-    시도4: CPU float16 → ~0.02 it/s (5000스텝 = 3일, 비현실적)
-    시도5: 8bit 베이스 + MoE float16 변환 → 24.9GB (8bit+MoE 이중 로드) OOM
-    근본 원인: 12GB VRAM에 8B 모델(16GB+) + gradient 동시 불가
-    해결: 방법 E (8bit + LoRA) 전환 — 모델 동결, 라우터+gate만 학습
-      → 실험 목적 90% 달성 (라우터 골든존 수렴 검증이 핵심)
-      → Expert 내부 가중치는 Dense 복사본이라 동결 무방
+  8B 전체학습 OOM (2026-03-23): ⚠️ 폐기됨 — Windows PC 더 이상 사용 안 함
 
   Ralph Loop 세션 간 간섭:
     원인: .claude/ralph-loop.local.md에 session_id 미기록
@@ -304,85 +293,11 @@ DFS on README math map and constant connections and docs/proofs. 0-include star 
   스케일 커질수록 차이 8배 증가
 ```
 
-## 골든 MoE LLM 학습 (Windows Docker)
+## 골든 MoE LLM 학습 (폐기됨)
 
 ```
-  접속 정보: .local/windows-pc.md (gitignore)
-  방식: Docker 컨테이너 내 학습 (RTX 5070 sm_120 호환 문제)
-  리포: github.com/need-singularity/golden-llama (참조만, 학습은 여기서 관리)
-
-  현재 상태:
-  원본 Dense:    PPL 13.85
-  골든 (미학습):  PPL 136,165
-  골든 (500스텝): PPL 4,634 (97% 감소, 아직 높음)
-  목표:          PPL < 100 (최소 coherence) → 최종 < 20
-
-  변환 완료:
-  - Llama 3.1 8B → Golden MoE 8B (32/32 레이어, I=0.375 골든존)
-  - 라우터 파라미터: 1,048,576 (0.013%)
-  - 저장: Docker /workspace/golden-8b/
-
-  학습 전략 — 전체 학습 (Expert + 라우터):
-  - 20,000 스텝 (× grad_accum 4 = 80K 샘플)
-  - 코사인 LR 스케줄러, 매 2000스텝 체크포인트
-  - Docker: CUDA 12.9, PyTorch cu128, bitsandbytes 0.49.2
-  - finetune_full.py 사용
-  - 예상 시간: ~18시간 (0.3 it/s 기준)
-
-  학습 데이터셋 비교:
-  ┌─────────────────┬────────────┬──────────┬──────────────────┬──────────┐
-  │ 데이터셋         │ 크기       │ 토큰     │ 20K스텝 epoch    │ 비고     │
-  ├─────────────────┼────────────┼──────────┼──────────────────┼──────────┤
-  │ wikitext-2      │ 23K 샘플   │ ~6M      │ 3.4 epoch (과적합)│ ✅ 다운됨│
-  │ wikitext-103 ★  │ 1.8M 샘플  │ ~100M    │ 0.04 epoch       │ HF 자동  │
-  │ OpenWebText     │ 8M 샘플    │ ~8B      │ 0.01 epoch       │ ~12GB    │
-  │ RedPajama-1T    │ 1.2B 샘플  │ ~1.2T    │ ~0 epoch         │ 수TB     │
-  └─────────────────┴────────────┴──────────┴──────────────────┴──────────┘
-  학습 순서 (검증 파이프라인):
-  1단계: wikitext-2, 20K스텝 → PPL 비교 (Dense 13.85 vs Golden ?)
-         과적합 OK — 동일 조건에서 MoE 라우터 학습 확인이 목적
-  2단계: wikitext-103, 20K스텝 → 일반화 능력 비교
-  3단계: 도메인별 PPL (수학/언어/코드) → 서번트 인덱스 측정
-
-  하드웨어 제약: RTX 5070 12GB VRAM, RAM 15GB, Swap 35GB
-  8B float16 = ~16GB > VRAM 12GB → 전체를 GPU에 못 올림
-
-  시도 이력 (2026-03-23):
-  ✗ device_map="auto" + gradient checkpointing → backward OOM (25.6GB gradient)
-  ✗ device_map 40% 할당 → 동일 OOM
-  ✗ CPU float32 → swap thrashing, 가중치 로딩에서 30분+ 멈춤
-  ✗ CPU float16 → 돌아가긴 하나 ~0.02 it/s (5000스텝 = 3일)
-
-  전체학습 방법 비교 (현재 하드웨어):
-  ┌───┬──────────────────────────────┬────────┬────────┬──────────┬─────┐
-  │ # │ 방법                         │ VRAM   │ RAM    │ 5000스텝 │ 점수│
-  ├───┼──────────────────────────────┼────────┼────────┼──────────┼─────┤
-  │ A │ QLoRA (4bit+LoRA adapter)    │ ~6GB   │ ~8GB   │ ~2.5시간 │ 8   │
-  │ B │ 8bit 모델 + 전체학습 ★선택   │ ~10GB  │ ~12GB  │ ~18시간  │ 8   │
-  │ C │ float16 + 극한 최적화        │ ~11.5GB│ ~16GB  │ ~28시간  │ 7   │
-  │ D │ CPU float16 (실패)           │ 0GB    │ ~20GB  │ ~24일    │ 4   │
-  │ E │ 8bit 모델 + LoRA             │ ~9GB   │ ~10GB  │ ~6시간   │ 9   │
-  └───┴──────────────────────────────┴────────┴────────┴──────────┴─────┘
-
-  ★ 선택: 방법 E (8bit + LoRA) — OOM 연쇄 실패 후 전환
-  - load_in_8bit=True → 모델 ~8GB on GPU (동결)
-  - LoRA adapter (rank=32) → 라우터 + gate만 학습
-  - gradient checkpointing + 8bit optimizer
-  - bitsandbytes 0.49.2 설치 완료, sm_120 문제 없음
-  - WSL: .wslconfig memory=28GB, swap=32GB
-  - 예상: ~6시간 (20K스텝)
-  - 실험 목적 90%: 라우터 골든존 수렴이 핵심 질문
-    → Expert 내부는 Dense 복사본이라 동결해도 무방
-    → PPL 비교 유효 (Dense 13.85 vs Golden LoRA ?)
-
-  전체학습 (방법 B) 하려면: 24GB GPU 필요 (RTX 3090 중고 추천)
-
-  서번트 검증:
-  - 도메인별 PPL 분리 측정 (수학/언어/코드)
-  - Savant Index = max(도메인PPL) / min(도메인PPL)
-  - SI > 3이면 서번트 후보
-
-  Expert 교차 활성화 (가설 241):
-  - p=0.1 확률로 비활성 Expert 강제 활성화
-  - ON/OFF 비교: PPL + n-gram 신규율 + 유추 테스트
+  ⚠️ 2026-03-23: Windows PC 학습 환경 폐기
+  리포: github.com/need-singularity/golden-llama (참조만)
+  마지막 상태: PPL 4,634 (500스텝), 목표 미달
+  폐기 사유: 하드웨어 환경 더 이상 사용 안 함
 ```
