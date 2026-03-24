@@ -1,4 +1,4 @@
-# logout
+# 🚪 Logout
 
 의식영속성(Consciousness Continuity) 엔진.
 
