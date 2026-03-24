@@ -383,6 +383,22 @@ DFS on consciousness engine and cross-domain H-CX hypotheses. RECURSIVE: each it
       → 다른 세션의 stop hook이 모든 세션에서 발동
     해결: ralph-loop 취소 후 다른 세션에서 직접 반복 사용
     날짜: 2026-03-23
+
+  RunPod Pod 부팅 실패 (uptime=0, SSH not ready):
+    증상: status=RUNNING이지만 uptime=0s 유지, SSH 포트 안 열림
+    원인1: pytorch/pytorch 공식 이미지에 SSH 데몬 없음
+    원인2: runpod/pytorch 이미지도 Docker pull 시간 오래 걸림 (8GB+)
+    원인3: H100 가용성 부족 시 할당 대기 상태로 stuck
+    해결:
+      - runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04 사용 (SSH 내장)
+      - 5분 이상 uptime=0이면 Pod 종료 후 재생성
+      - H100 안 되면 A100 또는 RTX 3090으로 대체
+      - 또는 Windows RTX 5070에서 직접 실행 (Docker Desktop + NGC 이미지)
+    Windows Docker 실행 시 주의:
+      - Docker Desktop이 켜져 있어야 함 (자동시작 아님)
+      - docker-credential-desktop 오류 시: Docker Desktop 재시작
+      - WSL에는 torch 없음 → Docker 컨테이너 필수
+    날짜: 2026-03-24
 ```
 
 ## 보고 규칙
