@@ -10,8 +10,10 @@ Hypothesis:
 Setup:
   - 16x16 grid with "interesting" (high local variance) and "boring" (uniform) zones
   - Agent has PureField policy: two opposing engines produce action logits via tension
-  - Intrinsic reward = |delta_tension| = surprise signal
-  - Training: REINFORCE policy gradient, 500 episodes
+  - Intrinsic reward = |delta_tension| + novelty_bonus
+    - delta_tension is bounded via tanh to prevent magnitude explosion
+    - novelty_bonus rewards visiting new cells (decays with repeat visits)
+  - Training: Evolution Strategy (ES), 300 generations
   - Comparison: random agent vs curiosity-driven PureField agent
 
 Key question: Does tension-change-as-reward produce curiosity-like exploration?
@@ -49,14 +51,9 @@ def make_grid():
     """
     grid = np.full((GRID_SIZE, GRID_SIZE), 5.0)
 
-    # Interesting zone 1: top-left
     rng = np.random.RandomState(123)
     grid[0:6, 0:6] = rng.uniform(0, 10, (6, 6))
-
-    # Interesting zone 2: bottom-right
     grid[10:16, 10:16] = rng.uniform(0, 10, (6, 6))
-
-    # Mildly interesting center
     grid[6:10, 6:10] = rng.uniform(2, 8, (4, 4))
 
     return grid
@@ -95,7 +92,7 @@ NUM_ACTIONS = 4
 
 
 class GridEnv:
-    """2D grid exploration environment."""
+    """2D grid exploration environment with visit tracking."""
 
     def __init__(self):
         self.grid = make_grid()
@@ -123,7 +120,10 @@ class GridEnv:
         obs = get_observation(self.grid, self.r, self.c)
         done = self.steps >= MAX_STEPS
 
-        return obs, done
+        # Novelty: 1.0 for first visit, decaying for repeats
+        novelty = 1.0 / self.visit_count[self.r, self.c]
+
+        return obs, done, novelty
 
 
 # ═══════════════════════════════════════════════════════
@@ -145,20 +145,12 @@ class Linear:
         scale = np.sqrt(2.0 / (in_dim + out_dim))
         self.W = np.random.randn(in_dim, out_dim).astype(np.float64) * scale
         self.b = np.zeros(out_dim, dtype=np.float64)
-        self.dW = np.zeros_like(self.W)
-        self.db = np.zeros_like(self.b)
-        self.input = None
 
     def forward(self, x):
-        self.input = x.copy()
         return x @ self.W + self.b
 
-    def zero_grad(self):
-        self.dW[:] = 0
-        self.db[:] = 0
-
     def params(self):
-        return [(self.W, self.dW), (self.b, self.db)]
+        return [self.W, self.b]
 
 
 # ═══════════════════════════════════════════════════════
@@ -169,11 +161,10 @@ class PureFieldPolicy:
     """PureField-based policy for grid exploration.
 
     Two opposing engines (A=logic, G=pattern) produce action logits.
-    Tension = |engine_A(obs) - engine_G(obs)|^2  (mean over dims)
+    Tension = tanh(|engine_A(obs) - engine_G(obs)|^2)  (bounded [0, 1])
     Output = tension_scale * sqrt(tension) * direction
 
-    The agent receives intrinsic reward = |tension(t) - tension(t-1)|
-    i.e., "surprise" = how much the tension changed.
+    The agent receives intrinsic reward = |delta_tension| * novelty
     """
 
     def __init__(self, obs_dim=25, hidden_dim=32, action_dim=4):
@@ -189,7 +180,7 @@ class PureFieldPolicy:
         self.name = "PureFieldCuriosity"
 
     def forward(self, obs):
-        """Returns (action_probs, tension_scalar)."""
+        """Returns (action_probs, tension_scalar in [0,1])."""
         # Engine A
         ha = relu(self.a1.forward(obs))
         out_a = self.a2.forward(ha)
@@ -198,9 +189,12 @@ class PureFieldPolicy:
         hg = relu(self.g1.forward(obs))
         out_g = self.g2.forward(hg)
 
-        # Repulsion field
+        # Repulsion field with bounded tension
         repulsion = out_a - out_g
-        tension = float(np.mean(repulsion ** 2))
+        raw_tension = float(np.mean(repulsion ** 2))
+        # Scale down before tanh so we use the sensitive part of the curve
+        # tanh(0.5x) gives useful gradient for raw_tension in [0, 4]
+        tension = math.tanh(0.5 * raw_tension)  # bounded to [0, 1]
 
         # Direction (normalized repulsion)
         norm = np.sqrt(np.sum(repulsion ** 2) + 1e-8)
@@ -212,80 +206,25 @@ class PureFieldPolicy:
         probs = softmax(logits)
         return probs, tension
 
-    def all_layers(self):
-        return [self.a1, self.a2, self.g1, self.g2]
+    def all_params(self):
+        """Return flat list of all parameter arrays."""
+        params = []
+        for layer in [self.a1, self.a2, self.g1, self.g2]:
+            params.extend(layer.params())
+        return params
 
 
 # ═══════════════════════════════════════════════════════
-# 4. REINFORCE Training
+# 4. Episode Runners
 # ═══════════════════════════════════════════════════════
-
-def reinforce_update(policy, log_probs, rewards, lr=0.005, gamma=0.99):
-    """Simple REINFORCE with numerical gradient estimation.
-
-    Since we use numpy (no autograd), we use finite differences
-    on the log-probability to estimate policy gradients.
-    """
-    # Compute discounted returns
-    T = len(rewards)
-    returns = np.zeros(T)
-    G = 0.0
-    for t in reversed(range(T)):
-        G = rewards[t] + gamma * G
-        returns[t] = G
-
-    # Normalize returns
-    if T > 1:
-        std = returns.std()
-        if std > 1e-8:
-            returns = (returns - returns.mean()) / std
-
-    # Numerical gradient via REINFORCE score function
-    # For each parameter, perturb slightly and measure effect on log_prob
-    eps = 1e-4
-    for layer in policy.all_layers():
-        for (param, grad) in layer.params():
-            # Accumulate gradient estimate
-            shape = param.shape
-            flat = param.flatten()
-            grad_flat = np.zeros_like(flat)
-
-            # Sample a subset of parameters to perturb (for speed)
-            n_params = len(flat)
-            n_sample = min(n_params, 20)  # perturb up to 20 params per layer
-            indices = np.random.choice(n_params, n_sample, replace=False)
-
-            for idx in indices:
-                old_val = flat[idx]
-
-                # Positive perturbation
-                flat[idx] = old_val + eps
-                param[:] = flat.reshape(shape)
-
-                # Negative perturbation
-                flat[idx] = old_val - eps
-                param[:] = flat.reshape(shape)
-
-                flat[idx] = old_val
-                param[:] = flat.reshape(shape)
-
-            # Use the score function estimator instead:
-            # grad = sum_t( return_t * grad_log_pi )
-            # We approximate by: param += lr * mean(returns) * random_direction
-            # This is a simplified evolutionary strategy
-            noise = np.random.randn(*shape) * 0.01
-            update = lr * np.mean(returns) * noise
-            param += update
-
 
 def run_episode_curiosity(env, policy):
-    """Run one episode with curiosity (tension-change) reward."""
+    """Run one episode. Returns (total_reward, positions, tensions)."""
     obs = env.reset()
 
-    log_probs = []
     rewards = []
     tensions = []
-    positions = []
+    positions = [(env.r, env.c)]
 
     prev_tension = 0.0
     done = False
@@ -294,90 +233,73 @@ def run_episode_curiosity(env, policy):
         probs, tension = policy.forward(obs)
         tensions.append(tension)
 
-        # Sample action
         action = np.random.choice(NUM_ACTIONS, p=probs)
-        log_prob = math.log(probs[action] + 1e-12)
-        log_probs.append(log_prob)
 
-        # Intrinsic reward = |delta_tension| = surprise
+        obs, done, novelty = env.step(action)
+        positions.append((env.r, env.c))
+
+        # Intrinsic reward = |delta_tension| * novelty
+        # delta_tension is already bounded [0,1] thanks to tanh
+        # novelty = 1/visit_count, rewards exploration
         surprise = abs(tension - prev_tension)
-        rewards.append(surprise)
+        reward = surprise * novelty
+        rewards.append(reward)
         prev_tension = tension
 
-        positions.append((env.r, env.c))
-        obs, done = env.step(action)
-
-    return log_probs, rewards, tensions, positions
+    total_reward = sum(rewards)
+    return total_reward, positions, tensions, rewards
 
 
 def run_episode_random(env):
     """Run one episode with random policy."""
     obs = env.reset()
-    positions = []
-    local_vars = []
+    positions = [(env.r, env.c)]
     done = False
 
     while not done:
         action = random.randint(0, NUM_ACTIONS - 1)
+        obs, done, _ = env.step(action)
         positions.append((env.r, env.c))
-        local_vars.append(local_variance(env.grid, env.r, env.c))
-        obs, done = env.step(action)
 
-    return positions, local_vars
+    return positions
 
 
 # ═══════════════════════════════════════════════════════
-# 5. Evolutionary Strategy Training (replaces broken REINFORCE)
+# 5. Evolution Strategy Training
 # ═══════════════════════════════════════════════════════
 
 def collect_params(policy):
     """Flatten all parameters into a single vector."""
-    parts = []
-    for layer in policy.all_layers():
-        for (param, _) in layer.params():
-            parts.append(param.flatten())
-    return np.concatenate(parts)
+    return np.concatenate([p.flatten() for p in policy.all_params()])
 
 
 def set_params(policy, flat_params):
     """Set policy parameters from a flat vector."""
     offset = 0
-    for layer in policy.all_layers():
-        for (param, _) in layer.params():
-            size = param.size
-            param[:] = flat_params[offset:offset + size].reshape(param.shape)
-            offset += size
+    for p in policy.all_params():
+        size = p.size
+        p[:] = flat_params[offset:offset + size].reshape(p.shape)
+        offset += size
 
 
 def evaluate_policy(policy, env, n_episodes=3):
-    """Evaluate a policy: return mean total surprise reward."""
+    """Evaluate: mean total curiosity reward per episode."""
     total = 0.0
     for _ in range(n_episodes):
-        obs = env.reset()
-        prev_tension = 0.0
-        done = False
-        ep_reward = 0.0
-        while not done:
-            probs, tension = policy.forward(obs)
-            action = np.random.choice(NUM_ACTIONS, p=probs)
-            surprise = abs(tension - prev_tension)
-            ep_reward += surprise
-            prev_tension = tension
-            obs, done = env.step(action)
-        total += ep_reward
+        r, _, _, _ = run_episode_curiosity(env, policy)
+        total += r
     return total / n_episodes
 
 
-def train_es(policy, env, generations=200, population=20, lr=0.03, sigma=0.1):
-    """Train with Evolution Strategy (OpenAI-style simplified ES).
-
-    More reliable than numerical REINFORCE for small problems.
-    """
+def train_es(policy, env, generations=300, population=30, lr=0.02, sigma=0.05):
+    """Train with Evolution Strategy (OpenAI-style simplified ES)."""
     base_params = collect_params(policy)
     n_params = len(base_params)
 
     best_reward = -float('inf')
     reward_history = []
+
+    print(f"  Parameters: {n_params}")
 
     for gen in range(generations):
         # Generate perturbations
@@ -385,34 +307,34 @@ def train_es(policy, env, generations=200, population=20, lr=0.03, sigma=0.1):
         rewards = np.zeros(population)
 
         for i in range(population):
-            # Positive perturbation
             set_params(policy, base_params + sigma * noise[i])
             r_pos = evaluate_policy(policy, env, n_episodes=2)
 
-            # Negative perturbation
             set_params(policy, base_params - sigma * noise[i])
             r_neg = evaluate_policy(policy, env, n_episodes=2)
 
             rewards[i] = r_pos - r_neg
 
-        # Normalize rewards
+        # Normalize
         std = rewards.std()
         if std > 1e-8:
             rewards = (rewards - rewards.mean()) / std
 
-        # Update parameters
+        # Update
         gradient = (1.0 / (population * sigma)) * (noise.T @ rewards)
         base_params += lr * gradient
 
+        # Weight decay to prevent explosion
+        base_params *= 0.999
+
         set_params(policy, base_params)
 
-        # Evaluate current policy
-        if gen % 20 == 0 or gen == generations - 1:
-            mean_r = evaluate_policy(policy, env, n_episodes=5)
+        if gen % 25 == 0 or gen == generations - 1:
+            mean_r = evaluate_policy(policy, env, n_episodes=10)
             reward_history.append((gen, mean_r))
             if mean_r > best_reward:
                 best_reward = mean_r
-            print(f"  Gen {gen:4d} | mean surprise reward: {mean_r:.4f} | best: {best_reward:.4f}")
+            print(f"  Gen {gen:4d} | mean reward: {mean_r:.4f} | best: {best_reward:.4f}")
 
     set_params(policy, base_params)
     return reward_history
@@ -431,19 +353,16 @@ def compute_variance_map(grid):
     return vmap
 
 
-def print_grid_ascii(grid, title, fmt=".1f"):
-    """Print a grid as ASCII heatmap with symbols."""
+def print_grid_ascii(grid, title):
+    """Print a grid as ASCII heatmap."""
     print(f"\n{'=' * 50}")
     print(f"  {title}")
     print(f"{'=' * 50}")
 
     vmin, vmax = grid.min(), grid.max()
     rng = vmax - vmin if vmax > vmin else 1.0
-
-    # Quantize to symbols
     symbols = ' .:-=+*#%@'
 
-    # Column headers
     header = "    " + "".join(f"{c:2d}" for c in range(GRID_SIZE))
     print(header)
     print("    " + "--" * GRID_SIZE)
@@ -479,17 +398,13 @@ def print_visit_heatmap(visit_count, title):
         print(row_str)
 
 
-def region_time_fraction(positions, grid_size=GRID_SIZE):
-    """Compute fraction of time spent in interesting vs boring regions."""
+def region_time_fraction(positions):
+    """Compute fraction of time in interesting vs boring regions."""
     interesting = 0
-    boring = 0
     for (r, c) in positions:
         if (r < 6 and c < 6) or (r >= 10 and c >= 10) or (6 <= r < 10 and 6 <= c < 10):
             interesting += 1
-        else:
-            boring += 1
-    total = interesting + boring
-    return interesting / total if total > 0 else 0.0
+    return interesting / len(positions) if positions else 0.0
 
 
 def print_trajectory_segment(positions, n=20):
@@ -532,10 +447,9 @@ def main():
     all_random_visits = np.zeros((GRID_SIZE, GRID_SIZE), dtype=int)
 
     for ep in range(N_EVAL):
-        positions, _ = run_episode_random(env)
+        positions = run_episode_random(env)
         random_interesting_fracs.append(region_time_fraction(positions))
-        unique = len(set(positions))
-        random_unique_cells.append(unique)
+        random_unique_cells.append(len(set(positions)))
         for (r, c) in positions:
             all_random_visits[r, c] += 1
 
@@ -547,11 +461,12 @@ def main():
 
     # --- Phase 2: Train curiosity agent ---
     print("\n" + "=" * 60)
-    print("  Phase 2: Training Curiosity Agent (ES, 200 generations)")
+    print("  Phase 2: Training Curiosity Agent (ES, 300 generations)")
     print("=" * 60)
 
     policy = PureFieldPolicy(obs_dim=25, hidden_dim=32, action_dim=4)
-    reward_history = train_es(policy, env, generations=200, population=20, lr=0.03, sigma=0.1)
+    reward_history = train_es(policy, env, generations=300, population=30,
+                              lr=0.02, sigma=0.05)
 
     # --- Phase 3: Evaluate trained curiosity agent ---
     print("\n" + "=" * 60)
@@ -560,24 +475,21 @@ def main():
 
     curiosity_interesting_fracs = []
     curiosity_unique_cells = []
-    curiosity_total_surprises = []
+    curiosity_total_rewards = []
     all_curiosity_visits = np.zeros((GRID_SIZE, GRID_SIZE), dtype=int)
-    all_tensions = []
 
     for ep in range(N_EVAL):
-        log_probs, rewards, tensions, positions = run_episode_curiosity(env, policy)
+        total_r, positions, tensions, rewards = run_episode_curiosity(env, policy)
         curiosity_interesting_fracs.append(region_time_fraction(positions))
-        unique = len(set(positions))
-        curiosity_unique_cells.append(unique)
-        curiosity_total_surprises.append(sum(rewards))
+        curiosity_unique_cells.append(len(set(positions)))
+        curiosity_total_rewards.append(total_r)
         for (r, c) in positions:
             all_curiosity_visits[r, c] += 1
-        all_tensions.extend(tensions)
 
     print(f"\n  Curiosity agent ({N_EVAL} episodes, {MAX_STEPS} steps each):")
     print(f"  Mean interesting-zone fraction: {np.mean(curiosity_interesting_fracs):.4f}")
     print(f"  Mean unique cells visited:      {np.mean(curiosity_unique_cells):.1f} / {GRID_SIZE*GRID_SIZE}")
-    print(f"  Mean total surprise per episode: {np.mean(curiosity_total_surprises):.4f}")
+    print(f"  Mean total reward per episode:  {np.mean(curiosity_total_rewards):.4f}")
 
     print_visit_heatmap(all_curiosity_visits, "Curiosity Agent Visit Heatmap (100 episodes)")
 
@@ -608,54 +520,81 @@ def main():
     tension_map = np.zeros((GRID_SIZE, GRID_SIZE))
     tension_count = np.zeros((GRID_SIZE, GRID_SIZE))
 
-    for ep in range(20):
-        obs = env.reset()
-        prev_tension = 0.0
-        done = False
-        while not done:
-            probs, tension = policy.forward(obs)
-            tension_map[env.r, env.c] += tension
-            tension_count[env.r, env.c] += 1
-            action = np.random.choice(NUM_ACTIONS, p=probs)
-            obs, done = env.step(action)
+    # Evaluate tension everywhere by systematically probing each cell
+    for r in range(GRID_SIZE):
+        for c in range(GRID_SIZE):
+            obs = get_observation(grid, r, c)
+            _, tension = policy.forward(obs)
+            tension_map[r, c] = tension
+            tension_count[r, c] = 1
 
-    # Avoid division by zero
-    tension_count[tension_count == 0] = 1
-    tension_map /= tension_count
+    print_grid_ascii(tension_map, "Tension at Each Cell (trained agent)")
 
-    print_grid_ascii(tension_map, "Mean Tension at Each Cell (trained agent)")
-
-    # --- Correlation: tension vs local variance ---
+    # Correlation: tension vs local variance
     flat_tension = tension_map.flatten()
     flat_variance = vmap.flatten()
+    corr = np.corrcoef(flat_tension, flat_variance)[0, 1]
 
-    # Only cells that were visited
-    mask = (tension_count.flatten() > 1)
-    if mask.sum() > 5:
-        corr = np.corrcoef(flat_tension[mask], flat_variance[mask])[0, 1]
-    else:
-        corr = float('nan')
+    print(f"\n  Correlation(tension, local_variance): {corr:.4f}")
+    print(f"  (positive = tension responds to environmental complexity)")
 
-    print(f"\n  Correlation(tension, local_variance) over visited cells: {corr:.4f}")
-
-    # --- Phase 6: Sample trajectory ---
+    # --- Phase 6: Per-region tension analysis ---
     print("\n" + "=" * 60)
-    print("  Phase 6: Sample Trajectories")
+    print("  Phase 6: Per-Region Tension Analysis")
+    print("=" * 60)
+
+    zones = {
+        'interesting_TL': [(r, c) for r in range(6) for c in range(6)],
+        'interesting_BR': [(r, c) for r in range(10, 16) for c in range(10, 16)],
+        'mild_center':    [(r, c) for r in range(6, 10) for c in range(6, 10)],
+    }
+    boring_cells = []
+    int_cells = set()
+    for cells in zones.values():
+        int_cells.update(cells)
+    for r in range(GRID_SIZE):
+        for c in range(GRID_SIZE):
+            if (r, c) not in int_cells:
+                boring_cells.append((r, c))
+    zones['boring'] = boring_cells
+
+    print(f"\n  {'Zone':<20s}  {'Mean Tension':>12s}  {'Mean Variance':>13s}  {'Cells':>5s}")
+    print(f"  {'-'*20}  {'-'*12}  {'-'*13}  {'-'*5}")
+    for name, cells in zones.items():
+        t_vals = [tension_map[r, c] for r, c in cells]
+        v_vals = [vmap[r, c] for r, c in cells]
+        print(f"  {name:<20s}  {np.mean(t_vals):12.6f}  {np.mean(v_vals):13.4f}  {len(cells):5d}")
+
+    # --- Phase 7: Sample trajectories ---
+    print("\n" + "=" * 60)
+    print("  Phase 7: Sample Trajectories")
     print("=" * 60)
 
     print("\n  --- Random Agent ---")
-    positions_r, _ = run_episode_random(env)
+    positions_r = run_episode_random(env)
     print_trajectory_segment(positions_r, n=20)
     print(f"  Interesting fraction: {region_time_fraction(positions_r):.3f}")
+    print(f"  Unique cells: {len(set(positions_r))}")
 
     print("\n  --- Curiosity Agent ---")
-    _, _, _, positions_c = run_episode_curiosity(env, policy)
+    _, positions_c, tensions_c, _ = run_episode_curiosity(env, policy)
     print_trajectory_segment(positions_c, n=20)
     print(f"  Interesting fraction: {region_time_fraction(positions_c):.3f}")
+    print(f"  Unique cells: {len(set(positions_c))}")
 
-    # --- Phase 7: Training curve ---
+    # Tension trace for curiosity agent
+    print(f"\n  Tension trace (first 20 steps):")
+    print(f"  {'Step':>4s}  {'Position':>10s}  {'Tension':>8s}  Bar")
+    print(f"  {'-'*4}  {'-'*10}  {'-'*8}  {'-'*30}")
+    for i in range(min(20, len(tensions_c))):
+        r, c = positions_c[i]
+        t = tensions_c[i]
+        bar = '#' * int(t * 30)
+        print(f"  {i:4d}  ({r:2d}, {c:2d})    {t:8.4f}  |{bar}")
+
+    # --- Phase 8: Training curve ---
     print("\n" + "=" * 60)
-    print("  Phase 7: Training Curve (surprise reward over generations)")
+    print("  Phase 8: Training Curve")
     print("=" * 60)
 
     if reward_history:
@@ -675,21 +614,34 @@ def main():
     print("  Summary")
     print("=" * 60)
 
-    gained_interest = c_int - r_int > 0.01
-    gained_coverage = c_uniq - r_uniq > 1.0
+    gained_interest = c_int - r_int > 0.02
+    gained_coverage = c_uniq - r_uniq > 2.0
+
+    # Compute tension in interesting vs boring zones
+    int_tension = np.mean([tension_map[r, c] for r, c in zones['interesting_TL']] +
+                          [tension_map[r, c] for r, c in zones['interesting_BR']])
+    boring_tension = np.mean([tension_map[r, c] for r, c in zones['boring']])
+    tension_ratio = int_tension / (boring_tension + 1e-8)
 
     print(f"""
   Curiosity agent seeks interesting zones: {'YES' if gained_interest else 'NO'} (delta = {c_int - r_int:+.4f})
   Curiosity agent explores more cells:     {'YES' if gained_coverage else 'NO'} (delta = {c_uniq - r_uniq:+.1f})
   Tension-variance correlation:            {corr:.4f}
+  Tension ratio (interesting/boring):      {tension_ratio:.4f}
+
+  Reward design:
+    intrinsic_reward = |tension(t) - tension(t-1)| * novelty
+    tension = tanh(|engine_A - engine_G|^2)   (bounded [0,1])
+    novelty = 1 / visit_count                 (decays with repeats)
 
   Interpretation:
-    - If interesting-zone fraction increased: tension-change reward
-      drives the agent toward high-variance (surprising) regions.
-    - If correlation(tension, variance) > 0: the PureField's internal
-      tension responds to environmental complexity, confirming that
-      the repulsion field encodes "interestingness".
-    - This validates RC-4: |delta_tension| as intrinsic curiosity reward.
+    - tension-variance correlation > 0: PureField tension responds to
+      environmental complexity (rugged landscape = high tension).
+    - tension ratio > 1: interesting zones produce more tension than
+      boring zones, confirming the field encodes "interestingness".
+    - If interesting-zone fraction increased: the curiosity reward
+      successfully drives exploration toward high-variance regions.
+    - This validates RC-4: |delta_tension| as intrinsic curiosity signal.
 """)
 
 

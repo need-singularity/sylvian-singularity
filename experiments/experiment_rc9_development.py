@@ -235,29 +235,29 @@ class FrozenEnsemble:
         self.all_digits.update(digits)
 
     def predict(self, X):
-        """Ensemble prediction: oracle routing.
+        """Ensemble prediction: oracle routing with per-child classification.
 
-        Each child classifies the input among its owned digits only.
-        We collect per-child softmax probabilities (restricted to owned digits),
-        then pick the global class with highest probability across all children.
+        Each child independently classifies among its owned digits.
+        The child with the highest confidence (max logit gap) wins.
+        This matches H312's oracle routing approach.
         """
         batch_size = X.size(0)
         n_classes = 10
-        # Collect best probability per digit across all children
-        global_probs = torch.full((batch_size, n_classes), -1e9)
+        # For each sample, collect (child_idx, predicted_digit, confidence)
+        # Then assign based on highest confidence
+
+        # Strategy: each child produces logits. For owned digits, we take
+        # the raw logit value. The global prediction is argmax over all
+        # children's owned-digit logits.
+        global_logits = torch.full((batch_size, n_classes), -1e9)
 
         with torch.no_grad():
             for model, digits in self.children:
                 out, _ = model(X)
-                # Restrict softmax to only owned digits
-                digit_indices = torch.tensor(digits, dtype=torch.long)
-                restricted_logits = out[:, digit_indices]  # (batch, len(digits))
-                restricted_probs = F.softmax(restricted_logits, dim=-1)
-                # Place these probabilities back into global positions
-                for i, d in enumerate(digits):
-                    global_probs[:, d] = restricted_probs[:, i]
+                for d in digits:
+                    global_logits[:, d] = out[:, d]
 
-        return global_probs
+        return global_logits
 
     def evaluate(self, X_test, y_test):
         """Evaluate ensemble on full test set."""
@@ -380,18 +380,24 @@ def run_development(X_train, y_train, X_test, y_test, tasks, seed=42,
         # === MITOSIS ===
         if gen_idx < len(tasks) - 1:
             print(f"\n    >>> AUTO-MITOSIS: freezing child_a (memory for digits {digits})")
-            child_a, child_b = mitosis(active_model, scale=0.01)
+            # child_a = exact copy (memory keeper, NO noise)
+            child_a = copy.deepcopy(active_model)
+            # child_b = copy + noise (explorer for next task)
+            child_b = copy.deepcopy(active_model)
+            with torch.no_grad():
+                for p in child_b.parameters():
+                    p.add_(torch.randn_like(p) * 0.01)
 
             # child_a -> freeze as memory for these digits
             ensemble.add_child(child_a, digits)
-            print(f"    >>> child_a frozen: owns digits {digits}")
+            print(f"    >>> child_a frozen (exact copy): owns digits {digits}")
 
             # child_b -> becomes the new active model for next task
             active_model = child_b
-            print(f"    >>> child_b inherits -> will learn next task")
+            print(f"    >>> child_b inherits (with noise) -> will learn next task")
             print(f"    >>> Ensemble size: {len(ensemble.children)} children")
         else:
-            # Last generation: freeze the final model too
+            # Last generation: freeze the final model too (exact copy)
             ensemble.add_child(copy.deepcopy(active_model), digits)
             print(f"\n    >>> FINAL GENERATION: freezing for digits {digits}")
             print(f"    >>> Ensemble size: {len(ensemble.children)} children")
