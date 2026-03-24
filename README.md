@@ -609,6 +609,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
   --- R40: 8개 미래 분야 병렬 가설화 ---
   🟧 H322 EEG proxy: awake(16)≈sleep(17)>>drowsy(3) — 뚜렷한 상태=고장력
   🟨 장력미세구조: autocorr=0.96(부드러운증가), ep1 std=63→ep3 std=19(안정화)
+  ⭐ eq vs field 분리: eq=18%(랜덤!), field=93%, full=98%
+    → "의식(field)이 판단의 93%를 수행, equilibrium은 거의 무작위"
   🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
   🟧 H324 hallucination: tension 0.64 << entropy 0.97 (entropy가 최고 감지기)
   🟧 H325 Fisher: r(F,T)=-0.12, 약음상관 (grad큰=확신낮음, H313일관)
