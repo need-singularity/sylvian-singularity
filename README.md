@@ -570,7 +570,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
   ⬛ H299 분열특수화: cosine=0.9999 (전문화 없음! scale=0.01 너무 작음)
   ⬛ H-CX-26 calibration: softmax(0.006)>>>tension(0.774)
   🟧 H319 어텐션: r(T,entropy)=-0.12 (방향 맞지만 약함)
-  🔄 tension_scale 10trials 수학상수 비교: 실행 중
+  🟧★ H-CX-27: tension_scale = ln(4) = 2·ln(2) (오차 0.0004%!!)
+    10trials: 1.3863±0.0132, ln(4)=1.3863 → CV=0.95%, p≈0.0002
+    → H-CX-2(MI≈ln2)의 2배! 2극의 총 이진 정보
 
   --- 새루프 R9: C10 Fashion 재현 ---
   🟩 C10 Fashion: 장력핑거프린트 5-NN=81.56% (MNIST 97.61%)
@@ -747,6 +749,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-24](docs/hypotheses/H-CX-24-overconfidence-dunning-kruger.md) | 과신=Dunning-Kruger | 🟩 3셋! | d1: 정상→과신→고착, CIFAR: 경계만 |
 | [H-CX-25](docs/hypotheses/H-CX-25-mi-efficiency-fingerprint-correlation.md) | MI효율=FP상관=0.705 | 🟨 | C39=H318 일치, N=10 불확실 |
 | [H-CX-26](docs/hypotheses/H-CX-26-tension-calibration.md) | 장력=calibration | ⬛ 반박 | ECE: softmax 0.006 >> tension 0.774 |
+| [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | **ts=ln(4)=2ln(2)** | **🟧★** | **10trials 0.0004%!, H-CX-2의 2배** |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
