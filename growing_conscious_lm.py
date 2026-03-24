@@ -120,18 +120,34 @@ class GrowingConsciousLM(nn.Module):
         return old_stage, self.stage
 
     def _split_block(self):
-        """가장 포화된 블록을 분열."""
-        # 가장 마지막 블록을 분열 (간단한 전략)
+        """비대칭 분열: 서번트(낮은 억제) + 범용(정상 억제).
+
+        H359: dropout=0.21(골든존 하한) → SI=3.6 서번트 확인
+        child_a: dropout=0.21 → 전문화 잠재력 (서번트 후보)
+        child_b: dropout=0.37 → 범용 유지 (1/e, 골든존 중심)
+        """
+        GOLDEN_LOWER = 0.5 - math.log(4/3)  # 0.2123 골든존 하한
+        GOLDEN_CENTER = 1/math.e              # 0.3679 골든존 중심
+
         parent = self.blocks[-1]
-        child_a = copy.deepcopy(parent)
-        child_b = copy.deepcopy(parent)
-        # 변이: child_b에 노이즈
+        child_savant = copy.deepcopy(parent)
+        child_general = copy.deepcopy(parent)
+
+        # 비대칭 억제: 서번트 자식은 낮은 dropout
         with torch.no_grad():
-            for p in child_b.parameters():
+            for m in child_savant.modules():
+                if isinstance(m, nn.Dropout):
+                    m.p = GOLDEN_LOWER  # 0.21 — 억제 해제 → 전문화
+            for m in child_general.modules():
+                if isinstance(m, nn.Dropout):
+                    m.p = GOLDEN_CENTER  # 0.37 — 정상 억제 → 범용
+
+            # 변이: 서번트에 약간의 노이즈 (발산 촉진)
+            for p in child_savant.parameters():
                 p.add_(torch.randn_like(p) * 0.01)
-        # 교체
-        self.blocks[-1] = child_a
-        self.blocks.append(child_b)
+
+        self.blocks[-1] = child_savant
+        self.blocks.append(child_general)
 
     def _expand_dim(self, new_d, new_heads):
         """차원 확장: 기존 가중치 보존 + 새 차원 영초기화."""
