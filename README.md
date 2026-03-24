@@ -568,7 +568,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
   --- 새루프 R15: TREE-9 진화적 전략 ---
   🟧 TREE-9: 진화(pop=4, 10gen) = Normal(12ep) (97.73% 동일)
   ⬛ H299 분열특수화: cosine=0.9999 (전문화 없음! scale=0.01 너무 작음)
-  🟨 H-CX-26 장력=calibration, H319 장력=attention: 새 가설 2개
+  ⬛ H-CX-26 calibration: softmax(0.006)>>>tension(0.774)
+  🟧 H319 어텐션: r(T,entropy)=-0.12 (방향 맞지만 약함)
 
   --- 새루프 R9: C10 Fashion 재현 ---
   🟩 C10 Fashion: 장력핑거프린트 5-NN=81.56% (MNIST 97.61%)
