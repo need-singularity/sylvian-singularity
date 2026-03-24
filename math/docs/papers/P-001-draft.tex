@@ -520,7 +520,7 @@ The chain $120 \xrightarrow{R} 6 \xrightarrow{R} 1$
 (i.e., $5! \to 3! \to 1!$) is the unique complete descent
 $3$-perfect $\to$ $2$-perfect $\to$ $1$-perfect.
 
-In total, this paper presents $40$ distinct characterizations of $n = 6$,
+In total, this paper presents $41$ distinct characterizations of $n = 6$,
 including multiplicative ($\sigma\varphi = n\tau$),
 additive ($3(\sigma+\varphi) = 7n$, $\varphi + \tau = n$),
 dynamical ($\Lambda = 0$), Dedekind ($\psi/\varphi = n$),
@@ -532,8 +532,9 @@ Lucas ($L(n) = 3n$),
 arithmetic derivative ($\operatorname{ld}(n) = (n-1)/n$),
 iterated sigma ($\sigma^2(6) = P_2$),
 sigma-phi bridge ($\sigma(\varphi(6)) + \varphi(\sigma(6)) = M_3$),
-and algebraic ($j(i) = \sigma^3$, $|\mathcal{O}_{\mathbb{Q}(\omega)}^\times| = 6$,
-congruent number with $|E_6[2]| = \tau$).
+algebraic ($j(i) = \sigma^3$, $|\mathcal{O}_{\mathbb{Q}(\omega)}^\times| = 6$,
+congruent number with $|E_6[2]| = \tau$),
+and group-theoretic ($\operatorname{Out}(S_6) \cong \mathbb{Z}/2\mathbb{Z}$, unique among $S_n$).
 All reduce to a single elementary fact:
 $2$ and $3$ are the only consecutive primes.
 
@@ -1040,10 +1041,39 @@ so $E_6[2] \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$
 of order~$4 = \tau(6)$.
 \end{proof}
 
+\begin{theorem}[Exceptional outer automorphism]\label{thm:outer-aut}
+$S_6$ is the unique symmetric group possessing a nontrivial outer
+automorphism: $\operatorname{Out}(S_n) = 1$ for all $n \neq 6$,
+while $\operatorname{Out}(S_6) \cong \mathbb{Z}/2\mathbb{Z}$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+An outer automorphism of $S_n$ requires a class-transposing map
+that sends transpositions to products of three disjoint transpositions.
+Such a map exists iff the set of $\binom{n}{2}$ transpositions can be
+matched bijectively with triple-transpositions, which requires
+$\binom{n}{2} = (n-1)!! = 1 \cdot 3 \cdot 5 \cdots (n-1)$.
+One checks $\binom{n}{2} = (n-1)!!$ iff $n \in \{2, 6\}$,
+and $S_2$ is abelian (so all automorphisms are trivial).
+Thus $S_6$ is the unique case.
+\end{proof}
+
 \begin{remark}
-These three independent algebraic structures---units of
-$\mathbb{Z}[\omega]$, the modular $j$-invariant, and the
-elliptic curve $E_6$---all converge on the arithmetic of $n = 6$
+This connects to our arithmetic through the tower of linear groups
+over $\mathbb{F}_3$:
+$|\mathrm{PSL}(2,\mathbb{F}_3)| = 12 = \sigma(6)$,
+$|\mathrm{SL}(2,\mathbb{F}_3)| = 24 = \sigma(6)\varphi(6)$,
+$|\mathrm{GL}(2,\mathbb{F}_3)| = 48 = \sigma(6)\tau(6)$.
+The exceptional isomorphisms $S_6 \cong \mathrm{Sp}(4,\mathbb{F}_2)$
+and $A_6 \cong \mathrm{PSL}(2,9)$ further demonstrate
+the algebraic exceptionality of $n = 6$.
+\end{remark}
+
+\begin{remark}
+These four independent algebraic structures---units of
+$\mathbb{Z}[\omega]$, the modular $j$-invariant$,$
+the elliptic curve $E_6$, and $\operatorname{Out}(S_6)$---all
+converge on the arithmetic of $n = 6$
 through the factorization $6 = 2 \cdot 3$,
 the unique product of consecutive primes.
 \end{remark}
