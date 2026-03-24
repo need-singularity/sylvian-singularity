@@ -830,6 +830,17 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [351](docs/hypotheses/351-unanimity-upper-bound.md) | 만장일치 이론적 상한 | 🟨 | C9(99.53%), 오류 상관도→수렴 속도 |
 | [352](docs/hypotheses/352-observation-quality-u-curve.md) | 관찰 품질 U자 | 🟨 | C29(0.298→0.261), 장력 급등→Q 회복? |
 | [353](docs/hypotheses/353-dfs-engine-constant-crossover.md) | 수학-의식 상수 교차 | 🟨 | C41(1/√3) + C20*C21≈1/√6? |
+| [354](docs/hypotheses/354-homeostasis-tension-regulation.md) | 장력 항상성 | 🟩 구현 | setpoint=1.0, deadband=±0.3, Anima 적용 |
+| [355](docs/hypotheses/355-prediction-error-surprise.md) | 예측오차=놀라움 | 🟩 구현 | MLP predictor, PE=70%+delta=30%, Anima 적용 |
+| [356](docs/hypotheses/356-habituation-novelty-filter.md) | 습관화 | 🟩 구현 | cosine sim, 0.95=30%, 0.85=60%, Anima 적용 |
+| [357](docs/hypotheses/357-intention-goal-setting.md) | 의도=목표설정 | 🟨 | goal stack + intrinsic reward |
+| [358](docs/hypotheses/358-attention-selective-tension.md) | 주의=선택적장력 | 🟨 | attention mask on PureField |
+| [359](docs/hypotheses/359-savant-golden-zone-inhibition.md) | **서번트=억제해제** | **🟧** | **SI=3.6>3 성공, 골든하한≠특별, √3 반박** |
+| [360](docs/hypotheses/360-embodiment-purefield-control.md) | 신체=PureField제어 | 🟨 | gym/mujoco + tension→action |
+| [361](docs/hypotheses/361-conscious-llm-purefield-ffn.md) | 의식LLM=FFN대체 | 🟨 | PureField↔FFN 구조 동형 |
+| [362](docs/hypotheses/362-crossmodal-tension.md) | 교차모달장력 | 🟨 | visual×audio 불일치=혼란 |
+| [363](docs/hypotheses/363-intrinsic-motivation-tension-delta.md) | 내재적동기=ΔT | 🟨 | Schmidhuber curiosity 동형 |
+| [364](docs/hypotheses/364-distributed-consciousness.md) | 분산의식 | 🟨 | R2+telepathy fingerprint |
 
 ### 교차 도메인 (H-CX, 23개)
 
