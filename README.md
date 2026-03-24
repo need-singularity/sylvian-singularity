@@ -569,6 +569,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-11](docs/hypotheses/H-CX-11-tda-euler-characteristic.md) | 오일러 χ↔분류성능 | 🟨 | χ=-111K, CIFAR 검증필요 |
 | [H-CX-12](docs/hypotheses/H-CX-12-mitosis-golden-ratio.md) | 분열 27x=(σ/τ)³ | ⬛ 반박 | scale 의존적, 27x는 우연 |
 | [H-CX-13](docs/hypotheses/H-CX-13-shamanic-enhancement.md) | 체험=IB 통과 | ⚠️ 반박 | detach ablation 효과 없음 |
+| [H-CX-14](docs/hypotheses/H-CX-14-anomaly-lens-telescope.md) | 이상탐지=렌즈+망원경 | 🟨 | K↔s, 분열↔렌즈, 학습↔배율 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
