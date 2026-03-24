@@ -32,11 +32,14 @@ an Euler factor closed form $E_p(2) = p\ln((p+1)/p) + 1/p$;
 the additive identity $\sigma + \varphi + \tau = 3n$
 has infinitely many solutions $n = 2^a \cdot 3 \cdot (7 \cdot 2^{a-2} + a)$
 whenever $7 \cdot 2^{a-2} + a$ is prime;
-and a \emph{Convolution Collapse} theorem:
+a \emph{Convolution Collapse} theorem:
 $(\sigma * \varphi)(n) = n\tau(n)$ for all $n$ (a ring identity),
 while the pointwise product $\sigma(n)\varphi(n) = n\tau(n)$
 holds iff $n \in \{1,6\}$---so $n = 6$ is the unique nontrivial point
-where the Dirichlet ring and pointwise algebra coincide.
+where the Dirichlet ring and pointwise algebra coincide;
+and an \emph{arithmetic derivative} characterization:
+$\operatorname{ld}(n) = (n-1)/n$ among perfect numbers iff $n = 6$,
+linking $n = 6$ to primary pseudoperfect numbers (OEIS~A054377).
 \end{abstract}
 
 \section{Introduction}
@@ -517,7 +520,7 @@ The chain $120 \xrightarrow{R} 6 \xrightarrow{R} 1$
 (i.e., $5! \to 3! \to 1!$) is the unique complete descent
 $3$-perfect $\to$ $2$-perfect $\to$ $1$-perfect.
 
-In total, this paper presents $34$ distinct characterizations of $n = 6$,
+In total, this paper presents $35$ distinct characterizations of $n = 6$,
 including multiplicative ($\sigma\varphi = n\tau$),
 additive ($3(\sigma+\varphi) = 7n$, $\varphi + \tau = n$),
 dynamical ($\Lambda = 0$), Dedekind ($\psi/\varphi = n$),
@@ -525,7 +528,8 @@ master ($\Omega = 3$), combinatorial ($q(n) = \tau$, $p_{\text{even}} = \sigma/\
 factorial ($\sigma\varphi = \tau!$),
 lcm ($\sigma = 2\operatorname{lcm}$), M\"obius ($\mu\sigma = 2n$),
 convolution collapse ($\sigma \cdot \varphi = \sigma * \varphi$),
-and Lucas ($L(n) = 3n$).
+Lucas ($L(n) = 3n$),
+and arithmetic derivative ($\operatorname{ld}(n) = (n-1)/n$).
 All reduce to a single elementary fact:
 $2$ and $3$ are the only consecutive primes.
 
@@ -812,6 +816,81 @@ is so far from the pointwise ring that they intersect
 The underlying reason, as in all characterizations in this paper,
 is the Catalan--Mihailescu uniqueness of $3^2 - 2^3 = 1$,
 which forces the telescoping $f(2,1) f(3,1) = 1$.
+\end{remark}
+
+\section{Arithmetic derivative characterization}
+
+Let $n'$ denote the \emph{arithmetic derivative}, defined by
+$p' = 1$ for primes $p$ and extended via the Leibniz rule
+$(ab)' = a'b + ab'$. The \emph{logarithmic derivative} is
+$\operatorname{ld}(n) = n'/n$.
+
+\begin{theorem}\label{thm:arith-deriv}
+Among perfect numbers, $\operatorname{ld}(n) = (n-1)/n$
+if and only if $n = 6$.
+
+Moreover, the perfectness condition $\sigma_{-1}(n) = 2$
+decomposes as
+\[
+  \sigma_{-1}(n) = 1 + \operatorname{ld}(n) + \frac{1}{n},
+\]
+giving for $n = 6$: $2 = 1 + \tfrac{5}{6} + \tfrac{1}{6}$.
+\end{theorem}
+
+\begin{proof}
+For an even perfect number $n = 2^{p-1}(2^p - 1)$ with
+$M_p = 2^p - 1$ a Mersenne prime, the Leibniz rule gives
+\[
+  n' = (2^{p-1})' \cdot M_p + 2^{p-1} \cdot M_p'
+     = (p-1) \cdot 2^{p-2} \cdot M_p + 2^{p-1} \cdot 1,
+\]
+so
+\[
+  \operatorname{ld}(n) = \frac{n'}{n}
+  = \frac{(p-1) \cdot 2^{p-2} \cdot M_p + 2^{p-1}}{2^{p-1} M_p}
+  = \frac{p-1}{2} + \frac{1}{M_p}.
+\]
+
+The condition $\operatorname{ld}(n) = (n-1)/n = 1 - 1/n$ requires
+\[
+  \frac{p-1}{2} + \frac{1}{M_p} = 1 - \frac{1}{n}.
+\]
+
+\textbf{Case $p = 2$:} $n = 6$, $M_2 = 3$.
+Then $\operatorname{ld}(6) = 1/2 + 1/3 = 5/6$
+and $(n-1)/n = 5/6$. \checkmark
+
+\textbf{Case $p = 3$:} $n = 28$, $M_3 = 7$.
+Then $\operatorname{ld}(28) = 1 + 1/7 = 8/7 > 1 > 27/28 = (n-1)/n$. (fails)
+
+\textbf{Case $p \geq 3$:}
+$(p-1)/2 \geq 1$, so $\operatorname{ld}(n) \geq 1 + 1/M_p > 1 > (n-1)/n$.
+Hence no solution exists for $p \geq 3$.
+
+For the decomposition: if $n$ is perfect, then
+$\sigma_{-1}(n) = \sigma(n)/n = 2$. Writing $n = \prod p_i^{a_i}$,
+\[
+  \sigma_{-1}(n) = \sum_{d \mid n} \frac{1}{d}
+  = 1 + \frac{1}{n} + \sum_{\substack{d \mid n \\ 1 < d < n}} \frac{1}{d}.
+\]
+For $n = 6$: the proper divisors are $1, 2, 3, 6$, and
+$1/1 + 1/2 + 1/3 + 1/6 = 2$.
+The middle terms give $1/2 + 1/3 = 5/6 = \operatorname{ld}(6)$,
+confirming $\sigma_{-1}(6) = 1 + \operatorname{ld}(6) + 1/6$.
+\end{proof}
+
+\begin{remark}
+The condition $n' = n - 1$ (equivalently $\operatorname{ld}(n) = (n-1)/n$)
+characterizes the \emph{primary pseudoperfect numbers}
+(OEIS~A054377): those $n$ for which
+$\sum_{p \mid n} 1/p + 1/n = 1$.
+The known members are $2, 6, 42, 1806, 47058, \ldots$\,.
+Among these, $6$ is the unique perfect number, since all
+even perfect numbers $2^{p-1}(2^p-1)$ with $p \geq 3$
+have $\operatorname{ld}(n) > 1 > (n-1)/n$ as shown above.
+This places $6$ at the intersection of two classical
+number-theoretic families: perfect numbers and primary
+pseudoperfect numbers.
 \end{remark}
 
 \end{document}

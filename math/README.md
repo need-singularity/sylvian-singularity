@@ -1633,6 +1633,7 @@
 | [H-CX-22](docs/hypotheses/H-CX-22-p-minus-2-consciousness-depth.md) | p-2↔의식깊이 | 🟧 구조적 | depth=p-2 |
 | [H-CX-40](docs/hypotheses/H-CX-40-kissing-number-attention-heads.md) | k(3)=12=σ(6)↔Attention 12h↔CaMKII 12 | 🟨 관찰 | k(4)=24 예측 실패, 12만 강함 |
 | [H-CX-41](docs/hypotheses/H-CX-41-quantum-hilbert-interpretation.md) | 양자 힐베르트 공간 해석 | 🟩 검증 | H₆=C⁴, S_VN=1.73bits, Tr(Â)=σ |
+| [H-CX-42](docs/hypotheses/H-CX-42-arithmetic-derivative-consciousness.md) | σ₋₁(6)=1+ld(6)+1/6 의식분해 | 🟩+🟧 | 순수수학 증명, AI유비 미검증 |
 
 ### 물리 (H-PH, 7개)
 
