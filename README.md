@@ -1148,6 +1148,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-30](docs/hypotheses/H-CX-30-math-consciousness-map.md) | 수학-의식 교차지도 | 🟨 | NM-1~8 + TP-6~8 미탐색 가설 |
 | [H-CX-53](docs/hypotheses/H-CX-53-trigonometric-operating-angle.md) | 삼각-약수 최적 각도 pi/6 | 🟨 | sin=phi/tau 유일성→A-G 벡터 최적각도 30deg 가설 |
 | [H-CX-54](docs/hypotheses/H-CX-54-information-cost-golden-zone.md) | D_KL=(2/3)ln(4/3) 정보비용 | 🟨 | 약수역수분포q→균등: KL발산=골든존폭×(2/3), Fisher I(1/2)=tau(6)=4 |
+| [H-CX-55](docs/hypotheses/H-CX-55-natural-frequency-z0.md) | 자연주파수 자기참조 omega0=pi/6 | 🟩 | arg(exp(iz0))=2pi/sigma(6)=pi/6 순수수학 완전등식, 황금존 무관 |
+| [H-CX-56](docs/hypotheses/H-CX-56-brainwave-divisor-map.md) | 뇌파-약수 지도 3*sigma+tau=40Hz | 🟧 | 3*sigma(6)+tau(6)=40Hz(감마결합), sigma-tau=8Hz(알파), 황금존 무관(산술) |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
