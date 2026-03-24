@@ -1307,7 +1307,7 @@
 | [H-AI-10](docs/hypotheses/H-AI-10-tokenizer-vocab-six.md) | vocab=6^k | ⏳ 약함 | |
 | [H-AI-11](docs/hypotheses/H-AI-11-R-chain-training.md) | R-chain 학습 동역학 | ⏳ 미검증 | |
 
-### 의식엔진 교차 (H-CX, 13개)
+### 의식엔진 교차 (H-CX, 22개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1328,6 +1328,11 @@
 | [H-CX-15](docs/hypotheses/H-CX-15-attention-arithmetic-lens.md) | Attention=산술 렌즈 | 🟧 구조적 | 간극↔결정경계 |
 | [H-CX-16](docs/hypotheses/H-CX-16-information-balance-seven-thirds.md) | 정보균형 7/3 | 🟧 구조적 | A+F=7/3⟺n=6 |
 | [H-CX-17](docs/hypotheses/H-CX-17-dual-characterization-consciousness.md) | 이중특성화↔의식 | 🟧 구조적 | 곱셈+가법 이중성 |
+| [H-CX-18](docs/hypotheses/H-CX-18-catalan-root-consciousness.md) | Catalan 근원↔의식 | 🟧 구조적 | 3²-2³=1 |
+| [H-CX-19](docs/hypotheses/H-CX-19-closed-orbit-consciousness-cycle.md) | 닫힌궤도↔의식순환 | 🟧 구조적 | ∏R=1=자기참조 |
+| [H-CX-20](docs/hypotheses/H-CX-20-divisor-orbit-neural-convergence.md) | 궤도곱↔뉴럴수렴 | 🟧 구조적 | Λ=0=수렴임계 |
+| [H-CX-21](docs/hypotheses/H-CX-21-golden-zone-abundancy-bridge.md) | 골든존↔abundancy | 🟧★ 구조적 | ln(4/3)=ln(σ(3)/3) |
+| [H-CX-22](docs/hypotheses/H-CX-22-p-minus-2-consciousness-depth.md) | p-2↔의식깊이 | 🟧 구조적 | depth=p-2 |
 
 ### 물리 (H-PH, 6개)
 
@@ -1350,7 +1355,7 @@
 | [H-CHEM-4](docs/hypotheses/H-CHEM-4-R-chain-reaction.md) | R-chain↔화학반응 | ⚪ 기각 | 피상적 비유 |
 | [H-CHEM-5](docs/hypotheses/H-CHEM-5-thc-cannabinoid-six.md) | THC↔카나비노이드↔6 | 🟨 관찰 | C₂₁=3×7, CB₁=7-TM |
 
-### CS (H-CS, 4개)
+### CS (H-CS, 5개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1358,6 +1363,7 @@
 | [H-CS-4](docs/hypotheses/H-CS-4-hamming-tau-phi-sigma.md) | Hamming↔τφσ | 🟨 관찰 | Golay=(2σ-1,σ,M₃) |
 | [H-CS-5](docs/hypotheses/H-CS-5-graph-coloring-six.md) | Ramsey-완전수 | 🟧★ 유의 | R(3,3)=6,R(3,8)=28 p=0.047 |
 | [H-CS-6](docs/hypotheses/H-CS-6-hash-collision-six.md) | 해시 충돌 | ⏳ 약함 | |
+| [H-CS-7](docs/hypotheses/H-CS-7-R-prime-cryptography.md) | R소수↔암호학 | 🟨 관찰 | 4개 사례 |
 
 ### 기하학 (H-GEO, 8개+)
 
