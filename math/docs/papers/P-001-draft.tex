@@ -520,7 +520,7 @@ The chain $120 \xrightarrow{R} 6 \xrightarrow{R} 1$
 (i.e., $5! \to 3! \to 1!$) is the unique complete descent
 $3$-perfect $\to$ $2$-perfect $\to$ $1$-perfect.
 
-In total, this paper presents $37$ distinct characterizations of $n = 6$,
+In total, this paper presents $40$ distinct characterizations of $n = 6$,
 including multiplicative ($\sigma\varphi = n\tau$),
 additive ($3(\sigma+\varphi) = 7n$, $\varphi + \tau = n$),
 dynamical ($\Lambda = 0$), Dedekind ($\psi/\varphi = n$),
@@ -531,7 +531,9 @@ convolution collapse ($\sigma \cdot \varphi = \sigma * \varphi$),
 Lucas ($L(n) = 3n$),
 arithmetic derivative ($\operatorname{ld}(n) = (n-1)/n$),
 iterated sigma ($\sigma^2(6) = P_2$),
-and sigma-phi bridge ($\sigma(\varphi(6)) + \varphi(\sigma(6)) = M_3$).
+sigma-phi bridge ($\sigma(\varphi(6)) + \varphi(\sigma(6)) = M_3$),
+and algebraic ($j(i) = \sigma^3$, $|\mathcal{O}_{\mathbb{Q}(\omega)}^\times| = 6$,
+congruent number with $|E_6[2]| = \tau$).
 All reduce to a single elementary fact:
 $2$ and $3$ are the only consecutive primes.
 
@@ -981,5 +983,69 @@ $\sigma(6) = 12$, so $\varphi(\sigma(6)) = \varphi(12) = \varphi(2^2 \cdot 3) = 
 
 Therefore $\sigma(\varphi(6)) + \varphi(\sigma(6)) = 3 + 4 = 7 = 2^3 - 1 = M_3$.
 \end{proof}
+
+\section{Algebraic and geometric connections}
+
+\begin{proposition}[$j$-invariant]\label{prop:j-invariant}
+$j(i) = 1728 = \sigma(6)^3$.
+The $j$-invariant of the CM point $\tau = i$ equals the cube
+of the divisor sum of the first perfect number.
+Moreover, elliptic curves with $j = 0$ (the Eisenstein lattice point
+$\tau = \omega = e^{2\pi i/3}$) have automorphism group $\mathbb{Z}/6\mathbb{Z}$.
+\end{proposition}
+
+\begin{proof}
+$\sigma(6) = 12$ and $12^3 = 1728 = j(i)$ (classical; see Silverman~\S II.6).
+The lattice $\mathbb{Z}[\omega]$ has sixfold symmetry,
+giving $\operatorname{Aut}(E) \cong \mathbb{Z}/6\mathbb{Z}$
+for any elliptic curve with $j = 0$.
+\end{proof}
+
+\begin{proposition}[Eisenstein units]\label{prop:eisenstein}
+The ring of Eisenstein integers $\mathbb{Z}[\omega]$,
+$\omega = e^{2\pi i/3}$, has exactly $w(-3) = 6$ units,
+forming the cyclic group $\mathbb{Z}/6\mathbb{Z}$.
+This is the maximum unit count among all imaginary quadratic
+integer rings $\mathcal{O}_K$, $K = \mathbb{Q}(\sqrt{d})$, $d < 0$.
+\end{proposition}
+
+\begin{proof}
+The units of $\mathbb{Z}[\omega]$ are $\{\pm 1, \pm\omega, \pm\omega^2\}$,
+which form a cyclic group of order~$6$.
+By Dirichlet's unit theorem, the only imaginary quadratic rings with
+$w > 2$ are $d = -1$ ($w = 4$) and $d = -3$ ($w = 6$).
+\end{proof}
+
+\begin{proposition}[Congruent number]\label{prop:congruent}
+$6$ is a congruent number, witnessed by the Pythagorean triple
+$(3, 4, 5) = (\sigma(6)/\tau(6),\; \tau(6),\; \operatorname{sopfr}(6))$.
+The associated elliptic curve $E_6\colon y^2 = x^3 - 36x$ has:
+\begin{itemize}
+\item generator $P = (-\varphi(6),\, 2^{\tau(6)-1}) = (-2, 8)$,
+\item $j$-invariant $= \sigma(6)^3 = 1728$,
+\item torsion subgroup $\mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$
+  of order $\tau(6) = 4$.
+\end{itemize}
+\end{proposition}
+
+\begin{proof}
+The right triangle with sides $3, 4, 5$ has area
+$3 \cdot 4/2 = 6$, so $6$ is congruent.
+The point $(-2, 8)$ lies on $E_6$ since $(-2)^3 - 36(-2) = -8 + 72 = 64 = 8^2$.
+The $j$-invariant of $y^2 = x^3 + Ax$ is $j = 1728 \cdot (4A)^3/(-16(4A^3)) = 1728$
+for all $A \neq 0$.
+The $2$-torsion points are the roots of $x^3 - 36x = x(x-6)(x+6)$,
+giving $(0,0), (6,0), (-6,0)$ plus $\mathcal{O}$,
+so $E_6[2] \cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2\mathbb{Z}$
+of order~$4 = \tau(6)$.
+\end{proof}
+
+\begin{remark}
+These three independent algebraic structures---units of
+$\mathbb{Z}[\omega]$, the modular $j$-invariant, and the
+elliptic curve $E_6$---all converge on the arithmetic of $n = 6$
+through the factorization $6 = 2 \cdot 3$,
+the unique product of consecutive primes.
+\end{remark}
 
 \end{document}
