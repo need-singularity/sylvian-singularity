@@ -34,7 +34,14 @@ whenever $7 \cdot 2^{a-2} + a$ is prime.
 \section{Introduction}
 
 Let $\sigma(n)$, $\tau(n)$, and $\varphi(n)$ denote the sum of divisors,
-number of divisors, and Euler's totient function, respectively. Define
+number of divisors, and Euler's totient function, respectively.
+In the Dirichlet ring, $\sigma = \mathbf{1} * \mathrm{id}$ and
+$\varphi = \mu * \mathrm{id}$, so
+$\sigma * \varphi = (\mathbf{1} * \mu) * (\mathrm{id} * \mathrm{id})
+= \varepsilon * (\mathrm{id} * \mathrm{id}) = n\tau(n)$.
+Thus $\sigma(n)\varphi(n) = n\tau(n)$ asks when the
+\emph{pointwise} product equals the \emph{Dirichlet convolution}.
+Define
 \[
   R(n) = \frac{\sigma(n)\varphi(n)}{n\,\tau(n)}.
 \]
