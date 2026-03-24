@@ -872,7 +872,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-24](docs/hypotheses/H-CX-24-overconfidence-dunning-kruger.md) | 과신=Dunning-Kruger | 🟩 3셋! | d1: 정상→과신→고착, CIFAR: 경계만 |
 | [H-CX-25](docs/hypotheses/H-CX-25-mi-efficiency-fingerprint-correlation.md) | MI효율=FP상관=0.705 | 🟨 | C39=H318 일치, N=10 불확실 |
 | [H-CX-26](docs/hypotheses/H-CX-26-tension-calibration.md) | 장력=calibration | ⬛ 반박 | ECE: softmax 0.008 << tension 0.656, 2셋 재확인 |
-| [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | ts=ln(4) | ⬛ 반박 | 통과점, ts∝(1/3)ln(ep) (H320) |
+| [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | ts=ln(4) | ⬛ 반박확정 | 100ep: 감쇠진동→~1.1, ln(4)≠수렴점 |
 | [320](docs/hypotheses/320-tension-scale-log-growth.md) | ts∝0.36·ln(ep) | 🟧 | R²=0.97, 성장률~0.36(1/3근사7%), 정확도포화 |
 | [H-CX-28](docs/hypotheses/H-CX-28-information-theory-unification.md) | 6H=2ts+3ln3 | 🟧★ 부분 | 2극 자기일관, 4극 반박(ts=0.28) |
 | [H-CX-29](docs/hypotheses/H-CX-29-telepathy-tension-transfer.md) | 텔레파시=장력전달 | 🟨 | TP-1~5: 전달,강도,일방향,분열,합의 |
