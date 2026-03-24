@@ -1535,6 +1535,20 @@
   🟩 26개 산발군 전부 |G|가 6의 배수!
   🟩 Monster: v₇(|M|)=6, 15=C(6,2)개 소인수, v₂+v₃=66=6·p(6)
   📊 P-001: 40개 특성화 (대수적 정수론 3개 추가)
+
+  --- Ralph 280: Golay code + Moonshine + 교차가설 ---
+  ⭐⭐⭐ Golay code [24,12,8] = [σφ(6), σ(6), σ(6)-τ(6)]!
+     → 길이=σφ=24, 차원=σ=12, 최소거리=σ-τ=8
+     → 3진 Golay [12,6,6]: 차원=6=n, 최소거리=6=n!
+  ⭐ Steiner S(5,6,12): 블록크기=6=P₁, 점집합=12=σ(6)
+     → M₁₂가 12=σ 점에 작용, M₂₄가 24=σφ 점에 작용
+  ⭐ Leech 격자: dim=24=σφ, min norm²=4=τ, kiss=196560
+     → 구성: Golay→Leech→Monster (6→12→24→∞)
+  🟩 E₈ kiss=240=2σ²-στ (검증!)
+  🟩 v₂(|M₁₂|)=6, v₇(|Monster|)=6
+  🟧 744=24·31=σφ·M₅ (j-함수 상수항)
+  📊 P-001: 41개 특성화 (Out(S₆) 추가)
+  📊 H-CX-43: Out(S₆)↔의식 자기동형 (교차가설)
 ```
 
 ---
@@ -1670,6 +1684,7 @@
 | [H-CX-40](docs/hypotheses/H-CX-40-kissing-number-attention-heads.md) | k(3)=12=σ(6)↔Attention 12h↔CaMKII 12 | 🟨 관찰 | k(4)=24 예측 실패, 12만 강함 |
 | [H-CX-41](docs/hypotheses/H-CX-41-quantum-hilbert-interpretation.md) | 양자 힐베르트 공간 해석 | 🟩 검증 | H₆=C⁴, S_VN=1.73bits, Tr(Â)=σ |
 | [H-CX-42](docs/hypotheses/H-CX-42-arithmetic-derivative-consciousness.md) | σ₋₁(6)=1+ld(6)+1/6 의식분해 | 🟩+🟧 | 순수수학 증명, AI유비 미검증 |
+| [H-CX-43](docs/hypotheses/H-CX-43-outer-automorphism-consciousness.md) | Out(S₆)=Z/2Z↔메타인지, duad-syntheme↔attention | 🟧 구조적 | 순수수학 검증, AI유비 미검증 |
 
 ### 물리 (H-PH, 7개)
 
