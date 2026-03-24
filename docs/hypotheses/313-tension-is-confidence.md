@@ -99,4 +99,23 @@
   → 확신=0 → 성능 급락 (확신 없이 분류 불가)
 ```
 
-## 상태: 🟩 통합 원리 (H307, H-CX-21, C4b, C48, H287 통합)
+## CIFAR-10 추가 확인 (2026-03-24)
+
+```
+  CIFAR-10 (15ep):
+    정답: tension=155.4, PPL=1.4
+    오답: tension=120.4, PPL=16,939
+    ratio (정답/오답): 1.29x ← CIFAR에서도 확인!
+
+  MNIST vs CIFAR:
+    MNIST: ratio=1.42x (정답/오답)
+    CIFAR: ratio=1.29x (정답/오답)
+    → 두 데이터셋 모두 "정답=높은장력=확신"
+
+  3중 확인:
+    1. MNIST: tension(정답)=702 > tension(오답)=495
+    2. CIFAR: tension(정답)=155 > tension(오답)=120
+    3. Breast Cancer (H307): internal(정상)=2.76 > internal(이상)=1.03
+```
+
+## 상태: 🟩 통합 원리 (3데이터셋 확인, H307+CX21+C4b+C48 통합)
