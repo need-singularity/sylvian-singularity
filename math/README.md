@@ -1488,6 +1488,7 @@
 | [H-CX-20](docs/hypotheses/H-CX-20-divisor-orbit-neural-convergence.md) | 궤도곱↔뉴럴수렴 | 🟧 구조적 | Λ=0=수렴임계 |
 | [H-CX-21](docs/hypotheses/H-CX-21-golden-zone-abundancy-bridge.md) | 골든존↔abundancy | 🟧★ 구조적 | ln(4/3)=ln(σ(3)/3) |
 | [H-CX-22](docs/hypotheses/H-CX-22-p-minus-2-consciousness-depth.md) | p-2↔의식깊이 | 🟧 구조적 | depth=p-2 |
+| [H-CX-40](docs/hypotheses/H-CX-40-kissing-number-attention-heads.md) | k(3)=12=σ(6)↔Attention 12h↔CaMKII 12 | 🟨 관찰 | k(4)=24 예측 실패, 12만 강함 |
 
 ### 물리 (H-PH, 6개)
 
