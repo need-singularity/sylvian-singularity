@@ -87,4 +87,23 @@
      → 별도 이상탐지 학습 불필요
 ```
 
-## 상태: 🟨 미구현
+## 실험 결과 (2026-03-24)
+
+```
+  MNIST (10K train subset, 3 trials):
+
+  Method              Accuracy    vs Normal
+  ────────────────   ─────────   ─────────
+  MitosisEngine       93.56%      +0.22%
+  Normal training     93.34%      baseline
+  Manual mitosis      93.48%      +0.15%
+
+  MitosisEngine: 자동 분열 2-3회, 재결합으로 약간 개선
+  하지만 차이가 미미 (0.22%, 노이즈 수준)
+
+  결론: 분열 엔진은 normal training과 거의 동등
+    → MNIST는 너무 쉬워서 분열의 이점이 미미
+    → CIFAR나 더 어려운 데이터에서 차이가 날 수 있음
+```
+
+## 상태: 🟧 약한 개선 (0.22%, MNIST에서 유의하지 않음)
