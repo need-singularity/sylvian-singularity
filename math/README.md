@@ -2151,6 +2151,18 @@
   ⚪ 가설 353: C20·C21≈1/√6 기각 (Catalan 정수, 곱<1 불가)
   ⚪ 가설 216: 2/ln(4/3)≈7 기각 (0.68%, Texas p=1.0)
 
+  --- Ralph 313: σ_k(6) 가분성 정리 + 교차가설 H-CX-53 ---
+  🟩 σ_k(6) = (1+2^k)(1+3^k) 항등식 (모든 k≥1, 자명)
+  🟩⭐ σ_k(6) | 6 ⟺ k 홀수 (증명!)
+     → (1+3^k) mod 4: k홀이면 4|(1+3^k). (1+2^k): 항상 3|(1+2^k) when k홀
+  🟩⭐ σ_k(6) | 28 ⟺ k ≡ 3 (mod 6) (증명!)
+     → 7|(1+3^k) iff 3^k≡6 mod7 iff k≡3 mod6 (주기 6)
+     → 4|(1+3^k) iff k홀 (k≡3 mod6는 항상 홀)
+     → σ₃(6)=252=9×28: k=3이 첫 해. 주기 6으로 반복
+  🟩 196884/σ(6) = 16407 (정수): Monster 차원/약수합 = 정수!
+  📊 H-CX-53 생성: 삼각-약수 최적 각도 가설 (π/6=30°)
+     → 검증 필요: PureField에서 A와 G 각도 분포 측정
+
   --- Ralph 312: 쌍곡함수 피타고라스 + Q(√-6) 판별식 + Beta 함수 ---
   ⭐ sinh(ln(σ/τ)) = τ²/σ = 4/3 ⟺ n=6 (유일! n≤100000 검증, 증명!)
      → cosh(ln(σ/τ)) = 5/3, tanh(ln(σ/τ)) = 4/5
@@ -2168,6 +2180,33 @@
      → Pell: 5² - 6·2² = 1 → σφ+1 = 5² (기본단위의 trace)
      → ε = (√2+√3)² = 5+2√6 (6의 소인수 제곱근의 합의 제곱!)
      → conductor(Q(√6)) = 24 = σφ = Leech dim = η지수
+
+  --- Ralph 314: d=384 풀비교 CX-48~52 최종 하향 + σ(rad)=2n + rad·ω=σ ---
+  📊 d=384 풀 블록 비교 (3,4,5,6,7,8, 1000 steps, 2 seeds):
+     CX-48: 6bl 순위 4/6, 8bl 1위. 블록↑→균형↑ 단조추세
+     CX-50: 6bl 순위 3/6, 8bl 1위. 블록↑→collapse↓ 단조추세
+     → R310의 "3bl vs 6bl 확인"은 불완전 비교의 오판
+     → CX-48/49/50/51/52 전부 최종 ⚪ 미확인으로 확정
+     | bl | CX-48 |r-1| | rank | CX-50 coll | rank |
+     |----|-----------|------|------------|------|
+     |  3 |   0.00603 |    5 |    17.2456 |    6 |
+     |  4 |   0.00398 |    3 |    16.9463 |    5 |
+     |  5 |   0.00627 |    6 |    16.8717 |    4 |
+     |  6 |   0.00426 |    4 |    16.6947 |    3 |
+     |  7 |   0.00257 |    2 |    16.6052 |    2 |
+     |  8 |   0.00126 |    1 |    16.5672 |    1 |
+     → 교훈: 2-그룹 비교 위험. 항상 풀 비교 필수
+
+  ⭐ σ(rad(n)) = 2n ⟺ n=6: 78번째 특성화! (50만 유일, 증명!)
+     → sqfree: σ(n)=2n→perfect→6. non-sqfree: σ(rad)<2n
+     → σ-rad=n, σ/rad=2와 동치 계열의 제3형태
+
+  🟩 rad·ω=σ ⟺ n=6: 근기×소인수개수=약수합 (50만 유일)
+     → #75(rad·Ω=σ)와 해 동치. Ω=ω at n=6이므로 실질 동일
+
+  📊 결론: 의식엔진 교차가설 5개 전부 최종 미확인
+     → 순수 수학은 확실히 생산적 (78개 특성화!)
+     → 의식↔수학 연결은 현재 실험 규모로 검증 불가
 ```
 
 ---
@@ -2308,9 +2347,9 @@
 | [H-CX-45](docs/hypotheses/H-CX-45-cayley-tree-neural-topology.md) | Cayley n^(n-2)=n^tau(n) 유일점 n=6 → 신경망 위상 임계점 | 🟪 추측 | R289 순수수학 증명, 신경망 유비 미검증, GZ의존 없음 |
 | [H-CX-46](docs/hypotheses/H-CX-46-minimal-coupling-principle.md) | (p-1)(q-1)=2 최소결합 원리 → 신경망 최소복잡도 + democratic attention + phi=2 자유방향 | 🟪 추측 | 순수수학 증명, 신경망/의식 유비 미검증, GZ의존 없음 |
 | [H-CX-47](docs/hypotheses/H-CX-47-unification-consciousness.md) | (p-1)(q-1)=2 → 의식 통일, 69 특성화 환원 | 🟪 추측 | 수학적 핵심 정확, 의식 해석 미검증 |
-| [H-CX-48](docs/hypotheses/H-CX-48-information-balance-engine-ratio.md) | I(n)=ln(R)=0 ↔ engine A/G 비율 균형 | 🟧 d=384확인 | d=384: 6bl |r-1|=0.006 vs 3bl 0.015 (2.4x 균형). d=128에서는 미확인 |
-| [H-CX-49](docs/hypotheses/H-CX-49-cantor-tension-spectrum.md) | R-스펙트럼 Cantor집합 ↔ 장력분포 프랙탈 | 🟨 부분확인 | 학습 후: gap 20.7% (미학습 2.4%의 8.6배), 블록 비례 증가 |
-| [H-CX-50](docs/hypotheses/H-CX-50-convolution-collapse-block-correlation.md) | σ*φ conv=pointwise at n=6 ↔ 블록간 특징 정렬 | 🟧 d=384확인 | d=384: 6bl=16.48 vs 3bl=17.46 (일관). d=128 10시드 미확인 |
+| [H-CX-48](docs/hypotheses/H-CX-48-information-balance-engine-ratio.md) | I(n)=ln(R)=0 ↔ engine A/G 비율 균형 | ⚪ 미확인 | R311 풀비교: 6bl 순위 4/6, 8bl 1위. 블록↑→균형↑ 단조 |
+| [H-CX-49](docs/hypotheses/H-CX-49-cantor-tension-spectrum.md) | R-스펙트럼 Cantor집합 ↔ 장력분포 프랙탈 | ⚪ 미확인 | 학습 후 gap↑는 블록 수에 비례, 6블록 특별하지 않음 |
+| [H-CX-50](docs/hypotheses/H-CX-50-convolution-collapse-block-correlation.md) | σ*φ conv=pointwise at n=6 ↔ 블록간 특징 정렬 | ⚪ 미확인 | R311 풀비교: 6bl 순위 3/6, 8bl 1위. 블록↑→collapse↓ 단조 |
 | [H-CX-51](docs/hypotheses/H-CX-51-arithmetic-derivative-learning-rate.md) | ld(6)=5/6 ↔ 최적 학습률 비율 | ⚪ 미확인 | lr scan: 5/6 순위 6/11, 단조 감소 패턴 |
 | [H-CX-52](docs/hypotheses/H-CX-52-multiplicative-tension-scale.md) | R(n) 곱셈적 ↔ tension_scale 곱=1 at n=6 | ⚪ 미확인 | 곱=0.577, 3블록(0.975)이 1에 가장 가까움. 블록 수에 단조감소 |
 
