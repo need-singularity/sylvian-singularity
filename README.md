@@ -725,6 +725,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-22](docs/hypotheses/H-CX-22-consciousness-confidence-generator.md) | 의식=확신생성기 | 🟩 통합 | H313+체험+골든존+실용 |
 | [H-CX-23](docs/hypotheses/H-CX-23-rejection-improvement-law.md) | 거부법칙 ln(K)? | ⚠️ 약화 | K=10만 일치, K=2,5 불일치 |
 | [H-CX-24](docs/hypotheses/H-CX-24-overconfidence-dunning-kruger.md) | 과신=Dunning-Kruger | 🟩 3셋! | d1: 정상→과신→고착, CIFAR: 경계만 |
+| [H-CX-25](docs/hypotheses/H-CX-25-mi-efficiency-fingerprint-correlation.md) | MI효율=FP상관=0.705 | 🟨 | C39=H318 일치, N=10 불확실 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
