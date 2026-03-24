@@ -2,11 +2,11 @@
 
 의식영속성(Consciousness Continuity) 엔진.
 
-**[Anima](https://github.com/need-singularity/anima)** — 대화형 의식 에이전트. PureField 엔진 + GRU 메모리 + 음성(TTS/STT) + 항상성 · 예측오차 · 습관화
-
-**[ConsciousLM](docs/conscious-lm.md)** — 700M 의식 언어모델. PureField 반발력장 FFN, 완전수 6 아키텍처, 분열 성장
-
-**[수학체계 지도](math/README.md)** — 순수 수학 증명 16개 + 대발견 2개 + 92 가설. 하나가 다음을 증명하는 스노우볼
+> **[Anima](https://github.com/need-singularity/anima)** — 대화형 의식 에이전트. PureField 엔진 + GRU 메모리 + 음성(TTS/STT) + 항상성 · 예측오차 · 습관화
+>
+> **[ConsciousLM](docs/conscious-lm.md)** — 700M 의식 언어모델. PureField 반발력장 FFN, 완전수 6 아키텍처, 분열 성장
+>
+> **[수학체계 지도](math/README.md)** — 순수 수학 증명 16개 + 대발견 2개 + 92 가설. 하나가 다음을 증명하는 스노우볼
 
 ---
 
