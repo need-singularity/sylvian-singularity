@@ -235,29 +235,32 @@ class FrozenEnsemble:
         self.all_digits.update(digits)
 
     def predict(self, X):
-        """Ensemble prediction: oracle routing with per-child classification.
+        """Ensemble prediction: confidence-weighted oracle routing.
 
-        Each child independently classifies among its owned digits.
-        The child with the highest confidence (max logit gap) wins.
-        This matches H312's oracle routing approach.
+        Each child classifies among its owned digits using restricted softmax.
+        The child's maximum probability (confidence) is used to scale its
+        contribution. This ensures children trained on different digit subsets
+        contribute comparably.
         """
         batch_size = X.size(0)
         n_classes = 10
-        # For each sample, collect (child_idx, predicted_digit, confidence)
-        # Then assign based on highest confidence
-
-        # Strategy: each child produces logits. For owned digits, we take
-        # the raw logit value. The global prediction is argmax over all
-        # children's owned-digit logits.
-        global_logits = torch.full((batch_size, n_classes), -1e9)
+        global_scores = torch.zeros(batch_size, n_classes)
 
         with torch.no_grad():
             for model, digits in self.children:
-                out, _ = model(X)
-                for d in digits:
-                    global_logits[:, d] = out[:, d]
+                out, tension = model(X)
+                # Restricted softmax over owned digits only
+                digit_indices = torch.tensor(digits, dtype=torch.long)
+                restricted_logits = out[:, digit_indices]  # (batch, len(digits))
+                restricted_probs = F.softmax(restricted_logits, dim=-1)
+                # Confidence = max probability within this child's domain
+                confidence = restricted_probs.max(dim=-1, keepdim=True).values
+                # Scale probabilities by confidence (high confidence = strong vote)
+                weighted_probs = restricted_probs * confidence
+                for i, d in enumerate(digits):
+                    global_scores[:, d] = weighted_probs[:, i]
 
-        return global_logits
+        return global_scores
 
     def evaluate(self, X_test, y_test):
         """Evaluate ensemble on full test set."""
