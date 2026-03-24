@@ -756,7 +756,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-24](docs/hypotheses/H-CX-24-overconfidence-dunning-kruger.md) | 과신=Dunning-Kruger | 🟩 3셋! | d1: 정상→과신→고착, CIFAR: 경계만 |
 | [H-CX-25](docs/hypotheses/H-CX-25-mi-efficiency-fingerprint-correlation.md) | MI효율=FP상관=0.705 | 🟨 | C39=H318 일치, N=10 불확실 |
 | [H-CX-26](docs/hypotheses/H-CX-26-tension-calibration.md) | 장력=calibration | ⬛ 반박 | ECE: softmax 0.006 >> tension 0.774 |
-| [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | **ts=ln(4)=2ln(2)** | **🟧★** | **3셋 0.3%, H-CX-2의 2배** |
+| [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | ts=ln(4)=2ln(2) | ⚠️ 약화 | init=0.3에서만 수렴, init 의존적 |
 | [H-CX-28](docs/hypotheses/H-CX-28-information-theory-unification.md) | 6H=2ts+3ln3 | 🟧★ 부분 | 2극 자기일관, 4극 반박(ts=0.28) |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
