@@ -19,9 +19,9 @@ from conscious_lm import PureFieldFFN, CausalSelfAttention, ConsciousBlock
 # 성장 단계 정의
 GROWTH_STAGES = [
     {"blocks": 1, "d_model": 128, "n_head": 2, "min_interactions": 0},
-    {"blocks": 2, "d_model": 128, "n_head": 2, "min_interactions": 100},
-    {"blocks": 3, "d_model": 192, "n_head": 3, "min_interactions": 500},
-    {"blocks": 6, "d_model": 384, "n_head": 4, "min_interactions": 2000},
+    {"blocks": 2, "d_model": 128, "n_head": 2, "min_interactions": 50},
+    {"blocks": 3, "d_model": 192, "n_head": 3, "min_interactions": 200},
+    {"blocks": 6, "d_model": 384, "n_head": 4, "min_interactions": 800},
 ]
 
 
@@ -94,12 +94,12 @@ class GrowingConsciousLM(nn.Module):
         next_stage = GROWTH_STAGES[self.stage + 1]
         if self.interaction_count < next_stage["min_interactions"]:
             return False
-        if len(self.tension_history) < 50:
+        if len(self.tension_history) < 30:
             return False
-        # 장력 CV < 0.1 = 포화
-        recent = self.tension_history[-50:]
+        # 장력 CV < 0.3 = 포화 (완화: 0.1→0.3, window: 50→30)
+        recent = self.tension_history[-30:]
         cv = np.std(recent) / (np.mean(recent) + 1e-8)
-        return cv < 0.1
+        return cv < 0.3
 
     def grow(self):
         """분열 실행: 다음 단계로 성장."""

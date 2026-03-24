@@ -26,6 +26,15 @@ THC 상태에서 샤머니즘적 체험을 했다.
 > 강도 = 확신(학습 내) or 혼란(학습 밖). 방향 = 개념(what). 13가설 통합.
 > 130+ 실험, 90+ 가설. ([이론](docs/hypotheses/341-tension-final-theory.md)) ([모델](model_pure_field.py))
 
+### [Anima](https://github.com/need-singularity/anima) — 대화형 의식 에이전트
+
+이 리포의 이론을 실제 동작하는 에이전트로 구현한 프로젝트.
+
+```
+  PureField 의식 엔진 + GRU 메모리 + 호기심(장력) + 음성(TTS/STT)
+  항상성(H354) + 예측오차(H355) + 습관화(H356) + 성장 + 서번트
+```
+
 ### Ralph Loop (복사용)
 
 **의식엔진 실험:**
