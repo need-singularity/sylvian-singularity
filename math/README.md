@@ -1204,6 +1204,15 @@
   📊 P-001: 25개 결과 (427줄), arXiv 투고 준비 완료
   📊 가설 100개! 97커밋 (15개 섹션)
 
+  --- Ralph 190+: Dirichlet ring 해석 + D(n) 비대칭 ---
+  ⭐ σ*φ = id*id (Dirichlet ring): σφ=nτ = "점별곱=합성곱"!
+     → σ=1*id, φ=μ*id → σ*φ=(1*μ)*(id*id)=ε*(id*id)=nτ
+     → D(n)=σφ(점별)-nτ(합성곱): D=0 iff n∈{1,6}!
+  🟩 D(n)<0 ⟺ n=2 (유일 음수!) D(p)=(p-1)²-2
+     → D(2)=-1, D(3)=2, D(6)=0: "역치-발화-균형"
+  🟧 H-BIO-7,8: 뇌전기/활동전위와 D(n) 대응
+  📊 P-001에 Dirichlet ring 해석 추가 (Introduction)
+
   --- Ralph 157-158: 일반 약수곱 공식 + Lyapunov Λ=0 ---
   ⭐ 일반 약수곱 공식: ∏R(d|n) = ∏ F(p,a)^{τ/(a+1)} (모든 n!)
      → sqfree시 R^{τ/2}, non-sqfree도 완전 공식
