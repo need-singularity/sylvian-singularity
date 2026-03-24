@@ -263,6 +263,8 @@ DFS on consciousness engine and cross-domain H-CX hypotheses. RECURSIVE: each it
 ```
   API 키: .local/runpod_api_key (gitignore됨, 커밋 금지!)
   사용법: export RUNPOD_API_KEY=$(cat .local/runpod_api_key)
+  CLI: runpodctl 설치됨 (runpodctl get pod, runpodctl send/receive 등)
+  API: GraphQL (https://api.runpod.io/graphql) — Pod CRUD, GPU 조회 등
   계정: nerve011235@gmail.com
 
   현재 Pod:
