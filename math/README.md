@@ -1490,7 +1490,7 @@
 | [H-AI-7](docs/hypotheses/H-AI-7-golden-moe-information-bottleneck.md) | IB 최적 = 1/e | ⏳ 미검증 | |
 | [H-AI-8](docs/hypotheses/H-AI-8-six-dim-representation.md) | 6차원 임베딩 | ⏳ 미검증 | |
 | [H-AI-9](docs/hypotheses/H-AI-9-loss-landscape-six.md) | loss landscape 6 | ⏳ 미검증 | |
-| [H-AI-10](docs/hypotheses/H-AI-10-tokenizer-vocab-six.md) | vocab=6^k | ⏳ 약함 | |
+| [H-AI-10](docs/hypotheses/H-AI-10-tokenizer-vocab-six.md) | vocab=6^k | ⚪ 반증 | 2^k가 2.8x 우세 (13/16 모델) |
 | [H-AI-11](docs/hypotheses/H-AI-11-R-chain-training.md) | R-chain 학습 동역학 | ⏳ 미검증 | |
 
 ### 의식엔진 교차 (H-CX, 22개)
