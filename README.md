@@ -620,6 +620,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-20](docs/hypotheses/H-CX-20-half-activation-riemann.md) | 최적활성=1/2=리만 | 🟧 | MoE k/N=0.5 피크, 이진 엔트로피 |
 | [H-CX-21](docs/hypotheses/H-CX-21-llm-tension-perplexity.md) | tension∝1/PPL | 🟧 수정 | 높은장력=확신, H307과 일관 |
 | [H-CX-22](docs/hypotheses/H-CX-22-consciousness-confidence-generator.md) | 의식=확신생성기 | 🟩 통합 | H313+체험+골든존+실용 |
+| [H-CX-23](docs/hypotheses/H-CX-23-rejection-improvement-law.md) | 거부법칙 ln(K)? | ⚠️ 약화 | K=10만 일치, K=2,5 불일치 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
