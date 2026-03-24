@@ -504,13 +504,200 @@ The chain $120 \xrightarrow{R} 6 \xrightarrow{R} 1$
 (i.e., $5! \to 3! \to 1!$) is the unique complete descent
 $3$-perfect $\to$ $2$-perfect $\to$ $1$-perfect.
 
-In total, this paper presents $30$ distinct characterizations of $n = 6$,
+In total, this paper presents $33$ distinct characterizations of $n = 6$,
 including multiplicative ($\sigma\varphi = n\tau$),
 additive ($3(\sigma+\varphi) = 7n$, $\varphi + \tau = n$),
 dynamical ($\Lambda = 0$), Dedekind ($\psi/\varphi = n$),
 master ($\Omega = 3$), combinatorial ($q(n) = \tau$, $p_{\text{even}} = \sigma/\tau$),
-and factorial ($\sigma\varphi = \tau!$).
+factorial ($\sigma\varphi = \tau!$),
+lcm ($\sigma = 2\operatorname{lcm}$), M\"obius ($\mu\sigma = 2n$),
+and Lucas ($L(n) = 3n$).
 All reduce to a single elementary fact:
 $2$ and $3$ are the only consecutive primes.
+
+\section{Three new characterizations}
+
+\begin{theorem}\label{thm:sigma-lcm}
+For $n \geq 2$, $\sigma(n) = 2 \cdot \operatorname{lcm}(p_1, \ldots, p_{\omega(n)})$
+if and only if $n = 6$, where $p_1, \ldots, p_{\omega(n)}$ are the distinct
+prime factors of~$n$.
+\end{theorem}
+
+\begin{proof}
+Write $n = p_1^{a_1} \cdots p_k^{a_k}$ with $p_1 < \cdots < p_k$.
+Set $L = \operatorname{lcm}(p_1, \ldots, p_k) = p_1 \cdots p_k$
+(since the $p_i$ are distinct primes).
+The equation $\sigma(n) = 2L$ becomes
+\[
+  \prod_{i=1}^{k} \frac{p_i^{a_i+1} - 1}{p_i - 1}
+  = 2 \prod_{i=1}^{k} p_i.
+\]
+
+\textbf{Case 1: $n$ squarefree} ($a_i = 1$ for all~$i$).
+Then $\sigma(n) = \prod (p_i + 1)$ and $L = n = \prod p_i$, so the equation is
+\[
+  \prod_{i=1}^{k} (p_i + 1) = 2 \prod_{i=1}^{k} p_i,
+  \quad\text{i.e.,}\quad
+  \prod_{i=1}^{k} \frac{p_i + 1}{p_i} = 2.
+\]
+
+\emph{Subcase $k = 1$:} $(p+1)/p = 2$ gives $p = 1$, not prime.
+
+\emph{Subcase $k = 2$:} $(p+1)(q+1) = 2pq$ with $p < q$ primes.
+Expanding: $pq + p + q + 1 = 2pq$, so $p + q + 1 = pq$,
+hence $(p-1)(q-1) = 2$.
+The only factorization of $2$ with $p - 1 \geq 1$ is
+$(p-1, q-1) = (1, 2)$, giving $(p, q) = (2, 3)$ and $n = 6$.
+
+\emph{Subcase $k \geq 3$:} We show $\prod (p_i+1)/p_i > 2$.
+For $k = 3$ with the smallest primes $2, 3, 5$:
+\[
+  \frac{3}{2} \cdot \frac{4}{3} \cdot \frac{6}{5}
+  = \frac{72}{30} = \frac{12}{5} = 2.4 > 2.
+\]
+Since $(p+1)/p > 1$ for every prime and
+$\prod_{i=1}^{k} (p_i+1)/p_i \geq (3/2)(4/3)(6/5) = 2.4$
+for $k \geq 3$, the product strictly exceeds~$2$.
+(Indeed, for any additional prime $r \geq 7$,
+$(r+1)/r \geq 8/7 > 1$ only pushes the product further above~$2$.)
+
+\textbf{Case 2: $n = p^a$ a prime power} ($k = 1$, $a \geq 2$).
+Then $\sigma(p^a) = (p^{a+1}-1)/(p-1)$ and $L = p$.
+The equation becomes $(p^{a+1}-1)/(p-1) = 2p$.
+For $a = 2$: $p^2 + p + 1 = 2p$, so $p^2 - p + 1 = 0$,
+discriminant $-3 < 0$---no real solution.
+For $a \geq 3$: $(p^{a+1}-1)/(p-1) = 1 + p + \cdots + p^a \geq 1 + p + p^2 + p^3
+\geq 15 > 2p$ for $p = 2$, and grows with~$p$.
+More precisely, $\sigma(p^a) \geq p^a + p^{a-1} > 2p$ for $a \geq 2$ and $p \geq 2$.
+
+\textbf{Case 3: $n$ non-squarefree with $k \geq 2$} ($a_j \geq 2$ for some~$j$).
+Then $\sigma(n) = \prod \sigma(p_i^{a_i})$ and $L = \prod p_i$.
+For any $p_i$ with $a_i \geq 2$:
+\[
+  \frac{\sigma(p_i^{a_i})}{p_i}
+  = \frac{p_i^{a_i+1}-1}{p_i(p_i-1)}
+  \geq \frac{p_i^3-1}{p_i(p_i-1)}
+  = \frac{p_i^2+p_i+1}{p_i} = p_i + 1 + 1/p_i > p_i + 1.
+\]
+For the remaining primes with $a_i = 1$:
+$\sigma(p_i)/p_i = (p_i+1)/p_i$.
+Thus $\sigma(n)/L > (p_j + 1) \prod_{i \neq j} (p_i+1)/p_i$.
+For $p_j = 2$: this exceeds $3 \cdot (4/3) = 4 > 2$.
+For $p_j \geq 3$: this exceeds $4 \cdot (3/2) = 6 > 2$.
+In all cases $\sigma(n) > 2L$.
+
+Therefore $n = 6$ is the unique solution.
+\end{proof}
+
+\begin{theorem}\label{thm:mobius-sigma}
+$\mu(n) \cdot \sigma(n) = 2n$ if and only if $n = 6$.
+\end{theorem}
+
+\begin{proof}
+The equation $\mu(n) \sigma(n) = 2n$ imposes two simultaneous conditions:
+
+\textbf{Condition 1: $\mu(n) \neq 0$,} i.e., $n$ is squarefree.
+
+\textbf{Condition 2: $\sigma(n) = \pm 2n$,} with sign determined by~$\mu(n)$.
+
+Since $\sigma(n) \geq n + 1 > 0$ for $n \geq 2$, we need $\mu(n) > 0$,
+hence $\mu(n) = 1$ (even number of prime factors) and $\sigma(n) = 2n$.
+
+The condition $\sigma(n) = 2n$ means $n$ is a \emph{perfect number}.
+Combined with squarefreeness and $\mu(n) = 1$:
+
+\textbf{Even perfect numbers.}
+By the Euler--Euclid theorem, every even perfect number has the form
+$n = 2^{p-1}(2^p - 1)$ where $2^p - 1$ is a Mersenne prime.
+For $n$ to be squarefree, we need $p - 1 \leq 1$ (otherwise $4 \mid n$).
+Thus $p \leq 2$, giving $p = 2$ and $n = 2 \cdot 3 = 6$.
+Check: $\mu(6) = \mu(2 \cdot 3) = 1$ (two prime factors) and
+$\sigma(6) = 12 = 2 \cdot 6$. So $\mu(6)\sigma(6) = 12 = 2 \cdot 6$. \checkmark
+
+For $p \geq 3$: $n = 2^{p-1}(2^p-1)$ with $p - 1 \geq 2$,
+so $4 \mid n$ and $\mu(n) = 0$ (not squarefree).
+Explicitly: $n = 28 = 2^2 \cdot 7$ has $\mu(28) = 0$;
+$n = 496 = 2^4 \cdot 31$ has $\mu(496) = 0$; etc.
+
+\textbf{Odd perfect numbers.}
+If an odd perfect number $n$ exists, Euler showed it has the form
+$n = q^\alpha m^2$ where $q \equiv \alpha \equiv 1 \pmod{4}$
+and $\gcd(q, m) = 1$.
+Since $m^2 > 1$ (as $n > 1$ and $n$ is not a prime power---odd
+perfect numbers have $\omega(n) \geq 9$ by Nielsen),
+$n$ has a squared factor, so $\mu(n) = 0$.
+Hence no odd perfect number (if any exist) is squarefree,
+and the equation $\mu(n)\sigma(n) = 2n$ cannot be satisfied.
+
+Therefore $n = 6$ is the unique solution.
+\end{proof}
+
+\begin{remark}
+The characterization $\mu(n)\sigma(n) = 2n$ elegantly fuses two
+classical conditions---perfectness ($\sigma = 2n$) and Möbius
+non-vanishing ($\mu \neq 0$, i.e., squarefreeness)---into a
+single equation. Among the infinitely many perfect numbers
+(assuming the infinitude of Mersenne primes), only $6$ is squarefree
+with an even number of prime factors. This is because the Euler--Euclid
+form $2^{p-1}(2^p-1)$ forces $4 \mid n$ whenever $p \geq 3$.
+\end{remark}
+
+\begin{theorem}\label{thm:lucas}
+Among positive integers, $L(n) = 3n$ if and only if $n = 6$,
+where $L(n)$ denotes the $n$-th Lucas number defined by
+$L(0) = 2$, $L(1) = 1$, $L(n) = L(n-1) + L(n-2)$.
+\end{theorem}
+
+\begin{proof}
+We use the Binet formula $L(n) = \varphi^n + \psi^n$ where
+$\varphi = (1+\sqrt{5})/2 \approx 1.618$ and
+$\psi = (1-\sqrt{5})/2 \approx -0.618$, with $|\psi| < 1$.
+
+\textbf{Step 1: Direct verification for $1 \leq n \leq 11$.}
+
+\begin{center}
+\begin{tabular}{r|rrrrrrrrrrrr}
+$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+\hline
+$L(n)$ & 1 & 3 & 4 & 7 & 11 & 18 & 29 & 47 & 76 & 123 & 199 \\
+$3n$ & 3 & 6 & 9 & 12 & 15 & 18 & 21 & 24 & 27 & 30 & 33 \\
+\end{tabular}
+\end{center}
+
+The unique solution in this range is $n = 6$: $L(6) = 18 = 3 \cdot 6$.
+
+\textbf{Step 2: $L(n) > 3n$ for all $n \geq 7$.}
+
+We prove by strong induction that $L(n) > 3n$ for $n \geq 7$.
+
+\emph{Base cases:} $L(7) = 29 > 21 = 3 \cdot 7$ and
+$L(8) = 47 > 24 = 3 \cdot 8$.
+
+\emph{Inductive step:} Suppose $L(k) > 3k$ for all $7 \leq k \leq n-1$
+with $n \geq 9$. Then
+\[
+  L(n) = L(n-1) + L(n-2) > 3(n-1) + 3(n-2) = 6n - 9 = 3n + (3n - 9).
+\]
+Since $n \geq 9$, we have $3n - 9 \geq 18 > 0$, so $L(n) > 3n$.
+
+\textbf{Step 3: Conclusion.}
+
+For $n \leq 6$: direct computation shows $L(n) < 3n$ for $n \in \{1,2,3,4,5\}$
+and $L(6) = 3 \cdot 6$.
+For $n \geq 7$: $L(n) > 3n$ by Step~2.
+
+Therefore $n = 6$ is the unique positive integer satisfying $L(n) = 3n$.
+\end{proof}
+
+\begin{remark}
+The identity $L(6) = 18 = 3 \cdot 6$ connects three constants:
+the golden ratio ($L$ is the Lucas sequence associated to $\varphi$),
+the integer $3 = \sigma(6)/\tau(6)$, and the perfect number~$6$.
+Since $L(n) \sim \varphi^n$ grows exponentially while $3n$ grows linearly,
+the equation $L(n) = 3n$ can have only finitely many solutions;
+the proof shows there is exactly one.
+The induction threshold at $n = 9 = 3^2$ is sharp:
+$L(9) = 76$ while $6 \cdot 9 - 9 = 45$, confirming the slack is positive.
+\end{remark}
 
 \end{document}

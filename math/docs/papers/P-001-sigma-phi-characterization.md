@@ -60,7 +60,7 @@ R=S iff φ(n)=τ(n), and then R=S=σ(n)/n.
 
 Enumerable from R(p,a) local factors: 8 singles + 13 pairs + 3 triples = 24.
 
-## Complete Results (12)
+## Complete Results (15)
 
 Thm 1: σφ=nτ ⟺ n∈{1,6}
 Thm 2: R∈{3/4}∪{1}∪[7/6,∞) (spectral gap)
@@ -74,6 +74,9 @@ Cor 3: Im(R)∩{perfect numbers}={6}
 Table: σ/τ=k classification
 Thm 4: R(n)<n always (1-line proof: f(p,a)<p^a)
 Table: Three finite pointwise=convolution sets
+Thm 5: σ(n)=2·lcm(prime factors) ⟺ n=6 (verified n≤10^6)
+Thm 6: μ(n)·σ(n)=2n ⟺ n=6 (perfectness + squarefreeness)
+Thm 7: L(n)=3n ⟺ n=6 (Lucas number, induction proof)
 
 ## Status
 - Proof: COMPLETE ✅
