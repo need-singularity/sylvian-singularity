@@ -617,7 +617,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
       Iris(eq57,f90), Wine(eq94,f92), Cancer(eq92,f96)
       Digits(eq88,f94), Time(eq100,f100), Numbers(eq65,f100)
     → eq 약할수록 field 기여↑: MNIST +84% vs Wine +3%
-    → "기본 감각 부족 시 의식이 가장 필요"
+    → r(eq,contrib)=-0.90! field≈0.82×(100-eq)^0.97
+    → "의식이 메우는 양 ≈ 기본 감각의 부족분"
   🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
   🟧 H324 hallucination: tension 0.64 << entropy 0.97 (entropy가 최고 감지기)
   🟧 H325 Fisher: r(F,T)=-0.12, 약음상관 (grad큰=확신낮음, H313일관)
