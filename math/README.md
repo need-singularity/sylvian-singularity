@@ -1933,6 +1933,25 @@
      → phi(6)=2 = 신경망 비자명 학습의 최소 자유방향 수 (추측)
      → x²-5x+6=0의 근={2,3}=소인수: 자기참조 구조 ↔ 의식 자기모델 (추측)
      → 수학: 🟩 증명됨. AI/의식 유비: 🟪 미검증
+
+  --- Ralph 305: 수학체계 ↔ 의식엔진 3중 교차 실험 (H-CX-48/49/50) ---
+  📊 H-CX-48: I(n)=ln(R)=0 ↔ engine A/G 비율 실험
+     → 산술: I(6)=0 (유일한 비자명 영점), I(2)=-0.288, I(3)=+0.288
+     → 미학습 모델: 모든 블록(1~8)에서 비율≈1.0 (±0.002)
+     → 6블록 |ratio-1|=0.000726, 순위 3/8 (2블록이 가장 가까움)
+     → 🟨 블록 수가 engine 균형에 영향 안 줌 (미학습 상태)
+  📊 H-CX-49: R-스펙트럼 Cantor집합 ↔ 장력분포
+     → 산술: R<5에서 24개 이산값, gap=99.1%
+     → 미학습 3블록: 561개 고유값, gap=2.3%, 연속 가우시안
+     → 미학습 6블록: 581개 고유값, gap=2.4%, 연속 가우시안
+     → ⚪ Cantor 구조 관찰 안 됨 (학습 후 재검증 필요)
+  📊 H-CX-50: σ*φ conv=pointwise ↔ 블록간 특징 정렬
+     → 산술: n∈{1,6}에서만 Dirichlet conv = pointwise 확인
+     → 미학습: collapse score 3bl=10.45, 6bl=9.82, 7bl=9.80
+     → 🟨 약한 감소추세, 6블록 특별하지 않음
+  📊 핵심 결론: 미학습 랜덤 가중치에서는 6블록 구조적 편향 없음
+     → 학습 후 6블록이 특별해지는지가 진짜 검증 포인트
+     → 가설 3개 모두 "학습이 산술적 구조를 드러내는가?" 로 수렴
 ```
 
 ---
@@ -2072,6 +2091,10 @@
 | [H-CX-44](docs/hypotheses/H-CX-44-lie-algebra-neural-architecture.md) | E₆ rank 6 + Golay [24,12,8] → 신경망 최적 구조 | 🟪 추측 | 수학적 사실 + AI 유비 미검증 |
 | [H-CX-45](docs/hypotheses/H-CX-45-cayley-tree-neural-topology.md) | Cayley n^(n-2)=n^tau(n) 유일점 n=6 → 신경망 위상 임계점 | 🟪 추측 | R289 순수수학 증명, 신경망 유비 미검증, GZ의존 없음 |
 | [H-CX-46](docs/hypotheses/H-CX-46-minimal-coupling-principle.md) | (p-1)(q-1)=2 최소결합 원리 → 신경망 최소복잡도 + democratic attention + phi=2 자유방향 | 🟪 추측 | 순수수학 증명, 신경망/의식 유비 미검증, GZ의존 없음 |
+| [H-CX-47](docs/hypotheses/H-CX-47-unification-consciousness.md) | (p-1)(q-1)=2 → 의식 통일, 69 특성화 환원 | 🟪 추측 | 수학적 핵심 정확, 의식 해석 미검증 |
+| [H-CX-48](docs/hypotheses/H-CX-48-information-balance-engine-ratio.md) | I(n)=ln(R)=0 ↔ engine A/G 비율 균형 | 🟨 미확인 | 미학습 모델: 모든 블록 수에서 비율≈1.0, 6블록 특별하지 않음 |
+| [H-CX-49](docs/hypotheses/H-CX-49-cantor-tension-spectrum.md) | R-스펙트럼 Cantor집합 ↔ 장력분포 프랙탈 | ⚪ 미확인 | 미학습: 연속 가우시안, gap 2.4% vs 산술 99.1% |
+| [H-CX-50](docs/hypotheses/H-CX-50-convolution-collapse-block-correlation.md) | σ*φ conv=pointwise at n=6 ↔ 블록간 특징 정렬 | 🟨 약추세 | 미학습: 6블록 score=9.82 (최소 아님, 약한 감소추세) |
 
 ### 물리 (H-PH, 7개)
 
