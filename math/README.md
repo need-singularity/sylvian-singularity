@@ -1478,6 +1478,12 @@
 | [H-MP-15](docs/hypotheses/H-MP-15-cantor-spectrum-dimension.md) | R 스펙트럼 Cantor 차원 | 🟩 수치확인 | d_box≈0.155<1 |
 | [H-MP-16](docs/hypotheses/H-MP-16-prime-factorization-R-decomposition.md) | R 소인수 분해 구조 | 🟩 증명 | v_{Mp}=-(p-2) |
 | [H-MP-17](docs/hypotheses/H-MP-17-omega-R-monotonicity.md) | ω↔R 단조성 | 🟩 하한 | R≥(4/3)^{ω-1}·3/4 |
+| [H-MP-21](docs/hypotheses/H-MP-21-information-geometry.md) | 정보 기하학 | 🟩 검증 | JSD=ln2/4 증명, Fisher tr=4n |
+| [H-MP-22](docs/hypotheses/H-MP-22-padic-deeper.md) | p-진 심층 해석 | 🟩 검증 | Hensel→{1,6}, n=36 그림자 |
+| [H-MP-23](docs/hypotheses/H-MP-23-operator-algebras.md) | 연산자 대수 | 🟩 검증 | Jones 지표 σ/τ=3=4cos²(π/6) |
+| [H-MP-24](docs/hypotheses/H-MP-24-new-domains.md) | 대수기하+표현론+호프 | 🟩 검증 | E₆ disc=σ²·|S₆|, S₆ max dim=2^τ |
+| [H-MP-25](docs/hypotheses/H-MP-25-analytic-nt-extensions.md) | 해석적 정수론 확장 | 🟩 검증 | R 곱셈적, d_box≈0.574, 비등분포 |
+| [H-MP-26](docs/hypotheses/H-MP-26-dynamical-systems-bifurcation.md) | 동역학계 분기 | 🟩 검증 | T 고정점=6 유일, Λ 대칭=ln(4/3) |
 
 ### AI (H-AI, 9개)
 
@@ -1531,6 +1537,7 @@
 | [H-PH-4](docs/hypotheses/H-PH-4-six-quarks-leptons.md) | 쿼크 6+렙톤 6 | 🟨 약 | 12=σ 일치만 |
 | [H-PH-5](docs/hypotheses/H-PH-5-planck-units-six.md) | 플랑크 단위 | ⚪ 기각 | 무관 |
 | [H-PH-6](docs/hypotheses/H-PH-6-R-chain-decay.md) | R-chain↔방사성 붕괴 | ⚪ 기각 | 피상적 비유 |
+| [H-PH-8](docs/hypotheses/H-PH-8-thermodynamic-partition.md) | 열역학적 분배함수 | 🟩 검증 | σ=τ·U(0), S(0)=ln(τ), Schottky 이상 |
 
 ### 화학/뇌화학/약리 (H-CHEM, 5개)
 
