@@ -235,29 +235,29 @@ class FrozenEnsemble:
         self.all_digits.update(digits)
 
     def predict(self, X):
-        """Ensemble prediction: each child votes on its owned digits.
+        """Ensemble prediction: oracle routing.
 
-        For each sample, we collect logits from all children but mask
-        logits for digits each child does NOT own. Then average the
-        unmasked logits.
+        Each child classifies the input among its owned digits only.
+        We collect per-child softmax probabilities (restricted to owned digits),
+        then pick the global class with highest probability across all children.
         """
         batch_size = X.size(0)
         n_classes = 10
-        logit_sum = torch.zeros(batch_size, n_classes)
-        logit_count = torch.zeros(batch_size, n_classes)
+        # Collect best probability per digit across all children
+        global_probs = torch.full((batch_size, n_classes), -1e9)
 
         with torch.no_grad():
             for model, digits in self.children:
                 out, _ = model(X)
-                for d in digits:
-                    logit_sum[:, d] += out[:, d]
-                    logit_count[:, d] += 1.0
+                # Restrict softmax to only owned digits
+                digit_indices = torch.tensor(digits, dtype=torch.long)
+                restricted_logits = out[:, digit_indices]  # (batch, len(digits))
+                restricted_probs = F.softmax(restricted_logits, dim=-1)
+                # Place these probabilities back into global positions
+                for i, d in enumerate(digits):
+                    global_probs[:, d] = restricted_probs[:, i]
 
-        # For digits with no owner (should not happen), use -inf
-        mask = logit_count == 0
-        logit_avg = logit_sum / logit_count.clamp(min=1)
-        logit_avg[mask] = -1e9
-        return logit_avg
+        return global_probs
 
     def evaluate(self, X_test, y_test):
         """Evaluate ensemble on full test set."""
