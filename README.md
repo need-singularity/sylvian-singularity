@@ -1083,6 +1083,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [373](docs/hypotheses/373-causal-effect-difficulty-gradient.md) | **인과 난이도 그래디언트** | **🟨** | **C48 Fashion 중간점 검증** |
 | [374](docs/hypotheses/374-conscious-lm-training-validation.md) | **ConsciousLM 학습 검증** | **🟨** | **PureFieldFFN vs 표준FFN PPL** |
 | [375](docs/hypotheses/375-batch-verification-protocol.md) | **🟨 대량 검증 프로토콜** | **🟨** | **30개 가설 병렬 검증 계획** |
+| [376](docs/hypotheses/376-structural-growth-via-mitosis.md) | **구조적 성장 (분열)** | **🟨 구현** | **1→2→3→6 약수경로, 서번트 비대칭 분열** |
 
 ### 색각/시각 (354c-356c)
 
