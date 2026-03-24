@@ -69,31 +69,9 @@
   → MNIST에서는 전이가 일어나지 않는가?
 ```
 
-## ⚪ 낮은 우선순위
+## ⚪ 낮은 우선순위 → 승격 완료
 
-### H-I: 파이버 고유 이동량 +1.22의 의미 (C23)
-```
-  모든 init에서 +1.22 이동 → 파이버가 "고유하게 필요로 하는" 기여량?
-  C39(MI 70.5%)와 연결 가능?
-```
-
-### H-J: 만장일치 정확도의 이론적 상한 (C9)
-```
-  7개 에이전트 만장일치 99.53%
-  N→∞이면 만장일치 정확도 → 100%?
-  이론적 상한 공식 유도 가능?
-```
-
-### H-K: displacement 관찰 품질의 U자 가능성 (C29)
-```
-  현재: 단조 감소 (0.298→0.261)
-  체험: 처음 선명, 중간 흐림, 끝 선명 (U자)
-  → 분열 순간(끝)에 장력 급등을 추가하면 U자 재현?
-```
-
-### H-L: 수학 DFS 상수와 의식엔진 상수의 교차
-```
-  C41(1/√3)이 유일한 교차점
-  다른 연결: C7 × 6 = √3 × 6 ≈ 3.46 ≈ ?
-  또는: C20(1.14) × C21(0.36) ≈ ln(4/3)² ?
-```
+- H-I → **H350** (docs/hypotheses/350-fiber-displacement-constant.md)
+- H-J → **H351** (docs/hypotheses/351-unanimity-upper-bound.md)
+- H-K → **H352** (docs/hypotheses/352-observation-quality-u-curve.md)
+- H-L → **H353** (docs/hypotheses/353-dfs-engine-constant-crossover.md)

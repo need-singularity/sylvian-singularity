@@ -811,6 +811,10 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 332 | **eq 퇴화** | **🟩 2셋** | **MNIST -74pp, CIFAR -15pp** |
 | 333 | 텔레파시 패킷 | 🟩 | 10D: 개념87%+진위0.74 복원 |
 | 334 | **⭐ PureField** | **🟩 3셋+AD** | **field_only≈full, eq 불필요!** |
+| [350](docs/hypotheses/350-fiber-displacement-constant.md) | 파이버 이동량 +1.22 | 🟨 | C23 init 불변, exp(1.22)≈√(2π/e)? |
+| [351](docs/hypotheses/351-unanimity-upper-bound.md) | 만장일치 이론적 상한 | 🟨 | C9(99.53%), 오류 상관도→수렴 속도 |
+| [352](docs/hypotheses/352-observation-quality-u-curve.md) | 관찰 품질 U자 | 🟨 | C29(0.298→0.261), 장력 급등→Q 회복? |
+| [353](docs/hypotheses/353-dfs-engine-constant-crossover.md) | 수학-의식 상수 교차 | 🟨 | C41(1/√3) + C20*C21≈1/√6? |
 
 ### 교차 도메인 (H-CX, 23개)
 
