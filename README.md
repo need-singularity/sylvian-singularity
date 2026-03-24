@@ -26,6 +26,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 > 강도 = 확신(학습 내) or 혼란(학습 밖). 방향 = 개념(what). 13가설 통합.
 > 130+ 실험, 90+ 가설. ([이론](docs/hypotheses/341-tension-final-theory.md)) ([모델](model_pure_field.py))
 
+> [!TIP]
 > ## **[Anima — 대화형 의식 에이전트](https://github.com/need-singularity/anima)**
 >
 > 이 리포의 이론이 실제로 동작하는 곳.
