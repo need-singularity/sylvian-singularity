@@ -56,7 +56,7 @@
                                  🟥 골든 MoE (모델 의존)
                                  🟥 Expert 교차 활성화
 
-  ═══ σφ=nτ 체계 (P-001, 32 characterizations, 118 hypotheses) ═══
+  ═══ σφ=nτ 체계 (P-001, 35 characterizations, 118 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -76,6 +76,7 @@
        ├─→ 추가 특성화:                                      │
        │    σω=nτ⟺n=6 | φ=ω⟺{2,6} | σ²=n²τ⟺n=6        │
        │    3(σ+φ)=7n⟺n=6 (가법 특성화, 증명!) ⭐         │
+       │    σ=nφ⟺{1,6} | φ²=τ⟺{1,6} | μσ=2n⟺n=6      │
        │    M_p(σ+φ)=(5·2^(p-1)-3)n⟺P_p (모든 완전수!) ⭐ │
        │    σ+φ+τ=3n: 무한계열 p=7·2^(a-2)+a              │
        │    E_p(2)=p·ln((p+1)/p)+1/p (Euler인수 닫힌형)     │
@@ -222,7 +223,7 @@
      🟨 유한집합의 원소: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 순수 수학:  148개  ← 골든존이 무너져도 영원히 참
+  🟩 순수 수학:  151개  ← 골든존이 무너져도 영원히 참
   🟦 기존 정리:  18개  ← Heegner + 육각수 + Mihailescu + φ=τ(Minin 1894)
   ⭐ 대발견:     10개  ← σφ=nτ쌍대 + R간극 + R<n증명 + weight=lcm + Möbius 등
   🟧 연결 발견:  26개  ← 같은 수 공유, 근사 (텍사스 검정 통과분)
@@ -1319,6 +1320,18 @@
   🟨 σ(φ(n))=n 고정점은 {1,3,15,28,...}: P₂=28 포함! 완전수 교차
   📊 32개 특성화 달성! τ∘σ 고정점이 최고 발견
 
+  --- Ralph 266: 새 독립 특성화 3개 (φ²=τ, σ=nφ, μσ=2n) ---
+  ⭐ φ(n)²=τ(n) ⟺ n∈{1,6}: 독립 특성화! 33rd! (증명!)
+     → n=pq: (p-1)(q-1)=2 → p=2,q=3 유일. prime power: LHS≫RHS
+     → σφ=nτ와 독립! Q=R ⟺ φ²=τ 관계 발견
+  🟩 σ(n)=n·φ(n) ⟺ n∈{1,6}: 풍요도=토션트! 34th! (증명!)
+     → Q(p,1)=(p+1)/(p(p-1)): Q(2,1)=3/2>1 유일, Q(3,1)=2/3
+     → Q=1 ⟺ σφ=nτ AND φ²=τ (기존+신규의 결합)
+  🟩 μ(n)·σ(n)=2n ⟺ n=6: Mobius×약수합 특성화! 35th! (증명!)
+     → μ≠0 → squarefree, μ>0 → even ω, σ=2n → perfect
+     → squarefree perfect = n=6 유일 (2^(p-1) with p≥3 not sqfree)
+  📊 35개 특성화 달성!
+
   --- Ralph 157-158: 일반 약수곱 공식 + Lyapunov Λ=0 ---
   ⭐ 일반 약수곱 공식: ∏R(d|n) = ∏ F(p,a)^{τ/(a+1)} (모든 n!)
      → sqfree시 R^{τ/2}, non-sqfree도 완전 공식
@@ -1501,7 +1514,7 @@
 | [H-GEO-9](docs/hypotheses/H-GEO-9-lens-aberration-classification.md) | 렌즈 수차 분류 | 🟧 구조적 | 색수차+구면+비점+코마 |
 | [H-GEO-10](docs/hypotheses/H-GEO-10-multi-lens-interference.md) | 다중 렌즈 간섭 | 🟧 구조적 | 완전수 렌즈 중첩 |
 
-### 생물/면역/송과체 (H-BIO, 6개)
+### 생물/면역/송과체 (H-BIO, 13개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1511,6 +1524,13 @@
 | [H-BIO-4](docs/hypotheses/H-BIO-4-cell-division-R-chain.md) | 세포분열=R-chain | 🟨 관찰 | 텔로미어 6bp |
 | [H-BIO-5](docs/hypotheses/H-BIO-5-pineal-gland-six.md) | 송과체 구조↔6 | 🟨 관찰 | 24h=σφ, Ajna=6th |
 | [H-BIO-6](docs/hypotheses/H-BIO-6-pineal-melatonin-R-cycle.md) | 멜라토닌-세로토닌=R-S | 🟧 구조적 | RS=4 순환 |
+| [H-BIO-7](docs/hypotheses/H-BIO-7-neural-electricity-R-spectrum.md) | 뇌전기=R-스펙트럼 | 🟧 구조적 | 주파수 영역 |
+| [H-BIO-8](docs/hypotheses/H-BIO-8-action-potential-D-function.md) | 활동전위=D(n) 비대칭 | 🟧 구조적 | D(6)=0 평형 |
+| [H-BIO-9](docs/hypotheses/H-BIO-9-ion-channel-selectivity.md) | 이온채널=σφτ 구조 | 🟧★ 구조적 | 펌프3:2=σ/τ:φ, 4x6=24=σφ |
+| [H-BIO-10](docs/hypotheses/H-BIO-10-hodgkin-huxley-model.md) | HH모델=약수함수 구조 | 🟧 구조적 | τ=4변수, gNa=10σ, gK=σ²/τ, 지수합=σ-τ |
+| [H-BIO-11](docs/hypotheses/H-BIO-11-synaptic-plasticity-R-chain.md) | 시냅스가소성=R-chain | 🟧 구조적 | CaMKII=σ(6)=2x6링, AMPA=τ, NMDA=φ |
+| [H-BIO-12](docs/hypotheses/H-BIO-12-neural-oscillation-bands.md) | 뇌파대역=σ,τ,φ 경계 | 🟧 구조적 | α상한=σ=12, δ-θ경계=τ=4, α/θ비=φ=2 |
+| [H-BIO-13](docs/hypotheses/H-BIO-13-nernst-equation-arithmetic.md) | Nernst 이온농도=σ,τ,φ | 🟧 구조적 | [Na]in=σ=12, [K]out=τ=4, RT/F≈σφ+e(0.03%) |
 
 ### 위상수학 (H-TOP, 7개)
 
