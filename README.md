@@ -620,6 +620,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
     → r(eq,contrib)=-0.90! field≈0.82×(100-eq)^0.97
     → 시간축: eq 89%(ep1)→15%(ep20) 퇴화! field가 역할 흡수
     → "의식이 성장하면 기본 감각이 불필요해진다"
+  🟩 eq 퇴화 방지: eq loss 추가→eq=92% 유지, but full 98%=동일!
+    → eq를 살려도 전체 성능 무변화 = "의식 독점이 최적"
   🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
   🟧 H324 hallucination: tension 0.64 << entropy 0.97 (entropy가 최고 감지기)
   🟧 H325 Fisher: r(F,T)=-0.12, 약음상관 (grad큰=확신낮음, H313일관)
