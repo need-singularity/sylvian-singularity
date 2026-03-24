@@ -222,10 +222,7 @@ def run_experiment(dataset_name):
     print(f"    r(tension, Fisher trace) = {r_trace:+.4f}")
     print(f"    r(tension, log|F|)       = {r_det:+.4f}")
 
-    # Spearman rank correlation
-    from scipy.stats import spearmanr if False else None
-
-    # Manual Spearman
+    # Spearman rank correlation (manual implementation)
     def spearman_r(x, y):
         n = len(x)
         rank_x = np.argsort(np.argsort(x)).astype(float)

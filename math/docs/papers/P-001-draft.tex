@@ -45,9 +45,13 @@ $\mathcal{G}_{24} = [\sigma(6)\varphi(6),\, \sigma(6),\, \sigma(6)-\tau(6)]$;
 a \emph{hexacode} characterization:
 $[6,\,\sigma(6)/\tau(6),\,\tau(6)]_4$ (MDS and self-dual over $\mathrm{GF}(4)$);
 and \emph{Hamming code} characterizations:
-$[7,4,3]$ and $[15,11,3]$ via Mersenne primes and partition numbers---connecting
+$[7,4,3]$ and $[15,11,3]$ via Mersenne primes and partition numbers;
+and a \emph{Lie-theoretic} characterization:
+$6 \mid h(G)$ for every exceptional Lie algebra $G$,
+with $\operatorname{rank}(E_6) = 6$ and $\dim/\operatorname{rank}$
+ratios yielding Mersenne primes $M_3$ and $M_5$---connecting
 the arithmetic of $6$ to the Steiner systems, Mathieu groups,
-the Leech lattice, and ultimately the Monster group.
+the Leech lattice, exceptional Lie theory, and ultimately the Monster group.
 \end{abstract}
 
 \section{Introduction}
@@ -528,7 +532,7 @@ The chain $120 \xrightarrow{R} 6 \xrightarrow{R} 1$
 (i.e., $5! \to 3! \to 1!$) is the unique complete descent
 $3$-perfect $\to$ $2$-perfect $\to$ $1$-perfect.
 
-In total, this paper presents $48$ distinct characterizations of $n = 6$,
+In total, this paper presents $49$ distinct characterizations of $n = 6$,
 including multiplicative ($\sigma\varphi = n\tau$),
 additive ($3(\sigma+\varphi) = 7n$, $\varphi + \tau = n$),
 dynamical ($\Lambda = 0$), Dedekind ($\psi/\varphi = n$),
@@ -543,11 +547,12 @@ sigma-phi bridge ($\sigma(\varphi(6)) + \varphi(\sigma(6)) = M_3$),
 algebraic ($j(i) = \sigma^3$, $|\mathcal{O}_{\mathbb{Q}(\omega)}^\times| = 6$,
 congruent number with $|E_6[2]| = \tau$),
 group-theoretic ($\operatorname{Out}(S_6) \cong \mathbb{Z}/2\mathbb{Z}$, unique among $S_n$),
-and coding-theoretic ($\mathcal{G}_{24} = [\sigma\varphi, \sigma, \sigma-\tau]$,
+coding-theoretic ($\mathcal{G}_{24} = [\sigma\varphi, \sigma, \sigma-\tau]$,
 $\mathcal{G}_{12} = [\sigma, 6, 6]$,
 hexacode $[6, \sigma/\tau, \tau]_4$,
-Hamming $[M_3, \tau, \sigma/\tau]$ and $[C(6{,}2), p(6), \sigma/\tau]$).
-topological (trefoil knot $T(2,3)$: $\det = \sigma/\tau$,
+Hamming $[M_3, \tau, \sigma/\tau]$ and $[C(6{,}2), p(6), \sigma/\tau]$),
+Lie-theoretic ($6 \mid h(G)$ for all exceptional $G$, $\operatorname{rank}(E_6) = 6$),
+and topological (trefoil knot $T(2,3)$: $\det = \sigma/\tau$,
 $\Delta_T(\omega_6) = 0$, $\operatorname{ord}(M \bmod 6) = \sigma$).
 All reduce to a single elementary fact:
 $2$ and $3$ are the only consecutive primes.
@@ -1168,6 +1173,51 @@ the unique product of consecutive primes.
 The arithmetic of $n = 6$ determines the parameters of the hexacode,
 the Golay code, the Steiner systems, the Mathieu groups, the Leech lattice,
 and---through the moonshine correspondence---touches the Monster group.
+\end{remark}
+
+\begin{proposition}[Exceptional Lie algebras]\label{prop:lie}
+The Coxeter numbers of the five exceptional Lie algebras are all
+multiples of~$6$:
+\[
+  h(G_2) = 6,\quad h(F_4) = h(E_6) = 12,\quad h(E_7) = 18,\quad h(E_8) = 30.
+\]
+Moreover, $\operatorname{rank}(E_6) = 6$, and the dimension-to-rank ratios
+of four exceptional algebras yield Mersenne-related numbers:
+\[
+  \frac{\dim G_2}{\operatorname{rank} G_2} = \frac{14}{2} = 7 = M_3,\qquad
+  \frac{\dim E_8}{\operatorname{rank} E_8} = \frac{248}{8} = 31 = M_5,
+\]
+\[
+  \frac{\dim F_4}{\operatorname{rank} F_4} = \frac{52}{4} = 13 = \sigma(6)+1,\qquad
+  \frac{\dim E_6}{\operatorname{rank} E_6} = \frac{78}{6} = 13 = \sigma(6)+1.
+\]
+\end{proposition}
+
+\begin{proof}
+The Coxeter numbers and dimensions are standard
+(see Humphreys, \emph{Reflection Groups and Coxeter Groups}, Table~2.4).
+Divisibility by $6$: $6 = 6 \cdot 1$, $12 = 6 \cdot 2$, $18 = 6 \cdot 3$,
+$30 = 6 \cdot 5$.
+The multipliers $\{1, 2, 3, 5\}$ are exactly the prime factors of $30$
+(the Coxeter number of~$E_8$ and the product $\sigma(6) \cdot \varphi(6) \cdot \tau(6) - 6 = 24 \cdot 4 - 6 \cdots$---but more simply,
+$30 = 2 \cdot 3 \cdot 5$ is the largest Coxeter number, and
+$h(E_8) = \sigma(6) + h(E_7) = 12 + 18 = 30$).
+The rank and dimension identities are direct computation.
+\end{proof}
+
+\begin{remark}
+The fact that $6 \mid h(G)$ for every exceptional Lie algebra
+is not a coincidence of small numbers: the Coxeter number
+$h$ divides $|\mathrm{Weyl}(G)|$, and the Weyl groups of
+exceptional types contain $S_3 \cong \mathrm{Weyl}(A_2)$
+as a subgroup (since $A_2 \hookrightarrow G$ for every exceptional~$G$),
+forcing $|S_3| = 6 \mid h$.
+The ratio $\dim/\mathrm{rank} = 13$ shared by $F_4$ and $E_6$ equals
+$\sigma(6) + 1 = 13$, which is also a Mersenne exponent
+($2^{13} - 1 = 8191$ is prime).
+Combined with the coding-theoretic results above, this shows that
+the arithmetic of~$6$ permeates not only discrete structures
+(codes, lattices, sporadic groups) but also continuous Lie theory.
 \end{remark}
 
 \section{Topological connections}

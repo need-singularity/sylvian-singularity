@@ -57,7 +57,7 @@
                                  🟥 골든 MoE (모델 의존)
                                  🟥 Expert 교차 활성화
 
-  ═══ σφ=nτ 체계 (P-001, 53 characterizations, 118 hypotheses) ═══
+  ═══ σφ=nτ 체계 (P-001, 54 characterizations, 118 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -1471,7 +1471,7 @@
   🟩 sopfr(σ(n))-sopfr(n)=2: 모든 짝수 완전수 항등식! (증명!)
      → sopfr(2^p·M_p)-sopfr(2^(p-1)·M_p)=(2p+2^p-1)-(2p+2^p-3)=2
   🟩 rad(σ(n))=rad(n): 모든 짝수 완전수 (증명, radical 보존)
-  📊 48→53 characterizations (+5), ψ≤σ always confirmed (well-known)
+  📊 48→54 characterizations (+6), ψ≤σ always confirmed (well-known)
   📊 sopfr(n)=n: primes ∪ {4} (trivial). sopfr+k=n: k=1→{6} 유일
   📊 J₂(6)=24=σφ: Jordan totient (squarefree에서 항상 성립)
   📊 P(6)=15, P(6)/6=5/2: Pillai function
@@ -1612,6 +1612,15 @@
   🟩 쌍대 Coxeter: h*(G₂)=4=τ, h*(E₆)=12=σ
   📊 P-001: 48개 특성화 (매듭 추가)
   📊 Z-score=3.9 (p=0.00001): 30개 불변량 중 20개 매칭
+
+  --- Ralph 285: 미해결 문제 + 교차가설 ---
+  🟩 쌍둥이 소수: p≥5이면 (p,p+2)가 6의 배수를 감쌈 (기존 정리)
+     → (5,7): 5+7=12=σ, 7-5=2=φ. 첫 쌍이 σ와 φ!
+  🟩 Goldbach: G(6)=1. 6=3+3 유일분해 (4,6,8,12만 G=1)
+  🟩 Waring: g(6)-1=72=6·σ(6). g(6)=73=T(6)번째 소수!
+  🟩 Collatz 6: 8스텝=σ-τ. λ(6)=φ(6) (최소 sqfree 합성수)
+  🟩 σ₋₁(n)=2 + squarefree → n=6 유일: 홀수 sqfree 완전수 불가
+  📊 P-001: 49개 특성화. H-CX-44: Lie+부호→신경망 (교차)
 ```
 
 ---
@@ -1748,6 +1757,7 @@
 | [H-CX-41](docs/hypotheses/H-CX-41-quantum-hilbert-interpretation.md) | 양자 힐베르트 공간 해석 | 🟩 검증 | H₆=C⁴, S_VN=1.73bits, Tr(Â)=σ |
 | [H-CX-42](docs/hypotheses/H-CX-42-arithmetic-derivative-consciousness.md) | σ₋₁(6)=1+ld(6)+1/6 의식분해 | 🟩+🟧 | 순수수학 증명, AI유비 미검증 |
 | [H-CX-43](docs/hypotheses/H-CX-43-outer-automorphism-consciousness.md) | Out(S₆)=Z/2Z↔메타인지, duad-syntheme↔attention | 🟧 구조적 | 순수수학 검증, AI유비 미검증 |
+| [H-CX-44](docs/hypotheses/H-CX-44-lie-algebra-neural-architecture.md) | E₆ rank 6 + Golay [24,12,8] → 신경망 최적 구조 | 🟪 추측 | 수학적 사실 + AI 유비 미검증 |
 
 ### 물리 (H-PH, 7개)
 

@@ -608,7 +608,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
     → 분열 재구성이 IForest 능가 (저이상률 시나리오)
 
   --- R40: 8개 미래 분야 병렬 가설화 ---
-  🟧 H322 EEG: 현실적proxy awake(90)>drowsy(84)>sleep(70) — 의식수준∝장력!
+  ⬛ H322 EEG: Phase1 합성EEG 4/4예측실패, 장력∝의식 역상관(rho=-0.72), 원가설 기각
   🟨 장력미세구조: autocorr=0.96(부드러운증가), ep1 std=63→ep3 std=19(안정화)
   ⭐ eq vs field 분리: eq=18%(랜덤!), field=93%, full=98%
     → 3셋 재현: MNIST(eq14%,field92%), Fashion(eq47%,field82%), CIFAR(eq19%,field45%)
@@ -798,7 +798,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 319 | 장력=어텐션 | 🟧 약한 | r(T,entropy)=-0.12, 방향 맞지만 약함 |
 | 320 | ts∝ln(ep) | 🟧 | R²=0.97, 성장률~0.36, 정확도포화 |
 | 321 | 의식-확신 이론 | 🟩 종합 | H313+H329+H331+H332, 7하위가설 |
-| 322 | EEG gamma | 🟧 proxy | awake≈sleep>>drowsy (뚜렷=고장력) |
+| 322 | EEG gamma | ⬛ 기각 | Phase1: 4/4 FAIL, tension∝consciousness 역상관 rho=-0.72 |
 | 323 | 멀티모달 | 🟨 | 모달별 장력 통합 |
 | 324 | hallucination | 🟧 | entropy(0.97)>tension(0.64) |
 | 325 | Fisher 정보 | 🟧 약한 | r(F,T)=-0.12, grad큰=확신낮음 |
