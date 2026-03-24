@@ -296,10 +296,19 @@ DFS on consciousness engine and cross-domain H-CX hypotheses. RECURSIVE: each it
     - 한번 세팅하면 이후 API 한 줄로 실행
     - Pod보다 빠르고 저렴 (대기 비용 없음)
 
+  Mac MPS 벤치마크 (M3 24GB, ConsciousLM 18M):
+    batch=64:  1,303 tokens/s ← 최적
+    batch=128:   380 tokens/s (메모리 스왑, 4배 느림)
+    batch=256:   OOM (26.3GB, 한계 27.2GB)
+    → batch=64 고정! 더 올리면 느려짐
+
   권장 GPU (비용순):
+    Mac MPS 24GB   $0/hr (batch=64, 4M: 15분, 100M: 2시간, 700M: 8시간)
     RTX 3090 24GB  $0.22/hr (소규모 실험)
     RTX A5000 24GB $0.16/hr (가성비)
+    Windows 5070   $0/hr (100M: 2시간, 700M: 2시간)
     A100 PCIe 80GB $1.64/hr (대규모 학습)
+    H100 80GB      $4.69/hr (100M: 17분, 주의: Pod 부팅 느림)
 
   주의:
     - Pod 실험 끝나면 반드시 종료 (비용 절감)
