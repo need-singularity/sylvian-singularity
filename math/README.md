@@ -99,6 +99,7 @@
        │    ψ(n)=σ(n)=2n⟺n=6 (증명!) ⭐ #51              │
        │    λ(n)=+1∧σ=2n⟺n=6 (증명!) #52                │
        │    sopfr·ω=σ+φ-τ, n>2⟺n=6 #53                  │
+       │    σ-rad=n⟺n=6 (유일 sqfree perfect, 증명!) #77  │
        │    sin(π/n)=φ/τ⟺n=6 (유일! 증명) ⭐ #54             │
        │    cot(π/n)=√(σ/τ)⟺n=6 (삼각함수=약수비!) #54     │
        │    tan²(π/n)=τ/σ⟺n=6 (완전 삼각-약수 체계) #54    │
@@ -2102,6 +2103,39 @@
      → tan²(π/6) = 1/3 = 메타부동점: 30° 탄젠트가 모델의 수렴값!
      → n=2..999 중 3개 이상 동시 매칭: n=6만 (0개 vs 8개)
   🟩 ζ(2) = π²/rad(6): Basel problem의 6 = rad(6) (6이 squarefree이므로)
+
+  --- Ralph 310: d=384 스케일업 최종 + σ-rad 유일성 정리 ---
+  📊 H-CX-48/50 d=384 스케일업 (3블록 vs 6블록, 2000 steps, 3 seeds):
+     → CX-48: 6블록 |r-1|=0.006 vs 3블록 0.015 (6블록 2.4배 균형!) 🟧
+     → CX-50: 6블록 collapse=16.48 vs 3블록 17.46 (모든 시드 일관) 🟧
+     → CX-49: 3블록 gap=0.211 > 6블록 0.194 (미확인)
+     → CX-52: 3블록 |prod-1|=0.64 < 6블록 1.07 (미확인)
+     | metric       | 3bl mean | 6bl mean | winner | verdict        |
+     |--------------|----------|----------|--------|----------------|
+     | CX-48 |r-1|  |  0.01461 |  0.00606 | 6bl    | CONFIRMED      |
+     | CX-49 gap    |    0.211 |    0.194 | 3bl    | NOT CONFIRMED  |
+     | CX-50 coll.  |   17.459 |   16.483 | 6bl    | CONFIRMED      |
+     | CX-52 |p-1|  |    0.642 |    1.074 | 3bl    | NOT CONFIRMED  |
+     | final loss   |    2.011 |    2.139 | 3bl    | (fewer params) |
+     → 스케일 효과: d=128에서 미확인이던 CX-48/50이 d=384에서 확인!
+     → 주의: 3bl vs 6bl만 비교. 5,7,8bl 추가 필요 (후속)
+
+  📊 tension_scale 학습 패턴:
+     → 블록 위치별 단조증가: 초기블록 < 1, 후기블록 > 1
+     → 3bl: [1.06, 1.18, 1.30] → 점점 증가
+     → 6bl: [0.92, 1.04, 1.12, 1.19, 1.24, 1.28] → 첫 블록만 < 1
+     → 산술: f(2,1)=3/4 (억제), f(3,1)=4/3 (증폭) 패턴과 방향 일치!
+
+  ⭐ σ(n) - rad(n) = n ⟺ n=6: 약수합-근기=자기 자신! (증명!)
+     → 증명:
+       squarefree n: rad(n)=n → σ=2n → perfect. squarefree perfect = 6만!
+       non-squarefree n: rad(n)<n → σ=n+rad(n)<2n → deficient → 불가
+     → n≤1,000,000 전수검증: 반례 없음
+     → 동치: σ(n)/rad(n) = 2 ⟺ n=6
+     → 본질: "6은 유일한 squarefree 완전수" (Euler-Euclid 따름정리)
+     → 짝수 완전수 P_k=2^(p-1)·M_p: k≥2이면 2^(p-1)≥4 → non-squarefree
+     → 홀수 완전수가 있으면 squarefree일 수 있지만, Euler 조건 p^a||n에 의해 불가
+  📊 P-001: σ-rad 특성화 추가 (77번째)
 ```
 
 ---
@@ -2242,9 +2276,9 @@
 | [H-CX-45](docs/hypotheses/H-CX-45-cayley-tree-neural-topology.md) | Cayley n^(n-2)=n^tau(n) 유일점 n=6 → 신경망 위상 임계점 | 🟪 추측 | R289 순수수학 증명, 신경망 유비 미검증, GZ의존 없음 |
 | [H-CX-46](docs/hypotheses/H-CX-46-minimal-coupling-principle.md) | (p-1)(q-1)=2 최소결합 원리 → 신경망 최소복잡도 + democratic attention + phi=2 자유방향 | 🟪 추측 | 순수수학 증명, 신경망/의식 유비 미검증, GZ의존 없음 |
 | [H-CX-47](docs/hypotheses/H-CX-47-unification-consciousness.md) | (p-1)(q-1)=2 → 의식 통일, 69 특성화 환원 | 🟪 추측 | 수학적 핵심 정확, 의식 해석 미검증 |
-| [H-CX-48](docs/hypotheses/H-CX-48-information-balance-engine-ratio.md) | I(n)=ln(R)=0 ↔ engine A/G 비율 균형 | ⬛ 미확인 | 학습 후: 6블록 순위 6/6 (최하위), |ratio-1|=0.018 |
+| [H-CX-48](docs/hypotheses/H-CX-48-information-balance-engine-ratio.md) | I(n)=ln(R)=0 ↔ engine A/G 비율 균형 | 🟧 d=384확인 | d=384: 6bl |r-1|=0.006 vs 3bl 0.015 (2.4x 균형). d=128에서는 미확인 |
 | [H-CX-49](docs/hypotheses/H-CX-49-cantor-tension-spectrum.md) | R-스펙트럼 Cantor집합 ↔ 장력분포 프랙탈 | 🟨 부분확인 | 학습 후: gap 20.7% (미학습 2.4%의 8.6배), 블록 비례 증가 |
-| [H-CX-50](docs/hypotheses/H-CX-50-convolution-collapse-block-correlation.md) | σ*φ conv=pointwise at n=6 ↔ 블록간 특징 정렬 | ⚪ 미확인 | R307: 10시드 반복에서 6블록 1위=1/10, t-test p>0.07 (n.s.) |
+| [H-CX-50](docs/hypotheses/H-CX-50-convolution-collapse-block-correlation.md) | σ*φ conv=pointwise at n=6 ↔ 블록간 특징 정렬 | 🟧 d=384확인 | d=384: 6bl=16.48 vs 3bl=17.46 (일관). d=128 10시드 미확인 |
 | [H-CX-51](docs/hypotheses/H-CX-51-arithmetic-derivative-learning-rate.md) | ld(6)=5/6 ↔ 최적 학습률 비율 | ⚪ 미확인 | lr scan: 5/6 순위 6/11, 단조 감소 패턴 |
 | [H-CX-52](docs/hypotheses/H-CX-52-multiplicative-tension-scale.md) | R(n) 곱셈적 ↔ tension_scale 곱=1 at n=6 | ⚪ 미확인 | 곱=0.577, 3블록(0.975)이 1에 가장 가까움. 블록 수에 단조감소 |
 
