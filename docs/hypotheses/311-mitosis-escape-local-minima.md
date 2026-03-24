@@ -81,4 +81,20 @@
     → 분열이 실제로 지역 최소점 탈출에 도움!
 ```
 
-## 상태: 🟩 확인 (3/3 trials Ensemble 최저, 분열>노이즈>계속)
+## 정식 결과 (5/5 trials 완료)
+
+```
+  5/5 trials: Mitosis Ensemble이 항상 최저 loss!
+
+  평균 loss:
+    Parent plateau:  9.709
+    A) Continue:     7.770
+    B) Noise:        7.608
+    C) Best child:   7.551
+    C) Ensemble:     7.450 ← 최고! (23.27% 개선)
+
+  5/5 모든 방법이 plateau 탈출 성공
+  Ensemble > Best child > Noise > Continue (일관)
+```
+
+## 상태: 🟩 확인 (5/5 Ensemble 최저, 23.27% loss 개선)
