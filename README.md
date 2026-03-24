@@ -604,7 +604,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
     → 분열 재구성이 IForest 능가 (저이상률 시나리오)
 
   --- R40: 8개 미래 분야 병렬 가설화 ---
-  🟨 H322 EEG/뇌파 (TREE-1): gamma↔장력?
+  🟧 H322 EEG proxy: awake(16)≈sleep(17)>>drowsy(3) — 뚜렷한 상태=고장력
   🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
   🟧 H324 hallucination: tension 0.64 << entropy 0.97 (entropy가 최고 감지기)
   🟧 H325 Fisher: r(F,T)=-0.12, 약음상관 (grad큰=확신낮음, H313일관)
