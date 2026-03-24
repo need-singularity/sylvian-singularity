@@ -51,6 +51,11 @@ Equivalently, $\sigma(n)(\varphi(n)+1) = n(\tau(n)+\varphi(n))$
 holds iff $n$ is prime or $n \in \{1,6\}$---so $6$ is the unique
 composite satisfying both the Dirichlet identity $D = 0$
 and this additive reformulation $\sigma + D = n\varphi$.
+\emph{Proof sketch:} for $n = pq$, define
+$E = (p+q)(p-1)(q-1) - 2pq + 2$.
+At $p = 2$: $E = q(q-3) = 0$ iff $q = 3$.
+At $p \geq 3$: $E = 2(q-2)(q+1) > 0$.
+Prime powers $p^a$ ($a \geq 2$) give $Q > 1$.
 The gap $\{3,\ldots,13\} \cap \mathrm{Im}(D) = \emptyset$ is provable:
 at primes, $D(p) = (p-1)^2 - 2$ jumps from $2$ (at $p=3$) to $14$ (at $p=5$);
 at prime powers $2^k$, $D$ jumps from $2$ to $28$;
