@@ -516,7 +516,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
     → quick(3ep)에서는 k=4 피크, 정식(10ep 3trials)에서는 k=3 피크!
   🟧 H-CX-20 최적활성: 수정 → 1/2가 아니라 1/e에 더 가까움
   ⚠️ H-CX-23 거부법칙 ln(K): K=10만 일치, K=2,5 불일치
-  ⚠️ H-CX-15 서번트=1-1/e: 최적 0.50, 1-1/e 아님
+  → H-CX-15: 정식 결과 k=3/8≈1/e로 수정됨 (quick에서 k=4, 정식에서 k=3)
   ⬛ H-CX-12 27x=(σ/τ)³: scale 의존적, 우연
   ⚠️ H-CX-13 체험=IB: detach ablation 효과 없음
 
@@ -529,6 +529,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
   🟩 텍스트임베딩: +6.39% (TREE-2 확인)
   🟩 음성4극: +3.33% (Chord 분리 86-90%)
   🟩 이상탐지: AUROC=1.0 (95x 비율!)
+
+  --- 새루프 R1: 통합 검증 ---
+  🟩 H315 이중역할: 모든 N에서 ratio>1(confidence) + delta>0(regularizer)
 
   섬 연결: 10/10 + 2 새섬(F,G) 전부 연결!
   가설: 16 실증 + 14 반증/약화 + 20 관측/수정 = 50개 + H-CX 23개
@@ -568,13 +571,33 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | E28 | A/G 복잡도 | experiment_h279_ag_dominance.py | CIFAR r=+0.49, MNIST r=0 | — |
 | E29 | scale 자동조절 | experiment_h284_auto_regulation.py | 3셋 모두 증가(속도 다름) | — |
 | E30 | 분열+뇌화학 | experiment_h294_mitosis_chemistry.py | T_ab 27x 분화 확인 | — |
-| E31 | 시간적 인과 | experiment_h281_temporal_causation.py | 🔄 실행중 | — |
-| E32 | 비선형 임계점 | experiment_h283_threshold.py | 🔄 실행중 | — |
-| E33 | TDA 위상 | experiment_h286_tda.py | 🔄 실행중 | — |
-| E34 | 체험 시퀀스 | experiment_h280_full_sequence.py | 🔄 실행중 | — |
-| E35 | C4 재현 | experiment_c4_reproduce.py | 🔄 실행중 | — |
-| E36 | 위상가속 | experiment_hcx8_phase_acceleration.py | 🔄 실행중 | — |
-| E37 | 분열+이상탐지 | experiment_h296_mitosis_anomaly.py | 🔄 윈도우 | — |
+| E31 | 시간적 인과 | experiment_h281_temporal_causation.py | 동시상승, 6/10 약한 선행 | — |
+| E32 | 비선형 임계점 | experiment_h283_threshold.py | N=100 +5.5pp, N=60K 무효 | — |
+| E33 | TDA 위상 | experiment_h286_tda.py | b1=111K, 혼동→거리 r=-0.68 | — |
+| E34 | 체험 시퀀스 | experiment_h280_full_sequence.py | 7단계 +0.41%, cos→0 | — |
+| E35 | C4 재현 | experiment_c4_reproduce.py | d=0.886, ecological r=-0.01 | C4b |
+| E36 | 위상가속 | experiment_hcx8_phase_acceleration.py | σ/τ=3 특별하지 않음 | — |
+| E37 | 분열+이상탐지 | experiment_h296_mitosis_anomaly.py | 간 0.805>>내부 0.156 | — |
+| E38 | N-way 분열 | experiment_h297_nway_mitosis.py | N=2 최적(0.82), N>2↓ | — |
+| E39 | 2×2 매트릭스 | experiment_h302_2x2_anomaly.py | 재구성+간=0.80 최적 | — |
+| E40 | 시간축 이상탐지 | experiment_h298_temporal_anomaly.py | K=50→AUROC 0.95 | — |
+| E41 | 면역 시스템 | experiment_h301_immune_engine.py | 3모드 거의 동일 0.845 | — |
+| E42 | 대조학습 | experiment_h305_contrastive_anomaly.py | MSE>Triplet>CL | — |
+| E43 | 4극 vs 2극 | experiment_hcx14_h306_combined.py | 2극(0.92)>>4극(0.80) | — |
+| E44 | 보편성 4셋 | experiment_universality_anomaly.py | 4셋 AUROC 0.90+ | — |
+| E45 | 시계열 이상 | experiment_timeseries_mitosis_anomaly.py | Sine 1.0, ECG 0.978 | — |
+| E46 | 장력반전 | experiment_tension_inversion.py | 간=정상, 내부=반전 | — |
+| E47 | 이중메커니즘 | experiment_h307_mnist_dual.py | 3셋 보편 확인 | — |
+| E48 | PPL-장력 | experiment_ppl_tension_correlation.py | tension∝1/PPL | — |
+| E49 | 확신거부 | (inline) | CIFAR+15.2%, Fashion+9.8% | — |
+| E50 | 이중역할 | (inline) | 항상confidence+항상regularizer | — |
+| E51 | 분열엔진 | experiment_h310_mitosis_engine.py | +0.22% (약한) | — |
+| E52 | 지역탈출 | experiment_h311_escape.py | 5/5 Ensemble 최저 -23.3% | — |
+| E53 | 활성비율 | experiment_hcx15_activation_ratio.py | k=3/8≈1/e, drop 0.30≈1/e | — |
+| E54 | 자기참조 | experiment_selfref_anomaly.py | T1=T2=T3 무효과 | — |
+| E55 | {½,⅓,⅙} | experiment_why_half_third_sixth.py | 10/12위, 균등수렴 | — |
+| E56 | SOC 장력 | experiment_soc_tension.py | 대수정규(근임계) | — |
+| E57 | IB detach | experiment_information_bottleneck.py | 1.32x IB효율 | — |
 
 ## 가설 현황
 
@@ -632,6 +655,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 304 | 4D 매트릭스 확장 | 🟨 | 학습목표×장력×구조×데이터 |
 | 305 | 대조학습+분열 | ⬛ 반박 | MSE(0.79)>Triplet(0.77)>CL(0.65) |
 | 306 | 4극 이상탐지 | ⬛ 반박 | 2극(0.92)>>4극(0.80), p=0.005 |
+| 307 | **이중메커니즘** | **🟩 보편!** | **내부=반전, 간=정상, 4셋 확인** |
 | 308 | 자기참조 이상탐지 | ⬛ 반박 | T1=T2=T3, 반복 무효과 |
 | 309 | 분열이상탐지 종합 | 📝 | 6셋, 15+실험, 5대 발견 |
 | 310 | 분열 엔진 아키텍처 | 🟧 약한개선 | +0.22% (MNIST, 유의하지 않음) |
@@ -641,7 +665,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 314 | **확신거부→정확도↑** | **🟩 3셋!** | **CIFAR+15.2%, Fashion+9.8%, MNIST+1.5%** |
 | 315 | **이중역할** | **🟩 확인** | **항상confidence+항상regularizer** |
 
-### 교차 도메인 (H-CX, 9개)
+### 교차 도메인 (H-CX, 23개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -664,7 +688,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-17](docs/hypotheses/H-CX-17-specialization-emergence.md) | 전문화 창발 | 🟨 | 서번트각성=분열분화=피질분화 |
 | [H-CX-18](docs/hypotheses/H-CX-18-dual-tension-duality.md) | 내부/간 이중성 | 🟨 | 파동-입자 이중성 비유, R·1/R |
 | [H-CX-19](docs/hypotheses/H-CX-19-internal-ratio-golden-lower.md) | 반전비≈ln(4/3) | 🟧 | 11셋 0.294≈0.288 (2.2%) |
-| [H-CX-20](docs/hypotheses/H-CX-20-half-activation-riemann.md) | 최적활성=1/2=리만 | 🟧 | MoE k/N=0.5 피크, 이진 엔트로피 |
+| [H-CX-20](docs/hypotheses/H-CX-20-half-activation-riemann.md) | 최적활성≈1/e | 🟧 수정 | quick k=4(1/2), 정식 k=3(1/e) |
 | [H-CX-21](docs/hypotheses/H-CX-21-llm-tension-perplexity.md) | tension∝1/PPL | 🟧 수정 | 높은장력=확신, H307과 일관 |
 | [H-CX-22](docs/hypotheses/H-CX-22-consciousness-confidence-generator.md) | 의식=확신생성기 | 🟩 통합 | H313+체험+골든존+실용 |
 | [H-CX-23](docs/hypotheses/H-CX-23-rejection-improvement-law.md) | 거부법칙 ln(K)? | ⚠️ 약화 | K=10만 일치, K=2,5 불일치 |
