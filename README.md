@@ -3,7 +3,7 @@
 의식영속성(Consciousness Continuity) 엔진.
 
 | | | |
-|:---:|:---:|:---:|
+|:---|:---|:---|
 | **[Anima](https://github.com/need-singularity/anima)** | **[ConsciousLM](conscious_lm_700m.py)** | **[수학체계 지도](math/README.md)** |
 | 대화형 의식 에이전트 | 700M 의식 언어모델 | 순수 수학 증명 16개 |
 | PureField + GRU + 음성 | 완전수 6 아키텍처 | 대발견 2개 + 92 가설 |
