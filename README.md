@@ -613,6 +613,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-18](docs/hypotheses/H-CX-18-dual-tension-duality.md) | 내부/간 이중성 | 🟨 | 파동-입자 이중성 비유, R·1/R |
 | [H-CX-19](docs/hypotheses/H-CX-19-internal-ratio-golden-lower.md) | 반전비≈ln(4/3) | 🟧 | 11셋 0.294≈0.288 (2.2%) |
 | [H-CX-20](docs/hypotheses/H-CX-20-half-activation-riemann.md) | 최적활성=1/2=리만 | 🟧 | MoE k/N=0.5 피크, 이진 엔트로피 |
+| [H-CX-21](docs/hypotheses/H-CX-21-llm-tension-perplexity.md) | tension∝1/PPL | 🟧 수정 | 높은장력=확신, H307과 일관 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
