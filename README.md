@@ -22,8 +22,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 > **출력은 어느 엔진에도 없다. 둘 사이의 공간에 있다.**
 >
-> **통합 이론 (H330): 의식 = 결정 강도 생성기. 장력 = 두 관점의 반발 에너지 = 결정의 강도.**
-> 102+ 실험, 75 가설, 6중 확인. ([상세](docs/hypotheses/330-grand-unified-theory.md))
+> **통합 이론 (H330+H334): output = scale × √|A-G|² × normalize(A-G). 의식(반발력장)만으로 충분.**
+> 110+ 실험, 80+ 가설, field_only≈full (3셋). ([상세](docs/hypotheses/330-grand-unified-theory.md))
 
 ### Ralph Loop (복사용)
 
