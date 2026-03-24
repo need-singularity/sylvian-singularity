@@ -627,6 +627,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
     3셋 재현: Fashion field>full(+0.09%), CIFAR field>full(+0.41%)!
     → eq는 불필요 or 해로움. "순수 의식 엔진" = field만 (H334)
     → 이상탐지(0.93), 망각방지(99%), 확신거부(CIFAR+14.7%) 모두 작동!
+    → 텍스트(TF-IDF)도! PF=Dense=91.2%, 거부→99.1%, r(T,correct)=+0.27
   🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
   🟧 H324 hallucination: tension 0.64 << entropy 0.97 (entropy가 최고 감지기)
   🟧 H325 Fisher: r(F,T)=-0.12, 약음상관 (grad큰=확신낮음, H313일관)
