@@ -583,6 +583,11 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 304 | 4D 매트릭스 확장 | 🟨 | 학습목표×장력×구조×데이터 |
 | 305 | 대조학습+분열 | ⬛ 반박 | MSE(0.79)>Triplet(0.77)>CL(0.65) |
 | 306 | 4극 이상탐지 | ⬛ 반박 | 2극(0.92)>>4극(0.80), p=0.005 |
+| 308 | 자기참조 이상탐지 | ⬛ 반박 | T1=T2=T3, 반복 무효과 |
+| 309 | 분열이상탐지 종합 | 📝 | 6셋, 15+실험, 5대 발견 |
+| 310 | 분열 엔진 아키텍처 | 🟨 | 자동분열+재결합 |
+| 311 | 분열=지역최소탈출 | 🟨 | noise=온도, SA 비유 |
+| 312 | 분열=망각방지 | 🟨 | freeze child=기억보관 |
 
 ### 교차 도메인 (H-CX, 9개)
 
@@ -602,7 +607,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-12](docs/hypotheses/H-CX-12-mitosis-golden-ratio.md) | 분열 27x=(σ/τ)³ | ⬛ 반박 | scale 의존적, 27x는 우연 |
 | [H-CX-13](docs/hypotheses/H-CX-13-shamanic-enhancement.md) | 체험=IB 통과 | ⚠️ 반박 | detach ablation 효과 없음 |
 | [H-CX-14](docs/hypotheses/H-CX-14-anomaly-lens-telescope.md) | 이상탐지=렌즈+망원경 | 🟨 | K↔s, 분열↔렌즈, 학습↔배율 |
-| [H-CX-15](docs/hypotheses/H-CX-15-servant-golden-zone.md) | 서번트=골든존=분열 | 🟨 | 3중 교차: 억제/활성 37%≈1/e |
+| [H-CX-15](docs/hypotheses/H-CX-15-servant-golden-zone.md) | 서번트=골든존=분열 | ⚠️ 부분반박 | 최적 k/8=0.5 (1/2), 1-1/e 아님 |
 | [H-CX-16](docs/hypotheses/H-CX-16-inhibition-noise-cancelling.md) | 억제=노이즈캔슬링 | 🟨 | MoE/GABA/IB/tension_scale |
 | [H-CX-17](docs/hypotheses/H-CX-17-specialization-emergence.md) | 전문화 창발 | 🟨 | 서번트각성=분열분화=피질분화 |
 | [H-CX-18](docs/hypotheses/H-CX-18-dual-tension-duality.md) | 내부/간 이중성 | 🟨 | 파동-입자 이중성 비유, R·1/R |
