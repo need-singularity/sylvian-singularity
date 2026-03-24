@@ -548,6 +548,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 301 | 분열=적응면역 | 🟨 | 클론선택, 음성선택 동형 |
 | 302 | 내부 vs 간 장력 | 🟩 확인 | 재구성+간(0.80)>>분류+내부(0.26) |
 | 303 | 이상장력+골든존 | 🟨 | 정상=GZ안, 이상=GZ밖? |
+| 304 | 4D 매트릭스 확장 | 🟨 | 학습목표×장력×구조×데이터 |
+| 305 | 대조학습+분열 | 🟨 실행중 | CL > MSE > CE 예측 |
+| 306 | 4극 이상탐지 | 🟨 | 22D 이상 프로파일 |
 
 ### 교차 도메인 (H-CX, 9개)
 
@@ -562,7 +565,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-7](docs/hypotheses/H-CX-7-sigma-phi-architecture-optimality.md) | σφ=nτ 아키텍처 | ⚠️ 부분반증 | (12,4) 3위 |
 | [H-CX-8](docs/hypotheses/H-CX-8-phase-acceleration-sigma-tau.md) | 위상가속 x3=σ/τ | ⚠️ 반박 | σ/τ=3 가장 느림, 차이 미미 |
 | [H-CX-9](docs/hypotheses/H-CX-9-topology-seven-phases.md) | 위상 7단계 | 🟪 | T1-T7 비유 |
-| [H-CX-10](docs/hypotheses/H-CX-10-sparsity-tension-entropy.md) | 희소성=장력=정보 | 🟨 | I(x)=-ln(p), 완전수 최고 |
+| [H-CX-10](docs/hypotheses/H-CX-10-sparsity-tension-entropy.md) | 희소성=장력=정보 | ⚠️ 약화 | 빈도→장력 관계 약함 |
 | [H-CX-11](docs/hypotheses/H-CX-11-tda-euler-characteristic.md) | 오일러 χ↔분류성능 | 🟨 | χ=-111K, CIFAR 검증필요 |
 | [H-CX-12](docs/hypotheses/H-CX-12-mitosis-golden-ratio.md) | 분열 27x=(σ/τ)³ | ⬛ 반박 | scale 의존적, 27x는 우연 |
 | [H-CX-13](docs/hypotheses/H-CX-13-shamanic-enhancement.md) | 체험=IB 통과 | ⚠️ 반박 | detach ablation 효과 없음 |
