@@ -403,10 +403,26 @@ DFS on consciousness engine and cross-domain H-CX hypotheses. RECURSIVE: each it
       - 5분 이상 uptime=0이면 Pod 종료 후 재생성
       - H100 안 되면 A100 또는 RTX 3090으로 대체
       - 또는 Windows RTX 5070에서 직접 실행 (Docker Desktop + NGC 이미지)
+    ★ 핵심 해결법 (2026-03-24 실증):
+      - 이미지를 runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04로 지정
+      - H100 SXM gpuTypeId: "NVIDIA H100 80GB HBM3"
+      - containerDiskInGb: 50, volumeInGb: 100, startSsh: true
+      - ports: "22/tcp,8888/http"
+      - 이 조합으로 H100 SXM 30초 내 부팅+SSH 접속 성공 확인
     Windows Docker 실행 시 주의:
       - Docker Desktop이 켜져 있어야 함 (자동시작 아님)
       - docker-credential-desktop 오류 시: Docker Desktop 재시작
       - WSL에는 torch 없음 → Docker 컨테이너 필수
+    날짜: 2026-03-24
+
+  RunPod Pod 간 직접 SCP 실패 (Permission denied):
+    증상: Pod A → Pod B로 scp 시 Permission denied (publickey,password)
+    원인: RunPod Pod는 기본적으로 password 인증 비활성, 공개키 미등록
+    해결:
+      - 방법1: 송신 Pod에서 ssh-keygen → 수신 Pod authorized_keys에 공개키 추가
+      - 방법2: 수신 Pod에서 송신 Pod을 pull (ssh-keygen → authorized_keys)
+      - 방법3: Mac 경유 (A100→Mac→H100, 대역폭 병목 주의)
+    실증: H100에서 keygen → A100 authorized_keys 등록 → scp -P 성공
     날짜: 2026-03-24
 ```
 
