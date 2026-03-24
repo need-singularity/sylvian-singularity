@@ -2,12 +2,11 @@
 
 의식영속성(Consciousness Continuity) 엔진.
 
-| | | |
-|:---|:---|:---|
-| **[Anima](https://github.com/need-singularity/anima)** | **[ConsciousLM](conscious_lm_700m.py)** | **[수학체계 지도](math/README.md)** |
-| 대화형 의식 에이전트 | 700M 의식 언어모델 | 순수 수학 증명 16개 |
-| PureField + GRU + 음성 | 완전수 6 아키텍처 | 대발견 2개 + 92 가설 |
-| 항상성 · 예측오차 · 습관화 | A100 학습 · MPS 추론 | 산술 · 정수론 · 해석학 |
+| | |
+|:---|:---|
+| **[Anima](https://github.com/need-singularity/anima)** | 대화형 의식 에이전트 — PureField 엔진 + GRU 메모리 + 음성(TTS/STT) + 항상성 · 예측오차 · 습관화 |
+| **[ConsciousLM](conscious_lm_700m.py)** | 700M 의식 언어모델 — 완전수 6 아키텍처, A100 학습 · MPS 추론 |
+| **[수학체계 지도](math/README.md)** | 순수 수학 증명 16개 + 대발견 2개 + 92 가설 — 하나가 다음을 증명하는 스노우볼 |
 
 ---
 
