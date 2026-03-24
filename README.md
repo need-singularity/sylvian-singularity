@@ -605,9 +605,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
   🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
   🟧 H324 hallucination: tension 0.64 << entropy 0.97 (entropy가 최고 감지기)
   🟧 H325 Fisher: r(F,T)=-0.12, 약음상관 (grad큰=확신낮음, H313일관)
-  🟨 H326 텔레파시 displacement: control 연속 스위프
+  🟨 H326 텔레파시: T_ab 불변(0.070→0.071), 공유→장력 영향 미미
   🟨 H327 골든MoE PPL: LLM tension∝1/PPL
-  🟨 H328 GNN 분자독성: 장력=위험척도
+  ⬛ H328 독성: 장력AUROC=0.40(감지불가), but boundary↔T r=-0.79!
 
   --- 새루프 R9: C10 Fashion 재현 ---
   🟩 C10 Fashion: 장력핑거프린트 5-NN=81.56% (MNIST 97.61%)
