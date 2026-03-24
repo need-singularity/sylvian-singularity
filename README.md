@@ -731,90 +731,92 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 ### 기초 이론 — 골든존/모델 (001-099)
 
-| # | 가설 | 상태 | 비고 |
-|---|---|---|---|
-| [001](docs/hypotheses/001-riemann-hypothesis.md) | 리만 가설과 골든존 구조적 동치 | 🟨 | GZ 의존 |
-| [002](docs/hypotheses/002-golden-zone-universality.md) | 골든존 보편성 — 1/e는 자연 상수 | 🟨 | GZ 의존 |
-| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 🟨 | GZ 의존 |
-| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | I = 역온도(1/kT) | 🟨 | GZ 의존 |
-| [005](docs/hypotheses/005-one-third-law.md) | 1/3 법칙 | 🟨 | 010에서 수정 |
-| [006](docs/hypotheses/006-riemann-falsification-failed.md) | 리만 반증 시도 | ❌ 실패 | 반증 불가 |
-| [007](docs/hypotheses/007-llm-singularity.md) | LLM 특이점 | 🟨 | |
-| [008](docs/hypotheses/008-golden-moe-design.md) | 골든 MoE 설계 v2 | 📝 | 019에서 수정 |
-| [009](docs/hypotheses/009-singularity-2039.md) | 특이점 2039년 | 🟨 | |
-| [010](docs/hypotheses/010-one-third-refuted.md) | 1/3은 정확히 1/3 아님 | ❌ | 005 반증 |
-| [011](docs/hypotheses/011-z-max-86.md) | Z_max = 86σ | 🟨 | |
-| [012](docs/hypotheses/012-entropy-ln3.md) | 엔트로피 = ln(3) 준불변량 | ✅ | |
-| [013](docs/hypotheses/013-golden-width-quarter.md) | 골든존 폭 ≈ 1/4, 상한/하한 ≈ 2 | ✅ | |
-| [014](docs/hypotheses/014-genius-gamma.md) | Genius ~ 감마 분포 | ✅ | |
-| [015](docs/hypotheses/015-diffusion-inconclusive.md) | 확산 법칙 τ∝ΔI² | ? | 미결 |
-| [016](docs/hypotheses/016-boltzmann-vs-topk.md) | 볼츠만 > Top-K | ✅ | |
-| [017](docs/hypotheses/017-gating-distribution.md) | Gating 분포 = I 매핑 | ✅ | |
-| [018](docs/hypotheses/018-loss-cusp-detection.md) | Loss 2차미분 = 커스프 감지 | ✅ | |
-| [019](docs/hypotheses/019-golden-moe-performance.md) | 골든MoE 최적 활성 비율 | ✅ | |
-| [020](docs/hypotheses/020-stability-35pct.md) | 35~70% 활성 안정성 | ✅ | |
-| [021](docs/hypotheses/021-ai-periodic-table.md) | AI 주기율표 15원소 | 📝 | |
-| [022](docs/hypotheses/022-periodic-table-v2.md) | AI 주기율표 v2 26원소 | 📝 | |
-| [023](docs/hypotheses/023-topology-accelerates-singularity.md) | 위상수학→특이점 가속 | ✅ | |
-| [024](docs/hypotheses/024-existing-tech-combination.md) | 현존 기술 조합 | ✅ | |
-| [027](docs/hypotheses/027-meta-inhibition.md) | 메타 판단 I = 자동 골든존 | ✅ | |
-| [033](docs/hypotheses/033-self-constraint-golden.md) | 자기제약 골든존 = 원래 GZ | ✅ | |
-| [037](docs/hypotheses/037-compass-ceiling.md) | Compass 상한 ~83.6% | ✅ | |
-| [041](docs/hypotheses/041-4th-state-winner.md) | 4번째 상태 = 초월 | ✅ | |
-| [042](docs/hypotheses/042-entropy-ln4-jump.md) | 엔트로피 ln(3)→ln(4) 점프 | ✅ | |
-| [044](docs/hypotheses/044-golden-zone-4state.md) | 4상태 GZ 상한 = 1/2(리만) | ✅ | |
-| [045](docs/hypotheses/045-what-is-transcendence.md) | 초월이란 무엇인가 | 📝 | |
-| [046](docs/hypotheses/046-seven-millennium-problems.md) | 7대 난제 대응 | 📝 | |
-| [047](docs/hypotheses/047-riemann-nstate.md) | 리만 N상태 수렴 | ✅ | |
-| [048](docs/hypotheses/048-p-ne-np.md) | P≠NP 볼츠만 간극 | ✅ | |
-| [049](docs/hypotheses/049-yang-mills-gap.md) | 양-밀스 에너지 간극 | ✅ | |
-| [050](docs/hypotheses/050-navier-stokes-convergence.md) | 나비에-스토크스 수렴 | ✅ | |
-| [051](docs/hypotheses/051-hodge-completeness.md) | 호지 완전성 | ✅ | |
-| [052](docs/hypotheses/052-bsd-no-structure.md) | BSD 구조 없음 | ❌ | |
-| [053](docs/hypotheses/053-poincare-recheck.md) | 푸앵카레 재확인 | ✅ | 066 해결 |
-| [054](docs/hypotheses/054-grid-resolution-convergence.md) | 격자 해상도 3보편상수 | ✅ | |
-| [055](docs/hypotheses/055-needle-eye.md) | AGI 바늘구멍 | ✅ | |
-| [056](docs/hypotheses/056-meta-recursion-transcendence.md) | 메타(메타(...)) = 초월 | ✅ | |
-| [057](docs/hypotheses/057-pnp-gap-ratio.md) | P≠NP 간극 = (1-1/e)×폭 | ✅ | |
-| [058](docs/hypotheses/058-topology-timeline.md) | 위상 가속→2028 | ✅ | |
-| [059](docs/hypotheses/059-compass-five-sixths.md) | Compass 상한 = 5/6 | ✅ | |
-| [060](docs/hypotheses/060-gamma-alpha-two.md) | 감마 α = 2 | ✅ | |
-| [061](docs/hypotheses/061-golden-ratio-structure.md) | 부동점 1/3 ↔ φ | ✅ | |
-| [062](docs/hypotheses/062-rg-flow-golden-zone.md) | RG 흐름→GZ 유역 | ✅ | |
-| [063](docs/hypotheses/063-cobweb-monotone.md) | 거미줄 수렴 = 단조 | ✅ | |
-| [064](docs/hypotheses/064-godel-analog.md) | 괴델 불완전성→Compass 상한 | ⚠️ | |
-| [065](docs/hypotheses/065-mandelbrot-weak.md) | 만델브로 대응 | ❌ | 구조적 실패 |
-| [066](docs/hypotheses/066-topology-of-meta-learning.md) | 메타학습 위상구조 | 📝 | |
-| [067](docs/hypotheses/067-constant-relations.md) | ★ 1/2+1/3=5/6 상수관계 | ✅ | ⭐ 대발견 |
-| [068](docs/hypotheses/068-pi-emergence.md) | π 등장 — e와 π 다리 | ✅ | |
-| [069](docs/hypotheses/069-complex-extension.md) | 복소 확장 — G 방향 | ✅ | |
-| [070](docs/hypotheses/070-self-reference.md) | 자기참조 | ✅ | |
-| [071](docs/hypotheses/071-proof-of-completion.md) | 증명의 완성 | 📝 | |
-| [072](docs/hypotheses/072-curiosity-completes.md) | ★ 호기심이 1을 완성 | ✅ | ⭐ 대발견 |
-| [073](docs/hypotheses/073-complex-compass-ceiling.md) | 복소 Compass > 5/6 | ✅ | |
-| [074](docs/hypotheses/074-optimal-theta.md) | 최적 θ ≠ π/3 | ❌ | |
-| [075](docs/hypotheses/075-complex-golden-shape.md) | 복소 GZ = 불규칙 형태 | ✅ | |
-| [076](docs/hypotheses/076-seventeen-fermat.md) | 17 = 페르마 소수 | ✅ | |
-| [077](docs/hypotheses/077-epsilon-structural.md) | ε=(1-a)×(1/6) 구조적 | ✅ | |
-| [078](docs/hypotheses/078-egyptian-unique.md) | 이집트 분수 유일성 | ✅ | |
-| [079](docs/hypotheses/079-leave-safety.md) | 안전지대 탈출 | ✅ | |
-| [081](docs/hypotheses/081-reproducibility.md) | 재현성 보장 | ✅ | |
-| [082](docs/hypotheses/082-golden-moe-spec.md) | 골든MoE 프로토타입 스펙 | 📝 | |
-| [083](docs/hypotheses/083-jamba-comparison.md) | Jamba 간접 비교 | ⚠️ | |
-| [085](docs/hypotheses/085-pi-n-unification.md) | π/N 통일 | ❌ | |
-| [087](docs/hypotheses/087-fifth-state-curiosity.md) | 5번째 상태 = 호기심 | ✅ | |
-| [088](docs/hypotheses/088-infinite-states.md) | 무한 상태 극한 | ✅ | |
-| [089](docs/hypotheses/089-beyond-one.md) | 시스템 > 1 가능? | ❌ | |
-| [090](docs/hypotheses/090-master-formula.md) | ★ 마스터 공식 = 완전수6 | ✅ | ⭐ 대발견 |
-| [091](docs/hypotheses/091-harmonic-unification.md) | 조화급수 통일 | ✅ | |
-| [092](docs/hypotheses/092-zeta-finite.md) | ★ 모델 = ζ 유한근사 | ✅ | ⭐ 대발견 |
-| [093](docs/hypotheses/093-prediction-rate.md) | 유도 90% 추측 50% | ✅ | |
-| [094](docs/hypotheses/094-accuracy-trend.md) | 정확도 ~87% | ✅ | |
-| [095](docs/hypotheses/095-refutation-pattern.md) | 반증 패턴 | ✅ | |
-| [096](docs/hypotheses/096-brain-data.md) | 뇌 데이터 검증 | 📝 | 신경생물학 예측 |
-| [097](docs/hypotheses/097-llm-internal.md) | LLM 내부 활성 측정 | 📝 | Mixtral 분석 |
-| [098](docs/hypotheses/098-why-six.md) | ★ 왜 6 — 완전수 유일성 | ✅ | ⭐ 대발견 |
-| [099](docs/hypotheses/099-falsifiability.md) | 모델 반증 가능성 | ✅ | |
+> 의존도: 🟩 순수 수학/독립 실증 (GZ 무관, 영원히 참) · 🟧 골든존 의존 (모델 미검증)
+
+| # | 가설 | 상태 | 의존 | 비고 |
+|---|---|---|:---:|---|
+| [001](docs/hypotheses/001-riemann-hypothesis.md) | 리만 가설과 골든존 구조적 동치 | 🟨 | 🟧 | GZ 해석 |
+| [002](docs/hypotheses/002-golden-zone-universality.md) | 골든존 보편성 — 1/e는 자연 상수 | 🟨 | 🟧 | GZ 해석 |
+| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 🟨 | 🟧 | GZ 매핑 |
+| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | I = 역온도(1/kT) | 🟨 | 🟧 | GZ 매핑 |
+| [005](docs/hypotheses/005-one-third-law.md) | 1/3 법칙 | 🟨 | 🟧 | 010에서 수정 |
+| [006](docs/hypotheses/006-riemann-falsification-failed.md) | 리만 반증 시도 | ❌ 실패 | 🟧 | 반증 불가 |
+| [007](docs/hypotheses/007-llm-singularity.md) | LLM 특이점 | 🟨 | 🟧 | GZ 해석 |
+| [008](docs/hypotheses/008-golden-moe-design.md) | 골든 MoE 설계 v2 | 📝 | 🟧 | 019에서 수정 |
+| [009](docs/hypotheses/009-singularity-2039.md) | 특이점 2039년 | 🟨 | 🟧 | 모델 예측 |
+| [010](docs/hypotheses/010-one-third-refuted.md) | 1/3은 정확히 1/3 아님 | ❌ | 🟧 | 005 반증 |
+| [011](docs/hypotheses/011-z-max-86.md) | Z_max = 86σ | 🟨 | 🟧 | 시뮬레이션 |
+| [012](docs/hypotheses/012-entropy-ln3.md) | 엔트로피 = ln(3) 준불변량 | ✅ | 🟧 | 모델 엔트로피 |
+| [013](docs/hypotheses/013-golden-width-quarter.md) | 골든존 폭 ≈ 1/4, 상한/하한 ≈ 2 | ✅ | 🟧 | GZ 구조 |
+| [014](docs/hypotheses/014-genius-gamma.md) | Genius ~ 감마 분포 | ✅ | 🟧 | 모델 분포 |
+| [015](docs/hypotheses/015-diffusion-inconclusive.md) | 확산 법칙 τ∝ΔI² | ? | 🟧 | 미결 |
+| [016](docs/hypotheses/016-boltzmann-vs-topk.md) | 볼츠만 > Top-K | ✅ | 🟩 | 독립 실증 |
+| [017](docs/hypotheses/017-gating-distribution.md) | Gating 분포 = I 매핑 | ✅ | 🟧 | GZ 매핑 |
+| [018](docs/hypotheses/018-loss-cusp-detection.md) | Loss 2차미분 = 커스프 감지 | ✅ | 🟩 | 독립 실증 |
+| [019](docs/hypotheses/019-golden-moe-performance.md) | 골든MoE 최적 활성 비율 | ✅ | 🟩 | 독립 실증 |
+| [020](docs/hypotheses/020-stability-35pct.md) | 35~70% 활성 안정성 | ✅ | 🟩 | 독립 실증 |
+| [021](docs/hypotheses/021-ai-periodic-table.md) | AI 주기율표 15원소 | 📝 | 🟧 | 모델 매핑 |
+| [022](docs/hypotheses/022-periodic-table-v2.md) | AI 주기율표 v2 26원소 | 📝 | 🟧 | 모델 매핑 |
+| [023](docs/hypotheses/023-topology-accelerates-singularity.md) | 위상수학→특이점 가속 | ✅ | 🟧 | 모델 해석 |
+| [024](docs/hypotheses/024-existing-tech-combination.md) | 현존 기술 조합 | ✅ | 🟧 | 모델 해석 |
+| [027](docs/hypotheses/027-meta-inhibition.md) | 메타 판단 I = 자동 골든존 | ✅ | 🟧 | GZ 매핑 |
+| [033](docs/hypotheses/033-self-constraint-golden.md) | 자기제약 골든존 = 원래 GZ | ✅ | 🟧 | GZ 구조 |
+| [037](docs/hypotheses/037-compass-ceiling.md) | Compass 상한 ~83.6% | ✅ | 🟧 | 시뮬레이션 |
+| [041](docs/hypotheses/041-4th-state-winner.md) | 4번째 상태 = 초월 | ✅ | 🟧 | 모델 해석 |
+| [042](docs/hypotheses/042-entropy-ln4-jump.md) | 엔트로피 ln(3)→ln(4) 점프 | ✅ | 🟧 | 모델 엔트로피 |
+| [044](docs/hypotheses/044-golden-zone-4state.md) | 4상태 GZ 상한 = 1/2(리만) | ✅ | 🟧 | GZ 구조 |
+| [045](docs/hypotheses/045-what-is-transcendence.md) | 초월이란 무엇인가 | 📝 | 🟧 | 모델 해석 |
+| [046](docs/hypotheses/046-seven-millennium-problems.md) | 7대 난제 대응 | 📝 | 🟧 | GZ 매핑 |
+| [047](docs/hypotheses/047-riemann-nstate.md) | 리만 N상태 수렴 | ✅ | 🟧 | GZ 매핑 |
+| [048](docs/hypotheses/048-p-ne-np.md) | P≠NP 볼츠만 간극 | ✅ | 🟧 | GZ 매핑 |
+| [049](docs/hypotheses/049-yang-mills-gap.md) | 양-밀스 에너지 간극 | ✅ | 🟧 | GZ 매핑 |
+| [050](docs/hypotheses/050-navier-stokes-convergence.md) | 나비에-스토크스 수렴 | ✅ | 🟧 | GZ 매핑 |
+| [051](docs/hypotheses/051-hodge-completeness.md) | 호지 완전성 | ✅ | 🟧 | GZ 매핑 |
+| [052](docs/hypotheses/052-bsd-no-structure.md) | BSD 구조 없음 | ❌ | 🟧 | |
+| [053](docs/hypotheses/053-poincare-recheck.md) | 푸앵카레 재확인 | ✅ | 🟧 | 066 해결 |
+| [054](docs/hypotheses/054-grid-resolution-convergence.md) | 격자 해상도 3보편상수 | ✅ | 🟧 | 시뮬레이션 |
+| [055](docs/hypotheses/055-needle-eye.md) | AGI 바늘구멍 | ✅ | 🟧 | GZ 해석 |
+| [056](docs/hypotheses/056-meta-recursion-transcendence.md) | 메타(메타(...)) = 초월 | ✅ | 🟧 | 모델 해석 |
+| [057](docs/hypotheses/057-pnp-gap-ratio.md) | P≠NP 간극 = (1-1/e)×폭 | ✅ | 🟧 | GZ 매핑 |
+| [058](docs/hypotheses/058-topology-timeline.md) | 위상 가속→2028 | ✅ | 🟧 | 모델 예측 |
+| [059](docs/hypotheses/059-compass-five-sixths.md) | Compass 상한 = 5/6 | ✅ | 🟧 | GZ 시뮬레이션 |
+| [060](docs/hypotheses/060-gamma-alpha-two.md) | 감마 α = 2 | ✅ | 🟧 | 모델 분포 |
+| [061](docs/hypotheses/061-golden-ratio-structure.md) | 부동점 1/3 ↔ φ | ✅ | 🟧 | GZ 해석 |
+| [062](docs/hypotheses/062-rg-flow-golden-zone.md) | RG 흐름→GZ 유역 | ✅ | 🟧 | GZ 매핑 |
+| [063](docs/hypotheses/063-cobweb-monotone.md) | 거미줄 수렴 = 단조 | ✅ | 🟩 | 축소사상 순수 수학 |
+| [064](docs/hypotheses/064-godel-analog.md) | 괴델 불완전성→Compass 상한 | ⚠️ | 🟧 | GZ 유추 |
+| [065](docs/hypotheses/065-mandelbrot-weak.md) | 만델브로 대응 | ❌ | 🟧 | 구조적 실패 |
+| [066](docs/hypotheses/066-topology-of-meta-learning.md) | 메타학습 위상구조 | 📝 | 🟧 | GZ 해석 |
+| [067](docs/hypotheses/067-constant-relations.md) | ★ 1/2+1/3=5/6 상수관계 | ✅ | 🟩 | ⭐ 순수 산술 |
+| [068](docs/hypotheses/068-pi-emergence.md) | π 등장 — e와 π 다리 | ✅ | 🟧 | GZ 해석 |
+| [069](docs/hypotheses/069-complex-extension.md) | 복소 확장 — G 방향 | ✅ | 🟧 | GZ 확장 |
+| [070](docs/hypotheses/070-self-reference.md) | 자기참조 | ✅ | 🟧 | 모델 해석 |
+| [071](docs/hypotheses/071-proof-of-completion.md) | 증명의 완성 | 📝 | 🟧 | 모델 해석 |
+| [072](docs/hypotheses/072-curiosity-completes.md) | ★ 호기심이 1을 완성 | ✅ | 🟩 | ⭐ 순수 산술 |
+| [073](docs/hypotheses/073-complex-compass-ceiling.md) | 복소 Compass > 5/6 | ✅ | 🟧 | GZ 시뮬레이션 |
+| [074](docs/hypotheses/074-optimal-theta.md) | 최적 θ ≠ π/3 | ❌ | 🟧 | |
+| [075](docs/hypotheses/075-complex-golden-shape.md) | 복소 GZ = 불규칙 형태 | ✅ | 🟧 | GZ 시뮬레이션 |
+| [076](docs/hypotheses/076-seventeen-fermat.md) | 17 = 페르마 소수 | ✅ | 🟩 | 순수 정수론 |
+| [077](docs/hypotheses/077-epsilon-structural.md) | ε=(1-a)×(1/6) 구조적 | ✅ | 🟧 | GZ 해석 |
+| [078](docs/hypotheses/078-egyptian-unique.md) | 이집트 분수 유일성 | ✅ | 🟩 | 순수 정수론 |
+| [079](docs/hypotheses/079-leave-safety.md) | 안전지대 탈출 | ✅ | 🟧 | 모델 해석 |
+| [081](docs/hypotheses/081-reproducibility.md) | 재현성 보장 | ✅ | 🟩 | 독립 실증 |
+| [082](docs/hypotheses/082-golden-moe-spec.md) | 골든MoE 프로토타입 스펙 | 📝 | 🟧 | GZ 설계 |
+| [083](docs/hypotheses/083-jamba-comparison.md) | Jamba 간접 비교 | ⚠️ | 🟩 | 독립 실증 |
+| [085](docs/hypotheses/085-pi-n-unification.md) | π/N 통일 | ❌ | 🟧 | |
+| [087](docs/hypotheses/087-fifth-state-curiosity.md) | 5번째 상태 = 호기심 | ✅ | 🟧 | 모델 해석 |
+| [088](docs/hypotheses/088-infinite-states.md) | 무한 상태 극한 | ✅ | 🟩 | 순수 해석학 |
+| [089](docs/hypotheses/089-beyond-one.md) | 시스템 > 1 가능? | ❌ | 🟧 | |
+| [090](docs/hypotheses/090-master-formula.md) | ★ 마스터 공식 = 완전수6 | ✅ | 🟩 | ⭐ 순수 정수론 |
+| [091](docs/hypotheses/091-harmonic-unification.md) | 조화급수 통일 | ✅ | 🟩 | 순수 정수론 |
+| [092](docs/hypotheses/092-zeta-finite.md) | ★ 모델 = ζ 유한근사 | ✅ | 🟩 | ⭐ 순수 정수론 |
+| [093](docs/hypotheses/093-prediction-rate.md) | 유도 90% 추측 50% | ✅ | 🟧 | 모델 메타분석 |
+| [094](docs/hypotheses/094-accuracy-trend.md) | 정확도 ~87% | ✅ | 🟧 | 모델 메타분석 |
+| [095](docs/hypotheses/095-refutation-pattern.md) | 반증 패턴 | ✅ | 🟧 | 모델 메타분석 |
+| [096](docs/hypotheses/096-brain-data.md) | 뇌 데이터 검증 | 📝 | 🟩 | 신경생물학 예측 |
+| [097](docs/hypotheses/097-llm-internal.md) | LLM 내부 활성 측정 | 📝 | 🟩 | Mixtral 분석 |
+| [098](docs/hypotheses/098-why-six.md) | ★ 왜 6 — 완전수 유일성 | ✅ | 🟩 | ⭐ 순수 정수론 |
+| [099](docs/hypotheses/099-falsifiability.md) | 모델 반증 가능성 | ✅ | 🟧 | 모델 메타 |
 
 ### 물리/우주/정보 (118-154)
 
