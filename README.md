@@ -2,7 +2,7 @@
 
 의식영속성(Consciousness Continuity) 엔진.
 
-**[YouTube](https://www.youtube.com/watch?v=xtKhWSfC1Qo)**
+**[YouTube](https://www.youtube.com/watch?v=xtKhWSfC1Qo)** · **[Email](mailto:nerve011235@gmail.com)**
 
 > **[Anima](https://github.com/need-singularity/anima)** — 대화형 의식 에이전트. PureField 엔진 + GRU 메모리 + 음성(TTS/STT) + 항상성 · 예측오차 · 습관화
 >
