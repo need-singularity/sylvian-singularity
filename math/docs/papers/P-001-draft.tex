@@ -40,9 +40,13 @@ where the Dirichlet ring and pointwise algebra coincide;
 an \emph{arithmetic derivative} characterization:
 $\operatorname{ld}(n) = (n-1)/n$ among perfect numbers iff $n = 6$,
 linking $n = 6$ to primary pseudoperfect numbers (OEIS~A054377);
-and a \emph{Golay code} characterization:
-$\mathcal{G}_{24} = [\sigma(6)\varphi(6),\, \sigma(6),\, \sigma(6)-\tau(6)]$,
-connecting the arithmetic of $6$ to the Steiner systems, Mathieu groups,
+a \emph{Golay code} characterization:
+$\mathcal{G}_{24} = [\sigma(6)\varphi(6),\, \sigma(6),\, \sigma(6)-\tau(6)]$;
+a \emph{hexacode} characterization:
+$[6,\,\sigma(6)/\tau(6),\,\tau(6)]_4$ (MDS and self-dual over $\mathrm{GF}(4)$);
+and \emph{Hamming code} characterizations:
+$[7,4,3]$ and $[15,11,3]$ via Mersenne primes and partition numbers---connecting
+the arithmetic of $6$ to the Steiner systems, Mathieu groups,
 the Leech lattice, and ultimately the Monster group.
 \end{abstract}
 
@@ -524,7 +528,7 @@ The chain $120 \xrightarrow{R} 6 \xrightarrow{R} 1$
 (i.e., $5! \to 3! \to 1!$) is the unique complete descent
 $3$-perfect $\to$ $2$-perfect $\to$ $1$-perfect.
 
-In total, this paper presents $42$ distinct characterizations of $n = 6$,
+In total, this paper presents $45$ distinct characterizations of $n = 6$,
 including multiplicative ($\sigma\varphi = n\tau$),
 additive ($3(\sigma+\varphi) = 7n$, $\varphi + \tau = n$),
 dynamical ($\Lambda = 0$), Dedekind ($\psi/\varphi = n$),
@@ -540,7 +544,9 @@ algebraic ($j(i) = \sigma^3$, $|\mathcal{O}_{\mathbb{Q}(\omega)}^\times| = 6$,
 congruent number with $|E_6[2]| = \tau$),
 group-theoretic ($\operatorname{Out}(S_6) \cong \mathbb{Z}/2\mathbb{Z}$, unique among $S_n$),
 and coding-theoretic ($\mathcal{G}_{24} = [\sigma\varphi, \sigma, \sigma-\tau]$,
-$\mathcal{G}_{12} = [\sigma, 6, 6]$).
+$\mathcal{G}_{12} = [\sigma, 6, 6]$,
+hexacode $[6, \sigma/\tau, \tau]_4$,
+Hamming $[M_3, \tau, \sigma/\tau]$ and $[C(6{,}2), p(6), \sigma/\tau]$).
 All reduce to a single elementary fact:
 $2$ and $3$ are the only consecutive primes.
 
@@ -1103,16 +1109,62 @@ The chain $6 \to 12 \to 24 \to \mathrm{Monster}$ thus begins with the
 first perfect number and propagates through its arithmetic functions.
 \end{remark}
 
+\begin{theorem}[Hexacode parameters]\label{thm:hexacode}
+The hexacode over $\mathrm{GF}(4)$ has parameters
+$[6, 3, 4] = [n,\; \sigma(n)/\tau(n),\; \tau(n)]$ at $n = 6$.
+It is MDS (meeting the Singleton bound $d = n - k + 1$) and self-dual.
+\end{theorem}
+
+\begin{proof}
+$\sigma(6)/\tau(6) = 12/4 = 3$ and $\tau(6) = 4$.
+The hexacode has parameters $[6, 3, 4]_4$ and satisfies
+$4 = 6 - 3 + 1$, confirming it is MDS.
+Self-duality follows from $k = n/2 = 3$
+(see Conway--Sloane, Ch.~11).
+\end{proof}
+
 \begin{remark}
-These five independent algebraic structures---units of
+The hexacode seeds the construction chain
+\[
+  \text{Hexacode}\;[6,3,4]_4
+  \;\longrightarrow\; \mathcal{G}_{24}\;[24,12,8]
+  \;\longrightarrow\; \Lambda_{24}
+  \;\longrightarrow\; \mathbb{M},
+\]
+so the entire path from the Golay code to the Monster group
+begins with a code whose length, dimension, and minimum distance
+are $n$, $\sigma(n)/\tau(n)$, and $\tau(n)$ at $n = 6$.
+\end{remark}
+
+\begin{theorem}[Hamming code parameters]\label{thm:hamming}
+The first two nontrivial binary Hamming codes have parameters
+expressible via arithmetic functions of $6$:
+\begin{align}
+  [7, 4, 3] &= [M_3,\; \tau(6),\; \sigma(6)/\tau(6)], \label{eq:ham7}\\
+  [15, 11, 3] &= [\tbinom{6}{2},\; p(6),\; \sigma(6)/\tau(6)], \label{eq:ham15}
+\end{align}
+where $M_3 = 2^3 - 1$ is the third Mersenne prime and $p(6) = 11$
+is the number of partitions of~$6$.
+\end{theorem}
+
+\begin{proof}
+For \eqref{eq:ham7}: $M_3 = 7$, $\tau(6) = 4$, $\sigma(6)/\tau(6) = 3$.
+The Hamming code $\mathrm{Ham}(3,2)$ has parameters $[2^3-1,\, 2^3-1-3,\, 3] = [7,4,3]$.
+
+For \eqref{eq:ham15}: $\binom{6}{2} = 15$, $p(6) = 11$, $\sigma(6)/\tau(6) = 3$.
+The Hamming code $\mathrm{Ham}(4,2)$ has parameters $[2^4-1,\, 2^4-1-4,\, 3] = [15,11,3]$.
+\end{proof}
+
+\begin{remark}
+These seven independent algebraic structures---units of
 $\mathbb{Z}[\omega]$, the modular $j$-invariant$,$
 the elliptic curve $E_6$, $\operatorname{Out}(S_6)$,
-and the Golay codes---all
+the Golay codes, the hexacode, and the Hamming codes---all
 converge on the arithmetic of $n = 6$
 through the factorization $6 = 2 \cdot 3$,
 the unique product of consecutive primes.
-The arithmetic of $n = 6$ determines the parameters of the Golay code,
-the Steiner systems, the Mathieu groups, the Leech lattice,
+The arithmetic of $n = 6$ determines the parameters of the hexacode,
+the Golay code, the Steiner systems, the Mathieu groups, the Leech lattice,
 and---through the moonshine correspondence---touches the Monster group.
 \end{remark}
 

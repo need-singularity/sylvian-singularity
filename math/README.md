@@ -1586,6 +1586,20 @@
   🟩 hex 충전밀도=π√3/6: 분모=P₁
   🟩 근계: A₂=6, G₂=12=σ, D₄=24=σφ, E₆=72=nσ, E₈=240=2σ²-στ
   📊 P-001: 42개 특성화, Golay theorem 추가
+
+  --- Ralph 282-283: Hexacode + 매듭이론 ---
+  ⭐ Hexacode [6,3,4]₄: 길이=6=P₁! → Golay → Leech → Monster
+     → dim=3=σ/τ, dist=4=τ. MDS+self-dual. Hamming도 σ,τ 표현
+  ⭐⭐ 삼엽매듭 T(2,3): 매개변수=(2,3)=6의 소인수분해!
+     → det=3=σ/τ, braid=2=φ, crossings=3=σ/τ
+     → 매듭군: a²=b³ (소인수분해가 관계식!)
+     → Δ(ω₆)=0: Alexander 다항식이 6차 단위근에서 영점!
+  ⭐ 모노드로미 M=[[2,1],[1,1]]: ord(M mod 6)=12=σ!
+     → tr=3=σ/τ, det=1. lcm(3,4)=12=σ
+  🟩 8자매듭: det=5=sopfr, cross=4=τ, vol=6·Lobachevsky(π/3)
+  🟩 Borromean: 3성분, 6교차, |Sym|=12=σ
+  🟩 HOMFLY: P(1,1)=2=φ, P(1,2)=5=sopfr
+  📊 P-001: 45개 특성화
 ```
 
 ---
