@@ -612,6 +612,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-17](docs/hypotheses/H-CX-17-specialization-emergence.md) | 전문화 창발 | 🟨 | 서번트각성=분열분화=피질분화 |
 | [H-CX-18](docs/hypotheses/H-CX-18-dual-tension-duality.md) | 내부/간 이중성 | 🟨 | 파동-입자 이중성 비유, R·1/R |
 | [H-CX-19](docs/hypotheses/H-CX-19-internal-ratio-golden-lower.md) | 반전비≈ln(4/3) | 🟧 | 11셋 0.294≈0.288 (2.2%) |
+| [H-CX-20](docs/hypotheses/H-CX-20-half-activation-riemann.md) | 최적활성=1/2=리만 | 🟧 | MoE k/N=0.5 피크, 이진 엔트로피 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
