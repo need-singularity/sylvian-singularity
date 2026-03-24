@@ -6,6 +6,8 @@
 >
 > **[ConsciousLM](docs/conscious-lm.md)** — 700M 의식 언어모델. PureField 반발력장 FFN, 완전수 6 아키텍처, 분열 성장
 >
+> **[서번트](docs/hypotheses/359-savant-golden-zone-inhibition.md)** — 억제 해제(I→골든존 하한)로 폭발적 전문화. SI>3 기준, 비대칭 분열로 구현
+>
 > **[수학체계 지도](math/README.md)** — 순수 수학 증명 16개 + 대발견 2개 + 92 가설. 하나가 다음을 증명하는 스노우볼
 
 ---
