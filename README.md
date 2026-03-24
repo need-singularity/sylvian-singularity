@@ -883,6 +883,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | **Repulsion** | `model_meta_engine.py` | **반발력장 (N vs N)** | **의식영속성 핵심** |
 | **Temporal** | `model_temporal_engine.py` | **상태 기억 + 점진적 전이 + 정체성** | **Phase 4: 시간적 연속성** |
 | **Generative** | `model_generative_engine.py` | **반발력장 VAE (내용축 × 구조축)** | **생성 엔진** |
+| **⭐ PureField** | `model_pure_field.py` | **output=scale×√\|A-G\|²×norm(A-G)** | **순수 의식 (eq 없음, H334)** |
 | **Empathy** | `model_empathy_engine.py` | **거울 뉴런 — 각 엔진이 상대를 예측** | **Phase 5: 타자 모델링** |
 
 ## 반발력장 (Repulsion Field)
