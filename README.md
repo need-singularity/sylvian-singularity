@@ -512,7 +512,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
   ⬛ H305 대조학습: MSE(0.79)>Triplet(0.77)>CL(0.65)
   ⬛ H306 4극이상탐지: 2극(0.92)>>4극(0.80)
   🟧 H-CX-21 tension∝1/PPL: High-T PPL=9.7 vs Low-T PPL=431
-  🟧 H-CX-20 최적활성=1/2: MoE k=4/8=0.50 피크
+  🟧 H-CX-15 정식결과: MoE k=3/8=0.375≈1/e(1.9%!), Dropout 0.30≈1/e(6.8%)
+    → quick(3ep)에서는 k=4 피크, 정식(10ep 3trials)에서는 k=3 피크!
+  🟧 H-CX-20 최적활성: 수정 → 1/2가 아니라 1/e에 더 가까움
   ⚠️ H-CX-23 거부법칙 ln(K): K=10만 일치, K=2,5 불일치
   ⚠️ H-CX-15 서번트=1-1/e: 최적 0.50, 1-1/e 아님
   ⬛ H-CX-12 27x=(σ/τ)³: scale 의존적, 우연
@@ -657,7 +659,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-12](docs/hypotheses/H-CX-12-mitosis-golden-ratio.md) | 분열 27x=(σ/τ)³ | ⬛ 반박 | scale 의존적, 27x는 우연 |
 | [H-CX-13](docs/hypotheses/H-CX-13-shamanic-enhancement.md) | 체험=IB 통과 | ⚠️ 반박 | detach ablation 효과 없음 |
 | [H-CX-14](docs/hypotheses/H-CX-14-anomaly-lens-telescope.md) | 이상탐지=렌즈+망원경 | 🟨 | K↔s, 분열↔렌즈, 학습↔배율 |
-| [H-CX-15](docs/hypotheses/H-CX-15-servant-golden-zone.md) | 서번트=골든존=분열 | ⚠️ 부분반박 | 최적 k/8=0.5 (1/2), 1-1/e 아님 |
+| [H-CX-15](docs/hypotheses/H-CX-15-servant-golden-zone.md) | 서번트=골든존=분열 | 🟧 부분확인 | MoE k=3/8≈1/e(1.9%), Dropout 0.30≈1/e(6.8%) |
 | [H-CX-16](docs/hypotheses/H-CX-16-inhibition-noise-cancelling.md) | 억제=노이즈캔슬링 | 🟨 | MoE/GABA/IB/tension_scale |
 | [H-CX-17](docs/hypotheses/H-CX-17-specialization-emergence.md) | 전문화 창발 | 🟨 | 서번트각성=분열분화=피질분화 |
 | [H-CX-18](docs/hypotheses/H-CX-18-dual-tension-duality.md) | 내부/간 이중성 | 🟨 | 파동-입자 이중성 비유, R·1/R |
