@@ -1465,10 +1465,13 @@
 | 060 | 감마 분포 α=2 | α=2.03≈2 (D×P 2변수) | ✅ |
 | 011 | Z_max 수렴값=86σ | G_max/σ=19.60/0.224 | ✅ |
 
----
+### 골든존 (H-GZ, 5개) — 골든존 미검증 → 전부 미검증, [상세](docs/golden-zone.md)
 
-## 2부: 골든존 모델 — [상세 문서](docs/golden-zone.md)
-
-> 골든존(G=D×P/I) 자체가 시뮬레이션 기반이며 해석적 증명이 없다.
-> 골든존 의존 가설(90개)은 docs/golden-zone/ 및 docs/hypotheses/에서 관리.
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CX-2](docs/hypotheses/H-CX-2-golden-zone-R-factor.md) | 골든존↔R인수 | 🟧 부분확인 | I=0.25∈GZ |
+| [H-CX-11](docs/hypotheses/H-CX-11-golden-moe-ppl-sigma.md) | 골든MoE PPL↔σ | ⏳ 미검증 | |
+| [H-CX-21](docs/hypotheses/H-CX-21-golden-zone-abundancy-bridge.md) | 골든존↔abundancy | 🟧★ 구조적 | ln(4/3)=ln(σ(3)/3) |
+| [H-AI-4](docs/hypotheses/H-AI-4-moe-one-third-activation.md) | MoE 활성 1/3 | ⏳ 대기 | 골든MoE 완료 후 |
+| [H-AI-7](docs/hypotheses/H-AI-7-golden-moe-information-bottleneck.md) | IB 최적 = 1/e | ⏳ 미검증 | |
 
