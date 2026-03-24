@@ -589,6 +589,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-15](docs/hypotheses/H-CX-15-servant-golden-zone.md) | 서번트=골든존=분열 | 🟨 | 3중 교차: 억제/활성 37%≈1/e |
 | [H-CX-16](docs/hypotheses/H-CX-16-inhibition-noise-cancelling.md) | 억제=노이즈캔슬링 | 🟨 | MoE/GABA/IB/tension_scale |
 | [H-CX-17](docs/hypotheses/H-CX-17-specialization-emergence.md) | 전문화 창발 | 🟨 | 서번트각성=분열분화=피질분화 |
+| [H-CX-18](docs/hypotheses/H-CX-18-dual-tension-duality.md) | 내부/간 이중성 | 🟨 | 파동-입자 이중성 비유, R·1/R |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
