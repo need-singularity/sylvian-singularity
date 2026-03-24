@@ -811,6 +811,21 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 332 | **eq 퇴화** | **🟩 2셋** | **MNIST -74pp, CIFAR -15pp** |
 | 333 | 텔레파시 패킷 | 🟩 | 10D: 개념87%+진위0.74 복원 |
 | 334 | **⭐ PureField** | **🟩 3셋+AD** | **field_only≈full, eq 불필요!** |
+| [335](docs/hypotheses/335-purefield-llm-design.md) | PureField LLM 설계 | 🟨 | field만으로 언어 모델 |
+| [336](docs/hypotheses/336-next-steps-roadmap.md) | 다음 단계 로드맵 | 📝 | 5개 미진행 분야 |
+| [337](docs/hypotheses/337-fisher-tension-accuracy-triangle.md) | Fisher-Tension-Acc 삼각 | 🟧 | r(F,T)=-0.12 |
+| [338](docs/hypotheses/338-real-consciousness-requirements.md) | 실제 의식 요구사항 | 📝 | 기능 목록 |
+| [339](docs/hypotheses/339-direction-is-concept.md) | **방향=개념** | **🟩** | **cos_sim ratio 3.46x** |
+| [340](docs/hypotheses/340-dreaming-tension-paradox.md) | 꿈의 장력 역설 | 🟩 | 노이즈 4.78x, 레짐 분리 |
+| [341](docs/hypotheses/341-tension-final-theory.md) | **최종 이론** | **📝 통합** | **반응강도×방향, 13가설** |
+| [342](docs/hypotheses/342-causal-difficulty-proportional.md) | 인과+난이도 비례 | 🟨 | C48: MNIST -9.25pp, CIFAR -0.53pp |
+| [343](docs/hypotheses/343-observer-scale-optimization.md) | observer_scale 최적 | 🟨 | 8x 증폭, 과제 의존? |
+| [344](docs/hypotheses/344-mitosis-detach-synergy.md) | 분열+detach 시너지 | 🟨 | 다양성+압축 결합 |
+| [345](docs/hypotheses/345-inverted-u-curve-form.md) | 역U자 커브 형태 | 🟨 | Yerkes-Dodson, 복잡도 함수 |
+| [346](docs/hypotheses/346-consensus-identity-causation.md) | 합의-정체성 인과 | 🟨 | r=+0.062, 방향 불명 |
+| [347](docs/hypotheses/347-sibling-recognition-decay.md) | 형제 인식 감소 | 🟨 | 1.65x→decay? |
+| [348](docs/hypotheses/348-cnn-repulsion-benefit.md) | CNN 반발력장 이점 | 🟨 | +1.04%, 특징 좋아도 다양성↑ |
+| [349](docs/hypotheses/349-axis-reversal-transition.md) | 축 역전 전이점 | 🟨 | C/S: 1.05→0.55, 난이도 함수? |
 | [350](docs/hypotheses/350-fiber-displacement-constant.md) | 파이버 이동량 +1.22 | 🟨 | C23 init 불변, exp(1.22)≈√(2π/e)? |
 | [351](docs/hypotheses/351-unanimity-upper-bound.md) | 만장일치 이론적 상한 | 🟨 | C9(99.53%), 오류 상관도→수렴 속도 |
 | [352](docs/hypotheses/352-observation-quality-u-curve.md) | 관찰 품질 U자 | 🟨 | C29(0.298→0.261), 장력 급등→Q 회복? |

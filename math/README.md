@@ -1628,6 +1628,7 @@
   🟩 Collatz 6: 8스텝=σ-τ. λ(6)=φ(6) (최소 sqfree 합성수)
   🟩 σ₋₁(n)=2 + squarefree → n=6 유일: 홀수 sqfree 완전수 불가
   📊 P-001: 49개 특성화. H-CX-44: Lie+부호→신경망 (교차)
+  📊 H-CX-45: Cayley n^(n-2)=n^tau(n) 유일점 n=6 → 신경망 위상 임계점 (R289 교차)
 
   --- Ralph 286: 이차형식 표현수 + Gauss 류수 + 가설 일괄검증 ---
   ⭐ r_4(6) = 8·σ(6) = 96: Jacobi 정리, 완전수 중 유일! (증명!)
@@ -1837,6 +1838,7 @@
 | [H-CX-42](docs/hypotheses/H-CX-42-arithmetic-derivative-consciousness.md) | σ₋₁(6)=1+ld(6)+1/6 의식분해 | 🟩+🟧 | 순수수학 증명, AI유비 미검증 |
 | [H-CX-43](docs/hypotheses/H-CX-43-outer-automorphism-consciousness.md) | Out(S₆)=Z/2Z↔메타인지, duad-syntheme↔attention | 🟧 구조적 | 순수수학 검증, AI유비 미검증 |
 | [H-CX-44](docs/hypotheses/H-CX-44-lie-algebra-neural-architecture.md) | E₆ rank 6 + Golay [24,12,8] → 신경망 최적 구조 | 🟪 추측 | 수학적 사실 + AI 유비 미검증 |
+| [H-CX-45](docs/hypotheses/H-CX-45-cayley-tree-neural-topology.md) | Cayley n^(n-2)=n^tau(n) 유일점 n=6 → 신경망 위상 임계점 | 🟪 추측 | R289 순수수학 증명, 신경망 유비 미검증, GZ의존 없음 |
 
 ### 물리 (H-PH, 7개)
 
