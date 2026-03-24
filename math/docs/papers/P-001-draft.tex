@@ -65,8 +65,11 @@ So only $P_1 = 6$ ($\psi/\varphi = 6 = n$) and $P_2 = 28$
 Moreover, $2^{p-1} = r/(r-3)$ where $r = \psi(P_p)/\varphi(P_p)$,
 so the Mersenne exponent is fully encoded in this ratio.
 The ``master ratio'' $\Omega(n) = \sigma\psi/(n\tau\varphi)$ satisfies
-$\Omega(6) = 3$ (uniquely, for $n \leq 10000$) and
-$\Omega(28) = 4/3 = f(3,1)$.
+$\Omega(6) = 3$ and $\Omega(28) = 4/3 = f(3,1)$.
+For squarefree $n$, $\Omega = \prod \omega(p_i) / 2^k$ where
+$\omega(p) = (p+1)^2/[p(p-1)]$; then $\Omega = 3$ requires
+$\omega(2)\omega(3) = (9/2)(8/3) = 12 = 3 \cdot 4$,
+and no other pair achieves $\prod \omega = 3 \cdot 2^k$.
 Dually, $\sigma(n)(\tau(n)+1) = n^2/2$ iff $n = 28$
 (for $P_p$: reduces to $2p+1 = 2^{p-3} M_p$, true only at $p=3$).
 The gap $\{3,\ldots,13\} \cap \mathrm{Im}(D) = \emptyset$ is provable:
