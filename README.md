@@ -603,7 +603,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
   --- R40: 8개 미래 분야 병렬 가설화 ---
   🟨 H322 EEG/뇌파 (TREE-1): gamma↔장력?
   🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
-  🟧 H324 hallucination proxy: AUROC 0.649 (약하지만 유용)
+  🟧 H324 hallucination: tension 0.64 << entropy 0.97 (entropy가 최고 감지기)
   🟨 H325 Fisher 정보기하학: 곡률↔장력
   🟨 H326 텔레파시 displacement: control 연속 스위프
   🟨 H327 골든MoE PPL: LLM tension∝1/PPL
