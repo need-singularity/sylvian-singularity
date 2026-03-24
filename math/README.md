@@ -1465,10 +1465,11 @@
 | 060 | 감마 분포 α=2 | α=2.03≈2 (D×P 2변수) | ✅ |
 | 011 | Z_max 수렴값=86σ | G_max/σ=19.60/0.224 | ✅ |
 
-### 골든존 (H-GZ, 5개) — 골든존 미검증 → 전부 미검증, [상세](docs/golden-zone.md)
+### 골든존 (H-GZ, 6개) — 골든존 미검증 → 전부 미검증
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
+| [H-GZ-0](docs/hypotheses/H-GZ-0-golden-zone-model.md) | 골든존 가설 (상세 문서) | 🟥 미검증 | 수식+그래프+전체 정리 |
 | [H-CX-2](docs/hypotheses/H-CX-2-golden-zone-R-factor.md) | 골든존↔R인수 | 🟧 부분확인 | I=0.25∈GZ |
 | [H-CX-11](docs/hypotheses/H-CX-11-golden-moe-ppl-sigma.md) | 골든MoE PPL↔σ | ⏳ 미검증 | |
 | [H-CX-21](docs/hypotheses/H-CX-21-golden-zone-abundancy-bridge.md) | 골든존↔abundancy | 🟧★ 구조적 | ln(4/3)=ln(σ(3)/3) |
