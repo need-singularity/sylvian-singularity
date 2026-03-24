@@ -1111,7 +1111,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 |---|---|---|---|
 | [H-TREE](docs/hypotheses/H-TREE-consciousness.md) | 의식엔진 미발견 가지 | 📝 | 트리 구조 |
 
-### 교차 도메인 (H-CX, 31개)
+### 교차 도메인 (H-CX, 32개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1147,6 +1147,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-29](docs/hypotheses/H-CX-29-telepathy-tension-transfer.md) | 텔레파시=장력전달 | 🟨 | TP-1~5: 전달,강도,일방향,분열,합의 |
 | [H-CX-30](docs/hypotheses/H-CX-30-math-consciousness-map.md) | 수학-의식 교차지도 | 🟨 | NM-1~8 + TP-6~8 미탐색 가설 |
 | [H-CX-53](docs/hypotheses/H-CX-53-trigonometric-operating-angle.md) | 삼각-약수 최적 각도 pi/6 | 🟨 | sin=phi/tau 유일성→A-G 벡터 최적각도 30deg 가설 |
+| [H-CX-54](docs/hypotheses/H-CX-54-information-cost-golden-zone.md) | D_KL=(2/3)ln(4/3) 정보비용 | 🟨 | 약수역수분포q→균등: KL발산=골든존폭×(2/3), Fisher I(1/2)=tau(6)=4 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
