@@ -37,9 +37,13 @@ $(\sigma * \varphi)(n) = n\tau(n)$ for all $n$ (a ring identity),
 while the pointwise product $\sigma(n)\varphi(n) = n\tau(n)$
 holds iff $n \in \{1,6\}$---so $n = 6$ is the unique nontrivial point
 where the Dirichlet ring and pointwise algebra coincide;
-and an \emph{arithmetic derivative} characterization:
+an \emph{arithmetic derivative} characterization:
 $\operatorname{ld}(n) = (n-1)/n$ among perfect numbers iff $n = 6$,
-linking $n = 6$ to primary pseudoperfect numbers (OEIS~A054377).
+linking $n = 6$ to primary pseudoperfect numbers (OEIS~A054377);
+and a \emph{Golay code} characterization:
+$\mathcal{G}_{24} = [\sigma(6)\varphi(6),\, \sigma(6),\, \sigma(6)-\tau(6)]$,
+connecting the arithmetic of $6$ to the Steiner systems, Mathieu groups,
+the Leech lattice, and ultimately the Monster group.
 \end{abstract}
 
 \section{Introduction}
@@ -520,7 +524,7 @@ The chain $120 \xrightarrow{R} 6 \xrightarrow{R} 1$
 (i.e., $5! \to 3! \to 1!$) is the unique complete descent
 $3$-perfect $\to$ $2$-perfect $\to$ $1$-perfect.
 
-In total, this paper presents $41$ distinct characterizations of $n = 6$,
+In total, this paper presents $42$ distinct characterizations of $n = 6$,
 including multiplicative ($\sigma\varphi = n\tau$),
 additive ($3(\sigma+\varphi) = 7n$, $\varphi + \tau = n$),
 dynamical ($\Lambda = 0$), Dedekind ($\psi/\varphi = n$),
@@ -534,7 +538,9 @@ iterated sigma ($\sigma^2(6) = P_2$),
 sigma-phi bridge ($\sigma(\varphi(6)) + \varphi(\sigma(6)) = M_3$),
 algebraic ($j(i) = \sigma^3$, $|\mathcal{O}_{\mathbb{Q}(\omega)}^\times| = 6$,
 congruent number with $|E_6[2]| = \tau$),
-and group-theoretic ($\operatorname{Out}(S_6) \cong \mathbb{Z}/2\mathbb{Z}$, unique among $S_n$).
+group-theoretic ($\operatorname{Out}(S_6) \cong \mathbb{Z}/2\mathbb{Z}$, unique among $S_n$),
+and coding-theoretic ($\mathcal{G}_{24} = [\sigma\varphi, \sigma, \sigma-\tau]$,
+$\mathcal{G}_{12} = [\sigma, 6, 6]$).
 All reduce to a single elementary fact:
 $2$ and $3$ are the only consecutive primes.
 
@@ -1069,13 +1075,45 @@ and $A_6 \cong \mathrm{PSL}(2,9)$ further demonstrate
 the algebraic exceptionality of $n = 6$.
 \end{remark}
 
+\begin{theorem}[Golay code parameters]\label{thm:golay}
+The unique binary Golay code $\mathcal{G}_{24}$ has parameters
+$[24, 12, 8] = [\sigma(6)\varphi(6),\; \sigma(6),\; \sigma(6) - \tau(6)]$.
+The ternary Golay code $\mathcal{G}_{12}$ has parameters
+$[12, 6, 6] = [\sigma(6),\; 6,\; 6]$.
+\end{theorem}
+
+\begin{proof}
+$\sigma(6) = 12$, $\varphi(6) = 2$, $\tau(6) = 4$.
+Then $\sigma(6)\varphi(6) = 24$, $\sigma(6) - \tau(6) = 12 - 4 = 8$.
+The binary Golay code has parameters $[24, 12, 8]$ and the ternary
+Golay code has parameters $[12, 6, 6]$ (both unique up to equivalence;
+see Conway--Sloane, Ch.~11).
+\end{proof}
+
 \begin{remark}
-These four independent algebraic structures---units of
+This generates the sporadic chain
+\[
+  6 \;\longrightarrow\; \sigma(6) = 12 \;\longrightarrow\; \sigma(6)\varphi(6) = 24,
+\]
+where $12$ and $24$ index the Steiner systems $S(5,6,12)$ and $S(5,8,24)$,
+the Mathieu groups $M_{12}$ and $M_{24}$, the Leech lattice
+(dimension~$24$, minimum norm${}^2 = \tau(6) = 4$),
+and ultimately the Monster group via the Conway groups.
+The chain $6 \to 12 \to 24 \to \mathrm{Monster}$ thus begins with the
+first perfect number and propagates through its arithmetic functions.
+\end{remark}
+
+\begin{remark}
+These five independent algebraic structures---units of
 $\mathbb{Z}[\omega]$, the modular $j$-invariant$,$
-the elliptic curve $E_6$, and $\operatorname{Out}(S_6)$---all
+the elliptic curve $E_6$, $\operatorname{Out}(S_6)$,
+and the Golay codes---all
 converge on the arithmetic of $n = 6$
 through the factorization $6 = 2 \cdot 3$,
 the unique product of consecutive primes.
+The arithmetic of $n = 6$ determines the parameters of the Golay code,
+the Steiner systems, the Mathieu groups, the Leech lattice,
+and---through the moonshine correspondence---touches the Monster group.
 \end{remark}
 
 \end{document}
