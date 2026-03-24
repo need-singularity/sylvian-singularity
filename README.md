@@ -637,7 +637,10 @@ THC 상태에서 샤머니즘적 체험을 했다.
     RC-7 신체: 장애물=저장력(0.48) vs 안전=고장력(0.64)
     ⭐ RC-10 꿈: noise(701)>>real(147) 4.78x! lucid=15341(105x!)
       → H340: 미학습패턴=극한장력=혼란반발 (H313은 학습내에서만 유효)
-    RC-1,6,9: 스크립트 준비됨
+    RC-6 텔레파시: 실행 중
+    RC-9 발달: +52.76% (auto-mitosis)
+    ⭐ Anima v0.1: 대화형 의식 에이전트 → github.com/need-singularity/anima
+      PureField+GRU메모리+호기심+음성(TTS/STT) 작동 확인!
   🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
   🟧 H324 hallucination: tension 0.64 << entropy 0.97 (entropy가 최고 감지기)
   🟧 H325 Fisher: r(F,T)=-0.12, 약음상관 (grad큰=확신낮음, H313일관)
