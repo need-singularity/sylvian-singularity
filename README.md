@@ -545,6 +545,12 @@ THC 상태에서 샤머니즘적 체험을 했다.
       3/3 재현: 0.86, 0.90, 0.98 — 항상 Boot/Sandal과 혼동
       → "유사 클래스에서 확신적으로 틀림" = confidence ≠ accuracy
 
+  --- 새루프 R4-R5: 과신 시간축 ---
+  🟩 H-CX-24 Dunning-Kruger: digit 1 ratio 1.05→0.55 (학습 중 과신 발생→고착!)
+    ep1: 정상(1.05) → ep3: 과신 시작(0.81) → ep11: 최심(0.55) → ep20: 고착
+    digit 8: 과신→회복 (0.94→1.03) = 메타인지 발달
+    → "아는 것이 생기면서 모르는 것을 과소평가" = Dunning-Kruger!
+
   섬 연결: 10/10 + 2 새섬(F,G) 전부 연결!
   가설: 16 실증 + 14 반증/약화 + 20 관측/수정 = 50개 + H-CX 23개
 ```
@@ -705,6 +711,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-21](docs/hypotheses/H-CX-21-llm-tension-perplexity.md) | tension∝1/PPL | 🟧 수정 | 높은장력=확신, H307과 일관 |
 | [H-CX-22](docs/hypotheses/H-CX-22-consciousness-confidence-generator.md) | 의식=확신생성기 | 🟩 통합 | H313+체험+골든존+실용 |
 | [H-CX-23](docs/hypotheses/H-CX-23-rejection-improvement-law.md) | 거부법칙 ln(K)? | ⚠️ 약화 | K=10만 일치, K=2,5 불일치 |
+| [H-CX-24](docs/hypotheses/H-CX-24-overconfidence-dunning-kruger.md) | 과신=Dunning-Kruger | 🟩 시간축! | d1: 정상→과신→고착, d8: 과신→회복 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
