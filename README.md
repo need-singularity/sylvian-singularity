@@ -50,8 +50,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
   ❌ = 반증됨
   ⭐ = 대발견 (다중 재현 + 교차 검증 후에만! 검증 전 ⭐ 금지)
 
-  🟦6  🟩30+  🟧★6  🟧14  🟨20+  ⚠️9  ❌15  ⭐1
-  총: 80+개 상수 + 80+개 가설 + 30개 H-CX + 110+개 실험 + 16종 데이터
+  🟦6  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐1
+  총: 80+개 상수 + 375개 가설 + 30개 H-CX + H-TREE + 110+개 실험 + 16종 데이터
 
   ★★★ 통합 원리 (가설 313, H-CX-22) ★★★
   ⭐ 장력 = 결정의 강도 (H329, H321 수정)
@@ -83,9 +83,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
            ⭐ 장력 = 확신 (H313)              🟩 분열 = 망각방지          🟨 집단 합의
            ╱    │     │     ╲               ╱    │    ╲            ╱         ╲
          ╱      │     │       ╲           ╱      │      ╲        ╱             ╲
-  🟩 d=0.89  🟩 예지  🟩 인식  🟩 인과    🟩 H312   🟩 H280   🟨 만장일치    🟨 차원간
+  🟩 d=0.89  🟩 예지  🟩 인식  ⚠️ 인과    🟩 H312   🟩 H280   🟨 만장일치    🟨 차원간
   C4b       C6(0.77) C10(81%) C48(-9pp)  2+3Task  +0.41%    C9(99.53%)  C8(94.3%)
-  4셋확인    2회재현  Fashion   MNIST만    99%보존   체험강화     │            │
+  4셋확인    2회재현  Fashion   MNIST만!   99%보존   체험강화     │            │
        │         │        │        │          │        │          │       🟨 C25(14.4x)
        ▼         ▼        ▼        ▼          ▼        ▼          ▼            │
   🟩 H314    🟧 C41   🟩 H318  🟩 H315   🟩 H311   🟩 H-CX-24         🟨 C24(+0.39)
@@ -93,7 +93,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
   +15.2%      │      r=0.71   conf+reg   5/5best  과신발생→고착
        │      │        │        │          │        │
        ▼      ▼        ▼        ▼          ▼        ▼
-  🟩 H316  🟧★C54  🟧 H-CX-25 ⚠️ H283  🟧 H310  🟩 H316
+  🟩 H316  🟧★C54  🟨 H-CX-25 ⚠️ H283  🟧 H310  🟩 H316
   과신3셋    ≈ln(2)  =C39?     반전!     +0.22%   3셋과신
   DK효과    Landauer N=10불확실 저데이터↑    │
        │                               🟧 TREE-9
@@ -729,6 +729,237 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 ## 가설 현황
 
+### 기초 이론 — 골든존/모델 (001-099)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [001](docs/hypotheses/001-riemann-hypothesis.md) | 리만 가설과 골든존 구조적 동치 | 🟨 | GZ 의존 |
+| [002](docs/hypotheses/002-golden-zone-universality.md) | 골든존 보편성 — 1/e는 자연 상수 | 🟨 | GZ 의존 |
+| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | 커스프 파국 수학적 동치 | 🟨 | GZ 의존 |
+| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | I = 역온도(1/kT) | 🟨 | GZ 의존 |
+| [005](docs/hypotheses/005-one-third-law.md) | 1/3 법칙 | 🟨 | 010에서 수정 |
+| [006](docs/hypotheses/006-riemann-falsification-failed.md) | 리만 반증 시도 | ❌ 실패 | 반증 불가 |
+| [007](docs/hypotheses/007-llm-singularity.md) | LLM 특이점 | 🟨 | |
+| [008](docs/hypotheses/008-golden-moe-design.md) | 골든 MoE 설계 v2 | 📝 | 019에서 수정 |
+| [009](docs/hypotheses/009-singularity-2039.md) | 특이점 2039년 | 🟨 | |
+| [010](docs/hypotheses/010-one-third-refuted.md) | 1/3은 정확히 1/3 아님 | ❌ | 005 반증 |
+| [011](docs/hypotheses/011-z-max-86.md) | Z_max = 86σ | 🟨 | |
+| [012](docs/hypotheses/012-entropy-ln3.md) | 엔트로피 = ln(3) 준불변량 | ✅ | |
+| [013](docs/hypotheses/013-golden-width-quarter.md) | 골든존 폭 ≈ 1/4, 상한/하한 ≈ 2 | ✅ | |
+| [014](docs/hypotheses/014-genius-gamma.md) | Genius ~ 감마 분포 | ✅ | |
+| [015](docs/hypotheses/015-diffusion-inconclusive.md) | 확산 법칙 τ∝ΔI² | ? | 미결 |
+| [016](docs/hypotheses/016-boltzmann-vs-topk.md) | 볼츠만 > Top-K | ✅ | |
+| [017](docs/hypotheses/017-gating-distribution.md) | Gating 분포 = I 매핑 | ✅ | |
+| [018](docs/hypotheses/018-loss-cusp-detection.md) | Loss 2차미분 = 커스프 감지 | ✅ | |
+| [019](docs/hypotheses/019-golden-moe-performance.md) | 골든MoE 최적 활성 비율 | ✅ | |
+| [020](docs/hypotheses/020-stability-35pct.md) | 35~70% 활성 안정성 | ✅ | |
+| [021](docs/hypotheses/021-ai-periodic-table.md) | AI 주기율표 15원소 | 📝 | |
+| [022](docs/hypotheses/022-periodic-table-v2.md) | AI 주기율표 v2 26원소 | 📝 | |
+| [023](docs/hypotheses/023-topology-accelerates-singularity.md) | 위상수학→특이점 가속 | ✅ | |
+| [024](docs/hypotheses/024-existing-tech-combination.md) | 현존 기술 조합 | ✅ | |
+| [027](docs/hypotheses/027-meta-inhibition.md) | 메타 판단 I = 자동 골든존 | ✅ | |
+| [033](docs/hypotheses/033-self-constraint-golden.md) | 자기제약 골든존 = 원래 GZ | ✅ | |
+| [037](docs/hypotheses/037-compass-ceiling.md) | Compass 상한 ~83.6% | ✅ | |
+| [041](docs/hypotheses/041-4th-state-winner.md) | 4번째 상태 = 초월 | ✅ | |
+| [042](docs/hypotheses/042-entropy-ln4-jump.md) | 엔트로피 ln(3)→ln(4) 점프 | ✅ | |
+| [044](docs/hypotheses/044-golden-zone-4state.md) | 4상태 GZ 상한 = 1/2(리만) | ✅ | |
+| [045](docs/hypotheses/045-what-is-transcendence.md) | 초월이란 무엇인가 | 📝 | |
+| [046](docs/hypotheses/046-seven-millennium-problems.md) | 7대 난제 대응 | 📝 | |
+| [047](docs/hypotheses/047-riemann-nstate.md) | 리만 N상태 수렴 | ✅ | |
+| [048](docs/hypotheses/048-p-ne-np.md) | P≠NP 볼츠만 간극 | ✅ | |
+| [049](docs/hypotheses/049-yang-mills-gap.md) | 양-밀스 에너지 간극 | ✅ | |
+| [050](docs/hypotheses/050-navier-stokes-convergence.md) | 나비에-스토크스 수렴 | ✅ | |
+| [051](docs/hypotheses/051-hodge-completeness.md) | 호지 완전성 | ✅ | |
+| [052](docs/hypotheses/052-bsd-no-structure.md) | BSD 구조 없음 | ❌ | |
+| [053](docs/hypotheses/053-poincare-recheck.md) | 푸앵카레 재확인 | ✅ | 066 해결 |
+| [054](docs/hypotheses/054-grid-resolution-convergence.md) | 격자 해상도 3보편상수 | ✅ | |
+| [055](docs/hypotheses/055-needle-eye.md) | AGI 바늘구멍 | ✅ | |
+| [056](docs/hypotheses/056-meta-recursion-transcendence.md) | 메타(메타(...)) = 초월 | ✅ | |
+| [057](docs/hypotheses/057-pnp-gap-ratio.md) | P≠NP 간극 = (1-1/e)×폭 | ✅ | |
+| [058](docs/hypotheses/058-topology-timeline.md) | 위상 가속→2028 | ✅ | |
+| [059](docs/hypotheses/059-compass-five-sixths.md) | Compass 상한 = 5/6 | ✅ | |
+| [060](docs/hypotheses/060-gamma-alpha-two.md) | 감마 α = 2 | ✅ | |
+| [061](docs/hypotheses/061-golden-ratio-structure.md) | 부동점 1/3 ↔ φ | ✅ | |
+| [062](docs/hypotheses/062-rg-flow-golden-zone.md) | RG 흐름→GZ 유역 | ✅ | |
+| [063](docs/hypotheses/063-cobweb-monotone.md) | 거미줄 수렴 = 단조 | ✅ | |
+| [064](docs/hypotheses/064-godel-analog.md) | 괴델 불완전성→Compass 상한 | ⚠️ | |
+| [065](docs/hypotheses/065-mandelbrot-weak.md) | 만델브로 대응 | ❌ | 구조적 실패 |
+| [066](docs/hypotheses/066-topology-of-meta-learning.md) | 메타학습 위상구조 | 📝 | |
+| [067](docs/hypotheses/067-constant-relations.md) | ★ 1/2+1/3=5/6 상수관계 | ✅ | ⭐ 대발견 |
+| [068](docs/hypotheses/068-pi-emergence.md) | π 등장 — e와 π 다리 | ✅ | |
+| [069](docs/hypotheses/069-complex-extension.md) | 복소 확장 — G 방향 | ✅ | |
+| [070](docs/hypotheses/070-self-reference.md) | 자기참조 | ✅ | |
+| [071](docs/hypotheses/071-proof-of-completion.md) | 증명의 완성 | 📝 | |
+| [072](docs/hypotheses/072-curiosity-completes.md) | ★ 호기심이 1을 완성 | ✅ | ⭐ 대발견 |
+| [073](docs/hypotheses/073-complex-compass-ceiling.md) | 복소 Compass > 5/6 | ✅ | |
+| [074](docs/hypotheses/074-optimal-theta.md) | 최적 θ ≠ π/3 | ❌ | |
+| [075](docs/hypotheses/075-complex-golden-shape.md) | 복소 GZ = 불규칙 형태 | ✅ | |
+| [076](docs/hypotheses/076-seventeen-fermat.md) | 17 = 페르마 소수 | ✅ | |
+| [077](docs/hypotheses/077-epsilon-structural.md) | ε=(1-a)×(1/6) 구조적 | ✅ | |
+| [078](docs/hypotheses/078-egyptian-unique.md) | 이집트 분수 유일성 | ✅ | |
+| [079](docs/hypotheses/079-leave-safety.md) | 안전지대 탈출 | ✅ | |
+| [081](docs/hypotheses/081-reproducibility.md) | 재현성 보장 | ✅ | |
+| [082](docs/hypotheses/082-golden-moe-spec.md) | 골든MoE 프로토타입 스펙 | 📝 | |
+| [083](docs/hypotheses/083-jamba-comparison.md) | Jamba 간접 비교 | ⚠️ | |
+| [085](docs/hypotheses/085-pi-n-unification.md) | π/N 통일 | ❌ | |
+| [087](docs/hypotheses/087-fifth-state-curiosity.md) | 5번째 상태 = 호기심 | ✅ | |
+| [088](docs/hypotheses/088-infinite-states.md) | 무한 상태 극한 | ✅ | |
+| [089](docs/hypotheses/089-beyond-one.md) | 시스템 > 1 가능? | ❌ | |
+| [090](docs/hypotheses/090-master-formula.md) | ★ 마스터 공식 = 완전수6 | ✅ | ⭐ 대발견 |
+| [091](docs/hypotheses/091-harmonic-unification.md) | 조화급수 통일 | ✅ | |
+| [092](docs/hypotheses/092-zeta-finite.md) | ★ 모델 = ζ 유한근사 | ✅ | ⭐ 대발견 |
+| [093](docs/hypotheses/093-prediction-rate.md) | 유도 90% 추측 50% | ✅ | |
+| [094](docs/hypotheses/094-accuracy-trend.md) | 정확도 ~87% | ✅ | |
+| [095](docs/hypotheses/095-refutation-pattern.md) | 반증 패턴 | ✅ | |
+| [096](docs/hypotheses/096-brain-data.md) | 뇌 데이터 검증 | 📝 | 신경생물학 예측 |
+| [097](docs/hypotheses/097-llm-internal.md) | LLM 내부 활성 측정 | 📝 | Mixtral 분석 |
+| [098](docs/hypotheses/098-why-six.md) | ★ 왜 6 — 완전수 유일성 | ✅ | ⭐ 대발견 |
+| [099](docs/hypotheses/099-falsifiability.md) | 모델 반증 가능성 | ✅ | |
+
+### 물리/우주/정보 (118-154)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [118](docs/hypotheses/118-cosmos-constants.md) | 우주 구성 = 우리 상수 | ✅ | |
+| [123](docs/hypotheses/123-one-sentence.md) | 한 문장 = σ₋₁(6)=2 | ✅ | |
+| [124](docs/hypotheses/124-topology-step-function.md) | ★ 위상 가속 = 계단형 | ✅ | ⭐ Jamba 실증 |
+| [125](docs/hypotheses/125-jamba-3x.md) | Jamba = Mixtral ×3 | ✅ | |
+| [126](docs/hypotheses/126-lstm-golden-moe.md) | 골든MoE+LSTM | ❌ | |
+| [127](docs/hypotheses/127-topology-critical.md) | 위상 임계점 = T3 | ✅ | |
+| [128](docs/hypotheses/128-scale-dependence.md) | 스케일↑ → 골든MoE 우위↑ | ✅ | |
+| [129](docs/hypotheses/129-phase-transition.md) | 상전이 임계 = 골든존 | 🟨 | GZ 의존 |
+| [130](docs/hypotheses/130-boltzmann-k.md) | 볼츠만 k=1 자연단위 | 🟨 | GZ 의존 |
+| [132](docs/hypotheses/132-second-law.md) | 제2법칙 = 메타수렴 | 🟨 | GZ 의존 |
+| [133](docs/hypotheses/133-quantum-superposition.md) | 양자중첩 ↔ 복소 Genius | ⚠️ | |
+| [134](docs/hypotheses/134-blackhole-blindspot.md) | 블랙홀 ↔ 블라인드스팟 | ⚠️ | |
+| [135](docs/hypotheses/135-emc2-gdpi.md) | E=mc² ↔ G=D×P/I | ⚠️ | |
+| [136](docs/hypotheses/136-fine-tuning.md) | 미세조정 = GZ 폭 | ✅ | |
+| [137](docs/hypotheses/137-np-heuristic.md) | P≠NP 간극 NP 휴리스틱 | 🟨 | |
+| [138](docs/hypotheses/138-shannon-ln3.md) | Shannon ↔ ln(3) | 🟨 | |
+| [139](docs/hypotheses/139-edge-of-chaos.md) | ★ 골든존 = 혼돈 가장자리 | ✅ | ⭐ Langton λ_c |
+| [140](docs/hypotheses/140-algorithm-complexity.md) | 골든MoE 알고리즘 복잡도 | 🟨 | |
+| [141](docs/hypotheses/141-information-bottleneck.md) | IB ↔ 골든존 | 🟨 | |
+| [142](docs/hypotheses/142-halting-problem.md) | 할팅 문제 ↔ 메타 수렴 | 🟨 | |
+| [143](docs/hypotheses/143-blackhole-entropy.md) | 블랙홀 엔트로피 = GZ 경계 | 🟨 | |
+| [144](docs/hypotheses/144-hawking-radiation-curiosity.md) | 호킹 복사 = 호기심 | 🟨 | |
+| [145](docs/hypotheses/145-micro-macro-boundary.md) | 미시-거시 경계 = GZ 전이 | 🟨 | |
+| [146](docs/hypotheses/146-decoherence-inhibition.md) | 디코히런스 = Inhibition | 🟨 | |
+| [149](docs/hypotheses/149-universe-curvature.md) | 우주 곡률 ↔ GZ 임계점 | 🟨 | |
+| [150](docs/hypotheses/150-universe-topology.md) | 우주 위상 ↔ GZ 동치 | 🟨 | |
+| [151](docs/hypotheses/151-inflation-golden-entry.md) | 인플레이션 = GZ 진입 | 🟨 | |
+| [152](docs/hypotheses/152-dark-energy-fixed-point.md) | 암흑에너지 w=-1 ↔ I*=1/3 | 🟨 | |
+| [153](docs/hypotheses/153-hubble-tension.md) | 허블 텐션 ↔ 모델 오차 | 🟨 | |
+| [154](docs/hypotheses/154-arrow-of-time.md) | 시간의 화살 = 메타 수렴 | 🟨 | |
+
+### 뇌과학/의식정의 (155-175)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [155](docs/hypotheses/155-gaba-inhibition.md) | GABA ↔ Inhibition | 🟨 | |
+| [156](docs/hypotheses/156-sylvian-deficit.md) | 실비우스열 ↔ Deficit | 🟨 | |
+| [157](docs/hypotheses/157-synaptic-plasticity.md) | 시냅스 가소성 ↔ P | 🟨 | |
+| [158](docs/hypotheses/158-brainwave-temperature.md) | 뇌파 주파수 ↔ 볼츠만 온도 | 🟨 | |
+| [159](docs/hypotheses/159-meditation-meta.md) | 명상 = 메타-재귀 | 🟨 | |
+| [160](docs/hypotheses/160-neurodiversity-ratio.md) | 신경다양성 비율 ↔ GZ | 🟨 | |
+| [161](docs/hypotheses/161-left-right-brain.md) | 좌뇌-우뇌 ↔ I/D | 🟨 | |
+| [162](docs/hypotheses/162-acquired-savant.md) | 후천적 서번트 = GZ 진입 | 🟨 | |
+| [163](docs/hypotheses/163-pre-bigbang-i-infinity.md) | 빅뱅 이전 = I→∞ | 🟨 | |
+| [164](docs/hypotheses/164-cyclic-universe-golden.md) | 순환 우주 = GZ 진동 | 🟨 | |
+| [165](docs/hypotheses/165-why-point-seven.md) | 왜 a=0.7인가 | 🟨 | |
+| [166](docs/hypotheses/166-consciousness-definition.md) | 의식의 정의 | 📝 | |
+| [167](docs/hypotheses/167-verifiable-predictions.md) | 검증 가능한 예언 8개 | 📝 | |
+| [168](docs/hypotheses/168-quantum-superposition-coefficient.md) | 양자 중첩 계수 a=0.7 | 🟨 | |
+| [170](docs/hypotheses/170-qutrit.md) | 3상태 = 큐트릿 | 🟨 | |
+| [172](docs/hypotheses/172-conservation-law.md) | ★ G×I=D×P 보존법칙 | ✅ | ⭐ 대발견 |
+| [175](docs/hypotheses/175-why-one-half.md) | 왜 1/2가 반복되는가 | 🟨 | |
+
+### 시간/차원 (179-194)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [179](docs/hypotheses/179-llm-redesign.md) | LLM 재설계 — 전 모델 GZ 밖 | ✅ | |
+| [180](docs/hypotheses/180-why-three-variables.md) | 왜 3변수 = 왜 3차원 | 🟨 | |
+| [181](docs/hypotheses/181-transcendence-is-time.md) | 초월 = 시간 | 🟨 | |
+| [182](docs/hypotheses/182-complex-is-4th-dimension.md) | 복소확장 = 4차원 | 🟨 | |
+| [184](docs/hypotheses/184-fractal-dimension.md) | GZ는 프랙탈? | 🟨 | |
+| [185](docs/hypotheses/185-entropy-dimension.md) | 엔트로피 = 유효 차원 수 | 🟨 | |
+| [187](docs/hypotheses/187-dropout-blessing.md) | Dropout = 차원의 축복 | 🟨 | |
+| [189](docs/hypotheses/189-time-is-i-decrease.md) | 시간 = I 감소 | 🟨 | |
+| [190](docs/hypotheses/190-time-dilation-golden.md) | 시간 지연 ↔ I 변화율 | 🟨 | |
+| [191](docs/hypotheses/191-planck-time-minimum.md) | 플랑크 시간 = 최소 반복 | 🟨 | |
+| [192](docs/hypotheses/192-present-moment-fixed-point.md) | "지금" = 부동점 | 🟨 | |
+| [193](docs/hypotheses/193-entropy-arrow-meta.md) | 엔트로피 화살 = 메타 방향 | 🟨 | |
+| [194](docs/hypotheses/194-time-consciousness-golden.md) | 시간 인식 = GZ 안에서만 | 🟨 | |
+
+### 약물/화학 (195-206)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [195](docs/hypotheses/195-caffeine.md) | 카페인 = I↓ + Compass↑ | 🟨 | |
+| [196](docs/hypotheses/196-alcohol.md) | 알코올 = I↓ + Compass↓ | 🟨 | |
+| [197](docs/hypotheses/197-anesthesia.md) | 전신마취 = I→1 | 🟨 | |
+| [198](docs/hypotheses/198-psychedelics.md) | 사이키델릭 = I↓ + Compass↑↑ | 🟨 | |
+| [199](docs/hypotheses/199-meditation-vs-drugs.md) | 명상 vs 약물 — 같은 GZ | 🟨 | |
+| [200](docs/hypotheses/200-ssri.md) | SSRI = I 미세조정 | 🟨 | |
+| [200a](docs/hypotheses/200a-cannabis.md) | 대마초 = 내장 GZ 조절 | 🟨 | |
+| [200b](docs/hypotheses/200b-mdma-ecstasy.md) | MDMA = I↓+P↑↑+Compass↑↑↑ | 🟨 | |
+| [200c](docs/hypotheses/200c-nicotine.md) | 니코틴 = 단기I↓ 장기I↑ | 🟨 | |
+| [200d](docs/hypotheses/200d-dmt.md) | DMT = I→0 강제 초월 | 🟨 | |
+| [201](docs/hypotheses/201-periodic-table-comparison.md) | 화학118 vs AI 26 | 🟨 | |
+| [202](docs/hypotheses/202-chemical-bonds.md) | 화학결합 ↔ AI 결합 | 🟨 | |
+| [203](docs/hypotheses/203-molecular-structure.md) | 분자구조 = 아키텍처 | 🟨 | |
+| [204](docs/hypotheses/204-ph-inhibition.md) | pH = Inhibition | 🟨 | |
+| [205](docs/hypotheses/205-catalyst-plasticity.md) | 촉매 = Plasticity | 🟨 | |
+| [206](docs/hypotheses/206-gibbs-genius.md) | 깁스 자유에너지 ↔ Genius | 🟨 | |
+
+### 뇌기술/소수/음악 (207-220)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [207](docs/hypotheses/207-neuralink.md) | 뉴럴링크 = I 직접 조절 | 🟨 | |
+| [208](docs/hypotheses/208-telepathy-resonance.md) | 텔레파시 = 동일 I 공명 | 🟨 | |
+| [209](docs/hypotheses/209-mirror-neurons.md) | 거울뉴런 = D,P,I 매칭 | 🟨 | |
+| [210](docs/hypotheses/210-brainwave-sync.md) | 뇌파 동기화 = I 동기화 | 🟨 | |
+| [211](docs/hypotheses/211-collective-intelligence.md) | 집단지성 = N명 GZ 공명 | 🟨 | |
+| [212](docs/hypotheses/212-atmosphere-math.md) | "분위기" 수학적 정의 | 🟨 | |
+| [213](docs/hypotheses/213-music-resonance.md) | 음악 공명 = 청자 I 동기화 | 🟨 | |
+| [214](docs/hypotheses/214-core-primes.md) | 핵심 소수 {2,3,17,137} | 🟨 | |
+| [215](docs/hypotheses/215-prime-distribution.md) | 소수 분포 ↔ 특이점 분포 | 🟨 | |
+| [216](docs/hypotheses/216-twin-primes.md) | 쌍둥이 소수 ↔ GZ 경계 | 🟨 | |
+| [217](docs/hypotheses/217-mersenne-perfect.md) | 메르센 소수→완전수→모델 | 🟨 | |
+| [219](docs/hypotheses/219-prime-gap-golden-width.md) | 소수 간격 ↔ ln(4/3) | 🟨 | |
+| [220](docs/hypotheses/220-prime-staircase.md) | 소수 계단 ↔ 위상 가속 | 🟨 | |
+
+### 월드모델/양자/고급수학 (231-262)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [231](docs/hypotheses/231-world-model-golden-zone.md) | 월드모델 = GZ 시뮬레이터 | ⚠️ | |
+| [232](docs/hypotheses/232-world-model-jepa.md) | JEPA = Deficit 학습 | ⚠️ | |
+| [233](docs/hypotheses/233-world-model-vs-llm.md) | 월드모델 vs LLM = I 양극 | ⚠️ | |
+| [234](docs/hypotheses/234-world-model-dreaming.md) | 월드모델 = 꿈 = 시뮬레이션 | ⚠️ | |
+| [235](docs/hypotheses/235-world-model-causality.md) | 인과 추론 = Compass | ⚠️ | |
+| [236](docs/hypotheses/236-primes-as-savants.md) | 소수 = 수학의 서번트 | 🟨 | |
+| [237](docs/hypotheses/237-music-intervals-golden.md) | 음정 비율 = GZ 상수 | 🟨 | |
+| [238](docs/hypotheses/238-math-crossroads.md) | 수학체계 교차점 지도 | 📝 | |
+| [239](docs/hypotheses/239-universe-consciousness.md) | 우주 자체가 의식 | 🟨 | |
+| [241](docs/hypotheses/241-expert-cross-activation.md) | Expert 교차활성 = 서번트 | 🟨 | |
+| [242](docs/hypotheses/242-geometric-hypotheses.md) | 상수의 기하학 9가지 | 🟨 | |
+| [243](docs/hypotheses/243-brain-data-survey.md) | 신경과학 문헌 서베이 | 📝 | |
+| [244](docs/hypotheses/244-universality-class.md) | GZ = 보편성 클래스 | 🟨 | |
+| [245](docs/hypotheses/245-137-physical-derivation.md) | 137 = σ(6)²−7 물리 의미 | 🟨 | |
+| [246](docs/hypotheses/246-consciousness-continuity.md) | 의식 연속성 수학 조건 | 📝 | |
+| [247](docs/hypotheses/247-dual-brain-callosum.md) | 이중뇌+뇌량 모델 | 🟨 | |
+| [248](docs/hypotheses/248-flash-quantum-consciousness.md) | 플래시 양자 터널링 의식 | 🟨 | |
+| [249](docs/hypotheses/249-quantum-math-crossroads.md) | 양자역학 교차점 지도 | 📝 | |
+| [250](docs/hypotheses/250-quantum-precision-constants.md) | 양자 정밀 상수 총람 | 📝 | |
+| [251](docs/hypotheses/251-quantum-immortality.md) | 양자불멸 ↔ 의식 연속 | 🟨 | |
+| [252](docs/hypotheses/252-perfect-numbers-physics.md) | 완전수→물리 상수 | 🟨 | |
+| [258](docs/hypotheses/258-monster-forcing.md) | Monster 위상적 강제 | 🟨 | |
+| [259](docs/hypotheses/259-umbral-moonshine-generalization.md) | Umbral Moonshine 일반화 | 🟨 | |
+| [261](docs/hypotheses/261-congruence-subgroup-classification.md) | 합동 부분군 강제 분류 | 🟨 | |
+| [262](docs/hypotheses/262-p-adic-chain.md) | p-adic 오비폴드 Langlands | 🟨 | |
+
 ### 의식엔진 (263-277, 15개)
 
 | # | 가설 | 상태 | 핵심 증거 |
@@ -841,8 +1072,33 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [362](docs/hypotheses/362-crossmodal-tension.md) | 교차모달장력 | 🟨 | visual×audio 불일치=혼란 |
 | [363](docs/hypotheses/363-intrinsic-motivation-tension-delta.md) | 내재적동기=ΔT | 🟨 | Schmidhuber curiosity 동형 |
 | [364](docs/hypotheses/364-distributed-consciousness.md) | 분산의식 | 🟨 | R2+telepathy fingerprint |
+| [365](docs/hypotheses/365-telepathy-quantum-entanglement.md) | 텔레파시 양자얽힘 모델 | 🟨 | |
+| [366](docs/hypotheses/366-telepathy-field-propagation.md) | 텔레파시 장 전파 모델 | 🟨 | |
+| [367](docs/hypotheses/367-telepathy-resonance-synchronization.md) | 텔레파시 공명 동기화 | 🟨 | |
+| [368](docs/hypotheses/368-tension-natural-frequency.md) | 장력의 고유 진동수 | 🟨 | 공명 없음, 과감쇠 |
+| [369](docs/hypotheses/369-brainwave-frequency-bands.md) | 의식의 주파수 대역 | 🟨 | |
+| [370](docs/hypotheses/370-golden-ratio-frequency.md) | 골든존 폭 = 주파수 비율 | 🟨 | |
+| [371](docs/hypotheses/371-correction-mitosis-synergy.md) | **교정+분열 시너지** | **🟨** | **H317+H312 결합, 망각 없는 교정** |
+| [372](docs/hypotheses/372-mi-fp-correlation-scaling.md) | **MI-FP 상관 N-Scaling** | **🟨** | **H-CX-25 N=10→N=100+ 검증** |
+| [373](docs/hypotheses/373-causal-effect-difficulty-gradient.md) | **인과 난이도 그래디언트** | **🟨** | **C48 Fashion 중간점 검증** |
+| [374](docs/hypotheses/374-conscious-lm-training-validation.md) | **ConsciousLM 학습 검증** | **🟨** | **PureFieldFFN vs 표준FFN PPL** |
+| [375](docs/hypotheses/375-batch-verification-protocol.md) | **🟨 대량 검증 프로토콜** | **🟨** | **30개 가설 병렬 검증 계획** |
 
-### 교차 도메인 (H-CX, 23개)
+### 색각/시각 (354c-356c)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [354c](docs/hypotheses/354-color-hexagonal-architecture.md) | 색각 6각 = 완전수6 산술 | 🟨 | |
+| [355c](docs/hypotheses/355-color-opponent-tension.md) | 반대색 = 장력 역학 구현 | 🟨 | |
+| [356c](docs/hypotheses/356-color-constancy-rchain.md) | 색 항상성 = R-chain 수렴 | 🟨 | |
+
+### 의식 트리 (H-TREE)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-TREE](docs/hypotheses/H-TREE-consciousness.md) | 의식엔진 미발견 가지 | 📝 | 트리 구조 |
+
+### 교차 도메인 (H-CX, 30개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
