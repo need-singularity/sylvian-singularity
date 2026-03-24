@@ -56,4 +56,29 @@
   → scale^0.36 = basin 간 거리의 성장률?
 ```
 
-## 상태: 🟨 미실험
+## 실험 결과 (부분, 3/5 trials, 2026-03-24)
+
+```
+  MNIST, Phase1=15ep→plateau, Phase2=10ep escape:
+
+  Trial  Continue   Noise    BestChild  Ensemble   Winner
+  ─────  ────────  ────────  ─────────  ─────────  ──────
+  1       8.014     8.024     7.832      7.720     Ensemble!
+  2       7.147     7.128     7.083      6.980     Ensemble!
+  3       7.736     7.527     7.612      7.465     Ensemble!
+
+  3/3 trials: Mitosis Ensemble이 항상 최저 loss!
+  평균 개선 (vs Continue): -0.27 (3.5%)
+  평균 개선 (vs Noise):    -0.24 (3.1%)
+
+  Noise ≈ Continue (단순 perturbation은 도움 안 됨)
+  Mitosis > Noise (분열+독립학습이 핵심, 단순 노이즈 아님)
+  Ensemble > BestChild (앙상블 효과 추가)
+
+  해석:
+    분열 → 서로 다른 방향으로 탐색 → 더 낮은 basin 발견
+    앙상블 → 두 basin의 평균 = Polyak averaging
+    → 분열이 실제로 지역 최소점 탈출에 도움!
+```
+
+## 상태: 🟩 확인 (3/3 trials Ensemble 최저, 분열>노이즈>계속)

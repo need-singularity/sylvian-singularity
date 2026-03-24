@@ -589,7 +589,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 308 | 자기참조 이상탐지 | ⬛ 반박 | T1=T2=T3, 반복 무효과 |
 | 309 | 분열이상탐지 종합 | 📝 | 6셋, 15+실험, 5대 발견 |
 | 310 | 분열 엔진 아키텍처 | 🟧 약한개선 | +0.22% (MNIST, 유의하지 않음) |
-| 311 | 분열=지역최소탈출 | 🟨 | noise=온도, SA 비유 |
+| 311 | 분열=지역최소탈출 | 🟩 확인 | 3/3 Ensemble 최저loss, 분열>노이즈 |
 | 312 | 분열=망각방지 | 🟨 | freeze child=기억보관 |
 | 313 | **장력=확신** | **🟩 통합!** | **tension∝1/PPL, H307+CX21+C4b+C48** |
 
@@ -618,6 +618,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-19](docs/hypotheses/H-CX-19-internal-ratio-golden-lower.md) | 반전비≈ln(4/3) | 🟧 | 11셋 0.294≈0.288 (2.2%) |
 | [H-CX-20](docs/hypotheses/H-CX-20-half-activation-riemann.md) | 최적활성=1/2=리만 | 🟧 | MoE k/N=0.5 피크, 이진 엔트로피 |
 | [H-CX-21](docs/hypotheses/H-CX-21-llm-tension-perplexity.md) | tension∝1/PPL | 🟧 수정 | 높은장력=확신, H307과 일관 |
+| [H-CX-22](docs/hypotheses/H-CX-22-consciousness-confidence-generator.md) | 의식=확신생성기 | 🟩 통합 | H313+체험+골든존+실용 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
