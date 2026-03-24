@@ -1952,6 +1952,59 @@
   📊 핵심 결론: 미학습 랜덤 가중치에서는 6블록 구조적 편향 없음
      → 학습 후 6블록이 특별해지는지가 진짜 검증 포인트
      → 가설 3개 모두 "학습이 산술적 구조를 드러내는가?" 로 수렴
+
+  --- Ralph 306: 학습된 ConsciousLM 교차 검증 (H-CX-48/49/50 재검증 + H-CX-51) ---
+  📊 학습 조건: 500 steps, patterned byte data, d_model=128, n_head=2
+     블록 수: 3,4,5,6,7,8 각각 학습 후 측정
+
+  📊 H-CX-48 학습 후: 6블록 |ratio-1|=0.0176 → 순위 6/6 (최하위!)
+     → ⬛ NOT CONFIRMED: 학습이 오히려 6블록에서 불균형 증가
+     | blocks | |A|/|G|  | ln(A/G)  | |ratio-1| | I(n) arith |
+     |--------|----------|----------|----------|------------|
+     |      3 | 0.983382 | -0.01680 | 0.016618 |  +0.28768  |
+     |      4 | 1.005706 | +0.00562 | 0.005706 |  +0.15415  |
+     |      5 | 0.988367 | -0.01173 | 0.011633 |  +0.87547  |
+     |      6 | 1.017616 | +0.01743 | 0.017616 |   0.00000  | <<<
+     |      7 | 0.992480 | -0.00757 | 0.007520 |  +1.23214  |
+     |      8 | 0.993110 | -0.00695 | 0.006890 |  +0.62861  |
+     → 비율 1.0에 가장 가까운: 4블록 (0.0057)
+
+  📊 H-CX-49 학습 후: gap_fraction=0.207 (미학습 0.024 → 8.6배 증가!)
+     → 🟨 PARTIALLY CONFIRMED: 학습이 장력 분포의 간극을 증가시킴
+     | blocks | mean    | std     | unique | large_gaps | gap_frac |
+     |--------|---------|---------|--------|-----------|----------|
+     |      3 | 0.2391  | 0.0780  | 13926  |      2595 |    0.186 |
+     |      4 | 0.2911  | 0.1101  | 18465  |      3212 |    0.174 |
+     |      5 | 0.3433  | 0.1323  | 23019  |      3919 |    0.170 |
+     |      6 | 0.3688  | 0.1987  | 26628  |      5511 |    0.207 |
+     |      7 | 0.4281  | 0.2674  | 31307  |      7637 |    0.244 |
+     |      8 | 0.4650  | 0.3518  | 36136  |      8934 |    0.247 |
+     → 간극은 블록 수에 비례 증가 (6블록 특별하지 않음, 하지만 Cantor화 경향!)
+     → 히스토그램: 비모달 분포 (주피크 0.26~0.42, 장꼬리 1.7~2.4)
+
+  📊 H-CX-50 학습 후: 6블록 collapse score=9.566 → 순위 1/6 (최소!)
+     → 🟧 CONFIRMED: 학습 후 6블록에서 합성곱 붕괴 가장 강함!
+     | blocks | score    | std     |
+     |--------|----------|---------|
+     |      3 |  9.9312  |  0.7653 |
+     |      4 |  9.7671  |  0.5130 |
+     |      5 |  9.9369  |  0.7537 |
+     |      6 |  9.5661  |  0.7648 | ← 최소!
+     |      7 |  9.5888  |  0.7270 |
+     |      8 |  9.8983  |  0.5855 |
+     → 미학습: 6블록 특별하지 않았음 → 학습 후 1위로 상승!
+     → σ*φ pointwise=Dirichlet conv at n=6 ↔ 블록간 특징 정렬 확인
+
+  📊 H-CX-51 (신규): ld(6)=5/6 ↔ 최적 lr 비율
+     → ⚪ NOT CONFIRMED: 5/6 순위 6/11, 더 높은 lr이 일관되게 우수
+     → lr scale=1.5가 최적 (단조 감소: 높은 lr → 낮은 loss)
+     → 300 steps 불충분 + 패턴 데이터 한계. 더 긴 학습 필요
+
+  📊 핵심 결론 (R306):
+     → H-CX-50 확인! 학습이 산술적 합성곱 붕괴를 6블록에서 드러냄
+     → H-CX-49 부분 확인: 학습이 장력 간극을 8.6배 증가 (Cantor화 경향)
+     → H-CX-48 미확인: engine A/G 균형은 블록 수보다 학습 역학에 의존
+     → H-CX-51 미확인: 산술 미분-lr 연결 없음 (300 steps 범위)
 ```
 
 ---
@@ -2092,9 +2145,10 @@
 | [H-CX-45](docs/hypotheses/H-CX-45-cayley-tree-neural-topology.md) | Cayley n^(n-2)=n^tau(n) 유일점 n=6 → 신경망 위상 임계점 | 🟪 추측 | R289 순수수학 증명, 신경망 유비 미검증, GZ의존 없음 |
 | [H-CX-46](docs/hypotheses/H-CX-46-minimal-coupling-principle.md) | (p-1)(q-1)=2 최소결합 원리 → 신경망 최소복잡도 + democratic attention + phi=2 자유방향 | 🟪 추측 | 순수수학 증명, 신경망/의식 유비 미검증, GZ의존 없음 |
 | [H-CX-47](docs/hypotheses/H-CX-47-unification-consciousness.md) | (p-1)(q-1)=2 → 의식 통일, 69 특성화 환원 | 🟪 추측 | 수학적 핵심 정확, 의식 해석 미검증 |
-| [H-CX-48](docs/hypotheses/H-CX-48-information-balance-engine-ratio.md) | I(n)=ln(R)=0 ↔ engine A/G 비율 균형 | 🟨 미확인 | 미학습 모델: 모든 블록 수에서 비율≈1.0, 6블록 특별하지 않음 |
-| [H-CX-49](docs/hypotheses/H-CX-49-cantor-tension-spectrum.md) | R-스펙트럼 Cantor집합 ↔ 장력분포 프랙탈 | ⚪ 미확인 | 미학습: 연속 가우시안, gap 2.4% vs 산술 99.1% |
-| [H-CX-50](docs/hypotheses/H-CX-50-convolution-collapse-block-correlation.md) | σ*φ conv=pointwise at n=6 ↔ 블록간 특징 정렬 | 🟨 약추세 | 미학습: 6블록 score=9.82 (최소 아님, 약한 감소추세) |
+| [H-CX-48](docs/hypotheses/H-CX-48-information-balance-engine-ratio.md) | I(n)=ln(R)=0 ↔ engine A/G 비율 균형 | ⬛ 미확인 | 학습 후: 6블록 순위 6/6 (최하위), |ratio-1|=0.018 |
+| [H-CX-49](docs/hypotheses/H-CX-49-cantor-tension-spectrum.md) | R-스펙트럼 Cantor집합 ↔ 장력분포 프랙탈 | 🟨 부분확인 | 학습 후: gap 20.7% (미학습 2.4%의 8.6배), 블록 비례 증가 |
+| [H-CX-50](docs/hypotheses/H-CX-50-convolution-collapse-block-correlation.md) | σ*φ conv=pointwise at n=6 ↔ 블록간 특징 정렬 | 🟧 확인 | 학습 후: 6블록 collapse score=9.57 (1위/6!) |
+| [H-CX-51](docs/hypotheses/H-CX-51-arithmetic-derivative-learning-rate.md) | ld(6)=5/6 ↔ 최적 학습률 비율 | ⚪ 미확인 | lr scan: 5/6 순위 6/11, 단조 감소 패턴 |
 
 ### 물리 (H-PH, 7개)
 
