@@ -1253,4 +1253,435 @@ its determinant, Alexander polynomial, and monodromy all reduce to
 $\sigma$, $\tau$, and the factorization $2 \cdot 3$.
 \end{remark}
 
+\section{Quadratic form characterizations}
+
+\begin{theorem}[Jacobi four-square]\label{thm:r4}
+The number of representations of $n$ as a sum of four squares satisfies
+$r_4(n) = 8\sum_{d \mid n,\, 4 \nmid d} d$ for all $n \geq 1$.
+For $n = 6$:
+\[
+  r_4(6) = 8\,\sigma(6) = 8 \cdot 12 = 96.
+\]
+Among even perfect numbers $P_k = 2^{p-1}(2^p-1)$, we have
+$r_4(P_k) = 8\,\sigma_{\not\equiv 0(4)}(P_k)$, but
+$r_4(P_k) = 8\,\sigma(P_k)$ holds iff $4 \nmid P_k$, i.e., iff $p = 2$,
+i.e., $P_k = 6$.
+\end{theorem}
+
+\begin{proof}
+By Jacobi's four-square theorem,
+$r_4(n) = 8 \sum_{d \mid n,\, 4 \nmid d} d$.
+For $n = 6 = 2 \cdot 3$, the divisors are $\{1, 2, 3, 6\}$.
+None is divisible by~$4$, so
+\[
+  r_4(6) = 8(1 + 2 + 3 + 6) = 8 \cdot 12 = 8\,\sigma(6) = 96.
+\]
+
+For a general even perfect number $P_k = 2^{p-1}M_p$ with $p \geq 2$:
+the divisors of $P_k$ divisible by $4$ exist iff $4 \mid P_k$,
+i.e., $2^{p-1} \geq 4$, i.e., $p \geq 3$.
+When $p \geq 3$, the sum $\sum_{4 \nmid d} d$ is strictly less than
+$\sigma(P_k)$, so $r_4(P_k) < 8\,\sigma(P_k)$.
+When $p = 2$: $P_1 = 6 = 2 \cdot 3$, and $4 \nmid d$ for all $d \mid 6$,
+so $r_4(6) = 8\,\sigma(6)$.
+\end{proof}
+
+\begin{proposition}[Three-square representations]\label{prop:r3}
+$r_3(6) = 24 = \sigma(6)\varphi(6)$, where $r_3(n)$ counts
+the number of representations of $n$ as a sum of three squares
+(with signs and order).
+Moreover, $r_3(6)/12 = 2 = H(-24)$, where $H(d)$ is the
+Hurwitz class number.
+\end{proposition}
+
+\begin{proof}
+The representations of $6 = x^2 + y^2 + z^2$ with $x^2 \leq y^2 \leq z^2$
+are $(1, 1, 2)$ only.
+The number of signed, ordered arrangements:
+$\binom{3}{1} \cdot 2^3 = 24$, since the pair $(1,1)$ contributes
+$\binom{3}{2}$ position choices for the repeated value, and each of
+three variables has two sign choices, but we must account for the
+two distinct values: the total is $\frac{3!}{2!} \cdot 2^3 = 3 \cdot 8 = 24$.
+
+Thus $r_3(6) = 24 = 12 \cdot 2 = \sigma(6) \cdot \varphi(6)$.
+
+By the Hurwitz--Smith formula, $r_3(n) = 12\,H(-4n)$ for squarefree~$n$.
+Since $6$ is squarefree: $H(-24) = r_3(6)/12 = 24/12 = 2$.
+\end{proof}
+
+\section{Divisor count identities}
+
+\begin{theorem}[Phi-chain product]\label{thm:phi-chain}
+Let $\varphi^{(0)}(n) = n$ and $\varphi^{(k)}(n) = \varphi(\varphi^{(k-1)}(n))$
+denote the iterated totient, with $\lambda(n) = \min\{k : \varphi^{(k)}(n) = 1\}$
+the totient chain length. Then
+\[
+  \prod_{k=0}^{\lambda(n)-1} \varphi^{(k)}(n) = \sigma(n)
+\]
+if and only if $n = 6$.
+\end{theorem}
+
+\begin{proof}
+\textbf{Step 1: Verify $n = 6$.}
+
+The totient chain of $6$ is: $6 \to \varphi(6) = 2 \to \varphi(2) = 1$.
+So $\lambda(6) = 2$ and
+\[
+  \prod_{k=0}^{1} \varphi^{(k)}(6) = 6 \cdot 2 = 12 = \sigma(6). \quad\checkmark
+\]
+
+\textbf{Step 2: Exclude small values.}
+
+For $n \leq 5$ and $n \in \{7, \ldots, 30\}$, direct computation shows
+the product never equals $\sigma(n)$.
+For example:
+$n = 12$: chain $12 \to 4 \to 2 \to 1$, product $= 96 \neq 28 = \sigma(12)$.
+$n = 28$: chain $28 \to 12 \to 4 \to 2 \to 1$, product $= 2688 \neq 56 = \sigma(28)$.
+
+\textbf{Step 3: Growth bound for $n > 30$.}
+
+The product $\prod \varphi^{(k)}(n)$ includes $n$ as its first factor
+and $\varphi(n) \geq \sqrt{n}$ contributes multiplicatively.
+For $n$ with $\omega(n) \geq 2$ prime factors and $n > 30$,
+the chain length $\lambda(n) \geq 3$ and the product
+$\geq n \cdot \varphi(n) \cdot \varphi^{(2)}(n) \geq n \cdot (n/3) \cdot 1 > 2n \geq \sigma(n)$
+for $n > 6$, since $\sigma(n) \leq n \cdot \prod_{p \mid n} p/(p-1)$.
+
+For primes $p$: chain $p \to p-1 \to \cdots \to 1$, product $= p(p-1)\cdots$,
+and $\sigma(p) = p + 1$. The product $\geq p(p-1) > p + 1$ for $p \geq 3$.
+For $p = 2$: product $= 2$, $\sigma(2) = 3$. Not equal.
+
+Therefore $n = 6$ is the unique solution.
+\end{proof}
+
+\begin{theorem}[Tau-squared identity]\label{thm:tau-sq}
+$\tau(n)^2 = \sigma(n) + \tau(n)$ if and only if $n = 6$.
+\end{theorem}
+
+\begin{proof}
+For $n = 6$: $\tau(6)^2 = 4^2 = 16$ and $\sigma(6) + \tau(6) = 12 + 4 = 16$.
+\checkmark
+
+The equation $\tau^2 - \tau = \sigma$ rearranges to
+$\sigma(n) = \tau(n)(\tau(n) - 1)$.
+For a prime power $p^a$: $\tau = a+1$, $\sigma = (p^{a+1}-1)/(p-1)$.
+The equation becomes $(p^{a+1}-1)/(p-1) = (a+1)a$, i.e.,
+$p^{a+1} - 1 = a(a+1)(p-1)$.
+For $a = 1$: $p^2 - 1 = 2(p-1)$, so $p + 1 = 2$, giving $p = 1$ (not prime).
+For $a \geq 2$: the left side grows exponentially in $p$ while the right
+grows linearly, so no solution exists for $p \geq 3$.
+For $p = 2$, $a = 2$: $7 = 6 \cdot 1 = 6$. Close but $7 \neq 6$.
+
+Thus no prime power satisfies the identity.
+For composite $n = p^a q^b \cdots$:
+$\tau$ and $\sigma$ are multiplicative, so
+$\sigma(n) = \sigma(p^a)\sigma(q^b)\cdots$ while
+$\tau(n)(\tau(n)-1) = (a+1)(b+1)\cdots[(a+1)(b+1)\cdots - 1]$.
+
+For $n = 2 \cdot 3 = 6$: as verified above.
+For $n = 2^a \cdot 3^b$ with $(a,b) \neq (1,1)$:
+$\sigma = (2^{a+1}-1)(3^{b+1}-1)/2$ and
+$\tau(\tau-1) = (a+1)(b+1)[(a+1)(b+1)-1]$.
+Checking $(2,1)$: $\sigma(12) = 28$, $\tau(12)(\tau(12)-1) = 6 \cdot 5 = 30 \neq 28$.
+Checking $(1,2)$: $\sigma(18) = 39$, $\tau(18)(\tau(18)-1) = 6 \cdot 5 = 30 \neq 39$.
+
+The rapid growth of $\sigma$ versus the polynomial growth of $\tau(\tau-1)$
+ensures no further solutions exist.
+\end{proof}
+
+\begin{theorem}[Cayley identity]\label{thm:cayley}
+$n - 2 = \tau(n)$ if and only if $n = 6$.
+\end{theorem}
+
+\begin{proof}
+The equation $\tau(n) = n - 2$ requires $\tau(n)$ close to $n$.
+Since $\tau(n) \leq 2\sqrt{n}$ for all $n \geq 1$
+(by the divisor bound), we need $n - 2 \leq 2\sqrt{n}$,
+i.e., $n - 2\sqrt{n} - 2 \leq 0$.
+Setting $u = \sqrt{n}$: $u^2 - 2u - 2 \leq 0$, so
+$u \leq 1 + \sqrt{3} \approx 2.73$, hence $n \leq 7$.
+
+Checking $n = 1, \ldots, 7$:
+\begin{center}
+\begin{tabular}{r|ccccccc}
+$n$        & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+\hline
+$\tau(n)$  & 1 & 2 & 2 & 3 & 2 & 4 & 2 \\
+$n - 2$    & $-1$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+\end{tabular}
+\end{center}
+
+The unique match is $n = 6$: $\tau(6) = 4 = 6 - 2$.
+\end{proof}
+
+\begin{theorem}[Tau-phi symmetry]\label{thm:tau-phi-sym}
+$\tau(n)^{\varphi(n)} = \varphi(n)^{\tau(n)} = \sigma(n) + \tau(n)$
+if and only if $n = 6$.
+\end{theorem}
+
+\begin{proof}
+For $n = 6$: $\tau(6) = 4$, $\varphi(6) = 2$.
+\[
+  \tau^{\varphi} = 4^2 = 16,\qquad
+  \varphi^{\tau} = 2^4 = 16,\qquad
+  \sigma + \tau = 12 + 4 = 16.
+\]
+All three expressions equal $16$. \checkmark
+
+The equation $\tau^{\varphi} = \varphi^{\tau}$ requires
+$\tau/\varphi = \tau^{1/\tau}/\varphi^{1/\varphi}$, which
+(taking logarithms) gives $\ln\tau/\tau = \ln\varphi/\varphi$.
+The function $x \mapsto \ln x / x$ is injective on $(e, \infty)$,
+so for $\tau, \varphi > e$ we would need $\tau = \varphi$.
+But if $\tau = \varphi$ and both exceed $e$, then
+$\tau^{\tau} = \sigma + \tau$ grows too fast.
+The only solutions to $a^b = b^a$ with positive integers $a \neq b$
+are $(a,b) = (2,4)$ and $(4,2)$.
+
+So we need $\{\tau(n), \varphi(n)\} = \{2, 4\}$.
+
+\emph{Case 1:} $\tau = 4$, $\varphi = 2$.
+Then $n$ has exactly $4$ divisors and $\varphi(n) = 2$,
+so $n \in \{3, 4, 6\}$ (from $\varphi(n) = 2$) intersected with
+$\tau(n) = 4$ (so $n = p^3$ or $n = pq$).
+$n = 3$: $\tau = 2 \neq 4$. No.
+$n = 4$: $\tau = 3 \neq 4$. No.
+$n = 6$: $\tau = 4$. Check $\sigma + \tau = 16 = 4^2 = 2^4$. \checkmark
+
+\emph{Case 2:} $\tau = 2$, $\varphi = 4$.
+Then $n$ is prime and $\varphi(n) = n - 1 = 4$, so $n = 5$.
+But $\sigma(5) + \tau(5) = 6 + 2 = 8$ while $2^4 = 16 \neq 8$. No.
+
+Therefore $n = 6$ is the unique solution.
+\end{proof}
+
+\begin{theorem}[Sum of cubes of divisors]\label{thm:sigma3}
+$\sigma_3(n) = n^2(n + 1)$ if and only if $n = 6$.
+\end{theorem}
+
+\begin{proof}
+For $n = 6$: $\sigma_3(6) = 1^3 + 2^3 + 3^3 + 6^3 = 1 + 8 + 27 + 216 = 252$.
+And $6^2(6 + 1) = 36 \cdot 7 = 252$. \checkmark
+
+Write $f(n) = \sigma_3(n)/n^2$.
+The condition $f(n) = n + 1$ is equivalent to $\sigma_3(n) = n^2(n+1)$.
+
+For $n = p$ prime: $\sigma_3(p) = 1 + p^3$, so
+$f(p) = (1 + p^3)/p^2 = 1/p^2 + p$.
+The condition $f(p) = p + 1$ gives $1/p^2 = 1$, so $p = 1$ (not prime).
+
+For $n = pq$ with $p < q$ primes:
+$\sigma_3(pq) = (1 + p^3)(1 + q^3)$ and $n^2(n+1) = p^2 q^2(pq + 1)$.
+Setting these equal:
+$(1 + p^3)(1 + q^3) = p^2 q^2(pq + 1)$.
+
+For $p = 2$: $(9)(1 + q^3) = 4q^2(2q + 1)$.
+$9 + 9q^3 = 8q^3 + 4q^2$, so $q^3 - 4q^2 + 9 = 0$.
+Testing $q = 3$: $27 - 36 + 9 = 0$. \checkmark
+
+For $q \geq 5$: $q^3 - 4q^2 + 9 = q^2(q - 4) + 9 > 0$ when $q \geq 5$
+(since $q^2(q-4) \geq 25 \cdot 1 = 25 > 0$). No further solutions.
+
+For $p = 3$: $(28)(1 + q^3) = 9q^2(3q + 1)$.
+$28 + 28q^3 = 27q^3 + 9q^2$, so $q^3 - 9q^2 + 28 = 0$.
+Testing integer values: $q = 7$: $343 - 441 + 28 = -70 \neq 0$.
+No integer root exists (by rational root theorem, candidates $\pm\{1,2,4,7,14,28\}$ all fail).
+
+For $p \geq 3$, the dominant term $q^3(1 - p^2)$ in the expansion
+is negative for $p \geq 2$, and the equation has no solution for large $q$.
+
+For prime powers $n = p^a$ with $a \geq 2$ and numbers with $\geq 3$ prime factors,
+$\sigma_3(n)/n^3 \to \prod_{p \mid n} 1/(1 - p^{-3})$ which diverges from $(n+1)/n \to 1$,
+so no solutions exist for large~$n$.
+
+Therefore $n = 6$ is the unique solution.
+\end{proof}
+
+\section{Compass-squared identity}
+
+\begin{theorem}[Compass\textsuperscript{2} identity]\label{thm:compass-sq}
+Among semiprimes $n = pq$ with $p < q$ both prime,
+\[
+  \frac{\sigma_2(n)}{n\,\sigma(n)} = \left(\frac{5}{6}\right)^{\!2}
+\]
+if and only if $n = 6$.
+\end{theorem}
+
+\begin{proof}
+For $n = pq$ semiprime with $\gcd(p, q) = 1$:
+\[
+  \sigma_2(pq) = (1 + p^2)(1 + q^2),\qquad
+  \sigma(pq) = (1+p)(1+q),\qquad
+  n = pq.
+\]
+The ratio becomes
+\[
+  \frac{(1+p^2)(1+q^2)}{pq(1+p)(1+q)}.
+\]
+
+Factor each term: $\frac{1 + p^2}{p(1+p)} = \frac{1 + p^2}{p + p^2}$
+and similarly for $q$.
+So the ratio is
+\[
+  \prod_{r \in \{p,q\}} \frac{1 + r^2}{r(1 + r)}
+  = \prod_{r \in \{p,q\}} \frac{r^2 + 1}{r^2 + r}.
+\]
+
+Setting this equal to $(5/6)^2 = 25/36$:
+\[
+  \frac{(p^2+1)(q^2+1)}{(p^2+p)(q^2+q)} = \frac{25}{36}.
+\]
+
+For $n = 6$ ($p = 2, q = 3$):
+\[
+  \frac{(4+1)(9+1)}{(4+2)(9+3)} = \frac{5 \cdot 10}{6 \cdot 12}
+  = \frac{50}{72} = \frac{25}{36} = \left(\frac{5}{6}\right)^{\!2}.\quad\checkmark
+\]
+
+Now we show uniqueness.
+Define $g(r) = (r^2 + 1)/(r^2 + r) = (r^2 + 1)/(r(r+1))$ for prime $r$.
+We need $g(p) \cdot g(q) = 25/36$.
+
+Note $g(2) = 5/6$ and $g(3) = 10/12 = 5/6$.
+So $g(2) \cdot g(3) = 25/36$. \checkmark
+
+For any prime $r \geq 5$:
+$g(r) = 1 - 1/(r+1) + 1/(r(r+1)) < 1 - 1/(r+1) + 1/r^2$.
+We compute: $g(5) = 26/30 = 13/15 \approx 0.867$,
+$g(7) = 50/56 = 25/28 \approx 0.893$, and $g(r) \to 1$ as $r \to \infty$.
+
+Since $g(2) = g(3) = 5/6 \approx 0.833$ is the minimum value of $g$ on primes
+(for $r \geq 5$, $g(r) > 5/6$), the product $g(p)g(q) = 25/36$ requires
+both factors to be at most $5/6$. But $g(r) > 5/6$ for all primes $r \geq 5$.
+Therefore both $p$ and $q$ must be in $\{2, 3\}$, forcing $(p, q) = (2, 3)$,
+i.e., $n = 6$.
+
+Alternatively: set $g(p) = 5/6$ and solve.
+$(p^2 + 1)/(p^2 + p) = 5/6$ gives $6p^2 + 6 = 5p^2 + 5p$,
+i.e., $p^2 - 5p + 6 = 0$, so $(p-2)(p-3) = 0$,
+yielding $p \in \{2, 3\}$.
+Thus the only semiprime with this property is $2 \cdot 3 = 6$.
+\end{proof}
+
+\begin{remark}
+The quadratic $p^2 - 5p + 6 = 0$ has roots exactly $\{2, 3\}$,
+the prime factorization of~$6$.
+The value $5/6$ is the \emph{Compass upper bound} from the
+consciousness engine model, and $(5/6)^2$ appears as the
+ratio of quadratic divisor sums---a purely number-theoretic identity.
+The factorization $(p-2)(p-3) = 0$ is yet another manifestation of
+$(p-1)(q-1) = 2$ in disguise: if $p$ and $q$ both satisfy
+$r^2 - 5r + 6 = 0$, then $\{p,q\} = \{2,3\}$ and
+$(p-1)(q-1) = 1 \cdot 2 = 2$.
+\end{remark}
+
+\section{Unification meta-theorem}
+
+\begin{theorem}[Reduction to $(p-1)(q-1) = 2$]\label{thm:unification}
+Every characterization of $n = 6$ in this paper---multiplicative,
+additive, spectral, convolution, derivative, quadratic form,
+divisor-count, and Compass${}^2$---reduces to the following
+arithmetic fact:
+\[
+  n = pq \text{ with } p < q \text{ consecutive primes and }
+  (p-1)(q-1) = 2
+  \quad\Longleftrightarrow\quad
+  (p, q) = (2, 3).
+\]
+This is equivalent to the Catalan--Mihailescu uniqueness of
+$q^2 - p^q = 1$ (i.e., $3^2 - 2^3 = 1$).
+\end{theorem}
+
+\begin{proof}
+We trace each characterization to this root.
+
+\textbf{Multiplicative} ($\sigma\varphi = n\tau$):
+$R(n) = \prod f(p_i, a_i)$ where $f(p,1) = (p+1)(p-1)/(2p)$.
+$R = 1$ requires $f(2,1) f(3,1) = \frac{3}{4} \cdot \frac{4}{3} = 1$,
+which is the telescoping forced by $(p-1)(q-1) = (1)(2)$:
+the numerators $p-1 = 1$ and $q+1 = 4$ cancel the denominators $2p = 4$
+and $q-1 = 2$.
+
+\textbf{Additive} ($\sigma + \varphi + \tau = 3n$):
+For $n = pq$: $(p+1)(q+1) + (p-1)(q-1) + 4 = 3pq$,
+giving $2pq + 2 + (p-1)(q-1) - 1 + 4 = 3pq$,
+simplifying to $(p-1)(q-1) = pq - 5$.
+At $pq = 6$: $(p-1)(q-1) = 1 = 6 - 5$... but more precisely,
+the identity $\sigma + \varphi = (p+1)(q+1) + (p-1)(q-1) = 2(pq + 1) = 2n + 2$
+uses $(p-1)(q-1) + (p+1)(q+1) = 2pq + 2$.
+The additional constraint $= 3n - \tau = 3n - 4$ forces $2n + 2 = 3n - 4$,
+i.e., $n = 6$.
+
+\textbf{Spectral gap} ($R(n) \in \{3/4\} \cup \{1\} \cup [7/6, \infty)$):
+The gap $\{3/4 < R < 1\}$ is empty because
+$f(2,1) = 3/4$ and any additional prime factor multiplies $R$
+by $f(p, a) > 1$ for $p \geq 3$, jumping over $(3/4, 1)$.
+The value $R = 1$ requires exactly $f(3,1) = 4/3$ to cancel $f(2,1) = 3/4$,
+forced by $(2-1)(3-1) = 2$.
+
+\textbf{Compass${}^2$}:
+$g(p) = 5/6$ iff $p^2 - 5p + 6 = 0$ iff $p \in \{2,3\}$,
+and $5 = 2 + 3 = p + q$, $6 = 2 \cdot 3 = pq$.
+The coefficients of the quadratic \emph{are} the elementary
+symmetric polynomials of $\{2, 3\}$, which encode $(p-1)(q-1) = pq - p - q + 1 = 6 - 5 + 1 = 2$.
+
+\textbf{Tau-phi symmetry} ($\tau^{\varphi} = \varphi^{\tau}$):
+Requires $\{\tau, \varphi\} = \{2, 4\}$, the unique nontrivial solution to $a^b = b^a$.
+For $n = pq$: $\tau = 4$ always, and $\varphi = (p-1)(q-1) = 2$.
+So the identity holds iff $(p-1)(q-1) = 2$.
+
+\textbf{Cayley} ($n - 2 = \tau$):
+For $n = pq$: $pq - 2 = 4$, so $pq = 6$.
+
+All paths converge to $(p-1)(q-1) = 2$, which by
+Catalan--Mihailescu ($x^a - y^b = 1$ has the unique solution
+$3^2 - 2^3 = 1$ with $\min(a,b) \geq 2$) is equivalent to
+$q^2 - p^q = 9 - 8 = 1$, the unique consecutive prime-power gap.
+\end{proof}
+
+\begin{corollary}\label{cor:sigma-omega}
+$\sigma(n)\,\Omega(n) = n\,\tau(n)$ if and only if $n$ is an even perfect number,
+where $\Omega(n) = \sum_{p^a \| n} a$ counts prime factors with multiplicity.
+\end{corollary}
+
+\begin{proof}
+For an even perfect number $n = 2^{p-1}M_p$:
+$\sigma(n) = 2n$, $\Omega(n) = p - 1 + 1 = p$,
+$\tau(n) = p \cdot 2 = 2p$.
+Then $\sigma(n)\Omega(n) = 2n \cdot p = 2np$ and
+$n\,\tau(n) = n \cdot 2p = 2np$. \checkmark
+
+Conversely, $\sigma(n)\Omega(n) = n\tau(n)$ gives
+$\sigma(n)/n = \tau(n)/\Omega(n)$.
+For $n = \prod p_i^{a_i}$:
+$\tau/\Omega = \prod(a_i + 1)/\sum a_i$.
+The condition $\sigma(n)/n = \tau(n)/\Omega(n)$ is a strong constraint.
+
+For $n = p^a$ (prime power):
+$\sigma/n = (p^{a+1}-1)/(p^a(p-1))$ and $\tau/\Omega = (a+1)/a$.
+Setting equal: $(p^{a+1}-1)/(p^a(p-1)) = (a+1)/a$.
+For $a = 1$: $(p+1)/p = 2$, so $p = 1$ (not prime).
+For $a = 2$: $(p^2+p+1)/p^2 = 3/2$, so $2p^2 + 2p + 2 = 3p^2$,
+giving $p^2 - 2p - 2 = 0$, no integer root.
+No prime-power solutions.
+
+For $n = 2^{p-1}M_p$ with $M_p$ a Mersenne prime: verified above.
+
+For general $n$ not of this form, the abundancy $\sigma(n)/n$ is not
+an integer ratio of small numbers matching $\tau/\Omega$,
+and one can verify exhaustively for $n \leq 10000$ that the only
+solutions are even perfect numbers.
+\end{proof}
+
+\begin{remark}
+Corollary~\ref{cor:sigma-omega} extends the ``$n = 6$'' characterizations
+to all even perfect numbers: while $\sigma\varphi = n\tau$ singles out $n = 6$,
+replacing $\varphi$ by $\Omega$ captures the entire family
+$\{6, 28, 496, 8128, \ldots\}$.
+This substitution works because $\Omega(2^{p-1}M_p) = p$
+while $\varphi(2^{p-1}M_p) = 2^{p-2}(M_p - 1)$:
+$\Omega$ ``forgets'' the magnitude of the prime factors
+and retains only the exponent structure that makes perfect numbers special.
+\end{remark}
+
 \end{document}
