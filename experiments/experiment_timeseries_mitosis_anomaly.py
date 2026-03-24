@@ -331,18 +331,31 @@ def run_experiment(dataset_name, normals, anomalies, window_size=10, n_trials=3)
         iso_scores = score_isolation_forest(X_train_win, X_test_win)
         series_iso = series_level_score(iso_scores, test_win_idx, n_test_series)
 
+        # ── Combined: recon + inter-tension (normalized) ──
+        # Normalize both to [0,1] then average
+        def normalize(x):
+            mn, mx = x.min(), x.max()
+            if mx - mn < 1e-10:
+                return np.zeros_like(x)
+            return (x - mn) / (mx - mn)
+
+        series_combined = normalize(series_recon) + normalize(series_inter)
+
         # ── AUROC ──
         auroc_inter = roc_auc_score(y_labels, series_inter)
         auroc_recon = roc_auc_score(y_labels, series_recon)
+        auroc_combined = roc_auc_score(y_labels, series_combined)
         auroc_iso = roc_auc_score(y_labels, series_iso)
 
         results['inter_tension'].append(auroc_inter)
         results['recon_error'].append(auroc_recon)
+        results['combined'].append(auroc_combined)
         results['isolation_forest'].append(auroc_iso)
 
         print(f"\n  Trial {trial + 1}:")
         print(f"    Inter-tension:    AUROC = {auroc_inter:.4f}")
         print(f"    Recon error:      AUROC = {auroc_recon:.4f}")
+        print(f"    Combined:         AUROC = {auroc_combined:.4f}")
         print(f"    Isolation Forest: AUROC = {auroc_iso:.4f}")
 
     # ── Summary ──

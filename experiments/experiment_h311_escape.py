@@ -16,6 +16,9 @@ Setup:
 """
 
 import sys
+import os
+os.environ['PYTHONUNBUFFERED'] = '1'
+sys.stdout.reconfigure(line_buffering=True)
 sys.path.insert(0, '/Users/ghost/Dev/logout')
 
 import torch

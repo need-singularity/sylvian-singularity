@@ -2,20 +2,21 @@
 """Self-Referential Anomaly Detection
 
 Concept: Feed the model's own tension back as additional input features.
-- Round 1: model sees x (padded to 32) -> produces tension T1
-- Round 2: model sees [x, T1_normalized] (padded to 32) -> produces tension T2
-- Round 3: model sees [x, T1_norm, T2_norm] -> produces tension T3
+- Round 1: model sees x -> produces tension T1
+- Round 2: model sees [x, T1] -> produces tension T2
+- Round 3: model sees [x, T1, T2] -> produces tension T3
 
-Does self-referential iteration improve AUROC?
+Key insight: Models must be trained WITH self-referential loop active,
+so they learn to use the tension feedback. Training on zero-padded inputs
+then testing with tension feedback is meaningless.
+
+Architecture:
+  - Base autoencoder: 30-dim input -> reconstruct 30-dim
+  - Tension processor: separate small net that takes [T_prev] -> modulates hidden
+  - During training: run 3-round self-ref loop, backprop through all rounds
+  - Score at each round = reconstruction_error per sample
 
 Dataset: Breast Cancer (sklearn), 30 features
-Model: Dual-engine autoencoder with inter-engine tension
-  - Always takes 32-dim input (30 features + 2 tension slots, zero-padded initially)
-  - Train parent on normal data only (MSE reconstruction, 50 epochs)
-  - Mitosis N=2, train children independently 30 epochs
-  - Anomaly score = reconstruction_error + inter_tension (combined signal)
-  - Tension is z-score normalized before feeding back (so it's on same scale as inputs)
-
 5 trials, AUROC per round, ASCII graph.
 """
 
@@ -33,41 +34,75 @@ from sklearn.metrics import roc_auc_score
 
 # ── Model ──────────────────────────────────────────────
 
-class DualEngineAutoencoder(nn.Module):
-    """Two-engine autoencoder. Tension = disagreement + recon error."""
+class SelfRefAutoencoder(nn.Module):
+    """Autoencoder with self-referential tension feedback.
 
-    def __init__(self, input_dim=32, hidden_dim=64, latent_dim=16, output_dim=32):
+    Round 1: encode(x) -> decode -> recon_err T1
+    Round 2: encode(x, modulated by T1) -> decode -> recon_err T2
+    Round 3: encode(x, modulated by T1,T2) -> decode -> recon_err T3
+
+    The tension_gate modulates the hidden representation based on
+    previous tension values, allowing the model to "pay more attention"
+    to samples it found difficult.
+    """
+
+    def __init__(self, input_dim=30, hidden_dim=64, latent_dim=16):
         super().__init__()
-        # Engine A
-        self.enc_a = nn.Sequential(
-            nn.Linear(input_dim, hidden_dim), nn.ReLU(),
-            nn.Linear(hidden_dim, latent_dim), nn.ReLU(),
+        self.encoder = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, latent_dim),
+            nn.ReLU(),
         )
-        self.dec_a = nn.Sequential(
-            nn.Linear(latent_dim, hidden_dim), nn.ReLU(),
-            nn.Linear(hidden_dim, output_dim),
+        self.decoder = nn.Sequential(
+            nn.Linear(latent_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, input_dim),
         )
-        # Engine G
-        self.enc_g = nn.Sequential(
-            nn.Linear(input_dim, hidden_dim), nn.ReLU(),
-            nn.Linear(hidden_dim, latent_dim), nn.ReLU(),
-        )
-        self.dec_g = nn.Sequential(
-            nn.Linear(latent_dim, hidden_dim), nn.ReLU(),
-            nn.Linear(hidden_dim, output_dim),
+        # Tension gate: takes up to 2 previous tensions -> modulates latent
+        self.tension_gate = nn.Sequential(
+            nn.Linear(2, latent_dim),
+            nn.Sigmoid(),  # Multiplicative gating
         )
 
-    def forward(self, x):
-        out_a = self.dec_a(self.enc_a(x))
-        out_g = self.dec_g(self.enc_g(x))
-        recon = (out_a + out_g) / 2.0
-        # Per-sample reconstruction error (on first 30 features only)
-        recon_err = ((recon[:, :30] - x[:, :30]) ** 2).mean(dim=-1)
-        # Inter-engine disagreement
-        disagree = ((out_a - out_g) ** 2).mean(dim=-1)
-        # Combined tension
-        tension = recon_err + disagree
-        return recon, tension, recon_err, disagree
+    def forward_one_round(self, x, prev_tensions):
+        """Single forward pass with tension conditioning.
+
+        Args:
+            x: (N, 30) input features
+            prev_tensions: (N, 2) previous tension values [T_{r-1}, T_{r-2}]
+                          zeros if no previous tensions
+        Returns:
+            recon: (N, 30) reconstruction
+            tension: (N,) per-sample reconstruction error
+        """
+        z = self.encoder(x)
+        # Modulate latent by tension gate
+        gate = self.tension_gate(prev_tensions)
+        z_modulated = z * gate
+        recon = self.decoder(z_modulated)
+        tension = ((recon - x) ** 2).mean(dim=-1)
+        return recon, tension
+
+    def forward_selfref(self, x, n_rounds=3):
+        """Full self-referential forward pass.
+
+        Returns list of tensions [T1, T2, T3].
+        """
+        N = x.shape[0]
+        tensions = []
+        prev_t = torch.zeros(N, 2, device=x.device)
+
+        for r in range(n_rounds):
+            recon, t = self.forward_one_round(x, prev_t)
+            tensions.append(t)
+            # Shift tension history
+            if r == 0:
+                prev_t = torch.stack([t, torch.zeros_like(t)], dim=1)
+            else:
+                prev_t = torch.stack([t, tensions[r - 1]], dim=1)
+
+        return tensions
 
 
 def mitosis(parent, noise_scale=0.02):
@@ -82,74 +117,96 @@ def mitosis(parent, noise_scale=0.02):
     return child_a, child_b
 
 
-def compute_scores(model_a, model_b, x):
-    """Compute anomaly scores from two models.
-    Returns combined tension per sample."""
-    with torch.no_grad():
-        recon_a, tension_a, recon_err_a, _ = model_a(x)
-        recon_b, tension_b, recon_err_b, _ = model_b(x)
-    # Inter-model disagreement (on reconstructions)
-    inter_disagree = ((recon_a - recon_b) ** 2).mean(dim=-1)
-    # Average reconstruction error
-    avg_recon = (recon_err_a + recon_err_b) / 2.0
-    # Combined score
-    score = avg_recon + inter_disagree
-    return score
-
-
 # ── Training ───────────────────────────────────────────
 
-def train_model(model, X_train, epochs, lr=1e-3):
-    """Train autoencoder with MSE reconstruction loss."""
+def train_selfref(model, X_train, epochs, n_rounds=3, lr=1e-3):
+    """Train with self-referential loop active.
+
+    Loss = sum of reconstruction errors across all rounds.
+    This teaches the model to USE tension feedback.
+    """
     opt = torch.optim.Adam(model.parameters(), lr=lr)
+    losses = []
     for ep in range(epochs):
         model.train()
         opt.zero_grad()
-        recon, tension, recon_err, disagree = model(X_train)
-        loss = F.mse_loss(recon[:, :30], X_train[:, :30])
+        tensions = model.forward_selfref(X_train, n_rounds=n_rounds)
+        # Loss = mean tension across all rounds (encourages all rounds to reconstruct well)
+        loss = sum(t.mean() for t in tensions) / n_rounds
+        loss.backward()
+        opt.step()
+        losses.append(loss.item())
+    return losses
+
+
+# ── Inter-Model Scoring ────────────────────────────────
+
+def inter_selfref_scores(model_a, model_b, X_test, n_rounds=3):
+    """Compute per-round anomaly scores using inter-model tension.
+
+    For each round r:
+      score_r = |tension_a_r - tension_b_r| + (tension_a_r + tension_b_r) / 2
+
+    The inter-model disagreement on "how difficult" a sample is
+    should be higher for anomalies.
+    """
+    model_a.eval()
+    model_b.eval()
+    with torch.no_grad():
+        tensions_a = model_a.forward_selfref(X_test, n_rounds=n_rounds)
+        tensions_b = model_b.forward_selfref(X_test, n_rounds=n_rounds)
+
+    scores = []
+    for r in range(n_rounds):
+        ta = tensions_a[r]
+        tb = tensions_b[r]
+        # Combined: average recon error + inter-model disagreement
+        avg_recon = (ta + tb) / 2.0
+        disagree = (ta - tb).abs()
+        score = avg_recon + disagree
+        scores.append(score.numpy())
+
+    return scores
+
+
+# ── Also test single-model (no mitosis) scores ────────
+
+def single_model_scores(model, X_test, n_rounds=3):
+    """Anomaly scores from a single model's self-referential loop."""
+    model.eval()
+    with torch.no_grad():
+        tensions = model.forward_selfref(X_test, n_rounds=n_rounds)
+    return [t.numpy() for t in tensions]
+
+
+# ── Baseline: same architecture, no self-ref ──────────
+
+def train_baseline(model, X_train, epochs, lr=1e-3):
+    """Train WITHOUT self-referential loop (always zero tension input)."""
+    opt = torch.optim.Adam(model.parameters(), lr=lr)
+    N = X_train.shape[0]
+    prev_t = torch.zeros(N, 2)
+    for ep in range(epochs):
+        model.train()
+        opt.zero_grad()
+        recon, tension = model.forward_one_round(X_train, prev_t)
+        loss = tension.mean()
         loss.backward()
         opt.step()
     return model
 
 
-# ── Self-Referential Forward ───────────────────────────
-
-def selfref_forward(model_a, model_b, X_base, n_rounds=3):
-    """
-    Self-referential anomaly scoring.
-
-    X_base: (N, 30) raw features
-    Returns: list of score arrays [S1, S2, S3] each shape (N,)
-
-    Round 1: input = [X_base, 0, 0] -> score S1
-    Round 2: input = [X_base, normalize(S1), 0] -> score S2
-    Round 3: input = [X_base, normalize(S1), normalize(S2)] -> score S3
-
-    Key: normalize scores to z-scores before feeding back,
-    so they're on the same scale as the standardized features.
-    """
-    N = X_base.shape[0]
-    scores = []
-
-    x_aug = torch.zeros(N, 32)
-    x_aug[:, :30] = X_base
-
-    for r in range(n_rounds):
-        s = compute_scores(model_a, model_b, x_aug)
-        scores.append(s.numpy())
-
-        # Z-score normalize and feed back
-        s_np = s.numpy()
-        s_mean = s_np.mean()
-        s_std = s_np.std() + 1e-8
-        s_normalized = (s_np - s_mean) / s_std  # Now mean=0, std=1 like features
-
-        if r == 0:
-            x_aug[:, 30] = torch.FloatTensor(s_normalized)
-        elif r == 1:
-            x_aug[:, 31] = torch.FloatTensor(s_normalized)
-
-    return scores
+def baseline_scores(model_a, model_b, X_test):
+    """Single-round scores (no self-ref)."""
+    model_a.eval()
+    model_b.eval()
+    N = X_test.shape[0]
+    prev_t = torch.zeros(N, 2)
+    with torch.no_grad():
+        _, ta = model_a.forward_one_round(X_test, prev_t)
+        _, tb = model_b.forward_one_round(X_test, prev_t)
+    score = (ta + tb) / 2.0 + (ta - tb).abs()
+    return score.numpy()
 
 
 # ── Main Experiment ────────────────────────────────────
@@ -157,12 +214,11 @@ def selfref_forward(model_a, model_b, X_base, n_rounds=3):
 def run_experiment():
     print("=" * 70)
     print("  SELF-REFERENTIAL ANOMALY DETECTION")
-    print("  Feed normalized tension back as input -> does AUROC improve?")
+    print("  Train WITH self-ref loop -> does iterative tension improve AUROC?")
     print("=" * 70)
 
-    # Load data
     data = load_breast_cancer()
-    X_raw, y = data.data, data.target  # 1=benign(normal), 0=malignant(anomaly)
+    X_raw, y = data.data, data.target
 
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X_raw)
@@ -173,216 +229,273 @@ def run_experiment():
     print(f"\nDataset: Breast Cancer (30 features)")
     print(f"  Normal (benign):   {len(X_normal)}")
     print(f"  Anomaly (malign):  {len(X_anomaly)}")
-    print(f"\nMethod:")
-    print(f"  - Dual-engine autoencoder (32-dim input: 30 feat + 2 tension slots)")
-    print(f"  - Train parent 50 epochs on normal only")
-    print(f"  - Mitosis -> 2 children, train 30 epochs each")
-    print(f"  - Score = recon_error + inter_model_disagreement")
-    print(f"  - Self-ref: feed z-normalized score back into tension slots")
+    print(f"\nArchitecture:")
+    print(f"  - SelfRefAutoencoder: enc(30->64->16) + tension_gate(2->16) + dec(16->64->30)")
+    print(f"  - Tension gate: sigmoid modulation of latent by previous tensions")
+    print(f"  - Training: 3-round self-ref loop, backprop through all rounds")
+    print(f"  - Parent: 50 epochs, Children: 30 epochs each after mitosis")
+    print(f"  - Score = avg_recon_error + inter_model_disagreement")
 
     N_TRIALS = 5
-    all_aurocs = {1: [], 2: [], 3: []}
-    all_tensions_detail = []
+    N_ROUNDS = 3
+
+    # Storage
+    selfref_aurocs = {r: [] for r in range(1, N_ROUNDS + 1)}
+    baseline_aurocs = []
+    single_aurocs = {r: [] for r in range(1, N_ROUNDS + 1)}
+
+    detail_last = None
 
     for trial in range(N_TRIALS):
         seed = trial * 7 + 42
         torch.manual_seed(seed)
         np.random.seed(seed)
 
-        # Split normal into train/test
+        # Split
         idx = np.random.permutation(len(X_normal))
         n_train = int(0.7 * len(X_normal))
         X_train_np = X_normal[idx[:n_train]]
         X_test_normal_np = X_normal[idx[n_train:]]
 
-        # Test set: normal + anomaly
         X_test_np = np.vstack([X_test_normal_np, X_anomaly])
         y_test = np.array([0] * len(X_test_normal_np) + [1] * len(X_anomaly))
 
-        # Pad to 32 dims
-        X_train_32 = np.zeros((len(X_train_np), 32))
-        X_train_32[:, :30] = X_train_np
-        X_train_t = torch.FloatTensor(X_train_32)
+        X_train_t = torch.FloatTensor(X_train_np)
+        X_test_t = torch.FloatTensor(X_test_np)
 
-        X_test_base = torch.FloatTensor(X_test_np)  # 30-dim for selfref
+        # ── Self-Referential Model ──
+        parent_sr = SelfRefAutoencoder(input_dim=30, hidden_dim=64, latent_dim=16)
+        train_selfref(parent_sr, X_train_t, epochs=50, n_rounds=N_ROUNDS)
 
-        # ── Phase 1: Train parent (50 epochs) ──
-        parent = DualEngineAutoencoder(input_dim=32, hidden_dim=64, latent_dim=16, output_dim=32)
-        train_model(parent, X_train_t, epochs=50)
+        child_a, child_b = mitosis(parent_sr, noise_scale=0.02)
+        train_selfref(child_a, X_train_t, epochs=30, n_rounds=N_ROUNDS)
+        train_selfref(child_b, X_train_t, epochs=30, n_rounds=N_ROUNDS)
 
-        # ── Phase 2: Mitosis + independent training (30 epochs) ──
-        child_a, child_b = mitosis(parent, noise_scale=0.02)
-        train_model(child_a, X_train_t, epochs=30)
-        train_model(child_b, X_train_t, epochs=30)
+        scores_sr = inter_selfref_scores(child_a, child_b, X_test_t, n_rounds=N_ROUNDS)
 
-        # ── Phase 3: Self-referential forward ──
-        child_a.eval()
-        child_b.eval()
-        scores = selfref_forward(child_a, child_b, X_test_base, n_rounds=3)
+        # Also get single-model scores (parent only, no mitosis)
+        scores_single = single_model_scores(parent_sr, X_test_t, n_rounds=N_ROUNDS)
 
-        # Compute AUROC for each round
-        aurocs = []
+        # ── Baseline (no self-ref) ──
+        torch.manual_seed(seed)  # Same init
+        parent_bl = SelfRefAutoencoder(input_dim=30, hidden_dim=64, latent_dim=16)
+        train_baseline(parent_bl, X_train_t, epochs=50)
+
+        child_bl_a, child_bl_b = mitosis(parent_bl, noise_scale=0.02)
+        train_baseline(child_bl_a, X_train_t, epochs=30)
+        train_baseline(child_bl_b, X_train_t, epochs=30)
+
+        bl_score = baseline_scores(child_bl_a, child_bl_b, X_test_t)
+        bl_auc = roc_auc_score(y_test, bl_score)
+        baseline_aurocs.append(bl_auc)
+
+        # Compute AUROCs
+        aucs_sr = []
+        aucs_single = []
+        for r in range(N_ROUNDS):
+            auc_sr = roc_auc_score(y_test, scores_sr[r])
+            selfref_aurocs[r + 1].append(auc_sr)
+            aucs_sr.append(auc_sr)
+
+            auc_s = roc_auc_score(y_test, scores_single[r])
+            single_aurocs[r + 1].append(auc_s)
+            aucs_single.append(auc_s)
+
         n_normal_test = len(X_test_normal_np)
-        for r in range(3):
-            auc = roc_auc_score(y_test, scores[r])
-            aurocs.append(auc)
-            all_aurocs[r + 1].append(auc)
-
-        # Store detail for last trial
         if trial == N_TRIALS - 1:
-            all_tensions_detail = (scores, n_normal_test)
+            detail_last = (scores_sr, scores_single, bl_score, n_normal_test, y_test)
 
-        print(f"\n  Trial {trial+1}: T1={aurocs[0]:.4f}  T2={aurocs[1]:.4f}  T3={aurocs[2]:.4f}"
-              f"  delta(T3-T1)={aurocs[2]-aurocs[0]:+.4f}")
+        print(f"\n  Trial {trial + 1}:")
+        print(f"    Baseline (no self-ref):  {bl_auc:.4f}")
+        print(f"    Self-ref T1={aucs_sr[0]:.4f}  T2={aucs_sr[1]:.4f}  T3={aucs_sr[2]:.4f}"
+              f"  delta(T3-T1)={aucs_sr[2] - aucs_sr[0]:+.4f}")
+        print(f"    Single   T1={aucs_single[0]:.4f}  T2={aucs_single[1]:.4f}  T3={aucs_single[2]:.4f}")
 
-    # ── Results ────────────────────────────────────────
+    # ── Results Table ──────────────────────────────────
 
     print("\n" + "=" * 70)
-    print("  RESULTS: AUROC per Self-Referential Round")
+    print("  RESULTS SUMMARY")
     print("=" * 70)
 
-    means = {}
-    stds = {}
-    for r in [1, 2, 3]:
-        means[r] = np.mean(all_aurocs[r])
-        stds[r] = np.std(all_aurocs[r])
+    bl_mean = np.mean(baseline_aurocs)
+    bl_std = np.std(baseline_aurocs)
 
-    # Table
-    print(f"\n{'Round':<8} {'Mean AUROC':<14} {'Std':<10} {'Individual Trials'}")
+    print(f"\n{'Method':<22} {'Mean AUROC':<14} {'Std':<10} {'Trials'}")
     print("-" * 70)
-    for r in [1, 2, 3]:
-        trials_str = "  ".join(f"{v:.4f}" for v in all_aurocs[r])
-        print(f"  T{r:<5} {means[r]:<14.4f} {stds[r]:<10.4f} {trials_str}")
+    print(f"  {'Baseline (no SR)':<20} {bl_mean:<14.4f} {bl_std:<10.4f} "
+          f"{'  '.join(f'{v:.4f}' for v in baseline_aurocs)}")
 
-    delta_21 = means[2] - means[1]
-    delta_31 = means[3] - means[1]
-    delta_32 = means[3] - means[2]
+    means_sr = {}
+    stds_sr = {}
+    means_s = {}
+    stds_s = {}
+    for r in range(1, N_ROUNDS + 1):
+        means_sr[r] = np.mean(selfref_aurocs[r])
+        stds_sr[r] = np.std(selfref_aurocs[r])
+        means_s[r] = np.mean(single_aurocs[r])
+        stds_s[r] = np.std(single_aurocs[r])
 
-    print(f"\n  Delta T2-T1: {delta_21:+.4f}")
-    print(f"  Delta T3-T1: {delta_31:+.4f}")
-    print(f"  Delta T3-T2: {delta_32:+.4f}")
+        print(f"  {'SR+Mitosis T' + str(r):<20} {means_sr[r]:<14.4f} {stds_sr[r]:<10.4f} "
+              f"{'  '.join(f'{v:.4f}' for v in selfref_aurocs[r])}")
 
-    # ── ASCII Graph ────────────────────────────────────
+    print()
+    for r in range(1, N_ROUNDS + 1):
+        print(f"  {'Single T' + str(r):<20} {means_s[r]:<14.4f} {stds_s[r]:<10.4f} "
+              f"{'  '.join(f'{v:.4f}' for v in single_aurocs[r])}")
+
+    # ── Deltas ─────────────────────────────────────────
+
+    print(f"\n  Key Comparisons:")
+    d_sr_bl = means_sr[3] - bl_mean
+    d_sr_t3_t1 = means_sr[3] - means_sr[1]
+    d_s_t3_t1 = means_s[3] - means_s[1]
+    print(f"    SR T3 vs Baseline:    {d_sr_bl:+.4f}")
+    print(f"    SR T3 vs SR T1:       {d_sr_t3_t1:+.4f}")
+    print(f"    Single T3 vs T1:      {d_s_t3_t1:+.4f}")
+
+    # ── ASCII Bar Chart ────────────────────────────────
 
     print("\n" + "=" * 70)
-    print("  ASCII: AUROC by Round (mean +/- std)")
+    print("  ASCII: AUROC Comparison")
     print("=" * 70)
 
-    # Determine bar range
-    all_vals = [means[r] for r in [1, 2, 3]]
-    all_errs = [stds[r] for r in [1, 2, 3]]
-    lo = max(0, min(all_vals) - max(all_errs) - 0.05)
-    hi = max(all_vals) + max(all_errs) + 0.05
+    all_means = [bl_mean] + [means_sr[r] for r in range(1, 4)] + [means_s[r] for r in range(1, 4)]
+    all_stds_list = [bl_std] + [stds_sr[r] for r in range(1, 4)] + [stds_s[r] for r in range(1, 4)]
+    labels = ["Baseline", "SR+Mit T1", "SR+Mit T2", "SR+Mit T3",
+              "Single T1", "Single T2", "Single T3"]
+
+    lo = max(0.4, min(m - s for m, s in zip(all_means, all_stds_list)) - 0.03)
+    hi = min(1.0, max(m + s for m, s in zip(all_means, all_stds_list)) + 0.03)
     span = hi - lo
+    BAR_W = 45
 
-    BAR_WIDTH = 50
-    for r in [1, 2, 3]:
-        bar_len = int((means[r] - lo) / span * BAR_WIDTH) if span > 0 else 25
-        bar_len = max(1, min(BAR_WIDTH, bar_len))
-        err_lo = int((means[r] - stds[r] - lo) / span * BAR_WIDTH)
-        err_hi = int((means[r] + stds[r] - lo) / span * BAR_WIDTH)
-        err_lo = max(0, err_lo)
-        err_hi = min(BAR_WIDTH, err_hi)
+    for i, (label, m, s) in enumerate(zip(labels, all_means, all_stds_list)):
+        bar_len = int((m - lo) / span * BAR_W) if span > 0 else 20
+        bar_len = max(1, min(BAR_W, bar_len))
+        err_hi = int((m + s - lo) / span * BAR_W)
+        err_hi = min(BAR_W, err_hi)
 
-        line = [' '] * BAR_WIDTH
-        for i in range(bar_len):
-            line[i] = '█'
-        for i in range(bar_len, err_hi):
-            line[i] = '░'
+        bar = '█' * bar_len + '░' * max(0, err_hi - bar_len)
+        pad = ' ' * max(0, BAR_W - len(bar))
+        marker = " <--" if label == "SR+Mit T3" else ""
+        print(f"  {label:<12}|{bar}{pad}| {m:.4f}{marker}")
 
-        bar = ''.join(line)
-        print(f"  T{r} |{bar}| {means[r]:.4f} +/- {stds[r]:.4f}")
-
-    print(f"     +{'─' * BAR_WIDTH}+")
-    print(f"     {lo:.2f}{' ' * (BAR_WIDTH - 8)}{hi:.2f}")
+    print(f"  {'':>12}+{'─' * BAR_W}+")
+    print(f"  {'':>12} {lo:.2f}{' ' * (BAR_W - 8)}{hi:.2f}")
 
     # ── Per-Trial Trajectory ───────────────────────────
 
     print("\n" + "=" * 70)
-    print("  TRAJECTORY: Per-Trial AUROC across rounds")
+    print("  TRAJECTORY: Self-Ref+Mitosis AUROC per trial")
     print("=" * 70)
 
     for trial in range(N_TRIALS):
-        vals = [all_aurocs[r][trial] for r in [1, 2, 3]]
+        bl = baseline_aurocs[trial]
+        vals = [selfref_aurocs[r][trial] for r in range(1, 4)]
         arrows = []
         for i in range(1, 3):
             d = vals[i] - vals[i - 1]
-            if d > 0.005:
+            if d > 0.003:
                 arrows.append("^")
-            elif d < -0.005:
+            elif d < -0.003:
                 arrows.append("v")
             else:
                 arrows.append("=")
-        print(f"  Trial {trial + 1}: {vals[0]:.4f} {arrows[0]} {vals[1]:.4f} {arrows[1]} {vals[2]:.4f}"
-              f"  net={vals[2] - vals[0]:+.4f}")
+        net = vals[2] - vals[0]
+        vs_bl = vals[2] - bl
+        print(f"  Trial {trial + 1}: BL={bl:.4f} | T1={vals[0]:.4f} {arrows[0]} "
+              f"T2={vals[1]:.4f} {arrows[1]} T3={vals[2]:.4f} "
+              f" net={net:+.4f}  vs_BL={vs_bl:+.4f}")
 
-    # ── Tension Distribution Analysis ──────────────────
+    # ── Tension Statistics ─────────────────────────────
 
     print("\n" + "=" * 70)
     print("  TENSION STATISTICS (last trial)")
     print("=" * 70)
 
-    scores_detail, n_normal_test = all_tensions_detail
-    print(f"\n  {'Round':<8} {'Normal mean':<16} {'Anomaly mean':<16} {'Separation':<12} {'Ratio'}")
-    print("  " + "-" * 65)
-    for r in range(3):
-        t = scores_detail[r]
-        t_norm = t[:n_normal_test]
-        t_anom = t[n_normal_test:]
-        sep = (np.mean(t_anom) - np.mean(t_norm)) / (np.std(t_norm) + 1e-8)
-        ratio = np.mean(t_anom) / (np.mean(t_norm) + 1e-8)
-        print(f"  T{r + 1:<5} {np.mean(t_norm):<16.6f} {np.mean(t_anom):<16.6f} "
-              f"{sep:<12.2f}sigma  {ratio:.2f}x")
+    scores_sr, scores_single, bl_score, n_normal_test, y_test = detail_last
 
-    # ── Histogram (ASCII) ──────────────────────────────
+    print(f"\n  Self-Ref + Mitosis:")
+    print(f"  {'Round':<8} {'Normal':<20} {'Anomaly':<20} {'Sep (sigma)':<14} {'Ratio'}")
+    print("  " + "-" * 68)
+    for r in range(N_ROUNDS):
+        t = scores_sr[r]
+        tn = t[:n_normal_test]
+        ta = t[n_normal_test:]
+        sep = (np.mean(ta) - np.mean(tn)) / (np.std(tn) + 1e-8)
+        ratio = np.mean(ta) / (np.mean(tn) + 1e-8)
+        print(f"  T{r + 1:<5} {np.mean(tn):.6f}+/-{np.std(tn):.4f}  "
+              f"{np.mean(ta):.6f}+/-{np.std(ta):.4f}  {sep:>8.2f}        {ratio:.2f}x")
+
+    # Separation trend
+    seps = []
+    for r in range(N_ROUNDS):
+        t = scores_sr[r]
+        tn = t[:n_normal_test]
+        ta = t[n_normal_test:]
+        seps.append((np.mean(ta) - np.mean(tn)) / (np.std(tn) + 1e-8))
+
+    print(f"\n  Separation trend: {' -> '.join(f'{s:.2f}' for s in seps)} sigma")
+    if seps[-1] > seps[0]:
+        print(f"  Self-ref INCREASES class separation by {seps[-1] - seps[0]:.2f} sigma")
+    else:
+        print(f"  Self-ref decreases class separation by {seps[0] - seps[-1]:.2f} sigma")
+
+    # ── Histogram ──────────────────────────────────────
 
     print("\n" + "=" * 70)
-    print("  HISTOGRAM: Score distributions (T1 vs T3, last trial)")
+    print("  HISTOGRAM: Score distributions (last trial)")
     print("=" * 70)
 
-    for rnd, label in [(0, "T1"), (2, "T3")]:
-        t = scores_detail[rnd]
-        t_norm = t[:n_normal_test]
-        t_anom = t[n_normal_test:]
+    for rnd, label in [(0, "T1 (Self-Ref+Mitosis)"), (2, "T3 (Self-Ref+Mitosis)")]:
+        t = scores_sr[rnd]
+        tn = t[:n_normal_test]
+        ta = t[n_normal_test:]
 
-        # 10-bin histogram
-        all_t = np.concatenate([t_norm, t_anom])
+        all_t = np.concatenate([tn, ta])
         bins = np.linspace(np.percentile(all_t, 1), np.percentile(all_t, 99), 11)
-        h_norm, _ = np.histogram(t_norm, bins=bins)
-        h_anom, _ = np.histogram(t_anom, bins=bins)
+        h_n, _ = np.histogram(tn, bins=bins)
+        h_a, _ = np.histogram(ta, bins=bins)
 
-        max_h = max(max(h_norm), max(h_anom), 1)
+        max_h = max(max(h_n), max(h_a), 1)
         scale = 30.0 / max_h
 
-        print(f"\n  {label} - Normal (N) vs Anomaly (A):")
+        print(f"\n  {label}:")
         for i in range(len(bins) - 1):
-            bn = int(h_norm[i] * scale)
-            ba = int(h_anom[i] * scale)
-            bar_n = 'N' * bn
-            bar_a = 'A' * ba
-            print(f"  {bins[i]:8.4f} |{bar_n}{bar_a}")
+            bn = int(h_n[i] * scale)
+            ba = int(h_a[i] * scale)
+            print(f"  {bins[i]:8.4f} |{'N' * bn}{'A' * ba}")
         print(f"  {bins[-1]:8.4f} |")
 
-    # ── Verdict ────────────────────────────────────────
+    # ── Final Verdict ──────────────────────────────────
 
     print("\n" + "=" * 70)
-    if delta_31 > 0.005:
-        print("  VERDICT: Self-referential iteration IMPROVES anomaly detection")
-        print(f"           T3 > T1 by {delta_31:+.4f} AUROC (mean over {N_TRIALS} trials)")
-    elif delta_31 < -0.005:
-        print("  VERDICT: Self-referential iteration DEGRADES anomaly detection")
-        print(f"           T3 < T1 by {delta_31:+.4f} AUROC (mean over {N_TRIALS} trials)")
+    print("  FINAL VERDICT")
+    print("=" * 70)
+
+    # Does self-ref improve over baseline?
+    if d_sr_bl > 0.005:
+        print(f"  [1] Self-ref+Mitosis T3 vs Baseline: BETTER by {d_sr_bl:+.4f} AUROC")
+    elif d_sr_bl < -0.005:
+        print(f"  [1] Self-ref+Mitosis T3 vs Baseline: WORSE by {d_sr_bl:+.4f} AUROC")
     else:
-        print("  VERDICT: Self-referential iteration has NEGLIGIBLE effect")
-        print(f"           T3 - T1 = {delta_31:+.4f} AUROC (mean over {N_TRIALS} trials)")
+        print(f"  [1] Self-ref+Mitosis T3 vs Baseline: SIMILAR ({d_sr_bl:+.4f} AUROC)")
 
-    improved = sum(1 for t in range(N_TRIALS) if all_aurocs[3][t] > all_aurocs[1][t] + 0.001)
-    degraded = sum(1 for t in range(N_TRIALS) if all_aurocs[3][t] < all_aurocs[1][t] - 0.001)
-    print(f"  Improved: {improved}/{N_TRIALS}  Degraded: {degraded}/{N_TRIALS}")
+    # Does iteration improve within self-ref?
+    if d_sr_t3_t1 > 0.003:
+        print(f"  [2] Self-ref T3 vs T1: IMPROVES by {d_sr_t3_t1:+.4f} (iteration helps)")
+    elif d_sr_t3_t1 < -0.003:
+        print(f"  [2] Self-ref T3 vs T1: DEGRADES by {d_sr_t3_t1:+.4f} (iteration hurts)")
+    else:
+        print(f"  [2] Self-ref T3 vs T1: STABLE ({d_sr_t3_t1:+.4f}, iteration is neutral)")
 
-    # Best single round
-    best_round = max([1, 2, 3], key=lambda r: means[r])
-    print(f"  Best round: T{best_round} (AUROC={means[best_round]:.4f})")
+    # Count improvements
+    improved_vs_bl = sum(1 for t in range(N_TRIALS)
+                         if selfref_aurocs[3][t] > baseline_aurocs[t] + 0.001)
+    improved_t3_t1 = sum(1 for t in range(N_TRIALS)
+                         if selfref_aurocs[3][t] > selfref_aurocs[1][t] + 0.001)
+    print(f"\n  T3 beats Baseline: {improved_vs_bl}/{N_TRIALS} trials")
+    print(f"  T3 beats T1:       {improved_t3_t1}/{N_TRIALS} trials")
     print("=" * 70)
 
 
