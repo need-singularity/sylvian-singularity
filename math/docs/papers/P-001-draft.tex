@@ -528,7 +528,7 @@ The chain $120 \xrightarrow{R} 6 \xrightarrow{R} 1$
 (i.e., $5! \to 3! \to 1!$) is the unique complete descent
 $3$-perfect $\to$ $2$-perfect $\to$ $1$-perfect.
 
-In total, this paper presents $45$ distinct characterizations of $n = 6$,
+In total, this paper presents $48$ distinct characterizations of $n = 6$,
 including multiplicative ($\sigma\varphi = n\tau$),
 additive ($3(\sigma+\varphi) = 7n$, $\varphi + \tau = n$),
 dynamical ($\Lambda = 0$), Dedekind ($\psi/\varphi = n$),
@@ -547,6 +547,8 @@ and coding-theoretic ($\mathcal{G}_{24} = [\sigma\varphi, \sigma, \sigma-\tau]$,
 $\mathcal{G}_{12} = [\sigma, 6, 6]$,
 hexacode $[6, \sigma/\tau, \tau]_4$,
 Hamming $[M_3, \tau, \sigma/\tau]$ and $[C(6{,}2), p(6), \sigma/\tau]$).
+topological (trefoil knot $T(2,3)$: $\det = \sigma/\tau$,
+$\Delta_T(\omega_6) = 0$, $\operatorname{ord}(M \bmod 6) = \sigma$).
 All reduce to a single elementary fact:
 $2$ and $3$ are the only consecutive primes.
 
@@ -1166,6 +1168,39 @@ the unique product of consecutive primes.
 The arithmetic of $n = 6$ determines the parameters of the hexacode,
 the Golay code, the Steiner systems, the Mathieu groups, the Leech lattice,
 and---through the moonshine correspondence---touches the Monster group.
+\end{remark}
+
+\section{Topological connections}
+
+\begin{proposition}[Trefoil knot]\label{prop:trefoil}
+The trefoil $T(2,3)$, whose torus parameters are the prime factors of~$6$,
+satisfies:
+\begin{enumerate}
+\item[\textup{(i)}] $\det(T) = 3 = \sigma(6)/\tau(6)$,
+\item[\textup{(ii)}] the Alexander polynomial
+  $\Delta_T(t) = t - 1 + t^{-1}$ vanishes at the primitive
+  $6$th root of unity $\omega_6 = e^{2\pi i/6}$,
+\item[\textup{(iii)}] the monodromy matrix
+  $M = \bigl[\begin{smallmatrix} 2 & 1 \\ 1 & 1 \end{smallmatrix}\bigr]$
+  of the trefoil fibration has
+  $\operatorname{ord}(M \bmod 6) = 12 = \sigma(6)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+(i) $|\Delta_T(-1)| = |{-1} - 1 + ({-1})^{-1}| = 3$.
+(ii) $\Delta_T(\omega_6) = \omega_6 - 1 + \omega_6^{-1}
+     = 2\cos(\pi/3) - 1 = 0$.
+(iii) One checks $M^3 \equiv I \pmod{2}$ and $M^4 \equiv I \pmod{3}$,
+so $\operatorname{ord}(M \bmod 6) = \operatorname{lcm}(3,4) = 12$.
+\end{proof}
+
+\begin{remark}
+The knot group of $T(2,3)$ has presentation $\langle a, b \mid a^2 = b^3 \rangle$,
+directly encoding the prime factorization $6 = 2 \cdot 3$.
+Thus the trefoil knot is a topological avatar of the arithmetic of~$6$:
+its determinant, Alexander polynomial, and monodromy all reduce to
+$\sigma$, $\tau$, and the factorization $2 \cdot 3$.
 \end{remark}
 
 \end{document}
