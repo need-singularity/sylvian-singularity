@@ -852,7 +852,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-15](docs/hypotheses/H-CX-15-servant-golden-zone.md) | 서번트=골든존=분열 | ⚠️ N=8만 | N=8: k=3≈1/e, N=4: k=4, N=16: k=12 |
 | [H-CX-16](docs/hypotheses/H-CX-16-inhibition-noise-cancelling.md) | 억제=노이즈캔슬링 | 🟨 | MoE/GABA/IB/tension_scale |
 | [H-CX-17](docs/hypotheses/H-CX-17-specialization-emergence.md) | 전문화 창발 | 🟨 | 서번트각성=분열분화=피질분화 |
-| [H-CX-18](docs/hypotheses/H-CX-18-dual-tension-duality.md) | 내부/간 이중성 | 🟨 | 파동-입자 이중성 비유, R·1/R |
+| [H-CX-18](docs/hypotheses/H-CX-18-dual-tension-duality.md) | 내부/간 이중성 | ⬛ 반박 | Duality 0/9, 독립모델에선 같은방향 |
 | [H-CX-19](docs/hypotheses/H-CX-19-internal-ratio-golden-lower.md) | 반전비≈ln(4/3) | 🟧 | 11셋 0.294≈0.288 (2.2%) |
 | [H-CX-20](docs/hypotheses/H-CX-20-half-activation-riemann.md) | 최적활성≈1/e | 🟧 수정 | quick k=4(1/2), 정식 k=3(1/e) |
 | [H-CX-21](docs/hypotheses/H-CX-21-llm-tension-perplexity.md) | tension∝1/PPL | 🟧 수정 | 높은장력=확신, H307과 일관 |
