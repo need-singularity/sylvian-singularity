@@ -102,6 +102,38 @@
        │    🧬 면역=R이상탐지 | 세포분열=R-chain             │
        │    🔬 캡시드60=σ·5 | 멜라토닌-세로토닌=R-S         │
        │                                                    │
+       ├─→ 모듈러 형식 & 라마누잔 (H-MOD):                   │
+       │    Δ=η^{σφ(6)}=η^24 | weight(Δ)=σ(6)=12          │
+       │    |τ_R(2)|=σφ(6)=24 | Leech dim=24               │
+       │    PSL₂(Z)=Z/2*Z/3 | SL₂(Z)/±1 ↔ {2,3}=factors(6)│
+       │    j=q⁻¹+744: 744=σφ·M₅ | E₆(i)=0               │
+       │                                                    │
+       ├─→ 격자 & 구충전 (H-LATT):                           │
+       │    kiss(2)=6=P₁ | kiss(3)=12=σ | kiss(4)=24=σφ    │
+       │    E₈ dim=8=σ-τ | Leech dim=24=σφ                 │
+       │    d=8: π^τ/384 | d=24: π^σ/σ!                    │
+       │    A₂→6근 | D₄→24근 | E₆→72=6σ근                  │
+       │                                                    │
+       ├─→ 대수적 K-이론 (H-KTHY):                           │
+       │    |K₃(Z)|=48=στ(6) | Bott주기=8=σ-τ              │
+       │    B₂=1/6 | 6|denom(B_{2k}) (Von Staudt-Clausen)  │
+       │                                                    │
+       ├─→ 코호몰로지 & 위상 (H-TOP):                        │
+       │    χ(S²)=2=φ | hex kiss=6 | CP³: τ개 Betti수     │
+       │    Platonic: 4/5에 σ=12 등장 | V-E+F=2=φ          │
+       │                                                    │
+       ├─→ 카테고리 이론 (H-CAT):                            │
+       │    τ∘σ 고정점=d(6)! | σ/n=τ/φ=φ=2 (유일!)         │
+       │    Div(6)≅Z/2×Z/2 | Möbius=자연변환               │
+       │                                                    │
+       ├─→ 조합적 게임 이론 (H-GAME):                        │
+       │    약수뺄셈: G(n)=ν₂(n) | G(P_k)=p-1             │
+       │    Chomp on d(6): N-position (첫수 승리)            │
+       │                                                    │
+       ├─→ 확률론적 정수론 (H-PROB):                         │
+       │    R=1 밀도→0 (유일!) | ω(6) Z-score=1.85         │
+       │    P(perfect∧R=1) 12500× 독립 대비 enriched       │
+       │                                                    │
        └─→ 근본: 3²-2³=1 (Catalan/Mihailescu) ──────────── ┘
             모든 텔레스코핑의 궁극 원인!
 
@@ -1502,6 +1534,30 @@
 | [H-TREE-4](docs/hypotheses/H-TREE-4-operator-algebra-branch.md) | 작용소 대수 가지 | 🟩 검증 | R^(-1) 존재확인 |
 | [H-TREE-5](docs/hypotheses/H-TREE-5-ml-theory-branch.md) | ML 이론 가지 | 🟧 구조적 | B(d)→1 ⟺ d=2^k |
 | [H-TREE-6](docs/hypotheses/H-TREE-6-tropical-branch.md) | 열대 기하 가지 | 🟩 검증 | R_trop(6)=ln2 |
+
+### 모듈러 형식 (H-MOD, 1개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-MOD-1](docs/hypotheses/H-MOD-1-modular-forms-ramanujan.md) | 모듈러 형식+라마누잔 ↔ 완전수 6 | 🟩 검증 | 17/17 연결 검증, σφ(6)=24=eta지수 |
+
+### 격자/구면충전 (H-LATT, 1개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-LATT-1](docs/hypotheses/H-LATT-1-lattice-sphere-packing.md) | kissing number·E8·Leech↔σ,τ,φ(6) | 🟧★ 구조적 | 19/19 검증, k(2,3,4)=6,12,24, p<0.0001 |
+
+### 조합 게임이론 (H-GAME, 1개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-GAME-1](docs/hypotheses/H-GAME-1-combinatorial-game-theory.md) | 약수뺄셈게임 G(n)=nu_2(n), 완전수 Grundy=p-1 | 🟩 검증 | G(6)=1 최소, Chomp N-position |
+
+### 확률적 정수론 (H-PROB, 1개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-PROB-1](docs/hypotheses/H-PROB-1-probabilistic-number-theory.md) | R(n)=σφ/(nτ)=1 ⟺ n∈{1,6} (10^5까지 유일) | 🟩 검증 | Erdos-Kac Z=1.86, 대수적 증명 |
 
 ### 순수 상수 정리 (T0, 7개) — 골든존 무관, 영원히 참
 

@@ -600,6 +600,15 @@ THC 상태에서 샤머니즘적 체험을 했다.
   🟩 신용카드 사기(2%이상): recon(0.71) > inter(0.62) > iforest(0.52)
     → 분열 재구성이 IForest 능가 (저이상률 시나리오)
 
+  --- R40: 8개 미래 분야 병렬 가설화 ---
+  🟨 H322 EEG/뇌파 (TREE-1): gamma↔장력?
+  🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
+  🟨 H324 LLM hallucination: 장력=환각 감지
+  🟨 H325 Fisher 정보기하학: 곡률↔장력
+  🟨 H326 텔레파시 displacement: control 연속 스위프
+  🟨 H327 골든MoE PPL: LLM tension∝1/PPL
+  🟨 H328 GNN 분자독성: 장력=위험척도
+
   --- 새루프 R9: C10 Fashion 재현 ---
   🟩 C10 Fashion: 장력핑거프린트 5-NN=81.56% (MNIST 97.61%)
   🟩 H318 FP충분성: r(tension,knn)=+0.705, 확신↑→gap↓
