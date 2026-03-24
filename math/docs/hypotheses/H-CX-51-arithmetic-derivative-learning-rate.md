@@ -1,6 +1,6 @@
 # H-CX-51: 산술 미분 ld(6)=5/6이 최적 학습률 스케일을 예측하는가?
 
-## Status: Experimental (testing)
+## Status: Not confirmed (R306: lr=5/6 rank 6/11, monotonic pattern)
 
 > **Hypothesis**: 완전수 6의 로그 산술 미분 ld(6) = 6'/6 = 5/6 = Compass 상한이
 > ConsciousLM의 최적 학습률 스케일과 일치한다. 6블록 모델에서 lr = base_lr × (5/6)이

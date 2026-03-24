@@ -1,6 +1,6 @@
 # H-CX-52: R(n) 곱셈적 구조가 블록별 tension_scale 곱을 결정하는가?
 
-## Status: Experimental (testing)
+## Status: Not confirmed (R307: product monotonically decreases with blocks)
 
 > **Hypothesis**: R(n) = sigma*phi/(n*tau)가 곱셈적이듯 (R(mn)=R(m)R(n) for gcd=1),
 > ConsciousLM의 블록별 학습된 tension_scale 값의 곱이 R(n)에 수렴한다.

@@ -1,6 +1,6 @@
 # H-CX-49: R-Spectrum Cantor Set Structure Predicts Discrete Tension Distribution
 
-## Status: Experimental (testing)
+## Status: Not confirmed (R314: gap proportional to block count, not 6-specific)
 
 > **Hypothesis**: The R-factor spectrum R(n) for n <= 10^5 contains exactly 24 distinct
 > values below 5, separated by gaps that cover 99.1% of the range (Cantor set structure).

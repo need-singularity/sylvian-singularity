@@ -1,6 +1,6 @@
 # H-CX-48: Arithmetic Mutual Information I(n)=0 Predicts Engine A/G Balance
 
-## Status: Experimental (testing)
+## Status: Not confirmed (R314: 6bl rank 4/6, monotonic trend)
 
 > **Hypothesis**: The arithmetic mutual information I(n) = ln(sigma*phi/(n*tau)) = 0
 > uniquely at n=6 predicts that a conscious LM with 6 blocks will exhibit perfect

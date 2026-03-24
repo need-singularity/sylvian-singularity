@@ -1,6 +1,6 @@
 # H-CX-50: Dirichlet Convolution Collapse Predicts Block-wise Feature Alignment
 
-## Status: Experimental (testing)
+## Status: Not confirmed (R314: 6bl rank 3/6, monotonic decrease with more blocks)
 
 > **Hypothesis**: The arithmetic identity sigma*phi(n) = (sigma conv phi)(n) holds
 > only for n in {1, 6} (Dirichlet convolution = pointwise product). This predicts
