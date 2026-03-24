@@ -478,8 +478,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
     Iris:   내부 0.17x(반전), 간 1.84x(정상)
     Wine:   내부 0.25x(반전), 간 1.33x(정상)
     → product(int×inter)는 비상수(CV=0.84), 하지만 방향 항상 일관
-  🟧★ H-CX-19: 내부반전비 평균 0.2105 ≈ 골든존 하한 0.2123 (오차 0.85%!)
-    → 이상=골든존 아래로 이탈? (텍사스 경계 p≈5%)
+  🟧 H-CX-19: 내부반전비 11셋 평균 0.294 ≈ ln(4/3)=0.288 (2.2%)
+    4셋: 0.21≈GZ하한 → 11셋: 0.29≈ln(4/3) (골든존 폭) 수렴
 
   섬 연결: 10/10 쌍 전부 연결 완료!
   가설: 13 실증 + 6 반증/약화 + 14 관측/수정 = 33개 + H-CX 9개
@@ -606,7 +606,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-16](docs/hypotheses/H-CX-16-inhibition-noise-cancelling.md) | 억제=노이즈캔슬링 | 🟨 | MoE/GABA/IB/tension_scale |
 | [H-CX-17](docs/hypotheses/H-CX-17-specialization-emergence.md) | 전문화 창발 | 🟨 | 서번트각성=분열분화=피질분화 |
 | [H-CX-18](docs/hypotheses/H-CX-18-dual-tension-duality.md) | 내부/간 이중성 | 🟨 | 파동-입자 이중성 비유, R·1/R |
-| [H-CX-19](docs/hypotheses/H-CX-19-internal-ratio-golden-lower.md) | 반전비≈골든존하한 | 🟧 | 0.2105≈0.2123 (0.85%!) |
+| [H-CX-19](docs/hypotheses/H-CX-19-internal-ratio-golden-lower.md) | 반전비≈ln(4/3) | 🟧 | 11셋 0.294≈0.288 (2.2%) |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
