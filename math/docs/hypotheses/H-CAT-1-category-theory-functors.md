@@ -39,7 +39,11 @@ The poset (Div(6), |) is a lattice with:
 
 ## The Master Identity as Natural Transformation
 
-The identity sigma(n) * phi(n) = n * tau(n) can be interpreted categorically:
+The identity sigma(n) * phi(n) = n * tau(n) holds specifically for n=6 and can
+be interpreted categorically. NOTE: This is NOT a universal identity — it fails
+for most n (e.g., n=2,3,4,5,12,28,30). It is a special property of n=6.
+
+Verification: n=6: sigma*phi=24, n*tau=24 (TRUE). n=12: sigma*phi=112, n*tau=72 (FALSE).
 
 ```
   For n = 6:
@@ -47,6 +51,7 @@ The identity sigma(n) * phi(n) = n * tau(n) can be interpreted categorically:
     6 * tau(6)         = 6 * 4  = 24
 
   This says: (sum of divisors)(coprime count) = n(divisor count)
+  (Specific to n=6, not a general law)
 
   Functor diagram:
     sigma          phi          id           tau
@@ -56,7 +61,9 @@ The identity sigma(n) * phi(n) = n * tau(n) can be interpreted categorically:
           12 * 2 = 24          =      6 * 4 = 24
 ```
 
-For perfect numbers (sigma = 2n), this simplifies to 2*phi = tau.
+For perfect numbers (sigma = 2n), the identity sigma*phi = n*tau becomes
+2n*phi = n*tau, i.e., 2*phi = tau. This still only holds for n=6 among
+perfect numbers (fails for 28, 496, 8128 as verified).
 
 ## The tau-sigma Section Property (UNIQUE to n=6)
 
@@ -179,7 +186,7 @@ functions see it:
 | Category-Theoretic Concept | n=6 Manifestation | Unique to 6? |
 |---------------------------|-------------------|------------|
 | Divisibility poset Div(n) | Boolean lattice 2^2 | no (all squarefree semiprimes) |
-| sigma*phi = n*tau | 12*2 = 6*4 = 24 | no (holds for all n) |
+| sigma*phi = n*tau | 12*2 = 6*4 = 24 | YES (does NOT hold for all n; verified false for n=2,3,4,5,12,28,30,...) |
 | 2*phi = tau (perfect n) | 2*2 = 4 | YES (only n=6) |
 | tau(sigma(d)) = d for all d\|n | all 4 divisors | YES (fails for 28, 496) |
 | sigma/n = tau/phi = phi | all = 2 | YES (only n=6) |
@@ -206,7 +213,9 @@ to divisors of 6.
 ## Limitations
 
 1. The Yoneda analogy is informal; (N, |) is not enriched enough for full Yoneda.
-2. sigma*phi = n*tau holds for ALL n, so the balance identity alone is not special.
+2. CORRECTION (2026-03-24): sigma*phi = n*tau does NOT hold for all n. Search over
+   all n in [2, 10000] found n=6 is the ONLY solution. The balance identity IS
+   special to n=6 and is an additional uniqueness property, not a universal law.
 3. The section property is verified computationally, not proved impossible for all n > 6.
 4. Category-theoretic language may overstate what are arithmetic coincidences.
 5. 2*phi = tau holding only for n=6 among perfect numbers needs theoretical explanation.
@@ -215,7 +224,7 @@ to divisors of 6.
 
 | Claim | Grade | Reason |
 |-------|-------|--------|
-| sigma*phi = n*tau (universal) | 🟩 | proved for all n |
+| sigma*phi = n*tau (for n=6) | 🟩 | n=6 is UNIQUE solution in [2,10000]; NOT universal — fails for all other tested n |
 | tau(sigma(d)) = d for d\|6 | 🟩 | verified, unique among tested perfect numbers |
 | 2*phi = tau only for n=6 | 🟧 | verified for 4 perfect numbers, no general proof |
 | Triple ratio = 2 | 🟩 | follows from definitions for n=6 |
