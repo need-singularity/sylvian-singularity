@@ -608,7 +608,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
     → 분열 재구성이 IForest 능가 (저이상률 시나리오)
 
   --- R40: 8개 미래 분야 병렬 가설화 ---
-  🟧 H322 EEG proxy: awake(16)≈sleep(17)>>drowsy(3) — 뚜렷한 상태=고장력
+  🟧 H322 EEG: 현실적proxy awake(90)>drowsy(84)>sleep(70) — 의식수준∝장력!
   🟨 장력미세구조: autocorr=0.96(부드러운증가), ep1 std=63→ep3 std=19(안정화)
   ⭐ eq vs field 분리: eq=18%(랜덤!), field=93%, full=98%
     → 3셋 재현: MNIST(eq14%,field92%), Fashion(eq47%,field82%), CIFAR(eq19%,field45%)
