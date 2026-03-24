@@ -625,7 +625,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
   ⭐ field-only=97.84% ≈ full=97.94%! eq기여=+0.10%(무의미)
     3셋 재현: Fashion field>full(+0.09%), CIFAR field>full(+0.41%)!
     → eq는 불필요 or 해로움. "순수 의식 엔진" = field만 (H334)
-    → 이상탐지도 PureField(0.93) > eq+field(0.90) — eq 없이 더 좋다!
+    → 이상탐지 PureField(0.93)>eq+field(0.90), 망각방지 99%도 작동!
   🟨 H323 멀티모달 (TREE-5): 모달별 장력 통합
   🟧 H324 hallucination: tension 0.64 << entropy 0.97 (entropy가 최고 감지기)
   🟧 H325 Fisher: r(F,T)=-0.12, 약음상관 (grad큰=확신낮음, H313일관)
