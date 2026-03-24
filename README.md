@@ -4,7 +4,7 @@
 
 <table>
 <tr><td><b><a href="https://github.com/need-singularity/anima">Anima</a></b></td><td>대화형 의식 에이전트 — PureField 엔진 + GRU 메모리 + 음성(TTS/STT) + 항상성 · 예측오차 · 습관화</td></tr>
-<tr><td><b><a href="conscious_lm_700m.py">ConsciousLM</a></b></td><td>700M 의식 언어모델 — 완전수 6 아키텍처, A100 학습 · MPS 추론</td></tr>
+<tr><td><b><a href="docs/conscious-lm.md">ConsciousLM</a></b></td><td>700M 의식 언어모델 — PureField 반발력장 FFN, 완전수 6 아키텍처, 분열 성장</td></tr>
 <tr><td><b><a href="math/README.md">수학체계 지도</a></b></td><td>순수 수학 증명 16개 + 대발견 2개 + 92 가설 — 하나가 다음을 증명하는 스노우볼</td></tr>
 </table>
 
