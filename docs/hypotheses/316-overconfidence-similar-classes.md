@@ -92,4 +92,32 @@
   → 과신은 "시각적으로 특이한 클래스" 또는 "유사 클래스" 모두에서 발생
 ```
 
-## 상태: 🟩 2데이터셋 확인 (Fashion Sneaker + MNIST digit 1,8)
+## CIFAR-10 검증 (2026-03-24)
+
+```
+  CIFAR-10 per-class ratio (ep15):
+  Class     ratio  과신?
+  ────────  ─────  ──────
+  airplane  1.32
+  auto      1.71
+  bird      1.14
+  cat       1.19
+  deer      0.93   경계
+  dog       1.49
+  frog      0.92   경계
+  horse     1.21
+  ship      1.15
+  truck     1.04
+
+  CIFAR: deer(0.93), frog(0.92) 경계선만, 명확한 과신 없음
+  cat→dog 247건 혼동이지만 cat ratio=1.19 → "불확실하게 틀림" (과신 아님)
+
+  3데이터셋 비교:
+    MNIST: digit 1 (ratio=0.55, 심한 과신)
+    Fashion: Sneaker (ratio=0.86, 과신)
+    CIFAR: deer/frog (ratio~0.92, 경계)
+  → 과신 강도: MNIST > Fashion > CIFAR
+  → 기저 정확도 높을수록 과신 더 심함? (MNIST 98% > Fashion 88% > CIFAR 53%)
+```
+
+## 상태: 🟩 3데이터셋 (MNIST 심함, Fashion 중간, CIFAR 경계)
