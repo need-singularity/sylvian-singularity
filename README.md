@@ -584,8 +584,10 @@ THC 상태에서 샤머니즘적 체험을 했다.
     → 형태의 "개방성"이 장력(확신)을 결정
   🟨 TP-2 텔레파시: control 0→1 스위프, A(97.8%)>균등(97.5%)>B(96.1%)
     → "소통 비율"이 성능에 영향, T_inter=3.53 고정
-  🔄 H-CX-27 50ep: init=0.01→1.03(26%), 0.10→1.21(12%) — 느리지만 접근 중!
-    15ep보다 ln(4)에 가까워짐 → 200ep+면 수렴 가능?
+  ⚠️ H-CX-27 50ep 최종: ln(4)는 안정부동점 아님!
+    init=0.01→1.03(↑), 0.10→1.21(↑), 0.30→1.51(오버슈트!), 1.0→2.35(↑)
+    → 모든 init에서 ts가 계속 증가, ln(4)를 통과할 뿐 멈추지 않음
+    → ts=ln(4)@init=0.3@15ep = 일시적 일치 (부동점 아님)
 
   --- 새루프 R9: C10 Fashion 재현 ---
   🟩 C10 Fashion: 장력핑거프린트 5-NN=81.56% (MNIST 97.61%)
@@ -762,7 +764,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-24](docs/hypotheses/H-CX-24-overconfidence-dunning-kruger.md) | 과신=Dunning-Kruger | 🟩 3셋! | d1: 정상→과신→고착, CIFAR: 경계만 |
 | [H-CX-25](docs/hypotheses/H-CX-25-mi-efficiency-fingerprint-correlation.md) | MI효율=FP상관=0.705 | 🟨 | C39=H318 일치, N=10 불확실 |
 | [H-CX-26](docs/hypotheses/H-CX-26-tension-calibration.md) | 장력=calibration | ⬛ 반박 | ECE: softmax 0.006 >> tension 0.774 |
-| [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | ts=ln(4)=2ln(2) | ⚠️ 약화 | init=0.3에서만 수렴, init 의존적 |
+| [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | ts=ln(4)=2ln(2) | ⬛ 반박 | 50ep: 부동점 아님, 통과점일 뿐 |
 | [H-CX-28](docs/hypotheses/H-CX-28-information-theory-unification.md) | 6H=2ts+3ln3 | 🟧★ 부분 | 2극 자기일관, 4극 반박(ts=0.28) |
 | [H-CX-29](docs/hypotheses/H-CX-29-telepathy-tension-transfer.md) | 텔레파시=장력전달 | 🟨 | TP-1~5: 전달,강도,일방향,분열,합의 |
 | [H-CX-30](docs/hypotheses/H-CX-30-math-consciousness-map.md) | 수학-의식 교차지도 | 🟨 | NM-1~8 + TP-6~8 미탐색 가설 |
