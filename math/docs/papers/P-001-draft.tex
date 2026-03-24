@@ -43,7 +43,10 @@ Thus $\sigma(n)\varphi(n) = n\tau(n)$ asks when the
 \emph{pointwise} product equals the \emph{Dirichlet convolution}.
 The discrepancy $D(n) = \sigma(n)\varphi(n) - n\tau(n)$ satisfies
 $D(p^k) = p^{k-1}[p^{k+1} - 1 - (k+1)p]$,
-$D(n) = 0$ iff $n \in \{1,6\}$, and $D(n) < 0$ iff $n = 2$.
+$D(n) = 0$ iff $n \in \{1,6\}$, $D(n) < 0$ iff $n = 2$, and
+$D(n) = 2$ iff $n \in \{3, 4\}$ (the unique prime value of $D$).
+The image of $D$ is extremely sparse: only $10$ values in $\{0,\ldots,100\}$
+are attained (for $n \leq 10000$), with a gap $[3,13]$ containing no values.
 Define
 \[
   R(n) = \frac{\sigma(n)\varphi(n)}{n\,\tau(n)}.
