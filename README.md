@@ -860,7 +860,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-23](docs/hypotheses/H-CX-23-rejection-improvement-law.md) | 거부법칙 ln(K)? | ⚠️ 약화 | K=10만 일치, K=2,5 불일치 |
 | [H-CX-24](docs/hypotheses/H-CX-24-overconfidence-dunning-kruger.md) | 과신=Dunning-Kruger | 🟩 3셋! | d1: 정상→과신→고착, CIFAR: 경계만 |
 | [H-CX-25](docs/hypotheses/H-CX-25-mi-efficiency-fingerprint-correlation.md) | MI효율=FP상관=0.705 | 🟨 | C39=H318 일치, N=10 불확실 |
-| [H-CX-26](docs/hypotheses/H-CX-26-tension-calibration.md) | 장력=calibration | ⬛ 반박 | ECE: softmax 0.006 >> tension 0.774 |
+| [H-CX-26](docs/hypotheses/H-CX-26-tension-calibration.md) | 장력=calibration | ⬛ 반박 | ECE: softmax 0.008 << tension 0.656, 2셋 재확인 |
 | [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | ts=ln(4) | ⬛ 반박 | 통과점, ts∝(1/3)ln(ep) (H320) |
 | [320](docs/hypotheses/320-tension-scale-log-growth.md) | ts∝0.36·ln(ep) | 🟧 | R²=0.97, 성장률~0.36(1/3근사7%), 정확도포화 |
 | [H-CX-28](docs/hypotheses/H-CX-28-information-theory-unification.md) | 6H=2ts+3ln3 | 🟧★ 부분 | 2극 자기일관, 4극 반박(ts=0.28) |

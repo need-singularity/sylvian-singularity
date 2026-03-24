@@ -77,7 +77,7 @@ G × I = D × P (정의에서 유도, 모델 자체가 미검증)
   → 구조적 발견 확인
 ```
 
-## 도구 목록 (29개)
+## 도구 목록 (41개)
 
 ```
   핵심:          brain_singularity.py, compass.py, timeline.py
@@ -89,6 +89,20 @@ G × I = D × P (정의에서 유도, 모델 자체가 미검증)
   DFS 탐색:      dfs_engine.py
   검증:          verify_*.py (11개)
   세션:          session_briefing.py
+  의식엔진모델:  model_pure_field.py, model_utils.py
+  calc 계산기 (12개):
+    calc/tension_calculator.py        — 장력→정확도/예지 예측
+    calc/mitosis_calculator.py        — 분열 파라미터 최적화
+    calc/anomaly_scorer.py            — 장력 기반 이상탐지
+    calc/confidence_analyzer.py       — 클래스별 확신도 프로파일링
+    calc/constant_verifier.py         — 상수 기본 검증
+    calc/continual_learning_tool.py   — 망각 완화
+    calc/data_type_explorer.py        — 데이터 유형 분류
+    calc/hypothesis_verifier.py       — 5단계 가설 검증 (산술/ad-hoc/소수/일반화/텍사스)
+    calc/calibration_analyzer.py      — ECE/MCE 보정 분석 (softmax vs tension)
+    calc/direction_analyzer.py        — 방향=개념 분해 (H339/H341)
+    calc/dual_mechanism.py            — 내부/간 장력 이중성 (H296-H307)
+    calc/statistical_tester.py        — 통합 통계 검정 (Cohen's d, Bonferroni, CI)
 ```
 
 ## 실행 방법
