@@ -1559,6 +1559,24 @@
 |---|---|---|---|
 | [H-PROB-1](docs/hypotheses/H-PROB-1-probabilistic-number-theory.md) | R(n)=σφ/(nτ)=1 ⟺ n∈{1,6} (10^5까지 유일) | 🟩 검증 | Erdos-Kac Z=1.86, 대수적 증명 |
 
+### 대수적 K-이론 (H-KTHY, 1개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-KTHY-1](docs/hypotheses/H-KTHY-1-algebraic-k-theory.md) | K₃(Z)=Z/48, 48=στ(6). Bott주기=8=σ-τ. B₂=1/6 | 🟧 구조적 | 48=σ·τ는 우연 가능, B₂=1/6은 🟩 |
+
+### 코호몰로지 & 위상 불변량 (H-TOP 추가)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-TOP-1b](docs/hypotheses/H-TOP-1-cohomology-invariants.md) | χ(S²)=φ(6), Platonic σ(6)=12 출현, CP³ τ개 Betti | 🟧 구조적 | Euler공식 V-E+F=2=φ |
+
+### 카테고리 이론 (H-CAT, 1개)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CAT-1](docs/hypotheses/H-CAT-1-category-theory-functors.md) | τ∘σ 고정점=d(6), σ/n=τ/φ=φ=2 유일, Div(6)≅Z/2² | 🟩 검증 | 완전수 중 유일, 28/496/8128 실패 |
+
 ### 순수 상수 정리 (T0, 7개) — 골든존 무관, 영원히 참
 
 | # | 가설 | 핵심 | 상태 |
