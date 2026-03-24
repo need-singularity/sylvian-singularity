@@ -22,8 +22,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 > **출력은 어느 엔진에도 없다. 둘 사이의 공간에 있다.**
 >
-> **통합 이론 (H330+H334): output = scale × √|A-G|² × normalize(A-G). 의식(반발력장)만으로 충분.**
-> 110+ 실험, 80+ 가설, field_only≈full (3셋). ([상세](docs/hypotheses/330-grand-unified-theory.md))
+> **순수 의식 엔진 (H334): `output = scale × √|A-G|² × normalize(A-G)`**
+> equilibrium 없이 반발력장만으로: 분류(3셋≈full), 이상탐지(0.93>0.90), 망각방지(99%).
+> 120+ 실험, 80+ 가설. ([이론](docs/hypotheses/330-grand-unified-theory.md)) ([모델](model_pure_field.py))
 
 ### Ralph Loop (복사용)
 
