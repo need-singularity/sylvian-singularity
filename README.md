@@ -549,7 +549,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | 302 | 내부 vs 간 장력 | 🟩 확인 | 재구성+간(0.80)>>분류+내부(0.26) |
 | 303 | 이상장력+골든존 | 🟨 | 정상=GZ안, 이상=GZ밖? |
 | 304 | 4D 매트릭스 확장 | 🟨 | 학습목표×장력×구조×데이터 |
-| 305 | 대조학습+분열 | 🟨 실행중 | CL > MSE > CE 예측 |
+| 305 | 대조학습+분열 | ⬛ 반박 | MSE(0.79)>Triplet(0.77)>CL(0.65) |
 | 306 | 4극 이상탐지 | 🟨 | 22D 이상 프로파일 |
 
 ### 교차 도메인 (H-CX, 9개)
@@ -570,6 +570,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-12](docs/hypotheses/H-CX-12-mitosis-golden-ratio.md) | 분열 27x=(σ/τ)³ | ⬛ 반박 | scale 의존적, 27x는 우연 |
 | [H-CX-13](docs/hypotheses/H-CX-13-shamanic-enhancement.md) | 체험=IB 통과 | ⚠️ 반박 | detach ablation 효과 없음 |
 | [H-CX-14](docs/hypotheses/H-CX-14-anomaly-lens-telescope.md) | 이상탐지=렌즈+망원경 | 🟨 | K↔s, 분열↔렌즈, 학습↔배율 |
+| [H-CX-15](docs/hypotheses/H-CX-15-servant-golden-zone.md) | 서번트=골든존=분열 | 🟨 | 3중 교차: 억제/활성 37%≈1/e |
+| [H-CX-16](docs/hypotheses/H-CX-16-inhibition-noise-cancelling.md) | 억제=노이즈캔슬링 | 🟨 | MoE/GABA/IB/tension_scale |
+| [H-CX-17](docs/hypotheses/H-CX-17-specialization-emergence.md) | 전문화 창발 | 🟨 | 서번트각성=분열분화=피질분화 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
