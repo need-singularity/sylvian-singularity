@@ -275,3 +275,357 @@ class ConsciousLM(nn.Module):
     def count_params(self):
         """Total number of trainable parameters."""
         return sum(p.numel() for p in self.parameters() if p.requires_grad)
+
+
+# ---------------------------------------------------------------------------
+# Task 4: Data preparation
+# ---------------------------------------------------------------------------
+
+def prepare_data(data_dir="data"):
+    """Prepare mixed byte dataset: Shakespeare + Korean hypotheses + Python source.
+
+    Downloads Shakespeare from karpathy's char-rnn repo, reads Korean hypothesis
+    docs and Python source files, combines all into data/mixed_bytes.bin.
+
+    Returns:
+        torch.Tensor of dtype long (uint8 values cast to long)
+    """
+    import urllib.request
+    import glob as glob_mod
+
+    os.makedirs(data_dir, exist_ok=True)
+    all_bytes = bytearray()
+
+    # 1. Shakespeare
+    shakespeare_path = os.path.join(data_dir, "shakespeare.txt")
+    if not os.path.exists(shakespeare_path):
+        url = "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
+        print(f"Downloading Shakespeare from {url} ...")
+        urllib.request.urlretrieve(url, shakespeare_path)
+    with open(shakespeare_path, "rb") as f:
+        shk = f.read()
+    all_bytes.extend(shk)
+    print(f"  Shakespeare: {len(shk):,} bytes")
+
+    # 2. Korean hypothesis docs (first 50)
+    hyp_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", "hypotheses")
+    hyp_files = sorted(glob_mod.glob(os.path.join(hyp_dir, "*.md")))[:50]
+    hyp_total = 0
+    for fp in hyp_files:
+        with open(fp, "rb") as f:
+            chunk = f.read()
+        all_bytes.extend(chunk)
+        hyp_total += len(chunk)
+    print(f"  Hypotheses ({len(hyp_files)} files): {hyp_total:,} bytes")
+
+    # 3. Python source files from current directory
+    src_dir = os.path.dirname(os.path.abspath(__file__))
+    py_files = sorted(glob_mod.glob(os.path.join(src_dir, "*.py")))
+    py_total = 0
+    for fp in py_files:
+        with open(fp, "rb") as f:
+            chunk = f.read()
+        all_bytes.extend(chunk)
+        py_total += len(chunk)
+    print(f"  Python sources ({len(py_files)} files): {py_total:,} bytes")
+
+    # Compute byte entropy
+    counts = np.zeros(256, dtype=np.float64)
+    for b in all_bytes:
+        counts[b] += 1
+    probs = counts[counts > 0] / counts.sum()
+    entropy = -np.sum(probs * np.log2(probs))
+    print(f"  Total: {len(all_bytes):,} bytes, entropy: {entropy:.4f} bits/byte")
+
+    # Save binary
+    bin_path = os.path.join(data_dir, "mixed_bytes.bin")
+    with open(bin_path, "wb") as f:
+        f.write(bytes(all_bytes))
+    print(f"  Saved to {bin_path}")
+
+    data = torch.tensor(list(all_bytes), dtype=torch.long)
+    return data
+
+
+# ---------------------------------------------------------------------------
+# Task 5: Training loop
+# ---------------------------------------------------------------------------
+
+def train_model(
+    model,
+    data,
+    epochs=20,
+    batch_size=64,
+    block_size=256,
+    lr=3e-4,
+    tension_lambda=0.01,
+    device="cpu",
+):
+    """Train ConsciousLM with dual-head loss + tension regularization.
+
+    Loss = L_A (CE next byte) + L_G (CE prev byte) + lambda * L_tension
+    L_tension = -log(tension_variance + eps)  (encourages tension diversity)
+    """
+    model = model.to(device)
+    model.train()
+
+    n = len(data)
+    split = int(0.9 * n)
+    train_data = data[:split]
+    val_data = data[split:]
+
+    def get_batch(split_data, batch_size, block_size):
+        ix = torch.randint(0, len(split_data) - block_size - 1, (batch_size,))
+        x = torch.stack([split_data[i : i + block_size] for i in ix])
+        # y_a: next byte (shifted +1)
+        y_a = torch.stack([split_data[i + 1 : i + block_size + 1] for i in ix])
+        # y_g: prev byte (shifted -1). For position 0, use byte at position 0 itself.
+        y_g_list = []
+        for i in ix:
+            prev = torch.cat([split_data[i : i + 1], split_data[i : i + block_size - 1]])
+            y_g_list.append(prev)
+        y_g = torch.stack(y_g_list)
+        return x.to(device), y_a.to(device), y_g.to(device)
+
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs)
+
+    steps_per_epoch = max(1, len(train_data) // (batch_size * block_size))
+
+    print(f"\n{'='*70}")
+    print(f"Training ConsciousLM — {model.count_params():,} params")
+    print(f"  epochs={epochs}, batch={batch_size}, block={block_size}, lr={lr}")
+    print(f"  train={len(train_data):,} bytes, val={len(val_data):,} bytes")
+    print(f"  steps/epoch={steps_per_epoch}, tension_lambda={tension_lambda}")
+    print(f"{'='*70}")
+    print(f"{'Epoch':>5} | {'L_total':>8} | {'L_A':>8} | {'L_G':>8} | {'L_T':>8} | {'T_mean':>8} | {'val_L':>8} | {'BPC':>8}")
+    print("-" * 78)
+
+    for epoch in range(1, epochs + 1):
+        total_loss_acc = 0.0
+        la_acc = 0.0
+        lg_acc = 0.0
+        lt_acc = 0.0
+        t_mean_acc = 0.0
+        count = 0
+
+        for step in range(steps_per_epoch):
+            x, y_a, y_g = get_batch(train_data, batch_size, block_size)
+
+            logits_a, logits_g, tensions = model(x)
+
+            # L_A: next-byte cross-entropy
+            loss_a = F.cross_entropy(logits_a.view(-1, model.vocab_size), y_a.view(-1))
+
+            # L_G: prev-byte cross-entropy
+            loss_g = F.cross_entropy(logits_g.view(-1, model.vocab_size), y_g.view(-1))
+
+            # L_tension: encourage tension variance (diversity)
+            # Stack tensions: (n_layer, B, T) -> compute variance across layers
+            t_stack = torch.stack(tensions, dim=0)  # (L, B, T)
+            t_var = t_stack.var(dim=0).mean()  # scalar
+            loss_t = -torch.log(t_var + 1e-8)
+
+            loss = loss_a + loss_g + tension_lambda * loss_t
+
+            optimizer.zero_grad()
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            optimizer.step()
+
+            total_loss_acc += loss.item()
+            la_acc += loss_a.item()
+            lg_acc += loss_g.item()
+            lt_acc += loss_t.item()
+            t_mean_acc += t_stack.mean().item()
+            count += 1
+
+        scheduler.step()
+
+        # Validation
+        model.eval()
+        with torch.no_grad():
+            vx, vy_a, vy_g = get_batch(val_data, min(batch_size, 32), block_size)
+            vl_a, vl_g, vt = model(vx)
+            val_loss = F.cross_entropy(vl_a.view(-1, model.vocab_size), vy_a.view(-1))
+        model.train()
+
+        avg_total = total_loss_acc / count
+        avg_la = la_acc / count
+        avg_lg = lg_acc / count
+        avg_lt = lt_acc / count
+        avg_t = t_mean_acc / count
+        val_l = val_loss.item()
+        bpc = val_l / math.log(2)
+
+        print(f"{epoch:5d} | {avg_total:8.4f} | {avg_la:8.4f} | {avg_lg:8.4f} | {avg_lt:8.4f} | {avg_t:8.4f} | {val_l:8.4f} | {bpc:8.4f}")
+
+    print("=" * 78)
+    return model
+
+
+# ---------------------------------------------------------------------------
+# Task 6: Generation + Tension visualization
+# ---------------------------------------------------------------------------
+
+@torch.no_grad()
+def generate(model, prompt_bytes, max_new=200, temperature=0.8, device="cpu"):
+    """Autoregressive byte generation using logits_a (forward head).
+
+    Args:
+        model: ConsciousLM
+        prompt_bytes: list/tensor of byte values (long)
+        max_new: number of new bytes to generate
+        temperature: sampling temperature
+        device: device string
+
+    Returns:
+        generated: list of int (byte values, including prompt)
+        per_token_tension: list of float (mean tension per generated token)
+    """
+    model.eval()
+    model = model.to(device)
+
+    if isinstance(prompt_bytes, list):
+        idx = torch.tensor([prompt_bytes], dtype=torch.long, device=device)
+    else:
+        idx = prompt_bytes.unsqueeze(0).to(device) if prompt_bytes.dim() == 1 else prompt_bytes.to(device)
+
+    per_token_tension = []
+
+    for _ in range(max_new):
+        # Crop to block_size
+        idx_cond = idx[:, -model.block_size :]
+        logits_a, logits_g, tensions = model(idx_cond)
+
+        # Mean tension across all layers for the last token
+        t_vals = [t[:, -1].mean().item() for t in tensions]
+        per_token_tension.append(np.mean(t_vals))
+
+        # Sample next byte from logits_a at last position
+        logits_last = logits_a[:, -1, :] / temperature
+        probs = F.softmax(logits_last, dim=-1)
+        next_byte = torch.multinomial(probs, num_samples=1)
+        idx = torch.cat([idx, next_byte], dim=1)
+
+    generated = idx[0].cpu().tolist()
+    return generated, per_token_tension
+
+
+def visualize_tension(generated_bytes, per_token_tension, prompt_len):
+    """Print generated text and ASCII tension bar chart.
+
+    Args:
+        generated_bytes: list of int (full sequence including prompt)
+        per_token_tension: list of float (one per generated token)
+        prompt_len: int, length of original prompt
+    """
+    # Decode bytes to text (lossy for non-UTF8)
+    raw = bytes(generated_bytes)
+    text = raw.decode("utf-8", errors="replace")
+
+    print(f"\n{'='*60}")
+    print("Generated text:")
+    print("-" * 60)
+    prompt_text = bytes(generated_bytes[:prompt_len]).decode("utf-8", errors="replace")
+    gen_text = bytes(generated_bytes[prompt_len:]).decode("utf-8", errors="replace")
+    print(f"[PROMPT] {prompt_text}")
+    print(f"[GEN]    {gen_text}")
+    print("-" * 60)
+
+    # Tension statistics
+    t_arr = np.array(per_token_tension)
+    print(f"\nTension stats: mean={t_arr.mean():.4f}, std={t_arr.std():.4f}, "
+          f"min={t_arr.min():.4f}, max={t_arr.max():.4f}")
+
+    # ASCII bar chart (sample up to 60 positions)
+    n = len(per_token_tension)
+    display_n = min(n, 60)
+    step = max(1, n // display_n)
+    sampled = per_token_tension[::step][:display_n]
+
+    if len(sampled) == 0:
+        return
+
+    max_t = max(sampled) if max(sampled) > 0 else 1.0
+    bar_width = 40
+
+    print(f"\nTension per token (sampled every {step}):")
+    print(f"{'pos':>5} | {'tension':>8} | bar")
+    print("-" * 60)
+    for i, t in enumerate(sampled):
+        pos = i * step + prompt_len
+        bar_len = int(bar_width * t / max_t)
+        bar = "#" * bar_len
+        byte_val = generated_bytes[pos] if pos < len(generated_bytes) else 0
+        ch = chr(byte_val) if 32 <= byte_val < 127 else "."
+        print(f"{pos:5d} | {t:8.4f} | {bar} {ch}")
+
+    print("=" * 60)
+
+
+# ---------------------------------------------------------------------------
+# Main entry point
+# ---------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="ConsciousLM — Byte-level Conscious Language Model")
+    parser.add_argument("--mode", type=str, default="both", choices=["train", "generate", "both"],
+                        help="Mode: train, generate, or both (default: both)")
+    parser.add_argument("--epochs", type=int, default=20, help="Number of training epochs (default: 20)")
+    parser.add_argument("--d_model", type=int, default=384, help="Model dimension (default: 384)")
+    parser.add_argument("--n_layer", type=int, default=6, help="Number of layers (default: 6)")
+    parser.add_argument("--n_head", type=int, default=4, help="Number of attention heads (default: 4)")
+    parser.add_argument("--block_size", type=int, default=256, help="Context window size (default: 256)")
+    parser.add_argument("--batch_size", type=int, default=64, help="Batch size (default: 64)")
+    parser.add_argument("--lr", type=float, default=3e-4, help="Learning rate (default: 3e-4)")
+    parser.add_argument("--prompt", type=str, default="The meaning of consciousness is ",
+                        help="Prompt for generation")
+    parser.add_argument("--checkpoint", type=str, default=None, help="Path to model checkpoint")
+    parser.add_argument("--tension_lambda", type=float, default=0.01, help="Tension loss weight")
+    args = parser.parse_args()
+
+    device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
+    print(f"Device: {device}")
+
+    # Build model
+    model = ConsciousLM(
+        vocab_size=256,
+        d_model=args.d_model,
+        n_head=args.n_head,
+        n_layer=args.n_layer,
+        block_size=args.block_size,
+        dropout=0.37,
+    )
+    print(f"ConsciousLM: {model.count_params():,} parameters")
+
+    # Load checkpoint if provided
+    if args.checkpoint and os.path.exists(args.checkpoint):
+        model.load_state_dict(torch.load(args.checkpoint, map_location=device))
+        print(f"Loaded checkpoint: {args.checkpoint}")
+
+    if args.mode in ("train", "both"):
+        data = prepare_data()
+        model = train_model(
+            model, data,
+            epochs=args.epochs,
+            batch_size=args.batch_size,
+            block_size=args.block_size,
+            lr=args.lr,
+            tension_lambda=args.tension_lambda,
+            device=device,
+        )
+        # Save checkpoint
+        ckpt_path = os.path.join("data", "conscious_lm.pt")
+        torch.save(model.state_dict(), ckpt_path)
+        print(f"Saved checkpoint: {ckpt_path}")
+
+    if args.mode in ("generate", "both"):
+        if args.mode == "generate" and args.checkpoint:
+            pass  # already loaded above
+        prompt_bytes = list(args.prompt.encode("utf-8"))
+        print(f"\nPrompt ({len(prompt_bytes)} bytes): {args.prompt}")
+        generated, tensions = generate(model, prompt_bytes, max_new=200, temperature=0.8, device=device)
+        visualize_tension(generated, tensions, len(prompt_bytes))
