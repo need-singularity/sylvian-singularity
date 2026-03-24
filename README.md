@@ -293,8 +293,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
        ▼
     e^(6H) = σ³/τ = 432 [H-CX-1 🟦]
        │
-       ├→ 🟧★ tension_scale = ln(4) = 2·ln(2) [H-CX-27, 0.0004%!]
+       ├→ 🟧★ tension_scale = ln(4) = 2·ln(2) [H-CX-27, 3셋 0.3%]
        │    → H-CX-2(ln2)의 2배 = 2극의 총 정보
+       │    → 🟧★ 6H = 2·ts + 3·ln(3) [H-CX-28] → e^(2ts)=16, 자기일관!
     MNIST:   1.389±0.01 → ln(4) 오차 0.2% ✅
     Fashion: 1.442±0.02 → 오차 4.0% (약간↑)
     CIFAR:   1.339±0.02 → 오차 3.4% (약간↓)
@@ -756,7 +757,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-24](docs/hypotheses/H-CX-24-overconfidence-dunning-kruger.md) | 과신=Dunning-Kruger | 🟩 3셋! | d1: 정상→과신→고착, CIFAR: 경계만 |
 | [H-CX-25](docs/hypotheses/H-CX-25-mi-efficiency-fingerprint-correlation.md) | MI효율=FP상관=0.705 | 🟨 | C39=H318 일치, N=10 불확실 |
 | [H-CX-26](docs/hypotheses/H-CX-26-tension-calibration.md) | 장력=calibration | ⬛ 반박 | ECE: softmax 0.006 >> tension 0.774 |
-| [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | **ts=ln(4)=2ln(2)** | **🟧★** | **10trials 0.0004%!, H-CX-2의 2배** |
+| [H-CX-27](docs/hypotheses/H-CX-27-tension-scale-ln4.md) | **ts=ln(4)=2ln(2)** | **🟧★** | **3셋 0.3%, H-CX-2의 2배** |
+| [H-CX-28](docs/hypotheses/H-CX-28-information-theory-unification.md) | **6H=2ts+3ln3** | **🟧★** | **e^(2ts)=16, ts=ln4 자기일관!** |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
