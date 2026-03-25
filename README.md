@@ -1328,7 +1328,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-155](docs/hypotheses/H-CX-155-sigma-phi-full-scan.md) | σφ/(nτ) 전원소 | Z=1~118 완전 스캔 |
 | [H-CX-156](docs/hypotheses/H-CX-156-perfect-number-element-chain.md) | 완전수 원소 체인 | C→Ni→? |
 
-#### 미검증 — EEG 하드웨어 필요 🧠
+#### 미검증 — EEG 하드웨어 필요 🧠 → [KAIST 공동연구 제안서](docs/kaist-eeg-collaboration-proposal.md)
 
 | # | 가설 | 내용 | 장비 |
 |---|---|---|---|
