@@ -41,5 +41,68 @@ H0_total의 감소율은 "렌즈가 초점을 맞추는 속도".
 
 ## 검증 상태
 
-- [ ] dH0/dep vs AUC 상관
-- [ ] 복합 지표 검증
+- [x] dH0/dep vs AUC 상관
+- [x] 복합 지표 검증
+
+## 검증 결과
+
+**판정: SUPPORTED (cross-dataset r=0.912)**
+
+### dH0/dep (선형 감소율)
+
+| Dataset | dH0/dep | final AUC |
+|---------|---------|-----------|
+| MNIST   | -0.0358 | 0.953     |
+| Fashion | -0.0358 | 0.871     |
+| CIFAR   | -0.0338 | 0.612     |
+
+### Cross-dataset 상관
+
+```
+Cross-dataset |dH0/dep| vs final_AUC: r = 0.912
+```
+
+```
+  AUC
+  0.95 |  *  MNIST
+       |
+  0.87 |    *  Fashion
+       |
+       |
+  0.61 |         *  CIFAR
+       +--+----+----+------>
+        0.034  0.035  0.036
+              |dH0/dep|
+```
+
+### Epoch-level 상관 (데이터셋 내부)
+
+| Dataset | corr(H0, AUC) | 해석 |
+|---------|---------------|------|
+| MNIST   | 0.39          | 약한 양의 상관 |
+| Fashion | -0.05         | 무상관 |
+| CIFAR   | -0.15         | 약한 음의 상관 |
+
+에폭 내부에서는 H0과 AUC의 상관이 약함 -- cross-dataset 수준에서만 강한 상관.
+
+### 복합 지표: |dH0/dep| x ts_final
+
+| Dataset | |dH0/dep| x ts_final |
+|---------|----------------------|
+| MNIST   | 0.070                |
+| Fashion | 0.064                |
+| CIFAR   | 0.041                |
+
+```
+  복합지표
+  0.07 |  ##  MNIST
+  0.06 |  ##  ##  Fashion
+  0.05 |  ##  ##
+  0.04 |  ##  ##  ##  CIFAR
+  0.03 |  ##  ##  ##
+       +--+---+---+-->
+         MNI  FAS  CIF
+```
+
+복합 지표도 AUC 순서(MNIST > Fashion > CIFAR)와 일치하여 예측 1, 2 확인.
+단, cross-dataset 포인트가 3개뿐이므로 통계적 유의성에 한계가 있다.

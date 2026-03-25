@@ -44,5 +44,50 @@
 
 ## 검증 상태
 
-- [ ] quintile별 시너지 측정
-- [ ] 골든존 매핑 확인
+- [x] quintile별 시너지 측정
+- [x] 골든존 매핑 확인
+
+## 검증 결과
+
+**판정: PARTIAL (2/3 datasets)**
+
+### Quintile별 최대 시너지
+
+| Dataset | Max Quintile | Synergy  | relative_pos | delta from 1/e | 판정 |
+|---------|-------------|----------|-------------|----------------|------|
+| MNIST   | Q3          | +0.026   | 0.340       | 0.028          | SUPPORTED |
+| Fashion | Q3          | +0.025   | 0.341       | 0.027          | SUPPORTED |
+| CIFAR   | Q5          | +0.040   | 0.644       | 0.276          | REJECTED  |
+
+```
+  relative_pos of max synergy
+       1/e = 0.368
+        |
+  0.7 | |                  *  CIFAR (0.644) -- REJECTED
+  0.6 | |
+  0.5 | |
+  0.4 | |
+  0.3 | * MNIST (0.340)  * Fashion (0.341)
+  0.2 | |
+  0.1 | |
+      +-+--+--------+--------+--->
+       1/e  MNIST   FAS     CIF
+```
+
+### MNIST & Fashion: 골든존 근처
+
+- MNIST: relative_pos = 0.340, |delta| = 0.028 from 1/e (0.368)
+- Fashion: relative_pos = 0.341, |delta| = 0.027 from 1/e (0.368)
+- 두 데이터셋 모두 1/e에서 0.03 이내
+
+### CIFAR: 기각
+
+- CIFAR에서는 최대 시너지가 Q5(최고 장력)에서 발생
+- relative_pos = 0.644, 골든존 중심에서 0.276 이탈
+- CIFAR의 높은 난이도로 인해 고장력에서만 시너지 발생 가능
+
+### 해석
+
+MNIST/Fashion (쉬운 데이터셋)에서는 중간 장력(골든존)에서 크기+방향 시너지 최대.
+CIFAR (어려운 데이터셋)에서는 고장력에서만 충분한 정보 → 시너지 패턴 다름.
+골든존 매핑은 데이터셋 난이도에 의존하며 보편적이지 않다.

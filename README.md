@@ -66,8 +66,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
   ❌ = 반증됨
   ⭐ = 대발견 (다중 재현 + 교차 검증 후에만! 검증 전 ⭐ 금지)
 
-  🟦6  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐1
-  총: 80+개 상수 + 375개 가설 + 30개 H-CX + H-TREE + 110+개 실험 + 16종 데이터
+  🟦6  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐6
+  총: 80+개 상수 + 393개 가설 + 46개 H-CX + H-TREE + 126+개 실험 + 16종 데이터
 
   ★★★ 통합 원리 (가설 313, H-CX-22) ★★★
   ⭐ 장력 = 결정의 강도 (H329, H321 수정)
@@ -78,6 +78,20 @@ THC 상태에서 샤머니즘적 체험을 했다.
     tension∝1/PPL (H-CX-21), tension=0 → -9.25pp (C48)
     entropy > tension for hallucination (H324: 0.97 vs 0.64)
     ts ∝ 0.36·ln(ep) 로그성장 (H320, R²=0.97)
+    ts × H0_total ≈ const 위상-장력 보존 (H-CX-69, CV=0.03)
+
+  ⭐ 예지 체계 (H-CX-58~69, 3라운드 18가설)
+    렌즈 예지: ts→AUC r=0.982 (H-CX-58), quintile 단조증가
+    방향 예지: 오답 방향→혼동클래스 70-82% (H-CX-59)
+    통합 예지: LR(mag,conf,gap) AUC=0.917, SYNERGY 3/3 (Fashion +17.8%p)
+    위상 예지: H0_total→accuracy r=-0.97, K=1~5 미래 예측 (H-CX-62 v2 Ripser)
+    ⭐ PH merge순서 = 혼동쌍: Spearman r=-0.97, p<0.001 (H-CX-66)
+      CIFAR: cat-dog, auto-truck, bird-deer, plane-ship (top-5 80%일치)
+    시너지 골든존: Q3 max synergy, 1/e±0.03 (H-CX-67, MNIST/Fashion)
+    PH 분류기: merge distance로 혼동쌍 P@5=0.60 일관 (H-CX-76)
+    위상 지문: merge 순서 ep5에서 tau>0.88 확정 (H-CX-77)
+    ⭐ 직교성→시너지: Corr(orthogonality, synergy)=0.90 (H-CX-80)
+    위상-장력 곱 보존: ts×H0≈const, CV=0.04~0.08 (H-CX-79, 2/3)
 
   ⭐ 이중 메커니즘 (H307, 4데이터셋 보편):
     내부장력: 이상=낮음 (혼동의 합의) — 3셋 확인
@@ -1117,7 +1131,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 |---|---|---|---|
 | [H-TREE](docs/hypotheses/H-TREE-consciousness.md) | 의식엔진 미발견 가지 | 📝 | 트리 구조 |
 
-### 교차 도메인 (H-CX, 32개)
+### 교차 도메인 (H-CX, 46개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1157,12 +1171,25 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-55](docs/hypotheses/H-CX-55-natural-frequency-z0.md) | 자연주파수 자기참조 omega0=pi/6 | 🟩 | arg(exp(iz0))=2pi/sigma(6)=pi/6 순수수학 완전등식, 황금존 무관 |
 | [H-CX-56](docs/hypotheses/H-CX-56-brainwave-divisor-map.md) | 뇌파-약수 지도 3*sigma+tau=40Hz | 🟧 | 3*sigma(6)+tau(6)=40Hz(감마결합), sigma-tau=8Hz(알파), 황금존 무관(산술) |
 | [H-CX-57](docs/hypotheses/H-CX-57-derivative-convergence-criterion.md) | 산술미분 수렴기준 6'/6=5/6=Compass상한 | 🟩+🟨 | 6'=5, 6'/6=1/2+1/3=5/6(EXACT), 짝수완전수 중 n'/n<1은 n=6뿐, 의식수렴경계 |
-| [H-CX-58](docs/hypotheses/H-CX-58-precognition-lens.md) | 예지 렌즈 | SUPPORTED | r(AUC,t_scale)=0.982 |
-| [H-CX-59](docs/hypotheses/H-CX-59-directional-precognition.md) | 방향 예지 | SUPPORTED | Dir→Pred 70-82% |
-| [H-CX-60](docs/hypotheses/H-CX-60-aberration-precognition.md) | 수차 예지 | PARTIAL | 3/5 aberrations confirmed |
-| [H-CX-61](docs/hypotheses/H-CX-61-telescope-precognition.md) | 망원경 예지 | REJECTED | product corr weak |
-| [H-CX-62](docs/hypotheses/H-CX-62-topological-precognition.md) | 위상 예지 | INCONCLUSIVE | approx PH bug |
-| [H-CX-63](docs/hypotheses/H-CX-63-multilens-precognition.md) | 다중렌즈 예지 | REJECTED | Quad learning failure |
+| [H-CX-58](docs/hypotheses/H-CX-58-precognition-lens.md) | 예지 렌즈 | ✅ SUPPORTED | r(AUC,t_scale)=0.982, 단조성 0.75~1.00, 로지스틱 b>0 |
+| [H-CX-59](docs/hypotheses/H-CX-59-directional-precognition.md) | 방향 예지 | ✅ SUPPORTED | Dir→Pred 70-82%, 혼동쌍 의미적 일치 (cat-dog, auto-truck) |
+| [H-CX-60](docs/hypotheses/H-CX-60-aberration-precognition.md) | 수차 예지 | 🟧 PARTIAL | 색수차/비점/코마/왜곡 확인, 구면수차 기각 (3/5) |
+| [H-CX-61](docs/hypotheses/H-CX-61-telescope-precognition.md) | 망원경 예지 | ❌ REJECTED | 에폭 내 product corr 약. cross-dataset은 단조 |
+| [H-CX-62](docs/hypotheses/H-CX-62-topological-precognition.md) | 위상 예지 | ✅ SUPPORTED (v2) | Ripser PH: H0→acc r=-0.97, K=1~5 예측 |r|>0.83 |
+| [H-CX-63](docs/hypotheses/H-CX-63-multilens-precognition.md) | 다중렌즈 예지 | ❌ REJECTED | v2: Quad 학습 성공하나 예지 증폭 미미 |
+| [H-CX-64](docs/hypotheses/H-CX-64-topological-precognition-lens.md) | 위상 예지 렌즈 | ✅ SUPPORTED | cross-dataset r=0.912, dH0/dep→AUC 예측 |
+| [H-CX-65](docs/hypotheses/H-CX-65-aberration-topological-correction.md) | 수차 위상 보정 | ❌ REJECTED | isolation vs AUC 무상관 |
+| [H-CX-66](docs/hypotheses/H-CX-66-direction-topology.md) | ⭐ 방향 위상 혼동 | ✅ SUPPORTED | PH merge순서 vs 혼동빈도 Spearman r=-0.97, p<0.001, CIFAR top-5 80%일치 |
+| [H-CX-67](docs/hypotheses/H-CX-67-synergy-golden-zone.md) | 시너지 골든존 | 🟧 PARTIAL | MNIST/Fashion Q3 max synergy, 1/e±0.03. CIFAR 불일치 |
+| [H-CX-68](docs/hypotheses/H-CX-68-precognition-conservation.md) | 예지 보존법칙 | ❌ REJECTED | Sum/Product CV 보존 약함 |
+| [H-CX-69](docs/hypotheses/H-CX-69-topological-acceleration.md) | 위상 가속 | 🟧 PARTIAL | H0=a-b·ln(ep) R²=0.82, ts×H0≈const (CV=0.03) |
+| [H-CX-70](docs/hypotheses/H-CX-70-singularity-closure-loops.md) | 특이점=세 루프 닫힘 | 🟨 | Loop1(구조)+Loop2(보상)+Loop3(자원), Loop2가 임계점 |
+| [H-CX-76](docs/hypotheses/H-CX-76-ph-confusion-classifier.md) | PH 예지 분류기 | ✅ SUPPORTED | P@5=0.60 (3/3 일관), 에폭5→15 조기 예측 가능 |
+| [H-CX-77](docs/hypotheses/H-CX-77-topological-fingerprint.md) | 위상 지문 안정성 | ✅ SUPPORTED | merge 순서 ep5에서 tau>0.88 확정, Fashion ep1부터 안정 |
+| [H-CX-78](docs/hypotheses/H-CX-78-synergy-scaling.md) | 골든존 시너지 스케일링 | ❌ REJECTED | 정규화 후에도 peak 미수렴 |
+| [H-CX-79](docs/hypotheses/H-CX-79-topological-tension-conservation.md) | 위상-장력 곱 보존 | ✅ SUPPORTED (2/3) | CV_prod < CV_ts AND CV_h0: Fashion, CIFAR 성립 |
+| [H-CX-80](docs/hypotheses/H-CX-80-precognition-orthogonality.md) | ⭐ 예지 직교성→시너지 | ✅ SUPPORTED | Corr(orthogonality, synergy)=0.90, CIFAR orth=0.84→syn=+0.049 |
+| [H-CX-81](docs/hypotheses/H-CX-81-aberration-merge-alignment.md) | 수차-위상 일치 | ❌ REJECTED | r 방향 불일치 (-0.57, 0.38, 0.23) |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 

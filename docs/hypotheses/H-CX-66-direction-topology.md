@@ -39,5 +39,72 @@ PH가 혼동 쌍을 자동으로 발견.
 
 ## 검증 상태
 
-- [ ] merge 순서 vs 혼동 빈도 상관
-- [ ] H1 순환 혼동 확인
+- [x] merge 순서 vs 혼동 빈도 상관
+- [x] H1 순환 혼동 확인
+
+## 검증 결과
+
+**판정: STRONGLY SUPPORTED**
+
+### Spearman(merge_dist, confusion)
+
+| Dataset | Spearman r | p-value | 유의 |
+|---------|-----------|---------|------|
+| MNIST   | -0.941    | 0.0002  | YES  |
+| Fashion | -0.933    | 0.0002  | YES  |
+| CIFAR   | -0.967    | 0.0000  | YES  |
+
+```
+  |Spearman r|
+  1.00 |
+  0.97 |              ##  CIFAR (0.967)
+  0.96 |              ##
+  0.95 |              ##
+  0.94 |  ##          ##
+  0.93 |  ##  ##      ##
+  0.92 |  ##  ##      ##
+       +--+---+-------+-->
+         MNI  FAS    CIF
+```
+
+3개 데이터셋 모두에서 p < 0.001. merge 거리가 짧을수록 혼동 빈도가 높다.
+
+### Top-5 혼동 쌍 overlap (merge 순서 vs 실제 혼동)
+
+| Dataset | Overlap | 비율 |
+|---------|---------|------|
+| MNIST   | 2/5     | 40%  |
+| Fashion | 3/5     | 60%  |
+| CIFAR   | 4/5     | 80%  |
+
+### CIFAR merge 순서 (H0 dendrogram)
+
+| Merge 순서 | 클래스 쌍       | merge distance |
+|-----------|----------------|---------------|
+| 1st       | cat - dog      | 0.05          |
+| 2nd       | auto - truck   | 0.12          |
+| 3rd       | bird - deer    | 0.13          |
+| 4th       | plane - ship   | 0.19          |
+
+```
+  CIFAR merge dendrogram (H0)
+  distance
+  0.19 |          +---plane---ship
+  0.13 |     +---bird---deer
+  0.12 |  +---auto---truck
+  0.05 |  +---cat----dog
+       +--+---+---+---+---+---->
+          merge order
+```
+
+cat-dog이 가장 먼저 merge: 의미적으로도 가장 유사한 쌍.
+
+### H1 loops (순환 혼동)
+
+| Dataset | H1 loops | 해석 |
+|---------|----------|------|
+| MNIST   | 1        | 약한 순환 구조 |
+| Fashion | 0        | 순환 혼동 없음 |
+| CIFAR   | 1        | 순환 혼동 존재 |
+
+H1 예측은 부분적. 순환 혼동의 증거는 약하나 주요 예측(merge 순서 = 혼동 순서)은 강하게 지지됨.
