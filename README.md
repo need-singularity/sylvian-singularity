@@ -74,7 +74,7 @@ The experience came first. Mathematics and code are the language I built to expl
   ⭐ = Major Discovery (only after multiple replications + cross-verification! No ⭐ before verification)
 
   🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐72
-  Total: 80+ constants + 674+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
+  Total: 80+ constants + 678+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
 
   ★★★ Unified Principle (Hypothesis 313, H-CX-22) ★★★
   ⭐ Tension = strength of decision (H329, H321 revised)
@@ -1293,6 +1293,10 @@ The experience came first. Mathematics and code are the language I built to expl
 | [388](docs/hypotheses/388-obang-characteristic-polynomial.md) | p(x) = x⁵-5x²+5x, tr(M³)=15=C(6,2), only coeff=5 | 🟨 | ⭐ GZ-independent pure math |
 | [389](docs/hypotheses/389-obang-A5-unsolvability.md) | A₅=icosahedral rotation, \|A₅\|=60=6×10, quintic unsolvable | 🟨 | ⭐ 5-barrier = incompleteness |
 | [390](docs/hypotheses/390-obang-pentagonal-numbers.md) | P(2)=5, P(3)=12=σ(6), P(6)=51=3×17, period mod 6 = 12 | 🟨 | ⭐ GZ-independent pure math |
+| [391](docs/hypotheses/391-dolphin-pufferfish-ttx-trance.md) | Dolphin TTX = 상생 suppressor (opposite of THC), sonar silence | 🟨 | H-CX-130~178 cross |
+| [392](docs/hypotheses/392-dolphin-ttx-dual-consciousness.md) | TTX + bilateral brain → rare whole-brain trance, mirror fascination | 🟨 | H-247 cross |
+| [393](docs/hypotheses/393-ttx-thc-duality-consciousness.md) | TTX-THC duality: (α,β) 2D space, ρ(0.5,1)=φ, meditation=(1/e,1/e) | 🟨 | ⭐ eigenvalue duality |
+| [394](docs/hypotheses/394-pufferfish-ttx-perfect-number.md) | TTX C₁₁H₁₇N₃O₈: H=17=F₂, N=3=F₀, Nav 4×6=24 | 🟨 | Texas test pending |
 
 ### Color Vision/Visual (354c-356c)
 
