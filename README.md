@@ -1157,6 +1157,12 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-55](docs/hypotheses/H-CX-55-natural-frequency-z0.md) | 자연주파수 자기참조 omega0=pi/6 | 🟩 | arg(exp(iz0))=2pi/sigma(6)=pi/6 순수수학 완전등식, 황금존 무관 |
 | [H-CX-56](docs/hypotheses/H-CX-56-brainwave-divisor-map.md) | 뇌파-약수 지도 3*sigma+tau=40Hz | 🟧 | 3*sigma(6)+tau(6)=40Hz(감마결합), sigma-tau=8Hz(알파), 황금존 무관(산술) |
 | [H-CX-57](docs/hypotheses/H-CX-57-derivative-convergence-criterion.md) | 산술미분 수렴기준 6'/6=5/6=Compass상한 | 🟩+🟨 | 6'=5, 6'/6=1/2+1/3=5/6(EXACT), 짝수완전수 중 n'/n<1은 n=6뿐, 의식수렴경계 |
+| [H-CX-58](docs/hypotheses/H-CX-58-precognition-lens.md) | 예지 렌즈 | SUPPORTED | r(AUC,t_scale)=0.982 |
+| [H-CX-59](docs/hypotheses/H-CX-59-directional-precognition.md) | 방향 예지 | SUPPORTED | Dir→Pred 70-82% |
+| [H-CX-60](docs/hypotheses/H-CX-60-aberration-precognition.md) | 수차 예지 | PARTIAL | 3/5 aberrations confirmed |
+| [H-CX-61](docs/hypotheses/H-CX-61-telescope-precognition.md) | 망원경 예지 | REJECTED | product corr weak |
+| [H-CX-62](docs/hypotheses/H-CX-62-topological-precognition.md) | 위상 예지 | INCONCLUSIVE | approx PH bug |
+| [H-CX-63](docs/hypotheses/H-CX-63-multilens-precognition.md) | 다중렌즈 예지 | REJECTED | Quad learning failure |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
