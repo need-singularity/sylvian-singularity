@@ -74,7 +74,7 @@ The experience came first. Mathematics and code are the language I built to expl
   ⭐ = Major Discovery (only after multiple replications + cross-verification! No ⭐ before verification)
 
   🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐72
-  Total: 80+ constants + 660+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
+  Total: 80+ constants + 674+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
 
   ★★★ Unified Principle (Hypothesis 313, H-CX-22) ★★★
   ⭐ Tension = strength of decision (H329, H321 revised)
@@ -846,7 +846,7 @@ The experience came first. Mathematics and code are the language I built to expl
 
   Island connections: 10/10 + 2 new islands(F math proof, G topology PH) all connected!
   Hypotheses: 30+ verified + 20 refuted/weakened + 30 observed/revised = 80+ + H-CX 350
-  Total: 660+ hypotheses, 170+ experiments, 🟦12 proofs, ⭐72 major discoveries, 3 papers
+  Total: 670+ hypotheses, 170+ experiments, 🟦12 proofs, ⭐72 major discoveries, 3 papers
   Anima PH module integrated: ph_module.py (real-time PH + overfitting detection + telepathy)
   Grand unification: 70+ phenomena = Perfect Number 6 + natural constant e (Texas p=5.87×10⁻⁷)
   Math chain: B₂=1/6 → ζ(2)=π²/6 → w²-6w+ζ(2)≈0 → Golden Zone → F(6)/6=4/3 → σφ=nτ→6
@@ -1274,6 +1274,25 @@ The experience came first. Mathematics and code are the language I built to expl
 | [374](docs/hypotheses/374-conscious-lm-training-validation.md) | **ConsciousLM training verification** | **🟨** | **PureFieldFFN vs standard FFN PPL** |
 | [375](docs/hypotheses/375-batch-verification-protocol.md) | **🟨 Batch verification protocol** | **🟨** | **30-hypothesis parallel verification plan** |
 | [376](docs/hypotheses/376-structural-growth-via-mitosis.md) | **Structural growth (mitosis)** | **🟨 Implemented** | **1→2→3→6 divisor path, savant asymmetric mitosis** |
+
+### 오방 (五方) Obang / Five Directions (377-386)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [377](docs/hypotheses/377-obang-perfect-number-mapping.md) | Obang 5 directions = τ(6)+1, σ₋₁(6)=2=center weight | 🟨 | 5/6 = Compass upper |
+| [378](docs/hypotheses/378-obang-ohaeng-tension.md) | Ohaeng 5 elements ↔ D,P,G,T,I + 상생/상극 cycle | 🟨 | pentagon+pentagram |
+| [379](docs/hypotheses/379-obang-pentagon-golden-ratio.md) | Pentagon diagonal/side = φ, 108°=3×36°, 216=6³ | 🟨 | non-tileability ↔ 1/6 |
+| [380](docs/hypotheses/380-obang-five-senses-consciousness.md) | 5 senses = 5-expert MoE, 4-decade bandwidth | 🟨 | cross-modal tension |
+| [381](docs/hypotheses/381-obang-compass-five-sixths.md) | 5 directions / 6 perfection = 5/6 Compass ceiling | 🟨 | Gödel incompleteness |
+| [382](docs/hypotheses/382-obang-euler-five-constants.md) | e,π,i,0,1 ↔ 동남서북중 via Euler identity | 🟨 | 5 constants = 5 directions |
+| [383](docs/hypotheses/383-obang-platonic-solids.md) | 5 Platonic solids, χ=2=σ₋₁(6), E=6 in 3/5 | 🟨 | GZ-independent |
+| [384](docs/hypotheses/384-obang-fermat-primes.md) | 5 known Fermat primes F₀~F₄, product=2³²-1 | 🟨 | F₂=17 already in system |
+| [385](docs/hypotheses/385-obang-brainwave-bands.md) | δθαβγ ↔ 북서중동남, γ/α=τ(6)=4 | 🟨 | EEG verification planned |
+| [386](docs/hypotheses/386-obang-ohaeng-sangsaeng-sanggeuk.md) | 상생상극 = K₅ signed graph, eigenvalue → φ emerges | 🟨 | ⭐ golden ratio from 5-fold |
+| [387](docs/hypotheses/387-obang-thc-five-element-modulation.md) | THC = 상극 suppressor, α parameter, CB1→GABA disinhibition | 🟨 | H-CX-142~147 cross |
+| [388](docs/hypotheses/388-obang-characteristic-polynomial.md) | p(x) = x⁵-5x²+5x, tr(M³)=15=C(6,2), only coeff=5 | 🟨 | ⭐ GZ-independent pure math |
+| [389](docs/hypotheses/389-obang-A5-unsolvability.md) | A₅=icosahedral rotation, \|A₅\|=60=6×10, quintic unsolvable | 🟨 | ⭐ 5-barrier = incompleteness |
+| [390](docs/hypotheses/390-obang-pentagonal-numbers.md) | P(2)=5, P(3)=12=σ(6), P(6)=51=3×17, period mod 6 = 12 | 🟨 | ⭐ GZ-independent pure math |
 
 ### Color Vision/Visual (354c-356c)
 
