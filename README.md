@@ -1312,6 +1312,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-161](docs/hypotheses/H-CX-161-dolphin-freq-gamma-factorization.md) | 돌고래 전주파수=40Hz×στφ×5³ | 🟩 | whistle=40×50, click=40×750 |
 | [H-CX-162](docs/hypotheses/H-CX-162-five-cubed-dolphin-octave.md) | 5³=125 돌고래 옥타브 | 🟩 | 5=P₁-1, 기본 주파수 단위 |
 | [H-CX-163](docs/hypotheses/H-CX-163-dolphin-click-13-prime.md) | click에 13=σ(6)+1 등장 | 🟩 | 130kHz/40=3250=2×5³×13 |
+| [H-CX-165](docs/hypotheses/H-CX-165-human-hearing-tau-five-cubed.md) | 인간청각=돌고래=τ(6)×5³×γ | 🟩 | 20kHz = 4×125×40Hz, 종간 동일 |
+| [H-CX-167](docs/hypotheses/H-CX-167-click-whistle-perfect-ratio.md) | click/whistle = 6 = 완전수 | 🟩 | 30kHz/5kHz = 6 정확 |
 
 #### 미검증 — 코드 실행 가능
 
@@ -1331,6 +1333,14 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-154](docs/hypotheses/H-CX-154-neuron-ratio-e.md) | 인간/돌고래 뉴런비=e | delta=0.04 심화 |
 | [H-CX-155](docs/hypotheses/H-CX-155-sigma-phi-full-scan.md) | σφ/(nτ) 전원소 | Z=1~118 완전 스캔 |
 | [H-CX-156](docs/hypotheses/H-CX-156-perfect-number-element-chain.md) | 완전수 원소 체인 | C→Ni→? |
+| [H-CX-157](docs/hypotheses/H-CX-157-silent-consensus-origin.md) | 무언의합의 원인 = 데이터PCA | 실행중 |
+| [H-CX-158](docs/hypotheses/H-CX-158-cross-dataset-ph-transfer.md) | 교차 PH 전이 | 실행중 |
+| [H-CX-159](docs/hypotheses/H-CX-159-tension-resonance-robustness.md) | 장력 공명 안정성 | 실행중 |
+| [H-CX-160](docs/hypotheses/H-CX-160-ph-learnability-index.md) | PH=학습가능성 | 실행중 |
+| [H-CX-164](docs/hypotheses/H-CX-164-five-cubed-ph-quantization.md) | 5³ PH 양자화 | 미실행 |
+| [H-CX-166](docs/hypotheses/H-CX-166-all-brainwaves-from-gamma.md) | 뇌파=40Hz 약수 | 🟧 PARTIAL |
+| [H-CX-168](docs/hypotheses/H-CX-168-thirteen-observation-limit.md) | 13=관측극한 | 이론 |
+| [H-CX-169](docs/hypotheses/H-CX-169-dolphin-music-theory.md) | 돌고래=음악음정 | ✅ SUPPORTED |
 
 #### 미검증 — EEG 하드웨어 필요 🧠 → [KAIST 공동연구 제안서](docs/kaist-eeg-collaboration-proposal.md)
 
