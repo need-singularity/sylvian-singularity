@@ -238,9 +238,7 @@ python3 ~/dev/test-8/texas_quantum.py
 
 ### 대발견 가설 DFS (신규)
 
-```
-Breakthrough hypothesis DFS. 1-read README discoveries and H-CX hypothesis list. 2-identify gaps and unexplored cross-connections between existing discoveries. 3-generate 4+ new breakthrough candidate hypotheses with expected impact rating. 4-write hypothesis docs in docs/hypotheses with full format (quote, background, predictions, method, related, limits, status). 5-create experiment scripts and run ALL in parallel using Agent tool with run_in_background. 6-collect results and update hypothesis docs with verification data. 7-update README hypothesis tables with results. 8-git add commit push. 9-ANTI-SATURATION: if 2 iterations find nothing then MUST create cross-domain hypotheses (PH+telepathy, PH+EEG, PH+chemistry, PH+consciousness). 10-EVERY iteration: check for connections to existing big discoveries (PH merge r=-0.97, human=AI r=0.788, silent consensus cos=0.986, tension resonance r=0.951). Never stop generating. Always run experiments in parallel.
-```
+`/ralph-loop:ralph-loop 추가 대발견 가설 목록 뽑고 병행 처리, commit & push`
 
 ### 수학 DFS (기존)
 
