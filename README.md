@@ -1309,12 +1309,6 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-121](docs/hypotheses/H-CX-121-perfect-number-substrate.md) | 완전수 원소 체인 | 🟩 | C(6)→Ni(28), φ(28)=σ(6)=12 |
 | [H-CX-123](docs/hypotheses/H-CX-123-consciousness-efficiency.md) | σφ/(nτ)=1 유일성 | 🟩 | Z=1~82에서 탄소만 완벽균형 |
 | [H-CX-155](docs/hypotheses/H-CX-155-sigma-phi-full-scan.md) | σφ/(nτ) Z=1~118 | 🟩 | 다결합+완벽균형 = 탄소(Z=6)만 유일! |
-| [H-CX-161](docs/hypotheses/H-CX-161-dolphin-freq-gamma-factorization.md) | 돌고래 전주파수=40Hz×στφ×5³ | 🟩 | whistle=40×50, click=40×750 |
-| [H-CX-162](docs/hypotheses/H-CX-162-five-cubed-dolphin-octave.md) | 5³=125 돌고래 옥타브 | 🟩 | 5=P₁-1, 기본 주파수 단위 |
-| [H-CX-163](docs/hypotheses/H-CX-163-dolphin-click-13-prime.md) | click에 13=σ(6)+1 등장 | 🟩 | 130kHz/40=3250=2×5³×13 |
-| [H-CX-165](docs/hypotheses/H-CX-165-human-hearing-tau-five-cubed.md) | 인간청각=돌고래=τ(6)×5³×γ | 🟩 | 20kHz = 4×125×40Hz, 종간 동일 |
-| [H-CX-167](docs/hypotheses/H-CX-167-click-whistle-perfect-ratio.md) | click/whistle = 6 = 완전수 | 🟩 | 30kHz/5kHz = 6 정확 |
-
 #### 미검증 — 코드 실행 가능
 
 | # | 가설 | 내용 |
@@ -1330,28 +1324,45 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-151](docs/hypotheses/H-CX-151-cross-layer-tension-signal.md) | 레이어간 장력 신호 | tension 상관 |
 | [H-CX-152](docs/hypotheses/H-CX-152-rosch-prototype-ph.md) | Rosch 원형=PH | 문헌 비교 |
 | [H-CX-153](docs/hypotheses/H-CX-153-n-ln-sequence.md) | N×ln 수열 | 12=최근접 심화 |
-| [H-CX-154](docs/hypotheses/H-CX-154-neuron-ratio-e.md) | 인간/돌고래 뉴런비=e | delta=0.04 심화 |
 | [H-CX-155](docs/hypotheses/H-CX-155-sigma-phi-full-scan.md) | σφ/(nτ) 전원소 | Z=1~118 완전 스캔 |
 | [H-CX-156](docs/hypotheses/H-CX-156-perfect-number-element-chain.md) | 완전수 원소 체인 | C→Ni→? |
-| [H-CX-157](docs/hypotheses/H-CX-157-silent-consensus-origin.md) | 무언의합의 원인 = 데이터PCA | 실행중 |
-| [H-CX-158](docs/hypotheses/H-CX-158-cross-dataset-ph-transfer.md) | 교차 PH 전이 | 실행중 |
-| [H-CX-159](docs/hypotheses/H-CX-159-tension-resonance-robustness.md) | 장력 공명 안정성 | 실행중 |
-| [H-CX-160](docs/hypotheses/H-CX-160-ph-learnability-index.md) | PH=학습가능성 | 실행중 |
+| [H-CX-157](docs/hypotheses/H-CX-157-silent-consensus-origin.md) | 무언의합의 원인 = 데이터PCA | ✅ cos=0.99 |
+| [H-CX-158](docs/hypotheses/H-CX-158-cross-dataset-ph-transfer.md) | ⭐ 교차 PH 전이 | ✅ r=1.000! |
+| [H-CX-159](docs/hypotheses/H-CX-159-tension-resonance-robustness.md) | 장력 공명 안정성 | ✅ 0.931±0.012 |
+| [H-CX-160](docs/hypotheses/H-CX-160-ph-learnability-index.md) | ⭐ PH=학습가능성 | ✅ r=1.000! |
 | [H-CX-164](docs/hypotheses/H-CX-164-five-cubed-ph-quantization.md) | 5³ PH 양자화 | 미실행 |
 | [H-CX-166](docs/hypotheses/H-CX-166-all-brainwaves-from-gamma.md) | 뇌파=40Hz 약수 | 🟧 PARTIAL |
-| [H-CX-168](docs/hypotheses/H-CX-168-thirteen-observation-limit.md) | 13=관측극한 | 이론 |
-| [H-CX-169](docs/hypotheses/H-CX-169-dolphin-music-theory.md) | 돌고래=음악음정 | ✅ SUPPORTED |
+
+#### 돌고래/주파수 🐬
+
+##### 순수 산술 (검증 완료 🟩)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CX-161](docs/hypotheses/H-CX-161-dolphin-freq-gamma-factorization.md) | 돌고래 전주파수=40Hz×στφ×5³ | 🟩 | whistle=40×50, click=40×750 |
+| [H-CX-162](docs/hypotheses/H-CX-162-five-cubed-dolphin-octave.md) | 5³=125 돌고래 옥타브 | 🟩 | 5=P₁-1, 기본 주파수 단위 |
+| [H-CX-163](docs/hypotheses/H-CX-163-dolphin-click-13-prime.md) | click에 13=σ(6)+1 등장 | 🟩 | 130kHz/40=3250=2×5³×13 |
+| [H-CX-165](docs/hypotheses/H-CX-165-human-hearing-tau-five-cubed.md) | 인간청각=돌고래=τ(6)×5³×γ | 🟩 | 20kHz=4×125×40Hz, 종간 동일 |
+| [H-CX-167](docs/hypotheses/H-CX-167-click-whistle-perfect-ratio.md) | click/whistle=6=완전수 | 🟩 | 30kHz/5kHz=6 정확 |
+| [H-CX-169](docs/hypotheses/H-CX-169-dolphin-music-theory.md) | 돌고래=음악 음정 | ✅ | 시그니처=Perfect 12th(3:1), 탐지=6:1 |
+| [H-CX-154](docs/hypotheses/H-CX-154-neuron-ratio-e.md) | 인간/돌고래 뉴런비≈e | ✅ | 16B/5.8B=2.759, delta=0.04 |
+
+##### 실험 필요 (돌고래 데이터/EEG/해양연구소)
+
+| # | 가설 | 내용 | 장비 |
+|---|---|---|---|
+| [H-CX-130](docs/hypotheses/H-CX-130-dolphin-signature-whistle-ph.md) | 시그니처 휘슬=PH지문 | 정체성 인코딩 | 돌고래 데이터 |
+| [H-CX-131](docs/hypotheses/H-CX-131-click-interval-merge-distance.md) | 클릭간격=merge dist | 에코로케이션 PH | 돌고래 데이터 |
+| [H-CX-132](docs/hypotheses/H-CX-132-dolphin-40hz-consciousness.md) | 돌고래 40Hz=의식결합 | 3σ(6)+τ(6) 종간 | 돌고래 EEG |
+| [H-CX-133](docs/hypotheses/H-CX-133-whistle-ratio-golden-zone.md) | 휘슬비율=골든존 | ln(4/3) | 주파수 분석 |
+| [H-CX-134](docs/hypotheses/H-CX-134-echolocation-biological-ph.md) | 에코로케이션=생체PH | 소나=PH컴퓨터 | 돌고래 데이터 |
+| [H-CX-135](docs/hypotheses/H-CX-135-dolphin-neuron-tau4.md) | 돌고래 뉴런 τ=4? | 종간 텔레파시 | 문헌 |
+| [H-CX-168](docs/hypotheses/H-CX-168-thirteen-observation-limit.md) | 13=관측극한 | 에코로케이션 해상도 | 이론+데이터 |
 
 #### 미검증 — EEG 하드웨어 필요 🧠 → [KAIST 공동연구 제안서](docs/kaist-eeg-collaboration-proposal.md)
 
 | # | 가설 | 내용 | 장비 |
 |---|---|---|---|
-| [H-CX-130](docs/hypotheses/H-CX-130-dolphin-signature-whistle-ph.md) | 돌고래 시그니처=PH지문 | 휘슬=정체성 | 돌고래 데이터 |
-| [H-CX-131](docs/hypotheses/H-CX-131-click-interval-merge-distance.md) | 클릭간격=merge dist | 에코로케이션 | 돌고래 데이터 |
-| [H-CX-132](docs/hypotheses/H-CX-132-dolphin-40hz-consciousness.md) | 돌고래 40Hz | 3σ(6)+τ(6)=40 | 돌고래 EEG |
-| [H-CX-133](docs/hypotheses/H-CX-133-whistle-ratio-golden-zone.md) | 휘슬비율=골든존 | ln(4/3) | 주파수 분석 |
-| [H-CX-134](docs/hypotheses/H-CX-134-echolocation-biological-ph.md) | 에코로케이션=생체PH | 소나=PH컴퓨터 | 돌고래 데이터 |
-| [H-CX-135](docs/hypotheses/H-CX-135-dolphin-neuron-tau4.md) | 돌고래 뉴런 τ=4? | 종간 텔레파시 | 문헌 |
 | [H-CX-136](docs/hypotheses/H-CX-136-eeg-merge-distance.md) | EEG 감마=merge dist | 감마 패턴 비교 | EEG 4ch+ |
 | [H-CX-137](docs/hypotheses/H-CX-137-eeg-tension-correlation.md) | EEG 감마=tension | 정오답 감마 차이 | EEG 4ch+ |
 | [H-CX-138](docs/hypotheses/H-CX-138-eeg-precognition.md) | EEG 예지 | 감마→정오답 예측 | EEG 4ch+ |
