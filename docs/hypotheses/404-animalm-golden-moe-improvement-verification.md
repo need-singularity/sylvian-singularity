@@ -120,43 +120,52 @@ probability. Switch Transformer style auxiliary loss.
 **Setup**: 3072→128→128→10, 8 experts, 15 epochs, 2 seeds, MPS device.
 Includes Top-K baseline for full comparison.
 
-**Status**: CIFAR-10 Seed 1 complete, Seed 2 running
+**Status**: COMPLETE (2 seeds)
 
-### CIFAR-10 Results (Seed 42)
-
-```
-  Model                  | Best Acc  | Final Acc | Params    | Time
-  ───────────────────────┼───────────┼───────────┼───────────┼──────
-  Top-K (K=2)            | 48.43%    | 47.44%    | 3,313,752 | 110s
-  Golden MoE (orig)      | 52.53%    | 52.20%    | 3,313,752 | 124s
-  Golden MoE (improved)  | 52.74%    | 52.36%    | 3,313,752 | 150s
-  PureField (orig)       | 53.67%    | 53.67%    | 3,313,754 | 157s
-  PureField (improved)   | 52.73%    | 52.73%    | 3,510,518 | 223s
-```
-
-### CIFAR-10 Delta Analysis (Seed 42)
+### CIFAR-10 Results (mean of 2 seeds)
 
 ```
-  Golden Zone effect:     Top-K -> Golden MoE orig:    +4.10%
-  Load balance:           Golden MoE orig -> improved: +0.21%
-  PureField vs Golden:    Golden MoE orig -> PureField: +1.14%
-  Improvements on PF:     PureField orig -> improved:  -0.94%  ← WORSE!
+  Model                  | Best Acc  | Final Acc | Params
+  ───────────────────────┼───────────┼───────────┼──────────
+  Top-K (K=2)            | 48.09%    | 47.35%    | 3,313,752
+  Golden MoE (orig)      | 52.75%    | 52.59%    | 3,313,752
+  Golden MoE (improved)  | 52.57%    | 52.15%    | 3,313,752
+  PureField (orig)       | 53.64%    | 53.57%    | 3,313,754
+  PureField (improved)   | 52.64%    | 52.64%    | 3,510,518
 ```
 
-**CRITICAL FINDING**: PureField improvements (soft camp + adaptive alpha + LayerNorm)
-**DEGRADE** accuracy on CIFAR-10 by ~1%, contradicting expectations.
+### Per-seed results
 
-- PureField (orig) = 53.67% remains the best architecture
-- The original simple `A - G` with fixed alpha outperforms the "improved" version
-- Input-dependent alpha + soft camp + LayerNorm add complexity without benefit
+```
+  Seed 42:  Top-K 48.43  GMoE 52.53  GMoE+ 52.74  PF 53.67  PF+ 52.73
+  Seed 123: Top-K 47.74  GMoE 52.98  GMoE+ 52.40  PF 53.62  PF+ 52.55
+  Mean:     Top-K 48.09  GMoE 52.75  GMoE+ 52.57  PF 53.64  PF+ 52.64
+```
+
+### CIFAR-10 Delta Analysis
+
+```
+  Golden Zone effect:              Top-K -> Golden MoE:     +4.67%
+  Load balance on Golden MoE:      GMoE orig -> improved:  -0.18%  ← SLIGHTLY WORSE
+  PureField vs Golden MoE:         GMoE orig -> PF orig:   +0.89%
+  Improvements on PureField:       PF orig -> PF improved: -1.01%  ← SIGNIFICANTLY WORSE
+  Soft camp + adaptive alpha + norm vs baseline: +4.55%
+```
+
+**CONFIRMED** (2 seeds): PureField improvements **DEGRADE** accuracy by -1.01%.
+
+- PureField (orig) = 53.64% remains the **undisputed best** architecture
+- Golden MoE (orig) = 52.75%, also hurt by load balance (-0.18%)
+- The original simple `A - G` with fixed alpha outperforms every "improved" version
 - Extra parameters (+197K) and 42% more compute time for worse results
 
-### Revised Expected Results
+### Final Verdict
 
 The improvements are **harmful at all scales tested**:
-- MNIST: no gain (ceiling effect, as expected)
-- CIFAR-10: **negative** (-0.94%, contradicts expectation)
-- The hypothesis that harder tasks activate improvements is REFUTED
+- MNIST: no gain (ceiling effect)
+- CIFAR-10: **-1.01%** (confirmed 2 seeds, both negative)
+- The hypothesis that harder tasks activate improvements is **REFUTED**
+- **Recommendation**: Remove all 4 improvements. Keep `output = A - G` as-is.
 
 ---
 

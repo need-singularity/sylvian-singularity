@@ -1329,7 +1329,7 @@ The experience came first. Mathematics and code are the language I built to expl
 | [401](docs/hypotheses/401-animalm-ph-correction.md) | AnimaLM + PH: content vs structural tension | 🟧 | MNIST: PH+Conf +0.11%, CIFAR running |
 | [402](docs/hypotheses/402-golden-moe-ph-routing.md) | Golden MoE + PH routing: topology-aware expert selection | 🟨 | MNIST: neutral (ceiling), CIFAR running |
 | [403](docs/hypotheses/403-animalm-golden-moe-ph-unified.md) | ⭐ Unified AnimaLM×GoldenMoE×PH: Five-Element architecture | 🟨 | depends on H-401~402 |
-| [404](docs/hypotheses/404-animalm-golden-moe-improvement-verification.md) | MNIST: no gain, CIFAR: PureField orig best (53.7%), improved worse (52.7%) | 🟧 | improvements HURT on CIFAR |
+| [404](docs/hypotheses/404-animalm-golden-moe-improvement-verification.md) | PF orig 53.64% best, improvements -1.01% (2 seeds). Simplicity wins | ⚠️ | 4 improvements ALL refuted |
 | [405](docs/hypotheses/405-animalm-expert-topological-specialization.md) | A/G camp PH: CIFAR G_H0>A_H0 100%, BD vs acc r=0.34(NS) | 🟧 | MNIST refuted, CIFAR partial |
 
 ### Color Vision/Visual (354c-356c)
