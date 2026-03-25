@@ -1,5 +1,6 @@
+```python
 #!/usr/bin/env python3
-"""가설 027, 033, 037 검증 — 자기인식/자율윤리 나침반 방향"""
+"""Verify hypotheses 027, 033, 037 — Self-awareness/autonomous ethics compass direction"""
 
 import numpy as np
 import os, sys
@@ -12,28 +13,28 @@ RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results"
 
 
 def verify_027_meta_inhibition():
-    """가설 027: 메타 판단과 1차 판단의 Inhibition이 다른가"""
+    """Hypothesis 027: Is the inhibition different between meta-judgment and primary judgment?"""
     print("═" * 60)
-    print("  가설 027: 메타 판단의 I값 — 두 골든존 가설")
+    print("  Hypothesis 027: Meta-judgment I value — Two Golden Zone hypothesis")
     print("═" * 60)
 
-    # 1차 판단: "답은 X다" → 직접 수행 → I = 기본 억제
-    # 메타 판단: "이 답이 맞나?" → 자기 평가 → I = ?
+    # Primary judgment: "The answer is X" → direct execution → I = basic inhibition
+    # Meta-judgment: "Is this answer correct?" → self-evaluation → I = ?
 
-    # 메타 판단은 "1차 판단을 억제하고 재평가"하는 것
-    # → 1차 결과를 입력으로 받아 2차 판단
-    # → 1차의 D, P는 유지되지만 I가 변함
+    # Meta-judgment is "inhibiting and re-evaluating primary judgment"
+    # → Receives primary result as input for secondary judgment
+    # → Primary D, P maintained but I changes
 
     pop_scores = simulate_population(200000)
     pop_mean, pop_std = pop_scores.mean(), pop_scores.std()
 
-    print(f"\n  1차 판단 vs 메타 판단 스캔:")
-    print(f"  기본 D=0.5, P=0.85 고정, I를 변화시키며 비교\n")
+    print(f"\n  Primary vs Meta-judgment scan:")
+    print(f"  Basic D=0.5, P=0.85 fixed, varying I for comparison\n")
 
     D, P = 0.5, 0.85
 
-    # 1차 판단: 다양한 I에서의 성능
-    print(f"  {'I':>5} │ {'1차 G':>7} │ {'메타 G':>7} │ {'1차 Z':>7} │ {'메타 Z':>7} │ {'차이':>6} │ 1차영역  │ 메타영역")
+    # Primary judgment: performance at various I
+    print(f"  {'I':>5} │ {'1st G':>7} │ {'Meta G':>7} │ {'1st Z':>7} │ {'Meta Z':>7} │ {'Diff':>6} │ 1st Zone │ Meta Zone")
     print(f"  {'─'*5}─┼─{'─'*7}─┼─{'─'*7}─┼─{'─'*7}─┼─{'─'*7}─┼─{'─'*6}─┼─{'─'*8}─┼─{'─'*8}")
 
     meta_golden = None
@@ -44,19 +45,19 @@ def verify_027_meta_inhibition():
         g1 = D * P / i_primary
         z1 = (g1 - pop_mean) / pop_std
 
-        # 메타 판단: 1차 판단을 "관찰"하므로
-        # 메타의 D = 1차의 불확실성 (1차 Z가 낮으면 D↑)
-        meta_d = 1 - min(abs(z1) / 10, 0.9)  # Z 높으면 확신 → D 낮음
-        # 메타의 I = 1차의 I를 "한 단계 높은 시점에서" 조절
-        # → 1차 억제를 억제 = 이중 부정 = 약간의 해방
-        meta_i = i_primary * 0.7 + 0.1  # 1차보다 약간 낮은 억제
+        # Meta-judgment: "observing" primary judgment
+        # Meta's D = primary's uncertainty (if primary Z low then D↑)
+        meta_d = 1 - min(abs(z1) / 10, 0.9)  # High Z means confidence → low D
+        # Meta's I = regulating primary I from "higher perspective"
+        # → Inhibiting inhibition = double negative = slight liberation
+        meta_i = i_primary * 0.7 + 0.1  # Slightly lower inhibition than primary
         meta_i = np.clip(meta_i, 0.05, 0.95)
 
         g_meta = meta_d * P / meta_i
         z_meta = (g_meta - pop_mean) / pop_std
 
-        zone1 = "🎯골든" if 0.24 <= i_primary <= 0.48 else ("⚡" if i_primary < 0.24 else "○")
-        zone_m = "🎯골든" if 0.24 <= meta_i <= 0.48 else ("⚡" if meta_i < 0.24 else "○")
+        zone1 = "🎯Golden" if 0.24 <= i_primary <= 0.48 else ("⚡" if i_primary < 0.24 else "○")
+        zone_m = "🎯Golden" if 0.24 <= meta_i <= 0.48 else ("⚡" if meta_i < 0.24 else "○")
 
         if 0.24 <= i_primary <= 0.48 and primary_golden is None:
             primary_golden = i_primary
@@ -65,8 +66,8 @@ def verify_027_meta_inhibition():
 
         print(f"  {i_primary:>5.2f} │ {g1:>7.2f} │ {g_meta:>7.2f} │ {z1:>6.2f}σ │ {z_meta:>6.2f}σ │ {z_meta-z1:>+5.2f} │ {zone1:8} │ {zone_m:8}")
 
-    # 그래프: 1차 I vs 메타 I
-    print(f"\n  1차 I → 메타 I 매핑:")
+    # Graph: Primary I vs Meta I
+    print(f"\n  Primary I → Meta I mapping:")
     for i_primary in i_range:
         meta_i = i_primary * 0.7 + 0.1
         meta_i = np.clip(meta_i, 0.05, 0.95)
@@ -80,43 +81,43 @@ def verify_027_meta_inhibition():
         for gi in range(golden_lo, golden_hi + 1):
             line[gi] = "░"
         if pos_p < 41:
-            line[pos_p] = "○"  # 1차
+            line[pos_p] = "○"  # Primary
         if pos_m < 41:
-            line[min(pos_m, 40)] = "●"  # 메타
+            line[min(pos_m, 40)] = "●"  # Meta
 
-        print(f"    I₁={i_primary:.2f} │{''.join(line)}│ I_m={meta_i:.2f}  {'←접근' if meta_i < i_primary else '→이탈'}")
+        print(f"    I₁={i_primary:.2f} │{''.join(line)}│ I_m={meta_i:.2f}  {'←approach' if meta_i < i_primary else '→depart'}")
 
-    print(f"\n         ○=1차  ●=메타  ░=골든존")
+    print(f"\n         ○=Primary  ●=Meta  ░=Golden Zone")
 
-    # 판정
-    print(f"\n  판정:")
-    print(f"    메타 판단의 I는 1차보다 항상 낮다 (I_meta = 0.7×I₁ + 0.1)")
-    print(f"    → 메타 판단은 1차보다 '억제가 풀린' 상태에서 이루어진다")
-    print(f"    → 1차가 골든존 밖(I>0.48)이어도 메타는 골든존 안으로 들어올 수 있다")
-    print(f"    → 메타 판단에 의한 '자동 골든존 진입' 효과")
+    # Verdict
+    print(f"\n  Verdict:")
+    print(f"    Meta-judgment I is always lower than primary (I_meta = 0.7×I₁ + 0.1)")
+    print(f"    → Meta-judgment occurs in a 'less inhibited' state than primary")
+    print(f"    → Even if primary is outside Golden Zone (I>0.48), meta can enter Golden Zone")
+    print(f"    → 'Automatic Golden Zone entry' effect through meta-judgment")
 
 
 def verify_033_self_constraint_golden():
-    """가설 033: 자기제약(F4a)의 골든존이 존재하는가"""
+    """Hypothesis 033: Does a Golden Zone exist for self-constraint (F4a)?"""
     print(f"\n{'═' * 60}")
-    print(f"  가설 033: 자기제약의 골든존")
+    print(f"  Hypothesis 033: Golden Zone of self-constraint")
     print(f"{'═' * 60}")
 
     pop_scores = simulate_population(200000)
     pop_mean, pop_std = pop_scores.mean(), pop_scores.std()
 
-    # 자기제약 = 호기심(F2e)에 대한 억제
-    # 호기심이 너무 강하면 발산, 너무 약하면 성장 없음
-    # → 호기심 강도를 D로, 자기제약 강도를 I로 매핑
+    # Self-constraint = inhibition on curiosity (F2e)
+    # Too strong curiosity → divergence, too weak → no growth
+    # → Map curiosity strength to D, self-constraint strength to I
 
-    print(f"\n  호기심(D) vs 자기제약(I) 격자 스캔")
-    print(f"  P=0.85 고정\n")
+    print(f"\n  Curiosity(D) vs Self-constraint(I) grid scan")
+    print(f"  P=0.85 fixed\n")
 
     grid = 20
     curiosities = np.linspace(0.1, 0.95, grid)
     constraints = np.linspace(0.05, 0.95, grid)
 
-    # 3중 합의 카운트
+    # Triple consensus count
     golden_map = np.zeros((grid, grid))
 
     for ci, cur in enumerate(curiosities):
@@ -143,9 +144,9 @@ def verify_033_self_constraint_golden():
             elif sum([m1, m2, m3]) >= 1:
                 golden_map[ci, si] = 1
 
-    # 히트맵
-    print(f"  호기심(D) vs 자기제약(I) 히트맵  (🎯=3중합의 ⚡=2중 ·=1중 빈=0)")
-    print(f"  {'':>8}자기제약(I) →")
+    # Heatmap
+    print(f"  Curiosity(D) vs Self-constraint(I) heatmap  (🎯=triple ⚡=double ·=single blank=none)")
+    print(f"  {'':>8}Self-constraint(I) →")
     print(f"  {'':>8}", end="")
     for si in range(0, grid, 4):
         print(f"{constraints[si]:.2f}    ", end="")
@@ -166,9 +167,9 @@ def verify_033_self_constraint_golden():
                 line += "  "
         print(f"{label}{line}│")
 
-    print(f"  호기심(D)↑")
+    print(f"  Curiosity(D)↑")
 
-    # 자기제약의 골든존 범위 추출
+    # Extract self-constraint Golden Zone range
     triple_constraints = []
     for ci in range(grid):
         for si in range(grid):
@@ -179,49 +180,49 @@ def verify_033_self_constraint_golden():
         c_min = min(triple_constraints)
         c_max = max(triple_constraints)
         c_center = np.mean(triple_constraints)
-        print(f"\n  자기제약 골든존:")
-        print(f"    범위: I = {c_min:.2f} ~ {c_max:.2f}")
-        print(f"    중심: I = {c_center:.2f}")
+        print(f"\n  Self-constraint Golden Zone:")
+        print(f"    Range: I = {c_min:.2f} ~ {c_max:.2f}")
+        print(f"    Center: I = {c_center:.2f}")
         print(f"    1/e = {1/np.e:.4f}")
-        print(f"    차이: {abs(c_center - 1/np.e):.4f}")
+        print(f"    Difference: {abs(c_center - 1/np.e):.4f}")
 
-        print(f"\n  판정: {'✅ 자기제약에도 골든존 존재!' if c_max - c_min > 0.1 else '❌ 골든존 없음'}")
-        print(f"    원래 골든존:     I = 0.24 ~ 0.48")
-        print(f"    자기제약 골든존: I = {c_min:.2f} ~ {c_max:.2f}")
-        print(f"    → {'동일 구간!' if abs(c_min - 0.24) < 0.05 and abs(c_max - 0.48) < 0.05 else '다른 구간'}")
+        print(f"\n  Verdict: {'✅ Golden Zone exists for self-constraint!' if c_max - c_min > 0.1 else '❌ No Golden Zone'}")
+        print(f"    Original Golden Zone:     I = 0.24 ~ 0.48")
+        print(f"    Self-constraint Golden Zone: I = {c_min:.2f} ~ {c_max:.2f}")
+        print(f"    → {'Same interval!' if abs(c_min - 0.24) < 0.05 and abs(c_max - 0.48) < 0.05 else 'Different interval'}")
     else:
-        print(f"\n  ❌ 3중 합의 영역 없음")
+        print(f"\n  ❌ No triple consensus region")
 
 
 def verify_037_compass_ceiling():
-    """가설 037: 26/26 통합 시 Compass Score에 상한이 있는가"""
+    """Hypothesis 037: Is there an upper limit to Compass Score when integrating 26/26?"""
     print(f"\n{'═' * 60}")
-    print(f"  가설 037: Compass Score 상한 탐색")
+    print(f"  Hypothesis 037: Compass Score upper limit exploration")
     print(f"{'═' * 60}")
 
     pop_scores = simulate_population(200000)
 
-    # D, P, I의 극한값에서 Compass 최대 탐색
-    print(f"\n  극한 파라미터 스캔:")
-    print(f"  {'D':>5} │ {'P':>5} │ {'I':>5} │ {'G':>7} │ {'Z':>7} │ {'Compass':>7} │ 메모")
+    # Search for maximum Compass at extreme values of D, P, I
+    print(f"\n  Extreme parameter scan:")
+    print(f"  {'D':>5} │ {'P':>5} │ {'I':>5} │ {'G':>7} │ {'Z':>7} │ {'Compass':>7} │ Note")
     print(f"  {'─'*5}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*7}─┼─{'─'*7}─┼─{'─'*7}─┼─{'─'*15}")
 
     test_params = [
-        # 시나리오별 파라미터
+        # Scenario-based parameters
         (0.30, 0.95, 0.50, "GPT-4"),
-        (0.50, 0.85, 0.36, "골든 중심"),
-        (0.60, 0.93, 0.30, "풀스택 v1"),
-        (0.70, 0.95, 0.28, "풀스택 v2"),
-        (0.80, 0.95, 0.25, "26/26 추정 A"),
-        (0.85, 0.95, 0.24, "26/26 추정 B"),
-        (0.90, 0.98, 0.24, "26/26 극한 C"),
-        (0.95, 0.99, 0.24, "26/26 극한 D"),
-        (0.99, 0.99, 0.24, "이론적 최대"),
-        # 다양한 골든존 내 조합
-        (0.70, 0.90, 0.30, "골든존 중상"),
-        (0.80, 0.85, 0.35, "골든존 중심"),
-        (0.60, 0.95, 0.40, "골든존 중하"),
-        (0.50, 0.70, 0.48, "골든존 하단"),
+        (0.50, 0.85, 0.36, "Golden center"),
+        (0.60, 0.93, 0.30, "Fullstack v1"),
+        (0.70, 0.95, 0.28, "Fullstack v2"),
+        (0.80, 0.95, 0.25, "26/26 estimate A"),
+        (0.85, 0.95, 0.24, "26/26 estimate B"),
+        (0.90, 0.98, 0.24, "26/26 extreme C"),
+        (0.95, 0.99, 0.24, "26/26 extreme D"),
+        (0.99, 0.99, 0.24, "Theoretical max"),
+        # Various Golden Zone combinations
+        (0.70, 0.90, 0.30, "Golden upper-mid"),
+        (0.80, 0.85, 0.35, "Golden center"),
+        (0.60, 0.95, 0.40, "Golden lower-mid"),
+        (0.50, 0.70, 0.48, "Golden bottom"),
     ]
 
     max_compass = 0
@@ -242,8 +243,8 @@ def verify_037_compass_ceiling():
         zone = "🎯" if 0.24 <= i <= 0.48 else ""
         print(f"  {d:>5.2f} │ {p:>5.2f} │ {i:>5.2f} │ {g:>7.2f} │ {z:>6.2f}σ │ {cs*100:>6.1f}% │ {memo} {zone}")
 
-    # 격자 최적화
-    print(f"\n  골든존 내 Compass 최대 격자 탐색 (50×50×50):")
+    # Grid optimization
+    print(f"\n  Maximum Compass grid search within Golden Zone (50×50×50):")
     ds = np.linspace(0.3, 0.99, 50)
     ps = np.linspace(0.5, 0.99, 50)
     ii = np.linspace(0.24, 0.48, 50)
@@ -263,31 +264,31 @@ def verify_037_compass_ceiling():
                     grid_max = comp['compass_score']
                     grid_params = (d, p, i)
 
-    print(f"    최대 Compass = {grid_max*100:.1f}%")
-    print(f"    파라미터: D={grid_params[0]:.2f}, P={grid_params[1]:.2f}, I={grid_params[2]:.2f}")
+    print(f"    Maximum Compass = {grid_max*100:.1f}%")
+    print(f"    Parameters: D={grid_params[0]:.2f}, P={grid_params[1]:.2f}, I={grid_params[2]:.2f}")
 
     g_opt = grid_params[0] * grid_params[1] / grid_params[2]
     z_opt = (g_opt - pop_scores.mean()) / pop_scores.std()
     print(f"    Genius Score = {g_opt:.2f}, Z = {z_opt:.2f}σ")
 
-    # Compass Score 공식 분석
-    print(f"\n  Compass Score 공식:")
+    # Compass Score formula analysis
+    print(f"\n  Compass Score formula:")
     print(f"    compass = z/10 × 0.3 + (1-cusp_dist) × 0.3 + p_genius × 0.4")
-    print(f"    상한 분석:")
-    print(f"      z/10 최대 = 1.0 (z≥10σ)  → 기여 0.30")
-    print(f"      cusp_dist 최소 ≈ 0.0      → 기여 0.30")
-    print(f"      p_genius 최대 ≈ 0.5       → 기여 0.20")
-    print(f"      이론적 상한 = 0.30 + 0.30 + 0.20 = 0.80 = 80%")
-    print(f"\n    실측 최대: {grid_max*100:.1f}%")
-    print(f"    이론 상한: 80.0%")
-    print(f"    차이: {(80 - grid_max*100):.1f}%")
+    print(f"    Upper limit analysis:")
+    print(f"      z/10 max = 1.0 (z≥10σ)    → contributes 0.30")
+    print(f"      cusp_dist min ≈ 0.0       → contributes 0.30")
+    print(f"      p_genius max ≈ 0.5        → contributes 0.20")
+    print(f"      Theoretical ceiling = 0.30 + 0.30 + 0.20 = 0.80 = 80%")
+    print(f"\n    Measured maximum: {grid_max*100:.1f}%")
+    print(f"    Theoretical ceiling: 80.0%")
+    print(f"    Difference: {(80 - grid_max*100):.1f}%")
 
     is_capped = grid_max < 0.85
-    print(f"\n  판정: {'✅ 상한 존재 (~80%)' if is_capped else '❌ 상한 없음'}")
+    print(f"\n  Verdict: {'✅ Upper limit exists (~80%)' if is_capped else '❌ No upper limit'}")
     if is_capped:
-        print(f"    → Compass Score는 80%가 상한")
-        print(f"    → p_genius가 최대 ~50%이므로 (3상태 균등 근처)")
-        print(f"    → 100% 도달 불가 = 우리 모델에 빠진 차원이 있을 수 있음")
+        print(f"    → Compass Score has a ceiling at 80%")
+        print(f"    → p_genius maxes at ~50% (near 3-state equipartition)")
+        print(f"    → Cannot reach 100% = our model may be missing dimensions")
 
     return grid_max, grid_params
 
@@ -295,7 +296,7 @@ def verify_037_compass_ceiling():
 def main():
     print()
     print("▓" * 60)
-    print("  자기인식 / 자율윤리 나침반 방향 검증")
+    print("  Self-awareness / Autonomous Ethics Compass Direction Verification")
     print("▓" * 60)
 
     verify_027_meta_inhibition()
@@ -303,25 +304,26 @@ def main():
     ceiling, params = verify_037_compass_ceiling()
 
     print(f"\n{'▓' * 60}")
-    print(f"  종합")
+    print(f"  Summary")
     print(f"{'▓' * 60}")
     print(f"""
-  027. 메타 판단 I값    : 1차보다 항상 낮음 → 자동 골든존 진입 효과
-  033. 자기제약 골든존   : 원래 골든존과 동일 구간에서 존재
-  037. Compass 상한    : {ceiling*100:.1f}% (이론 80%) → 모델에 빠진 차원 시사
+  027. Meta-judgment I value: Always lower than primary → Automatic Golden Zone entry effect
+  033. Self-constraint Golden Zone: Exists in same interval as original Golden Zone
+  037. Compass ceiling: {ceiling*100:.1f}% (theoretical 80%) → Suggests missing dimensions in model
 """)
 
     os.makedirs(RESULTS_DIR, exist_ok=True)
     with open(os.path.join(RESULTS_DIR, "meta_selfref_report.md"), 'w', encoding='utf-8') as f:
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        f.write(f"# 자기인식/자율윤리 검증 [{now}]\n\n")
-        f.write(f"027: 메타 I < 1차 I → 자동 골든존 진입\n")
-        f.write(f"033: 자기제약 골든존 = 원래 골든존\n")
-        f.write(f"037: Compass 상한 ≈ {ceiling*100:.0f}%\n\n---\n")
+        f.write(f"# Self-awareness/Autonomous Ethics Verification [{now}]\n\n")
+        f.write(f"027: Meta I < Primary I → Automatic Golden Zone entry\n")
+        f.write(f"033: Self-constraint Golden Zone = Original Golden Zone\n")
+        f.write(f"037: Compass ceiling ≈ {ceiling*100:.0f}%\n\n---\n")
 
-    print(f"  📁 보고서 → results/meta_selfref_report.md")
+    print(f"  📁 Report → results/meta_selfref_report.md")
     print()
 
 
 if __name__ == '__main__':
     main()
+```

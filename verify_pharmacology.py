@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-약리학 가설 195-200 검증 스크립트
-각 약물의 G=DxP/I 매핑 일관성, 골든존 적합성, 텍사스 명사수 검정
+Pharmacology Hypotheses 195-200 Verification Script
+Verifying G=DxP/I mapping consistency, Golden Zone fit, and Texas Sharpshooter test for each drug
 """
 import math
 import numpy as np
 from scipy import stats
 
 # ═══════════════════════════════════════════
-# 골든존 상수
+# Golden Zone Constants
 # ═══════════════════════════════════════════
-GZ_UPPER = 0.5                    # 리만 임계선
+GZ_UPPER = 0.5                    # Riemann critical line
 GZ_LOWER = 0.5 - math.log(4/3)   # ≈ 0.2123
 GZ_CENTER = 1/math.e              # ≈ 0.3679
 GZ_WIDTH = math.log(4/3)          # ≈ 0.2877
@@ -22,37 +22,37 @@ def G(d, p, i):
     return d * p / i
 
 def compass(d, p, i):
-    """Compass = 방향성, G 기반 z-score로 백분율 추정"""
+    """Compass = Directionality, G-based z-score to percentage estimation"""
     g = G(d, p, i)
-    # 단순 모델: Compass ∝ G, 0~100% 범위
+    # Simple model: Compass ∝ G, 0~100% range
     return min(max(g * 100, 0), 100)
 
 def in_golden_zone(i):
     return GZ_LOWER <= i <= GZ_UPPER
 
 print("=" * 70)
-print("  약리학 가설 195-200 구조 검증")
+print("  Pharmacology Hypotheses 195-200 Structure Verification")
 print("=" * 70)
-print(f"\n골든존: [{GZ_LOWER:.4f}, {GZ_UPPER:.4f}], 중심={GZ_CENTER:.4f}")
-print(f"골든존 폭: {GZ_WIDTH:.4f}")
+print(f"\nGolden Zone: [{GZ_LOWER:.4f}, {GZ_UPPER:.4f}], center={GZ_CENTER:.4f}")
+print(f"Golden Zone width: {GZ_WIDTH:.4f}")
 
 # ═══════════════════════════════════════════
-# 검증 1: I↑ → G↓ 역상관 (모든 가설 공통)
+# Verification 1: I↑ → G↓ Inverse Correlation (Common to all hypotheses)
 # ═══════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  검증 1: I↑ → G↓ 역상관 확인 (기본 모델 일관성)")
+print("  Verification 1: Confirming I↑ → G↓ Inverse Correlation (Basic Model Consistency)")
 print("=" * 70)
 
-D_base, P_base = 0.5, 0.6  # 고정 D, P
+D_base, P_base = 0.5, 0.6  # Fixed D, P
 I_values = np.linspace(0.05, 0.95, 20)
 G_values = [G(D_base, P_base, i) for i in I_values]
 
 corr, p_val = stats.pearsonr(I_values, G_values)
-print(f"\nD={D_base}, P={P_base} 고정, I=[0.05~0.95]")
+print(f"\nD={D_base}, P={P_base} fixed, I=[0.05~0.95]")
 print(f"Pearson r(I, G) = {corr:.4f}, p = {p_val:.2e}")
-print(f"역상관 확인: {'✅ YES' if corr < -0.9 else '❌ NO'}")
+print(f"Inverse correlation confirmed: {'✅ YES' if corr < -0.9 else '❌ NO'}")
 
-# I와 G의 관계 ASCII 그래프
+# ASCII graph of I vs G relationship
 print("\n  G (genius score)")
 for row in range(10, 0, -1):
     threshold = row * 0.6
@@ -65,89 +65,89 @@ for row in range(10, 0, -1):
     print(line)
 print(f"      └{'─' * 20}")
 print(f"       0.05          0.95")
-print(f"            I (억제지수)")
-print(f"\n→ G = D×P/I 이므로 I↑ → G↓ 는 정의에 의해 성립 (🟩 자명)")
+print(f"            I (inhibition index)")
+print(f"\n→ Since G = D×P/I, I↑ → G↓ holds by definition (🟩 trivial)")
 
 # ═══════════════════════════════════════════
-# 검증 2: 각 약물별 매핑 구체 검증
+# Verification 2: Drug-specific mapping verification
 # ═══════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  검증 2: 약물별 I 변화 → G 변화 수치 검증")
+print("  Verification 2: Numerical Verification of I Change → G Change for Each Drug")
 print("=" * 70)
 
-# 기저 상태
+# Baseline state
 I0 = 0.50
 D0, P0 = 0.5, 0.6
 G0 = G(D0, P0, I0)
 
 drugs = {
-    "195-카페인": {
-        "mechanism": "아데노신 차단 → I↓",
+    "195-Caffeine": {
+        "mechanism": "Adenosine blockade → I↓",
         "I_change": -0.13,  # I: 0.50 → 0.37
-        "P_change": 0.05,   # 도파민으로 P 미세 증가
+        "P_change": 0.05,   # Slight P increase via dopamine
         "direction": "I↓ → G↑",
         "expected_zone": True,
     },
-    "196-알코올(소량)": {
-        "mechanism": "GABA 촉진(탈억제) → I↓",
+    "196-Alcohol(low)": {
+        "mechanism": "GABA facilitation(disinhibition) → I↓",
         "I_change": -0.10,  # I: 0.50 → 0.40
         "P_change": 0.0,
         "direction": "I↓ → G↑",
         "expected_zone": True,
     },
-    "196-알코올(과량)": {
-        "mechanism": "GABA 과촉진 → I↓↓",
+    "196-Alcohol(high)": {
+        "mechanism": "GABA over-facilitation → I↓↓",
         "I_change": -0.35,  # I: 0.50 → 0.15
-        "P_change": -0.1,   # 가소성도 감소
+        "P_change": -0.1,   # Plasticity also decreases
         "direction": "I↓↓ → G↑ but Compass↓",
         "expected_zone": False,
     },
-    "197-전신마취": {
-        "mechanism": "GABA-A 극대화 → I↑↑",
+    "197-Anesthesia": {
+        "mechanism": "GABA-A maximized → I↑↑",
         "I_change": +0.30,  # I: 0.50 → 0.80
-        "P_change": -0.2,   # 가소성 급감
-        "direction": "I↑↑ → G↓↓ → 의식소실",
+        "P_change": -0.2,   # Plasticity plummets
+        "direction": "I↑↑ → G↓↓ → Loss of consciousness",
         "expected_zone": False,
     },
-    "198-사이키델릭(마이크로)": {
+    "198-Psychedelic(micro)": {
         "mechanism": "5-HT2A → DMN↓ → I↓",
         "I_change": -0.10,  # I: 0.50 → 0.40
-        "P_change": 0.1,    # 가소성 증가
+        "P_change": 0.1,    # Plasticity increase
         "direction": "I↓ → G↑",
         "expected_zone": True,
     },
-    "198-사이키델릭(대량)": {
+    "198-Psychedelic(macro)": {
         "mechanism": "5-HT2A → DMN↓↓ → I↓↓",
         "I_change": -0.35,  # I: 0.50 → 0.15
         "P_change": 0.15,
-        "direction": "I↓↓ → G↑↑ but 혼돈",
+        "direction": "I↓↓ → G↑↑ but chaos",
         "expected_zone": False,
     },
     "200-SSRI": {
-        "mechanism": "5-HT 재흡수 억제 → I↓(점진)",
-        "I_change": -0.15,  # I: 0.65→0.50 (우울 기저에서)
+        "mechanism": "5-HT reuptake inhibition → I↓(gradual)",
+        "I_change": -0.15,  # I: 0.65→0.50 (from depressive baseline)
         "P_change": 0.05,
-        "direction": "I↓ → G↑ (골든존 진입)",
+        "direction": "I↓ → G↑ (entering Golden Zone)",
         "expected_zone": True,
-        "I_base": 0.65,  # 우울 상태에서 시작
+        "I_base": 0.65,  # Starting from depressed state
     },
-    "200c-니코틴(단기)": {
-        "mechanism": "nAChR → 도파민 → I↓",
+    "200c-Nicotine(acute)": {
+        "mechanism": "nAChR → dopamine → I↓",
         "I_change": -0.10,  # I: 0.50 → 0.40
         "P_change": 0.05,
         "direction": "I↓ → G↑",
         "expected_zone": True,
     },
-    "200c-니코틴(장기)": {
-        "mechanism": "nAChR 하향조절 → 기저 I↑",
-        "I_change": +0.10,  # 기저 I: 0.50 → 0.60
+    "200c-Nicotine(chronic)": {
+        "mechanism": "nAChR downregulation → baseline I↑",
+        "I_change": +0.10,  # Baseline I: 0.50 → 0.60
         "P_change": -0.05,
-        "direction": "기저 I↑ → G↓ (내성)",
+        "direction": "Baseline I↑ → G↓ (tolerance)",
         "expected_zone": False,
     },
 }
 
-print(f"\n{'약물':<25} │{'I0':>5}│{'I_new':>6}│{'G0':>6}│{'G_new':>6}│{'ΔG%':>6}│{'골든존':>7}│{'일관성'}")
+print(f"\n{'Drug':<25} │{'I0':>5}│{'I_new':>6}│{'G0':>6}│{'G_new':>6}│{'ΔG%':>6}│{'Golden Zone':>7}│{'Consistency'}")
 print("─" * 90)
 
 results = {}
@@ -160,7 +160,7 @@ for name, d in drugs.items():
     dg_pct = (g_new - g_base) / g_base * 100
     gz = in_golden_zone(i_new)
 
-    # 일관성: I↓이면 G↑이어야 하고, I↑이면 G↓이어야 함
+    # Consistency: If I↓ then G↑, if I↑ then G↓
     if d["I_change"] < 0:
         consistent = g_new > g_base
     elif d["I_change"] > 0:
@@ -168,7 +168,7 @@ for name, d in drugs.items():
     else:
         consistent = True
 
-    # 골든존 예측 일치
+    # Golden Zone prediction match
     zone_match = (gz == d["expected_zone"])
 
     results[name] = {
@@ -186,45 +186,45 @@ for name, d in drugs.items():
     print(f"  {name:<23}│{i_base:5.2f}│{i_new:6.2f}│{g_base:6.2f}│{g_new:6.2f}│{dg_pct:+5.1f}%│  {gz_mark}   │ {c_mark} {z_mark}")
 
 # ═══════════════════════════════════════════
-# 검증 3: 용량-반응 곡선 시뮬레이션
+# Verification 3: Dose-Response Curve Simulation
 # ═══════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  검증 3: 카페인 용량-반응 곡선")
+print("  Verification 3: Caffeine Dose-Response Curve")
 print("=" * 70)
 
 caffeine_mg = [0, 50, 100, 150, 200, 300, 400, 600]
-# I 감소 모델: I = I0 * exp(-k * mg), k = 0.002 (약리학적 지수감소)
+# I reduction model: I = I0 * exp(-k * mg), k = 0.002 (pharmacological exponential decay)
 k_caffeine = 0.002
 I_caffeine = [I0 * math.exp(-k_caffeine * mg) for mg in caffeine_mg]
 G_caffeine = [G(D0, P0, i) for i in I_caffeine]
 
-print(f"\n  {'mg':>5} │ {'I':>6} │ {'G':>6} │ {'골든존':>7} │ 상태")
+print(f"\n  {'mg':>5} │ {'I':>6} │ {'G':>6} │ {'Golden Zone':>7} │ State")
 print("  " + "─" * 50)
 for mg, i, g in zip(caffeine_mg, I_caffeine, G_caffeine):
     gz = in_golden_zone(i)
     gz_m = "🟢" if gz else "🔴"
     if i > GZ_UPPER:
-        state = "과억제"
+        state = "Over-inhibited"
     elif i < GZ_LOWER:
-        state = "과흥분(떨림)"
+        state = "Over-excited(jittery)"
     elif abs(i - GZ_CENTER) < 0.03:
-        state = "★ 최적(≈1/e)"
+        state = "★ Optimal(≈1/e)"
     elif i > GZ_CENTER:
-        state = "골든존(상단)"
+        state = "Golden Zone(upper)"
     else:
-        state = "골든존(하단)"
+        state = "Golden Zone(lower)"
     print(f"  {mg:5d} │ {i:6.3f} │ {g:6.2f} │   {gz_m}    │ {state}")
 
-# 최적 카페인량 계산
+# Calculate optimal caffeine dose
 optimal_mg = -math.log(GZ_CENTER / I0) / k_caffeine
-print(f"\n  최적 카페인량 (I→1/e): {optimal_mg:.0f} mg")
-print(f"  실제 커피 1잔: 95-150mg → 모델 예측과 {'일치' if 80 <= optimal_mg <= 200 else '불일치'}!")
+print(f"\n  Optimal caffeine dose (I→1/e): {optimal_mg:.0f} mg")
+print(f"  Actual coffee 1 cup: 95-150mg → {'Matches' if 80 <= optimal_mg <= 200 else 'Does not match'} model prediction!")
 
 # ═══════════════════════════════════════════
-# 검증 4: 마취 심도-BIS-I 선형성 검증
+# Verification 4: Anesthesia Depth-BIS-I Linearity Verification
 # ═══════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  검증 4: 마취 (BIS ↔ I 선형 역관계)")
+print("  Verification 4: Anesthesia (BIS ↔ I Linear Inverse Relationship)")
 print("=" * 70)
 
 BIS = [100, 80, 60, 40, 20, 0]
@@ -235,74 +235,74 @@ slope, intercept, r, p, se = stats.linregress(BIS, I_anesthesia)
 
 print(f"\n  BIS vs I:")
 print(f"  Pearson r = {corr_bis:.4f}, p = {p_bis:.4e}")
-print(f"  선형회귀: I = {slope:.4f} * BIS + {intercept:.4f}")
+print(f"  Linear regression: I = {slope:.4f} * BIS + {intercept:.4f}")
 print(f"  R² = {r**2:.4f}")
-print(f"\n  의식소실 임계점:")
-print(f"  BIS=80 → I={0.50} = 골든존 상한 = 의식소실 시점")
-print(f"  이 임계점이 골든존 상한과 정확히 일치하는가? ✅ YES (정의에 의함)")
+print(f"\n  Loss of consciousness threshold:")
+print(f"  BIS=80 → I={0.50} = Golden Zone upper bound = Loss of consciousness point")
+print(f"  Does this threshold exactly match the Golden Zone upper bound? ✅ YES (by definition)")
 
-# 비선형성 체크
+# Nonlinearity check
 I_linear_pred = [slope * b + intercept for b in BIS]
 residuals = [actual - pred for actual, pred in zip(I_anesthesia, I_linear_pred)]
-print(f"\n  잔차 (비선형성 지표): {[f'{r:.3f}' for r in residuals]}")
-print(f"  최대 잔차: {max(abs(r) for r in residuals):.3f}")
-print(f"  → 실제로는 약한 비선형 (S자 곡선 가능)")
+print(f"\n  Residuals (nonlinearity indicator): {[f'{r:.3f}' for r in residuals]}")
+print(f"  Max residual: {max(abs(r) for r in residuals):.3f}")
+print(f"  → Actually shows weak nonlinearity (S-curve possible)")
 
 # ═══════════════════════════════════════════
-# 검증 5: SSRI 시간 상수 검증
+# Verification 5: SSRI Time Constant Verification
 # ═══════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  검증 5: SSRI 효과 발현 시간 = I 골든존 도달 시간")
+print("  Verification 5: SSRI Effect Onset Time = I Golden Zone Arrival Time")
 print("=" * 70)
 
-# 지수 감소 모델: I(t) = I_target + (I0_dep - I_target) * exp(-t/tau)
-I0_depression = 0.70  # 우울 상태
-I_target_ssri = 0.45  # 치료 목표
-tau_weeks = 2.5       # 시간 상수
+# Exponential decay model: I(t) = I_target + (I0_dep - I_target) * exp(-t/tau)
+I0_depression = 0.70  # Depressed state
+I_target_ssri = 0.45  # Treatment target
+tau_weeks = 2.5       # Time constant
 
 weeks = list(range(0, 13))
 I_ssri = [I_target_ssri + (I0_depression - I_target_ssri) * math.exp(-w / tau_weeks) for w in weeks]
 
-print(f"\n  우울 기저 I = {I0_depression}, 치료 목표 I = {I_target_ssri}")
-print(f"  시간 상수 τ = {tau_weeks}주")
-print(f"\n  {'주':>4} │ {'I':>6} │ {'골든존':>7} │ {'임상 대응'}")
+print(f"\n  Depression baseline I = {I0_depression}, treatment target I = {I_target_ssri}")
+print(f"  Time constant τ = {tau_weeks} weeks")
+print(f"\n  {'Week':>4} │ {'I':>6} │ {'Golden Zone':>7} │ {'Clinical Match'}")
 print("  " + "─" * 50)
 for w, i in zip(weeks, I_ssri):
     gz = in_golden_zone(i)
     gz_m = "🟢" if gz else "🔴"
     if w == 0:
-        clinical = "SSRI 시작"
+        clinical = "SSRI start"
     elif i > 0.55:
-        clinical = "아직 우울"
+        clinical = "Still depressed"
     elif i > GZ_UPPER:
-        clinical = "약간 개선"
+        clinical = "Slight improvement"
     elif i > 0.45:
-        clinical = "효과 발현 시작"
+        clinical = "Effect onset beginning"
     else:
-        clinical = "★ 치료 목표 도달"
+        clinical = "★ Treatment goal reached"
     print(f"  {w:4d} │ {i:6.3f} │   {gz_m}    │ {clinical}")
 
-# 골든존 진입 시점
+# Golden Zone entry point
 for w, i in zip(weeks, I_ssri):
     if i <= GZ_UPPER:
-        print(f"\n  골든존 진입 시점: {w}주 (I={i:.3f})")
-        print(f"  실제 SSRI 효과 발현: 2-6주 → 모델 예측 {'일치' if 2 <= w <= 6 else '불일치'}!")
+        print(f"\n  Golden Zone entry point: week {w} (I={i:.3f})")
+        print(f"  Actual SSRI effect onset: 2-6 weeks → Model prediction {'matches' if 2 <= w <= 6 else 'does not match'}!")
         break
 
 # ═══════════════════════════════════════════
-# 검증 6: 니코틴 내성 사이클 모델
+# Verification 6: Nicotine Tolerance Cycle Model
 # ═══════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  검증 6: 니코틴 내성 사이클 (기저 I 상승)")
+print("  Verification 6: Nicotine Tolerance Cycle (Baseline I Rise)")
 print("=" * 70)
 
-delta_per_cycle = 0.02  # 매 사이클 기저 I 상승
+delta_per_cycle = 0.02  # Baseline I rise per cycle
 n_cycles = 20
 I_nicotine_base = [I0 + delta_per_cycle * n for n in range(n_cycles)]
-I_nicotine_drug = [max(ib - 0.15, 0.1) for ib in I_nicotine_base]  # 약물 효과
-I_nicotine_withdrawal = [ib + 0.10 for ib in I_nicotine_base]  # 금단
+I_nicotine_drug = [max(ib - 0.15, 0.1) for ib in I_nicotine_base]  # Drug effect
+I_nicotine_withdrawal = [ib + 0.10 for ib in I_nicotine_base]  # Withdrawal
 
-print(f"\n  {'사이클':>6} │ {'기저I':>6} │ {'약물I':>6} │ {'금단I':>6} │ {'기저GZ':>7}│{'약물GZ':>7}│{'금단GZ':>7}")
+print(f"\n  {'Cycle':>6} │ {'Base I':>6} │ {'Drug I':>6} │ {'W/d I':>6} │ {'Base GZ':>7}│{'Drug GZ':>7}│{'W/d GZ':>7}")
 print("  " + "─" * 70)
 for n in [0, 1, 3, 5, 10, 15, 19]:
     gz_b = "🟢" if in_golden_zone(I_nicotine_base[n]) else "🔴"
@@ -310,81 +310,81 @@ for n in [0, 1, 3, 5, 10, 15, 19]:
     gz_w = "🟢" if in_golden_zone(I_nicotine_withdrawal[n]) else "🔴"
     print(f"  {n:6d} │ {I_nicotine_base[n]:6.2f} │ {I_nicotine_drug[n]:6.2f} │ {I_nicotine_withdrawal[n]:6.2f} │  {gz_b}   │  {gz_d}   │  {gz_w}")
 
-# 골든존 이탈 시점
+# Point where Golden Zone can't be maintained
 for n in range(n_cycles):
     if not in_golden_zone(I_nicotine_drug[n]):
-        print(f"\n  약물 효과로도 골든존 유지 불가 시점: 사이클 {n}")
-        print(f"  → '내성'의 수학적 표현 확인 ✅")
+        print(f"\n  Point where drug effect can't maintain Golden Zone: cycle {n}")
+        print(f"  → Mathematical expression of 'tolerance' confirmed ✅")
         break
 
 # ═══════════════════════════════════════════
-# 검증 7: 텍사스 명사수 검정
+# Verification 7: Texas Sharpshooter Test
 # ═══════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  검증 7: 텍사스 명사수 검정")
+print("  Verification 7: Texas Sharpshooter Test")
 print("=" * 70)
 
-# 질문: 6개 약물 모두 I ↔ G 역상관 매핑이 약리학과 일치하는 것이 우연인가?
-# 각 약물에 대해 I 방향 (↑ or ↓)을 무작위로 맞출 확률
+# Question: Is it coincidence that all 6 drugs' I ↔ G inverse correlation mappings match pharmacology?
+# For each drug, probability of randomly guessing I direction (↑ or ↓)
 
 n_drugs = 6
-n_correct_directions = 6  # 모든 6개 약물의 I 방향이 약리학과 일치
+n_correct_directions = 6  # All 6 drugs' I directions match pharmacology
 
-# 무작위로 방향을 맞출 확률: 각 약물 50% (증가 or 감소)
+# Random direction match probability: 50% per drug (increase or decrease)
 p_random = 0.5 ** n_drugs
-print(f"\n  약물 수: {n_drugs}")
-print(f"  모든 약물의 I 방향이 약리학 문헌과 일치: {n_correct_directions}/{n_drugs}")
-print(f"  무작위 일치 확률: (1/2)^{n_drugs} = {p_random:.4f}")
+print(f"\n  Number of drugs: {n_drugs}")
+print(f"  All drugs' I directions match pharmacology literature: {n_correct_directions}/{n_drugs}")
+print(f"  Random match probability: (1/2)^{n_drugs} = {p_random:.4f}")
 
-# 하지만 이것은 모델이 I↓→G↑를 정의적으로 보장하므로 자명
-# 진짜 질문: "각 약물을 I에 매핑한 것 자체가 정당한가?"
-# 이것은 약리학 문헌과의 정성적 일치로만 판단 가능
+# But this is trivial since the model definitionally guarantees I↓→G↑
+# Real question: "Is the mapping of each drug to I itself justified?"
+# This can only be judged by qualitative agreement with pharmacology literature
 
-# 더 엄격한 검정: 골든존 범위가 각 약물의 "최적 효과 영역"과 일치하는가?
-# 골든존 [0.21, 0.50]은 I 공간의 0.29/1.0 = 29% 차지
-# 6개 약물 중 "적정 용량"이 골든존에 떨어지는 수: 6/6
+# Stricter test: Does the Golden Zone range match each drug's "optimal effect zone"?
+# Golden Zone [0.21, 0.50] occupies 0.29/1.0 = 29% of I space
+# Number of drugs whose "appropriate dose" falls in Golden Zone: 6/6
 
-p_golden = (GZ_WIDTH / 1.0) ** n_drugs  # 골든존이 전체의 29%
-print(f"\n  골든존이 I 공간에서 차지하는 비율: {GZ_WIDTH:.2%}")
-print(f"  6개 약물의 적정 용량이 모두 골든존에 매핑될 확률:")
+p_golden = (GZ_WIDTH / 1.0) ** n_drugs  # Golden Zone is 29% of total
+print(f"\n  Golden Zone proportion of I space: {GZ_WIDTH:.2%}")
+print(f"  Probability all 6 drugs' appropriate doses map to Golden Zone:")
 print(f"  ({GZ_WIDTH:.4f})^{n_drugs} = {p_golden:.6f}")
 print(f"  p-value = {p_golden:.6f}")
 
-# Bonferroni 보정 (6개 가설)
+# Bonferroni correction (6 hypotheses)
 p_bonferroni = min(p_golden * n_drugs, 1.0)
-print(f"  Bonferroni 보정 후: p = {p_bonferroni:.6f}")
-print(f"  유의한가? {'✅ p < 0.01' if p_bonferroni < 0.01 else '❌ p >= 0.01'}")
+print(f"  After Bonferroni correction: p = {p_bonferroni:.6f}")
+print(f"  Significant? {'✅ p < 0.01' if p_bonferroni < 0.01 else '❌ p >= 0.01'}")
 
-# 하지만 주의: 이것은 매핑 자체가 골든존에 맞추어 설계되었을 수 있음
-print(f"\n  ⚠️ 주의: 텍사스 명사수 위험")
-print(f"  - 매핑이 골든존에 맞추어 사후적으로 설계되었을 가능성")
-print(f"  - 독립적 약리학 데이터로 검증 필요")
-print(f"  - 각 약물의 I 값은 추정치이며 실측 데이터 아님")
+# But caution: the mapping itself may have been designed to fit the Golden Zone
+print(f"\n  ⚠️ Caution: Texas Sharpshooter Risk")
+print(f"  - Mapping may have been post-hoc designed to fit Golden Zone")
+print(f"  - Independent pharmacological data verification needed")
+print(f"  - Each drug's I value is an estimate, not measured data")
 
 # ═══════════════════════════════════════════
-# 검증 8: 약물 간 교차 일관성
+# Verification 8: Cross-drug Consistency
 # ═══════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  검증 8: 약물 간 교차 일관성 (모순 체크)")
+print("  Verification 8: Cross-drug Consistency (Contradiction Check)")
 print("=" * 70)
 
 checks = [
-    ("카페인 < 알코올 (I 감소량)", 0.13, 0.10, "I감소"),
-    ("알코올(소량) < 알코올(과량)", 0.10, 0.35, "I감소"),
-    ("마이크로도징 < 대량 사이키델릭", 0.10, 0.35, "I감소"),
-    ("SSRI(점진) < 케타민(급격)", 0.15, 0.25, "I감소 문헌"),
-    ("니코틴(단기) ≈ 카페인", 0.10, 0.13, "I감소 유사"),
+    ("Caffeine < Alcohol (I reduction)", 0.13, 0.10, "I reduction"),
+    ("Alcohol(low) < Alcohol(high)", 0.10, 0.35, "I reduction"),
+    ("Microdosing < Macro psychedelic", 0.10, 0.35, "I reduction"),
+    ("SSRI(gradual) < Ketamine(rapid)", 0.15, 0.25, "I reduction literature"),
+    ("Nicotine(acute) ≈ Caffeine", 0.10, 0.13, "Similar I reduction"),
 ]
 
-print(f"\n  {'비교':<40} │ {'ΔI_1':>6} │ {'ΔI_2':>6} │ {'일관성'}")
+print(f"\n  {'Comparison':<40} │ {'ΔI_1':>6} │ {'ΔI_2':>6} │ {'Consistency'}")
 print("  " + "─" * 65)
 
 all_consistent = True
 for desc, di1, di2, note in checks:
-    if "유사" in note:
+    if "Similar" in note:
         consistent = abs(di1 - di2) < 0.10
     elif "<" in desc:
-        consistent = di1 <= di2  # 첫 번째가 더 약해야 함
+        consistent = di1 <= di2  # First should be weaker
     else:
         consistent = True
     if not consistent:
@@ -392,74 +392,74 @@ for desc, di1, di2, note in checks:
     mark = "✅" if consistent else "❌"
     print(f"  {desc:<40} │ {di1:6.2f} │ {di2:6.2f} │ {mark}")
 
-# 특수 체크: 알코올은 I↓인데 마취는 I↑ → 메커니즘이 달라야 함
-print(f"\n  특수 체크:")
-print(f"  알코올(GABA 탈억제) → I↓ vs 마취(GABA 직접 활성화) → I↑")
-print(f"  → 같은 GABA 경로인데 방향이 다름")
-print(f"  → 설명: 알코올='억제의 억제'(간접), 마취='직접 억제 극대화'")
-print(f"  → 구조적으로 일관성 있음 ✅ (메커니즘 수준이 다름)")
+# Special check: Alcohol is I↓ but anesthesia is I↑ → Different mechanisms required
+print(f"\n  Special check:")
+print(f"  Alcohol(GABA disinhibition) → I↓ vs Anesthesia(GABA direct activation) → I↑")
+print(f"  → Same GABA pathway but opposite directions")
+print(f"  → Explanation: Alcohol='inhibition of inhibition'(indirect), Anesthesia='direct inhibition maximization'")
+print(f"  → Structurally consistent ✅ (Different mechanism levels)")
 
-print(f"\n  카페인: 아데노신 경로 (억제 차단 → I↓)")
-print(f"  알코올: GABA 탈억제 경로 (간접 → I↓)")
-print(f"  마취:   GABA 직접 경로 (극대화 → I↑)")
-print(f"  사이키: 5-HT2A → DMN↓ (다른 경로 → I↓)")
-print(f"  SSRI:   5-HT 재흡수 (간접 → I↓, 느림)")
-print(f"  니코틴: nAChR → 도파민 (또 다른 경로 → I↓)")
-print(f"\n  6개 약물이 각기 다른 신경화학 경로를 통해 I에 영향 → 구조적 다양성 ✅")
+print(f"\n  Caffeine: Adenosine pathway (inhibition blockade → I↓)")
+print(f"  Alcohol: GABA disinhibition pathway (indirect → I↓)")
+print(f"  Anesthesia: GABA direct pathway (maximization → I↑)")
+print(f"  Psychedelic: 5-HT2A → DMN↓ (different pathway → I↓)")
+print(f"  SSRI:     5-HT reuptake (indirect → I↓, slow)")
+print(f"  Nicotine: nAChR → dopamine (yet another pathway → I↓)")
+print(f"\n  6 drugs affect I through different neurochemical pathways → Structural diversity ✅")
 
 # ═══════════════════════════════════════════
-# 종합 판정
+# Final Verdict
 # ═══════════════════════════════════════════
 print("\n" + "=" * 70)
-print("  종합 판정")
+print("  Final Verdict")
 print("=" * 70)
 
 verdicts = {
-    "195-카페인": {
+    "195-Caffeine": {
         "inv_corr": True,
         "gz_match": True,
-        "dose_response": True,  # 커피 1잔 ≈ 최적
+        "dose_response": True,  # 1 cup coffee ≈ optimal
         "cross_consistent": True,
-        "texas_risk": "중간 (커피 한 잔=최적은 사후적)",
+        "texas_risk": "Medium (1 cup=optimal is post-hoc)",
     },
-    "196-알코올": {
+    "196-Alcohol": {
         "inv_corr": True,
         "gz_match": True,
-        "dose_response": True,  # 소량=좋음, 과량=나쁨
-        "cross_consistent": True,  # 단, GABA 탈억제 설명 필요
-        "texas_risk": "낮음 (소량/과량 차이는 잘 알려진 사실)",
+        "dose_response": True,  # low=good, high=bad
+        "cross_consistent": True,  # But GABA disinhibition explanation needed
+        "texas_risk": "Low (low/high difference is well-known)",
     },
-    "197-전신마취": {
-        "inv_corr": True,  # I↑→G↓ 맞음
-        "gz_match": True,  # 골든존 이탈 = 의식소실
-        "dose_response": True,  # BIS-I 상관
-        "cross_consistent": True,  # 알코올과 메커니즘 구분 가능
-        "texas_risk": "낮음 (BIS≈80에서 의식소실은 문헌 일치)",
+    "197-Anesthesia": {
+        "inv_corr": True,  # I↑→G↓ correct
+        "gz_match": True,  # Golden Zone exit = consciousness loss
+        "dose_response": True,  # BIS-I correlation
+        "cross_consistent": True,  # Distinguishable from alcohol mechanism
+        "texas_risk": "Low (BIS≈80 consciousness loss matches literature)",
     },
-    "198-사이키델릭": {
+    "198-Psychedelic": {
         "inv_corr": True,
         "gz_match": True,
-        "dose_response": True,  # 마이크로=골든존, 대량=이탈
+        "dose_response": True,  # micro=Golden Zone, macro=exit
         "cross_consistent": True,
-        "texas_risk": "중간 (DMN↓→I↓ 매핑은 합리적이나 정량적 미검증)",
+        "texas_risk": "Medium (DMN↓→I↓ mapping reasonable but quantitatively unverified)",
     },
     "200-SSRI": {
         "inv_corr": True,
         "gz_match": True,
-        "dose_response": True,  # 2-6주 효과 발현 = 골든존 도달 시간
+        "dose_response": True,  # 2-6 week effect onset = Golden Zone arrival time
         "cross_consistent": True,
-        "texas_risk": "낮음 (시간 상수 일치는 구조적)",
+        "texas_risk": "Low (time constant match is structural)",
     },
-    "200c-니코틴": {
+    "200c-Nicotine": {
         "inv_corr": True,
         "gz_match": True,
-        "dose_response": True,  # 단기=골든존, 장기=이탈
+        "dose_response": True,  # acute=Golden Zone, chronic=exit
         "cross_consistent": True,
-        "texas_risk": "낮음 (내성/금단 패턴은 잘 알려진 사실)",
+        "texas_risk": "Low (tolerance/withdrawal pattern is well-known)",
     },
 }
 
-print(f"\n  {'가설':<20} │{'역상관':>7}│{'골든존':>7}│{'용량응답':>8}│{'교차일관':>8}│ 등급  │ 텍사스 위험")
+print(f"\n  {'Hypothesis':<20} │{'Inv.Corr':>7}│{'GoldenZ':>7}│{'Dose-Resp':>8}│{'CrossCons':>8}│ Grade │ Texas Risk")
 print("  " + "─" * 80)
 
 for name, v in verdicts.items():
@@ -467,37 +467,37 @@ for name, v in verdicts.items():
     n_pass = sum(scores)
 
     if n_pass == 4:
-        grade = "🟧"  # 구조적 대응 확인, 실험 데이터 필요
+        grade = "🟧"  # Structural match confirmed, experimental data needed
     elif n_pass >= 3:
-        grade = "⚪"  # 약한 증거
+        grade = "⚪"  # Weak evidence
     else:
-        grade = "⬛"  # 반증
+        grade = "⬛"  # Refuted
 
     marks = ["✅" if s else "❌" for s in scores]
     print(f"  {name:<20} │  {marks[0]}  │  {marks[1]}  │  {marks[2]}   │  {marks[3]}   │ {grade}   │ {v['texas_risk']}")
 
 print(f"""
   ══════════════════════════════════════════════════════
-  최종 등급 판정:
+  Final Grade Determination:
   ══════════════════════════════════════════════════════
-  195-카페인:      🟧 (구조 일치, I↓→G↑ 확인, 커피 1잔≈최적)
-  196-알코올:      🟧 (구조 일치, 소량/과량 차이 모델링 성공)
-  197-전신마취:    🟧 (구조 일치, BIS↔I 대응, 의식소실=골든존 이탈)
-  198-사이키델릭:  🟧 (구조 일치, DMN↓→I↓ 매핑, 용량-반응 부합)
-  200-SSRI:        🟧 (구조 일치, 시간 상수 τ≈2-3주 일치)
-  200c-니코틴:     🟧 (구조 일치, 내성사이클=기저I상승 모델링)
+  195-Caffeine:      🟧 (Structure match, I↓→G↑ confirmed, 1 cup≈optimal)
+  196-Alcohol:       🟧 (Structure match, low/high difference modeling success)
+  197-Anesthesia:    🟧 (Structure match, BIS↔I correspondence, consciousness loss=Golden Zone exit)
+  198-Psychedelic:   🟧 (Structure match, DMN↓→I↓ mapping, dose-response fits)
+  200-SSRI:          🟧 (Structure match, time constant τ≈2-3 weeks match)
+  200c-Nicotine:     🟧 (Structure match, tolerance cycle=baseline I rise modeling)
   ══════════════════════════════════════════════════════
 
-  공통 한계:
-  1. I 값은 추정치이며 fMRI/EEG 실측 데이터 없음
-  2. 매핑이 사후적으로 설계되었을 가능성 (텍사스 명사수)
-  3. 모든 약물이 단일 I 파라미터로 환원되는 것은 과도한 단순화
-  4. 개인차(유전, 내성, 체중)를 반영하지 않음
+  Common limitations:
+  1. I values are estimates without fMRI/EEG measured data
+  2. Mapping may have been post-hoc designed (Texas Sharpshooter)
+  3. Reducing all drugs to single I parameter is oversimplification
+  4. Individual differences (genetics, tolerance, weight) not reflected
 
-  그럼에도 🟧인 이유:
-  - 6개 약물이 각기 다른 경로로 I에 영향 → 다경로 수렴은 구조적
-  - 용량-반응(적정=골든존, 과다=이탈)이 모든 약물에서 일관
-  - SSRI 시간 상수와 모델 예측이 독립적으로 일치
-  - 텍사스 p-value ≈ 0.0004 (Bonferroni 후도 < 0.01)
-  - 반증 시도 실패: 마취의 I↑ 방향도 모델 내에서 설명 가능
+  Still 🟧 because:
+  - 6 drugs affect I through different pathways → Multi-path convergence is structural
+  - Dose-response (appropriate=Golden Zone, excessive=exit) consistent across all drugs
+  - SSRI time constant and model prediction independently match
+  - Texas p-value ≈ 0.0004 (< 0.01 even after Bonferroni)
+  - Refutation attempt failed: Anesthesia's I↑ direction also explainable within model
 """)

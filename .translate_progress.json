@@ -759,7 +759,23 @@
     "texas_sharpshooter.py",
     "texas_quantum.py",
     "timeline.py",
-    "train_with_ph.py"
+    "train_with_ph.py",
+    "verify/verify_4th_state.py",
+    "verify/verify_ai.py",
+    "verify/verify_complex.py",
+    "verify/verify_cross.py",
+    "verify/verify_existing_tech.py",
+    "verify/verify_ising.py",
+    "translate_to_english.py",
+    "verify/verify_math.py",
+    "verify/verify_meta_selfref.py",
+    "verify/verify_meta_math.py",
+    "verify/verify_next_batch.py",
+    "verify/verify_millennium.py",
+    "verify/verify_remaining_cross.py",
+    "verify_096_gaba_literature.py",
+    "verify_322_eeg_gamma.py",
+    "verify_pharmacology.py"
   ],
   "failed": []
 }
