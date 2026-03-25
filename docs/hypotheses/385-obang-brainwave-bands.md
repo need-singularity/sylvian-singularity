@@ -3,7 +3,7 @@
 ## Hypothesis Statement
 
 > The five major brainwave frequency bands (δ, θ, α, β, γ) correspond structurally to the
-> five directions of Obang (오방, Five Directions / Wu Fang), the East Asian cosmological
+> five directions of Obang (Five Directions / Wu Fang), the East Asian cosmological
 > framework of five elemental phases. Each direction maps to a brainwave band via shared
 > properties of depth, activity, element, and consciousness state. The frequency ratios
 > between bands reflect perfect number 6 constants (τ(6)=4, σ(6)=12), and the 13 Hz
@@ -13,8 +13,8 @@
 
 ## Background and Context
 
-Obang (오방, 五方) is the traditional East Asian system of five cardinal directions plus
-center, each associated with one of the Five Phases (오행, 五行): Water, Metal, Earth,
+Obang (Five Directions, 五方) is the traditional East Asian system of five cardinal directions plus
+center, each associated with one of the Five Phases (Five Elements, 五行): Water, Metal, Earth,
 Wood, Fire. Each phase carries attributes of depth, stillness, balance, growth, and peak
 intensity respectively.
 
@@ -44,11 +44,11 @@ appears in both ancient cosmological systems and modern neural oscillation scien
 
 | Obang Direction | Element | Quality     | Brainwave | Range (Hz)  | State                          |
 |-----------------|---------|-------------|-----------|-------------|--------------------------------|
-| North (북, 北)  | Water   | Deep/Yin    | δ Delta   | 0.5 – 4     | Deep sleep, unconscious        |
-| West (서, 西)   | Metal   | Meditation  | θ Theta   | 4 – 8       | Meditation, memory, dreams     |
-| Center (중, 中) | Earth   | Balance     | α Alpha   | 8 – 13      | Relaxed awareness, bridge      |
-| East (동, 東)   | Wood    | Active      | β Beta    | 13 – 30     | Active thinking, waking        |
-| South (남, 南)  | Fire    | Peak/Yang   | γ Gamma   | 30 – 100    | Peak consciousness, binding    |
+| North (North, 北)  | Water   | Deep/Yin    | δ Delta   | 0.5 – 4     | Deep sleep, unconscious        |
+| West (West, 西)   | Metal   | Meditation  | θ Theta   | 4 – 8       | Meditation, memory, dreams     |
+| Center (Center, 中) | Earth   | Balance     | α Alpha   | 8 – 13      | Relaxed awareness, bridge      |
+| East (East, 東)   | Wood    | Active      | β Beta    | 13 – 30     | Active thinking, waking        |
+| South (South, 南)  | Fire    | Peak/Yang   | γ Gamma   | 30 – 100    | Peak consciousness, binding    |
 
 The progression from North to South follows the yang-ascending order of Obang, and
 simultaneously follows the ascending frequency order of brainwave science.
@@ -89,9 +89,9 @@ Yang axis (left = most yin, right = most yang):
 
 ---
 
-## Ohaeng Cycle in Brainwave Dynamics
+## Five Phases Cycle in Brainwave Dynamics
 
-### Sangsaeng (상생, Generation Cycle) — Ascending Frequency
+### Generating Cycle — Ascending Frequency
 
 The generation cycle describes how each phase produces or feeds the next.
 In brainwave terms, this corresponds to the awakening sequence:
@@ -109,7 +109,7 @@ In brainwave terms, this corresponds to the awakening sequence:
 This is the morning awakening sequence: the brain ascends through delta → theta →
 alpha → beta → gamma as consciousness transitions from deep sleep to full waking.
 
-### Sanggeuk (상극, Overcoming Cycle) — Inhibitory Relationships
+### Overcoming Cycle — Inhibitory Relationships
 
 The overcoming cycle describes how each phase checks or suppresses another.
 Known neural inhibitory relationships:
@@ -238,24 +238,24 @@ This mapping connects to the project's core framework as follows:
 ## ASCII Obang Compass with Frequencies
 
 ```
-                    SOUTH (남)
+                    SOUTH (South)
                     Fire / Peak
                     γ Gamma 30-100 Hz
                     "Consciousness binding"
                           |
                           |
-    EAST (동)             |             WEST (서)
+    EAST (East)           |             WEST (West)
     Wood / Active         |             Metal / Still
     β Beta 13-30 Hz ------+------ θ Theta 4-8 Hz
     "Waking cognition"    |       "Meditation/memory"
                           |
                           |
-                    NORTH (북)
+                    NORTH (North)
                     Water / Deep
                     δ Delta 0.5-4 Hz
                     "Unconscious/sleep"
 
-              CENTER (중) = Earth / Balance
+              CENTER (Center) = Earth / Balance
               α Alpha 8-13 Hz
               "Relaxed awareness / bridge"
               [at the intersection of all directions]
@@ -266,7 +266,7 @@ This mapping connects to the project's core framework as follows:
 
 ---
 
-## Sangsaeng Cycle Frequency Sequence
+## Generating Cycle Frequency Sequence
 
 ```
   Generation cycle (awakening, ascending):
@@ -305,7 +305,7 @@ This mapping connects to the project's core framework as follows:
 4. **Cultural specificity**: Obang is specific to East Asian cosmology (Chinese, Korean,
    Japanese traditions). The five-element system has variants across cultures, and
    the direction assignments (which element maps to which direction) vary by tradition.
-   This document uses the Korean (한국) standard assignment.
+   This document uses the Korean standard assignment.
 
 5. **Five is not universal**: Western neuroscience sometimes identifies 4 bands (delta,
    theta, alpha, beta) or 6+ (including high-gamma, ripples). The choice of exactly
@@ -326,7 +326,7 @@ This mapping connects to the project's core framework as follows:
 3. **Frequency ratio calculation**: Compute γ/α, β/θ, α/θ ratios from actual EEG
    peak frequencies across N subjects. Test whether γ/α median ≈ 4 = τ(6).
 
-4. **Ohaeng cycle timing**: During sleep-wake transitions, measure whether band power
+4. **Five Phases cycle timing**: During sleep-wake transitions, measure whether band power
    shifts follow the North→West→Center→East→South sequence (delta → theta → alpha
    → beta → gamma) or if intermediate states are skipped.
 
@@ -345,7 +345,7 @@ active/growth (East/Wood/beta), and peak/fire (South/Fire/gamma).
 
 Key numerical anchors (θ = 6 Hz, γ/α = τ(6) = 4, SMR = σ(6) = 12, 13 Hz observer
 boundary) connect this mapping to the project's perfect number 6 framework without
-requiring Golden Zone assumptions. The Sangsaeng generation cycle mirrors the
+requiring Golden Zone assumptions. The generating cycle mirrors the
 biological awakening sequence from deep sleep to peak consciousness.
 
 **Status**: Qualitative mapping with numerical anchors. Pure arithmetic observations

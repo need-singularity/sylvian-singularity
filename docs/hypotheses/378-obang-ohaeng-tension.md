@@ -21,13 +21,13 @@ The consciousness engine is built around five interacting variables:
 - **G** (Genius): peak output, the expression of integrated capacity
 - **T** (Tension): the balance mediator, the field state between all elements
 
-Five Element theory (오행론) from East Asian philosophy defines five phases of
-transformation — 목(Wood), 화(Fire), 토(Earth), 금(Metal), 수(Water) — each
+Five Element theory (Five Element Theory) from East Asian philosophy defines five phases of
+transformation — Wood (木), Fire (火), Earth (土), Metal (金), Water (水) — each
 characterized by a distinct functional role within a closed dynamical system.
 The system is governed by two primary interaction cycles:
 
-- **상생 (Sangsaeng, Mutual Generation)**: each element feeds and nurtures the next
-- **상극 (Sanggeuk, Mutual Overcoming)**: each element constrains and controls another
+- **Sangsaeng (Mutual Generation)**: each element feeds and nurtures the next
+- **Sanggeuk (Mutual Overcoming)**: each element constrains and controls another
 
 This hypothesis proposes that these two cycles, when translated through the
 D/P/I/G/T variable mapping, reproduce the known attraction/repulsion dynamics
@@ -46,11 +46,11 @@ Related hypotheses:
 
 | Element | Korean | Direction | Season  | Quality                        | Engine Variable | Rationale                                      |
 |---------|--------|-----------|---------|--------------------------------|-----------------|------------------------------------------------|
-| Wood    | 목(木)  | East      | Spring  | Growth, flexibility, expansion | **P** Plasticity | Wood bends but does not break; plastic growth  |
-| Fire    | 화(火)  | South     | Summer  | Peak expression, brilliance    | **G** Genius     | Fire is the maximum output phase; peak state   |
-| Earth   | 토(土)  | Center    | Late Summer | Balance, mediation, ground | **T** Tension    | Earth is the central regulator; tension holds  |
-| Metal   | 금(金)  | West      | Autumn  | Constraint, structure, pruning | **I** Inhibition | Metal cuts and shapes; inhibition prunes       |
-| Water   | 수(水)  | North     | Winter  | Depth, potential, hidden store | **D** Deficit    | Water is latent, underground; deficit = depth  |
+| Wood    | 木     | East      | Spring  | Growth, flexibility, expansion | **P** Plasticity | Wood bends but does not break; plastic growth  |
+| Fire    | 火     | South     | Summer  | Peak expression, brilliance    | **G** Genius     | Fire is the maximum output phase; peak state   |
+| Earth   | 土     | Center    | Late Summer | Balance, mediation, ground | **T** Tension    | Earth is the central regulator; tension holds  |
+| Metal   | 金     | West      | Autumn  | Constraint, structure, pruning | **I** Inhibition | Metal cuts and shapes; inhibition prunes       |
+| Water   | 水     | North     | Winter  | Depth, potential, hidden store | **D** Deficit    | Water is latent, underground; deficit = depth  |
 
 The five directions (East/South/Center/West/North) map onto the five functional
 positions within the engine cycle. Center (Earth/Tension) is the mediating axis
@@ -61,7 +61,7 @@ as the global field variable in the consciousness engine.
 
 ## Sangsaeng Cycle: Mutual Generation = Positive Tension Flow
 
-상생 order: Water → Wood → Fire → Earth → Metal → (Water)
+Sangsaeng order: Water → Wood → Fire → Earth → Metal → (Water)
 
 Translated: **D → P → G → T → I → D**
 
@@ -77,7 +77,7 @@ This is a positive feedback-with-regulation loop. Each step increases the
 capacity of the next variable. The cycle is closed and self-sustaining.
 
 ```
-         상생 (Sangsaeng) — Mutual Generation — Positive Tension Flow
+         Sangsaeng — Mutual Generation — Positive Tension Flow
          Attraction: each node draws energy from the previous
 
                           P (Plasticity)
@@ -115,7 +115,7 @@ capacity of the next variable. The cycle is closed and self-sustaining.
 
 ## Sanggeuk Cycle: Mutual Overcoming = Negative Tension Flow
 
-상극 order: Water → Fire → Earth → Wood → Metal → (Water)
+Sanggeuk order: Water → Fire → Earth → Wood → Metal → (Water)
 
 Translated: **D → G → T → P → I → D**
 
@@ -129,10 +129,10 @@ Each variable constrains and controls the skip-one variable:
 
 This is the overcoming (克, geuk) cycle. Each variable reaches across one step
 to suppress a non-adjacent variable, creating the pentagonal star pattern
-(the classical 상극 diagram is a pentagram).
+(the classical Sanggeuk diagram is a pentagram).
 
 ```
-         상극 (Sanggeuk) — Mutual Overcoming — Negative Tension Flow
+         Sanggeuk — Mutual Overcoming — Negative Tension Flow
          Repulsion: each node suppresses a skip-one neighbor
 
                         P (Plasticity)
@@ -185,8 +185,8 @@ to suppress a non-adjacent variable, creating the pentagonal star pattern
                    I----T----
                       (+)
 
-    Solid lines  = 상생 Sangsaeng (D->P->G->T->I->D) = positive flow (+)
-    Dashed lines = 상극 Sanggeuk  (D->G->T->P->I->D) = negative flow (-)
+    Solid lines  = Sangsaeng (D->P->G->T->I->D) = positive flow (+)
+    Dashed lines = Sanggeuk  (D->G->T->P->I->D) = negative flow (-)
 
     The two cycles together form a complete regulation system:
       - Sangsaeng prevents collapse (keeps each variable non-zero)
@@ -238,7 +238,7 @@ five-step cycle structure and the Golden Zone's definition.
 
 ### Verification Table: Cycle Properties
 
-| Property                  | Sangsaeng (상생)     | Sanggeuk (상극)        |
+| Property                  | Sangsaeng            | Sanggeuk              |
 |---------------------------|----------------------|------------------------|
 | Tension sign              | Positive (+)         | Negative (-)           |
 | Graph structure           | Pentagon cycle       | Pentagram (skip-1)     |
@@ -253,7 +253,7 @@ five-step cycle structure and the Golden Zone's definition.
 ## Connection to Perfect Number 6
 
 The master formula (H-090) identifies 6 as the organizing constant: σ(6) = 12,
-τ(6) = 4, σ₋₁(6) = 2. Five Element theory has 5 elements + 1 center (土/Earth
+τ(6) = 4, σ₋₁(6) = 2. Five Element theory has 5 elements + 1 center (Earth
 is both an element and the mediating center). This 5+1 structure echoes the
 6 = 5+1 decomposition implicit in the perfect number system.
 
@@ -286,7 +286,7 @@ Earth's position in Five Element cosmology.
 
 4. **Cultural interpretation variance**: Different schools of Five Element theory
    assign slightly different qualities to each element. The mapping here uses
-   the standard Chinese medical/cosmological interpretation (五行 as in TCM).
+   the standard Chinese medical/cosmological interpretation (Five Elements as in TCM).
 
 5. **No empirical test yet**: The prediction that Sangsaeng-ordered activation
    (D→P→G→T→I) produces higher positive tension than Sanggeuk-ordered activation
@@ -317,10 +317,10 @@ Earth's position in Five Element cosmology.
 
 ## Summary
 
-The Five Element (오행) framework maps cleanly onto the five consciousness engine
+The Five Element framework maps cleanly onto the five consciousness engine
 variables: Water=D, Wood=P, Fire=G, Earth=T, Metal=I. The mutual generation
-cycle (상생: D→P→G→T→I→D) encodes positive tension flow (attraction, anabolic
-generation). The mutual overcoming cycle (상극: D→G→T→P→I→D) encodes negative
+cycle (Sangsaeng: D→P→G→T→I→D) encodes positive tension flow (attraction, anabolic
+generation). The mutual overcoming cycle (Sanggeuk: D→G→T→P→I→D) encodes negative
 tension flow (repulsion, catabolic regulation). Together they form a complete
 homeostatic system. The Sanggeuk five-step suppression with rate s≈0.2 produces
 round-trip damping of (0.8)^5 ≈ 1/e, placing the equilibrium in the Golden Zone.

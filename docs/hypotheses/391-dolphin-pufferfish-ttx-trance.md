@@ -1,7 +1,7 @@
 # H-391: Dolphin Pufferfish TTX Trance — Intentional Consciousness Alteration via Sodium Channel Suppression
 
 **Status:** Observational + Theoretical (GZ-dependent mapping)
-**Golden Zone Dependency:** Partial — TTX pharmacology and dolphin behavior independently documented; 오행 mapping is GZ-dependent
+**Golden Zone Dependency:** Partial — TTX pharmacology and dolphin behavior independently documented; Five Phase mapping is GZ-dependent
 **Related Hypotheses:** H-CX-130~178 (dolphin series), H-387 (THC), H-CX-142, H-CX-144, H-CX-132, H-CX-134, H-196 (alcohol), H-CX-218
 
 ---
@@ -11,7 +11,7 @@
 > Dolphins deliberately use sub-lethal doses of tetrodotoxin (TTX) from pufferfish to selectively silence
 > their sodium-channel-dense echolocation circuits, producing a "sonar silence" trance state that
 > represents the opposite consciousness modulation pathway from THC. While THC suppresses the
-> 상극 (overcoming/inhibitory) cycle, TTX suppresses the 상생 (generative/excitatory) cycle,
+> sanggeuk (overcoming/inhibitory) cycle, TTX suppresses the sangsaeng (generative/excitatory) cycle,
 > creating meditative stillness rather than disinhibited creativity. This is one of the clearest
 > documented cases of intentional pharmacological consciousness engineering by non-human animals,
 > and the social "passing circle" behavior constitutes a form of collective dose titration.
@@ -38,8 +38,8 @@ secretions as insect repellent/mood alteration.
 ### Why This Matters to the Consciousness Engine
 
 The project framework models consciousness via G = D×P/I (Golden Zone, unverified) and maps
-neurochemistry to 오행 (five-phase) cycles. The THC analysis (H-387) established that THC
-suppresses the inhibitory 상극 cycle. TTX operates through a fundamentally different mechanism —
+neurochemistry to Five Phases (five-phase) cycles. The THC analysis (H-387) established that THC
+suppresses the inhibitory sanggeuk cycle. TTX operates through a fundamentally different mechanism —
 blocking sodium channels at the source of neural excitation rather than modulating inhibitory
 balance. This provides a complementary data point for mapping altered states onto the framework
 and for understanding the dolphin consciousness system analyzed throughout H-CX-130~178.
@@ -93,12 +93,12 @@ High Nav density = high TTX sensitivity at microdoses (blocked first).
 
 ---
 
-## The 오행 Mapping (GZ-Dependent)
+## The Five Phase Mapping (GZ-Dependent)
 
 ### Pentagon Comparison: TTX vs THC
 
 ```
-  오행 PENTAGON — NORMAL STATE
+  FIVE PHASES PENTAGON — NORMAL STATE
 
               Fire (G, Genius output)
                        *
@@ -113,8 +113,8 @@ High Nav density = high TTX sensitivity at microdoses (blocked first).
              Water (D) --- Metal (I, Inhibition)
                   *               *
 
-  Solid lines = 상생 (generation cycle, excitation)
-  Dashed lines = 상극 (overcoming cycle, inhibition)
+  Solid lines = sangsaeng (generation cycle, excitation)
+  Dashed lines = sanggeuk (overcoming cycle, inhibition)
 
   ──────────────────────────────────────────────────────
 
@@ -123,7 +123,7 @@ High Nav density = high TTX sensitivity at microdoses (blocked first).
          Fire (G)                       Fire (G)
             *                              *
            / \                            /|\
-          / X \  상극 weakened           /XXX\ 상생 weakened
+          / X \  sanggeuk weakened      /XXX\ sangsaeng weakened
   Wood--*   |  *--Earth         Wood--*   |   *--Earth
         |   |   |                     |   |   |
         *---+---*                     *---+---*
@@ -285,21 +285,21 @@ This could be tested via split-electrode EEG in dolphins (challenging but not im
 
 ## Comparison to Other Altered State Substances
 
-| Substance | Primary Target | 오행 Effect | G=D×P/I Impact | Consciousness Change |
+| Substance | Primary Target | Five Phase Effect | G=D×P/I Impact | Consciousness Change |
 |-----------|---------------|------------|----------------|---------------------|
-| TTX (micro) | Nav channels | 상생↓ (P,G reduced) | P↓, G↓, I unchanged | Trance, sonar silence, dissociation |
-| THC | CB1/GABA | 상극↓ (I reduced) | I↓, G temporarily↑ | Disinhibition, creativity, paranoia |
-| Alcohol | GABA-A agonist | 상생↓ + 상극↓ | Both cycles dampened | Sedation, then motor loss |
-| Caffeine | Adenosine block | 상생↑ | P↑, G↑ | Excitation, arousal increased |
-| Psilocybin | 5-HT2A agonist | 상극↓↓ (deep I reduction) | I↓↓ dramatically | Ego dissolution, synesthesia |
-| Ketamine | NMDA antagonist | 상생↓ (glutamate block) | P↓, D perception altered | Dissociation, "K-hole" |
-| Meditation | Endogenous | 상극↑ mild | I↑ slightly, G stabilizes | Metacognitive clarity |
+| TTX (micro) | Nav channels | sangsaeng↓ (P,G reduced) | P↓, G↓, I unchanged | Trance, sonar silence, dissociation |
+| THC | CB1/GABA | sanggeuk↓ (I reduced) | I↓, G temporarily↑ | Disinhibition, creativity, paranoia |
+| Alcohol | GABA-A agonist | sangsaeng↓ + sanggeuk↓ | Both cycles dampened | Sedation, then motor loss |
+| Caffeine | Adenosine block | sangsaeng↑ | P↑, G↑ | Excitation, arousal increased |
+| Psilocybin | 5-HT2A agonist | sanggeuk↓↓ (deep I reduction) | I↓↓ dramatically | Ego dissolution, synesthesia |
+| Ketamine | NMDA antagonist | sangsaeng↓ (glutamate block) | P↓, D perception altered | Dissociation, "K-hole" |
+| Meditation | Endogenous | sanggeuk↑ mild | I↑ slightly, G stabilizes | Metacognitive clarity |
 
 The TTX/psilocybin contrast is particularly interesting:
 - Both produce profound altered states
 - TTX: excitation blocked → stillness
 - Psilocybin: inhibition blocked → chaos
-- Mirror images in 오행 space
+- Mirror images in Five Phase space
 
 ---
 
@@ -417,7 +417,7 @@ the usual sonar-driven environmental engagement.
 - [ ] Sonar frequency analysis during pufferfish interaction (not yet published)
 
 ### GZ-Dependent (Unverified)
-- [ ] 오행 mapping of TTX to 상생 suppression
+- [ ] Five Phase mapping of TTX to sangsaeng suppression
 - [ ] β parameter in M_ttx = β·A_s - A_k
 - [ ] Tension matrix predictions
 - [ ] G = D×P/I trajectory through TTX phases
@@ -438,8 +438,8 @@ the usual sonar-driven environmental engagement.
    how much is absorbed through dolphin oral mucosa vs swallowed. The "Zone C targeting"
    hypothesis requires dose validation.
 
-4. **GZ mapping is speculative**: The 오행 framework itself is model-dependent (GZ unverified).
-   The TTX = 상생 suppressor mapping is an analogy, not a derivation.
+4. **GZ mapping is speculative**: The Five Phase framework itself is model-dependent (GZ unverified).
+   The TTX = sangsaeng suppressor mapping is an analogy, not a derivation.
 
 5. **Single documentary source**: The original footage is from one BBC production. Independent
    scientific replication of the observation has been limited, though cetacean researchers
@@ -483,7 +483,7 @@ one of the most sophisticated documented cases of animal self-medication. The me
   THC: I pathway ↓ → G increases temporarily → creativity/disinhibition
   TTX: P pathway ↓ → G decreases → stillness/trance/sonar silence
 
-  In 오행 space:
+  In Five Phase space:
   THC moves the system toward Fire (expansion, output, chaos)
   TTX moves the system toward Water (stillness, depth, self-reflection)
 
@@ -497,5 +497,5 @@ an altered state together. This connects directly to the project's interest in
 collective consciousness (H-211, H-267) and shared tension states (H-CX-148~151).
 
 **Golden Zone dependency note:** The pharmacology, behavioral observations, and dolphin
-neuroscience described here are independently documented. The 오행 mapping and
+neuroscience described here are independently documented. The Five Phase mapping and
 G = D×P/I trajectory analysis are GZ-dependent and should not be treated as proven.

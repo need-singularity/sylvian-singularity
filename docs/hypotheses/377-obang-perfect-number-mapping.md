@@ -1,12 +1,12 @@
 # H-377: Obang Perfect Number Mapping
 
-> **Hypothesis:** The Korean cosmological concept of 오방 (Obang, Five Directions: East, West, South, North, Center) maps structurally onto the divisor architecture of the perfect number 6. The four cardinal directions correspond to the four proper divisors {1, 2, 3, 6}, while the Center corresponds to the number 6 itself as a unified whole. This mapping is not arbitrary: σ₋₁(6) = 2 encodes the weight of the center, 5/6 is the Compass upper bound (five directions within six), and 1/6 is the incompleteness — the untranslated sixth dimension beyond cardinal space.
+> **Hypothesis:** The Korean cosmological concept of Obang (Five Directions: East, West, South, North, Center) maps structurally onto the divisor architecture of the perfect number 6. The four cardinal directions correspond to the four proper divisors {1, 2, 3, 6}, while the Center corresponds to the number 6 itself as a unified whole. This mapping is not arbitrary: σ₋₁(6) = 2 encodes the weight of the center, 5/6 is the Compass upper bound (five directions within six), and 1/6 is the incompleteness — the untranslated sixth dimension beyond cardinal space.
 
 ---
 
 ## Background and Context
 
-오방 (Obang) is a foundational concept in Korean (and broader East Asian) cosmology, derived from the Five Element theory (오행, Ohaeng). It organizes space, color, season, and element into five directional positions:
+Obang is a foundational concept in Korean (and broader East Asian) cosmology, derived from the Five Element theory (Ohaeng). It organizes space, color, season, and element into five directional positions:
 
 | Direction | Korean | Element | Color |
 |-----------|--------|---------|-------|

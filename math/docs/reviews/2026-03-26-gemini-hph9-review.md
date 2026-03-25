@@ -9,9 +9,9 @@
 
 ## Overview
 
-H-PH-9 (Perfect Number Unification Pattern)을 중심으로 한 18개 물리 가설에 대해:
-1. Gemini 3.1 Pro가 6라운드 독립 코드 검증 + 철학적 평가
-2. Claude 6개 에이전트가 병행 수치 검증
+For 18 physics hypotheses centered on H-PH-9 (Perfect Number Unification Pattern):
+1. Gemini 3.1 Pro performed 6 rounds of independent code verification + philosophical evaluation
+2. Claude's 6 agents performed parallel numerical verification
 
 ### Final Score: 18/18 arithmetically verified, 1 corrected, 2 weak
 

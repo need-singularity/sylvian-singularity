@@ -51,8 +51,8 @@ What would happen in the **crossed** cases?
 ## The (α, β) Consciousness Space
 
 In the ohaeng dual-axis model (H-393):
-- α = inhibition axis (상극 force, suppresses divergent activation)
-- β = excitation axis (상생 force, suppresses inhibitory over-damping)
+- α = inhibition axis (repulsion force, suppresses divergent activation)
+- β = excitation axis (generation force, suppresses inhibitory over-damping)
 - Optimal point: (α, β) = (1/e, 1/e) ≈ (0.368, 0.368) — the Golden Zone diagonal
 - Meditation moves both axes toward origin along the diagonal
 
@@ -135,7 +135,7 @@ Dolphin baseline consciousness differs fundamentally from human:
 - Baseline inhibitory control is LOW relative to excitation level
 
 THC effects predicted from the ohaeng model:
-- THC reduces α (상극 / inhibitory suppression is weakened)
+- THC reduces α (repulsion / inhibitory suppression is weakened)
 - In dolphins, inhibition partly controls hemisphere-switching during USWS
 - **Prediction: THC would disrupt bilateral sleep — both hemispheres forced awake simultaneously**
 - This is the OPPOSITE of TTX (which equalizes hemispheres at low activity)

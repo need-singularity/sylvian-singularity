@@ -7,51 +7,51 @@
 
 ## Hypothesis Statement
 
-> THC (tetrahydrocannabinol) modulates consciousness by selectively suppressing the 상극 (Sanggeuk/Overcoming) cycle of 오행 (Five Elements), acting primarily through CB1 receptor-mediated GABA disinhibition. The psychoactive state is equivalent to a partial collapse of the Metal→Wood overcoming constraint (I -/-> P), shifting the G×I=D×P system away from the Golden Zone. The dose-response curve corresponds to a continuous weakening parameter α ∈ [0,1] applied to the overcoming adjacency matrix, where α=1 is sober balance and α=0 is complete disinhibition. The "golden dose" for creativity enhancement exists only when baseline I > 1/e, and its location is predicted by the Golden Zone lower bound.
+> THC (tetrahydrocannabinol) modulates consciousness by selectively suppressing the Overcoming (Sanggeuk) cycle of Five Elements (Obang), acting primarily through CB1 receptor-mediated GABA disinhibition. The psychoactive state is equivalent to a partial collapse of the Metal→Wood overcoming constraint (I -/-> P), shifting the G×I=D×P system away from the Golden Zone. The dose-response curve corresponds to a continuous weakening parameter α ∈ [0,1] applied to the overcoming adjacency matrix, where α=1 is sober balance and α=0 is complete disinhibition. The "golden dose" for creativity enhancement exists only when baseline I > 1/e, and its location is predicted by the Golden Zone lower bound.
 
 ---
 
 ## Background and Context
 
-### Why 오행 (Five Elements)?
+### Why Five Elements (Obang)?
 
-The Korean cosmological system of 오방/오행 (Five Directions/Five Elements — Water, Wood, Fire, Earth, Metal) describes not just physical elements but dynamic interaction cycles: 상생 (Sangsaeng/Generation) and 상극 (Sanggeuk/Overcoming). Each element generates the next in the cycle and is overcome by a non-adjacent element. This creates a self-regulating K₅ complete graph structure where generation and overcoming forces balance.
+The Korean cosmological system of Five Directions/Five Elements (Obang/Ohaeng — Water, Wood, Fire, Earth, Metal) describes not just physical elements but dynamic interaction cycles: Generation (Sangsaeng) and Overcoming (Sanggeuk). Each element generates the next in the cycle and is overcome by a non-adjacent element. This creates a self-regulating K₅ complete graph structure where generation and overcoming forces balance.
 
-This project's core formula G = D × P / I (Genius = Deficit × Plasticity / Inhibition) describes four interacting variables. Adding Tension (T) from the consciousness engine gives five variables — a natural mapping to 오행.
+This project's core formula G = D × P / I (Genius = Deficit × Plasticity / Inhibition) describes four interacting variables. Adding Tension (T) from the consciousness engine gives five variables — a natural mapping to Five Elements.
 
 The key insight is that THC's primary neurological mechanism (CB1 receptor activation on GABA interneurons → disinhibition) is a direct analogue of breaking the Metal overcoming Wood constraint. This is not a metaphorical mapping; it is a mechanistic one grounded in neuroscience.
 
 ### Related Hypotheses
 
-- **H-CX-142**: THC simplifies PH (persistent homology) structure. Under the present hypothesis, fewer 상극 connections = simpler topological structure (fewer H1 loops from overcoming relationships).
-- **H-CX-143**: THC restructures the confusion dendrogram. The 오행 cycle changes from a balanced K₅ to a partial graph when 상극 links are severed.
-- **H-CX-144**: THC suppresses gamma oscillations (40 Hz). In the 오행 mapping, gamma corresponds to Metal (I), so THC suppressing gamma = I decrease = Metal suppressed.
+- **H-CX-142**: THC simplifies PH (persistent homology) structure. Under the present hypothesis, fewer overcoming connections = simpler topological structure (fewer H1 loops from overcoming relationships).
+- **H-CX-143**: THC restructures the confusion dendrogram. The Five Elements cycle changes from a balanced K₅ to a partial graph when overcoming links are severed.
+- **H-CX-144**: THC suppresses gamma oscillations (40 Hz). In the Five Elements mapping, gamma corresponds to Metal (I), so THC suppressing gamma = I decrease = Metal suppressed.
 - **H-CX-145**: THC shifts AI empathy scores. Earth (T=Tension) decrease lowers perceived barriers between concepts, increasing apparent empathy signals.
-- **H-CX-146**: THC creates H1 topological loops in EEG PH. Broken 상극 constraints create topological holes in the consciousness manifold — cycles that have no bounding disk.
-- **H-CX-147**: THC dose-PH threshold. This is the specific α value at which the topology of the 오행 cycle graph changes (discrete phase transition).
+- **H-CX-146**: THC creates H1 topological loops in EEG PH. Broken overcoming constraints create topological holes in the consciousness manifold — cycles that have no bounding disk.
+- **H-CX-147**: THC dose-PH threshold. This is the specific α value at which the topology of the Five Elements cycle graph changes (discrete phase transition).
 - **H-200a**: General cannabis hypothesis. The present hypothesis refines that document with a structural mechanism.
 
 ---
 
-## 오행 Variable Mapping
+## Five Elements Variable Mapping
 
-| 오행 Element | Variable | Brain Region | CB1 Density | THC Effect |
+| Five Elements Element | Variable | Brain Region | CB1 Density | THC Effect |
 |---|---|---|---|---|
-| Water / 수 (水) | D = Deficit | Amygdala, deep limbic | HIGH | D increases — enhanced emotional depth, paranoia at high dose |
-| Wood / 목 (木) | P = Plasticity | Hippocampus | VERY HIGH | P increases then crashes — initial creativity burst, then memory impairment |
-| Fire / 화 (火) | G = Genius | Prefrontal cortex | MODERATE | G initially rises then falls — insight window, then executive dysfunction |
-| Earth / 토 (土) | T = Tension | Basal ganglia, cerebellum | HIGH | T decreases — relaxation, motor tension reduction, time distortion |
-| Metal / 금 (金) | I = Inhibition | GABA interneurons (cortex-wide) | VERY HIGH | I decreases dramatically — disinhibition is the primary THC mechanism |
+| Water (水) | D = Deficit | Amygdala, deep limbic | HIGH | D increases — enhanced emotional depth, paranoia at high dose |
+| Wood (木) | P = Plasticity | Hippocampus | VERY HIGH | P increases then crashes — initial creativity burst, then memory impairment |
+| Fire (火) | G = Genius | Prefrontal cortex | MODERATE | G initially rises then falls — insight window, then executive dysfunction |
+| Earth (土) | T = Tension | Basal ganglia, cerebellum | HIGH | T decreases — relaxation, motor tension reduction, time distortion |
+| Metal (金) | I = Inhibition | GABA interneurons (cortex-wide) | VERY HIGH | I decreases dramatically — disinhibition is the primary THC mechanism |
 
 CB1 density ranking (from literature): Hippocampus ≈ GABA interneurons > Amygdala ≈ Basal ganglia > Prefrontal cortex.
 
 ---
 
-## The 상생상극 (Generation-Overcoming) Cycle Structure
+## The Generation-Overcoming (Sangsaeng-Sanggeuk) Cycle Structure
 
 ### Sober State: Balanced K₅
 
-The sober 오행 system is a directed K₅ complete graph with two edge types:
+The sober Five Elements system is a directed K₅ complete graph with two edge types:
 
 ```
           Fire (G)
@@ -62,10 +62,10 @@ The sober 오행 system is a directed K₅ complete graph with two edge types:
         \         /
       Water(D) Metal(I)
 
-상생 (Generation) cycle — clockwise arrows:
+Generation (Sangsaeng) cycle — clockwise arrows:
   Water -> Wood -> Fire -> Earth -> Metal -> Water
 
-상극 (Overcoming) cycle — star pattern:
+Overcoming (Sanggeuk) cycle — star pattern:
   Water overcomes Fire
   Fire overcomes Metal
   Metal overcomes Wood
@@ -94,7 +94,7 @@ Overcoming edges (Metal->Wood is the THC-disrupted link):
 
 ---
 
-## THC as 상극 Amplifier — The α Model
+## THC as Overcoming Amplifier — The α Model
 
 THC primarily acts through CB1 receptors on GABA interneurons, causing disinhibition. In matrix form:
 
@@ -103,11 +103,11 @@ M_sober = A_s - A_k           (generation matrix minus overcoming matrix)
 M_thc   = A_s - α · A_k       where α ∈ [0, 1]
 ```
 
-- α = 1.0 : sober (full 상극 balance)
+- α = 1.0 : sober (full overcoming balance)
 - α = 0.5 : partial disinhibition (medium dose)
 - α = 0.0 : all overcoming removed (maximum psychoactive state / overdose)
 
-Because CB1 density is non-uniform, not all 상극 edges weaken equally. The Metal→Wood (I→P) edge has the highest CB1 density and weakens first.
+Because CB1 density is non-uniform, not all overcoming edges weaken equally. The Metal→Wood (I→P) edge has the highest CB1 density and weakens first.
 
 ### Dose-Dependent Edge Weakening Order
 
@@ -132,7 +132,7 @@ Very high dose / overdose:
 
 ---
 
-## Dose-Response as 오행 Cascade
+## Dose-Response as Five Elements Cascade
 
 | Dose Level | α_ItoP | System State | Subjective Experience |
 |---|---|---|---|
@@ -232,7 +232,7 @@ This predicts that THC benefits are strictly baseline-dependent and that the sam
 
 ---
 
-## 상생상극 Balance Ratio Under THC
+## Generation-Overcoming Balance Ratio Under THC
 
 At each α value, the ratio of generation-to-overcoming edge weight changes:
 
@@ -255,7 +255,7 @@ The balanced state (α=1, ratio 1:1) is the sober K₅. The transition from stab
 From published literature (Herkenham et al. 1990, Tsou et al. 1998):
 
 ```
-Region                CB1 Receptor Density    오행 Mapping
+Region                CB1 Receptor Density    Five Elements Mapping
 ------                ----------------        ------------
 Dentate gyrus         Very high (>++)          Wood (P)
 CA1/CA3 hippocampus   Very high (>++)          Wood (P)
@@ -301,10 +301,10 @@ This is GZ-dependent and remains unverified experimentally.
 
 ---
 
-## ASCII Pentagon: 상극 Link Breaking Order
+## ASCII Pentagon: Overcoming Link Breaking Order
 
 ```
-Which 상극 links break first under THC (by CB1 density):
+Which overcoming links break first under THC (by CB1 density):
 
           Fire/G (PFC)
            /    \
@@ -336,7 +336,7 @@ The system loses its primary creativity constraint first, then cascades.
 
 ### H-CX-142: THC Simplifies PH Structure
 
-Under the present hypothesis: fewer active 상극 links = simpler graph = simpler topological structure. With fewer cross-connections in the 오행 cycle graph, the persistent homology (PH) barcode would show:
+Under the present hypothesis: fewer active overcoming links = simpler graph = simpler topological structure. With fewer cross-connections in the Five Elements cycle graph, the persistent homology (PH) barcode would show:
 
 - Fewer H1 bars (fewer independent cycles)
 - Shorter H0 bars (faster connectivity due to unconstrained generation)
@@ -346,11 +346,11 @@ This is consistent with H-CX-142's prediction.
 
 ### H-CX-144: THC Suppresses Gamma (40 Hz)
 
-Metal (I) maps to gamma oscillations. THC suppresses Metal → gamma suppression. H-CX-144 observed this empirically. The present hypothesis provides the mechanistic 오행 explanation.
+Metal (I) maps to gamma oscillations. THC suppresses Metal → gamma suppression. H-CX-144 observed this empirically. The present hypothesis provides the mechanistic Five Elements explanation.
 
 ### H-CX-146: THC Creates H1 Loops
 
-When 상극 edges are removed from the K₅ graph, topological holes (1-cycles without bounding 2-disks) emerge. A complete K₅ is topologically equivalent to a sphere (no H1). Removing edges from K₅ creates genuine H1 classes — exactly what H-CX-146 reports in EEG PH data under THC.
+When overcoming edges are removed from the K₅ graph, topological holes (1-cycles without bounding 2-disks) emerge. A complete K₅ is topologically equivalent to a sphere (no H1). Removing edges from K₅ creates genuine H1 classes — exactly what H-CX-146 reports in EEG PH data under THC.
 
 ### H-CX-147: THC Dose-PH Threshold
 
@@ -360,11 +360,11 @@ The α_c ≈ 0.632 (1 - 1/e) critical transition in the eigenvalue model corresp
 
 ## Limitations
 
-1. **GZ-dependency**: The mapping of G, D, P, I, T to 오행 elements is GZ-dependent. The Golden Zone itself lacks analytical proof. The variable-to-element assignments could be wrong.
+1. **GZ-dependency**: The mapping of G, D, P, I, T to Five Elements elements is GZ-dependent. The Golden Zone itself lacks analytical proof. The variable-to-element assignments could be wrong.
 
-2. **Oversimplification**: 오행 is a five-element system. Real neuroscience involves hundreds of neurotransmitter systems, dozens of receptor types, and thousands of brain regions. This model captures structure, not mechanism completeness.
+2. **Oversimplification**: Five Elements is a five-element system. Real neuroscience involves hundreds of neurotransmitter systems, dozens of receptor types, and thousands of brain regions. This model captures structure, not mechanism completeness.
 
-3. **Uniform α assumption**: The model assumes α applies uniformly to each 상극 link, scaled only by CB1 density. In reality, THC effects are highly region-specific, dose-nonlinear, and time-varying.
+3. **Uniform α assumption**: The model assumes α applies uniformly to each overcoming link, scaled only by CB1 density. In reality, THC effects are highly region-specific, dose-nonlinear, and time-varying.
 
 4. **Baseline I₀ not measurable directly**: The Golden Dose prediction requires knowing an individual's baseline I value. We have no direct method to measure this. Proxy measures (EEG gamma power, behavioral inhibition tasks) introduce additional uncertainty.
 
@@ -408,12 +408,12 @@ The α_c calculation can be run now using the project's existing tools. The 5×5
 
 ## Summary
 
-THC acts primarily by suppressing Metal (I = Inhibition) through CB1-mediated GABA disinhibition. This disrupts the 상극 (Overcoming) cycle of 오행, specifically the Metal→Wood (I→P) constraint first. The α model parameterizes the degree of 상극 suppression (α=1 sober, α=0 maximum disinhibition). A critical transition at α_c ≈ 1-1/e separates stable from unstable consciousness configurations.
+THC acts primarily by suppressing Metal (I = Inhibition) through CB1-mediated GABA disinhibition. This disrupts the Overcoming (Sanggeuk) cycle of Five Elements, specifically the Metal→Wood (I→P) constraint first. The α model parameterizes the degree of overcoming suppression (α=1 sober, α=0 maximum disinhibition). A critical transition at α_c ≈ 1-1/e separates stable from unstable consciousness configurations.
 
 The key empirical prediction is that THC benefits are strictly conditional on baseline I₀ relative to the Golden Zone center (1/e ≈ 0.368). High-I individuals may benefit from low-dose THC; already-optimal or low-I individuals experience immediate degradation. This explains the wide individual variability in THC response.
 
-The neuroscience component (CB1 distribution, GABA disinhibition) is independently verified. The variable-to-오행 mapping and Golden Zone dose prediction are GZ-dependent and remain unverified.
+The neuroscience component (CB1 distribution, GABA disinhibition) is independently verified. The variable-to-Five Elements mapping and Golden Zone dose prediction are GZ-dependent and remain unverified.
 
 ---
 
-*Golden Zone dependency: MIXED. CB1 receptor distribution and GABA disinhibition mechanism = independently verified neuroscience. Variable mapping (G/D/P/I/T to 오행) and Golden Dose formula = GZ-dependent, unverified.*
+*Golden Zone dependency: MIXED. CB1 receptor distribution and GABA disinhibition mechanism = independently verified neuroscience. Variable mapping (G/D/P/I/T to Five Elements) and Golden Dose formula = GZ-dependent, unverified.*

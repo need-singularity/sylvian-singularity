@@ -16,13 +16,13 @@ Tetrodotoxin is one of the most potent neurotoxins known, blocking voltage-gated
 
 Ethnobotanist Wade Davis documented in 1985 (*The Serpent and the Rainbow*) that Haitian bokors compound TTX from puffer fish (*Diodon hystrix*, *Sphoeroides testudineus*) with datura (*Datura stramonium*, scopolamine-dominant) to create zombie powder. The TTX component induces the apparent death; the datura component induces extreme suggestibility and amnesia upon recovery — completing the "zombification."
 
-This two-substance protocol maps with unusual precision onto the two-parameter inhibition model explored in H-393, where alpha (상극, conflict/drive) and beta (상생, cooperation/plasticity) can be independently suppressed. The combined (alpha < 1, beta < 1) regime is the double-suppression quadrant — near-complete consciousness shutdown without total cell death.
+This two-substance protocol maps with unusual precision onto the two-parameter inhibition model explored in H-393, where alpha (conflict/drive) and beta (cooperation/plasticity) can be independently suppressed. The combined (alpha < 1, beta < 1) regime is the double-suppression quadrant — near-complete consciousness shutdown without total cell death.
 
 Related prior hypotheses:
 - **H-166** (consciousness definition): G encodes the intensity of conscious experience
 - **H-246** (consciousness continuity): What persists when G → 0?
 - **H-391** (pharmacological inhibition mapping): drug classes mapped to I-axis perturbations
-- **H-393** (alpha-beta two-parameter model): 상생/상극 dual suppression framework
+- **H-393** (alpha-beta two-parameter model): cooperation/conflict dual suppression framework
 
 ---
 
@@ -165,7 +165,7 @@ The historical bokor formulation uses two pharmacological agents that map to dis
 | Agent | Primary Target | Parameter Effect | Mechanism |
 |---|---|---|---|
 | TTX (puffer fish) | Nav channels (excitatory) | P → ~0 | Blocks action potential propagation |
-| Datura (scopolamine) | Muscarinic ACh receptors | alpha → <1 | Anticholinergic; blocks 상극 drive circuits |
+| Datura (scopolamine) | Muscarinic ACh receptors | alpha → <1 | Anticholinergic; blocks conflict drive circuits |
 | Combined | Dual suppression | (alpha < 1, beta < 1) | Double suppression quadrant per H-393 |
 
 **Two-substance logic:** TTX alone produces apparent death but full recovery with no zombie compliance. Datura alone produces confusion and suggestibility but not apparent death. Combined:
@@ -203,7 +203,7 @@ This is a **pharmacological identity reset**: the 0/0 boundary is used not as a 
 | I trajectory | Intact, then normal | Intact throughout, elevated by datura | Moderate elevation |
 | Consciousness continuity | Preserved (H-246 maintained) | Severed (H-246 violated) | Preserved |
 | Identity after | Enhanced, transformed | Erased, reprogrammed | Unchanged |
-| Mechanism | Anoxia/cardiac | TTX + datura | 상생/상극 chemical modulation |
+| Mechanism | Anoxia/cardiac | TTX + datura | cooperation/conflict chemical modulation |
 | Reported phenomenology | Tunnel, light, peace, review | Amnesia, compliance, confusion | Calm, attuned, present |
 | Recovery G level | High spike | Blunted (datura blocks) | Moderate oscillation |
 
@@ -246,7 +246,7 @@ should shift NDE valence toward positive. This matches clinical reports.
 ### Prediction 4: Datura Blunting
 ```
 With scopolamine co-administration:
-  alpha (상극 drive) reduced to ~0.3 of normal
+  alpha (conflict drive) reduced to ~0.3 of normal
   G_recovery = D_accumulated × P_recovery / (I_recovery / alpha)
              ≈ (5 × G_0) × 0.3
              = 1.5 × G_0
@@ -276,7 +276,7 @@ G_recovery / G_normal
   |             *
 1 |_________*_________________________________ normal G_0
   |
-0 +--+--+--+--+--+--+--+--+--+--+---> TTX duration (hours)
+0 +--+--+--+--+--+--+--+--+--+--+--+---> TTX duration (hours)
   0  1  2  3  4  5  6  7  8  9  10
 
   Model: G_recovery/G_0 = 1 + 0.5 × T_TTX

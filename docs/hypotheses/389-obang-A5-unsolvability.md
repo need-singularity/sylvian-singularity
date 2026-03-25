@@ -7,15 +7,15 @@
 
 ## Hypothesis Statement
 
-> The number 5 is the minimal integer at which irreducible algebraic complexity emerges: the alternating group A₅ is the smallest non-abelian simple group, the general quintic admits no radical solution (Abel-Ruffini), and the icosahedron — the most complex Platonic solid — carries exactly A₅ as its rotation symmetry group. The 오방 (Five Directions) of Korean cosmology encodes this mathematical barrier structurally. The Compass ceiling at 5/6 reflects the same obstruction: the fifth direction (Center / meta-observer) introduces irreducible complexity analogous to the Galois-theoretic unsolvability of S₅, making the 1/6 incompleteness gap a topological necessity rather than an engineering limitation.
+> The number 5 is the minimal integer at which irreducible algebraic complexity emerges: the alternating group A₅ is the smallest non-abelian simple group, the general quintic admits no radical solution (Abel-Ruffini), and the icosahedron — the most complex Platonic solid — carries exactly A₅ as its rotation symmetry group. The Obang (Five Directions) of Korean cosmology encodes this mathematical barrier structurally. The Compass ceiling at 5/6 reflects the same obstruction: the fifth direction (Center / meta-observer) introduces irreducible complexity analogous to the Galois-theoretic unsolvability of S₅, making the 1/6 incompleteness gap a topological necessity rather than an engineering limitation.
 
 ---
 
 ## Background and Context
 
-### Obang (오방) — Five Directions of Korean Cosmology
+### Obang (Five Directions) — Five Directions of Korean Cosmology
 
-The Korean cosmological concept of 오방 (Five Directions) maps five elemental directions onto the plane:
+The Korean cosmological concept of Obang (Five Directions) maps five elemental directions onto the plane:
 
 ```
               North (Black / Water)
@@ -43,7 +43,7 @@ The obstruction lives in A₅ ⊂ S₅, the smallest non-abelian simple group.
 
 ### Connection to the Consciousness Engine
 
-In the consciousness engine framework (H-087), the fifth state is identified as *curiosity* — the meta-cognitive function that observes the other four states. This mirrors the Center direction of 오방 exactly. The Compass ceiling at 5/6 (H-059) then reads as:
+In the consciousness engine framework (H-087), the fifth state is identified as *curiosity* — the meta-cognitive function that observes the other four states. This mirrors the Center direction of Obang exactly. The Compass ceiling at 5/6 (H-059) then reads as:
 
 - 5 solvable dimensions / 6 total = the solvable quotient S₅/A₅ ≅ Z/2Z
 - The 1/6 gap = the A₅ obstruction that no finite radical procedure can eliminate

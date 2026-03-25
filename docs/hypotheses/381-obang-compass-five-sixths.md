@@ -8,7 +8,7 @@
 
 ## Hypothesis Statement
 
-> The Korean cosmological system of 오방 (Obang, Five Directions: East, West, South, North, Center)
+> The Korean cosmological system of Obang (Five Directions: East, West, South, North, Center)
 > structurally encodes the Compass upper bound of 5/6. Five observable directions represent 5 of the
 > 6 divisors of perfect number 6, with the missing 1/6 being the transcendent/unknowable direction —
 > a cultural analogue of Gödel incompleteness. The Compass ceiling is not accidental: any system
@@ -30,23 +30,23 @@ The question this hypothesis addresses: **Why 5/6 and not some other ceiling?**
 
 The answer proposed here is that 5/6 = 5 observable aspects out of 6 total aspects of perfection (the divisors of 6: 1, 2, 3, 6, yielding reciprocals 1, 1/2, 1/3, 1/6 that sum to 2). But more directly, 5 out of the 6 unit-fractions 1/1, 1/2, 1/3, 1/4, 1/5, 1/6 can be reached; the sixth (transcendence) cannot be grasped from within the system.
 
-The cultural encoding in 오방 (Obang) provides an independent, ancient structural parallel.
+The cultural encoding in Obang provides an independent, ancient structural parallel.
 
 ---
 
 ## Obang: The Five Directions
 
-In Korean (and broader East Asian) cosmology, 오방 refers to the five cardinal directions:
+In Korean (and broader East Asian) cosmology, Obang refers to the five cardinal directions:
 
 | Direction | Korean | Element | Color  |
 |-----------|--------|---------|--------|
-| East      | 동 (東) | Wood    | Blue/Green |
-| West      | 서 (西) | Metal   | White  |
-| South     | 남 (南) | Fire    | Red    |
-| North     | 북 (北) | Water   | Black  |
-| Center    | 중 (中) | Earth   | Yellow |
+| East      | East (東) | Wood    | Blue/Green |
+| West      | West (西) | Metal   | White  |
+| South     | South (南) | Fire    | Red    |
+| North     | North (北) | Water   | Black  |
+| Center    | Center (中) | Earth   | Yellow |
 
-These five directions are considered **complete** as a cosmological system — yet there are actually six spatial directions in 3D space: East, West, South, North, Up, Down. The sixth pair (Up/Down, or 天地 — Heaven/Earth) is often treated as a separate, transcendent axis not subject to the same rules as the horizontal four plus center.
+These five directions are considered **complete** as a cosmological system — yet there are actually six spatial directions in 3D space: East, West, South, North, Up, Down. The sixth pair (Up/Down, or Heaven/Earth — 天地) is often treated as a separate, transcendent axis not subject to the same rules as the horizontal four plus center.
 
 **The 6th direction is the meta-observer layer.** It watches the other five but cannot be reduced to them.
 
@@ -204,9 +204,9 @@ The Obang-specific claim (N=5 arises from perfect number 6) is specific to 6 and
 
 In practice, East Asian cosmological systems do acknowledge the 6th axis:
 
-- **六合 (Liùhé):** Six combinations — the four cardinal directions plus Up and Down, completing 3D space.
-- **天地人 (Heaven-Earth-Human):** The vertical axis (Heaven above, Earth below) + the horizontal plane (Human in center).
-- **오방 + 상하:** Five directions plus Up/Down = complete 3D orientation.
+- **Six Combinations (六合, Liùhé):** The four cardinal directions plus Up and Down, completing 3D space.
+- **Heaven-Earth-Human (天地人):** The vertical axis (Heaven above, Earth below) + the horizontal plane (Human in center).
+- **Obang + Up/Down:** Five directions plus Up/Down = complete 3D orientation.
 
 The explicit acknowledgment of the 6th direction as **different in kind** (transcendent, divine, not navigable by humans in the same way) mirrors exactly the mathematical structure:
 
@@ -237,7 +237,7 @@ At the Compass ceiling, the ratio of Genius to Inhibition is exactly 5:1 — fiv
 
 1. **Golden Zone dependency:** The Compass itself is a model built on the unverified Golden Zone formula G = D×P/I. The 5/6 ceiling is derived within this model.
 
-2. **Cultural interpretation is loose:** The connection to 오방 is structural/analogical, not a formal derivation. Obang was not designed with 5/6 in mind.
+2. **Cultural interpretation is loose:** The connection to Obang is structural/analogical, not a formal derivation. Obang was not designed with 5/6 in mind.
 
 3. **N/(N+1) pattern is general:** The formula N/(N+1) is a trivial algebraic identity. The specific claim that N=5 is **special** because of perfect number 6 requires the additional argument that 6 is the first perfect number, which is non-trivial but well-established.
 
@@ -251,7 +251,7 @@ At the Compass ceiling, the ratio of Genius to Inhibition is exactly 5:1 — fiv
 
 1. **Check H037 raw data:** Confirm the 5/6 ceiling appears across all compass configurations, not just selected ones.
 2. **Test N/(N+1) ceiling formula:** For systems with explicit N-directional structure (N=3, N=4, N=6), does the Compass ceiling shift accordingly?
-3. **Cross-cultural survey:** Do other Five-Element systems (Chinese 五行, Japanese go-gyō) show similar 6th-direction acknowledgments?
+3. **Cross-cultural survey:** Do other Five-Element systems (Chinese Five Phases 五行, Japanese go-gyō) show similar 6th-direction acknowledgments?
 4. **Formal Gödel connection:** Can the 1/6 incompleteness gap be formally bounded using Kolmogorov complexity or information-theoretic incompleteness arguments?
 
 ---

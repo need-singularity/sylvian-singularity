@@ -9,7 +9,7 @@
 
 ## Hypothesis Statement
 
-> The traditional Korean cosmological system of Obangsaek (오방, Five Directions) maps
+> The traditional Korean cosmological system of Obangsaek (Five Directions) maps
 > structurally onto the five human senses as consciousness input channels. A 5-expert
 > Golden MoE architecture where each expert specializes in one sensory modality, gated
 > by a Golden Zone router (I ≈ 1/e), captures the multimodal structure of conscious
@@ -21,7 +21,7 @@
 
 ## Background and Context
 
-Obangsaek (오방색) is the Korean five-directional color and element system rooted in
+Obangsaek (five-directional color) is the Korean five-directional color and element system rooted in
 East Asian cosmology. The five directions — East, West, South, North, Center — each
 correspond to an element (Wood, Metal, Fire, Water, Earth), a color, a season, and
 an organ system. This system has been applied to medicine, cuisine, architecture, and
@@ -54,11 +54,11 @@ four directions in equilibrium.
 
 | Direction | Korean | Element | Color  | Sense       | Bandwidth  | Evolutionary Age |
 |-----------|--------|---------|--------|-------------|------------|-----------------|
-| East      | 동 (東) | Wood    | Blue   | Vision      | ~10 Mbps   | Intermediate    |
-| West      | 서 (西) | Metal   | White  | Hearing     | ~100 Kbps  | Old             |
-| South     | 남 (南) | Fire    | Red    | Touch       | ~1 Mbps    | Very Old        |
-| North     | 북 (北) | Water   | Black  | Smell       | ~10 Kbps   | Oldest          |
-| Center    | 중 (中) | Earth   | Yellow | Taste       | ~1 Kbps    | Oldest          |
+| East      | East   | Wood    | Blue   | Vision      | ~10 Mbps   | Intermediate    |
+| West      | West   | Metal   | White  | Hearing     | ~100 Kbps  | Old             |
+| South     | South  | Fire    | Red    | Touch       | ~1 Mbps    | Very Old        |
+| North     | North  | Water   | Black  | Smell       | ~10 Kbps   | Oldest          |
+| Center    | Center | Earth   | Yellow | Taste       | ~1 Kbps    | Oldest          |
 
 Rationale for each mapping:
 
@@ -132,7 +132,7 @@ is natural: most inputs come from vision, but attention can shift router weights
    | Vision | |Hearing | | Touch  | | Smell  | | Taste  |
    | (East) | | (West) | |(South) | |(North) | |(Center)|
    +--------+ +--------+ +--------+ +--------+ +--------+
-        |         |         |         |        |
+        |         |         |         |         |
         +----+----+----+----+----+----+----+---+
                             |
                     [Golden Zone Router]

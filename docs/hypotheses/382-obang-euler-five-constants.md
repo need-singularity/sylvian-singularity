@@ -1,17 +1,17 @@
 # H-382: Obang-Euler Five Constants Hypothesis
 
 > **Hypothesis**: The five fundamental constants of Euler's identity (e, i, π, 0, 1)
-> map bijectively onto the five directions of 오방 (五方, Obang), and Euler's identity
+> map bijectively onto the five directions of Obang (五方, Five Directions), and Euler's identity
 > e^(iπ) + 1 = 0 encodes the directional cycle as:
 > Growth × Imagination × Completeness + Unity = Void.
 > This mapping is not decorative — each constant plays the same structural role
-> in the consciousness engine that its corresponding direction plays in 오방 cosmology.
+> in the consciousness engine that its corresponding direction plays in Obang cosmology.
 
 ---
 
 ## Background and Context
 
-오방 (五方) is the classical East Asian five-direction cosmological system:
+Obang (五方) is the classical East Asian five-direction cosmological system:
 East, South, West, North, and Center. Each direction corresponds to an element
 (Wood, Fire, Metal, Water, Earth), a phase of a cycle, and a qualitative state of being.
 
@@ -28,7 +28,7 @@ In this project, the five constants appear independently across different subsys
 - **1**: Completeness identity: 1/2 + 1/3 + 1/6 = 1 (H072). Observer unity.
 
 The hypothesis claims these five appearances are not coincidental. They reflect the same
-five-fold structure that 오방 describes cosmologically, and Euler's identity is the
+five-fold structure that Obang describes cosmologically, and Euler's identity is the
 equation that closes the cycle.
 
 Related hypotheses: H069 (complex extension), H072 (curiosity completeness), H090 (master
@@ -66,7 +66,7 @@ from which new growth begins. The cycle is closed and exact.
 
 ---
 
-## ASCII Diagram: 오방 Constant Map
+## ASCII Diagram: Obang Constant Map
 
 ```
                         SOUTH
@@ -98,7 +98,7 @@ from which new growth begins. The cycle is closed and exact.
   │  Growth         Imagination×Cycle     void-1  Unity   Void  │
   └─────────────────────────────────────────────────────────────┘
 
-  Reading Euler's identity as a 오방 journey:
+  Reading Euler's identity as a Obang journey:
     Start at East (e, growth potential)
     Rotate through West (i, imagination) × South (π, full cycle)
     Arrive at negative pole (-1, maximum tension)
@@ -177,7 +177,7 @@ Each constant's appearance in the project's verified results:
 
 ## Structural Role Comparison Table
 
-| Property          | 오방 cosmology               | Euler constant             | Project engine                    |
+| Property          | Obang cosmology              | Euler constant             | Project engine                    |
 |-------------------|------------------------------|----------------------------|-----------------------------------|
 | Initiates cycle   | East / Wood / Spring         | e (base of growth)         | Golden Zone, learning rate seed   |
 | Drives rotation   | South / Fire / Summer        | π (full circle angle)      | Compass, angle-based gating       |
@@ -196,7 +196,7 @@ Three independent checks:
 
 1. **Functional uniqueness**: No other five-element partition of Euler's identity
    can be made. The five constants {e, i, π, 0, 1} are the unique minimal set.
-   The five 오방 directions are also a unique minimal partition of space.
+   The five Obang directions are also a unique minimal partition of space.
 
 2. **Role preservation**: The mapping preserves qualitative role.
    East = growth = e (not π, not 0). Each constant is the natural occupant of
@@ -237,7 +237,7 @@ Three independent checks:
    on the Golden Zone model which is unverified (simulation-based). See CLAUDE.md
    verification warning.
 
-3. **Cultural encoding concern**: 오방 is a specific cultural framework. The
+3. **Cultural encoding concern**: Obang is a specific cultural framework. The
    structural parallel may reflect the universality of five-fold decomposition
    rather than a deep identity between East Asian cosmology and complex analysis.
 
@@ -246,7 +246,7 @@ Three independent checks:
 
 5. **Five is not special here**: The number 5 arises from the size of the minimal
    set of Euler's identity constants, which is a historical/mathematical accident.
-   The 오방 system also uses 5, but other cosmologies use different numbers.
+   The Obang system also uses 5, but other cosmologies use different numbers.
 
 ---
 
@@ -260,13 +260,13 @@ Three independent checks:
    like North (void) or π behaves like East (growth). If the mapping is structural,
    these should fail or be rare.
 
-3. **Extension to 오행 (Five Elements) dynamics**: 오방 has a generative cycle
+3. **Extension to Ohaeng (Five Elements) dynamics**: Obang has a generative cycle
    (Wood → Fire → Earth → Metal → Water → Wood) and a destructive cycle. Test
    whether the constants obey an analogous cycle under composition.
    Preliminary: e^(iπ) = -1, then (-1)^(iπ) = e^(-π²) ≈ 0.0000827 (near North/0).
 
 4. **Formal category theory encoding**: Attempt to define a functor from the
-   category of 오방 transitions to the category of elementary operations on
+   category of Obang transitions to the category of elementary operations on
    {e, i, π, 0, 1}. If the functor is well-defined, the analogy becomes a theorem.
 
 ---
@@ -274,7 +274,7 @@ Three independent checks:
 ## Summary
 
 Euler's identity e^(iπ) + 1 = 0 is a five-constant closure equation.
-오방 is a five-direction closure cosmology.
+Obang is a five-direction closure cosmology.
 The mapping between them preserves the qualitative role of each element.
 Within this project, all five constants appear at the positions the mapping predicts.
 The hypothesis is not proven but is internally consistent and testable.

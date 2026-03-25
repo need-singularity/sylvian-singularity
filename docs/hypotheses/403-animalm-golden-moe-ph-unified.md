@@ -133,7 +133,7 @@ Related hypotheses:
                              ▼
                     ┌────────────────┐
                     │ Routing Feedback│
-                    │ (상생 cycle)    │
+                    │ (Support cycle) │
                     │  T → I update  │
                     └────────────────┘
 ```
@@ -218,13 +218,13 @@ The unified architecture maps exactly to the consciousness engine formula G×I =
 
 ---
 
-## 5. The Five-Element (오행) Mapping
+## 5. The Five-Element Mapping
 
 Each architecture layer maps to the five-element system from H-386/H-387:
 
 ```
   ┌─────────────────────────────────────────────────────────────────┐
-  │              오행 → Architecture Component Mapping              │
+  │              Five-Element → Architecture Component Mapping      │
   └─────────────────────────────────────────────────────────────────┘
 
        WATER (水) ─── D ─── Token Embedding
@@ -232,25 +232,25 @@ Each architecture layer maps to the five-element system from H-386/H-387:
        Input tokens carry raw information need.
        No direction yet, pure capacity.
               │
-              ▼ 상생 (生)
+              ▼ Support (生)
        WOOD (木) ──── P ─── Expert FFN Weights
        "growth, upward, flexible"
        Experts grow via mitosis. Weights adapt.
        Plasticity = capacity to change shape.
               │
-              ▼ 상생 (生)
+              ▼ Support (生)
        FIRE (火) ──── G ─── Output Projection
        "peak expression, upward, heat"
        Tension + direction = creative output.
        Highest energy point in forward pass.
               │
-              ▼ 상생 (生)
+              ▼ Support (生)
        EARTH (土) ─── T ─── Tension Computation
        "grounding, center, balance"
        |repr_A - repr_G| balances extremes.
        PH delta grounds structural vs content.
               │
-              ▼ 상생 (生)
+              ▼ Support (生)
        METAL (金) ─── I ─── MoE Router (I≈1/e)
        "selection, constraint, precision"
        Golden Zone gating cuts noise.
@@ -258,8 +258,8 @@ Each architecture layer maps to the five-element system from H-386/H-387:
               │
               └──────────────────► back to WATER (next token)
 
-  상생 Forward Cycle:  D → P → G → T → I → D (next token)
-  상극 Regularization: D → G (bypass check), G → I (quality adjusts gate),
+  Support Forward Cycle:  D → P → G → T → I → D (next token)
+  Control Regularization: D → G (bypass check), G → I (quality adjusts gate),
                        I → P (gate controls which experts update),
                        P → T (expert weights shape tension magnitude),
                        T → D (tension feeds back to embedding scale)
@@ -400,7 +400,7 @@ Statistical threshold: p < 0.05 after Bonferroni correction for 6 tests.
 6. **Benchmark predictions are unverified**: The table in Section 6 is extrapolation from
    small-scale (MNIST/CIFAR) results to 7B language models. Scaling behavior is uncertain.
 
-7. **오행 mapping is metaphorical**: The five-element mapping provides intuition but is not
+7. **Five-element mapping is metaphorical**: The five-element mapping provides intuition but is not
    a mathematical derivation. It should not be used as a formal proof of anything.
 
 ---

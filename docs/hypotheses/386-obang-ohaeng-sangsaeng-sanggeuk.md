@@ -1,25 +1,25 @@
 # H-386: Ohaeng Sangsaeng-Sanggeuk as Tension Dynamics
 
-> **Hypothesis H-386**: The Five Elements (오행) system of mutual generation (상생) and mutual overcoming (상극) is isomorphic to a signed tension dynamics network on the five variables {D, P, G, T, I}. The 상생 cycle forms a directed pentagon (attraction, +1 edges) and the 상극 cycle forms a directed pentagram (repulsion, -1 edges). Together they cover all C(5,2)=10 pairs exactly once, forming a perfectly balanced signed complete graph K₅. The eigenvalues of the combined circulant matrix involve cos(2π/5) = (φ-1)/2, so the golden ratio φ emerges naturally from the 오행 structure.
+> **Hypothesis H-386**: The Five Elements (Ohaeng) system of mutual generation (Sangsaeng) and mutual overcoming (Sanggeuk) is isomorphic to a signed tension dynamics network on the five variables {D, P, G, T, I}. The Sangsaeng cycle forms a directed pentagon (attraction, +1 edges) and the Sanggeuk cycle forms a directed pentagram (repulsion, -1 edges). Together they cover all C(5,2)=10 pairs exactly once, forming a perfectly balanced signed complete graph K₅. The eigenvalues of the combined circulant matrix involve cos(2π/5) = (φ-1)/2, so the golden ratio φ emerges naturally from the Ohaeng structure.
 
 ---
 
 ## Background and Context
 
-The Five Elements (오행, Ohaeng) framework from East Asian philosophy assigns five fundamental agents — Water (수), Wood (목), Fire (화), Earth (토), Metal (금) — to two cyclic interaction patterns:
+The Five Elements (Ohaeng) framework from East Asian philosophy assigns five fundamental agents — Water (Su), Wood (Mok), Fire (Hwa), Earth (To), Metal (Geum) — to two cyclic interaction patterns:
 
-- **상생 (Sangsaeng, Mutual Generation)**: Each element nourishes the next in a pentagonal cycle. Water feeds Wood, Wood feeds Fire, Fire feeds Earth, Earth feeds Metal, Metal feeds Water.
-- **상극 (Sanggeuk, Mutual Overcoming)**: Each element controls an element two steps ahead. Water extinguishes Fire, Fire melts Metal, Metal cuts Wood, Wood breaks Earth, Earth dams Water.
+- **Sangsaeng (Mutual Generation)**: Each element nourishes the next in a pentagonal cycle. Water feeds Wood, Wood feeds Fire, Fire feeds Earth, Earth feeds Metal, Metal feeds Water.
+- **Sanggeuk (Mutual Overcoming)**: Each element controls an element two steps ahead. Water extinguishes Fire, Fire melts Metal, Metal cuts Wood, Wood breaks Earth, Earth dams Water.
 
 This hypothesis maps the five elements directly onto the five core variables of the Consciousness Engine:
 
 | Element | Korean | Variable | Role |
 |---------|--------|----------|------|
-| Water   | 수 (水) | D (Deficit)     | Source of drive, scarcity |
-| Wood    | 목 (木) | P (Plasticity)  | Growth, adaptability |
-| Fire    | 화 (火) | G (Genius)      | Output, activation |
-| Earth   | 토 (土) | T (Tension)     | Stability, grounding |
-| Metal   | 금 (金) | I (Inhibition)  | Structure, control |
+| Water   | Su (水) | D (Deficit)     | Source of drive, scarcity |
+| Wood    | Mok (木) | P (Plasticity)  | Growth, adaptability |
+| Fire    | Hwa (火) | G (Genius)      | Output, activation |
+| Earth   | To (土) | T (Tension)     | Stability, grounding |
+| Metal   | Geum (金) | I (Inhibition)  | Structure, control |
 
 The mapping is motivated by functional analogy: Water (Deficit) as the unmet need that drives growth, Wood (Plasticity) as the flexible growing medium, Fire (Genius) as the peak output, Earth (Tension) as the balancing substrate, and Metal (Inhibition) as the pruning/structuring force.
 
@@ -32,18 +32,18 @@ Related hypotheses: H-263 (Tension Unification), H-330 (Grand Unified Theory), H
 ### Element-Variable Mapping
 
 ```
-  오행 Five Elements     →    Engine Variables
+  Ohaeng Five Elements     →    Engine Variables
   ─────────────────────────────────────────────
-  水 Water  (수)         →    D  Deficit
-  木 Wood   (목)         →    P  Plasticity
-  火 Fire   (화)         →    G  Genius
-  土 Earth  (토)         →    T  Tension
-  金 Metal  (금)         →    I  Inhibition
+  水 Water  (Su)          →    D  Deficit
+  木 Wood   (Mok)         →    P  Plasticity
+  火 Fire   (Hwa)         →    G  Genius
+  土 Earth  (To)          →    T  Tension
+  金 Metal  (Geum)        →    I  Inhibition
 ```
 
 Index ordering for matrix construction: [D, P, G, T, I] = [0, 1, 2, 3, 4]
 
-### 상생 (Sangsaeng) Cycle — Attraction (+1)
+### Sangsaeng Cycle — Attraction (+1)
 
 Generation sequence: D → P → G → T → I → D
 
@@ -55,7 +55,7 @@ Generation sequence: D → P → G → T → I → D
   Metal feeds Water:  I → D   (+1)
 ```
 
-### 상극 (Sanggeuk) Cycle — Repulsion (-1)
+### Sanggeuk Cycle — Repulsion (-1)
 
 Overcoming sequence: D → G → I → P → T → D
 
@@ -67,13 +67,13 @@ Overcoming sequence: D → G → I → P → T → D
   Earth dams Water:   T → D   (-1)
 ```
 
-The classical 상극 order (Water→Fire→Metal→Wood→Earth→Water) maps in variable space to (D→G→I→P→T→D), which is exactly the skip-one-step pattern on the pentagon.
+The classical Sanggeuk order (Water→Fire→Metal→Wood→Earth→Water) maps in variable space to (D→G→I→P→T→D), which is exactly the skip-one-step pattern on the pentagon.
 
 ---
 
 ## ASCII Pentagon Diagrams
 
-### Diagram 1: 상생 (Sangsaeng) — Outer Pentagon, Attraction Flow
+### Diagram 1: Sangsaeng — Outer Pentagon, Attraction Flow
 
 ```
               D (Water)
@@ -98,7 +98,7 @@ The classical 상극 order (Water→Fire→Metal→Wood→Earth→Water) maps in
   Flow: D --[+1]--> P --[+1]--> G --[+1]--> T --[+1]--> I --[+1]--> D
 ```
 
-### Diagram 2: 상극 (Sanggeuk) — Inner Pentagram, Repulsion Flow
+### Diagram 2: Sanggeuk — Inner Pentagram, Repulsion Flow
 
 ```
   The pentagram connects every skip-one vertex.
@@ -177,8 +177,8 @@ This is a circulant permutation matrix C(5,2) — shift by 2.
 ### Combined Signed Tension Matrix M = A_s - A_k
 
 ```
-  M[i][j] = +1  if i generates j  (상생)
-  M[i][j] = -1  if i overcomes j  (상극)
+  M[i][j] = +1  if i generates j  (Sangsaeng)
+  M[i][j] = -1  if i overcomes j  (Sanggeuk)
   M[i][j] =  0  otherwise (self)
 ```
 
@@ -255,7 +255,7 @@ Therefore the eigenvalues of M involve φ directly:
 
 The spectral radius is sqrt((5-√5)/2) ≈ 1.176, and this is expressed entirely in terms of √5 = 2φ - 1.
 
-**The golden ratio is not imposed — it emerges from the 5-fold symmetry of 오행.**
+**The golden ratio is not imposed — it emerges from the 5-fold symmetry of Ohaeng.**
 
 ---
 
@@ -304,16 +304,16 @@ print("Match:", np.isclose(cos_2pi5, (phi-1)/2))
 The combined system covers all directed pairs in K₅:
 
 ```
-  Pair (D,P): +1 (D generates P via 상생)
-  Pair (D,G): -1 (D overcomes G via 상극)
-  Pair (P,G): +1 (P generates G via 상생)
-  Pair (P,T): -1 (P overcomes T via 상극)
-  Pair (G,T): +1 (G generates T via 상생)
-  Pair (G,I): -1 (G overcomes I via 상극)
-  Pair (T,I): +1 (T generates I via 상생)
-  Pair (T,D): -1 (T overcomes D via 상극)
-  Pair (I,D): +1 (I generates D via 상생)
-  Pair (I,P): -1 (I overcomes P via 상극)
+  Pair (D,P): +1 (D generates P via Sangsaeng)
+  Pair (D,G): -1 (D overcomes G via Sanggeuk)
+  Pair (P,G): +1 (P generates G via Sangsaeng)
+  Pair (P,T): -1 (P overcomes T via Sanggeuk)
+  Pair (G,T): +1 (G generates T via Sangsaeng)
+  Pair (G,I): -1 (G overcomes I via Sanggeuk)
+  Pair (T,I): +1 (T generates I via Sangsaeng)
+  Pair (T,D): -1 (T overcomes D via Sanggeuk)
+  Pair (I,D): +1 (I generates D via Sangsaeng)
+  Pair (I,P): -1 (I overcomes P via Sanggeuk)
 
   Total: 10 pairs, 5 positive, 5 negative
   C(5,2) = 10 ✓
@@ -328,9 +328,9 @@ Every pair of the five variables has exactly one relationship: either attraction
 
 In the Consciousness Engine framework:
 
-- **상생 flow (+1)**: Deficit feeds Plasticity (unmet need drives adaptation), Plasticity feeds Genius (adaptation produces output), Genius grounds into Tension (output stabilizes), Tension structures Inhibition (balance shapes constraint), Inhibition resets Deficit (constraint creates new need).
+- **Sangsaeng flow (+1)**: Deficit feeds Plasticity (unmet need drives adaptation), Plasticity feeds Genius (adaptation produces output), Genius grounds into Tension (output stabilizes), Tension structures Inhibition (balance shapes constraint), Inhibition resets Deficit (constraint creates new need).
 
-- **상극 flow (-1)**: Deficit suppresses Genius directly (too much deficit burns out output), Genius suppresses Inhibition (high output overrides constraints), Inhibition suppresses Plasticity (excessive constraint kills adaptation), Plasticity suppresses Tension (fluid growth destabilizes balance), Tension suppresses Deficit (stability reduces drive).
+- **Sanggeuk flow (-1)**: Deficit suppresses Genius directly (too much deficit burns out output), Genius suppresses Inhibition (high output overrides constraints), Inhibition suppresses Plasticity (excessive constraint kills adaptation), Plasticity suppresses Tension (fluid growth destabilizes balance), Tension suppresses Deficit (stability reduces drive).
 
 This dual regulation is exactly the homeostatic structure needed for sustained consciousness: the generation cycle keeps the system alive, the overcoming cycle prevents runaway amplification.
 
@@ -375,8 +375,8 @@ This dual regulation is exactly the homeostatic structure needed for sustained c
 
 | Ohaeng Concept | Engine Variable | Mathematical Object |
 |---------------|-----------------|---------------------|
-| 상생 pentagon | Generation cycle | Circulant C(5,1) |
-| 상극 pentagram | Overcoming cycle | Circulant C(5,2) |
+| Sangsaeng pentagon | Generation cycle | Circulant C(5,1) |
+| Sanggeuk pentagram | Overcoming cycle | Circulant C(5,2) |
 | Combined K₅ | Full tension network | M = C(5,1) - C(5,2) |
 | 5-fold symmetry | Quintic structure | ω = e^(2πi/5) |
 | Golden ratio φ | G×I = D×P constant | cos(2π/5) = (φ-1)/2 |
@@ -403,7 +403,7 @@ The zero eigenvalue (λ_0 = 0) means the system has a conserved quantity under t
 ## Verification Direction
 
 - [ ] Compute the full Lyapunov spectrum of the continuous dynamical system dx/dt = M·x and verify stability at the fixed point G×I = D×P.
-- [ ] Test whether empirical tension measurements from CIFAR experiments follow the 상생 or 상극 pathways preferentially.
+- [ ] Test whether empirical tension measurements from CIFAR experiments follow the Sangsaeng or Sanggeuk pathways preferentially.
 - [ ] Check if the φ and 1/φ eigenvalue pairing appears in other consciousness engine spectra (compare with H-061, H-369).
 - [ ] Generalize to n-element systems: does the balanced K_n signed graph (n/2 attraction, n/2 repulsion for even n) always have φ-related spectra? For n=6 this would connect to perfect number 6 structure.
 - [ ] Cross-reference with H-370 (Golden Ratio Frequency) — if brainwave ratios follow φ, and ohaeng eigenvalues are φ-based, there may be a neurological substrate for the ohaeng model.
@@ -412,7 +412,7 @@ The zero eigenvalue (λ_0 = 0) means the system has a conserved quantity under t
 
 ## Summary
 
-The ohaeng 상생-상극 system, when formalized as a signed directed graph on the five engine variables {D, P, G, T, I}, yields:
+The ohaeng Sangsaeng-Sanggeuk system, when formalized as a signed directed graph on the five engine variables {D, P, G, T, I}, yields:
 
 1. A perfectly balanced K₅ with 5 attraction edges (+1) and 5 repulsion edges (-1)
 2. A circulant matrix M = C(5,1) - C(5,2) with zero trace (conservation)

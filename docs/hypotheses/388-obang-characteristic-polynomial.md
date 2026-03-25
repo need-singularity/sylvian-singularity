@@ -9,7 +9,7 @@
 
 ## Hypothesis Statement
 
-> The signed tension matrix M of the five-element (오행) system — constructed as
+> The signed tension matrix M of the five-element (obang) system — constructed as
 > the sangsaeng (generation) circulant minus the sanggeuk (destruction) circulant —
 > has characteristic polynomial p(x) = x(x⁴ - 5x + 5), in which the ONLY
 > non-zero coefficients are multiples of 5, and whose trace sequence tr(M^n)
@@ -21,7 +21,7 @@
 
 ## Background and Context
 
-The five elements (오행: Wood, Fire, Earth, Metal, Water) define two oriented
+The five elements (obang: Wood, Fire, Earth, Metal, Water) define two oriented
 cycles on five nodes:
 
 - **Sangsaeng** (generation/creation): Wood→Fire→Earth→Metal→Water→Wood

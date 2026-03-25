@@ -10,7 +10,7 @@
 ## Hypothesis Statement
 
 > The five known Fermat primes (F₀=3, F₁=5, F₂=17, F₃=257, F₄=65537) map
-> bijectively onto the five directions of Obang (오방, Five Directions: Center,
+> bijectively onto the five directions of Obang (Five Directions: Center,
 > East, South, West, North), where each direction's role — foundation, count,
 > amplification, extension, boundary — is reflected in the mathematical character
 > of its assigned Fermat prime. The fact that exactly five Fermat primes are known
@@ -35,11 +35,11 @@ Fermat primes are confirmed: F₀ through F₄. Whether any further Fermat prime
 exist is an open problem — most number theorists believe none exist beyond F₄,
 but no proof has been found.
 
-### What is Obang (오방)?
+### What is Obang?
 
 Obang (五方) is the classical East Asian cosmological system of five directions:
-Center (중/中), East (동/東), South (남/南), West (서/西), North (북/北). These
-correspond to the Five Elements (오행), five colors, and five fundamental
+Center, East, South, West, North. These
+correspond to the Five Elements, five colors, and five fundamental
 relationships. The system assigns a qualitative character to each direction.
 
 ### Why This Matters
@@ -74,7 +74,7 @@ These prior appearances make the mapping non-arbitrary.
 
 ### Rationale for Each Assignment
 
-**Center (중) → F₀ = 3**
+**Center → F₀ = 3**
 Center is the origin from which all directions radiate. F₀ = 3 is the smallest
 Fermat prime and appears as the foundational constant throughout this project:
 - 1/3 = meta fixed point (contraction mapping f(I) = 0.7I + 0.1 converges to 1/3)
@@ -82,7 +82,7 @@ Fermat prime and appears as the foundational constant throughout this project:
 - 3-state entropy jump anchors the Golden Zone lower bound
 - 1/2 + 1/3 + 1/6 = 1: the three canonical fractions sum to unity
 
-**East (동) → F₁ = 5**
+**East → F₁ = 5**
 East is the direction of origin/beginning in East Asian cosmology (sun rises in
 the east). F₁ = 5 is self-referential: the system is called Five Directions
 because there are 5 of them, and 5 is itself one of the five Fermat primes. This
@@ -91,20 +91,20 @@ is a structural self-reference matching H-070 (self-reference hypothesis).
 Additionally, regular pentagon construction (n=5) is possible precisely because
 5 is a Fermat prime (Gauss-Wantzel theorem).
 
-**South (남) → F₂ = 17**
+**South → F₂ = 17**
 South corresponds to Fire and maximal energy/heat. F₂ = 17 was identified in
 H-076 as the amplification constant: at θ = π in the complex compass, the
 amplification factor equals 17 (a Fermat prime, not arbitrary). Fire = maximal
 amplification is a natural assignment. 17 is also the first Fermat prime that
 is "non-trivial" — not immediately obvious from the sequence.
 
-**West (서) → F₃ = 257**
+**West → F₃ = 257**
 West is the direction of completion (sun sets in the west) and Metal, associated
 with refinement and structure. F₃ = 257 = 2^8 + 1 is the first Fermat prime
 requiring a byte (8 bits) to represent its exponent. It marks the transition
 from small/obvious to large/structured. A regular 257-gon is constructible.
 
-**North (북) → F₄ = 65537**
+**North → F₄ = 65537**
 North corresponds to Water and depth/mystery. F₄ = 65537 = 2^16 + 1 is the
 largest known Fermat prime and sits at the known boundary of the sequence. Beyond
 it lies only composites (as far as verified). North as boundary/limit is apt.
@@ -178,23 +178,23 @@ The exponents 1, 2, 4, 8, 16 are powers of 2, doubling each step.
 ### Obang Direction Map with Fermat Primes
 
 ```
-                    NORTH (북)
+                    NORTH
                     Water / Depth
                     F₄ = 65537
                     2^16 + 1
                        |
                        |
-  WEST (서)  ----------+---------- EAST (동)
+  WEST      ----------+---------- EAST
   Metal / Bound        |           Wood / Origin
   F₃ = 257          CENTER        F₁ = 5
-  2^8 + 1           (중)          2^2 + 1
+  2^8 + 1                         2^2 + 1
                     Earth          self-referential
                     F₀ = 3
                     2^1 + 1
                     meta fixed pt
                        |
                        |
-                    SOUTH (남)
+                    SOUTH
                     Fire / Amplify
                     F₂ = 17
                     2^4 + 1
@@ -354,7 +354,7 @@ is meaningful or coincidental is unresolved. What is structurally parallel:
    in any project formula or computational constant? This would provide a
    multiplicative bridge between directions.
 
-5. **Gauss-Wantzel connection to compass:** The compass (나침반) tool in this
+5. **Gauss-Wantzel connection to compass:** The compass tool in this
    project uses angular geometry. Regular polygons constructible from Fermat
    primes may connect to compass angle quantization.
 

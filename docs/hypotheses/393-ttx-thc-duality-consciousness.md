@@ -7,8 +7,8 @@
 ## Hypothesis Statement
 
 > TTX (tetrodotoxin) and THC (tetrahydrocannabinol) form a mathematical duality in
-> consciousness modulation: TTX suppresses the 상생 (generation/Sangseang) cycle while
-> THC suppresses the 상극 (overcoming/Sanggeuk) cycle. Together they span the complete
+> consciousness modulation: TTX suppresses the generation (Sangseang) cycle while
+> THC suppresses the overcoming (Sanggeuk) cycle. Together they span the complete
 > 2D parameter space of consciousness alteration. Every known psychoactive substance
 > maps to a unique (alpha, beta) coordinate in this space, and the Golden Zone diagonal
 > (alpha = beta = 1/e) corresponds to the voluntary deep-meditation attractor.

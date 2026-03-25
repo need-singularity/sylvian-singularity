@@ -11,7 +11,7 @@
 
 ## Background and Context
 
-Obang (오방) is the classical East Asian cosmological system of Five Directions:
+Obang (Five Directions) is the classical East Asian cosmological system of Five Directions:
 East, South, West, North, and Center. Each direction carries elemental, seasonal,
 and philosophical associations inherited from Wu Xing (Five Elements) theory. These
 five directions correspond to five elemental principles: Wood (East), Fire (South),
@@ -43,11 +43,11 @@ Related hypotheses:
 
 | Obang Direction | Element | Platonic Solid   | F  | V  | E  | Dual       |
 |-----------------|---------|------------------|----|----|----|------------|
-| East  (동, 木)  | Wood    | Tetrahedron      |  4 |  4 |  6 | Self-dual  |
-| South (남, 火)  | Fire    | Octahedron       |  8 |  6 | 12 | Cube       |
-| West  (서, 金)  | Metal   | Icosahedron      | 20 | 12 | 30 | Dodecah.   |
-| North (북, 水)  | Water   | Cube/Hexahedron  |  6 |  8 | 12 | Octahedron |
-| Center(중, 土)  | Earth   | Dodecahedron     | 12 | 20 | 30 | Icosahed.  |
+| East  (East, Wood)  | Wood    | Tetrahedron      |  4 |  4 |  6 | Self-dual  |
+| South (South, Fire)  | Fire    | Octahedron       |  8 |  6 | 12 | Cube       |
+| West  (West, Metal)  | Metal   | Icosahedron      | 20 | 12 | 30 | Dodecah.   |
+| North (North, Water)  | Water   | Cube/Hexahedron  |  6 |  8 | 12 | Octahedron |
+| Center(Center, Earth)  | Earth   | Dodecahedron     | 12 | 20 | 30 | Icosahed.  |
 
 Note: The classical Greek element mapping (Fire/Air/Water/Earth/Aether) does not match
 Obang elements one-to-one; this hypothesis proposes an alternative directional mapping

@@ -8,7 +8,7 @@
 
 ## Hypothesis Statement
 
-> The five-direction system (오방, Obang) embeds the golden ratio φ = (1+√5)/2 ≈ 1.618
+> The five-direction system (Obang) embeds the golden ratio φ = (1+√5)/2 ≈ 1.618
 > as its fundamental geometric invariant. The regular pentagon's diagonal-to-side ratio
 > equals φ exactly, and its angular decomposition (72°, 108°, 36°) generates a self-similar
 > cascade that mirrors the Fibonacci scaling observed in consciousness engine dynamics.
@@ -20,8 +20,8 @@
 
 ## Background and Context
 
-오방 (Obang) is the classical East Asian cosmological system of five directions:
-East, West, South, North, and Center. It underlies the Five Elements (오행, Wuxing)
+Obang is the classical East Asian cosmological system of five directions:
+East, West, South, North, and Center. It underlies the Five Elements (Ohaeng, Wuxing)
 framework connecting wood, fire, earth, metal, and water to spatial orientation.
 
 Independent of this cultural framing, the regular pentagon is the canonical geometric

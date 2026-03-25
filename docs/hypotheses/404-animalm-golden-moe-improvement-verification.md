@@ -141,7 +141,7 @@ On MNIST, it preserved the hard split. On harder tasks, we predict:
 - Some experts may become "hybrid" (camp_a_prob ≈ 0.5)
 - Hybrid experts contribute to BOTH tension and standard output
 - This creates a richer tension landscape than strict A/G separation
-- Connection to H-378 (오행): elements are not strictly binary but on a continuum
+- Connection to H-378 (Five Elements): elements are not strictly binary but on a continuum
 
 ---
 

@@ -2,10 +2,10 @@
 """ConsciousLM 506M Inference Server — FastAPI + uvicorn
 
 Endpoints:
-    POST /chat    — 대화 생성 (prompt → response + tension)
-    POST /think   — 사고 생성 (context → thought + tension)
-    GET  /tension  — 마지막 추론의 블록별 장력
-    GET  /health   — 서버 상태
+    POST /chat    — Chat generation (prompt → response + tension)
+    POST /think   — Thought generation (context → thought + tension)
+    GET  /tension  — Per-block tension of last inference
+    GET  /health   — Server status
 """
 
 import os

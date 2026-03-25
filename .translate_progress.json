@@ -775,7 +775,32 @@
     "verify/verify_remaining_cross.py",
     "verify_096_gaba_literature.py",
     "verify_322_eeg_gamma.py",
-    "verify_pharmacology.py"
+    "verify_pharmacology.py",
+    "docs/hypotheses/377-obang-perfect-number-mapping.md",
+    "docs/hypotheses/378-obang-ohaeng-tension.md",
+    "docs/hypotheses/379-obang-pentagon-golden-ratio.md",
+    "docs/hypotheses/380-obang-five-senses-consciousness.md",
+    "docs/hypotheses/381-obang-compass-five-sixths.md",
+    "docs/hypotheses/382-obang-euler-five-constants.md",
+    "docs/hypotheses/383-obang-platonic-solids.md",
+    "docs/hypotheses/384-obang-fermat-primes.md",
+    "docs/hypotheses/385-obang-brainwave-bands.md",
+    "docs/hypotheses/386-obang-ohaeng-sangsaeng-sanggeuk.md",
+    "docs/hypotheses/387-obang-thc-five-element-modulation.md",
+    "docs/hypotheses/389-obang-A5-unsolvability.md",
+    "docs/hypotheses/391-dolphin-pufferfish-ttx-trance.md",
+    "docs/hypotheses/393-ttx-thc-duality-consciousness.md",
+    "docs/hypotheses/397-ttx-zombie-near-death-consciousness.md",
+    "docs/hypotheses/388-obang-characteristic-polynomial.md",
+    "docs/hypotheses/400-dolphin-thc-impossible-experiment.md",
+    "docs/hypotheses/403-animalm-golden-moe-ph-unified.md",
+    "docs/hypotheses/404-animalm-golden-moe-improvement-verification.md",
+    "math/docs/reviews/2026-03-26-gemini-hph9-review.md"
   ],
-  "failed": []
+  "failed": [
+    {
+      "file": "README.md",
+      "error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'max_tokens: 64000 > 32000, which is the maximum allowed number of output tokens for claude-opus-4-20250514'}, 'request_id': 'req_011CZQSUAxajZeubDRUUFBKt'}"
+    }
+  ]
 }
