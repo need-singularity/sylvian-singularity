@@ -1308,6 +1308,10 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-120](docs/hypotheses/H-CX-120-substrate-ratio-7-3.md) | 14/6=7/3 | 🟩 | 소수/약수 비율 |
 | [H-CX-121](docs/hypotheses/H-CX-121-perfect-number-substrate.md) | 완전수 원소 체인 | 🟩 | C(6)→Ni(28), φ(28)=σ(6)=12 |
 | [H-CX-123](docs/hypotheses/H-CX-123-consciousness-efficiency.md) | σφ/(nτ)=1 유일성 | 🟩 | Z=1~82에서 탄소만 완벽균형 |
+| [H-CX-155](docs/hypotheses/H-CX-155-sigma-phi-full-scan.md) | σφ/(nτ) Z=1~118 | 🟩 | 다결합+완벽균형 = 탄소(Z=6)만 유일! |
+| [H-CX-161](docs/hypotheses/H-CX-161-dolphin-freq-gamma-factorization.md) | 돌고래 전주파수=40Hz×στφ×5³ | 🟩 | whistle=40×50, click=40×750 |
+| [H-CX-162](docs/hypotheses/H-CX-162-five-cubed-dolphin-octave.md) | 5³=125 돌고래 옥타브 | 🟩 | 5=P₁-1, 기본 주파수 단위 |
+| [H-CX-163](docs/hypotheses/H-CX-163-dolphin-click-13-prime.md) | click에 13=σ(6)+1 등장 | 🟩 | 130kHz/40=3250=2×5³×13 |
 
 #### 미검증 — 코드 실행 가능
 
