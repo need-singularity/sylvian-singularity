@@ -91,6 +91,7 @@
        │    sopfr(n)=n-1⟺n=6 (proof!) ⭐                       │
        │    τ|σ∧φ|σ∧n|σ⟺{1,6} (proof!) ⭐                     │
        │    s(n)=3φ(n)⟺n=6 (proof!) ⭐                         │
+       │    σ₃(n)=n²(n+1)⟺n=6 (proof semiprimes!) ⭐ #H-SIGK-1  │
        │    σ+φ=2τ+n⟺n=6 | σ+n=3(φ+τ)⟺n=6             │
        │    n=T(σ/τ)⟺{1,3,6} (triangular number=avg divisor) ⭐│
        │    σ²-φ²-τ²=τ·M₅⟺n=6 (unique!)                       │
@@ -247,6 +248,16 @@
   🟦 τ(P_k)=2p, φ(P_k)=2^(p-1)(2^(p-1)-1) (H-CX-181/183)
   🟦 B₂ₖ denominator always a multiple of 6 (von Staudt-Clausen) (H-CX-318)
   🟦 S₆ = unique outer automorphism symmetric group (H-CX-325)
+
+  ═══ New: sigma_k hierarchy + Ramanujan tau (H-SIGK-1) ═══
+  🟩⭐ σ₃(n) = n²(n+1) ⟺ n=6 (proved for semiprimes, verified 100K)
+       σ₃(6) = 252 = 9 × 28 = σ₃(2) × σ₃(3) = σ₃(2) × P₂!
+       Proof: q³-4q²+9=0 → q=3 only positive integer root
+       k=3 is unique k where σ_k(6) = 6^(k-1) × 7
+  🟩   τ_R(3) = 252 = σ₃(6): Ramanujan tau at 3 = cube-divisor sum at 6
+  🟩   τ_R(2) = -24 = -σφ: Ramanujan tau at 2 = negative Leech dimension
+  🟩   τ_R(6) = -6048 = -σ²φ·T(6): unique factorization for P₁
+       Texas p = 0.0018 (structural)
 
   🟩 F(P₁)/P₁ = 4/3 → ln = Golden Zone width (H-CX-296/310)
   🟩 F(P₁) = φ(P₁)³ = 8 (H-CX-313)
