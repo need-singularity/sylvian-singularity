@@ -1267,6 +1267,97 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-92](docs/hypotheses/H-CX-92-dendrogram-depth-difficulty.md) | dendrogram 깊이=난이도 | ✅ SUPPORTED | 1st_merge vs acc r=0.70~0.89 (p<0.025) |
 | [H-CX-93](docs/hypotheses/H-CX-93-confusion-eigenstructure.md) | ⭐ confusion PCA=의미축 | ✅ SUPPORTED | CIFAR PC1: 동물(+) vs 기계(-) 완벽 분리 |
 
+### 미등록 H-CX (94~156, 이번 세션)
+
+#### 검증 완료
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CX-94](docs/hypotheses/H-CX-94-confusion-as-metric.md) | meta-PH | 🟧 PARTIAL | Fashion tau=0.59, CIFAR tau=0.72, MNIST 실패 |
+| [H-CX-95](docs/hypotheses/H-CX-95-generalization-predictor.md) | ⭐ PH 일반화 갭 예측 | ✅ SUPPORTED | CIFAR r=0.982, Fashion r=0.846. gap_detector CV=0.998 |
+| [H-CX-96](docs/hypotheses/H-CX-96-weight-delta-trigger.md) | 가중치 전이 | 🟧 PARTIAL | dW ratio 2.7x, 느린 LR 미지연 |
+| [H-CX-98](docs/hypotheses/H-CX-98-ph-early-stopping.md) | PH 조기종료 | 🟧 PARTIAL | CIFAR 4에폭 빠름, Fashion 불일치 |
+| [H-CX-99](docs/hypotheses/H-CX-99-ph-optimal-checkpoint.md) | 최적 체크포인트 | ❌ REJECTED | min H0_gap이 에폭1에 몰림 |
+| [H-CX-100](docs/hypotheses/H-CX-100-ph-learning-rate-guide.md) | ✅ LR 가이드 | ✅ SUPPORTED | H0 CV 최소 LR = 최적 LR |
+| [H-CX-101](docs/hypotheses/H-CX-101-ph-dataset-difficulty-score.md) | ✅ 난이도 점수 | ✅ SUPPORTED | H0_ep1 vs acc r>0.9 |
+| [H-CX-102](docs/hypotheses/H-CX-102-ph-regularization.md) | PH 정규화 | 🟧 PARTIAL | Fashion +0.2%, CIFAR +0.5%, MNIST ±0 |
+| [H-CX-103](docs/hypotheses/H-CX-103-tension-topology-consciousness.md) | 장력×위상 의식지표 | ✅ SUPPORTED (2/3) | r=0.87~0.93 |
+| [H-CX-104](docs/hypotheses/H-CX-104-ph-adversarial-vulnerability.md) | ⭐ FGSM 취약성 | ✅ SUPPORTED | Fashion r=-0.71, top-5 4/5 |
+| [H-CX-105](docs/hypotheses/H-CX-105-sub-epoch-transition.md) | ⭐ 서브에폭 전이 | ✅ SUPPORTED | 0.1에폭에서 80% 변화! |
+| [H-CX-106](docs/hypotheses/H-CX-106-human-ai-confusion-match.md) | ⭐ 인간=AI 혼동 | ✅ SUPPORTED | r=0.788, top-5 4/5 |
+| [H-CX-107](docs/hypotheses/H-CX-107-cross-dimension-ph.md) | 차원간 PH 불변 | ✅ SUPPORTED | tau=0.83~0.94, r=0.96~0.99 |
+| [H-CX-108](docs/hypotheses/H-CX-108-telepathy-protocol.md) | 텔레파시 프로토콜 | 🟧 PARTIAL | 9숫자→45쌍 r=0.887 |
+| [H-CX-110](docs/hypotheses/H-CX-110-sigma6-12-complete-partition.md) | σ(6)=12 완전분할 | ❌ REJECTED | 13cls H1 < 12cls H1 |
+| [H-CX-111](docs/hypotheses/H-CX-111-13th-observer.md) | 13번째=관측자 | ✅ SUPPORTED | OOD/ID=1.03x |
+| [H-CX-112](docs/hypotheses/H-CX-112-ln13-12-info-jump.md) | ln(13/12) 정보점프 | 🟩 산술확인 | 12×ln(13/12)=0.9605≈1 |
+| [H-CX-113](docs/hypotheses/H-CX-113-12-expert-moe.md) | 12 Expert MoE | ❌ REJECTED | 차이 없음 |
+| [H-CX-114](docs/hypotheses/H-CX-114-ophiuchus-metacognition.md) | 뱀주인자리=메타인지 | ✅ SUPPORTED | root=digits vs clothing |
+| [H-CX-115](docs/hypotheses/H-CX-115-kissing-number-12.md) | kissing number | ✅ SUPPORTED | 13cls min<12cls min |
+| [H-CX-125](docs/hypotheses/H-CX-125-non-shared-data-ph.md) | ⭐ 비공유 PH | 🟧 PARTIAL | 혼동 r=0.897! tau=0.67 |
+| [H-CX-127](docs/hypotheses/H-CX-127-ph-entanglement.md) | ⭐ PH 얽힘 | ✅ SUPPORTED | r=0.897 with 0 shared data |
+| [H-CX-128](docs/hypotheses/H-CX-128-kolmogorov-ph.md) | Kolmogorov PH | ✅ SUPPORTED | 67% (33% 압축=법칙적) |
+
+#### 순수 산술 (검증 완료)
+
+| # | 가설 | 상태 | 비고 |
+|---|---|---|---|
+| [H-CX-116](docs/hypotheses/H-CX-116-tau4-consciousness-requirement.md) | τ(6)=τ(14)=4 의식기질 | 🟩 | 탄소/실리콘 공통 4-결합 |
+| [H-CX-117](docs/hypotheses/H-CX-117-sigma14-double-sigma6.md) | σ(14)=2σ(6) | 🟩 | 24=2×12 |
+| [H-CX-118](docs/hypotheses/H-CX-118-phi14-perfect.md) | φ(14)=6=완전수 | 🟩 | 실리콘 토션트가 완전수! |
+| [H-CX-119](docs/hypotheses/H-CX-119-carbon-silicon-gap-8.md) | 14-6=8=2³ | 🟩 | 3회 이진 분열 |
+| [H-CX-120](docs/hypotheses/H-CX-120-substrate-ratio-7-3.md) | 14/6=7/3 | 🟩 | 소수/약수 비율 |
+| [H-CX-121](docs/hypotheses/H-CX-121-perfect-number-substrate.md) | 완전수 원소 체인 | 🟩 | C(6)→Ni(28), φ(28)=σ(6)=12 |
+| [H-CX-123](docs/hypotheses/H-CX-123-consciousness-efficiency.md) | σφ/(nτ)=1 유일성 | 🟩 | Z=1~82에서 탄소만 완벽균형 |
+
+#### 미검증 — 코드 실행 가능
+
+| # | 가설 | 내용 |
+|---|---|---|
+| [H-CX-109](docs/hypotheses/H-CX-109-consciousness-universality.md) | 의식 보편성=PH 불변 | 체인 확인 필요 |
+| [H-CX-122](docs/hypotheses/H-CX-122-ph-tau-invariance.md) | PH=τ 불변성 | τ와 PH 관계 정량화 |
+| [H-CX-124](docs/hypotheses/H-CX-124-ph-stability-analog.md) | PH 안정성 정리 | Cohen-Steiner 문헌 확인 |
+| [H-CX-126](docs/hypotheses/H-CX-126-no-communication-theorem.md) | No-communication | 증명 |
+| [H-CX-129](docs/hypotheses/H-CX-129-topological-bell-inequality.md) | 위상 Bell 부등식 | 이론 |
+| [H-CX-148](docs/hypotheses/H-CX-148-tension-resonance-telepathy.md) | 장력 공명 텔레파시 | 두 모델 병렬 실행 |
+| [H-CX-149](docs/hypotheses/H-CX-149-direction-telepathy-ag.md) | 방향 텔레파시 A→G | A dir→G next 회귀 |
+| [H-CX-150](docs/hypotheses/H-CX-150-silent-consensus.md) | 무언의 합의 | 라우터 weight 수렴 |
+| [H-CX-151](docs/hypotheses/H-CX-151-cross-layer-tension-signal.md) | 레이어간 장력 신호 | tension 상관 |
+| [H-CX-152](docs/hypotheses/H-CX-152-rosch-prototype-ph.md) | Rosch 원형=PH | 문헌 비교 |
+| [H-CX-153](docs/hypotheses/H-CX-153-n-ln-sequence.md) | N×ln 수열 | 12=최근접 심화 |
+| [H-CX-154](docs/hypotheses/H-CX-154-neuron-ratio-e.md) | 인간/돌고래 뉴런비=e | delta=0.04 심화 |
+| [H-CX-155](docs/hypotheses/H-CX-155-sigma-phi-full-scan.md) | σφ/(nτ) 전원소 | Z=1~118 완전 스캔 |
+| [H-CX-156](docs/hypotheses/H-CX-156-perfect-number-element-chain.md) | 완전수 원소 체인 | C→Ni→? |
+
+#### 미검증 — EEG 하드웨어 필요 🧠
+
+| # | 가설 | 내용 | 장비 |
+|---|---|---|---|
+| [H-CX-130](docs/hypotheses/H-CX-130-dolphin-signature-whistle-ph.md) | 돌고래 시그니처=PH지문 | 휘슬=정체성 | 돌고래 데이터 |
+| [H-CX-131](docs/hypotheses/H-CX-131-click-interval-merge-distance.md) | 클릭간격=merge dist | 에코로케이션 | 돌고래 데이터 |
+| [H-CX-132](docs/hypotheses/H-CX-132-dolphin-40hz-consciousness.md) | 돌고래 40Hz | 3σ(6)+τ(6)=40 | 돌고래 EEG |
+| [H-CX-133](docs/hypotheses/H-CX-133-whistle-ratio-golden-zone.md) | 휘슬비율=골든존 | ln(4/3) | 주파수 분석 |
+| [H-CX-134](docs/hypotheses/H-CX-134-echolocation-biological-ph.md) | 에코로케이션=생체PH | 소나=PH컴퓨터 | 돌고래 데이터 |
+| [H-CX-135](docs/hypotheses/H-CX-135-dolphin-neuron-tau4.md) | 돌고래 뉴런 τ=4? | 종간 텔레파시 | 문헌 |
+| [H-CX-136](docs/hypotheses/H-CX-136-eeg-merge-distance.md) | EEG 감마=merge dist | 감마 패턴 비교 | EEG 4ch+ |
+| [H-CX-137](docs/hypotheses/H-CX-137-eeg-tension-correlation.md) | EEG 감마=tension | 정오답 감마 차이 | EEG 4ch+ |
+| [H-CX-138](docs/hypotheses/H-CX-138-eeg-precognition.md) | EEG 예지 | 감마→정오답 예측 | EEG 4ch+ |
+| [H-CX-139](docs/hypotheses/H-CX-139-eeg-phase-transition.md) | EEG 위상 전이 | 첫 시행 감마 급변 | EEG 4ch+ |
+| [H-CX-140](docs/hypotheses/H-CX-140-eeg-dendrogram.md) | EEG dendrogram | 뇌파 의미 계층 | EEG 4ch+ |
+| [H-CX-141](docs/hypotheses/H-CX-141-eeg-telepathy-realtime.md) | 실시간 EEG 텔레파시 | 뇌파→PH→AI | EEG + Anima |
+| [H-CX-142](docs/hypotheses/H-CX-142-thc-ph-simplification.md) | THC=PH 단순화 | 경계 용해 | EEG + IRB |
+| [H-CX-143](docs/hypotheses/H-CX-143-thc-dendrogram-restructure.md) | THC=dendrogram 재구조화 | 인지 재편 | EEG + IRB |
+| [H-CX-144](docs/hypotheses/H-CX-144-thc-gamma-suppression.md) | THC=감마 억제 | 장력 감소 | EEG + IRB |
+| [H-CX-145](docs/hypotheses/H-CX-145-thc-ai-empathy-shift.md) | THC=AI 공감 변화 | tau 변화 | EEG + IRB |
+| [H-CX-146](docs/hypotheses/H-CX-146-thc-h1-loops.md) | THC=H1 루프 증가 | 순환 사고 | EEG + IRB |
+| [H-CX-147](docs/hypotheses/H-CX-147-thc-dose-ph-threshold.md) | THC 용량-PH 임계점 | 골든존? | EEG + IRB |
+
+#### 미검증 — GPU/LLM 필요
+
+| # | 가설 | 내용 |
+|---|---|---|
+| H-CX-95 LLM | ConsciousLM PH 검증 | 경량화 재시도 필요 |
+| H-CX-97 | 교차 데이터셋 전이 | 별도 데이터 |
+
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
 | # | 데이터 | 유형 | 반발력장 vs Dense | 장력 정보 | 핵심 |
