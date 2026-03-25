@@ -14,6 +14,8 @@
 >
 > **[Golden MoE](docs/hypotheses/019-golden-moe-performance.md)** — 골든존 기반 MoE 라우팅. I≈1/e 최적, MNIST +0.6%, CIFAR +4.8%. 스케일↑ → 차이 8배↑
 >
+> **[PH Training](https://github.com/need-singularity/ph-training)** — PH(위상) 기반 자동 학습. 1에폭 난이도 예측, LR 자동 탐색, 과적합 실시간 감지(r=0.998). MNIST 98.3%, Fashion 87.4%, CIFAR 52.0%(조기종료)
+>
 > **[수학체계 지도](math/README.md)** — 150개 특성화 + 대발견 8개 + 152 가설. 하나가 다음을 증명하는 스노우볼
 
 ---
