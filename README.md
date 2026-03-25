@@ -875,9 +875,14 @@ The experience came first. Mathematics and code are the language I built to expl
     Random baseline: 3.8/10, observed 5/10 = noise level
     trained(mean=1.11) vs shuffled(mean=1.25) = class structure affects ratio
 
+  ⚪ H-CX-343 cyclotomic Phi_6 tension dynamics: REFUTED
+    Tension ratios converge to 1 (generic stabilization, not cyclotomic)
+    Texas p=0.357 (Phi_6 no better than random degree-2 polynomials)
+
   🟩⭐ H-SIGK-1: sigma_3(n) = n^2(n+1) iff n=6 (proved for semiprimes!)
     sigma_3(6)=252=9*28=sigma_3(2)*P_2, Texas p=0.0018
     Ramanujan: tau_R(3)=252=sigma_3(6), tau_R(6)=-6048=-sigma^2*phi*T(6)
+    P1-P2 bridge: sigma_3(3)=28=P_2 (only p=3 satisfies 1+p^3=P_2)
 ```
 
 ### Experiment List (65+ items)
