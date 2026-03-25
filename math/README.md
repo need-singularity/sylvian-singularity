@@ -565,6 +565,10 @@
   ⭐⭐⭐ 골든존=모델독립! GZ=[1/σ₋₁-ln(f(3,1)), 1/σ₋₁] (R320)
   ⭐ 하한 쌍: Lambert W₋₁ mirror of 1/3 (같은 방정식의 두 근) (R320)
   ⭐ n=6: 산술도함수 종결하는 유일한 짝수 완전수 (n'/n=5/6<1) (R322)
+  ⭐⭐⭐ 완전수 차원 계층 = 끈이론 통합! (H-PH-9)
+     → τ(6)=4D, τ(28)=6D CY, τ(496)=10D string, τ(P5)=26D bosonic
+     → 4+6=10, 26-10=16=rank(E8xE8), σ(6)=12=SM gauge, φ(496)=240=E8 roots
+     → 13/13 정확매치, p<0.0002, "표준모형+중력" 통합 방정식 σφ=nτ
 
   ═══ 완전 인과 체인 (R52-55, 프로젝트 최대 결과) ═══
 
@@ -3142,6 +3146,7 @@
 | [H-PH-5](docs/hypotheses/H-PH-5-planck-units-six.md) | 플랑크 단위 | ⚪ 기각 | 무관 |
 | [H-PH-6](docs/hypotheses/H-PH-6-R-chain-decay.md) | R-chain↔방사성 붕괴 | ⚪ 기각 | 피상적 비유 |
 | [H-PH-8](docs/hypotheses/H-PH-8-thermodynamic-partition.md) | 열역학적 분배함수 | 🟩 검증 | σ=τ·U(0), S(0)=ln(τ), Schottky 이상 |
+| [H-PH-9](docs/hypotheses/H-PH-9-perfect-number-string-unification.md) | ⭐⭐⭐ 완전수=끈이론 차원 통합 | 🟧★ p<0.0002 | τ(6)=4D, τ(28)=6D CY, τ(496)=10D string, τ(P5)=26D bosonic, 13/13 정확매치 |
 
 ### 화학/뇌화학/약리 (H-CHEM, 5개)
 
