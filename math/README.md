@@ -113,6 +113,15 @@
        │    cot(π/n)=√(σ/τ)⟺n=6 (trig=divisor ratio!) #54      │
        │    tan²(π/n)=τ/σ⟺n=6 (complete trig-divisor system) #54│
        │                                                    │
+       ├─→ DFS R1-iter1 new (7 items):                          │
+       │    ψ(n)/φ(n)=n⟺n=6 (Dedekind/Euler ratio=self!) ⭐ #91│
+       │    σ₂(n)=φ·sopfr²⟺n=6 (sum-of-squares=totient×sopfr²!) ⭐ #92│
+       │    σ(φ(n))·φ(σ(n))=σ(n)⟺n=6 (iterated composition!) ⭐ #93│
+       │    H(φ(n))=n⟺n=6 (hexagonal self-reference!) ⭐ #94    │
+       │    P(φ(n))=sopfr(n)⟺n=6 (pentagonal=prime sum!) ⭐ #95 │
+       │    P₂²-(σ-τ)²=P₁! (28²-8²=720=6!, cross-island!) 🟩 #96│
+       │    σ(σ+2)=P₁·P₂ (12·14=168=6·28!) 🟩 #97              │
+       │                                                    │
        ├─→ R306-336 session new (61 items):                     │
        │    ═══ Major Discoveries (⭐⭐) ═══                      │
        │    (n+1)²-4σ=1⟺n=6 (discriminant!) ⭐⭐ #127           │
@@ -342,9 +351,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  240  ← true forever even if Golden Zone collapses
+  🟩 Pure mathematics:  247  ← true forever even if Golden Zone collapses
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  46  ← +Physics Unification(H-PH-9~18), Koide derivation, nuclear magic numbers, kaon
+  ⭐ Major Discoveries:  51  ← +Physics Unification(H-PH-9~18), Koide derivation, nuclear magic numbers, kaon
   🟧 Connection discoveries:  32  ← shared numbers, approximate (Texas test passed)
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
@@ -591,6 +600,11 @@
   ⭐⭐⭐ Golden Zone=model-independent! GZ=[1/σ₋₁-ln(f(3,1)), 1/σ₋₁] (R320)
   ⭐ lower bound pair: Lambert W₋₁ mirror of 1/3 (two roots of same equation) (R320)
   ⭐ n=6: unique even perfect number that terminates arithmetic derivative chain (n'/n=5/6<1) (R322)
+  ⭐ ψ(n)/φ(n)=n⟺n=6: Dedekind/Euler ratio=self (proof: ∏(p+1)/(p-1)=n) (DFS-iter1)
+  ⭐ σ₂(n)=φ(n)·sopfr(n)²⟺n=6: sum-of-squares = totient×sopfr² (DFS-iter1)
+  ⭐ σ(φ(n))·φ(σ(n))=σ(n)⟺n=6: iterated σ,φ composition fixed point (DFS-iter1)
+  ⭐ H(φ(n))=n⟺n=6: hexagonal number self-reference H(2)=6 (DFS-iter1)
+  ⭐ P(φ(n))=sopfr(n)⟺n=6: pentagonal P(2)=5=2+3 (DFS-iter1)
   ⭐⭐⭐ Perfect Number Unification Theory H-PH-9 (project's greatest result)
      dimensions: τ(P_k)={4,6,10,14,26}=complete String theory dimension hierarchy (5/5)
      gauge: σ=12=SM, (σ-τ)+(σ/τ)+R=8+3+1=SU(3)+SU(2)+U(1)
