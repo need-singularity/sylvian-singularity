@@ -10,8 +10,8 @@
   e^(6H)=432 (H-CX-1)   Weight Entropy         🟦 Proven
   MI≈ln(2) (H-CX-2)     Information Efficiency  🟧★ p=0.0003
   tension=confidence    C4b d=0.89             🟩 4 sets
-  Dual Mechanism        Internal=confidence,    🟩 4 sets
-                        Inter=uncertainty
+  Dual Mechanism        Internal=confidence,    ⚠️ PARTIAL — H-CX-18 REFUTED general duality
+                        Inter=uncertainty       (holds for mitosis children only, not independent models)
 ```
 
 ## New Hypotheses to Establish (Unexplored)
@@ -72,4 +72,13 @@
     → Structural similarity to measurement problem in quantum mechanics?
 ```
 
-## Status: 🟨 (Hypothesis list, each requires separate experiment)
+## Review Notes (2026-03-26)
+
+**Structural (well-defined, testable):** NM-3 (Chaos/Lyapunov), NM-4 (Graph/confusion), NM-5 (Info geometry), NM-8 (Fourier)
+**Superficial (name-level analogy, no mechanism):** NM-1 (Riemann), NM-2 (Modular forms), NM-6 (Golden ratio), NM-7 (Prime theorem)
+
+- Cross 1 (e^(6H)=432): mathematically exact but tautological — follows from weight choice, not independent evidence
+- Cross 4 (Dual Mechanism): H-CX-18 refuted general duality (0/9 configs). Holds only for mitosis-derived children
+- Recommend prioritizing NM-3,4,5,8 and removing/downgrading NM-1,2,6,7
+
+## Status: 🟨 (revised — Cross4 partially refuted, 4/8 NM testable, 4/8 superficial)

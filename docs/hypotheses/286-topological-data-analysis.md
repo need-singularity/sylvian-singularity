@@ -1,6 +1,6 @@
 # Hypothesis 286: Topological Data Analysis (TDA) — Topological Structure of Tension Space
 
-> **The topological structure (persistent homology) of tension fingerprints (20-dimensional) reflects the essential complexity of numbers/classes. What if we classify by topological features rather than image classification?**
+> **The topological structure (persistent homology) of tension fingerprints (10-dimensional) reflects the essential complexity of numbers/classes. What if we classify by topological features rather than image classification?**
 
 ## Concept
 
@@ -97,4 +97,11 @@
   5. Digit 2 has most complex topology (curved structure)
 ```
 
-## Status: 🟩 Confirmed (topological structure exists, confusion prediction r=-0.68)
+## Review Notes (2026-03-26)
+
+- H0=499: **exact** (n-1 for 500 points, MST method)
+- H1=111,776: **overestimate** — uses 1-skeleton Euler characteristic approximation (b1 = edges - vertices + components), NOT exact persistent homology via Ripser. Systematically overestimates true H1 because 2-simplices (triangles) that fill 1-cycles are not accounted for.
+- Spearman r=-0.679: plausible and correctly interpreted (45 pairs, p<0.0001)
+- Dimensionality: hypothesis statement corrected from 20-dim to 10-dim (actual experiment used 10-dim fingerprints)
+
+## Status: 🟩 Confirmed (minor fix) — H0 exact, H1 is upper-bound approximation, confusion prediction r=-0.68

@@ -77,7 +77,7 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
   → Structural discovery confirmed
 ```
 
-## Tool List (41 tools)
+## Tool List (44 tools)
 
 ```
   Core:          brain_singularity.py, compass.py, timeline.py
@@ -90,7 +90,7 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
   Verification:  verify_*.py (11 files)
   Session:       session_briefing.py
   Consciousness: model_pure_field.py, model_utils.py
-  calc calculators (12 tools):
+  calc calculators (15 tools):
     calc/tension_calculator.py        — Tension→Accuracy/Precognition prediction
     calc/mitosis_calculator.py        — Mitosis parameter optimization
     calc/anomaly_scorer.py            — Tension-based anomaly detection
@@ -103,6 +103,9 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
     calc/direction_analyzer.py        — Direction=concept decomposition (H339/H341)
     calc/dual_mechanism.py            — Internal/inter tension duality (H296-H307)
     calc/statistical_tester.py        — Unified statistical testing (Cohen's d, Bonferroni, CI)
+    calc/small_n_validator.py         — Small-sample correlation validator (n<=5 warning, power analysis)
+    calc/spurious_trend_detector.py   — Detrending + first-diff to detect training-trend spurious correlations
+    calc/permutation_tester.py        — Null baseline via permutation (purity, correlation, overlap tests)
 ```
 
 ## How to Run

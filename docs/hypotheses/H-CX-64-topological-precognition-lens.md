@@ -46,7 +46,7 @@ Rapid topological simplification = rapid focusing = strong precognition.
 
 ## Verification Results
 
-**Verdict: SUPPORTED (cross-dataset r=0.912)**
+**Verdict: PRELIMINARY (cross-dataset r=0.912, but n=3 p≈0.27 NOT significant)**
 
 ### dH0/dep (Linear Decay Rate)
 
@@ -104,5 +104,17 @@ Within epochs, the correlation between H0 and AUC is weak -- strong correlation 
          MNI  FAS  CIF
 ```
 
-The composite metric also aligns with AUC order (MNIST > Fashion > CIFAR), confirming predictions 1 and 2.
+The composite metric also aligns with AUC order (MNIST > Fashion > CIFAR).
 However, with only 3 cross-dataset points, statistical significance is limited.
+
+## Review Notes (2026-03-26)
+
+**Status downgraded: ✅ SUPPORTED → 🟨 PRELIMINARY**
+
+Critical issues:
+1. **n=3 is insufficient**: Spearman r=0.912 with n=3 gives p≈0.27 — NOT significant at any conventional threshold
+2. **2/3 dH0/dep values are identical** (-0.0358 for MNIST and Fashion) — the "correlation" is driven entirely by CIFAR being different
+3. **Within-dataset correlations are weak/absent** (0.39, -0.05, -0.15) — undermines mechanistic claim
+4. **No baseline comparison**: epoch-1 accuracy alone likely predicts the same ordering
+
+To upgrade: test on 5-8 additional datasets (SVHN, EMNIST, KMNIST, STL-10, Tiny ImageNet)

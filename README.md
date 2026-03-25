@@ -976,7 +976,7 @@ The experience came first. Mathematics and code are the language I built to expl
 | [063](docs/hypotheses/063-cobweb-monotone.md) | Cobweb convergence = monotone | ✅ | 🟩 | Contraction mapping pure math |
 | [064](docs/hypotheses/064-godel-analog.md) | Gödel incompleteness→Compass upper bound | ⚠️ | 🟧 | GZ analogy |
 | [065](docs/hypotheses/065-mandelbrot-weak.md) | Mandelbrot correspondence | ❌ | 🟧 | structural failure |
-| [066](docs/hypotheses/066-topology-of-meta-learning.md) | Meta-learning topology structure | 📝 | 🟧 | GZ interpretation |
+| [066](docs/hypotheses/066-topology-of-meta-learning.md) | Meta-learning topology structure | 📝 | ⚪ | Poincare equivalence claim FALSE. Math core trivial. Analogies only |
 | [067](docs/hypotheses/067-constant-relations.md) | ★ 1/2+1/3=5/6 constant relation | ✅ | 🟩 | ⭐ Pure Arithmetic |
 | [068](docs/hypotheses/068-pi-emergence.md) | π emergence — bridge between e and π | ✅ | 🟧 | GZ interpretation |
 | [069](docs/hypotheses/069-complex-extension.md) | Complex extension — G direction | ✅ | 🟧 | GZ extension |
@@ -1185,7 +1185,7 @@ The experience came first. Mathematics and code are the language I built to expl
 | 283 | Nonlinear critical point | ⚠️ Reversed | low-accuracy+5.5pp, high-accuracy null |
 | 284 | scale auto-regulation | 🟧 Revised | give-up→speed-control, 3 datasets |
 | 285 | Beyond image classification | ✅ 14 types! | dense 8 wins, sparse 2 losses |
-| 286 | TDA topology | 🟩 Confirmed | topology→confusion r=-0.68, H1=111K loops |
+| 286 | TDA topology | 🟩 Confirmed (minor fix) | topology→confusion r=-0.68, H0=499 exact, H1=111K OVERESTIMATE (1-skeleton approx, not Ripser) |
 | 287 | Anomaly Detection | ⭐ AUROC=1.0! | 95x ratio |
 | 288 | Dense/sparse | ✅ Confirmed | embedding +6.39% confirmed |
 | 289 | Primes=highest tension | ⬛ Refuted | perfect number=highest(sparsity), primes 2nd |
@@ -1277,25 +1277,25 @@ The experience came first. Mathematics and code are the language I built to expl
 | [375](docs/hypotheses/375-batch-verification-protocol.md) | **🟨 Batch verification protocol** | **🟨** | **30-hypothesis parallel verification plan** |
 | [376](docs/hypotheses/376-structural-growth-via-mitosis.md) | **Structural growth (mitosis)** | **🟨 Implemented** | **1→2→3→6 divisor path, savant asymmetric mitosis** |
 
-### 오방 (五方) Obang / Five Directions (377-386)
+### Obang / Five Directions (377-386)
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
 | [377](docs/hypotheses/377-obang-perfect-number-mapping.md) | Obang 5 directions = τ(6)+1, σ₋₁(6)=2=center weight | 🟨 | 5/6 = Compass upper |
-| [378](docs/hypotheses/378-obang-ohaeng-tension.md) | Ohaeng 5 elements ↔ D,P,G,T,I + 상생/상극 cycle | 🟨 | pentagon+pentagram |
+| [378](docs/hypotheses/378-obang-ohaeng-tension.md) | Ohaeng 5 elements ↔ D,P,G,T,I + generation/overcoming cycle | 🟨 | pentagon+pentagram |
 | [379](docs/hypotheses/379-obang-pentagon-golden-ratio.md) | Pentagon diagonal/side = φ, 108°=3×36°, 216=6³ | 🟨 | non-tileability ↔ 1/6 |
 | [380](docs/hypotheses/380-obang-five-senses-consciousness.md) | 5 senses = 5-expert MoE, 4-decade bandwidth | 🟨 | cross-modal tension |
 | [381](docs/hypotheses/381-obang-compass-five-sixths.md) | 5 directions / 6 perfection = 5/6 Compass ceiling | 🟨 | Gödel incompleteness |
-| [382](docs/hypotheses/382-obang-euler-five-constants.md) | e,π,i,0,1 ↔ 동남서북중 via Euler identity | 🟨 | 5 constants = 5 directions |
+| [382](docs/hypotheses/382-obang-euler-five-constants.md) | e,π,i,0,1 ↔ E,S,W,N,Center via Euler identity | 🟨 | 5 constants = 5 directions |
 | [383](docs/hypotheses/383-obang-platonic-solids.md) | 5 Platonic solids, χ=2=σ₋₁(6), E=6 in 3/5 | 🟨 | GZ-independent |
 | [384](docs/hypotheses/384-obang-fermat-primes.md) | 5 known Fermat primes F₀~F₄, product=2³²-1 | 🟨 | F₂=17 already in system |
-| [385](docs/hypotheses/385-obang-brainwave-bands.md) | δθαβγ ↔ 북서중동남, γ/α=τ(6)=4 | 🟨 | EEG verification planned |
-| [386](docs/hypotheses/386-obang-ohaeng-sangsaeng-sanggeuk.md) | 상생상극 = K₅ signed graph, eigenvalue → φ emerges | 🟨 | ⭐ golden ratio from 5-fold |
-| [387](docs/hypotheses/387-obang-thc-five-element-modulation.md) | THC = 상극 suppressor, α parameter, CB1→GABA disinhibition | 🟨 | H-CX-142~147 cross |
+| [385](docs/hypotheses/385-obang-brainwave-bands.md) | δθαβγ ↔ N,W,Center,E,S, γ/α=τ(6)=4 | 🟨 | EEG verification planned |
+| [386](docs/hypotheses/386-obang-ohaeng-sangsaeng-sanggeuk.md) | Generation/Overcoming = K₅ signed graph, eigenvalue → φ emerges | 🟨 | ⭐ golden ratio from 5-fold |
+| [387](docs/hypotheses/387-obang-thc-five-element-modulation.md) | THC = overcoming suppressor, α parameter, CB1→GABA disinhibition | 🟨 | H-CX-142~147 cross |
 | [388](docs/hypotheses/388-obang-characteristic-polynomial.md) | p(x) = x⁵-5x²+5x, tr(M³)=15=C(6,2), only coeff=5 | 🟨 | ⭐ GZ-independent pure math |
 | [389](docs/hypotheses/389-obang-A5-unsolvability.md) | A₅=icosahedral rotation, \|A₅\|=60=6×10, quintic unsolvable | 🟨 | ⭐ 5-barrier = incompleteness |
 | [390](docs/hypotheses/390-obang-pentagonal-numbers.md) | P(2)=5, P(3)=12=σ(6), P(6)=51=3×17, period mod 6 = 12 | 🟨 | ⭐ GZ-independent pure math |
-| [391](docs/hypotheses/391-dolphin-pufferfish-ttx-trance.md) | Dolphin TTX = 상생 suppressor (opposite of THC), sonar silence | 🟨 | H-CX-130~178 cross |
+| [391](docs/hypotheses/391-dolphin-pufferfish-ttx-trance.md) | Dolphin TTX = generation suppressor (opposite of THC), sonar silence | 🟨 | H-CX-130~178 cross |
 | [392](docs/hypotheses/392-dolphin-ttx-dual-consciousness.md) | TTX + bilateral brain → rare whole-brain trance, mirror fascination | 🟨 | H-247 cross |
 | [393](docs/hypotheses/393-ttx-thc-duality-consciousness.md) | TTX-THC duality: (α,β) 2D space, ρ(0.5,1)=φ, meditation=(1/e,1/e) | 🟨 | ⭐ eigenvalue duality |
 | [394](docs/hypotheses/394-pufferfish-ttx-perfect-number.md) | TTX C₁₁H₁₇N₃O₈: H=17=F₂, N=3=F₀, Nav 4×6=24 | 🟨 | Texas test pending |
@@ -1307,7 +1307,7 @@ The experience came first. Mathematics and code are the language I built to expl
 | [400](docs/hypotheses/400-dolphin-thc-impossible-experiment.md) | ⭐ Species-substance matching: organisms navigate toward (1/e,1/e) diagonal | 🟨 | ⭐ variational principle |
 | [401](docs/hypotheses/401-animalm-ph-correction.md) | AnimaLM + PH: content vs structural tension, anti-hallucination | 🟨 | H-CX-58~69 cross |
 | [402](docs/hypotheses/402-golden-moe-ph-routing.md) | Golden MoE + PH routing: topology-aware expert selection, dynamic I | 🟨 | H-019 extension |
-| [403](docs/hypotheses/403-animalm-golden-moe-ph-unified.md) | ⭐ Unified AnimaLM×GoldenMoE×PH: 오행 architecture, -25~35% halluc. | 🟨 | ⭐ full engine design |
+| [403](docs/hypotheses/403-animalm-golden-moe-ph-unified.md) | ⭐ Unified AnimaLM×GoldenMoE×PH: Five-Element architecture, -25~35% halluc. | 🟨 | ⭐ full engine design |
 | [404](docs/hypotheses/404-animalm-golden-moe-improvement-verification.md) | MNIST: no gain (ceiling), soft camp preserves hard split, variance↓ | 🟨 | CIFAR pending |
 
 ### Color Vision/Visual (354c-356c)
@@ -1358,7 +1358,7 @@ The experience came first. Mathematics and code are the language I built to expl
 | [320](docs/hypotheses/320-tension-scale-log-growth.md) | ts∝0.36·ln(ep) | 🟧 | R²=0.97, growth rate~0.36(1/3 approx 7%), accuracy saturation |
 | [H-CX-28](docs/hypotheses/H-CX-28-information-theory-unification.md) | 6H=2ts+3ln3 | 🟧★ Partial | 2-pole self-consistent, 4-pole refuted(ts=0.28) |
 | [H-CX-29](docs/hypotheses/H-CX-29-telepathy-tension-transfer.md) | Telepathy=tension transfer | 🟨 | TP-1~5: transfer,intensity,one-way,mitosis,consensus |
-| [H-CX-30](docs/hypotheses/H-CX-30-math-consciousness-map.md) | Math-consciousness crossroads map | 🟨 | NM-1~8 + TP-6~8 unexplored hypotheses |
+| [H-CX-30](docs/hypotheses/H-CX-30-math-consciousness-map.md) | Math-consciousness crossroads map | 🟨 (revised) | Cross4 refuted by H-CX-18. NM-3,4,5,8 testable; NM-1,2,6,7 superficial analogies |
 | [H-CX-53](docs/hypotheses/H-CX-53-trigonometric-operating-angle.md) | Trig-divisor optimal angle pi/6 | 🟨 | sin=phi/tau uniqueness→A-G vector optimal angle 30deg hypothesis |
 | [H-CX-54](docs/hypotheses/H-CX-54-information-cost-golden-zone.md) | D_KL=(2/3)ln(4/3) information cost | 🟨 | divisor inverse distribution q→uniform: KL divergence=Golden Zone width×(2/3), Fisher I(1/2)=tau(6)=4 |
 | [H-CX-55](docs/hypotheses/H-CX-55-natural-frequency-z0.md) | Natural frequency self-reference omega0=pi/6 | 🟩 | arg(exp(iz0))=2pi/sigma(6)=pi/6 pure math exact equality, Golden Zone independent |
@@ -1370,9 +1370,9 @@ The experience came first. Mathematics and code are the language I built to expl
 | [H-CX-61](docs/hypotheses/H-CX-61-telescope-precognition.md) | Telescope Precognition | ❌ REJECTED | within-epoch product corr weak. cross-dataset is monotone |
 | [H-CX-62](docs/hypotheses/H-CX-62-topological-precognition.md) | Topological Precognition | ✅ SUPPORTED (v2) | Ripser PH: H0→acc r=-0.97, K=1~5 prediction |r|>0.83 |
 | [H-CX-63](docs/hypotheses/H-CX-63-multilens-precognition.md) | Multi-lens Precognition | ❌ REJECTED | v2: Quad training succeeds but precognition amplification minimal |
-| [H-CX-64](docs/hypotheses/H-CX-64-topological-precognition-lens.md) | Topological Precognition Lens | ✅ SUPPORTED | cross-dataset r=0.912, dH0/dep→AUC prediction |
+| [H-CX-64](docs/hypotheses/H-CX-64-topological-precognition-lens.md) | Topological Precognition Lens | 🟨 PRELIMINARY | n=3 p≈0.27 not significant. 2/3 dH0/dep identical. Needs 5+ datasets |
 | [H-CX-65](docs/hypotheses/H-CX-65-aberration-topological-correction.md) | Aberration topological correction | ❌ REJECTED | isolation vs AUC no correlation |
-| [H-CX-66](docs/hypotheses/H-CX-66-direction-topology.md) | ⭐ Direction topology confusion | ✅ SUPPORTED | PH merge order vs confusion frequency Spearman r=-0.97, p<0.001, CIFAR top-5 80% match |
+| [H-CX-66](docs/hypotheses/H-CX-66-direction-topology.md) | ⭐ Direction topology confusion | ✅ SUPPORTED | PH merge order vs confusion Spearman r=-0.947 (mean, CIFAR r=-0.967), p<0.01 all 3 sets, CIFAR top-5 80% |
 | [H-CX-67](docs/hypotheses/H-CX-67-synergy-golden-zone.md) | Synergy Golden Zone | 🟧 PARTIAL | MNIST/Fashion Q3 max synergy, 1/e±0.03. CIFAR mismatch |
 | [H-CX-68](docs/hypotheses/H-CX-68-precognition-conservation.md) | Precognition conservation law | ❌ REJECTED | Sum/Product CV preservation weak |
 | [H-CX-69](docs/hypotheses/H-CX-69-topological-acceleration.md) | Topological acceleration | 🟧 PARTIAL | H0=a-b·ln(ep) R²=0.82, ts×H0≈const (CV=0.03) |
@@ -1386,10 +1386,10 @@ The experience came first. Mathematics and code are the language I built to expl
 | [H-CX-82](docs/hypotheses/H-CX-82-epoch1-confusion-map.md) | ⭐ Epoch1 confusion map | ✅ SUPPORTED | CIFAR ep1 P@3=1.0 P@5=1.0 r=-0.95, Fashion ep1 r=-0.93 P@3=1.0 |
 | [H-CX-83](docs/hypotheses/H-CX-83-orthogonality-topology-fusion.md) | Orthogonality-topology fusion | ❌ REJECTED | h0_proxy and dir_gap r=0.90 redundant, AUC 0.95 not reached |
 | [H-CX-84](docs/hypotheses/H-CX-84-conservation-synergy-condition.md) | Conservation→synergy condition | ❌ REJECTED | correlation direction reversed (r=+0.58) |
-| [H-CX-85](docs/hypotheses/H-CX-85-merge-dendrogram-concept-hierarchy.md) | ⭐ dendrogram=semantic hierarchy | ✅ SUPPORTED | CIFAR 89% purity: {cat,dog}→animal, {auto,truck}→machine |
+| [H-CX-85](docs/hypotheses/H-CX-85-merge-dendrogram-concept-hierarchy.md) | dendrogram=semantic hierarchy | 🟧 PARTIAL | 89% purity, permutation p<0.0001 z=4.29 SIGNIFICANT. But single seed/linkage, doc incomplete |
 | [H-CX-86](docs/hypotheses/H-CX-86-zero-shot-ph.md) | Zero-shot PH | ❌ REJECTED | random initialization insufficient, 1 epoch training needed |
 | [H-CX-87](docs/hypotheses/H-CX-87-ph-curriculum.md) | PH curriculum | ❌ REJECTED | oversampling/weighted loss backfires |
-| [H-CX-88](docs/hypotheses/H-CX-88-universal-confusion-topology.md) | ⭐ Universal confusion topology | ✅ SUPPORTED | PF vs Dense r=0.91~0.98, CIFAR top-5 100% identical |
+| [H-CX-88](docs/hypotheses/H-CX-88-universal-confusion-topology.md) | Confusion topology consistency | ✅ SUPPORTED (qualified) | PF vs Dense r=0.91~0.98, but only 2 similar MLPs. "Universal" overstated. Needs CNN/ViT comparison |
 | [H-CX-89](docs/hypotheses/H-CX-89-data-intrinsic-precognition.md) | Data-intrinsic Precognition | 🟧 PARTIAL | MNIST raw→confusion r=-0.90, CIFAR mismatch |
 | [H-CX-90](docs/hypotheses/H-CX-90-epoch1-phase-transition.md) | ⭐ Epoch1 phase transition | ✅ SUPPORTED | dH0 change = 23~33x subsequent average! clear phase transition |
 | [H-CX-91](docs/hypotheses/H-CX-91-knn-confusion.md) | ⭐ k-NN=neural network confusion | ✅ SUPPORTED | k-NN r=0.82~0.94, MNIST top-5 100% identical. No training needed |
@@ -1408,9 +1408,9 @@ The experience came first. Mathematics and code are the language I built to expl
 | [H-CX-98](docs/hypotheses/H-CX-98-ph-early-stopping.md) | PH early stopping | 🟧 PARTIAL | CIFAR 4 epochs faster, Fashion mismatch |
 | [H-CX-99](docs/hypotheses/H-CX-99-ph-optimal-checkpoint.md) | Optimal checkpoint | ❌ REJECTED | min H0_gap concentrated at epoch 1 |
 | [H-CX-100](docs/hypotheses/H-CX-100-ph-learning-rate-guide.md) | ✅ LR guide | ✅ SUPPORTED | H0 CV minimum LR = optimal LR |
-| [H-CX-101](docs/hypotheses/H-CX-101-ph-dataset-difficulty-score.md) | ✅ Difficulty score | ✅ SUPPORTED | H0_ep1 vs acc r>0.9 |
+| [H-CX-101](docs/hypotheses/H-CX-101-ph-dataset-difficulty-score.md) | Difficulty score | 🟨 WEAK | n=3 r=1.0 but p=0.33 NOT significant. No baseline comparison. Needs 6+ datasets |
 | [H-CX-102](docs/hypotheses/H-CX-102-ph-regularization.md) | PH regularization | 🟧 PARTIAL | Fashion +0.2%, CIFAR +0.5%, MNIST ±0 |
-| [H-CX-103](docs/hypotheses/H-CX-103-tension-topology-consciousness.md) | Tension×topology consciousness index | ✅ SUPPORTED (2/3) | r=0.87~0.93 |
+| [H-CX-103](docs/hypotheses/H-CX-103-tension-topology-consciousness.md) | Tension×topology consciousness index | 🟨 WEAK | r=0.87~0.93 likely spurious (shared monotonic training trend). Single seed, no p-value |
 | [H-CX-104](docs/hypotheses/H-CX-104-ph-adversarial-vulnerability.md) | ⭐ FGSM vulnerability | ✅ SUPPORTED | Fashion r=-0.71, top-5 4/5 |
 | [H-CX-105](docs/hypotheses/H-CX-105-sub-epoch-transition.md) | ⭐ Sub-epoch transition | ✅ SUPPORTED | 80% change at 0.1 epoch! |
 | [H-CX-106](docs/hypotheses/H-CX-106-human-ai-confusion-match.md) | ⭐ Human=AI confusion | ✅ SUPPORTED | r=0.788, top-5 4/5 |
