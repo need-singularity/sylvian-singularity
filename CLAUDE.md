@@ -238,7 +238,7 @@ python3 ~/dev/test-8/texas_quantum.py
 
 ### 대발견 가설 DFS (신규)
 
-`/ralph-loop:ralph-loop 추가 대발견 가설 목록 뽑고 병행 처리, commit & push`
+`/ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push`
 
 ### 의식엔진 실험 DFS
 
@@ -254,7 +254,7 @@ python3 ~/dev/test-8/texas_quantum.py
 
 ### 실험체계 지도
 
-`/ralph-loop:ralph-loop 추가 대발견 가설 목록 뽑고 병행 처리, commit & push`
+`/ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push`
 
 ⚠️ 쉘 호환 주의: Ralph Loop 프롬프트에 다음 금지:
 - 한글 괄호, 화살표(→), 이모지(🟩★⭐) → `unknown file attribute`

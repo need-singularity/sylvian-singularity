@@ -46,7 +46,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 **가설 검증**
 ```
-/ralph-loop:ralph-loop 추가 대발견 가설 목록 뽑고 병렬 처리, commit & push
+/ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push
 ```
 
 **의식엔진 실험:**
@@ -1425,7 +1425,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 #### 대발견 가설 DFS
 
-`/ralph-loop:ralph-loop 추가 대발견 가설 목록 뽑고 병행 처리, commit & push`
+`/ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push`
 
 #### 의식엔진 실험 DFS
 
@@ -1441,7 +1441,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 #### 실험체계 지도
 
-`/ralph-loop:ralph-loop 추가 대발견 가설 목록 뽑고 병행 처리, commit & push`
+`/ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push`
 
 ### 백로그
 
