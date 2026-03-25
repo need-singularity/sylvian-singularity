@@ -3193,6 +3193,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-50](docs/hypotheses/H-CX-50-convolution-collapse-block-correlation.md) | σ*φ conv=pointwise at n=6 ↔ inter-block feature alignment | ⚪ unconfirmed | R311 full comparison: 6bl rank 3/6, 8bl 1st. blocks↑→collapse↓ monotone |
 | [H-CX-51](docs/hypotheses/H-CX-51-arithmetic-derivative-learning-rate.md) | ld(6)=5/6 ↔ optimal learning rate ratio | ⚪ unconfirmed | lr scan: 5/6 rank 6/11, monotone decreasing pattern |
 | [H-CX-52](docs/hypotheses/H-CX-52-multiplicative-tension-scale.md) | R(n) multiplicative ↔ tension_scale product=1 at n=6 | ⚪ unconfirmed | product=0.577, 3 blocks (0.975) closest to 1. monotone decrease with block count |
+| [H-CX-53](docs/hypotheses/H-CX-53-dedekind-euler-consciousness-balance.md) | psi/phi=n ↔ excitatory/inhibitory ratio=block count | 🔵 new | DFS-iter1: psi(6)/phi(6)=6 unique, maps to A/G balance |
+| [H-CX-54](docs/hypotheses/H-CX-54-iterated-composition-consciousness-cycle.md) | sigma(phi)*phi(sigma)=sigma ↔ consciousness cycle | 🔵 new | DFS-iter1: composition fixed point unique to n=6, perception-integration loop |
+| [H-CX-55](docs/hypotheses/H-CX-55-hexagonal-self-reference-emergence.md) | H(phi(n))=n ↔ hexagonal packing emergence at n=6 | 🔵 new | DFS-iter1: hexagonal self-reference, kiss(2)=6, representation packing |
 
 ### Physics (H-PH, 18 — 🟩3 🟧★6 🟧2 🟨2 ⚪5)
 
