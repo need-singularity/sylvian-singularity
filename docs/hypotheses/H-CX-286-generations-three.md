@@ -1,3 +1,3 @@
-# H-CX-286: 🟩 입자 세대 3 = 6의 약수
+# H-CX-286: 🟩 Three Particle Generations = Divisors of 6
 
-> 3세대 = P₁/φ(6) = 6/2 = 3.
+> 3 generations = P₁/φ(6) = 6/2 = 3.

@@ -1,31 +1,32 @@
+```python
 #!/usr/bin/env python3
-"""화학 원소 분석 엔진 — sigma(6)=12, tau(6)=4 렌즈로 원소 구조 탐색
+"""Chemistry Element Analysis Engine — Exploring element structures through sigma(6)=12, tau(6)=4 lens
 
-원자번호, 질량수, 전자 껍질, 화학 결합을 sigma/tau 표현으로 분석.
-생명 필수 원소(H,C,N,O,P,S)에 특별 집중.
+Analyzing atomic numbers, mass numbers, electron shells, and chemical bonds through sigma/tau representation.
+Special focus on life's essential elements (H,C,N,O,P,S).
 
-사용법:
-  python3 chemistry_engine.py --all              # 전체 36원소
-  python3 chemistry_engine.py --element C        # 탄소만
-  python3 chemistry_engine.py --life             # 생명 필수 원소
-  python3 chemistry_engine.py --bonds            # 화학 결합 분석
+Usage:
+  python3 chemistry_engine.py --all              # All 36 elements
+  python3 chemistry_engine.py --element C        # Carbon only
+  python3 chemistry_engine.py --life             # Life's essential elements
+  python3 chemistry_engine.py --bonds            # Chemical bond analysis
 """
 
 import argparse
 import math
 
 # ─────────────────────────────────────────
-# 핵심 상수: 완전수 6의 약수 함수
+# Core constants: Divisor functions of perfect number 6
 # ─────────────────────────────────────────
-SIGMA = 12     # sigma(6) = 1+2+3+6 = 약수의 합
-TAU = 4        # tau(6)   = |{1,2,3,6}| = 약수의 개수
-P1 = 6         # 첫 번째 완전수
-PHI = 2        # 가장 작은 소수 (전자쌍 기본 단위)
-M3 = 7         # 메르센 소수 M3 = 2^3-1
+SIGMA = 12     # sigma(6) = 1+2+3+6 = sum of divisors
+TAU = 4        # tau(6)   = |{1,2,3,6}| = number of divisors
+P1 = 6         # First perfect number
+PHI = 2        # Smallest prime (basic unit of electron pair)
+M3 = 7         # Mersenne prime M3 = 2^3-1
 
 # ─────────────────────────────────────────
-# 원소 데이터베이스 (Z=1~36, 1주기~4주기)
-# (기호, Z, 질량수A, 전자배치 약식, 족, 주기)
+# Element database (Z=1~36, periods 1~4)
+# (symbol, Z, mass number A, electron configuration abbreviated, group, period)
 # ─────────────────────────────────────────
 ELEMENTS = [
     ("H",   1,   1, "1s1",                          1,  1),
@@ -66,69 +67,69 @@ ELEMENTS = [
     ("Kr", 36,  84, "[Ar]3d10 4s2 4p6",            18,  4),
 ]
 
-# 생명 필수 원소 (CHNOPS)
+# Life's essential elements (CHNOPS)
 LIFE_ELEMENTS = {"H", "C", "N", "O", "P", "S"}
 
 # ─────────────────────────────────────────
-# sigma/tau 표현 탐색
+# sigma/tau expression search
 # ─────────────────────────────────────────
 
 def find_sigma_tau_expr(n):
-    """정수 n을 sigma(12), tau(4) 조합으로 표현 시도.
-    가능한 표현 목록 반환. 텍사스 명사수 주의: 사후적 맞춤 가능성 표기."""
+    """Attempt to express integer n as a combination of sigma(12), tau(4).
+    Returns list of possible expressions. Texas sharpshooter warning: post-hoc fitting possible."""
     results = []
     s, t = SIGMA, TAU
 
-    # 단순 배수/약수
+    # Simple multiples/divisors
     if n == s:
-        results.append(("sigma", "정확", False))
+        results.append(("sigma", "exact", False))
     if n == t:
-        results.append(("tau", "정확", False))
+        results.append(("tau", "exact", False))
     if n == P1:
-        results.append(("P1(=6)", "정확", False))
+        results.append(("P1(=6)", "exact", False))
 
-    # sigma 기반 사칙연산
+    # sigma-based arithmetic operations
     for k in range(1, 20):
         if s * k == n:
-            results.append((f"sigma*{k}", "정확", k > 4))
+            results.append((f"sigma*{k}", "exact", k > 4))
         if s + k == n:
-            results.append((f"sigma+{k}", "정확" if k <= 2 else "ad hoc", k > 2))
+            results.append((f"sigma+{k}", "exact" if k <= 2 else "ad hoc", k > 2))
         if s - k == n and n > 0:
-            results.append((f"sigma-{k}", "정확" if k <= 2 else "ad hoc", k > 2))
+            results.append((f"sigma-{k}", "exact" if k <= 2 else "ad hoc", k > 2))
         if t * k == n:
-            results.append((f"tau*{k}", "정확", k > 6))
+            results.append((f"tau*{k}", "exact", k > 6))
         if t + k == n:
-            results.append((f"tau+{k}", "정확" if k <= 2 else "ad hoc", k > 2))
+            results.append((f"tau+{k}", "exact" if k <= 2 else "ad hoc", k > 2))
         if t - k == n and n > 0:
-            results.append((f"tau-{k}", "정확" if k <= 2 else "ad hoc", k > 2))
+            results.append((f"tau-{k}", "exact" if k <= 2 else "ad hoc", k > 2))
 
-    # sigma/tau 혼합
+    # sigma/tau mixed
     if s + t == n:
-        results.append(("sigma+tau", "정확", False))
+        results.append(("sigma+tau", "exact", False))
     if s - t == n:
-        results.append(("sigma-tau", "정확", False))
+        results.append(("sigma-tau", "exact", False))
     if s * t == n:
-        results.append(("sigma*tau", "정확", False))
+        results.append(("sigma*tau", "exact", False))
     if t > 0 and s // t == n and s % t == 0:
-        results.append(("sigma/tau", "정확", False))
+        results.append(("sigma/tau", "exact", False))
     if s ** 2 == n:
-        results.append(("sigma^2", "정확", False))
+        results.append(("sigma^2", "exact", False))
     if t ** 2 == n:
-        results.append(("tau^2", "정확", False))
+        results.append(("tau^2", "exact", False))
     if t ** 3 == n:
-        results.append(("tau^3", "정확", False))
+        results.append(("tau^3", "exact", False))
     if s + t**2 == n:
-        results.append(("sigma+tau^2", "정확", False))
+        results.append(("sigma+tau^2", "exact", False))
 
-    # 완전수 관련
+    # Perfect number related
     if 2 * P1 == n:
-        results.append(("2*P1", "정확", False))
+        results.append(("2*P1", "exact", False))
     if P1 ** 2 == n:
-        results.append(("P1^2", "정확", False))
+        results.append(("P1^2", "exact", False))
     if P1 * t == n:
-        results.append(("P1*tau", "정확", False))
+        results.append(("P1*tau", "exact", False))
 
-    # 중복 제거, 가장 간결한 것 우선
+    # Remove duplicates, prioritize most concise
     seen = set()
     unique = []
     for expr, grade, adhoc in results:
@@ -139,11 +140,11 @@ def find_sigma_tau_expr(n):
 
 
 def best_expr(n):
-    """가장 좋은 sigma/tau 표현 1개 반환"""
+    """Return the best sigma/tau expression"""
     exprs = find_sigma_tau_expr(n)
     if not exprs:
         return "-", ""
-    # 정확 > ad hoc, ad hoc 아닌 것 우선
+    # exact > ad hoc, prefer non-ad hoc
     non_adhoc = [e for e in exprs if not e[2]]
     if non_adhoc:
         return non_adhoc[0][0], non_adhoc[0][1]
@@ -151,74 +152,74 @@ def best_expr(n):
 
 
 # ─────────────────────────────────────────
-# 전자 껍질 분석
+# Electron shell analysis
 # ─────────────────────────────────────────
 
 def analyze_shells():
-    """전자 오비탈 수용 전자 수와 sigma/tau 관계"""
+    """Electron orbital capacity and sigma/tau relationships"""
     print("\n" + "=" * 60)
-    print("  전자 껍질 구조 — sigma/tau 렌즈")
+    print("  Electron Shell Structure — sigma/tau lens")
     print("=" * 60)
     shells = [
-        ("s", 2,  "phi(=2)", "전자쌍 기본 단위"),
-        ("p", 6,  "P1(=6)",  "첫 번째 완전수!"),
-        ("d", 10, "sigma-phi(=10)", "d오비탈 = sigma - 기본쌍"),
-        ("f", 14, "2*M3(=14)", "f오비탈 = 2 × 메르센소수7"),
+        ("s", 2,  "phi(=2)", "Basic unit of electron pair"),
+        ("p", 6,  "P1(=6)",  "First perfect number!"),
+        ("d", 10, "sigma-phi(=10)", "d-orbital = sigma - basic pair"),
+        ("f", 14, "2*M3(=14)", "f-orbital = 2 × Mersenne prime 7"),
     ]
-    print(f"  {'오비탈':>6} {'전자수':>6} {'sigma/tau 표현':>20} {'해석'}")
+    print(f"  {'orbital':>6} {'electrons':>6} {'sigma/tau expression':>20} {'interpretation'}")
     print("  " + "-" * 56)
     for name, count, expr, note in shells:
         print(f"  {name:>6} {count:>6} {expr:>20}   {note}")
 
-    print(f"\n  ⚠ 텍사스 명사수 주의: 4개 오비탈 중 2개(s,p)만 자연스러운 매칭.")
-    print(f"    d=10, f=14는 사후적 해석 가능성 있음.")
-    print(f"    p=6=완전수는 구조적으로 의미 있을 수 있음 (p-value 필요).")
+    print(f"\n  ⚠ Texas sharpshooter warning: Only 2 out of 4 orbitals (s,p) have natural matches.")
+    print(f"    d=10, f=14 may be post-hoc interpretations.")
+    print(f"    p=6=perfect number may be structurally meaningful (p-value needed).")
 
 
 # ─────────────────────────────────────────
-# 화학 결합 분석
+# Chemical bond analysis
 # ─────────────────────────────────────────
 
 def analyze_bonds():
-    """화학 결합 전자 수와 sigma/tau 관계"""
+    """Chemical bond electron numbers and sigma/tau relationships"""
     print("\n" + "=" * 60)
-    print("  화학 결합 — sigma/tau 렌즈")
+    print("  Chemical Bonds — sigma/tau lens")
     print("=" * 60)
     bonds = [
-        ("단일결합", 2, "phi(=2)",     "전자쌍 1개"),
-        ("이중결합", 4, "tau(=4)",     "약수 개수 = 결합 전자!"),
-        ("삼중결합", 6, "P1(=6)",      "완전수 = 최강 공유결합"),
-        ("금속결합", "n", "sigma/n",   "비편재화된 전자 바다"),
+        ("single bond", 2, "phi(=2)",     "1 electron pair"),
+        ("double bond", 4, "tau(=4)",     "number of divisors = bonding electrons!"),
+        ("triple bond", 6, "P1(=6)",      "perfect number = strongest covalent bond"),
+        ("metallic bond", "n", "sigma/n",   "delocalized electron sea"),
     ]
-    print(f"  {'결합':>10} {'전자수':>6} {'sigma/tau 표현':>16} {'해석'}")
+    print(f"  {'bond':>10} {'electrons':>6} {'sigma/tau expression':>16} {'interpretation'}")
     print("  " + "-" * 56)
     for name, count, expr, note in bonds:
         print(f"  {name:>10} {str(count):>6} {expr:>16}   {note}")
 
-    print(f"\n  핵심 관찰:")
-    print(f"    단일(2) + 이중(4) = 삼중(6) = P1 ✓")
-    print(f"    이중(4) = tau(6) — 약수 개수와 결합 전자의 일치")
-    print(f"    삼중(6) = sigma(6)/2 = P1 — 완전수")
-    print(f"\n  ⚠ 텍사스: 2,4,6은 작은 짝수. 매칭 확률 높음.")
-    print(f"    단일=phi, 이중=tau는 구조적이라기보다 숫자 일치.")
+    print(f"\n  Key observations:")
+    print(f"    single(2) + double(4) = triple(6) = P1 ✓")
+    print(f"    double(4) = tau(6) — number of divisors matches bonding electrons")
+    print(f"    triple(6) = sigma(6)/2 = P1 — perfect number")
+    print(f"\n  ⚠ Texas: 2,4,6 are small even numbers. High matching probability.")
+    print(f"    single=phi, double=tau is more numerical coincidence than structural.")
 
-    # 옥텟 규칙
-    print(f"\n  옥텟 규칙:")
+    # Octet rule
+    print(f"\n  Octet rule:")
     print(f"    8 = sigma - tau = 12 - 4")
-    print(f"    안정 전자 배치 = 약수합 - 약수개수")
-    print(f"    ⚠ 이것은 정확한 등식이지만 인과관계는 불명")
+    print(f"    Stable electron configuration = sum of divisors - number of divisors")
+    print(f"    ⚠ This is an exact equality but causation is unclear")
 
 
 # ─────────────────────────────────────────
-# 원소 출력
+# Element output
 # ─────────────────────────────────────────
 
-def print_element_table(elements, title="원소 분석"):
-    """원소 테이블 출력"""
+def print_element_table(elements, title="Element Analysis"):
+    """Print element table"""
     print("\n" + "=" * 78)
-    print(f"  {title} — sigma(6)=12, tau(6)=4 렌즈")
+    print(f"  {title} — sigma(6)=12, tau(6)=4 lens")
     print("=" * 78)
-    header = f"  {'기호':>4} {'Z':>3} {'A':>4}  {'Z 표현':>16} {'A 표현':>16} {'생명':>4} {'메모'}"
+    header = f"  {'symbol':>4} {'Z':>3} {'A':>4}  {'Z expression':>16} {'A expression':>16} {'life':>4} {'memo'}"
     print(header)
     print("  " + "-" * 74)
 
@@ -235,7 +236,7 @@ def print_element_table(elements, title="원소 분석"):
             match_z += 1
         if a_expr != "-":
             match_a += 1
-        # 특별 메모
+        # Special memos
         if sym == "C":
             memo = "A=sigma!"
         elif sym == "He":
@@ -250,75 +251,75 @@ def print_element_table(elements, title="원소 분석"):
         print(f"  {sym:>4} {z:>3} {a:>4}  {z_expr:>16} {a_expr:>16} {life:>4}  {memo}")
 
     print("  " + "-" * 74)
-    print(f"  Z 매칭: {match_z}/{total} ({100*match_z/total:.0f}%)")
-    print(f"  A 매칭: {match_a}/{total} ({100*match_a/total:.0f}%)")
-    print(f"\n  ⚠ 텍사스 명사수 경고:")
-    print(f"    sigma=12, tau=4로 사칙연산 조합하면 상당수 정수를 만들 수 있음.")
-    print(f"    매칭률이 높다고 해서 구조적 관계를 의미하지 않음.")
-    print(f"    진짜 의미: C(Z=6=P1, A=12=sigma), He(A=4=tau) 정도만 주목할 것.")
+    print(f"  Z matches: {match_z}/{total} ({100*match_z/total:.0f}%)")
+    print(f"  A matches: {match_a}/{total} ({100*match_a/total:.0f}%)")
+    print(f"\n  ⚠ Texas sharpshooter warning:")
+    print(f"    sigma=12, tau=4 with arithmetic operations can generate many integers.")
+    print(f"    High matching rate doesn't imply structural relationship.")
+    print(f"    Real significance: Only C(Z=6=P1, A=12=sigma), He(A=4=tau) are noteworthy.")
 
 
 def print_life_analysis():
-    """생명 필수 원소 심층 분석"""
+    """Deep analysis of life's essential elements"""
     life = [e for e in ELEMENTS if e[0] in LIFE_ELEMENTS]
     print("\n" + "=" * 78)
-    print("  생명 필수 원소 (CHNOPS) — sigma/tau 심층 분석")
+    print("  Life's Essential Elements (CHNOPS) — sigma/tau deep analysis")
     print("=" * 78)
 
     for sym, z, a, config, group, period in life:
         exprs_z = find_sigma_tau_expr(z)
         exprs_a = find_sigma_tau_expr(a)
         print(f"\n  ── {sym} (Z={z}, A={a}) ──")
-        print(f"     전자배치: {config}")
-        print(f"     Z 표현: {', '.join(e[0] for e in exprs_z[:5]) if exprs_z else '없음'}")
-        print(f"     A 표현: {', '.join(e[0] for e in exprs_a[:5]) if exprs_a else '없음'}")
+        print(f"     Electron configuration: {config}")
+        print(f"     Z expressions: {', '.join(e[0] for e in exprs_z[:5]) if exprs_z else 'none'}")
+        print(f"     A expressions: {', '.join(e[0] for e in exprs_a[:5]) if exprs_a else 'none'}")
 
-    # 요약 통계
-    print(f"\n  ── 생명 원소 요약 ──")
-    print(f"  H:  Z=1(단위원), A=1     — 가장 단순, 우주 최다")
-    print(f"  C:  Z=6=P1, A=12=sigma   — 완전수 & sigma! ★ 핵심")
-    print(f"  N:  Z=7=M3, A=14=2*M3    — 메르센 소수")
-    print(f"  O:  Z=8=sigma-tau, A=16=tau^2  — 옥텟=sigma-tau")
-    print(f"  P:  Z=15=sigma+tau-1, A=31     — 메르센수 2^5-1")
+    # Summary statistics
+    print(f"\n  ── Life elements summary ──")
+    print(f"  H:  Z=1(unit element), A=1     — simplest, most abundant in universe")
+    print(f"  C:  Z=6=P1, A=12=sigma   — perfect number & sigma! ★ key")
+    print(f"  N:  Z=7=M3, A=14=2*M3    — Mersenne prime")
+    print(f"  O:  Z=8=sigma-tau, A=16=tau^2  — octet=sigma-tau")
+    print(f"  P:  Z=15=sigma+tau-1, A=31     — Mersenne number 2^5-1")
     print(f"  S:  Z=16=tau^2, A=32=sigma+sigma+8")
-    print(f"\n  탄소 특이성: Z=P1(완전수), A=sigma(약수합) 동시 만족!")
-    print(f"  이것이 탄소가 생명의 골격인 이유? (가설, 검증 필요)")
+    print(f"\n  Carbon uniqueness: simultaneously satisfies Z=P1(perfect number), A=sigma(sum of divisors)!")
+    print(f"  Is this why carbon is life's backbone? (hypothesis, verification needed)")
 
 
 # ─────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(
-        description="화학 원소 분석 — sigma(6)=12, tau(6)=4 렌즈"
+        description="Chemical Element Analysis — sigma(6)=12, tau(6)=4 lens"
     )
-    parser.add_argument("--element", type=str, help="단일 원소 기호 (예: C, Fe)")
-    parser.add_argument("--life", action="store_true", help="생명 필수 원소(CHNOPS) 분석")
-    parser.add_argument("--all", action="store_true", help="전체 36원소 테이블")
-    parser.add_argument("--bonds", action="store_true", help="화학 결합 + 전자 껍질 분석")
+    parser.add_argument("--element", type=str, help="Single element symbol (e.g., C, Fe)")
+    parser.add_argument("--life", action="store_true", help="Life's essential elements (CHNOPS) analysis")
+    parser.add_argument("--all", action="store_true", help="All 36 elements table")
+    parser.add_argument("--bonds", action="store_true", help="Chemical bonds + electron shell analysis")
     args = parser.parse_args()
 
-    # 인자 없으면 전체 실행
+    # If no arguments, run everything
     if not any([args.element, args.life, args.all, args.bonds]):
         args.all = True
         args.life = True
         args.bonds = True
 
     print("╔══════════════════════════════════════════════════════════╗")
-    print("║  화학 원소 분석 엔진 — sigma(6)=12, tau(6)=4 렌즈      ║")
-    print("║  sigma = 약수의 합, tau = 약수의 개수, P1 = 완전수 6   ║")
+    print("║  Chemistry Element Analysis Engine — sigma(6)=12, tau(6)=4 lens ║")
+    print("║  sigma = sum of divisors, tau = number of divisors, P1 = perfect number 6   ║")
     print("╚══════════════════════════════════════════════════════════╝")
 
     if args.element:
         found = [e for e in ELEMENTS if e[0].upper() == args.element.upper()]
         if found:
-            print_element_table(found, f"{args.element} 원소 분석")
+            print_element_table(found, f"{args.element} element analysis")
         else:
-            print(f"  ✗ 원소 '{args.element}'을(를) 찾을 수 없음 (Z=1~36 범위)")
+            print(f"  ✗ Element '{args.element}' not found (Z=1~36 range)")
 
     if args.all:
-        print_element_table(ELEMENTS, "전체 36원소")
+        print_element_table(ELEMENTS, "All 36 elements")
 
     if args.life:
         print_life_analysis()
@@ -330,3 +331,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+```

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""H-CX-153~156: 순수 수학 가설 검증
+"""H-CX-153~156: Pure Math Hypothesis Verification
 
-153: N×ln((N+1)/N) 수열 — N=12가 1에 최근접?
-154: 인간/돌고래 뉴런비 ≈ e
-155: σφ/(nτ) 전원소 스캔 Z=1~118
-156: 완전수 원소 체인
+153: N×ln((N+1)/N) sequence — N=12 closest to 1?
+154: Human/Dolphin neuron ratio ≈ e
+155: σφ/(nτ) full element scan Z=1~118
+156: Perfect number element chain
 """
 import math
 from sympy import divisor_sigma, totient, divisor_count, isprime, factorint
@@ -23,10 +23,10 @@ def run_all():
         val = N * math.log((N+1)/N)
         delta = abs(val - 1)
         note = ''
-        if N == 6: note = 'P₁ 완전수'
+        if N == 6: note = 'P₁ perfect num'
         elif N == 12: note = 'σ(6)'
-        elif N == 28: note = 'P₂ 완전수'
-        elif N == 13: note = '소수'
+        elif N == 28: note = 'P₂ perfect num'
+        elif N == 13: note = 'prime'
         if delta < best_delta:
             best_delta = delta; best_n = N
         if N <= 20 or N in [28, 30, 36, 42, 48]:
@@ -87,7 +87,7 @@ def run_all():
         50:4, 82:4,
     }
 
-    print(f"  {'Z':>4} {'σ':>5} {'τ':>3} {'φ':>5} {'σφ':>7} {'nτ':>7} {'ratio':>8} {'결합':>4} {'τ=결합':>6} {'완전수':>6}")
+    print(f"  {'Z':>4} {'σ':>5} {'τ':>3} {'φ':>5} {'σφ':>7} {'nτ':>7} {'ratio':>8} {'bond':>4} {'τ=bond':>6} {'perfect':>6}")
     print(f"  {'-'*60}")
 
     for z in range(1, 119):
@@ -113,15 +113,15 @@ def run_all():
     print(f"  σφ/(nτ) ≈ 1.0 (±0.1): Z = {near_balance[:20]}{'...' if len(near_balance)>20 else ''}")
 
     multi_bond_balance = [z for z in perfect_balance if valence_map.get(z, 0) >= 3]
-    print(f"  다결합(≥3) + σφ=nτ: Z = {multi_bond_balance}")
-    print(f"  H-CX-155 (탄소 유일?): {'YES — Z=6만!' if multi_bond_balance == [6] else 'NO: ' + str(multi_bond_balance)}")
+    print(f"  Multi-bond(≥3) + σφ=nτ: Z = {multi_bond_balance}")
+    print(f"  H-CX-155 (carbon unique?): {'YES — only Z=6!' if multi_bond_balance == [6] else 'NO: ' + str(multi_bond_balance)}")
 
     # === H-CX-156: Perfect number element chain ===
     print(f"\n  === H-CX-156: Perfect Number Element Chain ===")
     perfect_numbers = [6, 28, 496, 8128]
     for pn in perfect_numbers:
         if pn > 118:
-            print(f"  Z={pn}: 원소 없음 (Z≤118)")
+            print(f"  Z={pn}: No element (Z≤118)")
             continue
         s = int(divisor_sigma(pn, 1))
         t = int(divisor_count(pn))
@@ -129,23 +129,23 @@ def run_all():
         print(f"  Z={pn}: σ={s}, τ={t}, φ={p}")
         # Cross-connections
         if pn == 28:
-            print(f"    φ(28) = {p} = σ(6) = 12 ← 두 완전수 연결!")
-            print(f"    τ(28) = {t} = 6 = 완전수! ← 약수 개수가 완전수!")
+            print(f"    φ(28) = {p} = σ(6) = 12 ← Connects two perfect numbers!")
+            print(f"    τ(28) = {t} = 6 = perfect number! ← Divisor count is a perfect number!")
 
     # Chain
-    print(f"\n  완전수 원소 체인:")
-    print(f"    Z=6(C):  σ=12  τ=4  φ=2   → 생명")
-    print(f"    Z=28(Ni): σ=56  τ=6  φ=12  → 촉매")
-    print(f"    φ(28)=12=σ(6) ← 연결")
-    print(f"    τ(28)=6=P₁   ← 약수 개수가 첫째 완전수")
-    print(f"    Z=496: 초월 (원소 없음)")
+    print(f"\n  Perfect number element chain:")
+    print(f"    Z=6(C):  σ=12  τ=4  φ=2   → Life")
+    print(f"    Z=28(Ni): σ=56  τ=6  φ=12  → Catalyst")
+    print(f"    φ(28)=12=σ(6) ← Connection")
+    print(f"    τ(28)=6=P₁   ← Divisor count is first perfect number")
+    print(f"    Z=496: Transcendent (no element)")
 
     print(f"\n{'='*70}")
     print(f"  MATH SUMMARY")
     print(f"{'='*70}")
-    print(f"  H-CX-153: N=12 첫 번째 val<1 지점? 확인 필요")
-    print(f"  H-CX-154: 인간/돌고래 = {ratio:.4f}, e={math.e:.4f}, delta={abs(ratio-math.e):.4f}")
-    print(f"  H-CX-155: σφ/(nτ)=1 다결합: {multi_bond_balance}")
+    print(f"  H-CX-153: N=12 first point where val<1? Needs verification")
+    print(f"  H-CX-154: Human/Dolphin = {ratio:.4f}, e={math.e:.4f}, delta={abs(ratio-math.e):.4f}")
+    print(f"  H-CX-155: σφ/(nτ)=1 multi-bond: {multi_bond_balance}")
     print(f"  H-CX-156: φ(28)=σ(6)=12, τ(28)=6=P₁")
 
 

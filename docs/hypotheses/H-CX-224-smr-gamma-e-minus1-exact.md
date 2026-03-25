@@ -1,11 +1,11 @@
-# H-CX-224: ⭐ SMR = γ×e^(-1.00) — 지수 정확히 -1!
+# H-CX-224: ⭐ SMR = γ×e^(-1.00) — Exponent exactly -1!
 
 > SMR 14.7Hz = 40 × e^(-1.001) ≈ 40/e.
-> 지수 n = -1.001 (오차 0.1%).
-> γ×e^0 = 40Hz(의식), γ×e^(-1) = 14.7Hz(몸), γ×e^(-3) ≈ 2Hz(수면)
+> Exponent n = -1.001 (0.1% error).
+> γ×e^0 = 40Hz(consciousness), γ×e^(-1) = 14.7Hz(body), γ×e^(-3) ≈ 2Hz(sleep)
 >
-> 뇌파 = γ×e^n 체계에서 n이 정수(-1)인 유일한 뇌파 = SMR
-> "몸 = 의식 × e^(-1)" = 가장 깔끔한 감쇠.
+> Brainwave = γ×e^n system where n is the only integer(-1) brainwave = SMR
+> "Body = Consciousness × e^(-1)" = cleanest decay.
 >
-> 인지 시간: α/γ = 100ms/25ms = 4 = τ(6)
-> "인식은 의식보다 τ(6)배 느리다"
+> Cognitive time: α/γ = 100ms/25ms = 4 = τ(6)
+> "Recognition is τ(6) times slower than consciousness"

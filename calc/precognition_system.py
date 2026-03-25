@@ -1,15 +1,16 @@
+```python
 #!/usr/bin/env python3
-"""통합 예지 시스템 — 크기+방향+위상 결합 예지 (H-CX-58+59+62)
+"""Unified Precognition System — Size+Direction+Topology Combined Precognition (H-CX-58+59+62)
 
-3채널 예지:
-  1. 크기 (magnitude): 장력 크기로 정오답 예측 (H-CX-58, r=0.98)
-  2. 방향 (direction): 방향벡터로 혼동 클래스 예측 (H-CX-59, 70-82%)
-  3. 위상 (topology): PH로 학습 궤적 + 일반화 갭 예측 (H-CX-62/95)
+3-channel precognition:
+  1. Magnitude: Predict correct/wrong answers by tension magnitude (H-CX-58, r=0.98)
+  2. Direction: Predict confusion classes by direction vectors (H-CX-59, 70-82%)
+  3. Topology: Predict learning trajectory + generalization gap by PH (H-CX-62/95)
 
-LR 통합 시 AUC=0.917, SYNERGY 3/3 (Fashion +17.8%p)
-직교성→시너지: r=0.90 (H-CX-80)
+LR integration shows AUC=0.917, SYNERGY 3/3 (Fashion +17.8%p)
+Orthogonality→Synergy: r=0.90 (H-CX-80)
 
-사용법:
+Usage:
   python3 calc/precognition_system.py --dataset mnist
   python3 calc/precognition_system.py --dataset cifar --predict-confusion
   python3 calc/precognition_system.py --dataset fashion --full-report
@@ -172,3 +173,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

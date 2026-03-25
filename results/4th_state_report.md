@@ -1,7 +1,7 @@
-# 4번째 상태 탐색 결과 [2026-03-22 06:55:35]
+# 4th State Exploration Results [2026-03-22 06:55:35]
 
-승자: 초월 (Transcendence)
-최적 E_4th: -2.00
-Compass 상한: 75.7%
+Winner: Transcendence
+Optimal E_4th: -2.00
+Compass Upper Bound: 75.7%
 
 ---

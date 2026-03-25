@@ -1,91 +1,91 @@
-# 가설 272: detach() 설계 원칙 — 행동하지 않으면 더 잘 본다
+# Hypothesis 272: detach() Design Principle — See Better When Not Acting
 
-> **detach()(역전파 차단)가 관찰 정확도를 +7.4% 향상시킨다. 행동과 관찰을 분리하면 양쪽 모두 개선된다. 이것은 반발력장에 관찰 전용 경로를 추가하는 설계 원칙으로 확장 가능하다.**
+> **detach() (gradient blocking) improves observation accuracy by +7.4%. Separating action and observation improves both. This can be extended to a design principle that adds an observation-only pathway to the repulsion field.**
 
-## 배경/맥락
+## Background/Context
 
-experiment_observer_advantage.py 결과:
+experiment_observer_advantage.py results:
 ```
-  detach 있음: 관찰자 73.3%, 주체 73.3%
-  detach 없음: 관찰자 66.0%, 주체 66.0%
-  차이: +7.4% (관찰자), +7.3% (주체)
+  With detach: Observer 73.3%, Subject 73.3%
+  Without detach: Observer 66.0%, Subject 66.0%
+  Difference: +7.4% (Observer), +7.3% (Subject)
 
-  → 관찰 경로의 역전파를 차단하면
-    관찰자만 좋아지는 게 아니라 주체도 좋아짐
-    간섭 제거가 양쪽 모두에 이득
-```
-
-관련 가설: 263(장력 통합), 264(설계 원칙), 271(분열)
-
-## 메커니즘
-
-```
-  detach 있을 때:
-    주체(B): 출력 최적화에만 집중
-    관찰자(A): 이해에만 집중
-    → 각자 단일 목표 → 깔끔한 최적화
-
-  detach 없을 때:
-    주체(B): 출력 최적화 + 관찰자가 읽기 쉽게 만들기 (이중 목표)
-    관찰자(A): 이해 + 주체에 역전파 영향 (이중 역할)
-    → 표현 간섭 (representation interference)
-    → 양쪽 다 나빠짐
+  → When blocking backpropagation in observation path
+    Not only observer improves but subject also improves
+    Interference removal benefits both sides
 ```
 
-## 추가 발견
+Related hypotheses: 263(tension integration), 264(design principles), 271(mitosis)
+
+## Mechanism
 
 ```
-  관찰자 우위는 시간에 따라 성장:
-    10 에폭: +0.1%
-    20 에폭: +0.7%
-    → 간섭 누적 효과: 시간이 지날수록 detach의 이점 확대
+  With detach:
+    Subject(B): Focus only on output optimization
+    Observer(A): Focus only on understanding
+    → Each has single objective → Clean optimization
 
-  상호 관찰 시 주체 성능 하락:
-    단독: 73.3%
-    관찰당함: 71.8% (-1.5%)
-    → 관찰받는 것도 주체에 부담
-    → "누가 보고 있으면 못하는" 현상의 수학적 모델?
-
-  명상 효과:
-    행동→관찰→행동: 97.0%
-    행동만: 97.5%
-    → 명상은 +0.4% 도움이지만 연속 학습보다 못함
-    → 학습이 중단되는 비용이 관찰의 이점보다 큼
+  Without detach:
+    Subject(B): Output optimization + Making it easy for observer to read (dual objectives)
+    Observer(A): Understanding + Backprop influence on subject (dual roles)
+    → Representation interference
+    → Both get worse
 ```
 
-## 설계 적용
+## Additional Findings
 
 ```
-  현재 반발력장:
-    A ←반발→ G → 출력
+  Observer advantage grows over time:
+    10 epochs: +0.1%
+    20 epochs: +0.7%
+    → Interference accumulation effect: detach benefits expand over time
 
-  제안: detach 관찰 경로 추가
-    A ←반발→ G → 출력
+  Subject performance drops when mutually observing:
+    Solo: 73.3%
+    Being observed: 71.8% (-1.5%)
+    → Being observed is also a burden on the subject
+    → Mathematical model of "can't perform when someone's watching" phenomenon?
+
+  Meditation effect:
+    Act→Observe→Act: 97.0%
+    Act only: 97.5%
+    → Meditation helps +0.4% but worse than continuous learning
+    → Cost of interrupted learning exceeds benefits of observation
+```
+
+## Design Application
+
+```
+  Current repulsion field:
+    A ←repulsion→ G → output
+
+  Proposal: Add detach observation path
+    A ←repulsion→ G → output
               ↓ detach()
-           관찰자 → 이해 → 보정 신호
+           Observer → Understanding → Correction signal
 
-  관찰자는:
-    - 반발력장의 출력을 읽기 전용으로 관찰
-    - 보정 신호를 별도 경로로 출력에 더함
-    - 주체의 역전파를 방해하지 않음
-    - Phase 3(자기참조)의 개선판
+  Observer:
+    - Observes repulsion field output in read-only mode
+    - Outputs correction signal through separate path
+    - Doesn't interfere with subject's backpropagation
+    - Improved version of Phase 3 (self-reference)
 ```
 
-## 검증 방향
+## Verification Direction
 
 ```
-  1. 반발력장 + detach 관찰자 결합 구현
-  2. CIFAR에서 +7.4% 효과 재현되는가?
-  3. CNN 기반에서도 효과 있는가?
-  4. 관찰자 수 최적화 (1 vs 3 vs 5)
-  5. detach 비율 조절: 완전 detach vs 부분 detach (gradient scaling)
+  1. Implement repulsion field + detach observer combination
+  2. Does +7.4% effect reproduce on CIFAR?
+  3. Is it effective on CNN-based models?
+  4. Optimize number of observers (1 vs 3 vs 5)
+  5. Adjust detach ratio: full detach vs partial detach (gradient scaling)
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. MNIST에서만 검증 (displacement 설정에서).
-  2. +7.4%는 displacement 상태의 수치. 정상 반발력장에 적용 시 다를 수 있음.
-  3. 관찰 경로 추가 = 파라미터 증가. 공정한 비교 필요.
-  4. detach의 이점이 모델 크기에 의존하는지 미확인.
+  1. Verified only on MNIST (in displacement setting).
+  2. +7.4% is from displacement state. May differ when applied to normal repulsion field.
+  3. Adding observation path = parameter increase. Fair comparison needed.
+  4. Whether detach benefits depend on model size is unconfirmed.
 ```

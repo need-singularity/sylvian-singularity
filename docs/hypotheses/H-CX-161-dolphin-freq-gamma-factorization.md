@@ -1,12 +1,12 @@
-# H-CX-161: 돌고래 전주파수 = 감마(40Hz) × 완전수 상수 × 5³
+# H-CX-161: Dolphin Total Frequencies = Gamma(40Hz) × Perfect Number Constant × 5³
 
-> 돌고래의 모든 소통/에코로케이션 주파수가 감마 40Hz의 정수배이며,
-> 그 인수가 완전수 6의 약수 함수(σ,τ,φ)와 5³으로 분해된다.
+> All dolphin communication/echolocation frequencies are integer multiples of gamma 40Hz,
+> with factors decomposable into divisor functions(σ,τ,φ) of perfect number 6 and 5³.
 
-## 검증: 🟩 순수 산술 확인
+## Verification: 🟩 Pure Arithmetic Confirmed
 
-| 주파수 | Hz | = 40 × | 인수 분해 |
-|--------|-----|--------|----------|
+| Frequency | Hz | = 40 × | Factor Decomposition |
+|-----------|-----|--------|---------------------|
 | whistle low | 2,000 | 50 | σ(6)τ(6)+φ(6) = 12×4+2 |
 | signature low | 5,000 | 125 | 5³ |
 | signature high | 15,000 | 375 | 3×5³ |
@@ -14,25 +14,25 @@
 | click low | 30,000 | 750 | P₁×5³ = 6×125 |
 | click high | 130,000 | 3,250 | 2×5³×13 |
 
-## 패턴
+## Pattern
 
 ```
-  모든 주파수 = 40 × n, where n은 {2, 3, 5, 6, 13}의 곱
+  All frequencies = 40 × n, where n is product of {2, 3, 5, 6, 13}
 
-  5³ = 125가 기본 단위 ("돌고래 옥타브"?)
-  σ(6)τ(6)+φ(6) = 50 = whistle 기본 배수
-  P₁ = 6 = click/whistle 비율 (30000/5000 = 6)
-  13 = 소수, click_high에서만 등장 (12궁+1)
+  5³ = 125 as basic unit ("dolphin octave"?)
+  σ(6)τ(6)+φ(6) = 50 = whistle base multiple
+  P₁ = 6 = click/whistle ratio (30000/5000 = 6)
+  13 = prime, appears only in click_high (12 signs + 1)
 ```
 
-## 한계
+## Limitations
 
-- 주파수 범위가 근사값 (개체/종별 차이)
-- 5³의 등장이 우연일 수 있음 (ad-hoc)
-- 인간 청각 범위 20-20000Hz도 비슷한 구조?
+- Frequency ranges are approximations (individual/species differences)
+- Appearance of 5³ may be coincidental (ad-hoc)
+- Human hearing range 20-20000Hz also has similar structure?
 
-## 관련
+## Related
 
-- H-CX-56: 3σ(6)+τ(6) = 40Hz 감마
-- H-CX-132: 돌고래 40Hz = 의식 결합
-- H-CX-133: 휘슬 비율 = 골든존
+- H-CX-56: 3σ(6)+τ(6) = 40Hz gamma
+- H-CX-132: Dolphin 40Hz = consciousness binding
+- H-CX-133: Whistle ratio = Golden Zone

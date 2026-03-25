@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""H-CX-64 + H-CX-69 검증: 위상 예지 렌즈 + 위상 가속
+"""H-CX-64 + H-CX-69 verification: Topological precognition lens + Topological acceleration
 
-H-CX-64: dH0/dep (감소율)이 예지 AUC를 예측
+H-CX-64: dH0/dep (decay rate) predicts precognition AUC
 H-CX-69: H0_total ≈ a - b·ln(ep), b ≈ (1/3)·H0_total(0)
 """
 import sys

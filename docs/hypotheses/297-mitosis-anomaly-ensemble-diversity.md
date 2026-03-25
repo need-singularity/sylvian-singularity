@@ -1,87 +1,87 @@
-# 가설 297: 분열 앙상블 다양성 = 이상 탐지 민감도
+# Hypothesis 297: Mitosis Ensemble Diversity = Anomaly Detection Sensitivity
 
-> **분열된 자식들이 독립 학습하면 서로 다른 "정상 모델"을 형성한다. 이 다양성이 이상에 대한 "교차 검증"을 만든다. 분열 수가 많을수록(2→4→8 자식) 이상 탐지 AUROC가 monotonic하게 증가하는가?**
+> **When split children learn independently, they form different "normal models". This diversity creates "cross-validation" for anomalies. Does anomaly detection AUROC increase monotonically as the number of splits increases (2→4→8 children)?**
 
-## 배경
-
-```
-  H296 실험:
-    내부 장력 (single engine): AUROC = 0.156 (거의 무용)
-    간 장력 (2 children):     AUROC = 0.805
-
-  왜 이런 차이?
-    내부 장력: engine_a와 engine_g가 같은 데이터로 동시 학습
-      → 같은 패턴에 합의 → 이상에도 합의 → 구분 불가
-    간 장력: child_a와 child_b가 다른 mini-batch로 독립 학습
-      → 다른 "정상 프로파일" → 이상에 다르게 반응 → 구분 가능
-
-  Random Forest 비유:
-    단일 트리 < 랜덤 포레스트 (다양성이 정확도를 높임)
-    단일 엔진 < 분열 앙상블 (다양성이 이상 탐지를 높임)
-```
-
-## 핵심 질문
+## Background
 
 ```
-  Q1: 분열 수 N이 증가하면 AUROC도 증가하는가?
-      N=1 (단일): AUROC ≈ 0.16
-      N=2 (분열): AUROC ≈ 0.81
-      N=4 (이중분열): AUROC = ?
-      N=8 (삼중분열): AUROC = ?
+  H296 experiments:
+    Internal tension (single engine): AUROC = 0.156 (almost useless)
+    Inter tension (2 children):       AUROC = 0.805
 
-  Q2: 증가는 어디서 포화되는가?
-      log(N)에 비례? sqrt(N)? 선형?
+  Why this difference?
+    Internal tension: engine_a and engine_g learn simultaneously on same data
+      → Agree on same patterns → Agree on anomalies → Cannot distinguish
+    Inter tension: child_a and child_b learn independently on different mini-batches
+      → Different "normal profiles" → Different reactions to anomalies → Can distinguish
 
-  Q3: 간 장력의 "앙상블" 방법은?
+  Random Forest analogy:
+    Single tree < Random forest (diversity increases accuracy)
+    Single engine < Mitosis ensemble (diversity increases anomaly detection)
+```
+
+## Core Questions
+
+```
+  Q1: Does AUROC increase as split count N increases?
+      N=1 (single): AUROC ≈ 0.16
+      N=2 (split): AUROC ≈ 0.81
+      N=4 (double split): AUROC = ?
+      N=8 (triple split): AUROC = ?
+
+  Q2: Where does the increase saturate?
+      Proportional to log(N)? sqrt(N)? Linear?
+
+  Q3: How to "ensemble" inter tensions?
       mean(pairwise T_ij)?
       max(pairwise T_ij)?
       variance(outputs)?
 
-  Q4: 독립 학습 기간이 중요한가?
-      1 에폭 vs 5 에폭 vs 10 에폭 → AUROC 변화?
+  Q4: Is independent learning period important?
+      1 epoch vs 5 epochs vs 10 epochs → AUROC change?
 ```
 
-## 실험 설계
+## Experimental Design
 
 ```
-  데이터: Breast Cancer (sklearn), digit anomaly (MNIST)
+  Data: Breast Cancer (sklearn), digit anomaly (MNIST)
 
-  Phase 1: parent 학습 (정상만)
-  Phase 2: N-way 분열
-    N=1: parent만
+  Phase 1: Train parent (normal only)
+  Phase 2: N-way split
+    N=1: parent only
     N=2: parent → child_a, child_b
-    N=4: parent → 2 → 4 (이중 분열)
-    N=8: parent → 2 → 4 → 8 (삼중 분열)
-  Phase 3: 각 child를 다른 mini-batch로 독립 학습 (K 에폭)
-  Phase 4: 테스트
+    N=4: parent → 2 → 4 (double split)
+    N=8: parent → 2 → 4 → 8 (triple split)
+  Phase 3: Train each child independently on different mini-batches (K epochs)
+  Phase 4: Test
     T_inter = mean of pairwise |child_i(x) - child_j(x)|²
-    AUROC 계산
+    Calculate AUROC
 
-  파라미터:
-    K = {1, 5, 10} 에폭
+  Parameters:
+    K = {1, 5, 10} epochs
     split_scale = 0.01
     N = {1, 2, 4, 8, 16}
 ```
 
-## 수학적 예측
+## Mathematical Prediction
 
 ```
-  다양성 이론 (Krogh & Vedelsby, 1995):
-    앙상블 오류 = 평균 개별 오류 - 다양성
-    다양성 = (1/N) Σ (f_i - f̄)²
+  Diversity theory (Krogh & Vedelsby, 1995):
+    Ensemble error = Average individual error - Diversity
+    Diversity = (1/N) Σ (f_i - f̄)²
 
-  이상 탐지 매핑:
-    "정상 합의" = 낮은 다양성 → 낮은 이상 점수
-    "이상 불일치" = 높은 다양성 → 높은 이상 점수
+  Anomaly detection mapping:
+    "Normal consensus" = Low diversity → Low anomaly score
+    "Anomaly disagreement" = High diversity → High anomaly score
 
-  AUROC ∝ (다양성_이상 - 다양성_정상) / σ
-  N이 증가하면 다양성 추정이 더 안정적 → AUROC ↑
+  AUROC ∝ (Diversity_anomaly - Diversity_normal) / σ
+  As N increases, diversity estimation becomes more stable → AUROC ↑
 
-  예측: AUROC(N) ≈ AUROC_max × (1 - e^(-αN))
-  → 지수적 포화, α가 데이터/아키텍처 의존
+  Prediction: AUROC(N) ≈ AUROC_max × (1 - e^(-αN))
+  → Exponential saturation, α depends on data/architecture
 ```
 
-## ASCII 예측 그래프
+## ASCII Prediction Graph
 
 ```
   AUROC
@@ -99,40 +99,40 @@
       N=1  2   4   8  16  32
 ```
 
-## 관련 가설
+## Related Hypotheses
 
 ```
-  287: 장력 = 이상 점수 (AUROC=1.0)
-  296: 분열 간 장력 >> 내부 장력
-  270: 다양성 = 정보
-  271: 분열 ≈ 설계
-  267: 집단 상전이 (다양성 임계점)
+  287: Tension = Anomaly score (AUROC=1.0)
+  296: Inter-split tension >> Internal tension
+  270: Diversity = Information
+  271: Mitosis ≈ Design
+  267: Collective phase transition (diversity critical point)
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  N-way 분열 (Breast Cancer, 3 trials each):
+  N-way split (Breast Cancer, 3 trials each):
 
   N     AUROC mean    std
   ─────  ──────────  ──────
-  1      0.080       (내부 장력만)
-  2      0.820       ← 최고!
+  1      0.080       (internal tension only)
+  2      0.820       ← Best!
   4      0.803
   8      0.778
   16     0.726
 
-  지수적 포화 피팅: AUROC = 0.80 - 5.21 × e^(-2.0N)
+  Exponential saturation fit: AUROC = 0.80 - 5.21 × e^(-2.0N)
   R² = 0.951
 
-  놀라운 발견:
-    N=2가 최고! N>2에서 오히려 미세 감소
-    → 예상(monotonic 증가)과 다름
-    → N이 증가하면 오히려 과잉 분화?
-    → 또는: 같은 데이터를 더 작은 조각으로 나누면 학습 부족?
+  Surprising finding:
+    N=2 is best! Slight decrease for N>2
+    → Different from expectation (monotonic increase)
+    → Over-differentiation as N increases?
+    → Or: Dividing same data into smaller pieces → Insufficient learning?
 ```
 
-### ASCII 그래프
+### ASCII Graph
 
 ```
   AUROC
@@ -150,14 +150,14 @@
         1  2  4  8  16
 ```
 
-### 수정된 해석
+### Revised Interpretation
 
 ```
-  원래 예측: AUROC ∝ 1-e^(-αN) (monotonic 증가)
-  실측: N=2 최적, N>2에서 감소
-  → "적정 다양성" 개념: 너무 많은 다양성은 해로움
-  → 가설 267(다양성 상전이)과 연결: 임계점 넘으면 성능 하락
-  → N=2 = 최소이자 최적 분열 수
+  Original prediction: AUROC ∝ 1-e^(-αN) (monotonic increase)
+  Actual: N=2 optimal, decreases for N>2
+  → "Optimal diversity" concept: Too much diversity is harmful
+  → Connects to hypothesis 267 (diversity phase transition): Performance drops beyond critical point
+  → N=2 = Minimal and optimal split count
 ```
 
-## 상태: 🟧 수정됨 (N=2 최적, N>2 감소 = 적정 다양성)
+## Status: 🟧 Modified (N=2 optimal, N>2 decreases = optimal diversity)

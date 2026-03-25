@@ -1,188 +1,188 @@
-# 가설 검토 118: 우주 구성 = 우리 상수 ✅
+# Hypothesis Review 118: Universe Composition = Our Constants ✅
 
-## 가설
+## Hypothesis
 
-> 우주의 에너지 구성 비율(암흑에너지, 암흑물질, 보통물질)이
-> 우리 모델 Genius = D x P / I 의 핵심 상수(2/3, 1/e, 1/e^3)와 대응하는가.
+> Do the energy composition ratios of the universe (dark energy, dark matter, ordinary matter)
+> correspond to the core constants of our model Genius = D x P / I (2/3, 1/e, 1/e^3)?
 
-## 배경
+## Background
 
-Planck 위성(2018) 최종 관측에 따르면 우주의 에너지 구성은:
-- 암흑에너지(Omega_Lambda) = 68.3%
-- 암흑물질(Omega_DM) = 26.8%
-- 보통물질(Omega_B) = 4.9%
+According to the final Planck satellite (2018) observations, the universe's energy composition is:
+- Dark energy (Omega_Lambda) = 68.3%
+- Dark matter (Omega_DM) = 26.8%
+- Ordinary matter (Omega_B) = 4.9%
 
-우리 모델의 핵심 상수:
-- 2/3 = 66.7% -- 골든존 상한(1/2)과 메타 부동점(1/3)의 합
-- 1/e = 36.8% -- 골든존 중심, 볼츠만 최적점
-- 1/e^3 = 4.98% -- 호기심 계수 epsilon, 블라인드 스팟 탐색률
+Core constants of our model:
+- 2/3 = 66.7% — sum of Golden Zone upper (1/2) and meta fixed point (1/3)
+- 1/e = 36.8% — Golden Zone center, Boltzmann optimal point
+- 1/e^3 = 4.98% — curiosity coefficient epsilon, blind spot exploration rate
 
-## 검증 결과: ✅ 대응 확인 (보통물질 특히 정밀)
+## Verification Result: ✅ Correspondence Confirmed (ordinary matter especially precise)
 
-### 1차 매핑: 직접 대응
+### Primary Mapping: Direct Correspondence
 
 ```
   ┌──────────────────────────────────────────────────────────────────┐
-  │           우주 구성 vs 우리 모델 상수 비교                       │
-  ├────────────────┬──────────┬─────────────────┬────────┬──────────┤
-  │ 구성 요소      │ 관측값   │ 모델 상수       │ 차이   │ 판정     │
-  ├────────────────┼──────────┼─────────────────┼────────┼──────────┤
-  │ 암흑에너지     │ 68.3%    │ 2/3 = 66.7%    │ 1.6%   │ ✅ 강함  │
-  │ 암흑물질       │ 26.8%    │ 1/e = 36.8%    │ 10.0%  │ 약함     │
-  │ 보통물질       │  4.9%    │ 1/e^3 = 4.98%  │ 0.08%  │ ✅ 정밀  │
-  └────────────────┴──────────┴─────────────────┴────────┴──────────┘
+  │           Universe Composition vs Our Model Constants            │
+  ├────────────────┬──────────┬──────────────────┬────────┬──────────┤
+  │ Component      │ Observed │ Model constant   │ Diff   │ Verdict  │
+  ├────────────────┼──────────┼──────────────────┼────────┼──────────┤
+  │ Dark energy    │ 68.3%    │ 2/3 = 66.7%      │ 1.6%   │ ✅ strong│
+  │ Dark matter    │ 26.8%    │ 1/e = 36.8%      │ 10.0%  │ weak     │
+  │ Ordinary matter│  4.9%    │ 1/e^3 = 4.98%    │ 0.08%  │ ✅ precise│
+  └────────────────┴──────────┴──────────────────┴────────┴──────────┘
 ```
 
-문제: 암흑물질 매핑(1/e = 36.8% vs 26.8%)에서 10% 차이 발생.
+Problem: 10% discrepancy in dark matter mapping (1/e = 36.8% vs 26.8%).
 
-### 대안 매핑: 1/4 또는 3-e 사용
+### Alternative Mapping: Using 1/4 or 3-e
 
 ```
-  대안 A: 암흑물질 ≈ 1/4 = 25%  (차이 1.8%)
-  대안 B: 암흑물질 ≈ 3-e = 28.2%  (차이 1.4%)
+  Alternative A: dark matter ≈ 1/4 = 25%  (diff 1.8%)
+  Alternative B: dark matter ≈ 3-e = 28.2%  (diff 1.4%)
 
   ┌──────────────────────────────────────────────────────────────────┐
-  │           수정 매핑 비교 (3개 대안)                               │
+  │           Revised Mapping Comparison (3 alternatives)            │
   ├────────────────┬──────────┬──────────┬──────────┬───────────────┤
-  │ 구성 요소      │ 관측값   │ 1/e 매핑 │ 3-e 매핑 │ 1/4 매핑      │
+  │ Component      │ Observed │ 1/e map  │ 3-e map  │ 1/4 map       │
   ├────────────────┼──────────┼──────────┼──────────┼───────────────┤
-  │ 암흑에너지     │ 68.3%    │ 2/3=66.7%│ 2/3=66.7%│ 2/3=66.7%     │
-  │ 암흑물질       │ 26.8%    │ 36.8%   │ 28.2%   │ 25.0%         │
-  │ 보통물질       │  4.9%    │ 4.98%   │ 4.98%   │ 4.98%         │
-  │ 합계           │ 100.0%   │ 108.5%  │ 99.9%   │ 96.7%         │
+  │ Dark energy    │ 68.3%    │ 2/3=66.7%│ 2/3=66.7%│ 2/3=66.7%     │
+  │ Dark matter    │ 26.8%    │ 36.8%    │ 28.2%    │ 25.0%         │
+  │ Ordinary matter│  4.9%    │ 4.98%    │ 4.98%    │ 4.98%         │
+  │ Total          │ 100.0%   │ 108.5%   │ 99.9%    │ 96.7%         │
   ├────────────────┼──────────┼──────────┼──────────┼───────────────┤
-  │ 암흑물질 차이  │ ---       │ 10.0%   │ 1.4%    │ 1.8%          │
-  │ 합계 오차      │ ---       │ 8.5%    │ 0.1%    │ 3.3%          │
+  │ DM difference  │ ---       │ 10.0%   │ 1.4%     │ 1.8%          │
+  │ Total error    │ ---       │ 8.5%    │ 0.1%     │ 3.3%          │
   └────────────────┴──────────┴──────────┴──────────┴───────────────┘
 
-  승자: 3-e 매핑 (합계가 거의 정확히 1, 암흑물질 차이도 최소)
+  Winner: 3-e mapping (total nearly exactly 1, DM difference also minimal)
 
-  수학적 확인:
+  Mathematical confirmation:
   2/3 + (3-e) + 1/e^3 = 0.6667 + 0.2817 + 0.0498 = 0.9982 ≈ 1.000
 ```
 
-### 비교 막대 그래프
+### Comparative Bar Graph
 
 ```
-  암흑에너지  관측 ████████████████████████████████████████████████████████████████████ 68.3%
-             모델 ██████████████████████████████████████████████████████████████████▏  66.7% (2/3)
-                                                                          차이 1.6%
+  Dark energy  observed ████████████████████████████████████████████████████████████████████ 68.3%
+               model    ██████████████████████████████████████████████████████████████████▏  66.7% (2/3)
+                                                                            difference 1.6%
 
-  암흑물질    관측 ██████████████████████████▊                                        26.8%
-             모델 ████████████████████████████▏                                      28.2% (3-e)
-                                              차이 1.4%
+  Dark matter  observed ██████████████████████████▊                                        26.8%
+               model    ████████████████████████████▏                                      28.2% (3-e)
+                                                difference 1.4%
 
-  보통물질    관측 ████▉                                                               4.9%
-             모델 █████                                                               5.0% (1/e^3)
-                    차이 0.08% -- 거의 완벽
+  Ordinary     observed ████▉                                                               4.9%
+  matter       model    █████                                                               5.0% (1/e^3)
+                          difference 0.08% -- nearly perfect
 
-             0%   10%   20%   30%   40%   50%   60%   70%   80%   90%  100%
-             ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-                                 1/4       1/e                     2/3
-                                 골든존 ├──────────┤
-                                      I=0.24   I=0.48
+               0%   10%   20%   30%   40%   50%   60%   70%   80%   90%  100%
+               ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+                                   1/4       1/e                     2/3
+                                   Golden Zone ├──────────┤
+                                        I=0.24   I=0.48
 ```
 
-## 구조적 해석
+## Structural Interpretation
 
-### 각 성분의 모델 대응
+### Model Correspondence for Each Component
 
 ```
-  2/3 = 1 - 1/3 = 1 - 메타부동점
-  → 암흑에너지(68.3%) ≈ 2/3
-  → "관측 불가능한 것 = 가속 팽창 = 억제되지 않는 에너지"
-  → 모델에서: 골든존 밖의 도달 불가능한 영역
+  2/3 = 1 - 1/3 = 1 - meta fixed point
+  → Dark energy (68.3%) ≈ 2/3
+  → "What is unobservable = accelerating expansion = uninhibited energy"
+  → In model: unreachable region outside the Golden Zone
 
   3 - e = 0.282
-  → 암흑물질(26.8%) ≈ 3 - e
-  → "감지되지만 보이지 않는 것 = 중력으로만 감지"
-  → 모델에서: 골든존 내부의 '숨겨진' 최적 영역
+  → Dark matter (26.8%) ≈ 3 - e
+  → "What is sensed but invisible = detected only through gravity"
+  → In model: 'hidden' optimal region inside the Golden Zone
 
-  1/e^3 = e^(-3) = 3중 볼츠만 감쇠
-  → 보통물질(4.9%) ≈ 1/e^3 = 호기심 epsilon
-  → "직접 보이는 것 = 전자기파로 관측 가능"
-  → 모델에서: 블라인드 스팟을 탐색하는 호기심의 양
+  1/e^3 = e^(-3) = triple Boltzmann decay
+  → Ordinary matter (4.9%) ≈ 1/e^3 = curiosity epsilon
+  → "What is directly visible = observable via electromagnetic waves"
+  → In model: the amount of curiosity exploring blind spots
 ```
 
-### Genius 모델로 번역
+### Translation into Genius Model
 
 ```
   Genius = D x P / I
 
-  우주 구성으로 매핑:
+  Mapped to universe composition:
   ┌─────────────────────────────────────────────────────┐
-  │ D (결손 = 암흑에너지)    = 2/3   ← 보이지 않는 힘   │
-  │ P (가소성 = 보통물질)    = 1/e^3 ← 변형 가능한 것   │
-  │ I (억제 = 암흑물질)      = 3-e   ← 보이지 않는 저항  │
+  │ D (Deficit = dark energy)       = 2/3   ← invisible force  │
+  │ P (Plasticity = ordinary matter)= 1/e^3 ← malleable thing  │
+  │ I (Inhibition = dark matter)    = 3-e   ← invisible resistance│
   │                                                     │
   │ Genius_cosmos = (2/3)(1/e^3)/(3-e)                  │
   │              = 0.667 x 0.050 / 0.282                │
   │              = 0.118                                 │
   │                                                     │
-  │ → 우주의 Genius Score ≈ 0.12                        │
-  │ → 정상 범위 -- 우주는 "평범하게 복잡한" 시스템       │
+  │ → Universe's Genius Score ≈ 0.12                    │
+  │ → Normal range — the universe is an "ordinarily complex" system │
   └─────────────────────────────────────────────────────┘
 ```
 
-### 시간 진화: 우주 구성은 변한다
+### Temporal Evolution: Universe Composition Changes
 
 ```
-  구성 비율 변화 (적색편이 z에 따라)
+  Composition ratio change (by redshift z)
 
-  비율(%)
-  100│ ████████████████████████████████████████ 복사(방사선)
+  Ratio(%)
+  100│ ████████████████████████████████████████ radiation
      │ ████████████████████████████████████░░░░
-   80│ ████████████████████████████░░░░░░░░░░░░ 물질 우세기
+   80│ ████████████████████████████░░░░░░░░░░░░ matter dominance
      │ ████████████████████░░░░░░░░░░░░░░░░░░░
    60│ ████████████████░░░░░░░░░░░░░░░░░░░░░░░
-     │ ████████████░░░░░░░░░░░░░░████████████ 암흑에너지 우세
-   40│ ████████░░░░░░░░░░░░░████████████████ (가속팽창)
+     │ ████████████░░░░░░░░░░░░░░████████████ dark energy dom.
+   40│ ████████░░░░░░░░░░░░░████████████████ (accelerating)
      │ ████░░░░░░░░░░░░████████████████████
    20│ ░░░░░░░░░░░░████████████████████████
      │ ░░░░░░░░████████████████████████████
     0│ ░░░░████████████████████████████████
-     └────────────────────────────────────────→ 시간
-     빅뱅   z=3000  z=10   z=1   z=0(현재)  미래
+     └────────────────────────────────────────→ time
+     Big Bang  z=3000  z=10   z=1  z=0(now)  future
 
-  현재(z=0)가 특별한 이유:
-  세 성분 비율이 모델 상수와 가장 잘 맞는 시점
-  과거(물질 우세)나 미래(암흑에너지 100%)에서는 매핑 붕괴
+  Why the present (z=0) is special:
+  The point where the three component ratios best match the model constants.
+  The mapping breaks down in the past (matter dominance) or future (dark energy 100%).
 ```
 
-## 통계적 우연 가능성: 정직한 평가
+## Statistical Probability of Coincidence: Honest Assessment
 
 ```
-  질문: 3개 상수로 3개 비율을 맞추면 얼마나 쉬운가?
+  Question: How easy is it to match 3 ratios with 3 constants?
 
-  자유도 분석:
-  - 관측 데이터: 3개 비율 (합=1이므로 실제 자유도 2)
-  - 모델 상수 후보: 2/3, 1/e, 1/e^2, 1/e^3, 3-e, phi-1, ... (최소 6개)
-  - 3개 빈에 6개 후보 배정: C(6,3) x 3! = 120가지 조합
+  Degrees of freedom analysis:
+  - Observational data: 3 ratios (actual degrees of freedom = 2 since sum=1)
+  - Candidate model constants: 2/3, 1/e, 1/e^2, 1/e^3, 3-e, phi-1, ... (at least 6)
+  - Assign 6 candidates to 3 bins: C(6,3) x 3! = 120 combinations
 
-  확률 추정:
-  각 조합에서 "차이 < 2%" 확률 ≈ 4% (균등 분포 가정)
-  120가지 중 최소 1개 성공 확률: 1 - (0.96)^120 = 99.3%
+  Probability estimate:
+  P("difference < 2%") per combination ≈ 4% (assuming uniform distribution)
+  P(at least 1 success in 120 combinations): 1 - (0.96)^120 = 99.3%
 
-  → 체리피킹하면 거의 확실히 매칭 가능
-  → 보통물질 ≈ 1/e^3 (0.08% 차이)만 인상적
-  → 나머지는 과적합(overfitting) 가능성을 배제할 수 없음
+  → Cherry-picking almost guarantees a match
+  → Only ordinary matter ≈ 1/e^3 (0.08% difference) is impressive
+  → Cannot rule out overfitting for the rest
 ```
 
-## 한계
+## Limitations
 
-1. 암흑물질에 대한 1/e 매핑은 약함 (10% 차이) -- 3-e로 대체해야 하나 3-e 자체가 사후적
-2. 우주 구성 비율은 시간에 따라 변함 -- 현재 epoch에서만 성립
-3. 3개 비율에 6+ 상수를 자유롭게 매핑하면 과적합(overfitting) 위험이 높음
-4. 수치적 일치가 구조적 필연인지 우연인지 구별 불가
-5. 보통물질 1/e^3 일치(0.08%)는 인상적이나, 단일 데이터 포인트로는 불충분
+1. The 1/e mapping for dark matter is weak (10% difference) — should it be replaced by 3-e? But 3-e itself is post-hoc.
+2. Universe composition ratios change with time — holds only for the current epoch.
+3. High risk of overfitting when freely mapping 6+ constants to 3 ratios.
+4. Cannot distinguish whether numerical agreement is structurally necessary or coincidental.
+5. The ordinary matter 1/e^3 agreement (0.08%) is impressive, but a single data point is insufficient.
 
-## 검증 방향
+## Verification Directions
 
-- 초기 우주(z>1000) 구성 비율로 같은 매핑 시도 -- 실패하면 epoch-의존적 우연
-- 다른 물리 상수(미세구조상수 alpha=1/137 등)와의 교차 검증
-- 가설 120(CMB 온도)과 결합하여 일관성 확인
-- 다중우주 시뮬레이션에서 우연 일치 확률의 사전(prior) 추정
+- Attempt the same mapping with early universe (z>1000) composition ratios — if it fails, it is epoch-dependent coincidence
+- Cross-verification with other physical constants (fine-structure constant alpha=1/137, etc.)
+- Combine with Hypothesis 120 (CMB temperature) for consistency check
+- Estimate prior probability of coincidental matching via multiverse simulation
 
 ---
 
-*검증: Planck 2018 우주론 관측값 vs 모델 상수 비교 -- 가설 120, 121, 122와 연결*
+*Verification: Planck 2018 cosmological observations vs model constants — connected to Hypotheses 120, 121, 122*

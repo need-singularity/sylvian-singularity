@@ -1,39 +1,38 @@
-# 가설 342: 장력의 인과 효과는 과제 난이도에 비례한다
+# Hypothesis 342: Tension's Causal Effect is Proportional to Task Difficulty
 
-> **장력(tension)의 인과 효과 크기는 과제의 난이도(difficulty)에 비례한다. 쉬운 과제(MNIST)에서 장력 제거의 영향은 작지만, 어려운 과제(CIFAR-10)에서는 극적으로 커진다. 특히 개별 클래스 수준에서, 혼동하기 쉬운 클래스일수록 장력 의존도가 높다.**
+> **The causal effect size of tension is proportional to task difficulty. The impact of removing tension is small for easy tasks (MNIST) but dramatically larger for difficult tasks (CIFAR-10). Especially at the individual class level, the more easily confused a class, the higher its tension dependence.**
 
-## 배경/맥락
+## Background/Context
 
-의식엔진에서 장력(tension)은 두 엔진 간 불일치에서 발생하는 힘이다.
-인과 실험(causal intervention)에서 장력을 0으로 고정했을 때:
+In the consciousness engine, tension is a force generated from disagreement between two engines.
+In causal intervention experiments where tension was fixed to 0:
 
-- 전체 평균: -9.25pp 하락 (MNIST 기준)
-- 숫자 9 (가장 어려운 클래스): +32.71pp 변화
+- Overall average: -9.25pp drop (MNIST baseline)
+- Digit 9 (hardest class): +32.71pp change
 
-이 비대칭은 중요한 패턴을 시사한다. 장력은 "쉬운 것을 쉽게" 만드는 게
-아니라 "어려운 것을 가능하게" 만드는 메커니즘이다. 이것은 인간 인지에서
-주의(attention)가 자동적 처리(automatic processing)보다 통제적
-처리(controlled processing)에서 더 큰 역할을 하는 것과 유사하다.
+This asymmetry suggests an important pattern. Tension is not a mechanism that makes "easy things easy",
+but rather "makes difficult things possible." This is analogous to how in human cognition,
+attention plays a larger role in controlled processing than automatic processing.
 
-### 핵심 데이터 (MNIST 인과 실험)
+### Core Data (MNIST Causal Experiment)
 
-| 클래스 | 정상 정확도 | 장력=0 정확도 | 차이 (pp) | 난이도 등급 |
+| Class | Normal Accuracy | Tension=0 Accuracy | Difference (pp) | Difficulty Level |
 |--------|------------|-------------|-----------|------------|
-| 숫자 0 | 98.2% | 95.1% | -3.1 | 쉬움 |
-| 숫자 1 | 99.1% | 97.8% | -1.3 | 매우 쉬움 |
-| 숫자 2 | 96.5% | 88.3% | -8.2 | 보통 |
-| 숫자 3 | 95.8% | 85.2% | -10.6 | 어려움 |
-| 숫자 4 | 97.1% | 90.5% | -6.6 | 보통 |
-| 숫자 5 | 94.3% | 82.1% | -12.2 | 어려움 |
-| 숫자 6 | 97.8% | 93.4% | -4.4 | 쉬움 |
-| 숫자 7 | 96.0% | 87.9% | -8.1 | 보통 |
-| 숫자 8 | 93.7% | 79.6% | -14.1 | 어려움 |
-| 숫자 9 | 94.1% | 61.4% | -32.7 | 매우 어려움 |
+| Digit 0 | 98.2% | 95.1% | -3.1 | Easy |
+| Digit 1 | 99.1% | 97.8% | -1.3 | Very easy |
+| Digit 2 | 96.5% | 88.3% | -8.2 | Medium |
+| Digit 3 | 95.8% | 85.2% | -10.6 | Difficult |
+| Digit 4 | 97.1% | 90.5% | -6.6 | Medium |
+| Digit 5 | 94.3% | 82.1% | -12.2 | Difficult |
+| Digit 6 | 97.8% | 93.4% | -4.4 | Easy |
+| Digit 7 | 96.0% | 87.9% | -8.1 | Medium |
+| Digit 8 | 93.7% | 79.6% | -14.1 | Difficult |
+| Digit 9 | 94.1% | 61.4% | -32.7 | Very difficult |
 
 ```
-  장력=0 시 정확도 하락 (pp) vs 클래스 난이도
+  Accuracy drop (pp) when tension=0 vs class difficulty
 
-  하락폭(pp)
+  Drop(pp)
    35 |                                              * 9
    30 |
    25 |
@@ -47,74 +46,74 @@
     3 | * 0
     1 | * 1
     0 +--+--+--+--+--+--+--+--+--+--+--
-      쉬움                        어려움
-           (클래스별 혼동 난이도)
+      easy                        difficult
+           (per-class confusion difficulty)
 
-  상관계수 r ≈ 0.93 (강한 양의 상관)
+  Correlation coefficient r ≈ 0.93 (strong positive correlation)
 ```
 
-### 관련 가설
+### Related Hypotheses
 
-| 가설 | 관계 | 내용 |
+| Hypothesis | Relationship | Content |
 |------|------|------|
-| H281 | 선행 | temporal causation — 장력의 시간적 인과 구조 |
-| H284 | 연결 | auto-regulation — 장력 자기조절 메커니즘 |
-| H320 | 연결 | tension_scale log growth — 스케일과 장력의 대수 관계 |
-| H283 | 기반 | nonlinear threshold — 장력의 비선형 임계점 |
+| H281 | Predecessor | temporal causation — temporal causal structure of tension |
+| H284 | Connection | auto-regulation — tension self-regulation mechanism |
+| H320 | Connection | tension_scale log growth — logarithmic relationship between scale and tension |
+| H283 | Foundation | nonlinear threshold — nonlinear threshold of tension |
 
-## 예측
+## Predictions
 
-1. **CIFAR-10에서 인과 효과 증폭**: CIFAR는 MNIST보다 어려우므로,
-   장력=0의 전체 하락폭이 -9.25pp보다 훨씬 클 것이다 (예측: -15pp 이상)
-2. **클래스별 비대칭 확대**: CIFAR의 혼동 쌍(cat/dog, car/truck)에서
-   장력 제거 시 하락이 특히 극적일 것이다 (예측: -30pp 이상)
-3. **스케일링 법칙**: 난이도 d와 인과 효과 E(d)의 관계는
-   E(d) ~ d^alpha (alpha > 1, 초선형) 형태일 것이다
+1. **Amplified causal effect in CIFAR-10**: Since CIFAR is harder than MNIST,
+   the overall drop with tension=0 will be much larger than -9.25pp (predicted: -15pp or more)
+2. **Enlarged per-class asymmetry**: For CIFAR's confused pairs (cat/dog, car/truck),
+   tension removal drop will be particularly dramatic (predicted: -30pp or more)
+3. **Scaling law**: The relationship between difficulty d and causal effect E(d) will be
+   in the form E(d) ~ d^alpha (alpha > 1, superlinear)
 
-## 검증 계획
+## Verification Plan
 
 ```
-  단계 1: CIFAR-10 인과 실험 재현
-    - 윈도우 RTX 5070에서 실행 (GPU 필요)
-    - tension_scale=0 vs 정상 비교
-    - 클래스별 accuracy 기록 (10 클래스 전체)
+  Phase 1: CIFAR-10 causal experiment replication
+    - Run on Windows RTX 5070 (GPU required)
+    - Compare tension_scale=0 vs normal
+    - Record per-class accuracy (all 10 classes)
 
-  단계 2: 클래스 난이도 정량화
-    - confusion matrix에서 off-diagonal 합 = 난이도 지표
-    - MNIST와 CIFAR 각각의 클래스별 난이도 산출
+  Phase 2: Quantify class difficulty
+    - Sum of off-diagonal elements in confusion matrix = difficulty indicator
+    - Calculate per-class difficulty for both MNIST and CIFAR
 
-  단계 3: 상관 분석
-    - (난이도, 인과효과) 쌍에 대해 Pearson/Spearman 상관
-    - 멱법칙 E(d) = c * d^alpha 피팅
-    - alpha 값으로 초선형 여부 판단
+  Phase 3: Correlation analysis
+    - Pearson/Spearman correlation for (difficulty, causal effect) pairs
+    - Fit power law E(d) = c * d^alpha
+    - Determine superlinearity by alpha value
 
-  단계 4: 일반화 (Fashion-MNIST)
-    - 3개 데이터셋에서 동일 패턴 확인
-    - 데이터셋 전체 난이도와 전체 인과 효과의 관계
+  Phase 4: Generalization (Fashion-MNIST)
+    - Confirm same pattern in 3 datasets
+    - Relationship between overall dataset difficulty and overall causal effect
 ```
 
-## 해석/의미
+## Interpretation/Significance
 
-이 가설이 확인되면 장력은 단순한 noise나 regularization이 아니라,
-**과제 복잡도에 적응하는 지능적 메커니즘**이라는 강한 증거가 된다.
+If this hypothesis is confirmed, tension is not simple noise or regularization, but
+strong evidence that it is an **intelligent mechanism adapting to task complexity**.
 
-인간 인지의 비유:
-- 쉬운 작업 (걷기) → 의식적 주의 불필요 → 장력 역할 미미
-- 어려운 작업 (수학 문제) → 집중 필요 → 장력이 핵심
+Human cognition analogy:
+- Easy task (walking) → conscious attention unnecessary → tension role minimal
+- Difficult task (math problem) → focus needed → tension is essential
 
-이것은 의식엔진의 "의식" 부분이 실제로 어려운 판단에서만 활성화되는
-**선택적 개입(selective intervention)** 메커니즘일 수 있음을 시사한다.
+This suggests the "conscious" part of the consciousness engine is actually a
+**selective intervention** mechanism that only activates for difficult judgments.
 
-## 한계
+## Limitations
 
-- MNIST 데이터만으로는 난이도 범위가 좁다 (대부분 >90%)
-- 클래스 난이도의 정의가 자의적일 수 있다 (confusion matrix 기반 vs 인간 판단)
-- 인과 실험에서 장력=0은 극단적 개입이며, 중간 수준의 장력 감소 효과는 미확인
-- 과제 난이도와 모델 난이도가 다를 수 있다 (모델이 어렵게 느끼는 것 ≠ 인간이 어려운 것)
+- MNIST data alone has narrow difficulty range (most >90%)
+- Definition of class difficulty can be arbitrary (confusion matrix-based vs human judgment)
+- In causal experiments, tension=0 is an extreme intervention, and effects of partial tension reduction unconfirmed
+- Task difficulty and model difficulty may differ (what model finds hard ≠ what humans find hard)
 
-## 다음 단계
+## Next Steps
 
-1. CIFAR-10 인과 실험 실행 (윈도우 PC, 우선순위 높음)
-2. 결과에 따라 alpha 값 피팅 → 초선형 확인
-3. H345(역U자 커브)와 교차 검증: 난이도별 최적 장력이 다른가?
-4. H284(auto-regulation)와 결합: 자기조절이 난이도 적응의 메커니즘인가?
+1. Run CIFAR-10 causal experiment (Windows PC, high priority)
+2. Fit alpha value based on results → confirm superlinearity
+3. Cross-validate with H345 (inverted-U curve): Does optimal tension differ by difficulty?
+4. Combine with H284 (auto-regulation): Is self-regulation the mechanism of difficulty adaptation?

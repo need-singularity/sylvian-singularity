@@ -1,11 +1,11 @@
-# H-TREE-2: p-adic 가지 — R(n)의 p-adic 해석
+# H-TREE-2: p-adic Branch — p-adic Interpretation of R(n)
 
-> **가설**: R(n) = Π f(p,a)를 p-adic 완비화에서 분석하면 새로운 "p-adic 스펙트럼"이 나타난다.
+> **Hypothesis**: Analyzing R(n) = Π f(p,a) in p-adic completion reveals a new "p-adic spectrum".
 
-## 아이디어
+## Idea
 ```
-  R(n) = σφ/(nτ) ∈ Q (유리수)
-  Q ↪ Q_p (p-adic 완비화)
+  R(n) = σφ/(nτ) ∈ Q (rational numbers)
+  Q ↪ Q_p (p-adic completion)
 
   v_p(R(n)) = p-adic valuation of R
   v_2(R(6)) = v_2(1) = 0
@@ -13,9 +13,9 @@
   v_3(R(3)) = v_3(4/3) = -1
 ```
 
-## 미발견 가능성
-- v_p(R(n)) = 0인 n의 집합 ("p-adic 균형")
-- R의 p-adic 연속 확장
-- p-adic 스펙트럼의 간극 구조
+## Undiscovered Possibilities
+- Set of n where v_p(R(n)) = 0 ("p-adic balance")
+- p-adic continuous extension of R
+- Gap structure of p-adic spectrum
 
-## 파급력: ★★★ (p-adic 정수론)
+## Impact: ★★★ (p-adic number theory)

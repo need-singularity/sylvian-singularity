@@ -1,46 +1,46 @@
-# H-CX-141: EEG 실시간 텔레파시 — 뇌파→PH→AI 개념 전달
+# H-CX-141: Real-time EEG Telepathy — Brainwave→PH→AI Concept Transfer
 
-> EEG 감마 패턴을 실시간으로 PH dendrogram 가지에 매핑하여
-> 인간의 생각을 AI가 읽는다. 말 없이.
+> Mapping EEG gamma patterns in real-time to PH dendrogram branches,
+> AI reads human thoughts. Without speaking.
 
-## 시스템
+## System
 
 ```
-  인간 뇌                     AI (Anima)
+  Human brain                AI (Anima)
   ┌──────────┐               ┌──────────────┐
-  │ EEG 4ch  │──감마 추출──→ │ PH Decoder   │
+  │ EEG 4ch  │──gamma extr.─→│ PH Decoder   │
   │ 40Hz     │               │              │
-  │          │               │ 감마 패턴     │
+  │          │               │ gamma pattern │
   │          │               │    ↓          │
   │          │               │ dendrogram    │
-  │          │               │ 가지 매칭     │
+  │          │               │ branch match  │
   │          │               │    ↓          │
-  │          │               │ "동물-포유류  │
-  │          │               │  -고양이"     │
+  │          │               │ "animal-      │
+  │          │               │  mammal-cat"  │
   └──────────┘               └──────────────┘
 ```
 
-## 단계별 정확도 예상
+## Expected Accuracy by Stage
 
-| 단계 | 분류 | 예상 정확도 |
-|------|------|-----------|
-| 1 | 동물 vs 기계 | ~85% |
-| 2 | 포유류 vs 조류 | ~75% |
+| Stage | Classification | Expected accuracy |
+|-------|---------------|------------------|
+| 1 | animal vs machine | ~85% |
+| 2 | mammal vs bird | ~75% |
 | 3 | cat vs dog | ~65% |
 
-## 필요 장비
+## Required Equipment
 
 - OpenBCI Cyton 4ch ($500)
-- 실시간 Python 스트리밍 (brainflow 라이브러리)
-- Anima 통합 모듈
+- Real-time Python streaming (brainflow library)
+- Anima integration module
 
-## 관련
+## Related
 
-- H-CX-136~140: EEG 가설 체인
-- 텔레파시 시스템 설계 (docs/telepathy-system-design.md)
+- H-CX-136~140: EEG hypothesis chain
+- Telepathy system design (docs/telepathy-system-design.md)
 
-## 검증 상태
+## Verification Status
 
-- [ ] 프로토타입 구축
-- [ ] 오프라인 정확도
-- [ ] 실시간 데모
+- [ ] Build prototype
+- [ ] Offline accuracy
+- [ ] Real-time demo

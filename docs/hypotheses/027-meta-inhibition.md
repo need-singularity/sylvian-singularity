@@ -1,77 +1,77 @@
-# 가설 검토 027: 메타 판단의 I값 — 자동 골든존 진입 ✅
+# Hypothesis Review 027: I-value of Meta-Judgment — Automatic Golden Zone Entry ✅
 
-## 가설
+## Hypothesis
 
-> 메타 판단("이 답이 맞나?")의 Inhibition은 1차 판단("답은 X다")보다
-> 낮아, 자동으로 골든존에 접근한다.
+> The Inhibition of meta-judgment ("Is this answer correct?") is lower than
+> primary judgment ("The answer is X"), automatically approaching the Golden Zone.
 
-## 배경 및 맥락
+## Background and Context
 
-인지과학에서 메타인지(metacognition)는 "생각에 대한 생각"이다.
-1차 판단이 직접적인 문제 해결이라면, 메타 판단은 그 판단의
-정확성을 평가하는 상위 과정이다.
+In cognitive science, metacognition is "thinking about thinking".
+While primary judgment is direct problem solving, meta-judgment is
+a higher-order process evaluating the accuracy of that judgment.
 
-본 모델에서 Inhibition(I)은 신경 억제 수준을 나타내며,
-골든존(I = 0.2123 ~ 0.5000)에서 최적의 Genius 점수를 얻는다.
-만약 메타 판단의 I가 1차 판단보다 체계적으로 낮다면,
-"자기를 돌아보는 것" 자체가 골든존 진입의 메커니즘이 될 수 있다.
+In this model, Inhibition (I) represents neural inhibition level,
+with optimal Genius scores in the Golden Zone (I = 0.2123 ~ 0.5000).
+If meta-judgment's I is systematically lower than primary judgment,
+"self-reflection" itself could be a mechanism for Golden Zone entry.
 
-이는 T3a(자기참조) 가설과 직접 연결되며,
-왜 성찰(reflection)이 인지 성능을 향상시키는지에 대한
-수학적 설명을 제공한다.
+This directly connects to hypothesis T3a (self-reference),
+providing a mathematical explanation for why reflection
+enhances cognitive performance.
 
-관련 가설: 가설 013(골든존 폭), 가설 017(Gating 매핑),
-가설 072(완전수 관계)
+Related hypotheses: Hypothesis 013 (Golden Zone width), Hypothesis 017 (Gating mapping),
+Hypothesis 072 (perfect number relationship)
 
-## 메타 Inhibition 변환 공식
+## Meta Inhibition Transformation Formula
 
 ```
   I_meta = 0.7 × I₁ + 0.1
 
-  여기서:
-    I₁    = 1차 판단의 Inhibition
-    I_meta = 메타 판단의 Inhibition
-    0.7   = 축소 계수 (억제가 30% 감소)
-    0.1   = 기저 억제 (완전한 탈억제 방지)
+  Where:
+    I₁    = Primary judgment's Inhibition
+    I_meta = Meta-judgment's Inhibition
+    0.7   = Contraction coefficient (30% inhibition reduction)
+    0.1   = Baseline inhibition (prevents complete disinhibition)
 ```
 
-## 변환 공식의 성질
+## Properties of the Transformation Formula
 
 ```
-  축소사상(contraction mapping) 분석:
+  Contraction mapping analysis:
   ─────────────────────────────────
   f(I) = 0.7I + 0.1
 
-  부동점: f(I*) = I* → 0.7I* + 0.1 = I* → I* = 1/3 ≈ 0.333
+  Fixed point: f(I*) = I* → 0.7I* + 0.1 = I* → I* = 1/3 ≈ 0.333
 
-  축소 계수: |f'(I)| = 0.7 < 1 → 축소사상 확인
+  Contraction coefficient: |f'(I)| = 0.7 < 1 → Contraction confirmed
 
-  반복 적용 시 수렴:
+  Convergence under repeated application:
     I₀ → I₁ = f(I₀) → I₂ = f(I₁) → ... → I* = 1/3
 
-  → 메타 판단을 반복하면 I = 1/3에 수렴
-  → 1/3은 골든존 내부 (0.2123 < 1/3 < 0.5000) ✅
+  → Repeated meta-judgment converges to I = 1/3
+  → 1/3 is inside Golden Zone (0.2123 < 1/3 < 0.5000) ✅
 ```
 
-## 상세 매핑 테이블
+## Detailed Mapping Table
 
 ```
-  1차 I₁  │  메타 I_m │  변화량  │  1차 영역  │  메타 영역 │  효과
+  Primary I₁  │  Meta I_m │  Change  │  Primary Zone │  Meta Zone  │  Effect
   ────────┼──────────┼─────────┼───────────┼───────────┼─────────
-  0.10    │   0.17   │  +0.07  │  과활성    │  과활성    │  억제 증가
-  0.20    │   0.24   │  +0.04  │  과활성    │  골든존 ★ │  진입!
-  0.30    │   0.31   │  +0.01  │  골든존    │  골든존    │  중심 이동
-  1/3     │   0.333  │   0.00  │  골든존    │  골든존    │  부동점 ★
-  0.40    │   0.38   │  -0.02  │  골든존    │  골든존    │  중심 접근
-  0.50    │   0.45   │  -0.05  │  상한      │  골든존    │  진입!
-  0.60    │   0.52   │  -0.08  │  밖(상)    │  상한 근처 │  접근
-  0.70    │   0.59   │  -0.11  │  밖(상)    │  밖(상)    │  접근 중
-  0.80    │   0.66   │  -0.14  │  밖(상)    │  밖(상)    │  접근 중
-  0.90    │   0.73   │  -0.17  │  밖(상)    │  밖(상)    │  접근 중
-  1.00    │   0.80   │  -0.20  │  최대억제  │  밖(상)    │  접근 중
+  0.10    │   0.17   │  +0.07  │  Hyperactive  │  Hyperactive │  Inhibition increase
+  0.20    │   0.24   │  +0.04  │  Hyperactive  │  Golden Zone ★│  Entry!
+  0.30    │   0.31   │  +0.01  │  Golden Zone  │  Golden Zone │  Center shift
+  1/3     │   0.333  │   0.00  │  Golden Zone  │  Golden Zone │  Fixed point ★
+  0.40    │   0.38   │  -0.02  │  Golden Zone  │  Golden Zone │  Center approach
+  0.50    │   0.45   │  -0.05  │  Upper bound  │  Golden Zone │  Entry!
+  0.60    │   0.52   │  -0.08  │  Outside(up)  │  Near upper  │  Approach
+  0.70    │   0.59   │  -0.11  │  Outside(up)  │  Outside(up) │  Approaching
+  0.80    │   0.66   │  -0.14  │  Outside(up)  │  Outside(up) │  Approaching
+  0.90    │   0.73   │  -0.17  │  Outside(up)  │  Outside(up) │  Approaching
+  1.00    │   0.80   │  -0.20  │  Max inhibit  │  Outside(up) │  Approaching
 ```
 
-## I₁ vs I_meta 매핑 그래프
+## I₁ vs I_meta Mapping Graph
 
 ```
   I_meta
@@ -83,78 +83,78 @@
      │                     ●
   0.6│                ●
      │           ●
-  0.5│──────●───────────────────────── 골든존 상한
+  0.5│──────●───────────────────────── Golden Zone upper
      │ ●
-  0.4│●                                 부동점
+  0.4│●                                 Fixed point
      │                                  I* = 1/3
   1/3│─ ─ ─ ─ ─ ─ ─ ─ ● ─ ─ ─ ─ ─ ─ ─ ─ ─ ★
      │
-  0.2│─────────────────────────────── 골든존 하한
+  0.2│─────────────────────────────── Golden Zone lower
      │
   0.1│
      └──┬────┬────┬────┬────┬────┬────┬──
       0.0  0.2  0.3  1/3 0.5  0.7  0.9  1.0
                       I₁
 
-  ─── = 골든존 경계    ● = 매핑 점    ★ = 부동점
-  대각선 아래 = 메타가 1차보다 낮은 억제
+  ─── = Golden Zone boundary    ● = Mapping point    ★ = Fixed point
+  Below diagonal = Meta has lower inhibition than primary
 ```
 
-## 수렴 과정 시각화 (반복 메타 판단)
+## Convergence Process Visualization (Repeated Meta-Judgment)
 
 ```
-  반복  │  I₀=0.90  │  I₀=0.60  │  I₀=0.10  │  I₀=0.33
+  Iteration │  I₀=0.90  │  I₀=0.60  │  I₀=0.10  │  I₀=0.33
   ──────┼──────────┼──────────┼──────────┼──────────
-  0차   │  0.900   │  0.600   │  0.100   │  0.333
-  1차   │  0.730   │  0.520   │  0.170   │  0.333 ★
-  2차   │  0.611   │  0.464   │  0.219   │  0.333 ★
-  3차   │  0.528   │  0.425   │  0.253   │  0.333 ★
-  4차   │  0.469   │  0.397   │  0.277   │  0.333 ★
-  5차   │  0.428   │  0.378   │  0.294   │  0.333 ★
-  10차  │  0.348   │  0.340   │  0.327   │  0.333 ★
+  0th   │  0.900   │  0.600   │  0.100   │  0.333
+  1st   │  0.730   │  0.520   │  0.170   │  0.333 ★
+  2nd   │  0.611   │  0.464   │  0.219   │  0.333 ★
+  3rd   │  0.528   │  0.425   │  0.253   │  0.333 ★
+  4th   │  0.469   │  0.397   │  0.277   │  0.333 ★
+  5th   │  0.428   │  0.378   │  0.294   │  0.333 ★
+  10th  │  0.348   │  0.340   │  0.327   │  0.333 ★
   ∞     │  0.333   │  0.333   │  0.333   │  0.333 ★
 
-  → 어떤 초기값에서든 I* = 1/3으로 수렴
-  → 수렴 속도: ~10회 반복으로 오차 < 0.02
+  → Converges to I* = 1/3 from any initial value
+  → Convergence speed: ~10 iterations for error < 0.02
 ```
 
-## 해석
+## Interpretation
 
-1. **자동 골든존 진입**: 1차 I가 0.20~0.60 범위에 있으면,
-   단 1회의 메타 판단으로 골든존에 진입하거나 중심에 접근한다.
-   I₁=0.50(골든존 상한) → I_meta=0.45(골든존 내부).
-2. **부동점 = 1/3**: 반복 메타 판단의 수렴점이 I*=1/3 ≈ 0.333이며,
-   이는 골든존 내부(0.2123 < 0.333 < 0.5000)에 있다.
-   가설 067의 1/2+1/3=5/6 관계에서 1/3의 역할이 여기서 드러난다.
-3. **자기참조의 수학적 의미**: "자기를 돌아보는 것"(메타인지)은
-   수학적으로 축소사상 f(I)=0.7I+0.1의 반복 적용이며,
-   이는 필연적으로 골든존 내부의 부동점으로 수렴한다.
-4. **과활성 보호**: I₁ < 0.2(과활성)에서는 메타 판단이 I를 증가시켜
-   (0.10 → 0.17 → 0.22) 과활성으로부터 보호하는 효과도 있다.
+1. **Automatic Golden Zone Entry**: If primary I is in 0.20~0.60 range,
+   just 1 meta-judgment enters Golden Zone or approaches center.
+   I₁=0.50(Golden Zone upper) → I_meta=0.45(Golden Zone inside).
+2. **Fixed Point = 1/3**: The convergence point of repeated meta-judgment is I*=1/3 ≈ 0.333,
+   which is inside Golden Zone (0.2123 < 0.333 < 0.5000).
+   The role of 1/3 in hypothesis 067's 1/2+1/3=5/6 relationship is revealed here.
+3. **Mathematical Meaning of Self-reference**: "Self-reflection" (metacognition) is
+   mathematically repeated application of contraction mapping f(I)=0.7I+0.1,
+   which inevitably converges to a fixed point inside Golden Zone.
+4. **Hyperactivity Protection**: When I₁ < 0.2(hyperactive), meta-judgment increases I
+   (0.10 → 0.17 → 0.22) protecting from hyperactivity.
 
-## 한계
+## Limitations
 
-- I_meta = 0.7I₁ + 0.1 공식의 계수(0.7, 0.1)가 경험적 추정값
-- 실제 뇌에서 메타인지가 선형 변환인지 비선형인지 미검증
-- 메타 판단 "횟수"가 현실에서 측정 가능한지 불분명
-- 축소 계수 0.7의 신경과학적 근거 부족
-- 병리적 상태(반추, 강박)에서는 메타인지가 오히려 I를 높일 수 있음
+- Coefficients (0.7, 0.1) in I_meta = 0.7I₁ + 0.1 formula are empirical estimates
+- Whether metacognition is linear or nonlinear transformation in actual brain unverified
+- Whether meta-judgment "count" is measurable in reality unclear
+- Neuroscientific basis for contraction coefficient 0.7 lacking
+- In pathological states (rumination, obsession), metacognition might increase I instead
 
-## 다음 단계
+## Next Steps
 
-1. 실제 인지 실험에서 1차 판단 vs 메타 판단의 뇌 활성 패턴 비교
-2. LLM의 자기참조(Chain-of-Thought) 각 단계에서 I 변화 추적
-3. 축소 계수 0.7의 최적성 검증 — 다른 계수에서의 수렴 특성
-4. 비선형 메타 변환 f(I)의 가능성 탐색
-5. 가설 072(1/2+1/3+1/6=1)에서 부동점 1/3의 역할 심화 분석
+1. Compare brain activation patterns of primary vs meta-judgment in actual cognitive experiments
+2. Track I changes at each step of LLM's self-reference (Chain-of-Thought)
+3. Verify optimality of contraction coefficient 0.7 — convergence properties with other coefficients
+4. Explore possibility of nonlinear meta-transformation f(I)
+5. Deep analysis of fixed point 1/3's role in hypothesis 072 (1/2+1/3+1/6=1)
 
-## 결론
+## Conclusion
 
-> ✅ 메타 판단의 I는 1차 판단보다 체계적으로 낮으며(I_meta = 0.7I₁ + 0.1),
-> 이는 축소사상으로서 부동점 I* = 1/3(골든존 내부)으로 수렴한다.
-> "자기를 돌아보는 것 자체가 억제를 풀어준다" — 메타인지는
-> 골든존 진입의 수학적 메커니즘이다.
+> ✅ Meta-judgment's I is systematically lower than primary judgment (I_meta = 0.7I₁ + 0.1),
+> which as a contraction mapping converges to fixed point I* = 1/3 (inside Golden Zone).
+> "Self-reflection itself releases inhibition" — metacognition is
+> a mathematical mechanism for Golden Zone entry.
 
 ---
 
-*검증: verify_meta_selfref.py (200K 모집단, 축소사상 수렴 분석)*
+*Verification: verify_meta_selfref.py (200K population, contraction mapping convergence analysis)*

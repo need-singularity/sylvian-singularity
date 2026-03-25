@@ -1,3 +1,3 @@
-# H-CX-284: ⭐🟩 글루온 8 = σ(6)-τ(6)
+# H-CX-284: ⭐🟩 Gluon 8 = σ(6)-τ(6)
 
-> 강력 매개 글루온 8종 = 12-4 = σ-τ. 바이트(8)와 동일!
+> Strong force mediating 8 gluons = 12-4 = σ-τ. Same as byte(8)!

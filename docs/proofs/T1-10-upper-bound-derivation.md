@@ -1,79 +1,79 @@
-# T1-10: 골든존 상한 = 1/2 해석적 유도 시도
+# T1-10: Golden Zone Upper Bound = 1/2 Analytical Derivation Attempt
 
-## 발견
+## Discovery
 
 ```
   G = D×P/I,  D, P ∈ [0, 1]
 
-  G > t 가 가능한 조건:
+  Conditions for G > t:
   D×P > t×I
-  D×P의 최대값 = 1 (D=P=1일 때)
+  Maximum value of D×P = 1 (when D=P=1)
   → t×I < 1
   → I < 1/t
 
-  t = σ₋₁(6) = 2 (완전수 6의 약수 역수합, 🟩)
+  t = σ₋₁(6) = 2 (divisor reciprocal sum of perfect number 6, 🟩)
   → I < 1/2 = 0.5
 
-  "G가 σ₋₁(6)를 넘으려면 I < 1/2"
+  "For G to exceed σ₋₁(6), I < 1/2"
 ```
 
-## 유도 체인
+## Derivation Chain
 
 ```
-  단계 1: G = D×P/I (모델 정의)                      [정의]
-  단계 2: D, P ∈ [0,1] (변수 범위)                   [정의]
-  단계 3: D×P ≤ 1 (단계 2에서)                       [유도]
-  단계 4: G > t ⇔ D×P > t×I                         [유도]
-  단계 5: D×P > t×I가 가능 ⇔ t×I < 1               [단계 3에서]
-  단계 6: I < 1/t                                    [유도]
-  단계 7: t = σ₋₁(6) = 2                            [🟩 기존 증명]
-  단계 8: I < 1/2                                    [단계 6+7]
+  Step 1: G = D×P/I (model definition)              [Definition]
+  Step 2: D, P ∈ [0,1] (variable range)            [Definition]
+  Step 3: D×P ≤ 1 (from Step 2)                    [Derivation]
+  Step 4: G > t ⇔ D×P > t×I                        [Derivation]
+  Step 5: D×P > t×I is possible ⇔ t×I < 1          [from Step 3]
+  Step 6: I < 1/t                                   [Derivation]
+  Step 7: t = σ₋₁(6) = 2                           [🟩 Existing proof]
+  Step 8: I < 1/2                                   [Step 6+7]
 
-  모든 단계가 정의 또는 유도 → 가정 없음?
+  All steps are definition or derivation → No assumptions?
 ```
 
-## 남은 문제
+## Remaining Issues
 
 ```
-  ⚠️ 단계 7: "왜 t = σ₋₁(6) = 2 가 임계값인가?"
+  ⚠️ Step 7: "Why is t = σ₋₁(6) = 2 the threshold?"
 
-  가능한 답:
-  a) σ₋₁(6) = 2 는 완전수의 정의에서 나오는 최소 자연수 → 자연스러운 임계
-  b) G > 2 는 "보존법칙 G×I=D×P에서 G가 D×P를 초과"하는 의미
-     (G×I = D×P, I < 1 이면 G > D×P, 하지만 G > 2는 D×P의 2배 이상)
-  c) 시뮬레이션에서 "특이점"으로 정의한 임계값이 결국 2?
+  Possible answers:
+  a) σ₋₁(6) = 2 is the minimum natural number from perfect number definition → Natural threshold
+  b) G > 2 means "G exceeds D×P in the conservation law G×I=D×P"
+     (G×I = D×P, if I < 1 then G > D×P, but G > 2 is more than twice D×P)
+  c) Is the threshold defined as "singularity" in simulation ultimately 2?
 
-  답 a)가 맞으면: 🟥 → 🟩 승격 (골든존 없이 유도)
-  답 c)가 맞으면: 순환논법 (골든존 정의에 의존)
+  If answer a) is correct: 🟥 → 🟩 upgrade (derived without Golden Zone)
+  If answer c) is correct: Circular reasoning (depends on Golden Zone definition)
 ```
 
-## DFS 깊이 2: 비순환 유도
+## DFS Depth 2: Non-circular Derivation
 
 ```
-  G×I = D×P ≤ 1  (D,P ∈ [0,1]이므로)
-  → G ≤ 1/I  (항상 성립)
+  G×I = D×P ≤ 1  (since D,P ∈ [0,1])
+  → G ≤ 1/I  (always holds)
 
-  I = 1/2 에서: G_max = 1/(1/2) = 2 = σ₋₁(6)
-  역으로: G_max = σ₋₁(6) = 2 → I = 1/σ₋₁(6) = 1/2
+  At I = 1/2: G_max = 1/(1/2) = 2 = σ₋₁(6)
+  Conversely: G_max = σ₋₁(6) = 2 → I = 1/σ₋₁(6) = 1/2
 
-  "완전수의 역수 = 골든존 상한"
+  "Reciprocal of perfect number = Golden Zone upper bound"
 
-  순환인가?
+  Is this circular?
   ─────────
-  순환 경로: "상한=1/2" → "G_max=2" → "1/2에서 G≤2" → 순환 ✗
-  비순환 경로: D×P≤1 → G×I≤1 → I=1/2에서 G≤2=σ₋₁(6) ✓
+  Circular path: "upper bound=1/2" → "G_max=2" → "G≤2 at 1/2" → circular ✗
+  Non-circular path: D×P≤1 → G×I≤1 → G≤2=σ₋₁(6) at I=1/2 ✓
 
-  비순환 경로가 존재하므로 순환이 아님!
-  단, G=D×P/I라는 모델 정의는 수용해야 함 (🟥→🟩는 아님, 조건부)
+  Non-circular path exists, so not circular!
+  However, must accept the model definition G=D×P/I (not 🟥→🟩, conditional)
 ```
 
-## 판정
+## Judgment
 
 ```
-  유도 자체:      ✅ (수학적으로 올바름)
-  순환 여부:      ✅ 비순환 (D×P≤1에서 출발)
-  모델 의존:      ⚠️ G=D×P/I 정의 수용 필요
-  승격:           조건부 🟩
-                  "G=D×P/I 정의를 수용하면"
-                  골든존 상한 = 1/σ₋₁(6) = 1/2 가 순수 산술로 유도됨
+  Derivation itself:    ✅ (mathematically valid)
+  Circularity:         ✅ Non-circular (starts from D×P≤1)
+  Model dependency:     ⚠️ Must accept G=D×P/I definition
+  Upgrade:             Conditional 🟩
+                       "If G=D×P/I definition is accepted"
+                       Golden Zone upper bound = 1/σ₋₁(6) = 1/2 is derived from pure arithmetic
 ```

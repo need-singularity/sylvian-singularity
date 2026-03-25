@@ -1,82 +1,82 @@
-# 가설 278: 장력 정보량 ∝ 기저 정확도 — 쉬운 문제에서 장력이 더 많은 정보를 담는다
+# Hypothesis 278: Tension Information Content ∝ Base Accuracy — Tension Carries More Information on Easy Problems
 
-> **장력이 담는 정보량(Cohen's d, 분리비)은 모델의 기저 정확도에 의존한다. 높은 정확도(MNIST 97%+)에서는 장력이 오답을 강하게 선별(d=0.81)하지만, 낮은 정확도(CIFAR 53%)에서는 장력이 오답을 잘 구분하지 못한다(d=0.24).**
+> **The information content in tension (Cohen's d, separation ratio) depends on the model's base accuracy. At high accuracy (MNIST 97%+), tension strongly distinguishes wrong answers (d=0.81), but at low accuracy (CIFAR 53%), tension poorly distinguishes wrong answers (d=0.24).**
 
-## 실측 데이터
-
-```
-  CIFAR 재현 실험 (experiment_cifar_reproduce.py):
-
-  │ 상수 │     MNIST    │    CIFAR     │ 비율  │
-  ├──────┼──────────────┼──────────────┼───────┤
-  │ 정확도│     98.15%   │     53.83%   │       │
-  │ C4b  │  d = -0.81   │  d = -0.24   │ 0.30x │
-  │ C10  │  1-NN 97.40% │  1-NN 31.55% │ 0.32x │
-  │ C17  │  분리 2.79x  │  분리 1.22x  │ 0.44x │
-
-  모든 상수가 CIFAR에서 1/3~1/2로 약화.
-  기저 정확도: 98%→54% (0.55x)
-```
-
-## 해석
+## Measured Data
 
 ```
-  MNIST (기저 97%+):
-    대부분 정답 → 오답이 "특별한 사건"
-    장력이 오답을 선별하는 데 충분한 신호
-    → d=0.81, 분리 2.79x
+  CIFAR Reproduction Experiment (experiment_cifar_reproduce.py):
 
-  CIFAR (기저 53%):
-    절반 틀림 → 오답이 "일상"
-    장력이 오답/정답을 구분하기 어려움 (모두 시끄러움)
-    → d=0.24, 분리 1.22x
+  │ Constant │     MNIST    │    CIFAR     │ Ratio │
+  ├──────────┼──────────────┼──────────────┼───────┤
+  │ Accuracy │     98.15%   │     53.83%   │       │
+  │ C4b      │  d = -0.81   │  d = -0.24   │ 0.30x │
+  │ C10      │  1-NN 97.40% │  1-NN 31.55% │ 0.32x │
+  │ C17      │  Sep. 2.79x  │  Sep. 1.22x  │ 0.44x │
 
-  일반화:
-    장력 정보량 = f(기저 정확도)
-    f(0.97) ≈ 0.81 (큰 효과)
-    f(0.54) ≈ 0.24 (약한 효과)
-    f(0.10) ≈ 0? (랜덤이면 장력도 무의미?)
+  All constants weakened to 1/3~1/2 in CIFAR.
+  Base accuracy: 98%→54% (0.55x)
 ```
 
-## 가설 274(의식=오류교정)과의 연결
+## Interpretation
 
 ```
-  가설 274: 장력 = 오류 교정 메커니즘
-  가설 278: 오류가 많으면 교정이 어려움
+  MNIST (base 97%+):
+    Mostly correct → Wrong answers are "special events"
+    Tension provides sufficient signal to select wrong answers
+    → d=0.81, separation 2.79x
 
-  결합: 의식(장력)은 오류가 드물 때 가장 효과적
-  → 대부분 자동으로 맞추고, 가끔 틀리는 것에 의식이 집중
-  → 절반이 틀리면 의식이 감당 못 함 (인지 과부하)
+  CIFAR (base 53%):
+    Half wrong → Wrong answers are "routine"
+    Tension struggles to distinguish wrong/correct (all noisy)
+    → d=0.24, separation 1.22x
 
-  뇌 대응:
-    쉬운 과제: 주의가 예외에 집중 → 높은 효율
-    어려운 과제: 주의가 분산 → 낮은 효율
-    → Yerkes-Dodson 법칙과 유사?
+  Generalization:
+    Tension information content = f(base accuracy)
+    f(0.97) ≈ 0.81 (large effect)
+    f(0.54) ≈ 0.24 (weak effect)
+    f(0.10) ≈ 0? (if random, tension meaningless?)
 ```
 
-## CNN 연결 (가설 277)
+## Connection to Hypothesis 274 (Consciousness=Error Correction)
 
 ```
-  MLP CIFAR: 53% → 장력 정보 약함
-  CNN CIFAR: 78% → 장력 정보가 더 강할 것으로 예측
-  → CNN에서 C4b, C17 재측정 필요
+  Hypothesis 274: Tension = Error correction mechanism
+  Hypothesis 278: Many errors make correction difficult
 
-  예측: CNN CIFAR의 C4b d > MLP CIFAR의 0.24
-  (CNN이 더 높은 기저 정확도 → 장력이 더 유용)
+  Combined: Consciousness (tension) is most effective when errors are rare
+  → Mostly automatic correct, consciousness focuses on occasional errors
+  → When half are wrong, consciousness is overwhelmed (cognitive overload)
+
+  Brain correspondence:
+    Easy tasks: Attention focuses on exceptions → high efficiency
+    Hard tasks: Attention dispersed → low efficiency
+    → Similar to Yerkes-Dodson law?
 ```
 
-## 검증 방향
+## CNN Connection (Hypothesis 277)
 
 ```
-  1. CNN CIFAR에서 C4b, C17 측정 → 기저 정확도 78%에서 d는?
-  2. MNIST에서 의도적으로 정확도를 낮춰서 (에폭 1, 정확도 ~90%) 측정
-  3. f(acc)의 함수형: 선형? 시그모이드? 임계점?
+  MLP CIFAR: 53% → Tension information weak
+  CNN CIFAR: 78% → Tension information predicted to be stronger
+  → Need to remeasure C4b, C17 in CNN
+
+  Prediction: CNN CIFAR's C4b d > MLP CIFAR's 0.24
+  (CNN has higher base accuracy → tension more useful)
 ```
 
-## 한계
+## Verification Directions
 
 ```
-  1. MNIST와 CIFAR 두 점으로만 관측.
-  2. MNIST와 CIFAR는 정확도 외에도 다른 점이 많음 (입력 차원, 과제 복잡도).
-  3. MLP 기반이라 특징 추출의 질이 혼재.
+  1. Measure C4b, C17 in CNN CIFAR → What is d at 78% base accuracy?
+  2. Intentionally lower MNIST accuracy (epoch 1, accuracy ~90%) and measure
+  3. Function form of f(acc): Linear? Sigmoid? Threshold?
+```
+
+## Limitations
+
+```
+  1. Observed with only two points: MNIST and CIFAR.
+  2. MNIST and CIFAR differ in many ways besides accuracy (input dimensions, task complexity).
+  3. MLP-based, so feature extraction quality is mixed in.
 ```

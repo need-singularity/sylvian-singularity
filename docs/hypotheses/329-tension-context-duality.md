@@ -1,57 +1,57 @@
-# 가설 329: 장력의 맥락 이중성 — confidence vs boundary proximity
+# Hypothesis 329: Tension's Contextual Duality — confidence vs boundary proximity
 
-> **장력은 맥락에 따라 반대 의미를 가진다. 분류 정확도 관점에서 높은 장력=확신(H313), 결정 경계 관점에서 높은 장력=불확실(H328). 이 모순은 "장력=두 엔진의 반발 강도"이지 "좋음/나쁨"이 아니기 때문.**
+> **Tension has opposite meanings depending on context. From a classification accuracy perspective, high tension=confidence (H313); from a decision boundary perspective, high tension=uncertainty (H328). This contradiction is because "tension = strength of repulsion between two engines", not "good/bad".**
 
-## 모순
-
-```
-  H313: 정답 샘플의 장력 > 오답 샘플의 장력 (ratio 1.29~2.68)
-  H328: 경계 근처 샘플의 장력 > 경계 먼 샘플의 장력 (r=-0.79)
-
-  이 둘이 양립하려면:
-    경계 근처 + 정답 → 높은 장력 (어렵지만 맞춤 = "의식적 노력")
-    경계 먼 + 정답 → 낮은 장력 (쉬워서 자동 = "무의식 처리")
-    경계 근처 + 오답 → 중간 장력 (어렵고 틀림)
-    경계 먼 + 오답 → 이건 드묾 (쉬운데 틀리면 = 과신 H316)
-```
-
-## 통합 해석
+## Contradiction
 
 ```
-  장력 = |engine_A - engine_G|²
-  = 두 관점의 "반발 강도"
-  ≠ 좋음/나쁨, 높음/낮음의 단순 척도
+  H313: Correct sample tension > wrong sample tension (ratio 1.29~2.68)
+  H328: Boundary-near sample tension > boundary-far sample tension (r=-0.79)
 
-  높은 장력이 의미하는 것:
-    1. 두 엔진이 강하게 자기 의견 표출 → 확신 (H313)
-    2. 결정이 미묘하여 두 엔진이 다른 방향 → 경계 근접 (H328)
-
-  → 이 둘은 같은 현상의 다른 면!
-    "확신적으로 결정하는 것"은 "경계에서 강하게 한쪽을 선택하는 것"
-    → 높은 장력 = "강한 결정" (맞든 틀리든)
-    → 낮은 장력 = "약한 결정" (합의 or 무관심)
-
-  뇌 비유:
-    전두엽 활성화 = "어려운 결정에 주의 집중"
-    = 높은 장력 = confidence + boundary proximity 동시
+  For both to coexist:
+    Near boundary + correct -> high tension ("conscious effort for hard case")
+    Far from boundary + correct -> low tension ("automatic unconscious processing")
+    Near boundary + wrong -> moderate tension (hard and wrong)
+    Far from boundary + wrong -> this is rare (easy but wrong = overconfidence H316)
 ```
 
-## 추가 검증
+## Unified Interpretation
 
 ```
-  H329 2D 맵 (MNIST): margin↑→tension↑→accuracy↑
+  tension = |engine_A - engine_G|²
+  = "strength of repulsion between two perspectives"
+  ≠ simple measure of good/bad, high/low
+
+  What high tension means:
+    1. Two engines strongly express their opinions -> confidence (H313)
+    2. Decision is subtle so two engines point in different directions -> boundary proximity (H328)
+
+  -> These are two sides of the same phenomenon!
+    "Deciding confidently" = "strongly choosing one side at the boundary"
+    -> High tension = "strong decision" (correct or wrong)
+    -> Low tension = "weak decision" (consensus or indifference)
+
+  Brain analogy:
+    Prefrontal cortex activation = "concentrated attention on difficult decision"
+    = high tension = simultaneous confidence + boundary proximity
+```
+
+## Additional Verification
+
+```
+  H329 2D map (MNIST): margin up -> tension up -> accuracy up
     Far(T=811,100%) > Near(T=495,92%)
 
-  H322 EEG proxy: awake(16.4)≈sleep(16.7)>>drowsy(2.6)
-    → 뚜렷한 상태=높은장력, 모호한 전환=낮은장력
-    → "결정의 강도" 해석과 완벽 일관!
+  H322 EEG proxy: awake(16.4) ≈ sleep(16.7) >> drowsy(2.6)
+    -> Distinct state = high tension, ambiguous transition = low tension
+    -> Perfectly consistent with "decision strength" interpretation!
 
-  종합 증거 (5개):
-    H313: 정답=높은장력 (4셋)
-    H316: 과신=높은장력+틀림 (3셋)
-    H329 2D: margin↑→tension↑
-    H322 EEG: 뚜렷한상태=고장력
-    H328: boundary근접↔장력 r=-0.79
+  Comprehensive evidence (5 items):
+    H313: correct=high tension (4 datasets)
+    H316: overconfidence=high tension+wrong (3 datasets)
+    H329 2D: margin up -> tension up
+    H322 EEG: distinct state = high tension
+    H328: boundary proximity <-> tension r=-0.79
 ```
 
-## 상태: 🟩 5중 확인 (결정의 강도 = 통합 해석)
+## Status: 🟩 5-fold confirmed (decision strength = unified interpretation)

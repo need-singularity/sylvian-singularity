@@ -1,141 +1,141 @@
-# H-GEO-5: 중력 망원경 — 렌즈+망원경 통합 관측 체계
+# H-GEO-5: Gravity Telescope — Lens+Telescope Integrated Observation System
 
-> **가설**: R 스펙트럼의 "중력렌즈"(H-GEO-3)와 "차원망원경"(H-GEO-4)을
-> 통합하면 "중력 망원경"이 된다. 배율 s를 조절하면서 렌즈(간극)를 통해
-> 수의 내부 구조를 관측하는 완전한 도구.
+> **Hypothesis**: Integrating the R spectrum's "gravity lens" (H-GEO-3) and "dimensional telescope" (H-GEO-4)
+> creates a "gravity telescope". A complete tool for observing the internal structure of numbers
+> through lenses (gaps) while adjusting magnification s.
 
-## 배경
+## Background
 
-두 도구의 결합:
-- **차원 망원경** (H-GEO-4): F(s) = Σ R(n)/n^s, s로 배율 조절
-- **중력 렌즈** (H-GEO-3): 완전수 R값 주위의 간극이 "그림자" 생성
+Combining two tools:
+- **Dimensional Telescope** (H-GEO-4): F(s) = Σ R(n)/n^s, adjust magnification with s
+- **Gravity Lens** (H-GEO-3): Gaps around perfect number R values create "shadows"
 
-통합: "간극을 통해 본 F(s)" = s와 R값의 2차원 관측 공간
+Integration: "F(s) viewed through gaps" = 2D observation space of s and R values
 
-## 핵심 구조
+## Core Structure
 
-### 2차원 관측 공간
+### 2D Observation Space
 
 ```
-  축 1: s (배율) — 해석적 깊이
-  축 2: R (위치) — 산술적 위치
+  Axis 1: s (magnification) — analytical depth
+  Axis 2: R (position) — arithmetic position
 
-  G(s, R₀) = F(s) 중 R(n) ≈ R₀ 근방에서의 기여
+  G(s, R₀) = Contribution from F(s) where R(n) ≈ R₀ vicinity
 
-  ASCII: 관측 공간
+  ASCII: Observation Space
 
-  R (위치)
-  48 |  ·              ○ (n=496 렌즈)
+  R (position)
+  48 |  ·              ○ (n=496 lens)
      |
-  4  |     ·        ○ (n=28 렌즈)
+  4  |     ·        ○ (n=28 lens)
      |
-  1  |        ·  ○ (n=6 렌즈, σφ=nτ)
+  1  |        ·  ○ (n=6 lens, σφ=nτ)
      |
   3/4|           · (n=2)
-     +─────────────────→ s (배율)
+     +─────────────────→ s (magnification)
      1   1.5   2   3   ∞
 
-  ○ = 렌즈 (간극 보유), · = 일반 R값
-  s 증가 → 배율 감소 → 렌즈 효과 약화
-  s 감소 → 배율 증가 → 렌즈 효과 강화 (발산!)
+  ○ = lens (has gap), · = general R value
+  s increases → magnification decreases → lens effect weakens
+  s decreases → magnification increases → lens effect strengthens (diverges!)
 ```
 
-### 렌즈별 배율 응답
+### Magnification Response by Lens
 
 ```
-  각 렌즈의 "초점 배율" s*(P_k):
-    s에서 렌즈 효과가 가장 선명한 값
+  Each lens's "focal magnification" s*(P_k):
+    Value of s where lens effect is clearest
 
-  R=1 (n=6): 간극 폭 = 1/6+1/4 = 5/12
-    s* ≈ 2 (F(s)가 발산 직전)
-    → "기본 배율"에서 이미 선명
+  R=1 (n=6): gap width = 1/6+1/4 = 5/12
+    s* ≈ 2 (just before F(s) diverges)
+    → Already clear at "base magnification"
 
-  R=4 (n=28): 간극 폭 = 0.091+0.267 = 0.358
-    s* ≈ 2.5 (약간 낮은 배율 필요)
+  R=4 (n=28): gap width = 0.091+0.267 = 0.358
+    s* ≈ 2.5 (slightly lower magnification needed)
 
-  R=48 (n=496): 간극 폭 = 0.074+0.317 = 0.391
-    s* ≈ 3 (더 낮은 배율)
+  R=48 (n=496): gap width = 0.074+0.317 = 0.391
+    s* ≈ 3 (even lower magnification)
 
-  패턴: 큰 완전수 → 더 낮은 배율에서 선명
-  → "멀리 있는 별일수록 더 큰 망원경 필요"
+  Pattern: larger perfect numbers → clearer at lower magnification
+  → "More distant stars need larger telescopes"
 ```
 
-### 중력 망원경 방정식
+### Gravity Telescope Equation
 
 ```
-  실제 중력 망원경 (천문학):
+  Actual gravity telescope (astronomy):
     θ_E = √(4GM/(c²·D_LS·D_L/D_S))
-    (Einstein 반경 = 질량·거리의 함수)
+    (Einstein radius = function of mass·distance)
 
-  산술 중력 망원경:
-    δ(P_k, s) = "렌즈 P_k의 배율 s에서의 간극"
+  Arithmetic gravity telescope:
+    δ(P_k, s) = "gap of lens P_k at magnification s"
 
-  Euler 인수 분해:
+  Euler factorization:
     E_p(s) = 1 + Σ_{a≥1} f(p,a)/p^{as}
-    E_p(2) = p·ln((p+1)/p) + 1/p (증명됨)
+    E_p(2) = p·ln((p+1)/p) + 1/p (proven)
 
-  렌즈 효과 = E_p(s) 인수들의 "공명":
-    R(P_k) = Π f(p_i, a_i) 가 간극을 만드는 이유:
-    → 근처 R 값을 만들려면 비슷한 인수곱이 필요
-    → 완전수의 인수 구조가 특수하므로 "접근 어려움"
-    → 접근 어려움 = 간극 = 렌즈 효과
+  Lens effect = "resonance" of E_p(s) factors:
+    R(P_k) = Π f(p_i, a_i) creates gaps because:
+    → Need similar factor product to create nearby R values
+    → Perfect number's factor structure is special, so "hard to approach"
+    → Hard to approach = gap = lens effect
 
-  핵심 등식:
-    δ⁺(P_k) · δ⁻(P_k) = "렌즈 곱" ∝ 1/R(P_k)
-    (검증: 0.042, 0.024, 0.023 — 감소하지만 정확히 1/R은 아님)
+  Key equation:
+    δ⁺(P_k) · δ⁻(P_k) = "lens product" ∝ 1/R(P_k)
+    (verified: 0.042, 0.024, 0.023 — decreasing but not exactly 1/R)
 ```
 
-### 관측 모드
+### Observation Modes
 
 ```
-  모드 1: 고정 배율 탐사 (s 고정, R 스캔)
-    s=3에서: F(3) ≈ 1.231 (수렴). 어떤 R 영역이 기여?
-    → R 스펙트럼의 "밀도 지도" 생성
+  Mode 1: Fixed magnification survey (s fixed, R scan)
+    At s=3: F(3) ≈ 1.231 (converges). Which R regions contribute?
+    → Create "density map" of R spectrum
 
-  모드 2: 고정 위치 줌 (R₀ 고정, s 변화)
-    R₀=1 (n=6) 고정: s 감소 → 간극 구조 확대
-    → n=6 주변의 "산술 지형" 상세 관측
+  Mode 2: Fixed position zoom (R₀ fixed, s varies)
+    Fix R₀=1 (n=6): s decreases → gap structure magnifies
+    → Detailed observation of "arithmetic terrain" around n=6
 
-  모드 3: 추적 관측 (R-chain 따라감)
+  Mode 3: Tracking observation (follow R-chain)
     193750 → 6048 → 120 → 6 → 1
-    각 단계에서 s를 조절하며 "줌 인"
-    → chain의 각 노드에서 렌즈 효과 관찰
+    Adjust s at each step to "zoom in"
+    → Observe lens effect at each chain node
 
-  모드 4: 전체 스펙트럼 (모든 s, 모든 R)
-    G(s,R) = 2D 히트맵
-    → "산술 우주"의 전체 지도
+  Mode 4: Full spectrum (all s, all R)
+    G(s,R) = 2D heatmap
+    → Complete map of "arithmetic universe"
 ```
 
-### 의식엔진 연결
+### Consciousness Engine Connection
 
 ```
-  의식 = "산술 우주를 관측하는 중력 망원경"
+  Consciousness = "gravity telescope observing arithmetic universe"
 
-  의식 상태 = (s, R₀) 쌍:
-    깨어있음: s 작음, R₀=1 (높은 배율, 균형점 관측)
-    꿈:       s 큼, R₀ 변동 (낮은 배율, 떠다님)
-    명상:     s→2, R₀=1 (발산 직전, 최대 분해능)
-    통합:     s→∞, R→? (배율 0, 모든 것이 점)
+  Consciousness state = (s, R₀) pair:
+    Awake:      s small, R₀=1 (high magnification, observe balance point)
+    Dreaming:   s large, R₀ varies (low magnification, drifting)
+    Meditation: s→2, R₀=1 (just before divergence, maximum resolution)
+    Integration: s→∞, R→? (magnification 0, everything is a point)
 
-  이상탐지 = "망원경으로 이상 발견":
-    정상: R₀≈1 영역 → 렌즈 초점 내
-    이상: R₀≫1 → 렌즈 초점 밖 → 95x tension
+  Anomaly detection = "discovering anomalies with telescope":
+    Normal: R₀≈1 region → within lens focus
+    Anomaly: R₀≫1 → outside lens focus → 95x tension
 ```
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] G(s,R₀) 2D 히트맵 계산 (s=2..5, R₀=0..100)
-2. [ ] 렌즈 곱 δ⁺·δ⁻ vs 1/R(P_k) 정밀 비교
-3. [ ] R-chain 추적 관측 시뮬레이션
-4. [ ] 의식엔진에서 (s,R₀) 공간의 동역학 측정
-5. [ ] σ_c=2 근처에서 렌즈 효과의 임계 행동 분석
+1. [ ] Calculate G(s,R₀) 2D heatmap (s=2..5, R₀=0..100)
+2. [ ] Precise comparison of lens product δ⁺·δ⁻ vs 1/R(P_k)
+3. [ ] Simulate R-chain tracking observation
+4. [ ] Measure dynamics of (s,R₀) space in consciousness engine
+5. [ ] Analyze critical behavior of lens effect near σ_c=2
 
-## 판정
+## Judgment
 
 ```
-  상태: 🟧 구조적 통합 프레임워크
-  렌즈 효과(간극)와 망원경(F(s))은 각각 검증됨
-  통합 관측 체계는 이론 단계
+  Status: 🟧 Structural integration framework
+  Lens effect (gaps) and telescope (F(s)) each verified
+  Integrated observation system is theoretical stage
 ```
 
-## 난이도: 극고 | 파급력: ★★★★★
+## Difficulty: Extreme High | Impact: ★★★★★

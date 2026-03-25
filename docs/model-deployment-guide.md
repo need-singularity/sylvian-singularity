@@ -1,110 +1,110 @@
-# 700M x 3 모델 인터넷 배포 가이드
+# 700M x 3 Model Internet Deployment Guide
 
-## 개요
+## Overview
 
-700M 파라미터 모델 3개를 인터넷망에 서빙하기 위한 인프라 가이드.
+Infrastructure guide for serving three 700M parameter models on the internet.
 
-## VRAM 요구량
+## VRAM Requirements
 
 | | FP16 | INT8 | INT4 |
 |---|---|---|---|
-| 모델 1개 | ~1.4GB | ~0.7GB | ~0.35GB |
-| **3개 합계** | **~4.2GB** | **~2.1GB** | **~1.05GB** |
-| + KV cache/오버헤드 | ~6-8GB | ~4-5GB | ~3GB |
+| 1 model | ~1.4GB | ~0.7GB | ~0.35GB |
+| **3 models total** | **~4.2GB** | **~2.1GB** | **~1.05GB** |
+| + KV cache/overhead | ~6-8GB | ~4-5GB | ~3GB |
 
-GPU 1대 (16GB+ VRAM)이면 충분.
+1 GPU (16GB+ VRAM) is sufficient.
 
-## 서빙 아키텍처
+## Serving Architecture
 
 ```
-1대 GPU 서버
-├── vLLM (3개 모델 동시 로드)
+1 GPU Server
+├── vLLM (3 models loaded simultaneously)
 │   ├── model_A (port 8001)
 │   ├── model_B (port 8002)
 │   └── model_C (port 8003)
-├── Nginx (리버스 프록시 + SSL + 로드밸런싱)
-├── FastAPI 게이트웨이 (라우팅 + API 키 인증)
-└── Cloudflare (도메인 + DDoS 방어)
+├── Nginx (reverse proxy + SSL + load balancing)
+├── FastAPI gateway (routing + API key auth)
+└── Cloudflare (domain + DDoS protection)
 ```
 
-## 필요 구성요소
+## Required Components
 
-### 하드웨어
-- GPU 서버 1대 (16GB+ VRAM)
+### Hardware
+- 1 GPU server (16GB+ VRAM)
 
-### 소프트웨어
+### Software
 - Docker + NVIDIA Container Toolkit
-- vLLM 또는 TGI (서빙 프레임워크)
+- vLLM or TGI (serving framework)
 - Nginx + Let's Encrypt (SSL)
-- 도메인 1개 (~$10/년)
+- 1 domain (~$10/year)
 
-### 네트워크/보안
-- 도메인 + SSL (Let's Encrypt 무료)
-- 리버스 프록시: Nginx / Caddy
-- API 키 인증 + rate limiting
-- 방화벽 (포트 최소 개방)
-- DDoS 방어: Cloudflare
+### Network/Security
+- Domain + SSL (Let's Encrypt free)
+- Reverse proxy: Nginx / Caddy
+- API key authentication + rate limiting
+- Firewall (minimal port exposure)
+- DDoS protection: Cloudflare
 
-## 서빙 프레임워크 비교
+## Serving Framework Comparison
 
-| 프레임워크 | 특징 |
+| Framework | Features |
 |---|---|
-| **vLLM** | LLM 특화, PagedAttention, 처리량 최고 |
-| **TGI** (HuggingFace) | HF 생태계 통합, 간편 |
-| **Triton** (NVIDIA) | 범용, 멀티모델, 배치 최적화 |
-| **Ollama** | 로컬/소규모, 간편 설치 |
-| **llama.cpp server** | CPU/경량 GPU, GGUF 포맷 |
+| **vLLM** | LLM-specialized, PagedAttention, highest throughput |
+| **TGI** (HuggingFace) | HF ecosystem integration, simple |
+| **Triton** (NVIDIA) | General purpose, multi-model, batch optimization |
+| **Ollama** | Local/small-scale, easy installation |
+| **llama.cpp server** | CPU/lightweight GPU, GGUF format |
 
-## 최적화
+## Optimization
 
-- **양자화**: GPTQ, AWQ, GGUF (4bit/8bit) → VRAM 절감
-- **KV cache 최적화**: PagedAttention (vLLM 자동)
-- **배치 처리**: continuous batching
-- **스트리밍**: SSE (Server-Sent Events)
+- **Quantization**: GPTQ, AWQ, GGUF (4bit/8bit) → VRAM reduction
+- **KV cache optimization**: PagedAttention (vLLM automatic)
+- **Batch processing**: continuous batching
+- **Streaming**: SSE (Server-Sent Events)
 
-## 플랫폼 추천
+## Platform Recommendations
 
-### 가성비 순위
+### Cost-effectiveness Ranking
 
-| 순위 | 서비스 | 월 비용 | 특징 |
+| Rank | Service | Monthly Cost | Features |
 |---|---|---|---|
-| 1 | **RunPod Serverless** | **$5-30** | 호출당 과금, 트래픽 없으면 $0 |
-| 2 | **Modal** | **$10-40** | 콜드스타트 빠름, Python 네이티브 |
-| 3 | **Replicate** | **$20-50** | 배포 제일 쉬움, `cog push` 한 줄 |
-| 4 | **RunPod Pod** | ~$160 | 24시간 상시, 트래픽 많을 때 |
-| 5 | **AWS SageMaker** | ~$200+ | 기업용 |
-| 6 | **GCP Vertex AI** | ~$200+ | 기업용 |
+| 1 | **RunPod Serverless** | **$5-30** | Pay per call, $0 when no traffic |
+| 2 | **Modal** | **$10-40** | Fast cold start, Python native |
+| 3 | **Replicate** | **$20-50** | Easiest deployment, `cog push` one-liner |
+| 4 | **RunPod Pod** | ~$160 | 24/7 always-on, high traffic |
+| 5 | **AWS SageMaker** | ~$200+ | Enterprise |
+| 6 | **GCP Vertex AI** | ~$200+ | Enterprise |
 
-### 트래픽별 추천
+### Traffic-based Recommendations
 
-| 트래픽 | 추천 | 비용 |
+| Traffic | Recommendation | Cost |
 |---|---|---|
-| 적음 (하루 ~1000건 이하) | RunPod Serverless / Modal | $5-30/월 |
-| 중간 (하루 ~1만건) | RunPod Pod (RTX 3090) | ~$160/월 |
-| 많음 (하루 ~10만건+) | 전용 서버 (Hetzner, OVH) | $100-200/월 |
+| Low (~1000/day or less) | RunPod Serverless / Modal | $5-30/month |
+| Medium (~10k/day) | RunPod Pod (RTX 3090) | ~$160/month |
+| High (~100k+/day) | Dedicated server (Hetzner, OVH) | $100-200/month |
 
-### GPU 추천
+### GPU Recommendations
 
-| GPU | 월 비용 | 비고 |
+| GPU | Monthly Cost | Notes |
 |---|---|---|
-| **RTX 3090 24GB** | ~$160/월 (클라우드) | 3개 여유, 가성비 최고 |
-| **RTX 4090 24GB** | ~$300/월 | 처리량 2배 |
-| **T4 16GB** | ~$80/월 (AWS/GCP) | FP16 3개 가능, 느림 |
-| **A10G 24GB** | ~$120/월 (AWS) | 안정적 |
-| 본인 **RTX 5070** | $0 | 집에서 서빙 가능 |
+| **RTX 3090 24GB** | ~$160/month (cloud) | 3 models comfortable, best value |
+| **RTX 4090 24GB** | ~$300/month | 2x throughput |
+| **T4 16GB** | ~$80/month (AWS/GCP) | FP16 3 models possible, slow |
+| **A10G 24GB** | ~$120/month (AWS) | Stable |
+| Your **RTX 5070** | $0 | Home serving possible |
 
-### 비용 요약
+### Cost Summary
 
-| 항목 | 셀프호스팅 (5070) | 클라우드 (RTX 3090) |
+| Item | Self-hosting (5070) | Cloud (RTX 3090) |
 |---|---|---|
-| 서버 | 전기세 ~$30 | ~$160 |
-| 도메인 | ~$1 | ~$1 |
-| Cloudflare | 무료 | 무료 |
-| **합계** | **~$31/월** | **~$161/월** |
+| Server | Electricity ~$30 | ~$160 |
+| Domain | ~$1 | ~$1 |
+| Cloudflare | Free | Free |
+| **Total** | **~$31/month** | **~$161/month** |
 
-## 빠른 시작
+## Quick Start
 
-### Replicate (5분 배포)
+### Replicate (5-minute deployment)
 
 ```bash
 cog push r8.im/username/model-a
@@ -115,12 +115,12 @@ cog push r8.im/username/model-c
 ### RunPod Serverless
 
 ```
-handler.py 작성 → Docker 빌드 → Endpoint 생성 → API 호출
+Write handler.py → Docker build → Create endpoint → API call
 ```
 
-### 셀프호스팅 (RTX 5070)
+### Self-hosting (RTX 5070)
 
 ```bash
-# Cloudflare Tunnel로 고정 IP 불필요
+# No fixed IP needed with Cloudflare Tunnel
 cloudflared tunnel --url http://localhost:8000
 ```

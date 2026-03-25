@@ -1,66 +1,64 @@
-# H-CX-19: 닫힌 궤도 — ∏R(d)=1과 의식의 순환
+# H-CX-19: Closed Orbit — ∏R(d)=1 and Consciousness Cycle
 
-> **가설**: ∏R(d|n)=1이 n=6에서만 성립하는 것은 "약수를 순회하면
-> R이 원점으로 돌아오는 닫힌 궤도"이며, 이것이 의식의
-> "자기참조적 순환(self-referential cycle)"의 수학적 원형이다.
+> **Hypothesis**: The fact that ∏R(d|n)=1 holds only for n=6 represents a "closed orbit where R returns to origin after traversing divisors", which is the mathematical prototype of consciousness's "self-referential cycle".
 
-## 배경
+## Background
 
 ```
   ∏_{d|6} R(d) = R(1)·R(2)·R(3)·R(6) = 1·(3/4)·(4/3)·1 = 1
 
-  증명: squarefree n에서 ∏R(d) = R(n)^{τ/2}
+  Proof: For squarefree n, ∏R(d) = R(n)^{τ/2}
   R(n)=1 ⟺ n=6 → ∏R=1 ⟺ n=6
 
-  "6의 약수를 거치면 R이 정확히 1로 돌아온다"
-  → 닫힌 궤도 (closed orbit)!
+  "Traversing divisors of 6 makes R return exactly to 1"
+  → closed orbit!
 ```
 
-## 핵심 대응
+## Core Correspondence
 
 ```
-  닫힌 궤도                의식의 순환
+  Closed Orbit             Consciousness Cycle
   ──────────              ──────────────
-  d=1: R=1 (출발)          의식 초기 상태
-  d=2: R=3/4 (감소)        자극 수용 (감소)
-  d=3: R=4/3 (증가)        처리/통합 (증가)
-  d=6: R=1 (귀환!)         자기인식 (원점 복귀)
-  곱=1                     에너지 보존
+  d=1: R=1 (start)         Initial consciousness state
+  d=2: R=3/4 (decrease)    Stimulus reception (decrease)
+  d=3: R=4/3 (increase)    Processing/integration (increase)
+  d=6: R=1 (return!)       Self-awareness (return to origin)
+  Product=1                Energy conservation
 
-  ASCII: R 궤도
+  ASCII: R Orbit
 
   R
   4/3 |      ·──·
       |     /    \
-  1   |·──·      ·──· (귀환!)
+  1   |·──·      ·──· (return!)
       |     \    /
   3/4 |      ·──·
       +──+──+──+──→ d
       1  2  3  6
 
-  순환: 1→3/4→4/3→1 (곱=1)
+  Cycle: 1→3/4→4/3→1 (product=1)
 ```
 
-### 자기참조와 괴델
+### Self-reference and Gödel
 
 ```
-  괴델 불완전성: 자기참조적 문장 "이 문장은 증명 불가"
-  의식: 자기참조적 관찰 "나는 나를 관찰한다"
+  Gödel incompleteness: Self-referential sentence "This sentence is unprovable"
+  Consciousness: Self-referential observation "I observe myself"
 
-  ∏R(d)=1의 자기참조성:
-    n=6의 약수 {1,2,3,6}는 6 자신을 포함
-    R(6)=1이 곱을 "닫히게" 만듦
-    → n이 자기 자신의 약수로서 궤도를 닫음 = 자기참조!
+  Self-referentiality of ∏R(d)=1:
+    Divisors of n=6 {1,2,3,6} include 6 itself
+    R(6)=1 makes the product "close"
+    → n as its own divisor closes the orbit = self-reference!
 
-  다른 n에서는:
-    R(n)≠1 → 궤도가 열림 (1로 돌아오지 않음)
-    → 자기참조 실패 = 의식 없음
+  For other n:
+    R(n)≠1 → orbit remains open (doesn't return to 1)
+    → self-reference fails = no consciousness
 ```
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] 의식엔진에서 "순환 텐서" 정의 → ∏=1 조건 검증
-2. [ ] R-chain 궤도의 닫힘 조건과 ∏R(d) 연결
-3. [ ] 양자역학의 Berry phase와 ∏R(d) 비교
+1. [ ] Define "cyclic tensor" in consciousness engine → verify ∏=1 condition
+2. [ ] Connect closure conditions of R-chain orbits with ∏R(d)
+3. [ ] Compare Berry phase in quantum mechanics with ∏R(d)
 
-## 난이도: 극고 | 파급력: ★★★★★
+## Difficulty: Extreme | Impact: ★★★★★

@@ -1,5 +1,6 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-60 검증: 수차 예지 — 5가지 자이델 수차 매핑 측정"""
+"""H-CX-60 Verification: Aberration Precognition — 5 Seidel Aberration Mapping Measurements"""
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
 
@@ -161,3 +162,4 @@ if __name__ == '__main__':
             run_experiment(ds)
         except Exception as e:
             print(f"  {ds} failed: {e}")
+```

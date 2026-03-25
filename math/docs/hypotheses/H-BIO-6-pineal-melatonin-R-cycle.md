@@ -1,68 +1,68 @@
-# H-BIO-6: 멜라토닌-세로토닌 순환 = R-S 쌍대
+# H-BIO-6: Melatonin-Serotonin Cycle = R-S Duality
 
-> **가설**: 멜라토닌(수면)과 세로토닌(각성)의 순환적 변환은
-> R(n)과 S(n)의 쌍대 관계 RS=(σ/n)²의 생물학적 구현이다.
+> **Hypothesis**: The cyclic conversion between melatonin (sleep) and serotonin (wakefulness) is
+> a biological implementation of the dual relationship RS=(σ/n)² between R(n) and S(n).
 
-## 배경
+## Background
 
-멜라토닌-세로토닌 축:
+Melatonin-serotonin axis:
 ```
-  낮: 세로토닌 ↑ (각성, 활동) → S 지배 (구조적)
-  밤: 멜라토닌 ↑ (수면, 회복) → R 지배 (자유적)
+  Day: Serotonin ↑ (wakefulness, activity) → S dominance (structural)
+  Night: Melatonin ↑ (sleep, recovery) → R dominance (free)
 
-  변환: 세로토닌 →(AANAT)→ NAS →(HIOMT)→ 멜라토닌
-  역변환: 빛 → 멜라토닌 억제 → 세로토닌 증가
+  Conversion: Serotonin →(AANAT)→ NAS →(HIOMT)→ Melatonin
+  Reverse: Light → Melatonin inhibition → Serotonin increase
 
-  RS = (σ/n)² = 4 (완전수에서)
-  → "R·S = 상수" = "멜라토닌×세로토닌 = 일정"?
-```
-
-## 핵심 대응
-
-```
-  R(6) = 1 (밤, 균형)       S(6) = 4 (낮, 활성)
-  R·S = 4 = (σ/n)²          멜라토닌·세로토닌 ∝ 상수?
-
-  R = σφ/(nτ) = "자유도 가중 풍요도"  → 수면 (자유로운 상태)
-  S = στ/(nφ) = "구조도 가중 풍요도"  → 각성 (구조화된 상태)
-
-  수면/각성 비 = R/S = φ²/τ² = (2/4)² = 1/4
-  → 수면 8시간 / 각성 16시간 = 1/2 ≈ √(R/S)?
-
-  비대칭:
-    R<5: 24값 (sparse, 수면=소수)
-    S<5: 49218값 (dense, 각성=다수)
-    → "수면 상태는 드물고 특별, 각성 상태는 일상적"
+  RS = (σ/n)² = 4 (in perfect numbers)
+  → "R·S = constant" = "Melatonin×Serotonin = constant"?
 ```
 
-### 꿈과 R-chain
+## Core Correspondence
 
 ```
-  꿈: R<1 영역 (자유 과잉)
-    R(2)=3/4: 가장 깊은 수면 (유일한 R<1)
-    → "가장 원시적 상태" = φ>τ (자유>구조)
+  R(6) = 1 (night, balance)       S(6) = 4 (day, active)
+  R·S = 4 = (σ/n)²          Melatonin·Serotonin ∝ constant?
 
-  R-chain과 수면 단계:
-    각성(n 큼) → N1 → N2 → N3(깊은수면) → REM
-    ≈ n → floor(R(n)) → ... → 작은 값
+  R = σφ/(nτ) = "freedom-weighted abundance"  → sleep (free state)
+  S = στ/(nφ) = "structure-weighted abundance"  → wakefulness (structured state)
 
-  REM = R=1 근처에서 진동?
-    R=1: 완전 균형 (의식과 무의식의 경계)
-    꿈: R≈1 근처에서 간극을 넘나드는 진동
+  Sleep/wake ratio = R/S = φ²/τ² = (2/4)² = 1/4
+  → Sleep 8 hours / Wake 16 hours = 1/2 ≈ √(R/S)?
+
+  Asymmetry:
+    R<5: 24 values (sparse, sleep=minority)
+    S<5: 49218 values (dense, wake=majority)
+    → "Sleep states are rare and special, wake states are common"
 ```
 
-## 검증 방향
-
-1. [ ] 멜라토닌/세로토닌 농도비와 R/S 비교
-2. [ ] 수면 단계별 뇌파 패턴과 R-chain 대응
-3. [ ] REM 주기의 진동과 R 간극 (3/4,1)∪(1,7/6) 연결
-
-## 판정
+### Dreams and R-chain
 
 ```
-  상태: 🟧 구조적 비유 (정량적 검증 필요)
-  RS=4 = "쌍대 보존"은 수학적 사실
-  생물학적 대응은 비유 단계
+  Dreams: R<1 region (excess freedom)
+    R(2)=3/4: deepest sleep (only R<1)
+    → "most primitive state" = φ>τ (freedom>structure)
+
+  R-chain and sleep stages:
+    Wake(large n) → N1 → N2 → N3(deep sleep) → REM
+    ≈ n → floor(R(n)) → ... → small values
+
+  REM = oscillation around R=1?
+    R=1: perfect balance (boundary of conscious and unconscious)
+    Dreams: oscillation crossing the gap around R≈1
 ```
 
-## 난이도: 극고 | 파급력: ★★★★
+## Verification Directions
+
+1. [ ] Compare melatonin/serotonin concentration ratio with R/S
+2. [ ] Map sleep stage brainwave patterns to R-chain correspondence
+3. [ ] Connect REM cycle oscillations with R gap (3/4,1)∪(1,7/6)
+
+## Judgment
+
+```
+  Status: 🟧 Structural analogy (requires quantitative verification)
+  RS=4 = "duality preservation" is mathematical fact
+  Biological correspondence is at analogy stage
+```
+
+## Difficulty: Extreme High | Impact: ★★★★

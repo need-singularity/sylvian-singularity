@@ -1,4 +1,4 @@
-# H-CX-309: ⭐🟩 카탈란(4)=14=Z(실리콘) — 카탈란-원소 교차
+# H-CX-309: ⭐🟩 Catalan(4)=14=Z(Silicon) — Catalan-Element Intersection
 
-> C(τ(6))=C(4)=14=Z(Si). 약수개수번째 카탈란 수 = 실리콘 원자번호!
-> C(6)=132=σ(σ-1)=12×11. 완전수번째 카탈란도 약수함수.
+> C(τ(6))=C(4)=14=Z(Si). Divisor-count-th Catalan number = Silicon atomic number!
+> C(6)=132=σ(σ-1)=12×11. Perfect-number-th Catalan also divisor function.

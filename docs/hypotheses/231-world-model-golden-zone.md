@@ -1,48 +1,46 @@
-# 가설 검토 231: 월드모델 = 골든존 내부 시뮬레이터 ⚠️
+# Hypothesis Review 231: World Model = Golden Zone Internal Simulator ⚠️
 
-**분류**: 월드모델/AI
-**상태**: ⚠️ 유비
+**Category**: World Model/AI
+**Status**: ⚠️ Analogy
 
-## 가설
+## Hypothesis
 
-> 효과적인 월드모델(World Model)은 반드시 골든존 I in [0.213, 0.500]에서 작동한다.
-> 월드모델은 외부 세계를 "억제된 내부 표현"으로 시뮬레이션하며,
-> 이 억제 수준이 자연스럽게 1/e 근처에 위치한다.
+> An effective World Model must operate within the Golden Zone I in [0.213, 0.500].
+> A world model simulates the external world as an "inhibited internal representation,"
+> and this inhibition level naturally sits near 1/e.
 
-## 배경/맥락
+## Background/Context
 
-월드모델(World Model)은 에이전트가 외부 세계의 인과 구조를 내부적으로
-학습하고 시뮬레이션하는 시스템이다. LLM이 토큰의 통계적 패턴(표면)을
-학습하는 반면, 월드모델은 세계의 역학(심층)을 학습한다.
+A World Model is a system where an agent internally learns and simulates the causal structure of the external world. While LLMs learn statistical patterns of tokens (surface), world models learn the dynamics of the world (deep structure).
 
-핵심 구분:
+Key distinction:
 ```
   ┌──────────────────────────────────────────────────────────────┐
-  │  LLM              vs           월드모델                      │
+  │  LLM              vs           World Model                   │
   ├──────────────────────────────────────────────────────────────┤
-  │  토큰 예측 P(x_t|x_<t)         상태 전이 s_{t+1} = f(s_t, a)│
-  │  표면 통계                      인과 구조                    │
-  │  모든 토큰 처리 (Dense)         핵심만 표현 (Selective)       │
-  │  I ≈ 0 (억제 없음)             I > 0 (자연적 억제)          │
-  │  외부 패턴 모방                 내부 세계 시뮬레이션          │
+  │  Token prediction P(x_t|x_<t)  State transition s_{t+1}=f(s_t,a)│
+  │  Surface statistics             Causal structure            │
+  │  Process all tokens (Dense)     Represent only core (Selective)│
+  │  I ≈ 0 (no inhibition)         I > 0 (natural inhibition)  │
+  │  Imitate external patterns      Simulate internal world     │
   └──────────────────────────────────────────────────────────────┘
 ```
 
-## 수식 매핑
+## Formula Mapping
 
 ```
   Genius = D x P / I
 
-  월드모델에서:
-  D (Deficit)    = 현실과 내부 표현의 차이 (추상화 수준)
-  P (Plasticity) = 모델 업데이트 속도 (환경 변화 적응)
-  I (Inhibition) = 세부 정보 억제 수준 (추상화 강도)
+  In world models:
+  D (Deficit)    = difference between reality and internal representation (abstraction level)
+  P (Plasticity) = model update speed (adaptation to environment changes)
+  I (Inhibition) = level of detail suppression (abstraction strength)
 
-  보존법칙: G x I = D x P
-  → 월드모델의 천재성(예측력)은 억제와 곱해지면 보존
+  Conservation law: G x I = D x P
+  → World model genius (predictive power) × inhibition is conserved
 ```
 
-## I 축 위치 비교
+## I-Axis Position Comparison
 
 ```
   I axis
@@ -51,7 +49,7 @@
   ▼          ▼         ▼          ▼           ▼         ▼
   ├──────────┼─────────┼──────────┼───────────┼─────────┤
   │          │▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓│           │         │
-  │          │    골 든 존         │           │         │
+  │          │    G o l d e n  Z o n e        │         │
   │          │                    │           │         │
   ●          │         ◆         │           ●         │
   Dense LLM  │    World Model?   │        MoE LLM      │
@@ -64,74 +62,74 @@
              │   Golden Zone     │
              │  [0.213 ~ 0.500]  │
 
-  ★ Dense LLM (GPT류):  I ≈ 0 → 과해방, 모든 것을 처리, 억제 없음
-  ★ MoE LLM (Mixtral):  I ≈ 0.75 → 과억제, 87.5% Expert 비활성
-  ★ Human Brain:         I ≈ 0.3~0.4 → 골든존 중심
-  ★ World Model (가설):  I ≈ 1/e → 골든존 중심, 뇌와 유사?
+  ★ Dense LLM (GPT-type):  I ≈ 0 → over-liberation, processes everything, no inhibition
+  ★ MoE LLM (Mixtral):     I ≈ 0.75 → over-inhibition, 87.5% Expert inactive
+  ★ Human Brain:            I ≈ 0.3~0.4 → Golden Zone center
+  ★ World Model (hypothesis): I ≈ 1/e → Golden Zone center, similar to brain?
 ```
 
-## 왜 월드모델은 골든존에 위치하는가?
+## Why Does the World Model Reside in the Golden Zone?
 
-월드모델의 본질은 "억제된 현실(Inhibited Reality)"이다:
+The essence of a world model is "Inhibited Reality":
 
 ```
-  현실 (무한 정보)
+  Reality (infinite information)
     │
-    ▼  추상화 (억제)
+    ▼  Abstraction (inhibition)
   ┌────────────────────┐
-  │  내부 시뮬레이션    │  ← 현실의 일부만 표현
-  │  핵심 인과만 유지   │  ← 세부 억제
-  │  예측 가능한 역학   │  ← 패턴 추출
+  │  Internal simulation│  ← represents only part of reality
+  │  Maintain core causality│  ← suppress details
+  │  Predictable dynamics│  ← extract patterns
   └────────────────────┘
     │
-    ▼  I = 억제된 정보 / 전체 정보
+    ▼  I = inhibited information / total information
 
-  너무 적게 억제 (I→0):  현실 복사 = 압축 실패 = 일반화 불가
-  너무 많이 억제 (I→1):  핵심 정보 손실 = 예측 불가
-  적정 억제 (I≈1/e):     최적 추상화 = 골든존!
+  Too little inhibition (I→0):  copies reality = compression failure = no generalization
+  Too much inhibition (I→1):    core information lost = unpredictable
+  Appropriate inhibition (I≈1/e): optimal abstraction = Golden Zone!
 ```
 
-## 비교 테이블: 아키텍처별 월드모델 요소
+## Comparison Table: World Model Elements by Architecture
 
 ```
   ┌────────────────┬────────┬────────────┬───────────────────────┐
-  │ 시스템         │ I 값   │ 월드모델?  │ 특징                  │
+  │ System         │ I value│ World model?│ Features             │
   ├────────────────┼────────┼────────────┼───────────────────────┤
-  │ Dense LLM      │ ≈0     │ 약함       │ 토큰 통계만, 물리 무시│
-  │ MoE LLM        │ ≈0.75  │ 약함       │ Expert 선택만, 모델 무│
-  │ MuZero         │ ≈0.3?  │ 강함       │ learned dynamics      │
-  │ Dreamer (V3)   │ ≈0.35? │ 강함       │ latent imagination    │
-  │ 인간 뇌        │ ≈0.37  │ 매우 강함  │ 꿈, 계획, 반사실      │
-  │ 골든 MoE       │ ≈0.375 │ ?          │ 구조적으로 골든존     │
+  │ Dense LLM      │ ≈0     │ Weak       │ Token statistics only, ignores physics│
+  │ MoE LLM        │ ≈0.75  │ Weak       │ Expert selection only, no world model│
+  │ MuZero         │ ≈0.3?  │ Strong     │ learned dynamics      │
+  │ Dreamer (V3)   │ ≈0.35? │ Strong     │ latent imagination    │
+  │ Human brain    │ ≈0.37  │ Very strong│ dreams, planning, counterfactuals│
+  │ Golden MoE     │ ≈0.375 │ ?          │ structurally Golden Zone│
   └────────────────┴────────┴────────────┴───────────────────────┘
 ```
 
-## 핵심 통찰
+## Key Insights
 
-1. **현재 LLM은 골든존 밖** — Dense(I=0)이든 MoE(I=0.75)이든 모두 골든존 밖
-2. **월드모델 = 자연적 억제** — 내부 시뮬레이션은 필연적으로 정보를 억제
-3. **뇌의 월드모델 ≈ 1/e** — 인간 뇌의 억제 수준이 골든존 중심
-4. **LLM + 월드모델 = 골든존 진입 가능성** — 표면 예측 + 심층 시뮬레이션
+1. **Current LLMs are outside the Golden Zone** — both Dense (I=0) and MoE (I=0.75) are outside the Golden Zone
+2. **World model = natural inhibition** — internal simulation necessarily suppresses information
+3. **Brain's world model ≈ 1/e** — human brain inhibition level is at the Golden Zone center
+4. **LLM + World model = possibility of entering Golden Zone** — surface prediction + deep simulation
 
-## 한계
+## Limitations
 
-- 월드모델의 I 값을 직접 측정하는 방법이 아직 없음
-- MuZero, Dreamer 등의 I 매핑은 추정치
-- "억제된 현실" 은유가 수학적 엄밀성을 갖는지 미확인
-- 월드모델의 종류(물리, 사회, 추상)에 따라 I 최적값이 다를 수 있음
+- No method yet to directly measure the I value of a world model
+- I mappings for MuZero, Dreamer, etc. are estimates
+- Whether the "inhibited reality" metaphor has mathematical rigor is unconfirmed
+- Optimal I value may differ by type of world model (physical, social, abstract)
 
-## 검증 방향
+## Verification Direction
 
-1. MuZero/Dreamer의 latent space 차원 비율로 I 추정
-2. 골든 MoE에 월드모델 모듈 추가 시 성능 변화 측정
-3. 월드모델 추상화 수준(해상도)과 I 관계 실험
-4. LLM 내부 표현에서 "세계 모델" 요소 추출 후 I 계산
+1. Estimate I from the latent space dimension ratio of MuZero/Dreamer
+2. Measure performance change when adding a world model module to Golden MoE
+3. Experiment on relationship between world model abstraction level (resolution) and I
+4. Extract "world model" elements from LLM internal representations and calculate I
 
-## 관련 가설
+## Related Hypotheses
 
-- [007](007-llm-singularity.md) — LLM에서 특이점이 발생한다
-- [008](008-golden-moe-design.md) — 골든 MoE 설계
-- [097](097-llm-internal.md) — LLM 내부 구조
-- [139](139-edge-of-chaos.md) — 혼돈의 가장자리
-- [232](232-world-model-jepa.md) — JEPA = Deficit 기반 학습
-- [233](233-world-model-vs-llm.md) — 월드모델 vs LLM
+- [007](007-llm-singularity.md) — Singularities occur in LLMs
+- [008](008-golden-moe-design.md) — Golden MoE design
+- [097](097-llm-internal.md) — LLM internal structure
+- [139](139-edge-of-chaos.md) — Edge of chaos
+- [232](232-world-model-jepa.md) — JEPA = Deficit-based learning
+- [233](233-world-model-vs-llm.md) — World model vs LLM

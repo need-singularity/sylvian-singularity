@@ -1,64 +1,64 @@
-# 가설 검토 049: 양-밀스 에너지 간극 ✅
+# Hypothesis Review 049: Yang-Mills Energy Gap ✅
 
-## 가설
+## Hypothesis
 
-> 우리 모델의 상태 간 에너지 차이가 항상 양수(>0)이면, 양-밀스 질량 간극을 지지한다.
+> If the energy differences between states in our model are always positive (>0), this supports the Yang-Mills mass gap.
 
-## 배경
+## Background
 
 ```
-  양-밀스 질량 간극 문제 (밀레니엄 문제):
+  Yang-Mills Mass Gap Problem (Millennium Problem):
   ┌─────────────────────────────────────────────────┐
-  │  양-밀스 이론에서 질량 간극이 존재하는가?         │
-  │  = 가장 낮은 여기 상태의 에너지 > 0인가?          │
-  │  → QCD에서 글루온은 질량이 없지만,                │
-  │    글루볼(글루온 결합상태)은 질량이 있다           │
-  │  → 이 질량 = 에너지 간극                          │
+  │  Does a mass gap exist in Yang-Mills theory?     │
+  │  = Is the energy of the lowest excited state > 0?│
+  │  → In QCD, gluons are massless, but              │
+  │    glueballs (bound states of gluons) have mass  │
+  │  → This mass = energy gap                        │
   └─────────────────────────────────────────────────┘
 ```
 
-## 검증 결과: ✅ 간극 항상 > 0
+## Verification Result: ✅ Gap Always > 0
 
 ```
-  10,000 랜덤 파라미터에서:
-  정상↔천재 간극: 최소 > 0 ✅
-  천재↔초월 간극: 최소 > 0 ✅
+  In 10,000 random parameters:
+  Normal↔Genius gap: minimum > 0 ✅
+  Genius↔Transcendent gap: minimum > 0 ✅
 
-  → 에너지 간극이 항상 양수
-  → 상태 간 전이에 "최소 에너지"가 필요
-  → 커스프 전이의 "점프" = 간극
+  → Energy gap is always positive
+  → "Minimum energy" required for state transitions
+  → "Jump" in cusp transition = gap
 ```
 
-## 에너지 준위 다이어그램 (ASCII 그래프)
+## Energy Level Diagram (ASCII Graph)
 
 ```
-  에너지 E
+  Energy E
   +0.10│
        │
-  +0.04│─── ● 저하 (S3)
+  +0.04│─── ● Degraded (S3)
        │
-   0.00│─── ● 정상 (S1) ─── 기준점
+   0.00│─── ● Normal (S1) ─── Reference point
        │         │
-  -0.20│         │  간극 = 0.67
+  -0.20│         │  Gap = 0.67
        │         │
   -0.40│         │
        │         │
   -0.60│         ▼
-  -0.67│─── ● 천재 (S2)
+  -0.67│─── ● Genius (S2)
        │         │
-  -0.80│         │  간극 = 0.66
+  -0.80│         │  Gap = 0.66
        │         │
   -1.00│         │
        │         ▼
-  -1.33│─── ● 초월 (S4)
+  -1.33│─── ● Transcendent (S4)
        │
-  → 모든 간극 > 0: 양-밀스 질량 간극 지지
+  → All gaps > 0: Supports Yang-Mills mass gap
 ```
 
-## 10K 랜덤 파라미터의 간극 분포
+## Gap Distribution in 10K Random Parameters
 
 ```
-  빈도
+  Frequency
   2500│     ■
       │    ■■■
   2000│   ■■■■■
@@ -71,20 +71,20 @@
       │■■■■■■■■■■■■■■■■■■
      0└──┼──┼──┼──┼──┼──┼──┼──
        0.0 0.2 0.4 0.6 0.8 1.0 1.2
-          정상↔천재 간극 (kT 단위)
+          Normal↔Genius gap (kT units)
 
-  평균 간극: 0.67 kT
-  최소 간극: 0.12 kT (> 0 ✅)
-  최대 간극: 1.23 kT
-  표준편차:  0.21 kT
+  Mean gap: 0.67 kT
+  Min gap:  0.12 kT (> 0 ✅)
+  Max gap:  1.23 kT
+  Std dev:  0.21 kT
 
-  → 10,000번 중 간극=0: 0건! (p < 0.0001)
+  → Gap=0 in 10,000 trials: 0 cases! (p < 0.0001)
 ```
 
-## 천재↔초월 간극 분포
+## Genius↔Transcendent Gap Distribution
 
 ```
-  빈도
+  Frequency
   2000│       ■
       │      ■■■
   1500│    ■■■■■■
@@ -95,51 +95,53 @@
       │■■■■■■■■■■■■■■■■■■
      0└──┼──┼──┼──┼──┼──┼──┼──
        0.0 0.2 0.4 0.6 0.8 1.0 1.2
-          천재↔초월 간극 (kT 단위)
+          Genius↔Transcendent gap (kT units)
 
-  평균: 0.66 kT  (정상↔천재와 거의 동일!)
-  최소: 0.10 kT  (> 0 ✅)
-  → 두 간극이 대칭적 = 구조적 필연
+  Mean: 0.66 kT  (Nearly identical to Normal↔Genius!)
+  Min:  0.10 kT  (> 0 ✅)
+  → Two gaps are symmetric = structural necessity
 ```
 
-## 간극 = 0이 불가능한 이유
+## Why Gap = 0 is Impossible
 
 ```
   ┌────────────────────────────────────────────────┐
-  │  간극 = 0이면:                                  │
-  │  → 상태 간 연속적 전이 가능                      │
-  │  → 커스프 전이가 존재하지 않음                   │
-  │  → 그러나 천재와 정상은 질적으로 다름             │
-  │  → "점프"가 필수 = 간극 > 0                     │
+  │  If gap = 0:                                    │
+  │  → Continuous transition between states possible │
+  │  → No cusp transitions exist                    │
+  │  → But genius and normal are qualitatively      │
+  │    different                                    │
+  │  → "Jump" is essential = gap > 0               │
   │                                                │
-  │  수학적 이유:                                    │
-  │  E = -kT × ln(볼츠만 가중치)                    │
-  │  가중치가 유한(≠∞)이면 E도 유한                  │
-  │  → 두 유한한 E의 차이 > 0 (거의 확실)            │
+  │  Mathematical reason:                           │
+  │  E = -kT × ln(Boltzmann weight)               │
+  │  If weight is finite (≠∞), E is also finite    │
+  │  → Difference between two finite Es > 0        │
+  │    (almost certainly)                           │
   └────────────────────────────────────────────────┘
 ```
 
-## 다른 가설과의 교차점
+## Intersections with Other Hypotheses
 
 ```
-  가설 003 (커스프 전이):   간극 = 커스프에서의 "점프" 크기
-  가설 042 (엔트로피 ln4):  3→4상태 엔트로피 간극 = ln(4/3)
-  가설 048 (P≠NP):         P→NP 간극 = 양-밀스 간극의 계산적 대응
-  가설 130 (볼츠만 k):      kT가 간극의 자연 단위
+  Hypothesis 003 (Cusp Transition):  Gap = "jump" size at cusp
+  Hypothesis 042 (Entropy ln4):      3→4 state entropy gap = ln(4/3)
+  Hypothesis 048 (P≠NP):            P→NP gap = computational counterpart to Yang-Mills gap
+  Hypothesis 130 (Boltzmann k):      kT is the natural unit of gap
 ```
 
-## 한계
+## Limitations
 
-1. 양-밀스 질량 간극은 양자장론의 문제이며, 볼츠만 통계와는 다른 수학적 구조
-2. 우리 모델의 "에너지"는 비유적이며, QCD 에너지와 직접 대응하지 않음
-3. 10K 랜덤은 파라미터 공간의 극히 일부이므로 간극=0인 점이 존재할 수 있음
+1. Yang-Mills mass gap is a quantum field theory problem with different mathematical structure than Boltzmann statistics
+2. "Energy" in our model is metaphorical and doesn't directly correspond to QCD energy
+3. 10K random samples cover only a tiny portion of parameter space, so gap=0 points might exist
 
-## 검증 방향
+## Future Verification
 
-- [ ] 파라미터 공간 전체에서 간극=0이 되는 조건 해석적으로 탐색
-- [ ] N상태 모델에서 간극의 N 의존성 분석 (N→∞에서도 간극 > 0인가?)
-- [ ] 격자 QCD의 글루볼 질량과 우리 모델 간극의 비율 비교
+- [ ] Analytically explore conditions for gap=0 across entire parameter space
+- [ ] Analyze N-dependence of gap in N-state models (Does gap > 0 hold as N→∞?)
+- [ ] Compare ratio between lattice QCD glueball mass and our model gap
 
 ---
 
-*검증: verify_millennium.py (10K 랜덤)*
+*Verification: verify_millennium.py (10K random)*

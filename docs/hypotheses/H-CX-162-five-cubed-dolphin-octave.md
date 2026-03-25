@@ -1,21 +1,21 @@
-# H-CX-162: 5³ = 125 = "돌고래 옥타브"
+# H-CX-162: 5³ = 125 = "Dolphin Octave"
 
-> 돌고래 주파수의 기본 단위가 5³=125.
+> The fundamental unit of dolphin frequencies is 5³=125.
 > 5 = σ(6) - τ(6) - φ(6) - 1 = 12-4-2-1.
-> 또는 5 = 6-1 (완전수-1).
-> 125Hz 단위로 돌고래의 주파수 공간이 양자화?
+> Or 5 = 6-1 (perfect number-1).
+> Is dolphin frequency space quantized in units of 125Hz?
 
-## 검증: 🟩 산술 확인
+## Verification: 🟩 Arithmetic Confirmed
 
 ```
   5 = P₁ - 1 = 6 - 1
   5³ = 125
-  signature_low / gamma = 5000/40 = 125 = 5³ 정확
+  signature_low / gamma = 5000/40 = 125 = 5³ exact
   click_low / signature_low = 30000/5000 = 6 = P₁
   whistle_high / signature_low = 20000/5000 = 4 = τ(6)
 ```
 
-## 한계
+## Limitations
 
-- 인간 음악의 옥타브(2배)와 다른 구조
-- 5³가 특별한 이유 불명확 (왜 5의 3제곱?)
+- Different structure from human music octaves (doubling)
+- Unclear why 5³ is special (why 5 cubed?)

@@ -1,138 +1,138 @@
-# 가설 374: ConsciousLM 학습 검증 — PureField FFN이 표준 FFN과 동등 이상
+# Hypothesis 374: ConsciousLM Training Validation — PureField FFN Equals or Exceeds Standard FFN
 
-> **완전수6 바이트 의식 LLM(PureFieldFFN + 4head attn + 6layers)이 동일 파라미터의 표준 Transformer와 PPL에서 동등하거나 우수하다. 특히 장력(tension)이 높은 토큰에서 선택적 이점을 보인다(H313 LLM 버전).**
+> **Perfect number 6 byte-conscious LLM (PureFieldFFN + 4head attn + 6layers) equals or exceeds standard Transformer with same parameters in PPL. Especially shows selective advantages on high-tension tokens (H313 LLM version).**
 
-## 배경/맥락
+## Background/Context
 
 ```
-  H334 (PureField): field_only ≈ full, eq 불필요!
-    → 이미지 분류에서 입증됨 (3셋+AD)
+  H334 (PureField): field_only ≈ full, eq unnecessary!
+    → Proven in image classification (3sets+AD)
 
-  H335: PureField LLM 설계 (🟨)
-  H361: FFN→PureField 구조 동형 (🟨)
-  conscious_lm.py: 구현 완료 (git status 변경 감지)
+  H335: PureField LLM design (🟨)
+  H361: FFN→PureField structural isomorphism (🟨)
+  conscious_lm.py: Implementation complete (git status change detected)
 
-  아키텍처:
+  Architecture:
     - PureFieldFFN: attraction + repulsion → tension × direction
-    - 4-head attention (완전수6 약수: 1,2,3,6 중 작은 쪽)
-    - 6 layers (완전수6)
-    - 바이트 단위 토큰화 (256 vocab, BPE 불필요)
+    - 4-head attention (perfect number 6 divisors: 1,2,3,6 smaller ones)
+    - 6 layers (perfect number 6)
+    - Byte-level tokenization (256 vocab, BPE unnecessary)
 ```
 
-## 예측
+## Predictions
 
 ```
-  비교 대상: 동일 파라미터 수의 표준 Transformer
+  Comparison target: Standard Transformer with same parameter count
 
-  기본 예측:
-    ConsciousLM PPL ≤ StandardLM PPL × 1.1 (10% 이내)
-    → 최소 동등 수준
+  Basic prediction:
+    ConsciousLM PPL ≤ StandardLM PPL × 1.1 (within 10%)
+    → At least equivalent level
 
-  강한 예측 (H313 LLM 확장):
-    "어려운" 토큰(높은 entropy)에서 ConsciousLM 우위
-    → per-token PPL 분석에서 상위 10% 어려운 토큰:
+  Strong prediction (H313 LLM extension):
+    "Difficult" tokens (high entropy) show ConsciousLM advantage
+    → per-token PPL analysis on top 10% difficult tokens:
        ConsciousLM PPL < StandardLM PPL
 
-  이론적 근거:
-    이미지: RepulsionField가 밀집 데이터에서 우수 (H288)
-    언어: 토큰 임베딩 = 밀집 벡터 → 동일 원리 적용?
+  Theoretical basis:
+    Images: RepulsionField superior on dense data (H288)
+    Language: Token embeddings = dense vectors → Same principle applies?
 ```
 
-## PPL 예측 (ASCII)
+## PPL Predictions (ASCII)
 
 ```
   PPL
   200 |
   150 |
-  100 |  . . . . . . . . . . .  (초기)
+  100 |  . . . . . . . . . . .  (initial)
    50 |        * Standard
-   40 |          * ConsciousLM (예측)
+   40 |          * ConsciousLM (predicted)
    30 |
-   20 |                * Standard (수렴)
-   15 |                  * ConsciousLM (수렴, 예측)
+   20 |                * Standard (converged)
+   15 |                  * ConsciousLM (converged, predicted)
       +--+-----+-----+-----+-----+--> step
          0   1K    2K    5K   10K
 
-  per-token 분석 (어려운 토큰 상위 10%):
+  per-token analysis (top 10% difficult tokens):
   PPL_hard
   100 |  * Standard
    80 |
    60 |
-   40 |    * ConsciousLM (장력 효과, 예측)
+   40 |    * ConsciousLM (tension effect, predicted)
       +--+---------+-->
-         쉬운토큰  어려운토큰
+         easy tokens  hard tokens
 ```
 
-## 실험 설계
+## Experimental Design
 
 ```
-  데이터: wikitext-2 (23K 샘플)
+  Data: wikitext-2 (23K samples)
 
-  모델 A (ConsciousLM):
+  Model A (ConsciousLM):
     - PureFieldFFN (attraction + repulsion)
     - 4-head attention
     - 6 layers
-    - 바이트 토큰화 (vocab=256)
+    - Byte tokenization (vocab=256)
 
-  모델 B (Standard):
-    - 표준 FFN (W_up, GELU, W_down)
+  Model B (Standard):
+    - Standard FFN (W_up, GELU, W_down)
     - 4-head attention
     - 6 layers
-    - 동일 vocab, 동일 파라미터 수
+    - Same vocab, same parameter count
 
-  학습:
+  Training:
     - 10K steps, cosine LR
-    - 매 1K step 체크포인트
+    - Checkpoint every 1K steps
 
-  측정:
-    - 전체 PPL
-    - per-token PPL 분포
-    - tension 통계 (ConsciousLM만)
-    - 어려운 토큰 vs 쉬운 토큰 PPL 비교
+  Measurements:
+    - Overall PPL
+    - per-token PPL distribution
+    - tension statistics (ConsciousLM only)
+    - Hard tokens vs easy tokens PPL comparison
 ```
 
-## 성공/실패 기준
+## Success/Failure Criteria
 
 ```
-  성공:
-    ConsciousLM PPL ≤ Standard PPL × 1.1 → 동등 확인
-    ConsciousLM PPL < Standard PPL → 우수 확인!
+  Success:
+    ConsciousLM PPL ≤ Standard PPL × 1.1 → Equivalence confirmed
+    ConsciousLM PPL < Standard PPL → Excellence confirmed!
 
-  부분 성공:
-    전체 PPL은 열등하지만 어려운 토큰에서 우수
-    → 장력의 선택적 이점 확인 (H313 LLM 버전)
+  Partial success:
+    Overall PPL inferior but superior on difficult tokens
+    → Selective advantage of tension confirmed (H313 LLM version)
 
-  실패:
+  Failure:
     ConsciousLM PPL > Standard PPL × 1.5
-    → PureField가 언어에 부적합
-    → 아키텍처 수정 필요
+    → PureField unsuitable for language
+    → Architecture revision needed
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H334: PureField 충분성 (🟩 3셋+AD)
-- H335: PureField LLM 설계 (🟨)
-- H361: FFN→PureField 동형 (🟨)
-- H313: 장력=확신 (🟩)
-- H327: 골든MoE PPL (🟨)
+- H334: PureField sufficiency (🟩 3sets+AD)
+- H335: PureField LLM design (🟨)
+- H361: FFN→PureField isomorphism (🟨)
+- H313: tension=confidence (🟩)
+- H327: GoldenMoE PPL (🟨)
 - H-CX-21: tension∝1/PPL (🟧)
 
-## 한계
+## Limitations
 
 ```
-  - 바이트 토큰화는 시퀀스 길이 증가 → 메모리/속도 불리
-  - 소규모 모델(6layer)에서 결론이 대규모로 전이되는지 미지
-  - wikitext-2는 작은 데이터셋 → 과적합 위험
-  - GPU 필요 (Windows RTX 5070 또는 RunPod)
+  - Byte tokenization increases sequence length → Memory/speed disadvantage
+  - Unknown if conclusions from small model (6layer) transfer to large scale
+  - wikitext-2 is small dataset → Overfitting risk
+  - GPU required (Windows RTX 5070 or RunPod)
 ```
 
-## 검증 방향
+## Validation Direction
 
 ```
-  1단계: wikitext-2로 기본 비교 (PPL)
-  2단계: per-token 분석 (장력 vs PPL 상관)
-  3단계: 다른 데이터셋 (C4, OpenWebText subset)
-  4단계: 스케일업 (12layer, 8head)
+  Phase 1: Basic comparison with wikitext-2 (PPL)
+  Phase 2: per-token analysis (tension vs PPL correlation)
+  Phase 3: Other datasets (C4, OpenWebText subset)
+  Phase 4: Scale up (12layer, 8head)
 ```
 
-## 상태: 🟨 미검증
+## Status: 🟨 Unverified

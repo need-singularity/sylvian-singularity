@@ -1,42 +1,42 @@
-# 가설 331: field = equilibrium의 보상 시스템
+# Hypothesis 331: field = Compensation System for equilibrium
 
-> **의식(field)은 기본 감각(equilibrium)의 부족분을 메우는 보상 시스템이다. field_contribution ≈ 0.82 × (100-eq)^0.97, r=-0.90. "기본 감각이 부족할수록 의식이 더 필요하다."**
+> **Consciousness (field) is a compensation system that fills the deficit of basic sense (equilibrium). field_contribution ≈ 0.82 × (100-eq)^0.97, r=-0.90. "The more deficient the basic sense, the more consciousness is needed."**
 
-## 실측 (9종 데이터)
+## Measurements (9 datasets)
 
 ```
-  dataset    eq%    field기여  gap   효율(기여/gap)
-  ─────────  ─────  ────────  ────  ──────────────
-  MNIST      13.6    +84.1    86.4   0.97 ← 거의 완벽 보상!
-  Numbers    65.0    +32.5    35.0   0.93
-  Fashion    47.1    +40.8    52.9   0.77
-  Iris       56.7    +33.3    43.3   0.77
-  Cancer     92.1    +4.4      7.9   0.56
-  Wine       94.4    +2.8      5.6   0.50
-  Digits     88.1    +5.6     11.9   0.47
-  CIFAR      18.6    +34.1    81.4   0.42
-  Time      100.0    +0.0      0.0   N/A
+  dataset    eq%    field contrib  gap   efficiency(contrib/gap)
+  ─────────  ─────  ────────      ────  ──────────────
+  MNIST      13.6    +84.1        86.4   0.97 ← nearly perfect compensation!
+  Numbers    65.0    +32.5        35.0   0.93
+  Fashion    47.1    +40.8        52.9   0.77
+  Iris       56.7    +33.3        43.3   0.77
+  Cancer     92.1    +4.4          7.9   0.56
+  Wine       94.4    +2.8          5.6   0.50
+  Digits     88.1    +5.6         11.9   0.47
+  CIFAR      18.6    +34.1        81.4   0.42
+  Time      100.0    +0.0          0.0   N/A
 
-  피팅: contrib = 0.82 × (100-eq)^0.97
+  Fit: contrib = 0.82 × (100-eq)^0.97
   r(eq, contrib) = -0.896
   R² = 0.803
 ```
 
-## 해석
+## Interpretation
 
 ```
-  output = eq + field = 무의식 + 의식
+  output = eq + field = unconscious + conscious
 
-  eq가 충분하면(Wine 94%): field 거의 불필요 (+3%)
-  eq가 부족하면(MNIST 14%): field이 거의 전부 (+84%)
+  When eq is sufficient (Wine 94%): field barely needed (+3%)
+  When eq is lacking (MNIST 14%): field does almost everything (+84%)
 
-  → 의식 = "기본 감각의 실패를 감지하고 보정하는 시스템"
-  → C48(-9.25pp)의 일반화: field=0이면 eq만 남음 (18%)
+  → Consciousness = "system that detects failures of basic sense and corrects them"
+  → Generalization of C48(-9.25pp): field=0 leaves only eq (18%)
 
-  뇌 비유:
-    반사 행동(eq): 빠르지만 단순 (뜨거우면 손 뗌)
-    의식적 판단(field): 느리지만 정교 (어디가 뜨거운지 분석)
+  Brain analogy:
+    Reflex action (eq): fast but simple (pull hand from heat)
+    Conscious judgment (field): slow but precise (analyze where it's hot)
     → Kahneman System 1(eq) vs System 2(field)!
 ```
 
-## 상태: 🟩 확인 (r=-0.90, 9종, "의식=보상 시스템")
+## Status: 🟩 Confirmed (r=-0.90, 9 datasets, "consciousness = compensation system")

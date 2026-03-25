@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H-CX-59 검증: 방향 예지 — 오답의 방향벡터가 혼동 클래스를 가리키는지 측정"""
+"""H-CX-59 Verification: Directional Precognition — Measure if wrong answer direction vectors point to confusion class"""
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
 

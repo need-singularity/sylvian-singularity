@@ -1,12 +1,13 @@
+```python
 #!/usr/bin/env python3
-"""CIFAR-10 벤치마크 — 모든 메타 엔진 모델 테스트
+"""CIFAR-10 Benchmark — Testing All Meta Engine Models
 
-MNIST(784차원, 흑백)보다 어려운 CIFAR-10(3072차원, 컬러)에서
-메타 엔진 아키텍처들의 성능을 비교한다.
+Compare meta engine architectures on CIFAR-10 (3072-dim, color),
+which is harder than MNIST (784-dim, grayscale).
 
-입력: 32x32x3 = 3072 (flatten)
-hidden_dim: 64 (MNIST 48보다 크게, 더 어려운 태스크)
-epochs: 15 (MNIST 10보다 길게)
+Input: 32x32x3 = 3072 (flatten)
+hidden_dim: 64 (larger than MNIST's 48, for harder task)
+epochs: 15 (longer than MNIST's 10)
 """
 
 import torch
@@ -24,7 +25,7 @@ from model_meta_engine import (
 
 
 # ─────────────────────────────────────────
-# MNIST 기준 결과 (model_meta_engine.py 벤치마크)
+# MNIST Reference Results (model_meta_engine.py benchmark)
 # ─────────────────────────────────────────
 MNIST_RESULTS = {
     'Dense':             96.56,
@@ -44,8 +45,8 @@ MNIST_RESULTS = {
 def main():
     print()
     print("=" * 65)
-    print("   logout — CIFAR-10 메타 엔진 벤치마크")
-    print("   엔진 + 엔진 = 상위엔진 (harder task)")
+    print("   logout — CIFAR-10 Meta Engine Benchmark")
+    print("   Engine + Engine = Higher Engine (harder task)")
     print("=" * 65)
 
     train_loader, test_loader = load_cifar10()
@@ -68,13 +69,13 @@ def main():
     losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs)
     results['Top-K MoE'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
 
-    # ── 단일 엔진 A ──
+    # ── Single Engine A ──
     print("\n[Engine A: sigma,tau-MoE (12e, k=4)]")
     model = EngineA(input_dim, hidden_dim, output_dim)
     losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs)
     results['Engine A'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
 
-    # ── 단일 엔진 E ──
+    # ── Single Engine E ──
     print("\n[Engine E: Euler Product (2x3)]")
     model = EngineE(input_dim, hidden_dim, output_dim)
     losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs)
@@ -87,7 +88,7 @@ def main():
                                        aux_lambda=0.01)
     results['DualBrain (A+G)'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
 
-    # ── MetaEngine (AEGF, 축소사상 라우팅) ──
+    # ── MetaEngine (AEGF, contraction mapping routing) ──
     print("\n[MetaEngine: A+E+G+F (contraction routing)]")
     model = MetaEngine(input_dim, hidden_dim, output_dim,
                         engines='AEGF', routing='meta')
@@ -95,7 +96,7 @@ def main():
                                        aux_lambda=0.01)
     results['Meta (AEGF)'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
 
-    # ── MetaEngine (고정 가중치) ──
+    # ── MetaEngine (fixed weights) ──
     print("\n[MetaEngine: A+E+G+F (fixed {1/2,1/3,1/6} weights)]")
     model = MetaEngine(input_dim, hidden_dim, output_dim,
                         engines='AEGF', routing='fixed')
@@ -103,14 +104,14 @@ def main():
                                        aux_lambda=0.01)
     results['Meta fixed'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
 
-    # ── Hierarchical (메타의 메타) ──
+    # ── Hierarchical (meta of meta) ──
     print("\n[Hierarchical: (A+E) + (G+F) meta-combined]")
     model = HierarchicalMetaEngine(input_dim, hidden_dim, output_dim)
     losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs,
                                        aux_lambda=0.01)
     results['Hierarchical'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
 
-    # ── RepulsionField (2극: A vs G) ──
+    # ── RepulsionField (2 poles: A vs G) ──
     print("\n[RepulsionField: Pole+(A) vs Pole-(G)]")
     model = RepulsionFieldEngine(input_dim, hidden_dim, output_dim)
     losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs,
@@ -118,7 +119,7 @@ def main():
     results['Repulsion (A|G)'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
     print(f"    Tension: {model.tension_magnitude:.4f}")
 
-    # ── RepulsionFieldQuad (4극: A|G × E|F) ──
+    # ── RepulsionFieldQuad (4 poles: A|G × E|F) ──
     print("\n[RepulsionFieldQuad: (A|G) x (E|F)]")
     model = RepulsionFieldQuad(input_dim, hidden_dim, output_dim)
     losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs,
@@ -126,8 +127,8 @@ def main():
     results['Repulsion Quad'] = {'acc': accs[-1], 'loss': losses[-1], 'params': count_params(model)}
     print(f"    Tension content: {model.tension_content:.4f}, structure: {model.tension_structure:.4f}")
 
-    # ── SelfReferentialField (자기참조 반발력장) ──
-    print("\n[SelfReferentialField: 장력을 관찰하는 엔진 (Phase 3)]")
+    # ── SelfReferentialField (self-referential repulsion field) ──
+    print("\n[SelfReferentialField: Engine observing tension (Phase 3)]")
     model = SelfReferentialField(input_dim, hidden_dim, output_dim, n_self_ref_steps=3)
     losses, accs = train_and_evaluate(model, train_loader, test_loader, epochs,
                                        aux_lambda=0.01)
@@ -141,29 +142,29 @@ def main():
 
     elapsed = time.time() - start_time
 
-    # ── 결과 비교 ──
+    # ── Compare Results ──
     compare_results(results)
 
     print(f"\n  Total time: {elapsed:.0f}s ({elapsed/60:.1f}min)")
 
-    # ── 핵심 분석 ──
+    # ── Core Analysis ──
     print("\n" + "-" * 65)
-    print("  핵심 질문: 엔진 조합이 단일 엔진보다 나은가? (CIFAR-10)")
+    print("  Core Question: Is engine combination better than single engine? (CIFAR-10)")
     print("-" * 65)
 
     single_best = max(results['Engine A']['acc'], results['Engine E']['acc'])
     meta_acc = results['Meta (AEGF)']['acc']
     dual_acc = results['DualBrain (A+G)']['acc']
 
-    print(f"  단일 엔진 최고:     {single_best*100:.2f}%")
+    print(f"  Single engine best:     {single_best*100:.2f}%")
     print(f"  DualBrain (A+G):    {dual_acc*100:.2f}%  ({'+' if dual_acc > single_best else ''}{(dual_acc-single_best)*100:.2f}%)")
     print(f"  Meta (AEGF):        {meta_acc*100:.2f}%  ({'+' if meta_acc > single_best else ''}{(meta_acc-single_best)*100:.2f}%)")
 
-    # ── MNIST vs CIFAR-10 비교 ──
+    # ── MNIST vs CIFAR-10 Comparison ──
     print("\n" + "=" * 70)
-    print("   MNIST vs CIFAR-10 비교")
+    print("   MNIST vs CIFAR-10 Comparison")
     print("=" * 70)
-    print(f"  {'모델':<30} {'MNIST':>8} {'CIFAR':>8} {'차이':>8}")
+    print(f"  {'Model':<30} {'MNIST':>8} {'CIFAR':>8} {'Diff':>8}")
     print("-" * 70)
 
     for name in ['Dense', 'Top-K MoE', 'Engine A', 'Engine E',
@@ -176,10 +177,11 @@ def main():
         print(f"  {name:<30} {mnist:>7.2f}% {cifar:>7.2f}% {diff:>+7.2f}%")
 
     print("=" * 70)
-    print("  CIFAR-10은 MNIST보다 훨씬 어려운 태스크 (컬러, 실물 객체)")
-    print("  절대 정확도 하락보다 모델 간 상대 순위가 중요")
+    print("  CIFAR-10 is much harder than MNIST (color, real objects)")
+    print("  Relative rankings between models more important than absolute accuracy drop")
     print()
 
 
 if __name__ == '__main__':
     main()
+```

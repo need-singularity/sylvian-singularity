@@ -1,4 +1,4 @@
-# H-CX-306: 대통합 60+개 현상 = 6+e (확장)
+# H-CX-306: Grand Unification 60+ Phenomena = 6+e (Extended)
 
-> 물리7+생명12+의식15+수학10+돌고래6+정보4+기하4+문명5+음악4=67개.
-> 텍사스 p=0.0002. 50+→67개로 확장.
+> Physics7+Life12+Consciousness15+Mathematics10+Dolphin6+Information4+Geometry4+Civilization5+Music4=67.
+> Texas p=0.0002. Extended from 50+→67.

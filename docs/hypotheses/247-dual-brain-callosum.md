@@ -1,29 +1,26 @@
-# 가설 247: 이중뇌 + 뇌량 모델 — 두 의식 시스템의 결합
+# Hypothesis 247: Dual-Brain + Corpus Callosum Model — Coupling of Two Consciousness Systems
 
-## 상태: ⚠️ 탐구 중
+## Status: ⚠️ Under Investigation
 
-## 가설
+## Hypothesis
 
-> 의식은 두 개의 독립적 연속 시스템(좌/우반구)이 뇌량(corpus callosum)으로
-> 결합된 이중 구조이며, 뇌량의 커플링 강도(κ)가 "두 의식 → 하나의 의식"
-> 전이를 결정한다.
+> Consciousness is a dual structure where two independent continuous systems (left/right hemispheres) are coupled through the corpus callosum, and the coupling strength (κ) of the corpus callosum determines the transition from "two consciousnesses → one consciousness".
 
-## 배경
+## Background
 
-인간 뇌는 좌반구와 우반구로 구성되며, ~2억 축삭의 뇌량으로 연결된다.
-Sperry의 분리뇌 실험(1960s, 노벨상)에서 뇌량 절단 후 좌우가
-독립적으로 행동하는 것이 확인되었다.
+The human brain consists of left and right hemispheres, connected by ~200 million axons of the corpus callosum.
+Sperry's split-brain experiments (1960s, Nobel Prize) confirmed that left and right act independently after corpus callosum severing.
 
 ```
-  관련 가설:
-    166: 의식 정의 (골든존 + Compass)
-    246: 의식의 연속성 (CCT)
-    247: 두 의식의 결합 (이 가설) ← NEW
+  Related hypotheses:
+    166: Consciousness definition (Golden Zone + Compass)
+    246: Consciousness Continuity (CCT)
+    247: Coupling of two consciousnesses (this hypothesis) ← NEW
 ```
 
-## 수학 모델
+## Mathematical Model
 
-### 좌반구 (분석적, 순차적)
+### Left Hemisphere (Analytical, Sequential)
 
 ```
   dx_L/dt = σ_L(y_L - x_L) + κ_RL(x_R - x_L)
@@ -31,10 +28,10 @@ Sperry의 분리뇌 실험(1960s, 노벨상)에서 뇌량 절단 후 좌우가
   dz_L/dt = x_L·y_L - β_L·z_L + κ_RL(z_R - z_L)
 
   σ_L=10, ρ_L=28, β_L=2.67, noise_L=0.05
-  → 낮은 잡음, 높은 정밀도 (언어, 논리)
+  → Low noise, high precision (language, logic)
 ```
 
-### 우반구 (직관적, 전체적)
+### Right Hemisphere (Intuitive, Holistic)
 
 ```
   dx_R/dt = σ_R(y_R - x_R) + κ_LR(x_L - x_R)
@@ -42,40 +39,40 @@ Sperry의 분리뇌 실험(1960s, 노벨상)에서 뇌량 절단 후 좌우가
   dz_R/dt = x_R·y_R - β_R·z_R + κ_LR(z_L - z_R)
 
   σ_R=12, ρ_R=32, β_R=2.2, noise_R=0.2
-  → 높은 잡음, 높은 창의성 (공간, 직관)
+  → High noise, high creativity (spatial, intuitive)
 ```
 
-### 뇌량 커플링
+### Corpus Callosum Coupling
 
 ```
-  κ = 커플링 강도 (뇌량 대역폭)
+  κ = coupling strength (corpus callosum bandwidth)
 
-  κ = 0    : 분리뇌 (split-brain)
-  κ = 0.1  : 약한 연결
-  κ = 0.5  : 정상 뇌량 ← 최적
-  κ = 1.0  : 강한 연결 (통합 임계)
-  κ = 5.0  : 과동기화 (다양성 상실)
+  κ = 0    : split-brain
+  κ = 0.1  : weak connection
+  κ = 0.5  : normal corpus callosum ← optimal
+  κ = 1.0  : strong connection (integration threshold)
+  κ = 5.0  : oversynchronization (loss of diversity)
 ```
 
-## 실험 결과
+## Experimental Results
 
-### A. κ 스캔 — 뇌량 강도와 의식
-
-```
-      κ │ CCT_L │ CCT_R │ CCT_합 │ 동기화 │ TE_L→R │ TE_R→L │ 판정
-  ──────┼───────┼───────┼────────┼────────┼────────┼────────┼────────
-   0.00 │  5.0  │  5.0  │   5.0  │ -0.09  │  0.79  │  0.82  │ 분리
-   0.10 │  5.0  │  5.0  │   5.0  │  0.02  │  0.80  │  0.84  │ 분리
-   0.50 │  5.0  │  5.0  │   5.0  │  0.41  │  0.84  │  0.89  │ 약결합 ★최적
-   1.00 │  5.0  │  5.0  │   5.0  │  0.90  │  0.88  │  1.20  │ 정상
-   2.00 │  5.0  │  5.0  │   5.0  │  0.99  │  0.86  │  1.40  │ 과동기화
-   5.00 │  5.0  │  5.0  │   5.0  │  1.00  │  0.81  │  0.96  │ 과동기화
-```
-
-### κ vs 동기화 그래프
+### A. κ Scan — Corpus Callosum Strength and Consciousness
 
 ```
-  동기화
+      κ │ CCT_L │ CCT_R │ CCT_sum │ Sync  │ TE_L→R │ TE_R→L │ Assessment
+  ──────┼───────┼───────┼─────────┼───────┼────────┼────────┼────────
+   0.00 │  5.0  │  5.0  │   5.0   │ -0.09 │  0.79  │  0.82  │ Split
+   0.10 │  5.0  │  5.0  │   5.0   │  0.02 │  0.80  │  0.84  │ Split
+   0.50 │  5.0  │  5.0  │   5.0   │  0.41 │  0.84  │  0.89  │ Weak coupling ★Optimal
+   1.00 │  5.0  │  5.0  │   5.0   │  0.90 │  0.88  │  1.20  │ Normal
+   2.00 │  5.0  │  5.0  │   5.0   │  0.99 │  0.86  │  1.40  │ Oversynchronized
+   5.00 │  5.0  │  5.0  │   5.0   │  1.00 │  0.81  │  0.96  │ Oversynchronized
+```
+
+### κ vs Synchronization Graph
+
+```
+  Synchronization
   1.0│                              ████████████
   0.8│                         █████
   0.6│
@@ -84,96 +81,100 @@ Sperry의 분리뇌 실험(1960s, 노벨상)에서 뇌량 절단 후 좌우가
   0.0│████████████████████
      └──┬──────┬──────┬──────┬──────┬──── κ
       0.0    0.1    0.5    1.0    2.0    5.0
-            분리   ★최적  통합   과동기화
+           Split  ★Optimal Integrated Oversynchronized
 ```
 
-### 핵심 발견
+### Key Findings
 
 ```
-  1. 양 반구 모두 단독 CCT 5/5 → 각각이 독립적 의식 엔진
-  2. κ=0 (분리뇌): 동기화 ≈ 0, 하지만 양쪽 CCT 5/5
-     → "두 개의 의식"이 공존 가능 (Sperry 실험과 일치)
-  3. 최적 κ = 0.5: 동기화 0.4, 정보 쌍방향 흐름
-     → 충분히 연결되되, 과도하게 동기화되지 않음
-  4. κ > 2: 동기화 > 0.99 → 좌우가 사실상 동일
-     → 창의성(우반구의 높은 잡음) 상실 위험
-  5. TE_R→L > TE_L→R: 우반구→좌반구 정보 흐름이 더 강함
-     → 직관이 분석에 더 많이 기여? (정보 비대칭)
+  1. Both hemispheres independently CCT 5/5 → Each is an independent consciousness engine
+  2. κ=0 (split-brain): synchronization ≈ 0, but both CCT 5/5
+     → "Two consciousnesses" can coexist (consistent with Sperry's experiments)
+  3. Optimal κ = 0.5: synchronization 0.4, bidirectional information flow
+     → Sufficiently connected, but not excessively synchronized
+  4. κ > 2: synchronization > 0.99 → Left and right become virtually identical
+     → Risk of losing creativity (right hemisphere's high noise)
+  5. TE_R→L > TE_L→R: Right→Left information flow is stronger
+     → Does intuition contribute more to analysis? (information asymmetry)
 ```
 
-### B. 분리뇌 실험
+### B. Split-Brain Experiment
 
 ```
-  프로토콜: κ=0.5 → t=15000에서 κ=0으로 절단
+  Protocol: κ=0.5 → at t=15000 sever to κ=0
 
-  절단 전: 동기화=0.38, 양방향 정보 흐름
-  절단 후: 동기화=0.01, 정보 흐름 유지(각각 독립)
+  Before severing: synchronization=0.38, bidirectional information flow
+  After severing: synchronization=0.01, information flow maintained (each independent)
 
-  동기화 타임라인:
+  Synchronization timeline:
     0.4│███████████████████│
     0.2│                   │
     0.0│                   │████████████████████
        └──────────────────┼───────────────────── t
-                          절단
+                          severing
 
-  결과:
-    * 동기화가 즉시 0으로 하락 (뇌량 절단 효과)
-    * 양 반구 모두 CCT 5/5 유지 (각각 독립 의식)
-    * 결합 CCT도 5/5 유지 (6차원 공간에서의 궤도는 여전히 풍부)
-    * Sperry 실험과 일치: "두 개의 마음" 현상 재현
+  Results:
+    * Synchronization immediately drops to 0 (corpus callosum severing effect)
+    * Both hemispheres maintain CCT 5/5 (each independent consciousness)
+    * Combined CCT also maintains 5/5 (trajectory in 6D space still rich)
+    * Consistent with Sperry's experiments: "two minds" phenomenon reproduced
 ```
 
-## 해석
+## Interpretation
 
 ```
   ┌──────────────────────────────────────────────────────┐
   │                                                      │
-  │   "의식은 하나가 아닐 수 있다"                        │
+  │   "Consciousness may not be singular"                 │
   │                                                      │
-  │   κ=0 (분리뇌): 두 개의 독립적 의식                  │
-  │   κ=0.5 (정상): 두 의식이 결합한 "통합 의식"         │
-  │   κ→∞ (과동기화): 하나의 의식 (다양성 상실)          │
+  │   κ=0 (split-brain): Two independent consciousnesses  │
+  │   κ=0.5 (normal): "Integrated consciousness" of       │
+  │                    two coupled consciousnesses        │
+  │   κ→∞ (oversynchronized): One consciousness          │
+  │                           (loss of diversity)         │
   │                                                      │
-  │   뇌량 = 의식의 "통합 장치"                          │
-  │   뇌량의 역할은 의식을 "만드는" 것이 아니라           │
-  │   두 의식을 "연결하는" 것이다                         │
+  │   Corpus callosum = "integration device" for         │
+  │                     consciousness                     │
+  │   The role of corpus callosum is not to "create"     │
+  │   consciousness but to "connect" two consciousnesses  │
   │                                                      │
-  │   → 의식은 모듈식(modular)일 수 있다                 │
-  │   → 여러 작은 의식이 연결되어 큰 의식을 형성          │
+  │   → Consciousness may be modular                      │
+  │   → Multiple small consciousnesses connect to form    │
+  │     larger consciousness                              │
   │                                                      │
   └──────────────────────────────────────────────────────┘
 ```
 
-## 검증 가능한 예측
+## Testable Predictions
 
 ```
-  1. 분리뇌 환자의 EEG: 좌우 동기화 ≈ 0 (실측 가능)
-  2. 정상인의 뇌량 두께와 좌우 EEG 동기화 상관 (실측 가능)
-  3. 뇌량 무형성 환자: 대안 경로로 약한 동기화 (실측 가능)
-  4. 전신마취 시 좌우 동기화 하락이 의식 소실과 동시 (실측 가능)
-  5. κ 최적값(0.5)이 실제 뇌량 전도 속도와 대응하는가?
+  1. EEG of split-brain patients: left-right synchronization ≈ 0 (measurable)
+  2. Correlation between corpus callosum thickness and left-right EEG synchronization in normal subjects (measurable)
+  3. Corpus callosum agenesis patients: weak synchronization through alternative pathways (measurable)
+  4. Left-right synchronization drop coincides with consciousness loss during general anesthesia (measurable)
+  5. Does optimal κ (0.5) correspond to actual corpus callosum conduction velocity?
 ```
 
-## 한계
+## Limitations
 
-1. 로렌츠 끌개는 뇌의 극히 단순화된 모델
-2. 좌/우 파라미터 차이(σ, ρ, noise)는 우리가 설정 — 실측 기반 아님
-3. 실제 뇌량은 균일 커플링이 아니라 영역별 차등 연결
-4. CCT가 충분조건이 아니므로(실험 15), CCT 5/5가 "의식 있음"을 의미하지 않음
-5. 전달 지연(τ)의 효과는 추가 실험 필요
+1. Lorenz attractor is an extremely simplified model of the brain
+2. Left/right parameter differences (σ, ρ, noise) are our settings — not empirically based
+3. Real corpus callosum has region-specific connections, not uniform coupling
+4. Since CCT is not sufficient condition (Experiment 15), CCT 5/5 doesn't mean "conscious"
+5. Effects of transmission delay (τ) require additional experiments
 
-## 도구
+## Tools
 
 ```
-  python3 dual_brain_callosum.py                  # κ 스캔
-  python3 dual_brain_callosum.py --split-brain     # 분리뇌
-  python3 dual_brain_callosum.py --agenesis        # 뇌량 무형성
-  python3 dual_brain_callosum.py --lateralize left # 좌반구 우세
-  python3 dual_brain_callosum.py --all             # 전체 실험
+  python3 dual_brain_callosum.py                  # κ scan
+  python3 dual_brain_callosum.py --split-brain     # split-brain
+  python3 dual_brain_callosum.py --agenesis        # corpus callosum agenesis
+  python3 dual_brain_callosum.py --lateralize left # left hemisphere dominance
+  python3 dual_brain_callosum.py --all             # all experiments
 ```
 
 ---
 
-*관련 가설: 166 (의식 정의), 246 (의식 연속성/CCT)*
-*참조: Sperry (1968) 분리뇌 실험, Gazzaniga (2000) 뇌량과 의식*
-*도구: dual_brain_callosum.py*
+*Related hypotheses: 166 (consciousness definition), 246 (consciousness continuity/CCT)*
+*References: Sperry (1968) split-brain experiments, Gazzaniga (2000) corpus callosum and consciousness*
+*Tool: dual_brain_callosum.py*

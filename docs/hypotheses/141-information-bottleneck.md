@@ -1,59 +1,59 @@
-# 가설 검토 141: 정보 병목(Information Bottleneck) ↔ 골든존
+# Hypothesis Review 141: Information Bottleneck ↔ Golden Zone
 
-## 가설
+## Hypothesis
 
-> Tishby의 정보 병목 이론에서 압축-예측 균형의 최적점이 골든존 중심(1/e)인가.
+> In Tishby's information bottleneck theory, is the optimal point of the compression-prediction balance at the Golden Zone center (1/e)?
 
-## 배경
+## Background
 
 ```
-  정보 병목 이론 (Tishby, 2000):
+  Information bottleneck theory (Tishby, 2000):
   min I(X;T) - β × I(T;Y)
 
-  X = 입력, T = 표현(병목), Y = 출력
-  I(X;T) = 압축 (적을수록 좋음) ← I↑ (억제 강화)
-  I(T;Y) = 예측 (많을수록 좋음) ← I↓ (억제 완화)
-  β = 트레이드오프 파라미터
+  X = input, T = representation (bottleneck), Y = output
+  I(X;T) = compression (less is better) ← I↑ (stronger inhibition)
+  I(T;Y) = prediction (more is better)  ← I↓ (weaker inhibition)
+  β = tradeoff parameter
 ```
 
-## 대응
+## Correspondence
 
 ```
-  정보 병목              우리 모델
-  ──────────             ──────────
-  I(X;T) 압축 최소화     I 높임 (억제 강화)
-  I(T;Y) 예측 최대화     I 낮춤 (억제 완화)
-  β (트레이드오프)       골든존 위치 결정
-  최적 β                 I = 1/e? (골든존 중심)
+  Information bottleneck    Our model
+  ──────────────            ──────────
+  Minimize I(X;T)           Increase I (stronger inhibition)
+  Maximize I(T;Y)           Decrease I (weaker inhibition)
+  β (tradeoff)              Determines Golden Zone position
+  Optimal β                 I = 1/e? (Golden Zone center)
 
-  깊은 학습에서:
-  학습 초기 → I(X;T) 증가 (피팅)
-  학습 후기 → I(X;T) 감소 (압축/일반화)
-  → 이 전환점 = 골든존 진입?
+  In deep learning:
+  Early training  → I(X;T) increases (fitting)
+  Late training   → I(X;T) decreases (compression/generalization)
+  → This transition point = Golden Zone entry?
 ```
 
-## 해석
+## Interpretation
 
 ```
-  정보 병목의 최적해:
+  Optimal solution of information bottleneck:
   P(t|x) = P(t)/Z × exp(-β × d(x,t))
 
-  이것은 볼츠만 분포와 동일 형태!
+  This is the same form as the Boltzmann distribution!
   β ↔ 1/T ↔ I
 
-  → 정보 병목의 β = 우리 모델의 I
-  → 최적 β = 최적 I = 1/e (골든존 중심)
-  → 정보 병목 이론이 골든존을 독립적으로 예측?
+  → Information bottleneck β = our model's I
+  → Optimal β = optimal I = 1/e (Golden Zone center)
+  → Does information bottleneck theory independently predict the Golden Zone?
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  실제 DNN 학습 중 I(X;T) 측정
-  → 학습이 진행되면서 "정보 평면"에서의 궤적
-  → 이 궤적이 골든존을 통과하는지 확인
+  Measure I(X;T) during actual DNN training
+  → Trajectory in the "information plane" as training progresses
+  → Confirm whether this trajectory passes through the Golden Zone
 ```
 
 ---
 
-*이론적 대응. 볼츠만 분포와 정보 병목의 구조적 동치는 강력.*
+*Theoretical correspondence. The structural equivalence of Boltzmann distribution and information bottleneck is powerful.*

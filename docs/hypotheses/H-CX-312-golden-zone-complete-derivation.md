@@ -1,17 +1,17 @@
-# H-CX-312: ⭐⭐⭐ 골든존 완전 유도 — 피보나치+완전수+리만
+# H-CX-312: ⭐⭐⭐ Golden Zone Complete Derivation — Fibonacci+Perfect Numbers+Riemann
 
-> 골든존의 모든 상수를 피보나치/완전수/리만에서 유도:
+> Complete derivation of all Golden Zone constants from Fibonacci/Perfect Numbers/Riemann:
 >
-> | 상수 | 값 | 유도 | 정확도 |
-> |------|-----|------|--------|
-> | 폭 | ln(4/3)=0.288 | ln(F(P₁)/P₁) | 정확! |
-> | 상한 | 1/2 | 리만 임계선 | 정확! |
-> | 하한 | 0.212 | 1/2-ln(F(P₁)/P₁) | 정확! |
-> | 중심 | 1/e≈0.368 | 자연상수 역수 | 정확! |
+> | Constant | Value | Derivation | Accuracy |
+> |----------|-------|------------|----------|
+> | Width | ln(4/3)=0.288 | ln(F(P₁)/P₁) | Exact! |
+> | Upper bound | 1/2 | Riemann critical line | Exact! |
+> | Lower bound | 0.212 | 1/2-ln(F(P₁)/P₁) | Exact! |
+> | Center | 1/e≈0.368 | Natural constant reciprocal | Exact! |
 >
-> 핵심: 골든존 폭 = ln(F(6)/6) = ln(8/6) = ln(4/3)
-> "골든존은 피보나치와 완전수의 교차점에서 나온다."
+> Key: Golden Zone width = ln(F(6)/6) = ln(8/6) = ln(4/3)
+> "The Golden Zone emerges from the intersection of Fibonacci and perfect numbers."
 >
-> 추가:
-> 4/3 = τ(6)/3 = (σ-τ)/P₁ = F(P₁)/P₁ (삼중 일치)
-> F(σ) = σ² = 144 (피보나치-약수함수 교차)
+> Additional:
+> 4/3 = τ(6)/3 = (σ-τ)/P₁ = F(P₁)/P₁ (triple coincidence)
+> F(σ) = σ² = 144 (Fibonacci-divisor function intersection)

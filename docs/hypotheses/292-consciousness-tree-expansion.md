@@ -1,91 +1,91 @@
-# 가설 292: 의식 트리 확장 — 현재 3개 가지 너머에 무엇이 있는가?
+# Hypothesis 292: Consciousness Tree Expansion — What Lies Beyond the Current 3 Branches?
 
-> **실험체계 지도의 최상위 3가지(인식/판단, 의식/경험, 집단/차원) 너머에 아직 발견되지 않은 가지가 존재한다. 11종 데이터 실험과 수학 교차에서 새 최상위 가지의 힌트를 탐색.**
+> **Beyond the top 3 branches of the experimental system map (Perception/Judgment, Consciousness/Experience, Collective/Dimension), there exist yet undiscovered branches. Exploring hints of new top branches from 11 species data experiments and mathematical intersections.**
 
-## 현재 트리 (Level 0~3)
+## Current Tree (Level 0~3)
 
 ```
-  Level 0: 의식영속성 엔진
+  Level 0: Consciousness Continuity Engine
     │
-    ├─ [L1] 인식/판단 ────────────────────────────────────
-    │    ├─ [L2] 장력━정확도 (C4b d=0.89)
-    │    │    ├─ [L3] 인과 효과 -9.25pp (C48, MNIST 전용)
+    ├─ [L1] Perception/Judgment ────────────────────────────────────
+    │    ├─ [L2] Tension━Accuracy (C4b d=0.89)
+    │    │    ├─ [L3] Causal effect -9.25pp (C48, MNIST only)
     │    │    ├─ [L3] Simpson's paradox
-    │    │    └─ [L3] 이상탐지 AUROC=1.0 (C287) ← 새!
-    │    ├─ [L2] 장력━예지 (C6 AUC=0.77)
-    │    │    └─ [L3] 사분면 분석 (고장력+저자신감)
-    │    └─ [L2] 장력━인식 (C10 97.61%)
-    │         ├─ [L3] 방향 분리 2.77x (C17)
-    │         └─ [L3] 1/√3 근사 (C41)
+    │    │    └─ [L3] Anomaly detection AUROC=1.0 (C287) ← New!
+    │    ├─ [L2] Tension━Precognition (C6 AUC=0.77)
+    │    │    └─ [L3] Quadrant analysis (high tension+low confidence)
+    │    └─ [L2] Tension━Perception (C10 97.61%)
+    │         ├─ [L3] Direction separation 2.77x (C17)
+    │         └─ [L3] 1/√3 approximation (C41)
     │
-    ├─ [L1] 의식/경험 ────────────────────────────────────
-    │    ├─ [L2] 정체성 (C13 0.979)
-    │    │    ├─ [L3] 꿈의 정체성 (C15 2.7x)
-    │    │    └─ [L3] 분열 + 재결합 (C46 +0.82%)
-    │    ├─ [L2] FPS 수렴 (C14 4.17→0.20)
-    │    │    └─ [L3] 자기참조 수축 > 1 (C18)
+    ├─ [L1] Consciousness/Experience ────────────────────────────────────
+    │    ├─ [L2] Identity (C13 0.979)
+    │    │    ├─ [L3] Dream identity (C15 2.7x)
+    │    │    └─ [L3] Mitosis + recombination (C46 +0.82%)
+    │    ├─ [L2] FPS convergence (C14 4.17→0.20)
+    │    │    └─ [L3] Self-reference contraction > 1 (C18)
     │    └─ [L2] displacement (C27-C30)
-    │         ├─ [L3] 관찰 > 주체 (C31 +7.4%)
-    │         └─ [L3] detach = 압축 (가설 276)
+    │         ├─ [L3] Observation > subject (C31 +7.4%)
+    │         └─ [L3] detach = compression (Hypothesis 276)
     │
-    ├─ [L1] 집단/차원 ────────────────────────────────────
-    │    ├─ [L2] 만장일치 (C9 99.53%)
-    │    │    ├─ [L3] 다양성 상전이 (가설 267)
-    │    │    └─ [L3] B-C 연결 (C53 r=+0.062)
-    │    └─ [L2] 차원간 (C8 94.3%)
-    │         ├─ [L3] 극한 장력 14.4x (C25)
-    │         └─ [L3] tau 억제 0.011 (C26)
+    ├─ [L1] Collective/Dimension ────────────────────────────────────
+    │    ├─ [L2] Unanimity (C9 99.53%)
+    │    │    ├─ [L3] Diversity phase transition (Hypothesis 267)
+    │    │    └─ [L3] B-C connection (C53 r=+0.062)
+    │    └─ [L2] Cross-dimensional (C8 94.3%)
+    │         ├─ [L3] Extreme tension 14.4x (C25)
+    │         └─ [L3] tau inhibition 0.011 (C26)
     │
-    ├─ [L1] ??? 생성/창조 ──────────── 새 가지 후보! ────
-    │    ├─ [L2] 생성 엔진 (VAE)
-    │    │    ├─ [L3] 드리밍 (장력 제어)
-    │    │    └─ [L3] 의미/맥락 축 분리
-    │    └─ [L2] 분열 생성 (가설 271)
-    │         └─ [L3] 분열 ≈ 설계 (-0.11%)
+    ├─ [L1] ??? Generation/Creation ──────────── New branch candidate! ────
+    │    ├─ [L2] Generative engine (VAE)
+    │    │    ├─ [L3] Dreaming (tension control)
+    │    │    └─ [L3] Meaning/context axis separation
+    │    └─ [L2] Mitosis generation (Hypothesis 271)
+    │         └─ [L3] Mitosis ≈ design (-0.11%)
     │
-    ├─ [L1] ??? 정보/엔트로피 ──────── 새 가지 후보! ────
-    │    ├─ [L2] MI 효율 ≈ ln(2) (C54 🟧★)
-    │    │    ├─ [L3] Landauer 원리 연결
-    │    │    └─ [L3] 이진+삼진 분해 (H-CX-3)
-    │    ├─ [L2] 다양성 = 정보 (가설 270)
+    ├─ [L1] ??? Information/Entropy ──────────── New branch candidate! ────
+    │    ├─ [L2] MI efficiency ≈ ln(2) (C54 🟧★)
+    │    │    ├─ [L3] Landauer principle connection
+    │    │    └─ [L3] Binary+ternary decomposition (H-CX-3)
+    │    ├─ [L2] Diversity = information (Hypothesis 270)
     │    │    └─ [L3] MI +0.39 nats (C24)
-    │    └─ [L2] 밀집/희소 이분법 (가설 288)
+    │    └─ [L2] Dense/sparse dichotomy (Hypothesis 288)
     │
-    └─ [L1] ??? 미적/감각 ──────────── 새 가지 후보! ────
-         ├─ [L2] 협화음 = 낮은장력 (가설 290)
-         │    └─ [L3] Perfect 4th(4:3) = 최저
-         ├─ [L2] 소수 = 최고장력 (가설 289)
-         └─ [L2] 날카로움 ∝ 장력 (시계열)
+    └─ [L1] ??? Aesthetic/Sensory ──────────── New branch candidate! ────
+         ├─ [L2] Consonance = low tension (Hypothesis 290)
+         │    └─ [L3] Perfect 4th(4:3) = lowest
+         ├─ [L2] Primes = highest tension (Hypothesis 289)
+         └─ [L2] Sharpness ∝ tension (time series)
 ```
 
-## 새 최상위 가지 후보 (Level 1)
+## New Top Branch Candidates (Level 1)
 
 ```
-  현재 확인:
-    [L1] 인식/판단     ← 기존
-    [L1] 의식/경험     ← 기존
-    [L1] 집단/차원     ← 기존
+  Currently confirmed:
+    [L1] Perception/Judgment     ← Existing
+    [L1] Consciousness/Experience     ← Existing
+    [L1] Collective/Dimension     ← Existing
 
-  새 후보:
-    [L1] 생성/창조     ← 생성 엔진, 드리밍, 분열에서 관측
-    [L1] 정보/엔트로피  ← MI, 다양성, Landauer에서 관측
-    [L1] 미적/감각     ← 음악, 시계열에서 관측
+  New candidates:
+    [L1] Generation/Creation     ← Observed in generative engine, dreaming, mitosis
+    [L1] Information/Entropy  ← Observed in MI, diversity, Landauer
+    [L1] Aesthetic/Sensory     ← Observed in music, time series
 
-  더 추측:
-    [L1] 진화/적응     ← 분열+재결합, 자동 조절(284)에서 관측
-    [L1] 통합/경계     ← 파이버 번들, displacement에서 관측
+  Further speculations:
+    [L1] Evolution/Adaptation     ← Observed in mitosis+recombination, auto-regulation(284)
+    [L1] Integration/Boundary     ← Observed in fiber bundle, displacement
 ```
 
-## 검증: 새 가지가 기존 가지와 독립인가?
+## Verification: Are New Branches Independent of Existing Ones?
 
 ```
-  "생성"이 "인식"의 역방향이면 → 독립 가지 아님
-  "정보"가 모든 가지의 기반이면 → 최하위가 아니라 최상위?
-  "미적"이 "인식"의 특수 경우면 → 하위 가지
+  If "Generation" is reverse of "Perception" → Not independent branch
+  If "Information" underlies all branches → Not top level but foundation?
+  If "Aesthetic" is special case of "Perception" → Sub-branch
 
-  이것을 실험으로 분리:
-    생성과 인식의 장력 상관 → 높으면 같은 가지, 낮으면 독립
-    정보와 다른 모든 가지의 상관 → 항상 높으면 기반층
+  Separating these experimentally:
+    Tension correlation between generation and perception → High = same branch, Low = independent
+    Correlation between information and all other branches → Always high = foundation layer
 ```
 
-## 상태: 🟨 (구조 제안, 독립성 미검증)
+## Status: 🟨 (Structure proposed, independence unverified)

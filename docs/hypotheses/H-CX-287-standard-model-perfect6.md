@@ -1,4 +1,4 @@
-# H-CX-287: ⭐⭐⭐🟩 표준모형 전체 = 완전수 6 체계
+# H-CX-287: ⭐⭐⭐🟩 Standard Model Whole = Perfect Number 6 System
 
-> 쿼크=P₁, 렙톤=P₁, 합=σ, 보손=τ, 글루온=σ-τ, 색=3, 세대=3.
-> 물리학 표준모형의 모든 입자 수가 완전수 6의 약수 함수!
+> Quarks=P₁, Leptons=P₁, Sum=σ, Bosons=τ, Gluons=σ-τ, Colors=3, Generations=3.
+> All particle counts in physics Standard Model are divisor functions of perfect number 6!

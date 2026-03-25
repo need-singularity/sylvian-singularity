@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
-"""모델 A: σ(6)-τ(6) MoE — 완전수 6의 약수함수로 MoE 구조 결정
+"""Model A: σ(6)-τ(6) MoE — MoE structure determined by divisor functions of perfect number 6
 
-수학적 근거:
-  완전수 6의 약수함수:
-    σ(6) = 1+2+3+6 = 12  (약수합 → Expert 수)
-    τ(6) = |{1,2,3,6}| = 4  (약수 개수 → 활성 Expert 수)
+Mathematical basis:
+  Divisor functions of perfect number 6:
+    σ(6) = 1+2+3+6 = 12  (sum of divisors → Number of Experts)
+    τ(6) = |{1,2,3,6}| = 4  (number of divisors → Number of active Experts)
 
-  기존 MoE (Shazeer 2017): Expert 8개, k=2 (ad hoc 선택)
-  σ-τ MoE: Expert 12개, k=4 (완전수 6에서 유도)
+  Conventional MoE (Shazeer 2017): 8 Experts, k=2 (ad hoc choice)
+  σ-τ MoE: 12 Experts, k=4 (derived from perfect number 6)
 
-  활성비 = τ(6)/σ(6) = 4/12 = 1/3 — 메타 부동점과 일치!
-  f(I) = 0.7I + 0.1 의 부동점이 I = 1/3.
-  이 모델은 "12개 중 4개 활성"이라는 자연스러운 비율을 테스트한다.
+  Active ratio = τ(6)/σ(6) = 4/12 = 1/3 — Matches meta fixed point!
+  Fixed point of f(I) = 0.7I + 0.1 is I = 1/3.
+  This model tests the natural ratio of "4 active out of 12".
 
-벤치마크:
+Benchmark:
   σ-τ MoE (12 experts, k=4) vs Top-K (8 experts, k=2) vs Dense
-  파라미터 수를 유사하게 맞추기 위해 12-expert 모델의 hidden_dim을 축소.
+  To match parameter counts, hidden_dim of 12-expert model is reduced.
 """
 
 import torch
@@ -51,17 +51,17 @@ def build_dense(hidden_dim=256):
 
 def main():
     print("=" * 70)
-    print("  모델 A: σ(6)-τ(6) MoE  —  Expert=σ(6)=12, Active=τ(6)=4")
-    print("  활성비 = τ/σ = 4/12 = 1/3 (메타 부동점)")
+    print("  Model A: σ(6)-τ(6) MoE  —  Expert=σ(6)=12, Active=τ(6)=4")
+    print("  Active ratio = τ/σ = 4/12 = 1/3 (meta fixed point)")
     print("=" * 70)
 
     train_loader, test_loader = load_mnist()
 
-    # ── 파라미터 수 조정 ──
+    # ── Parameter count adjustment ──
     # Dense(256) ≈ 203K params
     # TopK(8, hidden=64) ≈ 8*(784*64+64*10) + 784*8 ≈ 412K
     # σ-τ(12, hidden=48) ≈ 12*(784*48+48*10) + 784*12 ≈ 467K
-    # hidden_dim을 조정하여 비슷하게 맞춤
+    # Adjust hidden_dim to match approximately
 
     models = {
         'σ-τ MoE (12e, k=4)': build_sigma_tau_moe(hidden_dim=48),
@@ -81,7 +81,7 @@ def main():
             'params': params,
         }
 
-        # MoE 모델이면 메트릭 추가
+        # Add metrics if MoE model
         if isinstance(model, BaseMoE):
             metrics = model.get_metrics()
             result.update(metrics)
@@ -96,21 +96,21 @@ def main():
 
     compare_results(results)
 
-    # ── σ-τ 고유 분석 ──
-    print("\n── σ-τ 구조 분석 ──")
-    print(f"  σ(6) = {SIGMA} experts (약수합)")
-    print(f"  τ(6) = {TAU} active  (약수 개수)")
-    print(f"  활성비 = {TAU}/{SIGMA} = {TAU/SIGMA:.4f} ≈ 1/3")
-    print(f"  메타 부동점 f(I)=0.7I+0.1 → I*=1/3 = {1/3:.4f}")
+    # ── σ-τ specific analysis ──
+    print("\n── σ-τ Structure Analysis ──")
+    print(f"  σ(6) = {SIGMA} experts (sum of divisors)")
+    print(f"  τ(6) = {TAU} active  (number of divisors)")
+    print(f"  Active ratio = {TAU}/{SIGMA} = {TAU/SIGMA:.4f} ≈ 1/3")
+    print(f"  Meta fixed point f(I)=0.7I+0.1 → I*=1/3 = {1/3:.4f}")
 
     st_acc = results['σ-τ MoE (12e, k=4)']['acc']
     tk_acc = results['Top-K MoE (8e, k=2)']['acc']
     diff = st_acc - tk_acc
     print(f"\n  σ-τ vs Top-K: {diff*100:+.2f}%")
     if diff > 0:
-        print("  → σ-τ 구조가 우월 ✓")
+        print("  → σ-τ structure is superior ✓")
     else:
-        print("  → Top-K가 우세 (hidden_dim 차이 고려 필요)")
+        print("  → Top-K is superior (consider hidden_dim difference)")
 
 
 if __name__ == '__main__':

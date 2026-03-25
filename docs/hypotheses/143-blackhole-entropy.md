@@ -1,70 +1,72 @@
-# 가설 검토 143: 블랙홀 엔트로피 = 골든존 경계 면적
+# Hypothesis Review 143: Black Hole Entropy = Golden Zone Boundary Area
 
-## 가설
+## Hypothesis
 
-> 베켄슈타인-호킹 엔트로피(S∝A)에서 블랙홀 면적이 골든존 경계의 "면적"과 대응하는가.
+> In Bekenstein-Hawking entropy (S∝A), does the black hole area correspond to the "area" of the Golden Zone boundary?
 
-## 배경
-
-```
-  베켄슈타인-호킹: S_BH = k_B × A / (4 × ℓ_P²)
-  → 엔트로피 ∝ 면적 (부피가 아님!)
-
-  우리 모델:
-  골든존 = I ∈ [0.213, 0.500]
-  3차원 파라미터 공간(D, P, I)에서의 "면적":
-  경계 = D×P 평면 두 개 (I=0.213과 I=0.500)
-```
-
-## 대응
+## Background
 
 ```
-  블랙홀                      우리 모델
+  Bekenstein-Hawking: S_BH = k_B × A / (4 × ℓ_P²)
+  → Entropy ∝ area (not volume!)
+
+  Our model:
+  Golden Zone = I ∈ [0.213, 0.500]
+  "Area" in 3D parameter space (D, P, I):
+  Boundary = two D×P planes (at I=0.213 and I=0.500)
+```
+
+## Correspondence
+
+```
+  Black hole                  Our model
   ──────────                  ──────────
-  사건의 지평선 (2D 면)        골든존 경계 (I=0.213, I=0.500)
-  지평선 면적 A                경계 면적 = D×P 범위
-  S_BH ∝ A                   S ≈ ln(3) = 경계에서 결정?
-  지평선 안 = 관측 불가        1/6 블라인드 스팟
+  Event horizon (2D surface)  Golden Zone boundary (I=0.213, I=0.500)
+  Horizon area A              Boundary area = D×P range
+  S_BH ∝ A                    S ≈ ln(3) = determined at boundary?
+  Inside horizon = unobservable   1/6 blind spot
 
-  정보 역설:
-  블랙홀: 정보가 지평선에 인코딩 (홀로그래피)
-  우리:   골든존 내부 정보가 경계(상한 1/2, 하한 0.213)에 인코딩?
+  Information paradox:
+  Black hole: information encoded on horizon (holography)
+  Ours:       information inside Golden Zone encoded on boundary
+              (upper 1/2, lower 0.213)?
 ```
 
-## 홀로그래피 원리
+## Holographic Principle
 
 ```
-  물리: "부피의 정보가 경계 면적에 인코딩된다"
-  
-  우리 모델:
-  골든존 "부피" = 폭(ln(4/3)) × D범위 × P범위
-  골든존 "경계" = 상한(1/2) + 하한(1/2-ln(4/3))
+  Physics: "Information in a volume is encoded on the boundary area"
 
-  모든 핵심 상수가 경계값:
-  1/2 = 상한 (경계)
-  0.213 = 하한 (경계)
-  1/3 = 내부 부동점 (부피 안)
+  Our model:
+  Golden Zone "volume" = width(ln(4/3)) × D-range × P-range
+  Golden Zone "boundary" = upper(1/2) + lower(1/2-ln(4/3))
 
-  → 1/2과 0.213이 시스템의 모든 정보를 담는다
-  → 1/3(내부)은 경계에서 유도됨: (0.213+0.500)/2 ≈ 0.357 ≈ 1/e?
-  → 부동점 ≈ 경계의 평균? 
-  → 홀로그래피적 관점: 내부 = 경계에서 결정됨
+  All key constants are boundary values:
+  1/2   = upper bound (boundary)
+  0.213 = lower bound (boundary)
+  1/3   = interior fixed point (inside volume)
+
+  → 1/2 and 0.213 contain all information about the system
+  → 1/3 (interior) is derived from the boundary:
+    (0.213+0.500)/2 ≈ 0.357 ≈ 1/e?
+  → Fixed point ≈ average of boundaries?
+  → Holographic perspective: interior = determined from boundary
 ```
 
-## 호킹 온도와 골든존 온도
+## Hawking Temperature and Golden Zone Temperature
 
 ```
-  호킹 온도: T_H = ℏc³/(8πGMk_B)
-  → 블랙홀이 작을수록 뜨거움
+  Hawking temperature: T_H = ℏc³/(8πGMk_B)
+  → Smaller black hole → hotter
 
-  우리 모델: T = 1/I
-  → I가 작을수록(억제 낮을수록) 뜨거움
+  Our model: T = 1/I
+  → Smaller I (lower inhibition) → hotter
 
-  블랙홀 증발 = I→0 (억제 해제 극한)
-  → 우리 모델에서 I→0은 "혼돈" (골든존 아래)
-  → 블랙홀 증발 = 시스템의 혼돈화
+  Black hole evaporation = I→0 (limit of complete disinhibition)
+  → In our model, I→0 is "chaos" (below Golden Zone)
+  → Black hole evaporation = chaotification of the system
 ```
 
 ---
 
-*이론적 대응. 홀로그래피 원리와의 연결은 추가 연구 필요.*
+*Theoretical correspondence. Connection with the holographic principle requires additional research.*

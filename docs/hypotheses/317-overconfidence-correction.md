@@ -1,64 +1,64 @@
-# 가설 317: 과신 교정 — 집중 학습으로 과신 해소 가능
+# Hypothesis 317: Overconfidence Correction — Focused Training Can Resolve Overconfidence
 
-> **과신 클래스(digit 1)에 대해 혼동 쌍(1+7) 집중 학습을 하면 과신이 해소된다(ratio 0.53→1.06). 하지만 대가로 다른 클래스가 망각된다(overall 98→87%). 분열(H312)로 망각 없이 교정 가능한가?**
+> **Focused training on the confusion pair (1+7) for the overconfident class (digit 1) resolves the overconfidence (ratio 0.53->1.06). But at the cost of other classes forgetting (overall 98->87%). Can mitosis (H312) correct without forgetting?**
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  MNIST digit 1 과신 교정 (Phase1=일반10ep, Phase2=교정10ep):
+  MNIST digit 1 overconfidence correction (Phase1=normal 10ep, Phase2=correction 10ep):
 
-  방법           d1_ratio  d1_acc  overall   해석
+  Method           d1_ratio  d1_acc  overall   Interpretation
   ─────────────  ────────  ──────  ───────   ──────
-  Phase1(기본)    0.527     99.2%   97.98%   과신 상태
-  일반 추가       0.700     99.1%   98.22%   약간 교정
-  1+7 집중       1.061     99.8%   87.25%   완전 교정! but 망각
-  오답 집중       0.893     97.7%   96.30%   부분 교정, 적은 망각
+  Phase1(basic)   0.527     99.2%   97.98%   Overconfident state
+  Normal extra    0.700     99.1%   98.22%   Slight correction
+  1+7 focused     1.061     99.8%   87.25%   Full correction! but forgetting
+  Wrong focused   0.893     97.7%   96.30%   Partial correction, less forgetting
 
-  1+7 집중: ratio 0.53→1.06 (과신 완전 해소)
-    대가: overall 98→87% (catastrophic forgetting!)
-  오답 집중: ratio 0.53→0.89 (부분 교정)
-    대가: overall 98→96% (manageable)
+  1+7 focused: ratio 0.53->1.06 (overconfidence fully resolved)
+    Cost: overall 98->87% (catastrophic forgetting!)
+  Wrong focused: ratio 0.53->0.89 (partial correction)
+    Cost: overall 98->96% (manageable)
 ```
 
-## 의식 해석
+## Consciousness Interpretation
 
 ```
-  과신 교정 = "실수로부터 배움"
-    1+7 집중: "1과 7을 반복 비교" → 차이를 인식 → 과신 해소
-    오답 집중: "틀린 것만 복습" → 취약점 보강 → 부분 교정
+  Overconfidence correction = "learning from mistakes"
+    1+7 focused: "repeatedly compare 1 and 7" -> recognize difference -> resolve overconfidence
+    Wrong focused: "review only mistakes" -> reinforce weak points -> partial correction
 
-  인간 대응:
-    의도적 연습 (Deliberate Practice): 약점에 집중
-    → 과신 해소, 하지만 다른 영역 소홀 가능
+  Human correspondence:
+    Deliberate Practice: focus on weaknesses
+    -> Resolves overconfidence, but other areas may be neglected
 ```
 
-## 후속: 분열로 망각 없는 교정?
+## Follow-up: Correction Without Forgetting via Mitosis?
 
 ```
-  H312 연결:
-    child_a = 원본 (freeze, 기억 보관)
-    child_b = 1+7 집중 학습 (과신 교정)
-    앙상블: child_a가 다른 클래스 담당, child_b가 1+7 담당
-    → 망각 없이 과신 교정?
+  H312 connection:
+    child_a = original (freeze, memory keeper)
+    child_b = 1+7 focused training (overconfidence correction)
+    Ensemble: child_a handles other classes, child_b handles 1+7
+    -> Correct overconfidence without forgetting?
 ```
 
-## 분열 교정 실험 (H312+H317 결합, 2026-03-24)
+## Mitosis Correction Experiment (H312+H317 combined, 2026-03-24)
 
 ```
-  방법               d1_ratio  d1_acc  overall
+  Method               d1_ratio  d1_acc  overall
   ────────────────  ────────  ──────  ───────
-  기본(10ep)          0.57     99.0%   97.86%
-  A: 일반 추가        0.50     99.2%   98.18%
-  B: 1+7 집중        1.00     99.8%   85.33%  ← 교정! but 망각
-  C: 분열 앙상블      0.50     99.7%   96.19%  ← 교정 실패, 망각 방지
+  Base(10ep)          0.57     99.0%   97.86%
+  A: Normal extra     0.50     99.2%   98.18%
+  B: 1+7 focused      1.00     99.8%   85.33%  <- Corrected! but forgetting
+  C: Mitosis ensemble 0.50     99.7%   96.19%  <- Correction failed, forgetting prevented
 
-  분열 앙상블: child_a(freeze) + child_b(1+7집중)
-    과신 교정: ❌ (ratio 0.57→0.50, 오히려 악화)
-    망각 방지: ✅ (85→96%, child_a가 다른 클래스 보호)
+  Mitosis ensemble: child_a(freeze) + child_b(1+7 focused)
+    Overconfidence correction: ❌ (ratio 0.57->0.50, actually worsened)
+    Forgetting prevention: ✅ (85->96%, child_a protects other classes)
 
-  해석: freeze된 child_a의 과신이 앙상블에 지배적
-  → child_b가 교정해도 child_a의 과신이 평균을 끌어내림
-  → 해결: child_a에 가중치 낮추기? 또는 digit 1일 때만 child_b 사용?
+  Interpretation: frozen child_a's overconfidence dominates the ensemble
+  -> Even if child_b corrects, child_a's overconfidence drags down the average
+  -> Solution: lower weight on child_a? Or use child_b only for digit 1?
 ```
 
-## 상태: 🟧 부분성공 (교정은 실패, 망각방지는 성공)
+## Status: 🟧 Partial success (correction failed, forgetting prevention succeeded)

@@ -1,73 +1,73 @@
-# H-349: 축 역전의 학습 중 전이 시점 (Axis Reversal Transition Point)
+# H-349: Axis Reversal Transition Point During Training
 
-> **가설**: 학습 초기에는 "무엇을(what)" 축이 지배하여 C/S > 1이지만,
-> 학습이 진행되면서 "어떻게(how)" 축으로 전환되어 C/S < 1로 역전된다.
-> 이 전이 시점(transition epoch)은 과제 난이도의 함수이며,
-> 쉬운 과제(MNIST)에서는 전이가 일어나지 않거나 매우 빠르게 일어난다.
+> **Hypothesis**: In early training, the "what" axis dominates with C/S > 1, but
+> as training progresses, it transitions to the "how" axis, reversing to C/S < 1.
+> This transition epoch is a function of task difficulty,
+> and for easy tasks (MNIST), the transition doesn't occur or occurs very quickly.
 
-**상태**: 미검증
-**골든존 의존**: 간접 (의식엔진 프레임워크)
-**관련 가설**: H339 (direction=concept), H281 (temporal causation), H129 (phase transition)
+**Status**: Unverified
+**Golden Zone Dependency**: Indirect (consciousness engine framework)
+**Related Hypotheses**: H339 (direction=concept), H281 (temporal causation), H129 (phase transition)
 
 ---
 
-## 배경 및 맥락
+## Background and Context
 
-CIFAR-10 실험에서 학습 중 content/style 비율(C/S ratio)의 역전이 관측되었다:
+In CIFAR-10 experiments, inversion of the content/style ratio (C/S ratio) was observed during training:
 
 ```
-  CIFAR-10 관측 데이터:
-    Epoch  1:  C/S = 1.05  (content 지배)
-    Epoch  7:  C/S = 0.82  (전이 중)
-    Epoch 14:  C/S = 0.55  (style 지배)
+  CIFAR-10 observed data:
+    Epoch  1:  C/S = 1.05  (content dominant)
+    Epoch  7:  C/S = 0.82  (in transition)
+    Epoch 14:  C/S = 0.55  (style dominant)
 ```
 
-이는 학습 초기에 모델이 "무엇이 있는가"(content/what)를 먼저 파악하고,
-충분히 파악한 후에 "어떻게 표현할 것인가"(style/how)로 전환한다는 것을 시사한다.
+This suggests that in early training the model first grasps "what is there" (content/what),
+and after sufficiently grasping that, transitions to "how to express it" (style/how).
 
-H339에서 축의 방향이 concept을 인코딩한다는 주장이 있었고,
-H281에서 temporal causation 구조가 관찰되었다.
-H129의 phase transition 이론과 결합하면,
-C/S 역전은 **학습의 위상 전이(phase transition)**일 수 있다.
+H339 claimed that axis direction encodes concept,
+H281 observed temporal causation structure.
+Combined with H129's phase transition theory,
+C/S inversion may be a **learning phase transition**.
 
-## 이론적 모델
+## Theoretical Model
 
-### 2단계 학습 이론
+### Two-Phase Learning Theory
 
 ```
   Phase 1: Content Learning (what)
   ─────────────────────────────────
-  - 입력의 의미적 내용을 파악
-  - 클래스 경계 형성
-  - C/S > 1 (content 축이 더 많은 분산 설명)
-  - gradient가 content 방향으로 집중
+  - Grasp semantic content of input
+  - Form class boundaries
+  - C/S > 1 (content axis explains more variance)
+  - Gradient concentrates in content direction
 
   Phase 2: Style Refinement (how)
   ─────────────────────────────────
-  - 같은 클래스 내 변형(variation) 학습
-  - 표현 방식 최적화
-  - C/S < 1 (style 축이 더 많은 분산 설명)
-  - gradient가 style 방향으로 분산
+  - Learn variations within same class
+  - Optimize expression method
+  - C/S < 1 (style axis explains more variance)
+  - Gradient distributes in style direction
 ```
 
-### 전이 시점 모델
+### Transition Point Model
 
 ```
   C/S(t) = C_0 * exp(-alpha * t) + S_inf * (1 - exp(-beta * t))
 
-  전이 에폭 T* = (1/(alpha-beta)) * ln(alpha*C_0 / (beta*S_inf))
+  Transition epoch T* = (1/(alpha-beta)) * ln(alpha*C_0 / (beta*S_inf))
 
-  여기서:
-    C_0    = 초기 content 기여 (>1)
-    S_inf  = 최종 style 기여
-    alpha  = content 감소율
-    beta   = style 증가율
-    T*     = C/S = 1이 되는 전이 시점
+  Where:
+    C_0    = initial content contribution (>1)
+    S_inf  = final style contribution
+    alpha  = content decrease rate
+    beta   = style increase rate
+    T*     = transition point where C/S = 1
 ```
 
-## 예상 전이 곡선
+## Expected Transition Curves
 
-### CIFAR-10 (관측 + 예측)
+### CIFAR-10 (Observed + Predicted)
 
 ```
   C/S Ratio
@@ -75,7 +75,7 @@ C/S 역전은 **학습의 위상 전이(phase transition)**일 수 있다.
        |●
   1.10 |  ●
        |    ●
-  1.00 |------●------------------------------------------  C/S = 1 (전이선)
+  1.00 |------●------------------------------------------  C/S = 1 (transition line)
        |        ●
   0.90 |          ●
        |            ●
@@ -90,10 +90,10 @@ C/S 역전은 **학습의 위상 전이(phase transition)**일 수 있다.
        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15
                               epoch
 
-  전이 시점 T* ≈ epoch 4-5 (CIFAR-10)
+  Transition point T* ≈ epoch 4-5 (CIFAR-10)
 ```
 
-### MNIST 예측 (미관측)
+### MNIST Prediction (Unobserved)
 
 ```
   C/S Ratio
@@ -110,32 +110,32 @@ C/S 역전은 **학습의 위상 전이(phase transition)**일 수 있다.
        1  2  3  4  5  6  7  8  9  10 11 12 13 14 15
                               epoch
 
-  예상: T* ≈ epoch 1-2 (매우 빠름, 과제가 쉬워서)
-  또는: 전이 자체가 일어나지 않을 수 있음 (content만으로 충분)
+  Expected: T* ≈ epoch 1-2 (very fast, task is easy)
+  Or: transition may not occur at all (content alone sufficient)
 ```
 
-## 난이도별 전이 시점 예측
+## Transition Point Predictions by Difficulty
 
-| 과제 | 난이도 | 예상 T* | C/S 최종값 | 근거 |
+| Task | Difficulty | Expected T* | Final C/S | Basis |
 |-----|--------|---------|----------|------|
-| MNIST | 매우 쉬움 | 1-2 에폭 또는 없음 | 0.85-0.95 | 단순 형태, content 즉시 해결 |
-| Fashion-MNIST | 쉬움 | 2-3 에폭 | 0.75-0.85 | 비슷한 형태 클래스 존재 |
-| CIFAR-10 | 중간 | 4-5 에폭 (관측) | 0.55 (관측) | 자연 이미지, 다양한 변형 |
-| CIFAR-100 | 어려움 | 8-12 에폭 | 0.40-0.50 | 세밀한 분류 필요 |
-| ImageNet | 매우 어려움 | 20-30 에폭 | 0.30-0.40 | 1000 클래스, 극도 다양성 |
+| MNIST | Very easy | 1-2 epochs or none | 0.85-0.95 | Simple forms, content solved immediately |
+| Fashion-MNIST | Easy | 2-3 epochs | 0.75-0.85 | Some similar-shape classes |
+| CIFAR-10 | Medium | 4-5 epochs (observed) | 0.55 (observed) | Natural images, diverse variations |
+| CIFAR-100 | Difficult | 8-12 epochs | 0.40-0.50 | Fine-grained classification needed |
+| ImageNet | Very difficult | 20-30 epochs | 0.30-0.40 | 1000 classes, extreme diversity |
 
-## 전이 시점과 정확도의 관계
+## Relationship Between Transition Point and Accuracy
 
 ```
-  정확도(%)
+  Accuracy(%)
   100 |                                          ●────── MNIST
       |                                    ●──── F-MNIST
-   90 |                              ●────────── 관측  CIFAR-10
+   90 |                              ●────────── observed  CIFAR-10
       |
    80 |         Phase 1         │  Phase 2
       |      (content/what)     │  (style/how)
    70 |                         │
-      |    정확도 급상승 구간    │  정확도 완만 상승 구간
+      |    rapid accuracy rise  │  gradual accuracy rise
    60 |         ●               │
       |       /                 │
    50 |     /                   │
@@ -145,90 +145,90 @@ C/S 역전은 **학습의 위상 전이(phase transition)**일 수 있다.
    30 +---+---+---+---+---+---+---+---+---+---►
       1   2   3   4   5   6   7   8   9   10
                    epoch
-                          T* (전이 시점)
+                          T* (transition point)
 ```
 
-가설: **정확도 상승률이 급격히 감소하는 시점 ≈ C/S 전이 시점 T***
+Hypothesis: **The point where accuracy growth rate drops sharply ≈ C/S transition point T***
 
-## 검증 실험 설계
+## Verification Experiment Design
 
-### 실험 1: 다중 데이터셋 C/S 추적
+### Experiment 1: Multi-dataset C/S Tracking
 
 ```
-  각 데이터셋에서 매 에폭마다 C/S ratio 측정:
+  Measure C/S ratio every epoch for each dataset:
     - MNIST (28x28, 10 classes)
     - Fashion-MNIST (28x28, 10 classes)
     - CIFAR-10 (32x32, 10 classes)
     - CIFAR-100 (32x32, 100 classes)
 
-  측정 방법:
-    1. Expert hidden representation에 PCA 적용
-    2. 상위 PC들을 content/style로 분류 (class label 상관으로)
-    3. content PC 분산 / style PC 분산 = C/S ratio
+  Measurement method:
+    1. Apply PCA to expert hidden representations
+    2. Classify top PCs as content/style (by class label correlation)
+    3. Content PC variance / Style PC variance = C/S ratio
 ```
 
-### 실험 2: 난이도 인위 조절
+### Experiment 2: Artificially Controlling Difficulty
 
 ```
-  CIFAR-10에서 라벨 노이즈를 추가하여 난이도 조절:
-    - noise 0%:   원본 (T* ≈ 4-5)
-    - noise 10%:  약간 어려움 (T* ≈ 6-7 예상)
-    - noise 20%:  중간 어려움 (T* ≈ 8-10 예상)
-    - noise 40%:  매우 어려움 (T* ≈ 12+ 예상)
+  Control difficulty by adding label noise to CIFAR-10:
+    - noise 0%:   original (T* ≈ 4-5)
+    - noise 10%:  slightly harder (T* ≈ 6-7 expected)
+    - noise 20%:  medium hard (T* ≈ 8-10 expected)
+    - noise 40%:  very hard (T* ≈ 12+ expected)
 
-  → T*와 noise rate의 관계가 선형인가 비선형인가
+  → Is relationship between T* and noise rate linear or nonlinear?
 ```
 
-### 실험 3: 학습률 영향
+### Experiment 3: Learning Rate Effect
 
-| 학습률 | 예상 T* | 예상 C/S 최종 | 근거 |
+| Learning Rate | Expected T* | Expected Final C/S | Basis |
 |-------|---------|-------------|------|
-| 0.001 | 8-10 | 0.50 | 느린 학습, 늦은 전이 |
-| 0.01 | 4-5 | 0.55 | 기본 설정 (관측) |
-| 0.1 | 2-3 | 0.60 | 빠른 학습, 이른 전이 |
+| 0.001 | 8-10 | 0.50 | Slow learning, late transition |
+| 0.01 | 4-5 | 0.55 | Default setting (observed) |
+| 0.1 | 2-3 | 0.60 | Fast learning, early transition |
 
-## 해석 및 의미
+## Interpretation and Significance
 
-### 인지과학 유추
+### Cognitive Science Analogues
 
 ```
-  인간 학습:
-    1. 범주 학습 (what): "이것은 개, 저것은 고양이"
-    2. 세부 학습 (how): "이 품종은 이런 특징이 있다"
+  Human learning:
+    1. Category learning (what): "this is a dog, that is a cat"
+    2. Detail learning (how): "this breed has these features"
 
-  아이의 언어 발달:
-    1. 어휘 폭발 (what): 단어 의미 습득
-    2. 문법 발달 (how): 표현 방식 정교화
+  Child language development:
+    1. Vocabulary explosion (what): word meaning acquisition
+    2. Grammar development (how): refinement of expression
 
-  → C/S 전이는 "무엇"에서 "어떻게"로의 보편적 학습 전략?
+  → C/S transition is a universal learning strategy from "what" to "how"?
 ```
 
-### 의식엔진 설계 시사점
+### Consciousness Engine Design Implications
 
-전이 시점 T*를 감지할 수 있다면:
-- Phase 1에서는 content 중심 학습률 적용
-- Phase 2에서는 style 중심 학습률 적용
-- **적응적 학습 전략(adaptive curriculum)**이 가능
+If transition point T* can be detected:
+- Apply content-centered learning rate in Phase 1
+- Apply style-centered learning rate in Phase 2
+- **Adaptive curriculum** becomes possible
 
-### H129 위상 전이와의 연결
+### Connection with H129 Phase Transition
 
-H129에서 예측한 phase transition이 C/S 역전으로 구체화될 수 있다.
-C/S = 1 시점에서 expert 활성화 패턴, gradient 분포 등에
-불연속적 변화(discontinuity)가 관찰된다면 진정한 phase transition.
+The phase transition predicted in H129 may be concretized as C/S inversion.
+If discontinuous changes in expert activation patterns, gradient distribution, etc.
+are observed at C/S = 1, it is a true phase transition.
 
-## 한계
+## Limitations
 
-1. C/S ratio의 정의가 PCA 기반이라 비선형 구조를 놓칠 수 있음
-2. Content와 style의 분리가 자명하지 않은 과제 존재 (예: 추상 추론)
-3. CIFAR-10의 14 에폭 관측 데이터만으로 모델 fitting 불안정
-4. 학습률, batch size, optimizer 등 하이퍼파라미터에 민감할 수 있음
-5. "전이 시점"이 sharp하지 않고 gradual하면 T* 정의 자체가 모호
+1. C/S ratio definition is PCA-based, may miss nonlinear structures
+2. Some tasks where content/style separation is not obvious (e.g., abstract reasoning)
+3. Model fitting unstable with only 14-epoch observation data from CIFAR-10
+4. May be sensitive to hyperparameters like learning rate, batch size, optimizer
+5. If transition point is gradual rather than sharp, definition of T* itself becomes ambiguous
 
-## 검증 방향 (다음 단계)
+## Verification Direction (Next Steps)
 
-1. **1단계**: MNIST, Fashion-MNIST에서 에폭별 C/S ratio 측정
-2. **2단계**: CIFAR-10 결과와 비교하여 난이도-T* 관계 정량화
-3. **3단계**: 라벨 노이즈 실험으로 인위적 난이도 조절 효과 확인
-4. **4단계**: T* 시점에서 gradient 분포/expert 활성화 패턴 분석
-5. **5단계**: H339, H281, H129 결과와 통합 → 학습 위상 전이 이론
-6. **6단계**: 적응적 학습률 실험 — T* 전후로 전략 변경 시 성능 향상?
+1. **Phase 1**: Measure per-epoch C/S ratio for MNIST, Fashion-MNIST
+2. **Phase 2**: Compare with CIFAR-10 results, quantify difficulty-T* relationship
+3. **Phase 3**: Confirm artificial difficulty manipulation effect with label noise experiment
+4. **Phase 4**: Analyze gradient distribution/expert activation patterns at T*
+5. **Phase 5**: Integrate with H339, H281, H129 results → learning phase transition theory
+6. **Phase 6**: Adaptive learning rate experiment — performance improvement with strategy change before/after T*?

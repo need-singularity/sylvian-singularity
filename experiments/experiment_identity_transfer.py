@@ -1,24 +1,25 @@
+```python
 #!/usr/bin/env python3
-"""Identity Transfer Experiment — 정체성 이식 실험
+"""Identity Transfer Experiment — Identity Transfer Experiment
 
-두 TemporalContinuityEngine을 독립적으로 학습시킨 뒤
-identity_vector를 교환하면 어떤 일이 일어나는가?
+Train two TemporalContinuityEngines independently then
+exchange identity_vectors - what happens?
 
-실험 설계:
-  1. Engine_Alpha, Engine_Beta를 다른 random seed로 각각 10 epochs 학습
-  2. 기본 메트릭 기록: accuracy, identity_vector norm, tension, consciousness FPS
-  3. 테스트셋 baseline accuracy 측정
-  4. SWAP: Alpha의 identity_vector <-> Beta의 identity_vector
-  5. Post-swap accuracy 측정
-  6. ZERO: identity_vector를 0으로 만든 뒤 accuracy 측정
-  7. RANDOM: identity_vector를 랜덤 노이즈로 교체한 뒤 accuracy 측정
-  8. Per-digit accuracy 변화 추적 (어떤 숫자가 가장 영향 받는가?)
-  9. 두 identity_vector의 cosine similarity (독립 학습된 정체성이 얼마나 다른가?)
+Experiment Design:
+  1. Train Engine_Alpha, Engine_Beta with different random seeds for 10 epochs each
+  2. Record baseline metrics: accuracy, identity_vector norm, tension, consciousness FPS
+  3. Measure test set baseline accuracy
+  4. SWAP: Alpha's identity_vector <-> Beta's identity_vector
+  5. Measure post-swap accuracy
+  6. ZERO: Set identity_vector to 0 and measure accuracy
+  7. RANDOM: Replace identity_vector with random noise and measure accuracy
+  8. Track per-digit accuracy changes (which digits are most affected?)
+  9. Cosine similarity between two identity_vectors (how different are independently learned identities?)
 
-핵심 질문:
-  - identity_vector는 의미 있는 정보를 담고 있는가?
-  - 정체성 이식은 가능한가? (모델이 다른 모델의 "성격"을 이어받는가?)
-  - 정체성 없이도 모델이 작동하는가? (identity = 장식 vs 필수)
+Key Questions:
+  - Does identity_vector contain meaningful information?
+  - Is identity transfer possible? (Does model inherit another model's "personality"?)
+  - Can model work without identity? (identity = decoration vs essential)
 """
 
 import torch
@@ -33,11 +34,11 @@ from model_temporal_engine import TemporalContinuityEngine
 
 
 # ─────────────────────────────────────────
-# 유틸리티
+# Utilities
 # ─────────────────────────────────────────
 
 def set_seed(seed):
-    """재현 가능한 결과를 위한 시드 설정."""
+    """Set seed for reproducible results."""
     torch.manual_seed(seed)
     np.random.seed(seed)
     if torch.cuda.is_available():
@@ -45,7 +46,7 @@ def set_seed(seed):
 
 
 def train_engine(engine, train_loader, epochs=10, lr=0.001):
-    """TemporalContinuityEngine 학습. train_and_evaluate와 유사하지만 메트릭 추적 강화."""
+    """Train TemporalContinuityEngine. Similar to train_and_evaluate but with enhanced metric tracking."""
     optimizer = torch.optim.Adam(engine.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
 
@@ -86,7 +87,7 @@ def train_engine(engine, train_loader, epochs=10, lr=0.001):
 
 
 def evaluate_engine(engine, test_loader):
-    """테스트셋 평가. 전체 + per-digit accuracy 반환."""
+    """Evaluate on test set. Return overall + per-digit accuracy."""
     engine.eval()
     correct = 0
     total = 0
@@ -121,7 +122,7 @@ def evaluate_engine(engine, test_loader):
 
 
 def cosine_similarity(v1, v2):
-    """두 벡터의 cosine similarity."""
+    """Cosine similarity between two vectors."""
     v1_flat = v1.flatten().float()
     v2_flat = v2.flatten().float()
     dot = (v1_flat * v2_flat).sum()
@@ -133,16 +134,16 @@ def cosine_similarity(v1, v2):
 
 
 def l2_distance(v1, v2):
-    """두 벡터의 L2 거리."""
+    """L2 distance between two vectors."""
     return (v1.flatten() - v2.flatten()).norm().item()
 
 
 # ─────────────────────────────────────────
-# Identity 조작 함수들
+# Identity Manipulation Functions
 # ─────────────────────────────────────────
 
 def swap_identities(engine_a, engine_b):
-    """두 엔진의 identity_vector를 교환."""
+    """Swap identity_vectors between two engines."""
     id_a = engine_a.identity_vector.clone()
     id_b = engine_b.identity_vector.clone()
     engine_a.identity_vector.copy_(id_b)
@@ -150,52 +151,52 @@ def swap_identities(engine_a, engine_b):
 
 
 def zero_identity(engine):
-    """identity_vector를 0으로."""
+    """Set identity_vector to 0."""
     engine.identity_vector.zero_()
 
 
 def random_identity(engine, scale=1.0):
-    """identity_vector를 랜덤 노이즈로 교체."""
+    """Replace identity_vector with random noise."""
     noise = torch.randn_like(engine.identity_vector) * scale
     engine.identity_vector.copy_(noise)
 
 
 def set_identity(engine, identity_vec):
-    """identity_vector를 특정 값으로 설정."""
+    """Set identity_vector to specific value."""
     engine.identity_vector.copy_(identity_vec)
 
 
 # ─────────────────────────────────────────
-# ASCII 출력 유틸리티
+# ASCII Output Utilities
 # ─────────────────────────────────────────
 
 def print_table(headers, rows, title=None):
-    """마크다운 스타일 테이블 출력."""
+    """Print markdown style table."""
     if title:
         print(f"\n  {title}")
         print()
 
-    # 열 너비 계산
+    # Calculate column widths
     col_widths = [len(h) for h in headers]
     for row in rows:
         for i, cell in enumerate(row):
             col_widths[i] = max(col_widths[i], len(str(cell)))
 
-    # 헤더
+    # Header
     header_line = "  | " + " | ".join(h.ljust(col_widths[i]) for i, h in enumerate(headers)) + " |"
     sep_line = "  |" + "|".join("-" * (col_widths[i] + 2) for i in range(len(headers))) + "|"
 
     print(header_line)
     print(sep_line)
 
-    # 행
+    # Rows
     for row in rows:
         row_line = "  | " + " | ".join(str(cell).ljust(col_widths[i]) for i, cell in enumerate(row)) + " |"
         print(row_line)
 
 
 def ascii_bar_chart(labels, values, title, width=40):
-    """ASCII 수평 막대 그래프."""
+    """ASCII horizontal bar chart."""
     print(f"\n  {title}")
     print()
 
@@ -220,7 +221,7 @@ def ascii_bar_chart(labels, values, title, width=40):
 
 
 def ascii_comparison_bars(labels, vals_a, vals_b, name_a, name_b, title, width=30):
-    """두 시리즈 비교 막대 그래프."""
+    """Two series comparison bar chart."""
     print(f"\n  {title}")
     print(f"  {'':>6}  {name_a:<{width+8}}  {name_b}")
     print()
@@ -238,7 +239,7 @@ def ascii_comparison_bars(labels, vals_a, vals_b, name_a, name_b, title, width=3
 
 
 # ─────────────────────────────────────────
-# 메인 실험
+# Main Experiment
 # ─────────────────────────────────────────
 
 def main():
@@ -248,7 +249,7 @@ def main():
     print("   Can you transplant a model's identity into another?")
     print("=" * 70)
 
-    # ── 설정 ──
+    # ── Config ──
     input_dim, hidden_dim, output_dim = 784, 48, 10
     state_dim = 32
     epochs = 10
@@ -258,12 +259,12 @@ def main():
     print(f"\n  Config: epochs={epochs}, hidden={hidden_dim}, state={state_dim}")
     print(f"  Seed Alpha={seed_alpha}, Seed Beta={seed_beta}")
 
-    # ── 데이터 로드 ──
+    # ── Load Data ──
     print("\n  Loading MNIST...")
     train_loader, test_loader = load_mnist(batch_size=128)
 
     # ══════════════════════════════════════════
-    # PHASE 1: 독립 학습
+    # PHASE 1: Independent Training
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 70)
@@ -647,3 +648,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

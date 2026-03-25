@@ -1,3 +1,3 @@
-# H-CX-258: 🟩 화음 3도/5도 = 6의 약수
+# H-CX-258: 🟩 Harmonic Thirds/Fifths = Divisors of 6
 
-> 장3도(4반음=τ), 완전5도(7반음=P₁+1). 3=약수, 5=P₁-1.
+> Major third (4 semitones=τ), Perfect fifth (7 semitones=P₁+1). 3=divisor, 5=P₁-1.

@@ -1,60 +1,60 @@
-# H-CX-67: 시너지 최적점 — 통합 예지 시너지가 골든존에서 최대
+# H-CX-67: Optimal Synergy Point — Unified Precognition Synergy Maximized in Golden Zone
 
-> 통합 예지의 시너지(unified - max(individual))가
-> tension 분포의 특정 구간에서 최대이며, 그 구간이 골든존(1/e ± ln(4/3)/2)과 일치.
+> Unified precognition synergy (unified - max(individual)) is
+> maximized in a specific range of tension distribution, and that range coincides with the Golden Zone (1/e ± ln(4/3)/2).
 
-## 배경
+## Background
 
-- 통합 예지: Fashion에서 +17.8%p 시너지 (최대)
-- 골든존: I ∈ [0.2123, 0.5000], 중심 1/e ≈ 0.368
-- H-CX-58: 장력 quintile별 정확도 단조 증가
+- Unified precognition: +17.8%p synergy in Fashion (maximum)
+- Golden Zone: I ∈ [0.2123, 0.5000], center 1/e ≈ 0.368
+- H-CX-58: Monotonic increase in accuracy by tension quintile
 
-**핵심 연결**: 시너지가 모든 장력 구간에서 균일하지 않을 것.
-"크기"와 "방향" 정보가 가장 상보적인 장력 구간 = 골든존?
-너무 높은 장력 → 크기만으로 충분 (시너지 불필요)
-너무 낮은 장력 → 방향도 불확실 (시너지 불가)
-중간 장력 → 크기 단독으로 부족하지만 방향이 보완 → 최대 시너지
+**Key Connection**: Synergy won't be uniform across all tension ranges.
+Tension range where "magnitude" and "direction" information are most complementary = Golden Zone?
+Too high tension → Magnitude alone sufficient (synergy unnecessary)
+Too low tension → Direction also uncertain (synergy impossible)
+Medium tension → Magnitude alone insufficient but direction complements → Maximum synergy
 
-## 예측
+## Predictions
 
-1. 장력 quintile별 시너지(LR_AUC - mag_AUC) 계산
-2. 중간 quintile (Q2-Q3)에서 시너지 최대
-3. 최대 시너지 장력 구간이 전체 장력 범위의 1/e 비율 근처
-4. 고장력/저장력 구간에서 시너지 최소
+1. Calculate synergy (LR_AUC - mag_AUC) by tension quintile
+2. Maximum synergy in middle quintiles (Q2-Q3)
+3. Maximum synergy tension range near 1/e ratio of total tension range
+4. Minimum synergy in high/low tension ranges
 
-## 검증 방법
+## Verification Method
 
 ```
-1. 통합 예지 스크립트에서 quintile별 분석
-2. 각 quintile 내에서 mag_AUC vs unified_AUC 비교
-3. 시너지 = unified - mag 의 quintile별 분포
-4. 최대 시너지 quintile의 장력 중앙값 / 전체 장력 범위 비교
+1. Quintile-wise analysis in unified precognition script
+2. Compare mag_AUC vs unified_AUC within each quintile
+3. Distribution of synergy = unified - mag by quintile
+4. Compare tension median of max synergy quintile / total tension range
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- 통합 예지 (H-CX-58+59), 골든존 상수 체계
-- H-CX-58 (예지 렌즈), H329 (장력 이중성)
+- Unified precognition (H-CX-58+59), Golden Zone constant system
+- H-CX-58 (precognition lens), H329 (tension duality)
 
-## 한계
+## Limitations
 
-- quintile 내 표본이 작아 AUC 불안정
-- 골든존 매핑이 강제적일 수 있음
-- 장력의 절대값이 데이터셋마다 다름 (정규화 필요)
+- Small samples within quintiles make AUC unstable
+- Golden Zone mapping may be forced
+- Absolute tension values differ by dataset (normalization needed)
 
-## 검증 상태
+## Verification Status
 
-- [x] quintile별 시너지 측정
-- [x] 골든존 매핑 확인
+- [x] Synergy measurement by quintile
+- [x] Golden Zone mapping confirmation
 
-## 검증 결과
+## Verification Results
 
-**판정: PARTIAL (2/3 datasets)**
+**Verdict: PARTIAL (2/3 datasets)**
 
-### Quintile별 최대 시너지
+### Maximum Synergy by Quintile
 
-| Dataset | Max Quintile | Synergy  | relative_pos | delta from 1/e | 판정 |
-|---------|-------------|----------|-------------|----------------|------|
+| Dataset | Max Quintile | Synergy  | relative_pos | delta from 1/e | Verdict |
+|---------|-------------|----------|-------------|----------------|---------|
 | MNIST   | Q3          | +0.026   | 0.340       | 0.028          | SUPPORTED |
 | Fashion | Q3          | +0.025   | 0.341       | 0.027          | SUPPORTED |
 | CIFAR   | Q5          | +0.040   | 0.644       | 0.276          | REJECTED  |
@@ -74,20 +74,20 @@
        1/e  MNIST   FAS     CIF
 ```
 
-### MNIST & Fashion: 골든존 근처
+### MNIST & Fashion: Near Golden Zone
 
 - MNIST: relative_pos = 0.340, |delta| = 0.028 from 1/e (0.368)
 - Fashion: relative_pos = 0.341, |delta| = 0.027 from 1/e (0.368)
-- 두 데이터셋 모두 1/e에서 0.03 이내
+- Both datasets within 0.03 of 1/e
 
-### CIFAR: 기각
+### CIFAR: Rejected
 
-- CIFAR에서는 최대 시너지가 Q5(최고 장력)에서 발생
-- relative_pos = 0.644, 골든존 중심에서 0.276 이탈
-- CIFAR의 높은 난이도로 인해 고장력에서만 시너지 발생 가능
+- In CIFAR, maximum synergy occurs at Q5 (highest tension)
+- relative_pos = 0.644, 0.276 deviation from Golden Zone center
+- CIFAR's high difficulty allows synergy only at high tension
 
-### 해석
+### Interpretation
 
-MNIST/Fashion (쉬운 데이터셋)에서는 중간 장력(골든존)에서 크기+방향 시너지 최대.
-CIFAR (어려운 데이터셋)에서는 고장력에서만 충분한 정보 → 시너지 패턴 다름.
-골든존 매핑은 데이터셋 난이도에 의존하며 보편적이지 않다.
+In MNIST/Fashion (easy datasets), magnitude+direction synergy maximizes at medium tension (Golden Zone).
+In CIFAR (difficult dataset), sufficient information only at high tension → Different synergy pattern.
+Golden Zone mapping depends on dataset difficulty and is not universal.

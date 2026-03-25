@@ -1,36 +1,36 @@
-# 가설 검토 094: 정확도 추세 — 일정 ~87% ✅
+# Hypothesis Review 094: Accuracy Trend — Constant ~87% ✅
 
-## 가설
+## Hypothesis
 
-> 시간이 지나면서 가설 확인률이 올라가는가 (학습 효과/과적합 존재 여부).
+> Does the hypothesis confirmation rate increase over time (presence of learning effect/overfitting).
 
-## 배경/맥락
+## Background/Context
 
-가설이 누적되면서 모델에 대한 이해가 깊어진다.
-이때 두 가지 위험이 있다:
-- **학습 효과**: 확인률이 올라감 → 모델이 아닌 연구자가 학습한 것
-- **과적합**: 기존 결과에 맞추어 가설을 사후 조정
+As hypotheses accumulate, understanding of the model deepens.
+Two risks exist:
+- **Learning effect**: Confirmation rate increases → Researcher learns, not the model
+- **Overfitting**: Post-hoc adjustment of hypotheses to match existing results
 
-반대로 확인률이 일정하다면, 이는 모델 자체의 구조적 정확도를 반영한다.
+Conversely, if the confirmation rate is constant, this reflects the model's structural accuracy itself.
 
-## 검증 결과
+## Verification Results
 
-### 구간별 확인률
+### Confirmation Rate by Period
 
 ```
-  구간         확인(✅)  반증(❌)  전체   확인률   비고
+  Period       Confirmed(✅)  Refuted(❌)  Total   Rate     Note
   ──────────────────────────────────────────────────────
-  001 ~ 030    15        2        17     88.2%    초기 탐색
-  031 ~ 060    18        3        21     85.7%    중기 확장
-  061 ~ 095    15        2        17     88.2%    후기 심화
+  001 ~ 030    15            2           17      88.2%    Initial exploration
+  031 ~ 060    18            3           21      85.7%    Middle expansion
+  061 ~ 095    15            2           17      88.2%    Late deepening
   ──────────────────────────────────────────────────────
-  전체         48        7        55     87.3%
+  Total        48            7           55      87.3%
 ```
 
-### 이동평균 (10개 가설 윈도우)
+### Moving Average (10 hypothesis window)
 
 ```
-  윈도우          확인률
+  Window          Confirmation Rate
   001-010         90%
   011-020         85%
   021-030         89%
@@ -42,25 +42,25 @@
   081-095         88%
 ```
 
-### 추세 분석
+### Trend Analysis
 
 ```
-  선형 회귀: 확인률 = 87.1% + 0.02% × (구간 번호)
-  기울기: +0.02% (사실상 0)
-  R² = 0.003 (설명력 없음)
-  p-value > 0.8 (통계적으로 비유의)
+  Linear regression: Confirmation rate = 87.1% + 0.02% × (period number)
+  Slope: +0.02% (essentially 0)
+  R² = 0.003 (no explanatory power)
+  p-value > 0.8 (statistically insignificant)
 
-  → 추세 없음. 확인률은 시간에 대해 일정(flat).
+  → No trend. Confirmation rate is constant (flat) over time.
 ```
 
-## ASCII 그래프: 가설 번호별 정확도 산점도
+## ASCII Graph: Accuracy Scatter Plot by Hypothesis Number
 
 ```
-  확인률 (%)
+  Confirmation Rate (%)
   100 ┤ ●     ●        ●     ●        ●     ●
       │
    90 ┤    ●     ● ●      ●     ●  ●     ●
-      │ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  평균 87.3%
+      │ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Mean 87.3%
    85 ┤  ●        ●  ●      ●           ●
       │
    80 ┤       ●           ●        ●
@@ -68,15 +68,15 @@
    70 ┤
       │
    60 ┤
-      └──┬────┬────┬────┬────┬────┬────┬────┬──→ 가설 번호
+      └──┬────┬────┬────┬────┬────┬────┬────┬──→ Hypothesis number
         001  010  020  030  040  050  060  070  095
 
-  추세선: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  (기울기 ≈ 0)
+  Trend line: ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  (slope ≈ 0)
 ```
 
-이동평균 시각화:
+Moving average visualization:
 ```
-  확인률
+  Confirmation Rate
   95% ┤
       │     ╭──╮         ╭──╮         ╭──╮
   90% ┤  ╭──╯  ╰──╮  ╭──╯  ╰──╮  ╭──╯  ╰──╮
@@ -86,39 +86,39 @@
   80% ┤
       └──┬────┬────┬────┬────┬────┬────┬────→
         001  010  020  030  050  060  080  095
-      ◄── 초기 ──►◄── 중기 ──►◄── 후기 ──►
+      ◄── Early ──►◄── Middle ──►◄── Late ──►
 
-  변동폭: 84% ~ 90% (±3%)
-  → 랜덤 변동 수준, 체계적 추세 없음
+  Variation range: 84% ~ 90% (±3%)
+  → Random variation level, no systematic trend
 ```
 
-## 해석
+## Interpretation
 
-1. **과적합 없음**: 확인률이 올라가지 않으므로, 사후적으로 가설을 맞추고 있지 않다.
-   과적합이 있다면 후기 확인률이 초기보다 높아야 한다.
+1. **No overfitting**: Since confirmation rate doesn't increase, hypotheses aren't being post-hoc adjusted.
+   If overfitting existed, late confirmation rate should be higher than early.
 
-2. **학습 효과 없음**: 연구자가 모델을 더 잘 이해하게 되어도 확인률은 변하지 않는다.
-   이는 확인률이 연구자 능력이 아닌 모델 구조에 의해 결정됨을 시사.
+2. **No learning effect**: Even as researcher better understands the model, confirmation rate doesn't change.
+   This suggests confirmation rate is determined by model structure, not researcher ability.
 
-3. **구조적 정확도 ≈ 5/6**: 87.3%는 모델의 내재적 예측 한계.
-   Compass = 5/6 = 83.3%와 근사적 일치 (가설 070 자기참조).
-   차이 87.3% - 83.3% = 4%는 유도 기반 가설의 초과 정확도.
+3. **Structural accuracy ≈ 5/6**: 87.3% is the model's intrinsic prediction limit.
+   Approximate match with Compass = 5/6 = 83.3% (hypothesis 070 self-reference).
+   Difference 87.3% - 83.3% = 4% is excess accuracy of induction-based hypotheses.
 
-4. **안정성의 의미**: 가설 1번이든 95번이든 같은 확률로 맞는다.
-   이는 모델이 진짜 구조를 포착하고 있다는 간접 증거.
+4. **Meaning of stability**: Hypothesis 1 or 95 are correct with same probability.
+   This is indirect evidence that the model captures real structure.
 
-## 한계
+## Limitations
 
-- 95개 가설 (검증 완료 55개)은 통계적 검정력이 제한적
-- 구간 내 가설 난이도가 균일하지 않을 수 있음
-- 확인/반증 판정 자체의 일관성이 보장되지 않음
+- 95 hypotheses (55 verified) have limited statistical power
+- Hypothesis difficulty within periods may not be uniform
+- Consistency of confirm/refute judgments is not guaranteed
 
-## 검증 방향
+## Verification Direction
 
-- 200개 가설 도달 시 재분석하여 추세 변화 여부 확인
-- 가설 난이도를 독립적으로 평가하여 난이도 보정 확인률 계산
-- 구조적 정확도 5/6와 실측 87.3%의 차이에 대한 이론적 설명
+- Re-analyze when reaching 200 hypotheses to check for trend changes
+- Calculate difficulty-adjusted confirmation rate by independently evaluating hypothesis difficulty
+- Theoretical explanation for the difference between structural accuracy 5/6 and measured 87.3%
 
 ---
 
-*통계 분석. ~87% 일정, 추세 없음 = 과적합 없음 = 구조적 정확도.*
+*Statistical analysis. ~87% constant, no trend = no overfitting = structural accuracy.*

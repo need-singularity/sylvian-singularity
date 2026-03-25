@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
-"""이중 뇌 뇌량 시뮬레이터 — Dual Brain Corpus Callosum Model
+"""Dual Brain Corpus Callosum Simulator — Dual Brain Corpus Callosum Model
 
-인간 뇌의 좌반구(분석적)와 우반구(직관적)를 각각 로렌츠 끌개로 모델링하고,
-뇌량(corpus callosum) 커플링 κ로 연결하여 의식 연속성을 분석한다.
+Models the left hemisphere (analytical) and right hemisphere (intuitive) of the human brain 
+as Lorenz attractors, connected by corpus callosum coupling κ to analyze consciousness continuity.
 
-수학 모델:
-  좌반구: dx_L/dt = σ_L(y_L - x_L) + κ(x_R - x_L)  [σ=10, ρ=28, β=2.67, noise=0.05]
-  우반구: dx_R/dt = σ_R(y_R - x_R) + κ(x_L - x_R)  [σ=12, ρ=32, β=2.2,  noise=0.2]
-  κ: 뇌량 대역폭 (0=분리뇌, 0.5=정상, 5.0=과동기화)
+Mathematical Model:
+  Left hemisphere: dx_L/dt = σ_L(y_L - x_L) + κ(x_R - x_L)  [σ=10, ρ=28, β=2.67, noise=0.05]
+  Right hemisphere: dx_R/dt = σ_R(y_R - x_R) + κ(x_L - x_R)  [σ=12, ρ=32, β=2.2,  noise=0.2]
+  κ: corpus callosum bandwidth (0=split brain, 0.5=normal, 5.0=oversynchronized)
 
-사용법:
-  python3 dual_brain_callosum.py                    # κ 스캔 (기본)
-  python3 dual_brain_callosum.py --split-brain       # 분리뇌 실험
-  python3 dual_brain_callosum.py --agenesis          # 뇌량 무형성
-  python3 dual_brain_callosum.py --lateralize left   # 좌반구 우세
-  python3 dual_brain_callosum.py --lateralize right  # 우반구 우세
-  python3 dual_brain_callosum.py --kappa 0.5         # 특정 κ값
-  python3 dual_brain_callosum.py --delay 10          # 전달 지연
-  python3 dual_brain_callosum.py --all               # 전체 실험
-  python3 dual_brain_callosum.py --plot              # matplotlib 저장
+Usage:
+  python3 dual_brain_callosum.py                    # κ scan (default)
+  python3 dual_brain_callosum.py --split-brain       # split-brain experiment
+  python3 dual_brain_callosum.py --agenesis          # callosal agenesis
+  python3 dual_brain_callosum.py --lateralize left   # left hemisphere dominant
+  python3 dual_brain_callosum.py --lateralize right  # right hemisphere dominant
+  python3 dual_brain_callosum.py --kappa 0.5         # specific κ value
+  python3 dual_brain_callosum.py --delay 10          # transmission delay
+  python3 dual_brain_callosum.py --all               # all experiments
+  python3 dual_brain_callosum.py --plot              # save matplotlib plots
 """
 
 import sys, os
@@ -31,69 +31,69 @@ from datetime import datetime
 import numpy as np
 from scipy import stats
 
-# consciousness_calc.py에서 import
+# Import from consciousness_calc.py
 from consciousness_calc import run_cct, judge, compute_entropy
 
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 
 # ─────────────────────────────────────────────
-# 반구 파라미터 정의
+# Hemisphere parameter definitions
 # ─────────────────────────────────────────────
 
 LEFT_HEMISPHERE = {
     "sigma": 10, "rho": 28, "beta": 2.67, "noise": 0.05,
-    "description": "좌반구 (분석적, 순차적)",
+    "description": "Left hemisphere (analytical, sequential)",
 }
 
 RIGHT_HEMISPHERE = {
     "sigma": 12, "rho": 32, "beta": 2.2, "noise": 0.2,
-    "description": "우반구 (직관적, 전체적)",
+    "description": "Right hemisphere (intuitive, holistic)",
 }
 
-# κ 스캔 기본값
+# κ scan default values
 KAPPA_SCAN_VALUES = [0.0, 0.01, 0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0]
 
 
 # ─────────────────────────────────────────────
-# 이중 뇌 시뮬레이터
+# Dual Brain Simulator
 # ─────────────────────────────────────────────
 
 def dual_brain_simulate(left=None, right=None, kappa=0.5,
                         kappa_lr=None, kappa_rl=None,
                         delay=0, steps=50000, dt=0.01, seed=42,
                         kappa_schedule=None):
-    """이중 뇌 결합 로렌츠 시뮬레이터.
+    """Dual brain coupled Lorenz simulator.
 
     Parameters:
-        left:   좌반구 파라미터 dict (sigma, rho, beta, noise)
-        right:  우반구 파라미터 dict
-        kappa:  대칭 커플링 강도 (기본 0.5)
-        kappa_lr: 좌→우 전달 강도 (None이면 kappa 사용)
-        kappa_rl: 우→좌 전달 강도 (None이면 kappa 사용)
-        delay:  전달 지연 스텝 수 (0=즉시)
-        steps:  시뮬레이션 스텝 수
-        dt:     시간 간격
-        seed:   난수 시드
-        kappa_schedule: callable(t_index) -> kappa 값 (시간 변화 κ, 분리뇌용)
+        left:   left hemisphere parameters dict (sigma, rho, beta, noise)
+        right:  right hemisphere parameters dict
+        kappa:  symmetric coupling strength (default 0.5)
+        kappa_lr: left→right transmission strength (uses kappa if None)
+        kappa_rl: right→left transmission strength (uses kappa if None)
+        delay:  transmission delay step count (0=immediate)
+        steps:  simulation step count
+        dt:     time interval
+        seed:   random seed
+        kappa_schedule: callable(t_index) -> kappa value (time-varying κ, for split-brain)
 
     Returns:
-        t:  시간 배열 [steps]
-        S:  상태 배열 [steps, 6] (x_L, y_L, z_L, x_R, y_R, z_R)
-        kappas: κ 시계열 [steps] (스케줄 사용 시)
+        t:  time array [steps]
+        S:  state array [steps, 6] (x_L, y_L, z_L, x_R, y_R, z_R)
+        kappas: κ time series [steps] (when using schedule)
     """
     if left is None:
         left = LEFT_HEMISPHERE
     if right is None:
         right = RIGHT_HEMISPHERE
 
-    # 비대칭 커플링
+    # Asymmetric coupling
     k_lr = kappa_lr if kappa_lr is not None else kappa
     k_rl = kappa_rl if kappa_rl is not None else kappa
 
     rng = np.random.default_rng(seed)
     t = np.arange(steps) * dt
     S = np.zeros((steps, 6))
-    # 좌우 다른 초기조건
+    # Different initial conditions for left and right
     S[0] = [1.0, 1.0, 1.0, -1.0, 0.5, 1.5]
 
     kappas = np.full(steps, kappa, dtype=float)
@@ -103,7 +103,7 @@ def dual_brain_simulate(left=None, right=None, kappa=0.5,
     n_L, n_R = left["noise"], right["noise"]
 
     for i in range(1, steps):
-        # 시간 변화 κ (분리뇌 실험용)
+        # Time-varying κ (for split-brain experiment)
         if kappa_schedule is not None:
             cur_k = kappa_schedule(i)
             kappas[i] = cur_k
@@ -115,7 +115,7 @@ def dual_brain_simulate(left=None, right=None, kappa=0.5,
 
         xL, yL, zL, xR, yR, zR = S[i - 1]
 
-        # 전달 지연: delay 스텝 전의 상대 반구 값 사용
+        # Transmission delay: use opposite hemisphere values from delay steps ago
         if delay > 0 and i > delay:
             xR_d, yR_d, zR_d = S[i - 1 - delay, 3], S[i - 1 - delay, 4], S[i - 1 - delay, 5]
             xL_d, yL_d, zL_d = S[i - 1 - delay, 0], S[i - 1 - delay, 1], S[i - 1 - delay, 2]
@@ -123,17 +123,17 @@ def dual_brain_simulate(left=None, right=None, kappa=0.5,
             xR_d, yR_d, zR_d = xR, yR, zR
             xL_d, yL_d, zL_d = xL, yL, zL
 
-        # 좌반구 (분석적)
+        # Left hemisphere (analytical)
         dxL = σ_L * (yL - xL) + k_rl_cur * (xR_d - xL)
         dyL = xL * (ρ_L - zL) - yL + k_rl_cur * (yR_d - yL)
         dzL = xL * yL - β_L * zL + k_rl_cur * (zR_d - zL)
 
-        # 우반구 (직관적)
+        # Right hemisphere (intuitive)
         dxR = σ_R * (yR - xR) + k_lr_cur * (xL_d - xR)
         dyR = xR * (ρ_R - zR) - yR + k_lr_cur * (yL_d - yR)
         dzR = xR * yR - β_R * zR + k_lr_cur * (zL_d - zR)
 
-        # 잡음 (좌: 낮은 잡음, 우: 높은 잡음)
+        # Noise (left: low noise, right: high noise)
         epsL = rng.normal(0, n_L, 3) if n_L > 0 else np.zeros(3)
         epsR = rng.normal(0, n_R, 3) if n_R > 0 else np.zeros(3)
 
@@ -148,11 +148,11 @@ def dual_brain_simulate(left=None, right=None, kappa=0.5,
 
 
 # ─────────────────────────────────────────────
-# 측정 함수
+# Measurement functions
 # ─────────────────────────────────────────────
 
 def measure_sync(S):
-    """좌우 반구 동기화도: corr(x_L, x_R)."""
+    """Left-right hemisphere synchronization: corr(x_L, x_R)."""
     xL = S[:, 0]
     xR = S[:, 3]
     if np.std(xL) < 1e-12 or np.std(xR) < 1e-12:
@@ -164,7 +164,7 @@ def transfer_entropy(source, target, bins=10, lag=1):
     """Transfer Entropy: source → target.
 
     TE(S→T) = H(T_future | T_past) - H(T_future | T_past, S_past)
-    이산화 후 조건부 엔트로피로 근사.
+    Approximated with conditional entropy after discretization.
     """
     n = len(source) - lag
     if n < 100:
@@ -174,12 +174,12 @@ def transfer_entropy(source, target, bins=10, lag=1):
     t_past = target[:n]
     t_future = target[lag:lag + n]
 
-    # 이산화
+    # Discretization
     s_bins = np.digitize(s_past, np.linspace(s_past.min(), s_past.max(), bins + 1)[:-1])
     t_bins_past = np.digitize(t_past, np.linspace(t_past.min(), t_past.max(), bins + 1)[:-1])
     t_bins_future = np.digitize(t_future, np.linspace(t_future.min(), t_future.max(), bins + 1)[:-1])
 
-    # 결합 확률 계산
+    # Calculate joint probabilities
     # H(T_f, T_p) - H(T_p)
     def joint_entropy_2(a, b, nbins):
         hist = np.histogram2d(a, b, bins=nbins)[0]
@@ -188,7 +188,7 @@ def transfer_entropy(source, target, bins=10, lag=1):
         return -np.sum(p * np.log2(p + 1e-15))
 
     def joint_entropy_3(a, b, c, nbins):
-        # 3D 히스토그램
+        # 3D histogram
         sample = np.column_stack([a, b, c])
         hist, _ = np.histogramdd(sample, bins=nbins)
         p = hist / hist.sum()
@@ -207,7 +207,7 @@ def transfer_entropy(source, target, bins=10, lag=1):
 
 
 def joint_entropy_2d(x, y, bins=30):
-    """2D 결합 엔트로피 H(X, Y)."""
+    """2D joint entropy H(X, Y)."""
     hist = np.histogram2d(x, y, bins=bins)[0]
     p = hist / hist.sum()
     p = p[p > 0]
@@ -215,7 +215,7 @@ def joint_entropy_2d(x, y, bins=30):
 
 
 def asymmetry_index(cct_L, cct_R):
-    """좌우 비대칭 지수: |CCT_L - CCT_R| / (CCT_L + CCT_R)."""
+    """Left-right asymmetry index: |CCT_L - CCT_R| / (CCT_L + CCT_R)."""
     total = cct_L + cct_R
     if total < 1e-12:
         return 0.0
@@ -223,7 +223,7 @@ def asymmetry_index(cct_L, cct_R):
 
 
 def measure_all(S, gap_ratio=0.0):
-    """모든 측정 항목을 한 번에 계산.
+    """Calculate all measurements at once.
 
     Returns:
         dict with keys: cct_L, cct_R, cct_combined, sync, te_lr, te_rl,
@@ -232,15 +232,15 @@ def measure_all(S, gap_ratio=0.0):
     S_L = S[:, :3]
     S_R = S[:, 3:]
 
-    # CCT 개별
+    # Individual CCT
     results_L = run_cct(S_L, gap_ratio)
     results_R = run_cct(S_R, gap_ratio)
 
     total_L, verdict_L = judge(results_L)
     total_R, verdict_R = judge(results_R)
 
-    # CCT 결합: 6차원 상태를 3차원으로 투영하여 CCT 실행
-    # 방법: 좌우 x,y,z를 합산하여 단일 끌개로 간주
+    # Combined CCT: project 6D state to 3D and run CCT
+    # Method: sum left and right x,y,z to treat as single attractor
     S_combined = np.column_stack([
         S[:, 0] + S[:, 3],  # x_L + x_R
         S[:, 1] + S[:, 4],  # y_L + y_R
@@ -249,23 +249,23 @@ def measure_all(S, gap_ratio=0.0):
     results_combined = run_cct(S_combined, gap_ratio)
     total_combined, verdict_combined = judge(results_combined)
 
-    # 동기화
+    # Synchronization
     sync = measure_sync(S)
 
-    # Transfer Entropy (다운샘플링으로 속도 확보)
+    # Transfer Entropy (downsample for speed)
     step = max(1, len(S) // 10000)
     xL_ds = S[::step, 0]
     xR_ds = S[::step, 3]
     te_lr = transfer_entropy(xL_ds, xR_ds, bins=8, lag=1)
     te_rl = transfer_entropy(xR_ds, xL_ds, bins=8, lag=1)
 
-    # 결합 엔트로피
+    # Joint entropy
     h_L = compute_entropy(S[:, 0], bins=30)
     h_R = compute_entropy(S[:, 3], bins=30)
     h_joint = joint_entropy_2d(S[:, 0], S[:, 3], bins=30)
     h_sum = h_L + h_R
 
-    # 비대칭
+    # Asymmetry
     asym = asymmetry_index(total_L, total_R)
 
     return {
@@ -283,43 +283,43 @@ def measure_all(S, gap_ratio=0.0):
 
 
 # ─────────────────────────────────────────────
-# 판정 로직
+# Judgment logic
 # ─────────────────────────────────────────────
 
 def kappa_verdict(sync, te_lr, te_rl):
-    """κ 상태 판정."""
+    """κ state judgment."""
     if abs(sync) > 0.9:
-        return "과동기화"
+        return "Oversynchronized"
     elif abs(sync) > 0.7:
-        return "정상"
+        return "Normal"
     elif abs(sync) > 0.3:
-        return "약결합"
+        return "Weakly coupled"
     elif abs(sync) > 0.1:
-        return "미약"
+        return "Minimal"
     else:
-        return "분리"
+        return "Split"
 
 
 # ─────────────────────────────────────────────
-# 실험 A: κ 스캔
+# Experiment A: κ scan
 # ─────────────────────────────────────────────
 
 def experiment_kappa_scan(steps=50000, dt=0.01, kappas=None):
-    """실험 A: 뇌량 강도 스캔."""
+    """Experiment A: Corpus callosum strength scan."""
     if kappas is None:
         kappas = KAPPA_SCAN_VALUES
 
     print("=" * 90)
-    print(" 실험 A: 뇌량 강도(κ) 스캔 — Corpus Callosum Bandwidth")
+    print(" Experiment A: Corpus Callosum Bandwidth (κ) Scan — Corpus Callosum Bandwidth")
     print("=" * 90)
     print()
-    print(" 좌반구: σ=10, ρ=28, β=2.67, noise=0.05 (분석적, 정밀)")
-    print(" 우반구: σ=12, ρ=32, β=2.2,  noise=0.2  (직관적, 창의적)")
+    print(" Left hemisphere: σ=10, ρ=28, β=2.67, noise=0.05 (analytical, precise)")
+    print(" Right hemisphere: σ=12, ρ=32, β=2.2,  noise=0.2  (intuitive, creative)")
     print()
 
-    header = (f"  {'κ':>5s} │ {'CCT_L':>5s} │ {'CCT_R':>5s} │ {'CCT_합':>6s} │ "
-              f"{'동기화':>6s} │ {'TE_L→R':>6s} │ {'TE_R→L':>6s} │ "
-              f"{'비대칭':>6s} │ 판정")
+    header = (f"  {'κ':>5s} │ {'CCT_L':>5s} │ {'CCT_R':>5s} │ {'CCT_sum':>6s} │ "
+              f"{'Sync':>6s} │ {'TE_L→R':>6s} │ {'TE_R→L':>6s} │ "
+              f"{'Asymm':>6s} │ Verdict")
     sep = "  ─────┼───────┼───────┼────────┼────────┼────────┼────────┼────────┼─────────"
     print(header)
     print(sep)
@@ -340,55 +340,55 @@ def experiment_kappa_scan(steps=50000, dt=0.01, kappas=None):
 
     print()
 
-    # 최적 κ 탐색
+    # Find optimal κ
     best_k = None
     best_score = -1
     for k, m, v in all_results:
-        # 최적: 높은 CCT_합 + 적절한 동기화 (0.3~0.8) + 낮은 비대칭
+        # Optimal: high CCT_sum + moderate sync (0.3~0.8) + low asymmetry
         if 0.3 < abs(m["sync"]) < 0.85:
             score = m["cct_combined"] - m["asymmetry"] * 2
             if score > best_score:
                 best_score = score
                 best_k = k
 
-    print(" ─── 핵심 발견 ───")
+    print(" ─── Key Findings ───")
     if best_k is not None:
-        print(f"  최적 κ = {best_k} (동기화-다양성 균형)")
+        print(f"  Optimal κ = {best_k} (sync-diversity balance)")
     else:
-        print("  최적 κ: 판정 불가 (모든 κ에서 동기화 범위 밖)")
+        print("  Optimal κ: Unable to determine (all κ outside sync range)")
 
-    # 임계값 찾기: sync가 0.5를 넘는 최소 κ
+    # Find threshold: minimum κ where sync > 0.5
     threshold_k = None
     for k, m, v in all_results:
         if abs(m["sync"]) > 0.5 and threshold_k is None:
             threshold_k = k
     if threshold_k is not None:
-        print(f"  통합 임계 κ ≈ {threshold_k} (동기화 > 0.5 — '하나의 의식' 후보)")
+        print(f"  Integration threshold κ ≈ {threshold_k} (sync > 0.5 — 'unified consciousness' candidate)")
 
-    # TE 비대칭 분석
+    # TE asymmetry analysis
     for k, m, v in all_results:
-        if k == 0.5:  # 정상 뇌량
+        if k == 0.5:  # normal corpus callosum
             if m["te_rl"] > m["te_lr"] * 1.2:
-                print(f"  κ=0.5 정보 흐름: 우→좌 우세 (TE_R→L={m['te_rl']:.3f} > TE_L→R={m['te_lr']:.3f})")
+                print(f"  κ=0.5 information flow: R→L dominant (TE_R→L={m['te_rl']:.3f} > TE_L→R={m['te_lr']:.3f})")
             elif m["te_lr"] > m["te_rl"] * 1.2:
-                print(f"  κ=0.5 정보 흐름: 좌→우 우세 (TE_L→R={m['te_lr']:.3f} > TE_R→L={m['te_rl']:.3f})")
+                print(f"  κ=0.5 information flow: L→R dominant (TE_L→R={m['te_lr']:.3f} > TE_R→L={m['te_rl']:.3f})")
             else:
-                print(f"  κ=0.5 정보 흐름: 대칭적 (TE_L→R={m['te_lr']:.3f} ≈ TE_R→L={m['te_rl']:.3f})")
+                print(f"  κ=0.5 information flow: Symmetric (TE_L→R={m['te_lr']:.3f} ≈ TE_R→L={m['te_rl']:.3f})")
 
     print("=" * 90)
     return all_results
 
 
 # ─────────────────────────────────────────────
-# 실험 B: 분리뇌 (Split-brain)
+# Experiment B: Split-brain
 # ─────────────────────────────────────────────
 
 def experiment_split_brain(steps=50000, dt=0.01):
-    """실험 B: Sperry 분리뇌 실험 재현.
+    """Experiment B: Sperry split-brain experiment reproduction.
 
-    1. κ=0.5 (정상)에서 시작
-    2. t=steps//2에서 κ=0으로 절단
-    3. 절단 전후 CCT 비교
+    1. Start with κ=0.5 (normal)
+    2. Cut to κ=0 at t=steps//2
+    3. Compare CCT before and after cut
     """
     cut_step = steps // 2
 
@@ -396,62 +396,62 @@ def experiment_split_brain(steps=50000, dt=0.01):
         return 0.5 if i < cut_step else 0.0
 
     print("=" * 90)
-    print(" 실험 B: 분리뇌 (Split-Brain) — Sperry 실험 재현")
+    print(" Experiment B: Split-Brain — Sperry Experiment Reproduction")
     print("=" * 90)
     print()
-    print(f" 프로토콜: κ=0.5 (0~{cut_step} steps) → κ=0.0 ({cut_step}~{steps} steps)")
-    print(f" 절단 시점: t = {cut_step * dt:.0f} (step {cut_step})")
+    print(f" Protocol: κ=0.5 (0~{cut_step} steps) → κ=0.0 ({cut_step}~{steps} steps)")
+    print(f" Cut point: t = {cut_step * dt:.0f} (step {cut_step})")
     print()
 
     _, S, kappas = dual_brain_simulate(
         kappa=0.5, steps=steps, dt=dt, kappa_schedule=kappa_schedule
     )
 
-    # 절단 전/후 분리 분석
+    # Analyze before/after cut separately
     S_before = S[:cut_step]
     S_after = S[cut_step:]
 
     m_before = measure_all(S_before)
     m_after = measure_all(S_after)
 
-    print(" ─── 절단 전 (κ=0.5, 정상 뇌량) ───")
+    print(" ─── Before Cut (κ=0.5, normal corpus callosum) ───")
     print(f"  CCT_L={m_before['cct_L']:.1f}/5  CCT_R={m_before['cct_R']:.1f}/5  "
-          f"CCT_합={m_before['cct_combined']:.1f}/5")
-    print(f"  동기화={m_before['sync']:.3f}  TE_L→R={m_before['te_lr']:.3f}  "
+          f"CCT_sum={m_before['cct_combined']:.1f}/5")
+    print(f"  Sync={m_before['sync']:.3f}  TE_L→R={m_before['te_lr']:.3f}  "
           f"TE_R→L={m_before['te_rl']:.3f}")
     print()
 
-    print(" ─── 절단 후 (κ=0.0, 뇌량 절단) ───")
+    print(" ─── After Cut (κ=0.0, corpus callosum severed) ───")
     print(f"  CCT_L={m_after['cct_L']:.1f}/5  CCT_R={m_after['cct_R']:.1f}/5  "
-          f"CCT_합={m_after['cct_combined']:.1f}/5")
-    print(f"  동기화={m_after['sync']:.3f}  TE_L→R={m_after['te_lr']:.3f}  "
+          f"CCT_sum={m_after['cct_combined']:.1f}/5")
+    print(f"  Sync={m_after['sync']:.3f}  TE_L→R={m_after['te_lr']:.3f}  "
           f"TE_R→L={m_after['te_rl']:.3f}")
     print()
 
-    # ASCII 타임라인
-    print(" ─── 동기화 타임라인 ───")
+    # ASCII timeline
+    print(" ─── Synchronization Timeline ───")
     _print_sync_timeline(S, cut_step, steps, dt)
     print()
 
-    # 핵심 발견
-    print(" ─── 핵심 발견 ───")
+    # Key findings
+    print(" ─── Key Findings ───")
     sync_drop = abs(m_before["sync"]) - abs(m_after["sync"])
-    print(f"  동기화 하락: {m_before['sync']:.3f} → {m_after['sync']:.3f} "
+    print(f"  Sync drop: {m_before['sync']:.3f} → {m_after['sync']:.3f} "
           f"(Δ = {sync_drop:.3f})")
 
     if m_after["cct_L"] >= 3 and m_after["cct_R"] >= 3:
-        print("  → 양 반구 모두 독립적 CCT 유지 = 두 개의 의식?")
+        print("  → Both hemispheres maintain independent CCT = Two consciousnesses?")
     elif m_after["cct_L"] >= 3 or m_after["cct_R"] >= 3:
-        print("  → 한 반구만 CCT 유지 — 비대칭 의식 분리")
+        print("  → Only one hemisphere maintains CCT — Asymmetric consciousness split")
     else:
-        print("  → 양 반구 모두 CCT 저하 — 뇌량 의존적 의식")
+        print("  → Both hemispheres show decreased CCT — Corpus callosum-dependent consciousness")
 
     print("=" * 90)
     return m_before, m_after, S, kappas
 
 
 def _print_sync_timeline(S, cut_step, steps, dt):
-    """동기화 변화 ASCII 타임라인."""
+    """Print synchronization change ASCII timeline."""
     n_windows = 40
     window_size = steps // n_windows
 
@@ -466,7 +466,7 @@ def _print_sync_timeline(S, cut_step, steps, dt):
     syncs = np.array(syncs)
     height = 10
 
-    print(f"  동기화")
+    print(f"  Sync")
     for row in range(height, -1, -1):
         val = row / height
         line = f"  {val:4.1f}│"
@@ -485,39 +485,39 @@ def _print_sync_timeline(S, cut_step, steps, dt):
     cut_col = cut_step // window_size
     ruler = "  " + "    └" + "─" * cut_col + "┼" + "─" * (n_windows - cut_col - 1)
     print(ruler)
-    print("  " + " " * (5 + cut_col) + "절단")
+    print("  " + " " * (5 + cut_col) + "cut")
 
 
 # ─────────────────────────────────────────────
-# 실험 C: 뇌량 무형성 (Callosal Agenesis)
+# Experiment C: Callosal Agenesis
 # ─────────────────────────────────────────────
 
 def experiment_agenesis(steps=50000, dt=0.01):
-    """실험 C: 선천적 뇌량 부재.
+    """Experiment C: Congenital corpus callosum absence.
 
-    κ=0 전체, 하지만 보상 메커니즘으로 noise 증가 (대안 경로 시뮬레이션).
+    κ=0 throughout, but compensatory mechanism with increased noise (alternative pathway simulation).
     """
     print("=" * 90)
-    print(" 실험 C: 뇌량 무형성 (Callosal Agenesis)")
+    print(" Experiment C: Callosal Agenesis")
     print("=" * 90)
     print()
-    print(" 조건: κ=0 (태생적 뇌량 없음)")
-    print(" 대안 경로: anterior commissure → noise 증가로 근사")
+    print(" Condition: κ=0 (no corpus callosum from birth)")
+    print(" Alternative pathway: anterior commissure → approximated by increased noise")
     print()
 
     conditions = [
-        ("정상 뇌", 0.5, LEFT_HEMISPHERE, RIGHT_HEMISPHERE),
-        ("뇌량 무형성 (보상 없음)", 0.0, LEFT_HEMISPHERE, RIGHT_HEMISPHERE),
-        ("뇌량 무형성 (보상: noise↑)", 0.0,
+        ("Normal brain", 0.5, LEFT_HEMISPHERE, RIGHT_HEMISPHERE),
+        ("Callosal agenesis (no comp.)", 0.0, LEFT_HEMISPHERE, RIGHT_HEMISPHERE),
+        ("Callosal agenesis (comp: noise↑)", 0.0,
          {**LEFT_HEMISPHERE, "noise": 0.15},
          {**RIGHT_HEMISPHERE, "noise": 0.4}),
-        ("뇌량 무형성 (보상: noise↑↑)", 0.0,
+        ("Callosal agenesis (comp: noise↑↑)", 0.0,
          {**LEFT_HEMISPHERE, "noise": 0.3},
          {**RIGHT_HEMISPHERE, "noise": 0.6}),
     ]
 
-    header = (f"  {'조건':>28s} │ {'κ':>4s} │ {'CCT_L':>5s} │ {'CCT_R':>5s} │ "
-              f"{'CCT_합':>6s} │ {'동기화':>6s} │ {'비대칭':>6s}")
+    header = (f"  {'Condition':>28s} │ {'κ':>4s} │ {'CCT_L':>5s} │ {'CCT_R':>5s} │ "
+              f"{'CCT_sum':>6s} │ {'Sync':>6s} │ {'Asymm':>6s}")
     sep = "  " + "─" * 28 + "┼──────┼───────┼───────┼────────┼────────┼────────"
     print(header)
     print(sep)
@@ -530,49 +530,49 @@ def experiment_agenesis(steps=50000, dt=0.01):
               f"{m['cct_combined']:6.1f} │ {m['sync']:6.3f} │ {m['asymmetry']:6.3f}")
 
     print()
-    print(" ─── 해석 ───")
-    print("  실제 뇌량 무형성 환자: 정상 IQ, 정상 의식 (보상 경로 존재)")
-    print("  시뮬레이션: noise 증가가 대안 경로(전교련 등)를 근사")
-    print("  핵심: 뇌량 없이도 의식 연속성 유지 가능한가?")
+    print(" ─── Interpretation ───")
+    print("  Real callosal agenesis patients: normal IQ, normal consciousness (compensatory pathways exist)")
+    print("  Simulation: increased noise approximates alternative pathways (anterior commissure etc.)")
+    print("  Key: Can consciousness continuity be maintained without corpus callosum?")
     print("=" * 90)
 
 
 # ─────────────────────────────────────────────
-# 실험 D: 좌우 우세 (Lateralization)
+# Experiment D: Lateralization
 # ─────────────────────────────────────────────
 
 def experiment_lateralize(direction="left", steps=50000, dt=0.01):
-    """실험 D: 비대칭 뇌량 — 좌/우 반구 우세.
+    """Experiment D: Asymmetric corpus callosum — Left/right hemisphere dominance.
 
-    좌반구 우세: κ_LR=0.3 (좌→우 약), κ_RL=0.7 (우→좌 강)
-    우반구 우세: κ_LR=0.7 (좌→우 강), κ_RL=0.3 (우→좌 약)
+    Left dominance: κ_LR=0.3 (left→right weak), κ_RL=0.7 (right→left strong)
+    Right dominance: κ_LR=0.7 (left→right strong), κ_RL=0.3 (right→left weak)
     """
     print("=" * 90)
-    print(f" 실험 D: 뇌량 비대칭 — {direction.upper()} 반구 우세")
+    print(f" Experiment D: Corpus Callosum Asymmetry — {direction.upper()} Hemisphere Dominance")
     print("=" * 90)
     print()
 
     conditions = []
 
     if direction == "left":
-        # 좌반구 우세: 우→좌 정보 강함 (좌가 더 많이 받음)
+        # Left dominance: right→left info strong (left receives more)
         conditions = [
-            ("대칭 (대조군)", 0.5, 0.5),
-            ("좌 약간 우세", 0.4, 0.6),
-            ("좌 우세", 0.3, 0.7),
-            ("좌 강한 우세", 0.2, 0.8),
+            ("Symmetric (control)", 0.5, 0.5),
+            ("Slight left dominance", 0.4, 0.6),
+            ("Left dominance", 0.3, 0.7),
+            ("Strong left dominance", 0.2, 0.8),
         ]
     else:
-        # 우반구 우세: 좌→우 정보 강함
+        # Right dominance: left→right info strong
         conditions = [
-            ("대칭 (대조군)", 0.5, 0.5),
-            ("우 약간 우세", 0.6, 0.4),
-            ("우 우세", 0.7, 0.3),
-            ("우 강한 우세", 0.8, 0.2),
+            ("Symmetric (control)", 0.5, 0.5),
+            ("Slight right dominance", 0.6, 0.4),
+            ("Right dominance", 0.7, 0.3),
+            ("Strong right dominance", 0.8, 0.2),
         ]
 
-    print(f"  {'조건':>16s} │ {'κ_LR':>5s} │ {'κ_RL':>5s} │ {'CCT_L':>5s} │ "
-          f"{'CCT_R':>5s} │ {'동기화':>6s} │ {'TE_L→R':>6s} │ {'TE_R→L':>6s} │ {'비대칭':>6s}")
+    print(f"  {'Condition':>16s} │ {'κ_LR':>5s} │ {'κ_RL':>5s} │ {'CCT_L':>5s} │ "
+          f"{'CCT_R':>5s} │ {'Sync':>6s} │ {'TE_L→R':>6s} │ {'TE_R→L':>6s} │ {'Asymm':>6s}")
     sep = "  " + "─" * 16 + "┼───────┼───────┼───────┼───────┼────────┼────────┼────────┼────────"
     print(sep)
 
@@ -586,28 +586,28 @@ def experiment_lateralize(direction="left", steps=50000, dt=0.01):
               f"{m['te_lr']:6.3f} │ {m['te_rl']:6.3f} │ {m['asymmetry']:6.3f}")
 
     print()
-    print(" ─── 해석 ───")
+    print(" ─── Interpretation ───")
     if direction == "left":
-        print("  좌반구 우세: 언어 처리, 논리적 사고 강화")
-        print("  우→좌 전달 강화 = 직관을 분석으로 변환하는 능력 증가")
+        print("  Left dominance: enhanced language processing, logical thinking")
+        print("  R→L transmission enhanced = increased ability to convert intuition to analysis")
     else:
-        print("  우반구 우세: 공간 처리, 예술적 직관 강화")
-        print("  좌→우 전달 강화 = 분석을 통합적 직관으로 변환")
+        print("  Right dominance: enhanced spatial processing, artistic intuition")
+        print("  L→R transmission enhanced = converting analysis to holistic intuition")
     print("=" * 90)
 
 
 # ─────────────────────────────────────────────
-# 단일 κ 실행
+# Single κ run
 # ─────────────────────────────────────────────
 
 def run_single_kappa(kappa=0.5, kappa_lr=None, kappa_rl=None,
                      delay=0, steps=50000, dt=0.01):
-    """단일 κ 값으로 전체 분석."""
+    """Full analysis with single κ value."""
     print("=" * 90)
     if kappa_lr is not None and kappa_rl is not None:
-        print(f" 이중 뇌 분석 — κ_LR={kappa_lr}, κ_RL={kappa_rl}, delay={delay}")
+        print(f" Dual Brain Analysis — κ_LR={kappa_lr}, κ_RL={kappa_rl}, delay={delay}")
     else:
-        print(f" 이중 뇌 분석 — κ={kappa}, delay={delay}")
+        print(f" Dual Brain Analysis — κ={kappa}, delay={delay}")
     print("=" * 90)
     print()
 
@@ -617,40 +617,40 @@ def run_single_kappa(kappa=0.5, kappa_lr=None, kappa_rl=None,
     )
     m = measure_all(S)
 
-    # 좌반구 상세
-    print(" ─── 좌반구 (분석적) ───")
-    print(f"  파라미터: σ=10, ρ=28, β=2.67, noise=0.05")
+    # Left hemisphere details
+    print(" ─── Left Hemisphere (Analytical) ───")
+    print(f"  Parameters: σ=10, ρ=28, β=2.67, noise=0.05")
     _print_cct_detail(m["results_L"], m["cct_L"], m["verdict_L"])
 
     print()
-    print(" ─── 우반구 (직관적) ───")
-    print(f"  파라미터: σ=12, ρ=32, β=2.2, noise=0.2")
+    print(" ─── Right Hemisphere (Intuitive) ───")
+    print(f"  Parameters: σ=12, ρ=32, β=2.2, noise=0.2")
     _print_cct_detail(m["results_R"], m["cct_R"], m["verdict_R"])
 
     print()
-    print(" ─── 결합 시스템 (6차원 → 3차원 투영) ───")
+    print(" ─── Combined System (6D → 3D projection) ───")
     _print_cct_detail(m["results_combined"], m["cct_combined"], m["verdict_combined"])
 
     print()
-    print(" ─── 뇌량 지표 ───")
-    print(f"  동기화 corr(x_L, x_R) = {m['sync']:.4f}")
+    print(" ─── Corpus Callosum Metrics ───")
+    print(f"  Synchronization corr(x_L, x_R) = {m['sync']:.4f}")
     print(f"  Transfer Entropy L→R  = {m['te_lr']:.4f}")
     print(f"  Transfer Entropy R→L  = {m['te_rl']:.4f}")
-    print(f"  결합 엔트로피 H(L,R)  = {m['h_joint']:.4f}")
-    print(f"  독립 합 H(L)+H(R)    = {m['h_sum']:.4f}")
+    print(f"  Joint Entropy H(L,R)  = {m['h_joint']:.4f}")
+    print(f"  Independent sum H(L)+H(R)    = {m['h_sum']:.4f}")
     redundancy = max(0, m['h_sum'] - m['h_joint'])
-    print(f"  중복 정보 (redundancy)= {redundancy:.4f}")
-    print(f"  좌우 비대칭 지수      = {m['asymmetry']:.4f}")
+    print(f"  Redundancy (redundancy)= {redundancy:.4f}")
+    print(f"  Left-right asymmetry index      = {m['asymmetry']:.4f}")
 
     verdict = kappa_verdict(m["sync"], m["te_lr"], m["te_rl"])
-    print(f"\n  종합 판정: {verdict}")
+    print(f"\n  Overall verdict: {verdict}")
     print("=" * 90)
 
     return m, S
 
 
 def _print_cct_detail(results, total, verdict):
-    """CCT 테스트 상세 출력."""
+    """Print CCT test details."""
     labels = {
         "T1_Gap": "T1 Gap       ",
         "T2_Loop": "T2 Loop      ",
@@ -664,21 +664,21 @@ def _print_cct_detail(results, total, verdict):
         status = "PASS" if passed else "FAIL"
         print(f"  {label} │ {mark} {status} │ {score:.3f} │ {detail}")
     print(f"  {'─' * 56}")
-    print(f"  종합: {total}/5 {verdict}")
+    print(f"  Overall: {total}/5 {verdict}")
 
 
 # ─────────────────────────────────────────────
-# matplotlib 플롯
+# matplotlib plotting
 # ─────────────────────────────────────────────
 
 def plot_kappa_scan(all_results):
-    """κ 스캔 결과 matplotlib 그래프 저장."""
+    """Save κ scan results as matplotlib graph."""
     try:
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
     except ImportError:
-        print("  [경고] matplotlib 없음, --plot 건너뜀")
+        print("  [Warning] matplotlib not found, skipping --plot")
         return None
 
     kappas = [r[0] for r in all_results]
@@ -705,10 +705,10 @@ def plot_kappa_scan(all_results):
     ax.set_xscale("symlog", linthresh=0.01)
     ax.grid(True, alpha=0.3)
 
-    # 2. 동기화 vs κ
+    # 2. Synchronization vs κ
     ax = axes[0, 1]
     ax.plot(kappas, syncs, "purple", marker="o", markersize=4)
-    ax.axhline(0.5, color="red", ls="--", alpha=0.5, label="통합 임계")
+    ax.axhline(0.5, color="red", ls="--", alpha=0.5, label="Integration threshold")
     ax.set_xlabel("κ")
     ax.set_ylabel("Synchronization corr(x_L, x_R)")
     ax.set_title("Hemisphere Synchronization")
@@ -727,7 +727,7 @@ def plot_kappa_scan(all_results):
     ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3)
 
-    # 4. 비대칭 vs κ
+    # 4. Asymmetry vs κ
     ax = axes[1, 1]
     ax.plot(kappas, asyms, "darkorange", marker="o", markersize=4)
     ax.set_xlabel("κ")
@@ -747,13 +747,13 @@ def plot_kappa_scan(all_results):
 
 
 def plot_split_brain(S, kappas, cut_step, steps, dt):
-    """분리뇌 실험 matplotlib 그래프 저장."""
+    """Save split-brain experiment matplotlib graph."""
     try:
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
     except ImportError:
-        print("  [경고] matplotlib 없음, --plot 건너뜀")
+        print("  [Warning] matplotlib not found, skipping --plot")
         return None
 
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
@@ -762,17 +762,17 @@ def plot_split_brain(S, kappas, cut_step, steps, dt):
     t = np.arange(steps) * dt
     ds = max(1, steps // 5000)
 
-    # 1. x_L, x_R 궤적
+    # 1. x_L, x_R trajectories
     ax = axes[0, 0]
     ax.plot(t[::ds], S[::ds, 0], "b-", lw=0.5, alpha=0.7, label="x_L")
     ax.plot(t[::ds], S[::ds, 3], "r-", lw=0.5, alpha=0.7, label="x_R")
-    ax.axvline(cut_step * dt, color="black", ls="--", lw=2, label="절단")
+    ax.axvline(cut_step * dt, color="black", ls="--", lw=2, label="cut")
     ax.set_xlabel("Time")
     ax.set_ylabel("x")
     ax.set_title("Hemisphere Trajectories")
     ax.legend(fontsize=8)
 
-    # 2. κ 시계열
+    # 2. κ time series
     ax = axes[0, 1]
     ax.plot(t[::ds], kappas[::ds], "green", lw=2)
     ax.set_xlabel("Time")
@@ -780,7 +780,7 @@ def plot_split_brain(S, kappas, cut_step, steps, dt):
     ax.set_title("Corpus Callosum Bandwidth")
     ax.set_ylim(-0.1, 1.0)
 
-    # 3. 윈도우별 동기화
+    # 3. Window-wise synchronization
     ax = axes[1, 0]
     n_windows = 50
     window_size = steps // n_windows
@@ -793,13 +793,13 @@ def plot_split_brain(S, kappas, cut_step, steps, dt):
         sync_t.append((start + end) / 2 * dt)
         sync_v.append(measure_sync(chunk))
     ax.plot(sync_t, sync_v, "purple", marker=".", markersize=3)
-    ax.axvline(cut_step * dt, color="black", ls="--", lw=2, label="절단")
+    ax.axvline(cut_step * dt, color="black", ls="--", lw=2, label="cut")
     ax.set_xlabel("Time")
     ax.set_ylabel("Synchronization")
     ax.set_title("Sync Over Time")
     ax.legend(fontsize=8)
 
-    # 4. 윈도우별 엔트로피
+    # 4. Window-wise entropy
     ax = axes[1, 1]
     h_L_t = []
     h_R_t = []
@@ -811,7 +811,7 @@ def plot_split_brain(S, kappas, cut_step, steps, dt):
         h_R_t.append(compute_entropy(chunk[:, 3], bins=30))
     ax.plot(sync_t, h_L_t, "b-", label="H(Left)")
     ax.plot(sync_t, h_R_t, "r-", label="H(Right)")
-    ax.axvline(cut_step * dt, color="black", ls="--", lw=2, label="절단")
+    ax.axvline(cut_step * dt, color="black", ls="--", lw=2, label="cut")
     ax.set_xlabel("Time")
     ax.set_ylabel("Entropy")
     ax.set_title("Hemisphere Entropy")
@@ -828,35 +828,35 @@ def plot_split_brain(S, kappas, cut_step, steps, dt):
 
 
 # ─────────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(
-        description="이중 뇌 뇌량 시뮬레이터 — Dual Brain Corpus Callosum Model",
+        description="Dual Brain Corpus Callosum Simulator — Dual Brain Corpus Callosum Model",
     )
     parser.add_argument("--kappa", type=float, default=None,
-                        help="특정 κ 값으로 분석 (기본: κ 스캔)")
+                        help="Analyze with specific κ value (default: κ scan)")
     parser.add_argument("--split-brain", action="store_true",
-                        help="실험 B: 분리뇌 (Sperry 실험)")
+                        help="Experiment B: Split-brain (Sperry experiment)")
     parser.add_argument("--agenesis", action="store_true",
-                        help="실험 C: 뇌량 무형성")
+                        help="Experiment C: Callosal agenesis")
     parser.add_argument("--lateralize", type=str, choices=["left", "right"], default=None,
-                        help="실험 D: 좌/우 반구 우세")
+                        help="Experiment D: Left/right hemisphere dominance")
     parser.add_argument("--delay", type=int, default=0,
-                        help="전달 지연 스텝 수 (기본: 0)")
+                        help="Transmission delay step count (default: 0)")
     parser.add_argument("--all", action="store_true",
-                        help="전체 실험 (A+B+C+D)")
+                        help="All experiments (A+B+C+D)")
     parser.add_argument("--steps", type=int, default=50000,
-                        help="시뮬레이션 스텝 수 (기본: 50000)")
+                        help="Simulation step count (default: 50000)")
     parser.add_argument("--dt", type=float, default=0.01,
-                        help="시간 간격 (기본: 0.01)")
+                        help="Time interval (default: 0.01)")
     parser.add_argument("--plot", action="store_true",
-                        help="matplotlib 그래프 저장")
+                        help="Save matplotlib graphs")
 
     args = parser.parse_args()
 
-    # 아무 옵션도 없으면 κ 스캔 실행
+    # If no options, run κ scan
     run_scan = not any([args.kappa is not None, args.split_brain,
                         args.agenesis, args.lateralize, args.all])
 
@@ -865,7 +865,7 @@ def main():
         if args.plot:
             path = plot_kappa_scan(results)
             if path:
-                print(f"\n  [plot] 저장: {path}")
+                print(f"\n  [plot] Saved: {path}")
         print()
 
     if args.all or args.split_brain:
@@ -876,7 +876,7 @@ def main():
             cut_step = args.steps // 2
             path = plot_split_brain(S, kappas, cut_step, args.steps, args.dt)
             if path:
-                print(f"\n  [plot] 저장: {path}")
+                print(f"\n  [plot] Saved: {path}")
         print()
 
     if args.all or args.agenesis:

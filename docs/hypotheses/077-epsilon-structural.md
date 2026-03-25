@@ -1,36 +1,36 @@
-# 가설 검토 077: ε = (1-a)×(1/6) — 구조적 결정 ✅
+# Hypothesis Review 077: ε = (1-a)×(1/6) — Structural Determination ✅
 
-## 가설
+## Hypothesis
 
-> 호기심 파라미터 ε = 0.05 는 임의로 설정한 값이 아니라,
-> 모델의 기존 파라미터(수축률 a, 블라인드 스팟 1/6)로부터 유일하게 유도되는 구조적 상수인가.
+> Is the curiosity parameter ε = 0.05 not an arbitrarily set value, but 
+> a structural constant uniquely derived from the model's existing parameters (contraction rate a, blind spot 1/6)?
 
-## 배경
+## Background
 
-호기심(curiosity)을 모델에 추가할 때, 그 강도 ε를 어떻게 정해야 하는가?
-임의로 0.05를 선택한 것이 아니라, 모델 구조가 **유일한 값을 요구**한다면
-이것은 자유 파라미터가 아니라 **구속 조건**이다.
+When adding curiosity to the model, how should we determine its strength ε?
+If the model structure **requires a unique value** rather than an arbitrary choice of 0.05,
+then this is not a free parameter but a **constraint condition**.
 
-메타 반복에 호기심을 추가하면:
-- 기본: f(I) = aI + b, 부동점 I* = b/(1-a) = 1/3
-- 호기심: f_ε(I) = aI + (b - ε), 부동점 I*_ε = (b-ε)/(1-a)
+When adding curiosity to meta-iteration:
+- Basic: f(I) = aI + b, fixed point I* = b/(1-a) = 1/3
+- Curiosity: f_ε(I) = aI + (b - ε), fixed point I*_ε = (b-ε)/(1-a)
 
-## 검증 결과: ✅ 구조적으로 결정됨
+## Verification Result: ✅ Structurally Determined
 
 ```
-  유도 과정:
+  Derivation Process:
   ──────────────────────────────────────────────
-  목표: 호기심이 부동점을 블라인드 스팟(1/6)까지 이동시킨다.
+  Goal: Curiosity moves the fixed point to the blind spot (1/6).
 
   I*_ε = (b - ε) / (1 - a) = 1/6
 
-  파라미터 대입 (a=0.7, b=0.1):
+  Parameter substitution (a=0.7, b=0.1):
   (0.1 - ε) / 0.3 = 1/6
   0.1 - ε = 0.3 × (1/6)
   0.1 - ε = 0.05
   ε = 0.05
 
-  다른 표현:
+  Alternative expression:
   ε = b - (1-a) × (1/6)
     = b - (1-a)/6
     = (1-a) × [b/(1-a) - 1/6]
@@ -44,77 +44,79 @@
 ```
 
 ```
-  구조적 분해:
+  Structural Decomposition:
   ──────────────────────────────────────────────
 
   ε = (1 - a)  ×  (1/6)
       ───────     ─────
          ↓           ↓
-    여유 공간    블라인드 스팟
-    (수축 잔여)  (도달 목표)
+    Free space   Blind spot
+    (Contraction  (Target to
+     residual)     reach)
 
-  각 요소의 의미:
+  Meaning of each element:
   ┌─────────────────────────────────────┐
   │  (1-a) = 0.3                        │
-  │  = 메타 반복에서 매 단계 "줄어드는 양" │
-  │  = 시스템의 여유 공간               │
+  │  = Amount that "decreases" each     │
+  │    step in meta-iteration           │
+  │  = System's free space              │
   │                                     │
   │  (1/6) = 0.167                      │
-  │  = 실수 모델의 블라인드 스팟         │
-  │  = 도달해야 할 목표 영역            │
+  │  = Blind spot of real number model  │
+  │  = Target region to reach           │
   │                                     │
-  │  ε = 여유 × 목표 = 0.3 × 0.167     │
+  │  ε = free × target = 0.3 × 0.167    │
   │    = 0.05 = 1/20                    │
   └─────────────────────────────────────┘
 ```
 
 ```
-  부동점 이동 다이어그램:
+  Fixed Point Movement Diagram:
   ──────────────────────────────────────────────
 
-  I축:  0    1/6    0.24  1/e   1/3    0.48  0.5
+  I-axis: 0    1/6    0.24  1/e   1/3    0.48  0.5
         │     │      │     │     │      │     │
         │     ●      ├─────────────────┤     │
-        │  I*_ε     │   골든존          │     │
-        │ (호기심)   │  [0.24, 0.48]    │     │
+        │  I*_ε     │   Golden Zone    │     │
+        │ (curiosity)│  [0.24, 0.48]   │     │
         │     │      │     │     ★      │     │
         │     │      │     │   I*=1/3   │     │
-        │     │      │     │  (기본)    │     │
+        │     │      │     │  (basic)   │     │
         │     ←──────────────────┘      │     │
-        │         ε=0.05 만큼 이동       │     │
+        │         Move by ε=0.05         │     │
         │                               │     │
   ──────────────────────────────────────────────
 
-  ★ I*=1/3  : 기본 부동점 (골든존 안, 안전)
-  ● I*_ε=1/6: 호기심 부동점 (골든존 밖, 블라인드 스팟)
+  ★ I*=1/3  : Basic fixed point (inside Golden Zone, safe)
+  ● I*_ε=1/6: Curiosity fixed point (outside Golden Zone, blind spot)
 ```
 
 ```
-  ε = 1/20 의 의미:
+  Meaning of ε = 1/20:
   ──────────────────────────────────────────────
   1/20 = 5%
 
-  - 전체의 5%만 "호기심"에 할당
-  - 95%는 기존 구조 유지
-  - 이 5%가 부동점을 1/3 → 1/6 으로 정확히 이동
-  - 더 크면 과도한 탐험 (발산 위험)
-  - 더 작으면 블라인드 스팟에 도달 불가
+  - Only 5% of the whole allocated to "curiosity"
+  - 95% maintains existing structure
+  - This 5% precisely moves the fixed point from 1/3 → 1/6
+  - Larger would be excessive exploration (divergence risk)
+  - Smaller would fail to reach the blind spot
 
-  → 0.05는 "최소 필요 호기심량"이자 "최대 안전 호기심량"
-  → 유일한 값
+  → 0.05 is both "minimum necessary curiosity" and "maximum safe curiosity"
+  → Unique value
   ──────────────────────────────────────────────
 ```
 
-## 해석
+## Interpretation
 
-호기심 강도 ε = 0.05 = 1/20 은 자유 파라미터가 아니다.
-수축률 a와 블라인드 스팟 1/6이 결정되면 ε는 자동으로 결정된다.
+The curiosity strength ε = 0.05 = 1/20 is not a free parameter.
+Once the contraction rate a and blind spot 1/6 are determined, ε is automatically determined.
 
-이것은 모델의 **자기 일관성(self-consistency)**을 보여준다:
-"블라인드 스팟을 보려면 정확히 이만큼의 호기심이 필요하다"는 것이
-구조에 의해 유일하게 정해진다.
+This demonstrates the model's **self-consistency**:
+"To see the blind spot, exactly this much curiosity is needed" 
+is uniquely determined by the structure.
 
 ---
 
-*검증: verify_next_batch.py*
-*모델: f_ε(I) = aI + (b-ε), ε = (1-a)×(1/6) = 1/20*
+*Verification: verify_next_batch.py*
+*Model: f_ε(I) = aI + (b-ε), ε = (1-a)×(1/6) = 1/20*

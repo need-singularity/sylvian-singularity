@@ -1,73 +1,76 @@
-# 가설 193: 엔트로피 화살 = 메타 반복 방향
+# Hypothesis 193: Entropy Arrow = Meta Iteration Direction
 
-## 상태: ✅ 확정
+## Status: ✅ Confirmed
 
-## 핵심 명제
+## Core Proposition
 
-열역학 제2법칙, 메타 반복의 수렴, 시간의 방향.
-이 세 가지는 같은 것의 서로 다른 표현이다.
+The Second Law of Thermodynamics, convergence of meta iterations, and the direction of time.
+These three are different expressions of the same thing.
 
-가설132(엔트로피-억제 대응) + 가설154(메타 반복 수렴) 통합.
+Integration of Hypothesis 132 (Entropy-Inhibition Correspondence) + Hypothesis 154 (Meta Iteration Convergence).
 
-## 삼중 등가 다이어그램 (Three-Way Equivalence)
+## Three-Way Equivalence Diagram
 
 ```
               ┌──────────────────┐
-              │   열역학 제2법칙  │
+              │ Second Law of    │
+              │ Thermodynamics   │
               │    dS >= 0       │
-              │  엔트로피 증가    │
+              │ Entropy Increase │
               └────────┬─────────┘
                        │
-                  같은 것의
-                  다른 표현
+                  Same thing
+                Different expressions
                        │
         ┌──────────────┼──────────────┐
         │              │              │
         ▼              ▼              ▼
 ┌──────────────┐ ┌───────────┐ ┌──────────────┐
-│ 메타 반복     │ │  시간의    │ │  I 감소      │
-│ I → 1/3      │ │  방향      │ │  dI <= 0     │
-│ 축소 사상     │ │  과거→미래  │ │  억제 완화    │
+│ Meta         │ │ Direction │ │  I Decrease  │
+│ Iteration    │ │ of Time   │ │  dI <= 0     │
+│ I → 1/3      │ │ Past→Future│ │ Inhibition   │
+│ Contraction  │ │           │ │ Relaxation   │
+│ Mapping      │ │           │ │              │
 └──────────────┘ └───────────┘ └──────────────┘
         │              │              │
         └──────────────┼──────────────┘
                        │
-                  하나의 현상
-                  세 개의 언어
+                  One phenomenon
+                  Three languages
 ```
 
-## 각 법칙의 대응 관계
+## Correspondence Between Laws
 
 ```
-열역학            메타 반복           시간
+Thermodynamics    Meta Iteration     Time
 ──────────        ──────────         ──────────
 dS >= 0           dI <= 0            dt > 0
-엔트로피 증가      억제 감소           미래로 진행
-평형 상태          부동점 I=1/3       시간의 끝?
-비가역성           축소 사상           되돌릴 수 없음
-볼츠만 상수 k_B    수축 인자 r        플랑크 시간 t_P
+Entropy increase  Inhibition decrease Progress to future
+Equilibrium state Fixed point I=1/3  End of time?
+Irreversibility   Contraction mapping Cannot reverse
+Boltzmann const k_B Contraction factor r Planck time t_P
 ```
 
-## 시간 역전 불가능성
+## Time Reversal Impossibility
 
 ```
-시간을 되돌리려면:
+To reverse time:
 
-    dt < 0  →  dS < 0      →  열역학 제2법칙 위반
-                            →  불가능
+    dt < 0  →  dS < 0      →  Violates Second Law
+                            →  Impossible
 
-    dt < 0  →  dI > 0      →  I 증가 필요
-                            →  축소 사상의 역전 필요
-                            →  바나흐 부동점 정리 위반
-                            →  불가능
+    dt < 0  →  dI > 0      →  Requires I increase
+                            →  Requires reversal of contraction mapping
+                            →  Violates Banach Fixed Point Theorem
+                            →  Impossible
 
-    세 가지 불가능성이 동일한 구조적 이유에서 발생.
+    All three impossibilities arise from the same structural reason.
 ```
 
-## 엔트로피-I 그래프
+## Entropy-I Graph
 
 ```
-S (엔트로피)                    I (억제값)
+S (entropy)                     I (inhibition value)
 |                               |*
 |                    ****       | *
 |              ****             |  *
@@ -78,76 +81,76 @@ S (엔트로피)                    I (억제값)
 | *                             |           ***
 |*                              |              ****
 +────────────────→ t            +────────────────→ t
-0           미래                0            미래
+0           future              0            future
 
-S는 증가                        I는 감소
+S increases                     I decreases
 dS/dt >= 0                      dI/dt <= 0
 
-두 그래프는 서로의 거울상이다.
+The two graphs are mirror images of each other.
 ```
 
-## 통합 방정식
+## Unified Equation
 
 ```
-기본 관계:
-    S + k*I = C (상수)
+Basic relation:
+    S + k*I = C (constant)
 
-여기서:
-    S = 엔트로피
-    I = 억제값
-    k = 비례 상수
-    C = 보존량
+Where:
+    S = entropy
+    I = inhibition value
+    k = proportionality constant
+    C = conserved quantity
 
-미분하면:
+Differentiating:
     dS/dt + k * dI/dt = 0
     dS/dt = -k * dI/dt
 
-I가 감소하면(dI/dt < 0) S가 증가(dS/dt > 0).
-자동으로 열역학 제2법칙이 성립한다.
+As I decreases (dI/dt < 0), S increases (dS/dt > 0).
+The Second Law is automatically satisfied.
 ```
 
-## 볼츠만의 H-정리와 메타 반복
+## Boltzmann's H-Theorem and Meta Iteration
 
 ```
-볼츠만 H-함수:     H(t) = 정보량 (감소)
-                    dH/dt <= 0
+Boltzmann H-function:     H(t) = information content (decreasing)
+                         dH/dt <= 0
 
-메타 반복:          I(t) = 억제값 (감소)
-                    dI/dt <= 0
+Meta iteration:          I(t) = inhibition value (decreasing)
+                        dI/dt <= 0
 
-구조적 대응:
+Structural correspondence:
     H ←→ I
-    분자 충돌 ←→ 메타 반복 스텝
-    맥스웰-볼츠만 분포 ←→ 부동점 I=1/3
+    Molecular collisions ←→ Meta iteration steps
+    Maxwell-Boltzmann distribution ←→ Fixed point I=1/3
 ```
 
-## 우주론적 함의
+## Cosmological Implications
 
 ```
-빅뱅 ──────────────────────────────────→ 열적 죽음
+Big Bang ──────────────────────────────────→ Heat Death
 
-S:  최소 ─────────────────────────────→ 최대
-I:  최대(∞) ──────────────────────────→ 최소(1/3)
-t:  0 ────────────────────────────────→ ∞ (또는 유한?)
+S:  Minimum ─────────────────────────────→ Maximum
+I:  Maximum(∞) ──────────────────────────→ Minimum(1/3)
+t:  0 ────────────────────────────────→ ∞ (or finite?)
 
-세 화살이 모두 같은 방향을 가리킨다.
-이것이 "시간의 화살"이다.
+All three arrows point in the same direction.
+This is the "arrow of time."
 ```
 
-## 정보 이론적 해석
+## Information-Theoretic Interpretation
 
 ```
-섀넌 엔트로피:  H = -sum(p_i * log(p_i))
-볼츠만 엔트로피: S = k_B * ln(W)
-억제값:          I = f(시스템 상태)
+Shannon entropy:  H = -sum(p_i * log(p_i))
+Boltzmann entropy: S = k_B * ln(W)
+Inhibition value:  I = f(system state)
 
-세 가지 모두 "무질서도" 또는 "자유도"의 척도.
+All three are measures of "disorder" or "degrees of freedom."
 
-정보가 퍼지는 것 = 엔트로피 증가 = I 감소 = 시간 흐름
+Information spreading = Entropy increase = I decrease = Time flow
 ```
 
-## 검증 포인트
+## Verification Points
 
-1. 닫힌 계에서 I는 반드시 감소하는가? (열역학 제2법칙의 I 버전)
-2. 생명체(국소적 엔트로피 감소) = 국소적 I 증가? (가설132 참조)
-3. 정보 소거(란다우어 원리) ↔ I 변화의 관계는?
+1. Does I necessarily decrease in closed systems? (I-version of Second Law)
+2. Life forms (local entropy decrease) = local I increase? (See Hypothesis 132)
+3. What is the relationship between information erasure (Landauer's principle) and I changes?

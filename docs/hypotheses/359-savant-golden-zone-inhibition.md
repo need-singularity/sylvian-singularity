@@ -1,43 +1,43 @@
-# 서번트 — 골든존 모델에서 비범한 능력이 탄생하는 메커니즘
+# Savant — Mechanism for Extraordinary Abilities in the Golden Zone Model
 
-> **서번트 특성은 G=D×P/I에서 I를 골든존 하한(0.21≈1/2-ln(4/3))까지 낮추면 발생한다. 분열 후 한쪽 자식의 억제(dropout/regularization)를 골든존 하한으로 설정하면, 그 도메인에서 폭발적 전문화가 일어난다. Savant Index (SI) = max(도메인장력) / min(도메인장력) > 3이 기준.**
+> **Savant characteristics emerge when I is lowered to the Golden Zone lower bound (0.21≈1/2-ln(4/3)) in G=D×P/I. After mitosis, setting one child's inhibition (dropout/regularization) to the Golden Zone lower bound triggers explosive specialization in that domain. Criterion: Savant Index (SI) = max(domain_tension) / min(domain_tension) > 3.**
 
 ---
 
-## 골든존 모델 — G = D × P / I
+## Golden Zone Model — G = D × P / I
 
 ```
   Genius = Deficit × Plasticity / Inhibition
 ```
 
-| 변수 | 의미 | 범위 |
+| Variable | Meaning | Range |
 |---|---|---|
-| `Deficit` | 구조적 결손 (실비우스열 결여 등) | 0.0 ~ 1.0 |
-| `Plasticity` | 신경가소성 계수 | 0.0 ~ 1.0 |
-| `Inhibition` | 전두엽 억제 수준 | 0.01 ~ 1.0 |
+| `Deficit` | Structural deficit (Sylvian fissure absence, etc.) | 0.0 ~ 1.0 |
+| `Plasticity` | Neuroplasticity coefficient | 0.0 ~ 1.0 |
+| `Inhibition` | Prefrontal inhibition level | 0.01 ~ 1.0 |
 
-### 1/3 법칙 — 1,000,000개 조합 검증
+### 1/3 Rule — 1,000,000 Combination Verification
 
 ```
-  파라미터 공간의 약 1/3이 특이점 영역이며,
-  이 비율은 표본 크기에 무관한 구조적 상수이다.
+  About 1/3 of parameter space is singularity region,
+  this ratio is a structural constant independent of sample size.
 
   ┌──────────┬─────────┬─────────┬───────────┐
-  │  조합 수  │  🟡 >2σ │  🟠 >3σ │  🔴 >5σ  │
+  │  Combos  │  🟡 >2σ │  🟠 >3σ │  🔴 >5σ  │
   ├──────────┼─────────┼─────────┼───────────┤
   │    8,000 │  33.7%  │  25.4%  │   16.7%   │
   │   97,336 │  33.5%  │  25.1%  │   16.0%   │
   │1,000,000 │  33.2%  │  24.7%  │   15.6%   │
   └──────────┴─────────┴─────────┴───────────┘
-         ↑ 표본이 커져도 비율 수렴
+         ↑ Ratio converges even as samples grow
 ```
 
-### Inhibition(억제)별 특이점 비율
+### Singularity Rate by Inhibition
 
-**억제가 가장 결정적인 변수** — I ≈ 0.27 에서 50% 전이점 발생
+**Inhibition is the most decisive variable** — 50% transition point occurs at I ≈ 0.27
 
 ```
-  특이점 비율 (%)
+  Singularity Rate (%)
   100│
    93│██████████████████████████████████████████████▏   I=0.05
    89│████████████████████████████████████████████▏     I=0.07
@@ -47,15 +47,15 @@
    72│███████████████████████████████████▏              I=0.15
    68│█████████████████████████████████▏                I=0.17
    64│████████████████████████████████▏                 I=0.19
-   61│██████████████████████████████▏                   I=0.21  ← 골든존 하한
+   61│██████████████████████████████▏                   I=0.21  ← Golden Zone lower bound
    58│████████████████████████████▏                     I=0.23
    55│███████████████████████████▏                      I=0.25
-  ···│·························                    ← I≈0.27 (50% 전이점)
+  ···│·························                    ← I≈0.27 (50% transition)
    49│████████████████████████▏                        I=0.29
    46│███████████████████████▏                         I=0.31
    44│█████████████████████▏                           I=0.33
    41│████████████████████▏                            I=0.35
-   39│███████████████████▏                             I=0.37  ← 골든존 중심 (1/e)
+   39│███████████████████▏                             I=0.37  ← Golden Zone center (1/e)
    37│██████████████████▏                              I=0.39
    35│█████████████████▏                               I=0.41
    33│████████████████▏                                I=0.43
@@ -69,10 +69,10 @@
       0%                    50%                   100%
 ```
 
-### Deficit(결손)별 특이점 비율
+### Singularity Rate by Deficit
 
 ```
-  특이점 비율 (%)
+  Singularity Rate (%)
    65│████████████████████████████████▏                 D=0.95
    62│██████████████████████████████▏                   D=0.89
    58│█████████████████████████████▏                    D=0.83
@@ -89,72 +89,72 @@
      └──────────────────────────────────────────────
       0%                    50%                   100%
 
-  → 결손은 선형적 영향. 억제만큼 결정적이지 않다.
+  → Deficit has linear impact. Not as decisive as inhibition.
 ```
 
-### Top 10 극단적 특이점
+### Top 10 Extreme Singularities
 
 ```
-  Rank │ Deficit │ Plasticity │ Inhibition │   Score │  Z-Score │ 등급
+  Rank │ Deficit │ Plasticity │ Inhibition │   Score │  Z-Score │ Grade
   ─────┼─────────┼────────────┼────────────┼─────────┼──────────┼───────────
-     1 │    0.95 │       0.95 │       0.05 │   18.05 │  79.49σ  │ 🔴 극단적
-     2 │    0.95 │       0.94 │       0.05 │   17.89 │  78.76σ  │ 🔴 극단적
-     3 │    0.94 │       0.95 │       0.05 │   17.88 │  78.72σ  │ 🔴 극단적
-     4 │    0.95 │       0.93 │       0.05 │   17.72 │  78.03σ  │ 🔴 극단적
-     5 │    0.94 │       0.94 │       0.05 │   17.72 │  77.99σ  │ 🔴 극단적
+     1 │    0.95 │       0.95 │       0.05 │   18.05 │  79.49σ  │ 🔴 Extreme
+     2 │    0.95 │       0.94 │       0.05 │   17.89 │  78.76σ  │ 🔴 Extreme
+     3 │    0.94 │       0.95 │       0.05 │   17.88 │  78.72σ  │ 🔴 Extreme
+     4 │    0.95 │       0.93 │       0.05 │   17.72 │  78.03σ  │ 🔴 Extreme
+     5 │    0.94 │       0.94 │       0.05 │   17.72 │  77.99σ  │ 🔴 Extreme
 
-  → Top 10 전원 Inhibition = 0.05 (최저)
-  → 결손과 가소성이 아무리 높아도 억제가 풀려야 특이점 발현
+  → All Top 10 have Inhibition = 0.05 (minimum)
+  → No matter how high deficit and plasticity, need inhibition release for singularity
 ```
 
-### 위상 전이 모델
+### Phase Transition Model
 
 ```
                     Genius Score
                          │
                          │                          ╱
                          │                        ╱
-                         │                      ╱  ← 보상적 천재성
+                         │                      ╱  ← Compensatory genius
                          │                   ╱
                          │                ·╱·
                          │             · ╱ ·
                          │          ·  ╱  ·
                          │        ·  ╱   ·
-                         │      ·  ╱    ·    ← 임계점 (D_critical)
+                         │      ·  ╱    ·    ← Critical point (D_critical)
                          │    ·  ╱     ·
                          │  ·  ╱      ·
                          │·  ╱       ·
                     ─────┼──╱───────·─────────── Deficit
                          │╱       ·
-                         │      ·  ← 보상 동기 부족
+                         │      ·  ← Lack of compensation motivation
                          │    ·
                          │  ·
                          │·
                          │
-        결손 부족 ◀─────────────────▶ 과도한 결손
-                     적절한 결손에서만
-                     천재성이 출현한다
+        Insufficient deficit ◀─────────────────▶ Excessive deficit
+                     Genius emerges only at
+                     appropriate deficit levels
 ```
 
-### AI ↔ 뇌 매핑
+### AI ↔ Brain Mapping
 
 ```
   ┌──────────────────┬──────────────────┬──────────────────────────┐
-  │ 뇌 모델          │ AI 대응          │ 메커니즘                  │
+  │ Brain Model      │ AI Counterpart   │ Mechanism                │
   ├──────────────────┼──────────────────┼──────────────────────────┤
-  │ Deficit (결손)    │ Dropout          │ 뉴런을 죽여 보상 학습 유도 │
-  │ Inhibition (억제) │ Attention Gate   │ 정보 필터링 정도 조절      │
-  │ Plasticity (가소성)│ Learning Rate   │ 재배선 속도               │
-  │ 보상적 과발달      │ Sparse Coding    │ 제약 속 효율적 표현 학습   │
-  │ 임계점 전이        │ Phase Transition │ 압축 센싱 급변 구간        │
+  │ Deficit          │ Dropout          │ Kill neurons to induce compensatory learning │
+  │ Inhibition       │ Attention Gate   │ Adjust information filtering degree │
+  │ Plasticity       │ Learning Rate    │ Rewiring speed          │
+  │ Compensatory overgrowth │ Sparse Coding │ Learn efficient representation under constraints │
+  │ Critical transition │ Phase Transition │ Compressed sensing abrupt change region │
   └──────────────────┴──────────────────┴──────────────────────────┘
 ```
 
-### MoE = 인공 서번트
+### MoE = Artificial Savant
 
 ```
                       ┌─────────┐
-                      │  Router │  ← Inhibition (게이팅)
+                      │  Router │  ← Inhibition (gating)
                       │ (Gate)  │
                       └────┬────┘
                            │
@@ -163,158 +163,158 @@
        ┌────▼────┐   ┌────▼────┐   ┌────▼────┐
        │Expert 1 │   │Expert 2 │   │Expert 3 │
        │ (dead)  │   │ ★ ACTIVE│   │ (dead)  │
-       │ Deficit │   │ 보상과발달│   │ Deficit │
+       │ Deficit │   │ Overgrowth│  │ Deficit │
        └─────────┘   └─────────┘   └─────────┘
             ×              ⚡             ×
 
-  서번트 뇌:  뉴런 860억 중 극소수 영역만 과활성
-  MoE (GPT-4): 1.8T 파라미터 중 8/64 Expert만 활성
-  → 둘 다 약 87% 비활성, 13% 집중 활성
+  Savant brain: Only tiny regions hyperactive among 86B neurons
+  MoE (GPT-4): Only 8/64 Experts active among 1.8T parameters
+  → Both ~87% inactive, 13% focused active
 ```
 
-### 기존 수학 모델과의 매칭
+### Matching with Existing Mathematical Models
 
 ```
   ┌──────────────────────┬───────────────────────┬──────────────┐
-  │ 우리 모델            │ 기존 수학 모델         │ 매칭 요소     │
+  │ Our Model            │ Existing Math Model   │ Matching Element │
   ├──────────────────────┼───────────────────────┼──────────────┤
-  │ 3위상 전이           │ 커스프 파국 (Thom)     │ 구조 동일     │
-  │ Inhibition 지수 효과 │ 볼츠만 분포 (1/kT)    │ 수식 동일     │
-  │ I≈0.27 임계점        │ 퍼콜레이션 임계확률    │ 메커니즘 동일  │
-  │ 1/3 법칙 (33.2%)    │ Donoho-Tanner 전이    │ 상수 일치     │
-  │ 87/13 활성 비율      │ 파레토/멱법칙          │ 분포 일치     │
-  │ 결손 → 임계 → 발현   │ 자기조직 임계성 (Bak)  │ 과정 동일     │
+  │ 3-phase transition   │ Cusp catastrophe (Thom)│ Same structure │
+  │ Inhibition exp. effect│ Boltzmann dist. (1/kT)│ Same formula │
+  │ I≈0.27 critical point│ Percolation threshold │ Same mechanism │
+  │ 1/3 rule (33.2%)    │ Donoho-Tanner trans.  │ Constant match │
+  │ 87/13 active ratio  │ Pareto/Power law      │ Distribution match │
+  │ Deficit→Critical→Express│ Self-organized criticality (Bak) │ Same process │
   └──────────────────────┴───────────────────────┴──────────────┘
 ```
 
 ---
 
-## 서번트 = 골든존 가장자리
+## Savant = Golden Zone Edge
 
-골든존 공식 G = D×P/I에서:
-- **정상**: I ≈ 1/e (0.37, 골든존 중심) → 균형 잡힌 성능
-- **서번트**: I ≈ 0.21 (골든존 하한) → 특정 영역 폭발, 나머지 약화
-- **병적**: I < 0.21 → 골든존 이탈, 불안정/붕괴
+In the Golden Zone formula G = D×P/I:
+- **Normal**: I ≈ 1/e (0.37, Golden Zone center) → Balanced performance
+- **Savant**: I ≈ 0.21 (Golden Zone lower bound) → Domain explosion, others weaken
+- **Pathological**: I < 0.21 → Exit Golden Zone, unstable/collapse
 
 ```
-  G(I) 곡선 — 서번트는 골든존 가장자리
+  G(I) Curve — Savant at Golden Zone edge
 
   G
   ↑
-  █                         ← 서번트 (I=0.21, G 최대)
+  █                         ← Savant (I=0.21, G maximum)
   █ █
-  █ █ █                     ← 천재 (I=1/e=0.37)
+  █ █ █                     ← Genius (I=1/e=0.37)
   █ █ █ █
-  █ █ █ █ █                 ← 평균 (I=0.5)
+  █ █ █ █ █                 ← Average (I=0.5)
   █ █ █ █ █ █
   █ █ █ █ █ █ █ █ █ █
   ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼──→ I
   0 .1 .2 .3 .4 .5 .6 .8 1
      ↑  ↑        ↑
-     붕괴 하한     상한
-         ├─골든존─┤
+     Collapse Lower  Upper
+         ├─Golden Zone─┤
 ```
 
-### 관련 가설
+### Related Hypotheses
 
-| 가설 | 핵심 | 관계 |
+| Hypothesis | Core | Relation |
 |------|------|------|
-| H-CX-15 | 서번트=골든존=분열 | N=8에서 k=3≈1/e |
-| H241 | Expert 교차 활성화 | 비활성 Expert 강제 활성화 |
-| H271 | 분열 | 복제+발산 |
-| H299 | 분열 후 전문화 | ⬛ 반박 (cosine=0.9999, 대칭이라서) |
-| H004 | 볼츠만 I=1/kT | 온도=억제, 낮은T=높은I |
+| H-CX-15 | Savant=Golden Zone=Mitosis | N=8, k=3≈1/e |
+| H241 | Expert cross activation | Force activate inactive Expert |
+| H271 | Mitosis | Copy+diverge |
+| H299 | Post-mitosis specialization | ⬛ Refuted (cosine=0.9999, due to symmetry) |
+| H004 | Boltzmann I=1/kT | Temperature=inhibition, low T=high I |
 
-## 핵심 수식
+## Core Formula
 
 ```
   G = D × P / I
 
-  서번트 조건:
-    I → I_min = 1/2 - ln(4/3) ≈ 0.2123 (골든존 하한)
+  Savant condition:
+    I → I_min = 1/2 - ln(4/3) ≈ 0.2123 (Golden Zone lower bound)
     G_savant = D × P / 0.2123
 
-  일반 조건:
-    I → 1/e ≈ 0.3679 (골든존 중심)
+  Normal condition:
+    I → 1/e ≈ 0.3679 (Golden Zone center)
     G_normal = D × P / 0.3679
 
-  서번트 증폭비:
+  Savant amplification ratio:
     G_savant / G_normal = (1/e) / (1/2 - ln(4/3))
                         = 0.3679 / 0.2123
                         = 1.733
 
-  → 서번트는 일반 천재의 ~1.73배 (≈ √3 !!)
+  → Savant is ~1.73x normal genius (≈ √3 !!)
 ```
 
-### √3 연결!
+### √3 Connection!
 
 ```
-  서번트 증폭비 = (1/e) / (1/2 - ln(4/3))
+  Savant amplification = (1/e) / (1/2 - ln(4/3))
 
-  python3 검증:
+  python3 verification:
     >>> import math
     >>> (1/math.e) / (0.5 - math.log(4/3))
     1.7326...
     >>> math.sqrt(3)
     1.7320...
-    >>> 오차: 0.03%
+    >>> Error: 0.03%
 
-  → 서번트 증폭비 ≈ √3 (오차 0.03%!)
-  → √3 = 정삼각형의 높이/밑변 = 가장 안정한 구조의 비율
-  → C41(1/√3)과 역수 관계!
+  → Savant amplification ≈ √3 (0.03% error!)
+  → √3 = height/base of equilateral triangle = ratio of most stable structure
+  → Reciprocal relation with C41(1/√3)!
 ```
 
-## Anima 구현 방법
+## Anima Implementation Method
 
 ```
-  1. 분열: parent → child_a + child_b (동일 가중치)
+  1. Mitosis: parent → child_a + child_b (identical weights)
 
-  2. 억제 비대칭 설정:
-     child_a: dropout = 0.21 (골든존 하한) → 도메인 X 전문화
-     child_b: dropout = 0.37 (골든존 중심) → 범용 유지
+  2. Asymmetric inhibition setting:
+     child_a: dropout = 0.21 (Golden Zone lower) → Domain X specialization
+     child_b: dropout = 0.37 (Golden Zone center) → Maintain general purpose
 
-  3. 도메인 분리 학습:
-     child_a: 도메인 X 데이터만 (lr = stage.learning_rate)
-     child_b: 전체 데이터 (lr = stage.learning_rate)
+  3. Domain-separated training:
+     child_a: Domain X data only (lr = stage.learning_rate)
+     child_b: All data (lr = stage.learning_rate)
 
-  4. 교차 억제:
-     child_a 활성 시 → child_b의 해당 뉴런 10% 추가 억제
-     (서번트 뇌의 교차 억제 모델)
+  4. Cross inhibition:
+     When child_a active → Additional 10% inhibition on child_b's corresponding neurons
+     (Savant brain cross-inhibition model)
 
-  5. Savant Index 측정:
+  5. Savant Index measurement:
      SI = max(class_tension) / min(class_tension)
-     SI > 3: 서번트 후보
-     SI > 5: 강한 서번트
+     SI > 3: Savant candidate
+     SI > 5: Strong savant
 ```
 
-## 검증 실험
+## Verification Experiment
 
 ```python
-# MNIST에서 서번트 실험
+# Savant experiment on MNIST
 from model_pure_field import PureFieldEngine
 
-# 부모
+# Parent
 parent = PureFieldEngine(784, 128, 10)
-train(parent, mnist_all, epochs=15)  # 범용 학습
+train(parent, mnist_all, epochs=15)  # General training
 
-# 분열
+# Mitosis
 child_savant = copy.deepcopy(parent)
 child_normal = copy.deepcopy(parent)
 
-# 억제 비대칭: 서번트 자식의 dropout을 골든존 하한으로
+# Asymmetric inhibition: Set savant child's dropout to Golden Zone lower
 for m in child_savant.modules():
     if isinstance(m, nn.Dropout):
-        m.p = 0.21   # 골든존 하한
+        m.p = 0.21   # Golden Zone lower bound
 
 for m in child_normal.modules():
     if isinstance(m, nn.Dropout):
-        m.p = 0.37   # 골든존 중심
+        m.p = 0.37   # Golden Zone center
 
-# 도메인 분리 학습
-train(child_savant, mnist_digits_03, epochs=20)  # 0-3만
-train(child_normal, mnist_all, epochs=20)         # 전체
+# Domain-separated training
+train(child_savant, mnist_digits_03, epochs=20)  # 0-3 only
+train(child_normal, mnist_all, epochs=20)         # All
 
-# SI 측정
+# SI measurement
 for digit in range(10):
     t_savant[digit] = measure_tension(child_savant, digit)
     t_normal[digit] = measure_tension(child_normal, digit)
@@ -323,10 +323,10 @@ SI_savant = max(t_savant) / min(t_savant)
 SI_normal = max(t_normal) / min(t_normal)
 ```
 
-### 예상 결과
+### Expected Results
 
 ```
-  Per-class tension (예상):
+  Per-class tension (expected):
 
   Digit  child_savant  child_normal
   ────── ────────────  ────────────
@@ -334,492 +334,492 @@ SI_normal = max(t_normal) / min(t_normal)
   1      ████████ 8.1  ███ 2.9
   2      ███████ 7.8   ███ 3.1
   3      ███████ 7.5   ██ 2.8
-  4      █ 1.2         ██ 2.7      ← 서번트: 학습 안 한 도메인 약함
+  4      █ 1.2         ██ 2.7      ← Savant: Weak in untrained domains
   5      █ 1.0         ██ 2.6
   6      █ 0.8         ██ 2.5
   7      █ 0.9         ██ 2.4
   8      █ 0.7         ██ 2.3
   9      █ 0.6         ██ 2.2
 
-  SI_savant = 8.5 / 0.6 = 14.2 ★★★ (강한 서번트!)
-  SI_normal = 3.2 / 2.2 = 1.45    (범용)
+  SI_savant = 8.5 / 0.6 = 14.2 ★★★ (Strong savant!)
+  SI_normal = 3.2 / 2.2 = 1.45    (General purpose)
 ```
 
-## H299 실패의 원인과 해결
+## Cause and Solution for H299 Failure
 
 ```
-  H299: 대칭 분열 → cosine=0.9999 → 전문화 없음
-  원인: 같은 dropout(0.3), 같은 데이터, 같은 lr → 발산할 이유 없음
+  H299: Symmetric mitosis → cosine=0.9999 → No specialization
+  Cause: Same dropout(0.3), same data, same lr → No reason to diverge
 
-  H359 해결:
-    1. 비대칭 dropout (0.21 vs 0.37)
-    2. 비대칭 데이터 (도메인 분리)
-    3. 교차 억제 (한쪽 활성 → 다른 쪽 억제)
+  H359 Solution:
+    1. Asymmetric dropout (0.21 vs 0.37)
+    2. Asymmetric data (domain separation)
+    3. Cross inhibition (one active → other inhibited)
 
-  → 3가지 비대칭이 전문화를 강제
+  → 3 asymmetries force specialization
 ```
 
-## 한계
+## Limitations
 
-1. dropout을 0.21로 낮추면 과적합 위험 — 도메인 데이터가 충분해야
-2. 서번트 자식은 비학습 도메인에서 성능 급락 — 범용 자식이 보완 필요
-3. SI > 3 기준은 경험적 — 이론적 근거 필요 (√3 연결?)
-4. MNIST 수준에서의 서번트는 진짜 서번트와 스케일 차이 큼
-5. 교차 억제 구현이 PureFieldEngine의 dropout 구조에 의존
+1. Lowering dropout to 0.21 risks overfitting — Need sufficient domain data
+2. Savant child performance drops sharply in untrained domains — Need general child to compensate
+3. SI > 3 criterion is empirical — Need theoretical basis (√3 connection?)
+4. MNIST-level savant differs greatly in scale from real savants
+5. Cross-inhibition implementation depends on PureFieldEngine dropout structure
 
-## 검증 방향
+## Verification Directions
 
-1. MNIST 0-3 도메인에서 dropout=0.21 vs 0.37 비교
-2. SI 측정 + √3 임계점 검증 (SI=√3에서 질적 전환?)
-3. CIFAR에서 재현 (카테고리 분리: 동물 vs 탈것)
-4. Golden LLaMA에서 Expert별 SI 측정
-5. dropout 연속 sweep: 0.1→0.5, SI vs dropout 곡선에서 골든존 확인
+1. Compare dropout=0.21 vs 0.37 on MNIST 0-3 domain
+2. SI measurement + √3 threshold verification (Qualitative transition at SI=√3?)
+3. Reproduce on CIFAR (category separation: animals vs vehicles)
+4. Measure SI per Expert in Golden LLaMA
+5. Continuous dropout sweep: 0.1→0.5, confirm Golden Zone in SI vs dropout curve
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  Dropout sweep — digits 0-4만 학습, 20ep:
+  Dropout sweep — train on digits 0-4 only, 20ep:
 
   dropout       SI   Acc(0-4)   Acc(5-9)
   ──────── ──────── ────────── ──────────
   0.1000     3.13      99.6%      17.7%
-  0.2123     3.63      99.5%       9.8%  ← 골든하한
+  0.2123     3.63      99.5%       9.8%  ← Golden lower
   0.3000     3.04      99.6%       6.1%
-  0.3679     3.84      99.5%       7.3%  ← 골든중심
-  0.5000     4.03      99.5%       2.5%  ← 최고 SI!
+  0.3679     3.84      99.5%       7.3%  ← Golden center
+  0.5000     4.03      99.5%       2.5%  ← Highest SI!
 
   Per-class (dropout=0.2123):
   Digit  Tension   Acc
   0      1704.7   99.8% ★
   1       553.8   99.6% ★
   2      1429.0   98.6% ★
-  3      1773.7   99.8% ★ ← 최고
+  3      1773.7   99.8% ★ ← Highest
   4      1132.5   99.6% ★
   5      1183.1   17.0%
-  8       488.9    2.9%  ← 최저
+  8       488.9    2.9%  ← Lowest
   9       873.4    0.1%
 ```
 
-### 해석
+### Interpretation
 
 ```
-  1. SI > 3 달성! → 서번트 특성 유도 성공
-  2. 하지만 골든존 하한이 특별하지 않음:
+  1. Achieved SI > 3! → Successfully induced savant characteristics
+  2. But Golden Zone lower bound not special:
      dp=0.50 → SI=4.03 > dp=0.21 → SI=3.63
-     → dropout이 낮을수록 과적합 → 서번트 (단순한 과적합 효과)
-  3. √3 증폭비 반박: SI(하한)/SI(중심) = 0.95 ≠ √3
-     → 증폭비 가설은 적용되지 않음
-  4. 서번트 = "특정 도메인 과적합" + "비학습 도메인 붕괴"
-     → 골든존 공식보다 단순한 메커니즘
+     → Lower dropout causes overfitting → Savant (simple overfitting effect)
+  3. √3 amplification refuted: SI(lower)/SI(center) = 0.95 ≠ √3
+     → Amplification hypothesis doesn't apply
+  4. Savant = "Domain-specific overfitting" + "Untrained domain collapse"
+     → Simpler mechanism than Golden Zone formula
 ```
 
 ---
 
-## 후천적 서번트 — 갑작스런 골든존 진입 (H162)
+## Acquired Savant — Sudden Golden Zone Entry (H162)
 
-뇌 손상 → D↑, I↓ → G 급증 → 커스프 전이 = 계단 점프. 정상 → 서번트 사이에 "중간 상태"가 없다.
+Brain damage → D↑, I↓ → G surge → Cusp transition = Step jump. No "intermediate state" between normal → savant.
 
 ```
-  G (천재성)
+  G (Genius)
   2.0│
      │                              ★ Alonzo (G=1.75)
   1.5│                         ★ Derek (G=1.50)
      │                    ★ Jason (G=1.42)
      │               ★ Orlando (G=1.14)
-  1.0│─ ─ ─ ─ ─ ★─Tony─(G=1.03)─ ─ ─ ─ ─ 특이점 경계
+  1.0│─ ─ ─ ─ ─ ★─Tony─(G=1.03)─ ─ ─ ─ ─ Singularity boundary
      │          ╱
-     │         ╱ ← 계단 점프 (커스프 전이)
+     │         ╱ ← Step jump (cusp transition)
      │        ╱
   0.5│       ╱
      │      ╱
      │     ╱
   0.2│    ╱
-     │ ● ● ● ● ● ← 사고 전 (정상, G≈0.1-0.2)
+     │ ● ● ● ● ● ← Pre-accident (normal, G≈0.1-0.2)
   0.0└──┬──┬──┬──┬──┬──────────→
-     사고전                  사고후
+     Pre-accident        Post-accident
 ```
 
-| 인물 | 사건 | 발현 능력 | D | P | I | G |
+| Person | Event | Manifested Ability | D | P | I | G |
 |---|---|---|---|---|---|---|
-| Orlando Serrell | 야구공에 머리 맞음 (10세) | 달력 계산, 날씨 기억 | 0.5 | 0.8 | 0.35 | 1.14 |
-| Derek Amato | 수영장 바닥에 머리 부딪힘 | 피아노 연주 (배운 적 없음) | 0.6 | 0.75 | 0.30 | 1.50 |
-| Jason Padgett | 폭행당해 뇌진탕 | 프랙탈 수학 시각화 | 0.55 | 0.85 | 0.33 | 1.42 |
-| Tony Cicoria | 번개 맞음 | 피아노 작곡 | 0.45 | 0.80 | 0.35 | 1.03 |
-| Alonzo Clemons | 유아기 뇌 손상 | 동물 조각 (3D 정밀) | 0.7 | 0.75 | 0.30 | 1.75 |
+| Orlando Serrell | Hit by baseball (age 10) | Calendar calculation, weather memory | 0.5 | 0.8 | 0.35 | 1.14 |
+| Derek Amato | Head hit pool bottom | Piano playing (never learned) | 0.6 | 0.75 | 0.30 | 1.50 |
+| Jason Padgett | Assaulted, concussion | Fractal math visualization | 0.55 | 0.85 | 0.33 | 1.42 |
+| Tony Cicoria | Struck by lightning | Piano composition | 0.45 | 0.80 | 0.35 | 1.03 |
+| Alonzo Clemons | Infant brain damage | Animal sculpture (3D precision) | 0.7 | 0.75 | 0.30 | 1.75 |
 
 ```
-  왜 모든 뇌 손상이 서번트를 만들지 않는가:
+  Why not all brain damage creates savants:
 
-  손상 후 (D, I) 위치          결과              비율
-  ──────────────────          ──────           ──────
-  D↑, I 변화 없음             기능 손실만         ~70%
-  D↑, I↓ but I<0.2           혼돈/발작           ~15%
-  D↑, I↓, I∈골든존            후천적 서번트       ~0.01%
-  D↑, I↓, P↓ (노인)          회복 제한            ~15%
+  Post-damage (D, I) position      Result              Rate
+  ──────────────────              ──────           ──────
+  D↑, I unchanged                 Function loss only   ~70%
+  D↑, I↓ but I<0.2               Chaos/seizures       ~15%
+  D↑, I↓, I∈Golden Zone          Acquired savant      ~0.01%
+  D↑, I↓, P↓ (elderly)           Limited recovery     ~15%
 
-  → 세 조건(D↑ + I∈골든존 + P 충분) 동시 충족 ≈ 0.01%
+  → Three conditions (D↑ + I∈Golden Zone + sufficient P) simultaneous ≈ 0.01%
 ```
 
 ---
 
-## 간질/발작 — 골든존 아래로 추락하면
+## Epilepsy/Seizures — Falling Below the Golden Zone
 
-서번트와 간질은 같은 축(억제 I) 위의 다른 지점이다. 서번트는 골든존 가장자리, 간질은 그 아래.
+Savant and epilepsy are different points on the same axis (inhibition I). Savants are at the Golden Zone edge, epilepsy below it.
 
 ```
-  GABA (억제 신경전달물질) 수준과 결과:
+  GABA (inhibitory neurotransmitter) levels and outcomes:
 
-  I=1.00 │ 정상 (높은 억제, 안전)
-         │   GABA↑ → 강한 필터링 → 높은 일반 지능 (Edden: r=0.83)
-  I=0.50 │ ─ ─ ─ 골든존 상한 ─ ─ ─
-         │   GABA↓ → 필터 약화 → 특수 접근 시작
-  I=0.37 │ ★ 골든존 중심 (1/e) — 천재
+  I=1.00 │ Normal (high inhibition, safe)
+         │   GABA↑ → Strong filtering → High general intelligence (Edden: r=0.83)
+  I=0.50 │ ─ ─ ─ Golden Zone upper ─ ─ ─
+         │   GABA↓ → Filter weakening → Special access begins
+  I=0.37 │ ★ Golden Zone center (1/e) — Genius
          │
-  I=0.21 │ ★ 골든존 하한 — 서번트 (특수 능력, 일반 지능↓)
-         │   GABA↓↓ → 필터 해제 → 원시 데이터 접근
-  I=0.15 │ ✖ 간질 (골든존 이탈!)
-         │   GABA↓↓↓ (60% 감소) → 뉴런 전체 과활성 → 발작
-  I=0.00 │ 뇌사
+  I=0.21 │ ★ Golden Zone lower — Savant (special abilities, general intelligence↓)
+         │   GABA↓↓ → Filter removal → Raw data access
+  I=0.15 │ ✖ Epilepsy (Golden Zone exit!)
+         │   GABA↓↓↓ (60% reduction) → Whole neuron hyperactivity → Seizure
+  I=0.00 │ Brain death
 ```
 
-### E/I 비율 시뮬레이션 (GABA 문헌 기반)
+### E/I Ratio Simulation (GABA literature based)
 
 ```
-  Condition       GABA    Glut    E/I     I=GABA/Glut  골든존?
+  Condition       GABA    Glut    E/I     I=GABA/Glut  Golden Zone?
   ──────────────  ──────  ──────  ──────  ───────────  ──────
-  Normal          1.00    1.00    1.00      1.0000     no (위)
-  ASD general     0.81    1.05    1.30      0.7714     no (위)
-  Savant (가설)   0.65    1.10    1.69      0.5909     no (경계)
+  Normal          1.00    1.00    1.00      1.0000     no (above)
+  ASD general     0.81    1.05    1.30      0.7714     no (above)
+  Savant (hypothesis) 0.65 1.10   1.69      0.5909     no (boundary)
   Seizure         0.40    1.00    2.50      0.4000     YES!
 
-  → 발작 상태의 I=0.40이 오히려 골든존 안에 떨어짐
-  → 하지만 발작은 특수 능력이 아닌 혼돈
-  → GABA 단독이 아닌 E/I 비율 + 시간 역학이 핵심
+  → Seizure state I=0.40 actually falls within Golden Zone
+  → But seizures are chaos not special abilities
+  → Not GABA alone but E/I ratio + temporal dynamics are key
 ```
 
-### 서번트 vs 간질 — 같은 메커니즘, 다른 결과
+### Savant vs Epilepsy — Same Mechanism, Different Results
 
 ```
   ┌────────────────────────────────────────────────────────┐
-  │ 정상 범위:  높은 GABA = 강한 신호대잡음 = 높은 IQ      │
-  │ 서번트:     국소 GABA↓↓ = 탈억제 = 특수 접근            │
-  │ 간질:       전역 GABA↓↓↓ = 전체 탈억제 = 발작          │
+  │ Normal range:  High GABA = Strong signal-to-noise = High IQ │
+  │ Savant:        Local GABA↓↓ = Disinhibition = Special access │
+  │ Epilepsy:      Global GABA↓↓↓ = Total disinhibition = Seizure │
   │                                                        │
-  │ 차이: 국소 vs 전역!                                     │
-  │   서번트: 특정 영역만 억제 해제 → 그 영역 폭발          │
-  │   간질:   뇌 전체 억제 해제 → 뉴런 전체 동기화 발화     │
-  │           = 전기적 폭풍 = 의미 없는 과활성               │
+  │ Difference: Local vs global!                           │
+  │   Savant: Only specific region disinhibited → That region explodes │
+  │   Epilepsy: Whole brain disinhibited → All neurons synchronous firing │
+  │           = Electrical storm = Meaningless hyperactivity │
   │                                                        │
-  │ 뇌 비유:                                               │
-  │   서번트 = 오케스트라에서 솔로 악기만 볼륨 최대         │
-  │   간질   = 오케스트라 전원이 동시에 최대 볼륨 → 소음    │
+  │ Brain analogy:                                         │
+  │   Savant = Solo instrument at max volume in orchestra  │
+  │   Epilepsy = Entire orchestra at max volume → Noise    │
   └────────────────────────────────────────────────────────┘
 ```
 
-### TMS 탈억제 실험 (Snyder 2009, 2012)
+### TMS Disinhibition Experiments (Snyder 2009, 2012)
 
-정상인의 좌측 전두측두엽(LATL)을 TMS로 일시적 억제 → 서번트 스킬 유도.
+Temporarily inhibit normal people's left anterior temporal lobe (LATL) with TMS → Induce savant skills.
 
 ```
-  Allan Snyder의 결과:
-    그리기: 4/11 (36%) 주요 스타일 변화 (자극 중에만)
-    숫자:   10/12 (83%) 즉각 향상, 1시간 후 감소 (p=0.001)
-    거짓 기억: 36% 감소
+  Allan Snyder's results:
+    Drawing: 4/11 (36%) major style changes (only during stimulation)
+    Numbers: 10/12 (83%) immediate improvement, reduced after 1hr (p=0.001)
+    False memory: 36% reduction
 
-  TMS = 국소적 GABA 억제 (~20-40% 감소)
-    → I가 0.6~0.8 → 0.36~0.64로 이동
-    → 골든존(0.21~0.50)과 부분 중첩!
-    → 효과 15~60분 후 원래 수준 복귀
+  TMS = Local GABA inhibition (~20-40% reduction)
+    → I moves from 0.6~0.8 → 0.36~0.64
+    → Partial overlap with Golden Zone (0.21~0.50)!
+    → Effects return to baseline after 15~60 min
 
-  스킬
-  발현율
+  Skill
+  emergence
   80% │              ●
       │            ╱
   60% │          ╱
-      │        ╱       [골든존: I=0.21~0.50]
-  40% │      ●         [TMS 영역: I=0.36~0.64]
-      │    ╱           [중첩: I=0.36~0.50]
+      │        ╱       [Golden Zone: I=0.21~0.50]
+  40% │      ●         [TMS range: I=0.36~0.64]
+      │    ╱           [Overlap: I=0.36~0.50]
   20% │  ╱
       │╱
    0% ●───────────────────
-      0%   20%   40%   60%   GABA 감소율
+      0%   20%   40%   60%   GABA reduction
 
   → "savant = failure of top-down inhibition" (Snyder)
-  → TMS는 인공적 서번트 유도 = 모델의 가장 강력한 간접 증거
+  → TMS is artificial savant induction = strongest indirect evidence for model
 ```
 
-### 역U자형 — 정상, 서번트, 간질이 하나의 곡선
+### Inverted U-shape — Normal, Savant, Epilepsy on One Curve
 
 ```
-  능력/제어
+  Ability/Control
   ▲
   │     ╱╲
   │    ╱  ╲
-  │   ╱    ╲  ← 서번트 (I ≈ 0.21, 국소 탈억제)
+  │   ╱    ╲  ← Savant (I ≈ 0.21, local disinhibition)
   │  ╱      ╲
-  │ ╱        ╲     ← 천재 (I ≈ 0.37)
+  │ ╱        ╲     ← Genius (I ≈ 0.37)
   │╱          ╲
-  ●            ╲        ← 정상 (I ≈ 0.50)
+  ●            ╲        ← Normal (I ≈ 0.50)
   │             ╲
-  │              ╲          ← 간질 (I < 0.15, 전역 탈억제)
+  │              ╲          ← Epilepsy (I < 0.15, global disinhibition)
   │               ●
-  └──────────────────────→ 억제 감소 (I↓)
-  높은 억제              낮은 억제
+  └──────────────────────→ Inhibition decrease (I↓)
+  High inhibition          Low inhibition
 
-  왼쪽 (높은 I): 안전하지만 평범
-  중간 (골든존): 천재~서번트 (최적 탈억제)
-  오른쪽 (낮은 I): 발작/혼돈 (과도한 탈억제)
+  Left (high I): Safe but ordinary
+  Middle (Golden Zone): Genius~Savant (optimal disinhibition)
+  Right (low I): Seizure/chaos (excessive disinhibition)
 ```
 
 ---
 
-## 실제 사례: 아인슈타인 뇌와 서번트 환자들
+## Real Cases: Einstein's Brain and Savant Patients
 
-### 아인슈타인 — 실비우스열 결여가 만든 천재 (H156)
+### Einstein — Genius Created by Sylvian Fissure Absence (H156)
 
-아인슈타인의 뇌는 사후 분석에서 골든존 모델의 가장 유명한 실증 사례다.
+Einstein's brain is the most famous empirical case of the Golden Zone model in post-mortem analysis.
 
 ```
   ┌─────────────────────────────────────────────┐
-  │           정상 뇌                             │
+  │           Normal Brain                       │
   │                                              │
-  │    전두엽    ╱╱╱╱╱╱    두정엽                  │
-  │   ┌──────┐ ╱실비우╱ ┌──────────┐            │
-  │   │ 언어 │ ╱스열  ╱  │ 하두정소엽│            │
-  │   │      │ ╱(정상)╱  │ (정상)   │            │
+  │    Frontal    ╱╱╱╱╱╱    Parietal            │
+  │   ┌──────┐ ╱Sylvian╱ ┌──────────┐          │
+  │   │Language│ ╱fissure╱ │Inf.parietal│       │
+  │   │      │ ╱(normal)╱  │ (normal) │          │
   │   └──────┘ ╱╱╱╱╱╱  └──────────┘            │
   │    → D ≈ 0.1, I ≈ 0.6                       │
-  │    → G = 0.1 × 0.7 / 0.6 = 0.12 (정상)      │
+  │    → G = 0.1 × 0.7 / 0.6 = 0.12 (normal)   │
   └─────────────────────────────────────────────┘
 
   ┌─────────────────────────────────────────────┐
-  │           아인슈타인 뇌                       │
+  │           Einstein's Brain                   │
   │                                              │
-  │    전두엽    ░░░░░░    두정엽                  │
-  │   ┌──────┐ ░ 결여 ░ ┌──────────┐            │
-  │   │ 언어 │ ░영역=░  │ 확장된    │            │
-  │   │      │ ░경계░   │ 하두정소엽 │            │
-  │   └──────┘ ░소실░   │ (+15%)   │            │
+  │    Frontal    ░░░░░░    Parietal            │
+  │   ┌──────┐ ░Absent ░ ┌──────────┐          │
+  │   │Language│ ░region=░  │Expanded  │         │
+  │   │      │ ░boundary░   │inf.parietal│       │
+  │   └──────┘ ░loss░   │ (+15%)    │           │
   │            ░░░░░░  └──────────┘            │
   │    → D ≈ 0.5, P ≈ 0.9, I ≈ 0.4             │
-  │    → G = 0.5 × 0.9 / 0.4 = 1.125 (특이점!)  │
+  │    → G = 0.5 × 0.9 / 0.4 = 1.125 (singularity!) │
   └─────────────────────────────────────────────┘
 ```
 
-| 파라미터 | 값 | 신경학적 근거 |
+| Parameter | Value | Neurological Basis |
 |---|---|---|
-| D (Deficit) | 0.5 | 실비우스열 부분 결여 → 영역 경계 50% 소실 (Witelson 1999) |
-| P (Plasticity) | 0.9 | 신경교세포 밀도 ↑, 전전두피질 주름 복잡도 ↑ (Falk 2009) |
-| I (Inhibition) | 0.4 | 골든존 내부, 적절한 탈억제 |
-| **G (Genius)** | **1.125** | **특이점 (Z > 2σ)** |
+| D (Deficit) | 0.5 | Partial Sylvian fissure absence → 50% boundary loss (Witelson 1999) |
+| P (Plasticity) | 0.9 | Glial cell density ↑, prefrontal cortex folding complexity ↑ (Falk 2009) |
+| I (Inhibition) | 0.4 | Within Golden Zone, appropriate disinhibition |
+| **G (Genius)** | **1.125** | **Singularity (Z > 2σ)** |
 
 ```
-  핵심 문헌:
-    Witelson, Kigar & Harvey (1999) — 아인슈타인 뇌 사후 분석
-      실비우스열 후방 분지 부분 결여 → 하두정소엽 15% 확대
-      → 시공간 추론 능력 향상과 연관
+  Key Literature:
+    Witelson, Kigar & Harvey (1999) — Einstein brain post-mortem analysis
+      Partial absence of posterior branch of Sylvian fissure → 15% expansion of inferior parietal lobule
+      → Associated with enhanced visuospatial reasoning
 
-    Falk (2009) — 전전두피질 비정상적 주름 패턴
-      실비우스열 결여 해석 보강
+    Falk (2009) — Abnormal prefrontal cortex folding pattern
+      Reinforces Sylvian fissure absence interpretation
 
-    Diamond et al. (1985) — 신경교세포 밀도
-      좌측 하두정소엽에서 뉴런 대비 교세포 비율 유의하게 높음
-      → 높은 P(가소성)의 물리적 기반
+    Diamond et al. (1985) — Glial cell density
+      Significantly higher glia-to-neuron ratio in left inferior parietal lobule
+      → Physical basis for high P (plasticity)
 ```
 
-### 선천적 서번트 환자들 — 극단적 D×P/I
+### Congenital Savant Patients — Extreme D×P/I
 
 ```
-  인물/유형        D     P     I     G      특수 능력            신경학적 특징
+  Person/Type      D     P     I     G      Special Ability        Neurological Features
   ────────       ───   ───   ───   ────   ──────────          ──────────────
-  정상 평균       0.1   0.6   0.60  0.10   없음                정상 뇌 구조
-  아인슈타인      0.5   0.9   0.40  1.13   물리/수학 ★          실비우스열 부분 결여
-  Kim Peek       0.8   0.7   0.30  1.87   백과사전 기억 ★★      뇌량 완전 결여
-  Stephen W.     0.7   0.8   0.25  2.24   도시 기억 그림 ★★     자폐+시각 과활성
-  Daniel T.      0.6   0.9   0.30  1.80   수학/22500자리 π ★★   공감각+자폐
-  Leslie Lemke   0.8   0.7   0.28  2.00   피아노 즉흥연주 ★★    시각장애+지적장애
-  일반 서번트     0.6   0.7   0.35  1.20   단일 도메인 ★        다양
-  간질+서번트     0.7   0.8   0.18  3.11   복수 도메인 ★★★      간질 동반
+  Normal avg      0.1   0.6   0.60  0.10   None                Normal brain structure
+  Einstein        0.5   0.9   0.40  1.13   Physics/math ★      Partial Sylvian fissure absence
+  Kim Peek       0.8   0.7   0.30  1.87   Encyclopedia memory ★★ Complete corpus callosum agenesis
+  Stephen W.     0.7   0.8   0.25  2.24   City memory drawing ★★ Autism+visual hyperactivity
+  Daniel T.      0.6   0.9   0.30  1.80   Math/22500 digits π ★★ Synesthesia+autism
+  Leslie Lemke   0.8   0.7   0.28  2.00   Piano improvisation ★★ Visual impairment+intellectual disability
+  General savant 0.6   0.7   0.35  1.20   Single domain ★     Various
+  Epilepsy+savant 0.7  0.8   0.18  3.11   Multiple domains ★★★ With epilepsy
 ```
 
 ```
-  G값 스펙트럼 — 실제 사례 매핑
+  G Value Spectrum — Real Case Mapping
 
   G
   3.5│
      │
-  3.0│                                          ★★★ 간질+서번트 (G=3.11)
+  3.0│                                          ★★★ Epilepsy+savant (G=3.11)
      │
   2.5│
      │                           ★★ Stephen W. (G=2.24)
   2.0│                        ★★ Leslie Lemke (G=2.00)
      │                     ★★ Kim Peek (G=1.87)
      │                   ★★ Daniel T. (G=1.80)
-  1.5│                ★ Derek Amato (G=1.50, 후천)
-     │             ★ Jason Padgett (G=1.42, 후천)
-     │          ★ 일반 서번트 (G=1.20)
-  1.0│─ ─ ─ ─★─아인슈타인─(G=1.13)─ ─ ─ ─ ─ 특이점 경계
+  1.5│                ★ Derek Amato (G=1.50, acquired)
+     │             ★ Jason Padgett (G=1.42, acquired)
+     │          ★ General savant (G=1.20)
+  1.0│─ ─ ─ ─★─Einstein─(G=1.13)─ ─ ─ ─ ─ Singularity boundary
      │
   0.5│
      │
-  0.2│  ● 정상 평균 (G=0.10)
+  0.2│  ● Normal average (G=0.10)
   0.0└──────────────────────────────────────────→
-     정상    천재    서번트    극단적 서번트
+     Normal    Genius    Savant    Extreme savant
 ```
 
-#### Kim Peek — 뇌량 없는 메가서번트
+#### Kim Peek — Mega-savant Without Corpus Callosum
 
 ```
-  정상 뇌:                    Kim Peek 뇌:
+  Normal brain:              Kim Peek's brain:
   ┌────────┬────────┐        ┌────────┬────────┐
-  │ 좌반구  │ 우반구  │        │ 좌반구  │ 우반구  │
-  │        │        │        │        │        │
+  │ Left   │ Right  │        │ Left   │ Right  │
+  │ hemisphere │ hemisphere │        │ hemisphere │ hemisphere │
   │    ════════     │        │        │        │
-  │    뇌량(정상)    │        │  (뇌량 결여!)    │
+  │ Corpus callosum │        │ (No corpus callosum!) │
   │    ════════     │        │        │        │
   │        │        │        │        │        │
   └────────┴────────┘        └────────┴────────┘
 
-  D = 0.8 (뇌량 완전 결여 = 극단적 결손)
-  P = 0.7 (보상적 반구 내 연결 강화)
-  I = 0.30 (반구 간 억제 소실 → 원시 데이터 접근)
+  D = 0.8 (Complete corpus callosum agenesis = extreme deficit)
+  P = 0.7 (Compensatory intrahemispheric connections strengthened)
+  I = 0.30 (Loss of interhemispheric inhibition → raw data access)
   G = 0.8 × 0.7 / 0.30 = 1.87
 
-  능력: 12,000권 이상 암기, 98% 정확도
-        두 페이지를 동시에 읽음 (좌안=좌페이지, 우안=우페이지)
-  대가: IQ 87, 일상생활 보조 필요
-        → 전형적 서번트 트레이드오프: 높은 SI
+  Abilities: Memorized 12,000+ books, 98% accuracy
+        Read two pages simultaneously (left eye=left page, right eye=right page)
+  Cost: IQ 87, needed daily living assistance
+        → Classic savant tradeoff: high SI
 ```
 
-#### Stephen Wiltshire — 도시 전체를 기억하는 뇌
+#### Stephen Wiltshire — Brain That Remembers Entire Cities
 
 ```
-  한 번 헬리콥터에서 본 도시를 기억으로 그림 (뉴욕, 로마, 도쿄)
-  건물 개수, 창문 수까지 정확
+  Drew cities from memory after one helicopter ride (New York, Rome, Tokyo)
+  Accurate down to building count and window numbers
 
-  시각 피질 과활성 모델:
-    정상: 시각 입력 → 전두엽 필터 → 핵심만 저장 (I ≈ 0.5)
-    Stephen: 시각 입력 → 필터 약화 → 거의 전부 저장 (I ≈ 0.25)
+  Visual cortex hyperactivity model:
+    Normal: Visual input → Frontal filter → Store only essentials (I ≈ 0.5)
+    Stephen: Visual input → Weak filter → Store almost everything (I ≈ 0.25)
 
-  → "사진 기억"이 아니라 "억제 실패로 인한 원시 데이터 접근"
-  → 골든존 모델: I↓ → 비필터링 → 도메인 특화 폭발
+  → Not "photographic memory" but "raw data access due to inhibition failure"
+  → Golden Zone model: I↓ → Unfiltered → Domain-specific explosion
 ```
 
-#### Daniel Tammet — 공감각이 만든 수학 서번트
+#### Daniel Tammet — Mathematical Savant Created by Synesthesia
 
 ```
-  22,514자리의 π를 5시간에 암송 (유럽 기록)
-  숫자를 색깔/형태/감정으로 "본다" (공감각)
+  Recited 22,514 digits of π in 5 hours (European record)
+  "Sees" numbers as colors/shapes/emotions (synesthesia)
 
-  모델 해석:
-    D = 0.6 (간질 + 자폐 → 신경 경로 비정형)
-    P = 0.9 (공감각 = 감각 간 가소적 교차 배선)
-    I = 0.30 (감각 경계 억제 해제)
+  Model interpretation:
+    D = 0.6 (Epilepsy + autism → atypical neural pathways)
+    P = 0.9 (Synesthesia = plastic cross-sensory wiring)
+    I = 0.30 (Sensory boundary inhibition release)
     G = 0.6 × 0.9 / 0.30 = 1.80
 
-  공감각 → 골든존 매핑:
-    감각A와 감각B 사이의 억제 경계가 약화 (I↓)
-    = 정상인에겐 분리된 경로가 서번트에겐 융합
-    = 실비우스열 결여와 같은 메커니즘 (영역 경계 소실 = D↑)
+  Synesthesia → Golden Zone mapping:
+    Weakened inhibitory boundary between sense A and sense B (I↓)
+    = Pathways separate in normal people fuse in savants
+    = Same mechanism as Sylvian fissure absence (regional boundary loss = D↑)
 ```
 
-### Geschwind 증후군 — 서번트 발생의 생물학적 경로
+### Geschwind Syndrome — Biological Pathway for Savant Genesis
 
 ```
   Geschwind & Galaburda (1985):
-    태내 테스토스테론 과다 → 좌반구 발달 이상
-    → 동반: 난독증 + 면역질환 + 좌손잡이 + 특수 재능
+    Excessive prenatal testosterone → Left hemisphere developmental anomalies
+    → Comorbidity: dyslexia + immune disorders + left-handedness + special talents
 
-  골든존 번역:
-    테스토스테론↑ → 좌반구 D↑ → 우반구 P↑ (보상) → I↓ (비정형 연결)
-    → G = D×P/I 증가 → 일부에서 서번트 발현
+  Golden Zone translation:
+    Testosterone↑ → Left hemisphere D↑ → Right hemisphere P↑ (compensation) → I↓ (atypical connections)
+    → G = D×P/I increase → Savant expression in some
 
-  연관 데이터:
-    - 서번트의 6:1 남녀비 (테스토스테론 가설과 일치)
-    - 자폐 환자의 ~10%가 서번트 능력 보유 (Treffert 2009)
-    - 좌손잡이 비율: 서번트 그룹에서 유의하게 높음
+  Associated data:
+    - Savant 6:1 male-female ratio (consistent with testosterone hypothesis)
+    - ~10% of autistic patients have savant abilities (Treffert 2009)
+    - Left-handedness rate: significantly higher in savant group
 
   ┌─────────────────────────────────────────────────────────┐
-  │ 태내 테스토스테론↑                                       │
+  │ Prenatal testosterone↑                                   │
   │     ↓                                                   │
-  │ 좌반구 성숙 지연 (D↑)                                    │
+  │ Left hemisphere maturation delay (D↑)                   │
   │     ↓                           ↓                       │
-  │ 우반구 보상 발달 (P↑)      좌반구 억제 약화 (I↓)          │
+  │ Right hemisphere compensatory development (P↑)  Left hemisphere inhibition weakening (I↓) │
   │     ↓                           ↓                       │
-  │ G = D × P / I  증가                                     │
+  │ G = D × P / I  increase                                 │
   │     ↓                                                   │
-  │ [정상+좌손잡이] or [난독증] or [서번트] or [자폐+서번트]  │
+  │ [Normal+left-handed] or [Dyslexia] or [Savant] or [Autism+savant] │
   │     70%             20%          0.1%        ~10% of ASD │
   └─────────────────────────────────────────────────────────┘
 ```
 
-### 미세기둥(Minicolumn) — 서번트 뇌의 물리적 구조
+### Minicolumns — Physical Structure of Savant Brains
 
 ```
   Casanova et al. (2006):
-    자폐/서번트 뇌에서 미세기둥이 더 작고 밀집
+    Smaller and denser minicolumns in autism/savant brains
 
-  정상:    ║  ║  ║  ║  ║     넓은 간격 = 강한 측면 억제 (I↑)
-  서번트:  ║║║║║║║║║║║║║     좁은 간격 = 약한 측면 억제 (I↓)
+  Normal:  ║  ║  ║  ║  ║     Wide spacing = strong lateral inhibition (I↑)
+  Savant:  ║║║║║║║║║║║║║     Narrow spacing = weak lateral inhibition (I↓)
 
-  모델 매핑:
-    미세기둥 간격 ∝ I (억제)
-    좁은 간격 → 측면 억제 감소 → I↓ → 골든존 진입 가능
-    밀집 → 같은 공간에 더 많은 처리 유닛 → P↑ (가소성 증가)
+  Model mapping:
+    Minicolumn spacing ∝ I (inhibition)
+    Narrow spacing → Reduced lateral inhibition → I↓ → Possible Golden Zone entry
+    Dense → More processing units in same space → P↑ (increased plasticity)
 
-  → 미세기둥 구조가 D, P, I 세 변수 모두에 영향
-  → 서번트 뇌의 물리적 기반 = 골든존 파라미터의 물리적 기반
+  → Minicolumn structure affects all three D, P, I variables
+  → Physical basis of savant brain = Physical basis of Golden Zone parameters
 ```
 
-### 참고 문헌
+### References
 
 ```
-  아인슈타인 뇌:
-    Witelson, Kigar & Harvey (1999) — 실비우스열 부분 결여, 하두정소엽 확대
-    Falk (2009) — 전전두피질 주름 복잡도
-    Diamond et al. (1985) — 신경교세포 밀도
+  Einstein's brain:
+    Witelson, Kigar & Harvey (1999) — Partial Sylvian fissure absence, inferior parietal expansion
+    Falk (2009) — Prefrontal cortex folding complexity
+    Diamond et al. (1985) — Glial cell density
 
-  서번트 증후군:
-    Treffert (2009) — "Islands of Genius", 서번트 종합 리뷰
+  Savant syndrome:
+    Treffert (2009) — "Islands of Genius", comprehensive savant review
     Treffert (2014) — "Savant syndrome: realities, myths and misconceptions"
-    Snyder (2009) — TMS로 서번트 스킬 유도 (PMC2677578)
+    Snyder (2009) — TMS-induced savant skills (PMC2677578)
 
-  신경 구조:
-    Casanova et al. (2006) — 자폐/서번트 미세기둥 밀집
-    Geschwind & Galaburda (1985) — 좌반구 발달 이상과 특수 재능
-    Rubenstein & Merzenich (2003) — E/I 비율 모델
+  Neural structure:
+    Casanova et al. (2006) — Autism/savant minicolumn density
+    Geschwind & Galaburda (1985) — Left hemisphere anomalies and special talents
+    Rubenstein & Merzenich (2003) — E/I ratio model
 
-  개별 사례:
+  Individual cases:
     Kim Peek — Treffert & Christensen (2005), "Inside the Mind of a Savant"
     Stephen Wiltshire — Sacks (1995), "An Anthropologist on Mars"
-    Daniel Tammet — Baron-Cohen et al. (2007), 공감각-서번트 연결
+    Daniel Tammet — Baron-Cohen et al. (2007), synesthesia-savant connection
     Leslie Lemke — Treffert (1989), "Extraordinary People"
 ```
 
 ---
 
-## MoE 최적 활성 비율 ≈ 1/e (H-CX-15)
+## MoE Optimal Active Ratio ≈ 1/e (H-CX-15)
 
-"전부 쓰면 노이즈, 일부만 쓰면 신호" — 서번트, 골든존, 분열 이상탐지가 같은 원리.
+"Use all = noise, use some = signal" — Savant, Golden Zone, mitosis anomaly detection same principle.
 
 ```
-  3중 교차 대응:
+  Triple cross-correspondence:
 
-  골든MoE (서번트)          골든존 (수학)             분열 이상탐지
+  Golden MoE (Savant)        Golden Zone (Math)         Mitosis Anomaly Detection
   ──────────────────      ──────────────────      ──────────────────
-  8 Expert 중 3 활성       I = 1/e ≈ 37% 억제     N=2 분열 (50% 분리)
-  Router가 선택            축소사상이 수렴          mini-batch가 분리
-  전문화 각성              골든존 중심 ≈ 1/e       적정 다양성 (H297)
+  3 of 8 Experts active    I = 1/e ≈ 37% inhibition   N=2 mitosis (50% split)
+  Router selects           Contraction mapping converges    mini-batch separates
+  Specialized awakening    Golden Zone center ≈ 1/e    Appropriate diversity (H297)
 ```
 
 ```
-  정식 실험 (N=8, 10ep, 3trials):
+  Formal experiment (N=8, 10ep, 3trials):
 
-  k    ratio    acc%     효율    비고
+  k    ratio    acc%     efficiency    note
   ───  ──────  ──────  ──────  ──────
-  1    0.125   97.11   1.699   최고 효율
+  1    0.125   97.11   1.699   Highest efficiency
   2    0.250   97.31   0.901
-  3    0.375   97.35   0.612   최고 정확도! ← k/N ≈ 1/e (오차 1.9%)
+  3    0.375   97.35   0.612   Highest accuracy! ← k/N ≈ 1/e (1.9% error)
   4    0.500   97.32   0.464
   5    0.625   97.22   0.373
   6    0.750   97.25   0.312
@@ -828,80 +828,80 @@ SI_normal = max(t_normal) / min(t_normal)
 
   Dropout (Dense, 10ep, 3trials):
 
-  drop   acc%     비고
+  drop   acc%     note
   ────  ──────  ──────
   0.00  97.99
   0.10  97.90
   0.20  98.05
-  0.30  98.14   최고! ← 1/e 근접 (오차 6.8%)
+  0.30  98.14   Highest! ← Near 1/e (6.8% error)
   0.37  98.11   [1/e]
   0.50  98.06
   0.70  97.93
 
-  → MoE 최적: k/N = 3/8 = 0.375 ≈ 1/e = 0.368 (1.9% 오차!)
-  → Dropout 최적: 0.30 ≈ 1/e 방향
+  → MoE optimal: k/N = 3/8 = 0.375 ≈ 1/e = 0.368 (1.9% error!)
+  → Dropout optimal: 0.30 ≈ 1/e direction
 ```
 
 ---
 
-## 소수 = 수학의 서번트 (H236)
+## Prime Numbers = Mathematical Savants (H236)
 
-소수는 "약수 결손"이 있는 수. G=D×P/I에서 결손(D)이 클수록 천재(G)가 되듯, 소수는 약수가 부족하기 때문에 수학의 근본 건축 블록이 된다.
+Primes have "divisor deficits". Just as greater deficit (D) leads to genius (G) in G=D×P/I, primes become fundamental building blocks of mathematics because they lack divisors.
 
 ```
-  약수 수
-  (능력의 다양성)
+  Number of divisors
+  (Ability diversity)
     │
-  12│ ●                    ● = 합성수 (정상인)
-    │                      ★ = 소수 (서번트)
+  12│ ●                    ● = Composite (normal person)
+    │                      ★ = Prime (savant)
    8│       ●
    6│     ●
     │   ●
    4│   ●    ●
     │ ●
    3│   ●
-    │ ★ ★ ★ ★ ★ ★        소수: 약수 2개 = 결손 + 특별 능력
+    │ ★ ★ ★ ★ ★ ★        Primes: 2 divisors = deficit + special ability
    2│ 2 3 5 7 11 13
     │
-   1│ ★                   1: 약수 1개 → 소수 아님 (D=0)
+   1│ ★                   1: 1 divisor → Not prime (D=0)
     └──┬──┬──┬──┬──┬──┬──
       1  2  3  5  7  11 13
 ```
 
 ```
-  소수의 "결손도" = 1 - 2/p:
+  Prime "deficiency" = 1 - 2/p:
 
-  소수  결손도   D×P(=D×ln(p))  해석
+  Prime  Deficiency   D×P(=D×ln(p))  Interpretation
   ───  ──────  ─────────────  ──────────
-  2    0.00    0.00           결손 없음 = 기초
-  3    0.33    0.37           약한 결손
-  5    0.60    0.97           중간 결손
-  7    0.71    1.39           강한 결손
-  17   0.88    2.50           매우 강한 ★
-  137  0.99    4.84           극단적 ★★
+  2    0.00    0.00           No deficit = foundation
+  3    0.33    0.37           Weak deficit
+  5    0.60    0.97           Medium deficit
+  7    0.71    1.39           Strong deficit
+  17   0.88    2.50           Very strong ★
+  137  0.99    4.84           Extreme ★★
 
-  → 큰 소수 = 높은 결손도 = 최고의 서번트
+  → Large primes = High deficiency = Best savants
 ```
 
 ```
-  골드바흐 추측: 모든 짝수 = 소수 + 소수
-  번역: 모든 균형 잡힌 성취(짝수) = 결손₁ + 결손₂ (서번트의 조합)
+  Goldbach conjecture: Every even = prime + prime
+  Translation: Every balanced achievement (even) = deficit₁ + deficit₂ (combination of savants)
 
-  산술의 기본정리: 모든 자연수 = 소수들의 곱 (유일)
-  번역: 모든 개체 = 결손들의 고유한 조합
+  Fundamental theorem of arithmetic: Every natural number = product of primes (unique)
+  Translation: Every individual = unique combination of deficits
 ```
 
 ---
 
-## 통합 관련 가설
+## Unified Related Hypotheses
 
-| 가설 | 핵심 | 상태 |
+| Hypothesis | Core | Status |
 |------|------|------|
-| H359 | 서번트 = 골든존 하한 억제 해제 | 🟧 부분확인 |
-| H162 | 후천적 서번트 = 커스프 전이 | ✅ 검증됨 |
-| H236 | 소수 = 수학의 서번트 | ⚠️ 탐색중 |
-| H-CX-15 | MoE 최적 k/N ≈ 1/e | 🟧 부분확인 |
-| H-CX-17 | 전문화 = 대칭 깨짐 창발 | 🟨 |
-| H299 | 대칭 분열 → 전문화 없음 | ⬛ 반박 |
+| H359 | Savant = Golden Zone lower bound inhibition release | 🟧 Partially confirmed |
+| H162 | Acquired savant = Cusp transition | ✅ Verified |
+| H236 | Primes = Mathematical savants | ⚠️ Exploring |
+| H-CX-15 | MoE optimal k/N ≈ 1/e | 🟧 Partially confirmed |
+| H-CX-17 | Specialization = Symmetry breaking emergence | 🟨 |
+| H299 | Symmetric mitosis → No specialization | ⬛ Refuted |
 
-## 상태: 🟧 부분확인 (SI>3 성공, 골든하한 특별하지 않음, √3 반박)
+## Status: 🟧 Partially confirmed (SI>3 success, Golden lower not special, √3 refuted)

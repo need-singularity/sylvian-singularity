@@ -1,3 +1,3 @@
-# H-CX-285: 🟩 색전하 3 = 6의 약수
+# H-CX-285: 🟩 Color Charge 3 = Divisors of 6
 
-> R,G,B = 3 색전하 = P₁의 약수. 눈의 RGB 원추세포와 동일.
+> R,G,B = 3 color charges = Divisors of P₁. Same as RGB cone cells in the eye.

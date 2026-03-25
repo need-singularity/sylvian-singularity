@@ -1,46 +1,46 @@
-# H-CX-25: MI 효율 = 핑거프린트 상관 = 0.705 (교차 도메인)
+# H-CX-25: MI Efficiency = Fingerprint Correlation = 0.705 (Cross-domain)
 
-> **C39의 MI 효율(0.705)과 H318의 r(tension, knn_acc)(0.705)가 정확히 일치. "반발력장이 정보 갭의 70.5%를 메우는 것"과 "장력이 인식 능력의 70.5%를 설명하는 것"이 같은 구조적 한계.**
+> **C39's MI efficiency (0.705) and H318's r(tension, knn_acc) (0.705) match exactly. "Repulsion field filling 70.5% of information gap" and "tension explaining 70.5% of recognition ability" represent the same structural limit.**
 
-## 실측
+## Measurements
 
 ```
-  C39: MI 효율 = (MI_field - MI_best_pole) / (MI_max - MI_best_pole)
+  C39: MI efficiency = (MI_field - MI_best_pole) / (MI_max - MI_best_pole)
     = 0.705 = 70.5%
-    MNIST에서 측정
+    Measured on MNIST
 
   H318: r(tension, knn_acc) = +0.705
-    Fashion-MNIST per-class에서 측정 (N=10)
-    R² = 0.497 → 장력이 인식 능력 분산의 ~50% 설명
+    Measured on Fashion-MNIST per-class (N=10)
+    R² = 0.497 → Tension explains ~50% of recognition ability variance
 
-  일치: 0.705 = 0.705 (오차 0.0%)
+  Match: 0.705 = 0.705 (0.0% error)
 ```
 
-## 해석
+## Interpretation
 
 ```
-  두 측정이 다른 데이터셋, 다른 메트릭이지만 같은 값:
-    C39: MNIST에서 MI 갭 대비 반발력장 기여 비율
-    H318: Fashion에서 장력과 인식의 per-class 상관
+  Two measurements from different datasets, different metrics, same value:
+    C39: Repulsion field contribution ratio vs MI gap on MNIST
+    H318: Per-class correlation between tension and recognition on Fashion
 
-  구조적 해석:
-    "반발력장은 정보의 ~70%를 전달한다"
-    → MI 효율 70.5% = 정보 전달의 구조적 상한?
-    → H-CX-2의 ln(2) = 0.693과 근접 (1.7% 오차)
+  Structural interpretation:
+    "Repulsion field transmits ~70% of information"
+    → MI efficiency 70.5% = Structural upper bound of information transfer?
+    → Close to H-CX-2's ln(2) = 0.693 (1.7% error)
 
-  인과 체인:
-    반발력장 → MI 효율 70.5% (정보 한계)
-    장력 → 인식 상관 70.5% (인식 한계)
-    → "장력의 정보 전달 효율" = "장력의 인식 설명력"
+  Causal chain:
+    Repulsion field → MI efficiency 70.5% (information limit)
+    Tension → Recognition correlation 70.5% (recognition limit)
+    → "Tension's information transfer efficiency" = "Tension's recognition explanatory power"
 ```
 
-## 주의 (텍사스 경고)
+## Caution (Texas Warning)
 
 ```
-  N=10 (Fashion 클래스 수) → Pearson r의 불확실성 큼
+  N=10 (Fashion class count) → Large uncertainty in Pearson r
   SE ≈ 1/√(N-2) = 0.35 → 95% CI: [0.705 ± 0.7]
-  → r=0.705는 0.0~1.4 범위 안 → 일치는 우연일 수 있음!
-  → 다른 데이터셋에서 r이 같은 값인지 확인 필요
+  → r=0.705 is within 0.0~1.4 range → Match could be coincidental!
+  → Need to verify if r has same value in other datasets
 ```
 
-## 상태: 🟨 관측 (0.705=0.705 일치, 하지만 N=10 불확실)
+## Status: 🟨 Observed (0.705=0.705 match, but N=10 uncertain)

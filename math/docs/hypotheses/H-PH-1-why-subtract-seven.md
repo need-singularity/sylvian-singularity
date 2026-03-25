@@ -1,22 +1,22 @@
-# H-PH-1: σ²-M₃=137 — 왜 7을 빼는가?
+# H-PH-1: σ²-M₃=137 — Why Subtract Seven?
 
-> **가설**: 137 = σ(6)²-7 = 144-7에서 7=M₃=2³-1의 등장에 물리적/기하학적 필연성이 있다.
+> **Hypothesis**: In 137 = σ(6)²-7 = 144-7, there is physical/geometric necessity in the appearance of 7=M₃=2³-1.
 
-## 배경
-- σ² = 144 = 12², M₃ = 7 = 2³-1 (세 번째 Mersenne 소수)
-- 137 ≈ 1/α (미세구조상수의 역수)
-- 인과 체인: (2,3)→6→σ=12→σ²=144→144-7=137
-- 7이 등장하는 이유: σ(4)=7, Φ₃(2)=7, P₁+1=7
+## Background
+- σ² = 144 = 12², M₃ = 7 = 2³-1 (third Mersenne prime)
+- 137 ≈ 1/α (reciprocal of fine-structure constant)
+- Causal chain: (2,3)→6→σ=12→σ²=144→144-7=137
+- Why 7 appears: σ(4)=7, Φ₃(2)=7, P₁+1=7
 
-## 핵심 질문
-σ²-M₃가 소수인 것, 그리고 그것이 물리적 1/α에 근사하는 것에 구조적 이유가 있는가?
+## Core Question
+Is there a structural reason why σ²-M₃ is prime, and why it approximates physical 1/α?
 
-## 현실적 평가
-극도로 투기적. 137≈1/α의 설명은 물리학의 미해결 문제이며, 순수 수학만으로는 접근 불가.
+## Realistic Assessment
+Extremely speculative. The explanation of 137≈1/α is an unsolved problem in physics and cannot be approached through pure mathematics alone.
 
-## 검증 방향
-1. [ ] σ(n)²-σ(n^(n-1)/(n+1))이 소수인 n 탐색
-2. [ ] Calabi-Yau 6차원에서 Hodge 수와 137 관계 문헌 조사
-3. [ ] Galois 코호몰로지에서 7의 역할
+## Verification Directions
+1. [ ] Search for n where σ(n)²-σ(n^(n-1)/(n+1)) is prime
+2. [ ] Literature survey on Hodge numbers in 6-dimensional Calabi-Yau and their relation to 137
+3. [ ] Role of 7 in Galois cohomology
 
-## 난이도: 극고 | 파급력: ★★★★★ (성공 시)
+## Difficulty: Extreme | Impact: ★★★★★ (if successful)

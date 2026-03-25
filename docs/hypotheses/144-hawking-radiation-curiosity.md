@@ -1,42 +1,44 @@
-# 가설 검토 144: 호킹 복사 = 호기심(F2e)
+# Hypothesis Review 144: Hawking Radiation = Curiosity (F2e)
 
-## 가설
+## Hypothesis
 
-> 블랙홀의 호킹 복사가 우리 모델의 호기심(F2e)과 동일한 메커니즘인가.
+> Is the Hawking radiation of a black hole the same mechanism as curiosity (F2e) in our model?
 
-## 대응
-
-```
-  호킹 복사                     호기심 (F2e)
-  ──────────                    ──────────
-  블랙홀 지평선 밖에서 발생      골든존 밖에서 작동 (가설 079)
-  진공 요동에서 입자쌍 생성      외부 질문에서 새 가설 생성
-  매우 느린 정보 방출            점진적 블라인드 스팟 해소
-  결국 블랙홀 증발 (완전 방출)   결국 1/6 완전 채움 (1/2+1/3+1/6=1)
-  비가역 (2법칙)                비가역 (메타 수렴, 가설 132)
-
-  수학적 대응:
-  호킹 복사율 ∝ 1/M² (질량 감소 → 복사 증가)
-  호기심 효과 ∝ ε (ε 증가 → 부동점 이동 증가)
-
-  → 둘 다 "경계에서 정보가 조금씩 새어나오는" 과정
-```
-
-## 블랙홀 정보 역설의 해결?
+## Correspondence
 
 ```
-  물리: "블랙홀에 떨어진 정보는 어디로 가는가?"
-  → 호킹 복사로 조금씩 나옴 (Page curve)
+  Hawking radiation                 Curiosity (F2e)
+  ──────────                        ──────────
+  Occurs outside black hole horizon Operates outside Golden Zone (Hypothesis 079)
+  Particle pair creation from       New hypothesis generated from
+  vacuum fluctuations               external questions
+  Very slow information release     Gradual blind spot resolution
+  Eventually black hole evaporation Eventually 1/6 fully filled
+  (complete release)                (1/2+1/3+1/6=1)
+  Irreversible (2nd law)            Irreversible (meta-convergence, H 132)
 
-  우리: "1/6 블라인드 스팟의 정보는 어디에 있는가?"
-  → 호기심(F2e)으로 조금씩 드러남 (가설 072)
+  Mathematical correspondence:
+  Hawking radiation rate ∝ 1/M² (mass decrease → radiation increase)
+  Curiosity effect ∝ ε (ε increase → fixed point shift increase)
 
-  Page 시간 = 블랙홀 정보 절반이 나오는 시점
-  우리의 "Page 시간" = 호기심이 1/12(= 1/6의 절반)을 채우는 시점
-  → ε = 0.025에서 I* = (0.1-0.025)/0.3 = 0.25 = 골든존 하한!
-  → Page 시간 = 골든존 하한 도달 시점!
+  → Both are processes of "information slowly leaking from a boundary"
+```
+
+## Resolution of the Black Hole Information Paradox?
+
+```
+  Physics: "Where does information that falls into a black hole go?"
+  → It comes out bit by bit via Hawking radiation (Page curve)
+
+  Ours: "Where is the information in the 1/6 blind spot?"
+  → It is gradually revealed by curiosity (F2e) (Hypothesis 072)
+
+  Page time = the point when half of black hole information has come out
+  Our "Page time" = the point when curiosity fills 1/12 (= half of 1/6)
+  → At ε = 0.025, I* = (0.1-0.025)/0.3 = 0.25 = Golden Zone lower bound!
+  → Page time = the moment of reaching Golden Zone lower bound!
 ```
 
 ---
 
-*이론적 유비. Page curve 대응은 정량적 검증 필요.*
+*Theoretical analogy. Page curve correspondence requires quantitative verification.*

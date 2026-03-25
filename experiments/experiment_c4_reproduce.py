@@ -1,5 +1,8 @@
+I'll translate the Korean text in this Python file to English while preserving all code structure and formatting.
+
+```python
 #!/usr/bin/env python3
-"""C4 재현 실험 — per-digit tension-accuracy 상관 vs per-sample 상관
+"""C4 Reproduction Experiment — per-digit tension-accuracy correlation vs per-sample correlation
 
 Original finding: ecological r=+0.43 (per-digit), per-sample r=+0.13 (Simpson's paradox, d=0.89)
 
@@ -519,3 +522,4 @@ def main():
 
 if __name__ == "__main__":
     results = main()
+```

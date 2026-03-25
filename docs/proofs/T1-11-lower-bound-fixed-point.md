@@ -1,34 +1,34 @@
-# T1-11: ⭐ 골든존 하한 = 부동점 P(G>σ₋₁(6)|I) = I
+# T1-11: ⭐ Golden Zone Lower Bound = Fixed Point P(G>σ₋₁(6)|I) = I
 
-## 대발견
-
-```
-  골든존 하한 ≈ "G가 완전수 임계를 넘을 확률이 I 자신과 같아지는 점"
-
-  P(G > 2 | I) = I  의 부동점
-
-  수치: I* = 0.21207
-  실측: 1/2 - ln(4/3) = 0.21232
-  오차: 0.12%
-```
-
-## 유도
+## Major Discovery
 
 ```
-  1. G = D×P/I,  D, P ~ U[0,1]                        [정의]
-  2. σ₋₁(6) = 2                                        [🟩 정수론]
-  3. P(D×P > x) = 1 - x + x·ln(x)  for 0 < x ≤ 1     [적분으로 유도]
-  4. P(G > 2 | I) = P(D×P > 2I) = 1 - 2I + 2I·ln(2I)  [대입]
-  5. 부동점 조건: P(G > 2 | I) = I                      [자연 조건]
+  Golden Zone Lower Bound ≈ "The point where probability of G exceeding perfect number threshold equals I itself"
+
+  Fixed point of P(G > 2 | I) = I
+
+  Numerical: I* = 0.21207
+  Measured: 1/2 - ln(4/3) = 0.21232
+  Error: 0.12%
+```
+
+## Derivation
+
+```
+  1. G = D×P/I,  D, P ~ U[0,1]                        [Definition]
+  2. σ₋₁(6) = 2                                        [🟩 Number theory]
+  3. P(D×P > x) = 1 - x + x·ln(x)  for 0 < x ≤ 1     [Derived by integration]
+  4. P(G > 2 | I) = P(D×P > 2I) = 1 - 2I + 2I·ln(2I)  [Substitution]
+  5. Fixed point condition: P(G > 2 | I) = I           [Natural condition]
   6. 1 - 2I + 2I·ln(2I) = I
-  7. 1 - 3I + 2I·ln(2I) = 0                            [정리]
-  8. 수치 해: I* = 0.21207                              [이분법]
+  7. 1 - 3I + 2I·ln(2I) = 0                            [Rearrange]
+  8. Numerical solution: I* = 0.21207                  [Bisection method]
 ```
 
-## 적분 유도 (단계 3)
+## Integration Derivation (Step 3)
 
 ```
-  X = D×P,  D, P ~ U[0,1] 독립
+  X = D×P,  D, P ~ U[0,1] independent
 
   P(X ≤ x) = P(D×P ≤ x) = ∫₀¹ P(P ≤ x/d) dd
             = ∫₀ˣ 1 dd + ∫ₓ¹ (x/d) dd
@@ -38,51 +38,51 @@
   ∴ P(X > x) = 1 - x + x·ln(x)  for 0 < x ≤ 1
 ```
 
-## 수치 검증
+## Numerical Verification
 
 ```
-  부동점 방정식: f(I) = 1 - 3I + 2I·ln(2I) = 0
+  Fixed point equation: f(I) = 1 - 3I + 2I·ln(2I) = 0
 
-  I = 0.210:  f = 0.00487  (양수)
-  I = 0.212:  f = 0.00045  (양수)
-  I = 0.2121: f ≈ 0        (영점)
-  I = 0.213:  f = -0.00232 (음수)
+  I = 0.210:  f = 0.00487  (positive)
+  I = 0.212:  f = 0.00045  (positive)
+  I = 0.2121: f ≈ 0        (zero)
+  I = 0.213:  f = -0.00232 (negative)
 
-  해: I* = 0.21207 ± 0.00001
+  Solution: I* = 0.21207 ± 0.00001
 
   vs 1/2 - ln(4/3) = 0.21232
-  차이: 0.00025 (0.12%)
+  Difference: 0.00025 (0.12%)
 ```
 
-## 의미
+## Meaning
 
 ```
-  "G가 σ₋₁(6)=2를 넘을 확률이 바로 I 자신"
-  = 자기참조적 균형점
-  = "억제 수준 = 비범함의 확률" 이 되는 자연스러운 경계
+  "Probability of G exceeding σ₋₁(6)=2 equals I itself"
+  = Self-referential equilibrium point
+  = Natural boundary where "inhibition level = probability of extraordinariness"
 
-  이것은:
-  ✅ 골든존 시뮬레이션 없이 유도됨
-  ✅ σ₋₁(6) = 2 (🟩)만 사용
-  ✅ 확률론의 적분으로 유도
-  ⚠️ 오차 0.12% → 정확한 등식은 아님 (🟧)
+  This is:
+  ✅ Derived without Golden Zone simulation
+  ✅ Uses only σ₋₁(6) = 2 (🟩)
+  ✅ Derived through probabilistic integration
+  ⚠️ Error 0.12% → Not exact equality (🟧)
 ```
 
-## 골든존 상한+하한 통합
+## Golden Zone Upper+Lower Bounds Unified
 
 ```
-  상한: I < 1/σ₋₁(6) = 1/2       (T1-10, G>2 가능 조건)
-  하한: I > I*  where P(G>2|I*)=I*  (이 문서, 부동점)
+  Upper: I < 1/σ₋₁(6) = 1/2       (T1-10, G>2 possibility condition)
+  Lower: I > I*  where P(G>2|I*)=I*  (This document, fixed point)
 
-  둘 다 σ₋₁(6) = 2 에서 유도됨!
-  → "골든존의 양 경계가 완전수 6에서 나온다"
+  Both derived from σ₋₁(6) = 2!
+  → "Both boundaries of Golden Zone emerge from perfect number 6"
 ```
 
-## 판정
+## Judgment
 
 ```
-  유도: ✅ (확률론 + 정수론, 골든존 무관)
-  정확도: 🟧 (0.12% 오차, 근사)
-  🟩 승격 조건: I* = 1/2 - ln(4/3) 를 해석적으로 증명
-  현재: 🟧 (수치적으로만 확인)
+  Derivation: ✅ (Probability theory + Number theory, independent of Golden Zone)
+  Accuracy: 🟧 (0.12% error, approximation)
+  🟩 Upgrade condition: Analytically prove I* = 1/2 - ln(4/3)
+  Current: 🟧 (Only numerically confirmed)
 ```

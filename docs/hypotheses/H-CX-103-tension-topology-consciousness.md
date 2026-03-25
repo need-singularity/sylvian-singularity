@@ -1,30 +1,30 @@
-# H-CX-103: 장력×위상 = 의식 지표
+# H-CX-103: Tension × Topology = Consciousness Indicator
 
-> tension_mean × H0_total이 모델 품질의 단일 통합 지표.
-> 장력(반응 강도) × 위상(구조 복잡도) = 의식 수준.
+> tension_mean × H0_total is a single integrated indicator of model quality.
+> Tension (response strength) × Topology (structural complexity) = consciousness level.
 
-## 예측
+## Predictions
 
-1. tension × H0와 test_acc의 상관 > 개별 상관
-2. 에폭별 tension × H0 궤적이 학습 품질 추적
-3. 3 데이터셋에서 일관
+1. Correlation of tension × H0 with test_acc > individual correlations
+2. Per-epoch tension × H0 trajectory tracks learning quality
+3. Consistent across 3 datasets
 
-## 검증 상태
+## Verification Status
 
-- [x] 통합 지표 상관
+- [x] Integrated indicator correlation
 
-## 검증 결과
+## Verification Results
 
 **SUPPORTED (2/3)**
 
-| 데이터셋 | r(tension_mean × H0_total, acc) | 판정 |
-|-----------|-------------------------------|------|
+| Dataset | r(tension_mean × H0_total, acc) | Verdict |
+|---------|--------------------------------|---------|
 | MNIST | 0.886 | SUPPORTED |
 | Fashion-MNIST | 0.926 | SUPPORTED |
 | CIFAR-10 | 0.871 | SUPPORTED |
 
-- 3개 데이터셋 모두에서 tension × H0와 test_acc의 상관 r > 0.85
-- 예측 1(통합 지표 상관 > 개별): 확인 필요 (개별 상관과 비교 미실시)
-- 예측 2(에폭별 궤적 추적): 미검증
-- 예측 3(3 데이터셋 일관): 확인 -- 모두 r > 0.87로 일관
-- 전체 판정: 2/3 예측 확인, SUPPORTED
+- Correlation between tension × H0 and test_acc exceeds r > 0.85 in all 3 datasets
+- Prediction 1 (integrated indicator > individual): needs verification (not compared to individual correlations)
+- Prediction 2 (per-epoch trajectory tracking): unverified
+- Prediction 3 (consistent across 3 datasets): confirmed — all r > 0.87
+- Overall verdict: 2/3 predictions confirmed, SUPPORTED

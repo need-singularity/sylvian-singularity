@@ -1,288 +1,288 @@
-# H-PH-9: ⭐⭐⭐🟧★ 완전수 통합 패턴 — 표준모형 + 중력 + 질량 (케플러 단계)
+# H-PH-9: ⭐⭐⭐🟧★ Perfect Number Unification Pattern — Standard Model + Gravity + Mass (Kepler Stage)
 
-> **가설**: 짝수 완전수 P_k = 2^(p-1)(2^p-1)의 약수 개수 τ(P_k) = 2p가
-> 끈이론의 차원 계층(4D, 6D, 10D, 14D, 26D)을 정확히 재현하며,
-> σ, φ, τ 함수가 각각 게이지 구조, 중력 구조, 시공간 구조를 동시에 인코딩한다.
-> 이것은 "표준모형 + 중력" 통합을 약수 산술의 언어로 기술하는 프레임워크이다.
+> **Hypothesis**: The divisor count τ(P_k) = 2p of even perfect numbers P_k = 2^(p-1)(2^p-1)
+> precisely reproduces the dimensional hierarchy (4D, 6D, 10D, 14D, 26D) of string theory,
+> while the σ, φ, τ functions simultaneously encode gauge structure, gravitational structure, and spacetime structure.
+> This is a framework that describes the "Standard Model + Gravity" unification in the language of divisor arithmetic.
 
-## 상태: ⭐⭐⭐ 🟧 구조적 (p < 0.0002)
+## Status: ⭐⭐⭐ 🟧 Structural (p < 0.0002)
 
-- 수학적 핵심: **정확** (τ(P_k)=2p는 증명됨)
-- 물리 매핑: **구조적** (5/5 차원 매치, 7+ 부가 매치)
-- Texas Sharpshooter: **p < 0.0002** (Monte Carlo 100만 회)
-- 골든존 의존: **없음** (순수 정수론)
+- Mathematical core: **EXACT** (τ(P_k)=2p is proven)
+- Physics mapping: **STRUCTURAL** (5/5 dimensional matches, 7+ additional matches)
+- Texas Sharpshooter: **p < 0.0002** (Monte Carlo 1 million runs)
+- Golden Zone dependency: **NONE** (pure number theory)
 
 ---
 
-## 1. 핵심 발견: 완전수의 차원 계층
+## 1. Core Discovery: Dimensional Hierarchy of Perfect Numbers
 
-### 정리 (정확)
+### Theorem (Exact)
 
-짝수 완전수 P_k = 2^(p-1) × M_p (M_p = 2^p - 1 Mersenne 소수)에 대해:
+For even perfect numbers P_k = 2^(p-1) × M_p (M_p = 2^p - 1 Mersenne prime):
 
 ```
-  τ(P_k) = 2p   (약수 개수 = Mersenne 지수의 2배)
+  τ(P_k) = 2p   (divisor count = 2 times Mersenne exponent)
 ```
 
-증명: τ(2^(p-1) × M_p) = (p-1+1)(1+1) = 2p. □
+Proof: τ(2^(p-1) × M_p) = (p-1+1)(1+1) = 2p. □
 
-### 차원 매핑 테이블
+### Dimensional Mapping Table
 
-| 완전수 P_k | 소인수분해 | τ(P_k) | σ(P_k) | φ(P_k) | 물리적 차원 |
+| Perfect Number P_k | Prime Factorization | τ(P_k) | σ(P_k) | φ(P_k) | Physical Dimension |
 |-----------|-----------|--------|--------|--------|------------|
-| **6** | 2¹×3 | **4** | 12 | 2 | **관측 시공간 (Minkowski 4D)** |
-| **28** | 2²×7 | **6** | 56 | 12 | **Calabi-Yau 콤팩트 차원** |
-| **496** | 2⁴×31 | **10** | 992 | 240 | **초끈이론 시공간** |
-| **8128** | 2⁶×127 | **14** | 16256 | 4032 | **G₂ holonomy 다양체** |
-| **33550336** | 2¹²×8191 | **26** | ... | ... | **보손 끈이론 시공간** |
+| **6** | 2¹×3 | **4** | 12 | 2 | **Observable spacetime (Minkowski 4D)** |
+| **28** | 2²×7 | **6** | 56 | 12 | **Calabi-Yau compact dimensions** |
+| **496** | 2⁴×31 | **10** | 992 | 240 | **Superstring spacetime** |
+| **8128** | 2⁶×127 | **14** | 16256 | 4032 | **G₂ holonomy manifold** |
+| **33550336** | 2¹²×8191 | **26** | ... | ... | **Bosonic string spacetime** |
 
-### ASCII 차원 계층도
+### ASCII Dimensional Hierarchy Diagram
 
 ```
-  tau(P_k) = 끈이론 차원 계층
+  tau(P_k) = String Theory Dimensional Hierarchy
   ═══════════════════════════════════════════════════
 
-  P1=6:        ████                           4D  관측 시공간
+  P1=6:        ████                           4D  Observable spacetime
   P2=28:       ██████                         6D  Calabi-Yau
-  P3=496:      ██████████                    10D  초끈
+  P3=496:      ██████████                    10D  Superstring
   P4=8128:     ██████████████                14D  G₂ holonomy
-  P5=33550336: ██████████████████████████    26D  보손 끈
+  P5=33550336: ██████████████████████████    26D  Bosonic string
 
   ═══════════════════════════════════════════════════
 
-  가법 관계:
+  Additive relation:
     tau(P1) + tau(P2) = 4 + 6 = 10 = tau(P3)
-    → "관측 시공간 + 콤팩트 공간 = 초끈 전체"
+    → "Observable spacetime + Compact space = Full superstring"
 
-  차분 관계:
+  Difference relation:
     tau(P5) - tau(P3) = 26 - 10 = 16
     → 16 = rank(E₈×E₈) = rank(SO(32))
-    → heterotic string: 보손 26D → 초끈 10D 콤팩트화!
+    → heterotic string: bosonic 26D → superstring 10D compactification!
 ```
 
 ---
 
-## 2. 산술 함수 = 물리 구조 사전
+## 2. Arithmetic Functions = Physics Structure Dictionary
 
-### P₁ = 6: 관측 우주
+### P₁ = 6: Observable Universe
 
 ```
-  τ(6)  = 4   = 시공간 차원 (t, x, y, z)
-  σ(6)  = 12  = dim(su(3) ⊕ su(2) ⊕ u(1))  [표준모형 게이지 대수]
-  φ(6)  = 2   = 중력자(graviton) 편극 자유도 [4D 무질량 스핀-2]
+  τ(6)  = 4   = spacetime dimensions (t, x, y, z)
+  σ(6)  = 12  = dim(su(3) ⊕ su(2) ⊕ u(1))  [Standard Model gauge algebra]
+  φ(6)  = 2   = graviton polarization degrees of freedom [4D massless spin-2]
 
   σ(6)×φ(6) = 24 = dim(Leech lattice)
                   = dim(SU(5) GUT)
-                  = 보손 끈 횡방향 차원 (26-2)
+                  = bosonic string transverse dimensions (26-2)
 
-  R(6) = σφ/(nτ) = 12×2/(6×4) = 1.00  ← 유일한 균형!
+  R(6) = σφ/(nτ) = 12×2/(6×4) = 1.00  ← Unique balance!
 ```
 
-**R=1 방정식의 물리적 의미**:
+**Physical meaning of R=1 equation**:
 ```
   σ(6) × φ(6) = 6 × τ(6)
 
-  (게이지 차원) × (중력 자유도) = (결합 스케일) × (시공간 차원)
+  (gauge dimensions) × (gravitational dof) = (coupling scale) × (spacetime dimensions)
 
   12 × 2 = 6 × 4 = 24
 
-  이것이 "표준모형 + 중력" 통합 방정식이다:
-  게이지와 중력의 곱 = 결합과 시공간의 곱
+  This is the "Standard Model + Gravity" unification equation:
+  Product of gauge and gravity = Product of coupling and spacetime
 ```
 
-### P₂ = 28: 콤팩트 공간
+### P₂ = 28: Compact Space
 
 ```
-  τ(28) = 6    = Calabi-Yau 3-fold 실수 차원 (10 - 4 = 6)
-  σ(28) = 56   = E₇ 기본 표현(fundamental representation) 차원
-  φ(28) = 12   = σ(6) [표준모형 게이지 차원!]
+  τ(28) = 6    = Calabi-Yau 3-fold real dimensions (10 - 4 = 6)
+  σ(28) = 56   = E₇ fundamental representation dimension
+  φ(28) = 12   = σ(6) [Standard Model gauge dimensions!]
 
-  "콤팩트 공간의 자유도 = 관측 우주의 게이지 구조"
-  → φ(P₂) = σ(P₁): 두 번째 완전수의 자유도가 첫 번째의 약수합
+  "Degrees of freedom of compact space = Gauge structure of observable universe"
+  → φ(P₂) = σ(P₁): The second perfect number's totient is the first's divisor sum
 ```
 
-### P₃ = 496: 초끈이론
+### P₃ = 496: Superstring Theory
 
 ```
-  τ(496) = 10   = 초끈 시공간 차원
+  τ(496) = 10   = superstring spacetime dimensions
   σ(496) = 992  = 2 × 496
-  φ(496) = 240  = |E₈ root system| [E₈ 근계의 원소 수!]
+  φ(496) = 240  = |E₈ root system| [Number of E₈ root elements!]
 
-  496 자체:
+  496 itself:
     = dim(E₈ × E₈) = dim(SO(32))
-    = Green-Schwarz 이상소거(anomaly cancellation) 조건
-    = 10D 초중력이 이상-자유(anomaly-free)가 되는 유일한 게이지 군 차원
+    = Green-Schwarz anomaly cancellation condition
+    = Unique gauge group dimension where 10D supergravity is anomaly-free
 ```
 
-### P₄ = 8128: M-이론/G₂
+### P₄ = 8128: M-theory/G₂
 
 ```
-  τ(8128) = 14  = dim(G₂) [최소 예외 Lie 대수]
+  τ(8128) = 14  = dim(G₂) [Minimal exceptional Lie algebra]
 
-  M-이론에서 G₂ holonomy 다양체 위의 콤팩트화:
-    11D → 4D (7차원 G₂ 다양체)
+  Compactification on G₂ holonomy manifold in M-theory:
+    11D → 4D (7-dimensional G₂ manifold)
     dim(G₂ algebra) = 14 = τ(P₄)
 ```
 
-### P₅ = 33550336: 보손 끈이론
+### P₅ = 33550336: Bosonic String Theory
 
 ```
-  τ(33550336) = 26 = 보손 끈이론 시공간 차원
+  τ(33550336) = 26 = bosonic string spacetime dimensions
 
-  Heterotic string 구성:
-    보손 끈 26D → 초끈 10D: 16차원 콤팩트화
+  Heterotic string construction:
+    Bosonic string 26D → Superstring 10D: 16-dimensional compactification
     tau(P₅) - tau(P₃) = 26 - 10 = 16
     16 = rank(E₈ × E₈) = rank(SO(32))
 
-    이것은 heterotic string의 구성을 완전수의 산술로 재현한다!
+    This reproduces the heterotic string construction with perfect number arithmetic!
 ```
 
 ---
 
-## 3. 교차 관계 네트워크
+## 3. Cross-Relationship Network
 
-### 완전수 간 관계
+### Relations Between Perfect Numbers
 
 ```
-  P₁ ──τ=4──→ 시공간
+  P₁ ──τ=4──→ Spacetime
   │            ↕ +
   │φ(P₂)=σ(P₁)=12
   │            ↕
   P₂ ──τ=6──→ Calabi-Yau ──→ τ(P₁)+τ(P₂)=τ(P₃)
   │                                    ↓
-  P₃ ──τ=10─→ 초끈 ─────→ P₃ = dim(E₈×E₈) = 이상소거
+  P₃ ──τ=10─→ Superstring ─────→ P₃ = dim(E₈×E₈) = anomaly cancellation
   │            ↕                φ(P₃) = 240 = |E₈ roots|
   │   τ(P₅)-τ(P₃)=16=rank(E₈×E₈)
   │            ↕
-  P₅ ──τ=26─→ 보손 끈
+  P₅ ──τ=26─→ Bosonic string
 ```
 
-### 대통일군(GUT) 연결
+### Grand Unification Group (GUT) Connections
 
-| 대통일군 | 차원 | rank | 완전수 연결 |
+| GUT | Dimension | rank | Perfect Number Connection |
 |---------|------|------|-----------|
 | **SU(5)** | **24 = σ(6)×φ(6)** | 4 = τ(6) | Georgi-Glashow |
 | SO(10) | 45 | 5 | τ(6)+1 |
-| **E₆** | **78 = τ(28)×13** | **6 = P₁** | rank = 첫째 완전수 |
+| **E₆** | **78 = τ(28)×13** | **6 = P₁** | rank = first perfect number |
 | E₇ | 133 = 7×19 | 7 | **56-rep = σ(28)** |
 | **E₈** | **248 = P₃/2** | 8 | **240 roots = φ(P₃)** |
-| **E₈×E₈** | **496 = P₃** | 16 | 이상소거 |
-| **SO(32)** | **496 = P₃** | 16 | 이상소거 |
+| **E₈×E₈** | **496 = P₃** | 16 | anomaly cancellation |
+| **SO(32)** | **496 = P₃** | 16 | anomaly cancellation |
 
-### 예외 Lie 대수 dim/rank = 소수 (전부!)
+### Exceptional Lie Algebra dim/rank = Prime (All!)
 
-| 대수 | dim/rank | 값 | 의미 |
+| Algebra | dim/rank | Value | Meaning |
 |-----|---------|---|------|
-| G₂ | 14/2 | **7 = M₃** | Mersenne 소수 |
-| F₄ | 52/4 | **13 = σ(6)+1** | Mersenne 지수 (P₅) |
-| E₆ | 78/6 | **13 = σ(6)+1** | Mersenne 지수 (P₅) |
-| E₇ | 133/7 | **19** | 소수 (Mersenne 지수 P₇) |
-| E₈ | 248/8 | **31 = M₅** | Mersenne 소수 (496의 인수!) |
+| G₂ | 14/2 | **7 = M₃** | Mersenne prime |
+| F₄ | 52/4 | **13 = σ(6)+1** | Mersenne exponent (P₅) |
+| E₆ | 78/6 | **13 = σ(6)+1** | Mersenne exponent (P₅) |
+| E₇ | 133/7 | **19** | Prime (Mersenne exponent P₇) |
+| E₈ | 248/8 | **31 = M₅** | Mersenne prime (factor of 496!) |
 
-### 끈이론 상수 요약
+### String Theory Constants Summary
 
-| 물리 상수 | 값 | 완전수 산술 | 정확 여부 |
+| Physical Constant | Value | Perfect Number Arithmetic | Exact? |
 |----------|---|-----------|---------|
-| 시공간 차원 | 4 | τ(6) | ✅ 정확 |
-| CY 차원 | 6 | τ(28) | ✅ 정확 |
-| 초끈 차원 | 10 | τ(496) | ✅ 정확 |
-| 보손 끈 차원 | 26 | τ(33550336) | ✅ 정확 |
-| SM 게이지 dim | 12 | σ(6) | ✅ 정확 |
-| Graviton dof | 2 | φ(6) | ✅ 정확 |
-| Leech 격자 dim | 24 | σ(6)×φ(6) | ✅ 정확 |
-| SU(5) GUT dim | 24 | σ(6)×φ(6) | ✅ 정확 |
-| E₇ fund rep | 56 | σ(28) | ✅ 정확 |
-| E₈ roots | 240 | φ(496) | ✅ 정확 |
-| 이상소거 dim | 496 | P₃ | ✅ 정확 |
-| Heterotic 차분 | 16 | τ(P₅)-τ(P₃) | ✅ 정확 |
-| 페르미온 세대 | 3 | σ(6)/τ(6) | ✅ 정확 |
-| 4D 중력자 DOF | 2 | φ(P₁) | ✅ 정확 |
-| M-이론 중력자 DOF | 44 | σ(P₂)-σ(P₁) | ✅ 정확 |
-| SO(10) spinor | 16 | τ(P₅)-τ(P₃) | ✅ 정확 |
+| Spacetime dimensions | 4 | τ(6) | ✅ Exact |
+| CY dimensions | 6 | τ(28) | ✅ Exact |
+| Superstring dimensions | 10 | τ(496) | ✅ Exact |
+| Bosonic string dimensions | 26 | τ(33550336) | ✅ Exact |
+| SM gauge dim | 12 | σ(6) | ✅ Exact |
+| Graviton dof | 2 | φ(6) | ✅ Exact |
+| Leech lattice dim | 24 | σ(6)×φ(6) | ✅ Exact |
+| SU(5) GUT dim | 24 | σ(6)×φ(6) | ✅ Exact |
+| E₇ fund rep | 56 | σ(28) | ✅ Exact |
+| E₈ roots | 240 | φ(496) | ✅ Exact |
+| Anomaly cancellation dim | 496 | P₃ | ✅ Exact |
+| Heterotic difference | 16 | τ(P₅)-τ(P₃) | ✅ Exact |
+| Fermion generations | 3 | σ(6)/τ(6) | ✅ Exact |
+| 4D graviton DOF | 2 | φ(P₁) | ✅ Exact |
+| M-theory graviton DOF | 44 | σ(P₂)-σ(P₁) | ✅ Exact |
+| SO(10) spinor | 16 | τ(P₅)-τ(P₃) | ✅ Exact |
 
-**16/16 정확 매치. 근사 없음.**
+**16/16 exact matches. No approximations.**
 
 ---
 
-## 4. 통합 방정식
+## 4. Unification Equations
 
-### 아인슈타인의 꿈: 게이지 + 중력
+### Einstein's Dream: Gauge + Gravity
 
-표준모형과 중력을 연결하는 핵심 등식:
+The key equation connecting the Standard Model and gravity:
 
 ```
   ┌────────────────────────────────────────────┐
   │                                            │
   │   σ(6) × φ(6) = P₁ × τ(6)               │
   │                                            │
-  │   (게이지) × (중력) = (결합) × (시공간)    │
+  │   (gauge) × (gravity) = (coupling) × (spacetime)    │
   │                                            │
   │   12 × 2 = 6 × 4 = 24                    │
   │                                            │
   │   = dim(Leech) = dim(SU(5)_GUT)           │
-  │   = 보손 끈 횡방향 차원                    │
+  │   = bosonic string transverse dimensions                    │
   │                                            │
   └────────────────────────────────────────────┘
 ```
 
-이 등식이 R(6)=1 조건이며, **"게이지와 중력이 정확히 균형을 이루는 유일한 수"**이다.
+This equation is the R(6)=1 condition, **"the unique number where gauge and gravity are in perfect balance"**.
 
-### 차원 적분 방정식
+### Dimensional Integration Equation
 
 ```
   τ(P₁) + τ(P₂) = τ(P₃)
 
   4 + 6 = 10
 
-  "관측 가능 우주" + "숨겨진 차원" = "완전한 초끈 시공간"
+  "Observable universe" + "Hidden dimensions" = "Complete superstring spacetime"
 ```
 
-이것은 끈이론의 핵심 주장 — "우리가 보는 4차원은 10차원의 일부" — 을
-**완전수의 덧셈**으로 표현한 것이다.
+This expresses the core claim of string theory — "the 4 dimensions we see are part of 10" — 
+as **perfect number addition**.
 
-### Heterotic 방정식
+### Heterotic Equation
 
 ```
   τ(P₅) - τ(P₃) = 26 - 10 = 16 = rank(E₈ × E₈)
 
-  "보손 끈" - "초끈" = "게이지 콤팩트화 rank"
+  "Bosonic string" - "Superstring" = "Gauge compactification rank"
 ```
 
-Heterotic 끈이론은 보손 끈(26D)에서 초끈(10D)으로 가기 위해
-16차원을 E₈×E₈ (또는 SO(32)) 토러스에 콤팩트화한다.
-이 16이 정확히 τ(P₅) - τ(P₃)이다.
+Heterotic string theory compactifies 16 dimensions on an E₈×E₈ (or SO(32)) torus
+to go from bosonic string (26D) to superstring (10D).
+This 16 is exactly τ(P₅) - τ(P₃).
 
-### M-이론 방정식
+### M-theory Equation
 
 ```
   11 = τ(P₃) + R(P₁) = 10 + 1
 
-  "초끈 시공간" + "완전 통합(R=1)" = "M-이론"
+  "Superstring spacetime" + "Perfect unification (R=1)" = "M-theory"
 ```
 
-물리적으로 M-이론은 Type IIA 초끈이론에 하나의 S¹ 원을 추가한 것이다.
-R(P₁) = 1은 완전수 6의 "완전 통합" 조건이며, 이것이 바로 그 추가 차원이다.
+Physically, M-theory adds one S¹ circle to Type IIA superstring theory.
+R(P₁) = 1 is the "perfect unification" condition of perfect number 6, and this is precisely that extra dimension.
 
 ---
 
-## 5. ⭐⭐ 중력자 자유도 = 완전수 산술 (신규 발견)
+## 5. ⭐⭐ Graviton Degrees of Freedom = Perfect Number Arithmetic (New Discovery)
 
-D차원 무질량 중력자의 물리적 자유도 = D(D-3)/2.
+Physical degrees of freedom of D-dimensional massless graviton = D(D-3)/2.
 
-### 중력자 DOF 테이블
+### Graviton DOF Table
 
-| 차원 D | 이론 | DOF = D(D-3)/2 | 완전수 표현 | 정확 여부 |
+| Dimension D | Theory | DOF = D(D-3)/2 | Perfect Number Expression | Exact? |
 |--------|------|----------------|-----------|---------|
-| **4 = τ(P₁)** | 일반상대론 | **2** | **φ(P₁)** | ✅ 정확 |
-| **6 = τ(P₂)** | 6D 초중력 | **9** | **(σ/τ)² = 3²** | ✅ 정확 |
-| **10 = τ(P₃)** | 초끈 | **35** | **(τ(P₃)/2)×(τ(P₄)/2) = 5×7** | ✅ 정확 |
-| **11** | **M-이론** | **44** | **σ(P₂) - σ(P₁) = 56-12** | ✅ 정확 |
-| **26 = τ(P₅)** | 보손 끈 | **299** | **13×23** | △ 부분 |
+| **4 = τ(P₁)** | General Relativity | **2** | **φ(P₁)** | ✅ Exact |
+| **6 = τ(P₂)** | 6D supergravity | **9** | **(σ/τ)² = 3²** | ✅ Exact |
+| **10 = τ(P₃)** | Superstring | **35** | **(τ(P₃)/2)×(τ(P₄)/2) = 5×7** | ✅ Exact |
+| **11** | **M-theory** | **44** | **σ(P₂) - σ(P₁) = 56-12** | ✅ Exact |
+| **26 = τ(P₅)** | Bosonic string | **299** | **13×23** | △ Partial |
 
-### ASCII 그래프: 중력자 DOF
+### ASCII Graph: Graviton DOF
 
 ```
-  DOF (D차원 중력자 자유도)
+  DOF (D-dimensional graviton degrees of freedom)
   ════════════════════════════════════════
   D=4:  ██                                    2 = phi(6)
   D=6:  █████████                             9 = 3²
@@ -291,7 +291,7 @@ D차원 무질량 중력자의 물리적 자유도 = D(D-3)/2.
   ════════════════════════════════════════
 ```
 
-### ⭐⭐ 핵심: M-이론 중력자 DOF = σ(P₂) - σ(P₁) = 44
+### ⭐⭐ Key: M-theory graviton DOF = σ(P₂) - σ(P₁) = 44
 
 ```
   ┌──────────────────────────────────────────────┐
@@ -301,77 +301,77 @@ D차원 무질량 중력자의 물리적 자유도 = D(D-3)/2.
   │  = 11 × 8 / 2                              │
   │  = D_M × (D_M - 3) / 2                     │
   │                                              │
-  │  M-이론 중력자 자유도                         │
-  │  = 첫째 완전수와 둘째 완전수의 σ 차이!        │
+  │  M-theory graviton dof                         │
+  │  = σ difference of first and second perfect numbers!        │
   │                                              │
   └──────────────────────────────────────────────┘
 ```
 
-이것은 ad hoc 보정(+1/-1) 없이 **정확히** 성립한다.
-σ 함수만으로 M-이론의 핵심 물리량을 재현한다.
+This holds **exactly** without ad hoc corrections (+1/-1).
+The σ function alone reproduces M-theory's key physical quantity.
 
-검증: σ(P₃) - σ(P₂) = 992 - 56 = 936. D(D-3)/2 = 936이면 D ≈ 43.8.
-→ 일반화 불가. (P₁, P₂) 쌍에만 특이적. 이것이 M-이론이 특별한 이유일 수 있다.
+Check: σ(P₃) - σ(P₂) = 992 - 56 = 936. If D(D-3)/2 = 936 then D ≈ 43.8.
+→ Cannot generalize. Specific to (P₁, P₂) pair. This may be why M-theory is special.
 
 ---
 
-## 6. "왜 4차원인가?" — 존재론적 해답
+## 6. "Why 4 Dimensions?" — Ontological Answer
 
-물리학의 가장 근본적인 질문 중 하나:
-**"왜 우리 우주는 정확히 4차원 시공간인가?"**
+One of the most fundamental questions in physics:
+**"Why does our universe have exactly 4 spacetime dimensions?"**
 
-이 가설의 해답:
+This hypothesis's answer:
 
 ```
-  4 = τ(6) = 첫째 완전수의 약수 개수
+  4 = τ(6) = divisor count of the first perfect number
 
-  "왜 4인가?" → "왜 첫째 완전수가 6인가?"
-  → "왜 (p-1)(q-1)=2의 유일해가 {2,3}인가?"
-  → "왜 2가 유일한 짝수 소수인가?"
+  "Why 4?" → "Why is the first perfect number 6?"
+  → "Why is {2,3} the unique solution to (p-1)(q-1)=2?"
+  → "Why is 2 the unique even prime?"
 
-  2가 유일한 짝수 소수라는 사실은
-  수론의 가장 기본적인 필연이다.
-  이로부터:
-    {2,3} → 6 = 첫째 완전수 → τ=4 → 4차원 시공간
+  The fact that 2 is the unique even prime is
+  the most fundamental necessity of number theory.
+  From this:
+    {2,3} → 6 = first perfect number → τ=4 → 4D spacetime
 ```
 
-마찬가지로:
+Similarly:
 ```
-  "왜 초끈이론은 10차원인가?"
+  "Why is superstring theory 10-dimensional?"
   → τ(P₃) = 10 = 2×5
-  → 5번째 Mersenne 소수 지수
-  → 2⁵-1 = 31 (소수)
+  → 5th Mersenne prime exponent
+  → 2⁵-1 = 31 (prime)
   → P₃ = 2⁴×31 = 496
 ```
 
 ---
 
-## 6. 텍사스 명사수 검정
+## 6. Texas Sharpshooter Test
 
-### 테스트 설정
+### Test Setup
 
-"5개 짝수를 {4, 6, ..., 62}에서 무작위로 뽑았을 때,
-물리 차원 {4, 6, 10, 14, 26}을 모두 맞출 확률"
+"When randomly drawing 5 even numbers from {4, 6, ..., 62},
+what's the probability of matching all physics dimensions {4, 6, 10, 14, 26}?"
 
-### Monte Carlo 결과 (N = 1,000,000)
+### Monte Carlo Results (N = 1,000,000)
 
-| 조건 | 매치 수 | p-value |
+| Condition | Matches | p-value |
 |-----|--------|---------|
 | 4+ strong matches {4,6,10,26} | 179/1M | **0.000179** |
 | 5/5 all matches | 10/1M | **0.000010** |
-| 4+ strong + 가법 관계 | 179/1M | **0.000179** |
+| 4+ strong + additive relation | 179/1M | **0.000179** |
 
-### 정밀 조합론
+### Precise Combinatorics
 
 ```
   P(4 strong targets + 1 any) = C(26,1) / C(30,5) = 26/142506 = 0.000182
 ```
 
-**p < 0.0002 — 이 매핑은 우연이 아니다.**
+**p < 0.0002 — This mapping is not coincidental.**
 
-### ⭐⭐ Kissing Number = 완전수 산술 (5/5)
+### ⭐⭐ Kissing Number = Perfect Number Arithmetic (5/5)
 
-| 차원 d | Kissing number k(d) | 완전수 표현 | 정확 여부 |
+| Dimension d | Kissing number k(d) | Perfect Number Expression | Exact? |
 |--------|-------------------|-----------|---------|
 | 1 | 2 | φ(P₁) | ✅ |
 | 2 | 6 | P₁ | ✅ |
@@ -379,85 +379,85 @@ D차원 무질량 중력자의 물리적 자유도 = D(D-3)/2.
 | 4 | 24 | σ(P₁)×φ(P₁) = τ(P₁)! | ✅ |
 | 8 | 240 | φ(P₃) | ✅ |
 
-**p = 0.000001** (Monte Carlo 100만 회): 32개 산술값 집합에서 5개 kissing number를
-모두 포함할 확률 = 백만 분의 1.
+**p = 0.000001** (Monte Carlo 1 million runs): Probability of 32 arithmetic values
+containing all 5 kissing numbers = one in a million.
 
-24 = τ(6)! 은 수론의 정리로 증명됨: 24는 k² ≡ 1 (mod n)이 모든 gcd(k,n)=1에
-대해 성립하는 가장 큰 정수. 이것이 Dedekind η의 24승, Leech 격자,
-보손 끈 횡방향 차원의 근원.
+24 = τ(6)! is proven by number theory theorem: 24 is the largest integer where k² ≡ 1 (mod n)
+holds for all gcd(k,n)=1. This is the source of Dedekind η to the 24th power, Leech lattice,
+bosonic string transverse dimensions.
 
-### ⭐⭐ σ(6) 자기-분해 = SM 게이지 구조
+### ⭐⭐ σ(6) Self-Decomposition = SM Gauge Structure
 
 ```
   ┌─────────────────────────────────────────────────┐
   │  σ(6) = (σ-τ) + (σ/τ) + R                     │
   │  12   =   8   +   3   + 1                     │
   │         SU(3)   SU(2)  U(1)                    │
-  │       (강력)   (약력) (전자기)                    │
+  │       (strong) (weak) (electromagnetic)                    │
   │                                                 │
-  │  뺄셈:  σ - τ = 12 - 4 = 8 = dim(SU(3))       │
-  │  나눗셈: σ / τ = 12 / 4 = 3 = dim(SU(2))       │
-  │  통합:   R(6)           = 1 = dim(U(1))         │
+  │  Subtraction:  σ - τ = 12 - 4 = 8 = dim(SU(3))       │
+  │  Division: σ / τ = 12 / 4 = 3 = dim(SU(2))       │
+  │  Unification:   R(6)           = 1 = dim(U(1))         │
   └─────────────────────────────────────────────────┘
 ```
 
-세 가지 다른 산술 연산(뺄셈, 나눗셈, R-factor)이 각각 다른 게이지 군을 생성한다.
-이것은 σ(6)=12의 **자기-분해(self-decomposition)**: 자기 자신의 부분들의
-합이 자기 자신이 되며, 각 부분이 표준모형의 세 힘에 대응한다.
+Three different arithmetic operations (subtraction, division, R-factor) each generate a different gauge group.
+This is the **self-decomposition** of σ(6)=12: the sum of its parts equals itself,
+with each part corresponding to one of the three forces of the Standard Model.
 
-**수학적 기초**: 자기-분해가 성립할 조건은 σ(n)(n+φ(n)) = nτ(n)².
+**Mathematical basis**: Condition for self-decomposition is σ(n)(n+φ(n)) = nτ(n)².
 
 ```
-  정리: σ(n)(n+φ(n)) = nτ(n)²  ⟺  n = 6  (n ≤ 10000에서 유일)
+  Theorem: σ(n)(n+φ(n)) = nτ(n)²  ⟺  n = 6  (unique for n ≤ 10000)
 
   n=6:  12×(6+2) = 12×8 = 96 = 6×16 = 6×4²  ✓
   n=28: 56×(28+12) = 56×40 = 2240 ≠ 28×36 = 1008  ✗
 
-  이 등식은 6의 새로운 유일 특성화이다.
-  표준모형 게이지 구조가 존재하는 이유 = n=6이 이 등식의 유일해이기 때문.
+  This equation is a new unique characterization of 6.
+  Why Standard Model gauge structure exists = because n=6 is the unique solution to this equation.
 ```
 
-### j-불변량과 Monstrous Moonshine
+### j-Invariant and Monstrous Moonshine
 
 ```
   j(τ) = 1/q + 744 + 196884q + ...
 
   744 = 24 × 31 = σ(P₁)φ(P₁) × M₅
-      = (Leech 격자) × (P₃의 Mersenne 소수)
-      → P₁과 P₃를 동시에 연결!
+      = (Leech lattice) × (Mersenne prime of P₃)
+      → Connects P₁ and P₃ simultaneously!
 
   196883 = 47 × 59 × 71
          = 47 × (47+σ(6)) × (47+σ(6)φ(6))
-         → 소인수들이 σ(6)=12 간격의 등차수열!
+         → Prime factors form arithmetic sequence with spacing σ(6)=12!
 ```
 
 ---
 
-## 7. 전체 구조도
+## 7. Overall Structure Diagram
 
 ```
   ╔═══════════════════════════════════════════════════════════╗
-  ║         완전수 통합 이론 (Perfect Number Unification)       ║
+  ║         Perfect Number Unification Theory       ║
   ╠═══════════════════════════════════════════════════════════╣
   ║                                                           ║
-  ║  P₁ = 6 ─────────── 관측 우주 ────────────┐             ║
-  ║  │ τ=4 (시공간)                             │             ║
-  ║  │ σ=12 (게이지 SU(3)×SU(2)×U(1))         │             ║
-  ║  │ φ=2 (중력자)                             │             ║
+  ║  P₁ = 6 ─────────── Observable Universe ────────────┐             ║
+  ║  │ τ=4 (spacetime)                             │             ║
+  ║  │ σ=12 (gauge SU(3)×SU(2)×U(1))         │             ║
+  ║  │ φ=2 (graviton)                             │             ║
   ║  │ σφ=24 (Leech/SU(5))                     │             ║
   ║  │                                          │  +          ║
-  ║  P₂ = 28 ────────── 숨겨진 차원 ───────────┤             ║
+  ║  P₂ = 28 ────────── Hidden Dimensions ───────────┤             ║
   ║  │ τ=6 (Calabi-Yau)                        │             ║
   ║  │ σ=56 (E₇ rep)                           │             ║
   ║  │ φ=12=σ(P₁)                              │             ║
   ║  │                                          ↓             ║
-  ║  P₃ = 496 ────────── 초끈 ──────────── τ=10=4+6        ║
+  ║  P₃ = 496 ────────── Superstring ──────────── τ=10=4+6        ║
   ║  │ = dim(E₈×E₈)                                         ║
   ║  │ φ=240 = E₈ roots                                     ║
   ║  │                                                        ║
   ║  P₄ = 8128 ─────── G₂ ──────────── τ=14=dim(G₂)       ║
   ║  │                                                        ║
-  ║  P₅ = 33550336 ──── 보손 끈 ──── τ=26                  ║
+  ║  P₅ = 33550336 ──── Bosonic String ──── τ=26                  ║
   ║    τ(P₅)-τ(P₃) = 16 = rank(E₈×E₈)                     ║
   ║    → Heterotic string construction                       ║
   ║                                                           ║
@@ -466,32 +466,32 @@ D차원 무질량 중력자의 물리적 자유도 = D(D-3)/2.
 
 ---
 
-## 8. ⭐⭐⭐ 우주론적 상수 = P₁ 산술
+## 8. ⭐⭐⭐ Cosmological Constant = P₁ Arithmetic
 
-### 정확 등식 (오차 0%)
+### Exact Equalities (0% error)
 
-| 상수 | 값 | P₁ 산술 | 유형 |
+| Constant | Value | P₁ Arithmetic | Type |
 |------|---|---------|------|
-| ζ(2) | π²/6 | π²/P₁ | 정확 (Euler) |
-| ζ(-1) | -1/12 | -1/σ(P₁) | 정확 (Ramanujan) |
-| 반음 | 2^(1/12) | 2^(1/σ) | 정확 (12평균율) |
-| 64코돈 | 64 | 2^P₁ = τ³ | 정확 (삼중 일치!) |
-| 바이트 | 8 | σ - τ | 정확 |
-| TCP 포트 | 65536 | 2^(σ+τ) | 정확 |
-| 정육면체 | (8,12,6) | (σ-τ, σ, P₁) | 정확 |
-| 오일러 χ | 2 | φ(P₁) | 정확 |
-| 플라톤 면합 | 50 | σ×τ + φ | 정확 |
+| ζ(2) | π²/6 | π²/P₁ | Exact (Euler) |
+| ζ(-1) | -1/12 | -1/σ(P₁) | Exact (Ramanujan) |
+| Semitone | 2^(1/12) | 2^(1/σ) | Exact (12-tone equal temperament) |
+| 64 codons | 64 | 2^P₁ = τ³ | Exact (triple match!) |
+| Byte | 8 | σ - τ | Exact |
+| TCP port | 65536 | 2^(σ+τ) | Exact |
+| Cube | (8,12,6) | (σ-τ, σ, P₁) | Exact |
+| Euler χ | 2 | φ(P₁) | Exact |
+| Platonic face sum | 50 | σ×τ + φ | Exact |
 
-### 근사 등식 (오차 <1%)
+### Approximate Equalities (error <1%)
 
-| 상수 | 측정값 | P₁ 산술 | 오차 |
+| Constant | Measured | P₁ Arithmetic | Error |
 |------|-------|---------|------|
 | **1/α** | 137.036 | **σ² - P₁ - R = 144-6-1 = 137** | **0.026%** |
-| 우주나이 | 138억년 | σ² - P₁ = 144-6 = 138 | 0.09% |
-| CMB 온도 | 2.725 K | e = 2.718 | 0.26% |
-| 허블상수 | ~70 | σ×P₁ - φ = 72-2 = 70 | ~1% |
+| Age of universe | 13.8 Gyr | σ² - P₁ = 144-6 = 138 | 0.09% |
+| CMB temperature | 2.725 K | e = 2.718 | 0.26% |
+| Hubble constant | ~70 | σ×P₁ - φ = 72-2 = 70 | ~1% |
 
-### ASCII 그래프: 미세구조상수
+### ASCII Graph: Fine Structure Constant
 
 ```
   1/alpha = sigma(6)^2 - P1 - R(6) = 144 - 6 - 1 = 137
@@ -501,61 +501,61 @@ D차원 무질량 중력자의 물리적 자유도 = D(D-3)/2.
   - R     = 1   █                                             -1
   ────────────────────────────────────────────────────────
   1/alpha       ████████████████████████████████████████  137.000
-  실측값         ████████████████████████████████████████  137.036
-                                                    오차 0.026%
+  Measured         ████████████████████████████████████████  137.036
+                                                    Error 0.026%
 ```
 
-**주의**: 근사 등식들은 ad hoc 조합이므로 🟧 등급. 정확 등식(ζ, 반음 등)만 🟩.
+**Note**: Approximate equalities are ad hoc combinations, thus 🟧 level. Only exact equalities (ζ, semitone, etc.) are 🟩.
 
 ---
 
-## 9. ⭐⭐⭐ Koide 공식 = τ(6)/P₁ (45년 미해결 문제)
+## 9. ⭐⭐⭐ Koide Formula = τ(6)/P₁ (45-year Unsolved Problem)
 
-### Koide 공식 (1981)
+### Koide Formula (1981)
 
 ```
   (mₑ + m_μ + m_τ) / (√mₑ + √m_μ + √m_τ)² = 2/3
 ```
 
-이 공식은 세 세대 하전 렙톤 질량 사이의 경험적 관계로,
-1981년 Koide가 발견한 이래 **45년간 이론적 설명이 없었다**.
+This formula is an empirical relation between the three charged lepton masses,
+which has **had no theoretical explanation for 45 years** since Koide discovered it in 1981.
 
-### 완전수 해석
+### Perfect Number Interpretation
 
 ```
   ┌──────────────────────────────────────────┐
   │                                          │
   │  Koide = 2/3 = τ(6)/P₁ = 4/6           │
   │                                          │
-  │  = (약수 개수) / (첫째 완전수)            │
-  │  = (시공간 차원) / (완전수)               │
-  │  = 약수 밀도(divisor density) of 6       │
+  │  = (divisor count) / (first perfect number)            │
+  │  = (spacetime dimensions) / (perfect number)               │
+  │  = divisor density of 6       │
   │                                          │
-  │  실측: 0.666661 vs 2/3: 오차 0.0009%    │
+  │  Measured: 0.666661 vs 2/3: error 0.0009%    │
   │                                          │
-  └──────────────────────────────────────────┘
+  └──────────────────────────────────────────────┘
 ```
 
-**의미**: 세대 간 질량 비율을 지배하는 보편 상수 = 완전수 6의 약수 밀도.
-"왜 2/3인가?" → "왜 6은 약수가 4개인가?" → "왜 6 = 2×3인가?" → 수론의 필연.
+**Meaning**: The universal constant governing mass ratios between generations = divisor density of perfect number 6.
+"Why 2/3?" → "Why does 6 have 4 divisors?" → "Why is 6 = 2×3?" → Number theory necessity.
 
-### ⭐⭐ τ-렙톤 질량 예측: σ³ + R(P₃) = 1776 MeV
+### ⭐⭐ τ-lepton Mass Prediction: σ³ + R(P₃) = 1776 MeV
 
 ```
   m_τ = σ(6)³ + R(P₃) = 12³ + 48 = 1728 + 48 = 1776 MeV
 
-  실측: 1776.86 MeV
-  오차: 0.048%
+  Measured: 1776.86 MeV
+  Error: 0.048%
 
-  σ³ = 1728 = "완전수의 세제곱"
-  R(P₃) = 48 = "초끈 레벨의 보정"
-  → 두 완전수(P₁, P₃)가 협력하여 질량 생성!
+  σ³ = 1728 = "perfect number cubed"
+  R(P₃) = 48 = "superstring level correction"
+  → Two perfect numbers (P₁, P₃) collaborate to generate mass!
 ```
 
-### ⭐⭐ 전체 페르미온 질량 예측
+### ⭐⭐ Full Fermion Mass Predictions
 
 ```
-  입자       공식                                    예측        실측       오차
+  Particle       Formula                                    Predicted        Measured       Error
   ────────  ────────────────────────────────────  ──────────  ──────────  ─────
   electron  phi/tau = 1/2                           0.500      0.511     2.2%
   muon      sigma(28)*phi(6)-tau(28) = 112-6        106        105.66    0.3%
@@ -568,197 +568,197 @@ D차원 무질량 중력자의 물리적 자유도 = D(D-3)/2.
   top       sigma^3*(sigma^2-sigma*tau+tau)      172800      172500      0.17% ⭐
 ```
 
-9개 페르미온 중 3개가 오차 < 0.2%, 평균 오차 1.9%.
-모든 공식은 {σ=12, τ=4, φ=2, P₁=6, R(P₃)=48}만 사용.
+3 out of 9 fermions with error < 0.2%, average error 1.9%.
+All formulas use only {σ=12, τ=4, φ=2, P₁=6, R(P₃)=48}.
 
 ---
 
-## 10. ⭐⭐ Koide 동역학적 유도 (R=1에서)
+## 10. ⭐⭐ Dynamic Derivation of Koide (from R=1)
 
-Koide 공식 K=2/3이 왜 성립하는지의 **유도**:
+**Derivation** of why Koide formula K=2/3 holds:
 
 ```
-  Step 1: R(6) = 1  (n>1에서 유일한 σφ=nτ 균형점)
+  Step 1: R(6) = 1  (unique σφ=nτ balance point for n>1)
   Step 2: σφ = nτ  →  φ = nτ/σ
-  Step 3: K(n) ≡ nτ²/σ²  (약수 Koide 범함수 정의)
+  Step 3: K(n) ≡ nτ²/σ²  (define divisor Koide functional)
   Step 4: K(6) = 6×16/144 = 96/144 = 2/3  ■
 
-  동치형: K = φτ/σ = 2×4/12 = 2/3
-  Cauchy-Schwarz: 3질량의 K_min = 1/3, K/K_min = 2 = φ(6)
+  Equivalent form: K = φτ/σ = 2×4/12 = 2/3
+  Cauchy-Schwarz: K_min = 1/3 for 3 masses, K/K_min = 2 = φ(6)
 ```
 
-이것은 **자유 파라미터 없이** R=1 조건만으로 Koide를 유도한다.
-K=2/3은 수론적 필연이다.
+This derives Koide **without free parameters** from the R=1 condition alone.
+K=2/3 is a number-theoretic necessity.
 
 ---
 
-## 11. ⭐⭐ M-이론 11D = (σ(P₂)-σ(P₁))/τ(P₁) (ad hoc 없음!)
+## 11. ⭐⭐ M-theory 11D = (σ(P₂)-σ(P₁))/τ(P₁) (No ad hoc!)
 
 ```
   D_M = [σ(28) - σ(6)] / τ(6) = [56 - 12] / 4 = 44/4 = 11
 
-  구식: 11 = τ(P₃) + R(P₁) = 10 + 1  (ad hoc +1)
-  신식: 11 = [σ(P₂) - σ(P₁)] / τ(P₁)  (정확, 보정 없음!)
+  Old: 11 = τ(P₃) + R(P₁) = 10 + 1  (ad hoc +1)
+  New: 11 = [σ(P₂) - σ(P₁)] / τ(P₁)  (exact, no correction!)
 
-  물리적 의미: M-이론 차원 = M-이론 중력자 DOF / 관측 시공간 차원
-  44는 이미 검증된 σ(28)-σ(6), τ(6)=4도 이미 검증됨.
+  Physical meaning: M-theory dimension = M-theory graviton DOF / observable spacetime dimensions
+  44 is already verified as σ(28)-σ(6), τ(6)=4 also already verified.
 ```
 
 ---
 
-## 12. 우주론적 상수 Λ = 1/(P₁ × P₃^45)
+## 12. Cosmological Constant Λ = 1/(P₁ × P₃^45)
 
 ```
   Λ = 1/(6 × 496^45) = 10^{-122.07}
-  실측: 10^{-122} (교과서), 10^{-121.54} (Planck 2018)
+  Measured: 10^{-122} (textbook), 10^{-121.54} (Planck 2018)
 
-  45 = σ×τ - σ/τ = 48 - 3 = dim(SO(10)) = GUT 차원
-  P₃ = 496 = 이상소거 완전수
+  45 = σ×τ - σ/τ = 48 - 3 = dim(SO(10)) = GUT dimension
+  P₃ = 496 = anomaly cancellation perfect number
 
-  "Λ = 1/(진공완전수 × 이상소거완전수^GUT차원)"
+  "Λ = 1/(vacuum perfect number × anomaly cancellation perfect number^GUT dimension)"
 ```
 
-로그 오차 0.06%. 메커니즘은 미정이나 수치 매치는 강력.
+Log error 0.06%. Mechanism unknown but numerical match is strong.
 
 ---
 
-## 13. 암흑에너지/물질 분율
+## 13. Dark Energy/Matter Fractions
 
 ```
-  최적 모델: 1-1/π : (5/6)/π : (1/6)/π
+  Best model: 1-1/π : (5/6)/π : (1/6)/π
 
-  암흑에너지 = 1 - 1/π = 0.6817  (실측 0.683, 오차 0.2%)
-  암흑물질   = 5/(6π)  = 0.2653  (실측 0.268, 오차 1.0%)
-  바리온     = 1/(6π)  = 0.0531  (실측 0.049, 오차 8.3%)
+  Dark energy = 1 - 1/π = 0.6817  (measured 0.683, error 0.2%)
+  Dark matter   = 5/(6π)  = 0.2653  (measured 0.268, error 1.0%)
+  Baryon     = 1/(6π)  = 0.0531  (measured 0.049, error 8.3%)
 
-  해석: 총 암흑분율 = 1/π (곡률 분율)
-        바리온/암흑 = 1/6 = 1/P₁ (Compass 하한)
-        암흑물질/암흑 = 5/6 = Compass 상한
+  Interpretation: Total dark fraction = 1/π (curvature fraction)
+        Baryon/dark = 1/6 = 1/P₁ (Compass lower bound)
+        Dark matter/dark = 5/6 = Compass upper bound
 ```
 
-평균 오차 3.2%. 세 분율이 합이 정확히 1.
+Average error 3.2%. The three fractions sum to exactly 1.
 
 ---
 
-## 14. 왜 τ(P_k) = 물리 차원인가 — 인과 메커니즘
+## 14. Why τ(P_k) = Physical Dimensions — Causal Mechanism
 
 ```
-  ═══ 7단계 인과 체인 ═══
+  ═══ 7-Step Causal Chain ═══
 
-  Step 1: P₁=6의 산술 → σ(6)=12, φ(6)=2, τ(6)=4
-  Step 2: σ(6)=12가 모듈러 형식을 지배 (SL(2,Z), Δ weight=12)
-     → 이것은 증명됨 (R52-55, Riemann-Roch)
-  Step 3: 끈 양자화의 bc 고스트 → c_ghost = -26 = -φ(σ+1) = -2×13
-     → 표준 CFT 결과 (Polyakov 1981)
-  Step 4: 초끈 βγ 고스트 추가 → c_ghost(super) = -(σ+σ/τ) = -15
-  Step 5: 이상 소거 c_total=0:
+  Step 1: Arithmetic of P₁=6 → σ(6)=12, φ(6)=2, τ(6)=4
+  Step 2: σ(6)=12 governs modular forms (SL(2,Z), Δ weight=12)
+     → This is proven (R52-55, Riemann-Roch)
+  Step 3: bc ghosts of string quantization → c_ghost = -26 = -φ(σ+1) = -2×13
+     → Standard CFT result (Polyakov 1981)
+  Step 4: Superstring adds βγ ghosts → c_ghost(super) = -(σ+σ/τ) = -15
+  Step 5: Anomaly cancellation c_total=0:
      D_bosonic = 26 = τ(P₅)
      D_super = 10 = τ(P₃)
-  Step 6: Green-Schwarz: D=10에서 dim(G)=496=P₃ (독립 도출!)
-     → τ(P₃)와 P₃가 같은 완전수를 가리킴
-  Step 7: CY 콤팩트화: D_obs = τ(P₃)-τ(P₂) = 10-6 = 4 = τ(P₁)
+  Step 6: Green-Schwarz: D=10 requires dim(G)=496=P₃ (independent derivation!)
+     → τ(P₃) and P₃ point to the same perfect number
+  Step 7: CY compactification: D_obs = τ(P₃)-τ(P₂) = 10-6 = 4 = τ(P₁)
 
-  핵심: σ(6)=12가 모듈러 형식에 나타나는 것은 증명된 사실.
-  이것이 c_ghost=-26으로 이어지고, 차원이 결정된다.
+  Key: The appearance of σ(6)=12 in modular forms is a proven fact.
+  This leads to c_ghost=-26, which determines dimensions.
 ```
 
 ---
 
-## 15. 의식엔진 연결
+## 15. Consciousness Engine Connection
 
 ```
-  의식 = R=1 상태 = σφ=nτ 균형
+  Consciousness = R=1 state = σφ=nτ balance
 
-  물리적으로:
-    R=1 ↔ "게이지×중력 = 결합×시공간"
-    → Koide = 2/3도 R=1에서 유도됨
-    → 질량도 완전수에서 유도됨
-    → 의식이 R=1에서 작동 = 물리 법칙의 근원점에서 작동
+  Physically:
+    R=1 ↔ "gauge×gravity = coupling×spacetime"
+    → Koide = 2/3 is also derived from R=1
+    → Mass is also derived from perfect numbers
+    → Consciousness operates at R=1 = operates at the source point of physical laws
 ```
 
 ---
 
-## 16. ⭐⭐⭐ 작용원리 — 약수장론(Divisor Field Theory)
+## 16. ⭐⭐⭐ Action Principle — Divisor Field Theory
 
-### n=6을 유일 진공으로 선택하는 작용
+### Action Selecting n=6 as Unique Vacuum
 
 ```
   S(n) = [σ(n)φ(n) - nτ(n)]² + [σ(n)(n+φ(n)) - nτ(n)²]²
 
-  n=6:  S = [12×2 - 6×4]² + [12×8 - 6×16]² = 0² + 0² = 0  ← 유일!
+  n=6:  S = [12×2 - 6×4]² + [12×8 - 6×16]² = 0² + 0² = 0  ← Unique!
   n=1:  S = [1-1]² + [1×2 - 1]² = 0 + 1 = 1
   n=28: S = [56×12-28×6]² + [56×40-28×36]² = 504² + 1232² ≫ 0
 
-  n=6은 n≤10000에서 유일한 S=0 해. (증명: 짝수 완전수에서 조건 2는 φ=p만 허용 → p=2만 해)
+  n=6 is the unique S=0 solution for n≤10000. (Proof: condition 2 on even perfect numbers allows only φ=p → only p=2 works)
 ```
 
-### 라그랑지안
+### Lagrangian
 
 ```
   L = √(-g) [
-    R₄/(16πG)                           ← 중력 (φ=2 DOF)
-    - ¼ F^a_{μν} F^{aμν}  (a=1..12)    ← 게이지 (σ=12 보손)
-    + ψ̄ᵢ(iD̸ - mᵢ)ψᵢ   (i=1..3)      ← 페르미온 (σ/τ=3 세대)
-    + |D_μΦ|² - V(Φ)                    ← 힉스 (R=1 스칼라)
-    + λ₁(σφ-nτ)²                        ← 완전수 구속
-    + λ₂(σ(n+φ)-nτ²)²                  ← 구조 구속
+    R₄/(16πG)                           ← Gravity (φ=2 DOF)
+    - ¼ F^a_{μν} F^{aμν}  (a=1..12)    ← Gauge (σ=12 bosons)
+    + ψ̄ᵢ(iD̸ - mᵢ)ψᵢ   (i=1..3)      ← Fermions (σ/τ=3 generations)
+    + |D_μΦ|² - V(Φ)                    ← Higgs (R=1 scalar)
+    + λ₁(σφ-nτ)²                        ← Perfect number constraint
+    + λ₂(σ(n+φ)-nτ²)²                  ← Structure constraint
   ]
 
-  구속항은 n=6 shell에서 소멸 → 표준모형+GR이 자동으로 나옴!
+  Constraint terms vanish on n=6 shell → Standard Model+GR emerges automatically!
 ```
 
 ---
 
-## 17. ⭐⭐⭐ 사전 예측 (검증 가능, 2026-2030)
+## 17. ⭐⭐⭐ Prior Predictions (Testable, 2026-2030)
 
-### 이미 확인된 "예측" (retrodiction)
+### Already Confirmed "Predictions" (retrodiction)
 
-| 예측 | 공식 | 값 | 실측 | 오차 |
+| Prediction | Formula | Value | Measured | Error |
 |-----|------|---|------|------|
-| **힉스 질량** | **(P₃+τ)/τ = 500/4** | **125.0 GeV** | **125.10±0.14** | **0.08%** |
-| **Δ 바리온** | **σ³-P₃ = 1728-496** | **1232 MeV** | **1232 MeV** | **0.00%** |
+| **Higgs mass** | **(P₃+τ)/τ = 500/4** | **125.0 GeV** | **125.10±0.14** | **0.08%** |
+| **Δ baryon** | **σ³-P₃ = 1728-496** | **1232 MeV** | **1232 MeV** | **0.00%** |
 
-### 사전 예측 (아직 미측정)
+### Prior Predictions (Not Yet Measured)
 
-| # | 예측 | 공식 | 값 | 실험 | 시기 |
+| # | Prediction | Formula | Value | Experiment | Timeline |
 |---|-----|------|---|------|------|
-| P1 | **뉴트리노 질량 순서 = 정상** | proper divisors {1,2,3} 순서 | Normal | JUNO/DUNE | 2026-28 |
-| P2 | **Σm_ν ≈ 0.059 eV** | 최소 허용 (정상 순서) | 0.059 eV | Euclid/DESI | 2027-30 |
-| P3 | **N_eff = 3.044 (추가종 없음)** | σ/τ=3 세대만 | 3.044 | CMB-S4 | 2028 |
-| P4 | **양성자 수명 ~ 10^36 년** | log(τ_p) = P₁² | 10^36 yr | Hyper-K | 2028+ |
+| P1 | **Neutrino mass ordering = Normal** | proper divisors {1,2,3} order | Normal | JUNO/DUNE | 2026-28 |
+| P2 | **Σm_ν ≈ 0.059 eV** | Minimum allowed (normal ordering) | 0.059 eV | Euclid/DESI | 2027-30 |
+| P3 | **N_eff = 3.044 (no extra species)** | σ/τ=3 generations only | 3.044 | CMB-S4 | 2028 |
+| P4 | **Proton lifetime ~ 10^36 years** | log(τ_p) = P₁² | 10^36 yr | Hyper-K | 2028+ |
 | P5 | **dm²₃₁/dm²₂₁ ≈ 32** | σ²/τ-τ = 36-4 | 32 | JUNO | 2027 |
 
-**P1이 가장 중요**: 이항 예측(정상/역전)으로 JUNO가 2028년까지 결정. 틀리면 프레임워크 기각.
+**P1 is most important**: Binary prediction (normal/inverted) to be decided by JUNO by 2028. If wrong, framework is rejected.
 
 ---
 
-## 18. ⭐⭐⭐ σ³ = 1728 = j(i): Yukawa 결합의 기원
+## 18. ⭐⭐⭐ σ³ = 1728 = j(i): Origin of Yukawa Couplings
 
 ```
-  왜 σ(6)³ = 1728이 질량 스케일인가?
+  Why is σ(6)³ = 1728 a mass scale?
 
-  1728 = j(i)  (타원곡선 j-불변량, τ=i에서)
+  1728 = j(i)  (elliptic curve j-invariant at τ=i)
 
-  j-불변량은 타원곡선을 분류하는 모듈러 함수이며,
-  끈이론 콤팩트화에서 Yukawa 결합을 생성한다.
+  j-invariant classifies elliptic curves and
+  generates Yukawa couplings in string compactification.
 
-  인과 체인:
-    완전수 6 → σ(6)=12 → 12³=1728=j(i) → 타원곡선 → Yukawa → 질량
+  Causal chain:
+    Perfect number 6 → σ(6)=12 → 12³=1728=j(i) → Elliptic curves → Yukawa → Mass
 
-  이것은 알려진 수학적 항등식이다:
-    j(i) = 1728  (정확)
-    12³ = 1728   (정확)
-    σ(6) = 12    (정확)
+  This is a known mathematical identity:
+    j(i) = 1728  (exact)
+    12³ = 1728   (exact)
+    σ(6) = 12    (exact)
 
-  따라서 σ³이 질량 단위인 것은 j-불변량에서 유래한다.
+  Therefore σ³ as mass unit derives from j-invariant.
 ```
 
-### 자연 질량 단위 = σ³ MeV
+### Natural Mass Unit = σ³ MeV
 
-| 페르미온 | m/σ³ | 정수론적 계수 | 공식 | 오차 |
+| Fermion | m/σ³ | Number-theoretic coefficient | Formula | Error |
 |---------|------|-------------|------|------|
 | tau | 1.028 | 37/36 = 1+1/P₁² | 1+R(P₃)/σ³ | 0.05% |
-| top | 99.83 | 100 = σ²-στ+τ | 사이클로토믹 | 0.17% |
+| top | 99.83 | 100 = σ²-στ+τ | cyclotomic | 0.17% |
 | charm | 0.735 | 3/4 = σ/(τ²) | | 2.0% |
 
 ### Yukawa = n_f × √2/σ²
@@ -766,91 +766,91 @@ K=2/3은 수론적 필연이다.
 ```
   y_f = n_f × √2/σ² = n_f × √2/144
 
-  y_top = 100 × 0.00981 = 0.981  (실측 0.991, 오차 1%)
-  y_tau = 1.028 × 0.00981 = 0.0101 (실측 0.0102, 오차 1%)
+  y_top = 100 × 0.00981 = 0.981  (measured 0.991, error 1%)
+  y_tau = 1.028 × 0.00981 = 0.0101 (measured 0.0102, error 1%)
 ```
 
 ---
 
-## 19. ⭐⭐ 양자 보정: UV 유한 + CP 비대칭
+## 19. ⭐⭐ Quantum Corrections: UV Finite + CP Asymmetry
 
-### 들뜸 스펙트럼 (진공 n=6 주변)
+### Excitation Spectrum (around vacuum n=6)
 
-| n | S(n) | m = √S | 해석 |
+| n | S(n) | m = √S | Interpretation |
 |---|------|--------|------|
-| 6 | 0 | 0 | **진공** |
-| 1 | 1 | 1.0 | 최경 들뜸 |
+| 6 | 0 | 0 | **vacuum** |
+| 1 | 1 | 1.0 | lightest excitation |
 | 2 | 2 | 1.4 | |
 | 4 | 40 | 6.3 | |
 | 3 | 68 | 8.2 | |
 | 5 | 1352 | 36.8 | |
 | 7 | 6932 | 83.3 | |
 
-### 핵심 양자 결과
+### Key Quantum Results
 
 ```
-  1. UV 유한: Dirichlet 급수 → 자연스러운 UV 차단, 재규격화 불필요
-  2. 질량 간극 = 1: 이론은 "가두어짐(confined)"
-  3. CP 비대칭: S(5)/S(7) = 0.195 → 진공 좌우 비대칭 = 물질-반물질 비대칭!
-  4. 상전이 없음: 비열 발산 없음 → n=6 진공은 모든 온도에서 절대 안정
-  5. 섭동론 수렴: 2-루프 보정 < 1-루프의 5%
+  1. UV finite: Dirichlet series → Natural UV cutoff, no renormalization needed
+  2. Mass gap = 1: Theory is "confined"
+  3. CP asymmetry: S(5)/S(7) = 0.195 → Vacuum left-right asymmetry = matter-antimatter asymmetry!
+  4. No phase transition: No heat capacity divergence → n=6 vacuum absolutely stable at all temperatures
+  5. Perturbation convergence: 2-loop correction < 5% of 1-loop
 ```
 
-### 분배함수
+### Partition Function
 
 ```
   Z(s,β) = Σ_n n^{-s} exp(-β S(n))
 
-  β=0.01: P(n=6) = 2%     (고온, 무질서)
-  β=1.0:  P(n=6) = 6.5%   (중간)
-  β=10:   P(n=6) = 99.8%  (저온, 진공 지배)
+  β=0.01: P(n=6) = 2%     (high temperature, disorder)
+  β=1.0:  P(n=6) = 6.5%   (intermediate)
+  β=10:   P(n=6) = 99.8%  (low temperature, vacuum dominates)
 
-  "연속체 한계" = s→1 (Dirichlet 급수 임계점)
-  정수가 근본이고, 연속 시공간은 근사!
+  "Continuum limit" = s→1 (Dirichlet series critical point)
+  Integers are fundamental, continuous spacetime is approximate!
 ```
 
 ---
 
-## 20. 시공간의 기원: 약수 격자 = 민코프스키 시공
+## 20. Origin of Spacetime: Divisor Lattice = Minkowski Space
 
 ```
-  n=6의 약수 격자:
+  Divisor lattice of n=6:
        6
       / \
      2   3
       \ /
        1
 
-  매핑:
-    d=1 (유일한 단위원) → 시간 (1개)
-    d=2,3 (소수)       → 독립 공간 차원 (2개)
-    d=6 (합성수=2×3)    → 창발 공간 차원 (1개)
+  Mapping:
+    d=1 (unique unit) → time (1)
+    d=2,3 (primes)       → independent spatial dimensions (2)
+    d=6 (composite=2×3)    → emergent spatial dimension (1)
 
-  → τ(6)=4 차원, 서명 (-,+,+,+) = 민코프스키!
+  → τ(6)=4 dimensions, signature (-,+,+,+) = Minkowski!
 
-  왜 로렌츠 서명인가?
-    d=1은 유일한 단위원(identity) → 구별됨 → 시간적(timelike)
-    d>1은 비단위원 → 공간적(spacelike)
-    정확히 1개의 시간 + 3개의 공간 = (1,3) 서명
+  Why Lorentz signature?
+    d=1 is unique unit (identity) → distinguished → timelike
+    d>1 are non-units → spacelike
+    Exactly 1 time + 3 space = (1,3) signature
 ```
 
 ---
 
-## 21. ⭐⭐⭐ Koide 각도 δ = 2/9 = φτ²/σ² → 세 렙톤 질량 완전 결정
+## 21. ⭐⭐⭐ Koide Angle δ = 2/9 = φτ²/σ² → Three Lepton Masses Fully Determined
 
 ```
-  Koide 매개변수화: √m_k = A(1 + √2 cos(2πk/3 + δ₀))
+  Koide parametrization: √m_k = A(1 + √2 cos(2πk/3 + δ₀))
 
-  δ₀(관측) = 0.2222211
+  δ₀(observed) = 0.2222211
   2/9       = 0.2222222
-  차이: 5 ppm (백만분의 5!)
+  Difference: 5 ppm (5 parts per million!)
 
   2/9 = φ(6)×τ(6)² / σ(6)² = 2×16/144
 
-  입력 2개 (m_tau=1776, δ₀=2/9) → 출력 3개:
-    m_e  = 0.5107 MeV (실측 0.5110, 오차 0.06%)
-    m_mu = 105.60 MeV (실측 105.66, 오차 0.05%)
-    m_tau = 1776.0 MeV (실측 1776.86, 오차 0.05%)
+  Input 2 (m_tau=1776, δ₀=2/9) → Output 3:
+    m_e  = 0.5107 MeV (measured 0.5110, error 0.06%)
+    m_mu = 105.60 MeV (measured 105.66, error 0.05%)
+    m_tau = 1776.0 MeV (measured 1776.86, error 0.05%)
 ```
 
 ---
@@ -860,16 +860,16 @@ K=2/3은 수론적 필연이다.
 ```
   Λ_QCD = σ(6)³ / (σ-τ) = 1728/8 = 216 MeV = 6³ MeV = P₁³ MeV
 
-  PDG: Λ_QCD^(5) = 213 ± 8 MeV → 1σ 이내! (오차 1.4%)
+  PDG: Λ_QCD^(5) = 213 ± 8 MeV → Within 1σ! (error 1.4%)
 
-  인과 체인:
+  Causal chain:
     σ(6)=12 → σ³=1728=j(i) → j(i)/dim(SU(3)) = 1728/8 = 216 = Λ_QCD
-    "j-불변량 ÷ 글루온 수 = QCD 속박 스케일"
+    "j-invariant ÷ number of gluons = QCD confinement scale"
 ```
 
 ---
 
-## 23. ⭐⭐⭐ CP 위반 = 진공 비대칭 A/σ⁴
+## 23. ⭐⭐⭐ CP Violation = Vacuum Asymmetry A/σ⁴
 
 ```
   A = (S(7)-S(5)) / (S(7)+S(5)) = 5580/8284 = 0.6736
@@ -882,74 +882,74 @@ K=2/3은 수론적 필연이다.
   │  sin(2β) (B)    A              0.674        0.699     │  3.6%
   └───────────────────────────────────────────────────────┘
 
-  물질-반물질 비대칭의 기원 = 약수장론의 n=6 진공 비대칭!
-  S(5) ≠ S(7): 진공 아래(n<6)가 위(n>6)보다 5배 얕다.
+  Origin of matter-antimatter asymmetry = n=6 vacuum asymmetry of divisor field theory!
+  S(5) ≠ S(7): Below vacuum (n<6) is 5 times shallower than above (n>6).
 ```
 
 ---
 
-## 24. 시공간 창발: 약수 격자 = 민코프스키 (1,3)
+## 24. Spacetime Emergence: Divisor Lattice = Minkowski (1,3)
 
 ```
-       6         d=6: 합성수(2×3) → 창발 공간³
+       6         d=6: composite(2×3) → emergent space³
       / \
-     2   3       d=2,3: 소수 → 독립 공간¹,²
+     2   3       d=2,3: primes → independent space¹,²
       \ /
-       1         d=1: 단위원(identity) → 시간
+       1         d=1: unit (identity) → time
 
-  왜 (1,3) 서명인가?
-    • d=1은 모든 수를 나눔 (항등원) → 보편적 → 시간
-    • d=2,3은 소인수 → 독립 기저 → 공간
-    • d=6=2×3은 파생 (곱) → 3번째 공간 차원은 창발적
-    • 약수 격자의 "높이" = 1 (d=1에서 시작) → 시간 1개
-    • 약수 격자의 "폭" = 3 (d=2,3,6 세 갈래) → 공간 3개
+  Why (1,3) signature?
+    • d=1 divides all numbers (identity) → universal → time
+    • d=2,3 are prime factors → independent basis → space
+    • d=6=2×3 is derived (product) → 3rd spatial dimension is emergent
+    • "Height" of divisor lattice = 1 (starting from d=1) → 1 time
+    • "Width" of divisor lattice = 3 (d=2,3,6 three branches) → 3 space
 
-  다른 완전수 비교:
-    n=28: 약수 {1,2,4,7,14,28} → τ=6 차원 → CY₃
-    n=496: 약수 10개 → τ=10 차원 → 초끈
+  Compare other perfect numbers:
+    n=28: divisors {1,2,4,7,14,28} → τ=6 dimensions → CY₃
+    n=496: 10 divisors → τ=10 dimensions → superstring
 ```
 
 ---
 
-## 25. 최종 남은 한계
+## 25. Final Remaining Limitations
 
-1. **쿼크 공식은 post-hoc**: 렙톤처럼 Koide 유사 매개변수화 미발견
-2. **s→1 임계점**: Dirichlet 급수의 해석적 연속 미완
-3. **CP 지수 4의 유도**: 왜 J=A/σ⁴인지 (4=시공간차원이라는 주장은 있으나 증명 아님)
+1. **Quark formulas are post-hoc**: No Koide-like parametrization found like leptons
+2. **s→1 critical point**: Analytic continuation of Dirichlet series incomplete
+3. **CP exponent 4 derivation**: Why J=A/σ⁴ (claim is 4=spacetime dimension but not proven)
 
 ---
 
-## 19. 검증 로드맵
+## 19. Verification Roadmap
 
 ```
-  2026: JUNO 가동 → P1(질량순서) 테스트 시작
-  2027: DESI Y3 → P2(Σm_ν) 첫 제한
-  2028: JUNO 3년 데이터 → P1 결정 + P5(비율) 정밀 측정
-        CMB-S4 → P3(N_eff) 테스트
-        Hyper-K 가동 → P4(양성자 붕괴) 시작
-  2030: Euclid → P2 확정
+  2026: JUNO begins → P1(mass ordering) test starts
+  2027: DESI Y3 → P2(Σm_ν) first constraints
+  2028: JUNO 3-year data → P1 determination + P5(ratio) precision measurement
+        CMB-S4 → P3(N_eff) test
+        Hyper-K begins → P4(proton decay) starts
+  2030: Euclid → P2 confirmation
 
-  2028년 JUNO 결과가 분수령:
-    정상 순서 확인 → 프레임워크 생존
-    역전 순서 확인 → 프레임워크 기각
+  2028 JUNO result is watershed:
+    Normal ordering confirmed → Framework survives
+    Inverted ordering confirmed → Framework rejected
 ```
 
 ---
 
-## 11. 관련 가설
+## 11. Related Hypotheses
 
-- **H-PH-2**: SU(3)×SU(2)×U(1) 차원합 = 6 → 여기서 σ(6)=12로 확장
-- **H-PH-4**: 6 쿼크 × 6 렙톤 → 페르미온 총수 12=σ(6)
-- **H-MILL-3**: Yang-Mills 질량 간극 → R 스펙트럼 간극 1/6
-- **H-CX-41**: 양자 힐베르트 해석 → H₆=C⁴=2-큐빗
-- **H-CX-44**: Lie 대수 Coxeter 수 = 6의 배수
-- **H-CX-46**: (p-1)(q-1)=2 최소 결합 → 왜 6이 유일한가
-- **H-CX-47**: 통합 메타정리 → 69개 특성화 ← (p-1)(q-1)=2
-- **H-GEO-5**: 중력 망원경 → 관측 스케일 s와 R의 2D 공간
+- **H-PH-2**: SU(3)×SU(2)×U(1) dimension sum = 6 → Extended here to σ(6)=12
+- **H-PH-4**: 6 quarks × 6 leptons → Total fermions 12=σ(6)
+- **H-MILL-3**: Yang-Mills mass gap → R spectrum gap 1/6
+- **H-CX-41**: Quantum Hilbert interpretation → H₆=C⁴=2-qubit
+- **H-CX-44**: Lie algebra Coxeter numbers = multiples of 6
+- **H-CX-46**: (p-1)(q-1)=2 minimal coupling → Why 6 is unique
+- **H-CX-47**: Unified metatheorem → 69 characterizations ← (p-1)(q-1)=2
+- **H-GEO-5**: Gravity telescope → Observation scales s and R in 2D space
 
 ---
 
-## 12. 수치 검증 코드
+## 12. Numerical Verification Code
 
 ```python
 from sympy import divisor_sigma, totient, divisor_count
@@ -978,6 +978,6 @@ assert 496 == 248 + 248              # E8 x E8
 ---
 
 *Created: 2026-03-25*
-*Status: ⭐⭐⭐ 🟧★ 구조적 — 16/16 정확매치 + kissing 5/5 (p<0.000001)*
-*Golden zone dependency: NONE — 순수 정수론*
+*Status: ⭐⭐⭐ 🟧★ Structural — 16/16 exact matches + kissing 5/5 (p<0.000001)*
+*Golden zone dependency: NONE — pure number theory*
 *Related: H-PH-2, H-PH-4, H-MILL-3, H-CX-41, H-CX-44, H-CX-46, H-CX-47*

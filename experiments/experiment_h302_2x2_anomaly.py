@@ -1,5 +1,6 @@
+```python
 #!/usr/bin/env python3
-"""가설 302: 내부 장력 vs 간 장력 x 분류 vs 재구성 — 2x2 이상탐지 실험
+"""Hypothesis 302: Internal Tension vs Inter Tension x Classification vs Reconstruction — 2x2 Anomaly Detection Experiment
 
 2x2 matrix:
   A) Classification + Internal tension
@@ -455,3 +456,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

@@ -1,19 +1,19 @@
-# H-AI-10: BPE Tokenizer 최적 Vocab 크기와 6의 거듭제곱
+# H-AI-10: BPE Tokenizer Optimal Vocab Size and Powers of 6
 
-> **가설**: BPE tokenizer의 최적 vocab 크기가 6^k 근처에서 효율 극대화된다.
+> **Hypothesis**: BPE tokenizer's optimal vocab size maximizes efficiency near 6^k.
 
-## 상태: REFUTED (반증됨)
+## Status: REFUTED
 
-등급: ⚪ (우연 / 실패)
+Grade: ⚪ (Coincidence / Failure)
 
-## 배경
-- GPT-2: 50257, GPT-4: 100K, LLaMA: 32K 등 주요 LLM vocab 크기가 6^k에 가까운가?
+## Background
+- GPT-2: 50257, GPT-4: 100K, LLaMA: 32K etc - are major LLM vocab sizes close to 6^k?
 - 6^5=7776, 6^6=46656, 6^7=279936
-- 가설 제기 시점에서도 "약함"으로 표기됨
+- Marked as "weak" even at time of hypothesis proposal
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
-16개 주요 LLM의 vocab 크기를 6^k와 2^k에 대한 상대 오차로 비교:
+Comparing 16 major LLMs' vocab sizes by relative error to 6^k and 2^k:
 
 | Model | Vocab | Near 6^k | %err 6^k | Near 2^k | %err 2^k | Winner |
 |---|---|---|---|---|---|---|
@@ -34,7 +34,7 @@
 | Qwen | 151936 | 6^6=46656 | 69.3% | 2^17=131072 | 13.7% | 2^k |
 | DeepSeek | 102400 | 6^6=46656 | 54.4% | 2^17=131072 | 28.0% | 2^k |
 
-### 요약 통계
+### Summary Statistics
 
 ```
   Wins:  2^k = 13,  6^k = 3
@@ -48,23 +48,23 @@
     |=========================    | 13/16 (81%)
 ```
 
-## 해석
+## Interpretation
 
-Vocab 크기는 2의 거듭제곱에 훨씬 가깝다. 이유는 자명하다:
+Vocab sizes are much closer to powers of 2. The reasons are obvious:
 
-1. **하드웨어 최적화**: GPU/TPU는 2^k 크기의 행렬에서 최적 성능
-2. **임베딩 테이블**: 2^k 정렬이 메모리 접근 패턴에 유리
-3. **설계 관행**: ML 엔지니어들이 32K, 64K, 128K, 256K를 기본값으로 사용
+1. **Hardware optimization**: GPUs/TPUs perform optimally with 2^k sized matrices
+2. **Embedding tables**: 2^k alignment benefits memory access patterns
+3. **Design conventions**: ML engineers use 32K, 64K, 128K, 256K as defaults
 
-6^k가 이기는 3개 (GPT-2, GPT-3, Phi-2)는 모두 50K 근처인데, 이는 6^6=46656과 우연히 가까운 것이지 6을 의도한 것이 아니다. GPT-2의 50257은 byte-level BPE에서 256 byte tokens + 50000 merges + 1 special token으로 결정된 값이다.
+The 3 cases where 6^k wins (GPT-2, GPT-3, Phi-2) are all near 50K, which happens to be close to 6^6=46656 by coincidence, not by design targeting 6. GPT-2's 50257 was determined by byte-level BPE with 256 byte tokens + 50000 merges + 1 special token.
 
-## 한계
+## Limitations
 
-- vocab 크기만 비교했고, downstream task 성능 비교는 하지 않음
-- 6^k 근처에서 성능이 극대화되는지는 별도 실험 필요하나, 가설의 전제 자체가 틀림
+- Only compared vocab sizes, not downstream task performance
+- Whether performance maximizes near 6^k would require separate experiments, but the hypothesis premise itself is wrong
 
-## 결론
+## Conclusion
 
-**⚪ REFUTED**. Tokenizer vocab 크기는 6의 거듭제곱과 무관하다. 2의 거듭제곱 편향이 압도적이며, 이는 하드웨어 최적화와 ML 설계 관행에서 비롯된다. 6^k 근처 값은 우연의 일치.
+**⚪ REFUTED**. Tokenizer vocab size is unrelated to powers of 6. Powers of 2 bias is overwhelming, stemming from hardware optimization and ML design conventions. Values near 6^k are coincidental.
 
-## 난이도: 중 | 파급력: ★ (없음)
+## Difficulty: Medium | Impact: ★ (None)

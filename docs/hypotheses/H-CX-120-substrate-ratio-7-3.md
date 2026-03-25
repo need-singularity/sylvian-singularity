@@ -1,6 +1,6 @@
-# H-CX-120: 14/6=7/3 — 기질 비율이 소수/약수
+# H-CX-120: 14/6=7/3 — Substrate Ratio is Prime/Divisor
 
-> 14/6 = 7/3. 7=σ(6)-6+1=7, 3=6의 약수. 기질 비율이 완전수 6의 파생 상수.
+> 14/6 = 7/3. 7=σ(6)-6+1=7, 3=divisor of 6. Substrate ratio is a derived constant of Perfect Number 6.
 
-## 검증: 🟩 순수 산술
+## Verification: 🟩 Pure arithmetic
 - 14/6 = 7/3 ✅

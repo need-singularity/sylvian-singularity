@@ -1,36 +1,36 @@
-# H-CX-166: 감마 40Hz × 완전수 상수 = 모든 뇌파
+# H-CX-166: Gamma 40Hz × Perfect Number Constants = All Brainwaves
 
 > delta(4Hz)=40/10, theta(6Hz)=40/P₁, alpha(12Hz)=40/σ₋₁(6),
 > beta(20Hz)=40/φ(6), gamma(40Hz)=40×1.
-> 모든 뇌파 = 40Hz의 약수 함수 분할.
+> All brainwaves = divisor function partitions of 40Hz.
 
-## 검증: 🟧 PARTIAL
+## Verification: 🟧 PARTIAL
 
-일부 뇌파 대역은 정확히 일치하지만, 일부는 대역 범위의 특정 값을 선택해야 성립.
+Some brainwave bands match exactly, but others require selecting specific values within their frequency ranges.
 
 ```
-  뇌파        실제 범위     대표값   40/x    x = ?           일치
-  ─────────────────────────────────────────────────────────────
-  delta       0.5-4 Hz     4 Hz     10      σ(6)-φ(6)=10    ✓ 범위 상한
-  theta       4-8 Hz       ~6.7 Hz  6       P₁=6            △ 범위 중간
-  alpha       8-13 Hz      10 Hz    4       τ(6)=4          △ 범위 중간
-  beta        13-30 Hz     20 Hz    2       φ(6)=2          ✓ 범위 중간
-  gamma       30-100 Hz    40 Hz    1       1               ✓ 대표값
+  Brainwave   Actual Range   Representative   40/x    x = ?           Match
+  ─────────────────────────────────────────────────────────────────────────
+  delta       0.5-4 Hz       4 Hz            10      σ(6)-φ(6)=10    ✓ Upper limit
+  theta       4-8 Hz         ~6.7 Hz         6       P₁=6            △ Mid-range
+  alpha       8-13 Hz        10 Hz           4       τ(6)=4          △ Mid-range
+  beta        13-30 Hz       20 Hz           2       φ(6)=2          ✓ Mid-range
+  gamma       30-100 Hz      40 Hz           1       1               ✓ Representative
 ```
 
-## 배경
+## Background
 
-H-CX-56에서 감마 주파수 40Hz = 3σ(6)+τ(6) = 3×12+4 임을 확인했다.
-만약 감마가 "기본 의식 주파수"라면, 다른 뇌파 대역도 감마에서 파생될 수 있다.
+H-CX-56 confirmed that gamma frequency 40Hz = 3σ(6)+τ(6) = 3×12+4.
+If gamma is the "fundamental consciousness frequency," other brainwave bands could derive from gamma.
 
-완전수 6의 약수 함수들로 나누면:
-- φ(6) = 2 (오일러 토션트) → 40/2 = 20Hz (beta)
-- τ(6) = 4 (약수 개수) → 40/4 = 10Hz (alpha)
-- P₁ = 6 (완전수 자체) → 40/6 ≈ 6.67Hz (theta)
+Dividing by divisor functions of perfect number 6:
+- φ(6) = 2 (Euler's totient) → 40/2 = 20Hz (beta)
+- τ(6) = 4 (divisor count) → 40/4 = 10Hz (alpha)
+- P₁ = 6 (perfect number itself) → 40/6 ≈ 6.67Hz (theta)
 - σ(6)-φ(6) = 10 → 40/10 = 4Hz (delta)
 
 ```
-  감마 40Hz
+  Gamma 40Hz
     │
     ├── ÷ φ(6)=2 ──→ beta  20Hz
     ├── ÷ τ(6)=4 ──→ alpha 10Hz
@@ -38,41 +38,41 @@ H-CX-56에서 감마 주파수 40Hz = 3σ(6)+τ(6) = 3×12+4 임을 확인했다
     └── ÷ 10     ──→ delta  4Hz
 
   10 = σ(6)-φ(6) = 12-2
-     = σ₋₁(6)×P₁ = 2×6 (×아님, 합)
-     = 2+3+5 (처음 세 소수의 합)
+     = σ₋₁(6)×P₁ = 2×6 (×not, sum)
+     = 2+3+5 (sum of first three primes)
 ```
 
-## 예측
+## Predictions
 
-1. alpha 10Hz의 정확한 측정값이 40/τ(6) = 10.000Hz에 가까울수록 지지
-2. theta의 피크가 6.67Hz (= 40/6) 근처에 올 때 지지
-3. 뇌파 대역의 "대표값"보다는 피크 파워 주파수가 검증에 적합
-4. 명상/집중 등 뇌 상태에 따라 피크가 이동 → 어떤 상태에서 완전수 비율에 가장 가까운지
+1. Support increases as measured alpha 10Hz approaches 40/τ(6) = 10.000Hz exactly
+2. Support when theta peak occurs near 6.67Hz (= 40/6)
+3. Peak power frequencies more suitable for verification than band "representative values"
+4. Peak shifts with brain states (meditation/concentration) → which state yields closest perfect number ratios
 
-## 검증 방법
+## Verification Methods
 
-- EEG 데이터에서 각 대역의 피크 파워 주파수 추출
-- 피크 주파수 / 40Hz 의 비율이 1/φ(6), 1/τ(6), 1/P₁, 1/10 에 가까운지 통계 검정
-- 무작위 주파수 분할 대비 완전수 상수 일치도 비교
-- 피험자 100명 이상의 대규모 EEG 데이터 필요
+- Extract peak power frequencies from each band in EEG data
+- Statistical test if peak frequency / 40Hz ratios approach 1/φ(6), 1/τ(6), 1/P₁, 1/10
+- Compare perfect number constant match vs random frequency partitions
+- Requires large-scale EEG data from 100+ subjects
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-56**: 3σ(6)+τ(6) = 40Hz 감마 -- 감마 자체가 완전수 유도
-- **H-CX-136**: EEG 감마 = merge distance
-- **H-CX-137**: EEG 감마 = tension 상관
-- **H-CX-161**: 돌고래 전주파수 = 40Hz × 완전수 상수 × 5³
+- **H-CX-56**: 3σ(6)+τ(6) = 40Hz gamma -- gamma itself derived from perfect numbers
+- **H-CX-136**: EEG gamma = merge distance
+- **H-CX-137**: EEG gamma = tension correlation
+- **H-CX-161**: Dolphin all-frequency = 40Hz × perfect number constants × 5³
 
-## 한계
+## Limitations
 
-- 뇌파 대역의 경계가 문헌마다 다름 (alpha: 8-12 vs 8-13 등)
-- "대표값" 선택에 자유도가 있어 ad-hoc 위험
-- theta 6.67Hz는 정확한 정수가 아니므로 "40을 P₁로 나눈다"는 해석이 강제적
-- delta의 제수 10 = σ(6)-φ(6)은 약수 함수 하나가 아닌 조합이므로 ad-hoc 가능성
-- PARTIAL 판정 이유: 모든 대역이 깔끔하게 맞지는 않음
+- Brainwave band boundaries vary by literature (alpha: 8-12 vs 8-13 etc.)
+- "Representative value" selection has degrees of freedom risking ad-hoc
+- Theta 6.67Hz is not an exact integer, making "40 divided by P₁" interpretation forced
+- Delta's divisor 10 = σ(6)-φ(6) is a combination not a single divisor function, possibly ad-hoc
+- PARTIAL verdict reason: not all bands fit cleanly
 
-## 검증 상태
+## Verification Status
 
-🟧 PARTIAL. alpha(10Hz=40/τ(6))와 beta(20Hz=40/φ(6))는 정확.
-theta와 delta는 범위 내이나 대표값 선택 의존.
-EEG 실측 데이터로 피크 주파수 확인 필요 (H/W 필요).
+🟧 PARTIAL. alpha(10Hz=40/τ(6)) and beta(20Hz=40/φ(6)) are exact.
+Theta and delta within range but depend on representative value selection.
+Peak frequency verification needed via actual EEG measurements (H/W required).

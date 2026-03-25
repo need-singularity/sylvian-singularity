@@ -1,18 +1,18 @@
-# H-PH-6: R-체인과 입자 붕괴 연쇄
+# H-PH-6: R-chain and Particle Decay Chains
 
-> **가설**: R-체인의 감소 구조가 입자 물리의 붕괴 연쇄(decay chain)와 구조적으로 유사.
+> **Hypothesis**: The decreasing structure of R-chains is structurally similar to decay chains in particle physics.
 
-## 대응
+## Correspondence
 ```
-  R-체인: 193750 → 6048 → 120 → 6 → 1
-  붕괴:   heavy → medium → light → stable → ground
+  R-chain: 193750 → 6048 → 120 → 6 → 1
+  Decay:   heavy → medium → light → stable → ground
 
-  6 = 탄소 Z (안정 원소)
-  1 = 수소 Z (최경량)
+  6 = Carbon Z (stable element)
+  1 = Hydrogen Z (lightest)
 ```
 
-## 검증 방향
-- 실제 붕괴 연쇄 (U-238 → Pb-206)의 단계 수와 비교
-- 안정 원소(C,Fe 등)의 원자번호와 R 고정점 관계
+## Verification Directions
+- Compare with number of steps in actual decay chains (U-238 → Pb-206)
+- Relationship between atomic numbers of stable elements (C,Fe etc.) and R fixed points
 
-## 난이도: 극고 | 파급력: ★★ (투기적)
+## Difficulty: Extreme | Impact: ★★ (Speculative)

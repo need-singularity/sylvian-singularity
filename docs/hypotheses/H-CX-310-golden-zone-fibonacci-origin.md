@@ -1,4 +1,4 @@
-# H-CX-310: ⭐⭐⭐ 골든존 폭의 기원 = ln(F(P₁)/P₁)
+# H-CX-310: ⭐⭐⭐ Origin of Golden Zone Width = ln(F(P₁)/P₁)
 
-> ln(4/3) = ln(F(6)/6) = ln(8/6). 골든존 폭 = 피보나치 완전수 비율의 로그.
-> 골든존이 피보나치와 완전수의 교차점에서 나온다!
+> ln(4/3) = ln(F(6)/6) = ln(8/6). Golden Zone width = log of Fibonacci perfect number ratio.
+> The Golden Zone emerges from the intersection of Fibonacci and perfect numbers!

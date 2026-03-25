@@ -1,5 +1,5 @@
-# H-CX-174: 돌고래 치료 주파수 — 인간 뇌파 공명
+# H-CX-174: Dolphin Therapy Frequency — Human Brainwave Resonance
 
-> 돌고래 치료(Dolphin-Assisted Therapy)의 효과가
-> 돌고래 클릭 주파수와 인간 감마 40Hz의 공명에 기인?
-> 30kHz click의 고조파가 40Hz의 배수(750=P₁×5³)와 일치.
+> The effects of Dolphin-Assisted Therapy may be due to
+> resonance between dolphin click frequencies and human gamma 40Hz?
+> 30kHz click harmonics align with multiples of 40Hz (750=P₁×5³).

@@ -1,19 +1,19 @@
-# H-CX-139: EEG 위상 전이 — 학습 초기에 감마 급변
+# H-CX-139: EEG Phase Transition — Gamma Changes Rapidly at Start of Learning
 
-> 새로운 개념을 학습할 때 감마 패턴이 첫 시행에서 급변.
-> AI의 0.1에폭 위상 전이(H-CX-105, 30x)의 뇌 버전.
+> When learning a new concept, the gamma pattern changes abruptly in the first trial.
+> Brain version of AI's 0.1-epoch phase transition (H-CX-105, 30x).
 
-## 예측
+## Predictions
 
-1. 새 카테고리 첫 노출 시 감마 변화 > 이후 노출들의 평균
-2. 변화 비율 > 2x (AI: 30x)
-3. 첫 5시행 내 감마 패턴 안정화
+1. Gamma change at first exposure to new category > average of subsequent exposures
+2. Change ratio > 2x (AI: 30x)
+3. Gamma pattern stabilizes within first 5 trials
 
-## 관련
+## Related
 
-- H-CX-90: 에폭1 위상 전이 23~33x
-- H-CX-105: 0.1에폭에서 발생
+- H-CX-90: Epoch 1 phase transition 23~33x
+- H-CX-105: occurs at 0.1 epoch
 
-## 검증 상태
+## Verification Status
 
-- [ ] 학습 과제 EEG
+- [ ] Learning task EEG

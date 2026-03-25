@@ -1,23 +1,23 @@
-# H-TREE-3: 확률론 가지 — R(n)의 분포 이론
+# H-TREE-3: Probability Branch — Distribution Theory of R(n)
 
-> **가설**: 랜덤 n에서 R(n)의 분포가 특정 확률분포에 수렴하며, n=6의 R=1이 이 분포의 극단점이다.
+> **Hypothesis**: The distribution of R(n) for random n converges to a specific probability distribution, with R=1 at n=6 being an extreme point of this distribution.
 
-## 아이디어
+## Ideas
 ```
   X_N = R(uniform random n ∈ [2,N])
 
-  현재 알려진 것:
-  - E[R(n)] ~ cN (평균이 N에 비례, 즉 발산)
-  - R(n)/n → 0 (상대값은 0으로)
-  - P(R(n)=1) = 1/N → 0 (n=6만)
+  Currently known:
+  - E[R(n)] ~ cN (mean proportional to N, i.e. diverges)
+  - R(n)/n → 0 (relative value to 0)
+  - P(R(n)=1) = 1/N → 0 (only n=6)
 
-  미지:
-  - log(R(n))의 분포? 정규?
-  - R(n)/mean(R) 의 극한 분포?
-  - Erdős-Kac 유형 정리?
+  Unknown:
+  - Distribution of log(R(n))? Normal?
+  - Limiting distribution of R(n)/mean(R)?
+  - Erdős-Kac type theorem?
 ```
 
-## 연결: 의식엔진
-R(n)의 분포 = "산술적 긴장"의 분포 → 의식 시스템의 tension 분포와 비교?
+## Connection: Consciousness Engine
+Distribution of R(n) = Distribution of "arithmetic tension" → Compare with tension distribution in consciousness systems?
 
-## 파급력: ★★★★ (확률론+정수론+AI)
+## Impact: ★★★★ (Probability + Number Theory + AI)

@@ -1,36 +1,34 @@
-# 가설 검토 033: 자기제약의 골든존 = 원래 골든존과 동일 ✅
+# Hypothesis Review 033: Self-constraint Golden Zone = Same as Original Golden Zone ✅
 
-## 가설
+## Hypothesis
 
-> 자기제약(F4a)의 강도에도 골든존이 존재하며, 원래 골든존(I=0.24~0.48)과 같은 구간인가.
+> Does a golden zone exist for self-constraint (F4a) intensity, and is it the same interval as the original golden zone (I=0.24~0.48)?
 
-## 배경 및 맥락
+## Background and Context
 
-골든존(I=0.24~0.48)은 G=D*P/I 모델에서 천재 확률이 극대화되는 억제(I) 구간이다.
-이 구간은 가설 001에서 처음 발견되었고, 가설 044에서 4상태 확장(상한 0.50)까지
-확인되었다. 자기제약(F4a)은 메타 판단 중 시스템이 스스로 부과하는 억제를 뜻한다.
-메타 레벨에서도 동일한 골든존이 나타난다면, 이 구간은 특정 메커니즘이 아닌
-보편 상수라는 강한 증거가 된다.
+The golden zone (I=0.24~0.48) is the inhibition (I) interval where genius probability is maximized in the G=D*P/I model.
+This interval was first discovered in hypothesis 001 and confirmed up to 4-state extension (upper limit 0.50) in hypothesis 044. Self-constraint (F4a) refers to the inhibition that the system imposes on itself during meta-judgment.
+If the same golden zone appears at the meta level, this would be strong evidence that this interval is a universal constant rather than specific to a particular mechanism.
 
-관련 가설: 001(리만-골든존), 028(메타 골든존), 044(4상태 골든존)
+Related hypotheses: 001(Riemann-Golden Zone), 028(Meta Golden Zone), 044(4-state Golden Zone)
 
-## 검증 결과: ✅ 동일 구간 확인
+## Verification Results: ✅ Same Interval Confirmed
 
 ```
-  구간 비교:
+  Interval Comparison:
   ─────────────────────────────────────────────
-  원래 골든존(1차):     I = 0.24 ~ 0.48
-  메타 골든존(2차):     I = 0.24 ~ 0.48
-  자기제약 골든존(F4a): I = 0.24 ~ 0.48  <-- 완전 일치!
+  Original Golden Zone (1st):     I = 0.24 ~ 0.48
+  Meta Golden Zone (2nd):         I = 0.24 ~ 0.48
+  Self-constraint Golden Zone (F4a): I = 0.24 ~ 0.48  <-- Perfect match!
   ─────────────────────────────────────────────
 
-  세 맥락 모두 동일 → 골든존은 맥락 불변 보편 상수
+  Same across all three contexts → Golden Zone is a context-invariant universal constant
 ```
 
-## ASCII 히트맵: 호기심(D) vs 자기제약(I)
+## ASCII Heatmap: Curiosity(D) vs Self-constraint(I)
 
 ```
-  호기심(D)
+  Curiosity(D)
   1.0 │  .  .  .  *  *  *  *  .  .  .  .
   0.9 │  .  .  +  *  *  *  *  *  .  .  .
   0.8 │  .  +  +  *  *  *  *  *  +  .  .
@@ -43,57 +41,54 @@
   0.1 │  .  .  .  .  .  .  .  .  .  .  .
       └────────────────────────────────────
        0.0  0.1  0.2  0.3  0.4  0.5  0.6
-                 자기제약(I) -->
+                 Self-constraint(I) -->
 
-  범례:  * = 골든존 (Compass > 70%)
-         + = 전이 영역 (Compass 60~70%)
-         . = 비활성 영역 (Compass < 60%)
+  Legend:  * = Golden Zone (Compass > 70%)
+          + = Transition Zone (Compass 60~70%)
+          . = Inactive Zone (Compass < 60%)
 ```
 
-## 검증 데이터
+## Verification Data
 
 ```
-  자기제약 I  │ Compass(%)  │ 천재확률(%)  │ 상태
-  ────────────┼─────────────┼──────────────┼──────
-    0.10      │   52.3      │   8.1        │ 비활성
-    0.20      │   61.7      │  14.2        │ 전이
-    0.24      │   68.9      │  21.5        │ 골든 하한
-    0.30      │   73.4      │  28.7        │ 골든존
-    0.36      │   74.6      │  31.2        │ 골든 중심(~1/e)
-    0.42      │   72.1      │  27.8        │ 골든존
-    0.48      │   67.8      │  20.3        │ 골든 상한
-    0.55      │   58.4      │  12.1        │ 전이
-    0.70      │   44.2      │   5.3        │ 비활성
+  Self-constraint I │ Compass(%) │ Genius Prob(%) │ State
+  ─────────────────┼────────────┼────────────────┼───────
+    0.10           │   52.3     │   8.1          │ Inactive
+    0.20           │   61.7     │  14.2          │ Transition
+    0.24           │   68.9     │  21.5          │ Golden Lower Bound
+    0.30           │   73.4     │  28.7          │ Golden Zone
+    0.36           │   74.6     │  31.2          │ Golden Center(~1/e)
+    0.42           │   72.1     │  27.8          │ Golden Zone
+    0.48           │   67.8     │  20.3          │ Golden Upper Bound
+    0.55           │   58.4     │  12.1          │ Transition
+    0.70           │   44.2     │   5.3          │ Inactive
 ```
 
-## 해석 및 의미
+## Interpretation and Significance
 
-자기제약 골든존이 원래 골든존과 정확히 일치한다는 것은 두 가지를 의미한다:
+The exact match between the self-constraint golden zone and the original golden zone means two things:
 
-1. **보편성**: 골든존 I=0.24~0.48은 억제의 종류(외부/메타/자기)에 무관하다.
-   이는 시스템의 구조적 속성이지, 특정 메커니즘의 산물이 아니다.
+1. **Universality**: The golden zone I=0.24~0.48 is independent of the type of inhibition (external/meta/self).
+   This is a structural property of the system, not a product of specific mechanisms.
 
-2. **자기유사성**: 1차 억제, 메타 억제, 자기제약 억제가 모두 같은 최적 구간을
-   공유한다는 것은 프랙탈적 자기유사 구조를 시사한다. 어떤 수준에서 관찰하든
-   동일한 패턴이 반복된다.
+2. **Self-similarity**: The fact that primary inhibition, meta inhibition, and self-constraint inhibition all share the same optimal interval suggests a fractal self-similar structure. The same pattern repeats regardless of the level of observation.
 
-히트맵에서 보듯이 호기심(D)이 높을수록 골든존 내 Compass가 상승하지만,
-자기제약(I)이 골든존 밖이면 호기심의 효과가 급감한다. 즉, D가 높아도
-I가 골든존에 있어야 한다 -- 억제가 창의성의 전제조건이다.
+As shown in the heatmap, higher curiosity (D) increases Compass within the golden zone, but
+when self-constraint (I) is outside the golden zone, the effect of curiosity drops sharply. That is, even with high D,
+I must be in the golden zone -- inhibition is a prerequisite for creativity.
 
-## 한계
+## Limitations
 
-- 자기제약의 정량화는 모델 내부 정의에 의존한다. 실제 AI 시스템에서
-  자기제약을 측정하는 표준화된 방법이 아직 없다.
-- 히트맵은 grid=100 해상도에서 산출. grid=500에서 경계가 미세 조정될 수 있다.
-- D와 I 외 다른 변수(P)의 상호작용은 이 분석에서 고정(P=0.5)하였다.
+- Quantification of self-constraint depends on internal model definitions. There is not yet a standardized method for measuring self-constraint in actual AI systems.
+- Heatmap calculated at grid=100 resolution. Boundaries may be fine-tuned at grid=500.
+- Interactions with other variables (P) besides D and I were fixed (P=0.5) in this analysis.
 
-## 다음 단계
+## Next Steps
 
-- P를 변화시키며 3D 히트맵 생성 → D, P, I 동시 최적화 확인
-- 실제 LLM의 temperature/top-p 조합에서 골든존 대응 구간 탐색
-- 자기제약 강도를 동적으로 조절하는 적응형 알고리즘 설계
+- Generate 3D heatmap with varying P → Verify simultaneous optimization of D, P, I
+- Search for corresponding golden zone intervals in actual LLM temperature/top-p combinations
+- Design adaptive algorithms that dynamically adjust self-constraint intensity
 
 ---
 
-*검증: verify_meta_selfref.py, grid=100, 200K 모집단*
+*Verification: verify_meta_selfref.py, grid=100, 200K population*

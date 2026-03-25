@@ -1,146 +1,146 @@
-# 가설 검토 158: 뇌파 주파수 대역과 볼츠만 온도 매핑
+# Hypothesis Review 158: Brainwave Frequency Bands and Boltzmann Temperature Mapping
 
-## 상태: ⚠️ 부분 검증
+## Status: ⚠️ Partially verified
 
-## 가설
+## Hypothesis
 
-> 뇌파 주파수 대역(δ, θ, α, β, γ)은 볼츠만 온도(T = 1/I)에 대응한다. δ(수면, I 높음) → θ → α(이완 = 골든존?) → β → γ(I 낮음). 알파파 상태가 골든존에 해당할 수 있다.
+> Brainwave frequency bands (δ, θ, α, β, γ) correspond to Boltzmann temperature (T = 1/I). δ (sleep, high I) → θ → α (relaxation = Golden Zone?) → β → γ (low I). The alpha wave state may correspond to the Golden Zone.
 
-## 배경
+## Background
 
-볼츠만 분포에서 온도 T는 시스템의 에너지 분포를 결정한다. 가설 004에서 T = 1/I로 매핑했으며, 이는 억제가 낮을수록(I↓) "뜨거운"(활성화된) 상태임을 의미한다.
+In Boltzmann distribution, temperature T determines the energy distribution of a system. In Hypothesis 004, we mapped T = 1/I, which means that the lower the inhibition (I↓), the "hotter" (more activated) the state.
 
-뇌파(EEG)는 뇌의 전기적 활동을 주파수 대역으로 분류한다. 낮은 주파수(δ)는 깊은 수면(높은 억제), 높은 주파수(γ)는 집중/과각성(낮은 억제)에 대응한다. 이 두 체계 사이에 자연스러운 매핑이 존재할 수 있다.
+Brainwaves (EEG) classify the brain's electrical activity into frequency bands. Low frequency (δ) corresponds to deep sleep (high inhibition), and high frequency (γ) corresponds to focused/hyperarousal (low inhibition). A natural mapping may exist between these two systems.
 
-관련 가설: 가설 004(볼츠만-억제 온도), 가설 155(GABA-억제), 가설 159(명상)
+Related hypotheses: Hypothesis 004 (Boltzmann-inhibition temperature), Hypothesis 155 (GABA-inhibition), Hypothesis 159 (meditation)
 
-## 주파수-억제 매핑 테이블
-
-```
-  뇌파 대역    주파수(Hz)    상태           T(=1/I)    I(억제)
-  ────────    ─────────    ────────       ───────    ──────
-  δ (델타)    0.5-4        깊은 수면       1.1-1.4    0.7-0.9
-  θ (세타)    4-8          얕은 수면/명상   1.5-2.0    0.5-0.7
-  α (알파)    8-13         이완/편안       2.1-3.3    0.3-0.48
-  β (베타)    13-30        집중/각성       3.3-5.0    0.2-0.3
-  γ (감마)    30-100+      고집중/발작      5.0+       <0.2
-```
-
-## 주파수-I 매핑 다이어그램
+## Frequency-Inhibition Mapping Table
 
 ```
-  I (억제)
+  Brainwave band  Frequency(Hz)  State           T(=1/I)    I(Inhibition)
+  ────────────    ─────────────  ────────        ───────    ─────────────
+  δ (delta)       0.5-4          Deep sleep      1.1-1.4    0.7-0.9
+  θ (theta)       4-8            Light sleep/med 1.5-2.0    0.5-0.7
+  α (alpha)       8-13           Relaxation/calm 2.1-3.3    0.3-0.48
+  β (beta)        13-30          Focus/arousal   3.3-5.0    0.2-0.3
+  γ (gamma)       30-100+        High focus/seiz 5.0+       <0.2
+```
+
+## Frequency-I Mapping Diagram
+
+```
+  I (Inhibition)
   1.0│
-     │  ████ δ 대역 (깊은 수면)
+     │  ████ δ band (deep sleep)
   0.9│  ████
      │  ████
   0.8│  ████
      │  ████
   0.7│──████──────────────────────── I=0.7
-     │       ████ θ 대역 (얕은 수면)
+     │       ████ θ band (light sleep)
   0.6│       ████
      │       ████
-  0.5│─ ─ ─ ████─ ─ ─ ─ ─ ─ ─ ─ ─ 임계선 (리만)
+  0.5│─ ─ ─ ████─ ─ ─ ─ ─ ─ ─ ─ ─ Critical line (Riemann)
      │  ┌─────────────────────┐
-  0.48│  │    ████ α 대역      │
-     │  │    ████ (이완)       │── 골든존
+  0.48│  │    ████ α band      │
+     │  │    ████ (relaxation) │── Golden Zone
   0.4│  │    ████              │
   0.37│  │─ ─ ████ ─1/e ─ ─ ─ │
      │  │    ████              │
   0.3│  │    ████              │
      │  └─────────────────────┘
-  0.24│       ████ β 대역 (집중)
-  0.2│──────████──────────────── I=0.2 (위험선)
-     │           ████ γ 대역 (과각성)
+  0.24│       ████ β band (focus)
+  0.2│──────████──────────────────── I=0.2 (danger line)
+     │           ████ γ band (hyperarousal)
   0.1│           ████
      │
-  0.0└──┬──┬──┬──┬──┬──┬──┬──→ 주파수 (Hz)
+  0.0└──┬──┬──┬──┬──┬──┬──┬──→ Frequency (Hz)
        1  4  8  13 20 30 50 100
 
-  ▓▓ 골든존(I=0.24~0.48) ≈ α파 대역과 겹침!
+  ▓▓ Golden Zone (I=0.24~0.48) ≈ overlaps with α wave band!
 ```
 
-## 핵심 발견: α파 = 골든존?
+## Key Finding: α Waves = Golden Zone?
 
-알파파(8-13Hz)의 억제 범위(I≈0.3-0.48)가 골든존(I=0.21-0.50)과 상당 부분 겹친다. 이는 우연의 일치인가, 아니면 근본적 연결인가?
+The inhibition range of alpha waves (8-13Hz) (I≈0.3-0.48) substantially overlaps with the Golden Zone (I=0.21-0.50). Is this a coincidence, or a fundamental connection?
 
-### 근거 1: 알파파와 창의성
+### Evidence 1: Alpha Waves and Creativity
 
 ```
-  연구                          주요 발견
-  ──────────                   ───────────
-  Martindale (1999)            창의적 사고 중 α파↑
-  Fink et al. (2009)           발산적 사고 → 상부 α 증가
-  Jung-Beeman (2004)           통찰 직전 α 억제 → γ 버스트
-  Jauk et al. (2012)           높은 창의성 = 높은 α 파워
+  Study                         Key findings
+  ──────────────                ───────────
+  Martindale (1999)             α waves↑ during creative thinking
+  Fink et al. (2009)            Divergent thinking → upper α increase
+  Jung-Beeman (2004)            α suppression → γ burst just before insight
+  Jauk et al. (2012)            High creativity = high α power
 ```
 
-### 근거 2: 명상과 α-θ 경계
+### Evidence 2: Meditation and α-θ Boundary
 
-장기 명상자(가설 159)는 α-θ 경계(I≈0.5 근처)에서 활동하며, 이것은 골든존 상한(임계선)에 해당한다.
+Long-term meditators (Hypothesis 159) operate near the α-θ boundary (I≈0.5), which corresponds to the Golden Zone upper bound (critical line).
 
-## 볼츠만 온도 해석
+## Boltzmann Temperature Interpretation
 
 ```
   T = 1/I
 
-  T값    I값     뇌파     볼츠만 해석
-  ────   ────   ─────   ────────────────
-  1.2    0.83   δ       "차가운" — 에너지 바닥 상태 지배
-  1.7    0.59   θ       "미지근한" — 저에너지 상태 우세
-  2.7    0.37   α(골든)  "적온" — 에너지 분포 최적 분산
-  4.0    0.25   β       "뜨거운" — 높은 에너지 상태 활성
-  10+    <0.1   γ(과잉)  "과열" — 에너지 무질서 (발작 위험)
+  T value  I value   Brainwave   Boltzmann interpretation
+  ────     ────      ─────       ────────────────
+  1.2      0.83      δ           "Cold" — ground energy state dominant
+  1.7      0.59      θ           "Lukewarm" — low energy state prevails
+  2.7      0.37      α (Golden)  "Optimal temperature" — optimal energy distribution
+  4.0      0.25      β           "Hot" — high energy state activated
+  10+      <0.1      γ (excess)  "Overheated" — energy disorder (seizure risk)
 ```
 
-### 알파파 = "적온(適溫)"
+### Alpha Waves = "Optimal Temperature"
 
-볼츠만 분포에서 T ≈ 2.7(I ≈ 0.37 ≈ 1/e)일 때 에너지 분포가 "최적으로 분산"된다. 너무 차갑지도(모든 뉴런 비활성), 너무 뜨겁지도(모든 뉴런 과활성) 않은 상태. 이것이 α파의 "이완하지만 깨어있는" 상태와 일치한다.
+In Boltzmann distribution, when T ≈ 2.7 (I ≈ 0.37 ≈ 1/e), the energy distribution is "optimally distributed." Neither too cold (all neurons inactive) nor too hot (all neurons overactive). This matches the "relaxed but awake" state of alpha waves.
 
-## 통찰 순간의 뇌파 전이
+## Brainwave Transitions at Insight Moments
 
-Jung-Beeman(2004)의 "아하!" 순간 연구:
+Jung-Beeman's (2004) "Aha!" moment research:
 
 ```
-  시간 →  준비     잠복     통찰!     정교화
-          α↑      α-θ     γ 버스트   β
-          I≈0.4   I≈0.5   I≈0.1     I≈0.25
+  Time →   Preparation  Incubation  Insight!  Elaboration
+            α↑           α-θ         γ burst    β
+            I≈0.4        I≈0.5       I≈0.1      I≈0.25
 
-  I값
+  I value
   0.6│
      │        ┌──┐
-  0.5│─ ─ ─ ─│──│─ ─ ─ ─ ─ ─ ─ ─ ─ 임계선
+  0.5│─ ─ ─ ─│──│─ ─ ─ ─ ─ ─ ─ ─ ─ Critical line
      │  ┌──┐ │  │
-  0.4│  │  │ │  │                     골든존
+  0.4│  │  │ │  │                     Golden Zone
      │  │α │ │θ │
   0.3│  │  │ │  │              ┌──┐
-     │  │  │ │  │              │β │   골든존
-  0.2│──└──┘─└──┘──────────────└──┘── 하한
+     │  │  │ │  │              │β │   Golden Zone
+  0.2│──└──┘─└──┘──────────────└──┘── lower bound
      │              ┌──┐
-  0.1│              │γ!│ ← 통찰 순간 (커스프 전이?)
+  0.1│              │γ!│ ← Insight moment (cusp transition?)
      │              └──┘
-  0.0└──────────────────────────────→ 시간
+  0.0└──────────────────────────────→ Time
 ```
 
-통찰 순간에 I가 골든존 아래로 급락한 후 다시 복귀한다. 이것은 커스프 전이(가설 003)의 뇌파 수준에서의 발현일 수 있다.
+At the moment of insight, I drops sharply below the Golden Zone and then returns. This may be a manifestation of cusp transition (Hypothesis 003) at the brainwave level.
 
-## 한계
+## Limitations
 
-- α파 범위(8-13Hz)와 골든존(I=0.21-0.50)의 겹침이 매핑 함수 선택에 의존
-- 뇌파 주파수 → I 변환의 정확한 비선형 함수가 미결정
-- 뇌파는 피질 표면 활동만 반영하며, 깊은 구조(시상, 기저핵)의 억제 미반영
-- 동일 주파수 대역 내에서도 뇌 영역별로 I가 다를 수 있음
-- γ파가 통찰과 발작 모두에 관련 → I 낮음의 이중성 문제
+- The overlap of α wave range (8-13Hz) with the Golden Zone (I=0.21-0.50) depends on the choice of mapping function
+- The exact nonlinear function for brainwave frequency → I conversion is undetermined
+- Brainwaves reflect only cortical surface activity; inhibition of deep structures (thalamus, basal ganglia) not reflected
+- I may differ by brain region even within the same frequency band
+- γ waves are associated with both insight and seizures → duality problem of low I
 
-## 검증 방향
+## Verification Directions
 
-- [ ] EEG 파워 스펙트럼 → I값 변환 함수 정밀 보정
-- [ ] 창의적 과제 중 α파 파워와 시뮬레이션 Compass Score 상관 분석
-- [ ] 명상자(가설 159)의 뇌파 데이터에서 골든존 체류 시간 측정
-- [ ] 통찰 순간의 γ 버스트 → 커스프 전이 모델 적합 여부 검증
-- [ ] GABA(가설 155) ↔ 뇌파 주파수 ↔ I의 삼각 매핑 구축
+- [ ] Precisely calibrate EEG power spectrum → I value conversion function
+- [ ] Correlation analysis of α wave power during creative tasks and simulated Compass Score
+- [ ] Measure time spent in Golden Zone from brainwave data of meditators (Hypothesis 159)
+- [ ] Verify whether γ burst at insight moment fits cusp transition model
+- [ ] Build triangular mapping of GABA (Hypothesis 155) ↔ brainwave frequency ↔ I
 
 ---
 
-*작성일: 2026-03-22*
-*상태: ⚠️ α파-골든존 겹침은 흥미롭지만, 매핑 함수의 임의성 문제 해결 필요*
+*Written: 2026-03-22*
+*Status: ⚠️ α wave-Golden Zone overlap is interesting, but arbitrariness of mapping function needs to be resolved*

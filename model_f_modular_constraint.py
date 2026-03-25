@@ -1,29 +1,29 @@
 #!/usr/bin/env python3
-"""모델 F: SL(2,Z) 모듈러 대칭 제약 네트워크
+"""Model F: SL(2,Z) Modular Symmetry Constraint Network
 
-수학적 근거:
-  SL(2,Z)는 모듈러 군 — 정수 행렬 중 행렬식=1인 2x2 행렬의 군.
-  모듈러 형식(modular form)은 이 군의 작용 하에 변환 법칙을 따르며,
-  수론의 핵심 대상(타원곡선, 리만 제타 등)과 깊이 연결된다.
+Mathematical Foundation:
+  SL(2,Z) is the modular group — the group of 2x2 integer matrices with determinant=1.
+  Modular forms follow transformation laws under the action of this group,
+  and are deeply connected to core objects in number theory (elliptic curves, Riemann zeta, etc.).
 
-  완전수 6에서 유도되는 블록 크기:
-    sigma(6) = 12  (약수합)
-    tau(6)   = 4   (약수 개수)
+  Block sizes derived from perfect number 6:
+    sigma(6) = 12  (sum of divisors)
+    tau(6)   = 4   (number of divisors)
     lcm(tau(6), 6) = lcm(4, 6) = 12 = sigma(6)
 
-  블록 대칭 제약:
-    가중치 행렬을 12x12 블록으로 분할하고, 각 블록을 대칭화:
+  Block Symmetry Constraint:
+    Partition weight matrices into 12x12 blocks and symmetrize each block:
       W_block = (W + W^T) / 2
-    이는 SL(2,Z)의 대칭 표현을 이산화한 것으로,
-    가중치 공간의 차원을 절반으로 줄여 정규화 효과를 낸다.
+    This discretizes the symmetric representation of SL(2,Z),
+    reducing the weight space dimension by half for regularization effect.
 
-  기대 효과:
-    - 대칭 제약이 과적합을 방지 (암묵적 정규화)
-    - 블록 크기 12가 sigma(6)과 일치하여 완전수 구조 반영
-    - L2 정규화와 비교하여 구조적 제약의 우위를 검증
+  Expected Effects:
+    - Symmetry constraint prevents overfitting (implicit regularization)
+    - Block size 12 matches sigma(6), reflecting perfect number structure
+    - Verify structural constraint superiority vs L2 regularization
 
-  검증:
-    MNIST에서 모듈러 제약 vs 표준 Linear vs L2 정규화 비교
+  Verification:
+    Compare Modular Constraint vs Standard Linear vs L2 regularization on MNIST
 """
 
 import torch
@@ -38,7 +38,7 @@ from model_utils import (
     DenseModel,
 )
 
-# 블록 크기 = lcm(tau(6), 6) = lcm(4, 6) = 12 = sigma(6)
+# Block size = lcm(tau(6), 6) = lcm(4, 6) = 12 = sigma(6)
 BLOCK_SIZE = SIGMA  # 12
 
 
@@ -46,11 +46,11 @@ BLOCK_SIZE = SIGMA  # 12
 # ModularConstraintLinear
 # ─────────────────────────────────────────
 class ModularConstraintLinear(nn.Module):
-    """nn.Linear 대체: 가중치를 12x12 블록 단위로 대칭화.
+    """nn.Linear replacement: symmetrize weights by 12x12 blocks.
 
-    가중치 행렬 (out_features x in_features)를 12x12 블록으로 나누고,
-    각 블록에 W_block = (W + W^T) / 2 대칭 제약을 적용한다.
-    비정방 블록(가장자리)은 제약 없이 그대로 사용한다.
+    Divide weight matrix (out_features x in_features) into 12x12 blocks,
+    and apply W_block = (W + W^T) / 2 symmetry constraint to each block.
+    Non-square blocks (edges) are used as-is without constraints.
     """
 
     def __init__(self, in_features, out_features, bias=True):
@@ -62,14 +62,14 @@ class ModularConstraintLinear(nn.Module):
             self.bias = nn.Parameter(torch.zeros(out_features))
         else:
             self.bias = None
-        # Kaiming 초기화
+        # Kaiming initialization
         nn.init.kaiming_uniform_(self.weight, a=math.sqrt(5))
 
     def _symmetrize_blocks(self, W):
-        """가중치를 12x12 블록 단위로 대칭화한다."""
+        """Symmetrize weights by 12x12 blocks."""
         H, W_dim = W.shape
         result = W.clone()
-        # 정방 블록만 대칭화 (12x12 단위)
+        # Symmetrize only square blocks (12x12 units)
         n_row_blocks = H // BLOCK_SIZE
         n_col_blocks = W_dim // BLOCK_SIZE
         for i in range(n_row_blocks):
@@ -77,7 +77,7 @@ class ModularConstraintLinear(nn.Module):
                 r_start = i * BLOCK_SIZE
                 c_start = j * BLOCK_SIZE
                 block = W[r_start:r_start + BLOCK_SIZE, c_start:c_start + BLOCK_SIZE]
-                # 대칭화: (W + W^T) / 2
+                # Symmetrize: (W + W^T) / 2
                 sym_block = (block + block.T) / 2
                 result[r_start:r_start + BLOCK_SIZE, c_start:c_start + BLOCK_SIZE] = sym_block
         return result
@@ -91,15 +91,15 @@ class ModularConstraintLinear(nn.Module):
 # ModularConstraintNet
 # ─────────────────────────────────────────
 class ModularConstraintNet(nn.Module):
-    """ModularConstraintLinear로 구성된 네트워크.
+    """Network composed of ModularConstraintLinear layers.
 
-    hidden_dim은 12의 배수여야 한다 (블록 대칭 적용을 위해).
+    hidden_dim must be a multiple of 12 (for block symmetry application).
     """
 
     def __init__(self, input_dim=784, hidden_dim=48, output_dim=10, dropout=0.5):
         super().__init__()
         assert hidden_dim % BLOCK_SIZE == 0, \
-            f"hidden_dim={hidden_dim}은 {BLOCK_SIZE}의 배수여야 합니다."
+            f"hidden_dim={hidden_dim} must be a multiple of {BLOCK_SIZE}."
         self.net = nn.Sequential(
             ModularConstraintLinear(input_dim, hidden_dim),
             nn.ReLU(),
@@ -112,10 +112,10 @@ class ModularConstraintNet(nn.Module):
 
 
 # ─────────────────────────────────────────
-# L2 정규화 모델 (비교군)
+# L2 Regularized Model (Comparison)
 # ─────────────────────────────────────────
 class L2RegularizedModel(nn.Module):
-    """표준 Linear + L2 정규화 (weight_decay로 구현)."""
+    """Standard Linear + L2 regularization (implemented via weight_decay)."""
 
     def __init__(self, input_dim=784, hidden_dim=48, output_dim=10, dropout=0.5):
         super().__init__()
@@ -131,26 +131,26 @@ class L2RegularizedModel(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 벤치마크
+# Benchmark
 # ─────────────────────────────────────────
 def main():
     print("=" * 70)
-    print("  모델 F: SL(2,Z) 모듈러 대칭 제약 네트워크")
+    print("  Model F: SL(2,Z) Modular Symmetry Constraint Network")
     print("=" * 70)
-    print(f"\n  블록 크기 = sigma(6) = {SIGMA}")
+    print(f"\n  Block size = sigma(6) = {SIGMA}")
     print(f"  lcm(tau(6), 6) = lcm({TAU}, 6) = {BLOCK_SIZE}")
     print(f"  H_target = {H_TARGET:.6f}")
     print()
 
-    # 데이터
+    # Data
     train_loader, test_loader = load_mnist()
 
-    hidden_dim = 48  # 12의 배수
+    hidden_dim = 48  # Multiple of 12
     epochs = 10
     lr = 0.001
     results = {}
 
-    # 1. 모듈러 제약
+    # 1. Modular Constraint
     print("[1/3] ModularConstraintNet (hidden=48, block=12)")
     model_mc = ModularConstraintNet(784, hidden_dim, 10)
     t0 = time.time()
@@ -162,7 +162,7 @@ def main():
         'params': count_params(model_mc), 'time': elapsed_mc,
     }
 
-    # 2. 표준 Dense (같은 크기)
+    # 2. Standard Dense (same size)
     print(f"\n[2/3] Standard Dense (hidden={hidden_dim})")
     model_std = DenseModel(784, hidden_dim, 10)
     t0 = time.time()
@@ -174,7 +174,7 @@ def main():
         'params': count_params(model_std), 'time': elapsed_std,
     }
 
-    # 3. L2 정규화 (weight_decay=0.01)
+    # 3. L2 Regularization (weight_decay=0.01)
     print(f"\n[3/3] L2 Regularized (hidden={hidden_dim}, wd=0.01)")
     model_l2 = L2RegularizedModel(784, hidden_dim, 10)
     opt_l2 = torch.optim.Adam(model_l2.parameters(), lr=lr, weight_decay=0.01)
@@ -187,19 +187,19 @@ def main():
         'params': count_params(model_l2), 'time': elapsed_l2,
     }
 
-    # 결과 비교
+    # Compare results
     compare_results(results)
 
-    # 대칭 블록 분석
-    print("\n--- 모듈러 대칭 블록 분석 ---")
+    # Symmetric block analysis
+    print("\n--- Modular Symmetric Block Analysis ---")
     W = list(model_mc.net[0].parameters())[0].detach()
     H, W_dim = W.shape
     n_row = H // BLOCK_SIZE
     n_col = W_dim // BLOCK_SIZE
-    print(f"  가중치 크기: {H} x {W_dim}")
-    print(f"  블록 수: {n_row} x {n_col} = {n_row * n_col} 정방블록")
+    print(f"  Weight size: {H} x {W_dim}")
+    print(f"  Number of blocks: {n_row} x {n_col} = {n_row * n_col} square blocks")
 
-    # 대칭성 측정 (원본 가중치의 비대칭 정도)
+    # Measure symmetry (asymmetry degree of original weights)
     asym_norms = []
     for i in range(n_row):
         for j in range(n_col):
@@ -207,8 +207,8 @@ def main():
             asym = (block - block.T).norm().item()
             asym_norms.append(asym)
     avg_asym = sum(asym_norms) / len(asym_norms) if asym_norms else 0
-    print(f"  평균 비대칭 노름 (학습 후): {avg_asym:.6f}")
-    print(f"  → forward에서 대칭화 적용되므로 실제 출력은 완전 대칭")
+    print(f"  Average asymmetry norm (after training): {avg_asym:.6f}")
+    print(f"  → Symmetrization is applied in forward, so actual output is fully symmetric")
 
 
 if __name__ == '__main__':

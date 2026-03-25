@@ -1,19 +1,19 @@
-# H-MP-18: R-chain basin(6)의 밀도 점근
+# H-MP-18: Density asymptotics of R-chain basin(6)
 
-> **가설**: basin(6) = {n : R-chain이 6을 경유하는 n}의 밀도가
-> N→∞에서 수렴하며, 그 극한이 산술 상수로 표현된다.
+> **Hypothesis**: The density of basin(6) = {n : R-chain passes through 6}
+> converges as N→∞, and the limit is expressed as an arithmetic constant.
 
-## 데이터
+## Data
 
 ```
   N=50000: basin(6) = 7007/50000 = 14.01%
 
-  basin(6)의 정확한 극한 = ?
-  후보: 1/7 = 14.29%, 1/M₃ = 14.29%
-       ln(4/3) / 2 = 14.38%
-       φ(6)/σ(6) = 2/12 = 16.67%
+  Exact limit of basin(6) = ?
+  Candidates: 1/7 = 14.29%, 1/M₃ = 14.29%
+             ln(4/3) / 2 = 14.38%
+             φ(6)/σ(6) = 2/12 = 16.67%
 ```
 
-## 검증 필요: N=10⁶까지 밀도 추적
+## Verification needed: Track density up to N=10⁶
 
-## 판정: 🟧 | 파급력: ★★★
+## Status: 🟧 | Impact: ★★★

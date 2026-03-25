@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""이상 점수 계산기 — 장력으로 이상 탐지
+"""Anomaly Score Calculator — Anomaly Detection via Tension
 
-사용법:
+Usage:
   python3 anomaly_scorer.py --data random --anomaly-ratio 0.1
   python3 anomaly_scorer.py --data cancer
 """
@@ -18,7 +18,7 @@ class AnomalyRepulsionField(nn.Module):
         return (self.a(x) - self.g(x)).pow(2).sum(-1)  # tension = anomaly score
 
 def main():
-    parser = argparse.ArgumentParser(description='이상 점수 계산기')
+    parser = argparse.ArgumentParser(description='Anomaly Score Calculator')
     parser.add_argument('--data', default='random')
     parser.add_argument('--anomaly-ratio', type=float, default=0.1)
     parser.add_argument('--dim', type=int, default=20)
@@ -43,7 +43,7 @@ def main():
     model = AnomalyRepulsionField(args.dim if args.data == 'random' else 30)
     opt = torch.optim.Adam(model.parameters(), lr=0.01)
 
-    # 정상 데이터만 학습 (reconstruction-free!)
+    # Train only on normal data (reconstruction-free!)
     normal_mask = y == 0
     X_train = X[normal_mask]
 
@@ -69,7 +69,7 @@ def main():
     n_neg = len(labels) - n_pos
     correct = sum(1 for i, j in zip(range(len(labels)), range(len(labels)))
                   if labels[i] == 1 and labels[j] == 0 and scores[i] > scores[j])
-    # 간단 AUROC
+    # Simple AUROC
     pos_scores = scores[labels == 1]
     neg_scores = scores[labels == 0]
     auroc = sum(1 for p in pos_scores for n in neg_scores if p > n) / (len(pos_scores) * len(neg_scores))

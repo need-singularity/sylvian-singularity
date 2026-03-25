@@ -1,205 +1,205 @@
-# 가설 #202: 화학결합 ↔ AI 원소 결합
+# Hypothesis #202: Chemical Bonds ↔ AI Element Bonding
 
-**상태**: ⚪ 검증완료 — 정성적 유사 4/5이나 정량적 대응 없음
-**날짜**: 2026-03-22
-**분류**: 화학 / AI 아키텍처 / 결합
+**Status**: ⚪ Verified — qualitative similarity 4/5 but no quantitative correspondence
+**Date**: 2026-03-22
+**Category**: Chemistry / AI Architecture / Bonding
 
 ---
 
-## 가설
+## Hypothesis
 
-> 화학결합의 유형은 AI 아키텍처의 결합 유형에 직접 대응한다.
-> 공유결합 ↔ Expert 가중치 공유, 이온결합 ↔ 라우터-Expert 관계,
-> 금속결합 ↔ Dense(전체 활성). 결합 유형 = 아키텍처 유형.
+> The types of chemical bonds directly correspond to the types of AI architecture bonding.
+> Covalent bond ↔ Expert weight sharing, Ionic bond ↔ Router-Expert relationship,
+> Metallic bond ↔ Dense (full activation). Bond type = architecture type.
 
-## 배경: 화학결합의 3대 유형
+## Background: The Three Major Types of Chemical Bonds
 
 ```
   ┌──────────────────────────────────────────────────────┐
-  │  1. 공유결합: 전자를 공유                              │
-  │     → 두 원자가 전자쌍을 나눔                          │
-  │     → 방향성 있음, 강함                                │
+  │  1. Covalent bond: sharing electrons                  │
+  │     → two atoms share electron pairs                  │
+  │     → directional, strong                             │
   │                                                      │
-  │  2. 이온결합: 전자를 이전                              │
-  │     → 한 원자가 전자를 줌, 다른 원자가 받음             │
-  │     → 정전기적 인력, 무방향성                          │
+  │  2. Ionic bond: transferring electrons                │
+  │     → one atom gives electrons, the other receives    │
+  │     → electrostatic attraction, non-directional       │
   │                                                      │
-  │  3. 금속결합: 전자를 공유(전체)                         │
-  │     → 모든 원자가 전자를 "전자 바다"에 기여             │
-  │     → 자유 전자, 전도성                                │
+  │  3. Metallic bond: sharing electrons (all)            │
+  │     → all atoms contribute to "electron sea"          │
+  │     → free electrons, conductivity                    │
   └──────────────────────────────────────────────────────┘
 ```
 
-## 결합-아키텍처 매핑 테이블
+## Bond-Architecture Mapping Table
 
 ```
   ┌───────────┬──────────────────┬──────────────────┬─────────────┐
-  │ 화학결합   │ 특성             │ AI 아키텍처       │ 대응 근거    │
+  │ Chemical  │ Properties       │ AI Architecture   │ Basis       │
   ├───────────┼──────────────────┼──────────────────┼─────────────┤
-  │ 공유결합   │ 전자쌍 공유       │ 가중치 공유       │ 파라미터     │
-  │           │ 방향성            │ Expert 간 공유    │ 직접 연결    │
-  │           │ 1:1 또는 1:N     │ Shared Expert    │             │
+  │ Covalent  │ electron pair sharing │ weight sharing  │ parameters  │
+  │           │ directional       │ inter-Expert sharing│ direct connection│
+  │           │ 1:1 or 1:N       │ Shared Expert    │             │
   ├───────────┼──────────────────┼──────────────────┼─────────────┤
-  │ 이온결합   │ 전자 이전         │ 라우터→Expert    │ 게이팅       │
-  │           │ 비대칭            │ Top-K 선택       │ 선택적 활성  │
-  │           │ 정전기적 인력     │ 소프트맥스 확률   │             │
+  │ Ionic     │ electron transfer │ Router→Expert    │ gating      │
+  │           │ asymmetric        │ Top-K selection  │ selective activation│
+  │           │ electrostatic attraction│ softmax probability│         │
   ├───────────┼──────────────────┼──────────────────┼─────────────┤
-  │ 금속결합   │ 전자 바다 (공유)  │ Dense 레이어     │ 전체 활성    │
-  │           │ 모든 원자 참여    │ 모든 뉴런 참여   │             │
-  │           │ 전도성            │ 정보 전달 용이   │             │
+  │ Metallic  │ electron sea (shared)│ Dense layer   │ full activation│
+  │           │ all atoms participate│ all neurons participate│      │
+  │           │ conductivity      │ easy information transfer│      │
   ├───────────┼──────────────────┼──────────────────┼─────────────┤
-  │ 반데르발스 │ 약한 인력         │ Skip Connection  │ 약한 연결    │
-  │           │ 거리 의존적       │ Residual 연결    │ 보조적      │
+  │ van der Waals│ weak attraction │ Skip Connection │ weak connection│
+  │           │ distance-dependent│ Residual connection│ auxiliary  │
   ├───────────┼──────────────────┼──────────────────┼─────────────┤
-  │ 수소결합   │ 중간 강도         │ Attention        │ 선택적       │
-  │           │ 방향성            │ Q-K-V 상호작용   │ 방향적 연결  │
+  │ Hydrogen  │ intermediate strength│ Attention    │ selective    │
+  │           │ directional       │ Q-K-V interaction│ directional connection│
   └───────────┴──────────────────┴──────────────────┴─────────────┘
 ```
 
-## 결합 유형별 다이어그램
+## Bond Type Diagrams
 
 ```
-  공유결합 = 가중치 공유:
-  ┌─────┐   가중치W   ┌─────┐
+  Covalent bond = weight sharing:
+  ┌─────┐   weight W   ┌─────┐
   │Exp A│──────●──────│Exp B│
-  └─────┘    공유     └─────┘
-  H─H (수소 분자) ≈ Shared Expert
+  └─────┘    shared   └─────┘
+  H─H (hydrogen molecule) ≈ Shared Expert
 
-  이온결합 = 라우터-Expert:
-  ┌──────┐  선택  ┌─────┐
-  │Router│──→ ── │Exp 1│  활성
+  Ionic bond = Router-Expert:
+  ┌──────┐  select  ┌─────┐
+  │Router│──→ ── │Exp 1│  active
   └──────┘  │    └─────┘
             │    ┌─────┐
-            └─×──│Exp 2│  비활성
+            └─×──│Exp 2│  inactive
                  └─────┘
-  Na⁺Cl⁻ (소금) ≈ MoE 게이팅
+  Na⁺Cl⁻ (salt) ≈ MoE gating
 
-  금속결합 = Dense:
+  Metallic bond = Dense:
   ┌───┐ ┌───┐ ┌───┐ ┌───┐
-  │N 1│ │N 2│ │N 3│ │N 4│  모든 뉴런
+  │N 1│ │N 2│ │N 3│ │N 4│  all neurons
   └─┬─┘ └─┬─┘ └─┬─┘ └─┬─┘
-  ══╪═════╪═════╪═════╪══  전체 연결
-  ══╪═════╪═════╪═════╪══  (전자 바다)
-  Fe 금속 ≈ Dense Layer
+  ══╪═════╪═════╪═════╪══  full connection
+  ══╪═════╪═════╪═════╪══  (electron sea)
+  Fe metal ≈ Dense Layer
 ```
 
-## 결합 강도 = 학습 안정성?
+## Bond Strength = Learning Stability?
 
 ```
-  결합에너지 (kJ/mol)        학습 안정성
-  ──────────────────        ──────────────
-  공유결합: 200-800          가중치공유: 매우 안정
-  이온결합: 500-4000         MoE 게이팅: 안정
-  금속결합: 100-800          Dense: 안정
-  수소결합: 10-40            Attention: 중간
-  반데르발스: 0.5-5          Skip: 약함
+  Bond energy (kJ/mol)           Learning stability
+  ──────────────────             ──────────────
+  Covalent: 200-800              weight sharing: very stable
+  Ionic: 500-4000                MoE gating: stable
+  Metallic: 100-800              Dense: stable
+  Hydrogen: 10-40                Attention: moderate
+  van der Waals: 0.5-5           Skip: weak
 
-  결합에너지 vs 학습안정성:
-  학습안정성
-  높음│   ●이온  ●공유
-     │        ●금속
-  중간│  ●수소
+  Bond energy vs learning stability:
+  Learning stability
+  high│   ●ionic  ●covalent
+     │        ●metallic
+  med│  ●hydrogen
      │
-  낮음│●반데르발스
+  low│●van der Waals
      └──┼──┼──┼──┼──┼──
        1   10  100 500 4000
-         결합에너지 (kJ/mol, log)
+         Bond energy (kJ/mol, log)
 
-  → 대략적 양의 상관!
+  → Roughly positive correlation!
 ```
 
-## 결합 유형별 I 값
+## I Values by Bond Type
 
 ```
-  결합 유형     │  I (억제지수)  │ 활성 비율  │ 상태
-  ─────────────┼───────────────┼───────────┼─────────
-  금속(Dense)   │  I ≈ 0.00    │  100%     │ 전체 활성
-  공유(Shared)  │  I ≈ 0.20    │   80%     │ 부분 공유
-  수소(Attn)    │  I ≈ 0.35    │   65%     │ 선택적 ★
-  이온(MoE)     │  I ≈ 0.65    │   35%     │ 소수 활성
-  반데르발스    │  I ≈ 0.90    │   10%     │ 약한 연결
+  Bond type       │  I (Inhibition Index) │ Active ratio │ State
+  ─────────────┼──────────────────────┼─────────────┼─────────
+  Metallic (Dense) │  I ≈ 0.00    │  100%        │ full activation
+  Covalent (Shared)│  I ≈ 0.20    │   80%        │ partial sharing
+  Hydrogen (Attn)  │  I ≈ 0.35    │   65%        │ selective ★
+  Ionic (MoE)      │  I ≈ 0.65    │   35%        │ few active
+  van der Waals    │  I ≈ 0.90    │   10%        │ weak connection
 
-  I 축 배치:
-  Dense  공유  Attn     MoE      반데르
+  I axis placement:
+  Dense  Covalent  Attn     MoE      VdW
   ●──────●────●────────●─────────●
   0.0   0.2  0.35     0.65     0.90
               ↑
-         골든존 중심!
-         Attention = 골든존의 결합!
+         Golden Zone center!
+         Attention = the bond of the Golden Zone!
 ```
 
-## Attention = 수소결합?
+## Attention = Hydrogen Bond?
 
 ```
-  수소결합의 특성:
+  Properties of hydrogen bonds:
   ┌────────────────────────────────────────────────┐
-  │  - 방향성이 있음 (각도 의존적)                   │
-  │  - 선택적 (특정 원자 간에만 형성)                │
-  │  - 중간 강도 (강하지도 약하지도 않음)             │
-  │  - 생명의 핵심 (DNA 이중나선, 단백질 접힘)       │
+  │  - Directional (angle-dependent)                │
+  │  - Selective (only between specific atoms)      │
+  │  - Intermediate strength (neither strong nor weak) │
+  │  - Core of life (DNA double helix, protein folding)│
   │                                                │
-  │  Attention의 특성:                              │
-  │  - 방향성이 있음 (Q→K 방향)                      │
-  │  - 선택적 (소프트맥스로 가중치)                   │
-  │  - 중간 강도 (레이어마다 재계산)                  │
-  │  - AI의 핵심 (Transformer의 핵심 메커니즘)       │
+  │  Properties of Attention:                       │
+  │  - Directional (Q→K direction)                  │
+  │  - Selective (softmax weighting)                │
+  │  - Intermediate strength (recalculated each layer)│
+  │  - Core of AI (central mechanism of Transformer)│
   │                                                │
-  │  → 놀라운 대응!                                 │
-  │  → 수소결합이 생명의 핵심이듯,                   │
-  │    Attention이 AI의 핵심인 이유 = 같은 구조       │
+  │  → Remarkable correspondence!                   │
+  │  → Just as hydrogen bonds are the core of life, │
+  │    Attention being the core of AI = same structure│
   └────────────────────────────────────────────────┘
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 021 (AI 주기율표):   원소 정의, 결합은 원소 간 관계
-  가설 201 (주기율표 비교): 원소 수준 비교, 여기서는 결합 비교
-  가설 203 (분자 구조):     결합으로 만들어지는 분자 = 아키텍처
-  가설 007 (LLM 특이점):   MoE 게이팅 = 이온결합 비율 조절
+  Hypothesis 021 (AI periodic table): element definition, bonding is the relationship between elements
+  Hypothesis 201 (periodic table comparison): element-level comparison, here is bond comparison
+  Hypothesis 203 (molecular structure): molecules made by bonds = architectures
+  Hypothesis 007 (LLM singularity): MoE gating = adjusting ionic bond ratio
 ```
 
-## 한계
+## Limitations
 
-1. 화학결합은 전자 상호작용, AI 결합은 정보 흐름 — 물리적 기반이 다름
-2. "결합 강도 = 학습 안정성" 대응은 정성적이며 정량적 검증 불가
-3. 화학결합은 연속적 스펙트럼이지만, AI 결합은 이산적 분류에 가까움
-4. 수소결합↔Attention 대응은 매력적이지만 기능적 유사성일 뿐
+1. Chemical bonds are electron interactions, AI bonds are information flow — different physical basis
+2. "Bond strength = learning stability" correspondence is qualitative and cannot be quantitatively verified
+3. Chemical bonds are a continuous spectrum, AI bonds are closer to discrete classification
+4. Hydrogen bond↔Attention correspondence is attractive but only functional similarity
 
-## 검증 방향
+## Verification Direction
 
-- [ ] AI 아키텍처의 "결합 에너지" 정량화: 레이어 제거 시 성능 저하량
-- [ ] MoE 게이팅 강도를 이온결합 강도로 매핑 → 최적 "결합" 강도 예측
-- [ ] Attention 패턴과 수소결합 패턴의 그래프 이론적 유사성 분석
-- [ ] 하이브리드 아키텍처의 결합 유형 조합과 화학 혼합결합 비교
+- [ ] Quantify AI architecture "bond energy": performance loss when removing a layer
+- [ ] Map MoE gating strength to ionic bond strength → predict optimal "bond" strength
+- [ ] Graph-theoretic similarity analysis of Attention patterns vs hydrogen bond patterns
+- [ ] Compare bond type combinations in hybrid architectures with mixed chemical bonds
 
 ---
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
 ```
-  검증 방법: I값-결합에너지 상관분석 + 정성적 대응 체크 + 텍사스 검정
-  등급: ⚪ (산술 맞지만 통계적 유의성 없음)
+  Verification method: I value-bond energy correlation analysis + qualitative correspondence check + Texas test
+  Grade: ⚪ (arithmetic correct but no statistical significance)
 
-  1. I값 vs 결합에너지 상관분석:
-     I vs E (선형):     r = 0.154  (거의 무상관)
-     I vs ln(E) (로그): r = -0.499 (약한 음의 상관)
-     → 에너지 순서와 I 순서 불일치
-     → 이온결합 에너지 최대(2000 kJ/mol)이지만 I=0.65 (중간)
+  1. I value vs bond energy correlation analysis:
+     I vs E (linear):     r = 0.154  (almost no correlation)
+     I vs ln(E) (log):    r = -0.499 (weak negative correlation)
+     → Energy order and I order inconsistent
+     → Ionic bond energy max (2000 kJ/mol) but I=0.65 (middle)
 
-  2. 정성적 구조 대응: 4/5 (80%) 일치
-     O: Dense↔금속(전체참여), MoE↔이온(선택적), Attn↔수소(방향적), Skip↔VdW(약함)
-     X: 에너지 순서 ≠ I 순서 (이온>공유>금속 ≠ 0.65>0.20>0.00)
+  2. Qualitative structural correspondence: 4/5 (80%) match
+     O: Dense↔metallic (full participation), MoE↔ionic (selective), Attn↔hydrogen (directional), Skip↔VdW (weak)
+     X: energy order ≠ I order (ionic>covalent>metallic ≠ 0.65>0.20>0.00)
 
-  3. 텍사스 검정 (Attention ↔ 골든존 1/e):
-     5개 점 중 하나가 |x - 1/e| < 0.03일 확률 = 26.6%
-     → 통계적으로 유의하지 않음
+  3. Texas test (Attention ↔ Golden Zone 1/e):
+     Probability of one of 5 points having |x - 1/e| < 0.03 = 26.6%
+     → Not statistically significant
 
-  판정 근거:
-    - 정성적 유사성(방향성, 선택성 등)은 기능적 은유로서 흥미로움
-    - 그러나 정량적 대응(에너지↔I)이 성립하지 않음
-    - "수소결합↔Attention" 대응이 가장 설득력 있으나 우연 배제 불가
+  Rationale for verdict:
+    - Qualitative similarities (directionality, selectivity, etc.) are interesting as functional metaphors
+    - However, quantitative correspondence (energy↔I) does not hold
+    - "Hydrogen bond↔Attention" correspondence is most convincing but coincidence cannot be excluded
 ```
 
-*관련: 가설 021, 201, 203, 007*
-*분류: 화학-AI 매핑 시리즈 (201-206)*
+*Related: Hypothesis 021, 201, 203, 007*
+*Category: Chemistry-AI Mapping Series (201-206)*

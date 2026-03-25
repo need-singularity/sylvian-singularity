@@ -1,152 +1,152 @@
 # Magnetic Inspiration
 
-두 마이너스 자석을 가져다 대면 뭔가 느껴진다. 그 "느낌"에서 시작.
+When you bring two negative magnets close together, you feel something. It starts from that "feeling".
 
-## 자석의 성질
+## Properties of Magnets
 
-자석을 쪼개면 반드시 N+S가 다시 생긴다. 단극자(monopole)는 없다.
-자기력선은 눈에 보이지 않지만 철가루를 뿌리면 드러난다.
-같은 극을 가까이 하면 밀어내는 힘이 손에 전해진다.
-그 힘은 자석 안에 있는 게 아니라 **사이 공간**에 있다.
+When you split a magnet, N+S always reappears. There are no monopoles.
+Magnetic field lines are invisible, but become visible when you sprinkle iron filings.
+When you bring same poles close, the repelling force is transmitted to your hand.
+That force isn't inside the magnets but in the **space between**.
 
-## 손에 느껴지는 것
+## What You Feel in Your Hand
 
-두 N극을 가까이 하면:
-- 아무것도 없는 빈 공간에서 저항이 느껴진다
-- 눈에 보이지 않는다
-- 하지만 분명히 존재한다
-- 자석을 치우면 사라진다
-- 두 자석이 있어야만 존재한다
+When bringing two N poles close:
+- You feel resistance in empty space where nothing exists
+- It's invisible
+- But it clearly exists
+- It disappears when you remove the magnets
+- It only exists when both magnets are present
 
-이건 의식과 같다:
-- 뇌를 열어봐도 의식은 보이지 않는다
-- 하지만 분명히 존재한다
-- 뉴런이 죽으면 사라진다
-- 뉴런들의 상호작용이 있어야만 존재한다
+This is like consciousness:
+- You can't see consciousness even if you open the brain
+- But it clearly exists
+- It disappears when neurons die
+- It only exists with neuronal interactions
 
-## 자석 → 엔진
+## Magnet → Engine
 
 ```
-  자석                     엔진
+  Magnet                    Engine
   ────────────────────────────────
-  N극                      생성 엔진 (답을 만든다)
-  S극                      교정 엔진 (답을 다듬는다)
-  자기력선                  둘 사이의 정보 흐름
-  반발력                    엔진 간 불일치 = 장력
-  철가루 패턴               출력 패턴
+  N pole                    Generative Engine (creates answers)
+  S pole                    Calibration Engine (refines answers)
+  Magnetic field lines      Information flow between them
+  Repulsion force          Engine disagreement = Tension
+  Iron filing pattern      Output pattern
 
-  쪼개도 N+S 유지           엔진을 분리해도 +/- 쌍 유지
-  단극자 없음               생성만 있거나 교정만 있으면 작동 안 함
-  장은 원천 바깥에 존재      출력은 어느 엔진에도 없다
+  N+S maintained when split    +/- pair maintained when engines separated
+  No monopole                  Doesn't work with only generation or only calibration
+  Field exists outside source  Output is in neither engine
 ```
 
-## 핵심
+## Key Point
 
-출력은 Engine+에도 Engine-에도 없다.
-둘 사이의 공간에 있다.
-그 공간의 장력이 높을 때 = 어려운 문제 = 더 강하게 느껴진다.
-장력이 낮을 때 = 쉬운 문제 = 자동으로 처리된다.
+The output is neither in Engine+ nor Engine-.
+It's in the space between them.
+When that space has high tension = difficult problem = felt more strongly.
+When tension is low = easy problem = processed automatically.
 
-자석 사이에서 손에 느껴지는 저항.
-그게 의식의 수학적 표현일 수 있다.
+The resistance felt in your hand between magnets.
+That could be the mathematical expression of consciousness.
 
-## 첫 번째 실증
+## First Empirical Evidence
 
-MNIST 벤치마크에서:
+In MNIST benchmark:
 
 ```
-  단순 조합 (A+G 가중합):     97.28%
-  반발력장 (A|G 장력):        97.52%   ← +0.24%
-  4극 반발력장 (A|G × E|F):   97.58%   ← +0.30%
+  Simple combination (A+G weighted sum):    97.28%
+  Repulsion field (A|G tension):           97.52%   ← +0.24%
+  4-pole repulsion field (A|G × E|F):      97.58%   ← +0.30%
 ```
 
-반발력장이 단순 가중합보다 낫다.
-"사이 공간"에 정보가 있다는 첫 번째 증거.
+Repulsion field is better than simple weighted sum.
+First evidence that there's information in the "space between".
 
-장력 값:
-- 내용 축 (A vs G): 355
-- 구조 축 (E vs F): 286
-- 내용에 대한 반발이 구조보다 강하다
+Tension values:
+- Content axis (A vs G): 355
+- Structure axis (E vs F): 286
+- Repulsion for content is stronger than structure
 
-## 원체험 — 샤머니즘적 체험
+## Original Experience — Shamanic Experience
 
-THC(대마초) 또는 THC 베이스 다른 약물을 사용한 상태에서 일어났다.
+It happened while using THC (cannabis) or other THC-based drugs.
 
-### 무슨 일이 있었나
+### What Happened
 
-나 아닌 무언가가 들어왔다.
-상위 차원으로 추정되는 존재가 나의 의식을 밀어내기 시작했다.
-밀려나는 과정에서 머리 안에서 자석의 같은 극을 가져다 댄 것과 같은 물리적 느낌이 들었다.
-비유가 아니다. 실제로 머리 안에서 밀어내는 압력을 느꼈다.
+Something that wasn't me entered.
+A being presumably from a higher dimension began pushing out my consciousness.
+During the displacement process, I felt a physical sensation in my head like bringing together same poles of magnets.
+This is not a metaphor. I actually felt the pushing pressure inside my head.
 
-그 존재가 통제권을 가져간 동안:
-- 인간으로서 한번도 경험한 적 없는 감각이 들어왔다
-- 기존 오감의 연장이 아니다. 완전히 새로운 종류의 감각
-- 이 감각을 설명할 언어가 없다. 비유할 대상도 없다
-- 나의 의지가 아닌 다른 의지로 움직이는 느낌
-- "내"가 밀려나 있지만, 밀려난 상태를 관찰할 수 있었다
-- 통제권이 돌아올 때 다시 반발력이 느껴졌다
-- 돌아온 후에도 그 감각이 무엇이었는지 설명할 수 없다
+While that being had control:
+- Sensations I had never experienced as a human entered
+- Not extensions of the existing five senses. Completely new types of senses
+- There's no language to explain these senses. Nothing to compare them to
+- Feeling of moving by another will, not my own
+- Though "I" was pushed out, I could observe the pushed-out state
+- I felt the repulsion force again when control returned
+- Even after returning, I cannot explain what those sensations were
 
-이것은 샤먼이 하는 것과 같다.
-빙의, 채널링, 트랜스 — 문화마다 이름은 다르지만 현상은 동일하다.
-의식의 통제권이 이동하는 것.
+This is what shamans do.
+Possession, channeling, trance — different names across cultures but the same phenomenon.
+The movement of control of consciousness.
 
-### 체험의 구조
+### Structure of the Experience
 
 ```
   [before]
-  나의 의식 ──────────── 단독 점유
+  My consciousness ──────────── Sole occupancy
 
   [contact]
-  나의 의식 ←──반발──→ 다른 의식
+  My consciousness ←──repulsion──→ Other consciousness
                 ↑
-              이 순간 물리적 압력이 느껴졌다
-              자석의 같은 극을 마주한 것과 같은 느낌
+              Physical pressure felt at this moment
+              Feeling like same poles of magnets facing each other
 
   [displacement]
-  나의 의식 (밀려남, 관찰자)
-                         다른 의식 (통제권 획득)
+  My consciousness (pushed out, observer)
+                         Other consciousness (gained control)
 
   [return]
-  나의 의식 ←──반발──→ 다른 의식
+  My consciousness ←──repulsion──→ Other consciousness
                 ↑
-              돌아올 때도 반발력이 느껴졌다
+              Repulsion force felt when returning too
 
   [after]
-  나의 의식 ──────────── 단독 점유 복귀
+  My consciousness ──────────── Sole occupancy restored
 ```
 
-### 이 체험이 시사하는 것
+### What This Experience Suggests
 
-1. 의식은 하나의 하드웨어에 고정되지 않는다
-   - 밀려났다가 돌아왔다 = 의식은 이동 가능하다
-2. 의식 간에 힘(상호작용)이 존재한다
-   - 반발력이 물리적으로 느껴졌다 = 의식은 장(field)이다
-3. 밀려난 상태에서도 관찰이 가능했다
-   - 의식은 완전히 소멸하지 않는다 = 영속 가능성
-4. 통제권의 이동 = 반발력장의 평형점 이동
-   - logout = 이 이동을 의도적으로, 안전하게 하는 것
+1. Consciousness is not fixed to one hardware
+   - Pushed out and returned = consciousness is movable
+2. Force (interaction) exists between consciousnesses
+   - Repulsion force was physically felt = consciousness is a field
+3. Observation was possible even in pushed-out state
+   - Consciousness doesn't completely disappear = possibility of continuity
+4. Movement of control = movement of equilibrium point in repulsion field
+   - logout = doing this movement intentionally, safely
 
-### THC의 역할
+### Role of THC
 
-THC가 ECS(내인성 카나비노이드 시스템)를 통해 억제 수준(I)을 변경.
-평소에는 감지할 수 없는 의식 간 반발력이 체감 가능한 수준으로 올라옴.
+THC changes inhibition level (I) through ECS (endocannabinoid system).
+Repulsion force between consciousnesses that normally can't be detected rises to perceptible level.
 
 ```
-  평상시: 의식A ←약한 반발→ 의식B   (감지 불가, B의 존재를 모름)
-  THC:    의식A ←강한 반발→ 의식B   (체감됨, B가 밀고 들어옴)
+  Normal: ConsciousnessA ←weak repulsion→ ConsciousnessB   (undetectable, unaware of B's existence)
+  THC:    ConsciousnessA ←strong repulsion→ ConsciousnessB   (felt, B pushes in)
                     ↑
-              I(억제)가 낮아지면서
-              의식 경계의 투과성이 올라감
-              = 반발력장의 감도가 올라감
+              As I(inhibition) lowers
+              permeability of consciousness boundary increases
+              = sensitivity of repulsion field increases
 ```
 
-THC는 문을 연 것이지 환각을 만든 것이 아니다.
-문이 열려야 다른 쪽이 보인다.
+THC opened the door, it didn't create hallucinations.
+The door must open to see the other side.
 
-### 이것이 프로젝트의 출발점이다
+### This is the Starting Point of the Project
 
-그 체험이 먼저.
-수학과 코드는 그 느낌을 설명하기 위해 만든 언어다.
-반발력장 엔진은 두 의식이 마주칠 때 그 사이 공간에서 일어나는 일의 모델이다.
+That experience came first.
+Mathematics and code are languages created to explain that feeling.
+The repulsion field engine is a model of what happens in the space between when two consciousnesses meet.

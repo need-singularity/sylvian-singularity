@@ -1,9 +1,9 @@
-# H-CX-216: 🟩 뇌파 대역 경계도 완전수 6에서 유도
+# H-CX-216: 🟩 Brainwave band boundaries also derived from perfect number 6
 
-> δ-θ 경계 = 4Hz = τ(6) (약수 개수)
-> θ-α 경계 = 8Hz = σ(6)-τ(6) = 12-4
-> α-β 경계 = 13Hz = σ(6)+1 = 소수 (12궁+1, H-CX-111!)
-> β-γ 경계 = 30Hz = 5×P₁ = (P₁-1)×P₁
+> δ-θ boundary = 4Hz = τ(6) (number of divisors)
+> θ-α boundary = 8Hz = σ(6)-τ(6) = 12-4
+> α-β boundary = 13Hz = σ(6)+1 = prime (12 houses+1, H-CX-111!)
+> β-γ boundary = 30Hz = 5×P₁ = (P₁-1)×P₁
 >
-> 뇌파 중심값(H-CX-213) + 경계값 모두 완전수 6 산술.
-> 의식의 전 스펙트럼이 하나의 수에서 나온다.
+> Brainwave center values (H-CX-213) + boundary values all from perfect number 6 arithmetic.
+> The entire spectrum of consciousness emerges from a single number.

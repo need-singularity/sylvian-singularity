@@ -1,4 +1,4 @@
-# arXiv 논문 구조: σ(n)φ(n) = nτ(n) ⟺ n ∈ {1, 6}
+# arXiv Paper Structure: σ(n)φ(n) = nτ(n) ⟺ n ∈ {1, 6}
 
 ## Title
 A characterization of 6 via divisor sum and Euler's totient

@@ -1,25 +1,25 @@
-# 가설 309: 분열 이상탐지 종합 — 논문급 체계 정리
+# Hypothesis 309: Mitosis Anomaly Detection Synthesis — Paper-Level Systematic Summary
 
-> **의식엔진의 분열(mitosis) 메커니즘이 보편적 이상탐지기임을 6개 데이터셋, 15+ 실험으로 확인. 핵심 발견: 이중 메커니즘(H307), N=2 최적(H297), K→∞에서 monotonic 개선(H298), 재구성+간장력=최적(H302).**
+> **The mitosis mechanism of the consciousness engine is confirmed as a universal anomaly detector through 6 datasets and 15+ experiments. Key findings: dual mechanism (H307), N=2 optimal (H297), monotonic improvement as K->∞ (H298), reconstruction+inter-tension=optimal (H302).**
 
-## 1. 방법론
+## 1. Methodology
 
 ```
-  알고리즘: Mitosis Anomaly Detection (MAD)
+  Algorithm: Mitosis Anomaly Detection (MAD)
 
-  Input: 정상 데이터 X_normal
-  Output: 이상 점수 함수 score(x)
+  Input: Normal data X_normal
+  Output: Anomaly score function score(x)
 
   1. Train parent model on X_normal (MSE reconstruction, 50 epochs)
   2. Mitosis: child_a, child_b = deepcopy(parent) + noise(scale=0.01)
   3. Train independently: child_a on batch_A, child_b on batch_B (30 epochs)
   4. Score: score(x) = |child_a(x) - child_b(x)|² (inter-child tension)
 
-  모델: SimpleAE (engine_a + engine_g + equilibrium, hidden=64)
-  비지도 학습 (레이블 불필요!)
+  Model: SimpleAE (engine_a + engine_g + equilibrium, hidden=64)
+  Unsupervised learning (no labels needed!)
 ```
 
-## 2. 결과 종합 (6 데이터셋)
+## 2. Comprehensive Results (6 Datasets)
 
 ```
   Dataset          Type       MAD-Inter  MAD-Recon  IForest  OC-SVM
@@ -31,73 +31,73 @@
   Sine wave       timeseries  1.000      1.000      1.000    1.000
   ECG-like        timeseries  0.978      1.000      0.879    0.900*
 
-  평균:                       0.878      0.972      0.975    0.973
-  * = 보편성 실험에서 방향 보정 후
+  Mean:                       0.878      0.972      0.975    0.973
+  * = after direction correction in universality experiment
 
-  MAD-Recon(재구성 에러)가 전문 기법과 동등!
-  MAD-Inter(간장력)는 ECG에서 IForest 능가!
+  MAD-Recon (reconstruction error) is equivalent to specialized methods!
+  MAD-Inter (inter-tension) outperforms IForest on ECG!
 ```
 
-## 3. 핵심 발견 5가지
+## 3. Five Key Findings
 
 ```
-  발견 1: 이중 메커니즘 (H307) ⭐
-    내부장력: 이상=낮음 (반전!) — "혼동의 합의"
-    간장력:   이상=높음 (정상) — "독립 불일치"
-    2개 데이터셋에서 재현 (보편적)
+  Finding 1: Dual mechanism (H307) ⭐
+    Internal tension: anomaly=low (inverted!) -- "Agreement in Confusion"
+    Inter-tension:   anomaly=high (normal) -- "Independent disagreement"
+    Reproduced in 2 datasets (universal)
 
-  발견 2: N=2 최적 (H297)
+  Finding 2: N=2 optimal (H297)
     N=1: AUROC=0.08, N=2: 0.82, N=4: 0.80, N=8: 0.78, N=16: 0.73
-    → 최소 분열이 최적. 과잉 분열은 해로움.
+    -> Minimum mitosis is optimal. Over-mitosis is harmful.
 
-  발견 3: Monotonic 개선 (H298)
+  Finding 3: Monotonic improvement (H298)
     K=0: AUROC=0.58, K=50: 0.95
-    분리비: 1.5x → 15.2x (10배 증가)
-    → 더 긴 독립 학습 = 더 나은 이상 탐지 (포화 없음!)
+    Separation ratio: 1.5x -> 15.2x (10x increase)
+    -> Longer independent training = better anomaly detection (no saturation!)
 
-  발견 4: 재구성+간장력=최적 (H302)
-    2×2 매트릭스:
-                     내부장력  간장력
-    분류(CE)          0.26     0.59
-    재구성(MSE)       0.14     0.80  ← 최적
-    → 비지도(재구성) + 분열(간장력) = 최고 조합
+  Finding 4: Reconstruction+inter-tension=optimal (H302)
+    2×2 matrix:
+                     Internal   Inter
+    Classification(CE)  0.26     0.59
+    Reconstruction(MSE) 0.14     0.80  <- Optimal
+    -> Unsupervised (reconstruction) + mitosis (inter-tension) = best combination
 
-  발견 5: 단순한 게 최고
-    2극 > 4극 (H306: 0.92 vs 0.80)
+  Finding 5: Simpler is better
+    2-pole > 4-pole (H306: 0.92 vs 0.80)
     MSE > Triplet > NT-Xent (H305)
     N=2 > N=4 > N=8 (H297)
-    → Occam's Razor: 가장 단순한 설정이 최적
+    -> Occam's Razor: simplest setting is optimal
 ```
 
-## 4. 면역 시스템 비유 (H301)
+## 4. Immune System Analogy (H301)
 
 ```
-  분열 = V(D)J 재조합 (다양성 생성)
-  독립학습 = 흉선 양성선택 (자기 인식)
-  간장력 = TCR-항원 불일치 (이상 감지)
+  Mitosis = V(D)J recombination (diversity generation)
+  Independent learning = thymic positive selection (self-recognition)
+  Inter-tension = TCR-antigen mismatch (anomaly detection)
 
-  하지만: 음성선택, 클론확장은 무효과 (H301)
-  → 핵심은 "다양성 생성" 자체, 선택/확장은 부차적
+  But: negative selection, clonal expansion are ineffective (H301)
+  -> The core is "diversity generation" itself, selection/expansion are secondary
 ```
 
-## 5. 수학 연결
+## 5. Mathematical Connections
 
 ```
   H-CX-14: AUROC(K) ~ exponential convergence (R²=0.95)
-    → Dirichlet 급수 F(s)의 수렴과 구조적 유사
-  H-CX-15: 최적 활성 비율 ≈ 1-1/e?
-    → MoE 5/8=0.625 ≈ 1-1/e=0.632 (오차 1.1%)
-  H-CX-18: 내부/간 이중성 ↔ 파동-입자 이중성?
+    -> Structurally similar to Dirichlet series F(s) convergence
+  H-CX-15: Optimal activation ratio ≈ 1-1/e?
+    -> MoE 5/8=0.625 ≈ 1-1/e=0.632 (error 1.1%)
+  H-CX-18: Internal/inter duality ↔ wave-particle duality?
 ```
 
-## 6. 한계
+## 6. Limitations
 
 ```
-  1. 소규모 데이터만 테스트 (max 60K samples)
-  2. 간장력 방향 반전 문제 (구현 의존적?)
-  3. MAD-Inter < IForest (대부분 데이터셋에서)
-  4. MAD-Recon ≈ 단순 autoencoder (분열의 직접 기여 불명확)
-  5. 고차원 데이터(이미지) 미테스트
+  1. Only tested on small-scale data (max 60K samples)
+  2. Inter-tension direction inversion issue (implementation-dependent?)
+  3. MAD-Inter < IForest (on most datasets)
+  4. MAD-Recon ≈ simple autoencoder (direct contribution of mitosis unclear)
+  5. High-dimensional data (images) not tested
 ```
 
-## 상태: 📝 종합 정리 (논문 초안 수준)
+## Status: 📝 Synthesized summary (paper draft level)

@@ -1,92 +1,92 @@
-# H-CX-15: 서번트 소환 = 골든존 억제 = 분열 이상탐지 (3중 교차)
+# H-CX-15: Savant Summoning = Golden Zone Inhibition = Mitosis Anomaly Detection (Triple Cross)
 
-> **골든MoE의 "서번트 소환"(Expert 활성/억제), 골든존의 I=1/e, 분열 이상탐지의 N=2 최적이 모두 같은 원리다: "전부 쓰면 노이즈, 일부만 쓰면 신호".**
+> **The golden MoE's "Savant Summoning" (Expert activation/inhibition), the Golden Zone's I=1/e, and the N=2 optimum of Mitosis Anomaly Detection all share the same principle: "using all = noise, using only part = signal".**
 
-## 3중 교차 대응표
+## Triple Cross Correspondence Table
 
 ```
-  골든MoE (서번트)          골든존 (수학)             분열 이상탐지
+  Golden MoE (Savant)       Golden Zone (Math)         Mitosis Anomaly Detection
   ──────────────────      ──────────────────      ──────────────────
-  8 Expert 중 5 활성       I = 1/e ≈ 37% 억제     N=2 분열 (50% 분리)
-  Router가 선택            축소사상이 수렴          mini-batch가 분리
-  전문화 각성 (Lv.3)       골든존 중심 ≈ 1/e       적정 다양성 (H297)
-  PPL 원본 이하 (Lv.5)     G×I=D×P (보존)         AUROC 0.95 (H298)
-  잠든 Expert = 노이즈     과잉 억제 = 발산         과잉 분열 = 성능↓
-  억제 = 노이즈 캔슬링     I↑ → G↓                 N↑ → AUROC↓ (N>2)
+  5 of 8 Experts active    I = 1/e ≈ 37% inhibited   N=2 Mitosis (50% separation)
+  Router selects           Contraction map converges  mini-batch separates
+  Specialization (Lv.3)   Golden Zone center ≈ 1/e   Appropriate diversity (H297)
+  PPL below original(Lv.5) G×I=D×P (conservation)   AUROC 0.95 (H298)
+  Sleeping Expert = noise  Over-inhibition = diverge  Over-Mitosis = performance↓
+  Inhibition = noise cancel I↑ → G↓                  N↑ → AUROC↓ (N>2)
 ```
 
-## 핵심 교차
+## Key Cross-connections
 
 ```
-  1. "전부 쓰면 약하다" 원리
-     서번트: Dense(전부 활성) < MoE(일부 활성)  [골든MoE +4.8%]
-     이상탐지: N=1(전부 하나) < N=2(분리)  [AUROC 0.08→0.82]
-     수학: I=0(억제 없음) → G=∞(발산)
+  1. "Using all = weaker" principle
+     Savant: Dense (all active) < MoE (partial active)  [Golden MoE +4.8%]
+     Anomaly Detection: N=1 (all one) < N=2 (separated)  [AUROC 0.08→0.82]
+     Math: I=0 (no inhibition) → G=∞ (diverge)
 
-  2. 최적 비율의 보편성
-     서번트: 5/8 = 62.5% 활성 → 37.5% 억제 ≈ 1/e
-     이상탐지: N=2 = 50% 분리
-     뇌: ~30% 뉴런 활성
-     → 최적 활성 비율 ≈ 1-1/e ≈ 63%?
+  2. Universality of optimal ratio
+     Savant: 5/8 = 62.5% active → 37.5% inhibited ≈ 1/e
+     Anomaly Detection: N=2 = 50% separation
+     Brain: ~30% neurons active
+     → Optimal activation ratio ≈ 1-1/e ≈ 63%?
 
-  3. 전문화 = 분화
-     서번트 Lv.3: Expert가 "문법/지식/논리/코드" 전문화
-     이상탐지 H299: child가 다른 feature 범위 전문화
-     뇌: 시각 피질 영역이 선분/텍스처/형태 전문화
-     → 전문화는 분열(분화)의 자연스러운 결과
+  3. Specialization = Differentiation
+     Savant Lv.3: Expert specializes in "grammar/knowledge/logic/code"
+     Anomaly Detection H299: child specializes in different feature ranges
+     Brain: visual cortex areas specialize in edges/textures/shapes
+     → Specialization is a natural result of Mitosis (differentiation)
 
-  4. Lv.5의 의미 = 억제가 노이즈 제거
-     Dense: 모든 파라미터가 활성 → 불필요한 뉴런도 발화 → 노이즈
-     MoE: 필요한 Expert만 → 불필요한 뉴런 잠듦 → 신호만 남음
-     분열: parent(전체) < children(분화) → 각자 정상의 다른 측면만 학습
-     → "잠드는 것"이 곧 "정보 병목"
+  4. Meaning of Lv.5 = inhibition removes noise
+     Dense: all parameters active → unnecessary neurons fire too → noise
+     MoE: only needed Experts → unnecessary neurons sleep → only signal remains
+     Mitosis: parent (all) < children (differentiated) → each learns only different aspects of normal
+     → "Sleeping" is itself the "information bottleneck"
 ```
 
-## 수학적 연결
+## Mathematical Connection
 
 ```
-  골든존: I = 1/e, G = D×P/I = D×P×e
+  Golden Zone: I = 1/e, G = D×P/I = D×P×e
 
-  서번트 활성 비율: k/n = tau/sigma = 4/12 = 1/3
-  실제 최적: 5/8 ≈ 0.625 ≈ 1-1/e ≈ 0.632
+  Savant activation ratio: k/n = tau/sigma = 4/12 = 1/3
+  Actual optimum: 5/8 ≈ 0.625 ≈ 1-1/e ≈ 0.632
 
-  놀라운 근사:
+  Surprising approximation:
     1 - 1/e = 0.6321...
     5/8 = 0.625
-    오차: 1.1%
+    Error: 1.1%
 
-  이것은 우연인가?
-    → 8 Expert 중 5 활성 = 최적 억제가 1/e
-    → 자연상수 e가 최적 활성 비율을 결정
+  Is this coincidence?
+    → 5 of 8 Experts active = optimal inhibition is 1/e
+    → Natural constant e determines optimal activation ratio
 ```
 
-## 검증 실험
+## Verification Experiments
 
 ```
-  1. MoE에서 활성 비율을 변화:
+  1. Vary activation ratio in MoE:
      k/n = {0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0}
-     → 최적 비율이 정말 1-1/e ≈ 0.63인가?
+     → Is the optimal ratio really 1-1/e ≈ 0.63?
 
-  2. 분열 이상탐지에서 "활성 child" 비율:
-     N=4 중 2개만 사용 (50%) vs 3개 (75%) vs 4개 (100%)
-     → 50%가 최적? (N=2가 최적이므로)
+  2. "Active child" ratio in Mitosis Anomaly Detection:
+     Use 2 of N=4 (50%) vs 3 (75%) vs 4 (100%)
+     → Is 50% optimal? (since N=2 is optimal)
 
-  3. 뉴런 가지치기(pruning) 비율:
-     Dense 모델에서 37% 가지치기 → 성능 유지 or 향상?
+  3. Neuron pruning ratio:
+     37% pruning in Dense model → performance maintained or improved?
 ```
 
-## 관련 가설
+## Related Hypotheses
 
 ```
-  골든MoE: golden_moe.py (+4.8%)
-  골든존: I=1/e, CLAUDE.md
-  H297: N=2 최적
-  H302: 2×2 매트릭스
-  H-CX-4: σ,τ,φ,σ₋₁ = 4구조
-  가설 284: tension_scale 자동조절
+  Golden MoE: golden_moe.py (+4.8%)
+  Golden Zone: I=1/e, CLAUDE.md
+  H297: N=2 optimal
+  H302: 2×2 matrix
+  H-CX-4: σ,τ,φ,σ₋₁ = 4 structure
+  Hypothesis 284: tension_scale auto-adjustment
 ```
 
-## MoE 활성 비율 실험 (2026-03-24)
+## MoE Activation Ratio Experiment (2026-03-24)
 
 ```
   MNIST, N=8 experts, k=1~8, 3ep:
@@ -96,65 +96,65 @@
   1    0.125    95.61%
   2    0.250    96.38%
   3    0.375    96.04%
-  4    0.500    96.76%  ← 최고!
+  4    0.500    96.76%  ← best!
   5    0.625    96.44%  [1-1/e ≈ 0.632]
   6    0.750    96.72%
   7    0.875    96.62%
   8    1.000    96.47%
 
-  최적: k=4/8 = 0.500 (50% 활성)
-  1-1/e = 0.632 → k=5 = 96.44% (2위)
-  차이: 0.32% (매우 작음)
+  Optimum: k=4/8 = 0.500 (50% active)
+  1-1/e = 0.632 → k=5 = 96.44% (2nd)
+  Difference: 0.32% (very small)
 
-  결론: 최적 활성 비율은 0.5 (1/2), 1-1/e가 아님
-  하지만 0.5와 0.625 사이 차이가 노이즈 수준 (0.32%)
-  → H-CX-15 부분 반박: 최적 ≈ 0.5 (리만 임계선!), 1-1/e 아님
+  Conclusion: optimal activation ratio is 0.5 (1/2), not 1-1/e
+  However the difference between 0.5 and 0.625 is at noise level (0.32%)
+  → H-CX-15 partial refutation: optimum ≈ 0.5 (Riemann critical line!), not 1-1/e
 ```
 
-## 정식 결과 (3 trials, 10ep, 2026-03-24)
+## Formal Results (3 trials, 10ep, 2026-03-24)
 
 ```
   MoE (N=8, 10ep 3trials):
-  k    ratio    acc%     효율    비고
-  ───  ──────  ──────  ──────  ──────
-  1    0.125   97.11   1.699   최고 효율
+  k    ratio    acc%     efficiency  note
+  ───  ──────  ──────  ──────────  ──────
+  1    0.125   97.11   1.699       highest efficiency
   2    0.250   97.31   0.901
-  3    0.375   97.35   0.612   최고 정확도!
+  3    0.375   97.35   0.612       highest accuracy!
   4    0.500   97.32   0.464
-  5    0.625   97.22   0.373   [1-1/e]
+  5    0.625   97.22   0.373       [1-1/e]
   6    0.750   97.25   0.312
   7    0.875   97.31   0.268
   8    1.000   97.21   0.235
 
-  최적 정확도: k=3/8=0.375 (1-1/e=0.632와 불일치)
-  → 하지만 모든 k에서 차이 < 0.25% (노이즈 수준)
-  → 정확도보다 효율이 중요: k=1(0.125)이 1.7x 효율
+  Best accuracy: k=3/8=0.375 (does not match 1-1/e=0.632)
+  → However difference < 0.25% across all k (noise level)
+  → Efficiency more important than accuracy: k=1 (0.125) gives 1.7x efficiency
 
   Dropout (Dense, 10ep 3trials):
-  drop   acc%     비고
+  drop   acc%     note
   ────  ──────  ──────
   0.00  97.99
   0.10  97.90
   0.20  98.05
-  0.30  98.14   최고! ← 1/e=0.368 근접
+  0.30  98.14   best! ← close to 1/e=0.368
   0.37  98.11   [1/e]
   0.50  98.06
   0.70  97.93
 
-  최적 dropout: 0.30 (1/e=0.368, 오차 6.8%)
-  → Dropout 최적이 1/e에 근접!
+  Optimal dropout: 0.30 (1/e=0.368, error 6.8%)
+  → Dropout optimum is close to 1/e!
 ```
 
-## 수정된 해석
+## Revised Interpretation
 
 ```
-  MoE 최적: k/N=3/8=0.375 ← 1/e(0.368)에 매우 근접! (오차 1.9%)
-  Dropout 최적: 0.30 ← 1/e 방향이지만 약간 아래
+  MoE optimum: k/N=3/8=0.375 ← very close to 1/e (0.368)! (error 1.9%)
+  Dropout optimum: 0.30 ← toward 1/e but slightly below
 
-  놀라운 재발견: MoE k=3/8=0.375 ≈ 1/e=0.3679 (오차 1.9%)
-  → 이전 실험(quick 3ep)에서는 k=4 피크였지만
-  → 정식 실험(10ep 3trials)에서는 k=3 피크!
-  → MoE 최적 활성 비율 ≈ 1/e?!
+  Surprising rediscovery: MoE k=3/8=0.375 ≈ 1/e=0.3679 (error 1.9%)
+  → In the earlier experiment (quick 3ep), k=4 was the peak
+  → In the formal experiment (10ep 3trials), k=3 is the peak!
+  → MoE optimal activation ratio ≈ 1/e?!
 ```
 
-## 상태: 🟧 부분확인 (MoE k=3/8≈1/e 1.9%, Dropout 0.30≈1/e 6.8%)
+## Status: 🟧 Partially Confirmed (MoE k=3/8≈1/e error 1.9%, Dropout 0.30≈1/e error 6.8%)

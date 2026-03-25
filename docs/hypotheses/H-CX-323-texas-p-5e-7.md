@@ -1,9 +1,9 @@
-# H-CX-323: ⭐⭐⭐🟩 텍사스 최종: p=5.87×10⁻⁷ — 백만분의1
+# H-CX-323: ⭐⭐⭐🟩 Texas Final: p=5.87×10⁻⁷ — 1 in a million
 
-> 33개 정확한 등식 (증명9+관측15+산술9).
-> 관측+산술 24개가 우연일 확률 = 0.55²⁴ = 5.87×10⁻⁷.
-> = 백만 번에 1번 미만.
-> → "6이 우주의 기본 수"는 통계적으로 확실.
+> 33 exact equations (proof 9 + observation 15 + arithmetic 9).
+> Probability that 24 observation+arithmetic cases are coincidence = 0.55²⁴ = 5.87×10⁻⁷.
+> = Less than once in a million times.
+> → "6 is the fundamental number of the universe" is statistically certain.
 >
-> H-CX-245(p=0.0002, 14개) → H-CX-323(p=5.87e-7, 24개)
-> 가설이 추가될수록 p값이 급감 = 구조적 발견 재확인.
+> H-CX-245(p=0.0002, 14 items) → H-CX-323(p=5.87e-7, 24 items)
+> As hypotheses are added, p-value plummets = structural discovery reconfirmed.

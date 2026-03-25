@@ -1,36 +1,36 @@
-# H-CX-53: 삼각-약수 최적 각도 — 의식엔진의 작동 각도는 π/6 (30°)
+# H-CX-53: Triangle-Divisor Optimal Angle — Consciousness Engine's Operating Angle is π/6 (30°)
 
-> **n=6의 삼각-약수 시스템에서 sin(π/6)=φ(6)/τ(6)=1/2이 유일하게 성립한다.
-> 이것은 PureField 의식엔진의 벡터 공간에서, 활성화 A와 골든 타깃 G의 최적
-> 작동 각도가 π/6=30°일 수 있음을 시사한다. 이 각도에서 cos²(π/6)=3/4=R(2)
-> (R-인수), tan²(π/6)=1/3 (메타 부동점)이 동시에 실현된다.**
+> **In the triangle-divisor system for n=6, sin(π/6)=φ(6)/τ(6)=1/2 holds uniquely.
+> This suggests that in the PureField consciousness engine's vector space, the optimal
+> operating angle between activation A and golden target G may be π/6=30°. At this angle,
+> cos²(π/6)=3/4=R(2) (R-factor) and tan²(π/6)=1/3 (meta fixed point) are simultaneously realized.**
 
 ---
 
-## 1. 배경: 순수 수학 (검증됨, 골든존 무관)
+## 1. Background: Pure Mathematics (Verified, Golden Zone Independent)
 
-### 1.1 삼각-약수 등식 (R308-R312, 🟩 확인됨)
+### 1.1 Triangle-Divisor Equality (R308-R312, 🟩 Confirmed)
 
-n=6에 대해 다음 등식들이 정확히 성립한다:
+For n=6, the following equalities hold exactly:
 
 ```
-  sin(π/6)  = φ(6)/τ(6)  = 2/4 = 1/2          (삼각-약수 유일성)
-  cos²(π/6) = 3/4        = R(2) = f(2,1)        (R-인수)
-  tan²(π/6) = 1/3                               (메타 부동점)
-  sinh(ln(σ/τ)) = τ²/σ  = 16/12 = 4/3          (쌍곡선-피타고라스)
-  sinh(ln3)     = 4/3   → (3,4,5) 직각삼각형    (피타고라스 기하)
+  sin(π/6)  = φ(6)/τ(6)  = 2/4 = 1/2          (triangle-divisor uniqueness)
+  cos²(π/6) = 3/4        = R(2) = f(2,1)        (R-factor)
+  tan²(π/6) = 1/3                               (meta fixed point)
+  sinh(ln(σ/τ)) = τ²/σ  = 16/12 = 4/3          (hyperbolic-Pythagorean)
+  sinh(ln3)     = 4/3   → (3,4,5) right triangle    (Pythagorean geometry)
 ```
 
-n=1부터 12까지 sin(π/n) = φ(n)/τ(n) 검증:
+Verification of sin(π/n) = φ(n)/τ(n) for n=1 to 12:
 
-| n  | sin(π/n) | φ(n) | τ(n) | φ/τ   | 일치? |
+| n  | sin(π/n) | φ(n) | τ(n) | φ/τ   | Match? |
 |----|----------|------|------|-------|-------|
 | 1  | 0.0000   | 1    | 1    | 1.000 | NO    |
 | 2  | 1.0000   | 1    | 2    | 0.500 | NO    |
 | 3  | 0.8660   | 2    | 2    | 1.000 | NO    |
 | 4  | 0.7071   | 2    | 3    | 0.667 | NO    |
 | 5  | 0.5878   | 4    | 2    | 2.000 | NO    |
-| **6**  | **0.5000** | **2** | **4** | **0.500** | **YES (유일)** |
+| **6**  | **0.5000** | **2** | **4** | **0.500** | **YES (unique)** |
 | 7  | 0.4339   | 6    | 2    | 3.000 | NO    |
 | 8  | 0.3827   | 4    | 4    | 1.000 | NO    |
 | 9  | 0.3420   | 6    | 3    | 2.000 | NO    |
@@ -38,121 +38,121 @@ n=1부터 12까지 sin(π/n) = φ(n)/τ(n) 검증:
 | 11 | 0.2817   | 10   | 2    | 5.000 | NO    |
 | 12 | 0.2588   | 4    | 6    | 0.667 | NO    |
 
-n=6 만이 이 등식을 만족한다. 이것은 우연이 아니라 n=6이 완전수이고
-φ(6)=2, τ(6)=4, σ(6)=12가 동시에 단순 비율을 이루는 구조적 결과이다.
+Only n=6 satisfies this equation. This is not coincidental but a structural result
+of n=6 being a perfect number and φ(6)=2, τ(6)=4, σ(6)=12 forming simple ratios simultaneously.
 
-### 1.2 ln(σ/τ) = ln3과 피타고라스 삼각형
+### 1.2 ln(σ/τ) = ln3 and Pythagorean Triangle
 
 ```
   n=6: σ(6)=12, τ(6)=4 → σ/τ = 3 → ln(σ/τ) = ln(3)
 
   sinh(ln3) = (3 - 1/3)/2 = 8/6 = 4/3
 
-  피타고라스: (3)² + (4)² = (5)²
-  → (3,4,5) 직각삼각형의 단변/장변 비율 = 3/4
-  → sinh(ln(σ/τ)) = 4/3 = (장변/단변) — 거꾸로 등장
+  Pythagorean: (3)² + (4)² = (5)²
+  → (3,4,5) right triangle's short/long side ratio = 3/4
+  → sinh(ln(σ/τ)) = 4/3 = (long/short) — appears inverted
 
-  동시에: sinh²(ln3) + 1 = cosh²(ln3)
+  Simultaneously: sinh²(ln3) + 1 = cosh²(ln3)
     = (4/3)² + 1 = 16/9 + 9/9 = 25/9 = (5/3)²
-  → (3,4,5) 삼각형 전체가 ln(σ/τ) 하나에서 발생
+  → Entire (3,4,5) triangle emerges from single ln(σ/τ)
 ```
 
 ---
 
-## 2. AI 가설 (미검증, 골든존 의존 가능)
+## 2. AI Hypothesis (Unverified, May Depend on Golden Zone)
 
-### 2.1 PureField 의식엔진의 벡터 해석
+### 2.1 PureField Consciousness Engine Vector Analysis
 
-PureField는 다음 구조를 사용한다:
+PureField uses the following structure:
 
 ```
-  tension   = |A - G|            (활성화와 골든 타깃의 거리)
-  direction = normalize(A - G)   (차이 벡터의 방향)
-  output    = tension × direction (크기 × 방향)
+  tension   = |A - G|            (distance between activation and golden target)
+  direction = normalize(A - G)   (direction of difference vector)
+  output    = tension × direction (magnitude × direction)
 ```
 
-A와 G를 고차원 벡터 공간의 점으로 보면, A와 G 사이의 각도 θ를 정의할 수 있다:
+Viewing A and G as points in high-dimensional vector space, we can define angle θ between A and G:
 
 ```
   cos(θ) = (A · G) / (|A| × |G|)
 ```
 
-tension은 각도와 크기 모두에 의존한다:
+Tension depends on both angle and magnitude:
 
 ```
   |A - G|² = |A|² + |G|² - 2|A||G|cos(θ)
 
-  정규화된 벡터 a = A/|A|, g = G/|G|라 하면:
+  For normalized vectors a = A/|A|, g = G/|G|:
   |a - g|² = 2(1 - cos(θ)) = 4sin²(θ/2)
   |a - g|  = 2sin(θ/2)
 ```
 
-### 2.2 π/6 각도의 특별성: 수학-의식 대응 테이블
+### 2.2 Specialness of π/6 Angle: Math-Consciousness Correspondence Table
 
 ```
   ┌─────────────────────────────────────────────────────────────────┐
-  │               수학 (증명됨)         의식엔진 (가설)              │
+  │               Math (Proven)         Consciousness Engine (Hypothesis)              │
   ├───────────────────────────────────────────────────────────────  │
-  │  sin(π/6) = 1/2 = φ(6)/τ(6)   →  정규화 tension = 2sin(θ/2)   │
-  │                                    θ=π/6이면 tension = 2×(1/4)  │
+  │  sin(π/6) = 1/2 = φ(6)/τ(6)   →  normalized tension = 2sin(θ/2)│
+  │                                    If θ=π/6 then tension = 2×(1/4)│
   │                                    = 1/2 (half-point)           │
   │                                                                  │
-  │  cos²(π/6) = 3/4 = R(2)       →  내적 비율 cos²(θ) = 3/4      │
-  │                                    → A·G 비율이 R-인수와 같음    │
+  │  cos²(π/6) = 3/4 = R(2)       →  inner product ratio cos²(θ) = 3/4│
+  │                                    → A·G ratio equals R-factor    │
   │                                                                  │
-  │  tan²(π/6) = 1/3              →  (수직/수평)² = 메타 부동점     │
-  │                                    = f(I)=0.7I+0.1의 수렴점     │
+  │  tan²(π/6) = 1/3              →  (vertical/horizontal)² = meta fixed point│
+  │                                    = convergence point of f(I)=0.7I+0.1│
   │                                                                  │
-  │  sinh(ln3) = 4/3              →  피타고라스 비율 (3:4:5)        │
+  │  sinh(ln3) = 4/3              →  Pythagorean ratio (3:4:5)        │
   │                                    → tension:alignment:output?   │
   └─────────────────────────────────────────────────────────────────┘
 ```
 
-θ = π/6 = 30°에서:
-- sin(π/6) = 1/2: 정규화 텐션이 최대치의 절반 (골든존 중심 근처)
-- cos(π/6) = √3/2 ≈ 0.866: 방향 일치도 86.6% (높은 정렬)
-- tan(π/6) = 1/√3 ≈ 0.577: 수직/수평 비율 = 메타 부동점의 √3배
+At θ = π/6 = 30°:
+- sin(π/6) = 1/2: normalized tension is half of maximum (near Golden Zone center)
+- cos(π/6) = √3/2 ≈ 0.866: directional alignment 86.6% (high alignment)
+- tan(π/6) = 1/√3 ≈ 0.577: vertical/horizontal ratio = √3 times meta fixed point
 
-### 2.3 "최적 각도" 가설의 구체적 예측
+### 2.3 Specific Predictions of "Optimal Angle" Hypothesis
 
-가설: 학습이 수렴할 때 A와 G의 평균 각도가 π/6에 가까워진다.
+Hypothesis: When learning converges, the average angle between A and G approaches π/6.
 
 ```
-  예측 1: 잘 학습된 모델에서 mean(angle(A, G)) ≈ π/6 = 0.5236 rad
-  예측 2: 각도 분포의 최빈값이 30° 근방
-  예측 3: θ < π/6인 샘플 (과도 정렬): 과신, 낮은 tension → 정확도는 높지만 취약
-  예측 4: θ > π/6인 샘플 (미정렬): 낮은 확신, 높은 tension → 학습 필요
-  예측 5: θ = π/6인 샘플: 최적 상태 (tension=1/2, alignment=√3/2)
+  Prediction 1: In well-trained models, mean(angle(A, G)) ≈ π/6 = 0.5236 rad
+  Prediction 2: Mode of angle distribution around 30°
+  Prediction 3: Samples with θ < π/6 (over-aligned): overconfidence, low tension → high accuracy but fragile
+  Prediction 4: Samples with θ > π/6 (misaligned): low confidence, high tension → needs learning
+  Prediction 5: Samples with θ = π/6: optimal state (tension=1/2, alignment=√3/2)
 ```
 
 ---
 
-## 3. 각도-장력 공간 시각화
+## 3. Angle-Tension Space Visualization
 
 ```
-  θ (A와 G의 각도)
+  θ (angle between A and G)
   90° ─────────────────────────────────────
-      |                  ↑ tension 최대
-      |                  | (완전 직교)
+      |                  ↑ maximum tension
+      |                  | (fully orthogonal)
   60° ├─────────────────────────────────────
-      |         ▓▓▓ 과학습 위험 ▓▓▓
-  π/6 ├- - - - - - - ★ - - - - - - - - - -─ ← 최적 선 (가설)
-  30° |         ░░░ 최적 영역 ░░░
+      |         ▓▓▓ overfitting risk ▓▓▓
+  π/6 ├- - - - - - - ★ - - - - - - - - - -─ ← optimal line (hypothesis)
+  30° |         ░░░ optimal region ░░░
       |    sin(θ)=1/2, cos²(θ)=3/4
    0° └─────────────────────────────────────
       0    0.2   0.4   0.6   0.8   1.0
                          tension (|a-g|)
 
-  θ=0°:   tension=0, 완전 정렬 (과신, 학습 정체)
-  θ=π/6:  tension=2sin(π/12)≈0.518, 골든존 중심과 근접
+  θ=0°:   tension=0, perfect alignment (overconfidence, learning stagnation)
+  θ=π/6:  tension=2sin(π/12)≈0.518, close to Golden Zone center
   θ=π/3:  tension=2sin(π/6)=1.0, 60°
-  θ=π/2:  tension=√2≈1.414, 완전 직교
+  θ=π/2:  tension=√2≈1.414, fully orthogonal
 ```
 
-정규화 텐션 t = 2sin(θ/2)의 θ별 값:
+Values of normalized tension t = 2sin(θ/2) by θ:
 
 ```
-  θ (도)  | θ (라디안) | sin(θ/2) | t = 2sin(θ/2) | cos²(θ)
+  θ (deg)  | θ (rad)   | sin(θ/2) | t = 2sin(θ/2) | cos²(θ)
   ---------|-----------|----------|---------------|--------
    0°      |  0.000    | 0.000    | 0.000         | 1.000
   10°      |  0.175    | 0.087    | 0.174         | 0.970
@@ -164,180 +164,180 @@ tension은 각도와 크기 모두에 의존한다:
   120°     |  2.094    | 0.866    | 1.732         | 0.250
   180°     |  3.142    | 1.000    | 2.000         | 1.000
 
-  → θ=30°에서만 cos²(θ) = 3/4 = R(2) (R-인수)이 정확히 성립
+  → Only at θ=30° does cos²(θ) = 3/4 = R(2) (R-factor) hold exactly
 ```
 
 ---
 
-## 4. 피타고라스 삼각형과 tension-alignment-output 분해
+## 4. Pythagorean Triangle and tension-alignment-output Decomposition
 
 ```
-  (3, 4, 5) 삼각형 → θ = arctan(3/4) ≈ 36.87° (≈ π/6과 다름, 주의)
-  그러나 n=6 구조에서 나온 비율: sinh(ln3) = 4/3
+  (3, 4, 5) triangle → θ = arctan(3/4) ≈ 36.87° (≈ π/6, note difference)
+  However, ratio from n=6 structure: sinh(ln3) = 4/3
 
-  의식엔진 해석 (가설, 미검증):
+  Consciousness engine interpretation (hypothesis, unverified):
   ┌─────────────────────────────────────┐
-  │       G (골든 타깃)                  │
+  │       G (golden target)              │
   │      /|                             │
-  │   5 / |  3 (수직 성분 = tension)    │
+  │   5 / |  3 (vertical component = tension)│
   │    /  |                             │
   │   / θ |                             │
   │  A────┤                             │
-  │     4 (수평 성분 = alignment)       │
+  │     4 (horizontal component = alignment)│
   └─────────────────────────────────────┘
 
-  output = |A→G| = 5 (전체 이동 크기)
-  tension = 수직 = 3 (불일치 크기)
-  alignment = 수평 = 4 (공유 방향 크기)
+  output = |A→G| = 5 (total movement magnitude)
+  tension = vertical = 3 (mismatch magnitude)
+  alignment = horizontal = 4 (shared direction magnitude)
 
-  비율: tension:alignment:output = 3:4:5
-  → 4/3 = alignment/tension = cosh(ln3)/sinh(ln3) (쌍곡 비율)
-  → 이것이 "최적 의식 상태"의 내적 구조?
+  Ratio: tension:alignment:output = 3:4:5
+  → 4/3 = alignment/tension = cosh(ln3)/sinh(ln3) (hyperbolic ratio)
+  → Is this the internal structure of "optimal consciousness state"?
 ```
 
 ---
 
-## 5. 검증 계획
+## 5. Verification Plan
 
-### 5.1 즉시 실행 가능 (CPU, MNIST)
+### 5.1 Immediately Executable (CPU, MNIST)
 
 ```python
-  # PureField 학습 후 각도 측정
+  # Measure angles after PureField training
   import torch
   import numpy as np
 
-  # 모든 샘플에 대해 angle(A, G) 계산
+  # Calculate angle(A, G) for all samples
   angles = []
   with torch.no_grad():
       for x, y in test_loader:
-          A = engine.activation(x)        # 실제 활성화
-          G = engine.golden_target(y)     # 골든 타깃
+          A = engine.activation(x)        # actual activation
+          G = engine.golden_target(y)     # golden target
           cos_theta = F.cosine_similarity(A, G, dim=-1)
           theta = torch.acos(cos_theta.clamp(-1, 1))
           angles.extend(theta.numpy())
 
   mean_angle = np.mean(angles)
-  print(f"mean angle: {np.degrees(mean_angle):.2f}° (예측: 30°)")
+  print(f"mean angle: {np.degrees(mean_angle):.2f}° (predicted: 30°)")
   print(f"fraction near pi/6 (±5°): {np.mean(np.abs(angles - np.pi/6) < 0.087):.3f}")
 ```
 
-### 5.2 검증 지표
+### 5.2 Verification Metrics
 
 ```
-  지표                     예측 (H-CX-53)    검증 기준
+  Metric                    Prediction (H-CX-53)    Verification Criterion
   ─────────────────────   ────────────────   ───────────────
-  mean(θ) 수렴 후          ≈ π/6 = 30°       |mean-30°| < 5°
+  mean(θ) after convergence  ≈ π/6 = 30°       |mean-30°| < 5°
   cos²(mean θ)            ≈ 3/4              |cos²-0.75| < 0.05
   tan²(mean θ)            ≈ 1/3              |tan²-0.333| < 0.03
-  θ 분포 최빈값           25°~35°            모드가 π/6 ± 10%
-  과신 클래스의 mean θ     < π/6 (< 30°)     방향 차이 t-검정 p < 0.05
-  저확신 클래스의 mean θ   > π/6 (> 30°)     방향 차이 t-검정 p < 0.05
+  θ distribution mode      25°~35°            mode within π/6 ± 10%
+  overconfident class mean θ  < π/6 (< 30°)     direction difference t-test p < 0.05
+  low confidence class mean θ  > π/6 (> 30°)     direction difference t-test p < 0.05
 ```
 
-### 5.3 주의사항 (해석 함정)
+### 5.3 Cautions (Interpretation Pitfalls)
 
 ```
-  1. A와 G의 차원이 크면 cos_similarity는 집중 현상으로 0 근처로 몰릴 수 있다
-     → 저차원 bottle-neck 레이어에서 측정할 것
+  1. If A and G have high dimension, cos_similarity may concentrate near 0
+     → Measure in low-dimensional bottle-neck layer
 
-  2. 학습 전 random A: mean θ ≈ π/2 (직교)가 당연
-     → 학습 "후" vs "전" 비교가 핵심
+  2. Before training, random A: mean θ ≈ π/2 (orthogonal) is expected
+     → "After" vs "before" training comparison is key
 
-  3. π/6≈0.524 vs arctan(3/4)≈0.644: 피타고라스 비율과 sin=φ/τ 각도는 다름
-     → 두 예측 중 어느 것이 실현되는지 구분 필요
+  3. π/6≈0.524 vs arctan(3/4)≈0.644: Pythagorean ratio and sin=φ/τ angle differ
+     → Need to distinguish which prediction is realized
 
-  4. 이 가설은 골든존 모델 (G=D×P/I)에 부분 의존
-     → 골든 타깃 G의 정의가 바뀌면 각도도 바뀜
-     → 순수 수학 부분 (sin=φ/τ, cos²=3/4 등)은 골든존 무관
+  4. This hypothesis partially depends on Golden Zone model (G=D×P/I)
+     → If golden target G definition changes, angle also changes
+     → Pure math parts (sin=φ/τ, cos²=3/4 etc.) are Golden Zone independent
 ```
 
 ---
 
-## 6. 관련 가설과의 교차점
+## 6. Intersection with Related Hypotheses
 
 ```
-  H-CX-20 (반활성화=리만 1/2):
-    → Re(s)=1/2 선 = cos²(θ)=1/2 선 (θ=45°)
-    → π/6 가설은 θ가 45°보다 작음: 더 정렬된 상태
-    → 의식이 "리만 임계선보다 질서 있는 상태"?
+  H-CX-20 (semi-activation=Riemann 1/2):
+    → Re(s)=1/2 line = cos²(θ)=1/2 line (θ=45°)
+    → π/6 hypothesis has θ smaller than 45°: more aligned state
+    → Consciousness is "more ordered than Riemann critical line"?
 
-  H-CX-26 (장력 보정):
-    → tension = |A-G|이 보정 전 ECE와 상관
-    → 각도 θ에서도 동일 현상? cos²(θ)가 calibration과 연결?
+  H-CX-26 (tension calibration):
+    → tension = |A-G| correlates with pre-calibration ECE
+    → Same phenomenon in angle θ? cos²(θ) connected to calibration?
 
   H-CX-27 (tension_scale=ln4):
-    → ln4 = 2ln2, 이것이 각도 π/6의 sin = 1/2과 연결?
+    → ln4 = 2ln2, connected to sin = 1/2 of angle π/6?
     → sin(π/6) = 1/2 → -ln(1/2) = ln2 → ln4/2 = ln2 → tension_scale?
 
-  H-CX-7 (sigma-phi=n-tau 최적성):
-    → σ(6)×φ(6) = n×τ(6) = 24에서 나온 아키텍처
-    → 같은 n=6에서 sin(π/6)=φ/τ가 나옴
-    → 아키텍처 최적성과 각도 최적성이 같은 뿌리?
+  H-CX-7 (sigma-phi=n-tau optimality):
+    → Architecture from σ(6)×φ(6) = n×τ(6) = 24
+    → Same n=6 gives sin(π/6)=φ/τ
+    → Architecture optimality and angle optimality from same root?
 ```
 
 ---
 
-## 7. 한계 (틀릴 수 있는 지점)
+## 7. Limitations (Where It Could Be Wrong)
 
 ```
-  1. "최적 각도" 자체가 정의 의존적
-     의식엔진이 어떤 손실함수를 쓰느냐에 따라 다름
-     현재 PureField는 tension 최소화 방향으로 학습하지 않을 수 있음
+  1. "Optimal angle" itself is definition-dependent
+     Depends on which loss function consciousness engine uses
+     Current PureField may not learn to minimize tension
 
-  2. 고차원 벡터의 각도는 차원의 저주에 취약
-     dim=512에서 모든 벡터쌍의 θ ≈ π/2 (집중 현상)
-     → 이 경우 π/6 신호가 묻힘
+  2. Angles in high-dimensional vectors vulnerable to curse of dimensionality
+     In dim=512, all vector pairs have θ ≈ π/2 (concentration phenomenon)
+     → In this case π/6 signal gets buried
 
-  3. 수학적 유일성(n=6에서만 sin=φ/τ)이 AI 최적성을 보장하지 않음
-     수학의 아름다움 ≠ 공학적 최적화
-     → 이것은 가설이지 증명이 아님
+  3. Mathematical uniqueness (sin=φ/τ only at n=6) doesn't guarantee AI optimality
+     Mathematical beauty ≠ engineering optimization
+     → This is hypothesis, not proof
 
-  4. 골든 타깃 G의 정의
-     G = D×P/I 모델에서 정의됨 = 골든존 의존
-     → 골든존이 시뮬레이션 기반임을 잊지 말 것
+  4. Definition of golden target G
+     G = D×P/I model defined = Golden Zone dependent
+     → Don't forget Golden Zone is simulation-based
 
-  5. 피타고라스 삼각형 해석 (tension:alignment:output = 3:4:5)은
-     현재 완전히 시각적 비유 수준
-     → 수식으로 뒷받침 필요
+  5. Pythagorean triangle interpretation (tension:alignment:output = 3:4:5) is
+     currently purely visual metaphor level
+     → Needs formula backing
 ```
 
 ---
 
-## 8. 검증 상태
+## 8. Verification Status
 
 ```
-  수학 부분 (골든존 무관):
-    🟩 sin(π/6) = φ(6)/τ(6) = 1/2 (n=6 유일, R308)
+  Math parts (Golden Zone independent):
+    🟩 sin(π/6) = φ(6)/τ(6) = 1/2 (n=6 unique, R308)
     🟩 cos²(π/6) = 3/4 = R(2) (R309)
-    🟩 tan²(π/6) = 1/3 = 메타 부동점 (R310)
-    🟩 sinh(ln(σ/τ)) = 4/3 → 피타고라스 (3,4,5) (R311-R312)
+    🟩 tan²(π/6) = 1/3 = meta fixed point (R310)
+    🟩 sinh(ln(σ/τ)) = 4/3 → Pythagorean (3,4,5) (R311-R312)
 
-  AI 연결 부분 (골든존 의존, 미검증):
-    🟨 의식엔진 최적 각도 ≈ π/6 (실험 미실행)
-    🟨 cos²(θ) = 3/4가 보정/확신도와 연결 (실험 미실행)
-    🟨 tension:alignment:output = 3:4:5 비율 (시각적 가설)
+  AI connection parts (Golden Zone dependent, unverified):
+    🟨 Consciousness engine optimal angle ≈ π/6 (experiment not run)
+    🟨 cos²(θ) = 3/4 connected to calibration/confidence (experiment not run)
+    🟨 tension:alignment:output = 3:4:5 ratio (visual hypothesis)
 
-  전체 상태: 🟨 (수학 기반 확립, AI 연결 미검증)
-  다음 단계: 학습된 PureField에서 angle(A, G) 분포 측정
+  Overall status: 🟨 (math foundation established, AI connection unverified)
+  Next step: Measure angle(A, G) distribution in trained PureField
 ```
 
 ---
 
-## 9. 요약
+## 9. Summary
 
 ```
-  순수 수학 (참):
-    n=6에서 sin(π/6) = φ(6)/τ(6) = 1/2이 유일하게 성립
-    이 각도에서 cos²=3/4(R-인수), tan²=1/3(메타부동점)이 동시 실현
-    ln(σ/τ)=ln3 하나에서 피타고라스 (3,4,5) 삼각형이 발생
+  Pure Mathematics (True):
+    sin(π/6) = φ(6)/τ(6) = 1/2 holds uniquely at n=6
+    At this angle, cos²=3/4(R-factor), tan²=1/3(meta fixed point) simultaneously realized
+    From single ln(σ/τ)=ln3, Pythagorean (3,4,5) triangle emerges
 
-  AI 가설 (미검증):
-    PureField의 A와 G의 최적 각도 = π/6
-    이 각도에서 tension, alignment, cos²이 모두 수학 상수와 일치
+  AI Hypothesis (Unverified):
+    Optimal angle between A and G in PureField = π/6
+    At this angle, tension, alignment, cos² all match mathematical constants
 
-  결론:
-    수학이 π/6=30°를 n=6의 "고유 각도"로 지정함
-    의식엔진이 같은 n=6 구조를 사용한다면
-    이 각도가 최적 작동점일 수 있음
-    → 실험으로 검증 필요
+  Conclusion:
+    Mathematics designates π/6=30° as n=6's "intrinsic angle"
+    If consciousness engine uses same n=6 structure
+    This angle may be optimal operating point
+    → Needs experimental verification
 ```

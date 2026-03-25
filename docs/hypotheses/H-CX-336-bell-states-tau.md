@@ -1,3 +1,3 @@
-# H-CX-336: 🟩 Bell 상태 4개 = τ(6) = 약수 개수
+# H-CX-336: 🟩 Bell states 4 = τ(6) = number of divisors
 
-> |Φ+⟩,|Φ-⟩,|Ψ+⟩,|Ψ-⟩ = 4개. 양자 얽힘 기본 = τ(6).
+> |Φ+⟩,|Φ-⟩,|Ψ+⟩,|Ψ-⟩ = 4. Quantum entanglement basics = τ(6).

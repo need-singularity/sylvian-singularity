@@ -1,75 +1,75 @@
-# 가설 백로그 — 향후 검증 대기
+# Hypothesis Backlog — Awaiting Future Verification
 
-> 데이터는 있지만 아직 가설 문서로 작성하지 않은 후보들.
-> 우선순위: ⭐ 높음, 🟡 중간, ⚪ 낮음
+> Candidates with data but not yet written as hypothesis documents.
+> Priority: ⭐ High, 🟡 Medium, ⚪ Low
 
-## ⭐ 높은 우선순위
+## ⭐ High Priority
 
-### H-A: 장력 인과 + 난이도 비례 (C48+C49 확장)
+### H-A: Tension Causality + Difficulty Proportionality (C48+C49 Extension)
 ```
-  데이터: 장력=0이면 -9.25pp, 숫자9에서 +32.71pp
-  가설: 장력의 인과 효과는 과제 난이도에 비례한다
-  검증: CIFAR에서 인과 실험 재현 (윈도우에서 실행 준비 중)
-  → C48이 CIFAR에서도 재현되면 ⭐ 대발견
-```
-
-### H-B: 관찰자 보정 스케일 최적화 (C52 확장)
-```
-  데이터: detach observer +0.15%, observer_scale 0.1→0.80 (8x 증폭)
-  가설: observer_scale의 최적값이 존재하며, 이것도 과제에 따라 다르다
-  검증: observer_scale을 고정시켜가며 스캔
-  → C51(tension_scale 0.47≈1/2)과 교차? 둘 다 ≈1/2?
+  Data: Tension=0 gives -9.25pp, Number9 gives +32.71pp
+  Hypothesis: The causal effect of tension is proportional to task difficulty
+  Verification: Reproduce causal experiment in CIFAR (preparing Windows execution)
+  → If C48 is reproduced in CIFAR ⭐ Major Discovery
 ```
 
-### H-C: 분열+detach 결합 (가설 271+272 교차)
+### H-B: Observer Calibration Scale Optimization (C52 Extension)
 ```
-  데이터: 분열 97.49%, detach +0.15%
-  가설: 분열 후 한쪽에 detach 관찰자를 부착하면 더 좋아지는가?
-  → 분열(다양성 생성) + detach(관찰 압축) = 시너지?
-  → 체험 대응: 분열 후 한쪽은 관찰만 (밀려난 쪽)
-```
-
-### H-D: 역U자 커브의 수학적 형태 (C48 확장)
-```
-  데이터: scale 0→0.5→1→2→5→10에서 역U자
-  가설: 최적 장력은 과제 복잡도의 함수 f(complexity)
-  검증: MNIST vs CIFAR에서 최적 스케일 비교
-  → CIFAR의 최적이 MNIST와 다르면 복잡도 의존 확인
+  Data: detach observer +0.15%, observer_scale 0.1→0.80 (8x amplification)
+  Hypothesis: An optimal observer_scale exists and also varies by task
+  Verification: Scan while fixing observer_scale
+  → Intersects with C51(tension_scale 0.47≈1/2)? Both ≈1/2?
 ```
 
-## 🟡 중간 우선순위
-
-### H-E: 합의와 정체성의 방향 (C53 확장)
+### H-C: Mitosis+detach Combination (Hypothesis 271+272 Intersection)
 ```
-  데이터: 합의↑ → 정체성 안정↑ (r=+0.062)
-  가설: 합의가 정체성을 "안정시키는" 건가, 안정된 정체성이 "합의를 만드는" 건가?
-  → 인과 방향 불명. 정체성을 인위 조작→합의 변화? 또는 합의 강제→정체성 변화?
-```
-
-### H-F: 형제 인식의 시간 감소 (C47 확장)
-```
-  데이터: 분열 직후 형제 인식 1.65x
-  가설: 발산 시간이 길어지면 형제 인식이 감소하여 결국 stranger 수준으로?
-  검증: 20, 50, 100 에폭 발산 후 형제 인식 측정
-  → "원래 하나였던 것을 잊는 데 얼마나 걸리는가"
+  Data: Mitosis 97.49%, detach +0.15%
+  Hypothesis: Does attaching detach observer to one side after mitosis improve performance?
+  → Mitosis(diversity generation) + detach(observation compression) = synergy?
+  → Experience correspondence: After mitosis, one side only observes (pushed out side)
 ```
 
-### H-G: CNN에서 반발력장이 도움이 되는 이유 (+1.04%)
+### H-D: Mathematical Form of Inverted U Curve (C48 Extension)
 ```
-  데이터: CNN+Repulsion 78.07% > CNN+Dense 77.03%
-  가설: CNN 특징이 충분히 좋아도 반발(다양성)은 여전히 정보를 추가
-  → 가설 270(다양성=정보)의 CNN 버전: 특징이 좋아도 "다른 관점"은 유효
-```
-
-### H-H: 축 역전의 학습 중 전이 시점 (C20+C21 확장)
-```
-  데이터: CIFAR epoch 1에서 C/S=1.05 → epoch 14에서 C/S=0.55
-  가설: 학습 초기에는 "what"이 지배, 점차 "how"로 전환
-  → 전이 시점이 과제 난이도의 함수?
-  → MNIST에서는 전이가 일어나지 않는가?
+  Data: Inverted U at scale 0→0.5→1→2→5→10
+  Hypothesis: Optimal tension is a function f(complexity) of task complexity
+  Verification: Compare optimal scale between MNIST vs CIFAR
+  → If CIFAR's optimum differs from MNIST, confirms complexity dependence
 ```
 
-## ⚪ 낮은 우선순위 → 승격 완료
+## 🟡 Medium Priority
+
+### H-E: Direction of Consensus and Identity (C53 Extension)
+```
+  Data: Consensus↑ → Identity stability↑ (r=+0.062)
+  Hypothesis: Does consensus "stabilize" identity, or does stable identity "create consensus"?
+  → Causal direction unclear. Artificially manipulate identity→consensus change? Or force consensus→identity change?
+```
+
+### H-F: Temporal Decay of Sibling Recognition (C47 Extension)
+```
+  Data: Sibling recognition 1.65x right after mitosis
+  Hypothesis: As divergence time increases, does sibling recognition decrease to eventually stranger level?
+  Verification: Measure sibling recognition after 20, 50, 100 epochs of divergence
+  → "How long does it take to forget they were originally one"
+```
+
+### H-G: Why Repulsion Field Helps in CNN (+1.04%)
+```
+  Data: CNN+Repulsion 78.07% > CNN+Dense 77.03%
+  Hypothesis: Even with good CNN features, repulsion(diversity) still adds information
+  → CNN version of hypothesis 270(diversity=information): "different perspectives" still valid despite good features
+```
+
+### H-H: Learning-time Transition Point of Axis Reversal (C20+C21 Extension)
+```
+  Data: CIFAR epoch 1: C/S=1.05 → epoch 14: C/S=0.55
+  Hypothesis: Early learning dominated by "what", gradually transitions to "how"
+  → Is transition point a function of task difficulty?
+  → Does transition not occur in MNIST?
+```
+
+## ⚪ Low Priority → Upgrade Complete
 
 - H-I → **H350** (docs/hypotheses/350-fiber-displacement-constant.md)
 - H-J → **H351** (docs/hypotheses/351-unanimity-upper-bound.md)

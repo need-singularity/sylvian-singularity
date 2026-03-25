@@ -1,21 +1,21 @@
-# 가설 266: 공감-장력 반비례 법칙 [약화됨]
+# Hypothesis 266: Empathy-Tension Inverse Proportion Law [Weakened]
 
-> **공감(empathy)과 장력(tension)은 음의 상관이 있지만, E = k/(1+αT) 반비례 모델은 최적이 아니다. 개별 샘플 수준에서 r=-0.26 (R²=0.066)으로 효과 크기가 작다. 숫자별 평균(r=-0.79)은 과대평가.**
+> **Empathy and tension have a negative correlation, but the E = k/(1+αT) inverse proportion model is not optimal. At individual sample level, r=-0.26 (R²=0.066) with small effect size. Per-digit average (r=-0.79) is an overestimate.**
 
-## 배경/맥락
+## Background/Context
 
-Phase 5 공감 엔진 실험에서 장력-공감 상관계수 r = -0.79 관측. 이는 강한 음의 상관.
+Strong negative correlation r = -0.79 observed in Phase 5 empathy engine experiment for tension-empathy.
 
-사람에서도 동일한 현상이 알려져 있다:
-- 인지 부하(cognitive load) 하에서 공감 능력 저하
-- 스트레스 상태에서 타인의 감정 인식 감소
-- 전두엽 자원이 과제에 소모되면 거울뉴런 활동 감소
+Same phenomenon known in humans:
+- Empathy ability decreases under cognitive load
+- Reduced emotion recognition of others under stress
+- Mirror neuron activity decreases when frontal lobe resources consumed by task
 
-관련 가설: 263(장력 통합), 265(1/3 수렴)
+Related hypotheses: 263(tension integration), 265(1/3 convergence)
 
-## 실측 데이터
+## Measured Data
 
-| digit | 장력(T) | 공감(E) | 정확도 |
+| digit | Tension(T) | Empathy(E) | Accuracy |
 |---|---|---|---|
 | 1 | 456.14 | 0.0486 | 98.6% |
 | 7 | 461.25 | 0.0367 | 97.3% |
@@ -29,10 +29,10 @@ Phase 5 공감 엔진 실험에서 장력-공감 상관계수 r = -0.79 관측. 
 | 5 | 979.36 | 0.0164 | 97.2% |
 
 ```
-  상관계수: r = -0.7855
-  p-value:  < 0.01 (10개 점)
+  Correlation coefficient: r = -0.7855
+  p-value:  < 0.01 (10 points)
 
-  장력 vs 공감 (per digit):
+  Tension vs Empathy (per digit):
   empathy
     0.049 |          *
           |
@@ -48,80 +48,80 @@ Phase 5 공감 엔진 실험에서 장력-공감 상관계수 r = -0.79 관측. 
    tension: 260                         979
 ```
 
-## 수식 모델
+## Mathematical Model
 
 ```
-  제안: E = k / (1 + αT)
+  Proposed: E = k / (1 + αT)
 
-  여기서:
-    E = 공감 품질 (mutual empathy)
-    T = 장력 (total tension)
-    k = 기본 공감 상수 (장력 0일 때의 공감)
-    α = 장력 감도 계수
+  Where:
+    E = empathy quality (mutual empathy)
+    T = tension (total tension)
+    k = base empathy constant (empathy at zero tension)
+    α = tension sensitivity coefficient
 
-  피팅 (최소제곱):
+  Fitting (least squares):
     k ≈ 0.06
     α ≈ 0.001
     → E ≈ 0.06 / (1 + 0.001×T)
 
-  검증:
-    T=260 → E = 0.06/1.26 = 0.048 (실측 0.042) ✓
-    T=456 → E = 0.06/1.46 = 0.041 (실측 0.049) △
-    T=979 → E = 0.06/1.98 = 0.030 (실측 0.016) △
+  Verification:
+    T=260 → E = 0.06/1.26 = 0.048 (measured 0.042) ✓
+    T=456 → E = 0.06/1.46 = 0.041 (measured 0.049) △
+    T=979 → E = 0.06/1.98 = 0.030 (measured 0.016) △
 
-  피팅이 완벽하지 않음 — 단순 반비례보다 복잡한 관계 가능.
+  Fitting not perfect — relationship may be more complex than simple inverse proportion.
 ```
 
-## 해석: 유한 자원 할당
+## Interpretation: Finite Resource Allocation
 
 ```
-  인지 자원 총량 R = 일정 (보존)
+  Total cognitive resources R = constant (conservation)
 
-  R = T(장력에 소모) + E(공감에 소모) + C(기타)
+  R = T(consumed by tension) + E(consumed by empathy) + C(other)
 
-  장력↑ → 장력에 자원 소모↑ → 공감에 남는 자원↓
-  장력↓ → 장력에 자원 소모↓ → 공감에 남는 자원↑
+  tension↑ → resource consumption for tension↑ → remaining resources for empathy↓
+  tension↓ → resource consumption for tension↓ → remaining resources for empathy↑
 
-  이것이 보존법칙 G×I = D×P 의 다른 표현일 수 있다.
-  장력(I의 함수)과 공감(P의 함수?)이 트레이드오프.
+  This could be another expression of conservation law G×I = D×P.
+  Tension (function of I) and empathy (function of P?) trade-off.
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. E = k/(1+αT) 대신 E = k×exp(-αT) 등 다른 함수형 피팅
-  2. CIFAR에서도 같은 반비례 관계가 나타나는가?
-  3. 장력을 인위적으로 고정하고 공감 변화 측정 (인과 실험)
-  4. 공감 학습량을 늘리면 (더 많은 에폭) 관계가 약화되는가?
-  5. 3개 이상 엔진의 다자간 공감에서도 성립하는가?
+  1. Fit other functional forms like E = k×exp(-αT) instead of E = k/(1+αT)
+  2. Does same inverse relationship appear in CIFAR?
+  3. Measure empathy changes with artificially fixed tension (causal experiment)
+  4. Does relationship weaken with more empathy training (more epochs)?
+  5. Does it hold for multi-party empathy with 3+ engines?
 ```
 
-## 정밀 검증 결과 (experiment_empathy_tension_fit.py)
+## Precise Verification Results (experiment_empathy_tension_fit.py)
 
 ```
-  10,000개 개별 샘플로 재검증:
+  Re-verified with 10,000 individual samples:
 
-  | 모델 | R² | 수식 |
+  | Model | R² | Formula |
   |---|---|---|
   | Exponential | 0.0664 | E = 0.0397 × exp(-0.00055T) |
   | Linear | 0.0661 | E = 0.0378 - 0.000014T |
-  | Inverse (가설) | 0.0631 | E = 0.0408 / (1+0.00074T) |
+  | Inverse (hypothesis) | 0.0631 | E = 0.0408 / (1+0.00074T) |
   | Power | 0.0452 | E = 0.100 × T^(-0.199) |
 
-  개별 상관: r = -0.257, 95% CI: [-0.270, -0.244]
-  숫자별 평균 상관: r = -0.79 (과대평가 — 개인차 숨김)
+  Individual correlation: r = -0.257, 95% CI: [-0.270, -0.244]
+  Per-digit average correlation: r = -0.79 (overestimate — hides individual differences)
 
-  Per-digit: Linear 승리 8/10, Exponential 2/10, Inverse 0/10
-  → E = k/(1+αT) 반비례 모델은 최적이 아님
-  → 방향은 맞지만(음의 상관) 설명력 6.6%에 불과
+  Per-digit: Linear wins 8/10, Exponential 2/10, Inverse 0/10
+  → E = k/(1+αT) inverse proportion model not optimal
+  → Direction correct (negative correlation) but explains only 6.6%
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. 숫자별 평균(10점)으로 r=-0.79, 개별 샘플(10,000점)으로 r=-0.26. 집계 편향(ecological fallacy).
-  2. R²=0.066 — 장력이 공감 분산의 6.6%만 설명.
-  3. 인과 관계 불명. 장력→공감↓인지, 공감↓→장력↑인지.
-  4. 공감의 정의가 "예측 오차"로 제한적.
-  5. MNIST에서만 관측.
+  1. Per-digit average (10 points) gives r=-0.79, individual samples (10,000 points) give r=-0.26. Ecological fallacy.
+  2. R²=0.066 — tension explains only 6.6% of empathy variance.
+  3. Causality unclear. Is it tension→empathy↓ or empathy↓→tension↑.
+  4. Definition of empathy limited to "prediction error".
+  5. Observed only in MNIST.
 ```

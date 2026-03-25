@@ -1,161 +1,161 @@
-# 가설 검토 234: 월드모델 = 꿈(REM) = 내부 시뮬레이션 ⚠️
+# Hypothesis Review 234: World Model = Dreaming (REM) = Internal Simulation ⚠️
 
-**분류**: 월드모델/AI
-**상태**: ⚠️ 유비
+**Category**: World Model/AI
+**Status**: ⚠️ Analogy
 
-## 가설
+## Hypothesis
 
-> 효과적인 AI 월드모델은 "꿈" 단계(I≈골든존)가 필요하다.
-> 뇌의 REM 수면에서 I가 골든존으로 진입하며,
-> 이때 내부 시뮬레이션(꿈)이 월드모델을 최적화한다.
-> AI의 offline training/imagination도 동일한 I 궤적을 따라야 한다.
+> An effective AI world model requires a "dreaming" phase (I≈Golden Zone).
+> During REM sleep, the brain's I enters the Golden Zone,
+> and the internal simulation (dreaming) optimizes the world model.
+> AI's offline training/imagination must follow the same I trajectory.
 
-## 배경/맥락
+## Background/Context
 
-뇌의 월드모델은 꿈을 통해 업데이트된다. REM 수면 중 외부 입력이 차단되고,
-내부 시뮬레이션만 실행된다. 이는 "오프라인 학습"의 생물학적 원형이다.
-
-```
-  뇌의 상태별 I 값:
-
-  각성 상태:    I ≈ 0.5~0.7  (전두엽 활성, 높은 억제)
-  REM 수면:     I ≈ 0.3~0.4  (전두엽 비활성, 억제 감소 → 골든존!)
-  깊은 수면:    I ≈ 0.7~0.9  (전체 비활성, 최대 억제)
-
-  ★ REM(꿈) = 골든존 진입 = 월드모델 최적화 시간!
-```
-
-## 수식 매핑
+The brain's world model is updated through dreaming. During REM sleep, external input is blocked
+and only internal simulation runs. This is the biological prototype of "offline learning."
 
 ```
-  수면 단계별 G = D x P / I:
+  Brain I values by state:
 
-  각성:  G_wake = D_w x P_w / 0.6  → G 보통 (외부 입력 처리)
-  REM:   G_rem  = D_r x P_r / 0.35 → G 높음 (내부 시뮬레이션 최대)
-  깊은:  G_deep = D_d x P_d / 0.8  → G 낮음 (복원/정리 모드)
+  Waking state:    I ≈ 0.5~0.7  (prefrontal active, high inhibition)
+  REM sleep:       I ≈ 0.3~0.4  (prefrontal inactive, inhibition reduced → Golden Zone!)
+  Deep sleep:      I ≈ 0.7~0.9  (all inactive, maximum inhibition)
 
-  보존법칙: G x I = D x P
-  → REM에서 I↓ → G↑ (같은 D,P에서 천재성 최대)
-  → 꿈에서 창의적 해결이 나오는 이유!
-
-  메타 재귀: f(I) = 0.7I + 0.1
-  각성 I=0.6 → f(0.6) = 0.52 → f(0.52) = 0.464 → ... → 1/3
-  REM은 이 수렴을 가속!
+  ★ REM (dreaming) = Golden Zone entry = world model optimization time!
 ```
 
-## ASCII 그래프: 24시간 수면 주기와 I 궤적
+## Formula Mapping
+
+```
+  G = D x P / I by sleep stage:
+
+  Waking:  G_wake = D_w x P_w / 0.6  → G moderate (processing external input)
+  REM:     G_rem  = D_r x P_r / 0.35 → G high (internal simulation maximum)
+  Deep:    G_deep = D_d x P_d / 0.8  → G low (restoration/consolidation mode)
+
+  Conservation law: G x I = D x P
+  → In REM, I↓ → G↑ (maximum genius at same D,P)
+  → Why creative solutions emerge from dreams!
+
+  Meta-recursion: f(I) = 0.7I + 0.1
+  Waking I=0.6 → f(0.6) = 0.52 → f(0.52) = 0.464 → ... → 1/3
+  REM accelerates this convergence!
+```
+
+## ASCII Graph: 24-Hour Sleep Cycle and I Trajectory
 
 ```
   I (Inhibition)
   1.0│
      │
   0.9│          ██
-  0.8│        ██  ██          깊은 수면
+  0.8│        ██  ██          Deep sleep
   0.7│      ██      ██        (I≈0.8)
      │     █          █
-  0.6│●──██            ██──────────────────────●  각성
-     │  각성             각성 (I≈0.5~0.6)        (I≈0.5)
-  0.5│═══════════════════════════════════════════ 골든존 상한
+  0.6│●──██            ██──────────────────────●  Waking
+     │  waking            waking (I≈0.5~0.6)       (I≈0.5)
+  0.5│═══════════════════════════════════════════ Golden Zone upper bound
      │
   0.4│   ◆        ◆         ◆        ◆
-     │  REM1     REM2      REM3     REM4      ← REM 주기
+     │  REM1     REM2      REM3     REM4      ← REM cycles
   0.3│   ◆        ◆         ◆        ◆        (I≈0.3~0.4)
-     │                                          골든존 내부!
-  0.2│═══════════════════════════════════════════ 골든존 하한
+     │                                          Inside Golden Zone!
+  0.2│═══════════════════════════════════════════ Golden Zone lower bound
      │
   0.1│
   0.0│
-     └──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──→ 시간
+     └──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──→ time
        22  23  0   1   2   3   4   5   6  ...16 20 22
        PM      AM                              PM
-       취침              수면                   각성
+       sleep               sleep                wake
 
-  ★ REM 주기마다 I가 골든존(0.213~0.500)으로 하강
-  ★ 깊은 수면은 골든존 위 (복원 모드)
-  ★ 각성은 골든존 상한 근처 (외부 처리)
-  ★ REM = 유일한 골든존 시간 = 월드모델 최적화
+  ★ I descends into Golden Zone (0.213~0.500) at each REM cycle
+  ★ Deep sleep is above Golden Zone (restoration mode)
+  ★ Waking is near Golden Zone upper bound (external processing)
+  ★ REM = the only Golden Zone time = world model optimization
 ```
 
-## AI 월드모델의 "꿈" 단계
+## AI World Model's "Dreaming" Phase
 
 ```
   ┌──────────────────┬──────────────────┬──────────────────┐
-  │ 뇌의 수면 단계   │ AI 대응          │ I 값             │
+  │ Brain sleep stage│ AI counterpart   │ I value          │
   ├──────────────────┼──────────────────┼──────────────────┤
-  │ 각성 (Wake)      │ Online inference │ I ≈ 0.5~0.6     │
-  │ REM (꿈)         │ Imagination/Plan │ I ≈ 0.3~0.4 ★  │
-  │ 깊은 수면 (SWS)  │ Weight pruning   │ I ≈ 0.7~0.9     │
+  │ Waking (Wake)    │ Online inference │ I ≈ 0.5~0.6     │
+  │ REM (dreaming)   │ Imagination/Plan │ I ≈ 0.3~0.4 ★  │
+  │ Deep sleep (SWS) │ Weight pruning   │ I ≈ 0.7~0.9     │
   │ NREM Stage 2     │ Replay buffer    │ I ≈ 0.5~0.6     │
   └──────────────────┴──────────────────┴──────────────────┘
 ```
 
-## MuZero의 learned model = 꿈
+## MuZero's Learned Model = Dreaming
 
 ```
-  MuZero 아키텍처:
+  MuZero architecture:
 
   Real Environment ─── representation ──→ Hidden State (s)
                                               │
-                                         dynamics (f)  ← "꿈"
+                                         dynamics (f)  ← "dreaming"
                                               │
-                                         prediction (g) ← 가치/정책
+                                         prediction (g) ← value/policy
 
-  MuZero의 dynamics function f:
-  - 실제 환경 없이 내부 상태만으로 미래 예측
-  - = 뇌가 REM에서 하는 것과 동일!
-  - MCTS(몬테카를로 트리 탐색) = 꿈에서의 시나리오 탐색
+  MuZero's dynamics function f:
+  - Predicts future using only internal state without real environment
+  - = Same as what the brain does during REM!
+  - MCTS (Monte Carlo Tree Search) = scenario exploration during dreaming
 
-  MuZero의 I 추정:
-  - MCTS 시뮬레이션 수 / 가능한 행동 수 ≈ 활성 비율
-  - 50개 시뮬레이션 / 가능한 ~150 행동 ≈ 33% 활성
-  - I ≈ 1 - 0.33 = 0.67? 또는 탐색 깊이 기준 I ≈ 0.35?
-  - → 측정 방법에 따라 골든존 가능성
+  MuZero's I estimation:
+  - MCTS simulations / possible actions ≈ active ratio
+  - 50 simulations / ~150 possible actions ≈ 33% active
+  - I ≈ 1 - 0.33 = 0.67? or by exploration depth I ≈ 0.35?
+  - → Golden Zone possible depending on measurement method
 ```
 
-## Dreamer V3: 명시적 "꿈" 학습
+## Dreamer V3: Explicit "Dreaming" Learning
 
 ```
-  Dreamer V3 학습 루프:
+  Dreamer V3 learning loop:
 
   ┌─────────────────────────────────────────────┐
-  │  1. 현실 경험 수집 (각성)      I ≈ 0.5     │
-  │  2. 잠재 상태 학습 (NREM)      I ≈ 0.6     │
-  │  3. 상상 속 rollout (REM/꿈)   I ≈ 0.35 ★  │
-  │  4. 상상에서 정책 최적화       I ≈ 0.35 ★  │
-  │  → 반복                                     │
+  │  1. Collect real experience (waking)  I ≈ 0.5│
+  │  2. Learn latent state (NREM)         I ≈ 0.6│
+  │  3. Imagination rollout (REM/dream)   I ≈ 0.35 ★│
+  │  4. Optimize policy in imagination    I ≈ 0.35 ★│
+  │  → Repeat                                   │
   └─────────────────────────────────────────────┘
 
-  Dreamer의 "imagination" = 15 step rollout
-  = 꿈에서 15개 미래 시나리오 시뮬레이션
-  = 골든존에서의 월드모델 활용!
+  Dreamer's "imagination" = 15-step rollout
+  = 15 future scenario simulations in dreaming
+  = Utilizing world model in the Golden Zone!
 ```
 
-## 핵심 통찰
+## Key Insights
 
-1. **REM 수면 = 유일한 골든존 시간** — 뇌가 매일 밤 골든존에서 월드모델 최적화
-2. **꿈의 비논리성 = 낮은 I** — 전두엽 억제 해제 → 창의적 연결
-3. **AI도 "꿈" 단계 필요** — MuZero, Dreamer가 이미 부분 구현
-4. **각성-REM 진동 = I의 골든존 왕복** — 메타 재귀의 생물학적 구현
+1. **REM sleep = only Golden Zone time** — brain optimizes world model in Golden Zone every night
+2. **Dream illogicality = low I** — prefrontal inhibition released → creative connections
+3. **AI also needs a "dreaming" phase** — MuZero, Dreamer already partially implement this
+4. **Waking-REM oscillation = I oscillating to/from Golden Zone** — biological implementation of meta-recursion
 
-## 한계
+## Limitations
 
-- 수면 중 I 값은 뇌 영역에 따라 크게 다름 (전두엽 vs 시각피질)
-- MuZero/Dreamer의 I 매핑은 어떤 지표를 쓰느냐에 따라 달라짐
-- "꿈 = 월드모델 최적화" 가설 자체가 신경과학에서 논쟁 중
-- 수면 주기의 I 궤적이 실제로 G=DxP/I를 따르는지 미검증
+- I value during sleep varies greatly by brain region (prefrontal vs visual cortex)
+- I mapping for MuZero/Dreamer depends on which metric is used
+- The hypothesis "dreaming = world model optimization" itself is debated in neuroscience
+- Whether the sleep cycle's I trajectory actually follows G=DxP/I is unverified
 
-## 검증 방향
+## Verification Direction
 
-1. EEG 데이터로 수면 단계별 뇌 네트워크 억제 수준(I) 정량화
-2. Dreamer V3에서 imagination 단계의 활성화 패턴 분석 → I 추정
-3. AI 학습 중 "꿈 단계"(I를 골든존으로 설정)를 명시적으로 삽입 → 성능 비교
-4. 수면 박탈 ↔ AI의 "꿈 없는 학습" 비교 → 월드모델 품질 저하 확인
+1. Quantify brain network inhibition level (I) by sleep stage using EEG data
+2. Analyze activation patterns during imagination phase of Dreamer V3 → estimate I
+3. Explicitly insert a "dreaming phase" (set I to Golden Zone) during AI training → compare performance
+4. Compare sleep deprivation ↔ AI "dreamless learning" → confirm world model quality degradation
 
-## 관련 가설
+## Related Hypotheses
 
-- [231](231-world-model-golden-zone.md) — 월드모델 = 골든존 내부 시뮬레이터
-- [233](233-world-model-vs-llm.md) — 월드모델 vs LLM = I 축 양극단
-- [235](235-world-model-causality.md) — 인과 추론 = 월드모델의 Compass
-- [155](155-gaba-inhibition.md) — GABA와 Inhibition
-- [159](159-meditation-meta.md) — 명상과 메타 재귀
-- [122](122-consciousness-window.md) — 의식의 창
+- [231](231-world-model-golden-zone.md) — World model = Golden Zone internal simulator
+- [233](233-world-model-vs-llm.md) — World model vs LLM = opposite ends of I axis
+- [235](235-world-model-causality.md) — Causal reasoning = world model's Compass
+- [155](155-gaba-inhibition.md) — GABA and Inhibition
+- [159](159-meditation-meta.md) — Meditation and meta-recursion
+- [122](122-consciousness-window.md) — Window of consciousness

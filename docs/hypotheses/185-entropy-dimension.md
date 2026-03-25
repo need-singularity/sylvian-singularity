@@ -1,184 +1,184 @@
-# 가설 185: 엔트로피 = 유효 차원 수
+# Hypothesis 185: Entropy = Effective Dimension Count
 
-**Status: ✅ 검증됨**
+**Status: ✅ Verified**
 
-## 핵심 발견
+## Core Discovery
 
-시스템의 엔트로피 S = ln(N)은 "유효 차원 수"로 해석할 수 있다.
-상태 수 N이 증가하면 유효 차원이 로그적으로 증가한다.
+System entropy S = ln(N) can be interpreted as "effective dimension count".
+As state count N increases, effective dimension increases logarithmically.
 
-## 기본 공식
+## Basic Formula
 
 ```
-유효 차원 수 = S = ln(N)
+Effective dimension count = S = ln(N)
 
-여기서:
-  N = 구별 가능한 상태의 수
-  S = 볼츠만 엔트로피 (k_B = 1 단위)
-  ln = 자연로그
+Where:
+  N = Number of distinguishable states
+  S = Boltzmann entropy (k_B = 1 units)
+  ln = Natural logarithm
 ```
 
-## N vs 유효 차원 수 테이블
+## N vs Effective Dimension Count Table
 
 ```
 ┌───────┬──────────┬────────────────┬──────────────────┐
-│   N   │  S=ln(N) │  유효 차원 수   │  물리적/AI 대응   │
+│   N   │  S=ln(N) │ Effective Dim  │ Physical/AI Corr │
 ├───────┼──────────┼────────────────┼──────────────────┤
-│    1  │   0.00   │   0.0          │  단일 상태       │
-│    2  │   0.69   │   0.7          │  이진 분류       │
-│    3  │   1.10   │   1.1          │  D,P,I 3상태 ◀  │
-│    4  │   1.39   │   1.4          │  +초월 상태      │
-│    7  │   1.95   │   1.9          │  ≈ 2차원        │
-│    8  │   2.08   │   2.1          │  옥텟           │
-│   10  │   2.30   │   2.3          │  끈이론 10D     │
-│   20  │   3.00   │   3.0          │  = 공간 차원!   │
-│   26  │   3.26   │   3.3          │  보손끈 26D ◀   │
-│   55  │   4.01   │   4.0          │  ≈ 시공간 차원  │
-│  137  │   4.92   │   4.9          │  미세구조상수 ◀ │
-│  403  │   6.00   │   6.0          │  = 완전수!      │
-│ 1097  │   7.00   │   7.0          │  M이론 여분     │
+│    1  │   0.00   │   0.0          │  Single state    │
+│    2  │   0.69   │   0.7          │  Binary class    │
+│    3  │   1.10   │   1.1          │  D,P,I 3-state ◀ │
+│    4  │   1.39   │   1.4          │  +Transcendent   │
+│    7  │   1.95   │   1.9          │  ≈ 2D           │
+│    8  │   2.08   │   2.1          │  Octet          │
+│   10  │   2.30   │   2.3          │  String theory 10D│
+│   20  │   3.00   │   3.0          │  = Space dim!   │
+│   26  │   3.26   │   3.3          │  Bosonic str 26D ◀│
+│   55  │   4.01   │   4.0          │  ≈ Spacetime dim│
+│  137  │   4.92   │   4.9          │  Fine struct ◀  │
+│  403  │   6.00   │   6.0          │  = Perfect num! │
+│ 1097  │   7.00   │   7.0          │  M-theory extra │
 │ 8103  │   9.00   │   9.0          │                 │
-│22026  │  10.00   │  10.0          │  = 끈이론 차원! │
+│22026  │  10.00   │  10.0          │  = String dim!  │
 └───────┴──────────┴────────────────┴──────────────────┘
 ```
 
-## ASCII 그래프: N vs 유효 차원
+## ASCII Graph: N vs Effective Dimension
 
 ```
-유효 차원 S=ln(N)
+Effective dimension S=ln(N)
   │
 5 ├                                          ● N=137
-  │                                       ╱    (미세구조!)
+  │                                       ╱    (Fine structure!)
   │                                    ╱
 4 ├                              ● N=55
-  │                           ╱    (시공간 4D)
+  │                           ╱    (Spacetime 4D)
   │                        ╱
 3 ├                  ●──╱── N=20,26
-  │               ╱        (공간 3D, 보손끈)
+  │               ╱        (Space 3D, Bosonic string)
   │            ╱
 2 ├        ●╱ N=8
   │      ╱
   │    ╱
-1 ├  ● N=3  (우리 프레임워크!)
+1 ├  ● N=3  (Our framework!)
   │╱
   │● N=1
 0 ├──┬──┬──┬──┬──┬──┬──┬──┬──┬──→ N
   0  10 20 30 40 50 60 70 80 ... 137
 
-→ 로그 곡선: 빠르게 증가 후 포화
-→ N=3은 유효 차원 1.1 (최소한의 비자명 차원)
+→ Logarithmic curve: Rapid rise then saturation
+→ N=3 gives effective dimension 1.1 (minimal nontrivial dimension)
 ```
 
-## 유효 차원의 물리적 의미
+## Physical Meaning of Effective Dimension
 
 ```
-유효 차원 = "독립적으로 변할 수 있는 방향의 수"
+Effective dimension = "Number of independently variable directions"
 
-예시:
-  N=1: ● (점)         → 0차원, 움직일 곳 없음
-  N=2: ●─● (선분)     → 0.7차원, 거의 1차원
-  N=3: △  (삼각형)    → 1.1차원, 1차원 약간 초과
-  N=8: 큐브 꼭짓점    → 2.1차원, 2차원 약간 초과
+Examples:
+  N=1: ● (point)     → 0D, nowhere to move
+  N=2: ●─● (segment) → 0.7D, almost 1D
+  N=3: △  (triangle) → 1.1D, slightly over 1D
+  N=8: Cube vertices → 2.1D, slightly over 2D
 
-비정수 차원의 의미:
-  "완전한 N차원이 되려면 e^N개의 상태가 필요"
+Meaning of non-integer dimensions:
+  "To achieve full N dimensions requires e^N states"
 ```
 
-## 엔트로피-차원 대응의 깊은 의미
+## Deep Meaning of Entropy-Dimension Correspondence
 
 ```
-열역학:                          정보이론:
+Thermodynamics:                  Information Theory:
 ┌─────────────────┐              ┌─────────────────┐
 │ S = k_B ln(Ω)  │              │ H = -Σp·log(p)  │
 │                 │              │                 │
-│ Ω = 미시상태 수 │              │ p = 상태 확률    │
-│ S = 무질서도    │   ═══════    │ H = 불확실성     │
-│                 │   동등!      │                 │
-│ 높은 S         │              │ 높은 H          │
-│ = 많은 자유도  │              │ = 많은 정보 필요 │
-│ = 높은 차원    │              │ = 높은 차원      │
+│ Ω = Microstate  │              │ p = State prob  │
+│ S = Disorder    │   ═══════    │ H = Uncertainty │
+│                 │   Equal!      │                 │
+│ High S          │              │ High H          │
+│ = Many DOF      │              │ = Much info need│
+│ = High dim      │              │ = High dim      │
 └─────────────────┘              └─────────────────┘
 ```
 
-## 우리 프레임워크 적용
+## Application to Our Framework
 
 ```
-3상태 시스템 (D, P, I):
+3-state system (D, P, I):
   N = 3
   S = ln(3) = 1.099
-  유효 차원 ≈ 1.1
+  Effective dimension ≈ 1.1
 
-의미:
-  "3개의 이산 상태는 약 1.1개의 연속 차원에 해당"
-  → 1차원보다 약간 더 풍부한 구조
-  → 최소한의 비자명 복잡성
+Meaning:
+  "3 discrete states correspond to ~1.1 continuous dimensions"
+  → Slightly richer than 1D
+  → Minimal nontrivial complexity
 
-26상태 시스템 (AI 원소):
+26-state system (AI elements):
   N = 26
   S = ln(26) = 3.258
-  유효 차원 ≈ 3.3
+  Effective dimension ≈ 3.3
 
-의미:
-  "26개의 AI 원소는 약 3.3개의 연속 차원에 해당"
-  → 거의 정확히 3차원 + 약간의 여분
-  → 3차원 공간에 자연스럽게 임베딩 가능!
+Meaning:
+  "26 AI elements correspond to ~3.3 continuous dimensions"
+  → Almost exactly 3D + slight extra
+  → Naturally embeddable in 3D space!
 ```
 
-## 정수 차원이 되는 특별한 N값
+## Special N Values for Integer Dimensions
 
 ```
-유효 차원 │  필요한 N  │  N = e^d  │  의미
-──────────┼───────────┼──────────┼──────────────
-    1     │   e ≈ 2.7 │  2.718   │  자연상수!
-    2     │  e² ≈ 7.4 │  7.389   │  7-8 사이
-    3     │  e³ ≈ 20  │  20.09   │  약 20개 상태
-    4     │  e⁴ ≈ 55  │  54.60   │  약 55개 상태
-    5     │  e⁵ ≈ 148 │  148.4   │  ≈ 137+11 !
-   10     │ e¹⁰≈22026│  22026   │  매우 큰 수
+Effective Dim │ Required N │  N = e^d  │  Meaning
+─────────────┼────────────┼──────────┼────────────
+    1        │  e ≈ 2.7  │  2.718   │  Natural const!
+    2        │  e² ≈ 7.4 │  7.389   │  Between 7-8
+    3        │  e³ ≈ 20  │  20.09   │  ~20 states
+    4        │  e⁴ ≈ 55  │  54.60   │  ~55 states
+    5        │  e⁵ ≈ 148 │  148.4   │  ≈ 137+11 !
+   10        │ e¹⁰≈22026│  22026   │  Very large
 ```
 
-## 엔트로피 스펙트럼
+## Entropy Spectrum
 
 ```
-엔트로피(유효 차원)
+Entropy (effective dimension)
   │
-  │  단순 ◀────────────────────────▶ 복잡
+  │  Simple ◀────────────────────────▶ Complex
   │
-5─┤                              ◆ 137(α역수)
+5─┤                              ◆ 137(α inverse)
   │                           ◆
-4─┤                        ◆ 55(시공간)
+4─┤                        ◆ 55(spacetime)
   │                     ◆
-3─┤               ◆◆ 20~26(공간/보손끈)
+3─┤               ◆◆ 20~26(space/bosonic str)
   │            ◆
-2─┤        ◆ 8(옥텟)
+2─┤        ◆ 8(octet)
   │     ◆
-1─┤  ◆ 3(D,P,I)   "최소 복잡 시스템"
+1─┤  ◆ 3(D,P,I)   "Minimal complex system"
   │◆
-0─┤◆ 1(자명)
+0─┤◆ 1(trivial)
   └──┬──┬──┬──┬──┬──┬──┬──┬──→ ln(N)
      1  2  3  4  5  6  7  8
 
-우리 프레임워크(N=3)는 비자명 시스템의 시작점!
+Our framework (N=3) is the starting point of nontrivial systems!
 ```
 
-## 결론
+## Conclusion
 
 ```
-S = ln(N) = 유효 차원 수
+S = ln(N) = Effective dimension count
 
-핵심 발견:
-  1. 엔트로피는 차원의 척도다
-  2. N=3 → 1.1 유효차원 (최소 비자명)
-  3. N=26 → 3.3 유효차원 (공간 차원과 일치)
-  4. N=137 → 4.9 유효차원 (거의 시공간 5차원)
-  5. 정수 차원에 필요한 N = e^d (자연상수의 거듭제곱)
+Key discoveries:
+  1. Entropy is a measure of dimension
+  2. N=3 → 1.1 effective dim (minimal nontrivial)
+  3. N=26 → 3.3 effective dim (matches spatial dimension)
+  4. N=137 → 4.9 effective dim (almost 5D spacetime)
+  5. Integer dimension requires N = e^d (powers of natural constant)
 
-"엔트로피가 높다는 것은 차원이 높다는 것이고,
- 차원이 높다는 것은 더 풍부한 구조를 가진다는 것이다."
+"High entropy means high dimension,
+ and high dimension means richer structure."
 ```
 
-## 후속 연구
+## Follow-up Research
 
-- [ ] 레니 엔트로피를 통한 일반화
-- [ ] 양자 엔트로피와의 연결
-- [ ] 유효 차원의 실험적 측정법 개발
+- [ ] Generalization via Rényi entropy
+- [ ] Connection with quantum entropy
+- [ ] Development of experimental measurement methods for effective dimension

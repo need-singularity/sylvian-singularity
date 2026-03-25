@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""텍사스 명사수 검정 — 양자/물리 발견 전용
+"""Texas Sharpshooter Test — Quantum/Physics Discovery Exclusive
 
-각 발견의 파라미터 공간을 스캔하여 우연 히트 확률(p-value)을 산출하고,
-Bonferroni 보정으로 다중 비교 문제를 교정한다.
+Scans the parameter space of each discovery to calculate chance hit probability (p-value),
+and applies Bonferroni correction for multiple comparison problem.
 
-사용법:
-  python3 texas_quantum.py                        # 전체 검정
-  python3 texas_quantum.py --discovery "1/alpha"   # 특정 발견만
-  python3 texas_quantum.py --monte-carlo 100000    # 몬테카를로 반복 수
+Usage:
+  python3 texas_quantum.py                        # Full test
+  python3 texas_quantum.py --discovery "1/alpha"   # Specific discovery only
+  python3 texas_quantum.py --monte-carlo 100000    # Monte Carlo iterations
 """
 
 import argparse
@@ -17,7 +17,7 @@ import sys
 
 import numpy as np
 
-# ─── 수론 함수 ───────────────────────────────────────────────
+# ─── Number Theory Functions ───────────────────────────────────────────────
 
 def divisor_sigma(n, k=1):
     """σ_k(n) = sum of k-th powers of divisors of n."""
@@ -33,7 +33,7 @@ def triangular(n):
     return n * (n + 1) // 2
 
 
-# ─── 발견 목록 ───────────────────────────────────────────────
+# ─── Discovery List ───────────────────────────────────────────────
 
 DISCOVERIES = [
     {
@@ -95,14 +95,14 @@ DISCOVERIES = [
 ]
 
 
-# ─── 스캔 엔진 ───────────────────────────────────────────────
+# ─── Scan Engine ───────────────────────────────────────────────
 
 def _relative_error(val, target):
     return abs(val - target) / max(abs(target), 1e-15)
 
 
 def scan_1d(disc):
-    """1차원 파라미터 스캔. 반환: (hits, total)."""
+    """1D parameter scan. Returns: (hits, total)."""
     lo, hi = disc["param_range"]
     formula = disc["formula"]
     target = disc["target"]
@@ -128,7 +128,7 @@ def scan_1d(disc):
 
 
 def scan_2d(disc):
-    """2차원 파라미터 스캔. 반환: (hits, total)."""
+    """2D parameter scan. Returns: (hits, total)."""
     ranges = disc["param_range"]
     formula = disc["formula"]
     target = disc["target"]
@@ -156,7 +156,7 @@ def scan_2d(disc):
 
 
 def scan_3d(disc):
-    """3차원 파라미터 스캔. 반환: (hits, total)."""
+    """3D parameter scan. Returns: (hits, total)."""
     ranges = disc["param_range"]
     target = disc["target"]
     threshold = disc["threshold"]
@@ -176,13 +176,13 @@ def scan_3d(disc):
 
 
 def scan_monte_carlo(disc, n_trials):
-    """특수 검정: 몬테카를로 시뮬레이션. 반환: (hits, total)."""
+    """Special test: Monte Carlo simulation. Returns: (hits, total)."""
     rng = np.random.default_rng(42)
     target = disc["target"]
     threshold = disc["threshold"]
     formula = disc["formula"]
 
-    # 상수 범위: 정수 2~10 사이의 랜덤 실수 (e≈2.718 같은 소규모 상수)
+    # Constant range: random reals between 2~10 (small constants like e≈2.718)
     hits = 0
     total = n_trials
 
@@ -210,7 +210,7 @@ def scan_monte_carlo(disc, n_trials):
 
 
 def run_single(disc, n_monte_carlo):
-    """단일 발견 검정. 반환: (hits, total)."""
+    """Single discovery test. Returns: (hits, total)."""
     pr = disc["param_range"]
 
     if pr is None:
@@ -226,35 +226,35 @@ def run_single(disc, n_monte_carlo):
     return 0, 1  # fallback
 
 
-# ─── 판정 ─────────────────────────────────────────────────────
+# ─── Verdict ─────────────────────────────────────────────────────
 
 def verdict(bonf_p):
     if bonf_p < 0.01:
-        return "★ 구조적"
+        return "★ Structural"
     elif bonf_p < 0.05:
-        return "△ 약한"
+        return "△ Weak"
     else:
-        return "✕ 우연"
+        return "✕ Chance"
 
 
-# ─── 메인 ─────────────────────────────────────────────────────
+# ─── Main ─────────────────────────────────────────────────────
 
 def run(discoveries, n_monte_carlo, filter_name=None):
     if filter_name:
         discoveries = [d for d in discoveries if filter_name.lower() in d["name"].lower()]
         if not discoveries:
-            print(f"  '{filter_name}'에 해당하는 발견 없음")
+            print(f"  No discovery matching '{filter_name}'")
             sys.exit(1)
 
-    n_total_disc = len(DISCOVERIES)  # Bonferroni는 항상 전체 수 기준
+    n_total_disc = len(DISCOVERIES)  # Bonferroni always based on total count
 
     print("═" * 55)
     print(" Texas Sharpshooter — Quantum Discoveries")
     print("═" * 55)
     print()
 
-    # 헤더
-    hdr = f" {'발견':<26}│ {'단일 p':>10} │ {'Bonf. p':>10} │ {'판정'}"
+    # Header
+    hdr = f" {'Discovery':<26}│ {'Single p':>10} │ {'Bonf. p':>10} │ {'Verdict'}"
     print(hdr)
     print(f" {'─' * 26}┼{'─' * 12}┼{'─' * 12}┼{'─' * 12}")
 
@@ -274,7 +274,7 @@ def run(discoveries, n_monte_carlo, filter_name=None):
         p_bonf = min(p_single * n_total_disc, 1.0)
         verd = verdict(p_bonf)
 
-        if "구조적" in verd:
+        if "Structural" in verd:
             significant += 1
 
         results.append({
@@ -286,19 +286,19 @@ def run(discoveries, n_monte_carlo, filter_name=None):
             "verdict": verd,
         })
 
-        # 이름 자르기 (최대 26자)
+        # Truncate name (max 26 chars)
         short = disc["name"][:26]
         print(f" {short:<26}│ {p_single:>10.6f} │ {p_bonf:>10.6f} │ {verd}")
 
     print()
-    print(f" 총 조합 수: ~{total_combinations:.2e}")
-    print(f" 유의한 발견: {significant}/{len(discoveries)}")
+    print(f" Total combinations: ~{total_combinations:.2e}")
+    print(f" Significant discoveries: {significant}/{len(discoveries)}")
     print("═" * 55)
 
-    # 개별 상세
+    # Individual details
     print()
     print("─" * 55)
-    print(" 상세 결과")
+    print(" Detailed Results")
     print("─" * 55)
     for r in results:
         print(f"  {r['name']}")
@@ -309,15 +309,15 @@ def run(discoveries, n_monte_carlo, filter_name=None):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="텍사스 명사수 검정 — 양자/물리 발견 전용"
+        description="Texas Sharpshooter Test — Quantum/Physics Discovery Exclusive"
     )
     parser.add_argument(
         "--discovery", type=str, default=None,
-        help="특정 발견만 검정 (이름 부분 매칭)"
+        help="Test specific discovery only (partial name match)"
     )
     parser.add_argument(
         "--monte-carlo", type=int, default=100000,
-        help="몬테카를로 반복 수 (기본 100000)"
+        help="Monte Carlo iterations (default 100000)"
     )
     args = parser.parse_args()
 

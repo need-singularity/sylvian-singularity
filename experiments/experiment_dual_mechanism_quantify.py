@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""이중 메커니즘 정량화: 내부반전비 × 간정상비 = 상수?"""
+"""Dual Mechanism Quantification: Internal Inversion Ratio × Inter Normal Ratio = Constant?"""
 import torch, torch.nn as nn, torch.nn.functional as F, numpy as np, copy
 from sklearn.datasets import load_breast_cancer, load_iris, load_wine
 from sklearn.preprocessing import StandardScaler
@@ -50,8 +50,8 @@ def run_dataset(name, X, y, normal_label):
                 if lbl == "norm": int_n, inter_n = internal, inter
                 else: int_a, inter_a = internal, inter
         
-        int_ratio = int_a / (int_n + 1e-10)  # 내부: <1이면 반전
-        inter_ratio = inter_a / (inter_n + 1e-10)  # 간: >1이면 정상
+        int_ratio = int_a / (int_n + 1e-10)  # Internal: <1 means inversion
+        inter_ratio = inter_a / (inter_n + 1e-10)  # Inter: >1 means normal
         product = int_ratio * inter_ratio
         ratios.append({'int_ratio': int_ratio, 'inter_ratio': inter_ratio, 'product': product})
     
@@ -62,7 +62,7 @@ def run_dataset(name, X, y, normal_label):
     return avg_int, avg_inter, avg_prod
 
 print("="*60)
-print("이중 메커니즘 정량화: 내부반전비 × 간정상비 = 상수?")
+print("Dual Mechanism Quantification: Internal Inversion Ratio × Inter Normal Ratio = Constant?")
 print("="*60)
 
 datasets_info = [
@@ -82,12 +82,12 @@ for r in all_results:
     print(f"  {r['name']:>15} {r['int_ratio']:>8.4f} {r['inter_ratio']:>8.4f} {r['product']:>8.4f}")
 
 products = [r['product'] for r in all_results]
-print(f"\n  product 평균: {np.mean(products):.4f}")
+print(f"\n  product average: {np.mean(products):.4f}")
 print(f"  product std:  {np.std(products):.4f}")
 print(f"  product CV:   {np.std(products)/np.mean(products):.4f}")
 
 if np.std(products)/np.mean(products) < 0.3:
-    print(f"  → product ≈ 상수! ({np.mean(products):.3f})")
+    print(f"  → product ≈ constant! ({np.mean(products):.3f})")
 else:
-    print(f"  → product 비상수 (CV > 0.3)")
-print(f"\n완료")
+    print(f"  → product non-constant (CV > 0.3)")
+print(f"\nComplete")

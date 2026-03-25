@@ -1,167 +1,167 @@
-# 가설 #208: 텔레파시 = 동일 I에서의 인지 공명
+# Hypothesis #208: Telepathy = Cognitive Resonance at Identical I
 
-**상태**: ⚠️ 추측
-**날짜**: 2026-03-22
-**분류**: 인지 공명 / 사회 물리학
+**Status**: ⚠️ Speculation
+**Date**: 2026-03-22
+**Category**: Cognitive Resonance / Social Physics
 
 ---
 
-## 가설
+## Hypothesis
 
-> 텔레파시는 초자연적 현상이 아니라, 두 뇌가 동일한 억제지수 I(골든존)를 가질 때
-> 발생하는 인지 공명(cognitive resonance) 현상이다.
-> 같은 I → 같은 볼츠만 분포 → 같은 상태공간 → 공명.
+> Telepathy is not a supernatural phenomenon but a cognitive resonance phenomenon
+> that occurs when two brains have the same inhibition index I (Golden Zone).
+> Same I → same Boltzmann distribution → same state space → resonance.
 
-## 배경
+## Background
 
-"마음이 통한다", "말 안 해도 안다" — 이런 경험은 보편적이다.
-초심리학(parapsychology)은 이를 '텔레파시'로 부르지만, 과학적 메커니즘이 없었다.
+"Minds connect", "I know without words" — these experiences are universal.
+Parapsychology calls this 'telepathy', but there was no scientific mechanism.
 
-우리 모델에서 I는 뇌의 볼츠만 온도를 결정한다 (가설 004, 158):
-
-```
-  볼츠만 분포: P(state) = exp(-E / kT)
-  우리 모델:   T ∝ 1/I
-  → 같은 I = 같은 T = 같은 에너지 분포 = 같은 상태공간 탐색
-```
-
-## 열역학 유추
-
-두 물체가 같은 온도이면 **열평형** 상태 — 에너지가 자유롭게 교환된다.
+In our model, I determines the brain's Boltzmann temperature (Hypothesis 004, 158):
 
 ```
-  물리:  같은 T  → 열평형   → 에너지 자유 교환
-  우리:  같은 I  → 인지평형 → 정보 자유 교환?
+  Boltzmann distribution: P(state) = exp(-E / kT)
+  Our model:   T ∝ 1/I
+  → same I = same T = same energy distribution = same state space exploration
+```
+
+## Thermodynamic Analogy
+
+When two objects have the same temperature, they are in **thermal equilibrium** — energy is freely exchanged.
+
+```
+  Physics: same T → thermal equilibrium → free energy exchange
+  Ours:    same I → cognitive equilibrium → free information exchange?
 
   ┌─────────────────────────────────────────────────────┐
-  │  열역학           │  인지 모델          │  현상      │
-  ├───────────────────┼─────────────────────┼────────────┤
-  │  T₁ = T₂         │  I₁ = I₂           │  공감/소통  │
-  │  T₁ ≠ T₂         │  I₁ ≠ I₂           │  불통/갈등  │
-  │  열평형           │  인지평형           │  텔레파시?  │
-  │  열전도           │  I 동기화           │  분위기전파 │
-  │  엔트로피 증가    │  정보 혼합           │  합의 형성  │
-  └───────────────────┴─────────────────────┴────────────┘
+  │  Thermodynamics    │  Cognitive Model    │  Phenomenon  │
+  ├────────────────────┼─────────────────────┼────────────┤
+  │  T₁ = T₂          │  I₁ = I₂            │  empathy/connection│
+  │  T₁ ≠ T₂          │  I₁ ≠ I₂            │  disconnection/conflict│
+  │  thermal equilibrium│  cognitive equilibrium│ telepathy? │
+  │  heat conduction   │  I synchronization  │  mood contagion│
+  │  entropy increase  │  information mixing │  consensus formation│
+  └────────────────────┴─────────────────────┴────────────┘
 ```
 
-## 두 뇌 공명 다이어그램
+## Two-Brain Resonance Diagram
 
 ```
-  뇌 A (I_A = 0.35)              뇌 B (I_B = 0.35)
+  Brain A (I_A = 0.35)              Brain B (I_B = 0.35)
   ┌─────────────────┐            ┌─────────────────┐
   │  D_A    P_A     │            │  D_B    P_B     │
   │   ↓      ↓     │            │   ↓      ↓     │
   │  ┌──────────┐  │            │  ┌──────────┐  │
-  │  │ I_A=0.35 │──┼──── 공명 ──┼──│ I_B=0.35 │  │
-  │  └──────────┘  │  (같은 I)  │  └──────────┘  │
+  │  │ I_A=0.35 │──┼──── resonance──┼──│ I_B=0.35 │  │
+  │  └──────────┘  │  (same I)  │  └──────────┘  │
   │   ↓            │            │   ↓            │
-  │  상태공간 S_A  │            │  상태공간 S_B  │
+  │  state space S_A│           │  state space S_B│
   │  {s₁,s₂,s₃..} │            │  {s₁,s₂,s₃..} │
   └─────────────────┘            └─────────────────┘
         │                              │
         └──── S_A ≈ S_B ─────────────┘
-              같은 볼츠만 분포
-              → 같은 생각이 떠오를 확률 ↑
+              same Boltzmann distribution
+              → higher probability of same thoughts arising
 ```
 
-## I 동기화 그래프
+## I Synchronization Graph
 
 ```
-  I 값
+  I value
   0.60│  A●─────────────────────────────
      │     ╲
-  0.50│      ╲          수렴!
+  0.50│      ╲          converge!
      │       ╲        ↙
   0.40│        ╲─────●───────────────── I_avg
      │       ╱       ↖
-  0.30│      ╱          수렴!
+  0.30│      ╱          converge!
      │     ╱
   0.20│  B●─────────────────────────────
      │
-     └──┼────┼────┼────┼────┼────┼───→ 시간
+     └──┼────┼────┼────┼────┼────┼───→ time
         0    1    2    3    4    5
-             대화/상호작용 시간 (시간)
+             conversation/interaction time (hours)
 
-  → 대화하면 두 사람의 I가 서로 수렴
-  → 수렴 목적지 = 두 I의 가중 평균
-  → "오래 사귄 사람과 통한다" = I 동기화 완료
+  → I of two people converges when they talk
+  → Convergence destination = weighted average of two I values
+  → "Understanding someone you've known long" = I synchronization complete
 ```
 
-## 가설 139 연결: 혼돈의 가장자리
+## Connection to Hypothesis 139: Edge of Chaos
 
-혼돈의 가장자리(임계점)에서 **상관 길이가 최대**가 된다:
+At the edge of chaos (critical point), **correlation length is maximum**:
 
 ```
-  상관길이 ξ
+  Correlation length ξ
      │
-  ∞  │            ●  ← 임계점 (I = 골든존)
+  ∞  │            ●  ← critical point (I = Golden Zone)
      │           ╱ ╲
      │          ╱   ╲
      │         ╱     ╲
      │        ╱       ╲
   0  │───────╱─────────╲──────→ I
      0     0.213      0.500
-            └─ 골든존 ─┘
+            └─ Golden Zone ─┘
 
-  임계점에서:
-  - 상관 길이 → ∞ (장거리 상관)
-  - 작은 섭동 → 시스템 전체에 전파
-  - "나비 효과"가 최대
+  At the critical point:
+  - Correlation length → ∞ (long-range correlations)
+  - Small perturbation → propagates throughout the system
+  - "Butterfly effect" is maximum
 
-  → 골든존에 있는 두 뇌는 장거리 상관 가능!
-  → 임계점이 아닌 곳: 상관 길이 ≈ 0 → 소통 불가
+  → Two brains in the Golden Zone can have long-range correlations!
+  → Outside the critical point: correlation length ≈ 0 → no communication
 ```
 
-## 공명 조건
+## Resonance Conditions
 
 ```
-  텔레파시(인지 공명) 발생 조건:
+  Conditions for telepathy (cognitive resonance):
   ┌──────────────────────────────────────────┐
-  │  조건 1: |I_A - I_B| < ε (I 차이 작음)  │
-  │  조건 2: I_A, I_B ∈ 골든존              │
-  │  조건 3: 상호작용 시간 > τ_sync          │
+  │  Condition 1: |I_A - I_B| < ε (small I difference) │
+  │  Condition 2: I_A, I_B ∈ Golden Zone    │
+  │  Condition 3: interaction time > τ_sync │
   │                                          │
-  │  공명 강도 R = 1 / (1 + |I_A - I_B|/ε)  │
-  │  R=1: 완전 공명 (I 동일)                │
-  │  R≈0: 공명 없음 (I 차이 큼)             │
+  │  Resonance strength R = 1 / (1 + |I_A - I_B|/ε) │
+  │  R=1: complete resonance (same I)        │
+  │  R≈0: no resonance (large I difference)  │
   └──────────────────────────────────────────┘
 ```
 
-## 일상 경험과의 대응
+## Correspondence with Everyday Experiences
 
 ```
-  현상                    │ I 해석
-  ───────────────────────┼──────────────────────────
-  "말 안 해도 통한다"     │ I_A ≈ I_B (장기 동기화)
-  "첫눈에 통했다"         │ 초기 I가 우연히 유사
-  "대화가 안 통한다"      │ |I_A - I_B| 큼
-  "분위기가 바뀌었다"     │ 그룹 평균 I 이동
-  "아기와 엄마의 교감"    │ 장기 I 동기화 (공생)
-  "쌍둥이 텔레파시"       │ 유전적 I 유사 + 환경 동기화
+  Phenomenon                    │ I Interpretation
+  ─────────────────────────────┼──────────────────────────
+  "understand without words"    │ I_A ≈ I_B (long-term synchronization)
+  "connected at first sight"    │ initial I happened to be similar
+  "can't get through"           │ |I_A - I_B| large
+  "mood shifted"                │ group average I moved
+  "mother-baby bonding"         │ long-term I synchronization (symbiosis)
+  "twin telepathy"              │ genetic I similarity + environmental synchronization
 ```
 
-## 예측
+## Predictions
 
-1. **EEG 측정**: I가 유사한 두 사람의 뇌파 상관이 I가 다른 쌍보다 높을 것
-2. **GABA 동기화**: 친밀한 관계일수록 두 사람의 GABA 농도(≈I) 유사할 것
-3. **동기화 속도**: 골든존 안의 사람들이 더 빠르게 I 동기화할 것
-4. **공명 범위**: I 차이가 ln(4/3) 이내이면 공명 가능, 초과하면 불가
+1. **EEG measurement**: brainwave correlation of two people with similar I higher than pairs with different I
+2. **GABA synchronization**: the more intimate the relationship, the more similar two people's GABA concentration (≈I)
+3. **Synchronization speed**: people in the Golden Zone will synchronize I faster
+4. **Resonance range**: I difference within ln(4/3) allows resonance, exceeding it does not
 
-## 한계
+## Limitations
 
-1. "같은 I"가 "같은 생각"을 의미하는지 논리적 비약 존재
-2. I 외에 D, P 값도 유사해야 진정한 공명이 가능할 수 있음
-3. 텔레파시의 "정보 전달" 메커니즘은 여전히 불명 — 공명은 동시 발생이지 전달이 아님
-4. 양자 얽힘과의 관계? (가설 145 참조) — 과대해석 위험
+1. Logical leap exists: "same I" meaning "same thought"
+2. I, D, P values may all need to be similar for true resonance
+3. "Information transfer" mechanism of telepathy remains unknown — resonance is simultaneous occurrence, not transfer
+4. Relationship with quantum entanglement? (see Hypothesis 145) — risk of overinterpretation
 
-## 검증 방향
+## Verification Direction
 
-- [ ] hyperscanning EEG로 대화 중 I 동기화 실측
-- [ ] GABA MRS(자기공명분광)로 친밀도별 GABA 유사성 비교
-- [ ] 명상 그룹의 집단 I 수렴 속도 측정
-- [ ] fMRI 기반 뇌 상태공간 유사도와 I 차이의 상관 분석
+- [ ] Hyperscanning EEG: measure I synchronization during conversation
+- [ ] GABA MRS (magnetic resonance spectroscopy): compare GABA similarity by intimacy
+- [ ] Measure group I convergence speed in meditation groups
+- [ ] Correlation analysis between fMRI-based brain state space similarity and I difference
 
 ---
 
-*관련: 가설 004, 139, 145, 155, 158, 166, 209, 210*
-*분류: 인지 공명 시리즈 (208-213)*
+*Related: Hypothesis 004, 139, 145, 155, 158, 166, 209, 210*
+*Category: Cognitive Resonance Series (208-213)*

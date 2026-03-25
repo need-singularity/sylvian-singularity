@@ -1,98 +1,98 @@
-# H-CX-152: PH = Rosch 원형 이론 — dendrogram이 인지 범주의 기본 수준과 일치
+# H-CX-152: PH = Rosch Prototype Theory — Dendrogram Matches Basic Level of Cognitive Categories
 
-> Rosch(1975) basic-level category = PH merge의 중간 깊이.
-> 상위(동물) = root, 기본(개) = middle, 하위(골든리트리버) = leaf.
+> Rosch(1975) basic-level category = middle depth of PH merge.
+> Superordinate (animal) = root, basic (dog) = middle, subordinate (golden retriever) = leaf.
 
-## 배경
+## Background
 
-Eleanor Rosch (1975, 1976)의 원형 이론(Prototype Theory)은
-인간 범주화의 핵심 구조를 세 수준으로 제안했다:
+Eleanor Rosch's (1975, 1976) Prototype Theory proposed
+three levels as the core structure of human categorization:
 
-| 수준 | 예시 | 특성 |
+| Level | Example | Characteristics |
 |------|------|------|
-| 상위(superordinate) | 동물, 탈것 | 추상적, 공통 feature 적음 |
-| 기본(basic-level) | 개, 자동차 | 가장 자연스러운 범주, feature 최적 |
-| 하위(subordinate) | 골든리트리버, 세단 | 구체적, 전문가만 구분 |
+| Superordinate | animal, vehicle | abstract, few common features |
+| Basic-level | dog, car | most natural category, optimal features |
+| Subordinate | golden retriever, sedan | concrete, only experts distinguish |
 
-Rosch의 핵심 발견:
-1. 기본 수준이 가장 빠르게 명명되고 (반응 시간 최소)
-2. 기본 수준에서 범주 내 유사성이 최대화되고 범주 간 차이가 최대화됨
-3. 아이들이 가장 먼저 학습하는 것이 기본 수준
+Rosch's key findings:
+1. Basic level is named fastest (minimum response time)
+2. At the basic level, within-category similarity is maximized and between-category difference is maximized
+3. Children learn the basic level first
 
-PH dendrogram에서:
-- merge가 가장 늦게 일어나는 것 = 상위 수준 (root: animal vs vehicle)
-- merge가 중간에 일어나는 것 = 기본 수준 (개별 class 단위)
-- merge가 가장 먼저 일어나는 것 = 하위 수준 (class 내 변이)
+In PH dendrogram:
+- Latest merge = superordinate level (root: animal vs vehicle)
+- Middle merge = basic level (individual class unit)
+- Earliest merge = subordinate level (within-class variation)
 
-본 가설은 PH dendrogram의 merge 깊이 구조가 Rosch의 세 수준과
-정량적으로 일치한다고 주장한다.
+This hypothesis claims that the merge depth structure of PH dendrogram
+matches Rosch's three levels quantitatively.
 
-## 예측
+## Predictions
 
 ```
-PH dendrogram vs Rosch 수준 대응:
+PH dendrogram vs Rosch level correspondence:
 
 merge    |
 distance |
-  1.0    |              ROOT (상위: animal/vehicle)
+  1.0    |              ROOT (superordinate: animal/vehicle)
          |             /    \
-  0.6    |     -------      -------      (기본 수준)
+  0.6    |     -------      -------      (basic level)
          |    / | \          / | \
-  0.3    |  cat dog deer   car truck ship  (개별 class)
+  0.3    |  cat dog deer   car truck ship  (individual classes)
          |  /|  /|  /|    /|   /|   /|
-  0.1    | .. .. ..  ..   .. ..  .. ..     (하위: 변이)
+  0.1    | .. .. ..  ..   .. ..  .. ..     (subordinate: variation)
          +---------------------------------->
-              클래스 내 샘플들
+              samples within classes
 ```
 
-| Rosch 수준 | PH merge distance | 비율 (전체 대비) |
+| Rosch Level | PH merge distance | Ratio (relative to total) |
 |-----------|-------------------|----------------|
-| 상위 | 0.8-1.0 (최대) | 80-100% |
-| 기본 | 0.4-0.6 (중간) | 40-60% |
-| 하위 | 0.1-0.3 (최소) | 10-30% |
+| Superordinate | 0.8-1.0 (maximum) | 80-100% |
+| Basic | 0.4-0.6 (middle) | 40-60% |
+| Subordinate | 0.1-0.3 (minimum) | 10-30% |
 
-핵심 예측:
-1. merge distance 분포에 3개의 mode가 존재 (세 수준에 대응)
-2. 기본 수준에 해당하는 merge가 가장 많음 (peak)
-3. CIFAR-10의 10 class가 기본 수준에 위치
-4. animal/vehicle 분리가 상위 수준에 위치
+Key predictions:
+1. 3 modes exist in merge distance distribution (corresponding to three levels)
+2. Basic level merges are most frequent (peak)
+3. CIFAR-10's 10 classes are positioned at the basic level
+4. animal/vehicle separation is positioned at the superordinate level
 
-## 검증 방법
+## Verification Methods
 
-1. PureField 모델의 CIFAR-10 feature 추출
-2. hierarchical clustering (Ward method) 수행
-3. dendrogram의 merge distance 분포 분석
-4. 3-mode 분포 여부 확인 (Gaussian mixture model, k=3)
-5. 각 mode와 Rosch 수준 대응 확인
+1. Extract CIFAR-10 features from PureField model
+2. Perform hierarchical clustering (Ward method)
+3. Analyze merge distance distribution of dendrogram
+4. Confirm 3-mode distribution (Gaussian mixture model, k=3)
+5. Confirm correspondence of each mode to Rosch level
 
-**문헌 대조:**
-- Rosch(1975) "Cognitive representations of semantic categories" — 반응 시간 데이터
+**Literature comparison:**
+- Rosch(1975) "Cognitive representations of semantic categories" — reaction time data
 - Murphy & Brownell(1985) "Category differentiation in object recognition"
-- 해당 문헌의 기본 수준 범주와 PH dendrogram의 중간 merge 수준 비교
+- Compare basic-level categories from these papers with middle merge level of PH dendrogram
 
-**정량 지표:**
+**Quantitative indicators:**
 - silhouette score at each level
-- Rosch의 "cue validity" 계산과 PH merge distance의 상관
+- Correlation between Rosch's "cue validity" calculation and PH merge distance
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-85**: PH dendrogram과 의식 구조
-- **H-CX-143**: THC dendrogram 재구조화 (Rosch 구조 붕괴?)
-- **H-CX-142**: THC PH 단순화
-- 인지과학 문헌: Rosch(1975, 1976), Mervis & Rosch(1981)
+- **H-CX-85**: PH dendrogram and consciousness structure
+- **H-CX-143**: THC dendrogram restructuring (Rosch structure collapse?)
+- **H-CX-142**: THC PH simplification
+- Cognitive science literature: Rosch(1975, 1976), Mervis & Rosch(1981)
 
-## 한계
+## Limitations
 
-1. CIFAR-10은 10 class로 Rosch의 세 수준을 모두 포함하지 못함 (하위 수준 부재)
-2. Rosch의 이론은 자연 범주에 관한 것이며 CIFAR-10 범주와 직접 대응하지 않을 수 있음
-3. PH dendrogram의 merge distance와 인지적 "수준"의 대응은 유비
-4. hierarchical clustering 방법(Ward vs single vs complete)에 따라 결과가 달라짐
-5. "기본 수준"의 정의가 문화와 전문성에 따라 다름
+1. CIFAR-10 with 10 classes cannot fully cover Rosch's three levels (subordinate level absent)
+2. Rosch's theory is about natural categories and may not directly correspond to CIFAR-10 categories
+3. Correspondence between PH dendrogram merge distance and cognitive "level" is an analogy
+4. Results differ by hierarchical clustering method (Ward vs single vs complete)
+5. Definition of "basic level" varies by culture and expertise
 
-## 검증 상태
+## Verification Status
 
-- [ ] PH dendrogram 생성 및 merge distance 분포 분석
-- [ ] 3-mode 분포 확인
-- [ ] Rosch 문헌 대조
-- [ ] silhouette score 비교
-- 현재: **미검증**
+- [ ] Generate PH dendrogram and analyze merge distance distribution
+- [ ] Confirm 3-mode distribution
+- [ ] Rosch literature comparison
+- [ ] silhouette score comparison
+- Currently: **unverified**

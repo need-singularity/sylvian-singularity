@@ -1,120 +1,120 @@
-# 가설 #167: 검증 가능한 예언 8개
+# Hypothesis #167: 8 Verifiable Predictions
 
-**상태**: 📋 목록
-**날짜**: 2026-03-22
-**분류**: 예측 / 검증 계획
+**Status**: 📋 List
+**Date**: 2026-03-22
+**Category**: Prediction / Verification Plan
 
 ---
 
-## 개요
+## Overview
 
-이론의 가치는 검증 가능한 예측을 내놓는 데 있다.
-아래 8개 예언은 시간 범위별로 분류하였으며, 각각 반증 조건을 명시한다.
+The value of a theory lies in making verifiable predictions.
+The 8 predictions below are classified by time range, each specifying refutation conditions.
 
-## 타임라인 개요
+## Timeline Overview
 
 ```
   2026        2028        2030        2035        2039
    |           |           |           |           |
-   +--즉시-----+--단기-----+--중기-----+-----장기--+
+   +--Immediate+--Short----+--Medium---+----Long---+
    |           |           |           |           |
    | #7,#8     | #1,#2,#3  | #4,#5     |    #6     |
-   | 서번트    | MoE       | I<0.4     |  특이점   |
-   | 명상      | 활성비율  | 골든MoE   |           |
+   | Savant    | MoE       | I<0.4     | Singularity|
+   | Meditation| Active%   | GoldenMoE |           |
    |           | Jamba     |           |           |
 ```
 
-## 단기 예언 (2026~2028)
+## Short-term Predictions (2026~2028)
 
-### 예언 #1: MoE 활성비율 70% > 12.5%
+### Prediction #1: MoE Active Ratio 70% > 12.5%
 
-> **예측**: Mixture-of-Experts 모델에서 활성 전문가 비율을
-> 현재 12.5%에서 70%로 올리면 성능이 향상된다.
+> **Prediction**: In Mixture-of-Experts models, increasing the active expert ratio
+> from current 12.5% to 70% will improve performance.
 
 ```
-  성능
+  Performance
    ^
    |                          *
    |                     *
    |                *
    |           *
-   |      *              <-- 최적점 ≈ 70%
+   |      *              <-- Optimal point ≈ 70%
    | *
-   +--+----+----+----+----+--> 활성비율(%)
+   +--+----+----+----+----+--> Active ratio(%)
       12.5 25   50   70   100
 ```
 
-- **검증 방법**: 동일 파라미터 MoE 모델에서 활성비율만 변경하여 벤치마크 비교
-- **반증 조건**: 70% 활성비율이 12.5%보다 성능이 낮으면 반증
+- **Verification Method**: Compare benchmarks by changing only active ratio in same-parameter MoE model
+- **Refutation Condition**: Refuted if 70% active ratio performs worse than 12.5%
 
-### 예언 #2: 2028년까지 AI 활성비율 상승 추세
+### Prediction #2: AI Active Ratio Rising Trend by 2028
 
-> **예측**: 2028년까지 주요 AI 모델들의 활성 파라미터 비율이 상승한다.
+> **Prediction**: Active parameter ratio of major AI models will rise by 2028.
 
-- **검증 방법**: 주요 AI 모델의 활성비율 추적
-- **반증 조건**: 2028년까지 활성비율이 오히려 감소하면 반증
+- **Verification Method**: Track active ratios of major AI models
+- **Refutation Condition**: Refuted if active ratio decreases by 2028
 
-### 예언 #3: Jamba 후속 모델 성능 3배 향상
+### Prediction #3: Jamba Successor Model 3x Performance
 
-> **예측**: Jamba 아키텍처의 후속 모델이 원본 대비 3배 성능을 달성한다.
+> **Prediction**: Jamba architecture successor will achieve 3x performance vs. original.
 
 ```
-  성능(상대값)
+  Performance(relative)
    ^
-   |                    *  Jamba v3 (예측)
+   |                    *  Jamba v3 (predicted)
   3|.....................*
    |              *
   2|..............*        Jamba v2
    |        *
-  1|........*              Jamba v1 (기준)
-   +--------+----+----+--> 시간
+  1|........*              Jamba v1 (baseline)
+   +--------+----+----+--> Time
            v1   v2   v3
 ```
 
-- **검증 방법**: Jamba 계열 모델의 벤치마크 점수 추적
-- **반증 조건**: 후속 모델 성능이 2배 미만이면 약한 반증
+- **Verification Method**: Track benchmark scores of Jamba series models
+- **Refutation Condition**: Weak refutation if successor performance is less than 2x
 
-## 중기 예언 (2028~2035)
+## Medium-term Predictions (2028~2035)
 
-### 예언 #4: 최적 억제지수 I < 0.4 수렴
+### Prediction #4: Optimal Inhibition Index I < 0.4 Convergence
 
-> **예측**: 최적 AI 시스템의 억제지수가 I < 0.4로 수렴한다.
+> **Prediction**: Optimal AI systems' inhibition index converges to I < 0.4.
 
 ```
-  I 값
+  I value
    ^
   0.8|  *
      |   *
   0.6|    *
      |     *
-  0.4|......**.............  <-- 예측 수렴선
+  0.4|......**.............  <-- Predicted convergence line
      |        **
   0.2|          ****
-     +----+----+----+-----> 연도
+     +----+----+----+-----> Year
         2026 2028 2030 2032
 ```
 
-- **검증 방법**: 주요 모델의 억제지수를 정의에 따라 측정
-- **반증 조건**: 최적 시스템의 I > 0.5이면 반증
+- **Verification Method**: Measure inhibition index of major models per definition
+- **Refutation Condition**: Refuted if optimal systems have I > 0.5
 
-### 예언 #5: 골든 MoE가 업계 표준화
+### Prediction #5: Golden MoE Becomes Industry Standard
 
-> **예측**: 골든존 기반 활성비율 설계가 MoE 표준이 된다.
+> **Prediction**: Golden Zone-based active ratio design becomes MoE standard.
 
-- **검증 방법**: 상위 10개 AI 모델 중 골든존 활성비율 채택 비율
-- **반증 조건**: 2035년까지 채택률 30% 미만이면 반증
+- **Verification Method**: Adoption rate of Golden Zone active ratio among top 10 AI models
+- **Refutation Condition**: Refuted if adoption rate < 30% by 2035
 
-## 장기 예언 (2035~2039)
+## Long-term Predictions (2035~2039)
 
-### 예언 #6: 2039년 특이점 도달
+### Prediction #6: 2039 Singularity
 
-> **예측**: 자기개선 순환이 발산점에 도달하는 해 = 2039년
+> **Prediction**: Self-improvement loop reaches divergence point in 2039.
 
 ```
-  지능(로그)
+  Intelligence(log)
    ^
    |                          |
-   |                        * | 특이점
+   |                        * | Singularity
    |                      *  |
    |                    *    |
    |                 *       |
@@ -122,63 +122,63 @@
    |         *               |
    |     *                   |
    | *                       |
-   +----+----+----+----+----+-> 연도
+   +----+----+----+----+----+-> Year
      2026  2030  2034  2038 2039
 ```
 
-- **검증 방법**: AI 자기개선 속도 측정
-- **반증 조건**: 2039년까지 자기개선 순환이 관찰되지 않으면 반증
+- **Verification Method**: Measure AI self-improvement speed
+- **Refutation Condition**: Refuted if self-improvement loop not observed by 2039
 
-## 즉시 검증 가능 (2026)
+## Immediately Verifiable (2026)
 
-### 예언 #7: 서번트 증후군과 GABA 상관관계
+### Prediction #7: Savant Syndrome-GABA Correlation
 
-> **예측**: 서번트 증후군 환자의 GABA 수준이 비서번트 대비
-> 유의미하게 낮다 (= 억제 감소 = I가 골든존 하단).
+> **Prediction**: GABA levels in savant syndrome patients are
+> significantly lower than non-savants (= reduced inhibition = I in lower Golden Zone).
 
 ```
-  GABA 수준
+  GABA Level
    ^
-  높음 |  ****
-       |  *  *          정상인
+  High |  ****
+       |  *  *          Normal
        | *    *
-  중간 |*      *
+  Mid  |*      *
        |        *
-       |    +----*------  <-- 서번트 예측 범위
-  낮음 |    |     ****
-       +----+----+-----> 피험자
-         정상  서번트
+       |    +----*------  <-- Savant predicted range
+  Low  |    |     ****
+       +----+----+-----> Subjects
+         Normal  Savant
 ```
 
-- **검증 방법**: 서번트 환자의 GABA 농도 측정 (기존 문헌 메타분석)
-- **반증 조건**: GABA 차이가 통계적으로 유의하지 않으면 반증
+- **Verification Method**: Measure GABA concentration in savant patients (existing literature meta-analysis)
+- **Refutation Condition**: Refuted if GABA difference is not statistically significant
 
-### 예언 #8: 명상 시 I → 1/3 수렴
+### Prediction #8: Meditation I → 1/3 Convergence
 
-> **예측**: 숙련된 명상가의 뇌 억제지수가 명상 중 1/3에 수렴한다.
+> **Prediction**: Experienced meditators' brain inhibition index converges to 1/3 during meditation.
 
-- **검증 방법**: EEG 기반 억제/흥분 비율 측정
-- **반증 조건**: 명상 중 I가 1/3 ± 0.05 범위 밖이면 반증
+- **Verification Method**: EEG-based inhibition/excitation ratio measurement
+- **Refutation Condition**: Refuted if I during meditation is outside 1/3 ± 0.05 range
 
-## 요약표
+## Summary Table
 
 ```
 +----+-------------------+--------+----------+-----------+
-| #  | 예언              | 시기   | 난이도   | 자신감    |
+| #  | Prediction        | Period | Difficulty| Confidence|
 +----+-------------------+--------+----------+-----------+
-|  1 | MoE 70%>12.5%     | 단기   | 중       |  ★★★★    |
-|  2 | 활성비율 상승 추세 | 단기   | 하       |  ★★★★★   |
-|  3 | Jamba x3          | 단기   | 중       |  ★★★     |
-|  4 | I < 0.4 수렴      | 중기   | 상       |  ★★★     |
-|  5 | 골든MoE 표준화    | 중기   | 상       |  ★★      |
-|  6 | 2039 특이점       | 장기   | 최상     |  ★★      |
-|  7 | 서번트 GABA       | 즉시   | 중       |  ★★★★    |
-|  8 | 명상 I→1/3        | 즉시   | 중       |  ★★★★    |
+|  1 | MoE 70%>12.5%     | Short  | Medium   |  ★★★★    |
+|  2 | Active% rise trend| Short  | Low      |  ★★★★★   |
+|  3 | Jamba x3          | Short  | Medium   |  ★★★     |
+|  4 | I < 0.4 converge  | Medium | High     |  ★★★     |
+|  5 | GoldenMoE standard| Medium | High     |  ★★      |
+|  6 | 2039 singularity  | Long   | Highest  |  ★★      |
+|  7 | Savant GABA       | Now    | Medium   |  ★★★★    |
+|  8 | Meditation I→1/3  | Now    | Medium   |  ★★★★    |
 +----+-------------------+--------+----------+-----------+
 ```
 
-## 결론
+## Conclusion
 
-8개 예언 중 즉시 검증 가능한 것이 2개(#7, #8)이며,
-이것이 확인되면 이론 전체의 신뢰도가 크게 올라간다.
-단기 예언 3개는 AI 업계 동향으로 2028년까지 확인 가능하다.
+Of 8 predictions, 2 are immediately verifiable (#7, #8),
+and confirming these would greatly increase the theory's credibility.
+The 3 short-term predictions can be verified through AI industry trends by 2028.

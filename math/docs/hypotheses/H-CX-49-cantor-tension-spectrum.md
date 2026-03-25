@@ -179,11 +179,10 @@ to discrete rationals), then consciousness operates in quantized states.
 
 ### Verdict: ⚪ Not confirmed (untrained)
 
-미학습 모델의 장력 분포는 연속적이고 가우시안에 가까움.
-Cantor 집합 구조 관찰 안 됨. 간극 비율 2.4% << 99.1%.
+The tension distribution in the untrained model is continuous and close to Gaussian.
+Cantor set structure not observed. Gap fraction 2.4% << 99.1%.
 
-**하지만**: 6블록이 3블록보다 더 좁은 분포 (피크가 더 뾰족) — 이것이 학습 후
-이산 클러스터로 수렴하는 전조일 수 있음. 학습 후 재검증 필요.
+**However**: 6 blocks shows narrower distribution than 3 blocks (sharper peak) — this could be a precursor to convergence into discrete clusters after training. Re-verification needed after training.
 
 ---
 

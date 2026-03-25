@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-S₃ (대칭군) 표현론 계산 및 상수 매칭
+S₃ (symmetric group) representation theory computation and constant matching
 T1-29: S₃ representation theory
 """
 import itertools
@@ -8,35 +8,35 @@ import math
 from fractions import Fraction
 
 # ============================================================
-# 1. S₃ 기본 구조
+# 1. S₃ Basic Structure
 # ============================================================
-# S₃ = 3개 원소의 치환군, |S₃| = 6
-# 원소: e, (12), (13), (23), (123), (132)
-# 켤레류(conjugacy class): {e}, {(12),(13),(23)}, {(123),(132)}
+# S₃ = permutation group of 3 elements, |S₃| = 6
+# Elements: e, (12), (13), (23), (123), (132)
+# Conjugacy classes: {e}, {(12),(13),(23)}, {(123),(132)}
 
 print("=" * 60)
-print("S₃ 대칭군 표현론 (Representation Theory)")
+print("S₃ Symmetric Group Representation Theory")
 print("=" * 60)
 
-# 켤레류 크기
+# Conjugacy class sizes
 conj_classes = {
-    "e (항등원)": {"size": 1, "order": 1},
-    "(ij) (호환)": {"size": 3, "order": 2},
-    "(ijk) (3-순환)": {"size": 2, "order": 3},
+    "e (identity)": {"size": 1, "order": 1},
+    "(ij) (transposition)": {"size": 3, "order": 2},
+    "(ijk) (3-cycle)": {"size": 2, "order": 3},
 }
 
-print("\n[1] 켤레류 (Conjugacy Classes)")
+print("\n[1] Conjugacy Classes")
 for name, info in conj_classes.items():
-    print(f"  {name}: 크기={info['size']}, 원소의 위수={info['order']}")
+    print(f"  {name}: size={info['size']}, element order={info['order']}")
 
 # ============================================================
-# 2. 지표표 (Character Table)
+# 2. Character Table
 # ============================================================
-print("\n[2] 지표표 (Character Table)")
-print(f"  {'표현':>12} | {'e':>4} | {'(ij)':>5} | {'(ijk)':>6} | dim")
+print("\n[2] Character Table")
+print(f"  {'representation':>12} | {'e':>4} | {'(ij)':>5} | {'(ijk)':>6} | dim")
 print("  " + "-" * 45)
 
-# 3개의 기약표현 (irreducible representations)
+# 3 irreducible representations
 irreps = {
     "trivial (ρ₁)": {"chars": [1, 1, 1], "dim": 1},
     "sign (ρ₂)": {"chars": [1, -1, 1], "dim": 1},
@@ -47,12 +47,12 @@ for name, data in irreps.items():
     c = data["chars"]
     print(f"  {name:>12} | {c[0]:>4} | {c[1]:>5} | {c[2]:>6} | {data['dim']}")
 
-# 검증: 차원 공식 sum(d_i^2) = |G|
+# Verification: dimension formula sum(d_i^2) = |G|
 dim_sum = sum(d["dim"]**2 for d in irreps.values())
-print(f"\n  검증: Σ(dᵢ²) = 1² + 1² + 2² = {dim_sum} = |S₃| ✓")
+print(f"\n  Verification: Σ(dᵢ²) = 1² + 1² + 2² = {dim_sum} = |S₃| ✓")
 
-# 직교성 검증
-print("\n  직교성 검증 (Orthogonality):")
+# Orthogonality verification
+print("\n  Orthogonality verification:")
 names = list(irreps.keys())
 chars_list = [irreps[n]["chars"] for n in names]
 class_sizes = [1, 3, 2]  # |C_e|, |C_(ij)|, |C_(ijk)|
@@ -69,9 +69,9 @@ for i in range(3):
               f"(expected {expected}) {status}")
 
 # ============================================================
-# 3. 상수 매칭 검사
+# 3. Constant Matching Check
 # ============================================================
-print("\n[3] 상수 매칭 검사")
+print("\n[3] Constant Matching Check")
 constants = {
     Fraction(1, 2): "1/2",
     Fraction(1, 3): "1/3",
@@ -87,13 +87,13 @@ constants = {
 matches = []
 
 # 3a. |S₃| = 6
-matches.append(("6", "|S₃| = 6", "군의 위수"))
+matches.append(("6", "|S₃| = 6", "group order"))
 
-# 3b. 차원들: 1, 1, 2
-matches.append(("2", "standard 표현의 차원 = 2", "기약표현 차원"))
-matches.append(("1/2", "1/|S₃| = 1/6... 아니지만, 호환 켤레류 크기/|S₃| = 3/6 = 1/2", "비율"))
+# 3b. Dimensions: 1, 1, 2
+matches.append(("2", "standard representation dimension = 2", "irrep dimension"))
+matches.append(("1/2", "1/|S₃| = 1/6... no, but transposition conjugacy class size/|S₃| = 3/6 = 1/2", "ratio"))
 
-# 3c. 켤레류 크기 비율
+# 3c. Conjugacy class size ratios
 class_ratios = {}
 for i, (name_i, info_i) in enumerate(conj_classes.items()):
     for j, (name_j, info_j) in enumerate(conj_classes.items()):
@@ -101,275 +101,275 @@ for i, (name_i, info_i) in enumerate(conj_classes.items()):
             r = Fraction(info_i["size"], info_j["size"])
             class_ratios[f"|{name_i.split()[0]}|/|{name_j.split()[0]}|"] = r
 
-print("\n  켤레류 크기 비율:")
+print("\n  Conjugacy class size ratios:")
 for desc, r in class_ratios.items():
-    marker = " ★ 매칭!" if r in constants else ""
+    marker = " ★ Match!" if r in constants else ""
     print(f"    {desc} = {r}{marker}")
     if r in constants:
-        matches.append((str(r), desc, "켤레류 비율"))
+        matches.append((str(r), desc, "conjugacy class ratio"))
 
-# 3d. 지표값 비율
-print("\n  지표에서 파생되는 값:")
-# 1/|켤레류| 값들
+# 3d. Character value ratios
+print("\n  Values derived from characters:")
+# 1/|conjugacy class| values
 for name, info in conj_classes.items():
     r = Fraction(1, info["size"])
-    marker = " ★ 매칭!" if r in constants else ""
+    marker = " ★ Match!" if r in constants else ""
     print(f"    1/|{name.split()[0]}| = {r}{marker}")
     if r in constants:
-        matches.append((str(r), f"1/|{name}|", "역수"))
+        matches.append((str(r), f"1/|{name}|", "reciprocal"))
 
-# 3e. Burnside 보조정리: 고정점 평균
-print("\n  Burnside 보조정리 (fixed point counting):")
-# S₃ acting on {1,2,3}: 고정점 수
+# 3e. Burnside's lemma: fixed point averaging
+print("\n  Burnside's lemma (fixed point counting):")
+# S₃ acting on {1,2,3}: fixed point counts
 fixed_points = {"e": 3, "(ij)": 1, "(ijk)": 0}
 burnside = Fraction(1*3 + 3*1 + 2*0, 6)
-print(f"    궤도 수 = (1·3 + 3·1 + 2·0)/6 = {burnside}")
+print(f"    Number of orbits = (1·3 + 3·1 + 2·0)/6 = {burnside}")
 
-# 3f. 정규표현 분해
-print("\n  정규표현 분해: ρ_reg = 1·ρ₁ ⊕ 1·ρ₂ ⊕ 2·ρ₃")
+# 3f. Regular representation decomposition
+print("\n  Regular representation decomposition: ρ_reg = 1·ρ₁ ⊕ 1·ρ₂ ⊕ 2·ρ₃")
 print(f"    dim(ρ_reg) = 1 + 1 + 2·2 = 6 = |S₃| ✓")
 
-# 3g. 137 검사
-print("\n  137 관련 검사:")
-# S_n에서 137 나오는지
+# 3g. 137 check
+print("\n  137 related check:")
+# When S_n has 137 in it
 for n in range(2, 20):
     if math.factorial(n) % 137 == 0:
-        print(f"    {n}! = {math.factorial(n)} ≡ 0 (mod 137), 최초 n={n}")
-        matches.append(("137", f"{n}! ≡ 0 (mod 137)", "S_n 위수"))
+        print(f"    {n}! = {math.factorial(n)} ≡ 0 (mod 137), first n={n}")
+        matches.append(("137", f"{n}! ≡ 0 (mod 137)", "S_n order"))
         break
 
-# S₃ 지표합
+# S₃ character sums
 char_sums = []
 for name, data in irreps.items():
     s = sum(data["chars"])
     char_sums.append(s)
     print(f"    Σχ_{name} = {s}")
-print(f"    전체 지표합 = {sum(char_sums)}")
+print(f"    Total character sum = {sum(char_sums)}")
 
 # ============================================================
-# 4. |S₃| = 6 = 완전수 분석
+# 4. |S₃| = 6 = Perfect Number Analysis
 # ============================================================
-print("\n[4] |S₃| = 6 = 완전수 (Perfect Number)")
-print(f"    6의 약수: 1, 2, 3, 6")
+print("\n[4] |S₃| = 6 = Perfect Number")
+print(f"    Divisors of 6: 1, 2, 3, 6")
 print(f"    σ(6) = 1 + 2 + 3 + 6 = 12 = 2·6")
-print(f"    진약수 합 = 1 + 2 + 3 = 6 ✓ 완전수")
+print(f"    Proper divisor sum = 1 + 2 + 3 = 6 ✓ Perfect number")
 print()
-print(f"    수론적 의미:")
-print(f"    • 6 = 2¹(2²-1) = 2·3 (Euclid-Euler 정리, p=2)")
-print(f"    • σ(6)/6 = 12/6 = 2 ← 우리 상수 2!")
-print(f"    • 6의 약수 {1,2,3}의 역수: 1/1 + 1/2 + 1/3 + 1/6 = 2 ★")
-matches.append(("2", "1/1 + 1/2 + 1/3 + 1/6 = 2 (완전수 조화급수)", "완전수"))
-matches.append(("1/2", "6의 약수 역수", "완전수"))
-matches.append(("1/3", "6의 약수 역수", "완전수"))
-matches.append(("1/6", "6의 약수 역수", "완전수"))
+print(f"    Number theoretic meaning:")
+print(f"    • 6 = 2¹(2²-1) = 2·3 (Euclid-Euler theorem, p=2)")
+print(f"    • σ(6)/6 = 12/6 = 2 ← our constant 2!")
+print(f"    • Reciprocals of divisors {1,2,3}: 1/1 + 1/2 + 1/3 + 1/6 = 2 ★")
+matches.append(("2", "1/1 + 1/2 + 1/3 + 1/6 = 2 (perfect number harmonic series)", "perfect number"))
+matches.append(("1/2", "divisor reciprocal of 6", "perfect number"))
+matches.append(("1/3", "divisor reciprocal of 6", "perfect number"))
+matches.append(("1/6", "divisor reciprocal of 6", "perfect number"))
 
 print()
-print(f"    S₃ 부분군 격자와 완전수:")
-print(f"    • 부분군 개수: 6 ({{e}}, ⟨(12)⟩, ⟨(13)⟩, ⟨(23)⟩, A₃, S₃)")
-print(f"    • 정규부분군: {{e}}, A₃, S₃ → 3개")
+print(f"    S₃ subgroup lattice and perfect numbers:")
+print(f"    • Number of subgroups: 6 ({{e}}, ⟨(12)⟩, ⟨(13)⟩, ⟨(23)⟩, A₃, S₃)")
+print(f"    • Normal subgroups: {{e}}, A₃, S₃ → 3 of them")
 print(f"    • [S₃ : A₃] = 2, [S₃ : {{e}}] = 6, [A₃ : {{e}}] = 3")
-print(f"    • 지수들: {{2, 3, 6}} = 6의 약수 (1 제외) ★")
-matches.append(("6", "부분군 지수 집합 = {2,3,6} = 6의 약수", "부분군"))
+print(f"    • Indices: {{2, 3, 6}} = divisors of 6 (except 1) ★")
+matches.append(("6", "subgroup index set = {2,3,6} = divisors of 6", "subgroup"))
 
 # ============================================================
-# 5. S₃ 작용: {1/2, 1/3, 1/6} 궤도 구조
+# 5. S₃ Action: {1/2, 1/3, 1/6} Orbit Structure
 # ============================================================
-print("\n[5] S₃ 작용: {1/2, 1/3, 1/6} 궤도 구조")
+print("\n[5] S₃ Action: {1/2, 1/3, 1/6} Orbit Structure")
 
 elements = [Fraction(1, 2), Fraction(1, 3), Fraction(1, 6)]
-print(f"    집합 X = {{{', '.join(str(x) for x in elements)}}}")
-print(f"    합: {sum(elements)} = 1")
-matches.append(("1/2, 1/3, 1/6", "1/2 + 1/3 + 1/6 = 1 (이집트 분수)", "이집트 분수"))
+print(f"    Set X = {{{', '.join(str(x) for x in elements)}}}")
+print(f"    Sum: {sum(elements)} = 1")
+matches.append(("1/2, 1/3, 1/6", "1/2 + 1/3 + 1/6 = 1 (Egyptian fraction)", "Egyptian fraction"))
 
-# S₃의 모든 치환을 X에 적용
+# Apply all permutations of S₃ to X
 perms = list(itertools.permutations(elements))
-print(f"\n    S₃ 치환 작용 (6개 원소):")
+print(f"\n    S₃ permutation action (6 elements):")
 for i, p in enumerate(perms):
     print(f"      σ_{i+1}: ({elements[0]}, {elements[1]}, {elements[2]}) → "
           f"({p[0]}, {p[1]}, {p[2]})")
 
-# 궤도: S₃는 X 위에 추이적으로 작용 (transitive action)
-print(f"\n    궤도 분석:")
-print(f"    • S₃가 X = {{1/2, 1/3, 1/6}}에 치환으로 작용")
-print(f"    • 작용은 추이적(transitive): 단일 궤도")
-print(f"    • 안정자(stabilizer) 크기 = |S₃|/|궤도| = 6/3 = 2")
-print(f"    • 각 원소의 안정자 ≅ Z₂ (호환)")
+# Orbits: S₃ acts transitively on X
+print(f"\n    Orbit analysis:")
+print(f"    • S₃ acts on X = {{1/2, 1/3, 1/6}} by permutations")
+print(f"    • Action is transitive: single orbit")
+print(f"    • Stabilizer size = |S₃|/|orbit| = 6/3 = 2")
+print(f"    • Each element's stabilizer ≅ Z₂ (transposition)")
 
-# 불변량 분석
-print(f"\n    S₃-불변량:")
+# Invariant analysis
+print(f"\n    S₃-invariants:")
 sym_funcs = {
-    "e₁ (합)": sum(elements),
-    "e₂ (쌍곱합)": elements[0]*elements[1] + elements[0]*elements[2] + elements[1]*elements[2],
-    "e₃ (곱)": elements[0] * elements[1] * elements[2],
+    "e₁ (sum)": sum(elements),
+    "e₂ (pairwise product sum)": elements[0]*elements[1] + elements[0]*elements[2] + elements[1]*elements[2],
+    "e₃ (product)": elements[0] * elements[1] * elements[2],
 }
 for name, val in sym_funcs.items():
     marker = ""
     if val in constants:
-        marker = " ★ 매칭!"
-        matches.append((str(val), f"대칭함수 {name}", "S₃-불변량"))
+        marker = " ★ Match!"
+        matches.append((str(val), f"symmetric function {name}", "S₃-invariant"))
     print(f"    • {name} = {val}{marker}")
 
-# Newton 멱합
+# Newton power sums
 power_sums = {}
 for k in range(1, 5):
     pk = sum(x**k for x in elements)
     power_sums[f"p_{k}"] = pk
     marker = ""
     if pk in constants:
-        marker = " ★ 매칭!"
-        matches.append((str(pk), f"멱합 p_{k}", "S₃-불변량"))
+        marker = " ★ Match!"
+        matches.append((str(pk), f"power sum p_{k}", "S₃-invariant"))
     print(f"    • p_{k} = Σx^{k} = {pk}{marker}")
 
-# 5/6 검사
-print(f"\n    5/6 출현 검사:")
+# 5/6 check
+print(f"\n    5/6 occurrence check:")
 diff_56 = Fraction(5, 6)
 print(f"    • 1 - 1/6 = {1 - Fraction(1,6)} = 5/6 ✓")
 print(f"    • 1/2 + 1/3 = {Fraction(1,2) + Fraction(1,3)} = 5/6 ✓")
-matches.append(("5/6", "1/2 + 1/3 = 5/6, 또는 1 - 1/6 = 5/6", "분수 관계"))
+matches.append(("5/6", "1/2 + 1/3 = 5/6, or 1 - 1/6 = 5/6", "fraction relation"))
 
 # e₂ = 1/2·1/3 + 1/2·1/6 + 1/3·1/6
-e2 = sym_funcs["e₂ (쌍곱합)"]
+e2 = sym_funcs["e₂ (pairwise product sum)"]
 print(f"    • e₂ = 1/6 + 1/12 + 1/18 = {e2}")
 
 # ============================================================
-# 6. 핵심 발견 요약
+# 6. Key Findings Summary
 # ============================================================
 print("\n" + "=" * 60)
-print("핵심 발견 요약")
+print("Key Findings Summary")
 print("=" * 60)
 
-# 8 검사
-print("\n  8 관련:")
-print(f"    • S₃의 부분군 수 = 6 (8이 아님)")
+# 8 check
+print("\n  8 related:")
+print(f"    • Number of subgroups of S₃ = 6 (not 8)")
 print(f"    • dim(standard⊗standard) = 4, 2³ = 8")
-print(f"    • S₃ Coxeter number h = ? (Weyl군으로서)")
+print(f"    • S₃ Coxeter number h = ? (as Weyl group)")
 
-# 17 검사
-print(f"\n  17 관련:")
+# 17 check
+print(f"\n  17 related:")
 s3_chars_all = [1, 1, 1, 1, -1, 1, 2, 0, -1]
-print(f"    • 지표표 모든 값의 절대값 합 = {sum(abs(c) for c in s3_chars_all)}")
+print(f"    • Sum of absolute values of all character table values = {sum(abs(c) for c in s3_chars_all)}")
 total_abs = sum(abs(c) for c in s3_chars_all)
 if total_abs == 8:
-    print(f"    • = 8 ★ 매칭!")
-    matches.append(("8", "지표표 절대값 총합 = 8", "지표"))
+    print(f"    • = 8 ★ Match!")
+    matches.append(("8", "character table absolute value total = 8", "character"))
 
-# Tensor product 분해
-print(f"\n  텐서곱 분해:")
+# Tensor product decomposition
+print(f"\n  Tensor product decomposition:")
 print(f"    ρ₃ ⊗ ρ₃ = ρ₁ ⊕ ρ₂ ⊕ ρ₃")
-print(f"    검증: χ(ρ₃⊗ρ₃) = (4, 0, 1)")
+print(f"    Verification: χ(ρ₃⊗ρ₃) = (4, 0, 1)")
 print(f"    = χ(ρ₁) + χ(ρ₂) + χ(ρ₃) = (1+1+2, 1-1+0, 1+1-1) = (4, 0, 1) ✓")
 
-print(f"\n  전체 매칭 결과:")
+print(f"\n  Total matching results:")
 for val, desc, category in matches:
     print(f"    [{category}] {val}: {desc}")
 
 # Generate markdown output
 md_lines = []
-md_lines.append("# T1-29: S₃ 대칭군 표현론과 상수 매칭")
+md_lines.append("# T1-29: S₃ Symmetric Group Representation Theory and Constant Matching")
 md_lines.append("")
-md_lines.append("## 정리")
+md_lines.append("## Summary")
 md_lines.append("")
-md_lines.append("S₃(3개 원소의 대칭군)의 표현론적 구조가 상수 체계")
-md_lines.append("{1/2, 1/3, 1/6, 5/6, 2, 6, 8}을 자연스럽게 생성한다.")
+md_lines.append("The representation theoretic structure of S₃ (symmetric group of 3 elements)")
+md_lines.append("naturally generates the constant system {1/2, 1/3, 1/6, 5/6, 2, 6, 8}.")
 md_lines.append("")
-md_lines.append("## 1. S₃ 기본 구조")
+md_lines.append("## 1. S₃ Basic Structure")
 md_lines.append("")
-md_lines.append("- |S₃| = 6 (완전수)")
-md_lines.append("- 켤레류: {e} (크기 1), {(ij)} (크기 3), {(ijk)} (크기 2)")
-md_lines.append("- 기약표현 3개: trivial(1), sign(1), standard(2)")
+md_lines.append("- |S₃| = 6 (perfect number)")
+md_lines.append("- Conjugacy classes: {e} (size 1), {(ij)} (size 3), {(ijk)} (size 2)")
+md_lines.append("- 3 irreducible representations: trivial(1), sign(1), standard(2)")
 md_lines.append("")
-md_lines.append("## 2. 지표표 (Character Table)")
+md_lines.append("## 2. Character Table")
 md_lines.append("")
-md_lines.append("| 표현 | e | (ij) | (ijk) | dim |")
+md_lines.append("| Representation | e | (ij) | (ijk) | dim |")
 md_lines.append("|------|---|------|-------|-----|")
 md_lines.append("| trivial ρ₁ | 1 | 1 | 1 | 1 |")
 md_lines.append("| sign ρ₂ | 1 | -1 | 1 | 1 |")
 md_lines.append("| standard ρ₃ | 2 | 0 | -1 | 2 |")
 md_lines.append("")
-md_lines.append("검증: Σ(dᵢ²) = 1 + 1 + 4 = 6 = |S₃| ✓")
+md_lines.append("Verification: Σ(dᵢ²) = 1 + 1 + 4 = 6 = |S₃| ✓")
 md_lines.append("")
-md_lines.append("## 3. 상수 매칭")
+md_lines.append("## 3. Constant Matching")
 md_lines.append("")
-md_lines.append("### 직접 출현")
+md_lines.append("### Direct Occurrences")
 md_lines.append("")
-md_lines.append("| 상수 | 출현 맥락 | 범주 |")
+md_lines.append("| Constant | Occurrence Context | Category |")
 md_lines.append("|------|----------|------|")
 for val, desc, category in matches:
     md_lines.append(f"| {val} | {desc} | {category} |")
 md_lines.append("")
-md_lines.append("### 핵심 관계")
+md_lines.append("### Key Relationships")
 md_lines.append("")
-md_lines.append("1. **완전수 조화급수**: 1/1 + 1/2 + 1/3 + 1/6 = 2")
-md_lines.append("   - 6의 약수 역수의 합 = σ(6)/6 = 2")
-md_lines.append("   - 이는 완전수의 정의 그 자체")
+md_lines.append("1. **Perfect number harmonic series**: 1/1 + 1/2 + 1/3 + 1/6 = 2")
+md_lines.append("   - Sum of reciprocals of divisors of 6 = σ(6)/6 = 2")
+md_lines.append("   - This is the definition of perfect number itself")
 md_lines.append("")
-md_lines.append("2. **이집트 분수**: 1/2 + 1/3 + 1/6 = 1")
-md_lines.append("   - {1/2, 1/3, 1/6}은 1의 이집트 분수 분해")
-md_lines.append("   - S₃가 이 집합에 자연스럽게 작용")
+md_lines.append("2. **Egyptian fraction**: 1/2 + 1/3 + 1/6 = 1")
+md_lines.append("   - {1/2, 1/3, 1/6} is an Egyptian fraction decomposition of 1")
+md_lines.append("   - S₃ naturally acts on this set")
 md_lines.append("")
 md_lines.append("3. **5/6 = 1/2 + 1/3 = 1 - 1/6**")
-md_lines.append("   - 대칭함수의 자연스러운 조합")
+md_lines.append("   - Natural combination of symmetric functions")
 md_lines.append("")
-md_lines.append("4. **지표표 절대값 총합 = 8**")
+md_lines.append("4. **Character table absolute value sum = 8**")
 md_lines.append("   - |1|+|1|+|1|+|1|+|-1|+|1|+|2|+|0|+|-1| = 8")
 md_lines.append("")
-md_lines.append("## 4. |S₃| = 6 = 완전수")
+md_lines.append("## 4. |S₃| = 6 = Perfect Number")
 md_lines.append("")
-md_lines.append("6은 최소의 완전수이며:")
+md_lines.append("6 is the smallest perfect number and:")
 md_lines.append("")
 md_lines.append("- σ(6) = 12, σ(6)/6 = 2")
-md_lines.append("- 약수 역수 합 = 2 (완전수 특성)")
-md_lines.append("- 부분군 지수 집합 {2, 3, 6} = 6의 (자명하지 않은) 약수")
-md_lines.append("- S₃의 유일한 정규부분군 A₃ ≅ Z₃, 지수 [S₃:A₃] = 2")
+md_lines.append("- Sum of divisor reciprocals = 2 (perfect number property)")
+md_lines.append("- Subgroup index set {2, 3, 6} = (non-trivial) divisors of 6")
+md_lines.append("- S₃'s unique normal subgroup A₃ ≅ Z₃, index [S₃:A₃] = 2")
 md_lines.append("")
-md_lines.append("**완전수와 대칭군의 연결**: S₃는 완전수 위수를 가진 유일한")
-md_lines.append("비가환 대칭군이다. 다음 완전수 28 = |S₄|/... 이 아니며,")
-md_lines.append("6 = 3!이 완전수인 것은 n!이 완전수가 되는 유일한 경우이다.")
+md_lines.append("**Connection between perfect numbers and symmetric groups**: S₃ is the unique")
+md_lines.append("non-abelian symmetric group with perfect number order. The next perfect")
+md_lines.append("number 28 ≠ |S₄|/..., and 6 = 3! is the only case where n! is a perfect number.")
 md_lines.append("")
-md_lines.append("## 5. S₃ 작용: {1/2, 1/3, 1/6} 궤도 구조")
+md_lines.append("## 5. S₃ Action: {1/2, 1/3, 1/6} Orbit Structure")
 md_lines.append("")
-md_lines.append("S₃가 X = {1/2, 1/3, 1/6}에 치환으로 작용할 때:")
+md_lines.append("When S₃ acts on X = {1/2, 1/3, 1/6} by permutations:")
 md_lines.append("")
-md_lines.append("- 작용은 **추이적(transitive)**: 단일 궤도")
-md_lines.append("- 안정자(stabilizer) ≅ Z₂ (궤도-안정자 정리: 6/3 = 2)")
-md_lines.append("- S₃-불변 대칭함수:")
+md_lines.append("- Action is **transitive**: single orbit")
+md_lines.append("- Stabilizer ≅ Z₂ (orbit-stabilizer theorem: 6/3 = 2)")
+md_lines.append("- S₃-invariant symmetric functions:")
 md_lines.append(f"  - e₁ = 1/2 + 1/3 + 1/6 = 1")
 md_lines.append(f"  - e₂ = 1/6 + 1/12 + 1/18 = {e2}")
-md_lines.append(f"  - e₃ = 1/2 · 1/3 · 1/6 = {sym_funcs['e₃ (곱)']}")
+md_lines.append(f"  - e₃ = 1/2 · 1/3 · 1/6 = {sym_funcs['e₃ (product)']}")
 md_lines.append("")
-md_lines.append("## 6. 텐서곱 분해")
+md_lines.append("## 6. Tensor Product Decomposition")
 md_lines.append("")
 md_lines.append("ρ₃ ⊗ ρ₃ = ρ₁ ⊕ ρ₂ ⊕ ρ₃")
 md_lines.append("")
-md_lines.append("이는 standard 표현의 자기-텐서곱이 모든 기약표현을 포함함을 의미한다.")
-md_lines.append("S₃의 표현론이 \"완전\"하다는 것의 또 다른 표현이다.")
+md_lines.append("This means the self-tensor product of the standard representation contains all irreducible representations.")
+md_lines.append("Another expression of S₃'s representation theory being \"complete\".")
 md_lines.append("")
-md_lines.append("## 7. 137 연결")
+md_lines.append("## 7. 137 Connection")
 md_lines.append("")
-md_lines.append("- 137은 소수이므로 137! 이전의 n!에서는 137이 인수로 나타나지 않음")
-md_lines.append("- S₁₃₇에서 처음으로 위수가 137의 배수")
-md_lines.append("- S₃ 자체에서 137의 직접 출현은 없음")
-md_lines.append("- 그러나 σ(6)² - 7 = 144 - 7 = 137 (T1-23에서 증명)")
+md_lines.append("- 137 is prime, so 137 doesn't appear as a factor in n! before 137!")
+md_lines.append("- S₁₃₇ is the first symmetric group with order divisible by 137")
+md_lines.append("- No direct occurrence of 137 in S₃ itself")
+md_lines.append("- However σ(6)² - 7 = 144 - 7 = 137 (proven in T1-23)")
 md_lines.append("")
-md_lines.append("## 결론")
+md_lines.append("## Conclusion")
 md_lines.append("")
-md_lines.append("S₃의 표현론은 상수 집합 {1/2, 1/3, 1/6, 5/6, 2, 6, 8}을")
-md_lines.append("자연스럽게 생성한다. 특히:")
+md_lines.append("S₃'s representation theory naturally generates the constant set {1/2, 1/3, 1/6, 5/6, 2, 6, 8}.")
+md_lines.append("In particular:")
 md_lines.append("")
-md_lines.append("1. |S₃| = 6 (완전수) → σ(6)/6 = 2")
-md_lines.append("2. {1/2, 1/3, 1/6}은 S₃의 자연스러운 작용 대상이며 합이 1")
-md_lines.append("3. 5/6 = 1/2 + 1/3 (부분합)")
-md_lines.append("4. 지표표 절대값 총합 = 8")
-md_lines.append("5. 137 = σ(6)² - 7 (간접 연결)")
+md_lines.append("1. |S₃| = 6 (perfect number) → σ(6)/6 = 2")
+md_lines.append("2. {1/2, 1/3, 1/6} is a natural S₃ action target with sum 1")
+md_lines.append("3. 5/6 = 1/2 + 1/3 (partial sum)")
+md_lines.append("4. Character table absolute value sum = 8")
+md_lines.append("5. 137 = σ(6)² - 7 (indirect connection)")
 md_lines.append("")
-md_lines.append("17은 S₃ 표현론에서 직접 나타나지 않으며, 이는 17의 출현이")
-md_lines.append("다른 구조(소수 분포, ln 근사 등)에서 기원함을 시사한다.")
+md_lines.append("17 does not appear directly in S₃ representation theory, suggesting that 17's occurrence")
+md_lines.append("originates from other structures (prime distribution, ln approximation, etc.).")
 md_lines.append("")
 md_lines.append("---")
-md_lines.append("*증명 방법: 직접 계산 (Python)*")
-md_lines.append("*검증: 직교성 관계, 차원 공식, Burnside 보조정리*")
+md_lines.append("*Proof method: Direct computation (Python)*")
+md_lines.append("*Verification: Orthogonality relations, dimension formula, Burnside's lemma*")
 
 with open("/Users/ghost/Dev/test-8/docs/proofs/T1-29-S3-representation.md", "w") as f:
     f.write("\n".join(md_lines) + "\n")
 
-print("\n\n✓ 결과 저장: docs/proofs/T1-29-S3-representation.md")
+print("\n\n✓ Result saved: docs/proofs/T1-29-S3-representation.md")

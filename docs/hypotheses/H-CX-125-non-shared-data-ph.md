@@ -1,4 +1,4 @@
-# H-CX-125: 비공유 데이터 PH 상관 — 한 번도 같은 것을 안 봐도 같은 PH
+# H-CX-125: Non-shared Data PH Correlation — Same PH Even Without Seeing the Same Thing
 
-> MNIST를 절반 분할: A(0~29999), B(30000~59999). 공유=0.
-> 두 모델의 PH merge 순서가 동일하면 텔레파시의 수학적 모델.
+> Split MNIST in half: A(0~29999), B(30000~59999). Shared=0.
+> If two models' PH merge orders are identical, it's a mathematical model of telepathy.

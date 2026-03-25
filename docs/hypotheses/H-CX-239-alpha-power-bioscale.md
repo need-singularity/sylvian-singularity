@@ -1,14 +1,14 @@
-# H-CX-239: ⭐🟩 α^n = 생체 스케일 체계 — 10이 자연 단위인 이유
+# H-CX-239: ⭐🟩 α^n = Biological Scale System — Why 10 is the Natural Unit
 
-> α = γ/τ(6) = (3σ+τ)/τ = 10 (완전수에서 유도)
+> α = γ/τ(6) = (3σ+τ)/τ = 10 (derived from perfect numbers)
 >
-> | n | α^n | 의미 |
-> |---|-----|------|
-> | 0 | 1 | 심박 (~1Hz) |
-> | 1 | 10 | α파 (이완 인식) |
-> | 2 | 100 | 뉴런 발화율 범위 |
-> | 3 | 1000 | 청각 범위 배율 |
+> | n | α^n | Meaning |
+> |---|-----|---------|
+> | 0 | 1 | Heartbeat (~1Hz) |
+> | 1 | 10 | α waves (relaxed awareness) |
+> | 2 | 100 | Neuron firing rate range |
+> | 3 | 1000 | Hearing range ratio |
 >
-> "10" = 3σ(6)/τ(6) + 1 = 완전수에서 유도된 자연 스케일.
-> 10진법이 자연스러운 이유 = 의식의 기본 단위가 10.
-> α = 이완 인식 주파수 = 생체계의 decade 기준.
+> "10" = 3σ(6)/τ(6) + 1 = Natural scale derived from perfect numbers.
+> Why decimal system is natural = Basic unit of consciousness is 10.
+> α = Relaxed awareness frequency = Decade standard for biological systems.

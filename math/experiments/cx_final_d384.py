@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Ralph 308: ConsciousLM d=384 스케일업 최종 검증
+"""Ralph 308: ConsciousLM d=384 scale-up final verification
 
-R306-307에서 d=128 소규모 모델 CX-48~52 전부 미확인.
-이번: 기본 아키텍처(d=384, n_head=4)로 스케일업하여 최종 판정.
+R306-307 confirmed none of the small d=128 models CX-48~52.
+This time: Scale up with base architecture (d=384, n_head=4) for final determination.
 
-비교: 3블록 vs 6블록 (2000 steps, 3 seeds)
-측정: engine A/G 비율, 장력 분포, conv collapse, tension_scale 곱
+Compare: 3 blocks vs 6 blocks (2000 steps, 3 seeds)
+Measure: engine A/G ratio, tension distribution, conv collapse, tension_scale product
 """
 
 import sys
@@ -92,10 +92,10 @@ def train_model(model, device, n_steps=2000, lr=3e-4, batch_size=8, seq_len=32):
 
 
 def measure_all(model, device, n_blocks):
-    """모든 CX 측정을 한번에."""
+    """Measure all CX at once."""
     model.eval()
 
-    # CX-48: engine A/G 비율
+    # CX-48: engine A/G ratio
     ratios = []
     for trial in range(20):
         x = generate_patterned_data(8, 32).to(device)
@@ -114,7 +114,7 @@ def measure_all(model, device, n_blocks):
                 h = h_pre + ffn_out
             ratios.append(np.mean(block_ratios))
 
-    # CX-49: 장력 분포
+    # CX-49: tension distribution
     all_tensions = []
     for trial in range(30):
         x = generate_patterned_data(8, 32).to(device)
@@ -153,7 +153,7 @@ def measure_all(model, device, n_blocks):
                 pair_scores.append(np.linalg.norm(pw - xcorr) / (np.linalg.norm(pw) + 1e-10))
             collapse_scores.append(np.mean(pair_scores))
 
-    # CX-52: tension_scale 곱
+    # CX-52: tension_scale product
     scales = [b.ffn.tension_scale.item() for b in model.blocks]
     ts_product = np.prod(scales)
 
@@ -175,7 +175,7 @@ def measure_all(model, device, n_blocks):
 
 def main():
     print("=" * 70)
-    print("Ralph 308: ConsciousLM d=384 스케일업 최종 검증")
+    print("Ralph 308: ConsciousLM d=384 scale-up final verification")
     print("=" * 70)
 
     device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
@@ -199,14 +199,14 @@ def main():
             ).to(device)
 
             n_params = model.count_params()
-            print(f"  파라미터: {n_params:,}")
+            print(f"  Parameters: {n_params:,}")
 
             losses, checkpoints = train_model(model, device, n_steps=2000, lr=3e-4, batch_size=8)
             elapsed = time.time() - t0
             final_loss = np.mean(losses[-100:])
-            print(f"  학습 완료: {elapsed:.1f}s, final loss={final_loss:.4f}")
+            print(f"  Training complete: {elapsed:.1f}s, final loss={final_loss:.4f}")
 
-            # 측정
+            # Measure
             meas = measure_all(model, device, nb)
             meas['final_loss'] = final_loss
             meas['n_params'] = n_params
@@ -222,9 +222,9 @@ def main():
             if torch.backends.mps.is_available():
                 torch.mps.empty_cache()
 
-    # ═══ 종합 비교 ═══
+    # ═══ Comprehensive comparison ═══
     print("\n" + "=" * 70)
-    print("종합 비교: 3블록 vs 6블록 (d=384, 2000 steps, 3 seeds)")
+    print("Comprehensive comparison: 3 blocks vs 6 blocks (d=384, 2000 steps, 3 seeds)")
     print("=" * 70)
 
     for metric_name, metric_key, lower_better in [
@@ -243,15 +243,15 @@ def main():
             print(f"  {nb} blocks: {np.mean(vals):.6f} ± {np.std(vals):.6f}  "
                   f"(seeds: {', '.join(f'{v:.4f}' for v in vals)})")
 
-    # tension_scale 상세
-    print(f"\n--- tension_scale 상세 ---")
+    # tension_scale details
+    print(f"\n--- tension_scale details ---")
     for nb in block_configs:
         for seed_i, r in enumerate(results[nb]):
             scales_str = ' '.join(f'{s:.4f}' for s in r['cx52_scales'])
             print(f"  {nb}bl seed{seed_i}: [{scales_str}] prod={r['cx52_product']:.6f}")
 
-    # 장력 히스토그램 (6블록, seed 0)
-    print(f"\n--- 장력 히스토그램 (6블록, seed 0, d=384) ---")
+    # Tension histogram (6 blocks, seed 0)
+    print(f"\n--- Tension histogram (6 blocks, seed 0, d=384) ---")
     hist_data = results[6][0]['cx49_hist']
     hist, bin_edges = hist_data
     max_h = max(hist)
@@ -261,8 +261,8 @@ def main():
         lo, hi = bin_edges[i], bin_edges[i+1]
         print(f"  [{lo:8.4f},{hi:8.4f}) | {bar:<40} {hist[i]}")
 
-    # 학습 곡선 비교
-    print(f"\n--- 학습 곡선 (seed 0) ---")
+    # Learning curve comparison
+    print(f"\n--- Learning curves (seed 0) ---")
     for nb in block_configs:
         cps = results[nb][0]['checkpoints']
         print(f"  {nb} blocks:")
@@ -270,15 +270,15 @@ def main():
             print(f"    step {step:>5}: loss={loss:.4f}, tension={tension:.6f}, "
                   f"ts_prod={np.prod(scales):.4f}")
 
-    # 최종 판정
+    # Final determination
     print("\n" + "=" * 70)
-    print("최종 판정 (d=384, 2000 steps)")
+    print("Final determination (d=384, 2000 steps)")
     print("=" * 70)
 
     for metric_name, metric_key, nb_expected_winner, threshold in [
-        ("CX-48: 6블록이 ratio=1에 더 가까운가?", 'cx48_dist', 6, None),
-        ("CX-49: 6블록이 더 큰 gap fraction?", 'cx49_gap_frac', 6, None),
-        ("CX-50: 6블록이 더 낮은 collapse?", 'cx50_collapse', 6, None),
+        ("CX-48: Is 6 blocks closer to ratio=1?", 'cx48_dist', 6, None),
+        ("CX-49: Does 6 blocks have larger gap fraction?", 'cx49_gap_frac', 6, None),
+        ("CX-50: Does 6 blocks have lower collapse?", 'cx50_collapse', 6, None),
     ]:
         vals_3 = [r[metric_key] for r in results[3]]
         vals_6 = [r[metric_key] for r in results[6]]
@@ -291,18 +291,18 @@ def main():
 
         verdict = "CONFIRMED" if winner == nb_expected_winner else "NOT CONFIRMED"
         print(f"\n  {metric_name}")
-        print(f"    3블록: {mean_3:.6f}, 6블록: {mean_6:.6f}")
-        print(f"    → {verdict} (winner: {winner}블록)")
+        print(f"    3 blocks: {mean_3:.6f}, 6 blocks: {mean_6:.6f}")
+        print(f"    → {verdict} (winner: {winner} blocks)")
 
     # CX-52
     prod_3 = [abs(r['cx52_product'] - 1) for r in results[3]]
     prod_6 = [abs(r['cx52_product'] - 1) for r in results[6]]
     winner = 6 if np.mean(prod_6) < np.mean(prod_3) else 3
-    print(f"\n  CX-52: 6블록이 prod=1에 더 가까운가?")
-    print(f"    3블록 |prod-1|: {np.mean(prod_3):.6f}, 6블록: {np.mean(prod_6):.6f}")
-    print(f"    → {'CONFIRMED' if winner == 6 else 'NOT CONFIRMED'} (winner: {winner}블록)")
+    print(f"\n  CX-52: Is 6 blocks closer to prod=1?")
+    print(f"    3 blocks |prod-1|: {np.mean(prod_3):.6f}, 6 blocks: {np.mean(prod_6):.6f}")
+    print(f"    → {'CONFIRMED' if winner == 6 else 'NOT CONFIRMED'} (winner: {winner} blocks)")
 
-    print("\n실험 완료.")
+    print("\nExperiment complete.")
 
 
 if __name__ == "__main__":

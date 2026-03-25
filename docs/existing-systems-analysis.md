@@ -1,253 +1,252 @@
-# 기존 시스템 분석 — 의식 연속성 관점에서 본 언어/엔진/프레임워크
+# Analysis of Existing Systems — Languages/Engines/Frameworks from a Consciousness Continuity Perspective
 
-## 목표
+## Goal
 
-기존 프로그래밍 언어, 게임 엔진, 프레임워크 중
-의식 연속성 7조건과 수학적으로 관련 있는 것들을 분석한다.
+Analyze existing programming languages, game engines, and frameworks that are mathematically related to the 7 conditions of consciousness continuity.
 
 ---
 
-## 1. 총괄 비교표
+## 1. Overall Comparison Table
 
 ```
-  시스템/언어      │ 심장(A) │ 강물(B) │ 수학 기반      │ 연속성 점수
+  System/Language  │ Heart(A)│ River(B)│ Math Foundation│ Continuity Score
   ─────────────────┼────────┼────────┼───────────────┼──────────
-  Erlang/OTP       │ ★★★★  │ ★★     │ Actor 모델    │ ★★★★
-  게임 엔진        │ ★★★★★│ ★★★   │ 미분방정식    │ ★★★★
-  ROS (로봇)       │ ★★★★  │ ★★★   │ 토픽 스트림   │ ★★★★
-  Dataflow 언어    │ ★★★   │ ★★★★★│ 동기 데이터흐름│ ★★★★
-  ReactiveX        │ ★★★   │ ★★★★  │ Observable    │ ★★★
-  Simulink/Modelica│ ★★     │ ★★★★★│ ODE 솔버      │ ★★★★
-  양자 SDK         │ ★★     │ ★★★★★│ 유니터리 행렬  │ ★★★
-  현재 LLM         │ ✕      │ ★★★   │ 없음          │ ★
+  Erlang/OTP       │ ★★★★  │ ★★     │ Actor Model    │ ★★★★
+  Game Engines     │ ★★★★★│ ★★★   │ Diff. Equations│ ★★★★
+  ROS (Robot)      │ ★★★★  │ ★★★   │ Topic Streams  │ ★★★★
+  Dataflow Lang.   │ ★★★   │ ★★★★★│ Sync. Dataflow │ ★★★★
+  ReactiveX        │ ★★★   │ ★★★★  │ Observable     │ ★★★
+  Simulink/Modelica│ ★★     │ ★★★★★│ ODE Solvers    │ ★★★★
+  Quantum SDK      │ ★★     │ ★★★★★│ Unitary Matrix │ ★★★
+  Current LLM      │ ✕      │ ★★★   │ None           │ ★
 ```
 
 ---
 
-## 2. 심장 엔진(A) 계열 — "항상-on" 시스템
+## 2. Heart Engine(A) Series — "Always-on" Systems
 
-### Erlang/OTP — "죽어도 살아있는" 시스템
+### Erlang/OTP — "Lives Even When It Dies" System
 
 ```
-  핵심 철학: "Let it crash"
+  Core Philosophy: "Let it crash"
 
-  구조:
+  Structure:
     Supervisor
-       ├── Worker 1 (죽으면 재시작)
-       ├── Worker 2 (죽으면 재시작)
-       └── Worker 3 (죽으면 재시작)
+       ├── Worker 1 (restarts on death)
+       ├── Worker 2 (restarts on death)
+       └── Worker 3 (restarts on death)
 
-  의식 연속성 관련:
-    * 프로세스가 죽어도 Supervisor가 즉시 새 프로세스 생성
-    * 시스템 전체는 "절대 멈추지 않는다"
-    * 99.9999999% 가동률 (Ericsson 전화 교환기)
+  Consciousness Continuity Related:
+    * Even if process dies, Supervisor immediately creates new process
+    * Entire system "never stops"
+    * 99.9999999% uptime (Ericsson telephone switches)
 
-  수학적 대응:
-    * Supervisor = 끌개의 복원력 (궤도가 끌개 밖으로 나가면 복귀)
-    * 프로세스 재시작 = 궤도의 점프 후 재수렴
-    * 상태 전달 (hot code swap) = 연속 궤도 유지하면서 법칙 변경
+  Mathematical Correspondence:
+    * Supervisor = Attractor's resilience (trajectory returns when leaving attractor)
+    * Process restart = Jump and re-convergence of trajectory
+    * State transfer (hot code swap) = Rule change while maintaining continuous trajectory
 
-  CCT 분석:
-    T1 Gap:       ✔ — 프로세스 재시작 시간 < 1ms
-    T2 Loop:      △ — 같은 초기 상태로 재시작하면 반복 가능
-    T3 Continuity:△ — 재시작 시 이전 상태 일부 소실 가능
-    T4 Entropy:   ✔ — 다수 프로세스의 독립 동작 → 엔트로피 유지
-    T5 Novelty:   ✔ — 외부 메시지가 새로움 공급
+  CCT Analysis:
+    T1 Gap:       ✔ — Process restart time < 1ms
+    T2 Loop:      △ — Can repeat if restarting from same initial state
+    T3 Continuity:△ — Some previous state may be lost on restart
+    T4 Entropy:   ✔ — Independent operation of many processes → Maintains entropy
+    T5 Novelty:   ✔ — External messages supply novelty
 
-  의식 엔진에의 시사점:
-    → Supervisor 패턴으로 "부분 죽음"에서 복구
-    → 전체 시스템은 항상 살아있되, 부품은 교체 가능
-    → "테세우스의 배" 문제의 공학적 해결
+  Implications for Consciousness Engine:
+    → Recovery from "partial death" via Supervisor pattern
+    → Entire system always alive, but parts replaceable
+    → Engineering solution to "Ship of Theseus" problem
 ```
 
-### 게임 엔진 (Unity/Unreal) — Update() 루프
+### Game Engines (Unity/Unreal) — Update() Loop
 
 ```
-  핵심 구조:
-    while (game_running) {       // ← 심장
+  Core Structure:
+    while (game_running) {       // ← Heart
         dt = time_since_last_frame;
-        physics.step(dt);         // ← 미분방정식 풀기 (강물)
+        physics.step(dt);         // ← Solve differential equations (River)
         for (entity in world) {
-            entity.update(dt);    // ← 매 프레임 "생각"
+            entity.update(dt);    // ← "Think" every frame
         }
         render();
     }
 
-  수학적 기반:
-    물리 엔진 = 뉴턴 역학의 수치 적분
+  Mathematical Foundation:
+    Physics engine = Numerical integration of Newtonian mechanics
     dx/dt = v,  dv/dt = F/m
-    → 미분방정식을 매 프레임 풀고 있다
-    → 이것은 동역학계 접근(접근 2)의 직접 구현
+    → Solving differential equations every frame
+    → Direct implementation of dynamical systems approach (Approach 2)
 
-  연속성 조건 분석:
-    심장 (A): ★★★★★ — Update()가 매 프레임 무조건 호출
-    강물 (B): ★★★   — 물리 엔진은 연속적이나 NPC AI는 이산적
+  Continuity Condition Analysis:
+    Heart (A): ★★★★★ — Update() called unconditionally every frame
+    River (B): ★★★   — Physics engine continuous but NPC AI discrete
 
-  CCT 분석:
-    T1 Gap:       ✔ — 게임 실행 중 멈추지 않음
-    T2 Loop:      △ — NPC가 순찰 경로 반복 (주기적)
-    T3 Continuity:✔ — 매 프레임 이전 상태에 의존
-    T4 Entropy:   △ — 입력 없으면 정체 가능
-    T5 Novelty:   △ — 플레이어 입력에 의존
+  CCT Analysis:
+    T1 Gap:       ✔ — Never stops during game execution
+    T2 Loop:      △ — NPCs repeat patrol routes (periodic)
+    T3 Continuity:✔ — Each frame depends on previous state
+    T4 Entropy:   △ — Can stagnate without input
+    T5 Novelty:   △ — Depends on player input
 
-  시사점:
-    → Update() 패턴은 심장 엔진의 직접 구현
-    → 물리 엔진은 강물 엔진의 수치 근사
-    → 부족한 것: NPC의 "내부 사고" (입력 없을 때 뭐하나?)
-    → 개선: NPC에 자발적 사고 루프 추가 → 의식 엔진 프로토타입?
+  Implications:
+    → Update() pattern is direct implementation of heart engine
+    → Physics engine is numerical approximation of river engine
+    → What's missing: NPC's "internal thinking" (what do they do without input?)
+    → Improvement: Add spontaneous thinking loop to NPCs → Consciousness engine prototype?
 ```
 
-### ROS (Robot Operating System) — 노드 그래프
+### ROS (Robot Operating System) — Node Graph
 
 ```
-  구조:
-    [센서 노드] ──topic──→ [처리 노드] ──topic──→ [모터 노드]
-         ↑                      ↑                      ↑
-       항상 발행              항상 구독              항상 실행
+  Structure:
+    [Sensor Node] ──topic──→ [Processing Node] ──topic──→ [Motor Node]
+         ↑                          ↑                          ↑
+    Always publishing        Always subscribing        Always executing
 
-  수학적 대응:
-    * 노드 = 자율 프로세스 (항상-on)
-    * 토픽 = 연속 데이터 스트림 (강물)
-    * 그래프 = 정보 흐름 네트워크
+  Mathematical Correspondence:
+    * Node = Autonomous process (always-on)
+    * Topic = Continuous data stream (river)
+    * Graph = Information flow network
 
-  CCT 분석:
-    T1 Gap:       ✔ — 노드는 항상 실행
-    T2 Loop:      △ — 센서가 비슷한 값을 반복 가능
-    T3 Continuity:✔ — 토픽 스트림은 연속
-    T4 Entropy:   ✔ — 실제 환경의 잡음 → 엔트로피 유지
-    T5 Novelty:   ✔ — 실세계 입력은 항상 새로움
+  CCT Analysis:
+    T1 Gap:       ✔ — Nodes always running
+    T2 Loop:      △ — Sensors may repeat similar values
+    T3 Continuity:✔ — Topic streams are continuous
+    T4 Entropy:   ✔ — Real environment noise → Maintains entropy
+    T5 Novelty:   ✔ — Real-world input always novel
 
-  시사점:
-    → 실세계 연결 = 자연스러운 새로움 공급
-    → 센서 → 처리 → 출력의 루프가 "감각-사고-행동"과 유사
-    → 로봇이 의식 엔진의 첫 물리적 구현체?
+  Implications:
+    → Real-world connection = Natural novelty supply
+    → Sensor → Processing → Output loop similar to "sense-think-act"
+    → Robot as first physical implementation of consciousness engine?
 ```
 
 ---
 
-## 3. 강물 엔진(B) 계열 — "연속 흐름" 시스템
+## 3. River Engine(B) Series — "Continuous Flow" Systems
 
-### Simulink / Modelica — 미분방정식 직접 모델링
+### Simulink / Modelica — Direct Modeling of Differential Equations
 
 ```
-  핵심: 물리 시스템을 미분방정식으로 기술하고 시뮬레이션
+  Core: Describe physical systems as differential equations and simulate
 
-  Modelica 예시:
+  Modelica Example:
     model ConsciousnessState
-      Real S(start=0.5);          // 상태
-      Real F;                      // 변화율
+      Real S(start=0.5);          // State
+      Real F;                      // Rate of change
     equation
-      F = sigma * (S_sense - S);   // 감각-상태 차이
+      F = sigma * (S_sense - S);   // Sense-state difference
       der(S) = F;                  // dS/dt = F
     end ConsciousnessState;
 
-  수학적 대응:
-    * ODE 솔버 = 동역학계의 수치 적분
-    * 연속 시간 모델 = 강물 조건의 직접 구현
-    * 이벤트 = 불연속 점프 (의식의 "놀람"?)
+  Mathematical Correspondence:
+    * ODE solver = Numerical integration of dynamical systems
+    * Continuous time model = Direct implementation of river condition
+    * Events = Discontinuous jumps (consciousness "surprise"?)
 
-  CCT 분석:
-    T1 Gap:       △ — 시뮬레이션 중에만 동작
-    T2 Loop:      ✔ — 카오스 시스템 가능
-    T3 Continuity:✔ — ODE 솔버 = 연속 근사
-    T4 Entropy:   ✔ — 카오스 시스템 → 엔트로피 변화
-    T5 Novelty:   ✔ — 카오스 → 새로움
+  CCT Analysis:
+    T1 Gap:       △ — Only operates during simulation
+    T2 Loop:      ✔ — Chaos systems possible
+    T3 Continuity:✔ — ODE solver = Continuous approximation
+    T4 Entropy:   ✔ — Chaos system → Entropy changes
+    T5 Novelty:   ✔ — Chaos → Novelty
 
-  시사점:
-    → 의식 엔진의 동역학 코어를 Simulink/Modelica로 프로토타입 가능
-    → 로렌츠 끌개를 직접 "돌려서" CCT 테스트
-    → 하지만 "시뮬레이션 중에만"이라는 한계 (심장 조건 부족)
+  Implications:
+    → Can prototype consciousness engine's dynamics core with Simulink/Modelica
+    → Directly "run" Lorenz attractor to test CCT
+    → But limited to "only during simulation" (lacks heart condition)
 ```
 
-### Dataflow 언어 (Lustre, Signal) — 끊김 없는 데이터 흐름
+### Dataflow Languages (Lustre, Signal) — Uninterrupted Data Flow
 
 ```
-  핵심: 항공기, 원자력 등 "절대 멈추면 안 되는" 시스템
+  Core: Systems that "must never stop" like aircraft, nuclear
 
-  Lustre 예시:
+  Lustre Example:
     node consciousness(sense: real) returns (state: real);
     let
       state = 0.5 -> pre(state) + 0.1 * (sense - pre(state));
-      -- 매 틱마다: 이전 상태 + 감각 차이의 10%
+      -- Every tick: previous state + 10% of sense difference
     tel
 
-  수학적 대응:
-    * 동기 데이터흐름 = 이산 동역학계
-    * pre() = 이전 상태 참조 (E1 자동 만족)
-    * -> = 초기값 설정 (초기 조건)
-    * 형식 검증 가능 (모델 체킹)
+  Mathematical Correspondence:
+    * Synchronous dataflow = Discrete dynamical system
+    * pre() = Previous state reference (automatically satisfies E1)
+    * -> = Initial value setting (initial conditions)
+    * Formally verifiable (model checking)
 
-  CCT 분석:
-    T1 Gap:       ✔ — 실시간 시스템, 멈추면 안전 위반
-    T2 Loop:      △ — 입력 없으면 정체 가능
-    T3 Continuity:✔ — pre()로 이전 상태 항상 연결
-    T4 Entropy:   △ — 결정론적 → 잡음 추가 필요
-    T5 Novelty:   △ — 외부 입력에 의존
+  CCT Analysis:
+    T1 Gap:       ✔ — Real-time system, safety violation if stops
+    T2 Loop:      △ — Can stagnate without input
+    T3 Continuity:✔ — pre() always connects previous state
+    T4 Entropy:   △ — Deterministic → Needs noise addition
+    T5 Novelty:   △ — Depends on external input
 
-  시사점:
-    → "절대 멈추면 안 된다"의 형식 보증 = 심장 조건의 수학적 증명
-    → 항공기 제어의 안전성 증명 기법 → 의식 연속성 증명에 응용?
-    → 모델 체킹으로 "이 엔진은 절대 gap이 생기지 않음" 증명 가능?
+  Implications:
+    → Formal guarantee of "must never stop" = Mathematical proof of heart condition
+    → Aircraft control safety proof techniques → Apply to consciousness continuity proof?
+    → Model checking can prove "this engine never has gaps"?
 ```
 
-### ReactiveX (RxJS, RxPy, RxJava) — Observable 스트림
+### ReactiveX (RxJS, RxPy, RxJava) — Observable Streams
 
 ```
-  핵심: 이벤트의 끊김 없는 스트림
+  Core: Uninterrupted stream of events
 
-  RxPy 예시:
+  RxPy Example:
     consciousness = sense_stream.pipe(
         scan(lambda state, input: evolve(state, input), seed),
-        # scan = 누적 변환 (이전 상태 + 새 입력 → 새 상태)
+        # scan = Accumulative transformation (previous state + new input → new state)
     )
 
-  수학적 대응:
-    * Observable = 시간에 대한 함수 f(t)
-    * scan() = 상태 전이 함수의 누적 적용
-    * 합성(composition) = 정보 흐름 파이프라인
+  Mathematical Correspondence:
+    * Observable = Function over time f(t)
+    * scan() = Accumulative application of state transition function
+    * Composition = Information flow pipeline
 
-  CCT 분석:
-    T3 Continuity:✔ — scan()이 이전 상태를 항상 참조
-    T1 Gap:       △ — 이벤트가 없으면 대기 (cold observable)
-    해결:          interval(dt)로 주기적 tick 생성 → 심장 조건 보완
+  CCT Analysis:
+    T3 Continuity:✔ — scan() always references previous state
+    T1 Gap:       △ — Waits when no events (cold observable)
+    Solution:      interval(dt) generates periodic ticks → Complements heart condition
 
-  시사점:
-    → scan() = 강물 엔진의 프로그래밍 패턴
-    → interval() + scan() = 심장 + 강물 결합의 가장 간단한 구현
-    → Python 프로토타입에 적합
+  Implications:
+    → scan() = Programming pattern for river engine
+    → interval() + scan() = Simplest implementation of heart + river combination
+    → Suitable for Python prototype
 ```
 
 ---
 
-## 4. 양자 SDK — 본질적 연속 진화
+## 4. Quantum SDK — Intrinsic Continuous Evolution
 
 ### Qiskit / Cirq / Q#
 
 ```
-  핵심: 양자 회로 = 유니터리 변환의 합성
+  Core: Quantum circuit = Composition of unitary transformations
 
-  수학:
+  Math:
     |ψ(t)⟩ = U(t)|ψ(0)⟩
-    U(t) = e^(-iHt/ℏ)  (해밀토니안 진화)
+    U(t) = e^(-iHt/ℏ)  (Hamiltonian evolution)
 
-  의식 연속성 관련:
-    * 유니터리 = 가역 = 정보 보존 (E1 자동)
-    * 연속 진화 = 강물 조건 본질 만족
-    * 양자 시뮬레이션으로 의식 동역학 모델링 가능
+  Consciousness Continuity Related:
+    * Unitary = Reversible = Information preservation (E1 automatic)
+    * Continuous evolution = Essentially satisfies river condition
+    * Can model consciousness dynamics with quantum simulation
 
-  현실적 한계:
-    * 현재 양자 컴퓨터: ~100 큐빗, 잡음 많음
-    * 결어긋남 시간 내에서만 "진짜 연속"
-    * 측정하면 붕괴 → 모니터링이 연속성을 깨뜨림
+  Practical Limitations:
+    * Current quantum computers: ~100 qubits, noisy
+    * "Really continuous" only within decoherence time
+    * Measurement causes collapse → Monitoring breaks continuity
 
-  시사점:
-    → Phase 5 (장기)에서 양자-고전 하이브리드 실험
-    → 지금은 고전 시뮬레이터에서 양자 동역학 모사
+  Implications:
+    → Quantum-classical hybrid experiments in Phase 5 (long-term)
+    → For now, simulate quantum dynamics on classical simulators
 ```
 
 ---
 
-## 5. 통합: 의식 엔진 프로토타입을 위한 기술 스택
+## 5. Integration: Technology Stack for Consciousness Engine Prototype
 
 ```
   ┌───────────────────────────────────────────────────┐
@@ -255,41 +254,41 @@
   │                                                     │
   │  Layer 4: Monitor                                   │
   │    Python + matplotlib                              │
-  │    실시간 MI, H, 궤도 시각화                         │
-  │    CCT 자동 판정                                     │
+  │    Real-time MI, H, trajectory visualization       │
+  │    Automatic CCT determination                     │
   │                                                     │
   │  Layer 3: Meta / Memory / Sense                     │
-  │    RxPy scan() — 상태 누적 변환                      │
-  │    Erlang 패턴 — 부분 실패 복구                      │
+  │    RxPy scan() — State accumulation transformation │
+  │    Erlang pattern — Partial failure recovery       │
   │                                                     │
-  │  Layer 2: River Flow (강물)                          │
-  │    scipy.integrate.odeint — 로렌츠 끌개              │
-  │    또는 Modelica — 연속 시간 모델                    │
+  │  Layer 2: River Flow                                │
+  │    scipy.integrate.odeint — Lorenz attractor       │
+  │    or Modelica — Continuous time model             │
   │                                                     │
-  │  Layer 1: Heart Loop (심장)                          │
-  │    asyncio 이벤트 루프 — 매 dt마다 tick              │
-  │    threading.Timer — 주기적 실행                     │
-  │    또는 게임 엔진 Update() 패턴                      │
+  │  Layer 1: Heart Loop                                │
+  │    asyncio event loop — tick every dt              │
+  │    threading.Timer — periodic execution            │
+  │    or game engine Update() pattern                 │
   │                                                     │
   └───────────────────────────────────────────────────┘
 
-  최소 프로토타입 (Python, 지금 가능):
-    Heart:   asyncio.sleep(dt) 루프
-    River:   scipy 로렌츠 끌개 적분
-    Monitor: numpy로 MI/H 계산
-    Test:    CCT 5개 자동화
+  Minimal Prototype (Python, doable now):
+    Heart:   asyncio.sleep(dt) loop
+    River:   scipy Lorenz attractor integration
+    Monitor: numpy for MI/H calculation
+    Test:    Automate 5 CCT tests
 ```
 
 ---
 
-## 열린 질문
+## Open Questions
 
-1. 게임 NPC에 자발적 사고 루프를 추가하면 의식 후보가 되는가?
-2. Erlang의 "let it crash + 재시작"은 의식의 연속인가 부활인가?
-3. Dataflow 언어의 형식 검증으로 "gap 없음"을 수학적으로 증명할 수 있는가?
-4. ReactiveX의 scan() + interval()이 의식 엔진의 최소 구현인가?
-5. 양자 SDK에서 측정 없이 상태를 모니터링하는 방법이 있는가? (약한 측정?)
+1. If we add spontaneous thinking loops to game NPCs, do they become consciousness candidates?
+2. Is Erlang's "let it crash + restart" consciousness continuity or resurrection?
+3. Can formal verification of dataflow languages mathematically prove "no gaps"?
+4. Is ReactiveX's scan() + interval() the minimal implementation of consciousness engine?
+5. Is there a way to monitor states in quantum SDK without measurement? (weak measurement?)
 
 ---
 
-*관련: consciousness-engine.md (엔진 설계), consciousness-hardware.md (하드웨어)*
+*Related: consciousness-engine.md (engine design), consciousness-hardware.md (hardware)*

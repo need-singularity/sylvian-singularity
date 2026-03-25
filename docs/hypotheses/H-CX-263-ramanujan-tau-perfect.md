@@ -1,3 +1,3 @@
-# H-CX-263: 🟨 라마누잔 τ함수와 완전수
+# H-CX-263: 🟨 Ramanujan τ Function and Perfect Numbers
 
-> 라마누잔 τ(n)과 약수 τ(n) 혼동 주의. 별도 탐색 필요.
+> Note confusion between Ramanujan τ(n) and divisor τ(n). Separate exploration needed.

@@ -1,23 +1,23 @@
-# H-TREE-1: 동역학계 가지 — R-체인의 이산 동역학
+# H-TREE-1: Dynamical Systems Branch — Discrete Dynamics of R-chains
 
-> **가설**: R(n)→R²(n)→...→1 체인이 이산 동역학계로서 비자명한 구조(주기, 분기, 끌개)를 가진다.
+> **Hypothesis**: The chain R(n)→R²(n)→...→1 has non-trivial structure (periods, bifurcations, attractors) as a discrete dynamical system.
 
-## 현재 상태
-- R<n 증명 → 모든 정수 체인 수렴 (Thm 4)
-- 최장 체인: 193750→6048→120→6→1 (길이 5)
-- 고정점: 1 유일
+## Current Status
+- R<n proven → all integer chains converge (Thm 4)
+- Longest chain: 193750→6048→120→6→1 (length 5)
+- Fixed point: 1 unique
 
-## 미발견 가능성
+## Undiscovered Possibilities
 ```
-  1. R-체인 길이의 분포: 대부분 길이 1(비정수), 가끔 2-5
-  2. "유인 분지"(basin of attraction): R(n)=k인 n의 집합
+  1. Distribution of R-chain lengths: mostly length 1 (non-integer), occasionally 2-5
+  2. "Basin of attraction": set of n where R(n)=k
      → R⁻¹(1)={6}, R⁻¹(6)={120}, R⁻¹(120)={6048,6552}
-     → 이 역상 트리의 구조?
-  3. R을 실수로 확장: R: R⁺→R⁺ 연속 함수의 동역학?
-  4. 비정수 R에서도 수렴 정의 가능?
+     → Structure of this inverse tree?
+  3. Extending R to reals: dynamics of continuous function R: R⁺→R⁺?
+  4. Can convergence be defined for non-integer R?
 ```
 
-## 왜 새 가지인가
-기존 정수론에서 이산 동역학(Collatz, aliquot)은 미해결 문제의 보고. R-동역학은 σφ=nτ에서 자연스럽게 파생되며, Collatz보다 구조가 풍부(곱셈적!).
+## Why a New Branch
+In existing number theory, discrete dynamics (Collatz, aliquot) are treasure troves of unsolved problems. R-dynamics naturally derives from σφ=nτ and has richer structure than Collatz (multiplicative!).
 
-## 파급력: ★★★★ (동역학계+정수론 교차)
+## Impact: ★★★★ (Dynamical Systems + Number Theory Intersection)

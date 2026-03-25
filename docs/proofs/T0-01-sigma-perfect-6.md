@@ -1,16 +1,16 @@
-# T0-01: σ₋₁(6) = 2 (완전수 6의 약수역수합)
+# T0-01: σ₋₁(6) = 2 (Divisor Reciprocal Sum of Perfect Number 6)
 
-## 명제
+## Proposition
 
-6은 완전수이며, σ₋₁(6) = 2이다.
+6 is a perfect number, and σ₋₁(6) = 2.
 
-## 정의
+## Definition
 
-σ₋₁(n) = Σ_{d|n} d⁻¹ (n의 약수 역수의 합)
+σ₋₁(n) = Σ_{d|n} d⁻¹ (sum of reciprocals of divisors of n)
 
-## 직접 계산
+## Direct Calculation
 
-6의 약수: {1, 2, 3, 6}
+Divisors of 6: {1, 2, 3, 6}
 
 ```
 σ₋₁(6) = 1/1 + 1/2 + 1/3 + 1/6
@@ -19,11 +19,11 @@
         = 2
 ```
 
-## 오일러 곱 공식에 의한 검증
+## Verification by Euler Product Formula
 
-6 = 2 × 3 (소인수분해)
+6 = 2 × 3 (prime factorization)
 
-곱셈적 성질에 의해:
+By multiplicative property:
 
 ```
 σ₋₁(6) = σ₋₁(2) × σ₋₁(3)
@@ -33,37 +33,37 @@
         = 2
 ```
 
-## 완전수와의 관계
+## Relationship with Perfect Numbers
 
-완전수 정의: σ(n) = 2n (약수합이 자기 자신의 2배)
+Perfect number definition: σ(n) = 2n (sum of divisors equals twice the number)
 
 ```
 σ(6) = 1 + 2 + 3 + 6 = 12 = 2 × 6  ✓
 ```
 
-σ₋₁(n)과 σ(n)의 관계:
+Relationship between σ₋₁(n) and σ(n):
 
 ```
 σ₋₁(n) = σ(n) / n
 σ₋₁(6) = σ(6) / 6 = 12 / 6 = 2
 ```
 
-따라서 σ₋₁(n) = 2 ⟺ σ(n) = 2n ⟺ n은 완전수.
+Therefore σ₋₁(n) = 2 ⟺ σ(n) = 2n ⟺ n is a perfect number.
 
-## 수치 검증값
+## Numerical Verification Values
 
-| 항목 | 값 |
-|------|-----|
+| Item | Value |
+|------|-------|
 | σ₋₁(6) | 2.000000000000000 |
 | σ(6) | 12 |
-| 6은 완전수 | 참 |
+| 6 is a perfect number | True |
 
-## 근거
+## References
 
-- 유클리드 원론 제IX권 명제36: 2^(p-1)(2^p - 1)이 완전수 (6 = 2¹ × 3 = 2¹(2² - 1))
-- 오일러: 짝수 완전수는 모두 유클리드 형태
+- Euclid's Elements Book IX Proposition 36: 2^(p-1)(2^p - 1) is a perfect number (6 = 2¹ × 3 = 2¹(2² - 1))
+- Euler: All even perfect numbers have Euclidean form
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T0-02 (오일러 곱 절단)
-- T1-01 (완전성: 1/2 + 1/3 + 1/6 = 1)
+- T0-02 (Euler product truncation)
+- T1-01 (Completeness: 1/2 + 1/3 + 1/6 = 1)

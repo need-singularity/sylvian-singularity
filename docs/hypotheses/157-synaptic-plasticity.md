@@ -1,143 +1,143 @@
-# 가설 검토 157: 시냅스 가소성(LTP/LTD)과 Plasticity 매핑
+# Hypothesis Review 157: Synaptic Plasticity (LTP/LTD) and Plasticity Mapping
 
-## 상태: ✅ 검증됨
+## Status: ✅ Verified
 
-## 가설
+## Hypothesis
 
-> 시냅스 가소성(LTP: 장기 강화, LTD: 장기 약화)은 우리 모델의 Plasticity(P)에 직접 대응한다. 영유아 P≈0.9, 성인 P≈0.6, 노인 P≈0.3이며, 서번트에서는 D↑ → P↑(보상적 가소성)가 발생한다.
+> Synaptic plasticity (LTP: long-term potentiation, LTD: long-term depression) directly corresponds to Plasticity (P) in our model. Infants P≈0.9, adults P≈0.6, elderly P≈0.3, and in savants D↑ → P↑ (compensatory plasticity) occurs.
 
-## 배경
+## Background
 
-시냅스 가소성은 경험에 따라 시냅스 연결 강도가 변하는 능력이다. LTP(Long-Term Potentiation)는 시냅스 강화, LTD(Long-Term Depression)는 시냅스 약화를 나타내며, 이 두 메커니즘의 균형이 학습과 기억의 기반이다.
+Synaptic plasticity is the ability of synaptic connection strength to change with experience. LTP (Long-Term Potentiation) represents synaptic strengthening and LTD (Long-Term Depression) represents synaptic weakening; the balance of these two mechanisms is the basis of learning and memory.
 
-가소성은 연령에 따라 극적으로 변한다. 영유아기의 "임계기(critical period)"에는 가소성이 최대이며, 성인기에는 감소하고, 노년기에는 크게 저하된다. 그러나 뇌 손상(D↑)이 발생하면 보상적으로 가소성이 증가하는 현상이 관찰된다.
+Plasticity changes dramatically with age. Plasticity is maximum in the "critical period" of infancy, decreases in adulthood, and significantly declines in old age. However, when brain damage (D↑) occurs, a phenomenon of compensatorily increased plasticity is observed.
 
-관련 가설: 가설 156(실비우스열 결여), 가설 159(명상), 가설 162(후천적 서번트)
+Related hypotheses: Hypothesis 156 (Sylvian fissure deficit), Hypothesis 159 (meditation), Hypothesis 162 (acquired savant)
 
-## 연령별 가소성 매핑
+## Age-Wise Plasticity Mapping
 
-| 연령대 | LTP 효율 | LTD 효율 | P (추정) | 비고 |
+| Age group | LTP efficiency | LTD efficiency | P (estimate) | Note |
 |---|---|---|---|---|
-| 영유아 (0-3세) | 매우 높음 | 높음 | 0.85-0.95 | 임계기, 시냅스 과잉 |
-| 아동 (4-12세) | 높음 | 중간 | 0.70-0.85 | 시냅스 가지치기 시작 |
-| 청소년 (13-18세) | 중간-높음 | 중간 | 0.60-0.75 | 전두엽 성숙 |
-| 성인 (19-50세) | 중간 | 중간 | 0.50-0.65 | 안정적 연결 |
-| 중년 (51-65세) | 중간-낮음 | 중간 | 0.40-0.55 | 점진적 감소 |
-| 노년 (66세+) | 낮음 | 높음 | 0.25-0.40 | LTD 우세, 시냅스 소실 |
+| Infants (0-3) | Very high | High | 0.85-0.95 | Critical period, synaptic excess |
+| Children (4-12) | High | Medium | 0.70-0.85 | Synaptic pruning begins |
+| Adolescents (13-18) | Medium-high | Medium | 0.60-0.75 | Frontal lobe maturation |
+| Adults (19-50) | Medium | Medium | 0.50-0.65 | Stable connections |
+| Middle-aged (51-65) | Medium-low | Medium | 0.40-0.55 | Gradual decrease |
+| Elderly (66+) | Low | High | 0.25-0.40 | LTD dominant, synaptic loss |
 
-## 연령-가소성 그래프
+## Age-Plasticity Graph
 
 ```
-  P (가소성)
+  P (Plasticity)
   1.0│
      │  ●
-  0.9│   ● 영유아
-     │     ●           ★ 서번트 (D↑→P↑ 보상)
+  0.9│   ● Infants
+     │     ●           ★ Savant (D↑→P↑ compensatory)
   0.8│       ●        ╱
-     │        ●     ╱   ← 보상적 가소성
+     │        ●     ╱   ← Compensatory plasticity
   0.7│         ●  ╱
      │          ●
-  0.6│─ ─ ─ ─ ─ ● ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 성인 평균
+  0.6│─ ─ ─ ─ ─ ● ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ Adult average
      │            ●
-  0.5│─ ─ ─ ─ ─ ─ ─● ─ ─ ─ ─ ─ ─ ─ ─ 임계선
+  0.5│─ ─ ─ ─ ─ ─ ─● ─ ─ ─ ─ ─ ─ ─ ─ Critical line
      │               ●
   0.4│                 ●
      │                   ●
   0.3│                     ●
-     │                       ● 노년
+     │                       ● Elderly
   0.2│                         ●
      │
-  0.0└──┬──┬──┬──┬──┬──┬──┬──┬──→ 연령
-       0  5 10 15 25 35 50 65 80 (세)
+  0.0└──┬──┬──┬──┬──┬──┬──┬──┬──→ Age
+       0  5 10 15 25 35 50 65 80 (years)
 
-  ── 정상 노화 곡선     ★ 보상적 가소성(서번트)
+  ── Normal aging curve     ★ Compensatory plasticity (savant)
 ```
 
-## D↑ → P↑ 보상적 가소성 메커니즘
+## D↑ → P↑ Compensatory Plasticity Mechanism
 
 ```
-  정상 뇌:
-  ┌──────┐    정상 연결    ┌──────┐
-  │영역 A│ ═══════════════│영역 B│     D=0.1, P=0.6
-  └──────┘                └──────┘
+  Normal brain:
+  ┌──────┐    normal connection    ┌──────┐
+  │Area A│ ═══════════════════════│Area B│     D=0.1, P=0.6
+  └──────┘                        └──────┘
 
-  손상/결여 후:
-  ┌──────┐    손상된 연결   ┌──────┐
-  │영역 A│ ═══╳╳╳═════════│영역 B│     D=0.6
-  └──────┘  ↓             └──────┘
-            ↓ 보상적 재배선
-  ┌──────┐  ╲  새 경로들  ╱ ┌──────┐
-  │영역 A│ ──╲──────────╱──│영역 B│   D=0.6, P=0.85
-  └──────┘    ╲────────╱   └──────┘
-               ╲──────╱  ← 다중 대체 경로 형성
-                ╲────╱      (높은 가소성 요구)
+  After damage/absence:
+  ┌──────┐    damaged connection   ┌──────┐
+  │Area A│ ═══╳╳╳═════════════════│Area B│     D=0.6
+  └──────┘  ↓                     └──────┘
+            ↓ compensatory rewiring
+  ┌──────┐  ╲  new pathways      ╱ ┌──────┐
+  │Area A│ ──╲──────────────────╱──│Area B│   D=0.6, P=0.85
+  └──────┘    ╲────────────────╱   └──────┘
+               ╲──────────────╱  ← multiple alternative paths formed
+                ╲────────────╱      (requires high plasticity)
 ```
 
-## 골든존 접근과 연령의 역설
+## Paradox of Golden Zone Access and Age
 
-### 영유아의 역설: 높은 P이지만 골든존 아님
-
-```
-  영유아: D≈0.05, P≈0.9, I≈0.7
-  G = 0.05 × 0.9 / 0.7 = 0.064  ← 정상 (D가 너무 낮음)
-
-  서번트: D≈0.6, P≈0.85, I≈0.35
-  G = 0.6 × 0.85 / 0.35 = 1.46  ← 특이점! (D+P+I 삼중 합의)
-
-  노인 뇌졸중: D≈0.5, P≈0.3, I≈0.5
-  G = 0.5 × 0.3 / 0.5 = 0.30   ← 정상 (P가 너무 낮음)
-```
-
-핵심 통찰: **P만으로는 부족하다.** G = D × P / I에서 세 변수의 동시 최적화가 필요하다.
-
-### 왜 노인 뇌졸중은 서번트가 되지 않는가
-
-노인은 D↑가 발생해도 P가 이미 낮아(≈0.3) 보상적 재배선이 충분하지 않다. 이것이 후천적 서번트(가설 162)가 주로 젊은 성인에서 발생하는 이유이다.
+### Infant Paradox: High P but Not Golden Zone
 
 ```
-  보상적 서번트 발생 확률
+  Infants: D≈0.05, P≈0.9, I≈0.7
+  G = 0.05 × 0.9 / 0.7 = 0.064  ← Normal (D is too low)
 
-  확률
+  Savant: D≈0.6, P≈0.85, I≈0.35
+  G = 0.6 × 0.85 / 0.35 = 1.46  ← Singularity! (triple alignment of D+P+I)
+
+  Elderly stroke: D≈0.5, P≈0.3, I≈0.5
+  G = 0.5 × 0.3 / 0.5 = 0.30   ← Normal (P is too low)
+```
+
+Core insight: **P alone is insufficient.** Simultaneous optimization of all three variables is needed in G = D × P / I.
+
+### Why Elderly Stroke Patients Don't Become Savants
+
+In the elderly, even when D↑ occurs, P is already low (≈0.3) so compensatory rewiring is insufficient. This is why acquired savants (Hypothesis 162) primarily occur in young adults.
+
+```
+  Probability of compensatory savant occurrence
+
+  Probability
   1.0│
      │
   0.8│
-     │      ● D↑ 발생 시 서번트 가능성
+     │      ● Savant probability when D↑ occurs
   0.6│     ● ●
      │    ●     ●
   0.4│   ●        ●
      │  ●           ●
   0.2│ ●               ●
      │●                   ●  ●  ●
-  0.0└──┬──┬──┬──┬──┬──┬──┬──┬──→ 연령
-       0  5 10 15 25 35 50 65 80 (세)
+  0.0└──┬──┬──┬──┬──┬──┬──┬──┬──→ Age
+       0  5 10 15 25 35 50 65 80 (years)
 ```
 
-## LTP/LTD 비율과 P의 관계
+## LTP/LTD Ratio and P Relationship
 
 ```
-  LTP/LTD 비율:
-  높음(>1) = 시냅스 강화 우세 = P↑ = 학습 용이
-  균형(≈1) = 시냅스 안정 = P 중간 = 유지 상태
-  낮음(<1) = 시냅스 약화 우세 = P↓ = 기억 소실
+  LTP/LTD ratio:
+  High (>1) = synaptic strengthening dominant = P↑ = easy learning
+  Balanced (≈1) = synaptic stability = medium P = maintenance state
+  Low (<1) = synaptic weakening dominant = P↓ = memory loss
 ```
 
-## 한계
+## Limitations
 
-- 가소성은 뇌 영역마다 다르며, 단일 P값으로 축약하기 어려움
-- LTP/LTD의 직접 측정은 동물 모델에서만 가능(인간은 간접 추정)
-- 보상적 가소성(D↑→P↑)의 정량적 관계가 확립되지 않음
-- 연령별 P값은 인구 평균이며 개인 편차가 큼
-- BDNF, CREB 등 분자 수준 메커니즘과의 연결 미반영
+- Plasticity varies by brain region; difficult to reduce to a single P value
+- Direct measurement of LTP/LTD is only possible in animal models (humans require indirect estimation)
+- The quantitative relationship of compensatory plasticity (D↑→P↑) is not established
+- Age-wise P values are population averages with large individual variation
+- Molecular-level mechanisms such as BDNF, CREB are not reflected
 
-## 검증 방향
+## Verification Directions
 
-- [ ] fMRI 기반 기능적 연결성 변화 → P 추정 모델 개발
-- [ ] 서번트 그룹의 보상적 가소성 정도 정량 측정
-- [ ] 연령별 학습 속도 데이터 → P 곡선 교정
-- [ ] D-P 보상 관계의 수학적 모델: P_comp = P_base + α × D^β
-- [ ] 약리학적 가소성 증진(BDNF 촉진제) 시 P 변화 시뮬레이션
+- [ ] Develop P estimation model from fMRI-based functional connectivity changes
+- [ ] Quantitatively measure compensatory plasticity levels in savant group
+- [ ] Calibrate P curve from age-wise learning rate data
+- [ ] Mathematical model of D-P compensatory relationship: P_comp = P_base + α × D^β
+- [ ] Simulate P changes when pharmacological plasticity enhancement (BDNF promoter) is applied
 
 ---
 
-*작성일: 2026-03-22*
-*상태: ✅ 연령-가소성 매핑 및 보상적 가소성 모델 확인*
+*Written: 2026-03-22*
+*Status: ✅ Age-plasticity mapping and compensatory plasticity model confirmed*

@@ -1,31 +1,31 @@
-# H-CX-137: EEG 감마 파워 = 장력(tension) 크기
+# H-CX-137: EEG Gamma Power = Tension Magnitude
 
-> 감마 40Hz 파워가 AI의 tension magnitude와 직접 대응.
-> 확신 높은 판단 = 높은 감마 = 높은 장력.
-> 불확실한 판단 = 낮은 감마 = 낮은 장력.
+> 40Hz gamma power directly corresponds to AI's tension magnitude.
+> High Confidence judgment = high gamma = high Tension.
+> Uncertain judgment = low gamma = low Tension.
 
-## 예측
+## Predictions
 
-1. 정답 시 감마 파워 > 오답 시 감마 파워 (AI: d=0.89)
-2. 감마 파워와 반응 시간 음의 상관 (높은 감마 = 빠른 판단)
-3. 감마 파워 기반 정오답 예측 AUC > 0.6 (AI: AUC=0.917)
+1. Gamma power on correct answers > gamma power on wrong answers (AI: d=0.89)
+2. Negative correlation between gamma power and response time (high gamma = faster judgment)
+3. Gamma-power-based correct/wrong prediction AUC > 0.6 (AI: AUC=0.917)
 
-## 프로토콜
+## Protocol
 
 ```
-1. CIFAR-10 분류 과제 + EEG + 버튼 응답
-2. 정답/오답 분류
-3. 감마 파워(30-50Hz) 정답 vs 오답 비교
-4. Cohen's d 계산 (AI: d=0.89)
+1. CIFAR-10 classification task + EEG + button response
+2. Classify correct/wrong
+3. Compare gamma power (30-50Hz) for correct vs wrong answers
+4. Calculate Cohen's d (AI: d=0.89)
 ```
 
-## 관련
+## Related
 
-- H313: 장력 = 확신
-- H-CX-58: 예지 렌즈 r=0.98
-- H322: EEG 감마 = 장력 proxy
+- H313: Tension = Confidence
+- H-CX-58: Precognition lens r=0.98
+- H322: EEG gamma = Tension proxy
 
-## 검증 상태
+## Verification Status
 
-- [ ] EEG 데이터 수집
-- [ ] 감마-정확도 상관
+- [ ] EEG data collection
+- [ ] gamma-accuracy correlation

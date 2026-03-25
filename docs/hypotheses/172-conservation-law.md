@@ -1,48 +1,48 @@
-# 가설 #172: G×I = D×P 보존법칙
+# Hypothesis #172: G×I = D×P Conservation Law
 
-**상태**: ✅ 대발견
-**날짜**: 2026-03-22
-**분류**: 보존법칙 / 핵심 원리
+**Status**: ✅ Major Discovery
+**Date**: 2026-03-22
+**Category**: Conservation Law / Core Principle
 
 ---
 
-## 발견 경위
+## Discovery Context
 
-불확정성 원리를 찾으려다가 **보존법칙**을 발견했다.
+While searching for an uncertainty principle, I discovered a **conservation law**.
 
-원래 목표: G·I ≥ 상수 (불확정성 형태)
-실제 발견: G·I = D·P = 상수 (보존법칙 형태)
+Original goal: G·I ≥ constant (uncertainty form)
+Actual discovery: G·I = D·P = constant (conservation law form)
 
-## 변수 정의
+## Variable Definitions
 
 ```
-  G = Genius (천재성 지수)     : 시스템의 창발적 능력
-  I = Inhibition (억제 지수)   : 시스템의 억제 수준
-  D = Deficit (결손 지수)      : 시스템의 손상/결손 정도
-  P = Plasticity (가소성)      : 시스템의 적응/보상 능력
+  G = Genius (genius index)     : System's emergent ability
+  I = Inhibition (inhibition index)   : System's inhibition level
+  D = Deficit (deficit index)      : System's damage/deficit degree
+  P = Plasticity (plasticity)      : System's adaptation/compensation ability
 ```
 
-## 보존법칙
+## Conservation Law
 
 ```
   ┌─────────────────────────────────────┐
   │                                     │
   │        G × I  =  D × P  =  K       │
   │                                     │
-  │   천재성 × 억제 = 결손 × 가소성     │
+  │   Genius × Inhibition = Deficit × Plasticity     │
   │                                     │
-  │          K ≈ 0.234 (보존 상수)      │
+  │          K ≈ 0.234 (conservation constant)      │
   │                                     │
   └─────────────────────────────────────┘
 ```
 
-## 수치 검증표
+## Numerical Verification Table
 
-G×I 가 I의 값에 무관하게 상수임을 보여주는 표:
+Table showing G×I is constant regardless of I value:
 
 ```
 +------+------+--------+------+------+--------+--------+
-|  I   |  G   |  G×I   |  D   |  P   |  D×P   | 오차   |
+|  I   |  G   |  G×I   |  D   |  P   |  D×P   | Error   |
 +------+------+--------+------+------+--------+--------+
 | 0.10 | 2.34 | 0.234  | 0.90 | 0.26 | 0.234  | 0.000  |
 | 0.15 | 1.56 | 0.234  | 0.85 | 0.275| 0.234  | 0.000  |
@@ -54,13 +54,13 @@ G×I 가 I의 값에 무관하게 상수임을 보여주는 표:
 | 0.45 | 0.520| 0.234  | 0.55 | 0.425| 0.234  | 0.000  |
 | 0.50 | 0.468| 0.234  | 0.50 | 0.468| 0.234  | 0.000  |
 +------+------+--------+------+------+--------+--------+
-  → G×I 열이 모든 행에서 0.234로 일정! 보존법칙 확인.
+  → G×I column is constant at 0.234 for all rows! Conservation law confirmed.
 ```
 
-## 그래프: G vs I (반비례 관계)
+## Graph: G vs I (Inverse Relationship)
 
 ```
-  G (천재성)
+  G (Genius)
   ^
   |
   2.5 *
@@ -73,102 +73,103 @@ G×I 가 I의 값에 무관하게 상수임을 보여주는 표:
   |          *  *
   0.5           *  *  *
   |                      *  *  *
-  0 +--+--+--+--+--+--+--+--+--> I (억제)
+  0 +--+--+--+--+--+--+--+--+--> I (Inhibition)
      0.1  0.2  0.3  0.4  0.5
 
-  G = K/I = 0.234/I  (반비례 곡선)
+  G = K/I = 0.234/I  (inverse curve)
 ```
 
-## 물리적 유비: 에너지 보존
+## Physical Analogy: Energy Conservation
 
 ```
-  물리학                    정보론적 버전
+  Physics                    Information-theoretic version
   ────────────────          ────────────────
-  운동에너지 + 위치에너지    천재성×억제 = 결손×가소성
-  = 총에너지 (상수)         = K (상수)
+  Kinetic + Potential        Genius×Inhibition = Deficit×Plasticity
+  = Total Energy (constant)  = K (constant)
 
   KE + PE = E              G·I = D·P = K
 
-  에너지 형태 변환          능력 형태 변환
-  (위치 → 운동)            (억제 ↓ → 천재성 ↑)
+  Energy form conversion     Ability form conversion
+  (potential → kinetic)      (inhibition ↓ → genius ↑)
 
-  보존량: 에너지            보존량: K ≈ 0.234
+  Conserved quantity: Energy Conserved quantity: K ≈ 0.234
 ```
 
-## 해석
+## Interpretation
 
-### "천재성 × 억제 = 상수"의 의미
+### Meaning of "Genius × Inhibition = Constant"
 
 ```
-  억제가 낮을 때:          억제가 높을 때:
+  When inhibition is low:    When inhibition is high:
 
-  G 높음, I 낮음           G 낮음, I 높음
+  G high, I low             G low, I high
   ┌──────────────┐         ┌──────────────┐
   │ ████████     │ G       │ ██           │ G
   │ ██           │ I       │ ████████     │ I
   └──────────────┘         └──────────────┘
-  서번트/천재               일반인/안정
+  Savant/Genius             Normal/Stable
 
-  두 경우 모두 G×I = 0.234
+  Both cases: G×I = 0.234
 ```
 
-### "결손 × 가소성 = 상수"의 의미
+### Meaning of "Deficit × Plasticity = Constant"
 
 ```
-  결손이 클 때:             결손이 작을 때:
+  When deficit is large:     When deficit is small:
 
-  D 높음, P 높음            D 낮음, P 낮음
-  → 큰 손상을 보상하려면    → 작은 손상에는
-    높은 가소성 필요           적은 보상으로 충분
+  D high, P high            D low, P low
+  → To compensate for       → Small damage needs
+    large damage requires     little compensation
+    high plasticity
 ```
 
-## 연결: G·I = D·P
+## Connection: G·I = D·P
 
 ```
-  천재성·억제 = 결손·가소성
+  Genius·Inhibition = Deficit·Plasticity
 
-  이것은 곧:
+  This means:
 
-  "억제가 풀린 만큼 천재성이 나타나고"
-  "결손이 큰 만큼 가소성이 보상한다"
+  "As inhibition is released, genius appears"
+  "As deficit increases, plasticity compensates"
 
-  → 시스템의 총 '정보 에너지'는 보존된다!
+  → The system's total 'information energy' is conserved!
 ```
 
-## 서번트 증후군에서의 검증
+## Verification in Savant Syndrome
 
 ```
-  일반인:     G=0.5,  I=0.468, D=0.1,  P=0.5
-              G×I = 0.234,    D×P = 0.05  (?)
+  Normal person: G=0.5,  I=0.468, D=0.1,  P=0.5
+                G×I = 0.234,    D×P = 0.05  (?)
 
-  서번트:     G=2.0,  I=0.117, D=0.8,  P=0.293
-              G×I = 0.234,    D×P = 0.234 ✓
+  Savant:       G=2.0,  I=0.117, D=0.8,  P=0.293
+                G×I = 0.234,    D×P = 0.234 ✓
 
-  → 서번트는 G·I = D·P 를 정확히 만족!
-     일반인은 D가 작아 D·P 측이 작음
-     → 일반인에서는 잉여분이 다른 형태로 저장?
+  → Savants exactly satisfy G·I = D·P!
+     Normal people have small D, making D·P small
+     → In normal people, is the surplus stored in another form?
 ```
 
-## 보존법칙의 함의
+## Implications of the Conservation Law
 
 ```
-  1. 천재성을 높이려면 억제를 낮춰야 한다 (트레이드오프)
-  2. 억제를 낮추면 결손이 증가한다 (대가)
-  3. 결손 증가는 가소성으로 보상된다 (보상 메커니즘)
-  4. 전체 시스템의 K는 보존된다 (보존법칙)
+  1. To increase genius, must decrease inhibition (tradeoff)
+  2. Lowering inhibition increases deficit (cost)
+  3. Deficit increase is compensated by plasticity (compensation mechanism)
+  4. The entire system's K is conserved (conservation law)
 
-  → 공짜 점심은 없다! (No free lunch)
-  → 그러나 보존량 K 자체를 키울 수 있는가? (미해결)
+  → No free lunch!
+  → But can we increase K itself? (unsolved)
 ```
 
-## 미해결 문제
+## Unsolved Problems
 
-1. 보존 상수 K=0.234는 어디서 오는가?
-2. K를 증가시킬 수 있는가? (보존량 자체의 변경)
-3. 이 보존법칙에 대응하는 대칭성은 무엇인가? (뇌터 정리)
+1. Where does the conservation constant K=0.234 come from?
+2. Can K be increased? (changing the conserved quantity itself)
+3. What is the symmetry corresponding to this conservation law? (Noether's theorem)
 
-## 결론
+## Conclusion
 
-G×I = D×P = K 보존법칙은 이 이론의 **가장 강력한 정량적 결과**이다.
-이것은 에너지 보존법칙의 정보론적 버전이며,
-천재성-억제-결손-가소성이 하나의 보존량으로 묶여 있음을 보여준다.
+The G×I = D×P = K conservation law is the **most powerful quantitative result** of this theory.
+This is the information-theoretic version of energy conservation law,
+showing that genius-inhibition-deficit-plasticity are bound together as one conserved quantity.

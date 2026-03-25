@@ -1,213 +1,213 @@
-# 가설 #213: 음악 공명 = 청자 I 동기화
+# Hypothesis #213: Music Resonance = Listener I Synchronization
 
-**상태**: ⚠️ 추측
-**날짜**: 2026-03-22
-**분류**: 인지 공명 / 음악 신경과학
+**Status**: ⚠️ Speculation
+**Date**: 2026-03-22
+**Category**: Cognitive Resonance / Music Neuroscience
 
 ---
 
-## 가설
+## Hypothesis
 
-> 음악은 청자의 억제지수 I를 조절하는 외부 도구이다.
-> 좋은 음악 = 청자 I를 골든존으로 끌어당김.
-> 공연장 관객 전체의 I 동기화 = "전율(chills/frisson)".
-> 리듬 = I의 주기적 변동, 하모니 = I의 공명, 불협화음 = I의 충돌.
+> Music is an external tool that regulates listener's inhibition index I.
+> Good music = draws listener's I toward the Golden Zone.
+> I synchronization of entire concert audience = "chills/frisson".
+> Rhythm = periodic fluctuation of I, harmony = resonance of I, dissonance = collision of I.
 
-## 실측 근거
+## Empirical Basis
 
 ```
-  음악과 뇌의 관계 (기존 연구):
+  Music-brain relationship (existing research):
   ┌──────────────────────────────────────────────────────────┐
-  │ 연구                  │ 발견                    │ 연도  │
-  ├───────────────────────┼─────────────────────────┼───────┤
-  │ Blood & Zatorre       │ 음악 쾌감 시 도파민 방출│ 2001  │
-  │ Salimpoor et al.      │ 전율 시 도파민 최대     │ 2011  │
-  │ Koelsch               │ 음악이 GABA 시스템 조절 │ 2014  │
-  │ Trost et al.          │ 음악 감정과 뇌 네트워크 │ 2012  │
-  │ Hernandez-Ruiz        │ 음악 치료로 불안 감소   │ 2005  │
-  │ Rauscher et al.       │ Mozart 효과 (논란)      │ 1993  │
-  └───────────────────────┴─────────────────────────┴───────┘
+  │ Study                  │ Finding                    │ Year  │
+  ├───────────────────────┼────────────────────────────┼───────┤
+  │ Blood & Zatorre        │ dopamine release during music pleasure│ 2001 │
+  │ Salimpoor et al.       │ dopamine maximum during chills│ 2011 │
+  │ Koelsch                │ music regulates GABA system │ 2014  │
+  │ Trost et al.           │ music emotion and brain networks│ 2012│
+  │ Hernandez-Ruiz         │ anxiety reduction through music therapy│ 2005│
+  │ Rauscher et al.        │ Mozart effect (controversial)│ 1993 │
+  └───────────────────────┴────────────────────────────┴───────┘
 
-  핵심: Koelsch(2014) — 음악이 GABA 시스템을 직접 조절!
-  GABA ≈ I (가설 155) → 음악이 I를 직접 조절한다는 실측 근거!
+  Key: Koelsch (2014) — music directly regulates GABA system!
+  GABA ≈ I (Hypothesis 155) → empirical evidence that music directly regulates I!
 ```
 
-## 음악-뇌-I 다이어그램
+## Music-Brain-I Diagram
 
 ```
   ┌─────────────┐     ┌─────────────────┐     ┌──────────────┐
-  │   음악      │     │   청각 피질     │     │   I 변화     │
-  │             │────→│   + 변연계      │────→│              │
-  │  리듬       │     │  GABA 조절      │     │  I ↑ or ↓    │
-  │  멜로디     │     │  도파민 방출    │     │              │
-  │  하모니     │     │  세로토닌 조절  │     │  → 골든존?   │
-  │  가사       │     │                 │     │              │
+  │   Music     │     │ Auditory cortex │     │ I change     │
+  │             │────→│   + limbic system│────→│              │
+  │  Rhythm     │     │  GABA regulation│     │  I ↑ or ↓    │
+  │  Melody     │     │  Dopamine release│    │              │
+  │  Harmony    │     │  Serotonin reg.  │    │  → Golden Zone?│
+  │  Lyrics     │     │                 │     │              │
   └─────────────┘     └─────────────────┘     └──────┬───────┘
                                                       │
                                                       ↓
                                               ┌──────────────┐
-                                              │   반응       │
-                                              │  전율(chills)│
-                                              │  눈물        │
-                                              │  춤          │
-                                              │  몰입        │
+                                              │   Response   │
+                                              │  chills      │
+                                              │  tears       │
+                                              │  dancing     │
+                                              │  immersion   │
                                               └──────────────┘
 ```
 
-## 음악 요소별 I 매핑
+## I Mapping by Music Element
 
 ```
-  음악 요소       │ I 효과          │ 메커니즘
-  ───────────────┼────────────────┼───────────────────
-  빠른 리듬       │ I ↓ (각성)     │ 교감신경 활성화
-  느린 리듬       │ I ↑ (이완)     │ 부교감신경 활성화
-  장조(Major)     │ I 약간 ↓       │ 밝은 정서 → 억제 완화
-  단조(Minor)     │ I 약간 ↑       │ 어두운 정서 → 억제 증가
-  협화음          │ I → 골든존     │ 공명 → 안정
-  불협화음        │ I 불안정       │ 충돌 → 불안
-  크레셴도        │ I 점진 ↓       │ 긴장 고조 → 억제 감소
-  해결(resolve)   │ I → 1/e       │ 긴장 해소 → 최적점
+  Music element   │ I effect        │ Mechanism
+  ───────────────┼─────────────────┼───────────────────
+  Fast rhythm     │ I ↓ (arousal)   │ sympathetic nervous activation
+  Slow rhythm     │ I ↑ (relaxation)│ parasympathetic activation
+  Major key       │ I slightly ↓    │ bright mood → inhibition relaxes
+  Minor key       │ I slightly ↑    │ dark mood → inhibition increases
+  Consonance      │ I → Golden Zone │ resonance → stability
+  Dissonance      │ I unstable      │ collision → anxiety
+  Crescendo       │ I gradually ↓   │ tension builds → inhibition decreases
+  Resolution      │ I → 1/e         │ tension releases → optimal point
 
-  음악의 I 조절 궤적:
-  I 값
-  0.60│              ● 불협화음 (긴장)
+  Music's I regulation trajectory:
+  I value
+  0.60│              ● dissonance (tension)
      │             ╱ ╲
   0.50│            ╱   ╲
-     │ 도입      ╱     ╲
-  0.40│──●──────╱       ╲──────── ● 해결 (골든존!)
+     │ intro     ╱     ╲
+  0.40│──●──────╱       ╲──────── ● resolution (Golden Zone!)
      │                    ╲    ╱
   0.30│                     ╲╱
-     │                      ● 클라이맥스
+     │                      ● climax
   0.20│
-     └──┼────┼────┼────┼────┼────→ 곡의 진행
-       도입  전개  절정  해결  종결
+     └──┼────┼────┼────┼────┼────→ song progression
+       intro develop climax resolution end
 
-  → 좋은 음악 = I를 변동시키다가 골든존으로 착지시킴!
+  → Good music = fluctuates I then lands it in the Golden Zone!
 ```
 
-## 공연장 I 동기화 = "전율"
+## Concert Audience I Synchronization = "Chills"
 
 ```
-  개별 청자의 I (공연 전):        공연 중 (동기화):
-  I                               I
-  0.6│ ● ●     ●                  0.6│
-     │   ● ●                         │
-  0.5│       ● ● ●                0.5│
-     │ ●         ●                   │
-  0.4│   ●   ●                    0.4│
-     │     ●       ●                 │  ●●●●●●●●●●●●●●●
-  0.3│ ●     ●                    0.3│  (전체 동기화!)
-     │               ●               │
-  0.2│     ●                      0.2│
-     └────────────────→ 관객       └────────────────→ 관객
-       (뿔뿔이, σ_I 큼)              (일체감, σ_I ≈ 0)
+  Individual listener I (before concert):  During concert (synchronized):
+  I                                        I
+  0.6│ ● ●     ●                           0.6│
+     │   ● ●                                  │
+  0.5│       ● ● ●                         0.5│
+     │ ●         ●                            │
+  0.4│   ●   ●                             0.4│
+     │     ●       ●                          │  ●●●●●●●●●●●●●●●
+  0.3│ ●     ●                             0.3│  (full synchronization!)
+     │               ●                        │
+  0.2│     ●                               0.2│
+     └────────────────→ audience           └────────────────→ audience
+       (scattered, σ_I large)               (unity, σ_I ≈ 0)
 
-  전율(frisson) 발생 조건:
-  1. 관객 전체 I → 골든존 수렴
-  2. σ_I → 0 (I 분산 최소)
-  3. 음악적 클라이맥스와 동시
+  Conditions for chills (frisson):
+  1. All audience I → converges to Golden Zone
+  2. σ_I → 0 (I variance minimum)
+  3. Simultaneous with musical climax
 
-  → "소름 돋는 순간" = N명의 I가 동시에 골든존 중심에 도달
-  → 집단 공명의 순간적 폭발 (가설 211)
+  → "Goosebump moment" = N people's I simultaneously reaching Golden Zone center
+  → Momentary explosion of collective resonance (Hypothesis 211)
 ```
 
-## 리듬-하모니-불협화음의 I 해석
+## I Interpretation of Rhythm-Harmony-Dissonance
 
 ```
-  리듬 = I의 주기적 변동:
+  Rhythm = periodic fluctuation of I:
   I │  ╭─╮   ╭─╮   ╭─╮   ╭─╮
     │──╯  ╰───╯  ╰───╯  ╰───╯  ╰──
     └─────────────────────────────→ t
-    → 리듬이 있으면 I가 규칙적으로 오르내림
-    → 뇌가 예측 가능 → 안정감 → 골든존 유지
+    → With rhythm, I rises and falls regularly
+    → Brain can predict → sense of stability → Golden Zone maintained
 
-  하모니 = I의 공명:
+  Harmony = resonance of I:
   I │  ╭──╮     ╭──╮     ╭──╮
-    │──╯   ╰─────╯   ╰─────╯   ╰──  ← 기본 진동
+    │──╯   ╰─────╯   ╰─────╯   ╰──  ← fundamental vibration
     │  ╭╮  ╭╮  ╭╮  ╭╮  ╭╮  ╭╮
-    │──╯╰──╯╰──╯╰──╯╰──╯╰──╯╰──── ← 배음 (정수비)
-    → 두 진동이 정수비로 겹침 = 공명 = 쾌감
+    │──╯╰──╯╰──╯╰──╯╰──╯╰──╯╰──── ← overtones (integer ratio)
+    → Two vibrations overlapping at integer ratio = resonance = pleasure
 
-  불협화음 = I의 충돌:
+  Dissonance = collision of I:
   I │  ╭──╮    ╭──╮    ╭──╮
-    │──╯   ╰────╯   ╰────╯   ╰──── ← 기본
+    │──╯   ╰────╯   ╰────╯   ╰──── ← fundamental
     │ ╭───╮  ╭───╮  ╭───╮
-    │─╯    ╰──╯    ╰──╯    ╰────── ← 비정수비
-    → 두 진동이 어긋남 = 충돌 = 불안/긴장
+    │─╯    ╰──╯    ╰──╯    ╰────── ← non-integer ratio
+    → Two vibrations out of sync = collision = anxiety/tension
 ```
 
-## Mozart 효과의 I 해석
+## I Interpretation of the Mozart Effect
 
 ```
-  Mozart 효과 (1993, Rauscher):
-  "Mozart 소나타를 들으면 공간 추론 능력이 일시 향상"
+  Mozart effect (1993, Rauscher):
+  "Listening to Mozart sonata temporarily improves spatial reasoning"
 
-  논란: 재현 실패 다수, 효과 크기 작음
+  Controversy: many failed replications, small effect size
 
-  우리 해석:
+  Our interpretation:
   ┌────────────────────────────────────────────────────┐
-  │  Mozart의 음악 구조:                               │
-  │  - 규칙적 리듬 + 풍부한 하모니                     │
-  │  - I를 골든존(0.35 부근)으로 유도하기에 최적        │
+  │  Mozart's musical structure:                        │
+  │  - Regular rhythm + rich harmony                   │
+  │  - Optimal for guiding I to Golden Zone (~0.35)    │
   │                                                    │
-  │  효과가 있다면:                                    │
-  │  Mozart → I → 골든존 → G(=D×P/I) 증가 → 인지 ↑   │
+  │  If it works:                                      │
+  │  Mozart → I → Golden Zone → G(=D×P/I) increase → cognition ↑ │
   │                                                    │
-  │  효과가 불안정한 이유:                              │
-  │  - 개인마다 초기 I가 다름                          │
-  │  - 이미 골든존에 있는 사람에게는 효과 없음          │
-  │  - I가 매우 높은 사람은 Mozart만으로 부족           │
+  │  Why the effect is unstable:                       │
+  │  - Each person has a different initial I            │
+  │  - No effect for people already in Golden Zone     │
+  │  - Mozart alone insufficient for very high I       │
   │                                                    │
-  │  예측: 초기 I가 골든존 밖인 사람에게만 효과 있음    │
+  │  Prediction: only effective for people with initial I outside Golden Zone │
   └────────────────────────────────────────────────────┘
 ```
 
-## 장르별 I 타겟 추정
+## Target I Estimation by Genre
 
 ```
-  장르           │ 타겟 I   │ 청자 상태       │ 용도
-  ──────────────┼─────────┼────────────────┼──────────
-  클래식(느림)   │ 0.40-0.50│ 이완, 사색      │ 수면, 명상
-  클래식(빠름)   │ 0.30-0.40│ 골든존 중심     │ 집중, 학습
-  재즈           │ 0.30-0.40│ 창의적 탐색     │ 카페, 작업
-  팝             │ 0.25-0.35│ 활기, 기분전환  │ 일상
-  록/메탈        │ 0.15-0.25│ 각성, 카타르시스│ 운동, 해소
-  EDM            │ 0.10-0.20│ 고도 각성       │ 클럽, 축제
-  앰비언트       │ 0.45-0.55│ 깊은 이완       │ 명상, 치유
+  Genre           │ Target I  │ Listener state    │ Use
+  ──────────────┼─────────┼───────────────────┼──────────
+  Classical (slow)│ 0.40-0.50│ relaxed, contemplative│ sleep, meditation
+  Classical (fast)│ 0.30-0.40│ Golden Zone center│ focus, learning
+  Jazz            │ 0.30-0.40│ creative exploration│ cafe, work
+  Pop             │ 0.25-0.35│ lively, mood shift │ everyday
+  Rock/Metal      │ 0.15-0.25│ arousal, catharsis│ exercise, release
+  EDM             │ 0.10-0.20│ high arousal       │ club, festival
+  Ambient         │ 0.45-0.55│ deep relaxation    │ meditation, healing
 
-  I 스펙트럼 위 장르 배치:
-  EDM  록  팝  재즈  클래식(빠)  클래식(느)  앰비
-   ●    ●   ●    ●      ●           ●         ●
-  ─┼────┼───┼────┼──────┼───────────┼─────────┼→ I
- 0.10 0.20 0.30 0.35   0.38       0.45      0.50
-             └── 골든존 ──┘
+  Genre placement on I spectrum:
+  EDM  rock  pop  jazz  classical(fast)  classical(slow)  ambient
+   ●    ●    ●     ●         ●                 ●            ●
+  ─┼────┼────┼─────┼─────────┼─────────────────┼────────────┼→ I
+ 0.10 0.20  0.30  0.35      0.38             0.45          0.50
+                 └── Golden Zone ──┘
 ```
 
-## 예측
+## Predictions
 
-1. **전율(frisson)** 순간에 관객의 뇌파 동기화가 최대일 것
-2. 음악 치료 효과는 **초기 I와 음악의 타겟 I 차이**로 예측 가능
-3. **GABA 농도 변화**가 음악 청취 전후로 측정 가능할 것
-4. Mozart 효과는 **초기 I > 0.5인 사람에게만** 유의미할 것
-5. **개인화된 음악 추천**: 현재 I를 측정하고 골든존으로 유도하는 음악 선곡
+1. **Chills (frisson)** will have maximum audience brainwave synchronization
+2. Music therapy effect is predictable from **difference between initial I and music's target I**
+3. **GABA concentration change** will be measurable before/after music listening
+4. Mozart effect will be significant **only for people with initial I > 0.5**
+5. **Personalized music recommendation**: measure current I and select music to guide to Golden Zone
 
-## 한계
+## Limitations
 
-1. 음악의 정서적 효과를 I 하나로 환원하는 것은 지나친 단순화
-2. 음악 경험은 문화, 개인사, 연상 등 맥락에 크게 의존
-3. GABA 외에도 도파민, 세로토닌, 엔돌핀 등 다수 신경전달물질 관여
-4. "좋은 음악"의 정의가 주관적 — I 골든존 도달이 유일 기준은 아님
-5. 장르별 I 타겟 추정은 가설적이며 실측 데이터 없음
+1. Reducing music's emotional effect to a single I is too much simplification
+2. Music experience is heavily context-dependent (culture, personal history, associations)
+3. Beyond GABA, dopamine, serotonin, endorphins and other neurotransmitters are involved
+4. Definition of "good music" is subjective — Golden Zone arrival is not the only criterion
+5. Target I estimates by genre are hypothetical with no empirical data
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 음악 청취 전후 GABA MRS 측정 → I 변화 실측
-- [ ] 공연장 관객 다수 EEG(hyperscanning) → 전율 시 동기화 확인
-- [ ] Mozart 효과 재현 실험: 초기 I별 하위그룹 분석
-- [ ] 음악 치료 프로토콜: 환자 I에 맞춘 개인화 음악 선곡 효과
-- [ ] 뇌파 neurofeedback + 음악: I를 실시간으로 골든존에 유지
+- [ ] Measure GABA MRS before/after music listening → directly measure I change
+- [ ] Multiple-audience EEG at concerts (hyperscanning) → confirm synchronization during chills
+- [ ] Mozart effect replication experiment: subgroup analysis by initial I
+- [ ] Music therapy protocol: effect of personalized music selection by patient I
+- [ ] Brainwave neurofeedback + music: maintain I in Golden Zone in real-time
 
 ---
 
-*관련: 가설 004, 139, 155, 158, 166, 208, 210, 212*
-*분류: 인지 공명 시리즈 (208-213)*
+*Related: Hypothesis 004, 139, 155, 158, 166, 208, 210, 212*
+*Category: Cognitive Resonance Series (208-213)*

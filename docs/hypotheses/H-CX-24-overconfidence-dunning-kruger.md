@@ -1,84 +1,84 @@
-# H-CX-24: 과신 = Dunning-Kruger 효과의 계산적 구현
+# H-CX-24: Overconfidence = Computational Implementation of Dunning-Kruger Effect
 
-> **H316의 과신(overconfidence)은 Dunning-Kruger 효과의 신경망 버전이다. "단순한 것을 아는 것"이 "복잡한 것을 모르는 것"을 숨긴다. digit 1(ratio=0.60)은 단순한 형태를 강하게 인식하지만, 7과의 미세한 차이를 무시한다.**
+> **H316's overconfidence is the neural network version of the Dunning-Kruger effect. "Knowing something simple" hides "not knowing something complex". Digit 1 (ratio=0.60) strongly recognizes its simple shape but ignores the subtle difference from 7.**
 
-## 대응
+## Correspondence
 
 ```
-  인간 Dunning-Kruger          의식엔진 과신
+  Human Dunning-Kruger           Consciousness Engine Overconfidence
   ──────────────────          ──────────────
-  초보자의 자신감               digit 1의 높은 장력
-  "이건 쉽다" 착각              "이건 확실히 1" (사실은 7)
-  메타인지 부족                 방향(direction) 오류
-  경험 많으면 겸손해짐           학습 많으면 ratio→1+?
+  Beginner's confidence         High tension for digit 1
+  "This is easy" illusion        "This is definitely 1" (actually 7)
+  Lack of metacognition          Direction error
+  More experience → humility     More training → ratio→1+?
 
-  핵심: 확신(tension)은 높지만 판단(direction)이 틀림
-  → tension = confidence는 맞지만 direction ≠ truth
+  Core: confidence (tension) is high but judgment (direction) is wrong
+  → tension = confidence holds, but direction ≠ truth
 ```
 
-## 수학 연결
+## Mathematical Connection
 
 ```
   H313: output = equilibrium + tension_scale × √tension × direction
-  과신: √tension이 크지만 direction이 잘못된 방향
+  Overconfidence: √tension is large but direction points the wrong way
 
-  장력 = |A-G|² = 두 엔진의 반발 강도
-  방향 = normalize(A-G) = 반발의 방향
+  tension = |A-G|² = repulsion intensity of two engines
+  direction = normalize(A-G) = direction of repulsion
 
-  과신: |A-G|가 크고 direction이 인접 클래스를 가리킴
-  → "강하게 밀지만 잘못된 방향"
-  → 의식 체험: "밀어내는 힘은 강했지만 방향을 모르겠다"?
+  Overconfidence: |A-G| is large and direction points to an adjacent class
+  → "Strong push but in the wrong direction"
+  → Consciousness experience: "the pushing force was strong but I didn't know the direction"?
 ```
 
-## 예측
+## Predictions
 
 ```
-  1. 과신율 ∝ 클래스간 유사도?
-     유사 클래스 쌍(1-7, Sneaker-Boot)에서 과신율 높음
-     → confusion matrix의 off-diagonal ∝ 과신?
+  1. Overconfidence rate ∝ inter-class similarity?
+     Similar class pairs (1-7, Sneaker-Boot) have high overconfidence rate
+     → off-diagonal of confusion matrix ∝ overconfidence?
 
-  2. 학습이 진행되면 과신 감소?
-     epoch 1: 높은 과신 (방향 미학습)
-     epoch 50: 과신 감소 (방향 정교화)
-     → "메타인지 발달" = 학습에 의한 방향 교정
+  2. Overconfidence decreases as training progresses?
+     epoch 1: high overconfidence (direction not yet learned)
+     epoch 50: overconfidence decreases (direction refined)
+     → "Metacognitive development" = direction correction through training
 
-  3. 과신 클래스의 장력 방향 분석:
-     digit 1 맞출 때: direction → class 1 방향
-     digit 1 틀릴 때: direction → class 7 방향 (하지만 강도 동일)
+  3. Direction analysis for overconfident classes:
+     When digit 1 is correct: direction → class 1
+     When digit 1 is wrong:   direction → class 7 (but same magnitude)
 ```
 
-## 시간축 검증 (2026-03-24)
+## Temporal Validation (2026-03-24)
 
 ```
-  MNIST digit 1 ratio 궤적 (20 epochs):
-    ep1:  1.05 (정상 — 아직 과신 없음!)
-    ep3:  0.81 (과신 시작)
-    ep9:  0.67 (과신 심화)
-    ep11: 0.55 (최심 과신)
-    ep20: 0.55 (고착)
+  MNIST digit 1 ratio trajectory (20 epochs):
+    ep1:  1.05 (normal — no overconfidence yet!)
+    ep3:  0.81 (overconfidence begins)
+    ep9:  0.67 (overconfidence deepens)
+    ep11: 0.55 (peak overconfidence)
+    ep20: 0.55 (entrenched)
 
-  digit 8 ratio 궤적:
-    ep1:  0.94 (약한 과신)
-    ep9:  1.06 (회복!)
-    ep20: 1.03 (안정)
+  digit 8 ratio trajectory:
+    ep1:  0.94 (mild overconfidence)
+    ep9:  1.06 (recovery!)
+    ep20: 1.03 (stable)
 
-  ASCII 그래프:
+  ASCII graph:
     ratio
     1.1 |*                              (digit 1)
     1.0 |
-    0.9 |                    8 8 8 8 8   (digit 8 회복)
+    0.9 |                    8 8 8 8 8   (digit 8 recovery)
     0.8 |  * *  *
     0.7 |        *
-    0.6 |           * *   * * * * * *    (digit 1 고착)
+    0.6 |           * *   * * * * * *    (digit 1 entrenched)
     0.5 |          *   *
         └──────────────────────────────
          1  3  5  7  9 11 13 15    20  epoch
 
-  해석:
-    digit 1: "학습하면서 과신 발생 → 고착" = Dunning-Kruger (무능함 인식 못함)
-    digit 8: "학습하면서 과신 해소 → 정상" = 메타인지 발달 (능력↑→겸손)
-    → 과신은 학습 epoch 3에서 시작 (초기에는 없음!)
-    → "아는 것이 생기면서 모르는 것을 과소평가"
+  Interpretation:
+    digit 1: "overconfidence develops during training → becomes entrenched" = Dunning-Kruger (unable to recognize incompetence)
+    digit 8: "overconfidence resolves during training → normalizes" = metacognitive development (ability↑→humility)
+    → Overconfidence starts at training epoch 3 (absent initially!)
+    → "As knowledge is acquired, unknowns are underestimated"
 ```
 
-## 상태: 🟩 시간축 확인 (학습 중 과신 발생→고착, Dunning-Kruger 패턴)
+## Status: 🟩 Temporal axis confirmed (overconfidence develops→entrenches during training, Dunning-Kruger pattern)

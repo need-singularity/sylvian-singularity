@@ -1,99 +1,99 @@
-# 가설 300: 계층적 분열 이상탐지 — 분열 트리가 이상의 "종류"를 분류
+# Hypothesis 300: Hierarchical Mitosis Anomaly Detection — Mitosis Tree Classifies Anomaly "Types"
 
-> **다단계 분열(parent→2→4→8)이 이상의 계층적 구조를 반영한다. 1세대 간 장력은 "대분류"(정상 vs 이상), 2세대 간 장력은 "중분류"(이상 유형 A vs B), 3세대는 "소분류". 분열 트리 = 이상 분류 트리.**
+> **Multi-level mitosis (parent→2→4→8) reflects the hierarchical structure of anomalies. First-generation inter-child tension detects "broad classification" (normal vs anomaly), second-generation detects "middle classification" (anomaly type A vs B), third-generation detects "fine classification". Mitosis tree = anomaly classification tree.**
 
-## 개념
+## Concept
 
 ```
-  분열 트리:
+  Mitosis Tree:
            parent
           /      \
-      child_a   child_b          ← 1세대: 큰 틀 감지
+      child_a   child_b          <- Generation 1: broad detection
       /   \     /   \
-    c_aa c_ab c_ba c_bb          ← 2세대: 세부 감지
+    c_aa c_ab c_ba c_bb          <- Generation 2: fine detection
     / \  / \  / \  / \
-   ...                           ← 3세대: 미세 감지
+   ...                           <- Generation 3: micro detection
 
-  이상 감지 메커니즘:
-    1세대 간 장력: |child_a(x) - child_b(x)|² → "이상인가 아닌가"
-    2세대 간 장력:
-      |c_aa(x) - c_ab(x)|² → "이상 유형 A인가"
-      |c_ba(x) - c_bb(x)|² → "이상 유형 B인가"
-    3세대: 더 세밀한 구분
+  Anomaly Detection Mechanism:
+    Generation 1 tension: |child_a(x) - child_b(x)|² -> "is it an anomaly?"
+    Generation 2 tension:
+      |c_aa(x) - c_ab(x)|² -> "is it anomaly type A?"
+      |c_ba(x) - c_bb(x)|² -> "is it anomaly type B?"
+    Generation 3: even finer distinction
 
-  비유: 의사의 진단 과정
-    1단계: "정상 아님" (혈액검사 이상)
-    2단계: "감염 vs 자가면역" (CRP, ESR)
-    3단계: "세균 vs 바이러스" (배양, PCR)
+  Analogy: Doctor's diagnostic process
+    Step 1: "Not normal" (abnormal blood test)
+    Step 2: "Infection vs autoimmune" (CRP, ESR)
+    Step 3: "Bacterial vs viral" (culture, PCR)
 ```
 
-## 검증 실험
+## Verification Experiment
 
 ```
-  데이터: 다중 이상 유형
-    정상: digit 0
-    이상 A: digit 1 (직선, 정상과 매우 다름)
-    이상 B: digit 6 (곡선, 정상과 비슷)
-    이상 C: digit 8 (이중 곡선, 중간)
+  Data: Multiple anomaly types
+    Normal: digit 0
+    Anomaly A: digit 1 (straight line, very different from normal)
+    Anomaly B: digit 6 (curved, similar to normal)
+    Anomaly C: digit 8 (double curve, intermediate)
 
-  실험:
-    1. parent 학습 (digit 0만)
-    2. 2세대 분열 (4 children)
-    3. 테스트:
-       a) 1세대 간 장력: digit 0 vs 나머지 구분 → AUROC_1
-       b) 2세대 간 장력: 이상 유형(1 vs 6 vs 8) 구분 → AUROC_2
-    4. 비교:
-       단일 엔진: 이상 유형 구분 가능한가?
-       분열 트리: 이상 유형까지 구분 가능한가?
+  Experiment:
+    1. Train parent (digit 0 only)
+    2. 2nd-generation mitosis (4 children)
+    3. Test:
+       a) Generation 1 tension: distinguish digit 0 vs rest -> AUROC_1
+       b) Generation 2 tension: distinguish anomaly types (1 vs 6 vs 8) -> AUROC_2
+    4. Compare:
+       Single engine: can it distinguish anomaly types?
+       Mitosis tree: can it distinguish anomaly types too?
 
-  핵심: 분열 깊이가 이상 분류의 해상도를 결정하는가?
+  Key question: Does mitosis depth determine anomaly classification resolution?
 ```
 
-## 수학적 구조
+## Mathematical Structure
 
 ```
-  분열 트리 ↔ 이진 트리 분류기
-    깊이 d → 2^d 리프 → 2^d 가지 이상 유형 구분 가능
-    정보량: d × ln(2) bits
+  Mitosis Tree <-> Binary Tree Classifier
+    Depth d -> 2^d leaves -> 2^d different anomaly types distinguishable
+    Information: d × ln(2) bits
 
-  H-CX-1 연결:
+  H-CX-1 connection:
     e^(6H) = 432 = σ³/τ
     6H = ln(432) ≈ 6.07
-    → H ≈ 1.01 nats ≈ 1.46 bits
+    -> H ≈ 1.01 nats ≈ 1.46 bits
 
-  분열 깊이와 엔트로피:
-    깊이 1: 1 bit (정상 vs 이상)
-    깊이 2: 2 bits (4 유형)
-    최적 깊이 d*: H / ln(2) ≈ 1.46 → 약 1.5 세대?
-    → 2세대 분열이 최적?
+  Mitosis depth and entropy:
+    Depth 1: 1 bit (normal vs anomaly)
+    Depth 2: 2 bits (4 types)
+    Optimal depth d*: H / ln(2) ≈ 1.46 -> about 1.5 generations?
+    -> 2-generation mitosis is optimal?
 ```
 
-## ASCII 계층 구조
+## ASCII Hierarchy
 
 ```
   depth 0: [parent]
              │
-  depth 1: [A]───[B]          T_AB = "이상인가?"
+  depth 1: [A]───[B]          T_AB = "is it an anomaly?"
             │     │
-  depth 2: [aa][ab][ba][bb]   T_pairs = "어떤 이상인가?"
+  depth 2: [aa][ab][ba][bb]   T_pairs = "what kind of anomaly?"
             │              │
-  depth 3: (16 leaves)       T_fine = "어떤 변형인가?"
+  depth 3: (16 leaves)       T_fine = "what variant?"
 
   AUROC vs depth:
-    depth 0: 0.50 (무작위)
-    depth 1: 0.80 (H296 실측)
-    depth 2: 0.90? (예측)
-    depth 3: 0.95? (예측, 포화 시작)
+    depth 0: 0.50 (random)
+    depth 1: 0.80 (H296 measured)
+    depth 2: 0.90? (predicted)
+    depth 3: 0.95? (predicted, saturation starts)
 ```
 
-## 관련 가설
+## Related Hypotheses
 
 ```
-  296: 분열 간 AUROC 0.805
-  297: 분열 수 → AUROC 증가
-  298: 시간축 최적 분화
-  292: 의식 트리 확장
-  291: 데이터 유형 트리
+  296: Inter-mitosis AUROC 0.805
+  297: Number of mitoses -> AUROC increases
+  298: Optimal differentiation on time axis
+  292: Consciousness tree expansion
+  291: Data type tree
 ```
 
-## 상태: 🟨 미실험
+## Status: 🟨 Untested

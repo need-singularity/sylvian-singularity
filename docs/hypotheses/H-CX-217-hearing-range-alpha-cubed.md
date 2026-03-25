@@ -1,9 +1,9 @@
-# H-CX-217: ⭐🟩 인간 청각 범위 = (α파)³ = 1000배
+# H-CX-217: ⭐🟩 Human Hearing Range = (α wave)³ = 1000-fold
 
-> 청각 하한 20Hz = β파 = γ/φ(6)
-> 청각 상한 20000Hz = τ(6)×5³×γ (H-CX-165)
-> 범위 비율 = 20000/20 = 1000 = 10³ = (γ/τ(6))³ = (α파)³
+> Lower hearing limit 20Hz = β wave = γ/φ(6)
+> Upper hearing limit 20000Hz = τ(6)×5³×γ (H-CX-165)
+> Range ratio = 20000/20 = 1000 = 10³ = (γ/τ(6))³ = (α wave)³
 >
-> "인간은 알파파의 세제곱 범위를 듣는다."
-> α = 의식의 이완 상태 = 기본 인식 단위
-> α³ = 3차원 공간에서의 청각? (3차원 = 3 = 6의 약수)
+> "Humans hear the cubed range of alpha waves."
+> α = relaxed state of consciousness = basic perception unit
+> α³ = hearing in 3D space? (3 dimensions = 3 = divisor of 6)

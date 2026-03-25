@@ -1,21 +1,21 @@
-# H-CX-101: PH 난이도 점수 — 에폭 1의 H0_total로 데이터셋 난이도 예측
+# H-CX-101: PH Difficulty Score — Predicting Dataset Difficulty via Epoch 1 H0_total
 
-> 에폭 1의 H0_total이 데이터셋 난이도의 범용 지표.
-> H0가 클수록 클래스가 분리되어 있어 쉽고, 작으면 겹쳐서 어렵다.
+> Epoch 1 H0_total is a universal indicator of dataset difficulty.
+> Larger H0 = classes well-separated = easier; smaller H0 = overlapping = harder.
 
-## 배경
+## Background
 
 - MNIST H0≈4.2, Fashion H0≈2.3, CIFAR H0≈2.1
 - MNIST acc=98% > Fashion 89% > CIFAR 54%
-- H0와 최종 accuracy가 같은 순서
+- H0 and final accuracy share the same ordering
 
-## 예측
+## Predictions
 
-1. 에폭 1 H0_total과 최종 accuracy 상관 r > 0.9
-2. 새 데이터셋에서도 H0_total로 학습 전 난이도 예측 가능
-3. H0_total / n_classes = 정규화 난이도 점수
+1. Correlation between epoch 1 H0_total and final accuracy r > 0.9
+2. H0_total can predict difficulty before training on new datasets too
+3. H0_total / n_classes = normalized difficulty score
 
-## 검증 상태
+## Verification Status
 
 - [ ] cross-dataset H0 vs accuracy
-- [ ] 정규화 점수
+- [ ] normalized score

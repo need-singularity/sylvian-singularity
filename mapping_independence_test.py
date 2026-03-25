@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-"""매핑 독립성 검증 — "골든존에서 CCT 최대"는 구조적 발견인가?
+"""Mapping Independence Verification — Is "Maximum CCT in Golden Zone" a Structural Discovery?
 
-1000가지 랜덤 매핑 공식을 생성하여, "CCT가 골든존에서 최대"라는
-결과가 우리 매핑(i_to_lorenz)의 특수성 때문인지, 아니면 로렌츠
-시스템 자체의 구조적 성질인지를 검증한다.
+By generating 1000 random mapping formulas, we verify whether the result
+"CCT is maximum in Golden Zone" is due to the specificity of our mapping
+(i_to_lorenz) or a structural property of the Lorenz system itself.
 
-실험:
-  - 1000개 랜덤 매핑: sigma, rho, noise, gap = f(I) (랜덤 계수)
-  - 각 매핑에서 I=0~1 스캔 → CCT 최적 I값 기록
-  - 최적 I값이 골든존(0.213~0.500)에 떨어지는 비율 측정
-  - 랜덤 기대값(28.7%)과 비교 → 이항검정
+Experiment:
+  - 1000 random mappings: sigma, rho, noise, gap = f(I) (random coefficients)
+  - For each mapping, scan I=0~1 → record optimal I value for CCT
+  - Measure the ratio of optimal I values falling in Golden Zone (0.213~0.500)
+  - Compare with random expected value (28.7%) → binomial test
 
-골든존 의존: YES (검증 대상 자체가 골든존)
+Golden Zone dependency: YES (verification target itself is Golden Zone)
 
-사용법:
+Usage:
   python3 mapping_independence_test.py
   python3 mapping_independence_test.py --n-mappings 500 --grid 15
   python3 mapping_independence_test.py --quick
@@ -32,26 +32,26 @@ from scipy import stats as sp_stats
 from consciousness_calc import lorenz_simulate, run_cct
 
 # ─────────────────────────────────────────────
-# 골든존 상수
+# Golden Zone Constants
 # ─────────────────────────────────────────────
 GOLDEN_UPPER = 0.5
 GOLDEN_LOWER = 0.5 - math.log(4 / 3)   # ≈ 0.2123
 GOLDEN_WIDTH = GOLDEN_UPPER - GOLDEN_LOWER  # ≈ 0.2877
-GOLDEN_EXPECTED = GOLDEN_WIDTH / (0.99 - 0.01)  # 스캔 범위 0.01~0.99 기준
+GOLDEN_EXPECTED = GOLDEN_WIDTH / (0.99 - 0.01)  # Based on scan range 0.01~0.99
 
 
 # ─────────────────────────────────────────────
-# 랜덤 매핑 생성
+# Random Mapping Generation
 # ─────────────────────────────────────────────
 def generate_random_mapping(rng):
-    """랜덤 매핑 계수를 생성한다.
+    """Generate random mapping coefficients.
 
-    각 파라미터 = a + b * I^c 형태.
-    범위 제약: sigma ∈ [0.1, 20], rho ∈ [1, 50], noise ∈ [0, 1], gap ∈ [0, 1]
+    Each parameter = a + b * I^c form.
+    Range constraints: sigma ∈ [0.1, 20], rho ∈ [1, 50], noise ∈ [0, 1], gap ∈ [0, 1]
 
     Returns:
         dict with keys 'sigma_abc', 'rho_abc', 'noise_abc', 'gap_abc'
-        각 값은 (a, b, c) 튜플
+        Each value is (a, b, c) tuple
     """
     def rand_abc(a_range, b_range, c_range):
         a = rng.uniform(*a_range)
@@ -60,19 +60,19 @@ def generate_random_mapping(rng):
         return (a, b, c)
 
     return {
-        # sigma: 0.1~20 범위. a ∈ [0.1, 15], b ∈ [-15, 15], c ∈ [0.2, 3]
+        # sigma: 0.1~20 range. a ∈ [0.1, 15], b ∈ [-15, 15], c ∈ [0.2, 3]
         "sigma_abc": rand_abc((0.1, 15.0), (-15.0, 15.0), (0.2, 3.0)),
-        # rho: 1~50 범위. a ∈ [1, 40], b ∈ [-30, 30], c ∈ [0.2, 3]
+        # rho: 1~50 range. a ∈ [1, 40], b ∈ [-30, 30], c ∈ [0.2, 3]
         "rho_abc": rand_abc((1.0, 40.0), (-30.0, 30.0), (0.2, 3.0)),
-        # noise: 0~1 범위. a ∈ [0, 0.5], b ∈ [-0.5, 0.5], c ∈ [0.2, 3]
+        # noise: 0~1 range. a ∈ [0, 0.5], b ∈ [-0.5, 0.5], c ∈ [0.2, 3]
         "noise_abc": rand_abc((0.0, 0.5), (-0.5, 0.5), (0.2, 3.0)),
-        # gap: 0~1 범위. a ∈ [-0.5, 0.3], b ∈ [-0.5, 0.5], c ∈ [0.2, 3]
+        # gap: 0~1 range. a ∈ [-0.5, 0.3], b ∈ [-0.5, 0.5], c ∈ [0.2, 3]
         "gap_abc": rand_abc((-0.5, 0.3), (-0.5, 0.5), (0.2, 3.0)),
     }
 
 
 def apply_mapping(mapping, I):
-    """매핑 계수로 I를 로렌츠 파라미터로 변환한다."""
+    """Convert I to Lorenz parameters using mapping coefficients."""
     def calc(abc, I_val):
         a, b, c = abc
         return a + b * (I_val ** c)
@@ -93,12 +93,12 @@ def apply_mapping(mapping, I):
 
 
 def generate_inverted_mapping(rng):
-    """반전 매핑: 원래와 반대 방향의 매핑을 생성한다.
+    """Inverted mapping: Generate mapping in opposite direction from original.
 
-    sigma = a + b*I (b > 0, 즉 I가 클수록 sigma 증가 — 원래와 반대)
+    sigma = a + b*I (b > 0, i.e., sigma increases as I increases — opposite of original)
     rho   = a + b*I (b > 0)
     noise = a + b*I (b > 0)
-    gap   = a + b*I (b < 0, 즉 I가 클수록 gap 감소)
+    gap   = a + b*I (b < 0, i.e., gap decreases as I increases)
     """
     return {
         "sigma_abc": (rng.uniform(0.5, 5.0), rng.uniform(5.0, 15.0), 1.0),
@@ -109,15 +109,15 @@ def generate_inverted_mapping(rng):
 
 
 # ─────────────────────────────────────────────
-# CCT 스캔
+# CCT Scan
 # ─────────────────────────────────────────────
 def scan_mapping(mapping, grid, steps, dt):
-    """하나의 매핑에서 I=0.01~0.99를 스캔하여 CCT 총점을 구한다.
+    """Scan I=0.01~0.99 for one mapping to get CCT total score.
 
     Returns:
-        best_i: CCT 최대인 I값
-        best_score: 최대 CCT 총점
-        has_gap: 이 매핑에서 gap > 0인 I값이 존재하는지
+        best_i: I value with maximum CCT
+        best_score: Maximum CCT total score
+        has_gap: Whether gap > 0 exists for any I value in this mapping
     """
     i_values = np.linspace(0.01, 0.99, grid)
     best_i = 0.0
@@ -155,10 +155,10 @@ def scan_mapping(mapping, grid, steps, dt):
 
 
 # ─────────────────────────────────────────────
-# ASCII 히스토그램
+# ASCII Histogram
 # ─────────────────────────────────────────────
 def ascii_histogram(values, bins=20, width=50, title=""):
-    """값 분포의 ASCII 히스토그램을 반환한다."""
+    """Return ASCII histogram of value distribution."""
     lines = []
     if title:
         lines.append(f"  {title}")
@@ -173,7 +173,7 @@ def ascii_histogram(values, bins=20, width=50, title=""):
         bar_len = int(hist[i] / max_count * width)
         bar = "█" * bar_len
 
-        # 골든존 내부인지 표시
+        # Mark if within Golden Zone
         mid = (lo + hi) / 2
         in_golden = GOLDEN_LOWER <= mid <= GOLDEN_UPPER
         marker = " ◀" if in_golden else ""
@@ -181,28 +181,28 @@ def ascii_histogram(values, bins=20, width=50, title=""):
         lines.append(f"  {lo:.2f}-{hi:.2f} │{bar:<{width}} {hist[i]:>4}{marker}")
 
     lines.append(f"  {'─' * 10}┘{'─' * width}")
-    lines.append(f"  골든존 범위: {GOLDEN_LOWER:.3f} ~ {GOLDEN_UPPER:.3f}")
+    lines.append(f"  Golden Zone range: {GOLDEN_LOWER:.3f} ~ {GOLDEN_UPPER:.3f}")
     lines.append("")
     return "\n".join(lines)
 
 
 # ─────────────────────────────────────────────
-# 이항검정
+# Binomial Test
 # ─────────────────────────────────────────────
 def binomial_test(n_in_golden, n_total, expected_rate):
-    """이항검정으로 p-value를 산출한다."""
+    """Calculate p-value using binomial test."""
     result = sp_stats.binomtest(n_in_golden, n_total, expected_rate, alternative="greater")
     return result.pvalue
 
 
 # ─────────────────────────────────────────────
-# 메인 실험
+# Main Experiment
 # ─────────────────────────────────────────────
 def run_experiment(n_mappings, grid, steps, dt, seed=12345):
-    """전체 실험 실행."""
+    """Run entire experiment."""
     rng = np.random.default_rng(seed)
 
-    # 일반 랜덤 매핑 (80%) + 반전 매핑 (20%)
+    # Normal random mappings (80%) + inverted mappings (20%)
     n_inverted = n_mappings // 5
     n_normal = n_mappings - n_inverted
 
@@ -212,15 +212,15 @@ def run_experiment(n_mappings, grid, steps, dt, seed=12345):
 
     t_start = time.time()
 
-    print(f"  실험 설정:")
-    print(f"    총 매핑 수:     {n_mappings}")
-    print(f"    일반 매핑:      {n_normal}")
-    print(f"    반전 매핑:      {n_inverted}")
-    print(f"    I 스캔 해상도:  grid={grid}")
-    print(f"    시뮬레이션:     steps={steps}, dt={dt}")
-    print(f"    골든존:         [{GOLDEN_LOWER:.4f}, {GOLDEN_UPPER:.4f}]")
-    print(f"    골든존 폭:      {GOLDEN_WIDTH:.4f}")
-    print(f"    랜덤 기대 비율: {GOLDEN_EXPECTED:.4f} ({GOLDEN_EXPECTED*100:.1f}%)")
+    print(f"  Experiment Settings:")
+    print(f"    Total mappings:     {n_mappings}")
+    print(f"    Normal mappings:    {n_normal}")
+    print(f"    Inverted mappings:  {n_inverted}")
+    print(f"    I scan resolution:  grid={grid}")
+    print(f"    Simulation:         steps={steps}, dt={dt}")
+    print(f"    Golden Zone:        [{GOLDEN_LOWER:.4f}, {GOLDEN_UPPER:.4f}]")
+    print(f"    Golden Zone width:  {GOLDEN_WIDTH:.4f}")
+    print(f"    Random expected ratio: {GOLDEN_EXPECTED:.4f} ({GOLDEN_EXPECTED*100:.1f}%)")
     print()
 
     for i in range(n_mappings):
@@ -236,7 +236,7 @@ def run_experiment(n_mappings, grid, steps, dt, seed=12345):
         all_has_gap.append(has_gap)
         all_mapping_type.append(mtype)
 
-        # 진행률 (매 100개 또는 매 10%)
+        # Progress (every 100 or every 10%)
         if (i + 1) % max(1, n_mappings // 10) == 0 or (i + 1) == n_mappings:
             elapsed = time.time() - t_start
             rate = (i + 1) / elapsed if elapsed > 0 else 0
@@ -246,7 +246,7 @@ def run_experiment(n_mappings, grid, steps, dt, seed=12345):
             filled = int(bar_len * (i + 1) / n_mappings)
             bar = "█" * filled + "░" * (bar_len - filled)
             sys.stdout.write(
-                f"\r  진행: [{bar}] {pct:5.1f}% ({i+1}/{n_mappings}) "
+                f"\r  Progress: [{bar}] {pct:5.1f}% ({i+1}/{n_mappings}) "
                 f"ETA: {eta:.0f}s"
             )
             sys.stdout.flush()
@@ -255,10 +255,10 @@ def run_experiment(n_mappings, grid, steps, dt, seed=12345):
     sys.stdout.flush()
 
     elapsed = time.time() - t_start
-    print(f"  완료: {n_mappings}개 매핑, {elapsed:.1f}초 소요")
+    print(f"  Complete: {n_mappings} mappings, {elapsed:.1f}s elapsed")
     print()
 
-    # numpy 변환
+    # numpy conversion
     all_best_i = np.array(all_best_i)
     all_has_gap = np.array(all_has_gap)
     all_mapping_type = np.array(all_mapping_type)
@@ -267,55 +267,55 @@ def run_experiment(n_mappings, grid, steps, dt, seed=12345):
 
 
 def analyze_and_report(all_best_i, all_has_gap, all_mapping_type):
-    """결과 분석 및 보고."""
+    """Analyze and report results."""
     n_total = len(all_best_i)
 
-    # 1. 전체 분석
+    # 1. Overall analysis
     in_golden = (all_best_i >= GOLDEN_LOWER) & (all_best_i <= GOLDEN_UPPER)
     n_in_golden = np.sum(in_golden)
     ratio_golden = n_in_golden / n_total
 
-    # 이항검정
+    # Binomial test
     p_value = binomial_test(int(n_in_golden), n_total, GOLDEN_EXPECTED)
 
     print("═" * 65)
-    print("  매핑 독립성 검증 — 골든존 CCT 최적화 테스트")
+    print("  Mapping Independence Verification — Golden Zone CCT Optimization Test")
     print("═" * 65)
     print()
 
-    # 히스토그램
-    print(ascii_histogram(all_best_i, bins=20, title="최적 I값 분포 (전체)"))
+    # Histogram
+    print(ascii_histogram(all_best_i, bins=20, title="Optimal I Value Distribution (Overall)"))
 
-    # 핵심 결과
+    # Key results
     print("─" * 65)
-    print("  [ 핵심 결과 ]")
+    print("  [ Key Results ]")
     print("─" * 65)
     print()
-    print(f"  전체 매핑 수:          {n_total}")
-    print(f"  골든존 내 최적 I:      {n_in_golden} ({ratio_golden*100:.1f}%)")
-    print(f"  랜덤 기대값:           {GOLDEN_EXPECTED*100:.1f}%")
-    print(f"  초과 비율:             {(ratio_golden - GOLDEN_EXPECTED)*100:+.1f}%p")
-    print(f"  이항검정 p-value:      {p_value:.6f}")
+    print(f"  Total mappings:          {n_total}")
+    print(f"  Optimal I in Golden Zone: {n_in_golden} ({ratio_golden*100:.1f}%)")
+    print(f"  Random expected:         {GOLDEN_EXPECTED*100:.1f}%")
+    print(f"  Excess ratio:            {(ratio_golden - GOLDEN_EXPECTED)*100:+.1f}%p")
+    print(f"  Binomial test p-value:   {p_value:.6f}")
     if p_value < 0.001:
-        print(f"  유의수준:              p < 0.001 ★★★")
+        print(f"  Significance level:      p < 0.001 ★★★")
     elif p_value < 0.01:
-        print(f"  유의수준:              p < 0.01  ★★")
+        print(f"  Significance level:      p < 0.01  ★★")
     elif p_value < 0.05:
-        print(f"  유의수준:              p < 0.05  ★")
+        print(f"  Significance level:      p < 0.05  ★")
     else:
-        print(f"  유의수준:              유의하지 않음 (p >= 0.05)")
+        print(f"  Significance level:      Not significant (p >= 0.05)")
     print()
 
-    # 2. 매핑 유형별 분석
+    # 2. Analysis by mapping type
     normal_mask = all_mapping_type == "normal"
     inverted_mask = all_mapping_type == "inverted"
 
     print("─" * 65)
-    print("  [ 매핑 유형별 분석 ]")
+    print("  [ Analysis by Mapping Type ]")
     print("─" * 65)
     print()
 
-    for label, mask in [("일반 매핑", normal_mask), ("반전 매핑", inverted_mask)]:
+    for label, mask in [("Normal mappings", normal_mask), ("Inverted mappings", inverted_mask)]:
         if np.sum(mask) == 0:
             continue
         subset = all_best_i[mask]
@@ -324,20 +324,20 @@ def analyze_and_report(all_best_i, all_has_gap, all_mapping_type):
         r_sub = n_sub_golden / n_sub if n_sub > 0 else 0
         p_sub = binomial_test(int(n_sub_golden), n_sub, GOLDEN_EXPECTED) if n_sub > 0 else 1.0
         print(f"  {label}:")
-        print(f"    개수:              {n_sub}")
-        print(f"    골든존 내 비율:    {n_sub_golden}/{n_sub} ({r_sub*100:.1f}%)")
-        print(f"    p-value:           {p_sub:.6f}")
+        print(f"    Count:              {n_sub}")
+        print(f"    Golden Zone ratio:  {n_sub_golden}/{n_sub} ({r_sub*100:.1f}%)")
+        print(f"    p-value:            {p_sub:.6f}")
         print()
 
-    # 3. gap 유무별 분석
+    # 3. Analysis by gap presence
     print("─" * 65)
-    print("  [ gap 유무별 분석 ]")
+    print("  [ Analysis by Gap Presence ]")
     print("─" * 65)
     print()
 
-    for label, mask in [("gap 있는 매핑", all_has_gap), ("gap 없는 매핑", ~all_has_gap)]:
+    for label, mask in [("Mappings with gap", all_has_gap), ("Mappings without gap", ~all_has_gap)]:
         if np.sum(mask) == 0:
-            print(f"  {label}: 없음")
+            print(f"  {label}: None")
             print()
             continue
         subset = all_best_i[mask]
@@ -346,83 +346,83 @@ def analyze_and_report(all_best_i, all_has_gap, all_mapping_type):
         r_sub = n_sub_golden / n_sub if n_sub > 0 else 0
         p_sub = binomial_test(int(n_sub_golden), n_sub, GOLDEN_EXPECTED) if n_sub > 0 else 1.0
         print(f"  {label}:")
-        print(f"    개수:              {n_sub}")
-        print(f"    골든존 내 비율:    {n_sub_golden}/{n_sub} ({r_sub*100:.1f}%)")
-        print(f"    p-value:           {p_sub:.6f}")
+        print(f"    Count:              {n_sub}")
+        print(f"    Golden Zone ratio:  {n_sub_golden}/{n_sub} ({r_sub*100:.1f}%)")
+        print(f"    p-value:            {p_sub:.6f}")
         mean_i = np.mean(subset)
         std_i = np.std(subset)
-        print(f"    최적I 평균±std:    {mean_i:.3f} ± {std_i:.3f}")
+        print(f"    Optimal I mean±std: {mean_i:.3f} ± {std_i:.3f}")
         print()
 
-    # gap 없는 매핑만의 히스토그램
+    # Histogram for mappings without gap only
     no_gap_mask = ~all_has_gap
     if np.sum(no_gap_mask) > 10:
         print(ascii_histogram(
             all_best_i[no_gap_mask], bins=20,
-            title="최적 I값 분포 (gap 없는 매핑만)",
+            title="Optimal I Value Distribution (Mappings without gap only)",
         ))
 
-    # 4. 텍사스 명사수 검정 요약
+    # 4. Texas Sharpshooter Test Summary
     print("─" * 65)
-    print("  [ 텍사스 명사수 검정 ]")
+    print("  [ Texas Sharpshooter Test ]")
     print("─" * 65)
     print()
-    print(f"  H0: 최적 I값의 골든존 집중은 우연 (기대={GOLDEN_EXPECTED*100:.1f}%)")
-    print(f"  H1: 골든존 집중은 구조적 (기대 초과)")
+    print(f"  H0: Golden Zone concentration of optimal I is by chance (expected={GOLDEN_EXPECTED*100:.1f}%)")
+    print(f"  H1: Golden Zone concentration is structural (exceeds expected)")
     print()
-    print(f"  관측값:     {n_in_golden}/{n_total} ({ratio_golden*100:.1f}%)")
-    print(f"  기대값:     {GOLDEN_EXPECTED*n_total:.1f}/{n_total} ({GOLDEN_EXPECTED*100:.1f}%)")
+    print(f"  Observed:   {n_in_golden}/{n_total} ({ratio_golden*100:.1f}%)")
+    print(f"  Expected:   {GOLDEN_EXPECTED*n_total:.1f}/{n_total} ({GOLDEN_EXPECTED*100:.1f}%)")
     print(f"  p-value:    {p_value:.6f}")
     print()
 
-    # 5. 최종 판정
+    # 5. Final Verdict
     print("═" * 65)
-    print("  [ 최종 판정 ]")
+    print("  [ Final Verdict ]")
     print("═" * 65)
     print()
 
     if p_value < 0.05 and ratio_golden > GOLDEN_EXPECTED * 1.5:
-        verdict = "구조적 발견"
+        verdict = "Structural Discovery"
         detail = (
-            f"골든존 내 최적 I 비율({ratio_golden*100:.1f}%)이 "
-            f"랜덤 기대({GOLDEN_EXPECTED*100:.1f}%)를 유의하게 초과.\n"
-            f"  매핑 공식에 무관하게 로렌츠 시스템 자체가 골든존에서 CCT를 최대화하는 경향이 있다."
+            f"Golden Zone optimal I ratio ({ratio_golden*100:.1f}%) "
+            f"significantly exceeds random expected ({GOLDEN_EXPECTED*100:.1f}%).\n"
+            f"  The Lorenz system itself tends to maximize CCT in Golden Zone regardless of mapping formula."
         )
     elif p_value < 0.05:
-        verdict = "약한 구조적 발견"
+        verdict = "Weak Structural Discovery"
         detail = (
-            f"통계적으로 유의(p={p_value:.4f})하지만 효과 크기가 작다.\n"
-            f"  골든존 효과가 존재하나 매핑에 크게 의존한다."
+            f"Statistically significant (p={p_value:.4f}) but small effect size.\n"
+            f"  Golden Zone effect exists but is highly mapping-dependent."
         )
     elif ratio_golden > GOLDEN_EXPECTED * 1.2:
-        verdict = "판단 보류"
+        verdict = "Judgment Reserved"
         detail = (
-            f"골든존 비율({ratio_golden*100:.1f}%)이 기대보다 약간 높으나 "
-            f"통계적으로 유의하지 않음(p={p_value:.4f}).\n"
-            f"  더 많은 매핑(n > 5000)으로 재검증 필요."
+            f"Golden Zone ratio ({ratio_golden*100:.1f}%) is slightly higher than expected "
+            f"but not statistically significant (p={p_value:.4f}).\n"
+            f"  Re-verification needed with more mappings (n > 5000)."
         )
     else:
-        verdict = "매핑의 산물"
+        verdict = "Product of Mapping"
         detail = (
-            f"골든존 내 최적 I 비율({ratio_golden*100:.1f}%)이 "
-            f"랜덤 기대({GOLDEN_EXPECTED*100:.1f}%)와 유사.\n"
-            f"  '골든존에서 CCT 최대'는 매핑 공식 설계의 산물일 가능성이 높다."
+            f"Golden Zone optimal I ratio ({ratio_golden*100:.1f}%) is "
+            f"similar to random expected ({GOLDEN_EXPECTED*100:.1f}%).\n"
+            f"  'Maximum CCT in Golden Zone' is likely a product of mapping formula design."
         )
 
-    print(f"  판정: {verdict}")
-    print(f"  근거: {detail}")
+    print(f"  Verdict: {verdict}")
+    print(f"  Basis: {detail}")
     print()
 
-    # gap 없는 매핑 추가 판정
+    # Additional verdict for mappings without gap
     if np.sum(~all_has_gap) > 10:
         no_gap_best = all_best_i[~all_has_gap]
         ng_in_golden = np.sum((no_gap_best >= GOLDEN_LOWER) & (no_gap_best <= GOLDEN_UPPER))
         ng_ratio = ng_in_golden / len(no_gap_best)
         ng_p = binomial_test(int(ng_in_golden), len(no_gap_best), GOLDEN_EXPECTED)
-        print(f"  추가: gap 없는 매핑에서도 골든존 효과 {'있음' if ng_p < 0.05 else '없음'}"
-              f" (비율={ng_ratio*100:.1f}%, p={ng_p:.4f})")
+        print(f"  Addition: Golden Zone effect {'exists' if ng_p < 0.05 else 'absent'} even in mappings without gap"
+              f" (ratio={ng_ratio*100:.1f}%, p={ng_p:.4f})")
         if ng_p < 0.05:
-            print(f"  → gap 메커니즘 없이도 골든존 효과 존재 = 더 강한 증거")
+            print(f"  → Golden Zone effect exists without gap mechanism = Stronger evidence")
         print()
 
     print("═" * 65)
@@ -434,20 +434,20 @@ def analyze_and_report(all_best_i, all_has_gap, all_mapping_type):
 # ─────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(
-        description="매핑 독립성 검증: 골든존 CCT 최적화가 매핑의 산물인지 구조적 발견인지 검증",
+        description="Mapping Independence Verification: Verify if Golden Zone CCT optimization is a product of mapping or a structural discovery",
     )
     parser.add_argument("--n-mappings", type=int, default=1000,
-                        help="랜덤 매핑 수 (기본 1000)")
+                        help="Number of random mappings (default 1000)")
     parser.add_argument("--grid", type=int, default=20,
-                        help="I 스캔 해상도 (기본 20)")
+                        help="I scan resolution (default 20)")
     parser.add_argument("--steps", type=int, default=10000,
-                        help="로렌츠 시뮬레이션 스텝 수 (기본 10000, 속도 우선)")
+                        help="Lorenz simulation step count (default 10000, speed priority)")
     parser.add_argument("--dt", type=float, default=0.01,
-                        help="시간 간격 (기본 0.01)")
+                        help="Time interval (default 0.01)")
     parser.add_argument("--quick", action="store_true",
-                        help="빠른 실행 (100개, grid=10)")
+                        help="Quick run (100 mappings, grid=10)")
     parser.add_argument("--seed", type=int, default=12345,
-                        help="난수 시드 (기본 12345)")
+                        help="Random seed (default 12345)")
 
     args = parser.parse_args()
 
@@ -457,7 +457,7 @@ def main():
 
     print()
     print("═" * 65)
-    print("  매핑 독립성 검증 시작")
+    print("  Starting Mapping Independence Verification")
     print("═" * 65)
     print()
 

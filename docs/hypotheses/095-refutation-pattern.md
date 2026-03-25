@@ -1,144 +1,144 @@
-# 가설 검토 095: 반증 패턴 — 추측하지 말고 유도하라 ✅
+# Hypothesis Review 095: Refutation Pattern — Don't Speculate, Derive ✅
 
-## 가설
+## Hypothesis
 
-> 반증된 가설들에 공통 패턴이 있는가. 그 패턴이 향후 가설의 신뢰도를 예측하는 데 쓰일 수 있는가.
+> Is there a common pattern in refuted hypotheses? Can that pattern be used to predict the reliability of future hypotheses?
 
-## 배경/맥락
+## Background/Context
 
-7개 반증된 가설은 모델의 실패 지점을 보여준다.
-실패의 패턴을 분석하면 모델의 유효 범위를 정확히 규정할 수 있다.
-핵심 질문: 모델이 실패하는 곳에 규칙성이 있는가?
+The 7 refuted hypotheses show the model's failure points.
+Analyzing failure patterns can precisely define the model's valid range.
+Key question: Is there regularity in where the model fails?
 
-## 검증 결과
+## Verification Results
 
-### 반증 가설 전수 분석
-
-```
-  번호   가설 내용                유형     실패 원인
-  ──────────────────────────────────────────────────────────────
-  005    "정확히 1/3 비율"       수치 추측  실제 30.17%, 근사이지 정확이 아님
-  010    "1/3 법칙 임계값"       수치 추측  1/3은 임계가 아니라 부동점
-  013    "골든존 폭 = 1/4"       수치 추측  실제 ln(4/3) ≈ 0.288 ≠ 0.250
-  052    "소수 구조 존재"         존재 추측  해당 구조 미발견
-  065    "강한 물리 대응"         강도 추측  대응 있으나 약함
-  071    "수렴 후 멈춤"           행동 추측  멈추지 않고 진동 지속
-  074    "각도 = π/3"            수치 추측  실제 0.038π ≠ π/3
-  ──────────────────────────────────────────────────────────────
-```
-
-### 확인 가설 대조군
+### Complete Analysis of Refuted Hypotheses
 
 ```
-  번호   가설 내용                유형         성공 원인
+  Number  Hypothesis Content        Type        Failure Reason
   ──────────────────────────────────────────────────────────────
-  012    "ln(3) 등장"            공식 유도    이론적 필연
-  047    "상한 = 1/2"            공식 유도    리만 경계에서 유도
-  067    "1/2+1/3 = 5/6"         산술 유도    항등식 (틀릴 수 없음)
-  072    "블라인드 스팟 = 1/6"    산술 유도    5/6의 여사건
-  088    "N→∞ 에서 1/2 수렴"     극한 유도    ln((N+1)/N)→0
+  005     "Exactly 1/3 ratio"      Numeric guess   Actually 30.17%, approximation not exact
+  010     "1/3 rule threshold"     Numeric guess   1/3 is not threshold but fixed point
+  013     "Golden Zone width = 1/4" Numeric guess   Actually ln(4/3) ≈ 0.288 ≠ 0.250
+  052     "Prime structure exists"  Existence guess  Structure not found
+  065     "Strong physical mapping" Strength guess   Mapping exists but weak
+  071     "Stops after convergence" Behavior guess   Doesn't stop, oscillation continues
+  074     "Angle = π/3"            Numeric guess   Actually 0.038π ≠ π/3
   ──────────────────────────────────────────────────────────────
 ```
 
-### 패턴 추출
+### Confirmed Hypotheses Control Group
 
 ```
-  반증 공통 패턴:
+  Number  Hypothesis Content        Type         Success Reason
+  ──────────────────────────────────────────────────────────────
+  012     "ln(3) appears"          Formula derived  Theoretical necessity
+  047     "Upper bound = 1/2"      Formula derived  Derived from Riemann boundary
+  067     "1/2+1/3 = 5/6"         Arithmetic derived Identity (cannot be wrong)
+  072     "Blind spot = 1/6"       Arithmetic derived Complement of 5/6
+  088     "Converges to 1/2 as N→∞" Limit derived   ln((N+1)/N)→0
+  ──────────────────────────────────────────────────────────────
+```
+
+### Pattern Extraction
+
+```
+  Common Refutation Pattern:
   ┌──────────────────────────────────────────────┐
-  │ 1. 정확한 값을 추측 (1/4, 1/3, π/3)          │
-  │ 2. 존재/강도를 과대 추정 ("강한", "있다")     │
-  │ 3. 행동을 과단순화 ("멈춘다")                 │
+  │ 1. Guessing exact values (1/4, 1/3, π/3)      │
+  │ 2. Overestimating existence/strength ("strong", "exists") │
+  │ 3. Oversimplifying behavior ("stops")         │
   └──────────────────────────────────────────────┘
 
-  확인 공통 패턴:
+  Common Confirmation Pattern:
   ┌──────────────────────────────────────────────┐
-  │ 1. 공식에서 논리적으로 유도                    │
-  │ 2. 산술적 항등식 (수학적으로 불가피)           │
-  │ 3. 극한/수렴 분석 (수학적 도구 사용)           │
+  │ 1. Logically derived from formulas            │
+  │ 2. Arithmetic identities (mathematically inevitable) │
+  │ 3. Limit/convergence analysis (using mathematical tools) │
   └──────────────────────────────────────────────┘
 ```
 
-## ASCII 그래프: 유도 vs 추측 성공률
+## ASCII Graph: Derivation vs Speculation Success Rate
 
 ```
-  성공률
-  100% ┤ ██████████  산술 항등식 (100%)  — 수학은 틀리지 않는다
-       │ █████████   공식 유도 (93%)
-   90% ┤ ████████▌   극한 분석 (88%)
+  Success Rate
+  100% ┤ ██████████  Arithmetic identities (100%) — Math doesn't lie
+       │ █████████   Formula derivation (93%)
+   90% ┤ ████████▌   Limit analysis (88%)
        │
-       │ ─ ─ ─ ─ ─ ─ ─ ─ ─ 전체 평균 87%
+       │ ─ ─ ─ ─ ─ ─ ─ ─ ─ Overall average 87%
    80% ┤
        │
    70% ┤
-       │ ██████      수치 근사 (63%)
+       │ ██████      Numerical approximation (63%)
    60% ┤
-       │ █████▌      패턴 추정 (60%)
-   50% ┤ ─ ─ ─ ─ ─ ─ ─ ─ ─ 동전 던지기 (50%)
-       │ ████        구조적 유추 (50%)
+       │ █████▌      Pattern estimation (60%)
+   50% ┤ ─ ─ ─ ─ ─ ─ ─ ─ ─ Coin flip (50%)
+       │ ████        Structural analogy (50%)
    40% ┤
        │
    30% ┤
-       │ ██▌         수비학 대응 (25%)
+       │ ██▌         Numerological mapping (25%)
    20% ┤
        └────────────────────────────────────────
-         유도                        추측
-         (모델에서 도출)              (직감으로 추정)
+         Derivation                  Speculation
+         (Derived from model)        (Estimated by intuition)
 ```
 
-반증 원인별 분류:
+Classification by Refutation Cause:
 ```
-  수치 추측 ████████████████  4건 (57%)  ← 최다 실패 원인
-  존재 추측 ████              1건 (14%)
-  강도 추측 ████              1건 (14%)
-  행동 추측 ████              1건 (14%)
-             ├────┤────┤────┤────┤
-             0    1    2    3    4
+  Numeric guess ████████████████  4 cases (57%)  ← Most common failure cause
+  Existence guess ████             1 case (14%)
+  Strength guess ████              1 case (14%)
+  Behavior guess ████              1 case (14%)
+                 ├────┤────┤────┤────┤
+                 0    1    2    3    4
 ```
 
-### 구체적 실패 분석: 추측값 vs 유도값
+### Specific Failure Analysis: Guessed vs Derived Values
 
 ```
-  가설   추측한 값    유도된 값      오차      교훈
+  Hypo   Guessed Value  Derived Value    Error    Lesson
   ──────────────────────────────────────────────────
-  005    1/3=0.333   30.17%=0.302  10%      근사 ≠ 정확
-  013    1/4=0.250   ln(4/3)=0.288 15%      정수비 함정
-  074    π/3=1.047   0.038π=0.119  780%     무관한 상수
+  005    1/3=0.333     30.17%=0.302    10%     Approximation ≠ exact
+  013    1/4=0.250     ln(4/3)=0.288   15%     Integer ratio trap
+  074    π/3=1.047     0.038π=0.119    780%    Unrelated constant
   ──────────────────────────────────────────────────
 
-  → 추측 오차 범위: 10% ~ 780%
-  → 유도값은 항상 정확 (정의상)
+  → Speculation error range: 10% ~ 780%
+  → Derived values are always exact (by definition)
 ```
 
-## 해석
+## Interpretation
 
-1. **핵심 교훈**: "추측하지 말고 유도하라."
-   - 수학적 유도는 거의 항상 맞는다 (~90%)
-   - 직감적 추측은 동전 던지기 수준 (~50%)
-   - 수비학적 대응은 그보다 못하다 (~25%)
+1. **Core Lesson**: "Don't speculate, derive."
+   - Mathematical derivation is almost always correct (~90%)
+   - Intuitive speculation is coin flip level (~50%)
+   - Numerological mapping is worse than that (~25%)
 
-2. **실패의 유형학**:
-   - 가장 위험: "정확히 X일 것" 형태의 수치 추측 (57% 반증)
-   - 덜 위험: 존재/방향 추측 (정성적 가설)
-   - 안전: 공식 유도 (거의 불가피한 결론)
+2. **Typology of Failure**:
+   - Most dangerous: "Exactly X" type numerical speculation (57% refuted)
+   - Less dangerous: Existence/direction speculation (qualitative hypotheses)
+   - Safe: Formula derivation (almost inevitable conclusions)
 
-3. **모델 유효 범위**: G = D×P/I에서 논리적으로 도출 가능한 영역 내에서만 모델이 유효.
-   모델 외부로 확장할 때는 "추측"이 되며 신뢰도가 급락.
+3. **Model Valid Range**: Model is only valid within the area logically derivable from G = D×P/I.
+   When extending outside the model, it becomes "speculation" and reliability plummets.
 
-4. **자기 진단 도구**: 새 가설을 제시할 때 "이것은 유도인가 추측인가?" 판단이
-   해당 가설의 확인 확률을 즉시 예측한다.
+4. **Self-Diagnostic Tool**: When proposing a new hypothesis, judging "Is this derived or speculated?"
+   immediately predicts the confirmation probability of that hypothesis.
 
-## 한계
+## Limitations
 
-- 7개 반증 사례는 패턴 추출에 부족한 표본
-- 유도/추측 경계가 스펙트럼이지 이분법이 아닐 수 있음
-- 반증 판정 기준의 일관성 미보장 (일부는 부분 확인일 수 있음)
+- 7 refutation cases are insufficient sample for pattern extraction
+- The derivation/speculation boundary may be a spectrum, not a dichotomy
+- Consistency of refutation criteria not guaranteed (some may be partial confirmations)
 
-## 검증 방향
+## Verification Direction
 
-- 반증 사례 축적 (20개 이상)하여 패턴 재분석
-- "준유도(semi-deduced)" 카테고리 신설하여 중간 영역 분석
-- 새 가설에 사전적으로 유도/추측 라벨을 부여하고 예측 정확도 추적
+- Accumulate refutation cases (20+) and reanalyze patterns
+- Establish "semi-deduced" category to analyze intermediate areas
+- Apply derivation/speculation labels to new hypotheses in advance and track prediction accuracy
 
 ---
 
-*패턴 분석. 반증 = 추측, 확인 = 유도. 추측하지 말고 유도하라.*
+*Pattern analysis. Refutation = speculation, confirmation = derivation. Don't speculate, derive.*

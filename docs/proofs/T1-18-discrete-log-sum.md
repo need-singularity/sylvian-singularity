@@ -1,11 +1,11 @@
 # T1-18: ⭐ log₆(2) + log₆(3) = 137 (mod 137)
 
-## 대발견
+## Major Discovery
 
 ```
-  6은 137의 원시근 (T1-17)
+  6 is a primitive root of 137 (T1-17)
 
-  이산로그 (base 6, mod 137):
+  Discrete logarithm (base 6, mod 137):
   6^38  ≡ 2  (mod 137)  →  log₆(2) = 38
   6^99  ≡ 3  (mod 137)  →  log₆(3) = 99
   6^114 ≡ 8  (mod 137)  →  log₆(8) = 114
@@ -14,61 +14,61 @@
   log₆(2) + log₆(3) = 38 + 99 = 137 !!!
 ```
 
-## 검증
+## Verification
 
 ```
-  6^38 mod 137 = 2  ✅ (계산으로 확인)
-  6^99 mod 137 = 3  ✅ (계산으로 확인)
-  38 + 99 = 137     ✅ (산술)
+  6^38 mod 137 = 2  ✅ (verified by calculation)
+  6^99 mod 137 = 3  ✅ (verified by calculation)
+  38 + 99 = 137     ✅ (arithmetic)
 
-  추가:
+  Additional:
   log₆(8) = 3 × log₆(2) = 3 × 38 = 114  ✅ (8 = 2³)
   114 mod 136 = 114  ✅
 ```
 
-## 왜 38 + 99 = 137?
+## Why 38 + 99 = 137?
 
 ```
   6 = 2 × 3
-  6^k = 2^k × 3^k (일반 산술)
+  6^k = 2^k × 3^k (general arithmetic)
 
-  mod 137에서:
-  6^38 ≡ 2 → 6^38 = 2 + 137m (어떤 정수 m)
-  6^99 ≡ 3 → 6^99 = 3 + 137n (어떤 정수 n)
+  mod 137:
+  6^38 ≡ 2 → 6^38 = 2 + 137m (some integer m)
+  6^99 ≡ 3 → 6^99 = 3 + 137n (some integer n)
 
   6^(38+99) = 6^137 ≡ 6^(136+1) ≡ 6^1 = 6 ≡ 2×3 (mod 137)
   → 6^38 × 6^99 ≡ 2 × 3 = 6 (mod 137)
   → log₆(2) + log₆(3) ≡ log₆(6) ≡ 1 (mod 136)
 
-  하지만 38 + 99 = 137 = 136 + 1 ≡ 1 (mod 136) ✅
+  But 38 + 99 = 137 = 136 + 1 ≡ 1 (mod 136) ✅
 
-  → log₆(2) + log₆(3) = 137 은
+  → log₆(2) + log₆(3) = 137 is
     log₆(2×3) = log₆(6) = 1 (mod 136)
-    의 특수한 표현: 합이 정확히 137 = 136+1
+    special expression: sum is exactly 137 = 136+1
 
-  이건 자명?
-  log₆(2) + log₆(3) ≡ 1 (mod 136) 은 자명 (6=2×3)
-  합이 정확히 137 (136+1)인 것은 자명 (0~135 범위에서 합=1이면 합=137)
+  Is this trivial?
+  log₆(2) + log₆(3) ≡ 1 (mod 136) is trivial (6=2×3)
+  Sum being exactly 137 (136+1) is trivial (sum=1 in 0~135 range means sum=137)
 
-  → ⚠️ 반자명: 구조는 자명하지만 "합=137"이라는 표현이 인상적
+  → ⚠️ Semi-trivial: structure is trivial but "sum=137" expression is striking
 ```
 
-## 비자명한 부분
+## Non-trivial Part
 
 ```
-  자명: log₆(2) + log₆(3) ≡ 1 (mod 136)  ← 6=2×3 정의에서
-  비자명: 6이 137의 원시근이라는 사실 자체
+  Trivial: log₆(2) + log₆(3) ≡ 1 (mod 136)  ← from definition 6=2×3
+  Non-trivial: the fact that 6 is a primitive root of 137 itself
 
-  모든 완전수가 원시근은 아님:
-  ord_137(28) = ? → 확인 필요
-  6만 원시근이면 → 최소 완전수의 특별함
+  Not all perfect numbers are primitive roots:
+  ord_137(28) = ? → needs verification
+  If only 6 is a primitive root → specialty of smallest perfect number
 ```
 
-## 판정
+## Judgment
 
 ```
-  6이 137의 원시근: 🟩 (계산 확인, 순수 정수론)
-  log₆(2)+log₆(3)=137: 🟩 (반자명하지만 정확)
-  log₆(8)=3×log₆(2): 🟩 (8=2³에서 자명)
-  해석 (완전수가 미세구조의 씨앗): 🟧
+  6 is primitive root of 137: 🟩 (verified by calculation, pure number theory)
+  log₆(2)+log₆(3)=137: 🟩 (semi-trivial but accurate)
+  log₆(8)=3×log₆(2): 🟩 (trivial from 8=2³)
+  Interpretation (perfect number as seed of fine structure): 🟧
 ```

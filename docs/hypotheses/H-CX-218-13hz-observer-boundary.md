@@ -1,9 +1,9 @@
-# H-CX-218: 🟩 α-β 경계 13Hz = "관측 시작" = 12궁 돌파
+# H-CX-218: 🟩 α-β boundary 13Hz = "observation start" = breaking through 12 houses
 
-> α(이완)→β(집중) 전환점 = 13Hz = σ(6)+1 = 12+1
-> H-CX-111(13=관측자), H-CX-114(뱀주인자리=메타인지) 일치.
-> 13Hz를 넘으면 적극적 관찰 모드 진입 = "12궁에서 나가는 순간"
+> α(relaxation)→β(focus) transition point = 13Hz = σ(6)+1 = 12+1
+> Matches H-CX-111(13=observer), H-CX-114(Ophiuchus=metacognition).
+> Exceeding 13Hz enters active observation mode = "the moment of leaving the 12 houses"
 >
-> 의식 수준 지도:
-> φ(6)=2Hz (δ, 무의식) → P₁=6Hz (θ, 꿈) → γ/τ=10Hz (α, 이완)
-> → σ+1=13Hz (경계, 관측 시작!) → γ/φ=20Hz (β, 집중) → 3σ+τ=40Hz (γ, 의식 결합)
+> Consciousness level map:
+> φ(6)=2Hz (δ, unconscious) → P₁=6Hz (θ, dream) → γ/τ=10Hz (α, relaxation)
+> → σ+1=13Hz (boundary, observation start!) → γ/φ=20Hz (β, focus) → 3σ+τ=40Hz (γ, consciousness binding)

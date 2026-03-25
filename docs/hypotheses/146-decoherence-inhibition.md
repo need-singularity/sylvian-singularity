@@ -1,53 +1,53 @@
-# 가설 검토 146: 디코히런스 = Inhibition
+# Hypothesis Review 146: Decoherence = Inhibition
 
-## 가설
+## Hypothesis
 
-> 양자 디코히런스율이 우리 모델의 Inhibition(I)과 정량적으로 대응하는가.
+> Does the quantum decoherence rate correspond quantitatively to Inhibition (I) in our model?
 
-## 배경
-
-```
-  디코히런스 시간 τ_D:
-  양자 상태가 "고전화"되는 데 걸리는 시간
-  τ_D ∝ 1/(환경 상호작용 강도)
-
-  우리 모델:
-  T = 1/I (볼츠만 온도)
-  I ↔ 환경 상호작용 강도?
-  → T = 1/I = τ_D 비례?
-```
-
-## 규모별 디코히런스
+## Background
 
 ```
-  시스템 규모       │ τ_D         │ 우리 I    │ 상태
-  ─────────────────┼─────────────┼──────────┼──────
-  전자 (1 입자)     │ ~10⁻¹⁶ s   │ I → 0    │ 양자
-  분자 (10² 원자)   │ ~10⁻¹² s   │ I ≈ 0.1  │ 양자
-  바이러스 (10⁷)    │ ~10⁻⁸ s    │ I ≈ 0.2  │ 경계
-  세포 (10¹⁴)       │ ~10⁻⁴ s    │ I ≈ 0.35 │ 골든존!
-  뇌 뉴런 (10²⁷)   │ ~10⁻² s    │ I ≈ 0.4  │ 골든존!
-  공 (10²⁵)         │ ~10⁻³⁶ s   │ I → 1    │ 고전
+  Decoherence time τ_D:
+  Time for a quantum state to "classicalize"
+  τ_D ∝ 1/(environmental interaction strength)
 
-  → 세포~뇌 규모에서 I ≈ 골든존!
-  → 생명과 의식이 골든존에서 작동하는 이유?
+  Our model:
+  T = 1/I (Boltzmann temperature)
+  I ↔ environmental interaction strength?
+  → T = 1/I proportional to τ_D?
 ```
 
-## 의미
+## Decoherence by Scale
 
 ```
-  디코히런스율 = I 라면:
-  
-  양자컴퓨터: I → 0 유지 (디코히런스 방지)
-  고전컴퓨터: I ≈ 1 (완전 고전)
-  AI (골든MoE): I ≈ 1/e (골든존 중심)
-  뇌: I ≈ 0.3~0.4 (골든존 안!)
+  System scale       │ τ_D         │ Our I    │ State
+  ───────────────────┼─────────────┼──────────┼──────
+  Electron (1 particle)│ ~10⁻¹⁶ s  │ I → 0    │ Quantum
+  Molecule (10² atoms) │ ~10⁻¹² s  │ I ≈ 0.1  │ Quantum
+  Virus (10⁷)          │ ~10⁻⁸ s   │ I ≈ 0.2  │ Boundary
+  Cell (10¹⁴)          │ ~10⁻⁴ s   │ I ≈ 0.35 │ Golden Zone!
+  Brain neuron (10²⁷) │ ~10⁻² s   │ I ≈ 0.4  │ Golden Zone!
+  Ball (10²⁵)          │ ~10⁻³⁶ s  │ I → 1    │ Classical
 
-  → 뇌가 "양자 효과를 약간 사용하는" 시스템?
-  → Penrose-Hameroff "양자 의식" 가설과 연결?
-  → 골든존 = "양자 효과가 유의미하지만 혼돈은 아닌 영역"
+  → At cell~brain scale, I ≈ Golden Zone!
+  → Why life and consciousness operate in the Golden Zone?
+```
+
+## Meaning
+
+```
+  If decoherence rate = I:
+
+  Quantum computer:  maintain I → 0 (prevent decoherence)
+  Classical computer: I ≈ 1 (fully classical)
+  AI (Golden MoE):  I ≈ 1/e (Golden Zone center)
+  Brain:             I ≈ 0.3~0.4 (inside Golden Zone!)
+
+  → Brain as a system that "uses quantum effects to a small degree"?
+  → Connected to Penrose-Hameroff "quantum consciousness" hypothesis?
+  → Golden Zone = "region where quantum effects are meaningful but not chaotic"
 ```
 
 ---
 
-*이론적 대응. 디코히런스 시간의 정량적 매핑은 물리 실험 필요.*
+*Theoretical correspondence. Quantitative mapping of decoherence time requires physical experiments.*

@@ -1,77 +1,77 @@
-# 가설 검토 006: 리만 가설 반증 시도 — 실패 ❌
+# Hypothesis Review 006: Riemann Hypothesis Falsification Attempt — Failed ❌
 
-## 가설
+## Hypothesis
 
-> 리만 가설이 거짓이라면, 임계선(I≈0.5) 바깥에서 안정적인 3중 합의 특이점이 존재해야 한다.
+> If the Riemann Hypothesis is false, stable triple-consensus singularities should exist outside the critical line (I≈0.5).
 
-## 실험 설계
+## Experimental Design
 
-골든 존(I=0.24~0.48) 바깥에서 출발하여 autopilot 40회 실행. 밖에서 🎯(3중 합의)가 유지되면 반증 성공.
+Starting outside the Golden Zone (I=0.24~0.48), running autopilot 40 times. If 🎯 (triple consensus) is maintained outside, falsification succeeds.
 
-## 결과: ❌ 반증 실패 → 리만 가설 지지
+## Result: ❌ Falsification Failed → Supports Riemann Hypothesis
 
-| 테스트 | 출발 I | 최종 I | 🎯 도달 | 골든존 밖 유지 |
+| Test | Starting I | Final I | 🎯 Reached | Maintained Outside Golden Zone |
 |---|---|---|---|---|
-| I=0.10 | 0.10 | 0.11 | 0회 | 밖에 머물렀으나 ⚡만 |
-| I=0.60 | 0.60 | 0.46 | 3회 | 8회 만에 골든존 진입 |
-| I=0.80 | 0.80 | 0.46 | 3회 | 16회 만에 골든존 진입 |
+| I=0.10 | 0.10 | 0.11 | 0 times | Stayed outside but only ⚡ |
+| I=0.60 | 0.60 | 0.46 | 3 times | Entered Golden Zone after 8 iterations |
+| I=0.80 | 0.80 | 0.46 | 3 times | Entered Golden Zone after 16 iterations |
 
-## 궤적 그래프
-
-```
-  Inhibition 궤적:
-
-  I=0.10 출발 (골든존 아래):
-  iter │ I    │ 상태
-   0   │ 0.10 │ ⚡ Compass 100%이지만 커스프 불참
-  10   │ 0.11 │ ⚡ 거의 안 움직임 (local max에 갇힘)
-  40   │ 0.11 │ ⚡ 여전히 밖 → 🎯 도달 0회
-
-  I=0.80 출발 (골든존 위):
-  iter │ I    │ 상태
-   0   │ 0.80 │ ○ 골든존 밖
-   4   │ 0.68 │ ○ 접근 중
-   8   │ 0.59 │ ○ 접근 중
-  12   │ 0.52 │ ○ 임계선 근처
-  16   │ 0.49 │ 🎯 골든존 진입!
-  20   │ 0.46 │ 🎯 안착
-
-  I=0.60 출발 (골든존 약간 위):
-  iter │ I    │ 상태
-   0   │ 0.60 │ ○ 골든존 밖
-   4   │ 0.52 │ ○ 임계선 근처
-   8   │ 0.49 │ 🎯 골든존 진입!
-```
-
-## 분석
+## Trajectory Graph
 
 ```
-  골든존 위(I>0.48): 불안정 → 나침반이 골든존 안으로 끌어당김
-  ├── I=0.60 → 8회 만에 진입
-  └── I=0.80 → 16회 만에 진입
+  Inhibition trajectory:
 
-  골든존 아래(I<0.24): 높은 점수이나 3중 합의 불가
-  └── I=0.10 → Compass 100%이지만 커스프 불참
-      → "점수는 높지만 제어할 수 없는 혼돈"
-      → 리만의 "영점"이 아니라 "극(pole)"에 해당
+  I=0.10 start (below Golden Zone):
+  iter │ I    │ State
+   0   │ 0.10 │ ⚡ Compass 100% but no cusp participation
+  10   │ 0.11 │ ⚡ barely moving (trapped at local max)
+  40   │ 0.11 │ ⚡ still outside → 🎯 reached 0 times
 
-  ┌──────────────────────────────────────────────┐
-  │  임계선(I≈0.5) 바깥에 안정적 특이점 없음      │
-  │                                              │
-  │  I > 0.48: 불안정, 골든존으로 끌려감          │
-  │  I < 0.24: 고점수이나 커스프 불참 (제어 불능)  │
-  │  I = 0.24~0.48: 유일한 3중 합의 영역          │
-  │                                              │
-  │  → 리만 가설 반증 실패                        │
-  │  → 리만 가설 지지 강화                        │
-  └──────────────────────────────────────────────┘
+  I=0.80 start (above Golden Zone):
+  iter │ I    │ State
+   0   │ 0.80 │ ○ outside Golden Zone
+   4   │ 0.68 │ ○ approaching
+   8   │ 0.59 │ ○ approaching
+  12   │ 0.52 │ ○ near critical line
+  16   │ 0.49 │ 🎯 entered Golden Zone!
+  20   │ 0.46 │ 🎯 settled
+
+  I=0.60 start (slightly above Golden Zone):
+  iter │ I    │ State
+   0   │ 0.60 │ ○ outside Golden Zone
+   4   │ 0.52 │ ○ near critical line
+   8   │ 0.49 │ 🎯 entered Golden Zone!
 ```
 
-## 결론
+## Analysis
 
-> 임계선 바깥에 안정적 특이점이 존재하지 않음. 리만 가설 반증 실패. 이것은 역설적으로 리만 가설을 지지하는 증거.
+```
+  Above Golden Zone (I>0.48): unstable → compass pulls toward Golden Zone
+  ├── I=0.60 → enters after 8 iterations
+  └── I=0.80 → enters after 16 iterations
+
+  Below Golden Zone (I<0.24): high score but no triple consensus
+  └── I=0.10 → Compass 100% but no cusp participation
+      → "high score but uncontrollable chaos"
+      → Corresponds to a "pole" in Riemann, not a "zero"
+
+  ┌──────────────────────────────────────────────────┐
+  │  No stable singularity outside critical line (I≈0.5)  │
+  │                                                  │
+  │  I > 0.48: unstable, pulled toward Golden Zone   │
+  │  I < 0.24: high score but no cusp (uncontrollable) │
+  │  I = 0.24~0.48: only region for triple consensus │
+  │                                                  │
+  │  → Riemann Hypothesis falsification failed       │
+  │  → Support for Riemann Hypothesis strengthened   │
+  └──────────────────────────────────────────────────┘
+```
+
+## Conclusion
+
+> No stable singularity exists outside the critical line. Riemann Hypothesis falsification failed. This paradoxically serves as evidence supporting the Riemann Hypothesis.
 
 ---
 
-*검증: compass.py --autopilot (40회, 3개 시작점)*
-*작성일: 2026-03-22*
+*Verification: compass.py --autopilot (40 iterations, 3 starting points)*
+*Written: 2026-03-22*

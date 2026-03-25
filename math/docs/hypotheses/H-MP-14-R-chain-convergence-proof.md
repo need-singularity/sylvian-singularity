@@ -1,13 +1,13 @@
-# H-MP-14: R-체인 수렴 증명 — R(n)∈Z → R(n)<n
+# H-MP-14: R-Chain Convergence Proof — R(n)∈Z → R(n)<n
 
-> **가설**: R(n)=σφ/(nτ)가 정수이면 R(n)<n 항상 (n≥2). 따라서 모든 정수 R-체인은 1에 수렴.
+> **Hypothesis**: If R(n)=σφ/(nτ) is an integer, then R(n)<n always (n≥2). Therefore, all integer R-chains converge to 1.
 
-## 검증: n≤50000에서 위반 0개 ✅
+## Verification: 0 violations for n≤50000 ✅
 
-## 증명 방향
-- R(n)=σφ/(nτ), 정수일 때 R<n ⟺ σφ<n²τ
-- σ(n)≤n×H_n (조화급수), φ(n)≥√(n/2)
+## Proof Direction
+- R(n)=σφ/(nτ), when integer R<n ⟺ σφ<n²τ
+- σ(n)≤n×H_n (harmonic series), φ(n)≥√(n/2)
 - σφ ≤ nH_n×n = n²H_n, nτ ≥ n...
-- 더 정밀: σφ/(nτ) = Π f(p,a). f<p 항상? → R<n?
+- More precise: σφ/(nτ) = Π f(p,a). f<p always? → R<n?
 
-## 난이도: 중 | 파급력: ★★★
+## Difficulty: Medium | Impact: ★★★

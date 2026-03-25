@@ -1,7 +1,7 @@
-# H-CX-192: ⭐🟦 σ(n)τ(n) = nφ(n) ⟺ n=28 유일!
+# H-CX-192: ⭐🟦 σ(n)τ(n) = nφ(n) ⟺ n=28 unique!
 
-> n=2~100,000 전수 검사: στ=nφ는 n=28(P₂)만!
+> n=2~100,000 exhaustive check: στ=nφ is only n=28(P₂)!
 > σ(28)τ(28) = 56×6 = 336 = 28×12 = 28φ(28) ✅
 >
-> H-CX-191과 쌍: σφ=nτ→6, στ=nφ→28
-> 각 완전수가 고유 등식을 가진다!
+> Paired with H-CX-191: σφ=nτ→6, στ=nφ→28
+> Each perfect number has its own unique equation!

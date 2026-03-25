@@ -1,27 +1,27 @@
-# H-MILL-1: 리만 가설과 R 스펙트럼 간극
+# H-MILL-1: Riemann Hypothesis and R Spectrum Gap
 
-> **가설**: R(n) 스펙트럼의 간극 구조가 ζ 함수 영점의 산술적 그림자이며,
-> Robin 부등식을 통해 R(n)의 상한이 리만 가설과 동치이다.
+> **Hypothesis**: The gap structure of R(n) spectrum is the arithmetic shadow of ζ function zeros,
+> and through Robin's inequality, the upper bound of R(n) is equivalent to the Riemann Hypothesis.
 
-## 확인된 연결
+## Confirmed Connections
 
 ```
-  1. σ₋₁(n) = σ(n)/n의 평균 = ζ(2) = π²/6 (Euler)
+  1. σ₋₁(n) = σ(n)/n average = ζ(2) = π²/6 (Euler)
      R(n) = σ₋₁(n) · φ(n)/τ(n)
-     → R의 평균 행동이 ζ(2)에 의존
+     → R's average behavior depends on ζ(2)
 
-  2. Robin 부등식 (1984):
+  2. Robin's inequality (1984):
      RH ⟺ σ(n) < e^γ · n · ln(ln(n)) for all n≥5041
      → R(n) < e^γ · ln(ln(n)) · φ(n)/τ(n)
-     → R에 대한 상한이 RH와 동치!
+     → Upper bound on R is equivalent to RH!
 
-  3. E_p(2) = p·ln((p+1)/p) + 1/p (이 세션 증명)
-     → F(s) = ∏E_p(s)의 수렴 직선 σ_c=2
-     → ζ 함수의 σ_c=1과 "1 차이"
+  3. E_p(2) = p·ln((p+1)/p) + 1/p (proven this session)
+     → F(s) = ∏E_p(s) convergence line σ_c=2
+     → "Difference of 1" from ζ function's σ_c=1
 
-  4. R 스펙트럼 간극 {3/4}∪{1}∪[7/6,∞)
-     → ζ 영점의 "실수부 간극" Re(s)=1/2와 구조적 유사?
+  4. R spectrum gap {3/4}∪{1}∪[7/6,∞)
+     → Structural similarity to ζ zeros "real part gap" Re(s)=1/2?
 ```
 
-## 판정: 🟨 간접 (Robin 부등식 경유, 직접 연결 아님)
-## 파급력: ★★★★★ (RH 관련이면 무조건 극고)
+## Judgment: 🟨 Indirect (via Robin's inequality, not direct connection)
+## Impact: ★★★★★ (Automatically extreme if RH-related)

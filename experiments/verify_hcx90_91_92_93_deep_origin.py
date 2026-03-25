@@ -1,10 +1,11 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-90~93 통합 검증: 혼동의 근원
+"""H-CX-90~93 Integrated Verification: Origin of Confusion
 
-H-CX-90: 에폭 0→1 위상 전이
-H-CX-91: k-NN 혼동 = 신경망 혼동?
-H-CX-92: dendrogram 깊이 = 학습 난이도
-H-CX-93: confusion PCA = 의미 축
+H-CX-90: Epoch 0→1 phase transition
+H-CX-91: k-NN confusion = neural network confusion?
+H-CX-92: dendrogram depth = learning difficulty
+H-CX-93: confusion PCA = semantic axis
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -302,8 +303,9 @@ if __name__ == '__main__':
             import traceback; traceback.print_exc()
 
     print(f"\n{'='*70}")
-    print(f"  7라운드 SUMMARY")
+    print(f"  Round 7 SUMMARY")
     print(f"{'='*70}")
     for ds, r in results.items():
         print(f"  {ds}: h0_ratio={r['h0_ratio']:.2f}x, knn_r={r['r_knn_best']:.3f}, "
               f"depth_r={r['r_92']:.3f}, pc1={r['pc1_var']:.3f}")
+```

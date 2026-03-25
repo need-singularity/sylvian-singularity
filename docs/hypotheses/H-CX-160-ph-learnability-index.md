@@ -1,4 +1,4 @@
-# H-CX-160: PH 복잡도 = 학습 가능성 지표
+# H-CX-160: PH Complexity = Learnability Index
 
-> 에폭1 H0_total로 데이터셋의 최종 정확도를 학습 전에 예측.
-> H0 높음 = 잘 분리 = 쉬움, H0 낮음 = 겹침 = 어려움.
+> Predict dataset's final accuracy before training using epoch 1 H0_total.
+> High H0 = well separated = easy, Low H0 = overlapping = difficult.

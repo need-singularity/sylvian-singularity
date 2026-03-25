@@ -1,13 +1,13 @@
-# H-PH-5: 플랑크 단위계와 6의 약수함수
+# H-PH-5: Planck Unit System and Divisor Function of 6
 
-> **가설**: 플랑크 단위계의 기본 상수 수(G, ℏ, c, k_B, e)=5=τ+1과 독립 차원 수=3=σ/τ에 산술적 의미가 있다.
+> **Hypothesis**: The number of fundamental constants in the Planck unit system (G, ℏ, c, k_B, e)=5=τ+1 and the number of independent dimensions=3=σ/τ have arithmetic significance.
 
-## 배경
-- SI 기본 단위: 7개 (2019 개정)
-- 물리적 독립 차원: M, L, T = 3 = σ/τ
-- 기본 상수: G, c, ℏ, k_B, e → 5 = τ+1
+## Background
+- SI base units: 7 units (2019 revision)
+- Physical independent dimensions: M, L, T = 3 = σ/τ
+- Fundamental constants: G, c, ℏ, k_B, e → 5 = τ+1
 
-## 현실적 평가
-약함. 단위 수는 인간 관습에 크게 의존.
+## Realistic Assessment
+Weak. The number of units heavily depends on human conventions.
 
-## 난이도: 저 | 파급력: ★
+## Difficulty: Low | Impact: ★

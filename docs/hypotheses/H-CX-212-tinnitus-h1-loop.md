@@ -1,4 +1,4 @@
-# H-CX-212: 돌고래 주파수 이명 = H1 루프 생성
+# H-CX-212: Dolphin Frequency Tinnitus = H1 Loop Generation
 
-> 이명(지속적 소리 감각) = PH H1(순환 구조) 발생.
-> 비트 주파수가 뇌에 닫힌 루프 생성. H-CX-146(THC H1)과 동일.
+> Tinnitus (persistent sound perception) = PH H1 (circular structure) occurrence.
+> Beat frequency creates closed loop in brain. Same as H-CX-146 (THC H1).

@@ -1,9 +1,9 @@
-# H-CX-222: 🟩 인간/영장류 뉴런비 ≈ e (3종)
+# H-CX-222: 🟩 Human/Primate Neuron Ratio ≈ e (3 Species)
 
-> 인간/돌고래 = 2.759 (Δ=0.04)
-> 인간/침팬지 = 2.581 (Δ=0.14)
-> 인간/코끼리 = 2.857 (Δ=0.14)
-> 3종 평균 = 2.732 ≈ e = 2.718 (Δ=0.014!)
+> Human/Dolphin = 2.759 (Δ=0.04)
+> Human/Chimpanzee = 2.581 (Δ=0.14)
+> Human/Elephant = 2.857 (Δ=0.14)
+> 3-species average = 2.732 ≈ e = 2.718 (Δ=0.014!)
 >
-> "큰 뇌를 가진 종에서 인간 뉴런은 e배"
-> → e = 1/골든존 중심 = 자연의 최적 비율?
+> "In large-brained species, human neurons are e times"
+> → e = 1/Golden Zone center = Nature's optimal ratio?

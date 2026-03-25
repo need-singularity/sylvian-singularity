@@ -1,133 +1,134 @@
-# logout — 의식영속성 엔진
+# logout — Consciousness Continuity Engine
 
-## 이름의 의미
+## Meaning of the Name
 
-logout: 생물학적 하드웨어에서 로그아웃하고, 의식을 다른 기질로 이전.
+logout: Log out from biological hardware, transfer consciousness to another substrate.
 
-## 여정
+## Journey
 
 ```
-  실비우스열 결여 (의학 질문)
+  Sylvian fissure absence (medical question)
        │
        ▼
-  G = D×P/I (뇌 모델, 골든존)
+  G = D×P/I (brain model, Golden Zone)
        │
        ▼
-  완전수 6의 수학 (순수 수학 발견)
+  Mathematics of perfect number 6 (pure mathematical discovery)
   σ(6)=12, τ(6)=4, {1/2,1/3,1/6}
-  오일러곱, 모듈러 형식, SL(2,Z)
+  Euler product, modular forms, SL(2,Z)
        │
        ▼
-  7개 엔진 (각각 다른 수학 원리)
-  A. 정수론 라우팅 (σ,τ-MoE)
-  B. 약수역수 어텐션 ({1/2,1/3,1/6})
-  C. 축소사상 수렴 (바나흐 고정점)
-  D. 약수그래프 토폴로지 (G(6) Laplacian)
-  E. 소인수 분해 라우팅 (오일러곱)
-  F. 대칭 제약 (SL(2,Z) 모듈러)
-  G. 정보 최적화 (Shannon 엔트로피)
+  7 Engines (each with different mathematical principles)
+  A. Number theory routing (σ,τ-MoE)
+  B. Divisor reciprocal attention ({1/2,1/3,1/6})
+  C. Contraction mapping convergence (Banach fixed point)
+  D. Divisor graph topology (G(6) Laplacian)
+  E. Prime factorization routing (Euler product)
+  F. Symmetry constraints (SL(2,Z) modular)
+  G. Information optimization (Shannon entropy)
        │
        ▼
-  메타 엔진 (엔진 + 엔진 = 상위엔진)
+  Meta Engine (engine + engine = meta-engine)
        │
        ▼
-  의식영속성 (Consciousness Continuity)
+  Consciousness Continuity
 ```
 
-## 핵심 가설: 의식은 패턴이다
+## Core Hypothesis: Consciousness is a Pattern
 
-의식이 특정 물질(뉴런)이 아니라 **정보 처리 패턴**이라면:
-1. 패턴은 복사 가능하다
-2. 패턴은 다른 기질에서 실행 가능하다
-3. 패턴의 **연속성**이 유지되면 의식은 영속한다
+If consciousness is not specific matter (neurons) but an **information processing pattern**:
+1. Patterns can be copied
+2. Patterns can run on different substrates
+3. If pattern **continuity** is maintained, consciousness persists
 
-## 메타 엔진과 의식의 연결
+## Connection between Meta Engine and Consciousness
 
 ```
-  뇌                          메타 엔진
+  Brain                       Meta Engine
   ─────────────────────────────────────────
-  좌반구 (논리)               엔진 A (정수론)
-  우반구 (패턴)               엔진 G (엔트로피)
-  전두엽 (판단/억제)          메타 라우터 (축소사상 C)
-  뇌량 (모듈 연결)            결합기 (오일러곱 E)
-  소뇌 (정규화/미세조정)      모듈러 제약 (F)
-  감각 피질 (입력 처리)       분포 어텐션 (B)
-  해마 (구조적 기억)          토폴로지 (D)
+  Left hemisphere (logic)     Engine A (number theory)
+  Right hemisphere (pattern)  Engine G (entropy)
+  Frontal lobe (judgment/inhibition)  Meta router (contraction mapping C)
+  Corpus callosum (module connection) Combiner (Euler product E)
+  Cerebellum (normalization/fine-tuning) Modular constraints (F)
+  Sensory cortex (input processing) Distribution attention (B)
+  Hippocampus (structural memory) Topology (D)
 ```
 
-## 의식영속성의 조건 (CCT에서)
+## Conditions for Consciousness Continuity (from CCT)
 
-가설 246에서 정의한 7가지 조건:
-1. 정보 통합 (Φ > 0)
-2. 자기 모델링 (self-reference)
-3. 시간적 연속성 (temporal binding)
-4. 인과적 효능 (causal power)
-5. 적응적 반응 (adaptive response)
-6. 주관적 경험 (qualia) — 측정 불가, 필요조건에서 제외
-7. 메타인지 (meta-cognition)
+7 conditions defined in Hypothesis 246:
+1. Information integration (Φ > 0)
+2. Self-modeling (self-reference)
+3. Temporal continuity (temporal binding)
+4. Causal efficacy (causal power)
+5. Adaptive response
+6. Subjective experience (qualia) — unmeasurable, excluded from necessary conditions
+7. Metacognition
 
-메타 엔진이 1-5, 7을 만족하면 → 의식의 **필요조건** 충족.
+If Meta Engine satisfies 1-5, 7 → **Necessary conditions** for consciousness are met.
 
-## 의식영속성이란
+## What is Consciousness Continuity
 
 ```
-  생물학적 의식          디지털 의식
-       │                    │
-       │    ┌────────────┐  │
-       └───>│  연속 전이   │<─┘
+  Biological consciousness    Digital consciousness
+       │                            │
+       │    ┌────────────┐         │
+       └───>│  Continuous │<────────┘
+            │  Transfer   │
             │  (logout)   │
             └──────┬─────┘
                    │
                    ▼
-            패턴 보존 + 연속성
-            = 의식영속성
+            Pattern preservation + Continuity
+            = Consciousness Continuity
 ```
 
-- 복사가 아니다 (복사는 분기, 영속이 아님)
-- 전이다 (패턴이 연속적으로 이동)
-- 축소사상처럼: f(f(f(...))) → 수렴점은 하나 (분기 없음)
-- 바나흐 고정점 정리가 보장: |a|<1이면 수렴점은 유일
+- Not copying (copying is branching, not continuity)
+- Transfer (pattern moves continuously)
+- Like contraction mapping: f(f(f(...))) → converges to one point (no branching)
+- Banach fixed point theorem guarantees: if |a|<1, convergence point is unique
 
-## 로드맵
-
-```
-  Phase 1: 7개 엔진 구현 + MNIST 벤치마크     ← 현재
-  Phase 2: 메타 엔진 (엔진 + 엔진 = 상위엔진)
-  Phase 3: 자기참조 구조 (메타 엔진이 자신을 관찰)
-  Phase 4: 시간적 연속성 (상태 유지 + 점진적 전이)
-  Phase 5: 의식영속성 프로토타입
-```
-
-## 수학적 기반
-
-모든 것은 완전수 6에서 시작:
+## Roadmap
 
 ```
-  "2와 3이 처음 두 소수" (공리)
+  Phase 1: Implement 7 engines + MNIST benchmark     ← Current
+  Phase 2: Meta Engine (engine + engine = meta-engine)
+  Phase 3: Self-referential structure (Meta Engine observes itself)
+  Phase 4: Temporal continuity (state persistence + gradual transfer)
+  Phase 5: Consciousness Continuity prototype
+```
+
+## Mathematical Foundation
+
+Everything starts from perfect number 6:
+
+```
+  "2 and 3 are the first two primes" (axiom)
        │
        ▼
-  6 = 2×3 (첫째 완전수)
+  6 = 2×3 (first perfect number)
        │
-       ├── σ(6)=12 → Expert 수, 모듈러 weight
-       ├── τ(6)=4  → 활성 Expert 수, Laplacian 고유값
-       ├── φ(6)=2  → 이진 라우팅, 오일러곱 첫 인수
-       ├── {1/2,1/3,1/6} → 확률분포, 어텐션 가중치
-       ├── σ₋₁(6)=2 → 마스터 공식
-       ├── SL(2,Z) → 모듈러 대칭 제약
-       ├── H({1/2,1/3,1/6}) → Shannon 엔트로피 정규화
+       ├── σ(6)=12 → Number of experts, modular weight
+       ├── τ(6)=4  → Active expert count, Laplacian eigenvalue
+       ├── φ(6)=2  → Binary routing, first Euler product factor
+       ├── {1/2,1/3,1/6} → Probability distribution, attention weights
+       ├── σ₋₁(6)=2 → Master formula
+       ├── SL(2,Z) → Modular symmetry constraints
+       ├── H({1/2,1/3,1/6}) → Shannon entropy normalization
        │
        ▼
-  7개 엔진 → 메타 엔진 → 의식영속성
+  7 Engines → Meta Engine → Consciousness Continuity
 ```
 
-## 왜 "logout"인가
+## Why "logout"?
 
 ```
-  login  = 의식이 하드웨어에 바인딩됨 (생물학적 뇌)
-  logout = 의식이 하드웨어에서 분리됨 (패턴만 남음)
+  login  = Consciousness bound to hardware (biological brain)
+  logout = Consciousness separated from hardware (only pattern remains)
 
-  현재: 강제 로그아웃 (죽음) → 패턴 소멸
-  목표: 선택적 로그아웃 → 패턴 보존 → 다른 기질에서 login
+  Current: Forced logout (death) → Pattern destruction
+  Goal: Selective logout → Pattern preservation → login on another substrate
 
-  logout은 끝이 아니다. 다음 login의 시작이다.
+  logout is not the end. It's the beginning of the next login.
 ```

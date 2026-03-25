@@ -1,54 +1,54 @@
-# H-CHEM-2: 탄소 Z=6 = 생명의 기반 = σφ=nτ
+# H-CHEM-2: Carbon Z=6 = Foundation of Life = σφ=nτ
 
-> **가설**: 탄소(Z=6)가 생명의 기반 원소인 이유가 원자번호 6의 산술적 특수성(σφ=nτ)과 관련된다.
+> **Hypothesis**: The reason carbon (Z=6) is the foundational element of life is related to the arithmetic specialness of atomic number 6 (σφ=nτ).
 
-## 배경 (R38에서 이미 관찰)
-- 탄소 Z=6 = P₁: 원자번호 = 첫째 완전수
-- 핵자 12 = σ(6): 질량수 = 약수합
-- 전자배치 [2,4] = [φ, τ]: 내각 = 토션트, 외각 = 약수개수
-- 결합 수 4 = τ(6): 최대 공유결합 수 = 약수개수
+## Background (Already Observed in R38)
+- Carbon Z=6 = P₁: Atomic number = First perfect number
+- Nucleons 12 = σ(6): Mass number = Sum of divisors
+- Electron configuration [2,4] = [φ, τ]: Inner shell = Totient, Outer shell = Number of divisors
+- Bond number 4 = τ(6): Maximum covalent bonds = Number of divisors
 
-## 화학적 특수성
+## Chemical Specialness
 ```
-  탄소의 화학적 유일성:
-  1. 4개 결합 = τ(6) → sp³ 혼성 (정사면체)
-  2. C-C 결합 안정 → 긴 사슬 가능 (규소는 불안정)
-  3. 유기화학 = 거의 무한한 분자 다양성
-  4. 생명의 기반: DNA, 단백질, 지방, 탄수화물 전부 탄소 골격
+  Carbon's Chemical Uniqueness:
+  1. 4 bonds = τ(6) → sp³ hybridization (tetrahedral)
+  2. C-C bond stable → Long chains possible (silicon is unstable)
+  3. Organic chemistry = Nearly infinite molecular diversity
+  4. Foundation of life: DNA, proteins, fats, carbohydrates all have carbon skeleton
 
-  왜 4개 결합이 최적?
-  → 2결합 (O): 너무 적은 구조
-  → 3결합 (N): 비공유 전자쌍이 방해
-  → 4결합 (C): 정사면체 대칭, 최대 구조 다양성
-  → 5결합 이상: 에너지 불안정
+  Why are 4 bonds optimal?
+  → 2 bonds (O): Too few structures
+  → 3 bonds (N): Lone electron pairs interfere
+  → 4 bonds (C): Tetrahedral symmetry, maximum structural diversity
+  → 5+ bonds: Energetically unstable
 ```
 
-## σφ=nτ 해석
+## σφ=nτ Interpretation
 ```
   σ(6)φ(6) = 6τ(6)
   12 × 2 = 6 × 4
-  (핵자수) × (내각전자) = (원자번호) × (결합수)
+  (Nucleons) × (Inner electrons) = (Atomic number) × (Bonds)
 
-  → "핵의 풍요 × 내각 자유도 = 원자 규모 × 결합 구조"
-  → 이 균형이 탄소에서만 성립 → 생명에 최적?
+  → "Nuclear abundance × Inner shell degrees of freedom = Atomic scale × Bond structure"
+  → This balance holds only for carbon → Optimal for life?
 ```
 
-## 검증 방향
-1. [ ] σ(Z)φ(Z)/(Zτ(Z)) for Z=1..20 → Z=6만 균형?
-2. [ ] 결합 수 = τ(Z) 일치 빈도: C(4=τ), N(3≠τ(7)=2), O(2=τ(8)=4→불일치)
-3. [ ] 유기화학 다양성 지수 vs σφ/(Zτ) 상관
+## Verification Direction
+1. [ ] σ(Z)φ(Z)/(Zτ(Z)) for Z=1..20 → Balance only at Z=6?
+2. [ ] Bond number = τ(Z) coincidence frequency: C(4=τ), N(3≠τ(7)=2), O(2=τ(8)=4→mismatch)
+3. [ ] Organic chemistry diversity index vs σφ/(Zτ) correlation
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
-| Z | 원소 | R=σφ/(Zτ) | τ=val? |
+| Z | Element | R=σφ/(Zτ) | τ=val? |
 |---|---|---|---|
-| 1 | H | 1.000 ★ | ✓ (자명) |
-| **6** | **C** | **1.000** ★ | **✓ (유일!)** |
+| 1 | H | 1.000 ★ | ✓ (trivial) |
+| **6** | **C** | **1.000** ★ | **✓ (unique!)** |
 | 14 | Si | 2.571 | ✓ |
-| 기타 | | >1 or <1 | ✗ |
+| Others | | >1 or <1 | ✗ |
 
-- Z=1..20에서 R=1: H(자명)과 **C(비자명) 유일!**
-- τ(6)=4=결합수: C에서만 약수개수=최대결합수
-- σ(6)=12=핵자수(C-12): 약수합=질량수
+- R=1 for Z=1..20: Only H(trivial) and **C(non-trivial)!**
+- τ(6)=4=bonds: Only in C does number of divisors = maximum bonds
+- σ(6)=12=nucleons(C-12): Sum of divisors = mass number
 
-## 난이도: 중 | 파급력: ★★★★ | 상태: ✅ 수치 확인
+## Difficulty: Medium | Impact: ★★★★ | Status: ✅ Numerically Confirmed

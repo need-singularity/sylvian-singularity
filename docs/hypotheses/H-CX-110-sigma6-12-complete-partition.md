@@ -1,21 +1,21 @@
-# H-CX-110: σ(6)=12 완전 분할 — 12클래스 PH가 "완전" 구조
+# H-CX-110: σ(6)=12 Complete Partition — 12-class PH Has "Perfect" Structure
 
-> 12클래스 = σ(6) = 완전수의 약수합. 12클래스 PH는 "완전한" 위상 구조.
-> 13번째 클래스 추가 시 H1(루프) 발생 = 소수의 침입으로 위상 전이.
+> 12 classes = σ(6) = sum of divisors of perfect number. 12-class PH has "perfect" topological structure.
+> Adding 13th class triggers H1 (loop) = phase transition due to Prime invasion.
 
-## 검증 상태
-- [x] 10/12/13 클래스 PH 비교
+## Verification Status
+- [x] PH comparison for 10/12/13 classes
 
-## 검증 결과
+## Verification Results
 
 **REJECTED**
 
-| 클래스 수 | H1 (루프 수) | 예측 | 실제 |
-|-----------|-------------|------|------|
-| 12 | 2 | 0 (완전) | 2 |
-| 13 | 1 | > 0 (불완전) | 1 |
+| Class count | H1 (loop count) | Prediction | Actual |
+|-------------|----------------|-----------|--------|
+| 12 | 2 | 0 (perfect) | 2 |
+| 13 | 1 | > 0 (imperfect) | 1 |
 
-- 예측: 12클래스 PH가 "완전" → H1=0 (루프 없음), 13번째 추가 시 H1 발생
-- 실제: 13cls H1=1 < 12cls H1=2 -- 예측과 반대
-- 12클래스가 오히려 더 많은 루프를 가짐
-- σ(6)=12 완전 분할 가설은 기각
+- Prediction: 12-class PH is "perfect" → H1=0 (no loops), H1 appears when 13th is added
+- Actual: 13cls H1=1 < 12cls H1=2 — opposite of prediction
+- 12 classes actually have more loops
+- σ(6)=12 complete partition hypothesis is rejected

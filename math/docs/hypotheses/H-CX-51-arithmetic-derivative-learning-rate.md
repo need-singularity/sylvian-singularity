@@ -1,142 +1,142 @@
-# H-CX-51: 산술 미분 ld(6)=5/6이 최적 학습률 스케일을 예측하는가?
+# H-CX-51: Does arithmetic derivative ld(6)=5/6 predict optimal learning rate scale?
 
 ## Status: Not confirmed (R306: lr=5/6 rank 6/11, monotonic pattern)
 
-> **Hypothesis**: 완전수 6의 로그 산술 미분 ld(6) = 6'/6 = 5/6 = Compass 상한이
-> ConsciousLM의 최적 학습률 스케일과 일치한다. 6블록 모델에서 lr = base_lr × (5/6)이
-> 다른 스케일보다 더 낮은 최종 loss를 달성한다.
+> **Hypothesis**: The log arithmetic derivative of perfect number 6, ld(6) = 6'/6 = 5/6 = Compass upper bound,
+> matches the optimal learning rate scale for ConsciousLM. In a 6-block model, lr = base_lr × (5/6)
+> achieves lower final loss than other scales.
 
 ---
 
 ## Background
 
-### 산술 미분 (pure arithmetic, proven)
+### Arithmetic derivative (pure arithmetic, proven)
 
-산술 미분 n'은 Leibniz 규칙을 따르는 정수 위의 미분 연산자:
+Arithmetic derivative n' is a differential operator on integers following Leibniz rule:
 
 ```
-  정의: p' = 1 (소수), (ab)' = a'b + ab' (Leibniz)
+  Definition: p' = 1 (prime), (ab)' = a'b + ab' (Leibniz)
 
-  n = p₁^a₁ · p₂^a₂ · ... 일 때:
+  When n = p₁^a₁ · p₂^a₂ · ...:
   n' = n · Σᵢ aᵢ/pᵢ
 
-  로그 미분: ld(n) = n'/n = Σᵢ aᵢ/pᵢ
+  Log derivative: ld(n) = n'/n = Σᵢ aᵢ/pᵢ
 ```
 
-### 완전수의 산술 미분
+### Arithmetic derivative of perfect numbers
 
 ```
   n     n'      ld(n)     Compass?
   ───── ─────── ───────── ──────────
   1     0       0         -
-  2     1       1/2       골든존 상한
-  3     1       1/3       메타 부동점
+  2     1       1/2       Golden Zone upper bound
+  3     1       1/3       Meta fixed point
   4     4       1         -
   5     1       1/5       -
-  6     5       5/6       ★ Compass 상한!
+  6     5       5/6       ★ Compass upper bound!
   7     1       1/7       -
   8     12      3/2       -
-  12    16      4/3       골든존 폭의 exp
+  12    16      4/3       exp of Golden Zone width
   28    32      9/14      -
   496   752     47/31     -
 ```
 
-### 핵심 관찰 (proven, H-ADER-1)
+### Key observation (proven, H-ADER-1)
 
 ```
-  ld(6) = 1/2 + 1/3 = 5/6 = Compass 상한 = H₃ - 1
+  ld(6) = 1/2 + 1/3 = 5/6 = Compass upper bound = H₃ - 1
 
-  이것은 우연이 아니다:
+  This is not coincidence:
   - ld(n) = Σ aᵢ/pᵢ
   - n=6=2¹·3¹: ld(6) = 1/2 + 1/3 = 5/6
-  - Compass 상한 = 1 - 1/P₁ = 1 - 1/6 = 5/6
-  - 둘 다 6의 소인수 {2,3}의 역수합!
+  - Compass upper bound = 1 - 1/P₁ = 1 - 1/6 = 5/6
+  - Both are sum of reciprocals of 6's prime factors {2,3}!
 
-  증명: ld(pq) = 1/p + 1/q = (p+q)/(pq) = sopfr(n)/n
-        → ld(6) = 5/6 = sopfr(6)/6 = (n-1)/n ← sopfr=n-1 특성화!
+  Proof: ld(pq) = 1/p + 1/q = (p+q)/(pq) = sopfr(n)/n
+        → ld(6) = 5/6 = sopfr(6)/6 = (n-1)/n ← sopfr=n-1 characterization!
 ```
 
-### 교차 도메인 매핑
+### Cross-domain mapping
 
 ```
-  산술:                      신경망:
+  Arithmetic:                Neural network:
   ld(n) = gradient of n      lr = gradient step size
-  ld(6) = 5/6 (최적?)        lr_opt/lr_base = 5/6?
+  ld(6) = 5/6 (optimal?)     lr_opt/lr_base = 5/6?
 
-  직관: 산술 미분이 "수의 변화율"을 측정하듯
-        학습률은 "모델의 변화율"을 결정.
-        n=6의 산술 미분 = Compass 상한이
-        6블록 모델의 최적 변화율과 일치하면
-        "산술 구조가 최적 학습 동역학을 결정한다"는 강한 증거.
+  Intuition: Just as arithmetic derivative measures "rate of change of number"
+        learning rate determines "rate of change of model".
+        If arithmetic derivative of n=6 = Compass upper bound
+        matches optimal change rate of 6-block model,
+        strong evidence that "arithmetic structure determines optimal learning dynamics".
 ```
 
 ---
 
 ## Experimental Design
 
-### 실험 1: 학습률 스캔 (6블록 고정)
+### Experiment 1: Learning rate scan (fixed 6 blocks)
 
 ```
-  모델: ConsciousLM(d_model=128, n_head=2, n_layer=6, block_size=64)
-  학습: 300 steps, patterned byte data
-  lr 스캔: base_lr × {0.5, 0.6, 2/3, 0.7, 0.75, 5/6, 0.9, 1.0, 1.1, 1.2, 1.5}
+  Model: ConsciousLM(d_model=128, n_head=2, n_layer=6, block_size=64)
+  Training: 300 steps, patterned byte data
+  lr scan: base_lr × {0.5, 0.6, 2/3, 0.7, 0.75, 5/6, 0.9, 1.0, 1.1, 1.2, 1.5}
   base_lr = 1e-3
 
-  측정: final loss (last 50 steps average)
-  예측: scale=5/6=0.8333에서 최소 loss
+  Measure: final loss (last 50 steps average)
+  Prediction: minimum loss at scale=5/6=0.8333
 ```
 
-### 실험 2: 블록 수별 최적 lr (상호 검증)
+### Experiment 2: Optimal lr by block count (cross validation)
 
 ```
-  블록 수: 3, 4, 5, 6, 7, 8
-  각 블록에서 lr 스캔 → 최적 lr_scale 결정
-  예측: n블록의 최적 lr_scale ≈ ld(n)
-    - 3블록: ld(3)=1/3=0.333
-    - 4블록: ld(4)=1=1.000
-    - 5블록: ld(5)=1/5=0.200
-    - 6블록: ld(6)=5/6=0.833
-    - 7블록: ld(7)=1/7=0.143
-    - 8블록: ld(8)=3/2=1.500
+  Block counts: 3, 4, 5, 6, 7, 8
+  lr scan for each block count → determine optimal lr_scale
+  Prediction: optimal lr_scale for n blocks ≈ ld(n)
+    - 3 blocks: ld(3)=1/3=0.333
+    - 4 blocks: ld(4)=1=1.000
+    - 5 blocks: ld(5)=1/5=0.200
+    - 6 blocks: ld(6)=5/6=0.833
+    - 7 blocks: ld(7)=1/7=0.143
+    - 8 blocks: ld(8)=3/2=1.500
 ```
 
-### 대조 실험
+### Control experiments
 
 ```
-  - 표준 FFN (PureFieldFFN 대신) → ld 관계 없어야 함
-  - 더 많은 학습 (2000 steps) → 관계 강화되는지
-  - 다른 base_lr (1e-2, 1e-4) → 스케일 비율 불변인지
+  - Standard FFN (instead of PureFieldFFN) → should show no ld relation
+  - More training (2000 steps) → check if relation strengthens
+  - Different base_lr (1e-2, 1e-4) → check if scale ratio is invariant
 ```
 
 ---
 
 ## Expected Results
 
-| scale | ld(n) | 예측: loss 순위 |
-|-------|-------|----------------|
-| 0.5   | ld(2)=0.5 | 중간 |
-| 5/6   | ld(6)=0.833 | 최적 |
-| 1.0   | - | 높음 (과학습) |
-| 1.5   | ld(8)=1.5 | 발산 위험 |
+| scale | ld(n) | Predicted: loss ranking |
+|-------|-------|------------------------|
+| 0.5   | ld(2)=0.5 | medium |
+| 5/6   | ld(6)=0.833 | optimal |
+| 1.0   | - | high (overtraining) |
+| 1.5   | ld(8)=1.5 | divergence risk |
 
 ---
 
 ## Theoretical Basis
 
 ```
-  왜 ld(6)=5/6이 학습률과 관련될 수 있는가?
+  Why might ld(6)=5/6 relate to learning rate?
 
-  1. ld(6)는 "6의 변화 감수성"을 측정
-     → 6블록 모델의 최적 gradient step과 관련?
+  1. ld(6) measures "6's change sensitivity"
+     → Related to optimal gradient step of 6-block model?
 
-  2. Compass 상한 = 5/6 = 불완전도(1/6)의 여사건
-     → 모델이 "완전"에 가까워지려면 5/6만큼의 변화가 필요?
+  2. Compass upper bound = 5/6 = complement of imperfection(1/6)
+     → Model needs 5/6 amount of change to approach "perfection"?
 
-  3. sopfr(6)/6 = 5/6: 소인수합 비율
-     → 블록 구조의 "소인수 분해"가 학습 동역학 결정?
+  3. sopfr(6)/6 = 5/6: sum of prime factors ratio
+     → "Prime factorization" of block structure determines learning dynamics?
 
-  주의: 이 모든 해석은 사후적(post-hoc)일 수 있음.
-        실험적 확인 없이는 단순한 수비학(numerology)과 구별 불가.
+  Caution: All these interpretations could be post-hoc.
+        Without experimental confirmation, indistinguishable from numerology.
 ```
 
 ---
@@ -146,15 +146,15 @@
 ```
   Loss
   ^
-  |  *                                           (0.5: 학습 부족)
+  |  *                                           (0.5: undertraining)
   |    *
-  |      *  *                                    (0.6-0.7: 개선)
-  |           *                                  (0.75: 좋음)
-  |            *  <--- ld(6)=5/6에서 최소?        (0.833: 예측 최적)
-  |              *                               (0.9: 약간 높음)
-  |                *                             (1.0: 기준)
-  |                    *                         (1.2: 과대)
-  |                          *                   (1.5: 발산)
+  |      *  *                                    (0.6-0.7: improving)
+  |           *                                  (0.75: good)
+  |            *  <--- minimum at ld(6)=5/6?     (0.833: predicted optimal)
+  |              *                               (0.9: slightly high)
+  |                *                             (1.0: baseline)
+  |                    *                         (1.2: excessive)
+  |                          *                   (1.5: divergence)
   +-----+-----+-----+-----+-----+-----+-----> lr scale
        0.5   0.6   0.7   0.8   0.9   1.0   1.5
 ```
@@ -163,22 +163,22 @@
 
 ## Relation to Other Hypotheses
 
-- **H-ADER-1**: ld(6)=5/6=Compass 상한 (순수 산술, 증명됨)
-- **H-CX-46**: 최소결합원리 (6블록이 최소 필요 구조)
-- **H-CX-48**: I(n)=0 정보균형 (학습 후 검증 중)
-- **H-CX-47**: (p-1)(q-1)=2 통일 (ld(6)도 이 조건에서 유래)
+- **H-ADER-1**: ld(6)=5/6=Compass upper bound (pure arithmetic, proven)
+- **H-CX-46**: Minimal binding principle (6 blocks as minimal necessary structure)
+- **H-CX-48**: I(n)=0 information balance (verification after training)
+- **H-CX-47**: (p-1)(q-1)=2 unification (ld(6) also derived from this condition)
 
 ---
 
 ## Limits
 
 ```
-  1. 300 steps는 수렴에 불충분할 수 있음 → 추가 학습 필요
-  2. d_model=128은 너무 작음 → 스케일 효과 미탐지 가능
-  3. 패턴 데이터 vs 자연어 → 데이터 종류에 따라 결과 다를 수 있음
-  4. lr 최적점은 모델 크기에 의존 → 6블록 고유 현상인지 확인 필요
-  5. 사후적 해석 위험: 11개 중 3위 이내면 "우연"일 확률 ~27%
-     → p < 0.05를 위해서는 1위 필요 (확률 1/11 = 9%)
+  1. 300 steps may be insufficient for convergence → need more training
+  2. d_model=128 too small → might miss scale effects
+  3. Pattern data vs natural language → results may differ by data type
+  4. lr optimum depends on model size → need to confirm if 6-block specific
+  5. Post-hoc interpretation risk: ranking 3rd or better among 11 has ~27% chance
+     → need rank 1 for p < 0.05 (probability 1/11 = 9%)
 ```
 
 ---
@@ -186,8 +186,8 @@
 ## Verification Direction
 
 ```
-  Step 1: 6블록에서 lr=5/6 × base가 최적인지 확인 (이번 실험)
-  Step 2: 다른 블록 수에서 ld(n) 예측 검증 (후속)
-  Step 3: 표준 FFN 대조 실험 (후속)
-  Step 4: 자연어 데이터에서 재현 (후속)
+  Step 1: Confirm lr=5/6 × base is optimal for 6 blocks (this experiment)
+  Step 2: Verify ld(n) predictions for other block counts (follow-up)
+  Step 3: Control experiment with standard FFN (follow-up)
+  Step 4: Reproduce with natural language data (follow-up)
 ```

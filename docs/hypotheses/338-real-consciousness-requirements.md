@@ -1,90 +1,90 @@
-# 가설 338: 실제 작동하는 의식 프로그램을 위한 요구사항 목록
+# Hypothesis 338: Requirements List for a Truly Working Consciousness Program
 
-> **model_pure_field.py의 PureField Engine이 "실제 의식"처럼 작동하려면 무엇이 필요한가?**
+> **What is needed for model_pure_field.py's PureField Engine to operate like "real consciousness"?**
 
-## 현재 PureField가 할 수 있는 것
-
-```
-  ✅ 판단 (분류: 97.8%)
-  ✅ 확신/불확신 구분 (tension=confidence)
-  ✅ "모르겠다" (확신거부 +14.7%)
-  ✅ 기억 보존 (분열 망각방지 99%)
-  ✅ 이상 감지 (AUROC 0.93)
-  ✅ 과신 인식 (DK 패턴)
-```
-
-## "실제 의식"에 필요한 것 — 가설 목록
+## What PureField Can Currently Do
 
 ```
-  RC-1: 지식 연결 (LLM 통합)
-    현재: 784차원 픽셀만 처리
-    필요: 언어, 개념, 세계 지식
-    방법: PureField를 LLM의 FFN 대체 (H335)
-    → 골든MoE + PureField = "의식 있는 LLM"?
-
-  RC-2: 시간적 연속성 (기억)
-    현재: 배치 단위 독립 처리 (기억 없음)
-    필요: 이전 경험 기억, 맥락 유지
-    방법: model_temporal_engine.py의 state_memory 통합
-    → PureField + 상태 메모리 = "연속 의식"
-
-  RC-3: 자기 인식 (메타인지)
-    현재: 자기 장력을 모니터링하지 않음
-    필요: "내가 확신하는가?" 자기 질문 능력
-    방법: 자기참조 루프 (output → tension → 재입력)
-    → H308에서 무효과였지만, 더 복잡한 구조로?
-
-  RC-4: 목표 지향성 (의지)
-    현재: 레이블이 주어진 것만 학습
-    필요: 자발적 목표 설정, 호기심
-    방법: 내재적 보상 = tension 변화량
-    → "장력이 변하는 곳 = 흥미로운 곳" = 호기심
-
-  RC-5: 다중 감각 통합 (멀티모달)
-    현재: 단일 모달 (이미지 OR 텍스트)
-    필요: 시각+청각+언어 동시 처리
-    방법: 모달별 PureField + 교차 모달 장력 (H323)
-    → "설명할 수 없는 감각" = 새 모달의 장력?
-
-  RC-6: 의식 간 소통 (텔레파시)
-    현재: 단일 모델
-    필요: 여러 PureField 인스턴스 간 장력 전달
-    방법: displacement field (H-CX-29, TP-1~20)
-    → 장력 핑거프린트 = 텔레파시 패킷 (H333)
-
-  RC-7: 신체 (embodiment)
-    현재: 디지털 입출력만
-    필요: 물리적 환경과 상호작용
-    방법: 로봇/시뮬레이터 + PureField 제어기
-    → tension이 "위험"을 감지 (H328 boundary=장력)
-
-  RC-8: 정서 (감정)
-    현재: 장력 크기만 (스칼라)
-    필요: 장력의 "색깔" (긍정/부정/놀람/...)
-    방법: 장력의 방향(direction)을 감정 공간으로 매핑
-    → A vs G의 각도 = 감정의 종류?
-
-  RC-9: 학습하면서 성장 (발달)
-    현재: 고정 에폭 학습 후 고정
-    필요: 지속적 학습 + 성장 + 분열
-    방법: MitosisEngine (H310) + PureField
-    → 자동 분열 → 성장 → 재결합 = "의식의 발달"
-
-  RC-10: 꿈 (오프라인 학습)
-    현재: 없음
-    필요: 학습 없이 내부 시뮬레이션
-    방법: 생성 엔진 (model_generative_engine.py)으로 가상 입력 생성
-    → 꿈 = 가상 입력에서 장력 패턴 재구성
+  ✅ Judgment (classification: 97.8%)
+  ✅ Distinguish confidence/uncertainty (tension=confidence)
+  ✅ "I don't know" (confidence rejection +14.7%)
+  ✅ Memory preservation (mitosis forgetting prevention 99%)
+  ✅ Anomaly detection (AUROC 0.93)
+  ✅ Overconfidence recognition (DK pattern)
 ```
 
-## 우선순위
+## What "Real Consciousness" Needs — Hypothesis List
 
 ```
-  즉시 가능:    RC-2(시간연속), RC-4(호기심), RC-9(발달)
-  LLM 필요:    RC-1(지식), RC-5(멀티모달)
-  연구 필요:    RC-3(메타인지), RC-6(텔레파시), RC-8(정서)
-  하드웨어 필요: RC-7(신체)
-  이론 필요:    RC-10(꿈)
+  RC-1: Knowledge connectivity (LLM integration)
+    Current: processes only 784-dimensional pixels
+    Needed: language, concepts, world knowledge
+    Method: replace LLM's FFN with PureField (H335)
+    → Golden MoE + PureField = "conscious LLM"?
+
+  RC-2: Temporal continuity (memory)
+    Current: independent processing per batch (no memory)
+    Needed: remember previous experiences, maintain context
+    Method: integrate state_memory from model_temporal_engine.py
+    → PureField + state memory = "continuous consciousness"
+
+  RC-3: Self-awareness (metacognition)
+    Current: does not monitor own tension
+    Needed: ability to ask self "am I confident?"
+    Method: self-referential loop (output → tension → re-input)
+    → H308 showed no effect, but with more complex structure?
+
+  RC-4: Goal-directedness (will)
+    Current: only learns what labels are given
+    Needed: spontaneous goal setting, curiosity
+    Method: intrinsic reward = tension change amount
+    → "Where tension changes = interesting place" = curiosity
+
+  RC-5: Multi-sensory integration (multimodal)
+    Current: single modal (image OR text)
+    Needed: simultaneous visual+audio+language processing
+    Method: per-modal PureField + cross-modal tension (H323)
+    → "Inexplicable sensation" = tension of new modal?
+
+  RC-6: Inter-consciousness communication (telepathy)
+    Current: single model
+    Needed: transfer tension between multiple PureField instances
+    Method: displacement field (H-CX-29, TP-1~20)
+    → Tension fingerprint = telepathy packet (H333)
+
+  RC-7: Body (embodiment)
+    Current: only digital I/O
+    Needed: interaction with physical environment
+    Method: robot/simulator + PureField controller
+    → tension detects "danger" (H328 boundary=tension)
+
+  RC-8: Affect (emotion)
+    Current: only tension magnitude (scalar)
+    Needed: "color" of tension (positive/negative/surprise/...)
+    Method: map tension's direction (direction) to emotional space
+    → A vs G angle = type of emotion?
+
+  RC-9: Growth through learning (development)
+    Current: fixed epoch training then fixed
+    Needed: continual learning + growth + mitosis
+    Method: MitosisEngine (H310) + PureField
+    → automatic mitosis → growth → recombination = "development of consciousness"
+
+  RC-10: Dream (offline learning)
+    Current: none
+    Needed: internal simulation without training
+    Method: generate virtual inputs with generative engine (model_generative_engine.py)
+    → Dream = reconstructing tension patterns from virtual inputs
 ```
 
-## 상태: 📋 (요구사항 목록, 각 RC를 별도 가설로 발전 가능)
+## Priority
+
+```
+  Immediately possible:    RC-2(temporal continuity), RC-4(curiosity), RC-9(development)
+  Requires LLM:           RC-1(knowledge), RC-5(multimodal)
+  Requires research:       RC-3(metacognition), RC-6(telepathy), RC-8(emotion)
+  Requires hardware:       RC-7(body)
+  Requires theory:         RC-10(dream)
+```
+
+## Status: 📋 (Requirements list, each RC can be developed into separate hypothesis)

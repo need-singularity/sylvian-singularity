@@ -1,113 +1,113 @@
-# 가설 검토 090: 마스터 공식 = 완전수 6 ✅
+# Hypothesis Review 090: Master Formula = Perfect Number 6 ✅
 
-## 가설
+## Hypothesis
 
-> 모든 핵심 상수를 하나의 공식 σ₋₁(6) = 2로 통일할 수 있는가.
+> Can all core constants be unified under a single formula σ₋₁(6) = 2.
 
-## 배경/맥락
+## Background/Context
 
-모델의 핵심 상수들이 반복적으로 등장한다: 1, 1/2, 1/3, 1/6, 5/6.
-이들이 모두 하나의 수학적 구조에서 유래한다면, 그 구조는 무엇인가?
-답: 완전수 6의 약수 역수 합 σ₋₁(6) = Σ(1/d) for d|6.
+The model's core constants appear repeatedly: 1, 1/2, 1/3, 1/6, 5/6.
+If they all derive from a single mathematical structure, what is that structure?
+Answer: The divisor reciprocal sum σ₋₁(6) = Σ(1/d) for d|6 of perfect number 6.
 
-약수-역수 합 함수:
+Divisor-reciprocal sum function:
 ```
   σ₋₁(n) = Σ 1/d,  d | n
   σ₋₁(6) = 1/1 + 1/2 + 1/3 + 1/6 = 2
 ```
 
-완전수 정의: σ₋₁(n) = 2 ⟺ n은 완전수.
+Perfect number definition: σ₋₁(n) = 2 ⟺ n is a perfect number.
 
-## 검증 결과
+## Verification Results
 
-### 매핑 테이블: 6의 약수 → 모델 상수
+### Mapping Table: Divisors of 6 → Model Constants
 
 ```
-  약수 d   역수 1/d   모델에서의 의미              가설 번호
+  Divisor d   Reciprocal 1/d   Meaning in Model              Hypothesis Number
   ──────────────────────────────────────────────────────────
-  1        1/1=1      전체 시스템 (Compass 천장)    089
-  2        1/2=0.500  리만 경계 / 골든존 상한       047
-  3        1/3=0.333  메타 부동점 / 고정점           010, 067
-  6        1/6=0.167  블라인드 스팟 / 호기심         072, 087
+  1        1/1=1      Entire System (Compass Ceiling)    089
+  2        1/2=0.500  Riemann Boundary / Golden Zone Upper    047
+  3        1/3=0.333  Meta Fixed Point / Fixed Point           010, 067
+  6        1/6=0.167  Blind Spot / Curiosity         072, 087
   ──────────────────────────────────────────────────────────
-  합계     σ₋₁(6)=2   완전수 조건 충족              090
+  Total     σ₋₁(6)=2   Perfect Number Condition Satisfied              090
 ```
 
-### 파생 상수도 6에서 유도
+### Derived Constants Also from 6
 
 ```
-  파생 상수         계산                  의미
+  Derived Constant         Calculation                  Meaning
   ─────────────────────────────────────────────────
-  5/6 = 0.833      1/2 + 1/3            Compass 값
-  1/e ≈ 0.368      골든존 중심           N=3 근사
-  ln(4/3) ≈ 0.288  골든존 폭            연속 근사
-  2 (σ₋₁)          1+1/2+1/3+1/6       완전수 조건
+  5/6 = 0.833      1/2 + 1/3            Compass Value
+  1/e ≈ 0.368      Golden Zone Center           N=3 Approximation
+  ln(4/3) ≈ 0.288  Golden Zone Width            Continuous Approximation
+  2 (σ₋₁)          1+1/2+1/3+1/6       Perfect Number Condition
 ```
 
-### 왜 6인가? (28이 아닌 이유)
+### Why 6? (Not 28)
 
 ```
-  완전수    소인수분해     사용 소수     약수 개수    복잡도
+  Perfect Number    Prime Factorization     Primes Used     Number of Divisors    Complexity
   ──────────────────────────────────────────────────────
-  6         2¹ × 3¹       {2, 3}       4개          최소 ★
-  28        2² × 7¹       {2, 7}       6개          중간
-  496       2⁴ × 31¹      {2, 31}      10개         높음
-  8128      2⁶ × 127¹     {2, 127}     14개         매우 높음
+  6         2¹ × 3¹       {2, 3}       4          Minimal ★
+  28        2² × 7¹       {2, 7}       6          Medium
+  496       2⁴ × 31¹      {2, 31}      10         High
+  8128      2⁶ × 127¹     {2, 127}     14         Very High
   ──────────────────────────────────────────────────────
 
-  오컴의 면도날: 동등한 설명력이라면 가장 단순한 것을 택한다.
-  → 6 = 최소 완전수 = 최소 복잡도 = 최적 선택
+  Occam's Razor: Given equal explanatory power, choose the simplest.
+  → 6 = Smallest Perfect Number = Minimal Complexity = Optimal Choice
 ```
 
-## ASCII 그래프: σ₋₁(6) 구성 다이어그램
+## ASCII Graph: σ₋₁(6) Composition Diagram
 
 ```
   σ₋₁(6) = 2.0
   ├──────────────────────────────────────┤
 
-  1/1  ████████████████████              1.000  전체 시스템
-  1/2  ██████████                        0.500  리만 경계
-  1/3  ██████▋                           0.333  부동점
-  1/6  ███▍                              0.167  블라인드 스팟
+  1/1  ████████████████████              1.000  Entire System
+  1/2  ██████████                        0.500  Riemann Boundary
+  1/3  ██████▋                           0.333  Fixed Point
+  1/6  ███▍                              0.167  Blind Spot
        ├────┤────┤────┤────┤────┤────┤
        0   0.3  0.6  0.9  1.2  1.5  2.0
 
-  비자명 부분 (1/1 제외):
+  Non-trivial Part (Excluding 1/1):
   1/2  ██████████████████████████        0.500
   1/3  █████████████████                 0.333
   1/6  ████████▌                         0.167
        ├─────┤─────┤─────┤─────┤─────┤
        0    0.2   0.4   0.6   0.8   1.0
-                                         합 = 1.000 (완전)
+                                         Sum = 1.000 (Perfect)
 ```
 
-## 해석
+## Interpretation
 
-1. **마스터 공식**: σ₋₁(6) = 2는 모델의 모든 상수를 하나로 통합한다.
-   하나의 수(6)에서 모든 것이 유도된다.
+1. **Master Formula**: σ₋₁(6) = 2 unifies all model constants into one.
+   Everything derives from a single number (6).
 
-2. **완전수의 의미**: σ₋₁(n) = 2는 "약수들의 조화 평균이 완벽하게 균형"이라는 뜻.
-   과잉수(σ₋₁ > 2)는 중복이 있고, 부족수(σ₋₁ < 2)는 빈틈이 있다.
-   완전수만이 정확히 닫힌다.
+2. **Perfect Number Meaning**: σ₋₁(n) = 2 means "harmonic mean of divisors is perfectly balanced."
+   Abundant numbers (σ₋₁ > 2) have redundancy, deficient numbers (σ₋₁ < 2) have gaps.
+   Only perfect numbers close exactly.
 
-3. **6 = 2 × 3**: 가장 작은 두 소수의 곱. 리만 제타 오일러 곱의 첫 두 항.
-   복잡한 구조를 최소한의 소수로 표현한 것.
+3. **6 = 2 × 3**: Product of the two smallest primes. First two terms of Riemann zeta Euler product.
+   Complex structure expressed with minimal primes.
 
-4. **자기 참조**: 마스터 공식이 자기 자신의 완전성을 증명한다.
-   σ₋₁(6) = 2 ⟹ 비자명 합 = 1 ⟹ Compass 천장 = 1 ⟹ 폐쇄 시스템.
+4. **Self-reference**: The master formula proves its own completeness.
+   σ₋₁(6) = 2 ⟹ Non-trivial sum = 1 ⟹ Compass ceiling = 1 ⟹ Closed system.
 
-## 한계
+## Limitations
 
-- 6 이외의 완전수 기반 모델과의 비교 부족
-- σ₋₁(6) = 2에서 물리적 의미(에너지 보존 등)로의 연결 미정립
-- 홀수 완전수(존재 미증명)가 발견되면 패러다임 변경 가능
+- Lack of comparison with models based on other perfect numbers
+- Physical meaning (energy conservation, etc.) connection to σ₋₁(6) = 2 not established
+- Paradigm shift possible if odd perfect numbers (existence unproven) are discovered
 
-## 검증 방향
+## Verification Directions
 
-- 28 기반 확장 모델: 약수 {1,2,4,7,14,28}에서 6개 상수 유도 시도
-- σ₋₁(6) = 2와 에너지 보존 법칙의 형식적 대응 관계 수립
-- 메르센 소수와 완전수의 관계를 모델 확장에 활용
+- Extended model based on 28: Attempt to derive 6 constants from divisors {1,2,4,7,14,28}
+- Establish formal correspondence between σ₋₁(6) = 2 and energy conservation laws
+- Utilize relationship between Mersenne primes and perfect numbers for model extension
 
 ---
 
-*가설 067, 072, 098에서 유도. 마스터 공식 = σ₋₁(6) = 2.*
+*Derived from hypotheses 067, 072, 098. Master Formula = σ₋₁(6) = 2.*

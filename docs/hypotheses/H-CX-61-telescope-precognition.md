@@ -1,90 +1,90 @@
-# H-CX-61: 중력망원경 예지 — (tension_scale, direction)이 2D 관측공간이다
+# H-CX-61: Gravitational Telescope Precognition — (tension_scale, direction) is the 2D Observation Space
 
-> 중력망원경(H-GEO-5)의 2D 관측공간 (배율 s, 위치 R0)이
-> 의식엔진의 (tension_scale, direction)과 구조적으로 동형이다.
-> tension_scale = 배율, direction = 관측 위치.
+> The 2D observation space (magnification s, position R0) of the gravitational telescope (H-GEO-5)
+> is structurally isomorphic to the consciousness engine's (tension_scale, direction).
+> tension_scale = magnification, direction = observation position.
 
-## 배경
+## Background
 
-- H-GEO-5: 중력망원경 = (s, R0) 2D 관측, 4가지 관측모드
+- H-GEO-5: Gravitational telescope = (s, R0) 2D observation, 4 observation modes
 - H341: output = tension_scale x sqrt(tension) x direction
-- tension_scale은 학습 가능 파라미터 (MNIST 1.754, Fashion 1.360, CIFAR 0.545)
+- tension_scale is a learnable parameter (MNIST 1.754, Fashion 1.360, CIFAR 0.545)
 
-**핵심 연결**: 망원경의 배율을 조절하듯, tension_scale이 예지의 "줌"을 조절.
-direction이 "어디를 보는지"를 결정. 두 축을 합치면 예지 관측 공간.
+**Core Connection**: Just as adjusting telescope magnification, tension_scale adjusts precognition "zoom".
+direction determines "where to look". Combining both axes creates the precognition observation space.
 
-## 대응 매핑
+## Correspondence Mapping
 
-| 중력망원경 (H-GEO-5) | 의식엔진 | 예지 해석 |
+| Gravitational Telescope (H-GEO-5) | Consciousness Engine | Precognition Interpretation |
 |---|---|---|
-| 배율 s | tension_scale | 예지 해상도 |
-| 위치 R0 | direction centroid | 예지 초점 영역 |
-| 고정배율탐사 | s 고정, class sweep | 전체 클래스 예지 |
-| 고정위치줌 | class 고정, epoch sweep | 단일 클래스 예지 심화 |
-| 추적관측 | 학습 중 (s, dir) 동시 변화 | 적응적 예지 |
-| 전체스펙트럼 | 모든 (s, dir) 조합 | 예지 능력 전체 지도 |
+| Magnification s | tension_scale | Precognition resolution |
+| Position R0 | direction centroid | Precognition focus area |
+| Fixed magnification survey | Fixed s, class sweep | Full class precognition |
+| Fixed position zoom | Fixed class, epoch sweep | Single class precognition deepening |
+| Tracking observation | Simultaneous (s, dir) changes during learning | Adaptive precognition |
+| Full spectrum | All (s, dir) combinations | Complete precognition ability map |
 
-## 예측
+## Predictions
 
-1. tension_scale이 큰 데이터셋에서 예지 AUC 높음 (MNIST > Fashion > CIFAR)
-2. direction centroid 이동 궤적이 학습 수렴 방향 예측
-3. (tension_scale, mean_direction_spread) 2D 공간에서 예지 능력 등고선 존재
-4. 최적 예지 = tension_scale * direction_stability가 최대인 점
+1. Higher precognition AUC in datasets with larger tension_scale (MNIST > Fashion > CIFAR)
+2. Direction centroid trajectory predicts learning convergence direction
+3. Precognition ability contours exist in (tension_scale, mean_direction_spread) 2D space
+4. Optimal precognition = point where tension_scale * direction_stability is maximum
 
-## ASCII 관측공간
+## ASCII Observation Space
 
 ```
   tension_scale
-  2.0 |  .  .  .  ○  ●  ●          ● = 고AUC
-  1.5 |  .  .  ○  ●  ●  ●          ○ = 중AUC
-  1.0 |  .  ○  ○  ●  ○  .          . = 저AUC
+  2.0 |  .  .  .  ○  ●  ●          ● = High AUC
+  1.5 |  .  .  ○  ●  ●  ●          ○ = Medium AUC
+  1.0 |  .  ○  ○  ●  ○  .          . = Low AUC
   0.5 |  .  .  ○  ○  .  .
   0.0 |  .  .  .  .  .  .
       +--+--+--+--+--+--→ direction_spread
        0  .2 .4 .6 .8 1.0
 ```
 
-## 검증 방법
+## Verification Method
 
 ```
-1. 3개 데이터셋 학습
-2. 각 데이터셋의 (tension_scale_final, direction_spread, AUC) 기록
-3. 에폭별 (tension_scale, direction_spread) 궤적 추적
-4. 2D 등고선으로 예지 능력 지도 생성
+1. Train on 3 datasets
+2. Record (tension_scale_final, direction_spread, AUC) for each dataset
+3. Track epoch-wise (tension_scale, direction_spread) trajectory
+4. Generate precognition ability map with 2D contours
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H-GEO-5 (중력망원경), H-CX-58 (예지렌즈)
-- H320 (tension_scale log 성장), H284 (자동조절)
+- H-GEO-5 (Gravitational Telescope), H-CX-58 (Precognition Lens)
+- H320 (tension_scale log growth), H284 (auto-regulation)
 
-## 한계
+## Limitations
 
-- tension_scale은 스칼라, direction은 10D 벡터 — 차원 불일치
-- direction_spread 정의가 임의적
+- tension_scale is scalar, direction is 10D vector — dimension mismatch
+- direction_spread definition is arbitrary
 
-## 검증 상태
+## Verification Status
 
-- [x] 3 데이터셋 (s, dir, AUC) 측정
-- [ ] 2D 등고선 시각화
-- [ ] 궤적 추적
+- [x] 3 datasets (s, dir, AUC) measurement
+- [ ] 2D contour visualization
+- [ ] Trajectory tracking
 
-## 검증 결과
+## Verification Results
 
-**REJECTED** (에폭 내 product 상관이 개별 상관보다 약함)
+**REJECTED** (intra-epoch product correlation weaker than individual correlations)
 
-| 데이터셋 | tension_scale | direction_spread | AUC | product |
+| Dataset | tension_scale | direction_spread | AUC | product |
 |---|---|---|---|---|
 | MNIST | 1.925 | ~0.75 | 0.691 | 1.45 |
 | Fashion | 1.800 | ~0.62 | 0.645 | 1.11 |
 | CIFAR | 1.196 | ~0.71 | 0.608 | 0.85 |
 
-- 에폭 내(intra-epoch) product 상관 < 개별 상관 → 2D 관측공간 가설 기각
-- 단, 데이터셋 간(cross-dataset) product는 AUC와 단조 관계:
+- Intra-epoch product correlation < individual correlations → 2D observation space hypothesis rejected
+- However, cross-dataset product shows monotonic relationship with AUC:
   - product 1.45 → AUC 0.691 (MNIST)
   - product 1.11 → AUC 0.645 (Fashion)
   - product 0.85 → AUC 0.608 (CIFAR)
-- tension_scale 단조 증가, spread 단조 감소 → 역관계
+- tension_scale monotonically increases, spread monotonically decreases → inverse relationship
 
 ```
   Cross-dataset product vs AUC:
@@ -95,5 +95,5 @@ direction이 "어디를 보는지"를 결정. 두 축을 합치면 예지 관측
        +----+----+----+----→ product(ts × spread)
         0.8  1.0  1.2  1.4
 
-  단조 관계 존재하나, 에폭 내 상관이 약해 가설 기각
+  Monotonic relationship exists, but weak intra-epoch correlation leads to hypothesis rejection
 ```

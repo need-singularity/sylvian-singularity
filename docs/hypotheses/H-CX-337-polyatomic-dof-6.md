@@ -1,3 +1,3 @@
-# H-CX-337: ⭐⭐🟩 다원자 기체 자유도 = P₁ = 6
+# H-CX-337: ⭐⭐🟩 Polyatomic Gas Degrees of Freedom = P₁ = 6
 
-> 병진3 + 회전3 = 6 = P₁. E=(P₁/2)kT=3kT. 에너지 등분배.
+> Translation 3 + Rotation 3 = 6 = P₁. E=(P₁/2)kT=3kT. Energy equipartition.

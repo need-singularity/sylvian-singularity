@@ -1,24 +1,24 @@
-# H-AI-5: σφ/(nτ) 비율을 Loss Regularizer로 사용
+# H-AI-5: Using σφ/(nτ) Ratio as Loss Regularizer
 
-> **가설**: 뉴럴 네트워크의 가중치 행렬 차원을 n으로 볼 때, σφ/(nτ)→1에 가까운 차원이 일반화에 유리하다.
+> **Hypothesis**: When viewing the weight matrix dimension of a neural network as n, dimensions where σφ/(nτ)→1 are advantageous for generalization.
 
-## 배경
-- σφ/(nτ)=1인 유일한 n=6
-- n=6 근처가 "산술적 균형점"
-- 가설: 이 비율을 regularization에 활용
+## Background
+- The only n where σφ/(nτ)=1 is n=6
+- Near n=6 is an "arithmetic balance point"
+- Hypothesis: Utilize this ratio for regularization
 
-## 아이디어
+## Idea
 ```python
-# 의사코드
+# Pseudocode
 def arithmetic_reg(weight_matrix):
-    n = weight_matrix.shape[0]  # 차원
+    n = weight_matrix.shape[0]  # dimension
     ratio = sigma(n)*phi(n)/(n*tau(n))
-    return (ratio - 1)**2  # 1에 가까울수록 페널티 작음
+    return (ratio - 1)**2  # smaller penalty as it approaches 1
 ```
 
-## 검증 방향
-1. [ ] 소형 네트워크에서 hidden_dim sweep + arithmetic_reg 추가
-2. [ ] 일반화 성능 비교 (with/without reg)
-3. [ ] dim=6이 실제로 유리한지 확인
+## Verification Directions
+1. [ ] hidden_dim sweep in small networks + add arithmetic_reg
+2. [ ] Compare generalization performance (with/without reg)
+3. [ ] Confirm if dim=6 is actually advantageous
 
-## 난이도: 중 | 파급력: ★★ (투기적)
+## Difficulty: Medium | Impact: ★★ (Speculative)

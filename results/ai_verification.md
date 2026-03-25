@@ -1,5 +1,5 @@
-# AI 가설 검증 결과 [2026-03-22 06:27:08]
+# AI Hypothesis Verification Results [2026-03-22 06:27:08]
 
-016-020 검증 완료. 상세 결과는 터미널 출력 참조.
+016-020 verification complete. See terminal output for detailed results.
 
 ---

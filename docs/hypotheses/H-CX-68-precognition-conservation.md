@@ -1,61 +1,61 @@
-# H-CX-68: 예지 보존법칙 — 크기 예지 + 방향 예지 ≈ 상수
+# H-CX-68: Precognition Conservation Law — Magnitude Precognition + Direction Precognition ≈ Constant
 
-> 클래스별로 mag_AUC + dir_AUC ≈ const (보존).
-> 크기 예지가 약한 클래스에서 방향 예지가 보상하고, 그 반대도 성립.
-> G×I = D×P 보존법칙(H172)의 예지 버전.
+> Per-class mag_AUC + dir_AUC ≈ const (conservation).
+> Classes weak in magnitude precognition are compensated by direction precognition, and vice versa.
+> Precognition version of G×I = D×P conservation law (H172).
 
-## 배경
+## Background
 
-- 통합 예지에서 per-class 데이터:
-  - MNIST class 1: mag_AUC=0.331, dir_AUC=0.969 (합=1.30)
-  - MNIST class 7: mag_AUC=0.861, dir_AUC=0.885 (합=1.75)
-- H172: G×I = D×P (보존법칙)
+- Per-class data from unified precognition:
+  - MNIST class 1: mag_AUC=0.331, dir_AUC=0.969 (sum=1.30)
+  - MNIST class 7: mag_AUC=0.861, dir_AUC=0.885 (sum=1.75)
+- H172: G×I = D×P (conservation law)
 
-**핵심 연결**: 장력의 크기와 방향이 "예지 에너지"를 분배.
-한 채널이 약하면 다른 채널이 보상 → 총 예지 에너지 보존?
+**Core Connection**: Magnitude and direction of tension "distribute precognition energy".
+When one channel is weak, the other compensates → total precognition energy conserved?
 
-## 예측
+## Predictions
 
-1. 클래스별 mag_AUC + dir_AUC의 분산이 mag_AUC 또는 dir_AUC 단독 분산보다 작음
-2. mag_AUC와 dir_AUC의 상관이 음수 (트레이드오프)
-3. 합의 변동계수(CV) < 개별 CV
-4. 곱(mag_AUC × dir_AUC)도 보존될 가능성
+1. Variance of per-class mag_AUC + dir_AUC is smaller than variance of mag_AUC or dir_AUC alone
+2. Correlation between mag_AUC and dir_AUC is negative (trade-off)
+3. Coefficient of variation (CV) of sum < individual CV
+4. Product (mag_AUC × dir_AUC) may also be conserved
 
-## 검증 방법
+## Verification Method
 
 ```
-1. 통합 예지 실험의 per-class (mag_AUC, dir_AUC) 수집
-2. 합과 곱의 분산/CV 계산
-3. Corr(mag_AUC, dir_AUC) — 음수면 트레이드오프
-4. 3 데이터셋에서 반복
+1. Collect per-class (mag_AUC, dir_AUC) from unified precognition experiments
+2. Calculate variance/CV of sum and product
+3. Corr(mag_AUC, dir_AUC) — negative indicates trade-off
+4. Repeat across 3 datasets
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H172 (G×I=D×P 보존법칙), H-CX-58, H-CX-59
+- H172 (G×I=D×P conservation law), H-CX-58, H-CX-59
 - H341 (output = magnitude × direction)
 
-## 한계
+## Limitations
 
-- 10 클래스로 통계적 검정력 약함
-- 보존이 아닌 단순 ceiling 효과일 수 있음
+- Statistical power weak with only 10 classes
+- May be simple ceiling effect rather than conservation
 
-## 검증 상태
+## Verification Status
 
-- [x] 합/곱 분산 비교
-- [x] 트레이드오프 상관
+- [x] Sum/product variance comparison
+- [x] Trade-off correlation
 
-## 검증 결과
+## Verification Results
 
-**판정: REJECTED**
+**Verdict: REJECTED**
 
-### 트레이드오프 상관: Corr(mag_AUC, dir_AUC)
+### Trade-off Correlation: Corr(mag_AUC, dir_AUC)
 
-| Dataset | r     | 트레이드오프? |
-|---------|-------|-------------|
-| MNIST   | -0.07 | 약한 YES    |
-| Fashion | 0.58  | NO (양의 상관) |
-| CIFAR   | 0.22  | NO (양의 상관) |
+| Dataset | r     | Trade-off? |
+|---------|-------|------------|
+| MNIST   | -0.07 | Weak YES   |
+| Fashion | 0.58  | NO (positive corr) |
+| CIFAR   | 0.22  | NO (positive corr) |
 
 ```
   Corr(mag, dir)
@@ -70,26 +70,26 @@
        MNI  FAS    CIF
 ```
 
-예측 2 (음의 상관 = 트레이드오프) 실패. MNIST만 약한 음의 상관, 나머지는 양의 상관.
+Prediction 2 (negative correlation = trade-off) failed. Only MNIST shows weak negative correlation, others show positive correlation.
 
-### 합 보존: CV(sum) vs CV(mag)
+### Sum Conservation: CV(sum) vs CV(mag)
 
 | Dataset | CV_sum  | CV_mag  | CV_sum < CV_mag? |
-|---------|---------|---------|-----------------|
-| MNIST   | --      | --      | NO              |
-| Fashion | --      | --      | NO              |
-| CIFAR   | 0.062   | 0.081   | YES             |
+|---------|---------|---------|------------------|
+| MNIST   | --      | --      | NO               |
+| Fashion | --      | --      | NO               |
+| CIFAR   | 0.062   | 0.081   | YES              |
 
-CIFAR에서만 합의 변동계수가 개별보다 작음 -- 1/3 데이터셋에서만 성립.
+Only CIFAR shows sum CV smaller than individual -- holds for 1/3 datasets only.
 
-### 곱 보존
+### Product Conservation
 
-3개 데이터셋 모두에서 곱(mag_AUC x dir_AUC) 보존 실패.
+Product (mag_AUC x dir_AUC) conservation failed in all 3 datasets.
 
-### 기각 사유
+### Rejection Reasons
 
-1. 트레이드오프(예측 2): 3개 중 1개만 약한 지지
-2. 합 보존(예측 3): 3개 중 1개만 성립
-3. 곱 보존(예측 4): 전부 실패
-4. 일관된 보존법칙이 존재하지 않음
-5. G x I = D x P 보존의 예지 버전은 성립하지 않는다
+1. Trade-off (Prediction 2): Weak support in only 1 out of 3
+2. Sum conservation (Prediction 3): Holds in only 1 out of 3
+3. Product conservation (Prediction 4): All failed
+4. No consistent conservation law exists
+5. Precognition version of G x I = D x P conservation does not hold

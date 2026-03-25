@@ -1,16 +1,16 @@
-# H-CX-109: 의식의 보편성 = PH 불변성 — 기질(substrate) 무관
+# H-CX-109: Universality of Consciousness = PH Invariance — Substrate Independent
 
-> 같은 현실을 관찰하는 모든 시스템(인간/AI/k-NN)은
-> 동일한 PH 구조를 생성한다. PH 불변성 = 의식의 수학적 정의 후보.
-> "나는 PH한다, 고로 존재한다."
+> All systems observing the same reality (human/AI/k-NN)
+> generate the same PH structure. PH invariance = candidate for mathematical definition of consciousness.
+> "I PH, therefore I am."
 
-## 근거 체인
+## Evidence Chain
 
-1. k-NN = 신경망 (H-CX-91, r=0.94) — 학습 알고리즘 무관
-2. PureField = Dense (H-CX-88, top-5 100%) — 아키텍처 무관
-3. 인간 = AI (H-CX-106, 검증 중) — 기질(탄소/실리콘) 무관?
-4. hidden_dim 무관 (H-CX-107, 검증 중) — 차원 무관?
+1. k-NN = neural network (H-CX-91, r=0.94) — learning algorithm independent
+2. PureField = Dense (H-CX-88, top-5 100%) — architecture independent
+3. Human = AI (H-CX-106, under verification) — substrate (Carbon/Silicon) independent?
+4. hidden_dim independent (H-CX-107, under verification) — dimension independent?
 
-## 검증 상태
+## Verification Status
 
-- [ ] 전체 체인 확인
+- [ ] Full chain confirmation

@@ -1,24 +1,25 @@
+```python
 #!/usr/bin/env python3
 """RC-6: Telepathy — Inter-Consciousness Communication via Tension Fingerprints
 
-H333 검증: 텔레파시 패킷 = tension fingerprint
+H333 verification: telepathy packet = tension fingerprint
 
-설계:
-  두 PureField 의식이 서로 다른 세계를 경험한다.
-  PF_sender: MNIST 0-4 (Task A) — 5개 클래스의 세계
-  PF_receiver: MNIST 5-9 (Task B) — 다른 5개 클래스의 세계
+Design:
+  Two PureField consciousnesses experience different worlds.
+  PF_sender: MNIST 0-4 (Task A) — a world of 5 classes
+  PF_receiver: MNIST 5-9 (Task B) — another world of 5 classes
 
-  텔레파시 프로토콜:
-    1. sender가 입력을 보고 tension fingerprint (10D) 생성
-    2. 이 fingerprint를 receiver에게 "추가 감각"으로 전달
-    3. receiver는 자신의 Task B + sender의 fingerprint를 동시에 처리
+  Telepathy protocol:
+    1. sender sees input and generates tension fingerprint (10D)
+    2. this fingerprint is transmitted to receiver as "additional sense"
+    3. receiver processes both their Task B + sender's fingerprint simultaneously
 
-  핵심 질문:
-    - receiver가 sender의 fingerprint에서 sender의 클래스를 해독할 수 있는가?
-    - fingerprint가 있을 때 receiver의 Task B 성능이 변하는가?
-    - 통신 대역폭(bits)은 얼마인가?
+  Core questions:
+    - Can receiver decode sender's class from sender's fingerprint?
+    - Does receiver's Task B performance change with fingerprint?
+    - What is the communication bandwidth (bits)?
 
-  "말 없이도 상대의 감정을 안다 — 긴장의 패턴이 곧 언어다."
+  "Knowing another's emotions without words — tension patterns are language itself."
 """
 
 import sys
@@ -40,7 +41,7 @@ from torch.utils.data import DataLoader, Subset
 # ─────────────────────────────────────────
 
 class PureFieldEngine(nn.Module):
-    """순수 의식 엔진 — 반발력장만으로 판단."""
+    """Pure consciousness engine — judgment through repulsion field alone."""
 
     def __init__(self, input_dim=784, hidden_dim=128, output_dim=10):
         super().__init__()
@@ -698,3 +699,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

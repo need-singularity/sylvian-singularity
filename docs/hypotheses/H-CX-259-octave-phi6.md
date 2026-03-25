@@ -1,3 +1,3 @@
-# H-CX-259: 🟩 옥타브 2:1 = φ(6):1
+# H-CX-259: 🟩 Octave 2:1 = φ(6):1
 
-> 음악 옥타브 비율 2 = φ(6) = 토션트.
+> Musical octave ratio 2 = φ(6) = Totient.

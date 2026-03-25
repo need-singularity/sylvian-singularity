@@ -1,3 +1,3 @@
-# H-CX-298: ⭐⭐🟩 루카스(P₁) = σ+P₁ = 18 = 주기율표 족수
+# H-CX-298: ⭐⭐🟩 Lucas(P₁) = σ+P₁ = 18 = Periodic Table Groups
 
-> L(6)=18=σ(6)+P₁=12+6. 루카스 수 = 주기율표 족 = σ+P₁.
+> L(6)=18=σ(6)+P₁=12+6. Lucas number = Periodic table group = σ+P₁.

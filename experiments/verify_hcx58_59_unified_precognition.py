@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""H-CX-58+59 통합: 장력 크기(렌즈) + 방향(혼동 예측) = 통합 예지 시스템
+"""H-CX-58+59 Integration: Tension Magnitude(Lens) + Direction(Confusion Prediction) = Unified Precognition System
 
-H-CX-58: 장력 크기 → "맞을까 틀릴까" (AUC)
-H-CX-59: 방향벡터 → "무엇과 혼동할까" (Dir→Pred%)
-통합: 크기+방향 결합 → 더 강한 예지?
+H-CX-58: Tension Magnitude → "Will it be right or wrong" (AUC)
+H-CX-59: Direction Vector → "What will it be confused with" (Dir→Pred%)
+Integration: Magnitude+Direction combination → Stronger precognition?
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')

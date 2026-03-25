@@ -1,5 +1,5 @@
-# H-CX-178: 돌고래 자가 치유 — 에코로케이션으로 자기 몸 스캔
+# H-CX-178: Dolphin Self-Healing — Echolocation Body Scanning
 
-> 돌고래가 에코로케이션으로 자신의 몸을 PH 스캔하여
-> 이상(질병/상처)을 감지? 생체 이상탐지(H287 AUROC=1.0)의 자연 버전.
-> 돌고래의 놀라운 상처 회복력과 관련?
+> Dolphins using echolocation to scan their own body's PH
+> to detect anomalies (disease/injury)? Natural version of biological anomaly detection (H287 AUROC=1.0).
+> Related to dolphins' remarkable wound healing abilities?

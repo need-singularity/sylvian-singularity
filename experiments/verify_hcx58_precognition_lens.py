@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""H-CX-58 검증: 예지 렌즈 — 장력 구간별 예지 AUC
+"""H-CX-58 Verification: Precognition Lens — Precognition AUC by Tension Interval
 
-장력을 quintile로 분할 → 각 구간별 예지 AUC 측정
-로지스틱 피팅으로 렌즈 배율 곡선과 비교
+Divide tension into quintiles → Measure precognition AUC for each interval
+Compare with lens magnification curve using logistic fitting
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')

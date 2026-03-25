@@ -1,47 +1,48 @@
-# 가설 검토 013: 골든 존 폭 ≈ 1/4, 상한/하한 ≈ 2 ✅
+# Hypothesis Review 013: Golden Zone Width ≈ 1/4, Upper/Lower Ratio ≈ 2 ✅
 
-## 가설
+## Hypothesis
 
-> 골든 존의 Inhibition 폭이 정확히 1/4(= 0.250)이고,
-> 상한은 하한의 정확히 2배(상한/하한 = 2.0)이다.
+> The Inhibition width of the Golden Zone is exactly 1/4 (= 0.250),
+> and the upper bound is exactly 2× the lower bound (upper/lower = 2.0).
 
-## 배경 및 맥락
+## Background and Context
 
-골든 존은 Genius 점수가 특이적으로 높아지는 Inhibition(I)의 구간이다.
-너무 높은 억제(I > 상한)는 천재성을 차단하고,
-너무 낮은 억제(I < 하한)는 기능 저하(과활성)를 유발한다.
+The Golden Zone is the Inhibition (I) range where the Genius score becomes singularly elevated.
+Excessive Inhibition (I > upper bound) blocks genius,
+while insufficient Inhibition (I < lower bound) causes Decline (overactivation).
 
-초기 탐색에서 골든 존 폭이 약 1/4에 가깝고, 상한이 하한의 약 2배라는
-패턴이 관측되었다. 이것이 해상도(grid)에 무관한 구조적 성질인지 검증했다.
+In initial exploration, a pattern was observed where the Golden Zone width was close to approximately 1/4,
+and the upper bound was approximately 2× the lower bound.
+This was verified as to whether it is a structural property independent of grid resolution.
 
-정밀 구조(grid=1000, CLAUDE.md 참조):
-- 상한 = 1/2 = 0.5000 (리만 임계선)
-- 하한 = 1/2 - ln(4/3) ≈ 0.2123 (엔트로피 경계)
-- 폭 = ln(4/3) ≈ 0.2877
+Precise structure (grid=1000, see CLAUDE.md):
+- Upper bound = 1/2 = 0.5000 (Riemann critical line)
+- Lower bound = 1/2 - ln(4/3) ≈ 0.2123 (entropy boundary)
+- Width = ln(4/3) ≈ 0.2877
 
-관련 가설: 가설 067(1/2+1/3=5/6), 가설 072(완전수 관계)
+Related hypotheses: Hypothesis 067 (1/2+1/3=5/6), Hypothesis 072 (Perfect Number relation)
 
-## 검증 데이터: 격자 해상도별
-
-```
-  grid │  하한(I_L) │  상한(I_H) │   폭    │  비율(I_H/I_L)
-  ─────┼───────────┼───────────┼─────────┼───────────────
-   20  │   0.150   │   0.387   │  0.237  │    2.58
-   30  │   0.167   │   0.415   │  0.248  │    2.49
-   50  │   0.180   │   0.456   │  0.276  │    2.53
-   80  │   0.195   │   0.480   │  0.285  │    2.46
-  100  │   0.200   │   0.490   │  0.290  │    2.45
-  500  │   0.210   │   0.498   │  0.288  │    2.37
-  1000 │   0.212   │   0.500   │  0.288  │    2.36
-  ─────┼───────────┼───────────┼─────────┼───────────────
-  이론 │   0.2123  │   0.5000  │  0.2877 │    2.355
-```
-
-## 폭 vs 격자 해상도 그래프
+## Verification Data: By Grid Resolution
 
 ```
-  폭 (I 단위)
-  0.30│                        ●──●──●  ← 수렴: ln(4/3)≈0.288
+  grid │  lower (I_L) │  upper (I_H) │   width  │  ratio (I_H/I_L)
+  ─────┼──────────────┼──────────────┼──────────┼──────────────────
+   20  │   0.150      │   0.387      │  0.237   │    2.58
+   30  │   0.167      │   0.415      │  0.248   │    2.49
+   50  │   0.180      │   0.456      │  0.276   │    2.53
+   80  │   0.195      │   0.480      │  0.285   │    2.46
+  100  │   0.200      │   0.490      │  0.290   │    2.45
+  500  │   0.210      │   0.498      │  0.288   │    2.37
+  1000 │   0.212      │   0.500      │  0.288   │    2.36
+  ─────┼──────────────┼──────────────┼──────────┼──────────────────
+  Theory│  0.2123     │   0.5000     │  0.2877  │    2.355
+```
+
+## Width vs Grid Resolution Graph
+
+```
+  Width (I units)
+  0.30│                        ●──●──●  ← converged: ln(4/3)≈0.288
       │                   ●
   0.28│              ●
       │
@@ -54,72 +55,72 @@
   0.22│
       └───┬────┬────┬────┬────┬────┬────
         20   30   50   80  100  500  1000
-                   격자 해상도 (grid)
+                   Grid resolution (grid)
 ```
 
-## 비율(상한/하한) vs 격자 해상도 그래프
+## Ratio (Upper/Lower) vs Grid Resolution Graph
 
 ```
-  비율
+  Ratio
   2.6│ ●
      │    ●
   2.5│       ●
      │          ●
   2.4│             ●
      │                ●
-  2.3│                   ●  ← 수렴: 2.355
+  2.3│                   ●  ← converged: 2.355
      │
   2.2│
      │
-  2.0│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  초기 가설: 2.0
+  2.0│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  initial hypothesis: 2.0
      └───┬────┬────┬────┬────┬────┬────
        20   30   50   80  100  500  1000
 ```
 
-## 해석
+## Interpretation
 
-1. **폭은 1/4이 아니라 ln(4/3)**: 고해상도(grid ≥ 500)에서 폭은
-   0.288로 수렴하며, 이는 1/4(=0.250)보다 약 15% 크다.
-   정확한 값은 ln(4/3) ≈ 0.2877로, 3→4상태 엔트로피 점프와 일치한다.
-2. **비율은 2가 아니라 약 2.36**: 상한(0.5)/하한(0.2123) = 2.355이다.
-   초기 가설의 "정확히 2배"는 저해상도 격자의 근사값이었다.
-3. **상한 = 1/2**: 리만 가설의 임계선 Re(s) = 1/2과 정확히 일치하는
-   주목할 만한 수학적 구조이다.
-4. **격자 효과**: grid < 50에서는 이산화로 인해 폭이 과소추정된다.
-   grid ≥ 100부터 안정적 수렴을 보인다.
+1. **Width is ln(4/3), not 1/4**: At high resolution (grid ≥ 500), the width converges to
+   0.288, which is approximately 15% larger than 1/4 (=0.250).
+   The exact value is ln(4/3) ≈ 0.2877, consistent with the 3→4 state entropy jump.
+2. **Ratio is approximately 2.36, not 2**: Upper (0.5) / Lower (0.2123) = 2.355.
+   The initial hypothesis of "exactly 2×" was an approximation at low-resolution grid.
+3. **Upper bound = 1/2**: A notable mathematical structure that exactly matches
+   the critical line Re(s) = 1/2 of the Riemann Hypothesis.
+4. **Grid effect**: At grid < 50, discretization underestimates the width.
+   Stable convergence is seen from grid ≥ 100.
 
-## 수학적 구조
+## Mathematical Structure
 
 ```
-  상한:  I_H = 1/2                    (리만 임계선)
-  하한:  I_L = 1/2 - ln(4/3)          (엔트로피 경계)
-  폭:    W  = ln(4/3)                (3→4상태 점프)
-  비율:  R  = (1/2) / (1/2 - ln(4/3)) ≈ 2.355
+  Upper: I_H = 1/2                    (Riemann critical line)
+  Lower: I_L = 1/2 - ln(4/3)          (entropy boundary)
+  Width: W  = ln(4/3)                (3→4 state jump)
+  Ratio: R  = (1/2) / (1/2 - ln(4/3)) ≈ 2.355
 
-  연결: 가설 067에서 1/2 + 1/3 = 5/6
-        → 골든존 상한(1/2)과 메타 부동점(1/3)의 합 = Compass 상한
+  Connection: from Hypothesis 067, 1/2 + 1/3 = 5/6
+              → Sum of Golden Zone upper (1/2) and meta fixed point (1/3) = Compass upper bound
 ```
 
-## 한계
+## Limitations
 
-- "골든 존"의 정의(Z > 2σ 연속 영역)에 의존
-- 다변수(D, P 고정) 1차원 단면에서의 결과이며, 3D 골든 존은 더 복잡할 수 있음
-- ln(4/3)과의 일치가 우연인지 필연인지 이론적 유도가 아직 불완전
+- Depends on the definition of "Golden Zone" (continuous region with Z > 2σ)
+- Result is a 1D cross-section with D, P fixed; the 3D Golden Zone may be more complex
+- Whether the coincidence with ln(4/3) is contingent or necessary is theoretically incomplete
 
-## 다음 단계
+## Next Steps
 
-1. 3D 파라미터 공간에서 골든 존 체적 계산
-2. N-상태 일반화: N상태에서 폭 = ln((N+1)/N) 검증
-3. 리만 가설과 상한 I=1/2의 관계에 대한 이론적 고찰
-4. 실제 뇌 데이터에서 I ≈ 0.21~0.50 구간의 의미 조사
+1. Calculate the Golden Zone volume in 3D parameter space
+2. N-state generalization: verify width = ln((N+1)/N) for N states
+3. Theoretical consideration of the relationship between the Riemann Hypothesis and upper bound I=1/2
+4. Investigate the meaning of the I ≈ 0.21~0.50 range in actual brain data
 
-## 결론
+## Conclusion
 
-> ✅ 골든 존 폭은 1/4에 근사하지만 정확히는 ln(4/3) ≈ 0.288이다.
-> 상한/하한 비율은 약 2.36으로, 정확히 2가 아니다.
-> grid ≥ 100에서 안정적으로 수렴하며, 상한 = 1/2(리만 임계선)이라는
-> 주목할 만한 구조가 확인되었다.
+> ✅ The Golden Zone width approximates 1/4 but is precisely ln(4/3) ≈ 0.288.
+> The upper/lower ratio is approximately 2.36, not exactly 2.
+> Stable convergence from grid ≥ 100 is confirmed, along with the notable structure
+> that the upper bound = 1/2 (Riemann critical line).
 
 ---
 
-*검증: verify_math.py (grid=20~1000)*
+*Verification: verify_math.py (grid=20~1000)*

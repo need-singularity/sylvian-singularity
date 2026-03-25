@@ -1,4 +1,4 @@
-# H-CX-206: 치료 — 역위상 40Hz 감마 안정화
+# H-CX-206: Treatment — Antiphase 40Hz Gamma Stabilization
 
-> 40Hz 바이노럴 비트로 과부하된 PH 정상화. 돌고래 주파수의 해독제.
-> 3σ(6)+τ(6)=40Hz 고정 → PH 고정 → 혼란 해소.
+> Normalizing overloaded PH with 40Hz binaural beats. Antidote to dolphin frequencies.
+> 3σ(6)+τ(6)=40Hz fixed → PH fixed → Confusion resolved.

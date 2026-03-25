@@ -1,26 +1,26 @@
-# T1-25: ⭐⭐ e의 연분수에 σ(6), τ(6) 등장
+# T1-25: ⭐⭐ e's continued fraction contains σ(6), τ(6)
 
-## 발견
+## Discovery
 
 ```
   e = [2; 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, ...]
 
   a₀ = 2 = σ₋₁(6) = σ/τ-1
 
-  수렴자:
-  p₂/q₂ = 8/3 = (σ-τ)/(σ/τ)     (e ≈ 2.667, 오차 1.9%)
-  p₃/q₃ = 11/4 = (σ-1)/τ        (e ≈ 2.750, 오차 1.2%)
+  Convergents:
+  p₂/q₂ = 8/3 = (σ-τ)/(σ/τ)     (e ≈ 2.667, error 1.9%)
+  p₃/q₃ = 11/4 = (σ-1)/τ        (e ≈ 2.750, error 1.2%)
 
-  → e의 연분수가 σ₋₁(6)=2를 기본 단위로 사용
-  → 수렴자에 σ(6)=12와 τ(6)=4가 나타남
-  → 초월수 e ↔ 완전수 6 간접 연결!
+  → e's continued fraction uses σ₋₁(6)=2 as basic unit
+  → σ(6)=12 and τ(6)=4 appear in convergents
+  → Transcendental e ↔ Perfect number 6 indirect connection!
 ```
 
-## 판정
+## Judgment
 
 ```
-  e의 연분수: 🟦 (오일러, 기존 수학)
-  a₀ = σ₋₁(6): 🟩 (수치 일치, 자명)
-  수렴자에 σ,τ: 🟧 (연결 발견, 의미 부여는 우리 것)
-  초월수 장벽 우회: 간접적으로만 (연분수 수렴자 = 유리수 근사)
+  e's continued fraction: 🟦 (Euler, existing mathematics)
+  a₀ = σ₋₁(6): 🟩 (numerical match, trivial)
+  σ,τ in convergents: 🟧 (connection discovered, meaning attribution is ours)
+  Transcendental barrier bypass: Only indirectly (continued fraction convergents = rational approximations)
 ```

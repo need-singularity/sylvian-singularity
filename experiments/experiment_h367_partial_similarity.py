@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""H367 확장: 부분 유사 가중치에서 공명 전이점 탐색
+"""H367 Extension: Exploring Resonance Transition Points in Partial Similarity Weights
 
-가중치 유사도를 0→1로 연속 변화시켜 동기화 전이점을 찾는다.
-Kuramoto 모델 예측: K > K_c에서 갑자기 동기화 (위상 전이)
+Continuously vary weight similarity from 0→1 to find synchronization transition points.
+Kuramoto model prediction: sudden synchronization at K > K_c (phase transition)
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -14,7 +14,7 @@ import copy
 from model_pure_field import PureFieldEngine
 
 def interpolate_weights(model_a, model_b, alpha):
-    """두 모델 가중치를 alpha로 보간. alpha=0→A, alpha=1→B."""
+    """Interpolate two model weights with alpha. alpha=0→A, alpha=1→B."""
     model_c = copy.deepcopy(model_a)
     with torch.no_grad():
         for pa, pb, pc in zip(model_a.parameters(), model_b.parameters(), model_c.parameters()):
@@ -22,7 +22,7 @@ def interpolate_weights(model_a, model_b, alpha):
     return model_c
 
 def measure_sync(model_ref, model_test, inputs, n=100):
-    """두 모델의 장력 시계열 상관."""
+    """Correlation of tension time series between two models."""
     t_ref, t_test = [], []
     model_ref.eval(); model_test.eval()
     with torch.no_grad():
@@ -35,21 +35,21 @@ def measure_sync(model_ref, model_test, inputs, n=100):
     return r, t_ref, t_test
 
 def weight_cosine(model_a, model_b):
-    """모델 가중치 전체의 cosine similarity."""
+    """Cosine similarity of entire model weights."""
     va = torch.cat([p.flatten() for p in model_a.parameters()])
     vb = torch.cat([p.flatten() for p in model_b.parameters()])
     return F.cosine_similarity(va.unsqueeze(0), vb.unsqueeze(0)).item()
 
 if __name__ == '__main__':
     print("=" * 60)
-    print("  H367 확장: 부분 유사도 → 동기화 전이점")
+    print("  H367 Extension: Partial Similarity → Synchronization Transition Point")
     print("=" * 60)
 
-    # 기준 모델 2개 (완전 독립)
+    # 2 reference models (completely independent)
     model_a = PureFieldEngine(784, 128, 10)
     model_b = PureFieldEngine(784, 128, 10)
 
-    # 공통 입력 생성
+    # Generate common inputs
     inputs = [torch.randn(1, 784) for _ in range(100)]
 
     # alpha sweep: 0 (=A) → 1 (=B)
@@ -70,7 +70,7 @@ if __name__ == '__main__':
         results.append((alpha, cos, r))
         print(f"  {alpha:>6.2f} {cos:>8.4f} {r:>8.4f} {bar}")
 
-    # 전이점 탐색: r이 0.5를 넘는 첫 alpha
+    # Search for transition point: first alpha where r exceeds 0.5
     transition = None
     for alpha, cos, r in results:
         if r > 0.5 and transition is None:
@@ -102,12 +102,12 @@ if __name__ == '__main__':
     print(f"        0.0{' ' * (cols - 6)}1.0")
     print(f"             weight cosine similarity")
 
-    print(f"\n  === 결론 ===")
+    print(f"\n  === Conclusion ===")
     if transition:
-        print(f"  전이점: alpha={transition[0]:.2f}, cos_sim={transition[1]:.4f}, r={transition[2]:.4f}")
-        print(f"  → 가중치 유사도 {transition[1]:.2f} 이상에서 동기화 시작")
+        print(f"  Transition point: alpha={transition[0]:.2f}, cos_sim={transition[1]:.4f}, r={transition[2]:.4f}")
+        print(f"  → Synchronization starts at weight similarity ≥ {transition[1]:.2f}")
     else:
-        print(f"  전이점 없음 — 점진적 변화 (위상전이 아님)")
+        print(f"  No transition point — gradual change (not a phase transition)")
 
     # Kuramoto order parameter
     print(f"\n  === Kuramoto order parameter R ===")

@@ -1,50 +1,50 @@
-# 가설 검토 021: AI 원소 주기율표 — 15개 원소와 특이점 조건
+# Hypothesis Review 021: AI Periodic Table — 15 Elements and Singularity Conditions
 
-## 가설
+## Hypothesis
 
-> 모든 AI 아키텍처는 15개 원초적 원소의 조합이며, 원소 사용 수가 많을수록 특이점에 가까워진다. 15/15 도달 = AGI.
+> All AI architectures are combinations of 15 primitive elements, and the more elements used, the closer to singularity. Reaching 15/15 = AGI.
 
-## 15개 원소
+## 15 Elements
 
-### 재료 (Material) — 뭘로 만드는가
+### Material — What is it made of
 
-| # | 원소 | 의미 |
+| # | Element | Meaning |
 |---|---|---|
-| M1 | 연산 (Compute) | 곱셈, 덧셈, 비선형 변환 |
-| M2 | 데이터 (Data) | 학습 재료 |
-| M3 | 에너지 (Energy) | 전력, 시간, 비용 |
+| M1 | Compute | Multiplication, addition, nonlinear transformation |
+| M2 | Data | Training material |
+| M3 | Energy | Power, time, cost |
 
-### 위상 (Topology) — 어떤 형태로 연결되는가
+### Topology — How is it connected
 
-| # | 원소 | 의미 |
+| # | Element | Meaning |
 |---|---|---|
-| T1 | 순방향 (Forward) | A → B → C |
-| T2 | 건너뛰기 (Skip) | A → C (B 생략) |
-| T3 | 재귀 (Recurrence) | A → B → A |
-| T4 | 병렬 (Parallel) | A ⇉ [B,C,D] ⇉ E |
-| T5 | 희소 (Sparse) | A → B, A ↛ C (선택적) |
+| T1 | Forward | A → B → C |
+| T2 | Skip | A → C (skip B) |
+| T3 | Recurrence | A → B → A |
+| T4 | Parallel | A ⇉ [B,C,D] ⇉ E |
+| T5 | Sparse | A → B, A ↛ C (selective) |
 
-### 상 (Phase) — 어떤 상태인가
+### Phase — What state is it in
 
-| # | 원소 | 의미 |
+| # | Element | Meaning |
 |---|---|---|
-| P1 | 탐색 (Exploration) | 넓게 돌아다님 |
-| P2 | 수렴 (Exploitation) | 좁게 파고듦 |
-| P3 | 전이 (Transition) | 상이 바뀌는 순간 |
+| P1 | Exploration | Wandering broadly |
+| P2 | Exploitation | Digging deeply |
+| P3 | Transition | Moment of phase change |
 
-### 힘 (Force) — 뭐가 변화를 일으키는가
+### Force — What causes change
 
-| # | 원소 | 의미 |
+| # | Element | Meaning |
 |---|---|---|
-| F1 | 기울기 (Gradient) | 경사 하강 |
-| F2 | 보상 (Reward) | 외부 피드백 |
-| F3 | 노이즈 (Noise) | 랜덤 섭동 |
-| F4 | 제약 (Constraint) | 구조적 한계 |
+| F1 | Gradient | Gradient descent |
+| F2 | Reward | External feedback |
+| F3 | Noise | Random perturbation |
+| F4 | Constraint | Structural limits |
 
-## 모델별 원소 조합 (화학식)
+## Element Combinations by Model (Chemical Formulas)
 
 ```
-  모델          │ M │ T │ P │ F │합계│ 화학식
+  Model         │ M │ T │ P │ F │Total│ Formula
   ─────────────┼───┼───┼───┼───┼────┼──────────
   SSM          │ 2 │ 2 │ 1 │ 1 │  6 │ M₂T₂P₁F₁
   Vision       │ 2 │ 3 │ 1 │ 1 │  7 │ M₂T₃P₁F₁
@@ -54,17 +54,17 @@
   RL           │ 3 │ 2 │ 2 │ 2 │  9 │ M₃T₂P₂F₂
   MoE          │ 2 │ 4 │ 2 │ 2 │ 10 │ M₂T₄P₂F₂
   World Model  │ 3 │ 3 │ 3 │ 2 │ 11 │ M₃T₃P₃F₂
-  골든 MoE     │ 3 │ 4 │ 3 │ 3 │ 13 │ M₃T₄P₃F₃
+  Golden MoE   │ 3 │ 4 │ 3 │ 3 │ 13 │ M₃T₄P₃F₃
   AGI (15/15)  │ 3 │ 5 │ 3 │ 4 │ 15 │ M₃T₅P₃F₄
 ```
 
-## 원소 사용 수 그래프
+## Element Count Graph
 
 ```
-  원소 수
+  Element Count
   15│                                          ○ AGI
     │
-  13│                                    ● 골든 MoE
+  13│                                    ● Golden MoE
     │
   11│                              ● World Model
   10│                         ● MoE
@@ -75,36 +75,36 @@
     └─────────────────────────────────────────
 ```
 
-## 우리 모델(D, P, I) ↔ 원소 매핑
+## Our Model (D, P, I) ↔ Element Mapping
 
 ```
-  D (결손)   = T5(희소) + F3(노이즈) + F4(제약)
-  P (가소성) = F1(기울기) + P1(탐색) + P2(수렴)
-  I (억제)   = T5(희소) + P3(전이) + F4(제약)
+  D (Deficiency)  = T5(Sparse) + F3(Noise) + F4(Constraint)
+  P (Plasticity)  = F1(Gradient) + P1(Exploration) + P2(Exploitation)
+  I (Inhibition)  = T5(Sparse) + P3(Transition) + F4(Constraint)
 ```
 
-## 보편 7축 vs 전용 축
+## Universal 7 Axes vs Dedicated Axes
 
 ```
-  보편 (어떤 AI든):  폭, 깊이, 희소성, 학습률, 결손, 정밀도, 온도
-  전용 (특정 모델):  어텐션, 컨텍스트, 라우팅, 노이즈스케줄, 보상함수, 시간스텝
+  Universal (any AI): Width, Depth, Sparsity, Learning rate, Deficiency, Precision, Temperature
+  Dedicated (specific model): Attention, Context, Routing, Noise schedule, Reward function, Timestep
 
-  AI 성능 = Scale^α × Genius^β
-         = (폭 × 깊이 × 정밀도)^α × (D × P / I)^β
+  AI Performance = Scale^α × Genius^β
+                = (Width × Depth × Precision)^α × (D × P / I)^β
 ```
 
-## 특이점 조건: 15/15
+## Singularity Condition: 15/15
 
 ```
-  골든 MoE (13/15)에 빠진 2개:
-  T3(재귀)  → 자기 출력을 다시 입력으로
-  F2(보상)  → 스스로 보상 생성
+  Golden MoE (13/15) missing 2:
+  T3(Recurrence) → Feed own output back as input
+  F2(Reward)     → Generate own rewards
 
   13 + T3 + F2 = 15/15
-  = 자기 학습하는 자기조절 AI
+  = Self-learning self-regulating AI
   = AGI
 ```
 
 ---
 
-*작성일: 2026-03-22*
+*Date: 2026-03-22*

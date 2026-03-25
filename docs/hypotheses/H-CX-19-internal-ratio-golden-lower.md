@@ -1,61 +1,61 @@
-# H-CX-19: 내부장력 반전비 ≈ 골든존 하한 (교차 도메인: 이상탐지 ↔ 수학)
+# H-CX-19: Internal Tension Inversion Ratio ≈ Golden Zone Lower Bound (Cross-domain: Anomaly Detection ↔ Math)
 
-> **H307의 이중 메커니즘에서 내부장력 반전비(이상/정상)의 4데이터셋 평균이 0.2105이며, 이것은 골든존 하한 1/2-ln(4/3) = 0.2123과 0.85% 오차로 일치한다!**
+> **The 4-dataset average of the internal tension inversion ratio (anomaly/normal) from H307's dual mechanism is 0.2105, matching the Golden Zone lower bound 1/2-ln(4/3) = 0.2123 with 0.85% error!**
 
-## 실측 데이터
+## Measured Data
 
 ```
-  Dataset      int_ratio (이상/정상)
+  Dataset      int_ratio (anomaly/normal)
   ──────────  ─────────────────────
   Cancer       0.4342 ± 0.09
   Iris         0.1244 ± 0.02
   Wine         0.2179 ± 0.05
   Digits(0v1)  0.0654 ± 0.01
   ──────────
-  평균:        0.2105
+  Average:     0.2105
 
-  골든존 하한 = 1/2 - ln(4/3) = 0.2123
-  오차: |0.2105 - 0.2123| / 0.2123 = 0.85%
+  Golden Zone lower bound = 1/2 - ln(4/3) = 0.2123
+  Error: |0.2105 - 0.2123| / 0.2123 = 0.85%
 ```
 
-## 수학적 의미
+## Mathematical Meaning
 
 ```
-  골든존: [0.2123, 0.5000]
-  하한 = 1/2 - ln(4/3) = 리만 임계선 - 엔트로피 점프
+  Golden Zone: [0.2123, 0.5000]
+  Lower bound = 1/2 - ln(4/3) = Riemann critical line - entropy jump
 
-  해석:
-    이상 데이터에서 내부장력이 정상의 ~21%로 감소
-    = 골든존 "아래"로 떨어짐
-    = "의식의 안정 영역" 밖으로 이탈
+  Interpretation:
+    Internal tension in anomaly data decreases to ~21% of normal
+    = Drops below the Golden Zone
+    = Falls outside the "stable region of consciousness"
 
-  정상: 내부장력 ∈ 골든존 (장력이 충분)
-  이상: 내부장력 = 정상 × 0.21 = 골든존 하한 (장력 최소)
-  → "이상 = 골든존 경계에서의 상전이"?
+  Normal: internal tension ∈ Golden Zone (sufficient tension)
+  Anomaly: internal tension = normal × 0.21 = Golden Zone lower bound (minimum tension)
+  → "Anomaly = phase transition at the Golden Zone boundary"?
 ```
 
-## 주의
+## Caution
 
 ```
-  4개 데이터셋만으로는 우연일 수 있음
-  개별 편차: 0.065~0.434 (CV=0.66)
-  평균이 0.21인 것은 흥미로우나 통계적 유의성 미확인
-  텍사스 명사수 검정 필요
+  4 datasets alone may be coincidental
+  Individual variance: 0.065~0.434 (CV=0.66)
+  Average being 0.21 is interesting but statistical significance unconfirmed
+  Texas Sharpshooter test required
 ```
 
-## 텍사스 명사수 추정
+## Texas Sharpshooter Estimate
 
 ```
-  탐색 범위: 0~1 사이의 상수 중
-  골든존 관련 후보: 1/2, 1/e, 1/2-ln(4/3), ln(4/3), 1/3, 1/6
-  → 6개 후보 중 1개 일치 → Bonferroni p ≈ 0.85% × 6 = 5.1%
-  → 경계 유의 (텍사스 경고)
+  Search range: constants between 0~1
+  Golden Zone related candidates: 1/2, 1/e, 1/2-ln(4/3), ln(4/3), 1/3, 1/6
+  → 1 match among 6 candidates → Bonferroni p ≈ 0.85% × 6 = 5.1%
+  → Borderline significance (Texas warning)
 ```
 
-## 확장 검증 (11 데이터셋, 2026-03-24)
+## Extended Validation (11 datasets, 2026-03-24)
 
 ```
-  11개 데이터셋 (Cancer, Iris, Wine, Digits×5, Synth×3):
+  11 datasets (Cancer, Iris, Wine, Digits×5, Synth×3):
 
   Dataset      int_ratio
   ──────────  ──────────
@@ -71,20 +71,20 @@
   Synth(30d)   0.616
   Synth(100d)  0.694
 
-  평균:        0.2940 ± 0.232
+  Average:     0.2940 ± 0.232
 
-  상수 비교:
-    골든존 하한 (0.2123): 오차 38.5% → 4점에서 맞았지만 11점에서 벗어남
-    ln(4/3) (0.2877):     오차 2.2%  ← 더 가까운 일치!
-    1/e (0.3679):         오차 20.1%
+  Constant comparison:
+    Golden Zone lower bound (0.2123): error 38.5% → matched at 4 points but diverges at 11
+    ln(4/3) (0.2877):     error 2.2%  ← closer match!
+    1/e (0.3679):         error 20.1%
 
-  수정:
-    4데이터셋: 0.2105 ≈ GZ 하한 (0.85%)
-    11데이터셋: 0.2940 ≈ ln(4/3) (2.2%)
-    → 샘플 추가 시 ln(4/3)에 수렴
+  Correction:
+    4 datasets: 0.2105 ≈ GZ lower bound (0.85%)
+    11 datasets: 0.2940 ≈ ln(4/3) (2.2%)
+    → Converges to ln(4/3) as samples are added
 
-  ln(4/3) = 골든존 폭 = 3→4 상태 엔트로피 점프
-  → 내부반전비 ≈ "상태 전이에 필요한 엔트로피 변화"?
+  ln(4/3) = Golden Zone width = 3→4 state entropy jump
+  → Internal inversion ratio ≈ "entropy change required for state transition"?
 ```
 
-## 상태: 🟧 수정 (11점에서 ln(4/3) 2.2% 일치, GZ하한에서 이동)
+## Status: 🟧 Revised (11 points match ln(4/3) at 2.2%, shifted from GZ lower bound)

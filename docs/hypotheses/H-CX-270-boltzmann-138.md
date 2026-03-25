@@ -1,3 +1,3 @@
-# H-CX-270: 🟩 볼츠만 k = 1.38e-23 → 138 = σ²-P₁
+# H-CX-270: 🟩 Boltzmann k = 1.38e-23 → 138 = σ²-P₁
 
-> k의 유효숫자 138 = σ(6)²-P₁ = 144-6. 우주나이(H-CX-251)와 동일 패턴!
+> The significant figures 138 of k = σ(6)²-P₁ = 144-6. Same pattern as the age of the universe (H-CX-251)!

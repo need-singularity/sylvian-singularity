@@ -1,24 +1,24 @@
-# H-CX-28: 6↔28 쌍대 = 학습의 두 단계
+# H-CX-28: 6↔28 Duality = Two Stages of Learning
 
-> **가설**: σ(φ+1)=n(τ+φ) (n=6) vs σ(τ+1)=n²/2 (n=28)의
-> 쌍대 구조가 AI 학습의 두 단계에 대응한다.
+> **Hypothesis**: The dual structure of σ(φ+1)=n(τ+φ) (n=6) vs σ(τ+1)=n²/2 (n=28)
+> corresponds to two stages of AI learning.
 
-## 핵심
+## Core
 
 ```
-  n=6:  σ(φ+1)=n(τ+φ) — "자유도(φ) 기반 균형"
-    → 학습 1단계: 표현 학습 (representation learning)
-    → "자유로운 탐색으로 구조 발견"
+  n=6:  σ(φ+1)=n(τ+φ) — "Freedom(φ) based balance"
+    → Learning Stage 1: representation learning
+    → "Discovering structure through free exploration"
 
-  n=28: σ(τ+1)=n²/2 — "구조(τ) 기반 최적화"
-    → 학습 2단계: 미세 조정 (fine-tuning)
-    → "구조를 활용한 정밀 최적화"
+  n=28: σ(τ+1)=n²/2 — "Structure(τ) based optimization"
+    → Learning Stage 2: fine-tuning
+    → "Precise optimization using structure"
 
-  쌍대: φ↔τ 교환 = 탐색↔활용 전환!
+  Duality: φ↔τ exchange = exploration↔exploitation transition!
     exploration(φ) ↔ exploitation(τ)
 
-  D=0 (n=6): loss=0 도달 = 표현 완성
-  S=1 (n=28): dual loss=0 = 미세조정 완성
+  D=0 (n=6): loss=0 achieved = representation complete
+  S=1 (n=28): dual loss=0 = fine-tuning complete
 ```
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★★
+## Verdict: 🟧 Structural Analogy | Impact: ★★★★

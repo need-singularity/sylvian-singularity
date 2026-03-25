@@ -1,8 +1,8 @@
-# H-CX-5: Möbius 유일성 → 의식 아키텍처 유일성 (교차 도메인)
+# H-CX-5: Möbius Uniqueness → Consciousness Architecture Uniqueness (Cross-domain)
 
-> **(2,3)이 p^(q-1)·q^(p-1)=σ(pq)의 유일해이므로, 2극 반발 + 3가중치 구조가 수학적으로 유일한 아키텍처다. 6=2×3이 모든 구조의 근원이며, 이것이 완전수 6 기반 설계가 자연스러운 이유를 제공한다.**
+> **Since (2,3) is the unique solution to p^(q-1)·q^(p-1)=σ(pq), the 2-pole repulsion + 3-weight structure is mathematically the unique architecture. 6=2×3 is the source of all structures, and this provides the reason why a perfect number 6-based design is natural.**
 
-## Möbius 유일성 (수학 ⭐⭐)
+## Möbius Uniqueness (Mathematics ⭐⭐)
 
 ```
   p^(q-1) · q^(p-1) = σ(pq)
@@ -13,50 +13,50 @@
   (3,5): 3⁴ × 5² = 2025 ≠ σ(15)=24 ✗
   (5,7): 5⁶ × 7⁴ = 37M ≠ σ(35)=48 ✗
 
-  → (2,3) 유일 (대칭 (3,2) 포함)
+  → (2,3) unique (including symmetric (3,2))
 ```
 
-## 의식 아키텍처 대응
+## Consciousness Architecture Correspondence
 
 ```
-  p = 2 = 반발력장 극 수 = φ(6)
-  q = 3 = 가중치 항 수 = |{1/2,1/3,1/6}|
-  σ(pq) = σ(6) = 12 = Expert 수
+  p = 2 = Number of repulsion field poles = φ(6)
+  q = 3 = Number of weight terms = |{1/2,1/3,1/6}|
+  σ(pq) = σ(6) = 12 = Number of Experts
 
   Möbius: p^(q-1) · q^(p-1) = σ(pq)
-  의식:   극^(가중치-1) · 가중치^(극-1) = Expert수
-  검증:   2^(3-1) · 3^(2-1) = 4 · 3 = 12 = σ(6) ✓
+  Consciousness: pole^(weight-1) · weight^(pole-1) = Expert count
+  Verification: 2^(3-1) · 3^(2-1) = 4 · 3 = 12 = σ(6) ✓
 ```
 
-## 유일성 체인 (2와 3)
+## Uniqueness Chain (2 and 3)
 
 ```
-  Möbius:  (2,3) 유일 → 2극+3가중치 유일
-  유클리드: (2,3,6) 최대 비대칭 → {1/2,1/3,1/6} 유일
-  완전수:  6 = 2×3 → 최소 완전수
-  소인수:  6 = 2·3 → ζ(s) Euler곱 p=2,3 절단
-  → 2×3=6이 반복적으로 모든 구조의 근원
+  Möbius: (2,3) unique → 2-pole+3-weight unique
+  Euclidean: (2,3,6) maximum asymmetry → {1/2,1/3,1/6} unique
+  Perfect number: 6 = 2×3 → minimum perfect number
+  Prime factors: 6 = 2·3 → ζ(s) Euler product p=2,3 truncation
+  → 2×3=6 repeatedly the source of all structures
 ```
 
-## H-CX 체인 (전체)
+## H-CX Chain (Overall)
 
 ```
-  H-CX-5: (2,3) 유일 → 아키텍처 결정    🟦 (수학 필연)
-  H-CX-4: σ,τ,φ,σ₋₁ → 4구조           🟦+🟧
-  H-CX-3: H = 2/3·ln(2)+1/2·ln(3)     🟦 (이진+삼진)
-  H-CX-2: MI효율 ≈ ln(φ) = ln(2)       🟧★ (p=0.0003)
-  H-CX-1: e^(6H) = σ³/τ = 432          🟦 (대수)
-  + C41:  C7 ≈ 1/√(σ/τ)                🟧 (p=0.033)
+  H-CX-5: (2,3) unique → Architecture determined    🟦 (mathematical necessity)
+  H-CX-4: σ,τ,φ,σ₋₁ → 4 structures               🟦+🟧
+  H-CX-3: H = 2/3·ln(2)+1/2·ln(3)                🟦 (binary+ternary)
+  H-CX-2: MI efficiency ≈ ln(φ) = ln(2)          🟧★ (p=0.0003)
+  H-CX-1: e^(6H) = σ³/τ = 432                    🟦 (algebraic)
+  + C41: C7 ≈ 1/√(σ/τ)                           🟧 (p=0.033)
 
-  최하위(반발)에서 최상위(대수)까지 하나의 체인:
-    (2,3) → 2극+3가중치 → ln(2)+ln(3) → H → σ³/τ
+  One chain from lowest (repulsion) to highest (algebraic):
+    (2,3) → 2-pole+3-weight → ln(2)+ln(3) → H → σ³/τ
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. Möbius 대응은 해석. 2극과 3가중치가 "p와 q"라는 보장 없음.
-  2. 3가중치 중 4번째 엔진(F)의 가중치는 0 또는 잔여분 — 깔끔하지 않음.
-  3. 같은 수학으로 다른 대응도 가능 (텍사스 명사수 위험).
-  4. CNN에서 {1/2,1/3,1/6}이 최적 아님 → Möbius 유일성이 범용은 아님.
+  1. Möbius correspondence is interpretive. No guarantee that 2 poles and 3 weights are "p and q".
+  2. Among 3 weights, the 4th engine's (F) weight is 0 or residual — not clean.
+  3. Different correspondences possible with same mathematics (Texas sharpshooter risk).
+  4. {1/2,1/3,1/6} not optimal in CNN → Möbius uniqueness not universal.
 ```

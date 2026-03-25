@@ -1,23 +1,26 @@
+Looking at this file, I can see it contains Korean text in comments and print statements. I'll translate all the Korean text to English while maintaining the exact same formatting and structure.
+
+```python
 #!/usr/bin/env python3
-"""생성 엔진 — 반발력장 잠재 공간의 VAE
+"""Generative Engine — VAE of Repulsion Field Latent Space
 
-반발력장 아키텍처를 생성 모델로 확장.
-핵심 통찰: "엔진 사이의 장(field)"이 바로 생성적 잠재 공간이다.
+Extending the repulsion field architecture as a generative model.
+Key insight: "The field between engines" is the generative latent space.
 
-두 축:
-  내용 축 (A vs G) = 의미 (무엇을 생성할 것인가)
-  구조 축 (E vs F) = 맥락 (어떻게 생성할 것인가)
+Two axes:
+  Content axis (A vs G) = Meaning (what to generate)
+  Structure axis (E vs F) = Context (how to generate)
 
-장력(tension)이 생성의 창의성을 제어:
-  낮은 장력 (0.1)     → 안전, 평균적, 지루한 생성
-  중간 장력 (~1/e)     → 균형, 의미 있는 생성 (골든존)
-  높은 장력 (>1.0)     → 야생적, 새로운, 비일관적 가능성
+Tension controls generative creativity:
+  Low tension (0.1)     → Safe, average, boring generation
+  Medium tension (~1/e) → Balanced, meaningful generation (Golden Zone)
+  High tension (>1.0)   → Wild, novel, possibly incoherent
 
-수학적 근거:
-  - 잠재 공간 = 반발력장의 평형점
-  - VAE의 KL divergence = 장력의 정보론적 비용
-  - 재구성 loss = 장이 현실을 얼마나 잘 반영하는가
-  - 장력 조절 = 탐색(exploration) vs 활용(exploitation) 트레이드오프
+Mathematical basis:
+  - Latent space = Equilibrium points of repulsion field
+  - VAE's KL divergence = Information-theoretic cost of tension
+  - Reconstruction loss = How well the field reflects reality
+  - Tension adjustment = Exploration vs exploitation tradeoff
 """
 
 import torch
@@ -33,28 +36,28 @@ from model_utils import (
 
 
 # ─────────────────────────────────────────
-# ASCII 아트 렌더링
+# ASCII Art Rendering
 # ─────────────────────────────────────────
 
 def tensor_to_ascii(tensor_28x28, width=14, height=14):
-    """28x28 텐서를 ASCII 아트로 변환.
+    """Convert 28x28 tensor to ASCII art.
 
-    2x2 블록을 평균 풀링하여 다운샘플링.
-    밝기를 문자로 매핑.
+    Downsample using 2x2 average pooling.
+    Map brightness to characters.
     """
     chars = ' .:-=+*#%@'
     img = tensor_28x28.detach().cpu().squeeze()
     if img.dim() == 1:
         img = img.view(28, 28)
 
-    # 0-1 범위로 정규화
+    # Normalize to 0-1 range
     vmin, vmax = img.min(), img.max()
     if vmax - vmin > 1e-6:
         img = (img - vmin) / (vmax - vmin)
     else:
         img = torch.zeros_like(img)
 
-    # 2x2 평균 풀링으로 다운샘플
+    # Downsample with 2x2 average pooling
     img_4d = img.unsqueeze(0).unsqueeze(0)
     pooled = F.avg_pool2d(img_4d, kernel_size=2).squeeze()  # (14, 14)
 
@@ -71,23 +74,23 @@ def tensor_to_ascii(tensor_28x28, width=14, height=14):
 
 
 def show_ascii_grid(tensors, labels=None, width=14, height=14, cols=5):
-    """여러 이미지를 ASCII 그리드로 표시."""
+    """Display multiple images as ASCII grid."""
     if labels is None:
         labels = [f'[{i}]' for i in range(len(tensors))]
 
     ascii_images = [tensor_to_ascii(t, width, height).split('\n') for t in tensors]
 
-    # 열 단위로 출력
+    # Output by columns
     for row_start in range(0, len(ascii_images), cols):
         row_end = min(row_start + cols, len(ascii_images))
         batch = ascii_images[row_start:row_end]
         batch_labels = labels[row_start:row_end]
 
-        # 라벨 행
+        # Label row
         label_line = '  '.join(f'{l:^{width}}' for l in batch_labels)
         print(f'  {label_line}')
 
-        # 이미지 행
+        # Image rows
         for line_idx in range(height):
             parts = []
             for img_lines in batch:
@@ -100,14 +103,14 @@ def show_ascii_grid(tensors, labels=None, width=14, height=14, cols=5):
 
 
 # ─────────────────────────────────────────
-# 엔진 인코더 (경량 버전)
+# Engine Encoder (Lightweight Version)
 # ─────────────────────────────────────────
 
 class EngineEncoder(nn.Module):
-    """단일 엔진의 인코더.
+    """Single engine encoder.
 
-    엔진 특성을 반영한 잠재 공간 매핑.
-    mu와 logvar를 출력하여 VAE 재매개변수화에 사용.
+    Latent space mapping reflecting engine characteristics.
+    Outputs mu and logvar for VAE reparameterization.
     """
     def __init__(self, input_dim, latent_dim, engine_type='A'):
         super().__init__()
@@ -131,15 +134,15 @@ class EngineEncoder(nn.Module):
 # ─────────────────────────────────────────
 
 class RepulsionFieldVAE(nn.Module):
-    """반발력장 잠재 공간의 변분 오토인코더.
+    """Variational Autoencoder with repulsion field latent space.
 
-    4개 엔진이 잠재 공간에서 반발력장을 형성:
-      내용 축: A(생성) ←반발→ G(교정) = 의미 벡터
-      구조 축: E(탐색) ←반발→ F(제약) = 맥락 벡터
+    4 engines form repulsion fields in latent space:
+      Content axis: A(generate) ←repulsion→ G(calibrate) = meaning vector
+      Structure axis: E(explore) ←repulsion→ F(constrain) = context vector
 
-    장력이 생성의 날카로움을 결정:
-      높은 장력 = 선명하고 확신 있는 생성
-      낮은 장력 = 흐리고 평균적인 생성
+    Tension determines generation sharpness:
+      High tension = Sharp and confident generation
+      Low tension = Blurry and average generation
     """
 
     def __init__(self, input_dim=784, latent_dim=16):
@@ -147,7 +150,7 @@ class RepulsionFieldVAE(nn.Module):
         self.input_dim = input_dim
         self.latent_dim = latent_dim
 
-        # 공유 인코더
+        # Shared encoder
         self.shared_encoder = nn.Sequential(
             nn.Linear(input_dim, 256),
             nn.ReLU(),
@@ -155,19 +158,19 @@ class RepulsionFieldVAE(nn.Module):
             nn.ReLU(),
         )
 
-        # 4개 엔진 인코더 (공유 인코더 출력에서 분기)
-        self.engine_a_enc = EngineEncoder(128, latent_dim, 'A')  # 생성
-        self.engine_g_enc = EngineEncoder(128, latent_dim, 'G')  # 교정
-        self.engine_e_enc = EngineEncoder(128, latent_dim, 'E')  # 탐색
-        self.engine_f_enc = EngineEncoder(128, latent_dim, 'F')  # 제약
+        # 4 engine encoders (branch from shared encoder output)
+        self.engine_a_enc = EngineEncoder(128, latent_dim, 'A')  # Generate
+        self.engine_g_enc = EngineEncoder(128, latent_dim, 'G')  # Calibrate
+        self.engine_e_enc = EngineEncoder(128, latent_dim, 'E')  # Explore
+        self.engine_f_enc = EngineEncoder(128, latent_dim, 'F')  # Constrain
 
-        # 반발력 → 잠재 분포 매핑
+        # Repulsion force → latent distribution mapping
         self.content_mu = nn.Linear(latent_dim, latent_dim)
         self.content_logvar = nn.Linear(latent_dim, latent_dim)
         self.structure_mu = nn.Linear(latent_dim, latent_dim)
         self.structure_logvar = nn.Linear(latent_dim, latent_dim)
 
-        # 디코더: latent_dim*2 (content + structure) → 이미지
+        # Decoder: latent_dim*2 (content + structure) → image
         self.decoder = nn.Sequential(
             nn.Linear(latent_dim * 2, 128),
             nn.ReLU(),
@@ -177,39 +180,39 @@ class RepulsionFieldVAE(nn.Module):
             nn.Sigmoid(),
         )
 
-        # 장력 스케일 (학습 가능, 초기값 1/3 = 메타 부동점)
+        # Tension scale (learnable, initial value 1/3 = meta fixed point)
         self.tension_scale = nn.Parameter(torch.tensor(1 / 3))
 
-        # 모니터링
+        # Monitoring
         self.tension_content = 0.0
         self.tension_structure = 0.0
 
     def encode(self, x):
-        """입력을 잠재 공간으로 인코딩.
+        """Encode input to latent space.
 
         Returns:
-            mu_content, logvar_content: 내용 축 분포
-            mu_structure, logvar_structure: 구조 축 분포
-            tension_content, tension_structure: 각 축의 장력
+            mu_content, logvar_content: Content axis distribution
+            mu_structure, logvar_structure: Structure axis distribution
+            tension_content, tension_structure: Tension of each axis
         """
         h = self.shared_encoder(x)
 
-        # 4개 엔진의 잠재 표현
+        # Latent representations of 4 engines
         mu_a, logvar_a, _ = self.engine_a_enc(h)
         mu_g, logvar_g, _ = self.engine_g_enc(h)
         mu_e, logvar_e, _ = self.engine_e_enc(h)
         mu_f, logvar_f, _ = self.engine_f_enc(h)
 
-        # 반발력 = 두 엔진 mu의 차이 (의미 벡터)
-        repulsion_content = mu_a - mu_g      # 내용 축 반발
-        repulsion_structure = mu_e - mu_f    # 구조 축 반발
+        # Repulsion force = difference between two engine mus (meaning vector)
+        repulsion_content = mu_a - mu_g      # Content axis repulsion
+        repulsion_structure = mu_e - mu_f    # Structure axis repulsion
 
-        # 장력 = 반발의 크기
+        # Tension = magnitude of repulsion
         t_content = (repulsion_content ** 2).sum(dim=-1, keepdim=True)
         t_structure = (repulsion_structure ** 2).sum(dim=-1, keepdim=True)
 
-        # 반발력의 평형점 → 잠재 분포의 mu
-        # 평형 = 두 극의 평균, 반발력이 방향을 제공
+        # Equilibrium of repulsion force → mu of latent distribution
+        # Equilibrium = average of two poles, repulsion force provides direction
         content_eq = (mu_a + mu_g) / 2
         structure_eq = (mu_e + mu_f) / 2
 
@@ -223,30 +226,30 @@ class RepulsionFieldVAE(nn.Module):
                 t_content, t_structure)
 
     def reparameterize(self, mu, logvar):
-        """재매개변수화 트릭."""
+        """Reparameterization trick."""
         std = torch.exp(0.5 * logvar)
         eps = torch.randn_like(std)
         return mu + eps * std
 
     def decode(self, z, tension=None):
-        """잠재 벡터를 이미지로 디코딩.
+        """Decode latent vector to image.
 
         Args:
-            z: (batch, latent_dim*2) 잠재 벡터
-            tension: 장력 스케일. None이면 기본값 사용.
+            z: (batch, latent_dim*2) latent vector
+            tension: Tension scale. If None, use default.
         """
         out = self.decoder(z)
 
         if tension is not None:
-            # 장력이 높으면 출력을 더 날카롭게 (대비 증가)
-            # sigmoid를 다시 적용하여 0-1 범위 유지
+            # High tension makes output sharper (increased contrast)
+            # Reapply sigmoid to maintain 0-1 range
             sharpness = 1.0 + tension * 2.0
             out = torch.sigmoid((out - 0.5) * sharpness)
 
         return out
 
     def forward(self, x):
-        """순전파: 인코딩 → 재매개변수화 → 디코딩."""
+        """Forward pass: encoding → reparameterization → decoding."""
         (mu_c, logvar_c, mu_s, logvar_s,
          t_content, t_structure) = self.encode(x)
 
@@ -256,7 +259,7 @@ class RepulsionFieldVAE(nn.Module):
 
         recon = self.decode(z)
 
-        # 모니터링
+        # Monitoring
         with torch.no_grad():
             self.tension_content = t_content.mean().item()
             self.tension_structure = t_structure.mean().item()
@@ -264,28 +267,28 @@ class RepulsionFieldVAE(nn.Module):
         return recon, mu_c, logvar_c, mu_s, logvar_s
 
     def generate(self, n_samples=1, tension_level=None, device='cpu'):
-        """새로운 이미지 생성.
+        """Generate new images.
 
         Args:
-            n_samples: 생성할 이미지 수
-            tension_level: 장력 수준 (None=기본, float=지정)
-            device: 디바이스
+            n_samples: Number of images to generate
+            tension_level: Tension level (None=default, float=specified)
+            device: Device
         """
         z = torch.randn(n_samples, self.latent_dim * 2, device=device)
 
         if tension_level is not None:
-            # 장력에 비례하여 잠재 벡터 스케일 조정
+            # Scale latent vector proportionally to tension
             z = z * tension_level
 
         return self.decode(z, tension=tension_level)
 
     def interpolate(self, x1, x2, steps=7, axis='content'):
-        """두 입력 사이를 보간.
+        """Interpolate between two inputs.
 
         Args:
-            x1, x2: 입력 이미지 (batch=1)
-            steps: 보간 단계 수
-            axis: 'content' (내용 축) 또는 'structure' (구조 축)
+            x1, x2: Input images (batch=1)
+            steps: Number of interpolation steps
+            axis: 'content' (content axis) or 'structure' (structure axis)
         """
         (mu_c1, _, mu_s1, _, _, _) = self.encode(x1)
         (mu_c2, _, mu_s2, _, _, _) = self.encode(x2)
@@ -295,15 +298,15 @@ class RepulsionFieldVAE(nn.Module):
             alpha = i / (steps - 1)
 
             if axis == 'content':
-                # 내용만 보간, 구조는 x1 고정
+                # Interpolate content only, fix structure to x1
                 mu_c = (1 - alpha) * mu_c1 + alpha * mu_c2
                 mu_s = mu_s1
             elif axis == 'structure':
-                # 구조만 보간, 내용은 x1 고정
+                # Interpolate structure only, fix content to x1
                 mu_c = mu_c1
                 mu_s = (1 - alpha) * mu_s1 + alpha * mu_s2
             else:
-                # 양축 동시 보간
+                # Interpolate both axes simultaneously
                 mu_c = (1 - alpha) * mu_c1 + alpha * mu_c2
                 mu_s = (1 - alpha) * mu_s1 + alpha * mu_s2
 
@@ -315,23 +318,23 @@ class RepulsionFieldVAE(nn.Module):
 
 
 # ─────────────────────────────────────────
-# VAE 손실 함수
+# VAE Loss Function
 # ─────────────────────────────────────────
 
 def vae_loss(recon, target, mu_c, logvar_c, mu_s, logvar_s, beta=1.0):
-    """VAE 손실 = 재구성 손실 + beta * KL divergence.
+    """VAE loss = reconstruction loss + beta * KL divergence.
 
     Args:
-        recon: 재구성 이미지
-        target: 원본 이미지
-        mu_c, logvar_c: 내용 축 분포 파라미터
-        mu_s, logvar_s: 구조 축 분포 파라미터
-        beta: KL 가중치 (beta-VAE)
+        recon: Reconstructed image
+        target: Original image
+        mu_c, logvar_c: Content axis distribution parameters
+        mu_s, logvar_s: Structure axis distribution parameters
+        beta: KL weight (beta-VAE)
     """
-    # 재구성 손실: Binary Cross Entropy
+    # Reconstruction loss: Binary Cross Entropy
     recon_loss = F.binary_cross_entropy(recon, target, reduction='sum')
 
-    # KL divergence: 내용 + 구조
+    # KL divergence: content + structure
     kl_content = -0.5 * torch.sum(1 + logvar_c - mu_c.pow(2) - logvar_c.exp())
     kl_structure = -0.5 * torch.sum(1 + logvar_s - mu_s.pow(2) - logvar_s.exp())
 
@@ -341,14 +344,14 @@ def vae_loss(recon, target, mu_c, logvar_c, mu_s, logvar_s, beta=1.0):
 
 
 # ─────────────────────────────────────────
-# 학습 루프
+# Training Loop
 # ─────────────────────────────────────────
 
 def train_vae(model, train_loader, epochs=20, lr=1e-3, beta=1.0, verbose=True):
-    """VAE 학습.
+    """Train VAE.
 
-    beta 스케줄: 처음 5 에폭은 beta를 0에서 목표값까지 선형 증가.
-    (KL annealing — 초기에 재구성에 집중)
+    Beta schedule: Linear increase from 0 to target value over first 5 epochs.
+    (KL annealing — focus on reconstruction initially)
     """
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
@@ -364,13 +367,13 @@ def train_vae(model, train_loader, epochs=20, lr=1e-3, beta=1.0, verbose=True):
         total_kl = 0
         n_samples = 0
 
-        # KL annealing: 5 에폭에 걸쳐 선형 증가
+        # KL annealing: linear increase over 5 epochs
         beta_current = min(beta, beta * (epoch + 1) / 5)
 
         for X, _ in train_loader:
             X = X.view(X.size(0), -1)
-            # MNIST 정규화 역변환: (x - 0.1307) / 0.3081 → x
-            # sigmoid 출력과 비교하려면 0-1 범위 필요
+            # Inverse MNIST normalization: (x - 0.1307) / 0.3081 → x
+            # Need 0-1 range to compare with sigmoid output
             X_target = X * 0.3081 + 0.1307
             X_target = X_target.clamp(0, 1)
 
@@ -410,11 +413,11 @@ def train_vae(model, train_loader, epochs=20, lr=1e-3, beta=1.0, verbose=True):
 
 
 # ─────────────────────────────────────────
-# 간단한 분류기 (생성 결과 평가용)
+# Simple Classifier (for evaluating generation)
 # ─────────────────────────────────────────
 
 class SimpleClassifier(nn.Module):
-    """생성된 이미지의 숫자를 판별하는 간단한 분류기."""
+    """Simple classifier to identify digits in generated images."""
     def __init__(self, input_dim=784, hidden_dim=128, output_dim=10):
         super().__init__()
         self.net = nn.Sequential(
@@ -428,7 +431,7 @@ class SimpleClassifier(nn.Module):
 
 
 def train_classifier(model, train_loader, epochs=5):
-    """분류기 학습."""
+    """Train classifier."""
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     criterion = nn.CrossEntropyLoss()
 
@@ -446,7 +449,7 @@ def train_classifier(model, train_loader, epochs=5):
 
 
 # ─────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────
 
 def main():
@@ -456,11 +459,11 @@ def main():
     print('   The field between engines IS the generative space')
     print('=' * 65)
 
-    # ── 데이터 로드 ──
+    # ── Load data ──
     print('\n[1] Loading MNIST...')
     train_loader, test_loader = load_mnist(batch_size=128)
 
-    # ── 모델 생성 ──
+    # ── Create model ──
     latent_dim = 16
     model = RepulsionFieldVAE(input_dim=784, latent_dim=latent_dim)
     n_params = count_params(model)
@@ -469,7 +472,7 @@ def main():
     print(f'    Content axis: A(generate) <-repulsion-> G(correct)')
     print(f'    Structure axis: E(explore) <-repulsion-> F(constrain)')
 
-    # ── 학습 ──
+    # ── Training ──
     print(f'\n[2] Training (20 epochs, KL annealing)...')
     history = train_vae(model, train_loader, epochs=20, lr=1e-3, beta=1.0)
 
@@ -478,7 +481,7 @@ def main():
     print(f'    Tension scale (learned): {model.tension_scale.item():.4f} '
           f'(init=1/3={1/3:.4f})')
 
-    # ── 재구성 품질 ──
+    # ── Reconstruction quality ──
     print(f'\n[3] Reconstruction quality...')
     model.eval()
 
@@ -491,7 +494,7 @@ def main():
     with torch.no_grad():
         recon, _, _, _, _ = model(X_flat)
 
-    # 5개 샘플 표시
+    # Display 5 samples
     n_show = 5
     print('\n    Original:')
     show_ascii_grid(
@@ -506,7 +509,7 @@ def main():
         cols=n_show,
     )
 
-    # ── 장력 제어 생성 ──
+    # ── Tension-controlled generation ──
     print(f'\n[4] Tension-controlled generation...')
     tension_levels = [0.1, 0.3, 1 / math.e, 0.7, 1.5]
     tension_labels = ['T=0.1', 'T=0.3', f'T=1/e', 'T=0.7', 'T=1.5']
@@ -526,12 +529,12 @@ def main():
             cols=5,
         )
 
-    # ── 의미 축 탐색 (내용 보간) ──
+    # ── Semantic axis exploration (content interpolation) ──
     print(f'\n[5] Content axis exploration (meaning morphing)...')
     print('    Interpolating CONTENT while keeping STRUCTURE fixed')
     print('    This shows how one concept becomes another\n')
 
-    # 두 다른 숫자 찾기 (3과 8)
+    # Find two different digits (3 and 8)
     digit_a, digit_b = 3, 8
     idx_a = idx_b = None
     for i in range(len(y_test)):
@@ -557,17 +560,17 @@ def main():
             cols=7,
         )
 
-    # ── 맥락 축 탐색 (구조 보간) ──
+    # ── Context axis exploration (structure interpolation) ──
     print(f'\n[6] Structure axis exploration (style morphing)...')
     print('    Interpolating STRUCTURE while keeping CONTENT fixed')
     print('    Same digit, different handwriting style\n')
 
-    # 같은 숫자 다른 스타일 2개 찾기
+    # Find 2 samples of same digit with different styles
     target_digit = 7
     indices = [i for i in range(len(y_test)) if y_test[i].item() == target_digit]
 
     if len(indices) >= 2:
-        # 가장 다른 두 샘플 선택 (L2 거리 기반)
+        # Select two most different samples (based on L2 distance)
         idx1 = indices[0]
         max_dist = 0
         idx2 = indices[1]
@@ -591,11 +594,11 @@ def main():
             cols=7,
         )
 
-    # ── 드리밍 모드 ──
+    # ── Dreaming mode ──
     print(f'\n[7] Dreaming mode (random latent sampling)...')
     print('    No input -- the engine imagines\n')
 
-    # 분류기 학습 (생성 결과 평가용)
+    # Train classifier (for evaluating generation results)
     print('    Training classifier for dream analysis...')
     classifier = SimpleClassifier()
     classifier = train_classifier(classifier, train_loader, epochs=5)
@@ -610,12 +613,12 @@ def main():
             logits = classifier(dreams)
             predicted = logits.argmax(dim=-1)
 
-        # 분포 계산
+        # Calculate distribution
         counts = torch.zeros(10)
         for d in range(10):
             counts[d] = (predicted == d).sum().item()
 
-        # 상위 5개 표시
+        # Display top 5
         show_dreams = model.generate(n_samples=5, tension_level=t_val)
         print(f'    Dream ({t_name}, T={t_val:.3f}):')
         show_ascii_grid(
@@ -624,7 +627,7 @@ def main():
             cols=5,
         )
 
-        # 분포 막대 그래프
+        # Distribution bar chart
         max_count = counts.max().item()
         print(f'    Digit distribution (n={n_dreams}):')
         for d in range(10):
@@ -633,7 +636,7 @@ def main():
             print(f'      {d}: {bar:<20} ({int(counts[d].item()):>3})')
         print()
 
-    # ── 잠재 공간 분석 ──
+    # ── Latent space analysis ──
     print(f'\n[8] Latent space analysis...')
     print('    Encoding full test set...\n')
 
@@ -660,7 +663,7 @@ def main():
     all_tension_s = torch.cat(all_tension_s, dim=0).squeeze()
     all_labels = torch.cat(all_labels, dim=0)
 
-    # 숫자별 평균 장력
+    # Per-digit average tension
     print('    Per-digit average tension:')
     print(f'    {"Digit":>5}  {"T_content":>10}  {"T_structure":>12}  {"Total":>8}')
     print(f'    {"-"*5}  {"-"*10}  {"-"*12}  {"-"*8}')
@@ -674,14 +677,14 @@ def main():
         digit_tensions[d] = (tc, ts, total)
         print(f'    {d:>5}  {tc:>10.2f}  {ts:>12.2f}  {total:>8.2f}')
 
-    # 가장 높은/낮은 장력 숫자
+    # Highest/lowest tension digits
     sorted_by_total = sorted(digit_tensions.items(), key=lambda x: x[1][2])
     print(f'\n    Lowest tension  (easiest): digit {sorted_by_total[0][0]} '
           f'(T={sorted_by_total[0][1][2]:.2f})')
     print(f'    Highest tension (hardest): digit {sorted_by_total[-1][0]} '
           f'(T={sorted_by_total[-1][1][2]:.2f})')
 
-    # 숫자간 잠재 공간 거리 (내용 vs 구조)
+    # Inter-digit latent space distances (content vs structure)
     print(f'\n    Inter-digit distances (content axis):')
     centroids_c = torch.zeros(10, latent_dim)
     centroids_s = torch.zeros(10, latent_dim)
@@ -690,7 +693,7 @@ def main():
         centroids_c[d] = all_mu_c[mask].mean(dim=0)
         centroids_s[d] = all_mu_s[mask].mean(dim=0)
 
-    # 가장 가까운/먼 숫자 쌍 (내용 축)
+    # Closest/farthest digit pairs (content axis)
     min_dist_c = float('inf')
     max_dist_c = 0
     closest_c = (0, 0)
@@ -711,7 +714,7 @@ def main():
     print(f'    Farthest (content): {farthest_c[0]} <-> {farthest_c[1]}  '
           f'(dist={max_dist_c:.2f})')
 
-    # 구조 축
+    # Structure axis
     min_dist_s = float('inf')
     max_dist_s = 0
     closest_s = (0, 0)
@@ -732,7 +735,7 @@ def main():
     print(f'    Farthest (structure): {farthest_s[0]} <-> {farthest_s[1]}  '
           f'(dist={max_dist_s:.2f})')
 
-    # ── 학습 곡선 ──
+    # ── Training curve ──
     print(f'\n[9] Training curve (ASCII):')
     recon_losses = history['recon_loss']
     kl_losses = history['kl_loss']
@@ -760,7 +763,7 @@ def main():
     print(f'       +{"=" * chart_width}')
     print(f'        {"Epoch 1":<{chart_width//2}}{"Epoch " + str(chart_width):>{chart_width//2}}')
 
-    # ── 요약 ──
+    # ── Summary ──
     print(f'\n{"=" * 65}')
     print(f'   Summary')
     print(f'{"=" * 65}')
@@ -782,3 +785,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

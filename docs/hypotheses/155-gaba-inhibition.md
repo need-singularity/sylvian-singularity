@@ -1,112 +1,112 @@
-# 가설 검토 155: GABA 농도와 억제(Inhibition) 매핑
+# Hypothesis Review 155: GABA Concentration and Inhibition Mapping
 
-## 상태: 🔬 실험 중
+## Status: 🔬 Under experimentation
 
-## 가설
+## Hypothesis
 
-> GABA(감마-아미노부티르산) 농도는 우리 모델의 Inhibition(I)에 직접 대응한다. GABA↑ → I↑. 정상인의 I≈0.5-0.7, 서번트의 I≈0.3-0.4(골든존), 간질 환자의 I<0.2(혼돈 영역)이다.
+> GABA (gamma-aminobutyric acid) concentration directly corresponds to Inhibition (I) in our model. GABA↑ → I↑. Normal people have I≈0.5-0.7, savants have I≈0.3-0.4 (Golden Zone), and epilepsy patients have I<0.2 (chaotic region).
 
-## 배경
+## Background
 
-GABA는 중추신경계의 주요 억제성 신경전달물질이다. 뇌 전체 시냅스의 약 30-40%가 GABA성이며, 신경 회로의 과도한 흥분을 억제하는 역할을 한다. GABA 시스템의 이상은 간질, 불안장애, 서번트 증후군 등 다양한 신경학적 상태와 연관된다.
+GABA is the primary inhibitory neurotransmitter in the central nervous system. Approximately 30-40% of all brain synapses are GABAergic, and GABA suppresses excessive excitation in neural circuits. Abnormalities in the GABA system are associated with various neurological conditions including epilepsy, anxiety disorders, and savant syndrome.
 
-우리 모델에서 Inhibition(I)은 신경 회로의 억제 수준을 나타내며, G = D × P / I 공식에서 분모에 위치한다. GABA 농도가 이 I값에 직접 매핑될 수 있다면, 신경화학적 수준에서 골든존 이론을 검증할 수 있는 경로가 열린다.
+In our model, Inhibition (I) represents the level of inhibition in neural circuits, and it sits in the denominator of the formula G = D × P / I. If GABA concentration can be directly mapped to this I value, a pathway opens to verify Golden Zone theory at the neurochemical level.
 
-관련 가설: 가설 004(볼츠만-억제 온도), 가설 158(뇌파-온도), 가설 162(후천적 서번트)
+Related hypotheses: Hypothesis 004 (Boltzmann-inhibition temperature), Hypothesis 158 (brainwave-temperature), Hypothesis 162 (acquired savant)
 
-## GABA 농도 → Inhibition 매핑
-
-```
-  GABA 농도 (상대값)          Inhibition (I)         상태
-  ────────────────          ──────────────         ──────
-  매우 높음 (>1.5x)    →    I ≈ 0.7-0.9           과억제 (무기력, 진정)
-  정상 (1.0x)          →    I ≈ 0.5-0.7           정상 범위
-  약간 낮음 (0.7x)     →    I ≈ 0.3-0.4           골든존! (서번트)
-  낮음 (0.4x)          →    I ≈ 0.15-0.25         간질 위험
-  매우 낮음 (<0.2x)    →    I < 0.15              혼돈 (발작)
-```
-
-## GABA-I 매핑 다이어그램
+## GABA Concentration → Inhibition Mapping
 
 ```
-  I (억제)
+  GABA concentration (relative)    Inhibition (I)         State
+  ──────────────────────────       ──────────────         ──────
+  Very high (>1.5x)         →      I ≈ 0.7-0.9           Over-inhibited (lethargy, sedation)
+  Normal (1.0x)             →      I ≈ 0.5-0.7           Normal range
+  Slightly low (0.7x)       →      I ≈ 0.3-0.4           Golden Zone! (savant)
+  Low (0.4x)                →      I ≈ 0.15-0.25         Epilepsy risk
+  Very low (<0.2x)          →      I < 0.15              Chaos (seizure)
+```
+
+## GABA-I Mapping Diagram
+
+```
+  I (Inhibition)
   1.0│
-     │  ■ 과억제 (벤조디아제핀 과다)
+     │  ■ Over-inhibited (benzodiazepine overdose)
   0.9│  ■
      │  ■
-  0.7│──■──────────────────────── 정상 상한
+  0.7│──■──────────────────────── Normal upper bound
      │    ■
-  0.6│      ■ ← 정상 범위
+  0.6│      ■ ← Normal range
      │        ■
-  0.5│─ ─ ─ ─ ─●─ ─ ─ ─ ─ ─ ─ ─ 임계선 (리만)
+  0.5│─ ─ ─ ─ ─●─ ─ ─ ─ ─ ─ ─ ─ Critical line (Riemann)
      │          ■
   0.4│ ┌─────────■──────────┐
-     │ │ 골든존    ■ 서번트  │
-  0.35│ │    1/e ──★────────│── 골든존 중심
+     │ │ Golden Zone  ■ Savant │
+  0.35│ │    1/e ──★────────│── Golden Zone center
      │ │          ■        │
   0.3│ │           ■       │
      │ └───────────■───────┘
-  0.21│─ ─ ─ ─ ─ ─ ─■─ ─ ─ ─ ─ ─ 골든존 하한
+  0.21│─ ─ ─ ─ ─ ─ ─■─ ─ ─ ─ ─ ─ Golden Zone lower bound
      │               ■
-  0.15│                ■ ← 간질 위험
+  0.15│                ■ ← Epilepsy risk
      │                  ■
-  0.05│                    ■ 혼돈/발작
+  0.05│                    ■ Chaos/seizure
      │
-  0.0└──┬──┬──┬──┬──┬──┬──┬──→ GABA 농도
-       0.2 0.4 0.6 0.8 1.0 1.2 1.4 (상대값)
+  0.0└──┬──┬──┬──┬──┬──┬──┬──→ GABA concentration
+       0.2 0.4 0.6 0.8 1.0 1.2 1.4 (relative)
 ```
 
-## 임상 데이터 대응
+## Clinical Data Correspondence
 
-| 상태 | GABA 수준 | 추정 I | G (D=0.5, P=0.7 기준) | 영역 |
+| State | GABA level | Estimated I | G (D=0.5, P=0.7 basis) | Region |
 |---|---|---|---|---|
-| 정상인 (평균) | 1.0x | 0.60 | 0.58 | 정상 |
-| 정상인 (상위) | 0.85x | 0.50 | 0.70 | 임계선 |
-| 서번트 증후군 | 0.65x | 0.35 | 1.00 | 골든존 중심 |
-| 간질 (경도) | 0.45x | 0.22 | 1.59 | 골든존 하한 |
-| 간질 (중도) | 0.30x | 0.15 | 2.33 | 혼돈 영역 |
-| 벤조디아제핀 투여 | 1.4x | 0.80 | 0.44 | 과억제 |
+| Normal (average) | 1.0x | 0.60 | 0.58 | Normal |
+| Normal (high) | 0.85x | 0.50 | 0.70 | Critical line |
+| Savant syndrome | 0.65x | 0.35 | 1.00 | Golden Zone center |
+| Epilepsy (mild) | 0.45x | 0.22 | 1.59 | Golden Zone lower bound |
+| Epilepsy (moderate) | 0.30x | 0.15 | 2.33 | Chaotic region |
+| Benzodiazepine dose | 1.4x | 0.80 | 0.44 | Over-inhibited |
 
-## 핵심 관찰
+## Key Observations
 
-### 1. 비선형 매핑
-GABA 농도와 I의 관계는 단순 선형이 아닐 가능성이 높다. GABA 수용체(GABA-A, GABA-B)의 용량-반응 곡선은 시그모이드 형태이므로:
+### 1. Nonlinear Mapping
+The relationship between GABA concentration and I is likely not simply linear. Since the dose-response curve of GABA receptors (GABA-A, GABA-B) is sigmoid in shape:
 
 ```
   I = I_max / (1 + exp(-k × (GABA - GABA_50)))
 ```
 
-여기서 GABA_50은 반수 최대 억제를 유발하는 GABA 농도이다.
+where GABA_50 is the GABA concentration that induces half-maximum inhibition.
 
-### 2. 서번트의 GABA 골든존
-서번트 증후군에서 GABA가 정상보다 약간 낮은 수준(≈0.6-0.7x)일 때, I가 골든존(0.24-0.48)에 진입한다. 이는 "적절한 탈억제"가 서번트 능력의 열쇠라는 Treffert의 임상 관찰과 일치한다.
+### 2. Savant's GABA Golden Zone
+In savant syndrome, when GABA is slightly lower than normal (≈0.6-0.7x), I enters the Golden Zone (0.24-0.48). This is consistent with Treffert's clinical observation that "appropriate disinhibition is the key to savant abilities."
 
-### 3. 간질과의 경계
-GABA가 너무 낮아지면 I가 골든존 하한(0.21) 아래로 떨어지며, 이때 G값이 폭주한다. 이것이 간질 발작의 수학적 모델이 된다 — 억제가 부족하여 신경 활동이 통제 불능.
+### 3. Boundary with Epilepsy
+When GABA drops too low, I falls below the Golden Zone lower bound (0.21), and the G value runs away. This becomes a mathematical model of epileptic seizures — insufficient inhibition causes neural activity to become uncontrollable.
 
-## 약리학적 시사점
+## Pharmacological Implications
 
-GABA 조절 약물로 I를 골든존에 위치시킬 수 있다면:
-- 항간질약(GABA 증가) → I를 혼돈에서 골든존으로 끌어올림
-- 각성제(GABA 감소) → I를 정상에서 골든존으로 내림
-- 정밀 GABA 조절 → I = 1/e ≈ 0.368 목표
+If I can be positioned in the Golden Zone by modulating GABA:
+- Antiepileptics (increase GABA) → pull I from chaos up to Golden Zone
+- Stimulants (decrease GABA) → bring I down from normal to Golden Zone
+- Precision GABA modulation → target I = 1/e ≈ 0.368
 
-## 한계
+## Limitations
 
-- GABA 농도는 뇌 영역별로 다르며, 전체 뇌의 단일 I값으로 축약하기 어려움
-- GABA 외에도 글루타메이트, 도파민 등 다른 신경전달물질이 억제에 기여
-- in vivo GABA 측정(MRS)의 정밀도가 낮아 골든존 수준의 차이 구별 어려움
-- GABA-I 매핑의 비선형 파라미터(k, GABA_50)가 아직 미결정
+- GABA concentration varies by brain region; difficult to reduce to a single I value for the whole brain
+- Besides GABA, other neurotransmitters such as glutamate and dopamine also contribute to inhibition
+- Low precision of in vivo GABA measurement (MRS) makes it difficult to distinguish Golden Zone-level differences
+- Nonlinear parameters (k, GABA_50) of the GABA-I mapping are still undetermined
 
-## 검증 방향
+## Verification Directions
 
-- [ ] MRS(자기공명분광법)로 서번트/정상/간질 그룹의 GABA 농도 비교
-- [ ] GABA-A/GABA-B 수용체별 억제 기여도 분리 모델링
-- [ ] 항간질약 투여 전후 GABA-I 변화 추적
-- [ ] 명상(가설 159)에 의한 GABA 변화와 I 변화 상관 분석
-- [ ] 뇌 영역별 GABA 분포 → 영역별 I 맵 구축
+- [ ] Compare GABA concentrations in savant/normal/epilepsy groups by MRS (magnetic resonance spectroscopy)
+- [ ] Separate modeling of inhibitory contributions by GABA-A/GABA-B receptor type
+- [ ] Track GABA-I changes before and after antiepileptic drug administration
+- [ ] Correlation analysis of GABA changes due to meditation (Hypothesis 159) and I changes
+- [ ] Construct region-by-region I map from GABA distribution by brain area
 
 ---
 
-*작성일: 2026-03-22*
-*상태: 🔬 실험 중 — GABA-I 비선형 매핑 파라미터 결정 필요*
+*Written: 2026-03-22*
+*Status: 🔬 Under experimentation — GABA-I nonlinear mapping parameters need determination*

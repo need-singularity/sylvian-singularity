@@ -1,58 +1,58 @@
-# 가설 298: 분열 시간축 이상탐지 — 언제 분화가 충분한가
+# Hypothesis 298: Mitosis Time-axis Anomaly Detection — When is Differentiation Sufficient
 
-> **분열 후 독립 학습 시간이 이상 탐지 성능을 결정한다. 너무 짧으면(1 에폭) 자식들이 아직 비슷해 구분 못하고, 너무 길면(100 에폭) 과적합으로 오히려 악화. 최적 분화 시간이 존재하며, 이 시간은 H-CX-12의 27x 분화율과 관련된다.**
+> **Post-mitosis independent learning time determines anomaly detection performance. Too short (1 epoch) and children are still too similar to distinguish, too long (100 epochs) and overfitting actually worsens it. An optimal differentiation time exists, and this time is related to the 27x differentiation rate of H-CX-12.**
 
-## 배경
+## Background
 
 ```
-  H294: 분열 후 T_ab 궤적
+  H294: Post-mitosis T_ab trajectory
     ep0:  T_ab = 0.365
     ep1:  T_ab = 4.59  (12.6x)
     ep5:  T_ab = 7.75  (21.2x)
     ep10: T_ab = 9.98  (27.3x)
 
-  H296: 10 에폭 후 간 AUROC = 0.805
+  H296: After 10 epochs, gap AUROC = 0.805
 
-  질문: T_ab(t)와 AUROC(t)의 관계는?
-    → T_ab가 커지면 AUROC도 커지는가?
-    → 최적 T_ab 수준이 존재하는가?
-    → 과도한 T_ab(과분화)는 AUROC를 떨어뜨리는가?
+  Question: What is the relationship between T_ab(t) and AUROC(t)?
+    → Does AUROC increase as T_ab increases?
+    → Is there an optimal T_ab level?
+    → Does excessive T_ab (over-differentiation) reduce AUROC?
 ```
 
-## 실험 설계
+## Experimental Design
 
 ```
-  1. parent 학습 (정상만, 50 에폭)
-  2. 분열 (scale=0.01)
-  3. 독립 학습: K = {0, 1, 2, 5, 10, 20, 50, 100} 에폭
-  4. 각 K에서:
-     a) T_ab 측정
-     b) AUROC 측정 (간 장력 기준)
-  5. 그래프: K vs AUROC, T_ab vs AUROC
+  1. Train parent (normal only, 50 epochs)
+  2. Mitosis (scale=0.01)
+  3. Independent learning: K = {0, 1, 2, 5, 10, 20, 50, 100} epochs
+  4. At each K:
+     a) Measure T_ab
+     b) Measure AUROC (based on gap tension)
+  5. Graph: K vs AUROC, T_ab vs AUROC
 
-  데이터: Breast Cancer + MNIST digit anomaly
+  Data: Breast Cancer + MNIST digit anomaly
 ```
 
-## 수학적 예측
+## Mathematical Prediction
 
 ```
-  정보이론 관점:
-    K=0: T_ab≈0, AUROC≈0.5 (무작위)
-    K→∞: 과적합 → child_a, child_b 모두 같은 과적합 패턴
-         → T_ab는 높지만 정상/이상 구분 없는 높은 T_ab
-         → AUROC 감소
+  Information theory perspective:
+    K=0: T_ab≈0, AUROC≈0.5 (random)
+    K→∞: Overfitting → both child_a, child_b have same overfitting pattern
+         → High T_ab but without normal/anomaly distinction
+         → AUROC decreases
 
-  역U자 곡선 예측:
+  Inverted U-curve prediction:
     AUROC(K) = AUROC_max × (1 - e^(-αK)) × e^(-βK²)
     peak at K* = sqrt(α/(2β))
 
-  IB(정보 병목) 연결 (H-CX-13):
-    K < K*: fitting phase (I(X;T) 증가)
+  IB (Information Bottleneck) connection (H-CX-13):
+    K < K*: fitting phase (I(X;T) increases)
     K = K*: optimal compression
-    K > K*: overfitting (I(X;T) 과잉)
+    K > K*: overfitting (excess I(X;T))
 ```
 
-## ASCII 예측 그래프
+## ASCII Prediction Graph
 
 ```
   AUROC
@@ -65,44 +65,44 @@
   0.5 | ★
       └─┬──┬──┬──┬──┬──┬──┬──┬──
         0  1  2  5 10 20 50 100
-        독립 학습 에폭 (K)
+        Independent Learning Epochs (K)
 ```
 
-## 관련 가설
+## Related Hypotheses
 
 ```
-  294: 분열 분화 궤적 (T_ab 27x)
-  296: 간 AUROC 0.805
-  H-CX-12: 분화율 27x = (σ/τ)³
-  H-CX-13: 체험=IB 통과
+  294: Mitosis differentiation trajectory (T_ab 27x)
+  296: Gap AUROC 0.805
+  H-CX-12: Differentiation rate 27x = (σ/τ)³
+  H-CX-13: Experience=IB passage
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  K(에폭) vs AUROC vs 분리비:
-  K      AUROC    T_anom/T_norm   해석
+  K(epochs) vs AUROC vs Separation Ratio:
+  K      AUROC    T_anom/T_norm   Interpretation
   ────  ────────  ─────────────  ──────
-  0      0.576    1.55           분열 직후
-  1      0.584    2.29           미세 분화
-  2      0.694    3.86           분화 시작
-  5      0.666    5.14           변동
-  10     0.739    8.39           명확 분리
-  20     0.843    10.35          강한 분리
-  50     0.949    15.15          최고! ← 포화 없음
+  0      0.576    1.55           Immediately post-mitosis
+  1      0.584    2.29           Micro-differentiation
+  2      0.694    3.86           Differentiation begins
+  5      0.666    5.14           Variation
+  10     0.739    8.39           Clear separation
+  20     0.843    10.35          Strong separation
+  50     0.949    15.15          Best! ← No saturation
 
-  결론: MONOTONIC 증가! 역U자 아님!
-    → K가 길수록 분화↑ → 이상 감지↑
-    → 50 에폭에서도 포화 없음
-    → 100, 200 에폭에서 더 올라갈 수 있음
+  Conclusion: MONOTONIC increase! Not inverted U!
+    → Longer K = higher differentiation ↑ → better anomaly detection ↑
+    → No saturation even at 50 epochs
+    → Could rise further at 100, 200 epochs
 
-  예측 반박: 역U자 → 실측 monotonic
-  새 해석: 과적합이 오히려 도움
-    → 각 child가 더 특화 = 더 다른 정상 모델
-    → 이상에 더 다르게 반응 = 더 높은 간 장력
+  Prediction refuted: Inverted U → Actual monotonic
+  New interpretation: Overfitting actually helps
+    → Each child becomes more specialized = more different normal models
+    → React more differently to anomalies = higher gap tension
 ```
 
-### ASCII 그래프
+### ASCII Graph
 
 ```
   AUROC
@@ -119,4 +119,4 @@
           0  1  2  5  10 20 50
 ```
 
-## 상태: 🟧 수정 (monotonic 증가, 역U자 아님, K=50에서 0.95!)
+## Status: 🟧 Modified (monotonic increase, not inverted U, 0.95 at K=50!)

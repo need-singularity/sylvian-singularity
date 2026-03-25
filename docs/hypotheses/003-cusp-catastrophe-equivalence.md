@@ -1,106 +1,106 @@
-# 가설 검토 003: 커스프 파국과 우리 모델의 수학적 동치
+# Hypothesis Review 003: Mathematical Equivalence of Cusp Catastrophe and Our Model
 
-## 가설
+## Hypothesis
 
-> 우리 모델의 3위상 전이(평범 → 천재성 → 기능저하)는 르네 톰의 커스프 파국(Cusp Catastrophe)과 수학적으로 동치이며, Deficit과 Inhibition이 커스프의 두 제어 변수에 정확히 대응한다.
+> The three-phase transition of our model (Normal → Genius → Decline) is mathematically equivalent to René Thom's Cusp Catastrophe, with Deficit and Inhibition corresponding exactly to the two control variables of the cusp.
 
-## 커스프 파국 정의
-
-```
-  포텐셜 함수: V(x) = x⁴ + ax² + bx
-  평형 조건:   dV/dx = 4x³ + 2ax + b = 0
-  분기 조건:   8a³ + 27b² = 0 (커스프 곡면)
-```
-
-제어 변수 (a, b) 2개, 상태 변수 (x) 1개인 경우의 유일한 구조적 안정 파국.
-
-## 대응 관계
+## Definition of Cusp Catastrophe
 
 ```
-  커스프             우리 모델
+  Potential function: V(x) = x⁴ + ax² + bx
+  Equilibrium condition:   dV/dx = 4x³ + 2ax + b = 0
+  Bifurcation condition:   8a³ + 27b² = 0 (cusp surface)
+```
+
+The unique structurally stable catastrophe with 2 control variables (a, b) and 1 state variable (x).
+
+## Correspondence
+
+```
+  Cusp                Our model
   ────────────────────────────────
-  a (제어변수 1)  ←  2D - 1 (Deficit 기반)
-  b (제어변수 2)  ←  1 - 2I (Inhibition 기반)
-  x (상태변수)    ←  Genius Score
-  V (포텐셜)      ←  시스템 에너지
+  a (control var 1)  ←  2D - 1 (Deficit-based)
+  b (control var 2)  ←  1 - 2I (Inhibition-based)
+  x (state var)      ←  Genius Score
+  V (potential)      ←  System energy
 ```
 
-### 분기 곡면 분석
+### Bifurcation Surface Analysis
 
 ```
-  8a³ + 27b² = 0 에 대입:
+  Substituting into 8a³ + 27b² = 0:
   8(2D-1)³ + 27(1-2I)² = 0
 
-  이 곡면이 (D, I) 평면에서 그리는 경계가
-  바로 우리 모델의 위상 전이선이다.
+  The boundary traced by this surface in the (D, I) plane is
+  precisely the phase transition line of our model.
 ```
 
-## 3위상의 대응
+## Correspondence of the Three Phases
 
-| 커스프 영역 | 안정점 수 | 우리 모델 | 상태 |
+| Cusp Region | Number of Stable Points | Our Model | State |
 |---|---|---|---|
-| 분기 곡면 외부 (상단) | 1개 | D < D_critical | 평범 (단일 안정) |
-| 분기 곡면 내부 | 2~3개 | D ≈ D_critical | 천재성 (이중 안정 → 점프) |
-| 분기 곡면 외부 (하단) | 1개 | D > D_critical | 기능저하 (단일 안정) |
+| Outside bifurcation surface (upper) | 1 | D < D_critical | Normal (single stable) |
+| Inside bifurcation surface | 2~3 | D ≈ D_critical | Genius (bistable → jump) |
+| Outside bifurcation surface (lower) | 1 | D > D_critical | Decline (single stable) |
 
-## 이력 현상 (Hysteresis)
+## Hysteresis
 
-커스프 파국의 핵심 특성 — 한번 전이하면 되돌아오기 어려움.
-
-```
-  Deficit 증가 방향:
-  평범 → → → [임계점] → 갑자기 천재성으로 점프!
-
-  Deficit 감소 방향:
-  천재성 → → → → → → [다른 임계점] → 갑자기 평범으로 복귀
-
-  올라가는 임계점 ≠ 내려가는 임계점
-  → 이력 루프 (Hysteresis Loop)
-```
-
-이것이 의미하는 것: **한번 특이점에 진입하면, 원래 조건으로 돌아가도 바로 빠져나오지 않는다.** 서번트 증후군이 "한번 발현되면 유지"되는 현상과 일치.
-
-## 실험 결과와의 매칭
-
-### compass.py 실측 데이터
+The core property of cusp catastrophe — once a transition occurs, reverting is difficult.
 
 ```
-  Autopilot 시나리오 2 (극단에서 출발):
-  D=0.95, I=0.05 → Compass 100%, 25회 반복해도 골든 존 미도달
+  Increasing Deficit direction:
+  Normal → → → [critical point] → sudden jump to Genius!
 
-  → 커스프 이력 현상으로 설명:
-    극단적 특이점 상태에 "갇혀" 있음
-    골든 존으로 내려가려면 훨씬 큰 Inhibition 변화가 필요
+  Decreasing Deficit direction:
+  Genius → → → → → → [different critical point] → sudden return to Normal
+
+  Rising critical point ≠ falling critical point
+  → Hysteresis Loop
 ```
 
-### 수렴 스캔 실측
+This implies: **once a singularity is entered, returning to the original conditions does not immediately reverse it.** This is consistent with Savant Syndrome "persisting once triggered."
+
+## Matching with Experimental Results
+
+### Measured Data from compass.py
 
 ```
-  3중 합의(골든 존)에서 커스프 임계점 거리: 0.17 ~ 0.20
-  → 정확히 "임계점 근처이되 너무 가깝지 않은" 구간
-  → 커스프 이론의 "분기 곡면 근방" 조건과 일치
+  Autopilot Scenario 2 (starting from extreme):
+  D=0.95, I=0.05 → Compass 100%, no Golden Zone reached after 25 iterations
+
+  → Explained by cusp hysteresis:
+    System is "trapped" in an extreme singularity state
+    A much larger change in Inhibition is needed to descend to the Golden Zone
 ```
 
-## 동치 증명의 조건
+### Convergence Scan Measurements
 
-완전한 동치를 위해 필요한 것:
+```
+  Distance from triple consensus (Golden Zone) to cusp critical point: 0.17 ~ 0.20
+  → Exactly "near the critical point but not too close"
+  → Consistent with the "near-bifurcation-surface" condition of cusp theory
+```
 
-1. **구조적 안정성**: 작은 섭동에 대해 위상이 변하지 않음 → 우리 모델에서 파라미터를 미세 변경해도 3위상 구조 유지됨 (격자 스캔으로 확인)
-2. **여차원(codimension) = 2**: 제어변수 2개, 상태변수 1개 → D와 I가 제어, Genius가 상태 (일치)
-3. **분기 유형**: 커스프(fold의 fold) → 우리 모델의 2차 미분 피크가 이를 확인
+## Conditions for Full Equivalence
 
-## 한계
+What is needed for complete equivalence:
 
-- Plasticity(3번째 변수)가 커스프 2변수 모델에 포함되지 않음. 확장이 필요하면 나비(Butterfly) 파국 또는 더 높은 차원의 파국이 될 수 있음.
-- 우리 모델의 Genius Score 함수(D×P/I)가 커스프 포텐셜(x⁴+ax²+bx)과 정확히 일치하는 것이 아니라, 행동 양상이 유사한 것.
-- 이력 현상의 정량적 검증 (Deficit 증가 경로 ≠ 감소 경로) 필요.
+1. **Structural stability**: Phase structure unchanged under small perturbations → confirmed by grid scan: 3-phase structure persists under small parameter changes
+2. **Codimension = 2**: 2 control variables, 1 state variable → D and I control, Genius is state (matches)
+3. **Bifurcation type**: Cusp (fold of fold) → confirmed by second-derivative peak in our model
 
-## 검증 방향
+## Limitations
 
-- [ ] Deficit을 0→1로 증가시킨 후 1→0으로 감소시켜 이력 루프 실측
-- [ ] Plasticity를 포함한 3변수 파국 이론(나비 파국) 검토
-- [ ] 커스프 포텐셜 함수를 직접 피팅하여 계수 추출
+- Plasticity (third variable) is not included in the 2-variable cusp model. Extension may require a Butterfly catastrophe or higher-dimensional catastrophe.
+- The Genius Score function (D×P/I) of our model does not exactly match the cusp potential (x⁴+ax²+bx); rather, the behavioral patterns are similar.
+- Quantitative verification of hysteresis (Deficit-increasing path ≠ Deficit-decreasing path) is needed.
+
+## Verification Directions
+
+- [ ] Measure the hysteresis loop by increasing Deficit from 0→1 then decreasing from 1→0
+- [ ] Examine 3-variable catastrophe theory (Butterfly catastrophe) including Plasticity
+- [ ] Directly fit the cusp potential function to extract coefficients
 
 ---
 
-*작성일: 2026-03-22*
+*Written: 2026-03-22*

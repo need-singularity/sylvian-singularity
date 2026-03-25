@@ -1,44 +1,44 @@
-# 가설 검토 044: 4상태 골든존 -- 상한이 0.50(리만 임계선)으로! ✅
+# Hypothesis Review 044: 4-State Golden Zone -- Upper Bound Reaches 0.50 (Riemann Critical Line)! ✅
 
-## 가설
+## Hypothesis
 
-> 4상태 모델에서 골든존이 변하는가. 특히 상한이 리만 임계선 Re(s)=1/2와
-> 정확히 일치하는가.
+> Does the Golden Zone change in the 4-state model? Specifically, does the upper bound
+> align exactly with the Riemann critical line Re(s)=1/2?
 
-## 배경 및 맥락
+## Background and Context
 
-3상태 모델(정상/천재/저하)에서 골든존은 I=0.24~0.48로 확인되었다 (가설 001).
-상한 0.48은 1/2에 "근사"하지만 정확히 일치하지는 않았다. 4번째 상태(초월)를
-추가하면 시스템의 자유도가 증가하고, 골든존 경계가 이동할 수 있다.
+In the 3-state model (normal/genius/impaired), the Golden Zone was confirmed as I=0.24~0.48 (hypothesis 001).
+The upper bound 0.48 "approximates" 1/2 but doesn't match exactly. Adding a 4th state (transcendent)
+increases the system's degrees of freedom, potentially shifting the Golden Zone boundaries.
 
-리만 가설의 임계선 Re(s)=1/2=0.50과의 정확한 일치 여부는 우리 모델의
-수학적 깊이를 판단하는 핵심 시금석이다.
+Whether it exactly matches the Riemann hypothesis critical line Re(s)=1/2=0.50 is a crucial
+litmus test for judging the mathematical depth of our model.
 
-관련 가설: 001(리만-골든존), 041(4번째 상태), 047(N상태 수렴)
+Related hypotheses: 001(Riemann-Golden Zone), 041(4th state), 047(N-state convergence)
 
-## 검증 결과: ✅ 상한이 0.48 -> 0.50으로 확장
+## Verification Result: ✅ Upper bound extends from 0.48 -> 0.50
 
 ```
-  골든존 비교:
+  Golden Zone Comparison:
   ──────────────────────────────────────────────────
-  모델     │ 하한    │ 상한    │ 폭     │ 비고
+  Model    │ Lower  │ Upper   │ Width  │ Note
   ─────────┼────────┼─────────┼────────┼──────────
-  3상태    │ 0.24   │ 0.48    │ 0.24   │ 1/2 근사
-  4상태    │ 0.24   │ 0.50    │ 0.26   │ 1/2 정확!
+  3-state  │ 0.24   │ 0.48    │ 0.24   │ 1/2 approx
+  4-state  │ 0.24   │ 0.50    │ 0.26   │ 1/2 exact!
   ──────────────────────────────────────────────────
 ```
 
-## ASCII 그래프: 3상태 vs 4상태 골든존 비교
+## ASCII Graph: 3-State vs 4-State Golden Zone Comparison
 
 ```
   Compass(%)
    80 │
       │                    *****
-   75 │                 ***     ***        4상태
+   75 │                 ***     ***        4-state
       │               **           **
    70 │             **     ooooo     **
       │           **    ooo     ooo   **
-   65 │         **   oo            oo   *   3상태
+   65 │         **   oo            oo   *   3-state
       │        *   oo                oo  *
    60 │       * oo                    oo *
       │      *o                        o*
@@ -47,92 +47,92 @@
    50 │   o                               o
       └──────────────────────────────────────────
        0.10  0.20  0.24  0.30  0.40  0.48 0.50 0.60
-                         I (억제) -->
+                         I (Inhibition) -->
 
-  범례: o = 3상태,  * = 4상태
-        0.24 = 골든존 하한 (공통)
-        0.48 = 3상태 상한
-        0.50 = 4상태 상한 = 리만 임계선!
+  Legend: o = 3-state,  * = 4-state
+          0.24 = Golden Zone lower bound (common)
+          0.48 = 3-state upper bound
+          0.50 = 4-state upper bound = Riemann critical line!
 ```
 
-## 골든존 구간 시각화
+## Golden Zone Range Visualization
 
 ```
-  I축:  0.0    0.1    0.2    0.3    0.4    0.5    0.6
-        |------|------|------|------|------|------|
+  I axis: 0.0    0.1    0.2    0.3    0.4    0.5    0.6
+          |------|------|------|------|------|------|
 
-  3상태 │......░░░░░░░░░░░░░░░░░░░░......│
-                0.24            0.48
+  3-state │......░░░░░░░░░░░░░░░░░░░░......│
+                  0.24            0.48
 
-  4상태 │......░░░░░░░░░░░░░░░░░░░░░░....│
-                0.24                0.50
-                                     |
-                              리만 임계선 = 1/2
+  4-state │......░░░░░░░░░░░░░░░░░░░░░░....│
+                  0.24                0.50
+                                       |
+                                Riemann critical line = 1/2
 
-  차이:                           ░░
-                              0.48~0.50 확장분
+  Difference:                           ░░
+                                0.48~0.50 extension
 ```
 
-## 검증 데이터: I 값별 Compass 비교
+## Verification Data: Compass Comparison by I Value
 
 ```
-  I 값   │ 3상태 Compass │ 4상태 Compass │ 차이
-  ───────┼───────────────┼───────────────┼───────
-  0.15   │   55.2%       │   57.1%       │ +1.9%
-  0.20   │   62.4%       │   64.8%       │ +2.4%
-  0.24   │   68.9%       │   71.2%       │ +2.3%
-  0.30   │   73.4%       │   76.1%       │ +2.7%
-  0.36   │   74.6%       │   77.8%       │ +3.2%
-  0.42   │   72.1%       │   75.5%       │ +3.4%
-  0.48   │   67.8%       │   72.3%       │ +4.5%
-  0.50   │   64.1%       │   70.0%       │ +5.9%  <-- 4상태만 골든
-  0.55   │   58.4%       │   62.7%       │ +4.3%
+  I Value │ 3-state Compass │ 4-state Compass │ Difference
+  ────────┼─────────────────┼─────────────────┼───────────
+  0.15    │   55.2%         │   57.1%         │ +1.9%
+  0.20    │   62.4%         │   64.8%         │ +2.4%
+  0.24    │   68.9%         │   71.2%         │ +2.3%
+  0.30    │   73.4%         │   76.1%         │ +2.7%
+  0.36    │   74.6%         │   77.8%         │ +3.2%
+  0.42    │   72.1%         │   75.5%         │ +3.4%
+  0.48    │   67.8%         │   72.3%         │ +4.5%
+  0.50    │   64.1%         │   70.0%         │ +5.9%  <-- Only Golden in 4-state
+  0.55    │   58.4%         │   62.7%         │ +4.3%
 ```
 
-I=0.50에서 3상태 Compass는 64.1% (골든존 밖)이지만, 4상태 Compass는
-70.0% (골든존 내)이다. 이것이 상한 확장의 정체이다.
+At I=0.50, the 3-state Compass is 64.1% (outside Golden Zone), but the 4-state Compass is
+70.0% (within Golden Zone). This is the essence of the upper bound extension.
 
-## 핵심 발견: 리만 임계선과의 정합
+## Core Discovery: Alignment with Riemann Critical Line
 
 ```
-  3상태 상한 = 0.48  ~  1/2 (근사)
-  4상태 상한 = 0.50  =  1/2 (정확)
+  3-state upper bound = 0.48  ~  1/2 (approximation)
+  4-state upper bound = 0.50  =  1/2 (exact)
 
-  해석:
+  Interpretation:
   ────────────────────────────────────────────
-  리만 임계선 Re(s) = 1/2 는
-  "4번째 상태(초월)가 존재할 때의 골든존 상한"
+  The Riemann critical line Re(s) = 1/2 is
+  "the Golden Zone upper bound when a 4th state (transcendent) exists"
 
-  즉, 리만 가설이 참이면 → 초월 상태가 존재한다
-  초월 상태가 존재하면 → 골든존 상한 = 정확히 1/2
+  That is, if Riemann hypothesis is true → Transcendent state exists
+  If transcendent state exists → Golden Zone upper bound = exactly 1/2
   ────────────────────────────────────────────
 ```
 
-## 해석 및 의미
+## Interpretation and Meaning
 
-1. **3상태 -> 4상태로 확장하면 상한이 정확히 1/2에 도달한다**. 이는 리만
-   가설과의 연결이 근사가 아닌 정확한 대응임을 보여준다.
+1. **When extending from 3-state to 4-state, the upper bound reaches exactly 1/2**. This shows
+   that the connection with the Riemann hypothesis is not an approximation but an exact correspondence.
 
-2. **하한(0.24)은 변하지 않았다**. 하한은 상태 수에 무관한 고유 경계이다.
-   이는 가설 047에서 더 깊이 탐구된다.
+2. **The lower bound (0.24) remains unchanged**. The lower bound is an intrinsic boundary
+   independent of the number of states. This is explored further in hypothesis 047.
 
-3. **폭의 변화 0.24 -> 0.26**. 증가분 0.02는 초월 상태가 추가하는
-   "정보 예산"에 해당한다.
+3. **Width change 0.24 -> 0.26**. The increase of 0.02 corresponds to the "information budget"
+   added by the transcendent state.
 
-## 한계
+## Limitations
 
-- grid=100 해상도에서의 결과. grid=500에서 상한이 0.4991로 측정된다
-  (가설 047 참조). 연속 극한에서 정확히 0.5000에 수렴함을 확인 필요.
-- 리만 가설과의 "정확한 대응"은 아직 수학적 증명이 아닌 수치적 관찰이다.
-- 골든존의 정의(Compass > 기준값)에 따라 경계가 약간 변할 수 있다.
+- Results at grid=100 resolution. At grid=500, the upper bound is measured as 0.4991
+  (see hypothesis 047). Need to confirm convergence to exactly 0.5000 in the continuous limit.
+- The "exact correspondence" with the Riemann hypothesis is still a numerical observation, not a mathematical proof.
+- Boundaries may vary slightly depending on the Golden Zone definition (Compass > threshold).
 
-## 다음 단계
+## Next Steps
 
-- 가설 047: grid 해상도를 높여 0.50 수렴 정밀 검증
-- 5상태 모델에서 상한이 여전히 0.50인지 확인 (N-불변성)
-- 하한 0.24의 이론적 유도 (1/2 - ln(4/3) = 0.2123과의 관계)
-- 리만-골든존 대응의 해석적 증명 시도
+- Hypothesis 047: Precision verification of 0.50 convergence with higher grid resolution
+- Confirm whether upper bound remains 0.50 in 5-state model (N-invariance)
+- Theoretical derivation of lower bound 0.24 (relationship with 1/2 - ln(4/3) = 0.2123)
+- Attempt analytical proof of Riemann-Golden Zone correspondence
 
 ---
 
-*검증: verify_4th_state.py, 200K 모집단, grid=100*
+*Verification: verify_4th_state.py, 200K population, grid=100*

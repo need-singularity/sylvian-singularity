@@ -1,21 +1,21 @@
-# H-CX-140: EEG dendrogram = 인지 범주 계층
+# H-CX-140: EEG dendrogram = Cognitive Category Hierarchy
 
-> 10개 CIFAR 클래스에 대한 EEG 감마 패턴의 PH dendrogram이
-> AI dendrogram(동물/기계 분리, 89%)과 일치.
-> 뇌파에서 직접 의미 계층을 읽는다.
+> PH dendrogram of EEG gamma patterns for 10 CIFAR classes matches
+> AI dendrogram (animal/machine separation, 89%).
+> Reading semantic hierarchy directly from Brainwaves.
 
-## 예측
+## Predictions
 
-1. EEG PH dendrogram에서 동물/기계 2대 분기 존재
+1. Animal/machine 2 major branches in EEG PH dendrogram
 2. AI dendrogram vs EEG dendrogram Kendall tau > 0.5
-3. cat-dog이 EEG에서도 가장 먼저 merge
+3. cat-dog merges first in EEG as well
 
-## 관련
+## Related
 
-- H-CX-85: dendrogram = 의미 계층 89%
-- H-CX-93: confusion PCA = 동물/기계 완벽 분리
-- H-CX-106: 인간=AI r=0.788
+- H-CX-85: dendrogram = semantic hierarchy 89%
+- H-CX-93: Confusion PCA = perfect animal/machine separation
+- H-CX-106: human=AI r=0.788
 
-## 검증 상태
+## Verification Status
 
-- [ ] EEG PH dendrogram 구축
+- [ ] Build EEG PH dendrogram

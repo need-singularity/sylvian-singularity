@@ -1,4 +1,4 @@
-# H-CX-332: ⭐⭐⭐🟩 끈이론 여분 차원 = P₁ = 6
+# H-CX-332: ⭐⭐⭐🟩 String Theory Extra Dimensions = P₁ = 6
 
-> 10D 초끈이론 = 4(시공간) + 6(여분) = 4+P₁ = τ(6)+P₁.
-> Calabi-Yau 3복소차원 = P₁/2. 여분 차원 수 = 완전수!
+> 10D superstring theory = 4(spacetime) + 6(extra) = 4+P₁ = τ(6)+P₁.
+> Calabi-Yau 3 complex dimensions = P₁/2. Number of extra dimensions = perfect number!

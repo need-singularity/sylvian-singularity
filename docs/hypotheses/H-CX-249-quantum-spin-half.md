@@ -1,3 +1,3 @@
-# H-CX-249: 🟩 양자 스핀 1/2 = 골든존 상한 = 리만 임계선
+# H-CX-249: 🟩 Quantum Spin 1/2 = Golden Zone Upper Limit = Riemann Critical Line
 
-> 스핀 1/2, Re(s)=1/2, 골든존 상한 1/2. 세 곳에서 1/2 등장.
+> Spin 1/2, Re(s)=1/2, Golden Zone upper limit 1/2. 1/2 appears in three places.

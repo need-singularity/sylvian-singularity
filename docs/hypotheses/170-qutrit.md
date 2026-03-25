@@ -1,19 +1,19 @@
-# 가설 #170: 3상태 시스템 = 큐트릿
+# Hypothesis #170: 3-State System = Qutrit
 
-**상태**: ✅ 확인
-**날짜**: 2026-03-22
-**분류**: 양자 정보 / 상태 매핑
+**Status**: ✅ Confirmed
+**Date**: 2026-03-22
+**Category**: Quantum Information / State Mapping
 
 ---
 
-## 핵심 아이디어
+## Core Idea
 
-우리 시스템의 3상태 구조는 양자 정보 이론의 **큐트릿(qutrit)**에 대응한다.
+The 3-state structure of our system corresponds to a **qutrit** in quantum information theory.
 
-## 큐빗 vs 큐트릿
+## Qubit vs Qutrit
 
 ```
-  큐빗 (2상태)              큐트릿 (3상태)
+  Qubit (2-state)              Qutrit (3-state)
 
   |ψ⟩ = α|0⟩ + β|1⟩       |ψ⟩ = α|0⟩ + β|1⟩ + γ|2⟩
 
@@ -24,144 +24,144 @@
    |0⟩   |1⟩              |0⟩|1⟩|2⟩
 ```
 
-## 정규화 조건
+## Normalization Condition
 
-큐트릿의 핵심 제약:
+The core constraint of a qutrit:
 
 ```
   |α|² + |β|² + |γ|² = 1
 
-  이것은 확률의 합 = 1 조건이며,
-  볼츠만 분포의 확률합 = 1 과 동일한 구조이다.
+  This is the sum of probabilities = 1 condition,
+  identical in structure to the Boltzmann distribution's probability sum = 1.
 
-  볼츠만:  Σ P_i = 1,   P_i = e^{-E_i/kT} / Z
-  큐트릿:  Σ |c_i|² = 1
+  Boltzmann:  Σ P_i = 1,   P_i = e^{-E_i/kT} / Z
+  Qutrit:     Σ |c_i|² = 1
 
-  둘 다 "전체 확률 보존" 이라는 같은 원리
+  Both follow the same principle of "total probability conservation"
 ```
 
-## 3상태 → 큐트릿 매핑
+## 3-State → Qutrit Mapping
 
 ```
 +----------------+----------------+----------------+
-| 시스템 상태    | 큐트릿 기저    | 물리적 의미    |
+| System State   | Qutrit Basis   | Physical Meaning|
 +----------------+----------------+----------------+
-| 상태 0: 억제   |     |0⟩       | 과억제/침묵    |
-| 상태 1: 균형   |     |1⟩       | 골든존/의식    |
-| 상태 2: 흥분   |     |2⟩       | 과흥분/혼돈    |
+| State 0: Inhibition |  |0⟩      | Over-inhibition/Silence |
+| State 1: Balance    |  |1⟩      | Golden Zone/Consciousness |
+| State 2: Excitation |  |2⟩      | Over-excitation/Chaos |
 +----------------+----------------+----------------+
-| 진폭 α         | |α|² = P(억제) | 억제 확률     |
-| 진폭 β         | |β|² = P(균형) | 균형 확률     |
-| 진폭 γ         | |γ|² = P(흥분) | 흥분 확률     |
+| Amplitude α    | |α|² = P(inhibition) | Inhibition probability |
+| Amplitude β    | |β|² = P(balance)    | Balance probability |
+| Amplitude γ    | |γ|² = P(excitation) | Excitation probability |
 +----------------+----------------+----------------+
 ```
 
-## 상태 공간 시각화
+## State Space Visualization
 
 ```
-  큐트릿 상태 공간 (단체: simplex)
+  Qutrit State Space (Simplex)
 
-  |0⟩ (억제)
+  |0⟩ (Inhibition)
    *
    |\
    | \
-   |  \      <-- 골든존은 이 삼각형의
-   |   \          중심 근처에 위치
-   | ● \    ● = 의식 최적점
+   |  \      <-- Golden Zone is located
+   |   \          near the center of this triangle
+   | ● \    ● = Consciousness optimal point
    |    \
    |     \
    *------*
   |2⟩    |1⟩
-  (흥분)  (균형)
+  (Excitation) (Balance)
 ```
 
-골든존에서의 큐트릿 상태:
+Qutrit state in the Golden Zone:
 
 ```
-  |ψ_의식⟩ = α|0⟩ + β|1⟩ + γ|2⟩
+  |ψ_consciousness⟩ = α|0⟩ + β|1⟩ + γ|2⟩
 
-  여기서:
-  α ≈ 0.28   (약한 억제 성분)
-  β ≈ 0.89   (지배적 균형 성분)
-  γ ≈ 0.36   (약한 흥분 성분)
+  Where:
+  α ≈ 0.28   (Weak inhibition component)
+  β ≈ 0.89   (Dominant balance component)
+  γ ≈ 0.36   (Weak excitation component)
 
-  검증: |0.28|² + |0.89|² + |0.36|²
+  Verification: |0.28|² + |0.89|² + |0.36|²
       = 0.078 + 0.792 + 0.130
       = 1.000  ✓
 ```
 
-## 복소 확장(#069)과의 연결
+## Connection with Complex Extension (#069)
 
-가설 #069의 복소 확장이 큐트릿과의 다리 역할을 한다:
+Hypothesis #069's complex extension serves as a bridge to the qutrit:
 
 ```
-  실수 영역              복소 확장              큐트릿
+  Real Domain              Complex Extension              Qutrit
   ──────────            ──────────            ──────────
   x ∈ R                z = x + iy            |ψ⟩ ∈ C³
 
-  1차원 반복            2차원 복소 반복        3차원 힐베르트
+  1D iteration          2D complex iteration   3D Hilbert
   x → ax(1-x)          z → az(1-z)           |ψ⟩ → U|ψ⟩
 
-  부동점 1/3            복소 부동점            큐트릿 고유상태
+  Fixed point 1/3       Complex fixed point    Qutrit eigenstate
 ```
 
-복소 확장에서 실수부와 허수부가 분리되면 3개의 독립 성분이 생긴다:
+When the real and imaginary parts separate in the complex extension, 3 independent components emerge:
 
 ```
-  z = x + iy   에서
+  From z = x + iy
 
-  성분 1: x (실수부)      →  |0⟩ 계수
-  성분 2: y (허수부)      →  |1⟩ 계수
-  성분 3: |z| (절대값)    →  |2⟩ 계수
+  Component 1: x (real part)      →  |0⟩ coefficient
+  Component 2: y (imaginary part) →  |1⟩ coefficient
+  Component 3: |z| (magnitude)    →  |2⟩ coefficient
 
-  정규화: x² + y² = |z|² 은 큐트릿의
-          |α|² + |β|² + |γ|² = 1 의 부분구조
+  Normalization: x² + y² = |z|² is a substructure of
+          the qutrit's |α|² + |β|² + |γ|² = 1
 ```
 
-## 큐트릿의 장점 (큐빗 대비)
+## Advantages of Qutrit (vs Qubit)
 
 ```
-  정보 용량:
+  Information capacity:
   ┌─────────────────────────────────┐
-  │ 큐빗:   log₂(2) = 1 bit        │
-  │ 큐트릿: log₂(3) = 1.585 bits   │
+  │ Qubit:   log₂(2) = 1 bit       │
+  │ Qutrit: log₂(3) = 1.585 bits   │
   │                                 │
-  │ 큐트릿은 58.5% 더 많은 정보!   │
+  │ Qutrit has 58.5% more info!    │
   └─────────────────────────────────┘
 
-  오류 내성:
+  Error tolerance:
   ┌─────────────────────────────────┐
-  │ 3상태는 2상태보다 오류 검출에   │
-  │ 유리 (다수결 가능)              │
-  │ 2개 상태: 오류 검출 불가        │
-  │ 3개 상태: 2:1 다수결 가능       │
+  │ 3 states are advantageous for   │
+  │ error detection (majority vote)  │
+  │ 2 states: No error detection    │
+  │ 3 states: 2:1 majority possible │
   └─────────────────────────────────┘
 ```
 
-## 상태 전이 규칙
+## State Transition Rules
 
 ```
-  |0⟩ ──(흥분)──> |1⟩ ──(과흥분)──> |2⟩
-   ^                                  |
-   |                                  |
-   +───────────(억제/리셋)────────────+
+  |0⟩ ──(excitation)──> |1⟩ ──(over-excitation)──> |2⟩
+   ^                                                  |
+   |                                                  |
+   +───────────(inhibition/reset)────────────────────+
 
-  전이 확률 행렬:
+  Transition probability matrix:
 
        |0⟩   |1⟩   |2⟩
   |0⟩ [0.3   0.6   0.1]
   |1⟩ [0.2   0.5   0.3]
   |2⟩ [0.5   0.3   0.2]
 
-  정상상태: π = (0.31, 0.48, 0.21)
-  → |1⟩(균형) 상태가 가장 높은 정상확률
+  Steady state: π = (0.31, 0.48, 0.21)
+  → |1⟩(balance) state has the highest steady probability
 ```
 
-## 결론
+## Conclusion
 
-3상태 시스템은 큐트릿과 자연스럽게 대응되며,
-큐트릿의 정규화 조건 |α|²+|β|²+|γ|²=1 은
-볼츠만 확률합=1 과 동일한 구조이다.
+The 3-state system naturally corresponds to a qutrit,
+and the qutrit's normalization condition |α|²+|β|²+|γ|²=1
+has the same structure as the Boltzmann probability sum=1.
 
-복소 확장(#069)이 실수 반복 → 큐트릿으로의 다리 역할을 하며,
-이는 3상태 의식 모델이 양자 정보 이론과 깊이 연결됨을 보여준다.
+The complex extension (#069) serves as a bridge from real iteration → qutrit,
+showing that the 3-state consciousness model is deeply connected to quantum information theory.

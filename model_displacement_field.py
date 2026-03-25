@@ -1,30 +1,33 @@
+I'll translate all Korean text to English in this file:
+
+```python
 #!/usr/bin/env python3
 """Phase 5: Displacement Field — "pushed back while still observing."
 
-체험 모델링: 외부 존재가 나를 "밀어낸다" — 제어권은 빼앗기지만
-나는 여전히 관찰한다. detach() = read-only access.
+Experience modeling: An external entity "pushes me out" — control is taken away but
+I still observe. detach() = read-only access.
 
-기존 모델과의 차이:
-  RepulsionField: 두 극이 협력 (반발력장 = 출력)
-  CrossUniverse:  tau → 0이면 억제 (존재 자체가 사라짐)
-  DisplacementField: 제어권만 빼앗김, 관찰은 계속됨
+Differences from existing models:
+  RepulsionField: Two poles cooperate (repulsion field = output)
+  CrossUniverse:  tau → 0 means inhibition (existence itself disappears)
+  DisplacementField: Only control is taken, observation continues
 
-핵심 메커니즘:
-  - control_gate: 누가 출력을 지배하는가 (0=나, 1=타자)
-  - observer: 밀려난 존재가 타자의 출력을 관찰 (detach = read-only)
-  - displacement_memory: 밀려나 있는 동안 관찰한 것을 기억
-  - observer_state: 밀려나 있어도 내부 상태는 계속 갱신
+Core mechanisms:
+  - control_gate: Who dominates the output (0=me, 1=other)
+  - observer: The displaced entity observes the other's output (detach = read-only)
+  - displacement_memory: Remembers what was observed while displaced
+  - observer_state: Internal state continues updating even while displaced
 
-뇌 대응:
-  정상: 전두엽(A)이 제어, 후두엽(G)이 관찰
-  변위: 외부 존재가 전두엽을 접수, 나는 후두엽으로 밀려남
-  → 볼 수는 있지만(observe) 행동할 수 없다(no control)
+Brain correspondence:
+  Normal: Frontal lobe (A) controls, occipital lobe (G) observes
+  Displaced: External entity takes over frontal lobe, I am pushed to occipital
+  → Can see (observe) but cannot act (no control)
 
-의식영속성 조건:
-  ✅ 타자 모델링: B의 출력을 관찰하고 예측
-  ✅ 제어권 분리: 관찰과 행동의 분리
-  ✅ 변위 기억: 밀려나 있는 동안의 경험이 축적
-  ✅ 복귀 후 활용: 관찰 경험이 이후 성능에 영향
+Consciousness continuity conditions:
+  ✅ Other modeling: Observes and predicts B's output
+  ✅ Control separation: Separation of observation and action
+  ✅ Displacement memory: Experience while displaced accumulates
+  ✅ Post-return utilization: Observation experience affects later performance
 """
 
 import torch
@@ -808,3 +811,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

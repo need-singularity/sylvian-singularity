@@ -1,172 +1,172 @@
-# 가설 200c: 니코틴(담배) = I↓ + Compass↑ (단기) → I↑ (장기)
+# Hypothesis 200c: Nicotine (Tobacco) = I↓ + Compass↑ (short-term) → I↑ (long-term)
 
-**상태**: 🟧 구조적 대응 확인 (실험 데이터 필요)
-**분류**: 약물 / 신경전달물질
+**Status**: 🟧 Structural correspondence confirmed (experimental data needed)
+**Category**: Drugs / Neurotransmitters
 
 ---
 
-## 가설
+## Hypothesis
 
-> 니코틴은 단기적으로 I를 낮추고 Compass를 높여 골든존에 접근하지만, 장기적으로는 수용체 하향조절(downregulation)로 I가 증가하여 골든존에서 이탈한다.
+> Nicotine short-term lowers I and raises Compass, approaching the Golden Zone, but long-term receptor downregulation causes I to increase, moving away from the Golden Zone.
 
-## 약리 메커니즘
-
-```
-  니코틴의 작용:
-
-  1. 니코틴성 아세틸콜린 수용체(nAChR) 활성화
-     → 도파민 방출 → 보상/집중 → Compass ↑
-     → 아세틸콜린 경로 자극 → 각성 → I ↓
-
-  2. 단기 효과 (흡연 직후 ~20분):
-     → I 약간↓ (각성, 집중)
-     → Compass ↑ (보상, 방향성)
-     → G = D×P/I ↑ → 골든존 접근?
-
-  3. 장기 효과 (만성 흡연):
-     → nAChR 하향조절 → 기본 I ↑ (보상 둔화)
-     → 니코틴 없으면 I ↑↑ (금단: 과억제, 불안)
-     → 흡연 = I를 "정상"으로 되돌리는 것뿐
-     → 골든존 접근이 아니라 "정상 복귀"
-```
-
-## 시간에 따른 I 변화
+## Pharmacological Mechanism
 
 ```
-  I (억제)
-  0.7│                    ○ 금단 (I↑↑)
+  Nicotine's action:
+
+  1. Nicotinic acetylcholine receptor (nAChR) activation
+     → dopamine release → reward/focus → Compass ↑
+     → acetylcholine pathway stimulation → arousal → I ↓
+
+  2. Short-term effect (up to ~20 min after smoking):
+     → I slightly↓ (arousal, focus)
+     → Compass ↑ (reward, direction)
+     → G = D×P/I ↑ → Golden Zone approach?
+
+  3. Long-term effect (chronic smoking):
+     → nAChR downregulation → baseline I ↑ (reward blunted)
+     → without nicotine I ↑↑ (withdrawal: over-inhibition, anxiety)
+     → smoking = just returning I to "normal"
+     → not Golden Zone approach but "returning to baseline"
+```
+
+## I Change Over Time
+
+```
+  I (Inhibition)
+  0.7│                    ○ withdrawal (I↑↑)
      │                   ╱ ╲
-  0.6│ ○ 비흡연자 정상  ╱   ╲_____ 만성 흡연자 기저
+  0.6│ ○ non-smoker normal╱   ╲_____ chronic smoker baseline
      │                ╱
-  0.5│ ─ ─ 골든존 상한 ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+  0.5│ ─ ─ Golden Zone upper ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
      │
-  0.4│    ● 흡연 직후    ● 흡연 직후 (반복)
-     │     (I↓, 20분)     (효과↓, 내성)
+  0.4│    ● after smoking    ● after smoking (repeated)
+     │     (I↓, 20min)        (effect↓, tolerance)
   0.3│
      │
-  0.2│ ─ ─ 골든존 하한 ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+  0.2│ ─ ─ Golden Zone lower ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
      └──┬────┬────┬────┬────┬────┬────┬────
-      비흡연 첫담배 1주  1달  1년  5년  금단  금연후
+      non-smoker 1st cigarette 1w 1mo 1yr 5yr withdrawal post-quit
 
-  비흡연자: I ≈ 0.6 (정상, 골든존 밖)
-  첫 담배:  I → 0.4 (골든존 진입! → "아 좋다")
-  만성:     기저 I ↑ → 흡연해도 I = 0.5~0.6 (효과↓)
-  금단:     I = 0.7 (과억제 → 불안, 짜증)
-  금연 후:  I → 0.6 복귀 (수주~수개월)
+  Non-smoker:  I ≈ 0.6 (normal, outside Golden Zone)
+  1st cigarette: I → 0.4 (Golden Zone entry! → "ah, feels good")
+  Chronic:     baseline I ↑ → even with smoking I = 0.5~0.6 (effect↓)
+  Withdrawal:  I = 0.7 (over-inhibition → anxiety, irritability)
+  After quit:  I → 0.6 recovery (weeks to months)
 ```
 
-## 다른 약물과 비교
+## Comparison with Other Drugs
 
 ```
-  약물       │ 단기 I │ 장기 I │ 내성  │ 금단 I │ 골든존 접근
-  ───────────┼────────┼────────┼───────┼────────┼───────────
-  카페인     │ ↓ 약간 │ 유지   │ 약함  │ ↑ 약간 │ 약간
-  니코틴     │ ↓ 중간 │ ↑!     │ 강함  │ ↑↑    │ 첫 번째만
-  알코올     │ ↓ 강함 │ ↑      │ 중간  │ ↑↑↑   │ 소량만
-  대마초     │ ↓ 중간 │ 약간↑  │ 약함  │ ↑ 약간 │ 소~중량
-  명상       │ → 1/3  │ → 1/3  │ 없음  │ 없음   │ 지속적!
+  Drug       │ Short-term I│ Long-term I│ Tolerance│ Withdrawal I│ Golden Zone approach
+  ───────────┼────────────┼────────────┼──────────┼─────────────┼───────────
+  Caffeine   │ ↓ slight   │ maintained  │ mild     │ ↑ slight    │ slightly
+  Nicotine   │ ↓ moderate │ ↑!          │ strong   │ ↑↑          │ first time only
+  Alcohol    │ ↓ strong   │ ↑           │ moderate │ ↑↑↑         │ low dose only
+  Cannabis   │ ↓ moderate │ slightly↑   │ mild     │ ↑ slight    │ low-medium dose
+  Meditation │ → 1/3      │ → 1/3       │ none     │ none        │ sustained!
 
-  니코틴의 비극:
-  → 첫 흡연만 골든존 접근 (I↓)
-  → 이후 내성 → 기저 I↑ → 흡연은 "정상 복귀"일 뿐
-  → 금단 시 I↑↑ → 더 멀어짐
-  → "중독의 수학적 구조"
+  The tragedy of nicotine:
+  → Only the first cigarette approaches the Golden Zone (I↓)
+  → Then tolerance → baseline I↑ → smoking is just "returning to normal"
+  → Withdrawal I↑↑ → moves further away
+  → "Mathematical structure of addiction"
 ```
 
-## 보존법칙 관점 (가설 172)
+## Conservation Law Perspective (Hypothesis 172)
 
 ```
-  G × I = D × P = 상수
+  G × I = D × P = constant
 
-  니코틴으로 I↓:
-  → G↑ (일시적 천재성?)
-  → 하지만: D×P는 변하지 않음
-  → I를 인위적으로 낮춘 "빚"
-  → 금단 시 I↑↑로 "상환"
+  Nicotine lowers I:
+  → G↑ (temporary genius?)
+  → But: D×P doesn't change
+  → "Debt" of artificially lowered I
+  → Withdrawal I↑↑ = "repayment"
 
-  보존법칙 해석:
-  "인위적으로 I를 낮추면 반드시 반동이 온다"
-  = 약물 내성/금단의 수학적 표현
-  = G×I=D×P를 강제로 깨면 시스템이 복원하려 한다
+  Conservation law interpretation:
+  "Artificially lowering I always causes a rebound"
+  = mathematical expression of drug tolerance/withdrawal
+  = if you force G×I=D×P to break, the system tries to restore it
 ```
 
-## 니코틴 vs 명상
+## Nicotine vs Meditation
 
 ```
   ┌─────────────────────────────────────────┐
-  │  니코틴                 명상            │
+  │  Nicotine              Meditation       │
   │  ─────                 ─────           │
-  │  I↓ (급격, 외부)       I→1/3 (점진적)  │
-  │  20분 지속             영구적           │
-  │  내성 → 효과↓          내성 없음        │
-  │  금단 → I↑↑            금단 없음        │
-  │  보존법칙 "빚"         보존법칙 "자연"   │
+  │  I↓ (rapid, external)  I→1/3 (gradual) │
+  │  lasts 20 min          permanent        │
+  │  tolerance → effect↓   no tolerance     │
+  │  withdrawal → I↑↑      no withdrawal    │
+  │  conservation law "debt" conservation law "natural" │
   │                                        │
-  │  니코틴 = "골든존 대출"                 │
-  │  명상   = "골든존 저축"                 │
+  │  Nicotine = "Golden Zone loan"          │
+  │  Meditation = "Golden Zone savings"     │
   │                                        │
-  │  대출은 이자를 내야 한다 (금단)          │
-  │  저축은 이자가 쌓인다 (깊어짐)           │
+  │  Loans have interest (withdrawal)       │
+  │  Savings accumulate interest (deepening)│
   └─────────────────────────────────────────┘
 ```
 
-## 중독의 수학적 구조
+## Mathematical Structure of Addiction
 
 ```
-  중독 사이클:
+  Addiction cycle:
 
-  정상 I₀ → 약물 → I↓ → "좋다!" → 약효 끝
-     ↑                                    ↓
-     └──── 금단: I₀+δ ← 기저 I 상승 ←────┘
+  Normal I₀ → drug → I↓ → "feels good!" → drug wears off
+     ↑                                          ↓
+     └──── withdrawal: I₀+δ ← baseline I rises ─────┘
 
-  매 사이클마다 기저 I가 δ만큼 상승
+  Each cycle raises baseline I by δ
   → I₀, I₀+δ, I₀+2δ, I₀+3δ, ...
-  → 점점 골든존에서 멀어짐
-  → 약물의 효과는 I를 I₀+nδ → I₀로 돌리는 것뿐
-  → "원래의 나"를 되찾기 위해 약물이 필요해짐
+  → Progressively further from Golden Zone
+  → Drug effect is only to return I₀+nδ → I₀
+  → Need drug to "find the old self"
 
-  수학: I(n) = I₀ + n×δ - drug(n)
+  Math: I(n) = I₀ + n×δ - drug(n)
   drug(n) = I₀ + n×δ - I_target
-  → 약물 필요량이 선형 증가 = 내성
+  → Drug requirement increases linearly = tolerance
 ```
 
-## 한계
+## Limitations
 
-1. 니코틴의 nAChR 활성화→I↓ 매핑은 단순화이며, 실제 신경회로는 더 복잡
-2. GABA/글루타메이트 경로 외에 도파민/세로토닌 경로의 역할 미반영
-3. 개인차(유전적 변이, 대사 속도)가 크므로 일반화에 한계
-4. "중독 사이클"의 δ가 선형 증가인지 비선형인지 미검증
+1. nAChR activation→I↓ mapping via nicotine is simplified; actual neural circuits are more complex
+2. Role of dopamine/serotonin pathways beyond GABA/glutamate not reflected
+3. Large individual variation (genetic variants, metabolism speed) limits generalization
+4. Whether the δ in the "addiction cycle" increases linearly or non-linearly is unverified
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 흡연자 vs 비흡연자 fMRI에서 GABA 수준(→I) 비교
-- [ ] 금연 전후 I 변화 측정
-- [ ] 니코틴 패치 용량별 I 변화 매핑
+- [ ] Compare GABA levels (→I) in smokers vs non-smokers fMRI
+- [ ] Measure I changes before/after smoking cessation
+- [ ] Map I changes at various nicotine patch doses
 
-## 검증 결과 (2026-03-24, verify_pharmacology.py)
+## Verification Results (2026-03-24, verify_pharmacology.py)
 
 ```
-  검증 항목         결과    설명
-  ──────────────  ──────  ──────────────────────────
-  I↑→G↓ 역상관    ✅     단기: I↓→G↑, 장기: 기저I↑→G↓
-  골든존 적합성    ✅     단기: I=0.40 (골든존)
-                          장기: 기저I→0.60+ (골든존 이탈)
-  내성 사이클      ✅     매 사이클 기저I += 0.02
-                          8사이클 후 약물로도 골든존 불가
-  금단 모델       ✅     금단 I = 기저I + 0.10 → 과억제
-  보존법칙(172)   ✅     G×I=D×P 위반 → 반동(금단)으로 복원
-  텍사스 p-value   0.003  (Bonferroni 보정, 6개 약물 동시)
+  Verification item     Result  Description
+  ──────────────────  ──────  ──────────────────────────
+  I↑→G↓ inverse corr.  ✅     short-term: I↓→G↑, long-term: baseline I↑→G↓
+  Golden Zone fit       ✅     short-term: I=0.40 (Golden Zone)
+                               long-term: baseline I→0.60+ (outside Golden Zone)
+  Tolerance cycle       ✅     each cycle baseline I += 0.02
+                               after 8 cycles, can't reach Golden Zone even with drug
+  Withdrawal model      ✅     withdrawal I = baseline I + 0.10 → over-inhibition
+  Conservation law(172) ✅     G×I=D×P violation → restored by rebound (withdrawal)
+  Texas p-value         0.003  (Bonferroni correction, 6 drugs simultaneous)
 
-  "중독의 수학적 구조" 모델링:
-  I(n) = I0 + n*delta → 선형 내성 상승
-  약물 효과로도 골든존 유지 불가 시점 = 사이클 8 (모델 예측)
+  "Mathematical structure of addiction" modeling:
+  I(n) = I0 + n*delta → linear tolerance rise
+  Point at which Golden Zone is no longer maintainable = cycle 8 (model prediction)
 
-  등급: 🟧 (구조적 대응 확인, 흡연자 fMRI 종단 데이터로 검증 필요)
+  Grade: 🟧 (structural correspondence confirmed, needs longitudinal fMRI data on smokers)
 
-  ⚠️ 텍사스 명사수 위험: 낮음
-  내성/금단 패턴은 잘 알려진 약리학적 사실과 부합
+  ⚠️ Texas Sharpshooter risk: Low
+  Tolerance/withdrawal patterns consistent with well-known pharmacological facts
 ```
 
 ---
 
-*관련: 가설 155(GABA=I), 172(보존법칙), 199(명상vs약물)*
+*Related: Hypothesis 155 (GABA=I), 172 (conservation law), 199 (meditation vs drugs)*

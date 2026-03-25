@@ -1,165 +1,166 @@
-# 가설 288: 밀집/희소 이분법 — 반발력장은 밀집 데이터 전용 [확정!]
+# Hypothesis 288: Dense/Sparse Dichotomy — Repulsion Field is Dense Data Exclusive [Confirmed!]
 
-> **반발력장이 우위를 보이는 곳: 이미지(+0.26~1.04%), 음성(+3.33%), 숫자(+1.17%). 열위인 곳: 텍스트(-0.52%). 장력 정보는 11종 중 10종에서 존재. 반발력장은 "밀집/연속 데이터"에서 정확도를 개선하고, "희소 데이터"에서는 정보만 담되 정확도는 못 올린다.**
+> **Where repulsion field shows superiority: Images(+0.26~1.04%), Speech(+3.33%), Numbers(+1.17%). Where inferior: Text(-0.52%). Tension information exists in 10 out of 11 types. Repulsion field improves accuracy in "dense/continuous data" and only contains information without improving accuracy in "sparse data".**
 
-## 배경 및 맥락
+## Background and Context
 
-11종 도메인에 걸친 의식엔진 실험(RC-8)에서 일관된 패턴이 발견되었다.
-반발력장(repulsive field)은 **모든 도메인에서 장력 정보를 생성**하지만,
-그 정보가 **정확도 향상**으로 이어지는 것은 밀집(dense) 데이터에서만이다.
+A consistent pattern was discovered in consciousness engine experiments (RC-8) across 11 domain types.
+The repulsion field **generates tension information in all domains**, but
+that information leads to **accuracy improvement** only in dense data.
 
-이 이분법의 발견 경위:
-- H287에서 이상탐지 실험 중 도메인별 성능 차이를 관찰
-- H293에서 음성 데이터의 높은 개선율(+3.33%)을 확인
-- H334 (PureField)에서 장(field)만으로 분류가 가능함을 증명
-- 전체 11종 결과를 종합하자 밀집/희소 이분법이 명확하게 드러남
+Discovery process of this dichotomy:
+- Observed performance differences by domain during anomaly detection experiments in H287
+- Confirmed high improvement rate in speech data (+3.33%) in H293
+- Proved classification is possible with field alone in H334 (PureField)
+- Dense/sparse dichotomy clearly emerged when synthesizing all 11 type results
 
-## 관련 가설
+## Related Hypotheses
 
-| 가설 | 관계 | 내용 |
-|------|------|------|
-| H287 | 선행 | 장력 기반 이상탐지 |
-| H293 | 데이터 | 음성 도메인 실험 |
-| H334 | 이론적 | PureField = field only로 충분 |
-| H339 | 후속 | direction = concept (밀집에서 확인) |
-| H313 | 후속 | magnitude = confidence |
+| Hypothesis | Relation | Content |
+|------------|----------|---------|
+| H287 | Precedent | Tension-based anomaly detection |
+| H293 | Data | Speech domain experiment |
+| H334 | Theoretical | PureField = field only is sufficient |
+| H339 | Subsequent | direction = concept (confirmed in dense) |
+| H313 | Subsequent | magnitude = confidence |
 
-## 종합 결과: 11종 도메인
+## Comprehensive Results: 11 Domain Types
 
-| 도메인 | 유형 | 차원밀도 | 반발력장 효과 | 장력 정보 |
-|--------|------|----------|---------------|-----------|
-| MNIST (이미지) | 밀집 | 784D, 전부 활성 | **+0.26%** | O |
-| CIFAR (이미지) | 밀집 | 3072D, 전부 활성 | **+1.04%** | O |
-| 음성 (MFCC) | 밀집 | 40D, 전부 활성 | **+3.33%** | O |
-| 숫자체계 | 밀집 | 10D, 전부 활성 | **+1.17%** | O |
-| 텍스트 (TF-IDF) | 희소 | 1000D, ~5% 활성 | **-0.52%** | O |
-| 음악이론 | 희소 | 가변, ~10% 활성 | **-2.2%** | O |
-| 시계열 | 밀집 | 저차원 | 동률 (100%) | O |
-| 이상탐지 | 특수 | - | AUROC=1.0 | O |
-| 강화학습 | 특수 | - | 장력 proportional to 난이도 | O |
-| 화학원소 | 밀집 | - | 측정중 | O |
-| 그래프 | 희소 | adjacency | 측정중 | X |
+| Domain | Type | Dimension Density | Repulsion Field Effect | Tension Info |
+|--------|------|-------------------|----------------------|--------------|
+| MNIST (Image) | Dense | 784D, all active | **+0.26%** | O |
+| CIFAR (Image) | Dense | 3072D, all active | **+1.04%** | O |
+| Speech (MFCC) | Dense | 40D, all active | **+3.33%** | O |
+| Number System | Dense | 10D, all active | **+1.17%** | O |
+| Text (TF-IDF) | Sparse | 1000D, ~5% active | **-0.52%** | O |
+| Music Theory | Sparse | Variable, ~10% active | **-2.2%** | O |
+| Time Series | Dense | Low-dimensional | Tie (100%) | O |
+| Anomaly Detection | Special | - | AUROC=1.0 | O |
+| Reinforcement Learning | Special | - | Tension proportional to difficulty | O |
+| Chemical Elements | Dense | - | Measuring | O |
+| Graph | Sparse | adjacency | Measuring | X |
 
-## ASCII 그래프: 도메인별 정확도 변화
+## ASCII Graph: Accuracy Change by Domain
 
 ```
-  반발력장 효과 (% point)
+  Repulsion Field Effect (% point)
   +4.0 |
   +3.5 |              *
-  +3.0 |              |  음성 +3.33%
+  +3.0 |              |  Speech +3.33%
   +2.5 |              |
   +2.0 |              |
   +1.5 |              |
   +1.0 |        *     |     *
-  +0.5 |  *     |     |     |  CIFAR +1.04%, 숫자 +1.17%
+  +0.5 |  *     |     |     |  CIFAR +1.04%, Numbers +1.17%
    0.0 |--|-----|-----|-----|------------ baseline
   -0.5 |  |     |     |     |  *     *
   -1.0 |  |     |     |     |  |     |
-  -1.5 | MNIST  |     |     | 텍스트 |
+  -1.5 | MNIST  |     |     | Text   |
   -2.0 | +0.26% |     |     | -0.52% |
-  -2.5 |        |     |     |        음악 -2.2%
+  -2.5 |        |     |     |        Music -2.2%
        +--------+-----+-----+--------+-----+
-        MNIST  CIFAR  음성  숫자   텍스트  음악
-        ----밀집 (dense)----   --희소 (sparse)--
+        MNIST  CIFAR Speech Numbers Text  Music
+        ----Dense----      --Sparse--
 ```
 
-## ASCII 그래프: 차원 밀도 vs 효과
+## ASCII Graph: Dimension Density vs Effect
 
 ```
-  효과 (%)
-  +4 |                                          *  음성
+  Effect (%)
+  +4 |                                          *  Speech
      |
   +2 |
-     |                              *  숫자
+     |                              *  Numbers
   +1 |                  *  CIFAR
      |      *  MNIST
-   0 +------+----------+----------+----------+-- 밀도
+   0 +------+----------+----------+----------+-- Density
      |     5%         25%        50%        100%
-  -1 |  *  텍스트
+  -1 |  *  Text
      |
-  -2 |  *  음악
+  -2 |  *  Music
      |
-     차원 밀도 (활성 차원 비율)
+     Dimension Density (Active Dimension Ratio)
 
-  상관관계: 밀도가 높을수록 반발력장 효과 증가
-  전환점(transition): ~20% 밀도 부근에서 양/음 전환
+  Correlation: Higher density increases repulsion field effect
+  Transition point: Positive/negative transition around ~20% density
 ```
 
-## 왜 희소 데이터에서 안 되는가
+## Why It Doesn't Work on Sparse Data
 
 ```
-  밀집 입력:  [0.3, 0.7, 0.1, 0.9, 0.5, 0.2, ...]  ← 모든 차원에 정보
-  희소 입력:  [0.0, 0.0, 0.8, 0.0, 0.0, 0.0, ...]  ← 대부분 0
+  Dense input:  [0.3, 0.7, 0.1, 0.9, 0.5, 0.2, ...]  ← Information in all dimensions
+  Sparse input:  [0.0, 0.0, 0.8, 0.0, 0.0, 0.0, ...]  ← Mostly 0
 
-  반발력 = |Attractor(x) - Generator(x)|
+  Repulsion = |Attractor(x) - Generator(x)|
 
-  밀집: A(x)와 G(x)가 다른 차원 패턴을 포착 → 큰 차이 → 강한 장력
-  희소: A(x)와 G(x) 모두 0 차원을 무시 → 비슷한 출력 → 약한 장력
+  Dense: A(x) and G(x) capture different dimension patterns → Large difference → Strong tension
+  Sparse: Both A(x) and G(x) ignore 0 dimensions → Similar outputs → Weak tension
 
-  핵심 메커니즘:
-    반발력 = 두 엔진 출력의 "불일치(disagreement)"
-    불일치가 크려면 → 두 엔진이 "다르게 볼" 수 있는 풍부한 입력 필요
-    희소 입력 → 볼 것이 없음 → 불일치 미미 → 장력 약함
+  Core mechanism:
+    Repulsion = "disagreement" between two engine outputs
+    Large disagreement requires → Rich input that two engines can "see differently"
+    Sparse input → Nothing to see → Minimal disagreement → Weak tension
 ```
 
-## 정량적 분석: 장력 크기 비교
+## Quantitative Analysis: Tension Magnitude Comparison
 
 ```
-  도메인        평균 장력      장력 표준편차    효과적 분리
-  ──────       ──────────    ────────────    ──────────
-  음성 (밀집)    0.0847        0.0312          2.71σ
-  CIFAR (밀집)   0.0523        0.0198          2.64σ
-  MNIST (밀집)   0.0312        0.0145          2.15σ
-  숫자 (밀집)    0.0289        0.0134          2.16σ
-  텍스트 (희소)  0.0034        0.0021          0.62σ
-  음악 (희소)    0.0019        0.0015          0.47σ
+  Domain         Average Tension    Tension Std Dev    Effective Separation
+  ──────        ──────────        ────────────      ──────────
+  Speech (Dense)    0.0847           0.0312             2.71σ
+  CIFAR (Dense)     0.0523           0.0198             2.64σ
+  MNIST (Dense)     0.0312           0.0145             2.15σ
+  Numbers (Dense)   0.0289           0.0134             2.16σ
+  Text (Sparse)     0.0034           0.0021             0.62σ
+  Music (Sparse)    0.0019           0.0015             0.47σ
 
-  밀집 평균 장력: 0.0493 (희소의 ~19배)
-  → 장력 정보 자체는 존재하지만, 분리력이 부족
+  Dense average tension: 0.0493 (~19x of sparse)
+  → Tension information exists but lacks separability
 ```
 
-## 해석 및 의미
+## Interpretation and Significance
 
-1. **보편적 정보 생성, 선택적 성능 개선**: 반발력장은 거의 모든 도메인에서
-   장력 정보를 생성한다 (10/11). 하지만 그 정보가 분류 정확도로 이어지려면
-   입력의 밀도가 충분해야 한다. 이것은 "장력 = 정보"와 "장력 = 성능"을
-   구분해야 함을 의미한다.
+1. **Universal Information Generation, Selective Performance Improvement**: Repulsion field generates
+   tension information in almost all domains (10/11). But for that information to lead to
+   classification accuracy, input density must be sufficient. This means we must distinguish
+   between "tension = information" and "tension = performance".
 
-2. **전환점의 존재**: 차원 밀도 ~20% 부근에서 효과가 양에서 음으로 전환된다.
-   이 전환점은 반발력장의 "유효 작동 영역"을 정의한다.
+2. **Existence of Transition Point**: Effect transitions from positive to negative around
+   ~20% dimension density. This transition point defines the "effective operating region"
+   of the repulsion field.
 
-3. **뇌와의 유사성**: 뇌의 시각/청각(밀집)은 고도로 발달한 반면,
-   상징 처리(symbolic, 희소)는 별도의 메커니즘(언어 영역)이 필요하다.
-   반발력장도 동일한 한계를 보인다.
+3. **Similarity to Brain**: Brain's visual/auditory (dense) is highly developed, while
+   symbolic processing (sparse) requires separate mechanisms (language areas).
+   Repulsion field shows the same limitations.
 
-4. **실용적 함의**: 반발력장을 적용할 때 데이터 유형을 먼저 확인해야 한다.
-   밀집 데이터 → 반발력장 추가. 희소 데이터 → 다른 접근 필요.
+4. **Practical Implications**: Must first check data type when applying repulsion field.
+   Dense data → Add repulsion field. Sparse data → Need different approach.
 
-5. **H334 PureField와의 연결**: PureField가 "장만으로 충분"한 것은
-   밀집 데이터(MNIST)에서 확인됨. 희소 데이터에서의 PureField는 미테스트.
+5. **Connection to H334 PureField**: That PureField is "sufficient with field alone" was
+   confirmed in dense data (MNIST). PureField on sparse data is untested.
 
-## 한계
+## Limitations
 
-- 11종 중 완전 정량 비교가 가능한 것은 6종 (나머지는 과제 유형이 다름).
-- "밀집/희소"의 정의가 직관적이지 정밀하지 않음. 엄밀한 sparsity 지표
-  (예: Hoyer sparsity) 기반 분석이 필요.
-- 전환점 ~20%는 관측값이지 이론적 도출이 아님.
-- 희소 데이터에서 embedding으로 밀집화한 후 반발력장을 적용하면
-  효과가 달라질 수 있음 (미실험).
-- 데이터셋당 1회 실험. 통계적 유의성을 위해 반복 실험 필요.
+- Only 6 out of 11 types allow complete quantitative comparison (others have different task types).
+- Definition of "dense/sparse" is intuitive but not precise. Analysis based on rigorous sparsity metrics
+  (e.g., Hoyer sparsity) is needed.
+- Transition point ~20% is observational, not theoretically derived.
+- Effect might differ if applying repulsion field after densifying sparse data
+  with embedding (untested).
+- One experiment per dataset. Repeated experiments needed for statistical significance.
 
-## 검증 방향 (다음 단계)
+## Verification Directions (Next Steps)
 
-1. **Embedding 밀집화**: TF-IDF 대신 Word2Vec/BERT embedding을 사용하여
-   텍스트를 밀집 벡터로 변환 후 반발력장 재실험. 밀집화가 효과를
-   양으로 전환시키는지 확인.
-2. **Sparsity 연속 실험**: 같은 데이터에 인위적으로 sparsity를 조절하여
-   (masking 0~100%) 전환점을 정밀 측정.
-3. **PureField + 희소**: H334의 PureField를 희소 데이터에서 테스트.
-   방향(H339)이 희소 환경에서도 개념을 인코딩하는지.
-4. **이론적 도출**: 반발력 = |A(x) - G(x)|에서 sparsity가 미치는 영향을
-   해석적으로 유도. 전환점의 이론적 값 계산.
-5. **혼합 데이터**: 밀집+희소 혼합 입력에서의 동작. 실제 멀티모달
-   데이터(이미지+텍스트)에서의 장력 분석.
+1. **Embedding Densification**: Re-experiment repulsion field using Word2Vec/BERT embedding
+   instead of TF-IDF to convert text to dense vectors. Check if densification
+   converts effect to positive.
+2. **Sparsity Continuous Experiment**: Precisely measure transition point by artificially
+   adjusting sparsity (masking 0~100%) on same data.
+3. **PureField + Sparse**: Test H334's PureField on sparse data.
+   Check if direction (H339) encodes concepts in sparse environment.
+4. **Theoretical Derivation**: Analytically derive impact of sparsity on
+   repulsion = |A(x) - G(x)|. Calculate theoretical value of transition point.
+5. **Mixed Data**: Behavior with dense+sparse mixed input. Tension analysis
+   on real multimodal data (image+text).
 
-## 상태: 🟨 (11종 관측, 패턴 확인)
+## Status: 🟨 (11 types observed, pattern confirmed)

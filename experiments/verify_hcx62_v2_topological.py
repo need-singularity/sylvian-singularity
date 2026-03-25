@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""H-CX-62 v2 검증: 위상 예지 — Ripser로 진짜 Persistent Homology 계산
+"""H-CX-62 v2 verification: Topological Precognition — Real Persistent Homology calculation with Ripser
 
-v1 실패 원인: 근사 PH 함수 버그 (persistence=0)
-v2: ripser 라이브러리로 실제 PH 계산
+v1 failure cause: Approximate PH function bug (persistence=0)
+v2: Actual PH calculation with ripser library
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -15,7 +15,7 @@ from calc.direction_analyzer import load_data
 
 
 def compute_ph_features(D, Y, n_cls=10):
-    """클래스 평균 방향의 PH 계산 (Ripser)"""
+    """Calculate PH of class mean directions (Ripser)"""
     # Class mean directions
     means = []
     for c in range(n_cls):

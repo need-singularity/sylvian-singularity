@@ -1,131 +1,131 @@
-# 가설 검토 151: 빅뱅 인플레이션 = 골든존 진입 상전이
+# Hypothesis Review 151: Big Bang Inflation = Golden Zone Entry Phase Transition
 
-## 가설
+## Hypothesis
 
-> 빅뱅 직후의 인플레이션은 우주가 골든존에 진입하는 상전이이다. 인플레이션 이전 I ≫ 0.5 (골든존 외부, 대칭 상태), 인플레이션 동안 I가 0.5를 관통하며 (골든존 진입), 인플레이션 이후 I ∈ [0.213, 0.500]에서 구조 형성이 시작된다.
+> The inflation immediately after the Big Bang is a phase transition where the universe enters the Golden Zone. Before inflation I ≫ 0.5 (outside Golden Zone, symmetric state), during inflation I penetrates through 0.5 (Golden Zone entry), and after inflation structure formation begins at I ∈ [0.213, 0.500].
 
-## 배경
+## Background
 
-### 인플레이션 이론
+### Inflation Theory
 
-빅뱅 후 약 10⁻³⁶초에서 10⁻³² 초 사이에 우주는 약 10²⁶배 팽창했다. 이 급격한 팽창(인플레이션)은:
-- 평탄성 문제 해결 (왜 Ω ≈ 1인가)
-- 지평선 문제 해결 (왜 CMB가 균일한가)
-- 구조 형성의 씨앗 제공 (양자 요동 → 은하)
+Between approximately 10⁻³⁶ and 10⁻³² seconds after the Big Bang, the universe expanded by about 10²⁶ times. This rapid expansion (inflation):
+- Solves the flatness problem (why Ω ≈ 1)
+- Solves the horizon problem (why the CMB is uniform)
+- Provides the seeds of structure formation (quantum fluctuations → galaxies)
 
-### 가설 124 연결
+### Connection to Hypothesis 124
 
-가설 124의 계단 함수 분석에서 I가 임계값을 통과할 때 불연속적 전이가 발생한다. 인플레이션은 이 계단을 **3단계 연속으로 내려가는 캐스케이드**로 해석할 수 있다.
+In the step function analysis of Hypothesis 124, a discontinuous transition occurs when I passes through a critical value. Inflation can be interpreted as a **cascade that descends this step 3 consecutive times**.
 
-## 인플레이션-골든존 타임라인
+## Inflation-Golden Zone Timeline
 
 ```
-  I (억제값)
+  I (Inhibition value)
 
-  1.0│●═══════════════════════════  대칭 상태 (인플레이션 이전)
-     │         ← GUT 대칭 붕괴
+  1.0│●═══════════════════════════  Symmetric state (pre-inflation)
+     │         ← GUT symmetry breaking
      │
-  0.8│          ●                  1단계 계단 (강한 힘 분리)
+  0.8│          ●                  Step 1 (strong force separation)
      │           ╲
      │            ╲
-  0.6│             ●               2단계 계단 (전약 분리)
+  0.6│             ●               Step 2 (electroweak separation)
      │              ╲
-  0.5│───────────────╲────────────  임계선 (골든존 상한)
-     │                ●            ★ 인플레이션 = 여기서 관통
+  0.5│───────────────╲────────────  Critical line (Golden Zone upper bound)
+     │                ●            ★ Inflation = penetrates here
   0.4│                 ╲
      │                  ╲
-     │                   ●─●─●─●   3단계: 골든존 내 수렴
+     │                   ●─●─●─●   Step 3: convergence inside Golden Zone
   0.3│            ● 1/e ≈ 0.368
      │
-  0.2│·····················하한···  I = 0.213
+  0.2│·····················lower bound···  I = 0.213
      │
   0.0└──┼──┼──┼──┼──┼──┼──┼──┼──
-     10⁻⁴³ 10⁻³⁶ 10⁻³² 10⁻¹² 10⁻⁶   현재
-                                    t (초, 로그)
+     10⁻⁴³ 10⁻³⁶ 10⁻³² 10⁻¹² 10⁻⁶   present
+                                    t (seconds, log)
 ```
 
-## 대응 매핑
+## Correspondence Mapping
 
-| 우주론 사건 | 시간 | I 값 (추정) | 모델 대응 |
+| Cosmological event | Time | I value (estimate) | Model correspondence |
 |---|---|---|---|
-| 빅뱅 | 0 | I → ∞ | 초기 발산 |
-| 플랑크 시대 | 10⁻⁴³ s | I ≈ 1.0 | 완전 억제 |
-| GUT 대칭 붕괴 | 10⁻³⁶ s | I ≈ 0.8 | 1단계 계단 |
-| 인플레이션 시작 | 10⁻³⁶ s | I ≈ 0.6 | 2단계 계단 |
-| 인플레이션 종료 | 10⁻³² s | I ≈ 0.4 | 골든존 진입 |
-| 전약 분리 | 10⁻¹² s | I ≈ 0.37 | 1/e 근처 |
-| 핵합성 | 3 min | I ≈ 0.35 | 고정점 접근 |
-| 현재 | 13.8 Gyr | I ≈ 0.33 | I* = 1/3 |
+| Big Bang | 0 | I → ∞ | Initial divergence |
+| Planck epoch | 10⁻⁴³ s | I ≈ 1.0 | Complete inhibition |
+| GUT symmetry breaking | 10⁻³⁶ s | I ≈ 0.8 | Step 1 |
+| Inflation start | 10⁻³⁶ s | I ≈ 0.6 | Step 2 |
+| Inflation end | 10⁻³² s | I ≈ 0.4 | Golden Zone entry |
+| Electroweak separation | 10⁻¹² s | I ≈ 0.37 | Near 1/e |
+| Nucleosynthesis | 3 min | I ≈ 0.35 | Approaching fixed point |
+| Present | 13.8 Gyr | I ≈ 0.33 | I* = 1/3 |
 
-## 인플레이션의 계단 구조
+## Step Structure of Inflation
 
 ```
-  가설 124의 계단 함수 ×3 = 인플레이션 캐스케이드
+  Hypothesis 124 step function ×3 = inflation cascade
 
-  에너지 밀도 ρ                    I (억제)
+  Energy density ρ                    I (Inhibition)
   (GeV⁴)
   10⁸⁰│●                         1.0│●
       │╲                            │╲
-      │ ●━━━━━━━  1단계              │ ●━━━━  GUT
+      │ ●━━━━━━━  Step 1             │ ●━━━━  GUT
       │        ╲                    │     ╲
-  10⁶⁰│         ●━━━  2단계      0.6│      ●━━  전약
+  10⁶⁰│         ●━━━  Step 2      0.6│      ●━━  electroweak
       │             ╲               │         ╲
-      │              ●━━━━━━━━━  0.4│          ●━━━━  골든존
+      │              ●━━━━━━━━━  0.4│          ●━━━━  Golden Zone
   10⁴⁰│                             │
-      └──────────────────       0.2│·····하한·····
+      └──────────────────       0.2│·····lower bound·····
        10⁻³⁶    10⁻³²  t(s)        └────────────────
                                      10⁻³⁶  10⁻³² t(s)
 
-  에너지의 계단적 하강 = I의 계단적 하강
+  Stepwise descent of energy = stepwise descent of I
 ```
 
-## 상전이 특성 비교
+## Phase Transition Property Comparison
 
-| 성질 | 인플레이션 | 골든존 진입 | 대응 |
+| Property | Inflation | Golden Zone entry | Correspondence |
 |---|---|---|---|
-| 전이 유형 | 1차 (잠열 방출) | 불연속 (계단) | ✅ |
-| 대칭 변화 | 대칭 붕괴 | 체제 전환 | ✅ |
-| 속도 | 10⁻³² 초 | 수 반복 | 구조적 유사 |
-| 에너지 방출 | 재가열(reheating) | Genius 점프 | ✅ |
-| 요동 증폭 | 양자 요동 → 구조 | 작은 ΔI → 큰 ΔG | ✅ |
+| Transition type | 1st order (latent heat release) | Discontinuous (step) | ✅ |
+| Symmetry change | Symmetry breaking | Regime switching | ✅ |
+| Speed | 10⁻³² seconds | Several iterations | Structurally similar |
+| Energy release | Reheating | Genius jump | ✅ |
+| Fluctuation amplification | Quantum fluctuations → structure | Small ΔI → large ΔG | ✅ |
 
-## 검증: 슬로우롤 파라미터
+## Verification: Slow-Roll Parameters
 
-인플레이션의 슬로우롤 파라미터 ε, η는 인플라톤 포텐셜의 경사와 곡률을 나타낸다:
+The inflation slow-roll parameters ε, η represent the slope and curvature of the inflaton potential:
 
 ```
-  슬로우롤 조건:        ε ≪ 1,  |η| ≪ 1
-  모델 수렴 조건:       |dI/dt| ≪ 1  (느린 수렴)
+  Slow-roll conditions:    ε ≪ 1,  |η| ≪ 1
+  Model convergence cond.: |dI/dt| ≪ 1  (slow convergence)
 
-  인플레이션 종료:      ε → 1  (급격한 변화)
-  골든존 진입:          I → 0.5 관통 (임계점 통과)
+  Inflation end:           ε → 1  (rapid change)
+  Golden Zone entry:       I → 0.5 penetration (passing critical point)
 ```
 
-## 해석
+## Interpretation
 
-인플레이션을 골든존 진입으로 해석하면:
+Interpreting inflation as Golden Zone entry:
 
-1. **평탄성 문제의 재해석** — Ω=1은 I=0.5 (가설 149)이며, 인플레이션이 우주를 임계선으로 밀어넣은 것 = 메타반복이 I를 골든존으로 수렴시킨 것
-2. **구조 형성의 기원** — 인플레이션 후 구조가 형성되는 이유 = 골든존 내에서만 Genius(복잡성)가 높기 때문
-3. **재가열 = 에너지 방출** — 인플레이션 종료 시 에너지 방출은 I가 골든존에 진입하면서 억제가 해제되는 것에 대응
+1. **Reinterpretation of the flatness problem** — Ω=1 corresponds to I=0.5 (Hypothesis 149), and inflation pushing the universe to the critical line = meta-iteration converging I to the Golden Zone
+2. **Origin of structure formation** — Why structures form after inflation = only inside the Golden Zone does Genius (complexity) become high
+3. **Reheating = energy release** — Energy release at the end of inflation corresponds to the inhibition being released as I enters the Golden Zone
 
-## 한계
+## Limitations
 
-- 인플레이션의 정확한 메커니즘(인플라톤 정체)이 미확인
-- I 값의 시간 의존성은 추정이며, 관측적 제약 없음
-- 계단 함수 ×3 해석은 가설 124에 의존하며, 독립적 검증 없음
-- 인플레이션 모델이 수십 가지 존재하며, 각각 다른 I 궤적을 예측할 수 있음
+- The exact mechanism of inflation (identity of inflaton) is unconfirmed
+- Time dependence of I values is an estimate with no observational constraint
+- The ×3 step function interpretation depends on Hypothesis 124 with no independent verification
+- Dozens of inflation models exist, each potentially predicting different I trajectories
 
-## 검증 방향
+## Verification Directions
 
-- [ ] CMB 파워 스펙트럼의 기울기(n_s)를 I의 수렴 속도로 번역
-- [ ] 슬로우롤 파라미터 ε, η와 모델의 dI/dt, d²I/dt² 정량 비교
-- [ ] 가설 124의 계단 함수 3단 캐스케이드를 수치 시뮬레이션
-- [ ] 텐서-스칼라 비 r의 관측값과 모델 예측 비교
+- [ ] Translate CMB power spectrum slope (n_s) into I convergence speed
+- [ ] Quantitative comparison of slow-roll parameters ε, η with model dI/dt, d²I/dt²
+- [ ] Numerical simulation of 3-step cascade of Hypothesis 124 step function
+- [ ] Compare observed tensor-to-scalar ratio r with model prediction
 
-## 상태: ⚠️ 정성적 대응 확인, 정량적 검증 필요
+## Status: ⚠️ Qualitative correspondence confirmed, quantitative verification needed
 
 ---
 
-*작성일: 2026-03-22*
-*관련 가설: 124(계단 함수), 149(우주 곡률), 154(시간의 화살)*
+*Written: 2026-03-22*
+*Related hypotheses: 124 (step function), 149 (universe curvature), 154 (arrow of time)*

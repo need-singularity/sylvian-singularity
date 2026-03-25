@@ -16,7 +16,7 @@ import json
 from pathlib import Path
 
 def experiment_h_ai_4_moe_activation():
-    """H-AI-4: MoE에서 최적 활성 expert 비율 = 1/3?"""
+    """H-AI-4: Is the optimal active expert ratio in MoE = 1/3?"""
     print("=" * 60)
     print("H-AI-4: MoE Activation Ratio = 1/3?")
     print("=" * 60)
@@ -61,7 +61,7 @@ def experiment_h_ai_4_moe_activation():
     return results
 
 def experiment_h_ai_7_information_bottleneck():
-    """H-AI-7: Information Bottleneck에서 최적 β = 1/e?"""
+    """H-AI-7: Is the optimal β in Information Bottleneck = 1/e?"""
     print("=" * 60)
     print("H-AI-7: IB Optimal Beta = 1/e?")
     print("=" * 60)

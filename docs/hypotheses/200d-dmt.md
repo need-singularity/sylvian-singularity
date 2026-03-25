@@ -1,104 +1,104 @@
-# 가설 200d: DMT = I→0 (완전 해방) — 강제 초월?
+# Hypothesis 200d: DMT = I→0 (Complete Liberation) — Forced Transcendence?
 
-**상태**: ⚠️ 유비
-**분류**: 약물 / 사이키델릭
+**Status**: ⚠️ Analogy
+**Category**: Drugs / Psychedelics
 
 ---
 
-## 가설
+## Hypothesis
 
-> DMT(디메틸트립타민)는 뇌의 억제를 거의 완전히 해체(I→0)하여, 골든존을 관통하고 "초월(4번째 상태)"에 강제 진입시키는가.
+> DMT (dimethyltryptamine) nearly completely dismantles the brain's inhibition (I→0), passing through the Golden Zone and forcing entry into "transcendence (4th state)".
 
-## 배경
-
-```
-  DMT = "영혼의 분자" (Spirit Molecule)
-
-  특이점:
-  - 뇌가 자체 생산 (내인성, 송과선?)
-  - 임사체험(NDE) 시 대량 분비 가능
-  - 5-HT2A 수용체 초강력 작용
-  - 효과 시간: 흡연 5~15분, 아야와스카 3~6시간
-  - "가장 강력한 사이키델릭"
-```
-
-## I 궤적 — 골든존 관통
+## Background
 
 ```
-  I (억제)
-  0.6│ ○ 정상
+  DMT = "Spirit Molecule"
+
+  Distinctive features:
+  - Brain self-produces it (endogenous, pineal gland?)
+  - May be released in large amounts during near-death experiences (NDE)
+  - Super-potent 5-HT2A receptor agonist
+  - Duration: smoked 5~15min, ayahuasca 3~6 hours
+  - "The most powerful psychedelic"
+```
+
+## I Trajectory — Passing Through the Golden Zone
+
+```
+  I (Inhibition)
+  0.6│ ○ Normal
      │  ╲
-  0.5│───╲── 골든존 상한 ──────────────────
+  0.5│───╲── Golden Zone upper bound ──────────────────
      │    ╲
-  0.4│     ╲ ← 골든존 통과 (수 초)
+  0.4│     ╲ ← passing through Golden Zone (seconds)
      │      ╲
   0.3│       ╲ 1/e
      │        ╲
-  0.2│─────────╲── 골든존 하한 ────────────
+  0.2│─────────╲── Golden Zone lower bound ────────────
      │          ╲
   0.1│           ╲
-     │            ● DMT 피크 (I≈0.05?)
-  0.0│─────────────── 완전 해방 ──────────
+     │            ● DMT peak (I≈0.05?)
+  0.0│─────────────── complete liberation ──────────
      └──┬────┬────┬────┬────┬────┬────
-      0분  1분  2분  5분  10분  15분  30분
+      0min 1min 2min 5min 10min 15min 30min
 
-  DMT의 특이성:
-  → 골든존을 "통과"하지만 "머물지 않는다"
-  → 골든존 아래(I<0.21)로 깊이 들어감
-  → I≈0 = 모든 억제 해제 = "전체 경험"?
+  DMT's uniqueness:
+  → "Passes through" the Golden Zone but "doesn't stay"
+  → Goes deep below the Golden Zone (I<0.21)
+  → I≈0 = all inhibition released = "total experience"?
 ```
 
-## 약물별 I 최저점 비교
+## Drug-by-Drug I Minimum Comparison
 
 ```
-  약물         │ I 최저점 │ 골든존 대비    │ 체감
-  ─────────────┼──────────┼───────────────┼──────────
-  카페인       │  ~0.45   │ 골든존 상단    │ 각성
-  니코틴       │  ~0.40   │ 골든존 근처    │ 집중
-  알코올       │  ~0.30   │ 골든존 중심    │ 이완
-  대마초       │  ~0.25   │ 골든존 하단    │ 몰입
-  실로시빈     │  ~0.15   │ 골든존 아래    │ 환각
-  LSD         │  ~0.10   │ 골든존 아래    │ 강한 환각
-  DMT         │  ~0.05   │ 거의 0        │ "돌파"
-  ─────────────┼──────────┼───────────────┼──────────
-  명상 (깊은)  │  ~0.33   │ 부동점 1/3    │ 초월
+  Drug         │ I minimum │ vs Golden Zone    │ Experience
+  ─────────────┼──────────┼───────────────────┼──────────
+  Caffeine     │  ~0.45   │ upper Golden Zone  │ alertness
+  Nicotine     │  ~0.40   │ near Golden Zone   │ focus
+  Alcohol      │  ~0.30   │ Golden Zone center │ relaxation
+  Cannabis     │  ~0.25   │ lower Golden Zone  │ immersion
+  Psilocybin   │  ~0.15   │ below Golden Zone  │ hallucination
+  LSD          │  ~0.10   │ below Golden Zone  │ intense hallucination
+  DMT          │  ~0.05   │ near 0             │ "breakthrough"
+  ─────────────┼──────────┼───────────────────┼──────────
+  Deep meditation│ ~0.33  │ fixed point 1/3   │ transcendence
 
-  I 축 위치:
-  DMT●  LSD● 실로●    대마●알코●니코● 카페●  정상○
-  ──┼────┼────┼──────┤░░░░░░░░░░░░├──────┼──────┼──
-  0.0  0.10  0.15  0.213      0.500   0.45  0.60
-                    └── 골든존 ──┘
+  I axis position:
+  DMT●  LSD● psilocybin●    cannabis●alcohol●nicotine● caffeine●  normal○
+  ──┼────┼────┼──────────┤░░░░░░░░░░░░├──────┼──────┼──
+  0.0  0.10  0.15  0.213              0.500   0.45  0.60
+                    └── Golden Zone ──┘
                          ↑
-                    명상=여기(1/3)
-                    DMT=여기를 지나쳐 0으로
+                    meditation=here (1/3)
+                    DMT=passes this and goes to 0
 ```
 
-## 4번째 상태와의 관계
+## Relationship with the 4th State
 
 ```
-  가설 045: 초월 = 규칙 자체를 바꾸는 상태 (E=-1.33)
+  Hypothesis 045: transcendence = state that changes the rules themselves (E=-1.33)
 
-  DMT 체험 보고:
-  - "시간과 공간이 사라짐" → 규칙(시공간) 해체
-  - "자아가 녹아내림" → 자기참조(T3a) 해체
-  - "모든 것이 하나" → 3상태 경계 소멸
-  - "존재의 근본을 봄" → 부동점 직접 체험?
+  DMT experience reports:
+  - "Time and space disappear" → dissolution of rules (spacetime)
+  - "Self melts" → self-reference (T3a) dissolution
+  - "Everything is one" → 3-state boundary disappears
+  - "Seeing the foundation of existence" → direct experience of fixed point?
 
-  우리 모델로 번역:
-  I → 0 이면:
-  G = D×P/I → ∞ (발산!)
-  → Genius Score 무한 = 의미 없음?
-  → 또는: I=0에서 G=D×P/I 공식 자체가 붕괴
-  → = "규칙이 붕괴하는 경험" = 초월?
+  Translated into our model:
+  If I → 0:
+  G = D×P/I → ∞ (diverges!)
+  → Genius Score infinite = meaningless?
+  → Or: at I=0 the G=D×P/I formula itself breaks down
+  → = "experience of rules breaking down" = transcendence?
 
-  하지만:
-  가설 045의 초월 = E=-1.33 (가장 안정, 비가역)
-  DMT 체험 = 15분 후 정상 복귀 (가역!)
-  → DMT ≠ 진짜 초월?
-  → DMT = "초월의 미리보기(preview)"?
+  However:
+  Transcendence in Hypothesis 045 = E=-1.33 (most stable, irreversible)
+  DMT experience = returns to normal after 15 min (reversible!)
+  → DMT ≠ true transcendence?
+  → DMT = "preview of transcendence"?
 ```
 
-## 보존법칙 관점
+## Conservation Law Perspective
 
 ```
   G × I = D × P
@@ -106,54 +106,54 @@
   DMT: I → 0
   → G × 0 = D × P
   → 0 = D × P ???
-  → 보존법칙 위반!
+  → Conservation law violated!
 
-  해석:
-  1. I=0에서 공식 자체가 성립하지 않음 (특이점)
-  2. 실제로는 I가 정확히 0이 아님 (I → ε > 0)
-  3. "보존법칙이 깨지는 경험" = DMT의 강렬함?
+  Interpretations:
+  1. Formula itself doesn't hold at I=0 (singularity)
+  2. I is not exactly 0 in reality (I → ε > 0)
+  3. "Experience of conservation law breaking" = the intensity of DMT?
 
-  물리 유비:
-  블랙홀 특이점: r → 0 에서 물리 법칙 붕괴
-  DMT 특이점:    I → 0 에서 모델 공식 붕괴
-  → DMT = "의식의 블랙홀"?
+  Physical analogy:
+  Black hole singularity: physics breaks down as r → 0
+  DMT singularity:        model formula breaks down as I → 0
+  → DMT = "consciousness's black hole"?
 ```
 
-## 내인성 DMT — 뇌가 스스로 만든다
+## Endogenous DMT — The Brain Makes It Itself
 
 ```
-  뇌에서 DMT 생합성:
-  트립토판 → 5-HTP → 세로토닌 → DMT (INMT 효소)
+  DMT biosynthesis in brain:
+  Tryptophan → 5-HTP → Serotonin → DMT (INMT enzyme)
 
-  분비 시점 (가설):
-  - 출생 시: 첫 의식 = I 초기화?
-  - 임사 시: 마지막 의식 = I 해제?
-  - 꿈(REM): I 변동 = 골든존 진동?
-  - 깊은 명상: 자연 DMT = 자연 초월?
+  Secretion timing (hypotheses):
+  - At birth: first consciousness = I initialization?
+  - Near death: final consciousness = I release?
+  - Dreams (REM): I fluctuation = Golden Zone oscillation?
+  - Deep meditation: endogenous DMT = natural transcendence?
 
-  엔도칸나비노이드(가설 200a):
-    뇌의 I 조절기 (골든존 유지)
-  내인성 DMT:
-    뇌의 I 해제 버튼 (골든존 관통)
+  Endocannabinoids (Hypothesis 200a):
+    brain's I regulator (maintains Golden Zone)
+  Endogenous DMT:
+    brain's I release button (passes through Golden Zone)
 
-  → 뇌에는 "골든존 유지 장치"와 "골든존 해제 장치"가
-     모두 내장되어 있다
+  → The brain has both "Golden Zone maintenance device"
+     and "Golden Zone release device" built in
 ```
 
-## 한계
+## Limitations
 
-1. DMT의 정확한 약리 메커니즘은 아직 완전히 이해되지 않음
-2. I→0 매핑은 극단적 단순화 (실제는 회로별 다름)
-3. DMT 체험 보고는 주관적이며 재현성이 낮음
-4. 내인성 DMT의 역할은 아직 가설 수준 (실측 데이터 부족)
-5. I=0에서 G=D×P/I 발산은 모델의 한계를 보여줌
+1. DMT's precise pharmacological mechanism is not yet fully understood
+2. I→0 mapping is extreme simplification (actually varies by circuit)
+3. DMT experience reports are subjective and have low reproducibility
+4. Role of endogenous DMT is still hypothetical (lack of direct measurement data)
+5. G=D×P/I divergence at I=0 shows the model's limitations
 
-## 검증 방향
+## Verification Direction
 
-- [ ] DMT 투여 중 fMRI + GABA 측정 → I 궤적 추적
-- [ ] 임사체험 환자의 뇌 활성 → DMT 분비와 I 상관
-- [ ] 명상 중 내인성 DMT 수준 측정 → I=1/3 도달 시점과 비교
+- [ ] fMRI + GABA measurement during DMT administration → track I trajectory
+- [ ] Brain activity of near-death experience patients → correlation with DMT secretion and I
+- [ ] Measure endogenous DMT levels during meditation → compare with I=1/3 arrival time
 
 ---
 
-*관련: 가설 045(초월), 134(블랙홀), 155(GABA=I), 198(사이키델릭), 200a(ECS)*
+*Related: Hypothesis 045 (transcendence), 134 (black hole), 155 (GABA=I), 198 (psychedelics), 200a (ECS)*

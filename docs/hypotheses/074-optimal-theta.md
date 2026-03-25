@@ -1,24 +1,23 @@
-# 가설 검토 074: 최적 θ ≠ π/3 ❌
+# Hypothesis Review 074: Optimal θ ≠ π/3 ❌
 
-## 가설
+## Hypothesis
 
-> 복소 메타 반복의 최적 나선 각도가 π/3(60°)인가. 직관적으로 정삼각형의 내각 π/3이 최적일 것 같다.
+> Is the optimal spiral angle for complex meta-iteration π/3 (60°)? Intuitively, it seems like the interior angle π/3 of an equilateral triangle would be optimal.
 
-## 배경
+## Background
 
-복소 확장에서 나선 각도 θ는 수렴 보너스의 크기를 결정한다.
-직관적으로 π/3(정삼각형), π/4(정사각형), π/6(정육각형) 같은
-"아름다운" 각도가 최적일 것이라 추측할 수 있다.
+In complex extension, the spiral angle θ determines the magnitude of convergence bonus.
+Intuitively, one might speculate that "beautiful" angles like π/3 (equilateral triangle), π/4 (square), π/6 (regular hexagon) would be optimal.
 
-그러나 **최적화의 결과는 미학적 추측과 일치하지 않는다.**
+However, **optimization results do not align with aesthetic speculation.**
 
-## 검증 결과: ❌ 최적 θ = 0.038π (π/3은 최적이 아님)
+## Verification Result: ❌ Optimal θ = 0.038π (π/3 is not optimal)
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│  θ vs 순 이득(net benefit) 곡선                       │
+│  θ vs net benefit curve                              │
 │                                                      │
-│  이득 │    ★ 최적점                                   │
+│  gain │    ★ optimal point                           │
 │  0.10 ┤   /\   0.038π ≈ 6.8°                         │
 │       │  / \                                         │
 │  0.08 ┤ /   \                                        │
@@ -31,7 +30,7 @@
 │       │            \_____●______                     │
 │  0.00 ┤─────────────────────────\──────────→ θ      │
 │       │                     π/2  ●                   │
-│ -0.02 ┤                          \  손실 영역        │
+│ -0.02 ┤                          \  loss region      │
 │       └──┬──────┬──────┬──────┬──┬──                 │
 │        0.0   0.038π  π/6    π/3  π/2                 │
 │             (6.8°) (30°)  (60°) (90°)                │
@@ -39,54 +38,54 @@
 ```
 
 ```
-  각도별 성능 비교:
+  Performance comparison by angle:
   ──────────────────────────────────────────────────────
-  θ             각도     보너스    비용(발산)  순이득
+  θ             angle    bonus     cost(divergence)  net gain
   ──────────────────────────────────────────────────────
   0             0°       0.000     0.000      0.000
   0.01π         1.8°     0.005     0.001      +0.004
   0.02π         3.6°     0.010     0.003      +0.007
-  ★ 0.038π     6.8°     0.019     0.006      +0.013  ← 최대
+  ★ 0.038π     6.8°     0.019     0.006      +0.013  ← maximum
   0.05π         9.0°     0.025     0.011      +0.014
   0.1π          18°      0.049     0.040      +0.009
   π/6           30°      0.083     0.072      +0.011
   π/4           45°      0.118     0.110      +0.008
-  π/3           60°      0.144     0.155      -0.011  ← 손실!
-  π/2           90°      0.167     0.220      -0.053  ← 큰 손실
+  π/3           60°      0.144     0.155      -0.011  ← loss!
+  π/2           90°      0.167     0.220      -0.053  ← large loss
   ──────────────────────────────────────────────────────
 
-  핵심: 보너스는 |sin(θ)|로 증가하지만, 비용(진동/발산)은
-        θ²에 비례하여 더 빠르게 증가한다.
-        → 최적점은 매우 작은 각도에서 발생.
+  Key: Bonus increases with |sin(θ)|, but cost (oscillation/divergence)
+       increases faster proportional to θ².
+       → Optimal point occurs at very small angle.
 ```
 
 ```
-  왜 0.038π인가?
+  Why 0.038π?
   ──────────────────────────────────────────────────────
-  최적 조건: d(보너스)/dθ = d(비용)/dθ
+  Optimal condition: d(bonus)/dθ = d(cost)/dθ
 
-  보너스 ∝ sin(θ)  →  d/dθ = cos(θ)
-  비용   ∝ θ²      →  d/dθ = 2θ
+  bonus ∝ sin(θ)  →  d/dθ = cos(θ)
+  cost  ∝ θ²      →  d/dθ = 2θ
 
   cos(θ*) = 2θ*
-  → θ* ≈ 0.038π  (수치해)
+  → θ* ≈ 0.038π  (numerical solution)
 
-  의미: 실수 축에서 아주 살짝 벗어나는 것이 최적.
-        과도한 이탈(π/3, π/2)은 오히려 역효과.
+  Meaning: Optimal is just slightly off the real axis.
+          Excessive deviation (π/3, π/2) is counterproductive.
 ```
 
-## 해석
+## Interpretation
 
-"아름다운 각도"가 최적이라는 것은 인간의 편향이다.
-실제 최적은 실수 축에서 아주 미세하게(6.8°) 벗어난 지점이다.
+The idea that "beautiful angles" are optimal is human bias.
+The actual optimum is at a very slight deviation (6.8°) from the real axis.
 
-이것은 물리학에서의 교훈과 같다:
-- 섭동론(perturbation theory)에서 최적 섭동은 항상 작다
-- 작은 허수 부분이 큰 실수 효과를 만든다
+This is like lessons from physics:
+- In perturbation theory, optimal perturbations are always small
+- Small imaginary parts create large real effects
 
-**가설 095의 교훈이 여기서도 적용된다: "추측하지 말고 유도하라."**
+**The lesson from hypothesis 095 applies here too: "Don't speculate, derive."**
 
 ---
 
-*검증: verify_next_batch.py*
-*모델: 복소 확장 z = I·e^(iθ), 최적화 dG/dθ = 0 풀이*
+*Verification: verify_next_batch.py*
+*Model: Complex extension z = I·e^(iθ), optimization solving dG/dθ = 0*

@@ -1,49 +1,49 @@
-# H-CX-16: 억제 = 노이즈 캔슬링 = 정보 병목 (교차 도메인)
+# H-CX-16: Inhibition = Noise Cancelling = Information Bottleneck (Cross-domain)
 
-> **MoE의 Expert 억제, 뇌의 GABA 억제, 정보 병목(IB)의 압축이 모두 "노이즈 캔슬링"이다. tension_scale 자동조절(H284)이 이 메커니즘의 의식엔진 버전이다.**
+> **MoE Expert inhibition, brain GABA inhibition, and Information Bottleneck (IB) compression are all "noise cancelling". The tension_scale auto-adjustment (H284) is the consciousness engine version of this mechanism.**
 
-## 대응
+## Correspondence
 
 ```
-  메커니즘           노이즈 소스       캔슬링 방법       결과
+  Mechanism          Noise Source       Cancelling Method    Result
   ──────────────   ──────────────   ──────────────   ──────────
-  MoE Expert       비활성 Expert     Router 선택       PPL↓
-  뇌 GABA          과잉 발화 뉴런    억제 시냅스        집중
-  IB 압축           입력 노이즈       정보 병목          일반화
-  tension_scale    불필요한 장력      scale→0           성능 유지
-  분열 이상탐지     정상 변동         간 장력 차분       AUROC↑
+  MoE Expert       Inactive Expert    Router selection     PPL↓
+  Brain GABA       Overactive neurons Inhibitory synapse   Focus
+  IB compression   Input noise        Information bottleneck Generalization
+  tension_scale    Unnecessary tension scale→0             Performance maintained
+  Mitosis anomaly  Normal variation   Inter-tension diff   AUROC↑
 ```
 
-## 핵심 통찰
+## Core Insight
 
 ```
-  "억제의 보편성":
-    모든 지능 시스템에서 억제(inhibition)가 핵심
-    → 활성화보다 억제가 더 중요
+  "Universality of inhibition":
+    In all intelligent systems, inhibition (inhibition) is central
+    → Inhibition is more important than activation
 
-  수학적 표현:
-    Dense: y = Σ w_i × x_i     (모든 뉴런)
+  Mathematical expression:
+    Dense: y = Σ w_i × x_i     (all neurons)
     MoE:   y = Σ g_i × w_i × x_i  (g_i ∈ {0,1})
-    → g_i = 0인 뉴런 = "억제된" 뉴런
-    → 억제 비율 = 1 - Σg_i/n
+    → g_i = 0 neuron = "inhibited" neuron
+    → Inhibition ratio = 1 - Σg_i/n
 
-  골든존과 연결:
-    최적 억제 비율 I = 1/e ≈ 37%
-    → 37%의 뉴런을 끄는 것이 최적
+  Connection to Golden Zone:
+    Optimal inhibition ratio I = 1/e ≈ 37%
+    → Turning off 37% of neurons is optimal
     → Dropout(p=0.37)?
-    → Expert 억제 3/8 = 37.5% ≈ 1/e!
+    → Expert inhibition 3/8 = 37.5% ≈ 1/e!
 ```
 
-## 실험: Dropout 비율 스위프
+## Experiment: Dropout Rate Sweep
 
 ```
   MLP on MNIST:
     dropout = {0, 0.1, 0.2, 0.3, 0.37, 0.5, 0.7, 0.9}
-    → 최적 dropout이 1/e ≈ 0.37인가?
+    → Is optimal dropout 1/e ≈ 0.37?
 
   RepulsionFieldEngine:
-    dropout 변화 → 장력 + 정확도 추적
-    → dropout = 1/e에서 장력-정확도 최적?
+    dropout change → track tension + accuracy
+    → Is tension-accuracy optimal at dropout = 1/e?
 ```
 
-## 상태: 🟨 (구조적 대응, dropout 스위프 미실시)
+## Status: 🟨 (Structural correspondence, dropout sweep not conducted)

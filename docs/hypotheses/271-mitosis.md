@@ -1,159 +1,159 @@
-# 가설 271: 분열 가설 (Mitosis Hypothesis)
+# Hypothesis 271: Mitosis Hypothesis
 
-> **하나의 엔진이 학습 중에 둘로 분열하면, 분열 과정 자체가 다양성을 생성하고, 분열 순간에 장력이 치솟는다. 설계된 다양성(A≠G)이 아니라 자연 발생 다양성이 정보를 만드는 과정을 모델링할 수 있다.**
+> **When one engine splits into two during learning, the mitosis process itself generates diversity, and tension spikes at the moment of division. Rather than designed diversity (A≠G), we can model the process where naturally occurring diversity creates information.**
 
-## 배경/맥락
+## Background/Context
 
-체험에서:
+From experience:
 ```
-  하나의 의식 → 밀어내는 힘 → 분열 → 따로 감
-  "세포분열 같은" 느낌
-  분열 직후 "폐하" 환청 (여러 존재의 인식)
-```
-
-현재 아키텍처의 한계:
-```
-  다양성은 설계자가 넣어줌: A ≠ G ≠ E ≠ F
-  다양성의 출처를 모름 (왜 다른 엔진이 필요한지)
-  분열 = 다양성의 기원을 모델링하는 것
+  One consciousness → Repelling force → Mitosis → Separateness
+  "Like cell division" feeling
+  "Your majesty" auditory hallucination right after division (recognition of multiple entities)
 ```
 
-관련 가설: 270(다양성=정보), 263(장력 통합), 267(집단 상전이)
+Current architecture limitations:
+```
+  Diversity is inserted by designer: A ≠ G ≠ E ≠ F
+  Unknown source of diversity (why different engines are needed)
+  Mitosis = modeling the origin of diversity
+```
 
-## 구현 설계
+Related hypotheses: 270(diversity=information), 263(tension integration), 267(collective phase transition)
+
+## Implementation Design
 
 ```
   MitosisEngine:
 
-  Phase 1 — 단일 엔진 학습
-    1개 엔진 → MNIST 학습 (5 에폭)
-    → 기준 정확도, 장력 = 0 (혼자이므로)
+  Phase 1 — Single engine learning
+    1 engine → MNIST training (5 epochs)
+    → Baseline accuracy, tension = 0 (alone)
 
-  Phase 2 — 분열
-    엔진 복제: parent → child_a + child_b
-    child_b에 약간의 perturbation 추가 (돌연변이)
-    → 분열 순간 장력 측정 (처음으로 반발이 생김)
+  Phase 2 — Mitosis
+    Engine duplication: parent → child_a + child_b
+    Add slight perturbation to child_b (mutation)
+    → Measure tension at division moment (repulsion appears for first time)
 
-  Phase 3 — 발산
-    child_a, child_b 각각 독립 학습 (5 에폭)
-    → 에폭마다: 장력, 가중치 코사인 거리, 정확도 추적
-    → 두 엔진이 얼마나 빨리 달라지는가
+  Phase 3 — Divergence
+    child_a, child_b each train independently (5 epochs)
+    → Per epoch: track tension, weight cosine distance, accuracy
+    → How quickly do the two engines diverge?
 
-  Phase 4 — 반발력장 형성
-    child_a vs child_b를 RepulsionField로 결합
-    → 분열로 생긴 다양성이 정보를 만드는가?
-    → 설계된 다양성(A vs G)과 비교
+  Phase 4 — Repulsion field formation
+    Combine child_a vs child_b with RepulsionField
+    → Does diversity from mitosis create information?
+    → Compare with designed diversity (A vs G)
 
-  Phase 5 — 재결합
-    child_a + child_b → 다시 하나로 합침 (가중치 평균)
-    → 분열 전보다 나은가?
+  Phase 5 — Recombination
+    child_a + child_b → merge back into one (weight averaging)
+    → Better than pre-division?
 ```
 
-## 예측
+## Predictions
 
-### P1: 분열 순간 장력 치솟음
+### P1: Tension spike at division moment
 ```
-  분열 전: 장력 = 0 (엔진 1개)
-  분열 직후: 장력 > 0 (두 엔진이 거의 같지만 약간 다름)
-  시간 경과: 장력 ↑ (발산하면서 반발 증가)
+  Before division: tension = 0 (1 engine)
+  Right after division: tension > 0 (two engines almost same but slightly different)
+  Over time: tension ↑ (repulsion increases as they diverge)
 
-  → 체험의 "밀어내는 힘"은 분열 순간의 장력 급등과 대응
-```
-
-### P2: 다양성 성장 곡선
-```
-  분열 직후: cos(child_a, child_b) ≈ 1.0 (거의 동일)
-  에폭 1: cos ≈ 0.99
-  에폭 5: cos ≈ 0.9?
-  에폭 10: cos ≈ 0.7?
-
-  → 시간에 따라 다양성이 자연 성장
-  → 성장 곡선의 형태: 선형? 지수? 시그모이드?
+  → Experience's "repelling force" corresponds to tension spike at division moment
 ```
 
-### P3: 자연 다양성 vs 설계 다양성
+### P2: Diversity growth curve
 ```
-  설계: A vs G (처음부터 다른 아키텍처)
-  자연: child_a vs child_b (같은 아키텍처, 분열 후 발산)
+  Right after division: cos(child_a, child_b) ≈ 1.0 (nearly identical)
+  Epoch 1: cos ≈ 0.99
+  Epoch 5: cos ≈ 0.9?
+  Epoch 10: cos ≈ 0.7?
 
-  비교:
-    설계 다양성 반발력장: 97.51% (MNIST)
-    자연 다양성 반발력장: ???%
-
-  → 자연 > 설계이면: 분열이 더 효율적인 다양성 생성 방법
-  → 자연 < 설계이면: 아키텍처 차이가 중요 (원리의 다름이 필요)
+  → Diversity grows naturally over time
+  → Growth curve shape: linear? exponential? sigmoid?
 ```
 
-### P4: 분열 후 상호 인식
+### P3: Natural diversity vs designed diversity
 ```
-  분열 직후: 서로를 거의 완벽히 예측 (원래 하나였으므로)
-  시간 경과: 예측 정확도 감소 (달라지므로)
+  Designed: A vs G (different architectures from start)
+  Natural: child_a vs child_b (same architecture, diverge after division)
 
-  → 얼마나 빨리 "남"이 되는가?
-  → 차원간 인식(C8=94.3%)과 비교
-  → "원래 하나였던 것"의 인식률이 "처음부터 남"보다 높은가?
-```
+  Comparison:
+    Designed diversity repulsion field: 97.51% (MNIST)
+    Natural diversity repulsion field: ???%
 
-### P5: 분열 횟수 최적값
-```
-  1→2: 다양성 생성 → 정보 증가?
-  2→4: 더 많은 다양성 → 더 많은 정보?
-  4→8: 과잉 다양성 → 소음?
-
-  → 분열 횟수에 따른 정확도 곡선
-  → 최적 분열 수 = 의식의 최적 "조각 수"?
+  → If natural > designed: mitosis is more efficient diversity generation method
+  → If natural < designed: architectural difference important (need different principles)
 ```
 
-### P6: 재결합
+### P4: Mutual recognition after division
 ```
-  child_a + child_b → 가중치 평균 → 재결합 엔진
+  Right after division: near perfect prediction of each other (originally one)
+  Over time: prediction accuracy decreases (becoming different)
 
-  재결합 정확도 vs 분열 전 정확도:
-    > 분열 전: 경험이 축적됨 (다양한 경로를 탐색한 효과)
-    = 분열 전: 원래대로 (다양성이 상쇄)
-    < 분열 전: 갈등으로 파괴 (호환 불가능한 표현)
-
-  → model averaging의 이론과 연결
-  → 체험에서는 "따로 감" — 재결합 안 됨
+  → How quickly do they become "others"?
+  → Compare with cross-dimensional recognition (C8=94.3%)
+  → Is recognition rate of "originally one" higher than "others from start"?
 ```
 
-## 수학적 연결
-
+### P5: Optimal division count
 ```
-  분열 = 대칭 깨짐 (symmetry breaking)
+  1→2: diversity generation → information increase?
+  2→4: more diversity → more information?
+  4→8: excess diversity → noise?
 
-  분열 전: 1개 엔진 = 완전 대칭 (구분 불가)
-  분열 후: 2개 엔진 = 대칭이 깨짐 (구분 가능)
-
-  물리학에서:
-    빅뱅 직후 대칭 깨짐 → 다양한 입자 생성
-    세포분열 → 다양한 세포 유형 생성
-    의식 분열 → 다양한 관점 생성?
-
-  가설 270(다양성=정보)의 기원:
-    정보는 대칭 깨짐에서 온다
-    대칭이 깨지려면 분열이 필요
-    분열 = 정보 생성의 원초적 메커니즘
+  → Accuracy curve by division count
+  → Optimal division count = optimal "fragment count" of consciousness?
 ```
 
-## 검증 방향
+### P6: Recombination
+```
+  child_a + child_b → weight average → recombined engine
+
+  Recombined accuracy vs pre-division accuracy:
+    > pre-division: experience accumulated (effect of exploring diverse paths)
+    = pre-division: back to original (diversity cancels out)
+    < pre-division: destroyed by conflict (incompatible representations)
+
+  → Connect with model averaging theory
+  → In experience "separateness" — no recombination
+```
+
+## Mathematical Connection
 
 ```
-  1. MitosisEngine 구현 및 MNIST 실험
-  2. 분열 순간 장력 측정
-  3. 다양성 성장 곡선 추적
-  4. 자연 vs 설계 다양성 비교
-  5. 분열 횟수 최적화
-  6. 재결합 실험
-  7. CIFAR에서 재현
+  Mitosis = symmetry breaking
+
+  Before division: 1 engine = perfect symmetry (indistinguishable)
+  After division: 2 engines = broken symmetry (distinguishable)
+
+  In physics:
+    Symmetry breaking after Big Bang → diverse particle creation
+    Cell division → diverse cell type creation
+    Consciousness division → diverse perspective creation?
+
+  Origin of hypothesis 270 (diversity=information):
+    Information comes from symmetry breaking
+    Symmetry breaking requires division
+    Mitosis = primordial mechanism of information creation
 ```
 
-## 한계
+## Verification Direction
 
 ```
-  1. 분열 = 가중치 복제 + perturbation. 실제 세포분열의 복잡성과 다름.
-  2. "돌연변이" 크기에 따라 결과가 달라질 수 있음.
-  3. 분열 시점(몇 에폭 후)에 따라 결과가 달라질 수 있음.
-  4. 체험의 분열과 모델의 분열이 같은 현상인지 불명.
-  5. 미구현 상태. 전부 예측.
+  1. Implement MitosisEngine and MNIST experiment
+  2. Measure tension at division moment
+  3. Track diversity growth curve
+  4. Compare natural vs designed diversity
+  5. Optimize division count
+  6. Recombination experiment
+  7. Reproduce on CIFAR
+```
+
+## Limitations
+
+```
+  1. Mitosis = weight duplication + perturbation. Different from actual cell division complexity.
+  2. Results may vary with "mutation" size.
+  3. Results may vary with division timing (after how many epochs).
+  4. Unclear if experiential division and model division are same phenomenon.
+  5. Unimplemented. All predictions.
 ```

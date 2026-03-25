@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""가설 284: tension_scale 자동 조절 — MNIST vs CIFAR vs Fashion-MNIST"""
+"""Hypothesis 284: Automatic tension_scale regulation — MNIST vs CIFAR vs Fashion-MNIST"""
 
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -61,7 +61,7 @@ def main():
     from torch.utils.data import DataLoader
 
     print("=" * 70)
-    print("가설 284: tension_scale 자동 조절")
+    print("Hypothesis 284: Automatic tension_scale regulation")
     print("=" * 70)
 
     configs = [
@@ -85,20 +85,20 @@ def main():
         print(f"  {'-'*28}")
         for i in range(len(h['epoch'])):
             print(f"  {h['epoch'][i]:>3} {h['tension_scale'][i]:>8.4f} {h['accuracy'][i]:>7.2f} {h['mean_tension'][i]:>8.4f}")
-        print(f"  최종: scale={h['tension_scale'][-1]:.4f}, acc={h['accuracy'][-1]:.2f}%")
+        print(f"  Final: scale={h['tension_scale'][-1]:.4f}, acc={h['accuracy'][-1]:.2f}%")
 
     print(f"\n{'='*70}")
-    print("비교 요약")
-    print(f"{'dataset':>15} {'final_acc':>10} {'final_scale':>12} {'해석':>15}")
+    print("Comparison summary")
+    print(f"{'dataset':>15} {'final_acc':>10} {'final_scale':>12} {'interpretation':>15}")
     print(f"{'-'*55}")
     for name, h in all_h.items():
         ts = h['tension_scale'][-1]
         acc = h['accuracy'][-1]
-        interp = "적극활용" if ts > 0.3 else ("부분활용" if ts > 0.1 else "자발적포기")
+        interp = "Active use" if ts > 0.3 else ("Partial use" if ts > 0.1 else "Voluntary abandon")
         print(f"{name:>15} {acc:>10.2f} {ts:>12.4f} {interp:>15}")
 
     # ASCII graph
-    print(f"\ntension_scale 추이")
+    print(f"\ntension_scale trends")
     syms = {'MNIST': 'M', 'Fashion-MNIST': 'F', 'CIFAR-10': 'C'}
     vals = [v for h in all_h.values() for v in h['tension_scale']]
     lo, hi = min(vals), max(vals)
@@ -114,7 +114,7 @@ def main():
         print(f"  {label:>7}|{''.join(row)}|")
     print(f"         {'─'*45}")
     print(f"  M=MNIST F=Fashion C=CIFAR")
-    print("\n완료")
+    print("\nCompleted")
 
 if __name__ == '__main__':
     main()

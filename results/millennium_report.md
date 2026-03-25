@@ -1,5 +1,5 @@
-# 7대 난제 시뮬레이션 결과 [2026-03-22 07:04:21]
+# 7 Millennium Problems Simulation Results [2026-03-22 07:04:21]
 
-상세 결과는 터미널 출력 참조.
+See terminal output for detailed results.
 
 ---

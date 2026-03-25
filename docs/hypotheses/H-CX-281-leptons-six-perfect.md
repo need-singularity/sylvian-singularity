@@ -1,3 +1,3 @@
-# H-CX-281: ⭐⭐⭐🟩 렙톤 6종 = P₁ = 완전수!
+# H-CX-281: ⭐⭐⭐🟩 6 Types of Leptons = P₁ = Perfect Number!
 
-> e,μ,τ,νe,νμ,ντ = 6 leptons = P₁. 쿼크와 독립적으로 동일.
+> e,μ,τ,νe,νμ,ντ = 6 leptons = P₁. Same as quarks, independently.

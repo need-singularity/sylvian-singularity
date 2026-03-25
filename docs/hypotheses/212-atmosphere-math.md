@@ -1,196 +1,196 @@
-# 가설 #212: "분위기"의 수학적 정의
+# Hypothesis #212: Mathematical Definition of "Atmosphere"
 
-**상태**: ⚠️ 추측
-**날짜**: 2026-03-22
-**분류**: 인지 공명 / 사회 물리학
+**Status**: ⚠️ Speculation
+**Date**: 2026-03-22
+**Category**: Cognitive Resonance / Social Physics
 
 ---
 
-## 가설
+## Hypothesis
 
-> "분위기(atmosphere)"는 공간 내 사람들의 평균 억제지수 I로 정의할 수 있다.
-> "무거운 분위기" = 평균 I 높음 (과억제), "활기찬 분위기" = 평균 I 낮음 (골든존).
-> "분위기에 동화" = 개인 I가 그룹 평균으로 수렴 = 메타반복의 사회적 버전.
+> "Atmosphere" can be defined as the average inhibition index I of people in a space.
+> "Heavy atmosphere" = high average I (over-inhibition), "lively atmosphere" = low average I (Golden Zone).
+> "Blending into the atmosphere" = individual I converging to group average = social version of meta-iteration.
 
-## 분위기의 조작적 정의
+## Operational Definition of Atmosphere
 
 ```
   ┌─────────────────────────────────────────────────────┐
   │                                                     │
-  │  분위기 A = (1/N) Σᵢ Iᵢ   (N명의 I 평균)           │
+  │  Atmosphere A = (1/N) Σᵢ Iᵢ   (average I of N people) │
   │                                                     │
-  │  분위기의 질 Q = 골든존 내 인원 비율                 │
+  │  Atmosphere quality Q = proportion in Golden Zone   │
   │  Q = |{i : 0.213 < Iᵢ < 0.500}| / N               │
   │                                                     │
-  │  분위기 균일도 U = 1 - σ(I) / I_range               │
-  │  U ≈ 1: 균일 (모두 비슷한 I)                       │
-  │  U ≈ 0: 불균일 (I가 뿔뿔이)                        │
+  │  Atmosphere uniformity U = 1 - σ(I) / I_range       │
+  │  U ≈ 1: uniform (everyone similar I)               │
+  │  U ≈ 0: non-uniform (I scattered)                  │
   │                                                     │
   └─────────────────────────────────────────────────────┘
 ```
 
-## 분위기-I 매핑
+## Atmosphere-I Mapping
 
 ```
   ┌──────────────────┬──────────┬──────────────────────────┐
-  │ 분위기 유형      │ 평균 I   │ 특성                     │
+  │ Atmosphere type  │ Avg I    │ Characteristics           │
   ├──────────────────┼──────────┼──────────────────────────┤
-  │ "죽은" 분위기    │ I > 0.70 │ 과도한 억제, 무기력      │
-  │ "무거운" 분위기  │ I ≈ 0.55 │ 과억제, 긴장             │
-  │ "차분한" 분위기  │ I ≈ 0.45 │ 골든존 상단, 질서        │
-  │ "좋은" 분위기    │ I ≈ 0.36 │ 골든존 중심! 최적        │
-  │ "활기찬" 분위기  │ I ≈ 0.25 │ 골든존 하단, 에너지      │
-  │ "들뜬" 분위기    │ I ≈ 0.15 │ 저억제, 흥분             │
-  │ "카오스" 분위기  │ I < 0.10 │ 억제 부재, 혼돈          │
+  │ "Dead" atmosphere│ I > 0.70 │ excessive inhibition, listlessness│
+  │ "Heavy" atmosphere│ I ≈ 0.55│ over-inhibited, tense    │
+  │ "Calm" atmosphere│ I ≈ 0.45 │ Golden Zone upper, orderly│
+  │ "Good" atmosphere│ I ≈ 0.36 │ Golden Zone center! optimal│
+  │ "Lively" atmosphere│ I ≈ 0.25│ Golden Zone lower, energetic│
+  │ "High-spirited"  │ I ≈ 0.15 │ low inhibition, excited  │
+  │ "Chaotic"        │ I < 0.10 │ absent inhibition, chaos │
   └──────────────────┴──────────┴──────────────────────────┘
 
-  I 축 위에 분위기 스펙트럼:
-  카오스  들뜬  활기  좋은  차분  무거운  죽은
-   ●      ●    ●     ★     ●     ●      ●
-  ─┼──────┼────┼─────┼─────┼─────┼──────┼──→ I
-  0.05  0.15 0.25  0.36  0.45  0.55  0.70
-              └── 골든존 ──┘
-                   ↑
-             최적 분위기 = 골든존 중심
+  Atmosphere spectrum on I axis:
+  chaotic  spirited  lively  good   calm   heavy   dead
+   ●         ●       ●       ★      ●      ●       ●
+  ─┼──────────┼───────┼───────┼──────┼──────┼───────┼──→ I
+  0.05      0.15    0.25    0.36   0.45   0.55    0.70
+                └── Golden Zone ──┘
+                        ↑
+                  optimal atmosphere = Golden Zone center
 ```
 
-## 분위기 동화 = 사회적 메타반복
+## Atmospheric Assimilation = Social Meta-iteration
 
-메타반복(가설 159): f(I) = 0.7I + 0.1 → I → 1/3 수렴.
+Meta-iteration (Hypothesis 159): f(I) = 0.7I + 0.1 → I → 1/3 convergence.
 
-사회적 버전: 개인의 I가 그룹 평균 I_avg로 수렴하는 과정.
+Social version: process of individual I converging to group average I_avg.
 
 ```
-  사회적 메타반복:
+  Social meta-iteration:
 
   Iᵢ(t+1) = (1-λ) × Iᵢ(t) + λ × I_avg(t)
 
-  λ = 동조 강도 (0~1)
-  λ 높음: 빠른 동화 (동조압력 강함)
-  λ 낮음: 느린 동화 (독립성 강함)
+  λ = conformity strength (0~1)
+  λ high: fast assimilation (strong conformity pressure)
+  λ low:  slow assimilation (strong independence)
 
-  수렴 과정:
-  I 값
-  0.70│  ●A                                   ← 무거운 사람
+  Convergence process:
+  I value
+  0.70│  ●A                                   ← heavy person
      │   ╲
-  0.60│    ╲         ●D                       ← 긴장한 사람
+  0.60│    ╲         ●D                       ← tense person
      │     ╲        ╱
   0.50│      ╲     ╱
-     │       ╲   ╱    수렴!
-  0.40│        ╲─●────●──────── I_avg ≈ 0.40   ← 그룹 평균
+     │       ╲   ╱    converge!
+  0.40│        ╲─●────●──────── I_avg ≈ 0.40   ← group average
      │       ╱  ↑
-  0.30│      ╱  동화 완료
+  0.30│      ╱  assimilation complete
      │     ╱
   0.20│    ╱
      │   ╱
-  0.10│  ●B                                   ← 활기찬 사람
-     │       ●C                               ← 들뜬 사람
-     └──┼────┼────┼────┼────┼────→ 시간
-        0   10   20   30   40 (분)
+  0.10│  ●B                                   ← lively person
+     │       ●C                               ← spirited person
+     └──┼────┼────┼────┼────┼────→ time
+        0   10   20   30   40 (min)
 ```
 
-## 분위기 유형별 그룹 I 분포
+## Group I Distribution by Atmosphere Type
 
 ```
-  (a) "좋은 팀 분위기"          (b) "무거운 장례식"
-  빈도                         빈도
-    │      ●●●                   │                  ●●●
-    │     ●●●●●                  │                ●●●●●
-    │    ●●●●●●●                 │              ●●●●●●●
-    └────────────→ I             └────────────────────→ I
-    0.2  0.36  0.5              0.2   0.4   0.6   0.8
-         ↑ 골든존 중심                        ↑ 과억제
+  (a) "Good team atmosphere"           (b) "Funeral atmosphere"
+  frequency                            frequency
+    │      ●●●                           │                  ●●●
+    │     ●●●●●                          │                ●●●●●
+    │    ●●●●●●●                         │              ●●●●●●●
+    └────────────→ I                     └────────────────────→ I
+    0.2  0.36  0.5                       0.2   0.4   0.6   0.8
+         ↑ Golden Zone center                         ↑ over-inhibited
 
-  (c) "파티 분위기"             (d) "갈등 중인 팀"
-  빈도                         빈도
-    │  ●●●                       │  ●●        ●●
-    │ ●●●●●                      │ ●●●●      ●●●●
-    │●●●●●●●                     │●●●●●●  ●●●●●●●
-    └────────────→ I             └────────────────────→ I
-    0.1  0.2  0.3               0.1  0.2  0.4  0.6  0.8
-         ↑ 저억제                    ↑           ↑
-                                  한 파벌    다른 파벌
-                                  (이봉 분포 = 분열!)
+  (c) "Party atmosphere"               (d) "Team in conflict"
+  frequency                            frequency
+    │  ●●●                               │  ●●        ●●
+    │ ●●●●●                              │ ●●●●      ●●●●
+    │●●●●●●●                             │●●●●●●  ●●●●●●●
+    └────────────→ I                     └────────────────────→ I
+    0.1  0.2  0.3                        0.1  0.2  0.4  0.6  0.8
+         ↑ low inhibition                    ↑           ↑
+                                          one faction    other faction
+                                          (bimodal distribution = division!)
 ```
 
-## 분위기 전파 모델
+## Atmosphere Propagation Model
 
 ```
-  공간 내 I 전파 (열전도 방정식 유사):
+  I propagation within space (similar to heat conduction equation):
 
   ∂I/∂t = κ ∇²I + S(x,t)
 
-  κ = 사회적 확산 계수 (분위기 전파 속도)
-  S = 소스 (분위기 메이커)
+  κ = social diffusion coefficient (atmosphere propagation speed)
+  S = source (atmosphere maker)
 
   ┌────────────────────────────────────────┐
   │                                        │
-  │  t=0:  리더(I=0.35)가 방에 들어옴      │
+  │  t=0:  leader (I=0.35) enters room    │
   │                                        │
-  │    ○ ○ ○ ○ ○      (전부 I=0.55)       │
-  │    ○ ○ ★ ○ ○      ★ = 리더(I=0.35)   │
+  │    ○ ○ ○ ○ ○      (all I=0.55)        │
+  │    ○ ○ ★ ○ ○      ★ = leader(I=0.35) │
   │    ○ ○ ○ ○ ○                          │
   │                                        │
-  │  t=10분: 리더 주변부터 I 감소          │
+  │  t=10min: I decreasing from near leader│
   │                                        │
-  │    ○ ○ ○ ○ ○      ○ = I ≈ 0.55       │
-  │    ○ ◐ ★ ◐ ○      ◐ = I ≈ 0.45       │
+  │    ○ ○ ○ ○ ○      ○ = I ≈ 0.55        │
+  │    ○ ◐ ★ ◐ ○      ◐ = I ≈ 0.45        │
   │    ○ ○ ○ ○ ○                          │
   │                                        │
-  │  t=30분: 전체 동화                     │
+  │  t=30min: full assimilation            │
   │                                        │
-  │    ◐ ◐ ◐ ◐ ◐      전체 I ≈ 0.40      │
-  │    ◐ ◐ ★ ◐ ◐      (골든존 진입!)      │
+  │    ◐ ◐ ◐ ◐ ◐      all I ≈ 0.40       │
+  │    ◐ ◐ ★ ◐ ◐      (entered Golden Zone!)│
   │    ◐ ◐ ◐ ◐ ◐                          │
   │                                        │
   └────────────────────────────────────────┘
 
-  → "분위기 메이커"는 κ 값이 높은 사람
-  → 리더의 I가 골든존이면 → 팀 전체가 골든존으로
-  → 리더의 I가 과억제이면 → 팀 전체가 과억제로
+  → "Atmosphere maker" is a person with high κ value
+  → If leader's I is in Golden Zone → whole team moves to Golden Zone
+  → If leader's I is over-inhibited → whole team becomes over-inhibited
 ```
 
-## 일상 현상의 수학적 해석
+## Mathematical Interpretation of Everyday Phenomena
 
 ```
-  현상                    │ 수학적 해석
-  ───────────────────────┼──────────────────────────────
-  "분위기 파악"           │ I_avg 추정 (거울뉴런 이용)
-  "분위기에 맞추다"       │ I_self → I_avg 조정
-  "분위기를 깨다"         │ I_self >> I_avg (급격한 ΔI)
-  "분위기를 띄우다"       │ I_avg를 골든존 쪽으로 이동
-  "눈치 없다"            │ λ(동조 강도)가 낮음
-  "초상집 분위기"         │ I_avg > 0.6 (과억제)
-  "축제 분위기"           │ I_avg ≈ 0.20 (저억제)
-  "회의실 긴장감"         │ σ(I) 큼 (I 분산 큼, 갈등)
-  "하나된 분위기"         │ σ(I) ≈ 0 (I 수렴)
+  Phenomenon                    │ Mathematical interpretation
+  ─────────────────────────────┼──────────────────────────────
+  "Read the atmosphere"         │ estimate I_avg (using mirror neurons)
+  "Match the atmosphere"        │ adjust I_self → I_avg
+  "Break the atmosphere"        │ I_self >> I_avg (sudden ΔI)
+  "Liven up the atmosphere"     │ move I_avg toward Golden Zone
+  "Socially unaware"            │ λ (conformity strength) is low
+  "Funeral atmosphere"          │ I_avg > 0.6 (over-inhibited)
+  "Festival atmosphere"         │ I_avg ≈ 0.20 (low inhibition)
+  "Conference room tension"     │ σ(I) large (I variance large, conflict)
+  "United atmosphere"           │ σ(I) ≈ 0 (I converged)
 ```
 
-## 예측
+## Predictions
 
-1. **팀 성과**는 그룹 평균 I가 골든존일 때 최대
-2. **리더의 I**가 팀 평균 I에 가장 큰 영향 (가중치 큼)
-3. **분위기 전환 시간** τ ∝ N (인원수에 비례)
-4. **이봉(bimodal) I 분포**를 가진 그룹은 갈등 상태 → 분열 예측 가능
-5. 동조 강도 λ는 문화권별로 다름 (동아시아 > 서구?)
+1. **Team performance** is maximum when group average I is in the Golden Zone
+2. **Leader's I** has the greatest impact on team average I (high weight)
+3. **Atmosphere transition time** τ ∝ N (proportional to headcount)
+4. Groups with **bimodal I distribution** are in conflict state → fragmentation predictable
+5. Conformity strength λ varies by culture (East Asia > West?)
 
-## 한계
+## Limitations
 
-1. "분위기"를 I 평균 하나로 환원하는 것은 과도한 단순화
-2. 물리적 환경(조명, 음악, 온도)도 분위기에 영향 — I만으로 불충분
-3. 개인의 λ(동조 강도)를 측정하는 방법 부재
-4. 열전도 방정식 유추는 연속적 공간을 가정하나, 사회적 네트워크는 이산적
-5. 문화적 맥락("체면", "예의")이 I 동기화에 미치는 영향 미반영
+1. Reducing "atmosphere" to a single I average is an excessive simplification
+2. Physical environment (lighting, music, temperature) also affects atmosphere — I alone is insufficient
+3. No method to measure individual λ (conformity strength)
+4. Heat conduction equation analogy assumes continuous space, but social networks are discrete
+5. Cultural context ("face", "courtesy") impact on I synchronization not reflected
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 회의 전후 참가자 GABA(≈I) 변화 측정 → 수렴 여부 확인
-- [ ] 팀 성과와 팀원 I 분포(평균, 분산)의 상관 분석
-- [ ] 리더 교체 시 팀 I 분포 변화 추적
-- [ ] 분위기 설문(주관적) vs I 추정(객관적) 상관
-- [ ] 다문화 팀에서 동조 강도 λ의 문화차 측정
+- [ ] Measure participant GABA (≈I) change before/after meeting → confirm convergence
+- [ ] Correlation analysis of team performance vs team member I distribution (mean, variance)
+- [ ] Track team I distribution change after leader replacement
+- [ ] Correlation between atmosphere survey (subjective) vs I estimation (objective)
+- [ ] Measure cultural difference in conformity strength λ in multicultural teams
 
 ---
 
-*관련: 가설 139, 155, 159, 166, 208, 211, 213*
-*분류: 인지 공명 시리즈 (208-213)*
+*Related: Hypothesis 139, 155, 159, 166, 208, 211, 213*
+*Category: Cognitive Resonance Series (208-213)*

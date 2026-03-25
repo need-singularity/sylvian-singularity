@@ -1,36 +1,36 @@
-# 가설 검토 063: 거미줄 수렴 = 단조(활주) ✅
+# Hypothesis Review 063: Cobweb Convergence = Monotone (Glide) ✅
 
-## 가설
+## Hypothesis
 
-> 메타 반복 f(I) = 0.7I + 0.1 의 거미줄 도표(cobweb diagram) 수렴 패턴이 나선형(spiral)인가 단조형(monotone glide)인가. f'(1/3) = 0.7 > 0 이므로 단조 수렴이어야 한다.
+> Is the cobweb diagram convergence pattern of meta iteration f(I) = 0.7I + 0.1 spiral or monotone glide? Since f'(1/3) = 0.7 > 0, it should be monotone convergence.
 
-## 배경: 거미줄 도표의 두 가지 수렴 유형
+## Background: Two Types of Convergence in Cobweb Diagrams
 
-거미줄 도표(cobweb diagram)는 반복 함수 x_{n+1} = f(x_n) 의 수렴 과정을 시각화하는 방법이다.
+A cobweb diagram visualizes the convergence process of an iterative function x_{n+1} = f(x_n).
 
 ```
-  부동점에서의 도함수 f'(x*)의 부호가 수렴 유형을 결정:
+  The sign of the derivative f'(x*) at the fixed point determines convergence type:
 
-  0 < f'(x*) < 1  →  단조 수렴 (한쪽에서 계단식 접근)
-  -1 < f'(x*) < 0 →  나선 수렴 (양쪽에서 교대 접근)
-  |f'(x*)| ≥ 1    →  발산 (수렴하지 않음)
+  0 < f'(x*) < 1  →  Monotone convergence (staircase approach from one side)
+  -1 < f'(x*) < 0 →  Spiral convergence (alternating approach from both sides)
+  |f'(x*)| ≥ 1    →  Divergence (does not converge)
 ```
 
-## 검증 결과: ✅ 단조 수렴 (나선 아님)
+## Verification Result: ✅ Monotone Convergence (Not Spiral)
 
-### 수학적 판정
+### Mathematical Determination
 
 ```
   f(I) = 0.7I + 0.1
-  f'(I) = 0.7       (모든 I에서 동일, 선형 함수)
+  f'(I) = 0.7       (same for all I, linear function)
 
-  부동점: I* = 1/3
+  Fixed point: I* = 1/3
   f'(I*) = 0.7
 
-  판정: 0 < 0.7 < 1  →  ✅ 단조 수렴
+  Determination: 0 < 0.7 < 1  →  ✅ Monotone convergence
 ```
 
-### 거미줄 도표: I₀ = 0.8 에서 출발
+### Cobweb Diagram: Starting from I₀ = 0.8
 
 ```
   f(I)
@@ -46,18 +46,18 @@
        │     │╱   │╱  │   │
   0.41─┤─ ●₅╱ ─ ╱│   │   │
        │  ╱│  ╱  │   │   │
-  1/3 ─┤●──●──●───●───●───●── ← 부동점(극한)
+  1/3 ─┤●──●──●───●───●───●── ← Fixed point (limit)
        │╱  │  │   │   │   │
   0.10─●───┼──┼───┼───┼───┼──
        0   1/3 0.41 0.49 0.56 0.66 0.8  I
               ←──←──←──←──←
-              한 방향 접근 (우→좌)
+              One-direction approach (right→left)
 ```
 
-### 단계별 수렴 궤적
+### Step-by-Step Convergence Trajectory
 
 ```
-  단계   I_n        f(I_n)     |I_n - 1/3|   수축률
+  Step   I_n        f(I_n)     |I_n - 1/3|   Contraction rate
   ────  ─────────  ─────────  ───────────  ────────
    0    0.800                  0.467
    1    0.660      0.660       0.327        0.700
@@ -72,70 +72,70 @@
   10    0.347      0.347       0.014        0.700
   ∞     0.333...               0.000
 
-  매 단계 오차가 정확히 0.7배로 줄어듦 (선형 수축)
+  Error reduces by exactly 0.7x each step (linear contraction)
 ```
 
-### 나선 수렴과의 비교 (만약 f' = -0.7 이었다면)
+### Comparison with Spiral Convergence (If f' = -0.7)
 
 ```
-  단조 수렴 (f'=+0.7, 우리 모델)    나선 수렴 (f'=-0.7, 가상)
-  ─────────────────────────────    ──────────────────────────
+  Monotone convergence (f'=+0.7, our model)    Spiral convergence (f'=-0.7, hypothetical)
+  ─────────────────────────────────────       ─────────────────────────────────────────
 
-  I(n)                              I(n)
-  0.8│●                             0.8│●
-     │ ╲                               │ ╲
-  0.6│  ╲                           0.6│  ╲
-     │   ╲                             │   ╲     ╱╲
-  0.4│    ╲                          0.4│    ╲  ╱    ╲
-     │     ╲                            │     ●       ●
-  1/3│──────●───●───●───●──         1/3│──────●───●───●──
-     │                                  │         ╲  ╱
-  0.2│                               0.2│          ╲╱
-     ├──┬──┬──┬──┬──┬──┤               ├──┬──┬──┬──┬──┬──┤
-     0  2  4  6  8  10 n               0  2  4  6  8  10 n
+  I(n)                                         I(n)
+  0.8│●                                        0.8│●
+     │ ╲                                          │ ╲
+  0.6│  ╲                                      0.6│  ╲
+     │   ╲                                        │   ╲     ╱╲
+  0.4│    ╲                                     0.4│    ╲  ╱    ╲
+     │     ╲                                       │     ●       ●
+  1/3│──────●───●───●───●──                    1/3│──────●───●───●──
+     │                                             │         ╲  ╱
+  0.2│                                          0.2│          ╲╱
+     ├──┬──┬──┬──┬──┬──┤                          ├──┬──┬──┬──┬──┬──┤
+     0  2  4  6  8  10 n                          0  2  4  6  8  10 n
 
-  항상 위에서 접근                   위-아래 진동하며 접근
-  오버슈트 없음                      매번 오버슈트 발생
+  Always approach from above                    Oscillating approach from above-below
+  No overshoot                                  Overshoot every time
 ```
 
-### 골든존 내에서의 수렴 동역학
+### Convergence Dynamics within Golden Zone
 
 ```
-  Inhibition 축 위의 흐름:
+  Flow along Inhibition axis:
 
   0.0    0.24       1/3    1/e    0.48    0.5    1.0
   ├──→→→→┤──→→→→→──●──────●──←←←←┤──←←←←─┤──←←←─┤
-         │    골든존              │
+         │    Golden Zone         │
          │                       │
   I₀=0.8:  0.80 → 0.66 → 0.56 → 0.49 → 0.44 → 0.41 → ...→ 1/3
-                                    ↑ 골든존 진입 (4번째 반복)
+                                    ↑ Enter Golden Zone (4th iteration)
 
   I₀=0.1:  0.10 → 0.17 → 0.22 → 0.25 → 0.28 → 0.29 → ...→ 1/3
-                                  ↑ 골든존 진입 (3번째 반복)
+                                  ↑ Enter Golden Zone (3rd iteration)
 ```
 
-## 해석
+## Interpretation
 
-1. **안정적 활주(glide)**: 단조 수렴은 시스템이 목표를 "지나치지 않고" 접근함을 의미한다. Inhibition이 과도 교정(overcorrection) 없이 골든존으로 수렴한다. 이것은 생물학적으로 안정적인 적응 과정에 해당한다.
+1. **Stable glide**: Monotone convergence means the system approaches the target without "overshooting". Inhibition converges to the Golden Zone without overcorrection. This corresponds to a biologically stable adaptation process.
 
-2. **수축률의 일정성**: 선형 함수이므로 수축률이 정확히 0.7로 일정하다. 매 반복마다 오차가 30%씩 줄어든다. 비선형 시스템에서는 수축률이 부동점에 가까워질수록 변할 수 있다.
+2. **Constant contraction rate**: Being a linear function, the contraction rate is exactly 0.7. Error reduces by 30% with each iteration. In nonlinear systems, the contraction rate can change as it approaches the fixed point.
 
-3. **골든존 진입 속도**: I₀ = 0.8 에서 출발해도 약 4회 반복이면 골든존에 진입한다. 이는 시스템이 비교적 빠르게 최적 영역에 도달함을 보여준다.
+3. **Golden Zone entry speed**: Even starting from I₀ = 0.8, it enters the Golden Zone in about 4 iterations. This shows the system reaches the optimal region relatively quickly.
 
-4. **061과의 연결**: 가설 061에서 비교한 황금비(f' = -0.382)는 나선 수렴이고, 우리 모델(f' = +0.7)은 단조 수렴이다. "같은 유형(축소사상), 다른 종류(수렴 패턴)"의 구체적 근거가 이 거미줄 분석이다.
+4. **Connection to 061**: The golden ratio compared in hypothesis 061 (f' = -0.382) shows spiral convergence, while our model (f' = +0.7) shows monotone convergence. This cobweb analysis is the specific evidence for "same type (contraction mapping), different kind (convergence pattern)".
 
-## 한계
+## Limitations
 
-- f(I) = 0.7I + 0.1 은 선형 근사이다. 실제 비선형 모델에서는 f'(I)가 I에 따라 변하므로 부동점 근방에서만 이 분석이 유효하다.
-- 수축률 0.7은 단 하나의 파라미터 세팅에서의 값이다. D, P가 바뀌면 수축률도 변할 수 있다.
-- 단조 수렴 조건 0 < f' < 1 이 항상 성립하는지 파라미터 전 범위에서 확인 필요.
+- f(I) = 0.7I + 0.1 is a linear approximation. In actual nonlinear models, f'(I) varies with I, so this analysis is only valid near the fixed point.
+- Contraction rate 0.7 is a value from a single parameter setting. If D, P change, the contraction rate may also change.
+- Need to verify if the monotone convergence condition 0 < f' < 1 always holds across the entire parameter range.
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 비선형 반복 함수에서 f'(I*) 의 부호가 전환되는 조건 탐색
-- [ ] D, P 변화에 따른 수축률 0.7 의 변동 범위 측정
-- [ ] 나선 수렴이 더 유리한 시나리오가 존재하는지 이론적 검토
+- [ ] Explore conditions where the sign of f'(I*) switches in nonlinear iterative functions
+- [ ] Measure the variation range of contraction rate 0.7 with changes in D, P
+- [ ] Theoretical review of whether scenarios exist where spiral convergence is more advantageous
 
 ---
 
-*작성일: 2026-03-22 | 검증: verify_meta_math.py*
+*Date: 2026-03-22 | Verification: verify_meta_math.py*

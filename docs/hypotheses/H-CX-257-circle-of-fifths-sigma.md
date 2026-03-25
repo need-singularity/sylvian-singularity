@@ -1,3 +1,3 @@
-# H-CX-257: 🟩 5도권 = σ(6)키 순환
+# H-CX-257: 🟩 Circle of Fifths = σ(6) Key Cycle
 
-> 12키(=σ(6))를 7반음(=P₁+1)씩 순환. 12×7=84=σ(P₁+1).
+> 12 keys (=σ(6)) cycling by 7 semitones (=P₁+1) each. 12×7=84=σ(P₁+1).

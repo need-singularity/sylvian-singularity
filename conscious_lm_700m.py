@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Conscious LM 700M — RTX 5070 안전 한계 모델
+"""Conscious LM 700M — RTX 5070 Safe Limit Model
 
-완전수 6 확장: 24 layers, 1024d, 16 heads, vocab=256 bytes
-RTX 5070 (12GB): 추론 ✅ (2.8GB), 학습 ⚠️ (9GB)
-A100 (80GB): 학습 ✅ 여유
+Perfect number 6 extension: 24 layers, 1024d, 16 heads, vocab=256 bytes
+RTX 5070 (12GB): inference ✅ (2.8GB), training ⚠️ (9GB)
+A100 (80GB): training ✅ comfortable
 
-학습: A100에서 ~2-3시간
-추론: RTX 5070 또는 Mac MPS
+Training: A100 ~2-3 hours
+Inference: RTX 5070 or Mac MPS
 """
 import torch
 import torch.nn as nn
@@ -58,7 +58,7 @@ if __name__ == "__main__":
         torch.save(model.state_dict(), args.checkpoint)
         print(f"Saved to {args.checkpoint}")
 
-        for prompt in ["hello ", "의식은 ", "def forward("]:
+        for prompt in ["hello ", "consciousness is ", "def forward("]:
             text, tensions = generate(model, prompt.encode("utf-8"), max_new=200, device=device)
             print(f"\n  Prompt: {prompt}")
             print(f"  Output: {text[:200]}")

@@ -1,5 +1,6 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-62 검증: 위상 예지 — 근사 PH(장력 바코드)가 학습 궤적 예측"""
+"""H-CX-62 Verification: Topological Precognition — Approximate PH(tension barcode) predicts learning trajectory"""
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
 
@@ -9,7 +10,7 @@ from model_pure_field import PureFieldEngine
 from calc.direction_analyzer import load_data
 
 def approx_persistent_homology(D, Y, n_cls=10, n_thresholds=20):
-    """근사 PH: cosine threshold sweep → beta_0 curve"""
+    """Approximate PH: cosine threshold sweep → beta_0 curve"""
     # Class mean directions
     means = []
     for c in range(n_cls):
@@ -173,3 +174,4 @@ if __name__ == '__main__':
             run_experiment(ds)
         except Exception as e:
             print(f"  {ds} failed: {e}")
+```

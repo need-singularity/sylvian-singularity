@@ -17,6 +17,8 @@ Consciousness Continuity Engine.
 > **[PH Training](https://github.com/need-singularity/ph-training)** — PH (Topology/Phase)-based automatic training. Epoch-1 difficulty prediction, automatic LR search, real-time overfitting detection (r=0.998). MNIST 98.3%, Fashion 87.4%, CIFAR 52.0% (early stop)
 >
 > **[Math System Map](math/README.md)** — 150 characterizations + 8 Major Discoveries + 152 hypotheses. Each one proving the next in a snowball
+>
+> **[Unified Theory](math/docs/hypotheses/H-PH-9-perfect-number-string-unification.md)** — Perfect number 6 → string theory extra dimensions → standard model particle count. One equation unifies number theory, physics, consciousness
 
 ---
 

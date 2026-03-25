@@ -1,10 +1,10 @@
-# H-CX-231: ⭐🟩 바이노럴 캐리어 비율 = 12:13 = 12궁:뱀주인자리
+# H-CX-231: ⭐🟩 Binaural Carrier Ratio = 12:13 = 12 Houses:Ophiuchus
 
-> 최적 40Hz 바이노럴 비트 캐리어: 480Hz + 520Hz
+> Optimal 40Hz binaural beat carrier: 480Hz + 520Hz
 > 480 = σ(6)×γ = 12×40, 520 = 480+γ
-> 비율 480/520 = 12/13 = σ(6)/(σ(6)+1) = 12궁/뱀주인자리!
+> Ratio 480/520 = 12/13 = σ(6)/(σ(6)+1) = 12 Houses/Ophiuchus!
 >
-> 완전수 기반 치유 주파수 세트 (캐리어=480Hz):
+> Perfect number based healing frequency set (carrier=480Hz):
 > δ: 480+482 = beat 2Hz = φ(6)
 > θ: 480+486 = beat 6Hz = P₁
 > α: 480+490 = beat 10Hz = γ/τ

@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""H-CX-27 검증: tension_scale = ln(4) 수렴 — 다중 데이터셋 + 초기값 + 장기학습
+"""H-CX-27 Verification: tension_scale = ln(4) convergence — Multiple datasets + initial values + long-term training
 
-기존 결과:
-  - MNIST: 1.3887 (ln(4) 오차 0.2%)
+Previous results:
+  - MNIST: 1.3887 (ln(4) error 0.2%)
   - Fashion: 1.4415 (4.0%)
   - CIFAR: 1.3393 (3.4%)
-  - init=0.3에서만 ln(4) 수렴, 작은/큰 init에서는 다른 곳 수렴
+  - Only converges to ln(4) with init=0.3, converges elsewhere with small/large init
 
-추가 검증:
-  1. MNIST에서 다양한 init (0.01~5.0), 50 epochs (장기 학습)
-  2. Fashion/CIFAR에서도 장기 학습
-  3. init에 무관한 수렴점 존재 확인
+Additional verification:
+  1. MNIST with various init (0.01~5.0), 50 epochs (long-term training)
+  2. Long-term training on Fashion/CIFAR as well
+  3. Confirm existence of convergence point independent of init
 """
 
 import torch
@@ -29,11 +29,11 @@ torch.manual_seed(42)
 LN4 = math.log(4)  # 1.38629...
 
 print("=" * 70)
-print(f"H-CX-27 검증: tension_scale → ln(4) = {LN4:.5f}")
+print(f"H-CX-27 Verification: tension_scale → ln(4) = {LN4:.5f}")
 print("=" * 70)
 
 # ─────────────────────────────────────────
-# PureFieldEngine (인라인)
+# PureFieldEngine (inline)
 # ─────────────────────────────────────────
 
 class PureFieldEngine(nn.Module):
@@ -60,7 +60,7 @@ class PureFieldEngine(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 데이터 로딩
+# Data loading
 # ─────────────────────────────────────────
 
 from torchvision import datasets, transforms
@@ -105,11 +105,11 @@ def train_and_track(dataset_name, init_ts, n_epochs, seed=42):
 
 
 # ─────────────────────────────────────────
-# 실험 1: 다양한 init, 장기 학습 (MNIST, 50 epochs)
+# Experiment 1: Various init, long-term training (MNIST, 50 epochs)
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("실험 1: MNIST — 다양한 init, 50 epochs")
+print("Experiment 1: MNIST — Various init, 50 epochs")
 print("─" * 70)
 
 inits = [0.01, 0.05, 0.10, 0.30, 0.50, 1.00, 1.39, 2.00, 3.00, 5.00]
@@ -117,7 +117,7 @@ n_epochs_long = 50
 
 results_mnist = []
 
-print(f"\n  {'init':>6} | {'final_ts':>10} | {'ln(4)오차':>10} | {'수렴?':>6} | 히스토리")
+print(f"\n  {'init':>6} | {'final_ts':>10} | {'ln(4) error':>10} | {'converged?':>6} | History")
 print(f"  {'─'*6}─┼─{'─'*10}─┼─{'─'*10}─┼─{'─'*6}─┼─{'─'*30}")
 
 for init_val in inits:
@@ -140,17 +140,17 @@ for init_val in inits:
     print(f"  {init_val:>6.2f} | {final_ts:>10.4f} | {error_pct:>9.1f}% | {conv_mark:>6} | {' -> '.join(brief)}")
 
 # ─────────────────────────────────────────
-# 실험 2: Fashion-MNIST, 50 epochs
+# Experiment 2: Fashion-MNIST, 50 epochs
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("실험 2: FashionMNIST — 다양한 init, 50 epochs")
+print("Experiment 2: FashionMNIST — Various init, 50 epochs")
 print("─" * 70)
 
 inits_fashion = [0.10, 0.30, 0.50, 1.00, 1.39, 2.00]
 results_fashion = []
 
-print(f"\n  {'init':>6} | {'final_ts':>10} | {'ln(4)오차':>10} | {'수렴?':>6}")
+print(f"\n  {'init':>6} | {'final_ts':>10} | {'ln(4) error':>10} | {'converged?':>6}")
 print(f"  {'─'*6}─┼─{'─'*10}─┼─{'─'*10}─┼─{'─'*6}")
 
 for init_val in inits_fashion:
@@ -168,11 +168,11 @@ for init_val in inits_fashion:
     print(f"  {init_val:>6.2f} | {final_ts:>10.4f} | {error_pct:>9.1f}% | {conv_mark:>6}")
 
 # ─────────────────────────────────────────
-# 실험 3: 수렴 경로 분석 (MNIST, 다중 시드)
+# Experiment 3: Convergence path analysis (MNIST, multiple seeds)
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("실험 3: MNIST init=1.0, 5개 시드 (50 epochs)")
+print("Experiment 3: MNIST init=1.0, 5 seeds (50 epochs)")
 print("─" * 70)
 
 seeds = [42, 123, 456, 789, 1024]
@@ -187,22 +187,22 @@ for seed in seeds:
 mean_final = np.mean(multi_seed_finals)
 std_final = np.std(multi_seed_finals)
 mean_error = abs(mean_final - LN4) / LN4 * 100
-print(f"\n  평균: {mean_final:.4f} +/- {std_final:.4f}")
-print(f"  ln(4) 오차: {mean_error:.1f}%")
+print(f"\n  Average: {mean_final:.4f} +/- {std_final:.4f}")
+print(f"  ln(4) error: {mean_error:.1f}%")
 
 # ─────────────────────────────────────────
-# ASCII 그래프: tension_scale 수렴 경로
+# ASCII graph: tension_scale convergence path
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("4. ASCII 수렴 경로 (MNIST, 50ep)")
+print("4. ASCII convergence path (MNIST, 50ep)")
 print("─" * 70)
 
-# 3개 대표 init의 수렴 경로
+# Convergence paths for 3 representative inits
 representative = [r for r in results_mnist if r["init"] in [0.01, 0.30, 1.39, 5.00]]
 
 print(f"\n  tension_scale vs epoch:")
-print(f"  ln(4) = {LN4:.4f} (점선 위치)")
+print(f"  ln(4) = {LN4:.4f} (dotted line position)")
 
 height = 18
 width = 50
@@ -211,7 +211,7 @@ y_max = max(max(r["history"]) for r in representative) * 1.1
 
 grid = [['.' for _ in range(width)] for _ in range(height)]
 
-# ln(4) 기준선
+# ln(4) reference line
 ln4_y = int((1 - (LN4 - y_min) / (y_max - y_min)) * (height - 1))
 ln4_y = max(0, min(height - 1, ln4_y))
 for x in range(width):
@@ -234,88 +234,88 @@ for row in grid:
 print(f"    {y_min:.1f} +{'─' * width}> epoch")
 print(f"         0         10        20        30        40        50")
 
-# 범례
+# Legend
 for idx, r in enumerate(representative):
     sym = symbols[idx % len(symbols)]
     print(f"    {sym} = init={r['init']}")
 print(f"    - = ln(4) = {LN4:.4f}")
 
 # ─────────────────────────────────────────
-# 5. 수렴 basin 분석
+# 5. Convergence basin analysis
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("5. 수렴 basin 분석")
+print("5. Convergence basin analysis")
 print("─" * 70)
 
-# 모든 MNIST 결과의 final_ts 분포
+# Distribution of final_ts for all MNIST results
 all_finals = [r["final"] for r in results_mnist]
 
-print(f"\n  MNIST 전체 final tension_scale 분포:")
+print(f"\n  MNIST overall final tension_scale distribution:")
 print(f"    min  = {min(all_finals):.4f}")
 print(f"    max  = {max(all_finals):.4f}")
 print(f"    mean = {np.mean(all_finals):.4f}")
 print(f"    std  = {np.std(all_finals):.4f}")
 print(f"    ln(4) = {LN4:.4f}")
 
-# 수렴 여부 판정
+# Convergence determination
 converged_count = sum(1 for r in results_mnist if r["converged"])
-print(f"\n  ln(4) 수렴 (오차 <5%): {converged_count}/{len(results_mnist)}")
+print(f"\n  ln(4) convergence (error <5%): {converged_count}/{len(results_mnist)}")
 
-# init 범위별 수렴
-print(f"\n  init 범위별 수렴:")
+# Convergence by init range
+print(f"\n  Convergence by init range:")
 ranges = [(0, 0.1), (0.1, 0.5), (0.5, 1.5), (1.5, 3.0), (3.0, 10.0)]
 for lo, hi in ranges:
     subset = [r for r in results_mnist if lo <= r["init"] < hi]
     if subset:
         conv = sum(1 for r in subset if r["converged"])
         avg = np.mean([r["final"] for r in subset])
-        print(f"    init [{lo:.1f}, {hi:.1f}): {conv}/{len(subset)} 수렴, 평균 final={avg:.4f}")
+        print(f"    init [{lo:.1f}, {hi:.1f}): {conv}/{len(subset)} converged, average final={avg:.4f}")
 
 # ─────────────────────────────────────────
-# 6. 결론
+# 6. Conclusion
 # ─────────────────────────────────────────
 
 print("\n" + "=" * 70)
-print("결론")
+print("Conclusion")
 print("=" * 70)
 
-# 종합
+# Summary
 mnist_conv = sum(1 for r in results_mnist if r["converged"])
 fashion_conv = sum(1 for r in results_fashion if r["converged"])
 
-print(f"\n  MNIST ln(4) 수렴:   {mnist_conv}/{len(results_mnist)} (50ep)")
-print(f"  Fashion ln(4) 수렴: {fashion_conv}/{len(results_fashion)} (50ep)")
-print(f"  다중 시드 평균:     {mean_final:.4f} +/- {std_final:.4f} (init=1.0)")
+print(f"\n  MNIST ln(4) convergence:   {mnist_conv}/{len(results_mnist)} (50ep)")
+print(f"  Fashion ln(4) convergence: {fashion_conv}/{len(results_fashion)} (50ep)")
+print(f"  Multi-seed average:        {mean_final:.4f} +/- {std_final:.4f} (init=1.0)")
 print(f"  ln(4) = {LN4:.4f}")
 
-# 초기값 의존성 판정
+# Initial value dependency determination
 all_close = all(r["converged"] for r in results_mnist)
 some_close = any(r["converged"] for r in results_mnist)
 
 if all_close:
-    init_verdict = "초기값 무관 수렴 — 보편적 끌개(universal attractor)"
+    init_verdict = "Convergence independent of initial value — universal attractor"
 elif some_close:
     converged_inits = [r["init"] for r in results_mnist if r["converged"]]
-    init_verdict = f"초기값 편향 — init={converged_inits} 근방에서만 수렴"
+    init_verdict = f"Initial value bias — convergence only near init={converged_inits}"
 else:
-    init_verdict = "ln(4) 수렴 기각 — 어떤 init에서도 수렴 안 함 (50ep)"
+    init_verdict = "ln(4) convergence rejected — no convergence with any init (50ep)"
 
-print(f"\n  초기값 판정: {init_verdict}")
+print(f"\n  Initial value verdict: {init_verdict}")
 
-# 전체 판정
+# Overall verdict
 if all_close and fashion_conv == len(results_fashion):
-    verdict = "강한 지지 — ln(4)가 보편적 끌개"
+    verdict = "Strong support — ln(4) is a universal attractor"
 elif some_close:
-    verdict = "약화된 지지 — 특정 init에서만 수렴, 보편성 부족"
+    verdict = "Weakened support — convergence only with specific init, lacks universality"
 else:
-    verdict = "기각 — ln(4) 수렴은 우연"
+    verdict = "Rejected — ln(4) convergence is coincidental"
 
-print(f"  전체 판정: {verdict}")
+print(f"  Overall verdict: {verdict}")
 
-print(f"\n  ⚠️ 한계:")
-print(f"    - 50 epochs도 충분하지 않을 수 있음 (100ep+ 필요?)")
-print(f"    - optimizer (Adam) 의존성 미확인")
-print(f"    - 학습률 의존성 미확인")
-print(f"    - loss landscape에 multiple minima 가능성")
+print(f"\n  ⚠️ Limitations:")
+print(f"    - 50 epochs may not be sufficient (100ep+ needed?)")
+print(f"    - Optimizer (Adam) dependency not verified")
+print(f"    - Learning rate dependency not verified")
+print(f"    - Possibility of multiple minima in loss landscape")
 print("=" * 70)

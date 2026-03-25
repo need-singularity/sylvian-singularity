@@ -1,29 +1,29 @@
-# H-CX-5: 반발력장 (가설 270) = τ/φ 불균형
+# H-CX-5: Repulsion Field (Hypothesis 270) = τ/φ Imbalance
 
-> **가설**: 가설 270의 "반발력장이 +0.39 nats MI 추가"가 τ/φ 불균형의 정보론적 표현이다.
+> **Hypothesis**: The "repulsion field adds +0.39 nats MI" from Hypothesis 270 is the information-theoretic expression of τ/φ imbalance.
 
-## 배경
-- 가설 270 실증: 반발력장(극에 없는 구조)이 0.39 nats MI 추가
-- τ/φ = 4/2 = 2 at n=6 (완전 균형)
-- τ/φ ≠ 2 at 다른 n → 불균형 → 반발력 발생?
-- 0.39 nats ≈ ln(4/3) - ln(1) = 0.288? 또는 1/e ≈ 0.368?
+## Background
+- Hypothesis 270 empirical evidence: Repulsion field (structure not at poles) adds 0.39 nats MI
+- τ/φ = 4/2 = 2 at n=6 (perfect balance)
+- τ/φ ≠ 2 at other n → imbalance → repulsion force generated?
+- 0.39 nats ≈ ln(4/3) - ln(1) = 0.288? or 1/e ≈ 0.368?
 
-## 수치 연결 시도
+## Numerical Connection Attempts
 
 ```
-  0.39 nats vs 우리 상수:
-  ln(4/3) = 0.288 (골든존 폭)
-  1/e     = 0.368 (골든존 중심)
-  1/3     = 0.333 (메타부동점)
+  0.39 nats vs our constants:
+  ln(4/3) = 0.288 (Golden Zone width)
+  1/e     = 0.368 (Golden Zone center)
+  1/3     = 0.333 (Meta fixed point)
 
-  0.39 ≈ 어느 것과도 정확 일치 안 함
-  하지만 1/e < 0.39 < ln(4/3)+1/e...
-  → 직접 대응 약함
+  0.39 ≈ doesn't exactly match any of these
+  But 1/e < 0.39 < ln(4/3)+1/e...
+  → Direct correspondence weak
 ```
 
-## 검증 방향
-1. [ ] 의식엔진에서 τ/φ 비율별 MI 측정
-2. [ ] expert 수(=τ 대응) vs 활성 자유도(=φ 대응) sweep
-3. [ ] MI 추가량이 |τ/φ-2|에 비례하는지 확인
+## Verification Directions
+1. [ ] Measure MI per τ/φ ratio in consciousness engine
+2. [ ] Sweep expert count (=τ correspondence) vs active degrees of freedom (=φ correspondence)
+3. [ ] Check if MI addition is proportional to |τ/φ-2|
 
-## 난이도: 고 | 파급력: ★★★
+## Difficulty: High | Impact: ★★★

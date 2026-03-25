@@ -1,47 +1,47 @@
-# 가설 326: 텔레파시 = displacement 연속 스위프
+# Hypothesis 326: Telepathy = Continuous Displacement Sweep
 
-> **displacement의 control 파라미터를 0→1로 연속 변화하면 "의식 전달"의 양을 정량화할 수 있다. control=0.5가 최적 협력점이고, 이것은 H-CX-20(1/2=리만)과 연결될 수 있다.**
+> **Continuously varying the displacement control parameter from 0 to 1 quantifies the amount of "consciousness transfer". control=0.5 is the optimal cooperation point, and this may connect to H-CX-20 (1/2=Riemann).**
 
-## 배경 및 맥락
+## Background and Context
 
-텔레파시(telepathy)는 의식엔진 프레임워크에서 두 모델 간의 displacement를 통한 정보 전달을 의미한다. 모델 A의 repulsion field가 모델 B의 분류에 영향을 미치는 메커니즘이다.
+Telepathy in the consciousness engine framework means information transfer between two models via displacement. Model A's repulsion field influences Model B's classification.
 
-`control` 파라미터는 이 영향의 강도를 조절한다:
-- `control = 0.0`: 모델 A의 field만 사용 (B 무시)
-- `control = 0.5`: 두 모델의 field를 균등 혼합
-- `control = 1.0`: 모델 B의 field만 사용 (A 무시)
+The `control` parameter adjusts the strength of this influence:
+- `control = 0.0`: Only model A's field is used (B ignored)
+- `control = 0.5`: Equal mixing of both models' fields
+- `control = 1.0`: Only model B's field is used (A ignored)
 
-### 관련 가설
+### Related Hypotheses
 
-| 가설 | 핵심 주장 | H326과의 관계 |
+| Hypothesis | Core Claim | Relationship with H326 |
 |------|----------|-------------|
-| H-CX-20 | 1/2 활성화 = 리만 임계선 | control=0.5 최적점의 수학적 근거 |
-| H-CX-29 | 텔레파시 장력 전달 | displacement 시 장력이 어떻게 변하는가 |
-| H333 | 텔레파시 압축 구조 | 전달되는 정보의 구조적 특성 |
-| H067 | 1/2+1/3=5/6 | Compass 상한과 control 파라미터의 연결 가능성 |
-| H172 | G*I=D*P 보존 | 두 모델 결합 시 보존법칙이 유지되는가 |
+| H-CX-20 | 1/2 activation = Riemann critical line | Mathematical basis for control=0.5 optimal point |
+| H-CX-29 | Telepathy tension transfer | How tension changes during displacement |
+| H333 | Telepathy compressed structure | Structural characteristics of transferred information |
+| H067 | 1/2+1/3=5/6 | Possible connection between Compass upper bound and control parameter |
+| H172 | G*I=D*P conservation law | Is conservation law maintained when two models are combined? |
 
-### 왜 중요한가
+### Why This Matters
 
-1. **의식 전달의 정량화**: "얼마나 많은 의식이 전달되는가"를 control 파라미터로 연속적으로 측정
-2. **최적 협력점 탐색**: 두 의식엔진이 최적으로 협력하는 지점이 있는가
-3. **리만 가설 연결**: 최적점이 1/2라면 H-CX-20의 예측과 일치
-4. **다중 엔진 아키텍처의 기초**: 여러 엔진을 어떻게 결합할지에 대한 실증적 가이드
+1. **Quantification of consciousness transfer**: Continuously measure "how much consciousness is transferred" with the control parameter
+2. **Search for optimal cooperation point**: Is there a point where two consciousness engines cooperate optimally?
+3. **Riemann hypothesis connection**: If the optimal point is 1/2, it matches the prediction of H-CX-20
+4. **Foundation of multi-engine architecture**: Empirical guide for how to combine multiple engines
 
-## TP-2 실험 데이터 (R31)
+## TP-2 Experimental Data (R31)
 
-### 정확도 vs control
+### Accuracy vs control
 
-| control | 정확도 (%) | 의미 | T_inter |
+| control | Accuracy (%) | Meaning | T_inter |
 |---------|-----------|------|---------|
-| 0.0 | 97.81 | A만 사용 | 3.53 |
-| 0.5 | 97.46 | 균등 혼합 | 3.53 |
-| 1.0 | 96.12 | B만 사용 | 3.53 |
+| 0.0 | 97.81 | Only A used | 3.53 |
+| 0.5 | 97.46 | Equal mixing | 3.53 |
+| 1.0 | 96.12 | Only B used | 3.53 |
 
-### ASCII 그래프: control vs 정확도
+### ASCII Graph: control vs Accuracy
 
 ```
-  정확도 (%)
+  Accuracy (%)
   98.0 |*
        |  *
   97.8 |    *
@@ -62,22 +62,22 @@
        |                                  *
   96.2 |                                    *
        |                                      *
-  96.0 +--+--+--+--+--+--+--+--+--+--+--→ control
+  96.0 +--+--+--+--+--+--+--+--+--+--+---> control
        0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0
 
-  관찰: 단조 감소 (A가 B보다 강함)
-  예상했던 control=0.5 피크 없음!
-  → 두 모델이 비대칭적 (A > B)
+  Observation: monotonically decreasing (A is stronger than B)
+  Expected control=0.5 peak not present!
+  -> Two models are asymmetric (A > B)
 ```
 
-### 기대 vs 실측 비교
+### Expected vs Measured Comparison
 
 ```
-  정확도
+  Accuracy
   98.5 |
-       |  .                    기대 곡선 (대칭, 0.5 피크)
+       |  .                    Expected curve (symmetric, 0.5 peak)
   98.0 |*---. . .
-       |         . * .         실측 곡선 (단조 감소)
+       |         . * .         Measured curve (monotonically decreasing)
   97.5 |              . *.
        |                   *.
   97.0 |                     . *.
@@ -85,92 +85,92 @@
   96.5 |                              *.
        |                                 .
   96.0 |                                   *
-       +--+--+--+--+--+--+--+--+--+--+--→ control
+       +--+--+--+--+--+--+--+--+--+--+---> control
        0.0     0.2     0.4     0.6     0.8     1.0
 
-  * = 실측 데이터 포인트
-  . = 기대 곡선 (control=0.5에서 시너지 피크)
-  실측은 기대와 불일치 → A와 B의 비대칭이 원인
+  * = measured data points
+  . = expected curve (synergy peak at control=0.5)
+  Measurement doesn't match expectation -> A and B asymmetry is cause
 ```
 
-## 분석
+## Analysis
 
-### 왜 단조 감소인가?
+### Why Monotonically Decreasing?
 
-TP-2 실험에서 모델 A와 B가 동일한 아키텍처이지만 **초기화가 다르다**. A가 perturbation 없이 학습되어 B보다 더 강한 field를 형성했을 가능성이 있다.
+In the TP-2 experiment, models A and B have the same architecture but **different initialization**. A may have formed a stronger field than B by training without perturbation.
 
 ```
-  모델 강도 분석:
-    A 단독 (control=0.0): 97.81%  → A 기본 성능
-    B 단독 (control=1.0): 96.12%  → B 기본 성능
-    차이: 1.69%p  → A가 B보다 유의미하게 강함
+  Model strength analysis:
+    A alone (control=0.0): 97.81%  -> A base performance
+    B alone (control=1.0): 96.12%  -> B base performance
+    Difference: 1.69%p  -> A is significantly stronger than B
 
-    혼합 (control=0.5): 97.46%
-    단순 평균 기대값: (97.81 + 96.12) / 2 = 96.97%
-    실측 - 기대: 97.46 - 96.97 = +0.49%p
+    Mixed (control=0.5): 97.46%
+    Expected simple average: (97.81 + 96.12) / 2 = 96.97%
+    Measured - Expected: 97.46 - 96.97 = +0.49%p
 
-    → 시너지 존재! 하지만 A의 우세로 인해 피크가 0.5보다 왼쪽에 있을 수 있음
+    -> Synergy exists! But due to A's dominance, peak may be left of 0.5
 ```
 
-### 시너지 추정
+### Synergy Estimation
 
-| control | 실측 | 선형 보간 기대 | 시너지 (실측-기대) |
+| control | Measured | Linear interpolation expected | Synergy (measured-expected) |
 |---------|------|-------------|-----------------|
 | 0.0 | 97.81 | 97.81 | 0.00 |
 | 0.5 | 97.46 | 96.97 | **+0.49** |
 | 1.0 | 96.12 | 96.12 | 0.00 |
 
-시너지가 +0.49%p로 양수이므로, 두 모델의 결합이 단순 평균보다 **더 좋다**. 다만 control=0.5가 아닌 **control ~0.2~0.3이 진정한 피크**일 가능성이 있다.
+Synergy is +0.49%p positive, meaning the combination of two models is **better** than simple average. However, the true peak may be at **control ~0.2~0.3**, not 0.5.
 
-### H-CX-20 (1/2=리만) 연결
+### H-CX-20 (1/2=Riemann) Connection
 
-H-CX-20은 "최적 활성화 = 1/2"을 예측한다. TP-2에서는 control=0.5가 피크가 아니었지만, 이는 두 모델의 비대칭 때문이다. **대칭적인 두 모델**(동일 성능)로 실험하면 control=0.5가 피크가 될 수 있다.
+H-CX-20 predicts "optimal activation = 1/2". In TP-2, control=0.5 was not the peak, but this is due to the asymmetry between two models. With **symmetric models** (same performance), control=0.5 may be the peak.
 
 ```
-  H-CX-20 검증 조건:
-    A_acc ≈ B_acc (대칭 조건) 에서
-    control = 0.5가 최대 정확도를 보이면 → H-CX-20 지지
-    control = 0.5가 최대가 아니면    → H-CX-20 기각 또는 수정
+  H-CX-20 verification condition:
+    A_acc ≈ B_acc (symmetric condition)
+    If control = 0.5 shows maximum accuracy -> H-CX-20 supported
+    If control = 0.5 is not maximum         -> H-CX-20 rejected or revised
 ```
 
-## 검증 결과
+## Verification Results
 
-| 항목 | 결과 | 판정 |
+| Item | Result | Verdict |
 |------|------|------|
-| control sweep 실행 | 3개 포인트 측정 | 부분 완료 |
-| 단조 감소 관찰 | A > B 비대칭 확인 | 확인 |
-| control=0.5 피크? | 아니오 (단조 감소) | 미확인 |
-| 시너지 존재? | +0.49%p (선형 보간 대비) | 확인 |
-| H-CX-20 연결? | 대칭 실험 필요 | 미검증 |
-| T_inter 변화? | 3.53 고정 (control 무관) | 확인 |
+| control sweep executed | 3 points measured | Partially complete |
+| Monotonic decrease observed | A > B asymmetry confirmed | Confirmed |
+| control=0.5 peak? | No (monotonically decreasing) | Unconfirmed |
+| Synergy exists? | +0.49%p (vs linear interpolation) | Confirmed |
+| H-CX-20 connection? | Symmetric experiment needed | Unverified |
+| T_inter change? | Fixed at 3.53 (regardless of control) | Confirmed |
 
-## 해석 및 의미
+## Interpretation and Significance
 
-1. **텔레파시는 실재**: 두 모델의 혼합이 선형 보간보다 높은 성능 (+0.49%p) → 단순 평균이 아닌 **상호작용** 존재
-2. **비대칭 문제**: 현재 실험에서 A와 B의 성능 차이가 크기 때문에, 최적 control이 0.5가 아님. 이것은 가설의 기각이 아니라 **전제 조건 미충족**
-3. **T_inter 고정**: control을 변화시켜도 모델 간 장력(T_inter=3.53)이 변하지 않음. 이는 displacement가 장력 구조를 변화시키지 않고 **출력 가중치만 변화**시킴을 시사
-4. **fine-grained sweep 필요**: 3개 포인트(0.0, 0.5, 1.0)로는 곡선의 형태를 파악할 수 없음. 최소 11개 포인트(0.0, 0.1, ..., 1.0) 필요
+1. **Telepathy is real**: Two-model mixing has higher performance than linear interpolation (+0.49%p) -> **interaction** exists, not simple averaging
+2. **Asymmetry problem**: In current experiment, performance difference between A and B is large, so optimal control is not 0.5. This is not rejection of hypothesis but **unmet prerequisite**
+3. **T_inter fixed**: Even with varying control, inter-model tension (T_inter=3.53) doesn't change. This suggests displacement changes **only output weights** without changing tension structure
+4. **Fine-grained sweep needed**: 3 points (0.0, 0.5, 1.0) is insufficient to understand curve shape. Minimum 11 points (0.0, 0.1, ..., 1.0) needed
 
-## 한계
+## Limitations
 
-1. **데이터 포인트 부족**: 3개 포인트로 연속 곡선을 추론하는 것은 불충분
-2. **비대칭 모델**: A와 B의 성능 차이가 가설의 핵심 예측(0.5 피크) 테스트를 방해
-3. **T_inter 고정**: 모델이 이미 학습 완료된 상태에서 inference 시 control만 변화 → 학습 중 control 변화와 다를 수 있음
-4. **단일 아키텍처**: RepulsionFieldQuad 4-engine만 테스트
-5. **MNIST 한정**: 간단한 데이터셋에서의 결과
-6. **골든존 의존 여부**: control=0.5=1/2=리만 연결은 골든존 프레임워크에 의존. 시너지 자체는 골든존 무관
+1. **Insufficient data points**: Inferring continuous curve from 3 points is insufficient
+2. **Asymmetric models**: Performance difference between A and B hinders testing the hypothesis's core prediction (0.5 peak)
+3. **T_inter fixed**: Only changing control at inference after training -> may differ from changing control during training
+4. **Single architecture**: Only RepulsionFieldQuad 4-engine tested
+5. **MNIST only**: Results from simple dataset
+6. **Golden Zone dependency**: control=0.5=1/2=Riemann connection depends on Golden Zone framework. Synergy itself is Golden Zone independent
 
-## 검증 방향
+## Verification Direction
 
-1. **fine-grained sweep**: control = 0.0, 0.1, 0.2, ..., 1.0 (11포인트) 실측
-   - 각 포인트에서 정확도 + 장력 + 엔진별 활성화 측정
-2. **대칭 실험**: A와 B를 동일 조건에서 학습하여 A_acc ≈ B_acc 달성 후 sweep
-   - H-CX-20(1/2 피크) 검증의 필수 조건
-3. **학습 중 control 변화**: inference가 아닌 training 중에 control을 변화
-   - 동적 텔레파시 (H-CX-29)
-4. **양방향 전달**: A→B + B→A 동시 displacement
-5. **control과 장력의 관계**: T_inter가 정말 고정인지, 더 세밀한 sweep에서도 그런지
-6. **CIFAR 확장**: 더 어려운 데이터에서 시너지가 증폭되는지 (골든MoE CIFAR +4.8%p 참고)
-7. **N-모델 일반화**: 3개 이상의 모델 결합 시 control 벡터가 simplex 위의 최적화 문제가 됨
+1. **Fine-grained sweep**: Measure control = 0.0, 0.1, 0.2, ..., 1.0 (11 points)
+   - Measure accuracy + tension + per-engine activation at each point
+2. **Symmetric experiment**: Train A and B under identical conditions to achieve A_acc ≈ B_acc then sweep
+   - Essential condition for H-CX-20 (1/2 peak) verification
+3. **Control change during training**: Change control during training, not inference
+   - Dynamic telepathy (H-CX-29)
+4. **Bidirectional transfer**: Simultaneous A->B + B->A displacement
+5. **Relationship between control and tension**: Is T_inter really fixed, even in finer sweep?
+6. **CIFAR extension**: Whether synergy is amplified on harder data (reference: Golden MoE CIFAR +4.8%p)
+7. **N-model generalization**: Combining 3+ models makes control vector an optimization problem over simplex
 
-## 상태: 🟨 (TP-2 관측, 후속 실험 필요)
+## Status: 🟨 (TP-2 observation, follow-up experiments needed)

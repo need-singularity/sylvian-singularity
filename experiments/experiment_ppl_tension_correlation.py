@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H-CX-21: PPL analog vs Tension 상관 분석"""
+"""H-CX-21: PPL analog vs Tension correlation analysis"""
 import sys; sys.path.insert(0, '/Users/ghost/Dev/logout')
 import torch, torch.nn as nn, torch.nn.functional as F, numpy as np, math
 from torchvision import datasets, transforms
@@ -52,22 +52,22 @@ P = torch.cat(all_ppl).numpy()
 C = torch.cat(all_correct).numpy()
 
 print("="*60)
-print("H-CX-21: PPL analog vs Tension 상관")
+print("H-CX-21: PPL analog vs Tension correlation")
 print("="*60)
 
 r = np.corrcoef(T, P)[0,1]
-print(f"\n  전체 상관:")
+print(f"\n  Overall correlation:")
 print(f"    r(tension, PPL) = {r:+.4f}")
 print(f"    N = {len(T)}")
 
 # Per-class
-print(f"\n  정답/오답 분리:")
+print(f"\n  Correct/Wrong answer separation:")
 t_correct = T[C==1]; p_correct = P[C==1]
 t_wrong = T[C==0]; p_wrong = P[C==0]
-print(f"    정답: tension={t_correct.mean():.3f}±{t_correct.std():.3f}, PPL={p_correct.mean():.3f}±{p_correct.std():.3f}")
-print(f"    오답: tension={t_wrong.mean():.3f}±{t_wrong.std():.3f}, PPL={p_wrong.mean():.3f}±{p_wrong.std():.3f}")
-print(f"    tension ratio (정답/오답): {t_correct.mean()/t_wrong.mean():.3f}")
-print(f"    PPL ratio (오답/정답):     {p_wrong.mean()/p_correct.mean():.3f}")
+print(f"    Correct answer: tension={t_correct.mean():.3f}±{t_correct.std():.3f}, PPL={p_correct.mean():.3f}±{p_correct.std():.3f}")
+print(f"    Wrong answer: tension={t_wrong.mean():.3f}±{t_wrong.std():.3f}, PPL={p_wrong.mean():.3f}±{p_wrong.std():.3f}")
+print(f"    tension ratio (correct/wrong): {t_correct.mean()/t_wrong.mean():.3f}")
+print(f"    PPL ratio (wrong/correct):     {p_wrong.mean()/p_correct.mean():.3f}")
 
 # ASCII scatter (binned)
 print(f"\n  Binned scatter (tension vs PPL):")
@@ -89,12 +89,12 @@ print(f"  PPL in high-tension quartile: {ppl_high_t:.3f}")
 print(f"  Ratio: {ppl_high_t/ppl_low_t:.3f}")
 
 if r > 0.1:
-    print(f"\n  → 양의 상관! 높은 장력 = 높은 PPL = 불확실")
-    print(f"  → H-CX-21 지지: tension ∝ PPL")
+    print(f"\n  → Positive correlation! High tension = high PPL = uncertainty")
+    print(f"  → H-CX-21 supported: tension ∝ PPL")
 elif r < -0.1:
-    print(f"\n  → 음의 상관! 높은 장력 = 낮은 PPL = 확신")
-    print(f"  → H-CX-21 반박 (반전)")
+    print(f"\n  → Negative correlation! High tension = low PPL = confidence")
+    print(f"  → H-CX-21 refuted (reversal)")
 else:
-    print(f"\n  → 약한 상관. 방향 불명확.")
+    print(f"\n  → Weak correlation. Direction unclear.")
 
-print(f"\n완료")
+print(f"\nComplete")

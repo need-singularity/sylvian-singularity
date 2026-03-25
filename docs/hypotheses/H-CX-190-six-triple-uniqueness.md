@@ -1,8 +1,8 @@
-# H-CX-190: 6의 삼중 유일성
+# H-CX-190: Triple Uniqueness of 6
 
-> 1. 자연수 중 유일: σφ=nτ (n≤100,000, H-CX-187/189)
-> 2. 완전수 중 유일: σφ=Pτ (증명, H-CX-186)
-> 3. 다결합 원소 중 유일: σφ/(nτ)=1 (Z=1~118, H-CX-155)
+> 1. Unique among natural numbers: σφ=nτ (n≤100,000, H-CX-187/189)
+> 2. Unique among perfect numbers: σφ=Pτ (proof, H-CX-186)
+> 3. Unique among multi-bonding elements: σφ/(nτ)=1 (Z=1~118, H-CX-155)
 >
-> 세 가지 다른 관점에서 6만이 "완벽 균형"
-> = 탄소(Z=6)가 생명 기반인 산술적 필연의 최강 증거
+> From three different perspectives, only 6 achieves "perfect balance"
+> = Strongest evidence for the arithmetic necessity of carbon (Z=6) as the foundation of life

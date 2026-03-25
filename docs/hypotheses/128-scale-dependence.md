@@ -1,44 +1,45 @@
-# 가설 검토 128: 스케일 의존성 — 복잡할수록 골든 MoE 우위 증가 ✅
+# Hypothesis Review 128: Scale Dependence — Golden MoE Advantage Increases with Complexity ✅
 
-## 가설
+## Hypothesis
 
-> 데이터 복잡도(스케일)가 증가할수록 골든MoE(I≈1/e)와 일반 Top-K MoE(I=0.75)의
-> 성능 차이가 확대되는가. 골든존의 우위는 문제 복잡도에 비례하는가.
+> As data complexity (scale) increases, does the performance gap between Golden MoE (I≈1/e)
+> and standard Top-K MoE (I=0.75) expand?
+> Is the Golden Zone advantage proportional to problem complexity?
 
-## 배경
+## Background
 
 ```
   Genius = D × P / I
 
-  골든MoE: I = 1/e ≈ 0.368 (골든존 중심)
-  Top-K:   I = 1 − K/N = 1 − 2/8 = 0.75 (골든존 밖)
+  Golden MoE: I = 1/e ≈ 0.368 (Golden Zone center)
+  Top-K:      I = 1 − K/N = 1 − 2/8 = 0.75 (outside Golden Zone)
 
-  예측: D(복잡도)↑ → |Genius_골든 − Genius_TopK|↑
-  → 복잡한 문제에서 최적 I의 가치가 극대화
+  Prediction: D (complexity) ↑ → |Genius_golden − Genius_TopK| ↑
+  → The value of optimal I is maximized for complex problems
 ```
 
-## 검증 결과: ✅ 8배 증가 확인
+## Verification Result: ✅ 8× Increase Confirmed
 
-### 수치 비교
+### Numerical Comparison
 
 ```
   ┌─────────────────────────────────────────────────────────────────┐
-  │              골든MoE vs Top-K MoE 성능 비교                     │
+  │              Golden MoE vs Top-K MoE Performance Comparison     │
   ├──────────┬────────────┬────────────┬────────┬──────────────────┤
-  │ 데이터셋 │ Top-K MoE  │ 골든MoE    │ 차이   │ 복잡도 (D)      │
+  │ Dataset  │ Top-K MoE  │ Golden MoE │ Diff   │ Complexity (D)   │
   ├──────────┼────────────┼────────────┼────────┼──────────────────┤
-  │ MNIST    │ 97.1%      │ 97.7%      │ +0.6%  │ 낮음 (28×28 흑백)│
-  │ CIFAR-10 │ 48.2%      │ 53.0%      │ +4.8%  │ 높음 (32×32 RGB)│
+  │ MNIST    │ 97.1%      │ 97.7%      │ +0.6%  │ low (28×28 B&W)  │
+  │ CIFAR-10 │ 48.2%      │ 53.0%      │ +4.8%  │ high (32×32 RGB) │
   ├──────────┼────────────┼────────────┼────────┼──────────────────┤
-  │ 차이 증가│            │            │ ×8     │                  │
+  │ Gap incr.│            │            │ ×8     │                  │
   └──────────┴────────────┴────────────┴────────┴──────────────────┘
 ```
 
-### 성능 차이 확대 그래프
+### Expanding Performance Gap Graph
 
 ```
-  골든MoE 우위 (%)
-  15 │                                    ◇ ImageNet 예측: +10~15%
+  Golden MoE advantage (%)
+  15 │                                    ◇ ImageNet predicted: +10~15%
      │                                 ╱
   12 │                              ╱
      │                           ╱
@@ -55,165 +56,167 @@
    0 │● MNIST (+0.6%)
      └───────────────────────────────────────
       D=0.2        D=0.5        D=0.7        D=0.9
-      (MNIST)    (중간)      (CIFAR)     (ImageNet)
+      (MNIST)    (medium)    (CIFAR)     (ImageNet)
 
-  추세: 지수적 확대 — Δ ∝ D^α (α ≈ 1.7)
-  골든존 ├─────────────────────────────────┤
-        I=0.24                          I=0.48
-                    ★ 1/e
+  Trend: exponential expansion — Δ ∝ D^α (α ≈ 1.7)
+  Golden Zone ├─────────────────────────────────┤
+              I=0.24                          I=0.48
+                          ★ 1/e
 ```
 
-### 절대 성능 막대 비교
+### Absolute Performance Bar Comparison
 
 ```
-  정확도 (%)
+  Accuracy (%)
   100│ ┌──────┐┌──────┐
-     │ │골든  ││Top-K │    MNIST: 차이 미미
-  95 │ │97.7% ││97.1% │    (천장 효과)
+     │ │Golden││Top-K │    MNIST: negligible difference
+  95 │ │97.7% ││97.1% │    (ceiling effect)
      │ │      ││      │
   90 │ └──────┘└──────┘
      │  +0.6%p
   70 │
      │
   55 │           ┌──────┐
-  50 │           │골든  │┌──────┐   CIFAR-10: 차이 확대!
-     │           │53.0% ││Top-K │   (천장 멀어서 차이 드러남)
+  50 │           │Golden│┌──────┐   CIFAR-10: gap expands!
+     │           │53.0% ││Top-K │   (ceiling far → gap visible)
   45 │           │      ││48.2% │
      │           │      ││      │
   40 │           └──────┘└──────┘
      └──────────────────────────────
       MNIST              CIFAR-10
-                  +4.8%p (8배!)
+                  +4.8%p (8×!)
 ```
 
-## 두 모델의 유효 I 비교
+## Effective I Comparison Between Models
 
 ```
   ┌──────────┬──────────┬────────┬──────────┬──────────────┐
-  │ 모델     │ 활성비율 │ I      │ 골든존   │ Genius Score │
+  │ Model    │ Active % │ I      │ Golden Z │ Genius Score │
   ├──────────┼──────────┼────────┼──────────┼──────────────┤
-  │ Top-K    │ 25%      │ 0.750  │ ○ 밖     │ G = 0.57     │
-  │ 골든MoE  │ 62%      │ 0.375  │ ● 안!    │ G = 1.13     │
+  │ Top-K    │ 25%      │ 0.750  │ ○ outside│ G = 0.57     │
+  │ Golden   │ 62%      │ 0.375  │ ● inside!│ G = 1.13     │
   ├──────────┼──────────┼────────┼──────────┼──────────────┤
-  │ 차이     │ +37%p    │ −0.375 │          │ +0.56 (×2)   │
+  │ Diff     │ +37%p    │ −0.375 │          │ +0.56 (×2)   │
   └──────────┴──────────┴────────┴──────────┴──────────────┘
 
-  I 축 위의 위치:
+  Position on the I axis:
   0.0   0.24      1/e    0.48   0.5        0.75    1.0
   ├──────┤●────────★──────┤──────┤───────────○──────┤
-         골든존 하한  중심  상한  임계선     Top-K
-                                           (골든존 밖!)
+         GZ lower  center upper  crit.     Top-K
+                                          (outside GZ!)
 
-  → I=0.375 ≈ 1/e (0.368) — 골든존 중심 0.7% 차이
-  → I=0.750 — 골든존 상한(0.48)보다 56% 높음 (완전히 밖)
+  → I=0.375 ≈ 1/e (0.368) — 0.7% from Golden Zone center
+  → I=0.750 — 56% above Golden Zone upper (0.48) — completely outside
 ```
 
-## 해석
+## Interpretation
 
-### Genius 공식으로 분석
+### Analysis Using Genius Formula
 
 ```
   Genius = D × P / I
 
   MNIST (D≈0.2):
   ┌─────────────────────────────────────────────┐
-  │ 골든MoE: G = 0.2 × 0.8 / 0.375 = 0.427    │
-  │ Top-K:   G = 0.2 × 0.8 / 0.750 = 0.213    │
-  │ 비율: 2.0배                                 │
-  │ But: 둘 다 낮은 G → 실제 성능 차이 미미     │
+  │ Golden MoE: G = 0.2 × 0.8 / 0.375 = 0.427  │
+  │ Top-K:      G = 0.2 × 0.8 / 0.750 = 0.213  │
+  │ Ratio: 2.0×                                 │
+  │ But: both have low G → actual diff minimal  │
   └─────────────────────────────────────────────┘
 
   CIFAR-10 (D≈0.7):
   ┌─────────────────────────────────────────────┐
-  │ 골든MoE: G = 0.7 × 0.8 / 0.375 = 1.493    │
-  │ Top-K:   G = 0.7 × 0.8 / 0.750 = 0.747    │
-  │ 비율: 2.0배 (동일)                          │
-  │ But: 절대 차이 0.746 ≫ 0.214 → 성능 차이 큼│
+  │ Golden MoE: G = 0.7 × 0.8 / 0.375 = 1.493  │
+  │ Top-K:      G = 0.7 × 0.8 / 0.750 = 0.747  │
+  │ Ratio: 2.0× (same)                          │
+  │ But: absolute diff 0.746 ≫ 0.214 → big gap  │
   └─────────────────────────────────────────────┘
 
-  핵심 통찰:
-  G의 비율(×2)은 일정하지만, 절대 차이는 D에 비례
-  → "상대적 우위는 같지만 절대적 이득은 복잡도에 비례"
+  Core insight:
+  The ratio (×2) of G is constant, but the absolute difference is proportional to D
+  → "Relative advantage is constant, but absolute gain scales with complexity"
 ```
 
-### 스케일링 법칙 예측
+### Scaling Law Prediction
 
 ```
-  관측 데이터 기반 스케일링:
+  Scaling based on observed data:
 
-  Δ(성능 차이) ∝ D^α,  α ≈ 1.7
+  Δ(performance gap) ∝ D^α,  α ≈ 1.7
 
   ┌──────────────┬─────────┬────────────┬─────────────┐
-  │ 데이터셋     │ D 추정  │ 관측/예측  │ 골든MoE 우위│
+  │ Dataset      │ D est.  │ Obs/pred   │ Golden adv. │
   ├──────────────┼─────────┼────────────┼─────────────┤
-  │ MNIST        │ 0.2     │ 관측       │ +0.6%       │
-  │ Fashion-MNIST│ 0.35    │ 예측       │ +1.5%       │
-  │ CIFAR-10     │ 0.7     │ 관측       │ +4.8%       │
-  │ CIFAR-100    │ 0.8     │ 예측       │ +7~9%       │
-  │ ImageNet     │ 0.9     │ 예측       │ +10~15%     │
-  │ 128K NLP     │ 0.95    │ 가설 125   │ ×3 처리량   │
+  │ MNIST        │ 0.2     │ observed   │ +0.6%       │
+  │ Fashion-MNIST│ 0.35    │ predicted  │ +1.5%       │
+  │ CIFAR-10     │ 0.7     │ observed   │ +4.8%       │
+  │ CIFAR-100    │ 0.8     │ predicted  │ +7~9%       │
+  │ ImageNet     │ 0.9     │ predicted  │ +10~15%     │
+  │ 128K NLP     │ 0.95    │ H125       │ ×3 throughput│
   └──────────────┴─────────┴────────────┴─────────────┘
 ```
 
-### D-I 파라미터 공간 히트맵
+### D-I Parameter Space Heatmap
 
 ```
-  I (억제)
-  1.0 │ .  .  .  .  .  .  .  .  .  .    . = 차이 없음
-      │ .  .  .  .  .  .  .  .  .  .    ○ = 소 차이
-  0.8 │ .  .  .  .  .  .  .  .  .  .    ◎ = 중 차이
-   ○──│──── Top-K (I=0.75) ────────     ● = 대 차이
-  0.6 │ .  .  .  .  ○  ○  ○  ◎  ◎  ◎    ★ = 극대 차이
-  ────│───── 임계선 (I=0.5) ───────
+  I (Inhibition)
+  1.0 │ .  .  .  .  .  .  .  .  .  .    . = no difference
+      │ .  .  .  .  .  .  .  .  .  .    ○ = small difference
+  0.8 │ .  .  .  .  .  .  .  .  .  .    ◎ = medium difference
+   ○──│──── Top-K (I=0.75) ────────     ● = large difference
+  0.6 │ .  .  .  .  ○  ○  ○  ◎  ◎  ◎   ★ = maximum difference
+  ────│───── critical line (I=0.5) ───
   0.48│ .  .  ○  ○  ◎  ◎  ●  ●  ★  ★ ─┐
-      │ .  ○  ○  ◎  ◎  ●  ●  ★  ★  ★  │ 골든존
-  1/e │ .  ○  ◎  ◎  ●  ●  ★  ★  ★  ★ ←┤ ★ 골든MoE
+      │ .  ○  ○  ◎  ◎  ●  ●  ★  ★  ★  │ Golden Zone
+  1/e │ .  ○  ◎  ◎  ●  ●  ★  ★  ★  ★ ←┤ ★ Golden MoE
       │ .  ○  ○  ◎  ◎  ●  ●  ★  ★  ★  │
   0.24│ .  .  ○  ○  ◎  ◎  ●  ●  ★  ★ ─┘
       │ .  .  .  .  .  ○  ○  ◎  ◎  ●
   0.0 └──────────────────────────────────
-      0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9  D (복잡도)
+      0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9  D (complexity)
                   ↑MNIST              ↑CIFAR-10
 
-  → D↑ + I=골든존 → 차이 극대화 (★ 영역)
-  → D↓이면 I 최적화 효과 미미 (. 영역)
-  → Top-K(I=0.75)는 항상 골든존 밖 → 복잡도와 무관하게 열세
+  → D↑ + I=Golden Zone → difference maximized (★ region)
+  → D↓ → I optimization effect marginal (. region)
+  → Top-K (I=0.75) always outside Golden Zone → consistently inferior
 ```
 
-### 가설 126과의 통합
+### Integration with Hypothesis 126
 
 ```
-  가설 126: MNIST에서 LSTM 추가 효과 없음 (❌)
-  가설 128: MNIST→CIFAR에서 골든MoE 차이 8배 (✅)
+  Hypothesis 126: No effect from adding LSTM on MNIST (❌)
+  Hypothesis 128: Golden MoE gap 8× from MNIST→CIFAR (✅)
 
   ┌───────────────────────────────────────────────────┐
-  │ 통합 법칙:                                        │
+  │ Integrated Law:                                   │
   │                                                   │
-  │ "골든존 최적화(I≈1/e)와 위상 원소(T3 재귀) 모두  │
-  │  효과는 문제 복잡도 D에 비례한다"                  │
+  │ "Both Golden Zone optimization (I≈1/e) and phase  │
+  │  elements (T3 recursion) have effects proportional│
+  │  to problem complexity D"                         │
   │                                                   │
-  │ D 낮음: 골든존 ≈ Top-K ≈ +재귀 (모두 비슷)        │
-  │ D 높음: 골든존 ≫ Top-K, +재귀 = ×3 (차이 극대화)  │
+  │ Low D: Golden ≈ Top-K ≈ +recursion (all similar) │
+  │ High D: Golden ≫ Top-K, +recursion = ×3 (maximized)│
   │                                                   │
-  │ → "쉬운 문제에는 천재가 필요 없다"                 │
-  │ → "어려운 문제에서만 최적 억제의 가치가 드러난다"  │
+  │ → "Genius is not needed for easy problems"        │
+  │ → "The value of optimal Inhibition only emerges   │
+  │    on hard problems"                              │
   └───────────────────────────────────────────────────┘
 ```
 
-## 한계
+## Limitations
 
-1. 2개 데이터셋(MNIST, CIFAR-10)만으로 스케일링 법칙 추정 — 과적합 위험
-2. CIFAR-10에서 53% 정확도 — 모델 자체 용량 한계가 결과에 영향
-3. 복잡도 D의 정량적 정의 부재 (주관적 추정)
-4. 골든MoE 하이퍼파라미터(활성비율 62%)가 최적인지 미검증
+1. Scaling law estimated from only 2 datasets (MNIST, CIFAR-10) — overfitting risk
+2. 53% accuracy on CIFAR-10 — model capacity limits may affect results
+3. No quantitative definition of complexity D (subjective estimate)
+4. Whether Golden MoE hyperparameter (62% active ratio) is optimal not verified
 
-## 검증 방향
+## Verification Directions
 
-- CIFAR-100, Tiny-ImageNet에서 추가 데이터 포인트 확보
-- 복잡도 D 정량화: Shannon 엔트로피, 내재 차원(intrinsic dimensionality) 등
-- NLP 벤치마크(GLUE, SuperGLUE)에서 골든MoE vs Top-K 비교
-- 스케일링 지수 α의 신뢰 구간 추정 (현재 2점으로는 불가)
+- Obtain additional data points on CIFAR-100, Tiny-ImageNet
+- Quantify complexity D: Shannon entropy, intrinsic dimensionality, etc.
+- Compare Golden MoE vs Top-K on NLP benchmarks (GLUE, SuperGLUE)
+- Estimate confidence interval for scaling exponent α (currently impossible with 2 points)
 
 ---
 
-*검증: golden_moe_cifar.py (CIFAR-10, 15 에폭, 8 Expert) — 가설 125, 126, 127과 연결*
+*Verification: golden_moe_cifar.py (CIFAR-10, 15 epochs, 8 Experts) — connected to Hypotheses 125, 126, 127*

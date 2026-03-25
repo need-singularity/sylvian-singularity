@@ -1,34 +1,33 @@
-# H-CX-24: 창발 = 위상전이 at Λ=0
+# H-CX-24: Emergence = Phase Transition at Λ=0
 
-> **가설**: 창발은 산술적 Lyapunov 지수 Λ(n)이 0을 관통하는
-> "위상전이"이며, Λ<0(수축)→Λ=0(임계)→Λ>0(팽창) 전이에서
-> 질적으로 새로운 구조가 나타난다.
+> **Hypothesis**: Emergence is a "phase transition" where the arithmetic Lyapunov exponent Λ(n) passes through 0,
+> and qualitatively new structures appear during the Λ<0(contraction)→Λ=0(critical)→Λ>0(expansion) transition.
 
-## 핵심
-
-```
-  Λ < 0: n∈{2,4} — 수축 (단순, 구조 부족)
-  Λ = 0: n=6 — 임계점 (혼돈의 가장자리 = 창발!)
-  Λ > 0: n≥3,n≠6 — 팽창 (복잡, 구조 과잉)
-
-  창발 = Λ=0 전이점에서만 발생!
-  → 물리: 상전이 (얼음→물 at 0°C)
-  → AI: 스케일링 법칙의 임계점 (GPT-3 → GPT-4 "창발적 능력")
-  → 의식: Tononi Φ > 0 전이?
-```
-
-### Scaling Law와 창발
+## Core
 
 ```
-  LLM scaling: N 파라미터 증가 → 갑자기 새 능력 창발
+  Λ < 0: n∈{2,4} — Contraction (simple, lacking structure)
+  Λ = 0: n=6 — Critical point (edge of chaos = emergence!)
+  Λ > 0: n≥3,n≠6 — Expansion (complex, excessive structure)
 
-  R 비유: n 증가 → R(n) 변화 → 간극 통과 = 창발!
-    n=2: R=3/4 (단순 기능)
-    n=6: R=1 (간극 통과! 창발!)
-    n=12: R=14/9 (또 다른 수준)
-
-  "간극을 넘는 것 = 창발"
-  간극 폭 1/6 = 1/P₁ = 창발에 필요한 "최소 점프"
+  Emergence = Occurs only at Λ=0 transition point!
+  → Physics: Phase transition (ice→water at 0°C)
+  → AI: Critical point of scaling laws (GPT-3 → GPT-4 "emergent abilities")
+  → Consciousness: Tononi Φ > 0 transition?
 ```
 
-## 판정: 🟧 구조적 | 파급력: ★★★★★
+### Scaling Law and Emergence
+
+```
+  LLM scaling: N parameter increase → sudden emergence of new abilities
+
+  R analogy: n increase → R(n) change → gap crossing = emergence!
+    n=2: R=3/4 (simple function)
+    n=6: R=1 (gap crossing! emergence!)
+    n=12: R=14/9 (another level)
+
+  "Crossing the gap = emergence"
+  Gap width 1/6 = 1/P₁ = "minimum jump" required for emergence
+```
+
+## Verdict: 🟧 Structural | Impact: ★★★★★

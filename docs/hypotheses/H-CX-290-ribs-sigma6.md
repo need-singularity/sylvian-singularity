@@ -1,3 +1,3 @@
-# H-CX-290: 🟩 늑골 12쌍 = σ(6)
+# H-CX-290: 🟩 12 Pairs of Ribs = σ(6)
 
-> 뇌신경 12쌍, 늑골 12쌍, 흉추 12개 = 전부 σ(6).
+> 12 pairs of cranial nerves, 12 pairs of ribs, 12 thoracic vertebrae = all σ(6).

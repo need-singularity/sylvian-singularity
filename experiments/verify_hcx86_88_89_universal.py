@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""H-CX-86 + H-CX-88 + H-CX-89 검증: Zero-shot PH + 보편 위상 + 데이터 내재
+"""H-CX-86 + H-CX-88 + H-CX-89 Verification: Zero-shot PH + Universal Topology + Data Inherent
 
-H-CX-86: 랜덤 초기화(에폭 0) PH vs 최종 혼동
-H-CX-88: Dense MLP vs PureField 혼동 비교
-H-CX-89: 원본 데이터 클래스 중심 거리 → 모든 것의 근원?
+H-CX-86: Random init (epoch 0) PH vs final confusion
+H-CX-88: Dense MLP vs PureField confusion comparison
+H-CX-89: Raw data class center distances → Source of everything?
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -271,7 +271,7 @@ if __name__ == '__main__':
             import traceback; traceback.print_exc()
 
     print(f"\n{'='*70}")
-    print(f"  6라운드 SUMMARY")
+    print(f"  Round 6 SUMMARY")
     print(f"{'='*70}")
     for ds, r in results.items():
         print(f"  {ds}: r86={r['r_86_seed0']:.3f}, r88={r['r_88']:.3f}({r['overlap_88']}/5), "

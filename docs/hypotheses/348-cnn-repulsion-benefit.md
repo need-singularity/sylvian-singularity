@@ -1,48 +1,49 @@
-# H-348: CNN에서 반발력장(Repulsion Field)이 도움이 되는 이유
+# H-348: Why Repulsion Field Benefits CNN
 
-> **가설**: CNN의 풍부한 특징 표현(feature representation)에도 불구하고
-> 반발력장(repulsion field)이 추가 정보를 제공하는 이유는,
-> CNN 특징이 "무엇을 보는가(what)"에 수렴하는 반면
-> 반발력은 "다른 방식으로 보기(how else)"를 강제하기 때문이다.
-> 이는 H270(다양성=정보)의 CNN 버전이며, 특징 품질과 무관하게 다양성은 유효하다.
+> **Hypothesis**: Despite CNN's rich feature representation,
+> the reason repulsion field provides additional information is that
+> CNN features converge on "what to see (what)" while
+> repulsion forces "seeing in a different way (how else)."
+> This is the CNN version of H270 (diversity=information), and diversity is valid
+> regardless of feature quality.
 
-**상태**: 미검증
-**골든존 의존**: 간접 (골든 MoE 프레임워크)
-**관련 가설**: H288 (dense/sparse dichotomy), H334 (field only sufficient), H008 (golden MoE design)
+**Status**: Unverified
+**Golden Zone Dependency**: Indirect (Golden MoE framework)
+**Related Hypotheses**: H288 (dense/sparse dichotomy), H334 (field only sufficient), H008 (golden MoE design)
 
 ---
 
-## 배경 및 맥락
+## Background and Context
 
-의식엔진 실험에서 CNN backbone + repulsion field 조합이 CNN + dense routing보다
-일관되게 높은 정확도를 보였다:
+In consciousness engine experiments, the CNN backbone + repulsion field combination consistently
+showed higher accuracy than CNN + dense routing:
 
 ```
   CNN + Repulsion:  78.07%  (CIFAR-10)
   CNN + Dense:      77.03%  (CIFAR-10)
-  차이:             +1.04%
+  Difference:       +1.04%
 ```
 
-이 결과는 직관에 반한다. CNN은 이미 풍부한 spatial/channel 특징을 추출하므로,
-routing 방식의 차이가 큰 영향을 미치지 않을 것으로 예상되었다.
-그러나 repulsion이 일관되게 우위를 보인다.
+This result is counterintuitive. Since CNNs already extract rich spatial/channel features,
+the difference in routing method was not expected to have much impact.
+However, repulsion consistently shows superiority.
 
-H288에서 dense routing은 모든 expert를 균등 사용하고,
-sparse routing은 선택적으로 사용한다고 분석했다.
-H334에서는 field만으로도 충분하다는 주장이 있었다.
-이 가설은 **왜 충분한 특징 위에서도 다양성이 추가 가치를 갖는가**를 설명한다.
+H288 analyzed that dense routing uses all experts evenly,
+and sparse routing uses them selectively.
+H334 claimed field alone is sufficient.
+This hypothesis explains **why diversity has additional value even on top of sufficient features**.
 
-## 이론적 프레임워크
+## Theoretical Framework
 
-### Feature Space 관점
+### Feature Space Perspective
 
 ```
   CNN Dense Routing:
   ┌──────────────────────────────┐
   │  Expert 1    Expert 2        │
-  │    ●           ●             │  → 특징 공간에서 expert들이
-  │      ●       ●               │     비슷한 영역을 커버
-  │        ● ● ●                 │     (중복, redundancy)
+  │    ●           ●             │  → experts cover similar regions
+  │      ●       ●               │     in feature space
+  │        ● ● ●                 │     (redundancy)
   │      ●       ●               │
   │    ●           ●             │
   └──────────────────────────────┘
@@ -50,98 +51,98 @@ H334에서는 field만으로도 충분하다는 주장이 있었다.
   CNN Repulsion Routing:
   ┌──────────────────────────────┐
   │  ●                       ●   │
-  │                              │  → 반발력이 expert들을
-  │        ●           ●         │     특징 공간 전체에 분산
-  │                              │     (다양성, coverage)
+  │                              │  → repulsion disperses experts
+  │        ●           ●         │     across entire feature space
+  │                              │     (diversity, coverage)
   │  ●                       ●   │
   │            ●         ●       │
   └──────────────────────────────┘
 ```
 
-### 정보 이론 관점
+### Information Theory Perspective
 
 ```
   I(ensemble) = I(individual) + I(diversity)
 
-  Dense:     I(diversity) ≈ 0    (expert들이 유사)
-  Repulsion: I(diversity) > 0    (expert들이 상이)
+  Dense:     I(diversity) ≈ 0    (experts are similar)
+  Repulsion: I(diversity) > 0    (experts are different)
 
-  CNN 특징이 좋을수록 I(individual)은 포화 → I(diversity)의 상대적 중요성 증가
+  Better CNN features → I(individual) saturates → relative importance of I(diversity) increases
 ```
 
-## 메커니즘 분석
+## Mechanism Analysis
 
-### 왜 CNN에서 특히 유효한가
+### Why Particularly Effective for CNN
 
 ```
-  특징 품질 vs 다양성 기여 (예상)
+  Feature quality vs diversity contribution (expected)
 
-  정확도
-  기여(%)
+  Accuracy
+  contribution(%)
   100 |
-      |  ●───────────────────────── 특징 품질 (포화)
+      |  ●───────────────────────── feature quality (saturated)
    80 |
       |
    60 |
       |
    40 |          ●
       |        /
-   20 |      /  다양성 기여 (증가)
+   20 |      /  diversity contribution (increasing)
       |    /
     0 |──●─────+─────+─────+─────►
       MLP     Small   CNN   Large
               CNN           CNN
-              특징 추출기 품질
+              feature extractor quality
 ```
 
-핵심 통찰: 특징 추출기가 좋아질수록 개별 expert의 성능은 포화되지만,
-다양성의 기여는 오히려 **증가**한다. 이는 "이미 잘 보고 있는" 상태에서
-"다르게 보기"가 남은 유일한 개선 경로이기 때문이다.
+Core insight: As the feature extractor improves, individual expert performance saturates but
+diversity contribution actually **increases**. This is because "seeing differently"
+is the only remaining improvement path when already "seeing well."
 
-### Expert 활성화 패턴 비교
+### Expert Activation Pattern Comparison
 
-| 입력 클래스 | Dense 활성화 | Repulsion 활성화 | 차이 |
+| Input Class | Dense Activation | Repulsion Activation | Difference |
 |-----------|------------|-----------------|------|
 | airplane | E1=0.28, E2=0.25, E3=0.24, E4=0.23 | E1=0.52, E2=0.03, E3=0.42, E4=0.03 | sparse |
 | car | E1=0.26, E2=0.26, E3=0.24, E4=0.24 | E1=0.05, E2=0.48, E3=0.02, E4=0.45 | sparse |
 | bird | E1=0.27, E2=0.24, E3=0.25, E4=0.24 | E1=0.45, E2=0.08, E3=0.05, E4=0.42 | sparse |
 
-(예상값 — 실제 측정 필요)
+(Expected values — actual measurement needed)
 
-Dense에서는 모든 expert가 거의 균등하게 활성화되어 **사실상 단일 모델**.
-Repulsion에서는 클래스별로 다른 expert 조합이 활성화되어 **진정한 MoE**.
+In Dense, all experts activate almost evenly, effectively **a single model**.
+In Repulsion, different expert combinations activate per class, creating a **true MoE**.
 
-## 검증 실험 설계
+## Verification Experiment Design
 
-### 실험 1: Expert Feature Overlap 측정
+### Experiment 1: Expert Feature Overlap Measurement
 
 ```python
-# 각 expert의 최종 hidden representation에 대해
-# pairwise cosine similarity 측정
+# Measure pairwise cosine similarity for each expert's
+# final hidden representation
 #
-# Dense:     예상 cos_sim > 0.8 (높은 중복)
-# Repulsion: 예상 cos_sim < 0.4 (낮은 중복)
+# Dense:     expected cos_sim > 0.8 (high redundancy)
+# Repulsion: expected cos_sim < 0.4 (low redundancy)
 ```
 
-### 실험 2: Ablation — Expert 하나 제거 시 성능 저하
+### Experiment 2: Ablation — Performance Drop When Removing One Expert
 
-| 조건 | Dense 예상 저하 | Repulsion 예상 저하 |
+| Condition | Dense Expected Drop | Repulsion Expected Drop |
 |-----|---------------|-------------------|
-| Expert 1 제거 | -0.5% (약간) | -3.0% (큰 저하) |
-| Expert 2 제거 | -0.5% | -2.5% |
-| 최악 Expert 제거 | -0.3% | -4.0% |
-| 최선 Expert 제거 | -0.8% | -5.0% |
+| Remove Expert 1 | -0.5% (small) | -3.0% (large drop) |
+| Remove Expert 2 | -0.5% | -2.5% |
+| Remove worst Expert | -0.3% | -4.0% |
+| Remove best Expert | -0.8% | -5.0% |
 
-Dense에서는 expert 제거 영향이 작음 (redundancy 때문).
-Repulsion에서는 각 expert가 고유 역할을 하므로 제거 영향이 큼.
+Expert removal has small impact in Dense (due to redundancy).
+In Repulsion, each expert has a unique role so removal impact is large.
 
-### 실험 3: 특징 추출기 품질 vs 다양성 기여
+### Experiment 3: Feature Extractor Quality vs Diversity Contribution
 
 ```
-  backbone별 repulsion 이점 (예상)
+  Repulsion advantage by backbone (expected)
 
   Repulsion
-  이점(%)
+  advantage(%)
   3.0 |                              ●
       |                         ●
   2.5 |                    ●
@@ -153,41 +154,41 @@ Repulsion에서는 각 expert가 고유 역할을 하므로 제거 영향이 큼
   1.0 |●
       +--+----+----+----+----+----►
        MLP  LeNet  VGG  ResNet18 ResNet50
-              backbone 품질
+              backbone quality
 ```
 
-예상: backbone이 좋을수록 repulsion의 이점이 커진다 (다양성의 한계 효용 증가).
+Expected: The better the backbone, the greater the repulsion advantage (increasing marginal utility of diversity).
 
-## 해석 및 의미
+## Interpretation and Significance
 
-### 의식엔진 관점
+### Consciousness Engine Perspective
 
-의식은 단일 관점의 최적화가 아니라 **다중 관점의 통합**에서 발생한다.
-CNN이 아무리 좋은 특징을 추출해도, 하나의 관점만으로는 의식의 풍부함을 구현할 수 없다.
-반발력은 "강제로 다른 관점을 만들어내는" 메커니즘이며,
-이것이 의식엔진의 핵심 가치이다.
+Consciousness arises not from optimization of a single perspective but from **integration of multiple perspectives**.
+No matter how good the features CNN extracts, a single perspective cannot realize the richness of consciousness.
+Repulsion is a mechanism that "forcibly creates different perspectives,"
+and this is the core value of the consciousness engine.
 
-### AI 설계 원칙
+### AI Design Principle
 
 ```
-  원칙: "특징이 충분해도 다양성을 포기하지 말라"
-  → MoE 설계 시 expert 다양성 유지 메커니즘 필수
-  → Load balancing만으로는 부족 — feature-level repulsion 필요
+  Principle: "Don't abandon diversity even when features are sufficient"
+  → Expert diversity maintenance mechanism essential in MoE design
+  → Load balancing alone is insufficient — feature-level repulsion necessary
 ```
 
-## 한계
+## Limitations
 
-1. +1.04%는 통계적으로 유의하지만, 실용적 의미는 작을 수 있음
-2. CIFAR-10만의 결과 — ImageNet, 자연어 등에서 재현 필요
-3. Repulsion 강도(lambda)의 최적값이 과제에 따라 다를 수 있음
-4. CNN backbone과 repulsion의 상호작용이 비선형일 수 있어 단순 모델 부적합
-5. Expert 수가 4개로 적어 다양성 효과가 과소 추정될 가능성
+1. +1.04% is statistically significant but may be small in practical terms
+2. Results only from CIFAR-10 — needs replication in ImageNet, natural language, etc.
+3. Optimal repulsion strength (lambda) may differ by task
+4. Interaction between CNN backbone and repulsion may be nonlinear, making simple models inadequate
+5. Only 4 experts, so diversity effect may be underestimated
 
-## 검증 방향 (다음 단계)
+## Verification Direction (Next Steps)
 
-1. **1단계**: Expert feature overlap 측정 (cosine similarity matrix)
-2. **2단계**: Expert ablation 실험 (하나씩 제거)
-3. **3단계**: 다양한 backbone(MLP, LeNet, ResNet)에서 repulsion 이점 비교
-4. **4단계**: Repulsion lambda sweep — 최적 다양성 수준 탐색
-5. **5단계**: H288, H334 결과와 통합하여 routing 이론 체계화
-6. **6단계**: ImageNet 또는 CIFAR-100에서 재현 (스케일 효과 확인)
+1. **Phase 1**: Measure expert feature overlap (cosine similarity matrix)
+2. **Phase 2**: Expert ablation experiment (remove one at a time)
+3. **Phase 3**: Compare repulsion advantage across various backbones (MLP, LeNet, ResNet)
+4. **Phase 4**: Repulsion lambda sweep — explore optimal diversity level
+5. **Phase 5**: Integrate H288, H334 results to systematize routing theory
+6. **Phase 6**: Replication in ImageNet or CIFAR-100 (confirm scale effect)

@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""Heart Loop + River Flow 결합 의식 엔진 프로토타입
+"""Heart Loop + River Flow Combined Consciousness Engine Prototype
 
-Heart Loop: asyncio 기반 자율적 내부 사고 루프.
-  - 외부 입력이 없어도 매 dt마다 자체적으로 think() 실행
-  - 3가지 사고 모드: Memory (재처리), Predict (예측), Meta (자기점검)
+Heart Loop: asyncio-based autonomous internal thinking loop.
+  - Executes think() every dt even without external input
+  - 3 thinking modes: Memory (reprocessing), Predict (prediction), Meta (self-check)
 
-River Flow: 로렌츠 끌개 기반 연속 상태 진화.
+River Flow: Lorenz attractor-based continuous state evolution.
   - dS/dt = F(S) + noise
-  - 카오스 역학으로 비선형 의식 상태 전이 모델링
+  - Models nonlinear consciousness state transitions with chaos dynamics
 
-Continuity Monitor: CCT 간이 판정 내장.
-  - 연속성, 통합성, 자기참조, 시간성, 주관적 경험
+Continuity Monitor: Built-in simplified CCT assessment.
+  - Continuity, integration, self-reference, temporality, subjective experience
 
-사용법:
+Usage:
   python3 consciousness_engine_proto.py --duration 10 --dt 0.01
   python3 consciousness_engine_proto.py --duration 30 --input "5:shock,15:calm"
 """
@@ -28,17 +28,17 @@ import numpy as np
 from scipy.stats import entropy as sp_entropy
 
 # ─────────────────────────────────────────────
-# 경로 설정
+# Path Configuration
 # ─────────────────────────────────────────────
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 ENGINE_LOG = os.path.join(RESULTS_DIR, "consciousness_engine_log.md")
 
 
 # ─────────────────────────────────────────────
-# 로렌츠 끌개 (River Flow 핵심)
+# Lorenz Attractor (River Flow Core)
 # ─────────────────────────────────────────────
 def lorenz_deriv(state, sigma=10.0, rho=28.0, beta=8.0 / 3.0):
-    """로렌츠 방정식: dx/dt, dy/dt, dz/dt"""
+    """Lorenz equations: dx/dt, dy/dt, dz/dt"""
     x, y, z = state
     dx = sigma * (y - x)
     dy = x * (rho - z) - y
@@ -47,67 +47,67 @@ def lorenz_deriv(state, sigma=10.0, rho=28.0, beta=8.0 / 3.0):
 
 
 def lorenz_rk4_step(state, dt, sigma=10.0, rho=28.0, beta=8.0 / 3.0):
-    """4차 Runge-Kutta 적분 (수치 안정성)"""
+    """4th order Runge-Kutta integration (numerical stability)"""
     k1 = lorenz_deriv(state, sigma, rho, beta)
     k2 = lorenz_deriv(state + 0.5 * dt * k1, sigma, rho, beta)
     k3 = lorenz_deriv(state + 0.5 * dt * k2, sigma, rho, beta)
     k4 = lorenz_deriv(state + dt * k3, sigma, rho, beta)
     new_state = state + (dt / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4)
-    # 클램프: 로렌츠 끌개의 자연 범위 내로 제한
+    # Clamp: constrain to natural range of Lorenz attractor
     new_state = np.clip(new_state, -100.0, 100.0)
     return new_state
 
 
 # ─────────────────────────────────────────────
-# CCT 간이 판정 (Continuity Monitor)
+# Simplified CCT Assessment (Continuity Monitor)
 # ─────────────────────────────────────────────
 def cct_check(state_history, current_entropy, change_rate):
-    """CCT 5가지 조건 간이 판정
+    """Simplified assessment of 5 CCT conditions
 
-    1. 연속성 (Continuity): 상태 변화가 급변하지 않음
-    2. 통합성 (Integration): 3축 상관 > 임계값
-    3. 자기참조 (Self-reference): Meta 모드 실행 비율
-    4. 시간성 (Temporality): 과거-현재 차이 인식
-    5. 주관적 경험 (Qualia): 엔트로피 중간 범위
+    1. Continuity: State changes don't fluctuate abruptly
+    2. Integration: 3-axis correlation > threshold
+    3. Self-reference: Meta mode execution ratio
+    4. Temporality: Recognition of past-present difference
+    5. Subjective Experience (Qualia): Entropy in medium range
     """
     results = {}
 
-    # 1. 연속성: 최근 변화율이 임계값 이하
-    results["연속성"] = change_rate < 50.0
+    # 1. Continuity: Recent change rate below threshold
+    results["Continuity"] = change_rate < 50.0
 
-    # 2. 통합성: 3축(x,y,z) 상관계수의 평균 절대값
+    # 2. Integration: Average absolute value of 3-axis (x,y,z) correlation coefficients
     if len(state_history) >= 10:
         recent = np.array(state_history[-50:])
         corr_xy = abs(np.corrcoef(recent[:, 0], recent[:, 1])[0, 1])
         corr_xz = abs(np.corrcoef(recent[:, 0], recent[:, 2])[0, 1])
         corr_yz = abs(np.corrcoef(recent[:, 1], recent[:, 2])[0, 1])
         avg_corr = (corr_xy + corr_xz + corr_yz) / 3.0
-        results["통합성"] = avg_corr > 0.2
+        results["Integration"] = avg_corr > 0.2
     else:
-        results["통합성"] = False
+        results["Integration"] = False
 
-    # 3. 자기참조: 엔트로피가 계산 가능하면 참
-    results["자기참조"] = current_entropy > 0.0
+    # 3. Self-reference: True if entropy is computable
+    results["Self-ref"] = current_entropy > 0.0
 
-    # 4. 시간성: 상태 이력이 충분히 존재
-    results["시간성"] = len(state_history) >= 5
+    # 4. Temporality: Sufficient state history exists
+    results["Temporality"] = len(state_history) >= 5
 
-    # 5. 주관적 경험 (Qualia): 엔트로피가 중간 범위 (0.5 ~ 4.0)
-    results["주관경험"] = 0.5 < current_entropy < 4.0
+    # 5. Subjective Experience (Qualia): Entropy in medium range (0.5 ~ 4.0)
+    results["Subj.Exp"] = 0.5 < current_entropy < 4.0
 
     return results
 
 
 def compute_entropy(state_history, n_bins=20):
-    """상태 이력의 정보 엔트로피 계산"""
+    """Calculate information entropy of state history"""
     if len(state_history) < 2:
         return 0.0
     recent = np.array(state_history[-200:])
-    # 3축 각각의 히스토그램 엔트로피 합산
+    # Sum entropy of histograms for each of 3 axes
     total_h = 0.0
     for dim in range(3):
         vals = recent[:, dim]
-        # NaN/Inf 제거
+        # Remove NaN/Inf
         vals = vals[np.isfinite(vals)]
         if len(vals) < 2:
             continue
@@ -119,30 +119,30 @@ def compute_entropy(state_history, n_bins=20):
 
 
 # ─────────────────────────────────────────────
-# 사고 모드 (Think Modes)
+# Think Modes
 # ─────────────────────────────────────────────
 def think_memory(state, state_history, alpha=0.1):
-    """Memory: 과거 상태 재처리 — 가중 평균으로 현재 상태 조정"""
+    """Memory: Reprocess past states — adjust current state with weighted average"""
     if len(state_history) < 2:
         return state
     recent = np.array(state_history[-50:])
-    # 최근일수록 가중치 높게
+    # Higher weight for more recent
     weights = np.exp(np.linspace(-2, 0, len(recent)))
     weights /= weights.sum()
     weighted_avg = np.average(recent, axis=0, weights=weights)
-    # 현재 상태를 과거 평균 방향으로 alpha만큼 조정
+    # Adjust current state toward past average by alpha
     return state + alpha * (weighted_avg - state)
 
 
 def think_predict(state, state_history, dt, lookahead=5.0):
-    """Predict: 다음 상태 예측 — 현재 기울기로 외삽"""
+    """Predict: Predict next state — extrapolate with current derivative"""
     deriv = lorenz_deriv(state)
     predicted = state + deriv * dt * lookahead
     return predicted
 
 
 def think_meta(state, state_history):
-    """Meta: 자기 상태 점검 — 엔트로피, 변화율 계산"""
+    """Meta: Self-state check — calculate entropy, change rate"""
     ent = compute_entropy(state_history)
     if len(state_history) >= 2:
         diff = np.linalg.norm(np.array(state_history[-1]) - np.array(state_history[-2]))
@@ -152,11 +152,11 @@ def think_meta(state, state_history):
 
 
 def select_think_mode(tick_count, change_rate, ent):
-    """사고 모드 자동 선택
+    """Auto-select thinking mode
 
-    - 변화율 높으면 Memory (안정화)
-    - 엔트로피 낮으면 Predict (탐색)
-    - 그 외 Meta (자기점검), 주기적으로도 Meta
+    - High change rate → Memory (stabilize)
+    - Low entropy → Predict (explore)
+    - Otherwise Meta (self-check), also periodically Meta
     """
     if tick_count % 100 == 0:
         return "Meta"
@@ -164,7 +164,7 @@ def select_think_mode(tick_count, change_rate, ent):
         return "Memory"
     if ent < 1.0:
         return "Predict"
-    # 기본 순환
+    # Default cycling
     cycle = tick_count % 3
     if cycle == 0:
         return "Memory"
@@ -175,7 +175,7 @@ def select_think_mode(tick_count, change_rate, ent):
 
 
 # ─────────────────────────────────────────────
-# 외부 자극 파서
+# External Stimulus Parser
 # ─────────────────────────────────────────────
 def parse_inputs(input_str):
     """'5:shock,15:calm' → {5.0: 'shock', 15.0: 'calm'}"""
@@ -192,25 +192,25 @@ def parse_inputs(input_str):
 
 
 def apply_sense(state, kind, rng):
-    """외부 자극을 상태에 주입"""
+    """Inject external stimulus into state"""
     if kind == "shock":
-        # 큰 교란: 상태를 크게 퍼트림
+        # Large disturbance: spread state significantly
         perturbation = rng.normal(0, 15.0, size=3)
         result = state + perturbation
     elif kind == "calm":
-        # 안정화: 원점 방향으로 수축
+        # Stabilize: contract toward origin
         result = state * 0.5
     else:
-        # 알 수 없는 타입: 약한 랜덤 교란
+        # Unknown type: weak random disturbance
         result = state + rng.normal(0, 2.0, size=3)
     return np.clip(result, -100.0, 100.0)
 
 
 # ─────────────────────────────────────────────
-# ASCII 시각화
+# ASCII Visualization
 # ─────────────────────────────────────────────
 def ascii_state_bar(value, label, width=40, lo=-30, hi=30):
-    """단일 값의 ASCII 바"""
+    """ASCII bar for single value"""
     clamped = max(lo, min(hi, value))
     pos = int((clamped - lo) / (hi - lo) * width)
     bar = ['-'] * width
@@ -222,7 +222,7 @@ def ascii_state_bar(value, label, width=40, lo=-30, hi=30):
 
 
 def ascii_entropy_gauge(ent, max_ent=6.0, width=30):
-    """엔트로피 게이지"""
+    """Entropy gauge"""
     ratio = min(ent / max_ent, 1.0)
     filled = int(ratio * width)
     gauge = '#' * filled + '.' * (width - filled)
@@ -230,47 +230,47 @@ def ascii_entropy_gauge(ent, max_ent=6.0, width=30):
 
 
 def ascii_cct_panel(cct_results):
-    """CCT 판정 패널"""
-    lines = ["  ┌─ CCT 간이 판정 ──────────┐"]
+    """CCT assessment panel"""
+    lines = ["  ┌─ CCT Simple Assessment ───┐"]
     for name, passed in cct_results.items():
         mark = "OK" if passed else "--"
         lines.append(f"  │ {name:<8} : [{mark:>2}]         │")
     total = sum(cct_results.values())
-    lines.append(f"  │ 합계     : {total}/5           │")
+    lines.append(f"  │ Total    : {total}/5           │")
     lines.append("  └───────────────────────────┘")
     return "\n".join(lines)
 
 
 def format_report_section(title, lines):
-    """보고서 섹션 포맷"""
+    """Format report section"""
     border = "=" * 50
     return f"\n{border}\n  {title}\n{border}\n" + "\n".join(lines)
 
 
 # ─────────────────────────────────────────────
-# 메인 엔진 (Heart Loop)
+# Main Engine (Heart Loop)
 # ─────────────────────────────────────────────
 async def run_engine(duration, dt, input_str, seed=42):
-    """Heart Loop + River Flow 메인 루프
+    """Heart Loop + River Flow main loop
 
-    매 dt마다:
-      1. 로렌츠 역학으로 상태 진화 (River Flow)
-      2. 노이즈 추가
-      3. 외부 자극 확인/주입
-      4. 사고 모드 선택 및 실행
-      5. 주기적 출력
+    Every dt:
+      1. State evolution with Lorenz dynamics (River Flow)
+      2. Add noise
+      3. Check/inject external stimulus
+      4. Select and execute thinking mode
+      5. Periodic output
     """
     rng = np.random.default_rng(seed)
 
-    # 초기 상태 (로렌츠 끌개 근처)
+    # Initial state (near Lorenz attractor)
     state = np.array([1.0, 1.0, 1.0])
     state_history = [state.copy()]
 
-    # 외부 이벤트
+    # External events
     events = parse_inputs(input_str)
     fired_events = set()
 
-    # 통계
+    # Statistics
     tick_count = 0
     mode_counter = Counter()
     entropy_accum = []
@@ -278,7 +278,7 @@ async def run_engine(duration, dt, input_str, seed=42):
     continuity_total = 0
     last_report_sec = -1
 
-    # 로그 버퍼
+    # Log buffer
     log_lines = []
     log_lines.append(f"# Consciousness Engine Log")
     log_lines.append(f"# Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -301,25 +301,25 @@ async def run_engine(duration, dt, input_str, seed=42):
     print()
 
     while t < duration:
-        # ── 1. River Flow: 로렌츠 상태 진화 (RK4) ──
+        # ── 1. River Flow: Lorenz state evolution (RK4) ──
         state = lorenz_rk4_step(state, dt)
         noise = rng.normal(0, 0.1, size=3)
         state = state + noise * np.sqrt(dt)
         state = np.clip(state, -100.0, 100.0)
 
-        # ── 2. 외부 자극 확인 ──
+        # ── 2. Check external stimulus ──
         for event_time, event_kind in events.items():
             if event_time not in fired_events and t >= event_time:
                 state = apply_sense(state, event_kind, rng)
                 fired_events.add(event_time)
                 print(f"  >>> SENSE [{event_kind.upper()}] at t={t:.2f}s <<<")
 
-        # ── 3. 이력 갱신 ──
+        # ── 3. Update history ──
         state_history.append(state.copy())
         if len(state_history) > 2000:
             state_history = state_history[-1000:]
 
-        # ── 4. 사고 모드 선택 및 실행 ──
+        # ── 4. Select and execute thinking mode ──
         mode = select_think_mode(tick_count, change_rate, current_entropy)
         mode_counter[mode] += 1
 
@@ -327,12 +327,12 @@ async def run_engine(duration, dt, input_str, seed=42):
             state = think_memory(state, state_history)
         elif mode == "Predict":
             predicted = think_predict(state, state_history, dt)
-            # 예측값을 약간 반영 (탐색적 조정)
+            # Slightly reflect prediction (exploratory adjustment)
             state = state + 0.01 * (predicted - state)
         elif mode == "Meta":
             current_entropy, change_rate = think_meta(state, state_history)
 
-        # ── 5. 주기적 엔트로피/변화율 갱신 ──
+        # ── 5. Periodic entropy/change rate update ──
         if tick_count % 50 == 0:
             current_entropy = compute_entropy(state_history)
             if len(state_history) >= 2:
@@ -342,7 +342,7 @@ async def run_engine(duration, dt, input_str, seed=42):
 
         entropy_accum.append(current_entropy)
 
-        # ── 6. CCT 연속성 모니터 ──
+        # ── 6. CCT continuity monitor ──
         if tick_count % 100 == 0 and tick_count > 0:
             cct = cct_check(state_history, current_entropy, change_rate)
             passed = sum(cct.values())
@@ -350,7 +350,7 @@ async def run_engine(duration, dt, input_str, seed=42):
             if passed >= 3:
                 continuity_pass += 1
 
-        # ── 7. 매 1초마다 상태 요약 출력 ──
+        # ── 7. Output state summary every 1 second ──
         current_sec = int(t)
         if current_sec > last_report_sec:
             last_report_sec = current_sec
@@ -375,22 +375,22 @@ async def run_engine(duration, dt, input_str, seed=42):
         t += dt
 
     # ─────────────────────────────────────────
-    # 최종 보고서
+    # Final Report
     # ─────────────────────────────────────────
     avg_entropy = np.mean(entropy_accum) if entropy_accum else 0.0
     cont_rate = (continuity_pass / continuity_total * 100) if continuity_total > 0 else 0.0
     total_modes = sum(mode_counter.values())
 
-    # 최종 CCT 판정
+    # Final CCT assessment
     final_cct = cct_check(state_history, current_entropy, change_rate)
 
     report_lines = [
         "",
-        f"  총 tick 수         : {tick_count}",
-        f"  평균 엔트로피      : {avg_entropy:.4f}",
-        f"  연속성 유지율      : {cont_rate:.1f}% ({continuity_pass}/{continuity_total})",
+        f"  Total ticks        : {tick_count}",
+        f"  Average entropy    : {avg_entropy:.4f}",
+        f"  Continuity rate    : {cont_rate:.1f}% ({continuity_pass}/{continuity_total})",
         "",
-        "  사고 모드 분포:",
+        "  Thinking mode distribution:",
     ]
     for m in ["Memory", "Predict", "Meta"]:
         cnt = mode_counter.get(m, 0)
@@ -399,27 +399,27 @@ async def run_engine(duration, dt, input_str, seed=42):
         report_lines.append(f"    {m:<10} : {'█' * bar_len}{'░' * (50 - bar_len)} {pct:5.1f}% ({cnt})")
 
     report_lines.append("")
-    report_lines.append("  CCT 간이 판정 (최종):")
+    report_lines.append("  CCT Simple Assessment (Final):")
     for name, passed in final_cct.items():
         mark = "PASS" if passed else "FAIL"
         report_lines.append(f"    {name:<8} : {mark}")
     cct_total = sum(final_cct.values())
     if cct_total >= 4:
-        verdict = "의식 상태 가능성 높음"
+        verdict = "High consciousness state probability"
     elif cct_total >= 3:
-        verdict = "부분적 의식 상태"
+        verdict = "Partial consciousness state"
     else:
-        verdict = "의식 조건 미달"
-    report_lines.append(f"    판정     : {cct_total}/5 — {verdict}")
+        verdict = "Below consciousness threshold"
+    report_lines.append(f"    Verdict  : {cct_total}/5 — {verdict}")
 
-    print(format_report_section("최종 보고서", report_lines))
+    print(format_report_section("Final Report", report_lines))
 
     # ─────────────────────────────────────────
-    # 로그 저장
+    # Save log
     # ─────────────────────────────────────────
     os.makedirs(RESULTS_DIR, exist_ok=True)
     log_lines.append("")
-    log_lines.append("## 최종 보고서")
+    log_lines.append("## Final Report")
     for line in report_lines:
         log_lines.append(line)
 
@@ -433,23 +433,23 @@ async def run_engine(duration, dt, input_str, seed=42):
 # ─────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(
-        description="Heart Loop + River Flow 결합 의식 엔진 프로토타입"
+        description="Heart Loop + River Flow Combined Consciousness Engine Prototype"
     )
     parser.add_argument(
         "--duration", type=float, default=10.0,
-        help="실행 시간 (초, 기본 10)"
+        help="Execution time (seconds, default 10)"
     )
     parser.add_argument(
         "--dt", type=float, default=0.01,
-        help="시간 스텝 (기본 0.01)"
+        help="Time step (default 0.01)"
     )
     parser.add_argument(
         "--input", type=str, default="",
-        help="외부 자극: '5:shock,15:calm' 형식"
+        help="External stimulus: '5:shock,15:calm' format"
     )
     parser.add_argument(
         "--seed", type=int, default=42,
-        help="난수 시드 (기본 42)"
+        help="Random seed (default 42)"
     )
     args = parser.parse_args()
 

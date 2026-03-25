@@ -1,89 +1,89 @@
-# 가설 검토 010: 1/3 법칙은 정확히 1/3이 아니다 ❌
+# Hypothesis Review 010: The 1/3 Law is Not Exactly 1/3 ❌
 
-## 가설
+## Hypothesis
 
-> 파라미터 공간의 33.3%(=1/3)가 특이점 영역이며, 이는 모집단 분포와 무관한 구조적 상수이다.
+> 33.3% (=1/3) of parameter space constitutes the singularity region, and this is a structural constant independent of the population distribution.
 
-## 배경 및 맥락
+## Background and Context
 
-초기 시뮬레이션에서 균등 격자(uniform grid) 위에 D, P, I를 배치했을 때
-특이점(Z > 2σ) 영역이 전체의 약 33.2%를 차지했다.
-이 수치가 "1/3"에 가깝다는 점에서, 파라미터 공간의 구조적 상수로
-해석하려는 시도가 있었다.
-그러나 실제 뇌 파라미터는 균등분포가 아니라
-Beta 분포(α≈2, β≈5)에 더 가까운 비대칭 분포를 따른다.
-따라서 모집단 분포를 바꿔 검증해야 했다.
+In initial simulations, when D, P, I were arranged on a uniform grid (uniform grid),
+the singularity region (Z > 2σ) occupied approximately 33.2% of the total.
+Because this value was close to "1/3," there was an attempt to
+interpret it as a structural constant of the parameter space.
+However, actual brain parameters do not follow a uniform distribution but
+are closer to an asymmetric distribution approximating Beta(α≈2, β≈5).
+Therefore, verification with a changed population distribution was required.
 
-관련 가설: 가설 011(Z_max), 가설 012(엔트로피 ln(3)), 가설 013(골든존 폭)
+Related hypotheses: Hypothesis 011 (Z_max), Hypothesis 012 (Entropy ln(3)), Hypothesis 013 (Golden Zone width)
 
-## 검증 데이터
-
-```
-  분포 유형        │ 특이점 비율 │ 1/3 대비 오차
-  ────────────────┼────────────┼────────────
-  균등 격자(grid)  │   33.2%    │  -0.1%p
-  Beta(2,5)       │   30.17%   │  -3.16%p
-  Beta(1,3)       │   31.4%    │  -1.9%p
-  정규(μ=0.5,σ=0.2)│  28.9%    │  -4.4%p
-  이론값 1/3       │   33.33%   │   기준
-```
-
-검증 모집단: n = 1,000,000 (verify_math.py)
-
-## 분포별 특이점 비율 비교 그래프
+## Verification Data
 
 ```
-  비율 (%)
+  Distribution type       │ Singularity ratio │ Error vs 1/3
+  ────────────────────────┼───────────────────┼─────────────
+  Uniform grid            │   33.2%           │  -0.1%p
+  Beta(2,5)               │   30.17%          │  -3.16%p
+  Beta(1,3)               │   31.4%           │  -1.9%p
+  Normal(μ=0.5,σ=0.2)     │   28.9%           │  -4.4%p
+  Theoretical value 1/3   │   33.33%          │   baseline
+```
+
+Verification population: n = 1,000,000 (verify_math.py)
+
+## Singularity Ratio Comparison by Distribution (Graph)
+
+```
+  Ratio (%)
   35│
   34│
-  33│──────●균등(33.2%)─────────────── 1/3 (33.33%)
+  33│──────●Uniform(33.2%)─────────────── 1/3 (33.33%)
   32│
   31│           ●Beta(1,3)(31.4%)
   30│      ●Beta(2,5)(30.17%)
-  29│ ●정규(28.9%)
+  29│ ●Normal(28.9%)
   28│
   27│
     └─────────────────────────────────────────
-      정규     Beta(2,5)  Beta(1,3)   균등격자
-         ◀── 비대칭 강함         대칭 ──▶
+      Normal   Beta(2,5)  Beta(1,3)  Uniform grid
+         ◀── More asymmetric         Symmetric ──▶
 ```
 
-## 해석
+## Interpretation
 
-1. **균등 격자에서만 1/3에 가까움**: 격자가 파라미터 공간을 등간격으로
-   샘플링하기 때문에 모든 (D, P, I) 조합이 동일 가중치를 받는다.
-2. **Beta 분포에서는 30% 수준**: 실제 뇌 데이터에 가까운 Beta(2,5)에서는
-   특이점 영역이 약 30.17%로 떨어진다. 이는 높은 Inhibition(I > 0.5) 영역이
-   Beta 분포에서 상대적으로 적게 샘플링되기 때문이다.
-3. **분포 의존적**: 정규분포에서는 28.9%까지 하락하며, 분포 유형에 따라
-   4%p 이상 변동이 관측된다.
+1. **Close to 1/3 only with uniform grid**: Because the grid samples the parameter space
+   at equal intervals, all (D, P, I) combinations receive equal weight.
+2. **Around 30% with Beta distribution**: With Beta(2,5), which is closer to actual brain data,
+   the singularity region drops to approximately 30.17%. This is because regions with high
+   Inhibition (I > 0.5) are relatively undersampled in the Beta distribution.
+3. **Distribution-dependent**: It drops to 28.9% with a normal distribution, with over 4%p
+   variation observed depending on the distribution type.
 
-## 수정된 공식
+## Revised Formula
 
 ```
-  특이점 비율 = ∫∫∫ 1(Z(D,P,I) > 2σ) × f(D,P,I) dD dP dI
-  여기서 f는 모집단 분포의 결합확률밀도함수
-  → 분포 f에 종속 → 구조적 상수가 아님
+  Singularity ratio = ∫∫∫ 1(Z(D,P,I) > 2σ) × f(D,P,I) dD dP dI
+  where f is the joint probability density function of the population distribution
+  → Dependent on distribution f → not a structural constant
 ```
 
-## 한계
+## Limitations
 
-- 3변수(D, P, I) 독립 가정이 현실에서는 성립하지 않을 수 있음
-- Beta 분포의 파라미터(α, β)는 임상 데이터 부족으로 추정값
-- 격자 해상도(grid=100)에서의 이산화 오차 존재 (약 ±0.5%)
+- The independence assumption for 3 variables (D, P, I) may not hold in reality
+- Beta distribution parameters (α, β) are estimates due to insufficient clinical data
+- Discretization error at grid resolution (grid=100) of approximately ±0.5%
 
-## 다음 단계
+## Next Steps
 
-1. 실제 임상 뇌 데이터에서 D, P, I 분포를 추정하여 재검증
-2. 변수 간 상관관계(D-P 양의 상관 등)를 반영한 결합분포 검증
-3. 특이점 비율이 약 30%에 수렴하는지 다양한 분포군에서 확인
-4. 가설 012(엔트로피 ln(3))와의 관계 — 3상태에서 왜 ~30%인지 이론적 설명 시도
+1. Estimate D, P, I distributions from actual clinical brain data and re-verify
+2. Verify using a joint distribution that reflects correlations between variables (e.g., positive D-P correlation)
+3. Confirm whether the singularity ratio converges to approximately 30% across various distribution families
+4. Relationship with Hypothesis 012 (Entropy ln(3)) — theoretical explanation for why it is ~30% in 3 states
 
-## 결론
+## Conclusion
 
-> ❌ "1/3 법칙"은 반증됨. 특이점 비율은 약 28~33%로 모집단 분포에 따라 변동하며,
-> 구조적 상수가 아닌 분포 종속 통계량이다. 균등 격자의 33.2%는 근사값에 불과하다.
+> ❌ The "1/3 Law" is refuted. The singularity ratio varies between approximately 28~33% depending on the population distribution,
+> and is a distribution-dependent statistic, not a structural constant. The uniform grid's 33.2% is merely an approximation.
 
 ---
 
-*검증: verify_math.py (n=1,000,000, grid=100)*
+*Verification: verify_math.py (n=1,000,000, grid=100)*

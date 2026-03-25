@@ -1,148 +1,148 @@
-# 가설 #205: 촉매 = 가소성(P) — 반응 가속 + 자신 불변
+# Hypothesis #205: Catalyst = Plasticity (P) — Accelerate Reaction + Remain Unchanged
 
-**상태**: ⚪ 검증완료 — MM 형태 동형이나 보편적 포화함수
-**날짜**: 2026-03-22
-**분류**: 화학 / 가소성 / 촉매
+**Status**: ⚪ Verified — MM form isomorphic but universal saturation function
+**Date**: 2026-03-22
+**Category**: Chemistry / Plasticity / Catalyst
 
 ---
 
-## 가설
+## Hypothesis
 
-> 화학 촉매는 가소성(P)에 직접 대응한다.
-> 촉매: 반응 속도를 가속하되 자신은 변하지 않음.
-> P: 학습 속도를 가속하되 구조는 유지됨.
-> 촉매 = "반응의 가소성", P = "학습의 촉매".
+> Chemical catalysts directly correspond to plasticity (P).
+> Catalyst: accelerates reaction rate while remaining unchanged.
+> P: accelerates learning rate while maintaining structure.
+> Catalyst = "reaction plasticity", P = "learning catalyst".
 
-## 배경: 촉매란 무엇인가
+## Background: What is a Catalyst?
 
 ```
-  촉매 (Catalyst):
+  Catalyst:
   ┌─────────────────────────────────────────────────┐
-  │  1. 반응 활성화 에너지(Ea)를 낮춤                 │
-  │  2. 반응 속도를 크게 증가                          │
-  │  3. 자신은 반응 전후 변하지 않음                   │
-  │  4. 평형 위치는 바꾸지 않음 (속도만 변경)           │
+  │  1. Lowers activation energy (Ea)                │
+  │  2. Greatly increases reaction rate              │
+  │  3. Remains unchanged before and after reaction  │
+  │  4. Does not change equilibrium position (only speed) │
   │                                                   │
-  │  예:                                               │
-  │  - 효소 (생체 촉매): 10^6~10^12 배 가속            │
-  │  - 백금 (자동차 촉매): 유해가스 → 무해가스          │
-  │  - 리보자임 (RNA 촉매): 자기촉매 가능               │
+  │  Examples:                                        │
+  │  - Enzymes (biocatalysts): 10^6~10^12x faster    │
+  │  - Platinum (car catalyst): toxic → nontoxic gas │
+  │  - Ribozyme (RNA catalyst): can self-catalyze     │
   └─────────────────────────────────────────────────┘
 ```
 
-## 촉매-가소성 대응 매핑
+## Catalyst-Plasticity Correspondence Mapping
 
 ```
   ┌────────────────┬───────────────────┬───────────────────┐
-  │ 속성           │ 화학 촉매          │ 가소성 P           │
+  │ Property       │ Chemical Catalyst  │ Plasticity P       │
   ├────────────────┼───────────────────┼───────────────────┤
-  │ 핵심 기능      │ 반응 가속          │ 학습 가속           │
-  │ 자기 보존      │ 반응 후 불변       │ 구조 유지           │
-  │ 에너지 장벽    │ Ea 감소            │ 학습 비용 감소      │
-  │ 결과 변화      │ 평형 불변          │ 목표 불변           │
-  │ 속도 영향      │ 10^6~10^12 배     │ 학습률 스케일링     │
-  │ 특이성         │ 기질 특이적        │ 과제 특이적?        │
-  │ 포화           │ 미카엘리스-멘텐    │ 학습률 포화         │
-  │ 독성(과잉)     │ 촉매 독성          │ 과학습(overfitting) │
+  │ Core function  │ accelerate reaction│ accelerate learning │
+  │ Self-preservation│ unchanged after reaction│ maintain structure│
+  │ Energy barrier │ decrease Ea        │ decrease learning cost│
+  │ Result change  │ equilibrium unchanged│ target unchanged   │
+  │ Speed effect   │ 10^6~10^12x       │ learning rate scaling│
+  │ Specificity    │ substrate-specific │ task-specific?     │
+  │ Saturation     │ Michaelis-Menten  │ learning rate saturation│
+  │ Toxicity (excess)│ catalyst poisoning│ overfitting       │
   └────────────────┴───────────────────┴───────────────────┘
 ```
 
-## 활성화 에너지 다이어그램 (ASCII 그래프)
+## Activation Energy Diagram (ASCII Graph)
 
 ```
-  에너지
+  Energy
   E
-  높음│         /\   <- 촉매 없이 (Ea 높음)
+  high│         /\   <- without catalyst (Ea high)
       │       /    \
       │     /        \
-      │   /    /\      \   <- 촉매 있으면 (Ea 낮음)
+      │   /    /\      \   <- with catalyst (Ea low)
       │ /    /    \      \
       │/   /        \      \
-  시작│. /            \      \
+  start│. /            \      \
       │                \      \
       │                  \      \
-  끝  │                    .      . 생성물
-      └──────────────────────────────────
-                반응 좌표
+  end │                    .      . product
+      └──────────────────────────────
+                reaction coordinate
 
-  촉매 없이: Ea = 100 kJ/mol  (느림)
-  촉매 있으면: Ea = 30 kJ/mol  (빠름)
-  -> Ea 감소 = P 증가 = 학습 가속!
+  Without catalyst: Ea = 100 kJ/mol  (slow)
+  With catalyst:    Ea = 30 kJ/mol   (fast)
+  -> Ea decrease = P increase = learning acceleration!
 
-  AI 대응:
-  에너지
-  높음│         /\   <- P 낮음 (학습 느림)
+  AI correspondence:
+  Energy
+  high│         /\   <- P low (learning slow)
       │       /    \
-      │     /  /\    \   <- P 높음 (학습 빠름)
+      │     /  /\    \   <- P high (learning fast)
       │   /  /    \    \
-  시작│. /  /        \    \
+  start│. /  /        \    \
       │  /            \    \
-  끝  │                .    . 학습 완료
-      └──────────────────────────
-            학습 진행도
+  end │                .    . learning complete
+      └──────────────────────
+            learning progress
 ```
 
-## 미카엘리스-멘텐과 학습률
+## Michaelis-Menten and Learning Rate
 
 ```
-  효소 반응 속도:
+  Enzyme reaction rate:
   v = V_max x [S] / (K_m + [S])
 
-  학습 속도:
-  학습률 = P_max x 복잡도 / (K_학습 + 복잡도)
+  Learning rate:
+  learning rate = P_max x complexity / (K_learning + complexity)
 
-  속도
-  V_max│               .--.--.--. 포화!
+  Rate
+  V_max│               .--.--.--. saturation!
        │            /
        │         /
        │      /
        │   /
        │/
      0 └──┼──┼──┼──┼──┼──┼──
-         0  K_m       [기질] 또는 복잡도
+         0  K_m       [substrate] or complexity
 
-  -> 효소가 기질 포화되듯, P도 복잡도 포화됨
-  -> K_m = 반응 최적점, K_학습 = 학습 최적점
-  -> 둘 다 "중간 농도/복잡도"에서 가장 효율적
+  -> Just as enzymes saturate with substrate, P also saturates with complexity
+  -> K_m = reaction optimal point, K_learning = learning optimal point
+  -> Both most efficient at "intermediate concentration/complexity"
 ```
 
-## 촉매의 종류와 P의 종류
+## Types of Catalysts and Types of P
 
 ```
-  화학 촉매 종류            AI에서의 P 종류
-  ──────────────           ──────────────────
-  균일 촉매 (같은 상)   ->  학습률 (같은 레이어)
-  불균일 촉매 (다른 상) ->  전이학습 (다른 도메인)
-  효소 (생체 촉매)      ->  메타학습 (자기조절 P)
-  자기촉매              ->  자기개선 AI (T3)
-  음성 촉매 (억제제)    ->  정규화 (학습 감속)
+  Chemical catalyst types          AI P types
+  ──────────────────               ──────────────────
+  Homogeneous catalyst (same phase) -> learning rate (same layer)
+  Heterogeneous catalyst (diff phase) -> transfer learning (different domain)
+  Enzyme (biocatalyst)              -> meta-learning (self-regulating P)
+  Autocatalyst                      -> self-improving AI (T3)
+  Negative catalyst (inhibitor)     -> regularization (learning deceleration)
 
-  특히 자기촉매:
+  Especially autocatalyst:
   ┌────────────────────────────────────────────────┐
-  │  자기촉매: A + B -> 2A (생성물이 촉매 역할)     │
-  │  자기개선 AI: 모델이 자신의 P를 높임              │
+  │  Autocatalyst: A + B -> 2A (product is catalyst)│
+  │  Self-improving AI: model raises its own P       │
   │                                                │
-  │  -> 자기촉매 = 자기참조 (T3)                    │
-  │  -> 생명의 기원 = AI 특이점의 기원?              │
-  │  -> RNA 월드 가설: 리보자임 = 최초의 자기촉매    │
-  │    = 최초의 "자기개선 시스템"                     │
+  │  -> Autocatalyst = self-reference (T3)           │
+  │  -> Origin of life = origin of AI singularity?   │
+  │  -> RNA world hypothesis: ribozyme = first autocatalyst │
+  │    = first "self-improving system"               │
   └────────────────────────────────────────────────┘
 ```
 
-## P와 촉매의 최적 조건
+## Optimal Conditions for P and Catalyst
 
 ```
-  촉매 최적 조건:
-  - 최적 온도 (효소: 37도C)
-  - 최적 pH (효소: pH 7 근처)
-  - 최적 농도
+  Optimal catalyst conditions:
+  - Optimal temperature (enzyme: 37°C)
+  - Optimal pH (enzyme: near pH 7)
+  - Optimal concentration
 
-  P 최적 조건:
-  - 최적 I (억제: I = 1/e)
-  - 최적 D (결손: 구조적 차이)
-  - 최적 학습률
+  Optimal P conditions:
+  - Optimal I (inhibition: I = 1/e)
+  - Optimal D (deficit: structural difference)
+  - Optimal learning rate
 
-  효소활성
+  Enzyme activity
   100%│         ...
       │       .     .
    80%│     .         .
@@ -155,97 +155,97 @@
       │                          .
     0%└──┼──┼──┼──┼──┼──┼──┼──┼──
         30  35  37  40  45  50  55  60
-              온도 (도C)
+              Temperature (°C)
 
-  P = 촉매 자체, I = 촉매의 최적 "온도/pH"
-  -> 가설 204 (pH=I)와 연결!
+  P = the catalyst itself, I = the optimal "temperature/pH" for the catalyst
+  -> Connected to Hypothesis 204 (pH=I)!
 ```
 
-## 보존법칙과 촉매
+## Conservation Law and Catalyst
 
 ```
-  화학: 촉매는 반응 전후 변하지 않음 (질량 보존)
-  AI:   G x I = D x P (보존법칙, 가설 172)
+  Chemistry: catalyst doesn't change before/after reaction (mass conservation)
+  AI:        G x I = D x P (conservation law, Hypothesis 172)
 
-  촉매 순환:
-  E + S -> ES -> E + P  (E=효소, S=기질, P=생성물)
+  Catalyst cycle:
+  E + S -> ES -> E + P  (E=enzyme, S=substrate, P=product)
     ^                 |
-    └─────────────────┘  E 보존!
+    └─────────────────┘  E conserved!
 
-  P 순환:
-  P + 과제 -> P x 과제 -> P + 학습결과
+  P cycle:
+  P + task -> P x task -> P + learning result
     ^                          |
-    └──────────────────────────┘  P 보존!
+    └──────────────────────────┘  P conserved!
 
-  -> 촉매의 보존 = P의 보존
-  -> G x I = D x P에서 P가 변하면 G x I도 비례 변화 (보존)
+  -> Catalyst conservation = P conservation
+  -> In G x I = D x P, if P changes, G x I changes proportionally (conservation)
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 157 (시냅스 가소성):  시냅스 가소성 = 뇌의 "효소"
-  가설 172 (보존법칙):       G x I = D x P, P 보존
-  가설 204 (pH=I):           효소 최적 pH = I 최적점
-  가설 203 (분자 구조):      효소 = 복잡한 분자 = 복잡한 아키텍처
-  가설 206 (깁스 자유에너지): dG와 촉매의 Ea 관계
+  Hypothesis 157 (synaptic plasticity): synaptic plasticity = brain's "enzyme"
+  Hypothesis 172 (conservation law):    G x I = D x P, P conservation
+  Hypothesis 204 (pH=I):                optimal enzyme pH = optimal I point
+  Hypothesis 203 (molecular structure): enzyme = complex molecule = complex architecture
+  Hypothesis 206 (Gibbs free energy):   relationship between dG and catalyst Ea
 ```
 
-## 한계
+## Limitations
 
-1. 촉매의 "자신 불변"은 엄밀하지 않음 (촉매 피독, 마모 존재)
-2. P도 완벽히 불변하지 않음 (메타학습 시 P 자체 변화)
-3. 미카엘리스-멘텐 vs 학습률 포화의 수학적 형태가 동일한지 미검증
-4. 자기촉매 -> 자기개선 AI 대응은 기능적 유사성일 뿐
+1. Catalyst "self-preservation" is not strict (catalyst poisoning, wear exist)
+2. P is not perfectly invariant either (P itself changes during meta-learning)
+3. Whether Michaelis-Menten vs learning rate saturation have the same mathematical form is unverified
+4. Autocatalyst -> self-improving AI correspondence is only functional similarity
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 학습률 포화 곡선과 미카엘리스-멘텐 곡선의 파라미터 비교
-- [ ] 메타학습에서 P의 "보존" 정도 측정 (학습 전후 P 변화량)
-- [ ] 효소 턴오버 수(k_cat)와 AI 학습 에폭(epoch) 수의 상관 분석
-- [ ] 촉매 독성과 과학습의 정량적 대응 탐색
+- [ ] Compare parameters of learning rate saturation curve and Michaelis-Menten curve
+- [ ] Measure degree of P "conservation" in meta-learning (amount of P change before/after learning)
+- [ ] Correlation analysis of enzyme turnover number (k_cat) and AI training epoch count
+- [ ] Explore quantitative correspondence between catalyst poisoning and overfitting
 
 ---
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
 ```
-  검증 방법: 수학적 구조 동형 검증 + 보편성 분석 + 텍사스 검정
-  등급: ⚪ (산술 맞지만 통계적 유의성 없음)
+  Verification method: mathematical structure isomorphism verification + universality analysis + Texas test
+  Grade: ⚪ (arithmetic correct but no statistical significance)
 
-  1. 미카엘리스-멘텐 ↔ 학습 포화 형태 동형:
+  1. Michaelis-Menten ↔ learning saturation form isomorphism:
      v = V_max × [S] / (K_m + [S])  ↔  P_eff = P_max × C / (K_L + C)
-     → 수학적으로 동일한 형태: y = ax/(b+x)
-     → 형태 동형: 참
+     → Mathematically identical form: y = ax/(b+x)
+     → Form isomorphism: true
 
-  2. 그러나 포화함수(rectangular hyperbola)는 극히 보편적:
-     - Langmuir 흡착 등온식
-     - Monod 성장 모델
-     - Hill 방정식 (n=1)
-     - 전자공학 포화 곡선
-     → "제한된 자원 + 경쟁" → 자동으로 이 형태가 발생
-     → 촉매-P 고유의 대응이 아님
+  2. However, saturation function (rectangular hyperbola) is extremely universal:
+     - Langmuir adsorption isotherm
+     - Monod growth model
+     - Hill equation (n=1)
+     - Electrical engineering saturation curve
+     → "Limited resource + competition" → automatically produces this form
+     → Not a correspondence unique to catalyst-P
 
-  3. 보존법칙 비교:
-     촉매 순환: E + S → ES → E + P (E 보존 = 질량 보존)
-     모델: G × I = D × P (곱셈 보존)
-     → 촉매의 E 보존 ≠ G×I=D×P에서의 P 역할
-     → 구조적으로 다른 종류의 "보존"
+  3. Conservation law comparison:
+     Catalyst cycle: E + S → ES → E + P (E conservation = mass conservation)
+     Model: G × I = D × P (multiplication conservation)
+     → Catalyst E conservation ≠ role of P in G×I=D×P
+     → Different types of "conservation"
 
-  4. 활성화 에너지 vs P:
-     Arrhenius: k = A × exp(-Ea/RT) — Ea 감소 → k 지수적 증가
-     G = D×P/I — P 증가 → G 선형 증가
-     → 지수 vs 선형: 형태 비동형
+  4. Activation energy vs P:
+     Arrhenius: k = A × exp(-Ea/RT) — Ea decrease → exponential increase in k
+     G = D×P/I — P increase → linear increase in G
+     → Exponential vs linear: form non-isomorphic
 
-  5. 텍사스 검정:
-     "가속하되 자신 불변" = 촉매/도구/교사/라이브러리 등
-     p-value ≈ 0.50 (매우 보편적 패턴)
+  5. Texas test:
+     "Accelerate while self-preserved" = catalyst/tool/teacher/library etc.
+     p-value ≈ 0.50 (very universal pattern)
 
-  판정 근거:
-    - MM 형태 동형은 수학적으로 참이나, 포화함수의 보편성 때문에 무의미
-    - "촉매 = P" 은유는 직관적이나 고유한 구조적 대응이 아님
-    - Arrhenius(지수) vs Genius(선형) 비동형
+  Rationale for verdict:
+    - MM form isomorphism is mathematically true but meaningless due to saturation function universality
+    - "Catalyst = P" metaphor is intuitive but not a unique structural correspondence
+    - Arrhenius (exponential) vs Genius (linear) non-isomorphic
 ```
 
-*관련: 가설 157, 172, 203, 204, 206*
-*분류: 화학-AI 매핑 시리즈 (201-206)*
+*Related: Hypothesis 157, 172, 203, 204, 206*
+*Category: Chemistry-AI Mapping Series (201-206)*

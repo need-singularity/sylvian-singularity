@@ -1,35 +1,35 @@
-# T1-21: 교대 조화급수 부분합 = 우리 3대 상수
+# T1-21: Alternating Harmonic Series Partial Sums = Our 3 Constants
 
-## 발견
+## Discovery
 
 ```
-  Sₙ = Σ_{k=1}^n (-1)^(k+1)/k  (교대 조화급수)
+  Sₙ = Σ_{k=1}^n (-1)^(k+1)/k  (alternating harmonic series)
 
-  S₁ = 1     = 완전성 (1/2+1/3+1/6)
-  S₂ = 1/2   = 골든존 상한
-  S₃ = 5/6   = Compass 상한
+  S₁ = 1     = completeness (1/2+1/3+1/6)
+  S₂ = 1/2   = Golden Zone upper bound
+  S₃ = 5/6   = Compass upper bound
 
   S_∞ = ln(2)
 
-  → 처음 3개 부분합 = 우리 3대 상수 (정확!)
-  → S_4 이후 우리 상수 없음 (1000항 탐색)
+  → First 3 partial sums = our 3 constants (exact!)
+  → No our constants after S_4 (searched 1000 terms)
 ```
 
-## 추가 관계
+## Additional Relations
 
 ```
-  H₃ = 1+1/2+1/3 = 11/6  (조화)
-  S₃ = 1-1/2+1/3 = 5/6   (교대)
+  H₃ = 1+1/2+1/3 = 11/6  (harmonic)
+  S₃ = 1-1/2+1/3 = 5/6   (alternating)
 
-  H₃ - S₃ = 1  (정확, 자명: 2×1/2)
+  H₃ - S₃ = 1  (exact, obvious: 2×1/2)
   H₃ + S₃ = 8/3
   H₃ × S₃ = 55/36
 ```
 
-## 판정
+## Judgment
 
 ```
-  산술 자체: 🟩 (1-1/2+1/3 = 5/6, 산술적 필연)
-  패턴 관찰: 🟩 (S₁,S₂,S₃ = 1,1/2,5/6, 계산으로 확인)
-  해석: 🟧 ("교대급수가 ln(2)로 가는 첫 3단계" = 우리 해석)
+  Arithmetic itself: 🟩 (1-1/2+1/3 = 5/6, arithmetic necessity)
+  Pattern observation: 🟩 (S₁,S₂,S₃ = 1,1/2,5/6, confirmed by calculation)
+  Interpretation: 🟧 ("first 3 steps of alternating series going to ln(2)" = our interpretation)
 ```

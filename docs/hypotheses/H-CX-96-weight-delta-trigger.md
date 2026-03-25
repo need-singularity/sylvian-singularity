@@ -1,16 +1,16 @@
-# H-CX-96: 가중치 변화량이 위상 전이를 촉발 — 임계 delta_W 존재
+# H-CX-96: Weight Change Triggers Topological Transition — Critical delta_W Exists
 
-> 에폭 0→1에서 30x 위상 전이(H-CX-90)의 원인:
-> 가중치 변화량 ||W1-W0||이 임계값을 넘으면 PH가 급변.
-> 학습률을 줄이면 전이가 지연되는가?
+> Cause of 30x topological transition at epoch 0→1 (H-CX-90):
+> When weight change ||W1-W0|| exceeds critical value, PH changes rapidly.
+> Does reducing learning rate delay the transition?
 
-## 예측
+## Predictions
 
-1. ||W1-W0|| >> ||W2-W1|| (가중치 변화도 첫 에폭 최대)
-2. lr=1e-4 (10배 축소)에서 전이가 에폭 3~5로 지연
-3. ||delta_W||와 |delta_H0|의 상관 r > 0.8
+1. ||W1-W0|| >> ||W2-W1|| (weight change also maximal in first epoch)
+2. At lr=1e-4 (10x reduction), transition delayed to epoch 3~5
+3. Correlation between ||delta_W|| and |delta_H0|: r > 0.8
 
-## 검증 상태
+## Verification Status
 
-- [ ] 가중치 변화량 추적
-- [ ] 학습률별 전이 시점
+- [ ] Track weight changes
+- [ ] Transition timing by learning rate

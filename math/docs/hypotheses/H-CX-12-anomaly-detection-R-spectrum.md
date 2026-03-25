@@ -1,43 +1,43 @@
-# H-CX-12: 이상탐지 AUROC=1.0 ↔ R 스펙트럼 간극
+# H-CX-12: Anomaly Detection AUROC=1.0 ↔ R Spectrum Gap
 
-> **가설**: 의식엔진의 이상탐지 완벽 성능(AUROC=1.0)이 R 스펙트럼의 간극 구조({3/4}∪{1}∪[7/6,∞))와 동일한 "분리 원리"에서 유래한다.
+> **Hypothesis**: The perfect anomaly detection performance (AUROC=1.0) of the consciousness engine originates from the same "separation principle" as the gap structure of the R spectrum ({3/4}∪{1}∪[7/6,∞)).
 
-## 배경
-- 의식엔진 실험 9: 이상탐지 AUROC=1.0, 정상 대비 95x tension
-- R 스펙트럼: (3/4,1)=∅, (1,7/6)=∅ → 값들이 완전히 분리
-- 가설: 두 현상 모두 "균형점(R=1, 정상)과 비균형점(R≠1, 이상) 사이에 간극"
+## Background
+- Consciousness Engine Experiment 9: Anomaly detection AUROC=1.0, 95x tension vs normal
+- R spectrum: (3/4,1)=∅, (1,7/6)=∅ → Values are completely separated
+- Hypothesis: Both phenomena share "gaps between equilibrium points (R=1, normal) and non-equilibrium points (R≠1, anomaly)"
 
-## 대응
+## Correspondence
 
 ```
-  R 스펙트럼                    이상탐지
+  R Spectrum                    Anomaly Detection
   ──────────────────           ──────────────
-  R=1 (n=6, 균형)              정상 데이터 (low tension)
-  R≠1 (나머지, 불균형)           이상 데이터 (95x tension)
-  간극 (3/4,1)∪(1,7/6)=∅       결정 경계 (완벽 분리)
+  R=1 (n=6, balanced)          Normal data (low tension)
+  R≠1 (others, unbalanced)     Anomalous data (95x tension)
+  Gap (3/4,1)∪(1,7/6)=∅       Decision boundary (perfect separation)
 
-  R의 간극 = 이상탐지의 margin?
-  → 간극이 클수록 분리 쉬움 → AUROC 높음
-  → R 간극 0.25+0.167 = 0.417 → "산술적 margin"
+  R gap = Anomaly detection margin?
+  → Larger gap → Easier separation → Higher AUROC
+  → R gap 0.25+0.167 = 0.417 → "Arithmetic margin"
 ```
 
-## 구체적 연결
+## Specific Connection
 ```
-  σφ/(nτ) = 1 ⟺ "산술적 정상"
-  |σφ/(nτ) - 1| > 0.167 ⟺ "산술적 이상" (간극 때문에)
+  σφ/(nτ) = 1 ⟺ "Arithmetically normal"
+  |σφ/(nτ) - 1| > 0.167 ⟺ "Arithmetically anomalous" (due to gap)
 
-  의식엔진: tension(x) = 0 ⟺ "정상"
-  tension(x) > threshold ⟺ "이상"
+  Consciousness engine: tension(x) = 0 ⟺ "Normal"
+  tension(x) > threshold ⟺ "Anomalous"
 
-  매핑: tension ∝ |R-1| = T(n)?
-  → T(6)=0 (정상), T(n)>0.167 (이상, 간극)
-  → 간극이 "자연 임계값"을 제공
+  Mapping: tension ∝ |R-1| = T(n)?
+  → T(6)=0 (normal), T(n)>0.167 (anomalous, gap)
+  → Gap provides "natural threshold"
 ```
 
-## 검증 방향
-1. [ ] 의식엔진 tension 분포와 R 스펙트럼 간극 비교
-2. [ ] 이상탐지에서 "margin"과 R 간극 크기 상관
-3. [ ] 다른 데이터셋에서도 tension 간극이 존재하는지
-4. [ ] R 간극 0.167을 이상탐지 임계값으로 사용 시 성능
+## Verification Directions
+1. [ ] Compare consciousness engine tension distribution with R spectrum gaps
+2. [ ] Correlation between "margin" in anomaly detection and R gap size
+3. [ ] Check if tension gaps exist in other datasets
+4. [ ] Performance when using R gap 0.167 as anomaly detection threshold
 
-## 파급력: ★★★★★ (이상탐지 이론 + 정수론 교차)
+## Impact: ★★★★★ (Anomaly detection theory + Number theory intersection)

@@ -1,16 +1,16 @@
-# H-CX-241: ⭐⭐⭐🟧 생체 상수 = 완전수 6 체계
+# H-CX-241: ⭐⭐⭐🟧 Biological Constants = Perfect Number 6 System
 
-> | 생체 상수 | 값 | 공식 | 오차 |
+> | Biological Constant | Value | Formula | Error |
 > |----------|-----|------|------|
-> | 심박 | 72 bpm | σ(6)×P₁ = 12×6 | ~정확 (안정 시) |
-> | 호흡 | 12/분 | σ(6) | ~정확 |
-> | 하루 | 24시간 | 2σ(6) = σ(14) | 정확 |
-> | DNA 1회전 | 10 bp | α = γ/τ(6) | 정확 |
-> | 아미노산 | 20종 | β = γ/φ(6) | 정확 |
-> | 코돈 | 3 | 6의 약수 | 정확 |
-> | 색상(RGB) | 3 | 6의 약수 | 정확 |
-> | 수면 주기 | 90분 | P₁×15 = 6×(γ/e) | ~근사 |
+> | Heartbeat | 72 bpm | σ(6)×P₁ = 12×6 | ~Exact (at rest) |
+> | Respiration | 12/min | σ(6) | ~Exact |
+> | Day | 24 hours | 2σ(6) = σ(14) | Exact |
+> | DNA 1 turn | 10 bp | α = γ/τ(6) | Exact |
+> | Amino acids | 20 types | β = γ/φ(6) | Exact |
+> | Codon | 3 | Divisor of 6 | Exact |
+> | Color (RGB) | 3 | Divisor of 6 | Exact |
+> | Sleep cycle | 90 min | P₁×15 = 6×(γ/e) | ~Approximate |
 >
-> 🟧 주의: 심박/호흡은 개인차 크고 ad-hoc 위험.
-> 하지만 DNA/아미노산은 보편 상수 → 강한 증거.
-> "생명의 기본 단위가 전부 완전수 6에서 나온다"
+> 🟧 Caution: Heartbeat/respiration have large individual differences and ad-hoc risk.
+> But DNA/amino acids are universal constants → Strong evidence.
+> "All fundamental units of life derive from perfect number 6"

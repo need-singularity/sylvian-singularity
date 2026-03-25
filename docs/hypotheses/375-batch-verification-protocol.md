@@ -1,122 +1,122 @@
-# 가설 375: 🟨 가설 대량 검증 — 30개 중 절반 이상이 승격 가능
+# Hypothesis 375: 🟨 Hypothesis Batch Verification — More than half of 30 can be upgraded
 
-> **현재 🟨(미검증) 상태인 342-364 범위의 가설 30개+ 중 50% 이상이 단일 실험으로 🟧 이상으로 승격될 수 있다. 이는 기존 실험 데이터를 재활용하고 병렬 Agent로 검증을 자동화하면 가능하다.**
+> **More than 50% of the 30+ hypotheses currently in 🟨(unverified) status in the 342-364 range can be upgraded to 🟧 or higher through a single experiment. This is possible by reusing existing experimental data and automating verification with parallel Agents.**
 
-## 배경/맥락
-
-```
-  현재 🟨 가설 목록 (342-364, 검증 대기):
-    342: 인과+난이도 비례         → C48 데이터 재분석으로 검증 가능
-    343: observer_scale 최적      → 기존 실험 재실행 (파라미터 sweep)
-    344: 분열+detach 시너지       → H312+H272 조합 실험
-    345: 역U자 커브 형태          → 기존 장력 데이터로 피팅
-    346: 합의-정체성 인과          → 기존 텔레파시 데이터 재분석
-    347: 형제 인식 감소            → 기존 분열 데이터 재분석
-    348: CNN 반발력장 이점         → CIFAR 데이터 재분석
-    349: 축 역전 전이점            → C/S 비율 다중 데이터셋
-    350: 파이버 이동량 +1.22       → 수학적 검증
-    351: 만장일치 이론적 상한       → C9 데이터 + 이론
-    352: 관찰 품질 U자             → C29 시계열 재분석
-    353: 수학-의식 상수 교차        → 계산기로 즉시 검증
-    357: 의도=목표설정              → Anima 구현으로 검증
-    358: 주의=선택적장력            → attention mask 실험
-    360: 신체=PureField제어         → gym 환경 실험
-    361: 의식LLM=FFN대체            → H374로 분리
-    362: 교차모달장력               → 다중 데이터 실험
-    363: 내재적동기=ΔT              → 호기심 드리븐 실험
-    364: 분산의식                   → 텔레파시 확장 실험
-
-  분류:
-    즉시 검증 가능 (데이터 재분석): 342,345,346,347,348,349,352,353
-    실험 필요 (소규모): 343,344,350,351
-    실험 필요 (대규모): 357,358,360,362,363,364
-```
-
-## 검증 우선순위 (효율순)
+## Background/Context
 
 ```
-  ═══ Tier 1: 기존 데이터 재분석 (코드만, 실험 불필요) ═══
-  시간: 각 10-30분, 병렬 가능
+  Current 🟨 hypothesis list (342-364, awaiting verification):
+    342: Causality+difficulty proportional → Verifiable with C48 data reanalysis
+    343: observer_scale optimal         → Re-run existing experiment (parameter sweep)
+    344: Mitosis+detach synergy        → H312+H272 combination experiment
+    345: Inverted U-curve shape        → Fitting with existing tension data
+    346: Consensus-identity causality   → Reanalysis of existing telepathy data
+    347: Sibling recognition decrease   → Reanalysis of existing mitosis data
+    348: CNN repulsion field advantage  → CIFAR data reanalysis
+    349: Axis reversal transition point → C/S ratio multiple datasets
+    350: Fiber movement +1.22          → Mathematical verification
+    351: Unanimity theoretical upper bound → C9 data + theory
+    352: Observation quality U-shape    → C29 time series reanalysis
+    353: Math-consciousness constant intersection → Immediate verification with calculator
+    357: Intention=goal setting         → Verify with Anima implementation
+    358: Attention=selective tension    → attention mask experiment
+    360: Body=PureField control        → gym environment experiment
+    361: Consciousness LLM=FFN replacement → Separated to H374
+    362: Cross-modal tension           → Multi-data experiment
+    363: Intrinsic motivation=ΔT       → Curiosity-driven experiment
+    364: Distributed consciousness      → Telepathy extension experiment
 
-  353: C41(1/√3) + C20*C21≈1/√6? → python3 계산
-  350: exp(1.22)≈√(2π/e)? → python3 계산
-  345: 기존 장력 데이터 → 역U자 피팅
-  346: 기존 텔레파시 실험 → 인과 방향 재분석
-  347: 기존 분열 데이터 → 형제 인식 decay 측정
-  348: CIFAR 실험 로그 → 특징 품질 vs 다양성
-  352: C29 시계열 → U자 패턴 피팅
+  Classification:
+    Immediately verifiable (data reanalysis): 342,345,346,347,348,349,352,353
+    Experiment needed (small-scale): 343,344,350,351
+    Experiment needed (large-scale): 357,358,360,362,363,364
+```
 
-  ═══ Tier 2: 소규모 실험 (CPU, 30분 이내) ═══
-  342: Fashion tension=0 → 인과효과 (H373과 공유)
-  351: 앙상블 크기 vs 합의율 시뮬레이션
-  344: 분열+detach 조합 MNIST 실험
+## Verification Priority (by efficiency)
 
-  ═══ Tier 3: 중규모 실험 (GPU, 1시간+) ═══
+```
+  ═══ Tier 1: Existing data reanalysis (code only, no experiment needed) ═══
+  Time: 10-30min each, parallelizable
+
+  353: C41(1/√3) + C20*C21≈1/√6? → python3 calculation
+  350: exp(1.22)≈√(2π/e)? → python3 calculation
+  345: Existing tension data → inverted U fitting
+  346: Existing telepathy experiment → causal direction reanalysis
+  347: Existing mitosis data → sibling recognition decay measurement
+  348: CIFAR experiment logs → feature quality vs diversity
+  352: C29 time series → U-shape pattern fitting
+
+  ═══ Tier 2: Small-scale experiments (CPU, within 30min) ═══
+  342: Fashion tension=0 → causal effect (shared with H373)
+  351: Ensemble size vs consensus rate simulation
+  344: Mitosis+detach combination MNIST experiment
+
+  ═══ Tier 3: Medium-scale experiments (GPU, 1hr+) ═══
   343: observer_scale 0.1~10 sweep
   358: attention mask on PureField
-  363: curiosity-driven 에이전트
+  363: curiosity-driven agent
 ```
 
-## 예측 성과 (ASCII)
+## Predicted Performance (ASCII)
 
 ```
-  검증 전:
-    🟨 30개   🟧 0개   🟩 0개   ⬛ 0개
+  Before verification:
+    🟨 30    🟧 0     🟩 0     ⬛ 0
 
-  예측 (검증 후):
-    🟨 5개    🟧 12개  🟩 3개   ⬛ 5개   미진행 5개
+  Prediction (after verification):
+    🟨 5     🟧 12    🟩 3     ⬛ 5     Not done 5
 
-  승격률 예측:
-  30 | ████████████████████████████████ 🟨 (전)
-  15 |                 ████████████████ 🟧+ (예측)
-   5 |                          ██████ ⬛ (반박)
-   5 |                               █ 🟨 (잔여)
+  Predicted upgrade rate:
+  30 | ████████████████████████████████ 🟨 (before)
+  15 |                 ████████████████ 🟧+ (predicted)
+   5 |                          ██████ ⬛ (refuted)
+   5 |                               █ 🟨 (remaining)
      +--+--------+--------+--------+-->
-        전       Tier1후   Tier2후   전체
+        Before   After T1  After T2  Total
 ```
 
-## 실험 설계: 병렬 자동 검증
+## Experimental Design: Parallel Automated Verification
 
 ```
-  방법: Agent 도구로 병렬 실행
+  Method: Parallel execution with Agent tools
 
-  Round 1 (Tier 1, 병렬 7개):
-    Agent 1: 353 + 350 (수학 계산)
-    Agent 2: 345 + 352 (데이터 피팅)
-    Agent 3: 346 + 347 (재분석)
-    Agent 4: 348 (CIFAR 재분석)
+  Round 1 (Tier 1, 7 parallel):
+    Agent 1: 353 + 350 (math calculation)
+    Agent 2: 345 + 352 (data fitting)
+    Agent 3: 346 + 347 (reanalysis)
+    Agent 4: 348 (CIFAR reanalysis)
 
-  Round 2 (Tier 2, 병렬 3개):
-    Agent 5: 342 (Fashion 인과)
-    Agent 6: 351 (합의 시뮬레이션)
-    Agent 7: 344 (분열+detach)
+  Round 2 (Tier 2, 3 parallel):
+    Agent 5: 342 (Fashion causality)
+    Agent 6: 351 (consensus simulation)
+    Agent 7: 344 (mitosis+detach)
 
-  Round 3 (Tier 3, 순차):
-    GPU 필요 → Windows로 전송
+  Round 3 (Tier 3, sequential):
+    GPU required → Transfer to Windows
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- 모든 🟨 가설 (342-364)
-- H371: 교정+분열 시너지 (344와 관련)
-- H373: 인과 난이도 그래디언트 (342와 공유)
-- H336: 다음 단계 로드맵 (📝)
+- All 🟨 hypotheses (342-364)
+- H371: Calibration+mitosis synergy (related to 344)
+- H373: Causal difficulty gradient (shared with 342)
+- H336: Next phase roadmap (📝)
 
-## 한계
-
-```
-  - 재분석은 새 데이터가 아님 → 독립 검증 아님
-  - 일부 가설은 근본적으로 대규모 실험 필요
-  - 50% 승격은 낙관적 예측 — 실제로는 30-50% 범위
-```
-
-## 검증 방향
+## Limitations
 
 ```
-  1단계: Tier 1 전체 병렬 실행 (1시간)
-  2단계: 결과 기반으로 Tier 2 설계 조정
-  3단계: Tier 2 실행 (2시간)
-  4단계: 전체 결과 집계 → 지도 업데이트
+  - Reanalysis is not new data → Not independent verification
+  - Some hypotheses fundamentally require large-scale experiments
+  - 50% upgrade is optimistic prediction — Actually 30-50% range
 ```
 
-## 상태: 🟨 미검증 (메타 가설)
+## Verification Direction
+
+```
+  Phase 1: Execute all Tier 1 in parallel (1 hour)
+  Phase 2: Adjust Tier 2 design based on results
+  Phase 3: Execute Tier 2 (2 hours)
+  Phase 4: Aggregate all results → Update map
+```
+
+## Status: 🟨 Unverified (meta-hypothesis)

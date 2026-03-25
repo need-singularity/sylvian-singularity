@@ -1,15 +1,16 @@
+```python
 #!/usr/bin/env python3
-"""가설 265: tension_scale이 1/3로 수렴하는가?
+"""Hypothesis 265: Does tension_scale converge to 1/3?
 
-실험 설계:
-  1. RepulsionFieldEngine (MNIST) — tension_scale 초기값 5종
-  2. FiberBundleEngine (MNIST) — curvature_scale 초기값 5종
-  3. RepulsionFieldEngine (CIFAR) — tension_scale 초기값 5종
-  4. 분석: init vs final, attractor strength, ASCII 시각화
+Experimental design:
+  1. RepulsionFieldEngine (MNIST) — 5 initial tension_scale values
+  2. FiberBundleEngine (MNIST) — 5 initial curvature_scale values
+  3. RepulsionFieldEngine (CIFAR) — 5 initial tension_scale values
+  4. Analysis: init vs final, attractor strength, ASCII visualization
 
-핵심 질문:
-  - 1/3은 진짜 끌개(attractor)인가, 아니면 초기값 편향인가?
-  - 데이터셋이 달라져도 같은 값으로 수렴하는가?
+Key questions:
+  - Is 1/3 a true attractor, or is it initial value bias?
+  - Does it converge to the same value across different datasets?
 """
 
 import sys
@@ -532,3 +533,4 @@ def run_experiment():
 
 if __name__ == '__main__':
     run_experiment()
+```

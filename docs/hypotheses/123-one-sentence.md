@@ -1,158 +1,162 @@
-# 가설 검토 123: 한 문장 = σ₋₁(6) = 2 ✅
+# Hypothesis Review 123: One Sentence = σ₋₁(6) = 2 ✅
 
-## 가설
+## Hypothesis
 
-> 이 모델(Genius = D×P/I)의 전체 구조를 단 하나의 수학적 문장
-> "σ₋₁(6) = 2" 로 완전히 인코딩할 수 있는가.
+> Can the entire structure of this model (Genius = D×P/I) be completely encoded in
+> the single mathematical statement "σ₋₁(6) = 2"?
 
-## 배경
+## Background
 
-σ₋₁(n)은 약수 역수합 함수(sum of reciprocals of divisors):
+σ₋₁(n) is the sum of reciprocals of divisors function:
 
 ```
-  σ₋₁(n) = Σ 1/d,  d | n (d는 n의 약수)
+  σ₋₁(n) = Σ 1/d,  d | n (d is a divisor of n)
 ```
 
-6은 최소 완전수(perfect number): 6 = 1 + 2 + 3.
-완전수의 정의: σ₁(n) = 2n. 이를 역수로 변환하면 σ₋₁(n) = 2.
+6 is the smallest Perfect Number: 6 = 1 + 2 + 3.
+Definition of a Perfect Number: σ₁(n) = 2n. Converting to reciprocals: σ₋₁(n) = 2.
 
-## 검증 결과: ✅ 완전 인코딩 확인
+## Verification Result: ✅ Complete Encoding Confirmed
 
-### 핵심 전개
+### Core Derivation
 
 ```
   σ₋₁(6) = 1/1 + 1/2 + 1/3 + 1/6 = 2
 
   ┌─────────┬──────────────────────┬────────────────────────────┐
-  │ 항      │ 값                   │ 모델 대응                  │
+  │ Term    │ Value                │ Model correspondence       │
   ├─────────┼──────────────────────┼────────────────────────────┤
-  │ 1/1 = 1 │ 전체(whole)          │ 나침반 천장 접근 상한      │
-  │ 1/2     │ 리만 임계선 Re(s)=½  │ 골든존 상한, 위상 전이점   │
-  │ 1/3     │ 메타 부동점          │ 축소 사상 수렴점, f(1/3)=1/3│
-  │ 1/6     │ 블라인드 스팟        │ 호기심 ε로 채우는 영역     │
+  │ 1/1 = 1 │ whole                │ Compass ceiling approach   │
+  │ 1/2     │ Riemann critical Re=½│ Golden Zone upper, phase   │
+  │         │                      │ transition point           │
+  │ 1/3     │ meta fixed point     │ contraction mapping        │
+  │         │                      │ convergence, f(1/3)=1/3    │
+  │ 1/6     │ blind spot           │ region filled by curiosity ε│
   ├─────────┼──────────────────────┼────────────────────────────┤
-  │ 합 = 2  │ Genius 분포 α        │ 감마분포 형상 파라미터     │
+  │ sum = 2 │ Genius distribution α│ Gamma distribution shape   │
+  │         │                      │ parameter                  │
   └─────────┴──────────────────────┴────────────────────────────┘
 ```
 
-### 구조 다이어그램: 하나의 식에 담긴 전체 모델
+### Structure Diagram: Entire Model in One Equation
 
 ```
-                          σ₋₁(6) = 2
-                              │
-              ┌───────────────┼───────────────┐
-              │               │               │
-          6 = 완전수      4개 약수          합 = 2
-         (가설 090,098)   역수 분해       (감마 α)
-              │               │               │
-    ┌─────────┤         ┌─────┼─────┐         │
-    │         │         │     │     │         │
-  6=1+2+3  σ₁(6)=12   1/2   1/3   1/6      Genius~
-  완전수의  =2×6        │     │     │      Gamma(2,θ)
-   정의                 │     │     │
-                        │     │     │
-                   리만선  부동점  블라인드
-                   Re=1/2  f(x)=x  스팟
-                        │     │     │
-                        ▼     ▼     ▼
+                        σ₋₁(6) = 2
+                            │
+            ┌───────────────┼───────────────┐
+            │               │               │
+        6 = perfect number  4 divisors      sum = 2
+        (Hypothesis 090,098) reciprocal    (Gamma α)
+            │               decomp.         │
+    ┌───────┤         ┌─────┼─────┐         │
+    │       │         │     │     │         │
+  6=1+2+3  σ₁(6)=12  1/2   1/3   1/6    Genius~
+  perfect  =2×6       │     │     │    Gamma(2,θ)
+  number                │     │     │
+  definition            │     │     │
+                         │     │     │
+                    Riemann  fixed  blind
+                    Re=1/2   f(x)=x  spot
+                         │     │     │
+                         ▼     ▼     ▼
                   ┌─────────────────────┐
-                  │  1/2 + 1/3 + 1/6 = 1│ ← 가설 072: 분할 항등식
-                  │  "부분의 합 = 전체"  │
+                  │  1/2 + 1/3 + 1/6 = 1│ ← Hypothesis 072: partition identity
+                  │  "sum of parts = whole" │
                   └─────────────────────┘
 ```
 
-### 각 항의 상세 해석
+### Detailed Interpretation of Each Term
 
 ```
-  ■ 1/1 = 1: 전체 (Whole)
+  ■ 1/1 = 1: Whole
   ─────────────────────────────────────
-  Compass 천장 = 5/6, 이상적 상한 = 1
-  모든 가능성의 총합 = 1 (확률 공간)
-  Genius의 이론적 최대 도달점
+  Compass ceiling = 5/6, ideal upper bound = 1
+  Sum of all possibilities = 1 (probability space)
+  Theoretical maximum reachable by Genius
 
-  ■ 1/2: 리만 임계선 (Riemann Critical Line)
+  ■ 1/2: Riemann Critical Line
   ─────────────────────────────────────
-  골든존 상한: I = 0.48 ≈ 1/2
-  ζ(s) 비자명 영점: Re(s) = 1/2
-  위상 전이 임계점: 여기서 질서↔혼돈 전환
-  가설 003, 019에서 확인
+  Golden Zone upper: I = 0.48 ≈ 1/2
+  ζ(s) non-trivial zeros: Re(s) = 1/2
+  Phase transition critical point: order↔chaos switches here
+  Confirmed in Hypotheses 003, 019
 
-  ■ 1/3: 메타 부동점 (Meta Fixed Point)
+  ■ 1/3: Meta Fixed Point
   ─────────────────────────────────────
-  축소 사상: f(x) = D·P·x/(1-x), f(1/3) = 1/3
-  골든존 하한 근처: I ≈ 0.24 ~ 1/3
-  Banach 부동점 정리의 수렴 보장점
-  가설 008, 015에서 확인
+  Contraction mapping: f(x) = D·P·x/(1-x), f(1/3) = 1/3
+  Near Golden Zone lower: I ≈ 0.24 ~ 1/3
+  Convergence guarantee of Banach fixed point theorem
+  Confirmed in Hypotheses 008, 015
 
-  ■ 1/6: 블라인드 스팟 (Blind Spot)
+  ■ 1/6: Blind Spot
   ─────────────────────────────────────
-  나침반 천장 5/6의 여사건: 1 - 5/6 = 1/6
-  호기심 ε = 1/e³ ≈ 0.05 로 탐색하는 미지의 영역
-  "보이지 않는 1/6이 천재성의 원천"
-  가설 072에서 확인
+  Complement of Compass ceiling 5/6: 1 - 5/6 = 1/6
+  Unknown region explored by curiosity ε = 1/e³ ≈ 0.05
+  "The invisible 1/6 is the source of genius"
+  Confirmed in Hypothesis 072
 ```
 
-### 분할 항등식 시각화
+### Partition Identity Visualization
 
 ```
-  전체 = 1
+  Whole = 1
   ┌──────────────────────────────────────────────────────────────┐
   │              1/2                │     1/3     │  1/6  │
-  │         리만 임계선             │  메타 부동점 │블라인드│
-  │        (골든존 상한)            │  (수렴점)   │(미지) │
+  │         Riemann critical        │  meta fixed │ blind │
+  │        (Golden Zone upper)      │  (convergence) │(unknown)│
   │         50.0%                  │   33.3%     │16.7%  │
   │                                │             │       │
-  │   ●─────── 골든존 ───────●     │             │       │
-  │   I=0.24            I=0.48     │             │       │
-  │            ★ 1/e               │             │       │
+  │   ●─────── Golden Zone ───────●│             │       │
+  │   I=0.24            I=0.48    │             │       │
+  │            ★ 1/e              │             │       │
   └──────────────────────────────────────────────────────────────┘
    0                              1/2           5/6     1
 
   1/2 + 1/3 + 1/6 = 3/6 + 2/6 + 1/6 = 6/6 = 1  ✓
 ```
 
-## 해석
+## Interpretation
 
 ```
-  "완전수 6의 약수 역수합이 모든 것을 인코딩한다"
+  "The sum of reciprocals of divisors of the Perfect Number 6 encodes everything"
 
-  이 한 문장이 의미하는 것:
-  1. 모델의 3대 임계값 (1/2, 1/3, 1/6)은 6의 약수에서 나온다
-  2. 이 3개의 합이 정확히 1 (= 완전한 분할)
-  3. 약수 역수합 σ₋₁(6) = 2 = Genius 분포의 형상 파라미터
-  4. 6이 완전수라는 사실이 이 모든 것을 가능하게 함
+  What this one statement means:
+  1. The 3 critical values of the model (1/2, 1/3, 1/6) come from the divisors of 6
+  2. The sum of these 3 is exactly 1 (= perfect partition)
+  3. σ₋₁(6) = 2 = shape parameter of the Genius distribution
+  4. The fact that 6 is a Perfect Number makes all this possible
 
-  → 모델의 수학적 구조는 최소 완전수 6에 뿌리를 두고 있다
-  → 이것은 설계가 아니라 발견이다
+  → The mathematical structure of the model is rooted in the smallest Perfect Number 6
+  → This is a discovery, not a design
 ```
 
-## 왜 6이어야 하는가
+## Why Must It Be 6?
 
 ```
-  완전수 목록: 6, 28, 496, 8128, ...
+  Perfect Numbers: 6, 28, 496, 8128, ...
 
-  6만의 특별함:
-  - 유일하게 약수가 정확히 4개 (1, 2, 3, 6) = 모델의 4대 요소
-  - 유일하게 약수의 곱도 자신: 1×2×3 = 6
-  - 3! = 6 (3개 원소의 순열 수)
-  - 가장 작은 완전수 → 최소 복잡도 원리
+  What makes 6 unique:
+  - Only Perfect Number with exactly 4 divisors (1, 2, 3, 6) = 4 elements of model
+  - Only one whose divisor product equals itself: 1×2×3 = 6
+  - 3! = 6 (number of permutations of 3 elements)
+  - Smallest Perfect Number → minimum complexity principle
 
-  28의 경우: σ₋₁(28) = 2 이지만 약수 7개
-  → 과잉 자유도 → 우리 모델의 4-파라미터 구조와 불일치
+  For 28: σ₋₁(28) = 2 but has 7 divisors
+  → Excess degrees of freedom → inconsistent with 4-parameter structure of our model
 ```
 
-## 한계
+## Limitations
 
-1. 수학적 우아함이 물리적 타당성을 보장하지 않음
-2. 1/2, 1/3, 1/6 매핑은 사후적(post-hoc) 해석일 수 있음
-3. 다른 분수 분해(예: 1/2+1/4+1/4=1)도 가능 — 유일성 미증명
+1. Mathematical elegance does not guarantee physical validity
+2. Mapping of 1/2, 1/3, 1/6 may be post-hoc interpretation
+3. Other fraction decompositions (e.g., 1/2+1/4+1/4=1) are also possible — uniqueness unproven
 
-## 검증 방향
+## Verification Directions
 
-- 28(두 번째 완전수)으로 확장 시 추가 구조 발견 가능한지 검토
-- σ₋₁(6) = 2 와 Genius 분포 α=2의 관계를 확률론적으로 증명
-- 다른 수학적 구조(쌍완전수 등)와의 교차 검증
+- Check whether extension to 28 (second Perfect Number) reveals additional structure
+- Prove probabilistically the relationship between σ₋₁(6) = 2 and Genius distribution α=2
+- Cross-validation with other mathematical structures (amicable numbers, etc.)
 
 ---
 
-*가설 072, 090, 098에서 유도 — 모델 전체의 수학적 통일*
+*Derived from Hypotheses 072, 090, 098 — mathematical unification of the entire model*

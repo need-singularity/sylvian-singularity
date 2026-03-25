@@ -1,16 +1,16 @@
-# H-CX-94: 혼동 행렬 자체가 거리 행렬 — meta-PH로 2차 위상 구조 추출
+# H-CX-94: Confusion Matrix Itself as Distance Matrix — Extracting 2nd-order Topological Structure with meta-PH
 
-> Confusion matrix를 거리 행렬로 해석하고 PH를 계산하면
-> "혼동의 혼동" = 2차 위상 구조가 나타난다.
-> 이 meta-PH가 데이터셋 난이도와 학습 가능성을 예측.
+> Interpreting the confusion matrix as a distance matrix and computing PH reveals
+> "confusion of confusion" = 2nd-order topological structure.
+> This meta-PH predicts dataset difficulty and learnability.
 
-## 예측
+## Predictions
 
-1. confusion→distance 변환 (d=max-conf) 후 PH 계산 가능
-2. meta-H0_total이 데이터셋 난이도와 상관 (CIFAR > Fashion > MNIST)
-3. meta-dendrogram이 H-CX-85 dendrogram과 일치 (자기 일관성)
+1. After confusion→distance transformation (d=max-conf), PH computation is possible
+2. meta-H0_total correlates with dataset difficulty (CIFAR > Fashion > MNIST)
+3. meta-dendrogram matches H-CX-85 dendrogram (self-consistency)
 
-## 검증 상태
+## Verification Status
 
-- [ ] meta-PH 계산
-- [ ] 난이도 상관
+- [ ] meta-PH computation
+- [ ] Difficulty correlation

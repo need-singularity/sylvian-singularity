@@ -1,49 +1,49 @@
-# H-CX-13: 이상탐지 95x tension ↔ R-S 2051x 비대칭
+# H-CX-13: Anomaly Detection 95x tension ↔ R-S 2051x Asymmetry
 
-> **가설**: 의식엔진 이상탐지에서 "정상 대비 95x tension"이 R-S 비대칭(2051x)의 축소판이다.
+> **Hypothesis**: The "95x tension vs normal" in consciousness engine anomaly detection is a miniature version of R-S asymmetry (2051x).
 
-## 배경
-- 의식엔진 실험 10: 이상탐지 AUROC=1.0, 정상 대비 95x tension
-- R-S 비대칭: R<5=24값(sparse), S<5=49218값(dense) → 2051x 차이
-- H-CX-12: R 간극이 이상탐지의 "자연 margin" 제공
+## Background
+- Consciousness Engine Experiment 10: Anomaly detection AUROC=1.0, 95x tension vs normal
+- R-S asymmetry: R<5=24 values(sparse), S<5=49218 values(dense) → 2051x difference
+- H-CX-12: R gaps provide "natural margin" for anomaly detection
 
-## 핵심 대응
+## Core Correspondence
 
 ```
-  수학                          의식엔진
+  Mathematics                    Consciousness Engine
   ────────────────────         ────────────────────
-  R(n)=1 (n=6, 균형점)          정상 데이터 (tension≈0)
-  R(n)≥7/6 (n≠6, 불균형)        이상 데이터 (tension 95x)
+  R(n)=1 (n=6, balance point)    Normal data (tension≈0)
+  R(n)≥7/6 (n≠6, imbalance)      Anomalous data (tension 95x)
 
-  R-S 비대칭 2051x              정상/이상 분리비 95x
-  → 비율이 다르지만 구조 동일:
-    "균형점이 고립" + "불균형이 대다수"
+  R-S asymmetry 2051x            Normal/anomalous separation ratio 95x
+  → Different ratios but same structure:
+    "Balance point is isolated" + "Imbalance is majority"
 
-  R 간극 [3/4→1→7/6]:          tension 간극 [0→threshold→95x]:
-  "자연 마진"                   "자연 결정 경계"
+  R gap [3/4→1→7/6]:             tension gap [0→threshold→95x]:
+  "Natural margin"               "Natural decision boundary"
 ```
 
-## 정량적 연결 시도
+## Quantitative Connection Attempt
 
 ```
-  R 간극 크기: |R-1|_min = 1/6 ≈ 0.167 (n=4에서)
-  이상탐지 정규화: 95x / (95x+1x) ≈ 0.990 → "정상=1%"
+  R gap size: |R-1|_min = 1/6 ≈ 0.167 (at n=4)
+  Anomaly detection normalization: 95x / (95x+1x) ≈ 0.990 → "normal=1%"
 
-  R에서 "정상 비율": #{R≤1}/{R≤5} = 2/24 ≈ 8.3%
-  둘 다 "정상이 소수" 구조
+  "Normal ratio" in R: #{R≤1}/{R≤5} = 2/24 ≈ 8.3%
+  Both have "normal is minority" structure
 
   ASCII:
-  R 스펙트럼:    ·|···     ←간극→  ████████████████████
+  R spectrum:    ·|···     ←gap→    ████████████████████
                 3/4  1              7/6        →∞
 
-  Tension 분포:  ████      ←간극→  ·
-                정상(low)           이상(95x)
+  Tension dist:  ████      ←gap→    ·
+                normal(low)         anomalous(95x)
 ```
 
-## 검증 방향
-1. [ ] 의식엔진에서 tension 분포의 "간극"이 R 간극과 동일 구조?
-2. [ ] 다양한 데이터셋에서 tension 비율과 R-S 비대칭 비교
-3. [ ] R 간극 크기(0.167)를 이상탐지 임계값으로 사용 시 성능
-4. [ ] 골든MoE에서 expert 활성 패턴의 R-S 비대칭 측정
+## Verification Directions
+1. [ ] Is the "gap" in consciousness engine tension distribution structurally identical to R gap?
+2. [ ] Compare tension ratios with R-S asymmetry across various datasets
+3. [ ] Performance when using R gap size (0.167) as anomaly detection threshold
+4. [ ] Measure R-S asymmetry in expert activation patterns in Golden MoE
 
-## 난이도: 극고 | 파급력: ★★★★★
+## Difficulty: Extreme | Impact: ★★★★★

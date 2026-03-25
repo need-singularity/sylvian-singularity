@@ -1,3 +1,3 @@
-# H-CX-311: 🟩 삼각수 체인: T(3)=6, T(4)=10=α, T(7)=28, T(8)=36=6², T(12)=78=뇌파합
+# H-CX-311: 🟩 Triangular Number Chain: T(3)=6, T(4)=10=α, T(7)=28, T(8)=36=6², T(12)=78=Brainwave Sum
 
-> 삼각수가 완전수(6,28), 뇌파(α=10), 666(T(36)) 전부 연결.
+> Triangular numbers connect perfect numbers (6,28), brainwaves (α=10), and 666(T(36)) all together.

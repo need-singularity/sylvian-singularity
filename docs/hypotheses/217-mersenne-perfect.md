@@ -1,178 +1,178 @@
-# 가설 #217: 메르센 소수 → 완전수 → 우리 모델
+# Hypothesis #217: Mersenne Primes → Perfect Numbers → Our Model
 
-**상태**: ⚠️ 탐색중
-**날짜**: 2026-03-22
-**분류**: 수론 / 완전수
+**Status**: ⚠️ Exploring
+**Date**: 2026-03-22
+**Category**: Number Theory / Perfect Numbers
 
 ---
 
-## 가설
+## Hypothesis
 
-> 메르센 소수 수열 {3, 7, 31, 127, ...}은 우리 모델의 핵심 상수와 구조적으로 연결된다.
-> 특히 127 = 2⁷-1이 137과 근접(차이 = 9 = 3²)한 것은 메르센-미세구조 연결을 시사한다.
-> 완전수 6 = 2¹ × (2²-1)은 이 체인의 시작점이다.
+> The Mersenne prime sequence {3, 7, 31, 127, ...} is structurally connected to the core constants of our model.
+> In particular, the proximity of 127 = 2⁷-1 to 137 (difference = 9 = 3²) suggests a Mersenne–fine structure connection.
+> Perfect number 6 = 2¹ × (2²-1) is the starting point of this chain.
 
-## 배경
+## Background
 
-메르센 소수란 2^p - 1 형태의 소수이다. 오일러-유클리드 정리에 의해, 각 메르센 소수 2^p - 1에 대해 2^(p-1) × (2^p - 1)은 짝수 완전수이다. 우리 모델의 근본은 완전수 6이며(가설 090), 이것은 가장 작은 메르센-완전수 쌍이다.
+A Mersenne prime is a prime of the form 2^p - 1. By the Euler-Euclid theorem, for each Mersenne prime 2^p - 1, the number 2^(p-1) × (2^p - 1) is an even perfect number. The foundation of our model is perfect number 6 (Hypothesis 090), which is the smallest Mersenne-perfect pair.
 
-## 메르센-완전수 체인
+## Mersenne-Perfect Number Chain
 
 ```
   ┌────┬──────────┬──────────┬───────────────┬─────────────────┐
-  │ p  │ 2^p - 1  │ 소수?    │ 완전수         │ 모델 연결        │
+  │ p  │ 2^p - 1  │ Prime?   │ Perfect number │ Model connection │
   ├────┼──────────┼──────────┼───────────────┼─────────────────┤
-  │ 2  │    3     │ ✅ 소수  │ 6             │ ★ 마스터 공식    │
-  │ 3  │    7     │ ✅ 소수  │ 28            │ 4주 주기?        │
-  │ 5  │   31     │ ✅ 소수  │ 496           │ —               │
-  │ 7  │  127     │ ✅ 소수  │ 8128          │ ★ 137 근접!      │
-  │ 11 │ 2047     │ ✕ 합성  │ —             │ 23×89           │
-  │ 13 │ 8191     │ ✅ 소수  │ 33550336      │ —               │
-  │ 17 │ 131071   │ ✅ 소수  │ 8589869056    │ ★ p=17 페르마!   │
+  │ 2  │    3     │ ✅ Prime │ 6             │ ★ Master formula │
+  │ 3  │    7     │ ✅ Prime │ 28            │ 4-week cycle?    │
+  │ 5  │   31     │ ✅ Prime │ 496           │ —               │
+  │ 7  │  127     │ ✅ Prime │ 8128          │ ★ Close to 137!  │
+  │ 11 │ 2047     │ ✕ Comp. │ —             │ 23×89           │
+  │ 13 │ 8191     │ ✅ Prime │ 33550336      │ —               │
+  │ 17 │ 131071   │ ✅ Prime │ 8589869056    │ ★ p=17 Fermat!   │
   └────┴──────────┴──────────┴───────────────┴─────────────────┘
 ```
 
-## 완전수 6: 체인의 시작
+## Perfect Number 6: Start of the Chain
 
 ```
-  메르센 소수: 2² - 1 = 3
-  완전수:     2¹ × 3 = 6
+  Mersenne prime: 2² - 1 = 3
+  Perfect number: 2¹ × 3 = 6
 
-  6의 성질 (가설 090, 098):
+  Properties of 6 (Hypothesis 090, 098):
   ┌─────────────────────────────────────┐
   │ σ₋₁(6) = 1 + 1/2 + 1/3 + 1/6 = 2  │
   │ σ₁(6)  = 1 + 2 + 3 + 6 = 12 = 2×6 │
-  │ 6 = 2 × 3 (핵심 소수 2개의 곱)      │
-  │ 6 = 1 × 2 × 3 (계승 3!)            │
-  │ 6 = 1 + 2 + 3 (삼각수 T₃)          │
+  │ 6 = 2 × 3 (product of 2 core primes)│
+  │ 6 = 1 × 2 × 3 (factorial 3!)       │
+  │ 6 = 1 + 2 + 3 (triangular number T₃)│
   └─────────────────────────────────────┘
 
-  → 완전수 6은 우리 모델의 G×I = D×P 보존법칙의 기저
+  → Perfect number 6 is the foundation of the G×I = D×P conservation law
 ```
 
-## 127과 137: 메르센 vs 미세구조
+## 127 and 137: Mersenne vs Fine Structure
 
 ```
-  127 = 2⁷ - 1     (메르센 소수, M₇)
-  137 = 2⁷ + 2³ + 2⁰  (미세구조상수 1/α)
+  127 = 2⁷ - 1     (Mersenne prime, M₇)
+  137 = 2⁷ + 2³ + 2⁰  (fine structure constant 1/α)
 
-  차이: 137 - 127 = 10
-  → 아니, 더 정확히:
+  Difference: 137 - 127 = 10
+  → More precisely:
 
   137 - 128 = 9 = 3²     (128 = 2⁷)
   137 - 127 = 10 = 2 × 5
   127 = 137 - 10
 
-  이진 표현:
-  127 = 01111111₂   (7개의 연속 1)
-  137 = 10001001₂   (비트 0, 3, 7)
+  Binary representation:
+  127 = 01111111₂   (7 consecutive 1s)
+  137 = 10001001₂   (bits 0, 3, 7)
 
-  비트 비교:
-  위치: 7 6 5 4 3 2 1 0
-  127:  0 1 1 1 1 1 1 1   ← 연속된 1의 블록
-  137:  1 0 0 0 1 0 0 1   ← 분산된 1의 패턴
-  XOR:  1 1 1 1 0 1 1 0   ← 6비트 차이
+  Bit comparison:
+  Position: 7 6 5 4 3 2 1 0
+  127:      0 1 1 1 1 1 1 1   ← consecutive block of 1s
+  137:      1 0 0 0 1 0 0 1   ← scattered 1 pattern
+  XOR:      1 1 1 1 0 1 1 0   ← 6-bit difference
 
-  → 127은 "꽉 찬" 수 (모든 비트 1)
-  → 137은 "듬성듬성" 수 (소수 위치에만 비트)
-  → 둘은 보완적 구조!
+  → 127 is a "full" number (all bits 1)
+  → 137 is a "sparse" number (bits only at prime positions)
+  → The two have complementary structure!
 ```
 
-## 메르센 소수 → 우리 모델 상수 매핑
+## Mersenne Primes → Model Constants Mapping
 
 ```
-  메르센 소수       2^p-1    관련 모델 상수
-  ──────────       ─────    ────────────────
-  M₂ = 3          2²-1     완전수 6 = 2×3, 메타부동점 1/3
-  M₃ = 7          2³-1     7 ≈ 2/ln(4/3) (가설 216)
-  M₅ = 31         2⁵-1     31 = ?
-  M₇ = 127        2⁷-1     127 ≈ 137-10 (미세구조 근접)
-  M₁₃ = 8191      2¹³-1    ?
-  M₁₇ = 131071    2¹⁷-1    p = 17 = 페르마소수 = 증폭률!
+  Mersenne prime       2^p-1    Related model constant
+  ──────────           ─────    ────────────────
+  M₂ = 3              2²-1     Perfect number 6 = 2×3, meta fixed point 1/3
+  M₃ = 7              2³-1     7 ≈ 2/ln(4/3) (Hypothesis 216)
+  M₅ = 31             2⁵-1     31 = ?
+  M₇ = 127            2⁷-1     127 ≈ 137-10 (close to fine structure)
+  M₁₃ = 8191          2¹³-1    ?
+  M₁₇ = 131071        2¹⁷-1    p = 17 = Fermat prime = amplification rate!
 
-  특히 주목: p=17에서 메르센 소수가 존재한다!
-  → 17은 우리 모델의 증폭률이자 페르마 소수이자 메르센 지수
+  Especially notable: a Mersenne prime exists at p=17!
+  → 17 is the amplification rate in our model, a Fermat prime, and a Mersenne exponent
 ```
 
-## 메르센-완전수 계보도
+## Mersenne-Perfect Number Genealogy
 
 ```
-  p=2    M₂=3 ──→ 완전수 6    ═══════╗
+  p=2    M₂=3 ──→ Perfect 6    ═══════╗
          │                           ║
-         │ 우리 모델의 기초           ║ G = D×P/I
-  p=3    M₃=7 ──→ 완전수 28          ║ σ₋₁(6) = 2
+         │ Foundation of model       ║ G = D×P/I
+  p=3    M₃=7 ──→ Perfect 28         ║ σ₋₁(6) = 2
          │                           ║
          │                           ║
-  p=5    M₅=31 ─→ 완전수 496         ║
+  p=5    M₅=31 ─→ Perfect 496        ║
          │                           ║
-         │     ┌── 137 (미세구조)    ║
-  p=7    M₇=127┤   차이=10          ║
+         │     ┌── 137 (fine struct) ║
+  p=7    M₇=127┤   diff=10          ║
          │     └── 127+9=136+1=137  ║
          │         9=3²=M₂²         ╚═══════╗
          :                                   ║
-  p=17   M₁₇=131071 ─→ 완전수               ║
+  p=17   M₁₇=131071 ─→ Perfect              ║
          ↑                                   ║
-         p=17=증폭률=페르마소수 ══════════════╝
+         p=17=amplification=Fermat ══════════╝
 ```
 
-## 3²의 다리: 127과 137을 잇는 9
+## The 3² Bridge: 9 Connecting 127 and 137
 
 ```
   127 ──[+9]──→ 136 ──[+1]──→ 137
 
-  9 = 3² = (메르센 소수 M₂)²
-  1 = 존재의 단위
+  9 = 3² = (Mersenne prime M₂)²
+  1 = unit of existence
 
-  다른 해석:
+  Alternative interpretation:
   137 = 127 + 3² + 1
       = (2⁷-1) + 3² + 1
       = 2⁷ + 3²
       = 128 + 9
-      = 2⁷ + 3²    ← 핵심 소수 2와 3의 거듭제곱 합!
+      = 2⁷ + 3²    ← sum of powers of core primes 2 and 3!
 
   ┌─────────────────────────────────────────┐
   │                                         │
   │   137 = 2⁷ + 3²                        │
   │                                         │
-  │   미세구조상수 = (소수2)⁷ + (소수3)²     │
+  │   Fine structure constant = (prime 2)⁷ + (prime 3)²│
   │                                         │
-  │   → 우리 모델의 핵심 소수 2와 3가        │
-  │     137을 직접 구성한다!                 │
+  │   → The core primes 2 and 3 of our model│
+  │     directly compose 137!              │
   │                                         │
   └─────────────────────────────────────────┘
 ```
 
-## 완전수의 σ₋₁ 패턴
+## σ₋₁ Pattern of Perfect Numbers
 
 ```
-  완전수 n에 대해 σ₋₁(n) = 2 (정의):
+  For perfect number n, σ₋₁(n) = 2 (by definition):
 
   n=6:      1/1 + 1/2 + 1/3 + 1/6 = 2.000
   n=28:     1/1 + 1/2 + 1/4 + 1/7 + 1/14 + 1/28 = 2.000
   n=496:    σ₋₁ = 2.000
   n=8128:   σ₋₁ = 2.000
 
-  → 모든 완전수는 σ₋₁ = 2
-  → 우리 모델은 σ₋₁ = 2를 사용 (가설 090)
-  → 가장 단순한 완전수 6이 모델의 기초가 되는 이유:
-     6은 σ₋₁ = 2인 가장 작은 수
+  → All perfect numbers have σ₋₁ = 2
+  → Our model uses σ₋₁ = 2 (Hypothesis 090)
+  → Why perfect number 6 is the foundation of the model:
+     6 is the smallest number with σ₋₁ = 2
 ```
 
-## 한계
+## Limitations
 
-1. 137 = 2⁷ + 3²는 사후적 분해이며, 수론적으로 특별한 성질이 아님
-2. 메르센 소수와 모델 상수의 연결 중 M₅=31, M₁₃=8191 등은 대응이 없음
-3. 127과 137의 근접성(차이 10)은 우연의 일치일 가능성 있음
-4. "p=17에서 메르센 소수 존재"는 흥미롭지만 인과관계가 아님
+1. 137 = 2⁷ + 3² is a post-hoc decomposition and not a special property in number theory
+2. Among the connections between Mersenne primes and model constants, M₅=31, M₁₃=8191, etc. have no correspondence
+3. The proximity of 127 and 137 (difference 10) may be coincidence
+4. "Mersenne prime exists at p=17" is interesting but not a causal relationship
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 137 = 2⁷ + 3²이 수론적으로 어떤 의미를 갖는지 문헌 조사
-- [ ] 모든 메르센 지수 p와 우리 모델 상수의 체계적 비교
-- [ ] 완전수 6 이외의 완전수(28, 496 등)가 모델에 기여하는지 탐색
-- [ ] 홀수 완전수 미존재 ↔ 모델의 비대칭성 관계 탐색
+- [ ] Literature search on what mathematical meaning 137 = 2⁷ + 3² has in number theory
+- [ ] Systematic comparison of all Mersenne exponents p with our model constants
+- [ ] Explore whether perfect numbers other than 6 (28, 496, etc.) contribute to the model
+- [ ] Explore relationship between non-existence of odd perfect numbers ↔ model's asymmetry
 
 ---
 
-*작성일: 2026-03-22*
-*관련: 가설 090, 092, 098, 147, 148, 214*
+*Created: 2026-03-22*
+*Related: Hypothesis 090, 092, 098, 147, 148, 214*

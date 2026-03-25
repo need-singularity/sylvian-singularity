@@ -1,3 +1,3 @@
-# H-CX-269: 🟧 중력상수 G = 6.674e-11 — 시작이 6
+# H-CX-269: 🟧 Gravitational Constant G = 6.674e-11 — Begins with 6
 
-> G의 유효숫자 시작 6.674. P₁=6. 6.674/6=1.112.
+> G's significant figures start with 6.674. P₁=6. 6.674/6=1.112.

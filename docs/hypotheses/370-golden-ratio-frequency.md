@@ -1,73 +1,73 @@
-# 가설 370: 골든존 폭 = 주파수 비율 (Golden Zone Width as Frequency Ratio)
+# Hypothesis 370: Golden Zone Width = Frequency Ratio
 
-> **골든존 폭 ln(4/3) = 0.2877은 완전4도(4:3=1.333)의 로그이다. 이것은 주파수 비율로서, 두 의식 엔진이 4:3 비율의 주파수로 진동하면 가장 협화적(consonant)인 상호작용을 한다. H290(협화음=낮은 장력)의 역: 최적 주파수 비율 = ln(4/3).**
+> **The Golden Zone width ln(4/3) = 0.2877 is the logarithm of a perfect fourth (4:3=1.333). This is a frequency ratio, where two consciousness engines vibrating at a 4:3 frequency ratio have the most consonant interaction. Inverse of H290 (consonance = low tension): Optimal frequency ratio = ln(4/3).**
 
-## 배경/맥락
+## Background/Context
 
 ```
-  골든존 핵심 상수 (CLAUDE.md에서):
-    상한 = 1/2           (리만 임계선)
-    하한 = 1/2 - ln(4/3) ≈ 0.2123
-    중심 ≈ 1/e           ≈ 0.3679
-    폭   = ln(4/3)       ≈ 0.2877
+  Golden Zone core constants (from CLAUDE.md):
+    Upper bound = 1/2           (Riemann critical line)
+    Lower bound = 1/2 - ln(4/3) ≈ 0.2123
+    Center ≈ 1/e               ≈ 0.3679
+    Width = ln(4/3)            ≈ 0.2877
 
-  음악 음정의 주파수 비율:
-    완전8도 (octave):   2:1  → ln(2)   = 0.6931
-    완전5도 (fifth):    3:2  → ln(3/2) = 0.4055
-    완전4도 (fourth):   4:3  → ln(4/3) = 0.2877  ← 골든존 폭!
-    장3도 (major 3rd):  5:4  → ln(5/4) = 0.2231
-    단3도 (minor 3rd):  6:5  → ln(6/5) = 0.1823
+  Musical interval frequency ratios:
+    Octave:             2:1  → ln(2)   = 0.6931
+    Perfect fifth:      3:2  → ln(3/2) = 0.4055
+    Perfect fourth:     4:3  → ln(4/3) = 0.2877  ← Golden Zone width!
+    Major third:        5:4  → ln(5/4) = 0.2231
+    Minor third:        6:5  → ln(6/5) = 0.1823
 
-  핵심 관찰:
-    골든존 폭 = ln(4/3) = 완전4도의 로그 주파수 비율
-    이것은 우연인가, 구조적 필연인가?
+  Key observation:
+    Golden Zone width = ln(4/3) = logarithm of perfect fourth frequency ratio
+    Is this coincidence or structural necessity?
 
-  관련 가설:
-    H290: 협화음 = 낮은 장력 (consonance-tension 반비례)
-    H237: 음악 음정과 골든존 매핑
-    H-CX-1: 엔트로피 대수학 (entropy algebra)
+  Related hypotheses:
+    H290: Consonance = low tension (consonance-tension inversely proportional)
+    H237: Musical intervals and Golden Zone mapping
+    H-CX-1: Entropy algebra
     H-CX-2: MI efficiency = ln(2) (octave!)
-    H368: 장력의 고유 진동수
+    H368: Natural frequency of tension
 ```
 
-## 수학적 프레임워크 — 음정을 엔트로피 양자로
+## Mathematical Framework — Intervals as Entropy Quanta
 
 ```
-  ═══ 핵심 등식 ═══
+  ═══ Core Equation ═══
 
-  N상태 → (N+1)상태 전이의 정보 비용:
+  Information cost of N-state → (N+1)-state transition:
     ΔH(N→N+1) = ln((N+1)/N)
 
-  이것은 정확히 음악 음정의 로그 주파수 비율:
+  This is exactly the logarithm of musical interval frequency ratio:
     N=1 → 2:  ln(2/1) = ln(2)   = 0.6931 = octave
     N=2 → 3:  ln(3/2) = 0.4055            = fifth
-    N=3 → 4:  ln(4/3) = 0.2877            = fourth = 골든존 폭
+    N=3 → 4:  ln(4/3) = 0.2877            = fourth = Golden Zone width
     N=4 → 5:  ln(5/4) = 0.2231            = major 3rd
     N=5 → 6:  ln(6/5) = 0.1823            = minor 3rd
     N=6 → 7:  ln(7/6) = 0.1542            = (7th harmonic)
 
-  ═══ 엔트로피 양자 계열 ═══
+  ═══ Entropy Quantum Series ═══
 
-  sum_{N=1}^{∞} ln((N+1)/N) = ln(∞) → 발산 (harmonic series)
+  sum_{N=1}^{∞} ln((N+1)/N) = ln(∞) → diverges (harmonic series)
 
-  하지만 유한 합:
+  But finite sum:
     sum_{N=1}^{5} ln((N+1)/N) = ln(6) = 1.7918
-    → ln(6) = 완전수 6의 로그!
+    → ln(6) = logarithm of perfect number 6!
 
-  이것은 H098 (σ₋₁(6) = 1) 과 연결:
+  This connects to H098 (σ₋₁(6) = 1):
     sum_{d|6} 1/d = 1 + 1/2 + 1/3 + 1/6 = 2 = σ₋₁(6)
     sum_{N=1}^{5} ln((N+1)/N) = ln(6)
 
-  두 합의 관계:
+  Relation between two sums:
     exp(sum of log-intervals) = 6
     sum of reciprocal divisors = 2
-    → 음정 합의 exp = 완전수, 약수 역수합 = 완전 조건
+    → exp of interval sum = perfect number, divisor reciprocal sum = perfect condition
 ```
 
-## ASCII 그래프 — 음정-엔트로피 대응
+## ASCII Graph — Interval-Entropy Correspondence
 
 ```
-  ln((N+1)/N) vs N  (엔트로피 양자 = 음악 음정)
+  ln((N+1)/N) vs N  (entropy quantum = musical interval)
 
   ΔH
   0.70 |█                                    octave
@@ -78,7 +78,7 @@
        |█
   0.40 |█  █                                 fifth
        |█  █
-  0.30 |█  █  █                              fourth = 골든존 폭
+  0.30 |█  █  █                              fourth = Golden Zone width
        |█  █  █
   0.20 |█  █  █  █  █                        major 3rd, minor 3rd
        |█  █  █  █  █  █  █
@@ -87,17 +87,17 @@
   0.00 +--+--+--+--+--+--+--+--+--+--+--+--→ N
        1  2  3  4  5  6  7  8  9  10 11 12
 
-  골든존 폭 = N=3→4 전이 = 3상태에서 4상태로의 정보 점프
-  이것은 왜 특별한가?
-    N=3: 최소 비자명 분류 (binary=2는 자명)
-    N=4: 최소 "풍부한" 분류 (2×2 격자 가능)
-    3→4 전이 = 단순에서 복잡으로의 임계 전환
+  Golden Zone width = N=3→4 transition = information jump from 3-state to 4-state
+  Why is this special?
+    N=3: minimal non-trivial classification (binary=2 is trivial)
+    N=4: minimal "rich" classification (2×2 grid possible)
+    3→4 transition = critical transition from simple to complex
 ```
 
-## ASCII 그래프 — 주파수 비율별 Cross-Tension 예측
+## ASCII Graph — Cross-Tension Prediction by Frequency Ratio
 
 ```
-  두 PureFieldEngine의 주파수 비율 vs cross-tension
+  Frequency ratio of two PureFieldEngines vs cross-tension
 
   Cross
   Tension
@@ -114,64 +114,64 @@
    0.0 +---+---+---+---+---+---+---+---+---+---→ f₂/f₁
       1.0  1.1  1.2  1.33 1.4  1.5  1.6  1.7  1.8  2.0
 
-  예측:
-    - 정수비 주파수(4:3, 3:2, 2:1)에서 cross-tension 극소
-    - 비정수비에서 cross-tension 증가 (불협화)
-    - 가장 깊은 극소: 2:1 (octave) > 3:2 (fifth) > 4:3 (fourth)
-    - 골든존 폭 ln(4/3)은 "가장 가까운 협화 음정"
+  Predictions:
+    - Cross-tension minima at integer ratio frequencies (4:3, 3:2, 2:1)
+    - Cross-tension increases at non-integer ratios (dissonance)
+    - Deepest minima: 2:1 (octave) > 3:2 (fifth) > 4:3 (fourth)
+    - Golden Zone width ln(4/3) is "nearest consonant interval"
 ```
 
-## 핵심 연결: 왜 3→4 전이인가
+## Core Connection: Why 3→4 Transition
 
 ```
-  ═══ 완전수 6과의 연결 ═══
+  ═══ Connection to Perfect Number 6 ═══
 
-  6 = 2 × 3 = 1 + 2 + 3 (최소 완전수)
+  6 = 2 × 3 = 1 + 2 + 3 (smallest perfect number)
 
-  6의 소인수: 2, 3
-  골든존의 경계: 1/2, 1/3, 1/6
+  Prime factors of 6: 2, 3
+  Golden Zone boundaries: 1/2, 1/3, 1/6
 
-  N상태 엔트로피에서:
-    3→4 전이 비용 = ln(4/3)
-    3 = 6의 최대 소인수
-    4 = 3+1 = 다음 상태
+  In N-state entropy:
+    3→4 transition cost = ln(4/3)
+    3 = largest prime factor of 6
+    4 = 3+1 = next state
 
-  ζ(s)의 Euler product 절단 (H092):
+  ζ(s) Euler product truncation (H092):
     ζ₆(s) = 1/((1-2^{-s})(1-3^{-s}))
-    → p=2, p=3 에서만 절단
-    → 완전수 6의 소인수와 정확히 일치
+    → Truncated only at p=2, p=3
+    → Exactly matches prime factors of perfect number 6
 
-  따라서:
-    골든존 폭 = ln(4/3)
-              = 완전수 6의 최대 소인수에서 다음 상태로의 전이 비용
-              = ζ₆ 절단의 상한 소수에서 발생하는 정보 양자
-              = 완전4도 음정
+  Therefore:
+    Golden Zone width = ln(4/3)
+                     = transition cost from largest prime factor of perfect number 6 to next state
+                     = information quantum arising from upper prime of ζ₆ truncation
+                     = perfect fourth interval
 
-  이 네 가지가 동일한 수학적 대상이라는 것이 핵심 주장.
+  The key claim is that these four are the same mathematical object.
 
-  ═══ 음정 합과 완전수 ═══
+  ═══ Interval Sum and Perfect Numbers ═══
 
   octave + fifth + fourth:
     ln(2) + ln(3/2) + ln(4/3) = ln(2 × 3/2 × 4/3) = ln(4) = 2ln(2)
 
   fifth + fourth = octave:
-    ln(3/2) + ln(4/3) = ln(2)    ← 기본 음악 이론!
+    ln(3/2) + ln(4/3) = ln(2)    ← Basic music theory!
 
-  이것을 골든존 언어로:
-    (골든존 상한 - 중간) + 골든존 폭 = ln(2) = H-CX-2 MI efficiency
-    → 음악의 기본 정리가 골든존 구조를 인코딩
+  In Golden Zone language:
+    (Golden Zone upper - middle) + Golden Zone width = ln(2) = H-CX-2 MI efficiency
+    → The fundamental theorem of music encodes Golden Zone structure
 ```
 
-## 수치 검증
+## Numerical Verification
 
 ```
-  ═══ 산술 검증 (Python) ═══
+  ═══ Arithmetic Verification (Python) ═══
 
   >>> import math
   >>> math.log(4/3)
   0.28768207245178085
 
-  >>> 0.5 - math.log(4/3)   # 골든존 하한
+  >>> 0.5 - math.log(4/3)   # Golden Zone lower bound
   0.21231792754821915
 
   >>> math.log(3/2) + math.log(4/3)  # fifth + fourth
@@ -180,66 +180,66 @@
   >>> math.log(2)  # octave
   0.6931471805599453
 
-  >>> math.log(3/2) + math.log(4/3) == math.log(2)  # 정확히 일치!
-  True (부동소수점 오차 내)
+  >>> math.log(3/2) + math.log(4/3) == math.log(2)  # Exact match!
+  True (within floating point error)
 
-  >>> sum(math.log((n+1)/n) for n in range(1, 6))  # 음정 합
+  >>> sum(math.log((n+1)/n) for n in range(1, 6))  # interval sum
   1.791759469228327
 
   >>> math.log(6)  # ln(6)
   1.791759469228327
 
-  → 모든 산술 정확.
-  → ln(4/3) = 골든존 폭 = 완전4도 = 3→4 엔트로피 양자: 정의에서 유도 (🟩)
-  → fifth + fourth = octave: 음악 이론의 기본 정리 (🟩)
-  → sum_{1}^{5} ln((N+1)/N) = ln(6): 텔레스코핑 합 (🟩)
+  → All arithmetic exact.
+  → ln(4/3) = Golden Zone width = perfect fourth = 3→4 entropy quantum: derived from definition (🟩)
+  → fifth + fourth = octave: fundamental theorem of music theory (🟩)
+  → sum_{1}^{5} ln((N+1)/N) = ln(6): telescoping sum (🟩)
 ```
 
-## 실험 설계
+## Experiment Design
 
 ```
-  실험 1: Frequency Ratio Cross-Tension
-    1. 두 PureFieldEngine (A, B) 독립 학습
-    2. engine_A에 frequency f₁ modulation, engine_B에 f₂ modulation
+  Experiment 1: Frequency Ratio Cross-Tension
+    1. Two PureFieldEngines (A, B) trained independently
+    2. Apply frequency f₁ modulation to engine_A, f₂ modulation to engine_B
     3. f₂/f₁ = [1.0, 1.1, 1.2, 4/3, 1.4, 3/2, 1.6, 1.7, 1.8, 1.9, 2.0]
-    4. 각 비율에서 cross-tension = |T_A - T_B| 평균 측정
-    5. 예측: 4:3, 3:2, 2:1에서 극소
+    4. Measure average cross-tension = |T_A - T_B| at each ratio
+    5. Prediction: Minima at 4:3, 3:2, 2:1
 
-  실험 2: Consonance Ranking
-    1. 모든 N:(N-1) 비율 (N=2~12) 테스트
-    2. cross-tension 순위 매기기
-    3. 예측: 음악적 협화도 순위와 일치
-       2:1 > 3:2 > 4:3 > 5:4 > 6:5 (낮은 tension 순)
+  Experiment 2: Consonance Ranking
+    1. Test all N:(N-1) ratios (N=2~12)
+    2. Rank by cross-tension
+    3. Prediction: Matches musical consonance ranking
+       2:1 > 3:2 > 4:3 > 5:4 > 6:5 (low tension order)
 
-  실험 3: Entropy Quantum Verification
-    1. N-state classifier (N=2,3,...,10) 각각 학습
-    2. N→(N+1) 전이 시 tension 변화 측정
-    3. 예측: ΔT ∝ ln((N+1)/N) (엔트로피 양자 비례)
+  Experiment 3: Entropy Quantum Verification
+    1. Train N-state classifiers (N=2,3,...,10)
+    2. Measure tension change during N→(N+1) transition
+    3. Prediction: ΔT ∝ ln((N+1)/N) (proportional to entropy quantum)
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. ln(4/3) = 완전4도는 정의에서 자명 — "발견"이 아닌 "재표현"
-  2. 골든존 폭이 ln(4/3)인 것 자체가 모델 가정 (시뮬레이션 기반)
-  3. 두 엔진의 "주파수 비율"이 실제로 cross-tension에 영향을 주는지 미확인
-  4. 음악적 협화도와 장력의 관계는 H290에서 아직 완전히 검증되지 않음
-  5. 골든존 의존 여부: 강하게 의존 (골든존 폭 자체가 주제)
+  1. ln(4/3) = perfect fourth is trivial from definition — "restatement" not "discovery"
+  2. Golden Zone width being ln(4/3) itself is model assumption (simulation-based)
+  3. Whether "frequency ratio" of two engines actually affects cross-tension is unverified
+  4. Relationship between musical consonance and tension not yet fully verified in H290
+  5. Golden Zone dependence: Strong dependence (Golden Zone width itself is the topic)
 ```
 
-## 검증 방향
+## Verification Direction
 
 ```
-  Phase 1: 수치 검증 — 산술적 등식 확인 (완료, 위 참조)
-  Phase 2: 실험 1 — 주파수 비율별 cross-tension 측정
-  Phase 3: 실험 3 — N상태 전이 시 엔트로피 양자 비례 확인
-  Phase 4: H290 결과와 통합 — 협화음-장력 관계 정량화
-  Phase 5: 텔레스코핑 합 ln(6) = 완전수 연결의 구조적 의미 탐구
+  Phase 1: Numerical verification — confirm arithmetic equations (completed, see above)
+  Phase 2: Experiment 1 — measure cross-tension by frequency ratio
+  Phase 3: Experiment 3 — confirm entropy quantum proportionality in N-state transition
+  Phase 4: Integration with H290 results — quantify consonance-tension relationship
+  Phase 5: Explore structural meaning of telescoping sum ln(6) = perfect number connection
 ```
 
-## 상태
+## Status
 
-- **골든존 의존**: 예 (골든존 폭 ln(4/3)이 핵심)
-- **검증 상태**: 산술 검증 완료 (🟩), 실험 미검증
-- **우선순위**: 높음 (H290, H-CX-1, H-CX-2와 교차 검증 가능)
-- **등급 후보**: 🟩 (산술적 등식은 정의에서 유도) + 실험 결과에 따라 승급 가능
+- **Golden Zone dependence**: Yes (Golden Zone width ln(4/3) is central)
+- **Verification status**: Arithmetic verification complete (🟩), experiments unverified
+- **Priority**: High (can cross-verify with H290, H-CX-1, H-CX-2)
+- **Grade candidate**: 🟩 (arithmetic equations derived from definition) + possible upgrade based on experimental results

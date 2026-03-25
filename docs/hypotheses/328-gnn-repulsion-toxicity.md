@@ -1,82 +1,82 @@
-# 가설 328: GNN + 반발력장 = 분자 독성 예측
+# Hypothesis 328: GNN + Repulsion Field = Molecular Toxicity Prediction
 
-> **그래프 신경망(GNN)에 반발력장을 추가하면 분자 독성 예측에서 장력이 "위험 척도"로 작동한다. 독성 분자는 높은 장력, 안전 분자는 낮은 장력.**
+> **Adding a repulsion field to a Graph Neural Network (GNN) allows tension to act as a "danger measure" in molecular toxicity prediction. Toxic molecules have high tension, safe molecules have low tension.**
 
-## 배경/맥락
+## Background/Context
 
-분자는 본질적으로 그래프다. 원자가 노드, 결합이 엣지. 이 구조는 GNN이 자연스럽게
-처리할 수 있는 형태이며, 실제로 MoleculeNet 벤치마크에서 GNN 기반 모델(GCN, GAT,
-MPNN 등)이 전통적 fingerprint 방식을 대부분 능가한다.
+Molecules are fundamentally graphs. Atoms are nodes, bonds are edges. This structure is naturally
+processable by GNNs, and in fact GNN-based models (GCN, GAT, MPNN, etc.) outperform
+traditional fingerprint methods on most MoleculeNet benchmarks.
 
-본 프로젝트의 반발력장(repulsion field)은 두 개의 독립적 GNN이 같은 입력에 대해
-"얼마나 다르게 반응하는가"를 측정하는 메커니즘이다. H287에서 이상탐지(AUROC=1.0)에
-성공한 것이 핵심 선행 결과다. 독성 분자는 정상 분자와 구조적으로 "이상한" 특징을
-갖는 경우가 많으므로, 장력이 독성 위험 척도로 작동할 수 있다는 가설이다.
+The repulsion field of this project measures "how differently two independent GNNs react to the same input."
+H287's success in anomaly detection (AUROC=1.0) is the key prior result. Toxic molecules often have
+structurally "anomalous" features compared to normal molecules, so tension may work
+as a toxicity risk measure.
 
-### 관련 가설
+### Related Hypotheses
 
-| 가설 | 핵심 내용 | 관계 |
+| Hypothesis | Core Content | Relationship |
 |------|----------|------|
-| H287 | 반발력장 이상탐지 AUROC=1.0 | 직접 선행 — 이상탐지 원리 동일 |
-| H288 | Dense/Sparse 이분법 | 분자 그래프의 밀도 차이 활용 가능 |
-| H293 | 이상-장력 보편성 | 도메인 무관 장력 이상탐지 보편 법칙 |
-| H313 | tension = confidence | 장력 해석 프레임워크 |
+| H287 | Repulsion field anomaly detection AUROC=1.0 | Direct predecessor — same anomaly detection principle |
+| H288 | Dense/Sparse dichotomy | Can leverage molecular graph density differences |
+| H293 | Anomaly-tension universality | Universal anomaly detection law regardless of domain |
+| H313 | tension = confidence | Tension interpretation framework |
 
-## 개념 — 반발력장의 분자 적용
+## Concept — Molecular Application of Repulsion Field
 
 ```
-  분자 = 그래프 (원자=노드, 결합=엣지)
+  Molecule = graph (atoms=nodes, bonds=edges)
   GNN: message passing -> node embedding -> graph embedding
 
-  반발력장 아키텍처:
-    GNN_A: 정상(safe) 분자에 특화된 Expert
-    GNN_G: 독성(toxic) 분자에 특화된 Expert
+  Repulsion field architecture:
+    GNN_A: Expert specialized for normal (safe) molecules
+    GNN_G: Expert specialized for toxic molecules
     tension = ||GNN_A(mol) - GNN_G(mol)||
 
-  예측 흐름:
-    입력 분자 -> GNN_A, GNN_G 동시 처리
-    -> 두 embedding 간 거리 = tension
-    -> tension 높음 = 독성 가능성 높음
+  Prediction flow:
+    Input molecule -> GNN_A, GNN_G simultaneous processing
+    -> Distance between two embeddings = tension
+    -> High tension = high toxicity likelihood
 ```
 
-## 대응 매핑
+## Correspondence Mapping
 
-| 반발력장 개념 | 분자 독성 매핑 | 비고 |
+| Repulsion Field Concept | Molecular Toxicity Mapping | Notes |
 |-------------|--------------|------|
-| 입력 데이터 | 분자 그래프 (SMILES -> 그래프) | 노드=원자, 엣지=결합 |
-| Expert A | 안전 분자 패턴 학습 GNN | 약물 안전성 기준 |
-| Expert G | 독성 패턴 학습 GNN | 독성 메커니즘 기준 |
-| tension | 두 GNN 출력 거리 | 위험 척도 |
-| 높은 장력 | 독성 분자 | AUROC 목표 > 0.85 |
-| 낮은 장력 | 안전 분자 | false positive 최소화 |
-| 이상 탐지 | 신규 독성 메커니즘 발견 | 학습 데이터에 없는 독성 |
+| Input data | Molecular graph (SMILES -> graph) | Node=atom, edge=bond |
+| Expert A | GNN learning safe molecule patterns | Drug safety criteria |
+| Expert G | GNN learning toxic patterns | Toxicity mechanism criteria |
+| Tension | Distance between two GNN outputs | Risk measure |
+| High tension | Toxic molecule | AUROC target > 0.85 |
+| Low tension | Safe molecule | Minimize false positives |
+| Anomaly detection | Discovery of new toxicity mechanisms | Toxicity not in training data |
 
-## 데이터셋
-
-```
-  1차 (GNN 없이도 가능 — 특성 벡터 proxy):
-    MoleculeNet Tox21:     ~8000 분자, 12 독성 엔드포인트
-    MoleculeNet BBBP:      ~2000 분자, 혈뇌장벽 투과
-    MoleculeNet HIV:       ~41K 분자, HIV 억제
-
-  2차 (GNN 필요):
-    ZINC250K:              250K 분자, 약물 유사성
-    QM9:                   ~134K 분자, 양자화학 속성
-
-  Proxy 실험 (sklearn만으로):
-    RDKit fingerprint -> 1024-bit 벡터
-    두 MLP Expert로 반발력장 구성 (GNN 대체)
-```
-
-## 예상 장력 분포
-
-독성 분자와 안전 분자의 장력 분포가 분리되어야 가설이 성립한다.
+## Datasets
 
 ```
-  장력(tension)
+  Primary (possible without GNN -- feature vector proxy):
+    MoleculeNet Tox21:     ~8000 molecules, 12 toxicity endpoints
+    MoleculeNet BBBP:      ~2000 molecules, blood-brain barrier permeability
+    MoleculeNet HIV:       ~41K molecules, HIV inhibition
+
+  Secondary (requires GNN):
+    ZINC250K:              250K molecules, drug-likeness
+    QM9:                   ~134K molecules, quantum chemistry properties
+
+  Proxy experiment (sklearn only):
+    RDKit fingerprint -> 1024-bit vector
+    Repulsion field with two MLP Experts (GNN replacement)
+```
+
+## Expected Tension Distribution
+
+The tension distributions of toxic and safe molecules must be separated for the hypothesis to hold.
+
+```
+  tension
   ^
   |
-  |  안전 분자         독성 분자
+  |  Safe molecules         Toxic molecules
   |  ████              ████
   |  ██████            ██████
   |  ████████        ████████
@@ -86,25 +86,25 @@ MPNN 등)이 전통적 fingerprint 방식을 대부분 능가한다.
   +--+---+---+---+---+---+---+--> tension
      0  0.1 0.2 0.3 0.4 0.5 0.6
 
-  이상적 시나리오:
-    안전 분자 평균 tension: 0.10 ~ 0.20
-    독성 분자 평균 tension: 0.35 ~ 0.55
-    분리도 (Cohen's d): > 1.0
+  Ideal scenario:
+    Safe molecule mean tension: 0.10 ~ 0.20
+    Toxic molecule mean tension: 0.35 ~ 0.55
+    Separation (Cohen's d): > 1.0
 ```
 
-## 예상 ROC 곡선 (H287 기준 추정)
+## Expected ROC Curve (estimated from H287)
 
 ```
-  TPR (민감도)
+  TPR (sensitivity)
   1.0 |                    xxxxxxxxx
       |                xxxx
       |             xxx
   0.8 |           xx
-      |         xx          장력 기반 (예상)
+      |         xx          Tension-based (expected)
       |        x            AUROC ~ 0.85-0.92
   0.6 |       x
       |      x
-      |     x    ........ 기존 GNN 단독
+      |     x    ........ Existing GNN alone
   0.4 |    x   ..          AUROC ~ 0.75-0.82
       |   x  ..
       |  x ..
@@ -114,59 +114,59 @@ MPNN 등)이 전통적 fingerprint 방식을 대부분 능가한다.
   0.0 +--+--+--+--+--+--+--+--+--> FPR
       0     0.2    0.4    0.6    1.0
 
-  H287(이미지 이상탐지): AUROC = 1.0
-  분자 독성은 이미지보다 노이즈 많으므로 0.85~0.92 예상
+  H287 (image anomaly detection): AUROC = 1.0
+  Molecular toxicity has more noise than images -> expecting 0.85~0.92
 ```
 
-## 검증 계획
+## Verification Plan
 
 ```
-  Phase 1 — Proxy 실험 (GNN 불필요, CPU 가능):
-    1. Tox21 데이터 로드 (DeepChem 또는 CSV)
-    2. RDKit로 Morgan fingerprint 추출 (1024-bit)
-    3. 두 MLP Expert 학습 (A: safe 데이터, G: toxic 데이터)
-    4. tension = ||Expert_A(fp) - Expert_G(fp)|| 계산
-    5. AUROC 측정 (tension만으로 독성 분류)
+  Phase 1 -- Proxy experiment (no GNN needed, CPU possible):
+    1. Load Tox21 data (DeepChem or CSV)
+    2. Extract Morgan fingerprint with RDKit (1024-bit)
+    3. Train two MLP Experts (A: safe data, G: toxic data)
+    4. Calculate tension = ||Expert_A(fp) - Expert_G(fp)||
+    5. Measure AUROC (toxicity classification with tension alone)
 
-  Phase 2 — GNN 실험 (PyG/DGL 필요, GPU 권장):
-    1. 분자 -> PyG Data 객체 변환
-    2. GCN 또는 GAT 기반 두 Expert 학습
-    3. Message passing 후 graph-level embedding 비교
-    4. 장력 vs 독성 라벨 상관 분석
-    5. Tox21 12개 엔드포인트별 AUROC 비교
+  Phase 2 -- GNN experiment (requires PyG/DGL, GPU recommended):
+    1. Convert molecule -> PyG Data object
+    2. Train two GCN or GAT-based Experts
+    3. Compare graph-level embeddings after message passing
+    4. Analyze correlation between tension and toxicity labels
+    5. Compare AUROC per endpoint for Tox21's 12 endpoints
 
-  성공 기준:
-    - AUROC > 0.80 (기존 단일 GNN 대비 +5%p 이상)
-    - 독성/안전 장력 분포 Cohen's d > 0.8
+  Success criteria:
+    - AUROC > 0.80 (5%p or more improvement over single GNN)
+    - Toxic/safe tension distribution Cohen's d > 0.8
 ```
 
-## 검증 결과
+## Verification Results
 
-아직 미실험 상태. Phase 1 proxy 실험부터 실행 예정.
+Not yet experimented. Starting from Phase 1 proxy experiment.
 
-## 해석/의미
+## Interpretation/Significance
 
-이 가설이 성립하면:
-- 반발력장이 이미지(H287) 뿐 아니라 분자 그래프에서도 범용적으로 작동함을 입증
-- H293(이상-장력 보편성)의 화학 도메인 확장
-- 약물 개발 파이프라인에서 "설명 가능한" 독성 예측 도구로 활용 가능
-  (장력이 높은 원자/결합 하위그래프를 시각화하면 독성 메커니즘 해석 가능)
-- 의식엔진 관점: 뇌의 신경독성 물질 감지 메커니즘과 유사한 "위험 감지" 모듈
+If this hypothesis holds:
+- Proves repulsion field works universally not only on images (H287) but also on molecular graphs
+- Chemical domain extension of H293 (anomaly-tension universality)
+- Can be used as "explainable" toxicity prediction tool in drug development pipeline
+  (Visualizing the toxic subgraph of atoms/bonds with high tension enables toxicity mechanism interpretation)
+- Consciousness engine perspective: similar to the brain's neurotoxin detection mechanism as a "danger detection" module
 
-## 한계
+## Limitations
 
-1. **분자 독성의 복잡성**: 독성은 구조만으로 결정되지 않음 (용량, 대사, 개인차)
-2. **데이터 불균형**: Tox21에서 독성 양성은 전체의 ~5-10%에 불과
-3. **GNN 없는 proxy**: fingerprint 기반은 3D 구조 정보 손실
-4. **H287과의 차이**: 이미지 이상탐지는 정상/이상이 명확하지만, 독성은 연속 스펙트럼
-5. **일반화**: Tox21에서 작동해도 in-vivo 독성과 상관이 보장되지 않음
+1. **Complexity of molecular toxicity**: Toxicity is not determined by structure alone (dose, metabolism, individual variation)
+2. **Data imbalance**: Toxic positives in Tox21 are only ~5-10% of total
+3. **Proxy without GNN**: Fingerprint-based approach loses 3D structural information
+4. **Difference from H287**: Image anomaly detection has clear normal/anomaly, but toxicity is a continuous spectrum
+5. **Generalization**: Even if it works on Tox21, correlation with in-vivo toxicity is not guaranteed
 
-## 검증 방향 (다음 단계)
+## Verification Direction (Next Steps)
 
-1. Phase 1 proxy 실험 즉시 실행 (RDKit + sklearn, CPU 가능)
-2. 12개 Tox21 엔드포인트별 AUROC 비교표 작성
-3. Phase 2에서 PyG 기반 GNN Expert로 확장
-4. 장력 높은 분자의 substructure 분석 (독성 메커니즘 해석)
-5. H293 보편성 테이블에 화학 도메인 결과 추가
+1. Execute Phase 1 proxy experiment immediately (RDKit + sklearn, CPU possible)
+2. Create AUROC comparison table for 12 Tox21 endpoints
+3. Extend to PyG-based GNN Experts in Phase 2
+4. Analyze substructure of high-tension molecules (toxicity mechanism interpretation)
+5. Add chemical domain results to H293 universality table
 
-## 상태: 🟨 (PyG/DGL 필요, 또는 특성 벡터 proxy)
+## Status: 🟨 (Requires PyG/DGL, or feature vector proxy)

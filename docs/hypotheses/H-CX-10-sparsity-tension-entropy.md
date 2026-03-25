@@ -1,116 +1,116 @@
-# H-CX-10: 희소성-장력-엔트로피 삼각관계 (교차 도메인)
+# H-CX-10: Sparsity-Tension-Entropy Triangle (Cross-domain)
 
-> **클래스의 희소성(빈도 역수)이 장력을 결정하고, 장력이 Shannon 엔트로피 H와 연결된다. H289 실험에서 완전수(가장 희소)가 최고 장력을 보인 것은 -p·ln(p)의 정보이론적 귀결이다.**
+> **A class's sparsity (inverse frequency) determines Tension, and Tension connects to Shannon entropy H. In the H289 experiment, perfect numbers (most sparse) showed the highest Tension — this is an information-theoretic consequence of -p·ln(p).**
 
-## 수학 측
-
-```
-  Shannon 정보량: I(x) = -ln(p(x))
-  희소한 사건일수록 더 많은 정보를 담는다
-
-  완전수 빈도: ~5/1000 = 0.005
-  소수 빈도:   ~170/1000 = 0.17
-  합성수 빈도: ~600/1000 = 0.60
-
-  정보량:
-    I(완전수) = -ln(0.005) = 5.30 nats
-    I(소수)   = -ln(0.17)  = 1.77 nats
-    I(합성수) = -ln(0.60)  = 0.51 nats
-
-  정보량 비율:
-    완전수/소수 = 5.30/1.77 = 3.0
-    완전수/합성수 = 5.30/0.51 = 10.4
-```
-
-## 의식엔진 측 (H289 실측)
+## Math Side
 
 ```
-  장력 순위:
-    완전수: 721.2 (최고)
-    소수:    85.2
-    합성수:  53.9
+  Shannon information: I(x) = -ln(p(x))
+  Rarer events carry more information
 
-  장력 비율:
-    완전수/소수 = 721.2/85.2 = 8.46
-    완전수/합성수 = 721.2/53.9 = 13.4
+  Perfect number frequency: ~5/1000 = 0.005
+  Prime frequency:          ~170/1000 = 0.17
+  Composite frequency:      ~600/1000 = 0.60
+
+  Information content:
+    I(perfect number) = -ln(0.005) = 5.30 nats
+    I(prime)          = -ln(0.17)  = 1.77 nats
+    I(composite)      = -ln(0.60)  = 0.51 nats
+
+  Information ratios:
+    perfect/prime    = 5.30/1.77 = 3.0
+    perfect/composite = 5.30/0.51 = 10.4
 ```
 
-## 교차 분석
+## Consciousness Engine Side (H289 Empirical)
 
 ```
-  비율 비교:
-                  정보량 비율    장력 비율
-    완전수/소수     3.0           8.5
-    완전수/합성수   10.4          13.4
+  Tension ranking:
+    Perfect number: 721.2 (highest)
+    Prime:           85.2
+    Composite:       53.9
 
-  상관: 방향 일치 (희소→높은 정보→높은 장력)
-  하지만: 장력 비율이 정보량 비율보다 과잉 (비선형)
-
-  가설: 장력 ∝ I(x)^α  where α > 1 (초선형)
-  → 엔진이 정보량에 "과민 반응"하는 것?
-  → 또는: 장력 ∝ 1/p(x)  (빈도 역수에 직접 비례)
-
-  검증:
-    1/p(완전수) / 1/p(소수) = 0.17/0.005 = 34
-    실측: 721.2/85.2 = 8.5
-    → 1/p보다는 약하지만 -ln(p)보다는 강함
-    → 장력 ∝ p^(-β) where 0 < β < 1?
+  Tension ratios:
+    perfect/prime    = 721.2/85.2 = 8.46
+    perfect/composite = 721.2/53.9 = 13.4
 ```
 
-## 완전수 6과의 연결
+## Cross-domain Analysis
+
+```
+  Ratio comparison:
+                    Information ratio   Tension ratio
+    perfect/prime        3.0              8.5
+    perfect/composite   10.4             13.4
+
+  Correlation: direction matches (sparse → high information → high Tension)
+  However: Tension ratio exceeds information ratio (nonlinear)
+
+  Hypothesis: Tension ∝ I(x)^α  where α > 1 (superlinear)
+  → Does the engine "overreact" to information content?
+  → Or: Tension ∝ 1/p(x)  (directly proportional to inverse frequency)
+
+  Check:
+    1/p(perfect) / 1/p(prime) = 0.17/0.005 = 34
+    Observed: 721.2/85.2 = 8.5
+    → Weaker than 1/p but stronger than -ln(p)
+    → Tension ∝ p^(-β) where 0 < β < 1?
+```
+
+## Connection to Perfect Number 6
 
 ```
   H-CX-1: e^(6H) = 432 = σ³/τ
-  H-CX-10: 완전수의 장력이 최대
+  H-CX-10: Perfect numbers have the highest Tension
 
-  → 완전수 6이 의식엔진의 "수학적 기반"이자
-     동시에 "가장 높은 장력을 유발하는 대상"
-  → 자기참조적: 엔진을 정의하는 수가 엔진에 가장 큰 반발을 유발
+  → Perfect number 6 is the "mathematical foundation" of the Consciousness Engine
+     and simultaneously the object that induces the highest Tension in the engine
+  → Self-referential: the number that defines the engine causes the greatest Repulsion in the engine
 
-  이것은 괴델 불완전성의 비유?
-    시스템 자체를 기술하는 명제가 가장 "어려운" 명제
-    → 완전수 = 시스템의 자기 기술 → 최대 장력
+  Analogy to Godel incompleteness?
+    The proposition describing the system itself is the "hardest" proposition
+    → Perfect number = self-description of the system → maximum Tension
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. 다른 클래스 빈도 변화 실험: 빈도를 인위적으로 조절하면 장력도 변하는가?
-  2. 4극(Quad) 실험: 4극에서도 동일한 희소성-장력 관계?
-  3. β 값 피팅: 장력 = c × p^(-β) 에서 β 추정
+  1. Class frequency variation experiment: if frequency is artificially adjusted, does Tension also change?
+  2. Quad experiment: same sparsity-Tension relationship in Quad mode?
+  3. β value fitting: estimate β in Tension = c × p^(-β)
 ```
 
-## MNIST 빈도 조절 실험 (부분 결과, 2026-03-24)
+## MNIST Frequency Adjustment Experiment (Partial Results, 2026-03-24)
 
 ```
-  digit 0 빈도 변화 → 장력 변화:
+  digit 0 frequency change → Tension change:
   N_train    tension(digit0)    accuracy(digit0)
   ──────    ─────────────────  ─────────────────
      10      223.15 ±210       10.5%
     100      211.14 ±123       85.7%
     500      237.12 ±124       94.9%
-   3000      (실행중)           (실행중)
-   5400      (실행중, 균등)     (실행중)
+   3000      (running)          (running)
+   5400      (running, uniform) (running)
 
-  관측:
-    빈도 10x 변화(10→100)에서 장력 거의 동일 (223→211, -5%)
-    빈도 5x 변화(100→500)에서 장력 오히려 증가 (211→237, +12%)
-    → 장력은 빈도에 거의 무관!
+  Observations:
+    10x frequency change (10→100): Tension nearly unchanged (223→211, -5%)
+    5x frequency change (100→500): Tension actually increases (211→237, +12%)
+    → Tension is almost independent of frequency!
 
-  H289와의 차이:
-    H289: 완전수(희소)가 최고 장력 721
-    HCX10: MNIST에서 빈도 조절해도 장력 불변
-    → H289의 결과는 "빈도" 아닌 "패턴 복잡도" 때문?
-    → 완전수의 높은 장력 = 희소성이 아니라 고유한 수학적 패턴?
+  Difference from H289:
+    H289: perfect numbers (sparse) had highest Tension 721
+    HCX10: Tension unchanged even after adjusting frequency in MNIST
+    → H289 results due to "pattern complexity" not "frequency"?
+    → High Tension of perfect numbers = not sparsity but unique mathematical pattern?
 ```
 
-## 수정된 해석
+## Revised Interpretation
 
 ```
-  원래: 희소성 → 장력 (정보이론 I(x)=-ln(p))
-  수정: 패턴 복잡도 → 장력 (빈도 무관)
-  → 장력은 "얼마나 드문가"가 아니라 "얼마나 어려운가"에 반응
-  → 가설 282(고정확도 전용)와 일관: 쉬운 것은 장력 불변
+  Original: sparsity → Tension (information theory I(x)=-ln(p))
+  Revised:  pattern complexity → Tension (frequency independent)
+  → Tension responds to "how hard" not "how rare"
+  → Consistent with Hypothesis 282 (high-accuracy only): easy things have constant Tension
 ```
 
-## 상태: ⚠️ 약화 (빈도→장력 관계 약함, 패턴 복잡도가 더 중요)
+## Status: ⚠️ Weakened (frequency→Tension relationship weak, pattern complexity more important)

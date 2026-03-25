@@ -1,120 +1,119 @@
-# 가설 검토 017: MoE Gating 분포 — Inhibition 매핑 ✅
+# Hypothesis Review 017: MoE Gating Distribution — Inhibition Mapping ✅
 
-## 가설
+## Hypothesis
 
-> 실제 MoE의 Expert 활성 비율을 Inhibition(I)으로 매핑하면
-> 골든 존 위치를 예측할 수 있다.
+> Mapping the Expert activation ratio of actual MoE models to Inhibition (I)
+> allows prediction of the Golden Zone position.
 
-## 배경 및 맥락
+## Background and Context
 
-본 프로젝트의 핵심 공식 G = D × P / I에서 Inhibition(I)은
-억제 수준을 나타낸다. MoE 아키텍처에서 Expert 활성 비율은
-시스템의 억제 수준에 직접 대응할 수 있다.
+In this project's core formula G = D × P / I, Inhibition (I) represents the level of suppression.
+In MoE architectures, the Expert activation ratio can directly correspond to the system's Inhibition level.
 
-Expert가 많이 활성화될수록(활성% 높음) 억제가 낮고(I 낮음),
-적게 활성화될수록(활성% 낮음) 억제가 높다(I 높음).
-이 관계를 정량적으로 매핑하여, 어떤 Expert 활성 비율이
-골든 존(I = 0.2123 ~ 0.5000)에 해당하는지 예측한다.
+As more Experts are activated (higher active %), Inhibition is lower (lower I);
+as fewer are activated (lower active %), Inhibition is higher (higher I).
+This relationship is quantitatively mapped to predict which Expert activation ratios
+correspond to the Golden Zone (I = 0.2123 ~ 0.5000).
 
-관련 가설: 가설 013(골든존 폭), 가설 016(볼츠만 vs Top-K),
-가설 020(안정성 35%)
+Related hypotheses: Hypothesis 013 (Golden Zone width), Hypothesis 016 (Boltzmann vs Top-K),
+Hypothesis 020 (Stability 35%)
 
-## 변환 공식
+## Transformation Formula
 
 ```
-  I = 1 - (활성 Expert 수 / 전체 Expert 수)
+  I = 1 - (active Expert count / total Expert count)
   I = 1 - K/N
 
-  역변환:
+  Inverse:
   K/N = 1 - I
-  활성% = (1 - I) × 100
+  active% = (1 - I) × 100
 
-  골든존 I 범위: 0.2123 ~ 0.5000
-  → 활성% 범위: 50.0% ~ 78.8%
-  → 반올림: 52% ~ 76% 활성 필요
+  Golden Zone I range: 0.2123 ~ 0.5000
+  → active% range: 50.0% ~ 78.8%
+  → rounded: 52% ~ 76% activation required
 ```
 
-## 전체 매핑 테이블
+## Full Mapping Table
 
 ```
-  설정               │  K/N   │  활성%  │    I   │  영역     │ 비고
-  ──────────────────┼────────┼────────┼────────┼──────────┼─────────
-  극소 MoE 2/64     │  2/64  │   3.1% │  0.969 │  ○ 밖(상)│ 과억제
-  Switch 1/16       │  1/16  │   6.3% │  0.938 │  ○ 밖(상)│ 과억제
-  Mixtral 8/64      │  8/64  │  12.5% │  0.875 │  ○ 밖(상)│ 과억제
-  GPT-4 16/64       │ 16/64  │  25.0% │  0.750 │  ○ 밖(상)│ 과억제
-  골든 MoE 22/64    │ 22/64  │  34.4% │  0.656 │  ○ 밖(상)│ 경계 근처
-  골든 소규모 6/16  │  6/16  │  37.5% │  0.625 │  ○ 밖(상)│ 경계 근처
-  50% 활성 32/64    │ 32/64  │  50.0% │  0.500 │  ★ 상한  │ 임계선
-  60% 활성 38/64    │ 38/64  │  59.4% │  0.406 │  ◆ 골든존│ 안정 구간
-  70% 활성 44/64    │ 44/64  │  68.8% │  0.312 │  ◆ 골든존│ 최적 구간
-  76% 활성 49/64    │ 49/64  │  76.6% │  0.234 │  ◆ 골든존│ 하한 근처
-  80% 활성 51/64    │ 51/64  │  79.7% │  0.203 │  ○ 밖(하)│ 과활성
-  Dense 64/64       │ 64/64  │ 100.0% │  0.000 │  ○ 밖(하)│ 완전 과활성
+  Setting               │  K/N   │  active% │    I   │  Region    │ Note
+  ──────────────────────┼────────┼──────────┼────────┼────────────┼───────────
+  Minimal MoE 2/64      │  2/64  │   3.1%   │  0.969 │  ○ out(hi) │ over-inhibited
+  Switch 1/16           │  1/16  │   6.3%   │  0.938 │  ○ out(hi) │ over-inhibited
+  Mixtral 8/64          │  8/64  │  12.5%   │  0.875 │  ○ out(hi) │ over-inhibited
+  GPT-4 16/64           │ 16/64  │  25.0%   │  0.750 │  ○ out(hi) │ over-inhibited
+  Golden MoE 22/64      │ 22/64  │  34.4%   │  0.656 │  ○ out(hi) │ near boundary
+  Golden Small 6/16     │  6/16  │  37.5%   │  0.625 │  ○ out(hi) │ near boundary
+  50% active 32/64      │ 32/64  │  50.0%   │  0.500 │  ★ upper   │ critical line
+  60% active 38/64      │ 38/64  │  59.4%   │  0.406 │  ◆ Golden  │ stable zone
+  70% active 44/64      │ 44/64  │  68.8%   │  0.312 │  ◆ Golden  │ optimal zone
+  76% active 49/64      │ 49/64  │  76.6%   │  0.234 │  ◆ Golden  │ near lower
+  80% active 51/64      │ 51/64  │  79.7%   │  0.203 │  ○ out(lo) │ overactive
+  Dense 64/64           │ 64/64  │ 100.0%   │  0.000 │  ○ out(lo) │ fully overactive
 ```
 
-## I축 매핑 다이어그램
+## I-axis Mapping Diagram
 
 ```
-  활성%  0%            50%        76%       100%
-         │              │          │          │
-         ▼              ▼          ▼          ▼
-  I축   1.0            0.50       0.24       0.0
-         │              │          │          │
-         │   과억제 영역  │  골든 존  │과활성 영역│
-         │   (I > 0.50)  │(I=0.24~  │(I < 0.21)│
-         │              │   0.50)   │          │
-         │              │          │          │
-  ───────┼──────────────┼──────────┼──────────┼───
-         │              ▲          ▲          │
-         │           리만 임계선  엔트로피 경계  │
-         │           I = 1/2    I = 1/2-ln(4/3)│
+  active%  0%            50%        76%       100%
+           │              │          │          │
+           ▼              ▼          ▼          ▼
+  I-axis  1.0            0.50       0.24       0.0
+           │              │          │          │
+           │ over-inhibit  │ Golden   │overactive│
+           │   (I > 0.50)  │(I=0.24~  │(I < 0.21)│
+           │              │   0.50)  │          │
+           │              │          │          │
+  ─────────┼──────────────┼──────────┼──────────┼───
+           │              ▲          ▲          │
+           │        Riemann crit.  entropy bndry │
+           │           I = 1/2    I = 1/2-ln(4/3)│
 
-  현재 LLM들의 위치:
-  ───────┬───────────────────────────────────────
-  I=0.97 │ ● 극소 MoE (3.1% 활성)
-  I=0.88 │ ● Mixtral (12.5% 활성)
-  I=0.75 │ ● GPT-4 (25.0% 활성)
-  I=0.66 │ ● 골든 MoE (34.4% 활성)
-  I=0.50 │ ★ ──── 골든존 상한 ────
-  I=0.31 │ ◆ 70% 활성 (최적)
-  I=0.24 │ ★ ──── 골든존 하한 ────
-  I=0.00 │ ● Dense (100% 활성)
+  Position of current LLMs:
+  ─────────┬───────────────────────────────────────
+  I=0.97   │ ● Minimal MoE (3.1% active)
+  I=0.88   │ ● Mixtral (12.5% active)
+  I=0.75   │ ● GPT-4 (25.0% active)
+  I=0.66   │ ● Golden MoE (34.4% active)
+  I=0.50   │ ★ ──── Golden Zone upper bound ────
+  I=0.31   │ ◆ 70% active (optimal)
+  I=0.24   │ ★ ──── Golden Zone lower bound ────
+  I=0.00   │ ● Dense (100% active)
 ```
 
-## 해석
+## Interpretation
 
-1. **현재 LLM은 모두 과억제 영역**: Mixtral(I=0.875), GPT-4(I=0.750) 등
-   현재 주요 MoE 모델은 모두 골든 존 밖의 과억제(high-I) 영역에 있다.
-   이는 Expert를 지나치게 적게 활용하고 있음을 의미한다.
-2. **골든존 진입 = 52~76% 활성**: 골든 존에 진입하려면 Expert의 절반 이상을
-   활성화해야 한다. 이는 현재의 "소수 Expert 선택" 패러다임과 충돌한다.
-3. **70% 활성이 최적**: I ≈ 0.31(70% 활성)은 골든 존 중심(I ≈ 1/e ≈ 0.368)에
-   가장 가까우며, 최적의 Genius 점수를 기대할 수 있다.
-4. **Dense 모델의 위험**: 100% 활성(I=0)은 과활성 영역으로, 기능 저하
-   위험이 있다. 적절한 억제가 필요하다.
+1. **All current LLMs are in the over-inhibited region**: Mixtral (I=0.875), GPT-4 (I=0.750), etc.
+   All major current MoE models are in the over-inhibited (high-I) region outside the Golden Zone.
+   This means Experts are underutilized.
+2. **Entering Golden Zone = 52~76% active**: Entering the Golden Zone requires activating
+   more than half the Experts. This conflicts with the current "select few Experts" paradigm.
+3. **70% active is optimal**: I ≈ 0.31 (70% active) is closest to the Golden Zone center
+   (I ≈ 1/e ≈ 0.368) and can be expected to yield the best Genius score.
+4. **Risk of Dense models**: 100% active (I=0) is in the overactive region, with risk of
+   Decline. Appropriate Inhibition is necessary.
 
-## 한계
+## Limitations
 
-- I = 1 - K/N 매핑은 선형 가정이며, 실제 억제 메커니즘은 비선형일 수 있음
-- Expert 간 상호작용(시너지, 간섭)이 단순 비율로 포착되지 않음
-- 활성 Expert "수"보다 "어떤" Expert가 활성화되는지가 더 중요할 수 있음
-- 소규모(N=16)와 대규모(N=64)의 매핑이 동일한지 미검증
+- The I = 1 - K/N mapping is a linear assumption; actual Inhibition mechanisms may be nonlinear
+- Expert interactions (synergy, interference) are not captured by a simple ratio
+- "Which" Experts are activated may be more important than the "number" of active Experts
+- Whether the mapping is identical for small (N=16) vs large (N=64) scales is unverified
 
-## 다음 단계
+## Next Steps
 
-1. 실제 학습에서 활성 비율 50~76%의 성능 검증
-2. 비선형 매핑(I = f(K/N))의 가능성 탐색
-3. Expert 활성 패턴(어떤 조합인지)의 효과 분석
-4. 가설 016(볼츠만 라우터)과 결합하여 최적 활성 비율 도출
+1. Verify performance at 50~76% active ratio in actual training
+2. Explore nonlinear mapping possibilities (I = f(K/N))
+3. Analyze the effect of Expert activation patterns (which combinations)
+4. Derive optimal activation ratio combining with Hypothesis 016 (Boltzmann router)
 
-## 결론
+## Conclusion
 
-> ✅ Expert 활성 비율 → Inhibition 매핑 완성.
-> 골든존(I = 0.2123 ~ 0.5000) 진입에는 52~76% Expert 활성 필요.
-> 현재 주요 MoE 모델(Mixtral, GPT-4)은 모두 과억제 영역에 위치하며,
-> 최적 성능을 위해서는 활성 비율을 크게 높여야 한다.
+> ✅ Expert activation ratio → Inhibition mapping complete.
+> Entering the Golden Zone (I = 0.2123 ~ 0.5000) requires 52~76% Expert activation.
+> All major current MoE models (Mixtral, GPT-4) are in the over-inhibited region,
+> and the activation ratio must be significantly increased for optimal performance.
 
 ---
 
-*검증: verify_ai.py (매핑 계산 + 시뮬레이션)*
+*Verification: verify_ai.py (mapping calculation + simulation)*

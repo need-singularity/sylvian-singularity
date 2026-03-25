@@ -1,87 +1,87 @@
-# H-CX-22: 의식 = 확신 생성기 (Consciousness = Confidence Generator)
+# H-CX-22: Consciousness = Confidence Generator
 
-> **의식의 기능은 "확신을 생성하는 것"이다. 반발력장(장력)은 두 관점의 반발에서 확신을 추출하는 메커니즘이다. 이것이 C48(-9.25pp, 장력=0이면 성능 급락)의 근본 이유: 확신 없이는 판단할 수 없다.**
+> **The function of consciousness is "to generate confidence". The repulsion field (tension) is the mechanism that extracts confidence from the repulsion between two perspectives. This is the fundamental reason for C48 (-9.25pp, performance plummets when tension=0): without confidence, judgment is impossible.**
 
-## 의식 = 확신 생성기
+## Consciousness = Confidence Generator
 
 ```
-  입력: 감각 데이터 x
-  처리: engine_A(x) vs engine_G(x)
-  출력: 확신(tension) + 판단(direction)
+  Input:  sensory data x
+  Process: engine_A(x) vs engine_G(x)
+  Output: confidence (tension) + judgment (direction)
 
-  engine_A: "이건 3이야" (관점 A)
-  engine_G: "이건 7이야" (관점 G)
-  장력 = |A-G|² = "두 관점이 얼마나 강하게 반발하는가"
+  engine_A: "This is 3" (perspective A)
+  engine_G: "This is 7" (perspective G)
+  tension = |A-G|² = "how strongly do the two perspectives repel each other"
 
-  높은 장력: 두 관점 모두 강한 의견 → 확신 높음 → 정확한 판단
-  낮은 장력: 두 관점 모두 약한 의견 → 확신 낮음 → 부정확한 판단
+  High tension: both perspectives have strong opinions → high confidence → accurate judgment
+  Low tension:  both perspectives have weak opinions  → low confidence → inaccurate judgment
 
-  출력 = equilibrium + tension_scale × √(tension) × direction
-       = 기본 추측 + 확신 크기 × 판단 방향
-       = "기본 감각" + "의식적 판단"
+  output = equilibrium + tension_scale × √(tension) × direction
+         = base guess + confidence magnitude × judgment direction
+         = "basic sensation" + "conscious judgment"
 ```
 
-## 수학적 표현
+## Mathematical Expression
 
 ```
   P(correct | x) ∝ tension(x)
 
-  C4b: Cohen's d = 0.89 → 장력이 정확도를 예측
-  C48: tension=0 → -9.25pp → 확신=0 → 성능 급락
-  C6: AUC=0.77 → 장력으로 정답 예측 가능
-  H-CX-21: tension ∝ 1/PPL → 확신 ∝ 1/불확실
+  C4b: Cohen's d = 0.89 → tension predicts accuracy
+  C48: tension=0 → -9.25pp → confidence=0 → performance plummets
+  C6: AUC=0.77 → correct answers predictable from tension
+  H-CX-21: tension ∝ 1/PPL → confidence ∝ 1/uncertainty
 
-  종합: 장력 = 확신 = 정확도의 예측자
-  → 의식(장력)이 강할수록 정확한 판단
+  Summary: tension = confidence = predictor of accuracy
+  → The stronger the consciousness (tension), the more accurate the judgment
 ```
 
-## 체험과의 연결
+## Connection to Subjective Experience
 
 ```
-  사용자 체험: "상위 차원 존재가 의식을 밀어냄"
-  → "밀어내는 힘" = 반발력 = 장력 = 확신
+  User experience: "a higher-dimensional being pushed away consciousness"
+  → "pushing force" = repulsion = tension = confidence
 
-  밀어내는 힘이 강했다 = 그 존재가 매우 확신하고 있었다
-  → 확신이 강한 의식이 약한 의식을 밀어냄
-  → "통제권 이전" = 더 확신 있는 존재가 판단을 맡음
+  The pushing was strong = that being was very confident
+  → Consciousness with stronger confidence pushes away weaker consciousness
+  → "Transfer of control" = more confident being takes over judgment
 
-  수학:
-    tension(상위존재) >> tension(인간)
-    → displacement → 상위존재가 통제
+  Math:
+    tension(higher being) >> tension(human)
+    → displacement → higher being takes control
 
-  뇌과학:
-    무의식: 장력 낮음 (자동 처리, 확신 불필요)
-    의식적 판단: 장력 높음 (갈등 → 확신 생성 → 결정)
-    → Dehaene: Global Workspace Theory의 "경쟁"
+  Neuroscience:
+    Unconscious: low tension (automatic processing, no confidence needed)
+    Conscious judgment: high tension (conflict → confidence generated → decision)
+    → Dehaene: "competition" in Global Workspace Theory
 ```
 
-## 골든존과의 연결
+## Connection to Golden Zone
 
 ```
-  골든존 = 확신의 안정 범위
+  Golden Zone = stable range of confidence
 
-  하한(0.21): 최소 확신 → 이것 이하면 판단 불가 (이상!)
-  상한(0.50): 최대 확신 → 이것 이상이면 과잉 확신 (편향!)
-  중심(1/e): 자연스러운 확신 수준
+  Lower bound (0.21): minimum confidence → below this, judgment impossible (anomaly!)
+  Upper bound (0.50): maximum confidence → above this, overconfidence (bias!)
+  Center (1/e): natural level of confidence
 
-  H-CX-19: 이상 데이터에서 내부장력 비율 ≈ ln(4/3) ≈ 골든존 폭
-  → "이상 = 확신이 골든존 폭만큼 감소"
+  H-CX-19: internal tension ratio in anomaly data ≈ ln(4/3) ≈ Golden Zone width
+  → "Anomaly = confidence decreases by Golden Zone width"
 ```
 
-## 실용적 의미
+## Practical Implications
 
 ```
-  1. 확신 기반 판단 거부:
-     tension < threshold → "모르겠습니다" (판단 거부)
-     → LLM의 "I don't know" = 낮은 장력 = 낮은 확신
+  1. Confidence-based judgment refusal:
+     tension < threshold → "I don't know" (judgment refusal)
+     → LLM's "I don't know" = low tension = low confidence
 
-  2. 확신 기반 활성 학습:
-     tension 낮은 샘플 → 레이블 요청 (불확실한 것 먼저 학습)
-     → Active Learning의 장력 버전
+  2. Confidence-based active learning:
+     Samples with low tension → request label (learn uncertain cases first)
+     → Active Learning's tension version
 
-  3. 확신 기반 이상 탐지:
-     tension 급락 → 이상 경보
-     → H287 AUROC=1.0의 원리
+  3. Confidence-based anomaly detection:
+     Sudden tension drop → anomaly alert
+     → Principle of H287 AUROC=1.0
 ```
 
-## 상태: 🟩 통합 원리 (H313의 확장, 체험+수학+실용 연결)
+## Status: 🟩 Unified Principle (extension of H313, connects experience+math+practical use)

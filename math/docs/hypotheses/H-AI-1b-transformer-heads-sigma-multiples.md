@@ -1,12 +1,12 @@
-# H-AI-1b: Transformer Head 수가 σ(6)=12의 배수인 이유
+# H-AI-1b: Why Transformer Head Count is a Multiple of σ(6)=12
 
-> **가설**: 주요 Transformer 모델의 attention head 수가 6의 배수(특히 σ(6)=12의 배수)인 것은 우연이 아니라, σφ=nτ 균형 구조의 귀결이다.
+> **Hypothesis**: The fact that attention head counts in major Transformer models are multiples of 6 (especially multiples of σ(6)=12) is not a coincidence, but a consequence of the σφ=nτ balance structure.
 
-## 배경/맥락
+## Background/Context
 
-### 실측 데이터: Transformer head 수
+### Observed Data: Transformer head counts
 
-| 모델 | heads | σ 체인과의 관계 |
+| Model | heads | Relation to σ chain |
 |---|---|---|
 | BERT-base | 12 | σ(6) = 12 |
 | GPT-2 Small | 12 | σ(6) |
@@ -17,22 +17,22 @@
 | LLaMA-7B | 32 | 2^(τ+1) |
 | LLaMA-13B | 40 | ? |
 | LLaMA-65B | 64 | 2^(P₁) |
-| Gemini | 비공개 | — |
-| GPT-4 | 비공개 | — |
+| Gemini | undisclosed | — |
+| GPT-4 | undisclosed | — |
 
-### 6의 배수인 모델
+### Models with multiples of 6
 
 ```
   12 = σ(6)          ← BERT, GPT-2 Small
-  24 = τ(6)!         ← 일부 중형 모델
-  48 = σ×τ           ← 일부 대형 모델
+  24 = τ(6)!         ← Some medium models
+  48 = σ×τ           ← Some large models
   96 = σ×τ×φ         ← GPT-3 175B
 ```
 
-### 6의 배수가 아닌 모델
+### Models NOT multiples of 6
 
 ```
-  16 = 2^4 = 2^τ     ← GPT-2 Medium (6의 배수 아님!)
+  16 = 2^4 = 2^τ     ← GPT-2 Medium (NOT multiple of 6!)
   20                  ← GPT-2 Large
   25                  ← GPT-2 XL
   32 = 2^5           ← LLaMA-7B
@@ -40,25 +40,25 @@
   64 = 2^6           ← LLaMA-65B
 ```
 
-## 관찰
+## Observations
 
-### σ(6) 배수 비율
-
-```
-  전체 주요 모델: ~15개
-  head 수가 6의 배수: 12, 24, 48, 96 → ~4개
-  6의 배수 비율: ~27%
-
-  head 수가 2의 거듭제곱: 16, 32, 64 → ~3개
-  2^k 비율: ~20%
-
-  → 6의 배수가 2^k보다 약간 많지만, 압도적이지 않음
-```
-
-### ASCII 분포
+### σ(6) multiple ratio
 
 ```
-  빈도
+  Total major models: ~15
+  Head count multiple of 6: 12, 24, 48, 96 → ~4
+  Multiple of 6 ratio: ~27%
+
+  Head count power of 2: 16, 32, 64 → ~3
+  2^k ratio: ~20%
+
+  → Multiples of 6 slightly more common than 2^k, but not overwhelming
+```
+
+### ASCII distribution
+
+```
+  Frequency
   4 |  ████
   3 |  ████ ███
   2 |  ████ ███  ██
@@ -66,96 +66,96 @@
   0 +--+----+----+---+--+--+--+--+--+--+--+--→ heads
      12  16  20  24 25 32 36 40 48 64    96
 
-     6배수: ■   비6배수: □
+     Multiple of 6: ■   Not multiple of 6: □
 ```
 
-## 비판적 분석
+## Critical Analysis
 
-### "6의 배수" 가설이 약한 이유
+### Why the "multiple of 6" hypothesis is weak
 
-1. **공학적 이유가 더 강함**: head 수는 보통 hidden_dim/head_dim으로 결정
+1. **Engineering reasons are stronger**: head count is usually determined by hidden_dim/head_dim
    - hidden=768, head_dim=64 → 12 heads (768/64)
    - hidden=1024, head_dim=64 → 16 heads
-   - 6이 아니라 64(head_dim)가 진짜 결정 인자
+   - The real determinant is 64(head_dim), not 6
 
-2. **2의 거듭제곱 편향**: GPU 효율 때문에 2^k 차원 선호
-   - 12는 2^k가 아님! 오히려 "비효율적" 선택
+2. **Power of 2 bias**: Preference for 2^k dimensions due to GPU efficiency
+   - 12 is not 2^k! Rather an "inefficient" choice
 
-3. **선택 편향**: 12가 많은 이유는 BERT가 12를 쓰고 후속 모델이 답습
+3. **Selection bias**: Many models use 12 because BERT used 12 and successors followed
 
-### "6의 배수" 가설이 강한 이유
+### Why the "multiple of 6" hypothesis is strong
 
-1. **BERT의 원래 선택**: 왜 처음에 12를 골랐나?
+1. **BERT's original choice**: Why choose 12 initially?
    - Vaswani (2017) Attention Is All You Need: 8 heads
-   - BERT (2018): 12 heads — 왜 8→12로 증가?
-   - 12 = σ(6)가 다중 해상도에서 최적일 가능성
+   - BERT (2018): 12 heads — Why increase from 8→12?
+   - 12 = σ(6) might be optimal for multi-resolution
 
-2. **96 = σ×τ×φ**: GPT-3의 96 heads가 우연히 이 곱인가?
-   - 96 = 12288/128 (hidden/head_dim) — 공학적 설명 가능
-   - 하지만 12288 = 1024×12 = 2^10 × σ(6)
+2. **96 = σ×τ×φ**: Is GPT-3's 96 heads coincidentally this product?
+   - 96 = 12288/128 (hidden/head_dim) — Engineering explanation possible
+   - But 12288 = 1024×12 = 2^10 × σ(6)
 
-3. **Scaling에서 12의 반복**: 12→24→48→96 = ×2 체인
-   - 이것은 σ(6)의 2^k 배수 = σ(6) × 2^k
+3. **Repetition of 12 in scaling**: 12→24→48→96 = ×2 chain
+   - This is multiples of σ(6) by 2^k = σ(6) × 2^k
 
-## 검증 방향
+## Verification Directions
 
-### 실험 1: Head 수 sweep
+### Experiment 1: Head count sweep
 ```
-  고정: hidden_dim=768, layers=12
-  변수: heads = 4, 6, 8, 10, 12, 14, 16, 18, 20, 24
-  측정: perplexity, downstream accuracy
-  예측: heads=12(=σ)에서 Pareto 최적
+  Fixed: hidden_dim=768, layers=12
+  Variable: heads = 4, 6, 8, 10, 12, 14, 16, 18, 20, 24
+  Measure: perplexity, downstream accuracy
+  Prediction: Pareto optimal at heads=12(=σ)
 ```
 
-### 실험 2: Head dim vs Head 수 분리
+### Experiment 2: Separate head dim vs head count
 ```
-  hidden = 768 고정
+  Fixed hidden = 768
   head_dim × heads = 768
-  조합: (768,1), (384,2), (256,3), (192,4), (128,6), (96,8),
-        (64,12), (48,16), (32,24)
-  예측: heads=6 또는 12에서 특별한 성능?
+  Combinations: (768,1), (384,2), (256,3), (192,4), (128,6), (96,8),
+                (64,12), (48,16), (32,24)
+  Prediction: Special performance at heads=6 or 12?
 ```
 
-### 실험 3: MoE expert 수와 head 수 교차
+### Experiment 3: MoE expert count and head count cross
 ```
   heads = {6, 8, 12, 16}, experts = {4, 6, 8, 12}
-  예측: (heads=12, experts=6) 조합이 최적?
-  연결: σφ=nτ의 AI 해석
+  Prediction: (heads=12, experts=6) combination optimal?
+  Connection: AI interpretation of σφ=nτ
 ```
 
-## 증명되면 좋아지는 것
+## What Improves If Proven
 
-### 즉각적 영향
-1. **아키텍처 설계 원리**: "head 수는 6의 배수로" 가이드라인
-2. **하이퍼파라미터 탐색 공간 축소**: 6,12,24,48,96만 탐색 → 효율 5-10배 향상
-3. **Scaling law 정밀화**: head_count = σ(6) × 2^k 공식
+### Immediate Impact
+1. **Architecture design principles**: "Head count should be multiple of 6" guideline
+2. **Hyperparameter search space reduction**: Search only 6,12,24,48,96 → 5-10x efficiency gain
+3. **Scaling law refinement**: head_count = σ(6) × 2^k formula
 
-### 중기적 영향
-4. **최적 아키텍처 이론**: "왜 Transformer가 작동하는가"에 수론적 답
-5. **새로운 아키텍처 제안**: σφ=nτ 균형에서 파생된 구조
-6. **MoE 최적화**: expert=6 이론적 근거
+### Medium-term Impact
+4. **Optimal architecture theory**: Number-theoretic answer to "Why do Transformers work?"
+5. **New architecture proposals**: Structures derived from σφ=nτ balance
+6. **MoE optimization**: Theoretical basis for expert=6
 
-### 장기적 영향
-7. **수학-AI 다리**: 정수론이 딥러닝 설계를 안내하는 첫 사례
-8. **산술함수 기반 Neural Architecture Search (NAS)**
-9. **"왜 6인가" 질문이 AI에서도 답을 가짐**
+### Long-term Impact
+7. **Math-AI bridge**: First case of number theory guiding deep learning design
+8. **Arithmetic function-based Neural Architecture Search (NAS)**
+9. **"Why 6?" question has an answer in AI too**
 
-## 현실적 평가
+## Realistic Assessment
 
 ```
-  가설 강도: ★★☆☆☆ (약함 — 공학적 설명이 더 자연스러움)
-  검증 가능성: ★★★★★ (실험으로 바로 확인 가능)
-  파급력 (참일 경우): ★★★★☆ (아키텍처 설계에 즉각 영향)
-  파급력 (거짓일 경우): ★☆☆☆☆ (공학적 최적화 확인에 그침)
+  Hypothesis strength: ★★☆☆☆ (Weak — engineering explanation more natural)
+  Verifiability: ★★★★★ (Can be confirmed immediately through experiments)
+  Impact (if true): ★★★★☆ (Immediate effect on architecture design)
+  Impact (if false): ★☆☆☆☆ (Just confirms engineering optimization)
 
-  현실적 예측: 6의 배수가 "약간" 유리하지만,
-  hidden_dim/head_dim 비율이 진짜 결정 인자일 가능성 높음.
-  그래도 실험할 가치는 있음 — 비용 낮고 결과 명확.
+  Realistic prediction: Multiples of 6 are "slightly" advantageous, but
+  hidden_dim/head_dim ratio is likely the real determinant.
+  Still worth experimenting — low cost and clear results.
 ```
 
-## 한계
+## Limitations
 
-- Transformer head 수 선택은 역사적/공학적 관성이 큼
-- σ(6)=12와의 일치는 Small Numbers 효과일 가능성
-- 인과관계가 아닌 상관관계일 수 있음
-- 반증: GPT-2 Medium(16), LLaMA(32,40,64)는 6의 배수 아님
+- Transformer head count choice has strong historical/engineering inertia
+- Coincidence with σ(6)=12 might be Small Numbers effect
+- May be correlation, not causation
+- Counterevidence: GPT-2 Medium(16), LLaMA(32,40,64) are not multiples of 6

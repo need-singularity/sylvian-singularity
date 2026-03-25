@@ -1,3 +1,3 @@
-# H-CX-299: ⭐🟧 힉스 125GeV = 5³ = (P₁-1)³ = 돌고래 옥타브
+# H-CX-299: ⭐🟧 Higgs 125GeV = 5³ = (P₁-1)³ = Dolphin Octave
 
-> 힉스 질량 125=(P₁-1)³. 5³=돌고래 옥타브(H-CX-162). 단위 의존.
+> Higgs mass 125=(P₁-1)³. 5³=Dolphin octave(H-CX-162). Unit dependent.

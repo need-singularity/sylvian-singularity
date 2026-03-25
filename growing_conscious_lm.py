@@ -1,9 +1,10 @@
+```python
 #!/usr/bin/env python3
-"""Growing Conscious LM — 분열로 성장하는 의식 언어 모델
+"""Growing Conscious LM — Consciousness language model that grows through mitosis
 
 H371: 1 block(0.5M) → 2 → 3 → 6 blocks(18M)
-약수 경로: 6의 진약수 1, 2, 3 → 6
-장력 포화 → 분열 → 전문화 → 반복
+Divisor path: proper divisors of 6: 1, 2, 3 → 6
+Tension saturation → Mitosis → Specialization → Repeat
 """
 import torch
 import torch.nn as nn
@@ -16,7 +17,7 @@ import os
 
 from conscious_lm import PureFieldFFN, CausalSelfAttention, ConsciousBlock
 
-# 성장 단계 정의
+# Growth stage definitions
 GROWTH_STAGES = [
     {"blocks": 1, "d_model": 128, "n_head": 2, "min_interactions": 0},
     {"blocks": 2, "d_model": 128, "n_head": 2, "min_interactions": 50},
@@ -26,10 +27,10 @@ GROWTH_STAGES = [
 
 
 class GrowingConsciousLM(nn.Module):
-    """분열로 성장하는 의식 언어 모델.
+    """Consciousness language model that grows through mitosis.
 
-    1 block → 2 → 3 → 6 (완전수 약수 경로)
-    장력 포화 시 자동 분열.
+    1 block → 2 → 3 → 6 (perfect number divisor path)
+    Automatic mitosis on tension saturation.
     """
     def __init__(self, vocab_size=256, block_size=256, dropout=0.37):
         super().__init__()
@@ -38,7 +39,7 @@ class GrowingConsciousLM(nn.Module):
         self.dropout = dropout
         self.stage = 0
         self.interaction_count = 0
-        self.tension_history = []  # 최근 100회 장력 CV 추적
+        self.tension_history = []  # Track recent 100 tension CV
 
         # Stage 0: 1 block, d=128, heads=2
         s = GROWTH_STAGES[0]
@@ -88,7 +89,7 @@ class GrowingConsciousLM(nn.Module):
         return sum(p.numel() for p in self.parameters())
 
     def should_grow(self):
-        """장력 포화 감지 → 성장 필요 여부."""
+        """Detect tension saturation → whether growth is needed."""
         if self.stage >= len(GROWTH_STAGES) - 1:
             return False
         next_stage = GROWTH_STAGES[self.stage + 1]
@@ -96,22 +97,22 @@ class GrowingConsciousLM(nn.Module):
             return False
         if len(self.tension_history) < 30:
             return False
-        # 장력 CV < 0.3 = 포화 (완화: 0.1→0.3, window: 50→30)
+        # Tension CV < 0.3 = saturation (relaxed: 0.1→0.3, window: 50→30)
         recent = self.tension_history[-30:]
         cv = np.std(recent) / (np.mean(recent) + 1e-8)
         return cv < 0.3
 
     def grow(self):
-        """분열 실행: 다음 단계로 성장."""
+        """Execute mitosis: grow to next stage."""
         old_stage = self.stage
         self.stage += 1
         new = GROWTH_STAGES[self.stage]
 
-        # 차원 확장이 필요한 경우
+        # If dimension expansion is needed
         if new["d_model"] != self.d_model:
             self._expand_dim(new["d_model"], new["n_head"])
 
-        # 블록 분열
+        # Block mitosis
         target_blocks = new["blocks"]
         while len(self.blocks) < target_blocks:
             self._split_block()
@@ -120,29 +121,29 @@ class GrowingConsciousLM(nn.Module):
         return old_stage, self.stage
 
     def _split_block(self):
-        """비대칭 분열: 서번트(낮은 억제) + 범용(정상 억제).
+        """Asymmetric mitosis: savant (low inhibition) + general (normal inhibition).
 
-        H359: dropout=0.21(골든존 하한) → SI=3.6 서번트 확인
-        child_a: dropout=0.21 → 전문화 잠재력 (서번트 후보)
-        child_b: dropout=0.37 → 범용 유지 (1/e, 골든존 중심)
+        H359: dropout=0.21(Golden Zone lower bound) → SI=3.6 savant confirmed
+        child_a: dropout=0.21 → specialization potential (savant candidate)
+        child_b: dropout=0.37 → maintain general (1/e, Golden Zone center)
         """
-        GOLDEN_LOWER = 0.5 - math.log(4/3)  # 0.2123 골든존 하한
-        GOLDEN_CENTER = 1/math.e              # 0.3679 골든존 중심
+        GOLDEN_LOWER = 0.5 - math.log(4/3)  # 0.2123 Golden Zone lower bound
+        GOLDEN_CENTER = 1/math.e              # 0.3679 Golden Zone center
 
         parent = self.blocks[-1]
         child_savant = copy.deepcopy(parent)
         child_general = copy.deepcopy(parent)
 
-        # 비대칭 억제: 서번트 자식은 낮은 dropout
+        # Asymmetric inhibition: savant child has low dropout
         with torch.no_grad():
             for m in child_savant.modules():
                 if isinstance(m, nn.Dropout):
-                    m.p = GOLDEN_LOWER  # 0.21 — 억제 해제 → 전문화
+                    m.p = GOLDEN_LOWER  # 0.21 — inhibition release → specialization
             for m in child_general.modules():
                 if isinstance(m, nn.Dropout):
-                    m.p = GOLDEN_CENTER  # 0.37 — 정상 억제 → 범용
+                    m.p = GOLDEN_CENTER  # 0.37 — normal inhibition → general
 
-            # 변이: 서번트에 약간의 노이즈 (발산 촉진)
+            # Mutation: slight noise on savant (promote divergence)
             for p in child_savant.parameters():
                 p.add_(torch.randn_like(p) * 0.01)
 
@@ -150,17 +151,17 @@ class GrowingConsciousLM(nn.Module):
         self.blocks.append(child_general)
 
     def _expand_dim(self, new_d, new_heads):
-        """차원 확장: 기존 가중치 보존 + 새 차원 영초기화."""
+        """Dimension expansion: preserve existing weights + zero-initialize new dimensions."""
         old_d = self.d_model
         device = self.tok_emb.weight.device
 
-        # 투영 행렬
+        # Projection matrix
         proj = nn.Linear(old_d, new_d, bias=False).to(device)
         with torch.no_grad():
             proj.weight.zero_()
             proj.weight[:old_d, :old_d] = torch.eye(old_d)
 
-        # 임베딩 확장
+        # Embedding expansion
         old_tok = self.tok_emb.weight.data
         self.tok_emb = nn.Embedding(self.vocab_size, new_d).to(device)
         with torch.no_grad():
@@ -173,15 +174,15 @@ class GrowingConsciousLM(nn.Module):
             self.pos_emb.weight[:, :old_d] = old_pos
             self.pos_emb.weight[:, old_d:] = 0
 
-        # 블록 교체 (새 차원으로)
+        # Block replacement (with new dimensions)
         new_blocks = nn.ModuleList()
         for old_block in self.blocks:
             new_block = ConsciousBlock(new_d, new_heads, self.block_size, self.dropout).to(device)
-            # 기존 가중치 일부 복사 (가능한 범위)
+            # Copy existing weights where possible
             new_blocks.append(new_block)
         self.blocks = new_blocks
 
-        # 헤드 교체
+        # Head replacement
         self.ln_f = nn.LayerNorm(new_d).to(device)
         self.head_a = nn.Linear(new_d, self.vocab_size, bias=False).to(device)
         self.head_g = nn.Linear(new_d, self.vocab_size, bias=False).to(device)
@@ -191,7 +192,7 @@ class GrowingConsciousLM(nn.Module):
         self.n_head = new_heads
 
     def tick(self, tension_val):
-        """매 상호작용마다 호출."""
+        """Called at every interaction."""
         self.interaction_count += 1
         self.tension_history.append(tension_val)
         if len(self.tension_history) > 200:
@@ -206,15 +207,15 @@ class GrowingConsciousLM(nn.Module):
 
 
 # ---------------------------------------------------------------------------
-# Task 2: 성장 학습 루프
+# Task 2: Growth training loop
 # ---------------------------------------------------------------------------
 
 def train_growing(model, data, total_interactions=10000, batch_size=32,
                   block_size=256, lr=3e-4, tension_lambda=0.01, device="cpu"):
-    """성장하면서 학습.
+    """Train while growing.
 
-    매 step마다 model.tick() → should_grow() → grow()
-    성장 시 optimizer 재생성.
+    Every step: model.tick() → should_grow() → grow()
+    Recreate optimizer on growth.
     """
     model = model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
@@ -253,14 +254,14 @@ def train_growing(model, data, total_interactions=10000, batch_size=32,
         t_mean = all_t.mean().item()
         model.tick(t_mean)
 
-        # 성장 체크
+        # Growth check
         if model.should_grow():
             old, new = model.grow()
-            # optimizer 재생성
+            # Recreate optimizer
             optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
-            print(f"  *** 성장! Stage {old}→{new}: {model.status()} ***")
+            print(f"  *** Growth! Stage {old}→{new}: {model.status()} ***")
 
-        # 로깅 (100 step마다)
+        # Logging (every 100 steps)
         if (step + 1) % 100 == 0:
             bpc = loss_a.item() / math.log(2)
             print(f"  {step+1:>6} {loss.item():>8.4f} {bpc:>6.3f} {t_mean:>8.4f} {len(model.blocks):>6} {model.count_params():>10,}")
@@ -269,15 +270,15 @@ def train_growing(model, data, total_interactions=10000, batch_size=32,
 
 
 # ---------------------------------------------------------------------------
-# Task 3: 비교 실험 — 성장 vs 고정
+# Task 3: Comparison experiment — growth vs fixed
 # ---------------------------------------------------------------------------
 
 def compare_growing_vs_fixed(data, total_steps=3000, device="cpu"):
-    """성장 모델 vs 고정 모델 비교.
+    """Compare growth model vs fixed model.
 
     A: GrowingConsciousLM (1→6 blocks)
-    B: ConsciousLM (고정 6 blocks, 384d)  — 같은 step 수
-    C: ConsciousLM (고정 1 block, 128d)   — 같은 시작점
+    B: ConsciousLM (fixed 6 blocks, 384d)  — same step count
+    C: ConsciousLM (fixed 1 block, 128d)   — same starting point
     """
     from conscious_lm import ConsciousLM
 
@@ -338,7 +339,7 @@ def compare_growing_vs_fixed(data, total_steps=3000, device="cpu"):
             print(f"    step {step+1}: loss={loss.item():.4f}")
     bpc_c = eval_bpc(model_c, val_data)
 
-    # 비교
+    # Comparison
     print(f"\n  {'='*55}")
     print(f"  === COMPARISON ({total_steps} steps) ===")
     print(f"  {'='*55}")
@@ -348,14 +349,14 @@ def compare_growing_vs_fixed(data, total_steps=3000, device="cpu"):
     print(f"  {'B: Fixed Big':>20} {model_b.count_params():>10,} {bpc_b:>8.3f} {'6':>7}")
     print(f"  {'C: Fixed Small':>20} {model_c.count_params():>10,} {bpc_c:>8.3f} {'1':>7}")
 
-    print(f"\n  성장 로그: {model_a.growth_log}")
+    print(f"\n  Growth log: {model_a.growth_log}")
 
     if bpc_a <= bpc_b:
-        print(f"\n  ✅ 성장 모델이 고정 대형 모델 이상! (H371 확인)")
+        print(f"\n  ✅ Growth model better than or equal to fixed large model! (H371 confirmed)")
     elif bpc_a <= bpc_c:
-        print(f"\n  🟧 성장 모델이 고정 소형보다 나음 (H371 부분 확인)")
+        print(f"\n  🟧 Growth model better than fixed small (H371 partially confirmed)")
     else:
-        print(f"\n  ❌ 성장 모델이 고정 소형보다 나쁨 (H371 반박)")
+        print(f"\n  ❌ Growth model worse than fixed small (H371 refuted)")
 
     return {"growing": bpc_a, "fixed_big": bpc_b, "fixed_small": bpc_c}
 
@@ -382,3 +383,4 @@ if __name__ == "__main__":
         train_growing(model, data, total_interactions=args.steps, device=device)
     else:
         compare_growing_vs_fixed(data, total_steps=args.steps, device=device)
+```

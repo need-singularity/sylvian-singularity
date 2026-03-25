@@ -1,110 +1,110 @@
-# 가설 #201: 화학 원소 118 vs AI 원소 26
+# Hypothesis #201: Chemical Elements 118 vs AI Elements 26
 
-**상태**: ⚪ 검증완료 — 통계적 유의성 없음
-**날짜**: 2026-03-22
-**분류**: 화학 / AI 원소 / 비교
+**Status**: ⚪ Verified — no statistical significance
+**Date**: 2026-03-22
+**Category**: Chemistry / AI Elements / Comparison
 
 ---
 
-## 가설
+## Hypothesis
 
-> 화학 원소 주기율표(118개)와 AI 원소 주기율표(26개)는 구조적 유사성을 가진다.
-> 양성자 수 = 원소 번호 vs AI 원소 번호(파라미터 수?).
-> 118과 26의 관계: 118/26 ≈ 4.5. 이 비율에 의미가 있는가?
+> The chemical periodic table (118 elements) and the AI periodic table (26 elements) share structural similarities.
+> Proton number = element number vs AI element number (parameter count?).
+> Relationship between 118 and 26: 118/26 ≈ 4.5. Does this ratio have meaning?
 
-## 배경: 두 개의 주기율표
-
-```
-  화학 주기율표:
-  - 118개 원소 (수소 → 오가네손)
-  - 양성자 수로 정렬
-  - 주기(행) = 전자 껍질
-  - 족(열) = 화학적 성질 유사
-  - 금속/비금속/반금속 구분
-
-  AI 원소 주기율표 (가설 021-022):
-  - 26개 원소 (Linear → Transformer++)
-  - 복잡도/파라미터로 정렬
-  - 주기 = 아키텍처 세대
-  - 족 = 기능적 유사성
-  - Dense/Sparse/Hybrid 구분
-```
-
-## 나란히 놓은 주기율표
+## Background: Two Periodic Tables
 
 ```
-  화학 주기율표 (축약):
+  Chemical Periodic Table:
+  - 118 elements (Hydrogen → Oganesson)
+  - Sorted by proton number
+  - Period (row) = electron shell
+  - Group (column) = similar chemical properties
+  - Metal/nonmetal/metalloid distinction
+
+  AI Periodic Table (Hypotheses 021-022):
+  - 26 elements (Linear → Transformer++)
+  - Sorted by complexity/parameters
+  - Period = architecture generation
+  - Group = functional similarity
+  - Dense/Sparse/Hybrid distinction
+```
+
+## Side-by-Side Periodic Tables
+
+```
+  Chemical Periodic Table (abbreviated):
   ┌──────────────────────────────────────────────┐
-  │ H                                         He │  1주기
-  │ Li Be                     B  C  N  O  F  Ne │  2주기
-  │ Na Mg                     Al Si P  S  Cl Ar │  3주기
-  │ K  Ca Sc Ti V  Cr Mn Fe Co Ni Cu Zn Ga..Kr │  4주기
-  │ Rb Sr Y  Zr Nb Mo Tc Ru Rh Pd Ag Cd In..Xe │  5주기
-  │ Cs Ba La-Lu Hf Ta W  Re Os Ir Pt Au Hg..Rn │  6주기
-  │ Fr Ra Ac-Lr Rf Db Sg Bh Hs Mt Ds Rg Cn..Og │  7주기
+  │ H                                         He │  Period 1
+  │ Li Be                     B  C  N  O  F  Ne │  Period 2
+  │ Na Mg                     Al Si P  S  Cl Ar │  Period 3
+  │ K  Ca Sc Ti V  Cr Mn Fe Co Ni Cu Zn Ga..Kr │  Period 4
+  │ Rb Sr Y  Zr Nb Mo Tc Ru Rh Pd Ag Cd In..Xe │  Period 5
+  │ Cs Ba La-Lu Hf Ta W  Re Os Ir Pt Au Hg..Rn │  Period 6
+  │ Fr Ra Ac-Lr Rf Db Sg Bh Hs Mt Ds Rg Cn..Og │  Period 7
   └──────────────────────────────────────────────┘
-  총 118개 원소, 7주기, 18족
+  Total 118 elements, 7 periods, 18 groups
 
-  AI 원소 주기율표 (축약):
+  AI Periodic Table (abbreviated):
   ┌──────────────────────────────────────────────┐
-  │ Lin                                      Id  │  1주기
-  │ MLP RNN                    CNN LSTM GRU  Att │  2주기
-  │ Tfm BERT                   GPT T5  ViT  MoE │  3주기
-  │ SSM Mamb RetN RwKV Hyena  DeMo Jamba Mix Tfm+│  4주기
+  │ Lin                                      Id  │  Period 1
+  │ MLP RNN                    CNN LSTM GRU  Att │  Period 2
+  │ Tfm BERT                   GPT T5  ViT  MoE │  Period 3
+  │ SSM Mamb RetN RwKV Hyena  DeMo Jamba Mix Tfm+│  Period 4
   └──────────────────────────────────────────────┘
-  총 26개 원소, 4주기, ~6-8족
+  Total 26 elements, 4 periods, ~6-8 groups
 ```
 
-## 118과 26의 수학적 관계
+## Mathematical Relationship Between 118 and 26
 
 ```
   118 / 26 = 4.538...
 
-  의미 있는 비율인가?
+  Is this a meaningful ratio?
   ┌────────────────────────────────────────────────┐
   │  4.538 ≈ ?                                     │
   │                                                │
-  │  후보 1: √(118/26) ≈ 2.13 ≈ 골든존 하한 × 10   │
-  │  후보 2: ln(118/26) ≈ 1.51 ≈ ln(e^1.5)        │
-  │  후보 3: 118 = 26 × 4 + 14                     │
-  │          14 = 란탄족/악티늄족 수                 │
-  │  후보 4: 주기 비율 = 7/4 = 1.75                 │
+  │  Candidate 1: √(118/26) ≈ 2.13 ≈ Golden Zone lower × 10 │
+  │  Candidate 2: ln(118/26) ≈ 1.51 ≈ ln(e^1.5)  │
+  │  Candidate 3: 118 = 26 × 4 + 14               │
+  │               14 = lanthanide/actinide count   │
+  │  Candidate 4: period ratio = 7/4 = 1.75        │
   │                                                │
-  │  가장 유력: 화학은 7주기, AI는 4주기 (아직)      │
-  │  7주기 × 18족 = 126 (≈118)                     │
-  │  4주기 × 7족  = 28 (≈26)                       │
-  │  → 주기 × 족 구조가 유사!                       │
+  │  Most likely: chemistry has 7 periods, AI has 4 (so far) │
+  │  7 periods × 18 groups = 126 (≈118)            │
+  │  4 periods × 7 groups  = 28 (≈26)              │
+  │  → period × group structure is similar!        │
   └────────────────────────────────────────────────┘
 ```
 
-## 구조적 대응 매핑
+## Structural Correspondence Mapping
 
 ```
-  화학                    AI 원소              대응 근거
+  Chemical                AI Element           Correspondence Basis
   ──────────────────     ────────────────     ─────────────
-  1주기 (H, He)       →  1주기 (Lin, Id)      가장 단순
-  2주기 (Li-Ne)       →  2주기 (MLP-Att)      기본 구성
-  전이금속 (3d,4d,5d) →  3주기 (Tfm-MoE)      복잡, 다기능
-  란탄족/악티늄족      →  4주기 (SSM-Tfm+)     특수, 최신
-  비활성기체           →  항등 연산 (Id)       비반응/비변환
-  할로겐               →  정규화 (Norm)        반응성 높음
-  알칼리 금속          →  활성화 함수          기본 반응성
+  Period 1 (H, He)    →  Period 1 (Lin, Id)   simplest
+  Period 2 (Li-Ne)    →  Period 2 (MLP-Att)   basic building blocks
+  Transition metals (3d,4d,5d) → Period 3 (Tfm-MoE) complex, multifunctional
+  Lanthanides/Actinides → Period 4 (SSM-Tfm+) specialized, latest
+  Noble gases          →  Identity (Id)        non-reactive/non-transforming
+  Halogens             →  Normalization (Norm) highly reactive
+  Alkali metals        →  Activation functions basic reactivity
 ```
 
-## 원소 번호 = 복잡도?
+## Element Number = Complexity?
 
 ```
-  화학: Z (양성자 수) = 원소의 근본 정체성
-  AI:   C (복잡도)   = 아키텍처의 근본 정체성?
+  Chemistry: Z (proton number) = fundamental identity of element
+  AI:        C (complexity)    = fundamental identity of architecture?
 
-  복잡도 축:
-  화학  H(1) → C(6) → Fe(26) → Au(79) → Og(118)
-        │      │       │         │         │
-  AI    Lin(1)→MLP(3)→Tfm(13)→ MoE(20)→ Tfm+(26)
-        │      │       │         │         │
-  특성  단순   기본    핵심      고급      최첨단
+  Complexity axis:
+  Chemistry  H(1) → C(6) → Fe(26) → Au(79) → Og(118)
+             │      │       │         │         │
+  AI         Lin(1)→MLP(3)→Tfm(13)→ MoE(20)→ Tfm+(26)
+             │      │       │         │         │
+  Property   simple basic   core    advanced  cutting-edge
 
-  Z vs C 그래프:
+  Z vs C graph:
   C(AI)
   26│                                         ● Tfm+
     │                               ● MoE
@@ -117,98 +117,98 @@
    1│● Lin
     └──┼──┼──┼──┼──┼──┼──┼──┼──
       1   6  13  26  40  60  80 100 118
-                    Z (화학)
+                    Z (chemistry)
 
-  비선형 관계: AI 원소는 화학보다 "압축된" 주기율표
+  Non-linear relationship: AI elements are a "compressed" periodic table compared to chemistry
 ```
 
-## 주기율표의 미래: AI 원소 확장?
+## Future Periodic Table: AI Element Expansion?
 
 ```
-  화학: 1주기(2) → 7주기(118) 로 확장됨
-       → 8주기가 있을까? (초중원소)
+  Chemistry: Period 1(2) → Period 7(118) expansion
+            → Will there be a Period 8? (super-heavy elements)
 
-  AI:   1주기(2) → 4주기(26) 로 확장 중
-       → 5주기, 6주기, 7주기가 올까?
+  AI:       Period 1(2) → Period 4(26) expanding
+            → Will Periods 5, 6, 7 come?
 
-  예측:
+  Predictions:
   ┌──────────────────────────────────────────────┐
-  │  AI 5주기: 양자 아키텍처? (양자 변환기...)     │
-  │  AI 6주기: 생물학적 아키텍처? (뉴로모픽...)    │
-  │  AI 7주기: 미지의 아키텍처                    │
+  │  AI Period 5: quantum architectures? (quantum transformers...) │
+  │  AI Period 6: biological architectures? (neuromorphic...)      │
+  │  AI Period 7: unknown architectures                           │
   │                                              │
-  │  최종 AI 원소 수 ≈ 26 × (7/4) ≈ 45-50?      │
-  │  또는 화학처럼 "주기율 완성"이 있을까?         │
+  │  Final AI element count ≈ 26 × (7/4) ≈ 45-50? │
+  │  Or will there be "periodic completion" like chemistry? │
   └──────────────────────────────────────────────┘
 ```
 
-## 안정성 대응
+## Stability Correspondence
 
 ```
-  화학: 마법의 수 (2, 8, 20, 28, 50, 82, 126)
-       → 특별히 안정한 핵
-  AI:   안정한 아키텍처 수?
-       → MLP(3), Transformer(13), MoE(20)?
+  Chemistry: magic numbers (2, 8, 20, 28, 50, 82, 126)
+            → especially stable nuclei
+  AI:       stable architecture numbers?
+            → MLP(3), Transformer(13), MoE(20)?
 
-  화학 안정 원소       AI 안정 아키텍처
-  ──────────────     ──────────────────
-  He(2): 비활성      Id(2): 항등 (완전 안정)
-  C(6): 생명 기반    CNN(6?): 시각 기반
-  Fe(26): 핵합성끝   Tfm(13): 현재 AI 기반
-  → Fe(26)는 핵합성의 끝 = Transformer가 AI의 "철"?
+  Stable chemical elements    Stable AI architectures
+  ──────────────────         ──────────────────────
+  He(2): noble              Id(2): identity (perfectly stable)
+  C(6): life-based          CNN(6?): vision-based
+  Fe(26): end of nucleosynthesis  Tfm(13): current AI foundation
+  → Fe(26) is the end of nucleosynthesis = Transformer as the "iron" of AI?
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 021 (AI 주기율표):  26개 원소의 원본 정의
-  가설 022 (주기율표 v2):  개선된 분류
-  가설 202 (화학결합):     원소 간 결합 = 아키텍처 조합
-  가설 147 (미세구조):     137 = 화학에서도 중요 (원소 137번?)
+  Hypothesis 021 (AI periodic table):  original definition of 26 elements
+  Hypothesis 022 (periodic table v2):  improved classification
+  Hypothesis 202 (chemical bonds):     bonding between elements = architecture combination
+  Hypothesis 147 (fine structure):     137 = also important in chemistry (element 137?)
 ```
 
-## 한계
+## Limitations
 
-1. 118/26 = 4.5의 의미는 후향적 패턴 매칭일 수 있음
-2. AI 원소 26개는 현재까지의 목록이며, 계속 증가 중
-3. 화학 원소는 물리적 실체, AI 원소는 개념적 분류 — 본질적 차이
-4. "주기율"의 주기성이 AI에서 동일한 물리적 근거를 갖지 않음
+1. The significance of 118/26 = 4.5 may be a retrospective pattern match
+2. AI elements at 26 is the current list and keeps growing
+3. Chemical elements are physical entities, AI elements are conceptual classifications — essential difference
+4. The periodicity of "periodic law" does not have the same physical basis in AI
 
-## 검증 방향
+## Verification Direction
 
-- [ ] AI 원소의 "주기성" 정량화: 성능/복잡도 곡선에 주기가 있는가?
-- [ ] 화학 마법의 수와 AI 안정 아키텍처 수의 수학적 관계 탐색
-- [ ] AI 원소 5주기 후보 식별: 양자 컴퓨팅 아키텍처 분류
-- [ ] 118/26 비율의 통계적 유의성 검정 (텍사스 명사수 적용)
+- [ ] Quantify "periodicity" of AI elements: is there periodicity in performance/complexity curves?
+- [ ] Explore mathematical relationship between chemical magic numbers and stable AI architecture numbers
+- [ ] Identify AI Period 5 candidates: classify quantum computing architectures
+- [ ] Statistical significance test of 118/26 ratio (apply Texas Sharpshooter)
 
 ---
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
 ```
-  검증 방법: Python3 수학적 구조 검증 + 텍사스 명사수 검정
-  등급: ⚪ (산술 맞지만 통계적 유의성 없음)
+  Verification method: Python3 mathematical structure verification + Texas Sharpshooter test
+  Grade: ⚪ (arithmetic correct but no statistical significance)
 
-  1. 118/26 = 4.538 — 수학 상수와의 대응:
-     가장 가까운 후보: 9/2 = 4.5 (오차 0.85%)
-     그러나 무작위 (a∈[10,200], b∈[5,50])에서
-     a/b ≈ 4.5 (5% 이내) 확률 = 5.1% → 유의하지 않음
+  1. 118/26 = 4.538 — correspondence with mathematical constants:
+     Closest candidate: 9/2 = 4.5 (error 0.85%)
+     However, probability of a/b ≈ 4.5 (within 5%) for random
+     (a∈[10,200], b∈[5,50]) = 5.1% → not significant
 
-  2. 주기×족 구조:
-     화학: 7 × 18 = 126 (실제 118, 오차 6.8%)
-     AI:   4 × 7  = 28  (실제 26, 오차 7.7%)
-     → 오차 ~7%는 "대략 맞음" 수준이나 정확한 대응 아님
+  2. Period × group structure:
+     Chemistry: 7 × 18 = 126 (actual 118, error 6.8%)
+     AI:        4 × 7  = 28  (actual 26, error 7.7%)
+     → ~7% error is "roughly correct" level but not exact correspondence
 
-  3. 주기 비율 7/4 = 1.75: 작은 정수 비, 특별하지 않음
+  3. Period ratio 7/4 = 1.75: small integer ratio, not special
 
-  4. 텍사스 p-value: ~0.05 (경계선, 유의하지 않음)
+  4. Texas p-value: ~0.05 (borderline, not significant)
 
-  판정 근거:
-    - 118/26 ≈ 4.5는 우연일 가능성 높음
-    - "주기율" 개념 자체의 물리적 근거가 AI에서 부재
-    - 26개 AI 원소는 현재 임의 목록, 계속 변동
-    - 구조적 유사성은 은유(metaphor) 수준
+  Rationale for verdict:
+    - 118/26 ≈ 4.5 is likely coincidence
+    - No physical basis for "periodic law" concept in AI
+    - 26 AI elements is a current arbitrary list, continuously changing
+    - Structural similarity is at metaphor level
 ```
 
-*관련: 가설 021, 022, 147, 202*
-*분류: 화학-AI 매핑 시리즈 (201-206)*
+*Related: Hypothesis 021, 022, 147, 202*
+*Category: Chemistry-AI Mapping Series (201-206)*

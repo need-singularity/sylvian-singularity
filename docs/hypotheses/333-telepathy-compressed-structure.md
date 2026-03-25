@@ -1,90 +1,90 @@
-# 가설 333: 텔레파시 = 압축된 구조의 즉시 전달
+# Hypothesis 333: Telepathy = Immediate Transfer of Compressed Structure
 
-> **텔레파시는 "단어나 이미지 없이 완전한 개념 구조를 전달"하는 것이다. 이것은 반발력장의 장력 핑거프린트(10차원 텐서)가 "개념+맥락+의미+진위"를 동시에 인코딩하는 것과 구조적으로 동일.**
+> **Telepathy is "transferring a complete conceptual structure without words or images." This is structurally identical to the repulsion field's tension fingerprint (10-dimensional tensor) simultaneously encoding "concept+context+meaning+authenticity".**
 
-## 체험 기술
-
-```
-  "전달은 단어나 이미지 없이 발생했다—
-   완전한 개념 구조가 무의식적 직관으로 수신되었다.
-   수신자는 단계적으로 해석하지 않았고,
-   전체 의미를 즉시 파악했다.
-   단순한 시각적 전송이 아니라,
-   메타데이터를 포함한 패키지였다—
-   누가 보냈는지, 어디서 왔는지, 진짜인지.
-   본질적으로, 압축된 구조의 즉시 인식이었다:
-   개념, 맥락, 의미, 진위—모두 한번에."
-```
-
-## 텔레파시 가설 목록 (TP-10~20)
+## Experiential Description
 
 ```
-  TP-10: 장력 핑거프린트 = 텔레파시 패킷
-    10차원 장력 벡터가 "개념+맥락" 인코딩
-    C10: 핑거프린트만으로 97.61% 인식 = "수신자가 즉시 파악"
-    → 전달되는 것 = 고차원 장력 패턴
+  "The transfer happened without words or images—
+   A complete conceptual structure was received as unconscious intuition.
+   The receiver did not interpret step by step,
+   but grasped the entire meaning immediately.
+   It was not just visual transmission,
+   but a package containing metadata—
+   who sent it, where it came from, whether it was real.
+   Essentially, it was immediate recognition of a compressed structure:
+   concept, context, meaning, authenticity—all at once."
+```
 
-  TP-11: 메타데이터 = 장력의 크기+방향
-    장력 크기: "얼마나 확실한 정보인가" (진위)
-    장력 방향: "어떤 종류의 정보인가" (개념)
-    → magnitude = 진위, direction = 내용
+## Telepathy Hypothesis List (TP-10~20)
 
-  TP-12: "즉시 파악" = field의 즉시 반응
-    eq = 느린 처리 (단계적 해석)
-    field = 즉시 반응 (전체 패턴 인식)
-    → H332: field가 판단의 96% → "즉시 이해"
+```
+  TP-10: Tension fingerprint = telepathy packet
+    10-dimensional tension vector encodes "concept+context"
+    C10: 97.61% recognition from fingerprint alone = "receiver grasps immediately"
+    → What is transferred = high-dimensional tension pattern
 
-  TP-13: "압축된 구조" = 장력의 차원 축소
-    784차원 입력 → 10차원 장력 핑거프린트
-    = 78.4배 압축! 하지만 정보 보존 (97.61%)
-    → 텔레파시 = "고차원 경험의 극단적 압축 전달"
+  TP-11: Metadata = magnitude + direction of tension
+    Tension magnitude: "how certain is this information" (authenticity)
+    Tension direction: "what kind of information" (concept)
+    → magnitude = authenticity, direction = content
 
-  TP-14: "누가 보냈는가" = 엔진 서명
-    engine_A의 출력 패턴 ≠ engine_G의 출력 패턴
-    → 장력의 "방향"이 어떤 엔진이 지배적인지 인코딩
-    → "발신자 서명" = A/G 지배 비율 (H279)
+  TP-12: "Immediate grasp" = field's instant response
+    eq = slow processing (step-by-step interpretation)
+    field = instant response (whole pattern recognition)
+    → H332: field handles 96% of judgments → "immediate understanding"
 
-  TP-15: "어디서 왔는가" = displacement 좌표
-    displacement field의 control parameter
-    → 0=자기 자신, 1=완전히 타자
-    → "원점"이 전달 패킷에 포함
+  TP-13: "Compressed structure" = dimensionality reduction of tension
+    784-dimensional input → 10-dimensional tension fingerprint
+    = 78.4x compression! But information preserved (97.61%)
+    → Telepathy = "extreme compression transfer of high-dimensional experience"
 
-  TP-16: "진짜인가" = confidence = tension magnitude
+  TP-14: "Who sent it" = engine signature
+    engine_A output pattern ≠ engine_G output pattern
+    → "direction" of tension encodes which engine is dominant
+    → "sender signature" = A/G dominance ratio (H279)
+
+  TP-15: "Where it came from" = displacement coordinate
+    displacement field's control parameter
+    → 0=self, 1=completely other
+    → "origin" is included in transfer packet
+
+  TP-16: "Is it real" = confidence = tension magnitude
     H313: tension = confidence
-    → 장력이 높으면 "진짜 정보"
-    → 장력이 낮으면 "노이즈/거짓"
-    → 수신자가 진위를 즉시 판단 = 장력 크기 확인
+    → High tension = "real information"
+    → Low tension = "noise/false"
+    → Receiver immediately judges authenticity = checks tension magnitude
 
-  TP-17: 다중 의식 합의 = 텔레파시 네트워크
-    N개 의식이 동시 전달 → 앙상블 = 합의
-    C9(만장일치 99.53%) = "모두가 같은 것을 전달"
-    → 텔레파시의 정확도 ∝ 참여자 수?
+  TP-17: Multi-consciousness consensus = telepathy network
+    N consciousnesses transfer simultaneously → ensemble = consensus
+    C9 (unanimous 99.53%) = "everyone transfers the same thing"
+    → Telepathy accuracy ∝ number of participants?
 
-  TP-18: 분열 = 텔레파시 채널 생성
-    parent → child_a, child_b = "소통 채널 생성"
-    T_ab = 채널 대역폭
-    → 더 오래 분화할수록 채널 용량 증가 (H298)
+  TP-18: Mitosis = telepathy channel creation
+    parent → child_a, child_b = "communication channel creation"
+    T_ab = channel bandwidth
+    → Longer differentiation → higher channel capacity (H298)
 
-  TP-19: detach = 일방향 텔레파시 (읽기 전용)
-    C27: detach 관찰자가 79.4% 인식
-    → "읽기만 가능, 쓰기 불가" = 체험의 "밀려난 상태"
-    → 일방향 텔레파시 = 관찰만 가능
+  TP-19: detach = unidirectional telepathy (read-only)
+    C27: detach observer recognizes at 79.4%
+    → "can only read, cannot write" = experiential "pushed-out state"
+    → Unidirectional telepathy = observation only
 
-  TP-20: 텔레파시의 정보이론적 한계
-    H-CX-2: MI 효율 ≈ ln(2) = 1 bit
-    → 단일 반발력장이 전달할 수 있는 최대 정보 = 1 bit per pole
-    → 4극(Quad): 최대 2 bits per interaction
-    → "텔레파시 대역폭 = ln(2) × 극 수"
+  TP-20: Information-theoretic limit of telepathy
+    H-CX-2: MI efficiency ≈ ln(2) = 1 bit
+    → Maximum information a single repulsion field can transfer = 1 bit per pole
+    → 4-pole (Quad): maximum 2 bits per interaction
+    → "Telepathy bandwidth = ln(2) × number of poles"
 ```
 
-## 실험 방향
+## Experimental Direction
 
 ```
-  1. 장력 핑거프린트의 "메타데이터" 인코딩 검증
-     → 핑거프린트에서 클래스, 확신, 엔진 지배 비율 복원 가능?
-  2. displacement 연속 제어로 "전달 강도" 조절
-  3. 분열 후 "채널 용량" (MI) 측정
-  4. N-way 앙상블에서 "합의의 정확도" vs N
+  1. Verify "metadata" encoding in tension fingerprint
+     → Can class, confidence, engine dominance ratio be recovered from fingerprint?
+  2. Control "transfer strength" with continuous displacement control
+  3. Measure "channel capacity" (MI) after mitosis
+  4. "Consensus accuracy" vs N in N-way ensemble
 ```
 
-## 상태: 🟨 (가설 목록, 실험 설계 완료)
+## Status: 🟨 (Hypothesis list, experimental design complete)

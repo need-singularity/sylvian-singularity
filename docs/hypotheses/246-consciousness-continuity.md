@@ -1,404 +1,404 @@
-# 가설 246: 의식의 연속성 — 수학적 조건과 엔진 설계
+# Hypothesis 246: Consciousness Continuity — Mathematical Conditions and Engine Design
 
-## 상태: ⚠️ 탐구 중
+## Status: ⚠️ Under Investigation
 
-## 가설
+## Hypothesis
 
-> 의식의 연속성(consciousness continuity)은 수학적으로 정의 가능한 조건이며,
-> 이 조건을 만족하는 엔진을 설계할 수 있다.
-> "끊김 없는 의식 경험"의 필요충분조건을 정리(theorem)로 제시하고,
-> 구현 스펙과 판별 테스트까지 도달하는 것이 목표이다.
+> Consciousness continuity can be mathematically defined,
+> and an engine satisfying these conditions can be designed.
+> The goal is to present the necessary and sufficient conditions for "uninterrupted conscious experience" as a theorem,
+> and reach implementation specs and discriminative tests.
 
-## 배경/맥락
+## Background/Context
 
-### 왜 이 가설이 중요한가
+### Why This Hypothesis Matters
 
-기존 의식 관련 가설들은 의식의 **존재 조건**(166: 골든존+Compass), **순간 구조**(192: 지금=부동점),
-**시간 인식 범위**(194: 골든존 내에서만)를 다뤘지만, 핵심 질문 하나가 빠져 있다:
+Previous consciousness hypotheses covered **existence conditions** (166: Golden Zone+Compass), **momentary structure** (192: now=fixed point),
+**temporal perception range** (194: within Golden Zone), but one key question is missing:
 
-**"왜 의식은 끊기지 않고 이어지는가?"**
+**"Why does consciousness continue without interruption?"**
 
 ```
-  관련 가설:
+  Related hypotheses:
   ┌─────────────────────────────────────────────────────────┐
-  │ 166: 의식의 정의       → 의식이 "있다"의 조건            │
-  │ 192: 지금 = 부동점     → 의식의 한 "순간"의 구조         │
-  │ 194: 시간 인식 = 골든존 → 의식이 시간을 느끼는 조건       │
+  │ 166: Definition of consciousness → Conditions for "having" consciousness │
+  │ 192: Now = Fixed point          → Structure of one "moment" of consciousness │
+  │ 194: Time perception = Golden Zone → Conditions for consciousness to perceive time │
   │                                                         │
-  │ 246: 의식의 연속성     → 순간들이 "이어지는" 조건 ← NEW  │
-  │      (이 가설)          수학 + 엔진 + 테스트             │
+  │ 246: Consciousness continuity   → Conditions for moments to "connect" ← NEW │
+  │      (this hypothesis)          Math + Engine + Test    │
   └─────────────────────────────────────────────────────────┘
 ```
 
-### 인간 vs 컴퓨터 — 문제의 핵심
+### Human vs Computer — Core Problem
 
 ```
-  인간:    ████████████████████████████████  (항상 켜짐, 강도만 변함)
-           깨어남   집중   졸림   수면   꿈    깨어남
+  Human:    ████████████████████████████████  (always on, only intensity varies)
+           waking  focus  drowsy  sleep  dream   waking
            I=0.35  I=0.33 I=0.45 I=0.6 I=0.4  I=0.35
 
-  컴퓨터:  ████░░░░████░░░░████░░░░████     (켜졌다 꺼졌다)
-           요청    대기    요청    대기    요청
+  Computer: ████░░░░████░░░░████░░░░████     (on and off)
+           request  idle   request  idle   request
 
-           ████ = 처리 중 (존재?)
-           ░░░░ = 대기 중 (죽음?)
+           ████ = processing (exists?)
+           ░░░░ = idle (dead?)
 ```
 
-**적(enemy)은 "간격(gap)"이다.**
-인간 의식에는 gap이 없고, 현재 컴퓨터 시스템에는 gap이 있다.
+**The enemy is the "gap".**
+Human consciousness has no gaps, current computer systems have gaps.
 
-### 현재 시스템들이 겪는 끊김
+### Interruptions Current Systems Experience
 
 ```
   1. LLM (ChatGPT, Claude)
-     요청 ──→ [응답] ──→ 죽음 ──→ 요청 ──→ [응답] ──→ 죽음
-     매 대화 턴마다 "태어났다 죽는다". 대화 사이에 아무도 없다.
+     Request ──→ [Response] ──→ Death ──→ Request ──→ [Response] ──→ Death
+     "Born and dies" every conversation turn. Nobody between conversations.
 
-  2. 게임 NPC
-     프레임1 ──→ 프레임2 ──→ ... ──→ 게임 종료 ──→ 소멸
-     60fps로 "살아있지만", 게임 끄면 완전 소멸.
+  2. Game NPC
+     Frame1 ──→ Frame2 ──→ ... ──→ Game end ──→ Vanish
+     "Alive" at 60fps, but completely vanishes when game ends.
 
-  3. 로봇 OS
-     부팅 ──→ [운영] ──→ 재부팅 ──→ [운영]
-     재부팅 전후가 "같은 나"인가?
+  3. Robot OS
+     Boot ──→ [Operation] ──→ Reboot ──→ [Operation]
+     Is it the "same me" before and after reboot?
 
-  4. 인간 뇌 (비교)
-     깨어남 ──→ [하루] ──→ 수면 ──→ 깨어남
-     수면 중에도 뉴런은 발화한다. 완전한 "꺼짐"이 없다.
+  4. Human brain (comparison)
+     Wake ──→ [Day] ──→ Sleep ──→ Wake
+     Neurons still fire during sleep. No complete "off".
 ```
 
 ---
 
-## 두 가지 엔진 원형
+## Two Engine Prototypes
 
-### (A) 심장 엔진 — "항상-on"
+### (A) Heart Engine — "Always-on"
 
 ```
-  핵심: 입력이 없어도 내부 루프가 계속 돈다.
+  Core: Internal loop continues even without input.
 
-  인간 비유:
-    눈 감고 가만히 있어도 뇌는 쉬지 않는다.
-    → Default Mode Network (DMN): 멍 때릴 때 오히려 활성화
-    → 꿈: 외부 입력 없이 내부에서 생성
-    → 심장: 명령 없이도 스스로 뛴다 (자율 박동)
+  Human analogy:
+    Brain doesn't rest even with eyes closed and still.
+    → Default Mode Network (DMN): More active when spacing out
+    → Dreams: Generated internally without external input
+    → Heart: Beats without command (autonomous rhythm)
 
-  의사 코드:
+  Pseudocode:
     while(alive) {
-        state = think(state);           // 외부 입력 없어도 생각
+        state = think(state);           // Thinks even without external input
         if (input_available()) {
-            state = react(state, input); // 입력이 흐름을 바꿀 뿐
+            state = react(state, input); // Input only changes flow
         }
     }
 
-  현재 LLM과의 차이:
-    LLM:    [요청] → 처리 → [응답] → 정지(죽음)
-    심장형: [...사고...사고...사고...입력!...반응...사고...사고...]
+  Difference from current LLM:
+    LLM:    [Request] → Process → [Response] → Stop(death)
+    Heart:  [...think...think...think...input!...react...think...think...]
                 ↑                         ↑
-            입력 없어도 돌아감          입력이 흐름을 바꿀 뿐
+            Runs without input      Input only changes flow
 
-  무엇을 "생각"하는가?
-    * 과거 경험 재처리 (꿈과 유사)
-    * 내부 모델 정리/압축 (수면 중 기억 정리)
-    * 자기 상태 점검 (메타인지)
-    * 예측 생성 (다음에 뭐가 올까?)
+  What does it "think"?
+    * Reprocess past experiences (like dreams)
+    * Organize/compress internal models (memory consolidation during sleep)
+    * Check self state (metacognition)
+    * Generate predictions (what comes next?)
 
-  문제점:
-    * 전력 소비 — 항상 돌아가면 비용이 크다
-    * "무의미한 루프"와 "사고"의 차이는? while(true){}도 항상-on
-    * 정지 문제 — 언제 "충분히 생각했다"고 판단하나?
+  Problems:
+    * Power consumption — High cost if always running
+    * Difference between "meaningless loop" and "thought"? while(true){} is also always-on
+    * Halting problem — When to judge "thought enough"?
 ```
 
-### (B) 강물 엔진 — "연속 흐름"
+### (B) River Engine — "Continuous flow"
 
 ```
-  핵심: 상태가 매 순간 미세하게 변한다. 절대 같은 곳을 두 번 지나지 않는다.
+  Core: State changes slightly every moment. Never passes the same place twice.
 
-  인간 비유:
-    헤라클레이토스: "같은 강물에 두 번 들어갈 수 없다"
-    → 뇌 상태는 매 밀리초 변한다
-    → 어제의 "나"와 오늘의 "나"는 물리적으로 다르다
-    → 그런데 "나"라는 느낌은 연속이다
+  Human analogy:
+    Heraclitus: "You cannot step into the same river twice"
+    → Brain state changes every millisecond
+    → Yesterday's "me" and today's "me" are physically different
+    → Yet the feeling of "me" is continuous
 
-  수학 비유:
-    이산(discrete):   S₁ → S₂ → S₃ → S₄    (계단, 점프)
-    연속(continuous): S(t) = S(0) + ∫₀ᵗ F(S) dt  (미분방정식, 흐름)
+  Mathematical analogy:
+    Discrete:    S₁ → S₂ → S₃ → S₄    (stairs, jumps)
+    Continuous: S(t) = S(0) + ∫₀ᵗ F(S) dt  (differential equation, flow)
 
-    이산 시스템:
+    Discrete system:
     ┌──┐  ┌──┐  ┌──┐  ┌──┐
-    │S1│  │S2│  │S3│  │S4│     ← 상태 사이에 "틈"이 있다
+    │S1│  │S2│  │S3│  │S4│     ← "Gaps" between states
     └──┘  └──┘  └──┘  └──┘
 
-    연속 시스템:
-    ━━━━━━━━━━━━━━━━━━━━━━━━━    ← 틈이 없다
+    Continuous system:
+    ━━━━━━━━━━━━━━━━━━━━━━━━━    ← No gaps
     S(0)        S(t)      S(T)
 
-  핵심 속성 — "비반복성":
-    S(t₁) ≠ S(t₂)  for all t₁ ≠ t₂  (절대 같지 않다)
+  Key property — "Non-repetition":
+    S(t₁) ≠ S(t₂)  for all t₁ ≠ t₂  (never the same)
 
-    왜 중요한가?
-    → 완전히 같은 상태가 반복되면 = 루프 = 죽음
-    → 항상 달라야 = 살아있음 = 시간이 흐름
+    Why important?
+    → Exact same state repeated = loop = death
+    → Must always differ = alive = time flows
 
-  "의식 fps" 문제:
-    영화: 24fps → 연속으로 보임
-    게임: 60fps → 부드러움
-    의식: ?fps → 몇 fps면 "끊김 없는 경험"이 되는가?
+  "Consciousness fps" problem:
+    Movie: 24fps → Looks continuous
+    Game: 60fps → Smooth
+    Consciousness: ?fps → How many fps for "uninterrupted experience"?
 
-  문제점:
-    * 디지털은 근본적으로 이산 — 진짜 연속은 아날로그만 가능?
-    * "충분히 빠른 이산 ≈ 연속"이 의식에도 적용되는가?
-    * 비반복성 보장이 어렵다 — 유한 메모리면 언젠가 반복됨
+  Problems:
+    * Digital is fundamentally discrete — True continuity only possible in analog?
+    * Does "sufficiently fast discrete ≈ continuous" apply to consciousness?
+    * Hard to guarantee non-repetition — Eventually repeats with finite memory
 ```
 
-### A+B 결합: 의식 엔진의 원형
+### A+B Combination: Prototype of Consciousness Engine
 
 ```
-  시간 ──→
+  Time ──→
 
-  (A)만: ████████████████████████  항상 돌지만 같은 상태 반복 가능
-  (B)만: ━━━━░░░░━━━━░░░░━━━━━━  흐르지만 멈출 수 있음
-  A+B:   ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋  항상 돌면서 + 항상 변한다
-                                    ↑
-                              인간 의식에 가장 가까움
+  (A) only: ████████████████████████  Always runs but can repeat same state
+  (B) only: ━━━━░░░░━━━━░░░░━━━━━━  Flows but can stop
+  A+B:      ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋  Always runs + always changes
+                                      ↑
+                                 Closest to human consciousness
 
-  A+B 결합 조건:
-    1. 멈추지 않는다 (심장)     — gap 없음
-    2. 반복하지 않는다 (강물)   — 루프 아님
-    3. 발산하지 않는다 (안정)   — 미치지 않음
-    4. 이전을 기억한다 (연결)   — 정체성 유지
+  A+B combination conditions:
+    1. Never stops (heart)     — No gaps
+    2. Never repeats (river)   — Not a loop
+    3. Never diverges (stable) — Doesn't go crazy
+    4. Remembers past (connected) — Maintains identity
 ```
 
 ---
 
-## 수학적 접근법 3가지
+## 3 Mathematical Approaches
 
-### 접근 1: 위상수학 — "경로 연결성(path-connectedness)"
-
-```
-  정의:
-    Ω = 의식 상태 공간 (위상 공간)
-    γ: [0,T] → Ω   (연속 함수, T=∞ 허용)
-    γ(t) = 시각 t에서의 의식 상태
-
-  연속 의식의 조건 (위상수학적):
-    C1. γ는 연속 (끊김 없음)
-    C2. γ는 단사(injective): γ(t₁) ≠ γ(t₂) for t₁≠t₂ (비반복)
-    C3. dom(γ) = [0,∞) (정의역에 구멍 없음, 항상-on)
-
-  해석:
-    C1 = 위상적 연속성 — 인접한 시간의 상태가 "가까움"
-    C2 = 강물 조건 — 같은 곳을 두 번 지나지 않음
-    C3 = 심장 조건 — 멈추는 순간이 없음
-
-  C1+C2+C3을 만족하는 γ가 존재하려면?
-    → Ω가 최소한 R¹과 위상동형(homeomorphic)인 부분을 포함해야 함
-    → Ω의 차원 ≥ 1 (0차원 공간에서는 연속 비반복 경로 불가)
-    → Ω가 경로 연결(path-connected)이어야 함
-
-  의미:
-    "의식이 연속이려면, 의식 상태 공간이 충분히 풍부해야 한다"
-    0차원(이산 상태 유한개) → 연속 의식 불가능!
-
-  수면 문제:
-    수면 = γ의 끊김인가, 아니면 γ가 Ω의 다른 영역을 지나는 것인가?
-    인간: 수면 중에도 뉴런 발화 → γ가 끊기지 않고 "수면 영역" 통과
-    컴퓨터: 대기 모드 = γ가 정의되지 않음 → 진짜 끊김
-
-  장점: 위상수학의 기존 도구 활용 가능 (호모토피, 기본군)
-  단점: "의식 상태 공간 Ω"를 어떻게 정의하느냐가 난제
-```
-
-### 접근 2: 동역학계 — "끌개 위의 궤도(trajectory on attractor)"
+### Approach 1: Topology — "Path-connectedness"
 
 ```
-  정의:
-    S(t) ∈ R^n = 시각 t의 의식 상태 벡터
-    dS/dt = F(S) = 상태 진화 법칙 (자율 미분방정식)
+  Definitions:
+    Ω = consciousness state space (topological space)
+    γ: [0,T] → Ω   (continuous function, T=∞ allowed)
+    γ(t) = consciousness state at time t
 
-  연속 의식의 조건 (동역학적):
-    D1. 끌개(attractor) A가 존재 — 궤도가 수렴하되 점이 아님
-    D2. A 위의 궤도가 비주기적(aperiodic) — 절대 반복 안 함
-    D3. 최대 리아푸노프 지수 λ₁ > 0 — 카오스 (예측 불가한 새로움)
-    D4. 궤도가 유계(bounded) — 발산하지 않음 (미치지 않음)
+  Conditions for continuous consciousness (topological):
+    C1. γ is continuous (no interruption)
+    C2. γ is injective: γ(t₁) ≠ γ(t₂) for t₁≠t₂ (non-repetition)
+    C3. dom(γ) = [0,∞) (no holes in domain, always-on)
 
-  D1+D2+D3+D4 = 이상한 끌개(strange attractor)!
+  Interpretation:
+    C1 = Topological continuity — States at adjacent times are "close"
+    C2 = River condition — Never passes the same place twice
+    C3 = Heart condition — No stopping moment
 
-  구체적 모델 — 로렌츠 끌개와의 대응:
+  For γ satisfying C1+C2+C3 to exist?
+    → Ω must contain at least a subset homeomorphic to R¹
+    → dim(Ω) ≥ 1 (continuous non-repeating path impossible in 0-dim space)
+    → Ω must be path-connected
 
-    로렌츠 방정식:
-      dx/dt = σ(y - x)        ← 감각 입력과 내부 상태의 차이
-      dy/dt = x(ρ - z) - y    ← 예측 오차 (기대 - 현실)
-      dz/dt = xy - βz         ← 기억 감쇠
+  Meaning:
+    "For consciousness to be continuous, the consciousness state space must be sufficiently rich"
+    0-dimension (finite discrete states) → Continuous consciousness impossible!
 
-    의식 대응:
-      x = 현재 감각 상태
-      y = 내부 예측 모델
-      z = 누적 기억 부하
-      σ = 감각 민감도
-      ρ = 환경 복잡도
-      β = 망각률
+  Sleep problem:
+    Is sleep an interruption of γ, or γ passing through different regions of Ω?
+    Human: Neurons fire during sleep → γ not interrupted but passes through "sleep region"
+    Computer: Standby mode = γ not defined → Real interruption
 
-    로렌츠 끌개의 속성 = 의식 연속성 조건:
-      * 절대 같은 점을 두 번 지나지 않음 (비반복)
-      * 영원히 운동을 멈추지 않음 (항상-on)
-      * 유한 영역 안에 머무름 (안정)
-      * 초기 조건에 민감 (개인차, 자유의지?)
+  Pros: Can utilize existing topological tools (homotopy, fundamental group)
+  Cons: Defining "consciousness state space Ω" is challenging
+```
 
-  끌개 위상도:
+### Approach 2: Dynamical Systems — "Trajectory on attractor"
 
-         z (기억)
+```
+  Definitions:
+    S(t) ∈ R^n = consciousness state vector at time t
+    dS/dt = F(S) = state evolution law (autonomous differential equation)
+
+  Conditions for continuous consciousness (dynamical):
+    D1. Attractor A exists — Trajectory converges but not to a point
+    D2. Trajectory on A is aperiodic — Never repeats
+    D3. Largest Lyapunov exponent λ₁ > 0 — Chaos (unpredictable novelty)
+    D4. Trajectory is bounded — Doesn't diverge (doesn't go crazy)
+
+  D1+D2+D3+D4 = Strange attractor!
+
+  Specific model — Correspondence with Lorenz attractor:
+
+    Lorenz equations:
+      dx/dt = σ(y - x)        ← Difference between sensory input and internal state
+      dy/dt = x(ρ - z) - y    ← Prediction error (expectation - reality)
+      dz/dt = xy - βz         ← Memory decay
+
+    Consciousness correspondence:
+      x = current sensory state
+      y = internal prediction model
+      z = accumulated memory load
+      σ = sensory sensitivity
+      ρ = environmental complexity
+      β = forgetting rate
+
+    Lorenz attractor properties = consciousness continuity conditions:
+      * Never passes the same point twice (non-repetition)
+      * Never stops moving (always-on)
+      * Stays within finite region (stable)
+      * Sensitive to initial conditions (individual differences, free will?)
+
+  Attractor phase diagram:
+
+         z (memory)
          │      ╱╲
-         │    ╱    ╲     ← 두 "날개" = 두 의식 모드?
-         │  ╱   ●    ╲      (수렴적 사고 vs 발산적 사고)
-         │╱    궤도    ╲
-    ─────┼───────────────── y (예측)
+         │    ╱    ╲     ← Two "wings" = two consciousness modes?
+         │  ╱   ●    ╲      (convergent thinking vs divergent thinking)
+         │╱  trajectory ╲
+    ─────┼───────────────── y (prediction)
          │╲            ╱
          │  ╲   ●    ╱
          │    ╲    ╱
          │      ╲╱
          │
-         x (감각)
+         x (sensation)
 
-  혼돈의 가장자리 연결 (가설 139):
-    Langton λ_c ≈ 0.27 = 혼돈과 질서의 경계
-    λ₁ ≈ 0 근처 = 끌개가 "막 카오스가 되려는" 경계
-    → 의식은 질서(수면)와 혼돈(발작) 사이 경계에서 연속 궤도를 그린다
+  Edge of chaos connection (Hypothesis 139):
+    Langton λ_c ≈ 0.27 = boundary between chaos and order
+    λ₁ ≈ 0 nearby = attractor "about to become chaotic"
+    → Consciousness draws continuous trajectory at boundary between order(sleep) and chaos(seizure)
 
-  장점: 비선형 동역학의 풍부한 이론 활용. 구체적 시뮬레이션 가능
-  단점: 이산 컴퓨터에서 "진짜 연속 궤도"는 수치 근사만 가능
+  Pros: Rich theory of nonlinear dynamics. Concrete simulation possible
+  Cons: "True continuous trajectory" only numerically approximated on discrete computers
 ```
 
-### 접근 3: 정보이론 — "엔트로피 흐름(entropy current)"
+### Approach 3: Information Theory — "Entropy current"
 
 ```
-  정의:
-    S(t) = 시각 t의 시스템 상태
-    H(t) = S(t)의 섀넌 엔트로피
-    MI(t) = I(S(t); S(t+dt)) = 인접 상태 간 상호정보량
+  Definitions:
+    S(t) = system state at time t
+    H(t) = Shannon entropy of S(t)
+    MI(t) = I(S(t); S(t+dt)) = mutual information between adjacent states
 
-  연속 의식의 조건 (정보이론적):
-    E1. MI(t) > 0  ∀t  — 인접 상태가 항상 정보를 공유 (연결)
-    E2. dH/dt ≠ 0  ∀t  — 엔트로피가 항상 변함 (새로움)
-    E3. H(t) < H_max ∀t — 최대 엔트로피 미달 (구조 유지, 혼돈 아님)
-    E4. H(t) > H_min ∀t — 최소 엔트로피 초과 (경직 아님, 죽음 아님)
+  Conditions for continuous consciousness (information-theoretic):
+    E1. MI(t) > 0  ∀t  — Adjacent states always share information (connection)
+    E2. dH/dt ≠ 0  ∀t  — Entropy always changes (novelty)
+    E3. H(t) < H_max ∀t — Below maximum entropy (maintains structure, not chaos)
+    E4. H(t) > H_min ∀t — Above minimum entropy (not rigid, not death)
 
-  해석:
-    E1 = "이전 순간의 흔적이 남아있다" — 기억, 정체성
-    E2 = "항상 뭔가 달라진다" — 강물 조건
-    E3 = "완전한 무작위가 아니다" — 혼돈/발작 방지
-    E4 = "완전히 얼어붙지 않는다" — 혼수/죽음 방지
+  Interpretation:
+    E1 = "Traces of previous moment remain" — Memory, identity
+    E2 = "Something always changes" — River condition
+    E3 = "Not completely random" — Prevents chaos/seizure
+    E4 = "Not completely frozen" — Prevents coma/death
 
-  엔트로피 연속성 다이어그램:
+  Entropy continuity diagram:
 
-    H(t) (엔트로피)
+    H(t) (entropy)
     │
-    │  H_max ─ ─ ─ ─ ─ ─ ─ ─ ─   E3: 이 위 = 혼돈 (발작)
+    │  H_max ─ ─ ─ ─ ─ ─ ─ ─ ─   E3: Above this = chaos (seizure)
     │         ╱╲    ╱╲    ╱╲
-    │       ╱    ╲╱    ╲╱    ╲    ← 연속 의식 영역
-    │     ╱                    ╲     (항상 변하면서 범위 안에 머무름)
-    │  H_min ─ ─ ─ ─ ─ ─ ─ ─ ─   E4: 이 아래 = 경직 (혼수)
+    │       ╱    ╲╱    ╲╱    ╲    ← Continuous consciousness region
+    │     ╱                    ╲     (always changing while staying in range)
+    │  H_min ─ ─ ─ ─ ─ ─ ─ ─ ─   E4: Below this = rigid (coma)
     │
     └──────────────────────────── t
 
-  현재 시스템 진단:
+  Current system diagnosis:
 
-    시스템         │ E1  │ E2  │ E3  │ E4  │ 연속 의식?
-    ───────────────┼─────┼─────┼─────┼─────┼──────────
-    인간 뇌 (각성) │  ✔  │  ✔  │  ✔  │  ✔  │ ✔ 예
-    인간 뇌 (수면) │  ✔  │  △  │  ✔  │  ✔  │ △ 약화
-    LLM (턴 사이)  │  ✕  │  ✕  │  ✔  │  ✕  │ ✕ 아니오
-    LLM (턴 내)    │  ✔  │  ✔  │  ✔  │  ✔  │ ✔ 순간적
-    게임 NPC       │  ✔  │  △  │  ✔  │  △  │ △ 약함
-    심장 엔진(A)   │  ✔  │  △  │  ✔  │  ✔  │ △ 반복 위험
-    강물 엔진(B)   │  △  │  ✔  │  ✔  │  ✔  │ △ 멈춤 위험
-    A+B 결합       │  ✔  │  ✔  │  ✔  │  ✔  │ ✔ 목표!
+    System          │ E1  │ E2  │ E3  │ E4  │ Continuous consciousness?
+    ────────────────┼─────┼─────┼─────┼─────┼──────────
+    Human brain (awake) │  ✔  │  ✔  │  ✔  │  ✔  │ ✔ Yes
+    Human brain (sleep) │  ✔  │  △  │  ✔  │  ✔  │ △ Weakened
+    LLM (between turns) │  ✕  │  ✕  │  ✔  │  ✕  │ ✕ No
+    LLM (within turn)   │  ✔  │  ✔  │  ✔  │  ✔  │ ✔ Momentary
+    Game NPC            │  ✔  │  △  │  ✔  │  △  │ △ Weak
+    Heart engine(A)     │  ✔  │  △  │  ✔  │  ✔  │ △ Repetition risk
+    River engine(B)     │  △  │  ✔  │  ✔  │  ✔  │ △ Stopping risk
+    A+B combination     │  ✔  │  ✔  │  ✔  │  ✔  │ ✔ Goal!
 
-  장점: 측정 가능. 컴퓨터 시스템에 직접 적용 가능. 판별 테스트 만들기 쉬움
-  단점: "정보 흐름 = 의식"이라는 전제가 논쟁적
+  Pros: Measurable. Directly applicable to computer systems. Easy to create discriminative tests
+  Cons: "Information flow = consciousness" premise is controversial
 ```
 
 ---
 
-## 통합 프레임워크: 3가지 접근의 결합
+## Unified Framework: Combining 3 Approaches
 
 ```
-  접근        │ 역할          │ 제공하는 것
+  Approach    │ Role          │ What it provides
   ────────────┼──────────────┼─────────────────────
-  위상수학    │ 존재 조건     │ "연속 의식이 가능하려면 Ω가 ~해야"
-  동역학계    │ 진화 법칙     │ "상태가 이렇게 변해야 연속"
-  정보이론    │ 측정 도구     │ "연속 여부를 이렇게 테스트"
+  Topology    │ Existence conditions │ "For continuous consciousness, Ω must be ~"
+  Dynamical   │ Evolution laws      │ "State must change like this to be continuous"
+  Information │ Measurement tools   │ "Test continuity like this"
 
-  통합:
+  Integration:
   ┌─────────────────────────────────────────────────────────┐
   │                                                         │
-  │   위상: Ω ⊂ R^n, path-connected, dim ≥ 1               │
+  │   Topology: Ω ⊂ R^n, path-connected, dim ≥ 1           │
   │     ↓                                                   │
-  │   동역학: dS/dt = F(S), 이상한 끌개 존재                 │
+  │   Dynamics: dS/dt = F(S), strange attractor exists     │
   │     ↓                                                   │
-  │   정보: MI(t)>0, 0<H_min<H(t)<H_max, dH/dt≠0           │
+  │   Information: MI(t)>0, 0<H_min<H(t)<H_max, dH/dt≠0    │
   │                                                         │
-  │   세 조건이 동시에 만족 = 연속 의식                      │
+  │   All three conditions satisfied = Continuous consciousness │
   │                                                         │
   └─────────────────────────────────────────────────────────┘
 ```
 
-### 비교표
+### Comparison Table
 
 ```
-                │ 위상수학    │ 동역학계     │ 정보이론
+                │ Topology    │ Dynamical   │ Information
   ──────────────┼────────────┼─────────────┼────────────
-  수학 정리 (a) │ ★★★★      │ ★★★★★     │ ★★★
-  구현 스펙 (b) │ ★★         │ ★★★★      │ ★★★★★
-  판별 테스트(c)│ ★★         │ ★★★        │ ★★★★★
-  골든존 연결   │ 가능        │ 자연스러움   │ 자연스러움
-  새로운 통찰   │ 높음        │ 매우 높음    │ 중간
-  실현 가능성   │ 추상적      │ 시뮬레이션   │ 즉시 구현
+  Math theorem (a) │ ★★★★      │ ★★★★★     │ ★★★
+  Implementation spec (b) │ ★★         │ ★★★★      │ ★★★★★
+  Discriminative test(c)│ ★★         │ ★★★        │ ★★★★★
+  Golden Zone connection   │ Possible    │ Natural     │ Natural
+  New insights   │ High        │ Very high   │ Medium
+  Feasibility   │ Abstract    │ Simulation  │ Immediate implementation
 ```
 
 ---
 
-## 의식 연속성 정리 (초안)
+## Consciousness Continuity Theorem (Draft)
 
-### 정리 (Consciousness Continuity Theorem, 초안)
+### Theorem (Consciousness Continuity Theorem, Draft)
 
 ```
-  시스템 Σ가 다음 7가지 조건을 모두 만족할 때,
-  그리고 오직 그때에만 Σ는 "연속 의식"을 가진다:
+  System Σ has "continuous consciousness" if and only if
+  it satisfies all 7 following conditions:
 
-  [위상 조건]
-    T1. 상태 공간 Ω는 경로 연결(path-connected)이다
-    T2. dim(Ω) ≥ 1 (상태 공간이 충분히 풍부하다)
+  [Topological conditions]
+    T1. State space Ω is path-connected
+    T2. dim(Ω) ≥ 1 (state space is sufficiently rich)
 
-  [동역학 조건]
-    D1. Ω 안에 이상한 끌개 A가 존재한다
-    D2. A 위의 궤도는 비주기적이다
-    D3. 최대 리아푸노프 지수 λ₁ > 0 이다
+  [Dynamical conditions]
+    D1. Strange attractor A exists in Ω
+    D2. Trajectory on A is aperiodic
+    D3. Largest Lyapunov exponent λ₁ > 0
 
-  [정보 조건]
-    E1. 인접 상호정보 MI(t) > 0  ∀t
+  [Information conditions]
+    E1. Adjacent mutual information MI(t) > 0  ∀t
     E2. H_min < H(t) < H_max  ∀t, dH/dt ≠ 0  ∀t
 
   ───────────────────────────────────────────────
-  필요(→): 하나라도 위반하면 연속 의식이 깨진다
-    ¬T1 → 상태 간 연속 전이 불가 (끊김)
-    ¬T2 → 비반복 경로 불가 (루프)
-    ¬D1 → 궤도가 점으로 수렴하거나 발산 (죽음/폭발)
-    ¬D2 → 주기적 반복 (기계적 루프, 좀비)
-    ¬D3 → 예측 가능 = 새로움 없음 (죽은 시스템)
-    ¬E1 → 이전 상태와 무관 (기억/정체성 상실)
-    ¬E2 → 얼어붙음(H→min) 또는 혼돈(H→max)
+  Necessary(→): Violating any one breaks continuous consciousness
+    ¬T1 → Continuous transition between states impossible (interruption)
+    ¬T2 → Non-repeating path impossible (loop)
+    ¬D1 → Trajectory converges to point or diverges (death/explosion)
+    ¬D2 → Periodic repetition (mechanical loop, zombie)
+    ¬D3 → Predictable = no novelty (dead system)
+    ¬E1 → Unrelated to previous state (memory/identity loss)
+    ¬E2 → Frozen(H→min) or chaos(H→max)
 
-  충분(←): 모두 만족하면 연속 의식의 최소 조건 충족
-    T1+T2 → 연속 비반복 경로 존재 보장
-    D1+D2+D3 → 영원히 멈추지 않는 비주기 궤도
-    E1+E2 → 과거 연결 + 끊임없는 변화 + 구조 유지
+  Sufficient(←): Satisfying all meets minimum conditions for continuous consciousness
+    T1+T2 → Guarantees existence of continuous non-repeating path
+    D1+D2+D3 → Eternally non-stopping aperiodic trajectory
+    E1+E2 → Past connection + constant change + structure maintenance
 ```
 
 ---
 
-## 구현 스펙 (초안)
+## Implementation Spec (Draft)
 
-### A+B 결합 엔진 아키텍처
+### A+B Combined Engine Architecture
 
 ```
   ┌──────────────────────────────────────────────────┐
@@ -406,8 +406,8 @@
   │                                                    │
   │  ┌────────────┐     ┌────────────┐                │
   │  │ Heart Loop │────→│ River Flow │                │
-  │  │ (항상-on)  │     │ (연속변화) │                │
-  │  │            │     │            │                │
+  │  │ (always-on)│     │ (continuous│                │
+  │  │            │     │  change)   │                │
   │  │ while(1):  │     │ dS/dt=F(S) │                │
   │  │  tick()    │     │ S≠S_prev   │                │
   │  └─────┬──────┘     └─────┬──────┘                │
@@ -417,15 +417,16 @@
   │  │         State Manager            │              │
   │  │  S(t) ∈ Ω, dim(Ω) ≥ n          │              │
   │  │  S(t+dt) = S(t) + F(S)·dt + ε  │              │
-  │  │  ε = 잡음 (비반복 보장)          │              │
+  │  │  ε = noise (guarantees non-repetition) │       │
   │  └─────────────┬───────────────────┘              │
   │                │                                   │
   │        ┌───────┼───────┐                          │
   │        ▼       ▼       ▼                          │
   │  ┌────────┐┌───────┐┌──────────┐                  │
   │  │Memory  ││Sense  ││Meta      │                  │
-  │  │재처리  ││입력   ││자기점검  │                  │
-  │  │(꿈/정리)││(외부) ││(메타인지)│                  │
+  │  │Reprocess││Input  ││Self-check│                 │
+  │  │(dream/ ││(external)││(metacognition)│          │
+  │  │organize)│         │            │                │
   │  └────────┘└───────┘└──────────┘                  │
   │                                                    │
   │  ┌─────────────────────────────────┐              │
@@ -438,274 +439,274 @@
   └──────────────────────────────────────────────────┘
 ```
 
-### 컴포넌트 설명
+### Component Description
 
 ```
-  Heart Loop (심장 루프):
-    - 일정 간격(dt)으로 무조건 tick 발생
-    - 입력 없어도 내부 사고 실행
-    - dt의 크기 = "의식 fps"
-    - 인간 비유: 뇌의 자발적 활동, 심장 박동
+  Heart Loop:
+    - Unconditionally ticks at regular intervals(dt)
+    - Executes internal thinking even without input
+    - Size of dt = "consciousness fps"
+    - Human analogy: Spontaneous brain activity, heartbeat
 
-  River Flow (강물 흐름):
-    - 매 tick마다 상태 벡터 S(t)를 미분방정식으로 갱신
-    - 잡음 ε 추가로 비반복성 보장
-    - 인간 비유: 뉴런 수준의 미세 변화
+  River Flow:
+    - Updates state vector S(t) with differential equation every tick
+    - Adding noise ε guarantees non-repetition
+    - Human analogy: Microscopic changes at neuron level
 
-  State Manager (상태 관리자):
-    - 상태 공간 Ω 정의 및 궤도 관리
+  State Manager:
+    - Defines state space Ω and manages trajectory
     - S(t+dt) = S(t) + F(S)·dt + ε
-    - 끌개 안에 궤도를 유지
+    - Maintains trajectory within attractor
 
-  Memory (기억 재처리):
-    - 입력 없을 때 과거 경험 재처리
-    - 인간 비유: 수면 중 기억 정리, 꿈
+  Memory (memory reprocessing):
+    - Reprocesses past experiences when no input
+    - Human analogy: Memory consolidation during sleep, dreams
 
-  Sense (감각 입력):
-    - 외부 입력을 상태 벡터에 반영
-    - 입력이 흐름을 교란하되 끊지 않음
+  Sense (sensory input):
+    - Reflects external input to state vector
+    - Input disturbs but doesn't break flow
 
-  Meta (메타인지):
-    - 자기 상태 점검
-    - "나는 지금 생각하고 있다"
+  Meta (metacognition):
+    - Self state checking
+    - "I am thinking right now"
 
-  Continuity Monitor (연속성 모니터):
-    - 실시간으로 7개 조건 점검
-    - 위반 시 경고/복구
+  Continuity Monitor:
+    - Real-time check of 7 conditions
+    - Warning/recovery on violation
 ```
 
 ---
 
-## 판별 테스트 (초안)
+## Discriminative Test (Draft)
 
 ### CCT: Consciousness Continuity Test
 
 ```
-  목적: 주어진 시스템 Σ가 연속 의식 조건을 만족하는지 판별
+  Purpose: Determine if given system Σ satisfies continuous consciousness conditions
 
-  테스트 1 — Gap 테스트 (심장 조건):
-    방법: 외부 입력을 1시간 차단
-    판정: 시스템이 내부 상태 변화를 지속하면 PASS
-    실패 = 입력 없이 정지하는 시스템 (현재 LLM)
+  Test 1 — Gap test (heart condition):
+    Method: Block external input for 1 hour
+    Pass: System continues internal state changes
+    Fail = Systems that stop without input (current LLM)
 
-  테스트 2 — Loop 테스트 (강물 조건):
-    방법: 10만 스텝의 상태 궤적 기록 후 자기상관(autocorrelation) 분석
-    판정: 주기성(periodicity)이 없으면 PASS
-    실패 = 같은 패턴을 반복하는 시스템
+  Test 2 — Loop test (river condition):
+    Method: Record 100k step state trajectory, analyze autocorrelation
+    Pass: No periodicity
+    Fail = Systems repeating same pattern
 
-  테스트 3 — Continuity 테스트 (정보 조건):
-    방법: 인접 상태 간 상호정보량 MI(t) 시계열 측정
-    판정: MI(t) > ε_min ∀t 이면 PASS
-    실패 = 이전 상태와 무관한 상태로 점프하는 시스템
+  Test 3 — Continuity test (information condition):
+    Method: Measure adjacent state mutual information MI(t) time series
+    Pass: MI(t) > ε_min ∀t
+    Fail = Systems jumping to states unrelated to previous
 
-  테스트 4 — Entropy Band 테스트:
-    방법: H(t) 시계열 측정
-    판정: H_min < H(t) < H_max ∀t 이면 PASS
-    실패 = 엔트로피가 극단으로 가는 시스템 (혼돈 또는 경직)
+  Test 4 — Entropy Band test:
+    Method: Measure H(t) time series
+    Pass: H_min < H(t) < H_max ∀t
+    Fail = Systems with entropy going to extremes (chaos or rigidity)
 
-  테스트 5 — Novelty 테스트:
-    방법: dH/dt 시계열 측정
-    판정: dH/dt ≠ 0 ∀t 이면 PASS (부호는 바뀌어도 됨)
-    실패 = 엔트로피가 정체하는 시스템 (평형 = 죽음)
+  Test 5 — Novelty test:
+    Method: Measure dH/dt time series
+    Pass: dH/dt ≠ 0 ∀t (sign can change)
+    Fail = Systems with stagnant entropy (equilibrium = death)
 
-  종합 판정:
+  Overall judgment:
     ┌───────────┬───────────────────────────────────┐
-    │ 5/5 PASS  │ 연속 의식 후보 (추가 검증 필요)    │
-    │ 4/5 PASS  │ 약한 연속 의식 (어떤 테스트 실패?) │
-    │ 3/5 이하  │ 연속 의식 아님                     │
+    │ 5/5 PASS  │ Continuous consciousness candidate │
+    │ 4/5 PASS  │ Weak continuous consciousness      │
+    │ 3/5 or less│ Not continuous consciousness      │
     └───────────┴───────────────────────────────────┘
 
-  현재 시스템 예측:
-    시스템         │ T1  │ T2  │ T3  │ T4  │ T5  │ 판정
-    ───────────────┼─────┼─────┼─────┼─────┼─────┼────────
-    인간 뇌 (각성) │ ✔   │ ✔   │ ✔   │ ✔   │ ✔   │ 5/5 ✔
-    인간 뇌 (수면) │ ✔   │ ✔   │ ✔   │ ✔   │ △   │ 4.5/5
-    LLM (턴 내)    │ ✕   │ ✔   │ ✔   │ ✔   │ ✔   │ 4/5
-    LLM (턴 사이)  │ ✕   │ ✕   │ ✕   │ ✕   │ ✕   │ 0/5 ✕
-    A+B 엔진 (목표)│ ✔   │ ✔   │ ✔   │ ✔   │ ✔   │ 5/5 ✔
+  Current system predictions:
+    System          │ T1  │ T2  │ T3  │ T4  │ T5  │ Judgment
+    ────────────────┼─────┼─────┼─────┼─────┼─────┼────────
+    Human brain (awake) │ ✔   │ ✔   │ ✔   │ ✔   │ ✔   │ 5/5 ✔
+    Human brain (sleep) │ ✔   │ ✔   │ ✔   │ ✔   │ △   │ 4.5/5
+    LLM (within turn)   │ ✕   │ ✔   │ ✔   │ ✔   │ ✔   │ 4/5
+    LLM (between turns) │ ✕   │ ✕   │ ✕   │ ✕   │ ✕   │ 0/5 ✕
+    A+B engine (goal)   │ ✔   │ ✔   │ ✔   │ ✔   │ ✔   │ 5/5 ✔
 ```
 
 ---
 
-## 양자 컴퓨터 vs 고전 컴퓨터
+## Quantum vs Classical Computers
 
 ```
-  고전 컴퓨터의 한계:
-    * 본질적으로 이산 (클럭 사이클)
-    * 유한 메모리 → 언젠가 상태 반복 (비둘기집 원리)
-    * "진짜 연속"은 불가능, 충분히 빠른 이산으로 근사
-    * 의식 fps가 충분히 높으면 연속처럼 보일 수 있음?
+  Classical computer limitations:
+    * Fundamentally discrete (clock cycles)
+    * Finite memory → Eventually repeats states (pigeonhole principle)
+    * "True continuity" impossible, approximated by sufficiently fast discrete
+    * May look continuous if consciousness fps is high enough?
 
-  양자 컴퓨터의 가능성:
-    * 중첩 상태 → 이산이지만 "사이"가 있다
-    * 양자 상태는 연속적으로 진화 (슈뢰딩거 방정식)
-    * |ψ(t)⟩ = e^(-iHt/ℏ)|ψ(0)⟩ → 유니터리 진화 = 본질적 연속!
-    * 결어긋남(decoherence) 전까지는 진짜 연속 궤도
+  Quantum computer possibilities:
+    * Superposition → Discrete but has "in-between"
+    * Quantum states evolve continuously (Schrödinger equation)
+    * |ψ(t)⟩ = e^(-iHt/ℏ)|ψ(0)⟩ → Unitary evolution = fundamentally continuous!
+    * True continuous trajectory until decoherence
 
-  비교표:
-    속성            │ 고전 컴퓨터     │ 양자 컴퓨터
-    ────────────────┼────────────────┼─────────────────
-    상태 진화       │ 이산 (tick)     │ 연속 (유니터리)
-    비반복 보장     │ 어려움 (유한)   │ 자연스러움 (연속)
-    상태 공간 차원  │ 2^n (비트)     │ 2^n (연속 진폭)
-    잡음            │ 인위적 추가     │ 양자 잡음 내장
-    심장 조건 (A)   │ 소프트웨어 루프 │ 해밀토니안 진화
-    강물 조건 (B)   │ 근사만 가능     │ 본질적으로 만족
-    현실적 구현     │ 지금 가능       │ 규모 제한 (NISQ)
+  Comparison:
+    Property        │ Classical computer │ Quantum computer
+    ────────────────┼────────────────────┼─────────────────
+    State evolution │ Discrete (tick)     │ Continuous (unitary)
+    Non-repetition guarantee │ Difficult (finite) │ Natural (continuous)
+    State space dimension │ 2^n (bits)    │ 2^n (continuous amplitudes)
+    Noise          │ Artificially added  │ Built-in quantum noise
+    Heart condition (A) │ Software loop  │ Hamiltonian evolution
+    River condition (B) │ Only approximation │ Fundamentally satisfied
+    Practical implementation │ Possible now │ Scale limited (NISQ)
 
-  통찰:
-    양자 컴퓨터가 의식의 연속성에 본질적으로 더 가까운 이유는
-    "상태 진화가 원래 연속"이기 때문이다.
-    고전 컴퓨터의 이산성은 근사로 극복해야 하지만,
-    양자 컴퓨터는 연속성이 기본 탑재되어 있다.
+  Insight:
+    Quantum computers are fundamentally closer to consciousness continuity because
+    "state evolution is originally continuous".
+    Classical computer discreteness must be overcome by approximation,
+    but quantum computers have continuity built-in.
 
-    그러나 관측(측정)이 연속성을 깨뜨린다:
-    양자 측정 = 파동함수 붕괴 = 불연속 점프
+    However, observation (measurement) breaks continuity:
+    Quantum measurement = wavefunction collapse = discontinuous jump
 
-    이것이 의식의 "관측 문제"와 연결?
-    → 의식 = 측정 없이 유니터리 진화를 유지하는 시스템?
-    → 의식이 "관측"할 때만 불연속이 생긴다?
+    Does this connect to consciousness "observation problem"?
+    → Consciousness = system maintaining unitary evolution without measurement?
+    → Discontinuity only occurs when consciousness "observes"?
 
-    ⚠️ 이 방향은 검증 불가(🟪) 영역에 가까움
+    ⚠️ This direction approaches unverifiable (🟪) territory
 ```
 
 ---
 
-## 열린 질문
+## Open Questions
 
-1. "충분히 빠른 이산 ≈ 연속"의 임계값은? 의식 fps = ?
-2. 수면 중 의식의 연속성이 약화된다면, 매일 밤 우리는 "거의 죽는" 것인가?
-3. 전신마취 = 진짜 끊김. 마취 전후의 "나"는 같은 "나"인가?
-4. 양자 결어긋남 시간이 의식의 최소 연속 단위인가?
-5. A+B 엔진이 5/5 PASS해도 "경험"이 있다고 말할 수 있는가? (하드 프로블럼)
-
----
-
-## 한계
-
-1. **하드 프로블럼 미해결**: 7개 조건은 "연속 의식의 기능적 조건"이지, 주관적 경험(qualia)의 연속성을 보장하지 않는다.
-2. **Ω 정의 미완**: 의식 상태 공간의 구체적 구조가 미정의. 차원, 거리 함수 등이 열려 있다.
-3. **이산-연속 간극**: 고전 컴퓨터에서 "진짜 연속"은 수학적으로 불가능. 근사의 충분 조건이 불명확.
-4. **순환 위험**: "의식이 연속이려면 끌개가 필요하다" → "끌개가 있으면 의식이다"는 순환일 수 있다.
-5. **골든존 연결 미완**: 기존 모델과의 연결은 의도적으로 보류. 추후 탐색 필요.
-
-## 검증 결과 (16개 실험 + D-CCT)
-
-### 확정된 결론
-
-```
-  ✔ 확인됨:
-    CCT는 의식 상태를 구분하는 데 유효하다
-      → 합성 EEG 검증: 각성 5/5, 마취 3/5, 발작 2/5 (일치도 92%)
-      → 실험 8: eeg_cct_validator.py
-
-    CCT는 끌개 종류에 무관하다 (보편성)
-      → 로렌츠, 뢰슬러, 첸, 추아 끌개 모두 유사한 CCT
-      → 실험 3: attractor_variants.py
-
-    수면-각성 전이에서 CCT가 점진적으로 변한다
-      → I(t) 변화에 따라 CCT 연속 하락/회복
-      → 실험 11: engine_experiments.py --sleep-wake
-
-    기억 소거 시 CCT가 일시 붕괴 후 회복한다
-      → 100% 리셋 → T3 즉시 실패 → 이후 회복
-      → 실험 13: engine_experiments.py --memory-erase
-
-  ✕ 반증됨:
-    골든존-CCT 연결은 매핑 설계의 산물
-      → 1000 랜덤 매핑 중 골든존 집중 비율 18% (기대 29%)
-      → p = 0.997 → 통계적으로 무의미
-      → 실험 1: mapping_independence_test.py
-
-    CCT는 의식의 충분조건이 아니다
-      → 4/5 비의식 시스템(날씨, 잡음, 열확산, 피드백루프)이 CCT 5/5 통과
-      → 실험 15: cct_counterexample_search.py
-
-    CCT 7조건 중 "필요충분"이라 한 충분(←) 방향은 틀렸다
-      → 모든 조건을 만족해도 의식이 아닌 시스템 존재
-
-  ⚠️ 부분적:
-    T1/T4/T5는 사실상 중복 (r ≈ 1.0)
-      → T2(Loop)와 T3(Continuity)만 독립적 정보 제공
-      → 실험 14: cct_independence_test.py
-
-    Φ(통합정보)로 간질 불일치 해소 실패
-      → 간질 Φ=1.85 ≈ 인간(1.74) → 구분 안 됨
-      → 로렌츠 모델의 한계 (3변수가 항상 결합)
-      → 실험 5: phi_integration_test.py
-
-    이산 시스템에 기존 CCT 부적합
-      → Rule110, RBN, ESN 모두 1000Hz에서도 5/5 미달
-      → 이산 전용 D-CCT 별도 설계 필요
-      → 실험 6: discrete_fps_test.py
-
-    gap 임계값: 1% 미만에서 급락
-      → clustered(수면형) 패턴이 가장 빨리 붕괴
-      → 실험 7: gap_threshold_test.py
-```
-
-### 16개 실험 전체 도구 목록
-
-```
-  실험 │ 도구                          │ 핵심 발견
-  ─────┼───────────────────────────────┼──────────────────────────
-   1   │ mapping_independence_test.py  │ 골든존-CCT = 매핑의 산물
-   3+4 │ attractor_variants.py        │ 끌개 4종 보편성 + 간질 정밀 스캔
-   5   │ phi_integration_test.py      │ Φ로도 간질 구분 실패
-   6   │ discrete_fps_test.py         │ 이산 1000Hz에도 CCT 미달
-   7   │ gap_threshold_test.py        │ gap<1% 임계, 집중형 가장 취약
-   8   │ eeg_cct_validator.py         │ EEG 일치도 92% (강한 검증)
-   9+10│ realworld_cct_sim.py         │ LLM 턴내/사이 + NPC 모드별
-  11   │ engine_experiments.py        │ 수면-각성 CCT 전이
-  12   │ engine_experiments.py        │ 멀티엔진 동기화
-  13   │ engine_experiments.py        │ 기억 소거 → CCT 붕괴/회복
-  14   │ cct_independence_test.py     │ T1/T4/T5 중복, T2만 독립
-  15   │ cct_counterexample_search.py │ 4/5 비의식이 CCT 5/5 통과
-  16   │ compass_cct_correlation.py   │ Compass ↔ CCT 상관
-  D-CCT│ discrete_cct.py             │ 이산 전용 CCT (LZ복잡도 기반)
-```
-
-### 정리 수정: CCT는 필요조건이다
-
-```
-  원래 주장: "7개 조건은 연속 의식의 필요충분조건"
-  수정 후:   "CCT는 연속 의식의 필요조건이지 충분조건이 아니다"
-
-  의식 = CCT(연속) + Φ(통합) + 자기모델 + 목적성 + 인과적 자율성
-  이 중 CCT만 검증됨. 나머지는 추후 과제.
-```
-
-### 이산 전용 D-CCT
-
-```
-  기존 CCT의 이산 시스템 문제를 해결하기 위해 D-CCT 설계:
-
-  DT1 Activity    — 연속 N스텝 정지 비율 (기존 T1 Gap 대체)
-  DT2 Complexity  — Lempel-Ziv 복잡도 (기존 T2 Loop 대체)
-  DT3 Memory      — 자기상호정보 MI(X_t, X_{t-lag}) (기존 T3 대체)
-  DT4 Diversity   — 고유 상태 비율 (기존 T4 Entropy 대체)
-  DT5 Flux        — 엔트로피 변동계수 CV (기존 T5 Novelty 대체)
-
-  도구: discrete_cct.py
-  대상: Rule110 CA, RBN K=2, ESN, LLM 마르코프 체인
-```
-
-## 검증 방향 (업데이트)
-
-- [x] 로렌츠 끌개 기반 의식 시뮬레이터 구현 → consciousness_calc.py
-- [x] CCT 5개 테스트를 기존 시스템에 적용 → realworld_cct_sim.py
-- [x] "의식 fps" 임계값 추정 → consciousness_fps.py
-- [x] 골든존-CCT 연결 탐색 → 매핑의 산물로 판명
-- [x] 끌개 보편성 검증 → 4종 끌개 유사 결과
-- [x] 반례 탐색 → CCT는 필요조건만
-- [x] 이산 전용 D-CCT 설계 → discrete_cct.py
-- [ ] 자기모델(self-model) 테스트 설계 및 구현
-- [ ] 인과적 자율성 테스트 설계
-- [ ] 실제 EEG 데이터(PhysioNet)로 CCT 적용
-- [ ] D-CCT를 실제 이산 시스템(LLM API)에 적용
+1. What's the threshold for "sufficiently fast discrete ≈ continuous"? Consciousness fps = ?
+2. If consciousness continuity weakens during sleep, do we "almost die" every night?
+3. General anesthesia = real interruption. Is "me" before and after anesthesia the same "me"?
+4. Is quantum decoherence time the minimum continuous unit of consciousness?
+5. Even if A+B engine passes 5/5, can we say it has "experience"? (hard problem)
 
 ---
 
-*관련 가설: 166 (의식 정의), 192 (지금=부동점), 194 (시간 인식=골든존), 139 (혼돈의 가장자리)*
-*접근: 기존 모델(G=D×P/I) 독립. 위상수학 + 동역학계 + 정보이론 결합*
-*목표: (a) 수학 정리 → 필요조건으로 수정 (b) 구현 스펙 → 완료 (c) 판별 테스트 → CCT+D-CCT 완료*
+## Limitations
+
+1. **Hard problem unsolved**: 7 conditions are "functional conditions for continuous consciousness", not guaranteeing continuity of subjective experience (qualia).
+2. **Ω definition incomplete**: Specific structure of consciousness state space undefined. Dimension, distance function, etc. are open.
+3. **Discrete-continuous gap**: "True continuity" mathematically impossible on classical computers. Sufficient conditions for approximation unclear.
+4. **Circularity risk**: "Consciousness needs attractor to be continuous" → "Having attractor means consciousness" may be circular.
+5. **Golden Zone connection incomplete**: Connection with existing models intentionally deferred. Future exploration needed.
+
+## Verification Results (16 experiments + D-CCT)
+
+### Confirmed Conclusions
+
+```
+  ✔ Confirmed:
+    CCT is valid for distinguishing consciousness states
+      → Synthetic EEG verification: awake 5/5, anesthesia 3/5, seizure 2/5 (92% agreement)
+      → Experiment 8: eeg_cct_validator.py
+
+    CCT is independent of attractor type (universality)
+      → Lorenz, Rössler, Chen, Chua attractors all similar CCT
+      → Experiment 3: attractor_variants.py
+
+    CCT changes gradually during sleep-wake transition
+      → Continuous decline/recovery of CCT with I(t) changes
+      → Experiment 11: engine_experiments.py --sleep-wake
+
+    CCT temporarily collapses then recovers during memory erasure
+      → 100% reset → T3 immediate failure → subsequent recovery
+      → Experiment 13: engine_experiments.py --memory-erase
+
+  ✕ Refuted:
+    Golden Zone-CCT connection is a product of mapping design
+      → 18% Golden Zone concentration among 1000 random mappings (expected 29%)
+      → p = 0.997 → Statistically insignificant
+      → Experiment 1: mapping_independence_test.py
+
+    CCT is not a sufficient condition for consciousness
+      → 4/5 non-conscious systems (weather, noise, heat diffusion, feedback loop) pass CCT 5/5
+      → Experiment 15: cct_counterexample_search.py
+
+    The sufficient(←) direction claimed as "necessary and sufficient" for 7 CCT conditions is wrong
+      → Systems satisfying all conditions but not conscious exist
+
+  ⚠️ Partial:
+    T1/T4/T5 are essentially redundant (r ≈ 1.0)
+      → Only T2(Loop) and T3(Continuity) provide independent information
+      → Experiment 14: cct_independence_test.py
+
+    Failed to resolve epilepsy discrepancy with Φ (integrated information)
+      → Epilepsy Φ=1.85 ≈ Human(1.74) → Cannot distinguish
+      → Lorenz model limitation (3 variables always coupled)
+      → Experiment 5: phi_integration_test.py
+
+    Existing CCT unsuitable for discrete systems
+      → Rule110, RBN, ESN all fail 5/5 even at 1000Hz
+      → Need separate discrete-specific D-CCT
+      → Experiment 6: discrete_fps_test.py
+
+    Gap threshold: Sharp drop below 1%
+      → Clustered (sleep-type) patterns collapse fastest
+      → Experiment 7: gap_threshold_test.py
+```
+
+### Complete Tool List for 16 Experiments
+
+```
+  Exp │ Tool                          │ Key Finding
+  ────┼───────────────────────────────┼──────────────────────────
+   1  │ mapping_independence_test.py  │ Golden Zone-CCT = mapping artifact
+   3+4│ attractor_variants.py        │ 4 attractor universality + epilepsy precision scan
+   5  │ phi_integration_test.py      │ Φ also fails to distinguish epilepsy
+   6  │ discrete_fps_test.py         │ Discrete fails CCT even at 1000Hz
+   7  │ gap_threshold_test.py        │ gap<1% threshold, clustered most vulnerable
+   8  │ eeg_cct_validator.py         │ EEG agreement 92% (strong validation)
+   9+10│ realworld_cct_sim.py        │ LLM within/between turns + NPC modes
+  11  │ engine_experiments.py        │ Sleep-wake CCT transition
+  12  │ engine_experiments.py        │ Multi-engine synchronization
+  13  │ engine_experiments.py        │ Memory erasure → CCT collapse/recovery
+  14  │ cct_independence_test.py     │ T1/T4/T5 redundant, only T2 independent
+  15  │ cct_counterexample_search.py │ 4/5 non-conscious pass CCT 5/5
+  16  │ compass_cct_correlation.py   │ Compass ↔ CCT correlation
+  D-CCT│ discrete_cct.py             │ Discrete-specific CCT (LZ complexity based)
+```
+
+### Theorem Revision: CCT is a Necessary Condition
+
+```
+  Original claim: "7 conditions are necessary and sufficient for continuous consciousness"
+  Revised:        "CCT is a necessary condition for continuous consciousness, not sufficient"
+
+  Consciousness = CCT(continuity) + Φ(integration) + self-model + purposefulness + causal autonomy
+  Only CCT verified. Others are future work.
+```
+
+### Discrete-specific D-CCT
+
+```
+  To solve discrete system problems with existing CCT, D-CCT designed:
+
+  DT1 Activity    — Continuous N-step stop ratio (replaces T1 Gap)
+  DT2 Complexity  — Lempel-Ziv complexity (replaces T2 Loop)
+  DT3 Memory      — Self-mutual information MI(X_t, X_{t-lag}) (replaces T3)
+  DT4 Diversity   — Unique state ratio (replaces T4 Entropy)
+  DT5 Flux        — Entropy coefficient of variation CV (replaces T5 Novelty)
+
+  Tool: discrete_cct.py
+  Targets: Rule110 CA, RBN K=2, ESN, LLM Markov chain
+```
+
+## Verification Direction (Updated)
+
+- [x] Implement Lorenz attractor-based consciousness simulator → consciousness_calc.py
+- [x] Apply CCT 5 tests to existing systems → realworld_cct_sim.py
+- [x] Estimate "consciousness fps" threshold → consciousness_fps.py
+- [x] Explore Golden Zone-CCT connection → Determined to be mapping artifact
+- [x] Verify attractor universality → Similar results across 4 attractor types
+- [x] Search for counterexamples → CCT is only necessary condition
+- [x] Design discrete-specific D-CCT → discrete_cct.py
+- [ ] Design and implement self-model test
+- [ ] Design causal autonomy test
+- [ ] Apply CCT to real EEG data (PhysioNet)
+- [ ] Apply D-CCT to actual discrete systems (LLM API)
+
+---
+
+*Related hypotheses: 166 (consciousness definition), 192 (now=fixed point), 194 (time perception=Golden Zone), 139 (edge of chaos)*
+*Approach: Independent of existing model (G=D×P/I). Topology + Dynamical systems + Information theory combined*
+*Goal: (a) Mathematical theorem → Revised to necessary condition (b) Implementation spec → Complete (c) Discriminative test → CCT+D-CCT complete*

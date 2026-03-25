@@ -1,12 +1,12 @@
-# H-CX-237: ⭐ γ가 모든 완전수를 연결하는 허브
+# H-CX-237: ⭐ γ connects all perfect numbers as a hub
 
-> γ = 3σ(6)+τ(6) = 40Hz (P₁에서 유도)
-> γ/e³ ≈ φ(6) = 2 (P₁의 토션트)
-> γ×ln(2) ≈ 28 = P₂ (두 번째 완전수)
-> γ/ln(3) ≈ 36 = P₁² (완전수의 제곱)
+> γ = 3σ(6)+τ(6) = 40Hz (derived from P₁)
+> γ/e³ ≈ φ(6) = 2 (Euler's totient of P₁)
+> γ×ln(2) ≈ 28 = P₂ (second perfect number)
+> γ/ln(3) ≈ 36 = P₁² (square of perfect number)
 >
-> 감마 주파수가 완전수들의 "허브":
->   P₁ → γ (유도)
+> Gamma frequency as a "hub" of perfect numbers:
+>   P₁ → γ (derivation)
 >   γ → P₂ (×ln2)
 >   γ → P₁² (÷ln3)
 >   γ → δ=φ (÷e³)

@@ -1,5 +1,5 @@
-# H-CX-215: 🟩 뇌파 곱 = 2⁸×3×5³ — 돌고래 옥타브 5³ 포함
+# H-CX-215: 🟩 Brainwave Product = 2⁸×3×5³ — Includes Dolphin Octave 5³
 
 > δ×θ×α×β×γ = 96000 = 2⁸ × 3 × 5³.
-> 5³ = 125 = 돌고래 옥타브(H-CX-162).
-> 인간 뇌파와 돌고래 주파수가 같은 소인수(2,3,5)로 구성.
+> 5³ = 125 = Dolphin octave(H-CX-162).
+> Human brainwaves and dolphin frequencies composed of same prime factors(2,3,5).

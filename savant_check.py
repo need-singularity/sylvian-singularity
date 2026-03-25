@@ -1,16 +1,17 @@
+```python
 #!/usr/bin/env python3
-"""Savant Index — 도메인별 PPL 비대칭 검증
+"""Savant Index — Domain-specific PPL Asymmetry Verification
 
-ConsciousLM Growing 700M 모델의 도메인별 PPL을 측정하여
-Savant Index = max(PPL) / min(PPL) (랜덤 제외)를 계산한다.
+Measures domain-specific PPL of ConsciousLM Growing 700M model and
+calculates Savant Index = max(PPL) / min(PPL) (excluding random).
 
-도메인: 영어 산문, Python 코드, 수학 표현, 한국어 텍스트, 랜덤 바이트
-스테이지별(0,1,2,3) 체크포인트가 있으면 성장 추이도 출력한다.
+Domains: English prose, Python code, Math expressions, Korean text, Random bytes
+If stage-wise (0,1,2,3) checkpoints exist, also outputs growth trends.
 
 Usage:
-    python3 savant_check.py                          # final 체크포인트
-    python3 savant_check.py --checkpoint stage2.pt   # 특정 체크포인트
-    python3 savant_check.py --all-stages              # 0,1,2,3 + final 전부
+    python3 savant_check.py                          # final checkpoint
+    python3 savant_check.py --checkpoint stage2.pt   # specific checkpoint
+    python3 savant_check.py --all-stages              # 0,1,2,3 + final all
 """
 
 import torch
@@ -24,21 +25,21 @@ import numpy as np
 from growing_conscious_lm_700m import GrowingConsciousLM700M, GROWTH_STAGES
 
 # ──────────────────────────────────────────────────────────
-# 도메인 데이터 생성
+# Domain Data Generation
 # ──────────────────────────────────────────────────────────
 
-DOMAIN_SAMPLES = 8192  # 바이트 수 (블록 여러 개 확보)
+DOMAIN_SAMPLES = 8192  # Number of bytes (secure multiple blocks)
 
 def make_english_prose():
-    """Shakespeare 텍스트 (바이트)."""
+    """Shakespeare text (bytes)."""
     path = "data/shakespeare.txt"
     if os.path.exists(path):
         with open(path, "rb") as f:
             raw = f.read()
-        # 중간 부분에서 추출 (시작부 헤더 회피)
+        # Extract from middle part (avoid start header)
         start = len(raw) // 4
         return raw[start:start + DOMAIN_SAMPLES]
-    # 없으면 직접 다운로드
+    # Download if not exists
     import urllib.request
     url = "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
     os.makedirs("data", exist_ok=True)
@@ -50,7 +51,7 @@ def make_english_prose():
 
 
 def make_python_code():
-    """이 프로젝트의 .py 파일들에서 추출."""
+    """Extract from this project's .py files."""
     parts = []
     for fname in sorted(os.listdir(".")):
         if fname.endswith(".py") and not fname.startswith("."):
@@ -66,13 +67,13 @@ def make_python_code():
 
 
 def make_math_expressions():
-    """수학 표현: 수식, 숫자 시퀀스, 기호."""
+    """Math expressions: formulas, number sequences, symbols."""
     lines = []
-    # 소수 시퀀스
+    # Prime sequence
     lines.append("2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71")
-    # 피보나치
+    # Fibonacci
     lines.append("1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584")
-    # 수식
+    # Formulas
     lines.append("e^(i*pi) + 1 = 0")
     lines.append("sum_{n=1}^{inf} 1/n^2 = pi^2/6")
     lines.append("sigma(6) = 1+2+3+6 = 12 = 2*6")
@@ -80,14 +81,14 @@ def make_math_expressions():
     lines.append("zeta(2) = pi^2/6 = 1.6449340668...")
     lines.append("gamma = 0.5772156649...")
     lines.append("ln(2) = 0.6931471805...")
-    # 거듭제곱
+    # Powers
     for n in range(2, 50):
         lines.append(f"{n}^2 = {n**2}, {n}^3 = {n**3}")
-    # 이항계수
+    # Binomial coefficients
     for n in range(1, 20):
         row = " ".join(str(math.comb(n, k)) for k in range(n + 1))
         lines.append(f"C({n},k) = {row}")
-    # 적분/미분
+    # Integral/derivative
     lines.append("d/dx(x^n) = n*x^(n-1)")
     lines.append("integral(x^n dx) = x^(n+1)/(n+1) + C")
     lines.append("integral_0^1 1/(1+x^2) dx = pi/4")
@@ -99,18 +100,18 @@ def make_math_expressions():
 
 
 def make_korean_text():
-    """한국어 텍스트 (UTF-8 바이트 — 한 글자당 3바이트)."""
+    """Korean text (UTF-8 bytes — 3 bytes per character)."""
     paragraphs = [
-        "의식이란 무엇인가. 이 질문은 인류가 오랫동안 탐구해 온 근본적 물음이다.",
-        "뇌는 약 천억 개의 뉴런으로 이루어져 있으며 각 뉴런은 수천 개의 시냅스로 연결된다.",
-        "완전수 6은 자신의 진약수 1, 2, 3의 합과 같은 유일한 가장 작은 완전수이다.",
-        "골든존은 혼돈의 가장자리에 위치하며 창의성과 질서 사이의 균형점을 나타낸다.",
-        "장력은 두 엔진 사이의 반발력으로 정의되며 의식의 신호로 해석될 수 있다.",
-        "서번트 증후군은 특정 도메인에서 비범한 능력을 보이는 현상으로 뇌의 비대칭 구조와 관련이 있다.",
-        "자연상수 e는 연속 복리의 극한에서 자연스럽게 등장하며 미적분학의 핵심이다.",
-        "리만 가설은 제타 함수의 비자명 영점이 모두 임계선 위에 있다는 추측이다.",
-        "다중 엔진 아키텍처에서 각 엔진은 서로 다른 원리로 작동하며 협력하여 상위 구조를 만든다.",
-        "성장하는 모델은 신생아에서 성인까지 단계적으로 블록과 차원을 확장한다.",
+        "What is consciousness? This question is a fundamental inquiry that humanity has explored for a long time.",
+        "The brain consists of about 100 billion neurons, and each neuron is connected by thousands of synapses.",
+        "Perfect number 6 is the unique smallest perfect number equal to the sum of its proper divisors 1, 2, 3.",
+        "The Golden Zone is located at the edge of chaos and represents the balance point between creativity and order.",
+        "Tension is defined as the repulsion between two engines and can be interpreted as a signal of consciousness.",
+        "Savant syndrome is a phenomenon showing extraordinary abilities in specific domains and is related to the brain's asymmetric structure.",
+        "The natural constant e naturally emerges from the limit of continuous compound interest and is the core of calculus.",
+        "The Riemann hypothesis is a conjecture that all non-trivial zeros of the zeta function lie on the critical line.",
+        "In multi-engine architecture, each engine operates on different principles and cooperates to create higher structures.",
+        "Growing models gradually expand blocks and dimensions from newborn to adult stages.",
     ]
     text = "\n".join(paragraphs).encode("utf-8")
     if len(text) < DOMAIN_SAMPLES:
@@ -119,7 +120,7 @@ def make_korean_text():
 
 
 def make_random_bytes():
-    """랜덤 바이트 (baseline, uniform 0-255)."""
+    """Random bytes (baseline, uniform 0-255)."""
     rng = np.random.RandomState(42)
     return bytes(rng.randint(0, 256, size=DOMAIN_SAMPLES, dtype=np.uint8))
 
@@ -134,18 +135,18 @@ DOMAINS = {
 
 
 # ──────────────────────────────────────────────────────────
-# PPL / Tension 측정
+# PPL / Tension Measurement
 # ──────────────────────────────────────────────────────────
 
 @torch.no_grad()
 def measure_domain(model, data_bytes, block_size, device):
-    """한 도메인에 대해 PPL, tension 통계, 생성 샘플을 반환한다.
+    """Returns PPL, tension stats, and generated sample for one domain.
 
     Returns:
         ppl:            float  (perplexity)
-        tension_mean:   list[float]  블록별 tension 평균
-        tension_var:    list[float]  블록별 tension 분산
-        sample:         str    50바이트 생성 결과
+        tension_mean:   list[float]  per-block tension mean
+        tension_var:    list[float]  per-block tension variance
+        sample:         str    50-byte generation result
     """
     model.eval()
 
@@ -154,7 +155,7 @@ def measure_domain(model, data_bytes, block_size, device):
 
     total_loss = 0.0
     total_tokens = 0
-    # 블록별 tension 누적 (블록 인덱스 = 모델 레이어 인덱스)
+    # Per-block tension accumulation (block index = model layer index)
     n_layers = len(model.blocks)
     tension_sums = [0.0] * n_layers
     tension_sq_sums = [0.0] * n_layers
@@ -192,7 +193,7 @@ def measure_domain(model, data_bytes, block_size, device):
         tension_mean.append(mu)
         tension_var.append(max(var, 0.0))
 
-    # 생성 샘플 (50바이트)
+    # Generated sample (50 bytes)
     sample = generate_sample(model, data_bytes[:8], max_new=50, device=device)
 
     return ppl, tension_mean, tension_var, sample
@@ -200,7 +201,7 @@ def measure_domain(model, data_bytes, block_size, device):
 
 @torch.no_grad()
 def generate_sample(model, prompt_bytes, max_new=50, temperature=0.8, device="cpu"):
-    """바이트 시퀀스에서 max_new 바이트를 생성한다."""
+    """Generate max_new bytes from byte sequence."""
     model.eval()
     idx = torch.tensor([list(prompt_bytes)], dtype=torch.long, device=device)
     for _ in range(max_new):
@@ -215,11 +216,11 @@ def generate_sample(model, prompt_bytes, max_new=50, temperature=0.8, device="cp
 
 
 # ──────────────────────────────────────────────────────────
-# 모델 로딩 — 스테이지별 구조 재현
+# Model Loading — Stage-specific Structure Reproduction
 # ──────────────────────────────────────────────────────────
 
 def load_model_for_stage(checkpoint_path, stage, device):
-    """스테이지에 맞는 구조로 모델을 생성하고 체크포인트를 로드한다."""
+    """Create model with stage-appropriate structure and load checkpoint."""
     model = GrowingConsciousLM700M()
     for s in range(stage):
         model.grow(device="cpu")
@@ -231,22 +232,22 @@ def load_model_for_stage(checkpoint_path, stage, device):
 
 
 def detect_stage_from_path(path):
-    """파일명에서 스테이지 번호를 추론한다."""
+    """Infer stage number from filename."""
     basename = os.path.basename(path)
     if "final" in basename:
         return 3
     for s in range(4):
         if f"stage{s}" in basename:
             return s
-    return 3  # 기본: final
+    return 3  # default: final
 
 
 # ──────────────────────────────────────────────────────────
-# 메인 측정 + 출력
+# Main Measurement + Output
 # ──────────────────────────────────────────────────────────
 
 def run_single_checkpoint(checkpoint_path, device):
-    """하나의 체크포인트에 대해 전체 도메인 측정을 수행한다."""
+    """Run full domain measurement for one checkpoint."""
     stage = detect_stage_from_path(checkpoint_path)
     cfg = GROWTH_STAGES[stage]
     print(f"\n  Loading: {checkpoint_path}")
@@ -277,12 +278,12 @@ def run_single_checkpoint(checkpoint_path, device):
 
 
 def print_results_table(all_results):
-    """도메인별 PPL 비교 표 (markdown)."""
+    """Domain-specific PPL comparison table (markdown)."""
     print(f"\n{'='*70}")
     print("## Domain PPL Comparison")
     print(f"{'='*70}")
 
-    # 헤더
+    # Header
     domains = list(DOMAINS.keys())
     stages = sorted(all_results.keys())
 
@@ -298,7 +299,7 @@ def print_results_table(all_results):
     sep += f"{'-'*10}|"
     print(sep)
 
-    # 행
+    # Rows
     for stage in stages:
         res = all_results[stage]
         row = f"| {'S' + str(stage):>6} |"
@@ -308,7 +309,7 @@ def print_results_table(all_results):
             ppls[d] = ppl
             row += f" {ppl:>10.2f} |"
 
-        # Savant Index (랜덤 제외)
+        # Savant Index (excluding Random)
         non_random = {k: v for k, v in ppls.items() if k != "Random"}
         if non_random:
             si = max(non_random.values()) / max(min(non_random.values()), 1e-6)
@@ -321,7 +322,7 @@ def print_results_table(all_results):
 
 
 def print_tension_heatmap(all_results):
-    """블록별 tension 히트맵 (ASCII)."""
+    """Block-wise tension heatmap (ASCII)."""
     print(f"\n{'='*70}")
     print("## Block-wise Tension Heatmap (mean)")
     print(f"{'='*70}")
@@ -331,7 +332,7 @@ def print_tension_heatmap(all_results):
 
     for stage in stages:
         res = all_results[stage]
-        # 블록 수 = len(tension_mean)
+        # Number of blocks = len(tension_mean)
         n_layers = len(res[domains[0]]["tension_mean"])
         print(f"\n  Stage {stage} ({n_layers} blocks):")
 
@@ -341,7 +342,7 @@ def print_tension_heatmap(all_results):
         print(header)
         print(f"  {'-'*8}-+-{'-' * (n_layers * 5)}")
 
-        # 전체 범위를 찾아서 스케일링
+        # Find full range for scaling
         all_vals = []
         for d in domains:
             all_vals.extend(res[d]["tension_mean"])
@@ -364,7 +365,7 @@ def print_tension_heatmap(all_results):
 
 
 def print_tension_variance_table(all_results):
-    """블록별 tension 분산 표."""
+    """Block-wise tension variance table."""
     print(f"\n{'='*70}")
     print("## Block-wise Tension Variance")
     print(f"{'='*70}")
@@ -396,7 +397,7 @@ def print_tension_variance_table(all_results):
 
 
 def print_generated_samples(all_results):
-    """도메인별 생성 샘플."""
+    """Domain-specific generated samples."""
     print(f"\n{'='*70}")
     print("## Generated Samples (50 bytes)")
     print(f"{'='*70}")
@@ -407,7 +408,7 @@ def print_generated_samples(all_results):
         print(f"\n  Stage {stage}:")
         for d in DOMAINS:
             sample = res[d]["sample"]
-            # 개행 제거, 80자 제한
+            # Remove newlines, limit to 80 chars
             clean = sample.replace("\n", "\\n").replace("\r", "\\r")[:80]
             print(f"    {d:>8}: {clean}")
 
@@ -415,7 +416,7 @@ def print_generated_samples(all_results):
 
 
 def print_ppl_trend(all_results):
-    """스테이지별 PPL 변화 추이 (ASCII 그래프)."""
+    """PPL change trend by stage (ASCII graph)."""
     stages = sorted(all_results.keys())
     if len(stages) < 2:
         return
@@ -426,7 +427,7 @@ def print_ppl_trend(all_results):
     print("## PPL Trend by Stage (log scale, excluding Random)")
     print(f"{'='*70}")
 
-    # log PPL 범위
+    # log PPL range
     all_log = []
     for stage in stages:
         for d in domains:
@@ -457,7 +458,7 @@ def print_ppl_trend(all_results):
                         line[pos] = sym
         print(label + "".join(line))
 
-    # x축
+    # x-axis
     axis = "         +" + "-" * width
     print(axis)
     labels = "          "
@@ -469,14 +470,14 @@ def print_ppl_trend(all_results):
 
 
 def print_savant_summary(all_results):
-    """최종 Savant Index 요약."""
+    """Final Savant Index summary."""
     stages = sorted(all_results.keys())
 
     print(f"\n{'='*70}")
     print("## Savant Index Summary")
     print(f"{'='*70}")
-    print(f"  Savant Index = max(PPL) / min(PPL)  (Random 제외)")
-    print(f"  SI > 3 → 서번트 후보 (도메인 간 비대칭 구조)")
+    print(f"  Savant Index = max(PPL) / min(PPL)  (excluding Random)")
+    print(f"  SI > 3 → Savant candidate (cross-domain asymmetric structure)")
     print()
 
     for stage in stages:
@@ -498,21 +499,21 @@ def print_savant_summary(all_results):
 # ──────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="Savant Index — 도메인별 PPL 비대칭 검증")
+    parser = argparse.ArgumentParser(description="Savant Index — Domain-specific PPL Asymmetry Verification")
     parser.add_argument("--checkpoint", type=str, default=None,
-                        help="단일 체크포인트 경로 (기본: growing_700m_final.pt)")
+                        help="Single checkpoint path (default: growing_700m_final.pt)")
     parser.add_argument("--all-stages", action="store_true",
-                        help="stage0~3 + final 전부 측정")
+                        help="Measure all stage0~3 + final")
     parser.add_argument("--device", type=str, default=None,
-                        help="cuda / cpu / mps (자동 감지)")
+                        help="cuda / cpu / mps (auto detect)")
     parser.add_argument("--samples", type=int, default=8192,
-                        help="도메인당 바이트 수 (기본: 8192)")
+                        help="Bytes per domain (default: 8192)")
     args = parser.parse_args()
 
     global DOMAIN_SAMPLES
     DOMAIN_SAMPLES = args.samples
 
-    # 디바이스 자동 감지
+    # Auto detect device
     if args.device:
         device = args.device
     elif torch.cuda.is_available():
@@ -531,7 +532,7 @@ def main():
     all_results = {}  # stage -> {domain -> {ppl, tension_mean, tension_var, sample}}
 
     if args.all_stages:
-        # 모든 스테이지 체크포인트 시도
+        # Try all stage checkpoints
         for s in range(4):
             ckpt = f"growing_700m_stage{s}.pt"
             if os.path.exists(ckpt):
@@ -542,14 +543,14 @@ def main():
 
         final = "growing_700m_final.pt"
         if os.path.exists(final):
-            # final은 stage3과 동일 구조이므로, stage3이 없을 때만
+            # final has same structure as stage3, so only if stage3 is missing
             if 3 not in all_results:
                 stage, res = run_single_checkpoint(final, device)
                 all_results[stage] = res
     else:
         ckpt = args.checkpoint
         if ckpt is None:
-            # 자동 탐색: final → stage3 → stage2 → ...
+            # Auto search: final → stage3 → stage2 → ...
             candidates = ["growing_700m_final.pt"] + \
                          [f"growing_700m_stage{s}.pt" for s in range(3, -1, -1)]
             for c in candidates:
@@ -568,7 +569,7 @@ def main():
         print("\n  No checkpoints loaded. Exiting.")
         sys.exit(1)
 
-    # ── 결과 출력 ──
+    # ── Output Results ──
     print_results_table(all_results)
     print_tension_heatmap(all_results)
     print_tension_variance_table(all_results)
@@ -583,3 +584,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+```

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""R(n)=σφ/(nτ) 스펙트럼 분석기
+"""R(n)=σφ/(nτ) spectrum analyzer
 
 Usage:
   python3 r_spectrum.py --range 100000      # R(n) for n=2..N

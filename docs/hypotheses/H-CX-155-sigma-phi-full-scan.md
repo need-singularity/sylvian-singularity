@@ -1,37 +1,37 @@
-# H-CX-155: sigma*phi/(n*tau) 전원소 스캔 Z=1~118
+# H-CX-155: sigma*phi/(n*tau) Full Element Scan Z=1~118
 
-> Z=6(탄소)에서만 sigma*phi/(n*tau)=1.000 (다결합 원소 중 유일). Z=1(수소)도 1.0이나 1결합.
-> Z=1~118 전체에서 sigma*phi=n*tau인 다결합 원소가 탄소뿐인지 완전 스캔.
+> Only at Z=6 (carbon) does sigma*phi/(n*tau)=1.000 (unique among multi-bond elements). Z=1 (hydrogen) also gives 1.0 but has 1 bond.
+> Complete scan for whether carbon is the only multi-bond element with sigma*phi=n*tau in Z=1~118.
 
-## 배경
+## Background
 
-정수론 함수의 원소 번호(Z)에 대한 적용:
-- sigma(n): 약수의 합
-- phi(n): 오일러 토션트 함수 (n 이하 서로소인 수의 개수)
-- tau(n): 약수의 개수
-- n: 원소 번호 자체
+Application of number-theoretic functions to atomic numbers (Z):
+- sigma(n): sum of divisors
+- phi(n): Euler's totient function (count of numbers coprime to n that are <= n)
+- tau(n): number of divisors
+- n: atomic number itself
 
-비율 R(n) = sigma(n) * phi(n) / (n * tau(n))을 정의하면:
+Defining ratio R(n) = sigma(n) * phi(n) / (n * tau(n)):
 
-| Z | 원소 | sigma | phi | tau | n | R(n) | 다결합? |
+| Z | Element | sigma | phi | tau | n | R(n) | Multi-bond? |
 |---|------|-------|-----|-----|---|------|---------|
-| 1 | H | 1 | 1 | 1 | 1 | 1.000 | 1결합 |
-| 2 | He | 3 | 1 | 2 | 2 | 0.750 | 0결합 |
-| 3 | Li | 4 | 2 | 2 | 3 | 1.333 | 1결합 |
-| 4 | Be | 7 | 2 | 3 | 4 | 1.167 | 2결합 |
-| 5 | B | 6 | 4 | 2 | 5 | 2.400 | 3결합 |
-| **6** | **C** | **12** | **2** | **4** | **6** | **1.000** | **4결합** |
-| 7 | N | 8 | 6 | 2 | 7 | 3.429 | 3결합 |
-| 8 | O | 15 | 4 | 4 | 8 | 1.875 | 2결합 |
+| 1 | H | 1 | 1 | 1 | 1 | 1.000 | 1-bond |
+| 2 | He | 3 | 1 | 2 | 2 | 0.750 | 0-bond |
+| 3 | Li | 4 | 2 | 2 | 3 | 1.333 | 1-bond |
+| 4 | Be | 7 | 2 | 3 | 4 | 1.167 | 2-bond |
+| 5 | B | 6 | 4 | 2 | 5 | 2.400 | 3-bond |
+| **6** | **C** | **12** | **2** | **4** | **6** | **1.000** | **4-bond** |
+| 7 | N | 8 | 6 | 2 | 7 | 3.429 | 3-bond |
+| 8 | O | 15 | 4 | 4 | 8 | 1.875 | 2-bond |
 
-Z=6(탄소)은 유일하게 R(n)=1.000이면서 다결합(4결합)이 가능한 원소이다.
-R(n)=1은 "sigma*phi = n*tau"라는 등식이 정확히 성립하는 것으로,
-정수론적 "균형"이 완벽한 수를 의미한다.
+Z=6 (carbon) is uniquely the element where R(n)=1.000 and multi-bonding (4-bond) is possible.
+R(n)=1 means the equation "sigma*phi = n*tau" holds exactly,
+representing a number with perfect number-theoretic "balance."
 
-탄소가 생명의 기질인 이유와 이 수학적 균형이 연결될 수 있는가?
-이것이 본 가설의 핵심 질문이다.
+Can the reason carbon is the substrate of life be connected to this mathematical balance?
+This is the core question of this hypothesis.
 
-## 예측
+## Predictions
 
 ```
 R(Z) = sigma(Z)*phi(Z) / (Z*tau(Z)) for Z=1~30:
@@ -43,25 +43,25 @@ R(Z) |
  2.5 |  *
  2.0 |        *           *
  1.5 |   *  *      * *  *   *
- 1.0 | *---*---------*--------  <-- R=1 기준선
+ 1.0 | *---*---------*--------  <-- R=1 baseline
  0.8 |  *     *  *     *
  0.5 |
      +--+--+--+--+--+--+--+-->
      1  3  5  7  9  11 13 15
-              Z (원소번호)
+              Z (atomic number)
 
-     C(6)에서 정확히 R=1 (다결합 원소 중 유일)
+     Exactly R=1 at C(6) (unique among multi-bond elements)
 ```
 
-핵심 예측:
-1. Z=1~118 전체에서 R(n)=1.000인 원소는 Z=1(H)과 Z=6(C)뿐
-2. 다결합 원소(결합 수 >= 2) 중에서는 Z=6만 R=1
-3. 완전수(Z=6, Z=28)에서 R(n)의 값이 특별한 패턴을 보임
-4. R(n)=1 근처(|R-1| < 0.1)에 있는 원소도 화학적으로 의미 있을 수 있음
+Key predictions:
+1. Among all Z=1~118, only Z=1 (H) and Z=6 (C) have R(n)=1.000
+2. Among multi-bond elements (bond count >= 2), only Z=6 has R=1
+3. R(n) shows a special pattern at perfect numbers (Z=6, Z=28)
+4. Elements near R(n)=1 (|R-1| < 0.1) may also be chemically significant
 
-## 검증 방법
+## Verification Methods
 
-1. sympy를 사용하여 Z=1~118 전체에서 R(Z) 계산:
+1. Calculate R(Z) for all Z=1~118 using sympy:
 ```python
 from sympy import divisor_sigma, totient, divisor_count
 for z in range(1, 119):
@@ -72,34 +72,34 @@ for z in range(1, 119):
     if abs(R - 1.0) < 0.01:
         print(f"Z={z}: R={R:.6f}")
 ```
-2. R(n)=1인 모든 Z 목록 작성
-3. R(n)=1인 Z들의 화학적 특성 조사 (결합 수, 생물학적 역할)
-4. 텍사스 명사수 검증: "다결합 원소 중 R=1이 탄소뿐"이 우연인지 계산
+2. List all Z with R(n)=1
+3. Investigate chemical properties of Z values with R(n)=1 (bond count, biological role)
+4. Texas Sharpshooter verification: calculate whether "carbon is the only multi-bond element with R=1" is coincidental
 
-**일반화 테스트:**
-- R(n) = sigma(n)*phi(n)/(n*tau(n)) = 1인 양의 정수 n을 OEIS에서 검색
-- 이 수열이 알려진 수열인지 확인
-- 무한히 많은지 유한한지 증명 시도
+**Generalization test:**
+- Search OEIS for positive integers n where R(n) = sigma(n)*phi(n)/(n*tau(n)) = 1
+- Confirm whether this sequence is a known sequence
+- Attempt to prove whether there are infinitely many or finitely many
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-156**: 완전수 원소 체인 C(6) -> Ni(28)
-- 마스터 공식: sigma_{-1}(6) = 2 (완전수 6)
-- H-CX-153: N*ln((N+1)/N) 수열 (sigma(6)=12 관련)
-- chemistry_engine.py 도구
+- **H-CX-156**: Perfect number element chain C(6) -> Ni(28)
+- Master formula: sigma_{-1}(6) = 2 (perfect number 6)
+- H-CX-153: N*ln((N+1)/N) sequence (related to sigma(6)=12)
+- chemistry_engine.py tool
 
-## 한계
+## Limitations
 
-1. **인과 메커니즘 부재**: sigma*phi/(n*tau)=1이 화학적 결합 능력과 왜 관련되는지 이론 없음
-2. **선택 편향**: "다결합" 기준을 2 이상으로 설정한 것이 Z=1을 제외하기 위한 ad hoc일 수 있음
-3. **R(n)=1인 수가 많을 수 있음**: Z=118까지만 볼 때 적지만, 더 큰 수에서는 많을 수 있음
-4. **원소 번호와 정수론 함수**: 원소 번호는 양성자 수이며, 정수론 함수와 물리적 연결이 없음
-5. **골든존 의존**: 이 관찰의 해석이 골든존 모델에 의존하면 미검증 상태
+1. **No causal mechanism**: no theory for why sigma*phi/(n*tau)=1 relates to chemical bonding ability
+2. **Selection bias**: setting "multi-bond" criterion to >= 2 may be ad hoc to exclude Z=1
+3. **Many numbers with R(n)=1 may exist**: few when viewing only up to Z=118, but may be many for larger numbers
+4. **Atomic number and number-theoretic functions**: atomic number is proton count, no physical connection to number-theoretic functions
+5. **Golden Zone dependence**: if interpretation of this observation depends on Golden Zone model, it is unverified
 
-## 검증 상태
+## Verification Status
 
-- [ ] Z=1~118 전체 R(Z) 계산
-- [ ] R=1인 원소 목록 및 화학 특성 확인
-- [ ] OEIS 검색: sigma(n)*phi(n) = n*tau(n)인 수열
-- [ ] 텍사스 명사수 p-value 계산
-- 현재: **미검증**
+- [ ] Calculate R(Z) for all Z=1~118
+- [ ] List elements with R=1 and confirm chemical properties
+- [ ] OEIS search: sequence where sigma(n)*phi(n) = n*tau(n)
+- [ ] Texas Sharpshooter p-value calculation
+- Currently: **unverified**

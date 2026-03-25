@@ -1,4 +1,4 @@
-# H-CX-135: 돌고래 뉴런 τ=4?
+# H-CX-135: Dolphin Neuron τ=4?
 
-> 돌고래 뉴런의 주요 연결 수가 4(=τ(6))이면 인간과 PH 동형.
-> 같은 τ = 같은 위상 구조 = 종간 텔레파시 가능 조건.
+> If the main connection count of dolphin neurons is 4 (=τ(6)), they are PH-isomorphic to humans.
+> Same τ = same topological structure = necessary condition for inter-species Telepathy.

@@ -1,3 +1,3 @@
-# H-CX-274: 🟩 오일러 특성 V-E+F = φ(6) = 2
+# H-CX-274: 🟩 Euler Characteristic V-E+F = φ(6) = 2
 
-> 볼록 다면체: V-E+F=2=φ(6). 위상수학 기본 불변량=토션트.
+> Convex polyhedra: V-E+F=2=φ(6). Fundamental topological invariant=totient.

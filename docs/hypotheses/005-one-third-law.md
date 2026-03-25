@@ -1,81 +1,81 @@
-# 가설 검토 005: 1/3 법칙 — 파라미터 공간의 구조적 상수
+# Hypothesis Review 005: The 1/3 Law — Structural Constant of Parameter Space
 
-## 가설
+## Hypothesis
 
-> 파라미터 공간의 약 33.2%가 특이점 영역이라는 비율은 표본 크기에 무관한 구조적 상수이며, 이는 Donoho-Tanner 위상 전이의 임계 측정 비율과 동일한 기원을 가진다.
+> The approximately 33.2% of parameter space that constitutes the singularity region is a structural constant independent of sample size, and shares the same origin as the critical measurement ratio of the Donoho-Tanner phase transition.
 
-## 실측 데이터
-
-```
-  조합 수       모집단       특이점 비율
-  ─────────    ─────────    ──────────
-     8,000      50,000      33.7%
-    97,336     100,000      33.5%
- 1,000,000     200,000      33.2%
-                            → 수렴
-```
-
-**해상도를 125배 높여도 비율이 0.5% 이내로 수렴.** 이것은 샘플링 효과가 아닌 구조적 성질.
-
-## 1/3이 등장하는 수학적 맥락
-
-### Donoho-Tanner 위상 전이
+## Measured Data
 
 ```
-  압축 센싱에서 m개 측정으로 n차원 k-sparse 신호 복원:
+  Combinations     Population     Singularity ratio
+  ─────────────    ─────────────  ──────────────────
+       8,000          50,000        33.7%
+      97,336         100,000        33.5%
+   1,000,000         200,000        33.2%
+                                    → converging
+```
+
+**Even when resolution is increased 125-fold, the ratio converges to within 0.5%.** This is a structural property, not a sampling effect.
+
+## Mathematical Contexts Where 1/3 Appears
+
+### Donoho-Tanner Phase Transition
+
+```
+  Recovering a k-sparse n-dimensional signal from m measurements in compressed sensing:
   δ = m/n, ρ = k/m
 
-  위상 전이선: ρ = ρ*(δ)
-  δ ≈ 1/3 근처에서 복원 성공/실패가 급변
+  Phase transition line: ρ = ρ*(δ)
+  Recovery success/failure changes sharply near δ ≈ 1/3
 ```
 
-### 랜덤 그래프의 거대 성분 출현 (Erdős-Rényi)
+### Emergence of Giant Component in Random Graphs (Erdős-Rényi)
 
 ```
-  n개 노드, 연결 확률 p인 랜덤 그래프에서
-  p > 1/n 이면 거대 연결 성분 출현
-  거대 성분이 전체의 약 1/3을 차지하는 시점이 전이 근처
+  Random graph with n nodes and connection probability p:
+  A giant connected component emerges when p > 1/n
+  The giant component occupies approximately 1/3 of the total near the transition
 ```
 
-### 3상태 시스템의 균등 분배
+### Equal Distribution in a 3-State System
 
 ```
-  정상 / 천재 / 기능저하 = 3개 상태
-  완전 균등: 각 33.3%
-  우리 모델: 특이점 33.2% ≈ 1/3
+  Normal / Genius / Decline = 3 states
+  Perfect equilibrium: each 33.3%
+  Our model: singularity 33.2% ≈ 1/3
 
-  → 3상태 볼츠만 시스템이 열평형에 가까울 때
-    각 상태가 약 1/3씩 점유
+  → When a 3-state Boltzmann system is near thermal equilibrium,
+    each state occupies approximately 1/3
 ```
 
-## 왜 정확히 1/3인가
+## Why Exactly 1/3
 
-우리 모델에서 특이점 조건: Z > 2σ
+Singularity condition in our model: Z > 2σ
 
 ```
   Genius = D × P / I
-  모집단 평균 ≈ 0.31, 표준편차 ≈ 0.23
-  특이점 임계값 = 0.31 + 2×0.23 = 0.77
+  Population mean ≈ 0.31, standard deviation ≈ 0.23
+  Singularity threshold = 0.31 + 2×0.23 = 0.77
 
-  D×P/I > 0.77 인 (D, P, I) 조합의 부피 / 전체 부피
+  Volume of (D, P, I) combinations where D×P/I > 0.77 / total volume
   = ∫∫∫ [D×P/I > 0.77] dD dP dI
   ≈ 0.332
 ```
 
-이 적분의 해석적 계산이 가능하며, [0,1]³ 큐브에서의 부피 비율이 1/3에 수렴.
+Analytic computation of this integral is possible, and the volume ratio in the [0,1]³ cube converges to 1/3.
 
-## 한계
+## Limitations
 
-- 2σ 임계값 선택이 결과에 영향. 3σ로 바꾸면 ~25%.
-- 모집단 분포(Beta 분포)에 의존. 균등 분포면 비율이 달라질 수 있음.
-- Donoho-Tanner와의 연결은 유비이며, 직접적 수학적 관계는 미확인.
+- The 2σ threshold choice affects results. Changing to 3σ gives ~25%.
+- Depends on the population distribution (Beta distribution). A uniform distribution may yield a different ratio.
+- The connection to Donoho-Tanner is an analogy; a direct mathematical relationship has not been confirmed.
 
-## 검증 방향
+## Verification Directions
 
-- [ ] σ 임계값을 연속적으로 변화시켜 특이점 비율 곡선 측정
-- [ ] 모집단을 균등 분포로 교체했을 때의 비율 변화
-- [ ] D×P/I > c 의 [0,1]³ 부피를 해석적으로 계산
+- [ ] Continuously vary the σ threshold and measure the singularity ratio curve
+- [ ] Measure the ratio change when the population is replaced with a uniform distribution
+- [ ] Analytically compute the [0,1]³ volume where D×P/I > c
 
 ---
 
-*작성일: 2026-03-22*
+*Written: 2026-03-22*

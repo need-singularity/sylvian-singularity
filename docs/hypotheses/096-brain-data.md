@@ -1,187 +1,187 @@
-# 가설 검토 096: 뇌 데이터 검증 — 골든존의 신경생물학적 예측
+# Hypothesis Review 096: Brain Data Verification — Neurobiological Predictions of the Golden Zone
 
-## 가설
+## Hypothesis
 
-> 실제 뇌 MRI/MRS/EEG 데이터에서 골든존(I=0.24~0.48)을 관측할 수 있는가.
-> Genius = D x P / I 모델이 비정형 뇌 구조에서 GABA 억제 수준을
-> 정량적으로 예측하며, 이 예측이 실험적으로 반증 가능한가.
+> Can the Golden Zone (I=0.24~0.48) be observed in actual brain MRI/MRS/EEG data?
+> Does the Genius = D x P / I model quantitatively predict GABA inhibition levels
+> in atypical brain structures, and are these predictions experimentally refutable?
 
-## 상태: 🟧 부분 지지 (문헌 기반, 간접적 — 서번트 MRS 직접 데이터 필요)
+## Status: 🟧 Partially Supported (Literature-based, indirect — Direct savant MRS data needed)
 
-## 배경
+## Background
 
-우리 모델의 핵심 주장: 비범한 능력은 적절한 억제 수준(골든존)에서 발생한다.
-이것은 뇌에서 직접 측정 가능해야 한다. GABA는 주요 억제성 신경전달물질이며
-MRS(자기공명분광법)로 비침습적으로 정량 측정 가능하다.
+Core claim of our model: Extraordinary abilities emerge at appropriate inhibition levels (Golden Zone).
+This should be directly measurable in the brain. GABA is the primary inhibitory neurotransmitter and
+can be quantitatively measured non-invasively using MRS (Magnetic Resonance Spectroscopy).
 
-## 파라미터 매핑
+## Parameter Mapping
 
 ```
-  뇌 측정 → 모델 파라미터:
+  Brain Measurements → Model Parameters:
   ┌───────────────────────────────────────────────────────────┐
-  │ 측정 대상              │ 모델 파라미터   │ 범위          │
+  │ Measurement Target     │ Model Parameter │ Range         │
   ├────────────────────────┼─────────────────┼───────────────┤
-  │ GABA 농도 (MRS)        │ I (Inhibition)  │ 0.01 ~ 1.0   │
-  │ 시냅스 밀도 변화율     │ P (Plasticity)  │ 0.0 ~ 1.0    │
-  │ 실비우스열 부재 정도   │ D (Deficit)     │ 0.0 ~ 1.0    │
-  │ 인지/특수 능력 점수    │ Genius Score    │ 측정 결과값   │
+  │ GABA Concentration (MRS)│ I (Inhibition)  │ 0.01 ~ 1.0   │
+  │ Synaptic Density Change │ P (Plasticity)  │ 0.0 ~ 1.0    │
+  │ Sylvian Fissure Absence │ D (Deficit)     │ 0.0 ~ 1.0    │
+  │ Cognitive/Special Score │ Genius Score    │ Measured     │
   └────────────────────────┴─────────────────┴───────────────┘
 ```
 
-## 핵심 예측 3가지 (반증 가능)
+## 3 Core Predictions (Refutable)
 
-### 예측 1: GABA 수준이 골든존에 위치
+### Prediction 1: GABA Levels Located in Golden Zone
 
 ```
-  실비우스열 결여 환자 중 특수 능력 보유자의 국소 GABA 농도:
+  Local GABA concentration in patients with Sylvian fissure absence who have special abilities:
 
-  GABA 수준 (정규화, 정상=1.0)
-  1.0 │████████████████████████ 정상 뇌 (평균)
+  GABA Level (Normalized, Normal=1.0)
+  1.0 │████████████████████████ Normal Brain (average)
       │
-  0.7 │                         ← 과잉 억제 경계
+  0.7 │                         ← Over-inhibition boundary
       │
-  0.48│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  골든존 상한 (I=0.48, 임계선 1/2)
+  0.48│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Golden Zone upper limit (I=0.48, threshold 1/2)
       │  ┌──────────────────┐
-  0.37│  │  ★ 예측: I≈1/e   │  ← 골든존 중심 (볼츠만 최적)
-      │  │  GABA 정상의 37% │
+  0.37│  │  ★ Prediction: I≈1/e│  ← Golden Zone center (Boltzmann optimal)
+      │  │  GABA at 37% of   │
   0.24│  └──────────────────┘
-      │─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  골든존 하한 (I=0.24)
-  0.15│                         ← 억제 결핍: 발작 위험
+      │─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Golden Zone lower limit (I=0.24)
+  0.15│                         ← Inhibition deficit: Seizure risk
       │
   0.0 │
-      └──────────────────────── → GABA 수준
-      결핍     골든존    정상     과잉
+      └──────────────────────── → GABA Level
+      Deficit   Golden Zone   Normal    Excess
 
-  예측: 실비우스열 결여 → 국소 GABA 24~48% 감소
-  반증: GABA가 골든존 밖인데 특수 능력 발현 → 모델 붕괴
+  Prediction: Sylvian fissure absence → Local GABA 24~48% reduction
+  Refutation: GABA outside Golden Zone but special abilities → Model collapse
 ```
 
-### 예측 2: EEG에서 위상 전이 시그니처
+### Prediction 2: Phase Transition Signature in EEG
 
 ```
-  EEG 파워 스펙트럼 밀도 (예측)
+  EEG Power Spectral Density (Predicted)
 
   Power
   (dB)
    40 │
       │    ╲
-   30 │     ╲          ┌─ 정상 뇌: 매끄러운 1/f 감소
+   30 │     ╲          ┌─ Normal brain: Smooth 1/f decrease
       │      ╲─────────┘
    20 │       ╲
-      │        ╲    ★ I≈0.27에서 이상 피크 예측!
+      │        ╲    ★ Anomaly peak predicted at I≈0.27!
    15 │─ ─ ─ ─ ─●─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
       │        ╱ ╲
-   10 │       ╱   ╲─── 서번트 뇌: 위상 전이 피크
+   10 │       ╱   ╲─── Savant brain: Phase transition peak
       │      ╱     ╲
     5 │─────╱       ╲────────────
       │
     0 │
-      └────────────────────────────────────── → 주파수 (Hz)
+      └────────────────────────────────────── → Frequency (Hz)
       1    4   8   13  20  30   50   80  100
-      δ    θ   α    β       γ       고γ
+      δ    θ   α    β       γ       High-γ
 
-  예측: I≈0.27 (골든존 하한 근처)에서 감마 대역 이상 활성화
-  기전: 억제 감소 → 감마 진동의 탈억제 → 과동기화
-  반증: 서번트 뇌의 감마 대역이 정상 범위 → 위상 전이 없음
+  Prediction: I≈0.27 (near Golden Zone lower limit) gamma band hyperactivation
+  Mechanism: Reduced inhibition → Gamma oscillation disinhibition → Hypersynchrony
+  Refutation: Savant brain gamma band in normal range → No phase transition
 ```
 
-### 예측 3: fMRI 연결성의 역U자형 곡선
+### Prediction 3: Inverted U-shaped Curve in fMRI Connectivity
 
 ```
-  기능적 연결성 (fMRI)
+  Functional Connectivity (fMRI)
 
   Global
   Connectivity
    1.0 │
        │              ┌──●──┐
    0.8 │           ╱──┘     └──╲
-       │         ╱     ★        ╲       ← 역U자: 중간 억제에서 최대
+       │         ╱     ★        ╲       ← Inverted U: Maximum at medium inhibition
    0.6 │       ╱    I≈1/e=0.37    ╲
-       │     ╱    (골든존 중심)      ╲
+       │     ╱    (Golden Zone center) ╲
    0.4 │   ╱                          ╲
-       │ ╱        ├────골든존────┤       ╲
+       │ ╱        ├────Golden Zone───┤    ╲
    0.2 │╱         I=0.24     I=0.48     ╲
        │                                   ╲
    0.0 │
        └───────────────────────────────────────→ Inhibition (I)
        0.0   0.1   0.2   0.3   0.4   0.5   0.6   0.8   1.0
 
-  왼쪽 (I < 0.24): 억제 부족 → 과연결 → 간질양 상태 → 연결성 저하
-  중앙 (I = 0.24~0.48): 최적 → 선택적 과연결 → 서번트 능력
-  오른쪽 (I > 0.48): 과억제 → 저연결 → 정상 범위
+  Left (I < 0.24): Insufficient inhibition → Hyperconnectivity → Epileptiform state → Reduced connectivity
+  Center (I = 0.24~0.48): Optimal → Selective hyperconnectivity → Savant abilities
+  Right (I > 0.48): Over-inhibition → Hypoconnectivity → Normal range
 ```
 
-## 실험 프로토콜
+## Experimental Protocol
 
-### 대상군 (최소 3군)
+### Subject Groups (Minimum 3 groups)
 
 ```
-  군 A: 실비우스열 결여 + 특수 능력 (n≥15)  ← 핵심 대상
-  군 B: 실비우스열 결여 + 특수 능력 없음 (n≥15) ← 대조군 1
-  군 C: 정상 뇌 구조 (n≥30)                    ← 대조군 2
+  Group A: Sylvian fissure absence + Special abilities (n≥15) ← Core subjects
+  Group B: Sylvian fissure absence + No special abilities (n≥15) ← Control 1
+  Group C: Normal brain structure (n≥30)                        ← Control 2
 ```
 
-### 필요 장비 및 측정
+### Required Equipment and Measurements
 
 ```
   ┌─────────────────────────────────────────────────────────────┐
-  │ 장비         │ 측정 대상        │ 대응 파라미터   │ 시간    │
+  │ Equipment    │ Measurement Target│ Parameter       │ Time    │
   ├──────────────┼──────────────────┼─────────────────┼─────────┤
-  │ 3T MRI       │ 구조적 이상      │ D (Deficit)     │ 15분    │
-  │ MRS (MEGA-   │ GABA 농도        │ I (Inhibition)  │ 20분    │
-  │  PRESS)      │ Glx(글루타민산)  │ 1-I (탈억제)    │         │
-  │ rs-fMRI      │ 기능적 연결성    │ Genius Score    │ 10분    │
-  │ EEG 64ch     │ 파워 스펙트럼    │ 위상 전이 탐지  │ 30분    │
-  │ DTI          │ 백질 재조직화    │ P (Plasticity)  │ 15분    │
-  │ 인지 검사    │ 특수 능력 정량   │ 검증 변수       │ 60분    │
+  │ 3T MRI       │ Structural abnorm │ D (Deficit)     │ 15 min  │
+  │ MRS (MEGA-   │ GABA concentration│ I (Inhibition)  │ 20 min  │
+  │  PRESS)      │ Glx (glutamate)   │ 1-I (disinhibit)│         │
+  │ rs-fMRI      │ Functional connect│ Genius Score    │ 10 min  │
+  │ EEG 64ch     │ Power spectrum    │ Phase transition│ 30 min  │
+  │ DTI          │ White matter reorg│ P (Plasticity)  │ 15 min  │
+  │ Cognitive    │ Special abilities │ Validation var  │ 60 min  │
   └──────────────┴──────────────────┴─────────────────┴─────────┘
 
-  총 소요: 약 2.5시간/피험자
-  예상 비용: $800~1200/피험자 (MRI 시간 기준)
-  최소 예산: 60명 x $1000 = $60,000 + 분석비용
+  Total time: ~2.5 hours/subject
+  Expected cost: $800~1200/subject (based on MRI time)
+  Minimum budget: 60 subjects x $1000 = $60,000 + analysis costs
 ```
 
-### 분석 파이프라인
+### Analysis Pipeline
 
 ```
-  1. MRS → GABA 농도 추출 → I로 정규화
-  2. DTI → FA(분할 비등방성) 변화율 → P로 정규화
-  3. MRI → 실비우스열 부재 정도 정량화 → D로 정규화
-  4. Genius_predicted = D x P / I 계산
-  5. fMRI 연결성 및 인지 점수와 Genius_predicted 상관 분석
-  6. 통계: 군 A vs B vs C 일원분산분석(ANOVA)
+  1. MRS → Extract GABA concentration → Normalize to I
+  2. DTI → FA (Fractional Anisotropy) change rate → Normalize to P
+  3. MRI → Quantify Sylvian fissure absence degree → Normalize to D
+  4. Calculate Genius_predicted = D x P / I
+  5. Correlate Genius_predicted with fMRI connectivity & cognitive scores
+  6. Statistics: Group A vs B vs C one-way ANOVA
 ```
 
-## 한계
+## Limitations
 
-1. 실비우스열 결여 환자 모집이 극히 어려움 (유병률 불명, 매우 희귀)
-2. GABA MRS 해상도 한계: 국소 영역 특이성이 낮음 (voxel ~2cm^3)
-3. D, P, I의 정규화 기준이 임의적 — 절대값이 아닌 상대값 비교만 가능
-4. 인과관계 추론 불가: 횡단면 연구로는 GABA 감소가 원인인지 결과인지 불명
-5. 윤리적 고려: 뇌 구조 이상 환자 대상 연구의 IRB 승인 난이도
+1. Extremely difficult to recruit patients with Sylvian fissure absence (prevalence unknown, very rare)
+2. GABA MRS resolution limits: Low regional specificity (voxel ~2cm^3)
+3. Normalization criteria for D, P, I are arbitrary — Only relative comparisons possible, not absolute
+4. Cannot infer causality: Cross-sectional study cannot determine if GABA reduction is cause or effect
+5. Ethical considerations: IRB approval difficulty for research on patients with brain structure abnormalities
 
-## 검증 방향
+## Verification Direction
 
-- 1차: 기존 서번트 증후군 연구 데이터에서 GABA 측정 논문 메타분석
-- 2차: 소규모(n=5) 파일럿 연구로 MRS-GABA와 특수 능력의 상관 확인
-- 3차: 동물 모델(피질 병변 쥐)에서 GABA 조작 실험
-- 교차검증: 가설 099(반증 가능성)의 핵심 테스트로 연결
+- Phase 1: Meta-analysis of existing savant syndrome research papers with GABA measurements
+- Phase 2: Small-scale (n=5) pilot study to confirm MRS-GABA correlation with special abilities
+- Phase 3: Animal model experiments (cortical lesion mice) with GABA manipulation
+- Cross-validation: Link to Hypothesis 099 (refutability) as core test
 
-## 이 가설이 가장 중요한 이유
+## Why This Hypothesis is Most Important
 
 ```
-  모델의 다른 가설들은 수학적 일관성 또는 수치적 일치를 보인다.
-  그러나 이 가설(096)만이 직접적 물리 측정으로 반증 가능하다.
+  Other hypotheses in the model show mathematical consistency or numerical agreement.
+  However, only this hypothesis (096) is directly refutable by physical measurements.
 
-  만약 GABA가 골든존에 있다 → 모델의 강력한 경험적 지지
-  만약 GABA가 골든존 밖이다 → 모델 수정 또는 폐기 필요
+  If GABA is in the Golden Zone → Strong empirical support for the model
+  If GABA is outside Golden Zone → Model needs revision or rejection
 
-  이것이 Karl Popper가 말한 진정한 과학적 가설의 조건이다.
+  This is the condition for a true scientific hypothesis as Karl Popper described.
 ```
 
-## 검증 결과 (2026-03-24, 문헌 메타분석)
+## Verification Results (2026-03-24, Literature Meta-analysis)
 
-### 데이터 수집: 12개 MRS 연구
+### Data Collection: 12 MRS Studies
 
 | Study | GABA ratio (ASD/Control) | Region | Age |
 |---|---|---|---|
@@ -198,69 +198,69 @@ MRS(자기공명분광법)로 비침습적으로 정량 측정 가능하다.
 | Horder 2018 | 0.95 | basal ganglia | adults |
 | Sapey-Triomphe 2019 | 0.90 | SMA | adults |
 
-### 핵심 결과
+### Key Results
 
 ```
-  모델 예측 vs 실측:
+  Model Prediction vs Actual:
   I (Inhibition = GABA ratio)
   0.0                   0.5                    1.0
   ├────────────────────┼──────────────────────┤
   │   [GZ: 0.21━0.50] │                      │
   │   ┗━━★━━━━━━━━━━━┛ │                      │
-  │    모델 예측 최적   │   [문헌 ASD: 0.68━1.02]
+  │    Model predicted  │   [Literature ASD: 0.68━1.02]
   │                    │   ┗━━━━━━★━━━━━━━━━━┛│
-  │                    │    실측 평균 0.81      │
+  │                    │    Actual mean 0.81   │
   ├────────────────────┼──────────────────────┤
-  발작위험    골든존     정상 억제        과억제
+  Seizure risk Golden Zone  Normal inhibition  Over-inhibition
 
-  GAP: 모델 예측(0.21-0.50) vs 실측 ASD(0.68-1.02)
+  GAP: Model prediction (0.21-0.50) vs Actual ASD (0.68-1.02)
 ```
 
-- 골든존 내 데이터: **0/12 = 0%** (일반 ASD는 골든존 밖)
-- GABA 감소 연구 9개 평균: I = 0.834 (16.6% 감소)
-- 최대 감소 (frontal): I = 0.68 (32% 감소, 골든존 상한 0.50에서 0.18 거리)
-- 1-sample t-test vs 골든존 중심 (1/e): t = 14.12, p < 0.000001
-- Cohen's d = 4.99 (거대 효과: 일반 ASD GABA는 골든존과 크게 다름)
+- Data within Golden Zone: **0/12 = 0%** (General ASD outside Golden Zone)
+- Average of 9 GABA reduction studies: I = 0.834 (16.6% reduction)
+- Maximum reduction (frontal): I = 0.68 (32% reduction, 0.18 distance from Golden Zone upper limit 0.50)
+- 1-sample t-test vs Golden Zone center (1/e): t = 14.12, p < 0.000001
+- Cohen's d = 4.99 (Huge effect: General ASD GABA greatly differs from Golden Zone)
 
-### 간접 증거 (방향성 지지)
+### Indirect Evidence (Directionally Supporting)
 
-1. **Snyder TMS 실험** (가장 강력한 간접 증거):
-   - 좌측 전두측두엽(LATL) rTMS → GABA 억제 → 일시적 서번트 스킬
-   - 숫자 판별: 10/12 향상 (p=0.001), 1시간 후 감소
-   - 그리기: 4/11 주요 변화 (자극 중에만)
-   - 거짓 기억: 36% 감소
-   - TMS 효과 추정: 국소 GABA ~20-40% 일시 감소 → I ≈ 0.36-0.64 (골든존 부분 중첩!)
+1. **Snyder TMS Experiment** (Strongest indirect evidence):
+   - Left anterior temporal lobe (LATL) rTMS → GABA inhibition → Temporary savant skills
+   - Number discrimination: 10/12 improved (p=0.001), decreased after 1 hour
+   - Drawing: 4/11 major changes (only during stimulation)
+   - False memory: 36% reduction
+   - TMS effect estimate: Local GABA ~20-40% temporary reduction → I ≈ 0.36-0.64 (Partial Golden Zone overlap!)
 
 2. **GABA predicts visual intelligence** (Edden 2009):
-   - 시각 피질 GABA와 행렬추론 IQ 상관: r = 0.83, p = 0.005
-   - n = 9 (소규모), 측면억제(surround suppression)와도 r = 0.88
+   - Visual cortex GABA correlation with matrix reasoning IQ: r = 0.83, p = 0.005
+   - n = 9 (small scale), also r = 0.88 with surround suppression
 
 3. **Savant = top-down inhibition failure** (Snyder 2009):
-   - 모든 인간에게 잠재 서번트 능력 존재
-   - 정상적 피질 억제(GABA)가 이를 차단
-   - 억제 실패 시 "lower-level, less-processed information" 접근
+   - All humans have latent savant abilities
+   - Normal cortical inhibition (GABA) blocks these
+   - When inhibition fails: access to "lower-level, less-processed information"
 
-### 재해석: 이중 메커니즘
+### Reinterpretation: Dual Mechanism
 
 ```
   ┌────────────────────────────────────────────────────────┐
-  │ 정상 범위 (I > 0.50):                                  │
-  │   높은 GABA → 강한 신호대잡음 → 높은 일반 지능 (r=0.83)│
+  │ Normal Range (I > 0.50):                               │
+  │   High GABA → Strong signal-to-noise → High general IQ │
+  │                                        (r=0.83)        │
+  │ Atypical/Savant (I ≈ 0.21-0.50):                      │
+  │   Local GABA↓↓ → Filter release → Raw data access     │
+  │   (General IQ may be low, only special abilities)      │
   │                                                        │
-  │ 비정형/서번트 (I ≈ 0.21-0.50):                         │
-  │   국소 GABA↓↓ → 필터 해제 → 원시 데이터 접근           │
-  │   (일반 지능은 낮을 수 있음, 특수 능력만 발현)          │
-  │                                                        │
-  │ 극단 (I < 0.21):                                       │
-  │   GABA↓↓↓ → 발작, 기능 붕괴                            │
+  │ Extreme (I < 0.21):                                    │
+  │   GABA↓↓↓ → Seizures, functional collapse             │
   └────────────────────────────────────────────────────────┘
 
-  → 역U자형 예측의 방향은 문헌과 일치
-  → 정량적 범위는 미확인 (서번트 MRS 데이터 부재)
-  → I의 정의를 E/I 비율(Glutamate/GABA)로 확장하면 개선 가능
+  → Direction of inverted U prediction consistent with literature
+  → Quantitative range unconfirmed (no savant MRS data)
+  → Could improve by extending I definition to E/I ratio (Glutamate/GABA)
 ```
 
-### E/I 비율 시뮬레이션
+### E/I Ratio Simulation
 
 | Condition | GABA | Glutamate | E/I | I=GABA/Glut | In GZ? |
 |---|---|---|---|---|---|
@@ -269,20 +269,20 @@ MRS(자기공명분광법)로 비침습적으로 정량 측정 가능하다.
 | Savant (hyp.) | 0.65 | 1.10 | 1.69 | 0.5909 | no |
 | Seizure | 0.40 | 1.00 | 2.50 | 0.4000 | YES |
 
-### 판정
+### Verdict
 
 ```
-  종합 판정: 🟧 부분 지지
-    - 방향 맞음: GABA↓ → 능력↑ (TMS p=0.001)
-    - 정량 불일치: 일반 ASD GABA는 골든존 밖 (0/12)
-    - 핵심 한계: 서번트 특이적 MRS 데이터 없음
-    - 가장 강력한 증거: TMS 탈억제 → 일시적 서번트 (Snyder)
-    - 개선 방향: I를 E/I 비율로 재정의, 또는 국소 GABA 측정 세분화
+  Overall Verdict: 🟧 Partially Supported
+    - Direction correct: GABA↓ → Ability↑ (TMS p=0.001)
+    - Quantitative mismatch: General ASD GABA outside Golden Zone (0/12)
+    - Key limitation: No savant-specific MRS data
+    - Strongest evidence: TMS disinhibition → Temporary savant (Snyder)
+    - Improvement direction: Redefine I as E/I ratio, or refine local GABA measurement
 ```
 
-## 상태: 🟧 부분 지지 (문헌 기반, 간접적)
+## Status: 🟧 Partially Supported (Literature-based, indirect)
 
-## 참고 문헌
+## References
 
 - Edmondson 2020: PMC7387217 (GABA in 5 cortical regions, no ASD-control diff)
 - Maier 2022: Autism Research (increased prefrontal GABA in ASD adults)
@@ -293,4 +293,4 @@ MRS(자기공명분광법)로 비침습적으로 정량 측정 가능하다.
 
 ---
 
-*검증: verify_096_gaba_literature.py / 문헌 메타분석 / 가설 099와 연결*
+*Verification: verify_096_gaba_literature.py / Literature meta-analysis / Linked to Hypothesis 099*

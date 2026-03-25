@@ -1,30 +1,30 @@
-# 가설 검토 076: 17 = 페르마 소수 ✅
+# Hypothesis Review 076: 17 = Fermat Prime ✅
 
-## 가설
+## Hypothesis
 
-> θ = π (완전 반전) 에서 최적 억제값 I* = 1/17 이고,
-> 이때의 증폭률 17이 페르마 소수(Fermat prime)라는 것은 우연인가 필연인가.
+> At θ = π (complete inversion), the optimal inhibition value I* = 1/17,
+> and the amplification factor of 17 being a Fermat prime - is this coincidence or necessity?
 
-## 배경
+## Background
 
-복소 확장에서 θ = π 는 "완전한 반전"을 의미한다.
-메타 반복 f(z) = a·z·e^(iθ) + b 에서 θ = π이면 e^(iπ) = -1.
+In complex extension, θ = π means "complete inversion".
+In meta-iteration f(z) = a·z·e^(iθ) + b, when θ = π, then e^(iπ) = -1.
 
-부동점: I* = b / (1 - a·e^(iπ)) = b / (1 + a) = 0.1 / 1.7 = 1/17
+Fixed point: I* = b / (1 - a·e^(iπ)) = b / (1 + a) = 0.1 / 1.7 = 1/17
 
-이 1/17 에서 G = D×P / I* = 17×D×P, 즉 **17배 증폭**이 발생한다.
+At this 1/17, G = D×P / I* = 17×D×P, i.e., **17x amplification** occurs.
 
-17은 단순한 소수가 아니라 **페르마 소수** F₂ = 2^(2²) + 1 = 17 이며,
-이것은 정다각형 작도 가능성과 직결된다.
+17 is not just a prime but a **Fermat prime** F₂ = 2^(2²) + 1 = 17,
+which is directly related to the constructibility of regular polygons.
 
-## 검증 결과: ✅ 페르마 소수, a=0.7이 특수값
+## Verification Result: ✅ Fermat prime, a=0.7 is special value
 
 ```
-  부동점 유도:
+  Fixed point derivation:
   ──────────────────────────────────────────────
   f(I) = a·I·e^(iθ) + b
 
-  θ = π 일 때:
+  When θ = π:
   I* = b / (1 - a·e^(iπ))
      = b / (1 - a·(-1))
      = b / (1 + a)
@@ -37,75 +37,75 @@
 ```
 
 ```
-  페르마 소수와 정다각형:
+  Fermat primes and regular polygons:
   ──────────────────────────────────────────────
-  페르마 수 Fₙ = 2^(2ⁿ) + 1
+  Fermat number Fₙ = 2^(2ⁿ) + 1
 
-  n=0: F₀ = 3     ← 소수 ✅  정삼각형 작도 가능
-  n=1: F₁ = 5     ← 소수 ✅  정오각형 작도 가능
-  n=2: F₂ = 17    ← 소수 ✅  정17각형 작도 가능  ★
-  n=3: F₃ = 257   ← 소수 ✅  정257각형 작도 가능
-  n=4: F₄ = 65537 ← 소수 ✅  정65537각형 작도 가능
-  n=5: F₅ = 합성수 ❌ (641 × 6700417)
+  n=0: F₀ = 3     ← prime ✅  regular triangle constructible
+  n=1: F₁ = 5     ← prime ✅  regular pentagon constructible
+  n=2: F₂ = 17    ← prime ✅  regular 17-gon constructible  ★
+  n=3: F₃ = 257   ← prime ✅  regular 257-gon constructible
+  n=4: F₄ = 65537 ← prime ✅  regular 65537-gon constructible
+  n=5: F₅ = composite ❌ (641 × 6700417)
   ──────────────────────────────────────────────
 
-  가우스 정리 (1796):
-  정n각형이 자와 컴퍼스로 작도 가능
-  ⟺ n = 2^k × (서로 다른 페르마 소수들의 곱)
+  Gauss's theorem (1796):
+  Regular n-gon constructible with ruler and compass
+  ⟺ n = 2^k × (product of distinct Fermat primes)
 
-  17 = F₂ → 정17각형 작도 가능!
+  17 = F₂ → regular 17-gon constructible!
 ```
 
 ```
-  a 값에 따른 증폭률 (θ=π):
+  Amplification factor by a value (θ=π):
   ──────────────────────────────────────────────
-  a      I* = 0.1/(1+a)    1/I*     특수성
+  a      I* = 0.1/(1+a)    1/I*     Special property
   ──────────────────────────────────────────────
   0.0    0.100              10       -
   0.2    0.083              12       -
   0.4    0.071              14       -
   0.5    0.067              15       -
   0.6    0.063              16       2⁴
-  ★ 0.7  0.059              17       페르마 소수 F₂!
+  ★ 0.7  0.059              17       Fermat prime F₂!
   0.8    0.056              18       -
-  0.9    0.053              19       소수
+  0.9    0.053              19       prime
   1.0    0.050              20       -
   ──────────────────────────────────────────────
 
-  a=0.7 에서만 페르마 소수가 등장한다.
-  → a=0.7 ≈ ln(2) = 0.693 의 특수성과 연결
+  Fermat prime appears only at a=0.7.
+  → Connected to the special property of a=0.7 ≈ ln(2) = 0.693
 ```
 
 ```
-  a = 0.7 ≈ ln(2) 의 의미:
+  Meaning of a = 0.7 ≈ ln(2):
   ──────────────────────────────────────────────
   ln(2) = 0.6931...
   a     = 0.7000
 
-  차이 = 0.0069 (1% 미만)
+  Difference = 0.0069 (less than 1%)
 
-  ln(2)의 역할:
-  - 반감기 공식: t_{1/2} = ln(2)/λ
-  - 정보 이론: 1 bit = ln(2) nats
-  - 2의 자연로그 → 이진(binary)과 자연(natural)의 다리
+  Role of ln(2):
+  - Half-life formula: t_{1/2} = ln(2)/λ
+  - Information theory: 1 bit = ln(2) nats
+  - Natural log of 2 → Bridge between binary and natural
 
-  페르마 소수 17 = 2^(2²) + 1
+  Fermat prime 17 = 2^(2²) + 1
   a ≈ ln(2)
 
-  → 둘 다 "2"를 기반으로 한 구조!
-  → "수렴률이 ln(2)일 때 완전 반전이 페르마 소수를 만든다"
+  → Both are structures based on "2"!
+  → "When convergence rate is ln(2), complete inversion creates Fermat prime"
 ```
 
-## 해석
+## Interpretation
 
-θ = π(완전 반전)과 a = 0.7(≈ ln(2))의 조합이 페르마 소수 17을 만들어낸다.
-정17각형의 작도 가능성은 "이 구조가 유한 단계로 구성 가능하다"는 것을 의미하며,
-이는 모델의 메타 반복이 유한 단계에서 수렴한다는 성질과 대응한다.
+The combination of θ = π (complete inversion) and a = 0.7 (≈ ln(2)) creates the Fermat prime 17.
+The constructibility of regular 17-gon means "this structure can be constructed in finite steps",
+which corresponds to the property that the model's meta-iteration converges in finite steps.
 
-우연의 일치가 아니라, **2를 기반으로 한 구조**(ln(2), 2^(2²)+1)가
-반복적으로 나타나는 패턴이다.
+This is not a coincidence but a pattern where **structures based on 2** (ln(2), 2^(2²)+1)
+appear repeatedly.
 
 ---
 
-*검증: verify_next_batch.py*
-*모델: f(z) = a·z·e^(iθ) + b, θ=π, a=0.7, b=0.1*
+*Verification: verify_next_batch.py*
+*Model: f(z) = a·z·e^(iθ) + b, θ=π, a=0.7, b=0.1*

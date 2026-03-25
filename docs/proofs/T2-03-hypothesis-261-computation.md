@@ -1,41 +1,41 @@
-# T2-03: 가설 261 — 합동 부분군 분류 계산 분석
+# T2-03: Hypothesis 261 — Congruence Subgroup Classification Computation Analysis
 
-> **가설 261**: Gamma_0(N)의 불변량 체계(지수 mu, 타원점 e2/e3, 커스프 c, 종수 g)가
-> sigma(N), tau(N), phi(N) 등 산술 함수와 "강제 연쇄(forcing chain)"를 통해
-> 구조적으로 연결된다. 특히 squarefree N에서 mu(N) = sigma(N)이 정확히 성립한다.
+> **Hypothesis 261**: The invariant system of Gamma_0(N) (index mu, elliptic points e2/e3, cusps c, genus g) is
+> structurally connected to arithmetic functions like sigma(N), tau(N), phi(N) through
+> a "forcing chain". In particular, for squarefree N, mu(N) = sigma(N) holds exactly.
 
-**검증 상태**: 🟩 (순수 산술 정리) + 🟧 (연쇄 구조 관찰)
-**골든존 의존**: 없음 (순수 정수론/모듈러 형식 이론)
-**도구**: `congruence_chain_engine.py`, `analyze_h261.py`
-
----
-
-## 1. 배경 및 맥락
-
-Gamma_0(N)은 모듈러 군 SL(2,Z)의 합동 부분군으로, 정수론과 모듈러 형식의 핵심 대상이다.
-각 N에 대해 다음 불변량이 결정된다:
-
-- **mu(N)**: 지수 [SL(2,Z) : Gamma_0(N)] = N * prod_{p|N} (1 + 1/p)
-- **c(N)**: 커스프 수 = sum_{d|N} phi(gcd(d, N/d))
-- **e2(N)**: 위수 2 타원점 수
-- **e3(N)**: 위수 3 타원점 수
-- **g(N)**: 종수 = 1 + mu/12 - e2/4 - e3/3 - c/2
-
-가설 261은 이 불변량들이 sigma(N), tau(N) 등과 어떻게 연결되는지를 "강제 연쇄"
-관점에서 분류한다.
+**Verification Status**: 🟩 (pure arithmetic theorem) + 🟧 (chain structure observation)
+**Golden Zone Dependence**: None (pure number theory/modular form theory)
+**Tools**: `congruence_chain_engine.py`, `analyze_h261.py`
 
 ---
 
-## 2. 종수-0 N의 산술 함수 종합
+## 1. Background and Context
 
-종수 0인 N은 j-불변량으로 매개화되는 유리 모듈러 곡선에 대응한다.
-N=1..100에서 **15개**가 종수 0:
+Gamma_0(N) is a congruence subgroup of the modular group SL(2,Z), a core object in number theory and modular forms.
+For each N, the following invariants are determined:
+
+- **mu(N)**: Index [SL(2,Z) : Gamma_0(N)] = N * prod_{p|N} (1 + 1/p)
+- **c(N)**: Number of cusps = sum_{d|N} phi(gcd(d, N/d))
+- **e2(N)**: Number of order-2 elliptic points
+- **e3(N)**: Number of order-3 elliptic points
+- **g(N)**: Genus = 1 + mu/12 - e2/4 - e3/3 - c/2
+
+Hypothesis 261 classifies how these invariants connect with sigma(N), tau(N), etc. from a "forcing chain"
+perspective.
+
+---
+
+## 2. Comprehensive Arithmetic Functions for Genus-0 N
+
+Genus-0 N corresponds to rational modular curves parameterized by the j-invariant.
+From N=1..100, **15** have genus 0:
 
 ```
   N = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 16, 18, 25}
 ```
 
-### 종수-0 불변량 테이블
+### Genus-0 Invariant Table
 
 ```
    N |    mu | sigma |      tau(N) |   phi | d(N) | mu=sig? | mu%12
@@ -57,19 +57,19 @@ N=1..100에서 **15개**가 종수 0:
   25 |    30 |    31 |   -25499225 |    20 |    3 |         |    6
 ```
 
-**관찰**: mu = sigma인 N = {1, 2, 3, 5, 6, 7, 10, 13} — 정확히 squarefree인 것들.
+**Observation**: mu = sigma for N = {1, 2, 3, 5, 6, 7, 10, 13} — exactly the squarefree ones.
 
 ---
 
-## 3. 핵심 정리: squarefree N이면 mu(N) = sigma(N)
+## 3. Core Theorem: If N is squarefree, then mu(N) = sigma(N)
 
-### 정리 (순수 산술, 🟩)
+### Theorem (Pure Arithmetic, 🟩)
 
-> N이 squarefree이면 Gamma_0(N)의 지수 mu(N)은 약수합 sigma(N)과 같다.
+> If N is squarefree, then the index mu(N) of Gamma_0(N) equals the divisor sum sigma(N).
 
-**증명**:
+**Proof**:
 
-N = p1 * p2 * ... * pk (각 pi 서로 다른 소수)라 하자.
+Let N = p1 * p2 * ... * pk (each pi distinct primes).
 
 ```
   mu(N) = N * prod_{p|N} (1 + 1/p)
@@ -77,20 +77,20 @@ N = p1 * p2 * ... * pk (각 pi 서로 다른 소수)라 하자.
         = prod(pi) * prod((pi + 1)/pi)
         = prod(pi + 1)
 
-  sigma(N) = prod_{p|N} (1 + p)    [squarefree이므로 각 소수의 약수합 = 1+p]
+  sigma(N) = prod_{p|N} (1 + p)    [since squarefree, divisor sum of each prime = 1+p]
            = prod(pi + 1)
 
-  따라서 mu(N) = sigma(N).  QED
+  Therefore mu(N) = sigma(N).  QED
 ```
 
-**검증**: N=1..100에서 squarefree 61개 전부 일치, non-squarefree 39개 전부 불일치.
-이것은 100% 정확한 산술 정리이다.
+**Verification**: All 61 squarefree N=1..100 match, all 39 non-squarefree don't match.
+This is a 100% exact arithmetic theorem.
 
 ---
 
-## 4. e2 > 0 AND e3 > 0인 N (양쪽 타원점 모두 존재)
+## 4. N with e2 > 0 AND e3 > 0 (both elliptic points exist)
 
-N=1..100에서 **6개**만 해당:
+Only **6** from N=1..100:
 
 ```
    N |    mu |   g |  e2 |  e3 | lcm(iso) | N mod 12
@@ -103,26 +103,26 @@ N=1..100에서 **6개**만 해당:
   97 |    98 |   7 |   2 |   2 |        6 |        1
 ```
 
-**패턴**: N = 1 또는 N = 소수이고 N ≡ 1 (mod 12).
+**Pattern**: N = 1 or N = prime and N ≡ 1 (mod 12).
 
-**이유** (증명 가능):
-- e2 > 0 ⟹ N에 4의 인수 없고, 각 홀수 소인수 p에서 (-1/p) = 1 ⟹ p ≡ 1 (mod 4)
-- e3 > 0 ⟹ N에 9의 인수 없고, 각 소인수 p ≠ 3에서 (-3/p) = 1 ⟹ p ≡ 1 (mod 3)
-- 중국인의 나머지 정리: p ≡ 1 (mod 4) AND p ≡ 1 (mod 3) ⟹ **p ≡ 1 (mod 12)**
+**Reason** (provable):
+- e2 > 0 ⟹ N has no factor of 4, and for each odd prime factor p, (-1/p) = 1 ⟹ p ≡ 1 (mod 4)
+- e3 > 0 ⟹ N has no factor of 9, and for each prime factor p ≠ 3, (-3/p) = 1 ⟹ p ≡ 1 (mod 3)
+- Chinese Remainder Theorem: p ≡ 1 (mod 4) AND p ≡ 1 (mod 3) ⟹ **p ≡ 1 (mod 12)**
 
-**결론**: lcm(등방성 위수) = lcm(1,2,3) = **6 = 첫 번째 완전수**. 이들은 모두 squarefree이므로 mu = sigma도 성립.
+**Conclusion**: lcm(isotropic orders) = lcm(1,2,3) = **6 = first perfect number**. All are squarefree so mu = sigma holds too.
 
 ---
 
-## 5. mu(N)이 12의 배수인 N
+## 5. N with mu(N) divisible by 12
 
-N=1..100에서 **65개**가 mu(N) ≡ 0 (mod 12).
+From N=1..100, **65** have mu(N) ≡ 0 (mod 12).
 
-종수-0이면서 mu%12=0인 N:
+Genus-0 with mu%12=0:
 
 ```
-  N = {6, 8, 9, 12, 16, 18}  — 전부 합성수
-  N=6:  mu=12, sigma=12, 완전수!
+  N = {6, 8, 9, 12, 16, 18}  — all composite
+  N=6:  mu=12, sigma=12, perfect number!
   N=8:  mu=12, sigma=15
   N=9:  mu=12, sigma=13
   N=12: mu=24, sigma=28
@@ -130,21 +130,21 @@ N=1..100에서 **65개**가 mu(N) ≡ 0 (mod 12).
   N=18: mu=36, sigma=39
 ```
 
-**해석**: mu/12는 종수 공식에서 "기본 기여" 항이다. mu%12=0이면 종수 공식이 깔끔하게 정수가 된다 (다른 보정 항 없이도).
+**Interpretation**: mu/12 is the "basic contribution" term in the genus formula. If mu%12=0, the genus formula cleanly yields an integer (even without other correction terms).
 
 ---
 
-## 6. 첫 커스프 형식 가중치 패턴
+## 6. First Cusp Form Weight Pattern
 
 ```
-  k = 12:  1개   N = {1}      ← Delta(z), 라마누잔 판별식
-  k =  8:  1개   N = {2}
-  k =  6:  2개   N = {3, 4}
-  k =  4: 11개   N = {5,6,7,8,9,10,12,13,16,18,25}  ← 나머지 종수-0
-  k =  2: 85개   N = {11, 14, 15, ...}               ← 종수 >= 1
+  k = 12:  1   N = {1}      ← Delta(z), Ramanujan discriminant
+  k =  8:  1   N = {2}
+  k =  6:  2   N = {3, 4}
+  k =  4: 11   N = {5,6,7,8,9,10,12,13,16,18,25}  ← remaining genus-0
+  k =  2: 85   N = {11, 14, 15, ...}               ← genus >= 1
 ```
 
-**ASCII 그래프 — 첫 커스프 가중치 분포**:
+**ASCII Graph — First Cusp Weight Distribution**:
 
 ```
   k=2  |████████████████████████████████████████████████████  85
@@ -156,82 +156,82 @@ N=1..100에서 **65개**가 mu(N) ≡ 0 (mod 12).
        0    10    20    30    40    50    60    70    80   90
 ```
 
-**해석**: N=1만이 k=12에서 첫 커스프 형식을 갖는다 — 이것이 라마누잔 Delta 함수.
-종수가 0인 N은 k >= 4, 종수 >= 1인 N은 k = 2 (dim S_2 = g >= 1).
+**Interpretation**: Only N=1 has its first cusp form at k=12 — this is the Ramanujan Delta function.
+Genus-0 N have k >= 4, genus >= 1 N have k = 2 (dim S_2 = g >= 1).
 
 ---
 
-## 7. 강제 연쇄 품질 등급
+## 7. Forcing Chain Quality Grades
 
-등급 기준:
-- **A**: lcm(iso) * cusps = sigma(N) 정확 일치
-- **B**: mu(N) = sigma(N) (squarefree) 또는 lcm*d(N) = mu
-- **C**: mu%12 = 0이고 부분 관계 존재
-- **D**: 특별한 관계 없음
+Grade criteria:
+- **A**: lcm(iso) * cusps = sigma(N) exact match
+- **B**: mu(N) = sigma(N) (squarefree) or lcm*d(N) = mu
+- **C**: mu%12 = 0 and partial relations exist
+- **D**: No special relations
 
-### 종수-0 등급 테이블
-
-```
-   N | mu  |  c | lcm | sig | d(N) | lcm*c | lcm*d | 등급 | 근거
-  ----+-----+----+-----+-----+------+-------+-------+------+------------------
-   1 |   1 |  1 |   6 |   1 |    1 |     6 |     6 |   B  | mu=sig
-   2 |   3 |  2 |   2 |   3 |    2 |     4 |     4 |   B  | mu=sig
-   3 |   4 |  2 |   3 |   4 |    2 |     6 |     6 |   B  | mu=sig
-   4 |   6 |  3 |   1 |   7 |    3 |     3 |     3 |   D  | 관계 미약
-   5 |   6 |  2 |   2 |   6 |    2 |     4 |     4 |   B  | mu=sig
-   6 |  12 |  4 |   1 |  12 |    4 |     4 |     4 |   B  | mu=sig + mu%12=0
-   7 |   8 |  2 |   3 |   8 |    2 |     6 |     6 |   B  | mu=sig
-  10 |  18 |  4 |   2 |  18 |    4 |     8 |     8 |   B  | mu=sig
-  13 |  14 |  2 |   6 |  14 |    2 |    12 |    12 |   B  | mu=sig
-   8 |  12 |  4 |   1 |  15 |    4 |     4 |     4 |   C  | mu/12=1
-   9 |  12 |  4 |   1 |  13 |    3 |     4 |     3 |   C  | mu/12=1
-  12 |  24 |  6 |   1 |  28 |    6 |     6 |     6 |   C  | mu/12=2
-  16 |  24 |  6 |   1 |  31 |    5 |     6 |     5 |   C  | mu/12=2
-  18 |  36 |  8 |   1 |  39 |    6 |     8 |     6 |   C  | mu/12=3
-  25 |  30 |  6 |   1 |  31 |    3 |     6 |     3 |   D  | 관계 미약
-```
-
-### 등급 분포
+### Genus-0 Grade Table
 
 ```
-  등급 A: 0개  (lcm*c = sigma 정확 일치 — 종수-0에서는 없음)
-  등급 B: 8개  N = {1, 2, 3, 5, 6, 7, 10, 13} — squarefree인 종수-0
-  등급 C: 5개  N = {8, 9, 12, 16, 18}          — 비-squarefree이나 mu%12=0
-  등급 D: 2개  N = {4, 25}                      — 관계 미약
+   N | mu  |  c | lcm | sig | d(N) | lcm*c | lcm*d | Grade | Rationale
+  ----+-----+----+-----+-----+------+-------+-------+-------+------------------
+   1 |   1 |  1 |   6 |   1 |    1 |     6 |     6 |   B   | mu=sig
+   2 |   3 |  2 |   2 |   3 |    2 |     4 |     4 |   B   | mu=sig
+   3 |   4 |  2 |   3 |   4 |    2 |     6 |     6 |   B   | mu=sig
+   4 |   6 |  3 |   1 |   7 |    3 |     3 |     3 |   D   | weak relation
+   5 |   6 |  2 |   2 |   6 |    2 |     4 |     4 |   B   | mu=sig
+   6 |  12 |  4 |   1 |  12 |    4 |     4 |     4 |   B   | mu=sig + mu%12=0
+   7 |   8 |  2 |   3 |   8 |    2 |     6 |     6 |   B   | mu=sig
+  10 |  18 |  4 |   2 |  18 |    4 |     8 |     8 |   B   | mu=sig
+  13 |  14 |  2 |   6 |  14 |    2 |    12 |    12 |   B   | mu=sig
+   8 |  12 |  4 |   1 |  15 |    4 |     4 |     4 |   C   | mu/12=1
+   9 |  12 |  4 |   1 |  13 |    3 |     4 |     3 |   C   | mu/12=1
+  12 |  24 |  6 |   1 |  28 |    6 |     6 |     6 |   C   | mu/12=2
+  16 |  24 |  6 |   1 |  31 |    5 |     6 |     5 |   C   | mu/12=2
+  18 |  36 |  8 |   1 |  39 |    6 |     8 |     6 |   C   | mu/12=3
+  25 |  30 |  6 |   1 |  31 |    3 |     6 |     3 |   D   | weak relation
 ```
 
-**ASCII 등급 분포**:
+### Grade Distribution
 
 ```
-  B |████████  8개 (squarefree genus-0)
-  C |█████     5개 (non-sqfree, mu%12=0)
-  D |██        2개 (관계 미약)
-  A |          0개
+  Grade A: 0  (lcm*c = sigma exact match — none in genus-0)
+  Grade B: 8  N = {1, 2, 3, 5, 6, 7, 10, 13} — squarefree genus-0
+  Grade C: 5  N = {8, 9, 12, 16, 18}          — non-squarefree but mu%12=0
+  Grade D: 2  N = {4, 25}                      — weak relations
+```
+
+**ASCII Grade Distribution**:
+
+```
+  B |████████  8 (squarefree genus-0)
+  C |█████     5 (non-sqfree, mu%12=0)
+  D |██        2 (weak relations)
+  A |          0
     +----+----+----+----+
     0    2    4    6    8
 ```
 
 ---
 
-## 8. N=13의 특수성
+## 8. Special Properties of N=13
 
-N=13은 종수-0이면서 e2>0 AND e3>0인 유일한 **소수**:
+N=13 is the only **prime** that is genus-0 with e2>0 AND e3>0:
 
 ```
   N=13: mu=14, sigma=14, g=0, e2=2, e3=2
-  등방성 위수 = {1, 2, 3}, lcm = 6
+  Isotropic orders = {1, 2, 3}, lcm = 6
   13 ≡ 1 (mod 12)
-  lcm(iso) * cusps = 6 * 2 = 12 = sigma(6)  ← 완전수 6의 약수합!
+  lcm(iso) * cusps = 6 * 2 = 12 = sigma(6)  ← divisor sum of perfect number 6!
 ```
 
-N=13에서 "12"가 자연스럽게 등장한다는 점이 주목할 만하다.
-이는 종수 공식의 분모 12와 동일한 값이다.
+It's notable that "12" appears naturally at N=13.
+This is the same value as the denominator 12 in the genus formula.
 
 ---
 
-## 9. sigma(N)과 mu(N)의 비 (non-squarefree)
+## 9. Ratio of sigma(N) to mu(N) (non-squarefree)
 
-non-squarefree 종수-0 N에서의 비:
+Ratios for non-squarefree genus-0 N:
 
 ```
   N=4:  mu/sigma = 6/7  = 0.857
@@ -243,48 +243,48 @@ non-squarefree 종수-0 N에서의 비:
   N=25: mu/sigma = 30/31 = 0.968
 ```
 
-**패턴**: mu/sigma = prod_{p^e || N, e>=2} p^e/(p^e + p^{e-1} + ... + 1).
-이는 소인수의 "높은 거듭제곱 기여"가 sigma에만 추가되기 때문이다.
+**Pattern**: mu/sigma = prod_{p^e || N, e>=2} p^e/(p^e + p^{e-1} + ... + 1).
+This is because the "high power contribution" of prime factors is added only to sigma.
 
 ---
 
-## 10. 한계 및 검증 방향
+## 10. Limitations and Verification Directions
 
-### 한계
-1. "강제 연쇄"는 아직 엄밀한 정의가 아닌 탐색적 개념이다
-2. 등급 A (lcm*c = sigma 정확 일치)가 종수-0에서 나타나지 않음 — 더 넓은 범위 탐색 필요
-3. 라마누잔 tau(N)과 불변량의 직접적 관계는 이번 계산에서 발견되지 않음
+### Limitations
+1. "Forcing chain" is still an exploratory concept without rigorous definition
+2. Grade A (lcm*c = sigma exact match) doesn't appear in genus-0 — need wider range search
+3. Direct relation between Ramanujan tau(N) and invariants was not found in this computation
 
-### 검증 방향
-1. N=1..1000 범위로 확장하여 등급 A가 존재하는지 확인
-2. Gamma_1(N), Gamma(N) 등 다른 합동 부분군으로 일반화
-3. 몬스터 군과의 연결: 종수-0 N이 McKay-Thompson 급수와 대응하는지 확인
-4. N=28 (두 번째 완전수)에서의 강제 연쇄 분석 (g=2, 비-종수-0)
+### Verification Directions
+1. Extend to N=1..1000 range to check if Grade A exists
+2. Generalize to other congruence subgroups like Gamma_1(N), Gamma(N)
+3. Monster group connection: Check if genus-0 N correspond to McKay-Thompson series
+4. Analyze forcing chain at N=28 (second perfect number) (g=2, non-genus-0)
 
-### 완전수 28 교차 검증
+### Perfect Number 28 Cross-Verification
 
 ```
   N=28: mu=48, sigma=56, g=2, e2=0, e3=0, lcm(iso)=1
   mu/sigma = 48/56 = 6/7
   mu%12 = 0, mu/12 = 4
-  등급: C (mu%12=0이나 lcm=1로 연쇄 불가)
+  Grade: C (mu%12=0 but lcm=1 prevents chain)
 ```
 
-완전수 28은 종수 2이고 타원점이 없어 강제 연쇄가 작동하지 않는다.
-이는 N=6 (종수 0, mu=sigma=12)과 대조적이다.
+Perfect number 28 has genus 2 and no elliptic points, so forcing chain doesn't operate.
+This contrasts with N=6 (genus 0, mu=sigma=12).
 
 ---
 
-## 11. 결론
+## 11. Conclusion
 
-| 발견 | 등급 | 근거 |
-|------|------|------|
-| squarefree N ⟺ mu(N) = sigma(N) | 🟩 증명됨 | 산술 직접 증명 |
-| e2>0 ∧ e3>0 ⟺ N≡1 (mod 12) (소수) | 🟩 증명됨 | 이차잉여 + CRT |
-| e2>0 ∧ e3>0 ⟹ lcm(iso) = 6 (완전수) | 🟩 증명됨 | 정의로부터 자명 |
-| 종수-0 + squarefree ⟹ 등급 B | 🟧 관찰 | 8/8 일치, 구조적 |
-| lcm*cusps = 12 for N=13 | 🟧 관찰 | 개별 사례 |
-| 라마누잔 tau와 직접 관계 | ⚪ 미발견 | 추가 탐색 필요 |
+| Discovery | Grade | Rationale |
+|-----------|-------|-----------|
+| squarefree N ⟺ mu(N) = sigma(N) | 🟩 Proven | Direct arithmetic proof |
+| e2>0 ∧ e3>0 ⟺ N≡1 (mod 12) (prime) | 🟩 Proven | Quadratic residue + CRT |
+| e2>0 ∧ e3>0 ⟹ lcm(iso) = 6 (perfect number) | 🟩 Proven | Trivial from definition |
+| genus-0 + squarefree ⟹ Grade B | 🟧 Observed | 8/8 match, structural |
+| lcm*cusps = 12 for N=13 | 🟧 Observed | Individual case |
+| Direct relation to Ramanujan tau | ⚪ Not found | Need further exploration |
 
-**핵심 성과**: mu(N) = sigma(N) ⟺ N squarefree는 순수 산술 정리(🟩)로 확립됨.
-종수-0 분류와 산술 함수의 교차점에서 완전수 6과 상수 12가 자연스럽게 등장한다.
+**Key Achievement**: mu(N) = sigma(N) ⟺ N squarefree is established as a pure arithmetic theorem (🟩).
+Perfect number 6 and constant 12 naturally emerge at the intersection of genus-0 classification and arithmetic functions.

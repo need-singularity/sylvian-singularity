@@ -1,5 +1,5 @@
-# H-CX-197: 돌고래 소나 → 인간 뇌파 α/θ 전환
+# H-CX-197: Dolphin Sonar → Human Brainwave α/θ Shift
 
-> 문헌: 돌고래 소나 노출 시 인간 뇌파가 β(활성)→α/θ(명상) 전환.
-> 뇌활동 376% 증가 (PMC7349020). 12-30Hz 대역 23.53% 증가.
-> PH 해석: α/θ 전환 = H0_total 감소? = PH 단순화 = '연결 느낌'?
+> Literature: Human brainwaves shift from β(active)→α/θ(meditation) upon dolphin sonar exposure.
+> Brain activity 376% increase (PMC7349020). 12-30Hz band 23.53% increase.
+> PH interpretation: α/θ shift = H0_total decrease? = PH simplification = 'feeling of connection'?

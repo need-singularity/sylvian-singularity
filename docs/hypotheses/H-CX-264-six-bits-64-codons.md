@@ -1,3 +1,3 @@
-# H-CX-264: ⭐🟩 64 = 2^P₁ = τ(6)³ = 코돈수 — 삼중 일치!
+# H-CX-264: ⭐🟩 64 = 2^P₁ = τ(6)³ = Number of codons — Triple match!
 
-> 6비트=64상태=4³=τ(6)³=유전코돈수. 정보+생물+수학 삼중 교차.
+> 6 bits = 64 states = 4³ = τ(6)³ = number of genetic codons. Information + biology + mathematics triple intersection.

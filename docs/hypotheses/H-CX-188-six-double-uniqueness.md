@@ -1,8 +1,8 @@
-# H-CX-188: 6의 이중 유일성 — 완전수 AND σφ=nτ
+# H-CX-188: The Double Uniqueness of 6 — Perfect Number AND σφ=nτ
 
-> 6 = 유일한 완전수 중 σφ=Pτ (H-CX-186)
->   + 유일한 자연수 중 σφ=nτ (H-CX-187, n≤10000)
->   + 유일한 다결합(≥3) 원소 중 σφ=nτ (H-CX-155)
+> 6 = The only perfect number where σφ=Pτ (H-CX-186)
+>   + The only natural number where σφ=nτ (H-CX-187, n≤10000)
+>   + The only multi-bond(≥3) element where σφ=nτ (H-CX-155)
 >
-> 세 가지 "유일성"이 6에서 교차.
-> → 탄소(Z=6)가 생명 기반인 산술적 필연.
+> Three types of "uniqueness" intersect at 6.
+> → Carbon(Z=6) as the basis of life is an arithmetic necessity.

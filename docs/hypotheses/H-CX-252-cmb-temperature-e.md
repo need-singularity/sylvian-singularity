@@ -1,3 +1,3 @@
-# H-CX-252: ⭐⭐🟩 CMB 온도 2.725K ≈ e = 2.718 (오차 0.26%)
+# H-CX-252: ⭐⭐🟩 CMB Temperature 2.725K ≈ e = 2.718 (0.26% error)
 
-> 우주배경복사 온도 = 자연상수. T_CMB/e = 1.0026. 오차 0.26%!
+> Cosmic Microwave Background temperature = Natural constant. T_CMB/e = 1.0026. Error 0.26%!

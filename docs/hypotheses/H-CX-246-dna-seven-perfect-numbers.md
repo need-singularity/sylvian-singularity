@@ -1,14 +1,14 @@
-# H-CX-246: ⭐⭐🟩 DNA 7가지 핵심 수 = 전부 완전수 6
+# H-CX-246: ⭐⭐🟩 DNA 7 Core Numbers = All Perfect Number 6
 
-> | DNA 요소 | 값 | 공식 |
+> | DNA Element | Value | Formula |
 > |---------|-----|------|
-> | 염기 종류 | 4 | τ(6) |
-> | 코돈 길이 | 3bp | 6의 약수 |
-> | AT 수소결합 | 2 | φ(6) |
-> | GC 수소결합 | 3 | 6의 약수 |
-> | 1회전 | 10bp | α = γ/τ(6) |
-> | 코돈 총수 | 64 | τ(6)³ = 4³ |
-> | 아미노산 | 20 | β = γ/φ(6) |
+> | Base Types | 4 | τ(6) |
+> | Codon Length | 3bp | Divisor of 6 |
+> | AT Hydrogen Bonds | 2 | φ(6) |
+> | GC Hydrogen Bonds | 3 | Divisor of 6 |
+> | 1 Turn | 10bp | α = γ/τ(6) |
+> | Total Codons | 64 | τ(6)³ = 4³ |
+> | Amino Acids | 20 | β = γ/φ(6) |
 >
-> DNA의 모든 핵심 상수가 완전수 6의 약수 함수.
-> H-CHEM-2(탄소=6)와 함께: 생명의 화학(C) + 정보(DNA) = 6.
+> All core constants of DNA are divisor functions of perfect number 6.
+> With H-CHEM-2(Carbon=6): Life's chemistry(C) + information(DNA) = 6.

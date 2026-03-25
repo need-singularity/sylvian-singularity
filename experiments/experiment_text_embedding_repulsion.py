@@ -1,11 +1,12 @@
+```python
 #!/usr/bin/env python3
-"""TREE-2: 텍스트 임베딩(밀집) + 반발력장 — TF-IDF(희소)와 비교"""
+"""TREE-2: Text Embedding (Dense) + Repulsion Field — Comparison with TF-IDF (Sparse)"""
 import sys, os, time, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
 
 class SimpleEmbedding(nn.Module):
-    """단어 인덱스 → 학습 가능 임베딩 → 평균 풀링"""
+    """Word index → Trainable embedding → Average pooling"""
     def __init__(self, vocab_size, embed_dim, max_len):
         super().__init__()
         self.embed = nn.Embedding(vocab_size, embed_dim)
@@ -41,7 +42,7 @@ def main():
     train = fetch_20newsgroups(subset='train', categories=cats)
     test = fetch_20newsgroups(subset='test', categories=cats)
 
-    # 단어 인덱스 변환 (상위 2000단어)
+    # Word index conversion (top 2000 words)
     vec = CountVectorizer(max_features=2000, binary=True)
     vec.fit(train.data)
     vocab_size = 2001  # +1 for padding
@@ -127,3 +128,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

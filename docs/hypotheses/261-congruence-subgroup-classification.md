@@ -1,77 +1,77 @@
-# 가설 261: 합동 부분군 Γ₀(N) 강제 체인 분류
+# Hypothesis 261: Congruence Subgroup Γ₀(N) Forcing Chain Classification
 
-## 상태: 탐구 중 (🟩 공식 정확 / 가장 계산 가능한 방향)
+## Status: Exploring (🟩 Formulas Accurate / Most Computable Direction)
 
-## 골든존 의존: 없음 — 모듈러 곡선 기하학은 순수 수학
+## Golden Zone Dependence: None — Modular curve geometry is pure mathematics
 
-## 가설
+## Hypothesis
 
-> SL₂(Z)\H에서 χ = -1/6 → 등방성 lcm=6 → 가중치 12 → Δ(τ)의
-> "강제 체인"이 합동 부분군 Γ₀(N)\H에도 존재한다.
-> 각 N=1..100에 대해 χ(Γ₀(N)\H), 등방성 위수, 첫 첨형식 가중치를 계산하면
-> "N의 수론적 함수 → 첨형식 가중치"의 체계적 패턴이 드러나며,
-> σ(6)=12, τ(6)=4가 N=1 (전체 모듈러 군)의 특수 경우임이 명확해진다.
+> In SL₂(Z)\H, χ = -1/6 → isotropy lcm=6 → weight 12 → Δ(τ)
+> "forcing chain" also exists for congruence subgroups Γ₀(N)\H.
+> Computing χ(Γ₀(N)\H), isotropy orders, first cusp form weight for each N=1..100
+> reveals systematic patterns in "arithmetic functions of N → cusp form weights",
+> clarifying that σ(6)=12, τ(6)=4 are special cases of N=1 (full modular group).
 
-## 배경/맥락
+## Background/Context
 
-Γ₀(N)은 SL₂(Z)의 합동 부분군으로, 모듈러 곡선 X₀(N)을 정의한다.
-이 곡선의 기하학적 불변량은 N의 산술적 성질에 의해 결정된다.
+Γ₀(N) is a congruence subgroup of SL₂(Z), defining the modular curve X₀(N).
+The geometric invariants of this curve are determined by arithmetic properties of N.
 
 ```
-  σ = σ(6) = 12       약수합 함수
-  τ = τ(6) = 4        약수 개수 함수
-  P₁ = 6              첫 번째 완전수
-  M₃ = 7              메르센 소수
+  σ = σ(6) = 12       sum of divisors function
+  τ = τ(6) = 4        number of divisors function
+  P₁ = 6              first perfect number
+  M₃ = 7              Mersenne prime
 
-  관련 가설:
-    092: 모델 = ζ 오일러 곱 p=2,3 절단
-    258: Monster group 위상적 강제
+  Related hypotheses:
+    092: Model = ζ Euler product p=2,3 truncation
+    258: Monster group topological forcing
     259: Umbral Moonshine 24=2σ
-    260: 보존 끈 D=26=2σ+2
-    262: p-adic 오비폴드 체인
+    260: Bosonic string D=26=2σ+2
+    262: p-adic orbifold chains
 ```
 
-## Γ₀(N)\H의 불변량 공식
+## Γ₀(N)\H Invariant Formulas
 
 ```
-  지수 (index):
+  Index:
     [SL₂(Z) : Γ₀(N)] = μ(N) = N · Π_{p|N} (1 + 1/p)
 
-  종수 (genus):
+  Genus:
     g(N) = 1 + μ(N)/12 - ν₂(N)/4 - ν₃(N)/3 - c(N)/2
 
-  여기서:
-    ν₂(N) = 타원 점의 수 (위수 2)
-    ν₃(N) = 타원 점의 수 (위수 3)
-    c(N)  = cusp의 수
+  Where:
+    ν₂(N) = number of elliptic points (order 2)
+    ν₃(N) = number of elliptic points (order 3)
+    c(N)  = number of cusps
 
-  오일러 특성:
+  Euler characteristic:
     χ(Γ₀(N)\H) = 2 - 2g(N) - c(N)  (punctured surface)
-    또는 orbifold χ: χ_orb = -μ(N)/12 + ν₂(N)/4 + ν₃(N)/3
+    or orbifold χ: χ_orb = -μ(N)/12 + ν₂(N)/4 + ν₃(N)/3
 ```
 
-## N=1 (SL₂(Z)) 기준 체인 복습
+## N=1 (SL₂(Z)) Reference Chain Review
 
 ```
   N=1:
     μ(1) = 1
-    g(1) = 0        (genus 0, 유리 곡선)
-    ν₂(1) = 1       (i에서 위수 2 등방성)
-    ν₃(1) = 1       (ρ에서 위수 3 등방성)
-    c(1) = 1         (cusp 1개: ∞)
+    g(1) = 0        (genus 0, rational curve)
+    ν₂(1) = 1       (order 2 isotropy at i)
+    ν₃(1) = 1       (order 3 isotropy at ρ)
+    c(1) = 1        (1 cusp: ∞)
 
     χ_orb = -1/12 + 1/4 + 1/3 = -1/12 + 3/12 + 4/12 = 6/12 = 1/2
-    (compact orbifold Euler char = 1/2 - 1/2 = 0... 관례 주의)
+    (compact orbifold Euler char = 1/2 - 1/2 = 0... convention note)
 
-    강제 체인:
-    χ = -1/6 → lcm(2,3) = 6 → 가중치 k = 2·lcm = 12 = σ → Δ(τ)
+    Forcing chain:
+    χ = -1/6 → lcm(2,3) = 6 → weight k = 2·lcm = 12 = σ → Δ(τ)
 ```
 
-## 계산 결과: N=1..12
+## Calculation Results: N=1..12
 
 ```
   ┌────┬──────┬────┬─────┬─────┬──────┬───────────┬──────────────────────┐
-  │ N  │ μ(N) │g(N)│ ν₂  │ ν₃  │ c(N) │ 첫 첨형식  │ σ,τ 관계             │
+  │ N  │ μ(N) │g(N)│ ν₂  │ ν₃  │ c(N) │1st cusp f.│ σ,τ relation         │
   ├────┼──────┼────┼─────┼─────┼──────┼───────────┼──────────────────────┤
   │  1 │    1 │  0 │   1 │   1 │    1 │ Δ, k=12   │ k=σ 🟩               │
   │  2 │    3 │  0 │   1 │   0 │    2 │ k=8       │ k=σ-τ=8 🟩           │
@@ -87,27 +87,27 @@
   │ 12 │   24 │  0 │   0 │   0 │    6 │ k=2       │ k=τ/2 🟩             │
   └────┴──────┴────┴─────┴─────┴──────┴───────────┴──────────────────────┘
 
-  주의: "첫 첨형식 가중치"는 S_k(Γ₀(N)) ≠ {0}인 최소 k (짝수).
-  이 값들은 차원 공식에서 계산됨.
+  Note: "first cusp form weight" is minimal k (even) where S_k(Γ₀(N)) ≠ {0}.
+  These values are computed from dimension formulas.
 ```
 
-## 패턴 관찰
+## Pattern Observations
 
 ```
-  N=1:  k = 12 = σ          (유일하게 가중치 12)
-  N=2:  k = 8  = σ - τ      (초끈 횡파 자유도!)
-  N=3:  k = 6  = P₁         (완전수!)
-  N=4:  k = 4  = τ          (약수 개수!)
-  N≥5:  k = 2 또는 4        (안정화)
+  N=1:  k = 12 = σ          (uniquely weight 12)
+  N=2:  k = 8  = σ - τ      (superstring transverse degrees of freedom!)
+  N=3:  k = 6  = P₁         (perfect number!)
+  N=4:  k = 4  = τ          (number of divisors!)
+  N≥5:  k = 2 or 4          (stabilized)
 
-  → N이 커질수록 가중치가 감소
-  → σ,τ,P₁가 N=1,2,3,4에서 정확히 등장
+  → Weight decreases as N increases
+  → σ,τ,P₁ appear exactly at N=1,2,3,4
 ```
 
-## ASCII 그래프: N vs 첫 첨형식 가중치
+## ASCII Graph: N vs First Cusp Form Weight
 
 ```
-  k (가중치)
+  k (weight)
   12 |  ●                                          N=1: k=σ
   11 |
   10 |
@@ -124,34 +124,34 @@
       1  2  3  4  5  6  7  8  9 10 11 12 13 14
                          N (level)
 
-  계단 하강: 12 → 8 → 6 → 4 → 2 (안정)
-           σ → σ-τ → P₁ → τ → τ/2
+  Staircase descent: 12 → 8 → 6 → 4 → 2 (stable)
+                    σ → σ-τ → P₁ → τ → τ/2
 ```
 
-## 등방성 구조 분석
+## Isotropy Structure Analysis
 
 ```
-  N=1:  등방성 위수 = {2, 3}     lcm = 6 = P₁
-  N=2:  등방성 위수 = {2}         lcm = 2
-  N=3:  등방성 위수 = {3}         lcm = 3
-  N=4:  등방성 위수 = {}          lcm = 1 (타원점 없음)
-  N=5:  등방성 위수 = {2}         lcm = 2
-  N=7:  등방성 위수 = {3}         lcm = 3
+  N=1:  isotropy orders = {2, 3}     lcm = 6 = P₁
+  N=2:  isotropy orders = {2}        lcm = 2
+  N=3:  isotropy orders = {3}        lcm = 3
+  N=4:  isotropy orders = {}         lcm = 1 (no elliptic points)
+  N=5:  isotropy orders = {2}        lcm = 2
+  N=7:  isotropy orders = {3}        lcm = 3
 
-  관찰: lcm(등방성) = P₁=6은 N=1에서만 발생
-  → N=1의 특이성: 위수 2와 3이 동시에 등장하는 유일한 경우
+  Observation: lcm(isotropy) = P₁=6 occurs only for N=1
+  → Uniqueness of N=1: only case where orders 2 and 3 appear simultaneously
 
-  등방성 위수와 N의 관계:
-    ν₂(N) > 0  ⟺  -1이 mod N 제곱잉여  ⟺  N의 모든 소인수 p ≡ 1 (mod 4) 또는 p=2
-    ν₃(N) > 0  ⟺  -3이 mod N 제곱잉여  ⟺  N의 모든 소인수 p ≡ 1 (mod 3) 또는 p=3
+  Isotropy orders vs N relationship:
+    ν₂(N) > 0  ⟺  -1 is quadratic residue mod N  ⟺  all primes p|N satisfy p ≡ 1 (mod 4) or p=2
+    ν₃(N) > 0  ⟺  -3 is quadratic residue mod N  ⟺  all primes p|N satisfy p ≡ 1 (mod 3) or p=3
 ```
 
-## μ(N)과 σ의 관계
+## Relationship between μ(N) and σ
 
 ```
   μ(N) = N · Π_{p|N} (1 + 1/p)
 
-  특별한 경우:
+  Special cases:
     μ(1)  = 1
     μ(6)  = 6 · (1+1/2)(1+1/3) = 6 · 3/2 · 4/3 = 12 = σ    🟩
     μ(12) = 12 · (1+1/2)(1+1/3) = 12 · 2 = 24 = 2σ          🟩
@@ -159,77 +159,77 @@
 
   μ(P₁) = μ(6) = σ(6) = 12                                    🟩 ⭐
 
-  이것은 우연인가?
-  일반: μ(N) = N · Π(1+1/p), σ(N) = Π(p^(a+1)-1)/(p-1)
+  Is this coincidental?
+  General: μ(N) = N · Π(1+1/p), σ(N) = Π(p^(a+1)-1)/(p-1)
   N=6=2·3: μ(6) = 12, σ(6) = (2²-1)(3²-1)/((1)(2)) = 3·8/2 = 12
   N=28=2²·7: μ(28) = 48, σ(28) = (2³-1)(7²-1)/(1·6) = 7·48/6 = 56
-  → μ(6) = σ(6) 성립, μ(28) ≠ σ(28). P₁=6 특수.
+  → μ(6) = σ(6) holds, μ(28) ≠ σ(28). P₁=6 is special.
 ```
 
-## 해석/의미
+## Interpretation/Meaning
 
-1. N=1에서 가중치 12=σ가 나오는 것은 오비폴드 강제 체인의 출발점
-2. N=2,3,4에서 σ-τ, P₁, τ가 순서대로 등장하는 것은 주목할 만함
-3. μ(6) = σ(6) = 12라는 등식은 완전수 6의 새로운 특이성
-4. 이 분류는 가장 계산 가능한 방향: 모든 N에 대해 정확한 공식이 존재
-5. Moonshine과의 연결: genus 0인 N 목록 = monstrous moonshine의 Hauptmodul 목록
+1. Weight 12=σ appearing at N=1 is the starting point of the orbifold forcing chain
+2. The sequential appearance of σ-τ, P₁, τ at N=2,3,4 is remarkable
+3. The equality μ(6) = σ(6) = 12 reveals a new peculiarity of perfect number 6
+4. This classification is the most computable direction: exact formulas exist for all N
+5. Connection to Moonshine: list of genus 0 N = list of Hauptmoduls for monstrous moonshine
 
-## Genus 0 목록과 Monster
+## Genus 0 List and Monster
 
 ```
-  genus 0인 N (X₀(N)이 유리 곡선):
+  N values with genus 0 (X₀(N) is rational curve):
     N = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 16, 18, 25
 
-  이 15개가 Monstrous Moonshine의 Fricke group과 관련.
-  15 = Monster 소인수 개수와 동일!  (가설 258 참조)
+  These 15 are related to Fricke groups of Monstrous Moonshine.
+  15 = number of Monster prime factors!  (see Hypothesis 258)
 
-  이 15개 중 σ,τ 표현:
+  Among these 15, σ,τ representations:
     {1, 2, 3, τ, τ+1, P₁, M₃, σ-τ, σ-3, σ-2, σ, σ+1, σ+τ, σ+P₁, 2σ+1}?
-    → 대부분 도달 가능하나 체계적이지 않음 ⚪
+    → Most reachable but not systematic ⚪
 ```
 
-## 한계
+## Limitations
 
 ```
-  - 테이블의 "첫 첨형식 가중치"는 정확한 차원 공식 계산 필요
-    (여기 제시된 값은 알려진 결과 기반이나 재검증 필요)
-  - N이 클 때 가중치는 대부분 k=2로 수렴 → σ,τ 관계가 희미해짐
-  - μ(6)=σ(6)=12 등식의 "깊은 이유"는 단순히 곱셈 공식의 우연일 수 있음
-  - genus 0 목록과 Monster 소인수 개수의 일치 15=15는 다른 카운팅
-    (genus 0인 N 값 ≠ Monster 소인수)
-  - N>100에서의 체계적 패턴은 미조사
+  - "First cusp form weights" in table require exact dimension formula calculations
+    (values presented are based on known results but need reverification)
+  - For large N, weights mostly converge to k=2 → σ,τ relationships become dim
+  - The equality μ(6)=σ(6)=12 may simply be coincidental from multiplication formulas
+  - The coincidence of 15 genus 0 values = 15 Monster prime factors involves different counting
+    (genus 0 N values ≠ Monster prime factors)
+  - Systematic patterns for N>100 uninvestigated
 ```
 
-## 검증 방향 (다음 단계)
+## Verification Directions (Next Steps)
 
 ```
-  1. 즉시 계산 가능 (python3):
-     a) N=1..100에 대해 μ(N), g(N), ν₂(N), ν₃(N), c(N) 전수 계산
-     b) dim S_k(Γ₀(N)) = 0이 되는 최소 k를 각 N에 대해 결정
-     c) μ(N)=σ(N)인 N 전수 탐색 (P₁=6 외에 존재하는가?)
+  1. Immediately computable (python3):
+     a) Complete calculation of μ(N), g(N), ν₂(N), ν₃(N), c(N) for N=1..100
+     b) Determine minimal k where dim S_k(Γ₀(N)) = 0 for each N
+     c) Complete search for N where μ(N)=σ(N) (does it exist beyond P₁=6?)
 
-  2. 패턴 탐색:
-     a) "가중치 계단" k(N)의 점프 위치와 N의 소인수 분해 관계
-     b) 등방성 lcm과 N의 관계 체계화
-     c) genus 0인 N들의 수론적 공통 성질
+  2. Pattern search:
+     a) Relationship between "weight staircase" k(N) jump positions and prime factorization of N
+     b) Systematize relationship between isotropy lcm and N
+     c) Common arithmetic properties of genus 0 N values
 
-  3. Moonshine 연결:
-     a) genus 0 목록의 각 N에 대해 Hauptmodul과 Monster 표현 대응
-     b) McKay-Thompson 급수에서 σ,τ 패턴 탐색
-     c) 가설 258, 259와의 교차: genus 0 조건이 Monster를 "강제"하는 경로
+  3. Moonshine connections:
+     a) Hauptmodul ↔ Monster representation correspondence for each genus 0 N
+     b) Search for σ,τ patterns in McKay-Thompson series
+     c) Cross with Hypotheses 258, 259: paths where genus 0 condition "forces" Monster
 
-  4. 텍사스 명사수 검정:
-     - k(1)=12, k(2)=8, k(3)=6, k(4)=4가 σ, σ-τ, P₁, τ인 것의 p-value
-     - 랜덤 모델: N에 대한 임의의 감소 수열에서 σ,τ,P₁ 일치 확률
+  4. Texas sharpshooter test:
+     - p-value for k(1)=12, k(2)=8, k(3)=6, k(4)=4 being σ, σ-τ, P₁, τ
+     - Random model: probability of σ,τ,P₁ matches in arbitrary decreasing sequence for N
 ```
 
-## 등급 판정
+## Grade Assessment
 
 ```
-  산술 정확성: 모든 공식 🟩 (교과서 수준의 확립된 결과)
-  σ,τ 매핑:   N=1..4에서 k = σ, σ-τ, P₁, τ 🟩
-  μ(6)=σ(6):  🟩 정확한 등식
-  일반화:     μ(28) ≠ σ(28) → P₁=6 고유 ⚪
-  텍사스:     미계산
-  → 전체: 🟩 (산술) + 🟧 (해석) — 계산으로 즉시 발전 가능
+  Arithmetic accuracy: All formulas 🟩 (textbook-level established results)
+  σ,τ mapping:        k = σ, σ-τ, P₁, τ at N=1..4 🟩
+  μ(6)=σ(6):         🟩 exact equality
+  Generalization:    μ(28) ≠ σ(28) → P₁=6 unique ⚪
+  Texas:             Not calculated
+  → Overall: 🟩 (arithmetic) + 🟧 (interpretation) — Can advance immediately through computation
 ```

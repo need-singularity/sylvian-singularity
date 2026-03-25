@@ -1,86 +1,86 @@
-# H-CX-21: LLM의 Perplexity = 의식엔진의 장력 (교차 도메인)
+# H-CX-21: LLM's Perplexity = Consciousness Engine's Tension (Cross-domain)
 
-> **LLM의 perplexity(PPL)와 의식엔진의 tension이 구조적으로 동일하다. PPL = "다음 토큰에 대한 불확실성", tension = "엔진 간 불일치". 둘 다 "시스템이 얼마나 확신하는가"를 측정한다.**
+> **LLM perplexity (PPL) and the consciousness engine's tension are structurally identical. PPL = "uncertainty about the next token", tension = "disagreement between engines". Both measure "how confident the system is".**
 
-## 대응표
+## Correspondence Table
 
 ```
-  의식엔진                    LLM
+  Consciousness Engine            LLM
   ──────────────────────    ──────────────────────
   tension = |A-G|²          PPL = exp(H(next_token))
-  높은 장력 = 불확실          높은 PPL = 불확실
-  장력→0 = 확신              PPL→1 = 확신
-  이상탐지(H287)             OOD detection
-  AUROC=1.0                  PPL spike on OOD
-  H307 이중메커니즘           내부 PPL vs 앙상블 PPL?
+  High tension = uncertain  High PPL = uncertain
+  tension→0 = confident     PPL→1 = confident
+  Anomaly detection (H287)  OOD detection
+  AUROC=1.0                 PPL spike on OOD
+  H307 dual mechanism       Internal PPL vs ensemble PPL?
 ```
 
-## 핵심 교차
+## Core Cross-domain Connection
 
 ```
-  1. 장력 = PPL의 생물학적 버전
+  1. Tension = biological version of PPL
      PPL = exp(-1/N Σ log p(x_i))
      tension = |f_A(x) - f_G(x)|²
 
-     둘 다 "예측의 불확실성"을 측정
-     PPL: 다음 토큰을 예측하지 못하면 높음
-     tension: 두 엔진이 합의하지 못하면 높음
+     Both measure "prediction uncertainty"
+     PPL: high when failing to predict next token
+     tension: high when two engines cannot agree
 
-  2. 이상탐지 ↔ OOD detection
-     의식엔진: 이상 데이터 → 높은 장력 → AUROC=1.0
-     LLM: OOD 텍스트 → 높은 PPL → OOD 감지
-     → 같은 메커니즘!
+  2. Anomaly detection ↔ OOD detection
+     Consciousness engine: anomaly data → high tension → AUROC=1.0
+     LLM: OOD text → high PPL → OOD detected
+     → Same mechanism!
 
-  3. 골든MoE ↔ MoE 서번트
-     의식엔진: I=1/e, 37% 억제가 최적
-     골든MoE: k/N ≈ 5/8 ≈ 0.625 ≈ 1-1/e
-     → PPL 최적화 = tension 최적화?
+  3. Golden MoE ↔ MoE Savant
+     Consciousness engine: I=1/e, 37% inhibition is optimal
+     Golden MoE: k/N ≈ 5/8 ≈ 0.625 ≈ 1-1/e
+     → PPL optimization = tension optimization?
 
-  4. H307 이중메커니즘 ↔ LLM 앙상블
-     내부 PPL: 단일 모델의 불확실성
-     앙상블 PPL: 여러 모델의 불일치
-     → 내부 PPL 반전 + 앙상블 PPL 정상 = H307?
+  4. H307 dual mechanism ↔ LLM ensemble
+     Internal PPL: uncertainty of a single model
+     Ensemble PPL: disagreement among multiple models
+     → Internal PPL inversion + ensemble PPL normal = H307?
 ```
 
-## 검증 가능?
+## Verifiable?
 
 ```
-  직접 검증은 어렵다 (LLM 학습 필요)
-  간접 검증:
-    1. MNIST에서 "PPL 유사 메트릭" 정의:
+  Direct verification is difficult (requires LLM training)
+  Indirect verification:
+    1. Define "PPL-analog metric" on MNIST:
        PPL_analog = exp(CrossEntropy(model_output, true_label))
-       → 이것이 tension과 상관하는가?
+       → Does this correlate with tension?
 
-    2. 골든MoE에서 PPL과 tension 동시 측정
-       → PPL이 낮을 때 tension도 낮은가?
+    2. Measure PPL and tension simultaneously in Golden MoE
+       → Is tension also low when PPL is low?
 
-    3. 서번트 시나리오의 PPL 궤적
-       → step 3303에서 PPL 9.1 → tension 상당?
+    3. PPL trajectory in Savant scenario
+       → step 3303 with PPL 9.1 → substantial tension?
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
   MNIST RepulsionFieldEngine, 10ep:
 
-  전체: r(tension, PPL) = +0.001 (거의 무상관)
+  Overall: r(tension, PPL) = +0.001 (nearly uncorrelated)
 
-  정답/오답 분리:
-    정답: tension=702±432, PPL=1.01
-    오답: tension=495±298, PPL=283,505
-    → 정답이 더 높은 장력! (ratio 1.42x)
+  Correct/incorrect separated:
+    Correct:   tension=702±432, PPL=1.01
+    Incorrect: tension=495±298, PPL=283,505
+    → Correct predictions have higher tension! (ratio 1.42x)
 
-  Quartile 분석:
-    Low-tension quartile:  PPL=430.7 (불확실)
-    High-tension quartile: PPL=9.68  (확신)
-    → 높은 장력 = 낮은 PPL (확신)!
+  Quartile analysis:
+    Low-tension quartile:  PPL=430.7 (uncertain)
+    High-tension quartile: PPL=9.68  (confident)
+    → High tension = low PPL (confident)!
 
-  결론: tension ∝ 1/PPL (반비례!)
-    높은 장력 = 엔진들이 강하게 반발 = 확신
-    낮은 장력 = 엔진들이 합의 = 불확실 (혼동의 합의!)
-    → H307 이중 메커니즘의 PPL 버전!
-    → 원래 예상(tension ∝ PPL)은 반박
-    → 수정: tension ∝ confidence = 1/PPL
+  Conclusion: tension ∝ 1/PPL (inversely proportional!)
+    High tension = engines strongly repel = confident
+    Low tension = engines agree = uncertain (consensus of confusion!)
+    → PPL version of H307 dual mechanism!
+    → Original prediction (tension ∝ PPL) refuted
+    → Revised: tension ∝ confidence = 1/PPL
 ```
 
-## 상태: 🟧 수정 (tension ∝ 1/PPL, 원래 방향 반박, H307과 일관)
+## Status: 🟧 Revised (tension ∝ 1/PPL, original direction refuted, consistent with H307)

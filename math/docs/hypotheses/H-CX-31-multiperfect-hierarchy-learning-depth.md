@@ -1,25 +1,25 @@
-# H-CX-31: 다중 완전수 계층 = AI 학습 깊이
+# H-CX-31: Multiperfect Number Hierarchy = AI Learning Depth
 
-> **가설**: k-완전수(σ=kn)의 계층이 뉴럴넷 학습의 깊이(depth)에 대응.
-> k=2(완전수)=shallow, k=3(triperfect)=medium, k=4=deep.
+> **Hypothesis**: The hierarchy of k-perfect numbers (σ=kn) corresponds to the depth of neural network learning.
+> k=2 (perfect numbers)=shallow, k=3 (triperfect)=medium, k=4=deep.
 
-## 핵심
+## Core
 
 ```
   k-perfect: R = kφ/τ
-  k=2 (shallow): R(6)=1, R(28)=4   — 기본 표현
-  k=3 (medium):  R(120)=6, R(672)=24 — 중간 추상화
-  k=4 (deep):    R(30240)=288        — 깊은 추상화
+  k=2 (shallow): R(6)=1, R(28)=4   — Basic representation
+  k=3 (medium):  R(120)=6, R(672)=24 — Intermediate abstraction
+  k=4 (deep):    R(30240)=288        — Deep abstraction
 
-  "k가 클수록 R이 커짐 = 더 복잡한 표현"
+  "Larger k → larger R = more complex representation"
 
-  AI 대응:
-    k=2 (1-2 layer): 선형 분류 (R=1=균형)
-    k=3 (3-5 layer): 패턴 인식 (R=6=P₁)
-    k=4 (6+ layer): 추상 추론 (R=288)
+  AI correspondence:
+    k=2 (1-2 layer): Linear classification (R=1=balanced)
+    k=3 (3-5 layer): Pattern recognition (R=6=P₁)
+    k=4 (6+ layer): Abstract reasoning (R=288)
 
-  R(120)=6=P₁: "3층 네트워크의 R = 완전수!"
-  → MoE의 expert 수와 관련?
+  R(120)=6=P₁: "3-layer network's R = perfect number!"
+  → Related to number of experts in MoE?
 ```
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★
+## Judgment: 🟧 Structural Analogy | Impact: ★★★

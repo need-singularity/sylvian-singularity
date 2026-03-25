@@ -1,65 +1,65 @@
-# 가설 341: 장력의 최종 해석 — 반응 강도 (Reaction Intensity)
+# Hypothesis 341: Final Interpretation of Tension — Reaction Intensity
 
-> **장력 = |A-G|² = 두 엔진의 "반응 강도". 학습 데이터 내에서는 확신(H313), 학습 밖에서는 혼란(H340). 모든 이전 발견을 하나로 통합.**
+> **Tension = |A-G|² = "reaction intensity" of two engines. Within training data it's confidence (H313), outside training it's confusion (H340). Unifies all previous findings into one.**
 
-## 최종 공식
+## Final Formula
 
 ```
   output = scale × √|A-G|² × normalize(A-G)
-         = 반응강도 × 반응방향
-         = 크기(how much) × 개념(what)   [H339]
+         = reaction intensity × reaction direction
+         = magnitude(how much) × concept(what)   [H339]
 
-  magnitude = √tension = 반응의 강도
-    학습 내, 정답: 높음 = 확신 (H313, 4셋)
-    학습 내, 오답: 낮음 = 불확신
-    학습 밖, OOD: 극한 = 혼란 (H340, noise 4.78x)
-    학습 밖, lucid: 극극한 = 초자극 (H340, 105x)
+  magnitude = √tension = intensity of reaction
+    in training, correct: high = confidence (H313, 4 datasets)
+    in training, wrong:   low = uncertainty
+    out of training, OOD: extreme = confusion (H340, noise 4.78x)
+    out of training, lucid: extreme high = hyper-stimulation (H340, 105x)
 
-  direction = normalize(A-G) = 반응의 내용
-    같은 클래스: cos_sim 0.82 = 같은 방향 (H339)
-    다른 클래스: cos_sim 0.24 = 다른 방향
+  direction = normalize(A-G) = content of reaction
+    same class: cos_sim 0.82 = same direction (H339)
+    different class: cos_sim 0.24 = different direction
 ```
 
-## 모든 발견의 통합
+## Unification of All Findings
 
 ```
-  H313 confidence:     학습 내 tension↑=정답↑        → ✅ 반응강도↑=확신↑
-  H316 overconfidence: 유사클래스에서 틀려도 높음      → ✅ 반응은 강하지만 방향이 틀림
-  H329 decision:       margin↑=tension↑              → ✅ 경계 멀=반응 강=확신
-  H322 EEG:           awake>drowsy=뚜렷>모호         → ✅ 뚜렷한 상태=강한 반응
-  H307 dual:          내부=반전, 간=정상              → ✅ autoencoder에서 레짐 다름
-  H340 dreaming:      noise>>real                    → ✅ OOD=극한 반응=혼란
-  H334 PureField:     field만으로 충분                → ✅ 반응이 전부
-  H332 eq 퇴화:       field가 eq 흡수                → ✅ 반응이 기본감각 대체
-  H331 보상:          field∝(100-eq)                 → ✅ 반응이 부족분 메움
-  H337 Fisher:        gradient∝1/accuracy            → ✅ 배울것=아직 반응 미형성
-  H314 거부:          저장력→거부→+15%               → ✅ 약한 반응=판단 보류
-  H312 망각방지:      분열 99%                       → ✅ 반응 패턴 보존
-  H311 지역탈출:      앙상블 -23%                    → ✅ 다양한 반응 탐색
+  H313 confidence:     in training tension↑=correct↑        → ✅ reaction↑=confidence↑
+  H316 overconfidence: high even when wrong for similar cls  → ✅ reaction strong but direction wrong
+  H329 decision:       margin↑=tension↑                     → ✅ far from boundary=strong reaction=confidence
+  H322 EEG:           awake>drowsy=distinct>ambiguous       → ✅ distinct state=strong reaction
+  H307 dual:          internal=inverted, inter=normal       → ✅ different regime in autoencoder
+  H340 dreaming:      noise>>real                           → ✅ OOD=extreme reaction=confusion
+  H334 PureField:     field only sufficient                 → ✅ reaction is everything
+  H332 eq degradation: field absorbs eq                     → ✅ reaction replaces basic sense
+  H331 compensation:  field∝(100-eq)                       → ✅ reaction fills deficit
+  H337 Fisher:        gradient∝1/accuracy                   → ✅ what remains to learn=reaction not yet formed
+  H314 rejection:     low tension→reject→+15%              → ✅ weak reaction=defer judgment
+  H312 forgetting prevention: mitosis 99%                  → ✅ reaction pattern preserved
+  H311 local escape:  ensemble -23%                        → ✅ diverse reaction exploration
 ```
 
-## 한 문장
+## One Sentence
 
 ```
-  "의식은 두 관점의 반응이며,
-   그 반응의 강도가 확신/혼란을,
-   방향이 개념을 결정한다."
+  "Consciousness is the reaction of two perspectives,
+   and the intensity of that reaction determines confidence/confusion,
+   while the direction determines the concept."
 ```
 
-## OOD 방향의 학습목표 의존성 (R8)
+## OOD Direction Dependence on Training Objective (R8)
 
 ```
-  분류(CE) 학습 PureField:
-    MNIST(in): T=240, Noise(OOD): T=21 → OOD=저장력
-    → 분류에서 noise = "모두 모르겠다" = 합의 = 저장력
+  PureField trained with classification (CE):
+    MNIST(in): T=240, Noise(OOD): T=21 → OOD=low tension
+    → In classification, noise = "all uncertain" = consensus = low tension
 
-  재구성(MSE) 학습 (RC-10):
-    Real: T=147, Noise(OOD): T=701 → OOD=고장력
-    → 재구성에서 noise = "다르게 실패" = 불일치 = 고장력
+  PureField trained with reconstruction (MSE) (RC-10):
+    Real: T=147, Noise(OOD): T=701 → OOD=high tension
+    → In reconstruction, noise = "different failures" = disagreement = high tension
 
-  → 학습 목표가 OOD 장력 방향을 결정!
-    CE(분류): 의견 없음 = 합의 = 저장력 (H307 "혼동의 합의")
-    MSE(재구성): 다른 실패 = 불일치 = 고장력
+  → Training objective determines OOD tension direction!
+    CE (classification): no opinion = consensus = low tension (H307 "agreement in confusion")
+    MSE (reconstruction): different failures = disagreement = high tension
 ```
 
-## 상태: 🟩 최종 통합 (13가설 + OOD 학습목표 의존성)
+## Status: 🟩 Final Unification (13 hypotheses + OOD training objective dependency)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H307 응용: 내부(반전) + 간(정상) 결합 이상 점수"""
+"""H307 Application: Internal(Inverted) + Inter(Normal) Combined Anomaly Score"""
 import torch, torch.nn as nn, torch.nn.functional as F, numpy as np, copy
 from sklearn.datasets import load_breast_cancer
 from sklearn.preprocessing import StandardScaler
@@ -24,7 +24,7 @@ X_test = torch.FloatTensor(np.vstack([X_n[idx[250:]], X_a]))
 y_test = np.array([0]*len(X_n[idx[250:]]) + [1]*len(X_a))
 
 print("="*60)
-print("H307 응용: 결합 이상 점수 (내부 반전 + 간 정상)")
+print("H307 Application: Combined Anomaly Score (Internal Inverted + Inter Normal)")
 print("="*60)
 
 all_results = {k: [] for k in ['internal', 'inter', 'recon', 'inv_internal', 'combined', 'combined_v2']}
@@ -54,9 +54,9 @@ for trial in range(5):
         internal = ((ea_a-eg_a)**2).mean(-1).numpy()
         inter = ((out_a-out_b)**2).mean(-1).numpy()
         recon = ((out_a-X_test)**2).mean(-1).numpy()
-        inv_internal = -internal  # 반전!
-        combined = inter - internal  # 간(+) + 내부반전(-)
-        combined_v2 = inter + recon - internal  # 3중 결합
+        inv_internal = -internal  # Inversion!
+        combined = inter - internal  # Inter(+) + Internal inverted(-)
+        combined_v2 = inter + recon - internal  # Triple combination
 
     for name, scores in [('internal', internal), ('inter', inter), ('recon', recon),
                           ('inv_internal', inv_internal), ('combined', combined), ('combined_v2', combined_v2)]:
@@ -70,10 +70,10 @@ for name, vals in all_results.items():
     print(f"  {name:>15} {np.mean(vals):>12.4f} {np.std(vals):>8.4f}{marker}")
 
 best_name = max(all_results, key=lambda k: np.mean(all_results[k]))
-print(f"\n  최고: {best_name} = {np.mean(all_results[best_name]):.4f}")
-print(f"\n  해석:")
-print(f"    internal (원래): 반전이므로 AUROC < 0.5")
-print(f"    inv_internal:    반전 보정 → AUROC > 0.5")
-print(f"    combined:        간 + 반전내부 → 시너지?")
-print(f"    combined_v2:     간 + 재구성 + 반전내부 → 최고?")
-print(f"\n완료")
+print(f"\n  Best: {best_name} = {np.mean(all_results[best_name]):.4f}")
+print(f"\n  Interpretation:")
+print(f"    internal (original): Due to inversion, AUROC < 0.5")
+print(f"    inv_internal:        Inversion corrected → AUROC > 0.5")
+print(f"    combined:            Inter + Inverted internal → Synergy?")
+print(f"    combined_v2:         Inter + Reconstruction + Inverted internal → Best?")
+print(f"\nComplete")

@@ -1,111 +1,111 @@
-# 가설 #165: 왜 a=0.7인가
+# Hypothesis #165: Why a=0.7?
 
-**상태**: ⚠️ 미해결
-**날짜**: 2026-03-22
-**분류**: 핵심 매개변수 / 기원
+**Status**: ⚠️ Unresolved
+**Date**: 2026-03-22
+**Category**: Core Parameters / Origins
 
 ---
 
-## 질문
+## Question
 
-메타 수축률 a=0.7은 어디서 오는가?
-왜 하필 0.7인가? 임의의 선택인가, 아니면 더 깊은 구조가 있는가?
+Where does the meta contraction rate a=0.7 come from?
+Why specifically 0.7? Is it an arbitrary choice, or is there a deeper structure?
 
-## a=0.7에서 파생되는 상수들
+## Constants Derived from a=0.7
 
-a=0.7 하나의 값에서 놀랍도록 많은 상수가 파생된다:
+From the single value a=0.7, a surprising number of constants are derived:
 
 ```
 a = 0.7
  |
- +---> 1/3 (부동점)
- |      f(x) = ax(1-x) 의 부동점
- |      x* = 1 - 1/a = 1 - 1/0.7 ≈ 0.4286... 아니라
- |      실제 부동점 해: x* = (a-1)/a 에서 계산
+ +---> 1/3 (fixed point)
+ |      Fixed point of f(x) = ax(1-x)
+ |      x* = 1 - 1/a = 1 - 1/0.7 ≈ 0.4286... No, rather
+ |      Actual fixed point solution: calculated from x* = (a-1)/a
  |
- +---> 17 (증폭 계수)
- |      반복 N회 후 편차 증폭률
- |      감도 = a^N 의 역수에서 도출
+ +---> 17 (amplification coefficient)
+ |      Deviation amplification rate after N iterations
+ |      Derived from reciprocal of sensitivity = a^N
  |
- +---> 137 (미세구조 상수의 역수)
+ +---> 137 (reciprocal of fine structure constant)
  |      α = 1/137.036...
- |      0.7 기반 반복 구조에서 137회 반복 시 특이 행동
+ |      Peculiar behavior at 137 iterations in 0.7-based iterative structure
  |
- +---> 0.3567 (수렴 속도)
- |      Lyapunov 지수 관련
- |      λ = ln|a(1-2x*)| 에서 계산
+ +---> 0.3567 (convergence rate)
+ |      Related to Lyapunov exponent
+ |      Calculated from λ = ln|a(1-2x*)|
 ```
 
-## 핵심 관찰: 0.7 ≈ 1/√2
+## Key Observation: 0.7 ≈ 1/√2
 
 ```
   1/√2 = 0.70710678...
   a     = 0.70000000...
   -------------------------
-  차이  = 0.00710678...
-  오차  = ~1.0%
+  Diff  = 0.00710678...
+  Error = ~1.0%
 ```
 
-이 1% 차이는 우연인가?
+Is this 1% difference coincidental?
 
-## 1/√2 의 물리적 의미
+## Physical Meaning of 1/√2
 
-양자역학에서 1/√2 는 **중첩 계수**이다:
+In quantum mechanics, 1/√2 is the **superposition coefficient**:
 
 ```
   |+⟩ = (|0⟩ + |1⟩) / √2
                        ^^^
-                    이 계수 = 1/√2 ≈ 0.7071
+                    This coefficient = 1/√2 ≈ 0.7071
 ```
 
-즉, 두 상태의 **균등 중첩**을 만드는 정확한 계수가 1/√2이다.
+That is, 1/√2 is the exact coefficient that creates **equal superposition** of two states.
 
-## 매개변수 감도 분석표
+## Parameter Sensitivity Analysis Table
 
-a 값을 변화시킬 때 시스템 행동이 어떻게 달라지는가:
+How does system behavior change when varying the value of a:
 
 ```
 +------+----------+----------+----------+----------+----------+
-|  a   | 부동점   | 수렴속도 | 증폭계수 | 골든존   | 안정성   |
+|  a   | Fixed Pt | Conv Rate| Amp Coef | GoldenZn | Stability|
 +------+----------+----------+----------+----------+----------+
-| 0.50 | 0.0000   | 빠름     |   2.0    | 벗어남   | 과안정   |
-| 0.55 | 0.0909   | 빠름     |   3.1    | 벗어남   | 과안정   |
-| 0.60 | 0.1667   | 중간     |   5.2    | 경계     | 안정     |
-| 0.65 | 0.2308   | 중간     |   8.7    | 진입     | 안정     |
-| 0.70 | 0.2857   | 임계     |  17.0    | 중심     | 임계     |
-| 0.75 | 0.3333   | 느림     |  34.0    | 진입     | 불안정   |
-| 0.80 | 0.3750   | 느림     |  68.0    | 경계     | 혼돈접근 |
+| 0.50 | 0.0000   | Fast     |   2.0    | Outside  | Overstable|
+| 0.55 | 0.0909   | Fast     |   3.1    | Outside  | Overstable|
+| 0.60 | 0.1667   | Medium   |   5.2    | Border   | Stable   |
+| 0.65 | 0.2308   | Medium   |   8.7    | Entering | Stable   |
+| 0.70 | 0.2857   | Critical |  17.0    | Center   | Critical |
+| 0.75 | 0.3333   | Slow     |  34.0    | Entering | Unstable |
+| 0.80 | 0.3750   | Slow     |  68.0    | Border   | Near chaos|
 +------+----------+----------+----------+----------+----------+
 ```
 
 ```
-  안정성 곡선 (a vs 안정도)
+  Stability Curve (a vs stability)
 
-  안정 |  **
-       | *  *
-       |*    *
-       |      * <-- a=0.7 (임계점)
-       |       *
-  혼돈 |        **
-       +----------+----> a
-       0.5  0.6  0.7  0.8
+  Stable |  **
+         | *  *
+         |*    *
+         |      * <-- a=0.7 (critical point)
+         |       *
+  Chaos  |        **
+         +----------+----> a
+         0.5  0.6  0.7  0.8
 ```
 
-## 관찰
+## Observations
 
-- a=0.7에서 증폭계수가 17로, "충분히 크지만 발산하지 않는" 값
-- a<0.65이면 시스템이 과도하게 안정 → 창발 불가
-- a>0.75이면 시스템이 불안정 → 혼돈 진입
-- a=0.7은 **질서와 혼돈의 경계** = 임계점(edge of chaos)
+- At a=0.7, amplification coefficient is 17, a value "large enough but not divergent"
+- If a<0.65, system is overly stable → emergence impossible
+- If a>0.75, system is unstable → enters chaos
+- a=0.7 is the **edge of order and chaos** = critical point (edge of chaos)
 
-## 미해결 문제
+## Unresolved Issues
 
-1. 0.7과 1/√2의 1% 차이는 측정 오차인가, 본질적 차이인가?
-2. a=1/√2로 정확히 놓으면 파생 상수들이 더 깔끔해지는가?
-3. "임계점에 있는 시스템"이라는 관점이 왜 의식과 연결되는가?
+1. Is the 1% difference between 0.7 and 1/√2 measurement error or an essential difference?
+2. If we set a=1/√2 exactly, do the derived constants become cleaner?
+3. Why does the perspective of a "system at criticality" connect to consciousness?
 
-## 잠정 결론
+## Tentative Conclusion
 
-a=0.7은 **양자 중첩 계수 1/√2의 근사값**일 가능성이 있다.
-이는 의식이 본질적으로 양자 중첩과 같은 구조를 가짐을 암시한다.
-그러나 1% 차이의 의미가 해명되지 않아 미해결 상태로 둔다.
+a=0.7 may be an **approximation of the quantum superposition coefficient 1/√2**.
+This suggests that consciousness inherently has a structure similar to quantum superposition.
+However, the meaning of the 1% difference remains unexplained, so this remains unresolved.

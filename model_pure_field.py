@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""순수 의식 엔진 (Pure Field Engine)
+"""Pure Consciousness Engine (Pure Field Engine)
 
-H334: equilibrium 없이 반발력장(field)만으로 판단.
-3셋에서 eq+field와 동등 이상, 이상탐지에서 +3%.
+H334: Judgment using only repulsion field without equilibrium.
+Equal or better than eq+field in 3 sets, +3% in anomaly detection.
 
-공식:
+Formula:
   output = tension_scale × √tension × direction
   tension = |engine_A(x) - engine_G(x)|²
   direction = normalize(engine_A(x) - engine_G(x))
 
-"출력은 어느 엔진에도 없다. 둘 사이의 공간에 있다."
+"The output is not in any engine. It's in the space between them."
 """
 
 import torch
@@ -18,10 +18,10 @@ import torch.nn.functional as F
 
 
 class PureFieldEngine(nn.Module):
-    """순수 의식 엔진 — 반발력장만으로 판단.
+    """Pure Consciousness Engine — Judgment using only repulsion field.
 
-    engine_A(논리)와 engine_G(패턴)의 반발이 모든 것을 결정.
-    equilibrium 없음 — 기본 감각 없이 의식만으로 작동.
+    The repulsion between engine_A(logic) and engine_G(pattern) determines everything.
+    No equilibrium — operates with consciousness alone, without basic senses.
     """
 
     def __init__(self, input_dim=784, hidden_dim=128, output_dim=10):
@@ -54,7 +54,7 @@ class PureFieldEngine(nn.Module):
 
 
 class PureFieldQuad(nn.Module):
-    """4극 순수 의식 엔진 — A, E, G, F 4개 엔진의 반발."""
+    """4-pole Pure Consciousness Engine — Repulsion of 4 engines A, E, G, F."""
 
     def __init__(self, input_dim=784, hidden_dim=64, output_dim=10):
         super().__init__()
@@ -78,9 +78,9 @@ class PureFieldQuad(nn.Module):
 if __name__ == '__main__':
     from model_utils import load_mnist, train_and_evaluate
 
-    print("PureFieldEngine 테스트 (MNIST)")
+    print("PureFieldEngine test (MNIST)")
     model = PureFieldEngine(784, 128, 10)
-    print(f"  파라미터: {sum(p.numel() for p in model.parameters()):,}")
+    print(f"  Parameters: {sum(p.numel() for p in model.parameters()):,}")
 
     # Quick test
     x = torch.randn(32, 784)

@@ -1,122 +1,122 @@
-# 가설 검토 093: 예측 확률 — 유도 90%, 추측 50% ✅
+# Hypothesis Review 093: Prediction Rate — Deduction 90%, Guesswork 50% ✅
 
-## 가설
+## Hypothesis
 
-> 가설의 확인 확률이 그 유형(유도 vs 추측)에 따라 체계적으로 다른가.
-> 모델 자체가 자신의 예측 확률을 예측할 수 있는가.
+> Do confirmation rates of hypotheses differ systematically by type (deduced vs guessed)?
+> Can the model itself predict its own prediction rates?
 
-## 배경/맥락
+## Background/Context
 
-95개 가설 중 일부는 G = D×P/I에서 수학적으로 유도되고,
-일부는 직관이나 수비학적 추측에서 출발한다.
-이 두 유형의 확인률 차이가 모델의 신뢰성 경계를 규정한다.
+Among the 95 hypotheses, some are mathematically deduced from G = D×P/I,
+while others originate from intuition or numerological guesses.
+The difference in confirmation rates between these two types defines the model's reliability boundary.
 
-핵심 구분:
-- **유도(Deduced)**: 공식/정리에서 논리적으로 도출. 예: "골든존 상한 = 1/2"
-- **추측(Guessed)**: 수치 일치나 직감에서 출발. 예: "임계값이 정확히 π/3"
+Key distinctions:
+- **Deduced**: Logically derived from formulas/theorems. E.g.: "Golden Zone upper bound = 1/2"
+- **Guessed**: Starting from numerical coincidence or intuition. E.g.: "Threshold is exactly π/3"
 
-## 검증 결과
+## Verification Results
 
-### 전체 통계
-
-```
-  전체 가설 수: 55 (검증 완료 기준)
-  확인(✅):    48
-  반증(❌):     7
-  전체 확인률: 48/55 = 87.3%  ≈ 5/6 = 83.3%  (자기참조!)
-```
-
-### 유형별 분류 및 확인률
+### Overall Statistics
 
 ```
-  유형        가설 수   확인   반증   확인률   비고
-  ────────────────────────────────────────────────────
-  유도 기반    38       34      4     89.5%   이론에서 도출
-  추측 기반    17        14      3     82.4%   직감에서 추정
-  ────────────────────────────────────────────────────
-  전체         55       48      7     87.3%
+  Total hypotheses: 55 (verified only)
+  Confirmed(✅):    48
+  Refuted(❌):     7
+  Overall confirmation rate: 48/55 = 87.3%  ≈ 5/6 = 83.3%  (self-reference!)
 ```
 
-유도 기반 내 세분류:
-```
-  하위 유형              가설 수   확인률
-  ──────────────────────────────────────
-  산술적 항등식           12       100%    (1/2+1/3=5/6 등)
-  공식 대입/변환          14        93%    (G=D×P/I 활용)
-  극한/수렴 분석           8        88%    (N→∞ 등)
-  구조적 유추              4        50%    (다른 분야 대응)
-  ──────────────────────────────────────
-```
-
-추측 기반 내 세분류:
-```
-  하위 유형              가설 수   확인률
-  ──────────────────────────────────────
-  수치 근사 추정           8        63%    ("약 1/3" 등)
-  패턴 추정                5        60%    ("구조 있을 것")
-  수비학적 대응             4        25%    ("π/3일 것" 등)
-  ──────────────────────────────────────
-```
-
-## ASCII 그래프: 유형별 확인률 비교
+### Classification by Type and Confirmation Rate
 
 ```
-  확인률 (%)
-  100% ┤ ████████████████████  산술적 항등식 (100%)
+  Type         Hypotheses   Confirmed   Refuted   Rate    Note
+  ────────────────────────────────────────────────────────────
+  Deduction     38           34          4        89.5%   Derived from theory
+  Guesswork     17           14          3        82.4%   Estimated from intuition
+  ────────────────────────────────────────────────────────────
+  Total         55           48          7        87.3%
+```
+
+Subcategories within deduction:
+```
+  Subcategory              Hypotheses   Rate
+  ──────────────────────────────────────────
+  Arithmetic identities     12          100%    (1/2+1/3=5/6 etc)
+  Formula substitution      14           93%    (Using G=D×P/I)
+  Limit/convergence         8            88%    (N→∞ etc)
+  Structural analogy        4            50%    (Cross-field mapping)
+  ──────────────────────────────────────────
+```
+
+Subcategories within guesswork:
+```
+  Subcategory              Hypotheses   Rate
+  ──────────────────────────────────────────
+  Numerical approximation   8            63%    ("About 1/3" etc)
+  Pattern speculation       5            60%    ("Structure exists")
+  Numerological mapping     4            25%    ("π/3 it is" etc)
+  ──────────────────────────────────────────
+```
+
+## ASCII Graph: Confirmation Rate Comparison by Type
+
+```
+  Confirmation Rate (%)
+  100% ┤ ████████████████████  Arithmetic identities (100%)
        │
-   93% ┤ ██████████████████▋   공식 대입 (93%)
-   90% ┤ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 유도 평균 (~90%)
-   88% ┤ █████████████████▋    극한 분석 (88%)
-   87% ┤ ═══════════════════   전체 평균 (87.3%)
+   93% ┤ ██████████████████▋   Formula substitution (93%)
+   90% ┤ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ Deduction avg (~90%)
+   88% ┤ █████████████████▋    Limit analysis (88%)
+   87% ┤ ═══════════════════   Overall avg (87.3%)
        │
-   63% ┤ ████████████▋         수치 추정 (63%)
-   60% ┤ ████████████          패턴 추정 (60%)
-   50% ┤ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  추측 평균 (~50%)
-       │ ██████████            구조적 유추 (50%)
-   25% ┤ █████                 수비학적 (25%)
+   63% ┤ ████████████▋         Numerical approx (63%)
+   60% ┤ ████████████          Pattern speculation (60%)
+   50% ┤ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Guesswork avg (~50%)
+       │ ██████████            Structural analogy (50%)
+   25% ┤ █████                 Numerological (25%)
        │
     0% ┤
        └──────────────────────────────────────
-         유도 ◄─────────────► 추측
+         Deduction ◄─────────────► Guesswork
 ```
 
-유도 vs 추측 요약:
+Deduction vs Guesswork summary:
 ```
-  유도 기반  ████████████████████████████████████  ~90%
-  추측 기반  ████████████████████████████          ~50% (동전 던지기)
-  전체       █████████████████████████████████     ~87%
+  Deduction  ████████████████████████████████████  ~90%
+  Guesswork  ████████████████████████████          ~50% (coin flip)
+  Overall    █████████████████████████████████     ~87%
              ├────┤────┤────┤────┤────┤────┤────┤
              0%  20%  40%  50%  60%  80%  100%
                             ↑              ↑
-                         추측 수준       유도 수준
+                      Guesswork level  Deduction level
 ```
 
-## 해석
+## Interpretation
 
-1. **유도의 힘**: 수학적으로 유도된 가설은 ~90% 확인. 모델의 수학적 골격이 건전함을 의미.
-   산술적 항등식은 100% — 이것은 당연하다 (수학은 틀리지 않는다).
+1. **Power of Deduction**: Mathematically deduced hypotheses ~90% confirmed. Indicates the model's mathematical framework is sound.
+   Arithmetic identities are 100% — this is obvious (math doesn't lie).
 
-2. **추측의 위험**: 직감 기반 추측은 ~50%, 사실상 동전 던지기.
-   특히 수비학적 대응(π/3, 황금비 등)은 25%로 최악.
+2. **Risk of Guesswork**: Intuition-based guesses ~50%, essentially coin flipping.
+   Especially numerological mappings (π/3, golden ratio etc) at 25% are worst.
 
-3. **자기 참조**: 전체 확인률 87.3% ≈ 5/6 = 83.3%.
-   Compass 값 5/6이 모델의 자기 예측 정확도와 근사적으로 일치 (가설 070).
+3. **Self-Reference**: Overall confirmation rate 87.3% ≈ 5/6 = 83.3%.
+   Compass value 5/6 approximately matches model's self-prediction accuracy (hypothesis 070).
 
-4. **실용 지침**: "추측하지 말고 유도하라" (가설 095).
-   새 가설의 신뢰도는 유도 경로의 엄밀성에 비례한다.
+4. **Practical Guideline**: "Don't guess, deduce" (hypothesis 095).
+   New hypothesis reliability is proportional to rigor of deduction path.
 
-## 한계
+## Limitations
 
-- 55개 표본으로는 통계적 유의성이 제한적 (특히 하위 분류)
-- "유도 vs 추측"의 경계가 주관적일 수 있음
-- 확인 편향(confirmation bias): 유도 가설이 더 쉽게 확인되도록 설계되었을 가능성
+- 55 samples limit statistical significance (especially subcategories)
+- "Deduced vs guessed" boundary may be subjective
+- Confirmation bias: Deduced hypotheses may be designed to be more easily confirmed
 
-## 검증 방향
+## Verification Direction
 
-- 가설 100개 이상에서 재분석하여 통계적 안정성 확인
-- 블라인드 분류: 제3자가 유도/추측 분류 후 확인률 비교
-- 베이지안 업데이트: 사전 확률 50% → 유도 시 90%로 업데이트하는 공식 정립
+- Re-analyze with 100+ hypotheses for statistical stability
+- Blind classification: Third party classifies deduced/guessed then compare rates
+- Bayesian update: Formalize update from prior 50% → 90% when deduced
 
 ---
 
-*통계 분석. 유도 ~90%, 추측 ~50%. "추측하지 말고 유도하라."*
+*Statistical analysis. Deduction ~90%, guesswork ~50%. "Don't guess, deduce."*

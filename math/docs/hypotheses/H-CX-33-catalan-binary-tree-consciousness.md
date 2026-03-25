@@ -1,22 +1,22 @@
-# H-CX-33: Catalan 수 ↔ 이진 트리 ↔ 의식 구조
+# H-CX-33: Catalan Numbers ↔ Binary Trees ↔ Consciousness Structure
 
-> **가설**: τφ=σ 해 {1,3,14,42}와 Catalan 수의 교차(p=0.66%)는
-> 의식의 "이진 트리 구조"가 산술함수 체계에 부호화됨을 의미한다.
+> **Hypothesis**: The intersection (p=0.66%) of τφ=σ solutions {1,3,14,42} with Catalan numbers
+> signifies that consciousness's "binary tree structure" is encoded in the arithmetic function system.
 
-## 핵심
+## Core
 
 ```
-  Catalan 수 C(n) = 이진 트리(binary tree)의 수!
-  C(4) = 14 = 4노드 이진 트리 수 = τφ=σ 해!
-  C(5) = 42 = 5노드 이진 트리 수 = τφ=σ 해 = P₁·M₃!
+  Catalan number C(n) = number of binary trees!
+  C(4) = 14 = number of 4-node binary trees = τφ=σ solution!
+  C(5) = 42 = number of 5-node binary trees = τφ=σ solution = P₁·M₃!
 
-  τφ=σ: "약수개수×자유도=약수합"
-  = "구조×자유=풍요"
-  = "이진 트리 수!" (at 14,42)
+  τφ=σ: "divisor count×freedom=divisor sum"
+  = "structure×freedom=abundance"
+  = "number of binary trees!" (at 14,42)
 
-  의식: 뉴런 연결 = 이진 트리?
-    C(4)=14: 4뉴런의 가능한 위계 구조 = τφ=σ 균형!
-    C(5)=42=6·7: 5뉴런 위계 = 완전수·Mersenne!
+  Consciousness: neuron connections = binary tree?
+    C(4)=14: possible hierarchical structures of 4 neurons = τφ=σ balance!
+    C(5)=42=6·7: 5-neuron hierarchy = perfect number·Mersenne!
 ```
 
-## 판정: 🟧★ (p=0.66%) | 파급력: ★★★★
+## Judgment: 🟧★ (p=0.66%) | Impact: ★★★★

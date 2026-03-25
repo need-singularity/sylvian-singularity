@@ -1,3 +1,3 @@
-# H-CX-180: τ 체인 = [4,6,10,14,...] = 2×메르센 지수
+# H-CX-180: τ chain = [4,6,10,14,...] = 2×Mersenne exponents
 
-> τ(P_k) = 2p_k. p=[2,3,5,7,13,...] 메르센 소수 지수. H-CX-181에서 증명.
+> τ(P_k) = 2p_k. p=[2,3,5,7,13,...] Mersenne prime exponents. Proven in H-CX-181.

@@ -1,5 +1,5 @@
-# H-CX-229: γ/e=14.7Hz tACS → 신체 자각 증폭
+# H-CX-229: γ/e=14.7Hz tACS → Body Awareness Amplification
 
 > SMR=γ/e=40/e≈14.7Hz(H-CX-223/224).
-> 정확한 SMR 자극 → 몸 인식 강화 → 텔레파시 수신 감도 증가.
-> 장비: 14.7Hz tACS.
+> Precise SMR stimulation → Body perception enhancement → Telepathy reception sensitivity increase.
+> Equipment: 14.7Hz tACS.

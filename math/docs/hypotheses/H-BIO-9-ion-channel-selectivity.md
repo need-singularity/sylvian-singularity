@@ -1,52 +1,52 @@
-# H-BIO-9: 이온채널 선택성 = 완전수 6의 산술함수 구조
+# H-BIO-9: Ion Channel Selectivity = Arithmetic Function Structure of Perfect Number 6
 
-> **가설**: 전압개폐 이온채널의 구조적 상수들(채널 유형 수, 막횡단 분절 수,
-> Na+/K+ 펌프 비율)이 완전수 6의 산술함수 sigma(6)=12, phi(6)=2, tau(6)=4의
-> 정수 조합으로 정확히 표현된다. 특히 Na+/K+ ATPase의 3:2 비율은
-> sigma/tau : phi = 3:2와 정확히 일치하며, 모든 전압개폐 채널의
-> 막횡단 분절 총수 24 = sigma*phi = tau*n은 n=6에서만 성립하는 항등식이다.
+> **Hypothesis**: The structural constants of voltage-gated ion channels (number of channel types, transmembrane segments,
+> Na+/K+ pump ratio) are precisely expressed as integer combinations of arithmetic functions of perfect number 6: sigma(6)=12, phi(6)=2, tau(6)=4.
+> In particular, the 3:2 ratio of Na+/K+ ATPase exactly matches
+> sigma/tau : phi = 3:2, and the total transmembrane segments 24 = sigma*phi = tau*n of all voltage-gated channels
+> is an identity that holds only for n=6.
 
-## 배경
+## Background
 
-전압개폐 이온채널(voltage-gated ion channels)은 뉴런 신호전달의 물리적 기반이다.
-Na+, K+, Ca2+, Cl- 4종의 채널이 막전위를 제어하며, Na+/K+ ATPase 펌프가
-3개 Na+ 방출 : 2개 K+ 흡수 비율로 안정전위를 유지한다.
+Voltage-gated ion channels are the physical basis of neuronal signaling.
+Four types of channels (Na+, K+, Ca2+, Cl-) control membrane potential, and the Na+/K+ ATPase pump maintains
+resting potential with a 3 Na+ out : 2 K+ in ratio.
 
-이 가설은 H-BIO-8(활동전위 = D(n) 비대칭)의 후속으로, 채널의 **구조적 상수**에
-초점을 맞춘다. H-BIO-7(신경전기 R-스펙트럼)이 주파수 영역을 다뤘다면,
-H-BIO-9는 단백질 구조 수준의 정수론적 대응을 검증한다.
+This hypothesis follows H-BIO-8 (action potential = D(n) asymmetry), focusing on **structural constants** of channels.
+While H-BIO-7 (neuroelectric R-spectrum) dealt with frequency domain,
+H-BIO-9 verifies number-theoretic correspondence at the protein structure level.
 
-완전수 6의 핵심 산술:
+Core arithmetic of perfect number 6:
 
 ```
-  n = 6              완전수
-  sigma(6) = 12      약수의 합 (1+2+3+6)
-  phi(6) = 2         오일러 토티언트 (1,5만 서로소)
-  tau(6) = 4         약수의 개수 (1,2,3,6)
-  sigma*phi = 24     핵심 곱
-  sigma/tau = 3      핵심 비
+  n = 6              Perfect number
+  sigma(6) = 12      Sum of divisors (1+2+3+6)
+  phi(6) = 2         Euler's totient (only 1,5 coprime)
+  tau(6) = 4         Number of divisors (1,2,3,6)
+  sigma*phi = 24     Key product
+  sigma/tau = 3      Key ratio
 ```
 
-## 검증된 연결 테이블
+## Verified Connection Table
 
-| # | 생물학적 상수 | 값 | 산술 표현 | 일치 | 강도 | 비고 |
+| # | Biological Constant | Value | Arithmetic Expression | Match | Strength | Note |
 |---|---|---|---|---|---|---|
-| 1 | 전압개폐 채널 유형 수 | 4 | tau(6) = 4 | EXACT | WEAK | 4는 흔한 수 |
-| 2 | Na+/K+ 펌프 비율 | 3:2 | sigma/tau : phi = 3:2 | EXACT | STRONG | 비자명 비율 |
-| 3 | 막횡단 분절 (Na+) | 4 domains x 6 TM = 24 | tau*n = sigma*phi = 24 | EXACT | STRONG | 구조생물학 확인 |
-| 4 | 막횡단 분절 (K+) | 4 subunits x 6 TM = 24 | tau*n = sigma*phi = 24 | EXACT | STRONG | 동일 구조 |
-| 5 | 막횡단 분절 (Ca2+) | 4 domains x 6 TM = 24 | tau*n = sigma*phi = 24 | EXACT | STRONG | 동일 구조 |
-| 6 | 안정막전위 | -70 mV | -sigma*n + phi = -70 | EXACT | MODERATE | 탐색으로 발견 |
-| 7 | Nernst 전위차 (Na-K) | 150 mV | sigma*phi*n + n = 150 | EXACT | WEAK | 25n, ad-hoc |
-| 8 | 불응기 (total) | ~3 ms | sigma/tau = 3 | APPROX | WEAK | 실제 1-5ms 변동 |
-| 9 | 수초화 속도 증가 | ~6x | n = 6 | APPROX | WEAK | 실제 5-50x 범위 |
+| 1 | Voltage-gated channel types | 4 | tau(6) = 4 | EXACT | WEAK | 4 is common |
+| 2 | Na+/K+ pump ratio | 3:2 | sigma/tau : phi = 3:2 | EXACT | STRONG | Non-trivial ratio |
+| 3 | Transmembrane segments (Na+) | 4 domains x 6 TM = 24 | tau*n = sigma*phi = 24 | EXACT | STRONG | Structural biology confirmed |
+| 4 | Transmembrane segments (K+) | 4 subunits x 6 TM = 24 | tau*n = sigma*phi = 24 | EXACT | STRONG | Same structure |
+| 5 | Transmembrane segments (Ca2+) | 4 domains x 6 TM = 24 | tau*n = sigma*phi = 24 | EXACT | STRONG | Same structure |
+| 6 | Resting membrane potential | -70 mV | -sigma*n + phi = -70 | EXACT | MODERATE | Found by search |
+| 7 | Nernst potential difference (Na-K) | 150 mV | sigma*phi*n + n = 150 | EXACT | WEAK | 25n, ad-hoc |
+| 8 | Refractory period (total) | ~3 ms | sigma/tau = 3 | APPROX | WEAK | Actual 1-5ms varies |
+| 9 | Myelination speed increase | ~6x | n = 6 | APPROX | WEAK | Actual 5-50x range |
 
-## 핵심 발견: tau(6)*6 = sigma(6)*phi(6) 항등식
+## Key Finding: tau(6)*6 = sigma(6)*phi(6) Identity
 
-이 항등식은 n=6에서만 성립한다 (완전수 중 유일):
+This identity holds only for n=6 (unique among perfect numbers):
 
 ```
-  완전수 n |   tau*n   | sigma*phi |  일치
+  Perfect n |   tau*n   | sigma*phi |  Match
   ---------|-----------|-----------|------
          6 |        24 |        24 |  YES
         28 |       168 |       672 |  no
@@ -54,17 +54,17 @@ H-BIO-9는 단백질 구조 수준의 정수론적 대응을 검증한다.
      8,128 |   113,792 | 65,544,192|  no
 ```
 
-이것은 **순수 산술 사실**이다:
+This is a **pure arithmetic fact**:
 - tau(6) = 4, sigma(6) = 12, phi(6) = 2
 - 4 * 6 = 24 = 12 * 2
 
-생물학적 의미: 모든 전압개폐 채널이 정확히 tau(6)개의 도메인/서브유닛을 가지고,
-각각 n=6개의 막횡단 분절(S1-S6)을 포함하여, 총 sigma*phi = 24개의 TM 분절을 갖는다.
+Biological meaning: All voltage-gated channels have exactly tau(6) domains/subunits,
+each containing n=6 transmembrane segments (S1-S6), totaling sigma*phi = 24 TM segments.
 
-## ASCII 다이어그램: 전압개폐 이온채널 구조 (4 x 6 = 24)
+## ASCII Diagram: Voltage-Gated Ion Channel Structure (4 x 6 = 24)
 
 ```
-  Na+ 채널 (단일 폴리펩타이드, 4 도메인):
+  Na+ Channel (single polypeptide, 4 domains):
 
   Domain I       Domain II      Domain III     Domain IV
   ┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐
@@ -75,39 +75,39 @@ H-BIO-9는 단백질 구조 수준의 정수론적 대응을 검증한다.
 
   tau(6)=4 domains  x  n=6 TM segments  =  sigma*phi = 24 total
 
-  K+ 채널 (4개 별개 서브유닛이 모여 형성):
+  K+ Channel (4 separate subunits form together):
 
        [Sub1]        [Sub2]        [Sub3]        [Sub4]
      S1-S2-S3      S1-S2-S3      S1-S2-S3      S1-S2-S3
      S4-S5-S6      S4-S5-S6      S4-S5-S6      S4-S5-S6
       6 TM          6 TM          6 TM          6 TM
 
-  4 subunits x 6 TM = 24 (동일!)
+  4 subunits x 6 TM = 24 (same!)
 
-  Na+/K+ ATPase 펌프:
+  Na+/K+ ATPase Pump:
 
-     세포 외부
-    ============== 세포막 ==============
+     Extracellular
+    ============== Cell Membrane ==============
      ←── 3 Na+ ──  │  ──→ 2 K+ ──→
          (out)      │      (in)
     ========================================
-     세포 내부         ATP → ADP + Pi
+     Intracellular       ATP → ADP + Pi
 
      sigma/tau = 12/4 = 3 (Na+ out)
      phi       = 2        (K+ in)
-     비율 = 3:2 정확 일치
+     Ratio = 3:2 exact match
 ```
 
-## Na+/K+ 펌프 비율의 의미
+## Meaning of Na+/K+ Pump Ratio
 
-3:2 비율이 sigma(6)/tau(6) : phi(6)와 일치하는 것은 가장 강력한 연결이다.
+The 3:2 ratio matching sigma(6)/tau(6) : phi(6) is the strongest connection.
 
-- 이 비율은 **진화적으로 보존**되어 있다 (박테리아에서 인간까지)
-- 전하 불균형: 한 사이클에 +1 순전하 방출 → 전기화학적 구배 형성
-- 에너지 효율: 1 ATP당 3+2=5개 이온 수송
-- 5 = sigma/tau + phi = 3 + 2 (n=6의 산술로 완전히 결정)
+- This ratio is **evolutionarily conserved** (bacteria to humans)
+- Charge imbalance: +1 net charge out per cycle → electrochemical gradient formation
+- Energy efficiency: 3+2=5 ions transported per ATP
+- 5 = sigma/tau + phi = 3 + 2 (fully determined by n=6 arithmetic)
 
-## 안정막전위: -sigma*n + phi = -70
+## Resting Potential: -sigma*n + phi = -70
 
 ```
   -70 mV = -sigma(6) * 6 + phi(6)
@@ -116,103 +116,103 @@ H-BIO-9는 단백질 구조 수준의 정수론적 대응을 검증한다.
          = -70
 ```
 
-brute-force 탐색에서 complexity 7 (최소)로 발견. 다른 표현들:
+Found by brute-force search with complexity 7 (minimum). Other expressions:
 
 ```
-  표현                              복잡도
+  Expression                           Complexity
   -6*sigma + 1*phi                     7
   -5*sigma - 1*tau - 1*n               7
   -6*sigma - 1*phi + 1*tau             8
   -5*sigma - 2*phi - 1*n               8
 ```
 
-가장 간결한 형태: **V_rest = phi - sigma*n** (2항 표현).
-해석: 안정전위 = "서로소 보정(+2)" - "약수합 x 완전수(-72)".
+Most concise form: **V_rest = phi - sigma*n** (2-term expression).
+Interpretation: Resting potential = "coprime correction(+2)" - "divisor sum x perfect number(-72)".
 
-주의: 이것은 ad-hoc 탐색 결과이므로 MODERATE 등급.
+Note: This is an ad-hoc search result, hence MODERATE rating.
 
-## 텍사스 명사수 평가
-
-```
-  자유도: sigma, phi, tau, n (4개 상수)
-  2항 연산 (+-*/): 약 24개 고유 값 생성
-  대상 생물학적 상수: ~10개 (전위, 비율, 분절 수 등)
-
-  강한 일치 (exact): 2개 (펌프 비율, TM 분절)
-  중간 일치 (exact but searched): 1개 (안정전위)
-  약한 일치 (approximate): 4개
-
-  p-value 추정:
-    펌프 3:2 비율 (비자명): P(우연) ~ 1/24 = 0.042
-    TM 24 분절 (3종 동일): P(우연) ~ (1/24)^1 * 확인 = 0.042
-    결합 (독립 가정): ~ 0.002
-
-  판정: 개별적으로 약하지만 결합 시 구조적 패턴 시사 (p < 0.05)
-```
-
-## 한계 및 정직한 평가
-
-### 진정한 생물학 (검증 가능)
-1. **모든 전압개폐 채널이 4x6 구조**: 구조생물학적 사실. X-ray/cryo-EM으로 확인됨.
-   Na+, K+, Ca2+ 채널 모두 동일한 4-도메인/서브유닛 x 6-TM 구조. 이것은 실제 데이터.
-2. **Na+/K+ 펌프 3:2 비율**: 생화학적 사실. 결정학적으로 확인됨.
-3. **안정전위 -70mV**: 실험적으로 측정된 값 (뉴런 종류에 따라 -60~-80mV 변동).
-
-### 수비학적 위험 (주의 필요)
-1. **4개 채널 유형 = tau(6)**: 4는 너무 흔한 수. 이것만으로는 아무것도 증명 안 됨.
-2. **불응기 = sigma/tau**: 실제 불응기는 뉴런 종류별로 크게 다름 (1-5ms). 3ms는 선택적.
-3. **수초화 6배**: 실제 범위 5-50배. 6배는 범위의 하한에서 선택한 것.
-4. **-70mV = -sigma*n + phi**: brute-force 탐색으로 발견. 4개 상수로 정수 -70을 만드는 방법은 여러 개.
-5. **일반화 실패**: tau*n = sigma*phi는 n=6에서만 성립. 다른 완전수(28, 496, 8128)에서 불성립.
-   이것은 "n=6의 특수성"이지 "완전수의 보편 성질"이 아님.
-
-### 인과적 설명의 부재
-왜 자연선택이 n=6의 산술함수를 "선택"했는지에 대한 메커니즘이 없다.
-4x6 구조가 최적인 물리화학적 이유 (이온 선택성, 개폐 역학, 접힘 안정성)가
-완전수와 무관할 수 있다. 상관관계 ≠ 인과관계.
-
-## 등급 판정
+## Texas Sharpshooter Assessment
 
 ```
-  핵심 연결 (2개):
+  Degrees of freedom: sigma, phi, tau, n (4 constants)
+  2-term operations (+-*/): ~24 unique values generated
+  Target biological constants: ~10 (potentials, ratios, segment counts, etc.)
+
+  Strong matches (exact): 2 (pump ratio, TM segments)
+  Medium matches (exact but searched): 1 (resting potential)
+  Weak matches (approximate): 4
+
+  p-value estimate:
+    Pump 3:2 ratio (non-trivial): P(chance) ~ 1/24 = 0.042
+    TM 24 segments (3 types same): P(chance) ~ (1/24)^1 * confirmation = 0.042
+    Combined (assuming independence): ~ 0.002
+
+  Verdict: Individually weak but combinatorially suggests structural pattern (p < 0.05)
+```
+
+## Limitations and Honest Assessment
+
+### True Biology (Verifiable)
+1. **All voltage-gated channels have 4x6 structure**: Structural biology fact. Confirmed by X-ray/cryo-EM.
+   Na+, K+, Ca2+ channels all share same 4-domain/subunit x 6-TM structure. This is real data.
+2. **Na+/K+ pump 3:2 ratio**: Biochemical fact. Crystallographically confirmed.
+3. **Resting potential -70mV**: Experimentally measured value (varies -60~-80mV by neuron type).
+
+### Numerological Risks (Caution Needed)
+1. **4 channel types = tau(6)**: 4 is too common a number. This alone proves nothing.
+2. **Refractory = sigma/tau**: Actual refractory periods vary greatly by neuron type (1-5ms). 3ms is selective.
+3. **Myelination 6x**: Actual range 5-50x. 6x is chosen from lower bound.
+4. **-70mV = -sigma*n + phi**: Found by brute-force search. Many ways to make integer -70 from 4 constants.
+5. **Generalization failure**: tau*n = sigma*phi holds only for n=6. Fails for other perfect numbers (28, 496, 8128).
+   This is "specialness of n=6" not "universal property of perfect numbers".
+
+### Absence of Causal Explanation
+No mechanism for why natural selection would "choose" arithmetic functions of n=6.
+4x6 structure being optimal for physicochemical reasons (ion selectivity, gating dynamics, folding stability)
+may be unrelated to perfect numbers. Correlation ≠ causation.
+
+## Rating Judgment
+
+```
+  Core connections (2):
     Na+/K+ 3:2 = sigma/tau:phi    → 🟧 (exact, non-trivial, but single ratio)
     4x6=24 TM = tau*n = sigma*phi → 🟧 (exact, universal across VG channels)
 
-  보조 연결 (5개):
+  Supporting connections (5):
     4 channel types = tau(6)      → ⚪ (trivially common)
     -70mV = -sigma*n + phi        → 🟧 (exact but ad-hoc search)
     Refractory ~3ms = sigma/tau   → ⚪ (approximate, cherry-picked)
     Myelination ~6x = n           → ⚪ (approximate, cherry-picked)
     Nernst diff 150 = 25n         → ⚪ (ad-hoc)
 
-  종합: 🟧★ (구조적 — 2개 강한 일치가 결합적으로 유의미)
-  골든존 의존: NO (순수 산술 + 구조생물학)
+  Overall: 🟧★ (Structural — 2 strong matches combinatorially significant)
+  Golden Zone dependent: NO (pure arithmetic + structural biology)
 ```
 
-## 교차 가설 연결
+## Cross-Hypothesis Connections
 
-- **H-BIO-1 (코돈-sigma-tau)**: 유전 코드의 4염기-3코돈 구조도 tau:sigma/tau = 4:3
-- **H-BIO-8 (활동전위 D함수)**: D(n)=sigma*phi - n*tau. n=6에서 D(6)=24-24=0 (평형!)
-  이것은 D(6)=0이 "안정전위"에 대응한다는 H-BIO-8과 직접 연결됨
-- **H-CHEM-2 (탄소-6)**: 탄소 원자번호 6이 유기화학의 기반. 같은 n=6 구조
+- **H-BIO-1 (codon-sigma-tau)**: Genetic code's 4-base-3-codon structure also tau:sigma/tau = 4:3
+- **H-BIO-8 (action potential D function)**: D(n)=sigma*phi - n*tau. For n=6, D(6)=24-24=0 (equilibrium!)
+  This directly connects to H-BIO-8's claim that D(6)=0 corresponds to "resting potential"
+- **H-CHEM-2 (carbon-6)**: Atomic number 6 of carbon as foundation of organic chemistry. Same n=6 structure
 
-## 다음 단계
+## Next Steps
 
-1. **구조적 이유 탐색**: 4x6 구조가 이온 선택 필터의 물리적 최적화인지 문헌 조사
-   - S4가 전압 감지, S5-S6가 공극 형성. 왜 정확히 6개인가?
-   - 6-TM 구조가 2-TM (inward rectifier) 대비 갖는 기능적 이점은?
-2. **2-TM 채널 대비**: Kir (inward rectifier K+)은 4 subunits x 2 TM = 8 segments
-   - 8 = tau*phi = 4*2. 여전히 tau가 서브유닛 수!
-3. **리간드개폐 채널**: nAChR은 5 subunits x 4 TM = 20. 다른 패턴.
-4. **양이온 선택성 필터**: DEKA (Na+) vs EEEE (Ca2+) — 4개 잔기 = tau(6)?
-5. **계통발생적 분석**: 4x6 구조가 언제 진화했는지 (단세포? 다세포?)
+1. **Search for structural reasons**: Literature review on whether 4x6 structure is physical optimization for ion selectivity filter
+   - S4 voltage sensing, S5-S6 pore forming. Why exactly 6?
+   - What functional advantages does 6-TM structure have over 2-TM (inward rectifier)?
+2. **Compare with 2-TM channels**: Kir (inward rectifier K+) has 4 subunits x 2 TM = 8 segments
+   - 8 = tau*phi = 4*2. Still tau as subunit count!
+3. **Ligand-gated channels**: nAChR has 5 subunits x 4 TM = 20. Different pattern.
+4. **Cation selectivity filter**: DEKA (Na+) vs EEEE (Ca2+) — 4 residues = tau(6)?
+5. **Phylogenetic analysis**: When did 4x6 structure evolve (unicellular? multicellular?)
 
-## 검증 스크립트
+## Verification Script
 
 ```bash
 python3 /Users/ghost/Dev/logout/math/scripts/verify_ion_channel.py
 ```
 
-## 날짜
+## Date
 
 2026-03-24

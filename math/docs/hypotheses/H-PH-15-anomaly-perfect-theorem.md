@@ -1,37 +1,37 @@
-# H-PH-15: ⭐⭐⭐🟩 정리: 이상소거 ⟺ 완전수 (증명됨!)
+# H-PH-15: ⭐⭐⭐🟩 Theorem: Anomaly Cancellation ⟺ Perfect Number (Proven!)
 
-> **정리**: dim(SO(2^p)) = 짝수 완전수 P ⟺ 2^p-1이 Mersenne 소수.
+> **Theorem**: dim(SO(2^p)) = even perfect number P ⟺ 2^p-1 is a Mersenne prime.
 
-## 증명
+## Proof
 
-(⇒) dim(SO(2^p)) = 2^p(2^p-1)/2 = 2^(p-1)(2^p-1). 2^p-1이 소수이면
-Euclid-Euler 정리에 의해 이것은 짝수 완전수. □
+(⇒) dim(SO(2^p)) = 2^p(2^p-1)/2 = 2^(p-1)(2^p-1). If 2^p-1 is prime,
+then by Euclid-Euler theorem this is an even perfect number. □
 
-(⇐) P가 짝수 완전수이면 P = 2^(p-1)(2^p-1), 2^p-1 소수 (Euler).
-N = 2^p으로 놓으면 dim(SO(N)) = N(N-1)/2 = P. □
+(⇐) If P is an even perfect number, then P = 2^(p-1)(2^p-1), 2^p-1 prime (Euler).
+Let N = 2^p, then dim(SO(N)) = N(N-1)/2 = P. □
 
-## 핵심 등식
+## Key Equation
 
 ```
-  N(N-1) = σ(P)  (게이지 군 rank 곱 = 완전수의 약수합)
+  N(N-1) = σ(P)  (gauge group rank product = perfect number's divisor sum)
 
-  이것은 완전수의 정의 σ(P)=2P를 게이지 이론 언어로 번역한 것.
+  This translates the definition of perfect numbers σ(P)=2P into gauge theory language.
 ```
 
-## 대응표
+## Correspondence Table
 
-| 완전수 P_k | Mersenne | SO(N) | dim |
+| Perfect Number P_k | Mersenne | SO(N) | dim |
 |-----------|----------|-------|-----|
 | 6 = P₁ | 3 = M₂ | SO(4) | 6 |
 | 28 = P₂ | 7 = M₃ | SO(8) | 28 |
 | 496 = P₃ | 31 = M₅ | SO(32) | 496 |
 | 8128 = P₄ | 127 = M₇ | SO(128) | 8128 |
 
-## Green-Schwarz 연결
+## Green-Schwarz Connection
 
-10D N=1 초중력에서 이상소거 → dim(G)=496=P₃ → SO(32)
-**이상소거 조건 = "게이지 차원이 3번째 완전수"**
+In 10D N=1 supergravity: anomaly cancellation → dim(G)=496=P₃ → SO(32)
+**Anomaly cancellation condition = "gauge dimension is the 3rd perfect number"**
 
-## 상태: 🟩 증명됨 (Euclid-Euler + SO 차원 공식 결합)
+## Status: 🟩 Proven (Euclid-Euler + SO dimension formula combined)
 
 *Created: 2026-03-25*

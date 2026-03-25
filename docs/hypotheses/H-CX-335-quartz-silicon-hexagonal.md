@@ -1,3 +1,3 @@
-# H-CX-335: 🟩 석영 SiO₂ 6각 대칭, φ(14)=6
+# H-CX-335: 🟩 Quartz SiO₂ Hexagonal Symmetry, φ(14)=6
 
-> 실리콘(Z=14) 토션트=6=완전수(H-CX-118). 결정도 6각.
+> Silicon(Z=14) totient=6=perfect number(H-CX-118). Crystal also hexagonal.

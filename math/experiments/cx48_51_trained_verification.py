@@ -1,23 +1,24 @@
+```python
 #!/usr/bin/env python3
-"""Ralph 306: 학습된 ConsciousLM에서 H-CX-48/49/50 재검증 + H-CX-51 실험
+"""Ralph 306: Re-verification of H-CX-48/49/50 on trained ConsciousLM + H-CX-51 experiment
 
-핵심 질문: "학습이 산술적 구조를 드러내는가?"
+Core question: "Does training reveal arithmetic structure?"
 
-Ralph 305에서 미학습 기준선 완료:
-  - H-CX-48: 모든 블록 수에서 비율≈1.0 (6블록 특별하지 않음)
-  - H-CX-49: 연속 가우시안, Cantor 구조 없음
-  - H-CX-50: 약한 감소 추세, 6블록 특별하지 않음
+Ralph 305 completed untrained baseline:
+  - H-CX-48: Ratio≈1.0 for all block counts (6 blocks not special)
+  - H-CX-49: Continuous Gaussian, no Cantor structure
+  - H-CX-50: Weak decreasing trend, 6 blocks not special
 
-이번 실험: 바이트 수준 언어모델링으로 학습 후 재측정
-  + H-CX-51: ld(6)=5/6 ↔ 최적 학습률 비율
+This experiment: Re-measurement after training with byte-level language modeling
+  + H-CX-51: ld(6)=5/6 ↔ optimal learning rate ratio
 
-설계:
-  - 블록 수: 3, 4, 5, 6, 7, 8
+Design:
+  - Block counts: 3, 4, 5, 6, 7, 8
   - d_model=128, n_head=2, vocab=256, block_size=64
-  - 500 steps 학습 (빠른 수렴 확인)
-  - 학습 데이터: 랜덤 바이트 시퀀스 (구조 없는 기준선)
-    + 패턴 바이트 (반복 구조가 있는 데이터)
-  - 측정: engine A/G 비율, 장력분포, conv collapse, loss 곡선
+  - 500 steps training (verify fast convergence)
+  - Training data: Random byte sequences (unstructured baseline)
+    + Patterned bytes (data with repetitive structure)
+  - Measurements: engine A/G ratio, tension distribution, conv collapse, loss curves
 """
 
 import sys
@@ -37,36 +38,36 @@ from conscious_lm import PureFieldFFN, CausalSelfAttention, ConsciousBlock, Cons
 
 
 def generate_patterned_data(batch_size, seq_len, vocab_size=256):
-    """패턴이 있는 바이트 시퀀스 생성.
+    """Generate byte sequences with patterns.
 
-    유형 혼합:
-    - 반복 패턴 (ABC ABC ...)
-    - 증가 수열 (0,1,2,3,...)
-    - 거울 패턴 (ABC CBA)
-    - 피보나치 mod 256
+    Type mix:
+    - Repeating patterns (ABC ABC ...)
+    - Increasing sequences (0,1,2,3,...)
+    - Mirror patterns (ABC CBA)
+    - Fibonacci mod 256
     """
     data = torch.zeros(batch_size, seq_len, dtype=torch.long)
 
     for i in range(batch_size):
         pattern_type = i % 4
-        if pattern_type == 0:  # 반복
+        if pattern_type == 0:  # repetition
             period = np.random.randint(2, 8)
             base = torch.randint(0, vocab_size, (period,))
             for j in range(seq_len):
                 data[i, j] = base[j % period]
-        elif pattern_type == 1:  # 증가
+        elif pattern_type == 1:  # increase
             start = np.random.randint(0, vocab_size)
             step = np.random.randint(1, 4)
             for j in range(seq_len):
                 data[i, j] = (start + j * step) % vocab_size
-        elif pattern_type == 2:  # 거울
+        elif pattern_type == 2:  # mirror
             half = seq_len // 2
             base = torch.randint(0, vocab_size, (half,))
             data[i, :half] = base
             data[i, half:2*half] = base.flip(0)
             if seq_len % 2:
                 data[i, -1] = base[0]
-        else:  # 피보나치
+        else:  # fibonacci
             a, b = np.random.randint(1, 10), np.random.randint(1, 10)
             data[i, 0] = a % vocab_size
             data[i, 1] = b % vocab_size
@@ -78,7 +79,7 @@ def generate_patterned_data(batch_size, seq_len, vocab_size=256):
 
 
 def train_model(model, device, n_steps=500, lr=1e-3, batch_size=16, seq_len=32):
-    """ConsciousLM을 패턴 데이터로 학습."""
+    """Train ConsciousLM on pattern data."""
     model.train()
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=n_steps)
@@ -109,7 +110,7 @@ def train_model(model, device, n_steps=500, lr=1e-3, batch_size=16, seq_len=32):
 
         losses.append(loss.item())
 
-        # 매 100스텝마다 장력 기록
+        # Record tension every 100 steps
         if step % 100 == 0:
             mean_tension = np.mean([t.mean().item() for t in tensions])
             tension_history.append((step, mean_tension))
@@ -118,7 +119,7 @@ def train_model(model, device, n_steps=500, lr=1e-3, batch_size=16, seq_len=32):
 
 
 def measure_engine_balance(model, device, n_trials=20, batch_size=8, seq_len=32):
-    """H-CX-48: engine A/G 비율 측정."""
+    """H-CX-48: Measure engine A/G ratio."""
     model.eval()
     all_ratios = []
     all_log_ratios = []
@@ -161,7 +162,7 @@ def measure_engine_balance(model, device, n_trials=20, batch_size=8, seq_len=32)
 
 
 def measure_tension_distribution(model, device, n_trials=30):
-    """H-CX-49: 장력 분포 측정."""
+    """H-CX-49: Measure tension distribution."""
     model.eval()
     all_tensions = []
 
@@ -174,10 +175,10 @@ def measure_tension_distribution(model, device, n_trials=30):
 
     arr = np.array(all_tensions)
 
-    # 히스토그램
+    # Histogram
     hist, bin_edges = np.histogram(arr, bins=20)
 
-    # 간극 분석
+    # Gap analysis
     sorted_unique = np.sort(np.unique(np.round(arr, 5)))
     if len(sorted_unique) > 1:
         gaps = np.diff(sorted_unique)
@@ -219,7 +220,7 @@ def measure_conv_collapse(model, device, n_trials=20):
                 h, tension = block(h)
                 block_outputs.append(h.mean(dim=(0, 1)).cpu().numpy())
 
-            # 인접 블록 쌍의 collapse score
+            # Collapse score for adjacent block pairs
             pair_scores = []
             for i in range(len(block_outputs) - 1):
                 a = block_outputs[i]
@@ -249,26 +250,26 @@ def measure_conv_collapse(model, device, n_trials=20):
 
 
 def experiment_cx51_learning_rate(device):
-    """H-CX-51: ld(6)=5/6 ↔ 최적 학습률 비율.
+    """H-CX-51: ld(6)=5/6 ↔ optimal learning rate ratio.
 
-    산술 미분: ld(6) = 6'(소인수 기여의 합) = 6(1/2 + 1/3) = 5
-    로그 미분: ld(6) = 5/6 = Compass 상한!
+    Arithmetic derivative: ld(6) = 6'(sum of prime factor contributions) = 6(1/2 + 1/3) = 5
+    Logarithmic derivative: ld(6) = 5/6 = Compass upper bound!
 
-    예측: lr = base_lr * (5/6) 스케일이 최적이거나,
-          6블록 모델에서 최적 lr이 5/6 비율에 위치
+    Prediction: lr = base_lr * (5/6) scale is optimal, or
+               optimal lr in 6-block model is located at 5/6 ratio
     """
     print("\n" + "=" * 70)
-    print("H-CX-51: ld(6)=5/6 ↔ 최적 학습률 비율")
+    print("H-CX-51: ld(6)=5/6 ↔ optimal learning rate ratio")
     print("=" * 70)
 
-    print("\n--- 산술 미분 배경 ---")
-    print("  n'(산술 미분) = n * sum(1/p for p in prime_factors(n))")
+    print("\n--- Arithmetic derivative background ---")
+    print("  n'(arithmetic derivative) = n * sum(1/p for p in prime_factors(n))")
     print("  6' = 6*(1/2 + 1/3) = 6*(5/6) = 5")
-    print("  ld(6) = 6'/6 = 5/6 = 0.8333... = Compass 상한!")
+    print("  ld(6) = 6'/6 = 5/6 = 0.8333... = Compass upper bound!")
     print("  ld(28) = 28'/28 = 28*(1/2+1/7)/28 = 9/14 = 0.6429")
-    print("  ld(6)만 기존 상수(Compass=5/6)와 정확히 일치!")
+    print("  Only ld(6) exactly matches existing constant (Compass=5/6)!")
 
-    print("\n--- 실험: 학습률 스캔 (6블록 ConsciousLM) ---")
+    print("\n--- Experiment: Learning rate scan (6-block ConsciousLM) ---")
     base_lr = 1e-3
     lr_scales = [0.5, 0.6, 2/3, 0.7, 0.75, 5/6, 0.9, 1.0, 1.1, 1.2, 1.5]
 
@@ -299,7 +300,7 @@ def experiment_cx51_learning_rate(device):
         if torch.backends.mps.is_available():
             torch.mps.empty_cache()
 
-    # 결과 테이블
+    # Results table
     print(f"\n{'scale':>8} | {'lr':>10} | {'final_loss':>10} | {'min_loss':>10} | {'note':>20}")
     print("-" * 70)
 
@@ -314,7 +315,7 @@ def experiment_cx51_learning_rate(device):
             note = "<<< BEST"
         print(f"{scale:>8.4f} | {r['lr']:>10.6f} | {r['final_loss']:>10.4f} | {r['min_loss']:>10.4f} | {note:>20}")
 
-    # ASCII 그래프
+    # ASCII graph
     print("\n--- ASCII: final loss vs lr scale ---")
     all_losses = [results[s]['final_loss'] for s in lr_scales]
     vmin, vmax = min(all_losses), max(all_losses)
@@ -325,39 +326,39 @@ def experiment_cx51_learning_rate(device):
             pos = int((v - vmin) / (vmax - vmin) * width)
         else:
             pos = 0
-        bar = "#" * (width - pos) + "." * pos  # 낮은 loss = 긴 막대
+        bar = "#" * (width - pos) + "." * pos  # low loss = long bar
         marker = " ***ld(6)" if abs(scale - 5/6) < 0.001 else ""
         print(f"  {scale:.4f}: [{bar}] {v:.4f}{marker}")
 
-    print(f"\n  최적 스케일: {best_scale:.4f}")
-    print(f"  ld(6)=5/6=0.8333 순위: {sorted(results, key=lambda s: results[s]['final_loss']).index(5/6) + 1}/{len(lr_scales)}")
+    print(f"\n  Optimal scale: {best_scale:.4f}")
+    print(f"  ld(6)=5/6=0.8333 rank: {sorted(results, key=lambda s: results[s]['final_loss']).index(5/6) + 1}/{len(lr_scales)}")
 
-    # 5/6과 최적의 거리
+    # Distance between 5/6 and optimal
     dist = abs(best_scale - 5/6)
-    print(f"  최적-ld(6) 거리: {dist:.4f}")
+    print(f"  optimal-ld(6) distance: {dist:.4f}")
 
     return results
 
 
 def main():
     print("=" * 70)
-    print("Ralph 306: 학습된 ConsciousLM 교차 검증")
-    print("H-CX-48/49/50 재검증 + H-CX-51 신규 실험")
+    print("Ralph 306: Cross-verification on trained ConsciousLM")
+    print("Re-verification of H-CX-48/49/50 + new H-CX-51 experiment")
     print("=" * 70)
 
     device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
     print(f"\nDevice: {device}")
 
-    # ═══ Part 1: 블록 수별 학습 후 H-CX-48/49/50 측정 ═══
+    # ═══ Part 1: H-CX-48/49/50 measurements after training by block count ═══
     print("\n" + "=" * 70)
-    print("Part 1: 블록 수별 학습 → H-CX-48/49/50 측정")
+    print("Part 1: Training by block count → H-CX-48/49/50 measurements")
     print("=" * 70)
 
     block_counts = [3, 4, 5, 6, 7, 8]
     all_results = {}
 
     for n_blocks in block_counts:
-        print(f"\n--- {n_blocks} blocks: 학습 시작 ---")
+        print(f"\n--- {n_blocks} blocks: Starting training ---")
         t0 = time.time()
 
         torch.manual_seed(42)
@@ -367,12 +368,12 @@ def main():
         ).to(device)
 
         n_params = model.count_params()
-        print(f"  파라미터: {n_params:,}")
+        print(f"  Parameters: {n_params:,}")
 
-        # 학습
+        # Training
         losses, tension_hist = train_model(model, device, n_steps=500, lr=1e-3)
         train_time = time.time() - t0
-        print(f"  학습 완료: {train_time:.1f}s, final loss={np.mean(losses[-50:]):.4f}")
+        print(f"  Training complete: {train_time:.1f}s, final loss={np.mean(losses[-50:]):.4f}")
 
         # H-CX-48: engine balance
         cx48 = measure_engine_balance(model, device)
@@ -400,19 +401,19 @@ def main():
         if torch.backends.mps.is_available():
             torch.mps.empty_cache()
 
-    # ═══ 종합 결과 테이블 ═══
+    # ═══ Summary results table ═══
     print("\n" + "=" * 70)
-    print("종합 결과: 학습 후 H-CX-48/49/50")
+    print("Summary results: H-CX-48/49/50 after training")
     print("=" * 70)
 
-    # CX-48 테이블
-    print("\n--- H-CX-48: engine A/G 비율 (학습 후) ---")
+    # CX-48 table
+    print("\n--- H-CX-48: engine A/G ratio (after training) ---")
     print(f"{'blocks':>6} | {'|A|/|G|':>10} {'std':>8} | {'ln(A/G)':>10} {'std':>8} | {'|ratio-1|':>10} | {'I(n)_arith':>10}")
     print("-" * 80)
 
     for nb in block_counts:
         r = all_results[nb]['cx48']
-        # 산술 I(n)
+        # Arithmetic I(n)
         divs = [d for d in range(1, nb+1) if nb % d == 0]
         sigma = sum(divs)
         tau = len(divs)
@@ -429,7 +430,7 @@ def main():
               f"{abs(r['mean_ratio']-1):>10.6f} | {I_n:>+10.6f}{marker}")
 
     # CX-48 ASCII
-    print("\n--- ASCII: |ratio-1| (학습 후, 낮을수록 균형) ---")
+    print("\n--- ASCII: |ratio-1| (after training, lower is more balanced) ---")
     dists = {nb: abs(all_results[nb]['cx48']['mean_ratio'] - 1.0) for nb in block_counts}
     dmax = max(dists.values())
     for nb in block_counts:
@@ -440,11 +441,11 @@ def main():
         print(f"  {nb:>2} blocks: [{bar}] {d:.6f}{marker}")
 
     closest = min(dists, key=dists.get)
-    print(f"\n  비율 1.0에 가장 가까운 블록 수: {closest}")
-    print(f"  6블록 순위: {sorted(dists.values()).index(dists[6]) + 1}/{len(block_counts)}")
+    print(f"\n  Block count closest to ratio 1.0: {closest}")
+    print(f"  6-block rank: {sorted(dists.values()).index(dists[6]) + 1}/{len(block_counts)}")
 
-    # CX-49 테이블
-    print("\n--- H-CX-49: 장력 분포 (학습 후) ---")
+    # CX-49 table
+    print("\n--- H-CX-49: Tension distribution (after training) ---")
     print(f"{'blocks':>6} | {'mean':>10} {'std':>10} | {'unique':>8} {'large_gaps':>10} {'gap_frac':>8}")
     print("-" * 70)
     for nb in block_counts:
@@ -452,9 +453,9 @@ def main():
         print(f"{nb:>6} | {r['mean']:>10.6f} {r['std']:>10.6f} | "
               f"{r['n_unique']:>8} {r['large_gaps']:>10} {r['gap_fraction']:>8.3f}")
 
-    # CX-49 히스토그램 (6블록만)
+    # CX-49 histogram (6 blocks only)
     r6 = all_results[6]['cx49']
-    print(f"\n--- 장력 히스토그램 (6 blocks, 학습 후) ---")
+    print(f"\n--- Tension histogram (6 blocks, after training) ---")
     max_h = max(r6['hist'])
     for i in range(len(r6['hist'])):
         bar_len = int(r6['hist'][i] / (max_h + 1) * 40)
@@ -463,8 +464,8 @@ def main():
         hi = r6['bin_edges'][i+1]
         print(f"  [{lo:8.5f},{hi:8.5f}) | {bar:<40} {r6['hist'][i]}")
 
-    # CX-50 테이블
-    print("\n--- H-CX-50: Convolution Collapse (학습 후) ---")
+    # CX-50 table
+    print("\n--- H-CX-50: Convolution Collapse (after training) ---")
     print(f"{'blocks':>6} | {'score_mean':>12} {'score_std':>12}")
     print("-" * 40)
     for nb in block_counts:
@@ -473,7 +474,7 @@ def main():
         print(f"{nb:>6} | {r['mean_score']:>12.6f} {r['std_score']:>12.6f}{marker}")
 
     # CX-50 ASCII
-    print("\n--- ASCII: Collapse Score (낮을수록 합성곱 붕괴) ---")
+    print("\n--- ASCII: Collapse Score (lower means convolution collapse) ---")
     scores = {nb: all_results[nb]['cx50']['mean_score'] for nb in block_counts}
     smax = max(scores.values())
     for nb in block_counts:
@@ -484,57 +485,57 @@ def main():
         print(f"  {nb:>2} blocks: [{bar}] {s:.6f}{marker}")
 
     best_collapse = min(scores, key=scores.get)
-    print(f"\n  최소 collapse 블록 수: {best_collapse}")
-    print(f"  6블록 순위: {sorted(scores.values()).index(scores[6]) + 1}/{len(block_counts)}")
+    print(f"\n  Minimum collapse block count: {best_collapse}")
+    print(f"  6-block rank: {sorted(scores.values()).index(scores[6]) + 1}/{len(block_counts)}")
 
-    # 학습 곡선 비교
-    print("\n--- 학습 곡선 (final 50 steps avg) ---")
+    # Training curve comparison
+    print("\n--- Training curves (final 50 steps avg) ---")
     print(f"{'blocks':>6} | {'params':>10} | {'final_loss':>10}")
     print("-" * 35)
     for nb in block_counts:
         r = all_results[nb]
         print(f"{nb:>6} | {r['n_params']:>10,} | {r['final_loss']:>10.4f}")
 
-    # ═══ Part 2: H-CX-51 학습률 실험 ═══
+    # ═══ Part 2: H-CX-51 learning rate experiment ═══
     cx51_results = experiment_cx51_learning_rate(device)
 
-    # ═══ 종합 판정 ═══
+    # ═══ Overall verdict ═══
     print("\n" + "=" * 70)
-    print("종합 판정")
+    print("Overall verdict")
     print("=" * 70)
 
-    # CX-48 판정
+    # CX-48 verdict
     cx48_rank = sorted(dists.values()).index(dists[6]) + 1
     cx48_verdict = "CONFIRMED" if cx48_rank <= 2 else "WEAK" if cx48_rank <= 3 else "NOT CONFIRMED"
-    print(f"\n  H-CX-48 (학습 후): 6블록 순위={cx48_rank}/{len(block_counts)} → {cx48_verdict}")
+    print(f"\n  H-CX-48 (after training): 6-block rank={cx48_rank}/{len(block_counts)} → {cx48_verdict}")
 
-    # CX-49 판정
+    # CX-49 verdict
     cx49_6 = all_results[6]['cx49']
     cx49_verdict = "CONFIRMED" if cx49_6['gap_fraction'] > 0.1 else "NOT CONFIRMED"
-    print(f"  H-CX-49 (학습 후): gap_fraction={cx49_6['gap_fraction']:.3f} → {cx49_verdict}")
+    print(f"  H-CX-49 (after training): gap_fraction={cx49_6['gap_fraction']:.3f} → {cx49_verdict}")
 
-    # CX-50 판정
+    # CX-50 verdict
     cx50_rank = sorted(scores.values()).index(scores[6]) + 1
     cx50_verdict = "CONFIRMED" if cx50_rank <= 2 else "WEAK" if cx50_rank <= 3 else "NOT CONFIRMED"
-    print(f"  H-CX-50 (학습 후): 6블록 순위={cx50_rank}/{len(block_counts)} → {cx50_verdict}")
+    print(f"  H-CX-50 (after training): 6-block rank={cx50_rank}/{len(block_counts)} → {cx50_verdict}")
 
-    # CX-51 판정
+    # CX-51 verdict
     lr_ranks = sorted(cx51_results, key=lambda s: cx51_results[s]['final_loss'])
     cx51_rank = lr_ranks.index(5/6) + 1
     cx51_verdict = "CONFIRMED" if cx51_rank <= 3 else "WEAK" if cx51_rank <= 5 else "NOT CONFIRMED"
-    print(f"  H-CX-51 (lr scan): 5/6 순위={cx51_rank}/{len(lr_ranks)} → {cx51_verdict}")
+    print(f"  H-CX-51 (lr scan): 5/6 rank={cx51_rank}/{len(lr_ranks)} → {cx51_verdict}")
 
-    print("\n--- 미학습 vs 학습 비교 ---")
-    print("  미학습 기준선 (R305):")
-    print("    CX-48: 모든 블록 비율≈1.0, 6블록 특별하지 않음")
-    print("    CX-49: 연속 가우시안, gap=2.4%")
-    print("    CX-50: 약한 감소 추세")
-    print("  학습 후 (R306):")
-    print(f"    CX-48: 6블록 순위={cx48_rank}, |ratio-1|={dists[6]:.6f}")
+    print("\n--- Untrained vs Trained comparison ---")
+    print("  Untrained baseline (R305):")
+    print("    CX-48: All blocks ratio≈1.0, 6 blocks not special")
+    print("    CX-49: Continuous Gaussian, gap=2.4%")
+    print("    CX-50: Weak decreasing trend")
+    print("  After training (R306):")
+    print(f"    CX-48: 6-block rank={cx48_rank}, |ratio-1|={dists[6]:.6f}")
     print(f"    CX-49: gap_fraction={cx49_6['gap_fraction']:.3f}, unique={cx49_6['n_unique']}")
-    print(f"    CX-50: 6블록 score={scores[6]:.6f}, 순위={cx50_rank}")
+    print(f"    CX-50: 6-block score={scores[6]:.6f}, rank={cx50_rank}")
 
-    print("\n실험 완료.")
+    print("\nExperiment complete.")
 
 
 def _prime_factors(n):
@@ -552,3 +553,4 @@ def _prime_factors(n):
 
 if __name__ == "__main__":
     main()
+```

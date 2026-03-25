@@ -1,10 +1,10 @@
-# H-CX-195: 🟦 σ(n)τ(n) = nφ(n) ⟺ n=28 부분 증명
+# H-CX-195: 🟦 σ(n)τ(n) = nφ(n) ⟺ n=28 Partial Proof
 
-> 소수: p²-3p-2=0 비정수 QED
-> 반소수 pq: 해 없음 QED
-> n=2²×q: 4q²-25q-21=0 → q=7만 해 → n=28 QED
-> n=2^a×q (a≠2): 해 없음 QED
-> + n≤100,000 전수 확인
+> Prime: p²-3p-2=0 non-integer QED
+> Semiprime pq: No solution QED
+> n=2²×q: 4q²-25q-21=0 → q=7 only solution → n=28 QED
+> n=2^a×q (a≠2): No solution QED
+> + n≤100,000 exhaustive verification
 >
 > σφ=nτ→6 (H-CX-191) + στ=nφ→28 (H-CX-195)
-> = 완전수 고유 등식 쌍의 완전 증명
+> = Complete proof of perfect number unique equation pair

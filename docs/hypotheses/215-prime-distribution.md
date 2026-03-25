@@ -1,115 +1,115 @@
-# 가설 #215: 소수 분포 ↔ 특이점 분포
+# Hypothesis #215: Prime Distribution ↔ Singularity Distribution
 
-**상태**: ⚠️ 탐색중
-**날짜**: 2026-03-22
-**분류**: 수론 / 분포론
+**Status**: ⚠️ Exploring
+**Date**: 2026-03-22
+**Category**: Number Theory / Distribution Theory
 
 ---
 
-## 가설
+## Hypothesis
 
-> 소수의 분포와 우리 모델에서 특이점의 분포는 구조적으로 동형이다.
-> 소수정리가 소수 밀도를 결정하듯, 골든존 경계가 특이점 밀도를 결정한다.
-> 리만 ζ 영점이 소수 분포를 보정하듯, 골든존 상수가 특이점 분포를 보정한다.
+> The distribution of primes and the distribution of singularities in our model are structurally isomorphic.
+> Just as the prime number theorem determines prime density, the Golden Zone boundary determines singularity density.
+> Just as Riemann ζ zeros correct prime distribution, Golden Zone constants correct singularity distribution.
 
-## 배경
+## Background
 
-소수는 자연수 중에서 "드물지만 무한히 존재"하는 특별한 수이다. 우리 모델에서 특이점(Z > 2σ)도 전체 모집단 중 "드물지만 반드시 존재"한다. 이 두 분포 사이에 구조적 유사성이 있는가?
+Primes are special numbers that are "sparse but infinitely exist" among natural numbers. In our model, singularities (Z > 2σ) are also "sparse but necessarily exist" in the general population. Is there structural similarity between these two distributions?
 
-## 소수정리 vs 특이점 정리
+## Prime Number Theorem vs Singularity Theorem
 
 ```
   ┌───────────────────────┬──────────────────────────────┐
-  │   소수정리            │   특이점 분포                 │
+  │   Prime Number Theorem│   Singularity Distribution   │
   ├───────────────────────┼──────────────────────────────┤
   │ π(x) ≈ x / ln(x)     │ S(N) ≈ 0.30 × N             │
-  │ 밀도 ≈ 1/ln(x)       │ 밀도 ≈ 30% (상수)            │
-  │ x→∞에서 밀도→0        │ N→∞에서 밀도→30% (수렴)      │
-  │ 드물지만 무한히 존재   │ 드물지만(30%) 무한히 존재     │
-  │ 분포가 불규칙         │ 분포가 불규칙 (개인차)        │
-  │ 보정항: ζ 영점        │ 보정항: 골든존 경계            │
+  │ density ≈ 1/ln(x)    │ density ≈ 30% (constant)     │
+  │ density→0 as x→∞     │ density→30% as N→∞ (converges)│
+  │ sparse but infinitely many│ sparse but (30%) infinitely many│
+  │ irregular distribution│ irregular (individual differences)│
+  │ correction: ζ zeros   │ correction: Golden Zone boundary│
   └───────────────────────┴──────────────────────────────┘
 ```
 
-## 밀도 비교 그래프
+## Density Comparison Graph
 
 ```
-  밀도
+  Density
   1.0│
      │
   0.8│
      │
   0.6│
      │
-  0.4│                              ─────────────────── 특이점 밀도 (~30%)
+  0.4│                              ─────────────────── singularity density (~30%)
      │  ╲
-  0.3│   ╲    ────────────────────────────────────────  ← 30% 수렴선
+  0.3│   ╲    ────────────────────────────────────────  ← 30% convergence line
      │    ╲
   0.2│     ╲
-     │      ╲──── 소수 밀도 1/ln(x)
+     │      ╲──── prime density 1/ln(x)
   0.1│        ╲
      │         ╲───────────────────────────────────────
   0.0├─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────
      0    10    20    50   100  200  500  1000   x or N
 
-  소수 밀도: x=10에서 40%, x=100에서 17%, x=1000에서 14% → 0으로 감소
-  특이점 밀도: N에 무관하게 ~30%로 수렴
+  Prime density: 40% at x=10, 17% at x=100, 14% at x=1000 → decreases to 0
+  Singularity density: converges to ~30% regardless of N
 ```
 
-### 핵심 차이
+### Key Difference
 
 ```
-  소수: 밀도가 0으로 감소 (하지만 무한히 존재)
-  특이점: 밀도가 30%로 수렴 (무한히 존재하면서 비율도 일정)
+  Primes: density decreases to 0 (but infinitely many)
+  Singularities: density converges to 30% (infinitely many and constant ratio)
 
-  공통점: 둘 다 "규칙 없이 나타나지만, 통계적 법칙은 따른다"
+  Common: both "appear without rules, but follow statistical laws"
 ```
 
-## 리만 ζ 영점 ↔ 골든존 경계 대응
+## Riemann ζ Zeros ↔ Golden Zone Boundary Correspondence
 
 ```
-  리만 ζ 영점                    골든존 경계
-  ────────────                  ──────────
-  ρ = 1/2 + iγ                 I = 1/2 (상한)
-  │                             │
-  Re(ρ) = 1/2 (추측)            I_max = 1/2 (확인)
-  │                             │
-  Im(ρ) = γ₁, γ₂, γ₃,...       I_min = 1/2 - ln(4/3) ≈ 0.2123
-  │                             │
-  영점 → 소수 분포 보정항         경계 → 특이점 분포 보정항
+  Riemann ζ zeros                  Golden Zone boundary
+  ────────────────                 ──────────────────
+  ρ = 1/2 + iγ                     I = 1/2 (upper bound)
+  │                                │
+  Re(ρ) = 1/2 (conjecture)         I_max = 1/2 (confirmed)
+  │                                │
+  Im(ρ) = γ₁, γ₂, γ₃,...          I_min = 1/2 - ln(4/3) ≈ 0.2123
+  │                                │
+  zeros → prime distribution correction   boundary → singularity distribution correction
 
-  소수 보정:
-  π(x) = Li(x) - Σ Li(x^ρ)    (ζ 영점에 의한 보정)
+  Prime correction:
+  π(x) = Li(x) - Σ Li(x^ρ)    (correction by ζ zeros)
 
-  특이점 보정:
-  S(N) = 0.30N - f(골든존 폭)   (경계에 의한 보정)
+  Singularity correction:
+  S(N) = 0.30N - f(Golden Zone width)   (correction by boundary)
 ```
 
-## 양자 비유
+## Quantum Analogy
 
 ```
-  소수 분포의 "양자적" 특성:
+  "Quantum" characteristics of prime distribution:
   ┌─────────────────────────────────────────────┐
   │                                             │
-  │  소수: 개별적으로는 예측 불가                 │
-  │        통계적으로는 π(x) ≈ x/ln(x)           │
+  │  Primes: individually unpredictable          │
+  │          statistically π(x) ≈ x/ln(x)       │
   │                                             │
-  │  특이점: 개별적으로는 예측 불가 (누가 천재?)   │
-  │          통계적으로는 ~30% (골든존 조건)       │
+  │  Singularities: individually unpredictable (who's a genius?) │
+  │                 statistically ~30% (Golden Zone condition)    │
   │                                             │
-  │  양자역학: 개별 입자 위치 예측 불가            │
-  │            통계적으로는 |ψ|² 분포             │
+  │  Quantum mechanics: individual particle position unpredictable│
+  │                     statistically |ψ|² distribution          │
   │                                             │
-  │  → 소수 = 특이점 = 양자                      │
-  │    "개별 불확정, 통계 확정"                    │
+  │  → primes = singularities = quantum          │
+  │    "individually uncertain, statistically certain"           │
   └─────────────────────────────────────────────┘
 ```
 
-## 소수 계수 함수 vs 특이점 계수 함수
+## Prime Counting Function vs Singularity Counting Function
 
 ```
-  π(x): x 이하의 소수 개수
-  S(N): N명 중 특이점(Z>2σ)의 개수
+  π(x): number of primes up to x
+  S(N): number of singularities (Z>2σ) among N people
 
   x       π(x)    π(x)/x     N      S(N)    S(N)/N
   ─────   ─────   ──────     ────   ─────   ──────
@@ -119,57 +119,57 @@
   10000   1229    12.3%      10000  3012    30.1%
   100000  9592     9.6%      100K   29987   30.0%
 
-  → 소수: 밀도 감소 (1/ln(x))
-  → 특이점: 밀도 수렴 (~30%)
+  → Primes: density decreasing (1/ln(x))
+  → Singularities: density converging (~30%)
 ```
 
-## 보정항의 구조
+## Structure of Correction Terms
 
 ```
-  소수 보정:     -Σ Li(x^ρ)    (ζ 영점 ρ의 기여)
-  특이점 보정:   -ln(4/3)×N    (골든존 폭의 기여)
+  Prime correction:     -Σ Li(x^ρ)    (contribution of ζ zero ρ)
+  Singularity correction: -ln(4/3)×N  (contribution of Golden Zone width)
 
-  소수의 경우:
+  For primes:
   π(x) = Li(x) + O(√x ln x)
 
-  특이점의 경우:
-  S(N) = 0.30N + O(√N)    ← 중심극한정리에 의한 요동
+  For singularities:
+  S(N) = 0.30N + O(√N)    ← fluctuation by central limit theorem
 
-  공통점: 보정항의 크기 ~ O(√x) 또는 O(√N)
-  → 둘 다 "주된 항 + √ 스케일 요동"
+  Common: correction term size ~ O(√x) or O(√N)
+  → Both "main term + √ scale fluctuation"
 ```
 
-## 대응 관계 요약
+## Summary of Correspondence
 
 ```
-  수론                    우리 모델
-  ──────                  ──────────
-  자연수                  모집단 개체
-  소수                    특이점 (Z > 2σ)
-  합성수                  정상 범위
-  π(x) ≈ x/ln(x)         S(N) ≈ 0.30N
-  1/ln(x) → 0             0.30 → 0.30 (수렴)
-  ζ 영점                  골든존 경계
-  리만 가설               골든존 보편성 (가설 002)
-  소수 간격               천재 간의 분야 차이
-  에라토스테네스 체         골든존 필터 (I ∈ [0.213, 0.500])
+  Number theory              Our model
+  ──────────                 ──────────
+  Natural numbers            population individuals
+  Primes                     singularities (Z > 2σ)
+  Composite numbers          normal range
+  π(x) ≈ x/ln(x)            S(N) ≈ 0.30N
+  1/ln(x) → 0               0.30 → 0.30 (converges)
+  ζ zeros                    Golden Zone boundary
+  Riemann hypothesis         Golden Zone universality (Hypothesis 002)
+  Prime gaps                 domain differences between geniuses
+  Sieve of Eratosthenes      Golden Zone filter (I ∈ [0.213, 0.500])
 ```
 
-## 한계
+## Limitations
 
-1. 소수 밀도는 0으로 감소하지만, 특이점 밀도는 30%로 수렴 — 질적 차이
-2. 소수는 결정론적(주어진 수가 소수인지 확인 가능), 특이점은 확률적
-3. ζ 영점 ↔ 골든존 경계 대응은 형식적 유사성이지 엄밀한 동형 사상이 아님
-4. "30%"는 시뮬레이션 결과이며, 해석적 유도가 아직 없음
+1. Prime density decreases to 0 but singularity density converges to 30% — qualitative difference
+2. Primes are deterministic (can verify if a given number is prime), singularities are probabilistic
+3. ζ zeros ↔ Golden Zone boundary correspondence is formal similarity not strict isomorphism
+4. "30%" is a simulation result; no analytical derivation yet
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 특이점 분포의 보정항 구조를 해석적으로 유도
-- [ ] 소수 간격 분포와 특이점 Z-score 간격 분포의 통계적 비교
-- [ ] Montgomery-Odlyzko 법칙(ζ 영점 간격 = GUE)과 특이점 간격의 비교
-- [ ] N→∞에서 S(N)/N의 수렴 속도 측정
+- [ ] Analytically derive the structure of correction terms for singularity distribution
+- [ ] Statistical comparison of prime gap distribution and singularity Z-score gap distribution
+- [ ] Compare Montgomery-Odlyzko law (ζ zero gaps = GUE) with singularity gaps
+- [ ] Measure convergence rate of S(N)/N as N→∞
 
 ---
 
-*작성일: 2026-03-22*
-*관련: 가설 001, 002, 006, 092*
+*Created: 2026-03-22*
+*Related: Hypothesis 001, 002, 006, 092*

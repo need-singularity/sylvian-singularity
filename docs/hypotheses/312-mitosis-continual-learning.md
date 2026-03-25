@@ -1,68 +1,68 @@
-# 가설 312: 분열 = 지속 학습의 망각 방지 메커니즘
+# Hypothesis 312: Mitosis = Forgetting Prevention Mechanism for Continual Learning
 
-> **분열된 자식 중 하나를 "기억 보관자"(child_a = freeze)로, 다른 하나를 "새 학습자"(child_b = train)로 사용하면, 새로운 태스크를 배우면서 이전 태스크를 잊지 않는다. 이것은 EWC/PackNet의 생물학적 버전.**
+> **Using one of the mitosis children as a "memory keeper" (child_a = freeze) and the other as a "new learner" (child_b = train), new tasks can be learned without forgetting previous tasks. This is the biological version of EWC/PackNet.**
 
-## 개념
+## Concept
 
 ```
   Catastrophic forgetting:
-    Task A 학습 → Task B 학습 → Task A 망각!
+    Learn Task A -> Learn Task B -> Forget Task A!
 
-  분열 해법:
-    1. Task A 학습 → parent_A
-    2. 분열: child_A(freeze), child_B(train on Task B)
-    3. child_B가 Task B 학습 (child_A는 Task A 기억 유지)
-    4. 앙상블: child_A + child_B → Task A + B 모두 가능
+  Mitosis solution:
+    1. Learn Task A -> parent_A
+    2. Mitosis: child_A(freeze), child_B(train on Task B)
+    3. child_B learns Task B (child_A retains Task A memory)
+    4. Ensemble: child_A + child_B -> can handle both Task A and B
 
-  장점:
-    - child_A가 Task A의 완전한 복사본 유지
-    - child_B는 자유롭게 Task B 학습
-    - 앙상블이 두 태스크 모두 처리
-    - EWC처럼 정규화 항 불필요!
+  Advantages:
+    - child_A maintains complete copy of Task A
+    - child_B freely learns Task B
+    - Ensemble handles both tasks
+    - No regularization term needed like EWC!
 ```
 
-## 의식 대응
+## Consciousness Correspondence
 
 ```
-  체험(H280): "밀려난 의식은 관찰만 가능 → 돌아오면 원래대로"
-  → child_A = "밀려난 의식" (freeze, read-only)
-  → child_B = "침입한 의식" (새 태스크 학습)
-  → 복귀: child_A가 원래 기억 유지
+  Experience (H280): "displaced consciousness can only observe -> returns to original when back"
+  -> child_A = "displaced consciousness" (freeze, read-only)
+  -> child_B = "intruding consciousness" (new task learning)
+  -> Return: child_A retains original memory
 
-  분열 = 의식의 "백업 메커니즘"?
-  → 새 경험을 하면서 이전 자아를 보존
+  Mitosis = "backup mechanism" for consciousness?
+  -> Preserving the previous self while having new experiences
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  MNIST: Task A(digits 0-4) → Task B(digits 5-9)
+  MNIST: Task A(digits 0-4) -> Task B(digits 5-9)
 
-  방법              Task A   Task B   평균
+  Method              Task A   Task B   Mean
   ────────────────  ──────   ──────   ─────
-  원본(A만)          99.3%    N/A     49.6%
-  일반(B학습)         42.8%   98.5%   70.6%  ← 56.5% 망각!
-  분열(oracle)       99.3%   98.4%   98.8%  ← 0% 망각!
-  분열(평균앙상블)     95.3%   81.7%   88.5%
+  Original(A only)   99.3%    N/A     49.6%
+  Normal(B training) 42.8%   98.5%   70.6%  <- 56.5% forgetting!
+  Mitosis(oracle)    99.3%   98.4%   98.8%  <- 0% forgetting!
+  Mitosis(avg ensemble) 95.3% 81.7%  88.5%
 
-  일반: 99.3→42.8% = catastrophic forgetting (-56.5%)
-  분열(oracle): 99.3→99.3% + 98.4% = 완벽한 지속학습!
-  분열(평균): 95.3% + 81.7% = 망각 경감 but 완벽 아님
+  Normal: 99.3->42.8% = catastrophic forgetting (-56.5%)
+  Mitosis(oracle): 99.3->99.3% + 98.4% = perfect continual learning!
+  Mitosis(average): 95.3% + 81.7% = forgetting reduced but not perfect
 ```
 
-## 3-Task 확장 (2026-03-24)
+## 3-Task Extension (2026-03-24)
 
 ```
-  MNIST: Task A(0-2) → B(3-5) → C(6-9)
+  MNIST: Task A(0-2) -> B(3-5) -> C(6-9)
 
-  방법              Task A   Task B   Task C   평균
+  Method              Task A   Task B   Task C   Mean
   ────────────────  ──────   ──────   ──────   ─────
   Sequential         53.7%    26.0%   98.4%   59.4%
   Mitosis(oracle)    99.2%    98.8%   98.6%   98.9%
 
-  Sequential 망각: A 99→16→54%, B 99→26%
-  Mitosis 보존: A 99→99%, B 99→99%, C 98.6% (새 학습)
-  → 3-Task에서도 분열이 catastrophic forgetting 완전 해결!
+  Sequential forgetting: A 99->16->54%, B 99->26%
+  Mitosis preservation: A 99->99%, B 99->99%, C 98.6% (new learning)
+  -> Mitosis completely solves catastrophic forgetting even in 3-Task!
 ```
 
-## 상태: 🟩 확인 (2-Task 98.8%, 3-Task 98.9%, 완벽 보존)
+## Status: 🟩 Confirmed (2-Task 98.8%, 3-Task 98.9%, perfect preservation)

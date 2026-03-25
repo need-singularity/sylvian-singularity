@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""H-CX-10: 희소성 → 장력 → 엔트로피 실험
+"""H-CX-10: Sparsity → Tension → Entropy Experiment
 
-가설: 학습 데이터에서 특정 클래스의 빈도가 낮을수록(희소할수록)
-      해당 클래스의 테스트 시 장력(tension)이 높아진다.
-      정보이론: I(x) = -ln(p), 따라서 tension ~ freq^(-beta), beta ~ 1 for log.
+Hypothesis: The lower the frequency of a specific class in training data (the sparser it is),
+      the higher the tension for that class during testing.
+      Information theory: I(x) = -ln(p), therefore tension ~ freq^(-beta), beta ~ 1 for log.
 
-실험 설계:
-  digit 0의 학습 샘플 수를 인위적으로 조절:
-    A: 10개 (극도로 희소)
-    B: 100개
-    C: 500개
-    D: 3000개 (반절)
-    E: ~5400개 (정상, 균형)
+Experimental design:
+  Artificially adjust the number of training samples for digit 0:
+    A: 10 (extremely sparse)
+    B: 100
+    C: 500
+    D: 3000 (half)
+    E: ~5400 (normal, balanced)
 
-  각 설정으로 RepulsionFieldEngine 학습 후 테스트셋에서 digit별 장력 측정.
-  핵심 검증: digit 0의 장력이 학습 빈도가 낮을수록 높은가?
+  Train RepulsionFieldEngine with each setting, then measure per-digit tension on test set.
+  Key verification: Is digit 0's tension higher when training frequency is lower?
 """
 
 import sys, os

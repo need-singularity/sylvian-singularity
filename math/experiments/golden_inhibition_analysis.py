@@ -1,15 +1,16 @@
+```python
 #!/usr/bin/env python3
-"""Golden Inhibition Analysis — SF소설 검증 실험들
+"""Golden Inhibition Analysis — Sci-Fi Novel Verification Experiments
 
-소설 "골든 인히비션"의 핵심 가설을 수학적으로 검증:
-1. Expert 활성 패턴 시각화
-2. I sweep (U자 곡선)
-3. 노이즈 분석 (Dense vs MoE)
+Mathematical verification of core hypotheses from the novel "Golden Inhibition":
+1. Expert activation pattern visualization
+2. I sweep (U-curve)
+3. Noise analysis (Dense vs MoE)
 4. Savant Index
-5. R(d) 차원 분석
+5. R(d) dimension analysis
 
-CPU에서도 실행 가능한 부분만 포함.
-GPU 필요 부분은 golden_moe_torch.py에서 실행.
+Only includes CPU-executable parts.
+GPU-required parts are in golden_moe_torch.py.
 """
 
 import math
@@ -53,7 +54,7 @@ print(f"   R(d)/d = {float(R_d)/d:.6f}")
 print(f"   1/τ(d) = {1/tau(d):.6f}")
 print(f"   R/d ≈ c/τ confirmed: ratio = {float(R_d)/d * tau(d):.4f}")
 
-# 2. I = 1/e ≈ 0.368 vs I = 0.375 (실제 사용)
+# 2. I = 1/e ≈ 0.368 vs I = 0.375 (actual usage)
 print(f"\n2. Inhibition Rate")
 print(f"   1/e = {1/math.e:.6f}")
 print(f"   I_actual = 0.375 = 3/8")
@@ -123,3 +124,4 @@ print(f"   Λ(6)=0 ⟺ the ONLY dynamically balanced number")
 print("\n" + "=" * 60)
 print("  DONE. Run GPU experiments for PPL verification.")
 print("=" * 60)
+```

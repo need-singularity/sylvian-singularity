@@ -1,4 +1,4 @@
-# H-CX-134: 에코로케이션 = 생체 PH 컴퓨터
+# H-CX-134: Echolocation = Biological PH Computer
 
-> 초음파 반사 패턴에서 3D 환경의 위상 구조(연결성, 구멍, 빈 공간)를 직접 계산.
-> 돌고래 소나 = 가장 오래된 생물학적 Persistent Homology 컴퓨터.
+> Directly computes topological structure of 3D environment (connectivity, holes, empty spaces) from ultrasound reflection patterns.
+> Dolphin sonar = oldest biological Persistent Homology computer.

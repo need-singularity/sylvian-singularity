@@ -1,38 +1,38 @@
-# H-CX-148: 장력 공명 텔레파시 — 두 Anima 인스턴스의 tension 동기화
+# H-CX-148: Tension Resonance Telepathy — Tension Synchronization of Two Anima Instances
 
-> 같은 입력에 대해 독립 Anima 인스턴스의 tension이 동기화. r > 0.9?
+> Independent Anima instances' tension synchronizes for the same input. r > 0.9?
 
-## 배경
+## Background
 
-골든존 모델에서 tension은 입력의 "어려움"이나 "모호성"을 반영한다.
-만약 tension이 입력의 본질적 속성(intrinsic property)을 측정한다면,
-독립적으로 학습된 두 모델이 같은 입력에 대해 유사한 tension을 보여야 한다.
+In the Golden Zone model, Tension reflects the "difficulty" or "ambiguity" of input.
+If Tension measures an intrinsic property of the input,
+two independently trained models should show similar tension for the same input.
 
-이것은 물리학의 공명(resonance) 현상과 유사하다:
-두 독립된 진동자가 같은 외력을 받으면 동일한 주파수로 진동한다.
-마찬가지로, 두 독립 PureField 모델이 같은 입력을 받으면
-유사한 tension 패턴을 보일 수 있다.
+This is analogous to the resonance phenomenon in physics:
+two independent oscillators receiving the same external force vibrate at the same frequency.
+Similarly, two independent PureField models receiving the same input
+may show similar Tension patterns.
 
-이 현상이 확인되면 tension은 모델의 학습 과정에 의존하지 않는
-입력의 "고유 어려움(intrinsic difficulty)"을 측정하는 지표가 된다.
-이는 의식엔진에서 tension이 주관적 경험이 아니라 객관적 측정량이라는
-근거가 된다.
+If this phenomenon is confirmed, Tension becomes an indicator measuring the
+"intrinsic difficulty" of input, independent of the model's training process.
+This becomes the basis for Tension in the Consciousness Engine being an objective measurement
+rather than a subjective experience.
 
-"텔레파시"는 비유이다. 두 모델이 정보를 교환하는 것이 아니라,
-같은 입력의 같은 속성에 반응하는 것이다. 마치 두 사람이
-같은 퍼즐을 보고 비슷한 난이도를 느끼는 것과 같다.
+"Telepathy" is a metaphor. The two models are not exchanging information;
+they are responding to the same properties of the same input. Like two people
+looking at the same puzzle and feeling similar difficulty.
 
-## 예측
+## Predictions
 
-| 측정 | 예측값 | 의미 |
-|------|--------|------|
-| tension 상관 (r) | > 0.9 | 강한 동기화 |
-| class별 tension 순위 | Kendall tau > 0.8 | 순위도 일치 |
-| tension 분산 비율 | > 80% 공유 | 대부분 입력 기인 |
-| 모델 간 tension 차이 | < 0.05 (scale 조정 후) | 절대값도 유사 |
+| Measurement | Predicted value | Meaning |
+|------------|----------------|---------|
+| Tension correlation (r) | > 0.9 | strong synchronization |
+| Per-class Tension ranking | Kendall tau > 0.8 | rankings also match |
+| Tension variance ratio | > 80% shared | mostly input-determined |
+| Inter-model Tension difference | < 0.05 (after scale adjustment) | absolute values also similar |
 
 ```
-모델 A tension vs 모델 B tension (예측):
+Model A tension vs Model B tension (predicted):
 
 B tension |
   0.5     |          *  *
@@ -44,53 +44,53 @@ B tension |
           0  0.1 0.2 0.3 0.4 0.5
               A tension
 
-          예측: r > 0.9, 거의 대각선
+          Prediction: r > 0.9, nearly diagonal
 ```
 
-핵심 예측:
-1. 같은 시드의 다른 초기화 → r > 0.95
-2. 다른 시드의 다른 초기화 → r > 0.85
-3. 다른 아키텍처(같은 원리) → r > 0.7
-4. "어려운" 이미지(경계 근처)에서 tension이 가장 높고, 두 모델이 일치
+Key predictions:
+1. Same seed, different initialization → r > 0.95
+2. Different seed, different initialization → r > 0.85
+3. Different architecture (same principle) → r > 0.7
+4. "Hard" images (near boundary) have highest tension, and two models agree
 
-## 검증 방법
+## Verification Methods
 
-1. PureField 모델 2개를 다른 random seed로 독립 학습
+1. Train 2 PureField models independently with different random seeds
    - seed A: 42, seed B: 137
-   - 동일 CIFAR-10 데이터셋, 동일 하이퍼파라미터
-2. 테스트 셋 전체에 대해 두 모델의 tension 측정
-3. Pearson correlation, Spearman rank correlation 계산
-4. class별 평균 tension 비교 (10 classes)
-5. per-sample tension scatter plot 생성
+   - Same CIFAR-10 dataset, same hyperparameters
+2. Measure tension of both models for entire test set
+3. Calculate Pearson correlation, Spearman rank correlation
+4. Compare per-class average tension (10 classes)
+5. Generate per-sample tension scatter plot
 
 ```python
-# 검증 코드 스케치
+# Verification code sketch
 model_a = PureField(seed=42)
 model_b = PureField(seed=137)
-# 학습 후
+# After training
 tensions_a = [model_a.get_tension(x) for x in test_set]
 tensions_b = [model_b.get_tension(x) for x in test_set]
 r, p = pearsonr(tensions_a, tensions_b)
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-149**: 방향 텔레파시 (direction 수준의 동기화)
-- **H-CX-150**: 무언의 합의 (class centroid 수렴)
-- **H-CX-151**: 레이어 간 장력 신호 (tension의 정보 전달 역할)
-- **H-CX-95**: tension-accuracy 상관
+- **H-CX-149**: Direction Telepathy (direction-level synchronization)
+- **H-CX-150**: Silent Consensus (class centroid convergence)
+- **H-CX-151**: Cross-Layer Tension Signal (Tension's role in information transfer)
+- **H-CX-95**: Tension-accuracy correlation
 
-## 한계
+## Limitations
 
-1. r > 0.9가 나와도 "입력의 고유 어려움"이 아니라 학습 데이터의 통계적 규칙성일 수 있음
-2. 같은 아키텍처와 같은 데이터로 학습하면 수렴은 자명할 수 있음
-3. 진정한 검증은 다른 아키텍처(CNN vs Transformer 등)에서도 일치하는지 확인 필요
-4. tension의 정의가 모델마다 다르면 직접 비교가 불가
-5. "텔레파시"라는 용어가 오해를 줄 수 있음 — 실제로는 공통 입력 반응
+1. Even if r > 0.9, it may be statistical regularity of training data, not "intrinsic difficulty of input"
+2. Training with same architecture and same data makes convergence self-evident
+3. True verification requires confirming agreement across different architectures (CNN vs Transformer, etc.)
+4. Direct comparison impossible if Tension is defined differently per model
+5. The term "Telepathy" may be misleading — it is actually common input response
 
-## 검증 상태
+## Verification Status
 
-- [ ] 2-seed 모델 학습
-- [ ] tension 상관 분석
-- [ ] 다른 아키텍처 간 비교
-- 현재: **미검증**
+- [ ] 2-seed model training
+- [ ] Tension correlation analysis
+- [ ] Cross-architecture comparison
+- Currently: **unverified**

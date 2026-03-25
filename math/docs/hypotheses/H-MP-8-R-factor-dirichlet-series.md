@@ -1,18 +1,18 @@
-# H-MP-8: R-인수의 Dirichlet 급수
+# H-MP-8: Dirichlet Series of R-factor
 
-> **가설**: F(s) = Σ_{n≥1} [σ(n)φ(n)/(nτ(n))] × n^{-s}가 해석적으로 흥미로운 성질을 가진다.
+> **Hypothesis**: F(s) = Σ_{n≥1} [σ(n)φ(n)/(nτ(n))] × n^{-s} has analytically interesting properties.
 
-## 배경
-- σφ/(nτ) = Π f(p_i,a_i) 곱셈적
-- Euler 곱: F(s) = Π_p [Σ_{a≥0} f(p,a) p^{-as}]
+## Background
+- σφ/(nτ) = Π f(p_i,a_i) multiplicative
+- Euler product: F(s) = Π_p [Σ_{a≥0} f(p,a) p^{-as}]
 - f(p,0)=1, f(p,1)=(p²-1)/(2p), f(p,2)=(p³-1)/(3p), ...
 
-## 핵심 질문
-F(s)의 수렴 반평면, 특이점, 잔류 구조는?
+## Key Questions
+What are the half-plane of convergence, singularities, and residue structure of F(s)?
 
-## 검증 방향
-1. [ ] 수치적: Σ_{n≤N} σφ/(nτ)×n^{-s} for s=1,2
-2. [ ] Euler 곱 수렴 조건 분석
-3. [ ] 기존 Dirichlet 급수 (ζ, L-함수)와의 관계
+## Verification Direction
+1. [ ] Numerical: Σ_{n≤N} σφ/(nτ)×n^{-s} for s=1,2
+2. [ ] Analysis of Euler product convergence conditions
+3. [ ] Relationship with existing Dirichlet series (ζ, L-functions)
 
-## 난이도: 고 | 파급력: ★★
+## Difficulty: High | Impact: ★★

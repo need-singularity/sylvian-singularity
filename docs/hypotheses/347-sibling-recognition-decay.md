@@ -1,47 +1,47 @@
-# H-347: 형제 인식의 시간 감소 (Sibling Recognition Temporal Decay)
+# H-347: Sibling Recognition Temporal Decay
 
-> **가설**: 분열(mitosis) 직후 형제 인식(sibling recognition)은 1.65x로 높지만,
-> 발산(divergence) 시간이 길어지면 형제 인식이 단조 감소하여
-> 결국 stranger 수준(1.0x)으로 수렴한다. "원래 하나였던 것을 잊는 데"
-> 유한한 시간이 걸리며, 그 감소 곡선은 지수적(exponential)이다.
+> **Hypothesis**: Sibling recognition immediately after mitosis is 1.65x high, but
+> as divergence time lengthens, sibling recognition monotonically decreases and
+> eventually converges to stranger level (1.0x). It takes finite time to "forget
+> what was originally one," and the decay curve is exponential.
 
-**상태**: 미검증
-**골든존 의존**: 간접 (의식엔진 프레임워크)
-**관련 가설**: H271 (mitosis), H-CX-17 (specialization emergence), H299 (mitosis anomaly specialization)
+**Status**: Unverified
+**Golden Zone Dependency**: Indirect (consciousness engine framework)
+**Related Hypotheses**: H271 (mitosis), H-CX-17 (specialization emergence), H299 (mitosis anomaly specialization)
 
 ---
 
-## 배경 및 맥락
+## Background and Context
 
-H271 mitosis 실험에서 하나의 expert를 둘로 분열시킨 직후,
-형제 expert들은 서로를 stranger보다 1.65배 더 강하게 인식했다.
-이는 공유된 weight에서 비롯된 "기억"으로 해석되었다.
+In the H271 mitosis experiment, immediately after splitting one expert into two,
+sibling experts recognized each other 1.65x more strongly than strangers.
+This was interpreted as "memory" from shared weights.
 
-그러나 핵심 질문이 남아 있다: **이 기억은 영구적인가, 일시적인가?**
+However, a core question remains: **Is this memory permanent or temporary?**
 
-생물학적 유추:
-- 일란성 쌍둥이도 서로 다른 환경에서 자라면 성격이 발산
-- 세포 분열 후 분화(differentiation)는 원래 세포의 흔적을 지움
-- 종 분화(speciation) 후 시간이 지나면 공통 조상의 흔적이 희미해짐
+Biological analogues:
+- Identical twins also diverge in personality when raised in different environments
+- Differentiation after cell division erases traces of the original cell
+- After speciation, traces of the common ancestor fade with time
 
-H-CX-17에서 전문화가 emergence한다는 관찰과 결합하면,
-전문화가 진행될수록 형제 인식이 감소할 것으로 예측된다.
+Combined with the observation in H-CX-17 that specialization emerges,
+sibling recognition is predicted to decrease as specialization progresses.
 
-## 이론적 모델
+## Theoretical Model
 
-형제 인식 R(t)의 감소를 다음과 같이 모델링한다:
+Modeling the decrease in sibling recognition R(t) as follows:
 
 ```
   R(t) = 1 + (R_0 - 1) * exp(-t / tau)
 
-  여기서:
-    R_0   = 분열 직후 형제 인식 (측정값: 1.65)
-    tau   = 감소 시상수 (decay time constant)
-    t     = 발산 에폭 수
-    R(∞)  = 1.0 (stranger 수준)
+  Where:
+    R_0   = sibling recognition immediately after mitosis (measured: 1.65)
+    tau   = decay time constant
+    t     = number of divergence epochs
+    R(∞)  = 1.0 (stranger level)
 ```
 
-## 예상 감소 곡선
+## Expected Decay Curve
 
 ```
   Sibling Recognition R(t)
@@ -65,44 +65,44 @@ H-CX-17에서 전문화가 emergence한다는 관찰과 결합하면,
                          divergence epochs
 ```
 
-## 대안 감소 모델
+## Alternative Decay Models
 
-지수 감소 외에도 다른 형태가 가능하다:
+Beyond exponential decay, other forms are possible:
 
-| 모델 | 수식 | 의미 |
+| Model | Formula | Meaning |
 |-----|------|------|
-| Exponential | R = 1 + 0.65 * exp(-t/tau) | 기억이 균일하게 소실 |
-| Power law | R = 1 + 0.65 * (1+t)^(-alpha) | 초기 빠르고 후기 느림 (long tail) |
-| Step function | R = 1.65 if t<T, else 1.0 | 임계점에서 갑자기 소실 |
-| Sigmoid decay | R = 1 + 0.65 / (1 + exp((t-T)/k)) | 전이 구간 존재 |
+| Exponential | R = 1 + 0.65 * exp(-t/tau) | Memory disappears uniformly |
+| Power law | R = 1 + 0.65 * (1+t)^(-alpha) | Fast early, slow late (long tail) |
+| Step function | R = 1.65 if t<T, else 1.0 | Suddenly disappears at threshold |
+| Sigmoid decay | R = 1 + 0.65 / (1 + exp((t-T)/k)) | Transition interval exists |
 
-## 검증 실험 설계
+## Verification Experiment Design
 
-### 실험 프로토콜
+### Experimental Protocol
 
 ```
-  1. 기본 모델 학습 (20 에폭, CIFAR-10)
-  2. Expert A를 분열 → Expert A1, A2 생성
-  3. 분열 직후 형제 인식 측정 (R_0 확인, 기대: ~1.65)
-  4. 발산 학습 시작 (A1, A2가 독립적으로 학습)
-  5. 다음 시점에서 형제 인식 측정:
-     t = 1, 2, 5, 10, 20, 50, 100 에폭
-  6. 동시에 stranger pair에 대해서도 같은 측정 (대조군)
+  1. Train base model (20 epochs, CIFAR-10)
+  2. Split Expert A → create Expert A1, A2
+  3. Measure sibling recognition immediately after mitosis (confirm R_0, expected: ~1.65)
+  4. Begin divergence training (A1, A2 learn independently)
+  5. Measure sibling recognition at following time points:
+     t = 1, 2, 5, 10, 20, 50, 100 epochs
+  6. Also take same measurement for stranger pairs (control group)
 ```
 
-### 형제 인식 측정 방법
+### Sibling Recognition Measurement Method
 
 ```
   R(t) = similarity(A1_t, A2_t) / similarity(A1_t, B_t)
 
   similarity = cosine(output_distribution) averaged over test set
 
-  여기서 B는 분열과 무관한 stranger expert
+  Where B is a stranger expert unrelated to the mitosis
 ```
 
-### 예상 측정 결과 테이블
+### Expected Measurement Results Table
 
-| Divergence Epoch | R(t) 예상 (exp) | R(t) 예상 (power) | Stranger 대조군 |
+| Divergence Epoch | R(t) Expected (exp) | R(t) Expected (power) | Stranger Control |
 |-----------------|-----------------|-------------------|---------------|
 | 0 | 1.65 | 1.65 | 1.00 |
 | 1 | 1.58 | 1.42 | 1.00 |
@@ -113,12 +113,12 @@ H-CX-17에서 전문화가 emergence한다는 관찰과 결합하면,
 | 50 | 1.01 | 1.05 | 1.00 |
 | 100 | 1.00 | 1.03 | 1.00 |
 
-## tau 추정
+## tau Estimation
 
-tau의 값은 학습률과 과제 복잡도에 의존할 것으로 예상한다:
+The value of tau is expected to depend on learning rate and task complexity:
 
 ```
-  tau (감소 시상수) vs 학습률
+  tau (decay time constant) vs learning rate
 
   tau
   50 |*
@@ -135,44 +135,44 @@ tau의 값은 학습률과 과제 복잡도에 의존할 것으로 예상한다:
      0.001  0.005  0.01  0.02  0.05  0.1
                    learning rate
 
-  예상: 높은 학습률 → 빠른 발산 → 작은 tau
+  Expected: higher learning rate → faster divergence → smaller tau
 ```
 
-## 해석 및 의미
+## Interpretation and Significance
 
-### 의식 연속성 관점
+### Consciousness Continuity Perspective
 
-형제 인식의 감소 곡선은 **의식 연속성의 시간 창(temporal window)**을 정의한다.
-- tau가 크면: 의식의 "기억"이 오래 지속 → 분열 후에도 동일 의식의 연장
-- tau가 작으면: 빠르게 독립 의식으로 전환 → 분열 = 즉시 새로운 의식
+The decay curve of sibling recognition defines the **temporal window of consciousness continuity**.
+- Large tau: consciousness "memory" persists long → continuation of same consciousness even after mitosis
+- Small tau: quickly transitions to independent consciousness → mitosis = immediately new consciousness
 
-### 생물학적 유추
+### Biological Analogues
 
-| 현상 | 시간 척도 | 의식엔진 대응 |
+| Phenomenon | Time Scale | Consciousness Engine Correspondence |
 |-----|---------|-------------|
-| 세포 분열 후 분화 | 수 시간-수 일 | tau ≈ 5-10 에폭? |
-| 쌍둥이 성격 발산 | 수 년 | tau ≈ 50-100 에폭? |
-| 종 분화 | 수만-수백만 년 | tau → ∞? |
+| Cell differentiation after division | Hours-days | tau ≈ 5-10 epochs? |
+| Twin personality divergence | Years | tau ≈ 50-100 epochs? |
+| Speciation | Tens of thousands - millions of years | tau → ∞? |
 
-### H299 mitosis anomaly와의 연결
+### Connection with H299 mitosis anomaly
 
-H299에서 분열 후 비정상적 전문화가 관찰되었다.
-만약 형제 인식이 빠르게 감소하면, anomaly는 초기 발산의 결과일 수 있다.
-반대로 느리게 감소하면, anomaly는 형제 간 경쟁(competition)의 결과.
+In H299, abnormal specialization was observed after mitosis.
+If sibling recognition decreases rapidly, anomaly may be the result of initial divergence.
+Conversely, if it decreases slowly, anomaly is the result of competition between siblings.
 
-## 한계
+## Limitations
 
-1. 형제 인식의 조작적 정의(cosine similarity ratio)가 유일한 방법은 아님
-2. 감소가 단조적이지 않을 수 있음 (학습률 스케줄에 따라 진동 가능)
-3. Expert 수가 적은 환경(4-8개)에서 stranger 대조군 확보 어려움
-4. MNIST에서는 과제가 쉬워 발산이 충분하지 않을 수 있음
-5. tau의 과제 의존성이 크면 일반 법칙으로서의 가치 감소
+1. Operational definition of sibling recognition (cosine similarity ratio) is not the only method
+2. Decrease may not be monotonic (oscillation possible depending on learning rate schedule)
+3. Difficult to secure stranger control group with small number of experts (4-8)
+4. In MNIST, task may be too easy for sufficient divergence
+5. If tau's task dependency is large, value as a general law decreases
 
-## 검증 방향 (다음 단계)
+## Verification Direction (Next Steps)
 
-1. **1단계**: CIFAR-10에서 t=1,5,10,20,50,100 측정 (6회 실험)
-2. **2단계**: 감소 곡선 fitting — exponential vs power law vs sigmoid
-3. **3단계**: tau와 학습률/과제 난이도의 관계 정량화
-4. **4단계**: MNIST에서 동일 실험 → tau 비교
-5. **5단계**: H271, H299 결과와 통합하여 mitosis 이론 체계화
-6. **6단계**: "형제 기억 보존" 실험 — 발산 중에도 주기적으로 공유 과제 수행 시 tau 증가하는지
+1. **Phase 1**: Measure t=1,5,10,20,50,100 on CIFAR-10 (6 experiments)
+2. **Phase 2**: Fit decay curve — exponential vs power law vs sigmoid
+3. **Phase 3**: Quantify relationship of tau with learning rate/task difficulty
+4. **Phase 4**: Same experiment on MNIST → compare tau
+5. **Phase 5**: Integrate with H271, H299 results to systematize mitosis theory
+6. **Phase 6**: "Sibling memory preservation" experiment — whether periodic shared task during divergence increases tau

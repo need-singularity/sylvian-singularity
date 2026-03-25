@@ -1,17 +1,18 @@
+```python
 #!/usr/bin/env python3
-"""양자 공식 탐색 엔진 — 양자역학 무차원 상수 × 프로젝트 상수 DFS 탐색
+"""Quantum Formula Search Engine — Quantum Mechanics Dimensionless Constants × Project Constants DFS Search
 
-프로젝트 상수(18개)와 양자 무차원 상수(9개)를 조합하여
-수학적 타겟 상수와의 일치를 자동 탐색한다.
-텍사스 명사수 검정으로 우연 vs 구조적 발견을 판별.
+Automatically searches for mathematical target constant matches by combining
+project constants (18) and quantum dimensionless constants (9).
+Distinguishes chance vs structural discoveries with Texas Sharpshooter test.
 
-사용법:
-  python3 quantum_formula_engine.py                    # 2개 조합, 0.1% 이내
-  python3 quantum_formula_engine.py --threshold 0.01   # 0.01% 이내만
-  python3 quantum_formula_engine.py --depth 3          # 3개 조합 (느림)
-  python3 quantum_formula_engine.py --cross-only        # A그룹×B그룹 교차만
-  python3 quantum_formula_engine.py --texas             # 텍사스 명사수 검정 포함
-  python3 quantum_formula_engine.py --top 20            # 상위 20개만 출력
+Usage:
+  python3 quantum_formula_engine.py                    # 2 combinations, within 0.1%
+  python3 quantum_formula_engine.py --threshold 0.01   # Only within 0.01%
+  python3 quantum_formula_engine.py --depth 3          # 3 combinations (slow)
+  python3 quantum_formula_engine.py --cross-only        # Group A×B cross only
+  python3 quantum_formula_engine.py --texas             # Include Texas Sharpshooter test
+  python3 quantum_formula_engine.py --top 20            # Output top 20 only
 """
 
 import argparse
@@ -28,7 +29,7 @@ RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results"
 
 
 # ─────────────────────────────────────────
-# 그룹 A: 프로젝트 상수 (기존)
+# Group A: Project Constants (existing)
 # ─────────────────────────────────────────
 PROJECT_CONSTS = {
     "1/2": 0.5,
@@ -53,7 +54,7 @@ PROJECT_CONSTS = {
 }
 
 # ─────────────────────────────────────────
-# 그룹 B: 양자 상수 (무차원)
+# Group B: Quantum Constants (dimensionless)
 # ─────────────────────────────────────────
 QUANTUM_CONSTS = {
     "alpha": 1 / 137.035999084,
@@ -68,7 +69,7 @@ QUANTUM_CONSTS = {
 }
 
 # ─────────────────────────────────────────
-# 타겟 상수 (매칭 대상)
+# Target Constants (matching targets)
 # ─────────────────────────────────────────
 TARGETS = {
     "pi": np.pi,
@@ -86,7 +87,7 @@ TARGETS = {
     "gamma_EM": 0.5772156649,
     "e^gamma": np.exp(0.5772156649),
     "1/alpha_exact": 137.035999084,
-    # 프로젝트 상수도 타겟에 포함 (교차 발견용)
+    # Include project constants as targets (for cross discovery)
     "1/2": 0.5,
     "1/3": 1 / 3,
     "1/6": 1 / 6,
@@ -96,10 +97,10 @@ TARGETS = {
 
 
 # ─────────────────────────────────────────
-# 분류: 조합이 어느 그룹인지
+# Classification: Which group the combination belongs to
 # ─────────────────────────────────────────
 def classify_pair(name_a, name_b):
-    """두 상수의 그룹 조합 분류."""
+    """Classify the group combination of two constants."""
     a_proj = name_a in PROJECT_CONSTS
     b_proj = name_b in PROJECT_CONSTS
     if a_proj and b_proj:
@@ -111,7 +112,7 @@ def classify_pair(name_a, name_b):
 
 
 def classify_triple(name_a, name_b, name_c):
-    """세 상수의 그룹 조합 분류."""
+    """Classify the group combination of three constants."""
     names = [name_a, name_b, name_c]
     n_proj = sum(1 for n in names if n in PROJECT_CONSTS)
     if n_proj == 3:
@@ -125,10 +126,10 @@ def classify_triple(name_a, name_b, name_c):
 
 
 # ─────────────────────────────────────────
-# 이항 연산 (2개 상수)
+# Binary Operations (2 constants)
 # ─────────────────────────────────────────
 def binary_ops(na, va, nb, vb):
-    """두 상수에 대한 모든 연산 결과를 (값, 공식문자열) 리스트로 반환."""
+    """Return all operation results for two constants as (value, formula string) list."""
     results = []
 
     # a + b
@@ -215,16 +216,16 @@ def binary_ops(na, va, nb, vb):
         except (OverflowError, ValueError):
             pass
 
-    # 유효한 결과만
+    # Valid results only
     return [(v, expr) for v, expr in results
             if isinstance(v, (int, float)) and np.isfinite(v) and abs(v) < 1e15]
 
 
 # ─────────────────────────────────────────
-# 삼항 연산 (3개 상수)
+# Ternary Operations (3 constants)
 # ─────────────────────────────────────────
 def ternary_ops(na, va, nb, vb, nc, vc):
-    """세 상수에 대한 연산 결과 리스트."""
+    """List of operation results for three constants."""
     results = []
 
     # a*b + c
@@ -275,19 +276,19 @@ def ternary_ops(na, va, nb, vb, nc, vc):
 
 
 # ─────────────────────────────────────────
-# 탐색 엔진
+# Search Engine
 # ─────────────────────────────────────────
 def search(depth=2, threshold=0.001, cross_only=False):
-    """상수 조합으로 타겟을 만드는 공식 탐색.
+    """Search for formulas that create targets from constant combinations.
 
     Args:
-        depth: 조합 깊이 (2 또는 3)
-        threshold: 상대 오차 임계값 (0.001 = 0.1%)
-        cross_only: True이면 A*B 교차 조합만
+        depth: Combination depth (2 or 3)
+        threshold: Relative error threshold (0.001 = 0.1%)
+        cross_only: If True, only A*B cross combinations
 
     Returns:
         matches: list of dict
-        total_trials: 총 시도 수
+        total_trials: Total number of attempts
     """
     all_consts = {}
     all_consts.update(PROJECT_CONSTS)
@@ -299,7 +300,7 @@ def search(depth=2, threshold=0.001, cross_only=False):
     matches = []
     total_trials = 0
 
-    # ── 2개 조합 ──
+    # ── 2 combinations ──
     for i in range(len(names)):
         for j in range(i, len(names)):
             na, va = names[i], vals[i]
@@ -318,7 +319,7 @@ def search(depth=2, threshold=0.001, cross_only=False):
                         continue
                     rel_err = abs(val - t_val) / abs(t_val)
                     if rel_err < threshold:
-                        # 자명한 매칭 스킵 (자기 자신)
+                        # Skip trivial matches (self)
                         if expr == t_name or ('+' not in expr and '-' not in expr
                                               and '*' not in expr and '/' not in expr
                                               and '^' not in expr and 'log' not in expr
@@ -335,7 +336,7 @@ def search(depth=2, threshold=0.001, cross_only=False):
                             "depth": 2,
                         })
 
-    # ── 3개 조합 (선택적) ──
+    # ── 3 combinations (optional) ──
     if depth >= 3:
         for i in range(len(names)):
             for j in range(i, len(names)):
@@ -350,7 +351,7 @@ def search(depth=2, threshold=0.001, cross_only=False):
                     if cross_only and (cat == "A*A*A" or cat == "B*B*B"):
                         continue
 
-                    # 모든 순열 조합
+                    # All permutation combinations
                     perms = [
                         (na, va, nb, vb, nc, vc),
                         (na, va, nc, vc, nb, vb),
@@ -377,7 +378,7 @@ def search(depth=2, threshold=0.001, cross_only=False):
                                         "depth": 3,
                                     })
 
-    # 중복 제거 (같은 타겟+공식)
+    # Remove duplicates (same target+formula)
     seen = set()
     unique = []
     for m in matches:
@@ -386,29 +387,29 @@ def search(depth=2, threshold=0.001, cross_only=False):
             seen.add(key)
             unique.append(m)
 
-    # 오차 순 정렬
+    # Sort by error
     unique.sort(key=lambda x: x["error_pct"])
 
     return unique, total_trials
 
 
 # ─────────────────────────────────────────
-# 텍사스 명사수 검정
+# Texas Sharpshooter Test
 # ─────────────────────────────────────────
 def texas_sharpshooter(matches, total_trials, n_random=5000):
-    """각 발견의 Bonferroni p-value 계산.
+    """Calculate Bonferroni p-value for each discovery.
 
-    방법:
-    1. 같은 연산 형태에 랜덤 상수 2개를 넣어 같은 정밀도로 타겟 맞출 확률 추정
-    2. 총 시도 수 x 단일 확률 = Bonferroni p-value
-    3. 분류: p<0.01 구조적, 0.01~0.05 약한 증거, >0.05 우연 가능
+    Method:
+    1. Estimate probability of hitting target with same precision using random constants in same operation form
+    2. Total attempts x single probability = Bonferroni p-value
+    3. Classification: p<0.01 structural, 0.01~0.05 weak evidence, >0.05 possibly chance
 
     Returns:
         list of dict with p_value and verdict added
     """
     rng = np.random.default_rng(42)
 
-    # 각 타겟에 대해 랜덤 히트 확률 추정
+    # Estimate random hit probability for each target
     target_hit_probs = {}
     for t_name, t_val in TARGETS.items():
         if t_val == 0:
@@ -417,7 +418,7 @@ def texas_sharpshooter(matches, total_trials, n_random=5000):
         for _ in range(n_random):
             a = rng.uniform(0.01, 200)
             b = rng.uniform(0.01, 200)
-            # 기본 연산 8종 시도
+            # Try 8 basic operations
             test_vals = [a + b, a - b, a * b]
             if b != 0:
                 test_vals.append(a / b)
@@ -447,23 +448,23 @@ def texas_sharpshooter(matches, total_trials, n_random=5000):
 
         target_hit_probs[t_name] = max(hits / n_random, 1e-6)
 
-    # Bonferroni 보정
+    # Bonferroni correction
     results = []
     n_significant = 0
     for m in matches:
         p_single = target_hit_probs.get(m["target"], 0.01)
-        # 정밀도 보정: 오차가 더 작을수록 확률 더 낮음
+        # Precision correction: lower probability for smaller errors
         precision_factor = m["error_pct"] / 0.1 if m["error_pct"] > 0 else 0.01
         p_adjusted = min(1.0, p_single * precision_factor * total_trials)
 
         if p_adjusted < 0.01:
-            verdict = "구조적"
+            verdict = "structural"
             n_significant += 1
         elif p_adjusted < 0.05:
-            verdict = "약한 증거"
+            verdict = "weak evidence"
             n_significant += 1
         else:
-            verdict = "우연 가능"
+            verdict = "possibly chance"
 
         m_copy = dict(m)
         m_copy["p_value"] = p_adjusted
@@ -474,10 +475,10 @@ def texas_sharpshooter(matches, total_trials, n_random=5000):
 
 
 # ─────────────────────────────────────────
-# 출력
+# Output
 # ─────────────────────────────────────────
 def print_results(matches, total_trials, threshold, depth, cross_only, top_n, texas=False):
-    """결과 ASCII 출력."""
+    """ASCII output of results."""
 
     n_proj = len(PROJECT_CONSTS)
     n_quant = len(QUANTUM_CONSTS)
@@ -486,26 +487,26 @@ def print_results(matches, total_trials, threshold, depth, cross_only, top_n, te
     print()
     print("=" * 55)
     print(" Quantum Formula Engine v1.0")
-    print(f" 상수: {n_proj}(프로젝트) + {n_quant}(양자) = {n_total}개")
-    print(f" 연산: {'8종(2개)' if depth < 3 else '8종(2개)+8종(3개)'}, "
-          f"조합: ~{total_trials:,}개")
-    mode = "교차(A*B)만" if cross_only else "전체"
-    print(f" 모드: {mode}, 깊이: {depth}, 임계: {threshold * 100}%")
+    print(f" Constants: {n_proj}(project) + {n_quant}(quantum) = {n_total}")
+    print(f" Operations: {'8 types(2)' if depth < 3 else '8 types(2)+8 types(3)'}, "
+          f"Combinations: ~{total_trials:,}")
+    mode = "Cross(A*B) only" if cross_only else "All"
+    print(f" Mode: {mode}, Depth: {depth}, Threshold: {threshold * 100}%")
     print("=" * 55)
 
     if not matches:
         print()
-        print(" 발견 없음.")
+        print(" No discoveries.")
         print("=" * 55)
         return
 
     display = matches[:top_n] if top_n else matches
 
     print()
-    print(f" 발견 (오차 <= {threshold * 100}%): {len(matches)}개"
-          + (f", 상위 {top_n}개 표시" if top_n and top_n < len(matches) else ""))
+    print(f" Discoveries (error <= {threshold * 100}%): {len(matches)}"
+          + (f", showing top {top_n}" if top_n and top_n < len(matches) else ""))
     print(" " + "-" * 53)
-    print(f" {'오차%':>7} | {'공식':<28} | {'값':>10} | {'타겟':<10} | 분류")
+    print(f" {'Error%':>7} | {'Formula':<28} | {'Value':>10} | {'Target':<10} | Cat")
     print(" " + "-" * 53)
 
     for m in display:
@@ -515,7 +516,7 @@ def print_results(matches, total_trials, threshold, depth, cross_only, top_n, te
         if len(formula) > 28:
             formula = formula[:25] + "..."
 
-        # 등급 표시
+        # Grade indicator
         if m["error_pct"] < 0.001:
             star = "**"
         elif m["error_pct"] < 0.01:
@@ -531,28 +532,28 @@ def print_results(matches, total_trials, threshold, depth, cross_only, top_n, te
 
     print(" " + "-" * 53)
 
-    # 텍사스 명사수 검정
+    # Texas Sharpshooter test
     if texas:
         print()
-        print(" 텍사스 명사수 검정:")
+        print(" Texas Sharpshooter Test:")
         texas_results, n_sig = texas_sharpshooter(matches, total_trials)
-        n_structural = sum(1 for r in texas_results if r["verdict"] == "구조적")
-        n_weak = sum(1 for r in texas_results if r["verdict"] == "약한 증거")
-        n_chance = sum(1 for r in texas_results if r["verdict"] == "우연 가능")
+        n_structural = sum(1 for r in texas_results if r["verdict"] == "structural")
+        n_weak = sum(1 for r in texas_results if r["verdict"] == "weak evidence")
+        n_chance = sum(1 for r in texas_results if r["verdict"] == "possibly chance")
 
-        print(f"  총 시도: {total_trials:,}, "
-              f"{threshold * 100}% 이내 발견: {len(matches)}개")
-        print(f"  Bonferroni 유의: {n_sig}/{len(matches)} (p < 0.05)")
-        print(f"   - 구조적 (p<0.01): {n_structural}개")
-        print(f"   - 약한 증거 (p<0.05): {n_weak}개")
-        print(f"   - 우연 가능 (p>=0.05): {n_chance}개")
+        print(f"  Total attempts: {total_trials:,}, "
+              f"Discoveries within {threshold * 100}%: {len(matches)}")
+        print(f"  Bonferroni significant: {n_sig}/{len(matches)} (p < 0.05)")
+        print(f"   - Structural (p<0.01): {n_structural}")
+        print(f"   - Weak evidence (p<0.05): {n_weak}")
+        print(f"   - Possibly chance (p>=0.05): {n_chance}")
 
-        # 상위 구조적 발견 표시
-        structural = [r for r in texas_results if r["verdict"] == "구조적"]
+        # Show top structural discoveries
+        structural = [r for r in texas_results if r["verdict"] == "structural"]
         if structural:
             structural.sort(key=lambda x: x["p_value"])
             print()
-            print(" 구조적 발견 (p < 0.01):")
+            print(" Structural discoveries (p < 0.01):")
             for r in structural[:10]:
                 print(f"   p={r['p_value']:.4f} | {r['formula']:<28} -> "
                       f"{r['target']} (err {r['error_pct']:.4f}%)")
@@ -562,19 +563,19 @@ def print_results(matches, total_trials, threshold, depth, cross_only, top_n, te
 
 
 def save_results(matches, total_trials, threshold, depth):
-    """결과를 results/ 폴더에 저장."""
+    """Save results to results/ folder."""
     os.makedirs(RESULTS_DIR, exist_ok=True)
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     path = os.path.join(RESULTS_DIR, "quantum_formula_discovery.md")
 
     with open(path, "a", encoding="utf-8") as f:
-        f.write(f"\n# 양자 공식 탐색 [{now}]\n\n")
-        f.write(f"상수 {len(PROJECT_CONSTS) + len(QUANTUM_CONSTS)}개, "
-                f"시도 {total_trials:,}, "
-                f"발견 {len(matches)}개, "
-                f"임계 {threshold * 100}%\n\n")
-        f.write(f"| 오차% | 공식 | 값 | 타겟 | 분류 |\n")
-        f.write(f"|-------|------|-----|------|------|\n")
+        f.write(f"\n# Quantum Formula Search [{now}]\n\n")
+        f.write(f"Constants {len(PROJECT_CONSTS) + len(QUANTUM_CONSTS)}, "
+                f"Attempts {total_trials:,}, "
+                f"Discoveries {len(matches)}, "
+                f"Threshold {threshold * 100}%\n\n")
+        f.write(f"| Error% | Formula | Value | Target | Cat |\n")
+        f.write(f"|-------|---------|-------|--------|-----|\n")
         for m in matches[:30]:
             f.write(f"| {m['error_pct']:.4f} | {m['formula']} | "
                     f"{m['formula_val']:.6f} | {m['target']} | "
@@ -585,33 +586,33 @@ def save_results(matches, total_trials, threshold, depth):
 
 
 # ─────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(
-        description="양자 공식 탐색 엔진 — 양자 무차원 상수 x 프로젝트 상수 DFS",
+        description="Quantum Formula Search Engine — Quantum dimensionless constants x Project constants DFS",
     )
     parser.add_argument("--threshold", type=float, default=0.001,
-                        help="상대 오차 임계값 (기본 0.001 = 0.1%%)")
+                        help="Relative error threshold (default 0.001 = 0.1%%)")
     parser.add_argument("--depth", type=int, default=2, choices=[2, 3],
-                        help="조합 깊이 (기본 2, 3은 느림)")
+                        help="Combination depth (default 2, 3 is slow)")
     parser.add_argument("--cross-only", action="store_true",
-                        help="A그룹 x B그룹 교차 조합만 탐색")
+                        help="Search only Group A x Group B cross combinations")
     parser.add_argument("--texas", action="store_true",
-                        help="텍사스 명사수 검정 포함")
+                        help="Include Texas Sharpshooter test")
     parser.add_argument("--top", type=int, default=None,
-                        help="상위 N개만 출력")
+                        help="Output only top N")
 
     args = parser.parse_args()
 
-    # 탐색
+    # Search
     matches, total_trials = search(
         depth=args.depth,
         threshold=args.threshold,
         cross_only=args.cross_only,
     )
 
-    # 출력
+    # Output
     print_results(
         matches,
         total_trials,
@@ -622,11 +623,12 @@ def main():
         texas=args.texas,
     )
 
-    # 저장
+    # Save
     path = save_results(matches, total_trials, args.threshold, args.depth)
-    print(f" -> results/ 저장: {path}")
+    print(f" -> results/ saved: {path}")
     print()
 
 
 if __name__ == "__main__":
     main()
+```

@@ -1,14 +1,14 @@
-# H-MP-17: ω(n)와 R(n)의 단조성 — 소인수 많을수록 R 증가
+# H-MP-17: Monotonicity of ω(n) and R(n) — More Prime Factors Increase R
 
-> **가설**: squarefree n에서 R(n)은 ω(n) (소인수 개수)에 대해
-> 점근적으로 지수적으로 증가하며, R(n) ≥ (4/3)^{ω(n)-1}·(3/4).
+> **Hypothesis**: For squarefree n, R(n) increases asymptotically 
+> exponentially with ω(n) (number of prime factors), with R(n) ≥ (4/3)^{ω(n)-1}·(3/4).
 
-## 배경
+## Background
 
-squarefree n = p₁·p₂·...·p_k에서:
+For squarefree n = p₁·p₂·...·p_k:
 R(n) = ∏ f(p_i,1) = ∏ (p_i²-1)/(2p_i)
 
-최소: 가장 작은 k개 소수를 사용할 때
+Minimum: When using the smallest k primes
 R_min(k) = f(2,1)·f(3,1)·f(5,1)·...·f(p_k,1)
 
 ```
@@ -19,19 +19,19 @@ R_min(k) = f(2,1)·f(3,1)·f(5,1)·...·f(p_k,1)
   k=5: R_min = 8.23·f(11,1) = 8.23·60/11 ≈ 44.9
 ```
 
-## 핵심 정리
+## Core Theorem
 
 ```
   THEOREM: For squarefree n with ω(n)=k≥3:
     R(n) ≥ (12/5) · ∏_{i=3}^{k} (p_i-1)/2
     → R grows superexponentially in ω
 
-  증명: f(p,1) = (p+1)(p-1)/(2p) ≥ (p-1)/2 for p≥3.
+  Proof: f(p,1) = (p+1)(p-1)/(2p) ≥ (p-1)/2 for p≥3.
   For k≥3 primes including 2,3:
     R = f(2,1)·f(3,1)·∏_{i≥3} f(p_i,1) = 1·∏ f(p_i,1)
     ≥ ∏ (p_i-1)/2 ≥ (4/2)·(6/2)·... → grows fast
 
-  ASCII: R_min(k) 성장
+  ASCII: R_min(k) growth
 
   R_min
   10^6 |                              ·
@@ -44,5 +44,5 @@ R_min(k) = f(2,1)·f(3,1)·f(5,1)·...·f(p_k,1)
        1  2  3  4  5  6  7  8
 ```
 
-## 판정: 🟩 (자명하지만 유용한 하한)
-## 난이도: 낮음 | 파급력: ★★
+## Verdict: 🟩 (Trivial but useful lower bound)
+## Difficulty: Low | Impact: ★★

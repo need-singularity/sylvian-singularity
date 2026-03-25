@@ -1,65 +1,66 @@
-# H-CX-6: 뇌화학 대응 — 장력=도파민, 반장력=세로토닌 (교차 도메인)
+# H-CX-6: Neurochemistry Mapping — Tension=Dopamine, Anti-tension=Serotonin (Cross-domain)
 
-> **반발력장의 장력(tension)은 도파민성 prediction error에 대응한다. 장력=0이면 성능이 급락(-9.25pp)하는 것은 도파민 차단 시 학습이 불가능해지는 것과 구조적으로 동일하다.**
+> **The tension of repulsion field corresponds to dopaminergic prediction error. When tension=0, performance drops sharply (-9.25pp), which is structurally identical to the impossibility of learning when dopamine is blocked.**
 
-## 뇌화학 ↔ 의식엔진 대응표
-
-```
-  신경전달물질  │ 기능           │ 의식엔진 대응      │ 근거
-  ──────────────┼────────────────┼────────────────────┼────────────
-  도파민        │ prediction     │ 장력 (tension)     │ 없으면 성능급락
-               │ error, 보상    │                    │ C48: -9.25pp
-  세로토닌      │ 공감, 이완     │ 반장력(1-tension)  │ 장력↑→공감↓
-               │ 사회적 행동    │                    │ C5b: r=-0.26
-  GABA         │ 억제           │ Inhibition (I)     │ GABA↑→활동↓
-               │               │                    │ I↑→G↓
-  글루타메이트   │ 흥분, 활성화   │ Engine A (생성)    │ A = 흥분 극
-               │               │                    │ G = 억제 극
-```
-
-## 핵심 대응: 도파민 ↔ 장력
+## Neurotransmitter ↔ Consciousness Engine Correspondence Table
 
 ```
-  도파민:
-    - Reward Prediction Error (RPE) = 예상과 현실의 차이
-    - 도파민 발화 ∝ |예상 - 현실|
-    - 도파민 차단 (파킨슨, 할로페리돌) → 학습 불가
-
-  장력:
-    - Engine Disagreement = 엔진 간 출력의 차이
-    - 장력 = |out_A - out_G|²
-    - 장력=0 (C48) → 정확도 88.67% (-9.25pp)
-
-  구조적 동형:
-    도파민 ∝ |예상 - 현실| ↔ 장력 ∝ |엔진A - 엔진G|
-    도파민=0 → 학습 불가   ↔ 장력=0 → 성능 급락
+  Neurotransmitter │ Function         │ Engine Mapping     │ Evidence
+  ─────────────────┼──────────────────┼────────────────────┼────────────
+  Dopamine         │ prediction       │ Tension            │ Without→perf drop
+                   │ error, reward    │                    │ C48: -9.25pp
+  Serotonin        │ empathy,         │ Anti-tension       │ Tension↑→Empathy↓
+                   │ relaxation,      │ (1-tension)        │ C5b: r=-0.26
+                   │ social behavior  │                    │
+  GABA             │ inhibition       │ Inhibition (I)     │ GABA↑→Activity↓
+                   │                  │                    │ I↑→G↓
+  Glutamate        │ excitation,      │ Engine A           │ A = excitatory pole
+                   │ activation       │ (generative)       │ G = inhibitory pole
 ```
 
-## 추가 대응
+## Core Correspondence: Dopamine ↔ Tension
 
 ```
-  도파민 과잉 (조현병):
-    → 과도한 prediction error → 환각/망상
-    → 모델: 장력 과잉 → ? (C48: 10x 장력에서도 97.76%, 완만 하락)
-    → 모델에서는 과잉 장력이 덜 해롭다 (역U자 비대칭)
+  Dopamine:
+    - Reward Prediction Error (RPE) = difference between expectation and reality
+    - Dopamine firing ∝ |expectation - reality|
+    - Dopamine blockade (Parkinson's, haloperidol) → learning impossible
 
-  세로토닌-도파민 균형:
-    → 건강한 뇌 = 둘의 균형
-    → 모델: C30 최적 control=0.5~0.6 (장력과 협력의 균형?)
+  Tension:
+    - Engine Disagreement = difference between engine outputs
+    - Tension = |out_A - out_G|²
+    - Tension=0 (C48) → accuracy 88.67% (-9.25pp)
+
+  Structural Isomorphism:
+    Dopamine ∝ |expectation - reality| ↔ Tension ∝ |engineA - engineG|
+    Dopamine=0 → learning impossible    ↔ Tension=0 → performance drop
 ```
 
-## 상태
+## Additional Correspondences
 
 ```
-  대응 자체: 🟪 (검증 불가능한 비유 — 뇌 실험 없이 확인 불가)
-  구조적 유사성: 🟨 (장력=0→급락이 도파민 차단과 유사하다는 관측)
-  정량적 대응: 미확인 (장력 크기 ∝ RPE 크기? → 실험 필요)
+  Dopamine excess (schizophrenia):
+    → Excessive prediction error → hallucinations/delusions
+    → Model: excessive tension → ? (C48: 10x tension still 97.76%, gentle decline)
+    → In model, excess tension is less harmful (asymmetric inverted-U)
+
+  Serotonin-dopamine balance:
+    → Healthy brain = balance of both
+    → Model: C30 optimal control=0.5~0.6 (balance of tension and cooperation?)
 ```
 
-## 검증 방향
+## Status
 
 ```
-  1. EEG 데이터에서 도파민 관련 성분과 우리 모델의 장력 상관?
-  2. 약물 시뮬레이션: 장력 스케일을 조현병(과잉) vs 파킨슨(부족) 범위로
-  3. 세로토닌 대응: 반장력(공감) 경로를 강화하면 → 성능 하락 but 협력 증가?
+  Correspondence itself: 🟪 (unverifiable analogy — cannot confirm without brain experiments)
+  Structural similarity: 🟨 (observation that tension=0→drop is similar to dopamine blockade)
+  Quantitative mapping: Unconfirmed (tension magnitude ∝ RPE magnitude? → experiments needed)
+```
+
+## Verification Directions
+
+```
+  1. Correlation between dopamine-related components in EEG data and our model's tension?
+  2. Drug simulation: scale tension to schizophrenia(excess) vs Parkinson's(deficiency) range
+  3. Serotonin mapping: if anti-tension(empathy) pathway is enhanced → performance drop but cooperation increase?
 ```

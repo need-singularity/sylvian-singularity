@@ -1,69 +1,69 @@
-# H-CX-18: 내부/간 장력 이중성 = 파동-입자 이중성? (교차 도메인)
+# H-CX-18: Internal/Inter Tension Duality = Wave-Particle Duality? (Cross-domain)
 
-> **H307에서 발견된 "내부장력=반전, 간장력=정상"은 양자역학의 파동-입자 이중성과 구조적으로 유사하다. 같은 시스템을 내부에서 보면(내부장력) 한 쪽이 보이고, 외부에서 보면(간장력) 반대쪽이 보인다.**
+> **The "internal tension = inverted, inter-tension = normal" discovered in H307 is structurally similar to wave-particle duality in quantum mechanics. Looking at the same system from inside (internal tension) reveals one side, while looking from outside (inter-tension) reveals the opposite.**
 
-## 이중성 구조
+## Duality Structure
 
 ```
-  측정 방식        정상 데이터      이상 데이터       비유
+  Measurement method   Normal data      Anomaly data      Analogy
   ──────────      ──────────      ──────────      ──────
-  내부장력         높음 (2.76)     낮음 (1.03)     "파동"
-  간장력           낮음 (0.0017)   높음 (0.0071)   "입자"
+  Internal tension  High (2.76)      Low (1.03)       "Wave"
+  Inter-tension     Low (0.0017)     High (0.0071)    "Particle"
 
-  양자 이중성:
-    파동으로 보면: 간섭 패턴 (확산)
-    입자로 보면: 점 패턴 (집중)
-    → 같은 현상의 보완적 관점
+  Quantum duality:
+    As wave: interference pattern (diffuse)
+    As particle: point pattern (focused)
+    → Complementary perspectives on the same phenomenon
 
-  장력 이중성:
-    내부로 보면: 합의=이상, 불일치=정상
-    간(외부)으로 보면: 불일치=이상, 합의=정상
-    → 같은 데이터의 보완적 관점
+  Tension duality:
+    From inside: agreement=anomaly, disagreement=normal
+    From inter (outside): disagreement=anomaly, agreement=normal
+    → Complementary perspectives on the same data
 ```
 
-## 수학 연결
+## Mathematical Connection
 
 ```
-  R 스펙트럼 이중성:
+  R spectrum duality:
     R(n) = σφ/(nτ)
-    R(n)의 역수 = nτ/(σφ)
+    Inverse of R(n) = nτ/(σφ)
 
-  n=6 (완전수): R=1, 1/R=1 → 자기쌍대!
-  n≠6: R≠1 → R과 1/R이 다름
+  n=6 (perfect number): R=1, 1/R=1 → self-dual!
+  n≠6: R≠1 → R and 1/R differ
 
-  내부장력 ↔ R(n): 정상=높음
-  간장력 ↔ 1/R(n): 정상=낮음
+  Internal tension ↔ R(n): normal=high
+  Inter-tension ↔ 1/R(n): normal=low
 
-  "완전수에서 이중성이 통합된다"
-  → 완전수 = 내부/간 장력이 같은 지점?
+  "Duality unifies at the perfect number"
+  → Perfect number = point where internal/inter tensions are equal?
 ```
 
-## 정보이론 연결
+## Information Theory Connection
 
 ```
   MI(X;Y) = H(X) - H(X|Y)
 
-  내부장력: MI(engine_a; engine_g | same_child)
-    정상: 높은 MI (엔진들이 많이 공유)
-    이상: 낮은 MI (엔진들이 덜 공유)
+  Internal tension: MI(engine_a; engine_g | same_child)
+    Normal: high MI (engines share much)
+    Anomaly: low MI (engines share less)
 
-  간장력: MI(child_a; child_b | same_input)
-    정상: 낮은 MI (다르게 학습)
-    이상: 높은 MI (비슷하게 실패... 아니 높은 차이)
+  Inter-tension: MI(child_a; child_b | same_input)
+    Normal: low MI (learned differently)
+    Anomaly: high MI (failing similarly... actually high difference)
 
-  수정: 간장력이 높은 것 = MI가 높은 것이 아님
-  간장력 = |output_a - output_b|² = 불일치
-  높은 불일치 = 낮은 MI
+  Correction: high inter-tension ≠ high MI
+  Inter-tension = |output_a - output_b|² = disagreement
+  High disagreement = low MI
 
-  → 내부: 이상=낮은 MI (합의) → 낮은 장력
-  → 간: 이상=낮은 MI (불일치) → 높은 장력
-  → 둘 다 "이상=낮은 MI"이지만, 표현 방식이 다름!
+  → Internal: anomaly=low MI (consensus) → low tension
+  → Inter: anomaly=low MI (disagreement) → high tension
+  → Both "anomaly=low MI", but expressed differently!
 ```
 
-## 실험 결과 (2026-03-24, 3 trials × 3 configs)
+## Experimental Results (2026-03-24, 3 trials × 3 configs)
 
 ```
-  독립 PureFieldEngine 2개 학습 후 측정:
+  Two independent PureFieldEngines trained then measured:
   Internal = ||A-G||² within model, Inter = ||out1-out2||² between models
 
   Config       T  IntN      IntA     InterN   InterA   Dual?
@@ -81,19 +81,19 @@
   Duality confirmed: 0/9 (0%)!!
 ```
 
-### 해석
+### Interpretation
 
 ```
   1. Normal > Anomaly for BOTH internal AND inter (0-7 vs 8-9)
-     → 이중성 없음! 두 장력 모두 같은 방향
-  2. even vs odd에서만 internal 반전 (Anomaly > Normal)
-     → 홀수 숫자들이 더 복잡한 패턴 → 높은 내부장력
-  3. H307(이중메커니즘)과의 차이:
-     → H307: 분열 후 자식 간 장력 (공유 구조 있음)
-     → H-CX-18: 독립 모델 2개 (공유 없음)
-     → "이중성"은 분열 관계에서만 성립하는 현상?
-  4. 내부장력 Mann-Whitney p < 1e-50 (강한 분리)
-     → 장력은 클래스 분리에 유의하지만, 이중성은 아님
+     → No duality! Both tensions in the same direction
+  2. Only in even vs odd does internal invert (Anomaly > Normal)
+     → Odd digits have more complex patterns → higher internal tension
+  3. Difference from H307 (dual mechanism):
+     → H307: tension between children after mitosis (shared structure)
+     → H-CX-18: two independent models (no sharing)
+     → "Duality" is a phenomenon that holds only in mitosis relationships?
+  4. Internal tension Mann-Whitney p < 1e-50 (strong separation)
+     → Tension is significant for class separation, but not duality
 ```
 
-## 상태: ⬛ 반박 (Duality 0/9, 내부/간 장력 모두 같은 방향)
+## Status: ⬛ Refuted (Duality 0/9, internal/inter tensions in same direction)

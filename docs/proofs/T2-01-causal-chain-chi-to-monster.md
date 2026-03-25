@@ -1,149 +1,148 @@
-# T2-01: 완전 인과 체인: chi=-1/6 에서 Monster까지
+# T2-01: Complete Causal Chain: chi=-1/6 to Monster
 
-**상태**: 검증 완료
-**분류**: 수론 / 모듈러 형식 / 유한군론
-**발견**: DFS Ralph 52-55
-**연결**: T0-01 (sigma(6)=12), T1-23 (137 유도), T1-32 (모듈러 형식과 6)
-
----
-
-## 1. 서론: 이 증명의 목표
-
-이 문서는 하나의 질문에 답한다: **"왜 12인가?"**
-
-모듈러 형식 이론 전체에서 12는 구조 상수로 작용한다.
-차원 공식의 분모, j-불변량의 1728=12^3, Ramanujan Delta의 weight,
-Dedekind eta의 지수 — 모두 12이다.
-
-"12가 나온다"는 관찰은 T1-32에서 이미 정리했다.
-그러나 **왜 하필 12인가?** 에 대한 구조적 답은 없었다.
-
-DFS Ralph 52-55에서 발견된 완전 인과 체인은 이 질문에 대해
-chi(PSL(2,Z)\H) = -1/6 이라는 단 하나의 위상 불변량에서 출발하여
-Monster group의 moonshine 구조까지 도달하는 8단계 논증을 제시한다.
-
-각 단계는 독립적으로 검증 가능한 수학적 사실이며,
-골든존에 의존하지 않는 순수 수학이다.
+**Status**: Verified
+**Classification**: Number Theory / Modular Forms / Finite Group Theory
+**Discovery**: DFS Ralph 52-55
+**Connection**: T0-01 (sigma(6)=12), T1-23 (137 derivation), T1-32 (modular forms and 6)
 
 ---
 
-## 2. 단계 1: chi(PSL(2,Z)\H) = -1/6 = -1/P_1 (Gauss-Bonnet)
+## 1. Introduction: The Goal of This Proof
 
-**출처**: Ralph 52
+This document answers one question: **"Why 12?"**
 
-PSL(2,Z)는 정수 계수 2x2 행렬 중 행렬식 1인 것들의 사영화이다.
-이 군이 상반평면 H에 작용하여 만드는 오비폴드의 Euler 특성은:
+Throughout modular form theory, 12 acts as a structural constant.
+The denominator of dimension formulas, j-invariant's 1728=12^3, Ramanujan Delta's weight,
+Dedekind eta's exponent — all are 12.
+
+The observation that "12 appears" was already organized in T1-32.
+But there was no structural answer to **why specifically 12?**
+
+The complete causal chain discovered in DFS Ralph 52-55 provides
+an 8-step argument starting from a single topological invariant
+chi(PSL(2,Z)\H) = -1/6 and reaching the moonshine structure of the Monster group.
+
+Each step is an independently verifiable mathematical fact,
+pure mathematics that doesn't depend on the Golden Zone.
+
+---
+
+## 2. Step 1: chi(PSL(2,Z)\H) = -1/6 = -1/P_1 (Gauss-Bonnet)
+
+**Source**: Ralph 52
+
+PSL(2,Z) is the projectivization of 2x2 integer matrices with determinant 1.
+The Euler characteristic of the orbifold formed by this group acting on the upper half-plane H is:
 
 ```
   chi(PSL(2,Z)\H) = -1/6
 ```
 
-Gauss-Bonnet 정리의 오비폴드 버전에 의해:
+By the orbifold version of the Gauss-Bonnet theorem:
 
 ```
-  chi = 1 - g - sum_j (1 - 1/e_j) - (cusps의 수)/2
+  chi = 1 - g - sum_j (1 - 1/e_j) - (number of cusps)/2
 
-  여기서:
-    g = 0          (종수)
+  where:
+    g = 0          (genus)
     cusps = 1      (i*infinity)
-    등방점 2개:    i (위수 e_1), rho=e^(2*pi*i/3) (위수 e_2)
+    2 isotropy points:    i (order e_1), rho=e^(2*pi*i/3) (order e_2)
 
   chi = 1 - 0 - (1 - 1/e_1) - (1 - 1/e_2) - 1/2
       = 1/e_1 + 1/e_2 - 1/2
 ```
 
-PSL(2,Z)에서 e_1=2 (점 i의 안정자군), e_2=3 (점 rho의 안정자군)이므로:
+In PSL(2,Z), e_1=2 (stabilizer group of point i), e_2=3 (stabilizer group of point rho), so:
 
 ```
-  chi = 1/2 + 1/3 - 1/2 = 1/3    ← 이건 area 공식
+  chi = 1/2 + 1/3 - 1/2 = 1/3    ← This is the area formula
 ```
 
-정확한 계산: 기본영역의 쌍곡 면적 = pi/3, Euler 특성은:
+Exact calculation: hyperbolic area of fundamental domain = pi/3, Euler characteristic is:
 
 ```
   chi(PSL(2,Z)\H) = -1/6
 
-  여기서 6 = P_1 (첫 번째 완전수)
+  where 6 = P_1 (first perfect number)
 ```
 
-이것은 위상 불변량이다. 기본영역의 모양을 바꿔도, 생성원을 바꿔도
-변하지 않는다. 인과 체인의 출발점.
+This is a topological invariant. Even if we change the shape of the fundamental domain or the generators,
+it doesn't change. The starting point of the causal chain.
 
 ---
 
-## 3. 단계 2: 1/e_1 + 1/e_2 = 5/6 의 유일해 (2,3)
+## 3. Step 2: Unique Solution (2,3) to 1/e_1 + 1/e_2 = 5/6
 
-**출처**: Ralph 52
+**Source**: Ralph 52
 
-오비폴드 Euler 특성 공식에서, 등방 위수 (e_1, e_2)는
-다음 조건을 만족해야 한다:
+From the orbifold Euler characteristic formula, the isotropy orders (e_1, e_2) must satisfy:
 
 ```
   1/e_1 + 1/e_2 = 1 - chi - 1/2 = 1 - (-1/6) - 1/2 = 5/6
 ```
 
-**문제**: 1/e_1 + 1/e_2 = 5/6 을 만족하는 양의 정수 해 (e_1, e_2)는?
+**Problem**: What positive integer solutions (e_1, e_2) satisfy 1/e_1 + 1/e_2 = 5/6?
 
 ```
-  e_1 <= e_2 로 제한하면:
+  Restricting e_1 <= e_2:
   1/e_1 >= 5/12 → e_1 <= 2
 
-  e_1 = 1: 1/e_2 = 5/6 - 1 = -1/6 < 0  (불가)
-  e_1 = 2: 1/e_2 = 5/6 - 1/2 = 1/3 → e_2 = 3  (유일해!)
+  e_1 = 1: 1/e_2 = 5/6 - 1 = -1/6 < 0  (impossible)
+  e_1 = 2: 1/e_2 = 5/6 - 1/2 = 1/3 → e_2 = 3  (unique solution!)
 ```
 
-따라서 **(e_1, e_2) = (2, 3) 이 유일하다.**
+Therefore **(e_1, e_2) = (2, 3) is unique.**
 
-{2, 3}은 정확히 6 = P_1 의 소인수 집합이다.
-5/6 = 1 - 1/6 은 Compass 상한이기도 하다 (T1-02).
+{2, 3} is exactly the set of prime factors of 6 = P_1.
+5/6 = 1 - 1/6 is also the Compass upper bound (T1-02).
 
 ---
 
-## 4. 단계 3: PSL(2,Z) = Z/2Z * Z/3Z (자유곱)
+## 4. Step 3: PSL(2,Z) = Z/2Z * Z/3Z (Free Product)
 
-**출처**: Ralph 53
+**Source**: Ralph 53
 
-단계 2에서 등방 위수가 (2,3)으로 결정되었다.
-이것은 PSL(2,Z)의 군 구조를 강제한다:
-
-```
-  PSL(2,Z) = Z/2Z * Z/3Z    (자유곱, free product)
-```
-
-생성원:
-- S: tau -> -1/tau   (위수 2 in PSL)
-- T: tau -> tau + 1  (포물선)
-- ST: 위수 3 in PSL
-
-자유곱 구조는 chi = -1/6 에서 필연적으로 따라나온다.
-모듈러 군의 "모양"이 위상 불변량 하나로 고정되는 것이다.
+Step 2 determined the isotropy orders as (2,3).
+This forces the group structure of PSL(2,Z):
 
 ```
-  검증 (행렬):
+  PSL(2,Z) = Z/2Z * Z/3Z    (free product)
+```
+
+Generators:
+- S: tau -> -1/tau   (order 2 in PSL)
+- T: tau -> tau + 1  (parabolic)
+- ST: order 3 in PSL
+
+The free product structure necessarily follows from chi = -1/6.
+The "shape" of the modular group is fixed by a single topological invariant.
+
+```
+  Verification (matrices):
     S = [[0,-1],[1,0]]
     T = [[1,1],[0,1]]
     ST = [[0,-1],[1,1]]
 
-    S^2 = [[-1,0],[0,-1]] = -I   (PSL에서 S^2 = I, 위수 2)
-    (ST)^3 = [[-1,0],[0,-1]] = -I  (PSL에서 (ST)^3 = I, 위수 3)
+    S^2 = [[-1,0],[0,-1]] = -I   (In PSL: S^2 = I, order 2)
+    (ST)^3 = [[-1,0],[0,-1]] = -I  (In PSL: (ST)^3 = I, order 3)
 ```
 
 ---
 
-## 5. 단계 4: SL(2,Z) 등방군 위수 = tau(6)과 P_1
+## 5. Step 4: SL(2,Z) Isotropy Orders = tau(6) and P_1
 
-**출처**: Ralph 52-53
+**Source**: Ralph 52-53
 
-PSL이 아닌 SL(2,Z) 수준에서 보면, -I 를 구별해야 하므로
-위수가 두 배가 된다:
+At the level of SL(2,Z) rather than PSL, we must distinguish -I, so
+the orders double:
 
 ```
-  SL(2,Z)에서:
+  In SL(2,Z):
     ord(S) = 4    (S^2 = -I, S^4 = I)
     ord(ST) = 6   ((ST)^3 = -I, (ST)^6 = I)
 ```
 
-검증:
+Verification:
 
 ```
   S = [[0,-1],[1,0]]
@@ -163,69 +162,69 @@ PSL이 아닌 SL(2,Z) 수준에서 보면, -I 를 구별해야 하므로
   (ST)^6 = [[1,0],[0,1]] = I    ✓ ord(ST) = 6
 ```
 
-핵심 관찰:
+Key observation:
 
 ```
-  ord(S)  = 4 = tau(6)    (6의 약수 개수)
-  ord(ST) = 6 = P_1       (첫 번째 완전수)
+  ord(S)  = 4 = tau(6)    (divisor count of 6)
+  ord(ST) = 6 = P_1       (first perfect number)
 ```
 
-이것은 우연이 아니다. 6의 소인수 (2,3)이 등방 위수를 결정하고,
-SL 수준에서 2배를 하면 4=tau(6)와 6=P_1이 된다.
+This is not coincidental. The prime factors (2,3) of 6 determine the isotropy orders,
+and doubling at the SL level gives 4=tau(6) and 6=P_1.
 
 ---
 
-## 6. 단계 5: weight = lcm(4,6) = 12 = sigma(6)
+## 6. Step 5: weight = lcm(4,6) = 12 = sigma(6)
 
-**출처**: Ralph 52
+**Source**: Ralph 52
 
-모듈러 형식의 **valence formula** (가중치 공식):
+The **valence formula** for modular forms:
 
 ```
   k/12 = v_infinity(f) + v_i(f)/2 + v_rho(f)/3 + sum_{other} v_p(f)
 ```
 
-분모 12는 어디서 오는가?
+Where does the denominator 12 come from?
 
-SL(2,Z)의 등방군 위수가 {4, 6}이므로, 모듈러 형식이
-모든 등방점에서 정칙이려면 weight k는 4와 6의 공배수여야 한다.
+Since the isotropy group orders of SL(2,Z) are {4, 6}, for a modular form to be
+regular at all isotropy points, weight k must be a common multiple of 4 and 6.
 
 ```
-  최소 weight = lcm(ord(S), ord(ST)) = lcm(4, 6) = 12
+  Minimum weight = lcm(ord(S), ord(ST)) = lcm(4, 6) = 12
 ```
 
-이것이 **cusp form이 처음 나타나는 weight**이다:
+This is the **weight where cusp forms first appear**:
 
 ```
   dim S_k(SL(2,Z)):
-    k < 12:  dim = 0  (cusp form 없음!)
-    k = 12:  dim = 1  (유일한 cusp form = Ramanujan Delta)
+    k < 12:  dim = 0  (no cusp forms!)
+    k = 12:  dim = 1  (unique cusp form = Ramanujan Delta)
 ```
 
-그리고:
+And:
 
 ```
   lcm(4, 6) = 12 = sigma(6) = 1 + 2 + 3 + 6
 
-  weight 12 = sigma(6)  ← 이것이 "왜 12인가?"의 답!
+  weight 12 = sigma(6)  ← This is the answer to "why 12?"!
 ```
 
-왜 lcm인가? valence formula에서 k/12 항이 정수가 되려면
-k가 등방점 위수들의 최소공배수의 배수여야 하기 때문이다.
+Why lcm? For the k/12 term in the valence formula to be an integer,
+k must be a multiple of the least common multiple of the isotropy point orders.
 
 ---
 
-## 7. 단계 6: lcm(tau(n), n) = sigma(n) 의 유일성 (R19)
+## 7. Step 6: Uniqueness of lcm(tau(n), n) = sigma(n) (R19)
 
-**출처**: DFS Ralph 19에서 발견, Ralph 52에서 인과 체인에 편입
+**Source**: Discovered in DFS Ralph 19, incorporated into causal chain at Ralph 52
 
-단계 5의 등식 lcm(4,6) = 12 를 일반화하면:
+Generalizing the equation lcm(4,6) = 12 from Step 5:
 
 ```
   lcm(tau(n), n) = sigma(n)
 ```
 
-이 등식을 n = 1 부터 10000까지 전수 검사하면:
+Exhaustively checking this equation for n = 1 to 10000:
 
 ```
   n=1:  lcm(tau(1), 1) = lcm(1, 1) = 1  = sigma(1) = 1   ✓
@@ -240,54 +239,54 @@ k가 등방점 위수들의 최소공배수의 배수여야 하기 때문이다.
   ...
 ```
 
-**결과: n = 1, ..., 10000 에서 n=1 과 n=6 만이 이 등식을 만족한다.**
+**Result: For n = 1, ..., 10000, only n=1 and n=6 satisfy this equation.**
 
-n=1은 자명하므로, **비자명 해는 n=6이 유일하다.**
+Since n=1 is trivial, **the unique non-trivial solution is n=6.**
 
-이것은 "왜 완전수 6에서만 weight 12가 나오는가?"를 설명한다.
-다른 어떤 정수에서도 tau와 sigma가 lcm 관계를 맺지 않는다.
+This explains "why weight 12 appears only from perfect number 6?"
+No other integer has tau and sigma in an lcm relationship.
 
-모듈러 형식에서의 해석:
+Interpretation in modular forms:
 
 ```
-  E_4  → weight = tau(6) = 4     (최초의 아이젠슈타인 급수)
-  E_6  → weight = P_1 = 6        (두 번째 아이젠슈타인 급수)
-  Delta → weight = sigma(6) = 12  = lcm(4,6)  (최초의 cusp form)
+  E_4  → weight = tau(6) = 4     (first Eisenstein series)
+  E_6  → weight = P_1 = 6        (second Eisenstein series)
+  Delta → weight = sigma(6) = 12  = lcm(4,6)  (first cusp form)
 ```
 
 ---
 
-## 8. 단계 7: Delta = eta^24, Leech lattice dim = 24 = 2*sigma
+## 8. Step 7: Delta = eta^24, Leech lattice dim = 24 = 2*sigma
 
-**출처**: Ralph 53-54
+**Source**: Ralph 53-54
 
-Ramanujan의 판별식 Delta는 Dedekind eta 함수로 표현된다:
+Ramanujan's discriminant Delta is expressed in terms of the Dedekind eta function:
 
 ```
   Delta(tau) = eta(tau)^24
 
-  여기서 24 = 2 * sigma(6) = 2 * 12
+  where 24 = 2 * sigma(6) = 2 * 12
 ```
 
-이 24가 Leech lattice의 차원과 정확히 일치한다:
+This 24 exactly matches the dimension of the Leech lattice:
 
 ```
   Leech lattice Lambda_24:
-    - 24차원 짝수 자기쌍대 격자
-    - 최소 벡터 norm = 4 = tau(6)
-    - theta 급수 = 1 + 196560*q^2 + ...
-    - 자기동형군 |Aut| = |Co_0| = 2 * |Co_1|
+    - 24-dimensional even self-dual lattice
+    - Minimum vector norm = 4 = tau(6)
+    - Theta series = 1 + 196560*q^2 + ...
+    - Automorphism group |Aut| = |Co_0| = 2 * |Co_1|
 ```
 
-왜 24차원인가?
+Why 24 dimensions?
 
 ```
-  짝수 자기쌍대 격자가 존재하는 최소 차원 = 8 (E_8)
-  "루트가 없는" (norm 4 이상만) 짝수 자기쌍대 격자 = 24차원에서 유일
+  Minimum dimension for even self-dual lattice = 8 (E_8)
+  Even self-dual lattice "without roots" (norm 4 or higher only) = unique at 24 dimensions
   24 = 2 * sigma(6)
 ```
 
-Leech lattice는 Monster group으로 가는 핵심 중간 구조:
+The Leech lattice is a key intermediate structure to the Monster group:
 
 ```
   Leech → FLM vertex operator algebra V-natural → Monster
@@ -295,17 +294,17 @@ Leech lattice는 Monster group으로 가는 핵심 중간 구조:
 
 ---
 
-## 9. 단계 8: j(i) = 1728 = sigma^3, Moonshine
+## 9. Step 8: j(i) = 1728 = sigma^3, Moonshine
 
-**출처**: Ralph 53-55
+**Source**: Ralph 53-55
 
-j-불변량의 특수값:
+Special value of j-invariant:
 
 ```
   j(i) = 1728 = 12^3 = sigma(6)^3
 ```
 
-j-불변량의 Fourier 전개:
+Fourier expansion of j-invariant:
 
 ```
   j(tau) = q^{-1} + 744 + 196884*q + 21493760*q^2 + ...
@@ -317,71 +316,71 @@ Monstrous Moonshine (Borcherds, 1992):
   196884 = 196883 + 1
   21493760 = 21296876 + 196883 + 1
 
-  여기서 196883, 21296876 은 Monster group의 기약 표현 차원
+  where 196883, 21296876 are irreducible representation dimensions of Monster group
 ```
 
-j-함수의 존재 자체가 weight 12에서 dim S_12 = 1 이라는 사실에 의존한다.
-만약 첫 cusp form이 다른 weight에서 나타났다면, j-함수의 구조가 달라지고,
-moonshine 연결도 성립하지 않았을 것이다.
+The very existence of the j-function depends on the fact that dim S_12 = 1 at weight 12.
+If the first cusp form appeared at a different weight, the structure of the j-function would be different,
+and the moonshine connection would not hold.
 
 ---
 
-## 10. 연결 정리: 각 단계의 독립 검증 가능 여부
+## 10. Connection Summary: Independent Verifiability of Each Step
 
-| 단계 | 주장 | 검증 | 등급 |
-|------|------|------|------|
-| 1 | chi(PSL(2,Z)\H) = -1/6 | Gauss-Bonnet 오비폴드 정리 | 정리 |
-| 2 | 1/e_1+1/e_2=5/6 유일해 (2,3) | 초등 부등식 | 정리 |
-| 3 | PSL(2,Z) = Z/2Z * Z/3Z | Serre, Trees | 정리 |
-| 4 | ord(S)=4, ord(ST)=6 in SL | 행렬 곱셈 | 계산 |
-| 5 | lcm(4,6)=12=sigma(6) | 산술 | 계산 |
-| 6 | lcm(tau(n),n)=sigma(n) → n=1,6만 | 전수 검색 | 계산 |
-| 7 | Delta=eta^24, Leech=24차원 | 표준 결과 | 정리 |
-| 8 | j(i)=1728=12^3, moonshine | Borcherds 정리 | 정리 |
+| Step | Claim | Verification | Grade |
+|------|-------|--------------|-------|
+| 1 | chi(PSL(2,Z)\H) = -1/6 | Gauss-Bonnet orbifold theorem | Theorem |
+| 2 | 1/e_1+1/e_2=5/6 unique solution (2,3) | Elementary inequality | Theorem |
+| 3 | PSL(2,Z) = Z/2Z * Z/3Z | Serre, Trees | Theorem |
+| 4 | ord(S)=4, ord(ST)=6 in SL | Matrix multiplication | Calculation |
+| 5 | lcm(4,6)=12=sigma(6) | Arithmetic | Calculation |
+| 6 | lcm(tau(n),n)=sigma(n) → only n=1,6 | Exhaustive search | Calculation |
+| 7 | Delta=eta^24, Leech=24-dim | Standard result | Theorem |
+| 8 | j(i)=1728=12^3, moonshine | Borcherds theorem | Theorem |
 
-모든 단계가 표준 수학이며, 골든존에 의존하지 않는다.
+All steps are standard mathematics and don't depend on the Golden Zone.
 
 ---
 
-## 11. 완전 인과 체인 ASCII 다이어그램
+## 11. Complete Causal Chain ASCII Diagram
 
 ```
   ┌─────────────────────────────────────────────────────────────┐
-  │                완전 인과 체인: chi → Monster                 │
+  │              Complete Causal Chain: chi → Monster            │
   └─────────────────────────────────────────────────────────────┘
 
-  [단계 1] chi(PSL(2,Z)\H) = -1/6              ← Gauss-Bonnet
+  [Step 1] chi(PSL(2,Z)\H) = -1/6              ← Gauss-Bonnet
            │
            ▼
-  [단계 2] 1/e_1 + 1/e_2 = 5/6                 ← 오비폴드 공식
-           유일해: (e_1, e_2) = (2, 3)
+  [Step 2] 1/e_1 + 1/e_2 = 5/6                 ← Orbifold formula
+           Unique solution: (e_1, e_2) = (2, 3)
            │
            ▼
-  [단계 3] PSL(2,Z) = Z/2Z * Z/3Z              ← 자유곱 (Serre)
+  [Step 3] PSL(2,Z) = Z/2Z * Z/3Z              ← Free product (Serre)
            │
            ▼
-  [단계 4] SL(2,Z) isotropy:                    ← -I 구별
+  [Step 4] SL(2,Z) isotropy:                    ← Distinguish -I
            ord(S)  = 4 = tau(6)
            ord(ST) = 6 = P_1
            │
            ▼
-  [단계 5] weight = lcm(4,6) = 12 = sigma(6)   ← Valence formula
-           dim S_12 = 1   (최초의 cusp form!)
+  [Step 5] weight = lcm(4,6) = 12 = sigma(6)   ← Valence formula
+           dim S_12 = 1   (First cusp form!)
            │
            ├───────────────────────────┐
            ▼                           ▼
-  [단계 6] lcm(tau(n),n)=sigma(n)     [단계 7] Delta = eta^24
-           n=1,6 만 해당 (R19)                  24 = 2*sigma(6)
+  [Step 6] lcm(tau(n),n)=sigma(n)     [Step 7] Delta = eta^24
+           only n=1,6 (R19)                     24 = 2*sigma(6)
                                                  │
                                                  ▼
-                                       Leech lattice (24차원)
+                                       Leech lattice (24-dim)
                                                  │
                                                  ▼
                                        FLM vertex algebra V-natural
                                                  │
            ┌─────────────────────────────────────┘
            ▼
-  [단계 8] j(i) = 1728 = sigma(6)^3
+  [Step 8] j(i) = 1728 = sigma(6)^3
            j = q^{-1} + 744 + 196884*q + ...
            196884 = 196883 + 1  ← Monstrous Moonshine
            │
@@ -389,12 +388,12 @@ moonshine 연결도 성립하지 않았을 것이다.
   ┌─────────────────────────────────────────────────────────────┐
   │  Monster group M                                            │
   │  |M| = 2^46 * 3^20 * 5^9 * 7^6 * 11^2 * 13^3 * ...       │
-  │  최소 표현 차원 = 196883                                    │
+  │  Smallest representation dimension = 196883                 │
   └─────────────────────────────────────────────────────────────┘
 
-  요약: "2와 3이 처음 두 소수"라는 사실 하나가 전체를 결정한다.
+  Summary: The single fact that "2 and 3 are the first two primes" determines everything.
 
-  2, 3  →  6 = 2*3 (완전수)
+  2, 3  →  6 = 2*3 (perfect number)
         →  tau(6) = 4, sigma(6) = 12
         →  lcm(4,6) = 12 (weight)
         →  Delta, eta^24, Leech, j, Monster
@@ -402,48 +401,47 @@ moonshine 연결도 성립하지 않았을 것이다.
 
 ---
 
-## 12. 한계
+## 12. Limitations
 
-### 검증된 것 (이 문서의 범위)
+### Verified (Scope of This Document)
 
-- chi = -1/6 에서 weight 12까지: 각 단계가 정리 또는 계산으로 확인됨
-- weight 12에서 Delta, eta^24, Leech까지: 표준 수학
-- Leech에서 Monster까지: Borcherds 정리 (1992 필즈상)
+- chi = -1/6 to weight 12: Each step confirmed by theorem or calculation
+- weight 12 to Delta, eta^24, Leech: Standard mathematics
+- Leech to Monster: Borcherds theorem (1992 Fields Medal)
 
-### 미검증 / 열린 문제
+### Unverified / Open Problems
 
-**137로의 연결은 아직 미증명이다.**
+**The connection to 137 is still unproven.**
 
 ```
   sigma(6)^2 - 7 = 144 - 7 = 137
 
-  이것은 산술적 사실이다. 그러나:
-  - "왜 7을 빼는가?" 에 대한 구조적 이유가 없다
-  - 137 = 1/alpha (미세구조상수)와의 연결은 물리적 이유가 필요하다
-  - T1-23의 137 = (sigma-tau)(sigma+tau+1)+1 = 8*17+1 역시
-    산술적 사실이지 물리적 필연이 아니다
+  This is an arithmetic fact. However:
+  - There is no structural reason for "why subtract 7?"
+  - The connection to 137 = 1/alpha (fine structure constant) requires physical reasoning
+  - T1-23's 137 = (sigma-tau)(sigma+tau+1)+1 = 8*17+1 is also
+    an arithmetic fact, not a physical necessity
 ```
 
-또한 이 인과 체인은 "왜 2와 3이 처음 두 소수인가?"라는
-더 근본적인 질문에는 답하지 않는다. 이것은 정수론의 공리에서
-따라나오는 사실이며, 이 체인의 **전제 조건**이다.
+Also, this causal chain doesn't answer the more fundamental question
+"why are 2 and 3 the first two primes?" This is a fact that follows
+from the axioms of number theory and is a **prerequisite** of this chain.
 
-### DFS 포화 상태 (Ralph 56-57)
+### DFS Saturation State (Ralph 56-57)
 
-Ralph 55 이후의 DFS 탐색(Ralph 56-57)에서 새로운 등식이
-발견되지 않았다. 이 인과 체인이 chi → Monster 경로의
-본질적 구조를 포착한 것으로 판단된다.
+No new equations were discovered in DFS exploration after Ralph 55 (Ralph 56-57).
+This causal chain is judged to capture the essential structure of the chi → Monster path.
 
 ---
 
-## 참조
+## References
 
-| Ralph 반복 | 발견 내용 |
-|------------|-----------|
-| R19 | lcm(tau(n), n) = sigma(n) 유일성 (n=1,6) |
-| R52 | weight 12 = lcm(tau, P_1) = sigma 구조적 증명 |
-| R52 | 1/e_1+1/e_2 = 5/6 유일해 = 6의 소인수 |
-| R53 | 완전 인과 체인 조립: chi → (2,3) → PSL → SL → weight → Delta |
-| R54 | Delta=eta^24, Leech 24=2*sigma 연결 |
-| R55 | 체인 종착: "2와 3이 처음 두 소수" → 6=2*3 → 전체 구조 |
-| R55 | 결정학적 제약 = SL(2,Z) trace 제약 동치 확인 |
+| Ralph Iteration | Discovery |
+|-----------------|-----------|
+| R19 | Uniqueness of lcm(tau(n), n) = sigma(n) (n=1,6) |
+| R52 | Structural proof of weight 12 = lcm(tau, P_1) = sigma |
+| R52 | Unique solution 1/e_1+1/e_2 = 5/6 = prime factors of 6 |
+| R53 | Complete causal chain assembly: chi → (2,3) → PSL → SL → weight → Delta |
+| R54 | Connection Delta=eta^24, Leech 24=2*sigma |
+| R55 | Chain terminus: "2 and 3 are first two primes" → 6=2*3 → entire structure |
+| R55 | Confirmed crystallographic constraint = SL(2,Z) trace constraint equivalence |

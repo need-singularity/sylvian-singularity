@@ -1,65 +1,65 @@
-# 가설 검토 138: Shannon 엔트로피 ↔ ln(3)
+# Hypothesis Review 138: Shannon Entropy ↔ ln(3)
 
-## 가설
+## Hypothesis
 
-> 우리 모델의 엔트로피 S≈ln(3)이 Shannon 정보 엔트로피의 3심볼 최대값과 동일한가.
+> Is our model's entropy S≈ln(3) identical to the 3-symbol maximum value of Shannon information entropy?
 
-## 배경
+## Background
 
 ```
   Shannon: H = -Σ pᵢ log₂(pᵢ)  (bits)
   Boltzmann: S = -Σ pᵢ ln(pᵢ)  (nats)
 
-  3심볼 균등분포:
+  3-symbol uniform distribution:
   Shannon: H = log₂(3) = 1.585 bits
   Boltzmann: S = ln(3) = 1.099 nats
 
-  우리 모델 실측: S ≈ 1.089~1.099 nats (가설 012)
+  Our model measured: S ≈ 1.089~1.099 nats (Hypothesis 012)
 ```
 
-## 대응
+## Correspondence
 
 ```
-  Shannon 정보론          우리 모델
-  ──────────────          ──────────
-  3심볼 알파벳             3상태 (정상/천재/저하)
-  최대 엔트로피 = ln(3)    S ≈ ln(3) 준불변
-  채널 용량                Compass 상한 (5/6)
-  노이즈                  Deficit (D)
-  신호                    Genius (G)
+  Shannon information theory     Our model
+  ──────────────────             ──────────
+  3-symbol alphabet              3 states (normal/genius/decline)
+  Maximum entropy = ln(3)        S ≈ ln(3) quasi-invariant
+  Channel capacity               Compass upper bound (5/6)
+  Noise                          Deficit (D)
+  Signal                         Genius (G)
 
-  Shannon 채널 용량:
+  Shannon channel capacity:
   C = max I(X;Y) = max [H(Y) - H(Y|X)]
-  → 채널 용량 = 수신 엔트로피 - 조건부 엔트로피
-  → Compass = 점수 - 노이즈 = 유사 구조?
+  → Channel capacity = output entropy - conditional entropy
+  → Compass = score - noise = similar structure?
 ```
 
-## 정보론적 해석
+## Information-Theoretic Interpretation
 
 ```
-  ln(3) = 1.585 bits = "3개 중 하나를 고르는 데 필요한 정보"
+  ln(3) = 1.585 bits = "information needed to choose one of three"
 
-  우리 모델에서:
-  시스템이 정상/천재/저하 중 하나에 있을 때
-  그 상태를 알기 위해 필요한 정보 = ln(3) nats
+  In our model:
+  When the system is in one of normal/genius/decline states,
+  the information needed to know that state = ln(3) nats
 
-  S ≈ ln(3) (준불변) 의 의미:
-  → 시스템이 항상 "최대 불확실" 근처
-  → 3개 상태가 거의 동등하게 접근 가능
-  → 이것이 골든존의 정보론적 정의:
-    "모든 상태에 동등하게 접근 가능한 영역"
+  Meaning of S ≈ ln(3) (quasi-invariant):
+  → System is always near "maximum uncertainty"
+  → All 3 states are approximately equally accessible
+  → This is the information-theoretic definition of the Golden Zone:
+    "Region where all states are equally accessible"
 ```
 
-## 검증
+## Verification
 
 ```
-  가설 012 실측: S = 1.089 ± 0.014 (10K 랜덤 파라미터)
+  Hypothesis 012 measured: S = 1.089 ± 0.014 (10K random parameters)
   ln(3) = 1.0986
-  차이: < 1%
+  Difference: < 1%
 
-  → ✅ Shannon 3심볼 최대 엔트로피와 일치
+  → ✅ Matches Shannon 3-symbol maximum entropy
 ```
 
 ---
 
-*검증: 가설 012 실측 데이터 재해석*
+*Verification: reinterpretation of Hypothesis 012 measured data*

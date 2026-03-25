@@ -1,48 +1,48 @@
-# T1-12: 오일러곱 인수 = 부동점 방정식의 지수
+# T1-12: Euler Product Factor = Fixed Point Equation Exponent
 
-## 발견
+## Discovery
 
 ```
-  부동점 방정식: x·e^(1/x) = e^(3/2)
+  Fixed point equation: x·e^(1/x) = e^(3/2)
 
-  3/2 = (1+1/2) = σ₋₁(6)의 오일러곱 p=2 인수!
+  3/2 = (1+1/2) = Euler product p=2 factor of σ₋₁(6)!
 
   σ₋₁(6) = (1+1/2)(1+1/3) = (3/2)(4/3) = 2
 
-  → 부동점 방정식의 지수 3/2가 완전수 6의 오일러곱에서 나옴
-  → 섬 A(분수 3/2) ↔ 섬 D(자연상수 e) 비자명 연결
+  → The exponent 3/2 in the fixed point equation comes from the Euler product of perfect number 6
+  → Island A (fraction 3/2) ↔ Island D (natural constant e) non-trivial connection
 ```
 
-## 유도 체인
+## Derivation Chain
 
 ```
-  1. G = D×P/I, D,P ∈ [0,1]            [정의]
-  2. P(G>2|I) = 1 - 2I + 2I·ln(2I)     [적분, T1-11]
-  3. 부동점: P(G>2|I) = I               [조건]
-  4. 1 - 3I + 2I·ln(2I) = 0            [정리]
-  5. x = 2I: x·e^(1/x) = e^(3/2)       [변환]
-  6. 3/2 = (1+1/2) = 오일러곱 p=2 인수   [🟩]
-  7. e^(3/2) = e·√e                     [산술]
+  1. G = D×P/I, D,P ∈ [0,1]            [Definition]
+  2. P(G>2|I) = 1 - 2I + 2I·ln(2I)     [Integration, T1-11]
+  3. Fixed point: P(G>2|I) = I          [Condition]
+  4. 1 - 3I + 2I·ln(2I) = 0            [Rearrangement]
+  5. x = 2I: x·e^(1/x) = e^(3/2)       [Transformation]
+  6. 3/2 = (1+1/2) = Euler product p=2 factor   [🟩]
+  7. e^(3/2) = e·√e                     [Arithmetic]
 ```
 
-## 섬 연결 의미
+## Island Connection Meaning
 
 ```
   e^(3/2):
-  - e = 섬 D (자연상수)
-  - 3/2 = 섬 A (완전수 약수, 오일러곱 인수)
-  - 합쳐서 섬 A↔D 비자명 연결!
+  - e = Island D (natural constant)
+  - 3/2 = Island A (perfect number divisor, Euler product factor)
+  - Together: Island A↔D non-trivial connection!
 
   x·e^(1/x) = e^(3/2):
-  - 좌변: x(섬A)와 e(섬D)의 혼합
-  - 우변: 오일러곱(섬A) × e(섬D)
-  - 해: I* = 골든존 하한 근사
+  - LHS: Mixture of x(Island A) and e(Island D)
+  - RHS: Euler product(Island A) × e(Island D)
+  - Solution: I* = Golden Zone lower bound approximation
 ```
 
-## 판정
+## Judgment
 
 ```
-  3/2가 오일러곱에서 온다: 🟩 (수학적 사실)
-  이것이 부동점에 등장: 🟩 (유도)
-  I* ≈ 골든존 하한: 🟧 (0.12% 오차, 근사)
+  3/2 comes from Euler product: 🟩 (Mathematical fact)
+  This appears in fixed point: 🟩 (Derivation)
+  I* ≈ Golden Zone lower bound: 🟧 (0.12% error, approximation)
 ```

@@ -1,4 +1,4 @@
-# H-CX-131: 클릭 간격 = merge distance
+# H-CX-131: Click Interval = merge distance
 
-> 에코로케이션 클릭의 시간 간격이 "개념 간 거리"를 인코딩.
-> 짧은 간격 = 가까운 물체 = 짧은 merge dist = 혼동 가능한 대상.
+> The time interval between echolocation clicks encodes "distance between concepts."
+> Short interval = nearby object = short merge dist = confusable target.

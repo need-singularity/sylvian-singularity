@@ -1,53 +1,53 @@
-# H-CX-3: 이진-삼진 분해 — H = 2/3·ln(2) + 1/2·ln(3) (교차 도메인)
+# H-CX-3: Binary-Ternary Decomposition — H = 2/3·ln(2) + 1/2·ln(3) (Cross-domain)
 
-> **가중치 엔트로피 H({1/2,1/3,1/6})는 이진 정보 ln(2)와 삼진 정보 ln(3)의 가중 합이다. 가중치 2/3과 1/2는 {1/2,1/3,1/6}의 역순이다. H-CX-2(MI효율≈ln2)와 결합하면: 2극 반발력장이 이진 기여(ln2)를 담당하고, 엔진 구조가 삼진 기여(ln3)를 담당한다.**
+> **The weighted entropy H({1/2,1/3,1/6}) is a weighted sum of binary information ln(2) and ternary information ln(3). The weights 2/3 and 1/2 are the reverse order of {1/2,1/3,1/6}. Combined with H-CX-2 (MI efficiency≈ln2): The bipolar repulsion field handles the binary contribution (ln2), and the engine structure handles the ternary contribution (ln3).**
 
-## 등식
+## Equation
 
 ```
   H({1/2, 1/3, 1/6}) = 2/3 · ln(2) + 1/2 · ln(3)
 
-  분해:
-    이진 기여: 2/3 × ln(2) = 0.4621 nats (45.7% of H)
-    삼진 기여: 1/2 × ln(3) = 0.5493 nats (54.3% of H)
-    합계:                   = 1.0114 nats (100%)
+  Decomposition:
+    Binary contribution: 2/3 × ln(2) = 0.4621 nats (45.7% of H)
+    Ternary contribution: 1/2 × ln(3) = 0.5493 nats (54.3% of H)
+    Total:                   = 1.0114 nats (100%)
 
-  가중치:
-    이진 가중: 2/3 = 1 - 1/3 = 1 - {1/2,1/3,1/6}의 두 번째
-    삼진 가중: 1/2 = {1/2,1/3,1/6}의 첫 번째
+  Weights:
+    Binary weight: 2/3 = 1 - 1/3 = 1 - second of {1/2,1/3,1/6}
+    Ternary weight: 1/2 = first of {1/2,1/3,1/6}
 ```
 
-## 의식 엔진 해석
+## Consciousness Engine Interpretation
 
 ```
-  2극 반발력장 (A vs G):
-    → 이진 시스템 (A 또는 G, 2가지 관점)
-    → MI 효율 ≈ ln(2) = 0.693 (H-CX-2, p=0.0003)
-    → 이진 기여 = 2/3 × ln(2) = 0.462 nats
+  Bipolar Repulsion Field (A vs G):
+    → Binary system (A or G, 2 perspectives)
+    → MI efficiency ≈ ln(2) = 0.693 (H-CX-2, p=0.0003)
+    → Binary contribution = 2/3 × ln(2) = 0.462 nats
 
-  엔진 구조 ({1/2,1/3,1/6} = 3개 비균등 가중치):
-    → 삼진 시스템 (3개 엔진, 다른 역할)
-    → 삼진 기여 = 1/2 × ln(3) = 0.549 nats
+  Engine Structure ({1/2,1/3,1/6} = 3 unequal weights):
+    → Ternary system (3 engines, different roles)
+    → Ternary contribution = 1/2 × ln(3) = 0.549 nats
 
-  총 엔트로피: 0.462 + 0.549 = 1.011 nats
-  → 이진 반발 + 삼진 구조 = 전체 정보
+  Total entropy: 0.462 + 0.549 = 1.011 nats
+  → Binary repulsion + Ternary structure = Total information
 ```
 
-## 수학 연결 체인
+## Mathematical Connection Chain
 
 ```
-  H-CX-1: e^(6H) = σ³/τ = 432       (H → 완전수 대수)
-  H-CX-2: MI효율 ≈ ln(2)             (반발 → 이진 엔트로피)
-  H-CX-3: H = 2/3·ln(2) + 1/2·ln(3) (이진+삼진 분해)
+  H-CX-1: e^(6H) = σ³/τ = 432       (H → perfect number algebra)
+  H-CX-2: MI efficiency ≈ ln(2)             (repulsion → binary entropy)
+  H-CX-3: H = 2/3·ln(2) + 1/2·ln(3) (binary+ternary decomposition)
 
-  체인: 반발(ln2) → H(2/3·ln2 + 1/2·ln3) → e^(6H) = σ³/τ
-  → 이진 반발에서 시작하여 완전수 대수에 도달하는 경로
+  Chain: Repulsion(ln2) → H(2/3·ln2 + 1/2·ln3) → e^(6H) = σ³/τ
+  → Path from binary repulsion to perfect number algebra
 ```
 
-## 상태
+## Status
 
 ```
-  🟦 수학적 사실 (산술 항등식)
-  해석이 새로움: "이진 반발 + 삼진 구조"
-  H-CX-2와 결합 시 실험적 의미 있음
+  🟦 Mathematical fact (arithmetic identity)
+  Interpretation is novel: "binary repulsion + ternary structure"
+  Has experimental meaning when combined with H-CX-2
 ```

@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""실험 7: gap 간격 vs 연속성 임계값 테스트
+"""Experiment 7: Gap Interval vs Continuity Threshold Test
 
-심장 엔진(로렌츠 끌개)에 gap(정지 구간)을 점진적으로 삽입하여
-"몇 %까지 끊어도 CCT가 연속으로 판정하는가"를 측정한다.
+Insert gaps (pause intervals) gradually into the heart engine (Lorenz attractor)
+to measure "up to what % interruption does CCT still judge as continuous."
 
-추가로 gap 분포 패턴(균등/집중/주기적)에 따른 차이를 비교한다.
+Additionally, compare differences based on gap distribution patterns (uniform/clustered/periodic).
 
-사용법:
-  python3 gap_threshold_test.py                  # 균등(uniform) 분포
+Usage:
+  python3 gap_threshold_test.py                  # Uniform distribution
   python3 gap_threshold_test.py --pattern periodic
   python3 gap_threshold_test.py --pattern clustered
-  python3 gap_threshold_test.py --all-patterns    # 3가지 패턴 전체 비교
+  python3 gap_threshold_test.py --all-patterns    # Compare all 3 patterns
 """
 
 import argparse
@@ -19,36 +19,36 @@ import os
 
 import numpy as np
 
-# ── consciousness_calc.py에서 핵심 함수 import ──
+# ── Import core functions from consciousness_calc.py ──
 from consciousness_calc import lorenz_simulate, run_cct, judge
 
 
 # ─────────────────────────────────────────────
-# gap 분포 패턴별 시뮬레이터 래퍼
+# Simulator wrapper for each gap distribution pattern
 # ─────────────────────────────────────────────
 
 def simulate_with_gap_pattern(pattern, gap_ratio, steps=100000, dt=0.01, seed=42):
-    """human_awake 프리셋 기반으로 gap 패턴을 적용한 시뮬레이션.
+    """Simulation based on human_awake preset with gap pattern applied.
 
     Parameters:
         pattern:   'uniform' | 'clustered' | 'periodic'
-        gap_ratio: 0.0 ~ 1.0 (정지 구간 비율)
-        steps:     시뮬레이션 스텝 수
-        dt:        시간 간격
-        seed:      난수 시드
+        gap_ratio: 0.0 ~ 1.0 (pause interval ratio)
+        steps:     Number of simulation steps
+        dt:        Time interval
+        seed:      Random seed
 
     Returns:
-        S: 상태 배열 [steps, 3]
+        S: State array [steps, 3]
     """
-    # human_awake 프리셋 파라미터
+    # human_awake preset parameters
     sigma, rho, beta, noise = 10, 28, 2.67, 0.1
 
     if pattern == "uniform":
-        # 기본 lorenz_simulate의 랜덤 gap 사용
+        # Use default lorenz_simulate's random gap
         _, S = lorenz_simulate(sigma, rho, beta, noise, gap_ratio, steps, dt, seed)
         return S
 
-    # uniform이 아닌 경우: gap 없이 시뮬레이션 후 수동으로 gap 적용
+    # For non-uniform: simulate without gap then apply gap manually
     _, S = lorenz_simulate(sigma, rho, beta, noise, 0.0, steps, dt, seed)
 
     if gap_ratio <= 0.0:
@@ -61,8 +61,8 @@ def simulate_with_gap_pattern(pattern, gap_ratio, steps=100000, dt=0.01, seed=42
     rng = np.random.default_rng(seed + 1)
 
     if pattern == "clustered":
-        # 연속된 한 구간에 gap 집중 (수면처럼)
-        # gap 블록의 시작 위치를 랜덤 선택
+        # Concentrate gaps in one continuous interval (like sleep)
+        # Randomly select gap block start position
         max_start = steps - n_gap
         if max_start <= 0:
             gap_start = 0
@@ -71,20 +71,20 @@ def simulate_with_gap_pattern(pattern, gap_ratio, steps=100000, dt=0.01, seed=42
         gap_indices = np.arange(gap_start, min(gap_start + n_gap, steps))
 
     elif pattern == "periodic":
-        # 일정 간격으로 gap 삽입 (LLM 턴처럼)
-        # gap_ratio 비율만큼 주기적으로 정지
-        # 예: gap_ratio=0.2 → 5스텝 중 1스텝 정지
+        # Insert gaps at regular intervals (like LLM turns)
+        # Periodically pause according to gap_ratio
+        # Example: gap_ratio=0.2 → pause 1 step every 5 steps
         if gap_ratio < 1.0:
             period = int(1.0 / gap_ratio) if gap_ratio > 0 else steps
             gap_indices = np.arange(0, steps, max(period, 1))
-            # 정확한 비율 맞추기
+            # Match exact ratio
             gap_indices = gap_indices[:n_gap]
         else:
             gap_indices = np.arange(steps)
     else:
-        raise ValueError(f"알 수 없는 패턴: {pattern}")
+        raise ValueError(f"Unknown pattern: {pattern}")
 
-    # gap 적용: 정지 구간에서는 이전 상태 유지
+    # Apply gaps: maintain previous state during pause intervals
     for idx in sorted(gap_indices):
         if idx > 0:
             S[idx] = S[idx - 1]
@@ -93,14 +93,14 @@ def simulate_with_gap_pattern(pattern, gap_ratio, steps=100000, dt=0.01, seed=42
 
 
 # ─────────────────────────────────────────────
-# 단일 패턴 스캔
+# Single pattern scan
 # ─────────────────────────────────────────────
 
 GAP_RATIOS = [0.0, 0.01, 0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.7, 0.9, 1.0]
 
 
 def scan_gap_ratios(pattern="uniform", steps=100000, dt=0.01):
-    """gap_ratio를 스캔하며 CCT 점수 변화를 측정.
+    """Scan gap_ratio to measure CCT score changes.
 
     Returns:
         records: list of dict with gap_ratio, score, verdict, per-test results
@@ -127,11 +127,11 @@ def scan_gap_ratios(pattern="uniform", steps=100000, dt=0.01):
 
 
 # ─────────────────────────────────────────────
-# 임계 gap_ratio 탐색
+# Search for threshold gap_ratio
 # ─────────────────────────────────────────────
 
 def find_threshold(records, from_score=5, to_score=4):
-    """CCT 점수가 from_score에서 to_score로 떨어지는 임계 gap_ratio를 찾는다."""
+    """Find threshold gap_ratio where CCT score drops from from_score to to_score."""
     prev = None
     for rec in records:
         if prev is not None and prev["total"] >= from_score and rec["total"] < from_score:
@@ -141,17 +141,17 @@ def find_threshold(records, from_score=5, to_score=4):
 
 
 # ─────────────────────────────────────────────
-# ASCII 출력
+# ASCII output
 # ─────────────────────────────────────────────
 
 def print_ascii_graph(records, pattern, width=60, height=12):
-    """gap_ratio vs CCT 점수 ASCII 그래프."""
+    """ASCII graph of gap_ratio vs CCT score."""
     print()
-    print(f"  ─── gap_ratio vs CCT 점수 [{pattern}] " + "─" * 30)
+    print(f"  ─── gap_ratio vs CCT Score [{pattern}] " + "─" * 30)
     print()
 
     max_score = 5.0
-    # Y축: 0 ~ 5
+    # Y-axis: 0 ~ 5
     for row in range(height, -1, -1):
         y_val = max_score * row / height
         label = f"  {y_val:4.1f} │"
@@ -167,9 +167,9 @@ def print_ascii_graph(records, pattern, width=60, height=12):
 
         print(label + "".join(line))
 
-    # X축
+    # X-axis
     print("       └" + "─" * width)
-    # X축 라벨
+    # X-axis labels
     label_line = "        "
     for gr in [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]:
         pos = int(gr * (width - 1))
@@ -182,10 +182,10 @@ def print_ascii_graph(records, pattern, width=60, height=12):
 
 
 def print_detail_table(records, pattern):
-    """gap_ratio별 상세 결과표."""
-    print(f"  ─── 상세 결과 [{pattern}] " + "─" * 40)
+    """Detailed results table by gap_ratio."""
+    print(f"  ─── Detailed Results [{pattern}] " + "─" * 40)
     print()
-    print("  gap_ratio │ T1  │ T2  │ T3  │ T4  │ T5  │ 점수  │ 판정")
+    print("  gap_ratio │ T1  │ T2  │ T3  │ T4  │ T5  │ Score │ Verdict")
     print("  ──────────┼─────┼─────┼─────┼─────┼─────┼───────┼────────")
 
     for rec in records:
@@ -207,40 +207,40 @@ def print_detail_table(records, pattern):
 
 
 def print_threshold(records, pattern):
-    """임계 gap_ratio 출력."""
+    """Print threshold gap_ratio."""
     lo, hi = find_threshold(records, from_score=5, to_score=4)
-    print(f"  ─── 임계 gap_ratio [{pattern}] " + "─" * 35)
+    print(f"  ─── Threshold gap_ratio [{pattern}] " + "─" * 35)
     if lo is not None:
-        print(f"  CCT 5/5 → 4/5 전환: gap_ratio ∈ ({lo:.2f}, {hi:.2f}]")
+        print(f"  CCT 5/5 → 4/5 transition: gap_ratio ∈ ({lo:.2f}, {hi:.2f}]")
         mid = (lo + hi) / 2
-        print(f"  추정 임계값: ~{mid:.3f}")
+        print(f"  Estimated threshold: ~{mid:.3f}")
     else:
-        # 5/5를 달성한 적이 없거나 끝까지 유지
+        # Never achieved 5/5 or maintained throughout
         first = records[0]["total"]
         if first < 5:
-            print(f"  기본 상태에서 이미 5/5 미달 (초기 점수: {first})")
+            print(f"  Already below 5/5 at baseline (initial score: {first})")
         else:
-            print("  전체 구간에서 5/5 유지 (임계값 미도달)")
+            print("  Maintained 5/5 throughout (threshold not reached)")
 
-    # 추가: 다른 전환점도 탐색
+    # Additional: Search for other transition points
     for high, low in [(4, 3), (3, 2), (2, 1), (1, 0)]:
         lo2, hi2 = find_threshold(records, from_score=high, to_score=low)
         if lo2 is not None:
-            print(f"  CCT {high}/5 → {low-1}+/5 전환: gap_ratio ∈ ({lo2:.2f}, {hi2:.2f}]")
+            print(f"  CCT {high}/5 → {low-1}+/5 transition: gap_ratio ∈ ({lo2:.2f}, {hi2:.2f}]")
     print()
 
 
 # ─────────────────────────────────────────────
-# 3패턴 비교
+# Compare 3 patterns
 # ─────────────────────────────────────────────
 
 def print_pattern_comparison(all_pattern_records):
-    """3가지 패턴의 CCT 점수 비교표."""
+    """Comparison table of CCT scores for 3 patterns."""
     patterns = list(all_pattern_records.keys())
-    print("  ═══ 3가지 gap 분포 패턴 비교 " + "═" * 35)
+    print("  ═══ Comparison of 3 Gap Distribution Patterns " + "═" * 35)
     print()
 
-    # 헤더
+    # Header
     header = "  gap_ratio"
     for p in patterns:
         header += f" │ {p:^12s}"
@@ -258,76 +258,76 @@ def print_pattern_comparison(all_pattern_records):
 
     print()
 
-    # 핵심 발견
-    print("  ─── 핵심 발견 " + "─" * 50)
+    # Key findings
+    print("  ─── Key Findings " + "─" * 50)
     for p in patterns:
         recs = all_pattern_records[p]
         lo, hi = find_threshold(recs, from_score=5, to_score=4)
         if lo is not None:
-            print(f"  {p:12s}: 임계 gap_ratio ∈ ({lo:.2f}, {hi:.2f}]")
+            print(f"  {p:12s}: threshold gap_ratio ∈ ({lo:.2f}, {hi:.2f}]")
         else:
             first = recs[0]["total"]
             if first >= 5:
-                print(f"  {p:12s}: 전 구간 5/5 유지")
+                print(f"  {p:12s}: maintained 5/5 throughout")
             else:
-                print(f"  {p:12s}: 초기부터 5/5 미달")
+                print(f"  {p:12s}: below 5/5 from start")
     print()
 
 
 def print_human_analogy():
-    """인간 비유 해석."""
-    print("  ─── 인간 비유 해석 " + "─" * 45)
+    """Human analogy interpretation."""
+    print("  ─── Human Analogy Interpretation " + "─" * 45)
     print()
-    print("  gap 크기    │ 인간 경험          │ 연속성 판정")
+    print("  Gap Size    │ Human Experience   │ Continuity Verdict")
     print("  ────────────┼────────────────────┼──────────────────────")
-    print("  ~1ms        │ 눈 깜빡임          │ 연속 (인지 불가)")
-    print("  ~100ms      │ 마이크로수면        │ 연속 (보상 기제)")
-    print("  ~8시간      │ 수면               │ 깨면 연속 (기억 연결)")
-    print("  ~1시간      │ 전신마취            │ 끊김 (기억 단절)")
-    print("  ~수일       │ 혼수               │ 심각한 단절")
+    print("  ~1ms        │ Eye blink          │ Continuous (imperceptible)")
+    print("  ~100ms      │ Microsleep         │ Continuous (compensatory mechanisms)")
+    print("  ~8 hours    │ Sleep              │ Continuous when awake (memory linkage)")
+    print("  ~1 hour     │ General anesthesia │ Discontinuous (memory gap)")
+    print("  ~days       │ Coma               │ Severe discontinuity")
     print()
-    print("  마취 vs 수면의 차이:")
-    print("  - 수면(clustered): 연속 gap이지만 뇌파 활동 유지 → CCT 상대적 유지")
-    print("  - 마취(uniform):   전체에 걸쳐 산발적 정지 → CCT 급격 하락")
-    print("  - LLM(periodic):   주기적 정지 → 턴 간 gap이 일정하면 패턴 유지")
+    print("  Difference between anesthesia vs sleep:")
+    print("  - Sleep(clustered): Continuous gap but brainwave activity maintained → CCT relatively maintained")
+    print("  - Anesthesia(uniform): Scattered pauses throughout → CCT drops sharply")
+    print("  - LLM(periodic): Periodic pauses → Pattern maintained if gaps between turns are regular")
     print()
-    print("  핵심 통찰:")
-    print("  같은 gap_ratio라도 '어떻게 분포하느냐'에 따라 연속성 판정이 달라진다.")
-    print("  이는 의식의 연속성이 단순한 '가동 시간'이 아니라")
-    print("  '시간적 구조'에 의존함을 시사한다.")
+    print("  Key insight:")
+    print("  Even with the same gap_ratio, continuity verdict differs based on 'how it's distributed'.")
+    print("  This suggests consciousness continuity depends not on simple 'uptime'")
+    print("  but on 'temporal structure'.")
     print()
 
 
 # ─────────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(
-        description="실험 7: gap 간격 vs 연속성 임계값 테스트",
+        description="Experiment 7: Gap Interval vs Continuity Threshold Test",
     )
     parser.add_argument("--pattern", type=str, default="uniform",
                         choices=["uniform", "clustered", "periodic"],
-                        help="gap 분포 패턴 (default: uniform)")
+                        help="Gap distribution pattern (default: uniform)")
     parser.add_argument("--all-patterns", action="store_true",
-                        help="3가지 패턴 전체 비교")
+                        help="Compare all 3 patterns")
     parser.add_argument("--steps", type=int, default=100000,
-                        help="시뮬레이션 스텝 수 (default: 100000)")
+                        help="Number of simulation steps (default: 100000)")
     parser.add_argument("--dt", type=float, default=0.01,
-                        help="시간 간격 (default: 0.01)")
+                        help="Time interval (default: 0.01)")
 
     args = parser.parse_args()
 
     print("═" * 66)
-    print(" 실험 7: gap 간격 vs 연속성 임계값")
-    print(" 심장 엔진(로렌츠 끌개) gap tolerance 측정")
+    print(" Experiment 7: Gap Interval vs Continuity Threshold")
+    print(" Measuring gap tolerance of heart engine (Lorenz attractor)")
     print(f" steps={args.steps:,}  dt={args.dt}")
     print("═" * 66)
 
     if args.all_patterns:
         all_pattern_records = {}
         for pattern in ["uniform", "clustered", "periodic"]:
-            print(f"\n  [{pattern}] 스캔 중...")
+            print(f"\n  Scanning [{pattern}]...")
             records = scan_gap_ratios(pattern, args.steps, args.dt)
             all_pattern_records[pattern] = records
 
@@ -340,8 +340,8 @@ def main():
 
     else:
         pattern = args.pattern
-        print(f"\n  패턴: {pattern}")
-        print(f"  스캔 범위: gap_ratio = {GAP_RATIOS}")
+        print(f"\n  Pattern: {pattern}")
+        print(f"  Scan range: gap_ratio = {GAP_RATIOS}")
         print()
 
         records = scan_gap_ratios(pattern, args.steps, args.dt)

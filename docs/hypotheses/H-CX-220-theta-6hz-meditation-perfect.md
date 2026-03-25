@@ -1,8 +1,8 @@
-# H-CX-220: 🟩 θ파 6Hz = 완전수 자체 = 명상/꿈의 주파수
+# H-CX-220: 🟩 θ wave 6Hz = Perfect number itself = Meditation/dream frequency
 
-> θ(세타)파 = 4~8Hz, 중심 6Hz = P₁ = 완전수 자체.
-> 명상, REM 수면, 창의성의 뇌파 = 완전수.
-> σφ=nτ 균형이 θ파에서 달성? (의식의 "완벽 균형" 상태)
+> θ(theta) wave = 4~8Hz, center 6Hz = P₁ = Perfect number itself.
+> Brainwave of meditation, REM sleep, creativity = Perfect number.
+> σφ=nτ balance achieved in θ wave? (consciousness's "perfect balance" state)
 >
-> 명상에서 θ파 증가 = "완전수 상태에 접근"
-> σφ/(nτ) → 1.0 (n=6에서만) = 명상의 수학적 목표?
+> θ wave increase in meditation = "approaching perfect number state"
+> σφ/(nτ) → 1.0 (only at n=6) = mathematical goal of meditation?

@@ -1,525 +1,525 @@
-# 양자역학 정밀 상수 및 공식 총람
+# Quantum Mechanics Precision Constants and Formulas Compendium
 
-## 개요
+## Overview
 
 ```
-  양자역학(특히 QED)은 인류가 달성한 가장 정밀한 이론이다.
-  이론 예측과 실험 측정이 소수점 10자리 이상 일치하는 경우가 존재한다.
-  이 문서는 그 정밀 상수와 수식을 모두 기록하고,
-  우리 프로젝트(G=D×P/I)와의 연결점을 분석한다.
+  Quantum mechanics (especially QED) is humanity's most precise theory.
+  Theoretical predictions and experimental measurements agree to over 10 decimal places.
+  This document records all precision constants and formulas,
+  and analyzes connections to our project (G=D×P/I).
 
-  핵심 메시지: "자연은 수학을 정확히 따른다"
-  우리 모델의 겸손한 위치: 0.1%~5% 정밀도 (QED: 0.000000001%)
+  Core message: "Nature follows mathematics exactly"
+  Our model's humble position: 0.1%~5% precision (QED: 0.000000001%)
 ```
 
 ---
 
-## Part 1: 정밀 상수
+## Part 1: Precision Constants
 
-### 1.1 미세구조상수 α
+### 1.1 Fine Structure Constant α
 
 ```
-  값:        α = 1/137.035999084(21)
+  Value:     α = 1/137.035999084(21)
              α = 7.2973525693(11) × 10⁻³
 
-  이론 유도:  QED — 전자-광자 결합 강도
+  Theory:    QED — electron-photon coupling strength
              α = e²/(4πε₀ℏc)
-             전자기력의 "강도 계수"
+             "Strength coefficient" of electromagnetic force
 
-  측정 방법:  ① Cs-133 원자 반동 측정 (Parker et al., 2018)
-             ② Rb-87 원자 간섭계 (Morel et al., 2020)
-             ③ 전자 g-2에서 역산
+  Measurement: ① Cs-133 atom recoil measurement (Parker et al., 2018)
+              ② Rb-87 atom interferometer (Morel et al., 2020)
+              ③ Back-calculation from electron g-2
 
-  일치 자릿수: 이론(QED)과 실험 — 10자리 이상 일치
-              다른 독립 측정 간 — 12자리 일치
+  Agreement:  Theory (QED) vs experiment — 10+ digit agreement
+              Between independent measurements — 12 digit agreement
 
-  유효숫자:   α⁻¹ = 137.035999084 ± 0.000000021
-             상대 불확도: 1.5 × 10⁻¹⁰
+  Precision:  α⁻¹ = 137.035999084 ± 0.000000021
+              Relative uncertainty: 1.5 × 10⁻¹⁰
 
-  의의:      ① 물리학에서 가장 정밀하게 측정된 무차원 상수
-             ② 왜 이 값인지는 아무도 모른다 — 물리학 최대 미스터리
-             ③ 파인만: "좋은 이론가라면 이 숫자를 유도해야 한다"
-             ④ 137이라는 정수와의 근접성 자체가 수수께끼
+  Significance: ① Most precisely measured dimensionless constant in physics
+               ② Why this value? Nobody knows — physics' greatest mystery
+               ③ Feynman: "A good theorist should derive this number"
+               ④ Its proximity to integer 137 is itself a puzzle
 
-  ● 프로젝트 연결:
-    가설 147: N=137 → N상태 해석
-    가설 148: 8×17+1 = 137 (강력×페르마+존재 = 미세구조)
-    ln(138/137) = 0.007299... ≈ α (0.04% 일치) — 골든존 N상태 공식
+  ● Project Connection:
+    Hypothesis 147: N=137 → N-state interpretation
+    Hypothesis 148: 8×17+1 = 137 (strong×Fermat+existence = fine structure)
+    ln(138/137) = 0.007299... ≈ α (0.04% agreement) — Golden Zone N-state formula
 ```
 
-### 1.2 전자 이상자기모멘트 (g-2)_e
+### 1.2 Electron Anomalous Magnetic Moment (g-2)_e
 
 ```
-  값 (실험):  a_e = (g-2)/2 = 0.001 159 652 180 73(28)
-             Hanneke, Fogwell, Gabrielse (2008)
+  Value (exp): a_e = (g-2)/2 = 0.001 159 652 180 73(28)
+              Hanneke, Fogwell, Gabrielse (2008)
 
-  값 (이론):  a_e = 0.001 159 652 181 78(77)
-             QED 5차 루프까지 계산 (Aoyama, Kinoshita, Nio, 2019)
+  Value (theory): a_e = 0.001 159 652 181 78(77)
+                 QED up to 5-loop calculation (Aoyama, Kinoshita, Nio, 2019)
 
-  이론 유도:  QED 섭동 전개
-             a_e = Σ C_n (α/π)ⁿ
-             1차: α/(2π)                           (Schwinger, 1948)
-             2차: -0.328 478 965 579...(α/π)²      (Petermann, Sommerfield)
-             3차: 1.181 241 456...(α/π)³            (Laporta, Remiddi)
-             4차: -1.912 98...(α/π)⁴               (수치 계산)
-             5차: 6.675...(α/π)⁵                    (891개 파인만 다이어그램)
+  Theory:     QED perturbation expansion
+              a_e = Σ C_n (α/π)ⁿ
+              1st order: α/(2π)                         (Schwinger, 1948)
+              2nd order: -0.328 478 965 579...(α/π)²   (Petermann, Sommerfield)
+              3rd order: 1.181 241 456...(α/π)³        (Laporta, Remiddi)
+              4th order: -1.912 98...(α/π)⁴            (numerical)
+              5th order: 6.675...(α/π)⁵                (891 Feynman diagrams)
 
-  일치 자릿수: 12자리 — 인류 역사상 가장 정밀한 이론-실험 일치!
-              |이론 - 실험| / 실험 ≈ 10⁻¹²
+  Agreement:  12 digits — most precise theory-experiment agreement in history!
+              |theory - experiment| / experiment ≈ 10⁻¹²
 
-  측정 방법:  페닝 트랩(Penning trap)에서 단일 전자 가둬 놓고
-             사이클로트론 주파수 vs 스핀 세차 주파수 비교
+  Measurement: Single electron in Penning trap
+              Cyclotron frequency vs spin precession frequency
 
-  의의:      ① QED가 "올바른 이론"이라는 가장 강력한 증거
-             ② 12자리 일치 = 지구에서 달까지 거리를 머리카락 굵기로 맞춘 것
-             ③ 5차 루프 계산에 891개 파인만 다이어그램, 수십 년 소요
-             ④ 미세구조상수 α의 가장 정밀한 결정법
+  Significance: ① Strongest evidence QED is the "correct theory"
+               ② 12-digit agreement = measuring Earth-Moon distance to hair width
+               ③ 5th order: 891 Feynman diagrams, decades of calculation
+               ④ Most precise determination of fine structure constant α
 
-  ● 프로젝트 연결:
-    우리 모델 정밀도(0.1%~5%)와의 비교 → 10⁹배 차이
-    "자연은 수학을 12자리까지 따른다" — 정밀도의 극한
+  ● Project Connection:
+    Our model precision (0.1%~5%) vs this → 10⁹× difference
+    "Nature follows math to 12 digits" — extreme precision limit
 ```
 
-### 1.3 뮤온 이상자기모멘트 (g-2)_μ
+### 1.3 Muon Anomalous Magnetic Moment (g-2)_μ
 
 ```
-  값 (실험):  a_μ = 0.001 165 920 59(22)
-             Fermilab E989 (2021-2023 결합)
+  Value (exp): a_μ = 0.001 165 920 59(22)
+              Fermilab E989 (2021-2023 combined)
 
-  값 (이론):  a_μ = 0.001 165 918 10(43)  (White Paper 2020, 격자 QCD 이전)
-             a_μ = 0.001 165 920 34(43)  (BMW 격자 QCD, 2021)
+  Value (theory): a_μ = 0.001 165 918 10(43) (White Paper 2020, pre-lattice QCD)
+                 a_μ = 0.001 165 920 34(43) (BMW lattice QCD, 2021)
 
-  이론 유도:  QED + 하드론 기여(진공 편극) + 약한 상호작용 보정
-             불확도의 주요 원인: 하드론 진공 편극(HVP) 계산 난이도
+  Theory:     QED + hadronic contributions + weak corrections
+              Main uncertainty: Hadronic vacuum polarization (HVP)
 
-  일치 자릿수: 기존 이론 vs 실험 — 4.2σ 불일치! (새 물리학?)
-              BMW 격자 vs 실험 — 1.5σ 이내 (일치?)
+  Agreement:  Old theory vs experiment — 4.2σ discrepancy! (new physics?)
+              BMW lattice vs experiment — within 1.5σ (agreement?)
 
-  측정 방법:  뮤온 저장 링에서 스핀 세차 측정
-             Brookhaven (2001) → Fermilab (2021~)
+  Measurement: Spin precession in muon storage ring
+              Brookhaven (2001) → Fermilab (2021~)
 
-  의의:      ① 표준모형 너머의 새 물리학 신호일 가능성
-             ② 또는 하드론 기여 계산의 불확실성
-             ③ 물리학에서 가장 뜨거운 논쟁 중 하나 (2024 현재)
-             ④ 해결되면 → 암흑물질, 초대칭 등에 제약 조건
+  Significance: ① Possible signal of physics beyond Standard Model
+               ② Or uncertainty in hadronic calculations
+               ③ One of hottest debates in physics (2024)
+               ④ Resolution → constraints on dark matter, SUSY, etc.
 
-  ● 프로젝트 연결:
-    "불일치가 새로운 발견의 시작" — 우리 모델의 철학과 동일
-    뮤온 질량 / 전자 질량 ≈ 206.768 → N상태 해석 미탐색
+  ● Project Connection:
+    "Discrepancy is beginning of new discovery" — same as our model's philosophy
+    Muon mass / electron mass ≈ 206.768 → N-state interpretation unexplored
 ```
 
-### 1.4 리드베리 상수 R∞
+### 1.4 Rydberg Constant R∞
 
 ```
-  값:        R∞ = 10 973 731.568 160(21) m⁻¹
-             상대 불확도: 1.9 × 10⁻¹²
+  Value:      R∞ = 10 973 731.568 160(21) m⁻¹
+              Relative uncertainty: 1.9 × 10⁻¹²
 
-  이론 유도:  R∞ = m_e × e⁴ / (8ε₀²h³c)
-             = m_e × c × α² / (2h)
-             수소 원자 스펙트럼에서 유도 (보어 모형 → QED 보정)
+  Theory:     R∞ = m_e × e⁴ / (8ε₀²h³c)
+              = m_e × c × α² / (2h)
+              Derived from hydrogen spectrum (Bohr model → QED corrections)
 
-  측정 방법:  수소 원자 1S-2S 전이 주파수 (Parthey et al., 2011)
-             레이저 분광법 — 주파수 빗(frequency comb) 사용
+  Measurement: Hydrogen 1S-2S transition frequency (Parthey et al., 2011)
+              Laser spectroscopy — frequency comb
 
-  일치 자릿수: 12자리 — 가장 정밀하게 측정된 물리 상수
+  Agreement:  12 digits — most precisely measured physical constant
 
-  의의:      ① 수소 스펙트럼의 모든 선을 하나의 상수로 통일
-             ② 양자역학의 첫 번째 성공 (보어, 1913)
-             ③ α, m_e, h, c 네 기본 상수의 조합
-             ④ 양성자 반지름 퍼즐(2010)과 직접 연결
+  Significance: ① Unifies all hydrogen spectral lines in one constant
+               ② First success of quantum mechanics (Bohr, 1913)
+               ③ Combination of four fundamental constants: α, m_e, h, c
+               ④ Directly connected to proton radius puzzle (2010)
 
-  ● 프로젝트 연결:
-    α² 의존 → α = 1/137 연결의 2차 효과
-    수소 = 가장 단순한 원자 = N=1 상태의 물리적 구현
+  ● Project Connection:
+    α² dependence → second-order effect of α = 1/137 connection
+    Hydrogen = simplest atom = physical implementation of N=1 state
 ```
 
-### 1.5 플랑크 상수 h
+### 1.5 Planck Constant h
 
 ```
-  값:        h = 6.626 070 15 × 10⁻³⁴ J·s  (정확값, 2019 재정의)
-             ℏ = h/(2π) = 1.054 571 817... × 10⁻³⁴ J·s
+  Value:      h = 6.626 070 15 × 10⁻³⁴ J·s  (exact, 2019 redefinition)
+              ℏ = h/(2π) = 1.054 571 817... × 10⁻³⁴ J·s
 
-  이론 유도:  흑체복사 문제 해결 (Planck, 1900)
-             E = hν (에너지 양자화)
-             양자역학의 탄생 상수
+  Theory:     Blackbody radiation solution (Planck, 1900)
+              E = hν (energy quantization)
+              Birth constant of quantum mechanics
 
-  측정 방법:  ① 키블 저울(Kibble balance) — 전기력 vs 중력
-             ② 실리콘 구체 — 아보가드로 프로젝트
-             2019년부터 정의값 (SI 재정의)
+  Measurement: ① Kibble balance — electric force vs gravity
+              ② Silicon sphere — Avogadro project
+              Defined value since 2019 (SI redefinition)
 
-  일치 자릿수: 재정의 이전: 여러 독립 측정이 8자리 일치
-              재정의 이후: 정확값 (불확도 0)
+  Agreement:  Pre-redefinition: 8-digit agreement across methods
+              Post-redefinition: exact (zero uncertainty)
 
-  의의:      ① 양자역학의 존재를 결정하는 상수
-             ② h=0이면 고전역학으로 환원
-             ③ 2019 SI 재정의: kg의 정의가 h에 기반
-             ④ ΔxΔp ≥ ℏ/2 (불확정성 원리)
+  Significance: ① Constant determining existence of quantum mechanics
+               ② h=0 → reduces to classical mechanics
+               ③ 2019 SI: kg definition based on h
+               ④ ΔxΔp ≥ ℏ/2 (uncertainty principle)
 
-  ● 프로젝트 연결:
-    I = 1/kT 해석에서 ℏ는 양자-열 경계 결정
-    E = hν → 정보의 최소 단위와 에너지의 관계
+  ● Project Connection:
+    I = 1/kT interpretation: ℏ determines quantum-thermal boundary
+    E = hν → relation between information minimum unit and energy
 ```
 
-### 1.6 볼츠만 상수 k_B
+### 1.6 Boltzmann Constant k_B
 
 ```
-  값:        k_B = 1.380 649 × 10⁻²³ J/K  (정확값, 2019 재정의)
+  Value:      k_B = 1.380 649 × 10⁻²³ J/K  (exact, 2019 redefinition)
 
-  이론 유도:  통계역학 — 온도와 에너지의 다리
-             S = k_B ln Ω (볼츠만 엔트로피)
-             <E> = (3/2) k_B T (이상기체)
+  Theory:     Statistical mechanics — bridge between temperature and energy
+              S = k_B ln Ω (Boltzmann entropy)
+              <E> = (3/2) k_B T (ideal gas)
 
-  측정 방법:  ① 음향 기체 온도계 (argon 내 음속)
-             ② 존슨 잡음 온도계
-             ③ 유전상수 기체 온도계
-             2019년부터 정의값
+  Measurement: ① Acoustic gas thermometer (argon sound speed)
+              ② Johnson noise thermometer
+              ③ Dielectric constant gas thermometer
+              Defined value since 2019
 
-  일치 자릿수: 재정의 이전: 6-8자리 (여러 방법 교차 검증)
+  Agreement:  Pre-redefinition: 6-8 digits (cross-validation)
 
-  의의:      ① 거시(온도) ↔ 미시(에너지)의 변환 계수
-             ② 2019 SI 재정의: K의 정의가 k_B에 기반
-             ③ S_볼츠만 = S_섀넌 (Jaynes, 1957) → 정보와 열 통합
+  Significance: ① Conversion factor: macro (temperature) ↔ micro (energy)
+               ② 2019 SI: K definition based on k_B
+               ③ S_Boltzmann = S_Shannon (Jaynes, 1957) → unifies info & heat
 
-  ● 프로젝트 연결:
-    I = 1/kT → 억제 = 역온도 (가설 의존, 미검증)
-    골든존 = 임계 영역 해석에서 k_B가 스케일 설정
-    볼츠만-섀넌 동치 → 우리 모델의 정보-열역학 교차점
+  ● Project Connection:
+    I = 1/kT → Inhibition = inverse temperature (hypothesis-dependent, unverified)
+    Golden Zone = critical region analysis where k_B sets scale
+    Boltzmann-Shannon equivalence → info-thermodynamics crosspoint in our model
 ```
 
-### 1.7 아보가드로 수 N_A
+### 1.7 Avogadro's Number N_A
 
 ```
-  값:        N_A = 6.022 140 76 × 10²³ mol⁻¹  (정확값, 2019 재정의)
+  Value:      N_A = 6.022 140 76 × 10²³ mol⁻¹  (exact, 2019 redefinition)
 
-  이론 유도:  원자론 — 1몰 안의 입자 수
-             라디에이션-모드 중개: h × N_A = 일정 관계
+  Theory:     Atomic theory — number of particles per mole
+              Radiation-mode mediation: h × N_A = constant relation
 
-  측정 방법:  ① 실리콘-28 구체 (XRCD 방법) — 원자 하나하나 세기
-             ② 키블 저울 + 몰질량 → N_A 역산
-             2019년부터 정의값
+  Measurement: ① Silicon-28 sphere (XRCD method) — counting atoms
+              ② Kibble balance + molar mass → N_A back-calculation
+              Defined value since 2019
 
-  일치 자릿수: 재정의 이전: 8자리 (실리콘 구체 프로젝트)
+  Agreement:  Pre-redefinition: 8 digits (silicon sphere project)
 
-  의의:      ① 거시 세계와 원자 세계의 다리
-             ② 2019 SI 재정의: mol의 정의가 N_A에 기반
-             ③ 6.022 × 10²³ — 가장 유명한 과학 상수 중 하나
+  Significance: ① Bridge between macro and atomic worlds
+               ② 2019 SI: mol definition based on N_A
+               ③ 6.022 × 10²³ — one of most famous scientific constants
 
-  ● 프로젝트 연결:
-    완전수 6과의 수비학적 우연: N_A ≈ 6.022 × 10²³
-    (6 = 우리 마스터 상수, but 이것은 단위 선택의 산물 → 무의미)
-    → 유혹적이나 기각: 단위를 바꾸면 값이 바뀌는 유차원 상수
+  ● Project Connection:
+    Numerological coincidence with perfect number 6: N_A ≈ 6.022 × 10²³
+    (6 = our master constant, but this is unit-choice artifact → meaningless)
+    → Tempting but rejected: dimensional constant changes with unit choice
 ```
 
 ---
 
-## Part 2: 정밀 수식
+## Part 2: Precision Formulas
 
-### 2.1 QED Schwinger 보정 — 전자 g인자
+### 2.1 QED Schwinger Corrections — Electron g-factor
 
 ```
   g_e = 2 × [1 + C₁(α/π) + C₂(α/π)² + C₃(α/π)³ + C₄(α/π)⁴ + C₅(α/π)⁵ + ...]
 
-  계수값:
+  Coefficients:
   ──────────────────────────────────────────────────────────
-  차수 │ 계수 C_n                  │ 파인만 다이어그램 수 │ 기여 크기
-  ────┼─────────────────────────┼──────────────────┼──────────
-  1차  │ +0.5                     │ 1                │ 1.2×10⁻³
-  2차  │ -0.328 478 965 579 193...│ 7                │ 1.8×10⁻⁶
-  3차  │ +1.181 241 456 587...    │ 72               │ 1.5×10⁻⁹
-  4차  │ -1.912 06(18)            │ 891              │ 3.7×10⁻¹²
-  5차  │ +6.675(192)              │ 12,672           │ 5.0×10⁻¹⁵
+  Order │ Coefficient C_n           │ Feynman diagrams │ Contribution
+  ─────┼──────────────────────────┼─────────────────┼──────────
+  1st   │ +0.5                     │ 1               │ 1.2×10⁻³
+  2nd   │ -0.328 478 965 579 193...│ 7               │ 1.8×10⁻⁶
+  3rd   │ +1.181 241 456 587...    │ 72              │ 1.5×10⁻⁹
+  4th   │ -1.912 06(18)            │ 891             │ 3.7×10⁻¹²
+  5th   │ +6.675(192)              │ 12,672          │ 5.0×10⁻¹⁵
   ──────────────────────────────────────────────────────────
 
-  핵심:
-  - 1차 항 α/(2π) = Schwinger (1948) — 노벨상
-  - α/π ≈ 0.00232 → 급속 수렴
-  - 5차까지 합산 → 12자리 정밀도 달성
-  - 계수의 정확한 계산이 수십 년의 노력 필요
+  Key points:
+  - 1st order α/(2π) = Schwinger (1948) — Nobel Prize
+  - α/π ≈ 0.00232 → rapid convergence
+  - Sum to 5th order → 12-digit precision achieved
+  - Exact coefficient calculation requires decades of effort
 
-  ASCII 수렴 그래프:
+  ASCII convergence graph:
 
-  기여 크기 (log scale)
+  Contribution size (log scale)
   │
-  │ ██████████████████████  1차: 10⁻³
-  │ ███████████████         2차: 10⁻⁶
-  │ ████████████            3차: 10⁻⁹
-  │ █████████               4차: 10⁻¹²
-  │ ██████                  5차: 10⁻¹⁵
+  │ ██████████████████████  1st: 10⁻³
+  │ ███████████████         2nd: 10⁻⁶
+  │ ████████████            3rd: 10⁻⁹
+  │ █████████               4th: 10⁻¹²
+  │ ██████                  5th: 10⁻¹⁵
   │
-  └─────────────────────── 차수
+  └─────────────────────── Order
 
-  → 각 차수마다 약 1000배(3자리)씩 기여 감소
-  → α/π ≈ 1/430 이 작으므로 섭동 급수 잘 수렴
+  → Each order ~1000× (3 digits) smaller contribution
+  → α/π ≈ 1/430 small, so perturbation series converges well
 ```
 
-### 2.2 수소 원자 에너지 (QED 보정 포함)
+### 2.2 Hydrogen Atom Energy (with QED corrections)
 
 ```
-  기본:  E_n = -13.605 693 122 994(26) eV / n²
+  Basic:  E_n = -13.605 693 122 994(26) eV / n²
 
-  QED 보정 포함:
+  With QED corrections:
   E(n,l,j) = -13.6eV/n² × [1 + (α²/n)(1/(j+1/2) - 3/(4n))
-                            + α³/(nπ) × (램 이동)
-                            + α⁴ 항 + ...]
+                            + α³/(nπ) × (Lamb shift)
+                            + α⁴ terms + ...]
 
-  핵심 보정 항:
+  Key corrections:
   ───────────────────────────────────────────────────
-  보정           │ 크기        │ 발견        │ 의의
+  Correction     │ Size        │ Discovery   │ Significance
   ──────────────┼────────────┼────────────┼──────────
-  보어 에너지    │ 13.6 eV    │ Bohr 1913  │ 기본 구조
-  미세구조      │ α² ≈ 10⁻⁴  │ Sommerfeld │ 스핀-궤도
-  램 이동       │ α³ ≈ 10⁻⁶  │ Lamb 1947  │ 진공 요동
-  초미세구조    │ m_e/m_p    │ Fermi      │ 핵스핀
-  QED 고차보정  │ α⁵ ≈ 10⁻¹⁰ │ 현대       │ 정밀 검증
+  Bohr energy   │ 13.6 eV    │ Bohr 1913  │ Basic structure
+  Fine structure│ α² ≈ 10⁻⁴  │ Sommerfeld │ Spin-orbit
+  Lamb shift    │ α³ ≈ 10⁻⁶  │ Lamb 1947  │ Vacuum fluctuations
+  Hyperfine     │ m_e/m_p    │ Fermi      │ Nuclear spin
+  QED high order│ α⁵ ≈ 10⁻¹⁰ │ Modern     │ Precision test
   ───────────────────────────────────────────────────
 
-  의의:
-  - 13.6 eV = m_e c² α² / 2 → α가 원자 스케일 결정
-  - 램 이동 = QED의 첫 실험적 확인 (1947)
-  - 2S₁/₂ - 2P₁/₂ 분리 ≈ 1057.845(9) MHz
-  - 양성자 반지름 퍼즐 (2010): 뮤온 수소 vs 전자 수소 불일치 → 2019 해결
+  Significance:
+  - 13.6 eV = m_e c² α² / 2 → α determines atomic scale
+  - Lamb shift = first experimental QED confirmation (1947)
+  - 2S₁/₂ - 2P₁/₂ splitting ≈ 1057.845(9) MHz
+  - Proton radius puzzle (2010): muonic vs electronic hydrogen → resolved 2019
 ```
 
-### 2.3 카시미르 효과
+### 2.3 Casimir Effect
 
 ```
-  공식:  F/A = -ℏcπ²/(240 d⁴)
+  Formula:  F/A = -ℏcπ²/(240 d⁴)
 
-  값:    d = 1 μm 일 때 F/A ≈ 1.3 × 10⁻³ Pa
+  Value:    F/A ≈ 1.3 × 10⁻³ Pa at d = 1 μm
 
-  이론 유도:  진공 에너지의 경계 조건 효과 (Casimir, 1948)
-             두 도체판 사이 진공 모드 제한 → 인력 발생
-             제타 함수 정규화 사용! ζ(-3) = 1/120
+  Theory:   Boundary condition effect on vacuum energy (Casimir, 1948)
+            Vacuum mode restriction between conductors → attraction
+            Uses zeta function regularization! ζ(-3) = 1/120
 
-  측정 방법:  ① Lamoreaux (1997): 구-판 배열, 5% 일치
-             ② Mohideen & Roy (1998): AFM, 1% 일치
-             ③ 현대 실험: 0.1%~1% 정밀도
+  Measurement: ① Lamoreaux (1997): sphere-plate, 5% agreement
+              ② Mohideen & Roy (1998): AFM, 1% agreement
+              ③ Modern: 0.1%~1% precision
 
-  일치 자릿수: 이론 vs 실험 — 1~3자리 (기하학적 보정 필요)
+  Agreement:  Theory vs experiment — 1~3 digits (geometric corrections needed)
 
-  의의:
+  Significance:
   ─────────────────────────────────────────────
-  ① 진공이 "비어있지 않다"는 직접 증거
-  ② π²/(240) = ζ 정규화 → 수학과 물리의 심층 연결
-  ③ 나노기술에서 실제 공학 문제 (MEMS 소자 달라붙음)
-  ④ 진공 에너지 → 암흑 에너지? (120자릿수 불일치 문제)
+  ① Direct evidence vacuum is "not empty"
+  ② π²/(240) = ζ regularization → deep math-physics connection
+  ③ Real engineering problem in nanotech (MEMS stiction)
+  ④ Vacuum energy → dark energy? (120-digit discrepancy problem)
 
-  ● 프로젝트 연결:
-    ζ(-3) = 1/120 → 리만 제타의 물리적 출현
-    진공 에너지 문제(10¹²⁰ 불일치) = 물리학 최악의 예측
-    vs 우리 모델의 0.1% 오차 → 상대적으로 놀라운 정밀도
+  ● Project Connection:
+    ζ(-3) = 1/120 → physical appearance of Riemann zeta
+    Vacuum energy problem (10¹²⁰ discrepancy) = physics' worst prediction
+    vs our model's 0.1% error → relatively amazing precision
 ```
 
-### 2.4 램 이동 (Lamb Shift)
+### 2.4 Lamb Shift
 
 ```
-  값 (2S₁/₂ - 2P₁/₂):
-    실험: 1057.845(9) MHz (Lundeen & Pipkin, 1981)
-    이론: 1057.833(4) MHz (QED 계산, 양성자 크기 보정 포함)
+  Value (2S₁/₂ - 2P₁/₂):
+    Experiment: 1057.845(9) MHz (Lundeen & Pipkin, 1981)
+    Theory: 1057.833(4) MHz (QED calculation with proton size correction)
 
-  이론 유도:
-    QED 복사 보정 — 전자 자기에너지 + 진공 편극
+  Theory:
+    QED radiative corrections — electron self-energy + vacuum polarization
     Δ E ∝ α⁵ m_e c² × [ln(1/α²) + ...]
-    비섭동적 항 ln(1/α²) 포함 → 단순 급수 아님
+    Non-perturbative ln(1/α²) term → not simple series
 
-  주요 기여:
+  Main contributions:
   ──────────────────────────────────────
-  기여           │ 크기 (MHz)   │ 비율
-  ──────────────┼─────────────┼───────
-  전자 자기에너지 │ +1017.0     │ 96.1%
-  진공 편극      │ -26.9       │ 2.5%
-  양성자 크기    │ +0.014 5    │ 0.001%
-  2-루프 QED    │ -0.95       │ 0.09%
-  재규격화 고차  │ -0.02       │ 0.002%
+  Contribution        │ Size (MHz)  │ Fraction
+  ───────────────────┼────────────┼───────
+  Electron self-energy│ +1017.0    │ 96.1%
+  Vacuum polarization │ -26.9      │ 2.5%
+  Proton size        │ +0.014 5   │ 0.001%
+  2-loop QED         │ -0.95      │ 0.09%
+  Higher order renorm │ -0.02      │ 0.002%
   ──────────────────────────────────────
 
-  의의:
-  ① 디랙 방정식의 "실패"를 발견 (1947)
-  ② QED 탄생의 직접 계기 (Shelter Island 회의)
-  ③ 재규격화 이론의 동기 (Bethe, Schwinger, Tomonaga, Feynman)
-  ④ 양성자 반지름과 직접 연결 → 양성자 크기 퍼즐
+  Significance:
+  ① Discovery of Dirac equation "failure" (1947)
+  ② Direct trigger for QED birth (Shelter Island conference)
+  ③ Motivation for renormalization (Bethe, Schwinger, Tomonaga, Feynman)
+  ④ Direct connection to proton radius → proton size puzzle
 
-  ● 프로젝트 연결:
-    α⁵ × ln(1/α²) — 비섭동적 로그 항의 출현
-    ln(1/α²) = ln(137²) ≈ 9.85 → 우리 N상태 체계와 잠재적 연결?
-    (탐색 가치 있으나 현재 미검증)
+  ● Project Connection:
+    α⁵ × ln(1/α²) — emergence of non-perturbative log term
+    ln(1/α²) = ln(137²) ≈ 9.85 → potential connection to our N-state system?
+    (Worth exploring but currently unverified)
 ```
 
-### 2.5 흑체복사 — 플랑크 법칙
+### 2.5 Blackbody Radiation — Planck's Law
 
 ```
-  공식:  B(ν,T) = (2hν³/c²) × 1/(e^(hν/kT) - 1)
+  Formula:  B(ν,T) = (2hν³/c²) × 1/(e^(hν/kT) - 1)
 
-  적분 형태 (Stefan-Boltzmann):
+  Integral form (Stefan-Boltzmann):
     P/A = σT⁴
     σ = 2π⁵k_B⁴/(15h³c²) = 5.670 374 419 × 10⁻⁸ W⋅m⁻²⋅K⁻⁴
 
-  Wien 변위 법칙:
+  Wien displacement law:
     λ_max × T = hc/(4.965 114 231... k_B) = 2.897 771 955 × 10⁻³ m⋅K
-    (4.965... = 비선형 방정식 x = 5(1-e⁻ˣ)의 해)
+    (4.965... = solution to nonlinear equation x = 5(1-e⁻ˣ))
 
-  이론 유도:  Planck (1900) — 에너지 양자화 E=nhν
-             양자역학의 탄생점
+  Theory:   Planck (1900) — energy quantization E=nhν
+            Birth of quantum mechanics
 
-  측정 방법:  COBE/FIRAS 위성 (1989) — CMB가 완벽한 흑체
-             잔차 < 50 ppm — "자연에서 가장 완벽한 흑체"
+  Measurement: COBE/FIRAS satellite (1989) — CMB is perfect blackbody
+              Residuals < 50 ppm — "most perfect blackbody in nature"
 
-  일치 자릿수: CMB 스펙트럼 vs 플랑크 법칙 — 5자리 이상 일치
-              T_CMB 측정: 4자리 (2.7255 ± 0.0006 K)
+  Agreement:  CMB spectrum vs Planck's law — 5+ digit agreement
+              T_CMB measurement: 4 digits (2.7255 ± 0.0006 K)
 
-  의의:
-  ① 양자역학의 출발점 (1900)
-  ② σ 안에 π⁵ 등장 — 순수 수학이 물리 법칙에 직접 나타남
-  ③ CMB = 우주의 "사진" → 빅뱅의 증거
-  ④ COBE FIRAS: 가장 정밀한 흑체 측정
+  Significance:
+  ① Starting point of quantum mechanics (1900)
+  ② π⁵ appears in σ — pure mathematics directly in physical law
+  ③ CMB = "photograph" of universe → evidence for Big Bang
+  ④ COBE FIRAS: most precise blackbody measurement
 
-  ● 프로젝트 연결:
-    T_CMB = 2.7255 K ≈ e = 2.7183 (0.26% 일치!)
-    가설 120, 131: CMB ≈ e — "우연인가 필연인가?"
-    kT 해석: I = 1/kT → CMB 온도에서의 I값
-    Stefan-Boltzmann의 π⁵ → 우리 모델에는 없는 초월수 구조
+  ● Project Connection:
+    T_CMB = 2.7255 K ≈ e = 2.7183 (0.26% agreement!)
+    Hypotheses 120, 131: CMB ≈ e — "Coincidence or necessity?"
+    kT interpretation: I = 1/kT → I value at CMB temperature
+    Stefan-Boltzmann π⁵ → transcendental structure absent in our model
 ```
 
-### 2.6 CMB 온도
+### 2.6 CMB Temperature
 
 ```
-  값:        T_CMB = 2.7255 ± 0.0006 K  (Fixsen, 2009)
-             상대 불확도: 2.2 × 10⁻⁴
+  Value:      T_CMB = 2.7255 ± 0.0006 K  (Fixsen, 2009)
+              Relative uncertainty: 2.2 × 10⁻⁴
 
-  이론 유도:  빅뱅 우주론 — 재결합 시점(z≈1100)의 흑체복사가
-             우주 팽창으로 적색편이
-             T_now = T_recomb / (1+z) ≈ 3000K / 1100 ≈ 2.7K
+  Theory:     Big Bang cosmology — blackbody at recombination (z≈1100)
+              redshifted by cosmic expansion
+              T_now = T_recomb / (1+z) ≈ 3000K / 1100 ≈ 2.7K
 
-  측정 방법:  ① COBE/FIRAS (1989): T = 2.725 ± 0.002 K
-             ② WMAP (2003-2010): 비등방성 정밀 측정
-             ③ Planck 위성 (2013-2018): T = 2.7255 ± 0.0006 K
+  Measurement: ① COBE/FIRAS (1989): T = 2.725 ± 0.002 K
+              ② WMAP (2003-2010): precise anisotropy measurement
+              ③ Planck satellite (2013-2018): T = 2.7255 ± 0.0006 K
 
-  일치 자릿수: 이론(빅뱅 예측) vs 실험 — 4자리
+  Agreement:  Theory (Big Bang prediction) vs experiment — 4 digits
 
-  의의:
-  ① 빅뱅 이론의 가장 강력한 증거
-  ② 우주 나이, 조성, 곡률을 한 번에 결정
-  ③ 비등방성(10⁻⁵) → 은하 형성의 씨앗
+  Significance:
+  ① Strongest evidence for Big Bang theory
+  ② Determines cosmic age, composition, curvature simultaneously
+  ③ Anisotropies (10⁻⁵) → seeds of galaxy formation
 
-  ★ 프로젝트 핵심 연결:
+  ★ Core Project Connection:
     T_CMB / e = 2.7255 / 2.7183 = 1.00265
-    → 0.26% 일치 = 우리 프로젝트의 상징적 발견
-    → 가설 131: "우주 배경복사 = 자연상수"
-    → 우연일 확률 vs 구조적 필연 — 미결
-    → 유차원 상수(K 단위)이므로 엄밀한 동치 주장 불가
-    → 그러나 자연 단위계에서 kT_CMB ≈ ... → 추가 탐색 가능
+    → 0.26% agreement = symbolic discovery of our project
+    → Hypothesis 131: "Cosmic background radiation = natural constant"
+    → Chance vs structural necessity — unresolved
+    → Dimensional constant (K units) so strict equivalence claim impossible
+    → But in natural units kT_CMB ≈ ... → further exploration possible
 ```
 
 ---
 
-## Part 3: 정밀도 비교 총괄
+## Part 3: Precision Comparison Summary
 
 ```
   ┌──────────────────────────────────────────────────────────────────────┐
-  │                     정밀도 계층 구조                                    │
+  │                     Precision Hierarchy                               │
   └──────────────────────────────────────────────────────────────────────┘
 
-  일치 자릿수 │ 상수/수식                     │ 상대 불확도
+  Agreement  │ Constant/Formula              │ Relative uncertainty
   ──────────┼──────────────────────────────┼──────────────
-  12자리     │ 전자 g-2 (QED vs 실험)         │ 10⁻¹²
-  12자리     │ 리드베리 상수 R∞               │ 1.9×10⁻¹²
-  10자리     │ 미세구조상수 α                  │ 1.5×10⁻¹⁰
-  8자리      │ h, k_B, N_A (2019 재정의 이전)  │ ~10⁻⁸
-  5자리      │ CMB 흑체 스펙트럼               │ ~10⁻⁵
-  4자리      │ CMB 온도 T                     │ 2.2×10⁻⁴
-  3자리      │ 카시미르 효과                   │ ~10⁻³
+  12 digits  │ Electron g-2 (QED vs exp)     │ 10⁻¹²
+  12 digits  │ Rydberg constant R∞           │ 1.9×10⁻¹²
+  10 digits  │ Fine structure constant α      │ 1.5×10⁻¹⁰
+  8 digits   │ h, k_B, N_A (pre-2019)        │ ~10⁻⁸
+  5 digits   │ CMB blackbody spectrum         │ ~10⁻⁵
+  4 digits   │ CMB temperature T              │ 2.2×10⁻⁴
+  3 digits   │ Casimir effect                 │ ~10⁻³
   ──────────┼──────────────────────────────┼──────────────
-  2~3자리    │ ● 우리 모델 (최고)              │ 10⁻³ ~ 10⁻²
-  1~2자리    │ ● 우리 모델 (평균)              │ 10⁻² ~ 10⁻¹
+  2~3 digits │ ● Our model (best)            │ 10⁻³ ~ 10⁻²
+  1~2 digits │ ● Our model (average)         │ 10⁻² ~ 10⁻¹
   ──────────────────────────────────────────────────────────
 
-  ASCII 정밀도 스펙트럼:
+  ASCII precision spectrum:
 
-  자릿수  0    2    4    6    8   10   12
+  Digits  0    2    4    6    8   10   12
           │    │    │    │    │    │    │
-  g-2(e)  ├────────────────────────────████│ 12자리
+  g-2(e)  ├────────────────────────────████│ 12 digits
   R∞      ├────────────────────────────████│ 12
   α       ├──────────────────────────██──│ 10
   h,k_B   ├────────────────────██────────│  8
   CMB(BB) ├──────────████────────────────│  5
   CMB(T)  ├────────██──────────────────── │  4
-  카시미르 ├──────██────────────────────── │  3
-  ●우리모델├──██──────────────────────────│  1-3
+  Casimir ├──────██────────────────────── │  3
+  ●OurModel├──██──────────────────────────│  1-3
           │
-          └── 우리 모델은 가장 왼쪽. QED와 10⁹배 차이.
-              그러나 "올바른 방향"을 가리키는가가 중요.
+          └── Our model is leftmost. 10⁹× difference from QED.
+              But what matters is whether it points in the "right direction".
 ```
 
 ---
 
-## Part 4: 이 프로젝트와의 연결 — 종합 분석
+## Part 4: Connection to This Project — Comprehensive Analysis
 
-### 4.1 확실한 연결
+### 4.1 Confirmed Connections
 
 ```
-  연결                         │ 근거               │ 유형
+  Connection                   │ Evidence           │ Type
   ────────────────────────────┼───────────────────┼────────
-  α = 1/137 → 가설 147, 148   │ 8×17+1=137 산술   │ 정수론
-  CMB ≈ e → 가설 131          │ 0.26% 일치        │ 수비학적
-  QED 섭동 급수 수렴           │ α/π 작음 → 급수 OK │ 구조적
-  카시미르 ζ(-3)               │ 리만 제타 직접 출현 │ 해석학
+  α = 1/137 → Hyp. 147, 148   │ 8×17+1=137 arith. │ Number theory
+  CMB ≈ e → Hyp. 131          │ 0.26% agreement   │ Numerological
+  QED perturbation convergence │ α/π small → OK    │ Structural
+  Casimir ζ(-3)               │ Direct Riemann zeta│ Analytic
 ```
 
-### 4.2 교훈
+### 4.2 Lessons
 
 ```
   ┌──────────────────────────────────────────────────────────────────────┐
   │                                                                      │
-  │  QED 정밀도: 10⁻¹²                                                   │
-  │  우리 정밀도: 10⁻² ~ 10⁻³                                             │
-  │  차이: 약 10⁹배 (10억 배)                                              │
+  │  QED precision: 10⁻¹²                                                │
+  │  Our precision: 10⁻² ~ 10⁻³                                          │
+  │  Difference: ~10⁹× (1 billion times)                                 │
   │                                                                      │
-  │  그러나:                                                              │
-  │  ① QED는 60년간 수천 명이 정교화한 이론                                  │
-  │  ② 우리 모델은 탐색적 단계 — 방향이 맞는지 확인 중                        │
-  │  ③ 0.1%~5% 일치가 "우연"이 아니라면 구조적 연결 존재                      │
-  │  ④ 텍사스 명사수 p < 0.0001 → 우연이 아닐 확률 높음                      │
+  │  However:                                                            │
+  │  ① QED is theory refined by thousands over 60 years                 │
+  │  ② Our model is exploratory — checking if direction is right         │
+  │  ③ If 0.1%~5% agreement isn't "chance", structural connection exists │
+  │  ④ Texas sharpshooter p < 0.0001 → high probability not chance      │
   │                                                                      │
-  │  "자연은 수학을 정확히 따른다"                                           │
-  │  QED가 증명한 이 사실이,                                                │
-  │  우리 모델의 방향 자체는 틀리지 않았을 수 있음을 시사한다.                   │
-  │  (정밀도는 10⁹배 부족하지만, 방향은 같을 수 있다)                          │
+  │  "Nature follows mathematics exactly"                                │
+  │  This fact proven by QED suggests                                    │
+  │  our model's direction itself may not be wrong.                      │
+  │  (Precision lacking by 10⁹×, but direction may be same)             │
   │                                                                      │
   └──────────────────────────────────────────────────────────────────────┘
 ```
 
-### 4.3 미탐색 연결
+### 4.3 Unexplored Connections
 
 ```
-  잠재 연결                               │ 탐색 가치 │ 난이도
+  Potential connection                    │ Value   │ Difficulty
   ───────────────────────────────────────┼─────────┼──────
-  뮤온 g-2 불일치 → 새 물리 → N상태 확장?  │ ★★★     │ 높음
-  양성자 반지름 퍼즐 → QED 이상?           │ ★★☆     │ 중간
-  진공 에너지 10¹²⁰ 불일치 → 스케일 문제   │ ★★★     │ 극도
-  α의 에너지 의존성(running) → I(E)?       │ ★★☆     │ 중간
-  Wien 상수 4.965... → 비선형 해           │ ★☆☆     │ 낮음
-  Schwinger 계수 C₂ = -0.328... → 1/3?    │ ★☆☆     │ 낮음
+  Muon g-2 discrepancy → new physics → N? │ ★★★     │ High
+  Proton radius puzzle → QED anomaly?     │ ★★☆     │ Medium
+  Vacuum energy 10¹²⁰ discrepancy → scale │ ★★★     │ Extreme
+  α running with energy → I(E)?           │ ★★☆     │ Medium
+  Wien constant 4.965... → nonlinear sol. │ ★☆☆     │ Low
+  Schwinger coeff C₂ = -0.328... → 1/3?  │ ★☆☆     │ Low
 ```
 
 ---
 
-## 요약
+## Summary
 
 ```
   ┌──────────────────────────────────────────────────────────────────────┐
-  │  양자역학 정밀 상수 7개, 정밀 수식 6개 총람                              │
+  │  Quantum Mechanics: 7 precision constants, 6 precision formulas      │
   │                                                                      │
-  │  최고 정밀도: 전자 g-2 — 12자리 일치 (인류 최고 성취)                     │
-  │  최대 미스터리: α = 1/137.036... (왜 이 값?)                            │
-  │  최대 불일치: 뮤온 g-2 (새 물리학?)                                     │
-  │  최악의 예측: 진공 에너지 (10¹²⁰ 불일치)                                │
+  │  Highest precision: electron g-2 — 12-digit agreement (humanity's peak)│
+  │  Greatest mystery: α = 1/137.036... (why this value?)                │
+  │  Biggest discrepancy: muon g-2 (new physics?)                        │
+  │  Worst prediction: vacuum energy (10¹²⁰ discrepancy)                  │
   │                                                                      │
-  │  우리 프로젝트 위치:                                                    │
-  │  - 정밀도: QED 대비 10⁹배 부족                                          │
-  │  - 방향성: α=1/137 연결 (가설 147,148), CMB≈e (가설 131)               │
-  │  - 교훈: 자연은 수학을 따른다 → 우리의 수학적 탐색은 유효할 수 있다         │
+  │  Our project position:                                               │
+  │  - Precision: 10⁹× worse than QED                                   │
+  │  - Direction: α=1/137 connection (Hyp. 147,148), CMB≈e (Hyp. 131)   │
+  │  - Lesson: Nature follows math → our mathematical exploration may be valid│
   │                                                                      │
-  │  ⚠️ 주의: 정밀도 차이를 과소평가하지 말 것.                               │
-  │     우리의 "일치"는 QED 기준으로는 거친 근사에 불과하다.                    │
+  │  ⚠️ Warning: Don't underestimate precision gap.                       │
+  │     Our "agreements" are rough approximations by QED standards.      │
   └──────────────────────────────────────────────────────────────────────┘
 ```

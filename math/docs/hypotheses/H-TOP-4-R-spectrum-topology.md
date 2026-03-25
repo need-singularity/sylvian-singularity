@@ -1,15 +1,15 @@
-# H-TOP-4: R 스펙트럼의 위상적 성질
+# H-TOP-4: Topological Properties of R Spectrum
 
-> **가설**: R(n)의 치역 {3/4}∪{1}∪[7/6,∞)의 위상적 구조(고립점 2개+반직선)가 정수론의 깊은 구조를 반영.
+> **Hypothesis**: The topological structure of R(n)'s range {3/4}∪{1}∪[7/6,∞) (2 isolated points + ray) reflects deep structures in number theory.
 
-## R 치역의 위상
-- {3/4}: 고립점 (n=2만)
-- {1}: 고립점 (n=6만)
-- [7/6,∞): R<5에서 24개 이산점, 이후 점차 조밀
+## Topology of R Range
+- {3/4}: isolated point (n=2 only)
+- {1}: isolated point (n=6 only)
+- [7/6,∞): 24 discrete points for R<5, gradually becomes dense afterwards
 
-## 질문
-- R 치역은 결국 조밀해지는가? (어떤 R₀ 이상에서?)
-- R 치역의 closure는 무엇인가?
-- Hausdorff 차원?
+## Questions
+- Does the R range eventually become dense? (Above some R₀?)
+- What is the closure of the R range?
+- Hausdorff dimension?
 
-## 난이도: 극고 | 파급력: ★★★
+## Difficulty: Extreme | Impact: ★★★

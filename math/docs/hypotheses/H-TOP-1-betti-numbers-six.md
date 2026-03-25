@@ -1,92 +1,92 @@
-# H-TOP-1: 6-다양체의 Betti 수와 sigma,tau
+# H-TOP-1: Betti Numbers of 6-Manifolds and sigma,tau
 
-> **가설**: 6차원 Calabi-Yau 다양체의 Betti 수가 sigma,tau 제약을 만족한다.
+> **Hypothesis**: The Betti numbers of 6-dimensional Calabi-Yau manifolds satisfy sigma,tau constraints.
 
-**상태: ⚪ 반증 (incompatibility proof)**
+**Status: ⚪ Refuted (incompatibility proof)**
 
-## 배경
-- CY3 (복소 3차원 = 실수 6차원): 끈이론 컴팩트화
-- Betti 수: b_0=1, b_1=0, b_2=h^{11}, b_3=2(h^{21}+1), b_4=h^{11}, b_5=0, b_6=1
-- Euler 특성: chi = 2(h^{11}-h^{21})
+## Background
+- CY3 (complex 3-dimensional = real 6-dimensional): string theory compactification
+- Betti numbers: b_0=1, b_1=0, b_2=h^{11}, b_3=2(h^{21}+1), b_4=h^{11}, b_5=0, b_6=1
+- Euler characteristic: chi = 2(h^{11}-h^{21})
 - sigma(6)=12, tau(6)=4, phi(6)=2
 
-## 검증: 두 조건의 양립 불가능성
+## Verification: Incompatibility of Two Conditions
 
-### 시도 1: chi(CY3)=6 (첫 번째 완전수)
+### Attempt 1: chi(CY3)=6 (first perfect number)
 
 ```
   chi = 2(h^{11} - h^{21}) = 6
   => h^{11} - h^{21} = 3             ... (A)
 ```
 
-### 시도 2: Betti 수 합 = sigma(6) = 12
+### Attempt 2: Sum of Betti numbers = sigma(6) = 12
 
-CY3의 총 Betti 수:
+Total Betti numbers of CY3:
 ```
   sum(b_k) = b_0 + b_1 + b_2 + b_3 + b_4 + b_5 + b_6
            = 1   + 0   + h^{11} + 2(h^{21}+1) + h^{11} + 0 + 1
            = 4 + 2*h^{11} + 2*h^{21}
 
-  sum = sigma(6) = 12 이면:
+  If sum = sigma(6) = 12:
   4 + 2(h^{11} + h^{21}) = 12
   => h^{11} + h^{21} = 4              ... (B)
 ```
 
-### 양립 불가능성 증명
+### Incompatibility Proof
 
-(A)와 (B)를 연립:
+Solving (A) and (B) simultaneously:
 ```
   h^{11} - h^{21} = 3   ... (A)
   h^{11} + h^{21} = 4   ... (B)
 
   (A)+(B): 2*h^{11} = 7  =>  h^{11} = 3.5
 
-  h^{11}은 반드시 음이 아닌 정수 (Hodge 수의 정의).
-  3.5는 정수가 아니다.
+  h^{11} must be a non-negative integer (definition of Hodge numbers).
+  3.5 is not an integer.
 
-  따라서 chi=6과 sum(b_k)=12를 동시에 만족하는 CY3는 존재하지 않는다. QED.
+  Therefore, no CY3 satisfies both chi=6 and sum(b_k)=12. QED.
 ```
 
-### 시도 3: chi(CY3)=12=sigma(6)
+### Attempt 3: chi(CY3)=12=sigma(6)
 
 ```
   chi = 2(h^{11} - h^{21}) = 12
   => h^{11} - h^{21} = 6
 
-  이것 자체는 가능. Kreuzer-Skarke DB에 (h^{11}, h^{21}) 쌍 중
-  차이가 6인 것은 다수 존재. 예: (7,1), (8,2), (9,3), ...
+  This itself is possible. In the Kreuzer-Skarke DB, many (h^{11}, h^{21}) pairs
+  exist with difference 6. Examples: (7,1), (8,2), (9,3), ...
 
-  그러나 "chi=12" 자체는 sigma(6)=12와 단순 수치 일치일 뿐,
-  구조적 이유가 없다. chi는 짝수이면 아무 값이나 취할 수 있다.
+  However, "chi=12" itself is just numerical coincidence with sigma(6)=12,
+  without structural reason. chi can take any even value.
 ```
 
-### 시도 4: 개별 Betti 수에서 sigma,tau 등장?
+### Attempt 4: Do sigma,tau appear in individual Betti numbers?
 
 ```
   b_0 = 1
-  b_2 = h^{11}   (자유 파라미터)
-  b_3 = 2(h^{21}+1)  (자유 파라미터)
+  b_2 = h^{11}   (free parameter)
+  b_3 = 2(h^{21}+1)  (free parameter)
   b_4 = h^{11}
   b_6 = 1
 
-  h^{11}과 h^{21}은 CY3 선택에 따라 광범위하게 변한다.
-  Kreuzer-Skarke DB: h^{11} 범위 [0, 491], h^{21} 범위 [0, 491]
+  h^{11} and h^{21} vary widely depending on CY3 choice.
+  Kreuzer-Skarke DB: h^{11} range [0, 491], h^{21} range [0, 491]
 
-  이 중 h^{11}=tau(6)=4인 것도 있고, h^{21}=phi(6)=2인 것도 있다.
-  그러나 ~473M개 반사 다면체에서 이는 확률적으로 당연하다.
+  Some have h^{11}=tau(6)=4, some have h^{21}=phi(6)=2.
+  But this is probabilistically expected among ~473M reflexive polytopes.
 ```
 
-## 텍사스 명사수 검정
+## Texas Sharpshooter Test
 
 ```
-  시행 수: ~6 (chi=6, chi=12, sum=12, h^{11}=tau, h^{21}=phi, b_3=sigma)
-  타겟 수: ~5 (sigma, tau, phi, 6, 12)
-  기대 매칭: 조합 30개 중 ~1-2개 우연 매칭 예상
-  실제: chi=12 가능 (1개 수치 일치), h^{11}=4 가능 (1개)
-  p-value: > 0.3 (유의하지 않음)
+  Trials: ~6 (chi=6, chi=12, sum=12, h^{11}=tau, h^{21}=phi, b_3=sigma)
+  Targets: ~5 (sigma, tau, phi, 6, 12)
+  Expected matches: ~1-2 chance matches out of 30 combinations
+  Actual: chi=12 possible (1 numerical match), h^{11}=4 possible (1)
+  p-value: > 0.3 (not significant)
 ```
 
-## ASCII 요약
+## ASCII Summary
 
 ```
   CY3 Hodge diamond:
@@ -98,33 +98,33 @@ CY3의 총 Betti 수:
            0     0
               1
 
-  질문: chi=6 AND sum(b_k)=12 동시 가능?
+  Question: chi=6 AND sum(b_k)=12 simultaneously possible?
 
   h^{11} - h^{21} = 3  ─┐
-                         ├─ h^{11} = 3.5  (비정수!)
+                         ├─ h^{11} = 3.5  (non-integer!)
   h^{11} + h^{21} = 4  ─┘
 
-  결론: 불가능  ──── ⚪ 반증
+  Conclusion: Impossible  ──── ⚪ Refuted
 ```
 
-## 판정
+## Judgment
 
-| 항목 | 결과 |
+| Item | Result |
 |---|---|
-| 양립 가능성 | 불가능 (h^{11}=3.5 비정수) |
-| chi=12 개별 | 가능하지만 구조적 이유 없음 |
-| 텍사스 p-value | > 0.3 |
-| ad hoc 여부 | Hodge 수가 자유 파라미터라 어떤 값이든 맞출 수 있음 |
-| **등급** | **⚪ 반증 / 수치적 우연** |
+| Compatibility | Impossible (h^{11}=3.5 non-integer) |
+| chi=12 individually | Possible but no structural reason |
+| Texas p-value | > 0.3 |
+| Ad hoc nature | Hodge numbers are free parameters, can match any value |
+| **Grade** | **⚪ Refuted / Numerical coincidence** |
 
-## 한계
-- Kreuzer-Skarke DB 직접 검색은 미실시 (문헌 기반 분석)
-- CY3 이외 6차원 다양체는 미검토
+## Limitations
+- Direct Kreuzer-Skarke DB search not performed (literature-based analysis)
+- 6-dimensional manifolds other than CY3 not examined
 
-## 해석
-CY3의 Hodge 수는 본질적으로 자유 파라미터이며, sigma/tau와의 연결은
-숫자가 작아서 우연히 맞는 Small Numbers 효과에 불과하다.
-chi(CY3)가 항상 짝수라는 점에서 chi=6(홀수 아님, 가능)이지만
-이는 구조적 연결이 아니라 수치적 일치이다.
+## Interpretation
+The Hodge numbers of CY3 are essentially free parameters, and connections with sigma/tau are
+merely Small Numbers effects where coincidences happen due to small values.
+While chi(CY3) is always even making chi=6 possible (not odd),
+this is numerical coincidence rather than structural connection.
 
-## 난이도: 극고 | 파급력: - (반증됨)
+## Difficulty: Extreme | Impact: - (refuted)

@@ -1,43 +1,44 @@
-# 가설 검토 060: 감마 분포 α = 2 ✅
+# Hypothesis Review 060: Gamma Distribution α = 2 ✅
 
-## 가설
+## Hypothesis
 
-> Genius Score G = D×P/I 의 확률 분포 Gamma(α, β)에서 α의 정체.
+> The identity of α in the probability distribution Gamma(α, β) of Genius Score G = D×P/I.
 
-## 배경
+## Background
 
 ```
-  G = D × P / I 에서:
+  For G = D × P / I:
   ┌─────────────────────────────────────────────────┐
-  │  D (결손): 균일 분포 [0,1]                       │
-  │  P (가소성): 균일 분포 [0,1]                     │
-  │  I (억제): 균일 분포 [0,1]                       │
+  │  D (Deficit): Uniform distribution [0,1]         │
+  │  P (Plasticity): Uniform distribution [0,1]     │
+  │  I (Inhibition): Uniform distribution [0,1]     │
   │                                                  │
-  │  G = D×P/I 의 분포는?                            │
-  │  → 2개 균일변수의 곱 / 1개 균일변수               │
-  │  → Gamma 분포에 피팅 시 α ≈ 2                    │
-  │  → α = 분자의 자유도 = D×P의 변수 수!             │
+  │  What is the distribution of G = D×P/I?          │
+  │  → Product of 2 uniform variables / 1 uniform   │
+  │  → When fitted to Gamma, α ≈ 2                  │
+  │  → α = degrees of freedom in numerator = # of   │
+  │    variables in D×P!                             │
   └─────────────────────────────────────────────────┘
 ```
 
-## 검증 결과: ✅ α ≈ 2
+## Verification Result: ✅ α ≈ 2
 
 ```
-  감마 피팅 (n=500,000):
-  α = 2.03 ≈ 2 (차이 0.03, 1.5%)
+  Gamma fitting (n=500,000):
+  α = 2.03 ≈ 2 (difference 0.03, 1.5%)
   β = 6.64 (rate)
   scale = 1/β = 0.15
 ```
 
-## G = D×P/I 분포 (ASCII 그래프)
+## G = D×P/I Distribution (ASCII Graph)
 
 ```
-  확률밀도 p(G)
+  Probability density p(G)
   0.30│■
       │■■
   0.25│■■■
       │■■■■
-  0.20│■■■■■      ← Gamma(α=2, β=6.64) 피팅
+  0.20│■■■■■      ← Gamma(α=2, β=6.64) fit
       │■■■■■■
   0.15│■■■■■■■
       │■■■■■■■■■
@@ -49,108 +50,110 @@
        0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.8 1.0 2.0
                     G (Genius Score)
 
-  ● 히스토그램 (실측)
-  ─ Gamma(2, 6.64) 피팅 곡선
+  ● Histogram (observed)
+  ─ Gamma(2, 6.64) fitted curve
 
-  → 모드(최빈값) = (α-1)/β = 1/6.64 ≈ 0.15
-  → 평균 = α/β = 2/6.64 ≈ 0.30
-  → 오른쪽 꼬리 = 천재 영역 (G > 0.5)
+  → Mode = (α-1)/β = 1/6.64 ≈ 0.15
+  → Mean = α/β = 2/6.64 ≈ 0.30
+  → Right tail = genius region (G > 0.5)
 ```
 
-## KS 검정 결과
+## KS Test Results
 
 ```
-  Kolmogorov-Smirnov 적합도 검정:
+  Kolmogorov-Smirnov goodness-of-fit test:
   ┌────────────────────────────────────────┐
   │  H₀: G ~ Gamma(2, 6.64)              │
   │  H₁: G ≁ Gamma(2, 6.64)              │
   │                                        │
-  │  KS 통계량: D = 0.0089                 │
-  │  p-value:   p = 0.42                   │
+  │  KS statistic: D = 0.0089              │
+  │  p-value:     p = 0.42                 │
   │                                        │
-  │  결론: p > 0.05 → H₀ 기각 실패         │
-  │  → Gamma(2, 6.64) 피팅 적합! ✅        │
+  │  Conclusion: p > 0.05 → Fail to reject │
+  │  H₀ → Gamma(2, 6.64) fit is good! ✅   │
   └────────────────────────────────────────┘
 
-  추가 검정:
+  Additional tests:
   ┌──────────────┬────────────┬────────────┐
-  │ 검정         │ 통계량     │ p-value    │
+  │ Test         │ Statistic  │ p-value    │
   ├──────────────┼────────────┼────────────┤
-  │ KS 검정      │ D=0.0089   │ 0.42       │
-  │ AD 검정      │ A²=0.31    │ 0.55       │
-  │ χ² 검정      │ χ²=18.4    │ 0.38       │
+  │ KS test      │ D=0.0089   │ 0.42       │
+  │ AD test      │ A²=0.31    │ 0.55       │
+  │ χ² test      │ χ²=18.4    │ 0.38       │
   └──────────────┴────────────┴────────────┘
-  → 3가지 검정 모두 적합 확인
+  → All 3 tests confirm good fit
 ```
 
-## α = 2의 의미
+## Meaning of α = 2
 
 ```
-  α = 2 = D × P 의 변수 수
+  α = 2 = Number of variables in D × P
 
-  감마 분포의 α 해석:
+  Interpretation of α in Gamma distribution:
   ┌─────────────────────────────────────────────────┐
-  │  Gamma(α=1) = 지수 분포 (1개 과정)               │
-  │  Gamma(α=2) = "2개 독립 지수과정의 합"            │
-  │  Gamma(α=n) = "n개 독립 지수과정의 합"            │
+  │  Gamma(α=1) = Exponential distribution (1 proc) │
+  │  Gamma(α=2) = "Sum of 2 independent exp procs"  │
+  │  Gamma(α=n) = "Sum of n independent exp procs"  │
   │                                                  │
-  │  α = 2의 물리적 의미:                             │
-  │  → 천재성은 2개 독립 조건의 누적으로 발현          │
-  │  → 조건 1: D (결손/결여)                          │
-  │  → 조건 2: P (가소성/보상)                        │
-  │  → 둘 다 필요, 하나만으로는 불충분                 │
+  │  Physical meaning of α = 2:                      │
+  │  → Genius emerges from accumulation of 2        │
+  │    independent conditions                        │
+  │  → Condition 1: D (deficit/deficiency)          │
+  │  → Condition 2: P (plasticity/compensation)    │
+  │  → Both needed, one alone is insufficient       │
   │                                                  │
-  │  I(억제)는 스케일 파라미터(β=6.64)로 반영:        │
-  │  → 억제는 "분포의 폭"을 결정                      │
-  │  → I ↑ → β ↑ → 분포 좁아짐 → 천재 확률 ↓        │
-  │  → I ↓ → β ↓ → 분포 넓어짐 → 천재 확률 ↑        │
+  │  I(inhibition) reflected in scale parameter     │
+  │  (β=6.64):                                      │
+  │  → Inhibition determines "width" of distribution │
+  │  → I ↑ → β ↑ → distribution narrows → genius ↓ │
+  │  → I ↓ → β ↓ → distribution widens → genius ↑  │
   └─────────────────────────────────────────────────┘
 ```
 
-## α가 정확히 2인 이유
+## Why α is Exactly 2
 
 ```
-  G = D×P/I 에서:
-  분자 = D×P (2개 변수의 곱)
-  분모 = I   (1개 변수)
+  In G = D×P/I:
+  Numerator = D×P (product of 2 variables)
+  Denominator = I (1 variable)
 
-  변수 수 표:
-  ┌────────────┬──────────┬────────────┐
-  │ 구성요소   │ 변수 수  │ 역할       │
-  ├────────────┼──────────┼────────────┤
-  │ D (결손)   │ 1        │ 형상 (α)   │
-  │ P (가소성) │ 1        │ 형상 (α)   │
-  │ D×P 합계   │ 2        │ α = 2 ✅  │
-  ├────────────┼──────────┼────────────┤
-  │ I (억제)   │ 1        │ 비율 (β)   │
-  └────────────┴──────────┴────────────┘
+  Variable count table:
+  ┌────────────────┬──────────┬──────────┐
+  │ Component      │ # vars   │ Role     │
+  ├────────────────┼──────────┼──────────┤
+  │ D (Deficit)    │ 1        │ Shape (α)│
+  │ P (Plasticity) │ 1        │ Shape (α)│
+  │ D×P total      │ 2        │ α = 2 ✅ │
+  ├────────────────┼──────────┼──────────┤
+  │ I (Inhibition) │ 1        │ Rate (β) │
+  └────────────────┴──────────┴──────────┘
 
-  → α = 분자의 자유도
-  → β = 분모의 스케일링 효과
-  → G의 분포가 Gamma(2, ...)인 것은 구조적 필연
+  → α = degrees of freedom in numerator
+  → β = scaling effect of denominator
+  → G ~ Gamma(2, ...) is structurally inevitable
 ```
 
-## 다른 가설과의 교차점
+## Intersection with Other Hypotheses
 
 ```
-  가설 014 (Genius Gamma):   G의 감마 분포 발견
-  가설 090 (마스터 공식):     G = D×P/I의 완전수 구조
-  가설 098 (왜 6인가):        6 = 2 × 3, 여기서 α=2가 등장
-  가설 172 (보존법칙):        G×I = D×P, α=2는 보존량의 차원
+  Hypothesis 014 (Genius Gamma):  Discovery of G's gamma distribution
+  Hypothesis 090 (Master Formula): Perfect number structure of G = D×P/I
+  Hypothesis 098 (Why 6):          6 = 2 × 3, where α=2 appears
+  Hypothesis 172 (Conservation):   G×I = D×P, α=2 is dimension of conserved quantity
 ```
 
-## 한계
+## Limitations
 
-1. α = 2.03 ≠ 2.00 정확히 — 유한 샘플 효과인지 구조적 편차인지 불명
-2. D, P가 독립 균일이라는 가정이 현실에서 성립하지 않을 수 있음
-3. 감마 피팅은 근사이며, 정확한 G의 분포는 더 복잡할 수 있음
+1. α = 2.03 ≠ 2.00 exactly — unclear if finite sample effect or structural bias
+2. Assumption that D, P are independent uniforms may not hold in reality
+3. Gamma fitting is an approximation, true distribution of G may be more complex
 
-## 검증 방향
+## Verification Directions
 
-- [ ] n=10M 샘플에서 α의 수렴값 정밀 측정 (2.00에 수렴하는가?)
-- [ ] D, P에 상관 도입 시 α 변화 분석
-- [ ] 4상태 모델에서 G의 분포 → α = 3? (변수 추가 시 α 증가?)
+- [ ] Precisely measure convergence value of α with n=10M samples (does it converge to 2.00?)
+- [ ] Analyze α changes when introducing correlation between D, P
+- [ ] Distribution of G in 4-state model → α = 3? (does α increase with more variables?)
 
 ---
 
-*검증: verify_remaining_cross.py (KS 검정)*
+*Verification: verify_remaining_cross.py (KS test)*

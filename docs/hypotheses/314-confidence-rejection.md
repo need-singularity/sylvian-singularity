@@ -1,100 +1,100 @@
-# 가설 314: 확신 기반 판단 거부 — 낮은 장력 거부 시 정확도 향상
+# Hypothesis 314: Confidence-Based Rejection — Accuracy Improves When Rejecting Low-Tension Samples
 
-> **장력(=확신)이 낮은 샘플을 판단 거부하면 나머지의 정확도가 monotonic하게 증가한다. 이것은 가설 313(tension=confidence)의 직접적 응용이자 증명.**
+> **Rejecting samples with low tension (=confidence) results in monotonically increasing accuracy for the remaining samples. This is a direct application and proof of Hypothesis 313 (tension=confidence).**
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
   MNIST RepulsionFieldEngine, 10ep:
 
-  거부비율   남은 N   정확도    향상
-  ───────   ──────   ──────   ──────
-  0% (전체)  10,000   98.04%   baseline
-  5%          9,500   98.36%   +0.32%
-  10%         9,000   98.46%   +0.42%
-  20%         8,000   98.53%   +0.49%
-  30%         7,000   98.53%   +0.49%
-  50%         5,000   98.84%   +0.80%
-  70%         3,000   98.93%   +0.89%
-  90%         1,000   99.10%   +1.06%
+  Rejection rate   Remaining N   Accuracy   Improvement
+  ───────          ──────        ──────      ──────
+  0% (all)         10,000        98.04%      baseline
+  5%               9,500         98.36%      +0.32%
+  10%              9,000         98.46%      +0.42%
+  20%              8,000         98.53%      +0.49%
+  30%              7,000         98.53%      +0.49%
+  50%              5,000         98.84%      +0.80%
+  70%              3,000         98.93%      +0.89%
+  90%              1,000         99.10%      +1.06%
 
-  → 거부 비율과 정확도가 monotonic 증가!
-  → 가장 확신 있는 상위 10%: 99.10% (거의 완벽)
-  → 가장 확신 없는 하위 10%를 거부하면 +0.42%
+  -> Rejection rate and accuracy increase monotonically!
+  -> Top 10% most confident: 99.10% (nearly perfect)
+  -> Reject bottom 10% least confident: +0.42%
 
-  ASCII 그래프:
-    거부 0%  |████████████████████████████████████████| 98.04%
-    거부 50% |██████████████████████████████████████████| 98.84%
-    거부 90% |███████████████████████████████████████████| 99.10%
+  ASCII graph:
+    Reject 0%  |████████████████████████████████████████| 98.04%
+    Reject 50% |██████████████████████████████████████████| 98.84%
+    Reject 90% |███████████████████████████████████████████| 99.10%
 ```
 
-## 의미
+## Significance
 
 ```
-  1. tension = confidence의 직접 증명
-     "장력이 높은 샘플 = 정확한 판단" 이므로
-     장력 낮은 것을 빼면 정확도가 올라감 (QED)
+  1. Direct proof that tension = confidence
+     Since "high-tension samples = accurate judgment",
+     removing low-tension ones raises accuracy (QED)
 
-  2. 실용적 응용: "모르겠으면 말하지 마"
-     LLM에서: PPL > threshold → "잘 모르겠습니다"
-     의식엔진: tension < threshold → 판단 거부
-     → 확신 없는 답변을 거부하는 안전장치
+  2. Practical application: "Don't speak if you don't know"
+     For LLM: PPL > threshold -> "I'm not sure"
+     Consciousness engine: tension < threshold -> reject judgment
+     -> Safety mechanism that rejects uncertain answers
 
-  3. Active Learning 응용
-     tension 낮은 샘플 = 불확실한 것 → 먼저 레이블 요청
-     → 효율적 학습 (확신 있는 것은 이미 알고, 불확신한 것만 학습)
+  3. Active Learning application
+     Low-tension samples = uncertain ones -> request labels first
+     -> Efficient learning (already know confident ones, learn uncertain ones)
 
-  4. 이상탐지 연결
-     장력 급락 → "이건 내가 모르는 것" → 이상 경보
-     → H287(AUROC=1.0)의 원리: 이상=낮은확신=낮은장력
+  4. Anomaly detection connection
+     Sudden tension drop -> "This is something I don't know" -> anomaly alert
+     -> Principle of H287 (AUROC=1.0): anomaly=low confidence=low tension
 ```
 
-## 뇌과학 대응
+## Neuroscience Correspondence
 
 ```
-  인간의 판단 거부:
-    확신 없을 때: "잘 모르겠어" → 답변 거부 → 오류 방지
-    확신 있을 때: "확실해!" → 빠른 답변 → 높은 정확도
+  Human judgment rejection:
+    When not confident: "I'm not sure" -> reject answer -> prevent error
+    When confident: "I'm certain!" -> fast answer -> high accuracy
 
-  전두엽 역할:
-    판단 확신도 평가 → 낮으면 "멈춤" 신호 → 추가 정보 탐색
-    = 장력 모니터링 → 낮으면 판단 거부
+  Prefrontal cortex role:
+    Evaluate judgment confidence -> if low, send "stop" signal -> search for more info
+    = Monitor tension -> if low, reject judgment
 
-  → 인간의 "직감" = 장력의 주관적 경험?
+  -> Human "gut feeling" = subjective experience of tension?
 ```
 
-## 다중 데이터셋 확인 (2026-03-24)
+## Multi-Dataset Confirmation (2026-03-24)
 
 ```
-  3개 데이터셋 모두 monotonic 증가!
+  All 3 datasets show monotonic increase!
 
   MNIST (base 97.72%):
-    거부 10%→98.19%, 50%→98.74%, 90%→99.20% (+1.48%)
+    Reject 10%->98.19%, 50%->98.74%, 90%->99.20% (+1.48%)
 
   Fashion-MNIST (base 87.99%):
-    거부 10%→89.53%, 50%→93.62%, 90%→97.80% (+9.81%!)
+    Reject 10%->89.53%, 50%->93.62%, 90%->97.80% (+9.81%!)
 
-  효과 크기 비교:
-    MNIST:   거부90% → +1.48% (기저 정확도 높음 → 개선 작음)
-    Fashion: 거부90% → +9.81% (기저 낮음 → 개선 큼!)
-    → 기저 정확도가 낮을수록 거부 효과가 큼
-    → 불확실한 샘플이 많을수록 거부의 이점이 큼
+  Effect size comparison:
+    MNIST:   reject 90% -> +1.48% (high base accuracy -> small improvement)
+    Fashion: reject 90% -> +9.81% (low base -> large improvement!)
+    -> Lower base accuracy = larger rejection effect
+    -> More uncertain samples = greater benefit from rejection
 ```
 
-## CIFAR 추가 확인 (2026-03-24)
+## CIFAR Additional Confirmation (2026-03-24)
 
 ```
   CIFAR-10 (base 51.55%):
-    거부 10%→52.90%, 50%→57.90%, 90%→66.73% (+15.18%!!)
+    Reject 10%->52.90%, 50%->57.90%, 90%->66.73% (+15.18%!!)
 
-  종합 (거부 90%):
-    MNIST:   97.72% → 99.20% (+1.48%)
-    Fashion: 87.99% → 97.80% (+9.81%)
-    CIFAR:   51.55% → 66.73% (+15.18%)
+  Summary (reject 90%):
+    MNIST:   97.72% -> 99.20% (+1.48%)
+    Fashion: 87.99% -> 97.80% (+9.81%)
+    CIFAR:   51.55% -> 66.73% (+15.18%)
 
-  법칙: 개선폭 ∝ 1/(기저정확도)
-    기저 높을수록 개선 작음 (이미 대부분 확신)
-    기저 낮을수록 개선 큼 (불확신 샘플 많음)
+  Law: improvement proportional to 1/(base accuracy)
+    Higher base -> smaller improvement (most already confident)
+    Lower base -> larger improvement (many uncertain samples)
 ```
 
-## 상태: 🟩 3데이터셋 확인 (CIFAR +15.18%!, 보편적 monotonic)
+## Status: 🟩 Confirmed in 3 datasets (CIFAR +15.18%!, universal monotonic)

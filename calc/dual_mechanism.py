@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""이중 메커니즘 정량화기 — 내부 vs 모델 간 장력으로 이상 탐지
+"""Dual Mechanism Quantifier — Anomaly Detection via Internal vs Inter-model Tension
 
-H296-H307: 두 독립 PureFieldEngine의 내부/모델간 장력을 측정하여
-정상 vs 이상 샘플의 분리를 정량화한다.
+H296-H307: Measures internal/inter-model tension of two independent PureFieldEngines
+to quantify the separation between normal vs anomalous samples.
 
-사용법:
+Usage:
   python3 calc/dual_mechanism.py --dataset mnist
   python3 calc/dual_mechanism.py --dataset fashion --normal-classes 0,1,2,3 --anomaly-classes 7,8,9
   python3 calc/dual_mechanism.py --dataset breast_cancer --epochs 20

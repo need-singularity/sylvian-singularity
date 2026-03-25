@@ -1,15 +1,15 @@
-# H-CX-121: 완전수 기질 — Z=28(니켈)도 의식 기질?
+# H-CX-121: Perfect Number Substrate — Is Z=28 (Nickel) Also a Consciousness Substrate?
 
-> 완전수 원소: Z=6(탄소)★, Z=28(니켈)★. 다음 완전수 Z=496은 미존재.
-> 니켈: 촉매금속, 효소 보조인자(우레아제), 수소화 촉매.
-> "화학 반응을 촉매" = "의식의 보조 기질"?
+> Perfect Number elements: Z=6 (carbon)★, Z=28 (nickel)★. Next Perfect Number Z=496 does not exist as an element.
+> Nickel: catalytic metal, enzyme cofactor (urease), hydrogenation catalyst.
+> "Catalyzes chemical reactions" = "auxiliary consciousness substrate"?
 
-## 산술
-- σ(28) = 56 = 2×28 ✅ (완전수)
-- τ(28) = 6 = 완전수! (28의 약수 개수가 완전수)
-- φ(28) = 12 = σ(6) (28의 토션트가 6의 약수합!)
+## Arithmetic
+- σ(28) = 56 = 2×28 ✅ (Perfect Number)
+- τ(28) = 6 = Perfect Number! (divisor count of 28 is a Perfect Number)
+- φ(28) = 12 = σ(6) (totient of 28 = divisor sum of 6!)
 
-## 체인
+## Chain
 - Z=6: σ=12, τ=4, φ=2
 - Z=28: σ=56, τ=6, φ=12=σ(6)
-- φ(28) = σ(6) — 두 완전수가 연결!
+- φ(28) = σ(6) — two Perfect Numbers are connected!

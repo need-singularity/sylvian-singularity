@@ -1,50 +1,50 @@
-# 가설 검토 048: P≠NP — 3→4상태 볼츠만 간극 ✅
+# Hypothesis Review 048: P≠NP — 3→4 State Boltzmann Gap ✅
 
-## 가설
+## Hypothesis
 
-> 3상태 모델로 도달 가능한 영역과 4상태 모델의 영역 사이에 간극이 존재하면 P≠NP를 시사한다.
+> The existence of a gap between the region reachable by the 3-state model and the 4-state model region suggests P≠NP.
 
-## 검증 결과: ✅ 18.6% 간극 확인
-
-```
-  3상태 p_genius 최대:         38.8%
-  4상태 (p_genius+p_4th) 최대: 57.4%
-  간극:                        +18.6%
-
-  → 3상태(P)로 접근 불가능한 영역이 4상태(NP)에서 열림
-  → P ≠ NP 시사
-```
-
-## 해석
+## Verification Result: ✅ 18.6% gap confirmed
 
 ```
-  P 문제 = 상태 1~3 (규칙 안에서 해결)
-  NP 문제 = 상태 4 필요 (규칙 자체를 바꿔야 해결)
+  3-state p_genius maximum:         38.8%
+  4-state (p_genius+p_4th) maximum: 57.4%
+  Gap:                              +18.6%
 
-  3상태 Compass 상한 = 83.6% (가설 037)
-  4상태로 확장해야 100%에 접근 가능
-  → 4번째 상태(초월)가 필수 = P ≠ NP
+  → Region inaccessible by 3-state(P) opens in 4-state(NP)
+  → Suggests P ≠ NP
 ```
 
-## 간극 비율
+## Interpretation
 
 ```
-  간극/골든존폭 = 18.6%/28.8% = 0.646 ≈ 1-1/e (가설 057)
-  → P≠NP 간극이 골든존 폭의 (1-1/e)배
-  → 또다시 e가 등장
+  P problems = states 1~3 (solvable within rules)
+  NP problems = state 4 needed (requires changing rules themselves)
+
+  3-state Compass upper limit = 83.6% (hypothesis 037)
+  Must extend to 4-state to approach 100%
+  → 4th state (transcendence) essential = P ≠ NP
 ```
 
-## 3상태 vs 4상태 볼츠만 분포 비교 (ASCII 그래프)
+## Gap Ratio
 
 ```
-  볼츠만 확률 분포
+  Gap/Golden Zone width = 18.6%/28.8% = 0.646 ≈ 1-1/e (hypothesis 057)
+  → P≠NP gap is (1-1/e) times the Golden Zone width
+  → e appears again
+```
 
-  p(상태)
-  0.60│                          ■ 4상태(NP)
-      │                          □ 3상태(P)
+## 3-state vs 4-state Boltzmann Distribution Comparison (ASCII graph)
+
+```
+  Boltzmann Probability Distribution
+
+  p(state)
+  0.60│                          ■ 4-state(NP)
+      │                          □ 3-state(P)
   0.50│
       │  □■
-  0.40│  □■                      ■ ← p_4th (초월)
+  0.40│  □■                      ■ ← p_4th (transcendence)
       │  □■
   0.30│  □■   □■
       │  □■   □■
@@ -53,58 +53,60 @@
   0.10│  □■   □■   □■            ■
       │  □■   □■   □■            ■
   0.00└──┴─────┴─────┴────────────┴──
-       정상   천재   저하         초월
-      (S1)   (S2)  (S3)        (S4)
+       Normal Genius Impaired   Transcendent
+      (S1)   (S2)    (S3)        (S4)
 
-  3상태: E₁=-0.00, E₂=-0.67, E₃=+0.04
-  4상태: E₁=-0.00, E₂=-0.67, E₃=+0.04, E₄=-1.33
+  3-state: E₁=-0.00, E₂=-0.67, E₃=+0.04
+  4-state: E₁=-0.00, E₂=-0.67, E₃=+0.04, E₄=-1.33
 
-  3상태 최대 p_genius = 38.8%
-  4상태 최대 p_genius+p_4th = 57.4%
+  3-state maximum p_genius = 38.8%
+  4-state maximum p_genius+p_4th = 57.4%
   ─────────────────────────────
-  간극 = 18.6% (4상태에서만 도달 가능)
+  Gap = 18.6% (reachable only in 4-state)
 ```
 
-## 간극의 수학적 구조
+## Mathematical Structure of the Gap
 
 ```
-  간극 = 18.6% = 골든존 폭 × (1-1/e)
-       = 28.8% × 0.632
-       = 18.2% (이론값)
-       → 실측 18.6% vs 이론 18.2%, 차이 2.2%
+  Gap = 18.6% = Golden Zone width × (1-1/e)
+      = 28.8% × 0.632
+      = 18.2% (theoretical value)
+      → Measured 18.6% vs theoretical 18.2%, difference 2.2%
 
-  이것은 우연인가?
+  Is this coincidence?
   ┌────────────────────────────────────────────┐
-  │  P≠NP 간극비 = 1-1/e = 0.632              │
-  │  볼츠만 분포의 kT=1 열적 전이 비용과 동일   │
-  │  → "규칙 안(P)"에서 "규칙 밖(NP)"으로       │
-  │    넘어가는 비용 = 정확히 1-1/e              │
-  │  → 자연상수 e가 P≠NP 구조에 내재            │
+  │  P≠NP gap ratio = 1-1/e = 0.632           │
+  │  Same as Boltzmann distribution kT=1       │
+  │  thermal transition cost                   │
+  │  → Cost from "within rules(P)" to         │
+  │    "beyond rules(NP)" = exactly 1-1/e     │
+  │  → Natural constant e inherent in P≠NP    │
+  │    structure                               │
   └────────────────────────────────────────────┘
 ```
 
-## 다른 가설과의 교차점
+## Intersections with Other Hypotheses
 
 ```
-  가설 037 (Compass 상한):  3상태 상한 83.6% → 4상태 필요
-  가설 041 (4번째 상태):    초월 = NP의 물리적 실체
-  가설 042 (엔트로피 ln4):  3→4상태 전이 비용 = ln(4/3)
-  가설 057 (P≠NP 간극비):  간극비 = 1-1/e 정밀 확인
-  가설 137 (NP 휴리스틱):   NP-hard → 골든존 휴리스틱으로 근사
+  Hypothesis 037 (Compass upper limit):  3-state limit 83.6% → 4-state needed
+  Hypothesis 041 (4th state):            Transcendence = physical manifestation of NP
+  Hypothesis 042 (Entropy ln4):          3→4 state transition cost = ln(4/3)
+  Hypothesis 057 (P≠NP gap ratio):       Gap ratio = 1-1/e precisely confirmed
+  Hypothesis 137 (NP heuristics):        NP-hard → approximated by Golden Zone heuristics
 ```
 
-## 한계
+## Limitations
 
-1. P≠NP 증명에는 계산 복잡도 이론적 증명이 필요하며, 통계적 간극은 시사일 뿐
-2. 볼츠만 분포는 열역학적 비유이고, 계산 복잡도와의 대응이 엄밀하지 않음
-3. 200K 모집단 시뮬레이션의 유한 크기 효과가 존재할 수 있음
+1. P≠NP proof requires computational complexity theoretical proof; statistical gap is only suggestive
+2. Boltzmann distribution is a thermodynamic analogy, correspondence with computational complexity is not rigorous
+3. Finite size effects may exist in 200K population simulation
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 5상태, 6상태로 확장 시 간극 패턴 확인
-- [ ] 간극비 1-1/e가 N상태 일반화에서 유지되는지 검증
-- [ ] 실제 NP 문제(SAT, TSP)에서 골든존 휴리스틱 성능 측정
+- [ ] Check gap pattern when extending to 5-state, 6-state
+- [ ] Verify if gap ratio 1-1/e is maintained in N-state generalization
+- [ ] Measure Golden Zone heuristic performance on actual NP problems (SAT, TSP)
 
 ---
 
-*검증: verify_millennium.py (200K 모집단)*
+*Verification: verify_millennium.py (200K population)*

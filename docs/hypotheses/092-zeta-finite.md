@@ -1,31 +1,31 @@
-# 가설 검토 092: 모델 = ζ 유한 근사 ✅
+# Hypothesis Review 092: Model = ζ Finite Approximation ✅
 
-## 가설
+## Hypothesis
 
-> 우리 모델이 리만 제타 함수의 유한 근사, 구체적으로 오일러 곱을 p=2,3에서 절단한 것인가.
+> Is our model a finite approximation of the Riemann zeta function, specifically the Euler product truncated at p=2,3?
 
-## 배경/맥락
+## Background/Context
 
-리만 제타 함수는 오일러 곱으로 표현된다:
+The Riemann zeta function is expressed as an Euler product:
 ```
-  ζ(s) = Π_{p 소수} 1/(1 - p^(-s))
+  ζ(s) = Π_{p prime} 1/(1 - p^(-s))
 ```
-우리 모델의 기반 수 6 = 2 × 3은 최소 두 소수의 곱이다.
-오일러 곱을 p=2, p=3에서만 취하면, 이것이 우리 모델의 수학적 골격인지 검증한다.
+Our model's base number 6 = 2 × 3 is the product of the smallest two primes.
+We verify if taking the Euler product only at p=2, p=3 forms the mathematical skeleton of our model.
 
-## 검증 결과
+## Verification Results
 
-### 오일러 곱 절단
+### Euler Product Truncation
 
 ```
-  완전한 오일러 곱:
+  Full Euler product:
   ζ(s) = 1/((1-2⁻ˢ)(1-3⁻ˢ)(1-5⁻ˢ)(1-7⁻ˢ)...)
 
-  p=2,3 절단 (우리 모델):
+  p=2,3 truncation (our model):
   ζ_{2,3}(s) = 1/((1-2⁻ˢ)(1-3⁻ˢ))
 ```
 
-### s=1에서의 값
+### Value at s=1
 
 ```
   ζ_{2,3}(1) = 1/((1 - 1/2)(1 - 1/3))
@@ -33,109 +33,109 @@
              = 1/(1/3)
              = 3
 
-  비교: ζ(1) = ∞ (발산)
-  → 절단이 발산을 유한값 3으로 정규화
+  Compare: ζ(1) = ∞ (diverges)
+  → Truncation regularizes divergence to finite value 3
 ```
 
-### 약수 역수 합과의 관계
+### Relationship with Divisor Reciprocal Sum
 
 ```
-  σ₋₁(6)과 오일러 곱의 동치:
+  Equivalence of σ₋₁(6) and Euler product:
 
   σ₋₁(6) = Σ_{d|6} 1/d = (1+1/2)(1+1/3)
           = (3/2)(4/3) = 2
 
-  오일러 곱 (multiplicative):   (1-p⁻ˢ)⁻¹ = 1 + p⁻ˢ + p⁻²ˢ + ...
-  약수 역수 합 (additive):      σ₋₁(p^a) = 1 + p⁻¹ + ... + p⁻ᵃ
+  Euler product (multiplicative):   (1-p⁻ˢ)⁻¹ = 1 + p⁻ˢ + p⁻²ˢ + ...
+  Divisor reciprocal sum (additive): σ₋₁(p^a) = 1 + p⁻¹ + ... + p⁻ᵃ
 
-  6 = 2¹ × 3¹ (각 소수 1승):
-  σ₋₁(6) = (1+1/2)(1+1/3) = 2  ← 유한 곱
-  ζ_{2,3}(1) = (1-1/2)⁻¹(1-1/3)⁻¹ = 3  ← 무한 급수 절단
+  6 = 2¹ × 3¹ (each prime to power 1):
+  σ₋₁(6) = (1+1/2)(1+1/3) = 2  ← Finite product
+  ζ_{2,3}(1) = (1-1/2)⁻¹(1-1/3)⁻¹ = 3  ← Truncated infinite series
 ```
 
-### 절단 수준별 비교
+### Comparison by Truncation Level
 
 ```
-  절단 수준    소수           결과 수     σ₋₁(n)    ζ 근사값(s=1)
+  Truncation    Primes         Result n    σ₋₁(n)    ζ approx(s=1)
   ──────────────────────────────────────────────────────────────
-  p=2 만       {2}            2          1.500      2.000
-  p=2,3        {2,3}          6          2.000      3.000    ★ 우리 모델
-  p=2,3,5      {2,3,5}        30         2.400      3.750
-  p=2,3,5,7    {2,3,5,7}      210        2.743      4.375
-  모든 소수     전체           —          ∞(발산)    ∞(발산)
+  p=2 only      {2}            2          1.500      2.000
+  p=2,3         {2,3}          6          2.000      3.000    ★ Our model
+  p=2,3,5       {2,3,5}        30         2.400      3.750
+  p=2,3,5,7     {2,3,5,7}      210        2.743      4.375
+  All primes    All            —          ∞(diverge)  ∞(diverge)
   ──────────────────────────────────────────────────────────────
 
-  주목: p=2,3 절단에서만 σ₋₁ = 2 (완전수 조건!)
-  다른 절단에서는 σ₋₁ ≠ 2 → 완전수가 아님
+  Note: Only at p=2,3 truncation does σ₋₁ = 2 (perfect number condition!)
+  Other truncations have σ₋₁ ≠ 2 → Not perfect numbers
 ```
 
-## ASCII 그래프: 오일러 곱 절단과 수렴
+## ASCII Graph: Euler Product Truncation and Convergence
 
 ```
-  ζ 근사값 (s=1)
-  ∞    ┤                                            ζ(1) (발산)
+  ζ approximation (s=1)
+  ∞    ┤                                            ζ(1) (diverges)
        │                                    ╱
   5.0  ┤                              ╱
        │                         ●
   4.0  ┤                    ●         p=2,3,5,7
        │               ●              p=2,3,5
-  3.0  ┤          ★                    ★ p=2,3 (우리 모델)
+  3.0  ┤          ★                    ★ p=2,3 (our model)
        │     ●                          p=2
   2.0  ┤●
        │
   1.0  ┤
-       └──┬──────┬──────┬──────┬──────→ 소수 개수
+       └──┬──────┬──────┬──────┬──────→ Number of primes
           1      2      3      4      ∞
 
-  σ₋₁ 값:
-  2.0  ┤     ★ ← 완전수! (p=2,3, n=6)
+  σ₋₁ values:
+  2.0  ┤     ★ ← Perfect number! (p=2,3, n=6)
        │  ●        ●        ●
-  1.5  ┤●                          (다른 절단은 ≠ 2)
+  1.5  ┤●                          (other truncations ≠ 2)
        │
-       └──┬──────┬──────┬──────→ 소수 개수
+       └──┬──────┬──────┬──────→ Number of primes
           1      2      3      4
 ```
 
-### 우리 모델이 포착하는 6-smooth 수
+### 6-smooth Numbers Captured by Our Model
 
 ```
-  6-smooth 수 (소인수가 2,3만): 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, ...
+  6-smooth numbers (prime factors only 2,3): 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, ...
 
   ζ_{2,3}(s) = Σ_{n: 6-smooth} n⁻ˢ
 
   s=1: 1 + 1/2 + 1/3 + 1/4 + 1/6 + 1/8 + 1/9 + ... = 3
   s=2: 1 + 1/4 + 1/9 + 1/16 + 1/36 + ... = (4/3)(9/8) = 3/2
 
-  → 모든 6-smooth 수의 역수 합 = 3 (s=1)
-  → 이 중 6의 약수만 선택하면 σ₋₁(6) = 2
+  → Sum of reciprocals of all 6-smooth numbers = 3 (s=1)
+  → Selecting only divisors of 6 gives σ₋₁(6) = 2
 ```
 
-## 해석
+## Interpretation
 
-1. **최소 유한 근사**: p=2,3 절단은 ζ를 유한하게 만드는 최소 비자명 근사.
-   p=2만으로는 너무 빈약(σ₋₁=1.5), p=2,3에서 완전수 조건 달성.
+1. **Minimal Finite Approximation**: p=2,3 truncation is the minimal non-trivial approximation that makes ζ finite.
+   p=2 alone is too sparse (σ₋₁=1.5), p=2,3 achieves the perfect number condition.
 
-2. **완전수의 유일성**: 오일러 곱의 처음 2개 소수에서만 σ₋₁=2가 나타난다.
-   이것이 6이 특별한 이유: 최소 소수 조합에서 완전수 성립.
+2. **Uniqueness of Perfect Number**: σ₋₁=2 appears only at the first 2 primes of the Euler product.
+   This is why 6 is special: perfect number emerges from minimal prime combination.
 
-3. **정규화 효과**: ζ(1)=∞를 ζ_{2,3}(1)=3으로 유한화.
-   무한한 복잡성을 최소 구조로 압축한 것.
+3. **Regularization Effect**: Finitizes ζ(1)=∞ to ζ_{2,3}(1)=3.
+   Compresses infinite complexity into minimal structure.
 
-4. **6-smooth 필터**: 모델은 소인수 {2,3}으로만 구성된 수의 세계에서 작동.
-   소수 5, 7, 11, ... 의 기여는 "무시"된 것이 아니라 "아직 포함 안 된" 것.
+4. **6-smooth Filter**: Model operates in a world of numbers composed only of prime factors {2,3}.
+   Contributions from primes 5, 7, 11, ... are not "ignored" but "not yet included".
 
-## 한계
+## Limitations
 
-- s≠1에서 ζ_{2,3}(s)의 모델 내 의미 미탐구
-- 6-smooth 수 중 6의 약수가 아닌 것(4, 8, 9, ...)의 역할 불명확
-- 절단된 소수(5, 7, ...)가 모델 정밀도에 미치는 영향 미정량
+- Meaning of ζ_{2,3}(s) in model at s≠1 unexplored
+- Role of 6-smooth numbers that aren't divisors of 6 (4, 8, 9, ...) unclear
+- Effect of truncated primes (5, 7, ...) on model precision unquantified
 
-## 검증 방향
+## Verification Directions
 
-- ζ_{2,3}(s)의 영점 분포를 계산하고 리만 영점과 비교
-- s=2에서 ζ_{2,3}(2) = 3/2의 모델 의미 해석
-- 다음 소수 p=5 추가 시 모델이 어떻게 확장되는지 구체 설계
+- Calculate zero distribution of ζ_{2,3}(s) and compare with Riemann zeros
+- Interpret model meaning of ζ_{2,3}(2) = 3/2 at s=2
+- Design concrete extension when adding next prime p=5
 
 ---
 
-*수론적 분석. 모델 = ζ 오일러 곱의 p=2,3 절단.*
+*Number-theoretic analysis. Model = p=2,3 truncation of ζ Euler product.*

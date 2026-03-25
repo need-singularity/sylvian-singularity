@@ -1,17 +1,17 @@
-# 가설 검토 091: 조화급수 통일 ✅
+# Hypothesis Review 091: Harmonic Series Unification ✅
 
-## 가설
+## Hypothesis
 
-> 모든 핵심 상수가 조화급수 Hₙ = 1 + 1/2 + ... + 1/n 의 간격(차분)으로 표현 가능한가.
+> Can all core constants be expressed as intervals (differences) of the harmonic series Hₙ = 1 + 1/2 + ... + 1/n?
 
-## 배경/맥락
+## Background/Context
 
-조화급수 Hₙ은 수론과 해석학의 교차점에 위치한 핵심 대상이다.
-리만 제타 함수 ζ(1)의 부분합이기도 하다.
-모델의 핵심 상수 1/2, 1/3, 1/6, 5/6이 모두 Hₙ의 차분으로 표현된다면,
-이는 모델과 제타 함수 사이의 깊은 구조적 연결을 시사한다.
+The harmonic series Hₙ is a key object located at the intersection of number theory and analysis.
+It is also the partial sum of the Riemann zeta function ζ(1).
+If the model's core constants 1/2, 1/3, 1/6, 5/6 can all be expressed as differences of Hₙ,
+this suggests a deep structural connection between the model and the zeta function.
 
-조화급수 값:
+Harmonic series values:
 ```
   H₀ = 0
   H₁ = 1
@@ -22,12 +22,12 @@
   H₆ = 1 + 1/2 + 1/3 + 1/4 + 1/5 + 1/6 = 49/20
 ```
 
-## 검증 결과
+## Verification Results
 
-### 완전 매핑 테이블
+### Complete Mapping Table
 
 ```
-  모델 상수   조화급수 표현          계산 검증                상태
+  Model Constant   Harmonic Series Expression          Calculation Verification                Status
   ─────────────────────────────────────────────────────────────
   1           H₁ - H₀              1 - 0 = 1                ✅
   1/2         H₂ - H₁              3/2 - 1 = 1/2            ✅
@@ -38,37 +38,37 @@
   ─────────────────────────────────────────────────────────────
 ```
 
-### 연속 유사체 (디감마 함수 연결)
+### Continuous Analogue (Digamma Function Connection)
 
 ```
-  이산: 1/n = Hₙ - Hₙ₋₁
-  연속: 1/x ≈ ψ(x+1) - ψ(x)   (ψ = 디감마 함수)
+  Discrete: 1/n = Hₙ - Hₙ₋₁
+  Continuous: 1/x ≈ ψ(x+1) - ψ(x)   (ψ = digamma function)
 
-  골든존 폭의 연속 유사체:
+  Continuous analogue of Golden Zone width:
   ln(4/3) = ∫₃⁴ (1/x) dx = ln(4) - ln(3)
 
-  검증:
-  ln(4/3) = 0.2877  ≈  1/3 - 1/4 + 1/5 - ... (교대 급수)
-  이산 폭: 1/3 = 0.3333
-  연속 폭: ln(4/3) = 0.2877
-  차이: 0.046 (이산→연속 보정)
+  Verification:
+  ln(4/3) = 0.2877  ≈  1/3 - 1/4 + 1/5 - ... (alternating series)
+  Discrete width: 1/3 = 0.3333
+  Continuous width: ln(4/3) = 0.2877
+  Difference: 0.046 (discrete→continuous correction)
 ```
 
-### 핵심 발견: 등장하는 인덱스
+### Key Finding: Appearing Indices
 
 ```
-  사용된 조화급수 인덱스: {0, 1, 2, 3, 5, 6}
+  Used harmonic series indices: {0, 1, 2, 3, 5, 6}
 
-  빠진 인덱스: {4}
+  Missing index: {4}
 
-  흥미로운 점:
-  - 1, 2, 3, 6 = 6의 약수
-  - 5 = 6-1 (Compass 분자)
-  - 4 = 유일한 미사용 (4상태→5상태 전이에서만 등장)
-  - 0 = 기준점
+  Interesting points:
+  - 1, 2, 3, 6 = divisors of 6
+  - 5 = 6-1 (Compass numerator)
+  - 4 = only unused (appears only in 4-state→5-state transition)
+  - 0 = reference point
 ```
 
-## ASCII 그래프: 조화급수와 모델 상수
+## ASCII Graph: Harmonic Series and Model Constants
 
 ```
   Hₙ
@@ -86,53 +86,53 @@
        └──┬──┬──┬──┬──┬──┬──→ n
           0  1  2  3  4  5  6
 
-  간격(차분) = 모델 상수:
+  Intervals (differences) = Model constants:
   ◄1►◄1/2►◄1/3►◄1/4►◄1/5►◄1/6►
    ★    ★    ★              ★
    ↑    ↑    ↑              ↑
-   전체 리만 부동점         블라인드
+   Whole Riemann Fixed Point       Blind
 ```
 
-조화급수 간격 → 모델 역할:
+Harmonic series interval → Model role:
 ```
-  간격     크기    모델 역할        6의 약수?
+  Interval    Size    Model Role        Divisor of 6?
   ────────────────────────────────────────
-  H₁-H₀   1       전체 시스템       ✅ (d=1)
-  H₂-H₁   1/2     리만 경계         ✅ (d=2)
-  H₃-H₂   1/3     메타 부동점       ✅ (d=3)
-  H₄-H₃   1/4     (미사용)          ❌
-  H₅-H₄   1/5     (미사용)          ❌
-  H₆-H₅   1/6     블라인드 스팟     ✅ (d=6)
+  H₁-H₀   1       Whole System       ✅ (d=1)
+  H₂-H₁   1/2     Riemann Boundary   ✅ (d=2)
+  H₃-H₂   1/3     Meta Fixed Point   ✅ (d=3)
+  H₄-H₃   1/4     (unused)          ❌
+  H₅-H₄   1/5     (unused)          ❌
+  H₆-H₅   1/6     Blind Spot        ✅ (d=6)
   ────────────────────────────────────────
-  → 6의 약수인 인덱스만 모델에 기여!
+  → Only indices that are divisors of 6 contribute to the model!
 ```
 
-## 해석
+## Interpretation
 
-1. **조화급수 선별**: Hₙ의 모든 간격 중 6의 약수에 해당하는 것만 모델을 구성.
-   이는 완전수 6에 의한 "필터링"으로 해석 가능.
+1. **Harmonic Series Selection**: Among all intervals of Hₙ, only those corresponding to divisors of 6 constitute the model.
+   This can be interpreted as "filtering" by the perfect number 6.
 
-2. **제타 함수 연결**: Hₙ → ln(n) + γ (오일러-마스케로니 상수)이고,
-   ζ(s) = Σn⁻ˢ의 s=1 발산 부분이 Hₙ. 즉 모델 = ζ의 발산 구조에서 유한 부분 추출.
+2. **Zeta Function Connection**: Hₙ → ln(n) + γ (Euler-Mascheroni constant), and
+   the divergent part of ζ(s) = Σn⁻ˢ at s=1 is Hₙ. Thus model = extraction of finite parts from ζ's divergent structure.
 
-3. **디감마 함수**: 연속 버전 ψ(n+1) = -γ + Hₙ. 모델 상수들은
-   디감마 함수의 정수점 차분. 이것이 연속↔이산 이중성의 근원.
+3. **Digamma Function**: Continuous version ψ(n+1) = -γ + Hₙ. Model constants are
+   differences at integer points of the digamma function. This is the source of continuous↔discrete duality.
 
-4. **5/6의 이중 표현**: 5/6 = H₃ - H₁ = (H₃-H₂) + (H₂-H₁) = 1/3 + 1/2.
-   Compass 값은 조화급수의 "2단 점프".
+4. **Dual Expression of 5/6**: 5/6 = H₃ - H₁ = (H₃-H₂) + (H₂-H₁) = 1/3 + 1/2.
+   The Compass value is a "2-step jump" in the harmonic series.
 
-## 한계
+## Limitations
 
-- 1/4, 1/5 간격이 미사용인 이유에 대한 독립적 설명 부족
-- 오일러-마스케로니 상수 γ ≈ 0.5772의 모델 내 역할 미탐구
-- 고차 조화급수 H_n^(k) (일반화)와의 연결 미조사
+- Lack of independent explanation for why 1/4, 1/5 intervals are unused
+- Unexplored role of Euler-Mascheroni constant γ ≈ 0.5772 in the model
+- Uninvestigated connection with higher-order harmonic series H_n^(k) (generalized)
 
-## 검증 방향
+## Verification Directions
 
-- γ = lim(Hₙ - ln n)이 모델의 어떤 보정항인지 조사
-- 일반화 조화급수 H_n^(s) = Σk⁻ˢ (k=1..n)에서 s≠1 경우 탐구
-- 디감마 함수 ψ의 영점과 골든존 경계의 관계 분석
+- Investigate whether γ = lim(Hₙ - ln n) is some correction term in the model
+- Explore cases with s≠1 in generalized harmonic series H_n^(s) = Σk⁻ˢ (k=1..n)
+- Analyze relationship between zeros of digamma function ψ and Golden Zone boundaries
 
 ---
 
-*수치 검증 완료. 모든 핵심 상수 = 조화급수의 6-약수 간격.*
+*Numerical verification complete. All core constants = harmonic series intervals at 6-divisor positions.*

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""방향 분석기 — 장력을 크기(확신)와 방향(개념)으로 분해
+"""Direction Analyzer — Decompose tension into magnitude (confidence) and direction (concept)
 
-H339/H341 검증:
+H339/H341 verification:
   output = tension_scale * sqrt(tension) * direction
   direction = normalize(engine_A(x) - engine_G(x))
   magnitude = sqrt(tension) = ||A - G||
 
-사용법:
+Usage:
   python3 calc/direction_analyzer.py --dataset mnist
   python3 calc/direction_analyzer.py --dataset fashion --epochs 20
   python3 calc/direction_analyzer.py --dataset cifar --epochs 15

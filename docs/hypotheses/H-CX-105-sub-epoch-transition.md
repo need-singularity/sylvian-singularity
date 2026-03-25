@@ -1,14 +1,14 @@
-# H-CX-105: 서브에폭 임계점 — 위상 전이가 에폭 0.5에서 발생
+# H-CX-105: Sub-epoch Transition Point — Phase Transition Occurs at Epoch 0.5
 
-> H-CX-90의 30x 전이를 0.1에폭 단위로 추적하면
-> 정확한 전이 시점이 0.3~0.7에폭 사이.
+> Tracking the 30x transition from H-CX-90 in 0.1-epoch increments,
+> the exact transition point is between 0.3 and 0.7 epochs.
 
-## 예측
+## Predictions
 
-1. H0 변화의 80%가 첫 0.5에폭 내에 발생
-2. 전이 시점이 데이터셋 크기에 비례
-3. step 단위 추적에서 급격한 H0 변화 구간 식별 가능
+1. 80% of H0 change occurs within the first 0.5 epochs
+2. Transition point is proportional to dataset size
+3. Abrupt H0 change interval identifiable in step-level tracking
 
-## 검증 상태
+## Verification Status
 
-- [ ] 서브에폭 H0 추적
+- [ ] Sub-epoch H0 tracking

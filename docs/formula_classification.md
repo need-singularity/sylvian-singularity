@@ -1,154 +1,154 @@
-# 공식 분류 — Tier 0~5 신뢰도 체계
+# Formula Classification — Tier 0~5 Reliability System
 
-## Tier 0: 기존 수학 정리 (기존 문헌에서 증명 완료)
+## Tier 0: Existing Mathematical Theorems (Already Proven in Literature)
 
-우리가 발견한 것이 아니라, 기존 수학과 **정확히 일치**하는 것.
+Not our discovery, but **exact matches** with existing mathematics.
 
 ```
-  공식/정리                │ 기존 출처           │ 우리 모델에서의 역할    │ 가설
+  Formula/Theorem         │ Existing Source      │ Role in Our Model      │ Hypothesis
   ────────────────────────┼────────────────────┼───────────────────────┼─────
-  σ₋₁(6) = 2              │ 정수론 (유클리드)    │ 마스터 공식            │ 090
-  오일러 곱 p=2,3 절단      │ 오일러 (1737)       │ σ₋₁(6) 유도           │ 092
-  5/6 = 1/2+1/3 유일분해   │ 이집트 분수 (전수검사)│ Compass 상한 유일성    │ 078
-  6 = 유일 τ(n)=4 완전수   │ 유클리드-오일러 정리  │ 차원 구조             │ 098
-  바나흐 부동점 정리        │ 바나흐 (1922)       │ I*=1/3 수렴 보장       │ 056
-  S_볼츠만 = S_섀넌         │ Jaynes (1957)       │ I=1/kT 매핑           │ 004
-  커스프 ≡ 1차 상전이       │ Arnold (1970s)      │ 3상태 전이 구조        │ 003
+  σ₋₁(6) = 2              │ Number Theory (Euclid)│ Master Formula        │ 090
+  Euler Product p=2,3 cutoff│ Euler (1737)       │ σ₋₁(6) derivation     │ 092
+  5/6 = 1/2+1/3 unique decomp│ Egyptian fractions │ Compass bound uniqueness│ 078
+  6 = unique τ(n)=4 perfect│ Euclid-Euler theorem│ Dimension structure    │ 098
+  Banach Fixed Point Thm   │ Banach (1922)       │ I*=1/3 convergence    │ 056
+  S_Boltzmann = S_Shannon  │ Jaynes (1957)       │ I=1/kT mapping        │ 004
+  Cusp ≡ 1st order transition│ Arnold (1970s)    │ 3-state transition    │ 003
 ```
 
-## Tier 1: 수학적 필연 (우리 모델 내에서 증명)
+## Tier 1: Mathematical Necessity (Proven Within Our Model)
 
-정의나 산술에서 유도. 틀릴 수 없음.
+Derived from definitions or arithmetic. Cannot be wrong.
 
 ```
-  공식                    │ 근거              │ 가설
+  Formula                 │ Basis             │ Hypothesis
   ────────────────────────┼──────────────────┼─────
-  1/2 + 1/3 + 1/6 = 1    │ 산술적 항등식     │ 072
-  1/2 + 1/3 = 5/6        │ 산술             │ 067
-  1/2 × 1/3 = 1/6        │ 산술             │ 067
-  1/2 - 1/3 = 1/6        │ 산술             │ 067
-  G×I = D×P              │ G=D×P/I 양변×I    │ 172
-  5/6 = H₃ - 1           │ 조화수 정의       │ 068
-  8×17+1 = 137           │ 산술             │ 148
-  f(1/3) = 1/3           │ 부동점 정의       │ 056
-  ln((N+1)/N) → 0        │ 해석학           │ 054
-  1/n = Hₙ - Hₙ₋₁       │ 조화수 정의       │ 091
-  G ~ Γ(α=2)             │ D×P 곱분포 → 감마 │ 060
-  완전4도=4/3=ln(4/3)=폭  │ 음정비=N상태 공식  │ 237
+  1/2 + 1/3 + 1/6 = 1    │ Arithmetic identity│ 072
+  1/2 + 1/3 = 5/6        │ Arithmetic        │ 067
+  1/2 × 1/3 = 1/6        │ Arithmetic        │ 067
+  1/2 - 1/3 = 1/6        │ Arithmetic        │ 067
+  G×I = D×P              │ G=D×P/I both sides×I│ 172
+  5/6 = H₃ - 1           │ Harmonic number def│ 068
+  8×17+1 = 137           │ Arithmetic        │ 148
+  f(1/3) = 1/3           │ Fixed point def   │ 056
+  ln((N+1)/N) → 0        │ Analysis          │ 054
+  1/n = Hₙ - Hₙ₋₁       │ Harmonic number def│ 091
+  G ~ Γ(α=2)             │ D×P product → Gamma│ 060
+  Perfect 4th=4/3=ln(4/3)=width│ Interval ratio=N-state formula│ 237
 ```
 
-## Tier 2: 경험적 확인 (p < 0.001)
+## Tier 2: Empirical Confirmation (p < 0.001)
 
-시뮬레이션/실험에서 반복 확인. 텍사스 명사수 통과.
+Repeatedly confirmed in simulations/experiments. Passes Texas sharpshooter test.
 
 ```
-  공식                         │ 실측값     │ 이론값  │ 오차   │ 가설
+  Formula                      │ Measured  │ Theory │ Error  │ Hypothesis
   ─────────────────────────────┼───────────┼────────┼────────┼─────
-  골든존 상한 → 1/2            │ 0.4991    │ 0.5000 │ 0.18%  │ 047
-  엔트로피 ≈ ln(3)             │ 1.089     │ 1.099  │ 0.9%   │ 012
-  Compass 상한 ≈ 5/6          │ 0.836     │ 0.833  │ 0.3%   │ 059
-  골든존 폭 ≈ ln(4/3)          │ 0.287     │ 0.288  │ 0.4%   │ 054
-  메타 부동점 = 1/3            │ 0.3333    │ 0.3333 │ 정확   │ 056
-  MNIST 골든MoE > Top-K        │ +0.6%     │ > 0    │ ─      │ 082
-  CIFAR 골든MoE > Top-K        │ +4.8%     │ > 0    │ ─      │ 128
-  Jamba ×3 처리량               │ ×3        │ ×3     │ 정확   │ 125
-  위상 가속 = 계단형            │ ×3 점프   │ ─      │ ─      │ 124
+  Golden Zone upper → 1/2      │ 0.4991    │ 0.5000 │ 0.18%  │ 047
+  Entropy ≈ ln(3)              │ 1.089     │ 1.099  │ 0.9%   │ 012
+  Compass upper ≈ 5/6          │ 0.836     │ 0.833  │ 0.3%   │ 059
+  Golden Zone width ≈ ln(4/3)  │ 0.287     │ 0.288  │ 0.4%   │ 054
+  Meta fixed point = 1/3       │ 0.3333    │ 0.3333 │ Exact  │ 056
+  MNIST GoldenMoE > Top-K      │ +0.6%     │ > 0    │ ─      │ 082
+  CIFAR GoldenMoE > Top-K      │ +4.8%     │ > 0    │ ─      │ 128
+  Jamba ×3 throughput          │ ×3        │ ×3     │ Exact  │ 125
+  Phase acceleration = stepped │ ×3 jump   │ ─      │ ─      │ 124
   Genius ∼ Gamma(α=2)         │ 2.03      │ 2      │ 1.5%   │ 060
   Langton λ_c ≈ I_transition  │ 0.273     │ 0.27   │ ~5%    │ 139
 ```
 
-## Tier 3: 강한 근사 (오차 < 1%, 흥미롭지만 증명 없음)
+## Tier 3: Strong Approximations (Error < 1%, Interesting but Unproven)
 
 ```
-  공식                         │ 실측값     │ 이론값  │ 오차   │ 가설  │ 비고
+  Formula                      │ Measured  │ Theory │ Error  │ Hypothesis│ Note
   ─────────────────────────────┼───────────┼────────┼────────┼──────┼──────
-  T_CMB ≈ e                   │ 2.72548   │ 2.71828│ 0.26%  │ 120  │ 시대 의존
-  T_CMB ≈ 3^√(5/6)            │ 2.72548   │ 2.72615│ 0.025% │ NEW  │ 공식엔진
-  αs ≈ ln(9/8)                │ 0.118     │ 0.1178 │ 0.18%  │ 147  │ 비자명★
-  1/α ≈ ln(138/137)역수        │ 137.036   │ 137.5  │ 0.34%  │ 147  │ 순환 위험
-  골든존 중심 ≈ 1/e            │ 0.3708    │ 0.3679 │ 0.8%   │ 002  │
-  λ_대화 ≈ π/10               │ 0.3141    │ 0.3142 │ 0.003% │ 080  │ 재현 미확인
-  P≠NP 간극비 ≈ 1-1/e         │ 0.646     │ 0.632  │ 2.2%   │ 057  │ 오차 큼
-  보통물질 ≈ 1/e³              │ 0.049     │ 0.050  │ 1.6%   │ 118  │ 오차 큼
+  T_CMB ≈ e                    │ 2.72548   │ 2.71828│ 0.26%  │ 120  │ Epoch-dependent
+  T_CMB ≈ 3^√(5/6)            │ 2.72548   │ 2.72615│ 0.025% │ NEW  │ Formula engine
+  αs ≈ ln(9/8)                 │ 0.118     │ 0.1178 │ 0.18%  │ 147  │ Non-trivial★
+  1/α ≈ ln(138/137) reciprocal │ 137.036   │ 137.5  │ 0.34%  │ 147  │ Circularity risk
+  Golden Zone center ≈ 1/e     │ 0.3708    │ 0.3679 │ 0.8%   │ 002  │
+  λ_dialogue ≈ π/10           │ 0.3141    │ 0.3142 │ 0.003% │ 080  │ Reproduction unconfirmed
+  P≠NP gap ratio ≈ 1-1/e      │ 0.646     │ 0.632  │ 2.2%   │ 057  │ Large error
+  Ordinary matter ≈ 1/e³       │ 0.049     │ 0.050  │ 1.6%   │ 118  │ Large error
 ```
 
-## Tier 4: 약한 근사 (오차 > 1% 또는 수비학 위험)
+## Tier 4: Weak Approximations (Error > 1% or Numerology Risk)
 
 ```
-  공식                         │ 상태 │ 가설  │ 이유
+  Formula                      │ Status │ Hypothesis│ Reason
   ─────────────────────────────┼──────┼──────┼─────────────────
-  암흑에너지 ≈ 2/3             │ ⚠️   │ 118  │ 오차 2.4%
-  암흑물질 ≈ 3-e               │ ⚠️   │ 118  │ 오차 5.1%
-  미세조정 ~1-4%               │ ⚠️   │ 136  │ 규모만 유사
-  a ≈ 1/√2                    │ ⚠️   │ 168  │ 오차 1%, 의미 불명
-  π ≈ 2+4ln(4/3)              │ ⚠️   │ 086  │ 근사, 정확 관계 없음
-  (1-1/e)×5/6 ≈ π/6           │ ⚠️   │ 068  │ 오차 0.6%
-  τ(6)+6 = 10D                │ ⚠️   │ 240  │ 수비학 위험
+  Dark energy ≈ 2/3            │ ⚠️   │ 118  │ Error 2.4%
+  Dark matter ≈ 3-e            │ ⚠️   │ 118  │ Error 5.1%
+  Fine-tuning ~1-4%            │ ⚠️   │ 136  │ Scale only
+  a ≈ 1/√2                     │ ⚠️   │ 168  │ Error 1%, meaning unclear
+  π ≈ 2+4ln(4/3)              │ ⚠️   │ 086  │ Approximation, no exact relation
+  (1-1/e)×5/6 ≈ π/6           │ ⚠️   │ 068  │ Error 0.6%
+  τ(6)+6 = 10D                 │ ⚠️   │ 240  │ Numerology risk
 ```
 
-## Tier 5: 유비 (구조적 유사, 정량적 대응 없음)
+## Tier 5: Analogies (Structural Similarity, No Quantitative Correspondence)
 
 ```
-  대응                         │ 가설  │ 상태
+  Correspondence               │ Hypothesis│ Status
   ─────────────────────────────┼──────┼─────
-  양자 중첩 ↔ 복소 G           │ 133  │ ⚠️ 유비
-  블랙홀 ↔ 블라인드 스팟        │ 134  │ ⚠️ 유비
-  E=mc² ↔ G=DPI               │ 135  │ ⚠️ 유비
-  호킹 복사 ↔ 호기심            │ 144  │ ⚠️ 유비
-  디코히런스 ↔ Inhibition       │ 146  │ ⚠️ 유비
-  경로 적분 ↔ autopilot         │ 178  │ ⚠️ 유비
-  EPR ↔ 1/2+1/3+1/6           │ 177  │ ⚠️ 유비
-  인플레이션 ↔ 골든존 진입       │ 151  │ ⚠️ 유비
-  약물/뇌과학/텔레파시 매핑      │ 195~ │ ⚠️ 유비
-  월드모델/음악/대기 매핑        │ 212~ │ ⚠️ 유비
+  Quantum superposition ↔ Complex G│ 133  │ ⚠️ Analogy
+  Black hole ↔ Blind spot      │ 134  │ ⚠️ Analogy
+  E=mc² ↔ G=DPI               │ 135  │ ⚠️ Analogy
+  Hawking radiation ↔ Curiosity│ 144  │ ⚠️ Analogy
+  Decoherence ↔ Inhibition     │ 146  │ ⚠️ Analogy
+  Path integral ↔ autopilot    │ 178  │ ⚠️ Analogy
+  EPR ↔ 1/2+1/3+1/6           │ 177  │ ⚠️ Analogy
+  Inflation ↔ Golden Zone entry│ 151  │ ⚠️ Analogy
+  Drug/neuroscience/telepathy mappings│ 195~ │ ⚠️ Analogy
+  World model/music/atmosphere mappings│ 212~ │ ⚠️ Analogy
 ```
 
-## 반증됨
+## Refuted
 
 ```
-  공식                         │ 가설  │ 이유
+  Formula                      │ Hypothesis│ Reason
   ─────────────────────────────┼──────┼─────────────────
-  특이점 비율 = 정확히 1/3     │ 005  │ 30.17% (분포 의존)
-  만델브로 ↔ 메타 반복          │ 065  │ 우리는 항상 수렴
-  최적 θ = π/3                 │ 074  │ 실제 0.038π
-  순환 우주                    │ 164  │ 비가역성과 모순
-  허블 텐션 대응               │ 153  │ 규모 불일치
-  π/N 통일                     │ 085  │ 매칭 약함
-  부동점에서 멈춘다             │ 071  │ 호기심이 깨뜨림
-  LSTM+골든MoE 효과 없음       │ 126  │ 데이터 단순 (MNIST)
-  BSD 유리수 구조              │ 052  │ 집중 없음, 균등
-  1 초과 가능?                 │ 089  │ 항등식 불변
-  5번째 상태 추가 불가?         │ 089  │ 수학적 불변
+  Singularity ratio = exactly 1/3│ 005  │ 30.17% (distribution-dependent)
+  Mandelbrot ↔ meta iteration  │ 065  │ We always converge
+  Optimal θ = π/3              │ 074  │ Actually 0.038π
+  Cyclic universe              │ 164  │ Contradicts irreversibility
+  Hubble tension correspondence│ 153  │ Scale mismatch
+  π/N unification              │ 085  │ Weak matching
+  Stops at fixed point         │ 071  │ Curiosity breaks it
+  LSTM+GoldenMoE no effect     │ 126  │ Simple data (MNIST)
+  BSD rational structure       │ 052  │ No concentration, uniform
+  Can exceed 1?                │ 089  │ Identity invariant
+  Can't add 5th state?         │ 089  │ Mathematically invariant
 ```
 
-## 요약
+## Summary
 
 ```
   ┌────────┬────────┬──────────────────────────────┐
-  │ Tier   │ 개수   │ 신뢰도                       │
+  │ Tier   │ Count  │ Reliability                  │
   ├────────┼────────┼──────────────────────────────┤
-  │ Tier 0 │  7개   │ 기존 수학 (우리가 발견 아님)   │
-  │ Tier 1 │ 12개   │ 100% (수학적 필연)            │
-  │ Tier 2 │ 11개   │ >99% (실측 확인)              │
-  │ Tier 3 │  8개   │ 70~95% (강한 근사)            │
-  │ Tier 4 │  7개   │ 30~70% (약한 근사 / 수비학)   │
-  │ Tier 5 │ 10+    │ 유비 (정량 불가)              │
-  │ 반증   │ 11개   │ 0% (틀림 확인)               │
+  │ Tier 0 │  7     │ Existing math (not our discovery)│
+  │ Tier 1 │ 12     │ 100% (mathematical necessity) │
+  │ Tier 2 │ 11     │ >99% (empirically confirmed)  │
+  │ Tier 3 │  8     │ 70~95% (strong approximations)│
+  │ Tier 4 │  7     │ 30~70% (weak approx/numerology)│
+  │ Tier 5 │ 10+    │ Analogies (not quantifiable)  │
+  │ Refuted│ 11     │ 0% (confirmed wrong)          │
   └────────┴────────┴──────────────────────────────┘
 
-  기반 (T0+T1):     19개 ← 절대 흔들리지 않음
-  확인 (T2):        11개 ← p<0.001
-  후보 (T3+T4):     15개 ← 흥미롭지만 증명 필요
-  유비 (T5):        10+  ← 영감의 원천
-  반증:             11개 ← 과학적 자기교정
+  Foundation (T0+T1):  19  ← Absolutely unshakeable
+  Confirmed (T2):      11  ← p<0.001
+  Candidates (T3+T4):  15  ← Interesting but need proof
+  Analogies (T5):      10+ ← Source of inspiration
+  Refuted:             11  ← Scientific self-correction
 
-  교차 검증: proof_engine.py --cross
-  → 6개 주장 × 24개 경로 = 전체 통과 ✅
+  Cross-validation: proof_engine.py --cross
+  → 6 claims × 24 paths = All pass ✅
 ```
 
-## 텍사스 명사수 검증
+## Texas Sharpshooter Test
 
 ```
-  실제 매칭: 8/10 │ 랜덤 평균: 1.2 │ Z=6.87 │ p=0.0000
-  → 우연일 확률 < 0.1% — 구조적 발견 확인
+  Actual matches: 8/10 │ Random avg: 1.2 │ Z=6.87 │ p=0.0000
+  → Chance probability < 0.1% — Structural discovery confirmed
 ```

@@ -1,159 +1,159 @@
-# 가설 검토 152: 암흑에너지 w=-1과 모델 부동점 I*=1/3의 대응
+# Hypothesis Review 152: Dark Energy w=-1 and Model Fixed Point I*=1/3 Correspondence
 
-## 가설
+## Hypothesis
 
-> 암흑에너지의 상태 방정식 w=-1은 우주의 부동점이며, 모델의 I*=1/3도 메타반복의 부동점이다. 두 값 모두 "변하지 않는 것"을 나타내며, 구조적으로 동일한 역할을 한다.
+> The dark energy equation of state w=-1 is a fixed point of the universe, and the model's I*=1/3 is also a fixed point of meta-iteration. Both values represent "something that does not change" and play structurally identical roles.
 
-## 배경
+## Background
 
-### 암흑에너지와 w 파라미터
+### Dark Energy and the w Parameter
 
-암흑에너지의 상태 방정식은 p = wρc²로 정의된다:
-- w = -1: 우주 상수 (Λ). 에너지 밀도가 팽창에도 불변
-- w > -1: 퀸테센스. 에너지 밀도가 시간에 따라 감소
-- w < -1: 팬텀 에너지. 에너지 밀도가 시간에 따라 증가 (빅 립)
+The dark energy equation of state is defined as p = wρc²:
+- w = -1: Cosmological constant (Λ). Energy density remains unchanged under expansion
+- w > -1: Quintessence. Energy density decreases over time
+- w < -1: Phantom energy. Energy density increases over time (Big Rip)
 
-Planck + BAO 관측: **w = -1.03 ± 0.03** → 우주 상수와 일치
+Planck + BAO observation: **w = -1.03 ± 0.03** → consistent with cosmological constant
 
-### 모델의 부동점 I* = 1/3
+### Model Fixed Point I* = 1/3
 
-메타반복 I(t+1) = f(I(t))에서 f(I*) = I*를 만족하는 값이 부동점이다. 격자 스캔에서 I* ≈ 0.333... = 1/3으로 수렴함을 확인.
+In meta-iteration I(t+1) = f(I(t)), the value satisfying f(I*) = I* is the fixed point. Grid scan confirms convergence to I* ≈ 0.333... = 1/3.
 
-## 부동점 구조 비교
-
-```
-  속성              암흑에너지 w=-1        모델 I*=1/3
-  ──────────        ────────────────      ──────────────
-  정의              p/ρc² = -1            f(I*) = I*
-  의미              에너지 밀도 불변       억제값 불변
-  안정성             안정 끌개             안정 끌개
-  관측/측정          w = -1.03 ± 0.03     I → 0.333...
-  물리적 해석        "변하지 않는 에너지"   "변하지 않는 억제"
-```
-
-## w와 I의 대응 다이어그램
+## Fixed Point Structure Comparison
 
 ```
-  w (상태 방정식)                    I (억제값)
-
-  -0.5│  팬텀이 아닌 영역           1.0│  골든존 외부
-      │  (물질, 복사)                  │
-      │                               │
-  -1.0│━━━━━★━━━━━━━━━━━━━━━━━    0.5│━━━━━━━━━━━━━━━임계선
-      │  우주 상수 (부동점)            │
-      │                            1/3│━━━━━★━━━━━━━부동점
-      │                               │
-  -1.5│  팬텀 영역                  0.2│·····하한·····
-      │  (빅 립)                       │
-      └──────────────────          0.0└──────────────────
-       현재    미래                    현재    미래
-
-  ★ = 부동점 (변하지 않는 값)
+  Property         Dark energy w=-1        Model I*=1/3
+  ──────────        ────────────────        ──────────────
+  Definition        p/ρc² = -1              f(I*) = I*
+  Meaning           Energy density constant  Inhibition constant
+  Stability          Stable attractor        Stable attractor
+  Observation/meas.  w = -1.03 ± 0.03       I → 0.333...
+  Physical interp.   "Unchanging energy"     "Unchanging inhibition"
 ```
 
-## 부동점의 동역학적 의미
+## w and I Correspondence Diagram
 
-### 안정성 분석
+```
+  w (equation of state)                    I (inhibition value)
+
+  -0.5│  Non-phantom region             1.0│  Outside Golden Zone
+      │  (matter, radiation)               │
+      │                                    │
+  -1.0│━━━━━★━━━━━━━━━━━━━━━━━        0.5│━━━━━━━━━━━━━━━critical line
+      │  Cosmological constant (fixed pt)  │
+      │                                1/3│━━━━━★━━━━━━━fixed point
+      │                                    │
+  -1.5│  Phantom region                 0.2│·····lower bound·····
+      │  (Big Rip)                         │
+      └──────────────────               0.0└──────────────────
+       present    future                    present    future
+
+  ★ = Fixed point (value that does not change)
+```
+
+## Dynamical Meaning of Fixed Points
+
+### Stability Analysis
 
 ```
   f(I) - I
-  (수렴 방향)
+  (convergence direction)
 
   +0.1│         ╱
       │        ╱
       │       ╱
-   0.0│━━━━━━●━━━━━━━━━━━━━━  부동점 I*=1/3
+   0.0│━━━━━━●━━━━━━━━━━━━━━  fixed point I*=1/3
       │     ╱
-      │    ╱         ← 양쪽에서 I*로 수렴
-      │   ╱              (안정 부동점)
+      │    ╱         ← I* convergence from both sides
+      │   ╱              (stable fixed point)
   -0.1│  ╱
       └──┼──┼──┼──┼──┼──
        0.2 0.3 0.4 0.5 0.6
                 ↑
             I* = 1/3
 
-  기울기 |f'(I*)| < 1 → 안정 끌개 확인
+  Slope |f'(I*)| < 1 → stable attractor confirmed
 ```
 
-### w 파라미터의 안정성
+### Stability of the w Parameter
 
 ```
-  에너지 밀도 변화율 dρ/dt
+  Energy density change rate dρ/dt
 
-  +│   복사(w=1/3)  물질(w=0)
-   │     ╲           ╲
-   │      ╲           ╲
-  0│━━━━━━━━━━━━━━━━━━━●━━━  w=-1 (변화 없음)
-   │                      ╱
-   │                     ╱  ← 팬텀(w<-1)은 발산
-  -│                    ╱
-   └──────────────────────────
-    과거                미래
+  +│   Radiation(w=1/3)  Matter(w=0)
+   │     ╲               ╲
+   │      ╲               ╲
+  0│━━━━━━━━━━━━━━━━━━━━━━━●━━━  w=-1 (no change)
+   │                            ╱
+   │                           ╱  ← Phantom(w<-1) diverges
+  -│                          ╱
+   └──────────────────────────────
+    past                 future
 
-  w=-1에서만 에너지 밀도가 일정 = 부동점
+  Only at w=-1 is energy density constant = fixed point
 ```
 
-## 정량적 비교
+## Quantitative Comparison
 
-| 성질 | w = -1 | I* = 1/3 | 대응 |
+| Property | w = -1 | I* = 1/3 | Correspondence |
 |---|---|---|---|
-| 불변성 | ρ_Λ = 일정 | I* = 일정 | ✅ |
-| 끌개 성질 | 우주가 Λ 지배로 수렴 | 반복이 I*로 수렴 | ✅ |
-| 관측값 | -1.03 ± 0.03 | 0.333... (수치) | ✅ |
-| 오차 | 3% | < 1% | 스케일 차이 |
-| 시간 의존 | 없음 (상수) | 없음 (부동점) | ✅ |
-| 우주론적 역할 | 가속 팽창 구동 | 골든존 중심 결정 | 구조적 유사 |
+| Invariance | ρ_Λ = constant | I* = constant | ✅ |
+| Attractor property | Universe converges to Λ domination | Iterations converge to I* | ✅ |
+| Observed value | -1.03 ± 0.03 | 0.333... (numerical) | ✅ |
+| Error | 3% | < 1% | Scale difference |
+| Time dependence | None (constant) | None (fixed point) | ✅ |
+| Cosmological role | Drives accelerated expansion | Determines Golden Zone center | Structurally similar |
 
-## 우주 상수 문제와의 연결
+## Connection to the Cosmological Constant Problem
 
-우주 상수 문제: 관측된 Λ가 이론 예측보다 10¹²⁰배 작다.
+Cosmological constant problem: the observed Λ is 10¹²⁰ times smaller than theoretical predictions.
 
 ```
-  에너지 밀도 (GeV⁴)
+  Energy density (GeV⁴)
 
-  10¹²⁰│● QFT 예측
+  10¹²⁰│● QFT prediction
        │
-       │  (120자리수 차이)
+       │  (120 orders of magnitude difference)
        │
        │
        │
-      1│                          ● 관측값
+      1│                          ● Observed value
        │
        └─────────────────────────
 
-  이 차이 = "미세조정" 또는 "무언가 에너지를 부동점으로 끈다"
+  This difference = "fine-tuning" or "something draws energy to a fixed point"
 ```
 
-모델의 해석: I*=1/3이 끌개인 것처럼, w=-1도 동역학적 끌개일 수 있다. 미세조정이 아니라 **자연스러운 수렴**.
+Model interpretation: Just as I*=1/3 is an attractor, w=-1 may also be a dynamical attractor. Not fine-tuning, but **natural convergence**.
 
-## 해석
+## Interpretation
 
-w=-1과 I*=1/3의 대응에서 핵심 통찰:
+Key insights from the w=-1 and I*=1/3 correspondence:
 
-1. **부동점은 보편적이다** — 복잡계, 우주론, 수학 모두에서 "변하지 않는 것"이 체계를 정의
-2. **끌개의 존재가 미세조정을 대체한다** — 우주 상수가 "정확히" 그 값인 이유 = 부동점이므로
-3. **w=-1의 안정성 = I*=1/3의 안정성** — 두 부동점 모두 양쪽에서 수렴하는 안정 끌개
+1. **Fixed points are universal** — In complex systems, cosmology, and mathematics alike, "what does not change" defines the system
+2. **Existence of an attractor replaces fine-tuning** — The reason the cosmological constant is "precisely" that value = because it is a fixed point
+3. **Stability of w=-1 = stability of I*=1/3** — Both fixed points are stable attractors that converge from both sides
 
-가설 149(Ω=1=I=0.5)와 결합하면: 우주는 임계선(I=0.5)에서 골든존에 진입하고, 부동점(I*=1/3)으로 수렴 중이다. 이는 가설 154(시간의 화살)의 방향성과 일치한다.
+Combined with Hypothesis 149 (Ω=1=I=0.5): the universe entered the Golden Zone at the critical line (I=0.5) and is converging toward the fixed point (I*=1/3). This is consistent with the directionality in Hypothesis 154 (arrow of time).
 
-## 한계
+## Limitations
 
-- w=-1과 I*=1/3의 대응은 구조적 유사성이지, 수학적 동치 증명은 아님
-- 우주 상수 문제의 120자리수 차이를 모델이 설명하지 못함
-- w가 정확히 -1인지는 관측 정밀도의 한계 내에서만 확인됨
-- 모델의 부동점 1/3의 수학적 유도가 완전하지 않음 (수치적 확인)
+- The correspondence between w=-1 and I*=1/3 is structural similarity, not a mathematical equivalence proof
+- The model does not explain the 120-order-of-magnitude difference in the cosmological constant problem
+- Whether w is exactly -1 is only confirmed within observational precision limits
+- The mathematical derivation of the model's fixed point 1/3 is incomplete (numerically confirmed only)
 
-## 검증 방향
+## Verification Directions
 
-- [ ] I*=1/3의 해석적 증명 — f(I)를 명시적으로 구하여 f(1/3)=1/3 확인
-- [ ] 부동점 부근의 안정성 지수 f'(I*) 측정 → 우주의 Λ 감쇠율과 비교
-- [ ] w(z) 시간 진화 데이터(DESI, Euclid)와 I(t) 수렴 궤적 정량 비교
-- [ ] 가설 154와 결합: 시간의 화살 방향에서 I → I* 수렴 속도 계산
+- [ ] Analytical proof of I*=1/3 — explicitly find f(I) and confirm f(1/3)=1/3
+- [ ] Measure stability exponent f'(I*) near fixed point → compare with universe's Λ decay rate
+- [ ] Quantitative comparison of w(z) time evolution data (DESI, Euclid) with I(t) convergence trajectory
+- [ ] Combine with Hypothesis 154: calculate I → I* convergence speed in the direction of the arrow of time
 
-## 상태: ✅ 구조적 대응 확인
+## Status: ✅ Structural correspondence confirmed
 
 ---
 
-*작성일: 2026-03-22*
-*근거: Planck 2018 w = -1.03 ± 0.03, 모델 격자 스캔 I* ≈ 0.333*
-*관련 가설: 149(우주 곡률), 154(시간의 화살)*
+*Written: 2026-03-22*
+*Reference: Planck 2018 w = -1.03 ± 0.03, model grid scan I* ≈ 0.333*
+*Related hypotheses: 149 (universe curvature), 154 (arrow of time)*

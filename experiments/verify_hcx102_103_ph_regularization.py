@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""H-CX-102 + H-CX-103: PH 정규화 + 장력×위상 의식 지표
+"""H-CX-102 + H-CX-103: PH Regularization + Tension×Topology Consciousness Index
 
-H-CX-102: loss = CE + lambda * H0_gap → 과적합 감소?
-H-CX-103: tension × H0 = 통합 의식 지표
+H-CX-102: loss = CE + lambda * H0_gap → Overfit reduction?
+H-CX-103: tension × H0 = Integrated consciousness index
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -74,7 +74,7 @@ def train_baseline(dim, tl, te, n_cls, epochs=20):
 
 
 def train_ph_regularized(dim, tl, te, n_cls, epochs=20, ph_lambda=0.1):
-    """PH 정규화: 매 K 스텝마다 H0_gap 계산하여 loss에 추가"""
+    """PH Regularization: Compute H0_gap every K steps and add to loss"""
     torch.manual_seed(42)
     model = PureFieldEngine(dim, 128, 10)
     opt = torch.optim.Adam(model.parameters(), lr=1e-3)
@@ -219,7 +219,7 @@ if __name__ == '__main__':
             import traceback; traceback.print_exc()
 
     print(f"\n{'='*70}")
-    print(f"  10라운드 SUMMARY")
+    print(f"  Round 10 SUMMARY")
     print(f"{'='*70}")
     for ds, r in results.items():
         print(f"  {ds}: base={r['base_acc']:.1f}% reg={r['best_reg_acc']:.1f}%(λ={r['best_lam']}) "

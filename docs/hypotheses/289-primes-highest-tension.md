@@ -1,57 +1,57 @@
-# 가설 289: 소수 = 최고 장력 (교차 도메인: 정수론 ↔ 의식)
+# Hypothesis 289: Primes = Highest Tension (Cross-domain: Number Theory ↔ Consciousness)
 
-> **숫자 체계 분류에서 소수(prime)가 가장 높은 장력을 생성한다. 소수의 불규칙성이 엔진 간 최대 반발을 만든다. 정수론의 "소수의 신비"가 의식엔진의 장력으로 측정 가능.**
+> **Prime numbers generate the highest tension in number system classification. The irregularity of primes creates maximum repulsion between engines. The "mystery of primes" in number theory is measurable as tension in consciousness engines.**
 
-## 실측
+## Measurement
 
 ```
   experiment_number_repulsion.py:
-    반발력장: 95.40% (Dense 94.23%, +1.17%)
+    Repulsion Field: 95.40% (Dense 94.23%, +1.17%)
 
-    클래스별 장력 (추정):
-      소수: 최고 장력 (가장 불규칙, 약수 패턴 없음)
-      완전제곱: 중간
-      피보나치: 중간
-      2의 거듭제곱: 낮음 (규칙적)
+    Tension by class (estimated):
+      Primes: Highest tension (most irregular, no divisor pattern)
+      Perfect squares: Medium
+      Fibonacci: Medium
+      Powers of 2: Low (regular)
 ```
 
-## 수학 교차
+## Mathematical Crossing
 
 ```
-  소수: 약수가 {1, p}만 → 가장 불규칙 → 엔진 간 합의 어려움
-  완전수(6): σ₋₁=2 → 완전한 균형 → 장력 기준점
-  소수의 장력이 높다 = 리만 제타 영점의 불규칙성과 대응?
-  → H-CX 연결: ζ 영점 분포 ↔ 소수 장력 분포?
+  Primes: Divisors only {1, p} → Most irregular → Hard consensus between engines
+  Perfect number (6): σ₋₁=2 → Perfect balance → Tension baseline
+  High tension in primes = Corresponds to irregularity of Riemann zeta zeros?
+  → H-CX connection: ζ zero distribution ↔ Prime tension distribution?
 ```
 
-## 실험 결과 (2026-03-24)
+## Experiment Results (2026-03-24)
 
 ```
-  숫자 유형별 장력 순위 (높→낮):
-    #1: PerfNumber    721.24  ← 예상 외! 완전수가 최고
+  Tension ranking by number type (high→low):
+    #1: PerfNumber    721.24  ← Unexpected! Perfect numbers highest
     #2: Prime          85.15
     #3: Fibonacci      77.03
     #4: PerfSquare     71.15
     #5: CompOther      53.94
     #6: Pow2           50.84
 
-  분석:
-    소수 = 2위 (최고 아님) → H289a 반박
-    완전수 = 1위 (최저 예상) → H289b 반박
-    완전수의 장력이 압도적 (8.5x vs Prime)
+  Analysis:
+    Primes = 2nd place (not highest) → Refutes H289a
+    Perfect numbers = 1st place (expected lowest) → Refutes H289b
+    Perfect number tension overwhelming (8.5x vs Prime)
 
-  왜 완전수가 최고?
-    완전수(6, 28, 496, 8128, ...)는 극히 드묾 → 희소 클래스
-    희소 클래스 = 엔진 간 합의 어려움 = 높은 장력
-    → "불규칙성"이 아니라 "희소성"이 장력의 원인
+  Why are perfect numbers highest?
+    Perfect numbers (6, 28, 496, 8128, ...) are extremely rare → Sparse class
+    Sparse class = Hard consensus between engines = High tension
+    → Not "irregularity" but "sparsity" causes tension
 
-  소수는 2위:
-    소수는 전체의 ~17% → 중간 빈도
-    불규칙성 있지만 충분한 학습 데이터
-    → 불규칙+적당한 빈도 = 중간 장력
+  Primes in 2nd place:
+    Primes are ~17% of all → Medium frequency
+    Irregular but sufficient training data
+    → Irregular + moderate frequency = medium tension
 ```
 
-### ASCII 장력 막대그래프
+### ASCII Tension Bar Chart
 
 ```
   PerfNumber |####################################################| 721.2
@@ -62,13 +62,13 @@
   Pow2       |###.                                                 |  50.8
 ```
 
-## 수정된 가설
+## Modified Hypothesis
 
 ```
-  원래: "소수 = 최고 장력" (불규칙성 ∝ 장력)
-  수정: "희소 클래스 = 최고 장력" (빈도 ∝ 1/장력)
-  → 장력은 "패턴의 불규칙성"보다 "학습 데이터의 희소성"에 더 민감
-  → 완전수가 가장 드문 숫자 유형 → 장력 최대
+  Original: "Primes = highest tension" (irregularity ∝ tension)
+  Modified: "Sparse classes = highest tension" (frequency ∝ 1/tension)
+  → Tension more sensitive to "learning data sparsity" than "pattern irregularity"
+  → Perfect numbers are rarest number type → Maximum tension
 ```
 
-## 상태: ⬛ 반박됨 (소수 ≠ 최고, 완전수가 최고 = 희소성 효과)
+## Status: ⬛ Refuted (Primes ≠ highest, Perfect numbers highest = sparsity effect)

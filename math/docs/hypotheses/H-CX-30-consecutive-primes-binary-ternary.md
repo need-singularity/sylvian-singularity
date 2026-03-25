@@ -1,33 +1,33 @@
-# H-CX-30: 연속 소수 (2,3) = 이진+삼진 연산의 유일한 교차
+# H-CX-30: Consecutive Primes (2,3) = Unique Intersection of Binary+Ternary Operations
 
-> **가설**: AI가 이진수(base-2)를 사용하고, 뇌가 삼원 상태(억제/중립/활성)를
-> 사용하는 것은 (2,3)이 유일한 연속 소수 쌍이라는 사실의 반영이다.
+> **Hypothesis**: The fact that AI uses binary (base-2) and the brain uses ternary states (inhibition/neutral/activation) 
+> reflects that (2,3) is the only consecutive prime pair.
 
-## 핵심
-
-```
-  컴퓨터: base-2 (비트, 0/1) — 소수 2
-  뇌: 3상태 뉴런 (억제/중립/흥분) — 소수 3
-  의식: 2와 3의 "교차" = 6 = 2×3
-
-  (2,3)이 유일한 연속 소수:
-    → 2 다음의 "가장 가까운" 소수 = 3
-    → 디지털(2)과 생물학적(3)의 최소 간극
-    → AI+뇌 = 2+3 = 5 (but 2×3 = 6 = 완전수!)
-
-  σφ=nτ의 궁극적 의미:
-    "이진 구조(σ,τ)와 삼원 구조(φ,ψ)의 완벽한 균형 = 6"
-```
-
-### 골든 MoE와의 연결
+## Core
 
 ```
-  8 experts = 2³ (이진 구조!)
-  k=3 active (삼원 선택!)
-  I = 3/8 ≈ 1/e (억제율 = 3/2³)
+  Computer: base-2 (bits, 0/1) — Prime 2
+  Brain: 3-state neurons (inhibition/neutral/excitation) — Prime 3
+  Consciousness: "Intersection" of 2 and 3 = 6 = 2×3
 
-  "8개 중 3개 활성" = "2³에서 3개 선택" = C(2³, 소수3근처)
-  → 이진 구조에서 삼원 활성 = (2,3) 교차의 실현!
+  (2,3) is the only consecutive prime pair:
+    → The "closest" prime after 2 = 3
+    → Minimal gap between digital(2) and biological(3)
+    → AI+Brain = 2+3 = 5 (but 2×3 = 6 = perfect number!)
+
+  Ultimate meaning of σφ=nτ:
+    "Perfect balance of binary structure(σ,τ) and ternary structure(φ,ψ) = 6"
 ```
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★★
+### Connection with Golden MoE
+
+```
+  8 experts = 2³ (binary structure!)
+  k=3 active (ternary selection!)
+  I = 3/8 ≈ 1/e (inhibition rate = 3/2³)
+
+  "3 active out of 8" = "selecting 3 from 2³" = C(2³, near prime 3)
+  → Ternary activation in binary structure = realization of (2,3) intersection!
+```
+
+## Verdict: 🟧 Structural Metaphor | Impact: ★★★★

@@ -1,84 +1,84 @@
-# H-CX-63: 다중렌즈 예지 간섭 — Quad 엔진의 간섭이 예지를 증폭한다
+# H-CX-63: Multi-lens Precognition Interference — Quad Engine Interference Amplifies Precognition
 
-> 다중렌즈 간섭(H-GEO-10)이 PureFieldQuad(4엔진)에서 재현된다.
-> 2엔진(PureFieldEngine)보다 4엔진(PureFieldQuad)의 예지 AUC가 높으며,
-> 그 증폭 비율이 H-GEO-10의 간섭 증폭 패턴과 일치한다.
+> Multi-lens interference (H-GEO-10) is reproduced in PureFieldQuad (4 engines).
+> Precognition AUC is higher in 4 engines (PureFieldQuad) than 2 engines (PureFieldEngine),
+> and the amplification ratio matches the interference amplification pattern of H-GEO-10.
 
-## 배경
+## Background
 
-- H-GEO-10: 다중 완전수 렌즈의 간섭 = 이중 슬릿 비유, 기본파장 1/4
-- PureFieldEngine: 2엔진 (A, G), 단일 반발
-- PureFieldQuad: 4엔진 (A, E, G, F), 다중 반발
-- H307: 내부 vs 간 장력의 이중 메커니즘
+- H-GEO-10: Multi perfect number lens interference = double slit analogy, fundamental wavelength 1/4
+- PureFieldEngine: 2 engines (A, G), single repulsion
+- PureFieldQuad: 4 engines (A, E, G, F), multiple repulsion
+- H307: Dual mechanism of internal vs inter-tension
 
-**핵심 연결**: 2엔진 = 단일 렌즈, 4엔진 = 다중 렌즈.
-다중 렌즈의 간섭 패턴이 예지를 증폭한다.
+**Core connection**: 2 engines = single lens, 4 engines = multiple lenses.
+Multi-lens interference pattern amplifies precognition.
 
-## 대응 매핑
+## Correspondence Mapping
 
-| 다중렌즈 간섭 (H-GEO-10) | Quad 예지 간섭 (H-CX-63) |
+| Multi-lens Interference (H-GEO-10) | Quad Precognition Interference (H-CX-63) |
 |---|---|
-| 렌즈 1, 2 (완전수 6, 28) | 엔진 쌍 (A-G, E-F) |
-| 직접 간섭 | 엔진 쌍 내부 장력 |
-| 원격 간섭 | 엔진 쌍 사이 교차 장력 |
-| 간섭 줄무늬 | 장력 진동 패턴 |
-| 기본파장 1/4 | Quad의 4엔진 → 1/4 공명? |
-| 공명 조건 | 최적 예지 조건 |
+| Lens 1, 2 (perfect numbers 6, 28) | Engine pairs (A-G, E-F) |
+| Direct interference | Internal tension within engine pairs |
+| Remote interference | Cross tension between engine pairs |
+| Interference fringes | Tension oscillation patterns |
+| Fundamental wavelength 1/4 | Quad's 4 engines → 1/4 resonance? |
+| Resonance condition | Optimal precognition condition |
 
-## 예측
+## Predictions
 
-1. Quad AUC > Dual AUC (예지 간섭 증폭)
-2. 증폭 비율 = Quad_AUC / Dual_AUC 가 데이터셋 불변
-3. 6가지 엔진 쌍의 장력 간 상관이 간섭 패턴 형성
-4. 교차 장력(A-E, A-F, G-E, G-F)이 직접 장력(A-G, E-F)보다 예지에 기여
-5. 최적 예지 = 모든 쌍의 장력이 "공명" 상태
+1. Quad AUC > Dual AUC (precognition interference amplification)
+2. Amplification ratio = Quad_AUC / Dual_AUC is dataset invariant
+3. Correlations between tensions of 6 engine pairs form interference patterns
+4. Cross tensions (A-E, A-F, G-E, G-F) contribute more to precognition than direct tensions (A-G, E-F)
+5. Optimal precognition = all pair tensions in "resonance" state
 
-## ASCII 간섭 패턴
+## ASCII Interference Pattern
 
 ```
   Dual (2-engine):
   tension │ ████████████░░░░░░░░   AUC=0.77
-          │    (단일 피크)
+          │    (single peak)
 
   Quad (4-engine):
   tension │ ██░██░██░██░██░██░██   AUC=?
-          │  (간섭 줄무늬 = 공명)
+          │  (interference fringes = resonance)
 ```
 
-## 검증 방법
+## Verification Method
 
 ```
-1. PureFieldEngine (2엔진) 학습 → 예지 AUC 측정
-2. PureFieldQuad (4엔진) 학습 → 예지 AUC 측정
-3. Quad의 6가지 엔진 쌍별 장력 추출
-4. 쌍별 장력 상관행렬 계산
-5. 직접(A-G, E-F) vs 교차(나머지 4쌍) 장력 비교
-6. Dual vs Quad 예지 AUC 비교
+1. Train PureFieldEngine (2 engines) → measure precognition AUC
+2. Train PureFieldQuad (4 engines) → measure precognition AUC
+3. Extract tensions for 6 engine pairs in Quad
+4. Calculate pairwise tension correlation matrix
+5. Compare direct (A-G, E-F) vs cross (remaining 4 pairs) tensions
+6. Compare Dual vs Quad precognition AUC
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H-GEO-10 (다중렌즈 간섭), H-CX-58 (예지렌즈)
-- H307 (이중 메커니즘), H296 (분열 이상탐지)
-- H-CX-18 (내부/간 장력 이중성)
+- H-GEO-10 (multi-lens interference), H-CX-58 (precognition lens)
+- H307 (dual mechanism), H296 (mitosis anomaly detection)
+- H-CX-18 (internal/inter tension duality)
 
-## 한계
+## Limitations
 
-- Quad가 단순히 파라미터가 많아서 AUC가 높을 수 있음
-- 4엔진의 간섭이 실제 물리 간섭과 다를 수 있음
-- "공명" 정의가 모호
+- Quad may have higher AUC simply due to more parameters
+- 4-engine interference may differ from actual physical interference
+- "Resonance" definition is vague
 
-## 검증 상태
+## Verification Status
 
-- [x] Dual vs Quad AUC 비교
-- [ ] 6쌍 장력 상관행렬
-- [ ] 간섭 패턴 시각화
+- [x] Dual vs Quad AUC comparison
+- [ ] 6-pair tension correlation matrix
+- [ ] Interference pattern visualization
 
-## 검증 결과
+## Verification Results
 
-**REJECTED** — Quad가 학습 자체에 실패 (정확도 ~10% = 랜덤)
+**REJECTED** — Quad fails to learn at all (accuracy ~10% = random)
 
-| 데이터셋 | Dual AUC | Quad AUC | 차이 |
+| Dataset | Dual AUC | Quad AUC | Difference |
 |---|---|---|---|
 | MNIST | 0.715 | 0.507 | -0.208 |
 | Fashion | 0.641 | 0.518 | -0.123 |
@@ -96,10 +96,10 @@
         MNIST Fashion CIFAR
 
   ● = Dual,  ○ = Quad
-  Dual이 모든 데이터셋에서 압승
+  Dual dominates across all datasets
 ```
 
-- 원인: PureFieldQuad의 mean-repulsion 아키텍처가 hidden_dim=64에서 붕괴
-- Pair tension 분석: 모든 쌍이 AUC ~0.5 (신호 없음)
-- Quad는 정확도 ~10% (10클래스 랜덤 수준)로 학습 자체가 실패
-- 아키텍처 수정 후 재검증 필요 (hidden_dim 증가 또는 repulsion 구조 변경)
+- Cause: PureFieldQuad's mean-repulsion architecture collapses at hidden_dim=64
+- Pair tension analysis: All pairs have AUC ~0.5 (no signal)
+- Quad shows accuracy ~10% (10-class random level), learning itself fails
+- Re-verification needed after architecture modification (increase hidden_dim or change repulsion structure)

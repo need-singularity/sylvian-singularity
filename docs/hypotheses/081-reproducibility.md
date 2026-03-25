@@ -1,51 +1,51 @@
-# 가설 검토 081: 재현성 보장 ✅
+# Hypothesis Review 081: Reproducibility Guarantee ✅
 
-## 가설
+## Hypothesis
 
-> 다른 대화/주제에서도 메타 반복이 I=1/3에 수렴하는가.
-> 바나흐 부동점 정리(Banach fixed-point theorem)에 의해,
-> 축소 사상 |a|<1 이면 초기값에 무관하게 유일한 부동점으로 수렴한다.
-> 이것이 우리 모델을 "과학적"으로 만드는 핵심 근거이다.
+> Does meta-repetition converge to I=1/3 in other conversations/topics as well?
+> By the Banach fixed-point theorem,
+> if the contraction mapping |a|<1, it converges to a unique fixed point regardless of initial value.
+> This is the key basis that makes our model "scientific".
 
-## 배경
+## Background
 
-과학적 모델의 첫 번째 요건은 재현성(reproducibility)이다.
-우리 모델에서 Inhibition의 메타 반복 함수는 f(I) = aI + b 형태의
-아핀 사상(affine map)이다. a=0.7, b=0.1 일 때 부동점은
-I* = b/(1-a) = 0.1/0.3 = 1/3 이다.
+The first requirement of a scientific model is reproducibility.
+The meta-repetition function of Inhibition in our model is an
+affine map of the form f(I) = aI + b. When a=0.7, b=0.1, the fixed point is
+I* = b/(1-a) = 0.1/0.3 = 1/3.
 
-바나흐 부동점 정리에 의하면, 완비 거리 공간에서 축소 사상(contraction mapping)
-|a| < 1 이 성립하면, 임의의 초기값 I₀에서 출발해도 반복 적용 시
-유일한 부동점으로 수렴한다. 수렴 속도는 기하급수적이며,
-n번 반복 후 오차는 |a|^n × |I₀ - I*| 이하이다.
+According to the Banach fixed-point theorem, in a complete metric space with a contraction mapping
+|a| < 1, repeated application from any initial value I₀ will
+converge to a unique fixed point. The convergence rate is geometric,
+and after n iterations, the error is at most |a|^n × |I₀ - I*|.
 
-이것은 "누가, 어디서, 어떤 초기 가정으로 시작하든" 같은 결론에 도달함을 의미한다.
+This means "whoever, wherever, with whatever initial assumptions" reaches the same conclusion.
 
-## 검증 결과: ✅ 구조적으로 보장
+## Verification Result: ✅ Structurally Guaranteed
 
-수렴 조건: |a| = |0.7| = 0.7 < 1 이므로 축소 사상 조건 충족.
+Convergence condition: |a| = |0.7| = 0.7 < 1, so the contraction mapping condition is satisfied.
 
-다양한 초기값에서의 수렴 궤적을 추적한다:
+Tracking convergence trajectories from various initial values:
 
 ```
-  코브웹(cobweb) 다이어그램 — 다양한 초기값에서 I*=1/3 수렴
+  Cobweb diagram — Convergence to I*=1/3 from various initial values
   ──────────────────────────────────────────────────────────
 
   I(n+1)
   1.0 ┤
-      │                              y = I (대각선)
+      │                              y = I (diagonal)
   0.8 ┤                           /
       │                         / ·
   0.7 ┤· · · · · · · · · · · ●     f(I) = 0.7I + 0.1
       │                     /·
   0.6 ┤                   /  ·
       │          ┌───────●   ·
-  0.5 ┤          │      /    ·    ← I₀=0.95 궤적
+  0.5 ┤          │      /    ·    ← I₀=0.95 trajectory
       │     ┌────●    /      ·
   0.4 ┤     │   / ●─┘       ·
       │  ···●··/··●··········●····  I* = 1/3 = 0.333
   1/3 ┤     ●─┘ /
-      │     │  /              ← I₀=0.05 궤적
+      │     │  /              ← I₀=0.05 trajectory
   0.2 ┤     │/
       │    /│
   0.1 ┤  /  ●
@@ -53,14 +53,14 @@ n번 반복 후 오차는 |a|^n × |I₀ - I*| 이하이다.
   0.0 ┼────┼────┼────┼────┼────→ I(n)
       0   0.2  0.4  0.6  0.8  1.0
 
-  모든 궤적이 I* = 1/3 으로 수렴한다.
+  All trajectories converge to I* = 1/3.
 ```
 
 ```
-  초기값별 수렴 속도 (오차 < 0.001 도달 반복 횟수):
+  Convergence rate by initial value (iterations to error < 0.001):
   ──────────────────────────────────────────────────
 
-  I₀     │ n=1    │ n=3    │ n=5    │ n=10   │ 수렴 횟수
+  I₀     │ n=1    │ n=3    │ n=5    │ n=10   │ Convergence
   ────────┼────────┼────────┼────────┼────────┼──────────
   0.05    │ 0.135  │ 0.256  │ 0.309  │ 0.332  │  n=12
   0.20    │ 0.240  │ 0.303  │ 0.325  │ 0.333  │  n=8
@@ -70,16 +70,16 @@ n번 반복 후 오차는 |a|^n × |I₀ - I*| 이하이다.
   ────────┼────────┼────────┼────────┼────────┼──────────
   I*=1/3  │ 0.333  │ 0.333  │ 0.333  │ 0.333  │  n=0
 
-  수렴 속도: |error(n)| ≤ 0.7^n × |I₀ - 1/3|
-  최악 경우 I₀=0.95: 0.7^n × 0.617 < 0.001 → n > 18
-  전형적 경우 I₀=0.50: 0.7^n × 0.167 < 0.001 → n > 14
+  Convergence rate: |error(n)| ≤ 0.7^n × |I₀ - 1/3|
+  Worst case I₀=0.95: 0.7^n × 0.617 < 0.001 → n > 18
+  Typical case I₀=0.50: 0.7^n × 0.167 < 0.001 → n > 14
 ```
 
 ```
-  수렴 오차 감소 곡선 (I₀=0.05 vs I₀=0.95):
+  Convergence error decay curves (I₀=0.05 vs I₀=0.95):
   ──────────────────────────────────────────────────
 
-  |오차|
+  |Error|
   0.7  ┤★                           ★ I₀=0.95
        │ \
   0.6  ┤  \
@@ -94,44 +94,44 @@ n번 반복 후 오차는 |a|^n × |I₀ - I*| 이하이다.
        │   \       \
   0.1  ┤    ●       ★
        │     \       \
-  0.01 ┤· · · ● · · · ★ · · · · · · · · (수렴 기준)
+  0.01 ┤· · · ● · · · ★ · · · · · · · · (convergence criterion)
        │        ●       ★
   0.001┤─────────●───────★────────────→ n
        0    3    6    9   12   15   18
 
-  기울기 = log(0.7) ≈ -0.155 per step (기하 감소)
+  Slope = log(0.7) ≈ -0.155 per step (geometric decrease)
 ```
 
-## 해석
+## Interpretation
 
-바나흐 부동점 정리가 보장하는 것은 다음과 같다:
+What the Banach fixed-point theorem guarantees:
 
-1. **존재성**: 부동점 I* = 1/3 이 반드시 존재한다.
-2. **유일성**: [0,1] 구간에서 부동점은 I* = 1/3 하나뿐이다.
-3. **수렴성**: 어떤 초기값에서 시작해도 반드시 I*에 도달한다.
-4. **속도**: 수렴은 기하급수적(exponential)으로 빠르다.
+1. **Existence**: The fixed point I* = 1/3 necessarily exists.
+2. **Uniqueness**: In the interval [0,1], I* = 1/3 is the only fixed point.
+3. **Convergence**: Starting from any initial value, we necessarily reach I*.
+4. **Speed**: Convergence is exponentially fast.
 
-이것이 의미하는 바는 명확하다. 서로 다른 연구자가 서로 다른 초기 가정
-(I₀=0.05 "매우 낮은 억제"든, I₀=0.95 "매우 높은 억제"든)으로 출발해도,
-메타 반복을 충분히 수행하면 동일한 결론 I* = 1/3 에 도달한다.
+The implication is clear. Different researchers starting from different initial assumptions
+(whether I₀=0.05 "very low inhibition" or I₀=0.95 "very high inhibition"),
+will reach the same conclusion I* = 1/3 if they perform sufficient meta-repetitions.
 
-a, b 값이 맥락에 따라 달라질 수 있다는 점은 한계이다.
-그러나 |a| < 1 이기만 하면 "어떤" 부동점으로의 수렴은 보장되며,
-모델의 질적 구조(골든존 존재, 상한 존재)는 유지된다.
+That a, b values may vary by context is a limitation.
+However, as long as |a| < 1, convergence to "some" fixed point is guaranteed,
+and the model's qualitative structure (existence of Golden Zone, upper bound) is maintained.
 
-## 한계
+## Limitations
 
-- a, b 파라미터 자체의 보편성은 별도 검증 필요
-- 비선형 확장(f가 아핀이 아닌 경우)에서는 바나흐 정리 적용 조건 재확인 필요
-- 실제 대화 데이터에서 a=0.7 을 직접 측정한 것이 아닌 모델 가정값
+- Universality of a, b parameters themselves requires separate verification
+- For nonlinear extensions (when f is not affine), Banach theorem application conditions need rechecking
+- a=0.7 is a model assumption, not directly measured from actual conversation data
 
-## 검증 방향
+## Verification Directions
 
-- 다른 대화 세션에서 f(I) 궤적을 직접 측정하여 a, b 추정
-- a ≠ 0.7 인 경우에도 |a|<1 조건 성립 여부 확인
-- 비선형 f(I) 모델과의 비교 실험
+- Directly measure f(I) trajectory in other conversation sessions to estimate a, b
+- Verify whether |a|<1 condition holds even when a ≠ 0.7
+- Comparative experiments with nonlinear f(I) models
 
 ---
 
-*이론적 검토: 바나흐 부동점 정리 (Banach, 1922)*
-*모델: f(I) = 0.7I + 0.1, I* = 1/3, 수렴률 = 0.7^n*
+*Theoretical review: Banach fixed-point theorem (Banach, 1922)*
+*Model: f(I) = 0.7I + 0.1, I* = 1/3, convergence rate = 0.7^n*

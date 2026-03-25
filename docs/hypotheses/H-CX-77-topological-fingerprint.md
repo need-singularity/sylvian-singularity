@@ -1,38 +1,38 @@
-# H-CX-77: 위상 예지 시간축 — merge 순서 변화가 학습의 위상 지문
+# H-CX-77: Topological Precognition Timeline — Merge Order Changes as Learning's Topological Fingerprint
 
-> 에폭별 merge 순서의 변화 패턴이 학습 궤적의 "위상 지문"을 형성한다.
-> 초기 에폭의 merge 순서가 불안정하다가 안정화되는 시점 = 학습 수렴점.
+> The change pattern of merge order across epochs forms the "topological fingerprint" of the learning trajectory.
+> When early epoch merge orders are unstable then stabilize = learning convergence point.
 
-## 배경
+## Background
 
-- H-CX-66: merge 순서와 혼동 빈도 r=-0.97
-- H-CX-62: H0_total 감소 = 학습 진행
-- 교차: merge 순서의 시간적 안정성
+- H-CX-66: merge order and confusion frequency r=-0.97
+- H-CX-62: H0_total decrease = learning progression
+- Intersection: temporal stability of merge order
 
-## 예측
+## Predictions
 
-1. merge 순서의 에폭별 Kendall tau가 단조 증가 (안정화)
-2. tau > 0.9 도달 에폭 = 학습 수렴 에폭
-3. 최종 merge 순서는 에폭 5에서 이미 80% 확정
+1. Epoch-wise Kendall tau of merge order monotonically increases (stabilization)
+2. Epoch reaching tau > 0.9 = learning convergence epoch
+3. Final merge order is already 80% determined by epoch 5
 
-## 검증 방법
+## Verification Method
 
 ```
-1. 매 에폭 PH merge 순서 계산
-2. 연속 에폭 간 Kendall tau 계산
-3. 최종 에폭 대비 각 에폭의 tau 계산
-4. 안정화 시점 탐지
+1. Calculate PH merge order for each epoch
+2. Calculate Kendall tau between consecutive epochs
+3. Calculate tau for each epoch vs. final epoch
+4. Detect stabilization point
 ```
 
-## 관련 가설
+## Related Hypotheses
 
 - H-CX-66, H-CX-62, H-CX-64
 
-## 한계
+## Limitations
 
-- 9개 merge event로 tau 분별력 제한적
+- Limited tau discriminative power with 9 merge events
 
-## 검증 상태
+## Verification Status
 
-- [ ] 에폭별 Kendall tau
-- [ ] 안정화 시점
+- [ ] Epoch-wise Kendall tau
+- [ ] Stabilization point

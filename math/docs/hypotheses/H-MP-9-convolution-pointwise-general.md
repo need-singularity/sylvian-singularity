@@ -1,15 +1,15 @@
-# H-MP-9: 모든 Dirichlet 합성곱의 "점별=합성곱" 분류
+# H-MP-9: Complete Classification of "Pointwise=Convolution" for All Dirichlet Convolutions
 
-> **가설**: 임의의 곱셈적 함수 쌍 (f,g)에 대해 f(n)g(n) = (f*g)(n)인 n의 집합을 완전 분류할 수 있다.
+> **Hypothesis**: For any pair of multiplicative functions (f,g), we can completely classify the set of n where f(n)g(n) = (f*g)(n).
 
-## 배경
-- σ*φ=nτ: 점별 σφ=nτ → n∈{1,6}
-- τ*φ=σ: 점별 τφ=σ → n∈{1,3,14,42}
-- 모든 쌍 (f,g)에 대해 이 현상의 체계적 분류가 가능한가?
+## Background
+- σ*φ=nτ: Pointwise σφ=nτ → n∈{1,6}
+- τ*φ=σ: Pointwise τφ=σ → n∈{1,3,14,42}
+- Is systematic classification possible for all pairs (f,g)?
 
-## 검증 방향
-1. [ ] (μ,σ)→id: μ(n)σ(n)=n 해 탐색
-2. [ ] (λ,σ): Liouville×약수합 = Dirichlet 합성곱값
-3. [ ] 일반 이론: R-인수 곱=1 조건의 범주론적 해석
+## Verification Directions
+1. [ ] (μ,σ)→id: Search for solutions to μ(n)σ(n)=n
+2. [ ] (λ,σ): Liouville×divisor sum = Dirichlet convolution value
+3. [ ] General theory: Category-theoretic interpretation of R-factor product=1 condition
 
-## 난이도: 고 | 파급력: ★★★
+## Difficulty: High | Impact: ★★★

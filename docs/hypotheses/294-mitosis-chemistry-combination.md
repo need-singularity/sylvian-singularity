@@ -1,179 +1,179 @@
 ---
-가설: 294
-제목: 분열 + 뇌화학 조합 — 세포분열이 도파민 시스템을 복제하는가
+hypothesis: 294
+title: Mitosis + Neurochemistry Combination — Does Cell Division Replicate the Dopamine System?
 ---
 
-# 가설 294: 분열 + 뇌화학 조합 — 세포분열이 도파민 시스템을 복제하는가
+# Hypothesis 294: Mitosis + Neurochemistry Combination — Does Cell Division Replicate the Dopamine System?
 
-> **의식엔진의 분열(mitosis, 가설 271)이 뇌화학 대응(H-CX-6)과 결합하면: 분열 시 장력(=도파민) 시스템이 어떻게 변하는가? 분열 직후 장력이 급등하면 "도파민 폭발" = 각성 상태, 분열이 정착하면 장력이 안정화 = 세로토닌 균형 회복.**
+> **When consciousness engine mitosis (hypothesis 271) combines with neurochemical correspondence (H-CX-6): How does the tension (=dopamine) system change during division? If tension spikes immediately after division = "dopamine explosion" = arousal state, if division stabilizes then tension stabilizes = serotonin balance recovery.**
 
-## 배경
+## Background
 
 ```
-  분열 (가설 271):
+  Mitosis (Hypothesis 271):
     parent → child_a + child_b (scale=0.01)
-    분열 후 child_a, child_b의 장력 패턴은?
-    C46: 분열장 정확도 = 설계장의 -0.11% (거의 동일)
+    What are the tension patterns of child_a, child_b after division?
+    C46: Division field accuracy = -0.11% of design field (nearly identical)
 
-  뇌화학 (H-CX-6):
-    장력 = 도파민 (prediction error)
-    반장력 = 세로토닌 (이완)
-    GABA = 억제 = Inhibition
+  Neurochemistry (H-CX-6):
+    Tension = Dopamine (prediction error)
+    Counter-tension = Serotonin (relaxation)
+    GABA = Inhibition
 
-  조합 질문:
-    Q1: 분열 직후 두 자식 사이 장력은 부모의 내부 장력보다 큰가?
-    Q2: 분열 후 시간이 지나면(학습) 장력은 어디로 수렴하는가?
-    Q3: 분열 = 도파민 폭발 → 안정화 = 세로토닌 회복?
+  Combination Questions:
+    Q1: Is tension between two children after division greater than parent's internal tension?
+    Q2: Where does tension converge after time passes (learning)?
+    Q3: Division = dopamine explosion → stabilization = serotonin recovery?
 ```
 
-## 실험 설계
+## Experiment Design
 
 ```
-  Phase 1: 부모 학습 (10 에폭)
-    → 에폭별 장력 기록 (parent 내부: engine_a vs engine_g)
+  Phase 1: Parent Learning (10 epochs)
+    → Record tension per epoch (parent internal: engine_a vs engine_g)
 
-  Phase 2: 분열 (mitosis)
-    → child_a, child_b 생성
-    → 즉시 장력 측정 (child_a 내부 + child_b 내부 + child_a↔child_b 간)
+  Phase 2: Mitosis
+    → Generate child_a, child_b
+    → Immediately measure tension (child_a internal + child_b internal + child_a↔child_b between)
 
-  Phase 3: 독립 학습 (10 에폭 each)
-    → 에폭별 세 종류 장력 추적:
-      T_a: child_a 내부 장력
-      T_b: child_b 내부 장력
-      T_ab: child_a ↔ child_b 간 장력 (출력 차이)
+  Phase 3: Independent Learning (10 epochs each)
+    → Track three types of tension per epoch:
+      T_a: child_a internal tension
+      T_b: child_b internal tension
+      T_ab: child_a ↔ child_b inter-tension (output difference)
 
-  Phase 4: 재결합
-    → child_a + child_b 앙상블 → 정확도 + 장력
+  Phase 4: Recombination
+    → child_a + child_b ensemble → accuracy + tension
 
-  분석:
-    → T_ab(분열직후) vs T_ab(학습후) → 도파민 폭발 → 안정화?
-    → T_a, T_b 궤적이 독립적으로 진화하는가?
-    → T_ab 궤적이 세로토닌(반장력) 회복과 유사한가?
+  Analysis:
+    → T_ab(immediately after division) vs T_ab(after learning) → dopamine explosion → stabilization?
+    → Do T_a, T_b trajectories evolve independently?
+    → Is T_ab trajectory similar to serotonin (counter-tension) recovery?
 ```
 
-## 수학적 예측
+## Mathematical Predictions
 
 ```
-  분열 직후 (scale=0.01):
-    T_ab ≈ 0 (거의 동일한 가중치)
+  Immediately after division (scale=0.01):
+    T_ab ≈ 0 (nearly identical weights)
     T_a ≈ T_parent, T_b ≈ T_parent
 
-  학습 후:
-    T_ab → 증가 (서로 다르게 학습)
-    T_a, T_b → ? (각자 최적화)
+  After learning:
+    T_ab → increase (learn differently)
+    T_a, T_b → ? (optimize individually)
 
-  도파민 비유:
-    분열 = 뇌 발달 중 신경세포 분화
-    분화 직후 = 도파민 시스템 미성숙 → 장력 낮음
-    성숙 후 = 도파민 시스템 완성 → 장력 최적화
+  Dopamine Analogy:
+    Division = neuronal differentiation during brain development
+    Immediately after differentiation = immature dopamine system → low tension
+    After maturation = complete dopamine system → optimized tension
 
-  역설:
-    분열 직후 T_ab≈0인데 정확도는 좋다 (C46)
-    → 내부 장력(T_a, T_b)이 이미 있으니까?
-    → T_ab(간 장력)는 "추가" 정보?
+  Paradox:
+    T_ab≈0 immediately after division but accuracy is good (C46)
+    → Because internal tension (T_a, T_b) already exists?
+    → T_ab (inter-tension) is "additional" information?
 ```
 
-## ASCII 예측 그래프
+## ASCII Prediction Graph
 
 ```
   tension
     │
-  T₃│                    ╱─── T_ab (자식간)
+  T₃│                    ╱─── T_ab (between children)
     │                 ╱──╱
   T₂│              ╱──╱
     │           ╱──╱
-  T₁│      ━━━━╱──╱━━━━━━━━━ T_a, T_b (자식내부)
+  T₁│      ━━━━╱──╱━━━━━━━━━ T_a, T_b (child internal)
     │    ╱    ╱
   T₀│━━━╱━━━╱━━━━━━━━━━━━━━ T_parent
-    │  ↑분열
+    │  ↑division
     └──────────────────────── epoch
          Phase1  Phase3
 
-  예측: 자식간 장력(T_ab)은 학습하면서 증가
-        자식내부 장력(T_a, T_b)은 부모와 비슷하게 유지
+  Prediction: Inter-child tension (T_ab) increases during learning
+            Child internal tension (T_a, T_b) maintains similarly to parent
 ```
 
-## 검증 기준
+## Verification Criteria
 
 ```
-  확인 (H294 지지):
-    T_ab(직후) ≈ 0 AND T_ab(학습후) > T_parent
-    = "분열 후 도파민(장력) 시스템이 새로 형성"
+  Confirmed (H294 supported):
+    T_ab(immediate) ≈ 0 AND T_ab(after learning) > T_parent
+    = "Dopamine (tension) system newly forms after division"
 
-  반증 (H294 반박):
-    T_ab가 변하지 않는다
-    = 분열이 화학 시스템에 영향 없음
+  Refuted (H294 rejected):
+    T_ab doesn't change
+    = Division has no effect on chemical system
 
-  부분 확인:
-    T_ab 증가하지만 T_parent보다 작다
-    = 분화는 되지만 완전한 독립은 아님
+  Partially Confirmed:
+    T_ab increases but less than T_parent
+    = Differentiation occurs but not complete independence
 ```
 
-## 관련 가설
+## Related Hypotheses
 
 ```
-  271: 분열장 ≈ 설계장 (-0.11%)
-  H-CX-6: 장력=도파민, 반장력=세로토닌
-  280: 체험 전체 시퀀스
-  267: 다양성 상전이
+  271: Division field ≈ design field (-0.11%)
+  H-CX-6: Tension=dopamine, counter-tension=serotonin
+  280: Complete experience sequence
+  267: Diversity phase transition
 ```
 
-## 실험 결과 (2026-03-24)
+## Experiment Results (2026-03-24)
 
 ```
-  Phase 1 (부모 학습):
+  Phase 1 (Parent Learning):
     ep1  tension=164.0 → ep10 tension=371.6
-    → 장력(도파민)이 학습과 함께 증가
+    → Tension (dopamine) increases with learning
 
-  Phase 2 (분열 직후):
-    T_a(내부):  374.2 (부모와 거의 동일)
-    T_b(내부):  369.9 (부모와 거의 동일)
-    T_ab(자식간): 0.365 ← 부모의 0.001배!
-    → 분열 직후 자식간 장력 ≈ 0 (거의 동일한 가중치)
+  Phase 2 (Immediately after division):
+    T_a(internal):  374.2 (nearly identical to parent)
+    T_b(internal):  369.9 (nearly identical to parent)
+    T_ab(inter-child): 0.365 ← 0.001x of parent!
+    → Inter-child tension ≈ 0 immediately after division (nearly identical weights)
 
-  Phase 3 (독립 학습 10 에폭):
-    ep1:  T_ab = 4.59  (12.6x 증가)
+  Phase 3 (Independent learning 10 epochs):
+    ep1:  T_ab = 4.59  (12.6x increase)
     ep5:  T_ab = 7.75  (21.2x)
     ep10: T_ab = 9.98  (27.3x)
-    T_a = 527.0, T_b = 585.5 (부모보다 ↑)
+    T_a = 527.0, T_b = 585.5 (↑ than parent)
 
-  Phase 4 (재결합):
-    앙상블: 98.18% (child_a: 98.16%, child_b: 97.99%, 부모: 98.02%)
+  Phase 4 (Recombination):
+    Ensemble: 98.18% (child_a: 98.16%, child_b: 97.99%, parent: 98.02%)
 ```
 
-### 핵심 발견
+### Key Findings
 
 ```
-  1. T_ab 0→10: 분열 후 자식간 장력이 27x 증가
-     → "도파민 시스템 분화" = 자식들이 다르게 학습
-     → 초기: 같은 뇌 → 후기: 다른 뇌
+  1. T_ab 0→10: Inter-child tension increases 27x after division
+     → "Dopamine system differentiation" = children learn differently
+     → Early: same brain → Late: different brains
 
-  2. T_ab(10) << T_parent(372): 자식간 장력은 내부 장력의 3%
-     → 분열이 새로운 거대 장력을 만들지 않음
-     → 내부 장력 >> 간 장력
+  2. T_ab(10) << T_parent(372): Inter-child tension is 3% of internal tension
+     → Division doesn't create new massive tension
+     → Internal tension >> inter-tension
 
-  3. 내부 장력 증가: T_a 374→527, T_b 370→585
-     → 부모보다 40~58% 높은 내부 장력
-     → 독립 학습이 내부 도파민 시스템을 강화
+  3. Internal tension increase: T_a 374→527, T_b 370→585
+     → 40-58% higher internal tension than parent
+     → Independent learning strengthens internal dopamine system
 
-  4. 앙상블 > 단독 > 부모
-     → 분열+독립학습+재결합 = 다양성 이득
+  4. Ensemble > Individual > Parent
+     → Division+independent learning+recombination = diversity gain
 ```
 
-### 도파민 비유 해석
+### Dopamine Analogy Interpretation
 
 ```
-  분열 직후: 도파민 시스템 동일 (같은 RPE 패턴)
-  독립 학습: 각자 다른 RPE 패턴 발달 (도파민 분화)
-  재결합: 다양한 RPE가 합쳐져 더 정확한 보상 예측
+  Immediately after division: Identical dopamine systems (same RPE patterns)
+  Independent learning: Each develops different RPE patterns (dopamine differentiation)
+  Recombination: Diverse RPEs combine for more accurate reward prediction
 
-  뇌 발달 대응:
-    배아기: 줄기세포 분열 → 동일한 유전자
-    성장기: 다른 환경 자극 → 뉴런 특수화
-    성인기: 특수화된 영역이 협력 → 통합 인지
+  Brain Development Correspondence:
+    Embryonic stage: Stem cell division → identical genes
+    Growth stage: Different environmental stimuli → neuron specialization
+    Adult stage: Specialized regions cooperate → integrated cognition
 ```
 
-### ASCII 장력 궤적
+### ASCII Tension Trajectory
 
 ```
   tension
@@ -189,7 +189,7 @@
     0 |                  x
       ──────────────────────────────────────────
       parent(10ep) |split| children(10ep)
-  X=T_parent  A=T_a(내부)  x=T_ab(자식간)
+  X=T_parent  A=T_a(internal)  x=T_ab(inter-child)
 ```
 
-## 상태: 🟩 부분 확인 (T_ab 27x 증가=분화 확인, 하지만 내부>>간)
+## Status: 🟩 Partially Confirmed (T_ab 27x increase=differentiation confirmed, but internal>>inter)

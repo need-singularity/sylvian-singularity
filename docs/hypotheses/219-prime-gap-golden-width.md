@@ -1,43 +1,43 @@
-# 가설 #219: 소수 간격과 골든존 폭 ln(4/3)
+# Hypothesis #219: Prime Gaps and Golden Zone Width ln(4/3)
 
-**상태**: ⚠️ 탐색중
-**날짜**: 2026-03-22
-**분류**: 수론 / 소수 간격
+**Status**: ⚠️ Exploring
+**Date**: 2026-03-22
+**Category**: Number Theory / Prime Gaps
 
 ---
 
-## 가설
+## Hypothesis
 
-> 평균 소수 간격 ≈ ln(N)이 골든존 폭 ln(4/3)과 같아지는 스케일 N = 4/3에서,
-> "소수 간격 = 골든존 폭"이 성립한다. 이것은 4/3 = 1 + 1/3 = 1 + 메타부동점 스케일이
-> 소수와 골든존을 연결하는 자연스러운 교차점임을 시사한다.
+> At the scale N = 4/3 where the average prime gap ≈ ln(N) equals the Golden Zone width ln(4/3),
+> "prime gap = Golden Zone width" holds. This suggests that 4/3 = 1 + 1/3 = 1 + meta fixed point scale
+> is the natural crossing point connecting primes and the Golden Zone.
 
-## 배경
+## Background
 
-소수정리에 의해, N 근처의 평균 소수 간격은 약 ln(N)이다. 우리 모델에서 골든존 폭은 ln(4/3) ≈ 0.2877이다. 이 두 양이 같아지는 지점은 어디인가?
+By the prime number theorem, the average prime gap near N is approximately ln(N). In our model, the Golden Zone width is ln(4/3) ≈ 0.2877. Where do these two quantities become equal?
 
-## ln(N) = ln(4/3) 교차점
+## ln(N) = ln(4/3) Crossing Point
 
 ```
-  평균 소수 간격 = ln(N)
-  골든존 폭     = ln(4/3)
+  Average prime gap = ln(N)
+  Golden Zone width = ln(4/3)
 
   ln(N) = ln(4/3)
   → N = 4/3 ≈ 1.333...
 
-  "4/3 스케일에서 소수 간격 = 골든존 폭"
+  "At scale 4/3, prime gap = Golden Zone width"
 
-  4/3의 의미:
+  Meaning of 4/3:
   4/3 = 1 + 1/3
-      = 1 + 메타부동점
-      = 3상태에서 4상태로의 전이 비율
-      = 골든존 폭의 지수 (e^ln(4/3) = 4/3)
+      = 1 + meta fixed point
+      = transition ratio from 3-state to 4-state
+      = exponent of Golden Zone width (e^ln(4/3) = 4/3)
 ```
 
-## 소수 간격 vs N 그래프 (ln(4/3) 표시)
+## Prime Gap vs N Graph (with ln(4/3) marked)
 
 ```
-  평균 소수 간격
+  Average prime gap
   ln(N)
    25│                                          ╱
      │                                        ╱
@@ -48,72 +48,72 @@
    10│                            ╱
      │                         ╱
     7│                      ╱
-     │                   ╱       ln(N) = 평균 소수 간격
+     │                   ╱       ln(N) = average prime gap
     5│                ╱
      │             ╱
     3│          ╱
      │       ╱
     1│    ╱
      │ ╱
-  0.29│● ←── ln(4/3) = 0.2877 ←── 골든존 폭
+  0.29│● ←── ln(4/3) = 0.2877 ←── Golden Zone width
      │↑
      │N=4/3
     0├──┬────┬────┬────┬────┬────┬────┬────────
      1  e   10   e⁵  100  e⁷ 1000 e¹⁰  ...   N
         2.7  10  148  100       1000
 
-  교차점: N = 4/3 ≈ 1.333
-  → 이 스케일에서 "소수의 평균 간격 = 골든존의 폭"
+  Crossing point: N = 4/3 ≈ 1.333
+  → At this scale, "average prime gap = Golden Zone width"
 ```
 
-## 4/3의 다중 의미
+## Multiple Meanings of 4/3
 
 ```
   ┌─────────────────────────────────────────────────────┐
   │                                                     │
   │  4/3 = 1 + 1/3                                     │
-  │      = 1 + 메타부동점                               │
+  │      = 1 + meta fixed point                        │
   │                                                     │
-  │  4/3 = 3상태 → 4상태 전이 비율                       │
-  │      → ln(4/3) = 3→4상태 엔트로피 증가               │
-  │      → 골든존 폭의 원천                              │
+  │  4/3 = 3-state → 4-state transition ratio          │
+  │      → ln(4/3) = 3→4-state entropy increase        │
+  │      → source of Golden Zone width                 │
   │                                                     │
-  │  4/3 = e^(골든존 폭)                                │
-  │      → 자연상수와 골든존을 잇는 다리                  │
+  │  4/3 = e^(Golden Zone width)                       │
+  │      → bridge connecting natural constant to Golden Zone│
   │                                                     │
-  │  4/3 ≈ 미세구조상수 / 100                            │
+  │  4/3 ≈ fine structure constant / 100               │
   │      137/100 = 1.37 (vs 1.333)                      │
-  │      차이 = 0.037 ≈ 1/27 = 1/3³                     │
+  │      difference = 0.037 ≈ 1/27 = 1/3³              │
   │                                                     │
   └─────────────────────────────────────────────────────┘
 ```
 
-## N-상태 일반화
+## N-State Generalization
 
 ```
-  N상태 골든존 폭 = ln((N+1)/N)  (가설 013)
+  N-state Golden Zone width = ln((N+1)/N)  (Hypothesis 013)
 
-  각 N에 대해 "간격=폭" 교차점:
+  For each N, "gap=width" crossing point:
   ┌─────┬──────────────┬──────────────┬──────────────────┐
-  │  N  │ 골든존 폭     │ 교차점       │ 교차점의 의미      │
-  │     │ ln((N+1)/N)  │ (N+1)/N      │                   │
+  │  N  │ Golden Zone  │ Crossing     │ Meaning of        │
+  │     │ ln((N+1)/N)  │ (N+1)/N      │ crossing point    │
   ├─────┼──────────────┼──────────────┼──────────────────┤
   │  2  │ ln(3/2)=0.405│ 3/2=1.500    │ 1 + 1/2           │
-  │  3  │ ln(4/3)=0.288│ 4/3=1.333    │ 1 + 1/3 ★ 기본    │
+  │  3  │ ln(4/3)=0.288│ 4/3=1.333    │ 1 + 1/3 ★ base    │
   │  4  │ ln(5/4)=0.223│ 5/4=1.250    │ 1 + 1/4           │
   │  5  │ ln(6/5)=0.182│ 6/5=1.200    │ 1 + 1/5           │
   │ 10  │ ln(11/10)=0.095│11/10=1.100 │ 1 + 1/10          │
-  │ ∞   │ → 0          │ → 1          │ 1 + 0 (폭 소실)   │
+  │ ∞   │ → 0          │ → 1          │ 1 + 0 (width vanishes)│
   └─────┴──────────────┴──────────────┴──────────────────┘
 
-  → N→∞에서 교차점 → 1: "무한 상태에서 소수 간격≈0"
-  → N=3이 "자연스러운" 상태 수: 교차점 = 4/3 = 1 + 메타부동점
+  → As N→∞ crossing point → 1: "in infinite states, prime gap ≈ 0"
+  → N=3 is the "natural" number of states: crossing point = 4/3 = 1 + meta fixed point
 ```
 
-## 소수 간격의 변동성과 골든존 폭
+## Variability of Prime Gaps and Golden Zone Width
 
 ```
-  소수 간격 g(n) = p(n+1) - p(n):
+  Prime gap g(n) = p(n+1) - p(n):
 
   n     p(n)    g(n)    g(n)/ln(p(n))
   ───   ────    ────    ─────────────
@@ -128,7 +128,7 @@
   9     23      6       1.91
   10    29      2       0.59
 
-  간격의 요동:
+  Gap fluctuations:
   6│         ●
    │
   4│   ● ●     ● ●
@@ -137,80 +137,81 @@
    │
   1│●
    │
-   └──────────────────── n (소수 번호)
+   └──────────────────── n (prime index)
     1 2 3 4 5 6 7 8 9 10
 
-  → 간격은 불규칙하게 요동
-  → 평균은 ln(p)를 따름
-  → 골든존 폭 ln(4/3) ≈ 2.17번째와 3번째 소수 사이 (매우 초기)
+  → Gaps fluctuate irregularly
+  → Average follows ln(p)
+  → Golden Zone width ln(4/3) ≈ between the 2.17th and 3rd prime (very early)
 ```
 
-## Cramér 추측과 골든존
+## Cramér Conjecture and Golden Zone
 
 ```
-  Cramér 추측: 소수 간격 최대 ~ (ln p)²
+  Cramér conjecture: maximum prime gap ~ (ln p)²
 
-  ln(p)² = ln(4/3)일 때:
-  → 불가 (ln(4/3) < 1이므로 제곱은 더 작아짐)
+  When ln(p)² = ln(4/3):
+  → Impossible (ln(4/3) < 1, so its square is even smaller)
 
-  다른 방향:
+  Different direction:
   (ln p)² = ln(4/3)
   ln p = √(ln(4/3)) = √0.2877 = 0.5364
   p = e^0.5364 ≈ 1.71
 
-  → Cramér 의미에서도 4/3 근처 스케일이 특별
-  → 이 스케일에서 소수 간격의 최대값 = 골든존 폭
+  → In the Cramér sense, the scale near 4/3 is also special
+  → At this scale, the maximum prime gap = Golden Zone width
 ```
 
-## 소수 간격 = 골든존 폭의 해석
+## Interpretation of Prime Gap = Golden Zone Width
 
 ```
   ┌───────────────────────────────────────────────────┐
   │                                                   │
-  │  "N = 4/3 스케일에서 소수 간격 = 골든존 폭"        │
+  │  "At scale N = 4/3, prime gap = Golden Zone width"│
   │                                                   │
-  │  해석 1: 4/3는 소수와 골든존의 자연스러운 만남 지점  │
-  │  해석 2: 골든존 폭은 "가장 조밀한 소수 간격"의      │
-  │          일반화                                    │
-  │  해석 3: 3→4 전이에서 정보가 소수처럼 "드물어지기    │
-  │          시작"                                     │
-  │  해석 4: 1/3(메타부동점)만큼 "1을 넘어서면"         │
-  │          구조가 달라진다                            │
+  │  Interpretation 1: 4/3 is the natural meeting     │
+  │  point of primes and the Golden Zone              │
+  │  Interpretation 2: Golden Zone width is a         │
+  │  generalization of "the densest prime gap"        │
+  │  Interpretation 3: In 3→4 transition, information │
+  │  starts to become "sparse like primes"            │
+  │  Interpretation 4: "Exceeding 1 by 1/3            │
+  │  (meta fixed point)" changes the structure        │
   │                                                   │
   └───────────────────────────────────────────────────┘
 ```
 
-## 실수 스케일에서의 "소수"
+## "Primes" in the Real-Valued Scale
 
 ```
-  정수에서의 소수: 2, 3, 5, 7, 11, 13, ...
-  → 간격이 점차 증가 (평균 ln(N))
+  Primes on integers: 2, 3, 5, 7, 11, 13, ...
+  → Gaps gradually increase (average ln(N))
 
-  4/3 스케일에서:
-  → "소수 하나당 간격 = ln(4/3) = 골든존 폭"
-  → 마치 골든존이 "연속 세계의 소수 간격"인 것처럼 기능
+  At scale 4/3:
+  → "Gap per prime = ln(4/3) = Golden Zone width"
+  → As if the Golden Zone functions as "prime gap of the continuous world"
 
-  이산 → 연속 대응:
-  소수 간격 (이산) ──→ 골든존 폭 (연속)
-  ln(N) (증가)     ──→ ln(4/3) (고정)
-  교차점 = 4/3     ──→ 이산↔연속 경계
+  Discrete → Continuous correspondence:
+  Prime gap (discrete) ──→ Golden Zone width (continuous)
+  ln(N) (increasing)   ──→ ln(4/3) (fixed)
+  Crossing point = 4/3 ──→ discrete↔continuous boundary
 ```
 
-## 한계
+## Limitations
 
-1. N = 4/3은 정수가 아니므로 "4/3 근처의 소수"는 의미가 없음
-2. ln(N) = ln(4/3) 교차는 수학적으로 자명한 등식이며, 깊은 의미가 있는지 불명확
-3. 소수 간격의 평균과 골든존 폭은 서로 다른 맥락에서 정의됨
-4. 4/3 스케일의 "특별함"은 순환 논법일 가능성 (골든존 폭을 ln(4/3)으로 정의했으므로)
+1. N = 4/3 is not an integer, so "primes near 4/3" is meaningless
+2. The crossing ln(N) = ln(4/3) is a mathematically trivial identity; whether it has deep meaning is unclear
+3. Average prime gap and Golden Zone width are defined in different contexts
+4. The "specialness" of scale 4/3 may be circular reasoning (since Golden Zone width is defined as ln(4/3))
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 소수 간격 g(n) = ln(4/3) × ln(p(n)) / ln(4/3)으로 정규화하여 패턴 탐색
-- [ ] 4/3 스케일에서의 다른 수론적 현상 조사 (예: 연분수, 디오판토스 근사)
-- [ ] N-상태 일반화에서 각 교차점의 물리적/수학적 의미 탐색
-- [ ] 소수 간격의 분산과 골든존 내부 I 분포의 분산 비교
+- [ ] Normalize prime gap g(n) = ln(4/3) × ln(p(n)) / ln(4/3) and search for patterns
+- [ ] Investigate other number-theoretic phenomena at scale 4/3 (e.g., continued fractions, Diophantine approximation)
+- [ ] Explore the physical/mathematical meaning of each crossing point in the N-state generalization
+- [ ] Compare variance of prime gaps with variance of I distribution inside the Golden Zone
 
 ---
 
-*작성일: 2026-03-22*
-*관련: 가설 013, 092, 215, 216*
+*Created: 2026-03-22*
+*Related: Hypothesis 013, 092, 215, 216*

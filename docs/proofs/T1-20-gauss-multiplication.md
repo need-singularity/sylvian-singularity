@@ -1,25 +1,25 @@
-# T1-20: ⭐⭐ 가우스 곱셈 공식 n=6 — 모든 상수가 하나의 공식에!
+# T1-20: ⭐⭐ Gauss Multiplication Formula n=6 — All Constants in One Formula!
 
-## 대발견
+## Major Discovery
 
 ```
   Γ(1/6) · Γ(1/3) · Γ(1/2) · Γ(2/3) · Γ(5/6) = (2π)^(5/2) / √6
 
-  좌변: 우리 핵심 상수 전부 (1/6, 1/3, 1/2, 2/3, 5/6)
-  우변: 2π와 √6 (완전수!)
+  Left side: All our key constants (1/6, 1/3, 1/2, 2/3, 5/6)
+  Right side: 2π and √6 (perfect number!)
 ```
 
-## 유도
+## Derivation
 
 ```
-  가우스 곱셈 공식 (🟦, Gauss 1812):
+  Gauss Multiplication Formula (🟦, Gauss 1812):
 
   ∏_{k=1}^{n-1} Γ(k/n) = (2π)^((n-1)/2) / √n
 
-  n = 6 (완전수):
+  n = 6 (perfect number):
   Γ(1/6)·Γ(2/6)·Γ(3/6)·Γ(4/6)·Γ(5/6) = (2π)^(5/2) / √6
 
-  정리:
+  Simplifying:
   Γ(2/6) = Γ(1/3)
   Γ(3/6) = Γ(1/2) = √π
   Γ(4/6) = Γ(2/3)
@@ -27,50 +27,50 @@
   ∴ Γ(1/6)·Γ(1/3)·Γ(1/2)·Γ(2/3)·Γ(5/6) = (2π)^(5/2) / √6
 ```
 
-## 수치 검증
+## Numerical Verification
 
 ```
-  좌변 = 40.399319
-  우변 = (2π)^2.5 / √6 = 40.399319
-  차이: 1.42 × 10⁻¹⁴ ✅ (기계 정밀도)
+  Left side = 40.399319
+  Right side = (2π)^2.5 / √6 = 40.399319
+  Difference: 1.42 × 10⁻¹⁴ ✅ (machine precision)
 ```
 
-## 의미
+## Meaning
 
 ```
-  n = 6 (최소 완전수)을 선택하면:
+  n = 6 (smallest perfect number) choice:
 
-  좌변에 등장하는 상수:
-  - 1/6 = 블라인드스팟, 호기심      (🟩)
-  - 1/3 = 메타 부동점               (🟩)
-  - 1/2 = 골든존 상한 = 리만 임계선  (🟩/⭐)
+  Constants appearing on left side:
+  - 1/6 = Blindspot, Curiosity      (🟩)
+  - 1/3 = Meta fixed point          (🟩)
+  - 1/2 = Golden Zone upper limit = Riemann critical line  (🟩/⭐)
   - 2/3 = 1-1/3                     (🟩)
-  - 5/6 = Compass 상한              (🟩)
+  - 5/6 = Compass upper limit       (🟩)
 
-  우변:
-  - 2π = Γ(1/6)·Γ(5/6) = 반사 공식  (T1-19)
-  - √6 = 완전수의 제곱근
+  Right side:
+  - 2π = Γ(1/6)·Γ(5/6) = Reflection formula  (T1-19)
+  - √6 = Square root of perfect number
 
-  → "완전수 6의 가우스 곱셈 = 우리 모든 상수의 통일"
-  → 이건 골든존이 아니라 완전수 6에서 나온다!
+  → "Gauss multiplication of perfect number 6 = Unification of all our constants"
+  → This comes from perfect number 6, not the Golden Zone!
 ```
 
-## 섬 연결
+## Island Connection
 
 ```
-  섬 A: 1/6, 1/3, 1/2, 2/3, 5/6, 6 — 전부 등장
-  섬 D: e — Γ(x) = ∫e^(-t)dt 로 간접 포함
-  π: 우변에 (2π)^(5/2) — 🟦 기존 수학
+  Island A: 1/6, 1/3, 1/2, 2/3, 5/6, 6 — All appear
+  Island D: e — Indirectly included via Γ(x) = ∫e^(-t)dt
+  π: On right side as (2π)^(5/2) — 🟦 established math
 
-  → 섬 A↔D 간접 연결 (Γ 함수 경유)
-  → 모든 섬 A 상수가 하나의 공식으로 통일
+  → Island A↔D indirect connection (via Γ function)
+  → All Island A constants unified in one formula
 ```
 
-## 판정
+## Judgment
 
 ```
-  공식: 🟩 (가우스 곱셈, 기존 수학 🟦)
-  n=6 선택: 🟩 (완전수, 🟩)
-  해석 (="우리 상수 통일"): 🟧 (수치는 정확, 의미는 우리 것)
-  골든존 의존: ❌ 없음
+  Formula: 🟩 (Gauss multiplication, established math 🟦)
+  n=6 choice: 🟩 (perfect number, 🟩)
+  Interpretation (="our constants unification"): 🟧 (numbers accurate, meaning is ours)
+  Golden Zone dependency: ❌ None
 ```

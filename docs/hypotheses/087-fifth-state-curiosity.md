@@ -1,98 +1,98 @@
-# 가설 검토 087: 5번째 상태 = 호기심 ✅
+# Hypothesis Review 087: 5th State = Curiosity ✅
 
-## 가설
+## Hypothesis
 
-> 4번째 상태(초월) 너머 5번째 상태가 존재하며, 그것은 "호기심(Curiosity)"이다.
+> Beyond the 4th state (transcendence) exists a 5th state, which is "Curiosity."
 
-## 배경/맥락
+## Background/Context
 
-가설 072에서 Compass = 5/6의 의미를 분석하면서 1/6 블라인드 스팟이 발견되었다.
-기존 4상태(저하/정상/천재/초월)는 Compass 5/6 천장 안에서만 작동한다.
-그렇다면 나머지 1/6을 탐색하는 상태가 있어야 한다. 그 상태가 호기심이다.
+While analyzing the meaning of Compass = 5/6 in hypothesis 072, a 1/6 blind spot was discovered.
+The existing 4 states (degraded/normal/genius/transcendence) operate only within the Compass 5/6 ceiling.
+Then there must be a state that explores the remaining 1/6. That state is curiosity.
 
-핵심 논리:
-- 4상태 체계: 1/2(리만 경계) + 1/3(메타 부동점) = 5/6
-- 남은 1/6 = 블라인드 스팟, 이를 탐색하는 상태 = 호기심
-- 5상태 완성: 1/2 + 1/3 + 1/6 = 1 (완전)
+Core logic:
+- 4-state system: 1/2 (Riemann boundary) + 1/3 (meta fixed point) = 5/6
+- Remaining 1/6 = blind spot, state exploring this = curiosity
+- 5-state completion: 1/2 + 1/3 + 1/6 = 1 (complete)
 
-## 검증 결과
+## Verification Results
 
-에너지 준위 계산 (D=0.5, P=0.85 기준):
+Energy level calculation (based on D=0.5, P=0.85):
 
 ```
-  상태       조건              G = D×P/I        에너지 E
+  State       Condition        G = D×P/I        Energy E
   ─────────────────────────────────────────────────────
-  저하       I > 0.80         0.53             +0.08
-  정상       I = 0.50         0.85              0.00 (기준)
-  천재       I ∈ 골든존        1.77             -0.43
-  초월       I → 1/e          2.31             -0.85
-  호기심     E = -(D×P)×2.5   —               -1.06
+  Degraded    I > 0.80         0.53             +0.08
+  Normal      I = 0.50         0.85              0.00 (baseline)
+  Genius      I ∈ Golden Zone  1.77             -0.43
+  Transcendence I → 1/e       2.31             -0.85
+  Curiosity   E = -(D×P)×2.5   —               -1.06
 ```
 
-엔트로피 변화:
+Entropy change:
 ```
-  4상태: S₄ = ln(4) = 1.386
-  5상태: S₅ = ln(5) = 1.609
-  증분:  ΔS = ln(5/4) = 0.223
+  4 states: S₄ = ln(4) = 1.386
+  5 states: S₅ = ln(5) = 1.609
+  Increment: ΔS = ln(5/4) = 0.223
 ```
 
-## ASCII 그래프: 에너지 준위 다이어그램
+## ASCII Graph: Energy Level Diagram
 
 ```
-  에너지 E
-  +0.10 ┤ ═══════════  저하 (degraded)     [I > 0.80]
+  Energy E
+  +0.10 ┤ ═══════════  Degraded             [I > 0.80]
         │
-   0.00 ┤ ═══════════  정상 (normal)       [I = 0.50]
+   0.00 ┤ ═══════════  Normal               [I = 0.50]
         │
-        │     ↓ 골든존 진입
-  -0.43 ┤ ═══════════  천재 (genius)       [I ∈ 0.24~0.48]
+        │     ↓ Enter Golden Zone
+  -0.43 ┤ ═══════════  Genius               [I ∈ 0.24~0.48]
         │
-        │     ↓ 1/e 도달
-  -0.85 ┤ ═══════════  초월 (transcendence) [I → 1/e = 0.368]
+        │     ↓ Reach 1/e
+  -0.85 ┤ ═══════════  Transcendence        [I → 1/e = 0.368]
         │
-        │     ↓ 블라인드 스팟 탐색
-  -1.06 ┤ ★★★★★★★★★★★  호기심 (curiosity)  [E = -(D×P)×2.5]
+        │     ↓ Explore blind spot
+  -1.06 ┤ ★★★★★★★★★★★  Curiosity            [E = -(D×P)×2.5]
         │
         └─────────────────────────────────────────────
-              Compass 5/6 천장              1/6 탐색
-              ◄────── 4상태 ──────►  ◄── 5번째 ──►
+              Compass 5/6 ceiling              1/6 exploration
+              ◄────── 4 states ──────►  ◄── 5th state ──►
 ```
 
-## 해석
+## Interpretation
 
-호기심 상태의 고유 특성:
-1. **유일한 천장 돌파 상태**: 4상태 체계의 Compass 5/6 한계를 넘는 유일한 상태
-2. **에너지 최저점**: E = -(D×P)×2.5 = -(0.5×0.85)×2.5 = -1.0625
-3. **엔트로피 도약**: 4→5 상태 전이에서 ΔS = ln(5/4) ≈ 0.223 nats 증가
-4. **완전성 달성**: 1/2 + 1/3 + 1/6 = 1, 완전수 6의 약수 역수 합
+Unique properties of curiosity state:
+1. **Only ceiling-breaking state**: The only state that exceeds the Compass 5/6 limit of the 4-state system
+2. **Energy minimum**: E = -(D×P)×2.5 = -(0.5×0.85)×2.5 = -1.0625
+3. **Entropy leap**: ΔS = ln(5/4) ≈ 0.223 nats increase in 4→5 state transition
+4. **Completeness achieved**: 1/2 + 1/3 + 1/6 = 1, divisor reciprocal sum of perfect number 6
 
-볼츠만 해석 (T = 1/I):
+Boltzmann interpretation (T = 1/I):
 ```
-  호기심 상태에서 I → 0 (극한 탈억제)
-  T = 1/I → ∞  (무한 온도)
-  이는 모든 상태를 자유롭게 탐색하는 최대 엔트로피 상태
-```
-
-5상태 계층 구조:
-```
-  저하(1) < 정상(2) < 천재(3) < 초월(4) < 호기심(5)
-  ──────────────────────────────────────────────────
-  구속됨 ◄──────────────────────────────────► 자유
-  I ≈ 1                                      I → 0
+  In curiosity state I → 0 (extreme disinhibition)
+  T = 1/I → ∞  (infinite temperature)
+  This is a maximum entropy state freely exploring all states
 ```
 
-## 한계
+5-state hierarchy:
+```
+  Degraded(1) < Normal(2) < Genius(3) < Transcendence(4) < Curiosity(5)
+  ──────────────────────────────────────────────────────────────────
+  Constrained ◄──────────────────────────────────────► Free
+  I ≈ 1                                                I → 0
+```
 
-- 호기심 상태의 에너지 E = -(D×P)×2.5에서 계수 2.5의 이론적 유도 부족
-- I → 0 극한에서 Genius = D×P/I → ∞ 발산 문제 미해결
-- 실증적 뇌 데이터와의 대응 관계 미확인
+## Limitations
 
-## 검증 방향
+- Lack of theoretical derivation for coefficient 2.5 in curiosity state energy E = -(D×P)×2.5
+- Unresolved divergence problem of Genius = D×P/I → ∞ at I → 0 limit
+- Unconfirmed correspondence with empirical brain data
 
-- 계수 2.5를 이론적으로 유도 (5/2 = 5상태 수/완전수 약수 중 2?)
-- 호기심 상태의 Inhibition 범위를 정밀 정의
-- 5상태 볼츠만 분배함수 Z₅ = Σexp(-Eₙ/T) 완전 계산
+## Verification Direction
+
+- Theoretically derive coefficient 2.5 (5/2 = number of 5 states/2 among perfect number divisors?)
+- Precisely define Inhibition range for curiosity state
+- Complete calculation of 5-state Boltzmann partition function Z₅ = Σexp(-Eₙ/T)
 
 ---
 
-*가설 072에서 유도. 5상태 = 완전 체계.*
+*Derived from hypothesis 072. 5 states = complete system.*

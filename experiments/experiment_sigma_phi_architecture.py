@@ -1,5 +1,6 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-7: sigma-phi=n-tau 아키텍처 최적성 검증
+"""H-CX-7: sigma-phi=n-tau Architecture Optimality Verification
 (12,k=4) vs (8,k=2) vs (6,k=3) vs (16,k=4) vs (24,k=6)
 """
 import sys, os, time
@@ -74,3 +75,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

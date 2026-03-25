@@ -137,8 +137,8 @@ Confirmed: **Only n in {1, 6} satisfy pointwise = Dirichlet convolution.**
 
 ### Verdict: 🟨 Weak trend, not confirmed
 
-미학습 모델에서 약한 감소 추세가 보이지만, 6블록이 유일하게 특별하지 않음.
-collapse score ~10은 "붕괴 없음"을 의미. 학습 후 6블록에서만 score가 급감하는지 확인 필요.
+Untrained model shows weak decreasing trend but 6 blocks is not uniquely special.
+Collapse score ~10 means "no collapse". Need to check if only 6-block shows sharp drop in score after training.
 
 ---
 

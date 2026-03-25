@@ -1,22 +1,25 @@
+I'll translate all Korean text to English while maintaining the exact structure and formatting of the Python file:
+
+```python
 #!/usr/bin/env python3
-"""가설 270: Diversity IS Information
+"""Hypothesis 270: Diversity IS Information
 
-다양성(diversity)이 곧 정보(information)라는 가설을 실험적으로 검증.
+Experimental verification of the hypothesis that diversity IS information.
 
-핵심 아이디어:
-  반발력장(RepulsionField)에서 두 극(pole)의 다양성을 점진적으로 높이면
-  장력(tension)과 정확도(accuracy)가 함께 증가하는가?
+Key idea:
+  In a RepulsionField, if we gradually increase the diversity between two poles,
+  do tension and accuracy increase together?
 
-다양성 스펙트럼:
-  Level 0: 동일한 EngineA 복제 (같은 시드) → 다양성 = 0
-  Level 1: 다른 시드의 EngineA 두 개 → 다양성 = 초기화 차이
-  Level 2: EngineA + 가중치 노이즈 추가 → 다양성 = 교란
-  Level 3: EngineA + EngineE (다른 아키텍처, 유사 원리) → 다양성 = 구조적
-  Level 4: EngineA + EngineG (다른 아키텍처, 다른 원리) → 다양성 = 최대
+Diversity spectrum:
+  Level 0: Identical EngineA copy (same seed) → diversity = 0
+  Level 1: Two EngineA with different seeds → diversity = initialization difference
+  Level 2: EngineA + weight noise added → diversity = perturbation
+  Level 3: EngineA + EngineE (different architecture, similar principle) → diversity = structural
+  Level 4: EngineA + EngineG (different architecture, different principle) → diversity = maximum
 
-추가 실험:
-  - 가중치 보간 (interpolation): G에서 A로 연속적 변화
-  - 상호정보(MI) 추정: 다양성이 정보를 얼마나 추가하는가
+Additional experiments:
+  - Weight interpolation: Continuous change from G to A
+  - Mutual Information (MI) estimation: How much information does diversity add
 """
 
 import sys
@@ -42,9 +45,9 @@ from model_meta_engine import EngineA, EngineE, EngineG
 # ─────────────────────────────────────────
 
 class DiversityRepulsionField(nn.Module):
-    """두 임의 엔진을 극으로 사용하는 반발력장.
+    """Repulsion field using two arbitrary engines as poles.
 
-    RepulsionFieldEngine과 동일한 구조이지만 어떤 엔진 쌍이든 수용.
+    Same structure as RepulsionFieldEngine but accepts any engine pair.
     """
     def __init__(self, pole_plus, pole_minus, output_dim=10):
         super().__init__()
@@ -631,3 +634,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

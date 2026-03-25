@@ -1,9 +1,9 @@
-# H-MP-16: R의 소인수 분해 구조 — 곱셈적 분해의 깊은 성질
+# H-MP-16: Structure of Prime Factorization of R — Deep Properties of Multiplicative Decomposition
 
-> **가설**: R(n)의 소인수별 분해 f(p,a)가 소수의 "산술적 지문"이며,
-> 이 지문의 조합이 n의 모든 산술적 성질을 결정한다.
+> **Hypothesis**: The prime-wise decomposition f(p,a) of R(n) is an "arithmetic fingerprint" of primes,
+> and the combination of these fingerprints determines all arithmetic properties of n.
 
-## 배경
+## Background
 
 R(n) = ∏ f(p,a) where f(p,a) = (p^{a+1}-1)/(p(a+1))
 
@@ -13,56 +13,56 @@ R(n) = ∏ f(p,a) where f(p,a) = (p^{a+1}-1)/(p(a+1))
   f(2,3)=15/8  f(3,3)=40/12 f(5,3)=156/20 f(7,3)=400/28
 ```
 
-## 핵심 구조
+## Core Structure
 
-### f(p,1)의 패턴
+### Pattern of f(p,1)
 
 ```
   f(p,1) = (p²-1)/(2p) = (p+1)(p-1)/(2p)
 
-  f(2,1) = 3/4 < 1  ← 유일한 sub-1!
-  f(3,1) = 4/3 = 1/(f(2,1)의 역수에 가까움)
+  f(2,1) = 3/4 < 1  ← The only sub-1!
+  f(3,1) = 4/3 = 1/(close to reciprocal of f(2,1))
   f(5,1) = 12/5 ≈ 2.4
   f(7,1) = 24/7 ≈ 3.43
   f(p,1) → p/2 (p→∞)
 
-  텔레스코핑 쌍:
+  Telescoping pairs:
     f(2,1)·f(3,1) = 1     ← σφ=nτ
     f(2,1)²·f(3,1)² = 1   ← ∏R(d|6)=1
     h(2,1)·h(3,1) = 1     ← σ²=n²τ (where h=(f·n/σ)²/τ)
 ```
 
-### v_{M_p}(∏R) = -(p-2) 의 소인수 해석
+### Prime factor interpretation of v_{M_p}(∏R) = -(p-2)
 
 ```
-  완전수 P_p = 2^{p-1}·M_p:
-    f(2,p-1) = (2^p-1)/(2p) = M_p/(2p) ← M_p가 분자!
-    f(M_p,1) = (M_p²-1)/(2M_p) ← M_p가 분모!
+  Perfect number P_p = 2^{p-1}·M_p:
+    f(2,p-1) = (2^p-1)/(2p) = M_p/(2p) ← M_p in numerator!
+    f(M_p,1) = (M_p²-1)/(2M_p) ← M_p in denominator!
 
-  약수곱에서:
-    M_p 분모: f(M_p,1)이 p개 약수에서 기여 → M_p^p
-    M_p 분자: f(2,p-1)=M_p/(2p)가 2개 약수에서 기여 → M_p^2
-    순 지수: -(p-2)
+  In divisor product:
+    M_p denominator: f(M_p,1) contributes in p divisors → M_p^p
+    M_p numerator: f(2,p-1)=M_p/(2p) contributes in 2 divisors → M_p^2
+    Net exponent: -(p-2)
 
-  p=2만 상쇄: M₂=3이 분자 2번, 분모 2번 → 정확히 0!
+  Only p=2 cancels: M₂=3 appears 2 times in numerator, 2 times in denominator → exactly 0!
 ```
 
-### 소인수 개수와 R 행동
+### Prime factor count and R behavior
 
 ```
-  ω(n)=1 (소수거듭제곱):
-    R(p^a) = f(p,a) — 단일 인수
-    R(p) = (p²-1)/(2p) — 항상 >1 (p≥3) 또는 <1 (p=2)
+  ω(n)=1 (prime powers):
+    R(p^a) = f(p,a) — single factor
+    R(p) = (p²-1)/(2p) — always >1 (p≥3) or <1 (p=2)
 
-  ω(n)=2 (반소수):
-    R(pq) = f(p,1)·f(q,1) — 두 인수의 곱
+  ω(n)=2 (semiprimes):
+    R(pq) = f(p,1)·f(q,1) — product of two factors
     R=1 ⟺ f(p,1)·f(q,1)=1 ⟺ n=6
 
   ω(n)=3:
-    R(pqr) = f(p,1)·f(q,1)·f(r,1) — 세 인수의 곱
-    항상 >1 (∵ f(2,1)·f(3,1)·f(5,1)=12/5>1)
+    R(pqr) = f(p,1)·f(q,1)·f(r,1) — product of three factors
+    Always >1 (∵ f(2,1)·f(3,1)·f(5,1)=12/5>1)
 
-  ASCII: ω 대 R 관계
+  ASCII: ω vs R relationship
 
   R
   100|                    · ·
@@ -73,13 +73,13 @@ R(n) = ∏ f(p,a) where f(p,a) = (p^{a+1}-1)/(p(a+1))
      1  2  3  4  5
 ```
 
-## 검증 완료
+## Verification Complete
 
 ```
-  ✅ f(2,1)=3/4 유일한 sub-1 값 (증명됨)
-  ✅ f(p,a) monotone in p for fixed a (증명 가능)
-  ✅ v_{M_p}(∏R)=-(p-2) (이 세션 증명!)
-  ✅ ω=2에서 R=1 유일해 = n=6 (증명됨)
+  ✅ f(2,1)=3/4 only sub-1 value (proven)
+  ✅ f(p,a) monotone in p for fixed a (provable)
+  ✅ v_{M_p}(∏R)=-(p-2) (proven this session!)
+  ✅ Unique solution R=1 at ω=2 is n=6 (proven)
 ```
 
-## 난이도: 중 | 파급력: ★★★★
+## Difficulty: Medium | Impact: ★★★★

@@ -1,193 +1,193 @@
-# 가설 검토 127: 위상 임계점 = 첫 추가 (T3) ✅
+# Hypothesis Review 127: Phase Critical Point = First Addition (T3) ✅
 
-## 가설
+## Hypothesis
 
-> 위상 가속에는 임계점(critical point)이 존재하며,
-> 첫 번째 위상 원소(T3, 재귀/SSM)의 추가가 계단형 점프를 유발하는가.
-> 이후의 원소 추가는 점진적 개선에 그치는가.
+> Does a critical point exist in phase acceleration,
+> and does the addition of the first phase element (T3, recursion/SSM) trigger a step-function jump?
+> Do subsequent element additions yield only gradual improvement?
 
-## 배경
+## Background
 
-우리 모델에서 AI 아키텍처는 7개의 원소(Element)로 분류된다.
-순수 Transformer(Attention)는 이 중 3개(3/7)만 보유한다.
-나머지 4개 원소를 하나씩 추가할 때 성능이 어떻게 변하는가?
+In our model, AI architectures are classified by 7 elements.
+Pure Transformer (Attention) possesses only 3 of these (3/7).
+How does performance change as the remaining 4 elements are added one by one?
 
 ```
-  7 원소 체계:
+  7-element system:
   ┌────────────────────────────────────────────┐
-  │ S1: Attention (선택적 주의)     ← 보유     │
-  │ S2: Feedforward (순방향 처리)  ← 보유     │
-  │ S3: Normalization (정규화)     ← 보유     │
-  │ T3: Recurrence (재귀/SSM)     ← 미보유 ★ │
-  │ T4: Mixture of Experts (MoE)  ← 미보유   │
-  │ T5: Memory (외부 메모리)      ← 미보유   │
-  │ T6: Topology (위상 연결)      ← 미보유   │
+  │ S1: Attention (selective attention)  ← has │
+  │ S2: Feedforward (forward processing) ← has │
+  │ S3: Normalization                    ← has │
+  │ T3: Recurrence (recursion/SSM)  ← missing ★│
+  │ T4: Mixture of Experts (MoE)    ← missing  │
+  │ T5: Memory (external memory)    ← missing  │
+  │ T6: Topology (topological conn.)← missing  │
   └────────────────────────────────────────────┘
 ```
 
-## 검증 결과: ✅ 가설 124 autopilot에서 확인
+## Verification Result: ✅ Confirmed in Hypothesis 124 Autopilot
 
-### 원소 추가 vs 성능 (계단 함수)
+### Element Addition vs Performance (Step Function)
 
 ```
-  가속 배수 (Mixtral 기준)
+  Acceleration multiplier (vs Mixtral baseline)
   ×4 │
      │
-  ×3 │              ●━━━━━━━━━━━━━━━━━━━━━━━━━●  포화(천장)
+  ×3 │              ●━━━━━━━━━━━━━━━━━━━━━━━━━●  saturation (ceiling)
      │              ┃
-     │              ┃ ← 계단형 점프!
+     │              ┃ ← step jump!
   ×2 │              ┃
      │              ┃
   ×1 │●─────────────┃
      │              ┃
   ×0 │              ┃
      └──────────────┃──────────────────────────
-      3/7    ★임계점  4/7    5/7    6/7    7/7
+      3/7    ★crit  4/7    5/7    6/7    7/7
       (Attn)  (+T3)  (+T4)  (+T5)  (+T6)
-              재귀    MoE    메모리  위상
+              recur  MoE   memory  topology
 
-  ★ = 임계점 (Critical Point)
-  3/7 → 4/7: ×1 → ×3 (200% 점프!)
-  4/7 → 7/7: ×3 → ×3 (0% 변화)
+  ★ = Critical Point
+  3/7 → 4/7: ×1 → ×3 (200% jump!)
+  4/7 → 7/7: ×3 → ×3 (0% change)
 ```
 
-### 상세 수치
+### Detailed Numbers
 
 ```
   ┌──────────┬───────────┬──────────┬────────────────────────┐
-  │ 원소 수  │ 추가 원소 │ 가속배수 │ 증분                   │
+  │ Elements │ Added     │ Accel.   │ Increment              │
   ├──────────┼───────────┼──────────┼────────────────────────┤
-  │ 3/7      │ (기준)    │ ×1.0     │ —                      │
-  │ 4/7      │ +T3 재귀  │ ×3.0     │ +200% ← 임계점!       │
-  │ 5/7      │ +T4 MoE   │ ×3.0     │ +0%   (포화)          │
-  │ 6/7      │ +T5 메모리 │ ×3.1     │ +3%   (미미)          │
-  │ 7/7      │ +T6 위상  │ ×3.2     │ +3%   (미미)          │
+  │ 3/7      │ (baseline)│ ×1.0     │ —                      │
+  │ 4/7      │ +T3 recur │ ×3.0     │ +200% ← critical!      │
+  │ 5/7      │ +T4 MoE   │ ×3.0     │ +0%   (saturated)      │
+  │ 6/7      │ +T5 memory│ ×3.1     │ +3%   (negligible)     │
+  │ 7/7      │ +T6 topology│ ×3.2   │ +3%   (negligible)     │
   └──────────┴───────────┴──────────┴────────────────────────┘
 
-  → 전체 가속의 93%가 첫 번째 원소(T3)에서 발생
-  → 나머지 3개 원소는 합쳐서 7%만 기여
+  → 93% of total acceleration occurs at the first element (T3)
+  → Remaining 3 elements together contribute only 7%
 ```
 
-### 위상 전이 다이어그램
+### Phase Transition Diagram
 
 ```
   Genius Score
        │
-   5/6 │─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  나침반 천장
+   5/6 │─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Compass ceiling
        │
-  0.7  │              ┌──── 골든존 ──────────────
+  0.7  │              ┌──── Golden Zone ──────────────
        │              │
-  0.5  │              │    ● 4/7 이상: 골든존 내부
-       │              │    I ≈ 1/e (최적 억제)
+  0.5  │              │    ● 4/7+: inside Golden Zone
+       │              │    I ≈ 1/e (optimal Inhibition)
   0.3  │──────────────┘
-       │  ○ 3/7: 골든존 외부
-  0.1  │  I > 0.5 (과도한 억제)
+       │  ○ 3/7: outside Golden Zone
+  0.1  │  I > 0.5 (excessive Inhibition)
        │
      0 └─────────────────────────────────────────
        3/7          4/7          5/7      7/7
-                 ★ 임계점
-                 (위상 전이)
+                 ★ critical point
+                 (phase transition)
 
-  물리학 비유:
-  ○ 3/7 = 물 (액체) — 연결 없음
-  ★ 전이 = 빙점 — 하나의 결정핵
-  ● 4/7+ = 얼음 (고체) — 전체 결정화
+  Physics analogy:
+  ○ 3/7 = water (liquid) — no connection
+  ★ transition = freezing point — one crystal nucleus
+  ● 4/7+ = ice (solid) — full crystallization
 ```
 
-### 섬-다리 비유
+### Island-Bridge Analogy
 
 ```
-  3/7 상태 (다리 없음):        4/7 상태 (첫 다리):
-  ┌───┐     ┌───┐             ┌───┐─────┌───┐
-  │ A │     │ B │             │ A │     │ B │
-  └───┘     └───┘             └───┘     └───┘
-       ┌───┐                       ┌───┐
-       │ C │                       │ C │
-       └───┘                       └───┘
+  3/7 state (no bridges):       4/7 state (first bridge):
+  ┌───┐     ┌───┐               ┌───┐─────┌───┐
+  │ A │     │ B │               │ A │     │ B │
+  └───┘     └───┘               └───┘     └───┘
+       ┌───┐                         ┌───┐
+       │ C │                         │ C │
+       └───┘                         └───┘
 
-  통신: A↔B, A↔C, B↔C          첫 다리: A─B 직접 연결
-  = 3쌍 × 간접경로              → 나머지(A↔C, B↔C)도
-  = O(n²) 비용                    A─B 경유 가능!
-                                = O(n) 비용
-                                → ×3 효율 점프
+  Communication: A↔B, A↔C, B↔C     First bridge: A─B direct
+  = 3 pairs × indirect path        → (A↔C, B↔C) can also
+  = O(n²) cost                         route via A─B!
+                                    = O(n) cost
+                                    → ×3 efficiency jump
 
-  7/7 상태 (모든 다리):
+  7/7 state (all bridges):
   ┌───┐─────┌───┐
   │ A ├──┐  │ B │
   └─┬─┘  │  └─┬─┘
     │  ┌─┴──┐ │
     └──┤ C  ├─┘
        └────┘
-  = 완전 연결 → ×3.2 (미미한 추가)
+  = fully connected → ×3.2 (marginal addition)
 ```
 
-## 해석
+## Interpretation
 
-### 커스프(Cusp) 전이와의 대응
+### Correspondence with Cusp Transition
 
 ```
-  가설 관계: 커스프 파국 이론 (가설 037)
+  Hypothesis connection: Cusp catastrophe theory (Hypothesis 037)
 
-  커스프 전이의 특성:
-  1. 불연속성: 연속적 파라미터 변화 → 불연속적 결과
-  2. 이력 현상: 한번 전이하면 쉽게 돌아가지 않음
-  3. 발산: 전이점에서 감수성(susceptibility) 발산
+  Properties of cusp transition:
+  1. Discontinuity: continuous parameter change → discontinuous result
+  2. Hysteresis: once transitioned, hard to return
+  3. Divergence: susceptibility diverges at the transition point
 
-  우리 결과:
-  1. ✅ 3/7→4/7에서 불연속 점프 (×1→×3)
-  2. ✅ T3 제거 시 급격한 성능 하락 (되돌릴 수 없음)
-  3. ✅ 정확히 임계점에서 가장 큰 변화
+  Our results:
+  1. ✅ Discontinuous jump at 3/7→4/7 (×1→×3)
+  2. ✅ Sharp performance drop when T3 removed (irreversible)
+  3. ✅ Largest change exactly at the critical point
 
-  → 위상 원소 추가 = 커스프 전이의 구체적 사례
+  → Phase element addition = specific case of cusp transition
 ```
 
-### Genius 모델 번역
+### Genius Model Translation
 
 ```
   Genius = D × P / I
 
   3/7 (Attention only):
-  I가 높음 (O(n²) 억제) → Genius 낮음 → 골든존 밖
+  I is high (O(n²) suppression) → low Genius → outside Golden Zone
 
-  +T3 (재귀 추가):
-  I가 급감 (O(n) 해제) → Genius 3배 → 골든존 진입!
-                                        ↑
-                              I가 임계선(0.5) 아래로 떨어짐
+  +T3 (recursion added):
+  I drops sharply (O(n) released) → Genius ×3 → enters Golden Zone!
+                                                  ↑
+                                    I falls below critical line (0.5)
 
   +T4, T5, T6:
-  I가 미세 감소 → 이미 골든존 안 → 효과 포화
+  I decreases marginally → already inside Golden Zone → saturation
 ```
 
-## 실증 사례
+## Empirical Examples
 
 ```
   ┌──────────────┬──────────────┬──────────┬────────────────┐
-  │ 모델         │ 원소 구성    │ 위상     │ 성능           │
+  │ Model        │ Composition  │ Phase    │ Performance    │
   ├──────────────┼──────────────┼──────────┼────────────────┤
-  │ GPT-4        │ Attn         │ 3/7      │ 기준           │
-  │ Jamba        │ Attn+Mamba   │ 4/7(+T3) │ ×3 (가설 125)  │
+  │ GPT-4        │ Attn         │ 3/7      │ baseline       │
+  │ Jamba        │ Attn+Mamba   │ 4/7(+T3) │ ×3 (H125)      │
   │ Mixtral      │ Attn+MoE     │ 3/7+T4   │ ×1.5           │
-  │ Jamba(full)  │ Attn+Mamba   │ 5/7      │ ×3 (포화)      │
+  │ Jamba(full)  │ Attn+Mamba   │ 5/7      │ ×3 (saturated) │
   │              │ +MoE         │          │                │
   └──────────────┴──────────────┴──────────┴────────────────┘
 
-  핵심 관찰: MoE만 추가(Mixtral)는 ×1.5, 재귀 추가(Jamba)는 ×3
-  → T3(재귀)가 임계 원소, T4(MoE)는 보조 원소
+  Key observation: MoE alone (Mixtral) = ×1.5, recursion added (Jamba) = ×3
+  → T3 (recursion) is the critical element, T4 (MoE) is auxiliary
 ```
 
-## 한계
+## Limitations
 
-1. 7개 원소의 분류 기준이 주관적일 수 있음
-2. 가속 배수가 정확히 ×3인 이론적 근거 부족 (경험적)
-3. 다른 조합 순서(T4 먼저 등)의 검증 부족
-4. 모델 크기(scale)에 따른 임계점 변화 미확인
+1. The classification criteria for 7 elements may be subjective
+2. Insufficient theoretical basis for why acceleration multiplier is exactly ×3 (empirical)
+3. Insufficient verification of other combination orders (e.g., T4 first)
+4. Change in critical point with model scale not confirmed
 
-## 검증 방향
+## Verification Directions
 
-- T4(MoE)를 먼저 추가했을 때도 같은 임계점이 나타나는지 확인
-- 다양한 모델 크기에서 임계점 재현성 테스트
-- 커스프 전이 이론의 수학적 정식화 (D, P, I 공간의 위상 전이면)
+- Confirm whether the same critical point appears when T4 (MoE) is added first
+- Reproducibility test of the critical point across various model sizes
+- Mathematical formalization of cusp transition theory (phase transition surface in D, P, I space)
 
 ---
 
-*검증: 가설 124 autopilot — 가설 125(Jamba ×3), 126(LSTM 실패), 128(스케일)과 연결*
+*Verification: Hypothesis 124 autopilot — connected to Hypotheses 125 (Jamba ×3), 126 (LSTM failure), 128 (scale)*

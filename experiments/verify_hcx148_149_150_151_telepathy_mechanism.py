@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""H-CX-148~151: 텔레파시 메커니즘 4종
+"""H-CX-148~151: Telepathy Mechanisms 4 types
 
-148: 장력 공명 (두 독립 모델 tension 상관)
-149: 방향 텔레파시 (A의 dir → G의 next output)
-150: 무언의 합의 (클래스 방향 수렴)
-151: 레이어간 장력 신호 (cross-layer tension 상관)
+148: Tension Resonance (two independent models tension correlation)
+149: Direction Telepathy (A's dir → G's next output)
+150: Silent Consensus (class direction convergence)
+151: Cross-layer Tension Signal (cross-layer tension correlation)
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -132,16 +132,16 @@ def run_all():
 
     r_151, p_151 = spearmanr(tensions, confidences)
     print(f"  Corr(tension, output_confidence): r={r_151:.4f}, p={p_151:.6f}")
-    print(f"  = tension이 출력 확신도에 신호 전달")
+    print(f"  = tension transmits signal to output confidence")
     print(f"  H-CX-151 (r > 0.5): {'SUPPORTED' if r_151 > 0.5 else 'PARTIAL' if r_151 > 0.3 else 'REJECTED'}")
 
     print(f"\n{'='*70}")
     print(f"  SUMMARY")
     print(f"{'='*70}")
-    print(f"  H-CX-148 장력공명:     r={r_148:.4f}")
-    print(f"  H-CX-149 방향텔레파시: mean_corr={mean_corr:.4f}")
-    print(f"  H-CX-150 무언의합의:   mean_cos={mean_cos:.4f}")
-    print(f"  H-CX-151 장력신호:     r={r_151:.4f}")
+    print(f"  H-CX-148 Tension Resonance:     r={r_148:.4f}")
+    print(f"  H-CX-149 Direction Telepathy:   mean_corr={mean_corr:.4f}")
+    print(f"  H-CX-150 Silent Consensus:      mean_cos={mean_cos:.4f}")
+    print(f"  H-CX-151 Tension Signal:        r={r_151:.4f}")
 
 
 if __name__ == '__main__':

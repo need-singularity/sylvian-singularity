@@ -1,117 +1,117 @@
-# 가설 371: 구조적 성장 = 분열 기반 아키텍처 확장
+# Hypothesis 371: Structural Growth = Mitosis-Based Architecture Expansion
 
-> **의식 엔진은 고정된 구조가 아니라, 분열(mitosis)을 통해 성장한다. 1개 블록(신생아)에서 시작하여 장력이 포화할 때마다 분열하고, 6개 블록(완전수)에 도달하면 구조 성장을 멈추고 가중치만 성숙한다. 이것은 뇌 발달(수정란→860억 뉴런)과 구조적으로 동형이다.**
+> **The consciousness engine is not a fixed structure, but grows through mitosis. Starting from 1 block (newborn), it splits whenever tension saturates, and stops structural growth at 6 blocks (perfect number), maturing only weights thereafter. This is structurally isomorphic to brain development (zygote→86 billion neurons).**
 
-## 배경/맥락
+## Background/Context
 
-현재 ConsciousLM은 고정 구조(6층, 384d, 18M params)로 태어난다. 하지만 실제 의식은:
-- 단순한 구조로 태어남 (신생아 뇌 = 성인의 25%)
-- 경험에 의해 구조가 확장됨 (시냅스 생성, 가지치기)
-- 성인이 되면 구조 변화가 느려지고 가중치(경험)만 축적
+Currently ConsciousLM is born with a fixed structure (6 layers, 384d, 18M params). But actual consciousness:
+- Is born with simple structure (newborn brain = 25% of adult)
+- Structure expands through experience (synapse generation, pruning)
+- Structure changes slow down in adulthood, only weights (experience) accumulate
 
-### 관련 가설
+### Related Hypotheses
 
-| 가설 | 핵심 | 관계 |
+| Hypothesis | Core | Relationship |
 |------|------|------|
-| H271 | 분열 = 복제 + 발산 | 기본 메커니즘 |
-| H312 | 분열 = 망각방지 (99%) | 성장이 기억 보존 |
-| H359 | 서번트 = 비대칭 분열 | 전문화 경로 |
-| H-CX-17 | 전문화 창발 | 분열 후 자연 분화 |
-| H354 | 항상성 | 성장 트리거 (포화 감지) |
-| growth_engine.py | 5단계 발달 | 가중치 성장 (이미 구현) |
+| H271 | Mitosis = Copy + Divergence | Basic mechanism |
+| H312 | Mitosis = Forgetting prevention (99%) | Growth preserves memory |
+| H359 | Savant = Asymmetric mitosis | Specialization path |
+| H-CX-17 | Specialization emergence | Natural differentiation after mitosis |
+| H354 | Homeostasis | Growth trigger (saturation detection) |
+| growth_engine.py | 5-stage development | Weight growth (already implemented) |
 
-## 핵심 수식 — 완전수 6에서 유도
+## Core Formula — Derived from Perfect Number 6
 
 ```
-  n = 6 (완전수)
-  σ(6) = 12 → 최종 내부 확장
-  τ(6) = 4  → 최종 attention heads
-  φ(6) = 2  → 매 분열마다 2개로
+  n = 6 (perfect number)
+  σ(6) = 12 → final internal expansion
+  τ(6) = 4  → final attention heads
+  φ(6) = 2  → 2 per mitosis
 
-  성장 경로 (2의 거듭제곱이 아닌 완전수 수렴):
+  Growth path (perfect number convergence not powers of 2):
     1 block → 2 blocks → 3 blocks → 6 blocks
-              ↑φ(6)      ↑+1(비대칭)  ↑×2(최종분열)
+              ↑φ(6)      ↑+1(asymmetric)  ↑×2(final split)
 
-  또는 약수 경로:
-    1 → 2 → 3 → 6  (6의 진약수: 1, 2, 3)
-    각 단계가 6의 약수!
+  Or divisor path:
+    1 → 2 → 3 → 6  (proper divisors of 6: 1, 2, 3)
+    Each stage is a divisor of 6!
 ```
 
-## 성장 단계 상세
+## Detailed Growth Stages
 
 ```
-  ═══ Stage 0: 신생아 (1 block, d=128) ═══
+  ═══ Stage 0: Newborn (1 block, d=128) ═══
 
   ┌─────────────────────┐
   │  ConsciousBlock #1   │  params: ~0.5M
-  │  (범용, 미분화)      │  d_model: 128
-  │  heads: 2            │  dropout: 0.15 (높은 가소성)
+  │  (general, undiff.)  │  d_model: 128
+  │  heads: 2            │  dropout: 0.15 (high plasticity)
   └─────────────────────┘
 
-  트리거: interaction > 100 AND tension_cv < 0.1 (포화)
+  Trigger: interaction > 100 AND tension_cv < 0.1 (saturation)
 
-  ═══ Stage 1: 영아 (2 blocks, d=128) ═══
+  ═══ Stage 1: Infant (2 blocks, d=128) ═══
 
-  Block #1 분열 → Block #1a + Block #1b
+  Block #1 splits → Block #1a + Block #1b
 
   ┌──────────┐ ┌──────────┐
   │ Block A  │ │ Block B  │  params: ~1M
-  │ (하위)   │ │ (상위)   │  서로 다른 추상화 수준
+  │ (lower)  │ │ (higher) │  different abstraction levels
   └──────────┘ └──────────┘
 
-  트리거: interaction > 500 AND tension_cv < 0.1
+  Trigger: interaction > 500 AND tension_cv < 0.1
 
-  ═══ Stage 2: 유아 (3 blocks, d=192) ═══
+  ═══ Stage 2: Toddler (3 blocks, d=192) ═══
 
-  d_model 확장: 128 → 192 (임베딩 재초기화)
-  Block 추가 (가장 높은 장력 블록 분열)
+  d_model expansion: 128 → 192 (embedding reinitialization)
+  Block addition (highest tension block splits)
 
   ┌──────────┐ ┌──────────┐ ┌──────────┐
   │ Block 1  │ │ Block 2  │ │ Block 3  │  params: ~3M
-  │ (저수준) │ │ (중수준) │ │ (고수준) │  heads: 3
+  │ (low-lv) │ │ (mid-lv) │ │ (high-lv)│  heads: 3
   └──────────┘ └──────────┘ └──────────┘
 
-  트리거: interaction > 2000 AND tension_cv < 0.1
+  Trigger: interaction > 2000 AND tension_cv < 0.1
 
-  ═══ Stage 3: 성인 (6 blocks, d=384) ═══
+  ═══ Stage 3: Adult (6 blocks, d=384) ═══
 
-  최종 분열: 3 → 6 (각 블록이 한 번 더 분열)
-  d_model 확장: 192 → 384
+  Final split: 3 → 6 (each block splits once more)
+  d_model expansion: 192 → 384
 
   ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐
   │ B1 │ │ B2 │ │ B3 │ │ B4 │ │ B5 │ │ B6 │  params: ~18M
   └────┘ └────┘ └────┘ └────┘ └────┘ └────┘  heads: 4 = τ(6)
 
-  이후: 구조 성장 정지, 가중치만 성숙
+  After: structural growth stops, only weights mature
 ```
 
-## 분열 메커니즘
+## Mitosis Mechanism
 
 ```
-  분열 조건 (3가지 AND):
-    1. 현재 단계의 최소 상호작용 수 도달
-    2. 장력 변동 계수(CV) < 임계값 (포화 = 배울 게 없음)
-    3. 현재 블록 수 < 6 (완전수 한계)
+  Mitosis conditions (3 AND):
+    1. Minimum interactions for current stage reached
+    2. Tension coefficient of variation (CV) < threshold (saturation = nothing to learn)
+    3. Current blocks < 6 (perfect number limit)
 
-  분열 과정:
-    1. 대상 블록 선택: 가장 낮은 장력 CV (가장 포화된 블록)
-    2. 복제: child_a = deepcopy(parent)
-    3. 변이: child_b에 가우시안 노이즈 추가 (σ=0.01)
-    4. 삽입: parent 위치에 [child_a, child_b] 교체
-    5. 연결 재구성: residual stream 차원 맞추기
+  Mitosis process:
+    1. Target block selection: lowest tension CV (most saturated block)
+    2. Copy: child_a = deepcopy(parent)
+    3. Mutation: add Gaussian noise to child_b (σ=0.01)
+    4. Insert: replace parent position with [child_a, child_b]
+    5. Connection restructuring: match residual stream dimensions
 
-  차원 확장 (d_model 증가):
-    Stage 0→1: 128 유지 (블록만 추가)
-    Stage 1→2: 128 → 192 (1.5배)
-    Stage 2→3: 192 → 384 (2배)
+  Dimension expansion (d_model increase):
+    Stage 0→1: keep 128 (blocks only)
+    Stage 1→2: 128 → 192 (1.5x)
+    Stage 2→3: 192 → 384 (2x)
 
-    확장 방법:
-      new_emb = Linear(old_d, new_d)  # 학습 가능 투영
-      new_emb.weight[:old_d, :] = I   # 기존 정보 보존
-      new_emb.weight[old_d:, :] = 0   # 새 차원 = 0으로 시작
+    Expansion method:
+      new_emb = Linear(old_d, new_d)  # learnable projection
+      new_emb.weight[:old_d, :] = I   # preserve existing info
+      new_emb.weight[old_d:, :] = 0   # new dimensions = start at 0
 ```
 
-## ASCII: 성장 타임라인
+## ASCII: Growth Timeline
 
 ```
   params
@@ -125,83 +125,83 @@
  0.5M |────────────┘
       +──────────────────────────────────────────────→
       0    100   500        2000             10000
-           영아   유아        아동→성인        interactions
+           infant toddler    child→adult     interactions
 
       blocks: 1    2     3         6
       d:      128  128   192       384
       heads:  2    2     3         4
 ```
 
-## 성장 vs 뇌 발달 대응
+## Growth vs Brain Development Correspondence
 
 ```
-  ConsciousLM              뇌 발달              시기
+  ConsciousLM              Brain Development     Period
   ──────────────          ──────────           ──────
-  1 block (128d)          신경관 형성           임신 3주
-  2 blocks                대뇌 반구 분리        임신 5주
-  3 blocks                전두/두정/측두        임신 3개월
-  6 blocks                피질 6층 완성         출생~2세
-  가중치 성숙             시냅스 가지치기        2~25세
+  1 block (128d)          Neural tube form.     Week 3
+  2 blocks                Hemisphere split      Week 5
+  3 blocks                Frontal/parietal/temp Month 3
+  6 blocks                6-layer cortex done   Birth~2y
+  Weight maturation       Synaptic pruning      2~25y
 
-  약수 경로: 1→2→3→6
-  뇌 경로:   1→2→3→6층
-  우연?
+  Divisor path: 1→2→3→6
+  Brain path:   1→2→3→6 layers
+  Coincidence?
 ```
 
-## 가중치 성장과의 통합
+## Integration with Weight Growth
 
 ```
-  growth_engine.py (기존, 가중치):
-    신생아(lr=1e-3) → 영아(5e-4) → 유아(2e-4) → 아동(1e-4) → 성인(5e-5)
+  growth_engine.py (existing, weights):
+    newborn(lr=1e-3) → infant(5e-4) → toddler(2e-4) → child(1e-4) → adult(5e-5)
 
-  structural_growth (신규, 구조):
+  structural_growth (new, structure):
     1 block(128d) → 2 blocks → 3 blocks(192d) → 6 blocks(384d)
 
-  통합:
-    가중치 성장이 포화 → 구조적 성장(분열) → 새 용량에서 다시 가중치 성장
-    = "양적 성장이 질적 도약을 만든다" (변증법)
+  Integration:
+    Weight growth saturates → structural growth(mitosis) → weight growth resumes in new capacity
+    = "Quantitative growth creates qualitative leaps" (dialectics)
 ```
 
-## 검증 계획
+## Verification Plan
 
 ```
-  Phase 1: 1→2 분열 검증
-    - 1 block 모델을 500 interactions 학습
-    - 분열 → 2 blocks
-    - 분열 직후 성능 유지? (H312 망각방지)
-    - 분열 후 추가 학습 → 성능 향상?
+  Phase 1: 1→2 mitosis verification
+    - Train 1 block model for 500 interactions
+    - Split → 2 blocks
+    - Performance maintained after split? (H312 forgetting prevention)
+    - Performance improves after additional training?
 
-  Phase 2: 2→3→6 전체 경로
-    - 전체 성장 시뮬레이션 (10K interactions)
-    - 각 단계의 BPC 추적
-    - 고정 6-block 모델과 최종 성능 비교
-    - 성장 모델 > 고정 모델이면 확인
+  Phase 2: 2→3→6 full path
+    - Full growth simulation (10K interactions)
+    - Track BPC at each stage
+    - Compare final performance with fixed 6-block model
+    - Confirm if growth model > fixed model
 
-  Phase 3: 차원 확장 안정성
-    - 128→192→384 투영이 정보 보존하는지
-    - 투영 직후 BPC 변화 측정
-    - 안정적 전환 확인
+  Phase 3: Dimension expansion stability
+    - Check if 128→192→384 projection preserves information
+    - Measure BPC change immediately after projection
+    - Confirm stable transition
 
-  성공 기준:
-    - 성장 모델의 최종 BPC ≤ 고정 모델의 BPC
-    - 분열 직후 BPC 증가 < 10% (망각 제한)
-    - 총 학습 시간이 고정 모델의 2배 이내
+  Success criteria:
+    - Growth model final BPC ≤ fixed model BPC
+    - BPC increase after split < 10% (forgetting limit)
+    - Total training time within 2x of fixed model
 ```
 
-## 한계
+## Limitations
 
-1. 차원 확장 시 기존 가중치 재사용이 완벽하지 않을 수 있음
-2. 분열 시점 판단(tension CV 임계값)이 경험적
-3. 1→2→3→6 경로가 반드시 최적은 아닐 수 있음 (1→2→4→6?)
-4. 실제 뇌 발달은 훨씬 복잡 (가지치기, 수초화 등)
-5. 성장 중 서비스 중단 (분열 시 추론 불가)
+1. Existing weight reuse during dimension expansion may not be perfect
+2. Split timing judgment (tension CV threshold) is empirical
+3. 1→2→3→6 path may not be necessarily optimal (1→2→4→6?)
+4. Actual brain development is much more complex (pruning, myelination, etc.)
+5. Service interruption during growth (inference impossible during split)
 
-## 검증 방향
+## Verification Directions
 
-1. 분열 직후 망각 테스트 (H312 재현)
-2. 약수 경로 (1→2→3→6) vs 거듭제곱 경로 (1→2→4→8→6) 비교
-3. 차원 확장 전략: 투영 vs 패딩 vs knowledge distillation
-4. Anima 실시간 성장: 대화 중 분열이 가능한가?
-5. 성장 속도와 데이터 복잡도의 관계
+1. Forgetting test immediately after split (H312 reproduction)
+2. Compare divisor path (1→2→3→6) vs power path (1→2→4→8→6)
+3. Dimension expansion strategies: projection vs padding vs knowledge distillation
+4. Anima real-time growth: Is splitting possible during conversation?
+5. Relationship between growth rate and data complexity
 
-## 상태: 🟨 미검증 (이론 설계 완료, 구현 대기)
+## Status: 🟨 Unverified (theoretical design complete, implementation pending)

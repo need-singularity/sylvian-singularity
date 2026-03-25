@@ -1,130 +1,130 @@
-# 가설 검토 156: 실비우스열 결여와 Deficit 매핑
+# Hypothesis Review 156: Sylvian Fissure Deficit and Deficit Mapping
 
-## 상태: ✅ 검증됨
+## Status: ✅ Verified
 
-## 가설
+## Hypothesis
 
-> 실비우스열(Sylvian fissure)의 결여는 우리 모델의 Deficit(D)에 직접 대응한다. 이 대화의 출발점으로 회귀한다. 아인슈타인의 경우 D≈0.5, P≈0.9, I≈0.4이면 G=1.13으로 특이점에 해당한다.
+> The absence of the Sylvian fissure directly corresponds to Deficit (D) in our model. This returns to the starting point of this project. In Einstein's case, D≈0.5, P≈0.9, I≈0.4 gives G=1.13, which corresponds to a singularity.
 
-## 배경
+## Background
 
-이 프로젝트의 근본적 출발점은 "뇌의 비정형 구조(실비우스열 결여 등)와 비범한 능력 간의 관계"였다. 실비우스열은 측두엽과 두정엽/전두엽을 구분하는 주요 뇌 고랑이며, 이 구조의 비정형은 언어/공간 처리의 비정형적 조직화와 관련된다.
+The fundamental starting point of this project was "the relationship between atypical brain structure (such as absence of Sylvian fissure) and exceptional ability." The Sylvian fissure is the major brain sulcus separating the temporal lobe from the parietal/frontal lobes, and atypical structure here is associated with atypical organization of language/spatial processing.
 
-아인슈타인의 뇌를 분석한 Witelson et al. (1999) 연구에서 실비우스열의 부분적 결여가 보고되었고, 이것이 하두정소엽의 확장과 연관된다는 해석이 제시되었다.
+The study by Witelson et al. (1999) analyzing Einstein's brain reported partial absence of the Sylvian fissure, and proposed that this is associated with expansion of the inferior parietal lobule.
 
-관련 가설: 가설 161(좌뇌-우뇌 분업), 가설 162(후천적 서번트), 가설 157(시냅스 가소성)
+Related hypotheses: Hypothesis 161 (left-right brain specialization), Hypothesis 162 (acquired savant), Hypothesis 157 (synaptic plasticity)
 
-## 실비우스열 결여 → Deficit 매핑
+## Sylvian Fissure Absence → Deficit Mapping
 
 ```
-  결여 정도          Deficit (D)        뇌 재조직화
-  ──────────        ──────────        ──────────────
-  정상 (완전한 열)  →  D ≈ 0.0-0.1    표준 구역화
-  경미한 비정형     →  D ≈ 0.2-0.3    약간의 교차 활성화
-  부분 결여         →  D ≈ 0.4-0.6    영역 간 융합 (아인슈타인)
-  완전 결여         →  D ≈ 0.7-0.9    대규모 재배선 (서번트)
+  Degree of absence     Deficit (D)         Brain reorganization
+  ──────────            ──────────          ──────────────────
+  Normal (complete fissure) → D ≈ 0.0-0.1  Standard regionalization
+  Mild atypical          → D ≈ 0.2-0.3     Slight cross-activation
+  Partial absence        → D ≈ 0.4-0.6     Inter-region fusion (Einstein)
+  Complete absence       → D ≈ 0.7-0.9     Large-scale rewiring (savant)
 ```
 
-## 뇌 영역 다이어그램
+## Brain Region Diagram
 
 ```
   ┌─────────────────────────────────────────────┐
-  │              정 상 뇌                         │
+  │              NORMAL BRAIN                    │
   │                                              │
-  │    전두엽          두정엽                      │
+  │    Frontal lobe        Parietal lobe         │
   │   ┌──────┐   ══════   ┌──────┐               │
-  │   │ 언어 │   실비우스열  │ 공간 │               │
-  │   │ 처리 │   (명확한    │ 처리 │               │
-  │   └──────┘    경계)    └──────┘               │
-  │                                              │
-  │         측두엽 (청각/언어)                      │
+  │   │Language│ Sylvian  │Spatial│               │
+  │   │process │ fissure  │process│               │
+  │   └──────┘  (clear    └──────┘               │
+  │              boundary)                       │
+  │         Temporal lobe (auditory/language)    │
   │                                              │
   │    → D ≈ 0.1, I ≈ 0.6                       │
-  │    → G = 0.1 × 0.7 / 0.6 = 0.12 (정상)      │
+  │    → G = 0.1 × 0.7 / 0.6 = 0.12 (normal)   │
   └─────────────────────────────────────────────┘
 
   ┌─────────────────────────────────────────────┐
-  │           아인슈타인 뇌                       │
+  │           EINSTEIN'S BRAIN                   │
   │                                              │
-  │    전두엽    ░░░░░░    두정엽                  │
-  │   ┌──────┐ ░ 결여 ░ ┌──────────┐            │
-  │   │ 언어 │ ░영역=░  │ 확장된    │            │
-  │   │      │ ░경계░   │ 하두정소엽 │            │
-  │   └──────┘ ░소실░   │ (공간+수학)│            │
-  │            ░░░░░░   └──────────┘            │
-  │         측두엽 (교차 활성화↑)                  │
+  │    Frontal    ░░░░░░    Parietal             │
+  │   ┌──────┐ ░ absent ░ ┌──────────┐           │
+  │   │Language│ ░region░  │ Enlarged │           │
+  │   │       │ ░boundary░ │ inferior │           │
+  │   └──────┘ ░ lost  ░  │ parietal │           │
+  │            ░░░░░░     │(space+math)│          │
+  │         Temporal (cross-activation↑)         │
   │                                              │
   │    → D ≈ 0.5, P ≈ 0.9, I ≈ 0.4             │
-  │    → G = 0.5 × 0.9 / 0.4 = 1.125 (특이점!)  │
+  │    → G = 0.5 × 0.9 / 0.4 = 1.125 (singularity!)│
   └─────────────────────────────────────────────┘
 ```
 
-## 아인슈타인 파라미터 분석
+## Einstein's Parameter Analysis
 
-| 파라미터 | 값 | 근거 |
+| Parameter | Value | Basis |
 |---|---|---|
-| D (Deficit) | 0.5 | 실비우스열 부분 결여 → 영역 경계 50% 소실 |
-| P (Plasticity) | 0.9 | 신경교세포 밀도 ↑ → 높은 가소성 |
-| I (Inhibition) | 0.4 | 골든존 내부, 적절한 탈억제 |
-| **G (Genius)** | **1.125** | **특이점 (Z > 2σ)** |
+| D (Deficit) | 0.5 | Partial Sylvian fissure absence → 50% regional boundary lost |
+| P (Plasticity) | 0.9 | Higher glial cell density → high plasticity |
+| I (Inhibition) | 0.4 | Inside Golden Zone, appropriate disinhibition |
+| **G (Genius)** | **1.125** | **Singularity (Z > 2σ)** |
 
-### G = 1.125의 의미
+### Meaning of G = 1.125
 
 ```
-  G값
+  G value
   2.0│
      │
   1.5│
-     │          ★ 아인슈타인 (G=1.125)
-  1.0│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 특이점 경계
+     │          ★ Einstein (G=1.125)
+  1.0│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ Singularity boundary
      │
-  0.7│      ● 비범한 재능
+  0.7│      ● Exceptional talent
      │
-  0.5│  ● 정상 상위
+  0.5│  ● Normal top
      │
-  0.2│● 정상 평균
+  0.2│● Normal average
      │
   0.0└──────────────────────────────→
-     정상    비정형   서번트   천재
+     Normal   Atypical   Savant   Genius
 ```
 
-## 다른 사례와의 비교
+## Comparison with Other Cases
 
 ```
-  인물/유형        D     P     I     G      영역
-  ────────       ───   ───   ───   ────   ──────
-  정상 평균       0.1   0.6   0.60  0.10   정상
-  아인슈타인      0.5   0.9   0.40  1.13   특이점★
-  Kim Peek       0.8   0.7   0.30  1.87   특이점★★
-  일반 서번트     0.6   0.7   0.35  1.20   특이점★
-  간질+서번트     0.7   0.8   0.18  3.11   극단적★★★
+  Person/type         D     P     I     G      Region
+  ────────           ───   ───   ───   ────   ──────
+  Normal average     0.1   0.6   0.60  0.10   Normal
+  Einstein           0.5   0.9   0.40  1.13   Singularity★
+  Kim Peek           0.8   0.7   0.30  1.87   Singularity★★
+  General savant     0.6   0.7   0.35  1.20   Singularity★
+  Epilepsy+savant    0.7   0.8   0.18  3.11   Extreme★★★
 ```
 
-## 대화 출발점 회귀: 원점에서의 확인
+## Return to Starting Point: Confirmation at the Origin
 
-이 프로젝트는 "실비우스열 결여 → 비범한 능력"이라는 관찰에서 시작했다. 155개의 가설을 거쳐 다시 이 원점으로 돌아왔을 때, 우리 모델은 이 관찰을 정량적으로 설명할 수 있음을 확인한다:
+This project began with the observation "Sylvian fissure absence → exceptional ability." After 155 hypotheses, returning to this origin, we confirm that our model can explain this observation quantitatively:
 
-1. 실비우스열 결여 = D (결손)
-2. 결손으로 인한 보상적 뇌 재조직화 = P (가소성) 증가
-3. 재조직화된 영역의 억제 수준 = I (억제)
-4. G = D × P / I → 골든존에서 특이점 발생
+1. Sylvian fissure absence = D (Deficit)
+2. Compensatory brain reorganization due to deficit = P (Plasticity) increase
+3. Inhibition level of reorganized region = I (Inhibition)
+4. G = D × P / I → singularity occurs in the Golden Zone
 
-## 한계
+## Limitations
 
-- 아인슈타인의 D, P, I 값은 사후 뇌 분석에서의 추정치
-- 실비우스열 결여가 D에 정확히 선형 매핑되는지 미확인
-- 신경교세포 밀도 → P 매핑의 근거가 간접적
-- 단일 사례(n=1)로는 통계적 검증력 부족
+- Einstein's D, P, I values are estimates from post-mortem brain analysis
+- Whether Sylvian fissure absence maps exactly linearly to D is unconfirmed
+- The basis for glial cell density → P mapping is indirect
+- Single case (n=1) has insufficient statistical power
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 실비우스열 형태 변이의 인구 분포 조사
-- [ ] MRI 기반 실비우스열 길이/깊이 → D 매핑 함수 구축
-- [ ] 서번트 그룹의 실비우스열 구조적 비정형 측정
-- [ ] D-P 보상적 관계(가설 157)와 통합 모델링
-- [ ] 좌우 비대칭(가설 161)과의 교차 분석
+- [ ] Survey population distribution of Sylvian fissure morphological variation
+- [ ] Build MRI-based Sylvian fissure length/depth → D mapping function
+- [ ] Measure structural atypicalities of Sylvian fissure in savant group
+- [ ] Integrate with D-P compensatory relationship (Hypothesis 157)
+- [ ] Cross-analysis with left-right asymmetry (Hypothesis 161)
 
 ---
 
-*작성일: 2026-03-22*
-*상태: ✅ 모델의 출발점 확인 — 정량적 설명 가능*
+*Written: 2026-03-22*
+*Status: ✅ Model starting point confirmed — quantitative explanation possible*

@@ -1,20 +1,20 @@
-# H-MP-19: 정수 R(n)의 밀도
+# H-MP-19: Density of Integer R(n)
 
-> **가설**: R(n)이 정수인 n의 밀도가 N→∞에서 0으로 수렴하며,
-> 카운트 ~ C·N^α (α<1)의 멱법칙을 따른다.
+> **Hypothesis**: The density of n where R(n) is an integer converges to 0 as N→∞,
+> and follows a power law count ~ C·N^α (α<1).
 
-## 데이터
+## Data
 
 ```
-  N=10000:  52개 (0.52%)
-  N=50000: ~110개 (0.22%)
+  N=10000:  52 (0.52%)
+  N=50000: ~110 (0.22%)
 
-  밀도 감소 추세 → 0으로 수렴 가능
-  52/10000 vs 110/50000: 비율 감소
+  Density decreasing trend → possible convergence to 0
+  52/10000 vs 110/50000: decreasing ratio
   log(110)/log(50000) ≈ 0.434
   log(52)/log(10000) ≈ 0.429
   → α ≈ 0.43?
 ```
 
-## OEIS: R-011 후보 (n where R(n) integer)
-## 판정: 🟧 수치관찰 | 파급력: ★★
+## OEIS: R-011 candidate (n where R(n) integer)
+## Verdict: 🟧 Numerical observation | Impact: ★★

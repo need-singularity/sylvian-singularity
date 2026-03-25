@@ -1,21 +1,21 @@
-# H-CX-87: PH-guided curriculum — 혼동 쌍 우선 학습이 수렴을 가속한다
+# H-CX-87: PH-guided curriculum — Learning confusion pairs first accelerates convergence
 
-> PH merge distance가 짧은(혼동이 큰) 클래스 쌍을 우선 학습하면
-> 전체 정확도 수렴이 빨라진다. "어려운 것 먼저" = 위상 가이드 커리큘럼.
+> Learning class pairs with short PH merge distance (high confusion) first
+> accelerates overall accuracy convergence. "Hard things first" = topology-guided curriculum.
 
-## 배경
+## Background
 
-- H-CX-66: merge distance = 혼동 빈도 (r=-0.97)
-- H-CX-82: 에폭 1에서 이미 혼동 구조 확정
-- 활용: 혼동 구조를 미리 알면 학습 순서 최적화 가능
+- H-CX-66: merge distance = confusion frequency (r=-0.97)
+- H-CX-82: Confusion structure already determined at epoch 1
+- Application: If we know confusion structure in advance, we can optimize learning order
 
-## 예측
+## Predictions
 
-1. 혼동 쌍 oversampling → 동일 에폭에서 정확도 1-3%p 향상
-2. 혼동 쌍 가중 loss → 수렴 에폭 20-30% 감소
-3. 특히 CIFAR(어려운 데이터)에서 효과 큼
+1. Confusion pair oversampling → 1-3%p accuracy improvement at same epoch
+2. Confusion pair weighted loss → 20-30% reduction in convergence epochs
+3. Especially effective on CIFAR (difficult data)
 
-## 검증 상태
+## Verification Status
 
-- [ ] 혼동 쌍 가중 학습
-- [ ] 수렴 속도 비교
+- [ ] Confusion pair weighted learning
+- [ ] Convergence speed comparison

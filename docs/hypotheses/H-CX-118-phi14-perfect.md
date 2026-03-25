@@ -1,10 +1,10 @@
-# H-CX-118: φ(14)=6 — 실리콘의 토션트가 완전수!
+# H-CX-118: φ(14)=6 — Silicon's Totient is a Perfect Number!
 
-> φ(14) = 6 = 첫째 완전수. 탄소의 원자번호가 완전수(6)이고,
-> 실리콘의 토션트가 완전수(6). 완전수 6이 양쪽에 나타난다.
-> 탄소: Z=6(완전수), φ=2
-> 실리콘: Z=14, φ=6(완전수!)
+> φ(14) = 6 = first Perfect Number. Carbon's atomic number is a Perfect Number (6),
+> and silicon's totient is a Perfect Number (6). Perfect Number 6 appears on both sides.
+> Carbon: Z=6 (Perfect Number), φ=2
+> Silicon: Z=14, φ=6 (Perfect Number!)
 
-## 검증: 🟩 순수 산술 확인
+## Verification: 🟩 Pure arithmetic confirmed
 - φ(14) = |{1,3,5,9,11,13}| = 6 ✅
-- 6 = 1+2+3 = 1×2×3 = 첫째 완전수 ✅
+- 6 = 1+2+3 = 1×2×3 = first Perfect Number ✅

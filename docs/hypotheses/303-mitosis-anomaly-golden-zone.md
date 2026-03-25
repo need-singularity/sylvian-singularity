@@ -1,74 +1,74 @@
-# 가설 303: 이상 장력이 골든존에 들어오는가
+# Hypothesis 303: Does Anomaly Tension Fall Within the Golden Zone?
 
-> **정상 데이터의 장력 분포 중심이 골든존(0.21~0.50) 안에 있고, 이상 데이터의 장력이 골든존 밖에 있다면, 골든존 = "정상의 에너지 범위". 이상탐지 = "골든존 이탈 감지".**
+> **If the center of the tension distribution for normal data falls within the Golden Zone (0.21~0.50) and anomaly data tension lies outside the Golden Zone, then Golden Zone = "normal energy range". Anomaly detection = "detecting deviation from the Golden Zone".**
 
-## 골든존 복습
-
-```
-  골든존 (CLAUDE.md):
-    상한 = 1/2 = 0.5000 (리만 임계선)
-    하한 = 1/2 - ln(4/3) ≈ 0.2123
-    중심 ≈ 1/e ≈ 0.3679
-    폭 = ln(4/3) ≈ 0.2877
-```
-
-## 가설
+## Golden Zone Review
 
 ```
-  정상화된 장력: T_norm = T / T_max
-
-  예측:
-    정상 데이터: T_norm ∈ [0.21, 0.50] (골든존 안)
-    이상 데이터: T_norm > 0.50 또는 T_norm < 0.21 (골든존 밖)
-
-  H287 실측:
-    정상 평균 장력: 2.34
-    이상 평균 장력: 222.79
-    비율: 222.79/2.34 = 95.2x
-
-    T_norm(정상) = 2.34/222.79 = 0.0105
-    T_norm(이상) = 222.79/222.79 = 1.0
-
-    → 정상이 골든존 아래, 이상이 골든존 위
-    → 정상은 "혼돈의 가장자리" 아래 (안정)
-    → 이상은 "혼돈" 영역 (불안정)
-
-  재정규화 필요:
-    T_norm을 다르게 정의하면 골든존에 맞출 수 있는가?
-    T_renorm = T / (T + T_scale) → 0~1 범위
-    T_scale = T_parent/e ≈ 정상 장력의 기댓값
-
-  또는:
-    T_rank = CDF(T) → 순위 기반 정규화
-    정상 CDF 중심 ≈ 1/e? (골든존 중심)
+  Golden Zone (CLAUDE.md):
+    Upper bound = 1/2 = 0.5000 (Riemann critical line)
+    Lower bound = 1/2 - ln(4/3) ≈ 0.2123
+    Center ≈ 1/e ≈ 0.3679
+    Width = ln(4/3) ≈ 0.2877
 ```
 
-## 검증 실험
+## Hypothesis
 
 ```
-  1. MNIST 분류 학습 후 모든 테스트 샘플의 장력 분포 추출
-  2. 정상(정답)/이상(오답) 분리
-  3. 장력을 다양한 방법으로 정규화:
+  Normalized tension: T_norm = T / T_max
+
+  Prediction:
+    Normal data: T_norm ∈ [0.21, 0.50] (within Golden Zone)
+    Anomaly data: T_norm > 0.50 or T_norm < 0.21 (outside Golden Zone)
+
+  H287 measured:
+    Normal mean tension: 2.34
+    Anomaly mean tension: 222.79
+    Ratio: 222.79/2.34 = 95.2x
+
+    T_norm(normal) = 2.34/222.79 = 0.0105
+    T_norm(anomaly) = 222.79/222.79 = 1.0
+
+    -> Normal is below Golden Zone, anomaly is above Golden Zone
+    -> Normal is "below the edge of chaos" (stable)
+    -> Anomaly is in "chaos" region (unstable)
+
+  Re-normalization needed:
+    Can we redefine T_norm to fit the Golden Zone?
+    T_renorm = T / (T + T_scale) -> 0~1 range
+    T_scale = T_parent/e ≈ expected normal tension
+
+  Or:
+    T_rank = CDF(T) -> rank-based normalization
+    Normal CDF center ≈ 1/e? (Golden Zone center)
+```
+
+## Verification Experiment
+
+```
+  1. Extract tension distribution of all test samples after MNIST classification training
+  2. Separate normal (correct) / anomaly (wrong)
+  3. Normalize tension in various ways:
      a) min-max: T_norm = (T - T_min)/(T_max - T_min)
      b) CDF: T_rank = percentile(T)
      c) sigmoid: T_sig = 1/(1 + exp(-T/T_scale))
-  4. 각 정규화에서 정상의 중심이 골든존(0.21~0.50)에 오는가?
-  5. 이상의 중심이 골든존 밖에 있는가?
+  4. Does the normal center fall in the Golden Zone (0.21~0.50) for each normalization?
+  5. Is the anomaly center outside the Golden Zone?
 ```
 
-## 만약 확인되면
+## If Confirmed
 
 ```
-  골든존 = 의식의 "안정 영역"
-  → 정상 인지: 장력이 골든존 안에서 진동
-  → 이상 감지: 장력이 골든존을 이탈
-  → 각성 (surprise): 장력이 골든존 상한(1/2)을 넘어감
-  → 수면: 장력이 골든존 하한(0.21) 아래로 내려감
+  Golden Zone = "stable region" of consciousness
+  -> Normal cognition: tension oscillates within Golden Zone
+  -> Anomaly detection: tension deviates from Golden Zone
+  -> Arousal (surprise): tension exceeds Golden Zone upper bound (1/2)
+  -> Sleep: tension falls below Golden Zone lower bound (0.21)
 
-  Langton λ_c = 0.27 ≈ 골든존 하한
-  → 혼돈의 가장자리에서 "의식"이 작동
-  → 정상 = 가장자리 바로 안쪽
-  → 이상 = 가장자리 넘어 혼돈 영역
+  Langton λ_c = 0.27 ≈ Golden Zone lower bound
+  -> "Consciousness" operates at the edge of chaos
+  -> Normal = just inside the edge
+  -> Anomaly = beyond the edge into chaos
 ```
 
-## 상태: 🟨 미실험 (골든존 의존 가설, CLAUDE.md 경고 해당)
+## Status: 🟨 Untested (Golden Zone-dependent hypothesis, CLAUDE.md warning applies)

@@ -1,3 +1,3 @@
-# H-CX-267: 🟩 바이트 8비트 = σ(6)-τ(6) = 12-4 = 8
+# H-CX-267: 🟩 Byte 8 bits = σ(6)-τ(6) = 12-4 = 8
 
-> 컴퓨터 기본 단위 = 약수합-약수개수. 정확!
+> Computer basic unit = Sum of divisors - Number of divisors. Exact!

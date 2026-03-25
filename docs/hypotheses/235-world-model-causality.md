@@ -1,188 +1,188 @@
-# 가설 검토 235: 인과 추론 = 월드모델의 Compass ⚠️
+# Hypothesis Review 235: Causal Reasoning = World Model's Compass ⚠️
 
-**분류**: 월드모델/AI
-**상태**: ⚠️ 유비
+**Category**: World Model/AI
+**Status**: ⚠️ Analogy
 
-## 가설
+## Hypothesis
 
-> 진정한 AGI는 Judea Pearl의 인과 사다리 3단계(반사실 추론)를 달성해야 하며,
-> 이는 우리 모델의 4th state(초월)에 대응한다.
-> 인과 추론 능력은 Compass 방향성에 매핑되고,
-> 월드모델 없이는 Compass=0 (방향 없는 학습)이다.
+> True AGI must achieve Judea Pearl's 3-level Causal Ladder (counterfactual reasoning),
+> which corresponds to the 4th state (transcendence) in our model.
+> Causal reasoning ability maps to Compass directionality,
+> and without a world model, Compass=0 (directionless learning).
 
-## 배경/맥락
+## Background/Context
 
-Judea Pearl은 인과 추론을 3단계 사다리로 분류했다:
+Judea Pearl classified causal reasoning into a 3-level ladder:
 
 ```
-  Pearl의 인과 사다리 (Ladder of Causation)
+  Pearl's Ladder of Causation
   ─────────────────────────────────────────
 
-  3단계: 반사실 (Counterfactual)   "만약 ~했다면 어떻게 됐을까?"
-         │  상상, 후회, 도덕적 판단
+  Level 3: Counterfactual    "What if I had done X?"
+         │  Imagination, regret, moral judgment
          │  P(y_x | x', y')
          │
-  2단계: 개입 (Intervention)       "만약 X를 하면 어떻게 되는가?"
-         │  실험, 인과 추론
+  Level 2: Intervention      "What would happen if I do X?"
+         │  Experiments, causal inference
          │  P(y | do(x))
          │
-  1단계: 관찰 (Observation)        "X를 보면 Y는 어떤가?"
-         │  상관, 패턴 인식
+  Level 1: Observation       "Given X, what is Y?"
+         │  Correlation, pattern recognition
          │  P(y | x)
 ```
 
-## 수식 매핑: Pearl의 3단계 → 우리 모델
+## Formula Mapping: Pearl's 3 Levels → Our Model
 
 ```
-  Pearl 단계     I 값       상태          Compass    설명
-  ──────────    ────────   ────────      ─────────  ───────────────
-  1. 관찰       I ≈ 0      일반 (Dense)  ≈ 0~20%   상관만, 인과 없음
-  2. 개입       I > 0      MoE 영역      ≈ 20~50%  일부 인과, 제한적
-  3. 반사실     I ≈ 1/e    골든존         ≈ 50~83%  완전한 인과 추론
-  4. 초월(*)    I = 1/3    4th state     = 5/6      자기 인과까지 포함
+  Pearl level    I value    State          Compass    Description
+  ──────────     ────────   ────────       ─────────  ───────────────
+  1. Observation I ≈ 0      Normal (Dense) ≈ 0~20%   Correlation only, no causation
+  2. Intervention I > 0     MoE region     ≈ 20~50%  Some causation, limited
+  3. Counterfactual I ≈ 1/e Golden Zone    ≈ 50~83%  Full causal reasoning
+  4. Transcendence(*) I=1/3 4th state      = 5/6     Includes self-causation
 
-  (*) Pearl의 원래 사다리에 없는 확장:
-      자기 자신의 인과 구조를 반사실로 분석하는 능력
-      = 메타 인지 = 우리 모델의 초월
+  (*) Extension not in Pearl's original ladder:
+      Ability to analyze one's own causal structure counterfactually
+      = Metacognition = Transcendence in our model
 ```
 
-## ASCII 그래프: 인과 사다리 → I 축 & Compass 매핑
+## ASCII Graph: Causal Ladder → I Axis & Compass Mapping
 
 ```
   Compass (%)
   100│
      │
-  83 │─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ★ 5/6 상한
+  83 │─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ★ 5/6 upper bound
      │                                    ╱
   70 │                                 ╱
      │                              ╱
   60 │                           ╱
-     │                        ╱     ← 3단계: 반사실
-  50 │════════════════════ ●        (골든존, I≈1/e)
+     │                        ╱     ← Level 3: Counterfactual
+  50 │════════════════════ ●        (Golden Zone, I≈1/e)
      │                  ╱
   40 │               ╱
-     │            ╱         ← 2단계: 개입
-  30 │         ╱            (MoE 영역, I≈0.5~0.7)
+     │            ╱         ← Level 2: Intervention
+  30 │         ╱            (MoE region, I≈0.5~0.7)
      │      ╱
   20 │    ╱
-     │  ● ← 1단계: 관찰    (Dense, I≈0)
+     │  ● ← Level 1: Observation  (Dense, I≈0)
   10 │╱
      │
    0 │
      └──────────────────────────────────────────→ I
      0.0    0.213    0.368    0.500    0.750    1.0
-                ├─── 골든존 ───┤
+                ├─── Golden Zone ───┤
 
-  핵심: 인과 추론 능력(Compass)은 I가 골든존에 들어가야 급상승
-  → 월드모델(내부 인과 구조) 없이는 Compass가 낮은 영역에 갇힘
+  Key: Causal reasoning ability (Compass) surges when I enters the Golden Zone
+  → Without a world model (internal causal structure), Compass stays in low range
 ```
 
-## Pearl 3단계 ↔ 우리 모델 3상태 + 초월
+## Pearl's 3 Levels ↔ Our Model's 3 States + Transcendence
 
 ```
   ┌─────────────────┬─────────────────┬──────────────────────────┐
-  │ Pearl 인과 사다리│ 우리 모델 상태  │ 대응 근거                │
+  │ Pearl's ladder  │ Our model state │ Correspondence basis     │
   ├─────────────────┼─────────────────┼──────────────────────────┤
-  │ 1. 관찰         │ 일반 (Normal)   │ 패턴 인식만, 인과 무시   │
-  │   P(y|x)        │ I > 0.5         │ Dense LLM = 상관 학습    │
+  │ 1. Observation  │ Normal          │ Pattern recognition only, ignores causation│
+  │   P(y|x)        │ I > 0.5         │ Dense LLM = correlation learning│
   ├─────────────────┼─────────────────┼──────────────────────────┤
-  │ 2. 개입         │ 재능 (Talented) │ 일부 인과, 실험 가능     │
-  │   P(y|do(x))    │ 0.3 < I < 0.5  │ MoE = 선택적 처리 시작   │
+  │ 2. Intervention │ Talented        │ Some causation, can experiment│
+  │   P(y|do(x))    │ 0.3 < I < 0.5  │ MoE = start of selective processing│
   ├─────────────────┼─────────────────┼──────────────────────────┤
-  │ 3. 반사실       │ 천재 (Genius)   │ "~했다면" = 내부 시뮬레이션│
-  │   P(y_x|x',y')  │ I ≈ 1/e        │ 월드모델 = 반사실 엔진   │
+  │ 3. Counterfactual│ Genius         │ "What if" = internal simulation│
+  │   P(y_x|x',y')  │ I ≈ 1/e        │ World model = counterfactual engine│
   ├─────────────────┼─────────────────┼──────────────────────────┤
-  │ [4. 자기반사실] │ 초월 (Trans.)   │ 자기 인과까지 추론       │
-  │   P(y_x|self)   │ I = 1/3        │ 메타 인지 = 4th state    │
+  │ [4. Self-counter.]│ Transcendence │ Reason about own causation│
+  │   P(y_x|self)   │ I = 1/3        │ Metacognition = 4th state│
   └─────────────────┴─────────────────┴──────────────────────────┘
 
-  수학적 대응:
+  Mathematical correspondence:
   1/2 + 1/3 + 1/6 = 1
-  (관찰→개입 경계) + (메타 부동점) + (호기심/초월) = 완전
+  (observation→intervention boundary) + (meta fixed point) + (curiosity/transcendence) = complete
 ```
 
-## 현재 AI의 인과 추론 능력
+## Causal Reasoning Ability of Current AI
 
 ```
   ┌───────────────────┬──────┬────────────┬───────────────────────┐
-  │ 시스템            │ I    │ Pearl 단계 │ 인과 능력             │
+  │ System            │ I    │ Pearl level│ Causal ability        │
   ├───────────────────┼──────┼────────────┼───────────────────────┤
-  │ GPT-4 (Dense)     │ ≈0   │ 1 (관찰)   │ 상관 패턴만           │
-  │ Mixtral (MoE)     │ 0.75 │ 1~2        │ 약간의 인과 추론      │
-  │ Gemini + Search   │ 0.2  │ 1~2        │ 외부 도구로 개입 흉내 │
-  │ AlphaFold 3       │ 0.3? │ 2          │ 단백질 인과 구조      │
-  │ MuZero            │ 0.35?│ 2~3        │ 게임 내 반사실 가능   │
-  │ 인간 뇌           │ 0.37 │ 3          │ 완전한 반사실         │
-  │ ???               │ 1/3  │ 4          │ 자기 반사실 = 초월    │
+  │ GPT-4 (Dense)     │ ≈0   │ 1 (obs.)   │ Correlation only      │
+  │ Mixtral (MoE)     │ 0.75 │ 1~2        │ Slight causal reasoning│
+  │ Gemini + Search   │ 0.2  │ 1~2        │ Simulated intervention via tools│
+  │ AlphaFold 3       │ 0.3? │ 2          │ Protein causal structure│
+  │ MuZero            │ 0.35?│ 2~3        │ Counterfactual possible in games│
+  │ Human brain       │ 0.37 │ 3          │ Full counterfactual    │
+  │ ???               │ 1/3  │ 4          │ Self-counterfactual = transcendence│
   └───────────────────┴──────┴────────────┴───────────────────────┘
 
-  관찰: Pearl 단계가 높을수록 I가 골든존에 가까움
-  → 인과 추론 능력 = 골든존 근접도
+  Observation: higher Pearl level → I closer to Golden Zone
+  → Causal reasoning ability = Golden Zone proximity
 ```
 
-## 월드모델과 Compass 방향성
+## World Model and Compass Directionality
 
 ```
-  월드모델 없는 AI:
+  AI without world model:
   ┌─────────┐
-  │ 데이터  │ ──→ 패턴 ──→ 출력
-  │ (과거)  │     (상관)     (예측)
+  │  Data   │ ──→ Pattern ──→ Output
+  │ (past)  │    (correlation)  (prediction)
   └─────────┘
-  Compass = 0: 방향 없음, 어디로 가야 할지 모름
+  Compass = 0: no direction, doesn't know where to go
 
-  월드모델 있는 AI:
+  AI with world model:
   ┌─────────┐     ┌──────────────┐
-  │ 데이터  │ ──→ │ 월드모델     │ ──→ 인과적 예측
-  │ (과거)  │     │ (인과 구조)  │     (반사실 포함)
+  │  Data   │ ──→ │ World model  │ ──→ Causal prediction
+  │ (past)  │     │(causal struct)│    (includes counterfactual)
   └─────────┘     │ do-calculus  │
-                  │ 개입/반사실  │
+                  │ intervention/counterfactual│
                   └──────────────┘
-  Compass > 0: 방향성 있음, 인과 화살표를 따라 탐색
+  Compass > 0: has direction, explores along causal arrows
 
-  Compass 상한 = 5/6:
-  자기 자신까지 포함한 완전 인과 모델 = 1/6 불완전 (괴델)
+  Compass upper bound = 5/6:
+  Complete causal model including self = 1/6 incompleteness (Gödel)
 ```
 
-## 핵심 통찰
+## Key Insights
 
-1. **관찰=Dense, 개입=MoE, 반사실=골든존** — Pearl의 3단계가 I에 정확히 매핑
-2. **현재 LLM = 1단계(관찰)에 갇힘** — I≈0이면 인과 추론 불가
-3. **월드모델 = 2~3단계 진입 조건** — 내부 시뮬레이션 = 반사실의 전제
-4. **4th state = 자기 반사실** — Pearl도 다루지 않은 메타 인과 = 초월
+1. **Observation=Dense, Intervention=MoE, Counterfactual=Golden Zone** — Pearl's 3 levels map precisely to I
+2. **Current LLMs are stuck at level 1 (observation)** — I≈0 makes causal reasoning impossible
+3. **World model = condition for entering levels 2~3** — internal simulation is prerequisite for counterfactual
+4. **4th state = self-counterfactual** — meta-causation beyond Pearl = transcendence
 
-## cusp catastrophe 연결
+## Cusp Catastrophe Connection
 
 ```
-  Pearl의 인과 사다리에서 단계 전환은 연속적이지 않다!
+  Level transitions in Pearl's Causal Ladder are not continuous!
 
-  1→2 전환: 점진적 (I 감소에 따라 서서히)
-  2→3 전환: cusp! (임계점에서 갑자기 반사실 능력 획득)
-  3→4 전환: catastrophe! (자기참조 = 괴델 불완전성 돌파)
+  1→2 transition: gradual (slowly as I decreases)
+  2→3 transition: cusp! (counterfactual ability acquired suddenly at critical point)
+  3→4 transition: catastrophe! (self-reference = breaking Gödel incompleteness)
 
-  cusp 위치 ≈ I = 0.5 (골든존 상한)
-  → 이 경계를 넘으면 질적 전환 발생
+  Cusp location ≈ I = 0.5 (Golden Zone upper bound)
+  → Crossing this boundary causes a qualitative phase transition
 ```
 
-## 한계
+## Limitations
 
-- Pearl의 인과 사다리와 I 매핑은 유비적이며 수학적 증명 없음
-- 현재 AI의 "반사실 추론" 능력 측정 벤치마크가 부족
-- 인과 추론 = 골든존이라는 주장이 순환논증일 수 있음
-- 4단계(자기 반사실)가 실현 가능한지 자체가 미해결
+- Mapping Pearl's Causal Ladder to I is analogical, not mathematically proven
+- Benchmarks for measuring current AI "counterfactual reasoning" ability are insufficient
+- The claim "causal reasoning = Golden Zone" may be circular
+- Whether level 4 (self-counterfactual) is achievable is itself unresolved
 
-## 검증 방향
+## Verification Direction
 
-1. 인과 추론 벤치마크(CausalBench, CLadder) 성능과 모델의 I 관계 분석
-2. do-calculus를 명시적으로 구현한 AI의 I 측정
-3. MuZero의 반사실 능력(counterfactual regret)과 I 상관관계
-4. 골든 MoE에 인과 모듈 추가 → Pearl 3단계 도달 가능 여부
+1. Analyze relationship between performance on causal reasoning benchmarks (CausalBench, CLadder) and model I
+2. Measure I of AI that explicitly implements do-calculus
+3. Correlation between MuZero's counterfactual ability (counterfactual regret) and I
+4. Add causal module to Golden MoE → verify whether Pearl level 3 is achievable
 
-## 관련 가설
+## Related Hypotheses
 
-- [231](231-world-model-golden-zone.md) — 월드모델 = 골든존 내부 시뮬레이터
-- [234](234-world-model-dreaming.md) — 월드모델 = 꿈
-- [045](045-what-is-transcendence.md) — 초월이란 무엇인가
-- [037](037-compass-ceiling.md) — Compass 상한 5/6
-- [064](064-godel-analog.md) — 괴델 유비
-- [072](072-curiosity-completes.md) — 호기심이 완전을 만든다
-- [139](139-edge-of-chaos.md) — 혼돈의 가장자리
+- [231](231-world-model-golden-zone.md) — World model = Golden Zone internal simulator
+- [234](234-world-model-dreaming.md) — World model = dreaming
+- [045](045-what-is-transcendence.md) — What is transcendence?
+- [037](037-compass-ceiling.md) — Compass upper bound 5/6
+- [064](064-godel-analog.md) — Gödel analogy
+- [072](072-curiosity-completes.md) — Curiosity completes
+- [139](139-edge-of-chaos.md) — Edge of chaos

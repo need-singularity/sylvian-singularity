@@ -1,12 +1,13 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-110~115: 황도 12궁 수학 가설 통합 검증
+"""H-CX-110~115: Zodiac 12 Mathematics Hypothesis Integrated Verification
 
-H-CX-110: σ(6)=12 완전 분할 — 10/12/13 클래스 PH 비교
-H-CX-111: 13번째 = 관측자 — 12cls train → 13번째 OOD tension
-H-CX-112: ln(13/12) 정보 점프 — N상태 폭 비교
+H-CX-110: σ(6)=12 perfect partition — 10/12/13 class PH comparison
+H-CX-111: 13th = observer — 12cls train → 13th OOD tension
+H-CX-112: ln(13/12) information jump — N-state width comparison
 H-CX-113: 12 Expert MoE — expert sweep
-H-CX-114: dendrogram root = 메타인지
-H-CX-115: kissing number — 방향 최밀 배치
+H-CX-114: dendrogram root = metacognition
+H-CX-115: kissing number — directional most dense arrangement
 """
 import sys, math
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -65,7 +66,7 @@ def train_and_extract(model, dim, tl, te, n_cls, epochs=10):
 
 
 def load_combined_12_13():
-    """MNIST(10) + FashionMNIST 앞 3클래스 = 13클래스 데이터셋"""
+    """MNIST(10) + FashionMNIST first 3 classes = 13 class dataset"""
     t = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))])
 
     mnist_tr = datasets.MNIST('/tmp/data', train=True, download=True, transform=t)
@@ -92,7 +93,7 @@ def run_experiment():
 
     # === H-CX-112: N-state width comparison (pure math) ===
     print(f"\n  === H-CX-112: N-state Width ln((N+1)/N) ===")
-    print(f"  {'N':>4} {'N+1':>4} {'ln((N+1)/N)':>12} {'특이점':>8}")
+    print(f"  {'N':>4} {'N+1':>4} {'ln((N+1)/N)':>12} {'Special Point':>8}")
     print(f"  {'-'*35}")
     widths = []
     for N in range(2, 20):
@@ -100,7 +101,7 @@ def run_experiment():
         special = ''
         if N == 6: special = 'σ₋₁(6)=2'
         elif N == 12: special = 'σ(6)=12'
-        elif N == 13: special = '13=소수'
+        elif N == 13: special = '13=prime'
         elif N == 3: special = 'τ(6)-1'
         elif N == 5: special = '6-1'
         widths.append((N, w))
@@ -111,7 +112,7 @@ def run_experiment():
     w_12_13 = math.log(13/12)
     w_13_14 = math.log(14/13)
     print(f"\n  11→12: {w_11_12:.6f}")
-    print(f"  12→13: {w_12_13:.6f}  (σ(6)→소수)")
+    print(f"  12→13: {w_12_13:.6f}  (σ(6)→prime)")
     print(f"  13→14: {w_13_14:.6f}")
     print(f"  12→13 / golden_width: {w_12_13 / math.log(4/3):.6f}")
     print(f"  12→13 × 12: {w_12_13 * 12:.6f} (≈1? = {abs(w_12_13 * 12 - 1):.6f})")
@@ -297,3 +298,4 @@ def run_experiment():
 
 if __name__ == '__main__':
     run_experiment()
+```

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""H-CX-67 + H-CX-68 검증: 시너지 골든존 + 예지 보존법칙
+"""H-CX-67 + H-CX-68 Verification: Synergy Golden Zone + Precognition Conservation Law
 
-H-CX-67: 통합 예지 시너지가 중간 장력 구간에서 최대
-H-CX-68: mag_AUC + dir_AUC ≈ const (보존법칙)
+H-CX-67: Integrated precognition synergy is maximum in the mid-tension range
+H-CX-68: mag_AUC + dir_AUC ≈ const (conservation law)
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')

@@ -1,20 +1,20 @@
-# H-CX-111: 13번째 = 관측자 위치
+# H-CX-111: 13th = Observer Position
 
-> 12클래스로 학습한 모델이 13번째 미지 클래스를 볼 때 장력 극대화.
-> "다른 것을 본다" = OOD 감지. H287(AUROC=1.0)과 연결.
+> Model trained on 12 classes maximizes Tension when seeing the 13th unknown class.
+> "Seeing something different" = OOD detection. Connected to H287 (AUROC=1.0).
 
-## 검증 상태
-- [x] 12cls train → 13번째 tension
+## Verification Status
+- [x] 12cls train → 13th tension
 
-## 검증 결과
+## Verification Results
 
 **SUPPORTED**
 
-| 지표 | 값 |
-|------|-----|
+| Metric | Value |
+|--------|-------|
 | OOD/ID tension ratio | 1.03x |
 
-- 12클래스로 학습한 모델이 13번째 미지 클래스에서 장력 증가 확인
-- OOD tension이 ID tension의 1.03배 -- 방향은 일치하나 효과 크기 작음
-- H287(AUROC=1.0)과 연결: 장력 기반 OOD 감지의 일부로 해석 가능
-- 효과 크기가 3%로 미약하여 추가 검증 필요 (더 이질적 OOD 데이터 사용 등)
+- Confirmed that model trained on 12 classes shows increased Tension for 13th unknown class
+- OOD tension is 1.03x ID tension — direction matches but effect size is small
+- Connected to H287 (AUROC=1.0): interpretable as part of Tension-based OOD detection
+- Effect size is only 3%, additional verification needed (using more heterogeneous OOD data, etc.)

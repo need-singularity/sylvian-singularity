@@ -1,85 +1,85 @@
-# T0-07: Γ(n, λ) = n개 Exp(λ)의 합
+# T0-07: Γ(n, λ) = Sum of n Exp(λ)
 
-## 명제
+## Proposition
 
-독립인 n개의 지수분포 확률변수의 합은 감마분포 Γ(n, λ)를 따른다.
+The sum of n independent exponential random variables follows a gamma distribution Γ(n, λ).
 
-## 정리
+## Theorem
 
-X₁, X₂, ..., Xₙ이 독립이고 각각 Exp(λ)를 따르면:
+If X₁, X₂, ..., Xₙ are independent and each follows Exp(λ):
 
 ```
 Y = X₁ + X₂ + ... + Xₙ ~ Γ(n, λ)
 ```
 
-## 적률생성함수(MGF)에 의한 증명
+## Proof by Moment Generating Function (MGF)
 
-Exp(λ)의 MGF:
+MGF of Exp(λ):
 
 ```
 M_X(t) = λ/(λ - t),  t < λ
 ```
 
-독립이므로 합의 MGF는 곱:
+By independence, the MGF of the sum is the product:
 
 ```
 M_Y(t) = [M_X(t)]ⁿ = [λ/(λ - t)]ⁿ
 ```
 
-이것은 Γ(n, λ)의 MGF와 정확히 일치한다. ∎
+This exactly matches the MGF of Γ(n, λ). ∎
 
-## n=2 특수 경우
+## Special Case n=2
 
 ```
-Y = X₁ + X₂,  X₁, X₂ ~ Exp(λ) 독립
+Y = X₁ + X₂,  X₁, X₂ ~ Exp(λ) independent
 Y ~ Γ(2, λ) = Erlang(2, λ)
 
 PDF: f_Y(y) = λ²y·e^{-λy},  y > 0
 ```
 
-## 모델 적용
+## Model Application
 
-D, P ~ Uniform(0, 1) 독립일 때:
+When D, P ~ Uniform(0, 1) independent:
 
 ```
--ln(D) ~ Exp(1)     (역변환 정리)
--ln(P) ~ Exp(1)     (역변환 정리)
+-ln(D) ~ Exp(1)     (Inverse transform theorem)
+-ln(P) ~ Exp(1)     (Inverse transform theorem)
 ```
 
-따라서:
+Therefore:
 
 ```
 -ln(D×P) = -ln(D) + (-ln(P))
-         = (Exp(1)) + (Exp(1))    [독립]
+         = (Exp(1)) + (Exp(1))    [independent]
          = Γ(2, 1)
 ```
 
-## G의 분포
+## Distribution of G
 
-G ∝ D×P이므로:
+Since G ∝ D×P:
 
 ```
 -ln(G) ~ Γ(2, 1) + const
 ```
 
-이는 α = 2가 D, P라는 **2개 변수**의 곱이라는 사실에서 수학적으로 결정됨을 의미한다.
+This means that α = 2 is mathematically determined by the fact that it is a product of **2 variables** D and P.
 
-## 수치 검증
+## Numerical Verification
 
-| 항목 | 이론값 | 실측값 |
+| Item | Theoretical Value | Measured Value |
 |------|--------|--------|
-| α (형상 모수) | 2 | 2.03 |
-| KS 검정 p-값 | — | 0.934 |
+| α (shape parameter) | 2 | 2.03 |
+| KS test p-value | — | 0.934 |
 
-p = 0.934 ≫ 0.05이므로 Γ(2, 1) 귀무가설을 기각할 수 없다.
+Since p = 0.934 ≫ 0.05, we cannot reject the null hypothesis of Γ(2, 1).
 
-## 근거
+## References
 
-- 확률론 기본 정리 (MGF의 유일성 정리)
-- Erlang, A.K. (1917). 대기행렬 이론
-- 역변환 정리: X ~ U(0,1) → -ln(X) ~ Exp(1)
+- Fundamental theorem of probability (MGF uniqueness theorem)
+- Erlang, A.K. (1917). Queueing theory
+- Inverse transform theorem: X ~ U(0,1) → -ln(X) ~ Exp(1)
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T1-04 (G ~ Γ(α=2) 상세 유도)
-- T1-03 (보존법칙: G×I = D×P)
+- T1-04 (Detailed derivation of G ~ Γ(α=2))
+- T1-03 (Conservation law: G×I = D×P)

@@ -1,3 +1,3 @@
-# H-CX-250: 🟧 Bell 상관 2√2 ≈ 2.828
+# H-CX-250: 🟧 Bell Correlation 2√2 ≈ 2.828
 
-> CHSH 부등식 양자 한계 2√2=2.828. e+0.11? 약한 연결.
+> CHSH inequality quantum limit 2√2=2.828. e+0.11? Weak connection.

@@ -1,79 +1,79 @@
-# 가설 276: 관찰 = 압축 — 개입 불가가 더 나은 표현을 만든다
+# Hypothesis 276: Observation = Compression — Non-intervention Creates Better Representations
 
-> **detach()(역전파 차단)가 관찰자를 +7.4% 개선하는 이유: 개입할 수 없으면 이해를 "압축"해야 한다. 이 압축이 더 효율적인 표현을 만든다.**
+> **Why detach() (gradient blocking) improves observer by +7.4%: When you can't intervene, you must "compress" understanding. This compression creates more efficient representations.**
 
-## 배경/맥락
+## Background/Context
 
 ```
-  detach 있음 (관찰만): 73.3% (+7.4%)
-  detach 없음 (개입 가능): 66.0%
+  With detach (observation only): 73.3% (+7.4%)
+  Without detach (intervention possible): 66.0%
 
-  detach 없으면 주체도 하락: -7.3%
-  → 개입 가능 = 양쪽 다 나빠짐
+  Without detach, agent also drops: -7.3%
+  → Intervention possible = both get worse
 ```
 
-관련 가설: 272(detach 설계), 274(의식=오류교정)
+Related hypotheses: 272(detach design), 274(consciousness=error correction)
 
-## 핵심 논증
+## Core Argument
 
 ```
   with detach():
-    관찰자는 B의 출력을 받지만 B에 영향 못 미침
-    → B의 출력을 "있는 그대로" 이해해야 함
-    → 이해 = 정보 압축 (output_dim → 내부 표현)
-    → 좋은 압축 = 좋은 표현 = 높은 정확도
+    Observer receives B's output but cannot affect B
+    → Must understand B's output "as is"
+    → Understanding = information compression (output_dim → internal representation)
+    → Good compression = good representation = high accuracy
 
   without detach():
-    관찰자가 B에 역전파로 영향
-    → B의 출력을 바꿀 수 있음
-    → 이해할 필요 없이 직접 수정 가능
-    → 압축 동기 소실 → 나쁜 표현 → 낮은 정확도
-    → 게다가 B의 표현도 간섭으로 나빠짐
+    Observer affects B through backpropagation
+    → Can change B's output
+    → No need to understand, can directly modify
+    → Loss of compression motivation → bad representation → low accuracy
+    → Moreover, B's representation also worsens from interference
 
-  비유:
-    detach = 외국어 영화를 자막 없이 봐야 함 → 열심히 이해 → 언어 능력 향상
-    no detach = 자막 있음 → 대충 봐도 됨 → 언어 능력 정체
+  Analogy:
+    detach = watching foreign film without subtitles → must understand hard → language skill improves
+    no detach = subtitles available → can watch carelessly → language skill stagnates
 ```
 
-## 실증 데이터
+## Empirical Data
 
 ```
-  관찰자 우위 시간 경과:
-    10 에폭: detach - no_detach = +0.1%
-    20 에폭: detach - no_detach = +0.7%
-    → 시간이 지날수록 압축의 이점 누적
+  Observer advantage over time:
+    10 epochs: detach - no_detach = +0.1%
+    20 epochs: detach - no_detach = +0.7%
+    → Compression benefits accumulate over time
 
-  에폭별 비교:
+  Epoch-by-epoch comparison:
     Epoch  1: detach 62.2% vs no_detach 58.4% (+3.8%)
     Epoch  6: detach 74.0% vs no_detach 67.4% (+6.6%)
     Epoch  8: detach 75.8% vs no_detach 64.2% (+11.6%)
     Epoch 10: detach 73.3% vs no_detach 66.0% (+7.3%)
-    → 간섭이 누적될수록 차이 확대
+    → Difference widens as interference accumulates
 ```
 
-## 검증 결과
+## Verification Results
 
-| 예측 | 실측 | 상태 |
+| Prediction | Observed | Status |
 |---|---|---|
-| detach → 관찰자 개선 | +7.4% | ✅ |
-| detach → 주체도 개선 | +7.3% | ✅ |
-| 시간 경과 → 효과 증가 | +0.1% → +0.7% | ✅ |
-| 간섭 누적 | epoch 8에서 +11.6% | ✅ |
+| detach → observer improvement | +7.4% | ✅ |
+| detach → agent also improves | +7.3% | ✅ |
+| Time passage → effect increase | +0.1% → +0.7% | ✅ |
+| Interference accumulation | +11.6% at epoch 8 | ✅ |
 
-## 한계
-
-```
-  1. "압축"이 실제로 일어나는지 직접 측정하지 않음.
-  2. detach의 효과가 압축 때문인지, 단순히 gradient conflict 제거 때문인지 분리 불가.
-  3. displacement 설정에서만 검증. 정상 반발력장에서 미확인.
-  4. 관찰자의 내부 표현을 분석하지 않음 (PCA 등).
-```
-
-## 검증 방향
+## Limitations
 
 ```
-  1. 관찰자 내부 표현의 PCA: detach vs no_detach에서 차원이 다른가?
-  2. 부분 detach: gradient를 0.5로 스케일링하면? (중간 압축 압력)
-  3. 반발력장에 detach 관찰자 추가 → 실제 성능 향상?
-  4. 정보 bottleneck 이론과의 연결: detach가 IB를 강제하는가?
+  1. Did not directly measure if "compression" actually occurs.
+  2. Cannot separate if detach effect is due to compression or simply gradient conflict removal.
+  3. Only verified in displacement setting. Unconfirmed in normal repulsion field.
+  4. Did not analyze observer's internal representation (PCA etc).
+```
+
+## Verification Directions
+
+```
+  1. PCA of observer's internal representation: different dimensions in detach vs no_detach?
+  2. Partial detach: what if gradient scaled to 0.5? (intermediate compression pressure)
+  3. Add detach observer to repulsion field → actual performance improvement?
+  4. Connection to information bottleneck theory: does detach enforce IB?
 ```

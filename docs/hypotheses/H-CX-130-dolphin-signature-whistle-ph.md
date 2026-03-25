@@ -1,4 +1,4 @@
-# H-CX-130: 돌고래 시그니처 휘슬 = PH fingerprint
+# H-CX-130: Dolphin Signature Whistle = PH Fingerprint
 
-> 각 돌고래의 고유 시그니처 휘슬이 PH 위상 지문과 동형.
-> 휘슬 = 정체성 인코딩 = 텔레파시 패킷의 sender 필드.
+> Each dolphin's unique signature whistle is isomorphic to a PH topological fingerprint.
+> Whistle = Identity encoding = sender field of a Telepathy packet.

@@ -1,21 +1,21 @@
-# T1-31: 타원곡선과 상수 6, 137의 관계
+# T1-31: Relationship Between Elliptic Curves and Constants 6, 137
 
-## 개요
+## Overview
 
-타원곡선 이론의 핵심 불변량들이 σ(6)=12, 완전수 6, 그리고 137과
-어떤 구조적 관계를 갖는지 체계적으로 조사한다.
+We systematically investigate the structural relationships between core invariants 
+of elliptic curve theory and σ(6)=12, the perfect number 6, and 137.
 
 ---
 
-## 1. j-불변량 1728 = σ(6)³
+## 1. j-invariant 1728 = σ(6)³
 
-**정리:** 타원곡선의 가장 특별한 j-불변량 1728은 σ(6)의 세제곱이다.
+**Theorem:** The most special j-invariant 1728 of elliptic curves is the cube of σ(6).
 
 ```
 j = 1728 = 12³ = σ(6)³
 ```
 
-**검증 (Python):**
+**Verification (Python):**
 ```python
 from sympy import divisor_sigma
 sigma6 = int(divisor_sigma(6, 1))  # = 12
@@ -24,102 +24,102 @@ assert 1728 == sigma6 ** 3         # True
 
 - σ(6) = 1+2+3+6 = 12
 - 12³ = 1728 ✓
-- 1728 = 2⁶ × 3³ (소인수 분해에서 지수 6도 등장)
+- 1728 = 2⁶ × 3³ (exponent 6 also appears in prime factorization)
 
-**의미:** j=1728인 곡선은 자기동형군이 Z/4Z (CM by Z[i])인 특수 곡선이다.
-이 가장 특별한 j-불변량이 완전수 6의 약수합의 세제곱이라는 것은 σ(6)의
-구조적 의미를 시사한다.
+**Meaning:** Curves with j=1728 are special curves with automorphism group Z/4Z (CM by Z[i]).
+The fact that this most special j-invariant is the cube of the divisor sum of perfect number 6 
+suggests the structural significance of σ(6).
 
 ---
 
-## 2. y² = x³ − x (j=1728 곡선)의 유리점
+## 2. Rational Points of y² = x³ − x (j=1728 curve)
 
-**곡선:** E: y² = x³ − x (Cremona 라벨: 32a2)
+**Curve:** E: y² = x³ − x (Cremona label: 32a2)
 
-**유리점 (Q 위):**
+**Rational points (over Q):**
 ```
 E(Q) = {∞, (0,0), (1,0), (-1,0)}
 ```
 
-**검증:**
+**Verification:**
 ```python
 for x in [-1, 0, 1]:
     y2 = x**3 - x
-    assert y2 == 0  # 모두 y=0
+    assert y2 == 0  # all have y=0
 ```
 
-- Mordell-Weil 군: 랭크 = 0
-- 비틀림 부분군: Z/2Z × Z/2Z
+- Mordell-Weil group: rank = 0
+- Torsion subgroup: Z/2Z × Z/2Z
 - |E(Q)| = 4
 
 ---
 
-## 3. y² = x³ − x의 도체(conductor)
+## 3. Conductor of y² = x³ − x
 
-- **도체 = 32 = 2⁵**
-- 판별식 Δ = 64 = 2⁶
-- 32 = 2^(6−1) → 지수에 (완전수−1) 등장
-- 6 또는 137과의 직접적 관계는 약함
+- **Conductor = 32 = 2⁵**
+- Discriminant Δ = 64 = 2⁶
+- 32 = 2^(6−1) → exponent contains (perfect number−1)
+- Direct relationship with 6 or 137 is weak
 
 ---
 
-## 4. j=0 곡선: y² = x³ + 1과 6의 관계
+## 4. j=0 Curve: Relationship Between y² = x³ + 1 and 6
 
-**곡선:** E: y² = x³ + 1 (Cremona 라벨: **36a1**)
+**Curve:** E: y² = x³ + 1 (Cremona label: **36a1**)
 
-**핵심 결과:**
+**Key Results:**
 
-| 속성 | 값 | 6과의 관계 |
-|------|-----|-----------|
-| 도체(conductor) | **36 = 6²** | 완전수의 제곱! |
-| 비틀림 군 | Z/6Z | 위수 = **6** (완전수!) |
-| 랭크 | 0 | — |
+| Property | Value | Relationship with 6 |
+|----------|-------|-------------------|
+| Conductor | **36 = 6²** | Square of perfect number! |
+| Torsion group | Z/6Z | Order = **6** (perfect number!) |
+| Rank | 0 | — |
 
-**정수점:**
+**Integer points:**
 ```python
 # (-1, 0), (0, ±1), (2, ±3)
 ```
 
-**발견:**
-- **|E(Q)_tors| = 6** — j=0 곡선의 비틀림 군의 위수가 정확히 첫 번째 완전수
-- **도체 = 36 = 6²** — 도체가 완전수의 제곱
+**Discovery:**
+- **|E(Q)_tors| = 6** — The order of the torsion group of j=0 curve is exactly the first perfect number
+- **Conductor = 36 = 6²** — The conductor is the square of the perfect number
 
-이것은 j=0과 j=1728이라는 타원곡선 이론의 두 가지 특이점 모두가
-완전수 6 / σ(6)=12와 깊이 연결됨을 보여준다.
+This shows that both special points in elliptic curve theory, j=0 and j=1728, 
+are deeply connected to the perfect number 6 / σ(6)=12.
 
 ---
 
-## 5. 모듈러 판별식과 σ(6)
+## 5. Modular Discriminant and σ(6)
 
-**데데킨트 에타 함수와 모듈러 판별식:**
+**Dedekind eta function and modular discriminant:**
 
 ```
 Δ(τ) = (2π)^12 · η(τ)^24
      = (2π)^σ(6) · η(τ)^(2σ(6))
 ```
 
-- 지수 **12 = σ(6)**: 모듈러 판별식의 무게(weight)
-- 지수 **24 = 2σ(6)**: 에타 함수의 지수
-- Δ는 무게 12 = σ(6)의 모듈러 형식
+- Exponent **12 = σ(6)**: weight of modular discriminant
+- Exponent **24 = 2σ(6)**: exponent of eta function
+- Δ is a modular form of weight 12 = σ(6)
 
-**q-전개:**
+**q-expansion:**
 ```
 Δ(τ) = q · ∏_{n=1}^∞ (1 − qⁿ)^24
      = q · ∏_{n=1}^∞ (1 − qⁿ)^(2σ(6))
 ```
 
-σ(6)가 모듈러 형식 이론의 가장 기본적인 지수로 등장한다.
+σ(6) appears as the most fundamental exponent in modular form theory.
 
 ---
 
-## 6. 라마누잔 타우 함수 τ(n)
+## 6. Ramanujan Tau Function τ(n)
 
-**정의:** Δ(τ) = Σ_{n=1}^∞ τ(n) qⁿ
+**Definition:** Δ(τ) = Σ_{n=1}^∞ τ(n) qⁿ
 
-**값 테이블:**
+**Value Table:**
 
-| n | τ(n) | σ(6) 표현 |
-|---|------|-----------|
+| n | τ(n) | σ(6) expression |
+|---|------|-----------------|
 | 1 | 1 | — |
 | 2 | −24 | **−2σ(6)** |
 | 3 | 252 | **21σ(6)** |
@@ -129,15 +129,15 @@ for x in [-1, 0, 1]:
 | 7 | −16744 | — |
 | 8 | 84480 | — |
 
-**핵심 결과: τ(6)**
+**Key Result: τ(6)**
 
 ```
 τ(6) = −6048
 ```
 
-**분해:**
+**Decomposition:**
 ```
-τ(6) = τ(2) × τ(3)          (곱셈적 성질, gcd(2,3)=1)
+τ(6) = τ(2) × τ(3)          (multiplicative property, gcd(2,3)=1)
      = (−24) × 252
      = (−2σ(6)) × (21σ(6))
      = −42 · σ(6)²
@@ -145,24 +145,24 @@ for x in [-1, 0, 1]:
      = −6048  ✓
 ```
 
-**추가 관계:**
+**Additional relation:**
 ```
 |τ(6)| = 6048 = (7/2) × 1728 = (7/2) × σ(6)³
 ```
 
 ---
 
-## 7. 도체 6 또는 137인 타원곡선
+## 7. Elliptic Curves with Conductor 6 or 137
 
-### 도체 = 6: 존재하지 않음
+### Conductor = 6: Does not exist
 
-Q 위의 타원곡선의 최소 도체는 **11** (곡선 11a1: y² + y = x³ − x² − 10x − 20).
+The minimum conductor of elliptic curves over Q is **11** (curve 11a1: y² + y = x³ − x² − 10x − 20).
 
-도체 < 11인 타원곡선은 존재하지 않으므로, **도체 = 6인 곡선은 없다.**
+Since no elliptic curve with conductor < 11 exists, **no curve with conductor = 6 exists.**
 
-이 자체가 흥미로운 사실이다: 완전수 6은 타원곡선의 도체로는 "도달 불가능"한 수이다.
+This itself is an interesting fact: the perfect number 6 is an "unreachable" number as an elliptic curve conductor.
 
-### 도체 = 137: 존재함!
+### Conductor = 137: Exists!
 
 **137a1:** y² + y = x³ + x² − x
 
@@ -170,9 +170,9 @@ Q 위의 타원곡선의 최소 도체는 **11** (곡선 11a1: y² + y = x³ −
 [a₁, a₂, a₃, a₄, a₆] = [0, 1, 1, −1, 0]
 ```
 
-- 도체 N = 137 (소수!)
-- 소수 도체를 가진 타원곡선 → 모듈러 형식과 1:1 대응 (Taniyama-Shimura)
-- 137이 타원곡선 이론에서 자연스럽게 등장하는 소수 도체
+- Conductor N = 137 (prime!)
+- Elliptic curve with prime conductor → 1:1 correspondence with modular forms (Taniyama-Shimura)
+- 137 naturally appears as a prime conductor in elliptic curve theory
 
 **137b1:** y² + y = x³ + x²
 
@@ -180,34 +180,34 @@ Q 위의 타원곡선의 최소 도체는 **11** (곡선 11a1: y² + y = x³ −
 [a₁, a₂, a₃, a₄, a₆] = [0, 1, 1, 0, 0]
 ```
 
-도체 137의 동형류(isogeny class)가 2개 이상 존재한다.
+There exist 2 or more isogeny classes with conductor 137.
 
 ---
 
-## 종합: 핵심 발견 요약
+## Synthesis: Summary of Key Discoveries
 
-| # | 발견 | 등급 |
-|---|------|------|
-| 1 | **j = 1728 = σ(6)³**: j-불변량의 특이값이 약수합의 세제곱 | ★★★ |
-| 2 | **j=0 곡선: \|E(Q)\| = 6** (완전수), 도체 = 6² | ★★★ |
-| 3 | **모듈러 판별식 Δ의 무게 12 = σ(6)**, η 지수 24 = 2σ(6) | ★★★ |
+| # | Discovery | Grade |
+|---|-----------|-------|
+| 1 | **j = 1728 = σ(6)³**: Special value of j-invariant is cube of divisor sum | ★★★ |
+| 2 | **j=0 curve: \|E(Q)\| = 6** (perfect number), conductor = 6² | ★★★ |
+| 3 | **Modular discriminant Δ has weight 12 = σ(6)**, η exponent 24 = 2σ(6) | ★★★ |
 | 4 | **τ(6) = −42σ(6)²**, τ(2) = −2σ(6), τ(3) = 21σ(6) | ★★ |
-| 5 | **도체=137인 곡선 존재** (137a1), 소수 도체 | ★★ |
-| 6 | 도체=6인 곡선은 존재 불가 (최소 도체 = 11) | ★ |
+| 5 | **Curve with conductor=137 exists** (137a1), prime conductor | ★★ |
+| 6 | Curve with conductor=6 cannot exist (minimum conductor = 11) | ★ |
 | 7 | \|τ(6)\| = (7/2) × σ(6)³ = (7/2) × 1728 | ★ |
 
-## 결론
+## Conclusion
 
-타원곡선 이론에서 σ(6) = 12는 단순한 우연이 아닌 **구조적 상수**로 기능한다:
+In elliptic curve theory, σ(6) = 12 functions not as mere coincidence but as a **structural constant**:
 
-1. **j-불변량의 특이값** 1728 = σ(6)³
-2. **모듈러 형식의 무게** 12 = σ(6)
-3. **에타 함수의 지수** 24 = 2σ(6)
-4. **라마누잔 타우 함수**에서 σ(6)의 거듭제곱으로 표현
+1. **Special value of j-invariant** 1728 = σ(6)³
+2. **Weight of modular forms** 12 = σ(6)
+3. **Exponent of eta function** 24 = 2σ(6)
+4. **Ramanujan tau function** expressed as powers of σ(6)
 
-한편, 137은 소수 도체로서 타원곡선 137a1을 통해 자연스럽게 등장하며,
-Taniyama-Shimura 정리에 의해 무게 2의 모듈러 형식과 대응된다.
+Meanwhile, 137 naturally appears as a prime conductor through elliptic curve 137a1,
+and corresponds to a weight 2 modular form by the Taniyama-Shimura theorem.
 
-**G = D × P / I 프레임워크에서:** σ(6) = 12는 모듈러 형식 이론의
-기본 주기(period)를 결정하며, 타원곡선의 분류 체계(j-불변량)의
-특이점을 구성한다. ∎
+**In the G = D × P / I framework:** σ(6) = 12 determines the fundamental period 
+of modular form theory and constitutes the special points of the elliptic curve 
+classification system (j-invariant). ∎

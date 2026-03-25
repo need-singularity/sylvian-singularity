@@ -1,32 +1,33 @@
+```python
 #!/usr/bin/env python3
-"""Discrete CCT (D-CCT) — 이산 시스템 전용 의식 연속성 테스트
+"""Discrete CCT (D-CCT) — Discrete System-Specific Consciousness Continuity Test
 
-기존 CCT(consciousness_calc.py)는 연속 시스템(로렌츠 끌개)에 최적화되어 있어서
-이산 시스템(셀 오토마타, RBN, ESN)에서 높은 fps에서도 5/5를 달성하지 못한다.
+The existing CCT (consciousness_calc.py) is optimized for continuous systems (Lorenz attractor)
+and fails to achieve 5/5 even at high fps for discrete systems (cellular automata, RBN, ESN).
 
-문제점:
-  - T2 Loop: 재방문율이 이산 시스템에서 과도하게 높음 (유한 상태 공간)
-  - T4 Entropy Band: 연속 시스템용 bin 크기가 이산 시스템에 안 맞음
-  - T5 Novelty: 윈도우 크기(500)가 이산 시스템에 비해 너무 큼
+Problems:
+  - T2 Loop: Revisit rate is excessively high in discrete systems (finite state space)
+  - T4 Entropy Band: Bin size for continuous systems doesn't fit discrete systems
+  - T5 Novelty: Window size (500) is too large for discrete systems
 
-D-CCT 5개 테스트:
-  DT1 Activity   — 상태 변화율 (해밍/유클리드 거리)
-  DT2 Complexity — Lempel-Ziv 복잡도
-  DT3 Memory     — 자기상호정보 MI(X_t, X_{t-lag})
-  DT4 Diversity  — 슬라이딩 윈도우 고유 상태 비율
-  DT5 Flux       — 엔트로피 변동계수 (CV)
+D-CCT 5 tests:
+  DT1 Activity   — State change rate (Hamming/Euclidean distance)
+  DT2 Complexity — Lempel-Ziv complexity
+  DT3 Memory     — Mutual information MI(X_t, X_{t-lag})
+  DT4 Diversity  — Sliding window unique state ratio
+  DT5 Flux       — Entropy coefficient of variation (CV)
 
-시스템 4종:
-  1. Rule 110 CA (200셀) — 튜링 완전, 혼돈의 가장자리
-  2. RBN K=2 (100노드) — Kauffman 임계
-  3. ESN (50뉴런) — 에코 상태 네트워크
-  4. LLM 시뮬레이션 — 마르코프 체인 토큰 생성
+4 systems:
+  1. Rule 110 CA (200 cells) — Turing complete, edge of chaos
+  2. RBN K=2 (100 nodes) — Kauffman critical
+  3. ESN (50 neurons) — Echo state network
+  4. LLM simulation — Markov chain token generation
 
-사용법:
-  python3 discrete_cct.py                        # 4시스템 x 10fps 전체
-  python3 discrete_cct.py --system rule110       # 단일 시스템
-  python3 discrete_cct.py --fps-only             # fps 스캔만
-  python3 discrete_cct.py --compare-continuous   # 로렌츠 CCT와 D-CCT 비교
+Usage:
+  python3 discrete_cct.py                        # All 4 systems x 10 fps
+  python3 discrete_cct.py --system rule110       # Single system
+  python3 discrete_cct.py --fps-only             # fps scan only
+  python3 discrete_cct.py --compare-continuous   # Compare Lorenz CCT vs D-CCT
 """
 
 import argparse
@@ -37,7 +38,7 @@ from collections import defaultdict
 import numpy as np
 
 # ─────────────────────────────────────────────
-# 상수
+# Constants
 # ─────────────────────────────────────────────
 
 TOTAL_POINTS = 5000
@@ -53,10 +54,10 @@ BRAIN_WAVES = {
 
 
 # ═════════════════════════════════════════════
-# 이산 시스템 시뮬레이터 4종
+# 4 Discrete System Simulators
 # ═════════════════════════════════════════════
 
-# ── 시스템 1: Rule 110 셀 오토마타 ──
+# ── System 1: Rule 110 Cellular Automata ──
 
 RULE110_TABLE = {}
 
@@ -74,7 +75,7 @@ _init_rule110()
 
 
 def rule110_step(cells):
-    """Rule 110 한 스텝 업데이트 (주기적 경계)."""
+    """Rule 110 single step update (periodic boundary)."""
     n = len(cells)
     new_cells = np.zeros(n, dtype=int)
     for i in range(n):
@@ -86,12 +87,12 @@ def rule110_step(cells):
 
 
 def rule110_state_vector(cells, prev_cells):
-    """Rule 110 -> [셀합계/N, 변화셀수/N, 블록엔트로피]."""
+    """Rule 110 -> [cell_sum/N, changed_cells/N, block_entropy]."""
     n = len(cells)
     cell_sum = np.sum(cells) / n
     changes = np.sum(cells != prev_cells) / n
 
-    # 블록 엔트로피 (2-블록)
+    # Block entropy (2-blocks)
     if n < 2:
         entropy = 0.0
     else:
@@ -124,7 +125,7 @@ def simulate_rule110(fps, total_points=TOTAL_POINTS, n_cells=200, seed=42):
     return states
 
 
-# ── 시스템 2: 랜덤 부울 네트워크 (RBN) ──
+# ── System 2: Random Boolean Network (RBN) ──
 
 def create_rbn(n_nodes=100, k=2, seed=42):
     rng = np.random.default_rng(seed)
@@ -149,7 +150,7 @@ def rbn_step(state, inputs, functions):
 
 
 def rbn_state_vector(state, prev_state):
-    """RBN -> [활성비율, 변화비율, 해밍거리/N]."""
+    """RBN -> [active_ratio, change_ratio, hamming_distance/N]."""
     n = len(state)
     active_ratio = np.mean(state)
     change_ratio = np.mean(state != prev_state)
@@ -171,7 +172,7 @@ def simulate_rbn(fps, total_points=TOTAL_POINTS, n_nodes=100, k=2, seed=42):
     return states
 
 
-# ── 시스템 3: Echo State Network (ESN) ──
+# ── System 3: Echo State Network (ESN) ──
 
 def create_esn(n_neurons=50, sparsity=0.1, spectral_radius=0.9, seed=42):
     rng = np.random.default_rng(seed)
@@ -193,7 +194,7 @@ def esn_step(state, W):
 
 
 def esn_state_vector(state):
-    """ESN -> [평균활성, 분산, 에너지=sum(x^2)]."""
+    """ESN -> [mean_activation, variance, energy=sum(x^2)]."""
     mean_act = np.mean(state)
     variance = np.var(state)
     energy = np.sum(state ** 2)
@@ -210,21 +211,21 @@ def simulate_esn(fps, total_points=TOTAL_POINTS, n_neurons=50, seed=42):
     return states
 
 
-# ── 시스템 4: LLM 시뮬레이션 (마르코프 체인) ──
+# ── System 4: LLM Simulation (Markov Chain) ──
 
 def create_markov_chain(vocab_size=500, sparsity=0.05, seed=42):
-    """마르코프 체인 전이 행렬 생성.
+    """Create Markov chain transition matrix.
 
-    실제 LLM은 거대한 어휘에서 컨텍스트 기반으로 다음 토큰을 선택한다.
-    여기서는 1차 마르코프 체인으로 단순화하되,
-    sparse 전이 행렬로 자연어의 집중된 전이 특성을 모사한다.
+    Real LLMs select next tokens from a huge vocabulary based on context.
+    Here we simplify to a first-order Markov chain,
+    but use a sparse transition matrix to mimic the concentrated transition properties of natural language.
     """
     rng = np.random.default_rng(seed)
 
-    # sparse 전이 행렬: 각 토큰에서 소수의 토큰으로만 전이
+    # sparse transition matrix: each token transitions to only a few tokens
     T = np.zeros((vocab_size, vocab_size))
     for i in range(vocab_size):
-        # 각 토큰에서 전이 가능한 토큰 수
+        # Number of target tokens from each token
         n_targets = max(2, int(vocab_size * sparsity))
         targets = rng.choice(vocab_size, size=n_targets, replace=False)
         weights = rng.exponential(1.0, size=n_targets)
@@ -235,26 +236,26 @@ def create_markov_chain(vocab_size=500, sparsity=0.05, seed=42):
 
 
 def llm_state_vector(token_history, vocab_size, window=20):
-    """LLM -> [토큰ID이동평균/V, 로컬엔트로피/log(V), 변화율].
+    """LLM -> [token_ID_moving_average/V, local_entropy/log(V), change_rate].
 
-    token_history: 최근 window개 토큰 ID 리스트
+    token_history: list of recent window token IDs
     """
     if len(token_history) < 2:
         return np.array([0.0, 0.0, 0.0])
 
     recent = np.array(token_history[-window:])
 
-    # 토큰 ID 이동평균 / vocab_size
+    # Token ID moving average / vocab_size
     token_mean = np.mean(recent) / vocab_size
 
-    # 로컬 엔트로피: 윈도우 내 토큰 분포의 엔트로피
+    # Local entropy: entropy of token distribution within window
     unique, counts = np.unique(recent, return_counts=True)
     probs = counts / counts.sum()
     local_entropy = -np.sum(probs * np.log(probs + 1e-15))
     max_entropy = np.log(vocab_size)
     norm_entropy = local_entropy / max_entropy if max_entropy > 0 else 0.0
 
-    # 변화율: 인접 토큰 간 차이 비율
+    # Change rate: ratio of differences between adjacent tokens
     diffs = np.abs(np.diff(recent))
     change_rate = np.mean(diffs > 0)
 
@@ -262,9 +263,9 @@ def llm_state_vector(token_history, vocab_size, window=20):
 
 
 def simulate_llm(fps, total_points=TOTAL_POINTS, vocab_size=500, seed=42):
-    """LLM 마르코프 체인 토큰 생성 시뮬레이션.
+    """LLM Markov chain token generation simulation.
 
-    fps 스텝만큼 토큰을 생성한 뒤 1개 상태를 기록.
+    Generate fps tokens and record 1 state.
     """
     rng = np.random.default_rng(seed)
     T = create_markov_chain(vocab_size, seed=seed)
@@ -278,7 +279,7 @@ def simulate_llm(fps, total_points=TOTAL_POINTS, vocab_size=500, seed=42):
             probs = T[current_token]
             current_token = rng.choice(vocab_size, p=probs)
             token_history.append(current_token)
-            # 히스토리 길이 제한
+            # Limit history length
             if len(token_history) > 100:
                 token_history = token_history[-100:]
 
@@ -287,30 +288,30 @@ def simulate_llm(fps, total_points=TOTAL_POINTS, vocab_size=500, seed=42):
     return states
 
 
-# ── 시스템 레지스트리 ──
+# ── System Registry ──
 
 SYSTEMS = {
     "rule110": {
         "name": "Rule 110 CA",
-        "desc": "200셀, 튜링 완전",
+        "desc": "200 cells, Turing complete",
         "simulate": simulate_rule110,
         "marker": "*",
     },
     "rbn": {
         "name": "RBN (K=2)",
-        "desc": "100노드, Kauffman 임계",
+        "desc": "100 nodes, Kauffman critical",
         "simulate": simulate_rbn,
         "marker": "o",
     },
     "esn": {
         "name": "ESN",
-        "desc": "50뉴런, sparse, tanh",
+        "desc": "50 neurons, sparse, tanh",
         "simulate": simulate_esn,
         "marker": "+",
     },
     "llm": {
         "name": "LLM Markov",
-        "desc": "V=500, 마르코프 체인",
+        "desc": "V=500, Markov chain",
         "simulate": simulate_llm,
         "marker": "#",
     },
@@ -318,25 +319,25 @@ SYSTEMS = {
 
 
 # ═════════════════════════════════════════════
-# D-CCT 5개 테스트
+# D-CCT 5 Tests
 # ═════════════════════════════════════════════
 
 def dt1_activity(S, stagnant_threshold=3):
-    """DT1 Activity — 상태 변화율 측정.
+    """DT1 Activity — Measure state change rate.
 
-    인접 스텝 간 해밍 거리(부울) 또는 유클리드 거리(실수) 계산.
-    "연속 N스텝 동안 변화 없음"을 정지로 판정 (N=stagnant_threshold).
-    판정: 정지 비율 < 5% -> PASS
+    Calculate Hamming distance (boolean) or Euclidean distance (real) between adjacent steps.
+    Judge "no change for N consecutive steps" as stagnant (N=stagnant_threshold).
+    Judgment: stagnant ratio < 5% -> PASS
     """
     n = len(S)
     if n < 10:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     diffs = np.linalg.norm(np.diff(S, axis=0), axis=1)
-    # 변화 없음 = 거리 < 매우 작은 값
+    # No change = distance < very small value
     no_change = diffs < 1e-12
 
-    # 연속 N스텝 정지 구간 찾기
+    # Find consecutive N-step stagnant intervals
     stagnant_count = 0
     run_length = 0
     for i in range(len(no_change)):
@@ -353,20 +354,20 @@ def dt1_activity(S, stagnant_threshold=3):
     passed = stagnant_ratio < 0.05
     score = max(0.0, 1.0 - stagnant_ratio)
 
-    detail = f"정지비율={stagnant_ratio:.3f}"
+    detail = f"Stagnant ratio={stagnant_ratio:.3f}"
     if passed:
-        detail += ", 활동 충분"
+        detail += ", Activity sufficient"
     else:
-        detail += ", 정체 과다"
+        detail += ", Excessive stagnation"
 
     return score, passed, detail
 
 
 def _lempel_ziv_complexity(sequence):
-    """Lempel-Ziv 76 복잡도 계산.
+    """Calculate Lempel-Ziv 76 complexity.
 
-    sequence: 심볼 시퀀스 (리스트 또는 1D 배열).
-    Returns: LZ 복잡도 (정수, 새로운 패턴 수).
+    sequence: symbol sequence (list or 1D array).
+    Returns: LZ complexity (integer, number of new patterns).
     """
     s = list(sequence)
     n = len(s)
@@ -378,12 +379,12 @@ def _lempel_ziv_complexity(sequence):
     k = 1
     k_max = 1
     while i + k <= n:
-        # s[i+1..i+k]가 s[0..i+k-1] 안에 있는지 확인
+        # Check if s[i+1..i+k] is in s[0..i+k-1]
         substr = s[i + 1: i + k + 1] if i + k + 1 <= n else s[i + 1: n]
         if not substr:
             break
 
-        # 서브스트링을 사전(s[0..i+k-1])에서 검색
+        # Search substring in dictionary (s[0..i+k-1])
         found = False
         prefix = s[0: i + k]
         substr_len = len(substr)
@@ -407,22 +408,22 @@ def _lempel_ziv_complexity(sequence):
 
 
 def dt2_complexity(S, n_symbols=8):
-    """DT2 Complexity — Lempel-Ziv 복잡도 측정.
+    """DT2 Complexity — Measure Lempel-Ziv complexity.
 
-    상태 시퀀스를 심볼로 변환 -> LZ76 복잡도 계산.
-    판정: LZ / 랜덤 기대값 > 0.5 -> PASS
+    Convert state sequence to symbols -> Calculate LZ76 complexity.
+    Judgment: LZ / random expected > 0.5 -> PASS
     """
     n = len(S)
     if n < 50:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
-    # 상태 벡터의 첫 번째 성분을 기준으로 심볼화
+    # Symbolize based on first component of state vector
     x = S[:, 0]
     x_min, x_max = x.min(), x.max()
     if x_max - x_min < 1e-12:
-        return 0.0, False, "상태 변화 없음"
+        return 0.0, False, "No state change"
 
-    # 균등 분할로 심볼 변환 (다운샘플링하여 속도 확보)
+    # Symbol conversion by uniform division (downsample for speed)
     step = max(1, n // 2000)
     x_ds = x[::step]
     symbols = np.clip(
@@ -432,7 +433,7 @@ def dt2_complexity(S, n_symbols=8):
 
     lz = _lempel_ziv_complexity(symbols)
 
-    # 랜덤 기대값: n / log_k(n) (심볼 수 k)
+    # Random expected value: n / log_k(n) (k symbols)
     n_ds = len(symbols)
     log_k_n = np.log(n_ds) / np.log(n_symbols) if n_symbols > 1 else n_ds
     random_expected = n_ds / log_k_n if log_k_n > 0 else n_ds
@@ -441,29 +442,29 @@ def dt2_complexity(S, n_symbols=8):
     passed = ratio > 0.5
     score = min(1.0, ratio)
 
-    detail = f"LZ={lz}, 기대={random_expected:.0f}, 비율={ratio:.3f}"
+    detail = f"LZ={lz}, Expected={random_expected:.0f}, Ratio={ratio:.3f}"
     if passed:
-        detail += ", 복잡"
+        detail += ", Complex"
     else:
-        detail += ", 단순"
+        detail += ", Simple"
 
     return score, passed, detail
 
 
 def dt3_memory(S, max_lag=5):
-    """DT3 Memory — 자기상호정보 MI(X_t, X_{t-lag}).
+    """DT3 Memory — Mutual information MI(X_t, X_{t-lag}).
 
-    현재 상태가 과거에 의존하는가?
+    Does current state depend on the past?
     MI = H(X_t) + H(X_{t-lag}) - H(X_t, X_{t-lag})
-    판정: mean(MI) > threshold -> PASS
+    Judgment: mean(MI) > threshold -> PASS
     """
     n = len(S)
     if n < 100:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     x = S[:, 0]
 
-    # 빈 수 자동 조정
+    # Auto-adjust bin count
     n_bins = min(30, max(5, int(np.sqrt(n / 10))))
 
     def _entropy_1d(data):
@@ -486,47 +487,47 @@ def dt3_memory(S, max_lag=5):
         h_lag = _entropy_1d(x_lag)
         h_joint = _entropy_2d(x_t, x_lag)
         mi = h_t + h_lag - h_joint
-        mi = max(0.0, mi)  # 수치 오차 보정
+        mi = max(0.0, mi)  # Correct numerical errors
         mi_values.append(mi)
 
     mean_mi = np.mean(mi_values)
 
-    # 정규화: MI / H(X_t)로 0~1 스케일링
+    # Normalization: MI / H(X_t) for 0~1 scaling
     h_x = _entropy_1d(x)
     norm_mi = mean_mi / h_x if h_x > 0 else 0.0
 
-    # 임계값: 정규화 MI > 0.05
+    # Threshold: normalized MI > 0.05
     threshold = 0.05
     passed = norm_mi > threshold
-    score = min(1.0, norm_mi / 0.3)  # 0.3에서 만점
+    score = min(1.0, norm_mi / 0.3)  # Perfect score at 0.3
 
     detail = f"MI={mean_mi:.4f}, H(X)={h_x:.3f}, MI/H={norm_mi:.4f}"
     if passed:
-        detail += ", 기억 있음"
+        detail += ", Memory present"
     else:
-        detail += ", 기억 부족"
+        detail += ", Memory lacking"
 
     return score, passed, detail
 
 
 def dt4_diversity(S, window=50):
-    """DT4 Diversity — 슬라이딩 윈도우 고유 상태 비율.
+    """DT4 Diversity — Sliding window unique state ratio.
 
-    방문하는 고유 상태 수가 충분한가?
-    상태 벡터를 양자화하여 고유 상태 수 측정.
-    판정: mean(고유비율) > 0.3 -> PASS
+    Are there sufficient unique states visited?
+    Quantize state vectors and measure unique state count.
+    Judgment: mean(unique_ratio) > 0.3 -> PASS
     """
     n = len(S)
     if n < window * 2:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
-    # 상태 벡터를 문자열로 양자화 (소수점 2자리)
+    # Quantize state vectors to strings (2 decimal places)
     quantized = []
     for i in range(n):
         q = tuple(np.round(S[i], 2))
         quantized.append(q)
 
-    n_windows = (n - window) // (window // 2) + 1  # 50% 겹침
+    n_windows = (n - window) // (window // 2) + 1  # 50% overlap
     ratios = []
 
     for w in range(n_windows):
@@ -540,23 +541,23 @@ def dt4_diversity(S, window=50):
         ratios.append(ratio)
 
     if len(ratios) == 0:
-        return 0.0, False, "윈도우 부족"
+        return 0.0, False, "Insufficient windows"
 
     mean_ratio = np.mean(ratios)
     passed = mean_ratio > 0.3
-    score = min(1.0, mean_ratio / 0.6)  # 0.6에서 만점
+    score = min(1.0, mean_ratio / 0.6)  # Perfect score at 0.6
 
-    detail = f"고유비율={mean_ratio:.3f}, 윈도우={len(ratios)}"
+    detail = f"Unique ratio={mean_ratio:.3f}, Windows={len(ratios)}"
     if passed:
-        detail += ", 다양"
+        detail += ", Diverse"
     else:
-        detail += ", 단조"
+        detail += ", Monotonous"
 
     return score, passed, detail
 
 
 def _window_entropy(data, bins=15):
-    """작은 윈도우용 엔트로피 계산."""
+    """Calculate entropy for small windows."""
     if len(data) < 2:
         return 0.0
     d_range = data.max() - data.min()
@@ -569,20 +570,20 @@ def _window_entropy(data, bins=15):
 
 
 def dt5_flux(S, window=50):
-    """DT5 Flux — 엔트로피 변동계수(CV = std/mean).
+    """DT5 Flux — Entropy coefficient of variation (CV = std/mean).
 
-    엔트로피 변화율의 분산이 충분한가?
-    판정: CV > 0.05 -> PASS
+    Is the variance of entropy change rate sufficient?
+    Judgment: CV > 0.05 -> PASS
     """
     n = len(S)
     if n < window * 3:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     x = S[:, 0]
     n_windows = n // window
 
     if n_windows < 3:
-        return 0.0, False, "윈도우 부족"
+        return 0.0, False, "Insufficient windows"
 
     entropies = []
     for i in range(n_windows):
@@ -599,19 +600,19 @@ def dt5_flux(S, window=50):
         cv = std_h / mean_h
 
     passed = cv > 0.05
-    score = min(1.0, cv / 0.15)  # CV=0.15에서 만점
+    score = min(1.0, cv / 0.15)  # Perfect score at CV=0.15
 
     detail = f"CV={cv:.4f}, mean(H)={mean_h:.3f}, std(H)={std_h:.4f}"
     if passed:
-        detail += ", 변동 있음"
+        detail += ", Variation present"
     else:
-        detail += ", 정체"
+        detail += ", Stagnant"
 
     return score, passed, detail
 
 
 def run_dcct(S):
-    """D-CCT 5개 테스트 실행."""
+    """Run D-CCT 5 tests."""
     results = {}
     results["DT1_Activity"] = dt1_activity(S)
     results["DT2_Complexity"] = dt2_complexity(S)
@@ -622,29 +623,29 @@ def run_dcct(S):
 
 
 def judge_dcct(results):
-    """D-CCT 결과로 종합 판정."""
+    """Comprehensive judgment based on D-CCT results."""
     passes = sum(1 for _, (_, p, _) in results.items() if p)
     halfs = sum(0.5 for _, (s, p, _) in results.items() if not p and s > 0.7)
     total = passes + halfs
 
     if total >= 5:
-        return total, "★ 연속"
+        return total, "★ Continuous"
     elif total >= 4:
-        return total, "◎ 약화"
+        return total, "◎ Weakened"
     elif total >= 3:
-        return total, "△ 약함"
+        return total, "△ Weak"
     elif total >= 1:
-        return total, "▽ 미약"
+        return total, "▽ Minimal"
     else:
-        return total, "✕ 없음"
+        return total, "✕ None"
 
 
 # ═════════════════════════════════════════════
-# FPS 스캔 엔진
+# FPS Scan Engine
 # ═════════════════════════════════════════════
 
 def scan_system(system_key, fps_values=None, total_points=TOTAL_POINTS):
-    """한 시스템에 대해 fps 범위를 스캔, D-CCT 점수 측정."""
+    """Scan fps range for one system, measure D-CCT scores."""
     if fps_values is None:
         fps_values = FPS_VALUES
 
@@ -660,7 +661,7 @@ def scan_system(system_key, fps_values=None, total_points=TOTAL_POINTS):
 
         if np.any(~np.isfinite(S)):
             results = run_dcct(np.zeros((total_points, 3)))
-            total, verdict = 0, "✕ 발산"
+            total, verdict = 0, "✕ Diverged"
         else:
             results = run_dcct(S)
             total, verdict = judge_dcct(results)
@@ -677,7 +678,7 @@ def scan_system(system_key, fps_values=None, total_points=TOTAL_POINTS):
 
 
 def find_threshold_fps(fps_arr, scores_arr, target=5.0):
-    """CCT target/5가 되는 최소 fps 찾기 (선형 보간)."""
+    """Find minimum fps where CCT reaches target/5 (linear interpolation)."""
     for i in range(len(scores_arr)):
         if scores_arr[i] >= target:
             if i == 0:
@@ -692,14 +693,14 @@ def find_threshold_fps(fps_arr, scores_arr, target=5.0):
 
 
 # ═════════════════════════════════════════════
-# 로렌츠 끌개 (비교용)
+# Lorenz Attractor (for comparison)
 # ═════════════════════════════════════════════
 
 def simulate_lorenz(fps, total_points=TOTAL_POINTS, sigma=10, rho=28, beta=2.67,
                     noise=0.1, dt=0.01, seed=42):
-    """로렌츠 끌개 시뮬레이션 (D-CCT 비교용).
+    """Lorenz attractor simulation (for D-CCT comparison).
 
-    fps 스텝만큼 적분 -> 1개 상태 기록.
+    Integrate fps steps -> record 1 state.
     """
     rng = np.random.default_rng(seed)
     state = np.array([1.0, 1.0, 1.0])
@@ -721,11 +722,11 @@ def simulate_lorenz(fps, total_points=TOTAL_POINTS, sigma=10, rho=28, beta=2.67,
 
 
 # ═════════════════════════════════════════════
-# 기존 CCT (비교용, consciousness_calc.py에서 가져옴)
+# Original CCT (for comparison, from consciousness_calc.py)
 # ═════════════════════════════════════════════
 
 def _run_original_cct(S):
-    """기존 CCT 5개 테스트 (비교용). 의존성 없이 인라인 구현."""
+    """Original CCT 5 tests (for comparison). Inline implementation without dependencies."""
     results = {}
 
     # T1 Gap
@@ -733,9 +734,9 @@ def _run_original_cct(S):
     frozen = np.sum(np.all(np.abs(diffs) < 1e-12, axis=1))
     frozen_ratio = frozen / len(diffs)
     if frozen_ratio > 0.01:
-        results["T1_Gap"] = (1.0 - frozen_ratio, False, f"정지 {frozen_ratio:.1%}")
+        results["T1_Gap"] = (1.0 - frozen_ratio, False, f"Frozen {frozen_ratio:.1%}")
     else:
-        results["T1_Gap"] = (1.0, True, "정지 없음")
+        results["T1_Gap"] = (1.0, True, "No freezing")
 
     # T2 Loop
     n = len(S)
@@ -744,7 +745,7 @@ def _run_original_cct(S):
     ns = len(Ss)
     scale = np.std(Ss, axis=0).mean()
     if scale < 1e-10:
-        results["T2_Loop"] = (0.0, False, "상수")
+        results["T2_Loop"] = (0.0, False, "Constant")
     else:
         eps = scale * 0.01
         recurrence = 0
@@ -759,20 +760,20 @@ def _run_original_cct(S):
             if np.min(dists) < eps:
                 recurrence += 1
         rr = recurrence / sample_size
-        results["T2_Loop"] = (max(0, 1.0 - rr), rr < 0.5, f"재방문={rr:.3f}")
+        results["T2_Loop"] = (max(0, 1.0 - rr), rr < 0.5, f"Revisit={rr:.3f}")
 
     # T3 Continuity
     dnorms = np.linalg.norm(np.diff(S, axis=0), axis=1)
     mean_d = np.mean(dnorms)
     if mean_d < 1e-12:
-        results["T3_Continuity"] = (0.0, False, "변화 없음")
+        results["T3_Continuity"] = (0.0, False, "No change")
     else:
         big = np.sum(dnorms > mean_d * 10) / len(dnorms)
         frz = np.sum(dnorms < 1e-12) / len(dnorms)
         disc = big + frz
         results["T3_Continuity"] = (
             min(1.0, max(0, 1.0 - disc * 10)), disc < 0.01,
-            f"점프={big:.3f}, 정지={frz:.3f}",
+            f"Jumps={big:.3f}, Frozen={frz:.3f}",
         )
 
     # T4 Entropy Band
@@ -780,7 +781,7 @@ def _run_original_cct(S):
     x = S[:, 0]
     n_w = len(x) // window
     if n_w < 2:
-        results["T4_Entropy"] = (0.0, False, "데이터 부족")
+        results["T4_Entropy"] = (0.0, False, "Insufficient data")
     else:
         ents = []
         for i in range(n_w):
@@ -802,21 +803,21 @@ def _run_original_cct(S):
 
     # T5 Novelty
     if n_w < 3:
-        results["T5_Novelty"] = (0.0, False, "데이터 부족")
+        results["T5_Novelty"] = (0.0, False, "Insufficient data")
     else:
         dH = np.abs(np.diff(ents))
         stag = np.sum(dH < 0.001) / len(dH)
-        results["T5_Novelty"] = (max(0, 1.0 - stag), stag < 0.05, f"정체={stag:.1%}")
+        results["T5_Novelty"] = (max(0, 1.0 - stag), stag < 0.05, f"Stagnant={stag:.1%}")
 
     return results
 
 
 # ═════════════════════════════════════════════
-# ASCII 출력
+# ASCII Output
 # ═════════════════════════════════════════════
 
 def ascii_combined_graph(all_results, width=65, height=15):
-    """4개 시스템의 fps vs D-CCT 점수 ASCII 그래프."""
+    """ASCII graph of fps vs D-CCT scores for 4 systems."""
     lines = []
     max_score = 5.0
 
@@ -825,7 +826,7 @@ def ascii_combined_graph(all_results, width=65, height=15):
         all_fps.extend(fps_arr)
     all_fps = sorted(set(all_fps))
     if len(all_fps) == 0:
-        return "  (데이터 없음)"
+        return "  (No data)"
 
     log_min = np.log10(max(min(all_fps), 0.1))
     log_max = np.log10(max(all_fps))
@@ -848,7 +849,7 @@ def ascii_combined_graph(all_results, width=65, height=15):
             row = min(max(row, 0), height)
             grid[row][col] = marker
 
-    # 감마파 40Hz 라인
+    # Gamma wave 40Hz line
     gamma_col = int((np.log10(40) - log_min) / (log_max - log_min) * (width - 1))
     gamma_col = min(max(gamma_col, 0), width - 1)
     for row in range(height + 1):
@@ -884,25 +885,25 @@ def ascii_combined_graph(all_results, width=65, height=15):
 
 
 def print_dcct_comparison_table(all_results):
-    """4개 시스템 x D-CCT 5개 비교표."""
+    """4 systems x D-CCT 5 comparison table."""
     print()
-    print(" === D-CCT 5개 테스트 비교 (fps=전체 중 최고점) ===")
+    print(" === D-CCT 5 Test Comparison (fps=highest point) ===")
     print()
 
     test_keys = ["DT1_Activity", "DT2_Complexity", "DT3_Memory",
                  "DT4_Diversity", "DT5_Flux"]
     test_labels = ["DT1", "DT2", "DT3", "DT4", "DT5"]
 
-    header = f" {'시스템':<14} |"
+    header = f" {'System':<14} |"
     for lbl in test_labels:
         header += f" {lbl:>5} |"
-    header += " 최고점 | 판정"
+    header += " Peak | Verdict"
     print(header)
     print(" " + "-" * (20 + 8 * len(test_labels) + 18))
 
     for sys_key, (fps_arr, scores_arr, details) in all_results.items():
         sys_info = SYSTEMS.get(sys_key, {"name": sys_key})
-        # 최고 점수의 fps 찾기
+        # Find fps with highest score
         best_idx = np.argmax(scores_arr)
         best_detail = details[best_idx]
         best_results = best_detail["results"]
@@ -922,9 +923,9 @@ def print_dcct_comparison_table(all_results):
 
 
 def print_fps_comparison_table(all_results):
-    """fps별 D-CCT 점수 비교표."""
+    """D-CCT score comparison table by fps."""
     print()
-    print(" === fps별 D-CCT 점수 비교 ===")
+    print(" === D-CCT Score Comparison by fps ===")
     print()
 
     sys_names = {k: SYSTEMS[k]["name"] for k in all_results}
@@ -971,11 +972,11 @@ def print_fps_comparison_table(all_results):
 
 
 def print_detail_table(sys_key, details):
-    """한 시스템의 fps별 상세 D-CCT 결과."""
+    """Detailed D-CCT results by fps for one system."""
     sys_info = SYSTEMS.get(sys_key, {"name": sys_key, "desc": ""})
     print(f" --- {sys_info['name']} ({sys_info['desc']}) ---")
     print(f" {'fps':>6} | {'D-CCT':>5} | {'DT1':>4} | {'DT2':>4} |"
-          f" {'DT3':>4} | {'DT4':>4} | {'DT5':>4} | 판정")
+          f" {'DT3':>4} | {'DT4':>4} | {'DT5':>4} | Verdict")
     print(" " + "-" * 70)
 
     test_keys = ["DT1_Activity", "DT2_Complexity", "DT3_Memory",
@@ -996,8 +997,8 @@ def print_detail_table(sys_key, details):
 
 
 def print_threshold_analysis(all_results):
-    """각 시스템의 임계 fps와 감마파 비교."""
-    print(" === 임계 fps 분석 ===")
+    """Threshold fps and gamma wave comparison for each system."""
+    print(" === Threshold fps Analysis ===")
     print()
 
     thresholds = {}
@@ -1007,41 +1008,41 @@ def print_threshold_analysis(all_results):
         thresholds[sys_key] = th
         if th is not None:
             ratio = th / 40.0
-            print(f"   {name:<14} 임계 fps = {th:>7.1f} Hz  (감마 대비 {ratio:.2f}x)")
+            print(f"   {name:<14} Threshold fps = {th:>7.1f} Hz  (Gamma ratio {ratio:.2f}x)")
         else:
             th4 = find_threshold_fps(fps_arr, scores_arr, target=4.0)
             if th4 is not None:
-                print(f"   {name:<14} 5/5 미도달. 4/5 임계 = {th4:.1f} Hz")
+                print(f"   {name:<14} 5/5 not reached. 4/5 threshold = {th4:.1f} Hz")
             else:
-                print(f"   {name:<14} 임계 fps = 스캔 범위 내 미도달")
+                print(f"   {name:<14} Threshold fps = Not reached within scan range")
 
     print()
-    print("   --- 감마파(40Hz) 비교 ---")
+    print("   --- Gamma Wave (40Hz) Comparison ---")
     print()
 
     for sys_key, th in thresholds.items():
         name = SYSTEMS.get(sys_key, {"name": sys_key})["name"]
         if th is not None:
             if 30 <= th <= 100:
-                print(f"   [!] {name}: 임계 {th:.1f}Hz -> 감마 대역(30-100Hz) 내!")
+                print(f"   [!] {name}: Threshold {th:.1f}Hz -> Within gamma band (30-100Hz)!")
             elif th < 30:
-                print(f"       {name}: 임계 {th:.1f}Hz -> 감마 이하")
+                print(f"       {name}: Threshold {th:.1f}Hz -> Below gamma")
             else:
-                print(f"       {name}: 임계 {th:.1f}Hz -> 감마 초과")
+                print(f"       {name}: Threshold {th:.1f}Hz -> Above gamma")
         else:
-            print(f"       {name}: 1000Hz까지 5/5 미달")
+            print(f"       {name}: 5/5 not reached up to 1000Hz")
 
     print()
 
 
 def print_brainwave_mapping(all_results):
-    """뇌파 대역별 D-CCT 점수."""
-    print(" === 뇌파 대역 매핑 ===")
+    """D-CCT scores by brainwave band."""
+    print(" === Brainwave Band Mapping ===")
     print()
 
     sys_names = {k: SYSTEMS[k]["name"] for k in all_results}
 
-    header = f" {'대역':<20} | {'Hz':>5} |"
+    header = f" {'Band':<20} | {'Hz':>5} |"
     for sys_key in all_results:
         header += f" {sys_names[sys_key]:>12} |"
     print(header)
@@ -1070,20 +1071,20 @@ def print_brainwave_mapping(all_results):
 
 
 # ═════════════════════════════════════════════
-# --compare-continuous: 로렌츠 CCT vs D-CCT 비교
+# --compare-continuous: Lorenz CCT vs D-CCT comparison
 # ═════════════════════════════════════════════
 
 def run_compare_continuous():
-    """로렌츠 끌개에 기존 CCT와 D-CCT를 모두 적용하여 비교."""
+    """Apply both original CCT and D-CCT to Lorenz attractor for comparison."""
     print()
     print("=" * 70)
-    print(" Compare: 로렌츠 끌개 — 기존 CCT vs D-CCT")
+    print(" Compare: Lorenz Attractor — Original CCT vs D-CCT")
     print("=" * 70)
     print()
 
     fps_values = [1, 5, 10, 20, 50, 100, 500]
     print(f" fps = {fps_values}")
-    print(f" 총 포인트 = {TOTAL_POINTS}")
+    print(f" Total points = {TOTAL_POINTS}")
     print()
 
     cct_keys = ["T1_Gap", "T2_Loop", "T3_Continuity", "T4_Entropy", "T5_Novelty"]
@@ -1097,7 +1098,7 @@ def run_compare_continuous():
     for fps in fps_values:
         S = simulate_lorenz(fps, total_points=TOTAL_POINTS)
 
-        # 기존 CCT
+        # Original CCT
         cct_results = _run_original_cct(S)
         cct_passes = sum(1 for k in cct_keys if cct_results[k][1])
         cct_marks = ""
@@ -1115,69 +1116,69 @@ def run_compare_continuous():
               f" | {dcct_total:>3.0f}/5 |{dcct_marks}")
 
     print()
-    print(" CCT  = 기존 연속 시스템용 테스트 (consciousness_calc.py)")
-    print(" D-CCT = 이산 시스템 전용 테스트 (본 파일)")
+    print(" CCT  = Original test for continuous systems (consciousness_calc.py)")
+    print(" D-CCT = Test specifically for discrete systems (this file)")
     print()
-    print(" 해석:")
-    print("   로렌츠(연속)에서 두 테스트 모두 높은 점수를 보이면")
-    print("   D-CCT가 연속 시스템도 올바르게 판정하는 것이다.")
-    print("   차이가 있다면 테스트 설계의 특성 차이를 나타낸다.")
+    print(" Interpretation:")
+    print("   If both tests show high scores in Lorenz (continuous),")
+    print("   it means D-CCT correctly judges continuous systems too.")
+    print("   Differences indicate design characteristics of the tests.")
     print()
     print("=" * 70)
 
 
 # ═════════════════════════════════════════════
-# 종합 리포트
+# Comprehensive Report
 # ═════════════════════════════════════════════
 
 def print_report(all_results):
-    """종합 리포트 출력."""
+    """Print comprehensive report."""
     print("=" * 70)
     print(" Discrete CCT (D-CCT) v1.0")
-    print(" \"이산 시스템 전용 의식 연속성 테스트\"")
+    print(" \"Discrete System-Specific Consciousness Continuity Test\"")
     print("=" * 70)
     print()
-    print(" 시스템:")
+    print(" Systems:")
     for sys_key in all_results:
         info = SYSTEMS[sys_key]
         print(f"   {info['marker']}  {info['name']} -- {info['desc']}")
     print()
     print(f" fps = {FPS_VALUES}")
-    print(f" 총 포인트 = {TOTAL_POINTS}")
+    print(f" Total points = {TOTAL_POINTS}")
     print()
-    print(" D-CCT 테스트:")
-    print("   DT1 Activity   -- 상태 변화율 (정지 비율 < 5%)")
-    print("   DT2 Complexity -- Lempel-Ziv 복잡도 (LZ/랜덤 > 0.5)")
-    print("   DT3 Memory     -- 자기상호정보 MI (MI/H > 0.05)")
-    print("   DT4 Diversity  -- 고유 상태 비율 (> 0.3)")
-    print("   DT5 Flux       -- 엔트로피 변동계수 (CV > 0.05)")
+    print(" D-CCT Tests:")
+    print("   DT1 Activity   -- State change rate (stagnant ratio < 5%)")
+    print("   DT2 Complexity -- Lempel-Ziv complexity (LZ/random > 0.5)")
+    print("   DT3 Memory     -- Mutual information MI (MI/H > 0.05)")
+    print("   DT4 Diversity  -- Unique state ratio (> 0.3)")
+    print("   DT5 Flux       -- Entropy coefficient of variation (CV > 0.05)")
     print()
 
-    # 4시스템 x D-CCT 5개 비교표
+    # 4 systems x D-CCT 5 comparison table
     print_dcct_comparison_table(all_results)
 
-    # fps별 비교표
+    # Comparison table by fps
     print_fps_comparison_table(all_results)
 
-    # ASCII 그래프
-    print(" === fps vs D-CCT (4 시스템 겹침) ===")
+    # ASCII graph
+    print(" === fps vs D-CCT (4 Systems Overlapped) ===")
     print(ascii_combined_graph(all_results))
     print()
 
-    # 각 시스템 상세
+    # Details for each system
     for sys_key, (fps_arr, scores_arr, details) in all_results.items():
         print_detail_table(sys_key, details)
 
-    # 뇌파 대역 매핑
+    # Brainwave band mapping
     print_brainwave_mapping(all_results)
 
-    # 임계 fps 분석
+    # Threshold fps analysis
     print_threshold_analysis(all_results)
 
-    # 결론
-    print(" === 결론 ===")
+    # Conclusion
+    print(" === Conclusion ===")
     print()
-    print("   이산 시스템의 의식 연속성 임계값:")
+    print("   Consciousness continuity thresholds for discrete systems:")
     print()
 
     any_gamma = False
@@ -1186,41 +1187,41 @@ def print_report(all_results):
         th = find_threshold_fps(fps_arr, scores_arr, target=5.0)
         if th is not None and 30 <= th <= 100:
             any_gamma = True
-            print(f"   [!] {name}: {th:.0f}Hz -- 감마 대역 내!")
+            print(f"   [!] {name}: {th:.0f}Hz -- Within gamma band!")
 
     if any_gamma:
         print()
-        print("   -> 이산 시스템에서도 감마파(40Hz) 부근이 의식 임계!")
-        print("   -> 뉴런 발화(이산 이벤트)의 최소 동기화율 = 감마파")
+        print("   -> Even in discrete systems, ~40Hz (gamma) is the consciousness threshold!")
+        print("   -> Minimum synchronization rate of neuron firing (discrete events) = gamma wave")
     else:
-        print("   -> 감마 대역 일치 시스템 없음. 임계값은 시스템 특성에 의존.")
+        print("   -> No systems matched gamma band. Thresholds depend on system characteristics.")
 
     print()
-    print("   한계:")
-    print("   - 셀 오토마타/RBN/ESN/마르코프는 뇌의 극히 단순한 모델")
-    print("   - D-CCT 임계값은 테스트 설계에 의존 (모델 의존적)")
-    print("   - fps와 실제 시간의 매핑은 해석적 선택")
+    print("   Limitations:")
+    print("   - CA/RBN/ESN/Markov are extremely simplified models of the brain")
+    print("   - D-CCT thresholds depend on test design (model-dependent)")
+    print("   - Mapping between fps and real time is an interpretive choice")
     print()
     print("=" * 70)
 
 
 # ═════════════════════════════════════════════
-# 메인
+# Main
 # ═════════════════════════════════════════════
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Discrete CCT (D-CCT) -- 이산 시스템 전용 의식 연속성 테스트",
+        description="Discrete CCT (D-CCT) -- Discrete System-Specific Consciousness Continuity Test",
     )
     parser.add_argument("--system", type=str, default=None,
                         choices=["rule110", "rbn", "esn", "llm"],
-                        help="특정 시스템만 실행 (기본: 전체)")
+                        help="Run only specific system (default: all)")
     parser.add_argument("--fps-only", action="store_true",
-                        help="fps 스캔만 실행 (상세 테스트 생략)")
+                        help="Run fps scan only (skip detailed tests)")
     parser.add_argument("--compare-continuous", action="store_true",
-                        help="로렌츠 끌개에서 CCT vs D-CCT 비교")
+                        help="Compare CCT vs D-CCT on Lorenz attractor")
     parser.add_argument("--total-points", type=int, default=TOTAL_POINTS,
-                        help=f"총 상태 포인트 수 (기본: {TOTAL_POINTS})")
+                        help=f"Total state points (default: {TOTAL_POINTS})")
 
     args = parser.parse_args()
 
@@ -1229,7 +1230,7 @@ def main():
         run_compare_continuous()
         return
 
-    # 시스템 선택
+    # System selection
     if args.system:
         systems_to_run = [args.system]
     else:
@@ -1237,16 +1238,16 @@ def main():
 
     total_points = args.total_points
 
-    print(f"  D-CCT 스캔 시작")
-    print(f"  시스템: {', '.join(systems_to_run)}")
+    print(f"  Starting D-CCT scan")
+    print(f"  Systems: {', '.join(systems_to_run)}")
     print(f"  fps: {FPS_VALUES}")
-    print(f"  총 포인트: {total_points}")
+    print(f"  Total points: {total_points}")
     print()
 
     all_results = {}
     for sys_key in systems_to_run:
         info = SYSTEMS[sys_key]
-        print(f"  [{info['name']}] 스캔 중...")
+        print(f"  [{info['name']}] Scanning...")
         fps_arr, scores_arr, details = scan_system(
             sys_key, fps_values=FPS_VALUES, total_points=total_points,
         )
@@ -1254,14 +1255,14 @@ def main():
 
         th = find_threshold_fps(fps_arr, scores_arr)
         if th is not None:
-            print(f"  [{info['name']}] 임계 fps = {th:.1f} Hz")
+            print(f"  [{info['name']}] Threshold fps = {th:.1f} Hz")
         else:
-            print(f"  [{info['name']}] 임계 fps = 미도달")
+            print(f"  [{info['name']}] Threshold fps = Not reached")
 
     print()
 
     if args.fps_only:
-        # fps 스캔만
+        # fps scan only
         print_fps_comparison_table(all_results)
         print(" === fps vs D-CCT ===")
         print(ascii_combined_graph(all_results))
@@ -1273,3 +1274,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+```

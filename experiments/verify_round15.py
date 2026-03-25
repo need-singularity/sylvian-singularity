@@ -1,10 +1,11 @@
+```python
 #!/usr/bin/env python3
-"""15라운드: r=1.000 심화 + 공명/합의 통합
+"""Round 15: r=1.000 Deep Dive + Resonance/Consensus Integration
 
-H-CX-170: 왜 cross-dataset merge 분포가 r=1.000? N-class 보편 법칙?
-H-CX-171: H0_ep1 난이도 예측 — 추가 데이터셋(breast_cancer, iris, wine)
-H-CX-172: 장력 공명 r=0.951 = 무언의 합의 cos=0.986? 같은 현상?
-H-CX-173: dendrogram 고정 step — 배치 단위 추적
+H-CX-170: Why cross-dataset merge distribution r=1.000? N-class universal law?
+H-CX-171: H0_ep1 difficulty prediction — Additional datasets (breast_cancer, iris, wine)
+H-CX-172: Tension resonance r=0.951 = Silent consensus cos=0.986? Same phenomenon?
+H-CX-173: dendrogram fixed step — Batch-wise tracking
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -88,7 +89,7 @@ def sklearn_to_loader(X, y, batch_size=64):
 
 def run_all():
     print(f"\n{'='*70}")
-    print(f"  15라운드: r=1.000 Deep Dive")
+    print(f"  Round 15: r=1.000 Deep Dive")
     print(f"{'='*70}")
 
     # === H-CX-171: H0_ep1 on more datasets ===
@@ -249,7 +250,7 @@ def run_all():
             print(f"  {ds1} vs {ds2}: r={r:.4f} p={p:.6f}")
 
     print(f"\n{'='*70}")
-    print(f"  15라운드 SUMMARY")
+    print(f"  Round 15 SUMMARY")
     print(f"{'='*70}")
     print(f"  H-CX-170: cross-dataset true r = see above")
     print(f"  H-CX-171: H0_ep1 vs acc (6 datasets): r={r171:.4f}")
@@ -258,3 +259,4 @@ def run_all():
 
 if __name__ == '__main__':
     run_all()
+```

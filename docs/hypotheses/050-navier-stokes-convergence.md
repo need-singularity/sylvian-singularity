@@ -1,43 +1,44 @@
-# 가설 검토 050: 나비에-스토크스 수렴성 ✅
+# Hypothesis Review 050: Navier-Stokes Convergence ✅
 
-## 가설
+## Hypothesis
 
-> autopilot이 어떤 시작점에서도 발산하지 않고 수렴하면, 나비에-스토크스 정규성을 지지한다.
+> If autopilot converges without diverging from any starting point, it supports Navier-Stokes regularity.
 
-## 배경
+## Background
 
 ```
-  나비에-스토크스 정규성 문제 (밀레니엄 문제):
+  Navier-Stokes Regularity Problem (Millennium Problem):
   ┌─────────────────────────────────────────────────┐
-  │  3차원 나비에-스토크스 방정식의 매끄러운 해가       │
-  │  항상 존재하는가? (= 유한 시간 내 "폭발" 없는가?)  │
-  │                                                   │
-  │  우리 모델 대응:                                    │
-  │  autopilot 반복 = "유체 흐름"                       │
-  │  수렴 = 매끄러운 해 존재                            │
-  │  발산 = 유한 시간 폭발                              │
+  │  Do smooth solutions to 3D Navier-Stokes         │
+  │  equations always exist? (= No "blow-up"         │
+  │  in finite time?)                                │
+  │                                                  │
+  │  Our model correspondence:                       │
+  │  autopilot iteration = "fluid flow"              │
+  │  convergence = smooth solution exists            │
+  │  divergence = finite time blow-up                │
   └─────────────────────────────────────────────────┘
 ```
 
-## 검증 결과: ✅ 발산 0건
+## Verification Results: ✅ 0 Divergences
 
 ```
-  100개 극단적 랜덤 시작점에서:
-  수렴: 100개 (100%)
-  진동:   0개 (0%)
-  발산:   0개 (0%)
+  From 100 extreme random starting points:
+  Converged: 100 (100%)
+  Oscillating:  0 (0%)
+  Diverged:     0 (0%)
 
-  → 어디서 시작해도 발산하지 않음
-  → "해"가 항상 매끄럽게 존재
-  → 나비에-스토크스 정규성 지지
+  → No divergence from any starting point
+  → "Solutions" always exist smoothly
+  → Supports Navier-Stokes regularity
 ```
 
-## 수렴 속도 통계 (ASCII 그래프)
+## Convergence Speed Statistics (ASCII Graph)
 
 ```
-  수렴까지 반복 횟수 분포 (n=100)
+  Distribution of iterations to convergence (n=100)
 
-  빈도
+  Frequency
   35│      ■
     │     ■■■
   30│    ■■■■
@@ -54,108 +55,108 @@
     │■■■■■■■■■■■■■■■■■■
    0└──┼──┼──┼──┼──┼──┼──┼──
       1   3   5   7  10  15  20+
-         수렴까지 반복 횟수
+         Iterations to convergence
 
-  평균: 4.2회
-  중앙값: 3회
-  최대: 12회
-  표준편차: 2.8회
+  Mean: 4.2 iterations
+  Median: 3 iterations
+  Maximum: 12 iterations
+  Std Dev: 2.8 iterations
 ```
 
-## 극단적 시작점에서의 수렴 궤적
+## Convergence Trajectories from Extreme Starting Points
 
 ```
-  I값
-  1.0│● I₀=0.99 (거의 완전 억제)
+  I value
+  1.0│● I₀=0.99 (near complete inhibition)
      │ ╲
   0.8│   ╲
      │     ╲
   0.6│       ╲
      │         ╲
-  0.5│── ── ── ──╲── ── ── ── 골든존 상한
+  0.5│── ── ── ──╲── ── ── ── Golden Zone upper
      │             ●
- 1/e │── ── ── ── ── ●●●●●●● 수렴! (I=1/3)
+ 1/e │── ── ── ── ── ●●●●●●● Converged! (I=1/3)
      │
-  0.2│── ── ── ── ── ── ── ── 골든존 하한
+  0.2│── ── ── ── ── ── ── ── Golden Zone lower
      │
   0.1│
      │         ╱
-  0.0│● I₀=0.01 (거의 완전 흥분)
+  0.0│● I₀=0.01 (near complete excitation)
      └──┼──┼──┼──┼──┼──┼──┼──
        0   1   2   3   4   5   6
-          반복 횟수
+          Iteration count
 
-  극단값 I₀=0.01: 4회 만에 수렴
-  극단값 I₀=0.99: 5회 만에 수렴
-  → 어디서 시작하든 골든존 부동점(1/3)으로 수렴
+  Extreme I₀=0.01: Converges in 4 iterations
+  Extreme I₀=0.99: Converges in 5 iterations
+  → Converges to Golden Zone fixed point (1/3) from anywhere
 ```
 
-## 수렴 보장의 수학적 근거
+## Mathematical Basis for Guaranteed Convergence
 
 ```
-  축소 사상 (Contraction Mapping):
+  Contraction Mapping:
   f(I) = 0.7I + 0.1
 
   |f'(I)| = 0.7 < 1  ∀ I ∈ [0,1]
 
-  → 바나흐 부동점 정리에 의해:
-  → 유일한 부동점 I* = 1/3 으로 반드시 수렴
-  → 발산 불가능 (수학적 증명)
+  → By Banach Fixed Point Theorem:
+  → Must converge to unique fixed point I* = 1/3
+  → Divergence impossible (mathematical proof)
 
-  부동점 계산:
+  Fixed point calculation:
   I* = 0.7 × I* + 0.1
   0.3 × I* = 0.1
   I* = 1/3 ✅
 ```
 
-## 수렴 통계 요약
+## Convergence Statistics Summary
 
 ```
   ┌──────────────────┬────────────┐
-  │ 통계량           │ 값         │
+  │ Statistic        │ Value      │
   ├──────────────────┼────────────┤
-  │ 총 시행          │ 100        │
-  │ 수렴 (100%)      │ 100        │
-  │ 진동 (0%)        │ 0          │
-  │ 발산 (0%)        │ 0          │
-  │ 평균 수렴 횟수   │ 4.2회      │
-  │ 최대 수렴 횟수   │ 12회       │
-  │ 수렴 오차 (ε)    │ < 10⁻⁶     │
-  │ 축소 계수 |f'|   │ 0.7        │
-  │ 부동점 I*        │ 1/3        │
+  │ Total trials     │ 100        │
+  │ Converged (100%) │ 100        │
+  │ Oscillating (0%) │ 0          │
+  │ Diverged (0%)    │ 0          │
+  │ Avg convergence  │ 4.2 iter   │
+  │ Max convergence  │ 12 iter    │
+  │ Convergence ε    │ < 10⁻⁶     │
+  │ Contraction |f'| │ 0.7        │
+  │ Fixed point I*   │ 1/3        │
   └──────────────────┴────────────┘
 ```
 
-## 나비에-스토크스와의 대응
+## Correspondence with Navier-Stokes
 
 ```
-  나비에-스토크스             우리 모델
+  Navier-Stokes              Our Model
   ──────────────             ─────────────
-  유체 속도장 v(x,t)    ↔    I(t) (억제지수)
-  점성항 ν∇²v           ↔    축소항 0.7I (감쇠)
-  압력항 -∇p            ↔    편향항 +0.1 (복원력)
-  비선형항 (v·∇)v       ↔    (우리 모델은 선형)
-  매끄러운 해 존재      ↔    항상 수렴 ✅
-  유한시간 폭발 없음    ↔    발산 0건 ✅
+  Fluid velocity v(x,t)  ↔   I(t) (inhibition index)
+  Viscous term ν∇²v      ↔   Contraction 0.7I (damping)
+  Pressure term -∇p      ↔   Bias term +0.1 (restoring)
+  Nonlinear (v·∇)v       ↔   (our model is linear)
+  Smooth solution exists ↔   Always converges ✅
+  No finite-time blow-up ↔   0 divergences ✅
 
-  핵심 차이:
-  우리 모델은 선형(f(I)=0.7I+0.1)이므로 수렴이 "자명"
-  나비에-스토크스는 비선형이므로 증명이 어려움
-  → 우리 결과는 "지지"이지 "증명"이 아님
+  Key difference:
+  Our model is linear (f(I)=0.7I+0.1) so convergence is "trivial"
+  Navier-Stokes is nonlinear, making proof difficult
+  → Our results "support" but don't "prove"
 ```
 
-## 한계
+## Limitations
 
-1. 우리 모델은 선형 축소 사상이므로 수렴이 자명 — 나비에-스토크스의 비선형성을 포함하지 않음
-2. 100개 시작점은 무한 차원 공간의 극히 일부
-3. 나비에-스토크스는 3D 편미분방정식이고, 우리 모델은 1D 상미분방정식
+1. Our model is a linear contraction mapping so convergence is trivial — doesn't include Navier-Stokes nonlinearity
+2. 100 starting points are a tiny fraction of infinite-dimensional space
+3. Navier-Stokes is a 3D PDE, while our model is a 1D ODE
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 비선형 확장 f(I) = 0.7I + 0.1 + εI² 에서 발산 조건 탐색
-- [ ] 다변수 (D, P, I 동시 진화) autopilot에서 수렴성 검증
-- [ ] 카오스 영역(I < 0.21)에서의 궤적 안정성 정밀 분석
+- [ ] Explore divergence conditions in nonlinear extension f(I) = 0.7I + 0.1 + εI²
+- [ ] Verify convergence in multivariable (D, P, I simultaneous evolution) autopilot
+- [ ] Precise analysis of trajectory stability in chaos region (I < 0.21)
 
 ---
 
-*검증: verify_millennium.py (100개 랜덤 시작점, 50회 반복)*
+*Verification: verify_millennium.py (100 random starting points, 50 iterations)*

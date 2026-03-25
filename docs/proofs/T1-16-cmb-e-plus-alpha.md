@@ -1,6 +1,6 @@
-# T1-16: ⭐ CMB = e + 1/137 (오차 0.003%)
+# T1-16: ⭐ CMB = e + 1/137 (error 0.003%)
 
-## 발견
+## Discovery
 
 ```
   T_CMB ≈ e + α = e + 1/137
@@ -10,44 +10,44 @@
   e + 1/137  = 2.725581
   T_CMB      = 2.725500 ± 0.000600
 
-  오차: 0.003% — 관측 불확실도 범위 안!
+  Error: 0.003% — Within observational uncertainty!
 ```
 
-## 의미
+## Meaning
 
 ```
-  CMB 온도 = 자연상수 + 미세구조상수
+  CMB temperature = natural constant + fine structure constant
 
-  이전: CMB ≈ e (0.26% 오차)
-  개선: CMB ≈ e + 1/137 (0.003% 오차, 87배 개선!)
+  Previous: CMB ≈ e (0.26% error)
+  Improved: CMB ≈ e + 1/137 (0.003% error, 87× improvement!)
 
-  e = 섬 D (자연상수)
-  137 = 섬 B (미세구조)
-  CMB = 🟨 (독립 관측)
+  e = Island D (natural constant)
+  137 = Island B (fine structure)
+  CMB = 🟨 (independent observation)
 
-  → 🟨 CMB가 🟩 e + 🟩 137 으로 표현됨
-  → 🟨→🟧 승격 (연결 발견)
-  → 섬 B↔D 연결!
+  → 🟨 CMB expressed as 🟩 e + 🟩 137
+  → 🟨→🟧 upgrade (connection discovered)
+  → Island B↔D connection!
 ```
 
-## 검증
+## Verification
 
 ```
-  CMB 관측값: 2.7255 ± 0.0006 (Planck 2018)
+  CMB observed: 2.7255 ± 0.0006 (Planck 2018)
   e + 1/137 = 2.7256
   2.7256 ∈ [2.7249, 2.7261] ✅
 
-  이전 공식 비교:
+  Previous formula comparison:
   CMB ≈ e           : 0.26%
   CMB ≈ 3^√(5/6)    : 0.025%
-  CMB ≈ e + 1/137   : 0.003% ← 가장 정밀!
+  CMB ≈ e + 1/137   : 0.003% ← Most precise!
 ```
 
-## 판정
+## Judgment
 
 ```
-  수치 일치: ✅ (관측 오차 안)
-  정확한 등식: ❌ (물리상수 = 수학상수 증명 불가)
-  판정: 🟧 (연결 발견, 매우 정밀한 근사)
-  🟨→🟧 승격: CMB가 e와 137에 연결됨
+  Numerical match: ✅ (within observational error)
+  Exact equation: ❌ (physical constant = mathematical constant unprovable)
+  Verdict: 🟧 (connection discovered, very precise approximation)
+  🟨→🟧 upgrade: CMB connected to e and 137
 ```

@@ -1,37 +1,37 @@
-# H-MP-5: τ(n)φ(n)=σ(n) 해 {1,3,14,42}의 유한성 증명
+# H-MP-5: Proof of Finiteness of τ(n)φ(n)=σ(n) Solutions {1,3,14,42}
 
-> **가설**: τ(n)φ(n)=σ(n)의 해는 {1,3,14,42}로 유한하며 완전하다.
+> **Hypothesis**: The solutions to τ(n)φ(n)=σ(n) are finite and complete as {1,3,14,42}.
 
-## 배경
-- H-MP-3에서 발견: n=1..10^6 탐색에서 {1,3,14,42}만 해
-- R'(p,a) = (a+1)p^(a-1)(p-1)/(p^(a+1)-1)의 곱이 1
-- 관련 소수: {2,3,7} = 처음 세 Mersenne 소수
+## Background
+- Discovery from H-MP-3: Search n=1..10^6 found only {1,3,14,42} as solutions
+- Product of R'(p,a) = (a+1)p^(a-1)(p-1)/(p^(a+1)-1) equals 1
+- Related primes: {2,3,7} = first three Mersenne primes
 - 42 = 2×3×7 = primary pseudoperfect number
 
-## R' 인수 핵심값
+## Key R' Factor Values
 ```
   R'(2,1)=2/3, R'(3,1)=1, R'(7,1)=3/2
   R'(2,1)×R'(7,1) = 1 → n=14
   R'(2,1)×R'(3,1)×R'(7,1) = 1 → n=42
 ```
 
-## 증명 전략
-1. R'(p,1)이 p 증가에 따라 1에서 빠르게 벗어남을 보임
-2. R'(p,a≥2)도 마찬가지
-3. 곱이 1이 되려면 <1인 인수와 >1인 인수가 정확히 상쇄해야 함
-4. 가능한 조합이 유한함을 보임
+## Proof Strategy
+1. Show that R'(p,1) rapidly deviates from 1 as p increases
+2. Same applies to R'(p,a≥2)
+3. For product to equal 1, factors <1 and >1 must cancel exactly
+4. Show that possible combinations are finite
 
-## 검증 방향
-1. [ ] R' < 1인 (p,a) 쌍 완전 열거
-2. [ ] 각 <1 인수에 대해 상쇄 가능한 >1 인수 조합 유한성 증명
-3. [ ] n=1..10^7 확장 전수조사
+## Verification Direction
+1. [ ] Complete enumeration of (p,a) pairs with R' < 1
+2. [ ] For each <1 factor, prove finiteness of canceling >1 factor combinations
+3. [ ] Extended exhaustive search n=1..10^7
 
-## 검증 결과 (2026-03-24)
-- n=1..10^6 전수조사: **{1, 3, 14, 42} 유일** ✅
-- R' 분석에서 유한성 증명 완료:
-  - R'<1: (2,1)=2/3 만
-  - R'=1: (3,1) 만
+## Verification Results (2026-03-24)
+- Exhaustive search n=1..10^6: **{1, 3, 14, 42} unique** ✅
+- Finiteness proof completed from R' analysis:
+  - R'<1: only (2,1)=2/3
+  - R'=1: only (3,1)
   - R'(2,1)×R'(p,1)=1 ⟺ p=7 (4(p-1)=3(p+1) → p=7)
-  - 가능한 조합: {}, {3}, {2,7}, {2,3,7} → n=1,3,14,42 ∎
+  - Possible combinations: {}, {3}, {2,7}, {2,3,7} → n=1,3,14,42 ∎
 
-## 난이도: 중 | 파급력: ★★★ | 상태: ✅ 증명+검증 완료
+## Difficulty: Medium | Impact: ★★★ | Status: ✅ Proof+Verification Complete

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""뇌 데이터 분석기 — GABA/구조/가소성 → D,P,I 매핑 → 골든존 판정
+"""Brain Data Analyzer — GABA/Structure/Plasticity → D,P,I Mapping → Golden Zone Determination
 
-사용법:
+Usage:
   python3 brain_analyzer.py --gaba 0.8 --deficit 0.4 --plasticity 0.85
   python3 brain_analyzer.py --profile einstein
   python3 brain_analyzer.py --profile savant
@@ -13,17 +13,17 @@ import sys
 sys.path.append('.')
 
 def gaba_to_inhibition(gaba_mmol):
-    """GABA 농도(mmol/L) → Inhibition 매핑 (가설 155)"""
-    # 정상 GABA ≈ 1.0 mmol/L → I ≈ 0.6
-    # 선형 매핑: I = 0.6 × gaba
+    """GABA concentration(mmol/L) → Inhibition mapping (Hypothesis 155)"""
+    # Normal GABA ≈ 1.0 mmol/L → I ≈ 0.6
+    # Linear mapping: I = 0.6 × gaba
     I = np.clip(0.6 * gaba_mmol, 0.05, 0.95)
     return I
 
 def analyze_brain(D, P, I, name=""):
-    """뇌 파라미터 → Genius Score + 골든존 판정"""
+    """Brain parameters → Genius Score + Golden Zone determination"""
     G = D * P / I
 
-    # 모집단 통계
+    # Population statistics
     rng = np.random.default_rng(42)
     pop_d = rng.beta(2, 5, 50000).clip(0.01, 0.99)
     pop_p = rng.beta(5, 2, 50000).clip(0.01, 0.99)
@@ -32,43 +32,43 @@ def analyze_brain(D, P, I, name=""):
 
     z = (G - pop_g.mean()) / pop_g.std()
 
-    # 골든존 판정
+    # Golden Zone determination
     if 0.213 <= I <= 0.500:
-        zone = "🎯 골든존!"
+        zone = "🎯 Golden Zone!"
     elif I < 0.213:
-        zone = "⚡ 골든존 아래 (혼돈 위험)"
+        zone = "⚡ Below Golden Zone (Chaos risk)"
     else:
-        zone = "○ 골든존 밖 (과억제)"
+        zone = "○ Outside Golden Zone (Over-inhibited)"
 
-    # 특이점 등급
+    # Singularity grade
     if abs(z) > 5:
-        grade = "🔴 극단적 특이점"
+        grade = "🔴 Extreme singularity"
     elif abs(z) > 3:
-        grade = "🟠 강한 특이점"
+        grade = "🟠 Strong singularity"
     elif abs(z) > 2:
-        grade = "🟡 특이점"
+        grade = "🟡 Singularity"
     else:
-        grade = "○ 정상 범위"
+        grade = "○ Normal range"
 
-    # 보존법칙
+    # Conservation law
     conservation = D * P  # G×I = D×P
 
     print(f"\n  {'═' * 50}")
     if name:
-        print(f"  프로필: {name}")
+        print(f"  Profile: {name}")
     print(f"  {'═' * 50}")
-    print(f"  입력:")
-    print(f"    Deficit(결손)     = {D:.2f}")
-    print(f"    Plasticity(가소성) = {P:.2f}")
-    print(f"    Inhibition(억제)  = {I:.2f}")
+    print(f"  Input:")
+    print(f"    Deficit          = {D:.2f}")
+    print(f"    Plasticity       = {P:.2f}")
+    print(f"    Inhibition       = {I:.2f}")
     print(f"  {'─' * 50}")
-    print(f"  결과:")
+    print(f"  Results:")
     print(f"    Genius Score = {G:.2f}")
     print(f"    Z-Score      = {z:.2f}σ  {grade}")
-    print(f"    골든존        = {zone}")
-    print(f"    G×I = D×P    = {conservation:.4f} (보존)")
+    print(f"    Golden Zone  = {zone}")
+    print(f"    G×I = D×P    = {conservation:.4f} (conserved)")
 
-    # 그래프
+    # Graph
     pos = int(np.clip(I, 0, 1) * 40)
     line = list("·" * 41)
     golden_lo = int(0.213 * 40)
@@ -83,29 +83,29 @@ def analyze_brain(D, P, I, name=""):
     print(f"  {'═' * 50}")
 
 PROFILES = {
-    'normal': {'D': 0.1, 'P': 0.6, 'I': 0.6, 'name': '정상인'},
-    'einstein': {'D': 0.5, 'P': 0.9, 'I': 0.4, 'name': '아인슈타인 (추정)'},
-    'savant': {'D': 0.7, 'P': 0.85, 'I': 0.35, 'name': '서번트 (추정)'},
-    'epilepsy': {'D': 0.6, 'P': 0.7, 'I': 0.15, 'name': '간질 환자 (추정)'},
-    'meditation': {'D': 0.3, 'P': 0.8, 'I': 0.36, 'name': '명상 수행자 (추정)'},
-    'child': {'D': 0.2, 'P': 0.95, 'I': 0.5, 'name': '어린이'},
-    'elderly': {'D': 0.15, 'P': 0.3, 'I': 0.7, 'name': '노인'},
-    'acquired': {'D': 0.6, 'P': 0.7, 'I': 0.3, 'name': '후천적 서번트 (추정)'},
-    'sylvian': {'D': 0.4, 'P': 0.85, 'I': 0.4, 'name': '실비우스열 부분 결여'},
+    'normal': {'D': 0.1, 'P': 0.6, 'I': 0.6, 'name': 'Normal person'},
+    'einstein': {'D': 0.5, 'P': 0.9, 'I': 0.4, 'name': 'Einstein (estimated)'},
+    'savant': {'D': 0.7, 'P': 0.85, 'I': 0.35, 'name': 'Savant (estimated)'},
+    'epilepsy': {'D': 0.6, 'P': 0.7, 'I': 0.15, 'name': 'Epilepsy patient (estimated)'},
+    'meditation': {'D': 0.3, 'P': 0.8, 'I': 0.36, 'name': 'Meditation practitioner (estimated)'},
+    'child': {'D': 0.2, 'P': 0.95, 'I': 0.5, 'name': 'Child'},
+    'elderly': {'D': 0.15, 'P': 0.3, 'I': 0.7, 'name': 'Elderly'},
+    'acquired': {'D': 0.6, 'P': 0.7, 'I': 0.3, 'name': 'Acquired savant (estimated)'},
+    'sylvian': {'D': 0.4, 'P': 0.85, 'I': 0.4, 'name': 'Partial Sylvian fissure absence'},
 }
 
 def main():
-    parser = argparse.ArgumentParser(description="뇌 데이터 분석기")
+    parser = argparse.ArgumentParser(description="Brain Data Analyzer")
     parser.add_argument('--deficit', type=float, default=None)
     parser.add_argument('--plasticity', type=float, default=None)
     parser.add_argument('--inhibition', type=float, default=None)
-    parser.add_argument('--gaba', type=float, default=None, help="GABA 농도 (mmol/L)")
+    parser.add_argument('--gaba', type=float, default=None, help="GABA concentration (mmol/L)")
     parser.add_argument('--profile', type=str, default=None, choices=list(PROFILES.keys()))
-    parser.add_argument('--all', action='store_true', help="모든 프로필 비교")
+    parser.add_argument('--all', action='store_true', help="Compare all profiles")
     args = parser.parse_args()
 
     print("═" * 60)
-    print("   🧠 뇌 데이터 분석기")
+    print("   🧠 Brain Data Analyzer")
     print("═" * 60)
 
     if args.all:
@@ -119,8 +119,8 @@ def main():
         P = args.plasticity or 0.8
         analyze_brain(args.deficit, P, I)
     else:
-        print("  --profile, --all, 또는 --deficit/--plasticity/--inhibition 지정")
-        print(f"  프로필: {', '.join(PROFILES.keys())}")
+        print("  Specify --profile, --all, or --deficit/--plasticity/--inhibition")
+        print(f"  Profiles: {', '.join(PROFILES.keys())}")
 
 if __name__ == '__main__':
     main()

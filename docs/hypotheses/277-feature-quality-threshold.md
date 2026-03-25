@@ -1,80 +1,80 @@
-# 가설 277: 특징 품질 임계점 — 아키텍처가 중요해지는 경계
+# Hypothesis 277: Feature Quality Threshold — The Boundary Where Architecture Becomes Important
 
-> **특징 추출의 품질이 임계점 이하이면 가중치 구조(아키텍처)가 성능을 결정하고, 임계점 이상이면 데이터가 성능을 결정한다. {1/2,1/3,1/6}이 MLP에서 최적이고 CNN에서 최하위인 것이 이를 보여준다.**
+> **When feature extraction quality is below the threshold, weight structure (architecture) determines performance; above the threshold, data determines performance. {1/2,1/3,1/6} being optimal in MLP and worst in CNN shows this.**
 
-## 배경/맥락
-
-```
-  MLP (약한 특징):
-    Meta fixed {1/2,1/3,1/6}: 53.52% (1위)
-    균등 {1/4,1/4,1/4,1/4}: 하위
-    → 가중치 구조가 성능을 결정
-
-  CNN (강한 특징):
-    Meta fixed {1/2,1/3,1/6}: 77.39% (5위, 최하위)
-    학습된 가중치: {0.34, 0.35, 0.31} (균등으로 수렴)
-    → 가중치 구조가 무관, 특징이 결정
-```
-
-관련 가설: 273(유클리드 삼각형, 부분 반증), 264(설계 원칙 S3)
-
-## 핵심 논증
+## Background/Context
 
 ```
-  특징 품질 Q를 정의:
-    Q = (backbone 단독 정확도) / (이론적 최대)
-    MLP: Q = 53%/100% = 0.53 (낮음)
-    CNN: Q = 77%/100% = 0.77 (높음)
+  MLP (weak features):
+    Meta fixed {1/2,1/3,1/6}: 53.52% (1st place)
+    Uniform {1/4,1/4,1/4,1/4}: lower
+    → Weight structure determines performance
 
-  임계점 Q* 존재:
-    Q < Q*: 가중치 비대칭이 유리 (다양성으로 부족한 특징 보상)
-    Q > Q*: 가중치 균등이 유리 (좋은 특징이면 간섭하지 말 것)
-
-  추정: Q* ∈ (0.53, 0.77) — 이 구간 어딘가에 임계점
+  CNN (strong features):
+    Meta fixed {1/2,1/3,1/6}: 77.39% (5th place, worst)
+    Learned weights: {0.34, 0.35, 0.31} (converge to uniform)
+    → Weight structure irrelevant, features determine
 ```
 
-## 가설 270과의 연결
+Related hypotheses: 273(Euclidean triangle, partially refuted), 264(Design principle S3)
+
+## Core Argument
 
 ```
-  가설 270: 다양성 = 정보
+  Define feature quality Q:
+    Q = (backbone standalone accuracy) / (theoretical maximum)
+    MLP: Q = 53%/100% = 0.53 (low)
+    CNN: Q = 77%/100% = 0.77 (high)
 
-  Q < Q* (특징 약함):
-    → 특징의 다양성 부족
-    → 가중치 비대칭이 인위적 다양성 추가
-    → 정보 증가 → 성능 향상
+  Threshold Q* exists:
+    Q < Q*: Weight asymmetry advantageous (diversity compensates for insufficient features)
+    Q > Q*: Weight uniformity advantageous (if features good, don't interfere)
 
-  Q > Q* (특징 강함):
-    → 특징이 이미 충분히 다양
-    → 추가 비대칭 = 불필요한 제약 = 성능 하락
-    → 균등 = 제약 없음 = 최적
+  Estimate: Q* ∈ (0.53, 0.77) — threshold somewhere in this interval
 ```
 
-## 검증 방향
+## Connection with Hypothesis 270
 
 ```
-  1. CNN backbone 크기를 변화시켜 Q를 연속적으로 조절
+  Hypothesis 270: Diversity = Information
+
+  Q < Q* (weak features):
+    → Lack of feature diversity
+    → Weight asymmetry adds artificial diversity
+    → Information increase → performance improvement
+
+  Q > Q* (strong features):
+    → Features already sufficiently diverse
+    → Additional asymmetry = unnecessary constraints = performance drop
+    → Uniform = no constraints = optimal
+```
+
+## Verification Direction
+
+```
+  1. Continuously adjust Q by varying CNN backbone size
      - 1-layer CNN (Q ≈ 0.6?)
      - 2-layer CNN (Q ≈ 0.7?)
      - 3-layer CNN (Q ≈ 0.77)
-     → 각 Q에서 {1/2,1/3,1/6} vs 균등 비교
-     → 임계점 Q* 특정
+     → Compare {1/2,1/3,1/6} vs uniform at each Q
+     → Identify threshold Q*
 
-  2. MLP hidden_dim 변화
-     - hidden=16 (Q 낮음)
-     - hidden=64 (Q 중간)
-     - hidden=256 (Q 높음)
-     → 같은 임계점 패턴?
+  2. Vary MLP hidden_dim
+     - hidden=16 (low Q)
+     - hidden=64 (medium Q)
+     - hidden=256 (high Q)
+     → Same threshold pattern?
 
-  3. 다른 데이터셋 (Fashion-MNIST, SVHN)에서 확인
+  3. Confirm on other datasets (Fashion-MNIST, SVHN)
 
-  4. 이론적 예측: Q* = 1/√3 ≈ 0.577? (C7, C41과 연결?)
+  4. Theoretical prediction: Q* = 1/√3 ≈ 0.577? (connection with C7, C41?)
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. MLP와 CNN 두 점으로만 관측 — 임계점 위치 특정 불가.
-  2. Q의 정의가 자의적 (다른 정의도 가능).
-  3. MLP와 CNN은 가중치 구조 외에도 다른 점이 많음 (비교 불공정).
-  4. 가설이라기보다 관측 — "왜 임계점이 존재하는가"의 이론 없음.
+  1. Observed with only two points MLP and CNN — cannot specify threshold location.
+  2. Definition of Q is arbitrary (other definitions possible).
+  3. MLP and CNN differ in many ways besides weight structure (unfair comparison).
+  4. More observation than hypothesis — no theory for "why threshold exists".
 ```

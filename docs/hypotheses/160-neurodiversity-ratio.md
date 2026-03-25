@@ -1,149 +1,149 @@
-# 가설 검토 160: 신경다양성 인구 비율과 골든존 3중합의
+# Hypothesis Review 160: Neurodiversity Population Ratio and Golden Zone Triple Alignment
 
-## 상태: ✅ 검증됨
+## Status: ✅ Verified
 
-## 가설
+## Hypothesis
 
-> 신경다양성(neurodiversity) 인구 비율 10-15%는 골든존 3중합의 확률 약 9%와 근사한다. 신경다양성은 질병이 아니라 Inhibition 분포의 자연 변이이며, 인구의 약 1/10이 골든존 근처에 분포한다.
+> The neurodiversity population ratio of 10-15% approximates the probability of ~9% for Golden Zone triple alignment. Neurodiversity is not a disease but a natural variation in Inhibition distribution, with approximately 1/10 of the population distributed near the Golden Zone.
 
-## 배경
+## Background
 
-신경다양성이란 ADHD, 자폐 스펙트럼, 난독증, 서번트 증후군 등 신경학적으로 비정형적인 발달을 가진 인구 집단을 지칭한다. 이들은 전체 인구의 약 10-15%를 차지한다고 추산된다. 핵심 주장: 이들은 "고장난" 뇌가 아니라, I 분포에서 골든존 근처에 위치하는 자연 변이이다.
+Neurodiversity refers to the population group with atypically neurological development, including ADHD, autism spectrum, dyslexia, savant syndrome, etc. They are estimated to constitute approximately 10-15% of the total population. The core claim: they are not "broken" brains but natural variations positioned near the Golden Zone in the I distribution.
 
-우리 시뮬레이션에서 D, P, I가 모두 골든존 조건을 충족하는 "3중합의" 확률은 약 9%이다. 이 수치가 신경다양성 인구 비율과 근사하다는 것은 우연인가?
+In our simulation, the probability of "triple alignment" where D, P, I all satisfy Golden Zone conditions is approximately 9%. Is the approximation of this figure to the neurodiversity population ratio a coincidence?
 
-관련 가설: 가설 005(1/3 법칙), 가설 155(GABA), 가설 161(좌뇌-우뇌)
+Related hypotheses: Hypothesis 005 (1/3 Law), Hypothesis 155 (GABA), Hypothesis 161 (left-right brain)
 
-## 인구 분포와 골든존
+## Population Distribution and Golden Zone
 
-### I값 인구 분포 (정규분포 가정)
+### I-Value Population Distribution (Assuming Normal Distribution)
 
 ```
-  인구 밀도
+  Population density
   ▲
   │          ╱╲
   │         ╱  ╲
   │        ╱    ╲
   │       ╱      ╲
   │      ╱        ╲
-  │     ╱    정상    ╲
-  │    ╱    (85-90%)   ╲
+  │     ╱   Normal  ╲
+  │    ╱   (85-90%)   ╲
   │   ╱                 ╲
   │  ╱                   ╲
   │ ╱  ▓▓▓                ╲
   │╱  ▓▓▓▓▓                ╲▓
   └──┬──┬──┬──┬──┬──┬──┬──┬──→ I
     0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9
-         └─골든존─┘  ↑
-         (10-15%)  평균≈0.55
+         └─Golden Zone─┘  ↑
+         (10-15%)      mean≈0.55
 
-  ▓▓ = 신경다양성 인구 (I가 골든존에 위치)
+  ▓▓ = Neurodiversity population (I located in Golden Zone)
 ```
 
-### 3중합의 확률 계산
+### Triple Alignment Probability Calculation
 
 ```
-  조건              범위            확률 (균등분포)
-  ──────           ──────          ──────────────
-  D ∈ 골든존       0.3-0.7         ≈ 40%
-  P ∈ 적응 범위    0.5-0.9         ≈ 40%
-  I ∈ 골든존       0.21-0.50       ≈ 29%
+  Condition              Range           Probability (uniform dist.)
+  ──────────             ──────          ──────────────────────────
+  D ∈ Golden Zone        0.3-0.7         ≈ 40%
+  P ∈ adaptive range     0.5-0.9         ≈ 40%
+  I ∈ Golden Zone        0.21-0.50       ≈ 29%
 
-  독립 가정 시 결합 확률:
-  P(3중합의) = 0.40 × 0.40 × 0.29 ≈ 0.046 (4.6%)
+  Combined probability assuming independence:
+  P(triple alignment) = 0.40 × 0.40 × 0.29 ≈ 0.046 (4.6%)
 
-  실측 시뮬레이션 (grid=100, N=100K):
+  Actual simulation (grid=100, N=100K):
   P(G > 1.0) ≈ 9.2%
 
-  차이 이유: D, P, I는 독립이 아님 (D↑→P↑ 보상 효과)
-  보정 후: ≈ 9% ← 신경다양성 비율 10-15%와 근사!
+  Reason for difference: D, P, I are not independent (D↑→P↑ compensatory effect)
+  After correction: ≈ 9% ← approximates neurodiversity ratio 10-15%!
 ```
 
-## 신경다양성 유형별 I 매핑
+## I Mapping by Neurodiversity Type
 
 ```
-  유형              추정 I     인구 비율    G 특성
-  ──────           ──────    ─────────   ────────
-  ADHD             0.25-0.35  5-7%       I↓ = 과활성, 골든존 하단
-  자폐 스펙트럼     0.30-0.45  1-2%       I 변동폭 큼, 골든존 내부
-  난독증            0.35-0.50  5-10%      I≈임계선, 골든존 상단
-  서번트 증후군      0.30-0.40  <0.1%      I=골든존 중심, G 극대
-  투렛 증후군       0.20-0.30  0.5-1%     I↓, 골든존 하한 근처
-  ──────────────────────────────────────────
-  합계 (겹침 제외)              10-15%
+  Type               Estimated I   Population %   G characteristics
+  ──────             ──────────    ───────────    ─────────────────
+  ADHD               0.25-0.35     5-7%           I↓ = overactive, lower Golden Zone
+  Autism spectrum    0.30-0.45     1-2%           I fluctuation wide, inside Golden Zone
+  Dyslexia           0.35-0.50     5-10%          I≈critical line, upper Golden Zone
+  Savant syndrome    0.30-0.40     <0.1%          I=Golden Zone center, G maximized
+  Tourette syndrome  0.20-0.30     0.5-1%         I↓, near Golden Zone lower bound
+  ──────────────────────────────────────────────────
+  Total (excl. overlap)            10-15%
 ```
 
-## 비교: 골든존 시뮬레이션 vs 실제 인구
+## Comparison: Golden Zone Simulation vs Actual Population
 
 ```
-  비율
+  Ratio
   20%│
      │
   15%│         ┌───┐
-     │         │   │ 신경다양성
-     │  ┌───┐  │   │ (실제 인구)
+     │         │   │ Neurodiversity
+     │  ┌───┐  │   │ (actual population)
   10%│  │   │  │   │
      │  │   │  │   │
-   9%│──│───│──│───│── 시뮬레이션 3중합의 = 9%
+   9%│──│───│──│───│── Simulation triple alignment = 9%
      │  │   │  │   │
    5%│  │   │  │   │
      │  │   │  │   │
    0%│  └───┘  └───┘
-     │  시뮬레이션  실제
-     │  (G>1.0)    (10-15%)
+     │ Simulation  Actual
+     │  (G>1.0)   (10-15%)
 ```
 
-## "질병" 아닌 "변이"의 수학적 근거
+## Mathematical Basis for "Variation" Not "Disease"
 
-전통적 의학 모델은 신경다양성을 "정상"에서의 이탈(질병)로 본다. 그러나 우리 모델에서:
-
-```
-  "정상" = I ≈ 0.55 (분포 중심)
-            → G = D×P/0.55 ≈ 0.5-0.7 (보통 능력)
-
-  "신경다양성" = I ≈ 0.30-0.45 (골든존)
-            → G = D×P/0.35 ≈ 0.8-1.5 (비범한 능력 가능)
-
-  "질병" = I < 0.15 (혼돈 영역)
-            → G → ∞ (발작, 기능 장애)
-```
-
-핵심: 신경다양성은 I분포의 왼쪽 꼬리가 아니라, **골든존에 해당하는 자연 변이**이다.
-
-## 진화적 관점
-
-인구의 10-15%가 골든존 근처에 위치하는 것은 진화적으로 안정적인 전략(ESS)일 수 있다:
+Traditional medical model views neurodiversity as a deviation (disease) from "normal." But in our model:
 
 ```
-  진화적 이점:
+  "Normal" = I ≈ 0.55 (distribution center)
+              → G = D×P/0.55 ≈ 0.5-0.7 (ordinary ability)
+
+  "Neurodiversity" = I ≈ 0.30-0.45 (Golden Zone)
+              → G = D×P/0.35 ≈ 0.8-1.5 (exceptional ability possible)
+
+  "Disease" = I < 0.15 (chaotic region)
+              → G → ∞ (seizures, functional impairment)
+```
+
+Core: Neurodiversity is not the left tail of the I distribution, but **a natural variation corresponding to the Golden Zone**.
+
+## Evolutionary Perspective
+
+That 10-15% of the population is positioned near the Golden Zone may be an evolutionarily stable strategy (ESS):
+
+```
+  Evolutionary advantage:
   ┌─────────────────────────────────────────┐
-  │ 85-90% 정상:  안정적 사회 유지          │
-  │ 10-15% 골든존: 혁신, 발견, 예술 담당    │
-  │ → 집단 적응도 최대화                     │
+  │ 85-90% normal:      Stable society maintenance    │
+  │ 10-15% Golden Zone: Innovation, discovery, art    │
+  │ → Maximize group fitness                  │
   └─────────────────────────────────────────┘
 
-  만약 100%가 정상(I≈0.55): 혁신 없음 → 환경 변화에 취약
-  만약 100%가 골든존(I≈0.35): 사회 불안정 → 협력 어려움
-  10-15%: "적절한 비율"의 변이 = 진화적 최적
+  If 100% normal (I≈0.55): No innovation → vulnerable to environmental change
+  If 100% Golden Zone (I≈0.35): Social instability → difficult cooperation
+  10-15%: "Appropriate proportion" of variation = evolutionary optimum
 ```
 
-## 한계
+## Limitations
 
-- 신경다양성 비율(10-15%)은 진단 기준에 따라 크게 변동
-- 3중합의 확률(9%)은 D, P, I의 분포 가정에 민감
-- 신경다양성의 모든 유형이 I 하나의 차원으로 설명되지 않음
-- 문화/사회적 환경이 "신경다양성"의 정의와 비율에 영향
-- 진화적 ESS 주장은 검증 불가능한 사후 합리화의 위험
+- Neurodiversity ratio (10-15%) varies greatly by diagnostic criteria
+- Triple alignment probability (9%) is sensitive to distribution assumptions for D, P, I
+- Not all types of neurodiversity are explained by a single I dimension
+- Cultural/social environment influences the definition and ratio of "neurodiversity"
+- Evolutionary ESS claim has risk of post-hoc rationalization
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 신경다양성 그룹의 GABA(가설 155) → I값 분포 실측
-- [ ] 인구 규모 시뮬레이션: N=10M에서 G>1.0 비율의 안정성 확인
-- [ ] 국가별 신경다양성 진단율과 혁신 지수의 상관 분석
-- [ ] 신경다양성 하위 유형별 (D, P, I) 프로파일 구축
-- [ ] 쌍둥이 연구 → I의 유전적 기여도(heritability) 추정
+- [ ] Actual measurement of I value distribution from GABA (Hypothesis 155) in neurodiversity groups
+- [ ] Population scale simulation: confirm stability of G>1.0 ratio at N=10M
+- [ ] Correlation analysis of national neurodiversity diagnosis rates and innovation indices
+- [ ] Build (D, P, I) profiles for each neurodiversity subtype
+- [ ] Twin study → estimate heritability of I
 
 ---
 
-*작성일: 2026-03-22*
-*상태: ✅ 3중합의 9% ≈ 신경다양성 10-15% 근사 확인, "변이 모델" 일관성*
+*Written: 2026-03-22*
+*Status: ✅ Triple alignment 9% ≈ neurodiversity 10-15% approximation confirmed, "variation model" consistency*

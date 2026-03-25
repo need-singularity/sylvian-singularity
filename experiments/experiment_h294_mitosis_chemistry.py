@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""가설 294: 분열 + 뇌화학 — 분열 시 장력(도파민) 시스템 추적"""
+"""Hypothesis 294: Mitosis + Neurochemistry — Tracking tension (dopamine) system during mitosis"""
 
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -80,7 +80,7 @@ def main():
     from torch.utils.data import DataLoader
 
     print("=" * 70)
-    print("가설 294: 분열 + 뇌화학 — 장력(도파민) 시스템 추적")
+    print("Hypothesis 294: Mitosis + Neurochemistry — Tracking tension (dopamine) system")
     print("=" * 70)
 
     transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))])
@@ -89,8 +89,8 @@ def main():
     train_loader = DataLoader(train_ds, batch_size=128, shuffle=True)
     test_loader = DataLoader(test_ds, batch_size=256)
 
-    # Phase 1: 부모 학습
-    print("\n[Phase 1] 부모 학습 (10 에폭)")
+    # Phase 1: Parent training
+    print("\n[Phase 1] Parent training (10 epochs)")
     parent = RepulsionEngine()
     opt = torch.optim.Adam(parent.parameters(), lr=0.001)
     criterion = nn.CrossEntropyLoss()
@@ -102,22 +102,22 @@ def main():
         parent_history.append({'ep': ep+1, 'train_t': train_t, 'test_t': test_t, 'acc': test_acc})
         print(f"  ep{ep+1:2d}: tension={test_t:.4f}, acc={test_acc:.2f}%")
 
-    # Phase 2: 분열
-    print(f"\n[Phase 2] 분열 (scale=0.01)")
+    # Phase 2: Mitosis
+    print(f"\n[Phase 2] Mitosis (scale=0.01)")
     child_a, child_b = mitosis(parent, scale=0.01)
 
     t_a_pre, acc_a_pre = measure_tension(child_a, test_loader)
     t_b_pre, acc_b_pre = measure_tension(child_b, test_loader)
     t_ab_pre = measure_inter_tension(child_a, child_b, test_loader)
 
-    print(f"  분열 직후:")
-    print(f"    T_a (child_a 내부): {t_a_pre:.4f}, acc={acc_a_pre:.2f}%")
-    print(f"    T_b (child_b 내부): {t_b_pre:.4f}, acc={acc_b_pre:.2f}%")
-    print(f"    T_ab (자식간):      {t_ab_pre:.4f}")
+    print(f"  Immediately after mitosis:")
+    print(f"    T_a (child_a internal): {t_a_pre:.4f}, acc={acc_a_pre:.2f}%")
+    print(f"    T_b (child_b internal): {t_b_pre:.4f}, acc={acc_b_pre:.2f}%")
+    print(f"    T_ab (inter-child):      {t_ab_pre:.4f}")
     print(f"    T_parent:           {parent_history[-1]['test_t']:.4f}")
 
-    # Phase 3: 독립 학습
-    print(f"\n[Phase 3] 독립 학습 (10 에폭 each)")
+    # Phase 3: Independent training
+    print(f"\n[Phase 3] Independent training (10 epochs each)")
     opt_a = torch.optim.Adam(child_a.parameters(), lr=0.001)
     opt_b = torch.optim.Adam(child_b.parameters(), lr=0.001)
 
@@ -136,8 +136,8 @@ def main():
         })
         print(f"  ep{ep+1:2d}: T_a={t_a:.4f} T_b={t_b:.4f} T_ab={t_ab:.4f} acc_a={acc_a:.2f}% acc_b={acc_b:.2f}%")
 
-    # Phase 4: 재결합 (앙상블)
-    print(f"\n[Phase 4] 재결합 (앙상블)")
+    # Phase 4: Recombination (ensemble)
+    print(f"\n[Phase 4] Recombination (ensemble)")
     child_a.eval(); child_b.eval()
     correct = total = 0
     with torch.no_grad():
@@ -149,41 +149,41 @@ def main():
             correct += (out_ensemble.argmax(1) == y).sum().item()
             total += y.size(0)
     ensemble_acc = correct / total * 100
-    print(f"  앙상블 정확도: {ensemble_acc:.2f}%")
-    print(f"  child_a 단독:  {child_history[-1]['acc_a']:.2f}%")
-    print(f"  child_b 단독:  {child_history[-1]['acc_b']:.2f}%")
-    print(f"  부모 최종:     {parent_history[-1]['acc']:.2f}%")
+    print(f"  Ensemble accuracy: {ensemble_acc:.2f}%")
+    print(f"  child_a alone:  {child_history[-1]['acc_a']:.2f}%")
+    print(f"  child_b alone:  {child_history[-1]['acc_b']:.2f}%")
+    print(f"  Parent final:     {parent_history[-1]['acc']:.2f}%")
 
-    # ── 종합 분석 ──
+    # ── Summary Analysis ──
     print(f"\n{'='*70}")
-    print("종합: 장력(도파민) 시스템 추적")
+    print("Summary: Tension (dopamine) system tracking")
     print(f"{'='*70}")
 
     t_parent_final = parent_history[-1]['test_t']
     t_ab_final = child_history[-1]['t_ab']
 
-    print(f"\n  Phase 1 (부모 학습):")
+    print(f"\n  Phase 1 (parent training):")
     print(f"    ep1  tension={parent_history[0]['test_t']:.4f}")
     print(f"    ep10 tension={t_parent_final:.4f}")
 
-    print(f"\n  Phase 2 (분열 직후):")
-    print(f"    T_ab = {t_ab_pre:.4f} (자식간) vs T_parent = {t_parent_final:.4f}")
-    print(f"    비율: T_ab/T_parent = {t_ab_pre/(t_parent_final+1e-8):.4f}")
+    print(f"\n  Phase 2 (immediately after mitosis):")
+    print(f"    T_ab = {t_ab_pre:.4f} (inter-child) vs T_parent = {t_parent_final:.4f}")
+    print(f"    Ratio: T_ab/T_parent = {t_ab_pre/(t_parent_final+1e-8):.4f}")
 
-    print(f"\n  Phase 3 (독립 학습 후):")
+    print(f"\n  Phase 3 (after independent training):")
     print(f"    T_ab = {t_ab_final:.4f}")
-    print(f"    증가율: {t_ab_final/(t_ab_pre+1e-8):.1f}x")
+    print(f"    Growth rate: {t_ab_final/(t_ab_pre+1e-8):.1f}x")
 
     if t_ab_final > t_parent_final:
-        print(f"\n  결론: T_ab(자식간) > T_parent(부모내부)")
-        print(f"    → 분열 후 '도파민 시스템 분화' 확인")
-        print(f"    → 독립 학습이 새로운 장력(도파민) 경로를 생성")
+        print(f"\n  Conclusion: T_ab(inter-child) > T_parent(parent internal)")
+        print(f"    → Confirmed 'dopamine system differentiation' after mitosis")
+        print(f"    → Independent training creates new tension (dopamine) pathways")
     else:
-        print(f"\n  결론: T_ab(자식간) ≤ T_parent(부모내부)")
-        print(f"    → 분열이 추가 장력을 만들지 않음")
+        print(f"\n  Conclusion: T_ab(inter-child) ≤ T_parent(parent internal)")
+        print(f"    → Mitosis doesn't create additional tension")
 
-    # ASCII 그래프
-    print(f"\n장력 궤적 (분열 전후)")
+    # ASCII graph
+    print(f"\nTension trajectory (before/after mitosis)")
     all_t = [h['test_t'] for h in parent_history]
     all_t += [t_ab_pre] + [h['t_ab'] for h in child_history]
     all_ta = [h['test_t'] for h in parent_history]
@@ -213,7 +213,7 @@ def main():
     print(f"  X=T_ab(or T_parent)  A=T_a(child_a internal)")
 
     print(f"\n{'='*70}")
-    print("완료")
+    print("Complete")
 
 if __name__ == '__main__':
     main()

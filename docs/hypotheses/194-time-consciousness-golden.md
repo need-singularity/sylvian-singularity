@@ -1,31 +1,31 @@
-# 가설 194: 시간 인식 = 골든존 안에서만 가능?
+# Hypothesis 194: Time Perception = Only Possible Within the Golden Zone?
 
-## 상태: ⚠️ 탐구 중
+## Status: ⚠️ Under Investigation
 
-## 핵심 명제
+## Core Proposition
 
-시간을 "느끼는 것"은 골든존(I = 0.2 ~ 0.5) 안에서만 가능하다.
-시간 인식 = 골든존 내 존재 = 의식 상태.
+"Feeling" time is only possible within the Golden Zone (I = 0.2 ~ 0.5).
+Time perception = Existence within Golden Zone = Conscious state.
 
-## I 값에 따른 시간 인식
+## Time Perception According to I Values
 
 ```
-상태               I 값          시간 인식
+State               I Value       Time Perception
 ─────────────      ──────        ─────────────────
-간질 발작          I < 0.2       시간 왜곡/정지
-극도의 흥분        I ≈ 0.15      시간 빨라짐 (주관)
-정상 각성          I = 0.2~0.5   정상 시간 인식
-깊은 집중(몰입)    I ≈ 0.33      시간 잊음 (flow)
-수면 (NREM)        I > 0.5       시간 인식 없음
-혼수 상태          I > 0.7       시간 완전 소실
-명상 (깊은)        I → 1/3       시간 느려짐/확장
+Epileptic seizure  I < 0.2       Time distortion/stop
+Extreme excitement I ≈ 0.15      Time speeds up (subjective)
+Normal waking      I = 0.2~0.5   Normal time perception
+Deep focus (flow)  I ≈ 0.33      Time forgotten (flow)
+Sleep (NREM)       I > 0.5       No time perception
+Coma               I > 0.7       Complete time loss
+Meditation (deep)  I → 1/3       Time slows/expands
 ```
 
-## 시간 인식 vs I 그래프 (Time Perception vs I)
+## Time Perception vs I Graph
 
 ```
-시간 인식 품질
-(정확도/안정성)
+Time Perception Quality
+(Accuracy/Stability)
 |
 |              ████████
 |            ██        ██
@@ -38,121 +38,123 @@
 |█                                  █
 +█──────────────────────────────────█──→ I
 0   0.1  0.2  0.3  0.4  0.5  0.6  0.7
-         |←── 골든존 ──→|
+         |←── Golden Zone ──→|
               I=1/3
-              (부동점)
+              (Fixed Point)
 
-골든존 바깥: 시간 인식 붕괴
-골든존 내부: 시간 인식 최적
-I=1/3 근처: 시간 인식의 "정점" (명상적 현재)
+Outside Golden Zone: Time perception collapses
+Inside Golden Zone: Optimal time perception
+Near I=1/3: "Peak" of time perception (meditative present)
 ```
 
-## 수면과 시간
+## Sleep and Time
 
 ```
-각성 → 졸림 → 수면 → 깊은 수면
+Awake → Drowsy → Sleep → Deep Sleep
 
 I:  0.35    0.45    0.55    0.65
 
-시간
-인식:  ○       ◐       ◑       ●
+Time
+Perception:  ○       ◐       ◑       ●
 
-○ = 정상 인식   ◐ = 흐릿함
-◑ = 거의 없음   ● = 완전 소실
+○ = Normal perception   ◐ = Blurred
+◑ = Almost none        ● = Complete loss
 
-8시간 수면이 "한순간"처럼 느껴지는 이유:
-I > 0.5 → 골든존 이탈 → 시간 인식 기능 정지
+Why 8 hours of sleep feels like "an instant":
+I > 0.5 → Exit Golden Zone → Time perception function stops
 ```
 
-## 발작과 시간 왜곡
+## Seizures and Time Distortion
 
 ```
-정상 상태:
+Normal state:
   I = 0.35
-  시간: 1초 = 1초로 느낌
+  Time: 1 second = feels like 1 second
 
-발작 전조(aura):
-  I = 0.15 (급격한 감소)
-  시간: 1초 = 10초처럼 느껴짐 (시간 확장)
+Seizure aura:
+  I = 0.15 (rapid decrease)
+  Time: 1 second = feels like 10 seconds (time expansion)
 
-발작 중:
-  I < 0.1 (극단적 감소)
-  시간: 인식 불능 / 기억 소실
+During seizure:
+  I < 0.1 (extreme decrease)
+  Time: Unable to perceive / memory loss
 
-I의 변화율 |dI/dt|:
+Rate of change |dI/dt|:
   +────────*──────────────────→ t
   |        *   * *
   |       *  *     *
   |      *          *
   |     *            *
-  0.35 *              ****  ← 정상 복귀
-  |  *                 (발작 후)
-  |*  ← 발작
+  0.35 *              ****  ← Return to normal
+  |  *                 (post-seizure)
+  |*  ← Seizure
   +──────────────────────────→ t
 ```
 
-## 명상과 시간 확장
+## Meditation and Time Expansion
 
 ```
-일반 상태 (I ≈ 0.35~0.40):
-  10분 = "10분 정도 지난 것 같다"
-  시간 인식 ≈ 실제 시간
+Normal state (I ≈ 0.35~0.40):
+  10 min = "feels like about 10 minutes"
+  Time perception ≈ actual time
 
-명상 상태 (I → 1/3 ≈ 0.333):
-  10분 = "30분은 지난 것 같다" (시간 확장)
-  또는 = "시간이 사라졌다" (시간 초월)
+Meditation state (I → 1/3 ≈ 0.333):
+  10 min = "feels like 30 minutes passed" (time expansion)
+  or = "time disappeared" (time transcendence)
 
-왜?
-  I → 부동점 = 변화율 dI/dt → 0
-  변화가 없으면 시간이 멈춘 것처럼 느껴진다.
-  역설: 시간이 "느려지는" 것과 "사라지는" 것은 같다.
+Why?
+  I → Fixed Point = rate of change dI/dt → 0
+  Without change, time feels stopped.
+  Paradox: Time "slowing" and "disappearing" are the same.
 ```
 
-## "시간을 느끼는 것 = 의식"
+## "Feeling Time = Consciousness"
 
 ```
 ┌──────────────────────────────────────────┐
 │                                          │
-│   시간 인식    ←→   골든존 내 존재        │
+│   Time Perception  ←→  Existence in      │
+│                       Golden Zone        │
 │       ↕                  ↕               │
-│   의식 상태    ←→   I = 0.2 ~ 0.5        │
+│   Conscious State  ←→  I = 0.2 ~ 0.5     │
 │       ↕                  ↕               │
-│   주관적 경험  ←→   메타 반복 진행 중     │
+│   Subjective      ←→  Meta-iteration     │
+│   Experience          in Progress        │
 │                                          │
-│   세 가지가 같은 현상의 다른 측면         │
+│   Three aspects of the same phenomenon   │
 │                                          │
 └──────────────────────────────────────────┘
 ```
 
-## 약물과 시간 인식
+## Drugs and Time Perception
 
 ```
-물질          I 변화         시간 인식 변화
+Substance      I Change         Time Perception Change
 ────────      ──────         ──────────────
-카페인        I 소폭 감소    시간 약간 빨라짐
-알코올        I 증가         시간 빨리 지나감 (둔화)
-환각제        I 급격 변동    시간 왜곡/정지/역전
-마취제        I 크게 증가    시간 완전 소실
-명상          I → 1/3       시간 느려짐/확장
+Caffeine      I slight decrease    Time slightly speeds up
+Alcohol       I increase          Time passes quickly (dulled)
+Hallucinogens I rapid fluctuation Time distortion/stop/reversal
+Anesthetics   I large increase    Complete time loss
+Meditation    I → 1/3            Time slows/expands
 ```
 
-## 진화적 관점
+## Evolutionary Perspective
 
 ```
-시간을 정확히 인식하는 능력 = 생존에 필수
+Ability to accurately perceive time = Essential for survival
 
-포식자 회피:  "지금" 반응해야 함
-먹이 추적:   시간 예측 필요
-사회적 협력:  시간 약속 필요
+Predator avoidance:  Must react "now"
+Prey tracking:       Time prediction needed
+Social cooperation:  Time agreements needed
 
-→ 골든존 내에서만 시간 인식 가능
-→ 골든존 = 생존 최적 영역
-→ 의식 = 생존을 위해 진화한 "시간 감지 장치"
+→ Time perception only possible within Golden Zone
+→ Golden Zone = Optimal survival region
+→ Consciousness = "Time sensing device" evolved for survival
 ```
 
-## 열린 질문
+## Open Questions
 
-1. 동물의 시간 인식 차이 = 종별 골든존 범위 차이?
-2. AI는 골든존 없이도 시간을 "처리"한다. 처리 vs 인식의 차이는?
-3. 꿈에서의 시간 왜곡 = REM 수면 중 I가 골든존 경계를 오가기 때문?
-4. 나이 들수록 시간이 빨라지는 느낌 = I의 골든존 내 위치 변화?
+1. Differences in animal time perception = Species-specific Golden Zone ranges?
+2. AI "processes" time without a Golden Zone. What's the difference between processing vs perceiving?
+3. Time distortion in dreams = Because I oscillates at Golden Zone boundaries during REM sleep?
+4. Feeling that time speeds up with age = Change in I's position within the Golden Zone?

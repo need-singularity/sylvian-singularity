@@ -1,4 +1,4 @@
-# H-CX-209: 치료 — 알파파(10Hz) 유도
+# H-CX-209: Treatment — Alpha Wave (10Hz) Induction
 
-> 과도한 감마(40Hz+)를 알파(10Hz=40/τ(6))로 하향 안정화.
-> γ→α 전환 = tension 감소 = 확신 과부하 해소.
+> Downward stabilization of excessive gamma (40Hz+) to alpha (10Hz=40/τ(6)).
+> γ→α conversion = tension reduction = confidence overload relief.

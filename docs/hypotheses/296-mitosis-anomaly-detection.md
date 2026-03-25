@@ -1,78 +1,78 @@
 ---
-가설: 296
-제목: 분열 + 이상탐지 — 분열이 이상탐지 성능을 높이는가
+hypothesis: 296
+title: Mitosis + Anomaly Detection — Does mitosis improve anomaly detection performance
 ---
 
-# 가설 296: 분열 + 이상탐지 — 분열된 엔진이 더 나은 이상 탐지기인가
+# Hypothesis 296: Mitosis + Anomaly Detection — Are Split Engines Better Anomaly Detectors
 
-> **단일 엔진보다 분열된 2개 엔진 사이의 "간 장력"(T_ab)이 더 민감한 이상 점수를 제공한다. 부모 내부 장력(AUROC=1.0, 가설 287)보다 자식간 장력이 이상을 더 잘 감지하는가?**
+> **"Inter-tension" (T_ab) between 2 split engines provides more sensitive anomaly scores than a single engine. Does inter-child tension detect anomalies better than parent internal tension (AUROC=1.0, Hypothesis 287)?**
 
-## 근거
+## Rationale
 
 ```
-  가설 287: 부모 내부 장력 → AUROC=1.0 (합성 데이터)
-  가설 293: 실제 데이터 → AUROC 0.94~1.0
+  Hypothesis 287: Parent internal tension → AUROC=1.0 (synthetic data)
+  Hypothesis 293: Real data → AUROC 0.94~1.0
 
-  분열 추가:
+  Adding mitosis:
     parent → child_a, child_b
-    T_internal: child_a 내 engine_a vs engine_g
-    T_inter: child_a 전체 출력 vs child_b 전체 출력
+    T_internal: child_a internal engine_a vs engine_g
+    T_inter: child_a full output vs child_b full output
 
-    가설: T_inter가 T_internal보다 민감
-    이유: 분열 후 서로 다르게 학습 → 이상에 다르게 반응
-    → 앙상블 다양성 = 이상 탐지 민감도
+    Hypothesis: T_inter is more sensitive than T_internal
+    Reason: After mitosis, learn differently → react differently to anomalies
+    → Ensemble diversity = anomaly detection sensitivity
 ```
 
-## 실험 설계
+## Experimental Design
 
 ```
-  1. parent 학습 (정상 데이터만)
-  2. 분열 → child_a, child_b
-  3. 각 child를 독립 학습 (정상 데이터, 다른 mini-batch)
-  4. 테스트: 정상 + 이상 데이터
-     a) T_internal_a: child_a 내부 장력 → AUROC_a
-     b) T_internal_b: child_b 내부 장력 → AUROC_b
+  1. Train parent (normal data only)
+  2. Mitosis → child_a, child_b
+  3. Train each child independently (normal data, different mini-batches)
+  4. Test: normal + anomaly data
+     a) T_internal_a: child_a internal tension → AUROC_a
+     b) T_internal_b: child_b internal tension → AUROC_b
      c) T_inter: |child_a(x) - child_b(x)|² → AUROC_inter
      d) T_combined: T_internal + T_inter → AUROC_combined
-  5. 비교: AUROC_inter > AUROC_internal?
+  5. Compare: AUROC_inter > AUROC_internal?
 ```
 
-## 예측
+## Predictions
 
 ```
-  AUROC_internal ≈ 1.0 (이미 확인됨)
-  AUROC_inter ≥ AUROC_internal (다양성 추가)
-  AUROC_combined ≥ max(individual) (정보 보완)
+  AUROC_internal ≈ 1.0 (already confirmed)
+  AUROC_inter ≥ AUROC_internal (diversity added)
+  AUROC_combined ≥ max(individual) (complementary information)
 
-  하지만 AUROC=1.0이면 더 올릴 수 없다
-  → 실제 데이터(breast cancer)에서 차이가 드러날 것
+  But if AUROC=1.0, can't improve further
+  → Differences will show in real data (breast cancer)
   → 0.947 → 0.97+?
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  Breast Cancer 데이터셋 (5 trials):
+  Breast Cancer dataset (5 trials):
     method       AUROC mean   std
     ─────────   ──────────   ─────
-    internal      0.1555     0.015   ← 내부 장력 (거의 무용!)
-    inter         0.8049     0.029   ← 자식간 장력 (유용!)
+    internal      0.1555     0.015   ← internal tension (nearly useless!)
+    inter         0.8049     0.029   ← inter-child tension (useful!)
     combined      0.1564     0.015
 
-  분석:
-    자식간 장력(inter): AUROC 0.805 >> 내부 장력 0.156
-    → H296 지지: 분열이 이상탐지 성능을 극적으로 향상
+  Analysis:
+    Inter-child tension: AUROC 0.805 >> internal tension 0.156
+    → Supports H296: mitosis dramatically improves anomaly detection
 
-    왜 내부 장력이 낮은가?
-    → autoencoder 방식으로 학습 (정상 데이터 재구성)
-    → 내부 장력 = engine_a vs engine_g (같은 데이터로 학습 → 합의)
-    → 간 장력 = child_a vs child_b (다른 mini-batch → 분화)
+    Why is internal tension low?
+    → Trained as autoencoder (reconstruct normal data)
+    → Internal tension = engine_a vs engine_g (trained on same data → consensus)
+    → Inter tension = child_a vs child_b (different mini-batches → differentiation)
 
-    다른 mini-batch로 학습 → 서로 다른 "정상 모델" 형성
-    → 이상 데이터에 서로 다르게 반응 → 간 장력 ↑
+    Different mini-batch training → different "normal models" formed
+    → React differently to anomaly data → inter tension ↑
 ```
 
-### ASCII AUROC 비교
+### ASCII AUROC Comparison
 
 ```
   internal |#######.                                        | 0.156
@@ -80,4 +80,4 @@
   combined |#######.                                        | 0.156
 ```
 
-## 상태: 🟩 확인 (간 장력 AUROC 0.805 >> 내부 0.156)
+## Status: 🟩 Confirmed (inter tension AUROC 0.805 >> internal 0.156)

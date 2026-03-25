@@ -1,21 +1,21 @@
-# H-CX-88: 보편 혼동 위상 — PH merge 순서가 아키텍처 불변이다
+# H-CX-88: Universal Confusion Topology — PH merge order is architecture-invariant
 
-> PureFieldEngine, Dense MLP, 또는 다른 아키텍처에서도
-> 동일한 PH merge 순서가 나타난다. 혼동 위상은 데이터 고유 속성.
+> PureFieldEngine, Dense MLP, or other architectures show
+> the same PH merge order. Confusion topology is an intrinsic property of data.
 
-## 배경
+## Background
 
-- H-CX-82: 에폭 1에서 완벽 예측 → 학습 의존도 낮음
-- H-CX-85: dendrogram이 의미적 → 데이터 분포 반영
-- 의문: PureFieldEngine 특화인가, 보편적인가?
+- H-CX-82: Perfect prediction at epoch 1 → Low learning dependency
+- H-CX-85: Dendrogram is semantic → Reflects data distribution
+- Question: Is this PureFieldEngine-specific or universal?
 
-## 예측
+## Predictions
 
-1. Dense MLP의 confusion matrix에서 동일한 top-5 혼동 쌍
-2. PureField vs Dense의 혼동 쌍 overlap > 80%
-3. merge 순서의 Kendall tau > 0.7 (아키텍처 간)
+1. Same top-5 confusion pairs in Dense MLP's confusion matrix
+2. PureField vs Dense confusion pair overlap > 80%
+3. Merge order Kendall tau > 0.7 (between architectures)
 
-## 검증 상태
+## Verification Status
 
-- [ ] Dense MLP 혼동 행렬
-- [ ] 아키텍처 간 overlap
+- [ ] Dense MLP confusion matrix
+- [ ] Inter-architecture overlap

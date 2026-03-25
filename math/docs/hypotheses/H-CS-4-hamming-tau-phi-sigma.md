@@ -1,20 +1,20 @@
-# H-CS-4: Hamming(7,4,3)과 τφ=σ
+# H-CS-4: Hamming(7,4,3) and τφ=σ
 
-> **가설**: Hamming(7,4,3) 완전 코드의 파라미터 {7,4,3}이 τφ=σ 해 {3,7}과 관련된다.
+> **Hypothesis**: The parameters {7,4,3} of the Hamming(7,4,3) perfect code are related to the τφ=σ solution {3,7}.
 
-## 배경
-- Hamming(7,4,3): 길이7=M₃, 차원4=τ, 최소거리3=σ/τ
-- τφ=σ 해: {1,3,14,42}에 3과 14=2×7 포함
-- 7=M₃, 3=σ/τ: 두 Hamming 파라미터가 우리 상수
+## Background
+- Hamming(7,4,3): length 7=M₃, dimension 4=τ, minimum distance 3=σ/τ
+- τφ=σ solution: {1,3,14,42} contains 3 and 14=2×7
+- 7=M₃, 3=σ/τ: two Hamming parameters are our constants
 
-## 관찰
-- 7 = M₃ = 2³-1: 첫째 Mersenne 소수 (>3)
-- 4 = τ(6): 6의 약수 개수
-- 3 = σ/τ = σ(6)/τ(6): 약수밀도
+## Observations
+- 7 = M₃ = 2³-1: first Mersenne prime (>3)
+- 4 = τ(6): number of divisors of 6
+- 3 = σ/τ = σ(6)/τ(6): divisor density
 
-## 검증 방향
-1. [ ] 다른 완전 코드 (Golay 등) 파라미터와 σ,τ 관계
-2. [ ] Singleton bound에서 산술함수 해석
-3. [ ] 코딩 이론 문헌에서 6, 12, 28 등장 조사
+## Verification Directions
+1. [ ] Relationship between other perfect codes (Golay etc.) parameters and σ,τ
+2. [ ] Arithmetic function interpretation in Singleton bound
+3. [ ] Investigation of appearances of 6, 12, 28 in coding theory literature
 
-## 난이도: 저 | 파급력: ★★
+## Difficulty: Low | Impact: ★★

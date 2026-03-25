@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""상수 검증기 — 새 상수 발견 시 텍사스 명사수 자동 검정
+"""Constant Verifier — Texas Sharpshooter Auto-test for New Constant Discovery
 
-사용법:
+Usage:
   python3 constant_verifier.py --value 0.577 --target "1/sqrt(3)"
   python3 constant_verifier.py --value 1.676 --target "5/3"
   python3 constant_verifier.py --value 1.0114 --target "1"
@@ -13,7 +13,7 @@ import random
 
 
 def parse_target(target_str):
-    """문자열을 수학 값으로 변환."""
+    """Convert string to mathematical value."""
     replacements = {
         'sqrt': 'math.sqrt',
         'log': 'math.log',
@@ -32,7 +32,7 @@ def parse_target(target_str):
 
 
 def texas_sharpshooter(value, target, search_type='simple', n_sim=100000):
-    """텍사스 명사수 검정.
+    """Texas sharpshooter test.
 
     search_type:
       'simple': a/sqrt(b), a=1..3, b=1..20
@@ -95,50 +95,50 @@ def texas_sharpshooter(value, target, search_type='simple', n_sim=100000):
 
 
 def grade(p_value, error_pct):
-    """등급 판정."""
+    """Grade determination."""
     if p_value > 0.05:
-        return '⚪', '우연 (p > 0.05)'
+        return '⚪', 'Coincidence (p > 0.05)'
     elif p_value > 0.01:
-        return '🟧', f'구조적 근사 (p={p_value:.4f}, {error_pct:.3f}%)'
+        return '🟧', f'Structural approximation (p={p_value:.4f}, {error_pct:.3f}%)'
     else:
-        return '🟧★', f'강한 구조적 근사 (p={p_value:.4f}, {error_pct:.3f}%)'
+        return '🟧★', f'Strong structural approximation (p={p_value:.4f}, {error_pct:.3f}%)'
 
 
 def main():
-    parser = argparse.ArgumentParser(description='상수 텍사스 명사수 검정기')
-    parser.add_argument('--value', type=float, required=True, help='실측값')
-    parser.add_argument('--target', type=str, required=True, help='비교 대상 (예: "1/sqrt(3)", "5/3")')
-    parser.add_argument('--search', type=str, default='simple', help='탐색 유형: simple, ratio, uniform')
+    parser = argparse.ArgumentParser(description='Constant Texas sharpshooter tester')
+    parser.add_argument('--value', type=float, required=True, help='Measured value')
+    parser.add_argument('--target', type=str, required=True, help='Comparison target (e.g.: "1/sqrt(3)", "5/3")')
+    parser.add_argument('--search', type=str, default='simple', help='Search type: simple, ratio, uniform')
     args = parser.parse_args()
 
     target_val = parse_target(args.target)
     error_pct = abs(args.value / target_val - 1) * 100
 
     print('=' * 50)
-    print('  상수 검증기 — 텍사스 명사수 검정')
+    print('  Constant Verifier — Texas Sharpshooter Test')
     print('=' * 50)
-    print(f'  실측값:   {args.value}')
-    print(f'  타겟:     {args.target} = {target_val:.6f}')
-    print(f'  오차:     {error_pct:.4f}%')
-    print(f'  탐색 유형: {args.search}')
+    print(f'  Measured:  {args.value}')
+    print(f'  Target:    {args.target} = {target_val:.6f}')
+    print(f'  Error:     {error_pct:.4f}%')
+    print(f'  Search type: {args.search}')
     print()
 
     p, count, total = texas_sharpshooter(args.value, target_val, args.search)
 
-    print(f'  탐색 공간: {total} 조합')
-    print(f'  동등 이하: {count}')
+    print(f'  Search space: {total} combinations')
+    print(f'  Equal or less: {count}')
     print(f'  p-value:   {p:.4f}')
     print()
 
     emoji, desc = grade(p, error_pct)
-    print(f'  등급: {emoji} {desc}')
+    print(f'  Grade: {emoji} {desc}')
     print()
 
     if p <= 0.05:
-        print(f'  README 기록용:')
-        print(f'  | C?? | {emoji} | {args.target} | {args.value} vs {target_val:.4f} | 검증기 | 텍사스 p={p:.4f}, 오차 {error_pct:.3f}% |')
+        print(f'  For README record:')
+        print(f'  | C?? | {emoji} | {args.target} | {args.value} vs {target_val:.4f} | Verifier | Texas p={p:.4f}, error {error_pct:.3f}% |')
     else:
-        print(f'  기록 불필요 (우연)')
+        print(f'  No record needed (coincidence)')
 
     print('=' * 50)
 

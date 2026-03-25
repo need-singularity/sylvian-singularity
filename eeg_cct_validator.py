@@ -1,17 +1,18 @@
+```python
 #!/usr/bin/env python3
-"""EEG 합성 데이터 기반 CCT 검증기 — 공개 데이터 없이 신경과학 검증
+"""EEG synthetic data based CCT validator — neuroscience verification without public data
 
-공개 EEG 데이터(PhysioNet 등) 없이도, EEG의 알려진 통계적 특성을
-합성 데이터로 재현하고 CCT(Consciousness Continuity Test)를 적용한다.
+Without public EEG data (PhysioNet etc.), reproduce known statistical properties
+of EEG with synthetic data and apply CCT (Consciousness Continuity Test).
 
-5가지 뇌 상태:
-  1. 각성(awake):    알파+베타+감마, 1/f 잡음, 높은 복잡도
-  2. 수면 N1(졸림):  세타 우세 + 약한 알파
-  3. 수면 N3(깊은):  델타 우세, 고진폭 서파, 높은 동기화
-  4. 마취(anesthesia): 델타 + burst-suppression 패턴
-  5. 발작(seizure):  3Hz spike-wave, 매우 주기적
+5 brain states:
+  1. awake:       alpha+beta+gamma, 1/f noise, high complexity
+  2. sleep N1 (drowsy): theta dominant + weak alpha
+  3. sleep N3 (deep):   delta dominant, high amplitude slow waves, high synchronization
+  4. anesthesia:        delta + burst-suppression pattern
+  5. seizure:          3Hz spike-wave, very periodic
 
-사용법:
+Usage:
   python3 eeg_cct_validator.py
   python3 eeg_cct_validator.py --duration 60
   python3 eeg_cct_validator.py --state awake
@@ -25,61 +26,61 @@ from scipy import signal as sp_signal
 
 
 # ─────────────────────────────────────────────
-# 상수
+# Constants
 # ─────────────────────────────────────────────
 
-FS = 256          # 샘플링 주파수 (Hz) — 표준 임상 EEG
+FS = 256          # Sampling frequency (Hz) — standard clinical EEG
 SEED = 42
 
-# 뇌 상태별 예측 (CCT 테스트 통과 수)
+# Predictions by brain state (number of CCT tests passed)
 PREDICTIONS = {
     "awake": {
         "total": 5,
         "tests": {"T1": True, "T2": True, "T3": True, "T4": True, "T5": True},
-        "reason": "연속+카오스: 모든 테스트 통과 예측",
+        "reason": "Continuous+chaotic: predicted to pass all tests",
     },
     "sleep_n1": {
         "total": 5,
         "tests": {"T1": True, "T2": True, "T3": True, "T4": True, "T5": True},
-        "reason": "세타 우세지만 아직 충분한 복잡도 유지 (졸림 ≠ 수면)",
+        "reason": "Theta dominant but still maintains sufficient complexity (drowsy ≠ sleep)",
     },
     "sleep_n3": {
         "total": 3,
         "tests": {"T1": True, "T2": False, "T3": True, "T4": True, "T5": False},
-        "reason": "T2,T5 실패: 고동기화 서파 → 주기적+정체",
+        "reason": "T2,T5 fail: highly synchronized slow waves → periodic+stagnant",
     },
     "anesthesia": {
         "total": 1,
         "tests": {"T1": False, "T2": True, "T3": False, "T4": False, "T5": True},
-        "reason": "T1,T3,T4 실패: burst-suppression → gap+불연속+엔트로피이탈",
+        "reason": "T1,T3,T4 fail: burst-suppression → gap+discontinuous+entropy deviation",
     },
     "seizure": {
         "total": 2,
         "tests": {"T1": True, "T2": False, "T3": False, "T4": True, "T5": False},
-        "reason": "T2,T3,T5 실패: spike-wave → 주기적+점프+정체",
+        "reason": "T2,T3,T5 fail: spike-wave → periodic+jump+stagnant",
     },
 }
 
 STATE_LABELS = {
-    "awake": "각성 (Awake)",
-    "sleep_n1": "수면 N1 (Drowsy)",
-    "sleep_n3": "수면 N3 (Deep Sleep)",
-    "anesthesia": "마취 (Anesthesia)",
-    "seizure": "발작 (Seizure)",
+    "awake": "Awake",
+    "sleep_n1": "Sleep N1 (Drowsy)",
+    "sleep_n3": "Sleep N3 (Deep Sleep)",
+    "anesthesia": "Anesthesia",
+    "seizure": "Seizure",
 }
 
 
 # ─────────────────────────────────────────────
-# 합성 EEG 생성기
+# Synthetic EEG generators
 # ─────────────────────────────────────────────
 
 def generate_1f_noise(n, fs, rng, exponent=1.0):
-    """1/f^exponent 잡음 생성 (핑크 노이즈).
+    """Generate 1/f^exponent noise (pink noise).
 
-    뇌 EEG의 배경 잡음은 1/f 스펙트럼 특성을 보인다.
+    Background noise in brain EEG shows 1/f spectrum characteristics.
     """
     freqs = np.fft.rfftfreq(n, d=1.0 / fs)
-    freqs[0] = 1.0  # DC 성분 0 나눗셈 방지
+    freqs[0] = 1.0  # Prevent division by zero for DC component
     amplitudes = 1.0 / (freqs ** (exponent / 2.0))
     phases = rng.uniform(0, 2 * np.pi, len(freqs))
     spectrum = amplitudes * np.exp(1j * phases)
@@ -89,29 +90,29 @@ def generate_1f_noise(n, fs, rng, exponent=1.0):
 
 
 def generate_oscillation(n, fs, freq, amplitude, rng, phase_jitter=0.0):
-    """진동 성분 생성 (주파수 + 위상 변동)."""
+    """Generate oscillation component (frequency + phase variation)."""
     t = np.arange(n) / fs
     phase = 2 * np.pi * freq * t
     if phase_jitter > 0:
-        # 비선형성: 위상에 작은 랜덤 워크 추가
+        # Nonlinearity: add small random walk to phase
         walk = np.cumsum(rng.normal(0, phase_jitter, n))
         phase += walk
     return amplitude * np.sin(phase)
 
 
 def generate_coupled_oscillators(n, fs, freqs, amplitudes, rng, coupling=0.1):
-    """결합 진동자 시스템 — 비선형 상호작용.
+    """Coupled oscillator system — nonlinear interaction.
 
-    각 진동자는 다른 진동자의 위상에 영향을 받는다.
-    이것이 각성 EEG의 비선형 특성을 만든다.
-    강한 위상 잡음과 진폭 변조로 카오스적 특성 확보.
+    Each oscillator is affected by the phase of other oscillators.
+    This creates the nonlinear characteristics of awake EEG.
+    Strong phase noise and amplitude modulation ensure chaotic properties.
     """
     dt = 1.0 / fs
     n_osc = len(freqs)
     phases = rng.uniform(0, 2 * np.pi, n_osc)
     result = np.zeros(n)
 
-    # 진폭 변조를 위한 느린 랜덤 워크
+    # Slow random walk for amplitude modulation
     amp_mod = np.ones((n, n_osc))
     for k in range(n_osc):
         walk = np.cumsum(rng.normal(0, 0.005, n))
@@ -121,7 +122,7 @@ def generate_coupled_oscillators(n, fs, freqs, amplitudes, rng, coupling=0.1):
         for k in range(n_osc):
             result[i] += amplitudes[k] * amp_mod[i, k] * np.sin(phases[k])
 
-        # 위상 업데이트 (쿠라모토 모델 + 강한 잡음)
+        # Phase update (Kuramoto model + strong noise)
         for k in range(n_osc):
             omega = 2 * np.pi * freqs[k]
             coupling_term = 0.0
@@ -129,7 +130,7 @@ def generate_coupled_oscillators(n, fs, freqs, amplitudes, rng, coupling=0.1):
                 if j != k:
                     coupling_term += np.sin(phases[j] - phases[k])
             coupling_term *= coupling / n_osc
-            # 강한 위상 잡음으로 주기성 파괴
+            # Strong phase noise to break periodicity
             phase_noise = rng.normal(0, 0.3)
             phases[k] += (omega + coupling_term) * dt + phase_noise * dt
 
@@ -137,12 +138,12 @@ def generate_coupled_oscillators(n, fs, freqs, amplitudes, rng, coupling=0.1):
 
 
 def synthesize_awake(n, fs, rng):
-    """각성 EEG: 알파(10Hz) + 베타(20Hz) + 감마(40Hz) + 1/f 잡음.
+    """Awake EEG: alpha(10Hz) + beta(20Hz) + gamma(40Hz) + 1/f noise.
 
-    특성: 비선형, 높은 복잡도, 연속적, 카오스적.
-    진폭: 20-100 uV
+    Characteristics: nonlinear, high complexity, continuous, chaotic.
+    Amplitude: 20-100 uV
     """
-    # 결합 진동자: 알파, 베타, 감마 (강한 커플링)
+    # Coupled oscillators: alpha, beta, gamma (strong coupling)
     eeg = generate_coupled_oscillators(
         n, fs,
         freqs=[10.0, 20.0, 40.0],
@@ -150,21 +151,21 @@ def synthesize_awake(n, fs, rng):
         rng=rng,
         coupling=0.3,
     )
-    # 강한 1/f 배경 잡음 (카오스적 특성 강화)
+    # Strong 1/f background noise (enhances chaotic properties)
     pink = generate_1f_noise(n, fs, rng, exponent=1.0)
-    eeg += pink * 15.0  # 15 uV 스케일
+    eeg += pink * 15.0  # 15 uV scale
 
-    # 비선형 변조: 불규칙한 진폭 변화
+    # Nonlinear modulation: irregular amplitude changes
     t = np.arange(n) / fs
-    # 다중 주파수 변조 (비정수비 → 준주기)
+    # Multi-frequency modulation (non-integer ratio → quasiperiodic)
     modulation = (1.0
                   + 0.3 * np.sin(2 * np.pi * 0.1 * t + rng.uniform(0, 2 * np.pi))
                   + 0.2 * np.sin(2 * np.pi * 0.073 * t + rng.uniform(0, 2 * np.pi))
                   + 0.15 * np.sin(2 * np.pi * 0.031 * t + rng.uniform(0, 2 * np.pi)))
     eeg *= modulation
 
-    # 간헐적 버스트: 짧은 고에너지 구간 (각성 특유의 비정형 활동)
-    n_bursts = max(1, n // (fs * 5))  # 5초마다 약 1회
+    # Intermittent bursts: short high-energy segments (atypical activity specific to wakefulness)
+    n_bursts = max(1, n // (fs * 5))  # About 1 per 5 seconds
     for _ in range(n_bursts):
         burst_start = rng.integers(0, max(1, n - fs))
         burst_len = rng.integers(fs // 4, fs)
@@ -175,21 +176,21 @@ def synthesize_awake(n, fs, rng):
 
 
 def synthesize_sleep_n1(n, fs, rng):
-    """수면 N1 EEG: 세타(5Hz) 우세 + 약한 알파 + 1/f 잡음.
+    """Sleep N1 EEG: theta(5Hz) dominant + weak alpha + 1/f noise.
 
-    특성: 알파 감소, 세타 증가, 복잡도 약간 감소.
-    진폭: 50-100 uV
+    Characteristics: alpha decrease, theta increase, slightly reduced complexity.
+    Amplitude: 50-100 uV
     """
-    # 세타 우세
+    # Theta dominant
     theta = generate_oscillation(n, fs, 5.0, 40.0, rng, phase_jitter=0.02)
-    # 약한 알파
+    # Weak alpha
     alpha = generate_oscillation(n, fs, 10.0, 10.0, rng, phase_jitter=0.01)
-    # 1/f 잡음
+    # 1/f noise
     pink = generate_1f_noise(n, fs, rng, exponent=1.2)
 
     eeg = theta + alpha + pink * 8.0
 
-    # 느린 변조 (졸림 상태의 점진적 변화)
+    # Slow modulation (gradual changes in drowsy state)
     t = np.arange(n) / fs
     modulation = 1.0 + 0.2 * np.sin(2 * np.pi * 0.05 * t)
     eeg *= modulation
@@ -198,16 +199,16 @@ def synthesize_sleep_n1(n, fs, rng):
 
 
 def synthesize_sleep_n3(n, fs, rng):
-    """수면 N3 EEG: 델타(1-2Hz) 우세, 고진폭 서파.
+    """Sleep N3 EEG: delta(1-2Hz) dominant, high amplitude slow waves.
 
-    특성: 고진폭 저주파, 낮은 복잡도, 높은 동기화.
-    매우 주기적 → T2(Loop) 실패 예상.
-    진폭: 100-200 uV
+    Characteristics: high amplitude low frequency, low complexity, high synchronization.
+    Very periodic → expected to fail T2(Loop).
+    Amplitude: 100-200 uV
     """
-    # 매우 규칙적인 델타 (위상 잡음 최소)
+    # Very regular delta (minimal phase noise)
     delta1 = generate_oscillation(n, fs, 1.0, 120.0, rng, phase_jitter=0.0005)
     delta2 = generate_oscillation(n, fs, 2.0, 50.0, rng, phase_jitter=0.0005)
-    # 극히 약한 잡음 (높은 동기화)
+    # Extremely weak noise (high synchronization)
     pink = generate_1f_noise(n, fs, rng, exponent=2.0)
 
     eeg = delta1 + delta2 + pink * 2.0
@@ -216,35 +217,35 @@ def synthesize_sleep_n3(n, fs, rng):
 
 
 def synthesize_anesthesia(n, fs, rng):
-    """마취 EEG: 델타(1Hz) + burst-suppression 패턴.
+    """Anesthesia EEG: delta(1Hz) + burst-suppression pattern.
 
-    특성: 간헐적 정지(suppression) 구간 — 이것이 gap!
-    진폭: 0~200 uV (버스트와 억압 교대)
+    Characteristics: intermittent suppression intervals — this is the gap!
+    Amplitude: 0~200 uV (alternating burst and suppression)
 
-    suppression 구간을 실제 상수값(0)으로 설정하여 gap을 명확히 한다.
-    이렇게 하면 Takens 임베딩 후에도 frozen segment가 보존된다.
+    Set suppression intervals to actual constant value (0) to clearly create gaps.
+    This preserves frozen segments even after Takens embedding.
     """
     eeg = np.zeros(n)
 
-    # burst-suppression 마스크 생성
+    # Generate burst-suppression mask
     i = 0
     suppressed = False
     suppression_mask = np.zeros(n, dtype=bool)
 
     while i < n:
         if suppressed:
-            # suppression: 2-5초 (충분히 길어야 gap으로 감지)
+            # suppression: 2-5 seconds (must be long enough to be detected as gap)
             dur = int(rng.uniform(2.0, 5.0) * fs)
             end = min(i + dur, n)
             suppression_mask[i:end] = True
-            # 완전히 평탄한 신호 (isoelectric)
+            # Completely flat signal (isoelectric)
             eeg[i:end] = 0.0
             i = end
         else:
-            # burst: 1-3초
+            # burst: 1-3 seconds
             dur = int(rng.uniform(1.0, 3.0) * fs)
             end = min(i + dur, n)
-            # 버스트: 고진폭 델타 + 잡음
+            # Burst: high amplitude delta + noise
             t_seg = np.arange(end - i) / fs
             eeg[i:end] = (100.0 * np.sin(2 * np.pi * 1.0 * t_seg)
                           + rng.normal(0, 20.0, end - i))
@@ -255,24 +256,24 @@ def synthesize_anesthesia(n, fs, rng):
 
 
 def synthesize_seizure(n, fs, rng):
-    """발작 EEG: 3Hz spike-wave, 매우 주기적.
+    """Seizure EEG: 3Hz spike-wave, very periodic.
 
-    특성: 고진폭, 반복적 스파이크, 높은 에너지, 낮은 복잡도.
-    각 윈도우의 엔트로피가 거의 동일 → T5(novelty) 실패 예상.
-    진폭: 200-500 uV
+    Characteristics: high amplitude, repetitive spikes, high energy, low complexity.
+    Entropy in each window is nearly identical → expected to fail T5(novelty).
+    Amplitude: 200-500 uV
     """
     t = np.arange(n) / fs
 
-    # 3Hz spike-wave: 매우 규칙적
+    # 3Hz spike-wave: very regular
     phase = 2 * np.pi * 3.0 * t
-    # 스파이크 성분 (날카로운 피크)
+    # Spike component (sharp peaks)
     spike = 250.0 * np.exp(-((np.mod(phase, 2 * np.pi) - 0.5) ** 2) / 0.03)
-    # 느린 파동 성분
+    # Slow wave component
     slow_wave = -100.0 * np.sin(phase)
 
     eeg = spike + slow_wave
 
-    # 극히 작은 잡음만 (실제 발작은 매우 규칙적)
+    # Extremely small noise only (actual seizures are very regular)
     eeg += rng.normal(0, 1.0, n)
 
     return eeg
@@ -288,17 +289,17 @@ GENERATORS = {
 
 
 # ─────────────────────────────────────────────
-# Takens 임베딩: EEG → 3D 상태 벡터
+# Takens embedding: EEG → 3D state vector
 # ─────────────────────────────────────────────
 
 def eeg_to_state_vector(eeg, fs, suppression_mask=None):
-    """EEG를 3차원 상태 벡터로 변환.
+    """Convert EEG to 3D state vector.
 
     S(t) = [x(t), dx/dt, d^2x/dt^2]
-    Takens 임베딩의 간소화 버전: 원본, 1차 미분, 2차 미분.
+    Simplified version of Takens embedding: original, 1st derivative, 2nd derivative.
 
-    suppression_mask가 주어지면, 해당 구간은 상태 벡터를 0으로
-    강제하여 gap(정지)을 명확히 한다.
+    If suppression_mask is given, force state vector to 0 in those intervals
+    to clearly create gaps (stops).
     """
     dt = 1.0 / fs
     dx = np.gradient(eeg, dt)
@@ -306,18 +307,18 @@ def eeg_to_state_vector(eeg, fs, suppression_mask=None):
     S = np.column_stack([eeg, dx, d2x])
 
     if suppression_mask is not None:
-        # suppression 구간은 상태 = 0 (완전 정지)
+        # suppression intervals = state 0 (complete stop)
         S[suppression_mask] = 0.0
 
     return S
 
 
 # ─────────────────────────────────────────────
-# CCT 5개 테스트 (자체 구현)
+# CCT 5 tests (self-implementation)
 # ─────────────────────────────────────────────
 
 def compute_entropy(data, bins=30):
-    """1D 데이터의 섀넌 엔트로피."""
+    """Shannon entropy of 1D data."""
     if len(data) < 2:
         return 0.0
     data_range = data.max() - data.min()
@@ -335,63 +336,63 @@ def compute_entropy(data, bins=30):
 
 
 def test_gap(S):
-    """T1 Gap 테스트: 정지 구간(suppression) 존재 여부.
+    """T1 Gap test: presence of stop intervals (suppression).
 
-    EEG에서 burst-suppression 패턴은 의식 부재의 지표.
-    인접 스텝 간 변화가 거의 없는 구간 비율 측정.
+    In EEG, burst-suppression patterns are indicators of absence of consciousness.
+    Measure the ratio of intervals with almost no change between adjacent steps.
     """
     diffs = np.diff(S, axis=0)
     norms = np.linalg.norm(diffs, axis=1)
 
-    # 정지 판정: 변화량이 매우 작은 구간
-    # EEG에서 suppression = 진폭 < 수 uV
+    # Stop determination: intervals with very small change
+    # In EEG, suppression = amplitude < few uV
     median_norm = np.median(norms)
     if median_norm < 1e-12:
-        return 0.0, False, "전체 정지 상태"
+        return 0.0, False, "Complete stop state"
 
-    # 정지 임계값: 중앙값의 1%
+    # Stop threshold: 1% of median
     frozen_threshold = max(median_norm * 0.01, 1e-10)
     frozen = np.sum(norms < frozen_threshold)
     frozen_ratio = frozen / len(norms)
 
     if frozen_ratio > 0.01:
         score = max(0.0, 1.0 - frozen_ratio)
-        return score, False, f"정지 비율 {frozen_ratio:.1%} (suppression 감지)"
+        return score, False, f"Stop ratio {frozen_ratio:.1%} (suppression detected)"
 
-    return 1.0, True, f"gap 없음 (정지 {frozen_ratio:.3%})"
+    return 1.0, True, f"No gap (stop {frozen_ratio:.3%})"
 
 
 def test_loop(S, threshold=0.5):
-    """T2 Loop 테스트: 궤적의 주기적 반복 여부.
+    """T2 Loop test: periodic repetition of trajectory.
 
-    주기적 신호(발작, 깊은 수면 서파)는 상태 공간에서
-    같은 경로를 반복 방문한다 → 높은 재방문율.
-    카오스 신호(각성)는 가까이 오지만 정확히 반복하지 않는다.
+    Periodic signals (seizure, deep sleep slow waves) repeatedly
+    visit the same path in state space → high revisit rate.
+    Chaotic signals (awake) come close but never repeat exactly.
 
-    방법: 상태 공간에서 재방문(recurrence) 비율 측정.
-    각 차원을 독립적으로 정규화하여 스케일 차이 보정.
+    Method: measure recurrence ratio in state space.
+    Normalize each dimension independently to correct for scale differences.
     """
     n = len(S)
     if n < 200:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
-    # 다운샘플링
+    # Downsample
     step = max(1, n // 5000)
     Ss = S[::step].copy()
     ns = len(Ss)
 
     if np.std(Ss) < 1e-10:
-        return 0.0, False, "상태 변화 없음"
+        return 0.0, False, "No state change"
 
-    # 각 차원을 표준편차로 정규화 (x, dx, d2x 스케일 차이 보정)
+    # Normalize each dimension by standard deviation (correct x, dx, d2x scale differences)
     for dim in range(Ss.shape[1]):
         std_d = np.std(Ss[:, dim])
         if std_d > 1e-12:
             Ss[:, dim] /= std_d
 
-    # 정규화된 공간에서의 재방문 판정
-    # eps = 0.05: 정규화 후 각 차원의 std=1이므로,
-    # 0.05 = 5% 이내 복귀 → 주기적 궤도에서만 가능
+    # Revisit determination in normalized space
+    # eps = 0.05: after normalization, std=1 for each dimension,
+    # 0.05 = within 5% return → only possible with periodic orbits
     eps = 0.05
 
     recurrence = 0
@@ -414,34 +415,34 @@ def test_loop(S, threshold=0.5):
     passed = recurrence_ratio < threshold
     score = max(0, 1.0 - recurrence_ratio)
 
-    detail = f"재방문율={recurrence_ratio:.3f}"
+    detail = f"Revisit rate={recurrence_ratio:.3f}"
     if passed:
-        detail += ", 비주기적"
+        detail += ", aperiodic"
     else:
-        detail += ", 주기적 반복 감지"
+        detail += ", periodic repetition detected"
 
     return score, passed, detail
 
 
 def test_continuity(S, threshold=0.01):
-    """T3 Continuity 테스트: 인접 스텝 간 연결성.
+    """T3 Continuity test: connectivity between adjacent steps.
 
-    큰 점프(불연속)나 정지(동결) 비율 측정.
-    마취의 burst-suppression은 burst↔suppression 전환 시 큰 점프 발생.
+    Measure ratio of large jumps (discontinuous) or stops (frozen).
+    In anesthesia burst-suppression, large jumps occur at burst↔suppression transitions.
     """
     diffs = np.linalg.norm(np.diff(S, axis=0), axis=1)
     n = len(diffs)
 
     if n < 10:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     mean_diff = np.mean(diffs)
     if mean_diff < 1e-12:
-        return 0.0, False, "상태 변화 없음"
+        return 0.0, False, "No state change"
 
-    # 큰 점프: 평균의 10배 이상
+    # Large jumps: more than 10x the mean
     big_jumps = np.sum(diffs > mean_diff * 10)
-    # 정지: 변화 거의 없음
+    # Stops: almost no change
     frozen = np.sum(diffs < 1e-12)
 
     jump_ratio = big_jumps / n
@@ -452,20 +453,20 @@ def test_continuity(S, threshold=0.01):
     score = max(0, 1.0 - disconnect_ratio * 10)
     score = min(1.0, score)
 
-    detail = f"점프={jump_ratio:.3f}, 정지={frozen_ratio:.3f}"
+    detail = f"Jump={jump_ratio:.3f}, stop={frozen_ratio:.3f}"
     if passed:
-        detail += ", 연결 유지"
+        detail += ", connection maintained"
     else:
-        detail += ", 연결 끊김 감지"
+        detail += ", disconnection detected"
 
     return score, passed, detail
 
 
 def test_entropy_band(S, window_sec=2.0, fs=FS, h_min=0.3, h_max=4.5):
-    """T4 Entropy Band 테스트: H(t)가 밴드 안에 있는지.
+    """T4 Entropy Band test: whether H(t) stays within band.
 
-    의식적 상태는 엔트로피가 일정 범위 내에 머문다.
-    너무 낮으면(완전 주기) 의식 부재, 너무 높으면 무질서.
+    Conscious states maintain entropy within a certain range.
+    Too low (completely periodic) indicates absence of consciousness, too high indicates disorder.
     """
     x = S[:, 0]
     window = int(window_sec * fs)
@@ -473,7 +474,7 @@ def test_entropy_band(S, window_sec=2.0, fs=FS, h_min=0.3, h_max=4.5):
     n_windows = n // window
 
     if n_windows < 2:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     entropies = []
     for i in range(n_windows):
@@ -492,21 +493,21 @@ def test_entropy_band(S, window_sec=2.0, fs=FS, h_min=0.3, h_max=4.5):
     score = ratio
 
     if passed:
-        detail = f"{h_range_str}, 밴드 내"
+        detail = f"{h_range_str}, within band"
     else:
-        detail = f"{h_range_str}, 밴드 이탈 {1 - ratio:.1%}"
+        detail = f"{h_range_str}, band deviation {1 - ratio:.1%}"
 
     return score, passed, detail
 
 
 def test_novelty(S, window_sec=2.0, fs=FS):
-    """T5 Novelty 테스트: dH/dt != 0 (엔트로피 정체 비율).
+    """T5 Novelty test: dH/dt != 0 (entropy stagnation ratio).
 
-    의식적 상태는 항상 새로운 정보를 생성한다 → 엔트로피가 변한다.
-    깊은 수면이나 발작에서는 엔트로피가 정체된다.
+    Conscious states always generate new information → entropy changes.
+    In deep sleep or seizures, entropy stagnates.
 
-    임계값: 엔트로피 변화율의 중앙값의 10%를 사용.
-    이는 절대 임계값 대신 적응적 임계값이다.
+    Threshold: use 10% of median entropy change rate.
+    This is an adaptive threshold instead of absolute.
     """
     x = S[:, 0]
     window = int(window_sec * fs)
@@ -514,7 +515,7 @@ def test_novelty(S, window_sec=2.0, fs=FS):
     n_windows = n // window
 
     if n_windows < 3:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     entropies = []
     for i in range(n_windows):
@@ -528,35 +529,35 @@ def test_novelty(S, window_sec=2.0, fs=FS):
     dH = np.abs(np.diff(entropies))
 
     if len(dH) == 0:
-        return 0.0, False, "구간 부족"
+        return 0.0, False, "Insufficient intervals"
 
-    # 적응적 임계값: 중앙값의 20%
-    # 카오스 신호: dH가 크게 변동 → median 높음 → threshold 높아도 통과
-    # 주기적 신호: dH가 매우 작음 → median 작음 → 정체 감지
+    # Adaptive threshold: 20% of median
+    # Chaotic signal: dH varies greatly → high median → passes even with high threshold
+    # Periodic signal: dH very small → small median → stagnation detected
     median_dH = np.median(dH)
     threshold = max(median_dH * 0.2, 0.005)
 
     stagnant = np.sum(dH < threshold)
     stagnant_ratio = stagnant / len(dH)
 
-    # 추가: 엔트로피 분산이 매우 작으면 novelty 부족
+    # Additional: if entropy variance is very small, lacks novelty
     entropy_cv = np.std(entropies) / (np.mean(entropies) + 1e-15)
 
-    # 변동계수가 0.5% 미만이면 정체
+    # If coefficient of variation < 0.5%, stagnant
     if entropy_cv < 0.005:
         stagnant_ratio = max(stagnant_ratio, 0.8)
 
     passed = stagnant_ratio < 0.3
     score = max(0, 1.0 - stagnant_ratio)
 
-    detail = (f"정체 구간 {stagnant_ratio:.1%}, "
+    detail = (f"Stagnant intervals {stagnant_ratio:.1%}, "
               f"dH median={median_dH:.4f}, CV={entropy_cv:.4f}")
 
     return score, passed, detail
 
 
 def run_cct(S, fs=FS):
-    """CCT 5개 테스트 실행."""
+    """Run CCT 5 tests."""
     results = {}
     results["T1"] = test_gap(S)
     results["T2"] = test_loop(S)
@@ -567,11 +568,11 @@ def run_cct(S, fs=FS):
 
 
 # ─────────────────────────────────────────────
-# EEG 특성 분석
+# EEG characteristic analysis
 # ─────────────────────────────────────────────
 
 def analyze_eeg_properties(eeg, fs):
-    """합성 EEG의 기본 특성 분석."""
+    """Analyze basic properties of synthetic EEG."""
     props = {}
     props["amplitude_mean"] = np.mean(np.abs(eeg))
     props["amplitude_max"] = np.max(np.abs(eeg))
@@ -580,7 +581,7 @@ def analyze_eeg_properties(eeg, fs):
     # PSD (Power Spectral Density)
     freqs, psd = sp_signal.welch(eeg, fs=fs, nperseg=min(1024, len(eeg) // 2))
 
-    # 대역별 파워
+    # Band power
     bands = {
         "delta": (0.5, 4),
         "theta": (4, 8),
@@ -595,17 +596,17 @@ def analyze_eeg_properties(eeg, fs):
         band_power = np.trapezoid(psd[idx], freqs[idx]) if np.any(idx) else 0.0
         props["band_power"][band_name] = band_power / total_power if total_power > 0 else 0.0
 
-    # 우세 주파수
-    dominant_idx = np.argmax(psd[1:]) + 1  # DC 제외
+    # Dominant frequency
+    dominant_idx = np.argmax(psd[1:]) + 1  # Exclude DC
     props["dominant_freq"] = freqs[dominant_idx]
 
-    # 복잡도 (sample entropy 근사 — 자기상관 감쇄율)
+    # Complexity (sample entropy approximation — autocorrelation decay rate)
     if len(eeg) > 100:
         acf = np.correlate(eeg[:1000] - np.mean(eeg[:1000]),
                            eeg[:1000] - np.mean(eeg[:1000]), mode="full")
         acf = acf[len(acf) // 2:]
         acf = acf / (acf[0] + 1e-15)
-        # 자기상관이 0.5 이하로 떨어지는 데 걸리는 래그
+        # Lag for autocorrelation to drop below 0.5
         decay = np.argmax(acf < 0.5) if np.any(acf < 0.5) else len(acf)
         props["acf_decay_lag"] = decay
     else:
@@ -615,20 +616,20 @@ def analyze_eeg_properties(eeg, fs):
 
 
 # ─────────────────────────────────────────────
-# ASCII 파형
+# ASCII waveform
 # ─────────────────────────────────────────────
 
 def ascii_waveform(eeg, fs, duration_show=2.0, width=60, height=10):
-    """EEG의 짧은 구간 ASCII 파형."""
+    """Short segment ASCII waveform of EEG."""
     n_show = int(duration_show * fs)
-    # 중간 지점에서 추출
+    # Extract from middle point
     start = max(0, len(eeg) // 2 - n_show // 2)
     segment = eeg[start:start + n_show]
 
     if len(segment) == 0:
-        return "  (데이터 없음)"
+        return "  (No data)"
 
-    # 다운샘플
+    # Downsample
     step = max(1, len(segment) // width)
     xs = segment[::step][:width]
 
@@ -656,33 +657,33 @@ def ascii_waveform(eeg, fs, duration_show=2.0, width=60, height=10):
 
 
 # ─────────────────────────────────────────────
-# 판정
+# Judgment
 # ─────────────────────────────────────────────
 
 def judge(results):
-    """CCT 결과로 종합 판정."""
+    """Overall judgment from CCT results."""
     passes = sum(1 for _, (_, p, _) in results.items() if p)
     halfs = sum(0.5 for _, (s, p, _) in results.items() if not p and s > 0.7)
     total = passes + halfs
 
     if total >= 5:
-        return total, "★ 연속 (Continuous)"
+        return total, "★ Continuous"
     elif total >= 4:
-        return total, "◎ 약화 (Weakened)"
+        return total, "◎ Weakened"
     elif total >= 3:
-        return total, "△ 약함 (Fragile)"
+        return total, "△ Fragile"
     elif total >= 1:
-        return total, "▽ 미약 (Minimal)"
+        return total, "▽ Minimal"
     else:
-        return total, "✕ 없음 (Absent)"
+        return total, "✕ Absent"
 
 
 # ─────────────────────────────────────────────
-# 출력
+# Output
 # ─────────────────────────────────────────────
 
 def print_state_result(state, eeg, props, S, results, fs):
-    """단일 상태 결과 출력."""
+    """Print single state result."""
     label = STATE_LABELS[state]
     pred = PREDICTIONS[state]
     total, verdict = judge(results)
@@ -691,21 +692,21 @@ def print_state_result(state, eeg, props, S, results, fs):
     print(f"  [{state.upper()}] {label}")
     print(f" {'─' * 58}")
 
-    # EEG 특성
+    # EEG properties
     bp = props["band_power"]
-    print(f"  진폭: mean={props['amplitude_mean']:.1f} uV, "
+    print(f"  Amplitude: mean={props['amplitude_mean']:.1f} uV, "
           f"max={props['amplitude_max']:.1f} uV, std={props['amplitude_std']:.1f} uV")
-    print(f"  우세 주파수: {props['dominant_freq']:.1f} Hz")
-    print(f"  대역 파워: delta={bp['delta']:.1%} theta={bp['theta']:.1%} "
+    print(f"  Dominant frequency: {props['dominant_freq']:.1f} Hz")
+    print(f"  Band power: delta={bp['delta']:.1%} theta={bp['theta']:.1%} "
           f"alpha={bp['alpha']:.1%} beta={bp['beta']:.1%} gamma={bp['gamma']:.1%}")
-    print(f"  ACF 감쇄: {props['acf_decay_lag']} 래그 (짧을수록 복잡)")
+    print(f"  ACF decay: {props['acf_decay_lag']} lags (shorter = more complex)")
 
-    # ASCII 파형
-    print(f"\n  파형 (2초 구간):")
+    # ASCII waveform
+    print(f"\n  Waveform (2 second segment):")
     print(ascii_waveform(eeg, fs))
 
-    # CCT 결과
-    print(f"\n  CCT 테스트 결과:")
+    # CCT results
+    print(f"\n  CCT test results:")
     test_labels = {
         "T1": "T1 Gap       ",
         "T2": "T2 Loop      ",
@@ -721,26 +722,26 @@ def print_state_result(state, eeg, props, S, results, fs):
         pred_mark = "+" if pred["tests"][key] else "-"
         match = "=" if (passed == pred["tests"][key]) else "!"
         print(f"    {label_str} | {symbol} {mark} | {score:.3f} | "
-              f"예측:{pred_mark} {match} | {detail}")
+              f"Predicted:{pred_mark} {match} | {detail}")
 
-    print(f"\n  종합: {total}/5 {verdict}")
-    print(f"  예측: {pred['total']}/5 ({pred['reason']})")
+    print(f"\n  Overall: {total}/5 {verdict}")
+    print(f"  Prediction: {pred['total']}/5 ({pred['reason']})")
 
-    # 일치 여부
+    # Match status
     matches = sum(1 for k in ["T1", "T2", "T3", "T4", "T5"]
                   if (results[k][1] == pred["tests"][k]))
-    print(f"  테스트별 일치: {matches}/5")
+    print(f"  Per-test match: {matches}/5")
 
     return matches
 
 
 def print_comparison_table(all_results):
-    """전체 비교표 + 일치도 분석."""
+    """Overall comparison table + match analysis."""
     print("\n" + "=" * 76)
-    print("  EEG-CCT 검증 종합 비교표")
+    print("  EEG-CCT Verification Summary Comparison Table")
     print("=" * 76)
 
-    header = ("  상태         | T1  | T2  | T3  | T4  | T5  | 점수 | 예측 | 일치 | 판정")
+    header = ("  State        | T1  | T2  | T3  | T4  | T5  | Score| Pred | Match| Verdict")
     sep =    ("  ─────────────┼─────┼─────┼─────┼─────┼─────┼──────┼──────┼──────┼───────")
     print(header)
     print(sep)
@@ -771,23 +772,23 @@ def print_comparison_table(all_results):
 
     print(sep)
     match_pct = total_matches / total_tests * 100
-    print(f"  전체 일치도: {total_matches}/{total_tests} ({match_pct:.0f}%)")
+    print(f"  Overall match: {total_matches}/{total_tests} ({match_pct:.0f}%)")
     print()
 
-    # 일치도 판정
+    # Match judgment
     if match_pct >= 80:
-        level = "강한 검증"
-        detail = "CCT가 EEG 의식 상태를 정확히 구분"
+        level = "Strong verification"
+        detail = "CCT accurately distinguishes EEG consciousness states"
     elif match_pct >= 60:
-        level = "부분 검증"
-        detail = "대부분 일치, 일부 테스트 조건 조정 필요"
+        level = "Partial verification"
+        detail = "Mostly matches, some test conditions need adjustment"
     else:
-        level = "불일치"
-        detail = "CCT 조건 수정 필요"
+        level = "Mismatch"
+        detail = "CCT conditions need modification"
 
-    print(f"  판정: {level} — {detail}")
+    print(f"  Judgment: {level} — {detail}")
 
-    # 불일치 분석
+    # Mismatch analysis
     mismatches = []
     for state in ["awake", "sleep_n1", "sleep_n3", "anesthesia", "seizure"]:
         results, _ = all_results[state]
@@ -796,11 +797,11 @@ def print_comparison_table(all_results):
             actual = results[key][1]
             expected = pred["tests"][key]
             if actual != expected:
-                direction = "PASS(예측 FAIL)" if actual else "FAIL(예측 PASS)"
+                direction = "PASS(expected FAIL)" if actual else "FAIL(expected PASS)"
                 mismatches.append((state, key, direction, results[key][2]))
 
     if mismatches:
-        print(f"\n  불일치 상세 ({len(mismatches)}건):")
+        print(f"\n  Mismatch details ({len(mismatches)} cases):")
         for state, test, direction, detail in mismatches:
             print(f"    {state:13s} {test}: {direction}")
             print(f"      {detail}")
@@ -809,15 +810,15 @@ def print_comparison_table(all_results):
 
 
 # ─────────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────────
 
 def run_state(state, duration, fs, seed):
-    """단일 상태 실행."""
+    """Run single state."""
     rng = np.random.default_rng(seed)
     n = int(duration * fs)
 
-    # 합성 EEG 생성
+    # Generate synthetic EEG
     gen_func = GENERATORS[state]
     suppression_mask = None
 
@@ -826,13 +827,13 @@ def run_state(state, duration, fs, seed):
     else:
         eeg = gen_func(n, fs, rng)
 
-    # 특성 분석
+    # Analyze properties
     props = analyze_eeg_properties(eeg, fs)
 
-    # Takens 임베딩 → 3D 상태 벡터
+    # Takens embedding → 3D state vector
     S = eeg_to_state_vector(eeg, fs, suppression_mask=suppression_mask)
 
-    # CCT 실행
+    # Run CCT
     results = run_cct(S, fs=fs)
 
     return eeg, props, S, results
@@ -840,30 +841,30 @@ def run_state(state, duration, fs, seed):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="EEG 합성 데이터 기반 CCT 검증기 — 공개 데이터 없이 신경과학 검증",
+        description="EEG synthetic data based CCT validator — neuroscience verification without public data",
     )
     parser.add_argument("--duration", type=float, default=30,
-                        help="합성 EEG 길이 (초, 기본: 30)")
+                        help="Synthetic EEG duration (seconds, default: 30)")
     parser.add_argument("--state", type=str, default=None,
                         choices=list(GENERATORS.keys()),
-                        help="단일 상태만 실행")
+                        help="Run single state only")
     parser.add_argument("--fs", type=int, default=FS,
-                        help=f"샘플링 주파수 (기본: {FS} Hz)")
+                        help=f"Sampling frequency (default: {FS} Hz)")
     parser.add_argument("--seed", type=int, default=SEED,
-                        help=f"난수 시드 (기본: {SEED})")
+                        help=f"Random seed (default: {SEED})")
 
     args = parser.parse_args()
 
     print("=" * 76)
     print("  EEG-CCT Validator v1.0")
-    print("  합성 EEG 기반 의식 연속성 검증기")
+    print("  Consciousness Continuity Validator based on Synthetic EEG")
     print("=" * 76)
-    print(f"  설정: duration={args.duration}s, fs={args.fs}Hz, "
+    print(f"  Settings: duration={args.duration}s, fs={args.fs}Hz, "
           f"samples={int(args.duration * args.fs):,}, seed={args.seed}")
-    print(f"  방법: 합성 EEG → Takens 임베딩 S(t)=[x, dx/dt, d2x/dt2] → CCT 5 테스트")
+    print(f"  Method: Synthetic EEG → Takens embedding S(t)=[x, dx/dt, d2x/dt2] → CCT 5 tests")
 
     if args.state:
-        # 단일 상태
+        # Single state
         states = [args.state]
     else:
         states = list(GENERATORS.keys())
@@ -875,10 +876,11 @@ def main():
         matches = print_state_result(state, eeg, props, S, results, args.fs)
         all_results[state] = (results, matches)
 
-    # 전체 비교표 (다중 상태일 때)
+    # Overall comparison table (for multiple states)
     if len(states) > 1:
         print_comparison_table(all_results)
 
 
 if __name__ == "__main__":
     main()
+```

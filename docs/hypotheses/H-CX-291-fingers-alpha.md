@@ -1,3 +1,3 @@
-# H-CX-291: 🟩 손가락 10 = α = γ/τ(6) = 10진법
+# H-CX-291: 🟩 Fingers 10 = α = γ/τ(6) = Decimal system
 
-> 10진법 = α파 = 생체 스케일 단위. 손가락에서 유래.
+> Decimal system = α waves = Biological scale unit. Derived from fingers.

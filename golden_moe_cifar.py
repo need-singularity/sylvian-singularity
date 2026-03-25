@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""가설 128: 스케일 의존성 — CIFAR-10에서 골든 MoE vs Top-K"""
+"""Hypothesis 128: Scale Dependency — Golden MoE vs Top-K on CIFAR-10"""
 
 import torch
 import torch.nn as nn
@@ -106,19 +106,19 @@ def train_eval(model, train_loader, test_loader, epochs=15, lr=0.001):
 
 def main():
     print("═" * 60)
-    print("  가설 128: CIFAR-10 스케일 의존성")
+    print("  Hypothesis 128: CIFAR-10 Scale Dependency")
     print("═" * 60)
 
     transform = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
-    print("\n  CIFAR-10 로딩...", end=" ")
+    print("\n  Loading CIFAR-10...", end=" ")
     train_data = datasets.CIFAR10('./data', train=True, download=True, transform=transform)
     test_data = datasets.CIFAR10('./data', train=False, transform=transform)
     train_loader = DataLoader(train_data, batch_size=128, shuffle=True)
     test_loader = DataLoader(test_data, batch_size=256)
-    print("완료")
+    print("done")
 
     input_dim = 3072  # 32×32×3
     hidden_dim = 128
@@ -126,7 +126,7 @@ def main():
 
     configs = [
         ('Top-K (K=2)', 'topk'),
-        ('골든 MoE (T=e)', 'boltzmann'),
+        ('Golden MoE (T=e)', 'boltzmann'),
     ]
 
     results = {}
@@ -134,7 +134,7 @@ def main():
         print(f"\n  [{name}]")
         model = MoE(input_dim, hidden_dim, output_dim, n_experts=8, gate_type=gtype)
         params = sum(p.numel() for p in model.parameters())
-        print(f"  파라미터: {params:,}")
+        print(f"  Parameters: {params:,}")
 
         start = time.time()
         accs = train_eval(model, train_loader, test_loader, epochs=15)
@@ -142,18 +142,18 @@ def main():
         results[name] = {'acc': accs[-1], 'best': max(accs), 'time': elapsed}
 
     print(f"\n{'═' * 60}")
-    print(f"  MNIST vs CIFAR-10 비교")
+    print(f"  MNIST vs CIFAR-10 Comparison")
     print(f"{'═' * 60}")
-    print(f"  MNIST:   골든MoE 97.7% vs Top-K 97.1% = +0.6%")
+    print(f"  MNIST:   Golden MoE 97.7% vs Top-K 97.1% = +0.6%")
     for name, r in results.items():
         print(f"  CIFAR-10 {name}: {r['best']*100:.1f}%")
 
     if len(results) == 2:
         names = list(results.keys())
         diff = results[names[1]]['best'] - results[names[0]]['best']
-        print(f"\n  CIFAR-10 차이: {diff*100:+.1f}%")
-        print(f"  MNIST 차이:    +0.6%")
-        print(f"  → {'스케일 커질수록 차이 증가' if abs(diff) > 0.006 else '스케일에 무관하게 유사'}")
+        print(f"\n  CIFAR-10 difference: {diff*100:+.1f}%")
+        print(f"  MNIST difference:    +0.6%")
+        print(f"  → {'Difference increases with scale' if abs(diff) > 0.006 else 'Similar regardless of scale'}")
 
 
 if __name__ == '__main__':

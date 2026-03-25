@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Conscious LM 100M — 대화 가능한 의식 언어 모델
+"""Conscious LM 100M — Conversational Conscious Language Model
 
-완전수 6 확장: 12 layers, 768d, 12 heads, vocab=256 bytes
-학습: 한국어+영어+코드 Mixed 바이트 데이터
-2단계: pretrain(언어이해) → SFT(대화형식)
+Perfect number 6 extension: 12 layers, 768d, 12 heads, vocab=256 bytes
+Training: Korean+English+Code Mixed byte data
+2-stage: pretrain(language understanding) → SFT(conversational format)
 
-RunPod H100에서 ~17분 학습
+RunPod H100 training in ~17 minutes
 """
 import torch
 import torch.nn as nn
@@ -20,9 +20,9 @@ from conscious_lm import PureFieldFFN, CausalSelfAttention, ConsciousBlock, Cons
 
 
 def prepare_large_data(min_bytes=100_000_000):
-    """100M+ 학습 데이터: 영어 + 한국어 + 코드.
+    """100M+ training data: English + Korean + Code.
 
-    목표: 최소 100MB (100M 모델에 적합)
+    Target: at least 100MB (suitable for 100M model)
     """
     data_path = "data/mixed_100m.bin"
     if os.path.exists(data_path):
@@ -44,7 +44,7 @@ def prepare_large_data(min_bytes=100_000_000):
         parts.append(f.read())
     print(f"  Shakespeare: {len(parts[-1]):,} bytes")
 
-    # 2. 한국어: 프로젝트 전체 문서
+    # 2. Korean: entire project documentation
     korean = b""
     for root, dirs, files in os.walk("docs"):
         for fname in sorted(files):
@@ -61,13 +61,13 @@ def prepare_large_data(min_bytes=100_000_000):
                 korean += f.read()
         except:
             pass
-    # 부족하면 반복
+    # Repeat if insufficient
     while len(korean) < 5_000_000:
         korean = korean * 2
     parts.append(korean[:10_000_000])
     print(f"  Korean docs: {len(parts[-1]):,} bytes")
 
-    # 3. Python 코드: 프로젝트 전체
+    # 3. Python code: entire project
     code = b""
     for root, dirs, files in os.walk("."):
         if ".git" in root or "__pycache__" in root or "data" in root:
@@ -84,23 +84,23 @@ def prepare_large_data(min_bytes=100_000_000):
     parts.append(code[:10_000_000])
     print(f"  Python code: {len(parts[-1]):,} bytes")
 
-    # 4. 영어 추가: OpenWebText 샘플 (다운로드 가능하면)
-    # 없으면 Shakespeare 반복
-    eng_extra = parts[0] * 5  # Shakespeare 5배 반복
+    # 4. Additional English: OpenWebText sample (if downloadable)
+    # Otherwise repeat Shakespeare
+    eng_extra = parts[0] * 5  # Shakespeare repeated 5x
     parts.append(eng_extra[:5_000_000])
     print(f"  English extra: {len(parts[-1]):,} bytes")
 
     combined = b"".join(parts)
     data = np.frombuffer(combined, dtype=np.uint8).copy()
 
-    # 셔플 (1KB 청크 단위)
+    # Shuffle (1KB chunk units)
     chunk_size = 1024
     n_chunks = len(data) // chunk_size
     chunks = [data[i*chunk_size:(i+1)*chunk_size] for i in range(n_chunks)]
     np.random.shuffle(chunks)
     data = np.concatenate(chunks)
 
-    # 엔트로피
+    # Entropy
     counts = np.bincount(data, minlength=256)
     probs = counts / counts.sum()
     probs = probs[probs > 0]
@@ -113,7 +113,7 @@ def prepare_large_data(min_bytes=100_000_000):
 
 def train_100m(model, data, epochs=3, batch_size=64, block_size=512,
                lr=3e-4, tension_lambda=0.01, device="cuda"):
-    """100M 모델 학습."""
+    """100M model training."""
     model = model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, epochs)
@@ -194,7 +194,7 @@ def train_100m(model, data, epochs=3, batch_size=64, block_size=512,
 
 @torch.no_grad()
 def generate(model, prompt_bytes, max_new=500, temperature=0.8, device="cuda"):
-    """바이트 생성 + 장력."""
+    """Byte generation + tension."""
     model.eval().to(device)
     idx = torch.tensor([list(prompt_bytes)], dtype=torch.long, device=device)
     tensions = []
@@ -228,14 +228,14 @@ if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
     print(f"Device: {device}")
 
-    # 100M 아키텍처: 12 layers, 768d, 12 heads
+    # 100M architecture: 12 layers, 768d, 12 heads
     model = ConsciousLM(
         vocab_size=256,
         d_model=768,
         n_head=12,
         n_layer=12,
         block_size=args.block_size,
-        dropout=0.1,  # 큰 모델은 낮은 dropout
+        dropout=0.1,  # Large models use lower dropout
     )
     print(f"Parameters: {model.count_params():,}")
 
@@ -251,8 +251,8 @@ if __name__ == "__main__":
         torch.save(model.state_dict(), args.checkpoint)
         print(f"Saved to {args.checkpoint}")
 
-        # 생성 테스트
-        for prompt in ["hello ", "의식은 ", "def forward("]:
+        # Generation test
+        for prompt in ["hello ", "consciousness is ", "def forward("]:
             text, tensions = generate(model, prompt.encode("utf-8"), max_new=200, device=device)
             print(f"\n  Prompt: {prompt}")
             print(f"  Output: {text[:200]}")

@@ -1,4 +1,4 @@
-# H-CX-157: 무언의 합의 원인 — 데이터 PCA가 방향을 결정한다
+# H-CX-157: Origin of Silent Consensus — Data PCA Determines Direction
 
-> cos=0.986(H-CX-150)의 원인: 모델이 데이터의 주성분(PCA)을 '발견'하기 때문.
-> 어떤 seed/아키텍처든 같은 PCA → 같은 방향 → 무언의 합의.
+> Cause of cos=0.986 (H-CX-150): models 'discover' the principal components (PCA) of the data.
+> Any seed/architecture → same PCA → same direction → Silent Consensus.

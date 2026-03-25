@@ -1,3 +1,3 @@
-# H-CX-260: ⭐🟦 ζ(2) = π²/6 = π²/P₁ — 바젤 문제
+# H-CX-260: ⭐🟦 ζ(2) = π²/6 = π²/P₁ — Basel Problem
 
-> 오일러(1735) 증명. 리만 제타 함수에 완전수 6 등장. 이미 알려진 수학.
+> Euler's proof (1735). Perfect number 6 appears in Riemann zeta function. Already known mathematics.

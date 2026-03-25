@@ -1,6 +1,6 @@
-# H-CX-202: 돌고래 소나 알고리즘 → 의료 초음파 개선
+# H-CX-202: Dolphin Sonar Algorithm → Medical Ultrasound Improvement
 
-> Lund대: 돌고래 에코로케이션의 이중 빔 구조를 의료 초음파에 적용.
-> 적응 빔 포커싱 + 광대역 주파수 변조 + 에코 지연 계산.
-> PH 연결: 돌고래 소나 = PH 계산(H-CX-134)이므로,
-> 의료 초음파도 PH 기반으로 개선 가능?
+> Lund University: Applying dual beam structure of dolphin echolocation to medical ultrasound.
+> Adaptive beam focusing + broadband frequency modulation + echo delay calculation.
+> PH connection: Since dolphin sonar = PH computation (H-CX-134),
+> could medical ultrasound also be improved based on PH?

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""H-CX-125+127+128: PH 얽힘 — 비공유 데이터에서 PH 동일?
+"""H-CX-125+127+128: PH Entanglement — Same PH from non-shared data?
 
-H-CX-125: MNIST 절반 분할 → 공유 0 → PH 동일?
-H-CX-127: 상관 있지만 특정 데이터 복원 불가?
-H-CX-128: merge 순서의 복잡도가 랜덤보다 낮은가?
+H-CX-125: MNIST half split → 0 shared → Same PH?
+H-CX-127: Correlated but cannot recover specific data?
+H-CX-128: Is merge order complexity lower than random?
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -153,7 +153,7 @@ def run_experiment():
         print(f"  {k+1:>4} {names[pa[0]]:>5}-{names[pa[1]]:<5}    {names[pb[0]]:>5}-{names[pb[1]]:<5}   {match}")
 
     print(f"\n  H-CX-125 (tau > 0.8): {'SUPPORTED' if tau_ab > 0.8 else 'PARTIAL' if tau_ab > 0.5 else 'REJECTED'}")
-    print(f"  '한 번도 같은 것을 안 본 두 의식이 같은 PH' = {'YES' if tau_ab > 0.7 else 'NO'}")
+    print(f"  'Two consciousnesses that never saw the same thing have same PH' = {'YES' if tau_ab > 0.7 else 'NO'}")
 
     # === Multiple seeds for robustness ===
     print(f"\n  --- 3-seed robustness test ---")
@@ -254,15 +254,15 @@ def run_experiment():
     print(f"  MNIST: H0={len(h0a[h0a[:,1]<np.inf])} features, H1={len(h1a)} loops")
     print(f"  Fashion: H0={len(h0f[h0f[:,1]<np.inf])} features, H1={len(h1f)} loops")
     print(f"  Same H0 count: {'YES' if len(h0a[h0a[:,1]<np.inf]) == len(h0f[h0f[:,1]<np.inf]) else 'NO'}")
-    print(f"  = 다른 '우주'에서도 위상 구조의 틀은 동일")
+    print(f"  = Framework of topological structure remains the same even in different 'universes'")
 
     # Summary
     print(f"\n{'='*70}")
     print(f"  ENTANGLEMENT SUMMARY")
     print(f"{'='*70}")
-    print(f"  H-CX-125 비공유 PH: tau={tau_ab:.4f}, conf_r={r_conf:.4f}, top5={overlap}/5")
-    print(f"  H-CX-127 얽힘: corr={r_conf:.4f} with 0 shared data")
-    print(f"  H-CX-128 복잡도: {effective_bits:.1f}/{random_bits:.1f} bits ({effective_bits/random_bits*100:.0f}%)")
+    print(f"  H-CX-125 Non-shared PH: tau={tau_ab:.4f}, conf_r={r_conf:.4f}, top5={overlap}/5")
+    print(f"  H-CX-127 Entanglement: corr={r_conf:.4f} with 0 shared data")
+    print(f"  H-CX-128 Complexity: {effective_bits:.1f}/{random_bits:.1f} bits ({effective_bits/random_bits*100:.0f}%)")
 
 
 if __name__ == '__main__':

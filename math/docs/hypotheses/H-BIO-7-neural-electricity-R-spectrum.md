@@ -1,83 +1,83 @@
-# H-BIO-7: 뇌전기 신호와 R 스펙트럼
+# H-BIO-7: Brain Electrical Signals and R Spectrum
 
-> **가설**: 뉴런의 전기 신호(활동전위, 뇌파)가 R(n) 스펙트럼의
-> 간극 구조와 대응하며, 뇌파 주파수 대역이 R 값 구간에 매핑된다.
+> **Hypothesis**: Neuronal electrical signals (action potentials, brainwaves) correspond to
+> the gap structure of the R(n) spectrum, with brainwave frequency bands mapping to R value intervals.
 
-## 배경
+## Background
 
-뇌파 주파수 대역:
+Brainwave frequency bands:
 ```
-  델타(δ): 0.5-4 Hz   — 깊은 수면
-  세타(θ): 4-8 Hz     — 명상, REM
-  알파(α): 8-13 Hz    — 이완, 눈감음
-  베타(β): 13-30 Hz   — 집중, 각성
-  감마(γ): 30-100 Hz  — 고차 인지, 의식 통합
+  Delta(δ): 0.5-4 Hz   — Deep sleep
+  Theta(θ): 4-8 Hz     — Meditation, REM
+  Alpha(α): 8-13 Hz    — Relaxation, eyes closed
+  Beta(β): 13-30 Hz   — Focus, arousal
+  Gamma(γ): 30-100 Hz  — Higher cognition, consciousness integration
 ```
 
-## R 스펙트럼 대응
+## R Spectrum Correspondence
 
 ```
-  R 구간              뇌파       상태        n
+  R interval          Brainwave   State         n
   ─────────          ─────      ─────      ─────
-  R < 1 (3/4)         δ         깊은수면    n=2
-  R = 1               α-θ 경계  이완 균형   n=6 ⭐
-  1 < R < 7/6         간극!     "전이 구간" 존재하지 않음!
-  R = 7/6             α         이완        n=4
+  R < 1 (3/4)         δ         Deep sleep    n=2
+  R = 1               α-θ boundary  Relaxation balance   n=6 ⭐
+  1 < R < 7/6         Gap!      "Transition zone" Does not exist!
+  R = 7/6             α         Relaxation    n=4
   7/6 < R < 4/3       ?         ?
-  R ≈ 4/3             θ 상단    명상        n=3
-  R > 2               β         집중
-  R > 10              γ         고차인지
+  R ≈ 4/3             θ upper    Meditation    n=3
+  R > 2               β         Focus
+  R > 10              γ         Higher cognition
 ```
 
-### 활동전위와 D(n)
+### Action Potential and D(n)
 
 ```
-  활동전위 (action potential):
-    안정 전위: -70mV (D=0 at n=6 → 균형)
-    역치: -55mV (D 부호 변화? → n=2에서 D=-1 → 음!)
-    발화: +40mV (D>0 → 큰 양의 비대칭)
-    과분극: -90mV (D의 극값?)
+  Action potential:
+    Resting potential: -70mV (D=0 at n=6 → balance)
+    Threshold: -55mV (D sign change? → n=2 where D=-1 → negative!)
+    Firing: +40mV (D>0 → large positive asymmetry)
+    Hyperpolarization: -90mV (D extremum?)
 
   D(n) = σφ - nτ:
-    D(2) = -1: 유일한 음수 = "역치 이하" (과분극?)
-    D(6) = 0: 영점 = "안정 전위" (균형)
-    D(n>6) > 0: 양수 = "탈분극/발화"
+    D(2) = -1: Only negative = "subthreshold" (hyperpolarization?)
+    D(6) = 0: Zero point = "resting potential" (balance)
+    D(n>6) > 0: Positive = "depolarization/firing"
 
-  ASCII: 활동전위 vs D(n)
+  ASCII: Action potential vs D(n)
 
-  전압/D
+  Voltage/D
   +40 |          ╱╲
       |        ╱    ╲          D>0
   0   |──────╱──────╲────     D=0 (n=6)
       |    ╱          ╲╲
-  -55 |──╱──────────────╲──  역치 (D(2)=-1)
-  -70 |╱                  ╲  안정전위
-  -90 |                    ╲ 과분극
-      +──────────────────→ 시간/n
+  -55 |──╱──────────────╲──  Threshold (D(2)=-1)
+  -70 |╱                  ╲  Resting potential
+  -90 |                    ╲ Hyperpolarization
+      +──────────────────→ Time/n
 ```
 
-### 뇌파 동기화와 Λ(6)=0
+### Brainwave Synchronization and Λ(6)=0
 
 ```
-  뇌파 동기화:
-    동기: 뉴런 집단이 같은 주파수로 발화 → 의식
-    비동기: 각자 다른 주파수 → 무의식/혼란
+  Brainwave synchronization:
+    Synchronous: Neuron populations fire at same frequency → consciousness
+    Asynchronous: Each at different frequency → unconsciousness/confusion
 
-  Λ(n) = 산술적 Lyapunov:
-    Λ(6) = 0: "임계점" = 동기와 비동기의 경계
-    Λ < 0: "과동기" = 간질?
-    Λ > 0: "비동기" = 정상 각성
+  Λ(n) = Arithmetic Lyapunov:
+    Λ(6) = 0: "Critical point" = boundary between sync and async
+    Λ < 0: "Hypersynchrony" = epilepsy?
+    Λ > 0: "Asynchrony" = normal arousal
 
-  예측: 의식 상태는 Λ ≈ 0 근처에서 진동
-    깊은수면: Λ < 0 (과동기, 서파)
-    각성: Λ > 0 (비동기, 빠른파)
-    의식통합: Λ = 0 (임계점, 감마 동기화?)
+  Prediction: Consciousness state oscillates around Λ ≈ 0
+    Deep sleep: Λ < 0 (hypersynchrony, slow waves)
+    Arousal: Λ > 0 (asynchrony, fast waves)
+    Consciousness integration: Λ = 0 (critical point, gamma synchronization?)
 ```
 
-## 검증 방향
+## Verification Direction
 
-1. [ ] EEG 주파수 대역과 R 구간의 정량적 매핑
-2. [ ] 간질 환자 뇌파와 Λ 비교
-3. [ ] 의식 수준(BIS index)과 Λ 상관
+1. [ ] Quantitative mapping between EEG frequency bands and R intervals
+2. [ ] Compare epilepsy patient brainwaves with Λ
+3. [ ] Correlation between consciousness level (BIS index) and Λ
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★★
+## Judgment: 🟧 Structural Analogy | Impact: ★★★★

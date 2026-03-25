@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""이중 메커니즘의 반전비가 골든존 상수와 관련되는가?"""
+"""Are the inversion ratios of dual mechanisms related to golden zone constants?"""
 import torch, torch.nn as nn, torch.nn.functional as F, numpy as np, copy, math
 from sklearn.datasets import load_breast_cancer, load_iris, load_wine, load_digits
 from sklearn.preprocessing import StandardScaler
@@ -52,7 +52,7 @@ def analyze(name, X, y, normal_label, n_trials=5):
     return np.mean(int_ratios), np.std(int_ratios), np.mean(inter_ratios), np.std(inter_ratios)
 
 print("="*60)
-print("이중 메커니즘 × 골든존 상수")
+print("Dual Mechanism × Golden Zone Constant")
 print("="*60)
 
 datasets = [
@@ -73,12 +73,12 @@ for name, X, y, nl in datasets:
     all_int.append(ir_m); all_inter.append(jr_m)
     print(f"  {name:>15} {ir_m:>10.4f} ± {ir_s:>6.4f} {jr_m:>12.4f} ± {jr_s:>6.4f}")
 
-print(f"\n  골든존 상수 비교:")
-print(f"    평균 int_ratio:   {np.mean(all_int):.4f}")
+print(f"\n  Golden Zone Constant Comparison:")
+print(f"    Mean int_ratio:   {np.mean(all_int):.4f}")
 print(f"    1/e:              {1/math.e:.4f}")
-print(f"    오차:             {abs(np.mean(all_int)-1/math.e):.4f} ({abs(np.mean(all_int)-1/math.e)/(1/math.e)*100:.1f}%)")
-print(f"    1/2-ln(4/3):      {0.5-math.log(4/3):.4f} (골든존 하한)")
-print(f"    평균 inter_ratio: {np.mean(all_inter):.4f}")
+print(f"    Error:            {abs(np.mean(all_int)-1/math.e):.4f} ({abs(np.mean(all_int)-1/math.e)/(1/math.e)*100:.1f}%)")
+print(f"    1/2-ln(4/3):      {0.5-math.log(4/3):.4f} (Golden zone lower bound)")
+print(f"    Mean inter_ratio: {np.mean(all_inter):.4f}")
 print(f"    e:                {math.e:.4f}")
-print(f"    오차:             {abs(np.mean(all_inter)-math.e):.4f}")
-print(f"\n완료")
+print(f"    Error:            {abs(np.mean(all_inter)-math.e):.4f}")
+print(f"\nComplete")

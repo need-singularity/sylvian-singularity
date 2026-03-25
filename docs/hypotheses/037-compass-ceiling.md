@@ -1,46 +1,46 @@
-# 가설 검토 037: Compass Score 상한 ~83.6% — 빠진 차원 시사 ✅
+# Hypothesis Review 037: Compass Score Upper Bound ~83.6% — Suggesting Missing Dimensions ✅
 
-## 가설
+## Hypothesis
 
-> 26/26 원소를 전부 통합해도 Compass Score가 100%에 도달하지 않으면, 우리 모델에 빠진 차원이 있다.
+> If Compass Score doesn't reach 100% even after integrating all 26/26 elements, there are missing dimensions in our model.
 
-## 검증 결과: ✅ 상한 존재
+## Verification Result: ✅ Upper Bound Exists
 
 ```
-  격자 최적화 (50×50×50):
-  최대 Compass = 83.6%
-  파라미터: D=0.99, P=0.99, I=0.24
+  Grid Optimization (50×50×50):
+  Maximum Compass = 83.6%
+  Parameters: D=0.99, P=0.99, I=0.24
 
-  이론 분석:
+  Theoretical Analysis:
   compass = z/10×0.3 + (1-cusp)×0.3 + p_genius×0.4
   
-  z/10 최대 → 0.30
-  cusp_dist 최소 → 0.30
-  p_genius 최대 ≈ 50% → 0.20
-  이론 상한 = 0.80 = 80%
+  z/10 maximum → 0.30
+  cusp_dist minimum → 0.30
+  p_genius maximum ≈ 50% → 0.20
+  Theoretical upper bound = 0.80 = 80%
 ```
 
-## 빠진 차원
+## Missing Dimensions
 
 ```
-  3상태: 정상 / 천재성 / 기능저하
-  p_genius 최대 = 1/3 ≈ 33% (3상태 균등)
-  → 0.4 × 0.33 = 0.13 (기여 13%)
-  → 100% 도달 불가
+  3 States: Normal / Genius / Dysfunction
+  p_genius maximum = 1/3 ≈ 33% (3 states equal)
+  → 0.4 × 0.33 = 0.13 (contribution 13%)
+  → Cannot reach 100%
 
-  4번째 상태가 필요:
-  정상 / 천재성 / 기능저하 / ???
+  4th state needed:
+  Normal / Genius / Dysfunction / ???
   
-  후보:
-  - 창조 (Creation) — 새로운 것을 만드는 상태
-  - 초월 (Transcendence) — 시스템 자체를 바꾸는 상태
-  - 통합 (Integration) — 3상태를 동시에 보는 메타 상태
+  Candidates:
+  - Creation — State of making something new
+  - Transcendence — State of changing the system itself
+  - Integration — Meta state viewing all 3 states simultaneously
 ```
 
-## 의미
+## Meaning
 
-> 우리 모델(3변수 3상태)로는 80%가 한계. AGI에는 4번째 상태/차원이 필요할 수 있다.
+> Our model (3 variables 3 states) has an 80% limit. AGI may require a 4th state/dimension.
 
 ---
 
-*검증: verify_meta_selfref.py (50³ 격자 최적화)*
+*Verification: verify_meta_selfref.py (50³ grid optimization)*

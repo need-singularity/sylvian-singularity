@@ -1,14 +1,14 @@
-# H-PH-3: τφ=σ 해 {3,14,42}와 핵물리
+# H-PH-3: τφ=σ Solution {3,14,42} and Nuclear Physics
 
-> **가설**: τφ=σ 해에 포함된 14가 핵물리 마법수 14(준마법)와 관련될 수 있다.
+> **Hypothesis**: The 14 contained in the τφ=σ solution may be related to the nuclear physics magic number 14 (quasi-magic).
 
-## 배경
-- τφ=σ 해: {1, 3, 14, 42}
-- 핵 마법수: {2, 8, 20, 28, 50, 82, 126}
-- 14는 공식 마법수 아님, 하지만 준마법(subshell closure)
-- 42는 마법수 아님
+## Background
+- τφ=σ solution: {1, 3, 14, 42}
+- Nuclear magic numbers: {2, 8, 20, 28, 50, 82, 126}
+- 14 is not an official magic number, but quasi-magic (subshell closure)
+- 42 is not a magic number
 
-## 현실적 평가
-약함 (★). 14가 마법수가 아니므로 직접 연결 불가.
+## Realistic Assessment
+Weak (★). Since 14 is not a magic number, direct connection is impossible.
 
-## 난이도: 중 | 파급력: ★
+## Difficulty: Medium | Impact: ★

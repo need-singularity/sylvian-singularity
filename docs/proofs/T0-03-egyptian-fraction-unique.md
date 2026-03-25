@@ -1,12 +1,12 @@
-# T0-03: 5/6 = 1/2 + 1/3 유일한 2항 이집트 분수 분해
+# T0-03: 5/6 = 1/2 + 1/3 Unique 2-term Egyptian Fraction Decomposition
 
-## 명제
+## Proposition
 
-5/6을 단위분수 2개의 합 1/a + 1/b (2 ≤ a < b)로 나타내는 방법은 (a,b) = (2,3)이 유일하다.
+The representation of 5/6 as a sum of 2 unit fractions 1/a + 1/b (2 ≤ a < b) has (a,b) = (2,3) as the unique solution.
 
-## 전수 검사
+## Exhaustive Search
 
-5/6 = 1/a + 1/b 를 만족하는 정수 해를 찾는다. 조건: 2 ≤ a < b.
+Find integer solutions satisfying 5/6 = 1/a + 1/b. Condition: 2 ≤ a < b.
 
 ### a = 2
 
@@ -19,57 +19,57 @@ b = 3, a < b (2 < 3) ✓
 
 ```
 5/6 - 1/3 = 5/6 - 2/6 = 3/6 = 1/2
-b = 2이지만, a < b 조건 위반 (3 < 2 거짓) ✗
+b = 2, but violates a < b condition (3 < 2 false) ✗
 ```
 
 ### a = 4
 
 ```
 5/6 - 1/4 = 10/12 - 3/12 = 7/12
-b = 12/7 ≈ 1.714  (비정수) ✗
+b = 12/7 ≈ 1.714  (non-integer) ✗
 ```
 
 ### a = 5
 
 ```
 5/6 - 1/5 = 25/30 - 6/30 = 19/30
-b = 30/19 ≈ 1.579  (비정수) ✗
+b = 30/19 ≈ 1.579  (non-integer) ✗
 ```
 
 ### a ≥ 6
 
 ```
-1/a ≤ 1/6일 때:
+When 1/a ≤ 1/6:
 1/a + 1/b < 1/6 + 1/7 = 13/42 ≈ 0.310 < 5/6 ✗
 ```
 
-더 정밀하게: a ≥ 6이면 1/b = 5/6 - 1/a ≥ 5/6 - 1/6 = 4/6이므로 b ≤ 3/2, 즉 b = 1. 그런데 b > a ≥ 6이어야 하므로 모순. ✗
+More precisely: if a ≥ 6, then 1/b = 5/6 - 1/a ≥ 5/6 - 1/6 = 4/6, so b ≤ 3/2, i.e., b = 1. But b > a ≥ 6 is required, which is a contradiction. ✗
 
-## 결론
+## Conclusion
 
 ```
-(a, b) = (2, 3) 이 유일한 해
+(a, b) = (2, 3) is the unique solution
 5/6 = 1/2 + 1/3  ∎
 ```
 
-## 검증
+## Verification
 
 ```
 1/2 + 1/3 = 3/6 + 2/6 = 5/6 = 0.833333...  ✓
 ```
 
-## 의미
+## Significance
 
-- 5/6은 2항 이집트 분수로 유일하게 표현됨
-- 이 유일성이 모델 상수 {1/2, 1/3}의 선택을 제약함
-- 3항으로 확장하면 1/2 + 1/3 + 1/6 = 1 (완전성, T1-01)
+- 5/6 has a unique 2-term Egyptian fraction representation
+- This uniqueness constrains the choice of model constants {1/2, 1/3}
+- Extends to 3 terms: 1/2 + 1/3 + 1/6 = 1 (completeness, T1-01)
 
-## 근거
+## Evidence
 
-- 이집트 분수 이론 (Rhind Papyrus, c. 1650 BCE)
-- 단위분수 분해의 정수론
+- Egyptian fraction theory (Rhind Papyrus, c. 1650 BCE)
+- Number theory of unit fraction decomposition
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T1-01 (완전성: 1/2 + 1/3 + 1/6 = 1)
-- T1-02 (상수 관계식)
+- T1-01 (Completeness: 1/2 + 1/3 + 1/6 = 1)
+- T1-02 (Constant relations)

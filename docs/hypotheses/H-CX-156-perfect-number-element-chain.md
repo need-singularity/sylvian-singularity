@@ -1,34 +1,34 @@
-# H-CX-156: 완전수 원소 체인 — C(6) -> Ni(28) -> ?(496)
+# H-CX-156: Perfect Number Element Chain — C(6) -> Ni(28) -> ?(496)
 
-> Z=6(C): 생명 기질, sigma=12, tau=4, phi=2
-> Z=28(Ni): 촉매, sigma=56, tau=6, phi=12=sigma(6)
-> Z=496: 존재 불가 (원소 118까지)
-> 두 완전수 원소의 연결: phi(28)=sigma(6)=12. 세 번째는 양자 세계?
+> Z=6(C): substrate of life, sigma=12, tau=4, phi=2
+> Z=28(Ni): catalyst, sigma=56, tau=6, phi=12=sigma(6)
+> Z=496: impossible (elements only up to 118)
+> Connection between two perfect number elements: phi(28)=sigma(6)=12. Third one in quantum world?
 
-## 배경
+## Background
 
-완전수(perfect number)는 자기 자신을 제외한 약수의 합이 자기 자신과 같은 수이다.
+A perfect number is a number where the sum of its proper divisors equals itself.
 - P1 = 6: 1 + 2 + 3 = 6
 - P2 = 28: 1 + 2 + 4 + 7 + 14 = 28
-- P3 = 496: 원소 번호 범위(Z <= 118)를 초과
+- P3 = 496: exceeds atomic number range (Z <= 118)
 
-처음 두 완전수가 원소 번호에 해당하며, 각 원소는 화학적으로 중요하다:
+The first two perfect numbers correspond to atomic numbers, and each element is chemically important:
 
-| 속성 | Z=6 (탄소, C) | Z=28 (니켈, Ni) |
+| Property | Z=6 (Carbon, C) | Z=28 (Nickel, Ni) |
 |------|-------------|----------------|
-| 화학적 역할 | 생명의 기질 (유기화학) | 촉매, 합금, 효소 보조인자 |
+| Chemical role | substrate of life (organic chemistry) | catalyst, alloy, enzyme cofactor |
 | sigma(Z) | 12 | 56 |
 | tau(Z) | 4 | 6 = P1 |
 | phi(Z) | 2 | 12 = sigma(6) |
-| 완전수 성질 | sigma(6)/6 = 2 | sigma(28)/28 = 2 |
+| Perfect number property | sigma(6)/6 = 2 | sigma(28)/28 = 2 |
 
-핵심 연결:
-- **phi(28) = sigma(6) = 12**: 두 번째 완전수의 토션트가 첫 번째 완전수의 약수합
-- **tau(28) = 6 = P1**: 두 번째 완전수의 약수 개수가 첫 번째 완전수 자체
-- 이 두 관계는 "완전수 체인"을 형성한다
+Key connections:
+- **phi(28) = sigma(6) = 12**: totient of second perfect number equals divisor sum of first perfect number
+- **tau(28) = 6 = P1**: divisor count of second perfect number equals first perfect number itself
+- These two relationships form a "perfect number chain"
 
 ```
-완전수 원소 체인:
+Perfect number element chain:
 
   C(6) ----phi(28)=sigma(6)=12----> Ni(28)
     |                                  |
@@ -39,81 +39,81 @@
   phi(6)=2          phi(28)=12
 ```
 
-## 예측
+## Predictions
 
-| 관계식 | 값 | 검증 |
+| Relation | Value | Verification |
 |--------|-----|------|
-| phi(28) = sigma(6) | 12 = 12 | 산술 정확 |
-| tau(28) = 6 = P1 | 6 = 6 | 산술 정확 |
-| sigma(6)/6 = 2 | 완전수 정의 | 자명 |
-| sigma(28)/28 = 2 | 완전수 정의 | 자명 |
-| phi(28)/phi(6) = 6 = P1 | 12/2 = 6 | 산술 정확 |
-| sigma(28)/sigma(6) = 56/12 = 14/3 | 4.667 | 특별한 값? |
+| phi(28) = sigma(6) | 12 = 12 | arithmetically exact |
+| tau(28) = 6 = P1 | 6 = 6 | arithmetically exact |
+| sigma(6)/6 = 2 | perfect number definition | trivial |
+| sigma(28)/28 = 2 | perfect number definition | trivial |
+| phi(28)/phi(6) = 6 = P1 | 12/2 = 6 | arithmetically exact |
+| sigma(28)/sigma(6) = 56/12 = 14/3 | 4.667 | special value? |
 
-P3 = 496으로의 확장 예측:
-- tau(496) = ? -> P1 또는 P2와 관련?
-- phi(496) = ? -> sigma(28)=56과 관련?
+Extension predictions to P3 = 496:
+- tau(496) = ? -> related to P1 or P2?
+- phi(496) = ? -> related to sigma(28)=56?
 
 ```python
-# 검증
+# Verification
 from sympy import divisor_sigma, totient, divisor_count
 # P3 = 496
-print(f"tau(496) = {divisor_count(496)}")    # 예측: P1 또는 P2 관련
-print(f"phi(496) = {totient(496)}")          # 예측: sigma(28) 관련
-print(f"sigma(496) = {divisor_sigma(496)}")  # 정의상 992
+print(f"tau(496) = {divisor_count(496)}")    # Prediction: related to P1 or P2
+print(f"phi(496) = {totient(496)}")          # Prediction: related to sigma(28)
+print(f"sigma(496) = {divisor_sigma(496)}")  # By definition: 992
 ```
 
-핵심 예측:
-1. 완전수 체인의 관계 phi(P_{k+1}) = sigma(P_k)가 P3=496에서도 성립하는지
-2. tau(P_{k+1}) = P_k가 일반 패턴인지
-3. 이 체인이 화학적으로도 의미가 있는지 (Z=496은 존재하지 않으므로 물리적 한계)
+Key predictions:
+1. Whether the perfect number chain relation phi(P_{k+1}) = sigma(P_k) holds for P3=496
+2. Whether tau(P_{k+1}) = P_k is a general pattern
+3. Whether this chain is also chemically meaningful (physical limit since Z=496 does not exist)
 
-## 검증 방법
+## Verification Methods
 
-**산술 검증 (즉시):**
-1. phi(28) = 12 = sigma(6) 확인
-2. tau(28) = 6 확인
-3. phi(496), tau(496), sigma(496) 계산
-4. phi(496) = sigma(28) = 56 인지 확인
-5. tau(496) = 28 인지 확인
+**Arithmetic verification (immediate):**
+1. Confirm phi(28) = 12 = sigma(6)
+2. Confirm tau(28) = 6
+3. Calculate phi(496), tau(496), sigma(496)
+4. Confirm whether phi(496) = sigma(28) = 56
+5. Confirm whether tau(496) = 28
 
-**일반화 테스트:**
-- 모든 완전수 쌍 (P_k, P_{k+1})에서 phi(P_{k+1}) = sigma(P_k) 확인
-- P4 = 8128에서도 패턴 성립 확인
-- 성립하면 정수론 정리로 증명 시도
+**Generalization test:**
+- Confirm phi(P_{k+1}) = sigma(P_k) for all perfect number pairs (P_k, P_{k+1})
+- Confirm pattern holds for P4 = 8128
+- If it holds, attempt to prove as a number theory theorem
 
-**텍사스 명사수 검증:**
-- 귀무가설: 임의의 두 수 a, b에서 phi(b) = sigma(a) 확률
-- 완전수 쌍에서 이 관계가 우연인지 p-value 계산
+**Texas Sharpshooter verification:**
+- Null hypothesis: probability of phi(b) = sigma(a) for arbitrary two numbers a, b
+- Calculate p-value for whether this relationship in perfect number pairs is coincidental
 
-**화학적 의미:**
-- C(6): 4결합, 유기화학의 기초, 생명 필수
-- Ni(28): 수소화 촉매, 니켈-철 운석, 지구 핵 구성 원소
-- 두 원소의 화학적 연결: 유기 금속 화학, 니켈 촉매 유기 반응
+**Chemical significance:**
+- C(6): 4-bond, foundation of organic chemistry, essential for life
+- Ni(28): hydrogenation catalyst, nickel-iron meteorites, constituent of Earth's core
+- Chemical connection between two elements: organometallic chemistry, nickel-catalyzed organic reactions
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-155**: sigma*phi/(n*tau)=1 전원소 스캔 (R(6)=1)
-- **H-CX-153**: N*ln((N+1)/N) 수열 (sigma(6)=12)
-- 마스터 공식: sigma_{-1}(6) = 2
-- 가설 090: 마스터 공식 = 완전수 6
-- 가설 098: 6은 진약수역수합=1인 유일한 완전수
+- **H-CX-155**: sigma*phi/(n*tau)=1 full element scan (R(6)=1)
+- **H-CX-153**: N*ln((N+1)/N) sequence (sigma(6)=12)
+- Master formula: sigma_{-1}(6) = 2
+- Hypothesis 090: master formula = perfect number 6
+- Hypothesis 098: 6 is the unique perfect number with sum of reciprocals of proper divisors = 1
 
-## 한계
+## Limitations
 
-1. **phi(28) = sigma(6) = 12**: 이 등식이 성립하는 이유에 대한 증명이 필요
-   - 28 = 2^2 * 7이므로 phi(28) = 28*(1-1/2)*(1-1/7) = 12
-   - 6 = 2 * 3이므로 sigma(6) = (1+2)(1+3) = 12
-   - 둘 다 12가 되는 것은 구조적인지 우연인지 판단 필요
-2. **Z=496 이상은 물리적 원소가 아님**: 체인의 확장이 화학과 무관해짐
-3. **완전수가 매우 드묾**: 검증 가능한 사례가 극소수 (P1~P4 정도)
-4. **tau(28) = 6 = P1**: 이것은 28=2^2*7의 성질이며 완전수와 직접 관련이 약할 수 있음
-5. **ad hoc 연결 위험**: 여러 정수론 함수를 조합하면 어딘가에서 일치가 나옴
+1. **phi(28) = sigma(6) = 12**: proof needed for why this equality holds
+   - 28 = 2^2 * 7, so phi(28) = 28*(1-1/2)*(1-1/7) = 12
+   - 6 = 2 * 3, so sigma(6) = (1+2)(1+3) = 12
+   - Whether both giving 12 is structural or coincidental needs to be determined
+2. **Z=496 and above are not physical elements**: chain extension becomes unrelated to chemistry
+3. **Perfect numbers are very rare**: extremely few verifiable cases (roughly P1~P4)
+4. **tau(28) = 6 = P1**: this is a property of 28=2^2*7 and may not be directly related to perfect numbers
+5. **Risk of ad hoc connections**: combining multiple number-theoretic functions will find matches somewhere
 
-## 검증 상태
+## Verification Status
 
-- [ ] P3=496에서 phi(496) = sigma(28) 확인
-- [ ] P4=8128에서 패턴 확인
-- [ ] 일반 증명 시도
-- [ ] 텍사스 명사수 p-value
-- 현재: **미검증**
+- [ ] Confirm phi(496) = sigma(28) at P3=496
+- [ ] Confirm pattern at P4=8128
+- [ ] Attempt general proof
+- [ ] Texas Sharpshooter p-value
+- Currently: **unverified**

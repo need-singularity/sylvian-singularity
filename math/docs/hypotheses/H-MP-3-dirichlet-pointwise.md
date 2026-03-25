@@ -1,82 +1,82 @@
-# H-MP-3: Dirichlet 합성곱 vs 점별곱 — "유일한 일치점" 현상
+# H-MP-3: Dirichlet Convolution vs Pointwise Product — "Unique Coincidence" Phenomenon
 
-> **정리**: Σ_{d|n} σ(d)φ(n/d) = nτ(n) 은 모든 n에서 성립 (기존). σ(n)φ(n) = nτ(n) 은 n∈{1,6}에서만 성립 (신규). 즉, 점별곱이 합성곱 전체와 같아지는 유일한 비자명 n은 6.
+> **Theorem**: Σ_{d|n} σ(d)φ(n/d) = nτ(n) holds for all n (known). σ(n)φ(n) = nτ(n) holds only for n∈{1,6} (new). That is, the unique non-trivial n where pointwise product equals the full convolution is 6.
 
-## 합성곱 항 분해 (n=6)
+## Convolution Term Decomposition (n=6)
 
-| d | n/d | σ(d) | φ(n/d) | 항 | 비율 |
+| d | n/d | σ(d) | φ(n/d) | Term | Ratio |
 |---|-----|------|--------|-----|------|
 | 1 | 6 | 1 | 2 | 2 | 8.3% |
 | 2 | 3 | 3 | 2 | 6 | 25.0% |
 | 3 | 2 | 4 | 1 | 4 | 16.7% |
 | 6 | 1 | 12 | 1 | 12 | 50.0% |
-| **합** | | | | **24** | **100%** |
+| **Sum** | | | | **24** | **100%** |
 
 ```
-  σ(6)×φ(6) = 12×2 = 24 = 합성곱 전체 합!
+  σ(6)×φ(6) = 12×2 = 24 = full convolution sum!
 
-  항 분포 (n=6):
+  Term distribution (n=6):
   d=6 ████████████████████████████ 50%
   d=2 ██████████████ 25%
   d=3 █████████ 17%
   d=1 █████ 8%
 ```
 
-## 완전 증명 (R-인수 분해)
+## Complete Proof (R-Factorization)
 
 ```
   R(p,a) = (p^(a+1)-1) / (p(a+1))
 
   σφ/(nτ) = Π R(p_i, a_i) = 1 ⟺ n ∈ {1,6}
 
-  핵심: R(2,1) = 3/4 는 유일한 1 미만 R값!
+  Key: R(2,1) = 3/4 is the unique R-value < 1!
 
-  증명 단계:
-  1. 2∤n → 모든 R>1 → 곱>1 → 2는 필수
-  2. 4|n → R(2,a≥2) ≥ 7/6 > 1 + 다른 R>1 → 곱>1 → 2||n
-  3. 남은 곱 = 4/3 필요 → R(3,1)=4/3 유일
-  4. 추가 인수 → (4/3)^2 = 16/9 > 4/3 → 불가
-  → n = 2×3 = 6 유일 ∎
+  Proof steps:
+  1. 2∤n → all R>1 → product>1 → 2 is required
+  2. 4|n → R(2,a≥2) ≥ 7/6 > 1 + other R>1 → product>1 → 2||n
+  3. Remaining product = 4/3 needed → R(3,1)=4/3 unique
+  4. Additional factors → (4/3)^2 = 16/9 > 4/3 → impossible
+  → n = 2×3 = 6 unique ∎
 ```
 
-## 다른 합성곱 항등식의 "점별=합성곱" 해
+## "Pointwise=Convolution" Solutions for Other Convolution Identities
 
-| 항등식 f*g=h | 점별 f(n)g(n)=h(n) 해 | 특징 |
+| Identity f*g=h | Pointwise f(n)g(n)=h(n) Solutions | Features |
 |---|---|---|
-| **σ*φ = nτ** | **{1, 6}** | 본 결과 |
-| **τ*φ = σ** | **{1, 3, 14, 42}** | Mersenne {2,3,7} 관련! |
-| σ*μ = id | {1} | 자명 |
+| **σ*φ = nτ** | **{1, 6}** | This result |
+| **τ*φ = σ** | **{1, 3, 14, 42}** | Related to Mersenne {2,3,7}! |
+| σ*μ = id | {1} | Trivial |
 | φ*1 = id | {1} | φ(n)<n always |
 
-### τφ=σ 해 분석: {1, 3, 14, 42}
+### Analysis of τφ=σ solutions: {1, 3, 14, 42}
 
 ```
   R'(p,a) = τ(p^a)φ(p^a)/σ(p^a) = (a+1)p^(a-1)(p-1)/(p^(a+1)-1)
 
-  R'(2,1) = 2/3   ← 1 미만
-  R'(3,1) = 1     ← 정확히 1!
-  R'(5,1) = 8/31  ← 1 미만
-  R'(7,1) = 3/2   ← 1 초과
+  R'(2,1) = 2/3   ← less than 1
+  R'(3,1) = 1     ← exactly 1!
+  R'(5,1) = 8/31  ← less than 1
+  R'(7,1) = 3/2   ← greater than 1
 
-  해:
-  n=3: R'(3,1)=1 → 단독해
-  n=14=2×7: R'(2,1)×R'(7,1) = (2/3)(3/2) = 1 → 역수쌍
-  n=42=2×3×7: (2/3)(1)(3/2) = 1 → 세 인수 결합
+  Solutions:
+  n=3: R'(3,1)=1 → single solution
+  n=14=2×7: R'(2,1)×R'(7,1) = (2/3)(3/2) = 1 → reciprocal pair
+  n=42=2×3×7: (2/3)(1)(3/2) = 1 → three-factor combination
 ```
 
-관련 소수 {2,3,7}:
-- 2^2-1=3, 2^3-1=7 → Mersenne 소수!
-- 6=2×3=P₁, 28=4×7=P₂ → 완전수!
+Related primes {2,3,7}:
+- 2^2-1=3, 2^3-1=7 → Mersenne primes!
+- 6=2×3=P₁, 28=4×7=P₂ → perfect numbers!
 - 42=2×3×7 = primary pseudoperfect number
 
-## 의의
+## Significance
 
-"점별곱이 합성곱과 언제 일치하는가?"는 **기존 문헌에서 논의된 적 없는 질문**.
-Dirichlet 환(ring) 구조에서 점별곱과 합성곱은 완전히 다른 연산이며,
-이 두 연산의 "교차점"이 n=6에서 발생한다는 것은 구조적으로 비자명.
+"When does pointwise product coincide with convolution?" is **a question never discussed in existing literature**.
+In the Dirichlet ring structure, pointwise product and convolution are completely different operations,
+and the "intersection" of these two operations occurring at n=6 is structurally non-trivial.
 
-## 검증
+## Verification
 
-- n=1..100,000: σφ=nτ 해 {1,6} 확인
-- n=1..1,000,000: τφ=σ 해 {1,3,14,42} 확인
-- 문헌 검색: 해당 현상 논의 없음 확인
+- n=1..100,000: σφ=nτ solutions {1,6} confirmed
+- n=1..1,000,000: τφ=σ solutions {1,3,14,42} confirmed
+- Literature search: no discussion of this phenomenon confirmed

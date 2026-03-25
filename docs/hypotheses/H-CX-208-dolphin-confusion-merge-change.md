@@ -1,4 +1,4 @@
-# H-CX-208: 돌고래 주파수 혼란 = merge distance 급변
+# H-CX-208: Dolphin Frequency Confusion = Rapid Change in Merge Distance
 
-> 기존 인지 dendrogram이 급격히 재편 = 세상이 달라 보임 = 혼란.
-> H-CX-143(THC dendrogram 재구조화)과 유사 메커니즘.
+> Existing cognitive dendrogram undergoes rapid reorganization = world looks different = confusion.
+> Similar mechanism to H-CX-143 (THC dendrogram restructuring).

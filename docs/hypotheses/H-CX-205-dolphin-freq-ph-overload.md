@@ -1,4 +1,4 @@
-# H-CX-205: 돌고래 주파수 과민 = H0_total 과부하
+# H-CX-205: Dolphin Frequency Hypersensitivity = H0_total Overload
 
-> 376% 뇌활동 증가가 일부 인간에서 '위상 과부하' = 혼란/두통.
-> 너무 빠른 위상 전이(0.1에폭 30x) = 불쾌. H-CX-90 analog.
+> 376% brain activity increase causes 'phase overload' in some humans = confusion/headache.
+> Too rapid phase transitions (0.1 epoch 30x) = discomfort. H-CX-90 analog.

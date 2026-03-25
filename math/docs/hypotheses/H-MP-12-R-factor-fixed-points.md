@@ -1,16 +1,16 @@
-# H-MP-12: R-인수 고정점 해석
+# H-MP-12: R-Factor Fixed Point Analysis
 
-> **가설**: f(p,a) = (p^(a+1)-1)/(p(a+1))의 고정점(f=1)이 존재하지 않는 것 자체가 6의 유일성의 더 깊은 이유이다.
+> **Hypothesis**: The non-existence of fixed points (f=1) for f(p,a) = (p^(a+1)-1)/(p(a+1)) itself is the deeper reason for the uniqueness of 6.
 
-## 배경
-- R78 증명: σφ=nτ ⟺ Π f(p_i,a_i) = 1
-- f(p,a) = 1인 (p,a) 없음 (개별 고정점 불가)
-- 오직 f(2,1)=3/4와 f(3,1)=4/3의 상쇄만 가능
-- "고정점 없는 곱셈적 함수에서 곱=1인 유일한 점"
+## Background
+- R78 proof: σφ=nτ ⟺ Π f(p_i,a_i) = 1
+- No (p,a) such that f(p,a) = 1 (individual fixed points impossible)
+- Only cancellation of f(2,1)=3/4 and f(3,1)=4/3 possible
+- "Unique point where product=1 in multiplicative function without fixed points"
 
-## 검증 방향
-1. [ ] 일반 이론: 곱셈적 f에 개별 고정점이 없을 때 Π f=1의 해 구조
-2. [ ] f(p,a)=c (상수)인 경우의 유사 분석
-3. [ ] 범주론적 해석: multiplicative functions의 monoid
+## Verification Directions
+1. [ ] General theory: Solution structure of Π f=1 when multiplicative f has no individual fixed points
+2. [ ] Similar analysis for cases where f(p,a)=c (constant)
+3. [ ] Category-theoretic interpretation: monoid of multiplicative functions
 
-## 난이도: 고 | 파급력: ★★★
+## Difficulty: High | Impact: ★★★

@@ -1,93 +1,93 @@
-# H-CX-169: 돌고래 주파수 = 음악 음정 × 5³
+# H-CX-169: Dolphin Frequency = Musical Intervals × 5³
 
-> signature 15k/5k = 3:1 = Perfect 12th (옥타브+5도).
+> signature 15k/5k = 3:1 = Perfect 12th (octave+5th).
 > whistle 20k/2k = 10:1. click 30k/5k = 6:1 = tritave+octave.
-> 돌고래 소통이 음악 이론의 정수비 음정을 사용?
+> Dolphin communication uses integer ratio intervals from music theory?
 
-## 검증: ✅ SUPPORTED
+## Verification: ✅ SUPPORTED
 
 ```
-  돌고래 주파수 쌍          비율    음악 음정           확인
+  Dolphin Frequency Pairs    Ratio   Musical Interval     Confirmed
   ─────────────────────────────────────────────────────────
-  signature 15k/5k         3:1    Perfect 12th        ✓ 정확
-                                  (옥타브+완전5도)
-  click_low/signature_low  6:1    tritave+octave      ✓ 정확
-      30k/5k                      (3옥타브+완전5도)
-  whistle 20k/2k           10:1   —                   ✓ 정확
-  click/whistle 30k/5k     6:1    (= P₁, 완전수)      ✓ H-CX-167
-  signature 15k/5k × 2     6:1    동일 구조 반복       ✓
+  signature 15k/5k         3:1    Perfect 12th        ✓ Exact
+                                  (octave+perfect 5th)
+  click_low/signature_low  6:1    tritave+octave      ✓ Exact
+      30k/5k                      (3 octaves+perfect 5th)
+  whistle 20k/2k           10:1   —                   ✓ Exact
+  click/whistle 30k/5k     6:1    (= P₁, perfect number)  ✓ H-CX-167
+  signature 15k/5k × 2     6:1    Same structure repeated  ✓
 ```
 
-## 배경
+## Background
 
-음악 이론에서 "완전 음정(perfect intervals)"은 주파수의 정수비로 정의된다:
+In music theory, "perfect intervals" are defined by integer frequency ratios:
 
 ```
-  음정             비율    이름
+  Interval         Ratio   Name
   ──────────────────────────────
   Unison           1:1
-  Octave           2:1    완전 8도
-  Perfect 5th      3:2    완전 5도
-  Perfect 4th      4:3    완전 4도
-  Perfect 12th     3:1    옥타브 + 완전 5도
+  Octave           2:1    Perfect 8th
+  Perfect 5th      3:2    Perfect 5th
+  Perfect 4th      4:3    Perfect 4th
+  Perfect 12th     3:1    Octave + Perfect 5th
   Tritave          3:1    (= Perfect 12th)
 ```
 
-돌고래의 주파수 비율이 이 정수비 음정과 정확히 일치한다:
+Dolphin frequency ratios match these integer ratio intervals exactly:
 
 1. **Signature whistle (15kHz / 5kHz = 3:1)**: Perfect 12th
-   - 개체를 식별하는 "이름" 신호
-   - 가장 협화적인 비율 중 하나 (옥타브 다음)
+   - "Name" signal that identifies individuals
+   - One of the most consonant ratios (after octave)
 
 2. **Click/Signature (30kHz / 5kHz = 6:1)**: 2 octaves + Perfect 5th
-   - 탐지와 소통의 경계가 음악적으로도 완전한 비율
-   - 6 = 완전수 (H-CX-167)
+   - The boundary between detection and communication is also musically perfect
+   - 6 = perfect number (H-CX-167)
 
-3. **Whistle 범위 (20kHz / 2kHz = 10:1)**
-   - 약 3.3 옥타브에 해당
-   - 인간 피아노 건반 범위(~7 옥타브)의 절반
+3. **Whistle range (20kHz / 2kHz = 10:1)**
+   - Approximately 3.3 octaves
+   - Half the range of a human piano keyboard (~7 octaves)
 
 ```
-  주파수 공간을 음악적으로 배치:
+  Musical arrangement of frequency space:
 
   2kHz ──── 5kHz ──── 15kHz ──── 20kHz ──── 30kHz ──── 130kHz
   │         │         │          │          │           │
   whistle   signature  sig_high   whistle    click       click
   low       low        3:1↑       high       low         high
             │←── P.12th ──→│     │←─ 6:1 ──→│
-            │←─────── 완전수 비율의 음악 ──────→│
+            │←─────── Music of perfect number ratios ──────→│
 ```
 
-## 예측
+## Predictions
 
-1. 돌고래의 signature whistle 내부 주파수 변조(FM)도 정수비 음정을 따를 것
-2. 돌고래 간 "듀엣" 시 주파수 비율이 협화 음정(3:2, 4:3 등)에 수렴할 것
-3. 에코로케이션 click train의 반복률(click rate)도 음악적 리듬 비율을 가질 수 있음
-4. 고래류(혹등고래 노래)의 주파수 구조에서도 유사한 정수비 패턴
+1. Frequency modulation (FM) within dolphin signature whistles will also follow integer ratio intervals
+2. During dolphin "duets", frequency ratios will converge to consonant intervals (3:2, 4:3, etc.)
+3. Echolocation click train repetition rates (click rate) may have musical rhythm ratios
+4. Similar integer ratio patterns in cetacean frequency structures (humpback whale songs)
 
-## 검증 방법
+## Verification Methods
 
-- 산술 검증: 완료 (위 비율 테이블)
-- 음향학적 검증: 돌고래 녹음 데이터의 스펙트로그램에서 실제 주파수비 측정
-- 통계적 검증: 무작위 주파수 대비 정수비(특히 3:1, 6:1) 출현 빈도
-- 교차 종 검증: 고래류, 박쥐의 음향 데이터에서 동일 패턴 탐색
+- Arithmetic verification: Complete (see ratio table above)
+- Acoustic verification: Measure actual frequency ratios from spectrograms of dolphin recordings
+- Statistical verification: Frequency of integer ratios (especially 3:1, 6:1) compared to random frequencies
+- Cross-species verification: Search for same patterns in cetacean and bat acoustic data
 
-## 관련 가설
+## Related Hypotheses
 
-- **H290**: 음악 이론과 의식엔진의 관계
-- **H-CX-133**: whistle 비율 = 골든존
-- **H-CX-161**: 돌고래 전주파수 = 40Hz × 완전수 상수 × 5³
-- **H-CX-167**: click/whistle = 6 = 완전수
+- **H290**: Relationship between music theory and consciousness engine
+- **H-CX-133**: whistle ratio = Golden Zone
+- **H-CX-161**: Dolphin full frequency = 40Hz × perfect number constant × 5³
+- **H-CX-167**: click/whistle = 6 = perfect number
 
-## 한계
+## Limitations
 
-- 주파수 "대표값" 선택에 자유도가 있음 (범위의 하한/상한/중간값)
-- 정수비가 나오는 것은 주파수가 10의 배수 근사값이기 때문일 수 있음
-- 실제 돌고래 신호는 주파수 변조(FM)가 심하여 단일 주파수로 대표하기 어려움
-- 음악 음정과의 연결이 "아름다운 해석"이지 인과적 설명은 아님
-- 인간 음악 이론을 동물에 투영하는 것의 인류중심적 편향 가능성
+- Flexibility in selecting frequency "representative values" (range lower/upper/middle)
+- Integer ratios may occur because frequencies are multiples of 10 approximations
+- Actual dolphin signals have heavy frequency modulation (FM), difficult to represent as single frequency
+- Connection to musical intervals is a "beautiful interpretation", not a causal explanation
+- Possible anthropocentric bias in projecting human music theory onto animals
 
-## 검증 상태
+## Verification Status
 
-✅ SUPPORTED. 주파수 비율이 정수비 음정과 일치하는 것은 산술적으로 확인.
-실제 돌고래 녹음 데이터에서의 정밀 측정은 미실행.
+✅ SUPPORTED. Frequency ratios matching integer ratio intervals confirmed arithmetically.
+Precise measurements from actual dolphin recordings not yet performed.

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""가설 324 검증: LLM 환각 탐지 — toy transformer에서 head group tension
+"""Hypothesis 324 verification: LLM hallucination detection — head group tension in toy transformer
 
-방법:
-1. 작은 transformer (2-layer, 4-head)를 간단한 사실 데이터로 학습
-2. Attention head를 A/G 그룹으로 분할
-3. 사실(true) vs 거짓(false) 문장에서 head group tension 차이 측정
-4. AUROC 계산
+Method:
+1. Train small transformer (2-layer, 4-head) on simple fact data
+2. Split attention heads into A/G groups
+3. Measure head group tension difference between true vs false sentences
+4. Calculate AUROC
 """
 
 import torch
@@ -18,11 +18,11 @@ np.random.seed(42)
 torch.manual_seed(42)
 
 print("=" * 70)
-print("가설 324 검증: LLM 환각 탐지 — Toy Transformer Head Tension")
+print("Hypothesis 324 Verification: LLM Hallucination Detection — Toy Transformer Head Tension")
 print("=" * 70)
 
 # ─────────────────────────────────────────
-# 1. Toy Transformer 구현
+# 1. Toy Transformer Implementation
 # ─────────────────────────────────────────
 
 class ToyMultiHeadAttention(nn.Module):
@@ -104,11 +104,11 @@ class ToyTransformer(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 2. 사실/거짓 데이터셋 생성
+# 2. True/False Dataset Generation
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("1. Toy 사실/거짓 데이터셋 생성")
+print("1. Toy True/False Dataset Generation")
 print("─" * 70)
 
 vocab_size = 100
@@ -116,11 +116,11 @@ seq_len = 16
 n_train = 2000
 n_test = 500
 
-# 패턴 기반 사실/거짓 생성
-# "사실": 특정 토큰 패턴이 일관됨 (A→B, C→D 등)
-# "거짓": 패턴이 위반됨 (A→D, C→B 등)
+# Pattern-based true/false generation
+# "True": Specific token patterns are consistent (A→B, C→D etc)
+# "False": Patterns are violated (A→D, C→B etc)
 
-# 규칙: 토큰 i*10 뒤에 토큰 i*10+1 나오면 사실, i*10+5 나오면 거짓
+# Rule: token i*10 followed by token i*10+1 is true, i*10+5 is false
 def generate_data(n_samples):
     data = []
     labels = []
@@ -128,7 +128,7 @@ def generate_data(n_samples):
         seq = np.random.randint(0, vocab_size, size=seq_len)
         is_true = np.random.random() > 0.5
 
-        # 3~5개 위치에 규칙 삽입
+        # Insert rules at 3~5 positions
         n_rules = np.random.randint(3, 6)
         positions = np.random.choice(seq_len - 1, size=min(n_rules, seq_len - 1), replace=False)
 
@@ -136,9 +136,9 @@ def generate_data(n_samples):
             base = np.random.randint(0, 9) * 10  # 0, 10, 20, ..., 80
             seq[pos] = base
             if is_true:
-                seq[pos + 1] = base + 1  # 규칙 준수
+                seq[pos + 1] = base + 1  # Rule compliant
             else:
-                seq[pos + 1] = base + 5  # 규칙 위반
+                seq[pos + 1] = base + 5  # Rule violation
 
         data.append(seq)
         labels.append(1 if is_true else 0)
@@ -148,15 +148,15 @@ def generate_data(n_samples):
 train_x, train_y = generate_data(n_train)
 test_x, test_y = generate_data(n_test)
 
-print(f"  학습: {n_train} (사실: {(train_y==1).sum().item()}, 거짓: {(train_y==0).sum().item()})")
-print(f"  테스트: {n_test} (사실: {(test_y==1).sum().item()}, 거짓: {(test_y==0).sum().item()})")
+print(f"  Train: {n_train} (true: {(train_y==1).sum().item()}, false: {(train_y==0).sum().item()})")
+print(f"  Test: {n_test} (true: {(test_y==1).sum().item()}, false: {(test_y==0).sum().item()})")
 
 # ─────────────────────────────────────────
-# 3. 모델 학습
+# 3. Model Training
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("2. Toy Transformer 학습")
+print("2. Toy Transformer Training")
 print("─" * 70)
 
 model = ToyTransformer(vocab_size=vocab_size, d_model=64, n_heads=4, n_classes=2)
@@ -198,14 +198,14 @@ model.eval()
 with torch.no_grad():
     logits, _ = model(test_x)
     test_acc = (logits.argmax(dim=-1) == test_y).float().mean().item() * 100
-    print(f"\n  테스트 정확도: {test_acc:.1f}%")
+    print(f"\n  Test accuracy: {test_acc:.1f}%")
 
 # ─────────────────────────────────────────
-# 4. Head Group Tension 측정
+# 4. Head Group Tension Measurement
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("3. Head Group Tension 측정")
+print("3. Head Group Tension Measurement")
 print("─" * 70)
 
 model.eval()
@@ -218,9 +218,9 @@ labels_np = test_y.numpy()
 true_tensions = tensions_np[labels_np == 1]
 false_tensions = tensions_np[labels_np == 0]
 
-print(f"\n  사실 문장 tension: mean={np.mean(true_tensions):.6f} +/- {np.std(true_tensions):.6f}")
-print(f"  거짓 문장 tension: mean={np.mean(false_tensions):.6f} +/- {np.std(false_tensions):.6f}")
-print(f"  비율 (사실/거짓):  {np.mean(true_tensions)/(np.mean(false_tensions)+1e-10):.3f}")
+print(f"\n  True sentence tension: mean={np.mean(true_tensions):.6f} +/- {np.std(true_tensions):.6f}")
+print(f"  False sentence tension: mean={np.mean(false_tensions):.6f} +/- {np.std(false_tensions):.6f}")
+print(f"  Ratio (true/false):  {np.mean(true_tensions)/(np.mean(false_tensions)+1e-10):.3f}")
 
 # Cohen's d
 pooled_std = np.sqrt((np.var(true_tensions) + np.var(false_tensions)) / 2)
@@ -228,16 +228,16 @@ cohen_d = (np.mean(true_tensions) - np.mean(false_tensions)) / (pooled_std + 1e-
 print(f"  Cohen's d:         {cohen_d:+.3f}")
 
 # ─────────────────────────────────────────
-# 5. AUROC 계산 (tension으로 사실/거짓 구분)
+# 5. AUROC Calculation (distinguish true/false with tension)
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("4. AUROC — tension으로 환각(거짓) 탐지")
+print("4. AUROC — Hallucination (false) detection with tension")
 print("─" * 70)
 
 # Simple AUROC calculation
 def compute_auroc(scores, labels):
-    """AUROC: scores가 높을수록 positive(1)."""
+    """AUROC: higher scores mean positive(1)."""
     sorted_idx = np.argsort(-scores)
     sorted_labels = labels[sorted_idx]
 
@@ -264,25 +264,25 @@ def compute_auroc(scores, labels):
 
     return auroc, tpr_list, fpr_list
 
-# 가설: 높은 tension = 사실 (진짜 지식), 낮은 tension = 거짓 (환각)
+# Hypothesis: high tension = true (real knowledge), low tension = false (hallucination)
 auroc_high, tpr1, fpr1 = compute_auroc(tensions_np, labels_np)
-# 반대 방향도 테스트
+# Test opposite direction too
 auroc_low, tpr2, fpr2 = compute_auroc(-tensions_np, labels_np)
 
 best_auroc = max(auroc_high, auroc_low)
-direction = "높은 tension = 사실" if auroc_high >= auroc_low else "낮은 tension = 사실"
+direction = "high tension = true" if auroc_high >= auroc_low else "low tension = true"
 
-print(f"\n  AUROC (높은 tension → 사실): {auroc_high:.4f}")
-print(f"  AUROC (낮은 tension → 사실): {auroc_low:.4f}")
-print(f"  최선 방향: {direction}")
-print(f"  최선 AUROC: {best_auroc:.4f}")
+print(f"\n  AUROC (high tension → true): {auroc_high:.4f}")
+print(f"  AUROC (low tension → true): {auroc_low:.4f}")
+print(f"  Best direction: {direction}")
+print(f"  Best AUROC: {best_auroc:.4f}")
 
 # ─────────────────────────────────────────
-# 6. 정답/오답별 tension 분석
+# 6. Correct/Wrong Answer Tension Analysis
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("5. 정답/오답별 tension (H313 재현)")
+print("5. Correct/Wrong answer tension (H313 reproduction)")
 print("─" * 70)
 
 with torch.no_grad():
@@ -295,26 +295,26 @@ wrong_mask = ~correct_mask
 correct_tensions = tensions_np[correct_mask]
 wrong_tensions = tensions_np[wrong_mask]
 
-print(f"\n  정답 tension: mean={np.mean(correct_tensions):.6f} +/- {np.std(correct_tensions):.6f} (n={len(correct_tensions)})")
+print(f"\n  Correct answer tension: mean={np.mean(correct_tensions):.6f} +/- {np.std(correct_tensions):.6f} (n={len(correct_tensions)})")
 if len(wrong_tensions) > 0:
-    print(f"  오답 tension: mean={np.mean(wrong_tensions):.6f} +/- {np.std(wrong_tensions):.6f} (n={len(wrong_tensions)})")
+    print(f"  Wrong answer tension: mean={np.mean(wrong_tensions):.6f} +/- {np.std(wrong_tensions):.6f} (n={len(wrong_tensions)})")
     ratio_cw = np.mean(correct_tensions) / (np.mean(wrong_tensions) + 1e-10)
-    print(f"  비율 (정답/오답): {ratio_cw:.3f}")
+    print(f"  Ratio (correct/wrong): {ratio_cw:.3f}")
 else:
-    print(f"  오답: 없음 (모두 정답)")
+    print(f"  Wrong answer: None (all correct)")
     ratio_cw = float('inf')
 
 # ─────────────────────────────────────────
-# 7. 거부 메커니즘 테스트 (H314)
+# 7. Rejection Mechanism Test (H314)
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("6. 거부 메커니즘 (H314) — 낮은 tension 거부 시 정확도")
+print("6. Rejection Mechanism (H314) — Accuracy when rejecting low tension")
 print("─" * 70)
 
 reject_ratios = [0.05, 0.10, 0.20, 0.30, 0.50, 0.70, 0.90]
 
-print(f"\n  {'거부율':>8} | {'남은수':>6} | {'정확도':>8} | {'향상':>8} | 바")
+print(f"\n  {'Reject %':>8} | {'Remain':>6} | {'Accuracy':>8} | {'Improve':>8} | Bar")
 print(f"  {'─'*8}─┼─{'─'*6}─┼─{'─'*8}─┼─{'─'*8}─┼─{'─'*30}")
 
 base_acc = np.mean(correct_mask) * 100
@@ -334,11 +334,11 @@ for ratio in reject_ratios:
     print(f"  {ratio:>7.0%} | {kept_total:>6d} | {kept_acc:>7.1f}% | {improvement:>+7.2f}% | {bar}")
 
 # ─────────────────────────────────────────
-# 8. ASCII 그래프: tension 분포
+# 8. ASCII Graph: Tension Distribution
 # ─────────────────────────────────────────
 
 print("\n" + "─" * 70)
-print("7. Tension 분포 (사실 vs 거짓)")
+print("7. Tension Distribution (True vs False)")
 print("─" * 70)
 
 all_min = min(tensions_np.min(), 0)
@@ -351,7 +351,7 @@ false_hist, _ = np.histogram(false_tensions, bins=bin_edges)
 
 max_count = max(true_hist.max(), false_hist.max())
 
-print(f"\n  사실(T) vs 거짓(F) tension 분포:")
+print(f"\n  True(T) vs False(F) tension distribution:")
 print(f"  {'bin':>12} | T  F")
 for i in range(n_bins):
     lo, hi = bin_edges[i], bin_edges[i+1]
@@ -362,36 +362,36 @@ for i in range(n_bins):
         print(f"  {'':>12} | {f_bar}")
 
 # ─────────────────────────────────────────
-# 9. 결론
+# 9. Conclusion
 # ─────────────────────────────────────────
 
 print("\n" + "=" * 70)
-print("결론")
+print("Conclusion")
 print("=" * 70)
 
-print(f"\n  모델 정확도:     {test_acc:.1f}%")
-print(f"  사실/거짓 tension 차이: Cohen's d = {cohen_d:+.3f}")
-print(f"  환각 탐지 AUROC: {best_auroc:.4f}")
-print(f"  방향:            {direction}")
+print(f"\n  Model accuracy:     {test_acc:.1f}%")
+print(f"  True/False tension difference: Cohen's d = {cohen_d:+.3f}")
+print(f"  Hallucination detection AUROC: {best_auroc:.4f}")
+print(f"  Direction:            {direction}")
 
 if best_auroc > 0.80:
-    verdict = "강한 지지 — head tension으로 환각 탐지 실용적"
+    verdict = "Strong support — hallucination detection with head tension is practical"
 elif best_auroc > 0.65:
-    verdict = "약한 지지 — 신호 있으나 단독 탐지 부족"
+    verdict = "Weak support — signal exists but insufficient for standalone detection"
 elif best_auroc > 0.55:
-    verdict = "매우 약한 신호 — 구조는 있으나 거의 랜덤 수준"
+    verdict = "Very weak signal — structure exists but nearly random level"
 else:
-    verdict = "지지 안 됨 — 랜덤 수준"
+    verdict = "Not supported — random level"
 
-print(f"  판정: {verdict}")
-print(f"\n  H313 재현 (정답 vs 오답):")
-print(f"    정답 tension > 오답 tension? {'예' if ratio_cw > 1 else '아니오'} (ratio={ratio_cw:.3f})")
-print(f"\n  H314 재현 (거부 → 정확도):")
-print(f"    10% 거부 시 정확도 향상? 위 표 참조")
+print(f"  Verdict: {verdict}")
+print(f"\n  H313 reproduction (correct vs wrong):")
+print(f"    Correct tension > Wrong tension? {'Yes' if ratio_cw > 1 else 'No'} (ratio={ratio_cw:.3f})")
+print(f"\n  H314 reproduction (rejection → accuracy):")
+print(f"    Accuracy improvement at 10% rejection? See table above")
 
-print(f"\n  ⚠️ 한계:")
-print(f"    - Toy 모델 (64-dim, 4-head) → 실제 LLM과 규모 차이")
-print(f"    - 패턴 기반 합성 데이터 → 실제 사실/환각과 다름")
-print(f"    - Head 분할이 임의적 (head 0,1 vs 2,3)")
-print(f"    - 실제 검증은 실제 LLM + TruthfulQA 필요")
+print(f"\n  ⚠️ Limitations:")
+print(f"    - Toy model (64-dim, 4-head) → Scale difference from real LLMs")
+print(f"    - Pattern-based synthetic data → Different from real facts/hallucinations")
+print(f"    - Arbitrary head split (head 0,1 vs 2,3)")
+print(f"    - Real verification requires real LLM + TruthfulQA")
 print("=" * 70)

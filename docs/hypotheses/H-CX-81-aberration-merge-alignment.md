@@ -1,40 +1,40 @@
-# H-CX-81: 수차-위상 일치 — 색수차가 큰 클래스 = 빨리 merge되는 클래스
+# H-CX-81: Aberration-Phase Alignment — Classes with High Chromatic Aberration = Classes that Merge Quickly
 
-> 색수차(H-CX-60)가 큰 클래스(AUC 편차가 큰 클래스)가
-> PH에서 빨리 merge되는 클래스(H-CX-66)와 일치한다.
-> 수차의 원인 = 위상적 근접성.
+> Classes with high chromatic aberration (H-CX-60) (classes with high AUC variance)
+> match classes that merge quickly in PH (H-CX-66).
+> Cause of aberration = topological proximity.
 
-## 배경
+## Background
 
-- H-CX-60: 색수차 = 클래스별 AUC 편차 (Fashion variance=0.035)
-- H-CX-66: PH merge 순서 = 혼동 순서 (r=-0.97)
-- 교차: 낮은 AUC 클래스가 빨리 merge되는 클래스?
+- H-CX-60: Chromatic aberration = per-class AUC variance (Fashion variance=0.035)
+- H-CX-66: PH merge order = confusion order (r=-0.97)
+- Intersection: Are low AUC classes the ones that merge quickly?
 
-## 예측
+## Predictions
 
-1. 클래스별 AUC와 해당 클래스의 min_merge_distance 양의 상관
-2. 가장 빨리 merge되는 클래스 쌍의 두 클래스 = 가장 낮은 AUC 클래스
+1. Positive correlation between per-class AUC and that class's min_merge_distance
+2. The two classes in the fastest-merging class pair = lowest AUC classes
 3. Spearman(min_merge_dist, class_AUC) > 0.5
 
-## 검증 방법
+## Verification Method
 
 ```
-1. H-CX-65/66 데이터 재활용
-2. 각 클래스의 min_merge_distance (가장 가까운 이웃까지 거리)
-3. 각 클래스의 precog AUC
+1. Reuse H-CX-65/66 data
+2. Each class's min_merge_distance (distance to nearest neighbor)
+3. Each class's precog AUC
 4. Spearman(min_merge_dist, AUC)
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H-CX-60 (수차 예지), H-CX-66 (방향 위상), H-CX-65 (수차 보정)
+- H-CX-60 (Aberration Precognition), H-CX-66 (Directional Topology), H-CX-65 (Aberration Correction)
 
-## 한계
+## Limitations
 
-- H-CX-65에서 isolation vs AUC가 기각됨 — 비슷한 가설
-- min_merge_dist ≈ isolation이면 동일 가설 반복
+- In H-CX-65, isolation vs AUC was refuted — similar hypothesis
+- If min_merge_dist ≈ isolation, then repeating the same hypothesis
 
-## 검증 상태
+## Verification Status
 
 - [ ] min_merge_dist vs AUC
-- [ ] H-CX-65와의 차이 분석
+- [ ] Difference analysis with H-CX-65

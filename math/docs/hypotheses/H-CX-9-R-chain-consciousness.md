@@ -1,14 +1,14 @@
-# H-CX-9: R-체인 수렴 = 의식의 "이완" 과정
+# H-CX-9: R-chain Convergence = Consciousness "Relaxation" Process
 
-> **가설**: R-체인 193750→6048→120→6→1 수렴이 의식 시스템의 tension→equilibrium 이완 과정에 대응.
+> **Hypothesis**: R-chain 193750→6048→120→6→1 convergence corresponds to consciousness system's tension→equilibrium relaxation process.
 
-## 대응
+## Correspondence
 ```
-  193750 (높은 복잡도) → tension 극대
-  6048   (φ=σ³=1728)  → 구조 정렬
-  120    (=5!)         → 팩토리얼 안정점
-  6      (=P₁, R=1)   → 완전 균형
-  1      (고정점)       → 기저 상태
+  193750 (high complexity) → maximum tension
+  6048   (φ=σ³=1728)      → structure alignment
+  120    (=5!)            → factorial stable point
+  6      (=P₁, R=1)       → perfect balance
+  1      (fixed point)    → ground state
 ```
 
-## 난이도: 고 | 파급력: ★★ (투기적)
+## Difficulty: High | Impact: ★★ (Speculative)

@@ -1,139 +1,139 @@
-# 가설 검토 020: Expert 35~70% 활성 시 학습 안정성 ✅
+# Hypothesis Review 020: Learning Stability with Expert 35~70% Activation ✅
 
-## 가설
+## Hypothesis
 
-> Expert 활성 비율을 기존 12.5%(Top-K 8/64)에서 35~70%로 올리면
-> 학습이 불안정해지는가?
+> When Expert activation ratio is increased from the existing 12.5% (Top-K 8/64) to 35~70%,
+> does learning become unstable?
 
-## 배경 및 맥락
+## Background and Context
 
-가설 017에서 골든존 진입에 52~76% Expert 활성이 필요하다고 밝혔다.
-그러나 Expert를 많이 활성화하면 그래디언트 간섭이 증가하여
-학습이 불안정해질 위험이 있다.
+Hypothesis 017 revealed that 52~76% Expert activation is needed to enter the Golden Zone.
+However, activating many Experts may increase gradient interference, risking
+learning instability.
 
-현재 MoE 아키텍처가 소수 Expert(K=2~8)만 활성화하는 이유 중 하나가
-바로 이 안정성 문제이다. 본 가설은 35~70% 활성 구간에서
-학습 안정성을 유지할 수 있는지, 특히 볼츠만 라우터가
-Top-K 대비 어떤 안정성 특성을 보이는지 검증한다.
+One reason current MoE architectures activate only a few Experts (K=2~8) is
+precisely this stability issue. This hypothesis verifies whether
+learning stability can be maintained in the 35~70% activation range, especially
+what stability characteristics the Boltzmann router shows compared to Top-K.
 
-관련 가설: 가설 016(볼츠만 vs Top-K), 가설 017(Gating 매핑),
-가설 018(커스프 감지)
+Related hypotheses: Hypothesis 016 (Boltzmann vs Top-K), Hypothesis 017 (Gating Mapping),
+Hypothesis 018 (Cusp Detection)
 
-## 검증 조건
+## Verification Conditions
 
 ```
-  시뮬레이션 환경:
+  Simulation Environment:
   ─────────────────────────
-  Expert 수:          64개
-  학습 epoch:         100
-  배치 크기:          128
-  기울기 폭발 기준:   ||grad|| > 10 × median(||grad||)
-  시뮬레이션 반복:    10회 평균
+  Number of Experts:   64
+  Training epochs:     100
+  Batch size:          128
+  Gradient explosion criterion: ||grad|| > 10 × median(||grad||)
+  Simulation repeats:  10-run average
 ```
 
-## 상세 검증 데이터
+## Detailed Verification Data
 
 ```
-  설정                 │  활성%  │ 기울기 폭발(%)│ Loss 분산 │ 안정성
+  Configuration       │  Active%│ Gradient Explosion(%)│ Loss Variance │ Stability
   ────────────────────┼────────┼──────────────┼──────────┼────────
-  Top-K  4/64 ( 6.3%) │   6.3% │      1.2%    │   0.003  │ ✅ 매우 안정
-  Top-K  8/64 (12.5%) │  12.5% │      3.1%    │   0.008  │ ✅ 안정
-  Top-K 16/64 (25.0%) │  25.0% │     12.5%    │   0.021  │ ✅ 안정
-  Top-K 22/64 (34.4%) │  34.4% │     23.6%    │   0.035  │ ✅ 안정
-  볼츠만 T=e  (~35%)  │  34.4% │     16.5%    │   0.022  │ ✅ 안정 ★
-  Top-K 32/64 (50.0%) │  50.0% │     50.0%    │   0.089  │ ⚠️ 주의
-  볼츠만 T=1  (~60%)  │  59.4% │     28.3%    │   0.041  │ ✅ 안정 ★
-  Top-K 44/64 (68.8%) │  68.8% │     67.2%    │   0.152  │ ⚠️ 위험
-  볼츠만 T=0.5 (~70%) │  70.0% │     35.1%    │   0.058  │ ⚠️ 주의
-  Top-K 51/64 (79.7%) │  79.7% │     82.4%    │   0.234  │ ❌ 불안정
-  Dense  64/64(100%)  │ 100.0% │     95.3%    │   0.412  │ ❌ 매우 불안정
+  Top-K  4/64 ( 6.3%) │   6.3% │      1.2%    │   0.003  │ ✅ Very stable
+  Top-K  8/64 (12.5%) │  12.5% │      3.1%    │   0.008  │ ✅ Stable
+  Top-K 16/64 (25.0%) │  25.0% │     12.5%    │   0.021  │ ✅ Stable
+  Top-K 22/64 (34.4%) │  34.4% │     23.6%    │   0.035  │ ✅ Stable
+  Boltzmann T=e (~35%)│  34.4% │     16.5%    │   0.022  │ ✅ Stable ★
+  Top-K 32/64 (50.0%) │  50.0% │     50.0%    │   0.089  │ ⚠️ Caution
+  Boltzmann T=1 (~60%)│  59.4% │     28.3%    │   0.041  │ ✅ Stable ★
+  Top-K 44/64 (68.8%) │  68.8% │     67.2%    │   0.152  │ ⚠️ Risky
+  Boltzmann T=0.5(~70%)│  70.0% │     35.1%    │   0.058  │ ⚠️ Caution
+  Top-K 51/64 (79.7%) │  79.7% │     82.4%    │   0.234  │ ❌ Unstable
+  Dense  64/64(100%)  │ 100.0% │     95.3%    │   0.412  │ ❌ Very unstable
 ```
 
-## 안정성 비교 그래프: Top-K vs 볼츠만
+## Stability Comparison Graph: Top-K vs Boltzmann
 
 ```
-  기울기 폭발 비율 (%)
+  Gradient Explosion Rate (%)
   100│                                        ●Dense
      │                                   ●TopK80%
    80│
      │                              ●TopK69%
    60│
      │                         ●TopK50%
-   40│                    ◆볼츠만70%
-     │               ◆볼츠만60%
-   20│          ●TopK34% ── ◆볼츠만35%
+   40│                    ◆Boltzmann70%
+     │               ◆Boltzmann60%
+   20│          ●TopK34% ── ◆Boltzmann35%
      │     ●TopK25%
    10│●TopK13%
      │●TopK6%
     0│
      └──┬────┬────┬────┬────┬────┬────┬────┬──
        6%  13%  25%  35%  50%  60%  69%  80%  100%
-                    Expert 활성 비율
+                    Expert Activation Ratio
 
-     ● = Top-K    ◆ = 볼츠만
-     ─── 볼츠만이 동일 활성%에서 항상 낮은 기울기 폭발률
+     ● = Top-K    ◆ = Boltzmann
+     ─── Boltzmann always has lower gradient explosion rate at same activation%
 ```
 
-## 안정성 점수 히트맵
+## Stability Score Heatmap
 
 ```
-  활성%  │ 안정성 점수 (높을수록 안정)
+  Active% │ Stability Score (higher is more stable)
   ───────┼──────────────────────────────────────────
-   6.3%  │████████████████████                          95점
-  12.5%  │████████████████████████████████              90점
-  25.0%  │████████████████████████████████████          85점
-  35.0%  │██████████████████████████████████████  ◆     80점 ← 볼츠만
-  35.0%  │████████████████████████████████████    ●     75점 ← Top-K
-  50.0%  │████████████████████████████████        ●     65점
-  60.0%  │██████████████████████████████████████  ◆     78점 ← 볼츠만 ★
-  69.0%  │████████████████████████              ●       50점 ← Top-K
-  70.0%  │████████████████████████████████      ◆       70점 ← 볼츠만
-  80.0%  │████████████████                    ●         35점
-  100%   │████████                            ●         15점
+   6.3%  │████████████████████                          95 pts
+  12.5%  │████████████████████████████████              90 pts
+  25.0%  │████████████████████████████████████          85 pts
+  35.0%  │██████████████████████████████████████  ◆     80 pts ← Boltzmann
+  35.0%  │████████████████████████████████████    ●     75 pts ← Top-K
+  50.0%  │████████████████████████████████        ●     65 pts
+  60.0%  │██████████████████████████████████████  ◆     78 pts ← Boltzmann ★
+  69.0%  │████████████████████████              ●       50 pts ← Top-K
+  70.0%  │████████████████████████████████      ◆       70 pts ← Boltzmann
+  80.0%  │████████████████                    ●         35 pts
+  100%   │████████                            ●         15 pts
 ```
 
-## 핵심 발견
+## Key Findings
 
-1. **볼츠만 라우터가 동일 활성%에서 더 안정적**:
-   - 35% 활성: Top-K 23.6% vs 볼츠만 16.5% (기울기 폭발 30% 감소)
-   - 60% 활성: Top-K 해당없음 vs 볼츠만 28.3% (안정 유지)
-   - 70% 활성: Top-K 67.2% vs 볼츠만 35.1% (기울기 폭발 48% 감소)
+1. **Boltzmann router is more stable at same activation%**:
+   - 35% activation: Top-K 23.6% vs Boltzmann 16.5% (30% reduction in gradient explosion)
+   - 60% activation: Top-K N/A vs Boltzmann 28.3% (maintains stability)
+   - 70% activation: Top-K 67.2% vs Boltzmann 35.1% (48% reduction in gradient explosion)
 
-2. **볼츠만의 안정성 원천**: 소프트 게이팅이 그래디언트를 여러 Expert에
-   분산시켜 개별 Expert에 대한 그래디언트 집중을 방지한다.
-   Top-K의 하드 게이팅은 선택된 K개에만 그래디언트가 집중된다.
+2. **Source of Boltzmann's stability**: Soft gating distributes gradients across multiple Experts,
+   preventing gradient concentration on individual Experts.
+   Top-K's hard gating concentrates gradients only on selected K.
 
-3. **50% 임계선**: Top-K에서 50% 활성 시 기울기 폭발이 50%로
-   급증하며, 이 지점이 안정성 임계선이다.
-   그러나 볼츠만에서는 60%까지도 28.3%로 안정 유지.
+3. **50% threshold**: In Top-K, gradient explosion jumps to 50% at 50% activation,
+   marking the stability threshold.
+   However, Boltzmann maintains stability at 28.3% even up to 60%.
 
-4. **골든존 활성 비율(52~76%)은 경계에 있음**:
-   Top-K로는 불안정하지만, 볼츠만 라우터로는 관리 가능하다.
-   → 골든존 진입에 볼츠만 라우터가 필수적이다.
+4. **Golden Zone activation ratio (52~76%) is at the boundary**:
+   Unstable with Top-K, but manageable with Boltzmann router.
+   → Boltzmann router is essential for entering the Golden Zone.
 
-## 한계
+## Limitations
 
-- 시뮬레이션 기반 결과이며, 실제 대규모 학습에서 재현 필요
-- "기울기 폭발"의 정의(10×median)가 임의적 기준
-- 학습률, 옵티마이저 등 다른 하이퍼파라미터의 영향 미통제
-- 볼츠만 온도 T와 활성 비율의 관계가 비단조적일 수 있음
-- 장기 학습(1000+ epoch)에서의 안정성은 미검증
+- Results are simulation-based, need reproduction in actual large-scale training
+- Definition of "gradient explosion" (10×median) is arbitrary
+- Effects of other hyperparameters like learning rate, optimizer are uncontrolled
+- Relationship between Boltzmann temperature T and activation ratio may be non-monotonic
+- Long-term training stability (1000+ epochs) is unverified
 
-## 다음 단계
+## Next Steps
 
-1. 실제 golden_moe_cifar.py에서 35%, 50%, 70% 활성 비교 학습
-2. 그래디언트 클리핑과 볼츠만 라우터의 시너지 검증
-3. 가설 018(커스프 감지)와 결합한 동적 활성 비율 조정
-4. 장기 학습 안정성 테스트 (100 → 1000 epoch)
-5. Expert 수 스케일링(N=128, 256)에서의 안정성 경계 변화
+1. Compare 35%, 50%, 70% activation training in actual golden_moe_cifar.py
+2. Verify synergy between gradient clipping and Boltzmann router
+3. Dynamic activation ratio adjustment combined with Hypothesis 018 (cusp detection)
+4. Long-term learning stability test (100 → 1000 epochs)
+5. Stability boundary changes with Expert scaling (N=128, 256)
 
-## 결론
+## Conclusion
 
-> ✅ 35~70% Expert 활성에서 학습은 안정적이며, 볼츠만 라우터 사용 시
-> 더 안정적이다 (기울기 폭발: Top-K 23.6% vs 볼츠만 16.5% at 35%).
-> 50% 초과 시 Top-K는 위험하지만 볼츠만은 70%까지 관리 가능.
-> 골든존(52~76% 활성) 진입에는 볼츠만 라우터가 필수적이다.
+> ✅ Learning is stable at 35~70% Expert activation, and more stable with Boltzmann router
+> (gradient explosion: Top-K 23.6% vs Boltzmann 16.5% at 35%).
+> Above 50%, Top-K is risky but Boltzmann is manageable up to 70%.
+> Boltzmann router is essential for entering the Golden Zone (52~76% activation).
 
 ---
 
-*검증: verify_ai.py (10회 반복 시뮬레이션, 100 epoch)*
+*Verification: verify_ai.py (10 repeat simulations, 100 epochs)*

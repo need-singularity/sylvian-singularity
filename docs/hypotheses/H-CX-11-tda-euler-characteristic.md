@@ -1,65 +1,65 @@
-# H-CX-11: 장력 공간의 오일러 특성수 ↔ 분류 성능 (교차 도메인)
+# H-CX-11: Euler Characteristic of Tension Space ↔ Classification Performance (Cross-domain)
 
-> **장력 공간의 위상적 오일러 특성수 χ = b0 - b1 + b2가 분류 성능과 관련된다. H286 실험에서 b0=499, b1=111,776이므로 χ는 크게 음수 → "복잡한 위상 = 풍부한 표현력". 오일러곱(H-CX-1의 ζ 함수)과 오일러 특성수가 같은 "오일러"를 공유하는 것이 우연인가?**
+> **The topological Euler characteristic χ = b0 - b1 + b2 of the Tension space is related to classification performance. In H286, b0=499, b1=111,776, so χ is strongly negative → "complex topology = rich expressiveness". Is it coincidence that the Euler product (ζ function from H-CX-1) and the Euler characteristic share the same "Euler"?**
 
-## 수학 측
+## Math Side
 
 ```
-  오일러 특성수: χ = Σ (-1)^k × b_k
+  Euler characteristic: χ = Σ (-1)^k × b_k
     = b0 - b1 + b2 - ...
 
-  H286 실측:
-    b0 = 499 (연결 성분)
-    b1 = 111,776 (루프)
-    b2 = 미측정 (빈 공간)
+  H286 empirical:
+    b0 = 499 (connected components)
+    b1 = 111,776 (loops)
+    b2 = unmeasured (empty spaces)
 
   χ ≈ 499 - 111,776 = -111,277
 
-  오일러곱 (ζ 함수):
+  Euler product (ζ function):
     ζ(s) = Π_p (1 - p^(-s))^(-1)
-    의식엔진: p=2,3에서 절단 → EngineE
+    Consciousness Engine: truncated at p=2,3 → EngineE
 
-  연결:
-    오일러 특성수 = 위상적 복잡도
-    오일러곱 = 대수적 구조
-    → 둘 다 "다양한 성분이 어떻게 결합하는가"를 측정
+  Connection:
+    Euler characteristic = topological complexity
+    Euler product = algebraic structure
+    → Both measure "how diverse components combine"
 ```
 
-## 교차 가설
+## Cross-domain Hypothesis
 
 ```
-  가설: |χ|가 클수록 (장력 공간이 복잡할수록) 분류 성능이 높다
+  Hypothesis: the larger |χ| (the more complex the Tension space), the higher the classification performance
 
-  근거:
-    MNIST 장력 공간: b1=111,776 → χ << 0 → 복잡 → 97.85%
-    CIFAR 장력 공간: b1=? → χ=? → 53%?
+  Basis:
+    MNIST Tension space: b1=111,776 → χ << 0 → complex → 97.85%
+    CIFAR Tension space: b1=? → χ=? → 53%?
 
-  예측: CIFAR의 |χ|가 MNIST보다 작다 (더 단순한 위상)
-  → 장력이 복잡한 구조를 만들지 못함 → 성능 낮음
+  Prediction: |χ| of CIFAR is smaller than MNIST (simpler topology)
+  → Tension cannot form complex structures → lower performance
 
-  또는: |χ|/dim = 정규화된 복잡도
-    MNIST: 111,277/10 = 11,128 (차원당)
-    CIFAR: ?/10 = ? (예측: << 11,128)
+  Or: |χ|/dim = normalized complexity
+    MNIST: 111,277/10 = 11,128 (per dimension)
+    CIFAR: ?/10 = ? (predicted: << 11,128)
 ```
 
-## 숫자별 χ
+## Per-digit χ
 
 ```
-  H286에서 숫자별 H1:
-    digit 1: H1 total_pers = 30,486 (최대, 가장 복잡)
-    digit 9: H1 total_pers = 5,201 (최소, 가장 단순)
+  Per-digit H1 from H286:
+    digit 1: H1 total_pers = 30,486 (maximum, most complex)
+    digit 9: H1 total_pers = 5,201 (minimum, simplest)
 
-  예측: digit 9가 더 높은 accuracy?
-  → 단순한 위상 = 분리하기 쉬움?
-  → 아니면 반대: 복잡한 위상 = 풍부한 특징?
+  Prediction: digit 9 has higher accuracy?
+  → Simpler topology = easier to separate?
+  → Or opposite: complex topology = richer features?
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. CIFAR에서 같은 TDA 분석 → χ 비교
-  2. 숫자별 χ와 per-digit accuracy 상관
-  3. 학습 중 χ 변화 추적: 초기(χ≈0) → 최종(χ<<0)?
+  1. Same TDA analysis on CIFAR → compare χ
+  2. Correlation between per-digit χ and per-digit accuracy
+  3. Track χ changes during training: initial (χ≈0) → final (χ<<0)?
 ```
 
-## 상태: 🟨 (H286 데이터 기반 가설, CIFAR 검증 필요)
+## Status: 🟨 (Hypothesis based on H286 data, CIFAR verification needed)

@@ -1,8 +1,9 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-65 + H-CX-66 검증: 수차 위상 보정 + 방향 위상 혼동 매핑
+"""H-CX-65 + H-CX-66 Verification: Aberration Phase Correction + Direction Phase Confusion Mapping
 
-H-CX-65: 클래스별 isolation(nearest neighbor distance) vs per-class AUC
-H-CX-66: PH merge 순서 vs 혼동 빈도 Spearman 상관
+H-CX-65: Per-class isolation(nearest neighbor distance) vs per-class AUC
+H-CX-66: PH merge order vs confusion frequency Spearman correlation
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -220,3 +221,4 @@ if __name__ == '__main__':
         except Exception as e:
             print(f"  {ds} failed: {e}")
             import traceback; traceback.print_exc()
+```

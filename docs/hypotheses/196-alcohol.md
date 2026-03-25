@@ -1,58 +1,58 @@
-# 가설 #196: 알코올 = I 감소 + Compass 감소
+# Hypothesis #196: Alcohol = I Decrease + Compass Decrease
 
-**상태**: 🟧 구조적 대응 확인 (실험 데이터 필요)
-**날짜**: 2026-03-22
-**분류**: 약물 / 신경화학
+**Status**: 🟧 Structural correspondence confirmed (experimental data needed)
+**Date**: 2026-03-22
+**Category**: Drug / Neurochemistry
 
 ---
 
-## 가설
+## Hypothesis
 
-> 알코올은 GABA 수용체를 촉진하여 억제(I)를 감소시키면서
-> 동시에 Compass(방향성)도 감소시킨다.
-> 소량 음주는 골든존 진입(기분 좋음), 과량은 골든존 아래(혼돈)을 유발한다.
-> "적당히 마시면 좋다"의 수학적 표현 = 골든존 체류.
+> Alcohol promotes GABA receptors, decreasing inhibition (I) while
+> simultaneously decreasing Compass (directionality).
+> Small amounts trigger Golden Zone entry (feeling good), excess causes below Golden Zone (chaos).
+> "Drinking in moderation is good" mathematical expression = Golden Zone residence.
 
-## 배경: 알코올의 이중 메커니즘
+## Background: Alcohol's Dual Mechanism
 
 ```
-  알코올 (에탄올)
+  Alcohol (ethanol)
      │
-     ├─→ GABA-A 수용체 촉진 → 억제 뉴런 활성화
-     │     → 표면적 I ↑ 이지만...
-     │     → 실제로는 "억제의 억제" = 해방 (I ↓)
+     ├─→ GABA-A receptor promotion → Inhibitory neuron activation
+     │     → Superficial I ↑ but...
+     │     → Actually "inhibition of inhibition" = liberation (I ↓)
      │
-     └─→ 글루타메이트(NMDA) 억제 → 흥분 감소
-           → 전체적 둔화 → Compass ↓
+     └─→ Glutamate (NMDA) inhibition → Excitation decrease
+           → Overall dulling → Compass ↓
 ```
 
-핵심 역설: GABA를 촉진하면 I가 올라가야 하는데 왜 I 감소?
+Key paradox: GABA promotion should increase I, so why I decrease?
 
 ```
-  GABA 촉진 → 억제 뉴런이 억제 뉴런을 억제
-            → "억제의 억제" = 탈억제(disinhibition)
-            → 전전두엽 억제 해제 → I 실효값 ↓
-            → 충동성 ↑, 판단력 ↓ = Compass ↓
+  GABA promotion → Inhibitory neurons inhibit inhibitory neurons
+                → "Inhibition of inhibition" = disinhibition
+                → Prefrontal cortex disinhibition → Effective I ↓
+                → Impulsivity ↑, Judgment ↓ = Compass ↓
 ```
 
-## 혈중알코올농도(BAC) vs I vs Compass 매핑
+## Blood Alcohol Concentration (BAC) vs I vs Compass Mapping
 
 ```
-  BAC(%)  │  I     │ Compass │ 상태        │ 체감
+  BAC(%)  │  I     │ Compass │ State       │ Sensation
   ────────┼────────┼─────────┼─────────────┼────────────
-  0.00    │  0.50  │  50%    │ 정상        │ 맑은 정신
-  0.02    │  0.45  │  55%    │ 골든존 상단  │ 약간 이완 ★
-  0.04    │  0.40  │  52%    │ 골든존 중간  │ 기분 좋음 ★★
-  0.06    │  0.37  │  48%    │ 골든존 중심  │ 사교적 ★★★
-  0.08    │  0.33  │  40%    │ 골든존 하단  │ 판단력↓
-  0.10    │  0.28  │  30%    │ 골든존 경계  │ 운동능↓
-  0.15    │  0.20  │  15%    │ 골든존 이탈  │ 혼돈 시작
-  0.20    │  0.15  │   5%    │ 혼돈        │ 구역질
-  0.30    │  0.08  │   0%    │ 위험        │ 의식소실
-  0.40    │  0.03  │  -10%   │ 치사        │ 사망 위험
+  0.00    │  0.50  │  50%    │ Normal      │ Clear mind
+  0.02    │  0.45  │  55%    │ Golden Zone top │ Slightly relaxed ★
+  0.04    │  0.40  │  52%    │ Golden Zone mid │ Feeling good ★★
+  0.06    │  0.37  │  48%    │ Golden Zone center │ Social ★★★
+  0.08    │  0.33  │  40%    │ Golden Zone bottom │ Judgment↓
+  0.10    │  0.28  │  30%    │ Golden Zone edge │ Motor skills↓
+  0.15    │  0.20  │  15%    │ Golden Zone exit │ Chaos begins
+  0.20    │  0.15  │   5%    │ Chaos       │ Nausea
+  0.30    │  0.08  │   0%    │ Danger      │ Loss of consciousness
+  0.40    │  0.03  │  -10%   │ Lethal      │ Risk of death
 ```
 
-## BAC-I-Compass 다이어그램
+## BAC-I-Compass Diagram
 
 ```
   Compass(%)  I
@@ -64,7 +64,7 @@
     │         ╲             │         ╲
   30│          ╲        0.30│           ╲
     │           ╲           │             ╲
-  20│            ╲      0.20│───────────────●── 골든존 하한
+  20│            ╲      0.20│───────────────●── Golden Zone lower
     │             ╲         │                ╲
   10│              ╲    0.10│                  ╲
     │               ╲       │                    ╲
@@ -73,124 +73,124 @@
      0.00 .04 .08 .15 .30    0.00 .04 .08 .15 .30
           BAC (%)                  BAC (%)
 
-     Compass: 산 모양          I: 단조 감소
-     정점 ≈ BAC 0.04          "적당히" = 골든존 체류
+     Compass: Mountain shape      I: Monotonic decrease
+     Peak ≈ BAC 0.04             "Moderation" = Golden Zone residence
 ```
 
-## 골든존 체류 영역 (핵심 그래프)
+## Golden Zone Residence Region (Key Graph)
 
 ```
-  I (억제지수)
-  0.55│●  기저
+  I (Inhibition Index)
+  0.55│●  Baseline
      │ ╲
-  0.50│──╲──────────────────────────── 골든존 상한
+  0.50│──╲──────────────────────────── Golden Zone upper
      │    ╲
-  0.45│     ╲  ★ "기분 좋은 영역"
-     │       ╲  ★ 사교적, 이완
-  0.40│        ╲  ★ 창의적
+  0.45│     ╲  ★ "Feel-good zone"
+     │       ╲  ★ Social, relaxed
+  0.40│        ╲  ★ Creative
      │          ╲
-  1/e│─ ─ ─ ─ ─ ╲─ ─ ─ ─ ─ ─ ─ ─ ─ 골든존 중심
+  1/e│─ ─ ─ ─ ─ ╲─ ─ ─ ─ ─ ─ ─ ─ ─ Golden Zone center
      │            ╲  ← BAC 0.06
   0.35│             ╲
      │               ╲
   0.30│                ╲
      │                  ╲
-  0.21│────────────────────╲──────── 골든존 하한
+  0.21│────────────────────╲──────── Golden Zone lower
      │                      ╲
-  0.15│                       ╲ ← 여기서부터 혼돈
-     │░░░░░░░░░░░░░░░░░░░░░░░░╲░░░ 위험 영역
+  0.15│                       ╲ ← Chaos starts here
+     │░░░░░░░░░░░░░░░░░░░░░░░░╲░░░ Danger zone
   0.05│                          ╲
      └──┼──┼──┼──┼──┼──┼──┼──┼──
       0.00 .02 .04 .06 .08 .10 .15 .20
                BAC (%)
 
-  ░░░ = 골든존 아래 (혼돈/위험)
-  ★  = "적당히 마시면" 영역
+  ░░░ = Below Golden Zone (chaos/danger)
+  ★  = "Drinking in moderation" zone
 ```
 
-## "적당히 마시면" 효과의 수학
+## Mathematics of "Drinking in Moderation" Effects
 
 ```
-  "적당히" = BAC 0.02 ~ 0.08
-           = I가 0.45 → 0.33
-           = 골든존 안에 머무는 범위
+  "Moderation" = BAC 0.02 ~ 0.08
+                = I from 0.45 → 0.33
+                = Range staying within Golden Zone
 
-  최적점:  BAC ≈ 0.04 (맥주 1-2잔)
-           I ≈ 0.40 (골든존 중간)
-           Compass 최대
+  Optimal:  BAC ≈ 0.04 (1-2 beers)
+           I ≈ 0.40 (Golden Zone middle)
+           Compass maximum
 
-  "과하면" = BAC > 0.10
+  "Excess" = BAC > 0.10
            = I < 0.28
-           = 골든존 이탈 → 혼돈
+           = Golden Zone exit → chaos
 
-  → "적당히 마시면 좋다"는 경험칙 = 골든존 체류 시간 최대화
+  → "Drinking in moderation is good" rule of thumb = maximizing Golden Zone residence time
 ```
 
-## 숙취의 I 역학
+## Hangover I Dynamics
 
 ```
   I
-  0.60│                              ● 반등(rebound)
+  0.60│                              ● Rebound
      │                            ╱  ╲
-  0.50│●─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ╱─ ─ ─╲─ ─ ─ ─●  기저
+  0.50│●─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ╱─ ─ ─╲─ ─ ─ ─●  Baseline
      │  ╲                    ╱        ╲      ╱
-  0.40│    ╲    음주       ╱   숙취     ╲  ╱
-     │      ╲           ╱   (과억제)    ●
+  0.40│    ╲    Drinking   ╱   Hangover  ╲  ╱
+     │      ╲           ╱   (Over-inhibition) ●
   0.30│        ╲       ╱
      │          ╲   ╱
-  0.20│            ●  최저점 (만취)
+  0.20│            ●  Lowest point (drunk)
      └──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──
-       0   2   4   6   8  10  12  16  24 시간
+       0   2   4   6   8  10  12  16  24 hours
 
-  음주 → I↓ → 반등(I↑↑) → 숙취 = I 과잉 상태
-  숙취 해소 = I가 기저선으로 복귀
+  Drinking → I↓ → Rebound (I↑↑) → Hangover = I excess state
+  Hangover recovery = I returns to baseline
 ```
 
-## 다른 가설과의 연결
+## Connection with Other Hypotheses
 
 ```
-  가설 155 (GABA=I):    알코올 = GABA 촉진 = I 간접 감소
-  가설 166 (의식):       만취 = I < 골든존 + Compass ≤ 0 = 의식 소실
-  가설 195 (카페인):     카페인+알코올 = I 상쇄? 위험한 조합
-  가설 199 (명상vs약물): 알코올 = 불안정한 외부 섭동의 전형
+  Hypothesis 155 (GABA=I):    Alcohol = GABA promotion = indirect I decrease
+  Hypothesis 166 (Consciousness): Drunk = I < Golden Zone + Compass ≤ 0 = loss of consciousness
+  Hypothesis 195 (Caffeine):      Caffeine+alcohol = I offset? Dangerous combination
+  Hypothesis 199 (Meditation vs Drugs): Alcohol = typical unstable external perturbation
 ```
 
-## 한계
+## Limitations
 
-1. BAC → I 매핑은 선형 가정이며, 실제는 비선형일 가능성 높음
-2. "억제의 억제" 모델은 단순화이며, 알코올의 뇌 영역별 효과가 다름
-3. 개인차(체중, 성별, 유전, 내성)로 BAC-I 매핑이 크게 변동
-4. 알코올의 세로토닌/도파민 효과가 Compass에 미치는 영향 미반영
+1. BAC → I mapping assumes linearity, likely nonlinear in reality
+2. "Inhibition of inhibition" model is simplified, alcohol's effects vary by brain region
+3. Individual differences (weight, gender, genetics, tolerance) cause large BAC-I mapping variations
+4. Alcohol's serotonin/dopamine effects on Compass not reflected
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 통제된 음주 실험에서 BAC 단계별 fMRI GABA 측정
-- [ ] BAC 수준별 인지 과제 수행 → Compass 대리 지표로 활용
-- [ ] 숙취 시 I 반등(rebound) 패턴의 시간 추이 측정
-- [ ] 알코올 내성자 vs 비내성자의 BAC-I 곡선 비교
+- [ ] Controlled drinking experiment measuring GABA by fMRI at each BAC stage
+- [ ] Cognitive task performance at BAC levels → Use as Compass proxy indicator
+- [ ] Time course measurement of I rebound pattern during hangover
+- [ ] Compare BAC-I curves of alcohol tolerant vs non-tolerant individuals
 
-## 검증 결과 (2026-03-24, verify_pharmacology.py)
+## Verification Results (2026-03-24, verify_pharmacology.py)
 
 ```
-  검증 항목         결과    설명
-  ──────────────  ──────  ──────────────────────────
-  I↑→G↓ 역상관    ✅     정의에 의해 성립 (G=D×P/I)
-  골든존 적합성    ✅     소량: I=0.40 (골든존 내부)
-                          과량: I=0.15 (골든존 이탈) → 혼돈
-  용량-반응 곡선   ✅     소량=골든존(기분좋음), 과량=이탈(혼돈)
-  교차 일관성      ✅     마취(I↑)와 방향 반대 → GABA 탈억제 설명
-  텍사스 p-value   0.003  (Bonferroni 보정, 6개 약물 동시)
+  Verification Item    Result   Description
+  ──────────────      ──────   ──────────────────────────
+  I↑→G↓ inverse       ✅      Holds by definition (G=D×P/I)
+  Golden Zone fit     ✅      Small: I=0.40 (inside Golden Zone)
+                              Large: I=0.15 (exits Golden Zone) → chaos
+  Dose-response       ✅      Small=Golden Zone (feel good), large=exit (chaos)
+  Cross consistency   ✅      Opposite direction from anesthesia (I↑) → GABA disinhibition explanation
+  Texas p-value       0.003   (Bonferroni corrected, 6 drugs simultaneous)
 
-  특이 사항: 알코올은 GABA 촉진이지만 "억제의 억제"(탈억제)로 I↓
-  → 마취(GABA 직접 극대화→I↑)와 메커니즘 수준이 다름 → 모순 없음
+  Special note: Alcohol promotes GABA but "inhibition of inhibition" (disinhibition) causes I↓
+  → Different mechanism level from anesthesia (direct GABA maximization→I↑) → no contradiction
 
-  등급: 🟧 (구조적 대응 확인, BAC별 fMRI 데이터로 정량 검증 필요)
+  Grade: 🟧 (Structural correspondence confirmed, quantitative verification needed with BAC-specific fMRI data)
 
-  ⚠️ 텍사스 명사수 위험: 낮음
-  소량/과량 차이는 잘 알려진 약리학적 사실과 부합
+  ⚠️ Texas sharpshooter risk: Low
+  Small/large amount differences align with well-known pharmacological facts
 ```
 
 ---
 
-*관련: 가설 155, 166, 195, 199*
-*분류: 약물-골든존 매핑 시리즈 (195-200)*
+*Related: Hypotheses 155, 166, 195, 199*
+*Category: Drug-Golden Zone mapping series (195-200)*

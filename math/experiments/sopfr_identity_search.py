@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""Ralph 308: sopfr 관련 새 특성화 탐색 (순수 수학 DFS)
+"""Ralph 308: Search for new characterizations related to sopfr (pure math DFS)
 
-기존 발견:
-  sopfr(n) = n-1 ⟺ n=6 (증명됨, #49)
+Existing discoveries:
+  sopfr(n) = n-1 ⟺ n=6 (proven, #49)
   sopfr·ω = σ+φ-τ, n>2 ⟺ n=6 (#53)
 
-탐색 방향:
-  1. sopfr과 다른 산술함수의 새 조합
-  2. sopfr의 제곱, 거듭제곱 관계
-  3. sopfr과 약수합/토션트의 비율
-  4. sopfr 기반 특성화를 완전수 28에서 검증
+Search directions:
+  1. New combinations of sopfr with other arithmetic functions
+  2. Square and power relationships of sopfr
+  3. Ratios of sopfr with divisor sum/totient
+  4. Verify sopfr-based characterizations on perfect number 28
 """
 
 import math
@@ -69,12 +69,12 @@ def phi(n):
 
 
 def search_sopfr_identities(limit=10000):
-    """sopfr과 다른 함수의 조합으로 n=6 특성화 탐색."""
+    """Search for characterization of n=6 using combinations of sopfr and other functions."""
     print("=" * 70)
-    print("sopfr 기반 새 특성화 탐색 (n <= 10000)")
+    print("Search for new sopfr-based characterizations (n <= 10000)")
     print("=" * 70)
 
-    # 함수 목록
+    # Function list
     funcs = {
         'sigma': sigma,
         'phi': phi,
@@ -86,7 +86,7 @@ def search_sopfr_identities(limit=10000):
         'rad': rad,
     }
 
-    # 미리 계산
+    # Pre-compute
     cache = {}
     for n in range(1, limit + 1):
         cache[n] = {name: f(n) for name, f in funcs.items()}
@@ -94,8 +94,8 @@ def search_sopfr_identities(limit=10000):
 
     results = []
 
-    # 패턴 1: sopfr(n) op f(n) = g(n) for n=6, 찾기
-    print("\n--- 패턴 1: sopfr(n) * f(n) = g(n) (곱셈적) ---")
+    # Pattern 1: sopfr(n) op f(n) = g(n) for n=6, search
+    print("\n--- Pattern 1: sopfr(n) * f(n) = g(n) (multiplicative) ---")
     for f_name in ['sigma', 'phi', 'tau', 'omega', 'Omega', 'rad']:
         for g_name in ['sigma', 'phi', 'tau', 'omega', 'Omega', 'rad', 'n']:
             # sopfr * f = g at n=6?
@@ -103,7 +103,7 @@ def search_sopfr_identities(limit=10000):
             rhs_6 = cache[6][g_name] if g_name != 'n' else 6
 
             if lhs_6 == rhs_6 and lhs_6 != 0:
-                # 다른 n에서도 성립하는지?
+                # Does it hold for other n?
                 solutions = []
                 for n in range(2, limit + 1):
                     lhs = cache[n]['sopfr'] * cache[n][f_name]
@@ -115,8 +115,8 @@ def search_sopfr_identities(limit=10000):
                     print(f"  sopfr*{f_name} = {g_name}: solutions = {solutions}")
                     results.append(('sopfr*' + f_name, g_name, solutions))
 
-    # 패턴 2: sopfr(n) + f(n) = g(n)
-    print("\n--- 패턴 2: sopfr(n) + f(n) = g(n) (가법적) ---")
+    # Pattern 2: sopfr(n) + f(n) = g(n)
+    print("\n--- Pattern 2: sopfr(n) + f(n) = g(n) (additive) ---")
     for f_name in ['sigma', 'phi', 'tau', 'omega', 'Omega', 'rad']:
         for g_name in ['sigma', 'phi', 'tau', 'omega', 'Omega', 'rad', 'n']:
             lhs_6 = cache[6]['sopfr'] + cache[6][f_name]
@@ -134,8 +134,8 @@ def search_sopfr_identities(limit=10000):
                     print(f"  sopfr+{f_name} = {g_name}: solutions = {solutions}")
                     results.append(('sopfr+' + f_name, g_name, solutions))
 
-    # 패턴 3: sopfr(n)^k = f(n) 거듭제곱
-    print("\n--- 패턴 3: sopfr(n)^k = f(n) ---")
+    # Pattern 3: sopfr(n)^k = f(n) powers
+    print("\n--- Pattern 3: sopfr(n)^k = f(n) ---")
     for k in [2, 3]:
         for f_name in ['sigma', 'phi', 'tau', 'n']:
             lhs_6 = cache[6]['sopfr'] ** k
@@ -153,8 +153,8 @@ def search_sopfr_identities(limit=10000):
                     print(f"  sopfr^{k} = {f_name}: solutions = {solutions}")
                     results.append((f'sopfr^{k}', f_name, solutions))
 
-    # 패턴 4: f(sopfr(n)) = g(n) 합성
-    print("\n--- 패턴 4: f(sopfr(n)) = g(n) (합성) ---")
+    # Pattern 4: f(sopfr(n)) = g(n) composition
+    print("\n--- Pattern 4: f(sopfr(n)) = g(n) (composition) ---")
     for f_name in ['sigma', 'phi', 'tau']:
         for g_name in ['sigma', 'phi', 'tau', 'n', 'sopfr']:
             try:
@@ -178,8 +178,8 @@ def search_sopfr_identities(limit=10000):
                     print(f"  {f_name}(sopfr) = {g_name}: solutions = {solutions}")
                     results.append((f'{f_name}(sopfr)', g_name, solutions))
 
-    # 패턴 5: sopfr(n)/n과 다른 비율 비교
-    print("\n--- 패턴 5: sopfr(n) = a*f(n) + b*g(n) (선형 조합) ---")
+    # Pattern 5: Compare sopfr(n)/n with other ratios
+    print("\n--- Pattern 5: sopfr(n) = a*f(n) + b*g(n) (linear combination) ---")
     for a in range(-3, 4):
         for b in range(-3, 4):
             if a == 0 and b == 0:
@@ -205,8 +205,8 @@ def search_sopfr_identities(limit=10000):
                             print(f"  sopfr = {a}*{f_name} + {b}*{g_name}: solutions = {solutions}")
                             results.append((f'sopfr={a}*{f_name}+{b}*{g_name}', '', solutions))
 
-    # 패턴 6: sopfr과 관련된 새로운 곱/나눗셈 관계
-    print("\n--- 패턴 6: sopfr(n)*n = f(n)*g(n) ---")
+    # Pattern 6: New multiplication/division relationships with sopfr
+    print("\n--- Pattern 6: sopfr(n)*n = f(n)*g(n) ---")
     for f_name in ['sigma', 'phi', 'tau']:
         for g_name in ['sigma', 'phi', 'tau', 'rad', 'Omega']:
             if f_name == g_name:
@@ -226,8 +226,8 @@ def search_sopfr_identities(limit=10000):
                     print(f"  sopfr*n = {f_name}*{g_name}: solutions = {solutions}")
                     results.append((f'sopfr*n', f'{f_name}*{g_name}', solutions))
 
-    # 패턴 7: sopfr + n = 관계
-    print("\n--- 패턴 7: sopfr(n) + n = f(n) ---")
+    # Pattern 7: sopfr + n = relationships
+    print("\n--- Pattern 7: sopfr(n) + n = f(n) ---")
     for f_name in ['sigma', 'phi', 'tau']:
         lhs_6 = cache[6]['sopfr'] + 6
         rhs_6 = cache[6][f_name]
@@ -240,31 +240,31 @@ def search_sopfr_identities(limit=10000):
             if len(solutions) <= 10:
                 print(f"  sopfr+n = {f_name}: solutions = {solutions}")
 
-    # 종합
+    # Summary
     print("\n" + "=" * 70)
-    print("종합: n=6 유일 특성화 후보")
+    print("Summary: n=6 unique characterization candidates")
     print("=" * 70)
 
     unique_6 = [r for r in results if r[2] == [6]]
     small_set_with_6 = [r for r in results if 6 in r[2] and len(r[2]) <= 3 and r[2] != [6]]
 
-    print(f"\n  n=6 유일: {len(unique_6)}개")
+    print(f"\n  n=6 unique: {len(unique_6)} items")
     for lhs, rhs, sols in unique_6:
         print(f"    {lhs} = {rhs}")
 
-    print(f"\n  6 포함 소집합 (≤3개): {len(small_set_with_6)}개")
+    print(f"\n  Small sets containing 6 (≤3 items): {len(small_set_with_6)} items")
     for lhs, rhs, sols in small_set_with_6:
         print(f"    {lhs} = {rhs}: {sols}")
 
-    # 유일 특성화 검증: 완전수 28에서 깨지는지
+    # Unique characterization verification: Does it break at perfect number 28?
     if unique_6:
-        print(f"\n--- 완전수 28 검증 ---")
+        print(f"\n--- Perfect number 28 verification ---")
         for lhs, rhs, sols in unique_6:
-            print(f"  {lhs} = {rhs}: n=28에서 ", end="")
+            print(f"  {lhs} = {rhs}: at n=28 ", end="")
             if 28 not in sols:
-                print("깨짐 ✓ (6 고유)")
+                print("breaks ✓ (unique to 6)")
             else:
-                print("성립 ✗ (6 비고유)")
+                print("holds ✗ (not unique to 6)")
 
     return results
 

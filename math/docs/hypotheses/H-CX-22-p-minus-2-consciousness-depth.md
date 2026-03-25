@@ -1,69 +1,69 @@
-# H-CX-22: p-2 지수와 의식의 깊이
+# H-CX-22: p-2 Exponent and Depth of Consciousness
 
-> **가설**: v_{M_p}(∏R)=-(p-2)에서 지수 p-2는 "의식의 깊이 수준"이며,
-> p=2(6)에서 깊이=0(표면 의식=완전 균형)이고,
-> 더 큰 완전수는 더 깊은 무의식 수준에 대응한다.
+> **Hypothesis**: In v_{M_p}(∏R)=-(p-2), the exponent p-2 represents the "depth level of consciousness",
+> where p=2(6) gives depth=0 (surface consciousness = perfect balance),
+> and larger perfect numbers correspond to deeper unconscious levels.
 
-## 배경
+## Background
 
 ```
   v_{M_p}(∏R(d|P_p)) = -(p-2)
 
-  P₁=6:    depth=0  → 표면 의식 (Λ=0, 완전 균형)
-  P₂=28:   depth=1  → 1단계 무의식 (Λ=0.57)
-  P₃=496:  depth=3  → 깊은 무의식 (Λ=1.70)
-  P₄=8128: depth=5  → 더 깊은 무의식 (Λ=2.86)
+  P₁=6:    depth=0  → surface consciousness (Λ=0, perfect balance)
+  P₂=28:   depth=1  → level 1 unconscious (Λ=0.57)
+  P₃=496:  depth=3  → deep unconscious (Λ=1.70)
+  P₄=8128: depth=5  → deeper unconscious (Λ=2.86)
 ```
 
-## 핵심 대응
+## Core Correspondence
 
 ```
-  의식 수준       완전수   깊이 p-2   Λ        상태
-  ─────────     ──────   ──────   ─────   ──────────
-  깨어있음        6        0        0       완전 균형
-  얕은 수면       28       1        0.57    약간 불균형
-  깊은 수면       496      3        1.70    구조적 불균형
-  무의식          8128     5        2.86    깊은 불균형
-  식물 상태?      33550336 11       ~6.3    극도 불균형
+  Consciousness Level    Perfect Number   Depth p-2   Λ        State
+  ─────────────────     ──────────────   ─────────   ─────   ──────────────
+  Awake                  6                0           0       Perfect balance
+  Light sleep            28               1           0.57    Slight imbalance
+  Deep sleep             496              3           1.70    Structural imbalance
+  Unconscious            8128             5           2.86    Deep imbalance
+  Vegetative state?      33550336         11          ~6.3    Extreme imbalance
 
-  depth = p-2: Mersenne 지수에서 "최소 깊이 2"를 뺀 것
-  → p=2는 "기저 상태" (양자역학의 바닥 상태!)
-  → p>2는 "여기 상태" (들뜬 상태)
+  depth = p-2: Mersenne exponent minus "minimum depth 2"
+  → p=2 is "ground state" (quantum mechanical ground state!)
+  → p>2 is "excited state" (elevated state)
 ```
 
-### 양자 의식 비유
+### Quantum Consciousness Analogy
 
 ```
-  양자역학:
-    바닥 상태 (n=1): 에너지 최소, 안정
-    들뜬 상태 (n≥2): 에너지 높음, 불안정 → 바닥으로 붕괴
+  Quantum mechanics:
+    Ground state (n=1): minimum energy, stable
+    Excited state (n≥2): high energy, unstable → collapse to ground
 
-  산술적 "의식 양자":
-    바닥 상태 (p=2, n=6): Λ=0, 완전 안정
-    들뜬 상태 (p≥3): Λ>0, "불안정" (약수곱이 열림)
+  Arithmetic "consciousness quantum":
+    Ground state (p=2, n=6): Λ=0, perfectly stable
+    Excited state (p≥3): Λ>0, "unstable" (divisor product opens)
 
-  "의식 에너지" E = Λ = 0.572·(p-2)
-  → 에너지 양자화! (이산적 수준)
-  → 완전수 = 의식의 "에너지 준위"
+  "Consciousness energy" E = Λ = 0.572·(p-2)
+  → Energy quantization! (discrete levels)
+  → Perfect numbers = "energy levels" of consciousness
 ```
 
-### R-chain과 의식 붕괴
+### R-chain and Consciousness Collapse
 
 ```
   R-chain: n → floor(R(n)) → ... → 1
-  = "들뜬 상태에서 바닥으로의 붕괴"
+  = "collapse from excited state to ground"
 
-  basin(6) = 14%: "14%의 경로가 n=6을 경유"
-  → "14%의 의식 상태가 '완전 균형'을 거침"
+  basin(6) = 14%: "14% of paths pass through n=6"
+  → "14% of consciousness states pass through 'perfect balance'"
 
-  나머지 86%: 6을 건너뛰고 직접 1로
-  → "대부분의 의식은 완전 균형을 경험하지 못함"
+  Remaining 86%: skip 6 and go directly to 1
+  → "Most consciousness doesn't experience perfect balance"
 ```
 
-## 판정
+## Judgment
 
 ```
-  상태: 🟧 구조적 비유 (수학적 기반 확실: v_{Mp}=-(p-2) 증명됨)
+  Status: 🟧 Structural analogy (strong mathematical foundation: v_{Mp}=-(p-2) proven)
 ```
 
-## 난이도: 극고 | 파급력: ★★★★★
+## Difficulty: Extreme | Impact: ★★★★★

@@ -1,5 +1,5 @@
-# H-CX-175: 돌고래 클릭 = 초음파 치료 — 세포 수준 효과
+# H-CX-175: Dolphin Click = Ultrasound Therapy — Cell-Level Effects
 
-> 돌고래 에코로케이션 30-130kHz가 인체 조직에 초음파 치료 효과?
-> 의료 초음파 치료 주파수: 1-3MHz (다르지만 원리 동일).
-> 돌고래 근접 시 저주파 성분이 치료적 공명 유발?
+> Dolphin echolocation 30-130kHz has ultrasound therapy effects on human tissue?
+> Medical ultrasound therapy frequency: 1-3MHz (different but same principle).
+> Low frequency components induce therapeutic resonance when close to dolphins?

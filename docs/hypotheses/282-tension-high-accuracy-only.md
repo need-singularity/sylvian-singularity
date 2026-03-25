@@ -1,53 +1,53 @@
-# 가설 282: 장력 = 고정확도 전용 메커니즘
+# Hypothesis 282: Tension = High-Accuracy Only Mechanism
 
-> **장력 인과 효과는 기저 정확도가 높을 때만 작동한다. MNIST(98%)에서 -9.25pp이지만 CIFAR(53%)에서 -0.53pp. tension_scale도 자동으로 거의 0으로 학습된다(0.039 vs 0.468). 모델이 "충분히 못 배우면" 장력을 자발적으로 포기한다.**
+> **The tension causal effect only operates when base accuracy is high. -9.25pp on MNIST (98%) but -0.53pp on CIFAR (53%). tension_scale is also automatically learned to near 0 (0.039 vs 0.468). When the model "can't learn well enough," it voluntarily abandons tension.**
 
-## 실측 데이터
-
-```
-  │ 데이터셋 │ 기저 정확도 │ 인과 효과 │ tension_scale │
-  ├──────────┼────────────┼──────────┼──────────────┤
-  │ MNIST    │    97.92%  │  -9.25pp │    0.4683    │
-  │ CIFAR    │    53.26%  │  -0.53pp │    0.0389    │
-  │ 비율     │    0.54x   │  0.057x  │    0.083x    │
-
-  인과 효과 감소 (17x) >> 정확도 감소 (1.8x)
-  → 비선형! 선형이면 -9.25*0.54 = -5.0pp 예상, 실측 -0.53pp
-```
-
-## 해석
+## Measured Data
 
 ```
-  높은 정확도 (97%+):
-    → 대부분 자동으로 맞춤
-    → 장력이 "나머지 2%"를 위해 집중 → 큰 효과
-    → tension_scale ≈ 0.47 (적극 활용)
+  │ Dataset  │ Base Accuracy │ Causal Effect │ tension_scale │
+  ├──────────┼──────────────┼──────────────┼──────────────┤
+  │ MNIST    │    97.92%    │   -9.25pp    │    0.4683    │
+  │ CIFAR    │    53.26%    │   -0.53pp    │    0.0389    │
+  │ Ratio    │    0.54x     │   0.057x     │    0.083x    │
 
-  낮은 정확도 (53%):
-    → 절반 틀림
-    → 장력이 오답/정답 구분 못 함 (C4b d=-0.24)
-    → tension_scale → 0.039 (자발적 포기)
-    → equilibrium만으로도 비슷 (53.26% vs 52.73%)
-
-  의식 비유:
-    전문가: 의식적 주의가 마지막 세밀함에 도움
-    초보자: 의식적 주의가 오히려 방해 (overthinking)
+  Causal effect reduction (17x) >> accuracy reduction (1.8x)
+  → Nonlinear! If linear, expected -9.25*0.54 = -5.0pp, actual -0.53pp
 ```
 
-## 가설 274(의식=오류교정)에 대한 수정
+## Interpretation
 
 ```
-  원래: "의식은 오류를 교정하는 메커니즘"
-  수정: "의식은 오류가 드물 때만 효과적인 오류 교정 메커니즘"
-  → 오류가 많으면 교정할 수 없음 (인지 과부하)
+  High accuracy (97%+):
+    → Mostly correct automatically
+    → Tension focuses on "remaining 2%" → large effect
+    → tension_scale ≈ 0.47 (active utilization)
+
+  Low accuracy (53%):
+    → Half wrong
+    → Tension can't distinguish wrong/correct answers (C4b d=-0.24)
+    → tension_scale → 0.039 (voluntary abandonment)
+    → Similar with equilibrium alone (53.26% vs 52.73%)
+
+  Consciousness analogy:
+    Expert: Conscious attention helps with final refinement
+    Novice: Conscious attention actually interferes (overthinking)
 ```
 
-## 검증 방향
+## Revision to Hypothesis 274 (Consciousness=Error Correction)
 
 ```
-  1. CNN CIFAR (78%)에서 인과 효과 → 중간값?
-  2. MNIST 학습 초기 (에폭 1, ~90%)에서 인과 효과
-  3. 정확도를 연속적으로 변화시키며 비선형 전환점 특정
+  Original: "Consciousness is an error correction mechanism"
+  Revised: "Consciousness is an error correction mechanism effective only when errors are rare"
+  → Cannot correct when many errors (cognitive overload)
 ```
 
-## 상태: 🟨 (MNIST+CIFAR 2점, 비선형 확인)
+## Verification Directions
+
+```
+  1. CNN CIFAR (78%) causal effect → intermediate value?
+  2. MNIST early training (epoch 1, ~90%) causal effect
+  3. Continuously vary accuracy to identify nonlinear transition point
+```
+
+## Status: 🟨 (MNIST+CIFAR 2 points, nonlinearity confirmed)

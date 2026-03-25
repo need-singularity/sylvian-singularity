@@ -1,3 +1,3 @@
-# H-CX-301: 🟩 π/P₁ = 30° = 완전수 각도
+# H-CX-301: 🟩 π/P₁ = 30° = Perfect Number Angle
 
-> π/6=30°=sin⁻¹(1/2). 2π/6=60°=정삼각형. 기본 기하에 P₁.
+> π/6=30°=sin⁻¹(1/2). 2π/6=60°=equilateral triangle. P₁ in basic geometry.

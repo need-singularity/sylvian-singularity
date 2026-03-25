@@ -1,88 +1,88 @@
-# H-CX-8: 위상가속 x3 = sigma/tau (교차 도메인)
+# H-CX-8: Phase Acceleration x3 = sigma/tau (Cross-domain)
 
-> **위상가속 계수(x3)가 sigma/tau = 12/4 = 3과 정확히 일치. 메타학습(T3) 추가 시 처리량이 x3 점프하는 것은 완전수 6의 "평균 약수"에 의해 결정될 수 있다.**
+> **Phase acceleration coefficient (x3) exactly matches sigma/tau = 12/4 = 3. The x3 jump in throughput when adding meta-learning (T3) may be determined by the "average divisor" of perfect number 6.**
 
-## 수학 측
-
-```
-  sigma(6)/tau(6) = 12/4 = 3 = 평균 약수
-  이것은 완전수 6의 고유한 성질:
-    약수 {1,2,3,6}의 평균 = (1+2+3+6)/4 = 3 = sigma/tau
-```
-
-## 의식엔진 측
+## Mathematics Side
 
 ```
-  가설 124: 위상 가속 = 계단형 x3 (Jamba 실증)
-    theta = 0 → pi에서 증폭률이 x3 계단으로 점프
-    실측: Jamba AI21 처리량 x3 (논문)
+  sigma(6)/tau(6) = 12/4 = 3 = average divisor
+  This is a unique property of perfect number 6:
+    Average of divisors {1,2,3,6} = (1+2+3+6)/4 = 3 = sigma/tau
+```
 
-  의식엔진에서:
+## Consciousness Engine Side
+
+```
+  Hypothesis 124: Phase acceleration = stepwise x3 (Jamba empirical)
+    theta = 0 → pi where amplification rate jumps by x3 steps
+    Measured: Jamba AI21 throughput x3 (paper)
+
+  In consciousness engine:
     EngineA: 12 experts, k=4 active
-    활성 비율: 4/12 = 1/3
-    → 비활성/활성 = 8/4 = 2
-    → 활성 그룹 크기 = sigma/tau = 3 (expert를 tau개 그룹으로 나누면 각 3개)
+    Active ratio: 4/12 = 1/3
+    → Inactive/active = 8/4 = 2
+    → Active group size = sigma/tau = 3 (dividing experts into tau groups gives 3 each)
 ```
 
-## 교차
+## Cross-domain
 
 ```
-  위상가속 x3 = sigma/tau = 3 = 평균 약수
-  → 가속이 "평균 약수" 단위로 일어남
-  → 각 활성 그룹이 3개 expert를 포함 → 그룹 단위 활성화 = x3 점프
+  Phase acceleration x3 = sigma/tau = 3 = average divisor
+  → Acceleration occurs in "average divisor" units
+  → Each active group contains 3 experts → group-wise activation = x3 jump
 
-  C41과 연결:
+  Connection to C41:
     C7 ≈ 1/sqrt(sigma/tau) = 1/sqrt(3)
-    오답 에너지 = 정답의 1/(sigma/tau) = 1/3
-    → 오답은 "1그룹분"의 에너지만 가짐
+    Wrong answer energy = correct answer's 1/(sigma/tau) = 1/3
+    → Wrong answer has only "1 group's worth" of energy
 ```
 
-## 검증 방향
+## Verification Direction
 
 ```
-  1. EngineA에서 그룹 크기를 2, 3, 4, 6으로 변화시켜 위상가속 측정
-  2. sigma/tau가 다른 아키텍처에서 가속 계수가 달라지는가?
-  3. Jamba의 x3이 정확히 sigma/tau=3인지 정밀 측정
+  1. Measure phase acceleration with group sizes 2, 3, 4, 6 in EngineA
+  2. Does acceleration coefficient change with different sigma/tau architectures?
+  3. Precise measurement if Jamba's x3 is exactly sigma/tau=3
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  6개 설정 테스트 (3 trials each):
+  6 configurations tested (3 trials each):
 
   sigma/tau  Config    Final Acc  Ep→95%  Tension
   ─────────  ────────  ─────────  ──────  ───────
        2.0   6e/k3     97.62%     1.3     732.2
        2.0   12e/k6    97.55%     1.0     715.9
-       3.0   6e/k2     97.60%     1.7     613.9  ← 원래 예측 "최적"
-       3.0   12e/k4    97.55%     1.0     685.6  ← 원래 아키텍처
+       3.0   6e/k2     97.60%     1.7     613.9  ← Original predicted "optimal"
+       3.0   12e/k4    97.55%     1.0     685.6  ← Original architecture
        4.0   8e/k2     97.51%     1.0     639.9
        4.0   12e/k3    97.51%     1.0     699.6
 
-  그룹별:
+  By group:
     σ/τ=2.0: acc=97.59%, ep→95%=1.2
-    σ/τ=3.0: acc=97.58%, ep→95%=1.3  ← 가장 느림!
+    σ/τ=3.0: acc=97.58%, ep→95%=1.3  ← Slowest!
     σ/τ=4.0: acc=97.51%, ep→95%=1.0
 
-  상관:
-    r(σ/τ, accuracy)     = -0.75  (높을수록 정확도 낮음)
-    r(σ/τ, ep→95%)       = -0.27  (미미)
-    r(σ/τ, tension)      = -0.53  (높을수록 장력 낮음)
+  Correlation:
+    r(σ/τ, accuracy)     = -0.75  (higher → lower accuracy)
+    r(σ/τ, ep→95%)       = -0.27  (minimal)
+    r(σ/τ, tension)      = -0.53  (higher → lower tension)
 ```
 
-### 분석
+### Analysis
 
 ```
-  H-CX-8 예측: σ/τ=3이 x3 가속 → 가장 빠름
-  실측: σ/τ=3이 가장 느림 (1.3 vs 1.0~1.2 에폭)
+  H-CX-8 prediction: σ/τ=3 gives x3 acceleration → fastest
+  Measured: σ/τ=3 is slowest (1.3 vs 1.0~1.2 epochs)
 
-  → 반박됨! σ/τ=3에 특별한 가속 없음
-  → 오히려 σ/τ=2 (활성 비율 50%)가 약간 유리
-  → 차이는 미미 (0.03~0.1% 정확도, 0.3 에폭 수렴)
+  → Refuted! No special acceleration at σ/τ=3
+  → Rather, σ/τ=2 (50% active ratio) is slightly favorable
+  → Differences are minimal (0.03~0.1% accuracy, 0.3 epoch convergence)
 
-  해석:
-    Jamba의 x3 가속은 아키텍처 전체의 효과이지
-    단순히 σ/τ=3 때문이 아닐 수 있음
+  Interpretation:
+    Jamba's x3 acceleration is an effect of the entire architecture,
+    not simply due to σ/τ=3
 ```
 
-## 상태: ⚠️ 반박 (σ/τ=3 특별하지 않음, 차이 미미)
+## Status: ⚠️ Refuted (σ/τ=3 not special, differences minimal)

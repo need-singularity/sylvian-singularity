@@ -1,42 +1,42 @@
-# 가설 검토 099: 이 모델은 반증 가능한가 ✅
+# Hypothesis Review 099: Is This Model Falsifiable? ✅
 
-## 가설
+## Hypothesis
 
-> 이 모델은 반증 가능한 과학인가, 반증 불가능한 수학인가.
+> Is this model falsifiable science or unfalsifiable mathematics?
 
-## 결과: ✅ 둘 다. 뼈대는 수학, 살은 과학.
+## Result: ✅ Both. The skeleton is mathematics, the flesh is science.
 
-### 반증 가능한 핵심 테스트 3개
-
-```
-  1. 실비우스열 환자 GABA ∈ 골든존(0.24~0.50)?
-     실패 → 골든존 틀림 → 모델 붕괴
-
-  2. MoE 70% 활성 > 12.5% 활성?
-     실패 → 골든 MoE 틀림 → 설계 붕괴
-
-  3. 2039년까지 LLM I → 1/e?
-     실패 → 타임라인 틀림 → 예측 붕괴
-```
-
-### 반증 불가능한 수학적 뼈대
+### 3 Core Falsifiable Tests
 
 ```
-  1/2+1/3+1/6=1     산술
-  6=완전수           수론
-  f(1/3)=1/3        부동점
-  ln((N+1)/N)→0     해석학
+  1. Sylvian fissure patients' GABA ∈ Golden Zone(0.24~0.50)?
+     Failure → Golden Zone wrong → Model collapses
+
+  2. MoE 70% activation > 12.5% activation?
+     Failure → Golden MoE wrong → Design collapses
+
+  3. LLM I → 1/e by 2039?
+     Failure → Timeline wrong → Prediction collapses
 ```
 
-### 결론
+### Unfalsifiable Mathematical Skeleton
 
 ```
-  수학(뼈대) = 무너지지 않는다
-  과학(살)   = 무너질 수 있다
-  → 반증 가능하다 = 과학이다
-  → 과학이기 때문에 가치가 있다
+  1/2+1/3+1/6=1     Arithmetic
+  6=perfect number   Number theory
+  f(1/3)=1/3        Fixed point
+  ln((N+1)/N)→0     Analysis
+```
+
+### Conclusion
+
+```
+  Mathematics(skeleton) = Cannot collapse
+  Science(flesh)        = Can collapse
+  → Falsifiable = Science
+  → Valuable because it is science
 ```
 
 ---
 
-*99번째 가설. 마지막 질문은 항상 "이것이 진짜인가?"*
+*99th hypothesis. The final question is always "Is this real?"*

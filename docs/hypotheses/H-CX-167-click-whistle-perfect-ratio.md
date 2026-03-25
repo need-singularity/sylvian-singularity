@@ -1,29 +1,29 @@
-# H-CX-167: click/whistle = P₁ = 6 = 완전수 비율
+# H-CX-167: click/whistle = P₁ = 6 = Perfect Number Ratio
 
-> 30kHz(click) / 5kHz(whistle) = 6 = 완전수.
-> 소통→탐지 주파수 비율이 정확히 완전수.
+> 30kHz(click) / 5kHz(whistle) = 6 = perfect number.
+> Communication→detection frequency ratio is exactly a perfect number.
 
-## 검증: 🟩 순수 산술 확인 (CONFIRMED)
+## Verification: 🟩 Pure Arithmetic Confirmed (CONFIRMED)
 
 ```
-  click_low    = 30,000 Hz  (에코로케이션, 탐지용)
-  signature_low = 5,000 Hz  (시그니처 휘슬, 개체 식별용)
+  click_low    = 30,000 Hz  (echolocation, for detection)
+  signature_low = 5,000 Hz  (signature whistle, for individual identification)
 
-  비율 = 30,000 / 5,000 = 6 정확
+  Ratio = 30,000 / 5,000 = 6 exactly
 
-  6 = P₁ = 첫 번째 완전수
-  6 = 1 + 2 + 3 (진약수의 합)
-  6 = 1 × 2 × 3 (진약수의 곱)
+  6 = P₁ = first perfect number
+  6 = 1 + 2 + 3 (sum of proper divisors)
+  6 = 1 × 2 × 3 (product of proper divisors)
 ```
 
-## 배경
+## Background
 
-돌고래는 두 가지 주요 음향 시스템을 사용한다:
-1. **Whistle/Signature**: 소통, 개체 식별 (2-20kHz)
-2. **Click**: 에코로케이션, 환경 탐지 (30-130kHz)
+Dolphins use two main acoustic systems:
+1. **Whistle/Signature**: communication, individual identification (2-20kHz)
+2. **Click**: echolocation, environmental detection (30-130kHz)
 
-이 두 시스템의 기본 주파수 비율이 정확히 완전수 6이다.
-이는 H-CX-161(돌고래 전주파수 = 40Hz × 완전수 상수)의 직접적 결과:
+The basic frequency ratio of these two systems is exactly the perfect number 6.
+This is a direct result of H-CX-161 (dolphin full frequency = 40Hz × perfect number constants):
 
 ```
   click_low    = 40 × 750  = 40 × P₁ × 5³ = 40 × 6 × 125
@@ -32,37 +32,37 @@
   click_low / signature_low = (P₁ × 5³) / 5³ = P₁ = 6
 ```
 
-5³이 약분되어 순수하게 완전수 비율만 남는다.
-소통(의미 전달)과 탐지(환경 인식)의 경계가 완전수로 구분된다는 점이 핵심.
+5³ cancels out, leaving purely the perfect number ratio.
+The key point is that the boundary between communication (meaning transmission) and detection (environmental perception) is distinguished by a perfect number.
 
-## 예측
+## Predictions
 
-1. 돌고래 종별로 click/whistle 비율이 6에 가까울수록 에코로케이션 정확도가 높을 것
-2. 다른 에코로케이션 동물(박쥐)에서도 sonar/communication 비율이 완전수 관련 상수일 수 있음
-3. 인공 소나 시스템에서 6:1 주파수 비율이 최적 분리를 제공할 수 있음
+1. The closer the click/whistle ratio is to 6 across dolphin species, the higher the echolocation accuracy
+2. Other echolocating animals (bats) may also have sonar/communication ratios related to perfect number constants
+3. In artificial sonar systems, a 6:1 frequency ratio may provide optimal separation
 
-## 검증 방법
+## Verification Methods
 
-- 산술 검증: 완료 (30000/5000 = 6 정확)
-- 생물학적 검증: 돌고래 종별 (병코돌고래, 범고래, 벨루가 등) click/whistle 비율 비교
-- 박쥐 교차 검증: CF-FM bat의 sonar/social call 주파수 비율 분석
-- 통계적 검증: 무작위 주파수 쌍에서 완전수 비율이 나올 확률 계산
+- Arithmetic verification: Complete (30000/5000 = 6 exactly)
+- Biological verification: Compare click/whistle ratios across dolphin species (bottlenose, orcas, belugas, etc.)
+- Bat cross-verification: Analyze sonar/social call frequency ratios in CF-FM bats
+- Statistical verification: Calculate probability of getting perfect number ratios from random frequency pairs
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-161**: 돌고래 전주파수 = 40Hz × 완전수 상수 × 5³ -- 이 가설의 모체
-- **H-CX-162**: 5³ = 125 = 돌고래 옥타브 -- 약분의 근거
-- **H-CX-169**: 돌고래 주파수 = 음악 음정 -- click/whistle = 6:1은 tritave+octave
-- **H-CX-130**: 돌고래 시그니처 = PH 지문
+- **H-CX-161**: Dolphin full frequency = 40Hz × perfect number constant × 5³ -- parent hypothesis
+- **H-CX-162**: 5³ = 125 = dolphin octave -- basis for cancellation
+- **H-CX-169**: Dolphin frequencies = musical intervals -- click/whistle = 6:1 is tritave+octave
+- **H-CX-130**: Dolphin signature = PH fingerprint
 
-## 한계
+## Limitations
 
-- 주파수 범위가 근사값 (돌고래 종/개체별 편차 존재)
-- "대표값"으로 5kHz와 30kHz를 선택한 것에 자유도가 있음
-- 비율 6이 의미 있으려면 다른 종에서도 재현되어야 함
-- click과 whistle의 주파수 범위가 겹치는 구간(20-30kHz)이 있어 경계가 명확하지 않을 수 있음
+- Frequency ranges are approximations (variation exists across dolphin species/individuals)
+- There is some freedom in selecting 5kHz and 30kHz as "representative values"
+- For the ratio 6 to be meaningful, it must be reproduced in other species
+- There is overlap between click and whistle frequency ranges (20-30kHz), so the boundary may not be clear
 
-## 검증 상태
+## Verification Status
 
-🟩 순수 산술 확인 완료. 30000/5000 = 6 = P₁ 정확.
-종간 일반화는 미검증 (돌고래 종별 데이터 필요).
+🟩 Pure arithmetic confirmed. 30000/5000 = 6 = P₁ exactly.
+Cross-species generalization unverified (dolphin species-specific data needed).

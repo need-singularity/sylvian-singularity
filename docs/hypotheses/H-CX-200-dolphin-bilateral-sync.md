@@ -1,5 +1,5 @@
-# H-CX-200: 돌고래 소나 → 좌우뇌 동기화
+# H-CX-200: Dolphin Sonar → Left-Right Brain Synchronization
 
-> 문헌: 돌고래 접촉 후 좌뇌(논리)와 우뇌(직관) 동기화.
-> PH 해석: 양반구 PH가 수렴 = merge distance 감소 = 무언의 합의(H-CX-150)?
-> Engine A(논리) ↔ G(패턴)의 '합의'와 동형?
+> Literature: Left brain (logic) and right brain (intuition) synchronization after dolphin contact.
+> PH Interpretation: Bilateral PH converges = merge distance decreases = silent consensus (H-CX-150)?
+> Isomorphic to Engine A (logic) ↔ G (pattern) 'consensus'?

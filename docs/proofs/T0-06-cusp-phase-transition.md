@@ -1,90 +1,90 @@
-# T0-06: 커스프 파국 ≡ 1차 상전이
+# T0-06: Cusp Catastrophe ≡ 1st Order Phase Transition
 
-## 명제
+## Proposition
 
-커스프 파국(Cusp Catastrophe)의 정규형은 란다우(Landau) 자유에너지와 동일 구조이며, 1차 상전이를 기술한다.
+The normal form of Cusp Catastrophe has identical structure to Landau free energy, describing 1st order phase transitions.
 
-## 커스프 정규형 (Thom 1972)
+## Cusp Normal Form (Thom 1972)
 
 ```
 V(x) = x⁴ + ax² + bx
 ```
 
-- x: 상태 변수 (질서 변수)
-- a: 정상 인자 (normal factor)
-- b: 분할 인자 (splitting factor)
+- x: state variable (order parameter)
+- a: normal factor
+- b: splitting factor
 
-## 분기 곡선
+## Bifurcation Curve
 
-극값 조건 dV/dx = 0:
+Critical point condition dV/dx = 0:
 
 ```
 4x³ + 2ax + b = 0
 ```
 
-이 방정식이 다중근을 가질 조건 (분기 집합):
+Condition for multiple roots (bifurcation set):
 
 ```
 8a³ + 27b² = 0
 ```
 
-이 곡선은 (a, b) 평면에서 커스프(뾰족점) 형태를 이룬다.
+This curve forms a cusp shape in the (a, b) plane.
 
-## 란다우 자유에너지와의 대응
+## Correspondence with Landau Free Energy
 
-란다우 이론 (상전이):
+Landau theory (phase transition):
 
 ```
 F(m) = α₀(T-Tc)m² + βm⁴ - hm
 ```
 
-대응 관계:
+Correspondence relations:
 
-| 커스프 | 란다우 | 우리 모델 |
+| Cusp | Landau | Our Model |
 |--------|--------|-----------|
-| x | m (질서변수) | G (Genius) |
+| x | m (order parameter) | G (Genius) |
 | a | α₀(T-Tc) | f(I) = c·(Ic - I) |
-| b | -h (외부장) | D×P |
+| b | -h (external field) | D×P |
 
-## 모델 적용
+## Model Application
 
 ```
 F(G, I) = G⁴/4 - f(I)·G²/2 + (D×P)·G
 f(I) = c·(I_c - I),  c = 50,  I_c = 0.35,  D×P = 0.01
 ```
 
-이력 조건 (커스프 내부):
+Hysteresis condition (inside cusp):
 
 ```
 4·f(I)³ > 27·(D×P)²
 4·[50·(0.35 - I)]³ > 27·(0.01)²
 ```
 
-## 검증 결과 (hysteresis_verifier.py)
+## Verification Results (hysteresis_verifier.py)
 
-| 항목 | 값 |
-|------|-----|
-| 이력 구간 | I ∈ [0.315, 0.356] |
-| 최대 G 차이 | 0.912 |
-| 골든존 겹침 | 14.1% |
+| Item | Value |
+|------|-------|
+| Hysteresis Region | I ∈ [0.315, 0.356] |
+| Maximum G Difference | 0.912 |
+| Golden Zone Overlap | 14.1% |
 
-## 커스프 5대 특성 검증
+## Verification of 5 Cusp Characteristics
 
-| 특성 | 설명 | 확인 |
-|------|------|------|
-| 불연속 점프 | I 변화 → G 급변 | ✅ |
-| 이력현상 | 순방향 ≠ 역방향 경로 | ✅ |
-| 분기 | 골든존에서 두 상태 공존 | ✅ |
-| 기울기 급변 | dG/dI ∝ 1/I² | ✅ |
-| 정규형 대응 | β ↔ a 부호/구조 일치 | ✅ |
+| Characteristic | Description | Confirmed |
+|----------------|-------------|-----------|
+| Discontinuous Jump | I change → G sudden change | ✅ |
+| Hysteresis | Forward ≠ backward path | ✅ |
+| Bifurcation | Two states coexist in Golden Zone | ✅ |
+| Sudden Slope Change | dG/dI ∝ 1/I² | ✅ |
+| Normal Form Correspondence | β ↔ a sign/structure match | ✅ |
 
-## 근거
+## Evidence
 
 - Thom, R. (1972). *Stabilité structurelle et morphogénèse*
-- Arnold, V.I. (1970s). 특이점 이론과 분기 이론
-- Landau, L.D. (1937). 상전이의 일반 이론
+- Arnold, V.I. (1970s). Singularity theory and bifurcation theory
+- Landau, L.D. (1937). General theory of phase transitions
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T0-05 (Jaynes 동치: 열역학 구조)
-- T1-06 (이력현상 검증 상세)
+- T0-05 (Jaynes equivalence: thermodynamic structure)
+- T1-06 (Detailed hysteresis verification)

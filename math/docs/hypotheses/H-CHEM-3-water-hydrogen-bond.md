@@ -1,26 +1,27 @@
-# H-CHEM-3: 물의 수소결합 구조와 6
+# H-CHEM-3: Water Hydrogen Bond Structure and 6
 
-> **가설**: 물(H₂O)의 수소결합 네트워크가 6각형 (얼음 구조)인 것이 완전수 6의 기하학적 귀결이다.
+> **Hypothesis**: The hexagonal hydrogen bond network of water (H₂O) (ice structure) is a geometric consequence of perfect number 6.
 
-## 배경
-- 얼음 결정: 6각형 구조 (snowflake = 6-fold 대칭)
-- 물 분자 결합각: 104.5° ≈ 정사면체(109.5°)의 변형
-- 각 물 분자: 4개 수소결합 가능 (2 donor + 2 acceptor) = τ(6)
+## Background
+- Ice crystal: Hexagonal structure (snowflake = 6-fold symmetry)
+- Water molecule bond angle: 104.5° ≈ Deformation of tetrahedral (109.5°)
+- Each water molecule: 4 hydrogen bonds possible (2 donor + 2 acceptor) = τ(6)
 
-## 구조적 대응
+## Structural Correspondence
 ```
-  얼음 구조          산술
+  Ice Structure      Arithmetic
   ─────────────     ──────────
-  6각형 대칭         P₁ = 6
-  4개 수소결합/분자   τ(6) = 4
-  2개 donor          φ(6) = 2
-  2개 acceptor       φ(6) = 2
-  결정학 허용 차수    {1,2,3,4,6} ⊃ 6
+  Hexagonal symmetry P₁ = 6
+  4 H-bonds/molecule τ(6) = 4
+  2 donors           φ(6) = 2
+  2 acceptors        φ(6) = 2
+  Crystallographic   {1,2,3,4,6} ⊃ 6
+  allowed orders
 ```
 
-## 검증 방향
-1. [ ] 얼음 다형체(Ih, Ic 등)에서 6의 역할 문헌 조사
-2. [ ] 물 클러스터 (H₂O)_n: n=6이 특별히 안정?
-3. [ ] 결정학 제약 {1,2,3,4,6}과 R52 인과 체인 연결
+## Verification Directions
+1. [ ] Literature review on role of 6 in ice polymorphs (Ih, Ic, etc.)
+2. [ ] Water clusters (H₂O)_n: Is n=6 particularly stable?
+3. [ ] Connect crystallographic constraints {1,2,3,4,6} with R52 causal chain
 
-## 난이도: 중 | 파급력: ★★
+## Difficulty: Medium | Impact: ★★

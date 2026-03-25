@@ -1,100 +1,100 @@
-# 가설 242: 우리 상수의 기하학적 구조 — 9가지
+# Hypothesis 242: Geometric Structure of Our Constants — 9 Properties
 
-**상태**: ✅ 전부 계산 검증
-**분류**: 기하학 / 정수론
+**Status**: ✅ All computationally verified
+**Category**: Geometry / Number Theory
 
 ---
 
-## 가설
+## Hypothesis
 
-> 완전수 6의 약수 역수 {1/6, 1/3, 1/2, 2/3, 5/6, 1}은 단위원의 정육각형 꼭짓점이며, 정육각형의 대칭군 크기 |D₆|=12=σ(6)이다.
+> The reciprocals of divisors of perfect number 6, {1/6, 1/3, 1/2, 2/3, 5/6, 1}, are the vertices of a regular hexagon on the unit circle, and the size of the symmetry group of the regular hexagon |D₆|=12=σ(6).
 
-## 9가지 기하학적 성질 (전부 🟩)
+## 9 Geometric Properties (All 🟩)
 
-### 1. 이등변삼각형
+### 1. Isosceles Triangle
 
 ```
-  {1/2, 1/3, 1/6}의 수직선 위 거리:
+  Distances on the number line between {1/2, 1/3, 1/6}:
   |1/2-1/3| = 1/6, |1/2-1/6| = 1/3, |1/3-1/6| = 1/6
-  이등변 (두 변 = 1/6)
-  둘레 = 1/6+1/3+1/6 = 2/3
+  Isosceles (two sides = 1/6)
+  Perimeter = 1/6+1/3+1/6 = 2/3
 ```
 
-### 2. 단위원 정육각형
+### 2. Unit Circle Regular Hexagon
 
 ```
   e^(2πi·k/6) for k=0..5:
   0°(1), 60°(1/6), 120°(1/3), 180°(1/2), 240°(2/3), 300°(5/6)
-  인접 거리 전부 = 1 → 정육각형 ✅
+  All adjacent distances = 1 → regular hexagon ✅
 ```
 
 ### 3. ⭐ |D₆| = 12 = σ(6)
 
 ```
-  정육각형 대칭군 D₆ = 회전 6개 + 반사 6개 = 12
+  Symmetry group of regular hexagon D₆ = 6 rotations + 6 reflections = 12
   σ(6) = 1+2+3+6 = 12
 
-  정육각형 대칭군 크기 = 완전수 약수합!
+  Size of regular hexagon symmetry group = sum of divisors of perfect number!
 ```
 
 ### 4. ⭐ Re(ω₆) = 1/2
 
 ```
   ω₆ = e^(2πi/6) = 1/2 + i√3/2
-  Re(ω₆) = cos(60°) = 1/2 = 골든존 상한!
+  Re(ω₆) = cos(60°) = 1/2 = Golden Zone upper bound!
 
-  6차 단위근의 실수부 = 리만 임계선
+  Real part of 6th root of unity = Riemann critical line
 ```
 
-### 5. 구 부피에 4/3
+### 5. Sphere Volume Contains 4/3
 
 ```
   r² = (1/2)²+(1/3)²+(1/6)² = 7/18
-  V = (4/3)πr³ = 1.016 ≈ H(확률분포) = 1.011
-  4/3 = 완전4도 주파수비
+  V = (4/3)πr³ = 1.016 ≈ H(probability distribution) = 1.011
+  4/3 = perfect fourth frequency ratio
 ```
 
-### 6. 심플렉스 확률분포
+### 6. Simplex Probability Distribution
 
 ```
-  (1/2, 1/3, 1/6): 합=1 → 2-심플렉스 위의 점
-  무게중심까지 거리 = √(1/18) = 1/(3√2)
+  (1/2, 1/3, 1/6): sum=1 → point on 2-simplex
+  Distance to centroid = √(1/18) = 1/(3√2)
   KL(p||uniform) = ln(3)-H
 ```
 
-### 7. 쌍곡선 xy=1
+### 7. Hyperbola xy=1
 
 ```
-  6의 약수 (d, 1/d): (1,1), (2,1/2), (3,1/3), (6,1/6)
-  전부 쌍곡선 xy=1 위
+  Divisors of 6 (d, 1/d): (1,1), (2,1/2), (3,1/3), (6,1/6)
+  All on hyperbola xy=1
   ∫₁⁶(1/x)dx = ln(6) = ln(2)+ln(3)
 ```
 
-### 8. ⭐ Z[1/6] 격자
+### 8. ⭐ Z[1/6] Lattice
 
 ```
-  모든 유리수 상수 ∈ Z[1/6] = {a/6ⁿ}
+  All rational constants ∈ Z[1/6] = {a/6ⁿ}
   1/6=1/6, 1/3=2/6, 1/2=3/6, 5/6=5/6
   8=48/6, 17=102/6, 137=822/6
-  → 분모가 전부 6의 거듭제곱
+  → All denominators are powers of 6
 ```
 
-### 9. ⭐ 6-smooth 분류
+### 9. ⭐ 6-Smooth Classification
 
 ```
-  섬 A = {1,2,3,4,6,8,...} = 6-smooth (소인수 2,3만)
-  섬 B = {17,137} = non-6-smooth
-  → 섬 경계 = 6-smooth 여부로 결정!
+  Island A = {1,2,3,4,6,8,...} = 6-smooth (only prime factors 2,3)
+  Island B = {17,137} = non-6-smooth
+  → Island boundary = determined by 6-smoothness!
 ```
 
-## 판정
+## Verdict
 
 ```
-  9/9 전부 계산 통과 ✅
-  핵심: |D₆|=σ(6), Re(ω₆)=1/2, Z[1/6] 격자, 6-smooth 분류
-  골든존 의존: ❌ 없음 — 전부 기존 기하+정수론
+  9/9 all computation pass ✅
+  Core: |D₆|=σ(6), Re(ω₆)=1/2, Z[1/6] lattice, 6-smooth classification
+  Golden Zone dependence: ❌ none — all existing geometry+number theory
 ```
 
 ---
 
-*관련: 090(마스터공식), 098(왜6), 237(음정), 240(차원)*
+*Related: 090 (master formula), 098 (why 6), 237 (musical intervals), 240 (dimension)*

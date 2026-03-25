@@ -1,24 +1,24 @@
-# H-CX-29: ψ/φ→3 수렴 = 의식의 세 상태 극한
+# H-CX-29: ψ/φ→3 Convergence = Three-State Limit of Consciousness
 
-> **가설**: 완전수에서 ψ/φ→3의 수렴은 의식이 궁극적으로
-> 3가지 상태(σ/τ=3)로 수렴함을 의미한다.
+> **Hypothesis**: The convergence of ψ/φ→3 in perfect numbers means that consciousness ultimately
+> converges to 3 states (σ/τ=3).
 
-## 핵심
+## Core
 
 ```
-  P₁=6:   ψ/φ=6  (6가지 상태: 풍부한 의식)
-  P₂=28:  ψ/φ=4  (4가지 상태: 축소)
-  P₃=496: ψ/φ=3.2 (3.2: 거의 3)
+  P₁=6:   ψ/φ=6  (6 states: abundant consciousness)
+  P₂=28:  ψ/φ=4  (4 states: reduced)
+  P₃=496: ψ/φ=3.2 (3.2: almost 3)
   P_∞:    ψ/φ→3  (σ/τ at n=6!)
 
-  3 = σ(6)/τ(6) = "완전수 6의 풍요도/구조도"
-  → 모든 완전수가 궁극적으로 "6의 σ/τ"로 수렴!
-  → "모든 완전수는 6을 향한다"
+  3 = σ(6)/τ(6) = "abundance/structure of perfect number 6"
+  → All perfect numbers ultimately converge to "σ/τ of 6"!
+  → "All perfect numbers point toward 6"
 
-  2^{p-1} = r/(r-3): r→3이면 2^{p-1}→∞
-  → "무한 에너지 = 3 상태 극한"
-  → 의식: 3상태(과거/현재/미래? 또는 생각/느낌/행동?)가
-    의식의 "기저 모드"
+  2^{p-1} = r/(r-3): if r→3 then 2^{p-1}→∞
+  → "Infinite energy = 3 state limit"
+  → Consciousness: 3 states (past/present/future? or thought/feeling/action?)
+    as the "basis mode" of consciousness
 ```
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★★
+## Verdict: 🟧 Structural Analogy | Impact: ★★★★

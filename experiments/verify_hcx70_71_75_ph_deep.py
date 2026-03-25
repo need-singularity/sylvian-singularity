@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""H-CX-70 + H-CX-71 + H-CX-75 검증: PH 심화 — 분류기, 시간축, 수차-위상
+"""H-CX-70 + H-CX-71 + H-CX-75 Verification: PH Deep — Classifier, Time Axis, Aberration-Phase
 
-H-CX-70: merge distance로 혼동 쌍 Precision@K
-H-CX-71: 에폭별 merge 순서 안정성 (Kendall tau)
+H-CX-70: merge distance for confusion pair Precision@K
+H-CX-71: epoch-wise merge order stability (Kendall tau)
 H-CX-75: min_merge_dist vs class AUC
 """
 import sys

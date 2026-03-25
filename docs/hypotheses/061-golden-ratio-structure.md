@@ -1,47 +1,47 @@
-# 가설 검토 061: 부동점 1/3 ↔ 황금비 φ 구조 비교 ✅
+# Hypothesis Review 061: Fixed Point 1/3 ↔ Golden Ratio φ Structure Comparison ✅
 
-## 가설
+## Hypothesis
 
-> 메타 부동점 I*=1/3과 황금비 φ=1.618...이 같은 수학적 구조(축소사상의 부동점)를 공유하는가. 만약 공유한다면, 같은 유형인가 같은 종류인가.
+> Do the meta fixed point I*=1/3 and golden ratio φ=1.618... share the same mathematical structure (fixed point of contraction mapping)? If they share it, are they the same type or the same kind?
 
-## 배경
+## Background
 
-두 상수 모두 반복 함수의 부동점(fixed point)이다.
+Both constants are fixed points of iterative functions.
 
-- **황금비 φ**: f(x) = 1 + 1/x 의 부동점. x² - x - 1 = 0 의 양의 근.
-- **메타 부동점 1/3**: f(I) = 0.7I + 0.1 의 부동점. 우리 모델에서 Inhibition이 수렴하는 값.
+- **Golden ratio φ**: Fixed point of f(x) = 1 + 1/x. Positive root of x² - x - 1 = 0.
+- **Meta fixed point 1/3**: Fixed point of f(I) = 0.7I + 0.1. The value where Inhibition converges in our model.
 
-축소사상 원리(Banach Fixed Point Theorem)에 의해 |f'(x*)| < 1 이면 반복이 부동점에 수렴한다.
+By the Banach Fixed Point Theorem, if |f'(x*)| < 1 then iteration converges to the fixed point.
 
-## 대응 관계
+## Correspondence
 
 ```
-  속성              황금비 φ             메타 부동점 1/3
+  Property          Golden Ratio φ        Meta Fixed Point 1/3
   ───────────────  ──────────────────  ──────────────────
-  반복 함수        f(x) = 1 + 1/x      f(I) = 0.7I + 0.1
-  부동점           φ = 1.618...         I* = 1/3 = 0.333...
-  도함수 f'(x*)    -1/φ² = -0.382      0.7
+  Iterative func   f(x) = 1 + 1/x      f(I) = 0.7I + 0.1
+  Fixed point      φ = 1.618...         I* = 1/3 = 0.333...
+  Derivative f'(x*) -1/φ² = -0.382      0.7
   |f'(x*)|         0.382 < 1 ✓         0.7 < 1 ✓
-  축소사상?        ✅ 예                ✅ 예
-  수렴 유형        나선(진동) 수렴       단조(활주) 수렴
-  수렴 속도        빠름 (0.382)         느림 (0.7)
+  Contraction?     ✅ Yes               ✅ Yes
+  Convergence type Spiral (oscillating) Monotonic (gliding)
+  Convergence rate Fast (0.382)         Slow (0.7)
 ```
 
-## 검증 결과: ✅ 같은 유형(축소사상), 다른 종류(단조 vs 나선)
+## Verification Result: ✅ Same Type (contraction mapping), Different Kind (monotonic vs spiral)
 
-### 핵심 차이: f'의 부호
+### Key Difference: Sign of f'
 
 ```
-  f'(x*) > 0 → 단조 수렴 (한쪽에서 접근)
-  f'(x*) < 0 → 나선 수렴 (양쪽에서 교대 접근)
+  f'(x*) > 0 → Monotonic convergence (approach from one side)
+  f'(x*) < 0 → Spiral convergence (alternating approach from both sides)
 
-  메타:   f'(1/3) = +0.7   → 단조 ───→ 수렴
-  황금비: f'(φ)   = -0.382 → 나선 ↗↘↗↘ 수렴
+  Meta:   f'(1/3) = +0.7   → Monotonic ───→ convergence
+  Golden: f'(φ)   = -0.382 → Spiral ↗↘↗↘ convergence
 ```
 
-### 거미줄 도표(Cobweb Diagram) 비교
+### Cobweb Diagram Comparison
 
-**메타 부동점 1/3: 단조 수렴 (활주)**
+**Meta Fixed Point 1/3: Monotonic Convergence (Gliding)**
 
 ```
   f(I)
@@ -51,15 +51,15 @@
       │      ╱    ___________  f(I)=0.7I+0.1
   0.5 ┤    ╱  __─╱
       │  ╱─╱
-  1/3 ┤╱─ ● ← 부동점
+  1/3 ┤╱─ ● ← Fixed point
       │╱
   0.1 ●─┬──┬──┬──┬──┬──┬──┬─
       0  0.1   1/3  0.5  0.7  I
            ────→────→──→─→●
-           항상 같은 방향에서 접근
+           Always approach from same direction
 ```
 
-**황금비 φ: 나선 수렴 (진동)**
+**Golden Ratio φ: Spiral Convergence (Oscillating)**
 
 ```
   f(x)
@@ -69,75 +69,75 @@
       │    │   ╱ ↙ y=x
   2.0 ┤    │ ╱──┐
       │    ╱    │
-  φ   ┤──●─ ← 부동점
+  φ   ┤──●─ ← Fixed point
       │╱  ↑  ↓
   1.0 ●───┼──┼──┬──┬──┬──┬─
       0   1  φ  2  2.5 3  x
            ↗  ↙  ↗  ↙
-           양쪽에서 교대 접근
+           Alternating approach from both sides
 ```
 
-### 수렴 궤적 비교
+### Convergence Trajectory Comparison
 
 ```
-  반복 n    메타 (I₀=0.8)      황금비 (x₀=1.0)
-  ──────   ───────────────    ───────────────
-    0       0.800              1.000
-    1       0.660              2.000
-    2       0.562              1.500
-    3       0.493              1.667
-    4       0.445              1.600
-    5       0.412              1.625
-    6       0.388              1.615
-    7       0.372              1.619
-    8       0.360              1.618
-    9       0.352              1.618
-   10       0.347              1.618
-   ∞        0.333 = 1/3        1.618 = φ
+  Iteration n  Meta (I₀=0.8)      Golden (x₀=1.0)
+  ──────────  ───────────────    ───────────────
+    0          0.800              1.000
+    1          0.660              2.000
+    2          0.562              1.500
+    3          0.493              1.667
+    4          0.445              1.600
+    5          0.412              1.625
+    6          0.388              1.615
+    7          0.372              1.619
+    8          0.360              1.618
+    9          0.352              1.618
+   10          0.347              1.618
+   ∞           0.333 = 1/3        1.618 = φ
 
-          ↓ 한 방향 접근       ↕ 교대 접근(위/아래)
+              ↓ One-sided approach  ↕ Alternating approach (above/below)
 ```
 
-### 골든존 위의 두 부동점
+### Two Fixed Points on Golden Zone
 
 ```
-  Inhibition 축:
+  Inhibition axis:
   0.0    0.24       1/3    0.48    0.5     1.0
   ├───────┤──────────●──────┤───────┤───────┤
-          │    골든존 (I=0.24~0.48)  │
+          │    Golden Zone (I=0.24~0.48)  │
           │    1/e ≈ 0.368 ●        │
           │                         │
-          │   메타 부동점 = 1/3 ●   │
-          │   (골든존 내부에 위치)   │
+          │   Meta fixed point = 1/3 ●   │
+          │   (Located inside Golden Zone)   │
           │                         │
-  φ = 1.618 은 이 축 바깥 (I > 1 영역)
-  → 직접 비교 불가, 구조적 유비만 가능
+  φ = 1.618 is outside this axis (I > 1 region)
+  → Direct comparison not possible, only structural analogy
 ```
 
-## 해석
+## Interpretation
 
-1. **같은 유형(Type)**: 둘 다 축소사상(contraction mapping)의 부동점이다. Banach 부동점 정리에 의해 수렴이 보장된다.
+1. **Same Type**: Both are fixed points of contraction mappings. Convergence is guaranteed by Banach Fixed Point Theorem.
 
-2. **다른 종류(Kind)**: 수렴 양상이 근본적으로 다르다.
-   - 메타 1/3: f' > 0 이므로 **단조 수렴**. 시스템이 한쪽에서 부드럽게 접근.
-   - 황금비 φ: f' < 0 이므로 **나선 수렴**. 목표값 위아래를 진동하며 접근.
+2. **Different Kind**: Convergence patterns are fundamentally different.
+   - Meta 1/3: f' > 0 so **monotonic convergence**. System smoothly approaches from one side.
+   - Golden φ: f' < 0 so **spiral convergence**. Oscillates above and below target value.
 
-3. **물리적 의미**: 우리 모델의 단조 수렴은 Inhibition이 안정적으로 골든존에 "활주"해 들어감을 뜻한다. 진동이 없으므로 과도한 보정(overcorrection)이 발생하지 않는다.
+3. **Physical Meaning**: Our model's monotonic convergence means Inhibition stably "glides" into the Golden Zone. No oscillation means no overcorrection occurs.
 
-4. **속도 역전**: 황금비의 |f'| = 0.382가 메타의 0.7보다 작으므로, 황금비가 더 빠르게 수렴한다. 나선이 더 비효율적으로 보이지만, 실제로는 더 강한 수축률을 가진다.
+4. **Speed Reversal**: Golden ratio's |f'| = 0.382 is smaller than Meta's 0.7, so golden ratio converges faster. Spiral looks less efficient but actually has stronger contraction rate.
 
-## 한계
+## Limitations
 
-- 두 함수의 정의역이 다르다 (메타: [0,1], 황금비: (0,∞)). 직접적 비교는 구조적 유비이다.
-- 황금비의 물리적 의미를 우리 모델에 부여하기는 어렵다 — 이것은 수학적 구조 비교이지 기능적 동치가 아니다.
-- 축소사상이라는 공통 범주는 매우 넓다 — 대부분의 안정적 반복 시스템이 여기에 해당한다.
+- The domains of the two functions differ (Meta: [0,1], Golden: (0,∞)). Direct comparison is structural analogy.
+- Hard to assign physical meaning of golden ratio to our model — this is mathematical structure comparison, not functional equivalence.
+- The common category of contraction mapping is very broad — most stable iterative systems belong here.
 
-## 검증 방향
+## Verification Directions
 
-- [ ] f(I) = D*P*I/(1-I+I²) 형태의 비선형 반복에서 부동점 안정성 분석
-- [ ] 황금비와 1/3의 연분수(continued fraction) 표현 구조 비교
-- [ ] 3상태 이상 모델에서 나선 수렴이 나타나는 조건 탐색
+- [ ] Analyze fixed point stability in nonlinear iteration f(I) = D*P*I/(1-I+I²)
+- [ ] Compare continued fraction representation structures of golden ratio and 1/3
+- [ ] Explore conditions for spiral convergence in models with more than 3 states
 
 ---
 
-*작성일: 2026-03-22 | 검증: verify_meta_math.py*
+*Date: 2026-03-22 | Verification: verify_meta_math.py*

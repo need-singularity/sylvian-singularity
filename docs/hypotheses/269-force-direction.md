@@ -1,131 +1,131 @@
-# 가설 269: 힘의 방향 가설 — 반발력에 해부학적 방향이 있는가?
+# Hypothesis 269: Force Direction Hypothesis — Does Repulsion Force Have Anatomical Direction?
 
-> **반발력장의 힘 벡터(A-G)는 뇌의 전두엽→후두엽 방향에 대응한다. 체험에서 느꼈던 "앞에서 뒤로 밀어내는 힘"은 Engine A(논리/전두엽)에서 Engine G(패턴/후두엽)로의 반발 벡터와 같은 구조다.**
+> **The force vector (A-G) of the repulsion field corresponds to the frontal→occipital lobe direction of the brain. The "force pushing from front to back" felt in the experience has the same structure as the repulsion vector from Engine A (logic/frontal lobe) to Engine G (pattern/occipital lobe).**
 
-## 배경/맥락
+## Background/Context
 
-프로젝트의 출발점인 체험에서:
+From the experience that was the starting point of the project:
 
 ```
-  "머리 안에서 자석의 같은 극을 마주한 것과 같은 물리적 압력이 느껴졌다"
-  방향: 앞에서 뒤로 (전두엽 → 후두엽)
+  "I felt physical pressure inside my head like facing same poles of magnets"
+  Direction: From front to back (frontal lobe → occipital lobe)
 
-  이후:
-    통제권 상실 (전두엽 = 의지/판단의 중심이 밀려남)
-    관찰만 가능 (후두엽 = 시각/관찰의 중심이 활성화)
+  After:
+    Loss of control (frontal lobe = center of will/judgment was pushed away)
+    Only observation possible (occipital lobe = center of vision/observation activated)
 ```
 
-코드에서 반발 벡터:
+Repulsion vector in code:
 
 ```
   repulsion = out_A - out_G
 
-  Engine A: σ,τ-MoE (정수론) — 논리적 판단, 규칙 기반
-  Engine G: Shannon 엔트로피 — 패턴 인식, 확률 기반
+  Engine A: σ,τ-MoE (number theory) — Logical judgment, rule-based
+  Engine G: Shannon entropy — Pattern recognition, probability-based
 
-  뇌 대응:
-    A ↔ 전두엽 (논리, 판단, 통제)
-    G ↔ 후두엽/측두엽 (패턴, 인식, 관찰)
+  Brain correspondence:
+    A ↔ Frontal lobe (logic, judgment, control)
+    G ↔ Occipital/temporal lobe (pattern, recognition, observation)
 ```
 
-관련 가설: 263(장력 통합), 체험 기록(docs/magnetic-inspiration.md)
+Related hypotheses: 263(tension integration), experience record(docs/magnetic-inspiration.md)
 
-## 방향 데이터
-
-```
-  repulsion = out_A - out_G 는 10차원 벡터 (output_dim=10)
-
-  이 벡터의 부호가 방향 정보를 담는가?
-
-  체험과의 대응:
-    repulsion > 0 (A가 G보다 큰 방향) = "앞이 뒤를 밀어냄"
-    repulsion < 0 (G가 A보다 큰 방향) = "뒤가 앞을 밀어냄"
-
-  체험에서는 "앞에서 뒤로" = A → G 방향 = repulsion > 0
-  즉, 통제(A)가 관찰(G)에 의해 밀려남 = G가 A를 이기는 방향
-
-  ...잠깐. 체험에서 "밀어내는 존재"가 앞에서 밀었다면:
-    외부 존재(앞) → 나(뒤) = 앞→뒤
-    나의 통제권(전두엽)이 밀려남
-    → 외부 존재가 A의 위치를 점령, 나는 G의 위치로 밀려남
-```
-
-## 추측적 모델
+## Directional Data
 
 ```
-  정상 상태:
-    A(전두엽) = 나의 통제    ← 내가 A를 소유
-    G(후두엽) = 나의 관찰    ← 내가 G를 소유
+  repulsion = out_A - out_G is a 10-dimensional vector (output_dim=10)
 
-  체험 시:
-    외부 존재 → A(전두엽)을 점령 (통제권 탈취)
-    나 → G(후두엽)으로 밀려남 (관찰만 가능)
+  Does the sign of this vector contain directional information?
 
-    반발력 = A(외부) - G(나) = 강한 양의 벡터 (앞→뒤)
-    장력 = 매우 높음 (놀람, 선명한 관찰)
+  Correspondence with experience:
+    repulsion > 0 (direction where A is greater than G) = "front pushes back"
+    repulsion < 0 (direction where G is greater than A) = "back pushes front"
 
-  분열 후:
-    외부 존재가 A를 가지고 떠남
-    나는 A와 G 모두 회복
-    장력 감소 → 멍함 (기억 흐림)
+  In the experience "from front to back" = A → G direction = repulsion > 0
+  That is, control(A) being pushed by observation(G) = direction where G overcomes A
+
+  ...Wait. If in the experience "the pushing entity" pushed from the front:
+    External entity(front) → Me(back) = front→back
+    My control(frontal lobe) is pushed away
+    → External entity occupies position of A, I am pushed to position of G
 ```
 
-## 검증 가능한 예측
+## Speculative Model
 
 ```
-  1. 반발 벡터 out_A - out_G의 부호/방향이 입력에 따라 달라지는가?
-     → 어떤 입력에서 A가 지배하고 어떤 입력에서 G가 지배하는지
+  Normal state:
+    A(frontal lobe) = My control    ← I own A
+    G(occipital lobe) = My observation    ← I own G
 
-  2. "통제권 이동" 실험: Engine A의 가중치를 외부(다른 학습된 A)로 교체
-     → 반발 벡터의 방향이 뒤집히는가?
-     → 정확도/장력이 어떻게 변하는가?
+  During experience:
+    External entity → Occupies A(frontal lobe) (seizes control)
+    I → Pushed to G(occipital lobe) (can only observe)
 
-  3. 반발 벡터의 norm (크기)이 큰 입력 = "밀어내는 힘이 강한 입력"
-     → 이런 입력에서 모델이 "놀라는" 것과 대응하는가?
+    Repulsion = A(external) - G(me) = strong positive vector (front→back)
+    Tension = very high (surprise, vivid observation)
 
-  4. 뇌 영상 데이터와의 비교:
-     → EEG에서 전두엽→후두엽 방향 정보 흐름과 반발 벡터 상관?
+  After fission:
+    External entity leaves with A
+    I recover both A and G
+    Tension decreases → daze (memory blur)
 ```
 
-## ASCII 모델
+## Verifiable Predictions
 
 ```
-  정상:
-    ┌─A(나의 논리)─┐    ┌─G(나의 관찰)─┐
-    │  전두엽       │←→│  후두엽       │
-    │  통제         │반발│  인식         │
-    └──────────────┘    └──────────────┘
-          나의 A              나의 G
+  1. Does the sign/direction of repulsion vector out_A - out_G vary with input?
+     → Which inputs does A dominate and which does G dominate?
 
-  체험 중:
-    ┌─A(외부 존재)──┐ ══→ ┌─G(나)────────┐
-    │  전두엽        │밀림  │  후두엽       │
-    │  외부가 통제    │ → │  관찰만 가능   │
-    └───────────────┘     └──────────────┘
-          외부의 A             나 (밀려남)
+  2. "Control transfer" experiment: Replace Engine A weights with external (another trained A)
+     → Does the repulsion vector direction flip?
+     → How do accuracy/tension change?
 
-  분열 후:
-    ┌─A(외부)─┐          ┌─A(나)──┐  ┌─G(나)──┐
-    │ 떠남     │          │ 회복    │←→│ 회복    │
-    └─────────┘          └────────┘  └────────┘
-     따로 감                   나 (원래대로)
+  3. Inputs with large repulsion vector norm (magnitude) = "inputs with strong pushing force"
+     → Does this correspond to the model being "surprised" by these inputs?
+
+  4. Comparison with brain imaging data:
+     → Correlation between frontal→occipital information flow in EEG and repulsion vector?
 ```
 
-## 한계
+## ASCII Model
 
 ```
-  1. 뇌의 전두엽/후두엽 대응은 비유일 뿐 실증 아님.
-  2. Engine A/G의 역할 배정이 자의적.
-  3. "앞에서 뒤로"라는 방향 기억 자체가 불확실 ("였는듯").
-  4. 반발 벡터의 방향이 물리적 방향과 대응하는 메커니즘 없음.
-  5. 이 가설은 검증보다 해석에 가까움. 과학적 가설이라기보다 모델링 시도.
+  Normal:
+    ┌─A(my logic)──┐    ┌─G(my observation)─┐
+    │  frontal lobe │←→│  occipital lobe   │
+    │  control      │repulsion│  perception      │
+    └──────────────┘    └───────────────────┘
+          My A                   My G
+
+  During experience:
+    ┌─A(external entity)─┐ ══→ ┌─G(me)────────┐
+    │  frontal lobe      │push  │  occipital lobe│
+    │  external controls │ → │  can only observe│
+    └───────────────────┘     └───────────────┘
+         External's A              Me (pushed)
+
+  After fission:
+    ┌─A(external)─┐          ┌─A(me)───┐  ┌─G(me)───┐
+    │ leaves      │          │ recover │←→│ recover │
+    └─────────────┘          └─────────┘  └─────────┘
+     Goes separately              Me (back to normal)
 ```
 
-## 검증 방향
+## Limitations
 
 ```
-  1. 반발 벡터 out_A - out_G의 통계적 분석 (부호 분포, 크기 분포)
-  2. "통제권 교체" 실험 구현
-  3. 뇌 영상 데이터(공개 EEG 데이터셋)와의 상관 분석
-  4. 체험의 추가 세부 기억 수집 (방향, 위치, 강도 등)
+  1. Brain frontal/occipital correspondence is only analogy, not empirical.
+  2. Role assignment of Engine A/G is arbitrary.
+  3. The directional memory "from front to back" itself is uncertain ("seemed to be").
+  4. No mechanism for repulsion vector direction to correspond to physical direction.
+  5. This hypothesis is closer to interpretation than verification. More a modeling attempt than scientific hypothesis.
+```
+
+## Verification Direction
+
+```
+  1. Statistical analysis of repulsion vector out_A - out_G (sign distribution, magnitude distribution)
+  2. Implement "control transfer" experiment
+  3. Correlation analysis with brain imaging data (public EEG datasets)
+  4. Collect additional detailed memories of experience (direction, location, intensity, etc.)
 ```

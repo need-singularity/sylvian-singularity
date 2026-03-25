@@ -1,5 +1,5 @@
-# H-CX-199: 돌고래 치료 시 뇌활동 376% 증가의 PH 해석
+# H-CX-199: PH Interpretation of 376% Brain Activity Increase During Dolphin Therapy
 
-> PMC7349020: DAT 중 뇌활동 376% 증가.
-> PH 해석: 감마 급증 = H0_total 급변 = 위상 전이?
-> H-CX-90(0.1에폭 30x)과 유사한 '인지 위상 전이'?
+> PMC7349020: 376% brain activity increase during DAT.
+> PH interpretation: Gamma surge = rapid H0_total change = phase transition?
+> Similar 'cognitive phase transition' to H-CX-90(0.1 epoch 30x)?

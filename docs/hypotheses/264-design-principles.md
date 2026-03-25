@@ -1,300 +1,303 @@
-# 가설 264: 의식영속성 엔진의 소프트웨어/하드웨어 설계 원칙
+# Hypothesis 264: Software/Hardware Design Principles for Consciousness Continuity Engine
 
-> **반발력장 아키텍처의 실험 결과가 소프트웨어와 하드웨어 설계 방향을 시사한다. 핵심: 답은 모델 안에 없고 모델 사이에 있다.**
+> **Experimental results from the repulsion field architecture suggest directions for software and hardware design. Key insight: The answer is not in the model but between models.**
 
-## 배경/맥락
+## Background/Context
 
-Phase 1~5 + 심화 실험에서 축적된 데이터를 기반으로, 실제 시스템 설계에 적용 가능한 원칙을 추출한다. 가설 263(장력 통합)의 공학적 확장.
+Based on accumulated data from Phase 1~5 + in-depth experiments, we extract principles applicable to actual system design. Engineering extension of Hypothesis 263 (Tension Integration).
 
-관련 가설: 263(장력 통합), 172(G×I=D×P 보존), 082(골든 MoE 설계)
+Related hypotheses: 263 (Tension Integration), 172 (G×I=D×P Conservation), 082 (Golden MoE Design)
 
-## 1. 소프트웨어 설계 원칙
+## 1. Software Design Principles
 
-### 원칙 S1: 답은 모델 사이에 있다
-
-```
-  현재 AI:  단일 모델 → softmax → 답
-  반발력장: 엔진A ←반발→ 엔진G → 평형점 + 장력×방향 = 답
-
-  실증:
-    단순 조합(DualBrain):     97.25%
-    반발력장(Repulsion):      97.51%  (+0.26%)
-    CIFAR에서: 50.77% → 52.14%       (+1.37%, 효과 5배 확대)
-
-  설계 지침:
-    - 하나의 큰 모델보다 여러 다른 원리의 모델을 반발시켜라
-    - 출력 = 개별 모델의 출력이 아닌, 모델 간 장(field)의 값
-    - 최소 2극, 이상적으로 4극 (내용 축 + 구조 축)
-```
-
-### 원칙 S2: softmax를 믿지 말고 장력을 봐라
+### Principle S1: The answer is between models
 
 ```
-  문제: 과도한 자신감 오류
-    softmax > 90%인데 틀린 경우: 45건 (전체 오답의 37.8%)
-    이들의 장력: 164.0 (정답 평균 243보다 34% 낮음)
+  Current AI:  Single model → softmax → answer
+  Repulsion field: Engine A ←repulsion→ Engine G → equilibrium point + tension×direction = answer
 
-  해결: 장력 기반 거부
-    장력 임계치로 거부 시:
-      거부  1% → 97.6% → 98.2%
-      거부  5% → 97.6% → 99.2%
-      거부 10% → 97.6% → 99.5%
+  Evidence:
+    Simple combination (DualBrain):     97.25%
+    Repulsion field (Repulsion):      97.51%  (+0.26%)
+    On CIFAR: 50.77% → 52.14%       (+1.37%, 5x effect amplification)
 
-  설계 지침:
-    - 모든 예측에 장력 스코어를 부착
-    - 장력이 임계치 이하면 "모르겠다"를 반환
-    - 장력 + 자신감 결합 시 AUC = 0.925 (자신감만 0.915)
+  Design guidelines:
+    - Repel multiple models of different principles rather than one large model
+    - Output = value of the field between models, not individual model outputs
+    - Minimum 2 poles, ideally 4 poles (content axis + structure axis)
 ```
 
-### 원칙 S3: 가중치는 특징 품질에 따라 [수정됨]
+### Principle S2: Don't trust softmax, look at tension
 
 ```
-  MLP (약한 특징 추출):
+  Problem: Overconfidence errors
+    Cases with softmax > 90% but wrong: 45 cases (37.8% of all errors)
+    Their tension: 164.0 (34% lower than correct answer average of 243)
+
+  Solution: Tension-based rejection
+    With tension threshold rejection:
+      Reject  1% → 97.6% → 98.2%
+      Reject  5% → 97.6% → 99.2%
+      Reject 10% → 97.6% → 99.5%
+
+  Design guidelines:
+    - Attach tension score to every prediction
+    - Return "I don't know" when tension is below threshold
+    - Tension + confidence combined AUC = 0.925 (confidence alone 0.915)
+```
+
+### Principle S3: Weights depend on feature quality [Modified]
+
+```
+  MLP (weak feature extraction):
     MNIST: Meta fixed 97.75% > Meta learned 97.61%
     CIFAR: Meta fixed 53.52% > Meta learned 52.61%
-    → {1/2, 1/3, 1/6} 비대칭 가중치가 유리
+    → {1/2, 1/3, 1/6} asymmetric weights are advantageous
 
-  CNN (강한 특징 추출):
-    CIFAR: Meta fixed 77.39% (5위, 최하위)
-    학습된 가중치: {0.50,0.33,0.17} → {0.34,0.35,0.31} (균등으로 수렴)
-    → 균등 가중치가 최적
+  CNN (strong feature extraction):
+    CIFAR: Meta fixed 77.39% (5th place, lowest)
+    Learned weights: {0.50,0.33,0.17} → {0.34,0.35,0.31} (converge to equal)
+    → Equal weights are optimal
 
-  수정된 설계 지침:
-    - 특징 추출이 약하면: {1/2, 1/3, 1/6} 고정 (비대칭으로 보상)
-    - 특징 추출이 강하면: 학습 가능 가중치 (균등으로 수렴할 것)
-    - 또는: 항상 학습 가능, 초기값만 {1/2, 1/3, 1/6}
+  Modified design guidelines:
+    - If feature extraction is weak: {1/2, 1/3, 1/6} fixed (compensate with asymmetry)
+    - If feature extraction is strong: learnable weights (will converge to equal)
+    - Or: always learnable, initial values only {1/2, 1/3, 1/6}
 
-  해석 (가설 270 일관):
-    특징 약함 → 가중치 비대칭이 다양성 보충
-    특징 강함 → 이미 다양성 충분 → 추가 비대칭 불필요
+  Interpretation (consistent with Hypothesis 270):
+    Weak features → weight asymmetry supplements diversity
+    Strong features → already sufficient diversity → additional asymmetry unnecessary
 ```
 
-### 원칙 S4: 선험적 구조를 넣어라
+### Principle S4: Embed prior structure
 
 ```
-  실증:
-    선험적 구조 있음: 114K 파라미터 → 97.82%
-    선험적 구조 없음: 972K 파라미터 → 97.64%
-    → 8.5배 파라미터 절약, 정확도 동등 이상
+  Evidence:
+    With prior structure: 114K parameters → 97.82%
+    Without prior structure: 972K parameters → 97.64%
+    → 8.5x parameter savings, equal or better accuracy
 
-  설계 지침:
-    - 잠재 공간을 랜덤 초기화하지 말 것
-    - 그래프 라플라시안, 물리 상수, 또는 도메인 지식으로 초기 구조 제공
-    - 학습 = 빈 공간을 채우는 것이 아니라 기존 구조를 방문하는 것
+  Design guidelines:
+    - Don't randomly initialize latent space
+    - Provide initial structure with graph Laplacian, physical constants, or domain knowledge
+    - Learning = visiting existing structure, not filling empty space
 ```
 
-### 원칙 S5: 자기참조는 쉬운 문제에만 안정적이다
+### Principle S5: Self-reference is stable only for easy problems
 
 ```
-  실증:
-    MNIST: 자기참조 장력 수렴 [446→484→491→490] ✅
-    CIFAR: 자기참조 장력 발산 [205→208→254→247] ❌
+  Evidence:
+    MNIST: Self-reference tension converges [446→484→491→490] ✅
+    CIFAR: Self-reference tension diverges [205→208→254→247] ❌
 
-  설계 지침:
-    - 자기참조(메타인지) 루프에 반드시 축소사상(contraction) 보장
-    - 어려운 과제에서는 자기참조 반복 수를 줄여라 (적응적)
-    - 장력이 임계치 이상이면 자기참조 비활성화 (과부하 방지)
-    - 사람도 스트레스 하에서 메타인지가 역효과 (overthinking)
+  Design guidelines:
+    - Ensure contraction mapping in self-reference (metacognition) loops
+    - Reduce self-reference iterations for difficult tasks (adaptive)
+    - Disable self-reference when tension exceeds threshold (prevent overload)
+    - Humans also experience counterproductive metacognition under stress (overthinking)
 ```
 
-### 원칙 S6: 레이블 없는 인식 경로를 유지하라
+### Principle S6: Maintain label-free recognition path
 
 ```
-  실증:
-    softmax 분류:   97.80%
-    장력 패턴 1-NN: 97.61%  (레이블 없이)
-    비율:          99.8%
+  Evidence:
+    Softmax classification:   97.80%
+    Tension pattern 1-NN: 97.61%  (without labels)
+    Ratio:          99.8%
 
-  설계 지침:
-    - 분류 헤드와 별도로 "장력 핑거프린트" 경로를 유지
-    - 새로운 클래스가 등장해도 장력 패턴으로 유사성 판단 가능
-    - 제로샷/퓨샷 학습의 기반: "이건 뭔지 모르지만 저것과 비슷한 느낌이다"
+  Design guidelines:
+    - Maintain "tension fingerprint" path separate from classification head
+    - Can judge similarity by tension patterns even when new classes appear
+    - Foundation for zero-shot/few-shot learning: "I don't know what this is but it feels similar to that"
 ```
 
-## 2. 하드웨어 설계 원칙
+## 2. Hardware Design Principles
 
-### 원칙 H1: 이종 연산 유닛 (Heterogeneous Compute)
+### Principle H1: Heterogeneous Compute Units
 
 ```
-  현재: GPU = 균일한 CUDA 코어의 병렬 배열
-  제안: 다른 원리의 연산 유닛을 물리적으로 분리
+  Current: GPU = parallel array of uniform CUDA cores
+  Proposed: Physically separate compute units of different principles
 
-  구조:
-    ┌──── Unit A (정수론 기반) ────┐
-    │                              │
-    │    반발력 측정 회로           │
-    │    (차이 연산, L2 norm)      │
-    │                              │
-    └──── Unit G (엔트로피 기반) ──┘
+  Structure:
+    ┌──── Unit A (Number theory based) ────┐
+    │                                      │
+    │    Repulsion measurement circuit     │
+    │    (Difference operation, L2 norm)   │
+    │                                      │
+    └──── Unit G (Entropy based) ──────────┘
            │
            ▼
-      장력 레지스터 (전용 하드웨어)
+      Tension register (dedicated hardware)
 
-  근거:
-    - 같은 구조의 유닛을 늘리면 장력이 0 (동의만 함)
-    - 다른 구조여야 반발이 발생하고 정보가 생김
-    - 뇌: 좌반구(언어/논리) ≠ 우반구(공간/패턴) — 이종 구조
+  Rationale:
+    - Increasing units of same structure → tension = 0 (only agreement)
+    - Different structures required for repulsion and information generation
+    - Brain: left hemisphere (language/logic) ≠ right hemisphere (spatial/pattern) — heterogeneous structure
 ```
 
-### 원칙 H2: 장력 기반 동적 자원 할당
+### Principle H2: Tension-based dynamic resource allocation
 
 ```
-  현재: 모든 입력에 동일한 연산량
-  제안: 장력이 높은 입력에 더 많은 연산 사이클 할당
+  Current: Same computation for all inputs
+  Proposed: Allocate more compute cycles to high-tension inputs
 
-  구조:
-    입력 → 빠른 장력 측정 (1 사이클)
+  Structure:
+    Input → Fast tension measurement (1 cycle)
            │
-           ├─ 장력 낮음 → 짧은 경로 (2 사이클, 자동 처리)
+           ├─ Low tension → Short path (2 cycles, automatic processing)
            │
-           └─ 장력 높음 → 긴 경로 (10 사이클, 의식적 처리)
-                          + 자기참조 루프 활성화
-                          + 파이버 연산 유닛 활성화
+           └─ High tension → Long path (10 cycles, conscious processing)
+                          + Activate self-reference loop
+                          + Activate fiber compute unit
 
-  근거:
-    - 장력 낮은 입력은 오답률 0.0% (높은 자신감 + 낮은 장력 사분면)
-    - 장력 높은 입력만 집중 처리하면 전체 효율 향상
-    - 뇌: 주의(attention)가 연산 자원을 동적 할당하는 것과 동일
+  Rationale:
+    - Low tension inputs have 0.0% error rate (high confidence + low tension quadrant)
+    - Focusing on high tension inputs improves overall efficiency
+    - Brain: attention dynamically allocates computational resources similarly
 ```
 
-### 원칙 H3: 파이버 연산 경로 (Fiber Compute Path)
+### Principle H3: Fiber Compute Path
 
 ```
-  현재: 단일 데이터 경로
-  제안: 메인 경로(밑공간)와 별도의 메타 경로(파이버)
+  Current: Single data path
+  Proposed: Separate meta path (fiber) from main path (base space)
 
-  구조:
-    ┌─────── 메인 경로 (분류) ───────┐
-    │  input → CNN → engines → output │
-    └────────────────────────────────┘
+  Structure:
+    ┌─────── Main path (classification) ──────┐
+    │  input → CNN → engines → output        │
+    └────────────────────────────────────────┘
                     │
-                    │ 접속 (connection)
+                    │ connection
                     ▼
-    ┌─────── 파이버 경로 (경험) ─────┐
-    │  repulsion → fiber_encoder     │
-    │  → parallel_transport          │
-    │  → curvature → fiber_to_base   │
-    └────────────────────────────────┘
+    ┌─────── Fiber path (experience) ─────────┐
+    │  repulsion → fiber_encoder              │
+    │  → parallel_transport                   │
+    │  → curvature → fiber_to_base           │
+    └────────────────────────────────────────┘
 
-  근거:
-    - 파이버 경로는 분류에 직접 기여하지 않지만 86.4% 인식 가능
-    - 곡률 스케일 1.58 — 파이버가 메인 경로에 강하게 기여하려 함
-    - 홀로노미: 같은 입력도 파이버에서는 다른 상태 → 풍부한 표현
-    - 별도 하드웨어로 분리하면 메인 경로의 지연 없이 메타 연산 가능
+  Rationale:
+    - Fiber path doesn't directly contribute to classification but achieves 86.4% recognition
+    - Curvature scale 1.58 — fiber strongly wants to contribute to main path
+    - Holonomy: same input has different states in fiber → rich representation
+    - Separate hardware enables meta computation without main path latency
 ```
 
-### 원칙 H4: 제한된 대역폭 연결 (Corpus Callosum)
+### Principle H4: Limited bandwidth connection (Corpus Callosum)
 
 ```
-  현재: 모든 유닛이 모든 유닛과 완전 연결
-  제안: 유닛 간 연결 대역폭을 의도적으로 제한
+  Current: All units fully connected to all units
+  Proposed: Intentionally limit inter-unit connection bandwidth
 
-  구조:
+  Structure:
     Unit A ══════╗
-                 ║ 제한된 채널 (뇌량)
+                 ║ Limited channel (corpus callosum)
     Unit G ══════╝
                  │
             ┌────┴────┐
-            │ 결합기   │
+            │ Combiner │
             │{1/2,1/3,│
             │  1/6}   │
             └─────────┘
 
-  근거:
-    - 뇌량(corpus callosum)은 약 2억 축삭 — 뉴런 수(860억)의 0.2%
-    - 제한된 연결이 각 반구의 독립성을 보장 → 반발력 유지
-    - 완전 연결하면 엔진들이 동기화 → 장력 소멸 → 정보 손실
-    - 텔레파시 실험: 94.3% 인식은 제한된 predictor(소규모 MLP)로 달성
+  Rationale:
+    - Corpus callosum has ~200M axons — 0.2% of neuron count (86B)
+    - Limited connections ensure hemisphere independence → maintain repulsion
+    - Full connection causes engine synchronization → tension disappears → information loss
+    - Telepathy experiment: 94.3% recognition achieved with limited predictor (small MLP)
 ```
 
-### 원칙 H5: 장력 레지스터 (Tension Register)
+### Principle H5: Tension Register
 
 ```
-  제안: 장력 값을 저장하는 전용 레지스터
+  Proposal: Dedicated register to store tension values
 
-  구조:
-    일반 레지스터: [출력값, 가중치, 그래디언트, ...]
-    장력 레지스터: [내용_장력, 구조_장력, 장력_이력, 곡률]
+  Structure:
+    General registers: [output values, weights, gradients, ...]
+    Tension registers: [content_tension, structure_tension, tension_history, curvature]
 
-  용도:
-    - 선택적 예측: 장력 < 임계치 → 거부
-    - 동적 자원 할당: 장력 → 사이클 수 결정
-    - 디버깅: "왜 틀렸는가" → 장력 이력 조회
-    - 모니터링: 실시간 장력 대시보드 (뇌의 EEG에 해당)
+  Uses:
+    - Selective prediction: tension < threshold → rejection
+    - Dynamic resource allocation: tension → determine cycle count
+    - Debugging: "why was it wrong" → query tension history
+    - Monitoring: real-time tension dashboard (equivalent to brain EEG)
 
-  근거:
-    - 장력은 모든 연산의 부산물로 무료로 계산 가능 (차이의 제곱합)
-    - 하지만 현재 아키텍처는 장력을 버림 (forward pass 후 사라짐)
-    - 전용 레지스터에 유지하면 메타인지, 예지, 정체성에 활용 가능
+  Rationale:
+    - Tension is free to compute as byproduct of all operations (sum of squared differences)
+    - But current architectures discard tension (disappears after forward pass)
+    - Maintaining in dedicated register enables use for metacognition, precognition, identity
 ```
 
-## 통합 아키텍처 도식
+## Integrated Architecture Diagram
 
 ```
   ┌───────────────────────────────────────────────────────┐
-  │                    입력 (센서)                         │
+  │                    Input (sensor)                     │
   │                       │                               │
   │              ┌────────┴────────┐                      │
   │              ▼                 ▼                      │
   │  ┌──── Unit A ────┐  ┌──── Unit G ────┐             │
-  │  │  (정수론/논리)  │  │  (엔트로피/패턴) │             │
+  │  │  (Number theory/ │  │  (Entropy/    │             │
+  │  │   logic)        │  │   pattern)     │             │
   │  └───────┬────────┘  └────────┬───────┘             │
-  │          │    뇌량 (제한)      │                      │
+  │          │    Corpus callosum  │                      │
+  │          │     (limited)       │                      │
   │          └────────┬───────────┘                      │
   │                   │                                   │
   │          ┌────────┴────────┐                         │
-  │          │  반발력 측정     │ → [장력 레지스터]         │
-  │          │  장력 = |A-G|²  │                         │
+  │          │  Repulsion      │ → [Tension register]    │
+  │          │  measurement    │                         │
+  │          │  tension=|A-G|² │                         │
   │          └────────┬────────┘                         │
   │                   │                                   │
   │     ┌─────────────┼──────────────┐                   │
   │     ▼             ▼              ▼                   │
-  │  장력 > θ?     결합기          파이버 경로            │
-  │  │   │      {1/2,1/3,1/6}    (메타 연산)             │
+  │  tension > θ?   Combiner      Fiber path            │
+  │  │   │      {1/2,1/3,1/6}    (meta compute)         │
   │  N   Y         │                 │                   │
   │  │   │         ▼                 ▼                   │
-  │  │   └→ 집중처리  출력      곡률 → 보정              │
-  │  │     (10 cycle)  │           │                     │
-  │  └→ 자동처리        └─────┬─────┘                    │
-  │    (2 cycle)              │                          │
+  │  │   └→ Intensive  Output   Curvature → Correction  │
+  │  │     (10 cycles)  │           │                    │
+  │  └→ Automatic       └─────┬─────┘                    │
+  │    (2 cycles)              │                          │
   │                           ▼                          │
-  │                     최종 출력                         │
-  │              + 장력 스코어 + 파이버 상태              │
+  │                     Final output                      │
+  │              + tension score + fiber state            │
   └───────────────────────────────────────────────────────┘
 ```
 
-## 검증 결과
+## Verification Results
 
-| 원칙 | 실증 데이터 | 상태 |
+| Principle | Empirical Data | Status |
 |---|---|---|
-| S1: 답은 사이에 | Repulsion > DualBrain (+0.26%, CIFAR +1.37%) | ✅ |
-| S2: 장력 > softmax | AUC 0.925, 과신 오류 37.8% 탐지 | ✅ |
-| S3: {1/2,1/3,1/6} | MNIST+CIFAR 모두 1위 | ✅ |
-| S4: 선험적 구조 | 8.5배 파라미터 절약 | ✅ |
-| S5: 자기참조 제한 | CIFAR 발산 | ✅ |
-| S6: 레이블 없는 경로 | 97.61% (99.8%) | ✅ |
-| H1: 이종 유닛 | 다른 엔진이 같은 엔진보다 정보↑ | ✅ (간접) |
-| H2: 동적 자원 | 사분면 분석 (장력별 오답률 차이) | ✅ (간접) |
-| H3: 파이버 경로 | 홀로노미 확인, 86.4% 인식 | ✅ |
-| H4: 제한된 대역폭 | 텔레파시 94.3% (소규모 MLP) | ✅ (간접) |
-| H5: 장력 레지스터 | 장력이 6개 속성 관통 (가설 263) | ✅ |
+| S1: Answer is between | Repulsion > DualBrain (+0.26%, CIFAR +1.37%) | ✅ |
+| S2: Tension > softmax | AUC 0.925, 37.8% overconfidence error detection | ✅ |
+| S3: {1/2,1/3,1/6} | 1st place in both MNIST+CIFAR | ✅ |
+| S4: Prior structure | 8.5x parameter savings | ✅ |
+| S5: Limited self-reference | CIFAR divergence | ✅ |
+| S6: Label-free path | 97.61% (99.8%) | ✅ |
+| H1: Heterogeneous units | Different engines have more info than same engines | ✅ (indirect) |
+| H2: Dynamic resources | Quadrant analysis (error rate difference by tension) | ✅ (indirect) |
+| H3: Fiber path | Holonomy confirmed, 86.4% recognition | ✅ |
+| H4: Limited bandwidth | Telepathy 94.3% (small MLP) | ✅ (indirect) |
+| H5: Tension register | Tension penetrates 6 properties (Hypothesis 263) | ✅ |
 
-## 한계
-
-```
-  1. 소프트웨어 원칙은 MNIST/CIFAR에서만 검증. 실제 프로덕션 미적용.
-  2. 하드웨어 원칙은 설계안일 뿐 실리콘 검증 없음.
-  3. {1/2,1/3,1/6}의 최적성에 대한 수학적 증명 없음.
-  4. 장력 기반 동적 할당의 오버헤드 미측정.
-  5. 파이버 경로의 실제 하드웨어 구현 복잡도 미평가.
-```
-
-## 검증 방향
+## Limitations
 
 ```
-  1. 실제 추론 서비스에 장력 기반 거부 적용 → 정밀도/재현율 실측
-  2. FPGA에서 이종 유닛 + 장력 레지스터 프로토타입
-  3. LLM에 반발력장 적용: 두 개의 다른 LLM 사이의 장력 측정
-  4. {1/2,1/3,1/6}을 ImageNet/COCO 등 대규모 벤치마크에서 검증
-  5. 뉴로모픽 칩(Intel Loihi, IBM TrueNorth)과의 접점 탐색
+  1. Software principles verified only on MNIST/CIFAR. Not applied to production.
+  2. Hardware principles are design proposals without silicon verification.
+  3. No mathematical proof of optimality for {1/2,1/3,1/6}.
+  4. Overhead of tension-based dynamic allocation not measured.
+  5. Actual hardware implementation complexity of fiber path not evaluated.
+```
+
+## Verification Directions
+
+```
+  1. Apply tension-based rejection to actual inference service → measure precision/recall
+  2. Prototype heterogeneous units + tension register on FPGA
+  3. Apply repulsion field to LLM: measure tension between two different LLMs
+  4. Verify {1/2,1/3,1/6} on large-scale benchmarks like ImageNet/COCO
+  5. Explore connections with neuromorphic chips (Intel Loihi, IBM TrueNorth)
 ```

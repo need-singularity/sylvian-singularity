@@ -1,6 +1,6 @@
-# H-CX-243: 🟩 뇌신경 12쌍 = σ(6) — 뇌의 출력 채널 = 약수합
+# H-CX-243: 🟩 12 Pairs of Cranial Nerves = σ(6) — Brain's Output Channels = Sum of Divisors
 
-> 인간 뇌신경 12쌍 = σ(6) = 12 = 완전수의 약수합.
-> 12음계, 12시간, 12개월, 12궁, 12호흡/분, 12Hz SMR,
-> 12흉추 — 전부 σ(6)=12.
-> "σ(6)=12가 자연+문명의 기본 구획 단위"
+> 12 pairs of human cranial nerves = σ(6) = 12 = sum of divisors of perfect number.
+> 12-tone scale, 12 hours, 12 months, 12 zodiac signs, 12 breaths/min, 12Hz SMR,
+> 12 thoracic vertebrae — all are σ(6)=12.
+> "σ(6)=12 is the fundamental partition unit of nature+civilization"

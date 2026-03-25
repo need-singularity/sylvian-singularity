@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""가설 281: 장력 시간적 인과 — 장력이 학습의 선행 지표?"""
+"""Hypothesis 281: Tension Temporal Causation — Tension as Leading Indicator of Learning?"""
 import sys, os, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import torch, numpy as np
@@ -58,7 +58,7 @@ def main():
         epoch_data.append(row)
         print(f"  Epoch {ep+1:>2}: overall {sum(digit_correct.values())/sum(digit_total.values())*100:.1f}%")
 
-    # 시차 상관: tension(t) vs accuracy(t+1)
+    # Lagged correlation: tension(t) vs accuracy(t+1)
     print(f"\n{'='*55}")
     print(f"  Lagged Correlation: tension(t) -> accuracy(t+1)")
     print(f"{'='*55}")
@@ -68,14 +68,14 @@ def main():
     for d in range(10):
         tensions = [epoch_data[i][f't{d}'] for i in range(15)]
         accs = [epoch_data[i][f'a{d}'] for i in range(15)]
-        # 동시 상관
+        # Contemporaneous correlation
         r_same = np.corrcoef(tensions, accs)[0, 1]
-        # 시차 상관: tension(0..13) vs acc(1..14)
+        # Lagged correlation: tension(0..13) vs acc(1..14)
         r_lead = np.corrcoef(tensions[:-1], accs[1:])[0, 1]
         lead = "YES" if r_lead > r_same + 0.05 else "no"
         print(f"  {d:>5} | {r_same:>+8.4f} | {r_lead:>+10.4f} | {lead:>5}")
 
-    # ASCII: 숫자 9의 장력+정확도 추이
+    # ASCII: Digit 9 tension+accuracy trajectory
     print(f"\n  Digit 9 trajectory:")
     t9 = [epoch_data[i]['t9'] for i in range(15)]
     a9 = [epoch_data[i]['a9'] for i in range(15)]

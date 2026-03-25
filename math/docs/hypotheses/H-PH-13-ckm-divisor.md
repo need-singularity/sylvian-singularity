@@ -1,38 +1,38 @@
-# H-PH-13: ⭐⭐ CKM 행렬 = Mersenne+약수함수
+# H-PH-13: ⭐⭐ CKM Matrix = Mersenne+Divisor Function
 
-> **가설**: CKM 행렬의 주요 원소가 완전수의 약수함수와 Mersenne 소수로 표현된다.
+> **Hypothesis**: The main elements of the CKM matrix are expressed in terms of divisor functions of perfect numbers and Mersenne primes.
 
-## CKM 원소
+## CKM Elements
 
-| 원소 | 공식 | 예측 | 실측 | 오차 |
-|------|------|------|------|------|
+| Element | Formula | Predicted | Observed | Error |
+|---------|---------|-----------|----------|-------|
 | \|V_us\| | √M₃/σ = √7/12 | 0.2205 | 0.2243 | 1.7% |
 | \|V_cb\| | 1/(σφ) = 1/24 | 0.04167 | 0.0408 | 2.1% |
 | \|V_ub\| | φ/P₃ = 2/496 | 0.00403 | 0.00382 | 5.5% |
 
-## 구조
+## Structure
 
 ```
-  |V_us| = √(M₃)/σ = √(P₂의 Mersenne 인수)/σ(P₁)
-    → 제2완전수의 소인수 ↔ 제1완전수의 약수합
+  |V_us| = √(M₃)/σ = √(Mersenne factor of P₂)/σ(P₁)
+    → Prime factor of 2nd perfect number ↔ Divisor sum of 1st perfect number
 
-  |V_cb| = 1/(σφ) = 1/24 = 1/Leech격자차원
-    → 콤팩트화 스케일의 역수
+  |V_cb| = 1/(σφ) = 1/24 = 1/Leech lattice dimension
+    → Reciprocal of compactification scale
 
-  |V_ub| = φ/P₃ = 중력자DOF/이상소거완전수
-    → 가장 작은 혼합 = 중력/끈 비율
+  |V_ub| = φ/P₃ = graviton DOF/anomaly-canceled perfect number
+    → Smallest mixing = gravity/string ratio
 ```
 
-## 추가: α_s 강결합
+## Addition: α_s Strong Coupling
 
 ```
-  α_s(M_Z) = φ/(σ+τ+R) = 2/17 = 0.1176  (실측 0.1180, 오차 0.3%)
-  17 = Fermat 소수 F₂ = 2^(2²)+1
+  α_s(M_Z) = φ/(σ+τ+R) = 2/17 = 0.1176  (observed 0.1180, error 0.3%)
+  17 = Fermat prime F₂ = 2^(2²)+1
 ```
 
-## 상태: ⭐⭐ 🟧
+## Status: ⭐⭐ 🟧
 
-|V_us|와 |V_cb|는 괜찮으나, |V_ub|의 5.5% 오차는 약함.
-α_s = 2/17의 0.3%는 강력.
+|V_us| and |V_cb| are reasonable, but the 5.5% error for |V_ub| is weak.
+α_s = 2/17's 0.3% is strong.
 
 *Created: 2026-03-25*

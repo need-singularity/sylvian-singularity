@@ -1,28 +1,28 @@
-# H-MP-15: R 스펙트럼의 Cantor-like 프랙탈 구조
+# H-MP-15: Cantor-like Fractal Structure of R Spectrum
 
-> **가설**: R(n)=σ(n)φ(n)/(nτ(n))의 치역을 [0,T]로 절단할 때,
-> box-counting 차원 d_box < 1이며, Cantor 집합과 유사한 프랙탈 구조를 갖는다.
+> **Hypothesis**: When the range of R(n)=σ(n)φ(n)/(nτ(n)) is truncated to [0,T],
+> the box-counting dimension d_box < 1, exhibiting a fractal structure similar to the Cantor set.
 
-## 배경
+## Background
 
-R(n) 스펙트럼은 알려진 간극 구조를 갖는다:
-- (3/4, 1) = ∅ — R=3/4 다음 값이 바로 R=1
-- (1, 7/6) = ∅ — R=1 다음 값이 바로 R=7/6
-- [0,5) 구간에 단 24개 distinct 값 (n≤50000)
-- [0,10) 구간에 63개 distinct 값
+The R(n) spectrum has known gap structure:
+- (3/4, 1) = ∅ — The value after R=3/4 is directly R=1
+- (1, 7/6) = ∅ — The value after R=1 is directly R=7/6
+- Only 24 distinct values in [0,5) interval (n≤50000)
+- 63 distinct values in [0,10) interval
 
-이 구조가 단순한 "듬성듬성"이 아니라 프랙탈인지 검증한다.
+We verify whether this structure is fractal rather than simply "sparse".
 
-관련 가설: H-MP-5 (유한성), H-MP-6 (밀도), H-TOP-4 (위상)
+Related hypotheses: H-MP-5 (finiteness), H-MP-6 (density), H-TOP-4 (topology)
 
-## 검증 결과 (n=2..50000)
+## Verification Results (n=2..50000)
 
-### Box-counting 차원
+### Box-counting Dimension
 
 ```
-  Box-counting: [0, 10] 구간을 ε-크기 박스로 분할
+  Box-counting: Partition [0, 10] interval into ε-sized boxes
 
-  ε (box size) | N(ε) occupied | N(ε) total | 점유율
+  ε (box size) | N(ε) occupied | N(ε) total | Occupancy
   -------------|---------------|------------|--------
   0.100        |           40  |       100  |  40.0%
   0.050        |           48  |       200  |  24.0%
@@ -30,17 +30,17 @@ R(n) 스펙트럼은 알려진 간극 구조를 갖는다:
   0.005        |           63  |      2000  |   3.2%
   0.001        |           63  |     10000  |   0.6%
 
-  log-log 회귀: log(N(ε)) vs log(1/ε)
+  log-log regression: log(N(ε)) vs log(1/ε)
   d_box ≈ 0.155  (R² = 0.61)
 
-  해석: d_box < 1 → Cantor-like 프랙탈!
-  (d=0이면 유한 점집합, d=1이면 구간 채움)
+  Interpretation: d_box < 1 → Cantor-like fractal!
+  (d=0 means finite point set, d=1 means interval filling)
 ```
 
-### 밀도별 분석
+### Analysis by Density
 
 ```
-  구간 [0,T] | distinct값 | 밀도/unit | gap fraction
+  Interval [0,T] | distinct values | density/unit | gap fraction
   -----------|-----------|----------|-------------
   [0,  1)    |         1 |      1.0 |    99.0%
   [0,  2)    |         7 |      3.5 |    96.5%
@@ -51,29 +51,29 @@ R(n) 스펙트럼은 알려진 간극 구조를 갖는다:
   [0,100)    |       ~917|      9.2 |    ~94%
 ```
 
-### [0,2] 구간 미세 구조 (ε=0.01)
+### Fine Structure of [0,2] Interval (ε=0.01)
 
 ```
-  각 문자 = 0.01 폭 bin. '#'=값 존재, '.'=비어있음
+  Each character = 0.01 width bin. '#'=value exists, '.'=empty
 
   [0.00-1.00]:
   ...........................................................................#........................
-  → 0.75에 R(2)=3/4 하나
+  → Only R(2)=3/4 at 0.75
 
   [1.00-2.00]:
   #...............#................#.....................#........................#......#............
-  → 7개 점: R=1, 7/6, 4/3, 14/9, ~1.56, ~1.8, ~1.87
+  → 7 points: R=1, 7/6, 4/3, 14/9, ~1.56, ~1.8, ~1.87
 
-  점유율: 7/200 = 3.5%
-  간극 비율: 96.5%
+  Occupancy: 7/200 = 3.5%
+  Gap ratio: 96.5%
 ```
 
-### ASCII 스펙트럼 시각화
+### ASCII Spectrum Visualization
 
 ```
-  R 값 분포 (n=2..50000, [0,10] 구간):
+  R value distribution (n=2..50000, [0,10] interval):
 
-  밀도
+  Density
   6 |                              .  .
   5 |    .   .      . .           .
   4 | .  . .             .  .          .
@@ -84,36 +84,36 @@ R(n) 스펙트럼은 알려진 간극 구조를 갖는다:
     +--+--+--+--+--+--+--+--+--+--+
     0  1  2  3  4  5  6  7  8  9  10
 
-  각 단위 구간별 distinct 값 수:
+  Number of distinct values per unit interval:
   [0,1): 1 | [1,2): 6 | [2,3): 6 | [3,4): 5 | [4,5): 6
   [5,6): 7 | [6,7): 8 | [7,8): 7 | [8,9): 8 | [9,10): 9
 
-  밀도가 서서히 증가하지만 여전히 < 10/unit
+  Density slowly increases but still < 10/unit
 ```
 
-### Cantor 집합과의 비교
+### Comparison with Cantor Set
 
 ```
-  고전 Cantor 집합:
+  Classical Cantor set:
     d_Hausdorff = ln(2)/ln(3) ≈ 0.631
-    gap fraction → 1 (측도 0)
-    자기유사성: C = C/3 ∪ (C/3 + 2/3)
+    gap fraction → 1 (measure 0)
+    Self-similarity: C = C/3 ∪ (C/3 + 2/3)
 
-  R 스펙트럼:
-    d_box ≈ 0.155 (Cantor보다 더 희박!)
+  R spectrum:
+    d_box ≈ 0.155 (even sparser than Cantor!)
     gap fraction ≈ 96-99%
-    자기유사성: 불명 (소수 분포에 의존)
+    Self-similarity: unclear (depends on prime distribution)
 
-  차이점:
-    Cantor = 정확한 자기유사, R = 소인수 구조에 의한 준-자기유사
-    Cantor = 무한 점, R[0,10] = 63점 (유한)
-    R은 T→∞에서 밀도 증가 → d(T)→1 가능성
+  Differences:
+    Cantor = exact self-similarity, R = quasi-self-similarity via prime factors
+    Cantor = infinite points, R[0,10] = 63 points (finite)
+    R density increases as T→∞ → possibly d(T)→1
 ```
 
-### R(n)/n 분포 (H-TREE-3 교차 검증)
+### R(n)/n Distribution (H-TREE-3 Cross-validation)
 
 ```
-  E[R(n)/n] 의 윈도우별 추이:
+  Window-wise trend of E[R(n)/n]:
 
   R/n
   0.20 |#
@@ -125,50 +125,50 @@ R(n) 스펙트럼은 알려진 간극 구조를 갖는다:
        +---+---+---+---+---+---+---+
        0   5k  10k 15k 20k 30k 50k  n
 
-  평균 R(n)/n → ~0.15 (완만하게 감소)
-  → 큰 n에서 R(n) ≈ 0.15n 부근에 집중
+  Average R(n)/n → ~0.15 (slowly decreasing)
+  → For large n, R(n) concentrates around 0.15n
 ```
 
-## 수학적 해석
+## Mathematical Interpretation
 
 ```
-  왜 프랙탈인가?
+  Why fractal?
 
   R(n) = ∏ f(p,a)  where f(p,a) = (p^(a+1)-1)/(p(a+1))
 
   f(p,1) = (p²-1)/(2p) = p/2 - 1/(2p)
 
-  R 값은 이 인수들의 "곱 조합"으로만 생성됨.
-  가능한 인수: f(2,1)=3/4, f(3,1)=4/3, f(5,1)=12/5, f(7,1)=24/7, ...
-               f(2,2)=7/6, f(2,3)=15/8, f(3,2)=13/6, ...
+  R values are generated only by "product combinations" of these factors.
+  Possible factors: f(2,1)=3/4, f(3,1)=4/3, f(5,1)=12/5, f(7,1)=24/7, ...
+                    f(2,2)=7/6, f(2,3)=15/8, f(3,2)=13/6, ...
 
-  이 인수들의 곱 격자(multiplicative lattice)가 실수선에서
-  Cantor-like 구조를 만든다.
+  The multiplicative lattice of these factors creates a
+  Cantor-like structure on the real line.
 
-  핵심: f(p,1) ∼ p/2 → 소수 사이 간격이 R 스펙트럼의 간극을 결정
+  Key: f(p,1) ∼ p/2 → Prime gaps determine R spectrum gaps
 ```
 
-## 판정
+## Verdict
 
 ```
-  상태: ✅ 확인됨 (수치적)
-  d_box ≈ 0.155 < 1 → Cantor-like 구조 확인
+  Status: ✅ Confirmed (numerically)
+  d_box ≈ 0.155 < 1 → Cantor-like structure confirmed
   gap fraction > 96% at all scales tested
-  등급: 🟩 (수치 검증 완료, 해석적 증명은 미완)
+  Grade: 🟩 (numerical verification complete, analytical proof incomplete)
 ```
 
-## 한계
+## Limitations
 
-1. d_box 추정의 R² = 0.61 — 피팅 품질 중간
-2. n≤50000은 유한 범위 → T→∞에서 d→1 가능
-3. 해석적 증명 없음 (소수 분포에 의존하므로 극난)
-4. "프랙탈"이라 부르기엔 자기유사성 미확인
+1. d_box estimation R² = 0.61 — Moderate fitting quality
+2. n≤50000 is finite range → possibly d→1 as T→∞
+3. No analytical proof (extremely difficult due to prime distribution dependence)
+4. Self-similarity not confirmed for calling it "fractal"
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] n≤10^6 확장하여 d_box 안정성 확인
-2. [ ] T별 d_box(T) 계산 → d(T)→1 수렴 속도
-3. [ ] f(p,a) 인수 격자의 자기유사 구조 분석
-4. [ ] 소수 정리와 결합하여 해석적 차원 상한
+1. [ ] Extend to n≤10^6 to confirm d_box stability
+2. [ ] Calculate d_box(T) by T → convergence rate d(T)→1
+3. [ ] Analyze self-similar structure of f(p,a) factor lattice
+4. [ ] Combine with prime number theorem for analytical dimension bound
 
-## 난이도: 극고 | 파급력: ★★★★
+## Difficulty: Extreme | Impact: ★★★★

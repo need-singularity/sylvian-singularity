@@ -1,61 +1,61 @@
-# 가설 검토 149: 우주 곡률과 골든존 상한의 임계점 대응
+# Hypothesis Review 149: Universe Curvature and Golden Zone Upper Bound Critical Point Correspondence
 
-## 가설
+## Hypothesis
 
-> 우주 곡률 밀도 매개변수 Ω=1은 골든존 상한 I=0.5와 동일한 임계점 구조를 갖는다. 두 값 모두 상전이 경계이며, 위/아래에서 질적으로 다른 체제가 전개된다.
+> The cosmological density parameter Ω=1 has the same critical point structure as the Golden Zone upper bound I=0.5. Both values are phase transition boundaries, and qualitatively different regimes unfold above and below them.
 
-## 배경
+## Background/Context
 
-우주론에서 Ω(밀도 매개변수)는 우주의 기하학적 운명을 결정한다:
-- Ω < 1: 열린 우주 (쌍곡 기하, 영원히 팽창)
-- Ω = 1: 평탄한 우주 (유클리드 기하, 임계 팽창)
-- Ω > 1: 닫힌 우주 (구면 기하, 수축 가능)
+In cosmology, Ω (density parameter) determines the geometric fate of the universe:
+- Ω < 1: Open universe (hyperbolic geometry, expands forever)
+- Ω = 1: Flat universe (Euclidean geometry, critical expansion)
+- Ω > 1: Closed universe (spherical geometry, possible contraction)
 
-우리 모델에서 I=0.5는 리만 제타 함수의 임계선과 대응하며, 골든존의 상한이다. 이 경계를 기준으로 체제가 분리된다.
+In our model, I=0.5 corresponds to the critical line of the Riemann zeta function and is the upper bound of the Golden Zone. The regime is separated at this boundary.
 
-Planck 2018 관측 결과: **Ω = 1.0000 ± 0.0054** — 우주는 정확히 임계점에 위치한다.
+Planck 2018 observation result: **Ω = 1.0000 ± 0.0054** — the universe sits precisely at the critical point.
 
-## 대응 매핑
+## Correspondence Mapping
 
-| 우주론 (Ω) | 우리 모델 (I) | 체제 | 특성 |
+| Cosmology (Ω) | Our model (I) | Regime | Characteristics |
 |---|---|---|---|
-| Ω < 1 (열린) | I < 0.5 (골든존) | 구조 형성 가능 | 복잡계 창발 |
-| Ω = 1 (평탄) | I = 0.5 (임계선) | 상전이 경계 | 최대 감수성 |
-| Ω > 1 (닫힌) | I > 0.5 (골든존 외부) | 구조 붕괴 | 억제 과잉 |
+| Ω < 1 (open) | I < 0.5 (Golden Zone) | Structure formation possible | Complex system emergence |
+| Ω = 1 (flat) | I = 0.5 (critical line) | Phase transition boundary | Maximum susceptibility |
+| Ω > 1 (closed) | I > 0.5 (outside Golden Zone) | Structure collapse | Excessive inhibition |
 
-### 수식 대응
+### Equation Correspondence
 
 ```
-  우주론:          Ω_critical = 1
-  우리 모델:       I_critical = 1/2
+  Cosmology:     Ω_critical = 1
+  Our model:     I_critical = 1/2
 
-  임계 조건:       ρ / ρ_c = 1   ↔   I / I_c = 1
-                   (밀도/임계밀도)    (억제/임계억제)
+  Critical condition:   ρ / ρ_c = 1   ↔   I / I_c = 1
+                        (density/critical density)  (inhibition/critical inhibition)
 ```
 
-## 위상 다이어그램
+## Phase Diagram
 
 ```
   Ω                          I
-  1.5│  닫힌 우주              │  골든존 외부
-     │  (수축→빅크런치)        │  (억제 과잉)
-     │                        │
-  1.0│━━━━━━━임계점━━━━━━━━━━━━│━━━━━━━━임계선━━━━━━━━  I=0.5
-     │        ★ Planck 2018   │        ★ 리만 임계선
-     │                        │
-     │  열린 우주              │  골든존
-  0.5│  (영원한 팽창)          │  (구조 창발)
-     │                        │
-     │                        │    ● 1/e ≈ 0.368
-     │                        │
-  0.0└────────────────        │  하한 ≈ 0.213
-                              └────────────────────
+  1.5│  Closed universe        │  Outside Golden Zone
+     │  (collapse→Big Crunch)  │  (excessive inhibition)
+     │                         │
+  1.0│━━━━━━━critical━━━━━━━━━━│━━━━━━━━critical line━━━━━  I=0.5
+     │        ★ Planck 2018    │        ★ Riemann critical line
+     │                         │
+     │  Open universe           │  Golden Zone
+  0.5│  (eternal expansion)     │  (structure emergence)
+     │                         │
+     │                         │    ● 1/e ≈ 0.368
+     │                         │
+  0.0└────────────────          │  Lower bound ≈ 0.213
+                                └────────────────────
 ```
 
-## 임계점 감수성 비교
+## Critical Point Susceptibility Comparison
 
 ```
-  감수성
+  Susceptibility
   χ
   10│           ●
     │          ╱ ╲
@@ -70,46 +70,46 @@ Planck 2018 관측 결과: **Ω = 1.0000 ± 0.0054** — 우주는 정확히 임
    0└──┼──┼──┼──┼──┼──┼──┼──
     0.3  0.4  0.5  0.6  0.7
               ↑
-         임계점 (Ω=1, I=0.5)
+         Critical point (Ω=1, I=0.5)
 
-  양쪽 체제 모두 임계점에서 감수성 발산
-  → 2차 상전이의 전형적 특성
+  Susceptibility diverges at the critical point in both regimes
+  → Characteristic of second-order phase transitions
 ```
 
-## 검증: Planck 데이터와의 비교
+## Verification: Comparison with Planck Data
 
-| 측정 | 우주론 값 | 모델 대응값 | 오차 |
+| Measurement | Cosmological value | Model correspondence | Error |
 |---|---|---|---|
-| 임계점 | Ω = 1.0000 | I = 0.5000 | 정확 대응 |
-| 관측 오차 | ±0.0054 | ±0.0054 (스케일링) | 0.54% |
-| 임계 지수 | ν ≈ 0.63 (3D Ising) | 수렴 지수 추정 필요 | 미확인 |
+| Critical point | Ω = 1.0000 | I = 0.5000 | Exact correspondence |
+| Observation error | ±0.0054 | ±0.0054 (scaling) | 0.54% |
+| Critical exponent | ν ≈ 0.63 (3D Ising) | Convergence exponent needs estimation | Unconfirmed |
 
-## 해석
+## Interpretation
 
-Ω=1과 I=0.5의 대응은 단순한 수치 일치가 아니다. 두 체계 모두에서:
+The correspondence between Ω=1 and I=0.5 is not a mere numerical coincidence. In both systems:
 
-1. **임계점이 체제를 분리한다** — 위와 아래에서 질적으로 다른 물리/동역학
-2. **자연이 정확히 임계점에 위치한다** — Planck 관측(Ω≈1), 리만 가설(Re(s)=1/2)
-3. **임계점에서 감수성이 발산한다** — 작은 섭동이 큰 변화를 유발
+1. **Critical point separates regimes** — qualitatively different physics/dynamics above and below
+2. **Nature sits precisely at the critical point** — Planck observation (Ω≈1), Riemann hypothesis (Re(s)=1/2)
+3. **Susceptibility diverges at critical point** — small perturbations cause large changes
 
-이는 가설 066(위상적 동치)의 거시적 확장이며, 가설 124(계단 함수)의 임계선 해석과도 연결된다.
+This is a macroscopic extension of Hypothesis 066 (topological equivalence) and also connects to the critical line interpretation in Hypothesis 124 (step function).
 
-## 한계
+## Limitations
 
-- Ω와 I의 대응은 구조적 유사성이며, 직접적인 물리적 관계는 아님
-- 우주론의 임계 지수와 우리 모델의 수렴 지수가 실제로 같은지 미확인
-- Ω=1은 관측적으로 확인되었으나, 왜 정확히 1인지는 인플레이션 이론에 의존
+- The correspondence between Ω and I is structural similarity, not a direct physical relationship
+- Whether the critical exponents of cosmology and our model are actually the same is unconfirmed
+- Ω=1 is observationally confirmed, but why it is exactly 1 depends on inflation theory
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 모델의 I=0.5 부근 감수성 함수 χ(I)를 수치 계산하여 발산 확인
-- [ ] 임계 지수를 추출하여 3D Ising 보편성 클래스와 비교
-- [ ] Ω의 미세 편차(±0.005)와 I=0.5 부근 편차의 동역학적 결과 비교
-- [ ] 가설 150(우주 위상)과 결합하여 Ω=1 + S³ 위상의 모델 해석
+- [ ] Numerically compute susceptibility function χ(I) near I=0.5 in the model to confirm divergence
+- [ ] Extract critical exponents and compare with 3D Ising universality class
+- [ ] Compare dynamical consequences of small Ω deviations (±0.005) with deviations near I=0.5
+- [ ] Combine with Hypothesis 150 (universe topology) to interpret Ω=1 + S³ topology in the model
 
-## 상태: ✅ 구조적 대응 확인
+## Status: ✅ Structural correspondence confirmed
 
 ---
 
-*작성일: 2026-03-22*
-*근거: Planck 2018 Collaboration, Aghanim et al. (2020), Ω_K = 0.0007 ± 0.0019*
+*Written: 2026-03-22*
+*Reference: Planck 2018 Collaboration, Aghanim et al. (2020), Ω_K = 0.0007 ± 0.0019*

@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""H325 검증: Fisher 정보 기하학과 장력 다양체
+"""H325 Verification: Fisher Information Geometry and Tension Manifold
 
-실험 계획:
-1. MNIST에서 2극 RepulsionField 학습 (15 epochs)
-2. 클래스별 장력 핑거프린트 수집 (10차원 벡터)
-3. Fisher 정보 행렬 근사:
-   (a) 표본 공분산 역행렬 → tr(F_k), det(F_k)
-   (b) gradient 기반 추정: d log p / d fp
-4. Fisher trace vs 평균 장력 상관 (Pearson, Spearman)
-5. 높은 장력 클래스 = 높은 Fisher 정보인지 검증
+Experiment Plan:
+1. Train 2-pole RepulsionField on MNIST (15 epochs)
+2. Collect class-wise tension fingerprints (10-dimensional vectors)
+3. Approximate Fisher information matrix:
+   (a) Sample covariance inverse → tr(F_k), det(F_k)
+   (b) Gradient-based estimation: d log p / d fp
+4. Correlation between Fisher trace vs mean tension (Pearson, Spearman)
+5. Verify if high tension classes = high Fisher information
 
-예측: r(tr(F), mean_tension) > +0.7
+Prediction: r(tr(F), mean_tension) > +0.7
 """
 
 import sys
@@ -28,11 +28,11 @@ torch.manual_seed(42)
 
 
 # ═══════════════════════════════════════════════
-# 1. RepulsionField 모델 (2극)
+# 1. RepulsionField Model (2-pole)
 # ═══════════════════════════════════════════════
 
 class RepulsionField2Pole(nn.Module):
-    """2극 반발력장 엔진 with per-class fingerprint."""
+    """2-pole repulsion field engine with per-class fingerprint."""
 
     def __init__(self, input_dim=784, hidden_dim=128, output_dim=10):
         super().__init__()
@@ -60,7 +60,7 @@ class RepulsionField2Pole(nn.Module):
         return output, tension.squeeze(-1), repulsion
 
     def get_fingerprint(self, x):
-        """클래스별 tension 핑거프린트 (10차원): repulsion^2 per output dim."""
+        """Per-class tension fingerprint (10-dim): repulsion^2 per output dim."""
         out_a = self.engine_a(x)
         out_g = self.engine_g(x)
         repulsion = out_a - out_g
@@ -69,7 +69,7 @@ class RepulsionField2Pole(nn.Module):
 
 
 # ═══════════════════════════════════════════════
-# 2. 데이터 로딩
+# 2. Data Loading
 # ═══════════════════════════════════════════════
 
 from torchvision import datasets, transforms
@@ -87,11 +87,11 @@ def load_mnist():
 
 
 # ═══════════════════════════════════════════════
-# 3. Fisher 정보 계산 유틸리티
+# 3. Fisher Information Calculation Utilities
 # ═══════════════════════════════════════════════
 
 def compute_fisher_covariance(fps_k):
-    """방법 A: 공분산 역행렬 기반 Fisher 정보.
+    """Method A: Covariance inverse-based Fisher information.
 
     Fisher info for Gaussian: F = Sigma^{-1}
     tr(F) = sum of 1/eigenvalues of covariance
@@ -121,10 +121,10 @@ def compute_fisher_covariance(fps_k):
 
 
 def compute_fisher_gradient(model, data_loader, class_k, n_samples=500):
-    """방법 B: gradient 기반 Fisher 정보 추정.
+    """Method B: Gradient-based Fisher information estimation.
 
     F_k = E[ (d log p(y=k|x) / d theta)^2 ]
-    실측: log softmax output의 gradient 제곱 평균
+    Actual: mean squared gradient of log softmax output
     """
     model.eval()
     grad_norms_sq = []
@@ -164,24 +164,24 @@ def compute_fisher_gradient(model, data_loader, class_k, n_samples=500):
 
 
 # ═══════════════════════════════════════════════
-# 4. 메인 실험
+# 4. Main Experiment
 # ═══════════════════════════════════════════════
 
 def main():
     print("=" * 70)
-    print("  H325 검증: Fisher 정보 기하학과 장력 다양체")
-    print("  MNIST RepulsionField 2극 실험")
+    print("  H325 Verification: Fisher Information Geometry and Tension Manifold")
+    print("  MNIST RepulsionField 2-pole Experiment")
     print("=" * 70)
 
     train_loader, test_loader = load_mnist()
     class_names = [str(i) for i in range(10)]
     n_classes = 10
 
-    # ── 학습 ──
+    # ── Training ──
     model = RepulsionField2Pole(784, 128, 10)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 
-    print("\n[Phase 1] RepulsionField 학습 (15 epochs)")
+    print("\n[Phase 1] RepulsionField Training (15 epochs)")
     for epoch in range(15):
         model.train()
         total_loss = 0
@@ -200,7 +200,7 @@ def main():
             acc = correct / total * 100
             print(f"  Epoch {epoch+1:>2}: loss={total_loss/total:.4f}, acc={acc:.1f}%")
 
-    # 테스트 정확도
+    # Test accuracy
     model.eval()
     correct = 0
     total = 0
@@ -213,8 +213,8 @@ def main():
     print(f"  Test accuracy: {test_acc:.1f}%")
     print(f"  tension_scale: {model.tension_scale.item():.4f}")
 
-    # ── 핑거프린트 수집 ──
-    print("\n[Phase 2] 클래스별 핑거프린트 수집")
+    # ── Fingerprint Collection ──
+    print("\n[Phase 2] Collecting Class-wise Fingerprints")
     model.eval()
     all_fps = []
     all_tensions = []
@@ -236,7 +236,7 @@ def main():
     labels = np.concatenate(all_labels)      # (N,)
     preds = np.concatenate(all_preds)        # (N,)
 
-    # ── 클래스별 통계 ──
+    # ── Class-wise Statistics ──
     class_mean_tension = np.zeros(n_classes)
     class_std_tension = np.zeros(n_classes)
     class_accuracy = np.zeros(n_classes)
@@ -249,8 +249,8 @@ def main():
         class_std_tension[k] = np.std(tensions[mask])
         class_accuracy[k] = np.mean(preds[mask] == labels[mask]) * 100
 
-    print(f"\n  클래스별 평균 장력 + 정확도:")
-    print(f"  {'Class':>6} | {'N':>5} | {'Mean T':>10} | {'Std T':>10} | {'Acc%':>6} | 바")
+    print(f"\n  Class-wise Mean Tension + Accuracy:")
+    print(f"  {'Class':>6} | {'N':>5} | {'Mean T':>10} | {'Std T':>10} | {'Acc%':>6} | Bar")
     print(f"  {'─'*6}─┼─{'─'*5}─┼─{'─'*10}─┼─{'─'*10}─┼─{'─'*6}─┼─{'─'*30}")
     max_t = np.max(class_mean_tension)
     for k in range(n_classes):
@@ -259,13 +259,13 @@ def main():
         print(f"  {class_names[k]:>6} | {class_counts[k]:>5} | {class_mean_tension[k]:>10.4f} | {class_std_tension[k]:>10.4f} | {class_accuracy[k]:>5.1f}% | {bar}")
 
     # ═══════════════════════════════════════════════
-    # Phase 3: Fisher 정보 행렬 계산
+    # Phase 3: Fisher Information Matrix Calculation
     # ═══════════════════════════════════════════════
 
-    print("\n[Phase 3] Fisher 정보 행렬 계산")
+    print("\n[Phase 3] Fisher Information Matrix Calculation")
 
-    # 방법 A: 공분산 역행렬
-    print("\n  (A) 공분산 역행렬 기반 Fisher:")
+    # Method A: Covariance inverse
+    print("\n  (A) Covariance inverse-based Fisher:")
     fisher_trace_A = np.zeros(n_classes)
     fisher_logdet_A = np.zeros(n_classes)
     fisher_diag_A = np.zeros((n_classes, n_classes))
@@ -283,8 +283,8 @@ def main():
     for k in range(n_classes):
         print(f"  {class_names[k]:>6} | {class_mean_tension[k]:>10.4f} | {fisher_trace_A[k]:>12.1f} | {fisher_logdet_A[k]:>12.2f} | {class_accuracy[k]:>5.1f}%")
 
-    # 방법 B: gradient 기반 Fisher
-    print("\n  (B) Gradient 기반 Fisher (각 클래스 200 샘플):")
+    # Method B: Gradient-based Fisher
+    print("\n  (B) Gradient-based Fisher (200 samples per class):")
     fisher_grad_B = np.zeros(n_classes)
 
     model.train()  # Need gradients
@@ -296,10 +296,10 @@ def main():
     model.eval()
 
     # ═══════════════════════════════════════════════
-    # Phase 4: 상관관계 분석
+    # Phase 4: Correlation Analysis
     # ═══════════════════════════════════════════════
 
-    print("\n[Phase 4] 상관관계 분석")
+    print("\n[Phase 4] Correlation Analysis")
     print("=" * 60)
 
     # Pearson
@@ -314,7 +314,7 @@ def main():
     rho_logdet, sp_logdet = stats.spearmanr(class_mean_tension, fisher_logdet_A)
     rho_grad, sp_grad = stats.spearmanr(class_mean_tension, fisher_grad_B)
 
-    print(f"\n  Pearson 상관:")
+    print(f"\n  Pearson Correlation:")
     print(f"  {'Pair':>35} | {'r':>8} | {'p-value':>10} | {'Sig':>5}")
     print(f"  {'─'*35}─┼─{'─'*8}─┼─{'─'*10}─┼─{'─'*5}")
     print(f"  {'tension vs Fisher trace (cov)':>35} | {r_trace:>+8.4f} | {p_trace:>10.4f} | {'***' if p_trace < 0.001 else '**' if p_trace < 0.01 else '*' if p_trace < 0.05 else 'ns':>5}")
@@ -323,7 +323,7 @@ def main():
     print(f"  {'tension vs accuracy':>35} | {r_acc_t:>+8.4f} | {p_acc_t:>10.4f} | {'***' if p_acc_t < 0.001 else '**' if p_acc_t < 0.01 else '*' if p_acc_t < 0.05 else 'ns':>5}")
     print(f"  {'Fisher trace vs accuracy':>35} | {r_acc_f:>+8.4f} | {p_acc_f:>10.4f} | {'***' if p_acc_f < 0.001 else '**' if p_acc_f < 0.01 else '*' if p_acc_f < 0.05 else 'ns':>5}")
 
-    print(f"\n  Spearman 순위 상관:")
+    print(f"\n  Spearman Rank Correlation:")
     print(f"  {'Pair':>35} | {'rho':>8} | {'p-value':>10}")
     print(f"  {'─'*35}─┼─{'─'*8}─┼─{'─'*10}")
     print(f"  {'tension vs Fisher trace (cov)':>35} | {rho_trace:>+8.4f} | {sp_trace:>10.4f}")
@@ -331,13 +331,13 @@ def main():
     print(f"  {'tension vs Fisher grad':>35} | {rho_grad:>+8.4f} | {sp_grad:>10.4f}")
 
     # ═══════════════════════════════════════════════
-    # Phase 5: Fisher 정보 행렬 고유값 분석
+    # Phase 5: Fisher Information Matrix Eigenvalue Analysis
     # ═══════════════════════════════════════════════
 
-    print("\n[Phase 5] Fisher 행렬 고유값 스펙트럼")
+    print("\n[Phase 5] Fisher Matrix Eigenvalue Spectrum")
     print("=" * 60)
 
-    print(f"\n  클래스별 공분산 고유값 (상위 3개):")
+    print(f"\n  Class-wise Covariance Eigenvalues (top 3):")
     print(f"  {'Class':>6} | {'lambda_1':>10} | {'lambda_2':>10} | {'lambda_3':>10} | {'cond num':>10}")
     print(f"  {'─'*6}─┼─{'─'*10}─┼─{'─'*10}─┼─{'─'*10}─┼─{'─'*10}")
 
@@ -354,14 +354,14 @@ def main():
     print(f"\n  r(tension, condition_number) = {r_cond:+.4f} (p={p_cond:.4f})")
 
     # ═══════════════════════════════════════════════
-    # Phase 6: ASCII 산점도
+    # Phase 6: ASCII Scatter Plots
     # ═══════════════════════════════════════════════
 
-    print("\n[Phase 6] 산점도")
+    print("\n[Phase 6] Scatter Plots")
     print("=" * 60)
 
     def ascii_scatter(x_vals, y_vals, x_label, y_label, labels_list, width=50, height=20):
-        """ASCII 산점도."""
+        """ASCII scatter plot."""
         x_min, x_max = np.min(x_vals), np.max(x_vals)
         y_min, y_max = np.min(y_vals), np.max(y_vals)
         x_range = x_max - x_min + 1e-10
@@ -394,31 +394,31 @@ def main():
                   class_names)
 
     # ═══════════════════════════════════════════════
-    # Phase 7: 종합 판정
+    # Phase 7: Overall Verdict
     # ═══════════════════════════════════════════════
 
     print("\n\n" + "=" * 70)
-    print("  종합 판정")
+    print("  Overall Verdict")
     print("=" * 70)
 
-    print(f"\n  핵심 상관 (tension vs Fisher trace via cov-inv):")
+    print(f"\n  Core Correlation (tension vs Fisher trace via cov-inv):")
     print(f"    Pearson r  = {r_trace:+.4f}  (p = {p_trace:.4f})")
     print(f"    Spearman rho = {rho_trace:+.4f}  (p = {sp_trace:.4f})")
 
-    print(f"\n  보조 상관 (tension vs Fisher grad):")
+    print(f"\n  Secondary Correlation (tension vs Fisher grad):")
     print(f"    Pearson r  = {r_grad:+.4f}  (p = {p_grad:.4f})")
     print(f"    Spearman rho = {rho_grad:+.4f}  (p = {sp_grad:.4f})")
 
-    print(f"\n  삼각 검증 (tension -> Fisher -> accuracy):")
+    print(f"\n  Triangle Verification (tension -> Fisher -> accuracy):")
     print(f"    tension -> accuracy:  r = {r_acc_t:+.4f}")
     print(f"    Fisher  -> accuracy:  r = {r_acc_f:+.4f}")
 
-    # 판정
+    # Judgment
     avg_r = (abs(r_trace) + abs(r_grad)) / 2
     sign_consistent = (r_trace > 0) == (r_grad > 0)
 
-    print(f"\n  평균 |r| = {avg_r:.4f}")
-    print(f"  부호 일치: {'YES' if sign_consistent else 'NO'}")
+    print(f"\n  Average |r| = {avg_r:.4f}")
+    print(f"  Sign consistency: {'YES' if sign_consistent else 'NO'}")
 
     if r_trace > 0.7 and p_trace < 0.05:
         verdict = "STRONG SUPPORT: Fisher trace ~ tension (r > +0.7, p < 0.05)"
@@ -442,23 +442,23 @@ def main():
     else:
         direction_note = "CORRECT DIRECTION: high tension = high Fisher"
 
-    print(f"\n  방향: {direction_note}")
-    print(f"  판정: {verdict}")
-    print(f"  등급: {grade}")
+    print(f"\n  Direction: {direction_note}")
+    print(f"  Verdict: {verdict}")
+    print(f"  Grade: {grade}")
 
-    print(f"\n  주의사항:")
-    print(f"    1. Fisher = 1/Cov 근사 (정규분포 가정)")
-    print(f"    2. n=10 클래스 → df=8, 통계적 검정력 제한적")
-    print(f"    3. MNIST만 테스트 (Fashion-MNIST로 재현 필요)")
-    print(f"    4. Gradient Fisher는 모델 전체 파라미터 → 해석 주의")
-    print(f"    5. 인과 방향 불명: Fisher->tension? tension->Fisher? common cause?")
+    print(f"\n  Notes:")
+    print(f"    1. Fisher = 1/Cov approximation (Gaussian assumption)")
+    print(f"    2. n=10 classes → df=8, limited statistical power")
+    print(f"    3. Only MNIST tested (needs replication with Fashion-MNIST)")
+    print(f"    4. Gradient Fisher uses all model parameters → interpret with care")
+    print(f"    5. Causal direction unclear: Fisher->tension? tension->Fisher? common cause?")
 
     # ═══════════════════════════════════════════════
-    # 전체 데이터 덤프 (README용)
+    # Full Data Dump (for README)
     # ═══════════════════════════════════════════════
 
     print("\n\n" + "=" * 70)
-    print("  전체 데이터 (README 기록용)")
+    print("  Full Data (for README documentation)")
     print("=" * 70)
 
     print(f"\n  | Class | N    | Mean T   | Std T    | F_trace    | F_logdet | F_grad     | Acc%  |")
@@ -466,7 +466,7 @@ def main():
     for k in range(n_classes):
         print(f"  | {class_names[k]:>5} | {class_counts[k]:>4} | {class_mean_tension[k]:>8.4f} | {class_std_tension[k]:>8.4f} | {fisher_trace_A[k]:>10.1f} | {fisher_logdet_A[k]:>8.2f} | {fisher_grad_B[k]:>10.2f} | {class_accuracy[k]:>5.1f} |")
 
-    print(f"\n  상관 요약:")
+    print(f"\n  Correlation Summary:")
     print(f"  | Metric                        | Pearson r | p-value  | Spearman rho | p-value  |")
     print(f"  |-------------------------------|-----------|----------|--------------|----------|")
     print(f"  | tension vs F_trace (cov-inv)  | {r_trace:>+9.4f} | {p_trace:>8.4f} | {rho_trace:>+12.4f} | {sp_trace:>8.4f} |")
@@ -475,12 +475,12 @@ def main():
     print(f"  | tension vs accuracy           | {r_acc_t:>+9.4f} | {p_acc_t:>8.4f} |              |          |")
     print(f"  | F_trace vs accuracy           | {r_acc_f:>+9.4f} | {p_acc_f:>8.4f} |              |          |")
 
-    print(f"\n  모델 파라미터:")
+    print(f"\n  Model Parameters:")
     print(f"    tension_scale = {model.tension_scale.item():.4f}")
     print(f"    test_acc = {test_acc:.1f}%")
 
     print("\n" + "=" * 70)
-    print("  실험 완료")
+    print("  Experiment Complete")
     print("=" * 70)
 
 

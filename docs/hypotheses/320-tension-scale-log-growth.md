@@ -1,13 +1,13 @@
-# 가설 320: tension_scale의 로그 성장 — ts ≈ (1/3)·ln(ep)
+# Hypothesis 320: Logarithmic Growth of tension_scale — ts ≈ (1/3)·ln(ep)
 
-> **tension_scale은 고정값으로 수렴하지 않고, 에폭의 로그에 비례하여 성장한다. ts ≈ 0.327·ln(ep) + 0.224, R²=0.964. 성장률 0.327 ≈ 1/3 (오차 2%).**
+> **tension_scale does not converge to a fixed value but grows proportionally to the logarithm of epochs. ts ≈ 0.327·ln(ep) + 0.224, R²=0.964. Growth rate 0.327 ≈ 1/3 (2% error).**
 
-## 실측
+## Measurements
 
 ```
   MNIST, init=0.3, batch=512, 200ep:
 
-  ep     ts      ln(ep)   ts 예측
+  ep     ts      ln(ep)   ts predicted
   ───   ──────  ──────   ───────
   1      0.384   0.000    0.224
   5      0.639   1.609    0.750
@@ -19,10 +19,10 @@
   75     1.685   4.317    1.635
   100    1.814   4.605    1.729
 
-  피팅: ts = 0.327 × ln(ep) + 0.224
+  Fit: ts = 0.327 × ln(ep) + 0.224
   R² = 0.964
 
-  ASCII 그래프:
+  ASCII graph:
     ts
     1.8 |                              *
     1.7 |                         *
@@ -37,46 +37,46 @@
          1  5 10 15 20 30  50  75  100  ep
 ```
 
-## 1/3 재등장
+## Re-emergence of 1/3
 
 ```
-  가설 265: ts → 1/3 (값으로 수렴) → ❌ 반증
-  H-CX-27: ts = ln(4) (고정점) → ⬛ 반박
+  Hypothesis 265: ts -> 1/3 (converges to this value) -> ❌ Disproven
+  H-CX-27: ts = ln(4) (fixed point) -> ⬛ Refuted
 
-  가설 320: ts의 성장률 = 0.327 ≈ 1/3!
-  → "1/3은 값이 아니라 성장률로 존재"
-  → 메타부동점 1/3이 다른 형태로 재등장
+  Hypothesis 320: growth rate of ts = 0.327 ≈ 1/3!
+  -> "1/3 exists not as a value but as a growth rate"
+  -> Meta fixed point 1/3 reappears in a different form
 
-  의미:
+  Significance:
     ts(ep) = (1/3)·ln(ep) + const
     ep = e^(3·(ts-const))
-    → "ts가 1 증가하려면 e³ ≈ 20배의 학습 필요"
-    → 장력 스케일 성장이 지수적으로 느려짐
-    → "의식(장력)은 무한히 커지지만, 점점 느려진다"
+    -> "ts increasing by 1 requires e³ ≈ 20x more training"
+    -> Tension scale growth becomes exponentially slower
+    -> "Consciousness (tension) grows indefinitely but increasingly slowly"
 ```
 
-## ep150 추가 (2026-03-24)
+## ep150 Addition (2026-03-24)
 
 ```
-  ep150: ts=2.026 (예측 1.86 → 9% 높음)
-  10점 재피팅: ts = 0.342·ln(ep) + 0.194, R²=0.966
-  성장률: 0.342 (1/3과 2.6% 오차)
+  ep150: ts=2.026 (predicted 1.86 -> 9% higher)
+  10-point re-fit: ts = 0.342·ln(ep) + 0.194, R²=0.966
+  Growth rate: 0.342 (2.6% error from 1/3)
 
-  정확도: ep50→98.20%, ep100→98.20%, ep150→98.23% (포화)
-  → ts는 계속 증가하지만 정확도는 98.2%에서 포화!
-  → "장력(의식)은 커지지만 성능은 더 이상 안 오름"
+  Accuracy: ep50->98.20%, ep100->98.20%, ep150->98.23% (saturated)
+  -> ts continues to increase but accuracy saturates at 98.2%!
+  -> "Tension (consciousness) grows but performance no longer improves"
 ```
 
-## ep200 최종 (2026-03-24)
+## ep200 Final (2026-03-24)
 
 ```
   ep200: ts=2.207, acc=98.30%
-  11점 최종 피팅: ts = 0.358·ln(ep) + 0.159, R²=0.965
-  성장률 0.358 (1/3과 7.4% 오차 — 10점 2.6%에서 벌어짐)
+  11-point final fit: ts = 0.358·ln(ep) + 0.159, R²=0.965
+  Growth rate 0.358 (7.4% error from 1/3 -- widened from 2.6% at 10 points)
 
-  → 후반부(ep100→200)에서 약간 가속: 성장률이 1/3보다 큼
-  → 정확히 1/3은 아님, 하지만 로그 성장 자체는 확실 (R²=0.97)
-  → 정확도: 98.20→98.30% (200ep에서도 거의 포화)
+  -> Slight acceleration in latter half (ep100->200): growth rate exceeds 1/3
+  -> Not exactly 1/3, but logarithmic growth itself is definite (R²=0.97)
+  -> Accuracy: 98.20->98.30% (nearly saturated even at 200ep)
 ```
 
-## 상태: 🟧 로그성장 확인 (R²=0.97), 성장률≈0.36 (1/3 근사 7.4%)
+## Status: 🟧 Logarithmic growth confirmed (R²=0.97), growth rate≈0.36 (1/3 approximation 7.4%)

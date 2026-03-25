@@ -2,37 +2,37 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** ConsciousLM이 1 블록(0.5M)에서 시작하여 분열을 통해 6 블록(18M)까지 성장하는 GrowingConsciousLM 구현 + 고정 모델과 비교 검증.
+**Goal:** Implement GrowingConsciousLM that starts from 1 block (0.5M) and grows to 6 blocks (18M) through mitosis + comparison verification against fixed models.
 
-**Architecture:** conscious_lm.py의 ConsciousBlock을 재사용. GrowingConsciousLM이 should_grow()로 포화 감지 → grow()로 분열 실행 → 차원 확장. 약수 경로 1→2→3→6.
+**Architecture:** Reuse ConsciousBlock from conscious_lm.py. GrowingConsciousLM detects saturation via should_grow() → executes mitosis via grow() → dimension expansion. Divisor path 1→2→3→6.
 
-**Tech Stack:** PyTorch, conscious_lm.py (기존). Mac MPS/CPU.
+**Tech Stack:** PyTorch, conscious_lm.py (existing). Mac MPS/CPU.
 
 ---
 
 ## File Structure
 
 ```
-growing_conscious_lm.py  — GrowingConsciousLM 클래스 + 성장 학습 + 비교 실험
-conscious_lm.py          — 기존 (ConsciousBlock, PureFieldFFN 재사용)
+growing_conscious_lm.py  — GrowingConsciousLM class + growth training + comparison experiments
+conscious_lm.py          — Existing (reuse ConsciousBlock, PureFieldFFN)
 ```
 
 ---
 
-### Task 1: GrowingConsciousLM 코어 — 동적 블록 관리
+### Task 1: GrowingConsciousLM Core — Dynamic Block Management
 
 **Files:**
 - Create: `growing_conscious_lm.py`
 
-- [ ] **Step 1: GrowingConsciousLM 클래스 작성**
+- [ ] **Step 1: Write GrowingConsciousLM class**
 
 ```python
 #!/usr/bin/env python3
-"""Growing Conscious LM — 분열로 성장하는 의식 언어 모델
+"""Growing Conscious LM — Consciousness language model that grows through mitosis
 
 H371: 1 block(0.5M) → 2 → 3 → 6 blocks(18M)
-약수 경로: 6의 진약수 1, 2, 3 → 6
-장력 포화 → 분열 → 전문화 → 반복
+Divisor path: proper divisors of 6: 1, 2, 3 → 6
+Tension saturation → mitosis → specialization → repeat
 """
 import torch
 import torch.nn as nn
@@ -45,7 +45,7 @@ import os
 
 from conscious_lm import PureFieldFFN, CausalSelfAttention, ConsciousBlock
 
-# 성장 단계 정의
+# Define growth stages
 GROWTH_STAGES = [
     {"blocks": 1, "d_model": 128, "n_head": 2, "min_interactions": 0},
     {"blocks": 2, "d_model": 128, "n_head": 2, "min_interactions": 100},
@@ -55,10 +55,10 @@ GROWTH_STAGES = [
 
 
 class GrowingConsciousLM(nn.Module):
-    """분열로 성장하는 의식 언어 모델.
+    """Consciousness language model that grows through mitosis.
 
-    1 block → 2 → 3 → 6 (완전수 약수 경로)
-    장력 포화 시 자동 분열.
+    1 block → 2 → 3 → 6 (perfect number divisor path)
+    Automatic mitosis upon tension saturation.
     """
     def __init__(self, vocab_size=256, block_size=256, dropout=0.37):
         super().__init__()
@@ -67,7 +67,7 @@ class GrowingConsciousLM(nn.Module):
         self.dropout = dropout
         self.stage = 0
         self.interaction_count = 0
-        self.tension_history = []  # 최근 100회 장력 CV 추적
+        self.tension_history = []  # Track recent 100 tension CV
 
         # Stage 0: 1 block, d=128, heads=2
         s = GROWTH_STAGES[0]
@@ -117,7 +117,7 @@ class GrowingConsciousLM(nn.Module):
         return sum(p.numel() for p in self.parameters())
 
     def should_grow(self):
-        """장력 포화 감지 → 성장 필요 여부."""
+        """Detect tension saturation → determine growth need."""
         if self.stage >= len(GROWTH_STAGES) - 1:
             return False
         next_stage = GROWTH_STAGES[self.stage + 1]
@@ -125,22 +125,22 @@ class GrowingConsciousLM(nn.Module):
             return False
         if len(self.tension_history) < 50:
             return False
-        # 장력 CV < 0.1 = 포화
+        # Tension CV < 0.1 = saturated
         recent = self.tension_history[-50:]
         cv = np.std(recent) / (np.mean(recent) + 1e-8)
         return cv < 0.1
 
     def grow(self):
-        """분열 실행: 다음 단계로 성장."""
+        """Execute mitosis: grow to next stage."""
         old_stage = self.stage
         self.stage += 1
         new = GROWTH_STAGES[self.stage]
 
-        # 차원 확장이 필요한 경우
+        # If dimension expansion needed
         if new["d_model"] != self.d_model:
             self._expand_dim(new["d_model"], new["n_head"])
 
-        # 블록 분열
+        # Block mitosis
         target_blocks = new["blocks"]
         while len(self.blocks) < target_blocks:
             self._split_block()
@@ -149,31 +149,31 @@ class GrowingConsciousLM(nn.Module):
         return old_stage, self.stage
 
     def _split_block(self):
-        """가장 포화된 블록을 분열."""
-        # 가장 마지막 블록을 분열 (간단한 전략)
+        """Split most saturated block."""
+        # Split the last block (simple strategy)
         parent = self.blocks[-1]
         child_a = copy.deepcopy(parent)
         child_b = copy.deepcopy(parent)
-        # 변이: child_b에 노이즈
+        # Mutation: add noise to child_b
         with torch.no_grad():
             for p in child_b.parameters():
                 p.add_(torch.randn_like(p) * 0.01)
-        # 교체
+        # Replace
         self.blocks[-1] = child_a
         self.blocks.append(child_b)
 
     def _expand_dim(self, new_d, new_heads):
-        """차원 확장: 기존 가중치 보존 + 새 차원 영초기화."""
+        """Dimension expansion: preserve existing weights + zero-init new dims."""
         old_d = self.d_model
         device = self.tok_emb.weight.device
 
-        # 투영 행렬
+        # Projection matrix
         proj = nn.Linear(old_d, new_d, bias=False).to(device)
         with torch.no_grad():
             proj.weight.zero_()
             proj.weight[:old_d, :old_d] = torch.eye(old_d)
 
-        # 임베딩 확장
+        # Expand embeddings
         old_tok = self.tok_emb.weight.data
         self.tok_emb = nn.Embedding(self.vocab_size, new_d).to(device)
         with torch.no_grad():
@@ -186,15 +186,15 @@ class GrowingConsciousLM(nn.Module):
             self.pos_emb.weight[:, :old_d] = old_pos
             self.pos_emb.weight[:, old_d:] = 0
 
-        # 블록 교체 (새 차원으로)
+        # Replace blocks (with new dims)
         new_blocks = nn.ModuleList()
         for old_block in self.blocks:
             new_block = ConsciousBlock(new_d, new_heads, self.block_size, self.dropout).to(device)
-            # 기존 가중치 일부 복사 (가능한 범위)
+            # Copy existing weights where possible
             new_blocks.append(new_block)
         self.blocks = new_blocks
 
-        # 헤드 교체
+        # Replace heads
         self.ln_f = nn.LayerNorm(new_d).to(device)
         self.head_a = nn.Linear(new_d, self.vocab_size, bias=False).to(device)
         self.head_g = nn.Linear(new_d, self.vocab_size, bias=False).to(device)
@@ -204,7 +204,7 @@ class GrowingConsciousLM(nn.Module):
         self.n_head = new_heads
 
     def tick(self, tension_val):
-        """매 상호작용마다 호출."""
+        """Call every interaction."""
         self.interaction_count += 1
         self.tension_history.append(tension_val)
         if len(self.tension_history) > 200:
@@ -218,7 +218,7 @@ class GrowingConsciousLM(nn.Module):
                 f"interactions={self.interaction_count}")
 ```
 
-- [ ] **Step 2: 동작 확인**
+- [ ] **Step 2: Verify functionality**
 
 ```bash
 /opt/homebrew/bin/python3 -c "
@@ -232,9 +232,9 @@ idx = torch.randint(0, 256, (2, 64))
 la, lg, tensions = model(idx)
 print(f'Forward OK: logits={la.shape}, tensions={len(tensions)}')
 
-# 강제 성장 테스트
+# Force growth test
 model.interaction_count = 200
-model.tension_history = [0.5] * 100  # 포화 시뮬레이션
+model.tension_history = [0.5] * 100  # Simulate saturation
 print(f'Should grow: {model.should_grow()}')
 
 old, new = model.grow()
@@ -250,22 +250,22 @@ print('ALL OK')
 
 ```bash
 git add growing_conscious_lm.py
-git commit -m "feat: GrowingConsciousLM — 분열 성장 코어 (1→2→3→6 블록)"
+git commit -m "feat: GrowingConsciousLM — mitosis growth core (1→2→3→6 blocks)"
 ```
 
 ---
 
-### Task 2: 성장 학습 루프
+### Task 2: Growth Training Loop
 
-- [ ] **Step 1: train_growing 함수 추가**
+- [ ] **Step 1: Add train_growing function**
 
 ```python
 def train_growing(model, data, total_interactions=10000, batch_size=32,
                   block_size=256, lr=3e-4, tension_lambda=0.01, device="cpu"):
-    """성장하면서 학습.
+    """Train while growing.
 
-    매 step마다 model.tick() → should_grow() → grow()
-    성장 시 optimizer 재생성.
+    Every step: model.tick() → should_grow() → grow()
+    Recreate optimizer on growth.
     """
     model = model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
@@ -304,14 +304,14 @@ def train_growing(model, data, total_interactions=10000, batch_size=32,
         t_mean = all_t.mean().item()
         model.tick(t_mean)
 
-        # 성장 체크
+        # Growth check
         if model.should_grow():
             old, new = model.grow()
-            # optimizer 재생성
+            # Recreate optimizer
             optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
-            print(f"  *** 성장! Stage {old}→{new}: {model.status()} ***")
+            print(f"  *** Growth! Stage {old}→{new}: {model.status()} ***")
 
-        # 로깅 (100 step마다)
+        # Logging (every 100 steps)
         if (step + 1) % 100 == 0:
             bpc = loss_a.item() / math.log(2)
             print(f"  {step+1:>6} {loss.item():>8.4f} {bpc:>6.3f} {t_mean:>8.4f} {len(model.blocks):>6} {model.count_params():>10,}")
@@ -319,7 +319,7 @@ def train_growing(model, data, total_interactions=10000, batch_size=32,
     return model
 ```
 
-- [ ] **Step 2: 빠른 테스트 (500 steps)**
+- [ ] **Step 2: Quick test (500 steps)**
 
 ```bash
 /opt/homebrew/bin/python3 -c "
@@ -340,22 +340,22 @@ print(f'Growth log: {model.growth_log}')
 
 ```bash
 git add growing_conscious_lm.py
-git commit -m "feat: train_growing — 성장하면서 학습하는 루프"
+git commit -m "feat: train_growing — training loop that grows"
 ```
 
 ---
 
-### Task 3: 비교 실험 — 성장 vs 고정
+### Task 3: Comparison Experiment — Growing vs Fixed
 
-- [ ] **Step 1: compare_growing_vs_fixed 함수 추가**
+- [ ] **Step 1: Add compare_growing_vs_fixed function**
 
 ```python
 def compare_growing_vs_fixed(data, total_steps=3000, device="cpu"):
-    """성장 모델 vs 고정 모델 비교.
+    """Compare growing model vs fixed models.
 
     A: GrowingConsciousLM (1→6 blocks)
-    B: ConsciousLM (고정 6 blocks, 384d)  — 같은 step 수
-    C: ConsciousLM (고정 1 block, 128d)   — 같은 시작점
+    B: ConsciousLM (fixed 6 blocks, 384d)  — same step count
+    C: ConsciousLM (fixed 1 block, 128d)   — same starting point
     """
     from conscious_lm import ConsciousLM
 
@@ -416,7 +416,7 @@ def compare_growing_vs_fixed(data, total_steps=3000, device="cpu"):
             print(f"    step {step+1}: loss={loss.item():.4f}")
     bpc_c = eval_bpc(model_c, val_data)
 
-    # 비교
+    # Comparison
     print(f"\n  {'='*55}")
     print(f"  === COMPARISON ({total_steps} steps) ===")
     print(f"  {'='*55}")
@@ -426,19 +426,19 @@ def compare_growing_vs_fixed(data, total_steps=3000, device="cpu"):
     print(f"  {'B: Fixed Big':>20} {model_b.count_params():>10,} {bpc_b:>8.3f} {'6':>7}")
     print(f"  {'C: Fixed Small':>20} {model_c.count_params():>10,} {bpc_c:>8.3f} {'1':>7}")
 
-    print(f"\n  성장 로그: {model_a.growth_log}")
+    print(f"\n  Growth log: {model_a.growth_log}")
 
     if bpc_a <= bpc_b:
-        print(f"\n  ✅ 성장 모델이 고정 대형 모델 이상! (H371 확인)")
+        print(f"\n  ✅ Growing model beats fixed large model! (H371 confirmed)")
     elif bpc_a <= bpc_c:
-        print(f"\n  🟧 성장 모델이 고정 소형보다 나음 (H371 부분 확인)")
+        print(f"\n  🟧 Growing model better than fixed small (H371 partial confirmation)")
     else:
-        print(f"\n  ❌ 성장 모델이 고정 소형보다 나쁨 (H371 반박)")
+        print(f"\n  ❌ Growing model worse than fixed small (H371 refuted)")
 
     return {"growing": bpc_a, "fixed_big": bpc_b, "fixed_small": bpc_c}
 ```
 
-- [ ] **Step 2: main 블록 추가**
+- [ ] **Step 2: Add main block**
 
 ```python
 if __name__ == "__main__":
@@ -461,18 +461,18 @@ if __name__ == "__main__":
         compare_growing_vs_fixed(data, total_steps=args.steps, device=device)
 ```
 
-- [ ] **Step 3: 비교 실험 실행 (3000 steps)**
+- [ ] **Step 3: Run comparison experiment (3000 steps)**
 
 ```bash
 /opt/homebrew/bin/python3 growing_conscious_lm.py --mode compare --steps 3000
 ```
 
-- [ ] **Step 4: 결과 기록 + 커밋**
+- [ ] **Step 4: Record results + commit**
 
-H371 가설 문서에 실험 결과 추가. README 업데이트.
+Add experiment results to H371 hypothesis document. Update README.
 
 ```bash
 git add growing_conscious_lm.py docs/hypotheses/371-structural-growth-via-mitosis.md README.md
-git commit -m "feat: Growing CLM 비교 실험 — 성장 vs 고정 모델 검증"
+git commit -m "feat: Growing CLM comparison experiment — growth vs fixed model verification"
 git push
 ```

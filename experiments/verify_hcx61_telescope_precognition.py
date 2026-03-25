@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H-CX-61 검증: 중력망원경 예지 — (tension_scale, direction_spread) 2D 관측공간"""
+"""H-CX-61 Verification: Gravitational Telescope Precognition — (tension_scale, direction_spread) 2D Observation Space"""
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
 
@@ -9,7 +9,7 @@ from model_pure_field import PureFieldEngine
 from calc.direction_analyzer import load_data
 
 def direction_spread(D, Y, n_cls=10):
-    """클래스 평균 방향들 사이의 평균 코사인 거리 = spread"""
+    """Average cosine distance between class mean directions = spread"""
     means = []
     for c in range(n_cls):
         mask = Y == c

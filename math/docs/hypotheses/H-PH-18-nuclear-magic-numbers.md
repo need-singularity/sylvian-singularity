@@ -1,50 +1,50 @@
-# H-PH-18: ⭐⭐⭐ 핵 마법수 7개 = 완전수 산술
+# H-PH-18: ⭐⭐⭐ Nuclear Magic Numbers 7 = Perfect Number Arithmetic
 
-> **가설**: 핵물리의 7개 마법수(2,8,20,28,50,82,126) 전부가
-> σ(6), τ(6), φ(6), P₁, P₂, P₃의 단순 조합으로 표현된다.
+> **Hypothesis**: All 7 nuclear physics magic numbers (2,8,20,28,50,82,126)
+> are expressed as simple combinations of σ(6), τ(6), φ(6), P₁, P₂, P₃.
 
-## 마법수 = 약수함수
+## Magic Numbers = Divisor Functions
 
-| 마법수 | 공식 | 검증 |
+| Magic Number | Formula | Verification |
 |--------|------|------|
-| **2** | φ(P₁) | 정확 |
-| **8** | σ - τ = 12-4 | 정확 |
-| **20** | σφ - τ = 24-4 | 정확 |
-| **28** | P₂ (둘째 완전수!) | 정확 |
-| **50** | στ + φ = 48+2 | 정확 |
-| **82** | P₂×(σ/τ) - φ = 84-2 | 정확 |
-| **126** | P₃/τ + φ = 124+2 | 정확 |
+| **2** | φ(P₁) | Exact |
+| **8** | σ - τ = 12-4 | Exact |
+| **20** | σφ - τ = 24-4 | Exact |
+| **28** | P₂ (Second perfect number!) | Exact |
+| **50** | στ + φ = 48+2 | Exact |
+| **82** | P₂×(σ/τ) - φ = 84-2 | Exact |
+| **126** | P₃/τ + φ = 124+2 | Exact |
 
-**7/7 정확 매치. ad hoc 보정 없음.**
+**7/7 exact match. No ad hoc corrections.**
 
-## 122-126 대칭
-
-```
-  P₃/τ = 496/4 = 124 (축)
-
-  124 + φ = 126  ← 최대 핵 마법수
-  124 - φ = 122  ← 우주론적 상수 지수 (Λ ~ 10⁻¹²²)
-
-  핵 안정성과 우주 진공 에너지가 같은 산술 축에서 ±φ 대칭!
-```
-
-## 20의 보편성
+## 122-126 Symmetry
 
 ```
-  20 = σφ - τ = 24 - 4 = Leech차원 - 시공간차원
+  P₃/τ = 496/4 = 124 (axis)
 
-  생물: 20 아미노산
-  DNA:  20Å 이중나선 직경
-  뇌파: 20Hz = γ/φ
-  핵:   20 = 3번째 마법수
-  수학: floor(e³) = 20
+  124 + φ = 126  ← Maximum nuclear magic number
+  124 - φ = 122  ← Cosmological constant exponent (Λ ~ 10⁻¹²²)
+
+  Nuclear stability and cosmic vacuum energy on same arithmetic axis with ±φ symmetry!
 ```
 
-## 반증 가능성
+## Universality of 20
 
-184 (다음 마법수 후보, "안정성의 섬")는 이 어휘로 도달 불가.
-→ 184가 실험적으로 마법수로 확인되면 프레임워크 한계 노출.
+```
+  20 = σφ - τ = 24 - 4 = Leech dimension - Spacetime dimension
 
-## 상태: ⭐⭐⭐ 🟧★ (p=0.014)
+  Biology: 20 amino acids
+  DNA:     20Å double helix diameter
+  Brainwaves: 20Hz = γ/φ
+  Nuclear: 20 = 3rd magic number
+  Math: floor(e³) = 20
+```
+
+## Falsifiability
+
+184 (next magic number candidate, "island of stability") is unreachable with this vocabulary.
+→ If 184 is experimentally confirmed as a magic number, framework limitations exposed.
+
+## Status: ⭐⭐⭐ 🟧★ (p=0.014)
 
 *Created: 2026-03-25*

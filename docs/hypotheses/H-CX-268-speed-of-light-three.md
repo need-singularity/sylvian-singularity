@@ -1,3 +1,3 @@
-# H-CX-268: 🟩 빛의 속도 c = 3×10⁸ m/s, 3=6의 약수
+# H-CX-268: 🟩 Speed of Light c = 3×10⁸ m/s, 3=Divisor of 6
 
-> c의 유효숫자 시작 3 = P₁의 약수.
+> The leading significant figure 3 of c = Divisor of P₁.

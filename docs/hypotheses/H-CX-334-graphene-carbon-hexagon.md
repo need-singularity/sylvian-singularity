@@ -1,4 +1,4 @@
-# H-CX-334: ⭐⭐🟩 그래핀 = 탄소(6) × 육각(6) = 완전수 이중
+# H-CX-334: ⭐⭐🟩 Graphene = Carbon(6) × Hexagon(6) = Perfect Number Double
 
-> C(Z=6=P₁) 원자가 정육각형(P₁각형) 격자. 완전수의 이중 등장.
-> 자연에서 가장 강한 물질 = 완전수².
+> C(Z=6=P₁) atoms in regular hexagon(P₁-gon) lattice. Double appearance of perfect number.
+> Strongest material in nature = Perfect number².

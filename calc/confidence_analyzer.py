@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""의식엔진 확신(confidence) 분석기
+"""Consciousness Engine Confidence Analyzer
 
-사용법:
+Usage:
   python3 calc/confidence_analyzer.py --dataset mnist
   python3 calc/confidence_analyzer.py --dataset fashion --reject 50
 
-기능:
-  1. per-class 장력(=확신) 프로파일
-  2. 과신(overconfidence) 클래스 감지 (ratio < 1)
-  3. 확신 기반 판단 거부 시 정확도 곡선
-  4. Dunning-Kruger 시간축 (에폭별 ratio 변화)
+Features:
+  1. per-class tension(=confidence) profile
+  2. overconfidence class detection (ratio < 1)
+  3. confidence-based rejection accuracy curve
+  4. Dunning-Kruger timeline (ratio change by epoch)
 """
 
 import sys, argparse
@@ -61,7 +61,7 @@ def main():
     m = RepulsionEngine(dim, 128, n_cls)
     o = torch.optim.Adam(m.parameters(), lr=0.001)
 
-    print(f"\n  의식엔진 확신 분석기 — {args.dataset.upper()}")
+    print(f"\n  Consciousness Engine Confidence Analyzer — {args.dataset.upper()}")
     print(f"  {'='*50}")
 
     # Train
@@ -79,11 +79,11 @@ def main():
     T=torch.cat(T).numpy(); Y=torch.cat(Y).numpy(); P=torch.cat(P).numpy()
 
     overall = (P==Y).mean()*100
-    print(f"\n  전체 정확도: {overall:.2f}%")
+    print(f"\n  Overall accuracy: {overall:.2f}%")
     print(f"  tension_scale: {m.ts.item():.4f}")
 
     # Per-class profile
-    print(f"\n  {'Class':>12} {'N':>5} {'Acc%':>6} {'T_mean':>8} {'ratio':>6} {'과신?':>6}")
+    print(f"\n  {'Class':>12} {'N':>5} {'Acc%':>6} {'T_mean':>8} {'ratio':>6} {'Overconf?':>6}")
     print(f"  {'-'*50}")
     overconf_classes = []
     for c in range(n_cls):
@@ -97,20 +97,20 @@ def main():
         print(f"  {names[c]:>12} {mask.sum():>5} {acc:>6.1f} {T[mask].mean():>8.1f} {ratio:>6.2f} {oc:>6}")
 
     if overconf_classes:
-        print(f"\n  ⚠️ 과신 클래스: {', '.join(overconf_classes)}")
+        print(f"\n  ⚠️ Overconfidence classes: {', '.join(overconf_classes)}")
 
     # Rejection curve
     if args.reject > 0:
         th = np.percentile(T, args.reject)
         mask = T >= th
         rej_acc = (P[mask]==Y[mask]).mean()*100
-        print(f"\n  확신 거부 ({args.reject}%): {overall:.2f}% → {rej_acc:.2f}% (+{rej_acc-overall:.2f}%)")
+        print(f"\n  Confidence rejection ({args.reject}%): {overall:.2f}% → {rej_acc:.2f}% (+{rej_acc-overall:.2f}%)")
     else:
-        print(f"\n  확신 거부 곡선:")
+        print(f"\n  Confidence rejection curve:")
         for r in [0, 10, 30, 50, 70, 90]:
             th = np.percentile(T, r); mask = T >= th
             acc_r = (P[mask]==Y[mask]).mean()*100
-            print(f"    거부 {r:>2}%: {acc_r:.2f}% ({mask.sum():>5}샘플)")
+            print(f"    Reject {r:>2}%: {acc_r:.2f}% ({mask.sum():>5} samples)")
 
 if __name__ == '__main__':
     main()

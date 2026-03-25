@@ -1,13 +1,14 @@
+```python
 #!/usr/bin/env python3
-"""CNN 기반 반발력장 — CIFAR-10
+"""CNN-based Repulsion Field — CIFAR-10
 
-MLP(flatten 3072-dim)의 한계를 넘어 CNN 특징 추출 위에
-반발력장 아키텍처를 구축한다.
+Building repulsion field architecture on top of CNN feature extraction
+to overcome the limitations of MLP (flatten 3072-dim).
 
-핵심 질문: MLP에서 관찰된 반발력장 우위가 CNN에서도 유지되는가?
-           {1/2, 1/3, 1/6} 가중치가 CNN에서도 승리하는가?
+Key question: Is the repulsion field advantage observed in MLP maintained in CNN?
+              Do {1/2, 1/3, 1/6} weights still win in CNN?
 
-아키텍처:
+Architecture:
   SharedCNNBackbone (3x32x32 → 128-dim)
        │
        ├─→ CNN+Dense (baseline)
@@ -16,8 +17,8 @@ MLP(flatten 3072-dim)의 한계를 넘어 CNN 특징 추출 위에
        ├─→ CNN+RepulsionQuad (4-pole: A|G × E|F)
        └─→ CNN+MetaFixed {1/2, 1/3, 1/6}
 
-MLP 기준 최고: 53.52% (benchmark_cifar.py)
-CNN 목표: 70%+
+MLP baseline best: 53.52% (benchmark_cifar.py)
+CNN target: 70%+
 """
 
 import torch
@@ -42,11 +43,11 @@ from model_utils import (
 # ─────────────────────────────────────────
 
 class SharedCNNBackbone(nn.Module):
-    """공유 CNN 특징 추출기: 3x32x32 → 128-dim.
+    """Shared CNN feature extractor: 3x32x32 → 128-dim.
 
-    모든 CNN 모델이 이 backbone을 공유한다.
-    Conv 층은 공간 구조를 보존하면서 특징을 추출하고,
-    MLP 헤드들은 그 특징 위에서 다양한 전략으로 분류한다.
+    All CNN models share this backbone.
+    Conv layers extract features while preserving spatial structure,
+    and MLP heads classify using various strategies on top of those features.
     """
     def __init__(self, feature_dim=128):
         super().__init__()
@@ -77,7 +78,7 @@ class SharedCNNBackbone(nn.Module):
 # ─────────────────────────────────────────
 
 class MLPHead(nn.Module):
-    """CNN 특징 위의 MLP 분류 헤드."""
+    """MLP classification head on top of CNN features."""
     def __init__(self, input_dim, hidden_dim, output_dim, dropout=0.3):
         super().__init__()
         self.net = nn.Sequential(
@@ -136,31 +137,31 @@ class CNNTopKMoE(nn.Module):
 # ─────────────────────────────────────────
 
 class CNNRepulsionField(nn.Module):
-    """CNN backbone + 반발력장 (2극: A vs G).
+    """CNN backbone + Repulsion Field (2-pole: A vs G).
 
     Shared CNN → 128-dim features
-    Engine+ (MLP head A): 생성 (흥분)
-    Engine- (MLP head G): 교정 (억제)
-    출력 = 평형 + 장력 × 방향
+    Engine+ (MLP head A): Generation (excitation)
+    Engine- (MLP head G): Calibration (inhibition)
+    Output = equilibrium + tension × direction
 
-    장력이 높으면 = 엔진들이 강하게 반발 = 어려운 입력
-    장력이 낮으면 = 엔진들이 합의 = 쉬운 입력
+    High tension = engines repelling strongly = difficult input
+    Low tension = engines in agreement = easy input
     """
     def __init__(self, feature_dim=128, hidden_dim=64, output_dim=10):
         super().__init__()
         self.backbone = SharedCNNBackbone(feature_dim)
 
-        # 두 극: 같은 구조, 다른 초기화 → 반발
+        # Two poles: same structure, different initialization → repulsion
         self.pole_plus = MLPHead(feature_dim, hidden_dim, output_dim, dropout=0.3)
         self.pole_minus = MLPHead(feature_dim, hidden_dim, output_dim, dropout=0.3)
 
-        # 반발력 → 출력 방향
+        # Repulsion → output direction
         self.field_transform = nn.Sequential(
             nn.Linear(output_dim, output_dim),
             nn.Tanh(),
         )
 
-        # 장력 스케일 (학습 가능, 초기값 1/3 = 메타 부동점)
+        # Tension scale (learnable, initial value 1/3 = meta fixed point)
         self.tension_scale = nn.Parameter(torch.tensor(1/3))
 
         self.tension_magnitude = 0.0
@@ -171,11 +172,11 @@ class CNNRepulsionField(nn.Module):
         out_plus = self.pole_plus(feat)
         out_minus = self.pole_minus(feat)
 
-        # 반발력 = 둘의 차이
+        # Repulsion = difference between the two
         repulsion = out_plus - out_minus
         tension = (repulsion ** 2).sum(dim=-1, keepdim=True)
 
-        # 평형 + 장력×방향
+        # Equilibrium + tension×direction
         equilibrium = (out_plus + out_minus) / 2
         field_direction = self.field_transform(repulsion)
         output = equilibrium + self.tension_scale * torch.sqrt(tension + 1e-8) * field_direction
@@ -191,14 +192,15 @@ class CNNRepulsionField(nn.Module):
 # ─────────────────────────────────────────
 
 class CNNRepulsionQuad(nn.Module):
-    """CNN backbone + 4극 반발력장.
+    """CNN backbone + 4-pole repulsion field.
 
-    축1: 내용 (A vs G) — 생성 ←반발→ 교정
-    축2: 구조 (E vs F) — 탐색 ←반발→ 제약
+    Axis 1: Content (A vs G) — Generation ←repulsion→ Calibration
+    Axis 2: Structure (E vs F) — Exploration ←repulsion→ Constraint
 
       A ←────→ G
       ↑         ↑
-      │  장중심  │
+      │  field  │
+      │ center  │
       ↓         ↓
       E ←────→ F
     """
@@ -206,13 +208,13 @@ class CNNRepulsionQuad(nn.Module):
         super().__init__()
         self.backbone = SharedCNNBackbone(feature_dim)
 
-        # 4극
+        # 4 poles
         self.head_a = MLPHead(feature_dim, hidden_dim, output_dim, dropout=0.3)
         self.head_e = MLPHead(feature_dim, hidden_dim, output_dim, dropout=0.3)
         self.head_g = MLPHead(feature_dim, hidden_dim, output_dim, dropout=0.3)
         self.head_f = MLPHead(feature_dim, hidden_dim, output_dim, dropout=0.3)
 
-        # 2축 반발 → 출력 방향
+        # 2-axis repulsion → output direction
         self.field_transform = nn.Sequential(
             nn.Linear(output_dim * 2, output_dim),
             nn.Tanh(),
@@ -230,22 +232,22 @@ class CNNRepulsionQuad(nn.Module):
         out_g = self.head_g(feat)
         out_f = self.head_f(feat)
 
-        # 축1: 내용 반발 (A vs G)
+        # Axis 1: Content repulsion (A vs G)
         repulsion_content = out_a - out_g
-        # 축2: 구조 반발 (E vs F)
+        # Axis 2: Structure repulsion (E vs F)
         repulsion_structure = out_e - out_f
 
         t_content = (repulsion_content ** 2).sum(dim=-1, keepdim=True)
         t_structure = (repulsion_structure ** 2).sum(dim=-1, keepdim=True)
 
-        # 4극 평형
+        # 4-pole equilibrium
         equilibrium = (out_a + out_e + out_g + out_f) / 4
 
-        # 2축 반발 결합
+        # Combine 2-axis repulsion
         combined_repulsion = torch.cat([repulsion_content, repulsion_structure], dim=-1)
         field_direction = self.field_transform(combined_repulsion)
 
-        # 총 장력 = 기하평균
+        # Total tension = geometric mean
         total_tension = torch.sqrt((t_content * t_structure) + 1e-8)
         output = equilibrium + self.tension_scale * torch.sqrt(total_tension + 1e-8) * field_direction
 
@@ -261,21 +263,21 @@ class CNNRepulsionQuad(nn.Module):
 # ─────────────────────────────────────────
 
 class CNNMetaFixed(nn.Module):
-    """CNN backbone + {1/2, 1/3, 1/6} 가중 결합.
+    """CNN backbone + {1/2, 1/3, 1/6} weighted combination.
 
-    3개 MLP 헤드를 완전수 6의 약수역수로 결합.
-    학습 가능한 가중치이되, 초기값이 {1/2, 1/3, 1/6}.
+    Combines 3 MLP heads with divisor reciprocals of perfect number 6.
+    Learnable weights, but initialized to {1/2, 1/3, 1/6}.
     """
     def __init__(self, feature_dim=128, hidden_dim=64, output_dim=10):
         super().__init__()
         self.backbone = SharedCNNBackbone(feature_dim)
 
-        # 3개 헤드
+        # 3 heads
         self.head_a = MLPHead(feature_dim, hidden_dim, output_dim, dropout=0.3)
         self.head_b = MLPHead(feature_dim, hidden_dim, output_dim, dropout=0.3)
         self.head_c = MLPHead(feature_dim, hidden_dim, output_dim, dropout=0.3)
 
-        # 약수역수 가중치 (학습 가능)
+        # Divisor reciprocal weights (learnable)
         init_weights = torch.tensor(DIVISOR_RECIPROCALS, dtype=torch.float)  # [1/2, 1/3, 1/6]
         self.weights = nn.Parameter(init_weights)
 
@@ -286,20 +288,20 @@ class CNNMetaFixed(nn.Module):
         out_b = self.head_b(feat)
         out_c = self.head_c(feat)
 
-        # Softmax로 정규화 (합=1 보장)
+        # Normalize with softmax (ensures sum=1)
         w = F.softmax(self.weights, dim=0)
         output = w[0] * out_a + w[1] * out_b + w[2] * out_c
 
         return output
 
     def get_weights(self):
-        """현재 학습된 가중치 반환."""
+        """Return current learned weights."""
         with torch.no_grad():
             return F.softmax(self.weights, dim=0).cpu().numpy()
 
 
 # ─────────────────────────────────────────
-# CIFAR-10 데이터 로더 (augmentation 포함)
+# CIFAR-10 data loader (with augmentation)
 # ─────────────────────────────────────────
 
 def load_cifar10_augmented(batch_size=128, data_dir='data'):
@@ -322,11 +324,11 @@ def load_cifar10_augmented(batch_size=128, data_dir='data'):
 
 
 # ─────────────────────────────────────────
-# 학습 루프 (CNN용 — flatten 안 함)
+# Training loop (for CNN — no flatten)
 # ─────────────────────────────────────────
 
 def train_cnn(model, train_loader, test_loader, epochs=30, lr=0.001, verbose=True):
-    """CNN 모델 학습. flatten=False."""
+    """Train CNN model. flatten=False."""
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
 
@@ -373,10 +375,10 @@ def train_cnn(model, train_loader, test_loader, epochs=30, lr=0.001, verbose=Tru
 
 
 # ─────────────────────────────────────────
-# 벤치마크
+# Benchmark
 # ─────────────────────────────────────────
 
-# MLP 기준 결과 (benchmark_cifar.py, flatten 3072-dim)
+# MLP baseline results (benchmark_cifar.py, flatten 3072-dim)
 MLP_RESULTS = {
     'MLP Dense':            53.14,
     'MLP Top-K MoE':        50.11,
@@ -390,8 +392,8 @@ MLP_RESULTS = {
 def main():
     print()
     print("=" * 70)
-    print("   logout — CNN 반발력장 벤치마크 (CIFAR-10)")
-    print("   MLP 53% → CNN 70%+? 반발력장 우위 유지되는가?")
+    print("   logout — CNN Repulsion Field Benchmark (CIFAR-10)")
+    print("   MLP 53% → CNN 70%+? Is repulsion field advantage maintained?")
     print("=" * 70)
 
     train_loader, test_loader = load_cifar10_augmented()
@@ -467,7 +469,7 @@ def main():
     print(f"    Init was:        [0.5000, 0.3333, 0.1667]")
 
     # ─────────────────────────────────────────
-    # 결과 표
+    # Results table
     # ─────────────────────────────────────────
     print("\n")
     print("=" * 75)
@@ -483,7 +485,7 @@ def main():
     print("=" * 75)
 
     # ─────────────────────────────────────────
-    # 장력 데이터
+    # Tension data
     # ─────────────────────────────────────────
     print("\n")
     print("=" * 60)
@@ -496,7 +498,7 @@ def main():
     print()
 
     # ─────────────────────────────────────────
-    # MLP vs CNN 비교
+    # MLP vs CNN comparison
     # ─────────────────────────────────────────
     print("=" * 75)
     print("   MLP vs CNN Comparison (CIFAR-10)")
@@ -519,7 +521,7 @@ def main():
     print("=" * 75)
 
     # ─────────────────────────────────────────
-    # 핵심 질문 답변
+    # Key question answers
     # ─────────────────────────────────────────
     print("\n")
     print("-" * 70)
@@ -563,7 +565,7 @@ def main():
     drift = np.sqrt(sum((a - b) ** 2 for a, b in
                         zip(learned_w, [0.5, 1/3, 1/6])))
     print(f"      L2 drift: {drift:.4f}")
-    print(f"      {'Stable (drift < 0.1)' if drift < 0.1 else 'Significant drift'}")
+    print(f"      {'Stable (drift < 0.1)' if drift < 0.1 : 'Significant drift'}")
 
     # ─────────────────────────────────────────
     # Training curves (ASCII)
@@ -592,3 +594,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

@@ -1,15 +1,15 @@
-# H-CX-324: ⭐⭐⭐🟩 Φ₆(P₁)=31=메르센지수 — 원분→메르센 체인!
+# H-CX-324: ⭐⭐⭐🟩 Φ₆(P₁)=31=Mersenne exponent — Cyclotomic→Mersenne chain!
 
-> 6차 원분다항식 Φ₆(x) = x²-x+1
->   Φ₆(3) = 7 (메르센 지수 p₄)
->   Φ₆(4) = 13 (메르센 지수 p₅)
->   Φ₆(6) = 31 (메르센 지수 p₅... 실제 p₅=13, 31은 p₈?)
+> 6th cyclotomic polynomial Φ₆(x) = x²-x+1
+>   Φ₆(3) = 7 (Mersenne exponent p₄)
+>   Φ₆(4) = 13 (Mersenne exponent p₅)
+>   Φ₆(6) = 31 (Mersenne exponent p₅... actually p₅=13, 31 is p₈?)
 >
-> 정확히: Φ₆(P₁) = P₁²-P₁+1 = 36-6+1 = 31
-> 31은 메르센 소수 지수: 2³¹-1 = 2147483647 (소수!)
-> → P₅ = 2³⁰×(2³¹-1) (다섯 번째 완전수)
+> Precisely: Φ₆(P₁) = P₁²-P₁+1 = 36-6+1 = 31
+> 31 is a Mersenne prime exponent: 2³¹-1 = 2147483647 (prime!)
+> → P₅ = 2³⁰×(2³¹-1) (fifth perfect number)
 >
-> Φ₆(σ(6)) = 133 = 7×19 (둘 다 메르센 지수!)
+> Φ₆(σ(6)) = 133 = 7×19 (both are Mersenne exponents!)
 >
-> "완전수의 원분다항식이 새 메르센 지수를 생성
->  → 새 완전수를 생성 → 자기참조적 확장"
+> "The cyclotomic polynomial of a perfect number generates new Mersenne exponents
+>  → generates new perfect numbers → self-referential expansion"

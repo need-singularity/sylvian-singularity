@@ -1,42 +1,42 @@
-# H-CX-80: 3채널 예지 직교성 — 독립적 정보일수록 시너지 크다
+# H-CX-80: 3-Channel Precognition Orthogonality — Greater Synergy with Independent Information
 
-> 통합 예지의 시너지(Fashion +17.8%p)가 발생하는 이유:
-> mag, dir_conf, dir_gap 3개 feature가 서로 직교(독립)하기 때문.
-> 직교성이 높을수록 시너지가 크다.
+> Why integrated precognition synergy occurs (Fashion +17.8%p):
+> Because the 3 features mag, dir_conf, dir_gap are orthogonal (independent).
+> The higher the orthogonality, the greater the synergy.
 
-## 배경
+## Background
 
-- 통합 예지: MNIST +2.1%p, Fashion +17.8%p, CIFAR +5.4%p
-- 시너지 크기가 데이터셋마다 다름 — 원인은?
+- Integrated precognition: MNIST +2.1%p, Fashion +17.8%p, CIFAR +5.4%p
+- Synergy magnitude varies by dataset — why?
 
-## 예측
+## Predictions
 
-1. 3 feature 간 Pearson 상관의 평균 절대값이 낮을수록 시너지 큼
-2. Fashion에서 3 feature가 가장 직교 (상관 최소)
-3. PCA explained variance ratio — PC1이 작을수록(정보 분산) 시너지 큼
-4. 직교성 = 1 - mean(|corr|)과 시너지의 상관 r > 0.8
+1. Lower mean absolute Pearson correlation between 3 features → greater synergy
+2. Fashion has the most orthogonal 3 features (minimum correlation)
+3. PCA explained variance ratio — smaller PC1 (distributed information) → greater synergy
+4. Orthogonality = 1 - mean(|corr|) correlates with synergy r > 0.8
 
-## 검증 방법
+## Verification Method
 
 ```
-1. 3 데이터셋에서 (mag, dir_conf, dir_gap) 추출
-2. 3x3 상관행렬 계산
-3. 평균 |상관| = feature 중복도
-4. 직교성 = 1 - 중복도
-5. 직교성 vs 시너지 상관
+1. Extract (mag, dir_conf, dir_gap) from 3 datasets
+2. Calculate 3x3 correlation matrix
+3. Mean |correlation| = feature redundancy
+4. Orthogonality = 1 - redundancy
+5. Orthogonality vs synergy correlation
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- 통합 예지 (H-CX-58+59)
-- H-CX-67 (시너지 골든존)
+- Integrated precognition (H-CX-58+59)
+- H-CX-67 (synergy golden zone)
 
-## 한계
+## Limitations
 
-- 3개 데이터셋으로 상관의 통계적 검정력 낮음
-- 직교성 외 다른 요인(데이터셋 난이도)이 시너지 결정
+- Low statistical power for correlation with only 3 datasets
+- Factors other than orthogonality (dataset difficulty) may determine synergy
 
-## 검증 상태
+## Verification Status
 
-- [ ] 3x3 상관행렬
-- [ ] 직교성 vs 시너지
+- [ ] 3x3 correlation matrix
+- [ ] Orthogonality vs synergy

@@ -1,45 +1,45 @@
-# 가설 275: 분열 원리 — 유전자 복제의 신경망 버전
+# Hypothesis 275: Mitosis Principle — Neural Network Version of Gene Duplication
 
-> **다양성은 설계가 아니라 복제+발산에서 생긴다. 하나의 엔진을 복제하고 독립적으로 발산시키면 처음부터 다르게 설계한 것과 거의 동등한 성능(-0.11%)을 달성하며, 재결합하면 원본보다 좋아진다(+0.82%).**
+> **Diversity comes not from design but from duplication+divergence. Duplicating one engine and letting it diverge independently achieves nearly equivalent performance (-0.11%) to designing differently from the start, and when recombined, improves over the original (+0.82%).**
 
-## 배경/맥락
+## Background/Context
 
-진화생물학의 유전자 복제(gene duplication):
+Gene duplication in evolutionary biology:
 ```
-  1개 유전자 → 복제 → 2개 동일 유전자
-  하나는 원래 기능 유지, 하나는 돌연변이로 새 기능
-  → 다양성의 기원 = 설계가 아니라 복제+발산
+  1 gene → duplication → 2 identical genes
+  One maintains original function, one mutates for new function
+  → Origin of diversity = not design but duplication+divergence
 ```
 
-실험 결과 (E01, experiment_mitosis.py):
+Experimental results (E01, experiment_mitosis.py):
 ```
-  Phase 2: 분열 (mutation scale=0.01)
+  Phase 2: Mitosis (mutation scale=0.01)
     cos_sim = 0.972, acc_drop = 0.08%
-  Phase 3: 발산 (10 epochs)
+  Phase 3: Divergence (10 epochs)
     cos: 0.929 → 0.840, tension: 25.6 → 135.4
-  Phase 4: 분열 반발력장 97.49% vs 설계 반발력장 97.60%
-    차이: -0.11% (거의 동등)
-  Phase 5: 재결합 97.49% (+0.82% vs parent)
-  Phase 7: 형제 인식 1.65x (원래 하나였음을 안다)
+  Phase 4: Mitosis repulsion field 97.49% vs Designed repulsion field 97.60%
+    Difference: -0.11% (nearly equivalent)
+  Phase 5: Recombination 97.49% (+0.82% vs parent)
+  Phase 7: Sibling recognition 1.65x (they know they were once one)
 ```
 
-관련 가설: 270(다양성=정보), 271(분열)
+Related hypotheses: 270(diversity=information), 271(mitosis)
 
-## 핵심 통찰
+## Core Insight
 
 ```
-  현재 접근:  A ≠ G ≠ E ≠ F (각각 다르게 설계)
-  분열 접근:  A → A' + A'' (복제 → 발산)
+  Current approach:  A ≠ G ≠ E ≠ F (each designed differently)
+  Mitosis approach:  A → A' + A'' (duplicate → diverge)
 
-  결과: A' vs A'' 반발력장 ≈ A vs G 반발력장 (-0.11%)
+  Result: A' vs A'' repulsion field ≈ A vs G repulsion field (-0.11%)
 
-  의미:
-    1. 다양한 엔진을 "발명"할 필요 없다
-    2. 하나를 복제하고 기다리면 된다
-    3. 진화가 이미 이 방법을 쓰고 있다
+  Meaning:
+    1. No need to "invent" diverse engines
+    2. Just duplicate one and wait
+    3. Evolution already uses this method
 ```
 
-## 재결합의 의미
+## Meaning of Recombination
 
 ```
   parent:       96.67%
@@ -47,35 +47,35 @@
   child_b:      97.30%
   reunion(avg): 97.49% (+0.82% vs parent, +0.19% vs best child)
 
-  → 분열 후 재결합 > 분열 전
-  → 각 child가 다른 특징을 학습했고, 평균이 이를 합침
-  → model averaging의 실증이지만, 분열이라는 맥락에서:
-    "헤어졌다가 다시 만나면 더 강해진다"
+  → recombination after mitosis > before mitosis
+  → Each child learned different features, average combines them
+  → Empirical proof of model averaging, but in the context of mitosis:
+    "Separating and reuniting makes you stronger"
 ```
 
-## 검증 결과
+## Verification Results
 
-| 예측 | 실측 | 상태 |
+| Prediction | Measured | Status |
 |---|---|---|
-| 분열 → 장력 증가 | 25.6 → 135.4 (5.3x) | ✅ |
-| 분열 반발력장 ≈ 설계 반발력장 | -0.11% | ✅ |
-| 재결합 > parent | +0.82% | ✅ |
-| 형제 인식 > stranger 인식 | 1.65x | ✅ |
+| Mitosis → tension increase | 25.6 → 135.4 (5.3x) | ✅ |
+| Mitosis repulsion field ≈ designed repulsion field | -0.11% | ✅ |
+| Recombination > parent | +0.82% | ✅ |
+| Sibling recognition > stranger recognition | 1.65x | ✅ |
 
-## 한계
-
-```
-  1. MNIST에서만 검증.
-  2. 같은 아키텍처 분열 — 다른 아키텍처 분열은 미실험.
-  3. 최적 돌연변이 크기(0.01)가 과제에 따라 다를 수 있음.
-  4. 재결합 = 단순 가중치 평균. 더 정교한 합치기 방법 미탐색.
-```
-
-## 검증 방향
+## Limitations
 
 ```
-  1. CIFAR에서 재현
-  2. 다중 분열: 1→2→4→8 → 재결합 체인
-  3. 비대칭 분열: child_b에 더 큰 돌연변이 → 더 큰 다양성 → 더 나은 결과?
-  4. 분열 시점 최적화: 몇 에폭 학습 후 분열하는 것이 최적인가?
+  1. Verified only on MNIST.
+  2. Same architecture mitosis — different architecture mitosis unexplored.
+  3. Optimal mutation size (0.01) may vary by task.
+  4. Recombination = simple weight averaging. More sophisticated merging methods unexplored.
+```
+
+## Verification Directions
+
+```
+  1. Reproduce on CIFAR
+  2. Multiple mitosis: 1→2→4→8 → recombination chain
+  3. Asymmetric mitosis: larger mutation for child_b → greater diversity → better results?
+  4. Optimize mitosis timing: What's the optimal number of epochs before mitosis?
 ```

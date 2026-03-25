@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""캘리브레이션 분석기 — softmax ECE vs tension-based ECE 비교
+"""Calibration Analyzer — softmax ECE vs tension-based ECE comparison
 
-사용법:
+Usage:
   python3 calc/calibration_analyzer.py --dataset mnist
   python3 calc/calibration_analyzer.py --dataset fashion --epochs 20 --n-bins 20
   python3 calc/calibration_analyzer.py --dataset cifar --trials 5
 
-기능:
-  1. softmax ECE vs tension-based ECE 비교
-  2. per-class reliability 분석
-  3. 과신(overconfidence) 감지 (H316, H-CX-24)
-  4. temperature scaling 최적화
+Features:
+  1. softmax ECE vs tension-based ECE comparison
+  2. per-class reliability analysis
+  3. Overconfidence detection (H316, H-CX-24)
+  4. temperature scaling optimization
   5. ASCII reliability diagram + calibration curve
 """
 

@@ -1,22 +1,22 @@
-# H-CX-32: p(n)=σ(n)-1 at {2,3,6} → AI 아키텍처 분할
+# H-CX-32: p(n)=σ(n)-1 at {2,3,6} → AI Architecture Partitioning
 
-> **가설**: 분할수 p(n)=σ(n)-1이 {2,3,6}에서만 성립하는 것은
-> AI 아키텍처에서 "가능한 분할 수 ≈ 파라미터 합-1"인 조건과 대응.
+> **Hypothesis**: The fact that partition number p(n)=σ(n)-1 holds only at {2,3,6} corresponds to
+> the condition "possible partition count ≈ parameter sum-1" in AI architectures.
 
-## 핵심
+## Core
 
 ```
   p(6) = 11 = σ(6)-1 = 12-1
-  "6을 정수 합으로 분할하는 방법 = 6의 약수합-1"
+  "Ways to partition 6 as sum of integers = sum of divisors of 6 minus 1"
 
-  AI: d차원 표현을 부분공간으로 분할할 때,
-  가능한 분할 수 p(d)가 파라미터 합 σ(d)에 가까움
-  → d=6에서 p≈σ: "분할과 파라미터가 거의 일치!"
+  AI: When partitioning d-dimensional representation into subspaces,
+  possible partition count p(d) is close to parameter sum σ(d)
+  → at d=6, p≈σ: "partitions and parameters almost match!"
 
-  {2,3,6}: 가장 기본적인 아키텍처 빌딩 블록
-    d=2: 이진 (2-way split)
-    d=3: 삼원 (3-way split)
-    d=6: 완전 (p=σ-1: 최적 분할!)
+  {2,3,6}: Most basic architecture building blocks
+    d=2: Binary (2-way split)
+    d=3: Ternary (3-way split)
+    d=6: Perfect (p=σ-1: optimal partitioning!)
 ```
 
-## 판정: 🟨 관찰 (small numbers) | 파급력: ★★
+## Judgment: 🟨 Observation (small numbers) | Impact: ★★

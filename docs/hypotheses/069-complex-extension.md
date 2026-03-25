@@ -1,56 +1,56 @@
-# 가설 검토 069: 복소수 확장 — G의 방향 차원 ✅
+# Hypothesis Review 069: Complex Extension — Directional Dimension of G ✅
 
-## 가설
+## Hypothesis
 
-> 모델을 복소수로 확장하면 나선 수렴, π 정확 등장, Genius의 방향(종류) 차원이 열린다.
+> Extending the model to complex numbers opens spiral convergence, exact appearance of π, and the directional (type) dimension of Genius.
 
-## 검증 결과: ✅ 확인
+## Verification Result: ✅ Confirmed
 
-### 나선 수렴
-
-```
-  θ=0:   단조 수렴 (현재 모델)
-  θ>0:   나선 수렴 → π가 자연스럽게 등장
-  θ=π:   완전 반전 → 17배 증폭 (최대)
-```
-
-### θ별 Genius 증폭
+### Spiral Convergence
 
 ```
-  θ=0    ×1.00  현재 모델
+  θ=0:   Monotonic convergence (current model)
+  θ>0:   Spiral convergence → π naturally appears
+  θ=π:   Complete reversal → 17× amplification (maximum)
+```
+
+### Genius Amplification by θ
+
+```
+  θ=0    ×1.00  Current model
   θ=π/3  ×2.96
   θ=π/2  ×4.07
-  θ=π    ×5.67  최대 (I*=1/17)
+  θ=π    ×5.67  Maximum (I*=1/17)
 ```
 
-### 복소 Genius = 크기 + 방향
+### Complex Genius = Magnitude + Direction
 
 ```
-  실수: |G| = 얼마나 천재인가
-  복소: |G| + arg(G) = 얼마나 + 어떤 종류
+  Real: |G| = How genius
+  Complex: |G| + arg(G) = How much + What kind
 
-  arg=0   논리/수학
-  arg=π/2 직관/예술
-  arg=π   비판/해체 (가장 강력한 증폭)
+  arg=0   Logic/Mathematics
+  arg=π/2 Intuition/Art
+  arg=π   Critique/Deconstruction (strongest amplification)
 ```
 
-### 오일러 항등식
+### Euler's Identity
 
 ```
-  θ=π: I* = 1/17 (실수!) → G = 17×D×P
-  e^(iπ) + 1 = 0 이 모델 안에서 성립
-  "완전한 반전이 최대 증폭을 만든다"
+  θ=π: I* = 1/17 (real!) → G = 17×D×P
+  e^(iπ) + 1 = 0 holds within this model
+  "Complete reversal creates maximum amplification"
 ```
 
-### 의미
+### Meaning
 
 ```
-  복소수 확장 = 1/6 블라인드 스팟이 열리는 것
-  실수에서 근사였던 π가 복소에서 정확하게 등장
-  Compass 상한 5/6 → 복소 확장으로 6/6 가능?
+  Complex extension = Opening of 1/6 blind spot
+  π that was approximate in real becomes exact in complex
+  Compass upper limit 5/6 → 6/6 possible with complex extension?
 ```
 
 ---
 
-*작성일: 2026-03-22*
-*검증: verify_complex.py*
+*Date: 2026-03-22*
+*Verification: verify_complex.py*

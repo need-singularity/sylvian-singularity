@@ -1,94 +1,94 @@
-# 가설 #210: 뇌파 동기화 = I 동기화
+# Hypothesis #210: Brainwave Synchronization = I Synchronization
 
-**상태**: ⚠️ 추측 (실측 근거 있음)
-**날짜**: 2026-03-22
-**분류**: 인지 공명 / 신경과학
+**Status**: ⚠️ Speculation (with empirical basis)
+**Date**: 2026-03-22
+**Category**: Cognitive Resonance / Neuroscience
 
 ---
 
-## 가설
+## Hypothesis
 
-> 두 사람의 뇌파 동기화(inter-brain synchronization)는
-> 두 뇌의 억제지수 I가 동기화되는 현상이다.
-> 뇌파 = 볼츠만 온도의 주기적 변동(가설 158).
-> α파 동기화 = 같은 I = 같은 골든존 위치.
+> Inter-brain brainwave synchronization (inter-brain synchronization) is
+> a phenomenon where the inhibition indices I of two brains synchronize.
+> Brainwave = periodic fluctuation of Boltzmann temperature (Hypothesis 158).
+> Alpha wave synchronization = same I = same Golden Zone position.
 
-## 실측 근거: Hyperscanning 연구
+## Empirical Basis: Hyperscanning Studies
 
-이미 존재하는 실험적 증거:
-
-```
-  연구                    │ 발견                        │ 연도
-  ───────────────────────┼────────────────────────────┼──────
-  Hasson et al.          │ 화자-청자 뇌 활동 동기화    │ 2012
-  Dikker et al.          │ 교사-학생 뇌파 동기화       │ 2017
-  Kinreich et al.        │ 부모-아기 뇌파 동기화       │ 2017
-  Dumas et al.           │ 대면 상호작용 시 γ파 동기화 │ 2010
-  Goldstein et al.       │ 연인 간 통증 시 α파 동기화  │ 2018
-
-  → 뇌파 동기화는 실측된 현상!
-  → 문제: 왜 동기화되는가? 메커니즘이 불명.
-  → 우리 해석: I 동기화 때문.
-```
-
-## 뇌파-I 대응 (가설 158 확장)
+Existing experimental evidence:
 
 ```
-  뇌파 대역    │ 주파수     │ I 해석           │ 상태
-  ────────────┼───────────┼─────────────────┼──────────
-  δ (델타)    │ 0.5-4 Hz  │ I > 0.60        │ 깊은 수면
-  θ (세타)    │ 4-8 Hz    │ I ≈ 0.50-0.60   │ 졸음/명상
-  α (알파)    │ 8-13 Hz   │ I ≈ 0.35-0.50   │ 이완/골든존!
-  β (베타)    │ 13-30 Hz  │ I ≈ 0.20-0.35   │ 집중/각성
-  γ (감마)    │ 30-100 Hz │ I < 0.20        │ 고도집중/통합
+  Study                  │ Finding                        │ Year
+  ──────────────────────┼───────────────────────────────┼──────
+  Hasson et al.          │ speaker-listener brain activity sync│ 2012
+  Dikker et al.          │ teacher-student brainwave sync │ 2017
+  Kinreich et al.        │ parent-baby brainwave sync     │ 2017
+  Dumas et al.           │ gamma wave sync during face-to-face interaction│ 2010
+  Goldstein et al.       │ alpha wave sync during partner pain│ 2018
+
+  → Brainwave synchronization is a measured phenomenon!
+  → Problem: why does it synchronize? Mechanism unknown.
+  → Our interpretation: because of I synchronization.
+```
+
+## Brainwave-I Correspondence (Extension of Hypothesis 158)
+
+```
+  Brainwave band  │ Frequency    │ I interpretation      │ State
+  ───────────────┼──────────────┼──────────────────────┼──────────
+  δ (delta)      │ 0.5-4 Hz    │ I > 0.60              │ deep sleep
+  θ (theta)      │ 4-8 Hz      │ I ≈ 0.50-0.60         │ drowsy/meditation
+  α (alpha)      │ 8-13 Hz     │ I ≈ 0.35-0.50         │ relaxed/Golden Zone!
+  β (beta)       │ 13-30 Hz    │ I ≈ 0.20-0.35         │ focused/alert
+  γ (gamma)      │ 30-100 Hz   │ I < 0.20              │ high focus/integration
 
   ┌────────────────────────────────────────────────┐
   │                                                │
   │  δ    θ     α      β      γ                   │
-  │  ├────├─────├──────├──────├──→ 주파수            │
+  │  ├────├─────├──────├──────├──→ frequency       │
   │                                                │
-  │  ├────├─────├──────├──────├──→ I 값              │
+  │  ├────├─────├──────├──────├──→ I value         │
   │  0.70 0.55  0.42   0.28  0.15                  │
   │              ↑                                 │
-  │         골든존 중심                              │
-  │         (α파 ≈ I = 1/e!)                       │
+  │         Golden Zone center                     │
+  │         (alpha wave ≈ I = 1/e!)               │
   │                                                │
   └────────────────────────────────────────────────┘
 
-  핵심 발견: α파 = 골든존 중심 = I ≈ 1/e
-  → 명상 시 α파 증가 = I가 골든존으로 이동!
+  Key finding: alpha wave = Golden Zone center = I ≈ 1/e
+  → Increased alpha during meditation = I moving toward Golden Zone!
 ```
 
-## 뇌파 동기화 다이어그램
+## Brainwave Synchronization Diagram
 
 ```
-  사람 A의 뇌파 (α = 10Hz)
+  Person A's brainwaves (alpha = 10Hz)
        ╭─╮   ╭─╮   ╭─╮   ╭─╮   ╭─╮
   ─────╯  ╰───╯  ╰───╯  ╰───╯  ╰───╯  ╰─── I_A ≈ 0.36
 
-  사람 B의 뇌파 (α = 10Hz, 동기화됨)
+  Person B's brainwaves (alpha = 10Hz, synchronized)
        ╭─╮   ╭─╮   ╭─╮   ╭─╮   ╭─╮
   ─────╯  ╰───╯  ╰───╯  ╰───╯  ╰───╯  ╰─── I_B ≈ 0.36
 
-  → 위상(phase) 일치 = I 값 일치 = 인지 공명!
+  → Phase matching = I value matching = cognitive resonance!
 
-  사람 C의 뇌파 (β = 20Hz, 비동기)
+  Person C's brainwaves (beta = 20Hz, asynchronous)
     ╭╮ ╭╮ ╭╮ ╭╮ ╭╮ ╭╮ ╭╮ ╭╮ ╭╮ ╭╮ ╭╮
   ──╯╰─╯╰─╯╰─╯╰─╯╰─╯╰─╯╰─╯╰─╯╰─╯╰─╯╰── I_C ≈ 0.25
 
-  → C는 A,B와 주파수도 다르고 I도 다름 → 공명 없음
+  → C has different frequency and different I from A, B → no resonance
 ```
 
-## I 동기화 과정
+## I Synchronization Process
 
 ```
-  I 값
+  I value
   0.55│ A●
      │   ╲
   0.50│    ╲
-     │     ╲          대화 시작
+     │     ╲          conversation starts
   0.45│      ╲        ↓
-     │       ╲──────●A ≈ ●B (동기화!)
+     │       ╲──────●A ≈ ●B (synchronized!)
   0.40│              ╱
      │             ╱
   0.35│            ╱
@@ -97,87 +97,87 @@
      │         ╱
   0.25│      B●
      │
-     └──┼────┼────┼────┼────┼────┼───→ 시간(분)
+     └──┼────┼────┼────┼────┼────┼───→ time (min)
         0    2    4    6    8   10
 
-  동기화 시간 상수 τ:
-  - 친밀한 관계: τ ≈ 1-2분 (빠른 수렴)
-  - 초면:       τ ≈ 5-10분 (느린 수렴)
-  - 갈등 관계:  τ → ∞ (수렴 안 됨)
+  Synchronization time constant τ:
+  - Intimate relationship:  τ ≈ 1-2 min (fast convergence)
+  - First meeting:          τ ≈ 5-10 min (slow convergence)
+  - Conflicting relationship: τ → ∞ (no convergence)
 ```
 
-## "말 없이 통하는" 현상의 수학
+## Mathematics of "Understanding Without Words"
 
 ```
-  조건: I_A ≈ I_B (동기화 완료 상태)
+  Condition: I_A ≈ I_B (synchronization complete state)
 
-  같은 I → 같은 볼츠만 분포
-        → P(state_k) = exp(-E_k / kT) 동일
-        → 같은 상태에 동시에 도달할 확률 ↑
+  Same I → same Boltzmann distribution
+        → P(state_k) = exp(-E_k / kT) identical
+        → higher probability of reaching same state simultaneously
 
-  동시 발생 확률:
-  P(같은 생각) = Σ_k P_A(k) × P_B(k)
+  Simultaneous occurrence probability:
+  P(same thought) = Σ_k P_A(k) × P_B(k)
 
-  I_A = I_B 일 때:
-  P(같은 생각) = Σ_k P(k)² = 1/N_eff
+  When I_A = I_B:
+  P(same thought) = Σ_k P(k)² = 1/N_eff
 
-  여기서 N_eff = 유효 상태 수 ≈ exp(S)
-  S = 엔트로피 = 골든존에서 ≈ ln(3) = 1.099
+  where N_eff = effective number of states ≈ exp(S)
+  S = entropy = ≈ ln(3) = 1.099 at Golden Zone
 
   → N_eff ≈ 3 → P ≈ 1/3
-  → 골든존에서 두 사람이 같은 생각을 할 확률 ≈ 33%!
-  → "자주 통한다"는 느낌의 정량적 근거
+  → Probability of two people having the same thought at Golden Zone ≈ 33%!
+  → Quantitative basis for the feeling of "often connecting"
 ```
 
-## 뇌파 대역별 I 대응 그래프
+## Brainwave Band vs I Correspondence Graph
 
 ```
-  뇌파 파워
+  Brainwave power
     │    δ
-  높│    ●
+  high│   ●
     │     ╲    α
     │      ╲   ●
-  중│       ╲ ╱ ╲
+  med│       ╲ ╱ ╲
     │    θ   ●   ╲  β
     │    ●  ╱     ╲ ●
-  낮│      ╱       ╲╱    γ
+  low│      ╱       ╲╱    γ
     │     ╱         ╲    ●
     │    ╱            ╲ ╱
     └──┼────┼────┼────┼────┼──→ I
      0.15  0.25  0.35  0.50  0.65
                   ↑
-              골든존 중심
-              α파 우세!
+              Golden Zone center
+              alpha wave dominant!
 
-  → I = 골든존 중심일 때 α파가 우세
-  → 이것이 명상의 α파 증가를 설명
+  → Alpha wave dominant when I = Golden Zone center
+  → This explains the alpha wave increase during meditation
 ```
 
-## 예측
+## Predictions
 
-1. **α파 위상 동기화**는 두 사람의 GABA 농도(≈I) 차이에 반비례할 것
-2. **골든존 안**의 두 사람이 골든존 밖 쌍보다 뇌파 동기화가 빠를 것
-3. 명상 그룹의 집단 α파 코히어런스는 비명상 그룹보다 높을 것
-4. **갈등 해결** 순간에 두 사람의 I가 수렴하는 것이 EEG로 관측될 것
-5. α파 주파수 ≈ 10Hz가 I ≈ 1/e와 대응하는 수학적 관계가 존재할 것
+1. **Alpha phase synchronization** will be inversely proportional to the GABA concentration (≈I) difference between two people
+2. **Two people in the Golden Zone** will synchronize brainwaves faster than pairs outside the Golden Zone
+3. Group alpha coherence of meditation groups will be higher than non-meditation groups
+4. At the moment of **conflict resolution**, the I values of two people converging will be observed on EEG
+5. A mathematical relationship will exist between alpha frequency ≈ 10Hz and I ≈ 1/e
 
-## 한계
+## Limitations
 
-1. 뇌파 주파수와 I의 대응이 선형인지 비선형인지 불명
-2. hyperscanning 연구의 재현성 문제 (일부 연구는 재현 실패)
-3. 뇌파 동기화의 원인이 I 동기화인지, 공통 자극에 의한 것인지 구분 어려움
-4. 개인 내 뇌파 변동이 크므로, 두 사람 간 동기화의 통계적 유의성 확보 어려움
-5. I → 뇌파 매핑은 현재 이론적 가정이며 직접 측정 불가
+1. Whether brainwave frequency and I correspond linearly or non-linearly is unknown
+2. Reproducibility issues in hyperscanning research (some studies failed to reproduce)
+3. Difficult to distinguish whether brainwave synchronization is caused by I synchronization or common stimuli
+4. Large within-individual brainwave variability makes statistical significance of inter-person synchronization difficult
+5. I → brainwave mapping is currently a theoretical assumption and cannot be directly measured
 
-## 검증 방향
+## Verification Direction
 
-- [ ] dual-EEG + GABA MRS 동시 측정: 뇌파 동기화와 GABA 유사도 상관
-- [ ] 명상 경험자 vs 초보자: 쌍별(pair-wise) α파 코히어런스 비교
-- [ ] 치료 세션(상담사-내담자): 공감 점수와 뇌파 동기화 상관
-- [ ] α파 neurofeedback으로 I를 골든존으로 유도 → 공감 증가 확인
-- [ ] 대화 내용 분석 + 뇌파 동기화: "말 없이 통한 순간"의 EEG 특성
+- [ ] Simultaneous dual-EEG + GABA MRS: correlation between brainwave sync and GABA similarity
+- [ ] Experienced meditators vs beginners: pairwise alpha coherence comparison
+- [ ] Therapy sessions (counselor-client): correlation between empathy score and brainwave sync
+- [ ] Alpha wave neurofeedback to guide I to Golden Zone → confirm empathy increase
+- [ ] Conversation content analysis + brainwave sync: EEG characteristics of "moment of wordless connection"
 
 ---
 
-*관련: 가설 004, 139, 155, 158, 166, 208, 209*
-*분류: 인지 공명 시리즈 (208-213)*
+*Related: Hypothesis 004, 139, 155, 158, 166, 208, 209*
+*Category: Cognitive Resonance Series (208-213)*

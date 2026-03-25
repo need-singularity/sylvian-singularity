@@ -1,19 +1,19 @@
-# H-CHEM-4: R-체인과 화학 반응 연쇄
+# H-CHEM-4: R-chain and Chemical Reaction Chains
 
-> **가설**: R-체인 n→R(n)→R²(n)→...→1의 구조가 화학 반응의 에너지 단계와 유사.
+> **Hypothesis**: The structure of R-chain n→R(n)→R²(n)→...→1 is similar to energy levels in chemical reactions.
 
-## 대응
+## Correspondence
 ```
-  R-체인 단계        화학 유비
-  ──────────        ────────
-  n (시작점)         반응물
-  R(n) (감소)        중간체 (활성화 에너지 하강)
-  R(6)=1            생성물 (안정)
-  R(1)=1            기저 상태
+  R-chain Stage      Chemical Analogy
+  ─────────         ────────────────
+  n (starting point) Reactants
+  R(n) (decrease)    Intermediates (activation energy descent)
+  R(6)=1            Products (stable)
+  R(1)=1            Ground state
 ```
 
-## 검증 방향
-- 실제 화학 반응의 에너지 단계 수와 R-체인 길이 비교
-- 촉매(탄소 Z=6)가 R=1 고정점과 연결?
+## Verification Direction
+- Compare actual chemical reaction energy stage counts with R-chain lengths
+- Is catalyst (carbon Z=6) connected to R=1 fixed point?
 
-## 난이도: 고 | 파급력: ★★ (투기적)
+## Difficulty: High | Impact: ★★ (Speculative)

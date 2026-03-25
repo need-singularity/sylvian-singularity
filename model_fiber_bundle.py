@@ -1,23 +1,26 @@
+Looking at this Python file, I can see it contains extensive Korean comments and docstrings that need to be translated to English. Here's the translated version:
+
+```python
 #!/usr/bin/env python3
-"""파이버 번들 엔진 — 고차원 정보가 기하학적 연결을 통해 도달한다
+"""Fiber Bundle Engine — Higher-dimensional information arrives through geometric connections
 
-수학적 구조:
-  E (전체 공간) = B x F (국소적으로)
-  B = 기저 공간 (입력 → 분류)
-  F = 파이버 (고차원 경험 공간)
-  Connection A = 기저에서 이동할 때 파이버가 회전하는 방식
-  Curvature F = dA + A∧A (곡률 = 장력)
-  Holonomy = 같은 입력을 다른 경로로 처리하면 다른 파이버 상태
+Mathematical structure:
+  E (total space) = B x F (locally)
+  B = base space (input → classification)
+  F = fiber (higher-dimensional experience space)
+  Connection A = how fiber rotates when moving in the base
+  Curvature F = dA + A∧A (curvature = tension)
+  Holonomy = processing the same input via different paths results in different fiber states
 
-핵심 통찰:
-  파이버는 학습 레이블에 없던 정보를 포함한다.
-  기저 공간은 분류를 처리하지만, 파이버는 "경험"을 포착한다
-  — 모델이 알지만 레이블로 표현할 수 없는 것들.
+Key insights:
+  The fiber contains information not present in training labels.
+  The base space handles classification, but the fiber captures "experience"
+  — things the model knows but cannot express as labels.
 
 A Priori Latent Space:
-  잠재 공간에 학습 이전부터 구조가 존재한다.
-  그래프 라플라시안의 고유벡터가 선험적 기하를 부여한다.
-  방문하지 않은 점도 구조가 이미 있으므로 의미를 가진다.
+  Structure exists in the latent space before learning.
+  Eigenvectors of the graph Laplacian provide a priori geometry.
+  Unvisited points still have meaning because the structure already exists.
 """
 
 import torch
@@ -845,3 +848,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

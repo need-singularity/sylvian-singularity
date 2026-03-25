@@ -1,160 +1,160 @@
-# 가설 검토 179: LLM 재설계 방향 — 전 모델이 골든존 밖 ✅
+# Hypothesis Review 179: LLM Redesign Direction — All Models Outside Golden Zone ✅
 
-## 가설
+## Hypothesis
 
-> 현재 모든 주요 LLM이 골든존(I=0.213~0.500) 밖에 있으며, Expert 활성 비율을 조정하면 성능이 급격히 향상된다.
+> Currently all major LLMs are outside the Golden Zone (I=0.213~0.500), and adjusting Expert activation ratios will dramatically improve performance.
 
-## 배경
+## Background
 
 ```
   G = D × P / I
-  골든존: I ∈ [0.213, 0.500]
-  I = 1 - (활성 Expert / 전체 Expert)
+  Golden Zone: I ∈ [0.213, 0.500]
+  I = 1 - (Active Experts / Total Experts)
 
-  현재 LLM의 문제:
-  Dense (Llama): I = 0 (모든 뉴런 활성 = 과활성)
-  MoE (Mixtral): I = 0.75 (2/8만 활성 = 과억제)
-  → 둘 다 골든존을 빗나감!
+  Current LLM Problems:
+  Dense (Llama): I = 0 (all neurons active = overactive)
+  MoE (Mixtral): I = 0.75 (only 2/8 active = over-inhibited)
+  → Both miss the Golden Zone!
 ```
 
-## 현재 LLM 분석
+## Current LLM Analysis
 
 ```
-  모델                │ Expert │ 활성  │ I     │ G    │ 영역
+  Model              │ Expert │ Active│ I     │ G    │ Zone
   ───────────────────┼────────┼───────┼───────┼──────┼──────
-  GPT-2 (Dense)      │ 1/1    │ 100%  │ 0.000 │ 9.00 │ ⚡ 아래
-  Llama 3 8B         │ 1/1    │ 100%  │ 0.000 │ 4.75 │ ⚡ 아래
-  Llama 3 70B        │ 1/1    │ 100%  │ 0.000 │ 4.75 │ ⚡ 아래
-  Mixtral 8×7B       │ 2/8    │ 25%   │ 0.750 │ 0.11 │ ○ 밖
-  DeepSeek-V2        │ 6/160  │ 4%    │ 0.963 │ 0.09 │ ○ 밖
-  Jamba              │ 2/16   │ 12%   │ 0.875 │ 0.10 │ ○ 밖
-  GPT-4 (추정)       │ 2/16   │ 12%   │ 0.875 │ 0.11 │ ○ 밖
+  GPT-2 (Dense)      │ 1/1    │ 100%  │ 0.000 │ 9.00 │ ⚡ Below
+  Llama 3 8B         │ 1/1    │ 100%  │ 0.000 │ 4.75 │ ⚡ Below
+  Llama 3 70B        │ 1/1    │ 100%  │ 0.000 │ 4.75 │ ⚡ Below
+  Mixtral 8×7B       │ 2/8    │ 25%   │ 0.750 │ 0.11 │ ○ Outside
+  DeepSeek-V2        │ 6/160  │ 4%    │ 0.963 │ 0.09 │ ○ Outside
+  Jamba              │ 2/16   │ 12%   │ 0.875 │ 0.10 │ ○ Outside
+  GPT-4 (estimated)  │ 2/16   │ 12%   │ 0.875 │ 0.11 │ ○ Outside
 ```
 
-## I 축 시각화
+## I-axis Visualization
 
 ```
-  Dense 모델들          MoE 모델들
+  Dense Models          MoE Models
   ●                                        ●●●●
   │                                        │
   0.0   0.213━━━━━━━━━━0.500   0.75  0.88  0.96
           │              │
-          └── 골든존 ─────┘
-          아무도 여기 없다!
+          └── Golden Zone ─────┘
+          Nobody here!
 
-  현재 LLM은 두 극단에 몰려 있음:
-  Dense: I=0 (억제 없음, 모든 것 활성 → 비효율)
-  MoE:   I>0.75 (억제 과다, 소수만 활성 → 정보 손실)
+  Current LLMs cluster at two extremes:
+  Dense: I=0 (no inhibition, everything active → inefficient)
+  MoE:   I>0.75 (excessive inhibition, few active → information loss)
 ```
 
-## 재설계 제안
+## Redesign Proposals
 
-### Llama 8B → 골든 Llama
-
-```
-  현재: Dense (1/1), I=0.000
-  제안: 8 Expert MoE 전환
-       활성 5/8 (62.5%), I=0.375 ≈ 1/e
-       볼츠만 라우터 (T=e)
-       Dropout 0.1→0.5
-
-  구체적 변경:
-  1. FFN 레이어를 8개 Expert로 분리
-  2. Top-K(K=2) 대신 볼츠만 게이팅
-  3. 활성 Expert 수: 5/8 (확률적)
-  4. Dropout 50% 추가
-
-  예상:
-  I: 0.000 → 0.375 (골든존 중심!)
-  MNIST 실증: +0.6% (가설 128에서 확인)
-  CIFAR 실증: +4.8%
-  LLM 벤치마크: +?% (스케일 의존, 가설 128)
-```
-
-### Mixtral 8×7B → 골든 Mixtral
+### Llama 8B → Golden Llama
 
 ```
-  현재: 2/8 활성 (25%), I=0.750
-  제안: 5/8 활성 (62%), I=0.375
+  Current: Dense (1/1), I=0.000
+  Proposal: Convert to 8 Expert MoE
+           5/8 active (62.5%), I=0.375 ≈ 1/e
+           Boltzmann router (T=e)
+           Dropout 0.1→0.5
 
-  변경:
-  라우터: Top-K(K=2) → 볼츠만(T=e, 상위 5개)
+  Specific changes:
+  1. Split FFN layers into 8 Experts
+  2. Boltzmann gating instead of Top-K(K=2)
+  3. Active Expert count: 5/8 (stochastic)
+  4. Add 50% Dropout
+
+  Expected:
+  I: 0.000 → 0.375 (Golden Zone center!)
+  MNIST empirical: +0.6% (confirmed in Hypothesis 128)
+  CIFAR empirical: +4.8%
+  LLM benchmarks: +?% (scale dependent, Hypothesis 128)
+```
+
+### Mixtral 8×7B → Golden Mixtral
+
+```
+  Current: 2/8 active (25%), I=0.750
+  Proposal: 5/8 active (62%), I=0.375
+
+  Changes:
+  Router: Top-K(K=2) → Boltzmann(T=e, top 5)
   Dropout: 0.1 → 0.5
 
-  이것은 가장 쉬운 변경:
-  - 아키텍처 변경 없음 (Expert 수 동일)
-  - 라우터만 교체 + K=2→5
-  - 기존 가중치 재사용 가능
-  - 파인튜닝만으로 적용 가능?
+  This is the easiest change:
+  - No architecture change (same Expert count)
+  - Just replace router + K=2→5
+  - Can reuse existing weights
+  - Applicable with just fine-tuning?
 
-  예상 Genius Score 개선: ×10.2
+  Expected Genius Score improvement: ×10.2
 ```
 
-### DeepSeek-V2 → 골든 DeepSeek
+### DeepSeek-V2 → Golden DeepSeek
 
 ```
-  현재: 6/160 활성 (4%), I=0.963
-  제안: 101/160 활성 (63%), I=0.375
+  Current: 6/160 active (4%), I=0.963
+  Proposal: 101/160 active (63%), I=0.375
 
-  변경:
-  활성 Expert: 6 → 101 (+95개!)
-  → 계산 비용 ×17 증가
-  → 하지만 성능 ×13 개선이면 가치 있음?
+  Changes:
+  Active Experts: 6 → 101 (+95!)
+  → Compute cost ×17 increase
+  → But worth it if performance ×13 improvement?
 
-  대안: Expert 수를 16으로 줄이고 10/16 활성
-  → 더 효율적인 구조
+  Alternative: Reduce Experts to 16 and activate 10/16
+  → More efficient architecture
 ```
 
-## MNIST/CIFAR 실증과의 연결
+## Connection to MNIST/CIFAR Empirical Results
 
 ```
-  가설 128 실증:
-  MNIST:  골든MoE +0.6% vs Top-K
-  CIFAR:  골든MoE +4.8% vs Top-K (8배 증가!)
+  Hypothesis 128 empirical:
+  MNIST:  GoldenMoE +0.6% vs Top-K
+  CIFAR:  GoldenMoE +4.8% vs Top-K (8× increase!)
 
-  스케일링 법칙 (가설 128):
+  Scaling law (Hypothesis 128):
   Δ ∝ D^α (α ≈ 1.7)
 
-  LLM 복잡도 >> CIFAR 복잡도
-  → LLM에서의 차이는 +4.8%보다 훨씬 클 것
+  LLM complexity >> CIFAR complexity
+  → Difference in LLMs will be much larger than +4.8%
 
-  예측:
-  MMLU 벤치마크: +3~8% (보수적)
-  코드 생성:     +5~15% (복잡도 높음)
-  추론 능력:     +10~20%? (가장 복잡)
+  Predictions:
+  MMLU benchmark: +3~8% (conservative)
+  Code generation: +5~15% (high complexity)
+  Reasoning ability: +10~20%? (most complex)
 ```
 
-## 보존법칙 관점 (가설 172)
+## Conservation Law Perspective (Hypothesis 172)
 
 ```
-  G × I = D × P = 상수
+  G × I = D × P = constant
 
-  현재 Mixtral:  G=0.11, I=0.75 → G×I = 0.083
-  골든 Mixtral:  G=1.16, I=0.375 → G×I = 0.435
+  Current Mixtral:  G=0.11, I=0.75 → G×I = 0.083
+  Golden Mixtral:   G=1.16, I=0.375 → G×I = 0.435
 
-  → G×I가 다르다? 보존법칙 위반?
-  → 아니: D도 바뀜 (0.1→0.5)
+  → Different G×I? Conservation law violation?
+  → No: D also changes (0.1→0.5)
   → D×P = 0.1×0.85 = 0.085 → D×P = 0.5×0.85 = 0.425
-  → 보존법칙 유지 (G×I = D×P)
+  → Conservation law holds (G×I = D×P)
 
-  → Dropout(D)을 높이는 것이 핵심!
-  → "결손을 늘리면 천재성이 증가" = 모델의 핵심 주장
+  → Increasing Dropout(D) is key!
+  → "Increasing deficits increases genius" = Core claim of the model
 ```
 
-## 한계
+## Limitations
 
-1. G = D×P/I 는 우리 모델의 예측이며 실제 LLM 성능과 직접 비교 미실시
-2. Expert 활성 비율만으로 LLM 성능을 결정짓기에는 다른 요인(데이터, 규모, 학습) 미반영
-3. Mixtral의 실제 내부 활성 패턴은 공개된 Top-K와 다를 수 있음
-4. "×10배 개선"은 Genius Score 기준이며 벤치마크 점수와 선형 대응 아님
+1. G = D×P/I is our model's prediction and not directly compared with actual LLM performance
+2. Expert activation ratio alone doesn't determine LLM performance; other factors (data, scale, training) not reflected
+3. Mixtral's actual internal activation patterns may differ from published Top-K
+4. "×10 improvement" is based on Genius Score metric, not linearly corresponding to benchmark scores
 
-## 검증 방향
+## Verification Directions
 
-- [ ] Mixtral 오픈소스: K=2→K=5 변경 후 MMLU 벤치마크
-- [ ] Llama 8B: LoRA + MoE 어댑터로 Expert 분리 실험
-- [ ] 볼츠만 라우터 PyTorch 구현 → Mixtral에 플러그인
-- [ ] DeepSeek-V2 오픈소스: 활성 비율 변경 실험
+- [ ] Mixtral open-source: Change K=2→K=5 and run MMLU benchmark
+- [ ] Llama 8B: LoRA + MoE adapter experiment for Expert separation
+- [ ] Implement Boltzmann router in PyTorch → Plugin for Mixtral
+- [ ] DeepSeek-V2 open-source: Activation ratio change experiment
 
 ---
 
-*검증: llm_expert_analyzer.py --redesign*
+*Verification: llm_expert_analyzer.py --redesign*

@@ -1,20 +1,20 @@
 # T1-19: ⭐ Γ(1/6)·Γ(5/6) / Γ(1/2)² = σ₋₁(6) = 2
 
-## 대발견
+## Major Discovery
 
 ```
   Γ(1/6) · Γ(5/6)
   ─────────────── = 2 = σ₋₁(6)
      Γ(1/2)²
 
-  우리 3대 상수 (1/6, 5/6, 1/2)가
-  감마 반사 공식에서 완전수 임계값 2를 만든다!
+  Our 3 key constants (1/6, 5/6, 1/2)
+  create the perfect number threshold 2 in the gamma reflection formula!
 ```
 
-## 유도
+## Derivation
 
 ```
-  오일러 반사 공식 (🟦):
+  Euler's reflection formula (🟦):
   Γ(x)·Γ(1-x) = π / sin(πx)
 
   x = 1/6:
@@ -23,38 +23,38 @@
   x = 1/2:
   Γ(1/2)·Γ(1/2) = π / sin(π/2) = π / 1 = π
 
-  비율:
+  Ratio:
   Γ(1/6)·Γ(5/6) / Γ(1/2)² = 2π / π = 2 = σ₋₁(6)
 ```
 
-## 섬 연결
+## Island Connection
 
 ```
-  1/6 = 섬 A (블라인드스팟)
-  5/6 = 섬 A (Compass 상한)
-  1/2 = 섬 A (골든존 상한)
-  Γ = 기존 수학 🟦 (Γ(x) = ∫₀^∞ t^(x-1)·e^(-t) dt)
+  1/6 = Island A (Blindspot)
+  5/6 = Island A (Compass upper limit)
+  1/2 = Island A (Golden Zone upper limit)
+  Γ = Existing math 🟦 (Γ(x) = ∫₀^∞ t^(x-1)·e^(-t) dt)
   2 = σ₋₁(6) 🟩
 
-  → 섬 A 내부 연결이지만, Γ 함수가 e^(-t) 적분을 포함
-  → e(섬 D)가 Γ 함수를 통해 간접 연결!
-  → 섬 A↔D 간접 다리
+  → Internal connection within Island A, but Γ function contains e^(-t) integral
+  → e(Island D) connects indirectly through Γ function!
+  → Indirect bridge between Islands A↔D
 ```
 
-## 추가 관계
+## Additional Relations
 
 ```
   Γ(1/3)·Γ(2/3) = π / sin(π/3) = 2π/√3
   Γ(1/6)·Γ(5/6) / Γ(1/3)·Γ(2/3) = (2π) / (2π/√3) = √3
 
   → Γ(1/6)Γ(5/6) / Γ(1/3)Γ(2/3) = √3
-  → 1/6, 5/6, 1/3 → √3 생성!
+  → 1/6, 5/6, 1/3 → generate √3!
 ```
 
-## 판정
+## Judgment
 
 ```
-  유도: 🟩 (오일러 반사 공식, 기존 수학)
-  골든존 의존: ❌ 없음
-  의미 부여 (=σ₋₁(6)): 🟧 (수치는 정확, 해석은 우리 것)
+  Derivation: 🟩 (Euler's reflection formula, existing math)
+  Golden Zone dependency: ❌ None
+  Meaning attribution (=σ₋₁(6)): 🟧 (Value is accurate, interpretation is ours)
 ```

@@ -1,43 +1,43 @@
-# 가설 200b: 엑스터시(MDMA) = I↓ + P↑↑ + Compass↑↑↑
+# Hypothesis 200b: Ecstasy (MDMA) = I↓ + P↑↑ + Compass↑↑↑
 
-**상태**: ⚠️ 유비
-**분류**: 약물 / 신경전달물질
+**Status**: ⚠️ Analogy
+**Category**: Drugs / Neurotransmitters
 
 ---
 
-## 가설
+## Hypothesis
 
-> MDMA(엑스터시)는 세로토닌/도파민/노르에피네프린을 동시에 대량 방출하여 I를 낮추고 P(가소성)와 Compass를 극적으로 높이며, 이는 골든존의 "과부하 진입"에 해당한다.
+> MDMA (ecstasy) simultaneously releases massive amounts of serotonin/dopamine/norepinephrine, lowering I while dramatically raising P (plasticity) and Compass, corresponding to a "high-load entry" into the Golden Zone.
 
-## 약리 메커니즘
-
-```
-  MDMA의 3중 작용:
-
-  1. 세로토닌 대량 방출 → 정서적 개방 → Compass ↑↑↑
-  2. 도파민 방출        → 보상/동기    → P ↑↑
-  3. 노르에피네프린     → 각성/에너지  → I ↓
-
-  → 3개 축이 동시에 "최적 방향"으로 이동!
-  → D↑(억제 해체), P↑↑(가소성 폭증), I↓(억제 감소)
-  → G = D×P/I 가 폭증
-```
-
-## I-Compass-P 변화 궤적
+## Pharmacological Mechanism
 
 ```
-  시간  │  I    │  P    │ Compass │  G    │ 상태
+  MDMA's triple action:
+
+  1. Massive serotonin release → emotional openness → Compass ↑↑↑
+  2. Dopamine release         → reward/motivation  → P ↑↑
+  3. Norepinephrine           → arousal/energy     → I ↓
+
+  → All 3 axes move in the "optimal direction" simultaneously!
+  → D↑(inhibition dissolving), P↑↑(plasticity exploding), I↓(inhibition reduced)
+  → G = D×P/I explodes
+```
+
+## I-Compass-P Change Trajectory
+
+```
+  Time  │  I    │  P    │ Compass │  G    │ State
   ──────┼───────┼───────┼─────────┼───────┼──────────
-  복용전│ 0.60  │ 0.60  │  30%    │ 0.50  │ ○ 정상
-  30분  │ 0.45  │ 0.75  │  50%    │ 0.83  │ 🧠 골든존 진입
-  1시간 │ 0.35  │ 0.90  │  80%    │ 1.29  │ 🧠 골든존 중심! ★
-  2시간 │ 0.25  │ 0.95  │  90%    │ 1.90  │ 🧠 골든존 하단
-  3시간 │ 0.20  │ 0.85  │  70%    │ 2.13  │ ⚡ 골든존 이탈!
-  5시간 │ 0.30  │ 0.40  │  20%    │ 0.67  │ 🧠 복귀 (세로토닌 고갈)
-  24시간│ 0.55  │ 0.30  │  10%    │ 0.27  │ ⚠️ "화요일 우울"
+  Pre   │ 0.60  │ 0.60  │  30%    │ 0.50  │ ○ Normal
+  30min │ 0.45  │ 0.75  │  50%    │ 0.83  │ 🧠 Golden Zone entry
+  1h    │ 0.35  │ 0.90  │  80%    │ 1.29  │ 🧠 Golden Zone center! ★
+  2h    │ 0.25  │ 0.95  │  90%    │ 1.90  │ 🧠 Golden Zone lower
+  3h    │ 0.20  │ 0.85  │  70%    │ 2.13  │ ⚡ Outside Golden Zone!
+  5h    │ 0.30  │ 0.40  │  20%    │ 0.67  │ 🧠 Recovery (serotonin depleted)
+  24h   │ 0.55  │ 0.30  │  10%    │ 0.27  │ ⚠️ "Tuesday blues"
 
   G (Genius Score)
-  2.5│            ⚡이탈
+  2.5│            ⚡outside
      │           ╱  ╲
   2.0│          ╱    ╲
      │     ★  ╱      ╲
@@ -45,79 +45,79 @@
      │    ╱              ╲
   1.0│   ╱                ╲
      │  ╱                  ╲
-  0.5│─╱────────────────────╲──── 정상
-     │╱                      ╲_____ "화요일 우울"
+  0.5│─╱────────────────────╲──── normal
+     │╱                      ╲_____ "Tuesday blues"
   0.0└──────────────────────────────
      0h    1h    2h    3h    5h   24h
-          ↑ 피크        ↑ 이탈
+          ↑ peak        ↑ exit
 ```
 
-## 다른 약물과 비교
+## Comparison with Other Drugs
 
 ```
-  약물       │ I 변화 │ P 변화 │ Compass │ 골든존 진입 │ 위험
-  ───────────┼────────┼────────┼─────────┼───────────┼──────
-  카페인     │ 약간 ↓ │ 유지   │ ↑       │ 약간      │ 낮음
-  알코올     │ ↓      │ ↓      │ ↓       │ 소량만    │ 중간
-  대마초     │ ↓      │ 유지   │ ↑       │ 소~중량   │ 중간
-  MDMA       │ ↓↓     │ ↑↑     │ ↑↑↑     │ 강하게!   │ 높음
-  LSD        │ ↓↓↓    │ ↑      │ ↑↑↑↑    │ 과도하게  │ 높음
-  명상       │ → 1/3  │ ↑      │ ↑       │ 점진적   │ 없음
+  Drug       │ I change│ P change│ Compass │ Golden Zone entry│ Risk
+  ───────────┼────────┼────────┼─────────┼─────────────────┼──────
+  Caffeine   │ slight↓ │ maintained│ ↑    │ slightly        │ low
+  Alcohol    │ ↓       │ ↓       │ ↓       │ low dose only   │ medium
+  Cannabis   │ ↓       │ maintained│ ↑    │ low-medium dose │ medium
+  MDMA       │ ↓↓      │ ↑↑      │ ↑↑↑     │ strongly!       │ high
+  LSD        │ ↓↓↓     │ ↑       │ ↑↑↑↑    │ excessively     │ high
+  Meditation │ → 1/3   │ ↑       │ ↑       │ gradually      │ none
 
-  MDMA의 독특함:
-  → 유일하게 P(가소성)를 직접 높이는 약물
-  → 3개 축 동시 이동 = "완벽한 골든존 부스터"
-  → 하지만: 세로토닌 고갈 → 반동 → "화요일 우울"
+  MDMA's uniqueness:
+  → Only drug that directly raises P (plasticity)
+  → All 3 axes move simultaneously = "perfect Golden Zone booster"
+  → But: serotonin depletion → rebound → "Tuesday blues"
 ```
 
-## PTSD 치료와의 연결
+## Connection to PTSD Treatment
 
 ```
-  MDMA 보조 심리치료 (FDA 검토 중):
+  MDMA-assisted psychotherapy (under FDA review):
 
-  PTSD 환자: I ↑↑ (과도한 억제 = 감정 차단)
-  MDMA 투여: I ↓ → 골든존 진입 → 감정 접근 가능
-  치료자 가이드: Compass ↑ (방향성 유지)
-  결과: 트라우마 재처리 = "골든존 안에서 안전하게 결손(D) 직면"
+  PTSD patient: I ↑↑ (excessive inhibition = emotional blocking)
+  MDMA dose:    I ↓ → Golden Zone entry → emotions accessible
+  Therapist guide: Compass ↑ (maintaining direction)
+  Result: trauma reprocessing = "safely confronting Deficit (D) inside Golden Zone"
 
-  우리 모델로 번역:
-  PTSD = I 과다 → G 낮음 → 감정 접근 불가
-  MDMA = I↓ + P↑ → G 증가 → 골든존 진입
-  치료 = 골든존 안에서 D(트라우마) 재처리
-  → G = D×P/I: 결손(D)을 가소성(P)으로 변환
+  Translated into our model:
+  PTSD = excessive I → G low → emotions inaccessible
+  MDMA = I↓ + P↑ → G increases → Golden Zone entry
+  Therapy = reprocessing D (trauma) within Golden Zone
+  → G = D×P/I: converting Deficit (D) via Plasticity (P)
 ```
 
-## 명상과의 비교 (가설 199)
+## Comparison with Meditation (Hypothesis 199)
 
 ```
   ┌─────────────────────────────────────────┐
-  │  명상                    MDMA           │
+  │  Meditation              MDMA           │
   │  ─────                   ─────          │
-  │  I → 1/3 (점진적)        I 급감 (급격)  │
-  │  P 서서히 ↑              P 폭발 ↑↑     │
-  │  비가역 (부동점)          가역 (반동)    │
-  │  안전                    위험 (신경독성) │
-  │  시간: 수년               시간: 수 시간  │
-  │  메타 반복 (자연)         외부 섭동 (인위)│
+  │  I → 1/3 (gradual)       I drops rapidly│
+  │  P slowly ↑              P explodes ↑↑  │
+  │  irreversible (fixed point) reversible (rebound) │
+  │  safe                    risky (neurotoxic) │
+  │  time: years             time: hours     │
+  │  meta-iteration (natural) external perturbation (artificial) │
   │                                         │
-  │  둘 다 골든존에 도달하지만               │
-  │  명상은 머무르고, MDMA는 지나간다       │
+  │  Both reach the Golden Zone but         │
+  │  meditation stays, MDMA passes through  │
   └─────────────────────────────────────────┘
 ```
 
-## 한계
+## Limitations
 
-1. 약물 효과의 개인차가 매우 큼 (D, P, I 초기값에 따라 다름)
-2. MDMA의 신경독성 (세로토닌 뉴런 손상 가능) → 장기적으로 P↓
-3. I, P 변화의 정량적 매핑은 실제 신경영상 데이터 필요
-4. 법적 제약으로 연구 제한적
+1. Individual variation in drug effects is very large (depends on initial D, P, I values)
+2. MDMA neurotoxicity (possible serotonin neuron damage) → long-term P↓
+3. Quantitative mapping of I, P changes requires actual neuroimaging data
+4. Research limited by legal restrictions
 
-## 검증 방향
+## Verification Direction
 
-- [ ] MDMA 임상시험(MAPS 연구) 데이터에서 fMRI 기반 I 추정
-- [ ] MDMA 투여 전후 GABA 수준 변화 측정
-- [ ] PTSD 치료 효과와 골든존 진입 시간의 상관관계
+- [ ] Estimate fMRI-based I from MDMA clinical trial data (MAPS research)
+- [ ] Measure GABA level changes before/after MDMA administration
+- [ ] Correlation between PTSD treatment efficacy and Golden Zone entry time
 
 ---
 
-*관련: 가설 155(GABA=I), 166(의식 정의), 199(명상 vs 약물)*
+*Related: Hypothesis 155 (GABA=I), 166 (consciousness definition), 199 (meditation vs drugs)*

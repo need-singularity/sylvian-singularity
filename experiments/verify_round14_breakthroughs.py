@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""14라운드: 대발견 후보 4개 병렬 검증
+"""Round 14: Parallel verification of 4 breakthrough candidates
 
-H-CX-157: 무언의 합의 cos=0.986의 원인 — 데이터 PCA가 방향을 결정?
-H-CX-158: 교차 데이터셋 PH 전이 — MNIST merge로 Fashion 혼동 예측?
-H-CX-159: 장력 공명 = 의식 동기화 지표 — r=0.951이 seed/데이터에 불변?
-H-CX-160: PH 복잡도 = 데이터셋 학습 가능성 (learnability) 지표
+H-CX-157: Cause of silent consensus cos=0.986 — Does data PCA determine direction?
+H-CX-158: Cross-dataset PH transfer — MNIST merge predicting Fashion confusion?
+H-CX-159: Tension resonance = consciousness synchronization indicator — is r=0.951 invariant to seed/data?
+H-CX-160: PH complexity = dataset learnability indicator
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -73,10 +73,10 @@ def train_model(dim, tl, te, n_cls=10, seed=42, epochs=15):
 
 def run_all():
     print(f"\n{'='*70}")
-    print(f"  14라운드: Breakthrough Candidates")
+    print(f"  Round 14: Breakthrough Candidates")
     print(f"{'='*70}")
 
-    # === H-CX-157: 무언의 합의 원인 — 데이터 PCA? ===
+    # === H-CX-157: Cause of silent consensus — Data PCA? ===
     print(f"\n  === H-CX-157: Silent Consensus Origin ===")
     dim, tl, te, names = load_data('mnist')
 
@@ -116,7 +116,7 @@ def run_all():
                           for c in range(10)])
             print(f"  Seed {[42,123,777][i]} vs {[42,123,777][j]}: mean_cos = {cos:.4f}")
 
-    print(f"  H-CX-157: 데이터 PCA가 방향을 결정 → 모델은 PCA를 '발견'할 뿐")
+    print(f"  H-CX-157: Data PCA determines direction → Model just 'discovers' PCA")
 
     # === H-CX-158: Cross-dataset PH transfer ===
     print(f"\n  === H-CX-158: Cross-Dataset PH Transfer ===")
@@ -159,9 +159,9 @@ def run_all():
     print(f"  MNIST: H0={h0m}, H1={h1m}")
     print(f"  Fashion: H0={h0f}, H1={h1f}")
     print(f"  Same H0: {'YES' if h0m==h0f else 'NO'}")
-    print(f"  H-CX-158: merge 거리 분포 상관 r={r_dist:.4f}")
+    print(f"  H-CX-158: merge distance distribution correlation r={r_dist:.4f}")
 
-    # === H-CX-159: 장력 공명 robustness ===
+    # === H-CX-159: Tension resonance robustness ===
     print(f"\n  === H-CX-159: Tension Resonance Robustness ===")
 
     resonance_rs = []
@@ -227,12 +227,12 @@ def run_all():
 
     # === SUMMARY ===
     print(f"\n{'='*70}")
-    print(f"  14라운드 SUMMARY")
+    print(f"  Round 14 SUMMARY")
     print(f"{'='*70}")
-    print(f"  H-CX-157 무언의합의 원인: 데이터 PCA → 모델 방향 결정")
-    print(f"  H-CX-158 교차 PH 전이: merge dist 분포 r={r_dist:.4f}")
-    print(f"  H-CX-159 장력 공명 안정성: {mean_r:.4f}±{std_r:.4f}")
-    print(f"  H-CX-160 PH=학습가능성: H0_ep1 vs acc r={r160:.4f}")
+    print(f"  H-CX-157 Cause of silent consensus: Data PCA → Model direction determination")
+    print(f"  H-CX-158 Cross PH transfer: merge dist distribution r={r_dist:.4f}")
+    print(f"  H-CX-159 Tension resonance stability: {mean_r:.4f}±{std_r:.4f}")
+    print(f"  H-CX-160 PH=learnability: H0_ep1 vs acc r={r160:.4f}")
 
 
 if __name__ == '__main__':

@@ -1,49 +1,49 @@
-# H-PH-11: ⭐⭐⭐ p(6) = 11 = M-이론 차원
+# H-PH-11: ⭐⭐⭐ p(6) = 11 = M-theory Dimension
 
-> **가설**: 정수 분할 함수 p(P₁) = p(6) = 11이 M-이론의 시공간 차원이다.
+> **Hypothesis**: The integer partition function p(P₁) = p(6) = 11 is the spacetime dimension of M-theory.
 
-## 핵심
+## Core
 
 ```
-  p(6) = 11  (정확한 산술적 사실)
+  p(6) = 11  (exact arithmetic fact)
 
-  6의 11가지 분할:
-    6               ← 1-파트 (1개)
-    5+1, 4+2, 3+3   ← 2-파트 (3개)
-    4+1+1, 3+2+1, 2+2+2  ← 3-파트 (3개)
-    3+1+1+1, 2+2+1+1     ← 4-파트 (2개)
-    2+1+1+1+1             ← 5-파트 (1개)
-    1+1+1+1+1+1           ← 6-파트 (1개)
+  11 partitions of 6:
+    6               ← 1-part (1)
+    5+1, 4+2, 3+3   ← 2-part (3)
+    4+1+1, 3+2+1, 2+2+2  ← 3-part (3)
+    3+1+1+1, 2+2+1+1     ← 4-part (2)
+    2+1+1+1+1             ← 5-part (1)
+    1+1+1+1+1+1           ← 6-part (1)
 
-  파트 수별 분포: 1, 3, 3, 2, 1, 1
+  Distribution by number of parts: 1, 3, 3, 2, 1, 1
 
-  물리적 해석:
-    1-파트 + 2-파트 = 1+3 = 4 = τ(6) = 관측 시공간!
-    3-파트 = 3 = σ/τ = CY₃ 복소 차원!
-    4+3 = 7 = G₂ holonomy 다양체 차원!
+  Physical interpretation:
+    1-part + 2-part = 1+3 = 4 = τ(6) = observable spacetime!
+    3-part = 3 = σ/τ = CY₃ complex dimension!
+    4+3 = 7 = G₂ holonomy manifold dimension!
 ```
 
-## 관련 분할값
+## Related Partition Values
 
-| n | p(n) | 의미 |
+| n | p(n) | Meaning |
 |---|------|------|
-| P₁=6 | **11** | M-이론 차원 |
+| P₁=6 | **11** | M-theory dimension |
 | σ=12 | 77 = 7×11 | M₃ × D_M |
 | σφ=24 | 1575 | |
 | P₂=28 | 3718 | |
 
-## 추가: 1729 = σ³+1 연결
+## Addition: 1729 = σ³+1 Connection
 
 ```
   1729 = 12³ + 1 = σ(6)³ + 1
        = 7 × 13 × 19
-       → 소인수가 P₁=6 간격의 등차수열!
-  (하디-라마누잔 택시 수)
+       → Prime factors form arithmetic progression with P₁=6 interval!
+  (Hardy-Ramanujan taxi number)
 ```
 
-## 상태: ⭐⭐⭐ 🟧★
+## Status: ⭐⭐⭐ 🟧★
 
-정확한 산술적 사실. 물리적 해석은 추측적.
-분할의 파트 분포가 시공간 분해와 일치하는 것은 놀라움.
+Exact arithmetic fact. Physical interpretation is speculative.
+The matching of partition part distribution with spacetime decomposition is surprising.
 
 *Created: 2026-03-25*

@@ -1,27 +1,27 @@
-# H-CX-8: 세 유한집합 = 세 도메인 (수학×물리×생물)
+# H-CX-8: Three Finite Sets = Three Domains (Math×Physics×Biology)
 
-> **가설**: 세 "점별=합성곱" 유한집합이 각각 다른 자연 도메인에 대응된다.
+> **Hypothesis**: Three "pointwise=convolution" finite sets each correspond to different natural domains.
 
-## 대응
-
-```
-  σφ=nτ → {6}:       소수 {2,3}     → 생명 (탄소 Z=6)
-  τφ=σ  → {3,14,42}: 소수 {2,3,7}   → 기술 (Li, Si, Mo)
-  φ²=φ*φ→ {3,10,30}: 소수 {2,3,5}   → 에너지 (Li, Ne, Zn)
-
-  상쇄 소수: 3 (생명), 7=M₃ (기술), 5=F₂ (에너지)
-  → Mersenne(구조) vs Fermat(에너지) vs 연속(생명)
-```
-
-## 검증: 원소의 실제 용도와 매칭
+## Correspondence
 
 ```
-  Z=6  (C):  생명의 기반 ✓
-  Z=14 (Si): 반도체/기술 ✓
-  Z=42 (Mo): 효소 촉매 (니트로게나제) — 생물+기술 교차
-  Z=10 (Ne): 레이저/에너지 ✓
-  Z=30 (Zn): 배터리+효소 — 에너지+생물 교차
-  Z=3  (Li): 배터리 (에너지) ✓, 모든 집합에 공통!
+  σφ=nτ → {6}:       primes {2,3}     → life (carbon Z=6)
+  τφ=σ  → {3,14,42}: primes {2,3,7}   → technology (Li, Si, Mo)
+  φ²=φ*φ→ {3,10,30}: primes {2,3,5}   → energy (Li, Ne, Zn)
+
+  Distinguished primes: 3 (life), 7=M₃ (technology), 5=F₂ (energy)
+  → Mersenne(structure) vs Fermat(energy) vs continuous(life)
 ```
 
-## 난이도: 중 | 파급력: ★★ (패턴 관찰, 인과 아님)
+## Verification: Matching with Actual Element Uses
+
+```
+  Z=6  (C):  foundation of life ✓
+  Z=14 (Si): semiconductor/technology ✓
+  Z=42 (Mo): enzyme catalyst (nitrogenase) — biology+technology intersection
+  Z=10 (Ne): laser/energy ✓
+  Z=30 (Zn): battery+enzyme — energy+biology intersection
+  Z=3  (Li): battery (energy) ✓, common to all sets!
+```
+
+## Difficulty: Medium | Impact: ★★ (Pattern observation, not causal)

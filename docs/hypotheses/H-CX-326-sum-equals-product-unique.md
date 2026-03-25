@@ -1,5 +1,5 @@
-# H-CX-326: ⭐⭐🟦 6=1+2+3=1×2×3 — 합=곱 유일
+# H-CX-326: ⭐⭐🟦 6=1+2+3=1×2×3 — Sum=Product Unique
 
-> 자연수 {1,2,...,n}에서 합=곱인 유일한 경우: n=3, 합=곱=6.
-> 1+2+3=6, 1×2×3=6. 다른 n에서 불가능.
-> 이미 알려진 사실이나 σφ=nτ 유일성과 같은 구조.
+> For natural numbers {1,2,...,n}, sum=product only when: n=3, sum=product=6.
+> 1+2+3=6, 1×2×3=6. Impossible for other n.
+> Already known fact but same structure as σφ=nτ uniqueness.

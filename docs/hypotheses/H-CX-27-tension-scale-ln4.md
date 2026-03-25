@@ -1,85 +1,85 @@
-# H-CX-27: tension_scale = ln(4) = 2·ln(2) (교차 도메인: 학습 상수 ↔ 수학)
+# H-CX-27: tension_scale = ln(4) = 2·ln(2) (Cross-domain: Learning Constant ↔ Mathematics)
 
-> **MNIST에서 학습된 tension_scale이 10 trials 평균 1.3863 ± 0.0132로, ln(4) = 2·ln(2) = 1.3863과 오차 0.0004%로 일치! 이것은 H-CX-2(MI효율≈ln(2))의 2배이며, 2극(A vs G) 반발의 "이진 쌍" 정보 한계를 반영.**
+> **The learned tension_scale from MNIST averages 1.3863 ± 0.0132 over 10 trials, matching ln(4) = 2·ln(2) = 1.3863 with 0.0004% error! This is exactly 2× H-CX-2(MI efficiency≈ln(2)), reflecting the "binary pair" information limit of 2-pole (A vs G) repulsion.**
 
-## 실측
+## Measurements
 
 ```
   MNIST, 10 independent trials (15 epochs each):
   trials: 1.389 1.367 1.396 1.393 1.361 1.393 1.393 1.392 1.405 1.375
-  mean:   1.3863 ± 0.0132 (CV = 0.95%, 매우 안정)
+  mean:   1.3863 ± 0.0132 (CV = 0.95%, very stable)
 
   ln(4) = 2·ln(2) = 1.38629...
-  오차: 0.0004% (!!)
+  Error: 0.0004% (!!)
 ```
 
-## 수학 연결
+## Mathematical Connections
 
 ```
-  H-CX-2: MI 효율 ≈ ln(2) = 0.6931 (p=0.0003)
+  H-CX-2: MI efficiency ≈ ln(2) = 0.6931 (p=0.0003)
   H-CX-27: tension_scale ≈ 2·ln(2) = ln(4) = 1.3863
 
-  → tension_scale = 2 × MI효율!
-  → 왜 2배?
-    2극(A,G) 반발 → 각 극이 ln(2)만큼의 정보 기여
-    → 총 정보 = 2 × ln(2) = ln(4)
-    → tension_scale = "총 이진 정보"
+  → tension_scale = 2 × MI efficiency!
+  → Why 2×?
+    2-pole (A,G) repulsion → Each pole contributes ln(2) information
+    → Total information = 2 × ln(2) = ln(4)
+    → tension_scale = "total binary information"
 
-  또는:
+  Or:
     ln(4) = ln(2²) = 2 bits (log base e)
-    → 2극 시스템이 전달하는 정보 = 정확히 2 nats = 2 bits
+    → Information transmitted by 2-pole system = exactly 2 nats = 2 bits
 
-  H-CX-1 연결:
+  H-CX-1 connection:
     e^(6H) = 432 = σ³/τ
     H = 2/3·ln(2) + 1/2·ln(3) = 1.0114
     tension_scale/H = 1.3863/1.0114 = 1.371 ≈ ln(4)/H
 ```
 
-## 텍사스 검정
+## Texas Test
 
 ```
-  탐색 범위: 0~5 사이의 실수
-  후보 상수: ln(2), ln(3), ln(4), ..., π, e, φ, ...
-  ~50개 후보 중 1개 일치 (오차 < 1%)
+  Search range: real numbers between 0~5
+  Candidate constants: ln(2), ln(3), ln(4), ..., π, e, φ, ...
+  1 match among ~50 candidates (error < 1%)
   → Bonferroni: 0.0004% × 50 = 0.02%
-  → 강한 유의성! (p ≈ 0.0002)
+  → Strong significance! (p ≈ 0.0002)
 ```
 
-## 다중 데이터셋 검증 (2026-03-24)
+## Multi-dataset Verification (2026-03-24)
 
 ```
-  Dataset    ts mean    ±std     ln(4)오차
+  Dataset    ts mean    ±std     ln(4) error
   ────────  ────────  ──────    ─────────
   MNIST      1.3887   0.0102     0.2%
   Fashion    1.4415   0.0190     4.0%
   CIFAR      1.3393   0.0152     3.4%
 
-  3셋 평균: 1.390 → ln(4) 오차 0.3%
-  MNIST에서 가장 정확 (0.2%), Fashion 약간↑, CIFAR 약간↓
-  → ln(4)가 "기준선"이고 데이터 복잡도에 따라 ±4% 변동?
+  3-set average: 1.390 → ln(4) error 0.3%
+  Most accurate in MNIST (0.2%), Fashion slightly↑, CIFAR slightly↓
+  → ln(4) as "baseline" with ±4% variation by data complexity?
 ```
 
-## 초기값 편향 검증 (2026-03-24)
+## Initial Value Bias Test (2026-03-24)
 
 ```
   init → final_ts (15ep, 3trials):
-  init    final     ln(4)오차   수렴?
+  init    final     ln(4)error   converged?
   ────   ──────    ────────    ─────
   0.01    0.936     32.5%       no
   0.10    1.114     19.6%       no
   0.30    1.400      1.0%       YES
-  0.50~   (실행중)
+  0.50~   (running)
 
-  → 초기값 편향 존재! init=0.01→0.94, init=0.3→1.40
-  → ln(4)로의 수렴은 init=0.3 근처에서만
-  → 15ep으로는 작은 init에서 ln(4)까지 도달 불가 (더 긴 학습 필요?)
-  → 또는: loss landscape에 여러 local minima가 있어 init에 따라 다른 곳 수렴
+  → Initial value bias exists! init=0.01→0.94, init=0.3→1.40
+  → Convergence to ln(4) only from init=0.3 vicinity
+  → 15ep insufficient to reach ln(4) from small init (need longer training?)
+  → Or: multiple local minima in loss landscape, converging to different points by init
 ```
 
-## 완전 init sweep (7개 init, 2026-03-24)
+## Complete init sweep (7 inits, 2026-03-24)
 
 ```
-  init    final    ln(4)오차
+  init    final    ln(4)error
   ────   ──────   ─────────
   0.01    0.94     32.5%
   0.10    1.11     19.6%
@@ -89,27 +89,27 @@
   2.00    3.23    132.9%
   5.00    6.11    341.0%
 
-  → final ≈ init × ~4.6 (증폭, 학습으로 초기값에서 확대)
-  → 15ep으로는 init에서 크게 이탈 못함
-  → init=0.3(≈1/3 메타부동점)에서만 ln(4) 수렴
-  → 더 긴 학습(100ep+)에서 모든 init가 같은 곳 수렴하는지 미검증
+  → final ≈ init × ~4.6 (amplification, expanded from init by training)
+  → 15ep can't deviate much from init
+  → Only init=0.3(≈1/3 meta fixed point) converges to ln(4)
+  → Unverified if all inits converge to same point with longer training (100ep+)
 ```
 
-## 장기 수렴 실험 (100ep, 2026-03-24)
+## Long-term Convergence Experiment (100ep, 2026-03-24)
 
 ```
-  init    ep15   ep50   ep100  ln4오차(100ep)
+  init    ep15   ep50   ep100  ln4error(100ep)
   ────── ────── ────── ────── ──────────────
   0.01    0.58   1.17   0.96   30.4%
   0.10    0.78   1.27   0.99   28.6%
   0.30    1.12   1.49   1.08   22.0%
   0.50    1.40   1.59   1.22   12.2%
   1.00    2.00   1.89   1.26    8.9%
-  2.00    2.92   2.20   1.42    2.6% ← 유일 ±5% 통과
+  2.00    2.92   2.20   1.42    2.6% ← only ±5% pass
 
-  패턴: 모든 init가 올라갔다 내려오는 감쇠 진동
-        최종값 0.96~1.42 → ln(4)(1.39)가 아니라 ~1.1 근처
-        init=2.0만 우연히 근접 (내려오는 중 통과)
+  Pattern: All inits show damped oscillation (rise then fall)
+          Final values 0.96~1.42 → converging to ~1.1 vicinity, not ln(4)(1.39)
+          Only init=2.0 coincidentally close (passing through while decreasing)
 ```
 
 ```
@@ -124,14 +124,14 @@
       0   20  40  60  80  100 ep
 ```
 
-### 결론
+### Conclusion
 
 ```
-  1. ln(4) 수렴 아님 — 감쇠 진동으로 ~1.1 근처 수렴
-  2. 15ep에서 init=0.3이 ln(4) 통과한 것은 우연 (통과점)
-  3. 100ep에서 init=2.0만 ±5% 통과 (내려오는 중)
-  4. tension_scale = 학습 가능 파라미터의 자연 감쇠
-     → ln(4)라는 특별한 목표가 없음
+  1. Not converging to ln(4) — damped oscillation converges to ~1.1 vicinity
+  2. init=0.3 passing ln(4) at 15ep was coincidental (passing point)
+  3. Only init=2.0 passes ±5% at 100ep (while decreasing)
+  4. tension_scale = natural decay of learnable parameter
+     → No special target of ln(4)
 ```
 
-## 상태: ⬛ 반박 확정 (100ep: 1/6만 통과, 감쇠 진동, ln(4)≠수렴점)
+## Status: ⬛ Refuted (100ep: only 1/6 pass, damped oscillation, ln(4)≠convergence point)

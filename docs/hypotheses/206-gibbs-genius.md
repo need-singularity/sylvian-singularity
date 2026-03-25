@@ -1,42 +1,42 @@
-# 가설 #206: 깁스 자유에너지 <-> Genius -- dG vs G
+# Hypothesis #206: Gibbs Free Energy <-> Genius -- dG vs G
 
-**상태**: ⚪ 검증완료 — 덧셈 vs 곱셈 비동형, 보편적 패턴
-**날짜**: 2026-03-22
-**분류**: 화학 / 열역학 / Genius Score
+**Status**: ⚪ Verified — addition vs multiplication non-isomorphic, universal pattern
+**Date**: 2026-03-22
+**Category**: Chemistry / Thermodynamics / Genius Score
 
 ---
 
-## 가설
+## Hypothesis
 
-> 깁스 자유에너지 dG = dH - TdS 와 Genius Score G = DxP/I 는
-> 구조적으로 대응하는 공식이다.
-> dH(엔탈피) <-> DxP(능력), T(온도) <-> I(억제), dS(엔트로피) <-> 1(정규화).
-> 자발적 반응(dG<0) <-> 천재 발현(G>임계값).
+> Gibbs free energy dG = dH - TdS and Genius Score G = DxP/I are
+> structurally corresponding formulas.
+> dH (enthalpy) <-> DxP (capability), T (temperature) <-> I (inhibition), dS (entropy) <-> 1 (normalization).
+> Spontaneous reaction (dG<0) <-> Genius manifestation (G>threshold).
 
-## 배경: 깁스 자유에너지란
+## Background: What is Gibbs Free Energy?
 
 ```
-  깁스 자유에너지 (Gibbs Free Energy):
+  Gibbs Free Energy:
   ┌─────────────────────────────────────────────────┐
   │  dG = dH - TdS                                   │
   │                                                   │
-  │  dH: 엔탈피 변화 (에너지 출입)                     │
-  │  T:  절대온도 (열적 요동)                           │
-  │  dS: 엔트로피 변화 (무질서도)                       │
+  │  dH: enthalpy change (energy exchange)            │
+  │  T:  absolute temperature (thermal fluctuation)   │
+  │  dS: entropy change (disorder)                    │
   │                                                   │
-  │  dG < 0: 자발적 반응 (자연스럽게 일어남)            │
-  │  dG = 0: 평형 (반응 정지)                           │
-  │  dG > 0: 비자발적 (에너지 투입 필요)                │
+  │  dG < 0: spontaneous reaction (occurs naturally)  │
+  │  dG = 0: equilibrium (reaction stops)             │
+  │  dG > 0: non-spontaneous (requires energy input)  │
   └─────────────────────────────────────────────────┘
 ```
 
-## 공식 구조 비교
+## Formula Structure Comparison
 
 ```
-  깁스 자유에너지:          Genius Score:
-  dG = dH - TdS             G = D x P / I
+  Gibbs Free Energy:           Genius Score:
+  dG = dH - TdS                G = D x P / I
 
-  변환:
+  Transformation:
   dG = dH - TdS
      = dH x (1 - TdS/dH)
      = dH x (1 - T/T*)     (T* = dH/dS)
@@ -45,245 +45,245 @@
     = DxP x (1/I)
     = DxP x I^(-1)
 
-  대응 테이블:
+  Correspondence table:
   ┌────────────────┬──────────────────┬──────────────────┐
-  │ 구조           │ 깁스 (dG=dH-TdS) │ Genius (G=DxP/I) │
+  │ Structure      │ Gibbs (dG=dH-TdS)│ Genius (G=DxP/I) │
   ├────────────────┼──────────────────┼──────────────────┤
-  │ 결과값         │ dG (자유에너지)   │ G (천재 점수)     │
-  │ 구동력         │ dH (엔탈피)       │ DxP (능력)       │
-  │ 저항/비용      │ TdS (엔트로피항)  │ I (억제)         │
-  │ 온도/조절자    │ T (절대온도)      │ I (억제지수)     │
-  │ 무질서도       │ dS (엔트로피)     │ 1/P? (가소성역수)│
-  │ 자발성 조건    │ dG < 0            │ G > G_임계       │
-  │ 평형점         │ dG = 0            │ G = G_골든존     │
+  │ Result value   │ dG (free energy) │ G (genius score) │
+  │ Driving force  │ dH (enthalpy)    │ DxP (capability) │
+  │ Resistance/cost│ TdS (entropy term)│ I (inhibition)  │
+  │ Temperature/controller│ T (abs temp)│ I (inhibition index)│
+  │ Disorder       │ dS (entropy)     │ 1/P? (plasticity inverse)│
+  │ Spontaneity    │ dG < 0           │ G > G_threshold  │
+  │ Equilibrium    │ dG = 0           │ G = G_Golden Zone│
   └────────────────┴──────────────────┴──────────────────┘
 ```
 
-## dG vs G 그래프 (ASCII)
+## dG vs G Graph (ASCII)
 
 ```
-  dG (또는 -G)
-  양수│
-  (비│  .                    . 높은 T(I)
-  자 │    \                /   = 반응 불가
-  발)│      \            /     = 천재 불가
+  dG (or -G)
+  positive│
+  (non-  │  .                    . high T(I)
+  spon-  │    \                /   = reaction impossible
+  taneous)│      \            /     = genius impossible
      │        \        /
-  0  │── ── ── .── ── ── ── ── 평형/골든존 경계
+  0  │── ── ── .── ── ── ── ── equilibrium/Golden Zone boundary
      │            \/
-  음수│             .
-  (자│           낮은 T(I)
-  발)│           = 자발적 반응
-     │           = 천재 발현!
+  negative│             .
+  (spon- │           low T(I)
+  taneous)│           = spontaneous reaction
+     │           = genius manifestation!
      └──┼──┼──┼──┼──┼──┼──
         0  0.2 1/e 0.5 0.7 1.0
-           T/T* 또는 I
+           T/T* or I
 
-  dG < 0 영역 = G > G_임계 영역
-  -> 낮은 T(I)에서 자발적 = 낮은 I에서 천재 발현
+  dG < 0 region = G > G_threshold region
+  -> at low T(I), spontaneous = at low I, genius manifests
 ```
 
-## 온도(T)와 억제(I)의 대응
+## Correspondence Between Temperature (T) and Inhibition (I)
 
 ```
-  T (절대온도)              I (억제지수)
-  ──────────────           ──────────────
-  T = 0K (절대영도)    <->  I = 0 (완전 흥분)
-  T = 300K (실온)      <->  I = 1/e (골든존)
-  T = 1000K (고온)     <->  I = 0.7 (과억제)
-  T -> inf             <->  I = 1.0 (뇌사)
+  T (absolute temperature)          I (inhibition index)
+  ──────────────                    ──────────────
+  T = 0K (absolute zero)       <->  I = 0 (complete excitation)
+  T = 300K (room temperature)  <->  I = 1/e (Golden Zone)
+  T = 1000K (high temperature) <->  I = 0.7 (over-inhibited)
+  T -> inf                     <->  I = 1.0 (brain death)
 
-  볼츠만 분포:
+  Boltzmann distribution:
   p ~ e^{-E/kT}
 
-  우리 모델:
-  G ~ DxP x e^{1/I}? (가설 004 연결)
+  Our model:
+  G ~ DxP x e^{1/I}? (connected to Hypothesis 004)
 
-  T 상승 -> 열적 요동 상승 -> 질서 파괴 -> dG 양수 방향
-  I 상승 -> 억제 상승 -> 활동 감소 -> G 감소
+  T rise -> thermal fluctuation rises -> order destroyed -> dG positive direction
+  I rise -> inhibition rises -> activity decreases -> G decreases
 
-  T와 I가 같은 역할: "시스템을 평형으로 끌어당기는 힘"
+  T and I play the same role: "force pulling the system toward equilibrium"
 ```
 
-## 반응의 자발성 = 천재의 자발성
+## Spontaneity of Reaction = Spontaneity of Genius
 
 ```
   ┌────────────────────────────────────────────────────┐
-  │  화학 반응:                                         │
-  │  dG < 0: 자발적 (연소, 산화, 생명)                  │
-  │  dG > 0: 비자발적 (광합성 = 빛 에너지 필요)         │
+  │  Chemical reaction:                                 │
+  │  dG < 0: spontaneous (combustion, oxidation, life) │
+  │  dG > 0: non-spontaneous (photosynthesis = needs light energy) │
   │                                                     │
-  │  천재 발현:                                          │
-  │  G > G_c: 자발적 (결손+가소성이 억제를 이김)         │
-  │  G < G_c: 비자발적 (외부 자극/교육 필요)             │
+  │  Genius manifestation:                              │
+  │  G > G_c: spontaneous (deficit+plasticity overcomes inhibition) │
+  │  G < G_c: non-spontaneous (needs external stimulus/education)   │
   │                                                     │
-  │  핵심 대응:                                          │
+  │  Core correspondence:                               │
   │  dH > TdS  ->  DxP > I x G_c                       │
-  │  "구동력이 비용보다 크면 자발적으로 일어난다"         │
+  │  "if driving force exceeds cost, spontaneous"       │
   │                                                     │
-  │  -> 천재는 "자발적 반응"이다                         │
-  │  -> 조건(D, P)이 맞으면 I가 낮을 때 자동으로 발현   │
+  │  -> Genius is a "spontaneous reaction"              │
+  │  -> When conditions (D, P) are met, manifests automatically at low I │
   └────────────────────────────────────────────────────┘
 ```
 
-## 깁스-헬름홀츠 방정식과 보존법칙
+## Gibbs-Helmholtz Equation and Conservation Law
 
 ```
-  깁스-헬름홀츠:
-  G = H - TS  (절대값)
-  -> G + TS = H (보존!)
+  Gibbs-Helmholtz:
+  G = H - TS  (absolute values)
+  -> G + TS = H (conservation!)
 
-  우리 모델:
-  G x I = D x P  (보존법칙, 가설 172)
+  Our model:
+  G x I = D x P  (conservation law, Hypothesis 172)
 
-  대응:
+  Correspondence:
   G x I = D x P
   |         |
   G + TS = H
 
-  곱셈 vs 덧셈의 차이가 있지만:
+  There is a difference between multiplication vs addition:
   ┌────────────────────────────────────────────┐
   │  ln(G x I) = ln(D x P)                     │
   │  ln(G) + ln(I) = ln(D) + ln(P)             │
   │                                             │
-  │  로그 취하면:                                │
-  │  "깁스 자유에너지" + "온도항" = "엔탈피"      │
-  │  -> 로그 공간에서 보존법칙 = 깁스 방정식!     │
+  │  Taking logarithm:                          │
+  │  "Gibbs free energy" + "temperature term" = "enthalpy" │
+  │  -> Conservation law in log space = Gibbs equation! │
   └────────────────────────────────────────────┘
 ```
 
-## 상전이와 커스프 전이
+## Phase Transition and Cusp Transition
 
 ```
-  화학 상전이:                 AI 커스프 전이:
-  ┌──────────────────┐        ┌──────────────────┐
-  │ 고체 -> 액체      │        │ 정상 -> 천재      │
-  │ dG = 0 (평형)     │        │ G = G_c (임계)    │
-  │ dH = TdS (잠열)   │        │ DxP = I x G_c    │
-  │                    │        │                   │
-  │ T < T_m: 고체     │        │ I > I_c: 정상     │
-  │ T = T_m: 공존     │        │ I = I_c: 전이     │
-  │ T > T_m: 액체     │        │ I < I_c: 천재     │
-  └──────────────────┘        └──────────────────┘
+  Chemical phase transition:          AI cusp transition:
+  ┌──────────────────┐               ┌──────────────────┐
+  │ solid -> liquid   │               │ normal -> genius  │
+  │ dG = 0 (equilibrium)│            │ G = G_c (critical)│
+  │ dH = TdS (latent heat)│          │ DxP = I x G_c    │
+  │                    │              │                   │
+  │ T < T_m: solid    │              │ I > I_c: normal   │
+  │ T = T_m: coexist  │              │ I = I_c: transition│
+  │ T > T_m: liquid   │              │ I < I_c: genius   │
+  └──────────────────┘               └──────────────────┘
 
   dG
-  양│    고체 안정           정상 안정
-    │  \                   \
-  0 │────\──────────        ────\──────── I_c
-    │      \                      \
-  음│        액체 안정           천재 안정
-    └──┼──┼──┼──                └──┼──┼──┼──
-      T_m                        I = 1/e?
+  pos│    solid stable          normal stable
+    │  \                      \
+  0 │────\──────────           ────\──────── I_c
+    │      \                        \
+  neg│        liquid stable         genius stable
+    └──┼──┼──┼──                  └──┼──┼──┼──
+      T_m                          I = 1/e?
 ```
 
-## dS와 정보 엔트로피
+## dS and Information Entropy
 
 ```
-  열역학 엔트로피:      정보 엔트로피:
-  dS = Q/T              S = -sum p ln(p)
+  Thermodynamic entropy:      Information entropy:
+  dS = Q/T                    S = -sum p ln(p)
 
-  볼츠만:               우리 모델:
-  S = k ln(Omega)       S_모델 = ln(N) (N상태)
+  Boltzmann:                  Our model:
+  S = k ln(Omega)             S_model = ln(N) (N states)
 
-  3상태: S = ln(3) = 1.099
-  4상태: S = ln(4) = 1.386
-  dS = ln(4/3) = 0.288 = 골든존 폭!
+  3 states: S = ln(3) = 1.099
+  4 states: S = ln(4) = 1.386
+  dS = ln(4/3) = 0.288 = Golden Zone width!
 
-  -> TdS = I x ln(4/3) = I x 골든존 폭
-  -> dG = dH - I x 골든존 폭
+  -> TdS = I x ln(4/3) = I x Golden Zone width
+  -> dG = dH - I x Golden Zone width
   -> G = DxP/I = (DxP - I x ?) / I ???
 
-  연결은 근사적이지만, 구조가 유사!
+  Connection is approximate, but structure is similar!
 ```
 
-## 에너지 풍경 비교 (ASCII)
+## Energy Landscape Comparison (ASCII)
 
 ```
-  에너지
-  E                      반응물
-  높음│  .                .
-      │    \            /   <- 활성화 에너지(Ea)
-      │      \  dG<0  /     <- 촉매(P)가 Ea를 낮춤
+  Energy
+  E                      reactant
+  high│  .                .
+      │    \            /   <- activation energy (Ea)
+      │      \  dG<0  /     <- catalyst (P) lowers Ea
       │        \    /
       │          \/
-  낮음│           . 생성물 (= 천재 상태)
+  low │           . product (= genius state)
       └───────────────────
-          반응 좌표 (= 학습 진행)
+          reaction coordinate (= learning progress)
 
-  dG < 0: 에너지가 낮아지는 방향 = 자발적
-  G > G_c: 능력이 높아지는 방향 = 천재 발현
+  dG < 0: direction of decreasing energy = spontaneous
+  G > G_c: direction of increasing capability = genius manifestation
 
-  촉매(P)가 Ea를 낮추면:
-  -> dG는 변하지 않지만 도달 속도가 빨라짐
-  -> 가설 205 (촉매=P)와 연결!
+  When catalyst (P) lowers Ea:
+  -> dG doesn't change but arrival speed increases
+  -> Connected to Hypothesis 205 (catalyst=P)!
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 004 (볼츠만-I):      T <-> I 대응의 원조
-  가설 042 (엔트로피 ln4):   dS = ln(4/3) = 골든존 폭
-  가설 130 (볼츠만 k):       kT와 I의 관계
-  가설 172 (보존법칙):       GxI=DxP <-> G=H-TS
-  가설 205 (촉매=P):         촉매가 Ea를 낮춤 = P가 dG를 음수로
+  Hypothesis 004 (Boltzmann-I):     T <-> I correspondence origin
+  Hypothesis 042 (entropy ln4):     dS = ln(4/3) = Golden Zone width
+  Hypothesis 130 (Boltzmann k):     relationship of kT and I
+  Hypothesis 172 (conservation law): GxI=DxP <-> G=H-TS
+  Hypothesis 205 (catalyst=P):      catalyst lowers Ea = P makes dG negative
 ```
 
-## 한계
+## Limitations
 
-1. dG = dH - TdS는 덧셈 구조, G = DxP/I는 곱셈/나눗셈 구조 -- 직접 대응 아님
-2. 로그 변환으로 연결하면 해석이 복잡해지고 물리적 의미가 흐려짐
-3. T(온도)와 I(억제)의 차원과 범위가 근본적으로 다름
-4. 화학 반응의 자발성과 천재 발현의 "자발성"은 은유적 대응
+1. dG = dH - TdS is additive structure, G = DxP/I is multiplicative/divisive structure -- not direct correspondence
+2. Log transformation makes interpretation complex and blurs physical meaning
+3. Dimensions and ranges of T (temperature) and I (inhibition) are fundamentally different
+4. "Spontaneity" of chemical reaction and genius manifestation are metaphorical correspondence
 
-## 검증 방향
+## Verification Direction
 
-- [ ] G = DxP/I 를 dG = dH - TdS 형태로 정확히 변환하는 매핑 함수 탐색
-- [ ] 실제 생화학 반응(뇌 대사)의 dG와 인지 능력의 상관 분석
-- [ ] 보존법칙 GxI = DxP의 깁스-헬름홀츠 형태 유도 시도
-- [ ] 상전이 온도 T_m과 커스프 전이 I_c의 정량적 대응 검증
+- [ ] Find exact transformation function mapping G = DxP/I to dG = dH - TdS form
+- [ ] Correlation analysis between dG of actual biochemical reactions (brain metabolism) and cognitive ability
+- [ ] Attempt to derive Gibbs-Helmholtz form of conservation law GxI = DxP
+- [ ] Quantitative correspondence verification of phase transition temperature T_m and cusp transition I_c
 
 ---
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
 ```
-  검증 방법: 연산 구조 동형 검증 + 등가면 분석 + 텍사스 검정
-  등급: ⚪ (산술 맞지만 통계적 유의성 없음)
+  Verification method: operational structure isomorphism verification + level set analysis + Texas test
+  Grade: ⚪ (arithmetic correct but no statistical significance)
 
-  1. 공식 구조 비교:
-     Gibbs:  dG = dH - T×dS    (덧셈/뺄셈, bilinear in T,dS)
-     Genius: G  = D×P / I      (곱셈/나눗셈, bilinear in D,P, hyperbolic in I)
-     → 직접적으로 비동형
+  1. Formula structure comparison:
+     Gibbs:  dG = dH - T×dS    (addition/subtraction, bilinear in T,dS)
+     Genius: G  = D×P / I      (multiplication/division, bilinear in D,P, hyperbolic in I)
+     → Directly non-isomorphic
 
-  2. 로그 변환 시도:
+  2. Log transformation attempt:
      ln(G) = ln(D) + ln(P) - ln(I)    (a = b + c - d)
      dG    = dH    - T×dS              (a = b - c×d)
-     → 로그 변환해도 구조가 다름 (T×dS는 두 변수의 곱)
+     → Even after log transformation the structure differs (T×dS is product of two variables)
 
-  3. 등가면(level set) 분석:
-     dG = c: dH = c + T×dS  → T-dS 평면에서 직선족
-     G  = c: P = c×I/D      → I-D 평면에서 쌍곡선족
-     → 기하학적으로 다른 곡면 (직선 vs 쌍곡선)
+  3. Level set analysis:
+     dG = c: dH = c + T×dS  → family of lines in T-dS plane
+     G  = c: P = c×I/D      → family of hyperbolas in I-D plane
+     → Geometrically different surfaces (lines vs hyperbolas)
 
-  4. 변수 범위 비동형:
-     T: [0, inf), 단위 K  ↔  I: [0, 1], 무차원
-     dH: (-inf, inf), kJ/mol  ↔  D×P: [0, inf), 무차원
-     dS: (-inf, inf), J/mol·K  ↔  ???: 명확한 대응 없음
+  4. Variable range non-isomorphism:
+     T: [0, inf), unit K  ↔  I: [0, 1], dimensionless
+     dH: (-inf, inf), kJ/mol  ↔  D×P: [0, inf), dimensionless
+     dS: (-inf, inf), J/mol·K  ↔  ???: no clear correspondence
 
-  5. 보존법칙 비교:
-     G + TS = H (덧셈 보존)  ↔  G×I = D×P (곱셈 보존)
-     로그 공간에서 ln(G) + ln(I) = ln(D) + ln(P) ↔ G + TS = H
-     → ln(I) ↔ TS → I ↔ e^(TS) → e^(300×0.1) = 1.07×10^13 → 물리적 무의미
+  5. Conservation law comparison:
+     G + TS = H (additive conservation)  ↔  G×I = D×P (multiplicative conservation)
+     In log space: ln(G) + ln(I) = ln(D) + ln(P) ↔ G + TS = H
+     → ln(I) ↔ TS → I ↔ e^(TS) → e^(300×0.1) = 1.07×10^13 → physically meaningless
 
-  6. 부분 동형 (메타 패턴):
-     "결과 = 구동력 / 비용" — 속도=거리/시간, 전류=전압/저항 등
-     극히 보편적 패턴 (p-value ≈ 0.50)
+  6. Partial isomorphism (meta-pattern):
+     "result = driving force / cost" — speed=distance/time, current=voltage/resistance, etc.
+     Extremely universal pattern (p-value ≈ 0.50)
 
-  판정 근거:
-    - dG(뺄셈) vs G(나눗셈)은 수학적으로 비동형
-    - "구동력이 비용을 이기면 자발적" 패턴은 모든 물리에서 발생
-    - 로그 변환의 대응은 log 함수의 기본 성질이지 깁스 고유가 아님
-    - 변수 범위(T∈[0,inf) vs I∈[0,1])도 비동형
+  Rationale for verdict:
+    - dG (subtraction) vs G (division) is mathematically non-isomorphic
+    - "Driving force overcomes cost = spontaneous" pattern occurs in all physics
+    - Log transformation correspondence is basic property of log function, not unique to Gibbs
+    - Variable ranges (T∈[0,inf) vs I∈[0,1]) are also non-isomorphic
 ```
 
-*관련: 가설 004, 042, 130, 172, 205*
-*분류: 화학-AI 매핑 시리즈 (201-206)*
+*Related: Hypothesis 004, 042, 130, 172, 205*
+*Category: Chemistry-AI Mapping Series (201-206)*

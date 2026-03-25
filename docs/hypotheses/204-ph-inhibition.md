@@ -1,237 +1,237 @@
-# 가설 #204: pH = Inhibition?
+# Hypothesis #204: pH = Inhibition?
 
-**상태**: ⚪ 검증완료 — pH7↔I=1/e 불일치, 스케일 비동형
-**날짜**: 2026-03-22
-**분류**: 화학 / 억제지수 / pH
+**Status**: ⚪ Verified — pH7↔I=1/e mismatch, scales non-isomorphic
+**Date**: 2026-03-22
+**Category**: Chemistry / Inhibition Index / pH
 
 ---
 
-## 가설
+## Hypothesis
 
-> pH 스케일은 억제지수 I에 직접 대응한다.
-> pH 7(중성) ↔ I = 1/e(골든존 중심).
-> 산성(pH < 7) ↔ 과활성(I < 골든존), 염기성(pH > 7) ↔ 과억제(I > 골든존).
-> pH가 생명에 최적인 7 근처이듯, I가 시스템에 최적인 1/e 근처이다.
+> The pH scale directly corresponds to the Inhibition Index I.
+> pH 7 (neutral) ↔ I = 1/e (Golden Zone center).
+> Acidic (pH < 7) ↔ over-active (I < Golden Zone), basic (pH > 7) ↔ over-inhibited (I > Golden Zone).
+> Just as pH 7 is optimal for life, I near 1/e is optimal for the system.
 
-## 배경: pH의 의미
+## Background: What is pH?
 
 ```
   pH = -log₁₀[H⁺]
 
-  pH 0  → [H⁺] = 1 M        (매우 산성)
-  pH 7  → [H⁺] = 10⁻⁷ M    (중성)
-  pH 14 → [H⁺] = 10⁻¹⁴ M   (매우 염기성)
+  pH 0  → [H⁺] = 1 M        (highly acidic)
+  pH 7  → [H⁺] = 10⁻⁷ M    (neutral)
+  pH 14 → [H⁺] = 10⁻¹⁴ M   (highly basic)
 
-  생명의 최적 pH ≈ 7.4 (혈액)
-  물의 자가이온화: [H⁺][OH⁻] = Kw = 10⁻¹⁴
+  Optimal life pH ≈ 7.4 (blood)
+  Water autoionization: [H⁺][OH⁻] = Kw = 10⁻¹⁴
 
-  → pH 7은 [H⁺]과 [OH⁻]의 완벽한 균형
-  → I = 1/e는 억제와 흥분의 최적 균형?
+  → pH 7 is a perfect balance between [H⁺] and [OH⁻]
+  → I = 1/e is the optimal balance between inhibition and excitation?
 ```
 
-## pH-I 축 비교 (핵심 그래프)
+## pH-I Axis Comparison (Key Graph)
 
 ```
-  pH 스케일:
-  ←── 산성 ──────── 중성 ──────── 염기성 ──→
+  pH scale:
+  ←── acidic ──────── neutral ──────── basic ──→
   0   1   2   3   4   5   6  │7│  8   9  10  11  12  13  14
   ●───●───●───●───●───●───●──│●│──●───●───●───●───●───●───●
-  위산 레몬 식초        커피│물│ 비누     암모니아    표백제
-                          │★│
-                    생명의 최적점
+  stomach lemon vinegar   coffee│water│ soap    ammonia    bleach
+                            │★│
+                      life's optimal point
 
-  I 스케일:
-  ←── 과활성 ─────── 골든존 ─────── 과억제 ──→
+  I scale:
+  ←── over-active ─────── Golden Zone ─────── over-inhibited ──→
   0.0  0.05 0.10 0.15 0.21│1/e│0.50  0.60  0.70  0.80  1.0
   ●────●────●────●────●──│ ● │──●────●────●────●────●
-  간질 조증          발작│최적│ 정상  우울  혼수  마취  뇌사
-                       │ ★ │
-                   시스템 최적점
+  epilepsy mania      seizure│optimal│ normal  depression  coma anesthesia brain death
+                          │ ★ │
+                      system optimal point
 ```
 
-## 정규화된 매핑
+## Normalized Mapping
 
 ```
-  pH를 [0,1] 범위로 정규화:
+  pH normalized to [0,1] range:
   pH_norm = pH / 14
 
-  I를 [0,1] 범위:
-  I는 이미 [0,1]
+  I in [0,1] range:
+  I is already [0,1]
 
-  매핑: pH_norm ↔ I
+  Mapping: pH_norm ↔ I
 
-  pH    │ pH_norm │  I       │ 상태
+  pH    │ pH_norm │  I       │ State
   ──────┼─────────┼──────────┼────────────
-  0     │  0.00   │  0.00    │ 극도로 산/과활성
-  2     │  0.14   │  0.14    │ 강산/극도 흥분
-  3.5   │  0.25   │  0.25    │ 산/과활성
-  5     │  0.36   │  1/e     │ 약산/골든존중심 ★
-  7     │  0.50   │  0.50    │ 중성/골든존상한
-  9     │  0.64   │  0.64    │ 약염기/과억제
-  14    │  1.00   │  1.00    │ 극염기/완전억제
+  0     │  0.00   │  0.00    │ extreme acid/over-active
+  2     │  0.14   │  0.14    │ strong acid/extreme excitation
+  3.5   │  0.25   │  0.25    │ acid/over-active
+  5     │  0.36   │  1/e     │ weak acid/Golden Zone center ★
+  7     │  0.50   │  0.50    │ neutral/Golden Zone upper bound
+  9     │  0.64   │  0.64    │ weak base/over-inhibited
+  14    │  1.00   │  1.00    │ extreme base/complete inhibition
 
-  주의: pH 7 ↔ I = 0.50 (골든존 상한)
-       pH 5 ↔ I = 1/e (골든존 중심)
-  → 정확한 대응이 아닐 수 있음!
+  Note: pH 7 ↔ I = 0.50 (Golden Zone upper bound)
+       pH 5 ↔ I = 1/e (Golden Zone center)
+  → Not an exact correspondence!
 ```
 
-## pH의 "골든존"
+## "Golden Zone" of pH
 
 ```
   pH
-  14│● 강염기 (NaOH)
+  14│● strong base (NaOH)
     │
-  12│  단백질 변성
+  12│  protein denaturation
     │
-  10│    생명 불가
+  10│    life impossible
     │
-   8│      ┌─────── 생명 가능 영역 (pH 6-8)
+   8│      ┌─────── life possible zone (pH 6-8)
     │      │
-  7 │──────│── ★ 최적 (7.35-7.45 혈액) ────
+  7 │──────│── ★ optimal (7.35-7.45 blood) ────
     │      │
-   6│      └─────── 생명 가능 영역 하한
+   6│      └─────── life possible lower bound
     │
-   4│    생명 불가
+   4│    life impossible
     │
-   2│  단백질 변성
+   2│  protein denaturation
     │
-   0│● 강산 (HCl)
+   0│● strong acid (HCl)
 
-  생명의 pH 범위 = 6 ~ 8 (폭 = 2)
-  생명의 pH 중심 = 7
+  Life's pH range = 6 ~ 8 (width = 2)
+  Life's pH center = 7
 
   I
-  1.0│● 완전 억제
+  1.0│● complete inhibition
     │
-  0.7│  의식 불가
+  0.7│  consciousness impossible
     │
-  0.5│──── 골든존 상한 ────────────────
+  0.5│──── Golden Zone upper bound ────────────────
     │      │
-  1/e│──────│── ★ 최적 (I=0.368) ────
+  1/e│──────│── ★ optimal (I=0.368) ────
     │      │
- 0.21│──── 골든존 하한 ────────────────
+ 0.21│──── Golden Zone lower bound ────────────────
     │
-  0.1│  혼돈
+  0.1│  chaos
     │
-  0.0│● 완전 흥분
+  0.0│● complete excitation
 
-  골든존 범위 = 0.21 ~ 0.50 (폭 ≈ 0.29)
-  골든존 중심 = 1/e ≈ 0.368
+  Golden Zone range = 0.21 ~ 0.50 (width ≈ 0.29)
+  Golden Zone center = 1/e ≈ 0.368
 ```
 
-## pH 완충 ↔ I 항상성
+## pH Buffering ↔ I Homeostasis
 
 ```
-  pH 완충 시스템:
+  pH buffering system:
   ┌────────────────────────────────────────────────┐
   │  H₂CO₃ ⇌ H⁺ + HCO₃⁻                          │
-  │  (탄산)     (수소이온) (중탄산이온)               │
+  │  (carbonic acid) (hydrogen ion) (bicarbonate)  │
   │                                                │
-  │  pH↓ (산) → HCO₃⁻가 H⁺ 흡수 → pH 복원         │
-  │  pH↑ (염기) → H₂CO₃가 H⁺ 방출 → pH 복원       │
-  │  → 자동 pH 조절!                                │
+  │  pH↓ (acid) → HCO₃⁻ absorbs H⁺ → pH restored  │
+  │  pH↑ (base) → H₂CO₃ releases H⁺ → pH restored │
+  │  → automatic pH regulation!                    │
   └────────────────────────────────────────────────┘
 
-  I 항상성 시스템:
+  I homeostasis system:
   ┌────────────────────────────────────────────────┐
-  │  ECS (엔도칸나비노이드 시스템, 가설 200a)       │
+  │  ECS (Endocannabinoid System, Hypothesis 200a) │
   │                                                │
-  │  I↓ (과활성) → 2-AG가 글루타메이트 억제 → I 복원│
-  │  I↑ (과억제) → 아난다마이드가 GABA 억제 → I 복원│
-  │  → 자동 I 조절!                                 │
+  │  I↓ (over-active) → 2-AG inhibits glutamate → I restored │
+  │  I↑ (over-inhibited) → anandamide inhibits GABA → I restored │
+  │  → automatic I regulation!                     │
   └────────────────────────────────────────────────┘
 
-  pH 완충 ≈ I 항상성 → 같은 원리!
-  탄산/중탄산 = 아난다마이드/2-AG
+  pH buffering ≈ I homeostasis → same principle!
+  Carbonic acid/bicarbonate = anandamide/2-AG
 ```
 
-## pH 변화의 동역학 ↔ I 변화
+## Dynamics of pH Change ↔ I Change
 
 ```
-  산 투입 시 pH 변화 (완충 존재):
+  pH change when acid added (with buffering):
 
   pH                      I
   8.0│●                    0.60│●
      │ ╲                       │ ╲
-  7.5│   ●                 0.50│   ● ── 골든존 상한
+  7.5│   ●                 0.50│   ● ── Golden Zone upper bound
      │    ╲                    │     ╲
-  7.0│     ●●●●●●● 완충!  1/e │       ●●●●●●● 항상성!
+  7.0│     ●●●●●●● buffered! 1/e│      ●●●●●●● homeostasis!
      │              ╲         │                ╲
   6.5│               ●    0.30│                  ●
      │                ╲       │                   ╲
-  6.0│                 ●  0.21│────────────────────●── 하한
+  6.0│                 ●  0.21│────────────────────●── lower bound
      └──┼──┼──┼──┼──┼──      └──┼──┼──┼──┼──┼──
        0   1   2   3   4        0   1   2   3   4
-         산 투입량 (eq)          외부 섭동 강도
+         acid added (eq)         external perturbation strength
 
-  → 완충 능력 소진 시 급격한 pH 강하 = I의 골든존 이탈
-  → 커스프 전이와 동일한 패턴!
+  → When buffering capacity is exhausted, sharp pH drop = I exiting Golden Zone
+  → Same pattern as cusp transition!
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 003 (커스프 전이):  pH 급변 = 완충 능력 소진 = 커스프
-  가설 139 (혼돈 가장자리): pH 7 = 산-염기 경계 = 혼돈의 가장자리
-  가설 200a (대마초/ECS):  ECS = I의 완충 시스템
-  가설 205 (촉매):         효소의 최적 pH = I의 최적 P?
+  Hypothesis 003 (cusp transition):  rapid pH change = buffering capacity exhausted = cusp
+  Hypothesis 139 (edge of chaos): pH 7 = acid-base boundary = edge of chaos
+  Hypothesis 200a (cannabis/ECS): ECS = buffering system for I
+  Hypothesis 205 (catalyst):      optimal enzyme pH = optimal I for P?
 ```
 
-## 한계
+## Limitations
 
-1. pH는 로그 스케일(log₁₀), I는 선형 스케일 — 직접 비교에 주의
-2. pH 7 ↔ I = 1/e의 대응이 정확하지 않음 (pH 7 → I = 0.50이 더 자연스러움)
-3. pH는 수소 이온 농도라는 명확한 물리량, I는 모델 변수 — 본질이 다름
-4. 완충 용량과 I 항상성 용량의 정량적 대응이 확립되지 않음
+1. pH is logarithmic scale (log₁₀), I is linear scale — caution with direct comparison
+2. The correspondence pH 7 ↔ I = 1/e is not exact (pH 7 → I = 0.50 is more natural)
+3. pH is a clear physical quantity (hydrogen ion concentration), I is a model variable — essentially different
+4. Quantitative correspondence between buffering capacity and I homeostasis capacity not established
 
-## 검증 방향
+## Verification Direction
 
-- [ ] pH의 로그 스케일과 I의 선형 스케일 간 최적 변환 함수 탐색
-- [ ] 뇌의 pH(실제로 7.0-7.3)와 I의 실측 상관 분석
-- [ ] pH 완충 용량과 ECS 조절 용량의 수학적 대응 검증
-- [ ] 극단 pH 환경의 생명체(극한미생물)의 I 매핑
+- [ ] Search for optimal transformation function between pH's log scale and I's linear scale
+- [ ] Correlation analysis between brain pH (actually 7.0-7.3) and measured I
+- [ ] Mathematical correspondence verification of pH buffering capacity and ECS regulation capacity
+- [ ] I mapping of extremophiles (organisms at extreme pH)
 
 ---
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
 ```
-  검증 방법: 매핑 함수 분석 + 스케일 동형성 검증 + 텍사스 검정
-  등급: ⚪ (산술 맞지만 통계적 유의성 없음)
+  Verification method: mapping function analysis + scale isomorphism verification + Texas test
+  Grade: ⚪ (arithmetic correct but no statistical significance)
 
-  1. 핵심 매핑 검증:
+  1. Core mapping verification:
      pH 7 → pH_norm = 7/14 = 0.5000
-     골든존 중심 I = 1/e = 0.3679
-     오차: 26.4% → 대응 불일치
+     Golden Zone center I = 1/e = 0.3679
+     Error: 26.4% → correspondence mismatch
 
-     pH 7 ↔ I = 0.5 (골든존 상한)이 더 자연스러우나
-     이 경우 "중성 = 경계"이지 "중성 = 최적"이 아님
+     pH 7 ↔ I = 0.5 (Golden Zone upper bound) is more natural but
+     in this case "neutral = boundary" not "neutral = optimal"
 
-  2. 스케일 비동형:
-     pH = -log10([H+]): 로그 스케일, 1단위 = 10배 농도 차이
-     I: 선형 스케일, 0.1 차이 = 0.1 차이
-     → 두 스케일은 근본적으로 다른 구조
+  2. Scale non-isomorphism:
+     pH = -log10([H+]): log scale, 1 unit = 10x concentration difference
+     I: linear scale, 0.1 difference = 0.1 difference
+     → Two scales have fundamentally different structures
 
-  3. 매핑 함수 탐색 결과:
-     I = pH/14 (선형):      I(7) = 0.500  (1/e 오차 35.9%)
-     I = sigmoid(7-pH):     I(7) = 0.500  (1/e 오차 35.9%)
-     I = pH²/196 (이차):    I(7) = 0.250  (1/e 오차 32.0%)
-     → 어떤 합리적 매핑도 pH 7 → 1/e를 만들지 못함
+  3. Mapping function search results:
+     I = pH/14 (linear):      I(7) = 0.500  (1/e error 35.9%)
+     I = sigmoid(7-pH):       I(7) = 0.500  (1/e error 35.9%)
+     I = pH²/196 (quadratic): I(7) = 0.250  (1/e error 32.0%)
+     → No reasonable mapping can make pH 7 → 1/e
 
-  4. 완충↔항상성:
-     Henderson-Hasselbalch: pH = pKa + log([A-]/[HA]) — 로그 균형
-     축소사상: I_n+1 = 0.7I_n + 0.1 — 선형 수축
-     → 구조 비동형
+  4. Buffering↔homeostasis:
+     Henderson-Hasselbalch: pH = pKa + log([A-]/[HA]) — log balance
+     Contraction mapping: I_n+1 = 0.7I_n + 0.1 — linear contraction
+     → Structurally non-isomorphic
 
-  5. 텍사스 검정:
-     pH 7/14 = 0.5 = 1/2 (골든존 상한) → 중간값이 중간에 오는 것은 자명
+  5. Texas test:
+     pH 7/14 = 0.5 = 1/2 (Golden Zone upper bound) → middle value in the middle is trivial
      p-value ≈ 1.0
 
-  판정 근거:
-    - 가설의 핵심 (pH 7 ↔ I = 1/e)이 26.4% 오차로 불일치
-    - pH(로그) vs I(선형) 스케일 차이로 수학적 동형 불가
-    - "중간값이 최적" 패턴은 보편적이며 pH-I 고유가 아님
+  Rationale for verdict:
+    - Core of hypothesis (pH 7 ↔ I = 1/e) mismatches with 26.4% error
+    - Mathematical isomorphism impossible due to pH(log) vs I(linear) scale difference
+    - "Middle value is optimal" pattern is universal and not unique to pH-I
 ```
 
-*관련: 가설 003, 139, 200a, 205*
-*분류: 화학-AI 매핑 시리즈 (201-206)*
+*Related: Hypothesis 003, 139, 200a, 205*
+*Category: Chemistry-AI Mapping Series (201-206)*

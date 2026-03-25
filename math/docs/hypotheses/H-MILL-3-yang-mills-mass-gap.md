@@ -1,26 +1,25 @@
-# H-MILL-3: 양-밀스 질량 간극과 R 스펙트럼 간극
+# H-MILL-3: Yang-Mills Mass Gap and R Spectrum Gap
 
-> **가설**: R 스펙트럼의 간극 {(3/4,1)∪(1,7/6)}은 양-밀스 이론의
-> 질량 간극(mass gap)과 구조적으로 유사하다.
+> **Hypothesis**: The gap in the R spectrum {(3/4,1)∪(1,7/6)} is structurally similar to the mass gap in Yang-Mills theory.
 
-## 비유적 대응
+## Metaphorical Correspondence
 
 ```
-  양-밀스 질량 간극:
-    SU(3) 게이지장 → 글루온은 질량 없음(perturbative)
-    하지만 비섭동적으로 → 글루볼(glueball) 질량 > 0
-    "진공과 첫 번째 여기 상태 사이에 간극"
+  Yang-Mills mass gap:
+    SU(3) gauge field → gluons are massless (perturbative)
+    But non-perturbatively → glueball mass > 0
+    "Gap between vacuum and first excited state"
 
-  R 스펙트럼 간극:
-    R=1(n=6, 진공=완전 균형)
-    R=7/6(n=4, 첫 여기 상태)
-    간극 폭 = 1/6 = 1/P₁
+  R spectrum gap:
+    R=1 (n=6, vacuum = perfect balance)
+    R=7/6 (n=4, first excited state)
+    Gap width = 1/6 = 1/P₁
 
-  SM 게이지군 차원합:
+  SM gauge group dimension sum:
     dim(SU(3)×SU(2)×U(1)) = 8+3+1 = 12 = σ(6)
     rank = 2+1+1 = 4 = τ(6)
     groups = 3 = σ/τ
 ```
 
-## 판정: 🟧 비유적 (정량적 연결 없음)
-## 파급력: ★★★★ (만약 정량화되면 혁명적)
+## Verdict: 🟧 Metaphorical (no quantitative connection)
+## Impact: ★★★★ (revolutionary if quantified)

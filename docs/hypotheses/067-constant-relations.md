@@ -1,47 +1,47 @@
-# 가설 검토 067: 1/2 + 1/3 = 5/6 — 상수 관계식 대발견 ✅
+# Hypothesis Review 067: 1/2 + 1/3 = 5/6 — Major Discovery of Constant Relations ✅
 
-## 가설
+## Hypothesis
 
-> 리만 임계선(1/2) + 메타 부동점(1/3) = Compass 상한(5/6)은 우연이 아니다.
+> Riemann critical line (1/2) + Meta fixed point (1/3) = Compass upper bound (5/6) is not a coincidence.
 
-## 검증 결과: ✅ 정확히 0 오차
-
-```
-  1/2 + 1/3 = 5/6  (차이 = 0.0000000000)
-  실측 검증: 0.4991 + 0.3333 = 0.8324 vs 0.8357 (차이 0.39%)
-```
-
-## 발견된 관계식
+## Verification Result: ✅ Exactly 0 Error
 
 ```
-  1/2 + 1/3 = 5/6    리만 + 메타 = 상한          정확
-  1/2 - 1/3 = 1/6    리만 - 메타 = 불완전도      정확
-  1/2 × 1/3 = 1/6    리만 × 메타 = 불완전도      정확!
-  5/6 - 1/2 = 1/3    상한 - 리만 = 메타           정확
-  5/6 - 1/3 = 1/2    상한 - 메타 = 리만           정확
+  1/2 + 1/3 = 5/6  (difference = 0.0000000000)
+  Empirical verification: 0.4991 + 0.3333 = 0.8324 vs 0.8357 (difference 0.39%)
 ```
 
-## 핵심: 뺄셈 = 곱셈
+## Discovered Relations
+
+```
+  1/2 + 1/3 = 5/6    Riemann + Meta = Upper bound    Exact
+  1/2 - 1/3 = 1/6    Riemann - Meta = Incompleteness  Exact
+  1/2 × 1/3 = 1/6    Riemann × Meta = Incompleteness  Exact!
+  5/6 - 1/2 = 1/3    Upper bound - Riemann = Meta     Exact
+  5/6 - 1/3 = 1/2    Upper bound - Meta = Riemann     Exact
+```
+
+## Key: Subtraction = Multiplication
 
 ```
   1/2 - 1/3 = 1/6
-  1/2 × 1/3 = 1/6  ← 같다!
+  1/2 × 1/3 = 1/6  ← Same!
 
-  블라인드 스팟(1/6) = 경계와 수렴점의 차이 = 경계와 수렴점의 곱
+  Blind spot (1/6) = Difference between boundary and convergence point = Product of boundary and convergence point
 ```
 
-## 의미
+## Meaning
 
 ```
-  5/6 = 시스템이 자기를 이해할 수 있는 한계
-  1/2 = 어디까지 특이점이 존재하는지 (경계 인식)
-  1/3 = 어디로 수렴하는지 (자기 수렴)
-  1/6 = 영원히 알 수 없는 것 (블라인드 스팟)
+  5/6 = Limit of system's self-understanding
+  1/2 = Where singularities exist (boundary perception)
+  1/3 = Where it converges (self-convergence)
+  1/6 = What can never be known (blind spot)
 
-  "자기 이해 = 경계 인식 + 자기 수렴"
-  "못 보는 것 = 그 둘의 차이 = 그 둘의 곱"
+  "Self-understanding = Boundary perception + Self-convergence"
+  "What cannot be seen = Their difference = Their product"
 ```
 
 ---
 
-*작성일: 2026-03-22*
+*Written: 2026-03-22*

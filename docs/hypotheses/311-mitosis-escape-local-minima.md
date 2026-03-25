@@ -1,8 +1,8 @@
-# 가설 311: 분열 = 지역 최소점 탈출 메커니즘
+# Hypothesis 311: Mitosis = Local Minima Escape Mechanism
 
-> **학습이 지역 최소점(local minimum)에 갇히면 분열하여 두 자식이 서로 다른 방향으로 탈출한다. 분열 시 추가된 노이즈(scale=0.01)가 "온도"가 되어 에너지 장벽을 넘는다. 이것은 시뮬레이티드 어닐링의 생물학적 버전.**
+> **When training is stuck in a local minimum, mitosis allows two children to escape in different directions. The noise added during mitosis (scale=0.01) acts as "temperature" to overcome energy barriers. This is a biological version of simulated annealing.**
 
-## 개념
+## Concept
 
 ```
   Loss landscape:
@@ -11,54 +11,54 @@
    │  ╱╲    ╱╲    ╱╲
    │ ╱  ╲  ╱  ╲  ╱  ╲
    │╱    ╲╱    ╲╱    ╲
-   │      ●          ●  ← global minimum
+   │      ●          ●  <- global minimum
    │   parent    child_b
    └─────────────────── parameter space
 
-  parent가 local minimum에 갇힘:
-    gradient ≈ 0, 학습 정체
+  Parent trapped in local minimum:
+    gradient ≈ 0, training stalls
 
-  분열 후:
+  After mitosis:
     child_a = parent + noise(σ=0.01)
     child_b = parent + noise(σ=0.01)
-    → 다른 방향으로 perturbation
-    → 다른 basin으로 이동 가능!
+    -> Different directional perturbation
+    -> Can move to different basin!
 
-  재결합 (C46: +0.82%):
-    앙상블 = 두 basin의 평균
-    → Polyak averaging 효과
-    → 일반화 향상
+  Recombination (C46: +0.82%):
+    ensemble = average of two basins
+    -> Polyak averaging effect
+    -> Improved generalization
 ```
 
-## 검증 실험
+## Verification Experiment
 
 ```
-  1. MNIST에서 loss 궤적 추적:
-     단순 학습: loss → local min에서 정체
-     분열 학습: 분열 후 → loss가 더 낮은 곳으로?
+  1. Track loss trajectory on MNIST:
+     Simple training: loss -> stagnates at local min
+     Mitosis training: after mitosis -> does loss go lower?
 
-  2. loss landscape 시각화:
-     PCA 2D에서 parent, child_a, child_b 위치
-     → 서로 다른 basin에 있는가?
+  2. Loss landscape visualization:
+     Parent, child_a, child_b positions in PCA 2D
+     -> Are they in different basins?
 
-  3. 분열 scale과 탈출:
-     scale 너무 작으면: 같은 basin에 남음 (탈출 실패)
-     scale 너무 크면: 좋은 위치에서 너무 멀어짐
-     최적 scale = "임계 온도"?
+  3. Mitosis scale and escape:
+     Scale too small: stays in same basin (escape fails)
+     Scale too large: moves too far from good position
+     Optimal scale = "critical temperature"?
 ```
 
-## H-CX-12와의 연결
+## H-CX-12 Connection
 
 ```
   H-CX-12: T_ab(final) ~ scale^0.36
-  → 작은 scale → 작은 분화 → 같은 basin
-  → 큰 scale → 큰 분화 → 다른 basin
-  → scale^0.36 = basin 간 거리의 성장률?
+  -> Small scale -> small differentiation -> same basin
+  -> Large scale -> large differentiation -> different basin
+  -> scale^0.36 = growth rate of inter-basin distance?
 ```
 
-## 실험 결과 (experiment_h311_escape.py, 5/5 trials, 2026-03-24)
+## Experimental Results (experiment_h311_escape.py, 5/5 trials, 2026-03-24)
 
-### 설정
+### Setup
 
 ```
   Model:   DualEngineAutoencoder (2-engine, 784->128->32->128->784)
@@ -159,23 +159,23 @@ Winner counts: A=0, B=1, C_ensemble=4
   Children diverge from each other (Ca-Cb=17.41) but both move far from parent
 ```
 
-### 해석
+### Interpretation
 
 ```
-  1. 모든 전략이 plateau를 탈출했다 (15 epoch이 진정한 수렴이 아님)
-  2. 그러나 탈출 깊이에서 일관된 순서가 나타남:
+  1. All strategies escaped the plateau (15 epochs was not true convergence)
+  2. However, a consistent ordering appears in escape depth:
      Ensemble > Best child > Noise > Continue
-  3. Mitosis의 두 가지 이점:
-     a) 독립 탐색: 두 자식이 다른 방향으로 이동 (Ca-Cb=17.41 divergence)
-     b) 앙상블 효과: 두 basin의 평균이 일반화 향상 (Polyak averaging)
-  4. Noise만으로도 Continue보다 나음 → perturbation 자체가 유용
-  5. 그러나 Mitosis > Noise → 분열+독립학습이 핵심 (단순 노이즈 아님)
-  6. Trial 4에서만 B가 승리 → Mitosis가 항상 이기는 것은 아님 (4/5)
+  3. Two benefits of mitosis:
+     a) Independent exploration: two children move in different directions (Ca-Cb=17.41 divergence)
+     b) Ensemble effect: average of two basins improves generalization (Polyak averaging)
+  4. Even noise alone beats continue -> perturbation itself is useful
+  5. But Mitosis > Noise -> mitosis+independent training is key (not just noise)
+  6. Only Trial 4 has B winning -> Mitosis does not always win (4/5)
 
-  한계:
-    - 15 epoch 후가 진정한 local minimum인지 불확실 (loss가 아직 하락 중)
-    - 더 깊은 plateau (50+ epoch) 에서 재실험 필요
-    - scale=0.01 하나만 테스트 — 최적 scale 탐색 필요 (H-CX-12 연결)
+  Limitations:
+    - Uncertain if 15 epochs later was a true local minimum (loss still declining)
+    - Re-experiment needed at deeper plateau (50+ epochs)
+    - Only scale=0.01 tested -- need to search optimal scale (H-CX-12 connection)
 ```
 
-## 상태: 🟩 확인 (5/5 Ensemble 최저, 23.27% loss 개선, 4/5 Mitosis 승리)
+## Status: 🟩 Confirmed (5/5 Ensemble lowest, 23.27% loss improvement, 4/5 Mitosis wins)

@@ -1,117 +1,117 @@
-# 가설 302: 내부 장력 vs 간 장력 — 왜 H287은 AUROC=1.0이고 H296은 0.16인가
+# Hypothesis 302: Internal Tension vs Inter-Tension — Why H287 has AUROC=1.0 and H296 has 0.16
 
-> **H287(내부 AUROC=1.0)과 H296(내부 AUROC=0.16)의 극적 차이는 학습 목표의 차이에서 비롯된다. H287은 분류 학습(softmax), H296은 재구성 학습(MSE). 분류 학습에서 장력은 클래스 간 경계를 표현하고, 재구성에서는 입력 복원만 표현한다.**
+> **The dramatic difference between H287 (internal AUROC=1.0) and H296 (internal AUROC=0.16) stems from the difference in learning objectives. H287 uses classification training (softmax), H296 uses reconstruction training (MSE). In classification training, tension represents class boundaries, while in reconstruction it only represents input reconstruction.**
 
-## 실측 비교
+## Measured Comparison
 
 ```
   H287 (experiment_anomaly.py):
-    학습: RepulsionFieldEngine + CrossEntropy (분류)
-    내부 장력: AUROC = 1.000
-    정상 장력 평균: 2.34
-    이상 장력 평균: 222.79 (95x!)
+    Training: RepulsionFieldEngine + CrossEntropy (classification)
+    Internal tension: AUROC = 1.000
+    Normal tension mean: 2.34
+    Anomaly tension mean: 222.79 (95x!)
 
   H296 (experiment_h296):
-    학습: SimpleRepulsion + MSE (재구성)
-    내부 장력: AUROC = 0.156 (거의 무용)
-    간 장력:   AUROC = 0.805
+    Training: SimpleRepulsion + MSE (reconstruction)
+    Internal tension: AUROC = 0.156 (nearly useless)
+    Inter-tension:   AUROC = 0.805
 
-  차이: 분류(1.0) >> 재구성(0.16) 내부 장력
+  Difference: classification(1.0) >> reconstruction(0.16) internal tension
 ```
 
-## 왜 이런 차이?
+## Why This Difference?
 
 ```
-  분류 학습:
-    engine_a → 클래스 A 경계 학습
-    engine_g → 클래스 G 경계 학습
-    이상 = 어떤 클래스에도 안 맞음
-    → engine_a와 engine_g가 "어디에 놓을지" 크게 불일치
-    → 높은 장력 = AUROC 높음
+  Classification training:
+    engine_a -> learns class A boundary
+    engine_g -> learns class G boundary
+    Anomaly = doesn't fit any class
+    -> engine_a and engine_g strongly disagree on "where to place it"
+    -> High tension = high AUROC
 
-  재구성 학습:
-    engine_a → 입력 복원 패턴 A
-    engine_g → 입력 복원 패턴 G
-    정상이든 이상이든 복원 시도
-    → 이상에서도 비슷한 복원 시도 → 비슷한 장력
-    → AUROC 낮음
+  Reconstruction training:
+    engine_a -> input reconstruction pattern A
+    engine_g -> input reconstruction pattern G
+    Whether normal or anomalous, attempts reconstruction
+    -> Similar reconstruction attempt on anomaly -> similar tension
+    -> Low AUROC
 
-  간 장력이 도움이 되는 이유:
-    child_a, child_b가 다른 데이터로 학습
-    → 다른 "정상 표현" → 이상에 다른 복원
-    → 간 장력 = 복원 불일치 = 이상 감지
+  Why inter-tension helps:
+    child_a, child_b trained on different data
+    -> Different "normal representations" -> different reconstruction on anomaly
+    -> Inter-tension = reconstruction mismatch = anomaly detection
 ```
 
-## 통합 가설
+## Unified Hypothesis
 
 ```
-  이상탐지 AUROC 공식:
-    AUROC = f(학습목표, 장력유형)
+  Anomaly detection AUROC formula:
+    AUROC = f(learning_objective, tension_type)
 
-    학습=분류 + 내부장력:  AUROC ≈ 1.0  (최고)
-    학습=분류 + 간장력:    AUROC ≈ ?    (미측정!)
-    학습=재구성 + 내부장력: AUROC ≈ 0.16 (최저)
-    학습=재구성 + 간장력:   AUROC ≈ 0.81
+    Learning=classification + internal tension:  AUROC ≈ 1.0  (best)
+    Learning=classification + inter-tension:    AUROC ≈ ?    (unmeasured!)
+    Learning=reconstruction + internal tension: AUROC ≈ 0.16 (worst)
+    Learning=reconstruction + inter-tension:   AUROC ≈ 0.81
 
-  빠진 칸: 분류 학습 + 간 장력 → AUROC = ?
-  예측: > 1.0은 불가능 → 1.0에 근접하거나 동일
-  하지만: 실제 데이터에서는 분류 내부가 0.95, 간 장력이 더 높을 수 있음
+  Missing cell: classification training + inter-tension -> AUROC = ?
+  Prediction: > 1.0 is impossible -> close to or equal to 1.0
+  But: in real data, classification internal might be 0.95, inter-tension might be higher
 ```
 
-## 실험 설계
+## Experimental Design
 
 ```
-  2×2 실험:
-    학습 목표: {분류(CE), 재구성(MSE)}
-    장력 유형: {내부(engine_a vs engine_g), 간(child_a vs child_b)}
+  2×2 experiment:
+    Learning objective: {classification(CE), reconstruction(MSE)}
+    Tension type: {internal(engine_a vs engine_g), inter(child_a vs child_b)}
 
-  데이터: Breast Cancer
-    분류: 정상/이상 레이블 사용 (semi-supervised)
-    재구성: 정상만으로 autoencoder 학습
+  Data: Breast Cancer
+    Classification: use normal/anomaly labels (semi-supervised)
+    Reconstruction: autoencoder trained on normal only
 
-  측정:
-    4가지 조합의 AUROC
-    → 어떤 조합이 최적인가?
-    → 분류+간 장력이 추가 이점을 주는가?
+  Measurement:
+    AUROC for 4 combinations
+    -> Which combination is optimal?
+    -> Does classification + inter-tension give additional benefit?
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  2×2 AUROC 매트릭스 (Breast Cancer, 5 trials):
+  2×2 AUROC matrix (Breast Cancer, 5 trials):
 
-                    내부 장력        간 장력
-  ──────────────   ──────────      ──────────
-  분류 (CE)        0.259 ±0.08    0.589 ±0.09
-  재구성 (MSE)     0.144 ±0.02    0.802 ±0.02  ← 최고!
+                    Internal tension   Inter-tension
+  ──────────────   ──────────         ──────────
+  Classification (CE)  0.259 ±0.08    0.589 ±0.09
+  Reconstruction (MSE) 0.144 ±0.02    0.802 ±0.02  <- Best!
 
-  순위: 재구성+간(0.80) >> 분류+간(0.59) >> 분류+내부(0.26) >> 재구성+내부(0.14)
+  Ranking: Reconstruction+Inter(0.80) >> Classification+Inter(0.59) >> Classification+Internal(0.26) >> Reconstruction+Internal(0.14)
 ```
 
-### 핵심 발견
+### Key Findings
 
 ```
-  1. 간 장력이 항상 내부보다 우수:
-     분류: 간(0.59) > 내부(0.26), 차이 +0.33
-     재구성: 간(0.80) > 내부(0.14), 차이 +0.66
-     → 분열(mitosis)이 이상탐지의 핵심 메커니즘
+  1. Inter-tension always superior to internal:
+     Classification: inter(0.59) > internal(0.26), difference +0.33
+     Reconstruction: inter(0.80) > internal(0.14), difference +0.66
+     -> Mitosis is the core mechanism of anomaly detection
 
-  2. 재구성+간이 최고:
-     → 정상만 학습(unsupervised) + 분열 = 최적 이상탐지
-     → 레이블 불필요!
+  2. Reconstruction+Inter is best:
+     -> Unsupervised (reconstruction) + mitosis (inter-tension) = optimal anomaly detection
+     -> No labels needed!
 
-  3. 분류+내부가 H287(1.0)보다 낮은(0.26) 이유:
-     → H287은 합성 데이터(깔끔한 분리)
-     → Breast Cancer는 실제 데이터(경계 모호)
-     → 또는: H287은 RepulsionFieldQuad(4극), 여기는 2극
+  3. Why classification+internal is lower (0.26) than H287 (1.0):
+     -> H287 uses synthetic data (clean separation)
+     -> Breast Cancer is real data (ambiguous boundaries)
+     -> Or: H287 uses RepulsionFieldQuad (4-pole), here is 2-pole
 
-  4. 교호작용:
-     분류에서의 간-내부 차이: +0.33
-     재구성에서의 간-내부 차이: +0.66
-     → 재구성에서 분열 효과가 2x 더 큼
+  4. Interaction effects:
+     Inter-internal difference in classification: +0.33
+     Inter-internal difference in reconstruction: +0.66
+     -> Mitosis effect is 2x larger in reconstruction
 ```
 
-### ASCII 막대그래프
+### ASCII Bar Chart
 
 ```
   A) Cls+Internal   |#####.                                    | 0.259
@@ -120,4 +120,4 @@
   D) Rec+Inter      |######################################### | 0.802
 ```
 
-## 상태: 🟩 확인 (2×2 매트릭스 완성, 재구성+간장력=최적)
+## Status: 🟩 Confirmed (2×2 matrix complete, reconstruction+inter-tension=optimal)

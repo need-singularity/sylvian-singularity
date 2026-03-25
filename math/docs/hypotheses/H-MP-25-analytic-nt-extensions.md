@@ -1,41 +1,42 @@
 ---
 id: H-MP-10
-title: "R-스펙트럼의 해석적 정수론 확장"
-domain: 해석적 정수론 (Analytic Number Theory)
-status: 수치 검증 완료
+title: "Analytic Number Theory Extensions of R-Spectrum"
+domain: Analytic Number Theory
+status: Numerical verification completed
 created: 2026-03-24
 depends_on: [H-MP-1, H-MP-3]
 golden_zone: false
 ---
 
-# H-MP-10: R(n)=σ(n)φ(n)/(nτ(n))의 해석적 정수론 확장
+# H-MP-10: Analytic Number Theory Extensions of R(n)=σ(n)φ(n)/(nτ(n))
 
-> **가설**: R(n)=σ(n)φ(n)/(nτ(n))은 완전 곱셈적(multiplicative) 함수이며,
-> Dirichlet 급수 Σ R(n)/n^s는 오일러 곱으로 분해된다.
-> R-스펙트럼 {R(n) : n≥1} ∩ [0,5)는 정확히 24개의 이산값으로 구성되며,
-> box-counting 차원 d_box ≈ 0.574를 가진다.
-> R(n) mod 1의 분포는 [0.4, 0.5) 구간에 강한 클러스터링을 보인다.
+> **Hypothesis**: R(n)=σ(n)φ(n)/(nτ(n)) is a completely multiplicative function,
+> and the Dirichlet series Σ R(n)/n^s has an Euler product decomposition.
+> The R-spectrum {R(n) : n≥1} ∩ [0,5) consists of exactly 24 discrete values,
+> with box-counting dimension d_box ≈ 0.574.
+> The distribution of R(n) mod 1 shows strong clustering in the interval [0.4, 0.5).
 
-## 배경 및 맥락
+## Background and Context
 
-σφ=nτ 프로젝트의 핵심 비율 함수 R(n) = σ(n)φ(n)/(nτ(n))에 대해
-R(6) = 12·2/(6·4) = 1이 유일하게 성립한다 (H-MP-1).
-R-스펙트럼의 구조를 해석적 정수론의 도구(Dirichlet 급수, 오일러 곱,
-평균값 정리, 등분포 정리)로 분석하여 더 깊은 구조를 탐색한다.
+For the core ratio function R(n) = σ(n)φ(n)/(nτ(n)) of the σφ=nτ project,
+R(6) = 12·2/(6·4) = 1 holds uniquely (H-MP-1).
+We analyze the structure of the R-spectrum using tools from analytic number theory
+(Dirichlet series, Euler products, mean value theorems, equidistribution theorems)
+to explore deeper structures.
 
-관련 가설:
-- H-MP-1: σφ=nτ의 유일해 n=1,6
-- H-MP-3: R-스펙트럼 구조
-- H-MP-5: F(2,N) ~ (1/2)ln(ln N) 추측
+Related hypotheses:
+- H-MP-1: Unique solutions n=1,6 to σφ=nτ
+- H-MP-3: R-spectrum structure
+- H-MP-5: F(2,N) ~ (1/2)ln(ln N) conjecture
 
-## 1. R-스펙트럼의 Box-Counting 차원
+## 1. Box-Counting Dimension of R-Spectrum
 
-### 관찰: [0,5) 구간에 정확히 24개의 이산값
+### Observation: Exactly 24 discrete values in [0,5)
 
-N=100부터 N=50,000까지 검사해도 R(n) < 5를 만족하는
-서로 다른 R값은 **정확히 24개**로 고정된다.
+Testing from N=100 to N=50,000, the distinct R-values satisfying R(n) < 5
+remain fixed at **exactly 24**.
 
-| 순위 | R값 | 최초 n | 순위 | R값 | 최초 n |
+| Rank | R-value | First n | Rank | R-value | First n |
 |---:|------:|---:|---:|------:|---:|
 | 1 | 0.7500 | 2 | 13 | 2.8889 | 9 |
 | 2 | 1.0000 | 1 | 14 | 3.1000 | 16 |
@@ -50,10 +51,10 @@ N=100부터 N=50,000까지 검사해도 R(n) < 5를 만족하는
 | 11 | 2.5714 | 14 | 23 | 4.5714 | 21 |
 | 12 | 2.8000 | 20 | 24 | 4.8462 | 26 |
 
-이는 R(p) = (p²-1)/(2p)가 소수 p에 대해 단조 증가하므로,
-p ≥ 11이면 R(p) > 5가 되어 새 값이 추가되지 않기 때문이다.
+This is because R(p) = (p²-1)/(2p) is monotonically increasing for primes p,
+so for p ≥ 11, R(p) > 5 and no new values are added.
 
-### Box-counting 차원 계산
+### Box-counting dimension calculation
 
 | ε | N_box | ln(1/ε) | ln(N_box) |
 |----:|------:|--------:|----------:|
@@ -64,7 +65,7 @@ p ≥ 11이면 R(p) > 5가 되어 새 값이 추가되지 않기 때문이다.
 | 0.100 | 20 | 2.3026 | 2.9957 |
 | 0.050 | 24 | 2.9957 | 3.1781 |
 
-선형 회귀 기울기: **d_box = 0.574**
+Linear regression slope: **d_box = 0.574**
 
 ```
   ln(N_box)
@@ -80,25 +81,25 @@ p ≥ 11이면 R(p) > 5가 되어 새 값이 추가되지 않기 때문이다.
       +--+----+----+----+----+----+-----> ln(1/ε)
      -0.7  0   0.7  1.4  2.0  2.7  3.0
 
-  기울기 ≈ 0.574 (box-counting 차원)
-  비교: ln(2)/ln(3) = 0.631 (Cantor 집합)
+  Slope ≈ 0.574 (box-counting dimension)
+  Compare: ln(2)/ln(3) = 0.631 (Cantor set)
 ```
 
-d_box ≈ 0.574는 표준 Cantor 집합의 ln2/ln3 ≈ 0.631보다 약간 작다.
-이는 24개 유한 점 집합이므로 진정한 프랙탈은 아니지만,
-gap 구조가 Cantor-유사 패턴을 보인다.
+d_box ≈ 0.574 is slightly smaller than ln2/ln3 ≈ 0.631 of the standard Cantor set.
+Since this is a finite set of 24 points, it's not a true fractal,
+but the gap structure shows Cantor-like patterns.
 
-## 2. R(n)의 곱셈적 성질과 Dirichlet 급수
+## 2. Multiplicative Property and Dirichlet Series of R(n)
 
-### 핵심 발견: R(n)은 완전 곱셈적(multiplicative) 함수
+### Key Discovery: R(n) is a completely multiplicative function
 
-gcd(m,n)=1인 모든 쌍 (m,n)에 대해 R(mn) = R(m)·R(n) 검증:
-- 테스트: 2 ≤ m,n ≤ 49, 서로소인 1410개 쌍
-- **실패: 0건** — R(n)은 곱셈적 함수이다
+Verified R(mn) = R(m)·R(n) for all pairs (m,n) with gcd(m,n)=1:
+- Test: 2 ≤ m,n ≤ 49, 1410 coprime pairs
+- **Failures: 0** — R(n) is multiplicative
 
-이는 σ, φ, τ가 모두 곱셈적이고, n 자체도 곱셈적이므로 자연스럽다.
+This is natural since σ, φ, τ are all multiplicative, and n itself is multiplicative.
 
-### 소수에서의 R(p) 공식
+### R(p) formula for primes
 
 R(p) = σ(p)φ(p)/(pτ(p)) = (p+1)(p-1)/(2p) = **(p²-1)/(2p)**
 
@@ -112,26 +113,26 @@ R(p) = σ(p)φ(p)/(pτ(p)) = (p+1)(p-1)/(2p) = **(p²-1)/(2p)**
 | 13 | 6.4615 | 6.4615 |
 | 29 | 14.4828 | 14.4828 |
 
-### Dirichlet 급수와 오일러 곱
+### Dirichlet Series and Euler Product
 
-R(n)이 곱셈적이므로 Dirichlet 급수는 오일러 곱을 가진다:
+Since R(n) is multiplicative, the Dirichlet series has an Euler product:
 
 ```
   D(s) = Σ R(n)/n^s = Π_p (1 + R(p)/p^s + R(p²)/p^{2s} + ...)
 ```
 
-| s | 오일러 곱 (25개 소수) | 직접 합 (N=5000) | 수렴 비율 |
+| s | Euler Product (25 primes) | Direct Sum (N=5000) | Convergence Ratio |
 |----:|-------------------:|-----------------:|----------:|
 | 2.0 | 2.5838 | 3.0259 | 0.854 |
 | 2.5 | 1.4913 | 1.5109 | 0.987 |
 | 3.0 | 1.2296 | 1.2307 | 0.999 |
 
-s=2에서 수렴이 느린 것은 R(p) ~ p/2이므로
-Σ R(p)/p^s ~ Σ 1/(2p^{s-1})이 s=2에서 조건부 수렴하기 때문이다.
+Slow convergence at s=2 is because R(p) ~ p/2, so
+Σ R(p)/p^s ~ Σ 1/(2p^{s-1}) converges conditionally at s=2.
 
-**수렴 조건**: D(s)는 **s > 2에서 절대 수렴**한다 (R(p) ~ p/2이므로).
+**Convergence condition**: D(s) **absolutely converges for s > 2** (since R(p) ~ p/2).
 
-### ζ 함수와의 관계
+### Relation to ζ-function
 
 | s | D(s) | ζ(s)²/ζ(2s) | D(s) / [ζ(s)²/ζ(2s)] |
 |----:|------:|------------:|---------------------:|
@@ -139,12 +140,13 @@ s=2에서 수렴이 느린 것은 R(p) ~ p/2이므로
 | 2.5 | 1.511 | 1.736 | 0.871 |
 | 3.0 | 1.231 | 1.420 | 0.867 |
 
-D(s) ≠ ζ(s)²/ζ(2s)이지만, s→∞에서 비율이 안정화된다.
-정확한 닫힌 형식은 τ(n)의 역수 때문에 표준 ζ-곱으로 표현하기 어렵다.
+D(s) ≠ ζ(s)²/ζ(2s), but the ratio stabilizes as s→∞.
+The exact closed form is difficult to express as a standard ζ-product
+due to the reciprocal of τ(n).
 
-## 3. R(n)의 평균값 점근식
+## 3. Asymptotic Mean Value of R(n)
 
-### 수치 데이터
+### Numerical Data
 
 | N | (1/N)Σ R(n) | N/ln(N) | mean / (N/ln N) |
 |------:|------------:|--------:|----------------:|
@@ -155,17 +157,17 @@ D(s) ≠ ζ(s)²/ζ(2s)이지만, s→∞에서 비율이 안정화된다.
 | 5,000 | 434.45 | 587.05 | 0.740 |
 | 10,000 | 835.63 | 1085.74 | 0.770 |
 
-### 점근 피팅
+### Asymptotic Fitting
 
-최적 피팅 결과:
+Optimal fitting result:
 
 ```
   (1/N) Σ_{n≤N} R(n) ≈ 0.2476 · N · (ln N)^{-0.488}
 ```
 
-적합도 검증:
+Goodness of fit:
 
-| N | 실제값 | 피팅값 | 비율 |
+| N | Actual | Fitted | Ratio |
 |------:|-------:|-------:|------:|
 | 100 | 11.71 | 11.75 | 0.997 |
 | 500 | 50.97 | 50.74 | 1.005 |
@@ -174,10 +176,10 @@ D(s) ≠ ζ(s)²/ζ(2s)이지만, s→∞에서 비율이 안정화된다.
 | 5,000 | 434.45 | 435.07 | 0.999 |
 | 10,000 | 835.63 | 837.54 | 0.998 |
 
-오차 < 0.5%의 탁월한 피팅. 이론적 근거:
-- R(p) = (p²-1)/(2p) ~ p/2이므로 소수 기여가 지배적
-- 소수 정리에 의해 Σ_{p≤N} p/2 ~ N²/(4 ln N)
-- 따라서 Σ_{n≤N} R(n) ~ c · N² · (ln N)^{-β} (β ≈ 0.488)
+Excellent fit with error < 0.5%. Theoretical basis:
+- R(p) = (p²-1)/(2p) ~ p/2, so prime contributions dominate
+- By prime number theorem, Σ_{p≤N} p/2 ~ N²/(4 ln N)
+- Therefore Σ_{n≤N} R(n) ~ c · N² · (ln N)^{-β} (β ≈ 0.488)
 
 ```
   mean R(n)
@@ -193,75 +195,78 @@ D(s) ≠ ζ(s)²/ζ(2s)이지만, s→∞에서 비율이 안정화된다.
       +--+----+----+----+----+----+-----> N
         100  500  1K   2K   5K   10K
 
-  성장: ~ 0.25 · N · (lnN)^{-0.49}
-  거의 선형이지만 ln 보정으로 약간 감속
+  Growth: ~ 0.25 · N · (lnN)^{-0.49}
+  Nearly linear but slightly decelerated by ln correction
 ```
 
-## 4. R(n) mod 1의 분포: 등분포가 아닌 클러스터링
+## 4. Distribution of R(n) mod 1: Clustering, Not Equidistribution
 
-### 히스토그램 (N=10,000)
+### Histogram (N=10,000)
 
 ```
   [0.0,0.1) |############                            | 724
   [0.1,0.2) |#################                       | 979
   [0.2,0.3) |#############                           | 745
   [0.3,0.4) |###################                     | 1114
-  [0.4,0.5) |########################################| 2240  ← 피크!
+  [0.4,0.5) |########################################| 2240  ← Peak!
   [0.5,0.6) |################                        | 903
   [0.6,0.7) |##################                      | 1044
   [0.7,0.8) |##############                          | 799
   [0.8,0.9) |###############                         | 864
   [0.9,1.0) |##########                              | 588
              ----------------------------------------
-             균일 기대값: 각 1000
+             Uniform expectation: 1000 each
 ```
 
-### 통계 검정
+### Statistical Tests
 
-| 검정 | 통계량 | 임계값 (5%) | 결론 |
+| Test | Statistic | Critical Value (5%) | Conclusion |
 |------|-------:|----------:|------|
-| χ² (df=9) | 1932.22 | 16.92 | **균일 기각** |
-| KS | 0.0828 | 0.0136 | **균일 기각** |
+| χ² (df=9) | 1932.22 | 16.92 | **Reject uniformity** |
+| KS | 0.0828 | 0.0136 | **Reject uniformity** |
 
-[0.4, 0.5) 구간에 기대값의 **2.24배** 집중. 이는 R(n)의 유리수 구조에 기인한다:
-- R(n)은 항상 유리수 (σ, φ, τ, n 모두 정수)
-- R(2^k)의 소수부가 0.5 근처에 집중 (0.75, 0.167, 0.875, 0.1, 0.25, ...)
-- 소수 p에서 R(p) = (p²-1)/(2p)의 소수부는 1/(2p)에 의해 결정
+The interval [0.4, 0.5) has **2.24 times** the expected concentration.
+This is due to the rational structure of R(n):
+- R(n) is always rational (σ, φ, τ, n are all integers)
+- Fractional parts of R(2^k) cluster near 0.5 (0.75, 0.167, 0.875, 0.1, 0.25, ...)
+- For primes p, the fractional part of R(p) = (p²-1)/(2p) is determined by 1/(2p)
 
-## 해석
+## Interpretation
 
-1. **곱셈적 구조**: R(n)이 곱셈적이라는 것은 R의 행동이 소수 멱에서의 값으로
-   완전히 결정됨을 의미한다. 이는 Dirichlet 급수에 오일러 곱을 부여한다.
+1. **Multiplicative structure**: R(n) being multiplicative means R's behavior is
+   completely determined by its values at prime powers. This gives the Dirichlet
+   series an Euler product.
 
-2. **유한 스펙트럼**: [0,5) 구간의 정확히 24개 값은 R(p) 증가의 직접적 결과이다.
-   p=11부터 R(p)>5이므로, R(n)<5인 n은 {2,3,5,7}의 멱의 곱으로 제한된다.
-   24 = #{smooth numbers의 R값 < 5}.
+2. **Finite spectrum**: The exactly 24 values in [0,5) are a direct result of
+   R(p) increasing. Since R(p)>5 for p=11 onward, n with R(n)<5 is restricted
+   to products of powers of {2,3,5,7}. 24 = #{R-values < 5 of smooth numbers}.
 
-3. **평균값 점근식**: (1/N)Σ R(n) ~ 0.25N(lnN)^{-0.49}는
-   전형적인 곱셈적 함수의 평균값 정리와 일치한다.
-   정확한 지수 -0.488은 소수 기여의 누적 효과를 반영한다.
+3. **Mean value asymptotics**: (1/N)Σ R(n) ~ 0.25N(lnN)^{-0.49} is consistent
+   with typical mean value theorems for multiplicative functions.
+   The precise exponent -0.488 reflects the cumulative effect of prime contributions.
 
-4. **비등분포**: R(n) mod 1이 [0.4,0.5)에 집중하는 것은
-   R(n)의 유리수 구조(분모가 2p, 2p(k+1) 등의 형태)에서 기인한다.
+4. **Non-equidistribution**: The concentration of R(n) mod 1 in [0.4,0.5) arises
+   from the rational structure of R(n) (denominators of the form 2p, 2p(k+1), etc.).
 
-## 한계
+## Limitations
 
-- d_box ≈ 0.574는 유한 점 집합의 box-counting이므로 엄밀한 프랙탈 차원이 아니다.
-  R-스펙트럼 전체(제한 없음)는 Q에서 조밀하므로 차원 1이다.
-- 평균값 점근식의 지수 -0.488은 경험적 피팅이며 해석적 증명이 없다.
-- D(s)의 닫힌 형식 표현은 1/τ(n) 인자 때문에 알려진 L-함수로
-  직접 표현하기 어렵다. Ramanujan의 τ 연구와 관련 가능성 있음.
-- N=10,000까지의 수치 검증이므로, 더 큰 N에서 점근 행동이 변할 수 있다.
+- d_box ≈ 0.574 is box-counting for a finite point set, not a rigorous fractal dimension.
+  The full R-spectrum (unrestricted) is dense in Q, so has dimension 1.
+- The exponent -0.488 in the mean value asymptotics is empirical fitting without
+  analytic proof.
+- A closed form expression for D(s) is difficult to express directly in terms of
+  known L-functions due to the 1/τ(n) factor. Possible relation to Ramanujan's τ research.
+- Numerical verification up to N=10,000, so asymptotic behavior might change for larger N.
 
-## 다음 단계
+## Next Steps
 
-1. **해석적 증명**: 평균값 정리의 정확한 점근식을
-   Selberg-Delange 방법으로 유도 시도
-2. **D(s)의 해석적 접속**: s > 2에서 수렴하는 D(s)가
-   s=1 또는 s=2 근방에서 어떤 특이점을 가지는지 연구
-3. **7-smooth numbers**: [0,5)의 24개 값이 7-smooth number
-   (소인수 ≤ 7)의 R값에 대응하는지 엄밀히 증명
-4. **mod 1 클러스터링의 해석적 설명**: Erdős–Kac 정리 유사체로
-   R(n) mod 1의 분포를 설명할 수 있는지 탐구
-5. **F(2,N) 추측과의 연결**: R(n)=1인 n의 밀도와
-   Dirichlet 급수 D(s)의 s→1 행동 사이의 관계 규명
+1. **Analytic proof**: Attempt to derive the exact asymptotic formula of the
+   mean value theorem using the Selberg-Delange method
+2. **Analytic continuation of D(s)**: Study what singularities D(s), which
+   converges for s > 2, has near s=1 or s=2
+3. **7-smooth numbers**: Rigorously prove that the 24 values in [0,5)
+   correspond to R-values of 7-smooth numbers (prime factors ≤ 7)
+4. **Analytic explanation of mod 1 clustering**: Explore whether an analogue
+   of the Erdős–Kac theorem can explain the distribution of R(n) mod 1
+5. **Connection to F(2,N) conjecture**: Clarify the relationship between the
+   density of n with R(n)=1 and the behavior of Dirichlet series D(s) as s→1

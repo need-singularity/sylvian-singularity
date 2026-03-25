@@ -1,43 +1,43 @@
-# 가설 283: 장력 효과의 비선형 임계점
+# Hypothesis 283: Nonlinear Threshold of Tension Effect
 
-> **장력 인과 효과와 기저 정확도의 관계는 비선형이다. MNIST(-9.25pp)와 CIFAR(-0.53pp) 사이에 급격한 전환점이 존재하며, 이 임계점은 ~70% 부근으로 추정된다.**
+> **The relationship between tension causal effect and baseline accuracy is nonlinear. There exists a sharp transition point between MNIST(-9.25pp) and CIFAR(-0.53pp), and this threshold is estimated to be around ~70%.**
 
-## 실측
+## Measurements
 
 ```
-  기저 정확도 vs 인과 효과:
-    98% → -9.25pp (거대)
-    53% → -0.53pp (미미)
+  Baseline accuracy vs causal effect:
+    98% → -9.25pp (huge)
+    53% → -0.53pp (minimal)
 
-  선형 예측: 53% 기저 시 -9.25 * (53/98) ≈ -5.0pp
-  실측: -0.53pp → 선형의 1/10
+  Linear prediction: 53% baseline → -9.25 * (53/98) ≈ -5.0pp
+  Actual: -0.53pp → 1/10 of linear
 
-  → 비선형! 어딘가에 "절벽"이 있다
-  → 임계점 추정: CNN CIFAR 78%에서 검증 (C56 실험)
+  → Nonlinear! There's a "cliff" somewhere
+  → Threshold estimate: Verify with CNN CIFAR 78% (C56 experiment)
 ```
 
-## tension_scale도 비선형
+## tension_scale is also nonlinear
 
 ```
   MNIST: 0.4683
   CIFAR: 0.0389
-  비율: 0.083x (12배 차이)
-  정확도 비율: 0.54x (1.8배 차이)
+  Ratio: 0.083x (12x difference)
+  Accuracy ratio: 0.54x (1.8x difference)
 
-  → scale 감소(12x) >> 정확도 감소(1.8x)
-  → 모델이 "장력이 도움 안 되면" 자발적으로 끔
+  → scale decrease(12x) >> accuracy decrease(1.8x)
+  → Model voluntarily "turns off" when "tension doesn't help"
 ```
 
-## 검증: 3번째 점이 핵심
+## Verification: 3rd point is key
 
 ```
   CNN CIFAR (78%):
-    예측 A (선형): -9.25 * (78/98) = -7.36pp
-    예측 B (비선형, 임계 ~70%): -5~-8pp
-    예측 C (비선형, 임계 ~80%): -1~-3pp
+    Prediction A (linear): -9.25 * (78/98) = -7.36pp
+    Prediction B (nonlinear, threshold ~70%): -5~-8pp
+    Prediction C (nonlinear, threshold ~80%): -1~-3pp
 
-  → CNN CIFAR 인과 효과가 이 중 어디에 해당하는지로 전환점 특정
-  → 윈도우 experiment_cnn_tension_d.py에서 측정 예정
+  → Determine transition point based on which CNN CIFAR causal effect matches
+  → To be measured in Windows experiment_cnn_tension_d.py
 ```
 
-## 상태: 🟨 (2점 관측, 3번째 점 필요)
+## Status: 🟨 (2 points observed, 3rd point needed)

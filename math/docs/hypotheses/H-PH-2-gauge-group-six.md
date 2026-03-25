@@ -1,14 +1,14 @@
-# H-PH-2: SU(3)×SU(2)×U(1) 차원합 = 6 = σφ=nτ 해
+# H-PH-2: SU(3)×SU(2)×U(1) Dimension Sum = 6 = σφ=nτ Solution
 
-> **가설**: 표준모형 게이지 군의 차원 3+2+1=6이 σφ=nτ의 유일해와 연결된다.
+> **Hypothesis**: The dimension 3+2+1=6 of the Standard Model gauge group is connected to the unique solution of σφ=nτ.
 
-## 배경
-- SU(3): 강력, 차원 3 = σ/τ
-- SU(2): 약력, 차원 2 = φ
-- U(1): 전자기력, 차원 1
-- 합: 6 = P₁ = σφ=nτ의 유일해
+## Background
+- SU(3): Strong force, dimension 3 = σ/τ
+- SU(2): Weak force, dimension 2 = φ
+- U(1): Electromagnetic force, dimension 1
+- Sum: 6 = P₁ = unique solution of σφ=nτ
 
-## 현실적 평가
-극도로 투기적. 게이지 군 선택은 실험으로 결정되며, 산술적 이유로 선택되지 않음.
+## Realistic Assessment
+Extremely speculative. The choice of gauge groups is determined by experiment, not selected for arithmetic reasons.
 
-## 난이도: 극고 | 파급력: ★★
+## Difficulty: Extreme | Impact: ★★

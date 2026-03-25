@@ -1,7 +1,8 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-94~97 통합: meta-PH + 일반화 갭 + 가중치 전이 + 교차 데이터셋
+"""H-CX-94~97 Integration: meta-PH + generalization gap + weight transfer + cross dataset
 
-8라운드: 혼동 구조의 활용과 메커니즘
+Round 8: Utilization and mechanisms of confusion structures
 """
 import sys, copy
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -287,8 +288,9 @@ if __name__ == '__main__':
             import traceback; traceback.print_exc()
 
     print(f"\n{'='*70}")
-    print(f"  8라운드 SUMMARY")
+    print(f"  Round 8 SUMMARY")
     print(f"{'='*70}")
     for ds, r in results.items():
         print(f"  {ds}: meta_tau={r['meta_tau']:.3f}, r_gap={r['r_gap']:.3f}, "
               f"dw_ratio={r['dw_ratio']:.1f}x, slow_delay=ep{r['slow_delay']}")
+```

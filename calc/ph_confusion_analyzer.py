@@ -1,16 +1,17 @@
+```python
 #!/usr/bin/env python3
-"""PH 혼동 분석기 — Persistent Homology로 혼동 구조 분석
+"""PH Confusion Analyzer — Analyzing Confusion Structure with Persistent Homology
 
-이 세션의 핵심 대발견들을 한 번에 수행:
-  - H-CX-66: PH merge 순서 vs 혼동 빈도 (r=-0.97)
-  - H-CX-82: 에폭1 완벽 예측 (P@5=1.0)
-  - H-CX-85: dendrogram = 의미 계층 (89% purity)
-  - H-CX-88: 아키텍처 불변 (top-5 100%)
-  - H-CX-90: 에폭1 위상 전이 (30x)
-  - H-CX-91: k-NN = 신경망 혼동 (r=0.94)
-  - H-CX-93: confusion PCA = 의미 축
+Performs key major discoveries from this session all at once:
+  - H-CX-66: PH merge order vs confusion frequency (r=-0.97)
+  - H-CX-82: Epoch 1 perfect prediction (P@5=1.0)
+  - H-CX-85: dendrogram = semantic hierarchy (89% purity)
+  - H-CX-88: Architecture invariant (top-5 100%)
+  - H-CX-90: Epoch 1 phase transition (30x)
+  - H-CX-91: k-NN = neural network confusion (r=0.94)
+  - H-CX-93: confusion PCA = semantic axis
 
-사용법:
+Usage:
   python3 calc/ph_confusion_analyzer.py --dataset mnist
   python3 calc/ph_confusion_analyzer.py --dataset cifar --epochs 15
   python3 calc/ph_confusion_analyzer.py --dataset fashion --full
@@ -270,3 +271,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

@@ -1,15 +1,15 @@
-# H-MP-10: Σ σ(n)φ(n)/(nτ(n)) 점근 공식
+# H-MP-10: Σ σ(n)φ(n)/(nτ(n)) Asymptotic Formula
 
-> **가설**: S(x) = Σ_{n≤x} σ(n)φ(n)/(nτ(n))의 점근 행동이 cx² + O(x log x) 형태이며, 상수 c가 깔끔한 Euler 곱으로 표현된다.
+> **Hypothesis**: The asymptotic behavior of S(x) = Σ_{n≤x} σ(n)φ(n)/(nτ(n)) takes the form cx² + O(x log x), and the constant c is expressed as a neat Euler product.
 
-## 배경
-- H-NEW 실험: 평균값 ~N/12에 비례하는 것으로 관측 (실제로는 ~N에 비례?)
-- σφ/(nτ)는 곱셈적 → Euler 곱 표현 가능
-- Dirichlet 급수 F(s)의 해석적 성질에서 점근 유도
+## Background
+- H-NEW experiment: Observed to be proportional to mean value ~N/12 (actually proportional to ~N?)
+- σφ/(nτ) is multiplicative → Can be expressed as Euler product
+- Derive asymptotics from analytic properties of Dirichlet series F(s)
 
-## 검증 방향
-1. [ ] S(10^k)/x² for k=2..6 계산 → 상수 c 추정
-2. [ ] Euler 곱: Π_p [1 + Σ_{a≥1} f(p,a)/p^a] 수치 계산
-3. [ ] Tauberian 정리 적용 가능성
+## Verification Direction
+1. [ ] Calculate S(10^k)/x² for k=2..6 → Estimate constant c
+2. [ ] Euler product: Numerical calculation of Π_p [1 + Σ_{a≥1} f(p,a)/p^a]
+3. [ ] Possibility of applying Tauberian theorem
 
-## 난이도: 고 | 파급력: ★★
+## Difficulty: High | Impact: ★★

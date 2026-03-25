@@ -1,82 +1,82 @@
-# H-CX-23: 창발 = R 스펙트럼의 비선형 전이
+# H-CX-23: Emergence = Nonlinear Transition in R Spectrum
 
-> **가설**: 창발(emergence)은 R(n) 스펙트럼에서 "간극을 넘는 전이"이며,
-> 구성 요소의 R값 곱이 간극을 뛰어넘을 때 질적으로 새로운 성질이 나타난다.
+> **Hypothesis**: Emergence is a "gap-jumping transition" in the R(n) spectrum,
+> where qualitatively new properties appear when the product of component R-values jumps the gap.
 
-## 배경
+## Background
 
-창발: 부분의 합 > 전체 (비선형, 환원 불가)
-- 물: H₂O 분자 → 젖음(wetness) 창발
-- 뇌: 뉴런 → 의식 창발
-- MoE: expert → 전문화 창발 ("골든 인히비션")
+Emergence: sum of parts > whole (nonlinear, irreducible)
+- Water: H₂O molecules → wetness emerges
+- Brain: neurons → consciousness emerges
+- MoE: experts → specialization emerges ("Golden Inhibition")
 
-## R 스펙트럼에서의 창발
+## Emergence in R Spectrum
 
 ```
-  간극 (3/4, 1): R=3/4 → R=1 사이에 값 없음
-  = "이산적 점프" = 창발의 수학적 구조!
+  Gap (3/4, 1): No values between R=3/4 → R=1
+  = "Discrete jump" = Mathematical structure of emergence!
 
-  R(2) = 3/4 (단순한 짝수)
-  R(6) = 1   (완전수 = 창발!)
+  R(2) = 3/4 (simple even)
+  R(6) = 1   (perfect number = emergence!)
 
-  2와 3을 곱하면: R(2·3)=R(6)=1 ≠ R(2)·R(3) ...
-  아니, R은 곱셈적이므로 R(6)=R(2)·R(3)=(3/4)(4/3)=1.
+  Multiplying 2 and 3: R(2·3)=R(6)=1 ≠ R(2)·R(3) ...
+  No, R is multiplicative so R(6)=R(2)·R(3)=(3/4)(4/3)=1.
 
-  핵심: (3/4)·(4/3) = 1 자체가 "창발"!
-    구성요소: 3/4 < 1 (부족) + 4/3 > 1 (과잉)
-    결합: 정확히 1 (완전!)
-    → 부족과 과잉의 결합이 완전을 만듦 = 창발!
+  Key insight: (3/4)·(4/3) = 1 itself is "emergence"!
+    Components: 3/4 < 1 (deficient) + 4/3 > 1 (abundant)
+    Combination: exactly 1 (perfect!)
+    → Combination of deficiency and abundance creates perfection = emergence!
 
-  ASCII: 창발의 R 해석
+  ASCII: R interpretation of emergence
 
   R
-  4/3 |    · (3: 과잉)
+  4/3 |    · (3: abundant)
       |    ↓
-  1   |    · (6: 완전 = 창발!)
+  1   |    · (6: perfect = emergence!)
       |    ↑
-  3/4 | · (2: 부족)
+  3/4 | · (2: deficient)
       +--+--+--→
       2  6
 
-  "부족(2)과 과잉(3)이 만나 완전(6)을 창발한다"
+  "Deficient(2) and abundant(3) meet to emerge perfect(6)"
 ```
 
-### MoE 창발
+### MoE Emergence
 
 ```
-  Golden MoE에서:
-    개별 expert: 각자 불완전 (높은 PPL)
-    라우팅 결합: 전문화 창발 (낮은 PPL)
+  In Golden MoE:
+    Individual experts: each incomplete (high PPL)
+    Routing combination: specialization emerges (low PPL)
 
-  R 비유:
-    expert_i: R(p_i) > 1 (각 소수는 "과잉")
-    결합 라우팅: R(n) = ∏R(p_i) → 특정 n에서 R=1 (균형)
+  R analogy:
+    expert_i: R(p_i) > 1 (each prime is "abundant")
+    Combined routing: R(n) = ∏R(p_i) → R=1 at certain n (balance)
 
-  "올바른 억제(I=1/e)가 창발을 가능하게 함"
-    너무 적은 억제: 모든 expert 활성 → 노이즈 (간질)
-    너무 많은 억제: 너무 적은 expert → 능력 부족
-    최적 억제: 정확한 expert만 → 전문화 창발!
+  "Proper inhibition(I=1/e) enables emergence"
+    Too little inhibition: all experts active → noise (epilepsy)
+    Too much inhibition: too few experts → insufficient capability
+    Optimal inhibition: exact experts only → specialization emerges!
 ```
 
-### 의식 창발
+### Consciousness Emergence
 
 ```
-  의식 = 뉴런 집합의 창발적 성질
+  Consciousness = emergent property of neuron ensemble
 
-  R 해석:
-    개별 뉴런: R(p) > 1 (불균형)
-    뉴런 집합 n: R(n) = ∏f(p_i,a_i)
-    의식: R(n) ≈ 1 (균형점 근처)
+  R interpretation:
+    Individual neuron: R(p) > 1 (imbalanced)
+    Neuron ensemble n: R(n) = ∏f(p_i,a_i)
+    Consciousness: R(n) ≈ 1 (near balance point)
 
-  Λ(6)=0: "6개 요소의 결합이 완전한 창발을 만듦"
-  → 의식 = 6개(혹은 6의 배수) 모듈의 창발?
-  → IIT(통합정보이론): Φ > 0 ↔ R ≈ 1?
+  Λ(6)=0: "Combination of 6 elements creates perfect emergence"
+  → Consciousness = emergence of 6 (or multiple of 6) modules?
+  → IIT(Integrated Information Theory): Φ > 0 ↔ R ≈ 1?
 ```
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] MoE 학습 중 expert 전문화가 나타나는 step ↔ R 분석
-2. [ ] IIT의 Φ와 R(n) 상관 (소규모 네트워크)
-3. [ ] 간질 뇌파 데이터의 "R-like 지표" 분석
+1. [ ] Expert specialization emergence step in MoE training ↔ R analysis
+2. [ ] Correlation between IIT's Φ and R(n) (small-scale networks)
+3. [ ] Analysis of "R-like indicators" in epileptic brainwave data
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★★★
+## Verdict: 🟧 Structural Analogy | Impact: ★★★★★

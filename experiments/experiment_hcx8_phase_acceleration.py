@@ -1,18 +1,19 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-8: 위상가속 x3 = sigma/tau 실험
+"""H-CX-8: Phase Acceleration x3 = sigma/tau Experiment
 
-가설: sigma/tau 비율이 수렴 속도(위상가속)를 결정한다.
-  - sigma/tau = 3 (완전수 6의 평균 약수)인 설정이 가장 빠르게 수렴해야 한다.
-  - 이것이 Jamba x3 가속과 대응하는지 확인.
+Hypothesis: sigma/tau ratio determines convergence speed (phase acceleration).
+  - sigma/tau = 3 (mean divisor of perfect number 6) setting should converge fastest.
+  - Verify if this corresponds to Jamba x3 acceleration.
 
-실험 설계:
-  6가지 EngineA 설정 (n_experts, k):
+Experiment Design:
+  6 EngineA settings (n_experts, k):
     (6,2) → sigma/tau=3    (6,3) → sigma/tau=2
-    (8,2) → sigma/tau=4    (12,4) → sigma/tau=3 [원본]
+    (8,2) → sigma/tau=4    (12,4) → sigma/tau=3 [original]
     (12,6) → sigma/tau=2   (12,3) → sigma/tau=4
 
-  각 설정으로 RepulsionFieldEngine 변형을 만들어 MNIST 학습.
-  측정: 최종 정확도, 95% 도달 에폭, 장력.
+  Create RepulsionFieldEngine variants with each setting for MNIST training.
+  Measure: final accuracy, epochs to 95%, tension.
 """
 
 import sys, os
@@ -480,3 +481,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

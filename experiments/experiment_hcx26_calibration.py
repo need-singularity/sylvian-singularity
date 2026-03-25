@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""H-CX-26 검증: 장력 = 보정된 확률 (Calibration)
+"""H-CX-26 Verification: Tension = Calibrated Probability (Calibration)
 
-softmax 확률 vs tension 기반 확률의 calibration 비교.
-Expected Calibration Error (ECE) 측정 + Reliability diagram 출력.
+Calibration comparison of softmax probability vs tension-based probability.
+Expected Calibration Error (ECE) measurement + Reliability diagram output.
 
-MNIST + Fashion-MNIST 2셋에서 비교.
+Comparison on 2 datasets: MNIST + Fashion-MNIST.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -149,7 +149,7 @@ def ascii_calibration_plot(bin_data, title):
 def run_experiment(dataset_name, train_loader, test_loader, n_trials=3):
     """Run calibration experiment for one dataset."""
     print(f"\n{'='*60}")
-    print(f"  H-CX-26 검증: {dataset_name}")
+    print(f"  H-CX-26 Verification: {dataset_name}")
     print(f"{'='*60}")
 
     all_ece_softmax = []
@@ -239,7 +239,7 @@ if __name__ == '__main__':
         winner = 'TENSION' if r['ece_tension'] < r['ece_softmax'] else 'SOFTMAX'
         print(f"  {name:>12} {r['ece_softmax']:.4f}±{r['ece_softmax_std']:.4f} {r['ece_tension']:.4f}±{r['ece_tension_std']:.4f} {winner:>10}")
 
-    print(f"\n  해석:")
-    print(f"    ECE(tension) < ECE(softmax) → 장력이 더 잘 보정된 확률")
-    print(f"    ECE(tension) > ECE(softmax) → softmax가 더 잘 보정됨")
-    print(f"    H-CX-26 확인 조건: ECE(tension) < ECE(softmax) in 2+ datasets")
+    print(f"\n  Interpretation:")
+    print(f"    ECE(tension) < ECE(softmax) → Tension is better calibrated probability")
+    print(f"    ECE(tension) > ECE(softmax) → softmax is better calibrated")
+    print(f"    H-CX-26 confirmation condition: ECE(tension) < ECE(softmax) in 2+ datasets")

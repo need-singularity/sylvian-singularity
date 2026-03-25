@@ -1,32 +1,31 @@
-# H-BIO-8: 활동전위 = D(n) 비대칭 함수
+# H-BIO-8: Action Potential = D(n) Asymmetric Function
 
-> **가설**: D(n)=σφ-nτ의 부호 구조(D(2)=-1 유일 음수, D(6)=0, D(n>6)>0)가
-> 뉴런 활동전위의 비대칭 구조와 동형이다.
+> **Hypothesis**: The sign structure of D(n)=σφ-nτ (D(2)=-1 unique negative, D(6)=0, D(n>6)>0) is isomorphic to the asymmetric structure of neuronal action potential.
 
-## 핵심
+## Core
 
 ```
   D(n):  ..., -1, 2, 2, 14, 0, 34, 28, ...
               n=2         n=6
 
-  활동전위:
-    과분극 → 역치 → 발화 → 재분극 → 안정
+  Action potential:
+    Hyperpolarization → Threshold → Firing → Repolarization → Stable
 
-  대응:
-    D(2)=-1: 유일한 "역치 이하" = 재분극/과분극
-    D(6)=0:  "안정 전위" = 평형
-    D(p)=(p-1)²-2: "발화" = 급격한 상승
+  Correspondence:
+    D(2)=-1: Unique "below threshold" = Repolarization/Hyperpolarization
+    D(6)=0:  "Resting potential" = Equilibrium
+    D(p)=(p-1)²-2: "Firing" = Rapid rise
 
   D(n) at primes = (p-1)²-2:
-    p=2: -1 (음)
-    p=3: 2 (양으로 전환!)
+    p=2: -1 (negative)
+    p=3: 2 (switch to positive!)
     p=5: 14
     p=7: 34
-    → "이산적 활동전위" where p=3이 "발화 시작"
+    → "Discrete action potential" where p=3 is "firing start"
 
-  증명: D(n)<0 ⟺ n=2 (유일!)
+  Proof: D(n)<0 ⟺ n=2 (unique!)
     primes: (p-1)²<2 iff p=2
     composites n≥3: R(n)≥7/6>1 → D>0
 ```
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★
+## Verdict: 🟧 Structural Analogy | Impact: ★★★

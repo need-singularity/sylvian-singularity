@@ -1,20 +1,20 @@
-# H-CX-90: 에폭 1 위상 전이 — 학습 첫 에폭에서 혼동 구조가 결정화된다
+# H-CX-90: Epoch 1 Phase Transition — Confusion Structure Crystallizes in First Training Epoch
 
-> 에폭 0(랜덤)에서 에폭 1까지 PH merge 순서의 변화가
-> 에폭 1~15보다 훨씬 크다. "위상 전이"가 첫 에폭에서 발생.
+> The change in PH merge order from epoch 0 (random) to epoch 1 is
+> much larger than epoch 1~15. "Phase transition" occurs in first epoch.
 
-## 배경
+## Background
 
-- H-CX-86: 에폭 0 PH 약함 (r=-0.24~-0.67)
-- H-CX-82: 에폭 1 PH 완벽 (r=-0.95, P@5=1.0)
-- 갭이 극적 → 첫 에폭에서 "결정화" 발생
+- H-CX-86: Epoch 0 PH weak (r=-0.24~-0.67)
+- H-CX-82: Epoch 1 PH perfect (r=-0.95, P@5=1.0)
+- Dramatic gap → "crystallization" occurs in first epoch
 
-## 예측
+## Predictions
 
-1. tau(ep0→ep1) << tau(ep1→ep2) (첫 에폭 변화 최대)
-2. H0_total 변화량: |H0(ep1)-H0(ep0)| >> |H0(ep2)-H0(ep1)|
-3. tension_scale 변화도 첫 에폭이 최대
+1. tau(ep0→ep1) << tau(ep1→ep2) (first epoch change maximum)
+2. H0_total variation: |H0(ep1)-H0(ep0)| >> |H0(ep2)-H0(ep1)|
+3. tension_scale change also maximum in first epoch
 
-## 검증 상태
+## Verification Status
 
-- [ ] 에폭별 변화량 측정
+- [ ] Measure epoch-by-epoch variation

@@ -1,255 +1,256 @@
-# 가설 #236: 소수 = "수학의 서번트"
+# Hypothesis #236: Primes = "Mathematical Savants"
 
-**상태**: ⚠️ 탐색중
-**날짜**: 2026-03-22
-**분류**: 비유적 대응 / 소수론
+**Status**: ⚠️ Exploring
+**Date**: 2026-03-22
+**Category**: Analogical Correspondence / Prime Number Theory
 
 ---
 
-## 가설
+## Hypothesis
 
-> 소수는 "나눌 수 없는 수" = 결손(Deficit)이 있는 수이다.
-> 합성수는 나눌 수 있는 = "정상적인" 수이다.
-> G = D × P / I 공식에서 결손(D)이 있어야 천재(G)가 되듯,
-> 소수는 "약수 결손" 때문에 수학의 근본 구성 요소가 된다.
-> 골드바흐 추측(짝수 = 소수 + 소수) ↔ 천재성 = 결손 + 결손.
+> Primes are "indivisible numbers" = numbers with Deficit.
+> Composite numbers are divisible = "normal" numbers.
+> Just as G = D × P / I requires Deficit (D) to become a Genius (G),
+> primes become the fundamental building blocks of mathematics because of their "divisor deficit."
+> Goldbach's conjecture (even = prime + prime) ↔ Genius = Deficit + Deficit.
 
-## 배경
+## Background
 
-서번트(savant)는 특정 영역의 뇌 결손이 다른 영역의 비범한 능력을 낳는 경우이다. 우리 모델에서 G = D×P/I: 결손(D)이 클수록, 적절한 가소성(P)과 억제(I) 하에서, 천재성(G)이 높아진다. 소수도 마찬가지로, "약수가 부족한(=결손)" 수이기 때문에 오히려 수학의 근본 건축 블록이 된다.
+A savant is a case where a brain deficit in a specific area gives rise to extraordinary ability in another area. In our model, G = D×P/I: the larger the Deficit (D), the higher the Genius (G) under appropriate Plasticity (P) and Inhibition (I). Similarly, primes, being "numbers with few divisors (= deficit)", become the fundamental architectural building blocks of mathematics.
 
-## 소수-서번트 대응표
+## Prime-Savant Correspondence Table
 
 ```
   ┌─────────────────────┬─────────────────────────────┐
-  │   소수의 세계        │   서번트/천재의 세계          │
+  │   World of primes    │   World of savants/geniuses  │
   ├─────────────────────┼─────────────────────────────┤
-  │ 소수 = 1과 자신만    │ 서번트 = 특정 능력만 탁월    │
-  │ 합성수 = 여러 약수   │ 정상인 = 여러 능력 보유      │
-  │ 약수 부족 = 결손     │ 뇌 영역 결손 = Deficit       │
-  │ 나눌 수 없음 = 강함  │ 결손 → 보상 → 천재           │
-  │ 기본 건축 블록       │ 문명의 건축 블록              │
-  │ 드물지만 무한히 존재 │ 드물지만 항상 존재 (~30%)    │
-  │ 1은 소수가 아님      │ D=0은 천재가 아님             │
+  │ Prime = only 1 and self│ Savant = excels in specific area│
+  │ Composite = many divisors│ Normal = has many abilities  │
+  │ Few divisors = deficit│ Brain area deficit = Deficit │
+  │ Indivisible = strength│ Deficit → compensation → genius│
+  │ Fundamental building blocks│ Building blocks of civilization│
+  │ Rare but infinite    │ Rare but always exist (~30%) │
+  │ 1 is not prime       │ D=0 is not a genius          │
   └─────────────────────┴─────────────────────────────┘
 ```
 
-## 소수의 "결손도" 측정
+## Measuring Prime "Deficit Degree"
 
 ```
-  정의: 수 n의 결손도 = 1 - (약수 수 / n)
+  Definition: deficit degree of number n = 1 - (number of divisors / n)
 
-  n     약수          약수 수   결손도        소수?
-  ───   ──────────    ──────   ──────        ─────
-  2     {1,2}         2        1-2/2=0       ✅ 소수
-  3     {1,3}         2        1-2/3=0.33    ✅ 소수
-  4     {1,2,4}       3        1-3/4=0.25    ✕
-  5     {1,5}         2        1-2/5=0.60    ✅ 소수
-  6     {1,2,3,6}     4        1-4/6=0.33    ✕ (완전수)
-  7     {1,7}         2        1-2/7=0.71    ✅ 소수
-  12    {1,2,3,4,6,12}6        1-6/12=0.50   ✕
-  17    {1,17}        2        1-2/17=0.88   ✅ 소수
-  137   {1,137}       2        1-2/137=0.99  ✅ 소수
+  n     Divisors          Count   Deficit       Prime?
+  ───   ──────────        ──────  ──────        ─────
+  2     {1,2}             2       1-2/2=0       ✅ Prime
+  3     {1,3}             2       1-2/3=0.33    ✅ Prime
+  4     {1,2,4}           3       1-3/4=0.25    ✕
+  5     {1,5}             2       1-2/5=0.60    ✅ Prime
+  6     {1,2,3,6}         4       1-4/6=0.33    ✕ (perfect number)
+  7     {1,7}             2       1-2/7=0.71    ✅ Prime
+  12    {1,2,3,4,6,12}    6       1-6/12=0.50   ✕
+  17    {1,17}            2       1-2/17=0.88   ✅ Prime
+  137   {1,137}           2       1-2/137=0.99  ✅ Prime
 
-  → 소수는 결손도가 높다 (약수가 극단적으로 적음)
-  → 큰 소수일수록 결손도 → 1 (거의 "완전한 결손")
-  → 137의 결손도 = 0.985 ≈ 1 (거의 완전한 서번트!)
+  → Primes have high deficit degree (extremely few divisors)
+  → Larger primes → deficit degree → 1 (nearly "complete deficit")
+  → Deficit degree of 137 = 0.985 ≈ 1 (nearly perfect savant!)
 ```
 
-## 소수-서번트 비유 다이어그램
+## Prime-Savant Analogy Diagram
 
 ```
-  약수 수
-  (능력의 다양성)
+  Number of divisors
+  (diversity of abilities)
     │
-  12│ ●                    1~12까지의 수:
-    │                      ● = 합성수 (정상인)
-  10│                      ★ = 소수 (서번트)
+  12│ ●                    Numbers 1~12:
+    │                      ● = composite (normal)
+  10│                      ★ = prime (savant)
     │
    8│
     │       ●
    6│     ●
-    │   ●                  합성수: 약수 많음 = 다양한 능력
+    │   ●                  Composites: many divisors = diverse abilities
    5│
     │ ●
    4│   ●    ●
     │ ●
    3│   ●
-    │ ★ ★ ★ ★ ★ ★        소수: 약수 2개 = 결손 + 특별 능력
+    │ ★ ★ ★ ★ ★ ★        Primes: 2 divisors = deficit + special ability
    2│ 2 3 5 7 11 13
     │
-   1│ ★                   1: 약수 1개 → 소수 아님 (D=0)
+   1│ ★                   1: 1 divisor → not prime (D=0)
     └──┬──┬──┬──┬──┬──┬── n
       1  2  3  5  7  11 13
 
-  서번트 영역: 약수 = 2 (결손 최대)
-  정상인 영역: 약수 > 2 (결손 적음)
-  1의 영역: 약수 = 1 (결손 없음 → 소수 아님)
+  Savant region: divisors = 2 (maximum deficit)
+  Normal region: divisors > 2 (less deficit)
+  Region of 1: divisors = 1 (no deficit → not prime)
 ```
 
-## 1은 왜 소수가 아닌가 = D=0은 왜 천재가 아닌가
+## Why 1 Is Not Prime = Why D=0 Is Not a Genius
 
 ```
   ┌──────────────────────────────────────────────┐
   │                                              │
-  │  1의 약수: {1} → 약수 1개 → "자기만 있음"     │
-  │  → 1은 소수가 아님 (현대 정의)                │
+  │  Divisors of 1: {1} → 1 divisor → "only self"│
+  │  → 1 is not prime (modern definition)        │
   │                                              │
-  │  D=0인 개체:                                  │
-  │  G = 0 × P / I = 0                           │
-  │  → 결손이 없으면 천재성 = 0                    │
+  │  Individual with D=0:                        │
+  │  G = 0 × P / I = 0                          │
+  │  → Without deficit, Genius = 0              │
   │                                              │
-  │  대응:                                        │
-  │  1 = D=0 → 소수(천재)가 될 수 없음             │
-  │  → "결손이 없는 완벽함은 특별하지 않다"         │
-  │  → "나눌 수 없을 것이 아무것도 없으면           │
-  │     나눌 수 없는 것이 아니다"                   │
+  │  Correspondence:                             │
+  │  1 = D=0 → cannot become prime (genius)     │
+  │  → "Perfection without deficit is not special"│
+  │  → "If there is nothing that cannot be divided│
+  │     then it is not indivisible"              │
   │                                              │
   └──────────────────────────────────────────────┘
 ```
 
-## 골드바흐 추측 ↔ 천재성 = 결손 + 결손
+## Goldbach's Conjecture ↔ Genius = Deficit + Deficit
 
 ```
-  골드바흐 추측:
-  "4 이상의 모든 짝수 = 두 소수의 합"
+  Goldbach's conjecture:
+  "Every even number ≥ 4 = sum of two primes"
 
-  예시:
-  4  = 2 + 2      (소수 + 소수)
-  6  = 3 + 3      (소수 + 소수)
-  8  = 3 + 5      (소수 + 소수)
+  Examples:
+  4  = 2 + 2      (prime + prime)
+  6  = 3 + 3      (prime + prime)
+  8  = 3 + 5      (prime + prime)
   10 = 3 + 7 = 5 + 5
   20 = 3 + 17 = 7 + 13
   100 = 3 + 97 = 11 + 89 = 17 + 83 = 29 + 71 = 41 + 59 = 47 + 53
 
-  번역:
+  Translation:
   ┌────────────────────────────────────────────────┐
   │                                                │
-  │  짝수        = 소수 + 소수                      │
-  │  ↕            ↕                                │
-  │  정상적 성취  = 결손₁ + 결손₂                    │
-  │  (균형잡힌)   (서번트) (서번트)                  │
+  │  Even number     = prime + prime               │
+  │  ↕                ↕                            │
+  │  Balanced achievement = Deficit₁ + Deficit₂    │
+  │  (balanced)          (savant)   (savant)        │
   │                                                │
-  │  해석:                                          │
-  │  "모든 균형 잡힌 성취(짝수)는                    │
-  │   두 결손(소수)의 조합으로 분해된다"              │
+  │  Interpretation:                               │
+  │  "Every balanced achievement (even number)     │
+  │   can be decomposed into a combination of      │
+  │   two deficits (primes)"                       │
   │                                                │
-  │  → 정상적으로 보이는 능력도                      │
-  │    실은 두 결손의 보상적 합산!                    │
+  │  → Even seemingly normal abilities             │
+  │    are actually compensatory sums of two deficits!│
   │                                                │
   └────────────────────────────────────────────────┘
 ```
 
-## 소수의 분포와 서번트의 분포
+## Distribution of Primes vs Distribution of Savants
 
 ```
-  소수 밀도 ≈ 1/ln(N):
-  N=10:    소수 밀도 40%     서번트 비율: ?
-  N=100:   소수 밀도 25%     서번트 비율: ~30%
-  N=1000:  소수 밀도 17%     서번트 비율: ~30%
-  N=10000: 소수 밀도 12%     서번트 비율: ~30%
+  Prime density ≈ 1/ln(N):
+  N=10:    prime density 40%     savant ratio: ?
+  N=100:   prime density 25%     savant ratio: ~30%
+  N=1000:  prime density 17%     savant ratio: ~30%
+  N=10000: prime density 12%     savant ratio: ~30%
 
-  밀도 비교:
+  Density comparison:
   40%│●
-     │  ───────────────────── 서번트/특이점 (~30%)
+     │  ───────────────────── savant/singularity (~30%)
   30%│
      │ ●
   20%│
      │    ●
   15%│       ●
      │          ●
-  10%│              ●─────── 소수 밀도 (감소)
+  10%│              ●─────── prime density (decreasing)
      │
    5%│
      └──┬──┬──┬──┬──┬──┬──
        10 100 1K 10K 100K 1M    N
 
-  → 소수: 밀도 감소하지만 항상 존재
-  → 서번트: 밀도 일정 (~30%)
-  → 교차점 ≈ N=100 근처 (밀도 ≈ 25%)
+  → Primes: density decreasing but always exist
+  → Savants: density constant (~30%)
+  → Crossing point ≈ N=100 (density ≈ 25%)
 ```
 
-## 소인수분해 = 결손의 조합
+## Prime Factorization = Combination of Deficits
 
 ```
-  소인수분해의 유일성 (산술의 기본정리):
-  모든 자연수 = 소수들의 곱 (유일)
+  Uniqueness of prime factorization (Fundamental Theorem of Arithmetic):
+  Every natural number = product of primes (unique)
 
-  번역:
-  모든 개체 = 결손들의 조합 (유일한 프로필)
+  Translation:
+  Every individual = combination of deficits (unique profile)
 
-  예시:
+  Examples:
   12 = 2² × 3
-  → 개체 12 = 결손₂(이중) × 결손₃
-  → "2 유형 결손 2번 + 3 유형 결손 1번"
+  → Individual 12 = Deficit₂(double) × Deficit₃
+  → "Deficit type 2 twice + Deficit type 3 once"
 
   60 = 2² × 3 × 5
-  → 개체 60 = "2 유형 ×2, 3 유형 ×1, 5 유형 ×1"
+  → Individual 60 = "Type 2 ×2, Type 3 ×1, Type 5 ×1"
 
-  소수 자체 (예: 17):
+  Prime itself (e.g., 17):
   17 = 17
-  → 개체 17 = "17 유형 결손 1개만"
-  → 순수한 서번트 (단일 결손으로 정의)
+  → Individual 17 = "only one type 17 deficit"
+  → Pure savant (defined by single deficit)
 
   1:
-  1 = (빈 곱)
-  → 개체 1 = "결손 없음"
-  → 소수가 아님 = 천재가 아님
+  1 = (empty product)
+  → Individual 1 = "no deficit"
+  → Not prime = not a genius
 ```
 
-## G 공식과의 정량적 대응
+## Quantitative Correspondence with G Formula
 
 ```
   G = D × P / I
 
-  소수 p에 대해:
-  D(p) = 1 - 2/p    (결손도)
-  P(p) = ln(p)      (성장 잠재력 = 정보량)
-  I(p) = ?           (억제 = 소수의 "고립도")
+  For prime p:
+  D(p) = 1 - 2/p    (deficit degree)
+  P(p) = ln(p)      (growth potential = information content)
+  I(p) = ?           (inhibition = prime's "isolation degree")
 
-  소수  D      P       D×P      해석
-  ───  ────   ────    ─────    ──────────
-  2    0.00   0.69    0.00     결손 없음 = 기초
-  3    0.33   1.10    0.37     약한 결손 = 약한 천재
-  5    0.60   1.61    0.97     중간 결손
-  7    0.71   1.95    1.39     강한 결손
-  17   0.88   2.83    2.50     매우 강한 결손 ★
-  137  0.99   4.92    4.84     극단적 결손 ★★
+  Prime  D      P       D×P      Interpretation
+  ───    ────   ────    ─────    ──────────────
+  2      0.00   0.69    0.00     No deficit = foundation
+  3      0.33   1.10    0.37     Weak deficit = weak genius
+  5      0.60   1.61    0.97     Medium deficit
+  7      0.71   1.95    1.39     Strong deficit
+  17     0.88   2.83    2.50     Very strong deficit ★
+  137    0.99   4.92    4.84     Extreme deficit ★★
 
-  → 큰 소수 = 높은 D × P = 높은 천재성 잠재력
-  → 137: D×P = 4.84 (가장 높음) = 최고의 서번트
+  → Larger prime = higher D × P = higher genius potential
+  → 137: D×P = 4.84 (highest) = greatest savant
 ```
 
-## 쌍둥이 소수 = 서번트 쌍둥이?
+## Twin Primes = Savant Twins?
 
 ```
-  쌍둥이 소수 (p, p+2):
+  Twin primes (p, p+2):
   (3,5), (5,7), (11,13), (17,19), (29,31)...
 
-  서번트 쌍둥이:
-  "거의 같은 결손을 가진 두 개체가 나란히 존재"
+  Savant twins:
+  "Two individuals with nearly identical deficits existing side by side"
 
-  예: 킴 픽(서번트)과 그의 기억력
-  → 기억력 서번트들은 유사한 D 패턴으로 나란히 나타남
-  → 쌍둥이 소수처럼 "간격 2" (거의 같지만 다른 개체)
+  Example: Kim Peek (savant) and his memory
+  → Memory savants appear side by side in similar D patterns
+  → Like twin primes: "gap 2" (nearly same but different individuals)
 ```
 
-## 한계
+## Limitations
 
-1. 소수-서번트 비유는 문학적 은유이지 수학적 동형사상이 아님
-2. "약수 결손" = "뇌 결손"은 전혀 다른 종류의 "결손"
-3. 골드바흐 추측은 미해결이며, 이를 기반으로 한 추론은 조건부
-4. D(p) = 1 - 2/p 정의는 임의적이며, 다른 정의도 가능
-5. 소인수분해의 유일성 ↔ 개인 프로필의 유일성은 형식적 유사성에 불과
+1. Prime-savant analogy is a literary metaphor, not a mathematical isomorphism
+2. "Divisor deficit" and "brain deficit" are entirely different kinds of "deficit"
+3. Goldbach's conjecture is unresolved, so inferences from it are conditional
+4. D(p) = 1 - 2/p definition is arbitrary; other definitions are possible
+5. Uniqueness of prime factorization ↔ uniqueness of individual profile is only formal similarity
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 소수의 "결손도" 분포와 우리 모델의 D 분포 통계적 비교
-- [ ] 골드바흐 분해 수(짝수를 소수 합으로 표현하는 방법 수)와 천재성 조합 수 비교
-- [ ] 소인수분해 구조와 서번트 프로필 다양성의 정량적 대응 관계 탐색
-- [ ] "소수 = 서번트" 비유가 교육적/직관적 가치가 있는지 검증
+- [ ] Statistical comparison of prime "deficit degree" distribution with model's D distribution
+- [ ] Compare number of Goldbach decompositions (ways to express even number as prime sum) with genius combination count
+- [ ] Explore quantitative correspondence between prime factorization structure and savant profile diversity
+- [ ] Verify whether "primes = savants" analogy has educational/intuitive value
 
 ---
 
-*작성일: 2026-03-22*
-*관련: 가설 014, 072, 090, 214, 215, 216*
+*Created: 2026-03-22*
+*Related: Hypothesis 014, 072, 090, 214, 215, 216*

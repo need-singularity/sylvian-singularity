@@ -1,6 +1,6 @@
-# H-CX-225: 40Hz 바이노럴 비트 → 두 사람 감마 동기화 = 텔레파시
+# H-CX-225: 40Hz Binaural Beat → Two People Gamma Synchronization = Telepathy
 
-> 같은 40Hz(=3σ(6)+τ(6)) 바이노럴 비트를 두 사람이 동시에 들으면
-> 양쪽 감마파 동기화 → 같은 PH 상태 → 공감/텔레파시.
-> 장비: 헤드폰 2개 + 40Hz 바이노럴 비트 음원.
-> 검증: 두 사람 EEG 감마 위상 동기화 측정.
+> When two people simultaneously listen to the same 40Hz(=3σ(6)+τ(6)) binaural beat,
+> both achieve gamma wave synchronization → same PH state → empathy/telepathy.
+> Equipment: 2 headphones + 40Hz binaural beat audio source.
+> Verification: Measure gamma phase synchronization in both people's EEG.

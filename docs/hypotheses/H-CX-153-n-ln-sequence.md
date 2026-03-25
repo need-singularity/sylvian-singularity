@@ -1,14 +1,14 @@
-# H-CX-153: N*ln((N+1)/N) 수열 — N=12에서 1에 최근접
+# H-CX-153: N*ln((N+1)/N) Sequence — Closest to 1 at N=12
 
-> 12*ln(13/12) = 0.9605 ~ 1. 이 수열이 1에 가장 가까운 정수 N = 12 = sigma(6).
-> 수학적으로: N*ln(1+1/N) -> 1 (N->inf). N=12가 유한 정수 중 최근접?
+> 12*ln(13/12) = 0.9605 ~ 1. The integer N closest to 1 in this sequence is N = 12 = sigma(6).
+> Mathematically: N*ln(1+1/N) -> 1 (N->inf). Is N=12 the closest among finite integers?
 
-## 배경
+## Background
 
-N-state 정보 예산 공식에서 핵심 양은 ln((N+1)/N)이다.
-이것은 N개 상태에서 N+1개 상태로의 정보 점프(엔트로피 증가)를 나타낸다.
+The key quantity in the N-state information budget formula is ln((N+1)/N).
+This represents the information jump (entropy increase) from N states to N+1 states.
 
-이 양에 N을 곱한 f(N) = N * ln((N+1)/N) = N * ln(1 + 1/N) 수열을 고려하면:
+Considering the sequence f(N) = N * ln((N+1)/N) = N * ln(1 + 1/N) multiplied by N:
 - f(1) = 1 * ln(2) = 0.6931
 - f(2) = 2 * ln(3/2) = 0.8109
 - f(3) = 3 * ln(4/3) = 0.8630
@@ -18,27 +18,27 @@ N-state 정보 예산 공식에서 핵심 양은 ln((N+1)/N)이다.
 - f(100) = 100 * ln(101/100) = 0.9950
 - f(N) -> 1 as N -> infinity (Taylor: ln(1+x) ~ x for small x)
 
-이 수열은 단조 증가하며 1에 수렴한다. 따라서 "1에 가장 가까운 정수"는
-존재하지 않는다 — N이 클수록 항상 더 가깝다.
+This sequence is monotonically increasing and converges to 1. Therefore, "the integer closest to 1"
+does not exist — the larger N is, the always closer.
 
-그러나 sigma(6) = 12에서의 값 0.9605가 "충분히 1에 가까운" 첫 번째
-의미 있는 정수인지, 그리고 12 = sigma(6)이라는 연결이 구조적인지가 질문이다.
+However, the question is whether the value 0.9605 at sigma(6) = 12 is the first
+meaningful integer "sufficiently close to 1," and whether the connection 12 = sigma(6) is structural.
 
-골든존 엔트로피 폭 ln(4/3) = f(3)/3 이므로, N=3과 N=12의 관계:
-- f(3) = 3 * ln(4/3) = 3 * (골든존 폭) = 0.8630
+Since the Golden Zone entropy width ln(4/3) = f(3)/3, the relationship between N=3 and N=12:
+- f(3) = 3 * ln(4/3) = 3 * (Golden Zone width) = 0.8630
 - f(12) = 12 * ln(13/12) = 0.9605
 - f(12) - f(3) = 0.0975
 
-## 예측
+## Predictions
 
 ```
-f(N) = N * ln((N+1)/N) 수열:
+f(N) = N * ln((N+1)/N) sequence:
 
 f(N) |
- 1.0 |  - - - - - - - - - - - - - - - - - 극한값
+ 1.0 |  - - - - - - - - - - - - - - - - - limit value
  0.96|                    * (N=12=sigma(6))
- 0.93|              * (N=6, 완전수)
- 0.86|        * (N=3, 골든존 폭)
+ 0.93|              * (N=6, perfect number)
+ 0.86|        * (N=3, Golden Zone width)
  0.81|     * (N=2)
  0.69|  * (N=1)
      +--+--+--+--+--+--+--+--+--+--+--+-->
@@ -46,28 +46,28 @@ f(N) |
                     N
 ```
 
-| N | f(N) | |1 - f(N)| | 비고 |
+| N | f(N) | |1 - f(N)| | Note |
 |---|------|-----------|------|
 | 1 | 0.6931 | 0.3069 | ln(2) |
 | 2 | 0.8109 | 0.1891 | |
-| 3 | 0.8630 | 0.1370 | 3*ln(4/3) = 3*(골든존 폭) |
-| 6 | 0.9325 | 0.0675 | 완전수 |
+| 3 | 0.8630 | 0.1370 | 3*ln(4/3) = 3*(Golden Zone width) |
+| 6 | 0.9325 | 0.0675 | perfect number |
 | 12 | 0.9605 | 0.0395 | sigma(6) |
-| 28 | 0.9824 | 0.0176 | 완전수 |
+| 28 | 0.9824 | 0.0176 | perfect number |
 | 120 | 0.9958 | 0.0042 | sigma(28) |
 
-핵심 관찰: 완전수와 그 약수합이 이 수열에서 특별한 위치를 차지
+Key observation: Perfect numbers and their divisor sums occupy special positions in this sequence
 - N=6 (P1): f = 0.9325
 - N=12 = sigma(6): f = 0.9605
 - N=28 (P2): f = 0.9824
 - N=120 = sigma(28): f = 0.9958
 
-## 검증 방법
+## Verification Methods
 
-1. f(N)을 N=1~1000까지 계산
-2. 완전수(6, 28, 496, 8128)와 그 sigma 값에서의 f(N) 기록
-3. 텍사스 명사수 검증: 완전수/sigma가 특별한 위치인지 p-value 계산
-4. 일반화: N = sigma(P_k)에서의 f(N)이 특별한 패턴을 보이는지
+1. Calculate f(N) for N=1~1000
+2. Record f(N) at perfect numbers (6, 28, 496, 8128) and their sigma values
+3. Texas Sharpshooter verification: calculate p-value for whether perfect numbers/sigma are in special positions
+4. Generalization: whether f(N) at N = sigma(P_k) shows a special pattern
 
 ```python
 import math
@@ -76,25 +76,25 @@ for n in [1, 2, 3, 6, 12, 28, 120, 496, 8128]:
     print(f"N={n:5d}: f(N) = {f:.6f}, |1-f| = {1-f:.6f}")
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- 골든존 폭 = ln(4/3) (N=3 경우의 엔트로피 점프)
-- sigma(6) = 12 (마스터 공식)
-- H-CX-156: 완전수 원소 체인 (phi(28) = sigma(6) = 12)
-- H-CX-155: sigma*phi/(n*tau) = 1 스캔
+- Golden Zone width = ln(4/3) (entropy jump for N=3 case)
+- sigma(6) = 12 (master formula)
+- H-CX-156: Perfect number element chain (phi(28) = sigma(6) = 12)
+- H-CX-155: sigma*phi/(n*tau) = 1 scan
 
-## 한계
+## Limitations
 
-1. f(N)은 단조 증가 수열이므로 "N=12가 1에 가장 가깝다"는 거짓 — N=13이 더 가까움
-2. 12 = sigma(6)이라는 연결은 우연일 수 있음
-3. 완전수 위치에서의 f(N) 값이 특별해 보이는 것은 selection bias일 수 있음
-4. Strong Law of Small Numbers 경고: 작은 수에서의 일치는 구조적이지 않을 수 있음
-5. "충분히 가까운"의 기준이 자의적
+1. f(N) is a monotonically increasing sequence so "N=12 is closest to 1" is false — N=13 is closer
+2. The connection 12 = sigma(6) may be coincidental
+3. f(N) values appearing special at perfect number positions may be selection bias
+4. Strong Law of Small Numbers warning: matches at small numbers may not be structural
+5. The criterion for "sufficiently close" is arbitrary
 
-## 검증 상태
+## Verification Status
 
-- [ ] N=1~1000 계산
-- [ ] 완전수/sigma 위치 f(N) 기록
-- [ ] 텍사스 명사수 p-value 계산
-- [ ] 일반화 테스트 (완전수 28에서도 패턴?)
-- 현재: **미검증**
+- [ ] Calculate N=1~1000
+- [ ] Record f(N) at perfect number/sigma positions
+- [ ] Texas Sharpshooter p-value calculation
+- [ ] Generalization test (does pattern hold for perfect number 28?)
+- Currently: **unverified**

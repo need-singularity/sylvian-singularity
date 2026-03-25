@@ -1,64 +1,64 @@
-# H-BIO-3: 면역 시스템 = R 스펙트럼 이상탐지
+# H-BIO-3: Immune System = R Spectrum Anomaly Detection
 
-> **가설**: 면역 시스템의 자기/비자기 인식은 R 스펙트럼의 간극 구조와
-> 동형이다. 면역 관용(tolerance) = R 간극, 면역 반응 = tension.
+> **Hypothesis**: The immune system's self/non-self recognition is
+> isomorphic to the gap structure of the R spectrum. Immune tolerance = R gap, immune response = tension.
 
-## 배경
+## Background
 
-면역 시스템의 핵심 문제: "자기"와 "비자기"를 구별
-- 자기(self): 정상 세포, 무해 → 무반응 (관용)
-- 비자기(non-self): 병원체, 이물질 → 공격 (반응)
+Core problem of immune system: Distinguishing "self" from "non-self"
+- Self: Normal cells, harmless → No reaction (tolerance)
+- Non-self: Pathogens, foreign substances → Attack (response)
 
-R 스펙트럼의 이상탐지 (H-CX-12, AUROC=1.0):
-- 정상: R≈1, tension≈0
-- 이상: R≫1, tension=95x
+R spectrum anomaly detection (H-CX-12, AUROC=1.0):
+- Normal: R≈1, tension≈0
+- Anomaly: R≫1, tension=95x
 
-## 핵심 대응
+## Core Correspondence
 
 ```
-  면역 시스템              R 스펙트럼
+  Immune System           R Spectrum
   ─────────────          ──────────────
-  자기(self)              R = 1 (균형)
-  비자기(non-self)        R ≠ 1 (불균형)
-  면역 관용               간극 (3/4,1)∪(1,7/6)
-  항체 결합               σφ=nτ 매칭
-  면역 반응 강도           tension = |R-1|
-  자가면역 질환           간극 침범 (false positive)
-  면역 결핍               간극 확대 (false negative)
+  Self                    R = 1 (balance)
+  Non-self                R ≠ 1 (imbalance)
+  Immune tolerance        Gap (3/4,1)∪(1,7/6)
+  Antibody binding        σφ=nτ matching
+  Immune response strength tension = |R-1|
+  Autoimmune disease      Gap invasion (false positive)
+  Immunodeficiency        Gap expansion (false negative)
 
-  AUROC=1.0 ↔ 완벽한 면역:
-    간극이 "자기"와 "비자기"를 완벽히 분리
-    → 자가면역도 면역결핍도 없는 이상적 상태
+  AUROC=1.0 ↔ Perfect immunity:
+    Gap perfectly separates "self" from "non-self"
+    → Ideal state with neither autoimmunity nor immunodeficiency
 ```
 
-### 면역 관용의 수학적 모델
+### Mathematical Model of Immune Tolerance
 
 ```
-  관용 범위 = [1-δ⁻, 1+δ⁺] = [3/4, 7/6]
-  → 이 범위 안의 R값은 "자기"로 인식
+  Tolerance range = [1-δ⁻, 1+δ⁺] = [3/4, 7/6]
+  → R values within this range are recognized as "self"
 
-  R(6)=1: 완벽한 자기 (건강한 세포)
-  R(4)=7/6: 관용 경계 (경계선 자기)
-  R(2)=3/4: 관용 경계 아래 (경계선 자기)
+  R(6)=1: Perfect self (healthy cell)
+  R(4)=7/6: Tolerance boundary (borderline self)
+  R(2)=3/4: Below tolerance boundary (borderline self)
 
-  R(p)≥12/5=2.4 (p≥5): 확실한 비자기 → 강한 면역 반응
+  R(p)≥12/5=2.4 (p≥5): Definite non-self → Strong immune response
 
-  ASCII: 면역 관용 스펙트럼
+  ASCII: Immune Tolerance Spectrum
 
-  면역반응
-  강 |██████████████████████████
-  중 |              ████████████
-  약 |      ████
-  0  |         ···없음···
-     +--+--+--+--+--+--+--+--→ R
-     3/4    1    7/6   2    3
-     ←관용→  자기  ←관용→
+  Immune Response
+  Strong |██████████████████████████
+  Medium |              ████████████
+  Weak   |      ████
+  0      |         ···none···
+         +--+--+--+--+--+--+--+--→ R
+         3/4    1    7/6   2    3
+         ←tolerance→  self  ←tolerance→
 ```
 
-## 검증 방향
+## Verification Direction
 
-1. [ ] 면역 세포 활성화 threshold와 R 간극 비교
-2. [ ] 자가면역 환자의 면역 프로파일 → R 분포로 모델링
-3. [ ] 의식엔진 이상탐지를 면역 시뮬레이션에 적용
+1. [ ] Compare immune cell activation threshold with R gap
+2. [ ] Model autoimmune patient immune profiles → R distribution
+3. [ ] Apply consciousness engine anomaly detection to immune simulation
 
-## 난이도: 극고 | 파급력: ★★★★
+## Difficulty: Extreme | Impact: ★★★★

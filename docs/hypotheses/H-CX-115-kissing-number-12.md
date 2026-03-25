@@ -1,21 +1,21 @@
-# H-CX-115: kissing number 12 = 최밀 배치
+# H-CX-115: Kissing Number 12 = Densest Packing
 
-> 12클래스 방향벡터가 D차원에서 "최밀" 배치되면 PH 최소. 13번째 배치 불가.
+> 12-class direction vectors placed "densely" in D dimensions gives minimum PH. 13th cannot be placed.
 
-## 검증 상태
-- [x] 방향 각도 분포
+## Verification Status
+- [x] Direction angle distribution
 
-## 검증 결과
+## Verification Results
 
 **SUPPORTED**
 
-| 클래스 수 | global_min (최소 각도) |
-|-----------|----------------------|
+| Class count | global_min (minimum angle) |
+|-------------|---------------------------|
 | 12 | 0.090 |
 | 13 | 0.048 |
 
-- 13cls의 global_min = 0.048 < 12cls의 0.090
-- 13번째 클래스 추가 시 방향 벡터 간 최소 각도가 47% 감소
-- 해석: 12클래스에서 방향 공간이 더 여유 있게 배치됨, 13번째는 "밀어넣기"
-- kissing number 비유와 일관: 12개까지는 "최밀" 배치 가능, 13번째는 공간 부족
-- 단, 실제 kissing number는 3D에서 12이며, 고차원에서는 다름 -- 비유적 지지
+- 13cls global_min = 0.048 < 12cls 0.090
+- Adding 13th class reduces minimum angle between direction vectors by 47%
+- Interpretation: direction space has more room with 12 classes, 13th is "forced in"
+- Consistent with kissing number analogy: up to 12 can be "densely packed", 13th lacks space
+- Note: the actual kissing number is 12 in 3D, different in higher dimensions — analogical support

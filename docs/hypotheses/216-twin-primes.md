@@ -1,184 +1,184 @@
-# 가설 #216: 쌍둥이 소수 ↔ 골든존 경계 쌍
+# Hypothesis #216: Twin Primes ↔ Golden Zone Boundary Pair
 
-**상태**: ⚠️ 탐색중
-**날짜**: 2026-03-22
-**분류**: 수론 / 경계 구조
+**Status**: ⚠️ Exploring
+**Date**: 2026-03-22
+**Category**: Number Theory / Boundary Structure
 
 ---
 
-## 가설
+## Hypothesis
 
-> 쌍둥이 소수 (p, p+2)의 일정한 간격 2는 골든존 경계 (0.213, 0.500)의 일정한 폭 ln(4/3)과 구조적으로 대응한다.
-> 쌍둥이 소수 추측(무한히 존재)은 골든존이 N→∞에서도 유지됨을 시사한다.
+> The constant gap of 2 in twin primes (p, p+2) structurally corresponds to the constant width ln(4/3) of the Golden Zone boundary (0.213, 0.500).
+> The twin prime conjecture (infinitely many) implies that the Golden Zone persists even as N→∞.
 
-## 배경
+## Background
 
-쌍둥이 소수란 차이가 2인 소수 쌍이다: (3,5), (5,7), (11,13), (17,19), (29,31), ...
-이들은 "항상 간격 2로 나란히 등장"하며, 무한히 존재하는지는 미해결 문제이다.
+Twin primes are prime pairs with a difference of 2: (3,5), (5,7), (11,13), (17,19), (29,31), ...
+They "always appear side by side with gap 2", and whether they exist infinitely is an unsolved problem.
 
-우리 모델에서 골든존 경계 (0.213, 0.500)도 "항상 간격 ln(4/3)≈0.288로 나란히 존재"한다.
+In our model, the Golden Zone boundary (0.213, 0.500) also "always exists side by side with gap ln(4/3)≈0.288".
 
-## 쌍둥이 소수 vs 골든존 경계 비교
+## Twin Primes vs Golden Zone Boundary Comparison
 
 ```
   ┌──────────────────────┬──────────────────────────────┐
-  │   쌍둥이 소수         │   골든존 경계 쌍              │
+  │   Twin Primes         │   Golden Zone Boundary Pair  │
   ├──────────────────────┼──────────────────────────────┤
   │ (p, p+2)             │ (I_min, I_max)               │
-  │ 간격 = 2 (상수)       │ 간격 = ln(4/3) (상수)        │
-  │ 쌍이 드물어짐          │ 골든존 폭은 유지됨            │
-  │ 밀도 ~ C₂/ln²(x)     │ 폭 = ln(4/3) (N-independent) │
-  │ ∞ 존재? (미해결)      │ N→∞에서도 존재 (확인)         │
+  │ gap = 2 (constant)   │ gap = ln(4/3) (constant)     │
+  │ pairs become sparser │ Golden Zone width is maintained│
+  │ density ~ C₂/ln²(x)  │ width = ln(4/3) (N-independent)│
+  │ ∞ many? (unsolved)   │ exists even for N→∞ (confirmed)│
   │ Hardy-Littlewood C₂  │ ln(4/3) ≈ 0.2877            │
   └──────────────────────┴──────────────────────────────┘
 ```
 
-## 간격의 비교 다이어그램
+## Gap Comparison Diagram
 
 ```
-  쌍둥이 소수:
-  ───●─●───────●─●───────────────●─●────────────── 수직선
+  Twin primes:
+  ───●─●───────●─●───────────────●─●────────────── number line
      3 5      11 13              29 31
      ←2→      ←2→                ←2→
-     간격 항상 2
+     gap always 2
 
 
-  골든존 경계:
-  ──────┤░░░░░░░░░░░░░░░░░░├───────────────────── I 축
+  Golden Zone boundary:
+  ──────┤░░░░░░░░░░░░░░░░░░├───────────────────── I axis
      0.213                0.500
        ←── ln(4/3) ──→
-       간격 항상 0.2877
+       gap always 0.2877
 
 
-  비교:
-  쌍둥이 소수  간격 = 2       = 정수
-  골든존 경계  간격 = ln(4/3) = 초월수
+  Comparison:
+  Twin prime gap  = 2       = integer
+  Golden Zone gap = ln(4/3) = transcendental number
 
-  2와 ln(4/3)의 관계:
+  Relationship between 2 and ln(4/3):
   e² ≈ 7.389
   e^ln(4/3) = 4/3
-  2 / ln(4/3) ≈ 6.95 ≈ 7 ← 거의 정수!
+  2 / ln(4/3) ≈ 6.95 ≈ 7 ← almost integer!
 ```
 
-## 쌍둥이 소수 밀도 vs 골든존 유지
+## Twin Prime Density vs Golden Zone Maintenance
 
 ```
-  쌍둥이소수 밀도:                골든존 폭:
-  ~ C₂ × x/ln²(x)               = ln(4/3) (일정)
+  Twin prime density:              Golden Zone width:
+  ~ C₂ × x/ln²(x)                 = ln(4/3) (constant)
 
-  x        쌍둥이 수  밀도       N     골든존 폭
-  ──────   ────────  ─────      ────  ──────────
-  10       2         20.0%      10    0.288
-  100      8          8.0%      100   0.288
-  1000     35         3.5%      1K    0.288
-  10000    205        2.1%      10K   0.288
-  100000   1224       1.2%      100K  0.288
+  x        twin count  density     N     Golden Zone width
+  ──────   ──────────  ─────       ────  ──────────────
+  10       2           20.0%       10    0.288
+  100      8            8.0%       100   0.288
+  1000     35           3.5%       1K    0.288
+  10000    205          2.1%       10K   0.288
+  100000   1224         1.2%       100K  0.288
 
-  그래프 (밀도 vs 스케일):
-  밀도
+  Graph (density vs scale):
+  density
   20%│●
      │
   15%│
      │
-  10%│  ●                        ─────────── 골든존 폭 (일정)
+  10%│  ●                        ─────────── Golden Zone width (constant)
      │
    5%│     ●
      │        ●
-   2%│           ●───────────── 쌍둥이 소수 밀도 (감소)
+   2%│           ●───────────── twin prime density (decreasing)
    1%│                 ●
      ├────┬────┬────┬────┬────
-     10  100  1K  10K  100K    스케일
+     10  100  1K  10K  100K    scale
 ```
 
-## "일정한 간격의 쌍"이라는 공통 구조
+## Common Structure: "Pairs with Constant Gap"
 
 ```
   ┌─────────────────────────────────────────────────┐
   │                                                 │
-  │  쌍둥이 소수:                                    │
-  │  "무한한 수 직선 위에서, 일정 간격 2를 가진       │
-  │   특별한 쌍이 무한히(?) 존재한다"                  │
+  │  Twin primes:                                   │
+  │  "On the infinite number line, special          │
+  │   pairs with constant gap 2 exist infinitely(?)"│
   │                                                 │
-  │  골든존 경계:                                    │
-  │  "무한한 모집단에서, 일정 폭 ln(4/3)을 가진       │
-  │   특별한 구간이 항상 존재한다"                     │
+  │  Golden Zone boundary:                          │
+  │  "In an infinite population, a special          │
+  │   interval with constant width ln(4/3) always exists"│
   │                                                 │
-  │  공통: 일정한 간격 + 특별한 존재 + 무한한 배경     │
+  │  Common: constant gap + special existence + infinite background │
   │                                                 │
   └─────────────────────────────────────────────────┘
 ```
 
-## Hardy-Littlewood 상수와 ln(4/3)
+## Hardy-Littlewood Constant and ln(4/3)
 
 ```
-  Hardy-Littlewood 쌍둥이 소수 상수:
-  C₂ = Π (1 - 1/(p-1)²) = 0.6601618...  (p≥3인 소수에 대해)
+  Hardy-Littlewood twin prime constant:
+  C₂ = Π (1 - 1/(p-1)²) = 0.6601618...  (for primes p≥3)
 
-  우리 모델의 골든존 폭:
+  Golden Zone width in our model:
   ln(4/3) = 0.2876820...
 
-  관계 탐색:
+  Relationship search:
   C₂ / ln(4/3) = 0.6602 / 0.2877 ≈ 2.294
   C₂ × ln(4/3) = 0.6602 × 0.2877 ≈ 0.1899 ≈ 1/e² × e ≈ ?
 
   C₂ + ln(4/3) = 0.6602 + 0.2877 = 0.9479 ≈ 1 - 1/19
-  → 직접적 수학적 관계는 아직 불명확
+  → Direct mathematical relationship still unclear
 ```
 
-## N→∞에서의 존재성
+## Existence as N→∞
 
 ```
-  쌍둥이 소수 추측:
+  Twin prime conjecture:
   ┌──────────────────────────────────────┐
   │ lim x→∞ π₂(x) = ∞ ?                │
-  │ (무한히 많은 쌍둥이 소수가 존재하는가) │
-  │ → 미해결 (장익 결과: gap ≤ 246)      │
+  │ (do infinitely many twin primes exist)│
+  │ → unsolved (Zhang: gap ≤ 246)        │
   └──────────────────────────────────────┘
 
-  골든존 존재:
+  Golden Zone existence:
   ┌──────────────────────────────────────┐
-  │ lim N→∞ (골든존 폭) = ln(4/3) > 0   │
-  │ (N이 커져도 골든존은 사라지지 않는다)   │
-  │ → 확인 ✅ (폭은 N에 무관)             │
+  │ lim N→∞ (Golden Zone width) = ln(4/3) > 0 │
+  │ (Golden Zone doesn't disappear as N grows)│
+  │ → confirmed ✅ (width is N-independent)   │
   └──────────────────────────────────────┘
 
-  만약 쌍둥이 소수 ↔ 골든존이 진짜 대응이라면:
-  골든존의 영구 존재 → 쌍둥이 소수의 무한 존재를 시사?
-  → 이것은 추측이지 증명이 아님!
+  If twin primes ↔ Golden Zone is a real correspondence:
+  permanent existence of Golden Zone → implies infinite existence of twin primes?
+  → This is a conjecture, not a proof!
 ```
 
-## 쌍둥이 소수의 위치와 골든존
+## Position of Twin Primes and the Golden Zone
 
 ```
-  쌍둥이 소수 (p, p+2)에서 p mod 6:
+  p mod 6 for twin prime (p, p+2):
 
-  p mod 6 = 5인 경우: (5,7), (11,13), (17,19), (29,31), (41,43)...
-  p mod 6 = 1인 경우: (없음 - 3의 배수 문제)
+  When p mod 6 = 5: (5,7), (11,13), (17,19), (29,31), (41,43)...
+  When p mod 6 = 1: (none - multiple of 3 issue)
 
-  → 쌍둥이 소수는 6k-1, 6k+1 형태 (k≥1)
-  → 완전수 6을 중심으로 배치!
+  → Twin primes are of form 6k-1, 6k+1 (k≥1)
+  → Placed around perfect number 6!
 
-  6과의 관계:
-  쌍둥이 소수 → 6의 배수 ±1
-  골든존 경계 → Compass 상한 5/6과 연결 (가설 067)
-  → 6 = 2×3 = 우리 모델의 근본 (가설 090)
+  Relationship with 6:
+  Twin primes → multiples of 6 ±1
+  Golden Zone boundary → connected to Compass upper bound 5/6 (Hypothesis 067)
+  → 6 = 2×3 = foundation of our model (Hypothesis 090)
 ```
 
-## 한계
+## Limitations
 
-1. 쌍둥이 소수와 골든존 경계의 대응은 형식적 유사성에 그칠 수 있음
-2. 간격 2(정수)와 ln(4/3)(초월수)는 수학적 성질이 매우 다름
-3. 쌍둥이 소수 추측은 미해결 문제이므로, 이로부터의 추론은 조건부
-4. Hardy-Littlewood 상수와 ln(4/3) 사이에 직접적 수학적 관계가 없음
+1. Correspondence between twin primes and Golden Zone boundary may be only formal similarity
+2. Gap 2 (integer) and ln(4/3) (transcendental number) have very different mathematical properties
+3. Twin prime conjecture is unsolved, so inferences from it are conditional
+4. No direct mathematical relationship between Hardy-Littlewood constant and ln(4/3)
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 쌍둥이 소수 간격 분포와 골든존 내부 특이점 쌍 간격 분포 비교
-- [ ] 6k±1 구조와 Compass 5/6 구조의 정밀한 대응 관계 탐색
-- [ ] Chen 소수, 소수 쌍 일반화 (간격 2d)와 N-상태 골든존 (간격 ln((N+1)/N)) 비교
-- [ ] Brun 상수 B₂ ≈ 1.902와 모델 상수의 관계 탐색
+- [ ] Compare twin prime gap distribution with gap distribution of singularity pairs inside Golden Zone
+- [ ] Explore precise correspondence between 6k±1 structure and Compass 5/6 structure
+- [ ] Compare Chen primes, generalized prime pairs (gap 2d) with N-state Golden Zone (gap ln((N+1)/N))
+- [ ] Explore relationship between Brun constant B₂ ≈ 1.902 and model constants
 
 ---
 
-*작성일: 2026-03-22*
-*관련: 가설 002, 067, 090, 092*
+*Created: 2026-03-22*
+*Related: Hypothesis 002, 067, 090, 092*

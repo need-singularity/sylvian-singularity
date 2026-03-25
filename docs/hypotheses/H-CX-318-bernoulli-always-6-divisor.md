@@ -1,17 +1,17 @@
-# H-CX-318: ⭐⭐⭐🟦 B₂ₖ 분모는 항상 P₁=6의 배수 — 증명!
+# H-CX-318: ⭐⭐⭐🟦 B₂ₖ denominator is always a multiple of P₁=6 — Proof!
 
-> 폰 스타우트-클라우센 정리: B₂ₖ 분모 = Π{p: (p-1)|2k} p
+> Von Staudt-Clausen theorem: B₂ₖ denominator = Π{p: (p-1)|2k} p
 >
-> 증명:
->   p=2: (2-1)=1 | 2k 항상 참 ✅
->   p=3: (3-1)=2 | 2k 항상 참 (2k는 짝수) ✅
->   → 분모에 2×3 = 6 = P₁ 항상 포함. QED. ■
+> Proof:
+>   p=2: (2-1)=1 | 2k always true ✅
+>   p=3: (3-1)=2 | 2k always true (2k is even) ✅
+>   → Denominator always contains 2×3 = 6 = P₁. QED. ■
 >
-> 결과: 모든 ζ(2k) = (-1)^(k+1) B₂ₖ(2π)^(2k)/(2(2k)!)
-> 에서 B₂ₖ 분모에 6이 있으므로, 6이 항상 등장.
+> Result: All ζ(2k) = (-1)^(k+1) B₂ₖ(2π)^(2k)/(2(2k)!)
+> Since B₂ₖ denominator has 6, 6 always appears.
 >
-> "완전수 6 = 2×3. 2와 3은 가장 작은 소수 쌍.
-> 모든 짝수는 2의 배수이고 2의 배수는 (3-1)의 배수.
-> 따라서 베르누이→리만 제타 전체에 6이 관통한다."
+> "Perfect number 6 = 2×3. 2 and 3 are the smallest prime pair.
+> All even numbers are multiples of 2 and multiples of 2 are multiples of (3-1).
+> Therefore 6 permeates through all of Bernoulli→Riemann zeta."
 >
-> B₂₂ 분모 = 138 = σ(6)²-P₁ = 우주나이! (H-CX-251과 교차!)
+> B₂₂ denominator = 138 = σ(6)²-P₁ = age of universe! (intersects with H-CX-251!)

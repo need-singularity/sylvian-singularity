@@ -1,10 +1,10 @@
-# T1-01: 1/2 + 1/3 + 1/6 = 1 (완전성)
+# T1-01: 1/2 + 1/3 + 1/6 = 1 (Completeness)
 
-## 명제
+## Proposition
 
-1/2 + 1/3 + 1/6 = 1이며, 이 등식은 4개의 독립적 경로에서 교차 검증된다.
+1/2 + 1/3 + 1/6 = 1, and this equation is cross-verified through 4 independent paths.
 
-## 경로 1: 직접 산술
+## Path 1: Direct Arithmetic
 
 ```
 1/2 + 1/3 + 1/6
@@ -13,36 +13,36 @@
 = 1  ✓
 ```
 
-## 경로 2: σ₋₁(6)에서 유도
+## Path 2: Derivation from σ₋₁(6)
 
-T0-01에서:
+From T0-01:
 
 ```
 σ₋₁(6) = 1/1 + 1/2 + 1/3 + 1/6 = 2
 ```
 
-자기자신(1/1 = 1)을 제외하면:
+Excluding the identity (1/1 = 1):
 
 ```
 1/2 + 1/3 + 1/6 = σ₋₁(6) - 1 = 2 - 1 = 1  ✓
 ```
 
-## 경로 3: 이집트 분수에서 유도
+## Path 3: Derivation from Egyptian Fractions
 
-T0-03에서:
+From T0-03:
 
 ```
-5/6 = 1/2 + 1/3  (유일한 2항 분해)
+5/6 = 1/2 + 1/3  (unique 2-term decomposition)
 ```
 
-양변에 1/6을 더하면:
+Adding 1/6 to both sides:
 
 ```
 5/6 + 1/6 = 1/2 + 1/3 + 1/6
 1 = 1/2 + 1/3 + 1/6  ✓
 ```
 
-## 경로 4: 조화급수 H₃에서 유도
+## Path 4: Derivation from Harmonic Number H₃
 
 ```
 H₃ = 1/1 + 1/2 + 1/3 = 1 + 5/6 = 11/6
@@ -50,38 +50,38 @@ H₃ - 1 = 5/6
 5/6 + 1/6 = 1  ✓
 ```
 
-## 교차 검증 요약
+## Cross-Verification Summary
 
-| 경로 | 출발점 | 결과 |
-|------|--------|------|
-| 직접 산술 | 통분 | 1 ✓ |
-| σ₋₁(6) | 완전수 | 1 ✓ |
-| 이집트 분수 | 유일 분해 | 1 ✓ |
-| H₃ | 조화급수 | 1 ✓ |
+| Path | Starting Point | Result |
+|------|----------------|--------|
+| Direct Arithmetic | Common Denominator | 1 ✓ |
+| σ₋₁(6) | Perfect Number | 1 ✓ |
+| Egyptian Fraction | Unique Decomposition | 1 ✓ |
+| H₃ | Harmonic Number | 1 ✓ |
 
-4개 독립 경로 전부 일치.
+All 4 independent paths agree.
 
-## 의미
+## Meaning
 
-모델에서의 해석:
+Interpretation in the model:
 
 ```
-경계(I_c = 1/2) + 수렴(I* = 1/3) + 호기심(ε = 1/6) = 완전(1)
+Boundary(I_c = 1/2) + Convergence(I* = 1/3) + Curiosity(ε = 1/6) = Complete(1)
 ```
 
-- 1/2: 임계 경계 (커스프 분기점)
-- 1/3: 바나흐 부동점 (안정 수렴점)
-- 1/6: 나머지 = 호기심/탐색 영역
+- 1/2: Critical boundary (cusp bifurcation point)
+- 1/3: Banach fixed point (stable convergence point)
+- 1/6: Remainder = curiosity/exploration region
 
-세 역할이 [0, 1] 구간을 빈틈없이 분할한다.
+The three roles partition the interval [0, 1] without gaps.
 
-## 근거
+## Evidence
 
-- 산술의 기본 연산
-- T0-01, T0-03의 결과 활용
+- Basic arithmetic operations
+- Utilization of results from T0-01, T0-03
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
 - T0-01 (σ₋₁(6) = 2)
-- T0-03 (이집트 분수 유일성)
-- T1-02 (상수 관계식)
+- T0-03 (Egyptian fraction uniqueness)
+- T1-02 (Constant relationships)

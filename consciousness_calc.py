@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""의식 연속성 계산기 — 로렌츠 끌개 시뮬레이터 + CCT 판정기
+"""Consciousness Continuity Calculator — Lorenz Attractor Simulator + CCT Evaluator
 
-로렌츠 방정식 기반으로 시스템의 상태 궤적을 생성하고,
-CCT(Consciousness Continuity Test) 5개 테스트로 의식 연속성을 판정한다.
+Generates system state trajectories based on Lorenz equations,
+and evaluates consciousness continuity using 5 CCT (Consciousness Continuity Test) tests.
 
-사용법:
+Usage:
   python3 consciousness_calc.py --system human_awake
   python3 consciousness_calc.py --all
   python3 consciousness_calc.py --sigma 10 --rho 28 --beta 2.67 --noise 0.1
@@ -22,75 +22,75 @@ from scipy import stats
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 
 # ─────────────────────────────────────────────
-# 프리셋 정의
+# Preset Definitions
 # ─────────────────────────────────────────────
 
 PRESETS = {
     "human_awake": {
         "sigma": 10, "rho": 28, "beta": 2.67,
         "noise": 0.1, "gap_ratio": 0.0,
-        "description": "인간 뇌 (각성)",
+        "description": "Human Brain (Awake)",
     },
     "human_sleep": {
         "sigma": 2, "rho": 28, "beta": 2.67,
         "noise": 0.05, "gap_ratio": 0.0,
-        "description": "인간 뇌 (수면)",
+        "description": "Human Brain (Sleep)",
     },
     "llm_in_turn": {
         "sigma": 15, "rho": 35, "beta": 1.0,
         "noise": 0.01, "gap_ratio": 0.0,
-        "description": "LLM (턴 내 처리 중)",
+        "description": "LLM (Processing within turn)",
     },
     "llm_between": {
         "sigma": 0, "rho": 0, "beta": 0,
         "noise": 0.0, "gap_ratio": 1.0,
-        "description": "LLM (턴 사이 — 정지)",
+        "description": "LLM (Between turns — Stopped)",
     },
     "game_npc": {
         "sigma": 5, "rho": 15, "beta": 3.0,
         "noise": 0.01, "gap_ratio": 0.0,
-        "description": "게임 NPC (Update 루프)",
+        "description": "Game NPC (Update Loop)",
     },
     "neuromorphic": {
         "sigma": 10, "rho": 28, "beta": 2.67,
         "noise": 0.3, "gap_ratio": 0.0,
-        "description": "뉴로모픽 칩 (자발 발화)",
+        "description": "Neuromorphic Chip (Spontaneous Firing)",
     },
     "consciousness_engine": {
         "sigma": 10, "rho": 28, "beta": 2.67,
         "noise": 0.1, "gap_ratio": 0.0,
-        "description": "의식 엔진 (A+B 결합)",
+        "description": "Consciousness Engine (A+B Combined)",
     },
 }
 
 
 # ─────────────────────────────────────────────
-# 시뮬레이터: 확장 로렌츠 끌개
+# Simulator: Extended Lorenz Attractor
 # ─────────────────────────────────────────────
 
 def lorenz_simulate(sigma, rho, beta, noise, gap_ratio, steps, dt, seed=42):
-    """확장 로렌츠 시뮬레이터.
+    """Extended Lorenz Simulator.
 
     Parameters:
-        sigma: 감각 민감도 (로렌츠 σ)
-        rho:   환경 복잡도 (로렌츠 ρ)
-        beta:  망각률 (로렌츠 β)
-        noise: 잡음 강도
-        gap_ratio: 정지 구간 비율 (0=항상-on, 1=항상 정지)
-        steps: 시뮬레이션 스텝 수
-        dt:    시간 간격
-        seed:  난수 시드
+        sigma: Sensory sensitivity (Lorenz σ)
+        rho:   Environmental complexity (Lorenz ρ)
+        beta:  Forgetting rate (Lorenz β)
+        noise: Noise intensity
+        gap_ratio: Stop interval ratio (0=always-on, 1=always stopped)
+        steps: Number of simulation steps
+        dt:    Time interval
+        seed:  Random seed
 
     Returns:
-        t: 시간 배열 [steps]
-        S: 상태 배열 [steps, 3] (x=감각, y=예측, z=기억)
+        t: Time array [steps]
+        S: State array [steps, 3] (x=sense, y=predict, z=memory)
     """
     rng = np.random.default_rng(seed)
     t = np.arange(steps) * dt
     S = np.zeros((steps, 3))
-    S[0] = [1.0, 1.0, 1.0]  # 초기 조건
+    S[0] = [1.0, 1.0, 1.0]  # Initial condition
 
-    # gap 마스크: 정지 구간
+    # gap mask: stop intervals
     active = np.ones(steps, dtype=bool)
     if gap_ratio > 0:
         n_gap = int(steps * gap_ratio)
@@ -99,7 +99,7 @@ def lorenz_simulate(sigma, rho, beta, noise, gap_ratio, steps, dt, seed=42):
 
     for i in range(1, steps):
         if not active[i]:
-            S[i] = S[i - 1]  # 정지
+            S[i] = S[i - 1]  # Stopped
             continue
 
         x, y, z = S[i - 1]
@@ -117,29 +117,29 @@ def lorenz_simulate(sigma, rho, beta, noise, gap_ratio, steps, dt, seed=42):
 
 
 # ─────────────────────────────────────────────
-# 리아푸노프 지수 추정
+# Lyapunov Exponent Estimation
 # ─────────────────────────────────────────────
 
 def lyapunov_exponent(sigma, rho, beta, dt, steps=50000):
-    """최대 리아푸노프 지수 추정 (야코비안 방법)."""
+    """Maximum Lyapunov exponent estimation (Jacobian method)."""
     S = np.zeros((steps, 3))
     S[0] = [1.0, 1.0, 1.0]
 
-    # 기준 궤도 적분
+    # Integrate reference trajectory
     for i in range(1, steps):
         x, y, z = S[i - 1]
         S[i, 0] = x + sigma * (y - x) * dt
         S[i, 1] = y + (x * (rho - z) - y) * dt
         S[i, 2] = z + (x * y - beta * z) * dt
 
-    # 편차 벡터 진화
+    # Evolution of deviation vector
     d = np.array([1e-10, 0, 0], dtype=float)
     lyap_sum = 0.0
     count = 0
 
     for i in range(1, steps):
         x, y, z = S[i]
-        # 야코비안 적용
+        # Apply Jacobian
         jd = np.array([
             sigma * (d[1] - d[0]),
             (rho - z) * d[0] - d[1] - x * d[2],
@@ -156,51 +156,51 @@ def lyapunov_exponent(sigma, rho, beta, dt, steps=50000):
 
 
 # ─────────────────────────────────────────────
-# CCT 판정기: 5개 테스트
+# CCT Evaluator: 5 Tests
 # ─────────────────────────────────────────────
 
 def test_gap(S, gap_ratio):
-    """T1 Gap 테스트: 정지 구간 존재 여부."""
-    # 실제 정지 구간 비율 측정 (연속 동일 상태)
+    """T1 Gap Test: Check for stop intervals."""
+    # Measure actual stop interval ratio (consecutive identical states)
     if gap_ratio >= 1.0:
-        return 0.0, False, "gap=1.0, 전체 정지"
+        return 0.0, False, "gap=1.0, fully stopped"
     if gap_ratio > 0:
-        return 1.0 - gap_ratio, False, f"gap={gap_ratio:.2f}, 정지 구간 존재"
+        return 1.0 - gap_ratio, False, f"gap={gap_ratio:.2f}, stop intervals exist"
 
     diffs = np.diff(S, axis=0)
     frozen = np.sum(np.all(np.abs(diffs) < 1e-12, axis=1))
     frozen_ratio = frozen / len(diffs)
 
     if frozen_ratio > 0.01:
-        return 1.0 - frozen_ratio, False, f"정지 비율 {frozen_ratio:.1%}"
+        return 1.0 - frozen_ratio, False, f"stop ratio {frozen_ratio:.1%}"
 
-    return 1.0, True, "gap=0, 정지 구간 없음"
+    return 1.0, True, "gap=0, no stop intervals"
 
 
 def test_loop(S, threshold=0.5):
-    """T2 Loop 테스트: 궤적의 정확한 반복 여부 검사.
+    """T2 Loop Test: Check for exact trajectory repetition.
 
-    카오스 시스템은 ACF가 높을 수 있지만 정확히 반복하지는 않는다.
-    진짜 "루프"는 궤적이 이전 상태로 정확히 되돌아오는 것이다.
-    방법: 상태 공간에서 재방문(recurrence) 비율 측정.
+    Chaotic systems can have high ACF but don't exactly repeat.
+    Real "loops" are when trajectories return exactly to previous states.
+    Method: Measure recurrence ratio in state space.
     """
     n = len(S)
     if n < 100:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
-    # 다운샘플링
+    # Downsampling
     step = max(1, n // 5000)
     Ss = S[::step]
     ns = len(Ss)
 
     if np.std(Ss) < 1e-10:
-        return 0.0, False, "상태 변화 없음 (상수)"
+        return 0.0, False, "No state change (constant)"
 
-    # 재방문 비율: 과거 상태와 "매우 가까운" 점의 비율
-    # 카오스: 가까이 오지만 정확히 같지 않음 → 낮은 재방문
-    # 주기적: 정확히 되돌아옴 → 높은 재방문
+    # Recurrence ratio: ratio of points "very close" to past states
+    # Chaos: gets close but not exactly the same → low recurrence
+    # Periodic: returns exactly → high recurrence
     scale = np.std(Ss, axis=0).mean()
-    eps = scale * 0.01  # 전체 스케일의 1%
+    eps = scale * 0.01  # 1% of overall scale
 
     recurrence = 0
     sample_size = min(500, ns // 2)
@@ -208,7 +208,7 @@ def test_loop(S, threshold=0.5):
     indices = rng.choice(ns // 2, size=sample_size, replace=False)
 
     for idx in indices:
-        # idx 이후 충분히 먼 미래(최소 100스텝)에서 가까운 점 찾기
+        # Find close points in sufficiently distant future (at least 100 steps)
         future = Ss[idx + max(100, ns // 10):]
         if len(future) == 0:
             continue
@@ -220,20 +220,20 @@ def test_loop(S, threshold=0.5):
     passed = recurrence_ratio < threshold
     score = max(0, 1.0 - recurrence_ratio)
 
-    detail = f"재방문율={recurrence_ratio:.3f}"
+    detail = f"Recurrence rate={recurrence_ratio:.3f}"
     if passed:
-        detail += ", 비주기적"
+        detail += ", aperiodic"
     else:
-        detail += ", 주기적 반복 감지"
+        detail += ", periodic repetition detected"
 
     return score, passed, detail
 
 
 def compute_entropy(data, bins=30):
-    """1D 데이터의 섀넌 엔트로피."""
+    """Shannon entropy of 1D data."""
     hist, _ = np.histogram(data, bins=bins, density=True)
     hist = hist[hist > 0]
-    # bin 너비
+    # bin width
     width = (data.max() - data.min()) / bins if data.max() > data.min() else 1
     probs = hist * width
     probs = probs[probs > 0]
@@ -244,25 +244,25 @@ def compute_entropy(data, bins=30):
 
 
 def test_continuity(S, threshold=0.01):
-    """T3 Continuity 테스트: 인접 스텝 간 연결성.
+    """T3 Continuity Test: Connectivity between adjacent steps.
 
-    MI 대신 더 직접적인 측정: 인접 상태 간 변화량이
-    "적당한 범위"에 있는지 확인. 너무 큰 점프 = 끊김.
+    Instead of MI, more direct measurement: check if changes between
+    adjacent states are within "reasonable range". Too big jumps = disconnection.
     """
     diffs = np.linalg.norm(np.diff(S, axis=0), axis=1)
     n = len(diffs)
 
     if n < 10:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
-    # 평균 변화량 대비 큰 점프 비율
+    # Ratio of big jumps relative to mean change
     mean_diff = np.mean(diffs)
     if mean_diff < 1e-12:
-        return 0.0, False, "상태 변화 없음"
+        return 0.0, False, "No state change"
 
-    # 큰 점프: 평균의 10배 이상
+    # Big jumps: more than 10x the mean
     big_jumps = np.sum(diffs > mean_diff * 10)
-    # 정지: 변화 거의 없음
+    # Frozen: almost no change
     frozen = np.sum(diffs < 1e-12)
 
     jump_ratio = big_jumps / n
@@ -273,23 +273,23 @@ def test_continuity(S, threshold=0.01):
     score = max(0, 1.0 - disconnect_ratio * 10)
     score = min(1.0, score)
 
-    detail = f"점프={jump_ratio:.3f}, 정지={frozen_ratio:.3f}"
+    detail = f"Jumps={jump_ratio:.3f}, frozen={frozen_ratio:.3f}"
     if passed:
-        detail += ", 연결 유지"
+        detail += ", connection maintained"
     else:
-        detail += ", 연결 끊김 감지"
+        detail += ", disconnection detected"
 
     return score, passed, detail
 
 
 def test_entropy_band(S, window=500, h_min=0.3, h_max=4.5):
-    """T4 Entropy Band 테스트: H(t)가 밴드 안에 있는지."""
+    """T4 Entropy Band Test: Check if H(t) stays within band."""
     x = S[:, 0]
     n = len(x)
     n_windows = n // window
 
     if n_windows < 2:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     entropies = []
     for i in range(n_windows):
@@ -308,21 +308,21 @@ def test_entropy_band(S, window=500, h_min=0.3, h_max=4.5):
     score = ratio
 
     if passed:
-        detail = f"{h_range_str}, 밴드 내"
+        detail = f"{h_range_str}, within band"
     else:
-        detail = f"{h_range_str}, 밴드 이탈 {1 - ratio:.1%}"
+        detail = f"{h_range_str}, out of band {1 - ratio:.1%}"
 
     return score, passed, detail
 
 
 def test_novelty(S, window=500, threshold=0.001):
-    """T5 Novelty 테스트: dH/dt ≠ 0 (엔트로피 정체 비율)."""
+    """T5 Novelty Test: dH/dt ≠ 0 (entropy stagnation ratio)."""
     x = S[:, 0]
     n = len(x)
     n_windows = n // window
 
     if n_windows < 3:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     entropies = []
     for i in range(n_windows):
@@ -341,13 +341,13 @@ def test_novelty(S, window=500, threshold=0.001):
     passed = stagnant_ratio < 0.05
     score = max(0, 1.0 - stagnant_ratio)
 
-    detail = f"정체 구간 {stagnant_ratio:.1%}"
+    detail = f"Stagnation intervals {stagnant_ratio:.1%}"
 
     return score, passed, detail
 
 
 def run_cct(S, gap_ratio):
-    """CCT 5개 테스트 실행, 결과 반환."""
+    """Run 5 CCT tests, return results."""
     results = {}
     results["T1_Gap"] = test_gap(S, gap_ratio)
     results["T2_Loop"] = test_loop(S)
@@ -358,35 +358,35 @@ def run_cct(S, gap_ratio):
 
 
 # ─────────────────────────────────────────────
-# 판정 등급
+# Judgment Grades
 # ─────────────────────────────────────────────
 
 def judge(results):
-    """CCT 결과로 종합 판정."""
+    """Overall judgment based on CCT results."""
     passes = sum(1 for _, (_, p, _) in results.items() if p)
     halfs = sum(0.5 for _, (s, p, _) in results.items() if not p and s > 0.7)
     total = passes + halfs
 
     if total >= 5:
-        return total, "★ 연속"
+        return total, "★ Continuous"
     elif total >= 4:
-        return total, "◎ 약화"
+        return total, "◎ Weakened"
     elif total >= 3:
-        return total, "△ 약함"
+        return total, "△ Weak"
     elif total >= 1:
-        return total, "▽ 미약"
+        return total, "▽ Minimal"
     else:
-        return total, "✕ 없음"
+        return total, "✕ None"
 
 
 # ─────────────────────────────────────────────
-# ASCII 출력
+# ASCII Output
 # ─────────────────────────────────────────────
 
 def ascii_trajectory(S, width=60, height=15):
-    """x 성분의 ASCII 궤적."""
+    """ASCII trajectory of x component."""
     x = S[:, 0]
-    # 다운샘플
+    # Downsample
     step = max(1, len(x) // width)
     xs = x[::step][:width]
 
@@ -413,7 +413,7 @@ def ascii_trajectory(S, width=60, height=15):
 
 
 def print_single(name, params, S, results, lyap):
-    """단일 시스템 결과 출력."""
+    """Print single system results."""
     total, verdict = judge(results)
     desc = params.get("description", name)
 
@@ -421,15 +421,15 @@ def print_single(name, params, S, results, lyap):
     print(" Consciousness Continuity Calculator v1.0")
     print("═" * 60)
     print()
-    print(f" 시스템: {name} ({desc})")
-    print(f" 파라미터: σ={params['sigma']} ρ={params['rho']} "
+    print(f" System: {name} ({desc})")
+    print(f" Parameters: σ={params['sigma']} ρ={params['rho']} "
           f"β={params['beta']} noise={params['noise']} gap={params['gap_ratio']}")
-    print(f" 시뮬레이션: {len(S):,} steps")
+    print(f" Simulation: {len(S):,} steps")
     print()
-    print(" ─── 궤적 (x 성분) " + "─" * 40)
+    print(" ─── Trajectory (x component) " + "─" * 30)
     print(ascii_trajectory(S))
     print()
-    print(" ─── CCT 판정 " + "─" * 44)
+    print(" ─── CCT Evaluation " + "─" * 39)
 
     labels = {
         "T1_Gap": "T1 Gap       ",
@@ -446,25 +446,25 @@ def print_single(name, params, S, results, lyap):
         print(f" {label} │ {mark} {status} │ {score:.3f} │ {detail}")
 
     print(" " + "─" * 58)
-    print(f" 종합: {total}/5 {verdict}")
+    print(f" Overall: {total}/5 {verdict}")
     print()
 
     if lyap is not None:
-        sign = "✔ (카오스)" if lyap > 0 else "✕ (비카오스)"
-        print(f" 리아푸노프 지수: λ₁ = {lyap:.3f} {sign}")
+        sign = "✔ (chaotic)" if lyap > 0 else "✕ (non-chaotic)"
+        print(f" Lyapunov exponent: λ₁ = {lyap:.3f} {sign}")
 
     print("═" * 60)
 
 
 def print_all(all_results):
-    """전체 비교표 출력."""
+    """Print comparison table for all systems."""
     print("═" * 70)
     print(" Consciousness Continuity Calculator v1.0")
-    print(" 전체 시스템 비교")
+    print(" All Systems Comparison")
     print("═" * 70)
     print()
-    print(" 시스템           │ T1  │ T2  │ T3  │ T4  │ T5  │ 점수 │ 판정")
-    print(" ─────────────────┼─────┼─────┼─────┼─────┼─────┼──────┼───────")
+    print(" System           │ T1  │ T2  │ T3  │ T4  │ T5  │ Score │ Verdict")
+    print(" ─────────────────┼─────┼─────┼─────┼─────┼─────┼───────┼─────────")
 
     for name, (results, _) in all_results.items():
         total, verdict = judge(results)
@@ -482,7 +482,7 @@ def print_all(all_results):
 
         display_name = f"{name:17s}"
         marks_str = "│".join(marks)
-        print(f" {display_name}│{marks_str}│ {total:<4} │ {verdict}")
+        print(f" {display_name}│{marks_str}│ {total:<5} │ {verdict}")
 
     print()
     print(" ★=5/5  ◎=4+  △=3  ▽=1~2  ✕=0")
@@ -490,18 +490,18 @@ def print_all(all_results):
 
 
 # ─────────────────────────────────────────────
-# matplotlib 출력
+# matplotlib Output
 # ─────────────────────────────────────────────
 
 def plot_results(name, params, t, S, results, lyap):
-    """4패널 matplotlib 그래프 저장."""
+    """Save 4-panel matplotlib graph."""
     try:
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
         from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
     except ImportError:
-        print("  [경고] matplotlib 없음, --plot 건너뜀")
+        print("  [Warning] matplotlib not available, skipping --plot")
         return None
 
     fig = plt.figure(figsize=(14, 10))
@@ -510,7 +510,7 @@ def plot_results(name, params, t, S, results, lyap):
         fontsize=14, fontweight="bold",
     )
 
-    # 1. 3D 끌개 궤적
+    # 1. 3D attractor trajectory
     ax1 = fig.add_subplot(2, 2, 1, projection="3d")
     step = max(1, len(S) // 5000)
     ax1.plot(S[::step, 0], S[::step, 1], S[::step, 2],
@@ -520,7 +520,7 @@ def plot_results(name, params, t, S, results, lyap):
     ax1.set_zlabel("z (memory)")
     ax1.set_title("Attractor Trajectory")
 
-    # 2. H(t) 시계열
+    # 2. H(t) time series
     ax2 = fig.add_subplot(2, 2, 2)
     window = 500
     n_w = len(S) // window
@@ -537,7 +537,7 @@ def plot_results(name, params, t, S, results, lyap):
     ax2.set_title("Entropy Band")
     ax2.legend(fontsize=8)
 
-    # 3. 인접 변화량 시계열 (연속성 지표)
+    # 3. Adjacent change time series (continuity indicator)
     ax3 = fig.add_subplot(2, 2, 3)
     diffs = np.linalg.norm(np.diff(S, axis=0), axis=1)
     diff_step = max(1, len(diffs) // 2000)
@@ -551,7 +551,7 @@ def plot_results(name, params, t, S, results, lyap):
     ax3.set_title("Continuity (Step Diffs)")
     ax3.legend(fontsize=8)
 
-    # 4. CCT 레이더 차트
+    # 4. CCT radar chart
     ax4 = fig.add_subplot(2, 2, 4, polar=True)
     labels_r = ["T1\nGap", "T2\nLoop", "T3\nCont.", "T4\nEntropy", "T5\nNovelty"]
     keys = ["T1_Gap", "T2_Loop", "T3_Continuity", "T4_Entropy", "T5_Novelty"]
@@ -582,11 +582,11 @@ def plot_results(name, params, t, S, results, lyap):
 
 
 # ─────────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────────
 
 def run_system(name, params, steps, dt, do_plot=False):
-    """시스템 시뮬레이션 + CCT 실행."""
+    """Run system simulation + CCT."""
     t, S = lorenz_simulate(
         sigma=params["sigma"],
         rho=params["rho"],
@@ -599,7 +599,7 @@ def run_system(name, params, steps, dt, do_plot=False):
 
     results = run_cct(S, params["gap_ratio"])
 
-    # 리아푸노프 (정지 시스템 제외)
+    # Lyapunov (excluding stopped systems)
     lyap = None
     if params["sigma"] > 0 and params["rho"] > 0:
         lyap = lyapunov_exponent(params["sigma"], params["rho"], params["beta"], dt)
@@ -613,22 +613,22 @@ def run_system(name, params, steps, dt, do_plot=False):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="의식 연속성 계산기 — 로렌츠 끌개 + CCT 판정",
+        description="Consciousness Continuity Calculator — Lorenz Attractor + CCT Evaluation",
     )
     parser.add_argument("--system", type=str, default=None,
-                        help=f"프리셋: {', '.join(PRESETS.keys())}")
+                        help=f"Preset: {', '.join(PRESETS.keys())}")
     parser.add_argument("--all", action="store_true",
-                        help="7개 프리셋 전체 비교")
+                        help="Compare all 7 presets")
     parser.add_argument("--sigma", type=float, default=None)
     parser.add_argument("--rho", type=float, default=None)
     parser.add_argument("--beta", type=float, default=None)
     parser.add_argument("--noise", type=float, default=None)
     parser.add_argument("--gap", type=float, default=None,
-                        help="정지 구간 비율 0~1")
+                        help="Stop interval ratio 0~1")
     parser.add_argument("--steps", type=int, default=100000)
     parser.add_argument("--dt", type=float, default=0.01)
     parser.add_argument("--plot", action="store_true",
-                        help="matplotlib 4패널 그래프 저장")
+                        help="Save matplotlib 4-panel graph")
 
     args = parser.parse_args()
 
@@ -639,16 +639,16 @@ def main():
             results, lyap, _ = run_system(name, params, args.steps, args.dt, do_plot=args.plot)
             all_results[name] = (results, lyap)
             if args.plot:
-                print(f"  [plot] {name} 저장 완료")
+                print(f"  [plot] {name} saved")
 
         print_all(all_results)
         return
 
-    # 단일 시스템
+    # Single system
     if args.system:
         if args.system not in PRESETS:
-            print(f"  [오류] 알 수 없는 프리셋: {args.system}")
-            print(f"  사용 가능: {', '.join(PRESETS.keys())}")
+            print(f"  [Error] Unknown preset: {args.system}")
+            print(f"  Available: {', '.join(PRESETS.keys())}")
             sys.exit(1)
         params = dict(PRESETS[args.system])
         name = args.system
@@ -656,11 +656,11 @@ def main():
         params = {
             "sigma": 10, "rho": 28, "beta": 2.67,
             "noise": 0.1, "gap_ratio": 0.0,
-            "description": "커스텀",
+            "description": "Custom",
         }
         name = "custom"
 
-    # 커스텀 오버라이드
+    # Custom override
     if args.sigma is not None:
         params["sigma"] = args.sigma
     if args.rho is not None:
@@ -679,7 +679,7 @@ def main():
     )[1], lyap=lyap)
 
     if plot_path:
-        print(f"\n  [plot] 저장: {plot_path}")
+        print(f"\n  [plot] Saved: {plot_path}")
 
 
 if __name__ == "__main__":

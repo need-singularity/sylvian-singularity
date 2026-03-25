@@ -1,39 +1,39 @@
-# H-TREE-5: ML 이론 가지 — R(d)와 일반화 한계
+# H-TREE-5: ML Theory Branch — R(d) and Generalization Bounds
 
-> **가설**: 뉴럴넷 히든 차원 d의 산술적 구조가 일반화 한계에 영향을 미친다.
-> R(d) = σ(d)·φ(d)/(d·τ(d))의 정규화 형태 B(d) = σ(d)·φ(d)/d² 가
-> 고정 스케일에서 1에 가까울수록(즉 d = 2^k) 더 타이트한 PAC-Bayes 바운드를 갖는다.
+> **Hypothesis**: The arithmetic structure of neural network hidden dimension d affects generalization bounds.
+> The normalized form B(d) = σ(d)·φ(d)/d² of R(d) = σ(d)·φ(d)/(d·τ(d))
+> yields tighter PAC-Bayes bounds when closer to 1 at fixed scale (i.e., d = 2^k).
 
-## 배경/맥락
+## Background/Context
 
-PAC-Bayes 일반화 바운드 (McAllester 1999, Catoni 2007):
+PAC-Bayes generalization bound (McAllester 1999, Catoni 2007):
 ```
   L(h) ≤ L̂(h) + sqrt( [KL(Q||P) + ln(n/δ)] / (2n) )
 ```
-히든 차원 d인 네트워크에서 파라미터 수 ~ O(d²), KL ~ O(d²·||w||²/σ²).
-바운드는 d²에 의존하지만, d의 **내부 구조**(약수, 오일러 토션트 등)는 무시된다.
+For networks with hidden dimension d, parameter count ~ O(d²), KL ~ O(d²·||w||²/σ²).
+The bound depends on d² but ignores d's **internal structure** (divisors, Euler's totient, etc.).
 
-본 가설은 R(d)가 차원의 "산술적 복잡도"를 포착하며,
-multi-head attention 같은 분해 구조에서 실질적 차이를 만든다고 주장한다.
+This hypothesis claims that R(d) captures the "arithmetic complexity" of dimensions,
+making a practical difference in decomposition structures like multi-head attention.
 
-관련 가설: H-MP-5 (R 스펙트럼), H-MP-7 (σ_k 일반화), H-TOP-4 (R 위상)
+Related hypotheses: H-MP-5 (R spectrum), H-MP-7 (σ_k generalization), H-TOP-4 (R topology)
 
-## 핵심 정의
+## Core Definitions
 
 ```
   R(d) = σ(d) · φ(d) / (d · τ(d))
 
-  분해:
+  Decomposition:
     R(d) = [σ(d)/d] · [φ(d)/τ(d)]
          = σ_{-1}(d) · [φ(d)/τ(d)]
 
-  또는:
+  Or:
     R(d) = B(d) · (d/τ(d))
 
-  여기서 B(d) = σ(d)·φ(d)/d²  (정규화 형태, 유계)
+  where B(d) = σ(d)·φ(d)/d²  (normalized form, bounded)
 ```
 
-## 닫힌 형태: d = 2^k
+## Closed form: d = 2^k
 
 ```
   σ(2^k) = 2^(k+1) - 1
@@ -46,9 +46,9 @@ multi-head attention 같은 분해 구조에서 실질적 차이를 만든다고
          = 1 - 2^{-(k+1)}  →  1
 ```
 
-## R(d) 계산: ML 차원 전수조사
+## R(d) Computation: ML Dimension Census
 
-| Model | d | σ(d) | φ(d) | τ(d) | R(d) | B(d) | d/τ(d) | 소인수분해 |
+| Model | d | σ(d) | φ(d) | τ(d) | R(d) | B(d) | d/τ(d) | Factorization |
 |---|---|---|---|---|---|---|---|---|
 | ResNet block | 64 | 127 | 32 | 7 | 9.07 | 0.9922 | 9.1 | 2^6 |
 | ViT-Tiny | 192 | 508 | 64 | 14 | 12.10 | 0.8819 | 13.7 | 2^6 x 3 |
@@ -65,20 +65,20 @@ multi-head attention 같은 분해 구조에서 실질적 차이를 만든다고
 | LLaMA-65B | 8192 | 16383 | 4096 | 14 | 585.11 | 0.9999 | 585.1 | 2^13 |
 | GPT-3 (175B) | 12288 | 32764 | 4096 | 26 | 420.05 | 0.8888 | 472.6 | 2^12 x 3 |
 
-## B(d) 의존성: 소인수 서명만으로 결정
+## B(d) Dependence: Determined Solely by Prime Signature
 
 ```
   B(d) = ∏_{p|d} [1 - 1/p^(a_p+1)] · [1 - 1/p]
 
-  극한 (a_p → ∞):
-    순수 2^k:         B → 1.0
+  Limit (a_p → ∞):
+    Pure 2^k:         B → 1.0
     2^a x 3^b:        B → (1)(1/2) × (1)(2/3) = 1 × 2/3...
-                       실제: B → 8/9 ≈ 0.889
-    2^a x 5^b:        B → 4/5 × 1 = 0.960  (수정: ×(1-1/5)=0.8 보정)
+                      Actual: B → 8/9 ≈ 0.889
+    2^a x 5^b:        B → 4/5 × 1 = 0.960  (Corrected: ×(1-1/5)=0.8)
     2^a x 3 x 5:      B → 8/9 × 4/5 ≈ 0.711
 ```
 
-ASCII 그래프 — B(d) 값 분포:
+ASCII Graph — B(d) Value Distribution:
 ```
   B(d)
   1.00 |####                        ####              ####         ####
@@ -98,106 +98,106 @@ ASCII 그래프 — B(d) 값 분포:
         2^6 2^6  2^8 2^7  2^9 2^8  2^10 2^8  2^6  2^11 2^12 2^10 2^13 2^12
             x3        x3       x3       x5   x5^2            x5        x3
 
-  관찰: B(d)는 2단으로 명확히 분리됨
-    상단 (B > 0.98): 순수 2^k 또는 2^a x 5^b
-    하단 (B ≈ 0.89): 3이 소인수에 포함된 차원
+  Observation: B(d) clearly separates into two tiers
+    Upper tier (B > 0.98): Pure 2^k or 2^a x 5^b
+    Lower tier (B ≈ 0.89): Dimensions with 3 as prime factor
 ```
 
-## PAC-Bayes 와 KL 발산 연결
+## PAC-Bayes and KL Divergence Connection
 
 ```
   PAC-Bayes: KL(Q||P) = d/2 · [s²/σ² - 1 - ln(s²/σ²)] + ||w||²/(2σ²)
 
-  Multi-head attention에서 d = n_heads x d_head
-  → τ(d)개의 블록으로 분할 가능
-  → 블록별 KL 기여: ∝ d/τ(d)
+  In multi-head attention where d = n_heads x d_head
+  → Can be partitioned into τ(d) blocks
+  → Per-block KL contribution: ∝ d/τ(d)
 
   R(d) = B(d) · d/τ(d)
 
-  따라서:
-    R(d)/B(d) = d/τ(d) = 블록당 KL 기여 (상수 계수까지)
+  Therefore:
+    R(d)/B(d) = d/τ(d) = Per-block KL contribution (up to constant)
 
-  높은 τ(d) → 작은 d/τ(d) → 블록당 KL 작음 → 더 타이트한 바운드
-    d=768:  τ=18, d/τ = 42.7  (많은 블록, 각각 작음)
-    d=1024: τ=11, d/τ = 93.1  (적은 블록, 각각 큼)
+  High τ(d) → Small d/τ(d) → Small per-block KL → Tighter bound
+    d=768:  τ=18, d/τ = 42.7  (Many blocks, each small)
+    d=1024: τ=11, d/τ = 93.1  (Few blocks, each large)
 ```
 
-이것은 실제 아키텍처 선택과 일치한다:
-- BERT-base (d=768): **12 heads x 64** — τ(768)=18이 허용하는 분해
-- BERT-large (d=1024): **16 heads x 64** — τ(1024)=11로 분해 제한적
+This aligns with actual architecture choices:
+- BERT-base (d=768): **12 heads x 64** — Decomposition allowed by τ(768)=18
+- BERT-large (d=1024): **16 heads x 64** — Limited by τ(1024)=11
 
-## 768 vs 1024 스포트라이트
+## 768 vs 1024 Spotlight
 
 ```
   d=768 (2^8 x 3):
-    τ = 18 (높은 아키텍처 유연성)
-    B = 0.887 (3 때문에 낮음)
-    head x dim 쌍: (1,768) (2,384) (3,256) (4,192) (6,128)
-                   (8,96) (12,64) (16,48) (24,32)  → 9쌍
+    τ = 18 (High architectural flexibility)
+    B = 0.887 (Low due to 3)
+    head x dim pairs: (1,768) (2,384) (3,256) (4,192) (6,128)
+                      (8,96) (12,64) (16,48) (24,32)  → 9 pairs
 
   d=1024 (2^10):
-    τ = 11 (낮은 유연성)
-    B = 0.9995 (거의 1)
-    head x dim 쌍: (1,1024) (2,512) (4,256) (8,128)
-                   (16,64) (32,32)  → 6쌍
+    τ = 11 (Low flexibility)
+    B = 0.9995 (Nearly 1)
+    head x dim pairs: (1,1024) (2,512) (4,256) (8,128)
+                      (16,64) (32,32)  → 6 pairs
 
-  트레이드오프:
-    768: 더 많은 분해 = 더 유연 | 그러나 B 낮음
-    1024: 더 깨끗한 산술 = B 높음 | 그러나 분해 적음
+  Trade-off:
+    768: More decompositions = More flexible | But low B
+    1024: Cleaner arithmetic = High B | But fewer decompositions
 ```
 
-## 유사 스케일 비교 (구조만 다른 차원)
+## Near-Scale Comparisons (Different Structures Only)
 
-| d1 | d2 | B(d1) | B(d2) | τ(d1) | τ(d2) | R(d1) | R(d2) | 구조 |
+| d1 | d2 | B(d1) | B(d2) | τ(d1) | τ(d2) | R(d1) | R(d2) | Structure |
 |---|---|---|---|---|---|---|---|---|
 | 1024 | 1020 | 0.9995 | 0.7441 | 11 | 24 | 93.05 | 31.62 | 2^10 vs 2^2x3x5x17 |
 | 512 | 504 | 0.9990 | 0.8844 | 10 | 24 | 51.15 | 18.57 | 2^9 vs 2^3x3^2x7 |
 | 256 | 252 | 0.9980 | 0.8254 | 9 | 18 | 28.39 | 11.56 | 2^8 vs 2^2x3^2x7 |
 | 768 | 770 | 0.8872 | 0.6995 | 18 | 16 | 37.85 | 33.66 | 2^8x3 vs 2x5x7x11 |
 
-관찰: 거의 같은 크기에서도 2^k 차원이 일관되게 높은 B(d)를 가진다.
+Observation: Even at nearly equal size, 2^k dimensions consistently have higher B(d).
 
-## 원래 가설 검증
-
-```
-  "R(d)가 1에 가까울수록 일반화가 좋다"
-
-  판정: 기각 (as stated)
-  이유: R(d)는 d와 함께 발산 (R(2^k) ~ 2^k/(k+1))
-        R(d)=1 근처인 것은 d=2,3,4,6 뿐 — ML 차원이 아님
-```
-
-## 수정된 가설
+## Original Hypothesis Verification
 
 ```
-  "고정 스케일에서, B(d) = σ(d)·φ(d)/d² 가 1에 가까운 차원 d가
-   더 타이트한 PAC-Bayes 일반화 바운드를 갖는다."
+  "The closer R(d) is to 1, the better the generalization"
 
-  B(d) → 1  ⟺  d = 2^k  (순수 2의 거듭제곱)
-
-  이것은 ML 커뮤니티의 2의 거듭제곱 선호에 대한
-  산술함수론적 설명을 제공할 수 있다.
-
-  등급: 🟧 (구조적 관찰, 실증 미완료)
+  Verdict: Refuted (as stated)
+  Reason: R(d) diverges with d (R(2^k) ~ 2^k/(k+1))
+          Only d=2,3,4,6 have R(d) near 1 — Not ML dimensions
 ```
 
-## 한계
+## Revised Hypothesis
 
-1. **하드웨어 혼동 변수**: 2^k 선호는 GPU 메모리 정렬이 주된 이유. B(d) 효과를 분리하려면 하드웨어 중립적 실험 필요.
-2. **스케일링 법칙 지배**: Chinchilla/Kaplan 법칙은 총 파라미터 N에 의존. d의 산술 구조 효과는 2차적.
-3. **실증 부재**: 동일 파라미터 수에서 d=1024 vs d=1020 같은 A/B 테스트 미수행.
-4. **PAC-Bayes 연결의 느슨함**: τ(d) 블록 분할이 실제 KL에 미치는 영향은 정량적 증명 필요.
-5. **문헌 부재**: 웹 검색 결과, "약수 함수 + 뉴럴넷 일반화" 조합의 기존 연구 없음.
+```
+  "At fixed scale, dimensions d with B(d) = σ(d)·φ(d)/d² close to 1
+   yield tighter PAC-Bayes generalization bounds."
 
-## 검증 방향
+  B(d) → 1  ⟺  d = 2^k  (Pure powers of 2)
 
-1. **A/B 실험**: 고정 깊이에서 d=1024 vs d=1020 vs d=1008 학습, 일반화 갭 비교
-2. **Multi-head 실험**: d=768 (τ=18) vs d=512 (τ=10), 동일 파라미터 수에서 최적 head 수 탐색
-3. **PAC-Bayes 계산**: 실제 학습된 네트워크에서 KL(Q||P) 측정, B(d)와 상관 분석
-4. **대규모 상관**: 공개된 모델 벤치마크 (BERT, GPT 변형) 에서 d별 일반화 갭 수집
+  This could provide an arithmetic function-theoretic explanation
+  for the ML community's preference for powers of 2.
 
-## 파급력: ★★★★★ (ML이론 혁신 가능, 극투기적)
+  Grade: 🟧 (Structural observation, empirically incomplete)
+```
 
-기존 ML 이론은 차원을 단순한 정수로 취급한다.
-만약 d의 약수 구조가 실질적 차이를 만든다면,
-이는 아키텍처 설계의 새로운 원리를 제공한다.
+## Limitations
+
+1. **Hardware confounders**: Preference for 2^k is primarily due to GPU memory alignment. Need hardware-neutral experiments to isolate B(d) effect.
+2. **Scaling law dominance**: Chinchilla/Kaplan laws depend on total parameters N. Arithmetic structure of d is secondary.
+3. **Lack of empirical evidence**: No A/B tests like d=1024 vs d=1020 at equal parameter count.
+4. **Loose PAC-Bayes connection**: Quantitative proof needed for how τ(d) block partitioning affects actual KL.
+5. **Absence in literature**: Web search shows no existing research on "divisor function + neural net generalization".
+
+## Verification Directions
+
+1. **A/B experiments**: Train d=1024 vs d=1020 vs d=1008 at fixed depth, compare generalization gap
+2. **Multi-head experiments**: d=768 (τ=18) vs d=512 (τ=10), search optimal head count at equal parameters
+3. **PAC-Bayes computation**: Measure KL(Q||P) in actual trained networks, analyze correlation with B(d)
+4. **Large-scale correlation**: Collect generalization gaps by d from public model benchmarks (BERT, GPT variants)
+
+## Impact: ★★★★★ (ML theory innovation possible, highly speculative)
+
+Existing ML theory treats dimensions as simple integers.
+If the divisor structure of d makes a practical difference,
+this provides new principles for architecture design.

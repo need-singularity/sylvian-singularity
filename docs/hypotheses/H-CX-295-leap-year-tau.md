@@ -1,3 +1,3 @@
-# H-CX-295: 🟩 윤년 4년 = τ(6)
+# H-CX-295: 🟩 Leap Year 4 Years = τ(6)
 
-> 윤년 주기 = 약수 개수. 1년 ≈ P₁!/φ = 360 (오차 1.4%).
+> Leap year cycle = Number of divisors. 1 year ≈ P₁!/φ = 360 (error 1.4%).

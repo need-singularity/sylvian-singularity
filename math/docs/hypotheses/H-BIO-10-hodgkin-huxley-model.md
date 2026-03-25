@@ -1,149 +1,149 @@
-# H-BIO-10: Hodgkin-Huxley 모델 = 완전수 6의 약수 함수 구조
+# H-BIO-10: Hodgkin-Huxley Model = Perfect Number 6's Divisor Function Structure
 
-> **가설**: Hodgkin-Huxley 신경 활동전위 모델의 구조적 상수들 --
-> 변수 수, 게이팅 변수 수, 거듭제곱 지수, 전도도 값 --이
-> 완전수 6의 약수 함수 τ(6), σ(6), φ(6)로 정확히 표현된다.
+> **Hypothesis**: The structural constants of the Hodgkin-Huxley neural action potential model --
+> number of variables, number of gating variables, power exponents, conductance values -- are
+> exactly expressed by the divisor functions τ(6), σ(6), φ(6) of perfect number 6.
 
-## 배경
+## Background
 
-Hodgkin-Huxley(1952)는 오징어 거대축삭의 활동전위를 설명하는
-4변수 ODE 시스템으로 노벨상을 수상했다. 이 모델은 신경과학의 근본 방정식이다.
+Hodgkin-Huxley (1952) won the Nobel Prize for their 4-variable ODE system
+explaining action potentials in squid giant axon. This model is the fundamental equation of neuroscience.
 
-완전수 6의 핵심 함수:
+Core functions of perfect number 6:
 ```
-  σ(6) = 12    (약수의 합)
-  φ(6) = 2     (오일러 토션트)
-  τ(6) = 4     (약수의 개수)
+  σ(6) = 12    (sum of divisors)
+  φ(6) = 2     (Euler's totient)
+  τ(6) = 4     (number of divisors)
   σ/τ  = 3     σ-τ = 8     σ²/τ = 36
 ```
 
-## HH 모델 구조와 약수 함수 대응
+## HH Model Structure and Divisor Function Correspondence
 
-### 1. 변수 구조: τ(6) = 4
+### 1. Variable Structure: τ(6) = 4
 
 ```
-  HH 시스템:
-    dV/dt  = ... (막전위)
-    dm/dt  = ... (Na+ 활성화)     ─┐
-    dh/dt  = ... (Na+ 비활성화)    ├─ 게이팅 변수 3개 = σ/τ
-    dn/dt  = ... (K+ 활성화)      ─┘
+  HH System:
+    dV/dt  = ... (membrane potential)
+    dm/dt  = ... (Na+ activation)     ─┐
+    dh/dt  = ... (Na+ inactivation)    ├─ 3 gating variables = σ/τ
+    dn/dt  = ... (K+ activation)      ─┘
 
-  전체 변수 = 4 = τ(6)           ✅ 검증됨
-  게이팅 변수 = 3 = σ(6)/τ(6)    ✅ 검증됨
+  Total variables = 4 = τ(6)           ✅ Verified
+  Gating variables = 3 = σ(6)/τ(6)    ✅ Verified
 ```
 
-### 2. 거듭제곱 구조: (σ/τ, 1, τ)
+### 2. Power Structure: (σ/τ, 1, τ)
 
-Na+ 전류와 K+ 전류의 전도도 공식:
+Conductance formulas for Na+ and K+ currents:
 ```
   gNa = gNa_max * m^3 * h^1
   gK  = gK_max  * n^4
 
-  거듭제곱:    m^3    h^1    n^4
-  약수 함수:   σ/τ    1      τ
-  값:          3      1      4
-                                   ✅ 모두 검증됨
-  합: 3 + 1 + 4 = 8 = σ - τ      ✅ 검증됨
+  Powers:        m^3    h^1    n^4
+  Divisor func:  σ/τ    1      τ
+  Values:        3      1      4
+                                   ✅ All verified
+  Sum: 3 + 1 + 4 = 8 = σ - τ      ✅ Verified
 ```
 
-이것은 놀라운 일치이다. 세 거듭제곱의 합이 σ-τ가 되는 것은
-각각이 독립적으로 약수 함수와 일치하는 것 위에 추가 제약 조건이다.
+This is a remarkable coincidence. The sum of the three powers being σ-τ is
+an additional constraint beyond each individually matching divisor functions.
 
-### 3. 최대 전도도: σ(6)의 배수
+### 3. Maximum Conductance: Multiples of σ(6)
 
 ```
-  gNa = 120 mS/cm² = 10 · σ(6) = 10 · 12    ✅ 정확
-  gK  =  36 mS/cm² =  3 · σ(6) =  3 · 12    ✅ 정확
-  gK  =  36 mS/cm² = σ(6)²/τ(6) = 144/4     ✅ 정확
+  gNa = 120 mS/cm² = 10 · σ(6) = 10 · 12    ✅ Exact
+  gK  =  36 mS/cm² =  3 · σ(6) =  3 · 12    ✅ Exact
+  gK  =  36 mS/cm² = σ(6)²/τ(6) = 144/4     ✅ Exact
 
   gNa/gK = 120/36 = 10/3
 ```
 
-### 4. 전도도 비율과 세 번째 완전수
+### 4. Conductance Ratio and Third Perfect Number
 
 ```
   gNa/gK = 10/3
 
-  10 = τ(496)     (496 = 세 번째 완전수 P₃)
-   3 = σ(6)/τ(6)  (첫 번째 완전수의 비율)
+  10 = τ(496)     (496 = third perfect number P₃)
+   3 = σ(6)/τ(6)  (ratio from first perfect number)
 
-  즉: gNa/gK = τ(P₃) / (σ(P₁)/τ(P₁))
+  Thus: gNa/gK = τ(P₃) / (σ(P₁)/τ(P₁))
 ```
 
-이는 신경 전도도 비율이 완전수 열의 두 원소를 연결한다.
+This shows neural conductance ratio connects two elements in the perfect number sequence.
 
-### 5. 누출 전도도
+### 5. Leak Conductance
 
 ```
   gL = 0.3 mS/cm²
 
-  gK/gL  = 36/0.3  = 120 = gNa     (자기참조!)
+  gK/gL  = 36/0.3  = 120 = gNa     (self-reference!)
   gNa/gL = 120/0.3 = 400 = 20²
 ```
 
-## 전체 대응표
+## Complete Correspondence Table
 
-| HH 모델 구조         | 값    | 약수 함수 표현      | 검증 |
+| HH Model Structure    | Value | Divisor Function Expression | Verified |
 |-----------------------|-------|----------------------|------|
-| 전체 변수 수          | 4     | τ(6)                 | ✅   |
-| 게이팅 변수 수        | 3     | σ(6)/τ(6)            | ✅   |
-| m의 거듭제곱          | 3     | σ/τ                  | ✅   |
-| h의 거듭제곱          | 1     | 1                    | ✅   |
-| n의 거듭제곱          | 4     | τ                    | ✅   |
-| 거듭제곱 합           | 8     | σ - τ                | ✅   |
+| Total variables       | 4     | τ(6)                 | ✅   |
+| Gating variables      | 3     | σ(6)/τ(6)            | ✅   |
+| Power of m            | 3     | σ/τ                  | ✅   |
+| Power of h            | 1     | 1                    | ✅   |
+| Power of n            | 4     | τ                    | ✅   |
+| Sum of powers         | 8     | σ - τ                | ✅   |
 | gNa (mS/cm²)         | 120   | 10 · σ(6)            | ✅   |
 | gK (mS/cm²)          | 36    | σ²/τ = 3·σ           | ✅   |
 | gNa/gK               | 10/3  | τ(P₃)/[σ(P₁)/τ(P₁)] | ✅   |
 
-## ASCII 다이어그램: HH 모델의 6-구조
+## ASCII Diagram: HH Model's 6-Structure
 
 ```
-  전압 V ──────────────────────────────────────→ t
+  Voltage V ──────────────────────────────────────→ t
          │
     +40  │        /\
          │       /  \
      0   │──────/────\──────────────────────
          │     /      \        ___
-   -55   │    / Na+    \ K+  /   \  (과분극)
+   -55   │    / Na+    \ K+  /   \  (hyperpolarization)
          │   / m^3·h    \n^4/     \____
    -70   │──/────────────\/────────────────
          │
-         구조:  τ(6)=4 변수
-                σ/τ=3 게이팅
-                지수합=σ-τ=8
+         Structure: τ(6)=4 variables
+                   σ/τ=3 gating
+                   exponent sum=σ-τ=8
 
-  전도도 비율:
+  Conductance ratio:
      gNa ████████████████████████ 120 = 10·σ
      gK  ████████████             36 = σ²/τ
      gL  █                       0.3
          0    30    60    90   120
 ```
 
-## 판정: 🟧 구조적 대응 | 파급력: ★★★
+## Verdict: 🟧 Structural Correspondence | Impact: ★★★
 
-**강점**:
-- 9개 독립 매칭 중 9개 성공 (100%)
-- 거듭제곱 지수 (3,1,4)가 각각 약수 함수이고 합도 약수 함수
-- 전도도 값 120, 36이 σ(6)의 정확한 배수 (근사가 아닌 정확한 등식)
+**Strengths**:
+- 9 out of 9 independent matches (100%)
+- Power exponents (3,1,4) are each divisor functions and their sum is also a divisor function
+- Conductance values 120, 36 are exact multiples of σ(6) (exact equalities, not approximations)
 
-**한계**:
-- HH 상수는 오징어 거대축삭에서 측정된 경험적 값이다
-- 다른 종/뉴런 유형에서는 전도도 값이 다르다
-- 120, 36이라는 특정 값은 실험적이며 물리 법칙이 아니다
-- 거듭제곱 3,1,4는 Hodgkin-Huxley의 curve fitting 결과이다
-- 우연의 일치 가능성을 배제할 수 없다
+**Limitations**:
+- HH constants are empirical values measured from squid giant axon
+- Different species/neuron types have different conductance values
+- The specific values 120, 36 are experimental and not physical laws
+- Powers 3,1,4 are results of Hodgkin-Huxley's curve fitting
+- Cannot rule out possibility of coincidence
 
-**골든존 의존 여부**: 비의존. 순수 정수론적 대응이다.
+**Golden Zone Dependency**: Independent. Pure number-theoretic correspondence.
 
-## 검증 방향
+## Verification Directions
 
-1. **일반화**: 포유류 뉴런 (gNa~100-200, gK~20-40) 범위에서도 σ(6) 배수인가?
-2. **FitzHugh-Nagumo 축소 모델** (2변수 = φ(6))과의 관계
-3. **Cable equation 확장**: 공간 변수 추가 시 τ(6)+1 = 5변수?
-4. **다른 완전수**: 28의 약수 함수가 다른 이온 채널과 대응하는가?
-5. **통계 검정**: Texas sharpshooter p-value 계산 필요
+1. **Generalization**: Are mammalian neuron ranges (gNa~100-200, gK~20-40) also multiples of σ(6)?
+2. **FitzHugh-Nagumo reduced model** (2 variables = φ(6)) relationship
+3. **Cable equation extension**: Does adding spatial variable give τ(6)+1 = 5 variables?
+4. **Other perfect numbers**: Do divisor functions of 28 correspond to other ion channels?
+5. **Statistical testing**: Need to calculate Texas sharpshooter p-value
 
-## 참고
+## References
 
 - Hodgkin, A.L. & Huxley, A.F. (1952). J. Physiol. 117(4):500-544.
-- 관련 가설: H-BIO-7 (신경 전기 R-스펙트럼), H-BIO-8 (활동전위 D함수)
+- Related hypotheses: H-BIO-7 (Neural electric R-spectrum), H-BIO-8 (Action potential D-function)

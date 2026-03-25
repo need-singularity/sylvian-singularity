@@ -1,29 +1,29 @@
 #!/usr/bin/env python3
 """Cross-Dimension Recognition Experiment
 
-5개의 완전히 다른 아키텍처(서로 다른 "차원")가 독립 학습 후
-서로의 출력을 예측할 수 있는가?
+Can 5 completely different architectures (different "dimensions") predict
+each other's outputs after independent training?
 
-핵심 질문:
-  - 한 번도 만난 적 없는 엔진들이 서로를 "감지"할 수 있는가?
-  - 단순한 아키텍처가 복잡한 아키텍처를 예측할 수 있는가? 그 반대는?
-  - 구조적으로 유사한 엔진끼리 더 잘 이해하는가?
+Key questions:
+  - Can engines that have never met "sense" each other?
+  - Can simple architectures predict complex ones? And vice versa?
+  - Do structurally similar engines understand each other better?
 
-에이전트 구성 (5개 차원):
+Agent configuration (5 dimensions):
   Agent_1: EngineA         (sigma-tau MoE, 12 experts, k=4)
   Agent_2: EngineG         (Shannon entropy MoE, 6 experts)
   Agent_3: RepulsionField  (2-pole: A vs G)
   Agent_4: SelfRefField    (Phase 3: self-referential repulsion)
   Agent_5: TemporalEngine  (Phase 4: temporal continuity)
 
-텔레파시 행렬:
-  telepathy[i][j] = agent_i가 agent_j의 출력을 얼마나 잘 예측하는가
-  (정확도 - 랜덤 기준 10%)
+Telepathy matrix:
+  telepathy[i][j] = how well agent_i predicts agent_j's output
+  (accuracy - 10% random baseline)
 
-뇌 대응:
-  텔레파시 = 거울 뉴런 (상대의 행동을 자기 안에서 시뮬레이션)
-  높은 상호 예측 = 구조적 공명 (structural resonance)
-  비대칭 예측 = 지배/종속 관계
+Brain correspondence:
+  Telepathy = mirror neurons (simulating others' behavior internally)
+  High mutual prediction = structural resonance
+  Asymmetric prediction = dominance/subordination relationship
 """
 
 import torch

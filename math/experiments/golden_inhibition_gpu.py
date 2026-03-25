@@ -16,7 +16,7 @@ import json
 import sys
 
 def experiment_1_activation_heatmap(model, tokenizer):
-    """Expert 활성 패턴 시각화"""
+    """Visualize expert activation patterns"""
     print("\n=== Experiment 1: Expert Activation Heatmap ===")
 
     test_prompts = {
@@ -45,7 +45,7 @@ def experiment_1_activation_heatmap(model, tokenizer):
     return results
 
 def experiment_2_savant_index(model, tokenizer, datasets):
-    """Savant Index: max(도메인PPL)/min(도메인PPL)"""
+    """Savant Index: max(domainPPL)/min(domainPPL)"""
     print("\n=== Experiment 2: Savant Index ===")
 
     ppls = {}

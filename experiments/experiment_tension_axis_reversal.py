@@ -1,5 +1,6 @@
+```python
 #!/usr/bin/env python3
-"""실험: 텐션 축 반전 — 왜 MNIST는 content>structure이고 CIFAR는 structure>content인가?
+"""Experiment: Tension Axis Reversal — Why is MNIST content>structure but CIFAR structure>content?
 
 MNIST: content tension 372 > structure tension 256  (content dominant)
 CIFAR: content tension 273 < structure tension 656  (structure dominant, 2.4x!)
@@ -7,18 +8,18 @@ CIFAR: content tension 273 < structure tension 656  (structure dominant, 2.4x!)
 Content axis  = A(number theory) vs G(entropy)       = "WHAT is it?"
 Structure axis = E(Euler product) vs F(modular constraint) = "HOW is it structured?"
 
-가설:
-  MNIST는 "이 숫자가 무엇인가?"가 핵심 → content(의미) 축이 지배
-  CIFAR는 "이것이 어떻게 생겼는가?"가 핵심 → structure(형태) 축이 지배
+Hypothesis:
+  MNIST asks "What is this number?" → content(meaning) axis dominates
+  CIFAR asks "How does this look?" → structure(form) axis dominates
 
-분석:
-  1. 분포 비교: content vs structure tension 히스토그램
-  2. 클래스별 텐션 프로필: 어떤 클래스가 반전을 유발하는가?
-  3. 상관관계: 샘플별 content vs structure (산점도)
-  4. 비율 분석: content/structure ratio 분포
-  5. 엔진 출력 분석: A, E, G, F 각각 무엇을 출력하는가?
-  6. 교차 전이: MNIST 학습 → CIFAR 테스트 (zero-shot)
-  7. 시간축 분석: 에폭별 content/structure 비율 변화
+Analysis:
+  1. Distribution comparison: content vs structure tension histograms
+  2. Per-class tension profile: Which classes drive the reversal?
+  3. Correlation: Per-sample content vs structure (scatter plot)
+  4. Ratio analysis: content/structure ratio distribution
+  5. Engine output analysis: What do A, E, G, F each output?
+  6. Cross-transfer: MNIST training → CIFAR test (zero-shot)
+  7. Temporal analysis: Content/structure ratio change per epoch
 """
 
 import sys
@@ -42,11 +43,11 @@ from model_meta_engine import (
 
 
 # ─────────────────────────────────────────
-# 유틸: ASCII 히스토그램
+# Utility: ASCII histogram
 # ─────────────────────────────────────────
 
 def ascii_histogram(values, title="", bins=20, width=50):
-    """값 리스트를 ASCII 히스토그램으로 출력."""
+    """Display a list of values as ASCII histogram."""
     if len(values) == 0:
         print(f"  [{title}] no data")
         return
@@ -68,7 +69,7 @@ def ascii_histogram(values, title="", bins=20, width=50):
 
 
 def ascii_scatter(xs, ys, xlabel="x", ylabel="y", title="", width=60, height=20):
-    """ASCII 산점도 (밀도 기반)."""
+    """ASCII scatter plot (density-based)."""
     xs, ys = np.array(xs), np.array(ys)
     if len(xs) == 0:
         print(f"  [{title}] no data")
@@ -112,16 +113,16 @@ def ascii_scatter(xs, ys, xlabel="x", ylabel="y", title="", width=60, height=20)
 
 
 # ─────────────────────────────────────────
-# 텐션 수집기 (per-sample)
+# Tension collector (per-sample)
 # ─────────────────────────────────────────
 
 class TensionCollector:
-    """RepulsionFieldQuad에서 per-sample 텐션과 엔진 출력을 수집."""
+    """Collect per-sample tension and engine outputs from RepulsionFieldQuad."""
 
     @staticmethod
     @torch.no_grad()
     def collect(model, data_loader, flatten=True, max_batches=None):
-        """모델의 per-sample 텐션, 엔진 출력, 라벨 수집.
+        """Collect model's per-sample tension, engine outputs, labels.
 
         Returns:
             dict with keys:
@@ -180,12 +181,12 @@ class TensionCollector:
 
 
 # ─────────────────────────────────────────
-# 에폭별 텐션 추적 학습 루프
+# Training loop with per-epoch tension tracking
 # ─────────────────────────────────────────
 
 def train_with_tension_tracking(model, train_loader, test_loader, epochs,
                                 lr=0.001, flatten=True, verbose=True):
-    """학습하면서 에폭마다 content/structure tension ratio 추적."""
+    """Train while tracking content/structure tension ratio per epoch."""
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     criterion = nn.CrossEntropyLoss()
 
@@ -255,11 +256,11 @@ def train_with_tension_tracking(model, train_loader, test_loader, epochs,
 
 
 # ─────────────────────────────────────────
-# 분석 함수들
+# Analysis functions
 # ─────────────────────────────────────────
 
 def analyze_distributions(data, dataset_name):
-    """1. 분포 비교: content vs structure tension."""
+    """1. Distribution comparison: content vs structure tension."""
     print(f"\n{'='*70}")
     print(f"  ANALYSIS 1: Tension Distribution — {dataset_name}")
     print(f"{'='*70}")
@@ -288,7 +289,7 @@ def analyze_distributions(data, dataset_name):
 
 
 def analyze_per_class(data, dataset_name, class_names=None):
-    """2. 클래스별 텐션 프로필."""
+    """2. Per-class tension profile."""
     print(f"\n{'='*70}")
     print(f"  ANALYSIS 2: Per-Class Tension Profile — {dataset_name}")
     print(f"{'='*70}")
@@ -332,7 +333,7 @@ def analyze_per_class(data, dataset_name, class_names=None):
 
 
 def analyze_correlation(data, dataset_name):
-    """3. 상관관계: content vs structure per sample."""
+    """3. Correlation: content vs structure per sample."""
     print(f"\n{'='*70}")
     print(f"  ANALYSIS 3: Content vs Structure Correlation — {dataset_name}")
     print(f"{'='*70}")
@@ -351,7 +352,7 @@ def analyze_correlation(data, dataset_name):
 
 
 def analyze_ratio_distribution(data_mnist, data_cifar):
-    """4. C/S ratio 비교."""
+    """4. C/S ratio comparison."""
     print(f"\n{'='*70}")
     print(f"  ANALYSIS 4: Content/Structure Ratio Distribution Comparison")
     print(f"{'='*70}")
@@ -375,7 +376,7 @@ def analyze_ratio_distribution(data_mnist, data_cifar):
 
 
 def analyze_engine_outputs(data, dataset_name):
-    """5. 엔진 출력 분석: 각 엔진이 실제로 무엇을 내는가?"""
+    """5. Engine output analysis: What does each engine actually output?"""
     print(f"\n{'='*70}")
     print(f"  ANALYSIS 5: Engine Output Analysis — {dataset_name}")
     print(f"{'='*70}")
@@ -449,7 +450,7 @@ def analyze_engine_outputs(data, dataset_name):
 
 
 def analyze_temporal(epoch_data_mnist, epoch_data_cifar):
-    """6. 시간축 분석: 에폭별 C/S 비율 변화."""
+    """6. Temporal analysis: C/S ratio change per epoch."""
     print(f"\n{'='*70}")
     print(f"  ANALYSIS 6: Temporal — C/S Ratio Per Epoch")
     print(f"{'='*70}")
@@ -507,7 +508,7 @@ def analyze_temporal(epoch_data_mnist, epoch_data_cifar):
 
 
 def analyze_cross_transfer(model_mnist, test_loader_cifar, test_loader_mnist):
-    """7. 교차 전이: MNIST 학습 모델 → CIFAR 테스트."""
+    """7. Cross-transfer: MNIST trained model → CIFAR test."""
     print(f"\n{'='*70}")
     print(f"  ANALYSIS 7: Cross-Dataset Transfer")
     print(f"{'='*70}")
@@ -540,7 +541,7 @@ def analyze_cross_transfer(model_mnist, test_loader_cifar, test_loader_mnist):
 
 
 # ─────────────────────────────────────────
-# 메인 실험
+# Main experiment
 # ─────────────────────────────────────────
 
 def main():
@@ -689,3 +690,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

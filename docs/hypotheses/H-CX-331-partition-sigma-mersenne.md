@@ -1,3 +1,3 @@
 # H-CX-331: 🟩 p(σ)=p(12)=77=7×11=(P₁+1)(σ-1)
 
-> 12의 분할수=메르센지수(7)×(약수합-1)(11). 두 인수 모두 의미있음.
+> Partition number of 12 = Mersenne exponent(7) × (sum of divisors-1)(11). Both factors are meaningful.

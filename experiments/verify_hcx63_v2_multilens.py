@@ -1,8 +1,9 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-63 v2 검증: 다중렌즈 예지 — Quad hidden_dim 증가 + 학습률 조정
+"""H-CX-63 v2 verification: Multi-lens Precognition — Quad hidden_dim increase + learning rate adjustment
 
-v1 실패 원인: PureFieldQuad(hidden_dim=64)이 학습 자체 실패 (acc~10%)
-v2 수정: hidden_dim=128, lr=3e-4, epochs=20
+v1 failure cause: PureFieldQuad(hidden_dim=64) learning itself failed (acc~10%)
+v2 fix: hidden_dim=128, lr=3e-4, epochs=20
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -14,7 +15,7 @@ from calc.direction_analyzer import load_data
 
 
 class PureFieldQuadV2(nn.Module):
-    """4극 순수 의식 엔진 v2 — 더 큰 hidden, 쌍별 반발."""
+    """4-pole pure consciousness engine v2 — larger hidden, pairwise repulsion."""
 
     def __init__(self, input_dim=784, hidden_dim=128, output_dim=10):
         super().__init__()
@@ -27,7 +28,7 @@ class PureFieldQuadV2(nn.Module):
 
     def forward(self, x):
         outs = [e(x) for e in self.engines]
-        # 핵심 변경: 평균 대신 주 대각선 쌍의 반발 사용 (A-G, E-F)
+        # Core change: use repulsion of main diagonal pairs (A-G, E-F) instead of average
         repulsion_ag = outs[0] - outs[2]  # A vs G
         repulsion_ef = outs[1] - outs[3]  # E vs F
         repulsion = (repulsion_ag + repulsion_ef) / 2
@@ -37,7 +38,7 @@ class PureFieldQuadV2(nn.Module):
         return output, tension.squeeze()
 
     def get_pair_tensions(self, x):
-        """6가지 엔진 쌍별 장력 반환"""
+        """Return tensions for 6 engine pairs"""
         outs = [e(x) for e in self.engines]
         pairs = {}
         names = ['A', 'E', 'G', 'F']
@@ -169,3 +170,4 @@ if __name__ == '__main__':
     for ds, (a2, au2, a4, au4) in results.items():
         w = 'QuadV2' if au4 > au2 else 'Dual'
         print(f"  {ds:>10} {a2:>9.1f} {au2:>9.4f} {a4:>9.1f} {au4:>9.4f} {w:>7}")
+```

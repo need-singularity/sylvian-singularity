@@ -1,9 +1,9 @@
-# H-CX-219: 🟩 σ(6)=12Hz = SMR(감각운동리듬) = 몸의 주파수
+# H-CX-219: 🟩 σ(6)=12Hz = SMR(Sensorimotor Rhythm) = Body's Frequency
 
-> SMR(Sensorimotor Rhythm) = 12-15Hz = 자기 몸 인식/운동 계획의 뇌파.
-> 12Hz = σ(6) = 약수합 = "완전수의 풍요".
-> α와 β 사이에 위치 = "이완과 집중의 균형" = 몸의 자각.
+> SMR(Sensorimotor Rhythm) = 12-15Hz = Brainwaves for body awareness/motor planning.
+> 12Hz = σ(6) = Divisor sum = "Perfect number's abundance".
+> Located between α and β = "Balance of relaxation and focus" = Body awareness.
 >
-> 완전 뇌파 지도 (2~40Hz, 모두 완전수 6):
+> Complete brainwave map (2~40Hz, all perfect number 6):
 >   2=φ, 4=τ, 6=P₁, 8=σ-τ, 10=γ/τ, 12=σ, 13=σ+1, 20=γ/φ, 30=5P₁, 40=3σ+τ
->   10개 주요 주파수가 전부 완전수 6의 산술.
+>   All 10 major frequencies are arithmetic of perfect number 6.

@@ -1,24 +1,24 @@
-# H-CX-89: 데이터 내재 예지 — 원본 데이터의 클래스 중심 거리가 모든 것을 결정
+# H-CX-89: Data-Intrinsic Precognition — Original Data's Class Center Distance Determines Everything
 
-> PH, 혼동, 예지, dendrogram 모두의 근원:
-> 원본 데이터(학습 전)의 클래스 중심 간 코사인 거리.
-> 모델이 이 거리를 증폭할 뿐, 구조 자체는 데이터에 내재.
+> The origin of PH, confusion, precognition, dendrogram all:
+> Cosine distance between class centers in original data (before training).
+> The model only amplifies this distance, the structure itself is intrinsic to the data.
 
-## 배경
+## Background
 
-- H-CX-82: 에폭 1 완벽 예측
-- H-CX-85: dendrogram = 의미 계층
-- H-CX-86: 랜덤 초기화에서도?
+- H-CX-82: Perfect prediction at epoch 1
+- H-CX-85: dendrogram = semantic hierarchy
+- H-CX-86: Even with random initialization?
 
-## 예측
+## Predictions
 
-1. 원본 데이터 클래스 평균 간 cosine distance의 PH = 학습 후 PH와 merge 순서 일치
-2. 원본 데이터 distance 기반 혼동 예측 |r| > 0.7
-3. 원본 거리 dendrogram의 semantic purity > 60%
-4. 모델의 역할 = 거리 "증폭" (비율 보존, 절대값 변화)
+1. PH of cosine distance between original data class means = consistent merge order with post-training PH
+2. Confusion prediction based on original data distance |r| > 0.7
+3. Original distance dendrogram's semantic purity > 60%
+4. Model's role = distance "amplification" (preserving ratio, changing absolute values)
 
-## 검증 상태
+## Verification Status
 
-- [ ] 원본 데이터 클래스 중심 거리
-- [ ] 원본 PH vs 학습 후 PH
-- [ ] 증폭 비율 측정
+- [ ] Original data class center distances
+- [ ] Original PH vs post-training PH
+- [ ] Amplification ratio measurement

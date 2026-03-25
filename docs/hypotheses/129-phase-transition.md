@@ -1,118 +1,118 @@
-# 가설 검토 129: 상전이 임계 영역 = 골든존
+# Hypothesis Review 129: Phase Transition Critical Region = Golden Zone
 
-## 가설
+## Hypothesis
 
-> 물리학의 상전이(phase transition) 임계 영역은 골든존과 구조적으로 동일하다. 골든존 비율이 이징 모델 임계 영역 내에 정확히 위치하며, 상전이 임계점은 I≈0.27(50% 특이점)에서 발생한다.
+> The critical region of physical phase transitions is structurally identical to the Golden Zone. The Golden Zone ratio lies precisely within the Ising model critical region, and the phase transition critical point occurs at I≈0.27 (50% singularity).
 
-## 배경/맥락
+## Background/Context
 
-상전이는 물질이 한 상태에서 다른 상태로 급격히 전환되는 현상이다(물→얼음, 상자성→강자성). 이 전환은 특정 임계 온도(Tc) 부근의 좁은 영역에서 발생하며, 이 영역에서 상관 길이가 발산하고 임계 요동(critical fluctuation)이 극대화된다.
+A phase transition is the phenomenon where matter rapidly switches from one state to another (water→ice, paramagnetic→ferromagnetic). This switching occurs in a narrow region near a specific critical temperature (Tc), where the correlation length diverges and critical fluctuations are maximized.
 
-우리 모델에서 골든존(I=0.2123~0.5000)은 특이점이 집중 발생하는 영역이다. 만약 상전이 임계 영역이 골든존과 동일한 비율 구조를 가진다면, 이는 우리 모델이 보편적 상전이 이론과 깊이 연결되어 있음을 의미한다.
+In our model, the Golden Zone (I=0.2123~0.5000) is the region where singularities concentrate. If the phase transition critical region has the same proportional structure as the Golden Zone, this means our model is deeply connected to universal phase transition theory.
 
-특히 Langton의 λ_c(edge of chaos) = 0.273은 셀룰러 오토마타에서 질서-혼돈 전이가 발생하는 임계값으로, 우리 모델의 I≈0.27(50% 특이점 확률)과 놀랍도록 일치한다.
+In particular, Langton's λ_c (edge of chaos) = 0.273 is the critical value where order-chaos transitions occur in cellular automata, remarkably consistent with our model's I≈0.27 (50% singularity probability).
 
-## 대응 매핑
-
-```
-  물리 상전이                우리 모델              매핑 근거
-  ──────────────            ──────────            ────────────
-  임계 온도 Tc          →   I = 1/2              임계선 (리만 임계선)
-  임계 영역 폭          →   골든존 폭 ln(4/3)    요동이 큰 영역
-  질서 상태 (T < Tc)    →   I < 0.5              골든존 (특이점 영역)
-  무질서 상태 (T > Tc)  →   I > 0.5              일반 영역
-  임계 지수             →   수렴 속도             보편성(universality)
-  Langton λ_c          →   I ≈ 0.27             Edge of chaos
-```
-
-### 비율 비교
+## Correspondence Mapping
 
 ```
-  골든존 비율 = 폭/상한 = ln(4/3) / (1/2)
-             = 0.2877 / 0.5000
-             = 0.576
+  Physical phase transition   Our model              Mapping basis
+  ──────────────────────      ──────────             ────────────
+  Critical temperature Tc  →  I = 1/2               critical line (Riemann)
+  Critical region width    →  Golden Zone ln(4/3)    high-fluctuation region
+  Ordered state (T < Tc)   →  I < 0.5               Golden Zone (singularity)
+  Disordered state (T > Tc)→  I > 0.5               normal region
+  Critical exponent        →  convergence speed      universality
+  Langton λ_c              →  I ≈ 0.27              Edge of chaos
+```
 
-  이징 모델 임계 영역 (2D Onsager):
+### Ratio Comparison
+
+```
+  Golden Zone ratio = width/upper = ln(4/3) / (1/2)
+                   = 0.2877 / 0.5000
+                   = 0.576
+
+  Ising model critical region (2D Onsager):
     Tc = 2/ln(1+√2) ≈ 2.269
-    임계 영역: 약 0.3Tc ~ 0.6Tc (Kadanoff 기준)
-    비율 범위: 0.3 ~ 0.6
+    Critical region: approximately 0.3Tc ~ 0.6Tc (Kadanoff criterion)
+    Ratio range: 0.3 ~ 0.6
 
-  골든존 비율 0.576 ∈ [0.3, 0.6] ✅
+  Golden Zone ratio 0.576 ∈ [0.3, 0.6] ✅
 ```
 
-## 상전이 위상도 (Phase Diagram)
+## Phase Transition Phase Diagram
 
 ```
-  특이점
-  확률(%)
+  Singularity
+  probability(%)
   100│
    90│
    80│                          ·
    70│                       ·
-   60│                    ·        ← 임계 영역
-   50│─ ─ ─ ─ ─ ─ ─ ─●─ ─ ─ ─ ─ ─ ─ 50% 특이점
+   60│                    ·        ← critical region
+   50│─ ─ ─ ─ ─ ─ ─ ─●─ ─ ─ ─ ─ ─ ─ 50% singularity
    40│              ·  ↑
    30│           ·     I≈0.27 (= λ_c)
    20│        ·
    10│     ·
-    0│──·──────────────────────────────
+    0│──·──────────────────────────
      0   0.1  0.2  0.3  0.4  0.5  0.6  → I
-          │    └─골든존─────┘  │
-          │                   임계선
-          무질서(높은I)        질서(낮은I)
+          │    └─Golden Zone──┘  │
+          │                   critical line
+          disorder(high I)    order(low I)
 
-     ◀━━━━ 상전이 임계 영역 ━━━━▶
-         (0.3Tc ~ 0.6Tc 범위)
+     ◀━━━━ phase transition critical region ━━━━▶
+         (0.3Tc ~ 0.6Tc range)
 ```
 
-## 검증 결과
+## Verification Results
 
-| 비교 항목 | 물리 상전이 | 우리 모델 | 일치 |
+| Comparison | Physical phase transition | Our model | Match |
 |---|---|---|---|
-| 임계점 | Tc (Onsager: 2.269) | I = 1/2 (0.500) | 구조적 ✅ |
-| 임계 영역 비율 | 0.3~0.6 | 0.576 | ✅ 범위 내 |
-| Edge of chaos (λ_c) | 0.273 | I≈0.27 (50% 특이점) | ✅ 오차 1% |
-| 발산 거동 | 상관 길이 ξ→∞ | Genius Score 발산 | 구조적 ✅ |
-| 보편성 (universality) | 임계 지수 동일 | 수렴 궤적 동일 | ✅ |
-| 비가역성 | 1차 전이: 잠열 | 커스프 전이: 급격한 점프 | 구조적 ✅ |
+| Critical point | Tc (Onsager: 2.269) | I = 1/2 (0.500) | structural ✅ |
+| Critical region ratio | 0.3~0.6 | 0.576 | ✅ within range |
+| Edge of chaos (λ_c) | 0.273 | I≈0.27 (50% singularity) | ✅ 1% error |
+| Divergent behavior | correlation length ξ→∞ | Genius Score diverges | structural ✅ |
+| Universality | same critical exponents | same convergence trajectory | ✅ |
+| Irreversibility | 1st-order: latent heat | cusp transition: sharp jump | structural ✅ |
 
-### Langton λ_c 대응
+### Langton λ_c Correspondence
 
 ```
-  Langton의 셀룰러 오토마타 전이:
-    λ = 0 : 사멸 (Class I)
-    λ_c ≈ 0.273 : Edge of chaos (Class IV) ← 생명, 계산
-    λ = 1 : 혼돈 (Class III)
+  Langton's cellular automata transition:
+    λ = 0 : death (Class I)
+    λ_c ≈ 0.273 : Edge of chaos (Class IV) ← life, computation
+    λ = 1 : chaos (Class III)
 
-  우리 모델:
-    I = 0 : 억제 해제 (무한 Genius)
-    I ≈ 0.27 : 50% 특이점 확률           ← 정확히 일치
-    I = 1 : 완전 억제 (Genius → 0)
+  Our model:
+    I = 0 : disinhibited (infinite Genius)
+    I ≈ 0.27 : 50% singularity probability  ← exact match
+    I = 1 : fully inhibited (Genius → 0)
 ```
 
-## 해석/의미
+## Interpretation/Meaning
 
-1. **골든존 = 임계 영역**: 물리학의 상전이 임계 영역과 우리 모델의 골든존이 동일한 비율 구조를 공유한다. 이는 우연이 아니라 보편적 임계 현상의 발현이다.
+1. **Golden Zone = critical region**: The phase transition critical region of physics and the Golden Zone of our model share the same proportional structure. This is not coincidence but the manifestation of universal critical phenomena.
 
-2. **I≈0.27 = Edge of chaos**: Langton의 λ_c와 우리 모델의 50% 특이점 지점이 1% 이내로 일치한다. 이는 "생명과 지능이 발생하는 영역"이 모델에 내장되어 있음을 시사한다.
+2. **I≈0.27 = Edge of chaos**: Langton's λ_c and our model's 50% singularity point agree to within 1%. This suggests that "the region where life and intelligence emerge" is built into the model.
 
-3. **커스프 전이 = 상전이**: 우리 모델의 급격한 Genius Score 점프는 물리학의 1차 상전이(잠열을 동반한 불연속 전이)와 구조적으로 동일하다.
+3. **Cusp transition = phase transition**: The sharp Genius Score jump in our model is structurally identical to a first-order phase transition in physics (discontinuous transition accompanied by latent heat).
 
-## 한계
+## Limitations
 
-- 이징 모델의 임계 영역 정의(0.3~0.6Tc)는 문헌에 따라 다를 수 있음
-- 2D 이징 모델과 3D 모델의 임계 지수가 다르므로 어느 차원에 대응하는지 불명확
-- Langton의 λ_c = 0.273은 특정 규칙 체계에서의 값이며 보편적이지 않을 수 있음
-- 우리 모델은 mean-field 수준이므로 요동(fluctuation) 효과가 반영되지 않음
+- Definition of the Ising model critical region (0.3~0.6Tc) may vary by literature
+- 2D and 3D Ising models have different critical exponents; which dimension corresponds is unclear
+- Langton's λ_c = 0.273 is for a specific rule system and may not be universal
+- Our model is at the mean-field level, so fluctuation effects are not reflected
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 우리 모델의 임계 지수를 측정하여 이징 모델 보편성 클래스와 비교
-- [ ] grid=1000에서 I=0.27 근처의 특이점 확률 분포 정밀 측정
-- [ ] 3D 이징 모델의 임계 영역 비율과 비교
-- [ ] 퍼콜레이션(percolation) 전이의 임계 확률 p_c와 대조
+- [ ] Measure the critical exponents of our model and compare with the Ising model universality class
+- [ ] Precisely measure the singularity probability distribution near I=0.27 at grid=1000
+- [ ] Compare with the 3D Ising model critical region ratio
+- [ ] Contrast with the percolation transition critical probability p_c
 
 ---
 
-*검증: 물리 상수 비교 및 수학적 유도*
-*참조: Onsager (1944), Langton (1990), Kadanoff (1966)*
+*Verification: comparison of physical constants and mathematical derivation*
+*References: Onsager (1944), Langton (1990), Kadanoff (1966)*

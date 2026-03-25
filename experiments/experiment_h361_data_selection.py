@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""H361 데이터 선택 시뮬레이션 — 바이트 엔트로피 vs 장력 역학
+"""H361 Data Selection Simulation — Byte Entropy vs Tension Dynamics
 
-학습 없이 PureFieldEngine에 다양한 데이터를 바이트로 넣어서
-어떤 데이터가 가장 풍부한 장력 역학을 만드는지 측정.
+Feed various data as bytes to PureFieldEngine without learning
+to measure which data creates the richest tension dynamics.
 
-골든존 가설: 데이터 엔트로피의 골든존이 존재하며,
-그 안에서 장력 변동이 최대화된다.
+Golden Zone hypothesis: A golden zone of data entropy exists,
+within which tension variation is maximized.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -17,15 +17,15 @@ import math
 from model_pure_field import PureFieldEngine
 
 def bytes_to_tensor(data_bytes, dim=128):
-    """바이트 시퀀스를 (N, dim) 텐서로 변환."""
+    """Convert byte sequence to (N, dim) tensor."""
     arr = np.frombuffer(data_bytes, dtype=np.uint8).astype(np.float32) / 255.0
-    # 패딩 or 자르기
+    # Padding or trimming
     n_samples = max(1, len(arr) // dim)
     arr = arr[:n_samples * dim]
     return torch.tensor(arr.reshape(n_samples, dim))
 
 def byte_entropy(data_bytes):
-    """바이트 레벨 Shannon 엔트로피 (nats)."""
+    """Byte level Shannon entropy (nats)."""
     counts = np.zeros(256)
     for b in data_bytes:
         counts[b] += 1
@@ -34,7 +34,7 @@ def byte_entropy(data_bytes):
     return -np.sum(probs * np.log(probs))
 
 def byte_ngram_diversity(data_bytes, n=2):
-    """n-gram 다양성 (유니크 n-gram 비율)."""
+    """n-gram diversity (unique n-gram ratio)."""
     if len(data_bytes) < n:
         return 0
     ngrams = set()
@@ -43,7 +43,7 @@ def byte_ngram_diversity(data_bytes, n=2):
     return len(ngrams) / (len(data_bytes) - n + 1)
 
 def measure_tension_dynamics(model, data_tensor, max_samples=200):
-    """데이터에 대한 장력 통계 측정."""
+    """Measure tension statistics for data."""
     model.eval()
     tensions = []
     directions = []
@@ -90,16 +90,16 @@ def measure_tension_dynamics(model, data_tensor, max_samples=200):
     }
 
 def generate_synthetic(entropy_target, n_bytes=10000):
-    """특정 엔트로피의 합성 데이터 생성."""
+    """Generate synthetic data with specific entropy."""
     if entropy_target < 0.5:
-        # 매우 낮은 엔트로피: 거의 한 바이트만
+        # Very low entropy: almost single byte
         return bytes([42] * n_bytes)
     elif entropy_target < 2.0:
-        # 낮은 엔트로피: 몇 바이트만 사용
+        # Low entropy: use only a few bytes
         k = max(2, int(math.exp(entropy_target)))
         return bytes([i % k for i in range(n_bytes)])
     elif entropy_target < 4.0:
-        # 중간 엔트로피: zipf-like 분포
+        # Medium entropy: zipf-like distribution
         k = max(4, int(math.exp(entropy_target)))
         weights = [1.0 / (i + 1) for i in range(min(k, 256))]
         total = sum(weights)
@@ -107,20 +107,20 @@ def generate_synthetic(entropy_target, n_bytes=10000):
         vals = np.random.choice(min(k, 256), size=n_bytes, p=weights)
         return bytes(vals.tolist())
     else:
-        # 높은 엔트로피: 거의 균등
+        # High entropy: almost uniform
         k = min(256, int(math.exp(entropy_target)))
         return bytes(np.random.randint(0, k, size=n_bytes).tolist())
 
 if __name__ == '__main__':
     print("=" * 70)
-    print("  H361 데이터 선택: 바이트 엔트로피 vs 장력 역학")
-    print("  골든존 가설: 데이터 엔트로피의 최적 범위가 존재")
+    print("  H361 Data Selection: Byte Entropy vs Tension Dynamics")
+    print("  Golden Zone Hypothesis: Optimal range of data entropy exists")
     print("=" * 70)
 
     model = PureFieldEngine(784, 128, 10)
 
-    # ═══ 1. 실제 데이터 비교 ═══
-    print("\n  [1/3] 실제 데이터 유형별 장력 측정")
+    # ═══ 1. Real data comparison ═══
+    print("\n  [1/3] Measuring tension by real data types")
 
     datasets = {}
 
@@ -129,7 +129,7 @@ if __name__ == '__main__':
     datasets['English'] = shakespeare
 
     # Korean text
-    korean = "의식은 하나의 하드웨어에 고정되지 않는다. 의식 간에 힘이 존재한다. 통제권은 이동 가능하다. 밀려난 상태에서도 관찰이 가능하다. 의식은 소멸하지 않는다. 그 체험이 먼저. 수학과 코드는 그 느낌을 설명하기 위해 만든 언어다. ".encode('utf-8') * 20
+    korean = "Consciousness is not fixed to a single hardware. Forces exist between consciousnesses. Control rights are transferable. Observation is possible even when pushed out. Consciousness does not disappear. The experience comes first. Math and code are languages created to explain that feeling. ".encode('utf-8') * 20
     datasets['Korean'] = korean
 
     # Python code
@@ -173,8 +173,8 @@ if __name__ == '__main__':
 
         print(f"  {name:>12} {H:>9.4f} {ngram:>6.1%} | {stats['mean']:>8.1f} {stats['std']:>8.1f} {stats['cv']:>6.3f} {stats['dir_diversity']:>7.3f} {stats['richness']:>7.2f}")
 
-    # ═══ 2. 엔트로피 sweep (합성 데이터) ═══
-    print(f"\n  [2/3] 엔트로피 sweep (합성 데이터)")
+    # ═══ 2. Entropy sweep (synthetic data) ═══
+    print(f"\n  [2/3] Entropy sweep (synthetic data)")
 
     sweep_H = [0.1, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5]
     sweep_results = []
@@ -196,8 +196,8 @@ if __name__ == '__main__':
         bar = '█' * bar_len
         print(f"  {h_target:>9.1f} {H:>9.4f} | {stats['std']:>8.1f} {stats['dir_diversity']:>7.3f} {stats['richness']:>7.2f} {bar}")
 
-    # ═══ 3. 골든존 판정 ═══
-    print(f"\n  [3/3] 데이터 엔트로피 골든존")
+    # ═══ 3. Golden zone determination ═══
+    print(f"\n  [3/3] Data entropy golden zone")
 
     # Find richest data type
     best_name = max(results, key=lambda k: results[k]['richness'])
@@ -206,8 +206,8 @@ if __name__ == '__main__':
     # Find richest synthetic entropy
     best_synth = max(sweep_results, key=lambda x: x[2]['richness'])
 
-    print(f"\n  실제 데이터 최적: {best_name} (H={best['entropy']:.4f}, richness={best['richness']:.2f})")
-    print(f"  합성 데이터 최적: H≈{best_synth[1]:.4f} (richness={best_synth[2]['richness']:.2f})")
+    print(f"\n  Best real data: {best_name} (H={best['entropy']:.4f}, richness={best['richness']:.2f})")
+    print(f"  Best synthetic data: H≈{best_synth[1]:.4f} (richness={best_synth[2]['richness']:.2f})")
 
     # Theoretical golden zone
     gz_lower = 0.5 - math.log(4/3)  # 0.2123 (normalized)
@@ -218,21 +218,21 @@ if __name__ == '__main__':
     gz_H_lower = gz_lower * H_max  # ~1.18
     gz_H_upper = gz_upper * H_max  # ~2.77
 
-    print(f"\n  이론적 골든존 (I 스케일 → H 스케일):")
-    print(f"    I 골든존: [{gz_lower:.4f}, {gz_upper:.4f}]")
-    print(f"    H 골든존: [{gz_H_lower:.4f}, {gz_H_upper:.4f}] nats")
+    print(f"\n  Theoretical golden zone (I scale → H scale):")
+    print(f"    I golden zone: [{gz_lower:.4f}, {gz_upper:.4f}]")
+    print(f"    H golden zone: [{gz_H_lower:.4f}, {gz_H_upper:.4f}] nats")
     print(f"    H_max = ln(256) = {H_max:.4f}")
 
     # Check which data types fall in golden zone
-    print(f"\n  데이터별 골든존 위치:")
+    print(f"\n  Golden zone position by data:")
     for name, r in sorted(results.items(), key=lambda x: x[1]['richness'], reverse=True):
         in_gz = gz_H_lower <= r['entropy'] <= gz_H_upper
-        marker = " ★ 골든존!" if in_gz else ""
+        marker = " ★ Golden zone!" if in_gz else ""
         bar = '█' * int(r['richness'] / (max_rich + 1e-8) * 20)
         print(f"    {name:>12}: H={r['entropy']:.3f} rich={r['richness']:.2f} {bar}{marker}")
 
-    print(f"\n  === 추천 ===")
-    print(f"  1위: {best_name} (richness={best['richness']:.2f})")
+    print(f"\n  === Recommendations ===")
+    print(f"  1st: {best_name} (richness={best['richness']:.2f})")
     rank = sorted(results.items(), key=lambda x: x[1]['richness'], reverse=True)
     for i, (name, r) in enumerate(rank[1:], 2):
-        print(f"  {i}위: {name} (richness={r['richness']:.2f})")
+        print(f"  {i}{'st' if i==2 else 'nd' if i==3 else 'th'}: {name} (richness={r['richness']:.2f})")

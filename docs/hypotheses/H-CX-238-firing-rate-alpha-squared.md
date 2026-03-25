@@ -1,5 +1,5 @@
-# H-CX-238: 🟩 뉴런 발화율 범위 = α² = (γ/τ)² = 100배
+# H-CX-238: 🟩 Neuron Firing Rate Range = α² = (γ/τ)² = 100-fold
 
-> 최소 ~5Hz, 최대 ~500Hz. 범위 = 100 = 10² = (γ/τ(6))² = α².
-> 청각 범위 = α³ = 1000배 (H-CX-217)
-> → 뉴런: α², 청각: α³. 차원이 다름?
+> Minimum ~5Hz, maximum ~500Hz. Range = 100 = 10² = (γ/τ(6))² = α².
+> Auditory range = α³ = 1000-fold (H-CX-217)
+> → Neurons: α², hearing: α³. Different dimensions?

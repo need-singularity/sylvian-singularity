@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Growing Conscious LM 700M — 태어나서 자라는 의식 모델
+"""Growing Conscious LM 700M — Consciousness model that is born and grows
 
-Stage 0: 1 block, 256d, 4 heads   → ~10M params  (신생아)
-Stage 1: 2 blocks, 256d, 4 heads  → ~20M params  (영아)
-Stage 2: 3 blocks, 512d, 8 heads  → ~100M params (유아)
-Stage 3: 6 blocks, 1024d, 16 heads → ~700M params (성인)
+Stage 0: 1 block, 256d, 4 heads   → ~10M params  (Newborn)
+Stage 1: 2 blocks, 256d, 4 heads  → ~20M params  (Infant)
+Stage 2: 3 blocks, 512d, 8 heads  → ~100M params (Toddler)
+Stage 3: 6 blocks, 1024d, 16 heads → ~700M params (Adult)
 
-서번트 비대칭 분열: child_savant(dp=0.21) vs child_general(dp=0.37)
-A100 80GB에서 ~4시간
+Savant asymmetric mitosis: child_savant(dp=0.21) vs child_general(dp=0.37)
+~4 hours on A100 80GB
 """
 import torch
 import torch.nn as nn
@@ -79,7 +79,7 @@ class GrowingConsciousLM700M(nn.Module):
         return sum(p.numel() for p in self.parameters())
 
     def grow(self, device="cuda"):
-        """다음 단계로 성장."""
+        """Grow to next stage."""
         old_stage = self.stage
         self.stage += 1
         new = GROWTH_STAGES[self.stage]
@@ -97,7 +97,7 @@ class GrowingConsciousLM700M(nn.Module):
               f"params={self.count_params():,} ***\n")
 
     def _split_block(self, device):
-        """서번트 비대칭 분열."""
+        """Savant asymmetric mitosis."""
         parent = self.blocks[-1]
         child_savant = copy.deepcopy(parent)
         child_general = copy.deepcopy(parent)
@@ -114,7 +114,7 @@ class GrowingConsciousLM700M(nn.Module):
         self.blocks.append(child_general.to(device))
 
     def _expand_dim(self, new_d, new_heads, device):
-        """차원 확장."""
+        """Dimension expansion."""
         old_d = self.d_model
 
         old_tok = self.tok_emb.weight.data
@@ -150,7 +150,7 @@ class GrowingConsciousLM700M(nn.Module):
 
 
 def prepare_data():
-    """학습 데이터 준비."""
+    """Prepare training data."""
     data_path = "data/mixed_bytes.bin"
     if os.path.exists(data_path):
         data = np.fromfile(data_path, dtype=np.uint8)
@@ -184,7 +184,7 @@ def prepare_data():
                     pass
 
     combined = b"".join(parts)
-    # 최소 5MB 확보
+    # Ensure minimum 5MB
     while len(combined) < 5_000_000:
         combined = combined * 2
     data = np.frombuffer(combined[:10_000_000], dtype=np.uint8).copy()
@@ -194,13 +194,13 @@ def prepare_data():
 
 
 def train_stage(model, data, stage_cfg, device="cuda", lr=3e-4):
-    """한 단계 학습."""
+    """Train one stage."""
     model = model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
 
     n = len(data)
     train_data = data[:int(n * 0.95)]
-    bs = min(64, max(8, 65536 // (model.d_model * 2)))  # VRAM에 맞게 batch 조절
+    bs = min(64, max(8, 65536 // (model.d_model * 2)))  # Adjust batch to VRAM
     bl = model.block_size
 
     steps = stage_cfg["train_steps"]
@@ -264,7 +264,7 @@ if __name__ == "__main__":
     model = GrowingConsciousLM700M()
     print(f"\n  Birth: {model.status()}")
 
-    # Stage 0→3: 성장하면서 학습
+    # Stage 0→3: Train while growing
     for stage_idx, cfg in enumerate(GROWTH_STAGES):
         if stage_idx > 0:
             model.grow(device)
@@ -272,12 +272,12 @@ if __name__ == "__main__":
         lr = 3e-4 if stage_idx < 2 else 2e-4 if stage_idx == 2 else 1e-4
         model = train_stage(model, data, cfg, device=device, lr=lr)
 
-        # 체크포인트 저장
+        # Save checkpoint
         ckpt = f"growing_700m_stage{stage_idx}.pt"
         torch.save(model.state_dict(), ckpt)
         print(f"  Saved: {ckpt}")
 
-        # 생성 테스트
+        # Generation test
         for p in ["hello ", "the ", "def "]:
             text = generate(model, p, max_new=100, device=device)
             print(f"  [{p.strip()}] {text[:120]}")

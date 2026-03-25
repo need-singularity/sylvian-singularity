@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""공통 유틸리티 — 7개 모델이 공유하는 컴포넌트
+"""Common utilities — Components shared by 7 models
 
-수학적 상수 (완전수 6에서 유도):
-  sigma(6) = 12  (약수합)
-  tau(6)   = 4   (약수 개수)
-  phi(6)   = 2   (오일러 토션트)
-  sigma_{-1}(6) = 2  (약수역수합)
-  {1/2, 1/3, 1/6} = 약수역수 (합=1, 확률분포)
+Mathematical constants (derived from perfect number 6):
+  sigma(6) = 12  (sum of divisors)
+  tau(6)   = 4   (number of divisors)
+  phi(6)   = 2   (Euler's totient)
+  sigma_{-1}(6) = 2  (sum of divisor reciprocals)
+  {1/2, 1/3, 1/6} = divisor reciprocals (sum=1, probability distribution)
 """
 
 import torch
@@ -19,13 +19,13 @@ import math
 import time
 
 # ─────────────────────────────────────────
-# 수학 상수
+# Mathematical constants
 # ─────────────────────────────────────────
 SIGMA = 12       # sigma(6)
 TAU = 4          # tau(6)
 PHI = 2          # phi(6)
 SIGMA_INV = 2    # sigma_{-1}(6)
-DIVISOR_RECIPROCALS = [1/2, 1/3, 1/6]  # 합=1, 확률분포
+DIVISOR_RECIPROCALS = [1/2, 1/3, 1/6]  # sum=1, probability distribution
 H_TARGET = sum(-p * math.log(p) for p in DIVISOR_RECIPROCALS)  # Shannon entropy
 
 
@@ -47,7 +47,7 @@ class Expert(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 기본 게이트
+# Basic gates
 # ─────────────────────────────────────────
 class TopKGate(nn.Module):
     def __init__(self, input_dim, n_experts, k=2):
@@ -82,7 +82,7 @@ class BoltzmannGate(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 기본 MoE
+# Basic MoE
 # ─────────────────────────────────────────
 class BaseMoE(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim, n_experts, gate):
@@ -124,7 +124,7 @@ class BaseMoE(nn.Module):
 
 
 # ─────────────────────────────────────────
-# Dense 모델 (baseline)
+# Dense model (baseline)
 # ─────────────────────────────────────────
 class DenseModel(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim, dropout=0.5):
@@ -141,7 +141,7 @@ class DenseModel(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 데이터 로더
+# Data loader
 # ─────────────────────────────────────────
 def load_cifar10(batch_size=128, data_dir='data'):
     transform = transforms.Compose([
@@ -168,18 +168,18 @@ def load_mnist(batch_size=128, data_dir='data'):
 
 
 # ─────────────────────────────────────────
-# 학습 + 평가
+# Training + Evaluation
 # ─────────────────────────────────────────
 def train_and_evaluate(model, train_loader, test_loader, epochs=10, lr=0.001,
                        optimizer=None, aux_loss_fn=None, aux_lambda=0.1,
                        flatten=True, verbose=True):
-    """공통 학습 루프.
+    """Common training loop.
 
     Args:
-        optimizer: None이면 Adam 사용. 커스텀 옵티마이저 주입 가능 (모델 C용).
-        aux_loss_fn: 보조 loss 함수 (모델 G용). model output에서 추출.
-        aux_lambda: 보조 loss 가중치.
-        flatten: True면 입력을 1D로 펼침 (MNIST용).
+        optimizer: If None, uses Adam. Can inject custom optimizer (for model C).
+        aux_loss_fn: Auxiliary loss function (for model G). Extracted from model output.
+        aux_lambda: Auxiliary loss weight.
+        flatten: If True, flatten input to 1D (for MNIST).
     """
     if optimizer is None:
         optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -232,12 +232,12 @@ def train_and_evaluate(model, train_loader, test_loader, epochs=10, lr=0.001,
 
 
 # ─────────────────────────────────────────
-# 결과 비교
+# Compare results
 # ─────────────────────────────────────────
 def compare_results(results):
     """results: dict of {name: {'acc': float, 'loss': float, 'params': int, ...}}"""
     print("\n" + "=" * 70)
-    print(f"  {'모델':<30} {'정확도':>8} {'Loss':>8} {'파라미터':>10}")
+    print(f"  {'Model':<30} {'Accuracy':>8} {'Loss':>8} {'Parameters':>10}")
     print("-" * 70)
     for name, r in sorted(results.items(), key=lambda x: -x[1].get('acc', 0)):
         acc = r.get('acc', 0)

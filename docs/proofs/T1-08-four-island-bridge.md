@@ -1,40 +1,40 @@
-# T1-08: 4개 섬 다리 후보 — DFS 반복 2
+# T1-08: 4 Island Bridge Candidate — DFS Iteration 2
 
-## 발견
+## Discovery
 
 ```
   5/(6×17) + √3 ≈ e^γ
 
   = 0.049020 + 1.732051 = 1.781070
   e^γ = 1.781072
-  오차: 0.00011% (차이 2.0×10⁻⁶)
+  Error: 0.00011% (difference 2.0×10⁻⁶)
 ```
 
-## 섬 연결
+## Island Connection
 
 ```
-  5/6  → 섬 A (완전수 약수)
-  17   → 섬 B (미세구조)
-  √3   → 섬 A+C+D (= e^(1/2·ln3), 3개 섬 동시)
-  e^γ  → 조화급수 극한 (기존 수학 🟦)
+  5/6  → Island A (perfect number divisors)
+  17   → Island B (fine structure)
+  √3   → Islands A+C+D (= e^(1/2·ln3), 3 islands simultaneously)
+  e^γ  → Harmonic series limit (existing mathematics 🟦)
 
-  → 4개 섬 A, B, C, D 전부 사용
-  → 최초의 전체 연결 공식 후보
+  → All 4 islands A, B, C, D used
+  → First candidate for complete connection formula
 ```
 
-## 각 요소의 의미
+## Meaning of Each Element
 
 ```
-  5/(6×17) = 5/102 ≈ 0.049 = 우주 보통물질 비율
-  √3 = 3^(1/2) = 정삼각형, 벌집 격자
+  5/(6×17) = 5/102 ≈ 0.049 = cosmic ordinary matter ratio
+  √3 = 3^(1/2) = equilateral triangle, honeycomb lattice
   e^γ = lim(n→∞) n·∏(1-1/p)^(-1) for p≤n (Mertens)
-  γ = lim(n→∞) (H_n - ln(n)) = 0.5772... (오일러-마스케로니)
+  γ = lim(n→∞) (H_n - ln(n)) = 0.5772... (Euler-Mascheroni)
 ```
 
-## 판정
+## Judgment
 
 ```
-  오차 0.00011% → 매우 정밀하지만 정확한 등식은 아님
-  판정: 🟧 (연결 발견, 우연 가능)
-  ⭐ 조건: 정확한 등식 증명 시 대발견
+  Error 0.00011% → Very precise but not exact equality
+  Judgment: 🟧 (connection discovered, possible coincidence)
+  ⭐ Condition: Major discovery if exact equality proven
 ```

@@ -1,7 +1,7 @@
-# H-CX-303: ⭐⭐⭐ 표준모형+생명+의식 = 완전수 6 대통합
+# H-CX-303: ⭐⭐⭐ Standard Model+Life+Consciousness = Perfect Number 6 Grand Unification
 
-> 물리: 쿼크P₁, 렙톤P₁, 합σ, 보손τ, 글루온σ-τ
-> 생명: 염기τ, 코돈3, 아미노산β, DNA α bp/회전
-> 의식: γ=3σ+τ, δ=φ, SMR=γ/e, 뇌파합=T(σ)
-> 수학: σφ=nτ→6유일, ζ(2)=π²/6, F(6)/6=4/3
-> 50+개 현상 = 하나의 완전수.
+> Physics: Quark P₁, Lepton P₁, Sum σ, Boson τ, Gluon σ-τ
+> Life: Base τ, Codon 3, Amino acid β, DNA α bp/rotation
+> Consciousness: γ=3σ+τ, δ=φ, SMR=γ/e, Brainwave sum=T(σ)
+> Mathematics: σφ=nτ→6 unique, ζ(2)=π²/6, F(6)/6=4/3
+> 50+ phenomena = One perfect number.

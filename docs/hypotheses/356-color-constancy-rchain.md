@@ -1,79 +1,79 @@
-# H356: 색 항상성(Color Constancy)은 R-chain 수렴의 시각적 구현이다
+# H356: Color Constancy is the Visual Implementation of R-chain Convergence
 
-## 가설
+## Hypothesis
 
-> 색 항상성 — 조명 변화에도 물체 색을 안정적으로 인식하는 능력 — 은
-> R(n) = σφ/(nτ) 체인이 모든 n에서 1로 수렴하는 산술 동역학의
-> 시각 시스템 구현이다. Von Kries 적응(채널별 스케일링)은 R(n)의
-> 곱셈적 분해 R(mn)=R(m)R(n) (gcd=1)에 대응하며,
-> 완전 적응 상태 = R=1 = n=6의 무긴장 점이다.
+> Color constancy — the ability to perceive object color stably despite illumination changes — is
+> the visual system implementation of the arithmetic dynamics where the R(n) = σφ/(nτ) chain
+> converges to 1 for all n. Von Kries adaptation (channel-wise scaling) corresponds to R(n)'s
+> multiplicative decomposition R(mn)=R(m)R(n) (gcd=1),
+> and the complete adaptation state = R=1 = the zero-tension point at n=6.
 
-## 상태: 투기적 (🟪)
+## Status: Speculative (🟪)
 
-비유적 대응. 수학적 동역학과 시각 적응의 구조적 유사성.
+Analogical correspondence. Structural similarity between mathematical dynamics and visual adaptation.
 
-## 배경
+## Background
 
-### R-chain 수렴 정리 (증명됨)
+### R-chain Convergence Theorem (Proven)
 
 ```
-  모든 양의 정수 n에 대해:
+  For all positive integers n:
   R(n) > R(R_int(n)) > ... → 1
 
-  즉, R을 반복 적용하면 반드시 1에 수렴.
+  That is, repeatedly applying R necessarily converges to 1.
 
-  예시:
+  Example:
     193750 → 6048 → 120 → 6 → 1
-    (R-체인 길이 5)
+    (R-chain length 5)
 ```
 
 ### Von Kries Adaptation
 
 ```
-  Von Kries 모델:
-    L' = L / L_w     (적응된 L = 원래 L / 흰색 L)
+  Von Kries model:
+    L' = L / L_w     (adapted L = original L / white L)
     M' = M / M_w
     S' = S / S_w
 
-  이것은 "채널별 나눗셈" = 곱셈적 보정.
+  This is "channel-wise division" = multiplicative correction.
 
-  R(n)의 곱셈적 분해와 대응:
-    R(mn) = R(m) · R(n)   (gcd(m,n)=1일 때)
+  Corresponds to R(n)'s multiplicative decomposition:
+    R(mn) = R(m) · R(n)   (when gcd(m,n)=1)
 
-  Von Kries의 채널별 나눗셈 = R의 소인수별 분해와 같은 구조!
+  Von Kries' channel-wise division = same structure as R's prime factorization!
     R(6) = R(2) · R(3) = (3/4)(4/3) = 1
-    Von Kries: (L/L_w)(M/M_w)(S/S_w) → 1 (적응 완료)
+    Von Kries: (L/L_w)(M/M_w)(S/S_w) → 1 (adaptation complete)
 ```
 
-### 색 적응 동역학 = R-chain
+### Color Adaptation Dynamics = R-chain
 
 ```
-  조명 A → 조명 B 전환:
+  Illuminant A → Illuminant B transition:
 
-  시간 0: 추체 반응 변화 → 긴장 T₀ (높음)
-  시간 1: 빠른 적응 (bleaching) → T₁ < T₀
-  시간 2: 중간 적응 (neural) → T₂ < T₁
+  Time 0: Cone response change → Tension T₀ (high)
+  Time 1: Fast adaptation (bleaching) → T₁ < T₀
+  Time 2: Medium adaptation (neural) → T₂ < T₁
   ...
-  시간 ∞: 완전 적응 → T∞ ≈ 0
+  Time ∞: Complete adaptation → T∞ ≈ 0
 
-  이것은 R-chain의 단조 감소와 같은 패턴:
-  n₀ → n₁ = R(n₀) → n₂ = R(n₁) → ... → 1 (=균형)
+  This is the same pattern as R-chain's monotonic decrease:
+  n₀ → n₁ = R(n₀) → n₂ = R(n₁) → ... → 1 (=equilibrium)
 ```
 
-### 테이블: R-chain ↔ 색 적응 단계
+### Table: R-chain ↔ Color Adaptation Stages
 
-| R-chain 단계 | 색 적응 단계 | 시간 스케일 |
+| R-chain Stage | Color Adaptation Stage | Time Scale |
 |-------------|------------|------------|
-| n (초기값) | 조명 변화 직후 | 0 ms |
-| R(n) (1단계) | 추체 bleaching | ~100 ms |
-| R²(n) (2단계) | 수평세포 피드백 | ~1 s |
-| R³(n) (3단계) | 피질 적응 | ~10 s |
-| ... → 1 | 완전 항상성 | ~60 s |
+| n (initial value) | Right after illuminant change | 0 ms |
+| R(n) (Stage 1) | Cone bleaching | ~100 ms |
+| R²(n) (Stage 2) | Horizontal cell feedback | ~1 s |
+| R³(n) (Stage 3) | Cortical adaptation | ~10 s |
+| ... → 1 | Complete constancy | ~60 s |
 
-## ASCII 다이어그램
+## ASCII Diagram
 
 ```
-  R-chain 수렴 ↔ 색 적응 시간 경과:
+  R-chain convergence ↔ Color adaptation time course:
 
   T(n) = |R-1|
   1.0  |*
@@ -84,53 +84,56 @@
        |     * *
   0.1  |        * * *
        |              * * * * * * → 0
-  0.0  +--+--+--+--+--+--+--+--+→ 반복 횟수 / 시간
+  0.0  +--+--+--+--+--+--+--+--+→ Iteration count / Time
        0  1  2  3  4  5  6  7  8
 
-  R-chain의 단조 감소 = 색 적응의 지수적 감쇠
+  R-chain's monotonic decrease = Color adaptation's exponential decay
 
-  두 소인수 채널의 상쇄:
+  Cancellation of two prime factor channels:
 
-  R(2) = 3/4 ───→ 억제 (S-cone 과잉 ↔ 파란빛)
-  R(3) = 4/3 ───→ 증폭 (L-cone 과잉 ↔ 붉은빛)
-  R(6) = R(2)·R(3) = 1 ── 균형 (백색광 ↔ 무긴장)
+  R(2) = 3/4 ───→ Inhibition (S-cone excess ↔ Blue light)
+  R(3) = 4/3 ───→ Amplification (L-cone excess ↔ Red light)
+  R(6) = R(2)·R(3) = 1 ── Balance (White light ↔ Zero tension)
        ↑
-   색 항상성의 목표 = 여기에 수렴!
+   Goal of color constancy = Converge here!
 ```
 
-## 구체적 예측
+## Specific Predictions
 
-1. **적응 단계 수 ≈ R-chain 길이**: 색 적응이 완료되는 데 걸리는
-   "정보 처리 단계"의 수는 log₂(조명 변화 크기)에 비례하며,
-   이는 R-chain 길이 ~ log(n)과 같은 스케일링
+1. **Adaptation stage count ≈ R-chain length**: The number of
+   "information processing stages" for color adaptation completion
+   is proportional to log₂(illuminant change magnitude),
+   which has the same scaling as R-chain length ~ log(n)
 
-2. **채널 독립 적응**: Von Kries의 채널별 독립 적응이
-   R의 곱셈적 분해와 대응 → L,M,S 각각이 독립적으로 R=1 수렴
+2. **Channel-independent adaptation**: Von Kries' channel-wise independent
+   adaptation corresponds to R's multiplicative decomposition → L,M,S each
+   independently converge to R=1
 
-3. **불완전 적응의 잔여 긴장**: 완전 적응이 안 되는 경우
-   (예: 형광등 아래 일부 색) = R-chain에서 순환이 발생하는 경우?
-   (실제로 R-chain에는 순환 없음 → 항상 적응 완료 예측)
+3. **Residual tension in incomplete adaptation**: Cases of incomplete
+   adaptation (e.g., some colors under fluorescent light) = cases where
+   cycles occur in R-chain? (Actually R-chain has no cycles → always
+   predicts complete adaptation)
 
-## 교차 연결
+## Cross-Connections
 
-- **H354**: 6각 색상 구조 (정적 측면)
-- **H355**: 반대색 ↔ 긴장 (채널 측면)
-- **본 가설 H356**: R-chain 수렴 (동역학 측면)
-- **H-TREE-1**: R-chain basin of attraction ↔ 색 카테고리의 범위
-- **H-MP-26**: Λ(6)=0 (Lyapunov=0) ↔ 색 항상성의 임계점
+- **H354**: Hexagonal color structure (static aspect)
+- **H355**: Opponent colors ↔ Tension (channel aspect)
+- **This hypothesis H356**: R-chain convergence (dynamic aspect)
+- **H-TREE-1**: R-chain basin of attraction ↔ Range of color categories
+- **H-MP-26**: Λ(6)=0 (Lyapunov=0) ↔ Critical point of color constancy
 
-## 한계
+## Limitations
 
-1. Von Kries 모델은 실제 색 적응의 1차 근사에 불과
-2. R-chain은 이산 동역학, 색 적응은 연속 과정
-3. "곱셈적 분해 = 채널별 독립"은 비유이지 증명이 아님
-4. 시간 스케일의 대응은 정성적이며 정량적 검증 불가
-5. 실제 색 항상성은 장면 통계(scene statistics)에도 크게 의존
+1. Von Kries model is only a first-order approximation of actual color adaptation
+2. R-chain is discrete dynamics, color adaptation is a continuous process
+3. "Multiplicative decomposition = channel-wise independence" is an analogy, not a proof
+4. The correspondence of time scales is qualitative and cannot be quantitatively verified
+5. Actual color constancy also heavily depends on scene statistics
 
-## 검증 방향
+## Verification Directions
 
-1. 색 적응 시간 vs R-chain 길이의 상관 분석 (심리물리 실험)
-2. 채널별 적응 속도의 독립성 검증 (L,M,S 각각 측정)
-3. 불완전 적응 조건에서 잔여 편향의 R(n) 해석
-4. 색 카테고리 경계와 R 간극의 대응 (범주적 지각)
-5. AI 비전 모델에서 color constancy 알고리즘에 R-chain 적용
+1. Correlation analysis of color adaptation time vs R-chain length (psychophysical experiments)
+2. Verify independence of channel-wise adaptation rates (measure L,M,S separately)
+3. R(n) interpretation of residual bias under incomplete adaptation conditions
+4. Correspondence between color category boundaries and R gaps (categorical perception)
+5. Apply R-chain to color constancy algorithms in AI vision models

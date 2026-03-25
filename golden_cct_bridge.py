@@ -1,18 +1,19 @@
+```python
 #!/usr/bin/env python3
-"""골든존-CCT 브릿지 — I값과 CCT 점수의 관계 시뮬레이션
+"""Golden Zone-CCT Bridge — Simulation of the relationship between I values and CCT scores
 
-G=D×P/I 모델의 Inhibition(I)값을 0~1 범위에서 스캔하며,
-각 I에 대응하는 로렌츠 파라미터를 매핑하여 CCT 5개 테스트를 실행한다.
+Scans the Inhibition(I) value of the G=D×P/I model in the 0~1 range,
+mapping corresponding Lorenz parameters for each I and running 5 CCT tests.
 
-골든존(I=0.213~0.500) 안에서 CCT 점수가 최대인지,
-부동점 I=1/3이 정말 최적인지를 검증한다.
+Verifies whether CCT scores are maximized within the Golden Zone (I=0.213~0.500),
+and whether the fixed point I=1/3 is truly optimal.
 
-사용법:
+Usage:
   python3 golden_cct_bridge.py
   python3 golden_cct_bridge.py --grid 100
   python3 golden_cct_bridge.py --plot
 
-골든존 의존: YES (I 범위 정의가 골든존에 의존)
+Golden Zone dependency: YES (I range definition depends on Golden Zone)
 """
 
 import argparse
@@ -26,26 +27,26 @@ import numpy as np
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 
 # ─────────────────────────────────────────────
-# 골든존 상수
+# Golden Zone constants
 # ─────────────────────────────────────────────
-GOLDEN_UPPER = 0.5                        # 리만 임계선
+GOLDEN_UPPER = 0.5                        # Riemann critical line
 GOLDEN_LOWER = 0.5 - math.log(4 / 3)     # ≈ 0.2123
 GOLDEN_CENTER = 1 / math.e               # ≈ 0.3679
-FIXED_POINT = 1 / 3                       # 메타 부동점
+FIXED_POINT = 1 / 3                       # Meta fixed point
 
 
 # ─────────────────────────────────────────────
-# I → 로렌츠 파라미터 매핑
+# I → Lorenz parameter mapping
 # ─────────────────────────────────────────────
 def i_to_lorenz(I):
-    """Inhibition 값을 로렌츠 시뮬레이터 파라미터로 매핑.
+    """Map Inhibition value to Lorenz simulator parameters.
 
-    매핑 근거:
-      - sigma = 10*(1-I):  억제 높으면 감각 둔화
-      - rho   = 28*(1-I/2): 억제 높으면 복잡도 감소
-      - beta  = 2.67:       고정 (망각률)
-      - noise = 0.3*(1-I):  억제 높으면 잡음 감소
-      - gap_ratio = max(0, (I-0.5)*2): I>0.5면 gap 시작
+    Mapping rationale:
+      - sigma = 10*(1-I):  Higher inhibition dulls sensation
+      - rho   = 28*(1-I/2): Higher inhibition reduces complexity
+      - beta  = 2.67:       Fixed (forgetting rate)
+      - noise = 0.3*(1-I):  Higher inhibition reduces noise
+      - gap_ratio = max(0, (I-0.5)*2): Gap starts when I>0.5
     """
     sigma = 10.0 * (1.0 - I)
     rho = 28.0 * (1.0 - I / 2.0)
@@ -62,10 +63,10 @@ def i_to_lorenz(I):
 
 
 # ─────────────────────────────────────────────
-# 로렌츠 시뮬레이터 (consciousness_calc.py 동일)
+# Lorenz simulator (same as consciousness_calc.py)
 # ─────────────────────────────────────────────
 def lorenz_simulate(sigma, rho, beta, noise, gap_ratio, steps=50000, dt=0.01, seed=42):
-    """확장 로렌츠 시뮬레이터."""
+    """Extended Lorenz simulator."""
     rng = np.random.default_rng(seed)
     S = np.zeros((steps, 3))
     S[0] = [1.0, 1.0, 1.0]
@@ -97,10 +98,10 @@ def lorenz_simulate(sigma, rho, beta, noise, gap_ratio, steps=50000, dt=0.01, se
 
 
 # ─────────────────────────────────────────────
-# CCT 5개 테스트 (consciousness_calc.py 기반)
+# CCT 5 tests (based on consciousness_calc.py)
 # ─────────────────────────────────────────────
 def compute_entropy(data, bins=30):
-    """1D 데이터의 섀넌 엔트로피."""
+    """Shannon entropy of 1D data."""
     if np.std(data) < 1e-12:
         return 0.0
     hist, _ = np.histogram(data, bins=bins, density=True)
@@ -115,7 +116,7 @@ def compute_entropy(data, bins=30):
 
 
 def test_gap(S, gap_ratio):
-    """T1 Gap: 정지 구간 존재 여부."""
+    """T1 Gap: Presence of frozen periods."""
     if gap_ratio >= 1.0:
         return 0.0
     if gap_ratio > 0:
@@ -128,7 +129,7 @@ def test_gap(S, gap_ratio):
 
 
 def test_loop(S):
-    """T2 Loop: 궤적의 재방문(주기성) 비율."""
+    """T2 Loop: Trajectory revisitation (periodicity) ratio."""
     n = len(S)
     if n < 100:
         return 0.0
@@ -161,7 +162,7 @@ def test_loop(S):
 
 
 def test_continuity(S):
-    """T3 Continuity: 인접 스텝 간 연결성."""
+    """T3 Continuity: Connectivity between adjacent steps."""
     diffs = np.linalg.norm(np.diff(S, axis=0), axis=1)
     n = len(diffs)
     if n < 10:
@@ -179,7 +180,7 @@ def test_continuity(S):
 
 
 def test_entropy_band(S, window=500, h_min=0.3, h_max=4.5):
-    """T4 Entropy Band: H(t)가 밴드 안에 있는지."""
+    """T4 Entropy Band: Is H(t) within the band?"""
     x = S[:, 0]
     n_windows = len(x) // window
     if n_windows < 2:
@@ -195,7 +196,7 @@ def test_entropy_band(S, window=500, h_min=0.3, h_max=4.5):
 
 
 def test_novelty(S, window=500, threshold=0.001):
-    """T5 Novelty: dH/dt != 0 (엔트로피 정체 비율)."""
+    """T5 Novelty: dH/dt != 0 (entropy stagnation ratio)."""
     x = S[:, 0]
     n_windows = len(x) // window
     if n_windows < 3:
@@ -214,7 +215,7 @@ def test_novelty(S, window=500, threshold=0.001):
 
 
 def run_cct(S, gap_ratio):
-    """CCT 5개 테스트 실행, 총점(0~5) 반환."""
+    """Run 5 CCT tests, return total score (0~5)."""
     scores = {
         "T1_Gap": test_gap(S, gap_ratio),
         "T2_Loop": test_loop(S),
@@ -226,17 +227,17 @@ def run_cct(S, gap_ratio):
 
 
 # ─────────────────────────────────────────────
-# I 스캔
+# I scan
 # ─────────────────────────────────────────────
 def scan_i_range(grid, steps=50000, dt=0.01):
-    """I=0~1 스캔, 각 I에서 CCT 실행.
+    """Scan I=0~1, run CCT at each I.
 
     Returns:
         i_values: array of I values
         cct_totals: array of total CCT scores (0~5)
         cct_details: list of per-test score dicts
     """
-    # I=0 정확히는 division-by-zero 문제이므로 약간 띄움
+    # I=0 exactly causes division-by-zero, so start slightly above
     i_values = np.linspace(0.01, 0.99, grid)
     cct_totals = np.zeros(grid)
     cct_details = []
@@ -258,12 +259,12 @@ def scan_i_range(grid, steps=50000, dt=0.01):
         cct_totals[idx] = total
         cct_details.append(scores)
 
-        # 진행률 표시
+        # Progress display
         pct = (idx + 1) / grid * 100
         bar_len = 30
         filled = int(bar_len * (idx + 1) / grid)
         bar = "█" * filled + "░" * (bar_len - filled)
-        sys.stdout.write(f"\r  스캔 중: [{bar}] {pct:5.1f}% (I={I:.3f})")
+        sys.stdout.write(f"\r  Scanning: [{bar}] {pct:5.1f}% (I={I:.3f})")
         sys.stdout.flush()
 
     sys.stdout.write("\r" + " " * 70 + "\r")
@@ -273,12 +274,12 @@ def scan_i_range(grid, steps=50000, dt=0.01):
 
 
 # ─────────────────────────────────────────────
-# ASCII 그래프
+# ASCII graph
 # ─────────────────────────────────────────────
 def ascii_graph(i_values, cct_totals, width=60, height=20):
-    """I vs CCT 총점 ASCII 그래프.
+    """I vs CCT total score ASCII graph.
 
-    골든존과 부동점을 표시한다.
+    Displays Golden Zone and fixed point.
     """
     lines = []
 
@@ -287,19 +288,19 @@ def ascii_graph(i_values, cct_totals, width=60, height=20):
     x_min = i_values[0]
     x_max = i_values[-1]
 
-    # 캔버스 생성
+    # Create canvas
     canvas = [[" " for _ in range(width)] for _ in range(height)]
 
-    # 데이터 포인트 찍기
+    # Plot data points
     for i, (iv, cv) in enumerate(zip(i_values, cct_totals)):
         col = int((iv - x_min) / (x_max - x_min) * (width - 1))
         col = max(0, min(col, width - 1))
         row = int((cv - y_min) / (y_max - y_min) * (height - 1))
         row = max(0, min(row, height - 1))
-        row = height - 1 - row  # 상하 반전
+        row = height - 1 - row  # Invert top-bottom
         canvas[row][col] = "█"
 
-    # 골든존 범위 표시 (세로 점선)
+    # Mark Golden Zone boundaries (vertical dotted lines)
     col_lower = int((GOLDEN_LOWER - x_min) / (x_max - x_min) * (width - 1))
     col_upper = int((GOLDEN_UPPER - x_min) / (x_max - x_min) * (width - 1))
     col_fixed = int((FIXED_POINT - x_min) / (x_max - x_min) * (width - 1))
@@ -315,9 +316,9 @@ def ascii_graph(i_values, cct_totals, width=60, height=20):
         if canvas[row][col_fixed] == " ":
             canvas[row][col_fixed] = "│"
 
-    # Y축 라벨 + 캔버스 조립
+    # Y-axis labels + canvas assembly
     lines.append("")
-    lines.append("  CCT 점수 vs Inhibition (I)")
+    lines.append("  CCT Score vs Inhibition (I)")
     lines.append("")
     for row in range(height):
         y_val = y_max - (y_max - y_min) * row / (height - 1)
@@ -332,10 +333,10 @@ def ascii_graph(i_values, cct_totals, width=60, height=20):
             label = "    "
         lines.append(f" {label:>4}│{''.join(canvas[row])}")
 
-    # X축
+    # X-axis
     lines.append(f"     └{'─' * width}")
 
-    # X축 라벨: 0, 골든 하한, 1/3, 골든 상한, 1.0
+    # X-axis labels: 0, golden lower, 1/3, golden upper, 1.0
     x_label_line = "      "
     markers = [
         (0.0, "0"),
@@ -345,7 +346,7 @@ def ascii_graph(i_values, cct_totals, width=60, height=20):
         (1.0, "1.0"),
     ]
 
-    # 간단한 위치 표시
+    # Simple position markers
     x_positions = []
     for val, lbl in markers:
         pos = int((val - x_min) / (x_max - x_min) * (width - 1))
@@ -361,21 +362,21 @@ def ascii_graph(i_values, cct_totals, width=60, height=20):
 
     lines.append("".join(tick_line))
 
-    # 골든존 범위 표시
+    # Golden Zone range display
     mid_col = (col_lower + col_upper) // 2 + 6
     zone_line = list(" " * (width + 10))
-    # 하한 마크
+    # Lower bound mark
     if col_lower + 6 < len(zone_line):
         zone_line[col_lower + 6] = "└"
-    # 상한 마크
+    # Upper bound mark
     if col_upper + 6 < len(zone_line):
         zone_line[col_upper + 6] = "┘"
-    # 중간 대시
+    # Middle dash
     for c in range(col_lower + 7, col_upper + 6):
         if 0 <= c < len(zone_line):
             zone_line[c] = "─"
-    # 라벨
-    label = " 골든존 "
+    # Label
+    label = " Golden Zone "
     lstart = mid_col - len(label) // 2
     for ci, ch in enumerate(label):
         if 0 <= lstart + ci < len(zone_line):
@@ -388,16 +389,16 @@ def ascii_graph(i_values, cct_totals, width=60, height=20):
 
 
 # ─────────────────────────────────────────────
-# 분석 및 보고
+# Analysis and report
 # ─────────────────────────────────────────────
 def analyze_results(i_values, cct_totals, cct_details):
-    """스캔 결과 분석: 최적점, 골든존 통계, 부동점 점수."""
-    # 전체 최대
+    """Analyze scan results: optimal point, Golden Zone statistics, fixed point score."""
+    # Overall maximum
     best_idx = np.argmax(cct_totals)
     best_i = i_values[best_idx]
     best_score = cct_totals[best_idx]
 
-    # 골든존 마스크
+    # Golden Zone mask
     golden_mask = (i_values >= GOLDEN_LOWER) & (i_values <= GOLDEN_UPPER)
     outside_mask = ~golden_mask
 
@@ -409,16 +410,16 @@ def analyze_results(i_values, cct_totals, cct_details):
     golden_max = np.max(golden_scores) if len(golden_scores) > 0 else 0.0
     outside_max = np.max(outside_scores) if len(outside_scores) > 0 else 0.0
 
-    # 부동점 I=1/3 근처
+    # Fixed point I=1/3 vicinity
     fixed_idx = np.argmin(np.abs(i_values - FIXED_POINT))
     fixed_score = cct_totals[fixed_idx]
     fixed_details = cct_details[fixed_idx]
 
-    # 골든존 중심 I=1/e 근처
+    # Golden Zone center I=1/e vicinity
     center_idx = np.argmin(np.abs(i_values - GOLDEN_CENTER))
     center_score = cct_totals[center_idx]
 
-    # 경계 분석: 골든존 바로 밖 vs 안 차이
+    # Boundary analysis: difference just outside vs inside Golden Zone
     lower_boundary_inside = cct_totals[golden_mask][:3] if np.sum(golden_mask) >= 3 else np.array([])
     lower_boundary_outside = cct_totals[outside_mask & (i_values < GOLDEN_LOWER)]
     lower_boundary_outside = lower_boundary_outside[-3:] if len(lower_boundary_outside) >= 3 else lower_boundary_outside
@@ -445,64 +446,64 @@ def analyze_results(i_values, cct_totals, cct_details):
 
 
 def print_report(i_values, cct_totals, cct_details, analysis, grid):
-    """결과 보고서 출력."""
+    """Print results report."""
     print()
     print("═" * 65)
-    print("  골든존-CCT 브릿지 v1.0")
-    print("  G=D×P/I 모델의 I값과 CCT 의식 연속성 점수의 관계")
+    print("  Golden Zone-CCT Bridge v1.0")
+    print("  Relationship between I value and CCT Consciousness Continuity Score in G=D×P/I model")
     print("═" * 65)
     print()
-    print(f"  해상도: grid={grid} ({len(i_values)}개 I값 스캔)")
-    print(f"  골든존: I ∈ [{GOLDEN_LOWER:.4f}, {GOLDEN_UPPER:.4f}]")
-    print(f"  부동점: I = 1/3 ≈ {FIXED_POINT:.4f}")
-    print(f"  골든존 중심: I = 1/e ≈ {GOLDEN_CENTER:.4f}")
+    print(f"  Resolution: grid={grid} ({len(i_values)} I values scanned)")
+    print(f"  Golden Zone: I ∈ [{GOLDEN_LOWER:.4f}, {GOLDEN_UPPER:.4f}]")
+    print(f"  Fixed Point: I = 1/3 ≈ {FIXED_POINT:.4f}")
+    print(f"  Golden Zone Center: I = 1/e ≈ {GOLDEN_CENTER:.4f}")
     print()
 
-    # ASCII 그래프
+    # ASCII graph
     print(ascii_graph(i_values, cct_totals))
 
-    # 핵심 발견
+    # Key findings
     print("─" * 65)
-    print("  [ 핵심 발견 ]")
+    print("  [ Key Findings ]")
     print("─" * 65)
     print()
 
-    # 1. 최적점
-    print(f"  1. 전체 최대 CCT 점수")
+    # 1. Optimal point
+    print(f"  1. Overall Maximum CCT Score")
     print(f"     I = {analysis['best_i']:.4f},  CCT = {analysis['best_score']:.3f} / 5.000")
     in_golden = GOLDEN_LOWER <= analysis['best_i'] <= GOLDEN_UPPER
     if in_golden:
-        print(f"     → 골든존 안에 위치 ✔")
+        print(f"     → Located within Golden Zone ✔")
     else:
-        print(f"     → 골든존 밖에 위치 ✕")
+        print(f"     → Located outside Golden Zone ✕")
     print()
 
-    # 2. 골든존 vs 밖
-    print(f"  2. 골든존 내부 vs 외부")
-    print(f"     골든존 평균 CCT = {analysis['golden_mean']:.3f}")
-    print(f"     골든존 최대 CCT = {analysis['golden_max']:.3f}")
-    print(f"     외부   평균 CCT = {analysis['outside_mean']:.3f}")
-    print(f"     외부   최대 CCT = {analysis['outside_max']:.3f}")
+    # 2. Golden Zone vs Outside
+    print(f"  2. Golden Zone Inside vs Outside")
+    print(f"     Golden Zone mean CCT = {analysis['golden_mean']:.3f}")
+    print(f"     Golden Zone max CCT = {analysis['golden_max']:.3f}")
+    print(f"     Outside mean CCT = {analysis['outside_mean']:.3f}")
+    print(f"     Outside max CCT = {analysis['outside_max']:.3f}")
     diff = analysis['golden_mean'] - analysis['outside_mean']
     if diff > 0:
-        print(f"     → 골든존이 평균 {diff:.3f}점 높음 ✔")
+        print(f"     → Golden Zone is {diff:.3f} points higher on average ✔")
     else:
-        print(f"     → 골든존이 평균 {abs(diff):.3f}점 낮음 ✕")
+        print(f"     → Golden Zone is {abs(diff):.3f} points lower on average ✕")
     print()
 
-    # 3. 부동점 I=1/3
-    print(f"  3. 부동점 I=1/3 분석")
+    # 3. Fixed point I=1/3
+    print(f"  3. Fixed Point I=1/3 Analysis")
     print(f"     I = {analysis['fixed_i']:.4f},  CCT = {analysis['fixed_score']:.3f}")
     fixed_rank_pct = np.sum(cct_totals <= analysis['fixed_score']) / len(cct_totals) * 100
-    print(f"     전체 백분위: 상위 {100 - fixed_rank_pct:.1f}%")
+    print(f"     Overall percentile: top {100 - fixed_rank_pct:.1f}%")
     if analysis['fixed_score'] >= analysis['best_score'] * 0.95:
-        print(f"     → 최적점의 95% 이상, 준최적 ✔")
+        print(f"     → 95% or more of optimal, near-optimal ✔")
     else:
-        print(f"     → 최적점 대비 {analysis['fixed_score']/analysis['best_score']*100:.1f}%")
+        print(f"     → {analysis['fixed_score']/analysis['best_score']*100:.1f}% of optimal")
     print()
 
-    # 4. 부동점 상세 점수
-    print(f"  4. I=1/3 CCT 상세 (5개 테스트)")
+    # 4. Fixed point detailed scores
+    print(f"  4. I=1/3 CCT Details (5 tests)")
     fd = analysis["fixed_details"]
     for key in ["T1_Gap", "T2_Loop", "T3_Continuity", "T4_Entropy", "T5_Novelty"]:
         bar_len = 20
@@ -511,80 +512,80 @@ def print_report(i_values, cct_totals, cct_details, analysis, grid):
         print(f"     {key:15s} [{bar}] {fd[key]:.3f}")
     print()
 
-    # 5. 경계 급락
-    print(f"  5. 골든존 경계 급락 분석")
-    print(f"     하한 경계 (I≈0.213): 안→밖 CCT 차이 = {analysis['lower_drop']:+.3f}")
-    print(f"     상한 경계 (I≈0.500): 안→밖 CCT 차이 = {analysis['upper_drop']:+.3f}")
+    # 5. Boundary drop-off
+    print(f"  5. Golden Zone Boundary Drop-off Analysis")
+    print(f"     Lower boundary (I≈0.213): inside→outside CCT diff = {analysis['lower_drop']:+.3f}")
+    print(f"     Upper boundary (I≈0.500): inside→outside CCT diff = {analysis['upper_drop']:+.3f}")
     if analysis['lower_drop'] > 0.3 or analysis['upper_drop'] > 0.3:
-        print(f"     → 경계에서 급격한 하락 관측 ✔")
+        print(f"     → Sharp drop observed at boundary ✔")
     elif analysis['lower_drop'] > 0 or analysis['upper_drop'] > 0:
-        print(f"     → 경계에서 완만한 하락 관측")
+        print(f"     → Gradual drop observed at boundary")
     else:
-        print(f"     → 경계 효과 미약")
+        print(f"     → Weak boundary effect")
     print()
 
-    # 6. 골든존 중심 1/e
-    print(f"  6. 골든존 중심 I=1/e")
+    # 6. Golden Zone center 1/e
+    print(f"  6. Golden Zone Center I=1/e")
     print(f"     I = {analysis['center_i']:.4f},  CCT = {analysis['center_score']:.3f}")
     print()
 
-    # 종합 판정
+    # Overall verdict
     print("═" * 65)
-    print("  [ 종합 판정 ]")
+    print("  [ Overall Verdict ]")
     print()
     verdict_count = 0
     if in_golden:
-        print(f"  ✔ 최적점이 골든존 내부에 위치")
+        print(f"  ✔ Optimal point located within Golden Zone")
         verdict_count += 1
     if diff > 0:
-        print(f"  ✔ 골든존 내부 평균 CCT > 외부 평균 CCT")
+        print(f"  ✔ Golden Zone mean CCT > Outside mean CCT")
         verdict_count += 1
     if analysis['fixed_score'] >= analysis['best_score'] * 0.90:
-        print(f"  ✔ 부동점 I=1/3이 준최적 (최적의 {analysis['fixed_score']/analysis['best_score']*100:.1f}%)")
+        print(f"  ✔ Fixed point I=1/3 is near-optimal ({analysis['fixed_score']/analysis['best_score']*100:.1f}% of optimal)")
         verdict_count += 1
     if analysis['lower_drop'] > 0 or analysis['upper_drop'] > 0:
-        print(f"  ✔ 골든존 경계에서 CCT 하락 관측")
+        print(f"  ✔ CCT drop observed at Golden Zone boundaries")
         verdict_count += 1
 
     print()
     if verdict_count >= 3:
-        print(f"  → 결론: 골든존-CCT 브릿지 강하게 성립 ({verdict_count}/4)")
+        print(f"  → Conclusion: Golden Zone-CCT Bridge strongly established ({verdict_count}/4)")
     elif verdict_count >= 2:
-        print(f"  → 결론: 골든존-CCT 브릿지 부분 성립 ({verdict_count}/4)")
+        print(f"  → Conclusion: Golden Zone-CCT Bridge partially established ({verdict_count}/4)")
     else:
-        print(f"  → 결론: 골든존-CCT 브릿지 약함 ({verdict_count}/4)")
+        print(f"  → Conclusion: Golden Zone-CCT Bridge weak ({verdict_count}/4)")
     print("═" * 65)
     print()
 
 
 # ─────────────────────────────────────────────
-# 상세 테이블 출력
+# Detailed table output
 # ─────────────────────────────────────────────
 def print_detail_table(i_values, cct_totals, cct_details):
-    """I값별 상세 테이블 (주요 지점만)."""
+    """Detailed table by I value (key points only)."""
     print()
     print("─" * 75)
-    print("  [ I값별 CCT 상세 테이블 (주요 지점) ]")
+    print("  [ CCT Details by I Value (Key Points) ]")
     print("─" * 75)
     print(f"  {'I':>6} │ {'σ':>5} │ {'ρ':>5} │ {'noise':>5} │ {'gap':>4} │"
-          f" {'T1':>5} │ {'T2':>5} │ {'T3':>5} │ {'T4':>5} │ {'T5':>5} │ {'Total':>5} │ 위치")
+          f" {'T1':>5} │ {'T2':>5} │ {'T3':>5} │ {'T4':>5} │ {'T5':>5} │ {'Total':>5} │ Position")
     print(f"  {'─'*6}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*4}─┼─"
           f"{'─'*5}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*5}─┼─{'─'*8}")
 
-    # 주요 지점 선정
+    # Select key points
     key_points = [
-        (0.05, "극저억제"),
+        (0.05, "Very low inhib"),
         (0.10, ""),
-        (GOLDEN_LOWER, "골든하한"),
+        (GOLDEN_LOWER, "Golden lower"),
         (0.25, ""),
-        (FIXED_POINT, "★부동점"),
-        (GOLDEN_CENTER, "1/e중심"),
+        (FIXED_POINT, "★Fixed point"),
+        (GOLDEN_CENTER, "1/e center"),
         (0.45, ""),
-        (GOLDEN_UPPER, "골든상한"),
+        (GOLDEN_UPPER, "Golden upper"),
         (0.60, ""),
         (0.70, ""),
         (0.80, ""),
-        (0.90, "고억제"),
+        (0.90, "High inhib"),
     ]
 
     for target_i, label in key_points:
@@ -604,22 +605,22 @@ def print_detail_table(i_values, cct_totals, cct_details):
 
 
 # ─────────────────────────────────────────────
-# matplotlib 출력
+# matplotlib output
 # ─────────────────────────────────────────────
 def plot_results(i_values, cct_totals, cct_details, analysis):
-    """matplotlib 그래프 저장."""
+    """Save matplotlib graphs."""
     try:
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
     except ImportError:
-        print("  [경고] matplotlib 없음, --plot 건너뜀")
+        print("  [Warning] matplotlib not available, skipping --plot")
         return None
 
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
     fig.suptitle("Golden Zone - CCT Bridge", fontsize=14, fontweight="bold")
 
-    # 1. I vs CCT 총점
+    # 1. I vs CCT total
     ax1 = axes[0, 0]
     ax1.plot(i_values, cct_totals, color="royalblue", lw=1.5, label="CCT Total")
     ax1.axvspan(GOLDEN_LOWER, GOLDEN_UPPER, alpha=0.15, color="gold", label="Golden Zone")
@@ -633,7 +634,7 @@ def plot_results(i_values, cct_totals, cct_details, analysis):
     ax1.set_ylim(0, 5.5)
     ax1.grid(True, alpha=0.3)
 
-    # 2. 5개 테스트 개별 점수
+    # 2. Individual test scores
     ax2 = axes[0, 1]
     test_keys = ["T1_Gap", "T2_Loop", "T3_Continuity", "T4_Entropy", "T5_Novelty"]
     colors = ["#e74c3c", "#3498db", "#2ecc71", "#f39c12", "#9b59b6"]
@@ -650,7 +651,7 @@ def plot_results(i_values, cct_totals, cct_details, analysis):
     ax2.set_ylim(-0.1, 1.1)
     ax2.grid(True, alpha=0.3)
 
-    # 3. 로렌츠 파라미터 vs I
+    # 3. Lorenz parameters vs I
     ax3 = axes[1, 0]
     sigmas = [10.0 * (1 - I) for I in i_values]
     rhos = [28.0 * (1 - I / 2) for I in i_values]
@@ -667,7 +668,7 @@ def plot_results(i_values, cct_totals, cct_details, analysis):
     ax3.legend(fontsize=8)
     ax3.grid(True, alpha=0.3)
 
-    # 4. 골든존 내/외 비교 바 차트
+    # 4. Golden Zone inside/outside comparison bar chart
     ax4 = axes[1, 1]
     golden_mask = (i_values >= GOLDEN_LOWER) & (i_values <= GOLDEN_UPPER)
     for ki, key in enumerate(test_keys):
@@ -697,52 +698,53 @@ def plot_results(i_values, cct_totals, cct_details, analysis):
 
 
 # ─────────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(
-        description="골든존-CCT 브릿지: I값과 CCT 의식 연속성 점수의 관계 시뮬레이션",
+        description="Golden Zone-CCT Bridge: Simulation of the relationship between I values and CCT consciousness continuity scores",
     )
     parser.add_argument("--grid", type=int, default=50,
-                        help="I값 스캔 해상도 (기본 50, 빠른 20, 정밀 100)")
+                        help="I value scan resolution (default 50, fast 20, precise 100)")
     parser.add_argument("--steps", type=int, default=50000,
-                        help="로렌츠 시뮬레이션 스텝 수 (기본 50000)")
+                        help="Lorenz simulation step count (default 50000)")
     parser.add_argument("--dt", type=float, default=0.01,
-                        help="시간 간격 (기본 0.01)")
+                        help="Time interval (default 0.01)")
     parser.add_argument("--plot", action="store_true",
-                        help="matplotlib 4패널 그래프 저장")
+                        help="Save matplotlib 4-panel graph")
     parser.add_argument("--detail", action="store_true",
-                        help="주요 지점 상세 테이블 출력")
+                        help="Output detailed table for key points")
 
     args = parser.parse_args()
 
     print()
-    print(f"  골든존-CCT 브릿지 시뮬레이션 시작")
+    print(f"  Golden Zone-CCT Bridge simulation starting")
     print(f"  grid={args.grid}, steps={args.steps}, dt={args.dt}")
     print()
 
-    # 스캔
+    # Scan
     i_values, cct_totals, cct_details = scan_i_range(
         grid=args.grid, steps=args.steps, dt=args.dt,
     )
 
-    # 분석
+    # Analyze
     analysis = analyze_results(i_values, cct_totals, cct_details)
 
-    # 보고
+    # Report
     print_report(i_values, cct_totals, cct_details, analysis, args.grid)
 
-    # 상세 테이블
+    # Detailed table
     if args.detail or args.grid <= 50:
         print_detail_table(i_values, cct_totals, cct_details)
 
-    # 플롯
+    # Plot
     if args.plot:
         path = plot_results(i_values, cct_totals, cct_details, analysis)
         if path:
-            print(f"  [plot] 저장: {path}")
+            print(f"  [plot] Saved to: {path}")
             print()
 
 
 if __name__ == "__main__":
     main()
+```

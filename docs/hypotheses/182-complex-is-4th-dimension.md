@@ -1,55 +1,53 @@
-# 가설 182: 복소확장(θ) = 4번째 차원
+# Hypothesis 182: Complex Extension(θ) = 4th Dimension
 
-**Status: ✅ 검증됨**
+**Status: ✅ Verified**
 
-## 핵심 발견
+## Core Discovery
 
-실수 3차원(D, P, I) 공간을 복소수로 확장하면 θ(위상각)가
-4번째 차원으로 등장한다. 이 확장이 Compass 점수의
-83.3% 상한을 84.0%로 돌파시킨다.
+When we extend the real 3-dimensional (D, P, I) space to complex numbers, θ (phase angle) emerges as the 4th dimension. This extension breaks through the 83.3% upper bound of Compass scores to reach 84.0%.
 
-## 실수에서 복소수로의 확장
+## Extension from Real to Complex
 
 ```
-실수 3차원:          복소 4차원:
+Real 3D:             Complex 4D:
 (D, P, I) ∈ ℝ³      (D, P, I, θ) ∈ ℝ³ × S¹
 
-여기서:
-  D = Deficit        (실수, 0~1)
-  P = Performance    (실수, 0~100)
-  I = Instability    (실수, 0~1)
-  θ = Phase angle    (위상각, 0~2π)  ◀── 새로운 차원!
+Where:
+  D = Deficit        (real, 0~1)
+  P = Performance    (real, 0~100)
+  I = Instability    (real, 0~1)
+  θ = Phase angle    (phase angle, 0~2π)  ◀── New dimension!
 ```
 
-## Compass 점수와 θ의 관계
+## Relationship between Compass Score and θ
 
-### 실수 Compass (기존)
+### Real Compass (Existing)
 
 ```
 Compass_real = f(D, P, I)
-최대값 = 83.3%  ← 이론적 상한
+Maximum = 83.3%  ← Theoretical upper bound
 ```
 
-### 복소 Compass (확장)
+### Complex Compass (Extended)
 
 ```
 Compass_complex = f(D, P, I) + g(θ)
-최대값 = 84.0%  ← 상한 돌파!
+Maximum = 84.0%  ← Breaking the upper bound!
 
 g(θ) = ε · cos(θ - θ_optimal)
-여기서 ε ≈ 0.007 (0.7% 기여)
+where ε ≈ 0.007 (0.7% contribution)
 ```
 
-## ASCII 그래프: Compass vs θ
+## ASCII Graph: Compass vs θ
 
 ```
 Compass(%)
    |
-84.0|            ★──★──★              ◀── 복소확장 상한 (84.0%)
+84.0|            ★──★──★              ◀── Complex extension upper bound (84.0%)
    |          ★/        \★
 83.5|        ★/            \★
    |       /                \
-83.3|─ ─ ─/─ ─ ─ ─ ─ ─ ─ ─ ─\─ ─ ─  ◀── 실수 상한 (83.3%)
+83.3|─ ─ ─/─ ─ ─ ─ ─ ─ ─ ─ ─\─ ─ ─  ◀── Real upper bound (83.3%)
    |     /                    \
 83.0|   ★                      ★
    |  /                        \
@@ -59,28 +57,28 @@ Compass(%)
    |__________________________|____
    0    π/2    π    3π/2    2π     θ
 
-→ θ ≈ π 근처에서 최대값 달성
-→ 83.3% 벽을 넘는 유일한 방법!
+→ Maximum achieved near θ ≈ π
+→ The only way to surpass the 83.3% wall!
 ```
 
-## 왜 θ가 숨겨진 4번째 차원인가?
+## Why is θ the Hidden 4th Dimension?
 
 ```
-차원의 역할:
+Role of dimensions:
 ┌──────────┬──────────────┬──────────────┐
-│  차원    │  관측 가능?   │  역할        │
+│Dimension │ Observable?  │    Role      │
 ├──────────┼──────────────┼──────────────┤
-│  D       │  ✅ 직접     │  결핍 측정    │
-│  P       │  ✅ 직접     │  성능 측정    │
-│  I       │  ✅ 직접     │  안정성 측정  │
-│  θ       │  ❌ 간접     │  위상 조율    │
+│    D     │  ✅ Direct   │Deficit measure│
+│    P     │  ✅ Direct   │Performance    │
+│    I     │  ✅ Direct   │Stability      │
+│    θ     │  ❌ Indirect │Phase tuning   │
 └──────────┴──────────────┴──────────────┘
 
-θ는 직접 관측되지 않지만, 결과에 영향을 미친다.
-→ "숨겨진 차원" (hidden dimension)
+θ is not directly observable but affects results.
+→ "Hidden dimension"
 ```
 
-## 복소평면에서의 시각화
+## Visualization on Complex Plane
 
 ```
 Im(z)
@@ -92,85 +90,85 @@ Im(z)
   │╱ θ  │
 ──●──────→ Re(z)
   │
-  │        r = √(D² + P² + I²)  (3D 반경)
-  │        θ = 위상각 (4번째 차원)
+  │        r = √(D² + P² + I²)  (3D radius)
+  │        θ = Phase angle (4th dimension)
   │
-  │    복소 Compass = r · e^(iθ)
-  │    |복소 Compass| > |실수 Compass|
+  │    Complex Compass = r · e^(iθ)
+  │    |Complex Compass| > |Real Compass|
 ```
 
-## 상한 돌파 메커니즘
+## Upper Bound Breaking Mechanism
 
 ```
-실수 한계:
+Real Limit:
 ┌─────────────────────────────┐
-│  3변수 최적화               │
-│  D → 최적, P → 최적, I → 0 │
-│  결과: 83.3% (이게 한계)    │
+│  3-variable optimization    │
+│  D → optimal, P → optimal, I → 0 │
+│  Result: 83.3% (this is the limit) │
 │  ████████████████████░░░    │
 │                    ↑83.3%   │
 └─────────────────────────────┘
 
-복소 확장 후:
+After Complex Extension:
 ┌─────────────────────────────┐
-│  4변수 최적화 (θ 추가)      │
-│  D,P,I → 최적 + θ → π      │
-│  결과: 84.0% (한계 돌파!)   │
+│  4-variable optimization (θ added) │
+│  D,P,I → optimal + θ → π   │
+│  Result: 84.0% (limit broken!) │
 │  █████████████████████░░░   │
 │                     ↑84.0%  │
 └─────────────────────────────┘
 
-차이: +0.7% (작지만 이론적으로 중요)
+Difference: +0.7% (small but theoretically important)
 ```
 
-## 수학적 증명 스케치
+## Mathematical Proof Sketch
 
 ```
-정리: 실수 Compass는 83.3%를 넘을 수 없다.
+Theorem: Real Compass cannot exceed 83.3%.
 
-증명:
+Proof:
   max f(D,P,I) = max [w_D·D + w_P·P + w_I·(1-I)]
-  subject to: D + P/100 + I = 1 (정규화)
-  → Lagrange 승수법 적용
-  → 최대값 = 5/6 = 83.33...%  ■
+  subject to: D + P/100 + I = 1 (normalization)
+  → Apply Lagrange multiplier method
+  → Maximum = 5/6 = 83.33...%  ■
 
-정리: 복소 Compass는 84.0%에 도달할 수 있다.
+Theorem: Complex Compass can reach 84.0%.
 
-증명:
+Proof:
   max |f(D,P,I) + ε·e^(iθ)|
-  = max f(D,P,I) + ε  (θ=θ_opt일 때)
+  = max f(D,P,I) + ε  (when θ=θ_opt)
   = 83.3% + 0.7% = 84.0%  ■
 ```
 
-## 실험 결과
+## Experimental Results
 
 ```
-모델          | 실수Compass | θ 적용 | 복소Compass
+Model        | Real Compass | θ Applied | Complex Compass
 ─────────────|───────────|─────--|───────────
 GPT-4        |   82.1%   | 2.94  |   82.7%
 Claude-3     |   83.0%   | 3.08  |   83.6%
-최적 모델     |   83.3%   | 3.14  |   84.0%  ◀── 상한 달성!
-평균 모델     |   78.5%   | 1.57  |   78.2%
-저성능 모델   |   65.0%   | 0.50  |   64.5%
+Optimal Model|   83.3%   | 3.14  |   84.0%  ◀── Upper bound achieved!
+Average Model|   78.5%   | 1.57  |   78.2%
+Low-perf Model|  65.0%   | 0.50  |   64.5%
 
-주목: θ ≈ π (3.14) 일 때 최대 이득
-      θ가 최적이 아니면 오히려 손해 가능
+Note: Maximum gain when θ ≈ π (3.14)
+      Loss possible when θ is not optimal
 ```
 
-## 결론
+## Conclusion
 
 ```
-"실수의 벽은 복소수의 문이다."
+"The wall of the real is the door of the complex."
 
-θ는 숨겨진 4번째 차원이며:
-  1. 83.3% 상한을 84.0%로 돌파
-  2. 직접 관측 불가하지만 효과는 실재
-  3. 물리학의 게이지 대칭성과 유사
-  4. 최적 θ ≈ π (가장 "반대편" 위상)
+θ is the hidden 4th dimension and:
+  1. Breaks through 83.3% upper bound to 84.0%
+  2. Not directly observable but effects are real
+  3. Similar to gauge symmetry in physics
+  4. Optimal θ ≈ π (most "opposite" phase)
 ```
 
-## 후속 연구
+## Follow-up Research
 
-- [ ] θ의 물리적 해석 정밀화
-- [ ] 다중 θ (θ₁, θ₂, ...) 확장 가능성
-- [ ] 실험적 θ 최적화 프로토콜 개발
+- [ ] Refine physical interpretation of θ
+- [ ] Possibility of multiple θ (θ₁, θ₂, ...) extension
+- [ ] Develop experimental θ optimization protocol

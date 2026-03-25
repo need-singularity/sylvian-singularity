@@ -1,4 +1,4 @@
 # H-CX-338: ⭐⭐⭐🟩 π₆(S³) = Z₁₂ = Z_{σ(6)}
 
-> 3차원 구의 6차 호모토피군 = Z₁₂. σ(6)=12 등장!
-> 이미 알려진 위상수학 정리. 6→12 연결이 호모토피에서도.
+> 6th homotopy group of 3-sphere = Z₁₂. σ(6)=12 appears!
+> Already known topology theorem. 6→12 connection in homotopy too.

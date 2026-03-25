@@ -1,70 +1,70 @@
-# 가설 검토 018: Loss 2차미분 급변 = 커스프 전이 감지 ✅
+# Hypothesis Review 018: Sudden Change in Loss 2nd Derivative = Cusp Transition Detection ✅
 
-## 가설
+## Hypothesis
 
-> 학습 중 Loss의 2차미분(d²L/dt²)이 임계값(2.5σ)을 초과하면
-> 커스프(cusp) 전이점으로 감지할 수 있다.
+> If the 2nd derivative of Loss (d²L/dt²) during training exceeds a threshold (2.5σ),
+> it can be detected as a cusp transition point.
 
-## 배경 및 맥락
+## Background and Context
 
-신경망 학습 과정에서 Loss 곡선은 일반적으로 매끄럽게 감소하지만,
-특정 시점에서 급격한 변화(커스프)가 발생할 수 있다.
-이러한 전이점은 다음을 나타낼 수 있다:
+During neural network training, the loss curve generally decreases smoothly,
+but at certain moments a sharp change (cusp) can occur.
+These transition points may indicate:
 
-- 학습률 스케줄의 전환
-- Expert 라우팅 패턴의 재편
-- 특징(feature) 학습 단계의 전환
-- 골든 존 진입/이탈
+- Switching of learning rate schedule
+- Reorganization of Expert routing patterns
+- Transition between feature learning phases
+- Entry/exit from the Golden Zone
 
-커스프를 실시간으로 감지할 수 있다면, 학습 전략을 동적으로
-조정하는 것이 가능해진다. 2차미분(곡률)의 급변이 커스프의
-수학적 지표가 될 수 있는지 검증했다.
+If cusps can be detected in real time, it becomes possible to dynamically
+adjust training strategy. Whether a sudden change in the 2nd derivative (curvature)
+can serve as a mathematical indicator of cusp was verified.
 
-관련 가설: 가설 017(Gating 매핑), 가설 020(안정성 35%)
+Related hypotheses: Hypothesis 017 (Gating mapping), Hypothesis 020 (Stability 35%)
 
-## 커스프 감지 알고리즘
+## Cusp Detection Algorithm
 
 ```
-  입력: Loss 시계열 L(t), t = 1, 2, ..., T
+  Input: Loss time series L(t), t = 1, 2, ..., T
 
-  1단계: 평활화
-    L_smooth(t) = 이동평균(L(t), 윈도우=5)
+  Step 1: Smoothing
+    L_smooth(t) = moving average(L(t), window=5)
 
-  2단계: 2차미분 계산
+  Step 2: Compute 2nd derivative
     d²L(t) = L_smooth(t+1) - 2×L_smooth(t) + L_smooth(t-1)
 
-  3단계: 임계값 설정
+  Step 3: Set threshold
     μ_d2 = mean(d²L)
     σ_d2 = std(d²L)
-    임계값 = μ_d2 + 2.5 × σ_d2
+    threshold = μ_d2 + 2.5 × σ_d2
 
-  4단계: 커스프 판정
-    if |d²L(t)| > 임계값: t를 커스프 후보로 표시
+  Step 4: Cusp decision
+    if |d²L(t)| > threshold: mark t as cusp candidate
 
-  5단계: 후보 병합 (5 epoch 이내 중복 제거)
+  Step 5: Merge candidates (remove duplicates within 5 epochs)
 ```
 
-## 검증 데이터
+## Verification Data
 
 ```
-  시뮬레이션 설정:
+  Simulation settings:
   ─────────────────────────
-  총 Epoch:          100
-  삽입 전이점:       epoch 35, epoch 70
-  전이 유형:         Loss 기울기 급변 (kink)
-  노이즈 수준:       σ_noise = 0.02
-  임계값:            2.5σ
+  Total epochs:         100
+  Inserted transitions: epoch 35, epoch 70
+  Transition type:      sudden change in Loss slope (kink)
+  Noise level:          σ_noise = 0.02
+  Threshold:            2.5σ
 
-  감지 결과:
+  Detection results:
   ─────────────────────────────────────
-  삽입 전이점   │  감지된 epoch   │  오차  │  판정
-  ─────────────┼────────────────┼───────┼──────
-  epoch 35     │  epoch 34, 35  │  ±1   │  ✅
-  epoch 70     │  epoch 69, 70  │  ±1   │  ✅
-  (없음)       │  (미감지)      │   -   │  ✅ 거짓양성 없음
+  Inserted transition │  Detected epoch  │  Error │  Verdict
+  ───────────────────┼──────────────────┼────────┼──────
+  epoch 35           │  epoch 34, 35    │  ±1    │  ✅
+  epoch 70           │  epoch 69, 70    │  ±1    │  ✅
+  (none)             │  (not detected)  │   -    │  ✅ no false positives
 ```
 
-## Loss 곡선 + 2차미분 피크 그래프
+## Loss Curve + 2nd Derivative Peak Graph
 
 ```
   Loss
@@ -72,97 +72,97 @@
      │ \
   1.5│  \
      │   \
-  1.0│    ╲___          커스프 1
+  1.0│    ╲___          Cusp 1
      │        ╲___      ↓
-  0.5│            ╲___________      커스프 2
+  0.5│            ╲___________      Cusp 2
      │                        ╲___  ↓
   0.2│                            ╲___________
      └──┬───┬───┬───┬───┬───┬───┬───┬───┬───┬──
        0  10  20  30  40  50  60  70  80  90  100
                         epoch
 
-  d²L/dt² (2차미분)
+  d²L/dt² (2nd derivative)
    30│
      │              ████
-   20│              ████ ← 전이 1 (epoch 34-35)
+   20│              ████ ← transition 1 (epoch 34-35)
      │              ████
    10│              ████
      │
-    0│──────────────────────────────────────── 0선
+    0│──────────────────────────────────────── zero line
      │
   -10│
      │                              ████
-  -20│                              ████ ← 전이 2 (epoch 69-70)
+  -20│                              ████ ← transition 2 (epoch 69-70)
      │                              ████
   -30│                              ████
      └──┬───┬───┬───┬───┬───┬───┬───┬───┬───┬──
        0  10  20  30  40  50  60  70  80  90  100
                         epoch
 
-  ── 임계값 (±2.5σ) ──────────────────────
-  ████ = 임계값 초과 구간 = 커스프 감지
+  ── threshold (±2.5σ) ──────────────────────
+  ████ = region exceeding threshold = cusp detected
 ```
 
-## 임계값 민감도 분석
+## Threshold Sensitivity Analysis
 
 ```
-  임계값 (σ배수) │ 감지된 전이점 │ 거짓양성 │ 거짓음성 │ F1
-  ──────────────┼─────────────┼─────────┼─────────┼──────
-  1.5σ          │ 2/2         │ 3개     │ 0       │ 0.57
-  2.0σ          │ 2/2         │ 1개     │ 0       │ 0.80
-  2.5σ          │ 2/2         │ 0개     │ 0       │ 1.00 ★
-  3.0σ          │ 1/2         │ 0개     │ 1       │ 0.67
-  3.5σ          │ 0/2         │ 0개     │ 2       │ 0.00
+  Threshold (σ multiple) │ Detected transitions │ False pos. │ False neg. │ F1
+  ───────────────────────┼─────────────────────┼────────────┼────────────┼──────
+  1.5σ                   │ 2/2                 │ 3          │ 0          │ 0.57
+  2.0σ                   │ 2/2                 │ 1          │ 0          │ 0.80
+  2.5σ                   │ 2/2                 │ 0          │ 0          │ 1.00 ★
+  3.0σ                   │ 1/2                 │ 0          │ 1          │ 0.67
+  3.5σ                   │ 0/2                 │ 0          │ 2          │ 0.00
 ```
 
-## 해석
+## Interpretation
 
-1. **2.5σ가 최적 임계값**: 거짓양성과 거짓음성이 모두 0인 유일한 설정.
-   1.5~2.0σ에서는 노이즈를 전이점으로 오인하고(거짓양성),
-   3.0σ 이상에서는 실제 전이점을 놓친다(거짓음성).
-2. **±1 epoch 정밀도**: 감지된 epoch이 실제 전이점과 ±1 epoch 이내.
-   이동평균 윈도우(5 epoch)를 고려하면 매우 정확하다.
-3. **실시간 적용 가능**: 알고리즘이 O(1) 메모리, O(1) 연산으로
-   실시간 모니터링에 적합하다.
+1. **2.5σ is the optimal threshold**: The only setting with both false positives and false negatives at 0.
+   At 1.5~2.0σ, noise is misidentified as transition points (false positives);
+   at 3.0σ+, actual transition points are missed (false negatives).
+2. **±1 epoch precision**: Detected epochs are within ±1 epoch of the actual transition points.
+   Very accurate given the moving average window (5 epochs).
+3. **Real-time applicability**: The algorithm uses O(1) memory and O(1) computation,
+   suitable for real-time monitoring.
 
-## 실전 적용 시나리오
+## Practical Application Scenarios
 
 ```
-  학습 중 커스프 감지 시 자동 조치:
-  ────────────────────────────────────
-  d²L > +2.5σ  →  Loss 감소 가속 (긍정적 전이)
-                   → 학습률 유지 또는 소폭 증가
+  Automatic action upon cusp detection during training:
+  ────────────────────────────────────────────────────
+  d²L > +2.5σ  →  Accelerated loss decrease (positive transition)
+                    → Maintain or slightly increase learning rate
 
-  d²L < -2.5σ  →  Loss 감소 둔화 (부정적 전이)
-                   → 학습률 감소 또는 Expert 라우팅 리셋
+  d²L < -2.5σ  →  Slowed loss decrease (negative transition)
+                    → Decrease learning rate or reset Expert routing
 
-  연속 커스프   →  불안정 경고
-                   → 학습 일시 정지 및 체크포인트 저장
+  Consecutive cusps  →  Instability warning
+                         → Pause training and save checkpoint
 ```
 
-## 한계
+## Limitations
 
-- 시뮬레이션 데이터에서의 검증이며, 실제 학습 곡선은 더 복잡
-- 이동평균 윈도우 크기(5)가 하이퍼파라미터로 존재
-- 노이즈가 큰 환경(배치 크기 작음)에서는 2.5σ가 부적절할 수 있음
-- 점진적 전이(smooth transition)는 커스프로 감지되지 않음
-- 단일 시뮬레이션 결과이며, 다양한 전이 유형에서의 검증 부족
+- Verified on simulation data; actual training curves are more complex
+- Moving average window size (5) is a hyperparameter
+- 2.5σ may be inappropriate in high-noise environments (small batch size)
+- Gradual transitions (smooth transition) are not detected as cusp
+- Single simulation result; insufficient verification across various transition types
 
-## 다음 단계
+## Next Steps
 
-1. 실제 golden_moe_cifar.py 학습 곡선에서 커스프 감지 실험
-2. 다양한 노이즈 수준에서 최적 임계값 적응적 설정 방법 개발
-3. 커스프 유형 분류 (Expert 재편, 특징 학습 전환 등)
-4. 가설 020(안정성)의 기울기 폭발과 커스프의 상관관계 분석
-5. 커스프 감지 기반 학습률 자동 조정 파이프라인 구현
+1. Cusp detection experiment on actual golden_moe_cifar.py training curves
+2. Develop adaptive threshold setting method for various noise levels
+3. Classification of cusp types (Expert reorganization, feature learning transition, etc.)
+4. Analyze correlation between gradient explosion in Hypothesis 020 (stability) and cusp
+5. Implement learning rate auto-adjustment pipeline based on cusp detection
 
-## 결론
+## Conclusion
 
-> ✅ Loss 2차미분의 2.5σ 임계값으로 커스프 전이점 감지 가능.
-> 시뮬레이션에서 F1 = 1.00 (거짓양성 0, 거짓음성 0) 달성.
-> ±1 epoch 정밀도로 전이점을 정확히 포착하며,
-> 실시간 학습 모니터링의 기반이 될 수 있다.
+> ✅ Cusp transition points detectable with 2.5σ threshold on Loss 2nd derivative.
+> F1 = 1.00 (0 false positives, 0 false negatives) achieved in simulation.
+> Transition points captured accurately with ±1 epoch precision,
+> and can serve as the basis for real-time training monitoring.
 
 ---
 
-*검증: verify_ai.py (시뮬레이션 학습곡선, 전이점 2개 삽입)*
+*Verification: verify_ai.py (simulated training curve, 2 inserted transition points)*

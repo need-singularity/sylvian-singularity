@@ -1,14 +1,14 @@
-# H-CX-186: 🟦 σφ=Pτ ⟺ P=6 증명 — 첫 번째 완전수의 유일성
+# H-CX-186: 🟦 σφ=Pτ ⟺ P=6 Proof — Uniqueness of the First Perfect Number
 
-> 모든 짝수 완전수 중 σ(P)φ(P) = Pτ(P)인 것은 P=6뿐.
+> Among all even perfect numbers, only P=6 satisfies σ(P)φ(P) = Pτ(P).
 >
-> 증명:
+> Proof:
 > σφ/(Pτ) = φ(P)/p = 2^(p-2)(2^p-2)/p
 > = 1 ⟺ 2^(p-2)(2^p-2) = p ⟺ p=2 ⟺ P=6
 >
 > p=2: 1×2 = 2 = p ✅
 > p=3: 2×6 = 12 ≠ 3 ❌
-> p≥5: 2^(p-2)(2^p-2) >> p (지수 성장) ❌
+> p≥5: 2^(p-2)(2^p-2) >> p (exponential growth) ❌
 >
-> QED. P₁=6은 σφ=nτ 균형의 유일한 완전수.
-> 탄소(Z=6)가 생명 기질인 산술적 이유의 완전수 내 증명.
+> QED. P₁=6 is the unique perfect number with σφ=nτ balance.
+> Proof within perfect numbers of the arithmetic reason why carbon (Z=6) is the substrate of life.

@@ -1,24 +1,25 @@
-# H-CX-25: MoE 창발 = 억제에서 전문화로
+# H-CX-25: MoE Emergence = From Inhibition to Specialization
 
-> **가설**: Golden MoE의 expert 전문화 창발은 R(n)의 곱셈적 분해와
-> 동형이다. 억제(I=1/e)가 R=1 균형점을 만들어 창발을 유도한다.
+> **Hypothesis**: The emergence of expert specialization in Golden MoE is 
+> isomorphic to the multiplicative decomposition of R(n). Inhibition (I=1/e) 
+> creates the R=1 balance point that induces emergence.
 
-## 핵심: 소설 "골든 인히비션" 5장 검증
+## Core: Verification of Novel "Golden Inhibition" Chapter 5
 
 ```
-  Dense: 모든 expert 동시 활성 → SNR 낮음 → 창발 없음
-  MoE(I=1/e): 선택적 활성 → SNR 높음 → 전문화 창발!
+  Dense: All experts active simultaneously → Low SNR → No emergence
+  MoE(I=1/e): Selective activation → High SNR → Specialization emergence!
 
-  R 대응:
-    Dense = R(n)≫1 (모든 f(p,a) 동시 활성)
-    MoE = R(6)=1 (선택적 f 결합으로 균형)
+  R correspondence:
+    Dense = R(n)≫1 (all f(p,a) active simultaneously)
+    MoE = R(6)=1 (balance through selective f combination)
 
-  검증: Step 10000 이후 expert가 자발적으로 역할 분화?
+  Verification: Do experts spontaneously differentiate roles after step 10000?
 ```
 
-## 검증 방향
-1. [ ] Router weight 시각화 (step별 변화)
-2. [ ] Expert 활성 엔트로피 측정 (전문화 = 엔트로피 감소)
-3. [ ] 창발 시점 = PPL 곡선의 변곡점?
+## Verification Directions
+1. [ ] Router weight visualization (changes per step)
+2. [ ] Expert activation entropy measurement (specialization = entropy decrease)
+3. [ ] Emergence point = inflection point of PPL curve?
 
-## 판정: 🟧 구조적 | 파급력: ★★★★★
+## Verdict: 🟧 Structural | Impact: ★★★★★

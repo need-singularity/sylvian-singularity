@@ -1,119 +1,119 @@
-# H-CHEM-5: THC와 카나비노이드 수용체의 6 구조
+# H-CHEM-5: THC and Cannabinoid Receptor Six-Structure
 
-> **가설**: THC(테트라히드로카나비놀)와 내인성 카나비노이드 시스템이
-> 완전수 6의 산술적 구조와 대응하며, 의식 변형 효과가
-> R 스펙트럼의 간극 조작과 관련된다.
+> **Hypothesis**: THC (tetrahydrocannabinol) and the endogenous cannabinoid system
+> correspond to the arithmetic structure of perfect number 6, and consciousness-altering effects
+> are related to R spectrum gap manipulation.
 
-## 배경
+## Background
 
 THC (Δ⁹-tetrahydrocannabinol):
 ```
-  분자식: C₂₁H₃₀O₂
-  탄소 21개 = 3×7 = (σ/τ)×M₃
-  수소 30개 = 5×6 = 5×P₁
-  산소 2개 = φ(6)
+  Molecular formula: C₂₁H₃₀O₂
+  Carbon 21 = 3×7 = (σ/τ)×M₃
+  Hydrogen 30 = 5×6 = 5×P₁
+  Oxygen 2 = φ(6)
 
-  분자량: ~314.5 g/mol ≈ 100π
+  Molecular weight: ~314.5 g/mol ≈ 100π
 
-  고리 구조: 3개 고리 (A,B,C ring) = σ/τ = σ(6)/τ(6)
-  이중결합: 1개 (Δ⁹ 위치)
-  OH기: 1개
+  Ring structure: 3 rings (A,B,C ring) = σ/τ = σ(6)/τ(6)
+  Double bond: 1 (Δ⁹ position)
+  OH group: 1
 ```
 
-내인성 카나비노이드 시스템:
+Endogenous cannabinoid system:
 ```
-  수용체 2종: CB1 (뇌), CB2 (면역)
+  2 types of receptors: CB1 (brain), CB2 (immune)
   → 2 = φ(6)
 
-  내인성 리간드:
-    아난다마이드(AEA): C₂₂H₃₇NO₂
+  Endogenous ligands:
+    Anandamide(AEA): C₂₂H₃₇NO₂
     2-AG: C₂₃H₃₈O₄
-    → 탄소 수 22, 23 = 연속 정수
+    → Carbon numbers 22, 23 = consecutive integers
 
-  CB1 수용체: 7-transmembrane (7개 관통 영역!)
-  → 7 = M₃ (3번째 Mersenne 소수!)
-  모든 GPCR이 7-TM이므로 이것은 보편적 구조.
+  CB1 receptor: 7-transmembrane (7 transmembrane regions!)
+  → 7 = M₃ (3rd Mersenne prime!)
+  All GPCRs are 7-TM so this is a universal structure.
 ```
 
-## 핵심 대응
+## Key Correspondences
 
-### THC의 의식 변형 = R 간극 조작?
+### THC consciousness alteration = R gap manipulation?
 
 ```
-  정상 의식: R = 1 (σφ=nτ 균형)
-  THC 효과: R ≠ 1 (균형 깨짐)
+  Normal consciousness: R = 1 (σφ=nτ balance)
+  THC effect: R ≠ 1 (balance broken)
 
-  THC의 효과:
-    시간 지각 변형 → 순환 주기(24h=σφ) 교란?
-    감각 증폭 → R 간극 축소? (경계 흐려짐)
-    이완/환각 → R<1 영역 진입? (자유 과잉)
+  THC effects:
+    Time perception alteration → Circadian cycle(24h=σφ) disruption?
+    Sensory amplification → R gap reduction? (blurred boundaries)
+    Relaxation/hallucination → R<1 region entry? (excess freedom)
 
-  CB1 활성화 → 시냅스 신호 억제
-  = "tension 감소" → R → 1에 가까워짐?
-  또는 = "간극 통과" → R이 (3/4,1) 간극으로 진입?
+  CB1 activation → synaptic signal inhibition
+  = "tension reduction" → R → closer to 1?
+  Or = "gap passage" → R enters (3/4,1) gap?
 
-  ASCII: THC의 R 간극 효과 (가설)
+  ASCII: THC's R gap effect (hypothesis)
 
-  정상:  ···|    간극    |●|    간극    |···
+  Normal:  ···|    gap    |●|    gap    |···
              3/4         1          7/6
 
-  THC:   ···|  ← 간극 축소 → |●| ← 축소 → |···
-             ← THC가 간극을 좁힘? →
+  THC:   ···|  ← gap shrinkage → |●| ← shrinkage → |···
+             ← THC narrows the gap? →
 ```
 
-### 아난다마이드 = "지복의 분자"
+### Anandamide = "Bliss molecule"
 
 ```
-  아난다마이드(anandamide): 산스크리트 "ānanda" = 지복(bliss)
-  내인성 THC 유사체
+  Anandamide: Sanskrit "ānanda" = bliss
+  Endogenous THC analog
 
   C₂₂H₃₇NO₂:
-    탄소 22 = 2×11
+    Carbon 22 = 2×11
     22 = 2σ-φ = 2·12-2
-    또는 22 = n+τ+σ = 6+4+12... 아니, 그건 22가 아님
+    Or 22 = n+τ+σ = 6+4+12... no, that's not 22
 
-  아난다마이드 효과:
-    낮은 농도: 행복감, 이완
-    높은 농도: THC 유사 효과
-    빠른 분해 (FAAH 효소)
+  Anandamide effects:
+    Low concentration: euphoria, relaxation
+    High concentration: THC-like effects
+    Rapid degradation (FAAH enzyme)
 
-  "지복" = R=1?
-    아난다마이드가 R=1 상태를 유지하는 내인성 메커니즘?
-    THC = 외인성 R=1 모방?
+  "Bliss" = R=1?
+    Anandamide as endogenous mechanism maintaining R=1 state?
+    THC = exogenous R=1 mimicry?
 ```
 
-### 의존성과 R-chain
+### Dependence and R-chain
 
 ```
-  THC 의존성 메커니즘:
-    반복 사용 → CB1 하향조절 → 내성
-    금단: 불안, 불면, 식욕감퇴
+  THC dependence mechanism:
+    Repeated use → CB1 downregulation → tolerance
+    Withdrawal: anxiety, insomnia, appetite loss
 
-  R-chain 비유:
-    첫 사용: n 크고 → R-chain 빠르게 감소 (강한 효과)
-    반복: n 줄어들고 → R-chain 짧아짐 (내성)
-    금단: chain이 6을 경유하지 못함 (basin 이탈)
+  R-chain analogy:
+    First use: large n → R-chain rapidly decreases (strong effect)
+    Repeated: n decreases → R-chain shortens (tolerance)
+    Withdrawal: chain cannot pass through 6 (basin escape)
 
   basin(6) = 14%:
-    "14%의 경험만이 '완전한 균형'을 통과"
-    → 대부분의 의식 경험은 6을 경유하지 않음
-    → THC = 강제로 6 경유시키는 분자?
+    "Only 14% of experiences pass through 'perfect balance'"
+    → Most conscious experiences don't pass through 6
+    → THC = molecule forcing passage through 6?
 ```
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] THC 분자 C₂₁H₃₀O₂의 원소 수와 σ,τ,φ 관계 텍사스 검정
-2. [ ] CB1 수용체 7-TM: GPCR 보편적이므로 M₃ 연결은 약함
-3. [ ] 아난다마이드 농도와 R-유사 "균형 점수" 상관
-4. [ ] fMRI에서 THC 전후 뇌 연결성 변화와 R 스펙트럼 비교
+1. [ ] Texas test of THC molecule C₂₁H₃₀O₂ element numbers with σ,τ,φ relationships
+2. [ ] CB1 receptor 7-TM: GPCR universal so M₃ connection is weak
+3. [ ] Correlation between anandamide concentration and R-like "balance score"
+4. [ ] Compare brain connectivity changes pre/post THC in fMRI with R spectrum
 
-## 판정
+## Judgment
 
 ```
-  상태: 🟨 관찰 + 비유 (small numbers 주의!)
-  THC C₂₁ = 3×7은 흥미하나 분자식은 많은 수를 포함
-  CB1 7-TM은 GPCR 보편 구조 (특이하지 않음)
-  의식 변형 ↔ R 간극은 비유 단계
+  Status: 🟨 Observation + analogy (beware small numbers!)
+  THC C₂₁ = 3×7 is interesting but molecular formulas contain many numbers
+  CB1 7-TM is universal GPCR structure (not unique)
+  Consciousness alteration ↔ R gap is at analogy stage
 ```
 
-## 난이도: 극고 | 파급력: ★★★
+## Difficulty: Extreme | Impact: ★★★

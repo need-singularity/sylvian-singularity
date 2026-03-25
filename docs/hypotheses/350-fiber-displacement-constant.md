@@ -1,64 +1,64 @@
-# 가설 350: 파이버 고유 이동량 +1.22의 의미
+# Hypothesis 350: Meaning of Fiber Intrinsic Displacement +1.22
 
-> **반발력장(repulsion field)의 파이버(fiber)는 초기화 조건에 무관하게 일관된 displacement +1.22를 보인다. 이 값은 파이버가 "고유하게 필요로 하는" 최소 기여량이며, MI 효율 C39(70.5%)와 결합하면 파이버의 정보론적 역할을 정량화할 수 있다.**
+> **The repulsion field's fiber shows a consistent displacement of +1.22 regardless of initialization conditions. This value is the minimum contribution the fiber "intrinsically requires," and combined with MI efficiency C39 (70.5%), the information-theoretic role of the fiber can be quantified.**
 
-## 배경/맥락
+## Background/Context
 
 ```
-  반발력장 모델에서 파이버는 극(pole) 간의 반발을 매개하는 구조:
-    - 극 A (정답 방향)와 극 G (오답 방향)가 반발
-    - 파이버는 이 반발력이 전달되는 "경로"
-    - displacement = 학습 전후로 파이버가 이동한 거리
+  In the repulsion field model, the fiber mediates repulsion between poles:
+    - Pole A (correct direction) and Pole G (wrong direction) repel
+    - Fiber is the "pathway" through which this repulsion is transmitted
+    - Displacement = distance fiber moved before and after training
 
-  관측 사실 (C23):
-    init seed 1, 2, 3, ... 모두에서 파이버 이동량 ≈ +1.22
-    → 초기화 무관 = 모델 고유의 상수
-    → "미연결 상수"로 분류됨 (섬A에 속하나 다른 상수와 연결 없음)
+  Observed fact (C23):
+    Init seed 1, 2, 3, ... all show fiber displacement ≈ +1.22
+    → Initialization-independent = intrinsic constant of the model
+    → Classified as "unconnected constant" (belongs to Island A but no connection with other constants)
 ```
 
-### 관련 가설
+### Related Hypotheses
 
-| 가설 | 핵심 주장 | H350과의 관계 |
+| Hypothesis | Core Claim | Relationship with H350 |
 |------|----------|-------------|
-| H058 | topology timeline | 파이버 위상 구조의 시간 변화 |
-| H066 | topology of meta-learning | 메타학습에서 위상 불변량 |
-| H286 | TDA persistence | 지속적 호몰로지로 파이버 구조 분석 |
-| H-CX-25 | MI 효율-핑거프린트 상관 | C39(70.5%)가 파이버 기여와 같은 한계? |
-| H-CX-2 | MI 효율 ≈ ln(2) | 파이버 이동량의 정보론적 해석 |
+| H058 | topology timeline | temporal change of fiber topology structure |
+| H066 | topology of meta-learning | topological invariants in meta-learning |
+| H286 | TDA persistence | analyzing fiber structure with persistent homology |
+| H-CX-25 | MI efficiency-fingerprint correlation | Is C39(70.5%) the same limit as fiber contribution? |
+| H-CX-2 | MI efficiency ≈ ln(2) | information-theoretic interpretation of fiber displacement |
 
-### 왜 중요한가
+### Why This Matters
 
-1. **초기화 불변**: seed에 무관하게 +1.22가 반복되면 이것은 모델의 "위상적 불변량"일 가능성
-2. **미연결 해소**: 현재 C23은 유일한 미연결 상수 — 연결이 발견되면 지도가 완성됨
-3. **정보론적 해석**: 1.22 nats ≈ e^1.22 ≈ 3.39배의 정보 증폭을 파이버가 담당
-4. **TDA 연결 가능성**: 파이버 displacement가 persistent homology의 birth-death 간격과 대응될 수 있음
+1. **Initialization invariant**: If +1.22 repeats regardless of seed, this may be a "topological invariant" of the model
+2. **Resolving unconnected state**: Currently C23 is the only unconnected constant — if a connection is found, the map is complete
+3. **Information-theoretic interpretation**: 1.22 nats ≈ e^1.22 ≈ 3.39x information amplification that fiber handles
+4. **TDA connection possibility**: Fiber displacement may correspond to birth-death interval in persistent homology
 
-## 수치 분석
+## Numerical Analysis
 
-### +1.22의 후보 해석
+### Candidate Interpretations of +1.22
 
 ```
-  값: +1.22 (C23, 모든 init에서 반복)
+  Value: +1.22 (C23, repeated for all inits)
 
-  후보 1: ln(e^1.22) = 1.22 nats 순수 정보량
-    → 파이버가 추가하는 MI = 1.22 nats?
-    → C40(공유 MI ≥ 1.053 nats)과 비교: 1.22/1.053 = 1.16 ≈ ?
+  Candidate 1: ln(e^1.22) = 1.22 nats pure information
+    → MI added by fiber = 1.22 nats?
+    → Compare with C40(shared MI ≥ 1.053 nats): 1.22/1.053 = 1.16 ≈ ?
 
-  후보 2: 1/ln(4/3) ≈ 3.476 과의 관계
-    → 1.22 × ln(4/3) ≈ 1.22 × 0.2877 ≈ 0.351 ≈ 1/e? (오차 4.6%)
-    → 파이버 이동 × 골든존 폭 ≈ 골든존 중심?
+  Candidate 2: Relationship with 1/ln(4/3) ≈ 3.476
+    → 1.22 × ln(4/3) ≈ 1.22 × 0.2877 ≈ 0.351 ≈ 1/e? (error 4.6%)
+    → fiber displacement × Golden Zone width ≈ Golden Zone center?
 
-  후보 3: C39와의 직접 관계
-    → C39 = 0.705 = MI 효율
-    → 1.22 × 0.705 = 0.860 ≈ 5/6? (오차 3.2%)
-    → 파이버이동 × MI효율 ≈ Compass 상한?
+  Candidate 3: Direct relationship with C39
+    → C39 = 0.705 = MI efficiency
+    → 1.22 × 0.705 = 0.860 ≈ 5/6? (error 3.2%)
+    → fiber displacement × MI efficiency ≈ Compass upper bound?
 
-  후보 4: exp(1.22) ≈ 3.387
-    → ≈ √(2π)/√(e) ≈ 3.389? (오차 0.06%)
-    → Stirling 근사의 핵심 상수?
+  Candidate 4: exp(1.22) ≈ 3.387
+    → ≈ √(2π)/√(e) ≈ 3.389? (error 0.06%)
+    → Stirling approximation core constant?
 ```
 
-### ASCII 그래프: init별 파이버 이동량
+### ASCII Graph: Fiber Displacement by Init
 
 ```
   displacement
@@ -66,7 +66,7 @@
        |
   +1.25 |     *         *
        |  *     *    *     *
-  +1.22 |--*-----*--*-------*---- 평균선 (+1.22)
+  +1.22 |--*-----*--*-------*---- mean line (+1.22)
        |           *
   +1.20 |  *
        |
@@ -74,64 +74,64 @@
        +--+--+--+--+--+--+--+--→ init seed
           1  2  3  4  5  6  7  8
 
-  분산: 매우 작음 (< 0.03)
-  → 초기화에 무관한 "고유값" 성격
+  Variance: very small (< 0.03)
+  → Character of "intrinsic value" independent of initialization
 ```
 
-### 후보 관계 오차 비교
+### Candidate Relationship Error Comparison
 
-| 관계식 | 계산값 | 목표값 | 오차 | 비고 |
+| Relationship | Calculated | Target | Error | Notes |
 |--------|--------|--------|------|------|
-| 1.22 × ln(4/3) | 0.351 | 1/e = 0.368 | 4.6% | 골든존 중심 연결 |
-| 1.22 × C39 | 0.860 | 5/6 = 0.833 | 3.2% | Compass 상한 연결 |
-| exp(1.22) | 3.387 | sqrt(2pi/e) | 0.06% | Stirling 근사 |
-| 1.22 / C40 | 1.159 | ? | — | 비율 의미 불명 |
-| 1.22 × 2 | 2.44 | ? | — | sigma_-1(6)=2 와 비교 |
+| 1.22 × ln(4/3) | 0.351 | 1/e = 0.368 | 4.6% | Golden Zone center connection |
+| 1.22 × C39 | 0.860 | 5/6 = 0.833 | 3.2% | Compass upper bound connection |
+| exp(1.22) | 3.387 | sqrt(2pi/e) | 0.06% | Stirling approximation |
+| 1.22 / C40 | 1.159 | ? | — | Ratio meaning unclear |
+| 1.22 × 2 | 2.44 | ? | — | Compare with sigma_-1(6)=2 |
 
-## 검증 계획
+## Verification Plan
 
 ```
-  실험 1: 다른 데이터셋에서 재현
-    CIFAR-10으로 동일 파이버 이동량 측정
-    → +1.22가 MNIST 전용인가, 데이터 무관인가?
-    → MNIST 전용이면 C48처럼 기저 정확도 의존
+  Experiment 1: Replication on other datasets
+    Measure same fiber displacement on CIFAR-10
+    → Is +1.22 MNIST-specific or dataset-independent?
+    → If MNIST-specific, depends on baseline accuracy like C48
 
-  실험 2: TDA persistent homology
-    학습 전/후 파이버 공간의 Betti 수 계산
-    → birth-death diagram에서 1.22에 해당하는 bar?
-    → H286(TDA persistence)과 직접 비교
+  Experiment 2: TDA persistent homology
+    Calculate Betti numbers of fiber space before/after training
+    → Is there a bar corresponding to 1.22 in birth-death diagram?
+    → Direct comparison with H286 (TDA persistence)
 
-  실험 3: MI 분해
-    파이버 displacement와 MI 증가분의 상관
-    → displacement ↑ → MI ↑ 인과 관계?
-    → C39(70.5%)가 파이버 displacement의 함수인가?
+  Experiment 3: MI decomposition
+    Correlation between fiber displacement and MI increase
+    → displacement ↑ → MI ↑ causal relationship?
+    → Is C39(70.5%) a function of fiber displacement?
 
-  실험 4: 텍사스 명사수 검정
-    후보 관계식(exp(1.22)≈sqrt(2pi/e) 등)에 대해
-    Bonferroni 보정 + p-value 계산
-    → p < 0.01이면 구조적, p > 0.05이면 우연
+  Experiment 4: Texas sharpshooter test
+    For candidate relationships (exp(1.22)≈sqrt(2pi/e), etc.)
+    Bonferroni correction + p-value calculation
+    → p < 0.01 = structural, p > 0.05 = coincidental
 ```
 
-## 해석/의미
+## Interpretation/Significance
 
-파이버 이동량이 초기화 불변이라는 것은 두 가지를 시사한다:
+That fiber displacement is initialization-invariant suggests two things:
 
-1. **위상적 불변량**: 학습 과정에서 파이버가 "반드시 이동해야 하는" 최소 거리가 존재. 이것은 데이터의 위상 구조(topological structure)에 의해 결정됨.
+1. **Topological invariant**: A minimum distance exists that the fiber "must move" during learning. This is determined by the topological structure of the data.
 
-2. **정보 예산(information budget)**: C39(MI 효율 70.5%)가 "반발력장이 메울 수 있는 정보 갭의 비율"이라면, +1.22는 그 메우기 위해 파이버가 이동해야 하는 "비용". 즉 `정보 예산 = 이동량 × 효율 = 1.22 × 0.705 ≈ 0.86`.
+2. **Information budget**: If C39 (MI efficiency 70.5%) is "the ratio of information gap the repulsion field can fill," then +1.22 is the "cost" the fiber must move to fill it. That is, `information budget = displacement × efficiency = 1.22 × 0.705 ≈ 0.86`.
 
-exp(1.22) ≈ sqrt(2*pi/e) 관계가 가장 오차가 작지만(0.06%), 이것이 구조적인지 우연인지는 텍사스 검정이 필요하다.
+The exp(1.22) ≈ sqrt(2*pi/e) relationship has the smallest error (0.06%), but whether this is structural or coincidental requires the Texas test.
 
-## 한계
+## Limitations
 
-1. **MNIST 단일 데이터셋**: +1.22가 다른 데이터셋에서도 재현되는지 미확인
-2. **파이버의 정의 의존**: "파이버 이동량"의 측정 방식에 따라 값이 달라질 수 있음
-3. **Small Numbers 경고**: 1.22는 작은 수이므로 다양한 상수와 우연히 관계를 만들 수 있음
-4. **후보 관계식 다수**: 5개 후보 중 어느 것이 진짜인지 Bonferroni 보정 필요
+1. **Single dataset MNIST**: +1.22 not confirmed to replicate on other datasets
+2. **Definition dependency**: Value may differ depending on how "fiber displacement" is measured
+3. **Small Numbers warning**: 1.22 is a small number so coincidental relationships with various constants can be created
+4. **Multiple candidate relationships**: Bonferroni correction needed among 5 candidates
 
-## 다음 단계
+## Next Steps
 
-1. CIFAR-10에서 파이버 이동량 재현 실험 (최우선)
-2. exp(1.22) ≈ sqrt(2*pi/e) 관계의 텍사스 검정
-3. TDA persistent homology와의 교차 분석 (H286 연동)
-4. C39와의 곱 = 5/6 여부를 정밀 측정 (grid=500)
+1. Replication experiment for fiber displacement on CIFAR-10 (top priority)
+2. Texas sharpshooter test for exp(1.22) ≈ sqrt(2*pi/e) relationship
+3. Cross-analysis with TDA persistent homology (H286 linked)
+4. Precise measurement (grid=500) whether product with C39 = 5/6

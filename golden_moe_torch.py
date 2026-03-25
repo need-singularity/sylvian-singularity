@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""골든 MoE v2 — PyTorch 역전파 + MNIST 벤치마크
+"""Golden MoE v2 — PyTorch Backprop + MNIST Benchmark
 
-비교:
-  1. Top-K MoE (K=2, 25% 활성)
-  2. 골든 MoE (볼츠만 T=e, ~70% 활성)
-  3. Dense (전체 활성, 비교군)
+Comparison:
+  1. Top-K MoE (K=2, 25% active)
+  2. Golden MoE (Boltzmann T=e, ~70% active)
+  3. Dense (fully active, control group)
 """
 
 import torch
@@ -18,7 +18,7 @@ import os
 
 
 # ─────────────────────────────────────────
-# 라우터
+# Router
 # ─────────────────────────────────────────
 class TopKGate(nn.Module):
     def __init__(self, input_dim, n_experts, k=2):
@@ -44,9 +44,9 @@ class BoltzmannGate(nn.Module):
         self.n_active = max(1, int(n_experts * active_ratio))
 
     def forward(self, x):
-        scores = self.gate(x) / self.temperature  # 볼츠만 온도
+        scores = self.gate(x) / self.temperature  # Boltzmann temperature
         probs = F.softmax(scores, dim=-1)
-        # 상위 n_active개 활성
+        # Activate top n_active
         topk_vals, topk_idx = probs.topk(self.n_active, dim=-1)
         mask = torch.zeros_like(probs)
         mask.scatter_(-1, topk_idx, 1.0)
@@ -73,7 +73,7 @@ class Expert(nn.Module):
 
 
 # ─────────────────────────────────────────
-# MoE 모델
+# MoE Model
 # ─────────────────────────────────────────
 class MoEModel(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim, n_experts=8,
@@ -127,7 +127,7 @@ class MoEModel(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 학습 + 평가
+# Training + Evaluation
 # ─────────────────────────────────────────
 def train_model(model, train_loader, test_loader, epochs=10, lr=0.001):
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -151,7 +151,7 @@ def train_model(model, train_loader, test_loader, epochs=10, lr=0.001):
         avg_loss = total_loss / len(train_loader)
         train_losses.append(avg_loss)
 
-        # 테스트
+        # Test
         model.eval()
         correct = 0
         total = 0
@@ -175,22 +175,22 @@ def train_model(model, train_loader, test_loader, epochs=10, lr=0.001):
 def main():
     print()
     print("═" * 60)
-    print("   🧠 골든 MoE v2 — PyTorch + MNIST")
+    print("   🧠 Golden MoE v2 — PyTorch + MNIST")
     print("═" * 60)
 
-    # MNIST 데이터
+    # MNIST data
     transform = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize((0.1307,), (0.3081,))
     ])
 
-    print("\n  데이터 로딩...", end=" ")
+    print("\n  Loading data...", end=" ")
     train_data = datasets.MNIST('./data', train=True, download=True, transform=transform)
     test_data = datasets.MNIST('./data', train=False, transform=transform)
 
     train_loader = DataLoader(train_data, batch_size=128, shuffle=True)
     test_loader = DataLoader(test_data, batch_size=256, shuffle=False)
-    print(f"완료 (train: {len(train_data)}, test: {len(test_data)})")
+    print(f"Done (train: {len(train_data)}, test: {len(test_data)})")
 
     input_dim = 784  # 28×28
     hidden_dim = 64
@@ -200,7 +200,7 @@ def main():
 
     configs = [
         ('Top-K (K=2, 25%)', 'topk', {'k': 2}),
-        ('골든 MoE (T=e, 70%)', 'boltzmann', {'temperature': np.e, 'active_ratio': 0.7}),
+        ('Golden MoE (T=e, 70%)', 'boltzmann', {'temperature': np.e, 'active_ratio': 0.7}),
         ('Dense (100%)', 'dense', {}),
     ]
 
@@ -218,7 +218,7 @@ def main():
         )
 
         param_count = sum(p.numel() for p in model.parameters())
-        print(f"  파라미터: {param_count:,}")
+        print(f"  Parameters: {param_count:,}")
 
         start = time.time()
         losses, accs = train_model(model, train_loader, test_loader, epochs=epochs)
@@ -236,25 +236,25 @@ def main():
             **metrics,
         }
 
-    # ─── 비교 ───
+    # ─── Comparison ───
     print(f"\n{'═' * 60}")
-    print(f"  종합 비교")
+    print(f"  Overall Comparison")
     print(f"{'═' * 60}")
 
-    print(f"\n  {'메트릭':20} │", end="")
+    print(f"\n  {'Metric':20} │", end="")
     for name in results:
         print(f" {name[:12]:>12} │", end="")
     print()
     print(f"  {'─'*20}─┼" + "─" * 14 + "┼" + "─" * 14 + "┼" + "─" * 14 + "┤")
 
     metrics_list = [
-        ('최종 정확도', 'accuracy', lambda x: f"{x*100:.1f}%", 'high'),
-        ('최고 정확도', 'best_accuracy', lambda x: f"{x*100:.1f}%", 'high'),
-        ('최종 Loss', 'final_loss', lambda x: f"{x:.4f}", 'low'),
-        ('학습 시간(초)', 'time', lambda x: f"{x:.1f}s", 'low'),
-        ('활성 비율', 'active_ratio', lambda x: f"{x*100:.0f}%", 'info'),
-        ('유효 I', 'I_effective', lambda x: f"{x:.3f}", 'info'),
-        ('Expert 균등σ', 'usage_std', lambda x: f"{x:.4f}", 'low'),
+        ('Final Accuracy', 'accuracy', lambda x: f"{x*100:.1f}%", 'high'),
+        ('Best Accuracy', 'best_accuracy', lambda x: f"{x*100:.1f}%", 'high'),
+        ('Final Loss', 'final_loss', lambda x: f"{x:.4f}", 'low'),
+        ('Training Time(s)', 'time', lambda x: f"{x:.1f}s", 'low'),
+        ('Active Ratio', 'active_ratio', lambda x: f"{x*100:.0f}%", 'info'),
+        ('Effective I', 'I_effective', lambda x: f"{x:.3f}", 'info'),
+        ('Expert Balance σ', 'usage_std', lambda x: f"{x:.4f}", 'low'),
     ]
 
     for label, key, fmt, direction in metrics_list:
@@ -266,21 +266,21 @@ def main():
             print(f" {fmt(val):>12} │", end="")
         print()
 
-    # 골든존 판정
-    print(f"\n  골든존 판정:")
+    # Golden Zone determination
+    print(f"\n  Golden Zone Determination:")
     for name, r in results.items():
         I = r['I_effective']
         if 0.213 <= I <= 0.500:
-            zone = "🎯 골든존!"
+            zone = "🎯 Golden Zone!"
         elif I < 0.213:
-            zone = "⚡ 아래"
+            zone = "⚡ Below"
         else:
-            zone = "○ 밖"
+            zone = "○ Outside"
         G = 0.5 * 0.85 / max(I, 0.01)
         print(f"    {name:25}: I={I:.3f} G={G:.2f} {zone}")
 
-    # Expert 활용 비교
-    print(f"\n  Expert 활용 분포:")
+    # Expert utilization comparison
+    print(f"\n  Expert Utilization Distribution:")
     for name, r in results.items():
         if 'usage_dist' in r and r['usage_dist'] is not None:
             print(f"    [{name[:15]}]")
@@ -288,29 +288,29 @@ def main():
                 bar = "█" * int(u * 60)
                 print(f"      E{i}: {bar} {u*100:.1f}%")
 
-    # 정확도 궤적
-    print(f"\n  정확도 궤적:")
+    # Accuracy trajectory
+    print(f"\n  Accuracy Trajectory:")
     for epoch in range(epochs):
         line = f"    {epoch+1:>2} │"
         for name, r in results.items():
             acc = r['accs'][epoch]
-            bar_char = "█" if 'Top' in name else ("▓" if '골든' in name else "░")
+            bar_char = "█" if 'Top' in name else ("▓" if 'Golden' in name else "░")
             bar = bar_char * int(acc * 20)
             line += f" {bar:20} │"
         print(line)
-    print(f"       █=Top-K  ▓=골든MoE  ░=Dense")
+    print(f"       █=Top-K  ▓=Golden MoE  ░=Dense")
 
-    # 최종 판정
+    # Final verdict
     print(f"\n{'═' * 60}")
     best = max(results.items(), key=lambda x: x[1]['best_accuracy'])
-    print(f"  🏆 최고 정확도: {best[0]} ({best[1]['best_accuracy']*100:.1f}%)")
+    print(f"  🏆 Best Accuracy: {best[0]} ({best[1]['best_accuracy']*100:.1f}%)")
 
-    golden = results.get('골든 MoE (T=e, 70%)', {})
+    golden = results.get('Golden MoE (T=e, 70%)', {})
     topk = results.get('Top-K (K=2, 25%)', {})
     if golden and topk:
         diff = golden['best_accuracy'] - topk['best_accuracy']
-        print(f"  골든 MoE vs Top-K: {diff*100:+.1f}%")
-        print(f"  골든 MoE I = {golden['I_effective']:.3f} {'🎯 골든존' if 0.213<=golden['I_effective']<=0.5 else ''}")
+        print(f"  Golden MoE vs Top-K: {diff*100:+.1f}%")
+        print(f"  Golden MoE I = {golden['I_effective']:.3f} {'🎯 Golden Zone' if 0.213<=golden['I_effective']<=0.5 else ''}")
 
     print(f"\n{'═' * 60}")
 

@@ -1,5 +1,5 @@
-# H-CX-325: ⭐⭐⭐🟦 S₆ = 유일한 외부자기동형 대칭군
+# H-CX-325: ⭐⭐⭐🟦 S₆ = Unique Symmetric Group with Outer Automorphism
 
-> n≥2인 모든 대칭군 Sₙ 중 S₆만 outer automorphism을 가진다.
-> 이미 알려진 수학 정리. 6이 대칭군에서도 유일하게 특별.
-> σφ=nτ 유일성(H-CX-191)과 같은 패턴: 6만 특별.
+> Among all symmetric groups Sₙ for n≥2, only S₆ has an outer automorphism.
+> Already known mathematical theorem. 6 is uniquely special even in symmetric groups.
+> Same pattern as σφ=nτ uniqueness (H-CX-191): only 6 is special.

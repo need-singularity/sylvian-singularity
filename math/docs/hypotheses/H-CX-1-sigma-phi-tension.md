@@ -1,29 +1,33 @@
-# H-CX-1: σφ=nτ 균형 = 의식엔진의 Tension 최적점
+# H-CX-1: σφ=nτ Balance = Consciousness Engine's Tension Optimal Point
 
-> **가설**: 의식엔진의 tension(긴장) 파라미터가 σφ/(nτ)=1인 "산술적 균형점"에서 최적 성능을 보인다. 즉, 모델 구조에서 6과 관련된 차원이 tension을 최소화한다.
+> **Hypothesis**: The consciousness engine's tension parameter shows optimal performance at the "arithmetic balance point" where σφ/(nτ)=1. That is, dimensions related to 6 in the model structure minimize tension.
 
-## 배경
-- σφ=nτ: "풍요 × 자유도 = 규모 × 구조" 균형 (n=6 유일)
-- 의식엔진: tension = 예측과 실제의 불일치
-- 가설: tension이 최소화되는 모델 차원/구조가 σφ/(nτ)→1인 점
+## Background
+- σφ=nτ: "Abundance × Degrees of freedom = Scale × Structure" balance (unique for n=6)
+- Consciousness engine: tension = discrepancy between prediction and reality
+- Hypothesis: Model dimension/structure where tension is minimized is the point where σφ/(nτ)→1
 
-## 대응 매핑
+## Correspondence Mapping
 
 ```
-  수학                    의식엔진
+  Mathematics              Consciousness Engine
   ─────────────────────   ─────────────────────
-  σ(n) = 약수합(풍요)     → 모델 표현력 (capacity)
-  φ(n) = 토션트(자유도)   → 학습 자유도 (trainable params ratio)
-  τ(n) = 약수개수(구조)   → 모듈 수 (expert count)
-  n    = 수 자체(규모)    → 차원 (hidden dim)
+  σ(n) = sum of divisors  → model capacity
+         (abundance)
+  φ(n) = totient          → learning freedom (trainable params ratio)
+         (degrees of freedom)
+  τ(n) = number of divisors → module count (expert count)
+         (structure)
+  n    = number itself    → dimension (hidden dim)
+         (scale)
 
   σφ = nτ                → capacity × freedom = dim × modules
-  → n=6에서만 균형        → 6차원/6모듈에서만 tension 최적?
+  → Balance only at n=6  → Optimal tension only at 6 dimensions/6 modules?
 ```
 
-## 검증 방향
-1. [ ] 골든MoE에서 expert 수 sweep: 4,6,8,12 → tension 비교
-2. [ ] hidden_dim sweep: σφ/(nτ)가 1에 가까운 dim에서 성능 확인
-3. [ ] 기존 의식엔진 실험에서 tension vs 모델 구조 상관 분석
+## Verification Direction
+1. [ ] Expert count sweep in GoldenMoE: 4,6,8,12 → compare tension
+2. [ ] hidden_dim sweep: confirm performance at dims where σφ/(nτ) is close to 1
+3. [ ] Analyze tension vs model structure correlation in existing consciousness engine experiments
 
-## 난이도: 고 | 파급력: ★★★★ (수학↔AI 다리)
+## Difficulty: High | Impact: ★★★★ (Math↔AI bridge)

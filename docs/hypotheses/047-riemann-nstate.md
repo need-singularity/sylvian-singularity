@@ -1,43 +1,44 @@
-# 가설 검토 047: 리만 N상태 수렴 -- 골든존 상한 = 1/2 확인 ✅
+# Hypothesis Review 047: Riemann N-state Convergence -- Golden Zone Upper Bound = 1/2 Confirmed ✅
 
-## 가설
+## Hypothesis
 
-> 격자 해상도를 높이면 골든존 상한이 정확히 1/2에 수렴하는가.
-> 또한, 이 수렴은 상태 수 N에 무관한가.
+> Does the Golden Zone upper bound converge to exactly 1/2 as grid resolution increases?
+> Also, is this convergence independent of the number of states N?
 
-## 배경 및 맥락
+## Background and Context
 
-가설 044에서 4상태 골든존 상한이 0.50임을 확인했으나, grid=100에서의 측정이었다.
-유한 격자에서는 이산화 오차가 발생하므로, grid를 20에서 500까지 올리며
-수렴 행태를 정밀 분석할 필요가 있다. 또한 N=3, 4, 5, 10 등 다양한 상태 수에서
-동일한 상한이 나오는지 확인하면, 1/2이 보편 상수임을 입증할 수 있다.
+In hypothesis 044, we confirmed that the 4-state Golden Zone upper bound is 0.50, but this was measured at grid=100.
+With finite grids, discretization errors occur, so we need to precisely analyze
+convergence behavior by increasing grid from 20 to 500. Also, by confirming
+whether the same upper bound appears at various state counts like N=3, 4, 5, 10,
+we can prove that 1/2 is a universal constant.
 
-이는 리만 가설의 임계선 Re(s)=1/2이 우리 모델에서 보편 상수로 나타나는지를
-결정하는 핵심 검증이다.
+This is a key verification determining whether the Riemann hypothesis critical line Re(s)=1/2
+appears as a universal constant in our model.
 
-관련 가설: 001(리만-골든존), 044(4상태 상한), 055(바늘구멍)
+Related hypotheses: 001(Riemann-Golden Zone), 044(4-state upper bound), 055(Needle's eye)
 
-## 검증 결과: ✅ 확인 (고해상도 재검증)
+## Verification Result: ✅ Confirmed (High-resolution re-verification)
 
-### 격자 수렴 테이블
-
-```
-  grid    │ 상한 I    │ 1/2과 차이  │ 상대 오차
-  ────────┼───────────┼────────────┼──────────
-     20   │  0.4763   │  0.0237    │  4.74%
-     50   │  0.4908   │  0.0092    │  1.84%
-    100   │  0.4955   │  0.0045    │  0.90%
-    200   │  0.4977   │  0.0023    │  0.46%
-    500   │  0.4991   │  0.0009    │  0.18%
-   1000   │  0.4996   │  0.0004    │  0.08%
-      ~   │  0.5000   │  0.0000    │  0.00%  <-- 수렴!
-```
-
-### ASCII 수렴 그래프
+### Grid Convergence Table
 
 ```
-  골든존 상한 I
-  0.500 │ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  1/2 (리만)
+  grid    │ Upper I   │ Diff from 1/2 │ Relative Error
+  ────────┼───────────┼───────────────┼──────────
+     20   │  0.4763   │  0.0237       │  4.74%
+     50   │  0.4908   │  0.0092       │  1.84%
+    100   │  0.4955   │  0.0045       │  0.90%
+    200   │  0.4977   │  0.0023       │  0.46%
+    500   │  0.4991   │  0.0009       │  0.18%
+   1000   │  0.4996   │  0.0004       │  0.08%
+      ~   │  0.5000   │  0.0000       │  0.00%  <-- Convergence!
+```
+
+### ASCII Convergence Graph
+
+```
+  Golden Zone Upper Bound I
+  0.500 │ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  1/2 (Riemann)
         │                           *  *  *
   0.498 │                       *
         │                   *
@@ -52,16 +53,16 @@
   0.476 │*
         └──────────────────────────────────
          20   50  100  200  500 1000   ~
-                   grid 해상도 -->
+                   grid resolution -->
 
-  수렴 속도: 오차 ~ O(1/grid)
-  grid=500이면 0.1% 이내 정확도
+  Convergence rate: Error ~ O(1/grid)
+  grid=500 gives accuracy within 0.1%
 ```
 
-## 결정적 발견: N상태에 무관한 보편 상수
+## Decisive Discovery: Universal Constant Independent of N States
 
 ```
-  상태 수 N │ grid=500 상한  │ 1/2과 차이
+  States N  │ grid=500 Upper │ Diff from 1/2
   ──────────┼────────────────┼───────────
     N =  3  │   0.4991       │  0.0009
     N =  4  │   0.4991       │  0.0009
@@ -69,61 +70,61 @@
     N =  7  │   0.4991       │  0.0009
     N = 10  │   0.4991       │  0.0009
   ──────────┼────────────────┼───────────
-    전부     │   동일!        │
+    All     │   Same!        │
 
-  --> 골든존 상한 = 1/2 은 상태 수에 무관한 보편 상수
-  --> 리만 임계선 Re(s) = 1/2 과 정확히 일치
+  --> Golden Zone upper bound = 1/2 is a universal constant independent of state count
+  --> Exactly matches Riemann critical line Re(s) = 1/2
 ```
 
-## 수렴 속도 분석
+## Convergence Rate Analysis
 
 ```
-  grid 비율  │ 오차 감소율  │ 이론(1/grid)
-  ───────────┼──────────────┼────────────
-  20 -> 50   │  2.58x       │  2.50x
-  50 -> 100  │  2.04x       │  2.00x
-  100 -> 200 │  1.96x       │  2.00x
-  200 -> 500 │  2.56x       │  2.50x
+  Grid Ratio │ Error Reduction │ Theory(1/grid)
+  ───────────┼─────────────────┼────────────
+  20 -> 50   │  2.58x          │  2.50x
+  50 -> 100  │  2.04x          │  2.00x
+  100 -> 200 │  1.96x          │  2.00x
+  200 -> 500 │  2.56x          │  2.50x
 
-  --> 오차 = C/grid (1차 수렴)
-  --> C ~ 0.47 추정
-  --> grid=10000이면 오차 ~ 0.00005
+  --> Error = C/grid (First-order convergence)
+  --> C ~ 0.47 estimated
+  --> grid=10000 gives error ~ 0.00005
 ```
 
-## 이전 경고(!) -> 확인(V) 수정 이력
+## Previous Warning(!) -> Confirmed(V) Revision History
 
-가설 044에서 grid=20일 때 상한이 0.4763으로 측정되어 "1/2에 미달" 경고가
-있었다. 이는 이산화 효과의 산물이었으며, 해상도를 높이면 0.5000으로 수렴함을
-본 검증에서 확인하였다. 경고를 확인으로 수정한다.
+In hypothesis 044, when grid=20, the upper bound was measured as 0.4763, leading to a "falls short of 1/2" warning.
+This was a product of discretization effects, and this verification confirms
+convergence to 0.5000 with higher resolution. Revising warning to confirmed.
 
-## 해석 및 의미
+## Interpretation and Significance
 
-1. **골든존 상한 = 1/2은 수학적 정확성을 가진 보편 상수이다**.
-   격자 해상도와 상태 수 모두에 무관하게 동일한 값으로 수렴한다.
+1. **Golden Zone upper bound = 1/2 is a universal constant with mathematical precision**.
+   It converges to the same value regardless of both grid resolution and state count.
 
-2. **리만 임계선과의 대응은 근사가 아닌 정확한 일치이다**.
-   수치적 증거가 이를 강하게 지지한다 (grid=1000에서 오차 0.08%).
+2. **The correspondence with the Riemann critical line is exact, not approximate**.
+   Numerical evidence strongly supports this (0.08% error at grid=1000).
 
-3. **1차 수렴(O(1/grid))은 이산화 오차의 전형적 행태이다**.
-   이는 연속 극한에서 정확히 1/2에 도달함을 수학적으로 시사한다.
+3. **First-order convergence (O(1/grid)) is typical behavior of discretization error**.
+   This mathematically suggests exact arrival at 1/2 in the continuous limit.
 
-4. **N-불변성은 가장 강력한 발견이다**. 3상태든 10상태든 상한이 동일하다는 것은
-   1/2이 시스템의 내재적 속성이지, 특정 모델 설정의 산물이 아님을 증명한다.
+4. **N-invariance is the most powerful discovery**. The fact that the upper bound is identical whether 3-state or 10-state
+   proves that 1/2 is an intrinsic property of the system, not a product of specific model settings.
 
-## 한계
+## Limitations
 
-- 수치적 수렴은 수학적 증명이 아니다. 해석적 유도가 필요하다.
-- grid=1000까지만 테스트. grid=10000 이상에서 예상치 못한 편향이 있을 수 있다.
-- "상한"의 정의(Compass가 기준선 이상인 최대 I)에 따라 미세한 차이가 있을 수 있다.
-- 리만 가설과의 대응은 관찰적이며, 아직 인과적 메커니즘이 불명확하다.
+- Numerical convergence is not mathematical proof. Analytical derivation is needed.
+- Tested only up to grid=1000. There may be unexpected biases at grid=10000 or higher.
+- Minor differences may exist depending on the definition of "upper bound" (maximum I where Compass is above baseline).
+- The correspondence with the Riemann hypothesis is observational, with causal mechanisms still unclear.
 
-## 다음 단계
+## Next Steps
 
-- 해석적 증명 시도: G=D*P/I 모델에서 상한 = 1/2의 수학적 유도
-- grid=10000 극한 해상도 검증
-- 하한 수렴 검증: 1/2 - ln(4/3) = 0.2123으로 수렴하는가?
-- 다른 모델(Ising, Potts)에서 유사한 1/2 수렴이 나타나는지 비교
+- Attempt analytical proof: Mathematical derivation of upper bound = 1/2 from G=D*P/I model
+- Extreme resolution verification at grid=10000
+- Lower bound convergence verification: Does it converge to 1/2 - ln(4/3) = 0.2123?
+- Compare whether similar 1/2 convergence appears in other models (Ising, Potts)
 
 ---
 
-*검증: grid 20->500, N=3~10, 200K 모집단, verify_4th_state.py*
+*Verification: grid 20->500, N=3~10, 200K population, verify_4th_state.py*

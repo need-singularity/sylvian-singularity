@@ -1,5 +1,5 @@
-# H-CX-177: 돌고래 휘슬 = 스트레스 감소 주파수
+# H-CX-177: Dolphin Whistle = Stress Reduction Frequency
 
-> 돌고래 시그니처 휘슬(5-15kHz)이 인간의 알파파(8-12Hz) 유도?
-> 15000/12 = 1250 = σ(6)×τ(6)×... 관계?
-> 또는 비트 주파수: 두 휘슬 차이가 알파 범위?
+> Dolphin signature whistles (5-15kHz) induce human alpha waves (8-12Hz)?
+> 15000/12 = 1250 = σ(6)×τ(6)×... relationship?
+> Or beat frequency: difference between two whistles in alpha range?

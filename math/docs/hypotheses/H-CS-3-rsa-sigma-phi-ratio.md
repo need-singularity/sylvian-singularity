@@ -1,21 +1,21 @@
-# H-CS-3: σφ/(nτ) 비율과 RSA 보안
+# H-CS-3: σφ/(nτ) Ratio and RSA Security
 
-> **가설**: n=pq에서 σφ/(nτ)가 1에서 멀수록 소인수분해가 어렵고, RSA 보안이 강하다.
+> **Hypothesis**: For n=pq, the farther σφ/(nτ) is from 1, the harder factorization becomes, and the stronger RSA security is.
 
-## 배경
-- RSA: n=pq, 보안 = φ(n)=(p-1)(q-1) 계산 어려움
-- n=6: σφ/(nτ)=1 (균형, 쉬움)
-- 큰 pq: σφ/(nτ)≫1 (불균형, 어려움)
+## Background
+- RSA: n=pq, security = difficulty of computing φ(n)=(p-1)(q-1)
+- n=6: σφ/(nτ)=1 (balanced, easy)
+- Large pq: σφ/(nτ)≫1 (imbalanced, difficult)
 
 ## σφ/(nτ) for n=pq
 ```
   n=pq: σφ/(nτ) = (p²-1)(q²-1)/(4pq)
-  p,q 클수록 → ≈ pq/4 → n/4 (선형 성장)
+  As p,q grow → ≈ pq/4 → n/4 (linear growth)
 ```
 
-## 검증 방향
-1. [ ] RSA-100, RSA-200 등에서 σφ/(nτ) 계산
-2. [ ] 분해 시간과 비율의 상관 분석
-3. [ ] 이론적: 비율이 분해 알고리즘 복잡도와 관련?
+## Verification Directions
+1. [ ] Calculate σφ/(nτ) for RSA-100, RSA-200, etc.
+2. [ ] Analyze correlation between factorization time and ratio
+3. [ ] Theoretical: Is ratio related to factorization algorithm complexity?
 
-## 난이도: 중 | 파급력: ★★
+## Difficulty: Medium | Impact: ★★

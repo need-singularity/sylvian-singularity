@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""분열 시뮬레이터 — 최적 돌연변이/분열 시점 계산
+"""Mitosis Simulator — Calculate optimal mutation/mitosis timing
 
-사용법:
+Usage:
   python3 mitosis_calculator.py --mutation 0.01 --epochs 10
   python3 mitosis_calculator.py --scan-mutation
   python3 mitosis_calculator.py --scan-splits
@@ -11,7 +11,7 @@ import argparse
 import math
 
 
-# 실측 상수 (experiment_mitosis.py에서)
+# Measured constants (from experiment_mitosis.py)
 # Phase 2: mutation scale vs cos_sim
 MUTATION_DATA = {
     0.001: {'cos': 0.9997, 'acc_drop': 0.03, 'tension': 0.018},
@@ -50,29 +50,29 @@ SPLITS_DATA = {
 
 
 def predict_cos_sim(mutation_scale):
-    """돌연변이 크기로 초기 코사인 유사도 예측."""
-    # log-linear 보간
+    """Predict initial cosine similarity from mutation scale."""
+    # log-linear interpolation
     if mutation_scale <= 0:
         return 1.0
     log_m = math.log10(mutation_scale)
-    # 선형 보간: log10(0.001)=-3→0.9997, log10(0.1)=-1→0.375
+    # Linear interpolation: log10(0.001)=-3→0.9997, log10(0.1)=-1→0.375
     cos = 0.9997 + (0.375 - 0.9997) * (log_m - (-3)) / ((-1) - (-3))
     return max(0, min(1, cos))
 
 
 def predict_divergence(epochs, mutation_scale=0.01):
-    """에폭 수로 코사인 유사도 감소 예측."""
+    """Predict cosine similarity decrease by epoch count."""
     cos_init = predict_cos_sim(mutation_scale)
-    # 지수 감소 모델: cos(t) = cos_final + (cos_init - cos_final) * exp(-t/tau)
-    cos_final = 0.80  # 장기 수렴값 추정
-    tau = 5.0  # 감소 시간 상수
+    # Exponential decay model: cos(t) = cos_final + (cos_init - cos_final) * exp(-t/tau)
+    cos_final = 0.80  # Estimated long-term convergence value
+    tau = 5.0  # Decay time constant
     cos_t = cos_final + (cos_init - cos_final) * math.exp(-epochs / tau)
     return cos_t
 
 
 def predict_tension(cos_sim):
-    """코사인 유사도로 장력 예측."""
-    # 장력 ∝ (1 - cos)
+    """Predict tension from cosine similarity."""
+    # Tension ∝ (1 - cos)
     # cos=0.972→tension=1.87, cos=0.840→tension=135.4
     if cos_sim >= 0.999:
         return 0.02
@@ -81,40 +81,40 @@ def predict_tension(cos_sim):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='분열 시뮬레이터')
-    parser.add_argument('--mutation', type=float, help='돌연변이 크기')
-    parser.add_argument('--epochs', type=int, default=10, help='발산 에폭')
-    parser.add_argument('--scan-mutation', action='store_true', help='돌연변이 스캔')
-    parser.add_argument('--scan-splits', action='store_true', help='분열 횟수 스캔')
+    parser = argparse.ArgumentParser(description='Mitosis Simulator')
+    parser.add_argument('--mutation', type=float, help='Mutation scale')
+    parser.add_argument('--epochs', type=int, default=10, help='Divergence epochs')
+    parser.add_argument('--scan-mutation', action='store_true', help='Scan mutations')
+    parser.add_argument('--scan-splits', action='store_true', help='Scan split counts')
     args = parser.parse_args()
 
     if args.scan_mutation:
         print('=' * 60)
-        print('  돌연변이 크기 스캔')
+        print('  Mutation Scale Scan')
         print('=' * 60)
-        print(f'  {"Scale":>10} │ {"CosSim":>8} │ {"AccDrop":>8} │ {"Tension":>8} │ {"판정":>8}')
+        print(f'  {"Scale":>10} │ {"CosSim":>8} │ {"AccDrop":>8} │ {"Tension":>8} │ {"Verdict":>8}')
         print(f'  {"─"*10}─┼─{"─"*8}─┼─{"─"*8}─┼─{"─"*8}─┼─{"─"*8}')
         for s in [0.0001, 0.001, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5]:
             cos = predict_cos_sim(s)
             tension = predict_tension(cos)
-            drop = (1 - cos) * 20  # 대략적 정확도 하락
+            drop = (1 - cos) * 20  # Approximate accuracy drop
             if drop < 0.5:
-                verdict = '🟩 안전'
+                verdict = '🟩 Safe'
             elif drop < 2.0:
-                verdict = '🟨 적절'
+                verdict = '🟨 Suitable'
             elif drop < 10:
-                verdict = '🟧 위험'
+                verdict = '🟧 Risky'
             else:
-                verdict = '❌ 치명적'
+                verdict = '❌ Fatal'
             print(f'  {s:>10.4f} │ {cos:>8.4f} │ {drop:>7.2f}% │ {tension:>8.2f} │ {verdict}')
 
         print()
-        print(f'  최적: 0.01 (cos=0.972, drop=0.08%, 충분한 다양성)')
+        print(f'  Optimal: 0.01 (cos=0.972, drop=0.08%, sufficient diversity)')
         return
 
     if args.scan_splits:
         print('=' * 60)
-        print('  분열 횟수 스캔 (실측)')
+        print('  Split Count Scan (measured)')
         print('=' * 60)
         print(f'  {"N":>4} │ {"Best%":>7} │ {"Vote%":>7} │ {"Ensemble%":>10} │ {"vs Parent":>10}')
         print(f'  {"─"*4}─┼─{"─"*7}─┼─{"─"*7}─┼─{"─"*10}─┼─{"─"*10}')
@@ -122,10 +122,10 @@ def main():
             delta = d['ensemble'] - PARENT
             print(f'  {n:>4} │ {d["best"]:>6.2f}% │ {d["vote"]:>6.2f}% │ {d["ensemble"]:>9.2f}% │ {delta:>+9.2f}%')
         print()
-        print(f'  부모: {PARENT}%')
-        print(f'  분열 반발력장: {SPLIT_FIELD}%')
-        print(f'  설계 반발력장: {DESIGNED_FIELD}%')
-        print(f'  재결합: {REUNION}% (+{REUNION-PARENT:.2f}% vs parent)')
+        print(f'  Parent: {PARENT}%')
+        print(f'  Split repulsion field: {SPLIT_FIELD}%')
+        print(f'  Designed repulsion field: {DESIGNED_FIELD}%')
+        print(f'  Reunion: {REUNION}% (+{REUNION-PARENT:.2f}% vs parent)')
         return
 
     if args.mutation is None:
@@ -139,20 +139,20 @@ def main():
     tension_final = predict_tension(cos_final)
 
     print('=' * 50)
-    print(f'  분열 시뮬레이션')
+    print(f'  Mitosis Simulation')
     print(f'  mutation={m}, epochs={args.epochs}')
     print('=' * 50)
-    print(f'  분열 직후:')
+    print(f'  Right after mitosis:')
     print(f'    CosSim:  {cos_init:.4f}')
     print(f'    Tension: {tension_init:.2f}')
-    print(f'  {args.epochs}ep 발산 후:')
+    print(f'  After {args.epochs}ep divergence:')
     print(f'    CosSim:  {cos_final:.4f}')
     print(f'    Tension: {tension_final:.2f}')
-    print(f'  다양성 성장: {tension_final/max(tension_init,0.01):.1f}x')
+    print(f'  Diversity growth: {tension_final/max(tension_init,0.01):.1f}x')
     print()
 
-    # 궤적
-    print(f'  에폭별 궤적:')
+    # Trajectory
+    print(f'  Trajectory by epoch:')
     for ep in range(1, args.epochs + 1):
         cos = predict_divergence(ep, m)
         t = predict_tension(cos)

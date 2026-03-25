@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""H-CX-27 검증: tension_scale 장기 수렴 — 모든 init가 ln(4)로?
+"""H-CX-27 Verification: tension_scale Long-term Convergence — Do all inits converge to ln(4)?
 
-기존 15ep에서는 init=0.3만 ln(4) 수렴. 100ep에서 모든 init가 수렴하는지 확인.
+In the existing 15ep, only init=0.3 converged to ln(4). Check if all inits converge at 100ep.
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -146,11 +146,11 @@ if __name__ == '__main__':
     print(f"  ln(4) = {LN4:.6f}")
 
     if converged_count >= len(inits) - 1:
-        print(f"\n  결론: 장기 학습에서 대부분 ln(4) 수렴 → H-CX-27 복원!")
+        print(f"\n  Conclusion: Most converged to ln(4) in long-term learning → H-CX-27 restored!")
     elif converged_count >= len(inits) // 2:
-        print(f"\n  결론: 과반 수렴 → H-CX-27 부분 확인")
+        print(f"\n  Conclusion: Majority converged → H-CX-27 partially confirmed")
     else:
-        print(f"\n  결론: 수렴 실패 → H-CX-27 반박 강화 (init 의존성 확정)")
+        print(f"\n  Conclusion: Convergence failed → H-CX-27 refutation strengthened (init dependency confirmed)")
 
     # Plot
     ascii_convergence_plot(all_ts, inits, epochs)

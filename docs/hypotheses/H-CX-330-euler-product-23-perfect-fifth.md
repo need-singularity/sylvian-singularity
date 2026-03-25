@@ -1,5 +1,5 @@
-# H-CX-330: ⭐⭐🟩 ζ(2) 오일러곱 p=2,3 절단 = 3/2 = Perfect 5th
+# H-CX-330: ⭐⭐🟩 ζ(2) Euler product p=2,3 truncation = 3/2 = Perfect 5th
 
 > (1-1/4)⁻¹(1-1/9)⁻¹ = (4/3)(9/8) = 3/2.
-> P₁=6=2×3. 6의 소인수만 남기면 가장 협화적 음정!
-> 음악+리만제타+완전수 삼중 교차.
+> P₁=6=2×3. Leaving only the prime factors of 6 gives the most consonant interval!
+> Music+Riemann zeta+Perfect number triple intersection.

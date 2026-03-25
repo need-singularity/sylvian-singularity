@@ -1,4 +1,4 @@
-# H-CX-133: 휘슬 주파수 비율 = ln(4/3)
+# H-CX-133: Whistle Frequency Ratio = ln(4/3)
 
-> 돌고래 휘슬의 기본 음정 비율이 골든존 폭 ln(4/3)≈0.288과 일치?
-> Perfect 4th (4:3) = 가장 협화적 음정 = 골든존 = 최적 소통 채널.
+> Dolphin whistle fundamental pitch ratio matches Golden Zone width ln(4/3)≈0.288?
+> Perfect 4th (4:3) = most harmonious interval = Golden Zone = optimal communication channel.

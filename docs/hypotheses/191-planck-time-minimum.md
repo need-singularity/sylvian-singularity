@@ -1,148 +1,148 @@
-# 가설 191: 플랑크 시간 = 메타 반복의 최소 단위?
+# Hypothesis 191: Planck Time = Minimum Unit of Meta-iteration?
 
-## 상태: ⚠️ 탐구 중
+## Status: ⚠️ Under Investigation
 
-## 핵심 명제
+## Core Proposition
 
-플랑크 시간 t_P = 5.39 x 10⁻⁴⁴ s 는
-메타 반복 한 스텝의 지속 시간일 수 있다.
+Planck time t_P = 5.39 x 10⁻⁴⁴ s could be
+the duration of one meta-iteration step.
 
-## 기본 계산
+## Basic Calculation
 
 ```
-우주 나이:        t_universe ≈ 4.35 x 10¹⁷ s
-플랑크 시간:      t_P        ≈ 5.39 x 10⁻⁴⁴ s
+Age of universe:  t_universe ≈ 4.35 x 10¹⁷ s
+Planck time:      t_P        ≈ 5.39 x 10⁻⁴⁴ s
 
-메타 반복 횟수 N = t_universe / t_P
-                 ≈ 4.35 x 10¹⁷ / 5.39 x 10⁻⁴⁴
-                 ≈ 8.07 x 10⁶⁰
-                 ≈ 10⁶⁰ (대략)
+Number of meta-iterations N = t_universe / t_P
+                           ≈ 4.35 x 10¹⁷ / 5.39 x 10⁻⁴⁴
+                           ≈ 8.07 x 10⁶⁰
+                           ≈ 10⁶⁰ (approximately)
 ```
 
-## 이산 모델에서의 I 수렴
+## I Convergence in Discrete Model
 
-만약 매 플랑크 시간마다 I에 수축 인자 r = 0.7 을 적용한다면:
+If we apply contraction factor r = 0.7 to I every Planck time:
 
 ```
 I_now = I_0 * r^N
       = I_0 * 0.7^(10⁶⁰)
 
-이것은 사실상 0 이다.
+This is effectively 0.
 ```
 
 ```
-I 값의 변화 (이산 모델, r=0.7):
+Change in I value (discrete model, r=0.7):
 
-I_0 (초기)
+I_0 (initial)
 |*
 | *
 |  *
 |   *
-|    *         ← 극초기에 급격히 감소
+|    *         ← Rapid decrease in very early stage
 |     *
 |      *
 |       ****
 |           ****
 |               ********
 |                       ****************
-0 +─────────────────────────────────────→ 반복 횟수 N
+0 +─────────────────────────────────────→ Number of iterations N
   0    10    100   1000  ...  10⁶⁰
 ```
 
-## 문제점: 0에 수렴
+## Problem: Convergence to 0
 
-r^(10⁶⁰) 은 어떤 r < 1 에 대해서도 사실상 0이다.
-하지만 현재 I ≈ 0.37 이다. 모순.
-
-```
-기대값:  I_now ≈ 0.37 (1/3 근처)
-계산값:  I_now ≈ 0   (0.7^(10⁶⁰) ≈ 0)
-
-이 불일치를 어떻게 해결하는가?
-```
-
-## 가능한 해결책들
-
-### 해결책 1: 수축 인자가 1에 매우 가까움
+r^(10⁶⁰) is effectively 0 for any r < 1.
+But current I ≈ 0.37. Contradiction.
 
 ```
-I_now = I_0 * r^N = 0.37 로 놓으면
+Expected:    I_now ≈ 0.37 (near 1/3)
+Calculated:  I_now ≈ 0   (0.7^(10⁶⁰) ≈ 0)
+
+How do we resolve this discrepancy?
+```
+
+## Possible Solutions
+
+### Solution 1: Contraction Factor Very Close to 1
+
+```
+Setting I_now = I_0 * r^N = 0.37
 r = (0.37 / I_0)^(1/N)
 
-I_0 = 10 으로 가정:
+Assuming I_0 = 10:
 r = (0.37/10)^(1/10⁶⁰)
   = (0.037)^(10⁻⁶⁰)
   ≈ 1 - 3.3 x 10⁻⁶⁰ x ln(1/0.037)
   ≈ 1 - 10⁻⁵⁸
 
-즉, r ≈ 0.999...9 (소수점 아래 58개의 9)
+That is, r ≈ 0.999...9 (58 nines after decimal)
 ```
 
-### 해결책 2: 연속 모델
+### Solution 2: Continuous Model
 
 ```
-이산:  I_{n+1} = f(I_n)         매 플랑크 시간마다
-연속:  dI/dt = -k(I - 1/3)     연속적 감소
+Discrete:    I_{n+1} = f(I_n)         Every Planck time
+Continuous:  dI/dt = -k(I - 1/3)     Continuous decrease
 
-연속 모델의 해:
+Solution for continuous model:
 I(t) = 1/3 + (I_0 - 1/3) * e^(-kt)
 
-k 를 적절히 설정하면 I_now ≈ 0.37 가능
+With appropriate k, I_now ≈ 0.37 is possible
 ```
 
 ```
-연속 모델 vs 이산 모델:
+Continuous vs Discrete Model:
 
 I
-|*                    * = 이산 모델 (r=0.7)
-| \                   - = 연속 모델 (적절한 k)
+|*                    * = discrete model (r=0.7)
+| \                   - = continuous model (appropriate k)
 |  *
 |   \  ----
 |    *     ----
 |          ----
 |     *        ----
 |                  ----
-|      *               ----  ← 0.37 (현재)
-1/3 +.............................. 부동점
+|      *               ----  ← 0.37 (current)
+1/3 +.............................. fixed point
 |
 +──────────────────────────→ t
 0               t_now
 ```
 
-### 해결책 3: 반복 단위가 플랑크 시간이 아님
+### Solution 3: Iteration Unit is Not Planck Time
 
 ```
-만약 메타 반복 단위가 훨씬 크다면?
+What if meta-iteration unit is much larger?
 
 N_actual << 10⁶⁰
 
-예: N_actual ≈ 10³ 회 반복
-    r ≈ 0.997
-    I_0 ≈ 10
-    I_now = 10 * 0.997^1000 ≈ 0.49  (근사)
+Example: N_actual ≈ 10³ iterations
+         r ≈ 0.997
+         I_0 ≈ 10
+         I_now = 10 * 0.997^1000 ≈ 0.49  (approx)
 ```
 
-## 메타 반복 횟수 스케일 비교
+## Meta-iteration Count Scale Comparison
 
 ```
-스케일            반복 횟수    r 필요값 (I_0=10→0.37)
+Scale             Iterations   r needed (I_0=10→0.37)
 ──────────────    ─────────    ──────────────────────
-플랑크 시간       10⁶⁰         1 - 10⁻⁵⁸
-양성자 시간       10³⁸         1 - 10⁻³⁶
-원자 시간         10²⁶         1 - 10⁻²⁴
-세포 분열         10¹⁷         1 - 10⁻¹⁵
-우주 대사건       10²          0.967
+Planck time       10⁶⁰         1 - 10⁻⁵⁸
+Proton time       10³⁸         1 - 10⁻³⁶
+Atomic time       10²⁶         1 - 10⁻²⁴
+Cell division     10¹⁷         1 - 10⁻¹⁵
+Cosmic events     10²          0.967
 ```
 
-## 열린 질문
+## Open Questions
 
-1. 메타 반복의 "진짜" 단위는 무엇인가?
-2. 이산 모델과 연속 모델 중 어느 것이 더 적합한가?
-3. 플랑크 시간이 물리적 최소 단위라면, 메타 반복도 그 단위를 따르는가?
-4. 수축 인자 r 이 상수인가, 변수인가?
+1. What is the "real" unit of meta-iteration?
+2. Which is more suitable: discrete or continuous model?
+3. If Planck time is the physical minimum unit, does meta-iteration follow that unit?
+4. Is the contraction factor r constant or variable?
 
-## 결론
+## Conclusion
 
-플랑크 시간 = 메타 반복 최소 단위라는 가설은 매력적이지만,
-이산 모델에서 r=0.7 을 직접 적용하면 I가 0에 수렴하는 문제가 있다.
-연속 모델 또는 극히 1에 가까운 수축 인자가 필요하다.
+The hypothesis that Planck time = minimum unit of meta-iteration is attractive, but
+directly applying r=0.7 in the discrete model causes I to converge to 0.
+A continuous model or a contraction factor extremely close to 1 is needed.

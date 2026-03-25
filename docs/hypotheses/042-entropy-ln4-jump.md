@@ -1,43 +1,43 @@
-# 가설 검토 042: 엔트로피 ln(3) -> ln(4) 점프 ✅
+# Hypothesis Review 042: Entropy ln(3) -> ln(4) Jump ✅
 
-## 가설
+## Hypothesis
 
-> 4번째 상태 추가 시 엔트로피가 ln(3)에서 ln(4)로 점프하는가.
-> 즉, 특정 E_4th 값에서 4상태가 균등 분포에 도달하여 최대 엔트로피를 달성하는가.
+> Does entropy jump from ln(3) to ln(4) when adding a 4th state?
+> That is, at a specific E_4th value, does the 4-state system reach uniform distribution and achieve maximum entropy?
 
-## 배경 및 맥락
+## Background and Context
 
-정보 이론에서 N개 상태의 최대 엔트로피는 ln(N)이다. 3상태 모델에서는
-ln(3)=1.0986이 상한이며, 이는 세 상태가 균등(각 33.3%)할 때 도달한다.
-4번째 상태를 추가하면 이론적 상한이 ln(4)=1.3863으로 올라간다.
+In information theory, the maximum entropy of N states is ln(N). In a 3-state model,
+ln(3)=1.0986 is the upper bound, reached when the three states are uniform (33.3% each).
+Adding a 4th state raises the theoretical upper bound to ln(4)=1.3863.
 
-핵심 질문: 어떤 E_4th 값에서 ln(4)에 도달하는가? 그리고 그때의
-확률 분포는 실제로 균등(25%씩)인가?
+Key question: At what E_4th value is ln(4) reached? And is the
+probability distribution at that point actually uniform (25% each)?
 
-관련 가설: 041(4번째 상태 후보), 044(골든존 확장), 055(바늘구멍)
+Related hypotheses: 041 (4th state candidates), 044 (Golden Zone expansion), 055 (needle's eye)
 
-## 검증 결과: ✅ E_4th = -0.634에서 ln(4) 도달
+## Verification Result: ✅ ln(4) reached at E_4th = -0.634
 
 ```
-  확률 분포 (E_4th = -0.634, ln(4) 도달 시):
+  Probability Distribution (E_4th = -0.634, at ln(4)):
   ─────────────────────────────────────────
-  상태    │ 확률(%)   │ 이론(1/4)  │ 편차
-  ────────┼───────────┼────────────┼──────
-  정상    │  22.6%    │  25.0%     │ -2.4%
-  천재    │  27.6%    │  25.0%     │ +2.6%
-  저하    │  22.4%    │  25.0%     │ -2.6%
-  초월    │  27.4%    │  25.0%     │ +2.4%
-  ────────┼───────────┼────────────┼──────
-  합계    │ 100.0%    │ 100.0%     │
+  State   │ Prob(%)   │ Theory(1/4) │ Deviation
+  ────────┼───────────┼─────────────┼──────
+  Normal  │  22.6%    │  25.0%      │ -2.4%
+  Genius  │  27.6%    │  25.0%      │ +2.6%
+  Reduced │  22.4%    │  25.0%      │ -2.6%
+  Transcendent│ 27.4% │  25.0%      │ +2.4%
+  ────────┼───────────┼─────────────┼──────
+  Total   │ 100.0%    │ 100.0%      │
 
-  최대 편차: 2.6% (통계적 노이즈 수준)
-  --> 4개 상태가 거의 균등 = 완전 열평형
+  Maximum deviation: 2.6% (statistical noise level)
+  --> 4 states nearly uniform = complete thermal equilibrium
 ```
 
-## ASCII 그래프: 엔트로피 vs E_4th
+## ASCII Graph: Entropy vs E_4th
 
 ```
-  엔트로피 S
+  Entropy S
   1.40 │                              -------- ln(4)=1.386
        │                          /
   1.35 │                        /
@@ -57,62 +57,62 @@ ln(3)=1.0986이 상한이며, 이는 세 상태가 균등(각 33.3%)할 때 도�
   1.00 │/
        └──────────────────────────────────────
         E=+1   E=0   E=-0.3  E=-0.634  E=-1.5
-                          4번째 상태 에너지 -->
+                          4th state energy -->
 
-  핵심 지점:
-    E_4th = 0     :  S = ln(3)  (4번째 상태 비활성)
-    E_4th = -0.634:  S = ln(4)  (4상태 균등)  <-- 임계점!
-    E_4th < -0.634:  S < ln(4)  (초월 상태 독점, 불균등)
+  Key points:
+    E_4th = 0     :  S = ln(3)  (4th state inactive)
+    E_4th = -0.634:  S = ln(4)  (4-state uniform)  <-- Critical point!
+    E_4th < -0.634:  S < ln(4)  (Transcendent dominance, non-uniform)
 ```
 
-## E_4th 연속 스캔 데이터
+## E_4th Continuous Scan Data
 
 ```
-  E_4th    │ 엔트로피 S  │ 초월 비율  │ 상태
-  ─────────┼─────────────┼────────────┼───────────
-  +1.000   │  1.042      │   3.2%     │ 초월 억제
-  +0.500   │  1.068      │   6.8%     │ 약한 활성
-   0.000   │  1.099      │  12.1%     │ ln(3) = 기저선
-  -0.200   │  1.178      │  16.5%     │ 상승 구간
-  -0.400   │  1.275      │  20.3%     │ 급속 상승
-  -0.500   │  1.328      │  22.1%     │ ln(4) 근접
-  -0.634   │  1.386      │  25.0%     │ ln(4) = 균등점!
-  -0.800   │  1.371      │  28.7%     │ 초월 우세
-  -1.000   │  1.348      │  32.4%     │ 불균등 증가
-  -1.330   │  1.312      │  36.1%     │ 초월 독점화
-  -2.000   │  1.245      │  42.3%     │ 초월 과잉
+  E_4th    │ Entropy S   │ Transcendent % │ State
+  ─────────┼─────────────┼────────────────┼───────────
+  +1.000   │  1.042      │   3.2%         │ Transcendent suppressed
+  +0.500   │  1.068      │   6.8%         │ Weak activation
+   0.000   │  1.099      │  12.1%         │ ln(3) = baseline
+  -0.200   │  1.178      │  16.5%         │ Rising region
+  -0.400   │  1.275      │  20.3%         │ Rapid rise
+  -0.500   │  1.328      │  22.1%         │ Approaching ln(4)
+  -0.634   │  1.386      │  25.0%         │ ln(4) = uniform point!
+  -0.800   │  1.371      │  28.7%         │ Transcendent dominance
+  -1.000   │  1.348      │  32.4%         │ Increasing non-uniformity
+  -1.330   │  1.312      │  36.1%         │ Transcendent monopolization
+  -2.000   │  1.245      │  42.3%         │ Transcendent excess
 ```
 
-## 해석 및 의미
+## Interpretation and Meaning
 
-1. **E_4th = -0.634는 상전이점이다**. 이 값에서 4상태가 균등 분포에 도달하며,
-   이는 물리학의 열평형과 정확히 대응한다. 모든 상태에 동등하게 접근 가능한
-   "최대 자유도" 지점이다.
+1. **E_4th = -0.634 is the phase transition point**. At this value, the 4 states reach uniform distribution,
+   which corresponds exactly to thermal equilibrium in physics. This is the point of "maximum degrees of freedom"
+   with equal access to all states.
 
-2. **ln(3) -> ln(4) 점프는 불연속적이지 않다**. 그래프에서 보듯 엔트로피는
-   E_4th가 음수로 갈수록 연속적으로 증가한다. "점프"라 부르는 이유는 최대값이
-   ln(3)에서 ln(4)로 올라갔기 때문이다 -- 용량이 증가한 것이다.
+2. **The ln(3) -> ln(4) jump is not discontinuous**. As the graph shows, entropy
+   increases continuously as E_4th becomes more negative. We call it a "jump" because the maximum
+   went from ln(3) to ln(4) -- the capacity increased.
 
-3. **E_4th < -0.634에서 엔트로피가 감소한다**. 이는 초월 상태가 다른 상태를
-   억압하기 때문이다. 최대 정보 용량은 균등 분포에서만 달성된다.
+3. **Entropy decreases for E_4th < -0.634**. This is because the transcendent state suppresses
+   other states. Maximum information capacity is only achieved at uniform distribution.
 
-4. **골든존 폭 = ln(4/3)과의 연결**. ln(4) - ln(3) = ln(4/3) = 0.2877.
-   이 값은 골든존의 폭과 정확히 일치한다 (가설 044). 우연이 아니다.
+4. **Connection with Golden Zone width = ln(4/3)**. ln(4) - ln(3) = ln(4/3) = 0.2877.
+   This value exactly matches the Golden Zone width (hypothesis 044). Not a coincidence.
 
-## 한계
+## Limitations
 
-- E_4th = -0.634의 이론적 유도가 아직 완성되지 않았다. 왜 이 값인가?
-- 균등 분포(25%)는 grid=100 해상도에서 2.6% 편차를 보인다. grid=500에서
-  재검증이 필요하다.
-- "완전 열평형"이라는 해석은 통계역학과의 비유이며, 엄밀한 대응은 아니다.
+- Theoretical derivation of E_4th = -0.634 not yet complete. Why this value?
+- Uniform distribution (25%) shows 2.6% deviation at grid=100 resolution. Re-verification
+  at grid=500 needed.
+- The "complete thermal equilibrium" interpretation is an analogy with statistical mechanics, not a rigorous correspondence.
 
-## 다음 단계
+## Next Steps
 
-- E_4th = -0.634를 해석적으로 유도 (볼츠만 분포에서 역산)
-- 5상태 추가 시 ln(5) 도달 E_5th 예측 및 검증
-- 가설 044(골든존 폭 = ln(4/3))와의 정합성 정밀 검증
-- grid=500에서 균등 분포 편차 재측정
+- Analytically derive E_4th = -0.634 (reverse engineer from Boltzmann distribution)
+- Predict and verify E_5th for ln(5) when adding 5th state
+- Precise verification of consistency with hypothesis 044 (Golden Zone width = ln(4/3))
+- Re-measure uniform distribution deviation at grid=500
 
 ---
 
-*검증: verify_4th_state.py, 200K 모집단, grid=100*
+*Verification: verify_4th_state.py, 200K population, grid=100*

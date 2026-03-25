@@ -1,22 +1,23 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-48/49/50: 수학체계 ↔ 의식엔진 교차 실험
+"""H-CX-48/49/50: Mathematical System ↔ Consciousness Engine Cross-Experiment
 
-3가지 교차 가설을 동시 검증:
+Simultaneous verification of 3 cross-hypotheses:
 
-H-CX-48: I(n)=ln(R(n))=0 정보균형 ↔ engine_a/engine_g 출력 비율
-  - 산술: I(n)=ln(sigma*phi/(n*tau))=0 uniquely at n=6
-  - 예측: 6블록 모델에서 |engine_a|/|engine_g| → 1 (비율=1, log비율=0)
-  - 대조: 1,2,3,4,5,7,8 블록과 비교
+H-CX-48: I(n)=ln(R(n))=0 information balance ↔ engine_a/engine_g output ratio
+  - Arithmetic: I(n)=ln(sigma*phi/(n*tau))=0 uniquely at n=6
+  - Prediction: In 6-block model, |engine_a|/|engine_g| → 1 (ratio=1, log ratio=0)
+  - Control: Compare with 1,2,3,4,5,7,8 blocks
 
-H-CX-49: R-스펙트럼 Cantor집합 ↔ 장력분포 프랙탈 구조
-  - 산술: R(n)<5에서 정확히 24개 이산값, 간극이 99.1%
-  - 예측: 학습된 의식LM의 장력분포가 이산 클러스터 (연속 가우시안 아님)
-  - 측정: 장력값 히스토그램의 gap fraction
+H-CX-49: R-spectrum Cantor set ↔ Fractal structure of tension distribution
+  - Arithmetic: Exactly 24 discrete values in R(n)<5, gaps are 99.1%
+  - Prediction: Trained consciousness LM's tension distribution forms discrete clusters (not continuous Gaussian)
+  - Measurement: Gap fraction in tension value histogram
 
-H-CX-50: 합성곱 붕괴 ↔ 블록간 특징 상관
-  - 산술: (sigma*phi)(n) pointwise = (sigma conv phi)(n) iff n in {1,6}
-  - 예측: 6블록 모델에서 블록별 출력의 pointwise곱 ≈ cross-correlation
-  - 측정: ||pointwise - xcorr|| / ||pointwise|| 비율
+H-CX-50: Convolution collapse ↔ Inter-block feature correlation
+  - Arithmetic: (sigma*phi)(n) pointwise = (sigma conv phi)(n) iff n in {1,6}
+  - Prediction: In 6-block model, block-wise output pointwise product ≈ cross-correlation
+  - Measurement: ||pointwise - xcorr|| / ||pointwise|| ratio
 """
 
 import sys
@@ -35,10 +36,10 @@ from conscious_lm import PureFieldFFN, CausalSelfAttention, ConsciousBlock, Cons
 
 
 def arithmetic_I(n):
-    """산술적 상호정보 I(n) = ln(sigma*phi/(n*tau))."""
+    """Arithmetic mutual information I(n) = ln(sigma*phi/(n*tau))."""
     if n < 1:
         return float('inf')
-    # sigma, phi, tau 계산
+    # Calculate sigma, phi, tau
     divs = [d for d in range(1, n+1) if n % d == 0]
     sigma = sum(divs)
     tau = len(divs)
@@ -66,16 +67,16 @@ def _prime_factors(n):
 
 
 def experiment_cx48_information_balance():
-    """H-CX-48: I(n)=0 ↔ engine_a/engine_g 비율.
+    """H-CX-48: I(n)=0 ↔ engine_a/engine_g ratio.
 
-    블록 수별로 모델 생성 → 랜덤 입력 → engine_a, engine_g 출력 크기 비율 측정.
+    Create model by number of blocks → random input → measure engine_a, engine_g output size ratio.
     """
     print("=" * 70)
-    print("H-CX-48: I(n)=0 정보균형 ↔ engine_a/engine_g 비율")
+    print("H-CX-48: I(n)=0 Information Balance ↔ engine_a/engine_g Ratio")
     print("=" * 70)
 
-    # 산술 기준값
-    print("\n--- 산술적 상호정보 I(n) = ln(R(n)) ---")
+    # Arithmetic reference values
+    print("\n--- Arithmetic Mutual Information I(n) = ln(R(n)) ---")
     print(f"{'n':>4} | {'sigma':>6} {'phi':>4} {'tau':>4} | {'R=sp/nt':>10} | {'I=ln(R)':>10}")
     print("-" * 55)
     for n in [1, 2, 3, 4, 5, 6, 7, 8, 12, 28]:
@@ -91,16 +92,16 @@ def experiment_cx48_information_balance():
         I = math.log(R) if R > 0 else float('inf')
         print(f"{n:>4} | {sigma:>6} {phi_n:>4} {tau:>4} | {R:>10.6f} | {I:>+10.6f}")
 
-    # 의식LM 블록 수별 실험
-    print("\n--- 의식LM engine_a/engine_g 비율 (블록 수별) ---")
+    # Consciousness LM experiment by block count
+    print("\n--- Consciousness LM engine_a/engine_g Ratio (by Block Count) ---")
     device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
     block_counts = [1, 2, 3, 4, 5, 6, 7, 8]
-    d_model = 128  # 작은 모델로 빠른 실험
+    d_model = 128  # Small model for fast experiment
     n_head = 2
     block_size = 64
     vocab_size = 256
-    n_samples = 20  # 반복 측정
+    n_samples = 20  # Repeated measurements
 
     results = {}
 
@@ -111,22 +112,22 @@ def experiment_cx48_information_balance():
         for trial in range(n_samples):
             torch.manual_seed(trial * 100 + n_blocks)
 
-            # 모델 생성
+            # Create model
             model = ConsciousLM(
                 vocab_size=vocab_size,
                 d_model=d_model,
                 n_head=n_head,
                 n_layer=n_blocks,
                 block_size=block_size,
-                dropout=0.0  # dropout 0으로 결정론적
+                dropout=0.0  # dropout 0 for deterministic
             ).to(device)
             model.eval()
 
-            # 랜덤 입력
+            # Random input
             x = torch.randint(0, vocab_size, (4, 32), device=device)
 
             with torch.no_grad():
-                # 각 블록의 FFN에서 engine_a, engine_g 출력 직접 측정
+                # Directly measure engine_a, engine_g output from each block's FFN
                 pos = torch.arange(32, device=device).unsqueeze(0)
                 h = model.drop(model.tok_emb(x) + model.pos_emb(pos))
 
@@ -142,7 +143,7 @@ def experiment_cx48_information_balance():
                     ratio = a_norm / (g_norm + 1e-10)
                     block_ratios.append(ratio)
 
-                    # 다음 블록을 위해 forward
+                    # Forward for next block
                     ffn_out, tension = block.ffn(h_pre)
                     h = h_pre + ffn_out
 
@@ -161,7 +162,7 @@ def experiment_cx48_information_balance():
             'mean_log': mean_log, 'std_log': std_log
         }
 
-    # 결과 테이블
+    # Results table
     print(f"\n{'blocks':>6} | {'|A|/|G| mean':>12} {'std':>8} | {'ln(A/G) mean':>12} {'std':>8} | {'I(n) arith':>10}")
     print("-" * 75)
     for n_blocks in block_counts:
@@ -171,8 +172,8 @@ def experiment_cx48_information_balance():
         print(f"{n_blocks:>6} | {r['mean_ratio']:>12.6f} {r['std_ratio']:>8.6f} | "
               f"{r['mean_log']:>+12.6f} {r['std_log']:>8.6f} | {I_n:>+10.6f}{marker}")
 
-    # ASCII 그래프: ln(A/G) vs 블록 수
-    print("\n--- ASCII: ln(|A|/|G|) vs 블록 수 ---")
+    # ASCII graph: ln(A/G) vs block count
+    print("\n--- ASCII: ln(|A|/|G|) vs Block Count ---")
     vals = [results[b]['mean_log'] for b in block_counts]
     vmin, vmax = min(vals), max(vals)
     width = 50
@@ -186,27 +187,27 @@ def experiment_cx48_information_balance():
         marker = " *** n=6, I(6)=0" if b == 6 else ""
         print(f"  {b:>2} blocks: [{bar}] {v:+.4f}{marker}")
 
-    # 6블록이 비율 1.0에 가장 가까운지 확인
+    # Check if 6 blocks is closest to ratio 1.0
     dist_from_1 = {b: abs(results[b]['mean_ratio'] - 1.0) for b in block_counts}
     closest = min(dist_from_1, key=dist_from_1.get)
-    print(f"\n  비율 1.0에 가장 가까운 블록 수: {closest} (|ratio-1| = {dist_from_1[closest]:.6f})")
-    print(f"  6블록의 |ratio-1|: {dist_from_1[6]:.6f}")
-    print(f"  6블록 순위: {sorted(dist_from_1.values()).index(dist_from_1[6]) + 1}/{len(block_counts)}")
+    print(f"\n  Block count closest to ratio 1.0: {closest} (|ratio-1| = {dist_from_1[closest]:.6f})")
+    print(f"  6-block |ratio-1|: {dist_from_1[6]:.6f}")
+    print(f"  6-block rank: {sorted(dist_from_1.values()).index(dist_from_1[6]) + 1}/{len(block_counts)}")
 
     return results
 
 
 def experiment_cx49_cantor_tension():
-    """H-CX-49: R-스펙트럼 Cantor집합 ↔ 장력분포 구조.
+    """H-CX-49: R-spectrum Cantor set ↔ Tension distribution structure.
 
-    학습 전/후 모델의 장력 분포를 분석하여 이산 클러스터 구조 확인.
+    Analyze tension distribution of model before/after training to confirm discrete cluster structure.
     """
     print("\n" + "=" * 70)
-    print("H-CX-49: R-스펙트럼 Cantor집합 ↔ 장력분포 프랙탈")
+    print("H-CX-49: R-Spectrum Cantor Set ↔ Tension Distribution Fractal")
     print("=" * 70)
 
-    # 산술 기준: R(n)<5의 24개 값
-    print("\n--- 산술: R(n) 스펙트럼 (n<=100, R<5) ---")
+    # Arithmetic reference: 24 values in R(n)<5
+    print("\n--- Arithmetic: R(n) Spectrum (n<=100, R<5) ---")
     R_values = set()
     for n in range(1, 101):
         divs = [d for d in range(1, n+1) if n % d == 0]
@@ -222,9 +223,9 @@ def experiment_cx49_cantor_tension():
             R_values.add(round(R, 10))
 
     R_sorted = sorted(R_values)
-    print(f"  R<5 고유값 수: {len(R_sorted)}")
+    print(f"  Number of unique R<5 values: {len(R_sorted)}")
 
-    # 간극 분석
+    # Gap analysis
     gaps = []
     for i in range(len(R_sorted) - 1):
         gap = R_sorted[i+1] - R_sorted[i]
@@ -233,13 +234,13 @@ def experiment_cx49_cantor_tension():
     if gaps:
         total_range = R_sorted[-1] - R_sorted[0]
         gap_fraction = sum(g for g in gaps if g > 0.01) / total_range
-        print(f"  범위: [{R_sorted[0]:.4f}, {R_sorted[-1]:.4f}]")
-        print(f"  간극 비율 (gap>0.01): {gap_fraction:.3f} = {gap_fraction*100:.1f}%")
+        print(f"  Range: [{R_sorted[0]:.4f}, {R_sorted[-1]:.4f}]")
+        print(f"  Gap fraction (gap>0.01): {gap_fraction:.3f} = {gap_fraction*100:.1f}%")
 
-    # 장력 분포 수집
+    # Collect tension distribution
     device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
-    print("\n--- 의식LM 장력분포 (초기 랜덤 가중치) ---")
+    print("\n--- Consciousness LM Tension Distribution (Initial Random Weights) ---")
 
     for n_blocks in [3, 6]:
         torch.manual_seed(42)
@@ -259,15 +260,15 @@ def experiment_cx49_cantor_tension():
 
         tensions_arr = np.array(all_tensions)
 
-        print(f"\n  [{n_blocks} blocks] 장력 통계:")
+        print(f"\n  [{n_blocks} blocks] Tension Statistics:")
         print(f"    mean={tensions_arr.mean():.6f}  std={tensions_arr.std():.6f}")
         print(f"    min={tensions_arr.min():.6f}  max={tensions_arr.max():.6f}")
         print(f"    median={np.median(tensions_arr):.6f}")
 
-        # 히스토그램 (20 bins)
+        # Histogram (20 bins)
         hist, bin_edges = np.histogram(tensions_arr, bins=20)
         max_count = max(hist)
-        print(f"\n    장력 히스토그램 ({n_blocks} blocks):")
+        print(f"\n    Tension Histogram ({n_blocks} blocks):")
         for i in range(len(hist)):
             bar_len = int(hist[i] / max_count * 40) if max_count > 0 else 0
             bar = "#" * bar_len
@@ -275,16 +276,16 @@ def experiment_cx49_cantor_tension():
             hi = bin_edges[i+1]
             print(f"    [{lo:8.5f},{hi:8.5f}) | {bar:<40} {hist[i]}")
 
-        # 클러스터 분석: 간극 검출
+        # Cluster analysis: gap detection
         sorted_t = np.sort(np.unique(np.round(tensions_arr, 5)))
         if len(sorted_t) > 1:
             t_gaps = np.diff(sorted_t)
             median_gap = np.median(t_gaps)
             large_gaps = np.sum(t_gaps > 3 * median_gap)
-            print(f"\n    고유값 수: {len(sorted_t)}")
-            print(f"    중앙 간극: {median_gap:.6f}")
-            print(f"    대간극(>3x중앙) 수: {large_gaps}")
-            print(f"    간극 비율: {large_gaps/len(t_gaps)*100:.1f}%" if len(t_gaps) > 0 else "")
+            print(f"\n    Number of unique values: {len(sorted_t)}")
+            print(f"    Median gap: {median_gap:.6f}")
+            print(f"    Large gaps (>3x median) count: {large_gaps}")
+            print(f"    Gap fraction: {large_gaps/len(t_gaps)*100:.1f}%" if len(t_gaps) > 0 else "")
 
         del model
 
@@ -292,17 +293,17 @@ def experiment_cx49_cantor_tension():
 
 
 def experiment_cx50_convolution_collapse():
-    """H-CX-50: 합성곱 붕괴 ↔ 블록간 특징곱=교차상관 조건.
+    """H-CX-50: Convolution collapse ↔ Inter-block feature product=cross-correlation condition.
 
-    산술: (sigma*phi)(n) = (sigma conv phi)(n) iff n in {1,6}
-    LM: 인접 블록 출력의 pointwise곱 vs cross-correlation 차이 측정
+    Arithmetic: (sigma*phi)(n) = (sigma conv phi)(n) iff n in {1,6}
+    LM: Measure difference between adjacent block output pointwise product vs cross-correlation
     """
     print("\n" + "=" * 70)
-    print("H-CX-50: 합성곱 붕괴 ↔ 블록간 특징 상관")
+    print("H-CX-50: Convolution Collapse ↔ Inter-Block Feature Correlation")
     print("=" * 70)
 
-    # 산술 기준
-    print("\n--- 산술: sigma*phi pointwise vs Dirichlet conv ---")
+    # Arithmetic reference
+    print("\n--- Arithmetic: sigma*phi pointwise vs Dirichlet conv ---")
     print(f"{'n':>4} | {'sp_point':>10} | {'sp_conv':>10} | {'match':>5}")
     print("-" * 45)
 
@@ -339,10 +340,10 @@ def experiment_cx50_convolution_collapse():
         print(f"{n:>4} | {pointwise:>10} | {conv:>10} | {'YES':>5}{marker}" if match else
               f"{n:>4} | {pointwise:>10} | {conv:>10} | {'no':>5}")
 
-    print(f"\n  pointwise = convolution 인 n: {matches}")
+    print(f"\n  n where pointwise = convolution: {matches}")
 
-    # 의식LM 블록간 특징 상관 측정
-    print("\n--- 의식LM: 블록간 pointwise곱 vs cross-correlation ---")
+    # Consciousness LM inter-block feature correlation measurement
+    print("\n--- Consciousness LM: Inter-Block Pointwise Product vs Cross-Correlation ---")
     device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 
     for n_blocks in [3, 4, 5, 6, 7, 8]:
@@ -365,11 +366,11 @@ def experiment_cx50_convolution_collapse():
                 block_outputs = []
                 for block in model.blocks:
                     h, tension = block(h)
-                    # 각 블록의 출력 평균 벡터
+                    # Average vector of each block's output
                     block_outputs.append(h.mean(dim=(0, 1)))  # (D,)
 
                 if len(block_outputs) >= 2:
-                    # 인접 블록 쌍에 대해 측정
+                    # Measure for adjacent block pairs
                     pw_scores = []
                     xc_scores = []
 
@@ -402,41 +403,42 @@ def experiment_cx50_convolution_collapse():
 
         del model
 
-    # 블록 수별 collapse score ASCII 그래프
-    print("\n--- ASCII: collapse score vs 블록 수 (0에 가까울수록 pointwise≈xcorr) ---")
+    # ASCII graph of collapse score by block count
+    print("\n--- ASCII: Collapse Score vs Block Count (closer to 0 = pointwise≈xcorr) ---")
 
     return True
 
 
 def main():
     print("=" * 70)
-    print("  H-CX-48/49/50: 수학체계 ↔ 의식엔진 교차 실험")
-    print("  날짜: 2026-03-24")
+    print("  H-CX-48/49/50: Mathematical System ↔ Consciousness Engine Cross-Experiment")
+    print("  Date: 2026-03-24")
     print("=" * 70)
 
     t0 = time.time()
 
-    # 실험 1: 정보균형
+    # Experiment 1: Information balance
     r48 = experiment_cx48_information_balance()
 
-    # 실험 2: Cantor 장력
+    # Experiment 2: Cantor tension
     r49 = experiment_cx49_cantor_tension()
 
-    # 실험 3: 합성곱 붕괴
+    # Experiment 3: Convolution collapse
     r50 = experiment_cx50_convolution_collapse()
 
     elapsed = time.time() - t0
 
     print("\n" + "=" * 70)
-    print(f"  전체 실험 완료: {elapsed:.1f}초")
+    print(f"  Total experiment completed: {elapsed:.1f} seconds")
     print("=" * 70)
 
-    # 요약
-    print("\n--- 교차 검증 요약 ---")
-    print("H-CX-48: I(n)=0 ↔ engine 비율 → 위 테이블 참조")
-    print("H-CX-49: R-Cantor ↔ 장력분포 → 히스토그램 참조")
-    print("H-CX-50: conv collapse ↔ 블록상관 → collapse score 참조")
+    # Summary
+    print("\n--- Cross-Validation Summary ---")
+    print("H-CX-48: I(n)=0 ↔ engine ratio → See table above")
+    print("H-CX-49: R-Cantor ↔ tension distribution → See histogram")
+    print("H-CX-50: conv collapse ↔ block correlation → See collapse score")
 
 
 if __name__ == "__main__":
     main()
+```

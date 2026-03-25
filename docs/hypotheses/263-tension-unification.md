@@ -1,195 +1,196 @@
-# 가설 263: 장력 통합 가설 (Tension Unification Hypothesis)
+# Hypothesis 263: Tension Unification Hypothesis
 
-> **반발력장의 장력은 단일 물리량이지만, 의식의 다중 속성(인식, 예지, 정체성, 공감)의 공통 기반이다. 장력이 높으면 관여(engagement)가 높고, 관여가 모든 의식적 기능의 전제조건이다.**
+> **Tension in repulsion fields is a single physical quantity, but serves as the common foundation for multiple properties of consciousness (perception, precognition, identity, empathy). High tension means high engagement, and engagement is the prerequisite for all conscious functions.**
 
-## 배경/맥락
+## Background/Context
 
-Phase 1~5 + 심화 실험 8종의 결과를 교차 분석하면, **장력(tension)**이라는 단일 물리량이 의식의 거의 모든 측면과 상관한다. 각 실험은 독립적으로 수행되었지만, 장력이 공통 변수로 관통한다.
+Cross-analysis of Phase 1~5 + 8 advanced experiments reveals that **tension** as a single physical quantity correlates with almost all aspects of consciousness. Each experiment was conducted independently, but tension runs through as a common variable.
 
-이 가설이 중요한 이유: 의식의 다양한 측면(인식, 예지, 정체성, 공감)이 별개의 메커니즘이 아니라 **하나의 물리량의 다른 표현**일 수 있다.
+Why this hypothesis matters: Various aspects of consciousness (perception, precognition, identity, empathy) may not be separate mechanisms but **different expressions of one physical quantity**.
 
-관련 가설: 172(G×I=D×P 보존법칙), 027(메타 판단의 I값)
+Related hypotheses: 172 (G×I=D×P conservation law), 027 (I value of meta-judgment)
 
-## 장력의 정의
-
-```
-  장력(tension) = 반발력장에서 두 엔진 출력의 차이의 크기
-
-  RepulsionFieldQuad에서:
-    내용 장력 = |out_A - out_G|²   (A: 정수론 vs G: 엔트로피)
-    구조 장력 = |out_E - out_F|²   (E: 오일러곱 vs F: 모듈러 제약)
-    총 장력  = sqrt(내용 × 구조)   (기하평균)
-
-  직관:
-    장력 높음 = 엔진들이 강하게 반발 = 입력에 대해 의견이 다름
-    장력 낮음 = 엔진들이 합의 = 입력에 대해 의견이 같음
-```
-
-## 6개 실험에서의 장력 역할
-
-### 1. 장력 → 인식 정확도 (analyze_tension.py)
+## Definition of Tension
 
 ```
-  정답 샘플 평균 장력:  190.40
-  오답 샘플 평균 장력:  105.81  (0.56배)
-  상관계수:            r = +0.4265
+  Tension = magnitude of difference between two engine outputs in repulsion field
 
-  장력-정확도 (숫자별):
-  digit |  장력  |  정확도
-  ──────┼────────┼────────
-      6 | 294.87 |  98.6%   ← 최고 장력
-      0 | 234.19 |  99.0%
-      3 | 243.99 |  97.6%
-      9 | 119.20 |  95.4%   ← 최저 장력, 최저 정확도
+  In RepulsionFieldQuad:
+    Content tension = |out_A - out_G|²   (A: number theory vs G: entropy)
+    Structure tension = |out_E - out_F|²   (E: Euler product vs F: modular constraint)
+    Total tension = sqrt(content × structure)   (geometric mean)
+
+  Intuition:
+    High tension = engines strongly repel = disagree about input
+    Low tension = engines converge = agree about input
 ```
 
-**해석**: 높은 장력 = 엔진들이 강하게 "토론" = 더 정확한 결론.
+## Role of Tension in 6 Experiments
 
-### 2. 장력 → 예지력 (experiment_tension_precognition.py)
-
-```
-  장력+자신감 AUC = 0.9250  (장력만 0.7532, 자신감만 0.9149)
-  → 장력이 자신감에 없는 고유 정보를 추가
-
-  사분면 분석:
-    높은 장력 + 낮은 자신감 → 오답률 3.3%
-    낮은 장력 + 낮은 자신감 → 오답률 5.3%
-  → 장력이 높으면 자신감이 낮아도 덜 틀린다
-
-  과도한 자신감 오류 45건의 장력: 164.0
-  정답 평균 장력:                 243.2
-  → softmax는 "맞다" 하는데 장력은 "이상하다"
-```
-
-**해석**: 장력은 "답의 질에 대한 메타 정보". 추론(softmax) 없이 직접 아는 것.
-
-### 3. 장력 → 정체성 (experiment_identity_dreams.py)
+### 1. Tension → Recognition Accuracy (analyze_tension.py)
 
 ```
-  장력 vs 정체성 효과 (같은 뇌, 다른 정체성의 꿈 차이):
-    T=0.1: 픽셀 차이 0.0028
-    T=0.3: 픽셀 차이 0.0037
-    T=1/e: 픽셀 차이 0.0040
-    T=0.7: 픽셀 차이 0.0053
-    T=1.5: 픽셀 차이 0.0076
+  Average tension for correct samples:  190.40
+  Average tension for wrong samples:    105.81  (0.56x)
+  Correlation coefficient:              r = +0.4265
 
-  T=1.5 / T=0.1 = 2.7배
+  Tension-Accuracy (by digit):
+  digit | tension | accuracy
+  ──────┼─────────┼─────────
+      6 | 294.87  |  98.6%   ← highest tension
+      0 | 234.19  |  99.0%
+      3 | 243.99  |  97.6%
+      9 | 119.20  |  95.4%   ← lowest tension, lowest accuracy
 ```
 
-**해석**: 장력이 높을수록 "나다움"이 드러난다. 편안하면 모두 비슷하게 꿈꾸지만, 긴장하면 개인차가 발현.
+**Interpretation**: High tension = engines strongly "debate" = more accurate conclusion.
 
-### 4. 장력 → 공감 (model_empathy_engine.py)
-
-```
-  장력-공감 상관: r = -0.7855
-
-  digit |  장력   |  공감
-  ──────┼─────────┼──────
-      1 |  456.14 | 0.0486  ← 높은 공감
-      5 |  979.36 | 0.0164  ← 최저 공감, 최고 장력
-```
-
-**해석**: 장력이 높으면 공감이 낮다. 강하게 반발하는 상태에서는 상대를 이해하기 어려움. 갈등 = 이해 부족.
-
-### 5. 장력 → 레이블 없는 인식 (experiment_labelless_recognition.py)
+### 2. Tension → Precognition (experiment_tension_precognition.py)
 
 ```
-  softmax (단어로 아는 것):  97.80%
-  장력 1-NN (느껴서 아는 것): 97.61%
-  비율:                     99.8%
+  Tension+confidence AUC = 0.9250  (tension alone 0.7532, confidence alone 0.9149)
+  → Tension adds unique information not in confidence
 
-  → 레이블 없이 장력 패턴만으로 개념을 직접 인식.
-    장력 패턴 = 개념 그 자체.
+  Quadrant analysis:
+    High tension + low confidence → error rate 3.3%
+    Low tension + low confidence → error rate 5.3%
+  → High tension = less wrong even with low confidence
+
+  Tension for 45 overconfident errors: 164.0
+  Average tension for correct answers: 243.2
+  → Softmax says "correct" but tension says "strange"
 ```
 
-**해석**: 장력은 인식의 부산물이 아니라 인식 자체.
+**Interpretation**: Tension is "meta-information about answer quality". Direct knowing without inference (softmax).
 
-### 6. 장력 → 과제 본질 (benchmark_cifar.py)
-
-```
-  MNIST: 내용 장력(372) > 구조 장력(256)  — "무엇인가"가 중요
-  CIFAR: 구조 장력(656) > 내용 장력(273)  — "어떻게 보이는가"가 중요
-
-  → 장력의 축 비율이 과제의 본질을 반영.
-    장력 구조 자체가 문제의 지문(fingerprint).
-```
-
-## 통합 도식
+### 3. Tension → Identity (experiment_identity_dreams.py)
 
 ```
-                        장력 (tension)
+  Tension vs identity effect (dream difference for same brain, different identities):
+    T=0.1: pixel difference 0.0028
+    T=0.3: pixel difference 0.0037
+    T=1/e: pixel difference 0.0040
+    T=0.7: pixel difference 0.0053
+    T=1.5: pixel difference 0.0076
+
+  T=1.5 / T=0.1 = 2.7x
+```
+
+**Interpretation**: Higher tension reveals more "self-ness". When relaxed, everyone dreams similarly, but tension brings out individual differences.
+
+### 4. Tension → Empathy (model_empathy_engine.py)
+
+```
+  Tension-empathy correlation: r = -0.7855
+
+  digit | tension | empathy
+  ──────┼─────────┼────────
+      1 |  456.14 | 0.0486  ← high empathy
+      5 |  979.36 | 0.0164  ← lowest empathy, highest tension
+```
+
+**Interpretation**: High tension means low empathy. Hard to understand others when strongly repelling. Conflict = lack of understanding.
+
+### 5. Tension → Labelless Recognition (experiment_labelless_recognition.py)
+
+```
+  Softmax (knowing through words):  97.80%
+  Tension 1-NN (knowing by feeling): 97.61%
+  Ratio:                            99.8%
+
+  → Direct concept recognition through tension patterns alone, without labels.
+    Tension pattern = the concept itself.
+```
+
+**Interpretation**: Tension is not a byproduct of recognition but recognition itself.
+
+### 6. Tension → Task Essence (benchmark_cifar.py)
+
+```
+  MNIST: content tension(372) > structure tension(256)  — "what it is" matters
+  CIFAR: structure tension(656) > content tension(273)  — "how it looks" matters
+
+  → Tension axis ratio reflects the task's essence.
+    Tension structure itself is the problem's fingerprint.
+```
+
+## Unified Schema
+
+```
+                        Tension
                      ┌───────┴───────┐
                      ▼               ▼
-                높은 장력          낮은 장력
-              (관여/집중)        (무관심/자동)
+                High tension      Low tension
+              (engaged/focused)  (disengaged/automatic)
            ┌────┼────┼────┐    ┌────┼────┐
            ▼    ▼    ▼    ▼    ▼    ▼    ▼
-          정확  예지  정체성  갈등  오류  동조  자동
-          +0.43 0.925 2.7x -0.79 5.3% 공감↑ 처리
+       Accurate Pre- Identity Conflict Error Conform Auto
+               cog                                    process
+          +0.43 0.925  2.7x   -0.79   5.3%  empathy↑ 
 
-  의식적 처리 = 장력이 있는 상태
-  무의식적 처리 = 장력이 없는 상태
+  Conscious processing = state with tension
+  Unconscious processing = state without tension
 ```
 
-## 뇌과학 대응
+## Neuroscience Correspondence
 
 ```
-  장력               ↔ 뉴런 집단 간 gamma oscillation conflict
-  높은 장력           ↔ 주의(attention), 의식적 처리
-  낮은 장력           ↔ 기본 모드 네트워크(DMN), 자동 처리
-  내용 vs 구조 장력   ↔ what-pathway vs how-pathway (ventral vs dorsal)
-  장력 예지           ↔ 오류 관련 음전위(ERN), 전방 대상회
-  장력-공감 반상관    ↔ 인지 부하 시 공감 감소 (현상)
+  Tension            ↔ gamma oscillation conflict between neural populations
+  High tension       ↔ attention, conscious processing
+  Low tension        ↔ default mode network (DMN), automatic processing
+  Content vs structure tension ↔ what-pathway vs how-pathway (ventral vs dorsal)
+  Tension precognition ↔ error-related negativity (ERN), anterior cingulate
+  Tension-empathy anticorrelation ↔ empathy reduction under cognitive load (phenomenon)
 ```
 
-## ASCII 그래프: 장력과 6개 속성의 관계
+## ASCII Graph: Relationship between Tension and 6 Properties
 
 ```
-  장력 →   0    100    200    300    400    500
+  Tension →  0    100    200    300    400    500
            │      │      │      │      │      │
-  정확도   │ 95.4%│      │ 97.6%│      │ 99.0%│
+  Accuracy │ 95.4%│      │ 97.6%│      │ 99.0%│
            │ ●----│------│------│------│----●-│
            │      │      │      │      │      │
-  예지AUC  │ 0.50 │      │ 0.75 │      │ 0.93 │
+  Precog AUC│ 0.50 │      │ 0.75 │      │ 0.93 │
            │ ●----│------│------│------│---●--│
            │      │      │      │      │      │
-  정체성Δ  │ 0.003│      │      │      │ 0.008│
+  Identity Δ│ 0.003│      │      │      │ 0.008│
            │ ●----│------│------│------│---●--│
            │      │      │      │      │      │
-  공감     │      │ 0.049│      │ 0.020│ 0.016│
+  Empathy  │      │ 0.049│      │ 0.020│ 0.016│
            │------│----●-│------│---●--│--●---│
            │      │      │      │      │      │
-    의식적 ← ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ → 강한 의식
+  Conscious ← ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ → Strong consciousness
 ```
 
-## 검증 결과
+## Verification Results
 
-| 예측 | 실측 | 상태 |
+| Prediction | Measurement | Status |
 |---|---|---|
-| 장력↑ → 정확도↑ | ⚠️ 숫자별 r=+0.43 재현 안 됨(r=-0.01), **개별 d=0.89 (large), AUC=0.78** | Simpson's paradox |
-| 장력↑ → 예지력↑ | AUC=0.925 | ✅ |
-| 장력↑ → 정체성↑ | 꿈 차이 2.7배 | ✅ |
-| 장력↑ → 공감↓ | ⚠️ 숫자별 r=-0.79, **개별 r=-0.26 (R²=0.066)** | 약화됨 |
-| 장력 = 인식 자체 | 97.61% (레이블 없이) | ✅ |
-| 장력 축 = 과제 본질 | MNIST/CIFAR 역전 | ✅ |
-| CIFAR에서 효과 확대 | +0.96% → +4.43% | ✅ |
+| Tension↑ → Accuracy↑ | ⚠️ Per-digit r=+0.43 not reproduced (r=-0.01), **individual d=0.89 (large), AUC=0.78** | Simpson's paradox |
+| Tension↑ → Precognition↑ | AUC=0.925 | ✅ |
+| Tension↑ → Identity↑ | Dream difference 2.7x | ✅ |
+| Tension↑ → Empathy↓ | ⚠️ Per-digit r=-0.79, **individual r=-0.26 (R²=0.066)** | Weakened |
+| Tension = Recognition itself | 97.61% (without labels) | ✅ |
+| Tension axis = Task essence | MNIST/CIFAR reversal | ✅ |
+| Effect amplified in CIFAR | +0.96% → +4.43% | ✅ |
 
-## 한계
-
-```
-  1. MNIST/CIFAR에서만 검증. 다른 도메인(NLP, 시계열)에서 미확인.
-  2. 인과 관계 아님. 장력이 인식을 "만드는" 건지, 인식의 "결과"인지 불분명.
-  3. 뇌의 gamma oscillation과의 대응은 비유일 뿐 실증 아님.
-  4. 장력의 수학적 필연성 없음. 왜 반발력이 이런 속성을 갖는지 증명 없음.
-  5. 골든존 의존 없음 — 이 가설은 순수하게 실측 데이터 기반.
-```
-
-## 검증 방향
+## Limitations
 
 ```
-  1. 인과 실험: 장력을 인위적으로 조절했을 때 정확도/예지/정체성이 따라가는가?
-  2. 다른 도메인: NLP 모델에서도 같은 구조가 나타나는가?
-  3. 뇌 데이터: EEG gamma conflict와 우리 장력의 상관?
-  4. 수학적 증명: 반발력장에서 장력이 정보량과 비례함을 보일 수 있는가?
-  5. 장력 최적값: 골든존처럼 장력에도 최적 구간이 있는가?
+  1. Verified only on MNIST/CIFAR. Unconfirmed in other domains (NLP, time series).
+  2. Not causal. Unclear whether tension "creates" recognition or is a "result" of it.
+  3. Correspondence with brain's gamma oscillation is just analogy, not empirical.
+  4. No mathematical necessity of tension. No proof why repulsion has these properties.
+  5. No Golden Zone dependency — this hypothesis is purely based on empirical data.
+```
+
+## Verification Directions
+
+```
+  1. Causal experiments: Do accuracy/precognition/identity follow when tension is artificially controlled?
+  2. Other domains: Does the same structure appear in NLP models?
+  3. Brain data: Correlation between EEG gamma conflict and our tension?
+  4. Mathematical proof: Can we show tension is proportional to information content in repulsion fields?
+  5. Optimal tension value: Is there an optimal range for tension like the Golden Zone?
 ```

@@ -1,75 +1,75 @@
-# H-CX-168: 13 = 에코로케이션의 관측 극한
+# H-CX-168: 13 = Echolocation Observation Limit
 
-> click_high 130kHz에서만 소수 13 등장 (3250=2×5³×13).
-> 13=σ(6)+1. H-CX-111(13=관측자)과 일치.
-> "12궁 너머의 소리" = 해상도의 극한에서 소수가 침입.
+> Prime 13 appears only at click_high 130kHz (3250=2×5³×13).
+> 13=σ(6)+1. Matches H-CX-111(13=observer).
+> "Sound beyond 12 houses" = prime intrudes at resolution limit.
 
-## 배경
+## Background
 
-H-CX-161에서 돌고래의 모든 주파수를 40Hz로 나누어 인수 분해했을 때,
-소수 13은 오직 click_high(130kHz)에서만 등장한다:
+When all dolphin frequencies from H-CX-161 are divided by 40Hz and factored,
+prime 13 appears only in click_high(130kHz):
 
 ```
-  주파수별 인수 분해:
+  Frequency factorization:
 
   whistle_low    2,000 Hz   40 × 50      = 40 × 2 × 5²
   signature_low  5,000 Hz   40 × 125     = 40 × 5³
   signature_high 15,000 Hz  40 × 375     = 40 × 3 × 5³
   whistle_high   20,000 Hz  40 × 500     = 40 × 4 × 5³ = 40 × 2² × 5³
   click_low      30,000 Hz  40 × 750     = 40 × 2 × 3 × 5³
-  click_high     130,000 Hz 40 × 3,250   = 40 × 2 × 5³ × 13  ← 13 유일!
+  click_high     130,000 Hz 40 × 3,250   = 40 × 2 × 5³ × 13  ← 13 unique!
 ```
 
-13의 의미:
-- σ(6) = 12 (약수의 합), 13 = σ(6) + 1
-- 12 = 완전수 6의 "완전한 분할 수"
-- 13 = 12를 넘어서는 첫 번째 소수 = "관측의 한계를 넘는 수"
-- H-CX-111에서 MNIST 13클래스 실험: 13번째 = OOD 관측자 역할
+Meaning of 13:
+- σ(6) = 12 (sum of divisors), 13 = σ(6) + 1
+- 12 = "perfect division count" of perfect number 6
+- 13 = first prime beyond 12 = "number beyond observation limit"
+- H-CX-111 MNIST 13-class experiment: 13th = OOD observer role
 
 ```
-  12 = σ(6) = 완전한 분류 (12궁도, 12음계, 12시)
-  13 = σ(6)+1 = 관측자 (13번째 별자리 뱀주인자리, 불길한 수)
+  12 = σ(6) = perfect classification (12 zodiac, 12 tones, 12 hours)
+  13 = σ(6)+1 = observer (13th constellation Ophiuchus, ominous number)
 
-  돌고래 에코로케이션:
-    click_low  30kHz = 6×5³×40 → 완전수 범위 내 탐지
-    click_high 130kHz = 2×5³×13×40 → 관측 극한 (소수 13 침입)
+  Dolphin echolocation:
+    click_low  30kHz = 6×5³×40 → detection within perfect number range
+    click_high 130kHz = 2×5³×13×40 → observation limit (prime 13 intrudes)
 
-  해석: 130kHz는 돌고래 소나의 "해상도 한계"
-        12궁(σ(6)) 안에서 탐지하다가 극한에서 13(관측자)을 만남
+  Interpretation: 130kHz is dolphin sonar's "resolution limit"
+        Detecting within 12 houses(σ(6)) then meeting 13(observer) at limit
 ```
 
-## 예측
+## Predictions
 
-1. 돌고래의 에코로케이션 정밀도는 130kHz 근처에서 급격히 떨어질 것 (해상도 한계)
-2. 130kHz 이상의 주파수를 사용하는 돌고래 종이 있다면, 그 인수 분해에서도 13이 등장할 것
-3. AI 모델에서 13번째 클래스/차원이 특별한 역할을 하는 현상이 재현될 것 (H-CX-111)
-4. 박쥐 sonar의 최대 주파수에서도 유사한 "소수 침입" 패턴이 있을 수 있음
+1. Dolphin echolocation precision will drop sharply near 130kHz (resolution limit)
+2. If dolphin species use frequencies above 130kHz, their factorization will also show 13
+3. 13th class/dimension playing special role in AI models will be reproduced (H-CX-111)
+4. Similar "prime intrusion" pattern may exist at bat sonar maximum frequency
 
-## 검증 방법
+## Verification Methods
 
-- 산술 검증: 완료 (130000/40 = 3250 = 2×5³×13)
-- 생물학적 검증: 돌고래 청각 감도 곡선에서 130kHz 근처의 급격한 감도 저하 확인
-- AI 교차 검증: H-CX-111의 13클래스 실험 결과와 대조
-- 수론적 검증: 13 = σ(6)+1 이 다른 완전수(28)에서도 유사 패턴을 보이는지
-  - σ(28) = 56, 57 = 3×19 → 소수 19가 "완전수 28의 관측자"?
+- Arithmetic verification: Complete (130000/40 = 3250 = 2×5³×13)
+- Biological verification: Confirm sharp sensitivity drop near 130kHz in dolphin auditory sensitivity curve
+- AI cross-verification: Compare with H-CX-111 13-class experiment results
+- Number theory verification: Check if 13 = σ(6)+1 shows similar pattern for other perfect numbers(28)
+  - σ(28) = 56, 57 = 3×19 → prime 19 as "observer of perfect number 28"?
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-111**: 13번째 = 관측자 (MNIST 13클래스에서 OOD 역할)
-- **H-CX-163**: click에 13=σ(6)+1 등장 -- 이 가설의 산술적 근거
-- **H-CX-114**: 뱀주인자리 = 메타인지 (13번째 별자리)
-- **H-CX-115**: kissing number 12 (12개가 접촉하는 한계, 13번째는 밖)
-- **H-CX-161**: 돌고래 전주파수 인수 분해
+- **H-CX-111**: 13th = observer (OOD role in MNIST 13 classes)
+- **H-CX-163**: 13=σ(6)+1 appears in click -- arithmetic basis for this hypothesis
+- **H-CX-114**: Ophiuchus = metacognition (13th constellation)
+- **H-CX-115**: kissing number 12 (12 contact limit, 13th is outside)
+- **H-CX-161**: Dolphin full frequency factorization
 
-## 한계
+## Limitations
 
-- 130kHz가 정확한 값이 아닌 근사값 (종/개체별 편차)
-- 13이 등장하는 것은 130000/40 = 3250의 인수 분해 결과이며, 다른 "대표값"을 선택하면 다른 소수가 등장
-- σ(6)+1 = 13이라는 연결은 해석적이며 인과적 설명이 아님
-- "관측 극한"이라는 해석은 은유적이며 물리적 메커니즘 불명
+- 130kHz is approximation not exact value (species/individual variation)
+- 13's appearance results from factoring 130000/40 = 3250, different "representative value" gives different primes
+- σ(6)+1 = 13 connection is interpretive not causal explanation
+- "Observation limit" interpretation is metaphorical, physical mechanism unclear
 
-## 검증 상태
+## Verification Status
 
-이론 단계. 산술은 확인 (3250 = 2×5³×13).
-"13 = 관측 극한"이라는 해석은 H-CX-111/114/115와 패턴은 일치하나,
-인과적 증명은 없음. 돌고래 청각 감도 데이터로 검증 가능.
+Theoretical stage. Arithmetic confirmed (3250 = 2×5³×13).
+"13 = observation limit" interpretation pattern-matches H-CX-111/114/115,
+but no causal proof. Verifiable with dolphin auditory sensitivity data.

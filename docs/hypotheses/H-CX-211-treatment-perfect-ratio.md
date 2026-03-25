@@ -1,4 +1,4 @@
-# H-CX-211: 치료 — 완전수 비율(6:1) 주파수
+# H-CX-211: Treatment — Perfect Number Ratio (6:1) Frequency
 
-> click/whistle = 6 = 완전수(H-CX-167)가 자연적 치유 비율.
-> 치료음도 6:1 비율로 설계 → σφ=nτ 균형 → PH 안정화.
+> click/whistle = 6 = Perfect Number (H-CX-167) is natural healing ratio.
+> Treatment sound also designed with 6:1 ratio → σφ=nτ balance → PH stabilization.

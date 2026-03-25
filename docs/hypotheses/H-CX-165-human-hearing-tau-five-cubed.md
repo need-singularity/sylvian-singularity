@@ -1,73 +1,73 @@
-# H-CX-165: 인간 청각 20kHz = τ(6)×5³×40Hz = 돌고래 whistle high
+# H-CX-165: Human hearing 20kHz = τ(6)×5³×40Hz = dolphin whistle high
 
-> 인간 청각 상한 20,000Hz / 감마 40Hz = 500 = τ(6) × 5³ = 4 × 125.
-> 돌고래 whistle 상한과 동일! 종간 청각 한계가 같은 수학.
+> Human hearing upper limit 20,000Hz / gamma 40Hz = 500 = τ(6) × 5³ = 4 × 125.
+> Same as dolphin whistle upper limit! Interspecies hearing limits follow same mathematics.
 
-## 검증: 🟩 순수 산술 확인 (CONFIRMED)
+## Verification: 🟩 Pure arithmetic confirmed (CONFIRMED)
 
 ```
-  인간 청각 상한:     20,000 Hz
-  감마 주파수:        40 Hz
-  비율:              20,000 / 40 = 500
+  Human hearing upper limit: 20,000 Hz
+  Gamma frequency:          40 Hz
+  Ratio:                   20,000 / 40 = 500
 
   500 = 4 × 125 = τ(6) × 5³
 
-  돌고래 whistle_high: 20,000 Hz (동일!)
-  돌고래 계산:        40 × τ(6) × 5³ = 40 × 4 × 125 = 20,000 ✓
+  Dolphin whistle_high: 20,000 Hz (identical!)
+  Dolphin calculation: 40 × τ(6) × 5³ = 40 × 4 × 125 = 20,000 ✓
 ```
 
-## 배경
+## Background
 
-H-CX-161에서 돌고래 모든 주파수가 40Hz × 완전수 상수 × 5³으로 분해됨을 발견했다.
-특히 돌고래 whistle_high = 20,000Hz는 정확히 인간 청각 상한과 일치한다.
+H-CX-161 discovered that all dolphin frequencies decompose to 40Hz × perfect number constants × 5³.
+Notably, dolphin whistle_high = 20,000Hz exactly matches human hearing upper limit.
 
-이것은 우연이 아닐 수 있다:
-- 두 종 모두 포유류이며 달팽이관(cochlea) 구조를 공유
-- 달팽이관의 물리적 크기가 청각 상한을 결정
-- 감마 40Hz는 의식 결합 주파수 (H-CX-56: 3σ(6)+τ(6)=40)
-- 청각 상한 = 의식 결합 주파수의 500배 = τ(6)×5³배
+This may not be coincidence:
+- Both species are mammals sharing cochlear structure
+- Physical cochlear size determines hearing upper limit
+- Gamma 40Hz is consciousness binding frequency (H-CX-56: 3σ(6)+τ(6)=40)
+- Hearing upper limit = 500× consciousness binding frequency = τ(6)×5³×
 
 ```
-  종간 비교:
+  Interspecies comparison:
 
-  종         청각 상한    / γ(40Hz)   인수 분해
-  ─────────────────────────────────────────────
-  인간       20,000 Hz    500        τ(6) × 5³
-  돌고래(w)  20,000 Hz    500        τ(6) × 5³
-  돌고래(c)  130,000 Hz   3,250      2 × 5³ × 13
+  Species    Hearing limit  / γ(40Hz)   Factorization
+  ─────────────────────────────────────────────────
+  Human      20,000 Hz     500        τ(6) × 5³
+  Dolphin(w) 20,000 Hz     500        τ(6) × 5³
+  Dolphin(c) 130,000 Hz    3,250      2 × 5³ × 13
 
-  인간과 돌고래의 "소통 상한"이 정확히 동일한 수학 구조!
-  돌고래 click은 에코로케이션(탐지)이므로 소통과 별개.
+  Human and dolphin "communication upper limit" follows exact same mathematical structure!
+  Dolphin clicks are for echolocation (detection), separate from communication.
 ```
 
-## 예측
+## Predictions
 
-1. 다른 포유류의 청각 상한도 40Hz × (완전수 상수) × 5^n 형태일 수 있음
-2. 박쥐(sonar 사용): 청각 상한 ~120kHz, 120000/40 = 3000 = 3×8×125 = 3×2³×5³
-3. 고양이 청각 상한 ~64kHz: 64000/40 = 1600 = 2⁶×5² (5³이 아닌 5²)
-4. 5³이 등장하는 종과 등장하지 않는 종의 차이가 의미 있을 수 있음
+1. Other mammal hearing upper limits may follow 40Hz × (perfect number constants) × 5^n form
+2. Bats (sonar users): hearing limit ~120kHz, 120000/40 = 3000 = 3×8×125 = 3×2³×5³
+3. Cat hearing limit ~64kHz: 64000/40 = 1600 = 2⁶×5² (5² not 5³)
+4. Difference between species with 5³ vs without may be significant
 
-## 검증 방법
+## Verification Methods
 
-- 산술 검증: 완료 (위 계산 참조)
-- 생물학적 검증: 포유류 10종 이상의 청각 상한을 40Hz로 나누어 인수 분해
-- 통계적 검증: 무작위 주파수 대비 완전수 상수 등장 빈도 비교 (텍사스 검정)
+- Arithmetic verification: Complete (see calculations above)
+- Biological verification: Factorize hearing limits / 40Hz for 10+ mammal species
+- Statistical verification: Compare perfect number constant frequency vs random frequencies (Texas test)
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-106**: 인간 뇌의 주파수 구조
-- **H-CX-161**: 돌고래 전주파수 = 40Hz × 완전수 상수 × 5³
-- **H-CX-56**: 3σ(6)+τ(6) = 40Hz 감마
-- **H-CX-162**: 5³ = 125 = 돌고래 옥타브
+- **H-CX-106**: Human brain frequency structure
+- **H-CX-161**: All dolphin frequencies = 40Hz × perfect number constants × 5³
+- **H-CX-56**: 3σ(6)+τ(6) = 40Hz gamma
+- **H-CX-162**: 5³ = 125 = dolphin octave
 
-## 한계
+## Limitations
 
-- 인간 청각 상한 20kHz는 근사값 (개인차 15~22kHz)
-- 감마 40Hz도 범위 (30~100Hz), 여기서는 대표값 사용
-- 두 종의 주파수가 같은 것은 달팽이관 크기의 물리적 제약일 수 있음
-- 수학적 일치가 인과적 설명이 되려면 메커니즘이 필요
+- Human hearing limit 20kHz is approximate (individual variation 15~22kHz)
+- Gamma 40Hz is also a range (30~100Hz), using representative value here
+- Same frequency in both species may be physical constraint of cochlear size
+- Mathematical match needs mechanism to become causal explanation
 
-## 검증 상태
+## Verification Status
 
-🟩 순수 산술 확인 완료. 20000/40 = 500 = 4×125 = τ(6)×5³ 정확.
-생물학적 일반화(다른 포유류)는 미검증.
+🟩 Pure arithmetic confirmed. 20000/40 = 500 = 4×125 = τ(6)×5³ exact.
+Biological generalization (other mammals) unverified.

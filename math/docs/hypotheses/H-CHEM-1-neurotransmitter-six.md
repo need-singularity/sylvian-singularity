@@ -1,41 +1,41 @@
-# H-CHEM-1: 주요 신경전달물질 6종 = σφ=nτ 균형
+# H-CHEM-1: Six Major Neurotransmitters = σφ=nτ Balance
 
-> **가설**: 뇌의 주요 신경전달물질이 6개 범주로 분류되는 것이 σφ=nτ 균형과 대응된다.
+> **Hypothesis**: The brain's major neurotransmitters being classified into 6 categories corresponds to σφ=nτ balance.
 
-## 배경
-- 주요 신경전달물질 6종: 도파민, 세로토닌, 노르에피네프린, GABA, 글루타메이트, 아세틸콜린
-- 흥분성 2종 (글루타메이트, 아세틸콜린) = φ(6) = 2
-- 억제성 1종 (GABA) → 조절성 3종 (도파민, 세로토닌, 노르에피네프린) = σ/τ = 3
+## Background
+- Six major neurotransmitters: dopamine, serotonin, norepinephrine, GABA, glutamate, acetylcholine
+- 2 excitatory (glutamate, acetylcholine) = φ(6) = 2
+- 1 inhibitory (GABA) → 3 modulatory (dopamine, serotonin, norepinephrine) = σ/τ = 3
 
-## 대응 매핑
+## Correspondence Mapping
 
 ```
-  신경전달물질          산술 대응           역할
+  Neurotransmitter      Arithmetic Map      Role
   ──────────────────   ──────────────     ──────────
-  글루타메이트 (흥분)    → 2 (소인수)       주요 흥분
-  아세틸콜린 (흥분)      → 3 (소인수)       학습/기억
-  GABA (억제)           → σ/τ=3 역할       주요 억제
-  도파민 (조절)          → τ=4 역할         보상/동기
-  세로토닌 (조절)        → 5=τ+1 역할      기분/수면
-  노르에피네프린 (조절)   → P₁=6 역할       각성/집중
+  Glutamate (excit.)    → 2 (prime factor)  Main excitation
+  Acetylcholine (excit.) → 3 (prime factor)  Learning/memory
+  GABA (inhibit.)       → σ/τ=3 role       Main inhibition
+  Dopamine (modul.)     → τ=4 role         Reward/motivation
+  Serotonin (modul.)    → 5=τ+1 role      Mood/sleep
+  Norepinephrine (modul.) → P₁=6 role       Arousal/focus
 
-  흥분/억제 균형 = φ/τ 비율?
-  → n=6: φ<τ (억제 우세) — 뇌는 실제로 억제 시냅스가 더 많음!
-  → n=28: φ>τ (흥분 우세) — 과잉 흥분 = 발작?
+  Excitation/inhibition balance = φ/τ ratio?
+  → n=6: φ<τ (inhibition dominant) — Brain actually has more inhibitory synapses!
+  → n=28: φ>τ (excitation dominant) — Over-excitation = seizures?
 ```
 
-## 핵심 질문
-뇌가 "6-균형" (φ<τ, 억제 우세)을 유지하는 이유가 σφ=nτ 최적성과 관련?
+## Core Question
+Is the brain maintaining "6-balance" (φ<τ, inhibition dominant) related to σφ=nτ optimality?
 
-## 화학적 근거
-- 뇌 시냅스: 억제(GABA) ~20%, 흥분(Glu) ~80% → 이지만 GABA 수용체가 더 강력
-- 순 효과: 억제와 흥분의 "유효 균형"이 존재
-- E/I balance 붕괴 → 간질, 불안, 우울
+## Chemical Basis
+- Brain synapses: inhibitory (GABA) ~20%, excitatory (Glu) ~80% → but GABA receptors are more potent
+- Net effect: "effective balance" exists between inhibition and excitation
+- E/I balance disruption → epilepsy, anxiety, depression
 
-## 검증 방향
-1. [ ] 뇌의 E/I 비율 문헌 조사: 실제 비율이 φ/τ=1/2 근처?
-2. [ ] 신경전달물질 수용체 타입 수와 σ,τ 대응
-3. [ ] 의식엔진에서 expert 활성 패턴의 E/I 유사성
+## Verification Directions
+1. [ ] Literature review on brain E/I ratios: are actual ratios near φ/τ=1/2?
+2. [ ] Correspondence between neurotransmitter receptor types and σ,τ
+3. [ ] E/I similarity in expert activation patterns in consciousness engine
 
-## 현실적 평가: 투기적 (★★). 6종 분류 자체가 교과서마다 다름.
-## 난이도: 고 | 파급력: ★★★ (성공 시)
+## Realistic Assessment: Speculative (★★). Classification of 6 types varies by textbook.
+## Difficulty: High | Impact: ★★★ (if successful)

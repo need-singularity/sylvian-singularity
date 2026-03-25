@@ -1,133 +1,133 @@
-# H355: 반대색 채널은 R(n)=σφ/(nτ) 긴장 역학의 생물학적 구현이다
+# H355: Opponent Color Channels are the Biological Implementation of R(n)=σφ/(nτ) Tension Dynamics
 
-## 가설
+## Hypothesis
 
-> 색각의 반대색(opponent color) 메커니즘 — L-M (적-녹), (L+M)-S (황-청),
-> L+M+S (명도) — 은 산술적 긴장 T(n)=|R(n)-1|의 신경 구현이다.
-> R=1 (n=6, 무긴장)에서 완전한 색 균형이 달성되고,
-> R≠1일 때 반대색 채널이 활성화되어 "색 긴장"을 만든다.
-> 색 항상성(color constancy)은 시각 시스템이 R→1로 수렴하는 과정이다.
+> The opponent color mechanisms in color vision — L-M (red-green), (L+M)-S (yellow-blue),
+> L+M+S (luminance) — are the neural implementation of arithmetic tension T(n)=|R(n)-1|.
+> At R=1 (n=6, zero tension), perfect color balance is achieved,
+> When R≠1, opponent color channels activate to create "color tension".
+> Color constancy is the visual system's process of converging to R→1.
 
-## 상태: 투기적 (🟪에 가까움)
+## Status: Speculative (close to 🟪)
 
-수학적 비유는 구조적이지만, 실제 신경 메커니즘과의 인과관계는 없음.
-테스트 가능한 예측을 포함하여 반증 가능성을 부여.
+The mathematical analogy is structural, but lacks causal relationship with actual neural mechanisms.
+Includes testable predictions to provide falsifiability.
 
-## 배경
+## Background
 
-### R(n) 긴장 역학 요약
+### R(n) Tension Dynamics Summary
 
 ```
   R(n) = σ(n)φ(n) / (n·τ(n))
 
-  T(n) = |R(n) - 1|  "산술적 긴장"
+  T(n) = |R(n) - 1|  "arithmetic tension"
 
-  R(6) = 1   → T(6) = 0   "완전 균형" (유일!)
-  R(2) = 3/4 → T(2) = 1/4 "억제 과잉"
-  R(3) = 4/3 → T(3) = 1/3 "증폭 과잉"
+  R(6) = 1   → T(6) = 0   "perfect balance" (unique!)
+  R(2) = 3/4 → T(2) = 1/4 "excess inhibition"
+  R(3) = 4/3 → T(3) = 1/3 "excess amplification"
 ```
 
-R(2)R(3) = (3/4)(4/3) = 1: 소인수 쌍의 긴장이 정확히 상쇄.
+R(2)R(3) = (3/4)(4/3) = 1: Prime factor pairs' tensions cancel exactly.
 
-### 반대색 메커니즘의 수학적 구조
+### Mathematical Structure of Opponent Color Mechanisms
 
 ```
-  추체 → 반대색 변환:
+  Cone → Opponent Transformation:
 
-  [R-G]   [+1  -1   0] [L]     흥분-억제 = φ(6) 채널
-  [Y-B] = [+1  +1  -2] [M]     합산-억제 = τ(6)-φ(6) 가중
-  [W-K]   [+1  +1  +1] [S]     전부 합산 = σ/τ 채널
+  [R-G]   [+1  -1   0] [L]     excitation-inhibition = φ(6) channels
+  [Y-B] = [+1  +1  -2] [M]     summation-inhibition = τ(6)-φ(6) weighted
+  [W-K]   [+1  +1  +1] [S]     all summation = σ/τ channel
 
-  변환 행렬 M의 성질:
-    det(M) = 6 = P₁ (비정규화 정수 행렬에서)
-    tr(M) = 3 = σ/τ = τ-1 (수정: φ가 아님!)
-    eigenvalues: λ³-3λ²+6λ-6=0 (계수에 3과 6 등장)
+  Properties of transformation matrix M:
+    det(M) = 6 = P₁ (in unnormalized integer matrix)
+    tr(M) = 3 = σ/τ = τ-1 (correction: not φ!)
+    eigenvalues: λ³-3λ²+6λ-6=0 (coefficients contain 3 and 6)
 ```
 
-**det(M) = 6 = 완전수**: 반대색 변환의 행렬식이 정확히 6!
+**det(M) = 6 = perfect number**: The determinant of opponent color transformation is exactly 6!
 
-### 색 긴장 ↔ 산술 긴장 대응
+### Color Tension ↔ Arithmetic Tension Correspondence
 
-| 색각 | R 역학 | 대응 |
+| Color Vision | R Dynamics | Correspondence |
 |------|--------|------|
-| 무채색 (회색) | R=1, T=0 | 완전 균형 (n=6) |
-| 적색 우세 | R>1 (L>M) | 증폭 과잉 (n≥3) |
-| 녹색 우세 | R<1 (M>L) | 억제 과잉 (n=2) |
-| 보색 쌍 | R(p)R(q)=1 | 소인수 쌍 상쇄 |
-| 색 적응 | R→1 수렴 | R-chain 동역학 |
-| 색 항상성 | T 최소화 | 긴장 0으로 수렴 |
+| Achromatic (gray) | R=1, T=0 | Perfect balance (n=6) |
+| Red dominance | R>1 (L>M) | Excess amplification (n≥3) |
+| Green dominance | R<1 (M>L) | Excess inhibition (n=2) |
+| Complementary pairs | R(p)R(q)=1 | Prime factor pair cancellation |
+| Color adaptation | R→1 convergence | R-chain dynamics |
+| Color constancy | T minimization | Convergence to zero tension |
 
-### 예측 (테스트 가능)
+### Predictions (Testable)
 
-1. **보색 혼합 = 무긴장**: 보색(180°) 혼합 시 무채색 = T=0
-   - R(2)·R(3)=1 ↔ Red-Green 보색 상쇄
-   - 실험: 보색 쌍의 "주관적 중립도" 측정
+1. **Complementary mixing = zero tension**: Complementary (180°) mixing produces achromatic = T=0
+   - R(2)·R(3)=1 ↔ Red-Green complementary cancellation
+   - Experiment: Measure "subjective neutrality" of complementary pairs
 
-2. **색 적응 시간 ∝ T(n)**: 높은 긴장의 색에서 적응이 느림
-   - 순수 빨강(T≈1/3) vs 순수 파랑(T≈1/4): 빨강이 느려야 함
-   - 실험: 크로매틱 적응 시간 측정
+2. **Color adaptation time ∝ T(n)**: Higher tension colors adapt slower
+   - Pure red (T≈1/3) vs pure blue (T≈1/4): red should be slower
+   - Experiment: Measure chromatic adaptation times
 
-3. **6각 구조의 최적성**: 색상환을 6등분한 것이 색 변별의 최적 배치
-   - 이론: hex lattice가 2D 최밀 배치 (Thue 정리)
-   - 실험: 색 범주 경계가 60° 간격에 가까운가?
+3. **Optimality of hexagonal structure**: 6-fold division of color wheel is optimal for color discrimination
+   - Theory: hex lattice is optimal 2D packing (Thue's theorem)
+   - Experiment: Are color category boundaries close to 60° intervals?
 
-## ASCII 다이어그램: 반대색 ↔ R 역학
+## ASCII Diagram: Opponent Colors ↔ R Dynamics
 
 ```
-  R(n) 스펙트럼과 색각의 대응:
+  R(n) spectrum and color vision correspondence:
 
-  R(n)  억제←─────균형──────→증폭
-  0.75  ▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░  R=3/4 (n=2, 녹)
-  1.00  ░░░░░░░░░████░░░░░░░░░░  R=1   (n=6, 회색=무긴장)
-  1.33  ░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓  R=4/3 (n=3, 적)
+  R(n)  inhibition←─────balance──────→amplification
+  0.75  ▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░  R=3/4 (n=2, green)
+  1.00  ░░░░░░░░░████░░░░░░░░░░  R=1   (n=6, gray=zero tension)
+  1.33  ░░░░░░░░░░░░░▓▓▓▓▓▓▓▓▓  R=4/3 (n=3, red)
 
-  간극(3/4, 1): 색각에서 "존재하지 않는 색" (forbidden color)
-  간극(1, 7/6): 또 다른 forbidden zone
+  Gap(3/4, 1): "Non-existent colors" in color vision (forbidden color)
+  Gap(1, 7/6): Another forbidden zone
 
-  반대색 변환:
+  Opponent transformation:
     L ──→ (+) ──→ R-G channel ──→ T(R-G) = |R_RG - 1|
     M ──→ (-) ──┘
     L ──→ (+) ──→ Y-B channel ──→ T(Y-B) = |R_YB - 1|
     M ──→ (+) ──┤
     S ──→ (-) ──┘
-    L ──→ (+) ──→ W-K channel ──→ T(WK) = (총합)
+    L ──→ (+) ──→ W-K channel ──→ T(WK) = (total)
     M ──→ (+) ──┤
     S ──→ (+) ──┘
 ```
 
-## 색 항상성과 R-chain 수렴
+## Color Constancy and R-chain Convergence
 
-색 항상성(color constancy)은 조명이 바뀌어도 물체 색을 일정하게 인식하는 현상.
+Color constancy is the phenomenon of perceiving object colors as constant despite illumination changes.
 
 ```
-  조명 변화 → 추체 반응 변화 → "긴장" 증가 → 적응 → 긴장 감소 → 원래 색 복원
+  Illumination change → Cone response change → "Tension" increase → Adaptation → Tension decrease → Original color restored
 
-  이것은 R-chain의 동역학과 구조가 같다:
-  n (큰 값) → R(n) → R(R(n)) → ... → 1  (모든 체인이 1로 수렴)
+  This has the same structure as R-chain dynamics:
+  n (large value) → R(n) → R(R(n)) → ... → 1  (all chains converge to 1)
 
-  색 항상성 = 시각 시스템의 R-chain 수렴!
+  Color constancy = R-chain convergence of the visual system!
 ```
 
-## 교차 연결
+## Cross-connections
 
-- **H-CX-1**: T(n)=|R-1| 긴장 = 색 긴장의 수학적 정의
-- **H354**: 6각 색상 구조 (기하적 측면)
-- **H-CX-6 (신경화학)**: 신경전달물질 6종 ↔ 색각 6 endpoint
-- **H-MP-26**: R-chain 동역학 ↔ 색 적응 동역학
-- **R290**: σ(6)=12=첫 abundant after 6 ↔ 과채도(oversaturation)의 경계?
+- **H-CX-1**: T(n)=|R-1| tension = mathematical definition of color tension
+- **H354**: Hexagonal color structure (geometric aspect)
+- **H-CX-6 (Neurochemistry)**: 6 neurotransmitter types ↔ 6 color endpoints
+- **H-MP-26**: R-chain dynamics ↔ color adaptation dynamics
+- **R290**: σ(6)=12=first abundant after 6 ↔ boundary of oversaturation?
 
-## 한계
+## Limitations
 
-1. 반대색 행렬의 정확한 계수는 연구자마다 다름 (det=6은 특정 정규화 의존)
-2. "색 긴장"은 비유이지 측정 가능한 물리량이 아닐 수 있음
-3. R(n) 역학과 색각의 대응은 차원이 다름 (정수 vs 연속 스펙트럼)
-4. 실제 색 적응은 Von Kries adaptation (단순 스케일링)이 주류
-5. 테스트 가능한 예측이 있지만 실험 수행이 어려움
+1. Exact coefficients of opponent color matrix vary among researchers (det=6 depends on specific normalization)
+2. "Color tension" may be a metaphor, not a measurable physical quantity
+3. Correspondence between R(n) dynamics and color vision has different dimensions (integer vs continuous spectrum)
+4. Actual color adaptation is mainly Von Kries adaptation (simple scaling)
+5. While predictions are testable, experimental execution is difficult
 
-## 검증 방향
+## Verification Directions
 
-1. 반대색 행렬 det 계산 (다양한 정규화에서)
-2. 색 범주 경계의 각도 분포 (60° 간격에 가까운가?)
-3. 크로매틱 적응 시간과 T(n) 상관 분석
-4. 보색 상쇄의 완전도와 R(p)R(q)=1 정밀도 비교
-5. 사색시(tetrachromat)의 색 공간 구조 → τ(6)=4 연결?
+1. Calculate opponent matrix det (in various normalizations)
+2. Angular distribution of color category boundaries (close to 60° intervals?)
+3. Correlation analysis between chromatic adaptation time and T(n)
+4. Compare completeness of complementary cancellation with R(p)R(q)=1 precision
+5. Color space structure of tetrachromats → τ(6)=4 connection?

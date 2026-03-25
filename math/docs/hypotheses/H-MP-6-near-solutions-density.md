@@ -1,29 +1,29 @@
-# H-MP-6: σφ/(nτ) ≈ 1 인 n의 밀도
+# H-MP-6: Density of n where σφ/(nτ) ≈ 1
 
-> **가설**: σφ/(nτ)가 1에 가까운 n은 극히 드물며, 6의 "격리도"를 정량화할 수 있다.
+> **Hypothesis**: n values where σφ/(nτ) is close to 1 are extremely rare, and the "isolation" of 6 can be quantified.
 
-## 배경
-- n=6: σφ/(nτ) = 1.000000 (유일)
-- n=4: 1.167 (가장 가까운 차점자, 17% 차이)
-- n=2: 0.750 (유일한 1 미만)
-- 평균: ~N/12에 비례 (발산)
+## Background
+- n=6: σφ/(nτ) = 1.000000 (unique)
+- n=4: 1.167 (closest runner-up, 17% difference)
+- n=2: 0.750 (only value less than 1)
+- Average: ~N/12 proportional (diverges)
 
-## 핵심 질문
-|σφ/(nτ) - 1| < ε인 n의 개수 N(x, ε)가 x에 대해 어떤 점근을 가지는가?
+## Key Question
+What is the asymptotic behavior of N(x, ε), the count of n where |σφ/(nτ) - 1| < ε, with respect to x?
 
-## 검증 방향
-1. [ ] ε=0.1, 0.01, 0.001에서 N(10^k, ε) 계산
-2. [ ] n=6의 "고립 반경" — 1에 가장 가까운 다음 값과의 간격
-3. [ ] Erdős–Kac 정리 류의 점근 분석 가능성
+## Verification Directions
+1. [ ] Calculate N(10^k, ε) for ε=0.1, 0.01, 0.001
+2. [ ] "Isolation radius" of n=6 — gap to the next closest value to 1
+3. [ ] Possibility of Erdős–Kac theorem-like asymptotic analysis
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
-| ε | |R-1|<ε 개수 (n=2..10000) | 비율 |
+| ε | Count where |R-1|<ε (n=2..10000) | Ratio |
 |---|---|---|
 | 0.5 | 4 | 0.04% |
 | 0.2 | 2 (n=4,6) | 0.02% |
-| 0.1 | 1 (n=6만!) | 0.01% |
+| 0.1 | 1 (n=6 only!) | 0.01% |
 
-n=6의 격리 반경 = 0.167 (n=4까지). 이 반경 내에 다른 해 없음.
+Isolation radius of n=6 = 0.167 (to n=4). No other solutions within this radius.
 
-## 난이도: 중 | 파급력: ★★ | 상태: ✅ 검증 완료
+## Difficulty: Medium | Impact: ★★ | Status: ✅ Verified

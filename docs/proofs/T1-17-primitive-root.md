@@ -1,56 +1,56 @@
-# T1-17: 3과 6은 137의 원시근
+# T1-17: 3 and 6 are Primitive Roots of 137
 
-## 발견
-
-```
-  ord_137(3) = 136 → 3은 137의 원시근!
-  ord_137(6) = 136 → 6도 137의 원시근!
-  ord_137(2) = 68  → 2는 원시근 아님 (반만 생성)
-
-  → 완전수 6과 그 약수 3이 미세구조상수 137의 원시근
-  → 3^k mod 137 이 1~136 전체를 생성
-  → 6^k mod 137 도 1~136 전체를 생성
-```
-
-## 의미
+## Discovery
 
 ```
-  섬 A(6, 완전수) ↔ 섬 B(137, 미세구조)
-  연결: 원시근 관계 (정수론 🟦)
+  ord_137(3) = 136 → 3 is a primitive root of 137!
+  ord_137(6) = 136 → 6 is also a primitive root of 137!
+  ord_137(2) = 68  → 2 is not a primitive root (generates only half)
 
-  원시근 = "곱셈군의 생성원"
-  → 6이 Z/137Z* 전체를 생성
-  → 완전수가 미세구조 수의 "씨앗"
+  → Perfect number 6 and its divisor 3 are primitive roots of fine structure constant 137
+  → 3^k mod 137 generates all of 1~136
+  → 6^k mod 137 also generates all of 1~136
 ```
 
-## 검증
+## Meaning
+
+```
+  Island A(6, perfect number) ↔ Island B(137, fine structure)
+  Connection: Primitive root relation (Number theory 🟦)
+
+  Primitive root = "Generator of multiplicative group"
+  → 6 generates entire Z/137Z*
+  → Perfect number is the "seed" of fine structure number
+```
+
+## Verification
 
 ```
   6^1 mod 137 = 6
   6^2 mod 137 = 36
   6^3 mod 137 = 79  (= 216 mod 137)
   ...
-  6^136 mod 137 = 1 (페르마 소정리)
+  6^136 mod 137 = 1 (Fermat's little theorem)
 
   ord = 136 = φ(137) = 137-1
-  → 위수 = φ(137) → 원시근 ✅
+  → Order = φ(137) → Primitive root ✅
 ```
 
-## 연분수 관찰
+## Continued Fraction Observation
 
 ```
   I* =           [0; 4, 1, 2, 1, 1, 18, ...]
   1/2-ln(4/3) =  [0; 4, 1, 2, 2, 4, 4, ...]
 
-  처음 3항 [0; 4, 1, 2] 일치
-  → I*와 골든존 하한이 연분수적으로 가까움
-  → 4번째 항부터 갈라짐 (1 vs 2)
+  First 3 terms [0; 4, 1, 2] match
+  → I* and Golden Zone lower bound are close in continued fraction sense
+  → Diverge from 4th term (1 vs 2)
 ```
 
-## 판정
+## Judgment
 
 ```
-  원시근 관계: 🟩 (정수론, 계산으로 확인)
-  섬 A↔B 연결: 🟩 (비자명! 8을 통한 연결과 독립적)
-  의미 해석: 🟧 ("씨앗" 해석은 우리 것)
+  Primitive root relation: 🟩 (Number theory, verified by calculation)
+  Island A↔B connection: 🟩 (Non-trivial! Independent from connection through 8)
+  Meaning interpretation: 🟧 ("Seed" interpretation is ours)
 ```

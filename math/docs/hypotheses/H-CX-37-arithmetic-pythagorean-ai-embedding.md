@@ -1,25 +1,25 @@
-# H-CX-37: σ²+φ²+τ²=4·41 = AI 임베딩 공간의 거리
+# H-CX-37: σ²+φ²+τ²=4·41 = Distance in AI Embedding Space
 
-> **가설**: σ²+φ²+τ²=164가 n=6에서만 성립하는 것은
-> (σ,φ,τ) 3차원 "산술 임베딩 공간"에서의 L² 노름이 특별한 값임을 의미.
+> **Hypothesis**: The fact that σ²+φ²+τ²=164 holds only at n=6 means
+> that the L² norm in the (σ,φ,τ) 3-dimensional "arithmetic embedding space" has a special value.
 
-## 핵심
+## Core
 
 ```
-  산술 임베딩: n → (σ(n), φ(n), τ(n)) ∈ R³
+  Arithmetic embedding: n → (σ(n), φ(n), τ(n)) ∈ R³
 
   n=6: (12, 2, 4) → |v|² = 144+4+16 = 164 = 4·41
 
   |v|² = 4·41 = τ(6)·(2⁵+3²):
-  "L² 노름 = 약수개수 × (2와3의 거듭제곱합)"
+  "L² norm = number of divisors × (sum of powers of 2 and 3)"
 
-  AI 임베딩과의 비유:
-    word2vec: 단어 → 벡터. 유사 단어 = 가까운 벡터.
-    산술 임베딩: 수 → (σ,φ,τ). "유사한 수 = 가까운 벡터"?
-    n=6: |v|²=164. "6의 산술적 크기!"
+  Analogy with AI embeddings:
+    word2vec: word → vector. Similar words = nearby vectors.
+    Arithmetic embedding: number → (σ,φ,τ). "Similar numbers = nearby vectors"?
+    n=6: |v|²=164. "Arithmetic magnitude of 6!"
 
-  예측: n=6에 가장 가까운 수 (L² 거리)?
-    |(σ(6)-σ(m), φ(6)-φ(m), τ(6)-τ(m))|² 최소인 m?
+  Prediction: Numbers closest to n=6 (L² distance)?
+    m that minimizes |(σ(6)-σ(m), φ(6)-φ(m), τ(6)-τ(m))|²?
 ```
 
-## 판정: 🟨 관찰 (164=4·41은 고정 상수) | 파급력: ★★
+## Judgment: 🟨 Observation (164=4·41 is a fixed constant) | Impact: ★★

@@ -1,17 +1,18 @@
+```python
 #!/usr/bin/env python3
-"""TEXT 도메인 반발력장 실험 — 20 Newsgroups (4 카테고리)
+"""TEXT domain RepulsionField experiment — 20 Newsgroups (4 categories)
 
-이미지(MNIST/CIFAR)가 아닌 텍스트에서 RepulsionField 구조가 작동하는지 검증.
+Verify if RepulsionField structure works on text, not just images (MNIST/CIFAR).
 
-아키텍처:
-  1. sklearn TF-IDF → 1000-dim 고정 벡터
+Architecture:
+  1. sklearn TF-IDF → 1000-dim fixed vector
   2. RepulsionField: EngineA-like MLP vs EngineG-like MLP
-  3. Dense baseline과 비교
-  4. tension, accuracy, tension-accuracy 상관관계 측정
-  5. MI 효율 ≈ ln(2) 검증 (H-CX-2)
+  3. Compare with Dense baseline
+  4. Measure tension, accuracy, tension-accuracy correlation
+  5. Verify MI efficiency ≈ ln(2) (H-CX-2)
 
-데이터: sklearn 20newsgroups (4 카테고리: sci.space, rec.sport.baseball,
-        comp.graphics, talk.politics.guns)
+Data: sklearn 20newsgroups (4 categories: sci.space, rec.sport.baseball,
+      comp.graphics, talk.politics.guns)
 """
 
 import torch
@@ -28,7 +29,7 @@ from sklearn.metrics import mutual_info_score
 from scipy.stats import pearsonr
 
 # ─────────────────────────────────────────
-# 상수
+# Constants
 # ─────────────────────────────────────────
 SIGMA = 12
 TAU = 4
@@ -49,7 +50,7 @@ LR = 0.001
 
 
 # ─────────────────────────────────────────
-# 데이터 로드
+# Data loading
 # ─────────────────────────────────────────
 def load_text_data():
     """20 Newsgroups 4-class → TF-IDF → PyTorch tensors."""
@@ -87,7 +88,7 @@ def load_text_data():
 
 
 # ─────────────────────────────────────────
-# Expert (MoE 기본 블록)
+# Expert (Basic MoE block)
 # ─────────────────────────────────────────
 class Expert(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim, dropout=0.3):
@@ -188,9 +189,9 @@ class DenseBaseline(nn.Module):
 # Text RepulsionField (A vs G)
 # ─────────────────────────────────────────
 class TextRepulsionField(nn.Module):
-    """반발력장: EngineA(생성) vs EngineG(교정) on TF-IDF text.
+    """Repulsion Field: EngineA(generative) vs EngineG(calibration) on TF-IDF text.
 
-    구조는 model_meta_engine.py RepulsionFieldEngine과 동일.
+    Structure is identical to RepulsionFieldEngine in model_meta_engine.py.
     """
     def __init__(self, input_dim=INPUT_DIM, hidden_dim=HIDDEN_DIM, output_dim=N_CLASSES):
         super().__init__()
@@ -202,7 +203,7 @@ class TextRepulsionField(nn.Module):
             nn.Tanh(),
         )
 
-        self.tension_scale = nn.Parameter(torch.tensor(1/3))  # 메타 부동점
+        self.tension_scale = nn.Parameter(torch.tensor(1/3))  # Meta fixed point
         self.aux_loss = torch.tensor(0.0)
         self.tension_magnitude = 0.0
 
@@ -227,7 +228,7 @@ class TextRepulsionField(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 학습 루프
+# Training loop
 # ─────────────────────────────────────────
 def train_model(model, train_loader, test_loader, epochs=EPOCHS, lr=LR,
                 is_repulsion=False, aux_lambda=0.1):
@@ -297,7 +298,7 @@ def train_model(model, train_loader, test_loader, epochs=EPOCHS, lr=LR,
 
 
 # ─────────────────────────────────────────
-# MI 효율 측정
+# MI efficiency measurement
 # ─────────────────────────────────────────
 def compute_mi_efficiency(model, X_test, y_test):
     """MI efficiency = (MI_field - MI_best_pole) / (MI_max - MI_best_pole).
@@ -397,7 +398,7 @@ def tension_accuracy_correlation(model, X_test, y_test):
 
 
 # ─────────────────────────────────────────
-# ASCII 시각화
+# ASCII visualization
 # ─────────────────────────────────────────
 def ascii_bar(label, value, max_val, width=40):
     filled = int(value / max_val * width) if max_val > 0 else 0
@@ -427,7 +428,7 @@ def ascii_plot(title, values, labels, width=50):
 
 
 # ─────────────────────────────────────────
-# 파라미터 수
+# Parameter count
 # ─────────────────────────────────────────
 def count_params(model):
     return sum(p.numel() for p in model.parameters())
@@ -574,3 +575,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

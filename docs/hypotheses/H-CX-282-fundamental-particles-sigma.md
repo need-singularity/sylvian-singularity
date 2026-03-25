@@ -1,3 +1,3 @@
-# H-CX-282: ⭐⭐⭐🟩 기본입자 12종 = σ(6) = 약수합
+# H-CX-282: ⭐⭐⭐🟩 Fundamental Particles 12 Types = σ(6) = Divisor Sum
 
-> 쿼크6+렙톤6 = 12 = σ(6). 물질의 전체 입자 수 = 완전수의 약수합.
+> Quarks6+Leptons6 = 12 = σ(6). Total number of matter particles = Divisor sum of perfect number.

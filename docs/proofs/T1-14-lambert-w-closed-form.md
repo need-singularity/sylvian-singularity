@@ -1,6 +1,6 @@
-# T1-14: ⭐ 골든존 하한 닫힌 형태 = Lambert W
+# T1-14: ⭐ Golden Zone Lower Bound Closed Form = Lambert W
 
-## 정확한 공식
+## Exact Formula
 
 ```
   I* = -1 / (2 · W₋₁(-e^(-3/2)))
@@ -8,67 +8,67 @@
   = 0.212073184387569...
 
   where:
-    W₋₁ = Lambert W 함수 하위 분지 (🟦 기존 수학)
-    3/2 = (1+1/2) = 오일러곱 p=2 인수 (🟩)
-    e = 자연상수 (🟩/🟦)
+    W₋₁ = Lambert W function lower branch (🟦 existing mathematics)
+    3/2 = (1+1/2) = Euler product p=2 factor (🟩)
+    e = natural constant (🟩/🟦)
 ```
 
-## 유도
+## Derivation
 
 ```
-  출발: P(G > σ₋₁(6) | I) = I  (부동점 조건)
+  Starting: P(G > σ₋₁(6) | I) = I  (fixed point condition)
 
   1. 1 - 2I + 2I·ln(2I) = I                    [T1-11]
-  2. x = 2I: x·e^(1/x) = e^(3/2)               [변환]
-  3. ln(x) + 1/x = 3/2                          [양변 ln]
-  4. u = 1/x: u - ln(u) = 3/2                   [치환]
-  5. e^u / u = e^(3/2)                           [정리]
-  6. u·e^(-u) = e^(-3/2)                         [역수]
-  7. -u·e^(-u) = -e^(-3/2)                       [부호]
-  8. -u = W₋₁(-e^(-3/2))                         [Lambert W 정의]
-  9. u = -W₋₁(-e^(-3/2))                         [부호]
-  10. I* = 1/(2u) = -1/(2·W₋₁(-e^(-3/2)))        [역수]
+  2. x = 2I: x·e^(1/x) = e^(3/2)               [transformation]
+  3. ln(x) + 1/x = 3/2                          [ln both sides]
+  4. u = 1/x: u - ln(u) = 3/2                   [substitution]
+  5. e^u / u = e^(3/2)                           [rearrange]
+  6. u·e^(-u) = e^(-3/2)                         [reciprocal]
+  7. -u·e^(-u) = -e^(-3/2)                       [sign]
+  8. -u = W₋₁(-e^(-3/2))                         [Lambert W definition]
+  9. u = -W₋₁(-e^(-3/2))                         [sign]
+  10. I* = 1/(2u) = -1/(2·W₋₁(-e^(-3/2)))        [reciprocal]
 ```
 
-## 수치 검증
+## Numerical Verification
 
 ```
   u = -W₋₁(-e^(-3/2)) = 2.357676673945899
   x = 1/u = 0.424146368775139
   I* = x/2 = 0.212073184387569
 
-  검증: u - ln(u) = 1.500000000000000 ✅
-  검증: x·e^(1/x) = e^(3/2) = 4.481689... ✅
+  Verify: u - ln(u) = 1.500000000000000 ✅
+  Verify: x·e^(1/x) = e^(3/2) = 4.481689... ✅
 ```
 
-## 시뮬레이션 하한과의 비교
+## Comparison with Simulation Lower Bound
 
 ```
   I* (Lambert W)    = 0.212073184387569
   1/2 - ln(4/3)     = 0.212317927548219
-  차이: 2.45 × 10⁻⁴ (0.12%)
+  Difference: 2.45 × 10⁻⁴ (0.12%)
 
-  → 시뮬레이션의 "1/2-ln(4/3)"는 근사
-  → 정확한 하한은 Lambert W로 표현됨
-  → 또는: 시뮬레이션의 하한 정의가 부동점과 다를 수 있음
+  → The simulation's "1/2-ln(4/3)" is an approximation
+  → The exact lower bound is expressed with Lambert W
+  → Or: The simulation's lower bound definition may differ from the fixed point
 ```
 
-## 골든존 전체 구조 (닫힌 형태)
+## Golden Zone Complete Structure (Closed Form)
 
 ```
-  상한: 1/σ₋₁(6) = 1/2                        [T1-10, 정확]
-  하한: -1/(2·W₋₁(-e^(-3/2)))                  [이 문서, 정확]
-  폭:  1/2 + 1/(2·W₋₁(-e^(-3/2)))              [상한 - 하한]
+  Upper bound: 1/σ₋₁(6) = 1/2                        [T1-10, exact]
+  Lower bound: -1/(2·W₋₁(-e^(-3/2)))                  [this document, exact]
+  Width:  1/2 + 1/(2·W₋₁(-e^(-3/2)))              [upper - lower]
        = 0.287927 ≈ ln(4/3) = 0.287682 (0.09%)
 
-  3/2 = (1+1/2) = σ₋₁(6)의 오일러곱 p=2 인수
-  → 완전수 6 하나로 골든존 전체가 결정됨
+  3/2 = (1+1/2) = Euler product p=2 factor of σ₋₁(6)
+  → Perfect number 6 alone determines the entire Golden Zone
 ```
 
-## 판정
+## Judgment
 
 ```
-  닫힌 형태 유도: 🟩 (Lambert W + 오일러곱 인수, 골든존 무관)
-  시뮬레이션과 일치: 🟧 (0.12% 차이, 거의 일치)
-  골든존 의존: ❌ 없음
+  Closed form derivation: 🟩 (Lambert W + Euler product factor, Golden Zone independent)
+  Agreement with simulation: 🟧 (0.12% difference, nearly matching)
+  Golden Zone dependence: ❌ None
 ```

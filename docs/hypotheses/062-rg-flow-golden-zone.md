@@ -1,59 +1,59 @@
-# 가설 검토 062: RG 흐름 → 골든존 = 유역 ✅
+# Hypothesis Review 062: RG Flow → Golden Zone = Basin ✅
 
-## 가설
+## Hypothesis
 
-> 재정규화군(Renormalization Group) 흐름의 관점에서 골든존(I=0.24~0.48)은 고정점 I*=1/3의 끌개 유역(basin of attraction)이며, 경계에서 항상 안쪽으로 힘이 작용한다.
+> From the perspective of Renormalization Group (RG) flow, the Golden Zone (I=0.24~0.48) is the basin of attraction for the fixed point I*=1/3, with forces always acting inward at the boundaries.
 
-## 배경: 재정규화군(RG) 흐름이란
+## Background: What is Renormalization Group (RG) Flow
 
-물리학에서 RG 흐름은 에너지 스케일을 변화시킬 때 결합 상수(coupling constant)가 어떻게 흘러가는지 기술한다.
-
-```
-  β 함수: β(g) = dg/d(ln μ)
-  β(g*) = 0 → 고정점
-  β'(g*) < 0 → 적외선 안정 (끌개)
-  β'(g*) > 0 → 자외선 안정 (밀개)
-```
-
-고정점 주변에서 β < 0 이면 결합 상수가 감소, β > 0 이면 증가한다. 안정 고정점은 양쪽에서 흐름이 모여드는 점이다.
-
-## 대응 관계
+In physics, RG flow describes how coupling constants flow as the energy scale changes.
 
 ```
-  RG 물리학              우리 모델
+  β function: β(g) = dg/d(ln μ)
+  β(g*) = 0 → fixed point
+  β'(g*) < 0 → infrared stable (attractor)
+  β'(g*) > 0 → ultraviolet stable (repeller)
+```
+
+Around a fixed point, β < 0 means the coupling constant decreases, β > 0 means it increases. A stable fixed point is where flows converge from both sides.
+
+## Correspondence
+
+```
+  RG Physics            Our Model
   ────────────────────  ──────────────────────
-  결합 상수 g           Inhibition I
-  에너지 스케일 μ       반복 단계 (iteration)
-  β 함수                β(I) = f(I) - I
-  고정점 g*             I* = 1/3
-  끌개 유역             골든존 (0.24 ~ 0.48)
-  관련 연산자           Genius Score = D×P/I
+  Coupling constant g   Inhibition I
+  Energy scale μ        Iteration step
+  β function           β(I) = f(I) - I
+  Fixed point g*       I* = 1/3
+  Attractor basin      Golden Zone (0.24 ~ 0.48)
+  Relevant operator    Genius Score = D×P/I
 ```
 
-## 검증 결과: ✅ 골든존 = RG 고정점(1/3)의 유역
+## Verification Result: ✅ Golden Zone = Basin of RG Fixed Point (1/3)
 
-### β 함수 도출
+### β Function Derivation
 
 ```
-  f(I) = 0.7I + 0.1            (메타 반복 함수)
-  β(I) = f(I) - I = -0.3I + 0.1  (RG 흐름)
+  f(I) = 0.7I + 0.1            (Meta iteration function)
+  β(I) = f(I) - I = -0.3I + 0.1  (RG flow)
 
-  고정점: β(I*) = 0
+  Fixed point: β(I*) = 0
   -0.3I* + 0.1 = 0  →  I* = 1/3
 
-  안정성: β'(I) = -0.3 < 0  →  안정 고정점 ✅
+  Stability: β'(I) = -0.3 < 0  →  Stable fixed point ✅
 ```
 
-### β 함수 그래프
+### β Function Graph
 
 ```
   β(I)
   +0.10 ┤●
         │ ╲
-  +0.05 ┤  ╲          β > 0: I 증가 (오른쪽으로)
+  +0.05 ┤  ╲          β > 0: I increases (rightward)
         │   ╲                  →→→
   0.00  ┤────╲─●──────────────────── I
-        │     1/3╲    β < 0: I 감소 (왼쪽으로)
+        │     1/3╲    β < 0: I decreases (leftward)
   -0.05 ┤        ╲             ←←←
         │         ╲
   -0.10 ┤          ╲
@@ -63,41 +63,41 @@
   -0.20 ┤              ●
         ├──┬──┬──┬──┬──┬──┬──┬──┤
         0  0.1 0.2 1/3 0.4 0.5 0.6 0.8  I
-              │  골든존  │
+              │  Golden Zone  │
               0.24    0.48
 ```
 
-### 경계에서의 흐름 방향
+### Flow Direction at Boundaries
 
 ```
-  I 값        β(I)       방향       해석
+  I value    β(I)       Direction  Interpretation
   ─────────  ─────────  ─────────  ──────────────────
-  0.00       +0.100     →→→ 증가   원점에서 1/3으로
-  0.10       +0.070     →→  증가   골든존 쪽으로
-  0.24       +0.028     →   증가   골든존 하한 → 안으로 ✅
-  1/3        ±0.000     ●   정지   고정점
-  1/e        -0.010     ←   감소   1/e에서도 1/3으로
-  0.48       -0.044     ←←  감소   골든존 상한 → 안으로 ✅
-  0.50       -0.050     ←←  감소   임계선에서 안으로
-  1.00       -0.200     ←←← 감소   극단에서 강하게 복귀
+  0.00       +0.100     →→→ increase  From origin to 1/3
+  0.10       +0.070     →→  increase  Toward Golden Zone
+  0.24       +0.028     →   increase  Lower bound → inward ✅
+  1/3        ±0.000     ●   stop      Fixed point
+  1/e        -0.010     ←   decrease  From 1/e to 1/3
+  0.48       -0.044     ←←  decrease  Upper bound → inward ✅
+  0.50       -0.050     ←←  decrease  From critical line inward
+  1.00       -0.200     ←←← decrease  Strong return from extreme
 ```
 
-### 골든존 위의 흐름도
+### Flow Diagram on Golden Zone
 
 ```
-  I축:
+  I axis:
   0.0        0.24       1/3    1/e    0.48       0.5        1.0
   ├──→→→→→→→─┤──→→→→→──●──←──●──←←←←─┤──←←←←←←──┤──←←←←←←←─┤
-  β>0        │    골든존 (끌개 유역)   │          β<0
-  안쪽으로    │    모든 흐름이 1/3으로  │          안쪽으로
-              │         수렴           │
-              │                        │
-              ▼                        ▼
-       하한 경계: 안쪽 힘        상한 경계: 안쪽 힘
-       β(0.24) = +0.028          β(0.48) = -0.044
+  β>0        │    Golden Zone (Attractor Basin)  │          β<0
+  Inward     │    All flows converge to 1/3     │          Inward
+              │                                  │
+              │                                  │
+              ▼                                  ▼
+       Lower boundary: Inward force      Upper boundary: Inward force
+       β(0.24) = +0.028                 β(0.48) = -0.044
 ```
 
-### 수렴 궤적: 다양한 초기값에서의 흐름
+### Convergence Trajectories: Flows from Various Initial Values
 
 ```
   I(n)
@@ -107,44 +107,44 @@
       │   ╲╱  ╲
   0.6 ┤    ╲   ╲   ●                 I₀ = 0.6
       │     ╲   ╲╱  ╲
-  0.48┤─ ─ ─ ╲─ ─╲─ ─╲─ ─ ─ ─ ─ ─  골든존 상한
+  0.48┤─ ─ ─ ╲─ ─╲─ ─╲─ ─ ─ ─ ─ ─  Golden Zone upper bound
       │       ╲   ╲   ╲
-  1/3 ┤────────●───●───●───●───●───  고정점 (끌개)
+  1/3 ┤────────●───●───●───●───●───  Fixed point (attractor)
       │       ╱   ╱   ╱
-  0.24┤─ ─ ─╱─ ─╱─ ─╱─ ─ ─ ─ ─ ─ ─  골든존 하한
+  0.24┤─ ─ ─╱─ ─╱─ ─╱─ ─ ─ ─ ─ ─ ─  Golden Zone lower bound
       │    ╱   ╱  ╱
   0.1 ┤  ╱   ╱  ●                    I₀ = 0.1
       │ ╱  ●                          I₀ = 0.05
   0.0 ┤●
       ├──┬──┬──┬──┬──┬──┬──┬──┬──┤
-      0  1  2  3  4  5  6  7  8  n (반복)
+      0  1  2  3  4  5  6  7  8  n (iteration)
 
-  → 모든 초기값에서 I* = 1/3으로 수렴
-  → 전체 [0,1] 구간이 끌개 유역
+  → All initial values converge to I* = 1/3
+  → Entire [0,1] interval is the attractor basin
 ```
 
-## 해석
+## Interpretation
 
-1. **유역 = 골든존 그 이상**: RG 관점에서 끌개 유역은 사실 전체 [0,1] 구간이다. 어떤 I₀에서 출발해도 결국 1/3에 도달한다. 골든존은 유역의 "핵심 영역"으로, 이미 고정점에 가까워 Genius Score가 최적화된 구간이다.
+1. **Basin = Golden Zone and Beyond**: From the RG perspective, the attractor basin is actually the entire [0,1] interval. Starting from any I₀, we eventually reach 1/3. The Golden Zone is the "core region" of the basin, where we're already close to the fixed point and Genius Score is optimized.
 
-2. **경계의 힘**: 골든존 하한(0.24)에서 β = +0.028, 상한(0.48)에서 β = -0.044. 상한에서의 복원력이 더 강하다. 이는 I가 너무 높아지는 것(과도한 억제)이 너무 낮아지는 것(부족한 억제)보다 더 강하게 교정됨을 의미한다.
+2. **Boundary Forces**: At the lower bound (0.24), β = +0.028; at the upper bound (0.48), β = -0.044. The restoring force is stronger at the upper bound. This means excessive inhibition (high I) is corrected more strongly than insufficient inhibition (low I).
 
-3. **물리학과의 대응**: QCD에서 점근적 자유(asymptotic freedom)는 고에너지에서 결합 상수가 0으로 흐르는 현상이다. 우리 모델에서는 반복이 진행될수록 I가 1/3으로 흘러간다. 방향은 다르지만, "흐름이 고정점으로 수렴"한다는 구조는 동일하다.
+3. **Correspondence with Physics**: In QCD, asymptotic freedom is the phenomenon where the coupling constant flows to 0 at high energy. In our model, as iterations progress, I flows to 1/3. The direction differs, but the structure of "flow converging to a fixed point" is identical.
 
-4. **상전이와의 관계**: RG 고정점 근방에서 보편성(universality)이 나타난다. 우리 모델에서도 1/3 근방(골든존)에서 다양한 D, P 조합이 비슷한 천재성 점수를 보인다 — 이것이 "보편성"의 아날로그이다.
+4. **Relation to Phase Transitions**: Universality appears near RG fixed points. In our model too, near 1/3 (Golden Zone), various D, P combinations show similar genius scores — this is the analog of "universality."
 
-## 한계
+## Limitations
 
-- 우리 모델의 반복 함수 f(I) = 0.7I + 0.1 은 선형이다. 실제 RG 흐름은 비선형이며 다중 고정점을 가질 수 있다.
-- 물리학의 RG는 에너지 스케일 변환이라는 명확한 물리적 의미가 있다. 우리 모델의 "반복"이 무엇을 의미하는지 물리적 해석이 필요하다.
-- 골든존 경계(0.24, 0.48)는 별도의 정의에서 온 것이며, β 함수에서 자연스럽게 도출되지 않는다.
+- Our model's iteration function f(I) = 0.7I + 0.1 is linear. Real RG flows are nonlinear and can have multiple fixed points.
+- Physics' RG has clear physical meaning as energy scale transformation. What "iteration" means in our model needs physical interpretation.
+- The Golden Zone boundaries (0.24, 0.48) come from separate definitions and don't naturally emerge from the β function.
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 비선형 반복 함수에서 다중 고정점이 나타나는 조건 탐색
-- [ ] β(I) = 0 의 근이 여러 개인 모델 확장
-- [ ] RG 흐름의 임계 지수(critical exponent)와 골든존 너비 ln(4/3)의 관계
+- [ ] Explore conditions for multiple fixed points in nonlinear iteration functions
+- [ ] Extend model where β(I) = 0 has multiple roots
+- [ ] Relationship between RG flow critical exponents and Golden Zone width ln(4/3)
 
 ---
 
-*작성일: 2026-03-22 | 검증: verify_meta_math.py*
+*Date: 2026-03-22 | Verification: verify_meta_math.py*

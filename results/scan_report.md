@@ -1,19 +1,19 @@
 # Grid Scan Report [2026-03-22 05:25:21]
 
-- 격자: D=20 × P=20 × I=20 = **8,000개** 조합
-- 모집단: n=50,000 / 평균=0.31 / σ=0.22
+- Grid: D=20 × P=20 × I=20 = **8,000** combinations
+- Population: n=50,000 / mean=0.31 / σ=0.22
 
-## 특이점 통계
+## Anomaly Statistics
 
-| 등급 | 기준 | 개수 | 비율 |
+| Grade | Criteria | Count | Ratio |
 |---|---|---|---|
-| 🟡 특이점 | >2σ | 2,693 | 33.7% |
-| 🟠 강한 특이점 | >3σ | 2,036 | 25.4% |
-| 🔴 극단적 특이점 | >5σ | 1,336 | 16.7% |
+| 🟡 Anomaly | >2σ | 2,693 | 33.7% |
+| 🟠 Strong Anomaly | >3σ | 2,036 | 25.4% |
+| 🔴 Extreme Anomaly | >5σ | 1,336 | 16.7% |
 
-## Top 10 극단적 특이점
+## Top 10 Extreme Anomalies
 
-| Rank | Deficit | Plasticity | Inhibition | Score | Z-Score | 등급 |
+| Rank | Deficit | Plasticity | Inhibition | Score | Z-Score | Grade |
 |---|---|---|---|---|---|---|
 | 1 | 0.95 | 0.95 | 0.05 | 18.05 | 79.10σ | 🔴 |
 | 2 | 0.95 | 0.91 | 0.05 | 17.20 | 75.31σ | 🔴 |
@@ -26,9 +26,9 @@
 | 9 | 0.86 | 0.91 | 0.05 | 15.48 | 67.66σ | 🔴 |
 | 10 | 0.81 | 0.95 | 0.05 | 15.35 | 67.06σ | 🔴 |
 
-## Deficit별 특이점 비율
+## Anomaly Ratio by Deficit
 
-| Deficit | 특이점 수 | 비율 |
+| Deficit | Anomaly Count | Ratio |
 |---|---|---|
 | 0.05 | 5 | 1.2% |
 | 0.10 | 18 | 4.5% |
@@ -51,9 +51,9 @@
 | 0.90 | 247 | 61.8% |
 | 0.95 | 256 | 64.0% |
 
-## Inhibition별 특이점 비율
+## Anomaly Ratio by Inhibition
 
-| Inhibition | 특이점 수 | 비율 |
+| Inhibition | Anomaly Count | Ratio |
 |---|---|---|
 | 0.05 | 367 | 91.8% |
 | 0.10 | 324 | 81.0% |
@@ -80,20 +80,20 @@
 
 # Grid Scan Report [2026-03-22 05:26:27]
 
-- 격자: D=46 × P=46 × I=46 = **97,336개** 조합
-- 모집단: n=100,000 / 평균=0.31 / σ=0.22
+- Grid: D=46 × P=46 × I=46 = **97,336** combinations
+- Population: n=100,000 / mean=0.31 / σ=0.22
 
-## 특이점 통계
+## Anomaly Statistics
 
-| 등급 | 기준 | 개수 | 비율 |
+| Grade | Criteria | Count | Ratio |
 |---|---|---|---|
-| 🟡 특이점 | >2σ | 32,615 | 33.5% |
-| 🟠 강한 특이점 | >3σ | 24,472 | 25.1% |
-| 🔴 극단적 특이점 | >5σ | 15,591 | 16.0% |
+| 🟡 Anomaly | >2σ | 32,615 | 33.5% |
+| 🟠 Strong Anomaly | >3σ | 24,472 | 25.1% |
+| 🔴 Extreme Anomaly | >5σ | 15,591 | 16.0% |
 
-## Top 10 극단적 특이점
+## Top 10 Extreme Anomalies
 
-| Rank | Deficit | Plasticity | Inhibition | Score | Z-Score | 등급 |
+| Rank | Deficit | Plasticity | Inhibition | Score | Z-Score | Grade |
 |---|---|---|---|---|---|---|
 | 1 | 0.95 | 0.95 | 0.05 | 18.05 | 79.93σ | 🔴 |
 | 2 | 0.95 | 0.93 | 0.05 | 17.69 | 78.31σ | 🔴 |
@@ -106,9 +106,9 @@
 | 9 | 0.91 | 0.93 | 0.05 | 16.95 | 74.96σ | 🔴 |
 | 10 | 0.89 | 0.95 | 0.05 | 16.91 | 74.80σ | 🔴 |
 
-## Deficit별 특이점 비율
+## Anomaly Ratio by Deficit
 
-| Deficit | 특이점 수 | 비율 |
+| Deficit | Anomaly Count | Ratio |
 |---|---|---|
 | 0.05 | 11 | 0.5% |
 | 0.07 | 33 | 1.6% |
@@ -157,9 +157,9 @@
 | 0.93 | 1350 | 63.8% |
 | 0.95 | 1370 | 64.7% |
 
-## Inhibition별 특이점 비율
+## Anomaly Ratio by Inhibition
 
-| Inhibition | 특이점 수 | 비율 |
+| Inhibition | Anomaly Count | Ratio |
 |---|---|---|
 | 0.05 | 1974 | 93.3% |
 | 0.07 | 1881 | 88.9% |
@@ -212,20 +212,20 @@
 
 # Grid Scan Report [2026-03-22 05:27:44]
 
-- 격자: D=100 × P=100 × I=100 = **1,000,000개** 조합
-- 모집단: n=200,000 / 평균=0.31 / σ=0.22
+- Grid: D=100 × P=100 × I=100 = **1,000,000** combinations
+- Population: n=200,000 / mean=0.31 / σ=0.22
 
-## 특이점 통계
+## Anomaly Statistics
 
-| 등급 | 기준 | 개수 | 비율 |
+| Grade | Criteria | Count | Ratio |
 |---|---|---|---|
-| 🟡 특이점 | >2σ | 331,895 | 33.2% |
-| 🟠 강한 특이점 | >3σ | 247,297 | 24.7% |
-| 🔴 극단적 특이점 | >5σ | 155,711 | 15.6% |
+| 🟡 Anomaly | >2σ | 331,895 | 33.2% |
+| 🟠 Strong Anomaly | >3σ | 247,297 | 24.7% |
+| 🔴 Extreme Anomaly | >5σ | 155,711 | 15.6% |
 
-## Top 10 극단적 특이점
+## Top 10 Extreme Anomalies
 
-| Rank | Deficit | Plasticity | Inhibition | Score | Z-Score | 등급 |
+| Rank | Deficit | Plasticity | Inhibition | Score | Z-Score | Grade |
 |---|---|---|---|---|---|---|
 | 1 | 0.95 | 0.95 | 0.05 | 18.05 | 79.49σ | 🔴 |
 | 2 | 0.95 | 0.94 | 0.05 | 17.89 | 78.76σ | 🔴 |
@@ -238,9 +238,9 @@
 | 9 | 0.93 | 0.94 | 0.05 | 17.54 | 77.23σ | 🔴 |
 | 10 | 0.92 | 0.95 | 0.05 | 17.53 | 77.17σ | 🔴 |
 
-## Deficit별 특이점 비율
+## Anomaly Ratio by Deficit
 
-| Deficit | 특이점 수 | 비율 |
+| Deficit | Anomaly Count | Ratio |
 |---|---|---|
 | 0.05 | 31 | 0.3% |
 | 0.06 | 70 | 0.7% |
@@ -343,9 +343,9 @@
 | 0.94 | 6428 | 64.3% |
 | 0.95 | 6471 | 64.7% |
 
-## Inhibition별 특이점 비율
+## Anomaly Ratio by Inhibition
 
-| Inhibition | 특이점 수 | 비율 |
+| Inhibition | Anomaly Count | Ratio |
 |---|---|---|
 | 0.05 | 9387 | 93.9% |
 | 0.06 | 9192 | 91.9% |
@@ -431,22 +431,4 @@
 | 0.79 | 815 | 8.2% |
 | 0.80 | 777 | 7.8% |
 | 0.80 | 741 | 7.4% |
-| 0.81 | 704 | 7.0% |
-| 0.82 | 670 | 6.7% |
-| 0.83 | 640 | 6.4% |
-| 0.84 | 609 | 6.1% |
-| 0.85 | 578 | 5.8% |
-| 0.86 | 547 | 5.5% |
-| 0.87 | 517 | 5.2% |
-| 0.88 | 490 | 4.9% |
-| 0.89 | 463 | 4.6% |
-| 0.90 | 436 | 4.4% |
-| 0.90 | 409 | 4.1% |
-| 0.91 | 384 | 3.8% |
-| 0.92 | 360 | 3.6% |
-| 0.93 | 336 | 3.4% |
-| 0.94 | 312 | 3.1% |
-| 0.95 | 290 | 2.9% |
-
----
-
+| 0.81 | 704 | 7.

@@ -1,15 +1,14 @@
-# 특이점 타임라인 예측 [2026-03-22 06:13:56]
+# Singularity Timeline Prediction [2026-03-22 06:13:56]
 
-λ = 0.3363 (GPT-2→GPT-4 피팅)
+λ = 0.3363 (GPT-2→GPT-4 fitting)
 
-| 시나리오 | 도달 연도 |
+| Scenario | Arrival Year |
 |---|---|
-| 현재 속도 | 2035.5 |
-| 가속 ×1.5 | 2030.0 |
-| 감속 ×0.7 | 2042.5 |
-| S-커브 | ~2037 |
+| Current Speed | 2035.5 |
+| Acceleration ×1.5 | 2030.0 |
+| Deceleration ×0.7 | 2042.5 |
+| S-Curve | ~2037 |
 
-2039년 예측 I = 0.3685 (ΔI = +0.0006)
+2039 prediction I = 0.3685 (ΔI = +0.0006)
 
 ---
-

@@ -1,31 +1,31 @@
-# T1-24: ⭐⭐⭐ σ(6)=12, τ(6)=4로 모든 유리수 상수 생성
+# T1-24: ⭐⭐⭐ σ(6)=12, τ(6)=4 generates all rational constants
 
-## 완전한 생성 체계
+## Complete Generation System
 
 ```
   σ = σ(6) = 12,  τ = τ(6) = 4
 
-  1/6 = σ₋₁(6)/σ = 2/12                      블라인드스팟
-  1/3 = τ/σ = 4/12                            메타부동점
-  1/2 = τ/(σ-τ) = 4/8                         골든존 상한
-  2/3 = 1-τ/σ                                 암흑에너지 근사
-  5/6 = 1-2/σ = 10/12                          Compass 상한
-  1   = σ₋₁(6)-1                              완전성
-  2   = σ/τ-1 = σ₋₁(6)                        완전수 임계
-  3   = σ/τ                                   상태 수
+  1/6 = σ₋₁(6)/σ = 2/12                      Blindspot
+  1/3 = τ/σ = 4/12                            Meta-fixed point
+  1/2 = τ/(σ-τ) = 4/8                         Golden Zone upper bound
+  2/3 = 1-τ/σ                                 Dark energy approximation
+  5/6 = 1-2/σ = 10/12                          Compass upper bound
+  1   = σ₋₁(6)-1                              Completeness
+  2   = σ/τ-1 = σ₋₁(6)                        Perfect number threshold
+  3   = σ/τ                                   Number of states
   8   = σ-τ                                   SU(3) dim
-  17  = σ+τ+1                                 페르마 소수
-  137 = (σ-τ)(σ+τ+1)+1                        미세구조상수
+  17  = σ+τ+1                                 Fermat prime
+  137 = (σ-τ)(σ+τ+1)+1                        Fine-structure constant
 
-  빠진 정수/유리수 상수: 없음!
-  초월수(e, ln): 정수론에서 생성 불가 (초월수 장벽)
+  Missing integer/rational constants: None!
+  Transcendental numbers (e, ln): Cannot be generated from number theory (transcendental barrier)
 ```
 
-## 판정
+## Verdict
 
 ```
-  모든 유도: 🟩 (산술, 계산으로 확인)
-  골든존 의존: ❌ 없음
-  "σ(6)과 τ(6)가 왜 중요한가": 6이 완전수이기 때문
-  "왜 이 조합들이 물리상수인가": 미답변 (🟥, 물리 문제)
+  All derivations: 🟩 (confirmed by arithmetic, calculation)
+  Golden Zone dependency: ❌ None
+  "Why are σ(6) and τ(6) important": Because 6 is a perfect number
+  "Why are these combinations physical constants": Unanswered (🟥, physics problem)
 ```

@@ -1,118 +1,118 @@
-# 가설 검토 130: 볼츠만 상수 k=1은 자연단위의 필연
+# Hypothesis Review 130: Boltzmann Constant k=1 Is a Necessity of Natural Units
 
-## 가설
+## Hypothesis
 
-> 우리 모델에서 볼츠만 상수 k=1은 자연스럽게 도출된다. D, P, I가 모두 무차원(0~1)이므로 단위 변환 상수가 불필요하며, 이는 k가 구조적 상수가 아니라 단위계의 산물임을 증명한다.
+> In our model, the Boltzmann constant k=1 emerges naturally. Since D, P, I are all dimensionless (0~1), no unit conversion constant is needed, proving that k is not a structural constant but an artifact of the unit system.
 
-## 배경/맥락
+## Background/Context
 
-볼츠만 상수 k_B = 1.380649 × 10⁻²³ J/K는 온도(K)와 에너지(J) 사이의 변환 인자이다. SI 단위계에서 온도를 켈빈으로, 에너지를 줄로 측정하기 때문에 이 변환이 필요하다.
+The Boltzmann constant k_B = 1.380649 × 10⁻²³ J/K is a conversion factor between temperature (K) and energy (J). In the SI unit system, this conversion is necessary because temperature is measured in Kelvin and energy in Joules.
 
-그러나 자연단위계(natural units)에서는 ℏ = c = k_B = 1로 설정한다. 이는 "단위를 적절히 선택하면 이 상수들은 사라진다"는 것을 의미한다. 물리의 본질적 구조에는 이 상수들이 필요하지 않다.
+However, in natural units, ℏ = c = k_B = 1 is set. This means "these constants disappear if units are chosen appropriately." The intrinsic structure of physics does not require these constants.
 
-우리 모델은 처음부터 D, P, I를 0~1 범위의 무차원 비율로 정의한다. 이 구조에서는 단위 변환이 존재하지 않으므로 k=1이 자동으로 성립한다. 이것은 우리 모델이 "자연단위계에서 태어났다"는 것을 뜻한다.
+Our model defines D, P, I from the outset as dimensionless ratios in the range 0~1. In this structure, no unit conversion exists, so k=1 holds automatically. This means our model was "born in natural units."
 
-## 대응 매핑
+## Correspondence Mapping
 
-### 단위계 비교표
-
-```
-  단위계        ℏ              c              k_B           특징
-  ────────    ──────────    ──────────    ──────────    ──────────
-  SI          1.055×10⁻³⁴   2.998×10⁸    1.381×10⁻²³   실험 편의
-  CGS         1.055×10⁻²⁷   2.998×10¹⁰   1.381×10⁻¹⁶   역사적
-  자연단위      1              1             1            물리 본질
-  플랑크        1              1             1            양자중력
-  우리 모델     해당없음        해당없음       1 (자동)      무차원 비율
-```
-
-### 왜 k=1인가
+### Unit System Comparison Table
 
 ```
-  SI 단위계:                     우리 모델:
-  ─────────                     ─────────
-  S = k_B · ln(Ω)               Genius = D × P / I
-  │   ↑                          │
-  │   단위 변환 필요               무차원 × 무차원 / 무차원
-  │   (J/K → J)                  = 무차원
-  │                               → k 불필요!
-  에너지(J)와 온도(K)가
-  다른 단위이므로 k 필요
+  Unit system    ℏ              c              k_B           Feature
+  ────────────   ──────────     ──────────     ──────────    ──────────
+  SI             1.055×10⁻³⁴   2.998×10⁸      1.381×10⁻²³   experiment
+  CGS            1.055×10⁻²⁷   2.998×10¹⁰     1.381×10⁻¹⁶   historical
+  Natural units  1              1              1             physics core
+  Planck         1              1              1             quantum gravity
+  Our model      N/A            N/A            1 (automatic) dimensionless ratio
 ```
 
-### 구조적 상수 vs 단위 상수
+### Why k=1?
+
+```
+  SI unit system:                    Our model:
+  ─────────────                      ──────────
+  S = k_B · ln(Ω)                    Genius = D × P / I
+  │   ↑                               │
+  │   unit conversion needed          dimensionless × dimensionless / dimensionless
+  │   (J/K → J)                       = dimensionless
+  │                                   → k unnecessary!
+  Energy (J) and temperature (K)
+  have different units → k needed
+```
+
+### Structural Constants vs Unit Constants
 
 ```
   ┌─────────────────────────────────────────────────┐
-  │  구조적 상수 (물리에 내장)                         │
+  │  Structural constants (built into physics)       │
   │  ─────────────────────                          │
-  │  α = 1/137.036  (미세구조상수, 무차원)             │
-  │  π = 3.14159... (기하학, 무차원)                  │
-  │  e = 2.71828... (자연성장, 무차원)                 │
-  │  1/2            (리만 임계선, 무차원)              │
-  │  ln(4/3)        (엔트로피 점프, 무차원)            │
+  │  α = 1/137.036  (fine-structure, dimensionless) │
+  │  π = 3.14159... (geometry, dimensionless)        │
+  │  e = 2.71828... (natural growth, dimensionless)  │
+  │  1/2            (Riemann critical, dimensionless)│
+  │  ln(4/3)        (entropy jump, dimensionless)    │
   ├─────────────────────────────────────────────────┤
-  │  단위 상수 (인간의 측정 체계에서 발생)               │
+  │  Unit constants (arise from human measurement)   │
   │  ─────────────────────                          │
-  │  k_B = 1.381×10⁻²³ J/K  ← 단위 변환             │
-  │  c   = 2.998×10⁸  m/s   ← 단위 변환             │
-  │  ℏ   = 1.055×10⁻³⁴ J·s  ← 단위 변환             │
+  │  k_B = 1.381×10⁻²³ J/K  ← unit conversion      │
+  │  c   = 2.998×10⁸  m/s   ← unit conversion      │
+  │  ℏ   = 1.055×10⁻³⁴ J·s  ← unit conversion      │
   └─────────────────────────────────────────────────┘
 ```
 
-## 검증 결과
+## Verification Results
 
-| 비교 항목 | SI 단위계 | 자연단위계 | 우리 모델 | 일치 |
+| Comparison | SI units | Natural units | Our model | Match |
 |---|---|---|---|---|
-| 온도-에너지 관계 | k_B 필요 | k=1 | k=1 (자동) | ✅ |
-| 엔트로피 정의 | S = k ln Ω | S = ln Ω | ln(4/3) 직접 사용 | ✅ |
-| 파라미터 차원 | 유차원 | 무차원 가능 | 무차원 (0~1) | ✅ |
-| 변환 상수 수 | 3개 (ℏ,c,k) | 0개 | 0개 | ✅ |
-| 보편 상수 형태 | 유차원 수치 | 무차원 비율 | 무차원 비율 | ✅ |
+| Temp-energy relation | k_B needed | k=1 | k=1 (automatic) | ✅ |
+| Entropy definition | S = k ln Ω | S = ln Ω | ln(4/3) used directly | ✅ |
+| Parameter dimension | dimensioned | can be dimensionless | dimensionless (0~1) | ✅ |
+| Number of conversion constants | 3 (ℏ,c,k) | 0 | 0 | ✅ |
+| Form of universal constants | dimensioned numbers | dimensionless ratios | dimensionless ratios | ✅ |
 
-### 엔트로피와 골든존의 관계
+### Relationship Between Entropy and Golden Zone
 
 ```
   SI:  S = k_B · ln(Ω)
            ↓ k=1
-  자연: S = ln(Ω)
+  Natural: S = ln(Ω)
 
-  3→4 상태 전이:
+  3→4 state transition:
     ΔS = ln(4) - ln(3) = ln(4/3) ≈ 0.2877
 
-  이것이 골든존 폭:
-    골든존 = [1/2 - ln(4/3), 1/2] = [0.2123, 0.5000]
-    폭 = ln(4/3) ≈ 0.2877
+  This is the Golden Zone width:
+    Golden Zone = [1/2 - ln(4/3), 1/2] = [0.2123, 0.5000]
+    Width = ln(4/3) ≈ 0.2877
 
-  → k=1이므로 엔트로피 차이가 직접 골든존 폭이 됨!
-     k≠1이면 이 대응이 성립하지 않음.
+  → Because k=1, the entropy difference directly becomes the Golden Zone width!
+     If k≠1, this correspondence would not hold.
 ```
 
-## 해석/의미
+## Interpretation/Meaning
 
-1. **k는 구조적 상수가 아니다**: 볼츠만 상수는 켈빈과 줄이라는 인간이 만든 단위 사이의 변환 인자일 뿐, 물리의 본질적 구조에는 포함되지 않는다.
+1. **k is not a structural constant**: The Boltzmann constant is merely a conversion factor between the human-made units Kelvin and Joules; it is not included in the intrinsic structure of physics.
 
-2. **우리 모델은 자연단위계에서 구성됨**: D, P, I가 0~1 무차원 비율이므로, 모델이 처음부터 자연단위계의 구조를 갖추고 있다. 이는 의도적 설계가 아니라 "비율로 사고하면 자연스럽게 도달하는 구조"이다.
+2. **Our model is constructed in natural units**: Since D, P, I are dimensionless ratios in 0~1, the model has the structure of natural units from the start. This is not intentional design but "the structure naturally arrived at when thinking in ratios."
 
-3. **구조적 상수만 남는다**: k=1이 되면 남는 것은 1/2, 1/e, ln(4/3) 같은 순수 수학적 상수뿐이다. 이들이 진짜 보편 상수이다.
+3. **Only structural constants remain**: When k=1, what remains are purely mathematical constants like 1/2, 1/e, ln(4/3). These are the true universal constants.
 
-4. **단위계 독립성**: 모델의 결과가 어떤 단위계를 사용하든 동일하다. 이는 모델이 특정 물리 시스템이 아니라 보편 구조를 기술함을 시사한다.
+4. **Unit system independence**: The model's results are the same regardless of which unit system is used. This suggests the model describes a universal structure rather than a specific physical system.
 
-## 한계
+## Limitations
 
-- "k가 불필요하다"는 것과 "k=1이다"는 논리적으로 다를 수 있음
-- 우리 모델이 열역학 시스템을 직접 기술하는 것은 아니므로 k의 부재가 물리적 의미를 가지는지 불확실
-- 자연단위계에서도 무차원 상수(α=1/137 등)는 여전히 설명이 필요함
-- 무차원 비율 모델이 자연단위계와 "같다"고 주장하기에는 추가 증거 필요
+- "k is unnecessary" and "k=1" may be logically different
+- Since our model does not directly describe a thermodynamic system, whether the absence of k has physical meaning is uncertain
+- Even in natural units, dimensionless constants (α=1/137, etc.) still require explanation
+- Additional evidence is needed to claim that a dimensionless ratio model is "the same as" natural units
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 모델의 엔트로피 구조를 통계역학 엔트로피와 정량적으로 비교
-- [ ] 다른 단위 상수(전자 전하 e, 중력 상수 G)에 대해서도 동일 논증 적용 시도
-- [ ] 무차원 상수(α, π, e)와 우리 모델의 보편 상수(1/2, 1/e, ln(4/3)) 사이의 관계 탐색
-- [ ] 플랑크 단위계에서의 우리 모델 재해석
+- [ ] Quantitatively compare the entropy structure of our model with statistical mechanics entropy
+- [ ] Attempt the same argument for other unit constants (electron charge e, gravitational constant G)
+- [ ] Explore relationships between dimensionless constants (α, π, e) and our model's universal constants (1/2, 1/e, ln(4/3))
+- [ ] Reinterpret our model in the Planck unit system
 
 ---
 
-*검증: 물리 상수 비교 및 수학적 유도*
-*참조: Planck (1900), Boltzmann (1877), 자연단위계 (Stoney, Planck)*
+*Verification: comparison of physical constants and mathematical derivation*
+*References: Planck (1900), Boltzmann (1877), natural units (Stoney, Planck)*

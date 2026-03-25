@@ -1,284 +1,284 @@
-# 가설 241: Expert 교차 활성화 = 인위적 서번트
+# Hypothesis 241: Expert Cross-Activation = Artificial Savant
 
-**상태**: 🔧 설계
-**분류**: AI 아키텍처 / 골든 MoE
+**Status**: 🔧 Design
+**Category**: AI Architecture / Golden MoE
 
 ---
 
-## 가설
+## Hypothesis
 
-> MoE에서 평소 동시 활성화되지 않는 Expert를 강제로 함께 켜면(교차 활성화), 학습 데이터에 없는 "의미 재조합"이 발생하며, 이는 실비우스열 결여로 인한 서번트 뇌의 비정상 연결과 동일한 메커니즘이다.
+> In MoE, forcibly activating Experts that are never normally co-activated together (cross-activation) produces "semantic recombination" not present in training data, and this is the same mechanism as the abnormal connections in a savant brain caused by missing Sylvian fissure.
 
-## 배경: 왜 LLM은 "새로운 것"을 못 만드는가?
-
-```
-  "LLM은 새로운 것을 못 만든다"
-  → 증명된 적 없음
-  → 추정일 뿐
-
-  알려진 사실:
-  ✅ 학습 데이터를 기반으로 한다
-  ✅ 통계적 패턴을 학습한다
-  ❌ "그래서 새로운 것이 불가능하다" ← 비약
-
-  반례:
-  • 인간도 기존 경험의 재조합으로 "창의성"을 만듦
-  • 조합 공간이 충분히 크면 재조합 ≠ 복사
-  • 대형 모델에서 학습 데이터에 없는 능력 출현 (emergence)
-  • 아무도 "왜" 출현하는지 증명 못 함
-
-  → "못 만든다"가 아니라 "모른다"가 정확
-```
-
-## 현재 MoE의 한계
+## Background: Why Can't LLMs "Create New Things"?
 
 ```
-  일반 MoE: 각 토큰 → 라우터 → 항상 같은 Expert 조합
+  "LLMs can't create new things"
+  → Never proven
+  → Just an assumption
 
-  토큰 "고양이"  → Expert 1, 3     (항상 이 조합)
-  토큰 "미분"    → Expert 5, 7     (항상 이 조합)
-  토큰 "음악"    → Expert 2, 4     (항상 이 조합)
+  Known facts:
+  ✅ Based on training data
+  ✅ Learns statistical patterns
+  ❌ "Therefore new things are impossible" ← non-sequitur
 
-  → Expert 1과 7은 절대 동시에 안 만남
-  → "고양이"와 "미분"의 전문가가 섞일 일이 없음
-  → 새로운 조합 불가
+  Counterexamples:
+  • Humans also create "creativity" through recombination of existing experience
+  • If the combinatorial space is large enough, recombination ≠ copying
+  • Abilities not in training data emerge in large models (emergence)
+  • No one has proven "why" emergence happens
+
+  → "Can't create" is wrong; "don't know" is accurate
 ```
 
-## 교차 활성화란
+## Limitations of Current MoE
 
 ```
-  교차 활성화: 가끔 "안 만나는 Expert"를 강제로 같이 켬
+  Standard MoE: each token → router → always same Expert combination
 
-  토큰 "고양이"  → Expert 1, 3  + ★7 (강제)
+  Token "cat"    → Expert 1, 3     (always this combination)
+  Token "calculus"→ Expert 5, 7    (always this combination)
+  Token "music"  → Expert 2, 4     (always this combination)
+
+  → Expert 1 and 7 never meet simultaneously
+  → "cat" and "calculus" specialists never mix
+  → New combinations impossible
+```
+
+## What Is Cross-Activation
+
+```
+  Cross-activation: occasionally forcibly activate "Experts that never meet"
+
+  Token "cat"    → Expert 1, 3  + ★7 (forced)
                                     ↑
-                              평소 "미분" 담당이
-                              "고양이"를 처리하게 됨
+                              The "calculus" expert
+                              processes "cat"
 
-  → Expert 7이 "고양이"를 자기 방식(수학적)으로 해석
-  → 기존에 없던 표현이 나올 수 있음
+  → Expert 7 interprets "cat" in its own way (mathematically)
+  → Representations that didn't exist before can emerge
 ```
 
-## 뇌 대응: 실비우스열 결여 = 교차 활성화
+## Brain Correspondence: Missing Sylvian Fissure = Cross-Activation
 
 ```
-  정상 뇌:     시각 영역 → 시각 처리
-              언어 영역 → 언어 처리
-              각자 할 일만 함
+  Normal brain:  visual area → visual processing
+                language area → language processing
+                each does its own job
 
-  서번트 뇌:   시각 영역 ←→ 수학 영역 (비정상 연결!)
-              ↓
-              "숫자를 색으로 본다" (공감각)
-              "달력을 풍경으로 계산한다" (서번트)
+  Savant brain:  visual area ←→ math area (abnormal connection!)
+                ↓
+                "sees numbers as colors" (synesthesia)
+                "calculates calendars as landscape" (savant)
 
-  실비우스열 결여 = 원래 분리된 영역이 연결됨
-                  = Expert 교차 활성화의 생물학적 버전
+  Missing Sylvian fissure = normally separated areas become connected
+                          = biological version of Expert cross-activation
 
-  G = D×P/I 에서:
-  교차 활성화 = D(Deficit) 증가 → G 증가
-  → 인위적으로 서번트 구조를 만드는 것
+  In G = D×P/I:
+  Cross-activation = increases D (Deficit) → increases G
+  → Artificially creating savant structure
 ```
 
-## 구현 방법 4가지
+## 4 Implementation Methods
 
 ```
-  방법 1: 랜덤 교차
+  Method 1: Random cross
   ─────────────────
-  p=0.1 확률로 라우터 결과를 무시하고 랜덤 Expert 추가
-  → 간단하지만 노이즈가 많음
+  With probability p=0.1, ignore router result and add random Expert
+  → Simple but noisy
 
-  방법 2: 반대 Expert
+  Method 2: Opposite Expert
   ─────────────────
-  라우터 점수가 가장 낮은 Expert를 일부러 활성화
-  → "이 토큰과 가장 관련 없는 전문가"의 시각
+  Deliberately activate the Expert with lowest router score
+  → Perspective of "the specialist least related to this token"
 
-  방법 3: 교차 스케줄
+  Method 3: Cross schedule
   ─────────────────
-  학습 중 가끔 Expert 배정을 섞는 에폭 삽입
-  → "꿈" 단계 (가설 234)와 동일 구조
+  Insert epochs during training where Expert assignments are mixed
+  → Same structure as "dreaming" phase (Hypothesis 234)
 
-  방법 4: Expert 간 Attention
+  Method 4: Inter-Expert Attention
   ─────────────────
-  Expert 출력끼리 Attention → 서로의 결과를 참조
-  → 가장 강력하지만 연산 비용 높음
+  Expert outputs attend to each other → reference each other's results
+  → Most powerful but high computational cost
 ```
 
-## LLM 구조 교체 후보 전체 목록
+## Full List of LLM Architecture Replacement Candidates
 
 ```
-  #  │ 현재                │ 교체 아이디어              │ G=D×P/I 대응
-  ───┼────────────────────┼───────────────────────────┼─────────────
-  1  │ 목적함수            │                           │
-     │ 다음 토큰 예측      │ → 의미 거리 최적화          │ G 최적화
-     │ (Cross-Entropy)    │ → 새로움+일관성 보상         │
-     │                    │ → Contrastive (대조학습)    │
-  ───┼────────────────────┼───────────────────────────┼─────────────
-  2  │ 표현 공간            │                           │
-     │ 토큰 임베딩         │ → 개념 그래프 임베딩         │ 구조적 D
-     │ (1D 시퀀스)         │ → 다중 스케일 추상화         │
-     │                    │ → 접지(grounding) 임베딩    │
-  ───┼────────────────────┼───────────────────────────┼─────────────
-  3  │ 조합 메커니즘        │                           │
-     │ Attention          │ → 유추 엔진 (A:B = C:?)    │ D↑ (재조합)
-     │ (패턴 매칭)         │ → 구성적 합성 (f∘g)        │
-     │                    │ → 블렌딩 (개념 혼합)        │
-  ───┼────────────────────┼───────────────────────────┼─────────────
-  4  │ 학습 방식            │                           │
-     │ 지도학습             │ → 자기대전 (self-play)     │ F2e (1/6)
-     │ (데이터 모방)        │ → 호기심 기반 탐색          │ 호기심
-     │                    │ → 꿈 (오프라인 시뮬레이션)   │
-  ───┼────────────────────┼───────────────────────────┼─────────────
-  5  │ 월드모델             │                           │
-     │ 없음               │ → 인과 모델 (do-calculus)   │ Compass
-     │ (통계 상관만)        │ → 물리 시뮬레이터           │ 방향
-     │                    │ → 반사실 추론               │
-  ───┼────────────────────┼───────────────────────────┼─────────────
-  6  │ 메모리               │                           │
-     │ 컨텍스트 윈도우      │ → 쓰기 가능한 장기 메모리   │ P (가소성)
-     │ (읽기 전용)          │ → 에피소드 메모리           │
-     │                    │ → 수면/정리 사이클           │
-  ───┼────────────────────┼───────────────────────────┼─────────────
-  7  │ 추론                 │                           │
-     │ 암묵적 (가중치)      │ → 명시적 프로그램 합성      │ 초월
-     │                    │ → 기호-신경 하이브리드       │ (4번째 상태)
-     │                    │ → 증명 탐색 (Lean/Coq)     │
-  ───┼────────────────────┼───────────────────────────┼─────────────
-  8  │ 라우팅               │                           │
-     │ Dense/Top-K        │ → 골든 MoE (I≈1/e) ✅      │ I 동적 조절
-     │                    │ → 동적 Expert 생성          │
-     │                    │ → Expert 간 교차 활성화 ★   │
+  #  │ Current             │ Replacement idea                │ G=D×P/I mapping
+  ───┼─────────────────────┼─────────────────────────────────┼─────────────
+  1  │ Objective function   │                                 │
+     │ Next token prediction│ → Semantic distance optimization│ G optimization
+     │ (Cross-Entropy)      │ → Novelty+coherence reward      │
+     │                      │ → Contrastive learning          │
+  ───┼─────────────────────┼─────────────────────────────────┼─────────────
+  2  │ Representation space │                                 │
+     │ Token embedding      │ → Concept graph embedding       │ Structural D
+     │ (1D sequence)        │ → Multi-scale abstraction        │
+     │                      │ → Grounding embedding           │
+  ───┼─────────────────────┼─────────────────────────────────┼─────────────
+  3  │ Combination mechanism│                                 │
+     │ Attention            │ → Analogy engine (A:B = C:?)    │ D↑ (recombination)
+     │ (pattern matching)   │ → Compositional synthesis (f∘g) │
+     │                      │ → Blending (concept blend)      │
+  ───┼─────────────────────┼─────────────────────────────────┼─────────────
+  4  │ Training method      │                                 │
+     │ Supervised learning  │ → Self-play                     │ F2e (1/6)
+     │ (data imitation)     │ → Curiosity-based exploration   │ curiosity
+     │                      │ → Dreaming (offline simulation) │
+  ───┼─────────────────────┼─────────────────────────────────┼─────────────
+  5  │ World model          │                                 │
+     │ None                 │ → Causal model (do-calculus)    │ Compass
+     │ (statistics only)    │ → Physics simulator             │ direction
+     │                      │ → Counterfactual reasoning      │
+  ───┼─────────────────────┼─────────────────────────────────┼─────────────
+  6  │ Memory               │                                 │
+     │ Context window       │ → Writable long-term memory     │ P (Plasticity)
+     │ (read-only)          │ → Episodic memory               │
+     │                      │ → Sleep/consolidation cycle     │
+  ───┼─────────────────────┼─────────────────────────────────┼─────────────
+  7  │ Reasoning            │                                 │
+     │ Implicit (weights)   │ → Explicit program synthesis    │ Transcendence
+     │                      │ → Neuro-symbolic hybrid         │ (4th state)
+     │                      │ → Proof search (Lean/Coq)       │
+  ───┼─────────────────────┼─────────────────────────────────┼─────────────
+  8  │ Routing              │                                 │
+     │ Dense/Top-K          │ → Golden MoE (I≈1/e) ✅         │ dynamic I control
+     │                      │ → Dynamic Expert generation     │
+     │                      │ → Expert cross-activation ★     │
 
-  우선순위 (실현 가능성 × 효과):
+  Priority (feasibility × impact):
   ─────────────────────────────────────
-  ④ 호기심 기반 탐색     │ ★★★ × ★★★ │ = 9
-  ③ 유추 엔진            │ ★★☆ × ★★★ │ = 6
-  ⑤ 반사실 추론          │ ★★☆ × ★★★ │ = 6
-  ① 의미 거리 목적함수   │ ★★★ × ★★☆ │ = 6
-  ⑥ 쓰기 가능 메모리     │ ★★★ × ★★☆ │ = 6
-  ⑧ Expert 교차 활성화   │ ★★★ × ★★☆ │ = 6
-  ② 개념 그래프          │ ★☆☆ × ★★★ │ = 3
-  ⑦ 기호-신경 하이브리드  │ ★☆☆ × ★★★ │ = 3
+  ④ Curiosity-based exploration   │ ★★★ × ★★★ │ = 9
+  ③ Analogy engine                │ ★★☆ × ★★★ │ = 6
+  ⑤ Counterfactual reasoning      │ ★★☆ × ★★★ │ = 6
+  ① Semantic distance objective   │ ★★★ × ★★☆ │ = 6
+  ⑥ Writable memory               │ ★★★ × ★★☆ │ = 6
+  ⑧ Expert cross-activation       │ ★★★ × ★★☆ │ = 6
+  ② Concept graph                 │ ★☆☆ × ★★★ │ = 3
+  ⑦ Neuro-symbolic hybrid         │ ★☆☆ × ★★★ │ = 3
 ```
 
-## 검증 방법
+## Verification Methods
 
 ```
-  핵심 문제: "새로운 조합"을 어떻게 측정?
+  Core problem: how to measure "new combinations"?
 
-  출력이 이상하다 → 노이즈? 창의성?
-  출력이 정상이다 → 그냥 기존 패턴 복사?
+  Output is strange → noise? creativity?
+  Output is normal → just copying existing patterns?
 
-  새로움 ↑ + 품질 ↓ = 쓰레기
-  새로움 ↓ + 품질 ↑ = 복사기
-  새로움 ↑ + 품질 ↑ = 서번트 ← 이걸 찾아야 함
+  Novelty ↑ + quality ↓ = garbage
+  Novelty ↓ + quality ↑ = copying machine
+  Novelty ↑ + quality ↑ = savant ← this is what we're looking for
 ```
 
-### 측정 가능한 검증 방법 6가지
+### 6 Measurable Verification Methods
 
 ```
-  방법                │ 측정 대상          │ 자동화 │ 신뢰도
-  ───────────────────┼───────────────────┼───────┼───────
-  ① n-gram 신규율     │ 학습데이터에 없는   │ ✅    │ ★★☆
-                     │ n-gram 비율        │       │
-  ② 유추 테스트       │ A:B=C:? 정답률     │ ✅    │ ★★★
-  ③ 교차 도메인 질문   │ 두 분야 합친 질문  │ ✅    │ ★★★
-  ④ 자기PPL vs 새로움 │ 일관성+새로움 2축  │ ✅    │ ★★☆
-  ⑤ 임베딩 거리       │ 출력 벡터 위치     │ ✅    │ ★★☆
-  ⑥ 블라인드 평가     │ 사람이 판단        │ ❌    │ ★★★
+  Method             │ What to measure         │ Automated│ Reliability
+  ───────────────────┼─────────────────────────┼──────────┼───────────
+  ① n-gram novelty   │ n-gram ratio not in      │ ✅       │ ★★☆
+                     │ training data            │          │
+  ② Analogy test     │ A:B=C:? accuracy         │ ✅       │ ★★★
+  ③ Cross-domain Q   │ Q combining two fields   │ ✅       │ ★★★
+  ④ Self-PPL vs novelty│ coherence+novelty 2-axis│ ✅       │ ★★☆
+  ⑤ Embedding distance│ output vector position  │ ✅       │ ★★☆
+  ⑥ Blind evaluation │ human judgment           │ ❌       │ ★★★
 ```
 
-### ① n-gram 신규율
+### ① n-gram Novelty Rate
 
 ```
-  학습 데이터의 모든 4-gram 수집 → 집합 A
-  모델 출력의 4-gram 수집 → 집합 B
+  Collect all 4-grams from training data → set A
+  Collect 4-grams from model output → set B
 
-  신규율 = |B - A| / |B|
+  Novelty rate = |B - A| / |B|
 
-  일반 LLM:    신규율 ~5-15%  (대부분 봤던 패턴)
-  교차 활성화:  신규율 ~??%
+  Standard LLM:      novelty ~5-15%  (mostly seen patterns)
+  Cross-activation:  novelty ~??%
 
-  신규율 높으면서 PPL 낮으면 → 서번트 후보
-  신규율 높으면서 PPL 높으면 → 그냥 노이즈
+  High novelty + low PPL → savant candidate
+  High novelty + high PPL → just noise
 ```
 
-### ② 유추 테스트 (가장 강력)
+### ② Analogy Test (Most Powerful)
 
 ```
-  왕:여왕 = 남자:?         → 여자 (이건 쉬움, 학습데이터에 있음)
-  중력:사과 = GABA:?       → 억제? (교차 도메인)
-  소나타:4/3 = 강력:?      → 9/8? (우리 모델 내 유추)
+  king:queen = man:?           → woman (easy, in training data)
+  gravity:apple = GABA:?       → inhibition? (cross-domain)
+  sonata:4/3 = strong force:?  → 9/8? (intra-model analogy)
 
-  학습 데이터에 절대 없는 유추를 만들어서 테스트
-  → 맞추면 "의미 재조합" 가능하다는 증거
+  Create analogies absolutely absent from training data and test
+  → Getting them right = evidence "semantic recombination" is possible
 
-  구현:
-  - 도메인 A에서만 학습
-  - 도메인 B에서만 학습
-  - A↔B 교차 유추 질문
-  - 교차 활성화 ON vs OFF 비교
+  Implementation:
+  - Train only on domain A
+  - Train only on domain B
+  - Ask cross A↔B analogy questions
+  - Compare cross-activation ON vs OFF
 ```
 
-### ③ 교차 도메인 질문
+### ③ Cross-Domain Questions
 
 ```
-  Expert 1 = 음악 전문
-  Expert 5 = 물리 전문
+  Expert 1 = music specialist
+  Expert 5 = physics specialist
 
-  질문: "화음의 주파수 비율이 왜 물리 상수와 비슷한가?"
+  Question: "Why are the frequency ratios of chords similar to physics constants?"
 
-  일반 MoE:    Expert 1 OR 5 활성 → 한쪽 관점만
-  교차 활성화:  Expert 1 AND 5 동시 → 연결 가능?
+  Standard MoE:   Expert 1 OR 5 active → only one perspective
+  Cross-activation: Expert 1 AND 5 simultaneously → connection possible?
 
-  측정: 답변에 두 도메인 용어가 모두 등장하는지
-  → 교차 출현율
+  Measurement: whether both domain terms appear in the answer
+  → Cross-domain co-occurrence rate
 ```
 
-### ④ 2축 그래프: 품질 vs 새로움
+### ④ 2-Axis Graph: Quality vs Novelty
 
 ```
-  새로움 (n-gram 신규율)
-  높음│         ●노이즈    ★서번트
-      │
-      │
-      │
-  낮음│  ●복사기           ●좋은 LLM
-      └──────────────────────→
-       높음   자기PPL    낮음
-              (품질)
+  Novelty (n-gram novelty rate)
+  high │         ●noise    ★savant
+       │
+       │
+       │
+  low  │  ●copier           ●good LLM
+       └──────────────────────→
+        high     Self-PPL    low
+                 (quality)
 
-  교차 활성화 ON/OFF 에서 각각 찍어서
-  ★ 방향으로 이동하는지 확인
+  Plot each point with cross-activation ON/OFF
+  Check whether it moves toward ★ direction
 ```
 
-## 최소 실험 설계
+## Minimal Experiment Design
 
 ```
-  1. 골든 MoE 라우터 학습 (현재 진행 중)
-  2. 교차 활성화 ON/OFF 두 버전 준비
-  3. 동일 프롬프트 100개에 대해 출력 생성
-  4. 측정:
-     a) PPL (품질)
-     b) 4-gram 신규율 (새로움)
-     c) 유추 테스트 10문제 (교차 도메인)
-  5. ON이 OFF보다 "새로움↑ + 품질 유지"면 → 성공
+  1. Train Golden MoE router (currently in progress)
+  2. Prepare two versions: cross-activation ON/OFF
+  3. Generate outputs for 100 identical prompts
+  4. Measure:
+     a) PPL (quality)
+     b) 4-gram novelty rate (novelty)
+     c) 10 analogy test questions (cross-domain)
+  5. If ON shows "novelty↑ + quality maintained" vs OFF → success
 ```
 
-## 한계
+## Limitations
 
-1. 교차 활성화가 노이즈와 창의성의 경계를 넘는 조건이 불명확
-2. 유추 테스트의 "정답"을 누가 정하는가 — 주관성 문제
-3. TinyLlama 수준에서 의미 있는 교차가 나올지 불확실 (모델이 너무 작음)
-4. 교차 활성화의 최적 확률 p를 결정하는 이론 없음
-5. "의미 재조합"의 정의 자체가 미해결 철학 문제
+1. Conditions for cross-activation to cross the noise-creativity boundary are unclear
+2. Who determines the "correct answer" for analogy tests — subjectivity problem
+3. Whether meaningful crossing emerges at TinyLlama scale is uncertain (model too small)
+4. No theory to determine the optimal cross-activation probability p
+5. The definition of "semantic recombination" itself is an unresolved philosophical problem
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 골든 MoE에 방법 1(랜덤 교차, p=0.1) 구현
-- [ ] 교차 ON/OFF 비교: PPL + n-gram 신규율
-- [ ] 유추 테스트 세트 10문제 설계 (교차 도메인)
-- [ ] 2축 그래프(품질 vs 새로움) 시각화
-- [ ] p 값에 따른 서번트 출현 임계점 탐색
+- [ ] Implement Method 1 (random cross, p=0.1) in Golden MoE
+- [ ] ON/OFF comparison: PPL + n-gram novelty rate
+- [ ] Design 10 analogy test questions (cross-domain)
+- [ ] Visualize 2-axis graph (quality vs novelty)
+- [ ] Explore savant emergence threshold as function of p value
 
 ---
 
-*관련: 가설 008(골든MoE설계), 082(프로토타입), 156(실비우스열=D), 162(후천적 서번트), 179(LLM재설계), 234(월드모델=꿈)*
+*Related: Hypothesis 008 (Golden MoE design), 082 (prototype), 156 (Sylvian fissure=D), 162 (acquired savant), 179 (LLM redesign), 234 (world model=dreaming)*

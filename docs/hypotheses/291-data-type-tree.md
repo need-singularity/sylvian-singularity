@@ -1,92 +1,92 @@
-# 가설 291: 데이터 유형 트리 — 반발력장이 작동하는 영역의 위계
+# Hypothesis 291: Data Type Tree — Hierarchy of Domains Where Repulsion Field Operates
 
-> **반발력장의 효과를 데이터 유형 트리로 분류. 최상위(밀집 vs 희소)에서 하위(구체적 도메인)까지 3단계. 아직 탐색 안 한 가지가 새 발견을 줄 수 있다.**
+> **Classifying repulsion field effects with a data type tree. From top-level (dense vs sparse) to specific domains in 3 levels. Unexplored branches may yield new discoveries.**
 
-## 데이터 유형 트리 (실측 기반, 2026-03-24 업데이트)
+## Data Type Tree (Based on Measurements, Updated 2026-03-24)
 
 ```
-  [Level 0] 모든 데이터
+  [Level 0] All Data
        |
-       +-- [Level 1] 밀집/연속 데이터 --> 도메인에 따라 다름
+       +-- [Level 1] Dense/Continuous Data --> Domain-dependent
        |     |
-       |     +-- [Level 2] 시간적 (temporal) --> 최대 효과!
-       |     |     +-- [L3] 시계열 Easy (4파형): +9.00% ✅✅
-       |     |     +-- [L3] 시계열 Hard (신호처리): +4.00% ✅
-       |     |     +-- [L3] 음성/음향: +3.33% (4극) ✅
-       |     |     +-- [L3] 음악 이론: -2.2%, 협화=낮은장력
-       |     |     +-- [L3] EEG/뇌파: ???  <-- 의식 직접 측정!
+       |     +-- [Level 2] Temporal --> Maximum effect!
+       |     |     +-- [L3] Time Series Easy (4 waveforms): +9.00% ✅✅
+       |     |     +-- [L3] Time Series Hard (signal processing): +4.00% ✅
+       |     |     +-- [L3] Voice/Audio: +3.33% (4-pole) ✅
+       |     |     +-- [L3] Music Theory: -2.2%, harmony=low tension
+       |     |     +-- [L3] EEG/Brainwaves: ???  <-- Direct consciousness measurement!
        |     |
-       |     +-- [Level 2] 공간적 (spatial) --> 강한 효과
-       |     |     +-- [L3] 이미지 2D: MNIST +0.60%, CIFAR +4.80% ✅
-       |     |     +-- [L3] 이미지 3D (비디오/의료영상): ???
-       |     |     +-- [L3] 포인트클라우드 (3D 점): ???
+       |     +-- [Level 2] Spatial --> Strong effect
+       |     |     +-- [L3] 2D Images: MNIST +0.60%, CIFAR +4.80% ✅
+       |     |     +-- [L3] 3D Images (video/medical): ???
+       |     |     +-- [L3] Point Clouds (3D points): ???
        |     |
-       |     +-- [Level 2] 구조적 (structural) --> 중립~약한 효과
+       |     +-- [Level 2] Structural --> Neutral~weak effect
        |     |     +-- [L3] Iris (4D, 3cls):     +2.22% ✅
        |     |     +-- [L3] Wine (13D, 3cls):    +0.00%
        |     |     +-- [L3] Breast Ca (30D, 2cls): -0.06%
        |     |     +-- [L3] Digits (64D, 10cls): -0.19%
        |     |     +-- [L3] Diabetes (10D, 3cls): -0.53%
        |     |     +-- [L3] Synthetic 100D:      +3.27% ✅
-       |     |     +-- [L3] 숫자 체계: +1.17%, 소수=최고장력 ✅
-       |     |     +-- [L3] 그래프/분자: ???
+       |     |     +-- [L3] Number Systems: +1.17%, primes=max tension ✅
+       |     |     +-- [L3] Graphs/Molecules: ???
        |     |
-       |     +-- [Level 2] 비정상 (anomalous) --> 특수
-       |           +-- [L3] 이상 탐지: AUROC=1.0 ⭐
-       |           +-- [L3] 사기 탐지: ???
+       |     +-- [Level 2] Anomalous --> Special
+       |           +-- [L3] Anomaly Detection: AUROC=1.0 ⭐
+       |           +-- [L3] Fraud Detection: ???
        |
-       +-- [Level 1] 희소 데이터 --> 반발력장 효과 없음 ❌
-       |     +-- [L2] 텍스트 (TF-IDF): -0.28%
-       |     +-- [L2] 텍스트 (임베딩): -0.80%  <-- 밀집화해도 안됨!
-       |     +-- [L2] 원핫 인코딩: ???
+       +-- [Level 1] Sparse Data --> No repulsion field effect ❌
+       |     +-- [L2] Text (TF-IDF): -0.28%
+       |     +-- [L2] Text (Embeddings): -0.80%  <-- Still no effect when densified!
+       |     +-- [L2] One-hot Encoding: ???
        |
-       +-- [Level 1] 메타/추상 --> ???
-             +-- [L2] 강화학습: 장력 proportional 난이도 ✅
-             +-- [L2] 위상적 (TDA): 구조 존재 ✅
-             +-- [L2] 생성적 (VAE/GAN): 이미 구현 (생성엔진)
-             +-- [L2] 멀티모달 (이미지+텍스트): ???
+       +-- [Level 1] Meta/Abstract --> ???
+             +-- [L2] Reinforcement Learning: tension proportional to difficulty ✅
+             +-- [L2] Topological (TDA): structure exists ✅
+             +-- [L2] Generative (VAE/GAN): already implemented (generative engine)
+             +-- [L2] Multimodal (image+text): ???
 ```
 
-## 미탐색 가지 (??? = 새 발견 가능)
+## Unexplored Branches (??? = New Discoveries Possible)
 
 ```
-  가장 흥미로운 미탐색:
-  1. EEG/뇌파 --> 의식 직접 측정! (가설 274 뇌 실증)
-  2. 비디오 --> 시간+공간 결합 (시계열 최대 효과이므로 유망!)
-  3. 그래프/분자 --> 화학 교차 (가설 H-CHEM)
-  4. 멀티모달 --> 의식의 다감각 통합?
-  5. 포인트클라우드 --> 3D 공간 구조
+  Most interesting unexplored:
+  1. EEG/Brainwaves --> Direct consciousness measurement! (hypothesis 274 brain verification)
+  2. Video --> Time+space combined (promising since time series has max effect!)
+  3. Graphs/Molecules --> Chemistry cross-domain (hypothesis H-CHEM)
+  4. Multimodal --> Consciousness multisensory integration?
+  5. Point Clouds --> 3D spatial structure
 ```
 
-## 트리 법칙 (예측 vs 실측)
+## Tree Laws (Predicted vs Observed)
 
-| 법칙 | 예측 | 실측 | 상태 |
+| Law | Predicted | Observed | Status |
 |------|------|------|------|
-| L1: 밀집 > 희소 | 밀집이 나을 것 | 텍스트에서 확인 (TF-IDF -0.28% vs Dense도 -0.80%) | 부분 확인, but 밀집화만으로 부족 |
-| L2: 공간적 > 시간적 > 구조적 | 이미지 효과 최대 | **반증!** 시간적(+9%) > 공간적(+4.8%) > 구조적(+0.8%) | ❌ 역전 |
-| L3: 텍스트 임베딩 > TF-IDF | 밀집이면 나을 것 | **반증!** 임베딩(-0.80%) < TF-IDF(-0.28%) | ❌ 반증 |
-| 비정상 = 특수 | 별개 메커니즘 | AUROC=1.0 (이상탐지 특화) | ✅ 확인 |
+| L1: Dense > Sparse | Dense should be better | Confirmed in text (TF-IDF -0.28% vs Dense also -0.80%) | Partially confirmed, but densification alone insufficient |
+| L2: Spatial > Temporal > Structural | Images max effect | **Refuted!** Temporal(+9%) > Spatial(+4.8%) > Structural(+0.8%) | ❌ Reversed |
+| L3: Text Embeddings > TF-IDF | Dense should be better | **Refuted!** Embeddings(-0.80%) < TF-IDF(-0.28%) | ❌ Refuted |
+| Anomalous = Special | Separate mechanism | AUROC=1.0 (anomaly detection specialized) | ✅ Confirmed |
 
-## 수정된 트리 법칙 (실측 기반)
+## Revised Tree Laws (Based on Measurements)
 
 ```
-  Level 1 법칙:
-    시간적 패턴 >> 공간적 패턴 > 구조적 >> 의미론적(텍스트)
-    (이전 "밀집>희소" 법칙은 불충분)
+  Level 1 Law:
+    Temporal patterns >> Spatial patterns > Structural >> Semantic(text)
+    (Previous "dense>sparse" law is insufficient)
 
-  Level 2 법칙 (신규):
-    반발력장 효과 = f(패턴의 연속성)
-    - 시계열: 연속적 변화 패턴 --> 장력이 파형 차이를 직접 포착 --> 최대 효과
-    - 이미지: 공간적 연속성 --> 효과적
-    - 표형: 특징 간 관계가 비연속적 --> 효과 미미
-    - 텍스트: 의미론적 관계 --> 장력이 포착 불가 --> 효과 없음
+  Level 2 Law (New):
+    Repulsion field effect = f(pattern continuity)
+    - Time series: continuous change patterns --> tension directly captures waveform differences --> maximum effect
+    - Images: spatial continuity --> effective
+    - Tabular: discontinuous feature relationships --> minimal effect
+    - Text: semantic relationships --> tension cannot capture --> no effect
 
-  핵심 통찰:
-    반발력장은 "연속적 패턴의 차이"를 포착하는 메커니즘
-    의미론적(semantic) 차이에는 작동하지 않음
+  Key insight:
+    Repulsion field is a mechanism for capturing "differences in continuous patterns"
+    Does not operate on semantic differences
 ```
 
-## 정량적 도메인 비교
+## Quantitative Domain Comparison
 
 | Domain           | Type   | Dense   | Repulsion | Delta   | Tension_scale |
 |------------------|--------|---------|-----------|---------|---------------|
@@ -115,38 +115,38 @@
   Text Embed  |..........---| -0.80%
 ```
 
-## tension_scale 관찰
+## tension_scale Observations
 
 ```
-  흥미로운 패턴:
-  - 시계열(효과 큼): tension_scale -> 0.6~1.0 (초기 0.333에서 상승)
-  - 표형(효과 작음): tension_scale -> 0.3~0.65 (다양)
-  - 텍스트(효과 없음): tension_scale -> 0.6~0.7 (올라가지만 도움 안됨)
-  - 이미지: tension_scale -> ~0.34 (초기값 유지)
+  Interesting patterns:
+  - Time series (large effect): tension_scale -> 0.6~1.0 (rises from initial 0.333)
+  - Tabular (small effect): tension_scale -> 0.3~0.65 (varied)
+  - Text (no effect): tension_scale -> 0.6~0.7 (rises but doesn't help)
+  - Images: tension_scale -> ~0.34 (maintains initial value)
 
-  → tension_scale 상승 자체는 효과를 보장하지 않음
-  → 시계열에서만 tension_scale 상승이 실제 성능 향상으로 이어짐
+  → tension_scale increase itself doesn't guarantee effectiveness
+  → Only in time series does tension_scale increase lead to actual performance improvement
 ```
 
-## 한계
+## Limitations
 
 ```
-  - 시계열이 합성 데이터 (실제 ECG/센서 미테스트)
-  - 텍스트가 단순 MLP (Transformer 미테스트)
-  - 표형 데이터셋이 모두 작음 (<2000 samples)
-  - 음성/비디오/그래프 미테스트
+  - Time series are synthetic data (real ECG/sensors untested)
+  - Text only uses simple MLP (Transformer untested)
+  - All tabular datasets are small (<2000 samples)
+  - Voice/video/graphs untested
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. 시계열 실증: 실제 ECG, HAR, 주가 데이터
-  2. 비디오 분류: 시간+공간 결합, 최대 효과 후보
-  3. 음성 스펙트로그램: 시간적+공간적 혼합
-  4. 대규모 텍스트: Transformer 인코더 + RepulsionField
+  1. Time series verification: real ECG, HAR, stock data
+  2. Video classification: time+space combined, maximum effect candidate
+  3. Voice spectrograms: temporal+spatial mix
+  4. Large-scale text: Transformer encoder + RepulsionField
 ```
 
-## 상태: 🟧 부분 검증 (시간적 ✅✅, 공간적 ✅, 구조적 ≈, 텍스트 ❌)
+## Status: 🟧 Partially Verified (Temporal ✅✅, Spatial ✅, Structural ≈, Text ❌)
 
-트리 법칙 수정: "밀집>희소"에서 "연속적 패턴 > 의미론적 패턴"으로 업데이트.
-17종 관측, 수정된 트리 법칙 제안.
+Tree law revision: Updated from "dense>sparse" to "continuous patterns > semantic patterns".
+17 observations, revised tree laws proposed.

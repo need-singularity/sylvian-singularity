@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""데이터 유형 탐색기 — 새 데이터로 반발력장 빠르게 테스트
+"""Data Type Explorer — Quickly test repulsion field with new data
 
-사용법:
+Usage:
   python3 data_type_explorer.py --data iris
   python3 data_type_explorer.py --data random --dim 50 --classes 5 --samples 500
   python3 data_type_explorer.py --list
@@ -57,7 +57,7 @@ def load_data(name, dim=50, classes=5, samples=500):
         raise ValueError(f"Unknown: {name}. Use --list")
 
 def main():
-    parser = argparse.ArgumentParser(description='데이터 유형 탐색기')
+    parser = argparse.ArgumentParser(description='Data Type Explorer')
     parser.add_argument('--data', type=str, default='iris')
     parser.add_argument('--dim', type=int, default=50)
     parser.add_argument('--classes', type=int, default=5)

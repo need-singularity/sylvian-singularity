@@ -1,13 +1,14 @@
+```python
 #!/usr/bin/env python3
-"""C4 개별 샘플 검증 — tension-accuracy 상관관계 생태학적 오류 확인
+"""C4 Individual Sample Verification — tension-accuracy correlation ecological fallacy check
 
-C4 주장: tension-accuracy 상관 r=+0.43 (per-digit, N=10)
-C5 교훈: per-digit r=-0.79 -> per-sample r=-0.26 (ecological fallacy)
+C4 claim: tension-accuracy correlation r=+0.43 (per-digit, N=10)
+C5 lesson: per-digit r=-0.79 -> per-sample r=-0.26 (ecological fallacy)
 
-이 실험: RepulsionFieldQuad를 MNIST에서 훈련 후
-  - 10,000 테스트 샘플 각각의 tension과 정답 여부를 수집
-  - Point-biserial 상관, 로지스틱 회귀, AUC, Bootstrap CI
-  - Per-digit 내부 vs between-digit 분해
+This experiment: Train RepulsionFieldQuad on MNIST then
+  - Collect tension and correctness for each of 10,000 test samples
+  - Point-biserial correlation, logistic regression, AUC, Bootstrap CI
+  - Per-digit internal vs between-digit decomposition
 """
 
 import sys
@@ -444,3 +445,4 @@ def main():
 
 if __name__ == "__main__":
     verdict = main()
+```

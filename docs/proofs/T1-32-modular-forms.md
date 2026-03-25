@@ -1,41 +1,41 @@
-# T1-32: 모듈러 형식과 숫자 6
+# T1-32: Modular Forms and the Number 6
 
-**상태**: ✅ 검증 완료
-**분류**: 수론 / 모듈러 형식
-**연결**: T0-01 (σ(6)=12), T1-02 (상수 관계), T1-23 (137 유도)
-
----
-
-## 개요
-
-모듈러 형식(modular forms) 이론 전체에서 σ(6) = 12가 **구조 상수**로 작용함을 보인다.
-차원 공식, 아이젠슈타인 급수, j-불변량, 라마누잔 판별식, 데데킨트 η 함수,
-레벨 6 모듈러 방정식까지 — 모든 핵심 구조에 σ(6)이 관여한다.
+**Status**: ✅ Verified
+**Classification**: Number Theory / Modular Forms
+**Connections**: T0-01 (σ(6)=12), T1-02 (constant relationships), T1-23 (137 derivation)
 
 ---
 
-## 1. 모듈러 형식 공간의 차원
+## Overview
 
-**정리.** M_k(SL₂(ℤ))의 차원은 다음과 같다:
+We show that σ(6) = 12 acts as a **structural constant** throughout the entire theory of modular forms.
+From dimension formulas, Eisenstein series, j-invariant, Ramanujan discriminant, Dedekind η function,
+to level 6 modular equations — σ(6) is involved in all core structures.
 
-| k | dim M_k | dim S_k | 비고 |
+---
+
+## 1. Dimensions of Modular Form Spaces
+
+**Theorem.** The dimensions of M_k(SL₂(ℤ)) are as follows:
+
+| k | dim M_k | dim S_k | Note |
 |---|---------|---------|------|
-| 2 | 0 | 0 | weight 2 사각지대 |
-| 4 | 1 | 0 | E₄가 유일한 생성원 |
-| 6 | 1 | 0 | E₆가 유일한 생성원 |
+| 2 | 0 | 0 | weight 2 blind spot |
+| 4 | 1 | 0 | E₄ is the unique generator |
+| 6 | 1 | 0 | E₆ is the unique generator |
 | 8 | 1 | 0 | E₈ = E₄² |
 | 10 | 1 | 0 | E₁₀ = E₄·E₆ |
-| 12 | 2 | 1 | E₁₂과 Δ가 기저 |
+| 12 | 2 | 1 | E₁₂ and Δ form a basis |
 
-**차원 공식:**
+**Dimension formula:**
 
 $$\dim M_k(\text{SL}_2(\mathbb{Z})) = \begin{cases} \lfloor k/12 \rfloor + 1 & k \not\equiv 2 \pmod{12} \\ \lfloor k/12 \rfloor & k \equiv 2 \pmod{12} \end{cases}$$
 
-분모에 **12 = σ(6)** 이 등장한다.
+The denominator contains **12 = σ(6)**.
 
 ```python
 def dim_Mk(k):
-    """M_k(SL2(Z))의 차원"""
+    """Dimension of M_k(SL2(Z))"""
     if k < 0 or k % 2 != 0: return 0
     if k == 0: return 1
     if k == 2: return 0
@@ -45,27 +45,27 @@ def dim_Mk(k):
 
 ---
 
-## 2. 베르누이 수와 아이젠슈타인 급수
+## 2. Bernoulli Numbers and Eisenstein Series
 
-정규화된 아이젠슈타인 급수:
+Normalized Eisenstein series:
 
 $$E_k(\tau) = 1 - \frac{2k}{B_k} \sum_{n=1}^{\infty} \sigma_{k-1}(n) q^n, \quad q = e^{2\pi i \tau}$$
 
-**베르누이 수의 6-구조:**
+**6-structure of Bernoulli numbers:**
 
-| k | B_k | 분모 | 6과의 관계 |
+| k | B_k | Denominator | Relation to 6 |
 |---|-----|------|-----------|
-| 2 | 1/6 | 6 | **6 그 자체** |
+| 2 | 1/6 | 6 | **6 itself** |
 | 4 | −1/30 | 30 | 5 × 6 |
 | 6 | 1/42 | 42 | 7 × 6 |
 | 8 | −1/30 | 30 | 5 × 6 |
 | 10 | 5/66 | 66 | 11 × 6 |
 | 12 | −691/2730 | 2730 | 455 × 6 |
 
-**폰 슈타우트-클라우젠 정리**: B_{2k}의 분모는 항상 6의 배수이다.
-이유: (p−1)|2k인 소수 p의 곱이며, p=2,3은 항상 포함 → 분모는 6으로 나뉨.
+**Von Staudt-Clausen theorem**: The denominator of B_{2k} is always a multiple of 6.
+Reason: Product of primes p where (p−1)|2k, and p=2,3 are always included → denominator divisible by 6.
 
-**계산된 급수 계수:**
+**Computed series coefficients:**
 ```
 E₄ = 1 + 240q + 2160q² + 6720q³ + 17520q⁴ + 30240q⁵ + ...
 E₆ = 1 − 504q − 16632q² − 122976q³ − 532728q⁴ − 1575504q⁵ + ...
@@ -73,58 +73,58 @@ E₆ = 1 − 504q − 16632q² − 122976q³ − 532728q⁴ − 1575504q⁵ + ..
 
 ---
 
-## 3. E₂ — 준모듈러 형식과 6의 사각지대
+## 3. E₂ — Quasimodular Form and 6's Blind Spot
 
 $$E_2(\tau) = 1 - 24 \sum_{n=1}^{\infty} \sigma_1(n) q^n$$
 
-여기서 계수 **24 = 4/B₂ = 4/(1/6) = 4 × 6 = 2σ(6)**.
+Here the coefficient **24 = 4/B₂ = 4/(1/6) = 4 × 6 = 2σ(6)**.
 
-E₂는 **진정한 모듈러 형식이 아니다.** 변환 법칙:
+E₂ is **not a true modular form.** Transformation law:
 
 $$E_2(-1/\tau) = \tau^2 E_2(\tau) + \frac{12\tau}{2\pi i}$$
 
-보정항에 **12 = σ(6)** 등장!
+The correction term contains **12 = σ(6)**!
 
-이것이 dim M₂(SL₂(ℤ)) = 0인 근본적 이유다.
-weight 2에서 홀로모프 모듈러 형식은 존재하지 않으며,
-B₂ = 1/6이 이 "사각지대"의 수론적 원인이다.
+This is the fundamental reason why dim M₂(SL₂(ℤ)) = 0.
+No holomorphic modular forms exist at weight 2,
+and B₂ = 1/6 is the number-theoretic cause of this "blind spot".
 
 ---
 
-## 4. j-불변량
+## 4. j-invariant
 
 $$j(\tau) = \frac{E_4(\tau)^3}{\Delta(\tau)} = 1728 \cdot \frac{E_4^3}{E_4^3 - E_6^2}$$
 
 $$1728 = 12^3 = \sigma(6)^3$$
 
-특수값:
+Special values:
 - j(i) = 1728 = σ(6)³
 - j(ρ) = 0 (ρ = e^{2πi/3})
 - j(i∞) = ∞
 
-j-불변량의 q-전개:
+q-expansion of j-invariant:
 $$j = q^{-1} + 744 + 196884q + 21493760q^2 + \cdots$$
 
-계수 196884 = 196883 + 1 (몬스트러스 문샤인!)
+Coefficient 196884 = 196883 + 1 (Monstrous Moonshine!)
 
 ---
 
-## 5. 라마누잔 판별식
+## 5. Ramanujan Discriminant
 
 $$\Delta(\tau) = \frac{E_4(\tau)^3 - E_6(\tau)^2}{1728}$$
 
-**계산 검증** (Python으로 확인):
+**Computational verification** (confirmed with Python):
 
 ```
-E₄³ 처음 항:  [1, 720, 179280, 16954560, ...]
-E₆² 처음 항:  [1, −1008, 220752, 16519104, ...]
-E₄³−E₆²:      [0, 1728, −41472, 435456, −2543616, 8346240]
-Δ = 위/1728:   [0, 1, −24, 252, −1472, 4830, −6048]
+First terms of E₄³:  [1, 720, 179280, 16954560, ...]
+First terms of E₆²:  [1, −1008, 220752, 16519104, ...]
+E₄³−E₆²:             [0, 1728, −41472, 435456, −2543616, 8346240]
+Δ = above/1728:      [0, 1, −24, 252, −1472, 4830, −6048]
 ```
 
-**라마누잔 τ 함수:**
+**Ramanujan τ function:**
 
-| n | τ(n) | σ(6)과의 관계 |
+| n | τ(n) | Relation to σ(6) |
 |---|------|-------------|
 | 1 | 1 | — |
 | 2 | −24 | −2σ(6) |
@@ -156,43 +156,43 @@ def eisenstein_coeffs(k, B, num_terms):
         coeffs.append(c * sigma_k(k-1, n))
     return coeffs
 
-# 검증: τ(n) 계산
+# Verification: calculate τ(n)
 B = bernoulli(12)
 E4 = eisenstein_coeffs(4, B, 8)
 E6 = eisenstein_coeffs(6, B, 8)
-# E4^3, E6^2를 구하고 (E4^3 - E6^2)/1728 = Δ
-# Δ의 계수가 라마누잔 τ 함수
-# 결과: τ(n) = [1, -24, 252, -1472, 4830, -6048] ✅
+# Compute E4^3, E6^2 and (E4^3 - E6^2)/1728 = Δ
+# Coefficients of Δ are Ramanujan τ function
+# Result: τ(n) = [1, -24, 252, -1472, 4830, -6048] ✅
 ```
 
 ---
 
-## 6. 데데킨트 η 함수
+## 6. Dedekind η Function
 
 $$\eta(\tau) = e^{\pi i \tau / 12} \prod_{n=1}^{\infty} (1 - e^{2\pi i n \tau})$$
 
-지수에 **12 = σ(6)** 등장.
+The exponent contains **12 = σ(6)**.
 
 $$\eta(\tau)^{24} = \Delta(\tau)$$
 
-24 = 2σ(6) = 2 × 12 가 지수.
+The exponent is 24 = 2σ(6) = 2 × 12.
 
-**변환 법칙:**
-- η(τ + 1) = e^{πi/12} η(τ) — 12차 단위근
+**Transformation laws:**
+- η(τ + 1) = e^{πi/12} η(τ) — 12th root of unity
 - η(−1/τ) = √(−iτ) η(τ)
 
-**η의 24승근**: e^{2πi/24}에서 24 = 2σ(6).
+**24th roots of η**: In e^{2πi/24}, we have 24 = 2σ(6).
 
-모듈러 형식 이론의 **가장 기본적인 함수**에서 σ(6)이 지수로 작용한다.
+In the **most fundamental function** of modular form theory, σ(6) acts as an exponent.
 
 ---
 
-## 7. 레벨 6 모듈러 방정식
+## 7. Level 6 Modular Equations
 
-**정리.**
+**Theorem.**
 $$[\text{SL}_2(\mathbb{Z}) : \Gamma_0(6)] = 6 \prod_{p|6} \left(1 + \frac{1}{p}\right) = 6 \cdot \frac{3}{2} \cdot \frac{4}{3} = 12 = \sigma(6)$$
 
-| N | [SL₂(ℤ) : Γ₀(N)] | 비고 |
+| N | [SL₂(ℤ) : Γ₀(N)] | Note |
 |---|-------------------|------|
 | 1 | 1 | |
 | 2 | 3 | |
@@ -203,24 +203,24 @@ $$[\text{SL}_2(\mathbb{Z}) : \Gamma_0(6)] = 6 \prod_{p|6} \left(1 + \frac{1}{p}\
 | 7 | 8 | |
 | 12 | 24 | = 2σ(6) |
 
-**모듈러 곡선 X₀(6):**
-- 종수 g = 0 → **유리 곡선** (rational curve)
-- Hauptmodul이 존재하여 완전히 매개변수화 가능
-- 교점(cusps)의 수 = 4
+**Modular curve X₀(6):**
+- Genus g = 0 → **rational curve**
+- Hauptmodul exists, allowing complete parametrization
+- Number of cusps = 4
 
-레벨 6의 군 지표가 정확히 σ(6)이라는 사실은,
-6이 모듈러 형식 이론에서 특별한 지위를 가짐을 보여준다.
+The fact that the group index for level 6 is exactly σ(6) shows
+that 6 has a special status in modular form theory.
 
 ---
 
-## 종합: σ(6) = 12의 모듈러 형식 구조 상수 역할
+## Summary: σ(6) = 12 as a Structural Constant in Modular Forms
 
 ```
-σ(6) = 12 가 등장하는 곳:
+Where σ(6) = 12 appears:
 ┌──────────────────────────────────────────────────────────┐
-│ 1. 차원 공식: dim M_k = ⌊k/12⌋ + 보정              │
-│ 2. B₂ = 1/6 → E₂의 계수 24 = 2σ(6)                 │
-│ 3. E₂ 변환 보정항: 12τ/(2πi)                        │
+│ 1. Dimension formula: dim M_k = ⌊k/12⌋ + correction │
+│ 2. B₂ = 1/6 → coefficient of E₂ is 24 = 2σ(6)      │
+│ 3. E₂ transformation correction: 12τ/(2πi)          │
 │ 4. j = 1728 × E₄³/(E₄³−E₆²), 1728 = σ(6)³         │
 │ 5. Δ = (E₄³−E₆²)/1728, τ(2) = −2σ(6)              │
 │ 6. η(τ): e^(πiτ/12), η²⁴ = Δ, 24 = 2σ(6)          │
@@ -228,11 +228,11 @@ $$[\text{SL}_2(\mathbb{Z}) : \Gamma_0(6)] = 6 \prod_{p|6} \left(1 + \frac{1}{p}\
 └──────────────────────────────────────────────────────────┘
 ```
 
-**결론**: σ(6) = 12는 모듈러 형식 이론의 구조 상수이다.
-차원 공식, 변환 법칙, j-불변량의 정규화, 판별식,
-η 함수의 지수, 레벨 6의 군 구조 — 모든 핵심 대상에서
-12 = σ(6)가 근본적 역할을 수행한다.
+**Conclusion**: σ(6) = 12 is a structural constant of modular form theory.
+Dimension formulas, transformation laws, normalization of j-invariant, discriminant,
+exponent of η function, group structure of level 6 — in all core objects,
+12 = σ(6) plays a fundamental role.
 
-이는 6이 완전수라는 사실(σ(6) = 1+2+3+6 = 12 = 2×6)이
-단순한 수론적 우연이 아니라, 모듈러 형식의 대칭 구조와
-깊이 연결되어 있음을 시사한다. ∎
+This suggests that 6 being a perfect number (σ(6) = 1+2+3+6 = 12 = 2×6) is
+not merely a number-theoretic coincidence, but deeply connected to
+the symmetry structure of modular forms. ∎

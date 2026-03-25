@@ -1,13 +1,13 @@
-# H-CX-10: R-체인 길이 = 학습 Phase Transition 수
+# H-CX-10: R-chain Length = Learning Phase Transition Count
 
-> **가설**: 뉴럴 네트워크 학습의 phase transition 수가 입력 차원 n의 R-체인 길이와 관련된다.
+> **Hypothesis**: The number of phase transitions in neural network learning is related to the R-chain length of input dimension n.
 
-## 배경
-- R-체인: n→R(n)→...→1. 길이가 n의 "산술적 복잡도"
-- 골든MoE 학습: loss curve에 여러 phase transition 존재
-- 가설: 모델 차원 d에서 R-체인 길이 L(d)가 phase 수를 예측
+## Background
+- R-chain: n→R(n)→...→1. Length is n's "arithmetic complexity"
+- Golden MoE learning: multiple phase transitions exist in loss curve
+- Hypothesis: In model dimension d, R-chain length L(d) predicts phase count
 
-## R-체인 길이 테이블
+## R-chain Length Table
 
 ```
   n       R-chain              length
@@ -17,16 +17,16 @@
   6048    6048→120→6→1         4
   193750  193750→6048→120→6→1  5
 
-  대부분의 n: R(n) 비정수 → 길이 1 (즉시 종료)
-  정수 R 희소: n≤50000에서 52개만
+  Most n: R(n) non-integer → length 1 (immediate termination)
+  Integer R sparse: only 52 for n≤50000
 ```
 
-## 검증 방향
-1. [ ] 골든MoE 학습 loss curve에서 phase transition 지점 수 측정
-2. [ ] hidden_dim=120, 6048 등에서 학습 phase 수 비교
-3. [ ] loss curve의 "계단" 수와 R-체인 길이 상관
+## Verification Directions
+1. [ ] Measure phase transition point count in Golden MoE learning loss curve
+2. [ ] Compare learning phase count at hidden_dim=120, 6048, etc.
+3. [ ] Correlate loss curve "step" count with R-chain length
 
-## ASCII 예측 그래프
+## ASCII Prediction Graph
 
 ```
   Loss
@@ -43,4 +43,4 @@
        1k 2k 3k 4k 5k
 ```
 
-## 난이도: 극고 | 파급력: ★★★★ (성공 시)
+## Difficulty: Extreme High | Impact: ★★★★ (if successful)

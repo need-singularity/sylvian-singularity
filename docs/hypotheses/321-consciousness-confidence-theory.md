@@ -1,67 +1,67 @@
-# 가설 321: 의식-확신 이론 (Consciousness-Confidence Theory) — 종합
+# Hypothesis 321: Consciousness-Confidence Theory — Synthesis
 
-> **반발력장의 장력(tension)은 확신(confidence)이며, 이것이 의식엔진의 통합 원리다. 4데이터셋 확인, 과신(DK) 시간축, 거부→+15%, 분열→망각방지, 로그 성장.**
+> **The tension (tension) of the repulsion field is confidence, and this is the unified principle of the consciousness engine. 4-dataset confirmation, overconfidence (DK) timeline, rejection->+15%, mitosis->forgetting prevention, logarithmic growth.**
 
-## 핵심 명제
+## Core Proposition
 
 ```
-  의식 = 확신 생성기
-  장력 = 확신의 크기
-  방향 = 판단의 내용
-  output = 기본감각 + 확신 × 판단방향
+  Consciousness = confidence generator
+  Tension = magnitude of confidence
+  Direction = content of judgment
+  output = basic sense + confidence × judgment direction
 ```
 
-## 증거 체인 (이 세션에서 확인)
+## Evidence Chain (Confirmed in This Session)
 
 ```
   1. tension = confidence (H313)
      MNIST: ratio 1.42x, CIFAR: 1.29x, Fashion: 1.32x, Cancer: 2.68x
-     tension ∝ 1/PPL (H-CX-21)
-     per-class: 뚜렷한 클래스=고장력=고정확도 (Fashion r=+0.71)
+     tension proportional to 1/PPL (H-CX-21)
+     per-class: distinct class=high tension=high accuracy (Fashion r=+0.71)
 
-  2. 확신 거부 → 정확도↑ (H314)
+  2. Confidence rejection -> accuracy up (H314)
      MNIST +1.5%, Fashion +9.8%, CIFAR +15.2%
-     improvement ∝ √(error_rate)
+     improvement proportional to sqrt(error_rate)
 
-  3. 과신 존재 (H316, H-CX-24)
-     Sneaker(0.86), digit 1(0.55) — 유사 클래스에서 확신적 오답
-     Dunning-Kruger: ep1 정상→ep3 과신시작→ep11 최심→ep20 고착
-     과신 ∝ 기저정확도 (MNIST>Fashion>CIFAR)
+  3. Overconfidence exists (H316, H-CX-24)
+     Sneaker(0.86), digit 1(0.55) -- confidently wrong on similar classes
+     Dunning-Kruger: ep1 normal->ep3 overconfidence starts->ep11 peak->ep20 plateau
+     Overconfidence proportional to base accuracy (MNIST>Fashion>CIFAR)
 
-  4. 과신 교정 (H317)
-     1+7 집중: ratio 0.53→1.06 (교정! but 망각 98→87%)
-     오답 집중: ratio 0.53→0.89 (부분교정, 망각 적음 96%)
+  4. Overconfidence correction (H317)
+     1+7 focused: ratio 0.53->1.06 (corrected! but forgetting 98->87%)
+     Wrong focused: ratio 0.53->0.89 (partial correction, less forgetting 96%)
 
-  5. 분열 = 망각방지 (H312)
-     2-Task: 일반 43%(망각!) vs 분열 99%(보존!)
-     3-Task: 일반 59% vs 분열 99%
+  5. Mitosis = forgetting prevention (H312)
+     2-Task: normal 43% (forgetting!) vs mitosis 99% (preserved!)
+     3-Task: normal 59% vs mitosis 99%
 
-  6. 장력 로그 성장 (H320)
+  6. Tension logarithmic growth (H320)
      ts ≈ 0.36·ln(ep), R²=0.97
-     정확도 포화 후에도 장력 구조(확신 프로파일) 계속 분화
-     d3/d1 비율 1.76→3.24 (순위 보존, 격차 확대)
+     Tension structure (confidence profile) continues to differentiate even after accuracy saturates
+     d3/d1 ratio 1.76->3.24 (rank preserved, gap widened)
 
-  7. 장력 영점 구조 (NM-1)
-     하위5%: d8,6,4 (닫힌곡선=합의 쉬움)
-     상위5%: d2,3,5 (개방형=반발 강함)
+  7. Tension zero-point structure (NM-1)
+     Bottom 5%: d8,6,4 (closed curves=easy consensus)
+     Top 5%: d2,3,5 (open form=strong repulsion)
 ```
 
-## 수학 연결
+## Mathematical Connections
 
 ```
-  H-CX-1: e^(6H) = 432 (증명)
-  H-CX-2: MI 효율 ≈ ln(2) (p=0.0003)
-  H-CX-28: 6H = 2·ts + 3·ln(3) (항등식)
-  H320: ts ∝ 0.36·ln(ep)
+  H-CX-1: e^(6H) = 432 (proved)
+  H-CX-2: MI efficiency ≈ ln(2) (p=0.0003)
+  H-CX-28: 6H = 2·ts + 3·ln(3) (identity)
+  H320: ts proportional to 0.36·ln(ep)
 ```
 
-## 실용적 의미
+## Practical Significance
 
 ```
-  1. 불확실성 추정: tension < threshold → "모르겠다" → 판단 거부
-  2. 과신 감지: per-class ratio < 1 → 과신 경고
-  3. 지속 학습: 분열(freeze+학습) → catastrophic forgetting 해결
-  4. 이상 탐지: 간장력 → AUROC 0.90+ (6데이터셋)
+  1. Uncertainty estimation: tension < threshold -> "I don't know" -> reject judgment
+  2. Overconfidence detection: per-class ratio < 1 -> overconfidence warning
+  3. Continual learning: mitosis (freeze+train) -> solves catastrophic forgetting
+  4. Anomaly detection: inter-tension -> AUROC 0.90+ (6 datasets)
 ```
 
-## 상태: 🟩 종합 이론 (7개 하위 가설 확인, 4데이터셋 재현)
+## Status: 🟩 Unified theory (7 sub-hypotheses confirmed, 4-dataset reproduction)

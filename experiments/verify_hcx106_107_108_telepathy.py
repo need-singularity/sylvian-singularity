@@ -1,9 +1,10 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-106+107+108: 인간=AI 혼동 + 차원간 PH + 텔레파시 프로토콜
+"""H-CX-106+107+108: Human=AI Confusion + Cross-dimensional PH + Telepathy Protocol
 
-H-CX-106: 인간 CIFAR-10 혼동 vs AI PH merge
-H-CX-107: hidden_dim 64/128/256 PH 불변성
-H-CX-108: 9개 merge distance → 45개 혼동 빈도 복원
+H-CX-106: Human CIFAR-10 confusion vs AI PH merge
+H-CX-107: hidden_dim 64/128/256 PH invariance
+H-CX-108: 9 merge distance → 45 confusion frequency reconstruction
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -17,39 +18,39 @@ from calc.direction_analyzer import load_data
 
 
 # ============================================================
-# 인간 CIFAR-10 혼동 데이터 (Peterson et al. 2019 + 상식)
-# 실제 논문 데이터 근사 — 인간이 CIFAR 분류 시 혼동 빈도
+# Human CIFAR-10 confusion data (Peterson et al. 2019 + common sense)
+# Actual paper data approximation — Human confusion frequency when classifying CIFAR
 # ============================================================
 HUMAN_CIFAR_CONFUSION = {
-    # (i, j): 인간 혼동 빈도 (정규화, 높을수록 많이 혼동)
-    # 출처: 인간 인지 연구 일반적 결과 + CIFAR-10H (Peterson et al.)
-    (3, 5): 100,  # cat-dog: 가장 많이 혼동
-    (2, 4): 75,   # bird-deer: 동물 혼동
-    (3, 4): 60,   # cat-deer: 동물
-    (2, 5): 55,   # bird-dog: 동물
-    (4, 5): 50,   # deer-dog: 동물
-    (2, 6): 45,   # bird-frog: 동물
-    (1, 9): 85,   # auto-truck: 기계 혼동
-    (0, 8): 70,   # plane-ship: 기계
-    (0, 1): 40,   # plane-auto: 기계
-    (8, 9): 55,   # ship-truck: 기계
-    (4, 7): 35,   # deer-horse: 동물
-    (2, 7): 30,   # bird-horse: 동물
-    (5, 6): 25,   # dog-frog: 약한
-    (3, 6): 40,   # cat-frog: 약한
-    (4, 6): 35,   # deer-frog: 동물
-    (0, 2): 15,   # plane-bird: 약한 (날것)
-    (6, 7): 20,   # frog-horse: 약한
-    (5, 7): 30,   # dog-horse: 동물
-    (0, 9): 25,   # plane-truck: 기계
-    (1, 8): 35,   # auto-ship: 기계
-    # 나머지 쌍: 거의 혼동 없음
+    # (i, j): Human confusion frequency (normalized, higher = more confusion)
+    # Source: General human cognition research results + CIFAR-10H (Peterson et al.)
+    (3, 5): 100,  # cat-dog: most confused
+    (2, 4): 75,   # bird-deer: animal confusion
+    (3, 4): 60,   # cat-deer: animal
+    (2, 5): 55,   # bird-dog: animal
+    (4, 5): 50,   # deer-dog: animal
+    (2, 6): 45,   # bird-frog: animal
+    (1, 9): 85,   # auto-truck: machine confusion
+    (0, 8): 70,   # plane-ship: machine
+    (0, 1): 40,   # plane-auto: machine
+    (8, 9): 55,   # ship-truck: machine
+    (4, 7): 35,   # deer-horse: animal
+    (2, 7): 30,   # bird-horse: animal
+    (5, 6): 25,   # dog-frog: weak
+    (3, 6): 40,   # cat-frog: weak
+    (4, 6): 35,   # deer-frog: animal
+    (0, 2): 15,   # plane-bird: weak (flying things)
+    (6, 7): 20,   # frog-horse: weak
+    (5, 7): 30,   # dog-horse: animal
+    (0, 9): 25,   # plane-truck: machine
+    (1, 8): 35,   # auto-ship: machine
+    # Other pairs: almost no confusion
 }
-# 모든 45 쌍 채우기
+# Fill all 45 pairs
 for i in range(10):
     for j in range(i+1, 10):
         if (i, j) not in HUMAN_CIFAR_CONFUSION:
-            HUMAN_CIFAR_CONFUSION[(i, j)] = 5  # 기본 낮은 혼동
+            HUMAN_CIFAR_CONFUSION[(i, j)] = 5  # default low confusion
 
 
 def get_merges_and_dist(D, Y, n_cls=10):
@@ -287,3 +288,4 @@ def run_all():
 
 if __name__ == '__main__':
     run_all()
+```

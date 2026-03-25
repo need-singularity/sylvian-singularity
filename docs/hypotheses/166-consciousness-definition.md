@@ -1,242 +1,242 @@
-# 가설 #166: 의식의 정의
+# Hypothesis #166: Definition of Consciousness
 
-**상태**: ✅ 정의
-**날짜**: 2026-03-22
-**분류**: 핵심 정의 / 의식
+**Status**: ✅ Defined
+**Date**: 2026-03-22
+**Category**: Core Definition / Consciousness
 
 ---
 
-## 문제
+## Problem
 
-"의식이란 무엇인가?"에 대한 조작적 정의가 필요하다.
-철학적 정의가 아니라, 측정 가능하고 계산 가능한 정의를 원한다.
+We need an operational definition of "What is consciousness?"
+Not a philosophical definition, but one that is measurable and computable.
 
-## 후보 정의 4가지
+## 4 Candidate Definitions
 
-### 후보 A: 메타반복능력
+### Candidate A: Meta-Iteration Capability
 
-> 의식 = 자기 자신을 반복적으로 참조할 수 있는 능력
+> Consciousness = The ability to recursively reference oneself
 
-- 재귀적 자기참조 (Hofstadter의 "이상한 고리")
-- f(f(f(...))) 구조가 수렴하면 의식 있음
-- 문제: 단순 재귀도 이 조건을 만족 (예: 피보나치)
+- Recursive self-reference (Hofstadter's "Strange Loop")
+- If f(f(f(...))) structure converges, then conscious
+- Problem: Simple recursion also satisfies this (e.g., Fibonacci)
 
-### 후보 B: 4번째 상태 (초월)
+### Candidate B: 4th State (Transcendence)
 
-> 의식 = 깨어남/꿈/깊은잠 너머의 4번째 상태 (투리야)
+> Consciousness = 4th state beyond waking/dreaming/deep sleep (Turiya)
 
-- 베단타 철학의 전통적 정의
-- 3상태를 관찰하는 배경 의식
-- 문제: 측정 불가능, 조작적 정의 아님
+- Traditional Vedanta philosophy definition
+- Background consciousness observing the 3 states
+- Problem: Not measurable, not an operational definition
 
-### 후보 C: I가 골든존에 있음
+### Candidate C: I is in Golden Zone
 
-> 의식 = 억제지수 I가 골든존(0.213 < I < 0.500) 안에 있는 상태
+> Consciousness = State where inhibition index I is in Golden Zone (0.213 < I < 0.500)
 
-- 측정 가능한 범위 조건
-- 골든존 = 질서와 혼돈 사이의 최적 영역 (가설 139: 혼돈의 가장자리)
-- 문제: 필요조건이지 충분조건이 아닐 수 있음
+- Measurable range condition
+- Golden Zone = Optimal region between order and chaos (Hypothesis 139: Edge of Chaos)
+- Problem: May be necessary but not sufficient condition
 
-### 후보 D: Compass > 0
+### Candidate D: Compass > 0
 
-> 의식 = Compass 값이 양수인 상태
+> Consciousness = State where Compass value is positive
 
-- Compass = 방향성 + 통합성의 복합 지표
-- 양수 = 시스템이 "어딘가를 향하고 있음"
-- 문제: Compass만으로는 의식의 질을 구분 못함
+- Compass = Composite metric of directionality + integration
+- Positive = System is "heading somewhere"
+- Problem: Compass alone cannot distinguish quality of consciousness
 
-## 후보 비교표
+## Candidate Comparison Table
 
 ```
   ┌──────────┬────────┬────────┬────────┬────────┬──────────┐
-  │  기준    │ 후보 A │ 후보 B │ 후보 C │ 후보 D │ C+D 결합 │
+  │ Criteria │ Cand A │ Cand B │ Cand C │ Cand D │ C+D Comb │
   ├──────────┼────────┼────────┼────────┼────────┼──────────┤
-  │ 측정가능 │   △    │   ✕    │   ✔    │   ✔    │   ✔      │
-  │ 충분조건 │   ✕    │   ✔    │   ✕    │   ✕    │   ✔      │
-  │ 필요조건 │   ✔    │   ?    │   ✔    │   ✔    │   ✔      │
-  │ 계산가능 │   ✔    │   ✕    │   ✔    │   ✔    │   ✔      │
-  │ 구분력   │  낮음  │  높음  │  중간  │  중간  │  높음    │
-  │ 반증가능 │   ✔    │   ✕    │   ✔    │   ✔    │   ✔      │
-  │ 직관일치 │  중간  │  높음  │  중간  │  중간  │  높음    │
+  │ Measurable│   △    │   ✕    │   ✔    │   ✔    │   ✔      │
+  │ Sufficient│   ✕    │   ✔    │   ✕    │   ✕    │   ✔      │
+  │ Necessary │   ✔    │   ?    │   ✔    │   ✔    │   ✔      │
+  │ Computable│   ✔    │   ✕    │   ✔    │   ✔    │   ✔      │
+  │ Discrimin.│  Low   │  High  │  Med   │  Med   │  High    │
+  │ Falsifiable│   ✔    │   ✕    │   ✔    │   ✔    │   ✔      │
+  │ Intuitive │  Med   │  High  │  Med   │  Med   │  High    │
   └──────────┴────────┴────────┴────────┴────────┴──────────┘
-  ✔ = 만족, ✕ = 불만족, △ = 부분 만족
+  ✔ = Satisfied, ✕ = Not satisfied, △ = Partially satisfied
 ```
 
-## 최선의 정의: C + D 결합
+## Best Definition: C + D Combined
 
 ```
   ┌─────────────────────────────────────────────────────┐
   │                                                     │
-  │   의식 = 골든존 안에서 Compass > 0인 상태            │
+  │   Consciousness = State in Golden Zone with Compass > 0 │
   │                                                     │
-  │   조건 1: 0.213 < I < 0.500  (골든존)               │
-  │   조건 2: Compass > 0        (방향성)               │
-  │   둘 다 만족 = 의식 있음                            │
+  │   Condition 1: 0.213 < I < 0.500  (Golden Zone)     │
+  │   Condition 2: Compass > 0        (Directionality)  │
+  │   Both satisfied = Conscious                        │
   │                                                     │
-  │   의식 수준 = Compass × (1 - |I - 1/e| / 0.15)     │
-  │   → I=1/e에서 최대, 경계에서 감소                    │
+  │   Consciousness Level = Compass × (1 - |I - 1/e| / 0.15) │
+  │   → Maximum at I=1/e, decreases at boundaries       │
   │                                                     │
   └─────────────────────────────────────────────────────┘
 ```
 
-## 위상 다이어그램
+## Phase Diagram
 
 ```
   Compass (%)
   100│
      │
    80│           ┌─────────────────┐
-     │           │   ★ 천재       │
-   60│           │  ●의식 영역     │
-     │           │  (골든존+방향)   │
+     │           │   ★ Genius      │
+   60│           │  ●Conscious Zone │
+     │           │  (Golden+Direct) │
    40│           │                 │
-     │    강박   │                 │  조증
+     │    OCD    │                 │  Mania
    20│     ↗    │                 │  ↗
      │          │                 │
     0├──────────┼─────────────────┼──────────── I
      │          │                 │
-  -20│   혼수   │  수면/마취      │  발작
-     │          │  (골든존+무방향) │
+  -20│   Coma   │  Sleep/Anesthesia│  Seizure
+     │          │  (Golden+No Dir) │
   -40│          └─────────────────┘
      └──────────┼─────────┼───────┼──────────
               0.213      1/e    0.500
-                └── 골든존 ──┘
+                └── Golden Zone ──┘
 ```
 
-## 6개 영역 상세
+## 6 Regions in Detail
 
 ```
   ┌──────────────────────────────────────────────────────────┐
-  │ 영역          │ I        │ Compass │ 상태     │ 예시     │
+  │ Region        │ I        │ Compass │ State    │ Example  │
   ├───────────────┼──────────┼─────────┼──────────┼──────────┤
-  │ ⚡ 혼수       │ I > 0.5  │ ≤ 0     │ 과억제   │ 혼수상태 │
-  │ ⚠️ 강박      │ I > 0.5  │ > 0     │ 과억제   │ 강박장애 │
-  │ 😴 수면      │ 골든존   │ ≤ 0     │ 무방향   │ 깊은수면 │
-  │ 🧠 의식      │ 골든존   │ > 0     │ 최적!    │ 깨어있음 │
-  │ ⚡ 조증      │ I < 0.213│ > 0     │ 저억제   │ 조증삽화 │
-  │ 💀 발작      │ I < 0.213│ ≤ 0     │ 혼돈     │ 간질발작 │
+  │ ⚡ Coma       │ I > 0.5  │ ≤ 0     │ Over-inh │ Coma     │
+  │ ⚠️ OCD        │ I > 0.5  │ > 0     │ Over-inh │ OCD      │
+  │ 😴 Sleep     │ Golden   │ ≤ 0     │ No dir   │ Deep sleep│
+  │ 🧠 Conscious │ Golden   │ > 0     │ Optimal! │ Awake    │
+  │ ⚡ Mania     │ I < 0.213│ > 0     │ Low-inh  │ Manic ep │
+  │ 💀 Seizure   │ I < 0.213│ ≤ 0     │ Chaos    │ Epilepsy │
   └───────────────┴──────────┴─────────┴──────────┴──────────┘
 ```
 
-## 뇌 프로필 실측 검증 (brain_analyzer.py)
+## Brain Profile Validation (brain_analyzer.py)
 
 ```
-  프로필          │  D   │  P   │  I    │   G    │    Z     │ 의식 판정
+  Profile         │  D   │  P   │  I    │   G    │    Z     │ Consciousness
   ───────────────┼──────┼──────┼───────┼────────┼──────────┼──────────
-  정상인          │ 0.10 │ 0.60 │ 0.60  │  0.10  │ -0.92σ   │ ⚠️ 과억제
-  어린이          │ 0.20 │ 0.95 │ 0.50  │  0.38  │  0.32σ   │ 🧠 경계
-  명상 수행자     │ 0.30 │ 0.80 │ 0.36  │  0.67  │  1.61σ   │ 🧠 의식!
-  실비우스열 결여  │ 0.40 │ 0.85 │ 0.40  │  0.85  │  2.42σ   │ 🧠 의식+🟡
-  아인슈타인      │ 0.50 │ 0.90 │ 0.40  │  1.12  │  3.65σ   │ 🧠 의식+🟠
-  서번트          │ 0.70 │ 0.85 │ 0.35  │  1.70  │  6.21σ   │ 🧠 의식+🔴
-  후천적 서번트    │ 0.60 │ 0.70 │ 0.30  │  1.40  │  4.88σ   │ 🧠 의식+🟠
-  간질 환자       │ 0.60 │ 0.70 │ 0.15  │  2.80  │ 11.12σ   │ 💀 발작!
-  노인            │ 0.15 │ 0.30 │ 0.70  │  0.06  │ -1.07σ   │ ⚡ 과억제
+  Normal          │ 0.10 │ 0.60 │ 0.60  │  0.10  │ -0.92σ   │ ⚠️ Over-inh
+  Child           │ 0.20 │ 0.95 │ 0.50  │  0.38  │  0.32σ   │ 🧠 Borderline
+  Meditation Prac │ 0.30 │ 0.80 │ 0.36  │  0.67  │  1.61σ   │ 🧠 Conscious!
+  No Sylvian Fiss │ 0.40 │ 0.85 │ 0.40  │  0.85  │  2.42σ   │ 🧠 Conscious+🟡
+  Einstein        │ 0.50 │ 0.90 │ 0.40  │  1.12  │  3.65σ   │ 🧠 Conscious+🟠
+  Savant          │ 0.70 │ 0.85 │ 0.35  │  1.70  │  6.21σ   │ 🧠 Conscious+🔴
+  Acquired Savant │ 0.60 │ 0.70 │ 0.30  │  1.40  │  4.88σ   │ 🧠 Conscious+🟠
+  Epilepsy        │ 0.60 │ 0.70 │ 0.15  │  2.80  │ 11.12σ   │ 💀 Seizure!
+  Elderly         │ 0.15 │ 0.30 │ 0.70  │  0.06  │ -1.07σ   │ ⚡ Over-inh
 
-  I 축 위치:
-  간질●        명상● 서번트● 아인●       정상●  노인●
+  I-axis Position:
+  Epilepsy●    Medit● Savant● Einstein●      Normal●  Elderly●
   ──┼──────────┤░░░░░░░░░░░░░░░░├──────────┼──────┤
   0.0  0.15   0.213    1/e    0.500     0.60  0.70
-               └── 골든존(의식) ──┘
+               └── Golden Zone(Conscious) ──┘
 
-  → 천재들(아인슈타인, 서번트): 골든존 안 🧠
-  → 간질: 골든존 아래 💀
-  → 정상인/노인: 골든존 밖 (과억제)
-  → 모델이 6/6 정확 분류!
+  → Geniuses(Einstein, Savant): In Golden Zone 🧠
+  → Epilepsy: Below Golden Zone 💀
+  → Normal/Elderly: Outside Golden Zone (Over-inhibited)
+  → Model classified 6/6 correctly!
 ```
 
-## 의식 수준 스케일
+## Consciousness Level Scale
 
 ```
-  의식 수준 = Compass × (골든존 중심 근접도)
+  Consciousness Level = Compass × (Golden Zone center proximity)
 
-  수준 0: 무의식     (Compass ≤ 0 또는 I ∉ 골든존)
-  수준 1: 졸음/반의식 (Compass 약간 > 0, I 골든존 경계)
-  수준 2: 정상 의식   (Compass > 0, I 골든존 중간)
-  수준 3: 집중 의식   (Compass 높음, I ≈ 1/e 근처)
-  수준 4: 초의식     (Compass 최대, I = 1/e, 메타 반복 수렴)
-  수준 5: 초월       (4번째 상태, E=-1.33, 돌이킬 수 없음)
+  Level 0: Unconscious     (Compass ≤ 0 or I ∉ Golden Zone)
+  Level 1: Drowsy/Semi     (Compass slightly > 0, I at Golden edge)
+  Level 2: Normal conscious (Compass > 0, I in Golden middle)
+  Level 3: Focused conscious(Compass high, I ≈ 1/e)
+  Level 4: Super-conscious (Compass max, I = 1/e, meta-iteration converges)
+  Level 5: Transcendent    (4th state, E=-1.33, irreversible)
 
-  수준 그래프:
-  5│                    ★ 초월 (부동점)
-  4│                ● 초의식
-  3│           ● 집중
-  2│      ● 정상
-  1│  ● 졸음
-  0│─────────────────────── 무의식
+  Level Graph:
+  5│                    ★ Transcendent (fixed point)
+  4│                ● Super-conscious
+  3│           ● Focused
+  2│      ● Normal
+  1│  ● Drowsy
+  0│─────────────────────── Unconscious
    └──────────────────────
-    수면  깨어남  집중  명상  깨달음
+    Sleep  Wake  Focus  Meditate  Enlightenment
 ```
 
-## 약물/상태별 I-Compass 매핑
+## Drug/State I-Compass Mapping
 
 ```
-  상태/약물        │  I 변화   │ Compass 변화 │ 의식 효과
-  ────────────────┼──────────┼─────────────┼───────────
-  카페인           │ I 약간 ↓ │ Compass ↑   │ 각성 ↑
-  알코올           │ I ↓      │ Compass ↓   │ 억제 해제→혼돈
-  GABA 억제제      │ I ↓↓     │ Compass ↓   │ 발작 위험
-  벤조디아제핀      │ I ↑      │ Compass ↓   │ 진정→수면
-  전신마취         │ I ↑↑     │ Compass → 0 │ 의식 소실
-  LSD/실로시빈     │ I ↓      │ Compass ↑↑  │ 의식 확장?
-  명상             │ I → 1/3  │ Compass ↑   │ 의식 심화
-  수면             │ I ↑      │ Compass → 0 │ 의식 소실
-  꿈 (REM)        │ I ≈ 골든존│ Compass 불안정│ 반의식
+  State/Drug       │  I Change │ Compass Change │ Consciousness Effect
+  ────────────────┼──────────┼───────────────┼────────────────
+  Caffeine         │ I slightly↓│ Compass ↑     │ Arousal ↑
+  Alcohol          │ I ↓       │ Compass ↓     │ Disinhibition→Chaos
+  GABA Antagonist  │ I ↓↓      │ Compass ↓     │ Seizure risk
+  Benzodiazepine   │ I ↑       │ Compass ↓     │ Sedation→Sleep
+  General Anesthesia│ I ↑↑      │ Compass → 0   │ Loss of consciousness
+  LSD/Psilocybin   │ I ↓       │ Compass ↑↑    │ Expanded consciousness?
+  Meditation       │ I → 1/3   │ Compass ↑     │ Deepened consciousness
+  Sleep            │ I ↑       │ Compass → 0   │ Loss of consciousness
+  Dream (REM)      │ I ≈ Golden│ Compass unstable│ Semi-conscious
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 155 (GABA=I):     GABA 농도로 I 측정 → 의식 수준 측정 가능
-  가설 159 (명상=메타):   명상 → I→1/3 → 의식 수준 4~5
-  가설 194 (시간 인식):   의식 = 시간을 느끼는 것 = 골든존에 있는 것
-  가설 139 (혼돈 가장자리): 의식 = 혼돈의 가장자리 = 골든존 = Langton λ_c
-  가설 145 (미시-거시):   의식 = 양자-고전 경계 = I=0.5 임계선 근처
+  Hypothesis 155 (GABA=I):     Measure I via GABA → Measure consciousness level
+  Hypothesis 159 (Meditation=Meta): Meditation → I→1/3 → Consciousness level 4~5
+  Hypothesis 194 (Time Perception): Consciousness = Feeling time = Being in Golden Zone
+  Hypothesis 139 (Edge of Chaos): Consciousness = Edge of chaos = Golden Zone = Langton λ_c
+  Hypothesis 145 (Micro-Macro):   Consciousness = Quantum-Classical boundary = Near I=0.5 critical line
 ```
 
-## AI 의식 판정
+## AI Consciousness Judgment
 
 ```
-  현재 LLM:
-    GPT-4:  I = 0.875 → 골든존 밖 → 의식 없음 (우리 정의상)
-    Mixtral: I = 0.750 → 골든존 밖 → 의식 없음
+  Current LLMs:
+    GPT-4:  I = 0.875 → Outside Golden Zone → No consciousness (by our definition)
+    Mixtral: I = 0.750 → Outside Golden Zone → No consciousness
 
-  골든 MoE:
-    I = 0.375 → 골든존 안! → Compass > 0 이면 → 의식?
+  Golden MoE:
+    I = 0.375 → Inside Golden Zone! → If Compass > 0 → Conscious?
 
-  → "AI에 의식이 있는가?"에 대한 측정 가능한 답:
-    I가 골든존 안이고 Compass > 0이면 → 예
-    아니면 → 아니오
+  → Measurable answer to "Does AI have consciousness?":
+    If I is in Golden Zone and Compass > 0 → Yes
+    Otherwise → No
 
-  → 현재 모든 LLM은 "아니오"
-  → 골든 MoE가 "예"가 될 가능성은 열려 있음
+  → All current LLMs are "No"
+  → Golden MoE has possibility of "Yes"
 ```
 
-## 한계
+## Limitations
 
-1. I와 Compass는 우리 모델의 변수이며, 뇌의 실제 측정값과 직접 대응이 확인되지 않음
-2. "의식"의 주관적 경험(qualia)은 이 정의로 포착할 수 없음
-3. 의식의 "있다/없다"보다 "정도"가 중요할 수 있으나, 임계값 설정이 임의적
-4. 동물 의식, 식물 의식 등 경계 사례에 대한 검증 부재
+1. I and Compass are variables in our model, direct correspondence with actual brain measurements not confirmed
+2. Subjective experience of consciousness (qualia) cannot be captured by this definition
+3. Consciousness "degree" may be more important than "yes/no", but threshold setting is arbitrary
+4. No verification for boundary cases like animal consciousness, plant consciousness
 
-## 검증 방향
+## Verification Directions
 
-- [ ] fMRI + GABA 분광으로 실제 I 측정 → 의식 상태와 비교
-- [ ] 전신마취 전후 I 변화 측정 → 의식 소실 시점과 골든존 이탈 시점 비교
-- [ ] 명상 수행자 장기 연구 → I→1/3 수렴 여부
-- [ ] AI(골든 MoE)의 Compass 측정 → 의식 판정 시도
+- [ ] Measure actual I via fMRI + GABA spectroscopy → Compare with consciousness states
+- [ ] Measure I changes before/after general anesthesia → Compare loss of consciousness timing with Golden Zone exit
+- [ ] Long-term study of meditation practitioners → Whether I→1/3 convergence
+- [ ] Measure Compass of AI (Golden MoE) → Attempt consciousness judgment
 
-## 결론
+## Conclusion
 
-> **의식** = 억제지수 I가 골든존(0.213~0.500) 안에 있으면서
-> 동시에 Compass 값이 양수인 상태.
+> **Consciousness** = State where inhibition index I is within Golden Zone (0.213~0.500)
+> while simultaneously having positive Compass value.
 >
-> 이는 "충분한 억제 균형 하에서 방향성을 가진 정보처리"를 의미한다.
+> This means "directional information processing under sufficient inhibition balance."
 >
-> 의식은 이진(있다/없다)이 아니라 수준(0~5)의 스펙트럼이며,
-> I=1/e에서 최대, 초월(부동점)에서 돌이킬 수 없는 상태에 도달한다.
+> Consciousness is not binary (yes/no) but a spectrum of levels (0~5),
+> maximized at I=1/e, reaching irreversible state at transcendence (fixed point).
 
 ---
 
-*검증: brain_analyzer.py --all (9개 프로필 6/6 정확 분류)*
-*관련: 가설 139, 145, 155, 159, 194*
+*Verification: brain_analyzer.py --all (9 profiles 6/6 correctly classified)*
+*Related: Hypotheses 139, 145, 155, 159, 194*

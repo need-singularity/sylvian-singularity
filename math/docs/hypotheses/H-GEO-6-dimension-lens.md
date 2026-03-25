@@ -1,88 +1,88 @@
-# H-GEO-6: 차원 렌즈 — 약수 구조가 차원을 굴절시킨다
+# H-GEO-6: Dimension Lens — Divisor Structure Refracts Dimensions
 
-> **가설**: 자연수 n의 약수 구조 τ(n)은 "차원 렌즈"로 작용하여,
-> n차원 공간에서의 기하학적 성질을 "굴절"시킨다.
-> R(n)/n ≈ 1/τ(n) (r=0.991)이 이 렌즈의 굴절률이다.
+> **Hypothesis**: The divisor structure τ(n) of a natural number n acts as a "dimension lens",
+> "refracting" geometric properties in n-dimensional space.
+> R(n)/n ≈ 1/τ(n) (r=0.991) is the refractive index of this lens.
 
-## 배경
+## Background
 
-H-AI-5 검증 결과: R(d)/d ↔ 1/τ(d) 상관 r=0.991
-이것은 R이 사실상 "차원당 약수 밀도의 역수"임을 의미.
+H-AI-5 verification result: R(d)/d ↔ 1/τ(d) correlation r=0.991
+This means R is essentially "the reciprocal of divisor density per dimension".
 
-물리학 렌즈: 굴절률 n = c/v (빛의 속도 비)
-차원 렌즈: "굴절률" = τ(d)/d (약수 밀도)
+Physics lens: refractive index n = c/v (ratio of light speeds)
+Dimension lens: "refractive index" = τ(d)/d (divisor density)
 
-## 핵심 구조
+## Core Structure
 
-### 굴절률 정의
+### Refractive Index Definition
 
 ```
-  차원 렌즈의 굴절률:
-    η(d) = τ(d)/d = 약수 밀도
+  Refractive index of dimension lens:
+    η(d) = τ(d)/d = divisor density
 
   R(d)/d ≈ c/τ(d) = c/(η(d)·d)  (r=0.991)
 
-  즉: R(d) ≈ c·d/τ(d) = c/η(d)
+  Thus: R(d) ≈ c·d/τ(d) = c/η(d)
 
-  높은 η (많은 약수) → 낮은 R → "느린 빛" = 강한 굴절
-  낮은 η (적은 약수) → 높은 R → "빠른 빛" = 약한 굴절
+  High η (many divisors) → Low R → "slow light" = strong refraction
+  Low η (few divisors) → High R → "fast light" = weak refraction
 
-  d별 굴절률:
-    d    | τ(d) | η=τ/d   | R(d) | R/d    | 렌즈 강도
+  Refractive index by d:
+    d    | τ(d) | η=τ/d   | R(d) | R/d    | Lens strength
     -----|------|---------|------|--------|----------
-    6    | 4    | 0.667   | 1    | 0.167  | 최강 (완전!)
-    12   | 6    | 0.500   | 1.56 | 0.130  | 강
-    24   | 8    | 0.333   | 2.5  | 0.104  | 중
-    60   | 12   | 0.200   | 3.73 | 0.062  | 중약
-    120  | 16   | 0.133   | 6    | 0.050  | 약
-    p    | 2    | 2/p     | ~p/2 | ~0.5   | 최약 (소수!)
+    6    | 4    | 0.667   | 1    | 0.167  | Strongest (perfect!)
+    12   | 6    | 0.500   | 1.56 | 0.130  | Strong
+    24   | 8    | 0.333   | 2.5  | 0.104  | Medium
+    60   | 12   | 0.200   | 3.73 | 0.062  | Med-weak
+    120  | 16   | 0.133   | 6    | 0.050  | Weak
+    p    | 2    | 2/p     | ~p/2 | ~0.5   | Weakest (prime!)
 
-  ASCII: η vs R/d 산점도
+  ASCII: η vs R/d scatter plot
 
   R/d
-  0.5 |·  ·  ·  ·  (소수: 높은 R/d, 낮은 η)
+  0.5 |·  ·  ·  ·  (primes: high R/d, low η)
   0.4 |
   0.3 |   ·
   0.2 |      ·  ·
-  0.1 |         ·  ·  ·  (HCN: 낮은 R/d, 높은 η)
-      +--+--+--+--+--+--→ η (약수밀도)
+  0.1 |         ·  ·  ·  (HCN: low R/d, high η)
+      +--+--+--+--+--+--→ η (divisor density)
       0  0.1 0.2 0.3 0.5 0.7
 
-  반비례 관계: R/d ∝ 1/η → 쌍곡선!
+  Inverse relationship: R/d ∝ 1/η → hyperbola!
 ```
 
-### 광학 렌즈와의 대응
+### Correspondence with Optical Lenses
 
 ```
-  물리 렌즈              차원 렌즈
+  Physical lens          Dimension lens
   ─────────────         ──────────────
-  굴절률 n              약수밀도 η=τ/d
-  렌즈 두께 t           차원 d
-  초점거리 f            R(d) = σφ/(dτ)
-  입사각 θ₁             "입력 복잡도"
-  굴절각 θ₂             "출력 복잡도"
-  Snell: n₁sinθ₁=n₂sinθ₂  R 변환
+  Refractive index n    Divisor density η=τ/d
+  Lens thickness t      Dimension d
+  Focal length f        R(d) = σφ/(dτ)
+  Incident angle θ₁     "Input complexity"
+  Refracted angle θ₂    "Output complexity"
+  Snell: n₁sinθ₁=n₂sinθ₂  R transformation
 
-  색수차 (chromatic aberration):
-    물리: 파장별로 굴절률 다름
-    차원: 소인수별로 R-인수 다름 (f(p,a))
-    → 다른 소수는 다른 "색"으로 굴절됨!
+  Chromatic aberration:
+    Physics: different refractive indices by wavelength
+    Dimension: different R-factors by prime factor (f(p,a))
+    → Different primes refract as different "colors"!
 
   Multi-head attention (H-CX-15):
-    각 head = 다른 파장의 빛
-    head별 attention = 소인수별 R-인수
-    → Attention의 "분광기" 역할
+    Each head = different wavelength of light
+    Per-head attention = R-factor per prime
+    → Attention as "spectrometer"
 ```
 
-### ML 차원 선택 원리
+### ML Dimension Selection Principle
 
 ```
-  ML에서 차원 d 선택:
-    전통: d = 2^k (하드웨어 정렬)
-    제안: d = HCN (highly composite number) = 최강 렌즈
+  Dimension d selection in ML:
+    Traditional: d = 2^k (hardware alignment)
+    Proposed: d = HCN (highly composite number) = strongest lens
 
-  HCN 차원 후보:
-    d=6:    η=0.667 (불가: 너무 작음)
+  HCN dimension candidates:
+    d=6:    η=0.667 (impossible: too small)
     d=12:   η=0.500 (micro)
     d=24:   η=0.333 (tiny)
     d=60:   η=0.200
@@ -92,50 +92,50 @@ H-AI-5 검증 결과: R(d)/d ↔ 1/τ(d) 상관 r=0.991
     d=720:  η=0.042
     d=1260: η=0.029
 
-  비교: d=1024(2^10) vs d=1260(HCN)
+  Compare: d=1024(2^10) vs d=1260(HCN)
     1024: τ=11, η=0.011, R=93.0
-    1260: τ=36, η=0.029, R≈35 (추정)
-    → 1260이 3배 더 강한 렌즈!
+    1260: τ=36, η=0.029, R≈35 (estimated)
+    → 1260 is 3x stronger lens!
 
-  예측: d=1260 차원의 transformer가 d=1024보다
-  더 유연한 attention 패턴을 가질 것.
+  Prediction: transformer with d=1260 dimensions will have
+  more flexible attention patterns than d=1024.
 ```
 
-### 렌즈 수차와 R 간극
+### Lens Aberration and R Gaps
 
 ```
-  구면 수차: 렌즈 가장자리에서 초점 어긋남
-  차원 수차: R 간극 = "초점이 맞지 않는 영역"
+  Spherical aberration: focus misalignment at lens edges
+  Dimension aberration: R gaps = "out of focus regions"
 
-  R=1 (n=6)에서:
-    완벽한 초점 (R=1 = 이상적 렌즈)
-    간극 (3/4,1)∪(1,7/6) = 수차 없는 영역
+  At R=1 (n=6):
+    Perfect focus (R=1 = ideal lens)
+    Gap (3/4,1)∪(1,7/6) = aberration-free region
 
-  R≠1에서:
-    수차 존재 (R이 1에서 벗어남)
-    수차 크기 = |R-1| = T(n) (tension)
+  At R≠1:
+    Aberration exists (R deviates from 1)
+    Aberration size = |R-1| = T(n) (tension)
 
-  "비구면 렌즈"(aspheric):
-    d=120: R=6 (강한 수차, 하지만 완전수!)
-    d=720: R=? (더 작은 수차?)
+  "Aspheric lens":
+    d=120: R=6 (strong aberration, but perfect number!)
+    d=720: R=? (smaller aberration?)
 ```
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] d=1260 vs d=1024 transformer 비교 실험
-2. [ ] HCN 차원에서의 attention 패턴 분석
-3. [ ] R(d)/d vs 1/τ(d) 피팅의 정확한 계수 c 결정
-4. [ ] "색수차" = 소인수별 R-인수 분석
-5. [ ] 물리 광학과의 형식적 대응 (ABCD 행렬?)
+1. [ ] d=1260 vs d=1024 transformer comparison experiment
+2. [ ] Attention pattern analysis at HCN dimensions
+3. [ ] Determine exact coefficient c in R(d)/d vs 1/τ(d) fitting
+4. [ ] "Chromatic aberration" = R-factor analysis by prime
+5. [ ] Formal correspondence with physical optics (ABCD matrices?)
 
-## 판정
+## Judgment
 
 ```
-  상태: 🟧 구조적 + R/d↔1/τ 검증 (r=0.991)
-  ML 응용 가능성 높음 (차원 선택 원리)
+  Status: 🟧 Structural + R/d↔1/τ verified (r=0.991)
+  High ML applicability (dimension selection principle)
 ```
 
-## 난이도: 극고 | 파급력: ★★★★★
+## Difficulty: Extreme High | Impact: ★★★★★
 
-"약수 구조 = 렌즈 강도"가 확인되면:
-최적 transformer 차원 = HCN (highly composite number)
+If "divisor structure = lens strength" is confirmed:
+Optimal transformer dimension = HCN (highly composite number)

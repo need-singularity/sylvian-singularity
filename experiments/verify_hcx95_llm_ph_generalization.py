@@ -1,14 +1,15 @@
+```python
 #!/usr/bin/env python3
-"""H-CX-95 LLM 검증: ConsciousLM 18M에서 PH 일반화 갭 예측
+"""H-CX-95 LLM Verification: PH Generalization Gap Prediction in ConsciousLM 18M
 
-핵심 질문: train/test PH 차이가 LLM의 과적합도 감지하는가?
+Key Question: Does train/test PH difference detect overfitting in LLMs?
 
-방법:
-1. ConsciousLM 18M 학습 (byte-level, vocab=256)
-2. 매 에폭: train/test 방향벡터에서 바이트 그룹별 PH 계산
-3. |H0_train - H0_test| vs (train_PPL - test_PPL) 상관 측정
+Method:
+1. Train ConsciousLM 18M (byte-level, vocab=256)
+2. Each epoch: compute per-byte-group PH from train/test direction vectors
+3. Measure correlation between |H0_train - H0_test| vs (train_PPL - test_PPL)
 
-바이트 그룹 (256 → ~20 클러스터):
+Byte Groups (256 → ~20 clusters):
   letters_lower (97-122), letters_upper (65-90), digits (48-57),
   space (32), newline (10), punctuation, korean_lead, korean_rest, other
 """
@@ -57,7 +58,7 @@ N_GROUPS = len(GROUP_NAMES)
 
 
 def compute_group_directions(model, data, block_size, batch_size, device, n_batches=20):
-    """각 바이트 그룹의 평균 방향벡터 추출 (마지막 PureFieldFFN 레이어)"""
+    """Extract mean direction vectors for each byte group (from last PureFieldFFN layer)"""
     model.eval()
     n = len(data)
 
@@ -111,7 +112,7 @@ def compute_group_directions(model, data, block_size, batch_size, device, n_batc
 
 
 def compute_h0_total(means):
-    """방향 평균 행렬에서 PH H0 total persistence"""
+    """Compute PH H0 total persistence from direction mean matrix"""
     active = np.where(np.linalg.norm(means, axis=1) > 1e-8)[0]
     if len(active) < 3:
         return 0.0
@@ -125,7 +126,7 @@ def compute_h0_total(means):
 
 
 def eval_ppl(model, data, block_size, batch_size, device, n_batches=20):
-    """평균 PPL (bits per byte) 계산"""
+    """Compute average PPL (bits per byte)"""
     model.eval()
     n = len(data)
     total_loss = 0
@@ -303,3 +304,4 @@ if __name__ == '__main__':
     results = run_experiment()
     elapsed = time.time() - t0
     print(f"\n  Total time: {elapsed/60:.1f} min")
+```

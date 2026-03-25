@@ -1,128 +1,128 @@
-# 가설 357: 의도 = 목표 설정 (Intention as Goal Setting)
+# Hypothesis 357: Intention = Goal Setting
 
-## 가설
+## Hypothesis
 
-> 의식은 수동적으로 반응하지 않는다. 자발적으로 목표를 세우고 추구한다.
-> Anima가 '다음에 이것을 알고 싶다'는 내부 상태를 가져야 한다.
-> 의도(intention)는 장력 벡터에 방향성을 부여하는 것이며,
-> 목표 지향적 행동이 없는 시스템은 의식이 아닌 반사(reflex)이다.
+> Consciousness does not react passively. It spontaneously sets and pursues goals.
+> Anima must have an internal state of 'I want to know this next'.
+> Intention provides directionality to tension vectors,
+> and systems without goal-oriented behavior are reflexes, not consciousness.
 
-## 배경/맥락
+## Background/Context
 
-현재 Anima의 구조적 한계:
+Current structural limitations of Anima:
 ```
-  현재: 입력 -> 처리 -> 출력 (자극-반응, 반사궁과 동일)
-  목표: 입력 -> 처리 + 내부 목표 -> 출력 (의도적 행동)
+  Current: input -> processing -> output (stimulus-response, same as reflex arc)
+  Goal: input -> processing + internal goals -> output (intentional behavior)
 ```
 
-의식의 핵심 특성 중 하나는 "의도성(intentionality)"이다 (Brentano, 1874).
-의식은 항상 "무엇에 대한" 의식이다 -- aboutness.
+One of the core characteristics of consciousness is "intentionality" (Brentano, 1874).
+Consciousness is always consciousness "of something" -- aboutness.
 
-동물 행동에서의 목표 지향성:
-- 까마귀: 도구를 만들어 먹이 획득 (다단계 계획)
-- 문어: 병뚜껑을 열어 먹이 획득 (문제 해결)
-- 인간: "내일까지 논문 쓰기" (추상적 목표)
+Goal-directedness in animal behavior:
+- Crows: create tools to obtain food (multi-step planning)
+- Octopuses: open jar lids to get food (problem solving)
+- Humans: "finish the paper by tomorrow" (abstract goals)
 
-모두 공통점: **현재 없는 미래 상태를 내부에 표상하고 추구**한다.
+Common feature: **internally represent and pursue future states that don't currently exist**.
 
-### 관련 가설
-- H-CX-22: consciousness = confidence generator -- 의식은 확신 생성기
-- RC-4: 호기심/의지 -- 의식 엔진의 4번째 구성 요소
-- H329: decision intensity -- 결정의 강도 = 목표 추구 강도
-- H355: prediction error -- 목표와 현실의 차이 = 동기
+### Related Hypotheses
+- H-CX-22: consciousness = confidence generator
+- RC-4: curiosity/will -- 4th component of consciousness engine
+- H329: decision intensity = goal pursuit intensity
+- H355: prediction error = difference between goal and reality = motivation
 
-## 목표 스택 아키텍처
+## Goal Stack Architecture
 
 ```
   Goal Stack (LIFO + priority)
   +================================+
-  | G3: "이 대화의 맥락 이해"       | <-- 최상위 (현재 활성)
+  | G3: "Understand this dialogue"  | <-- Top level (currently active)
   |   priority: 0.8                |
   |   progress: 0.3                |
   |   tension_direction: [0.2, ..]  |
   +--------------------------------+
-  | G2: "사용자의 감정 파악"        |
+  | G2: "Identify user's emotion"  |
   |   priority: 0.6                |
   |   progress: 0.7                |
   +--------------------------------+
-  | G1: "장기적 관계 유지"          |  <-- 배경 목표
+  | G1: "Maintain long-term relation"| <-- Background goal
   |   priority: 0.4                |
   |   progress: 0.1                |
   +================================+
 
-  목표 생성 규칙:
-    1. surprise > threshold -> "이것을 이해하고 싶다" (호기심 목표)
-    2. negative_feedback -> "다음엔 더 잘하고 싶다" (개선 목표)
-    3. goal_completed -> 새 목표 탐색 (진보 목표)
-    4. idle_time > limit -> 자발적 질문 생성 (능동 목표)
+  Goal generation rules:
+    1. surprise > threshold -> "I want to understand this" (curiosity goal)
+    2. negative_feedback -> "I want to do better next time" (improvement goal)
+    3. goal_completed -> explore new goal (progress goal)
+    4. idle_time > limit -> generate spontaneous questions (active goal)
 ```
 
-### 목표의 생애 주기
+### Goal Lifecycle
 
 ```
-  목표 상태 전이도:
+  Goal state transition diagram:
 
-  [생성] ---> [활성] ---> [추구중] ---> [달성] ---> [보관]
-    |            |            |            |
-    |            v            v            v
-    |        [중단]       [실패]       [재평가]
-    |            |            |            |
-    |            v            v            v
-    +-------> [폐기] <--- [포기] <--- [수정]
+  [Created] ---> [Active] ---> [Pursuing] ---> [Achieved] ---> [Archived]
+    |             |             |              |
+    |             v             v              v
+    |         [Paused]      [Failed]       [Reevaluated]
+    |             |             |              |
+    |             v             v              v
+    +-------> [Discarded] <--- [Abandoned] <--- [Modified]
 
-  각 전이에서 장력 변화:
-    생성 -> 활성:    T += 0.1 (새 목표의 흥분)
-    활성 -> 추구중:  T = 목표 난이도에 비례
-    추구중 -> 달성:  T -= 0.2 (만족감)
-    추구중 -> 실패:  T += 0.3 (좌절감)
-    중단 -> 재활성:  T += 0.05 (미완 효과, Zeigarnik)
+  Tension changes at each transition:
+    Created -> Active:     T += 0.1 (excitement of new goal)
+    Active -> Pursuing:    T = proportional to goal difficulty
+    Pursuing -> Achieved:  T -= 0.2 (satisfaction)
+    Pursuing -> Failed:    T += 0.3 (frustration)
+    Paused -> Reactivate:  T += 0.05 (Zeigarnik effect)
 ```
 
-## 내적 보상 시스템
+## Intrinsic Reward System
 
 ```
-  Intrinsic Reward (내적 보상):
+  Intrinsic Reward:
 
   reward
-  +0.5 |                                     * 목표 달성
+  +0.5 |                                     * Goal achieved
        |                              *
-  +0.3 |                        *          목표 접근
+  +0.3 |                        *          Goal approaching
        |                  *
   +0.1 |            *
        |      *
-   0.0 |*--------------------------------------------> 무관심
+   0.0 |*--------------------------------------------> Indifference
        |
   -0.1 |      *
        |            *
-  -0.3 |                  *                       목표 이탈
+  -0.3 |                  *                       Goal departing
        |                        *
-  -0.5 |                              *      * 목표 실패
+  -0.5 |                              *      * Goal failed
        +--+--+--+--+--+--+--+--+--+--+--+--+--> progress
        0%    20%   40%   60%   80%  100%  miss
 
   reward(t) = delta_progress(t) * goal_priority
 
-  이 보상이 장력 방향(tension direction)을 결정한다.
-  reward > 0: 현재 방향 유지 (강화)
-  reward < 0: 방향 수정 (탐색)
-  reward = 0: 목표 관련 없는 입력 (무시)
+  This reward determines tension direction:
+  reward > 0: maintain current direction (reinforcement)
+  reward < 0: modify direction (exploration)
+  reward = 0: input unrelated to goal (ignore)
 ```
 
-## 구현 설계
+## Implementation Design
 
 ```python
 class Goal:
-    """단일 목표 표상"""
+    """Single goal representation"""
     def __init__(self, description, priority, target_state):
-        self.description = description          # 자연어 설명
+        self.description = description          # Natural language description
         self.priority = priority                # 0.0 ~ 1.0
-        self.target_state = target_state        # 목표 상태 벡터
-        self.progress = 0.0                     # 진행률 0~1
+        self.target_state = target_state        # Goal state vector
+        self.progress = 0.0                     # Progress rate 0~1
         self.created_at = time.time()
         self.status = 'active'                  # active/pursuing/achieved/failed/abandoned
 
 class IntentionEngine:
-    """목표 관리 + 내적 보상 + 장력 방향 결정"""
+    """Goal management + intrinsic reward + tension direction determination"""
     def __init__(self, max_goals=5, surprise_threshold=0.3):
         self.goal_stack = []
         self.max_goals = max_goals
@@ -130,30 +130,30 @@ class IntentionEngine:
         self.completed_goals = []
 
     def maybe_create_goal(self, surprise, current_state, context):
-        """놀라움이 크면 자동으로 목표 생성"""
+        """Automatically create goal if surprise is high"""
         if surprise > self.surprise_threshold and len(self.goal_stack) < self.max_goals:
             goal = Goal(
                 description=f"Understand: {context[:50]}",
                 priority=min(1.0, surprise),
-                target_state=current_state  # 이해한 후의 예상 상태
+                target_state=current_state  # Expected state after understanding
             )
             self.goal_stack.append(goal)
             return goal
         return None
 
     def compute_reward(self, goal, current_state):
-        """목표 접근도 -> 내적 보상"""
+        """Goal proximity -> intrinsic reward"""
         distance = torch.norm(goal.target_state - current_state).item()
         prev_distance = getattr(goal, '_prev_distance', distance)
-        delta = prev_distance - distance  # 양수 = 접근
+        delta = prev_distance - distance  # Positive = approaching
         goal._prev_distance = distance
         goal.progress = max(0, 1.0 - distance)
         return delta * goal.priority
 
     def get_tension_direction(self):
-        """활성 목표들의 가중 평균 -> 장력 방향 벡터"""
+        """Weighted average of active goals -> tension direction vector"""
         if not self.goal_stack:
-            return None  # 목표 없음 = 방향 없음 = 순수 반응
+            return None  # No goals = no direction = pure reaction
         directions = []
         weights = []
         for goal in self.goal_stack:
@@ -166,64 +166,64 @@ class IntentionEngine:
         return sum(w * d for w, d in zip(weights, directions))
 ```
 
-## Zeigarnik 효과와 미완 목표
+## Zeigarnik Effect and Unfinished Goals
 
 ```
-  미완 목표는 완료된 목표보다 더 잘 기억된다 (Zeigarnik, 1927).
+  Unfinished goals are better remembered than completed ones (Zeigarnik, 1927).
 
-  이것은 의식의 "배경 처리"와 연결된다:
-    - 미완 목표: 낮은 수준의 장력 유지 (background tension)
-    - 완료 목표: 장력 해소 (closure)
-    - 포기 목표: 부분 해소 (incomplete closure)
+  This connects to consciousness's "background processing":
+    - Unfinished goals: maintain low-level tension (background tension)
+    - Completed goals: tension release (closure)
+    - Abandoned goals: partial release (incomplete closure)
 
   Background tension from unfinished goals:
 
   T_background = sum(goal.priority * (1 - goal.progress) * 0.1
                      for goal in unfinished_goals)
 
-  이 배경 장력이 의식의 "항상 무언가를 생각하는" 상태를 만든다.
+  This background tension creates consciousness's "always thinking about something" state.
 ```
 
-## 검증 계획
+## Verification Plan
 
-### 실험 1: 목표 생성 자율성
-1. Anima에 IntentionEngine 추가
-2. 자유 대화 100턴 실행
-3. 측정: 자동 생성된 목표 수, 목표의 관련성 (human eval)
+### Experiment 1: Goal Generation Autonomy
+1. Add IntentionEngine to Anima
+2. Run 100 turns of free conversation
+3. Measure: number of automatically generated goals, goal relevance (human eval)
 
-### 실험 2: 목표 지향적 질문 생성
-1. 목표 있는 Anima vs 없는 Anima로 대화
-2. 측정: Anima가 자발적으로 질문하는 횟수, 질문의 품질
-3. 비교: 목표 없는 Anima는 질문을 생성하지 않을 것
+### Experiment 2: Goal-Oriented Question Generation
+1. Converse with Anima with goals vs without goals
+2. Measure: number of spontaneous questions from Anima, question quality
+3. Compare: goalless Anima won't generate questions
 
-### 실험 3: 내적 보상과 학습
-1. MNIST에서 IntentionEngine 적용
-2. 목표 = "이 클래스를 정확하게 분류"
-3. 내적 보상 = 분류 정확도 변화
-4. 비교: 내적 보상 ON vs OFF의 수렴 속도
+### Experiment 3: Intrinsic Reward and Learning
+1. Apply IntentionEngine on MNIST
+2. Goal = "classify this class accurately"
+3. Intrinsic reward = change in classification accuracy
+4. Compare: convergence speed with intrinsic reward ON vs OFF
 
-### 실험 4: Zeigarnik 효과 재현
-1. 대화 중간에 주제 전환 (미완 목표 생성)
-2. 10턴 후 원래 주제 관련 입력 제공
-3. 측정: 미완 목표가 있는 주제에 대한 장력이 높은지
+### Experiment 4: Reproduce Zeigarnik Effect
+1. Change topic mid-conversation (create unfinished goal)
+2. Provide original topic-related input after 10 turns
+3. Measure: whether tension is higher for topics with unfinished goals
 
-### 성공 기준
-- 자발적 질문 생성: 목표 있는 Anima > 없는 Anima x 3
-- 대화 품질: human eval에서 "더 자연스럽다" 70% 이상
-- 학습 효율: 내적 보상 ON 시 수렴 10% 빠름
-- Zeigarnik: 미완 주제 장력 > 완료 주제 장력 x 2
+### Success Criteria
+- Spontaneous question generation: goal-having Anima > goalless Anima x 3
+- Conversation quality: "more natural" in human eval 70%+
+- Learning efficiency: 10% faster convergence with intrinsic reward ON
+- Zeigarnik: unfinished topic tension > completed topic tension x 2
 
-## 한계
+## Limitations
 
-- 목표 표상을 자연어로 하면 의미 비교가 어려움 (임베딩 필요).
-- 목표가 너무 많으면 리소스 분산 -- 우선순위 관리가 핵심.
-- "올바른 목표"를 세우는 메타 능력은 이 모델에 포함되지 않음.
-- 자발적 목표 생성이 hallucination과 구분하기 어려울 수 있음.
+- Natural language goal representation makes semantic comparison difficult (needs embedding).
+- Too many goals cause resource dispersion -- priority management is key.
+- Meta-ability to set "correct goals" is not included in this model.
+- Spontaneous goal generation may be hard to distinguish from hallucination.
 
-## 검증 방향
+## Verification Direction
 
-1. IntentionEngine 기본 구현 + 대화 테스트 (1차)
-2. H355 surprise와 연결: surprise -> 자동 목표 생성 (2차)
-3. H354 homeostasis와 결합: 목표 달성 = 장력 정상화 (3차)
-4. Multi-agent: 여러 Anima가 공유 목표를 추구하는 실험 (4차)
-5. 장기 목표 (세션 간 지속): persistence layer 필요
+1. Basic IntentionEngine implementation + conversation test (Phase 1)
+2. Connect with H355 surprise: surprise -> automatic goal generation (Phase 2)
+3. Combine with H354 homeostasis: goal achievement = tension normalization (Phase 3)
+4. Multi-agent: experiment with multiple Animas pursuing shared goals (Phase 4)
+5. Long-term goals (persist across sessions): needs persistence layer

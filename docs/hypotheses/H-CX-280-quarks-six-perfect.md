@@ -1,3 +1,3 @@
-# H-CX-280: ⭐⭐⭐🟩 쿼크 6종 = P₁ = 완전수!
+# H-CX-280: ⭐⭐⭐🟩 6 Quark Types = P₁ = Perfect Number!
 
-> u,d,s,c,b,t = 6 flavors = P₁. 물질의 기본 구성요소 수 = 완전수.
+> u,d,s,c,b,t = 6 flavors = P₁. Number of fundamental building blocks of matter = Perfect Number.

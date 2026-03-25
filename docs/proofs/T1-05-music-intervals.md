@@ -1,99 +1,99 @@
-# T1-05: 완전4도 = 4/3 → ln(4/3) = 골든존 폭
+# T1-05: Perfect Fourth = 4/3 → ln(4/3) = Golden Zone Width
 
-## 명제
+## Proposition
 
-순정률 완전4도의 주파수비 4/3과 N=3 상태 골든존 폭 ln(4/3)은 동일한 수학적 구조에서 비롯된다.
+The frequency ratio 4/3 of the just intonation perfect fourth and the N=3 state Golden Zone width ln(4/3) originate from the same mathematical structure.
 
-## 음악 이론: 완전4도
+## Music Theory: Perfect Fourth
 
-피타고라스 순정률에서 완전4도:
+Perfect fourth in Pythagorean just intonation:
 
 ```
-주파수비 = 4/3
+Frequency ratio = 4/3
 ```
 
-이것은 가장 단순한 주파수비 중 하나 (완전5도 3/2 다음).
+This is one of the simplest frequency ratios (after the perfect fifth 3/2).
 
 ```
 ln(4/3) = ln(4) - ln(3) = 1.386294 - 1.098612 = 0.287682
 ```
 
-## 정보 이론: 엔트로피 점프
+## Information Theory: Entropy Jump
 
-N상태 시스템의 최대 엔트로피:
+Maximum entropy of an N-state system:
 
 ```
 S_max(N) = ln(N)
 ```
 
-3상태 → 4상태 전이 시 엔트로피 증가:
+Entropy increase during 3-state → 4-state transition:
 
 ```
 ΔS = ln(4) - ln(3) = ln(4/3) = 0.287682
 ```
 
-## 골든존 폭 공식
+## Golden Zone Width Formula
 
-N상태 시스템의 골든존 폭:
+Golden Zone width for N-state system:
 
 ```
 Δ(N) = ln((N+1)/N)
 ```
 
-N = 3일 때:
+When N = 3:
 
 ```
 Δ(3) = ln(4/3) = 0.287682
 ```
 
-## 음악-물리 대응
+## Music-Physics Correspondence
 
-| 음악 | 정보이론 | 값 |
+| Music | Information Theory | Value |
 |------|----------|-----|
-| 완전4도 (4/3) | 3→4 엔트로피 점프 | ln(4/3) = 0.2877 |
-| 완전5도 (3/2) | 2→3 엔트로피 점프 | ln(3/2) = 0.4055 |
-| 옥타브 (2/1) | 1→2 엔트로피 점프 | ln(2) = 0.6931 |
+| Perfect Fourth (4/3) | 3→4 entropy jump | ln(4/3) = 0.2877 |
+| Perfect Fifth (3/2) | 2→3 entropy jump | ln(3/2) = 0.4055 |
+| Octave (2/1) | 1→2 entropy jump | ln(2) = 0.6931 |
 
-일반 공식: 음정비 (N+1)/N ↔ N→(N+1) 상태 전이
+General formula: Interval ratio (N+1)/N ↔ N→(N+1) state transition
 
-## 평균률과의 비교
+## Comparison with Equal Temperament
 
-12음 평균률에서 완전4도:
+Perfect fourth in 12-tone equal temperament:
 
 ```
 2^(5/12) = 1.334840...  (≈ 4/3 = 1.333333...)
 ln(2^(5/12)) = (5/12)·ln(2) = 0.288811
 ```
 
-순정률과의 차이:
+Difference from just intonation:
 
 ```
 |0.288811 - 0.287682| = 0.001129
-상대 오차: 0.001129 / 0.287682 = 0.39%
+Relative error: 0.001129 / 0.287682 = 0.39%
 ```
 
-평균률에서도 0.39% 오차 내에서 일치한다.
+Agreement within 0.39% error even in equal temperament.
 
-## 수치 검증값
+## Numerical Verification Values
 
-| 항목 | 값 |
+| Item | Value |
 |------|-----|
 | 4/3 | 1.333333333333333 |
 | ln(4/3) | 0.287682072451781 |
 | 2^(5/12) | 1.334839854170034 |
 | ln(2^(5/12)) | 0.288811274553991 |
-| 상대 오차 | 0.39% |
+| Relative error | 0.39% |
 
-## 의미
+## Significance
 
-음정비 (N+1)/N는 골든존 폭 공식 ln((N+1)/N)의 물리적 현현(manifestation)으로 해석할 수 있다. 순정률 음계의 수학적 구조와 정보이론적 상태전이가 동일한 로그 구조를 공유한다.
+The interval ratio (N+1)/N can be interpreted as a physical manifestation of the Golden Zone width formula ln((N+1)/N). The mathematical structure of just intonation scales and information-theoretic state transitions share the same logarithmic structure.
 
-## 근거
+## Basis
 
-- 피타고라스 (c. 500 BCE): 순정률 음정비
-- 정보이론: 최대 엔트로피 S = ln(N)
+- Pythagoras (c. 500 BCE): Just intonation interval ratios
+- Information theory: Maximum entropy S = ln(N)
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T0-05 (Jaynes 동치: 엔트로피)
-- T0-06 (커스프 상전이)
+- T0-05 (Jaynes equivalence: Entropy)
+- T0-06 (Cusp phase transition)

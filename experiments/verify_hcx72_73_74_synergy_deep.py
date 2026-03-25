@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""H-CX-72 + H-CX-73 + H-CX-74 검증: 시너지 심화
+"""H-CX-72 + H-CX-73 + H-CX-74 verification: Synergy deep dive
 
-H-CX-72: 난이도 보정 시 시너지 최적점 1/e 수렴
-H-CX-73: ts×H0 곱 보존 (CV 비교 + ts frozen 실험)
-H-CX-74: 3채널 직교성 → 시너지 원인
+H-CX-72: Difficulty-normalized synergy optimum converges to 1/e
+H-CX-73: ts×H0 product conservation (CV comparison + ts frozen experiment)
+H-CX-74: 3-channel orthogonality → cause of synergy
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')

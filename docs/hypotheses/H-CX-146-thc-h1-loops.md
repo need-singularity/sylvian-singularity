@@ -1,39 +1,39 @@
-# H-CX-146: THC = H1 루프 증가 = 순환 사고
+# H-CX-146: THC = H1 Loop Increase = Circular Thinking
 
-> 순환 혼동(H1) 증가 = "생각이 빙글빙글." 정상 H1=1, THC H1=3+?
+> Circular Confusion (H1) increase = "thoughts going in circles." Normal H1=1, THC H1=3+?
 
-## 배경
+## Background
 
-Persistent Homology에서 H0는 연결 성분(클러스터)을, H1은 1차원 구멍(루프)을 추적한다.
-H0가 "분류"를 나타낸다면, H1은 "순환 구조"를 나타낸다.
+In Persistent Homology, H0 tracks connected components (clusters) and H1 tracks 1-dimensional holes (loops).
+If H0 represents "classification," H1 represents "cyclic structure."
 
-정상 의식 상태에서의 분류 표상은 대체로 트리 구조(hierarchical)이며,
-H1 루프가 거의 없다 (정상 H1 ~ 0-1개). 이는 범주 간 경계가 명확하고
-순환적 혼동(A→B→C→A)이 없음을 의미한다.
+Classification representations in normal consciousness are mostly tree-structured (hierarchical),
+with almost no H1 loops (normal H1 ~ 0-1). This means boundaries between categories are clear
+and there is no circular Confusion (A→B→C→A).
 
-THC 사용자의 주관적 보고에서 흔한 경험:
-- "같은 생각이 계속 반복된다"
-- "생각이 빙글빙글 돈다"
-- "루프에 빠진 느낌"
+Common experiences reported by THC users:
+- "The same thought keeps repeating"
+- "Thoughts go in circles"
+- "Feeling stuck in a loop"
 
-이를 PH로 해석하면: H1 루프의 증가.
-범주 경계가 약해지면서 A→B→C→A 같은 순환 경로가 생기고,
-사고가 이 루프를 따라 반복된다.
+Interpreted via PH: H1 loops increase.
+As category boundaries weaken, circular paths like A→B→C→A form, and
+thought repeats along these loops.
 
-H-CX-110에서 PH의 H1 분석 가능성이 제시되었으며,
-본 가설은 이를 THC 맥락에 구체화한다.
+H-CX-110 proposed the possibility of H1 analysis in PH;
+this hypothesis concretizes it in the THC context.
 
-## 예측
+## Predictions
 
-| 측정 | 정상 | THC 투여 후 (예측) |
-|------|------|-------------------|
-| H1 루프 수 | 0-1개 | 3-5개 |
-| H1 persistence | 짧음 (ephemeral) | 길어짐 (persistent) |
-| 루프 크기 | 해당 없음 | 3-5개 클래스 포함 |
-| H0/H1 비율 | >> 1 | ~ 1 (H1이 H0에 근접) |
+| Measurement | Normal | After THC (predicted) |
+|------------|--------|-----------------------|
+| H1 loop count | 0-1 | 3-5 |
+| H1 persistence | short (ephemeral) | longer (persistent) |
+| Loop size | N/A | includes 3-5 classes |
+| H0/H1 ratio | >> 1 | ~ 1 (H1 approaches H0) |
 
 ```
-H1 루프 수 vs Inhibition (I):
+H1 loop count vs Inhibition (I):
 
 H1 |
  5 |              *
@@ -46,53 +46,53 @@ H1 |
    0.5 0.4 0.3 0.2 0.1
        Inhibition (I)
 
-   예측: I 감소에 따라 H1 단조 증가
+   Prediction: H1 monotonically increases as I decreases
 ```
 
-핵심 예측:
-1. I가 골든존 하한(0.21) 이하로 떨어지면 H1이 급격히 증가
-2. H1 루프의 생성은 H0 merge와 시간적으로 동기화 (경계 붕괴 시 루프 형성)
-3. H1 persistence가 긴 루프일수록 주관적 "반복 사고" 강도가 높을 것
+Key predictions:
+1. H1 increases sharply when I falls below Golden Zone lower bound (0.21)
+2. H1 loop formation is temporally synchronized with H0 merge (loops form when boundaries collapse)
+3. The longer the H1 persistence, the stronger the subjective "circular thinking" intensity
 
-## 검증 방법
+## Verification Methods
 
-**AI 시뮬레이션:**
-1. PureField 모델에서 tension_scale 변조 (0.1 ~ 1.0)
-2. 각 단계에서 maxdim=1로 PH 계산 (ripser 또는 gudhi)
-3. H1 betti number, persistence diagram 기록
-4. H0 감소와 H1 증가의 상관 분석
+**AI Simulation:**
+1. Modulate tension_scale in PureField model (0.1 ~ 1.0)
+2. Compute PH with maxdim=1 at each step (ripser or gudhi)
+3. Record H1 Betti number, persistence diagram
+4. Analyze correlation between H0 decrease and H1 increase
 
-**필요 라이브러리:**
+**Required Libraries:**
 ```python
 from ripser import ripser
 from persim import plot_diagrams
-# maxdim=1로 H0, H1 동시 계산
+# Compute H0 and H1 simultaneously with maxdim=1
 result = ripser(data, maxdim=1)
 ```
 
-**EEG 프로토콜 (향후):**
-- fMRI functional connectivity matrix에서 PH 계산
-- THC 전/후 H1 비교
-- 주관적 "순환 사고" 강도와 H1 루프 수의 상관
+**EEG Protocol (future):**
+- Compute PH from fMRI functional connectivity matrix
+- Compare H1 before/after THC
+- Correlate subjective "circular thinking" intensity with H1 loop count
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-110**: PH H1 분석 (원본 가설)
-- **H-CX-142**: THC H0 감소 (H0 측 변화)
-- **H-CX-143**: dendrogram 재구조화 (구조 변화의 다른 측면)
-- **H-CX-147**: THC 용량-PH 비선형 관계
+- **H-CX-110**: PH H1 analysis (original hypothesis)
+- **H-CX-142**: THC H0 decrease (H0-side change)
+- **H-CX-143**: dendrogram restructuring (another aspect of structural change)
+- **H-CX-147**: THC dose-PH nonlinear relationship
 
-## 한계
+## Limitations
 
-1. AI 모델의 feature 공간에서 의미 있는 H1 루프가 생성되는지 불확실
-2. 고차원 공간에서 H1 계산의 계산 비용이 높음 (O(n^3))
-3. "순환 사고"와 H1 루프의 대응은 유비이지 증명된 매핑이 아님
-4. 정상 상태에서도 H1 > 0일 수 있음 (confusing class pairs)
-5. maxdim=1로는 더 고차 위상 구조(H2 등)를 놓칠 수 있음
+1. Uncertain whether meaningful H1 loops are generated in AI model's feature space
+2. H1 computation is expensive in high dimensions (O(n^3))
+3. Correspondence between "circular thinking" and H1 loops is an analogy, not a proven mapping
+4. H1 > 0 may exist even in normal state (confusing class pairs)
+5. maxdim=1 misses higher-order topological structures (H2, etc.)
 
-## 검증 상태
+## Verification Status
 
-- [ ] AI 모델 H1 계산 (tension_scale 변조)
-- [ ] H0 vs H1 상관 분석
-- [ ] persistence diagram 시각화
-- 현재: **미검증**
+- [ ] AI model H1 computation (tension_scale modulation)
+- [ ] H0 vs H1 correlation analysis
+- [ ] persistence diagram visualization
+- Currently: **unverified**

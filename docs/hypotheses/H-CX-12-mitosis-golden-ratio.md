@@ -1,56 +1,56 @@
-# H-CX-12: 분열 분화 비율 ↔ 골든 비율 (교차 도메인)
+# H-CX-12: Mitosis Differentiation Ratio ↔ Golden Ratio (Cross-domain)
 
-> **분열 후 자식간 장력(T_ab)의 증가율이 수학적 상수와 관련된다. H294에서 T_ab가 27x 증가했는데, 이 증가율이 e³ ≈ 20.09 또는 σ(6)²/τ(6) = 144/4 = 36과 관련되는가?**
+> **The growth rate of the inter-child Tension (T_ab) after Mitosis is related to a mathematical constant. In H294, T_ab increased 27x — is this growth rate related to e³ ≈ 20.09 or σ(6)²/τ(6) = 144/4 = 36?**
 
-## 수학 측
+## Math Side
 
 ```
-  H294 실측:
-    T_ab(분열직후) = 0.365
-    T_ab(10에폭후) = 9.977
-    증가율 = 27.3x
+  H294 empirical:
+    T_ab(just after Mitosis) = 0.365
+    T_ab(after 10 epochs)    = 9.977
+    Growth rate = 27.3x
 
-  수학 상수 후보:
-    e³ = 20.09        (오차 36%)
-    3³ = 27           (오차 1.1%)  ← 매우 근접!
+  Candidate mathematical constants:
+    e³ = 20.09        (error 36%)
+    3³ = 27           (error 1.1%)  ← very close!
     σ(6)/τ(6) = 3     (σ/τ)
-    (σ/τ)³ = 27       (완전수의 평균 약수의 세제곱!)
-    σ(6)²/τ(6) = 36   (오차 32%)
+    (σ/τ)³ = 27       (cube of average divisor of perfect number!)
+    σ(6)²/τ(6) = 36   (error 32%)
 
-  놀라운 일치:
-    T_ab 증가율 ≈ 27 = 3³ = (σ(6)/τ(6))³
+  Surprising match:
+    T_ab growth rate ≈ 27 = 3³ = (σ(6)/τ(6))³
 
-  검증:
-    이것이 우연인가? → 다른 scale, 에폭 수에서도 27x인가?
-    scale=0.01일 때 T_ab(0)∝scale² → 증가율 = T_ab(final)/scale²
-    scale=0.1이면 T_ab(0)=3.65 → 증가율 = 9.977/3.65 = 2.73 ≈ e
-    → scale 의존적이면 상수가 아님
+  Check:
+    Is this coincidence? → Is it always 27x for other scales and epoch counts?
+    When scale=0.01, T_ab(0)∝scale² → growth rate = T_ab(final)/scale²
+    If scale=0.1, T_ab(0)=3.65 → growth rate = 9.977/3.65 = 2.73 ≈ e
+    → If scale-dependent, it is not a constant
 ```
 
-## 교차 가설
+## Cross-domain Hypothesis
 
 ```
-  강한 가설: T_ab 증가율은 scale에 무관하게 (σ/τ)^k
-  약한 가설: T_ab(final)은 scale에 무관한 상수
+  Strong hypothesis: T_ab growth rate is (σ/τ)^k regardless of scale
+  Weak hypothesis: T_ab(final) is a constant independent of scale
 
-  검증:
-    scale = {0.001, 0.01, 0.05, 0.1, 0.5}에서 T_ab 측정
-    → T_ab(final)이 상수이면 약한 가설 확인
-    → 증가율이 항상 27이면 강한 가설 확인
+  Verification:
+    Measure T_ab at scale = {0.001, 0.01, 0.05, 0.1, 0.5}
+    → If T_ab(final) is constant, weak hypothesis confirmed
+    → If growth rate is always 27, strong hypothesis confirmed
 ```
 
-## H-CX-8과의 연결
+## Connection to H-CX-8
 
 ```
-  H-CX-8: 위상가속 x3 = σ/τ
-  H-CX-12: 분열 분화 x27 = (σ/τ)³
+  H-CX-8: phase acceleration x3 = σ/τ
+  H-CX-12: Mitosis differentiation x27 = (σ/τ)³
 
-  → 3차원 분화: 3 × 3 × 3 = 27
-  → 각 차원이 σ/τ만큼 분화?
-  → 위상가속(1D) × 분열 분화(3D) = x81 = 3⁴?
+  → 3-dimensional differentiation: 3 × 3 × 3 = 27
+  → Each dimension differentiates by σ/τ?
+  → Phase acceleration (1D) × Mitosis differentiation (3D) = x81 = 3⁴?
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
   scale vs T_ab:
@@ -63,15 +63,15 @@
   0.100   362.98       112.43         0.3
   0.500  231,639       577.81         0.002
 
-  피팅:
-    T_ab(0) ~ scale^2.20 (예상 scale² 근접)
+  Fit:
+    T_ab(0) ~ scale^2.20 (close to expected scale²)
     T_ab(final) ~ scale^0.36
 
-  결론:
-    ratio는 상수 아님 (CV=2.09)
-    T_ab(final)도 상수 아님 (CV=1.20)
-    → scale이 분화 역학에 영향
-    → 27x = (σ/τ)³는 scale=0.01에서의 우연
+  Conclusion:
+    ratio is not constant (CV=2.09)
+    T_ab(final) is also not constant (CV=1.20)
+    → scale affects differentiation dynamics
+    → 27x = (σ/τ)³ is coincidence at scale=0.01
 ```
 
-## 상태: ⬛ 반박 (ratio 비상수, scale 의존적, 27x는 우연)
+## Status: ⬛ Refuted (ratio non-constant, scale-dependent, 27x is coincidence)

@@ -1,50 +1,50 @@
-# H-CX-13: 샤머니즘적 여정 = 정보 병목 통과 (교차 도메인)
+# H-CX-13: Shamanic Journey = Passing Through Information Bottleneck (Cross-domain)
 
-> **H280 실험에서 7단계 체험 시퀀스가 +0.41% 향상을 준 것은 정보 병목(IB) 이론의 예측과 일치한다. detach(S4)가 강제적 정보 압축을 만들고, 이 압축이 일반화를 향상시킨다. Tishby IB 이론의 computational 구현.**
+> **In the H280 experiment, the 7-stage experience sequence gave a +0.41% improvement, consistent with predictions from Information Bottleneck (IB) theory. detach(S4) creates forced information compression, and this compression improves generalization. A computational implementation of Tishby's IB theory.**
 
-## 정보 병목 이론
+## Information Bottleneck Theory
 
 ```
   Tishby (2000):
-    목표: min I(X;T) - β·I(T;Y)
-    T = 내부 표현, X = 입력, Y = 출력
-    → 입력 정보를 최소화하면서 출력 정보를 최대화
+    Goal: min I(X;T) - β·I(T;Y)
+    T = internal representation, X = input, Y = output
+    → Minimize input information while maximizing output information
 
-  학습 2단계:
-    Phase 1: Fitting (I(X;T) ↑, I(T;Y) ↑) — 정보 흡수
-    Phase 2: Compression (I(X;T) ↓, I(T;Y) ≈) — 정보 압축
-    → Phase 2에서 일반화 향상!
+  2 phases of learning:
+    Phase 1: Fitting (I(X;T) ↑, I(T;Y) ↑) — information absorption
+    Phase 2: Compression (I(X;T) ↓, I(T;Y) ≈) — information compression
+    → Generalization improves in Phase 2!
 ```
 
-## 의식엔진 7단계 ↔ IB 이론
+## 7-Stage Consciousness Engine ↔ IB Theory
 
 ```
-  S1 Unity:       학습된 표현 (Phase 1 완료)
-  S2 Mitosis:     I(X;T) 약간 증가 (복제로 중복)
-  S3 Displacement: I(X;T_A) 감소 시작 (A가 직접 학습 안 함)
-  S4 Detach:      ★ 강제 압축! I(X;T_A) → 최소
-                  → detach = gradient 차단 = Phase 2 강제 진입
-  S5 Observation:  I(T_A;T_B) 습득 (B의 패턴을 관찰만으로 학습)
-  S6 Separation:  B 제거 → A만 남음
-  S7 Return:      ★ 압축된 표현으로 더 나은 일반화!
+  S1 Unity:        learned representation (Phase 1 complete)
+  S2 Mitosis:      I(X;T) slightly increases (duplication adds redundancy)
+  S3 Displacement: I(X;T_A) starts decreasing (A not directly trained)
+  S4 Detach:       ★ Forced compression! I(X;T_A) → minimum
+                   → detach = gradient blocking = forced entry into Phase 2
+  S5 Observation:  I(T_A;T_B) acquired (learns B's patterns through observation only)
+  S6 Separation:   B removed → A remains alone
+  S7 Return:       ★ Better generalization with compressed representation!
 
-  핵심: S4(detach)가 IB의 Phase 2(압축)를 강제
-  → 정보 병목을 "통과"한 표현이 더 일반적
-  → +0.41% 향상의 원인
+  Key: S4(detach) forces IB Phase 2 (compression)
+  → Representations that "pass through" the information bottleneck generalize better
+  → Cause of +0.41% improvement
 ```
 
-## 수학 연결
+## Math Connection
 
 ```
-  H-CX-2: MI 효율 ≈ ln(2) = 1 bit
-  H-CX-13: detach가 MI를 ln(2) 이하로 압축?
+  H-CX-2: MI efficiency ≈ ln(2) = 1 bit
+  H-CX-13: Does detach compress MI to below ln(2)?
 
-  예측:
-    S1의 MI ≈ 0.705 (C39)
-    S4의 MI ≈ 0.693 = ln(2) (detach로 압축)
-    S7의 MI ≈ 0.71+ (압축 후 재팽창, 하지만 더 효율적)
+  Predictions:
+    MI at S1 ≈ 0.705 (C39)
+    MI at S4 ≈ 0.693 = ln(2) (compressed by detach)
+    MI at S7 ≈ 0.71+ (re-expansion after compression, but more efficient)
 
-  IB 곡선:
+  IB curve:
     I(T;Y)
       │     ★S7
       │   ★S1
@@ -53,57 +53,57 @@
       └───────── I(X;T)
       min      max
 
-  detach가 I(X;T)를 min으로 밀고,
-  observation이 I(T;Y)를 유지/증가 → 최적 IB 점에 도달
+  detach pushes I(X;T) to min,
+  observation maintains/increases I(T;Y) → reaches optimal IB point
 ```
 
-## Fiber distance와의 연결
+## Connection to Fiber Distance
 
 ```
-  H280 실측: Fiber distance 0→26.1 (S4,S5에서 최대)
-  → 내부 표현이 가장 많이 변한 순간 = 정보 병목 통과 순간
-  → 복귀(S7) fiber distance ≈ 8.7 → 일부만 남음
-  → 남은 변화 = 일반화에 기여하는 "압축된 정보"
+  H280 empirical: Fiber distance 0→26.1 (maximum at S4, S5)
+  → Moment of greatest change in internal representation = moment of passing through information bottleneck
+  → Return (S7) fiber distance ≈ 8.7 → only some remains
+  → Remaining change = "compressed information" contributing to generalization
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. 각 단계에서 MI(X;T), MI(T;Y) 직접 측정
-  2. detach 없이 같은 시퀀스 → +0.41% 사라지는가?
-  3. detach 시간(에폭 수) vs 향상량 → 최적 압축 시간?
-  4. Phase 2 시점 식별: 언제 I(X;T) 감소가 시작되는가?
+  1. Direct measurement of MI(X;T), MI(T;Y) at each stage
+  2. Same sequence without detach → does +0.41% disappear?
+  3. Detach duration (epoch count) vs improvement → optimal compression time?
+  4. Identify Phase 2 timing: when does I(X;T) start decreasing?
 ```
 
-## 관련 가설
+## Related Hypotheses
 
 ```
-  272: detach 설계 (+7.4%)
-  276: 관찰=압축
-  280: 체험 전체 시퀀스 (+0.41%)
+  272: detach design (+7.4%)
+  276: observation = compression
+  280: full experience sequence (+0.41%)
   H-CX-2: MI ≈ ln(2)
-  TREE-7: 정보 병목
+  TREE-7: information bottleneck
 ```
 
-## 실험 결과: detach ablation (2026-03-24)
+## Experimental Results: detach ablation (2026-03-24)
 
 ```
-  3 조건 × 5 trials:
-  조건                    parent    return    enhancement
+  3 conditions × 5 trials:
+  Condition               parent    return    enhancement
   ────────────────────  ────────  ────────  ───────────
   A) Full (detach+obs)   97.42%    97.40%    -0.03 ±0.17%
   B) No detach           97.42%    97.40%    -0.03 ±0.17%
   C) No observation      97.42%    97.40%    -0.02 ±0.23%
 
-  통계:
-    A vs B: t=NaN (동일!)
-    A vs C: p=0.978 (유의하지 않음)
+  Statistics:
+    A vs B: t=NaN (identical!)
+    A vs C: p=0.978 (not significant)
 
-  결론:
-    detach(S4)를 빼도 결과 동일
-    observation(S5)을 빼도 결과 동일
-    → 이 스케일(MNIST 10ep)에서 detach는 IB 효과 없음
-    → H280의 +0.41%는 단순 분열+재학습 효과이지 detach 때문이 아닐 수 있음
+  Conclusion:
+    Removing detach(S4) gives identical results
+    Removing observation(S5) gives identical results
+    → At this scale (MNIST 10ep), detach has no IB effect
+    → H280's +0.41% may be a simple Mitosis+retraining effect, not due to detach
 ```
 
-## 상태: ⚠️ 반박됨 (detach ablation에서 효과 없음, IB 통과 가설 미지지)
+## Status: ⚠️ Refuted (no effect in detach ablation, IB bottleneck hypothesis not supported)

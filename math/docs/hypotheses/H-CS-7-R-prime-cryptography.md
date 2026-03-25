@@ -1,27 +1,27 @@
-# H-CS-7: R(n) 소수 수열과 암호학적 의미
+# H-CS-7: R(n) Prime Sequences and Cryptographic Significance
 
-> **가설**: R(n)이 소수인 n의 집합 {54,96,196,360,...}이
-> 암호학적 구조(소수 생성, 해시 함수)와 연결될 수 있다.
+> **Hypothesis**: The set of n where R(n) is prime {54,96,196,360,...}
+> can be connected to cryptographic structures (prime generation, hash functions).
 
-## 배경
+## Background
 
 ```
-  R(n) 정수이면서 소수인 n (n≤50000, 4개만!):
+  n where R(n) is integer and prime (n≤50000, only 4!):
     R(54)  = 5   (n = 2·3³)
     R(96)  = 7   (n = 2⁵·3)
     R(196) = 19  (n = 2²·7²)
     R(360) = 13  (n = 2³·3²·5)
 
-  소수 출력: {5, 7, 13, 19}
-  입력 n: {54, 96, 196, 360}
+  Prime outputs: {5, 7, 13, 19}
+  Input n: {54, 96, 196, 360}
 ```
 
-## R(n)이 소수가 되는 조건
+## Conditions for R(n) to be Prime
 
 ```
-  R(n) = ∏ f(p,a) 가 소수이려면:
-    곱셈적 분해에서 정확히 하나의 인수만 소수이고 나머지는 1?
-    아니면 분자/분모 상쇄 후 소수?
+  For R(n) = ∏ f(p,a) to be prime:
+    Exactly one factor in multiplicative decomposition is prime and rest are 1?
+    Or prime after numerator/denominator cancellation?
 
   R(54) = f(2,1)·f(3,3) = (3/4)·(80/12) = (3/4)·(20/3) = 20/4 = 5
   R(96) = f(2,5)·f(3,1) = (63/12)·(4/3) = 252/36 = 7
@@ -31,31 +31,31 @@
   σ(196) = 399, φ(196) = 84, τ(196) = 9
   R = 399·84/(196·9) = 33516/1764 = 19. ✓
 
-  패턴: R이 소수가 되려면 분자·분모 상쇄가 매우 특수해야 함
-  → "산술적으로 정렬된" n만 소수 R을 생성
+  Pattern: For R to be prime, numerator·denominator cancellation must be very special
+  → Only "arithmetically aligned" n produce prime R
 ```
 
-## 암호학적 비유
+## Cryptographic Analogy
 
 ```
-  RSA: n=pq에서 σ(n)=(p+1)(q+1), φ(n)=(p-1)(q-1)
+  RSA: For n=pq, σ(n)=(p+1)(q+1), φ(n)=(p-1)(q-1)
     R(pq) = (p+1)(q+1)(p-1)(q-1) / (4pq)
     = (p²-1)(q²-1)/(4pq)
-    소수가 되려면 매우 특수한 (p,q) 필요
+    Very special (p,q) needed for primality
 
-  해시 비유: R은 n의 "산술적 해시"
-    입력 n → 출력 R(n) (유리수)
-    R이 소수인 경우 = "충돌 없는 해시"
-    4/50000 = 0.008% 확률 → 매우 드묾
+  Hash analogy: R as "arithmetic hash" of n
+    Input n → Output R(n) (rational)
+    Prime R case = "collision-free hash"
+    4/50000 = 0.008% probability → extremely rare
 
-  의미: R이 소수인 n은 "산술적으로 특별한 수"
+  Meaning: n with prime R are "arithmetically special numbers"
 ```
 
-## 판정
+## Verdict
 
 ```
-  상태: 🟨 관찰 (4개 사례, 패턴 미확인)
-  암호학 응용은 투기적
+  Status: 🟨 Observation (4 cases, pattern unconfirmed)
+  Cryptographic applications are speculative
 ```
 
-## 난이도: 중 | 파급력: ★★
+## Difficulty: Medium | Impact: ★★

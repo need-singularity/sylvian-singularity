@@ -1,37 +1,37 @@
-# H-PH-10: ⭐⭐⭐ PMNS 중성미자 혼합각 = 약수함수 분수
+# H-PH-10: ⭐⭐⭐ PMNS Neutrino Mixing = Divisor Function Fractions
 
-> **가설**: 중성미자 혼합행렬(PMNS)의 세 각도가 σ,τ,φ,P₁,R의 단순 분수로 표현된다.
+> **Hypothesis**: The three mixing angles of the neutrino mixing matrix (PMNS) are expressed as simple fractions of σ,τ,φ,P₁,R.
 
-## 핵심 결과
+## Core Results
 
-| 혼합각 | 공식 | 예측 | 실측 | 오차 |
+| Mixing Angle | Formula | Prediction | Measurement | Error |
 |--------|------|------|------|------|
 | sin²θ₁₂ | τ/(σ+R) = 4/13 | 0.30769 | 0.307 ± 0.013 | **0.22%** |
 | sin²θ₂₃ | P₁/(P₁+τ+R) = 6/11 | 0.54545 | 0.546 ± 0.021 | **0.10%** |
 | sin²θ₁₃ | 1/(σ*τ-φ) = 1/46 | 0.02174 | 0.0220 ± 0.0007 | **1.2%** |
 
-## 해석
+## Interpretation
 
 ```
-  θ₁₂(태양): 4/13 = τ(6)/(σ(6)+R(6))
-    "약수개수 / (약수합+통합)"
+  θ₁₂(solar): 4/13 = τ(6)/(σ(6)+R(6))
+    "divisor count / (divisor sum+integration)"
 
-  θ₂₃(대기): 6/11 = P₁/p(P₁)
-    "완전수 / 완전수의 분할수" = 6/11 ← p(6)=11=M-이론 차원!
+  θ₂₃(atmospheric): 6/11 = P₁/p(P₁)
+    "perfect number / partition of perfect number" = 6/11 ← p(6)=11=M-theory dimension!
 
-  θ₁₃(원자로): 1/46 = φ/(σ*τ-φ)... 또는 1/(στ-φ)
-    가장 작은 혼합각 = 가장 큰 분모
+  θ₁₃(reactor): 1/46 = φ/(σ*τ-φ)... or 1/(στ-φ)
+    smallest mixing angle = largest denominator
 ```
 
-## p(6) = 11 연결
+## p(6) = 11 Connection
 
-θ₂₃ = P₁/p(P₁) = 6/11: 분모가 정수 분할 함수 p(6) = 11!
-이것은 M-이론 차원과 중성미자 물리를 연결한다.
+θ₂₃ = P₁/p(P₁) = 6/11: The denominator is the partition function p(6) = 11!
+This connects M-theory dimensions with neutrino physics.
 
-## 상태: ⭐⭐⭐ 🟧★
+## Status: ⭐⭐⭐ 🟧★
 
-- θ₁₂, θ₂₃ 정밀 매치 (0.1-0.2%)
-- θ₁₃ 약한 매치 (1.2%)
-- JUNO/DUNE에서 정밀 측정으로 검증 가능
+- θ₁₂, θ₂₃ precise match (0.1-0.2%)
+- θ₁₃ weak match (1.2%)
+- Verifiable through precision measurements at JUNO/DUNE
 
 *Created: 2026-03-25*

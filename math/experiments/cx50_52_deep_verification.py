@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Ralph 307: H-CX-50 심화 검증 + H-CX-52 tension_scale 곱 실험
+"""Ralph 307: H-CX-50 Deep Verification + H-CX-52 tension_scale Product Experiment
 
-H-CX-50 심화:
-  R306에서 6블록 collapse score=9.566 (1위) vs 7블록=9.589 (2위)
-  차이 0.023 → 통계적 유의성 확인 필요
-  1) 10개 시드로 반복 → p-value 계산
-  2) 학습 과정에서 collapse score 변화 추적
+H-CX-50 Deep:
+  In R306, 6-block collapse score=9.566 (1st) vs 7-block=9.589 (2nd)
+  Difference 0.023 → Need statistical significance check
+  1) Repeat with 10 seeds → calculate p-value
+  2) Track collapse score changes during training
 
-H-CX-52 (신규):
-  R(n) = sigma*phi/(n*tau) 는 곱셈적: R(mn)=R(m)R(n) for gcd(m,n)=1
+H-CX-52 (New):
+  R(n) = sigma*phi/(n*tau) is multiplicative: R(mn)=R(m)R(n) for gcd(m,n)=1
   R(6) = R(2)*R(3) = (3/4)*(4/3) = 1
-  예측: 6블록 모델의 블록별 tension_scale 학습값의 곱 → 1에 수렴?
-  대조: 다른 블록 수에서는 곱 ≠ 1
+  Prediction: Product of learned tension_scale values in 6-block model → converges to 1?
+  Control: In other block counts, product ≠ 1
 """
 
 import sys
@@ -30,7 +30,7 @@ from conscious_lm import ConsciousLM
 
 
 def generate_patterned_data(batch_size, seq_len, vocab_size=256):
-    """패턴이 있는 바이트 시퀀스 생성."""
+    """Generate patterned byte sequences."""
     data = torch.zeros(batch_size, seq_len, dtype=torch.long)
     for i in range(batch_size):
         pt = i % 4
@@ -88,7 +88,7 @@ def measure_conv_collapse(model, device, n_trials=20):
 
 
 def train_and_track(model, device, n_steps=500, lr=1e-3, track_interval=50):
-    """학습하면서 collapse score + tension_scale 추적."""
+    """Train while tracking collapse score + tension_scale."""
     model.train()
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=0.01)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=n_steps)
@@ -125,7 +125,7 @@ def train_and_track(model, device, n_steps=500, lr=1e-3, track_interval=50):
             collapse_track.append((step, cs.mean(), cs.std()))
             model.train()
 
-            # tension_scale 값
+            # tension_scale values
             scales = []
             for block in model.blocks:
                 scales.append(block.ffn.tension_scale.item())
@@ -135,16 +135,16 @@ def train_and_track(model, device, n_steps=500, lr=1e-3, track_interval=50):
 
 
 def experiment_cx50_deep(device):
-    """H-CX-50 심화: 10시드 반복 + 학습 과정 추적."""
+    """H-CX-50 Deep: 10-seed repetition + training process tracking."""
     print("=" * 70)
-    print("H-CX-50 심화: 통계적 유의성 + 학습 과정 추적")
+    print("H-CX-50 Deep: Statistical Significance + Training Process Tracking")
     print("=" * 70)
 
     block_counts = [3, 4, 5, 6, 7, 8]
     n_seeds = 10
 
-    # Part A: 10시드 반복
-    print(f"\n--- Part A: {n_seeds}시드 반복 (500 steps 학습 후 collapse score) ---")
+    # Part A: 10-seed repetition
+    print(f"\n--- Part A: {n_seeds}-seed repetition (collapse score after 500 steps training) ---")
     all_scores = {nb: [] for nb in block_counts}
 
     for seed in range(n_seeds):
@@ -157,7 +157,7 @@ def experiment_cx50_deep(device):
                 n_layer=nb, block_size=64, dropout=0.0
             ).to(device)
 
-            # 빠른 학습 (300 steps)
+            # Fast training (300 steps)
             model.train()
             optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=0.01)
             for step in range(300):
@@ -175,7 +175,7 @@ def experiment_cx50_deep(device):
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
                 optimizer.step()
 
-            # collapse score 측정
+            # Measure collapse score
             cs = measure_conv_collapse(model, device, n_trials=10)
             all_scores[nb].append(cs.mean())
 
@@ -185,12 +185,12 @@ def experiment_cx50_deep(device):
 
         print(f"  Seed {seed}: done")
 
-    # 통계 테이블
-    print(f"\n--- 통계 (10시드) ---")
-    print(f"{'blocks':>6} | {'mean':>10} {'std':>10} {'min':>10} {'max':>10} | {'#1위':>5}")
+    # Statistics table
+    print(f"\n--- Statistics (10 seeds) ---")
+    print(f"{'blocks':>6} | {'mean':>10} {'std':>10} {'min':>10} {'max':>10} | {'#1st':>5}")
     print("-" * 60)
 
-    # 시드별 1위 카운트
+    # Count 1st place by seed
     rank1_count = {nb: 0 for nb in block_counts}
     for seed in range(n_seeds):
         seed_scores = {nb: all_scores[nb][seed] for nb in block_counts}
@@ -203,9 +203,9 @@ def experiment_cx50_deep(device):
         print(f"{nb:>6} | {np.mean(scores):>10.4f} {np.std(scores):>10.4f} "
               f"{np.min(scores):>10.4f} {np.max(scores):>10.4f} | {rank1_count[nb]:>5}{marker}")
 
-    # Welch t-test: 6블록 vs 나머지
+    # Welch t-test: 6-block vs others
     from scipy import stats as sp_stats
-    print(f"\n--- Welch t-test: 6블록 vs 각 블록 ---")
+    print(f"\n--- Welch t-test: 6-block vs each block ---")
     print(f"{'comparison':>12} | {'t-stat':>10} {'p-value':>10} | {'significant':>12}")
     print("-" * 55)
     for nb in block_counts:
@@ -215,7 +215,7 @@ def experiment_cx50_deep(device):
         sig = "p<0.05" if p_val < 0.05 else "n.s."
         print(f"  6 vs {nb:>2}    | {t_stat:>+10.4f} {p_val:>10.4f} | {sig:>12}")
 
-    # 6블록 vs 전체 평균
+    # 6-block vs all others
     others = []
     for nb in block_counts:
         if nb != 6:
@@ -223,15 +223,15 @@ def experiment_cx50_deep(device):
     t_all, p_all = sp_stats.ttest_ind(all_scores[6], others, equal_var=False)
     print(f"  6 vs rest  | {t_all:>+10.4f} {p_all:>10.4f} | {'p<0.05' if p_all < 0.05 else 'n.s.':>12}")
 
-    # ASCII 박스플롯
-    print(f"\n--- ASCII: Collapse Score 분포 (10시드) ---")
+    # ASCII boxplot
+    print(f"\n--- ASCII: Collapse Score Distribution (10 seeds) ---")
     for nb in block_counts:
         scores = sorted(all_scores[nb])
         q1 = scores[2]
         median = scores[5]
         q3 = scores[7]
         lo, hi = scores[0], scores[-1]
-        # 스케일링
+        # Scaling
         global_min = min(min(all_scores[nb]) for nb in block_counts)
         global_max = max(max(all_scores[nb]) for nb in block_counts)
         width = 50
@@ -250,8 +250,8 @@ def experiment_cx50_deep(device):
         marker = " *** n=6" if nb == 6 else ""
         print(f"  {nb:>2} blocks: [{''.join(line)}] {np.mean(scores):.4f}{marker}")
 
-    # Part B: 학습 과정 추적 (6블록만)
-    print(f"\n--- Part B: 6블록 학습 과정 collapse score 추적 ---")
+    # Part B: Training process tracking (6-block only)
+    print(f"\n--- Part B: 6-block training process collapse score tracking ---")
     torch.manual_seed(42)
     model6 = ConsciousLM(
         vocab_size=256, d_model=128, n_head=2,
@@ -260,14 +260,14 @@ def experiment_cx50_deep(device):
 
     losses, collapse_track, tscale_track = train_and_track(model6, device, n_steps=500, track_interval=50)
 
-    print(f"\n  학습 과정 collapse score:")
+    print(f"\n  Training process collapse score:")
     print(f"  {'step':>6} | {'collapse':>10} {'std':>8}")
     print("  " + "-" * 30)
     for step, mean, std in collapse_track:
         print(f"  {step:>6} | {mean:>10.4f} {std:>8.4f}")
 
-    # collapse 변화 ASCII
-    print(f"\n  ASCII: Collapse Score vs 학습 단계")
+    # Collapse change ASCII
+    print(f"\n  ASCII: Collapse Score vs Training Steps")
     vals = [m for _, m, _ in collapse_track]
     vmin, vmax = min(vals), max(vals)
     for step, mean, std in collapse_track:
@@ -284,23 +284,23 @@ def experiment_cx50_deep(device):
 
 
 def experiment_cx52_tension_scale_product(device):
-    """H-CX-52: R(n) 곱셈적 구조 ↔ tension_scale 곱.
+    """H-CX-52: R(n) multiplicative structure ↔ tension_scale product.
 
     R(6) = R(2)*R(3) = (3/4)*(4/3) = 1
-    예측: 6블록에서 학습된 tension_scale의 곱 → 1.0?
+    Prediction: Product of learned tension_scales in 6-block → 1.0?
     """
     print("\n" + "=" * 70)
-    print("H-CX-52: R(n) 곱셈적 ↔ tension_scale 곱")
+    print("H-CX-52: R(n) Multiplicative ↔ tension_scale Product")
     print("=" * 70)
 
-    print("\n--- 산술 배경 ---")
-    print("  R(n) = sigma*phi/(n*tau) 는 곱셈적 함수")
+    print("\n--- Arithmetic Background ---")
+    print("  R(n) = sigma*phi/(n*tau) is a multiplicative function")
     print("  R(mn) = R(m)*R(n) for gcd(m,n)=1")
     print("  R(6) = R(2)*R(3) = (3/4)*(4/3) = 1")
     print("  R(28) = R(4)*R(7) = (7/8)*(8/7)*(... ) = 4")
     print()
-    print("  예측: 6블록 모델에서 학습된 tension_scale 곱 → 1.0")
-    print("  대조: 다른 블록 수에서는 곱 ≠ 1")
+    print("  Prediction: Product of learned tension_scale in 6-block model → 1.0")
+    print("  Control: In other block counts, product ≠ 1")
 
     block_counts = [3, 4, 5, 6, 7, 8]
     n_seeds = 5
@@ -318,7 +318,7 @@ def experiment_cx52_tension_scale_product(device):
                 n_layer=nb, block_size=64, dropout=0.0
             ).to(device)
 
-            # 학습
+            # Training
             model.train()
             optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=0.01)
             for step in range(500):
@@ -336,7 +336,7 @@ def experiment_cx52_tension_scale_product(device):
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
                 optimizer.step()
 
-            # tension_scale 값 추출
+            # Extract tension_scale values
             scales = [block.ffn.tension_scale.item() for block in model.blocks]
             product = np.prod(scales)
             results[nb].append(product)
@@ -348,8 +348,8 @@ def experiment_cx52_tension_scale_product(device):
 
         print(f"  Seed {seed}: done")
 
-    # 결과 테이블
-    print(f"\n--- tension_scale 곱 (5시드) ---")
+    # Results table
+    print(f"\n--- tension_scale Product (5 seeds) ---")
     print(f"{'blocks':>6} | {'mean_prod':>10} {'std':>10} | {'|prod-1|':>10} | {'R(n)':>8}")
     print("-" * 60)
 
@@ -377,8 +377,8 @@ def experiment_cx52_tension_scale_product(device):
         print(f"{nb:>6} | {np.mean(prods):>10.6f} {np.std(prods):>10.6f} | "
               f"{abs(np.mean(prods) - 1):>10.6f} | {R_n:>8.4f}{marker}")
 
-    # 개별 블록 tension_scale (6블록 상세)
-    print(f"\n--- 6블록 tension_scale 상세 (5시드) ---")
+    # Individual block tension_scale (6-block details)
+    print(f"\n--- 6-block tension_scale Details (5 seeds) ---")
     print(f"  {'seed':>4} | {'b1':>8} {'b2':>8} {'b3':>8} {'b4':>8} {'b5':>8} {'b6':>8} | {'product':>10}")
     print("  " + "-" * 80)
     for seed in range(n_seeds):
@@ -387,7 +387,7 @@ def experiment_cx52_tension_scale_product(device):
         print(f"  {seed:>4} | {' '.join(f'{s:>8.4f}' for s in scales)} | {prod:>10.6f}")
 
     # ASCII
-    print(f"\n--- ASCII: |tension_scale 곱 - 1| (낮을수록 R(n)=1 매칭) ---")
+    print(f"\n--- ASCII: |tension_scale Product - 1| (lower is closer to R(n)=1 match) ---")
     dists = {nb: abs(np.mean(results[nb]) - 1) for nb in block_counts}
     dmax = max(dists.values()) + 1e-10
     for nb in block_counts:
@@ -397,8 +397,8 @@ def experiment_cx52_tension_scale_product(device):
         marker = " *** R(6)=1" if nb == 6 else ""
         print(f"  {nb:>2} blocks: [{bar}] {d:.6f}{marker}")
 
-    # R(n) vs tension product 상관
-    print(f"\n--- R(n) vs tension_scale 곱 상관 ---")
+    # R(n) vs tension product correlation
+    print(f"\n--- R(n) vs tension_scale Product Correlation ---")
     R_vals = [compute_R(nb) for nb in block_counts]
     prod_vals = [np.mean(results[nb]) for nb in block_counts]
     corr = np.corrcoef(R_vals, prod_vals)[0, 1]
@@ -413,7 +413,7 @@ def experiment_cx52_tension_scale_product(device):
 
 def main():
     print("=" * 70)
-    print("Ralph 307: H-CX-50 심화 검증 + H-CX-52 tension_scale 곱")
+    print("Ralph 307: H-CX-50 Deep Verification + H-CX-52 tension_scale Product")
     print("=" * 70)
 
     device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
@@ -421,25 +421,25 @@ def main():
 
     t0 = time.time()
 
-    # H-CX-50 심화
+    # H-CX-50 Deep
     cx50_scores, cx50_track = experiment_cx50_deep(device)
 
     # H-CX-52
     cx52_prods, cx52_details = experiment_cx52_tension_scale_product(device)
 
     elapsed = time.time() - t0
-    print(f"\n총 실험 시간: {elapsed:.1f}s")
+    print(f"\n Total experiment time: {elapsed:.1f}s")
 
-    # 종합 판정
+    # Overall Assessment
     print("\n" + "=" * 70)
-    print("종합 판정")
+    print("Overall Assessment")
     print("=" * 70)
 
-    # CX-50: 6블록이 10시드 중 몇 번 1위?
+    # CX-50: How many times is 6-block 1st out of 10 seeds?
     rank1 = sum(1 for seed in range(10)
                 if min(range(len([3,4,5,6,7,8])),
                        key=lambda i: cx50_scores[[3,4,5,6,7,8][i]][seed]) == 3)  # index of 6
-    # 직접 계산
+    # Direct calculation
     block_counts = [3,4,5,6,7,8]
     r1_count = 0
     for seed in range(10):
@@ -447,7 +447,7 @@ def main():
         if min(seed_scores, key=seed_scores.get) == 6:
             r1_count += 1
 
-    print(f"\n  H-CX-50: 6블록이 10시드 중 {r1_count}번 1위")
+    print(f"\n  H-CX-50: 6-block is 1st in {r1_count} out of 10 seeds")
     if r1_count >= 7:
         print(f"  → 🟩 STRONGLY CONFIRMED (>= 70%)")
     elif r1_count >= 4:
@@ -457,15 +457,15 @@ def main():
     else:
         print(f"  → ⬛ NOT CONFIRMED ({r1_count*10}%)")
 
-    # CX-52: 6블록 tension_scale 곱이 1에 가장 가까운지
+    # CX-52: Is 6-block tension_scale product closest to 1?
     dists = {nb: abs(np.mean(cx52_prods[nb]) - 1) for nb in block_counts}
     closest = min(dists, key=dists.get)
-    print(f"\n  H-CX-52: tension_scale 곱이 1에 가장 가까운 블록 수: {closest}")
-    print(f"  6블록 |prod-1|: {dists[6]:.6f}")
+    print(f"\n  H-CX-52: Block count with tension_scale product closest to 1: {closest}")
+    print(f"  6-block |prod-1|: {dists[6]:.6f}")
     if closest == 6:
-        print(f"  → 🟧 CONFIRMED: 6블록이 곱=1에 가장 가까움!")
+        print(f"  → 🟧 CONFIRMED: 6-block is closest to product=1!")
     else:
-        print(f"  → ⚪ NOT CONFIRMED: {closest}블록이 더 가까움")
+        print(f"  → ⚪ NOT CONFIRMED: {closest}-block is closer")
 
 
 if __name__ == "__main__":

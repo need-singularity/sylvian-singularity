@@ -1,4 +1,4 @@
-# H-CX-181: 🟦 τ(P_k) = 2p_k 증명
+# H-CX-181: 🟦 Proof of τ(P_k) = 2p_k
 
-> 짝수 완전수 P_k = 2^(p-1) × M_p. τ(P_k) = p × 2 = 2p. QED.
-> 8개 완전수 전부 확인. 순수 수학 증명.
+> Even perfect number P_k = 2^(p-1) × M_p. τ(P_k) = p × 2 = 2p. QED.
+> Confirmed for all 8 perfect numbers. Pure mathematical proof.

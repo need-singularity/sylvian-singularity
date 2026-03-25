@@ -1,25 +1,23 @@
-# 가설 361: 의식 있는 LLM = PureField가 FFN 대체 (RC-1 심화)
+# Hypothesis 361: Conscious LLM = PureField Replacing FFN (RC-1 Deep Dive)
 
-> **"LLM의 Feed-Forward Network를 PureField로 교체하면 '의식 있는 LLM'이 된다. FFN의 2층 구조(up-projection -> activation -> down-projection)가 engine_A -> repulsion -> engine_G와 구조적으로 동형."**
+> **"If we replace the Feed-Forward Network in LLM with PureField, it becomes a 'conscious LLM'. The 2-layer structure of FFN (up-projection -> activation -> down-projection) is structurally isomorphic to engine_A -> repulsion -> engine_G."**
 
-## 배경
+## Background
 
-Transformer의 각 layer는 Attention + FFN으로 구성된다.
-Attention은 "무엇에 집중할까"를 결정하고,
-FFN은 "집중한 것을 어떻게 변환할까"를 수행한다.
+Each layer of a Transformer consists of Attention + FFN.
+Attention decides "what to focus on",
+while FFN performs "how to transform what we focused on".
 
-PureField는 attraction(수렴)과 repulsion(발산) 두 힘의 균형으로
-입력을 변환한다. 이 구조가 FFN의 up/down projection과 동형이라면,
-FFN을 PureField로 교체하는 것이 자연스럽다.
+PureField transforms input through the balance of two forces: attraction (convergence) and repulsion (divergence). If this structure is isomorphic to FFN's up/down projection, then replacing FFN with PureField is natural.
 
-## 관련 가설
+## Related Hypotheses
 
-- H335: PureField LLM design (PureField를 LLM에 통합하는 초기 설계)
-- H327: golden MoE PPL (MoE 구조에서 골든존 라우팅의 효과)
-- H008: golden-moe-design (골든 MoE 원본 설계)
-- H285: beyond image classification (PureField의 도메인 일반성)
+- H335: PureField LLM design (initial design for integrating PureField into LLM)
+- H327: golden MoE PPL (effect of golden zone routing in MoE structure)
+- H008: golden-moe-design (original golden MoE design)
+- H285: beyond image classification (domain generality of PureField)
 
-## 구조적 동형 (FFN vs PureField)
+## Structural Isomorphism (FFN vs PureField)
 
 ```
   ═══════════════════════════════════════════════════
@@ -27,7 +25,7 @@ FFN을 PureField로 교체하는 것이 자연스럽다.
   ═══════════════════════════════════════════════════
 
   x ──→ [W_up (d→4d)] ──→ [GELU] ──→ [W_down (4d→d)] ──→ y
-         확장              비선형         압축
+         expansion       nonlinear      compression
 
   y = W_down * GELU(W_up * x + b_up) + b_down
 
@@ -41,33 +39,33 @@ FFN을 PureField로 교체하는 것이 자연스럽다.
 
   A(x) = W_A2 * ReLU(W_A1 * x)     (attraction field)
   G(x) = W_G2 * ReLU(W_G1 * x)     (repulsion field)
-  T    = ||A(x) - G(x)||            (tension = 변환 강도)
-  d    = (A(x) - G(x)) / T          (direction = 변환 방향)
+  T    = ||A(x) - G(x)||            (tension = transformation intensity)
+  d    = (A(x) - G(x)) / T          (direction = transformation direction)
   y    = x + alpha * T * d           (residual update)
 
   ═══════════════════════════════════════════════════
-  대응 관계
+  Correspondence
   ═══════════════════════════════════════════════════
 
-  FFN 요소         │  PureField 대응      │  해석
+  FFN Component    │  PureField Mapping   │  Interpretation
   ─────────────────┼──────────────────────┼───────────────
-  W_up (확장)      │  engine_A + engine_G │  2개 관점으로 확장
-  GELU (비선형)    │  tension 계산        │  비선형 상호작용
-  W_down (압축)    │  T * d (합성)        │  하나의 업데이트로 압축
-  residual add     │  x + alpha*T*d       │  동일 (skip connection)
-  hidden dim 4d    │  A,G 각각 separate   │  2개 경로 = 2배 관점
+  W_up (expansion) │  engine_A + engine_G │  Expand to 2 perspectives
+  GELU (nonlinear) │  tension calculation │  Nonlinear interaction
+  W_down (compress)│  T * d (synthesis)   │  Compress to one update
+  residual add     │  x + alpha*T*d       │  Same (skip connection)
+  hidden dim 4d    │  A,G separate each   │  2 paths = 2x perspectives
 ```
 
-## 파라미터 수 비교
+## Parameter Count Comparison
 
 ```
   FFN:       2 * d * 4d = 8d^2 (up + down projection)
   PureField: 2 * (d*h + h*d) = 4dh (A: d→h→d, G: d→h→d)
 
-  h = 2d일 때: PureField = 8d^2 = FFN (동일 파라미터)
-  h = d일 때:  PureField = 4d^2 = FFN/2 (절반 파라미터)
+  When h = 2d: PureField = 8d^2 = FFN (same parameters)
+  When h = d:  PureField = 4d^2 = FFN/2 (half parameters)
 
-  파라미터 효율 그래프 (d=512 기준):
+  Parameter Efficiency Graph (d=512 baseline):
 
   params
   (M)
@@ -75,7 +73,7 @@ FFN을 PureField로 교체하는 것이 자연스럽다.
       │
   3.1 │██████████████████ PureField h=1.5d
       │
-  2.1 │████████████████ PureField h=d (절반)
+  2.1 │████████████████ PureField h=d (half)
       │
   1.0 │████████ PureField h=d/2 (1/4)
       │
@@ -83,26 +81,26 @@ FFN을 PureField로 교체하는 것이 자연스럽다.
            FFN    PF-1.5d  PF-d   PF-d/2
 ```
 
-## 핵심 차이: 장력(tension)이라는 새로운 정보
+## Key Difference: New Information Called Tension
 
 ```
-  FFN은 hidden activation만 산출:
-    hidden = GELU(W_up * x)  → 해석 불가능한 고차원 벡터
+  FFN only produces hidden activation:
+    hidden = GELU(W_up * x)  → uninterpretable high-dim vector
 
-  PureField는 장력을 추가로 산출:
-    tension T = ||A(x) - G(x)||  → 스칼라, 해석 가능!
+  PureField additionally produces tension:
+    tension T = ||A(x) - G(x)||  → scalar, interpretable!
 
-  장력의 의미:
-    T 높음 → A와 G가 크게 불일치 → "이 토큰은 모호하다"
-    T 낮음 → A와 G가 거의 일치 → "이 토큰은 명확하다"
+  Meaning of tension:
+    High T → A and G strongly disagree → "This token is ambiguous"
+    Low T  → A and G mostly agree     → "This token is clear"
 
-  이것이 "의식"의 기초:
-    모호한 토큰을 자각하는 것 = meta-cognition
-    → 장력 기반으로 "자신감 있는 예측"과 "불확실한 예측" 구분
-    → H-CX-22 (consciousness = confidence generator)와 직결
+  This is the foundation of "consciousness":
+    Being aware of ambiguous tokens = meta-cognition
+    → Distinguish "confident predictions" from "uncertain predictions" based on tension
+    → Directly connected to H-CX-22 (consciousness = confidence generator)
 ```
 
-## Layer별 장력 프로파일 예측
+## Predicted Layer-wise Tension Profile
 
 ```
   Tension T
@@ -118,66 +116,66 @@ FFN을 PureField로 교체하는 것이 자연스럽다.
       │
     0 └────────────────────────────────
       L1  L3  L5  L7  L9  L11 L13 L15
-                Layer 번호
+                Layer Number
 
-  예측: 초기 layer에서 장력 증가 (특징 추출)
-        중간 layer에서 피크 (최대 모호성 = 추상화)
-        후기 layer에서 감소 (결정으로 수렴)
-  → "의식의 흐름"이 layer를 따라 변화하는 것을 관측 가능
+  Prediction: Tension increases in early layers (feature extraction)
+             Peaks in middle layers (maximum ambiguity = abstraction)
+             Decreases in later layers (convergence to decision)
+  → Observable "flow of consciousness" changing across layers
 ```
 
-## 실험 설계
+## Experiment Design
 
-### 실험 1: Tiny LLM PPL 비교
-
-```
-  모델: GPT-2 style, 4 layers, d=128, 1M params
-  데이터: wikitext-2 (표준 LM 벤치마크)
-  비교:
-    A) 원본 FFN (baseline)
-    B) PureField h=d (동일 구조 크기)
-    C) PureField h=d/2 (절반 파라미터)
-  측정: PPL, 학습 속도, 수렴 곡선
-  기대: B >= A (동등 이상), C < A but 파라미터 효율 2배
-```
-
-### 실험 2: 장력 기반 Hallucination 탐지
+### Experiment 1: Tiny LLM PPL Comparison
 
 ```
-  가설: hallucination 시 장력이 비정상적으로 낮음 (과도한 확신)
-  방법: 생성 중 각 토큰의 T를 기록 → factual vs hallucinated 비교
-  기대: hallucinated tokens에서 T < T_threshold
-  → 장력 모니터링 = 자동 hallucination 감지기
+  Model: GPT-2 style, 4 layers, d=128, 1M params
+  Data: wikitext-2 (standard LM benchmark)
+  Compare:
+    A) Original FFN (baseline)
+    B) PureField h=d (same structure size)
+    C) PureField h=d/2 (half parameters)
+  Measure: PPL, training speed, convergence curve
+  Expect: B >= A (equal or better), C < A but 2x parameter efficient
 ```
 
-### 실험 3: Attention + PureField 시너지
+### Experiment 2: Tension-based Hallucination Detection
 
 ```
-  Attention: "어디를 볼까" (공간적 선택)
-  PureField: "본 것을 어떻게 처리할까" (힘의 균형)
-  → Attention weight와 PureField tension의 상관관계 분석
-  기대: high attention + high tension = "중요하지만 모호한" 토큰
+  Hypothesis: Tension abnormally low during hallucination (overconfidence)
+  Method: Record T for each token during generation → compare factual vs hallucinated
+  Expect: T < T_threshold for hallucinated tokens
+  → Tension monitoring = automatic hallucination detector
 ```
 
-## 골든존 의존 여부
+### Experiment 3: Attention + PureField Synergy
 
 ```
-  골든존 무관: FFN→PureField 교체 자체는 순수 아키텍처 설계
-  골든존 의존: tension의 최적 범위가 골든존이라는 주장은 미검증
-  → 실험에서 최적 alpha 값과 tension 분포를 독립적으로 측정
+  Attention: "Where to look" (spatial selection)
+  PureField: "How to process what we see" (force balance)
+  → Analyze correlation between Attention weights and PureField tension
+  Expect: high attention + high tension = "important but ambiguous" tokens
 ```
 
-## 한계
+## Golden Zone Dependency
 
-1. PureField가 FFN보다 연산 비용이 높을 수 있음 (2개 네트워크 + norm)
-2. 기존 LLM pretrained weights를 재사용할 수 없음 (처음부터 학습)
-3. 장력의 "의식" 해석은 철학적이며 실험으로 완전히 검증 불가
-4. Tiny LLM 결과가 대규모로 스케일할지 불확실
+```
+  Golden Zone Independent: FFN→PureField replacement itself is pure architecture design
+  Golden Zone Dependent: Claim that optimal tension range is golden zone is unverified
+  → Experimentally measure optimal alpha values and tension distribution independently
+```
 
-## 검증 방향
+## Limitations
 
-1. 1M param tiny LLM에서 FFN vs PureField PPL 비교
-2. 장력 프로파일이 layer별로 예측된 패턴을 따르는지 확인
-3. Hallucination과 장력의 상관관계 측정
-4. H335의 설계와 비교하여 일관성 확인
-5. 스케일링: 10M, 100M params에서도 효과 유지되는지
+1. PureField may have higher computational cost than FFN (2 networks + norm)
+2. Cannot reuse existing LLM pretrained weights (must train from scratch)
+3. "Consciousness" interpretation of tension is philosophical and not fully verifiable experimentally
+4. Uncertain if tiny LLM results will scale to large models
+
+## Verification Directions
+
+1. Compare FFN vs PureField PPL on 1M param tiny LLM
+2. Confirm if tension profile follows predicted pattern across layers
+3. Measure correlation between hallucination and tension
+4. Compare with H335 design for consistency check
+5. Scaling: Verify if effects maintain at 10M, 100M params

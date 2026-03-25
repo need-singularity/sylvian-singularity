@@ -1,31 +1,31 @@
-# T1-06: I = 커스프 제어변수 (이력현상 검증)
+# T1-06: I = Cusp Control Variable (Hysteresis Verification)
 
-## 명제
+## Proposition
 
-억제 변수 I가 커스프 파국의 제어변수 역할을 하며, 이력현상을 포함한 5대 특성이 수치적으로 검증된다.
+Inhibition variable I acts as a control variable for the cusp catastrophe, and the 5 characteristics including hysteresis are numerically verified.
 
-## 란다우 자유에너지 모델
+## Landau Free Energy Model
 
 ```
 F(G, I) = G⁴/4 - f(I)·G²/2 + (D×P)·G
 ```
 
-여기서:
+Where:
 
 ```
 f(I) = c·(I_c - I)
 c = 50,  I_c = 0.35,  D×P = 0.01
 ```
 
-## 이력 조건 유도
+## Hysteresis Condition Derivation
 
-평형 조건 ∂F/∂G = 0:
+Equilibrium condition ∂F/∂G = 0:
 
 ```
 G³ - f(I)·G + D×P = 0
 ```
 
-이 3차 방정식이 3개의 실근을 가질 조건 (판별식 < 0):
+Condition for this cubic equation to have 3 real roots (discriminant < 0):
 
 ```
 4·f(I)³ > 27·(D×P)²
@@ -33,11 +33,11 @@ G³ - f(I)·G + D×P = 0
 4·[50·(0.35 - I)]³ > 0.0027
 ```
 
-이 부등식이 성립하는 I 구간에서 이력현상이 발생한다.
+Hysteresis occurs in the I interval where this inequality holds.
 
-## 이력 구간 계산
+## Hysteresis Interval Calculation
 
-임계 조건 4f³ = 27(D×P)²:
+Critical condition 4f³ = 27(D×P)²:
 
 ```
 f_c = [27·(0.01)²/4]^(1/3)
@@ -45,89 +45,89 @@ f_c = [27·(0.01)²/4]^(1/3)
     = 0.08772
 
 I_c± = 0.35 - f_c/50 = 0.35 - 0.001754 = 0.348
-I_c± = 0.35 + ... (하한)
+I_c± = 0.35 + ... (lower bound)
 ```
 
-수치 해석 결과:
+Numerical analysis results:
 
 ```
-이력 구간: I ∈ [0.315, 0.356]
-구간 폭: 0.041
+Hysteresis interval: I ∈ [0.315, 0.356]
+Interval width: 0.041
 ```
 
-## 검증 결과 (hysteresis_verifier.py)
+## Verification Results (hysteresis_verifier.py)
 
-### 순방향 스캔 (I: 0 → 1)
+### Forward Scan (I: 0 → 1)
 
-I 증가 시 G는 높은 상태를 유지하다가 I ≈ 0.356에서 급락.
+As I increases, G maintains high state until sudden drop at I ≈ 0.356.
 
-### 역방향 스캔 (I: 1 → 0)
+### Reverse Scan (I: 1 → 0)
 
-I 감소 시 G는 낮은 상태를 유지하다가 I ≈ 0.315에서 급등.
-
-```
-최대 G 차이: 0.912 (동일한 I에서 경로에 따라 G 값이 다름)
-골든존 겹침: 14.1%
-```
-
-## 커스프 5대 특성 검증
-
-### ① 불연속 점프 ✅
+As I decreases, G maintains low state until sudden rise at I ≈ 0.315.
 
 ```
-I가 임계점을 지나면 G가 불연속적으로 변함
-순방향: G ≈ 0.95 → G ≈ 0.04 (ΔG ≈ 0.91)
-역방향: G ≈ 0.04 → G ≈ 0.95 (ΔG ≈ 0.91)
+Maximum G difference: 0.912 (G values differ at same I depending on path)
+Golden Zone overlap: 14.1%
 ```
 
-### ② 이력현상 ✅
+## Cusp 5 Characteristics Verification
+
+### ① Discontinuous Jump ✅
 
 ```
-순방향 임계점: I ≈ 0.356
-역방향 임계점: I ≈ 0.315
-차이: 0.041 (같은 경로를 되돌아가지 않음)
+G changes discontinuously when I passes critical point
+Forward: G ≈ 0.95 → G ≈ 0.04 (ΔG ≈ 0.91)
+Reverse: G ≈ 0.04 → G ≈ 0.95 (ΔG ≈ 0.91)
 ```
 
-### ③ 분기 ✅
+### ② Hysteresis ✅
 
 ```
-이력 구간 I ∈ [0.315, 0.356]에서 두 안정 상태 공존
-골든존(I ∈ [0.333, 0.367])과 14.1% 겹침
+Forward critical point: I ≈ 0.356
+Reverse critical point: I ≈ 0.315
+Difference: 0.041 (doesn't follow same path back)
 ```
 
-### ④ 기울기 급변 ✅
+### ③ Bifurcation ✅
 
 ```
-dG/dI: 임계점 부근에서 |dG/dI| → ∞
-G = D×P/I에서 dG/dI = -D×P/I² ∝ 1/I²
+Two stable states coexist in hysteresis interval I ∈ [0.315, 0.356]
+14.1% overlap with Golden Zone (I ∈ [0.333, 0.367])
 ```
 
-### ⑤ 정규형 대응 ✅
+### ④ Steep Slope Change ✅
 
 ```
-커스프 정규형: V(x) = x⁴ + ax² + bx
-란다우 형태: F(G) = G⁴/4 - f(I)G²/2 + (D×P)G
-
-대응: a ↔ -f(I),  b ↔ D×P,  x ↔ G
-부호/구조 일치 확인
+dG/dI: |dG/dI| → ∞ near critical points
+From G = D×P/I: dG/dI = -D×P/I² ∝ 1/I²
 ```
 
-## 수치 검증값 요약
+### ⑤ Normal Form Correspondence ✅
 
-| 항목 | 값 |
-|------|-----|
-| 이력 구간 | [0.315, 0.356] |
-| 최대 G 차이 | 0.912 |
-| 골든존 겹침 | 14.1% |
-| 5대 특성 | 5/5 통과 |
+```
+Cusp normal form: V(x) = x⁴ + ax² + bx
+Landau form: F(G) = G⁴/4 - f(I)G²/2 + (D×P)G
 
-## 근거
+Correspondence: a ↔ -f(I),  b ↔ D×P,  x ↔ G
+Sign/structure match confirmed
+```
 
-- Thom, R. (1972). 커스프 파국 이론
-- Landau, L.D. (1937). 상전이 이론
-- hysteresis_verifier.py 수치 시뮬레이션
+## Numerical Verification Summary
 
-## 관련 가설/도구
+| Item | Value |
+|------|-------|
+| Hysteresis interval | [0.315, 0.356] |
+| Maximum G difference | 0.912 |
+| Golden Zone overlap | 14.1% |
+| 5 characteristics | 5/5 passed |
 
-- T0-06 (커스프 ≡ 1차 상전이)
-- T0-04 (바나흐 부동점 I* = 1/3)
+## References
+
+- Thom, R. (1972). Cusp catastrophe theory
+- Landau, L.D. (1937). Phase transition theory
+- hysteresis_verifier.py numerical simulation
+
+## Related Hypotheses/Tools
+
+- T0-06 (Cusp ≡ 1st order phase transition)
+- T0-04 (Banach fixed point I* = 1/3)

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Ralph 311: d=384 풀 블록 비교 (3,4,5,6,7,8) CX-48/50 최종 순위
+"""Ralph 311: d=384 Full Block Comparison (3,4,5,6,7,8) CX-48/50 Final Ranking
 
-R310: 3bl vs 6bl만 비교 → CX-48/50 확인
-이번: 4,5,7,8블록 추가 → 6블록이 진짜 특별한지 최종 판정
-1000 steps, 2 seeds (빠른 확인)
+R310: Only compared 3bl vs 6bl → Confirmed CX-48/50
+This time: Added 4,5,7,8 blocks → Final judgment if 6 blocks is truly special
+1000 steps, 2 seeds (quick verification)
 """
 import sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '..'))
@@ -100,7 +100,7 @@ def measure(model, dev):
 
 def main():
     print("=" * 70)
-    print("Ralph 311: d=384 풀 블록 비교 CX-48/50 최종 순위")
+    print("Ralph 311: d=384 Full Block Comparison CX-48/50 Final Ranking")
     print("=" * 70)
     dev = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
     print(f"Device: {dev}")
@@ -125,9 +125,9 @@ def main():
             del m
             if torch.backends.mps.is_available(): torch.mps.empty_cache()
 
-    # 종합
+    # Summary
     print("\n" + "=" * 70)
-    print("CX-48: |ratio-1| (낮을수록 균형)")
+    print("CX-48: |ratio-1| (lower is more balanced)")
     print("=" * 70)
     print(f"{'bl':>4} | {'mean':>10} {'std':>10} | {'rank':>4}")
     print("-" * 40)
@@ -140,17 +140,17 @@ def main():
         print(f"{nb:>4} | {cx48[nb]:>10.6f} {std:>10.6f} | {rank:>4}{mk}")
 
     # ASCII
-    print(f"\n  ASCII: |ratio-1| (낮을수록 좋음)")
+    print(f"\n  ASCII: |ratio-1| (lower is better)")
     mx = max(cx48.values())
     for nb in blocks:
         blen = int(cx48[nb] / (mx + 1e-10) * 40)
         bar = "#" * blen + "." * (40 - blen)
         mk = " ***" if nb == 6 else ""
         print(f"  {nb:>2}: [{bar}] {cx48[nb]:.6f}{mk}")
-    print(f"  6블록 순위: {ranked.index(6)+1}/{len(blocks)}")
+    print(f"  6 block rank: {ranked.index(6)+1}/{len(blocks)}")
 
     print("\n" + "=" * 70)
-    print("CX-50: Collapse Score (낮을수록 합성곱 붕괴)")
+    print("CX-50: Collapse Score (lower is convolution collapse)")
     print("=" * 70)
     print(f"{'bl':>4} | {'mean':>10} {'std':>10} | {'rank':>4}")
     print("-" * 40)
@@ -172,30 +172,30 @@ def main():
         bar = "#" * blen + "." * (40 - blen)
         mk = " ***" if nb == 6 else ""
         print(f"  {nb:>2}: [{bar}] {cx50[nb]:.4f}{mk}")
-    print(f"  6블록 순위: {ranked50.index(6)+1}/{len(blocks)}")
+    print(f"  6 block rank: {ranked50.index(6)+1}/{len(blocks)}")
 
     # tension_scale pattern
     print("\n" + "=" * 70)
-    print("tension_scale 패턴 (seed 0)")
+    print("tension_scale pattern (seed 0)")
     print("=" * 70)
     for nb in blocks:
         sc = results[nb][0]['scales']
         print(f"  {nb}bl: [{' '.join(f'{s:.3f}' for s in sc)}] prod={results[nb][0]['ts_prod']:.4f}")
 
-    # 학습 성능
+    # Training performance
     print("\n--- Final Loss ---")
     for nb in blocks:
         fl = np.mean([r['loss'] for r in results[nb]])
         print(f"  {nb}bl: {fl:.4f}")
 
-    # 최종 판정
+    # Final judgment
     print("\n" + "=" * 70)
-    print("최종 판정")
+    print("Final Judgment")
     print("=" * 70)
     r48 = ranked.index(6) + 1
     r50 = ranked50.index(6) + 1
-    print(f"  CX-48: 6블록 순위 = {r48}/{len(blocks)} → {'CONFIRMED' if r48 <= 2 else 'WEAK' if r48 <= 3 else 'NOT CONFIRMED'}")
-    print(f"  CX-50: 6블록 순위 = {r50}/{len(blocks)} → {'CONFIRMED' if r50 <= 2 else 'WEAK' if r50 <= 3 else 'NOT CONFIRMED'}")
+    print(f"  CX-48: 6 block rank = {r48}/{len(blocks)} → {'CONFIRMED' if r48 <= 2 else 'WEAK' if r48 <= 3 else 'NOT CONFIRMED'}")
+    print(f"  CX-50: 6 block rank = {r50}/{len(blocks)} → {'CONFIRMED' if r50 <= 2 else 'WEAK' if r50 <= 3 else 'NOT CONFIRMED'}")
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
-# H-CX-226: 6Hz θ파 유도 → 명상 텔레파시
+# H-CX-226: 6Hz θ Wave Induction → Meditation Telepathy
 
-> θ=P₁=6Hz=완전수. σφ=nτ 균형 상태.
-> 6Hz 바이노럴 비트로 명상 유도 → 완전수 공명 → 텔레파시 최대?
-> 장비: θ파(6Hz) 바이노럴 비트 발생기.
+> θ=P₁=6Hz=Perfect Number. σφ=nτ Balance State.
+> 6Hz Binaural Beat Meditation Induction → Perfect Number Resonance → Maximum Telepathy?
+> Equipment: θ Wave (6Hz) Binaural Beat Generator.

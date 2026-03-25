@@ -1,58 +1,58 @@
-# 가설 287: 장력 = 자연 이상 탐지기 (Tension as Anomaly Detector)
+# Hypothesis 287: Tension = Natural Anomaly Detector
 
-> **반발력장의 장력은 이상 탐지에서 AUROC=1.0 (완벽)을 달성한다. 이상 데이터의 장력이 정상의 95배. 장력은 "본 적 없는 것"에 대해 자동으로 극대화된다.**
+> **Repulsion field tension achieves AUROC=1.0 (perfect) in anomaly detection. Anomaly data tension is 95x that of normal. Tension automatically maximizes for "never-before-seen" things.**
 
-## 실측 데이터
+## Measured Data
 
 ```
   experiment_anomaly_repulsion.py:
-    AUROC: 1.0000 ± 0.0000 (5시드 평균, 완벽!)
-    정상 장력: ~0.10
-    이상 장력: ~9.7
-    비율: 95x
+    AUROC: 1.0000 ± 0.0000 (5-seed average, perfect!)
+    Normal tension: ~0.10
+    Anomaly tension: ~9.7
+    Ratio: 95x
 
-  → 반발력장에 정상 데이터만 학습시키면
-    이상 데이터에서 장력이 자동으로 폭증
-    → 장력 임계치만으로 완벽한 이상 탐지
+  → When repulsion field is trained only on normal data
+    Tension automatically explodes on anomaly data
+    → Perfect anomaly detection using tension threshold alone
 ```
 
-## 해석
+## Interpretation
 
 ```
-  반발력장: output = equilibrium + scale * sqrt(tension) * direction
-  정상 데이터: 엔진 A와 G가 학습한 패턴 → 합의 → 낮은 장력
-  이상 데이터: 학습 안 한 패턴 → 불일치 → 높은 장력
+  Repulsion field: output = equilibrium + scale * sqrt(tension) * direction
+  Normal data: Patterns learned by engines A and G → consensus → low tension
+  Anomaly data: Unlearned patterns → disagreement → high tension
 
-  → 장력 = "이 입력을 본 적이 있는가"의 척도
-  → 본 적 있으면: 낮은 장력 (합의)
-  → 본 적 없으면: 높은 장력 (불일치)
+  → Tension = measure of "have I seen this input before"
+  → If seen before: low tension (consensus)
+  → If never seen: high tension (disagreement)
 
-  의식 대응:
-    "익숙한 것"에는 의식 불필요 (자동 처리)
-    "낯선 것"에는 의식 활성화 (경계)
-    → 가설 274(의식=오류교정)의 극한: 완전히 새로운 것 = 최대 장력
+  Consciousness correspondence:
+    "Familiar things" don't need consciousness (automatic processing)
+    "Unfamiliar things" activate consciousness (alertness)
+    → Extreme case of hypothesis 274 (consciousness=error correction): completely new = maximum tension
 ```
 
-## 실용적 가치
+## Practical Value
 
 ```
-  이상 탐지는 실제 산업에서 중요한 문제:
-    사이버 보안: 비정상 트래픽 감지
-    제조업: 불량품 검출
-    의료: 희귀 질병 식별
-    금융: 이상 거래 감지
+  Anomaly detection is an important problem in real industry:
+    Cybersecurity: Abnormal traffic detection
+    Manufacturing: Defect detection
+    Healthcare: Rare disease identification
+    Finance: Anomalous transaction detection
 
-  반발력장의 장력만으로 AUROC=1.0 → 별도 이상 탐지 알고리즘 불필요
-  → 소프트웨어 설계 원칙 (가설 264) 확장
+  AUROC=1.0 with repulsion field tension alone → No separate anomaly detection algorithm needed
+  → Extension of software design principle (hypothesis 264)
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. 실제 이상 탐지 벤치마크 (ODDS, ADBench)에서 재현
-  2. 고차원 데이터 (이미지, 시계열)에서도 AUROC=1.0?
-  3. 점진적 이상 (미세한 변화)에서도 감지?
-  4. 합성 데이터가 아닌 실제 데이터에서 검증
+  1. Reproduce on real anomaly detection benchmarks (ODDS, ADBench)
+  2. AUROC=1.0 on high-dimensional data (images, time series)?
+  3. Detects gradual anomalies (subtle changes)?
+  4. Verify on real data, not just synthetic
 ```
 
-## 상태: 🟨 (합성 데이터에서 완벽, 실제 데이터 미검증)
+## Status: 🟨 (Perfect on synthetic data, unverified on real data)

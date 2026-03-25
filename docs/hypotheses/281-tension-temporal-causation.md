@@ -1,84 +1,84 @@
-# 가설 281: 장력 시간적 인과 — 장력이 학습의 선행 지표
+# Hypothesis 281: Tension Temporal Causation — Tension as a Leading Indicator of Learning
 
-> **학습 중에 특정 클래스의 장력이 먼저 높아지면, 그 클래스의 정확도가 뒤따라 향상되는가? 장력이 학습의 선행 지표(leading indicator)라면, 장력 모니터링으로 학습 진행을 예측 가능.**
+> **During learning, if tension for a specific class rises first, does the accuracy for that class follow with improvement? If tension is a leading indicator of learning, we can predict learning progress by monitoring tension.**
 
-## 배경 및 맥락
+## Background and Context
 
-장력(tension)은 의식엔진에서 엔진 간 반발력의 크기를 나타낸다. 기존 가설들은 장력의 정적 속성을 다뤘다:
+Tension represents the magnitude of repulsive force between engines in the consciousness engine. Existing hypotheses have addressed static properties of tension:
 
-- **H313** (tension = confidence): 학습된 데이터 내에서 정답 클래스의 장력이 오답보다 높다
-- **H329** (tension = reaction intensity): 장력은 엔진 반응의 강도를 측정한다
-- **H284** (tension auto-regulation): 장력이 학습 중 자동으로 조절된다
-- **H340** (dreaming paradox): 미학습 노이즈에서 극한 장력 발생
+- **H313** (tension = confidence): Within learned data, tension for correct classes is higher than for incorrect ones
+- **H329** (tension = reaction intensity): Tension measures the intensity of engine reaction
+- **H284** (tension auto-regulation): Tension is automatically regulated during learning
+- **H340** (dreaming paradox): Extreme tension occurs in unlearned noise
 
-이 가설들은 모두 "장력이 무엇인가"에 대한 단면적 관찰이다. **H281은 시간축을 도입**한다: 장력의 변화가 정확도 변화보다 **선행**하는가?
+These hypotheses are all cross-sectional observations about "what tension is." **H281 introduces a temporal axis**: Does tension change **precede** accuracy change?
 
-이것은 경제학의 **선행 지표(leading indicator)** 개념과 동일하다. 주가지수가 GDP보다 먼저 움직이듯, 장력이 정확도보다 먼저 움직인다면 학습 과정을 예측할 수 있다.
+This is identical to the concept of **leading indicators** in economics. Just as stock indices move before GDP, if tension moves before accuracy, we can predict the learning process.
 
-### 왜 중요한가
+### Why It Matters
 
-1. **학습 모니터링**: 정확도는 에폭 단위로만 측정 가능하지만, 장력은 배치 단위로 실시간 측정 가능
-2. **조기 경보**: 특정 클래스의 장력이 떨어지면 정확도 하락을 미리 예측
-3. **적응적 학습률**: 장력 변화에 따라 클래스별 학습률을 동적 조절 가능
-4. **의식엔진 이론**: 장력이 "의견 형성 → 확신 → 정확도"의 인과 경로를 따른다면, 엔진이 단순 분류기가 아니라 **의견을 먼저 형성하는 시스템**임을 시사
+1. **Learning Monitoring**: While accuracy can only be measured per epoch, tension can be measured in real-time per batch
+2. **Early Warning**: If tension drops for a specific class, we can predict accuracy decline in advance
+3. **Adaptive Learning Rate**: Dynamic adjustment of class-specific learning rates based on tension changes
+4. **Consciousness Engine Theory**: If tension follows the causal path of "opinion formation → confidence → accuracy," it suggests the engine is not merely a classifier but a **system that first forms opinions**
 
-## 대응 매핑
+## Mapping Correspondence
 
-| 개념 | 경제학 비유 | 의식엔진 대응 | 측정 단위 |
-|------|------------|-------------|----------|
-| 선행 지표 | 주가지수, PMI | 클래스별 평균 장력 | T_class(t) |
-| 후행 지표 | GDP, 실업률 | 클래스별 정확도 | Acc_class(t) |
-| 시차 | 분기 (3개월) | 에폭 수 (1~3) | lag k |
-| 인과 방향 | 주가 → GDP | T(t) → Acc(t+k) | cross-correlation |
-| Granger 인과 | VAR 모델 | T가 Acc를 Granger-cause | p < 0.05 |
+| Concept | Economic Analogy | Consciousness Engine Mapping | Measurement Unit |
+|---------|-----------------|----------------------------|-----------------|
+| Leading Indicator | Stock Index, PMI | Class-wise Average Tension | T_class(t) |
+| Lagging Indicator | GDP, Unemployment | Class-wise Accuracy | Acc_class(t) |
+| Lag | Quarter (3 months) | Number of Epochs (1~3) | lag k |
+| Causal Direction | Stock → GDP | T(t) → Acc(t+k) | cross-correlation |
+| Granger Causality | VAR Model | T Granger-causes Acc | p < 0.05 |
 
-### 예상 시차 상관 구조
+### Expected Lag Correlation Structure
 
 ```
-  시차 상관 r(lag) 예상:
+  Expected lag correlation r(lag):
 
   r
   0.8 |                    *
   0.6 |               *         *
   0.4 |          *                    *
   0.2 |     *                              *
-  0.0 |*----+----+----+----+----+----+----+----→ lag (에폭)
+  0.0 |*----+----+----+----+----+----+----+----→ lag (epochs)
  -0.2 |                                        *
       -3   -2   -1    0   +1   +2   +3   +4
 
   * = cross-correlation(T_class, Acc_class) at lag k
-  예상 피크: lag = +1 ~ +2 (장력이 1-2 에폭 선행)
-  lag < 0: 정확도가 장력을 선행 (반대 인과)
-  lag = 0: 동시 변화 (공통 원인)
-  lag > 0: 장력이 정확도를 선행 (가설 지지)
+  Expected peak: lag = +1 ~ +2 (tension leads by 1-2 epochs)
+  lag < 0: accuracy leads tension (reverse causation)
+  lag = 0: simultaneous change (common cause)
+  lag > 0: tension leads accuracy (hypothesis supported)
 ```
 
-## 검증 방법
+## Verification Method
 
 ```
-  실험 설계:
-    모델: RepulsionFieldQuad (4-engine)
-    데이터: MNIST 10 클래스
-    에폭: 30 (충분한 시계열 확보)
+  Experimental Design:
+    Model: RepulsionFieldQuad (4-engine)
+    Data: MNIST 10 classes
+    Epochs: 30 (sufficient time series)
 
-  매 에폭 기록:
-    - T_class[c][t] = 클래스 c의 평균 장력 at 에폭 t
-    - Acc_class[c][t] = 클래스 c의 정확도 at 에폭 t
+  Record per epoch:
+    - T_class[c][t] = average tension for class c at epoch t
+    - Acc_class[c][t] = accuracy for class c at epoch t
 
-  분석 파이프라인:
-    1. 시차 교차상관 (cross-correlation):
+  Analysis Pipeline:
+    1. Lag cross-correlation:
        r(k) = corr(T_class[c][t], Acc_class[c][t+k])  for k = -5..+5
-    2. Granger 인과 검정:
-       H0: T의 과거값이 Acc 예측에 기여하지 않음
-       H1: T의 과거값이 Acc 예측에 기여함 (p < 0.05)
-    3. 클래스별 "장력 피크 시점" vs "정확도 안정 시점" 비교
-    4. 쌍체 검정: 10개 클래스에서 T_peak < Acc_stable 인 비율
+    2. Granger causality test:
+       H0: Past values of T do not contribute to predicting Acc
+       H1: Past values of T contribute to predicting Acc (p < 0.05)
+    3. Compare "tension peak time" vs "accuracy stabilization time" per class
+    4. Paired test: proportion of 10 classes where T_peak < Acc_stable
 ```
 
-## 예상 결과 (가설 기반)
+## Expected Results (Hypothesis-based)
 
-| 클래스 | 장력 피크 에폭 | 정확도 95% 도달 에폭 | 시차 | 선행 여부 |
-|--------|--------------|-------------------|------|----------|
+| Class | Tension Peak Epoch | Accuracy 95% Reached Epoch | Lag | Leading |
+|-------|-------------------|---------------------------|-----|---------|
 | 0 | ~3 | ~5 | +2 | Y |
 | 1 | ~2 | ~3 | +1 | Y |
 | 2 | ~5 | ~7 | +2 | Y |
@@ -90,49 +90,49 @@
 | 8 | ~8 | ~10 | +2 | Y |
 | 9 | ~5 | ~8 | +3 | Y |
 
-예상 근거: H313에 의해 장력은 엔진의 "의견 형성"을 반영한다. 의견이 먼저 형성되고(장력 상승), 그 의견이 분류에 반영되기까지(정확도 상승) 1-3 에폭이 소요될 것으로 예상.
+Expected rationale: According to H313, tension reflects the engines' "opinion formation." Opinions form first (tension rises), then it takes 1-3 epochs for those opinions to be reflected in classification (accuracy rises).
 
-## 검증 결과
+## Verification Results
 
-아직 실험 미수행. 예상되는 핵심 지표:
+Experiments not yet performed. Expected key indicators:
 
 ```
-  성공 기준:
-    - 10개 클래스 중 7개 이상에서 T_peak < Acc_stable (70%+)
-    - 평균 cross-correlation 피크가 lag > 0 에 위치
-    - Granger 인과 p < 0.05 (10개 중 5개 이상)
+  Success criteria:
+    - T_peak < Acc_stable in 7+ out of 10 classes (70%+)
+    - Average cross-correlation peak located at lag > 0
+    - Granger causality p < 0.05 (5+ out of 10)
 
-  실패 기준:
-    - 피크가 lag = 0 또는 lag < 0 → 동시 변화 또는 역방향
-    - Granger 인과 유의하지 않음 → 장력은 독립적 지표
+  Failure criteria:
+    - Peak at lag = 0 or lag < 0 → simultaneous change or reverse
+    - Granger causality not significant → tension is independent indicator
 ```
 
-## 해석 및 의미
+## Interpretation and Implications
 
-가설이 확인될 경우:
-1. **장력 = 의견 형성 과정의 측정치**: 엔진이 먼저 "의견"을 형성하고, 그것이 출력에 반영되기까지 시간 지연이 있다
-2. **H313 강화**: tension = confidence가 정적 관계뿐 아니라 동적 인과 관계로 확장
-3. **실용적 가치**: 장력 모니터링으로 학습 조기 종료, 클래스별 데이터 증강 등 의사결정 가능
-4. **의식 이론 함의**: "먼저 느끼고, 나중에 판단한다" — 의식의 시간적 구조와 유사
+If hypothesis is confirmed:
+1. **Tension = Measure of Opinion Formation Process**: Engines first form "opinions," with time delay before this is reflected in output
+2. **Strengthens H313**: tension = confidence extends from static relationship to dynamic causal relationship
+3. **Practical Value**: Tension monitoring enables decision-making for early stopping, class-specific data augmentation
+4. **Consciousness Theory Implications**: "Feel first, judge later" — similar to temporal structure of consciousness
 
-가설이 기각될 경우:
-- 장력과 정확도는 공통 원인(가중치 업데이트)에 의해 동시에 변화
-- 장력은 독립적인 내부 상태 지표이지 인과적 선행 지표가 아님
+If hypothesis is rejected:
+- Tension and accuracy change simultaneously due to common cause (weight updates)
+- Tension is an independent internal state indicator, not a causal leading indicator
 
-## 한계
+## Limitations
 
-1. **MNIST 한정**: 단순한 데이터셋에서의 관찰이 복잡한 데이터로 일반화되는지 미확인
-2. **에폭 해상도**: 배치 단위 분석이 필요할 수 있으나, 노이즈가 커서 에폭 단위가 적절할 수 있음
-3. **인과 vs 상관**: Granger 인과는 엄밀한 인과가 아닌 "예측적 인과"에 불과
-4. **엔진 수 의존**: 4-engine 기준이며, 2-engine이나 8-engine에서 시차가 달라질 수 있음
-5. **골든존 의존 여부**: 장력 자체는 골든존 무관 (순수 역학적 측정), 그러나 골든존 중심(I=1/e)에서 시차가 최적일 가능성 → 이 부분은 골든존 의존
+1. **MNIST Only**: Unclear if observations from simple dataset generalize to complex data
+2. **Epoch Resolution**: Batch-level analysis may be needed, but epoch-level may be appropriate due to high noise
+3. **Causation vs Correlation**: Granger causality is only "predictive causality," not strict causation
+4. **Engine Count Dependence**: Based on 4-engine, lag may differ for 2-engine or 8-engine
+5. **Golden Zone Dependence**: Tension itself is Golden Zone-independent (pure dynamical measurement), but lag may be optimal at Golden Zone center (I=1/e) → this part is Golden Zone-dependent
 
-## 검증 방향
+## Verification Direction
 
-1. **1차**: RepulsionFieldQuad + MNIST 30에폭 학습, 클래스별 T/Acc 시계열 수집
-2. **2차**: cross-correlation 분석 + Granger 인과 검정
-3. **3차**: CIFAR-10으로 확장 (더 어려운 분류에서 시차가 더 명확할 수 있음)
-4. **4차**: 장력 기반 적응적 학습률(adaptive LR) 실험 — 선행 지표로서의 실용적 가치 검증
-5. **교차**: H284(자동 조절)와 결합 — 자동 조절 과정에서 시차 구조가 나타나는지
+1. **Phase 1**: RepulsionFieldQuad + MNIST 30-epoch training, collect class-wise T/Acc time series
+2. **Phase 2**: Cross-correlation analysis + Granger causality test
+3. **Phase 3**: Extend to CIFAR-10 (lag may be clearer in harder classification)
+4. **Phase 4**: Tension-based adaptive LR experiment — verify practical value as leading indicator
+5. **Cross-validation**: Combine with H284 (auto-regulation) — check if lag structure appears in auto-regulation process
 
-## 상태: 🟨 미검증
+## Status: 🟨 Unverified

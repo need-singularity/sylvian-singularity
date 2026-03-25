@@ -1,5 +1,5 @@
-# H-CX-198: 돌고래 클릭 초음파의 생체 조직 효과
+# H-CX-198: Dolphin Click Ultrasound Biological Tissue Effects
 
-> Brensing(2003): 돌고래 초음파가 생체 조직에 영향 가능하나,
-> 강도/반복/시간 조건 충족 어려움. 행동 관찰에서 에코로케이션 미확인.
-> 가설: 30kHz 클릭의 저주파 성분(비트 주파수)이 치료 효과?
+> Brensing(2003): Dolphin ultrasound can affect biological tissue,
+> but difficult to meet intensity/repetition/time conditions. Echolocation not confirmed in behavioral observations.
+> Hypothesis: Low-frequency components (beat frequency) of 30kHz clicks as therapeutic effect?

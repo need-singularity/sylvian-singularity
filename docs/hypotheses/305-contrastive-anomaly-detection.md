@@ -1,71 +1,71 @@
-# 가설 305: 대조학습 + 분열 = 최강 이상탐지
+# Hypothesis 305: Contrastive Learning + Mitosis = Best Anomaly Detection
 
-> **대조학습(contrastive learning)으로 "정상끼리 가깝게" 학습한 후 분열하면, 재구성(MSE)보다 더 타이트한 정상 클러스터가 형성되어 이상 탐지 AUROC > 0.85를 달성한다.**
+> **After training with contrastive learning to "pull normals together", then applying mitosis, a tighter normal cluster is formed than with reconstruction (MSE), achieving anomaly detection AUROC > 0.85.**
 
-## 근거
-
-```
-  재구성(MSE) + 간장력: AUROC = 0.80 (H302)
-  분류(CE) + 간장력:    AUROC = 0.59 (H302)
-
-  대조학습의 장점:
-    - 정상 샘플끼리 표현이 가깝도록 학습
-    - 이상은 자연스럽게 멀어짐
-    - 재구성보다 "의미론적" 거리를 학습
-
-  대조 + 분열:
-    child_a: 대조학습으로 정상 클러스터 A 형성
-    child_b: 대조학습으로 정상 클러스터 B 형성
-    이상: 클러스터 A와 B에서 모두 멀어짐
-    → 간 장력이 더 discriminative
-```
-
-## 실험 설계
+## Rationale
 
 ```
-  SimCLR-style 대조학습:
-    - 정상 데이터 augmentation (noise, dropout)
-    - 같은 원본의 augmentation은 가깝게
-    - 다른 원본은 멀게
+  Reconstruction(MSE) + inter-tension: AUROC = 0.80 (H302)
+  Classification(CE) + inter-tension:  AUROC = 0.59 (H302)
+
+  Advantages of contrastive learning:
+    - Trains representations to be close among normal samples
+    - Anomalies naturally drift away
+    - Learns "semantic" distance rather than reconstruction
+
+  Contrastive + mitosis:
+    child_a: forms normal cluster A via contrastive learning
+    child_b: forms normal cluster B via contrastive learning
+    Anomaly: moves away from both cluster A and B
+    -> Inter-tension becomes more discriminative
+```
+
+## Experimental Design
+
+```
+  SimCLR-style contrastive learning:
+    - Normal data augmentation (noise, dropout)
+    - Augmentations of the same original are pulled together
+    - Different originals are pushed apart
     - NT-Xent loss
 
-  비교:
-    1. MSE + 간장력 (H302 baseline: 0.80)
-    2. 대조학습 + 간장력
-    3. 대조학습 + 내부장력
-    4. triplet loss + 간장력
+  Comparison:
+    1. MSE + inter-tension (H302 baseline: 0.80)
+    2. Contrastive learning + inter-tension
+    3. Contrastive learning + internal tension
+    4. Triplet loss + inter-tension
 ```
 
-## 예측
+## Prediction
 
 ```
-  대조+간 > 재구성+간 > 분류+간
-  AUROC:  0.85+    0.80       0.59
+  Contrastive+inter > reconstruction+inter > classification+inter
+  AUROC:         0.85+            0.80              0.59
 
-  이유: 대조학습이 "정상의 경계"를 더 명확하게 정의
+  Reason: contrastive learning defines "boundary of normal" more clearly
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  Breast Cancer, 5 trials, N=2 분열:
+  Breast Cancer, 5 trials, N=2 mitosis:
 
-  학습목표               AUROC mean   std
+  Learning objective               AUROC mean   std
   ───────────────────   ──────────   ─────
-  A) MSE + Inter         0.791        0.018  ← 최고!
+  A) MSE + Inter         0.791        0.018  <- Best!
   B) NT-Xent + Inter     0.648        0.019
   C) Triplet + Inter     0.767        0.033
 
-  결론: 대조학습 < 재구성! H305 반박.
-  MSE가 분열 이상탐지에 가장 적합한 학습 목표.
+  Conclusion: Contrastive < Reconstruction! H305 refuted.
+  MSE is the most suitable learning objective for mitosis anomaly detection.
 
-  왜 대조학습이 나쁜가:
-    NT-Xent: 정상끼리 가깝게 → 모든 정상이 한 점으로 수렴
-    → child_a와 child_b가 같은 점으로 수렴 → 간 장력 ≈ 0
-    → 이상도 정상도 구분 못함
+  Why contrastive learning performs worse:
+    NT-Xent: pulls normals together -> all normals converge to one point
+    -> child_a and child_b converge to the same point -> inter-tension ≈ 0
+    -> Cannot distinguish anomaly from normal
 
-    MSE: 입력 복원 → 각 child가 다른 복원 패턴 학습
-    → 이상에서 다른 복원 → 간 장력 높음
+    MSE: reconstructs input -> each child learns different reconstruction patterns
+    -> Different reconstruction on anomaly -> high inter-tension
 ```
 
-## 상태: ⬛ 반박 (MSE > CL > Triplet, 대조학습 분열에 부적합)
+## Status: ⬛ Refuted (MSE > CL > Triplet, contrastive learning unsuitable for mitosis)

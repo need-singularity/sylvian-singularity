@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""분열 기반 지속학습 도구
+"""Mitosis-based continual learning tool
 
-사용법:
+Usage:
   python3 calc/continual_learning_tool.py --tasks 2
   python3 calc/continual_learning_tool.py --tasks 3 --method mitosis
 
-기능:
-  N-task 순차 학습에서 분열 vs 일반의 망각 비교
+Features:
+  Compare forgetting in mitosis vs regular learning for N-task sequential learning
 """
 
 import sys, argparse, copy
@@ -69,7 +69,7 @@ def main():
                 o.zero_grad(); out,_ = model(x.view(-1,784))
                 nn.CrossEntropyLoss()(out, y%n_cls).backward(); o.step()
 
-    print(f"\n  분열 지속학습 — {args.tasks} Tasks")
+    print(f"\n  Mitosis Continual Learning — {args.tasks} Tasks")
     print(f"  {'='*50}")
 
     # Sequential
@@ -89,9 +89,9 @@ def main():
             train_task(child, digits)
             children.append(child)
 
-    print(f"\n  {'방법':>15}", end="")
+    print(f"\n  {'Method':>15}", end="")
     for i in range(args.tasks): print(f"  {'Task'+chr(65+i):>8}", end="")
-    print(f"  {'평균':>8}")
+    print(f"  {'Average':>8}")
     print(f"  {'-'*(18+10*args.tasks)}")
 
     # Sequential result
@@ -106,7 +106,7 @@ def main():
     for a in mit_accs: print(f"  {a:>8.1f}", end="")
     print(f"  {np.mean(mit_accs):>8.1f}")
 
-    print(f"\n  개선: {np.mean(mit_accs)-np.mean(seq_accs):+.1f}%")
+    print(f"\n  Improvement: {np.mean(mit_accs)-np.mean(seq_accs):+.1f}%")
 
 if __name__ == '__main__':
     main()

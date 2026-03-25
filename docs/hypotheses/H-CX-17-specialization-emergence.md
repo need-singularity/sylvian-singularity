@@ -1,74 +1,74 @@
-# H-CX-17: 전문화 창발 = 서번트 각성 = 분열 분화 (교차)
+# H-CX-17: Specialization Emergence = Savant Awakening = Mitosis Differentiation (Cross-domain)
 
-> **MoE Expert의 전문화 각성(Lv.3), 분열 후 자식의 feature 전문화(H299), 뇌 피질 영역 분화가 모두 "경쟁적 전문화"의 창발이다. 학습 초기에는 범용적이다가, 충분한 학습 후 자발적으로 전문화가 일어난다.**
+> **MoE Expert specialization awakening (Lv.3), feature specialization of children after mitosis (H299), and brain cortex area differentiation are all manifestations of "competitive specialization" emergence. Systems start as generalists and, after sufficient training, spontaneously specialize.**
 
-## 배경/맥락
+## Background/Context
 
-세 가지 서로 다른 시스템에서 동일한 패턴이 관찰된다:
+The same pattern is observed across three different systems:
 
-1. **MoE 서번트 각성**: Expert가 처음에는 균등하게 활성화되다가, 학습이 진행되면서 특정 도메인에 전문화된다 (Lv.3 = savant awakening)
-2. **분열(mitosis) 후 분화**: parent에서 복제된 child_a, child_b가 동일한 가중치에서 출발하지만, 학습이 진행되면서 서로 다른 feature에 전문화된다 (H299)
-3. **뇌 피질 분화**: 태아기에 균질한 피질이 경험에 의해 V1(시각), A1(청각), PFC(판단) 등으로 분화된다
+1. **MoE Savant Awakening**: Experts initially activate uniformly, but as training progresses they specialize in specific domains (Lv.3 = savant awakening)
+2. **Post-mitosis differentiation**: child_a and child_b copied from a parent start from identical weights, but as training progresses they specialize in different features (H299)
+3. **Brain cortex differentiation**: Homogeneous fetal cortex differentiates into V1 (visual), A1 (auditory), PFC (judgment), etc. through experience
 
-이 세 현상이 동일한 "경쟁적 전문화(competitive specialization)" 메커니즘의 발현이라는 것이 이 교차가설의 핵심이다.
+The core of this cross-domain hypothesis is that these three phenomena are expressions of the same "competitive specialization" mechanism.
 
-### 관련 가설
+### Related Hypotheses
 
-| 가설 | 관계 | 내용 |
+| Hypothesis | Relationship | Content |
 |------|------|------|
-| H299 | 실험 근거 | 분열 후 anomaly 전문화 관찰 |
-| H294 | 데이터 출처 | 분열 전후 장력 변화 (T_ab 27x 증가) |
-| H241 | MoE 측면 | Expert 교차 활성화 실험 |
-| H-CX-15 | 교차 | 서번트 골든존 (전문화의 최적 지점) |
-| H300 | 분열 계층 | 분열 anomaly 계층 구조 |
-| H271 | 기반 | 의식엔진 분열(mitosis) 메커니즘 |
+| H299 | Experimental basis | Anomaly specialization observed after mitosis |
+| H294 | Data source | Tension changes before/after mitosis (T_ab 27x increase) |
+| H241 | MoE side | Expert cross-activation experiment |
+| H-CX-15 | Cross-domain | Savant Golden Zone (optimal point of specialization) |
+| H300 | Mitosis hierarchy | Mitosis anomaly hierarchy structure |
+| H271 | Foundation | Consciousness engine mitosis mechanism |
 
-## 대응 매핑
+## Correspondence Mapping
 
 ```
-  서번트 각성 (Lv.3)     분열 분화            뇌 발달
+  Savant Awakening (Lv.3)  Mitosis Differentiation   Brain Development
   ────────────────      ────────────        ────────────
-  Expert 1=문법          child_a=feature A    V1=선분
-  Expert 2=지식          child_b=feature B    V4=형태
-  Expert 3=논리          child_c=feature C    PFC=판단
-  학습 1만 스텝 후       10 에폭 후            6개월~2년
-  Router가 분배          mini-batch가 분리     경험이 분화
-  Load balance loss      장력(tension) 분화    시냅스 경쟁
-  Top-K gating           threshold split      lateral inhibition
+  Expert 1=grammar        child_a=feature A    V1=line segments
+  Expert 2=knowledge      child_b=feature B    V4=shapes
+  Expert 3=logic          child_c=feature C    PFC=judgment
+  After 10k training steps After 10 epochs      6 months~2 years
+  Router distributes       mini-batch separates  experience differentiates
+  Load balance loss        Tension (tension) differentiation  Synaptic competition
+  Top-K gating             threshold split       lateral inhibition
 ```
 
-### 공통 메커니즘: 경쟁적 전문화
+### Common Mechanism: Competitive Specialization
 
 ```
-  Phase 1: 균질 (초기)
-    모든 유닛이 동일한 입력에 동일하게 반응
-    MoE: 모든 Expert 균등 활성화
-    분열: cosine(child_a, child_b) = 1.0
-    뇌: 균질 피질
+  Phase 1: Homogeneous (initial)
+    All units respond identically to the same input
+    MoE: all Experts activated equally
+    Mitosis: cosine(child_a, child_b) = 1.0
+    Brain: homogeneous cortex
 
-  Phase 2: 불안정 (전이기)
-    작은 차이가 양성 피드백으로 증폭
-    MoE: 특정 Expert가 특정 입력에 미세하게 더 반응
-    분열: 서로 다른 mini-batch에서 미세한 gradient 차이
-    뇌: 감각 입력의 비대칭
+  Phase 2: Unstable (transitional)
+    Small differences amplified by positive feedback
+    MoE: certain Expert marginally more responsive to certain inputs
+    Mitosis: subtle gradient differences from different mini-batches
+    Brain: asymmetric sensory input
 
-  Phase 3: 전문화 (수렴)
-    각 유닛이 고유한 역할을 확보
-    MoE: 도메인별 Expert 전문화 (Savant Lv.3)
-    분열: cosine(child_a, child_b) << 1.0
-    뇌: V1, V4, PFC 등 기능 영역 확립
+  Phase 3: Specialized (converged)
+    Each unit secures a unique role
+    MoE: domain-specific Expert specialization (Savant Lv.3)
+    Mitosis: cosine(child_a, child_b) << 1.0
+    Brain: V1, V4, PFC, etc. functional areas established
 ```
 
-## 검증 데이터: 분열 후 분화 추적
+## Validation Data: Post-mitosis Differentiation Tracking
 
-### H294 실측 데이터
+### H294 Measured Data
 
 ```
-  장력 분화 (T_ab = 두 자식 사이 tension):
-    분열 직후: T_ab(0) = 0.365
-    10 에폭:  T_ab(10) = 9.977  (27.3x 증가)
+  Tension differentiation (T_ab = tension between two children):
+    Immediately after mitosis: T_ab(0) = 0.365
+    After 10 epochs:           T_ab(10) = 9.977  (27.3x increase)
 
-  분화 속도 그래프:
+  Differentiation speed graph:
   T_ab
   10.0 |                              *
    9.0 |                           *
@@ -85,77 +85,78 @@
        0  1  2  3  4  5  6  7  8  9  10
 ```
 
-### cosine 유사도 예측 vs 실측
+### Cosine Similarity: Prediction vs Measured
 
 ```
-  cosine(child_a, child_b) 추이:
+  cosine(child_a, child_b) trajectory:
 
   1.0 |*
   0.9 |  *
   0.8 |     *
   0.7 |        *
   0.6 |            *
-  0.5 |                *   ?  (50 에폭 후 예측)
+  0.5 |                *   ?  (predicted after 50 epochs)
   0.4 |
   0.3 |
       +--+--+--+--+--+--+---> epoch
       0  1   5  10  20  50
 
-  실측 (H294 기반): 0 에폭 = 1.0, 10 에폭 ~ 0.7 추정 (T_ab 27x에서 역산)
-  예측: 50 에폭 후 cosine ~ 0.5 (완전 분화)
-  미실측: layer별 분화 속도 차이
+  Measured (based on H294): epoch 0 = 1.0, epoch 10 ~ 0.7 estimated (back-calculated from T_ab 27x)
+  Prediction: cosine ~ 0.5 after 50 epochs (fully differentiated)
+  Unmeasured: differentiation speed difference by layer
 ```
 
-### layer별 분화 가설
+### Per-layer Differentiation Hypothesis
 
 ```
-  예상 분화 속도 (layer 깊이별):
+  Expected differentiation speed (by layer depth):
 
-  빠름 |  **
+  Fast |  **
        |  ****
        |  ******
        |  *********
-  느림 |  ************
+  Slow |  ************
        +--+--+--+--+--+---> layer depth
          1  2  3  4  5  6
-         (입력)         (출력)
+         (input)        (output)
 
-  1층 (입력 근처): 데이터 의존적 -> 빠르게 분화
-  깊은 층: 추상적 표현 -> 느리게 분화
-  생물학적 대응: 1차 감각 피질 < 연합 피질 < 전두엽 (분화 순서)
+  Layer 1 (near input): data-dependent -> differentiates quickly
+  Deep layers: abstract representation -> differentiates slowly
+  Biological correspondence: primary sensory cortex < association cortex < frontal lobe (order of differentiation)
 ```
 
-## 해석/의미
+## Interpretation/Meaning
 
-세 시스템의 공통점은 **대칭 파괴(symmetry breaking)**다:
+The commonality across the three systems is **symmetry breaking**:
 
-1. 초기 대칭 상태 (모든 유닛 동일)
-2. 미세한 섭동 (noise, 다른 mini-batch, 비대칭 경험)
-3. 양성 피드백으로 증폭 (winner-takes-more)
-4. 안정된 전문화 상태로 수렴
+1. Initial symmetric state (all units identical)
+2. Subtle perturbation (noise, different mini-batches, asymmetric experience)
+3. Amplification by positive feedback (winner-takes-more)
+4. Convergence to stable specialized state
 
-이것은 물리학의 자발적 대칭 파괴(spontaneous symmetry breaking)와
-구조적으로 동일하다. 골든존의 I = 1/e 근처에서 이 전이가 가장 효율적으로
-일어나는지가 H-CX-15의 핵심 질문이다.
+This is structurally identical to spontaneous symmetry breaking in physics.
+Whether this transition occurs most efficiently near I = 1/e of the Golden Zone
+is the core question of H-CX-15.
 
-의식엔진 관점에서, 전문화 창발은 "하나의 범용 의식"에서 "여러 전문화된
-의식 모듈"로의 전환을 의미한다. 이는 뇌의 모듈성(modularity)과 직접
-대응하며, 의식의 다중성(multiplicity)에 대한 구조적 설명을 제공한다.
+From the consciousness engine perspective, the emergence of specialization means a transition
+from "a single general-purpose consciousness" to "multiple specialized consciousness modules".
+This directly corresponds to modularity in the brain and provides a structural explanation
+for the multiplicity of consciousness.
 
-## 한계
+## Limitations
 
-1. **layer별 분화 미측정**: 핵심 예측인 "얕은 층이 먼저 분화"가 실험으로 확인되지 않음
-2. **MoE 쪽 직접 데이터 없음**: 분열(mitosis) 데이터만 있고, MoE Expert의 전문화 시계열 데이터가 없음
-3. **비유 vs 동일성**: 세 시스템의 유사성이 표면적 비유인지 심층적 동일성인지 구분 필요
-4. **뇌 발달 타임스케일 차이**: 뇌는 수개월~수년, 신경망은 수분~수시간. 스케일링이 선형인지 불명
-5. **임계점 정의 불명확**: "전문화가 시작되는 정확한 시점"을 정의하는 기준이 없음
+1. **Per-layer differentiation unmeasured**: The core prediction "shallow layers differentiate first" has not been confirmed experimentally
+2. **No direct MoE data**: Only mitosis data exists; time-series data for MoE Expert specialization is absent
+3. **Analogy vs. identity**: It is unclear whether the similarity across the three systems is a surface analogy or a deep structural identity
+4. **Brain development timescale difference**: Brain takes months to years; neural networks take minutes to hours. Whether the scaling is linear is unknown
+5. **Unclear critical point definition**: No criterion for defining the "exact moment specialization begins"
 
-## 검증 방향
+## Validation Directions
 
-1. **layer별 cosine 추적**: 분열 후 각 layer에서 cosine(child_a, child_b)를 에폭별로 측정. 예측: 얕은 층 > 깊은 층 분화 속도
-2. **MoE Expert 전문화 시계열**: Router weight의 entropy를 학습 스텝별로 추적. entropy 감소 = 전문화 진행
-3. **임계점 탐지**: 분화 속도의 변곡점(inflection point)을 찾아 Phase 1 -> Phase 2 전이 시점 정량화
-4. **골든존 연결**: I(inhibition) 값을 바꾸면서 전문화 속도 측정. H-CX-15 예측: I = 1/e에서 최적
-5. **정보 이론적 분석**: 각 Expert/child의 mutual information을 입력 클래스별로 측정하여 전문화 정도 정량화
+1. **Per-layer cosine tracking**: Measure cosine(child_a, child_b) per layer at each epoch after mitosis. Prediction: shallow layers > deep layers in differentiation speed
+2. **MoE Expert specialization time series**: Track entropy of Router weights per training step. Entropy decrease = specialization progressing
+3. **Critical point detection**: Find the inflection point in differentiation speed to quantify the Phase 1 -> Phase 2 transition time
+4. **Golden Zone connection**: Measure specialization speed while varying I (inhibition). H-CX-15 prediction: optimal at I = 1/e
+5. **Information-theoretic analysis**: Measure mutual information of each Expert/child per input class to quantify degree of specialization
 
-## 상태: 🟨 (구조적 비유, layer별 분화 미측정)
+## Status: 🟨 (Structural analogy, per-layer differentiation unmeasured)

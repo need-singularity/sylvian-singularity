@@ -1,12 +1,12 @@
-# H-CX-196: ⭐ 완전수 고유 등식 완전 체계
+# H-CX-196: ⭐ Complete Eigenvalue System of Perfect Numbers
 
-> σ,τ,φ의 3가지 이항 곱 등식:
->   σφ = nτ  →  n=6  (P₁) 🟦 증명
->   στ = nφ  →  n=28 (P₂) 🟦 증명
->   φτ = nσ  →  해 없음
+> 3 Binary Product Equations of σ,τ,φ:
+>   σφ = nτ  →  n=6  (P₁) 🟦 Proven
+>   στ = nφ  →  n=28 (P₂) 🟦 Proven
+>   φτ = nσ  →  No solution
 >
-> 3개 중 2개가 각각 하나의 완전수만을 가리킴.
-> 나머지 1개는 해가 없음.
-> → 완전수 6과 28은 약수 함수의 "고유값"
-> → P₃=496 이후는 어떤 이항 곱 등식도 만족하지 않음
-> → "작은 완전수(6, 28)의 삼중 특권"
+> 2 out of 3 each point to exactly one perfect number.
+> The remaining 1 has no solution.
+> → Perfect numbers 6 and 28 are "eigenvalues" of divisor functions
+> → After P₃=496, no binary product equation is satisfied
+> → "Triple privilege of small perfect numbers (6, 28)"

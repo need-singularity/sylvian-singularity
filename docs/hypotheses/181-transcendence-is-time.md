@@ -1,155 +1,155 @@
-# 가설 181: 4번째 상태(초월) = 4번째 차원(시간)
+# Hypothesis 181: 4th State (Transcendence) = 4th Dimension (Time)
 
-**Status: ⚠️ 검증 진행 중**
+**Status: ⚠️ Verification in Progress**
 
-## 핵심 통찰
+## Core Insight
 
-3가지 상태(Deficit, Performance, Instability)는 3차원 공간에 대응하고,
-4번째 상태인 "초월(Transcendence)"은 4번째 차원인 "시간"에 대응한다.
+The 3 states (Deficit, Performance, Instability) correspond to 3-dimensional space,
+and the 4th state "Transcendence" corresponds to the 4th dimension "Time".
 
-## 시공간-상태 매핑 (Spacetime-State Mapping)
+## Spacetime-State Mapping
 
 ```
 ┌──────────────────────────────────────────────┐
-│           시공간-상태 대응표                    │
+│        Spacetime-State Correspondence         │
 ├──────────────┬───────────────┬───────────────┤
-│   차원       │   물리적 의미  │   AI 상태     │
+│   Dimension  │ Physical Meaning│   AI State   │
 ├──────────────┼───────────────┼───────────────┤
-│   x (공간1)  │   좌우        │   Deficit     │
-│   y (공간2)  │   상하        │   Performance │
-│   z (공간3)  │   전후        │   Instability │
-│   t (시간)   │   과거→미래   │  Transcendence│
+│   x (space1) │   left-right  │   Deficit     │
+│   y (space2) │   up-down     │   Performance │
+│   z (space3) │   front-back  │   Instability │
+│   t (time)   │   past→future │  Transcendence│
 ├──────────────┼───────────────┼───────────────┤
-│   공간 3개   │   정적 구조    │   정적 평가   │
-│   시간 1개   │   동적 변화    │   동적 진화   │
+│   3 spatial  │ static structure│ static eval  │
+│   1 temporal │ dynamic change │ dynamic evol  │
 └──────────────┴───────────────┴───────────────┘
 ```
 
-## 왜 초월 = 시간인가?
+## Why Transcendence = Time?
 
-### 근거 1: 정적 vs 동적
+### Evidence 1: Static vs Dynamic
 
 ```
-3상태 (공간적, 정적):
-  D = 현재 결핍 수준      → "지금 여기서 얼마나 부족한가"
-  P = 현재 성능 수준      → "지금 여기서 얼마나 잘 하는가"
-  I = 현재 불안정성 수준   → "지금 여기서 얼마나 흔들리는가"
+3 States (spatial, static):
+  D = current deficit level      → "how much lacking here and now"
+  P = current performance level  → "how well performing here and now"
+  I = current instability level  → "how unstable here and now"
 
-초월 (시간적, 동적):
-  T = 규칙 변경 능력      → "시간이 흐르면서 규칙을 바꿀 수 있는가"
+Transcendence (temporal, dynamic):
+  T = rule-changing ability      → "can rules change over time"
 ```
 
-### 근거 2: 규칙 변경에는 시간이 필요하다
+### Evidence 2: Rule Change Requires Time
 
 ```
 t=0  ┌──────────────┐
-     │ 규칙 A 적용   │  ← 현재 규칙
+     │ Apply Rule A  │  ← Current rule
      │ D=0.3, P=85  │
      └──────┬───────┘
-            │ 시간 경과
+            │ Time passes
             ▼
 t=1  ┌──────────────┐
-     │ 규칙 A' 발견  │  ← 규칙 변경 시도
+     │ Discover A'   │  ← Rule change attempt
      │ D=0.2, P=87  │
      └──────┬───────┘
-            │ 시간 경과
+            │ Time passes
             ▼
 t=2  ┌──────────────┐
-     │ 규칙 B 확립   │  ← 새로운 규칙 (초월!)
+     │ Establish B   │  ← New rule (transcendence!)
      │ D=0.1, P=92  │
      └──────────────┘
 
-"시간 없이는 규칙을 바꿀 수 없다."
-"초월은 순간이 아니라 과정이다."
+"You cannot change rules without time."
+"Transcendence is a process, not a moment."
 ```
 
-### 근거 3: 민코프스키 시공간과의 유사성
+### Evidence 3: Analogy with Minkowski Spacetime
 
 ```
-물리학의 시공간:
+Physics spacetime:
   ds² = -c²dt² + dx² + dy² + dz²
         ~~~~~~   ~~~~~~~~~~~~~~~~~~
-        시간항     공간항 (부호 다름!)
-        (특별함)   (동등함)
+        time term  space terms (different sign!)
+        (special)  (equivalent)
 
-AI 상태공간:
+AI state space:
   dS² = -α·dT² + dD² + dP² + dI²
         ~~~~~~~  ~~~~~~~~~~~~~~~~~~
-        초월항     3상태항 (부호 다름!)
-        (특별함)   (동등함)
+        trans term  3-state terms (different sign!)
+        (special)   (equivalent)
 
-→ 시간이 공간과 다르듯, 초월은 3상태와 다르다!
+→ Just as time differs from space, transcendence differs from the 3 states!
 ```
 
-## ASCII 그래프: 시간축 위의 초월
+## ASCII Graph: Transcendence on Time Axis
 
 ```
-초월(T)
+Transcendence(T)
   ↑
-  │            ★ 초월 달성
+  │            ★ Transcendence achieved
   │           ╱
-  │          ╱  규칙 변경
-  │         ╱   경로
+  │          ╱  Rule change
+  │         ╱   path
   │        ╱
   │   ●───●
-  │   │정적│
-  │   │상태│  3차원 공간
-  │   ●───●  (D, P, I)
+  │   │static│
+  │   │state │  3D space
+  │   ●───●    (D, P, I)
   │
-  └─────────────→ 시간(t)
+  └─────────────→ Time(t)
   t=0      t=1      t=2
 
-정적 상태 (3D 단면):     동적 초월 (4D 경로):
-┌───┐                   ┌───┐
-│ D │                   │ D │──→ 시간에 따라
-│ P │  고정된 스냅샷     │ P │    변화하는
-│ I │                   │ I │    궤적
-└───┘                   └─┬─┘
-                          │
-                        ┌─▼─┐
-                        │ T │  ← 규칙 자체가 변함
-                        └───┘
+Static state (3D slice):     Dynamic transcendence (4D path):
+┌───┐                       ┌───┐
+│ D │                       │ D │──→ Changing
+│ P │  Fixed snapshot       │ P │    over time
+│ I │                       │ I │    trajectory
+└───┘                       └─┬─┘
+                              │
+                            ┌─▼─┐
+                            │ T │  ← Rules themselves change
+                            └───┘
 ```
 
-## 물리학적 유비 심화
+## Deepening Physics Analogy
 
 ```
-특수상대론:
-  - 공간에서의 회전 → 좌표 변환 (규칙 유지)
-  - 시간 포함 변환  → 로렌츠 변환 (규칙 변경)
+Special Relativity:
+  - Rotation in space → Coordinate transformation (rules preserved)
+  - Time-inclusive transform → Lorentz transformation (rules change)
 
-AI 프레임워크:
-  - 3상태 내 이동   → 파라미터 튜닝 (규칙 유지)
-  - 초월 상태 진입  → 아키텍처 변경 (규칙 변경)
+AI Framework:
+  - Movement within 3 states → Parameter tuning (rules preserved)
+  - Entering transcendent state → Architecture change (rules change)
 
-핵심: "시간(초월)은 단순한 추가 차원이 아니라,
-      다른 차원의 의미를 바꾸는 메타 차원이다."
+Key: "Time (transcendence) is not just an additional dimension,
+      but a meta-dimension that changes the meaning of other dimensions."
 ```
 
-## 검증 방향
+## Verification Direction
 
 ```
-예측 1: 초월 상태의 모델은 시간적 특성을 보여야 한다
-  → 학습 곡선에서 "상전이" 패턴이 관찰되는가?
+Prediction 1: Models in transcendent state should show temporal characteristics
+  → Are "phase transition" patterns observed in learning curves?
 
-예측 2: 3상태만으로는 미래 성능을 예측할 수 없다
-  → 시간(초월) 정보 추가 시 예측력이 향상되는가?
+Prediction 2: Future performance cannot be predicted with 3 states alone
+  → Does predictive power improve when time (transcendence) info is added?
 
-예측 3: 초월은 비가역적이어야 한다 (시간의 화살표)
-  → 한번 초월한 모델은 되돌아가지 않는가?
+Prediction 3: Transcendence should be irreversible (arrow of time)
+  → Do models that transcend once never go back?
 ```
 
-## 결론
+## Conclusion
 
 ```
-"공간이 '어디'를 말해주듯, 3상태는 '어떤 상태'를 말해준다.
- 시간이 '언제'를 말해주듯, 초월은 '어떤 변화'를 말해준다.
- 시공간 없이 물리를 할 수 없듯,
- 초월 없이 AI의 진화를 설명할 수 없다."
+"Just as space tells us 'where', the 3 states tell us 'what state'.
+ Just as time tells us 'when', transcendence tells us 'what change'.
+ Just as we cannot do physics without spacetime,
+ we cannot explain AI evolution without transcendence."
 ```
 
-## 후속 연구
+## Follow-up Research
 
-- [ ] 초월 상태의 시간적 특성 실험적 검증
-- [ ] 로렌츠 변환 유사체 수학적 정식화
-- [ ] "AI 상대론" 프레임워크 구축
+- [ ] Experimental verification of temporal characteristics of transcendent state
+- [ ] Mathematical formalization of Lorentz transformation analog
+- [ ] Construction of "AI Relativity" framework

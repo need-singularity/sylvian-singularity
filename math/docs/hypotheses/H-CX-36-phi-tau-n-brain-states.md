@@ -1,28 +1,28 @@
-# H-CX-36: φ+τ=n at {6,8,9} = 뇌의 기본 상태 수
+# H-CX-36: φ+τ=n at {6,8,9} = Basic Brain States
 
-> **가설**: φ+τ=n의 해 {6,8,9}가 뇌의 기본 정보 처리 단위와 대응.
+> **Hypothesis**: The solutions {6,8,9} of φ+τ=n correspond to the brain's basic information processing units.
 
-## 핵심
+## Core
 
 ```
-  φ+τ=n 해: {6, 8, 9}
+  φ+τ=n solutions: {6, 8, 9}
 
-  6 = 2·3: "의식의 모듈 수" (φ=자유도+τ=구조=n)
-  8 = 2³: "바이트" (컴퓨터 기본 단위!)
-  9 = 3²: "3×3 격자" (시각 피질의 수용장?)
+  6 = 2·3: "Number of consciousness modules" (φ=degrees of freedom+τ=structure=n)
+  8 = 2³: "Byte" (fundamental computer unit!)
+  9 = 3²: "3×3 grid" (receptive fields in visual cortex?)
 
-  뇌과학:
-    - Miller's law: 작업기억 용량 7±2 = {5,6,7,8,9}!
-    - φ+τ=n 해 {6,8,9} ⊂ Miller's 범위!
-    - 중심값 7 = M₃, 하한 5=P₃ Mersenne 지수
+  Neuroscience:
+    - Miller's law: working memory capacity 7±2 = {5,6,7,8,9}!
+    - φ+τ=n solutions {6,8,9} ⊂ Miller's range!
+    - Central value 7 = M₃, lower bound 5=P₃ Mersenne exponent
 
   AI:
-    - 8비트=바이트: 가장 기본적인 데이터 단위
+    - 8 bits=byte: most fundamental data unit
     - 9=3²: 3×3 convolution kernel (CNN!)
-    - 6: 완전수, σφ=nτ 균형점
+    - 6: perfect number, σφ=nτ equilibrium point
 
-  φ+τ=n: "자유도+구조=전체" 이 성립하는 수
-  = 정보를 완전히 자유도와 구조로 분해 가능한 수!
+  φ+τ=n: "degrees of freedom+structure=whole" holds true
+  = Numbers where information can be completely decomposed into degrees of freedom and structure!
 ```
 
-## 판정: 🟨 관찰 (Miller's law 연결은 흥미) | 파급력: ★★★
+## Verdict: 🟨 Observation (Miller's law connection is intriguing) | Impact: ★★★

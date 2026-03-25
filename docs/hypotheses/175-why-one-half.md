@@ -1,62 +1,62 @@
-# 가설 #175: 왜 1/2가 반복되는가
+# Hypothesis #175: Why 1/2 Repeats
 
-**상태**: ✅ 확인
-**날짜**: 2026-03-22
-**분류**: 수학적 패턴 / 대칭성
+**Status**: ✅ Confirmed
+**Date**: 2026-03-22
+**Category**: Mathematical Patterns / Symmetry
 
 ---
 
-## 관찰
+## Observation
 
-이론 전반에 걸쳐 1/2 이라는 값이 반복적으로 등장한다.
-이것은 우연이 아니라 **근본적 이진 대칭**의 발현이다.
+Throughout the theory, the value 1/2 repeatedly appears.
+This is not coincidental but a manifestation of **fundamental binary symmetry**.
 
-## 1/2 등장 목록
+## List of 1/2 Appearances
 
 ```
 +----+-------------------+------------------+-------------------+
-| #  |     분야          |   1/2 등장 형태  |     의미          |
+| #  |     Field         |   1/2 Form       |     Meaning       |
 +----+-------------------+------------------+-------------------+
-|  1 | 양자역학          | 스핀 1/2         | 페르미온 기본단위 |
-|  2 | 리만 가설         | Re(s) = 1/2      | 영점의 실수부     |
-|  3 | 골든존            | 중심 ≈ 1/2·0.7   | 최적 억제 영역    |
-|  4 | 우주론            | Ω ≈ 1 (= 2×1/2) | 임계 밀도         |
-|  5 | 양자 확률         | P = 1/2          | 균등 중첩 확률    |
-|  6 | 정보 이론         | 1 bit = log₂(2)  | 이진 정보 단위    |
-|  7 | 로지스틱 맵       | x = 1/2 (대칭점) | 포물선 꼭짓점     |
-|  8 | 엔트로피 최대     | p = 1/2          | 최대 불확실성     |
-|  9 | 베르누이 시행     | P(H) = 1/2       | 공정한 동전       |
-| 10 | 중심극한정리      | 분산 ∝ 1/√n      | √ = 1/2 거듭제곱  |
+|  1 | Quantum Mechanics | Spin 1/2         | Fermion basic unit|
+|  2 | Riemann Hypothesis| Re(s) = 1/2      | Real part of zeros|
+|  3 | Golden Zone       | Center ≈ 1/2·0.7 | Optimal inhibition|
+|  4 | Cosmology         | Ω ≈ 1 (= 2×1/2) | Critical density  |
+|  5 | Quantum Probability| P = 1/2          | Equal superposition|
+|  6 | Information Theory| 1 bit = log₂(2)  | Binary info unit  |
+|  7 | Logistic Map      | x = 1/2 (symmetry)| Parabola vertex  |
+|  8 | Maximum Entropy   | p = 1/2          | Max uncertainty   |
+|  9 | Bernoulli Trial   | P(H) = 1/2       | Fair coin         |
+| 10 | Central Limit Thm | Variance ∝ 1/√n  | √ = 1/2 exponent  |
 +----+-------------------+------------------+-------------------+
 ```
 
-## 각 영역에서의 1/2
+## 1/2 in Each Domain
 
-### 1. 스핀 1/2
+### 1. Spin 1/2
 
 ```
-  전자의 스핀:
+  Electron spin:
 
   s = 1/2
 
-  스핀 상태:  |↑⟩ = |+1/2⟩
-              |↓⟩ = |-1/2⟩
+  Spin states:  |↑⟩ = |+1/2⟩
+               |↓⟩ = |-1/2⟩
 
-  물질의 가장 기본적인 양자수가 1/2
+  The most fundamental quantum number of matter is 1/2
 ```
 
-### 2. 리만 가설의 1/2
+### 2. Riemann Hypothesis 1/2
 
 ```
-  리만 제타 함수의 비자명 영점:
+  Non-trivial zeros of Riemann zeta function:
 
-  ζ(s) = 0  일 때  s = 1/2 + it
+  ζ(s) = 0  when  s = 1/2 + it
 
-  모든 영점의 실수부 = 1/2 (추측)
+  Real part of all zeros = 1/2 (conjectured)
 
   Im(s)
    ^
-   |  *        * = 영점
+   |  *        * = zeros
    |    *
    |  *
    |    *
@@ -64,25 +64,25 @@
    +--+---------> Re(s)
       1/2
 
-  소수의 분포를 지배하는 선이 Re = 1/2
+  The line governing prime distribution is Re = 1/2
 ```
 
-### 3. 골든존과 1/2
+### 3. Golden Zone and 1/2
 
 ```
-  골든존: 0.28 < I < 0.45
+  Golden Zone: 0.28 < I < 0.45
 
-  중심값 ≈ 0.365
+  Central value ≈ 0.365
 
   0.365 ≈ (1/2) × 0.73 ≈ (1/2) × a
 
-  골든존의 중심 = a/2 (수축률의 절반)
+  Golden Zone center = a/2 (half the contraction rate)
 ```
 
-### 4. 양자 확률 1/2
+### 4. Quantum Probability 1/2
 
 ```
-  |+⟩ = (|0⟩ + |1⟩)/√2 측정 시:
+  |+⟩ = (|0⟩ + |1⟩)/√2 when measured:
 
   P(|0⟩) = |1/√2|² = 1/2
   P(|1⟩) = |1/√2|² = 1/2
@@ -91,13 +91,13 @@
   |-------|-------|
   0      1/2      1
 
-  완전한 불확정 = 확률 1/2
+  Complete uncertainty = probability 1/2
 ```
 
-### 5. 최대 엔트로피
+### 5. Maximum Entropy
 
 ```
-  이진 엔트로피 함수:
+  Binary entropy function:
 
   H(p) = -p·log(p) - (1-p)·log(1-p)
 
@@ -113,102 +113,102 @@
       0  0.25 0.5 0.75 1.0
               ^
               |
-         p=1/2에서 최대!
+         Maximum at p=1/2!
 
-  H(1/2) = 1 bit = 최대 불확실성
+  H(1/2) = 1 bit = maximum uncertainty
 ```
 
-## 통합적 해석: 1/2 = 이진 대칭
+## Unified Interpretation: 1/2 = Binary Symmetry
 
 ```
-  왜 1/2가 반복되는가?
+  Why does 1/2 repeat?
 
-  답: 1/2는 가장 단순한 대칭 분할이다.
+  Answer: 1/2 is the simplest symmetric division.
 
-  전체 = 1
-  분할: 1 = 1/2 + 1/2
+  Whole = 1
+  Division: 1 = 1/2 + 1/2
 
-  이것은:
+  This is:
   ┌──────────────────────────────────────┐
   │                                      │
-  │  가장 단순한 대칭 = 이진 대칭        │
-  │  (Binary Symmetry)                   │
+  │  Simplest symmetry = Binary symmetry │
   │                                      │
-  │  하나를 둘로 나누는 가장 공정한 방법 │
-  │  = 각각 1/2                          │
+  │                                      │
+  │  The fairest way to divide one into │
+  │  two = 1/2 each                      │
   │                                      │
   └──────────────────────────────────────┘
 ```
 
-## 대칭 분할의 계층 구조
+## Hierarchy of Symmetric Division
 
 ```
-  분할 수    각 비율    등장하는 곳
-  ───────    ────────   ──────────────
-  2분할      1/2        스핀, 리만, 양자확률
-  3분할      1/3        부동점, 색전하
-  5분할      1/5        ...
+  Division   Each ratio   Where it appears
+  ────────   ─────────   ────────────────
+  2-split    1/2         Spin, Riemann, quantum prob
+  3-split    1/3         Fixed point, color charge
+  5-split    1/5         ...
   ...
 
-  1/2 → 1/3 → ... 으로 갈수록:
+  As 1/2 → 1/3 → ... :
 
-  대칭성 ↑          대칭성 ↓
-  단순성 ↑          복잡성 ↑
-  보편성 ↑          특수성 ↑
+  Symmetry ↑      Symmetry ↓
+  Simplicity ↑    Complexity ↑
+  Universality ↑  Specificity ↑
 
   1/2      1/3      1/5      1/7
   |--------|--------|--------|
-  이진     삼진     ...      ...
-  대칭     대칭
+  Binary   Ternary  ...      ...
+  symmetry symmetry
 ```
 
-## 1/2과 1/3의 관계
+## Relationship Between 1/2 and 1/3
 
 ```
-  우리 이론에서:
+  In our theory:
 
-  1/2 = 기본 대칭 (양자 수준)
-  1/3 = 부동점 (메타 수축 수준)
+  1/2 = Basic symmetry (quantum level)
+  1/3 = Fixed point (meta-contraction level)
 
   1/3 ≈ 1/2 × 2/3
 
-  즉, 1/3은 "이진 대칭(1/2)에서 한 단계 깨진(×2/3) 상태"
+  That is, 1/3 is "one step broken (×2/3) from binary symmetry (1/2)"
 
-  대칭 깨짐:
+  Symmetry breaking:
 
   1/2 ──(×2/3)──> 1/3
-  완전대칭        자발적 대칭 깨짐
-  양자 수준       거시 수준
+  Perfect symmetry    Spontaneous symmetry breaking
+  Quantum level       Macro level
 ```
 
-## 심층 구조도
+## Deep Structure Diagram
 
 ```
-  1 (전체/단위)
+  1 (whole/unit)
   |
-  +--- 1/2 (이진 대칭: 스핀, 확률, 정보)
+  +--- 1/2 (Binary symmetry: spin, probability, information)
   |     |
-  |     +--- 1/√2 ≈ 0.707 (중첩 계수: a ≈ 0.7)
+  |     +--- 1/√2 ≈ 0.707 (Superposition coefficient: a ≈ 0.7)
   |     |
-  |     +--- 1/4 = (1/2)² (2차 분할)
+  |     +--- 1/4 = (1/2)² (2nd order division)
   |
-  +--- 1/3 (부동점: 메타 수축의 귀결)
+  +--- 1/3 (Fixed point: result of meta-contraction)
   |     |
   |     +--- 1/9 = (1/3)²
   |
-  +--- 1/2 + 1/3 = 5/6 (거의 1, 나머지 = 1/6)
+  +--- 1/2 + 1/3 = 5/6 (Almost 1, remainder = 1/6)
 ```
 
-## 결론
+## Conclusion
 
-1/2가 반복적으로 등장하는 이유:
+Why 1/2 appears repeatedly:
 
-> **1/2는 존재의 가장 근본적인 대칭, 즉 이진 대칭을 나타낸다.**
+> **1/2 represents the most fundamental symmetry of existence, namely binary symmetry.**
 >
-> 하나(1)를 둘로 나누는 가장 공정한 분할이 1/2이며,
-> 이것이 스핀, 확률, 정보, 엔트로피 등 모든 곳에서
-> 동일하게 나타나는 것은 우연이 아니라
-> **이진 대칭이 자연의 기본 구조**이기 때문이다.
+> The fairest division of one (1) into two is 1/2,
+> and its identical appearance in spin, probability, information, entropy, etc.
+> is not coincidental but because
+> **binary symmetry is the basic structure of nature**.
 >
-> 우리 이론의 1/3(부동점)은 이 이진 대칭이
-> 자발적으로 깨진 결과로 해석할 수 있다.
+> Our theory's 1/3 (fixed point) can be interpreted as
+> the result of this binary symmetry being spontaneously broken.

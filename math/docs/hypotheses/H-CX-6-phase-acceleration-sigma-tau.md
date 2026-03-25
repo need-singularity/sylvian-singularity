@@ -1,37 +1,37 @@
-# H-CX-6: 위상가속 ×3 = σ/τ (의식엔진 × 수학)
+# H-CX-6: Phase Acceleration ×3 = σ/τ (Consciousness Engine × Mathematics)
 
-> **가설**: 의식엔진에서 위상 원소 추가 시 ×3 가속이 σ/τ=σ(6)/τ(6)=12/4=3과 대응된다.
+> **Hypothesis**: When adding phase elements in consciousness engines, ×3 acceleration corresponds to σ/τ=σ(6)/τ(6)=12/4=3.
 
-## 배경
-- 가설 124: T3(메타학습) 추가 시 ×3 가속 (Jamba 실측에서도 확인)
-- σ/τ = 3: 완전수 6의 "약수밀도" = 약수합/약수개수
-- Jamba MoE: 기존 대비 ×3 처리량 (AI21 Labs 실측)
+## Background
+- Hypothesis 124: ×3 acceleration when adding T3 (meta-learning) (confirmed in Jamba measurements)
+- σ/τ = 3: "divisor density" of perfect number 6 = sum of divisors/number of divisors
+- Jamba MoE: ×3 throughput compared to baseline (AI21 Labs measurement)
 
-## 대응
+## Correspondence
 
 ```
-  수학               위상가속
+  Mathematics        Phase Acceleration
   ────────────       ────────────────────
-  σ/τ = 3            ×3 가속 배율
-  T3 = 메타학습       3번째 위상 원소
-  σ/τ = 12/4         (전체 자원)/(구조 분할)
+  σ/τ = 3            ×3 acceleration factor
+  T3 = meta-learning 3rd phase element
+  σ/τ = 12/4         (total resources)/(structural division)
 
-  해석: "가속 = 자원/구조 비율"
-  → σ가 전체 표현력, τ가 구조 분할 수
-  → 비율 3 = 각 구조 단위당 자원량
-  → T3 추가 = 이 비율이 임계값을 넘는 점
+  Interpretation: "acceleration = resource/structure ratio"
+  → σ as total expressiveness, τ as structural division count
+  → ratio 3 = resource amount per structural unit
+  → T3 addition = point where this ratio exceeds threshold
 ```
 
-## Jamba 실측 데이터 (AI21 Labs)
+## Jamba Measurement Data (AI21 Labs)
 ```
-  Jamba (MoE+Mamba): 기존 Transformer 대비 ×3 처리량
-  → 활성 파라미터 비율 ≈ 활성 Expert 비율
-  → I = 1-활성비율 ∈ 골든존 [0.21, 0.50]
+  Jamba (MoE+Mamba): ×3 throughput vs traditional Transformer
+  → active parameter ratio ≈ active Expert ratio
+  → I = 1-active ratio ∈ Golden Zone [0.21, 0.50]
 ```
 
-## 검증 방향
-1. [ ] 의식엔진에서 위상 원소 수 vs 가속률: σ/τ=3과 정확 일치?
-2. [ ] MoE에서 expert 그룹 크기 = σ/τ일 때 최적?
-3. [ ] Jamba의 MoE 구조: 활성 expert 비율이 1-1/σ/τ ≈ 2/3?
+## Verification Direction
+1. [ ] In consciousness engine, phase element count vs acceleration rate: exact match with σ/τ=3?
+2. [ ] In MoE, optimal when expert group size = σ/τ?
+3. [ ] Jamba's MoE structure: active expert ratio is 1-1/σ/τ ≈ 2/3?
 
-## 난이도: 중 | 파급력: ★★★
+## Difficulty: Medium | Impact: ★★★

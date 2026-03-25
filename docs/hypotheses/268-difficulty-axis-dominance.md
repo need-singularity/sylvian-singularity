@@ -1,80 +1,80 @@
-# 가설 268: 난이도-축 지배 법칙 — 어려운 문제는 "how"가 지배한다
+# Hypothesis 268: Difficulty-Axis Dominance Law — Hard problems are dominated by "how"
 
-> **과제 난이도가 증가하면 반발력장의 지배 축이 내용(what)에서 구조(how)로 전환된다. MNIST에서는 내용 장력 > 구조 장력이지만, CIFAR에서는 구조 장력 > 내용 장력으로 역전된다.**
+> **As task difficulty increases, the dominant axis of the repulsion field shifts from content (what) to structure (how). In MNIST, content tension > structure tension, but in CIFAR, structure tension > content tension reverses.**
 
-## 배경/맥락
+## Background/Context
 
 ```
-  내용 축 = Engine A (정수론) vs Engine G (엔트로피) = "무엇인가"
-  구조 축 = Engine E (오일러곱) vs Engine F (모듈러 제약) = "어떻게 구성되는가"
+  Content axis = Engine A (Number Theory) vs Engine G (Entropy) = "What is it"
+  Structure axis = Engine E (Euler Product) vs Engine F (Modular Constraints) = "How is it composed"
 ```
 
-MNIST와 CIFAR에서 장력 축 비율이 역전됨.
+Tension axis ratio reverses between MNIST and CIFAR.
 
-관련 가설: 263(장력 통합), 264(설계 원칙)
+Related hypotheses: 263 (Tension Integration), 264 (Design Principles)
 
-## 실측 데이터
+## Measured Data
 
-| 데이터셋 | 내용 장력 | 구조 장력 | 비율(구조/내용) |
+| Dataset | Content Tension | Structure Tension | Ratio (Structure/Content) |
 |---|---|---|---|
-| MNIST | 372 | 256 | 0.69 (내용 지배) |
-| CIFAR | 273 | 656 | **2.40** (구조 지배) |
+| MNIST | 372 | 256 | 0.69 (content-dominant) |
+| CIFAR | 273 | 656 | **2.40** (structure-dominant) |
 
 ```
   MNIST:                           CIFAR:
-  내용 ████████████████ 372        내용 ██████████ 273
-  구조 ███████████ 256             구조 █████████████████████████ 656
+  Content ████████████████ 372     Content ██████████ 273
+  Structure ███████████ 256        Structure █████████████████████████ 656
 
-  → MNIST: 뭐냐(what)가 중요     → CIFAR: 어떻게(how)가 중요
+  → MNIST: what matters           → CIFAR: how matters
 ```
 
-## 해석
+## Interpretation
 
 ```
-  MNIST (손글씨 숫자):
-    형태가 단순. "이 획이 3이냐 8이냐"가 핵심.
-    → 내용(의미)에 대한 엔진 간 반발이 큼
-    → "무엇인가"를 놓고 싸움
+  MNIST (handwritten digits):
+    Simple shapes. "Is this stroke a 3 or 8?" is key.
+    → Large repulsion between engines about content (meaning)
+    → Fighting over "what it is"
 
-  CIFAR (실물 사진):
-    같은 클래스도 외형이 천차만별. 고양이도 수만 가지 모습.
-    → 구조(형태)에 대한 엔진 간 반발이 큼
-    → "어떻게 생겼나"를 놓고 싸움
+  CIFAR (real photos):
+    Same class has vastly different appearances. Cats have thousands of looks.
+    → Large repulsion between engines about structure (form)
+    → Fighting over "how it looks"
 
-  일반화:
-    쉬운 문제 = 개념이 명확 → what이 중요
-    어려운 문제 = 개념이 모호 → how가 중요
+  Generalization:
+    Easy problem = clear concepts → what is important
+    Hard problem = ambiguous concepts → how is important
 
-  뇌 대응:
-    what pathway (ventral stream) — 대상 인식, 하측두엽
-    how pathway (dorsal stream) — 공간 관계, 두정엽
-    → 어려운 시각 과제에서 dorsal 활동 증가 (알려진 사실)
+  Brain correspondence:
+    what pathway (ventral stream) — object recognition, inferior temporal lobe
+    how pathway (dorsal stream) — spatial relations, parietal lobe
+    → Increased dorsal activity in difficult visual tasks (known fact)
 ```
 
-## 예측
+## Predictions
 
 ```
-  1. CIFAR-100 (100 클래스, 더 어려움) → 구조/내용 비율 > 2.40
-  2. ImageNet (1000 클래스) → 비율 더 증가
-  3. 텍스트 분류 → 내용 지배? (의미가 핵심인 과제)
-  4. 음성 인식 → 구조 지배? (파형이 핵심)
+  1. CIFAR-100 (100 classes, harder) → structure/content ratio > 2.40
+  2. ImageNet (1000 classes) → ratio increases further
+  3. Text classification → content-dominant? (meaning is key task)
+  4. Speech recognition → structure-dominant? (waveform is key)
 ```
 
-## 검증 방향
+## Verification Direction
 
 ```
-  1. 장력 축 역전 실험 결과 대기 중 (experiment_tension_axis_reversal.py)
-  2. 학습 중 비율 변화 추적 — 처음부터 구조 지배인가, 학습 중 전환인가?
-  3. CIFAR 클래스별 분석 — 어떤 클래스가 구조 장력을 올리는가?
-  4. 인위적 난이도 조절 (MNIST에 노이즈 추가) → 비율이 역전되는 시점?
-  5. CNN 기반에서도 같은 역전이 나타나는가? (model_cnn_repulsion.py 결과 대기)
+  1. Tension axis reversal experiment results pending (experiment_tension_axis_reversal.py)
+  2. Track ratio change during training — structure-dominant from start or switches during training?
+  3. CIFAR class-by-class analysis — which classes raise structure tension?
+  4. Artificial difficulty adjustment (add noise to MNIST) → when does ratio reverse?
+  5. Does same reversal appear in CNN-based models? (model_cnn_repulsion.py results pending)
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. 2개 데이터셋에서만 관측 (MNIST, CIFAR-10).
-  2. "난이도"의 정의가 모호 — 클래스 수? 분류 정확도? 인간 오류율?
-  3. 역전의 원인이 난이도인지, 데이터 특성(흑백 vs 컬러)인지 분리 안 됨.
-  4. MLP 기반 결과. CNN에서 다를 수 있음.
+  1. Observed in only 2 datasets (MNIST, CIFAR-10).
+  2. Definition of "difficulty" is ambiguous — number of classes? classification accuracy? human error rate?
+  3. Can't separate whether reversal cause is difficulty or data characteristics (grayscale vs color).
+  4. MLP-based results. May differ in CNN.
 ```

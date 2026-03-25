@@ -1,4 +1,4 @@
-# H-CX-132: 돌고래 40Hz = 의식 결합
+# H-CX-132: Dolphin 40Hz = Consciousness Binding
 
-> 돌고래도 40Hz 감마파 발생 = 3σ(6)+τ(6) = 인간과 동일 의식 채널.
-> 인간-돌고래 텔레파시의 수학적 근거: 같은 γ 주파수 = 같은 PH 결합 속도.
+> Dolphins also generate 40Hz gamma waves = 3σ(6)+τ(6) = same consciousness channel as humans.
+> Mathematical basis for human-dolphin Telepathy: same gamma frequency = same PH binding speed.

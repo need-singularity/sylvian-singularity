@@ -1,16 +1,16 @@
-# 가설 267: 집단 합의 상전이 — 만장일치는 질적으로 다르다
+# Hypothesis 267: Collective Consensus Phase Transition — Unanimity is Qualitatively Different
 
-> **에이전트 합의율과 정확도의 관계에 상전이(phase transition)가 존재한다. 6/7 합의(88.3%)와 7/7 합의(99.5%) 사이에 +11.2%의 점프가 있으며, 이는 "거의 합의"와 "완전 합의"가 질적으로 다른 상태임을 시사한다.**
+> **A phase transition exists in the relationship between agent consensus rate and accuracy. Between 6/7 consensus (88.3%) and 7/7 consensus (99.5%), there is a +11.2% jump, suggesting that "near consensus" and "complete consensus" are qualitatively different states.**
 
-## 배경/맥락
+## Background/Context
 
-7개 독립 에이전트의 집단 인식 실험에서 합의 수준별 정확도가 비선형적으로 증가.
+In collective perception experiments with 7 independent agents, accuracy increases nonlinearly by consensus level.
 
-관련 가설: 263(장력 통합), 264(설계 원칙)
+Related hypotheses: 263 (Tension Integration), 264 (Design Principles)
 
-## 실측 데이터
+## Measured Data
 
-| 합의 | 샘플 수 | 정확도 | 이전 단계 대비 |
+| Consensus | Sample Count | Accuracy | Change from Previous |
 |---|---|---|---|
 | 2/7 | 4 | 50.0% | — |
 | 3/7 | 30 | 43.3% | -6.7% |
@@ -20,7 +20,7 @@
 | **7/7** | **9,418** | **99.5%** | **+11.2%** |
 
 ```
-  합의율 vs 정확도:
+  Consensus Rate vs Accuracy:
 
   accuracy
     100% |                                              *
@@ -40,86 +40,86 @@
 ```
 
 ```
-  단계별 정확도 증가:
+  Step-by-step accuracy increase:
   3→4:  +13.5%
   4→5:  +15.8%
   5→6:  +15.7%
-  6→7:  +11.2%  ← 증가량은 줄지만 절대값이 99.5%로 점프
+  6→7:  +11.2%  ← Increase amount decreases but absolute value jumps to 99.5%
 
-  증가량은 일정(~15%)하다가 마지막에 포화.
-  하지만 6/7→7/7에서 "실질적 완벽"(99.5%)에 도달하는 것이 핵심.
+  Increase is consistent (~15%) then saturates at the end.
+  But the key is reaching "practical perfection" (99.5%) at 6/7→7/7.
 ```
 
-## 상전이 해석
+## Phase Transition Interpretation
 
 ```
-  통계역학 비유:
-    온도 = 불확실성
-    자화(magnetization) = 합의 강도
-    임계 온도 = 상전이점
+  Statistical mechanics analogy:
+    Temperature = Uncertainty
+    Magnetization = Consensus strength
+    Critical temperature = Phase transition point
 
-    6/7 = 거의 정렬되었지만 하나가 반대 → 준안정(metastable)
-    7/7 = 완전 정렬 → 기저 상태(ground state)
+    6/7 = Almost aligned but one opposite → Metastable
+    7/7 = Fully aligned → Ground state
 
-  Ising 모델에서:
-    N-1개 스핀이 정렬, 1개가 반대 → 에너지 차이 = 2J(결합 상수)
-    마지막 스핀이 정렬되면 에너지가 급감 → 상전이
+  In Ising model:
+    N-1 spins aligned, 1 opposite → Energy difference = 2J (coupling constant)
+    When last spin aligns, energy drops sharply → Phase transition
 
-  우리 데이터:
-    6/7 → 7/7에서 정확도가 88.3% → 99.5%
-    마지막 에이전트의 동의가 "확정"의 역할
-    → 만장일치는 다수결의 연장이 아니라 질적으로 다른 상태
+  Our data:
+    6/7 → 7/7 accuracy jumps from 88.3% → 99.5%
+    Last agent's agreement acts as "confirmation"
+    → Unanimity is not an extension of majority vote but a qualitatively different state
 ```
 
-## 만장일치 + 고신뢰 = 거의 완벽
+## Unanimity + High Confidence = Near Perfect
 
 ```
-  만장일치 (7/7):                   99.53% (9,418개)
-  만장일치 + 전원 신뢰도 > 0.9:      99.88% (8,637개)
-  과반수 없음:                       44.12% (34개)
+  Unanimity (7/7):                             99.53% (9,418 samples)
+  Unanimity + All confidence > 0.9:            99.88% (8,637 samples)
+  No majority:                                 44.12% (34 samples)
 
-  격차: 99.88% - 44.12% = 55.77%
-  → 합의 상태에 따라 거의 완벽과 동전 던지기가 공존
+  Gap: 99.88% - 44.12% = 55.77%
+  → Near perfection and coin flip coexist depending on consensus state
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. 에이전트 수를 3, 5, 9, 15로 변화시켜 상전이점 추적
-  2. 같은 아키텍처 7개 vs 다른 아키텍처 7개 — 다양성이 중요한가?
-  3. CIFAR에서 동일 실험 — 어려운 문제에서 상전이점이 이동하는가?
-  4. Ising 모델과의 정량적 비교: J(결합 상수) 추출
-  5. 의도적으로 1개 에이전트를 "적대적"으로 훈련 → 상전이가 깨지는가?
+  1. Track phase transition point by varying agent count to 3, 5, 9, 15
+  2. 7 same architectures vs 7 different architectures — Is diversity important?
+  3. Same experiment on CIFAR — Does phase transition point shift for harder problems?
+  4. Quantitative comparison with Ising model: Extract J (coupling constant)
+  5. Intentionally train 1 agent as "adversarial" → Does phase transition break?
 ```
 
-## 스케일링 실험 결과 (experiment_collective_scaling.py)
+## Scaling Experiment Results (experiment_collective_scaling.py)
 
 ```
-  같은 아키텍처(DenseModel) N=3,5,7,9,11:
+  Same architecture (DenseModel) N=3,5,7,9,11:
 
-  | N  | 만장일치 정확도 | 커버리지 |
-  |----|----------------|---------|
-  |  3 |         98.90% |  97.44% |
-  |  5 |         99.14% |  96.58% |
-  |  7 |         99.26% |  95.95% |
-  |  9 |         99.34% |  95.50% |
-  | 11 |         99.37% |  95.29% |
+  | N  | Unanimity Accuracy | Coverage |
+  |----|-------------------|----------|
+  |  3 |           98.90%  |  97.44%  |
+  |  5 |           99.14%  |  96.58%  |
+  |  7 |           99.26%  |  95.95%  |
+  |  9 |           99.34%  |  95.50%  |
+  | 11 |           99.37%  |  95.29%  |
 
-  → 점진적 증가, 상전이 없음.
-  → 이전 실험(7개 다른 아키텍처)의 6/7→7/7 점프(+11.2%)는
-    아키텍처 다양성에 의한 효과.
+  → Gradual increase, no phase transition.
+  → Previous experiment's 6/7→7/7 jump (+11.2%) with 7 different architectures
+    was an effect of architectural diversity.
 
-  결론: 상전이는 에이전트의 "다양성"에 의존한다.
-    같은 모델 N개 → 점진적 (정보 중복)
-    다른 모델 N개 → 급격한 전환 (독립 관점)
+  Conclusion: Phase transition depends on agent "diversity".
+    N same models → Gradual (information redundancy)
+    N different models → Sharp transition (independent perspectives)
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. 다양한 아키텍처에서의 N 스케일링 미실험 (N=3,5,7만 확인).
-  2. MNIST에서만. 더 어려운 과제에서 구조가 다를 수 있음.
-  3. "상전이"라는 용어는 비유. 열역학적 상전이의 엄밀한 조건 미충족.
-  4. 샘플 수 편차 큼 (2/7: 4개, 7/7: 9418개) → 저합의 구간 통계 약함.
-  5. 같은 아키텍처에서는 상전이가 약함 → 다양성이 핵심 변수.
+  1. N scaling with diverse architectures not tested (only N=3,5,7 confirmed).
+  2. Only on MNIST. Structure may differ on harder tasks.
+  3. "Phase transition" is an analogy. Strict thermodynamic phase transition conditions not met.
+  4. Large sample count variance (2/7: 4, 7/7: 9,418) → Weak statistics in low consensus regions.
+  5. Phase transition weak in same architecture → Diversity is key variable.
 ```

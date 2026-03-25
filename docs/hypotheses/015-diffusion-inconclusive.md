@@ -1,51 +1,50 @@
-# 가설 검토 015: 수렴 속도 확산 법칙 τ∝ΔI² — 미결 ?
+# Hypothesis Review 015: Convergence Speed Diffusion Law τ∝ΔI² — Inconclusive ?
 
-## 가설
+## Hypothesis
 
-> autopilot 수렴 시간 τ가 초기 거리의 제곱 ΔI²에 비례한다면,
-> 나침반(Compass) 탐색은 확산(diffusion) 과정이다.
+> If autopilot convergence time τ is proportional to the square of the initial distance ΔI²,
+> then Compass exploration is a diffusion process.
 
-## 배경 및 맥락
+## Background and Context
 
-물리학에서 확산(diffusion)은 평균 변위가 시간의 제곱근에 비례하는
-과정이다: ⟨x²⟩ ∝ t. 역으로 말하면, 특정 거리 ΔI를 이동하는 데
-걸리는 시간이 τ ∝ ΔI²인 관계를 만족한다.
+In physics, diffusion is a process where the mean displacement is proportional to the square root of time:
+⟨x²⟩ ∝ t. Equivalently, the time to travel a specific distance ΔI satisfies τ ∝ ΔI².
 
-Compass autopilot이 초기 I에서 골든 존 중심(I ≈ 1/e)까지 이동하는
-과정이 확산적이라면, τ vs ΔI² 관계가 선형이어야 한다.
-반면 단순 이동(ballistic)이라면 τ ∝ ΔI가 더 적합하다.
+If the Compass autopilot's process of moving from initial I to the Golden Zone center (I ≈ 1/e) is diffusive,
+the τ vs ΔI² relationship should be linear.
+Conversely, if the motion is ballistic, τ ∝ ΔI is more appropriate.
 
-관련 가설: 가설 013(골든존 폭), 가설 017(Gating 매핑)
+Related hypotheses: Hypothesis 013 (Golden Zone width), Hypothesis 017 (Gating mapping)
 
-## 검증 데이터
-
-```
-  모델        │  초기 I  │  ΔI = |I₀ - 1/e| │  ΔI²    │  τ (스텝)
-  ────────────┼─────────┼──────────────────┼─────────┼──────────
-  골든 MoE    │  0.375  │  0.008           │  0.00006│    3
-  GPT-4       │  0.500  │  0.132           │  0.0174 │    8
-  Mixtral     │  0.875  │  0.507           │  0.2570 │   21
-  GPT-2       │  0.875  │  0.507           │  0.2570 │   39
-```
-
-주의: Mixtral과 GPT-2의 ΔI가 동일하지만 τ가 크게 다름 (21 vs 39).
-이는 ΔI만으로는 τ를 설명할 수 없음을 시사한다.
-
-## 회귀 분석
+## Verification Data
 
 ```
-  모델 1: τ = a × ΔI² + b
+  Model        │  Initial I │  ΔI = |I₀ - 1/e| │  ΔI²    │  τ (steps)
+  ─────────────┼────────────┼────────────────────┼─────────┼──────────
+  Golden MoE   │  0.375     │  0.008             │  0.00006│    3
+  GPT-4        │  0.500     │  0.132             │  0.0174 │    8
+  Mixtral      │  0.875     │  0.507             │  0.2570 │   21
+  GPT-2        │  0.875     │  0.507             │  0.2570 │   39
+```
+
+Note: Mixtral and GPT-2 have the same ΔI but very different τ (21 vs 39).
+This suggests ΔI alone cannot explain τ.
+
+## Regression Analysis
+
+```
+  Model 1: τ = a × ΔI² + b
     R² = 0.784
-    잔차 표준오차 = 8.2
+    Residual standard error = 8.2
 
-  모델 2: τ = a × ΔI + b
+  Model 2: τ = a × ΔI + b
     R² = 0.789
-    잔차 표준오차 = 8.1
+    Residual standard error = 8.1
 
-  차이: ΔR² = 0.005 (통계적으로 무의미)
+  Difference: ΔR² = 0.005 (statistically meaningless)
 ```
 
-## R² 비교 그래프
+## R² Comparison Graph
 
 ```
   R²
@@ -58,17 +57,17 @@ Compass autopilot이 초기 I에서 골든 존 중심(I ≈ 1/e)까지 이동하
       │
   0.70│
       │
-      │     유의미한 차이 없음
+      │     No meaningful difference
   0.60│     (ΔR² = 0.005)
       │
       └──────────────────
-         ΔI² 모델   ΔI 모델
+         ΔI² model   ΔI model
 ```
 
-## τ vs ΔI 산점도
+## τ vs ΔI Scatter Plot
 
 ```
-  τ (스텝)
+  τ (steps)
   40│                         ● GPT-2
     │
   30│
@@ -77,66 +76,65 @@ Compass autopilot이 초기 I에서 골든 존 중심(I ≈ 1/e)까지 이동하
     │
   10│         ● GPT-4
     │
-   3│ ● 골든MoE
+   3│ ● Golden MoE
     └────┬────┬────┬────┬────┬──
        0.0  0.1  0.2  0.3  0.4  0.5
                    ΔI
 
-  직선 피팅: R² = 0.789 (4개 점)
-  포물선 피팅: R² = 0.784 (4개 점)
-  → 판별 불가
+  Linear fit: R² = 0.789 (4 points)
+  Parabolic fit: R² = 0.784 (4 points)
+  → Indistinguishable
 ```
 
-## 해석
+## Interpretation
 
-1. **데이터 부족**: 4개 데이터 포인트로는 ΔI² vs ΔI 모델을
-   통계적으로 구분할 수 없다. 자유도가 2밖에 없다.
-2. **혼란 변수**: Mixtral과 GPT-2는 동일한 ΔI를 가지지만
-   수렴 시간이 2배 차이나며, 이는 모델 고유의 구조적 차이
-   (파라미터 수, 아키텍처 등)가 추가 변수임을 시사한다.
-3. **R² 신뢰도**: n=4에서 R² > 0.7은 통계적으로 의미가 약하다.
-   과적합 위험이 높으며, adjusted R²를 사용하면 더 낮아진다.
-4. **확산 vs 탄도**: 현재 데이터로는 어느 모델도 기각할 수 없다.
+1. **Insufficient data**: With 4 data points, ΔI² vs ΔI models cannot be
+   statistically distinguished. Degrees of freedom = 2 only.
+2. **Confounding variable**: Mixtral and GPT-2 have the same ΔI but
+   convergence times differ by 2×, suggesting model-specific structural differences
+   (parameter count, architecture, etc.) as additional variables.
+3. **R² reliability**: R² > 0.7 with n=4 is statistically weak.
+   High risk of overfitting; adjusted R² would be lower.
+4. **Diffusion vs ballistic**: Neither model can be rejected with current data.
 
-## 판별에 필요한 조건
+## Conditions for Discrimination
 
 ```
-  최소 데이터 요건:
+  Minimum data requirements:
   ─────────────────────────────────────
-  ΔI 범위      │  0.01 ~ 0.90 (골든존~극단)
-  데이터 포인트 │  최소 10개, 이상적 20개 이상
-  반복 실행     │  각 조건 3회 이상 (분산 추정)
+  ΔI range      │  0.01 ~ 0.90 (Golden Zone ~ extreme)
+  Data points   │  minimum 10, ideally 20+
+  Repetitions   │  3+ per condition (variance estimation)
 
-  제안 실험:
+  Proposed experiment:
   ─────────────────────────────────────
   I₀ = 0.10, 0.15, 0.20, ..., 0.95
-  (0.05 간격, 18개 시작점)
-  각 시작점에서 autopilot 3회 실행
-  → 총 54개 (τ, ΔI) 쌍
+  (0.05 intervals, 18 starting points)
+  Run autopilot 3 times from each starting point
+  → 54 (τ, ΔI) pairs total
 ```
 
-## 한계
+## Limitations
 
-- 4개 모델 중 2개가 동일 ΔI로 정보 중복
-- autopilot 알고리즘의 스텝 크기가 고정인지 적응적인지에 따라 결과 달라짐
-- τ의 정의(수렴 판정 기준)에 민감할 수 있음
-- 실제 LLM에서의 I 변화는 연속적이 아니라 이산적
+- 2 of 4 models have identical ΔI, creating redundant information
+- Results depend on whether the autopilot algorithm's step size is fixed or adaptive
+- May be sensitive to the definition of τ (convergence criterion)
+- Actual I changes in LLMs are discrete, not continuous
 
-## 다음 단계
+## Next Steps
 
-1. 다양한 I₀에서 autopilot 반복 실행 (최소 10개 시작점)
-2. 각 시작점에서 3회 이상 반복하여 τ의 분산 추정
-3. log-log 플롯에서 기울기 분석: 기울기 = 1이면 선형, 2이면 확산
-4. 혼란 변수(모델 크기, 아키텍처) 통제를 위해 단일 모델 내에서 검증
-5. 하위확산(subdiffusion, τ ∝ ΔI^α, α > 2) 가능성도 검토
+1. Repeat autopilot runs from various I₀ (minimum 10 starting points)
+2. Run 3+ repetitions per starting point to estimate variance of τ
+3. Analyze slope in log-log plot: slope = 1 means linear, 2 means diffusive
+4. Verify within a single model to control confounding variables (model size, architecture)
+5. Also consider subdiffusion possibility (τ ∝ ΔI^α, α > 2)
 
-## 결론
+## Conclusion
 
-> ? 미결. R²(ΔI²) = 0.784 vs R²(ΔI) = 0.789로 차이 무의미.
-> 4개 데이터 포인트로는 확산 법칙(τ∝ΔI²)과 선형 법칙(τ∝ΔI)을
-> 통계적으로 판별할 수 없다. 최소 10개 이상의 시작점에서
-> autopilot 반복 실험이 필요하다.
+> ? Inconclusive. R²(ΔI²) = 0.784 vs R²(ΔI) = 0.789, difference meaningless.
+> With 4 data points, diffusion law (τ∝ΔI²) and linear law (τ∝ΔI) cannot be
+> statistically distinguished. Repeated autopilot experiments from at least 10+ starting points are needed.
 
 ---
 
-*검증: verify_math.py (4개 모델, autopilot 실측)*
+*Verification: verify_math.py (4 models, autopilot measurements)*

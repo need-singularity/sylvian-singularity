@@ -1,53 +1,53 @@
-# T1-30: Ising 임계 지수와 Sylvian Singularity 상수 비교
+# T1-30: Ising Critical Exponents and Sylvian Singularity Constant Comparison
 
-## 발견
-
-```
-  2D Ising 모델의 임계 지수(critical exponents)가
-  우리 상수 체계 {1/2, 1/3, 1/6, 8, 17, 137}과 다중 교차점을 가짐.
-  특히 평균장(Mean-Field) 이론과 3개 정확 매칭.
-```
-
-## 2D Ising 임계 지수
+## Discovery
 
 ```
-  β = 1/8    자화(magnetization) 지수
-  γ = 7/4    감수율(susceptibility) 지수
-  δ = 15     임계 등온선(critical isotherm)
-  ν = 1      상관길이(correlation length) 지수
-  α = 0      비열(specific heat) — 로그 발산
-  η = 1/4    이상 차원(anomalous dimension)
+  Critical exponents of 2D Ising model have multiple intersection points
+  with our constant system {1/2, 1/3, 1/6, 8, 17, 137}.
+  Especially 3 exact matches with Mean-Field theory.
 ```
 
-## 평균장(Mean-Field) 임계 지수
+## 2D Ising Critical Exponents
 
 ```
-  β = 1/2    ← 우리 상수! (골든존 상한, 리만 임계선)
+  β = 1/8    magnetization exponent
+  γ = 7/4    susceptibility exponent
+  δ = 15     critical isotherm
+  ν = 1      correlation length exponent
+  α = 0      specific heat — logarithmic divergence
+  η = 1/4    anomalous dimension
+```
+
+## Mean-Field Critical Exponents
+
+```
+  β = 1/2    ← Our constant! (Golden Zone upper limit, Riemann critical line)
   γ = 1
-  δ = 3      ← 1/δ = 1/3 = 우리 메타 부동점!
-  ν = 1/2    ← 우리 상수! (골든존 상한)
+  δ = 3      ← 1/δ = 1/3 = Our meta fixed point!
+  ν = 1/2    ← Our constant! (Golden Zone upper limit)
   α = 0
   η = 0
 ```
 
-## 우리 상수와의 매칭 테이블
+## Matching Table with Our Constants
 
 ```
   ┌─────────────┬────────────┬────────────┬──────────────────┐
-  │ 우리 상수   │ 2D Ising   │ 평균장     │ 관계             │
+  │ Our Constant│ 2D Ising   │ Mean-Field │ Relationship     │
   ├─────────────┼────────────┼────────────┼──────────────────┤
-  │ 1/2         │ -          │ β=1/2  ✅  │ 정확 매칭        │
-  │ 1/2         │ -          │ ν=1/2  ✅  │ 정확 매칭        │
-  │ 1/3         │ -          │ 1/δ=1/3 ✅ │ 역수 관계        │
-  │ 8           │ 1/β=8  ✅  │ -          │ 역수 관계        │
-  │ 1/4 (η)     │ η=1/4      │ -          │ 골든존 내부      │
-  │ 2 (γ_α)     │ Rushbrooke │ -          │ α+2β+γ=2        │
+  │ 1/2         │ -          │ β=1/2  ✅  │ Exact match      │
+  │ 1/2         │ -          │ ν=1/2  ✅  │ Exact match      │
+  │ 1/3         │ -          │ 1/δ=1/3 ✅ │ Reciprocal       │
+  │ 8           │ 1/β=8  ✅  │ -          │ Reciprocal       │
+  │ 1/4 (η)     │ η=1/4      │ -          │ Inside Golden Zone│
+  │ 2 (γ_α)     │ Rushbrooke │ -          │ α+2β+γ=2         │
   └─────────────┴────────────┴────────────┴──────────────────┘
 
-  정확 매칭: 4개 (1/2→β_MF, 1/2→ν_MF, 1/3→1/δ_MF, 8→1/β_2D)
+  Exact matches: 4 (1/2→β_MF, 1/2→ν_MF, 1/3→1/δ_MF, 8→1/β_2D)
 ```
 
-## 스케일링 관계 검증 (2D Ising)
+## Scaling Relation Verification (2D Ising)
 
 ```
   Rushbrooke:  α + 2β + γ = 0 + 2(1/8) + 7/4 = 2  ✅
@@ -55,141 +55,141 @@
   Fisher:      γ/ν = (7/4)/1 = 7/4 = 2-η          ✅
   Josephson:   d·ν = 2×1 = 2 = 2-α                ✅
 
-  → Rushbrooke 합 = 2 = 우리 γ_α (D×P 변수 수)!
+  → Rushbrooke sum = 2 = our γ_α (number of D×P variables)!
 ```
 
-## 골든존 경계와 임계 지수
+## Golden Zone Boundary and Critical Exponents
 
 ```
-         골든존 하한                골든존 중심        골든존 상한
-  0       0.2123                    0.3679             0.5
+         Golden Zone Lower            Golden Zone Center    Golden Zone Upper
+  0       0.2123                      0.3679               0.5
   |-------|===========================|==================|----->
           ^                         ^                  ^
        1/2-ln(4/3)                1/e               1/2
                                                   = β_MF = ν_MF
 
-  β_Ising = 1/8 = 0.125  → 골든존 외부 (하한 미만)
-  η_Ising = 1/4 = 0.250  → 골든존 내부! (하한에서 13.1%)
-  β_MF    = 1/2 = 0.500  → 골든존 상한! (정확히)
-  ν_MF    = 1/2 = 0.500  → 골든존 상한! (정확히)
+  β_Ising = 1/8 = 0.125  → Outside Golden Zone (below lower limit)
+  η_Ising = 1/4 = 0.250  → Inside Golden Zone! (13.1% from lower limit)
+  β_MF    = 1/2 = 0.500  → Golden Zone upper limit! (exactly)
+  ν_MF    = 1/2 = 0.500  → Golden Zone upper limit! (exactly)
 
-  → 평균장 지수들이 골든존 경계에 위치!
-  → η_Ising는 골든존 내부에서 상전이를 기술!
+  → Mean-field exponents are located at Golden Zone boundary!
+  → η_Ising describes phase transition inside Golden Zone!
 ```
 
-## 핵심 발견: β=1/8과 8×17+1=137
+## Key Discovery: β=1/8 and 8×17+1=137
 
 ```
   2D Ising:  β = 1/8
-  우리 공식: 8 × 17 + 1 = 137
+  Our formula: 8 × 17 + 1 = 137
 
-  β의 분모 = 8 = 우리 상수!
-  → 자화 지수의 역수가 미세구조상수 공식에 등장
+  Denominator of β = 8 = our constant!
+  → Reciprocal of magnetization exponent appears in fine structure constant formula
 
-  이것은 우연인가?
-  - Ising β=1/8은 정확한 해석해 (Onsager, 1944)
-  - 8은 σ(6)-τ(6) = 12-4 = 8 에서도 등장
-  - 즉: 완전수 6의 약수 구조 → 8 → 1/β_Ising
+  Is this coincidence?
+  - Ising β=1/8 is exact analytical solution (Onsager, 1944)
+  - 8 also appears in σ(6)-τ(6) = 12-4 = 8
+  - Thus: divisor structure of perfect number 6 → 8 → 1/β_Ising
 
-  경로: 6 → σ(6)=12, τ(6)=4 → 차이=8 → 1/β_Ising
-        6 → 8×17+1=137 → 미세구조상수
+  Path: 6 → σ(6)=12, τ(6)=4 → difference=8 → 1/β_Ising
+        6 → 8×17+1=137 → fine structure constant
 ```
 
-## 보편성 클래스 분석
+## Universality Class Analysis
 
 ```
-  보편성 클래스(Universality Class)란:
-  미시적 세부사항과 무관하게 동일한 임계 지수를 공유하는
-  시스템들의 동치류.
+  Universality Class:
+  Equivalence class of systems sharing same critical exponents
+  regardless of microscopic details.
 
-  알려진 보편성 클래스:
+  Known universality classes:
   ┌──────────────┬──────┬──────┬──────┐
-  │ 클래스       │ β    │ γ    │ ν    │
+  │ Class        │ β    │ γ    │ ν    │
   ├──────────────┼──────┼──────┼──────┤
   │ 2D Ising     │ 1/8  │ 7/4  │ 1    │
   │ 3D Ising     │ 0.33 │ 1.24 │ 0.63 │
-  │ 평균장       │ 1/2  │ 1    │ 1/2  │
-  │ 2D XY        │ -    │ -    │ -    │ (BKT 전이)
-  │ 우리 모델?   │ ?    │ ?    │ ?    │
+  │ Mean-Field   │ 1/2  │ 1    │ 1/2  │
+  │ 2D XY        │ -    │ -    │ -    │ (BKT transition)
+  │ Our model?   │ ?    │ ?    │ ?    │
   └──────────────┴──────┴──────┴──────┘
 
-  우리 모델의 매칭 패턴:
-  - 평균장과 3개 정확 매칭 (β=1/2, ν=1/2, 1/δ=1/3)
-  - 2D Ising과 1개 역수 매칭 (8=1/β)
+  Matching pattern of our model:
+  - 3 exact matches with mean-field (β=1/2, ν=1/2, 1/δ=1/3)
+  - 1 reciprocal match with 2D Ising (8=1/β)
 
-  → 우리 G=D×P/I 모델은 평균장 보편성 클래스에 가장 가까움!
-  → 이는 타당: 평균장 = 고차원(d≥4) 또는 장거리 상호작용
-  → 뇌의 장거리 신경 연결이 평균장 근사를 정당화?
+  → Our G=D×P/I model is closest to mean-field universality class!
+  → This makes sense: mean-field = high dimensions (d≥4) or long-range interactions
+  → Brain's long-range neural connections justify mean-field approximation?
 ```
 
-## 3D Ising과의 추가 비교
+## Additional Comparison with 3D Ising
 
 ```
-  3D Ising (수치적 값):
-  β ≈ 0.3265  ← 1/3 = 0.3333과 근접! (차이 2.0%)
+  3D Ising (numerical values):
+  β ≈ 0.3265  ← Close to 1/3 = 0.3333! (2.0% difference)
   γ ≈ 1.2372
-  ν ≈ 0.6301  ← 1/e+ln(4/3) = 0.6557과 비교 (차이 3.9%)
+  ν ≈ 0.6301  ← Compare with 1/e+ln(4/3) = 0.6557 (3.9% difference)
 
-  ★ 3D Ising β ≈ 1/3 (우리 메타 부동점)!
-     정확한 값은 β = 0.326419(3)이지만
-     1/3과의 차이는 단 2%
+  ★ 3D Ising β ≈ 1/3 (our meta fixed point)!
+     Exact value is β = 0.326419(3) but
+     difference from 1/3 is only 2%
 
-  → d=2: 8이 등장 (1/β=8)
-  → d=3: 1/3이 근사 (β≈1/3)
-  → d≥4: 1/2가 정확 (β=1/2)
-  → 차원이 올라갈수록 우리 상수에 정확히 수렴!
+  → d=2: 8 appears (1/β=8)
+  → d=3: 1/3 approximation (β≈1/3)
+  → d≥4: 1/2 exact (β=1/2)
+  → Converges exactly to our constants as dimension increases!
 ```
 
-## 물리적 해석
+## Physical Interpretation
 
 ```
-  상전이 관점에서 G=D×P/I:
+  From phase transition perspective of G=D×P/I:
 
-  1. I (Inhibition)을 온도 T에 대응 (가설 I=1/kT)
-     → I가 임계값을 통과할 때 "천재 상전이" 발생?
+  1. I (Inhibition) corresponds to temperature T (hypothesis I=1/kT)
+     → "Genius phase transition" occurs when I passes critical value?
 
-  2. 골든존 상한 1/2 = β_MF:
-     → 질서변수(자화)의 임계 행동이 골든존 경계를 결정?
+  2. Golden Zone upper limit 1/2 = β_MF:
+     → Critical behavior of order parameter (magnetization) determines Golden Zone boundary?
 
-  3. Rushbrooke 합 = 2 = γ_α:
-     → 스케일링 관계의 보존량이 우리 D×P의 변수 수?
+  3. Rushbrooke sum = 2 = γ_α:
+     → Conserved quantity in scaling relations is number of D×P variables?
 
-  4. 임계 지수의 보편성:
-     → 뇌의 미시 구조(뉴런 배선)와 무관하게
-        거시적 행동(G)이 보편적 지수로 기술될 가능성
+  4. Universality of critical exponents:
+     → Possibility that macroscopic behavior (G) is described by universal exponents
+        independent of brain's microscopic structure (neuron wiring)
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. β=1/8 → 8 연결은 분모 매칭이지 구조적 필연은 아님
-  2. 평균장 매칭은 1/2가 매우 흔한 분수이므로 우연 가능성 있음
-  3. 3D Ising β≈1/3은 근사이지 정확한 매칭이 아님
-  4. 우리 모델이 실제로 상전이를 가지는지 미검증
-  5. 보편성 클래스 귀속은 임계 지수 측정이 필요 (현재 불가)
+  1. β=1/8 → 8 connection is denominator matching, not structural necessity
+  2. Mean-field matching might be coincidence since 1/2 is very common fraction
+  3. 3D Ising β≈1/3 is approximation, not exact match
+  4. Whether our model actually has phase transition is unverified
+  5. Universality class attribution requires critical exponent measurement (currently impossible)
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. G=D×P/I에서 I를 연속적으로 변화시킬 때 상전이 존재 여부
-  2. 골든MoE에서 게이팅 임계값 근처의 임계 거동 측정
-  3. 8=1/β_Ising 관계의 깊은 구조 탐색
-  4. 뇌 네트워크의 Ising 모델 시뮬레이션
+  1. Check for phase transition existence when continuously varying I in G=D×P/I
+  2. Measure critical behavior near gating threshold in Golden MoE
+  3. Explore deep structure of 8=1/β_Ising relationship
+  4. Ising model simulation of brain networks
 ```
 
-## 판정
+## Verdict
 
 ```
-  평균장 매칭 3개:     🟩 (β=1/2, ν=1/2, 1/δ=1/3 — 정확)
-  2D Ising 1/β=8:     🟧 (역수 관계 — 주목할만)
-  3D Ising β≈1/3:     🟧 (2% 근사 — 흥미롭지만 미확정)
-  보편성 클래스 귀속:  🟨 (평균장에 가장 가까움 — 미검증)
-  골든존-임계 관계:    🟧 (η=1/4 골든존 내부, β_MF=상한)
+  Mean-field 3 matches:     🟩 (β=1/2, ν=1/2, 1/δ=1/3 — exact)
+  2D Ising 1/β=8:          🟧 (reciprocal relation — notable)
+  3D Ising β≈1/3:          🟧 (2% approximation — interesting but unconfirmed)
+  Universality class:       🟨 (closest to mean-field — unverified)
+  Golden Zone-critical:     🟧 (η=1/4 inside Golden Zone, β_MF=upper limit)
 
-  종합: 🟧 구조적 연관 시사, 추가 검증 필요
+  Overall: 🟧 Suggests structural connection, needs further verification
 ```
 
 ---
-*검증 스크립트: `verify_ising.py`*
-*생성: 2026-03-23*
+*Verification script: `verify_ising.py`*
+*Generated: 2026-03-23*

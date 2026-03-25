@@ -1,3 +1,3 @@
-# H-CX-172: 장력 공명 = 무언의 합의 — 동일 현상
+# H-CX-172: Tension Resonance = Unspoken Consensus — Same Phenomenon
 
-> r=0.951(공명)과 cos=0.986(합의)의 상관. 같은 근원?
+> r=0.951(resonance) and cos=0.986(consensus) correlation. Same origin?

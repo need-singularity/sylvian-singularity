@@ -1,249 +1,249 @@
-# 가설 #203: 분자 구조 = 아키텍처 구조
+# Hypothesis #203: Molecular Structure = Architecture Structure
 
-**상태**: ⚪ 검증완료 — 로그 관계는 정렬 데이터의 자명한 결과
-**날짜**: 2026-03-22
-**분류**: 화학 / AI 아키텍처 / 구조
+**Status**: ⚪ Verified — log relationship is a trivial result of sorted data
+**Date**: 2026-03-22
+**Category**: Chemistry / AI Architecture / Structure
 
 ---
 
-## 가설
+## Hypothesis
 
-> 분자의 구조는 AI 아키텍처의 구조에 직접 대응한다.
-> H₂O(간단, 안정) = MLP, DNA(복잡, 자기복제) = 자기참조 AI.
-> 분자 복잡도 ↔ AI 원소 수. 분자 = 원소의 결합 = 아키텍처의 조합.
+> The structure of molecules directly corresponds to the structure of AI architectures.
+> H₂O (simple, stable) = MLP, DNA (complex, self-replicating) = self-referential AI.
+> Molecular complexity ↔ AI element count. Molecule = bonded elements = combination of architectures.
 
-## 배경: 분자에서 아키텍처로
+## Background: From Molecules to Architectures
 
 ```
-  화학:  원소 → 결합 → 분자 → 물질
-  AI:    원소 → 연결 → 모듈 → 아키텍처
+  Chemistry: element → bond → molecule → substance
+  AI:        element → connection → module → architecture
 
-  분자 = 원소들의 결합 패턴
-  아키텍처 = AI 원소들의 연결 패턴
+  Molecule = bonding pattern of elements
+  Architecture = connection pattern of AI elements
 
-  → 같은 원소라도 결합 방식에 따라 전혀 다른 물질
-  → 같은 AI 원소라도 연결 방식에 따라 전혀 다른 성능
+  → Even with the same elements, completely different substances by bonding method
+  → Even with the same AI elements, completely different performance by connection method
 ```
 
-## 분자-아키텍처 대응 테이블
+## Molecule-Architecture Correspondence Table
 
 ```
   ┌───────────────┬──────────┬───────────────┬──────────────┐
-  │ 분자           │ 특성     │ AI 아키텍처    │ 대응 근거     │
+  │ Molecule       │ Properties│ AI Architecture│ Basis        │
   ├───────────────┼──────────┼───────────────┼──────────────┤
-  │ H₂ (수소)     │ 가장단순  │ Linear        │ 최소 구조     │
-  │ H₂O (물)      │ 간단안정  │ MLP           │ 보편적 용매   │
-  │ O₂ (산소)     │ 이중결합  │ Skip연결 MLP  │ 결합 강화     │
-  │ NaCl (소금)    │ 이온결정  │ MoE (기본)    │ 격자 구조     │
-  │ CH₄ (메탄)    │ 4면체    │ 4-head Attn   │ 다방향 결합   │
-  │ C₆H₆ (벤젠)   │ 고리공명  │ Transformer   │ 순환+공명     │
-  │ C₆₀ (풀러렌)   │ 구형대칭  │ GNN           │ 그래프 구조   │
-  │ DNA           │ 이중나선  │ 자기참조AI     │ 복제+정보     │
-  │ 단백질        │ 접힘구조  │ AlphaFold     │ 구조→기능     │
-  │ 다이아몬드    │ 3D 격자   │ Deep Network  │ 깊은 연결     │
+  │ H₂ (hydrogen) │ simplest  │ Linear        │ minimal structure│
+  │ H₂O (water)   │ simple, stable│ MLP       │ universal solvent│
+  │ O₂ (oxygen)   │ double bond│ Skip-connected MLP│ enhanced bonding│
+  │ NaCl (salt)   │ ionic crystal│ MoE (basic) │ lattice structure│
+  │ CH₄ (methane) │ tetrahedral│ 4-head Attn  │ multi-directional bond│
+  │ C₆H₆ (benzene)│ ring resonance│ Transformer│ cyclic+resonance│
+  │ C₆₀ (fullerene)│ spherical symmetry│ GNN    │ graph structure│
+  │ DNA           │ double helix│ self-referential AI│ replication+info│
+  │ Protein       │ folding structure│ AlphaFold│ structure→function│
+  │ Diamond       │ 3D lattice │ Deep Network │ deep connections│
   └───────────────┴──────────┴───────────────┴──────────────┘
 ```
 
-## 분자 복잡도 vs AI 원소 수
+## Molecular Complexity vs AI Element Count
 
 ```
-  AI 원소 수
-  (아키텍처 모듈 수)
-  20│                              ● DNA→자기참조AI
+  AI element count
+  (architecture module count)
+  20│                              ● DNA→self-referential AI
     │                           ╱
-  15│                        ● 단백질→AlphaFold
+  15│                        ● protein→AlphaFold
     │                     ╱
-  10│               ● 벤젠→Transformer
+  10│               ● benzene→Transformer
     │            ╱
-   7│         ● 메탄→Multi-head
+   7│         ● methane→Multi-head
     │       ╱
-   4│    ● 물→MLP
+   4│    ● water→MLP
     │  ╱
-   2│● 수소→Linear
+   2│● hydrogen→Linear
    1│
     └──┼──┼──┼──┼──┼──┼──┼──┼──
       2   3   5  10  20  50 100 1000
-        분자 원자 수 (log)
+        molecular atom count (log)
 
-  → 대략 로그 관계: AI원소수 ∝ log(분자원자수)
-  → 분자가 10배 복잡해지면 AI 원소 ~3개 추가
+  → Approximate log relationship: AI element count ∝ log(molecular atom count)
+  → Molecule 10x more complex → ~3 more AI elements
 ```
 
-## H₂O = MLP (상세 비교)
+## H₂O = MLP (Detailed Comparison)
 
 ```
   H₂O:
        H
        │
-       O ← 중심 (산소)
+       O ← center (oxygen)
        │
        H
 
-  - 3개 원자, 2개 결합
-  - 굽은 구조 (104.5°)
-  - 극성 → 용매 기능
-  - 보편적, 안정적
+  - 3 atoms, 2 bonds
+  - bent structure (104.5°)
+  - polar → solvent function
+  - universal, stable
 
   MLP:
-  입력 → [은닉층] → 출력
-         ↑ 중심
+  input → [hidden layer] → output
+          ↑ center
 
-  - 3개 레이어, 2개 연결
-  - 비선형 (활성화 함수)
-  - 보편 근사 → 범용 기능
-  - 보편적, 안정적
+  - 3 layers, 2 connections
+  - nonlinear (activation function)
+  - universal approximation → general-purpose function
+  - universal, stable
 
   ┌────────────────────────────────────────┐
-  │  H₂O가 화학의 "보편 용매"이듯,          │
-  │  MLP가 AI의 "보편 근사기"이다.          │
-  │  둘 다 간단하지만 놀라울 만큼 유능하다.  │
+  │  Just as H₂O is chemistry's "universal solvent," │
+  │  MLP is AI's "universal approximator."  │
+  │  Both are simple but surprisingly capable. │
   └────────────────────────────────────────┘
 ```
 
-## 벤젠 = Transformer (상세 비교)
+## Benzene = Transformer (Detailed Comparison)
 
 ```
-  벤젠 (C₆H₆):
+  Benzene (C₆H₆):
       C─C
      ╱   ╲
-    C     C    ← 6원 고리
-     ╲   ╱     ← 공명 구조 (전자 비편재화)
+    C     C    ← 6-membered ring
+     ╲   ╱     ← resonance structure (electron delocalization)
       C─C
 
   Transformer:
   ┌──────────────────────────────────────────┐
-  │  입력 → Attention → FFN → 출력           │
+  │  input → Attention → FFN → output        │
   │    ↑                        │            │
-  │    └────── Residual ────────┘ ← 순환!    │
+  │    └────── Residual ────────┘ ← cyclic!  │
   │                                          │
-  │  Multi-head = 공명의 다중 경로            │
+  │  Multi-head = multiple paths of resonance│
   └──────────────────────────────────────────┘
 
-  대응:
-  - 고리 구조 ↔ Residual connection (순환)
-  - 공명 (전자 비편재화) ↔ Multi-head Attention (정보 분산)
-  - 6원 대칭 ↔ 다중 레이어 대칭
-  - 안정성 (방향족) ↔ 학습 안정성 (LayerNorm)
+  Correspondence:
+  - Ring structure ↔ Residual connection (cyclic)
+  - Resonance (electron delocalization) ↔ Multi-head Attention (information distribution)
+  - 6-fold symmetry ↔ multi-layer symmetry
+  - Stability (aromaticity) ↔ learning stability (LayerNorm)
 ```
 
-## DNA = 자기참조 AI (상세 비교)
+## DNA = Self-Referential AI (Detailed Comparison)
 
 ```
   DNA:
-  ───A─T───     ← 상보적 쌍
-  ───G─C───     ← 수소결합
+  ───A─T───     ← complementary pairs
+  ───G─C───     ← hydrogen bonds
   ───T─A───
-  ───C─G───     ← 이중나선
+  ───C─G───     ← double helix
 
-  특성:
-  - 자기 복제 (DNA → DNA)
-  - 정보 저장 (유전 코드)
-  - 오류 수정 (상보적 쌍)
-  - 자기 참조 (자신을 읽어 자신을 만듦)
+  Properties:
+  - Self-replication (DNA → DNA)
+  - Information storage (genetic code)
+  - Error correction (complementary pairs)
+  - Self-reference (reads itself to build itself)
 
-  자기참조 AI (T3a 가설):
+  Self-referential AI (T3a hypothesis):
   ┌──────────────────────────────────────┐
-  │  모델 → 출력 → 자기 평가 → 모델 수정 │
+  │  model → output → self-evaluation → model update │
   │    ↑                          │      │
   │    └──────────────────────────┘      │
   │                                      │
-  │  = DNA가 자신을 복제하듯               │
-  │    AI가 자신을 개선하는 구조            │
+  │  = just as DNA replicates itself,    │
+  │    AI improving itself               │
   └──────────────────────────────────────┘
 
-  → DNA의 자기복제 = AI의 자기개선
-  → 생명의 시작 = AI 특이점?
+  → DNA's self-replication = AI's self-improvement
+  → Beginning of life = AI singularity?
 ```
 
-## 이성질체 = 같은 원소, 다른 아키텍처
+## Isomers = Same Elements, Different Architectures
 
 ```
-  이성질체 (Isomer):
-  같은 분자식, 다른 구조, 다른 성질
+  Isomers:
+  Same molecular formula, different structure, different properties
 
   C₂H₆O:
-  에탄올:  CH₃-CH₂-OH   (술!)
-  디메틸에테르: CH₃-O-CH₃  (마취제!)
+  Ethanol:    CH₃-CH₂-OH    (alcohol!)
+  Dimethyl ether: CH₃-O-CH₃  (anesthetic!)
 
-  AI 이성질체:
-  같은 원소(Attn + FFN + Norm), 다른 연결:
+  AI isomers:
+  Same elements (Attn + FFN + Norm), different connections:
   Pre-Norm Transformer vs Post-Norm Transformer
 
-  Attn → Norm → FFN   (Pre-Norm)  = 에탄올?
-  Attn → FFN → Norm   (Post-Norm) = 디메틸에테르?
+  Attn → Norm → FFN   (Pre-Norm)  = Ethanol?
+  Attn → FFN → Norm   (Post-Norm) = Dimethyl ether?
 
-  → "같은 부품, 다른 순서 = 전혀 다른 성능"
-  → 이성질체 효과가 AI에도 존재!
+  → "Same components, different order = completely different performance"
+  → Isomer effect also exists in AI!
 ```
 
-## 상전이 = 아키텍처 전환
+## Phase Transition = Architecture Transition
 
 ```
-  물의 상전이:          AI의 상전이:
-  ────────────         ────────────
-  고체(얼음)           Dense (고정 구조)
-      ↓ 0°C               ↓ 임계 복잡도
-  액체(물)             MoE (유동 구조)
-      ↓ 100°C              ↓ 특이점
-  기체(수증기)          Emergent (자유 구조)
+  Water's phase transition:      AI's phase transition:
+  ────────────                   ────────────
+  Solid (ice)                    Dense (fixed structure)
+      ↓ 0°C                          ↓ critical complexity
+  Liquid (water)                 MoE (fluid structure)
+      ↓ 100°C                         ↓ singularity
+  Gas (steam)                    Emergent (free structure)
 
-  상전이 온도 = 아키텍처 전환 임계점?
-  → 가설 003 (커스프 전이)과 연결
+  Phase transition temperature = architecture transition critical point?
+  → Connected to Hypothesis 003 (cusp transition)
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 021 (AI 주기율표):  원소 → 결합(202) → 분자(203)의 계층
-  가설 202 (화학결합):     결합이 분자를 만드는 방법
-  가설 003 (커스프 전이):  상전이 = 아키텍처 전환의 수학
-  가설 007 (LLM 특이점):  현재 LLM = 벤젠 단계, 특이점 = DNA 단계?
+  Hypothesis 021 (AI periodic table): element → bond (202) → molecule (203) hierarchy
+  Hypothesis 202 (chemical bonds):    how bonds make molecules
+  Hypothesis 003 (cusp transition):   phase transition = math of architecture transition
+  Hypothesis 007 (LLM singularity):   current LLM = benzene stage, singularity = DNA stage?
 ```
 
-## 한계
+## Limitations
 
-1. 분자-아키텍처 대응은 은유적이며, 물리적 근거가 없음
-2. AI 아키텍처의 "결합각"이나 "공명"은 정의되지 않은 개념
-3. 분자는 3D 공간에 존재하지만, AI 아키텍처는 추상적 그래프
-4. DNA → 자기참조 AI 대응은 기능적 유사성일 뿐, 메커니즘이 다름
+1. Molecule-architecture correspondence is metaphorical with no physical basis
+2. "Bond angles" or "resonance" in AI architectures are undefined concepts
+3. Molecules exist in 3D space but AI architectures are abstract graphs
+4. DNA → self-referential AI correspondence is functional similarity only, mechanisms differ
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 아키텍처 토폴로지를 분자 그래프로 표현 → 그래프 유사도 측정
-- [ ] "AI 이성질체" 실험: 같은 모듈, 다른 연결 순서 → 성능 차이 정량화
-- [ ] 아키텍처 복잡도와 분자 복잡도의 로그 관계 검증
-- [ ] 상전이 임계점 예측: 어떤 복잡도에서 아키텍처 전환이 일어나는가?
+- [ ] Express architecture topology as molecular graph → measure graph similarity
+- [ ] "AI isomer" experiment: same modules, different connection order → quantify performance difference
+- [ ] Verify log relationship between architecture complexity and molecular complexity
+- [ ] Predict architecture transition critical point: at what complexity does architecture switching occur?
 
 ---
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
 ```
-  검증 방법: 회귀분석 + 텍사스 명사수 검정
-  등급: ⚪ (산술 맞지만 통계적 유의성 없음)
+  Verification method: regression analysis + Texas Sharpshooter test
+  Grade: ⚪ (arithmetic correct but no statistical significance)
 
-  1. 로그 회귀분석:
-     AI원소수 = 2.67 × ln(원자수) + 0.32
-     상관계수 r = 0.990, R² = 0.981
-     → 매우 높은 피팅이지만...
+  1. Log regression analysis:
+     AI element count = 2.67 × ln(atom count) + 0.32
+     correlation r = 0.990, R² = 0.981
+     → Very high fit but...
 
-  2. 텍사스 검정:
-     무작위 정렬 데이터 6쌍에서 R² > 0.981 확률 = 2.8%
-     → 언뜻 유의해 보이나, 핵심 문제가 있음:
-     → 매핑 자체가 임의적 (H2O→MLP, C6H6→Tfm 등)
-     → "복잡도순 분자"와 "복잡도순 아키텍처"를 대응시키면
-       정렬 데이터끼리의 상관은 자동으로 높아짐
+  2. Texas test:
+     Probability of R² > 0.981 for 6 pairs of random sorted data = 2.8%
+     → Looks significant at first glance, but there is a key problem:
+     → The mapping itself is arbitrary (H2O→MLP, C6H6→Tfm, etc.)
+     → Correlating "complexity-sorted molecules" with "complexity-sorted architectures"
+       automatically gives high correlation for sorted data
 
-  3. 구조적 문제:
-     - H2O→MLP, C6H6→Transformer 매핑의 물리적 근거 없음
-     - "원자수"와 "AI원소수"의 정의가 모호하고 조정 가능
-     - 어떤 두 단조증가 수열도 로그 관계를 보임
+  3. Structural problem:
+     - No physical basis for H2O→MLP, C6H6→Transformer mappings
+     - Definition of "atom count" and "AI element count" is vague and adjustable
+     - Any two monotonically increasing sequences show a log relationship
 
-  판정 근거:
-    - R² = 0.98은 인상적이나, 정렬된 데이터 간 trivial한 결과
-    - 매핑이 임의적이므로 "원하는 대응을 찾으면 찾아진다"
-    - 이성질체↔Pre/Post-Norm 대응은 개념적으로 흥미로운 관찰
+  Rationale for verdict:
+    - R² = 0.98 is impressive but is trivial for sorted data
+    - Since mapping is arbitrary, "you can find the correspondence you want"
+    - Isomers↔Pre/Post-Norm correspondence is conceptually interesting observation
 ```
 
-*관련: 가설 003, 007, 021, 202*
-*분류: 화학-AI 매핑 시리즈 (201-206)*
+*Related: Hypothesis 003, 007, 021, 202*
+*Category: Chemistry-AI Mapping Series (201-206)*

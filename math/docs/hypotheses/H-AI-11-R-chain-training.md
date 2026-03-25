@@ -1,18 +1,18 @@
-# H-AI-11: R-체인 = 뉴럴넷 학습 수렴 단계
+# H-AI-11: R-chain = Neural Network Learning Convergence Stages
 
-> **가설**: 뉴럴 네트워크 학습의 loss 감소 단계가 R-체인 구조와 유사. 특히 "phase transition" 지점이 R-체인의 중간 정수값에 대응.
+> **Hypothesis**: The loss reduction stages in neural network learning resemble R-chain structure. Particularly, "phase transition" points correspond to intermediate integer values in R-chain.
 
-## 대응
+## Correspondence
 ```
-  R-체인: 193750 → 6048 → 120 → 6 → 1
-  학습:   random → structure → pattern → converge → stable
+  R-chain: 193750 → 6048 → 120 → 6 → 1
+  Learning: random → structure → pattern → converge → stable
 
-  Loss 감소 패턴이 R-체인처럼 "이산 단계"로 나뉘는가?
+  Does loss reduction pattern divide into "discrete stages" like R-chain?
 ```
 
-## 검증 방향
-- 골든MoE 학습 loss curve에서 phase transition 지점 식별
-- 각 지점에서의 "구조 복잡도"와 R값 비교
-- loss/initial_loss 비율이 R값과 상관?
+## Verification Direction
+- Identify phase transition points in Golden MoE learning loss curve
+- Compare "structural complexity" with R-value at each point
+- Does loss/initial_loss ratio correlate with R-values?
 
-## 난이도: 고 | 파급력: ★★★ (성공 시)
+## Difficulty: High | Impact: ★★★ (if successful)

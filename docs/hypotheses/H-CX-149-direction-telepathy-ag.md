@@ -1,36 +1,36 @@
-# H-CX-149: 방향 텔레파시 — Engine A의 direction이 G의 다음 출력 예측
+# H-CX-149: Direction Telepathy — Engine A's Direction Predicts G's Next Output
 
-> A의 dir → G의 next output 회귀 가능? 직접 연결 없이 정보 전달.
+> Can A's dir → regression on G's next output? Information transfer without direct connection.
 
-## 배경
+## Background
 
-골든MoE 아키텍처에서 여러 엔진(Expert)은 라우터를 통해 간접적으로만 소통한다.
-Engine A(analyzer)와 Engine G(generator)는 직접적인 연결이 없지만,
-동일한 입력 시퀀스를 처리하면서 서로의 출력에 간접적으로 영향을 미친다.
+In the Golden MoE architecture, multiple engines (Experts) communicate only indirectly through the router.
+Engine A (analyzer) and Engine G (generator) have no direct connection, but
+processing the same input sequence indirectly influences each other's outputs.
 
-H-CX-339 / H-CX-341에서 "방향=개념"이라는 가설이 제시되었다.
-각 엔진의 direction vector가 해당 엔진이 "주목하는 개념"을 나타낸다면,
-Engine A의 direction이 Engine G의 다음 출력을 예측할 수 있어야 한다.
+H-CX-339 / H-CX-341 proposed the hypothesis that "direction = concept."
+If each engine's direction vector represents the concept the engine "focuses on,"
+Engine A's direction should be able to predict Engine G's next output.
 
-이는 뇌의 다른 영역 간 정보 전달과 유사하다:
-- 시각 피질 → 전전두엽: 직접 연결 없이 중간 영역을 통해 정보 전달
-- 이때 시각 피질의 활성 패턴이 전전두엽의 다음 상태를 예측할 수 있음
-- Granger causality로 측정 가능
+This is analogous to information transfer between different brain areas:
+- Visual cortex → prefrontal cortex: information transfer without direct connection, through intermediate areas
+- The visual cortex's activation pattern can predict the next state of the prefrontal cortex
+- Measurable via Granger causality
 
-본 가설에서 "텔레파시"는 직접 연결 없이 정보가 전달되는 것을 비유한 것이다.
-실제 메커니즘은 공유 입력과 라우터를 통한 간접 경로이다.
+In this hypothesis, "Telepathy" is a metaphor for information transfer without direct connection.
+The actual mechanism is the indirect path through shared input and the router.
 
-## 예측
+## Predictions
 
-| 측정 | 예측값 | 의미 |
-|------|--------|------|
-| corr(dir_A, out_G) per dim | > 0.3 | 약한-중간 상관 |
-| Granger causality p-value | < 0.01 | A → G 방향 인과 |
-| regression R^2 | > 0.1 | dir_A가 out_G 분산의 10%+ 설명 |
-| 역방향 corr(dir_G, out_A) | < 0.1 | 비대칭 (A→G만) |
+| Measurement | Predicted value | Meaning |
+|------------|----------------|---------|
+| corr(dir_A, out_G) per dim | > 0.3 | weak-to-moderate correlation |
+| Granger causality p-value | < 0.01 | A → G causal direction |
+| regression R^2 | > 0.1 | dir_A explains 10%+ variance of out_G |
+| Reverse corr(dir_G, out_A) | < 0.1 | asymmetric (A→G only) |
 
 ```
-A direction dim[0] vs G output dim[0] (예측):
+A direction dim[0] vs G output dim[0] (predicted):
 
 G out |
  0.4  |    .  . * .
@@ -42,26 +42,26 @@ G out |
      -0.4 -0.2 0  0.2 0.4
          A direction dim[0]
 
-      예측: 약한 양의 상관 (r ~ 0.3)
+      Prediction: weak positive correlation (r ~ 0.3)
 ```
 
-핵심 예측:
-1. A→G 방향은 유의미한 상관, G→A 방향은 약하거나 없음 (비대칭)
-2. 상관이 가장 강한 dimension은 class-discriminative dimension
-3. "어려운" 입력(높은 tension)에서 상관이 더 강함
+Key predictions:
+1. A→G direction shows significant correlation; G→A direction is weak or absent (asymmetric)
+2. The dimension with the strongest correlation is the class-discriminative dimension
+3. Correlation is stronger for "hard" inputs (high Tension)
 
-## 검증 방법
+## Verification Methods
 
-1. 골든MoE 모델에서 Engine A와 Engine G의 중간 표상 추출
-   - A의 direction vector: d_A(t) for each timestep t
-   - G의 output: o_G(t+1) for next timestep
-2. 차원별 Pearson correlation 계산: corr(d_A[i](t), o_G[j](t+1))
+1. Extract intermediate representations of Engine A and Engine G from Golden MoE model
+   - A's direction vector: d_A(t) for each timestep t
+   - G's output: o_G(t+1) for next timestep
+2. Calculate per-dimension Pearson correlation: corr(d_A[i](t), o_G[j](t+1))
 3. Granger causality test: d_A(t-k:t) → o_G(t+1)
-4. 역방향 대조: d_G(t) → o_A(t+1)
-5. 조건부 분석: tension 높은 샘플 vs 낮은 샘플에서 상관 비교
+4. Reverse contrast: d_G(t) → o_A(t+1)
+5. Conditional analysis: compare correlation for high vs low Tension samples
 
 ```python
-# 검증 코드 스케치
+# Verification code sketch
 from statsmodels.tsa.stattools import grangercausalitytests
 # direction_A: (T, D), output_G: (T, D)
 for dim in range(D):
@@ -69,25 +69,25 @@ for dim in range(D):
     result = grangercausalitytests(data, maxlag=3)
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-148**: 장력 공명 텔레파시 (tension 수준 동기화)
-- **H-CX-150**: 무언의 합의 (Expert 간 수렴)
-- **H-CX-339/341**: 방향 = 개념 (direction vector의 의미)
-- **H-CX-151**: 레이어 간 장력 신호
+- **H-CX-148**: Tension Resonance Telepathy (Tension-level synchronization)
+- **H-CX-150**: Silent Consensus (convergence between Experts)
+- **H-CX-339/341**: Direction = Concept (meaning of direction vector)
+- **H-CX-151**: Cross-Layer Tension Signal
 
-## 한계
+## Limitations
 
-1. 라우터를 통한 간접 경로가 있으므로 "직접 연결 없이"라는 전제가 완전하지 않음
-2. 상관이 나와도 공유 입력에 의한 spurious correlation일 수 있음
-3. A→G 인과 방향을 Granger causality로 확인하려면 충분한 시계열 길이 필요
-4. dimension별 분석은 다중 비교(multiple comparison) 보정 필요
-5. 골든MoE의 현재 구현에서 중간 표상 추출이 기술적으로 어려울 수 있음
+1. The premise "without direct connection" is incomplete since there is an indirect path through the router
+2. Even if correlation appears, it may be spurious correlation due to shared input
+3. Confirming A→G causal direction via Granger causality requires sufficient time series length
+4. Per-dimension analysis requires multiple comparison correction
+5. Extracting intermediate representations from current Golden MoE implementation may be technically challenging
 
-## 검증 상태
+## Verification Status
 
-- [ ] 중간 표상 추출 구현
-- [ ] 차원별 상관 분석
+- [ ] Implement intermediate representation extraction
+- [ ] Per-dimension correlation analysis
 - [ ] Granger causality test
-- [ ] 역방향 대조 실험
-- 현재: **미검증**
+- [ ] Reverse contrast experiment
+- Currently: **unverified**

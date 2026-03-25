@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""공식 교차 검증기 — 공식 간 일관성 검사 + 오차 보완 + 새 공식 발견
+"""Formula Cross-Validator — Cross-formula consistency check + error compensation + new formula discovery
 
-사용법:
-  python3 formula_cross_validator.py                # 전체 교차 검증
-  python3 formula_cross_validator.py --upgrade      # 등급 승격 후보
-  python3 formula_cross_validator.py --binary       # 이진법 분해
-  python3 formula_cross_validator.py --correct      # 보정 공식 탐색
-  python3 formula_cross_validator.py --chain        # 공식 체인 발견
+Usage:
+  python3 formula_cross_validator.py                # Full cross-validation
+  python3 formula_cross_validator.py --upgrade      # Tier upgrade candidates
+  python3 formula_cross_validator.py --binary       # Binary decomposition
+  python3 formula_cross_validator.py --correct      # Correction formula search
+  python3 formula_cross_validator.py --chain        # Formula chain discovery
 """
 
 import numpy as np
@@ -15,7 +15,7 @@ from itertools import combinations
 
 
 # ═══════════════════════════════════════
-# 등급별 공식 데이터베이스
+# Tiered Formula Database
 # ═══════════════════════════════════════
 TIER_1 = {
     '1/2+1/3+1/6': {'val': 1.0, 'expr': '1/2+1/3+1/6', 'vars': ['1/2','1/3','1/6']},
@@ -41,10 +41,10 @@ TIER_3 = {
     'T_CMB_e': {'val': np.e, 'target': 2.72548, 'error': 0.26, 'name': 'T_CMB≈e'},
     'T_CMB_3_56': {'val': 3**np.sqrt(5/6), 'target': 2.72548, 'error': 0.025, 'name': 'T_CMB≈3^√(5/6)'},
     'alpha_s': {'val': np.log(9/8), 'target': 0.118, 'error': 0.18, 'name': 'αs≈ln(9/8)'},
-    'golden_center': {'val': 1/np.e, 'target': 0.3708, 'error': 0.8, 'name': '중심≈1/e'},
+    'golden_center': {'val': 1/np.e, 'target': 0.3708, 'error': 0.8, 'name': 'center≈1/e'},
     'lambda_pi10': {'val': np.pi/10, 'target': 0.3141, 'error': 0.003, 'name': 'λ≈π/10'},
-    'dark_energy': {'val': 2/3, 'target': 0.683, 'error': 2.4, 'name': '암흑에너지≈2/3'},
-    'baryonic': {'val': 1/np.e**3, 'target': 0.049, 'error': 1.6, 'name': '보통물질≈1/e³'},
+    'dark_energy': {'val': 2/3, 'target': 0.683, 'error': 2.4, 'name': 'dark energy≈2/3'},
+    'baryonic': {'val': 1/np.e**3, 'target': 0.049, 'error': 1.6, 'name': 'ordinary matter≈1/e³'},
     'pnp_gap': {'val': 1-1/np.e, 'target': 0.646, 'error': 2.2, 'name': 'P≠NP≈1-1/e'},
 }
 
@@ -56,23 +56,23 @@ CONSTANTS = {
 
 
 def upgrade_check():
-    """3등급 → 2등급 승격 후보 탐색"""
+    """Tier 3 → Tier 2 upgrade candidate search"""
     print("═" * 60)
-    print("  등급 승격 후보 — 3등급을 1등급 공식에서 유도 가능?")
+    print("  Tier Upgrade Candidates — Can Tier 3 be derived from Tier 1 formulas?")
     print("═" * 60)
 
     for key, t3 in TIER_3.items():
         target = t3['target']
-        print(f"\n  ─── {t3['name']} (현재 오차 {t3['error']}%) ───")
+        print(f"\n  ─── {t3['name']} (current error {t3['error']}%) ───")
 
-        # 1등급 상수 조합으로 더 나은 근사 탐색
+        # Search for better approximations using Tier 1 constant combinations
         best_expr = None
         best_err = t3['error']
 
         names = list(CONSTANTS.keys())
         vals = list(CONSTANTS.values())
 
-        # 단항
+        # Unary
         for i, (n, v) in enumerate(CONSTANTS.items()):
             for op_name, op_func in [('√', np.sqrt), ('ln', np.log), ('e^', np.exp), ('1/', lambda x: 1/x)]:
                 try:
@@ -85,7 +85,7 @@ def upgrade_check():
                 except:
                     pass
 
-        # 이항
+        # Binary
         for i in range(len(names)):
             for j in range(len(names)):
                 if i == j:
@@ -106,7 +106,7 @@ def upgrade_check():
                     except:
                         pass
 
-                # 복합: op1(a) op2 b
+                # Composite: op1(a) op2 b
                 for u_name, u_func in [('√', np.sqrt), ('ln', np.log)]:
                     try:
                         ua = u_func(a) if a > 0 else None
@@ -136,18 +136,18 @@ def upgrade_check():
 
         if best_expr and best_err < t3['error']:
             improve = t3['error'] / max(best_err, 0.001)
-            print(f"    현재: {t3['name']} = {t3['val']:.6f} (오차 {t3['error']}%)")
-            print(f"    개선: {best_expr} = ? (오차 {best_err:.4f}%) ← {improve:.0f}배 개선!")
+            print(f"    Current: {t3['name']} = {t3['val']:.6f} (error {t3['error']}%)")
+            print(f"    Improved: {best_expr} = ? (error {best_err:.4f}%) ← {improve:.0f}x improvement!")
             if best_err < 0.05:
-                print(f"    ★ 2등급 승격 후보!")
+                print(f"    ★ Tier 2 upgrade candidate!")
         else:
-            print(f"    개선 불가 (현재가 최선)")
+            print(f"    No improvement possible (current is best)")
 
 
 def binary_decomposition():
-    """모든 핵심 상수의 이진법 분해"""
+    """Binary decomposition of all key constants"""
     print("\n" + "═" * 60)
-    print("  이진법 분해 — 2와 1의 조합")
+    print("  Binary Decomposition — Combinations of 2 and 1")
     print("═" * 60)
 
     integers = {'1': 1, '2': 2, '3': 3, '6': 6, '8': 8, '17': 17, '137': 137}
@@ -159,11 +159,11 @@ def binary_decomposition():
         is_prime_bits = all(b in [0,1,2,3,5,7,11,13] for b in bits)
         print(f"    {name:>4} = {binary:>10}₂ = {powers}")
 
-    # 분수의 이진 표현
-    print(f"\n  분수:")
+    # Binary representation of fractions
+    print(f"\n  Fractions:")
     fracs = {'1/2': 0.5, '1/3': 1/3, '1/6': 1/6, '5/6': 5/6}
     for name, val in fracs.items():
-        # 이진 소수
+        # Binary fraction
         binary_frac = ''
         v = val
         for _ in range(16):
@@ -175,21 +175,21 @@ def binary_decomposition():
                 binary_frac += '0'
         print(f"    {name:>4} = 0.{binary_frac}...₂")
 
-    # 2의 거듭제곱 패턴
-    print(f"\n  패턴:")
-    print(f"    137 = 2⁷ + 2³ + 2⁰   비트위치: 0,3,7 (소수!)")
-    print(f"    17  = 2⁴ + 2⁰        비트위치: 0,4")
-    print(f"    8   = 2³             비트위치: 3")
-    print(f"    6   = 2² + 2¹        비트위치: 1,2")
-    print(f"    3   = 2¹ + 2⁰        비트위치: 0,1")
-    print(f"    → 0,1,2,3,4,7 = 이진 위치 사용")
-    print(f"    → 5,6 = 미사용 (5=소수, 6=완전수)")
+    # Powers of 2 patterns
+    print(f"\n  Patterns:")
+    print(f"    137 = 2⁷ + 2³ + 2⁰   bit positions: 0,3,7 (primes!)")
+    print(f"    17  = 2⁴ + 2⁰        bit positions: 0,4")
+    print(f"    8   = 2³             bit positions: 3")
+    print(f"    6   = 2² + 2¹        bit positions: 1,2")
+    print(f"    3   = 2¹ + 2⁰        bit positions: 0,1")
+    print(f"    → 0,1,2,3,4,7 = binary positions used")
+    print(f"    → 5,6 = unused (5=prime, 6=perfect number)")
 
 
 def correction_search():
-    """3등급 근사의 보정 항 탐색"""
+    """Tier 3 approximation correction term search"""
     print("\n" + "═" * 60)
-    print("  보정 공식 탐색 — 3등급 오차 줄이기")
+    print("  Correction Formula Search — Reduce Tier 3 errors")
     print("═" * 60)
 
     for key, t3 in TIER_3.items():
@@ -198,11 +198,11 @@ def correction_search():
         delta = target - base
         rel_delta = delta / target
 
-        print(f"\n  {t3['name']}: 기본값={base:.6f}, 타겟={target:.6f}")
-        print(f"    δ = {delta:+.6f} (상대 {rel_delta*100:+.4f}%)")
+        print(f"\n  {t3['name']}: base={base:.6f}, target={target:.6f}")
+        print(f"    δ = {delta:+.6f} (relative {rel_delta*100:+.4f}%)")
 
-        # δ에 가까운 상수 조합
-        print(f"    보정 후보:")
+        # Constant combinations close to δ
+        print(f"    Correction candidates:")
         corrections = []
         for cn, cv in CONSTANTS.items():
             for factor in [1, -1, 0.5, 2, 0.1, 10, 0.01, 100]:
@@ -211,12 +211,12 @@ def correction_search():
                     continue
                 new_val = base + corr
                 new_err = abs(new_val - target) / abs(target) * 100
-                if new_err < t3['error'] * 0.5:  # 50% 이상 개선만
+                if new_err < t3['error'] * 0.5:  # Only 50%+ improvements
                     sign = '+' if factor > 0 else '-'
                     f_str = f"{abs(factor)}" if abs(factor) != 1 else ""
                     corrections.append((new_err, f"{sign}{f_str}×{cn}", new_val))
 
-            # 1/cv 도
+            # Also 1/cv
             if cv != 0:
                 for factor in [1, -1, 0.01, -0.01]:
                     corr = factor / cv
@@ -227,54 +227,54 @@ def correction_search():
 
         corrections.sort()
         for err, expr, val in corrections[:3]:
-            print(f"      {t3['name']} {expr} = {val:.6f} (오차 {err:.4f}%)")
+            print(f"      {t3['name']} {expr} = {val:.6f} (error {err:.4f}%)")
 
 
 def chain_discovery():
-    """공식 체인 — A→B→C 유도 경로"""
+    """Formula chains — A→B→C derivation paths"""
     print("\n" + "═" * 60)
-    print("  공식 체인 — 유도 경로 발견")
+    print("  Formula Chain — Derivation Path Discovery")
     print("═" * 60)
 
     chains = [
         {
-            'name': '완전수 → 리만 → CMB',
+            'name': 'Perfect Number → Riemann → CMB',
             'steps': [
-                ('6 = 완전수', '6의 약수 = {1,2,3,6}'),
-                ('σ₋₁(6) = 2', '약수역수합'),
-                ('1/2+1/3+1/6 = 1', '진약수역수합(1제외)'),
-                ('5/6 = 1/2+1/3 = H₃-1', 'Compass 상한'),
-                ('3^√(5/6) ≈ T_CMB', '상태수^√(상한) = CMB온도!'),
+                ('6 = perfect number', 'divisors of 6 = {1,2,3,6}'),
+                ('σ₋₁(6) = 2', 'divisor reciprocal sum'),
+                ('1/2+1/3+1/6 = 1', 'proper divisor reciprocal sum (excluding 1)'),
+                ('5/6 = 1/2+1/3 = H₃-1', 'Compass upper bound'),
+                ('3^√(5/6) ≈ T_CMB', 'states^√(upper bound) = CMB temperature!'),
             ],
         },
         {
-            'name': '메타 반복 → 미세구조',
+            'name': 'Meta-iteration → Fine structure',
             'steps': [
-                ('f(I)=0.7I+0.1', '메타 함수'),
-                ('I*=1/3', '부동점'),
-                ('I*(θ=π)=1/17', '복소 반전'),
-                ('ln(9/8)≈αs', '강력 결합 (N=8)'),
-                ('8×17+1=137=1/α', '미세구조상수!'),
+                ('f(I)=0.7I+0.1', 'meta function'),
+                ('I*=1/3', 'fixed point'),
+                ('I*(θ=π)=1/17', 'complex inversion'),
+                ('ln(9/8)≈αs', 'strong coupling (N=8)'),
+                ('8×17+1=137=1/α', 'fine structure constant!'),
             ],
         },
         {
-            'name': '골든존 → 위상 가속 → 특이점',
+            'name': 'Golden Zone → Phase Acceleration → Singularity',
             'steps': [
-                ('I∈[0.213,0.500]', '골든존'),
-                ('T3(재귀) 추가', '위상 원소'),
-                ('수렴 ×3 점프', '계단형 가속'),
-                ('Jamba ×3 실측', '실증'),
-                ('특이점 ~2028', '타임라인'),
+                ('I∈[0.213,0.500]', 'Golden Zone'),
+                ('Add T3 (recursion)', 'phase element'),
+                ('Convergence ×3 jump', 'step acceleration'),
+                ('Jamba ×3 measured', 'empirical'),
+                ('Singularity ~2028', 'timeline'),
             ],
         },
         {
-            'name': '호기심 → 완전',
+            'name': 'Curiosity → Completeness',
             'steps': [
-                ('5/6 = 시스템 한계', 'Compass 상한'),
-                ('1/6 = 블라인드 스팟', '못 보는 영역'),
-                ('ε=0.05 호기심', '외부 힘'),
-                ('I→1/6', '부동점 이동'),
-                ('1/2+1/3+1/6=1', '완전!'),
+                ('5/6 = system limit', 'Compass upper bound'),
+                ('1/6 = blind spot', "area we can't see"),
+                ('ε=0.05 curiosity', 'external force'),
+                ('I→1/6', 'fixed point shift'),
+                ('1/2+1/3+1/6=1', 'complete!'),
             ],
         },
     ]
@@ -285,12 +285,12 @@ def chain_discovery():
             arrow = "→" if i < len(chain['steps'])-1 else "★"
             print(f"    {arrow} {formula:25} ({desc})")
 
-    # 새 체인 발견 시도
-    print(f"\n  ━━━ 새 체인 탐색 ━━━")
-    # 보존법칙에서 출발
-    print(f"    → G×I = D×P             (보존법칙)")
-    print(f"    → D×P = 0.5×0.85=0.425  (골든존 기준)")
-    print(f"    → 0.425 ≈ ???           탐색 중...")
+    # New chain discovery attempts
+    print(f"\n  ━━━ New Chain Search ━━━")
+    # Starting from conservation law
+    print(f"    → G×I = D×P             (conservation law)")
+    print(f"    → D×P = 0.5×0.85=0.425  (Golden Zone criterion)")
+    print(f"    → 0.425 ≈ ???           searching...")
 
     target = 0.5 * 0.85
     for cn, cv in CONSTANTS.items():
@@ -301,22 +301,22 @@ def chain_discovery():
                 try:
                     r = op(cv, cv2)
                     if r and abs(r - target)/target < 0.01:
-                        print(f"    → D×P ≈ {cn} {sym} {cn2} = {r:.4f} (오차 {abs(r-target)/target*100:.2f}%)")
+                        print(f"    → D×P ≈ {cn} {sym} {cn2} = {r:.4f} (error {abs(r-target)/target*100:.2f}%)")
                 except:
                     pass
 
 
 def main():
-    parser = argparse.ArgumentParser(description="공식 교차 검증기")
-    parser.add_argument('--upgrade', action='store_true', help="등급 승격 후보")
-    parser.add_argument('--binary', action='store_true', help="이진법 분해")
-    parser.add_argument('--correct', action='store_true', help="보정 공식 탐색")
-    parser.add_argument('--chain', action='store_true', help="공식 체인 발견")
+    parser = argparse.ArgumentParser(description="Formula Cross-Validator")
+    parser.add_argument('--upgrade', action='store_true', help="Tier upgrade candidates")
+    parser.add_argument('--binary', action='store_true', help="Binary decomposition")
+    parser.add_argument('--correct', action='store_true', help="Correction formula search")
+    parser.add_argument('--chain', action='store_true', help="Formula chain discovery")
     args = parser.parse_args()
 
     print()
     print("▓" * 60)
-    print("   🔗 공식 교차 검증기 v1.0")
+    print("   🔗 Formula Cross-Validator v1.0")
     print("▓" * 60)
 
     if args.upgrade:
@@ -328,7 +328,7 @@ def main():
     elif args.chain:
         chain_discovery()
     else:
-        # 전부
+        # All
         upgrade_check()
         binary_decomposition()
         correction_search()

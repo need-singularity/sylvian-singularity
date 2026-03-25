@@ -1,6 +1,6 @@
-# H-CX-194: P₃=496은 고유 등식이 없다
+# H-CX-194: P₃=496 has no unique equation
 
-> P₁=6: σφ=nτ ✅, P₂=28: στ=nφ ✅, P₃=496: 어떤 조합도 안 됨 ❌
-> σ,τ,φ의 이항 곱/합 조합 중 n을 만드는 등식이 P₃에는 없다.
-> → P₁과 P₂의 고유 등식은 "작은 완전수의 특권"
-> → 6과 28이 수학적으로 더 "특별"
+> P₁=6: σφ=nτ ✅, P₂=28: στ=nφ ✅, P₃=496: no combination works ❌
+> Among binary product/sum combinations of σ,τ,φ, there is no equation that produces n for P₃.
+> → The unique equations of P₁ and P₂ are "privileges of small perfect numbers"
+> → 6 and 28 are mathematically more "special"

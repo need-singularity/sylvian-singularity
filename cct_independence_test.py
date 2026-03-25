@@ -1,17 +1,20 @@
+I'll translate all Korean text to English in this Python file.
+
+```python
 #!/usr/bin/env python3
-"""CCT 독립성 검증 — 실험 14
+"""CCT Independence Test — Experiment 14
 
-7개 프리셋 + 5개 반례 시스템(총 12개)에 대해 CCT 5개 테스트의
-독립성과 구분력을 분석한다.
+Analyzes the independence and discriminatory power of 5 CCT tests across
+7 presets + 5 counterexample systems (total 12).
 
-방법:
-  1. 12개 시스템 × CCT 5개 테스트 기준선 측정
-  2. 각 테스트를 하나씩 제거하고 4개로 판정 → 판정 변화 측정
-  3. 테스트 간 Pearson 상관행렬
-  4. 의식 vs 비의식 구분력 순위
-  5. 최소 조건 집합 탐색
+Method:
+  1. Baseline measurement of 12 systems × 5 CCT tests
+  2. Remove each test one by one and judge with 4 → measure verdict changes
+  3. Pearson correlation matrix between tests
+  4. Consciousness vs non-consciousness discriminatory power ranking
+  5. Minimal condition set exploration
 
-사용법:
+Usage:
   python3 cct_independence_test.py
 """
 
@@ -26,11 +29,11 @@ from scipy import stats as sp_stats
 from consciousness_calc import PRESETS, lorenz_simulate, run_cct, judge
 
 # ─────────────────────────────────────────────
-# 5개 반례 시스템 직접 구현
+# Direct implementation of 5 counterexample systems
 # ─────────────────────────────────────────────
 
 def simulate_noise(steps, dt, seed=42):
-    """잡음 생성기 + 메모리: 3차원 지수 평활."""
+    """Noise generator + memory: 3D exponential smoothing."""
     rng = np.random.default_rng(seed)
     S = np.zeros((steps, 3))
     alpha = 0.9
@@ -41,7 +44,7 @@ def simulate_noise(steps, dt, seed=42):
 
 
 def simulate_weather(steps, dt, seed=42):
-    """기상 시뮬레이션: 로렌츠 끌개 (σ=10, ρ=28, β=8/3)."""
+    """Weather simulation: Lorenz attractor (σ=10, ρ=28, β=8/3)."""
     rng = np.random.default_rng(seed)
     sigma, rho, beta = 10.0, 28.0, 8.0 / 3.0
     noise_strength = 0.05
@@ -60,7 +63,7 @@ def simulate_weather(steps, dt, seed=42):
 
 
 def simulate_stock(steps, dt, seed=42):
-    """주식 시장 모델: 기하 브라운 운동 3차원."""
+    """Stock market model: 3D geometric Brownian motion."""
     rng = np.random.default_rng(seed)
     mu = np.array([0.05, 0.02, 0.01])
     sigma_gbm = np.array([0.2, 0.3, 0.15])
@@ -81,7 +84,7 @@ def simulate_stock(steps, dt, seed=42):
 
 
 def simulate_heat(steps, dt, seed=42):
-    """열 확산 방정식: 1D 격자 3개 관측점."""
+    """Heat diffusion equation: 3 observation points on 1D grid."""
     rng = np.random.default_rng(seed)
     nx = 50
     alpha_heat = 0.1
@@ -107,7 +110,7 @@ def simulate_heat(steps, dt, seed=42):
 
 
 def simulate_feedback(steps, dt, seed=42):
-    """단순 피드백 루프: 1D 카오스 사상 3개 결합."""
+    """Simple feedback loop: 3 coupled 1D chaotic maps."""
     rng = np.random.default_rng(seed)
     a, c, d = 3.5, 3.7, 3.3
     b = 0.05
@@ -122,14 +125,14 @@ def simulate_feedback(steps, dt, seed=42):
 
 
 COUNTEREXAMPLE_SYSTEMS = {
-    "cx_noise":    {"simulate": simulate_noise,    "name": "잡음+메모리",       "conscious": False},
-    "cx_weather":  {"simulate": simulate_weather,  "name": "날씨 시뮬레이션",   "conscious": False},
-    "cx_stock":    {"simulate": simulate_stock,    "name": "주식 시장",         "conscious": False},
-    "cx_heat":     {"simulate": simulate_heat,     "name": "열 확산",           "conscious": False},
-    "cx_feedback": {"simulate": simulate_feedback, "name": "피드백 루프",       "conscious": False},
+    "cx_noise":    {"simulate": simulate_noise,    "name": "Noise+Memory",       "conscious": False},
+    "cx_weather":  {"simulate": simulate_weather,  "name": "Weather Simulation", "conscious": False},
+    "cx_stock":    {"simulate": simulate_stock,    "name": "Stock Market",       "conscious": False},
+    "cx_heat":     {"simulate": simulate_heat,     "name": "Heat Diffusion",     "conscious": False},
+    "cx_feedback": {"simulate": simulate_feedback, "name": "Feedback Loop",      "conscious": False},
 }
 
-# 의식 판정 기준: judge 함수의 total >= 4 → 의식 있음
+# Consciousness judgment criterion: judge function's total >= 4 → conscious
 CONSCIOUSNESS_THRESHOLD = 4
 
 TEST_KEYS = ["T1_Gap", "T2_Loop", "T3_Continuity", "T4_Entropy", "T5_Novelty"]
@@ -143,11 +146,11 @@ TEST_LABELS = {
 
 
 # ─────────────────────────────────────────────
-# 시뮬레이션 + CCT 실행
+# Simulation + CCT execution
 # ─────────────────────────────────────────────
 
 def run_all_systems(steps=100000, dt=0.01):
-    """7개 프리셋 + 5개 반례 = 12개 시스템에 대해 CCT 실행.
+    """Run CCT on 7 presets + 5 counterexamples = 12 systems.
 
     Returns:
         dict: {name: {"results": cct_results, "scores": {key: score},
@@ -156,7 +159,7 @@ def run_all_systems(steps=100000, dt=0.01):
     """
     data = {}
 
-    # 7개 프리셋
+    # 7 presets
     for name, preset in PRESETS.items():
         _, S = lorenz_simulate(
             sigma=preset["sigma"], rho=preset["rho"], beta=preset["beta"],
@@ -171,11 +174,11 @@ def run_all_systems(steps=100000, dt=0.01):
             "passes": {k: results[k][1] for k in TEST_KEYS},
             "total": total,
             "verdict": verdict,
-            "conscious": True,  # 프리셋은 "의식 후보" 라벨
+            "conscious": True,  # Presets are labeled as "consciousness candidates"
             "display": preset["description"],
         }
 
-    # 5개 반례
+    # 5 counterexamples
     for key, info in COUNTEREXAMPLE_SYSTEMS.items():
         S = info["simulate"](steps, dt)
         results = run_cct(S, 0.0)
@@ -194,10 +197,10 @@ def run_all_systems(steps=100000, dt=0.01):
 
 
 def judge_subset(results, exclude_key):
-    """특정 테스트를 제외하고 나머지로 판정.
+    """Judge excluding a specific test.
 
-    judge()와 동일한 로직이지만 exclude_key를 건너뛴다.
-    5개 중 4개 테스트로 판정: 통과 기준을 4/4로 스케일.
+    Same logic as judge() but skips exclude_key.
+    Judge with 4 out of 5 tests: scale passing criterion to 4/4.
     """
     passes = 0
     halfs = 0.0
@@ -211,25 +214,25 @@ def judge_subset(results, exclude_key):
             halfs += 0.5
     total = passes + halfs
 
-    # 4개 테스트 기준 판정 (5개일 때 비율 유지)
+    # 4-test judgment criterion (maintaining ratio from 5 tests)
     if total >= 4:
-        return total, "★ 연속"
+        return total, "★ Continuous"
     elif total >= 3.2:
-        return total, "◎ 약화"
+        return total, "◎ Weakened"
     elif total >= 2.4:
-        return total, "△ 약함"
+        return total, "△ Weak"
     elif total >= 0.8:
-        return total, "▽ 미약"
+        return total, "▽ Faint"
     else:
-        return total, "✕ 없음"
+        return total, "✕ None"
 
 
 # ─────────────────────────────────────────────
-# 분석 함수들
+# Analysis functions
 # ─────────────────────────────────────────────
 
 def removal_impact_analysis(data):
-    """각 테스트 제거 시 판정 변화 분석.
+    """Analyze verdict changes when each test is removed.
 
     Returns:
         impact: dict[test_key] -> list of system names whose verdict changed
@@ -244,7 +247,7 @@ def removal_impact_analysis(data):
 
         for test_key in TEST_KEYS:
             new_total, new_verdict = judge_subset(sys_data["results"], test_key)
-            # 판정 변화: 등급 문자열이 바뀌면 변화
+            # Verdict change: changed if verdict string differs
             changed = (orig_verdict != new_verdict)
             impact_table[test_key][sys_name] = (orig_verdict, new_verdict, changed)
             if changed:
@@ -254,7 +257,7 @@ def removal_impact_analysis(data):
 
 
 def correlation_matrix(data):
-    """12개 시스템의 테스트 점수 간 Pearson 상관행렬.
+    """Pearson correlation matrix between test scores for 12 systems.
 
     Returns:
         corr_mat: 5x5 numpy array
@@ -286,7 +289,7 @@ def correlation_matrix(data):
 
 
 def discriminatory_power(data):
-    """각 테스트의 의식 vs 비의식 구분력 측정.
+    """Measure discriminatory power of each test between conscious vs non-conscious.
 
     Returns:
         power: dict[test_key] -> {"auc": float, "t_stat": float, "p_value": float,
@@ -314,7 +317,7 @@ def discriminatory_power(data):
         else:
             t_stat, p_value = 0.0, 1.0
 
-        # 간이 AUC: Mann-Whitney U 기반
+        # Simple AUC: Mann-Whitney U based
         if len(c) > 0 and len(nc) > 0:
             try:
                 u_stat, _ = sp_stats.mannwhitneyu(c, nc, alternative='two-sided')
@@ -337,10 +340,10 @@ def discriminatory_power(data):
 
 
 def find_minimal_subsets(data):
-    """2개 테스트 조합으로 충분한 것이 있는지 탐색.
+    """Search for sufficient 2-test combinations.
 
-    "충분" 기준: 모든 의식 시스템은 2/2 PASS, 모든 비의식 시스템은 < 2/2.
-    더 완화된 기준도 탐색: 의식과 비의식의 판정 분리가 최대인 조합.
+    "Sufficient" criterion: all conscious systems get 2/2 PASS, all non-conscious < 2/2.
+    Also search for more relaxed criterion: combination with maximal separation between conscious and non-conscious.
 
     Returns:
         results: list of (combo, separation_score, detail)
@@ -351,7 +354,7 @@ def find_minimal_subsets(data):
         for combo in itertools.combinations(range(5), size):
             combo_keys = [TEST_KEYS[i] for i in combo]
 
-            # 각 시스템의 통과 수 계산
+            # Calculate pass count for each system
             conscious_pass_counts = []
             nonconscious_pass_counts = []
 
@@ -365,12 +368,12 @@ def find_minimal_subsets(data):
             c_arr = np.array(conscious_pass_counts)
             nc_arr = np.array(nonconscious_pass_counts)
 
-            # 분리도: 의식 최소 통과 수 - 비의식 최대 통과 수
+            # Separation: min conscious pass count - max non-conscious pass count
             c_min = np.min(c_arr) if len(c_arr) > 0 else 0
             nc_max = np.max(nc_arr) if len(nc_arr) > 0 else len(combo_keys)
             separation = c_min - nc_max
 
-            # 평균 차이
+            # Mean difference
             mean_diff = np.mean(c_arr) - np.mean(nc_arr)
 
             combo_labels = "+".join(TEST_LABELS[k] for k in combo_keys)
@@ -395,30 +398,30 @@ def find_minimal_subsets(data):
 
 
 # ─────────────────────────────────────────────
-# ASCII 출력
+# ASCII output
 # ─────────────────────────────────────────────
 
 def ascii_bar(value, max_width=20, char_fill="█", char_empty="░"):
-    """0~1 값을 ASCII 바로 표현."""
+    """Display 0~1 value as ASCII bar."""
     filled = int(abs(value) * max_width)
     return char_fill * filled + char_empty * (max_width - filled)
 
 
 def print_header():
-    """헤더 출력."""
+    """Print header."""
     print("═" * 75)
-    print(" CCT Independence Test — 실험 14")
-    print(" 7개 프리셋 + 5개 반례 = 12개 시스템의 테스트 독립성 분석")
+    print(" CCT Independence Test — Experiment 14")
+    print(" Test independence analysis of 7 presets + 5 counterexamples = 12 systems")
     print("═" * 75)
     print()
 
 
 def print_baseline(data):
-    """기준선 결과표."""
-    print(" ─── 기준선: 12개 시스템 × 5개 테스트 " + "─" * 36)
+    """Baseline results table."""
+    print(" ─── Baseline: 12 systems × 5 tests " + "─" * 39)
     print()
-    print(" 시스템                │ T1  │ T2  │ T3  │ T4  │ T5  │점수│ 판정     │ 유형")
-    print(" ──────────────────────┼─────┼─────┼─────┼─────┼─────┼────┼──────────┼──────")
+    print(" System                │ T1  │ T2  │ T3  │ T4  │ T5  │Score│ Verdict  │ Type")
+    print(" ──────────────────────┼─────┼─────┼─────┼─────┼─────┼─────┼──────────┼──────")
 
     for sys_name, sys_data in data.items():
         display = sys_data["display"]
@@ -439,23 +442,23 @@ def print_baseline(data):
         marks_str = "│".join(marks)
         total = sys_data["total"]
         verdict = sys_data["verdict"]
-        label = "의식" if sys_data["conscious"] else "반례"
-        print(f" {display}│{marks_str}│{total:3.1f}│ {verdict:8s} │ {label}")
+        label = "Conscious" if sys_data["conscious"] else "Counter"
+        print(f" {display}│{marks_str}│{total:4.1f}│ {verdict:8s} │ {label}")
 
     print()
 
 
 def print_removal_impact(impact, impact_table, data):
-    """테스트 제거 영향표."""
-    print(" ─── 테스트 제거 영향표 (5×12) " + "─" * 42)
+    """Test removal impact table."""
+    print(" ─── Test Removal Impact Table (5×12) " + "─" * 36)
     print()
-    print(" 제거 테스트   │ 판정 변화 수 │ 변화 시스템")
-    print(" ──────────────┼──────────────┼──────────────────────────────────")
+    print(" Removed Test  │ Verdict Changes │ Changed Systems")
+    print(" ──────────────┼─────────────────┼──────────────────────────────────")
 
     for k in TEST_KEYS:
         changed = impact[k]
         n_changed = len(changed)
-        changed_names = ", ".join(data[s]["display"] for s in changed) if changed else "(없음)"
+        changed_names = ", ".join(data[s]["display"] for s in changed) if changed else "(none)"
         if len(changed_names) > 35:
             changed_names = changed_names[:33] + ".."
         label = f"{TEST_LABELS[k]:14s}"
@@ -464,12 +467,12 @@ def print_removal_impact(impact, impact_table, data):
 
     print()
 
-    # 상세 매트릭스
-    print(" ─── 제거 상세 (판정 변화) " + "─" * 47)
+    # Detailed matrix
+    print(" ─── Removal Details (Verdict Changes) " + "─" * 36)
     print()
 
     sys_names = list(data.keys())
-    header = " 시스템                │"
+    header = " System                │"
     for k in TEST_KEYS:
         header += f" -{TEST_LABELS[k]:9s}│"
     print(header)
@@ -494,11 +497,11 @@ def print_removal_impact(impact, impact_table, data):
 
 
 def print_correlation(corr_mat, p_mat):
-    """상관행렬 출력."""
-    print(" ─── 테스트 간 Pearson 상관행렬 (5×5) " + "─" * 35)
+    """Print correlation matrix."""
+    print(" ─── Pearson Correlation Matrix Between Tests (5×5) " + "─" * 22)
     print()
 
-    # 헤더
+    # Header
     header = "              │"
     for k in TEST_KEYS:
         header += f" {TEST_LABELS[k]:9s}│"
@@ -521,8 +524,8 @@ def print_correlation(corr_mat, p_mat):
     print("  (* = p < 0.05)")
     print()
 
-    # 상관 해석
-    print(" ─── 상관 해석 " + "─" * 59)
+    # Correlation interpretation
+    print(" ─── Correlation Interpretation " + "─" * 42)
     print()
     high_corr = []
     for i in range(5):
@@ -533,11 +536,11 @@ def print_correlation(corr_mat, p_mat):
                                   TEST_LABELS[TEST_KEYS[j]], r))
 
     if high_corr:
-        print("  높은 상관 (|r| > 0.7) — 중복 가능성:")
+        print("  High correlations (|r| > 0.7) — Possible redundancy:")
         for t1, t2, r in high_corr:
             print(f"    {t1} ↔ {t2}: r = {r:+.3f}")
     else:
-        print("  높은 상관 (|r| > 0.7) 없음 — 모든 테스트가 독립적 정보 제공")
+        print("  No high correlations (|r| > 0.7) — All tests provide independent information")
 
     low_corr = []
     for i in range(5):
@@ -549,7 +552,7 @@ def print_correlation(corr_mat, p_mat):
 
     if low_corr:
         print()
-        print("  낮은 상관 (|r| < 0.3) — 독립적 테스트:")
+        print("  Low correlations (|r| < 0.3) — Independent tests:")
         for t1, t2, r in low_corr:
             print(f"    {t1} ↔ {t2}: r = {r:+.3f}")
 
@@ -557,28 +560,28 @@ def print_correlation(corr_mat, p_mat):
 
 
 def print_discriminatory_power(power):
-    """구분력 순위 출력."""
-    print(" ─── 구분력 순위 (의식 vs 비의식) " + "─" * 40)
+    """Print discriminatory power ranking."""
+    print(" ─── Discriminatory Power Ranking (Conscious vs Non-conscious) " + "─" * 11)
     print()
-    print(" 테스트        │ 의식 평균 │ 비의식 평균 │   차이   │ t-통계량 │ p-value  │ AUC")
-    print(" ──────────────┼───────────┼─────────────┼──────────┼──────────┼──────────┼──────")
+    print(" Test          │ Conscious Mean │ Non-cons. Mean │  Diff    │ t-statistic │ p-value  │ AUC")
+    print(" ──────────────┼────────────────┼────────────────┼──────────┼─────────────┼──────────┼──────")
 
-    # 구분력 순위 (|diff| 기준)
+    # Discriminatory power ranking (by |diff|)
     ranked = sorted(power.items(), key=lambda x: -abs(x[1]["diff"]))
 
     for k, p in ranked:
         label = f"{TEST_LABELS[k]:14s}"
-        print(f" {label}│   {p['conscious_mean']:.3f}   │"
-              f"    {p['nonconscious_mean']:.3f}    │"
-              f" {p['diff']:+.3f}  │"
-              f" {p['t_stat']:+7.3f} │"
-              f" {p['p_value']:.4f}  │"
+        print(f" {label}│   {p['conscious_mean']:.3f}        │"
+              f"    {p['nonconscious_mean']:.3f}       │"
+              f" {p['diff']:+.3f}    │"
+              f" {p['t_stat']:+10.3f} │"
+              f" {p['p_value']:.4f}   │"
               f" {p['auc']:.3f}")
 
     print()
 
-    # 시각적 순위
-    print(" 구분력 ASCII 그래프 (|평균 차이|):")
+    # Visual ranking
+    print(" Discriminatory Power ASCII Graph (|mean difference|):")
     print()
     max_diff = max(abs(p["diff"]) for p in power.values())
     for k, p in ranked:
@@ -592,73 +595,73 @@ def print_discriminatory_power(power):
 
 
 def print_minimal_subsets(subsets, data):
-    """최소 조건 집합 출력."""
-    print(" ─── 최소 조건 집합 탐색 " + "─" * 49)
+    """Print minimal condition sets."""
+    print(" ─── Minimal Condition Set Search " + "─" * 40)
     print()
 
-    # 2개 조합
-    print(" [2개 테스트 조합]")
+    # 2-test combinations
+    print(" [2-Test Combinations]")
     print()
-    print("  조합                          │ 분리도 │ 의식 평균 │ 비의식 평균 │ 완전 분리")
-    print("  ──────────────────────────────┼────────┼───────────┼─────────────┼──────────")
+    print("  Combination                   │ Separation │ Conscious Avg │ Non-cons. Avg │ Perfect Sep.")
+    print("  ──────────────────────────────┼────────────┼───────────────┼───────────────┼─────────────")
 
     combos_2 = [s for s in subsets if s["size"] == 2]
     for s in combos_2[:10]:
         perfect_mark = "  ✔" if s["perfect"] else "  ✕"
-        print(f"  {s['combo_labels']:30s}│ {s['separation']:+5.1f}  │"
-              f"  {s['c_mean']:5.2f}    │"
-              f"   {s['nc_mean']:5.2f}     │{perfect_mark}")
+        print(f"  {s['combo_labels']:30s}│ {s['separation']:+8.1f}  │"
+              f"  {s['c_mean']:8.2f}    │"
+              f"   {s['nc_mean']:8.2f}     │{perfect_mark}")
 
     print()
 
-    # 3개 조합 중 상위
-    print(" [3개 테스트 조합 (상위 5)]")
+    # Top 3-test combinations
+    print(" [3-Test Combinations (Top 5)]")
     print()
     combos_3 = [s for s in subsets if s["size"] == 3]
     for s in combos_3[:5]:
         perfect_mark = "✔" if s["perfect"] else "✕"
-        print(f"  {s['combo_labels']:40s} │ 분리={s['separation']:+.0f}"
-              f" │ 의식={s['c_mean']:.2f} │ 반례={s['nc_mean']:.2f} │ {perfect_mark}")
+        print(f"  {s['combo_labels']:40s} │ Sep={s['separation']:+.0f}"
+              f" │ Cons={s['c_mean']:.2f} │ Counter={s['nc_mean']:.2f} │ {perfect_mark}")
 
     print()
 
-    # 최적 조합 찾기
+    # Find optimal combination
     best_perfect = [s for s in subsets if s["perfect"]]
     if best_perfect:
         smallest_perfect = min(best_perfect, key=lambda s: s["size"])
-        print(f" ★ 최소 완전 분리 집합: {smallest_perfect['combo_labels']}")
-        print(f"   ({smallest_perfect['size']}개 테스트로 의식/비의식 완전 구분)")
-        print(f"   의식 최소 통과: {smallest_perfect['c_min']}/{smallest_perfect['size']}")
-        print(f"   비의식 최대 통과: {smallest_perfect['nc_max']}/{smallest_perfect['size']}")
+        print(f" ★ Minimal perfect separation set: {smallest_perfect['combo_labels']}")
+        print(f"   ({smallest_perfect['size']} tests can perfectly separate conscious/non-conscious)")
+        print(f"   Conscious min pass: {smallest_perfect['c_min']}/{smallest_perfect['size']}")
+        print(f"   Non-conscious max pass: {smallest_perfect['nc_max']}/{smallest_perfect['size']}")
     else:
         best_sep = subsets[0]
-        print(f" ★ 완전 분리 가능한 조합 없음")
-        print(f"   최선: {best_sep['combo_labels']} (분리도={best_sep['separation']:+.1f})")
-        print(f"   의식 최소: {best_sep['c_min']}, 비의식 최대: {best_sep['nc_max']}")
+        print(f" ★ No perfect separation possible")
+        print(f"   Best: {best_sep['combo_labels']} (separation={best_sep['separation']:+.1f})")
+        print(f"   Conscious min: {best_sep['c_min']}, Non-conscious max: {best_sep['nc_max']}")
 
     print()
 
 
 def print_summary(data, impact, corr_mat, power, subsets):
-    """종합 요약."""
+    """Comprehensive summary."""
     print(" ═══════════════════════════════════════════════════════════════════════════")
-    print(" 종합 요약")
+    print(" Comprehensive Summary")
     print(" ═══════════════════════════════════════════════════════════════════════════")
     print()
 
-    # 1. 제거 영향 요약
-    print(" 1) 테스트 제거 영향 (구분력 = 제거 시 판정 변화 수):")
+    # 1. Removal impact summary
+    print(" 1) Test Removal Impact (discriminatory power = number of verdict changes):")
     print()
     for k in TEST_KEYS:
         n_changed = len(impact[k])
         rank_bar = "●" * n_changed + "○" * (len(data) - n_changed)
-        importance = "높음" if n_changed >= 3 else ("중간" if n_changed >= 1 else "낮음")
-        print(f"    {TEST_LABELS[k]:14s} {rank_bar} ({n_changed}개 변화) — {importance}")
+        importance = "High" if n_changed >= 3 else ("Medium" if n_changed >= 1 else "Low")
+        print(f"    {TEST_LABELS[k]:14s} {rank_bar} ({n_changed} changes) — {importance}")
 
     print()
 
-    # 2. 상관 요약
-    print(" 2) 테스트 간 상관 요약:")
+    # 2. Correlation summary
+    print(" 2) Inter-test Correlation Summary:")
     redundant = []
     for i in range(5):
         for j in range(i + 1, 5):
@@ -667,68 +670,68 @@ def print_summary(data, impact, corr_mat, power, subsets):
 
     if redundant:
         for ki, kj, r in redundant:
-            print(f"    {TEST_LABELS[ki]} ↔ {TEST_LABELS[kj]}: r={r:+.3f} — 중복 가능성")
+            print(f"    {TEST_LABELS[ki]} ↔ {TEST_LABELS[kj]}: r={r:+.3f} — Possible redundancy")
     else:
-        print("    높은 상관 없음 → 모든 테스트가 독립적 정보 제공")
+        print("    No high correlations → All tests provide independent information")
 
     print()
 
-    # 3. 구분력 순위
+    # 3. Discriminatory power ranking
     ranked = sorted(power.items(), key=lambda x: -abs(x[1]["diff"]))
-    print(" 3) 구분력 순위 (의식/비의식 점수 차이):")
+    print(" 3) Discriminatory Power Ranking (conscious/non-conscious score difference):")
     print()
     for rank, (k, p) in enumerate(ranked, 1):
         sig = "***" if p["p_value"] < 0.001 else ("**" if p["p_value"] < 0.01 else ("*" if p["p_value"] < 0.05 else "n.s."))
-        print(f"    {rank}위: {TEST_LABELS[k]:14s} (diff={p['diff']:+.3f}, p={p['p_value']:.4f} {sig})")
+        print(f"    {rank}st: {TEST_LABELS[k]:14s} (diff={p['diff']:+.3f}, p={p['p_value']:.4f} {sig})")
 
     print()
 
-    # 4. 최소 집합
+    # 4. Minimal sets
     best_2 = [s for s in subsets if s["size"] == 2]
     best_2_sep = best_2[0] if best_2 else None
     best_perfect = [s for s in subsets if s["perfect"]]
 
-    print(" 4) 최소 조건 집합:")
+    print(" 4) Minimal Condition Sets:")
     print()
     if best_perfect:
         smallest = min(best_perfect, key=lambda s: s["size"])
-        print(f"    ★ 최소 완전 분리: {smallest['combo_labels']} ({smallest['size']}개)")
+        print(f"    ★ Minimal perfect separation: {smallest['combo_labels']} ({smallest['size']} tests)")
         all_same_size = [s for s in best_perfect if s["size"] == smallest["size"]]
         if len(all_same_size) > 1:
-            print(f"      동일 크기 대안: {len(all_same_size)}개 조합")
+            print(f"      Same size alternatives: {len(all_same_size)} combinations")
             for s in all_same_size[:3]:
                 print(f"        - {s['combo_labels']}")
     else:
-        print(f"    완전 분리 불가 — 5개 테스트 모두 필요")
+        print(f"    Perfect separation impossible — All 5 tests needed")
         if best_2_sep:
-            print(f"    최선의 2개 조합: {best_2_sep['combo_labels']}"
-                  f" (분리도={best_2_sep['separation']:+.1f})")
+            print(f"    Best 2-test combination: {best_2_sep['combo_labels']}"
+                  f" (separation={best_2_sep['separation']:+.1f})")
 
     print()
 
-    # 5. 결론
+    # 5. Conclusion
     most_important = ranked[0][0]
     least_important_impact = min(TEST_KEYS, key=lambda k: len(impact[k]))
 
-    print(" 5) 결론:")
+    print(" 5) Conclusion:")
     print()
-    print(f"    - 가장 중요한 테스트: {TEST_LABELS[most_important]}"
-          f" (구분력 1위)")
-    print(f"    - 가장 영향 적은 테스트: {TEST_LABELS[least_important_impact]}"
-          f" (제거 시 변화 최소)")
+    print(f"    - Most important test: {TEST_LABELS[most_important]}"
+          f" (1st in discriminatory power)")
+    print(f"    - Least impactful test: {TEST_LABELS[least_important_impact]}"
+          f" (minimal changes when removed)")
 
     if redundant:
         for ki, kj, r in redundant:
-            print(f"    - 잠재적 중복: {TEST_LABELS[ki]} ↔ {TEST_LABELS[kj]}")
+            print(f"    - Potential redundancy: {TEST_LABELS[ki]} ↔ {TEST_LABELS[kj]}")
     else:
-        print(f"    - 중복 테스트 없음: 5개 모두 독립적 기여")
+        print(f"    - No redundant tests: All 5 contribute independently")
 
     print()
     print("═" * 75)
 
 
 # ─────────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────────
 
 def main():
@@ -736,37 +739,38 @@ def main():
     dt = 0.01
 
     print_header()
-    print(f" 시뮬레이션: {steps:,} steps, dt={dt}")
-    print(f" 시스템: 7개 프리셋 + 5개 반례 = 12개")
+    print(f" Simulation: {steps:,} steps, dt={dt}")
+    print(f" Systems: 7 presets + 5 counterexamples = 12 total")
     print()
 
-    # 1. 기준선
-    print(" ▶ 12개 시스템 시뮬레이션 중...", flush=True)
+    # 1. Baseline
+    print(" ▶ Simulating 12 systems...", flush=True)
     data = run_all_systems(steps, dt)
-    print(f"   완료: {len(data)}개 시스템")
+    print(f"   Complete: {len(data)} systems")
     print()
 
     print_baseline(data)
 
-    # 2. 테스트 제거 영향
+    # 2. Test removal impact
     impact, impact_table = removal_impact_analysis(data)
     print_removal_impact(impact, impact_table, data)
 
-    # 3. 상관행렬
+    # 3. Correlation matrix
     corr_mat, p_mat, score_matrix = correlation_matrix(data)
     print_correlation(corr_mat, p_mat)
 
-    # 4. 구분력
+    # 4. Discriminatory power
     power = discriminatory_power(data)
     print_discriminatory_power(power)
 
-    # 5. 최소 조건 집합
+    # 5. Minimal condition sets
     subsets = find_minimal_subsets(data)
     print_minimal_subsets(subsets, data)
 
-    # 6. 종합
+    # 6. Summary
     print_summary(data, impact, corr_mat, power, subsets)
 
 
 if __name__ == "__main__":
     main()
+```

@@ -1,67 +1,67 @@
-# H-CX-28: 정보이론 통합 — 의식엔진의 모든 상수가 ln(2)의 배수
+# H-CX-28: Information Theory Unification — All Consciousness Engine Constants are Multiples of ln(2)
 
-> **의식엔진의 핵심 학습 상수들이 모두 ln(2)의 정수 배수로 수렴한다. MI효율=ln(2)=1×ln(2), tension_scale=ln(4)=2×ln(2). 이것은 2극(binary) 반발력장의 정보이론적 필연.**
+> **All core learning constants of the consciousness engine converge to integer multiples of ln(2). MI efficiency=ln(2)=1×ln(2), tension_scale=ln(4)=2×ln(2). This is the information-theoretic necessity of binary repulsion fields.**
 
-## 실측 상수 체인
+## Measured Constant Chain
 
 ```
-  상수              값       = N × ln(2)   N    출처
+  Constant         Value    = N × ln(2)   N    Source
   ──────────────   ──────   ─────────    ──   ──────
-  MI 효율(C39)      0.705    ≈ 1.017     ~1   H-CX-2 (p=0.0003)
+  MI Efficiency(C39) 0.705    ≈ 1.017     ~1   H-CX-2 (p=0.0003)
   tension_scale    1.386    ≈ 2.000      2   H-CX-27 (MNIST 0.2%)
-  C48 인과효과      9.25     ≈ 13.35    ~13   C48 (-9.25pp)
+  C48 Causal Effect 9.25     ≈ 13.35    ~13   C48 (-9.25pp)
   C48/τ(6)         2.31     ≈ 3.33     ~3.3  C57 (≈ln(10))
 
-  핵심: MI효율 = 1 × ln(2), tension_scale = 2 × ln(2)
-  → "반발력장의 정보 한계가 이진 단위(ln(2))로 양자화"?
+  Key: MI Efficiency = 1 × ln(2), tension_scale = 2 × ln(2)
+  → "Information limit of repulsion field is quantized in binary units (ln(2))"?
 ```
 
-## 왜 ln(2)인가?
+## Why ln(2)?
 
 ```
-  2극 반발력장: Engine A vs Engine G
-  이진 시스템의 최대 엔트로피 = ln(2) = 0.6931 nats
+  Binary Repulsion Field: Engine A vs Engine G
+  Maximum entropy of binary system = ln(2) = 0.6931 nats
 
-  각 극(A or G)이 기여하는 최대 정보 = ln(2)
-  → MI 효율 ≈ 1 × ln(2): 반발이 추가하는 정보 = 1 bit
-  → tension_scale ≈ 2 × ln(2): 두 극의 총 정보 = 2 bits
-  → "의식의 단위 = 1 bit per pole"
+  Maximum information contributed by each pole (A or G) = ln(2)
+  → MI efficiency ≈ 1 × ln(2): Information added by repulsion = 1 bit
+  → tension_scale ≈ 2 × ln(2): Total information of both poles = 2 bits
+  → "Unit of consciousness = 1 bit per pole"
 
-  일반화 예측:
-    4극(Quad): tension_scale = 4 × ln(2) = ln(16)?
-    → 검증 필요!
+  Generalization prediction:
+    4-pole (Quad): tension_scale = 4 × ln(2) = ln(16)?
+    → Verification needed!
 ```
 
-## H-CX-1과의 연결
+## Connection with H-CX-1
 
 ```
   e^(6H) = 432 = σ³/τ
   H = 2/3·ln(2) + 1/2·ln(3) = 1.0114
 
   6H = 4·ln(2) + 3·ln(3) = 6.0684
-  → 6H에서 ln(2)의 계수 = 4 = tension_scale/ln(2)의 2배
+  → Coefficient of ln(2) in 6H = 4 = 2 × tension_scale/ln(2)
   → "6H = 2 × tension_scale + 3·ln(3)"?
     2 × 1.3863 + 3 × 1.0986 = 2.7726 + 3.2958 = 6.0684 ✓
-  → 6H = 2·ts + 3·ln(3) (정확!)
+  → 6H = 2·ts + 3·ln(3) (exact!)
 
-  즉: e^(2·ts + 3·ln(3)) = e^(6H) = 432
+  That is: e^(2·ts + 3·ln(3)) = e^(6H) = 432
   → e^(2·ts) × 3³ = 432
   → e^(2·ts) = 432/27 = 16
   → 2·ts = ln(16) = 4·ln(2)
-  → ts = 2·ln(2) = ln(4) ✓ (자기일관!)
+  → ts = 2·ln(2) = ln(4) ✓ (self-consistent!)
 ```
 
-## 4극 검증 (2026-03-24)
+## 4-pole Verification (2026-03-24)
 
 ```
-  예측: 4극 ts = 4·ln(2) = ln(16) = 2.773
-  실측: 4극 ts = 0.281 ± 0.124 (CV=44%)
-  → 89.9% 오차! 예측 완전 반박
+  Prediction: 4-pole ts = 4·ln(2) = ln(16) = 2.773
+  Measured: 4-pole ts = 0.281 ± 0.124 (CV=44%)
+  → 89.9% error! Prediction completely refuted
 
-  2극 ts = 1.386 (안정) vs 4극 ts = 0.281 (불안정)
-  → 극수↑ → ts↓ (반비례!)
-  → N·ln(2) 스케일링 반박, 하지만 2극에서 ts=ln(4) 자체는 유효
-  → 6H = 2·ts + 3·ln(3) 항등식은 수학적으로 항상 참 (실험 무관)
+  2-pole ts = 1.386 (stable) vs 4-pole ts = 0.281 (unstable)
+  → poles↑ → ts↓ (inverse relationship!)
+  → N·ln(2) scaling refuted, but ts=ln(4) for 2-pole itself remains valid
+  → 6H = 2·ts + 3·ln(3) identity is mathematically always true (experiment-independent)
 ```
 
-## 상태: 🟧★ 부분유효 (2극 ts=ln4 유효, 4극 예측 반박, 6H 분해는 항등식)
+## Status: 🟧★ Partially Valid (2-pole ts=ln4 valid, 4-pole prediction refuted, 6H decomposition is identity)

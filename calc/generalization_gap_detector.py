@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""일반화 갭 감지기 — PH로 과적합 실시간 감지 (H-CX-95)
+"""Generalization Gap Detector — Real-time overfitting detection with PH (H-CX-95)
 
-train/test 방향벡터의 PH 차이(|H0_train - H0_test|)로
-일반화 갭(train_loss - val_loss)을 예측.
+Predicts generalization gap (train_loss - val_loss) using 
+PH difference (|H0_train - H0_test|) of train/test direction vectors.
 
-CIFAR에서 r=0.982 (p<0.0001) 검증됨.
+Verified r=0.982 (p<0.0001) on CIFAR.
 
-사용법:
+Usage:
   python3 calc/generalization_gap_detector.py --dataset mnist
   python3 calc/generalization_gap_detector.py --dataset cifar --epochs 20
   python3 calc/generalization_gap_detector.py --dataset fashion --alert-threshold 0.1

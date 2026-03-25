@@ -1,14 +1,14 @@
-# H-CS-5: 그래프 색칠과 σφ=nτ
+# H-CS-5: Graph Coloring and σφ=nτ
 
-> **가설**: 평면 그래프의 4색 정리에서 6면체(정팔면체 쌍대)가 특별한 역할을 하며, σφ=nτ 구조가 반영된다.
+> **Hypothesis**: In the four color theorem for planar graphs, the hexahedron (octahedron dual) plays a special role, reflecting the σφ=nτ structure.
 
-## 배경
-- 4색 정리: 모든 평면 그래프는 4=τ(6) 색으로 칠 가능
-- 6면체(정육면체): 최소 3-색칠 가능 = σ/τ
-- chromatic polynomial P(G,k)에서 k=6일 때 특수성?
+## Background
+- Four color theorem: All planar graphs can be colored with 4=τ(6) colors
+- Hexahedron (cube): Minimum 3-colorable = σ/τ
+- Special properties when k=6 in chromatic polynomial P(G,k)?
 
-## 검증 방향
-1. [ ] 소형 평면 그래프에서 P(G,6)의 특수 패턴
-2. [ ] K_6 완전그래프의 chromatic number = 6
+## Verification Direction
+1. [ ] Special patterns of P(G,6) in small planar graphs
+2. [ ] Chromatic number of K_6 complete graph = 6
 
-## 난이도: 중 | 파급력: ★
+## Difficulty: Medium | Impact: ★

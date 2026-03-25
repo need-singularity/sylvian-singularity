@@ -1,5 +1,5 @@
-# H-CX-322: 🟩 13번째 이유 = 메타인지 = 관측자
+# H-CX-322: 🟩 13th Reason = Metacognition = Observer
 
-> 12가지 이유를 관찰하는 행위 자체가 13번째 이유.
-> 13 = σ(6)+1 = 관측 시작 (H-CX-218).
-> 12궁 안의 지식 + 13번째 관측자 = 완전한 체계.
+> The act of observing the 12 reasons itself is the 13th reason.
+> 13 = σ(6)+1 = Observation begins (H-CX-218).
+> Knowledge within the 12 houses + 13th observer = Complete system.

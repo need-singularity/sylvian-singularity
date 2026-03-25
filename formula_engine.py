@@ -1,11 +1,12 @@
+```python
 #!/usr/bin/env python3
-"""공식 생성 엔진 — 상수 관계 자동 탐색 + 유의성 검정
+"""Formula Generation Engine — Automatic Constant Relationship Discovery + Significance Testing
 
-사용법:
-  python3 formula_engine.py                    # 전체 탐색
-  python3 formula_engine.py --target 137       # 137을 만드는 공식 탐색
-  python3 formula_engine.py --depth 3          # 3단계 깊이 탐색
-  python3 formula_engine.py --significance     # 유의성 검정 포함
+Usage:
+  python3 formula_engine.py                    # Full search
+  python3 formula_engine.py --target 137       # Search for formulas that create 137
+  python3 formula_engine.py --depth 3          # Search with depth 3
+  python3 formula_engine.py --significance     # Include significance testing
 """
 
 import numpy as np
@@ -19,7 +20,7 @@ RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results"
 
 
 # ─────────────────────────────────────────
-# 우리 모델의 핵심 상수
+# Core constants of our model
 # ─────────────────────────────────────────
 CONSTANTS = {
     '1': 1.0,
@@ -38,38 +39,38 @@ CONSTANTS = {
     'π': np.pi,
 }
 
-# 물리 상수 (타겟)
+# Physics constants (targets)
 PHYSICS = {
-    'α(미세구조)': 1/137.036,
+    'α(fine structure)': 1/137.036,
     '1/α': 137.036,
-    'αs(강력)': 0.118,
+    'αs(strong)': 0.118,
     'sin²θ_W': 0.231,
     'T_CMB': 2.72548,
-    'Ω_Λ(암흑에너지)': 0.683,
-    'Ω_b(보통물질)': 0.049,
-    'Ω_DM(암흑물질)': 0.268,
+    'Ω_Λ(dark energy)': 0.683,
+    'Ω_b(ordinary matter)': 0.049,
+    'Ω_DM(dark matter)': 0.268,
 }
 
-# 수학 상수 (타겟)
+# Mathematical constants (targets)
 MATH_TARGETS = {
     'π': np.pi,
     'π/2': np.pi/2,
     'π/4': np.pi/4,
     'π/6': np.pi/6,
-    'φ(황금비)': (1+np.sqrt(5))/2,
+    'φ(golden ratio)': (1+np.sqrt(5))/2,
     'ln(2)': np.log(2),
     'ln(3)': np.log(3),
     'sqrt(2)': np.sqrt(2),
     'sqrt(3)': np.sqrt(3),
-    'γ(오일러-마스케로니)': 0.5772156649,
+    'γ(Euler-Mascheroni)': 0.5772156649,
 }
 
 
 # ─────────────────────────────────────────
-# 연산자
+# Operators
 # ─────────────────────────────────────────
 def safe_ops(a, b):
-    """두 값에 대한 안전한 연산 목록 반환"""
+    """Return list of safe operations on two values"""
     results = []
     av, an = a
     bv, bn = b
@@ -95,7 +96,7 @@ def safe_ops(a, b):
 
 
 def unary_ops(a):
-    """단항 연산"""
+    """Unary operations"""
     results = [(a[0], a[1])]
     if a[0] > 0:
         results.append((np.log(a[0]), f'ln({a[1]})'))
@@ -107,20 +108,20 @@ def unary_ops(a):
 
 
 # ─────────────────────────────────────────
-# 공식 탐색 엔진
+# Formula Search Engine
 # ─────────────────────────────────────────
 def search_formulas(targets, max_depth=2, threshold=0.01):
-    """상수 조합으로 타겟 값을 만드는 공식 탐색"""
+    """Search for formulas that create target values using constant combinations"""
 
-    # 1단계: 기본 상수
+    # Level 1: Basic constants
     level_1 = [(v, k) for k, v in CONSTANTS.items()]
 
-    # 단항 연산 확장
+    # Expand with unary operations
     level_1_ext = []
     for val, name in level_1:
         level_1_ext.extend(unary_ops((val, name)))
 
-    # 2단계: 이항 연산
+    # Level 2: Binary operations
     level_2 = []
     if max_depth >= 2:
         for i, a in enumerate(level_1_ext):
@@ -130,7 +131,7 @@ def search_formulas(targets, max_depth=2, threshold=0.01):
 
     all_formulas = level_1_ext + level_2
 
-    # 타겟 매칭
+    # Target matching
     matches = []
     for t_name, t_val in targets.items():
         for val, expr in all_formulas:
@@ -149,23 +150,23 @@ def search_formulas(targets, max_depth=2, threshold=0.01):
                     'error_pct': rel_err * 100,
                 })
 
-    # 정렬: 오차 순
+    # Sort by error
     matches.sort(key=lambda x: (x['target'], x['error']))
 
     return matches
 
 
 def significance_test(matches, n_random=10000):
-    """텍사스 명사수 검정: 랜덤 상수로도 같은 매칭이 나오는가?"""
+    """Texas Sharpshooter Test: Do we get the same matches with random constants?"""
 
     n_real_matches = len(matches)
     n_targets = len(set(m['target'] for m in matches))
 
-    # 랜덤 상수로 같은 탐색 반복
+    # Repeat same search with random constants
     random_match_counts = []
 
     for trial in range(n_random):
-        # 랜덤 상수 (같은 수, 같은 범위)
+        # Random constants (same count, same range)
         rng = np.random.default_rng(trial)
         rand_constants = {}
         for k in CONSTANTS:
@@ -180,14 +181,14 @@ def significance_test(matches, n_random=10000):
 
         all_rand = rand_level_1 + rand_level_2
 
-        # 같은 타겟에 대해 매칭 수 계산
+        # Count matches for same targets
         targets = {m['target']: m['target_val'] for m in matches}
         rand_matches = 0
         for t_name, t_val in targets.items():
             for val, expr in all_rand:
                 if t_val != 0 and abs(val - t_val) / abs(t_val) < 0.01:
                     rand_matches += 1
-                    break  # 타겟당 1개만
+                    break  # Only 1 per target
 
         random_match_counts.append(rand_matches)
 
@@ -205,25 +206,25 @@ def significance_test(matches, n_random=10000):
 
 
 # ─────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────
 def main():
-    parser = argparse.ArgumentParser(description="공식 생성 엔진")
-    parser.add_argument('--target', type=float, default=None, help="특정 값을 만드는 공식 탐색")
-    parser.add_argument('--depth', type=int, default=2, help="탐색 깊이 (기본 2)")
-    parser.add_argument('--threshold', type=float, default=0.01, help="오차 임계값 (기본 0.01)")
-    parser.add_argument('--significance', action='store_true', help="텍사스 명사수 검정")
-    parser.add_argument('--physics', action='store_true', help="물리 상수 타겟")
-    parser.add_argument('--math', action='store_true', help="수학 상수 타겟")
-    parser.add_argument('--all', action='store_true', help="전체 탐색")
+    parser = argparse.ArgumentParser(description="Formula Generation Engine")
+    parser.add_argument('--target', type=float, default=None, help="Search for formulas creating specific value")
+    parser.add_argument('--depth', type=int, default=2, help="Search depth (default 2)")
+    parser.add_argument('--threshold', type=float, default=0.01, help="Error threshold (default 0.01)")
+    parser.add_argument('--significance', action='store_true', help="Texas Sharpshooter test")
+    parser.add_argument('--physics', action='store_true', help="Physics constant targets")
+    parser.add_argument('--math', action='store_true', help="Mathematical constant targets")
+    parser.add_argument('--all', action='store_true', help="Full search")
     args = parser.parse_args()
 
     print()
     print("═" * 60)
-    print("   🔬 공식 생성 엔진 v1.0")
+    print("   🔬 Formula Generation Engine v1.0")
     print("═" * 60)
 
-    # 타겟 결정
+    # Determine targets
     if args.target:
         targets = {f'target={args.target}': args.target}
     elif args.physics:
@@ -235,17 +236,17 @@ def main():
     else:
         targets = {**PHYSICS, **MATH_TARGETS}
 
-    print(f"  상수: {len(CONSTANTS)}개")
-    print(f"  타겟: {len(targets)}개")
-    print(f"  깊이: {args.depth}")
-    print(f"  임계: {args.threshold*100}%")
+    print(f"  Constants: {len(CONSTANTS)}")
+    print(f"  Targets: {len(targets)}")
+    print(f"  Depth: {args.depth}")
+    print(f"  Threshold: {args.threshold*100}%")
     print("─" * 60)
 
-    # 탐색
+    # Search
     matches = search_formulas(targets, max_depth=args.depth, threshold=args.threshold)
 
-    # 결과 출력
-    print(f"\n  발견된 공식: {len(matches)}개")
+    # Output results
+    print(f"\n  Formulas found: {len(matches)}")
     print()
 
     current_target = None
@@ -255,42 +256,43 @@ def main():
             print(f"  ═══ {m['target']} = {m['target_val']:.6f} ═══")
 
         star = "★" if m['error_pct'] < 0.1 else ("●" if m['error_pct'] < 0.5 else "·")
-        print(f"    {star} {m['formula']:30} = {m['formula_val']:.6f} (오차 {m['error_pct']:.3f}%)")
+        print(f"    {star} {m['formula']:30} = {m['formula_val']:.6f} (error {m['error_pct']:.3f}%)")
 
-    # 유의성 검정
+    # Significance test
     if args.significance and matches:
         print(f"\n{'═' * 60}")
-        print(f"  텍사스 명사수 검정")
+        print(f"  Texas Sharpshooter Test")
         print(f"{'═' * 60}")
 
         sig = significance_test(matches, n_random=1000)
 
-        print(f"  실제 매칭 타겟: {sig['real_targets_hit']}개")
-        print(f"  랜덤 평균:      {sig['random_mean']:.1f} ± {sig['random_std']:.1f}")
-        print(f"  Z-score:        {sig['z_score']:.2f}")
-        print(f"  p-value:        {sig['p_value']:.4f}")
+        print(f"  Real matched targets: {sig['real_targets_hit']}")
+        print(f"  Random average:       {sig['random_mean']:.1f} ± {sig['random_std']:.1f}")
+        print(f"  Z-score:              {sig['z_score']:.2f}")
+        print(f"  p-value:              {sig['p_value']:.4f}")
         print()
 
         if sig['p_value'] < 0.01:
-            print(f"  판정: ✅ 유의미 (p < 0.01) — 우연이 아닐 확률 {(1-sig['p_value'])*100:.1f}%")
+            print(f"  Result: ✅ Significant (p < 0.01) — {(1-sig['p_value'])*100:.1f}% chance not by coincidence")
         elif sig['p_value'] < 0.05:
-            print(f"  판정: ⚠️ 약한 유의 (p < 0.05)")
+            print(f"  Result: ⚠️ Weakly significant (p < 0.05)")
         else:
-            print(f"  판정: ❌ 유의하지 않음 (p = {sig['p_value']:.2f}) — 텍사스 명사수 가능성")
+            print(f"  Result: ❌ Not significant (p = {sig['p_value']:.2f}) — Possible Texas Sharpshooter")
 
-    # 저장
+    # Save
     os.makedirs(RESULTS_DIR, exist_ok=True)
     with open(os.path.join(RESULTS_DIR, "formula_discovery.md"), 'a', encoding='utf-8') as f:
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        f.write(f"\n# 공식 탐색 [{now}]\n\n")
-        f.write(f"상수 {len(CONSTANTS)}개, 타겟 {len(targets)}개, 발견 {len(matches)}개\n\n")
+        f.write(f"\n# Formula Search [{now}]\n\n")
+        f.write(f"Constants {len(CONSTANTS)}, Targets {len(targets)}, Discoveries {len(matches)}\n\n")
         for m in matches[:20]:
-            f.write(f"- {m['target']}: {m['formula']} = {m['formula_val']:.6f} (오차 {m['error_pct']:.3f}%)\n")
+            f.write(f"- {m['target']}: {m['formula']} = {m['formula_val']:.6f} (error {m['error_pct']:.3f}%)\n")
         f.write("\n---\n")
 
-    print(f"\n  📁 결과 → results/formula_discovery.md")
+    print(f"\n  📁 Results → results/formula_discovery.md")
     print()
 
 
 if __name__ == '__main__':
     main()
+```

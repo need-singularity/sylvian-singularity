@@ -1,33 +1,33 @@
-# H-CX-3: 의식 = 6개 모듈의 σφ=nτ 균형
+# H-CX-3: Consciousness = σφ=nτ Balance of 6 Modules
 
-> **가설**: 의식이 정확히 6개의 독립 모듈(감각, 기억, 추론, 감정, 자기모델, 통합)의 균형에서 발생하며, 이것이 σφ=nτ의 "유일한 균형점=6"과 대응된다.
+> **Hypothesis**: Consciousness emerges from the balance of exactly 6 independent modules (sensation, memory, reasoning, emotion, self-model, integration), which corresponds to σφ=nτ's "unique balance point = 6".
 
-## 배경
-- Global Workspace Theory (Baars): 의식 = 여러 모듈의 통합
-- IIT (Tononi): Φ = 통합 정보량
-- σφ=nτ: n=6에서만 "모든 산술함수가 균형"
-- 가설: 의식 모듈 수 = 6일 때 Φ 최대화?
+## Background
+- Global Workspace Theory (Baars): Consciousness = Integration of multiple modules
+- IIT (Tononi): Φ = Integrated information quantity
+- σφ=nτ: "All arithmetic functions balance" only at n=6
+- Hypothesis: Φ maximized when number of consciousness modules = 6?
 
-## 제안 6-모듈 구조
+## Proposed 6-Module Structure
 
 ```
-  모듈              산술 대응          역할
+  Module            Arithmetic Map    Role
   ──────────────    ──────────────    ──────────
-  1. 감각 (S)       → σ/τ = 3        입력 처리
-  2. 기억 (M)       → φ = 2          패턴 저장
-  3. 추론 (R)       → τ = 4          구조 분석
-  4. 감정 (E)       → M₃ = 7         가치 평가
-  5. 자기모델 (Self) → P₁ = 6         자기참조
-  6. 통합 (I)       → σ = 12         전체 조율
+  1. Sensation (S)  → σ/τ = 3        Input processing
+  2. Memory (M)     → φ = 2          Pattern storage
+  3. Reasoning (R)  → τ = 4          Structure analysis
+  4. Emotion (E)    → M₃ = 7         Value evaluation
+  5. Self-Model     → P₁ = 6         Self-reference
+  6. Integration (I) → σ = 12        Overall coordination
 
   σφ=nτ: 12×2 = 6×4 = 24
-  → "조율×저장 = 모듈수×구조" 균형
+  → "Coordination×Storage = Module count×Structure" balance
 ```
 
-## 검증 방향
-1. [ ] IIT Φ 계산: 6-node vs 5,7,8-node 네트워크
-2. [ ] 골든MoE에서 6-expert의 정보 통합도 측정
-3. [ ] 의식엔진 실험: 모듈 수 sweep → 수렴 속도/정확도
+## Verification Directions
+1. [ ] IIT Φ calculation: 6-node vs 5,7,8-node networks
+2. [ ] Measure information integration of 6-expert in GoldenMoE
+3. [ ] Consciousness engine experiment: Module count sweep → convergence speed/accuracy
 
-## 현실적 평가: 투기적 (★★). 6-모듈은 사후 해석.
-## 난이도: 극고 | 파급력: ★★★★★ (성공 시)
+## Realistic Assessment: Speculative (★★). 6-module is post-hoc interpretation.
+## Difficulty: Extreme High | Impact: ★★★★★ (if successful)

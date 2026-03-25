@@ -1,14 +1,14 @@
-# H-PH-4: 쿼크 6종 × 렙톤 6종 = σφ=nτ?
+# H-PH-4: 6 Quarks × 6 Leptons = σφ=nτ?
 
-> **가설**: 표준모형에서 쿼크 6종(u,d,c,s,t,b)과 렙톤 6종(e,μ,τ,ν_e,ν_μ,ν_τ)이 각각 6개인 것에 산술적 필연성이 있다.
+> **Hypothesis**: There is an arithmetic necessity for having exactly 6 types of quarks (u,d,c,s,t,b) and 6 types of leptons (e,μ,τ,ν_e,ν_μ,ν_τ) in the Standard Model.
 
-## 배경
-- 쿼크: 3세대 × 2 = 6 = P₁
-- 렙톤: 3세대 × 2 = 6 = P₁
-- 3세대: σ/τ = 3? 2 (up/down): φ = 2?
-- 총 페르미온: 6+6 = 12 = σ(6)
+## Background
+- Quarks: 3 generations × 2 = 6 = P₁
+- Leptons: 3 generations × 2 = 6 = P₁
+- 3 generations: σ/τ = 3? 2 (up/down): φ = 2?
+- Total fermions: 6+6 = 12 = σ(6)
 
-## 현실적 평가
-극도로 투기적. 세대 수 3은 CKM 행렬/CP 위반과 관련되며, 산술이 아닌 물리에서 결정.
+## Realistic Assessment
+Extremely speculative. The number of generations (3) is related to the CKM matrix/CP violation and is determined by physics, not arithmetic.
 
-## 난이도: 극고 | 파급력: ★★ (성공 시 ★★★★★)
+## Difficulty: Extreme | Impact: ★★ (★★★★★ if successful)

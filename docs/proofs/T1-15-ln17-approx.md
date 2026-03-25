@@ -1,42 +1,42 @@
-# T1-15: ln(17) ≈ 17/6 (오차 0.004%)
+# T1-15: ln(17) ≈ 17/6 (error 0.004%)
 
-## 발견
+## Discovery
 
 ```
   ln(17) = 2.833213344...
   17/6   = 2.833333333...
-  오차: 0.0042%
+  Error: 0.0042%
 
-  이것은 섬 B(17) ↔ 섬 A(6) ↔ 섬 C(ln) 연결!
+  This is Island B(17) ↔ Island A(6) ↔ Island C(ln) connection!
 ```
 
-## 의미
+## Meaning
 
 ```
-  17 = 페르마 소수 (섬 B)
-  6 = 완전수 (섬 A)
-  ln = 자연로그 (섬 C)
+  17 = Fermat prime (Island B)
+  6 = Perfect number (Island A)
+  ln = Natural logarithm (Island C)
 
   ln(17) ≈ 17/6
-  → "페르마 소수의 로그 ≈ 페르마/완전수"
-  → 3개 섬을 하나의 근사로 연결
+  → "Logarithm of Fermat prime ≈ Fermat/Perfect number"
+  → Connects 3 islands with one approximation
 ```
 
-## 검증
+## Verification
 
 ```
-  일반적으로 ln(n) ≈ n/k 가 성립하는 (n,k) 쌍:
-  ln(17)/17 = 0.16666... ≈ 1/6 (정확!)
+  Generally, (n,k) pairs where ln(n) ≈ n/k holds:
+  ln(17)/17 = 0.16666... ≈ 1/6 (exact!)
 
-  즉: ln(17)/17 ≈ 1/6
+  That is: ln(17)/17 ≈ 1/6
   → ln(17) ≈ 17 × (1/6)
-  → 페르마 소수 17에서 "1/6 = 블라인드스팟"이 자연스럽게 등장
+  → From Fermat prime 17, "1/6 = blindspot" emerges naturally
 ```
 
-## 판정
+## Judgment
 
 ```
-  수치 일치: ✅ (0.004%)
-  정확한 등식: ❌ (초월수 장벽)
-  판정: 🟧 (연결 발견, 매우 정밀한 근사)
+  Numerical match: ✅ (0.004%)
+  Exact equation: ❌ (transcendental barrier)
+  Judgment: 🟧 (Connection discovered, very precise approximation)
 ```

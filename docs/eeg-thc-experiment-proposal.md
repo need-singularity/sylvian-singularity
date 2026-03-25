@@ -1,216 +1,217 @@
-# EEG + THC 실험 제안서 — 대학 뇌과학 연구실 협력용
+# EEG + THC Experiment Proposal — For University Neuroscience Lab Collaboration
 
-## 연구 제목
+## Research Title
 
-**"Persistent Homology 기반 의식 상태 변화의 위상적 측정: THC가 인지 범주 구조에 미치는 영향"**
+**"Topological Measurement of Consciousness State Changes Based on Persistent Homology: The Impact of THC on Cognitive Category Structure"**
 
-## 연구 배경
+## Research Background
 
-본 프로젝트(logout)에서 다음을 발견:
+This project (logout) discovered the following:
 
-| 발견 | 수치 | 가설 |
-|------|------|------|
-| PH merge 순서 = 혼동 구조 | r=-0.97 | H-CX-66 |
-| 인간 = AI 혼동 | r=0.788 | H-CX-106 |
-| dendrogram = 의미 계층 | 89% purity | H-CX-85 |
-| confusion PCA = 동물/기계 분리 | 완벽 분리 | H-CX-93 |
-| 위상 전이 | 0.1 에폭 | H-CX-105 |
-| PH 일반화 갭 예측 | r=0.998 | H-CX-95 |
-| 아키텍처 불변 | top-5 100% | H-CX-88 |
+| Discovery | Value | Hypothesis |
+|-----------|-------|------------|
+| PH merge order = confusion structure | r=-0.97 | H-CX-66 |
+| Human = AI confusion | r=0.788 | H-CX-106 |
+| dendrogram = semantic hierarchy | 89% purity | H-CX-85 |
+| confusion PCA = animal/machine separation | perfect separation | H-CX-93 |
+| Phase transition | 0.1 epoch | H-CX-105 |
+| PH generalization gap prediction | r=0.998 | H-CX-95 |
+| Architecture invariance | top-5 100% | H-CX-88 |
 
-**핵심 질문**: 이 PH 구조가 의식 상태 변화(THC)에 따라 어떻게 변하는가?
+**Core Question**: How does this PH structure change with consciousness state changes (THC)?
 
-## 기존 문헌
-
-```
-  THC와 뇌파:
-  - 감마 40Hz 변화 (Skosnik et al. 2016)
-  - 알파 파워 증가 (Böcker et al. 2010)
-  - DMN 연결성 변화 (Mason et al. 2021)
-  - 기능적 연결성 증가 보고 (Preller et al. 2020)
-
-  PH와 뇌과학:
-  - fMRI에서 PH 적용 (Saggar et al. 2018, Nature)
-  - 의식 수준과 PH 복잡도 (Petri et al. 2014)
-  - 사이키델릭 + PH (Carhart-Harris et al. 2016)
-```
-
-## 실험 설계
-
-### 피험자
-
-- N=20 (건강한 성인, THC 경험자)
-- IRB 승인 필수
-- 대조군: N=20 (위약)
-
-### 장비 (대학 연구실 보유 가정)
+## Existing Literature
 
 ```
-  EEG: 64ch 이상 (BioSemi, Brain Products 등)
-  자극: CIFAR-10 이미지 100장
-  소프트웨어: Python + brainflow/MNE + ripser
-  THC: 법적 허가 하에 (연구용)
+  THC and Brainwaves:
+  - Gamma 40Hz changes (Skosnik et al. 2016)
+  - Alpha power increase (Böcker et al. 2010)
+  - DMN connectivity changes (Mason et al. 2021)
+  - Functional connectivity increase reports (Preller et al. 2020)
+
+  PH and Neuroscience:
+  - PH applied to fMRI (Saggar et al. 2018, Nature)
+  - Consciousness level and PH complexity (Petri et al. 2014)
+  - Psychedelics + PH (Carhart-Harris et al. 2016)
 ```
 
-### 프로토콜
+## Experimental Design
+
+### Subjects
+
+- N=20 (healthy adults, THC experienced)
+- IRB approval required
+- Control group: N=20 (placebo)
+
+### Equipment (assuming university lab has)
 
 ```
-  세션 1 (기준선, Day 1):
+  EEG: 64ch or more (BioSemi, Brain Products, etc.)
+  Stimuli: 100 CIFAR-10 images
+  Software: Python + brainflow/MNE + ripser
+  THC: Under legal authorization (for research)
+```
+
+### Protocol
+
+```
+  Session 1 (baseline, Day 1):
   ┌──────────────────────────────────────────────┐
-  │  1. 안정 EEG 5분 (눈 감기)                    │
-  │  2. CIFAR-10 이미지 100장 분류 + EEG          │
-  │     이미지 2초 + 공백 1초 + 버튼 응답          │
-  │  3. 안정 EEG 5분                              │
-  │  총: ~25분                                    │
+  │  1. Resting EEG 5 min (eyes closed)          │
+  │  2. CIFAR-10 100 images classification + EEG  │
+  │     Image 2s + blank 1s + button response     │
+  │  3. Resting EEG 5 min                        │
+  │  Total: ~25 min                              │
   └──────────────────────────────────────────────┘
 
-  세션 2 (THC, Day 2, 최소 1주 간격):
+  Session 2 (THC, Day 2, minimum 1 week interval):
   ┌──────────────────────────────────────────────┐
-  │  1. THC 투여 (표준 용량, 연구 프로토콜)        │
-  │  2. 대기 30분 (효과 발현)                      │
-  │  3. 안정 EEG 5분                              │
-  │  4. 같은 CIFAR-10 100장 분류 + EEG            │
-  │  5. 안정 EEG 5분                              │
-  │  총: ~55분                                    │
+  │  1. THC administration (standard dose, protocol)│
+  │  2. Wait 30 min (effect onset)                │
+  │  3. Resting EEG 5 min                        │
+  │  4. Same CIFAR-10 100 images + EEG           │
+  │  5. Resting EEG 5 min                        │
+  │  Total: ~55 min                              │
   └──────────────────────────────────────────────┘
 ```
 
-### 분석 파이프라인
+### Analysis Pipeline
 
 ```
-  EEG 원본 데이터
+  Raw EEG data
        │
        ▼
-  전처리: ICA 아티팩트 제거, 밴드패스 필터
+  Preprocessing: ICA artifact removal, bandpass filter
        │
        ▼
-  감마 추출: 30-50Hz 대역 파워 (시행별)
+  Gamma extraction: 30-50Hz band power (per trial)
        │
-       ├──→ 분석 1: 클래스별 감마 평균 → PH dendrogram
+       ├──→ Analysis 1: Per-class gamma average → PH dendrogram
        │
-       ├──→ 분석 2: 정오답별 감마 → tension proxy
+       ├──→ Analysis 2: Correct/wrong gamma → tension proxy
        │
-       ├──→ 분석 3: Before vs After dendrogram 비교
+       ├──→ Analysis 3: Before vs After dendrogram comparison
        │
-       └──→ 분석 4: AI dendrogram과 비교 (H-CX-106 직접 검증)
+       └──→ Analysis 4: Compare with AI dendrogram (direct H-CX-106 verification)
 ```
 
-### 측정 변수
+### Measurement Variables
 
-| # | 변수 | 기대 방향 | 관련 가설 |
-|---|------|----------|----------|
-| 1 | H0_total (위상 복잡도) | THC에서 감소 ("모든 게 연결") | H-CX-62 |
-| 2 | merge distance 평균 | THC에서 감소 (경계 약화) | H-CX-66 |
-| 3 | dendrogram 동물/기계 분리 | THC에서 약화? | H-CX-85, 93 |
-| 4 | 감마 파워 (tension proxy) | THC에서 변화 | H-CX-137 |
-| 5 | 인간 PH vs AI PH tau | THC에서 감소? 증가? | H-CX-106 |
-| 6 | 분류 정확도 | THC에서 감소 | 행동 지표 |
-| 7 | 반응 시간 | THC에서 증가 | 행동 지표 |
-| 8 | H1 loops (순환 혼동) | THC에서 증가? | H-CX-110 |
+| # | Variable | Expected Direction | Related Hypothesis |
+|---|----------|-------------------|-------------------|
+| 1 | H0_total (topological complexity) | Decrease with THC ("everything connected") | H-CX-62 |
+| 2 | Average merge distance | Decrease with THC (weakened boundaries) | H-CX-66 |
+| 3 | Dendrogram animal/machine separation | Weakened with THC? | H-CX-85, 93 |
+| 4 | Gamma power (tension proxy) | Changes with THC | H-CX-137 |
+| 5 | Human PH vs AI PH tau | Decrease? Increase with THC? | H-CX-106 |
+| 6 | Classification accuracy | Decrease with THC | Behavioral metric |
+| 7 | Reaction time | Increase with THC | Behavioral metric |
+| 8 | H1 loops (cyclic confusion) | Increase with THC? | H-CX-110 |
 
-### 예측
+### Predictions
 
 ```
-  가설 A: "경계 용해" (THC = PH 단순화)
+  Hypothesis A: "Boundary Dissolution" (THC = PH simplification)
   ─────────────────────────────────────
-  정상:  H0_total=4.2, 10개 뚜렷한 클러스터
-  THC:   H0_total=2.0?, 클러스터 병합
-         merge distance 전체 감소
-         cat-dog 구분 약화
-         동물/기계 경계 흐려짐
-  = "모든 게 연결된 느낌"의 위상적 실체
+  Normal:  H0_total=4.2, 10 distinct clusters
+  THC:     H0_total=2.0?, cluster merging
+           Overall merge distance decrease
+           Cat-dog distinction weakened
+           Animal/machine boundary blurred
+  = Topological reality of "everything feels connected"
 
-  가설 B: "재구조화" (THC = PH 재편)
+  Hypothesis B: "Restructuring" (THC = PH reorganization)
   ─────────────────────────────────────
-  정상:  동물/기계 2대 분기
-  THC:   다른 기준으로 재분류?
-         색상별? 형태별? 감정별?
-  = dendrogram이 완전히 다른 구조로 변환
-  = "다른 시각으로 세상을 봄"
+  Normal:  Animal/machine binary split
+  THC:     Reclassification by different criteria?
+           By color? Shape? Emotion?
+  = Dendrogram transforms to completely different structure
+  = "Seeing the world from different perspective"
 
-  가설 C: "증폭" (THC = PH 증폭)
+  Hypothesis C: "Amplification" (THC = PH amplification)
   ─────────────────────────────────────
-  정상:  merge distance 범위 0.01~0.50
-  THC:   범위 0.001~0.70 (확대)
-         가까운 건 더 가깝고, 먼 건 더 멀게
-  = "감각이 예민해짐"의 위상적 실체
+  Normal:  Merge distance range 0.01~0.50
+  THC:     Range 0.001~0.70 (expanded)
+           Near things nearer, far things farther
+  = Topological reality of "heightened senses"
 ```
 
-## 우리가 제공할 수 있는 것
+## What We Can Provide
 
 ```
-  1. PH 분석 소프트웨어 (Python, 오픈소스)
+  1. PH analysis software (Python, open source)
      - calc/ph_confusion_analyzer.py
      - calc/generalization_gap_detector.py
      - calc/precognition_system.py
-     - ripser (Persistent Homology 라이브러리)
+     - ripser (Persistent Homology library)
 
-  2. AI 비교 모델 (학습 완료)
+  2. AI comparison models (pre-trained)
      - PureFieldEngine (MNIST/Fashion/CIFAR)
-     - 이미 검증된 PH dendrogram
-     - merge 순서, confusion PCA 데이터
+     - Already verified PH dendrograms
+     - Merge order, confusion PCA data
 
-  3. 분석 파이프라인
-     - EEG → 감마 추출 → PH 계산 → dendrogram 비교
-     - 자동화된 통계 검정 (Spearman, Kendall tau)
+  3. Analysis pipeline
+     - EEG → gamma extraction → PH calculation → dendrogram comparison
+     - Automated statistical tests (Spearman, Kendall tau)
 
-  4. 이론적 프레임워크
-     - 141개 H-CX 가설 체계
-     - 17개 대발견 데이터
-     - 텔레파시 아키텍처 설계
+  4. Theoretical framework
+     - 141 H-CX hypothesis system
+     - 17 Major Discovery data
+     - Telepathy architecture design
 ```
 
-## 한국 뇌과학 연구실 후보
+## Korean Neuroscience Lab Candidates
 
 ```
-  1. KAIST 뇌인지과학과
-     - 뇌파 연구 활발
-     - 의식/인지 관련 연구
+  1. KAIST Brain and Cognitive Sciences
+     - Active EEG research
+     - Consciousness/cognition research
 
-  2. 서울대 뇌인지과학과
-     - fMRI + EEG 장비 보유
-     - 인지신경과학 연구
+  2. Seoul National University Brain and Cognitive Sciences
+     - Has fMRI + EEG equipment
+     - Cognitive neuroscience research
 
-  3. 고려대 뇌공학과
-     - BCI 연구 특화
-     - OpenBCI 경험 가능성
+  3. Korea University Brain and Cognitive Engineering
+     - BCI research specialized
+     - Possible OpenBCI experience
 
-  4. DGIST 뇌과학전공
-     - 대구경북과학기술원
-     - 뇌파 기반 연구
+  4. DGIST Brain Science
+     - Daegu Gyeongbuk Institute of Science and Technology
+     - EEG-based research
 
-  5. IBS 뇌과학 이미징 연구단
-     - 기초과학연구원
-     - 최첨단 장비
+  5. IBS Center for Neuroscience Imaging Research
+     - Institute for Basic Science
+     - State-of-the-art equipment
 ```
 
-## 연락 템플릿
+## Contact Template
 
 ```
-  제목: PH(Persistent Homology) 기반 의식 상태 측정 — 공동 연구 제안
+  Subject: PH(Persistent Homology) Based Consciousness State Measurement — Collaboration Proposal
 
-  교수님께,
+  Dear Professor,
 
-  저는 의식영속성 엔진(logout) 프로젝트를 진행하고 있는 [이름]입니다.
+  I am [Name], working on the Consciousness Continuity Engine (logout) project.
 
-  저희는 최근 Persistent Homology를 이용하여 신경망의 혼동 구조가
-  인간 인지 구조와 일치함을 발견했습니다 (Spearman r=0.788).
+  We recently discovered that neural network confusion structures match
+  human cognitive structures using Persistent Homology (Spearman r=0.788).
 
-  이 발견을 EEG로 직접 검증하고, 나아가 의식 상태 변화(THC 등)에 따른
-  인지 범주 구조의 위상적 변화를 측정하는 실험을 제안드립니다.
+  We propose an experiment to directly verify this discovery with EEG,
+  and further measure topological changes in cognitive category structures
+  following consciousness state changes (such as THC).
 
-  저희가 제공: PH 분석 소프트웨어 + AI 비교 모델 + 이론 프레임워크
-  요청사항: EEG 장비 + 피험자 + IRB + 실험 환경
+  We provide: PH analysis software + AI comparison models + theoretical framework
+  Request: EEG equipment + subjects + IRB + experimental environment
 
-  관심 있으시면 상세 프로포절을 보내드리겠습니다.
+  If interested, I would be happy to send a detailed proposal.
 
   GitHub: https://github.com/need-singularity/logout
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H-CX-136~141: EEG 가설 체인
-- H-CX-106: 인간=AI r=0.788
-- H-CX-85: dendrogram = 의미 계층
+- H-CX-136~141: EEG hypothesis chain
+- H-CX-106: Human=AI r=0.788
+- H-CX-85: dendrogram = semantic hierarchy
 - H-CHEM-5: THC-cannabinoid-six
-- H322: EEG 감마 = 장력 proxy
+- H322: EEG gamma = tension proxy

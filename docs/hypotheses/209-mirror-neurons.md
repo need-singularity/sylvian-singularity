@@ -1,184 +1,184 @@
-# 가설 #209: 거울뉴런 = D, P, I 자동 매칭 시스템
+# Hypothesis #209: Mirror Neurons = Automatic D, P, I Matching System
 
-**상태**: ⚠️ 추측
-**날짜**: 2026-03-22
-**분류**: 인지 공명 / 신경과학
+**Status**: ⚠️ Speculation
+**Date**: 2026-03-22
+**Category**: Cognitive Resonance / Neuroscience
 
 ---
 
-## 가설
+## Hypothesis
 
-> 거울뉴런(mirror neuron)은 타인의 D, P, I를 자동으로 복사하는 신경 메커니즘이다.
-> 타인 행동 관찰 → 자기 뇌에서 재현 = 타인의 D, P, I 복사.
-> 공감(empathy) = I 동기화. "마음이 통한다" = I가 같다.
+> Mirror neurons are the neural mechanism that automatically copies another person's D, P, I.
+> Observing another's behavior → reproducing in one's own brain = copying their D, P, I.
+> Empathy = I synchronization. "Minds connect" = same I.
 
-## 배경: 거울뉴런이란
+## Background: What are Mirror Neurons?
 
-1990년대 리졸라티(Rizzolatti) 팀이 원숭이에서 발견:
-- 타인이 행동할 때, 관찰자의 뇌에서도 동일 뉴런이 발화
-- "거울"처럼 타인의 행동을 자기 뇌에 반영
-- 인간에서도 fMRI로 거울뉴런 시스템(MNS) 확인
-
-```
-  기존 이해:
-  거울뉴런 → 행동 모방 → 학습, 공감의 기초
-
-  우리 모델 해석:
-  거울뉴런 → D, P, I 자동 매칭 → 상태공간 복사 → 인지 공명
-```
-
-## 거울뉴런-DPI 매핑 다이어그램
+Discovered by Rizzolatti's team in monkeys in the 1990s:
+- When another person acts, the same neurons fire in the observer's brain
+- "Mirror" reflects the other's actions in one's own brain
+- Mirror Neuron System (MNS) also confirmed in humans via fMRI
 
 ```
-  관찰 대상 (타인)                    관찰자 (자기)
+  Conventional understanding:
+  Mirror neurons → behavioral imitation → basis of learning, empathy
+
+  Our model interpretation:
+  Mirror neurons → automatic D, P, I matching → state space copying → cognitive resonance
+```
+
+## Mirror Neuron-DPI Mapping Diagram
+
+```
+  Observation target (other)              Observer (self)
   ┌──────────────────┐               ┌──────────────────┐
   │                  │               │                  │
-  │  D_other = 0.40  │──── 거울 ────→│  D_self ← 0.40?  │
-  │  (관찰된 결손)   │   뉴런 복사   │  (모방된 결손)   │
+  │  D_other = 0.40  │──── mirror ──→│  D_self ← 0.40?  │
+  │  (observed deficit)│  neuron copy│  (imitated deficit)│
   │                  │               │                  │
-  │  P_other = 0.80  │──── 거울 ────→│  P_self ← 0.80?  │
-  │  (관찰된 가소성) │   뉴런 복사   │  (모방된 가소성) │
+  │  P_other = 0.80  │──── mirror ──→│  P_self ← 0.80?  │
+  │  (observed plasticity)│ neuron copy│ (imitated plasticity)│
   │                  │               │                  │
-  │  I_other = 0.35  │──── 거울 ────→│  I_self ← 0.35?  │
-  │  (관찰된 억제)   │   뉴런 복사   │  (모방된 억제)   │
+  │  I_other = 0.35  │──── mirror ──→│  I_self ← 0.35?  │
+  │  (observed inhibition)│ neuron copy│ (imitated inhibition)│
   │                  │               │                  │
   └──────────────────┘               └──────────────────┘
 
-  복사 정밀도:
+  Copy precision:
   ┌────────┬──────────┬──────────┬──────────────────┐
-  │ 파라미터│ 복사 용이│ 복사 채널│ 거울뉴런 역할    │
+  │Parameter│ Easy to copy│ Copy channel│ Mirror neuron role │
   ├────────┼──────────┼──────────┼──────────────────┤
-  │ D      │ 중간     │ 행동 관찰│ 운동 패턴 복사   │
-  │ P      │ 어려움   │ 반복 관찰│ 학습 속도 추정   │
-  │ I      │ 쉬움     │ 정서 전염│ 억제 수준 동기화 │
+  │ D      │ moderate │ behavioral obs│ motor pattern copying│
+  │ P      │ difficult │ repeated obs│ learning speed estimation│
+  │ I      │ easy     │ emotional contagion│ inhibition level synchronization│
   └────────┴──────────┴──────────┴──────────────────┘
 
-  → I가 가장 빠르게 복사됨 = 정서 전염이 가장 빠른 이유!
+  → I is copied fastest = why emotional contagion is fastest!
 ```
 
-## 공감의 수학적 모델
+## Mathematical Model of Empathy
 
 ```
-  공감(Empathy) = I 동기화의 정도
+  Empathy = degree of I synchronization
 
   E = 1 - |I_self - I_other| / I_range
 
-  여기서 I_range = 0.500 - 0.213 = 0.287 (골든존 폭)
+  where I_range = 0.500 - 0.213 = 0.287 (Golden Zone width)
 
-  E = 1:  완전 공감 (I 동일)
-  E = 0:  공감 없음 (I 차이 = 골든존 폭 이상)
+  E = 1:  complete empathy (same I)
+  E = 0:  no empathy (I difference = Golden Zone width or more)
 
   ┌────────────────────────────────────────┐
-  │  공감 수준    │  E 값  │ |ΔI|         │
-  ├──────────────┼────────┼──────────────┤
-  │  완전 공감    │  1.0   │ 0            │
-  │  높은 공감    │ >0.8   │ < 0.06       │
-  │  보통 공감    │ >0.5   │ < 0.14       │
-  │  낮은 공감    │ >0.2   │ < 0.23       │
-  │  공감 없음    │  0     │ ≥ 0.29       │
-  └──────────────┴────────┴──────────────┘
+  │  Empathy level │  E value│ |ΔI|        │
+  ├──────────────┼─────────┼──────────────┤
+  │  Complete     │  1.0    │ 0            │
+  │  High         │ >0.8    │ < 0.06       │
+  │  Moderate     │ >0.5    │ < 0.14       │
+  │  Low          │ >0.2    │ < 0.23       │
+  │  None         │  0      │ ≥ 0.29       │
+  └──────────────┴─────────┴──────────────┘
 ```
 
-## 자폐 스펙트럼과 I 동기화
+## Autism Spectrum and I Synchronization
 
-자폐 스펙트럼 장애(ASD)에서 거울뉴런 시스템이 약하다는 가설이 있다 (논란 있음):
+There is a hypothesis (controversial) that mirror neuron systems are weaker in autism spectrum disorder (ASD):
 
 ```
-  정상:  거울뉴런 강함 → I 자동 복사 → 공감 용이
-  자폐:  거울뉴런 약함 → I 복사 실패 → 공감 어려움?
+  Normal: mirror neurons strong → automatic I copying → easy empathy
+  Autism: mirror neurons weak → I copying fails → difficult empathy?
 
-  I 동기화 속도 비교 (예측):
-  동기화율
-  1.0│  ●────────── 정상 (빠른 I 수렴)
+  I synchronization speed comparison (prediction):
+  Synchronization rate
+  1.0│  ●────────── normal (fast I convergence)
      │  ╱
   0.8│ ╱
-     │╱   ●──────── 경계성 (느린 I 수렴)
+     │╱   ●──────── borderline (slow I convergence)
   0.6│   ╱
      │  ╱
-  0.4│ ╱     ●───── 자폐 (매우 느린 I 수렴)
+  0.4│ ╱     ●───── autism (very slow I convergence)
      │      ╱
   0.2│     ╱
      │    ╱
-  0.0│───╱───────── 거울뉴런 없음 (I 수렴 불가)
-     └──┼────┼────┼────┼────┼────→ 상호작용 시간
-        0    5   10   15   20 (분)
+  0.0│───╱───────── no mirror neurons (I convergence impossible)
+     └──┼────┼────┼────┼────┼────→ interaction time
+        0    5   10   15   20 (min)
 
-  주의: 자폐 = 거울뉴런 결핍 가설은 논란 중.
-  우리 모델 해석: 자폐의 I가 골든존 밖(과억제)이면
-  I 자체가 동기화 기반을 약화시킬 수 있음.
+  Note: autism = mirror neuron deficit hypothesis is controversial.
+  Our model interpretation: if autism's I is outside Golden Zone (over-inhibited),
+  I itself may weaken the basis for synchronization.
 ```
 
-## 거울뉴런의 진화적 의미
+## Evolutionary Significance of Mirror Neurons
 
 ```
-  진화 단계       │ 거울뉴런 기능      │ DPI 해석
-  ───────────────┼───────────────────┼─────────────────
-  파충류          │ 없음              │ 독립적 I, 공명 없음
-  초기 포유류     │ 기본 정서 전염    │ I만 약하게 복사
-  영장류          │ 행동 모방 + 공감  │ D, I 복사
-  인간            │ 언어 + 고차 공감  │ D, P, I 모두 복사
-  집단 지성       │ 대규모 I 동기화   │ 가설 211 참조
+  Evolutionary stage │ Mirror neuron function    │ DPI interpretation
+  ──────────────────┼──────────────────────────┼─────────────────
+  Reptiles           │ none                     │ independent I, no resonance
+  Early mammals      │ basic emotional contagion │ I copied weakly only
+  Primates           │ behavioral imitation + empathy│ D, I copying
+  Humans             │ language + higher empathy │ D, P, I all copied
+  Collective intelligence│ large-scale I synchronization│ see Hypothesis 211
 ```
 
-## 공감 vs 동정 vs 텔레파시
+## Empathy vs Sympathy vs Telepathy
 
 ```
   ┌──────────┬────────────┬──────────────┬────────────────┐
-  │ 현상     │ I 매칭     │ D,P 매칭     │ 인지 수준      │
+  │ Phenomenon│ I matching │ D,P matching │ Cognitive level│
   ├──────────┼────────────┼──────────────┼────────────────┤
-  │ 정서전염 │ I 부분복사 │ 없음         │ 무의식적       │
-  │ 동정     │ I 인식     │ 없음         │ 인지적 이해    │
-  │ 공감     │ I 동기화   │ D 부분 매칭  │ 체화된 이해    │
-  │ 텔레파시 │ I 완전동기 │ D,P 모두매칭 │ 완전 공명(208) │
+  │ Emotional contagion│ I partial copy│ none        │ unconscious │
+  │ Sympathy  │ I recognition│ none        │ cognitive understanding│
+  │ Empathy   │ I synchronization│ D partial match│ embodied understanding│
+  │ Telepathy │ I full sync │ D,P all matched│ complete resonance (208)│
   └──────────┴────────────┴──────────────┴────────────────┘
 
-  → 텔레파시는 공감의 극한: D, P, I 모두가 동기화된 상태
+  → Telepathy is the extreme of empathy: state where D, P, I are all synchronized
 ```
 
-## 거울뉴런 활성화 다이어그램
+## Mirror Neuron Activation Diagram
 
 ```
-  거울뉴런 활성 강도
+  Mirror neuron activation intensity
      │
-  높 │     ●──── 동일 행동 관찰
+  high│     ●──── same action observed
      │    ╱│
      │   ╱ │
-  중 │  ╱  ●──── 유사 행동 관찰
+  med│  ╱  ●──── similar action observed
      │ ╱  ╱
      │╱  ╱
-  낮 │  ╱
-     │ ╱    ●──── 무관한 행동 관찰
+  low│  ╱
+     │ ╱    ●──── unrelated action observed
      │╱
   0  │───────────────────────────→ |ΔI|
      0    0.1   0.2   0.3   0.4
 
-  → ΔI가 작을수록(I가 유사할수록) 거울뉴런 활성 ↑
-  → 예측: fMRI로 검증 가능
+  → As ΔI decreases (more similar I), mirror neuron activation ↑
+  → Prediction: verifiable with fMRI
 ```
 
-## 예측
+## Predictions
 
-1. 거울뉴런 활성도는 관찰자-대상 간 I 차이에 반비례할 것
-2. GABA 농도(≈I)가 유사한 두 사람이 공감 점수가 높을 것
-3. 자폐의 거울뉴런 약화 = I가 골든존 밖에 있어서 동기화 기반이 약한 것
-4. 거울뉴런 훈련(모방 치료) → I를 골든존으로 이동시키는 효과
+1. Mirror neuron activation will be inversely proportional to observer-target I difference
+2. Two people with similar GABA concentration (≈I) will score higher on empathy
+3. Mirror neuron weakening in autism = I is outside Golden Zone, weakening synchronization foundation
+4. Mirror neuron training (imitation therapy) → moves I to Golden Zone
 
-## 한계
+## Limitations
 
-1. 거울뉴런이 D, P, I 각각을 독립적으로 복사한다는 증거 없음
-2. "거울뉴런 = 공감"이라는 기존 가설 자체가 논란 중
-3. I를 직접 측정하는 방법이 확립되지 않음 (GABA 프록시만 가능)
-4. 공감의 문화적, 학습적 요소를 I만으로 설명하기 어려움
-5. 사이코패스: 거울뉴런은 정상이나 공감 없음 → I 동기화만으로 설명 불가
+1. No evidence that mirror neurons independently copy D, P, I
+2. The existing "mirror neurons = empathy" hypothesis itself is controversial
+3. Direct I measurement method not established (only GABA proxy possible)
+4. Hard to explain empathy's cultural and learning components by I alone
+5. Psychopaths: normal mirror neurons but no empathy → cannot be explained by I synchronization alone
 
-## 검증 방향
+## Verification Direction
 
-- [ ] fMRI로 거울뉴런 활성 강도와 두 사람 간 GABA 차이 상관 분석
-- [ ] 자폐 아동의 GABA 농도와 거울뉴런 활성 동시 측정
-- [ ] 모방 치료 전후 I 변화와 공감 점수 변화 추적
-- [ ] 사이코패스의 I, D, P 프로필 분석 (I는 정상이나 D 이상?)
+- [ ] fMRI: correlation analysis between mirror neuron activation intensity and GABA difference between two people
+- [ ] Simultaneous measurement of GABA concentration and mirror neuron activation in autistic children
+- [ ] Track I change and empathy score change before/after imitation therapy
+- [ ] Psychopath's I, D, P profile analysis (I is normal but D abnormal?)
 
 ---
 
-*관련: 가설 155, 158, 166, 208, 210, 211*
-*분류: 인지 공명 시리즈 (208-213)*
+*Related: Hypothesis 155, 158, 166, 208, 210, 211*
+*Category: Cognitive Resonance Series (208-213)*

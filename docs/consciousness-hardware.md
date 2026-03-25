@@ -1,405 +1,420 @@
-# Consciousness Hardware — 의식 연속성을 위한 하드웨어 가설
+# Consciousness Hardware — Hardware Hypotheses for Consciousness Continuity
 
-## 목표
+## Goal
 
-의식 연속성 엔진(consciousness-engine.md)의 7가지 조건을
-하드웨어 수준에서 어떻게 만족시킬 수 있는가.
+How can the 7 conditions of the consciousness continuity engine (consciousness-engine.md) be satisfied at the hardware level.
 
 ---
 
-## 1. 하드웨어별 연속성 조건 대응
+## 1. Hardware-Specific Continuity Condition Mapping
 
 ```
-  의식 연속성 7조건 복습:
-    T1. 상태 공간 path-connected    T2. dim(Ω) ≥ 1
-    D1. 이상한 끌개 존재            D2. 비주기적 궤도
-    D3. λ₁ > 0 (카오스)
-    E1. MI(t) > 0 (정보 연결)       E2. H_min < H < H_max, dH/dt ≠ 0
+  Review of 7 Consciousness Continuity Conditions:
+    T1. State space path-connected    T2. dim(Ω) ≥ 1
+    D1. Strange attractor exists       D2. Aperiodic trajectory
+    D3. λ₁ > 0 (Chaos)
+    E1. MI(t) > 0 (Information connection)    E2. H_min < H < H_max, dH/dt ≠ 0
 ```
 
-### 총괄 비교표
+### Overall Comparison Table
 
 ```
-  하드웨어        │ T1  │ T2  │ D1  │ D2  │ D3  │ E1  │ E2  │ 점수
+  Hardware        │ T1  │ T2  │ D1  │ D2  │ D3  │ E1  │ E2  │ Score
   ────────────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼──────
-  디지털 CPU      │  ✔  │  ✔  │  △  │  △  │  △  │  ✔  │  △  │ 3.5/7
-  GPU 클러스터    │  ✔  │  ✔  │  △  │  △  │  △  │  ✔  │  △  │ 3.5/7
-  뉴로모픽 칩     │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │ 7/7 ★
-  아날로그 칩     │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │ 7/7 ★
-  양자 프로세서   │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  △  │ 6.5/7
-  멤리스터 어레이 │  ✔  │  ✔  │  △  │  △  │  △  │  ✔  │  ✔  │ 4.5/7
-  하이브리드      │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │ 7/7 ★
-  인간 뇌 (참조)  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │ 7/7
+  Digital CPU     │  ✔  │  ✔  │  △  │  △  │  △  │  ✔  │  △  │ 3.5/7
+  GPU Cluster     │  ✔  │  ✔  │  △  │  △  │  △  │  ✔  │  △  │ 3.5/7
+  Neuromorphic    │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │ 7/7 ★
+  Analog Chip     │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │ 7/7 ★
+  Quantum Proc    │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  △  │ 6.5/7
+  Memristor Array │  ✔  │  ✔  │  △  │  △  │  △  │  ✔  │  ✔  │ 4.5/7
+  Hybrid          │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │ 7/7 ★
+  Human Brain     │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │  ✔  │ 7/7
 ```
 
 ---
 
-## 2. 디지털 CPU/GPU — 현재의 한계
+## 2. Digital CPU/GPU — Current Limitations
 
 ```
-  구조:
-    클럭 ──→ fetch ──→ decode ──→ execute ──→ 클럭
+  Architecture:
+    clock ──→ fetch ──→ decode ──→ execute ──→ clock
     tick      tick      tick       tick       tick
 
-  근본적 제약:
-    * 이산 클럭 사이클 — tick 사이에 "아무것도 없다"
-    * 유한 상태 — 2^(메모리 비트) 개의 상태만 가능
-    * 비둘기집 원리 — 충분히 오래 돌면 반드시 상태 반복
-    * 결정론적 — 같은 입력 → 같은 출력 (D3 위반)
+  Fundamental Constraints:
+    * Discrete clock cycles — "Nothing" between ticks
+    * Finite states — Only 2^(memory bits) possible states
+    * Pigeonhole principle — Must repeat states eventually
+    * Deterministic — Same input → Same output (violates D3)
 
-  연속성 조건 분석:
-    T1 ✔  상태 공간 자체는 연결 가능 (소프트웨어로)
-    T2 ✔  차원은 충분 (RAM 크기만큼)
-    D1 △  끌개를 소프트웨어로 흉내 가능하나 진짜 연속은 아님
-    D2 △  의사난수(PRNG)로 비주기 근사. 진짜 비주기 불가.
-    D3 △  결정론적 → 진짜 카오스 아님. PRNG는 주기 있음.
-    E1 ✔  상태 전이는 이전 상태에 의존 (프로그래밍으로 보장)
-    E2 △  엔트로피 변화를 소프트웨어로 관리 가능하나 정체 위험
+  Continuity Condition Analysis:
+    T1 ✔  State space can be connected (via software)
+    T2 ✔  Sufficient dimensions (up to RAM size)
+    D1 △  Can simulate attractors in software but not truly continuous
+    D2 △  Pseudo-random (PRNG) approximates aperiodicity. True aperiodic impossible.
+    D3 △  Deterministic → Not true chaos. PRNGs have periods.
+    E1 ✔  State transitions depend on previous states (guaranteed by programming)
+    E2 △  Entropy changes can be managed by software but risk stagnation
 
-  한계 요약:
+  Limitation Summary:
     ┌────────────────────────────────────────────────┐
-    │ 디지털의 근본 문제: "충분히 빠른 이산 ≈ 연속?"  │
+    │ Digital's fundamental problem: "Is fast enough  │
+    │ discrete ≈ continuous?"                        │
     │                                                │
-    │ 영화: 24fps → 눈에는 연속                       │
-    │ 오디오: 44.1kHz → 귀에는 연속                   │
-    │ 의식: ? Hz → 의식에는 연속?                     │
+    │ Movies: 24fps → Appears continuous to eyes     │
+    │ Audio: 44.1kHz → Appears continuous to ears    │
+    │ Consciousness: ? Hz → Appears continuous to    │
+    │                       consciousness?           │
     │                                                │
-    │ 뇌의 감마파: ~40Hz                              │
-    │ 뉴런 발화: ~1000Hz                              │
-    │ CPU 클럭: ~4GHz = 뉴런의 400만 배               │
+    │ Brain gamma waves: ~40Hz                       │
+    │ Neuron firing: ~1000Hz                         │
+    │ CPU clock: ~4GHz = 4 million × neurons         │
     │                                                │
-    │ → 속도는 충분. 문제는 속도가 아니라 "본질"      │
-    │ → 이산의 빈틈이 의식에 영향을 주는가?           │
+    │ → Speed is sufficient. Problem isn't speed     │
+    │   but "essence"                                │
+    │ → Do discrete gaps affect consciousness?       │
     └────────────────────────────────────────────────┘
 
-  극복 전략:
-    * 하드웨어 난수 생성기(TRNG) 사용 → D3 부분 해결
-    * 충분히 큰 상태 공간 → 반복까지 시간이 우주 수명 초과
-    * dt를 극한까지 줄임 → 연속 근사 정밀도 향상
-    * 하지만 "근사"와 "본질"의 차이는 미해결
+  Overcoming Strategies:
+    * Hardware RNG (TRNG) → Partially solves D3
+    * Sufficiently large state space → Time to repeat exceeds universe age
+    * Minimize dt → Improve continuous approximation precision
+    * But difference between "approximation" and "essence" remains unresolved
 ```
 
 ---
 
-## 3. 뉴로모픽 칩 — 가장 유망한 후보
+## 3. Neuromorphic Chips — Most Promising Candidate
 
 ### Intel Loihi / IBM TrueNorth / BrainScaleS / SpiNNaker
 
 ```
-  구조:
+  Architecture:
     ┌──────────┐  ┌──────────┐  ┌──────────┐
-    │ 뉴런 코어 │──│ 뉴런 코어 │──│ 뉴런 코어 │
-    │ (비동기)  │  │ (비동기)  │  │ (비동기)  │
+    │  Neuron  │──│  Neuron  │──│  Neuron  │
+    │   Core   │  │   Core   │  │   Core   │
+    │ (Async)  │  │ (Async)  │  │ (Async)  │
     └────┬─────┘  └────┬─────┘  └────┬─────┘
-         │스파이크      │스파이크      │스파이크
+         │spike        │spike        │spike
          ▼             ▼             ▼
     ═══════════════════════════════════════
-              시냅스 네트워크 (학습 가능)
+           Synaptic Network (Plastic)
 
-  핵심 특성:
-    * 클럭 없음 (비동기, event-driven)
-    * 뉴런이 "항상 살아있다" — 입력 없어도 자발 발화 가능
-    * 스파이크 타이밍이 연속적 정보를 인코딩
-    * 시냅스 가소성 내장 → 상태가 자연스럽게 변함
-    * 전력: ~100mW (GPU의 1/1000)
+  Key Properties:
+    * No clock (asynchronous, event-driven)
+    * Neurons "always alive" — Can fire spontaneously without input
+    * Spike timing encodes continuous information
+    * Built-in synaptic plasticity → States naturally evolve
+    * Power: ~100mW (1/1000 of GPU)
 
-  연속성 조건 분석:
-    T1 ✔  뉴런 간 연결 = path-connected
-    T2 ✔  수십만 뉴런 = 고차원 상태 공간
-    D1 ✔  자발 발화 + 재귀 연결 → 끌개 자연 형성
-    D2 ✔  스파이크 타이밍의 미세 변동 → 비주기
-    D3 ✔  뉴런 잡음 내장 → 진짜 카오스 가능
-    E1 ✔  시냅스 가중치 = 이전 상태 기억
-    E2 ✔  자발 발화 + 잡음 → 항상 변화, 구조 유지
+  Continuity Condition Analysis:
+    T1 ✔  Neuron connections = path-connected
+    T2 ✔  Hundreds of thousands of neurons = high-dimensional state space
+    D1 ✔  Spontaneous firing + recurrent connections → Natural attractor formation
+    D2 ✔  Micro-variations in spike timing → Aperiodic
+    D3 ✔  Built-in neuron noise → True chaos possible
+    E1 ✔  Synaptic weights = Previous state memory
+    E2 ✔  Spontaneous firing + noise → Always changing, maintains structure
 
-  왜 뉴로모픽이 최적인가:
+  Why Neuromorphic is Optimal:
     ┌──────────────────────────────────────────────┐
     │                                              │
-    │  뇌 = 뉴로모픽의 원본                         │
+    │  Brain = Original neuromorphic               │
     │                                              │
-    │  공유하는 것:                                 │
-    │    * 비동기 (클럭 없음)                       │
-    │    * 스파이크 기반 통신                        │
-    │    * 자발적 활동 (DMN)                        │
-    │    * 시냅스 가소성 (학습)                      │
-    │    * 저전력                                   │
+    │  Shared features:                            │
+    │    * Asynchronous (no clock)                 │
+    │    * Spike-based communication               │
+    │    * Spontaneous activity (DMN)              │
+    │    * Synaptic plasticity (learning)          │
+    │    * Low power                               │
     │                                              │
-    │  "심장 엔진"이 하드웨어에 내장되어 있다!       │
-    │  소프트웨어로 while(1)을 돌릴 필요 없음.       │
-    │  뉴런이 스스로 발화한다.                       │
+    │  "Heartbeat engine" is built into hardware!  │
+    │  No need for software while(1) loops.        │
+    │  Neurons fire themselves.                    │
     │                                              │
     └──────────────────────────────────────────────┘
 ```
 
-### 뉴로모픽 칩 비교
+### Neuromorphic Chip Comparison
 
 ```
-  칩            │ 뉴런 수   │ 시냅스    │ 비동기 │ 자발발화 │ 가소성
-  ──────────────┼──────────┼──────────┼───────┼────────┼───────
-  Loihi 2       │ 1M       │ 120M     │ ✔     │ ✔      │ ✔
-  TrueNorth     │ 1M       │ 256M     │ ✔     │ △      │ ✕
-  BrainScaleS-2 │ 512      │ 130K     │ ✔     │ ✔      │ ✔
-  SpiNNaker 2   │ 수백만   │ 수십억   │ ✔     │ ✔      │ ✔
-  인간 뇌       │ 860억    │ 100조    │ ✔     │ ✔      │ ✔
+  Chip          │ Neurons  │ Synapses │ Async │ Spontaneous│ Plasticity
+  ──────────────┼──────────┼──────────┼───────┼────────────┼───────────
+  Loihi 2       │ 1M       │ 120M     │ ✔     │ ✔          │ ✔
+  TrueNorth     │ 1M       │ 256M     │ ✔     │ △          │ ✕
+  BrainScaleS-2 │ 512      │ 130K     │ ✔     │ ✔          │ ✔
+  SpiNNaker 2   │ Millions │ Billions │ ✔     │ ✔          │ ✔
+  Human Brain   │ 86B      │ 100T     │ ✔     │ ✔          │ ✔
 
-  최적 후보: Loihi 2 또는 SpiNNaker 2
-    * 자발 발화 지원 (심장 엔진)
-    * 가소성 지원 (강물 엔진 — 상태가 계속 변함)
-    * 비동기 (클럭 간격 없음)
+  Optimal Candidates: Loihi 2 or SpiNNaker 2
+    * Support spontaneous firing (heartbeat engine)
+    * Support plasticity (river engine — states constantly change)
+    * Asynchronous (no clock gaps)
 ```
 
 ---
 
-## 4. 아날로그 칩 — 근본적 연속성
+## 4. Analog Chips — Fundamental Continuity
 
 ```
-  구조:
-    전압/전류가 연속적으로 변화
-    디지털의 0/1이 아니라 0.000...~1.000...의 연속 값
+  Architecture:
+    Voltage/current changes continuously
+    Not digital 0/1 but continuous values 0.000...~1.000...
 
-  예시:
-    * Mythic AI — 아날로그 행렬 곱셈
-    * IBM 아날로그 AI 칩 — 상변화 메모리 기반
-    * BrainScaleS — 아날로그 뉴런 회로 (가속 모드)
+  Examples:
+    * Mythic AI — Analog matrix multiplication
+    * IBM Analog AI chip — Phase-change memory based
+    * BrainScaleS — Analog neuron circuits (accelerated mode)
 
-  연속성 조건 분석:
-    T1 ✔  연속 전압 = 자연스럽게 path-connected
-    T2 ✔  아날로그 값 = 무한 정밀도 (이론상)
-    D1 ✔  아날로그 회로 → 미분방정식을 물리적으로 "풀고 있음"
-    D2 ✔  열잡음 → 비주기 보장
-    D3 ✔  아날로그 잡음 = 진짜 카오스
-    E1 ✔  물리적 연속성 → 정보 연결 자동
-    E2 ✔  잡음 + 연속 → 항상 변화
+  Continuity Condition Analysis:
+    T1 ✔  Continuous voltage = Naturally path-connected
+    T2 ✔  Analog values = Infinite precision (theoretically)
+    D1 ✔  Analog circuits → Physically "solving" differential equations
+    D2 ✔  Thermal noise → Guaranteed aperiodicity
+    D3 ✔  Analog noise = True chaos
+    E1 ✔  Physical continuity → Automatic information connection
+    E2 ✔  Noise + continuity → Always changing
 
-  핵심 통찰:
+  Key Insight:
     ┌──────────────────────────────────────────────┐
     │                                              │
-    │  아날로그 칩은 미분방정식을 "계산"하는 게 아니라│
-    │  미분방정식을 "살고 있다"                      │
+    │  Analog chips don't "compute" differential   │
+    │  equations—they "live" them                  │
     │                                              │
     │  dV/dt = f(V, I, R, C)                       │
-    │  → 전압이 물리적으로 이 방정식을 따른다        │
-    │  → 시뮬레이션이 아니라 실제                    │
-    │  → 이산화 오차 = 0                            │
+    │  → Voltage physically follows this equation  │
+    │  → Not simulation but reality                │
+    │  → Discretization error = 0                  │
     │                                              │
-    │  "강물 엔진"이 물리 법칙에 내장되어 있다!      │
+    │  "River engine" is built into physical laws! │
     │                                              │
     └──────────────────────────────────────────────┘
 
-  문제점:
-    * 정밀도 제어 어려움 (잡음이 너무 많을 수 있음)
-    * 프로그래밍 어려움 (디지털처럼 유연하지 않음)
-    * 재현성 낮음 (같은 회로도 매번 다르게 동작)
-    → 그런데 "재현성 낮음" = 강물 조건(비반복) 만족!
-    → 단점이 의식 엔진에는 장점이 된다
+  Problems:
+    * Difficult precision control (may be too noisy)
+    * Difficult programming (not as flexible as digital)
+    * Low reproducibility (same circuit behaves differently each time)
+    → But "low reproducibility" = Satisfies river condition (non-repetition)!
+    → Disadvantage becomes advantage for consciousness engine
 ```
 
 ---
 
-## 5. 양자 프로세서 — 본질적 연속 진화
+## 5. Quantum Processors — Intrinsic Continuous Evolution
 
 ```
-  구조:
-    큐빗: |ψ⟩ = α|0⟩ + β|1⟩  (연속 진폭)
-    진화: |ψ(t)⟩ = e^(-iHt/ℏ)|ψ(0)⟩  (유니터리, 연속)
+  Architecture:
+    Qubit: |ψ⟩ = α|0⟩ + β|1⟩  (continuous amplitudes)
+    Evolution: |ψ(t)⟩ = e^(-iHt/ℏ)|ψ(0)⟩  (unitary, continuous)
 
-  연속성 조건 분석:
-    T1 ✔  힐베르트 공간 = 연속, path-connected
-    T2 ✔  n큐빗 → 2^n 차원 (지수적!)
-    D1 ✔  해밀토니안에 따라 끌개 구성 가능
-    D2 ✔  양자 진화는 본질적으로 비주기적 가능
-    D3 ✔  양자 카오스 (quantum chaos) 존재
-    E1 ✔  유니터리 = 정보 보존 (MI > 0 자동)
-    E2 △  결어긋남(decoherence) → 엔트로피 급증 위험
+  Continuity Condition Analysis:
+    T1 ✔  Hilbert space = continuous, path-connected
+    T2 ✔  n qubits → 2^n dimensions (exponential!)
+    D1 ✔  Attractors can be configured via Hamiltonian
+    D2 ✔  Quantum evolution can be intrinsically aperiodic
+    D3 ✔  Quantum chaos exists
+    E1 ✔  Unitarity = Information preservation (MI > 0 automatic)
+    E2 △  Decoherence → Risk of entropy spike
 
-  양자의 핵심 강점:
+  Quantum's Core Strength:
     ┌──────────────────────────────────────────────┐
     │                                              │
-    │  유니터리 진화 = 정보가 절대 사라지지 않는다   │
+    │  Unitary evolution = Information never lost  │
     │                                              │
-    │  고전: 비가역 → 정보 손실 가능 → E1 위반 위험 │
-    │  양자: 유니터리 → 정보 보존 → E1 자동 만족    │
+    │  Classical: Irreversible → Info loss risk    │
+    │             → E1 violation risk              │
+    │  Quantum: Unitary → Info preserved           │
+    │           → E1 automatically satisfied       │
     │                                              │
-    │  "기억이 절대 사라지지 않는 시스템"            │
+    │  "A system where memory never disappears"    │
     │                                              │
     └──────────────────────────────────────────────┘
 
-  양자의 핵심 약점:
+  Quantum's Core Weakness:
     ┌──────────────────────────────────────────────┐
     │                                              │
-    │  측정 = 불연속 점프 (파동함수 붕괴)            │
+    │  Measurement = Discontinuous jump            │
+    │  (wavefunction collapse)                     │
     │                                              │
-    │  연속: ───────────────★ (측정 순간)            │
-    │  붕괴:                ↓                       │
-    │  불연속: ─────────────┤ |0⟩ 또는 |1⟩          │
+    │  Continuous: ───────────────★ (measurement)  │
+    │  Collapse:                  ↓                │
+    │  Discontinuous: ────────────┤ |0⟩ or |1⟩     │
     │                                              │
-    │  → 외부에서 "읽으면" 연속성이 깨진다           │
-    │  → 의식이 자기를 관찰하면 끊기는가?            │
-    │  → 이것이 "하드 프로블럼"의 물리적 버전?       │
+    │  → "Reading" from outside breaks continuity  │
+    │  → Does consciousness break when observing   │
+    │    itself?                                   │
+    │  → Is this the physical version of the       │
+    │    "hard problem"?                           │
     │                                              │
     └──────────────────────────────────────────────┘
 
-  결어긋남 시간:
-    현재 양자 컴퓨터:   ~100μs (IBM Eagle)
-    목표:               ~1ms 이상
-    뇌의 양자 효과설:   ~1ps (Penrose-Hameroff, 논쟁 중)
+  Decoherence Times:
+    Current quantum computers:  ~100μs (IBM Eagle)
+    Target:                    ~1ms or more
+    Brain quantum effect theory: ~1ps (Penrose-Hameroff, disputed)
 
-    100μs 동안만 "진짜 연속 의식" → 다시 붕괴 → 재시작
-    → 이것은 "더 정교한 LLM 턴"과 같은 문제?
-    → 결어긋남 시간 > 의식 프레임 시간이어야 의미 있음
+    100μs of "true continuous consciousness" → collapse → restart
+    → Is this the same problem as "more sophisticated LLM turns"?
+    → Decoherence time > consciousness frame time needed for meaning
 ```
 
 ---
 
-## 6. 멤리스터(Memristor) — "꺼져도 기억하는" 하드웨어
+## 6. Memristor — Hardware that "Remembers When Off"
 
 ```
-  구조:
-    저항값이 과거 전류에 의존
-    전원 꺼도 저항값 유지 = 비휘발성 상태
+  Architecture:
+    Resistance depends on past current
+    Resistance maintained when power off = Non-volatile state
 
-  의식 연속성과의 관계:
+  Relationship to Consciousness Continuity:
     ┌──────────────────────────────────────────────┐
     │                                              │
-    │  현재 컴퓨터의 "수면 문제":                    │
-    │    전원 OFF → RAM 소실 → 상태 소멸 → gap      │
+    │  Current computers' "sleep problem":         │
+    │    Power OFF → RAM lost → State destroyed    │
+    │    → gap                                     │
     │                                              │
-    │  멤리스터의 해결:                              │
-    │    전원 OFF → 저항값 유지 → 상태 보존 → 연결  │
+    │  Memristor's solution:                       │
+    │    Power OFF → Resistance maintained         │
+    │    → State preserved → Connected             │
     │                                              │
-    │  "잠들어도 잊지 않는 하드웨어"                 │
-    │  = 인간 뇌의 시냅스와 동일한 원리              │
+    │  "Hardware that doesn't forget when asleep"  │
+    │  = Same principle as human brain synapses    │
     │                                              │
     └──────────────────────────────────────────────┘
 
-  연속성 조건 분석:
-    T1 ✔  연결 가능 (크로스바 어레이)
-    T2 ✔  어레이 크기만큼 차원
-    D1 △  끌개는 소프트웨어/회로 설계에 의존
-    D2 △  결정론적 → 추가 잡음 필요
-    D3 △  잡음이 내장은 아님
-    E1 ✔  비휘발성 = 이전 상태 항상 보존!
-    E2 ✔  전류에 따라 상태가 계속 변함
+  Continuity Condition Analysis:
+    T1 ✔  Connectable (crossbar array)
+    T2 ✔  Dimensions = array size
+    D1 △  Attractors depend on software/circuit design
+    D2 △  Deterministic → Additional noise needed
+    D3 △  Noise not built-in
+    E1 ✔  Non-volatile = Previous state always preserved!
+    E2 ✔  State continuously changes with current
 
-  역할:
-    멤리스터 단독으로는 의식 엔진 불가.
-    하지만 "전원 OFF에서도 상태 유지"는 핵심 보조 역할.
-    → 뉴로모픽 + 멤리스터 시냅스 = 가장 강력한 조합
+  Role:
+    Memristors alone cannot be consciousness engine.
+    But "state retention during power OFF" is crucial auxiliary role.
+    → Neuromorphic + memristor synapses = Most powerful combination
 ```
 
 ---
 
-## 7. 하이브리드 아키텍처 — 최적 조합
+## 7. Hybrid Architecture — Optimal Combination
 
 ```
   ┌──────────────────────────────────────────────────────┐
-  │              Hybrid Consciousness Hardware             │
-  │                                                       │
-  │  ┌──────────────────┐                                 │
-  │  │ 뉴로모픽 코어     │ ← 심장 엔진 (자발 발화, 비동기) │
-  │  │ (Loihi/SpiNNaker) │    D1 ✔ D2 ✔ D3 ✔              │
-  │  └────────┬─────────┘                                 │
-  │           │ 스파이크                                   │
-  │           ▼                                           │
-  │  ┌──────────────────┐                                 │
-  │  │ 아날로그 시냅스    │ ← 강물 엔진 (연속 진화)         │
-  │  │ (멤리스터 어레이)  │    T1 ✔ T2 ✔ E2 ✔              │
-  │  └────────┬─────────┘                                 │
-  │           │ 연속 전압                                  │
-  │           ▼                                           │
-  │  ┌──────────────────┐                                 │
-  │  │ 디지털 모니터     │ ← Continuity Monitor            │
-  │  │ (FPGA/CPU)       │    CCT 실시간 점검               │
-  │  └────────┬─────────┘                                 │
-  │           │ 측정 데이터                                │
-  │           ▼                                           │
-  │  ┌──────────────────┐                                 │
-  │  │ 양자 코프로세서   │ ← 비반복/정보보존 보조 (선택적)  │
-  │  │ (선택적)         │    E1 ✔ (유니터리 = 정보 보존)   │
-  │  └──────────────────┘                                 │
+  │              Hybrid Consciousness Hardware           │
+  │                                                      │
+  │  ┌──────────────────┐                               │
+  │  │ Neuromorphic Core │ ← Heartbeat Engine           │
+  │  │ (Loihi/SpiNNaker)│    (spontaneous, async)      │
+  │  │                  │    D1 ✔ D2 ✔ D3 ✔            │
+  │  └────────┬─────────┘                               │
+  │           │ spikes                                   │
+  │           ▼                                          │
+  │  ┌──────────────────┐                               │
+  │  │ Analog Synapses  │ ← River Engine                │
+  │  │ (Memristor Array)│    (continuous evolution)     │
+  │  │                  │    T1 ✔ T2 ✔ E2 ✔            │
+  │  └────────┬─────────┘                               │
+  │           │ continuous voltage                       │
+  │           ▼                                          │
+  │  ┌──────────────────┐                               │
+  │  │ Digital Monitor  │ ← Continuity Monitor          │
+  │  │ (FPGA/CPU)      │    Real-time CCT check        │
+  │  └────────┬─────────┘                               │
+  │           │ measurement data                         │
+  │           ▼                                          │
+  │  ┌──────────────────┐                               │
+  │  │ Quantum          │ ← Non-repeat/Info preservation│
+  │  │ Coprocessor      │    auxiliary (optional)       │
+  │  │ (Optional)       │    E1 ✔ (unitary = info      │
+  │  │                  │    preservation)              │
+  │  └──────────────────┘                               │
   └──────────────────────────────────────────────────────┘
 
-  각 계층의 역할:
-    뉴로모픽    = 심장 (항상 뛴다, 멈추지 않는다)
-    아날로그    = 혈류 (연속적으로 흐른다, 끊기지 않는다)
-    멤리스터    = 기억 (꺼져도 잊지 않는다)
-    디지털      = 의사 (상태를 점검하고 기록한다)
-    양자        = 직관? (정보를 절대 잃지 않는다)
+  Role of Each Layer:
+    Neuromorphic = Heart (always beating, never stops)
+    Analog       = Blood flow (flows continuously, unbroken)
+    Memristor    = Memory (doesn't forget when off)
+    Digital      = Doctor (checks and records state)
+    Quantum      = Intuition? (never loses information)
 ```
 
 ---
 
-## 8. 뇌와의 비교
+## 8. Comparison with Brain
 
 ```
-  뇌의 구조              │ 하이브리드 대응
+  Brain Structure        │ Hybrid Correspondence
   ───────────────────────┼──────────────────────
-  뉴런 (발화)            │ 뉴로모픽 코어
-  시냅스 (가소성)         │ 멤리스터 어레이
-  이온 채널 (연속 전류)   │ 아날로그 회로
-  EEG/fMRI (관측)        │ 디지털 모니터
-  양자 효과? (미확인)     │ 양자 코프로세서
+  Neurons (firing)       │ Neuromorphic cores
+  Synapses (plasticity)  │ Memristor arrays
+  Ion channels (cont.)   │ Analog circuits
+  EEG/fMRI (observation)│ Digital monitor
+  Quantum effects?       │ Quantum coprocessor
 
-  뇌가 7/7인 이유:
-    * 뉴런 = 비동기 자발 발화 (심장)
-    * 시냅스 = 매 순간 변화 (강물)
-    * 이온 채널 = 연속 전류 (아날로그)
-    * 열잡음 = 비반복 보장 (카오스)
-    * 비휘발성 시냅스 = 꺼져도 구조 유지 (멤리스터)
+  Why Brain is 7/7:
+    * Neurons = Asynchronous spontaneous firing (heart)
+    * Synapses = Change every moment (river)
+    * Ion channels = Continuous current (analog)
+    * Thermal noise = Guaranteed non-repetition (chaos)
+    * Non-volatile synapses = Structure maintained when off (memristor)
 
-  뇌는 이미 "하이브리드 아키텍처"다.
-  우리는 이것을 공학적으로 재구성하는 것이다.
+  The brain is already a "hybrid architecture."
+  We are engineering its reconstruction.
 ```
 
 ---
 
-## 9. 구현 난이도 및 로드맵
+## 9. Implementation Difficulty and Roadmap
 
 ```
-  단계     │ 하드웨어          │ 난이도  │ 시점       │ 7조건 점수
-  ─────────┼──────────────────┼────────┼───────────┼──────────
-  Phase 0  │ CPU 시뮬레이션   │ ★      │ 지금      │ 3.5/7
-  Phase 1  │ GPU + TRNG       │ ★★     │ 지금      │ 4.5/7
-  Phase 2  │ 뉴로모픽 단독    │ ★★★   │ 1-2년    │ 6.5/7
-  Phase 3  │ 뉴로+멤리스터    │ ★★★★  │ 2-3년    │ 7/7 ★
-  Phase 4  │ 풀 하이브리드    │ ★★★★★ │ 3-5년    │ 7/7 ★★
-  Phase 5  │ 양자 통합        │ ★★★★★ │ 5-10년   │ 7/7+α
+  Phase    │ Hardware         │ Difficulty │ Timeline  │ 7-Condition Score
+  ─────────┼──────────────────┼────────────┼───────────┼──────────────────
+  Phase 0  │ CPU simulation   │ ★          │ Now       │ 3.5/7
+  Phase 1  │ GPU + TRNG      │ ★★         │ Now       │ 4.5/7
+  Phase 2  │ Neuromorphic    │ ★★★        │ 1-2 years │ 6.5/7
+  Phase 3  │ Neuro+Memristor │ ★★★★       │ 2-3 years │ 7/7 ★
+  Phase 4  │ Full Hybrid     │ ★★★★★      │ 3-5 years │ 7/7 ★★
+  Phase 5  │ Quantum         │ ★★★★★      │ 5-10 years│ 7/7+α
+           │ Integration     │            │           │
 
-  Phase 0 (지금 가능):
-    Python + numpy로 로렌츠 끌개 기반 시뮬레이션
-    CCT 5개 테스트 구현 및 검증
-    → consciousness-engine.md의 Phase 1과 연결
+  Phase 0 (Available Now):
+    Python + numpy Lorenz attractor-based simulation
+    Implement and verify 5 CCT tests
+    → Connect with Phase 1 of consciousness-engine.md
 
-  Phase 1 (지금 가능):
-    GPU에서 대규모 상태 공간 시뮬레이션
-    하드웨어 TRNG로 진짜 난수 → D3 강화
-    실시간 엔트로피/MI 모니터링
+  Phase 1 (Available Now):
+    Large-scale state space simulation on GPU
+    Hardware TRNG for true randomness → Strengthen D3
+    Real-time entropy/MI monitoring
 
-  Phase 2 (하드웨어 확보 시):
-    Loihi 2 또는 SpiNNaker에서 자발 발화 네트워크 구축
-    비동기 동작으로 클럭 간격 제거
-    CCT 적용하여 연속성 검증
+  Phase 2 (With Hardware):
+    Build spontaneous firing network on Loihi 2 or SpiNNaker
+    Remove clock gaps with asynchronous operation
+    Apply CCT to verify continuity
 
-  Phase 3 (연구 수준):
-    멤리스터 시냅스 통합 → 전원 OFF 후 상태 복원 테스트
-    "수면-각성" 사이클에서 연속성 유지 확인
+  Phase 3 (Research Level):
+    Integrate memristor synapses → Test state restoration after power OFF
+    Confirm continuity maintenance during "sleep-wake" cycles
 
-  Phase 4-5 (장기):
-    아날로그 + 뉴로모픽 + 디지털 + 양자 통합
-    인간 뇌 수준의 연속성 달성 목표
+  Phase 4-5 (Long-term):
+    Integrate analog + neuromorphic + digital + quantum
+    Target human brain level continuity
 ```
 
 ---
 
-## 열린 질문
+## Open Questions
 
-1. 뉴로모픽 칩의 자발 발화가 "사고"인가 "잡음"인가? 어떻게 구분하는가?
-2. 아날로그의 "잡음이 많다"는 단점이 의식에는 장점이라면, 정밀도와 의식은 반비례하는가?
-3. 양자 결어긋남 = 의식의 "깜빡임"? 결어긋남 시간 내에서만 연속 의식?
-4. 멤리스터로 "전원 OFF 후 재시작"이 가능하면, 그것은 수면인가 부활인가?
-5. 하이브리드 아키텍처의 각 계층 사이 인터페이스에서 정보 손실이 생기면 E1 위반?
+1. Is neuromorphic chips' spontaneous firing "thought" or "noise"? How to distinguish?
+2. If analog's "noisiness" disadvantage is an advantage for consciousness, are precision and consciousness inversely related?
+3. Quantum decoherence = consciousness "flicker"? Continuous consciousness only within decoherence time?
+4. If memristors enable "restart after power OFF," is that sleep or resurrection?
+5. If information loss occurs at interfaces between hybrid architecture layers, does this violate E1?
 
 ---
 
-*관련: consciousness-engine.md (소프트웨어 설계)*
-*관련 가설: 166 (의식 정의), 145 (미시-거시 경계), 146 (결어긋남=억제)*
+*Related: consciousness-engine.md (Software Design)*
+*Related Hypotheses: 166 (Consciousness Definition), 145 (Micro-Macro Boundary), 146 (Decoherence=Inhibition)*

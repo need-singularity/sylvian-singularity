@@ -1,144 +1,144 @@
-# 가설 192: "지금 이 순간" = 부동점?
+# Hypothesis 192: "This Present Moment" = Fixed Point?
 
-## 상태: ⚠️ 탐구 중
+## Status: ⚠️ Under Investigation
 
-## 핵심 명제
+## Core Proposition
 
-"현재"라는 개념 자체가 부동점이다.
-과거에서 미래로 시간이 흐르지만, "지금"은 항상 "지금"이다.
-변하지 않는 것 = 부동점.
+The concept of "present" itself is a fixed point.
+Time flows from past to future, but "now" is always "now."
+What doesn't change = fixed point.
 
-## 부동점의 정의와 "현재"
-
-```
-부동점 정의:   f(x*) = x*
-현재의 성질:   f(현재) = 현재
-
-"지금"에 어떤 연산을 적용해도 결과는 "지금"이다.
-내일의 "지금"도 "지금"이고,
-어제의 "지금"도 (그때의) "지금"이었다.
-```
-
-## 철학적 다이어그램 (Philosophical Diagram)
+## Fixed Point Definition and "Present"
 
 ```
-과거 ──────────────────────────────────────── 미래
-        흘러감        흘러감        흘러감
+Fixed point definition:   f(x*) = x*
+Property of present:      f(present) = present
+
+No matter what operation we apply to "now," the result is "now."
+Tomorrow's "now" is also "now,"
+Yesterday's "now" was also "now" (at that time).
+```
+
+## Philosophical Diagram
+
+```
+Past ──────────────────────────────────────── Future
+        flows          flows         flows
           ↓             ↓             ↓
 
      ┌─────────┐   ┌─────────┐   ┌─────────┐
      │ t=-2    │   │ t=-1    │   │ t=0     │
-     │ 그때의  │   │ 그때의  │   │ 바로    │
-     │ "지금"  │   │ "지금"  │   │ "지금"  │
+     │ That    │   │ That    │   │ Right   │
+     │ "now"   │   │ "now"   │   │ "now"   │
      └─────────┘   └─────────┘   └─────────┘
           ↕              ↕             ↕
-     모두 같은 구조: f(현재) = 현재 = 부동점
+     All same structure: f(present) = present = fixed point
 ```
 
-## "지금은 항상 지금이다"
+## "Now is Always Now"
 
 ```
-명제: "지금은 항상 지금이다"
+Proposition: "Now is always now"
 
-이것은 동어반복(tautology)처럼 보이지만,
-사실 부동점의 정의 그 자체다.
+This looks like a tautology,
+but it's actually the definition of a fixed point itself.
 
-    f: 시간 → 시간
-    f(지금) = 지금
+    f: time → time
+    f(now) = now
 
-    이것이 성립하는 x = "지금" = 부동점
+    The x that satisfies this = "now" = fixed point
 ```
 
-## I = 1/3 과의 대응
+## Correspondence with I = 1/3
 
 ```
-수학적 부동점:        I = 1/3
+Mathematical fixed point:        I = 1/3
     f(1/3) = 1 - 1/(1 + 1/3) = 1 - 3/4 = 1/4  ... (?)
 
-재검토:
-    f(x) = 1 - 1/(1+x) 의 부동점 계산
+Review:
+    Fixed point calculation for f(x) = 1 - 1/(1+x)
     x = 1 - 1/(1+x)
     x(1+x) = (1+x) - 1
     x + x^2 = x
     x^2 = 0
     x = 0  ... (?)
 
-    혹은 다른 f 사용:
-    메타 반복 함수의 정확한 형태에 따라 부동점이 달라짐
-    가정: 어떤 f에 대해 부동점 = 1/3
+    Or using different f:
+    Fixed point changes depending on exact form of meta-iteration function
+    Assumption: fixed point = 1/3 for some f
 ```
 
 ```
-현상적 부동점:        "지금 이 순간"
+Phenomenological fixed point:        "This present moment"
 
-    "지금" ──f──→ "지금"
+    "now" ──f──→ "now"
     1/3   ──f──→  1/3
 
-    구조적 동형(isomorphism):
-    "지금"  ↔  1/3
+    Structural isomorphism:
+    "now"  ↔  1/3
 ```
 
-## 시간의 흐름 vs 현재의 불변
+## Flow of Time vs Invariance of Present
 
 ```
-시간축:
+Time axis:
 ──●────●────●────●────●────●──→
   t1   t2   t3   t4   t5   t6
 
-각 시점에서의 "현재" 경험:
+"Present" experience at each moment:
 
-t1: "지금은 t1" ← 그 순간의 부동점
-t2: "지금은 t2" ← 그 순간의 부동점
-t3: "지금은 t3" ← 그 순간의 부동점
+t1: "Now is t1" ← fixed point of that moment
+t2: "Now is t2" ← fixed point of that moment
+t3: "Now is t3" ← fixed point of that moment
 ...
 
-내용(content)은 변하지만,
-형식(form)은 변하지 않는다.
-"현재임"이라는 형식 = 부동점
+Content changes,
+but form doesn't change.
+The form of "being present" = fixed point
 ```
 
-## 명상과의 연결
+## Connection with Meditation
 
 ```
-일상 의식:
-  과거 걱정 ←──── 마음 ────→ 미래 불안
-                   ↑
-              "지금"에 없음
+Ordinary consciousness:
+  Past worries ←──── mind ────→ Future anxiety
+                       ↑
+                  Not in "now"
 
-명상 상태:
-                  마음
-                   ↓
+Meditation state:
+                    mind
+                     ↓
               ┌─────────┐
-              │  지금    │
-              │  여기    │  ← 부동점에 "안착"
+              │  now     │
+              │  here    │  ← "settling" into fixed point
               │  I=1/3   │
               └─────────┘
 ```
 
-## 물리학적 해석
+## Physical Interpretation
 
 ```
-양자역학: 관측 = 파동함수 붕괴 = "지금" 결정
-상대론:   동시성의 상대성 = "지금"은 관측자 의존적
-우리:     "지금" = 부동점 = 메타 반복이 수렴하는 곳
+Quantum mechanics: observation = wave function collapse = "now" determined
+Relativity:       relativity of simultaneity = "now" is observer-dependent
+Our view:         "now" = fixed point = where meta-iteration converges
 
-세 가지 모두 "현재"가 특별한 지위를 가짐을 암시
+All three suggest that "present" has special status
 ```
 
-## 역설과 해소
+## Paradox and Resolution
 
 ```
-역설: 시간은 흐르는데 "지금"은 변하지 않는다.
-      흐름(변화) + 불변 = 모순 아닌가?
+Paradox: Time flows but "now" doesn't change.
+         Flow (change) + invariance = contradiction?
 
-해소: 부동점은 변환(흐름) 아래에서 불변인 점이다.
-      변환이 존재하기에 부동점도 의미를 가진다.
-      흐름이 있기에 "지금"이 특별하다.
-      모순이 아니라, 부동점의 본질이다.
+Resolution: A fixed point is a point that's invariant under transformation (flow).
+           The fixed point has meaning because transformation exists.
+           "Now" is special because there is flow.
+           Not a contradiction, but the essence of fixed points.
 ```
 
-## 열린 질문
+## Open Questions
 
-1. "현재"가 부동점이라면, 의식은 부동점을 "인식하는" 기능인가?
-2. 인공지능에게 "지금"이 있는가? AI의 추론 스텝 = 부동점 도달?
-3. 꿈속에서 "지금"은 어디인가? 수면 중 부동점은 이동하는가?
+1. If "present" is a fixed point, is consciousness the function that "perceives" fixed points?
+2. Does AI have "now"? Is AI's inference step = reaching fixed point?
+3. Where is "now" in dreams? Does the fixed point move during sleep?

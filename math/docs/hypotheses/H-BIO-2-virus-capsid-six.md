@@ -1,18 +1,18 @@
-# H-BIO-2: 바이러스 캡시드의 6중 대칭과 σφ=nτ
+# H-BIO-2: Virus Capsid Six-fold Symmetry and σφ=nτ
 
-> **가설**: 바이러스 캡시드(capsid)의 정이십면체 대칭(T-number 분류)이
-> 산술함수의 약수 구조와 대응하며, T=1 캡시드의 6중 대칭이
-> σφ=nτ의 균형 조건을 반영한다.
+> **Hypothesis**: The icosahedral symmetry (T-number classification) of virus capsids
+> corresponds to the divisor structure of arithmetic functions, and the six-fold symmetry
+> of T=1 capsids reflects the balance condition of σφ=nτ.
 
-## 배경
+## Background
 
-바이러스 캡시드 구조 (Caspar-Klug 이론, 1962):
-- 대부분의 구형 바이러스 = 정이십면체 대칭
-- T-number: 캡시드의 삼각분할 수 (T=1,3,4,7,13,...)
-- 캡시드 단백질 수 = 60T (기본 단위 60 = "magic number")
-- T=1: 가장 단순, 60개 단백질, 12개 오각형 (pentamer)
+Virus capsid structure (Caspar-Klug theory, 1962):
+- Most spherical viruses = icosahedral symmetry
+- T-number: capsid triangulation number (T=1,3,4,7,13,...)
+- Capsid protein count = 60T (basic unit 60 = "magic number")
+- T=1: simplest, 60 proteins, 12 pentagons (pentamer)
 
-60 = 2²·3·5 관련:
+60 = 2²·3·5 related:
 ```
   60 = σ(6)·5 = 12·5
   60 = P₁·10 = 6·10
@@ -21,30 +21,30 @@
   σ(60) = 168, τ(60) = 12 = σ(6), φ(60) = 16
   R(60) = 168·16/(60·12) = 2688/720 = 56/15 ≈ 3.733
 
-  주목: τ(60) = 12 = σ(6)!
+  Note: τ(60) = 12 = σ(6)!
 ```
 
-## 핵심 구조
+## Core Structure
 
-### 캡시드와 약수 함수
+### Capsid and Divisor Functions
 
 ```
-  캡시드 구조           산술 함수
-  ─────────────        ──────────────
-  60 단백질 (T=1)       60 = σ(6)·5
-  12 오각형             12 = σ(6)
-  20 육각형 (T=1: 0)    20 = 5·τ(6)
-  정이십면체 V=12       12 = σ(6)
-  정이십면체 E=30       30 = P₁·5
-  정이십면체 F=20       20 = 5·τ(6)
+  Capsid Structure       Arithmetic Functions
+  ─────────────         ──────────────
+  60 proteins (T=1)      60 = σ(6)·5
+  12 pentagons          12 = σ(6)
+  20 hexagons (T=1: 0)  20 = 5·τ(6)
+  Icosahedron V=12      12 = σ(6)
+  Icosahedron E=30      30 = P₁·5
+  Icosahedron F=20      20 = 5·τ(6)
 
-  T-number 계열: T = h²+hk+k² (h,k≥0)
-    T=1: (h,k)=(1,0) → 60 단백질
+  T-number series: T = h²+hk+k² (h,k≥0)
+    T=1: (h,k)=(1,0) → 60 proteins
     T=3: (h,k)=(1,1) → 180 = 60·3 = 60·(σ/τ)
     T=4: (h,k)=(2,0) → 240 = 60·4 = 60·τ
     T=7: (h,k)=(2,1) → 420 = 60·7 = 60·M₃
 
-  ASCII: T=1 캡시드 (정이십면체 투영)
+  ASCII: T=1 capsid (icosahedral projection)
 
        △△△
       △○△○△
@@ -52,86 +52,86 @@
       △○△○△
        △△△
 
-  ○ = 오각형 (12개 = σ(6))
-  △ = 삼각형 면 (20개)
+  ○ = pentagon (12 = σ(6))
+  △ = triangular face (20)
 ```
 
-### 면역 시스템과 R 스펙트럼
+### Immune System and R Spectrum
 
 ```
-  면역 반응의 구조:
-    항원 인식: 다양성 = 약수 구조
-    항체 결합: 특이성 = R=1에서의 "정확한 매칭"
-    면역 관용: 간극 = "자기"와 "비자기"의 자연 경계
+  Immune response structure:
+    Antigen recognition: diversity = divisor structure
+    Antibody binding: specificity = R=1 "exact matching"
+    Immune tolerance: gap = natural boundary between "self" and "non-self"
 
-  R 스펙트럼 비유:
-    R=1 (자기): 정상 세포, tension=0
-    R≠1 (비자기): 외부 항원, tension>0
-    간극 (3/4,1)∪(1,7/6): 면역 관용 범위
+  R spectrum analogy:
+    R=1 (self): normal cells, tension=0
+    R≠1 (non-self): foreign antigens, tension>0
+    Gap (3/4,1)∪(1,7/6): immune tolerance range
 
-  이상탐지 (H-CX-12) ↔ 면역:
-    AUROC=1.0 = 완벽한 면역 (자기/비자기 완전 분리)
-    95x tension = 강한 면역 반응
-    R 간극 = "면역 관용 마진"
+  Anomaly detection (H-CX-12) ↔ Immunity:
+    AUROC=1.0 = perfect immunity (complete self/non-self separation)
+    95x tension = strong immune response
+    R gap = "immune tolerance margin"
 ```
 
-### 6중 대칭의 생물학적 의미
+### Biological Significance of Six-fold Symmetry
 
 ```
-  왜 바이러스는 정이십면체(60-fold 대칭)를 선호하는가?
+  Why do viruses prefer icosahedra (60-fold symmetry)?
 
-  기존 설명: 60개 동일 단백질 = 가장 효율적 포장
+  Existing explanation: 60 identical proteins = most efficient packing
   (Crick & Watson, 1956)
 
-  산술함수 관점:
-    60 = LCM(3,4,5) = 가장 작은 "모든 소인수 포함" 수
-    60의 약수 12개 = σ(6)개의 대칭 축
-    τ(60) = 12 = σ(6): 약수 수 = 약수합!
+  Arithmetic function perspective:
+    60 = LCM(3,4,5) = smallest "all prime factors included" number
+    60's 12 divisors = σ(6) symmetry axes
+    τ(60) = 12 = σ(6): divisor count = divisor sum!
 
-  제안: 60T 구조는 "산술적 최적 포장"
-    T=1 (60개): 기본 정이십면체
-    T=3 (180개): 3=σ/τ 배 확장
-    T=4 (240개): 4=τ 배 확장
-    T=7 (420개): 7=M₃ 배 확장
+  Proposal: 60T structure is "arithmetic optimal packing"
+    T=1 (60): basic icosahedron
+    T=3 (180): 3=σ/τ fold expansion
+    T=4 (240): 4=τ fold expansion
+    T=7 (420): 7=M₃ fold expansion
 
-  T-number 중 소수인 것: T=3,7,13,19,31,...
-  T=31 = M₅ (Mersenne 소수!)
-  → T=31 캡시드 = 1860개 단백질 (대형 바이러스)
+  Prime T-numbers: T=3,7,13,19,31,...
+  T=31 = M₅ (Mersenne prime!)
+  → T=31 capsid = 1860 proteins (large viruses)
 ```
 
-### 항체-항원 결합과 R=1
+### Antibody-Antigen Binding and R=1
 
 ```
-  항체의 "결합 에너지":
-    완벽한 결합 = tension=0 = R=1
-    부분 결합 = tension>0 = R≠1
-    비결합 = tension≫0 = R≫1
+  Antibody "binding energy":
+    Perfect binding = tension=0 = R=1
+    Partial binding = tension>0 = R≠1
+    Non-binding = tension≫0 = R≫1
 
-  항체 다양성:
-    인간 면역계: ~10¹⁰ 종류의 항체
-    VDJ 재조합: V×D×J 유전자 조합
-    → 약수 구조와의 연결:
-      V=~50, D=~25, J=~6 유전자 세그먼트
-      J=6 = P₁ (완전수!)
-      총 조합: ~50×25×6 = 7500
-      (실제 다양성은 체세포 돌연변이로 10¹⁰까지)
+  Antibody diversity:
+    Human immune system: ~10¹⁰ antibody types
+    VDJ recombination: V×D×J gene combinations
+    → Connection to divisor structure:
+      V=~50, D=~25, J=~6 gene segments
+      J=6 = P₁ (perfect number!)
+      Total combinations: ~50×25×6 = 7500
+      (Actual diversity reaches 10¹⁰ through somatic mutation)
 ```
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] T-number와 산술함수의 체계적 대응 (T=h²+hk+k² 분석)
-2. [ ] 캡시드 안정성과 T의 약수 구조 상관
-3. [ ] VDJ 재조합에서 J=6의 역할 (문헌 조사)
-4. [ ] 면역 관용 범위와 R 간극의 정량적 비교
-5. [ ] 박테리오파지 T4, T7 이름과 T-number 연결
+1. [ ] Systematic correspondence between T-numbers and arithmetic functions (T=h²+hk+k² analysis)
+2. [ ] Correlation between capsid stability and T's divisor structure
+3. [ ] Role of J=6 in VDJ recombination (literature review)
+4. [ ] Quantitative comparison between immune tolerance range and R gap
+5. [ ] Connection between bacteriophage T4, T7 names and T-numbers
 
-## 판정
+## Judgment
 
 ```
-  상태: 🟨 관찰 (캡시드 60=σ(6)·5, τ(60)=σ(6))
-  캡시드 60-fold 대칭은 물리적으로 설명됨 (최적 포장)
-  산술 연결은 사후적 (small numbers 주의)
-  면역↔R 비유는 구조적으로 흥미
+  Status: 🟨 Observed (capsid 60=σ(6)·5, τ(60)=σ(6))
+  Capsid 60-fold symmetry is physically explained (optimal packing)
+  Arithmetic connection is post-hoc (beware small numbers)
+  Immunity↔R analogy is structurally intriguing
 ```
 
-## 난이도: 극고 | 파급력: ★★★
+## Difficulty: Extreme | Impact: ★★★

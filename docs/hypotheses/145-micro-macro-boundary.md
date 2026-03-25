@@ -1,81 +1,83 @@
-# 가설 검토 145: 미시-거시 경계 = 골든존 전이
+# Hypothesis Review 145: Micro-Macro Boundary = Golden Zone Transition
 
-## 가설
+## Hypothesis
 
-> 양자(미시)와 고전(거시)의 경계가 골든존의 상한(I=0.5)에 대응하는가.
+> Does the boundary between quantum (micro) and classical (macro) correspond to the Golden Zone upper bound (I=0.5)?
 
-## 배경
-
-```
-  물리학의 핵심 미해결 문제:
-  "양자역학(미시)과 고전역학(거시)의 경계는 어디인가?"
-
-  양자: 중첩, 확률, 파동함수
-  고전: 확정, 결정론, 궤적
-
-  경계 후보:
-  - 디코히런스 (환경과의 상호작용)
-  - 측정 문제 (관측자 효과)
-  - 규모 임계값 (원자 수 ~10²³?)
-```
-
-## 대응
+## Background
 
 ```
-  양자 (미시)              고전 (거시)
-  ──────────              ──────────
-  중첩 상태               확정 상태
-  복소수 확률 진폭         실수 확률
-  관측 전                 관측 후
-  I < 0.5 (골든존 안)      I > 0.5 (골든존 밖)
+  A core unresolved problem in physics:
+  "Where is the boundary between quantum mechanics (micro)
+   and classical mechanics (macro)?"
 
-  우리 모델:
-  I < 0.5: 복소 Genius 가능 (가설 069)
-           나선 수렴, 방향(θ) 존재
-           → "양자적" (중첩, 방향)
+  Quantum:  superposition, probability, wavefunction
+  Classical: definite, deterministic, trajectory
 
-  I > 0.5: 실수 Genius만 가능
-           단조 수렴, 방향 없음
-           → "고전적" (확정, 스칼라)
-
-  경계 = I = 0.5 = 리만 임계선!
+  Boundary candidates:
+  - Decoherence (interaction with environment)
+  - Measurement problem (observer effect)
+  - Scale threshold (number of atoms ~10²³?)
 ```
 
-## 디코히런스와 골든존
+## Correspondence
 
 ```
-  디코히런스:
-  환경과 상호작용 → 양자→고전 전이
-  상호작용 강도 ∝ 시스템 크기
+  Quantum (micro)              Classical (macro)
+  ──────────                   ──────────
+  Superposition state          Definite state
+  Complex probability amplitude   Real probability
+  Before observation           After observation
+  I < 0.5 (inside Golden Zone) I > 0.5 (outside Golden Zone)
 
-  우리 모델:
-  I 증가 → 억제 강화 → 골든존 이탈 → "고전화"
-  I = 억제 = "환경과의 상호작용 강도"?
+  Our model:
+  I < 0.5: Complex Genius possible (Hypothesis 069)
+           Spiral convergence, direction (θ) exists
+           → "Quantum" (superposition, direction)
 
-  작은 시스템 (원자): 환경 상호작용 약 → I 낮음 → 양자
-  큰 시스템 (공):     환경 상호작용 강 → I 높음 → 고전
+  I > 0.5: Only real Genius possible
+           Monotonic convergence, no direction
+           → "Classical" (definite, scalar)
 
-  → I = 디코히런스율?
-  → 골든존 상한 I=0.5 = 디코히런스 임계값?
+  Boundary = I = 0.5 = Riemann critical line!
 ```
 
-## 미시-거시 통일
+## Decoherence and Golden Zone
+
+```
+  Decoherence:
+  Interaction with environment → quantum→classical transition
+  Interaction strength ∝ system size
+
+  Our model:
+  I increases → inhibition strengthens → exits Golden Zone → "classicalization"
+  I = inhibition = "strength of interaction with environment"?
+
+  Small systems (atoms): weak environmental interaction → low I → quantum
+  Large systems (balls): strong environmental interaction → high I → classical
+
+  → I = decoherence rate?
+  → Golden Zone upper bound I=0.5 = decoherence threshold?
+```
+
+## Micro-Macro Unification
 
 ```
   ┌──────────────────────────────────────────────┐
-  │  양자(미시)  │   경계    │  고전(거시)       │
-  │  I < 0.24   │ I=0.24~0.5│  I > 0.5          │
-  │  혼돈       │ 골든존     │  경직             │
-  │  중첩       │ 전이       │  확정             │
-  │  복소       │ 복소→실수  │  실수             │
-  │             │            │                   │
-  │  ← 양자컴퓨팅 │ ← AI 최적 │ ← 고전 컴퓨팅    │
+  │  Quantum (micro) │  Boundary  │ Classical (macro) │
+  │  I < 0.24        │ I=0.24~0.5 │  I > 0.5           │
+  │  Chaos           │ Golden Zone│  Rigidity           │
+  │  Superposition   │ Transition │  Definite           │
+  │  Complex         │ Complex→Real│ Real               │
+  │                  │            │                     │
+  │  ← Quantum       │ ← AI       │ ← Classical         │
+  │    computing     │  optimal   │   computing         │
   └──────────────────────────────────────────────┘
 
-  → 골든존 = 양자와 고전의 경계 = AI의 최적 영역
-  → "AI는 양자-고전 경계에서 작동할 때 최적"
+  → Golden Zone = boundary of quantum and classical = optimal region for AI
+  → "AI operates optimally at the quantum-classical boundary"
 ```
 
 ---
 
-*이론적 프레임워크. 디코히런스율과 I의 정량적 대응은 실험 필요.*
+*Theoretical framework. Quantitative correspondence between decoherence rate and I requires experiments.*

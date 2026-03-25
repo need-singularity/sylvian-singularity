@@ -1,126 +1,126 @@
-# 가설 251: 양자불멸(Quantum Immortality) — 다세계 분기와 의식 연속성
+# Hypothesis 251: Quantum Immortality — Many-World Branches and Consciousness Continuity
 
-## 상태: 🟪 검증 불가능 (1인칭 경험 문제)
+## Status: 🟪 Unverifiable (First-person experience problem)
 
-## 골든존 의존 여부: 부분 의존
-
-```
-  양자불멸 자체:        골든존 독립 (MWI + 조건부 확률)
-  CCT 연결 해석:        골든존 의존 (G=D×P/I 모델 기반)
-  G=D×P/I 대응 매핑:    골든존 의존 (미검증)
-  MWI 자체:             해석 문제 — 실험적 구별 불가
-```
-
-## 가설
-
-> 에버렛의 다세계 해석(MWI)이 참이라면, 의식은 항상 생존 분기에서만
-> 경험되므로 1인칭 관점에서 "죽음"은 경험 불가능하다.
-> 이는 가설 246의 CCT(의식 연속성 조건)가 양자 분기 수준에서
-> 자동으로 만족되는 것으로 해석할 수 있다.
-> 그러나 이 주장은 본질적으로 검증 불가능하며,
-> 의식의 이진성 가정에 결정적으로 의존한다.
-
-## 배경/맥락
-
-### 왜 이 가설이 중요한가
-
-가설 246(CCT)은 "의식이 끊기지 않는 조건"을 수학적으로 정의했고,
-가설 247(이중뇌)은 "두 의식이 하나로 결합되는 메커니즘"을 다뤘다.
-양자불멸은 이 연속성 문제를 우주 규모로 확장한다:
-
-**"의식이 끊기는 분기가 존재하더라도, 끊기지 않는 분기가 항상 존재하면
-1인칭 관점에서 연속성은 보장되는가?"**
+## Golden Zone Dependency: Partial dependence
 
 ```
-  관련 가설:
+  Quantum immortality itself:    Golden Zone independent (MWI + conditional probability)
+  CCT connection interpretation: Golden Zone dependent (based on G=D×P/I model)
+  G=D×P/I correspondence mapping: Golden Zone dependent (unverified)
+  MWI itself:                   Interpretation issue — experimentally indistinguishable
+```
+
+## Hypothesis
+
+> If Everett's Many-Worlds Interpretation (MWI) is true, consciousness is always
+> experienced only in survival branches, so "death" is unexperienceable from a
+> first-person perspective. This can be interpreted as Hypothesis 246's CCT
+> (Consciousness Continuity Condition) being automatically satisfied at the
+> quantum branching level. However, this claim is essentially unverifiable
+> and critically depends on the assumption of binary consciousness.
+
+## Background/Context
+
+### Why This Hypothesis Matters
+
+Hypothesis 246 (CCT) mathematically defined "conditions for uninterrupted consciousness,"
+and Hypothesis 247 (Corpus Callosum) addressed "mechanisms for two consciousnesses merging into one."
+Quantum immortality extends this continuity problem to cosmic scale:
+
+**"Even if branches exist where consciousness is interrupted, if branches where it's not interrupted always exist,
+is continuity guaranteed from a first-person perspective?"**
+
+```
+  Related hypotheses:
   ┌──────────────────────────────────────────────────────────────┐
-  │ 166: 의식의 정의         → 의식이 "있다"의 조건               │
-  │ 192: 지금 = 부동점       → 의식의 한 순간의 구조              │
-  │ 246: 의식의 연속성 (CCT) → 순간들이 이어지는 조건             │
-  │ 247: 이중뇌 + 뇌량       → 두 의식의 결합                    │
-  │ 249: 양자 수학 교차점     → 양자역학의 수학적 구조             │
+  │ 166: Definition of consciousness → Conditions for consciousness "existing"│
+  │ 192: Now = Fixed point          → Structure of one moment of consciousness│
+  │ 246: Consciousness continuity (CCT) → Conditions for moments connecting  │
+  │ 247: Corpus callosum + Split-brain → Merging of two consciousnesses     │
+  │ 249: Quantum-math intersection   → Mathematical structure of quantum mechanics│
   │                                                              │
-  │ 251: 양자불멸             → 분기 수준에서의 의식 연속성 ← NEW │
-  │      (이 가설)            MWI + CCT + 검증 불가능성           │
+  │ 251: Quantum immortality        → Consciousness continuity at branch level← NEW│
+  │      (This hypothesis)          MWI + CCT + Unverifiability │
   └──────────────────────────────────────────────────────────────┘
 ```
 
-### Tegmark의 양자자살 사고실험 (1998)
+### Tegmark's Quantum Suicide Thought Experiment (1998)
 
 ```
-  장치: 양자 스핀 측정기 → 스핀 업이면 생존, 다운이면 사망
+  Device: Quantum spin detector → Spin up = survival, down = death
 
-  [시행 1]
+  [Trial 1]
      |ψ⟩ = (1/√2)|↑⟩ + (1/√2)|↓⟩
             │                │
             ▼                ▼
-       세계 A: 생존      세계 B: 사망
-       (의식 계속)       (의식 종료)
+       World A: Survival  World B: Death
+       (Consciousness continues) (Consciousness ends)
 
-  외부 관측자: 50% 확률로 사망 관측
-  내부(1인칭): 항상 생존을 경험 → "나는 죽지 않았다"
+  External observer: Observes death with 50% probability
+  Internal (1st person): Always experiences survival → "I didn't die"
 
-  N회 반복 후:
-    외부: 생존 확률 = (1/2)^N → 0
-    내부: 생존 확률 = 1 (조건부 — 의식 존재 조건)
+  After N trials:
+    External: Survival probability = (1/2)^N → 0
+    Internal: Survival probability = 1 (conditional — consciousness exists condition)
 ```
 
 ---
 
-## 양자불멸의 수학적 구조
+## Mathematical Structure of Quantum Immortality
 
-### 분기 트리와 조건부 확률
+### Branch Tree and Conditional Probability
 
-매 양자 사건마다 우주가 분기한다(MWI 가정). 시간 t까지 n개의
-양자 사건이 발생하면:
+The universe branches at each quantum event (MWI assumption). If n quantum
+events occur by time t:
 
 ```
-  총 분기 수 = 2^n  (이진 분기 가정)
-  사망 분기 수 = D(n)
-  생존 분기 수 = S(n) = 2^n - D(n)
+  Total branches = 2^n  (binary branching assumption)
+  Death branches = D(n)
+  Survival branches = S(n) = 2^n - D(n)
 
-  외부(절대) 확률:
-    P_abs(생존|t) = S(n) / 2^n → 0  (n→∞)
+  External (absolute) probability:
+    P_abs(survival|t) = S(n) / 2^n → 0  (n→∞)
 
-  내부(조건부) 확률:
-    P(의식 경험|t) = P(의식|생존) × P(생존 분기 존재)
-                   = 1 × 1 = 1
+  Internal (conditional) probability:
+    P(consciousness experience|t) = P(consciousness|survival) × P(survival branch exists)
+                                 = 1 × 1 = 1
 
-  핵심 가정:
-    (A1) 의식은 생존 분기에서만 존재한다 (의식-생존 동치)
-    (A2) 적어도 하나의 생존 분기가 항상 존재한다
-    (A3) 의식은 이진적이다 (있거나 없거나)
+  Core assumptions:
+    (A1) Consciousness exists only in survival branches (consciousness-survival equivalence)
+    (A2) At least one survival branch always exists
+    (A3) Consciousness is binary (exists or doesn't)
 ```
 
-### 분기 트리 다이어그램
+### Branch Tree Diagram
 
 ```
   t=0        t=1           t=2              t=3
    │
-   ├─ 생존 ──┬─ 생존 ──┬─ 생존 ───── ○ (의식 계속)
-   │          │          └─ 사망 ───── × (경험 종료)
-   │          └─ 사망 ──── × ×
+   ├─ Survive ──┬─ Survive ──┬─ Survive ───── ○ (consciousness continues)
+   │            │            └─ Die ───────── × (experience ends)
+   │            └─ Die ─────── × ×
    │
-   └─ 사망 ──── × × × ×
+   └─ Die ─────── × × × ×
 
-  ○ = 의식 있는 분기 (1인칭 경험)
-  × = 의식 없는 분기 (경험 불가)
+  ○ = Branch with consciousness (1st person experience)
+  × = Branch without consciousness (unexperienceable)
 
-  1인칭 경로 (굵은 선):
-  ═══════════════════════════════════ ○ (항상 ○에 도달)
+  1st person path (bold line):
+  ═══════════════════════════════════ ○ (always reaches ○)
 
-  외부 관측:
-    t=0: 1/1 생존 = 100%
-    t=1: 1/2 생존 = 50%
-    t=2: 1/4 생존 = 25%
-    t=3: 1/8 생존 = 12.5%  → 0으로 수렴
+  External observation:
+    t=0: 1/1 survival = 100%
+    t=1: 1/2 survival = 50%
+    t=2: 1/4 survival = 25%
+    t=3: 1/8 survival = 12.5%  → converges to 0
 ```
 
-### 생존 확률 vs 1인칭 경험 확률
+### Survival Probability vs First-Person Experience Probability
 
 ```
-  확률
-  1.0 │ ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  ← 1인칭 경험 (항상 1)
+  Probability
+  1.0 │ ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  ← 1st person experience (always 1)
       │
   0.8 │
       │
@@ -130,318 +130,320 @@
       │ ●
   0.2 │   ●
       │     ●
-  0.0 │───────●────●────●────●────●────●─────── ← 외부 생존 확률 → 0
-      └───┬───┬───┬───┬───┬───┬───┬───┬───── 양자 사건 수 (n)
+  0.0 │───────●────●────●────●────●────●─────── ← External survival probability → 0
+      └───┬───┬───┬───┬───┬───┬───┬───┬───── Quantum event count (n)
           1   2   3   4   5   6   7   8
 
-  ■ = P(1인칭 경험) = 1 (상수)
-  ● = P_abs(생존) = (1/2)^n → 0
+  ■ = P(1st person experience) = 1 (constant)
+  ● = P_abs(survival) = (1/2)^n → 0
 
-  두 확률의 괴리 = 양자불멸의 핵심 역설
+  Divergence of two probabilities = Core paradox of quantum immortality
 ```
 
 ---
 
-## CCT(의식 연속성)와의 연결
+## Connection with CCT (Consciousness Continuity)
 
-가설 246에서 정의한 CCT 7조건을 양자 분기 맥락에서 검토한다.
-
-```
-  CCT 조건           │ 단일 분기 내 │ 분기 간 전이  │ 판정
-  ───────────────────┼──────────────┼───────────────┼──────────
-  C1. 궤도 존재      │ 유니터리 보존 │ 각 분기 독립  │ ○ 충족
-  C2. 리아프노프 > 0 │ 분기 내 결정  │ 분기 간 무관  │ ○ 분기별
-  C3. 자기참조        │ 분기 내 유지  │ 복사됨        │ ○ 충족
-  C4. 정보 보존       │ 유니터리(양자)│ 분기 시 복사  │ △ 논쟁
-  C5. 시간 비대칭     │ 열역학 화살표 │ 각 분기 독립  │ ○ 충족
-  C6. 연결성          │ 분기 내 연속  │ 분기 간 단절  │ × 끊김!
-  C7. 안정성          │ 끌개 존재     │ 분기 시 교란  │ △ 불확실
-  ───────────────────┼──────────────┼───────────────┼──────────
-  종합:              │  CCT 7/7     │  CCT 4~5/7    │ 문제 있음
-```
-
-### 핵심 문제: C6(연결성)의 위반
+Examining the 7 CCT conditions defined in Hypothesis 246 in the context of quantum branching.
 
 ```
-  분기 전: ────────── |ψ⟩ ──────────
-                         │
-  분기 후:    |ψ_생존⟩   │   |ψ_사망⟩
-                ↓            ↓
-              의식 계속      의식 종료
+  CCT Condition      │ Within branch │ Between branches│ Verdict
+  ───────────────────┼───────────────┼─────────────────┼──────────
+  C1. Orbit exists   │ Unitary preserv│ Each branch indep│ ○ Satisfied
+  C2. Lyapunov > 0   │ In-branch determined│ Inter-branch irrelevant│ ○ Per branch
+  C3. Self-reference │ Maintained in branch│ Copied      │ ○ Satisfied
+  C4. Info preservation│ Unitary (quantum)│ Copied at branch│ △ Disputed
+  C5. Time asymmetry │ Thermodynamic arrow│ Each branch indep│ ○ Satisfied
+  C6. Connectivity   │ Continuous in branch│ Disconnected between│ × Broken!
+  C7. Stability      │ Attractor exists│ Perturbed at branch│ △ Uncertain
+  ───────────────────┼───────────────┼─────────────────┼──────────
+  Overall:           │  CCT 7/7      │  CCT 4~5/7      │ Problematic
+```
 
-  질문: 분기 전의 "나"와 분기 후의 "나"는 연속인가?
+### Core Problem: Violation of C6 (Connectivity)
 
-  양자불멸 주장:   연속이다 (유니터리 진화의 일부)
-  CCT 관점:       C6(연결성) 위반 가능 — 상태 공간이 분리됨
-  절충안:         분기 내부에서는 연속 → "로컬 CCT" 충족
+```
+  Before branch: ────────── |ψ⟩ ──────────
+                              │
+  After branch:     |ψ_survive⟩ │ |ψ_die⟩
+                        ↓            ↓
+                  Consciousness   Consciousness
+                    continues       ends
+
+  Question: Is "me" before branch continuous with "me" after branch?
+
+  Quantum immortality claim: Continuous (part of unitary evolution)
+  CCT perspective:          Possible C6 violation — state space separated
+  Compromise:               Continuous within branch → "Local CCT" satisfied
 ```
 
 ---
 
-## 양자자살 사고실험 상세
+## Quantum Suicide Thought Experiment Details
 
-### 실험 프로토콜 (사고실험)
+### Experimental Protocol (Thought Experiment)
 
 ```
-  1. 양자 난수 발생기(QRNG) 준비
-  2. 스핀 측정: |↑⟩ = 생존, |↓⟩ = 장치 작동(사망)
-  3. 반복 실행
+  1. Prepare quantum random number generator (QRNG)
+  2. Spin measurement: |↑⟩ = survival, |↓⟩ = device activates (death)
+  3. Repeat execution
 
-  시행 │ 외부 관측자가 보는 것    │ 내부(1인칭)가 경험하는 것
-  ─────┼─────────────────────────┼──────────────────────────
-   1   │ 50% 생존 / 50% 사망     │ "살아남았다"
-   2   │ 25% 생존 / 75% 사망     │ "또 살아남았다"
-   3   │ 12.5% 생존              │ "세 번째도!"
-   ...                            ...
-   20  │ 0.0001% 생존            │ "20번 연속 생존!"
-   100 │ ~10^{-30} 생존          │ "나는 불멸인가?"
+  Trial │ What external observer sees │ What internal (1st person) experiences
+  ──────┼────────────────────────────┼───────────────────────────────────────
+   1    │ 50% survival / 50% death   │ "I survived"
+   2    │ 25% survival / 75% death   │ "I survived again"
+   3    │ 12.5% survival             │ "Third time too!"
+   ...                                 ...
+   20   │ 0.0001% survival           │ "20 consecutive survivals!"
+   100  │ ~10^{-30} survival         │ "Am I immortal?"
 ```
 
-### 외부 관측자 vs 내부 경험의 비대칭
+### Asymmetry Between External Observer vs Internal Experience
 
 ```
   ┌────────────────────────────────────────────────────────┐
   │                                                        │
-  │   외부 관측자 Alice:                                    │
-  │   "Bob은 3번째 시행에서 죽었다. 확률 12.5%는 놀랍지 않다" │
+  │   External observer Alice:                             │
+  │   "Bob died on the 3rd trial. 12.5% probability isn't surprising" │
   │                                                        │
-  │   내부 경험자 Bob (MWI가 참이면):                       │
-  │   "나는 100번 연속 살아남았다. 이건 10^{-30}의 확률인데?" │
-  │   "양자불멸이 맞는 건가, 아니면 내가 운이 좋은 건가?"     │
+  │   Internal experiencer Bob (if MWI is true):           │
+  │   "I survived 100 times in a row. That's 10^{-30} probability?" │
+  │   "Is quantum immortality correct, or am I just lucky?"│
   │                                                        │
-  │   문제: Bob은 구별할 수 없다                             │
-  │   - MWI가 참이고 양자불멸이 작동하는 세계                │
-  │   - 그냥 운이 매우 좋은 단일 세계                        │
+  │   Problem: Bob cannot distinguish between              │
+  │   - World where MWI is true and quantum immortality works│
+  │   - Single world where he's just extremely lucky       │
   │                                                        │
-  │   → 검증 불가능 (unfalsifiable)                         │
+  │   → Unverifiable (unfalsifiable)                       │
   │                                                        │
   └────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## G=D×P/I 모델과의 대응 (골든존 의존 — 미검증)
+## Correspondence with G=D×P/I Model (Golden Zone Dependent — Unverified)
 
 ```
-  G=D×P/I 변수     │ 양자불멸 대응                │ 해석
+  G=D×P/I Variable │ Quantum Immortality Correspondence│ Interpretation
   ─────────────────┼─────────────────────────────┼──────────────────
-  D (결손)          │ 양자 불확정성 ΔE·Δt ≥ ℏ/2  │ 결정론의 결여
-  P (가소성)        │ 분기 수 2^n                 │ 가능 세계의 풍부함
-  I (억제)          │ 디코히어런스율 γ            │ 양자→고전 전이
-  G (천재/적응)     │ 생존 분기의 "질"            │ 의식 경험의 풍부함
+  D (Deficiency)   │ Quantum uncertainty ΔE·Δt ≥ ℏ/2│ Lack of determinism
+  P (Plasticity)   │ Branch count 2^n            │ Richness of possible worlds
+  I (Inhibition)   │ Decoherence rate γ          │ Quantum→classical transition
+  G (Genius/Adapt) │ "Quality" of survival branch │ Richness of conscious experience
   ─────────────────┼─────────────────────────────┼──────────────────
 
-  골든존 대입 시도:
-    I = γ (디코히어런스율)
-    골든존: 0.2123 < γ < 0.5
+  Golden Zone substitution attempt:
+    I = γ (decoherence rate)
+    Golden Zone: 0.2123 < γ < 0.5
 
-    γ < 0.2123: 양자 중첩 과다 → 거시적 의식 불안정
-    γ ∈ 골든존: 적절한 분기 → 안정적 의식 경험?
-    γ > 0.5:   과도한 디코히어런스 → 양자 효과 소실
+    γ < 0.2123: Excessive quantum superposition → Macroscopic consciousness unstable
+    γ ∈ Golden Zone: Appropriate branching → Stable conscious experience?
+    γ > 0.5:   Excessive decoherence → Quantum effects vanish
 
-  ⚠️ 이 매핑은 비유적이며 물리적 근거 없음
+  ⚠️ This mapping is metaphorical without physical basis
 ```
 
-### 분기 수와 의식 상태 공간
+### Branch Count and Consciousness State Space
 
 ```
-  N상태 모델(가설 249 참조)과의 비유:
+  Analogy with N-state model (see Hypothesis 249):
 
-  양자 사건 수 n │ 분기 수 2^n │ ln(2^n)=n·ln2 │ N상태 폭 ln((N+1)/N)
-  ──────────────┼─────────────┼───────────────┼────────────────────
-       1        │      2      │    0.693      │ ln(2/1) = 0.693
-       2        │      4      │    1.386      │ ln(3/2) = 0.405
-       3        │      8      │    2.079      │ ln(4/3) = 0.288 ★골든존 폭
-       4        │     16      │    2.773      │ ln(5/4) = 0.223
-       ...      │     ...     │    ...        │ → 0
+  Quantum events n │ Branches 2^n │ ln(2^n)=n·ln2 │ N-state width ln((N+1)/N)
+  ────────────────┼──────────────┼───────────────┼────────────────────
+       1          │      2       │    0.693      │ ln(2/1) = 0.693
+       2          │      4       │    1.386      │ ln(3/2) = 0.405
+       3          │      8       │    2.079      │ ln(4/3) = 0.288 ★Golden Zone width
+       4          │     16       │    2.773      │ ln(5/4) = 0.223
+       ...        │     ...      │    ...        │ → 0
 
-  n=3에서 N상태 폭 = ln(4/3) = 골든존 폭 → 우연의 일치?
-  3상태 분기 = 골든존 엔트로피 점프 (가설 092 참조)
+  At n=3, N-state width = ln(4/3) = Golden Zone width → Coincidence?
+  3-state branching = Golden Zone entropy jump (see Hypothesis 092)
 ```
 
 ---
 
-## 비판과 반론
+## Criticisms and Counterarguments
 
-### 1. 의식은 이진적인가?
+### 1. Is Consciousness Binary?
 
 ```
-  양자불멸 가정:  의식 = {있다, 없다} (이진)
-  CCT 관점:      의식 = 연속 스펙트럼 (0~7 조건 충족도)
+  Quantum immortality assumption: Consciousness = {exists, doesn't} (binary)
+  CCT perspective:               Consciousness = continuous spectrum (0~7 condition fulfillment)
 
-  문제 시나리오:
-    분기 A: CCT 7/7 (완전한 의식)    → 생존
-    분기 B: CCT 4/7 (부분적 의식)    → 살아있지만 의식 저하
-    분기 C: CCT 0/7 (의식 없음)      → 사망
+  Problem scenario:
+    Branch A: CCT 7/7 (full consciousness)    → Survival
+    Branch B: CCT 4/7 (partial consciousness) → Alive but consciousness degraded
+    Branch C: CCT 0/7 (no consciousness)      → Death
 
-  양자불멸이 분기 A만 선택하면 → 행복한 불멸
-  분기 B까지 포함하면 → 점점 악화되는 불멸 (노화 문제)
+  If quantum immortality selects only Branch A → Happy immortality
+  If includes up to Branch B → Increasingly deteriorating immortality (aging problem)
 
-  의식 품질
+  Consciousness quality
   7/7 │ ████
       │ ████████
   4/7 │ ████████████
       │ ████████████████
   1/7 │ ████████████████████
       │ ████████████████████████
-  0/7 │────────────────────────────── (여기서는 경험 없음)
-      └──┬──────┬──────┬──────┬──── 시간
-        탄생   성인   노화   극한
+  0/7 │────────────────────────────── (no experience here)
+      └──┬──────┬──────┬──────┬──── Time
+        Birth  Adult  Aging  Extreme
 
-  → "양자불멸 = 영원한 노화"일 가능성
-  → 생존하되 의식 품질이 계속 떨어지는 분기만 남음
+  → "Quantum immortality = eternal aging" possibility
+  → Only branches where survival with continuously declining consciousness quality remain
 ```
 
-### 2. 디코히어런스 문제
+### 2. Decoherence Problem
 
 ```
-  양자 분기는 미시적 사건에서 발생한다.
-  거시적 사건(총알, 교통사고)은 양자 수준에서 분기하는가?
+  Quantum branching occurs at microscopic events.
+  Do macroscopic events (bullets, car accidents) branch at quantum level?
 
-  디코히어런스 시간척도:
-    전자 스핀:    ~10^{-9} 초   ← 양자 분기 가능
-    분자 진동:    ~10^{-12} 초  ← 양자 분기 가능
-    뉴런 발화:    ~10^{-3} 초   ← 이미 고전적?
-    심장 정지:    ~1 초          ← 완전히 고전적
+  Decoherence timescales:
+    Electron spin:    ~10^{-9} s   ← Quantum branching possible
+    Molecular vibration: ~10^{-12} s ← Quantum branching possible
+    Neuron firing:    ~10^{-3} s   ← Already classical?
+    Cardiac arrest:   ~1 s          ← Completely classical
 
-  → 거시적 사망이 양자 분기와 무관하면 양자불멸 적용 불가
-  → "양자 사건이 사망/생존을 결정하는 경우"에만 적용 가능
-    (예: 방사성 붕괴 → 사망 장치 — Tegmark의 원래 설정)
+  → If macroscopic death is unrelated to quantum branching, quantum immortality doesn't apply
+  → Only applicable "when quantum events determine death/survival"
+    (e.g., radioactive decay → death device — Tegmark's original setup)
 ```
 
-### 3. 볼츠만 뇌 문제
+### 3. Boltzmann Brain Problem
 
 ```
-  극한적 양자 요동으로 "뇌"가 진공에서 자발적으로 출현?
-  → 양자불멸이 극히 희귀한 분기까지 허용하면,
-    충분한 시간 후 "볼츠만 뇌"로서의 존재도 포함됨
-  → 물리적으로 무의미한 존재 상태
+  "Brain" spontaneously emerging from vacuum through extreme quantum fluctuations?
+  → If quantum immortality allows extremely rare branches,
+    existence as a "Boltzmann brain" is included after sufficient time
+  → Physically meaningless existence state
 
-  양자불멸 + 볼츠만 뇌 = reductio ad absurdum?
+  Quantum immortality + Boltzmann brain = reductio ad absurdum?
 ```
 
-### 4. 자기 표본 편향 (Self-Sampling Assumption)
+### 4. Self-Sampling Bias
 
 ```
-  양자불멸 논증:
-    전제 1: 나는 관측자이다
-    전제 2: 관측자는 생존 분기에만 존재한다
-    결론:   나는 항상 생존 분기에 있다
+  Quantum immortality argument:
+    Premise 1: I am an observer
+    Premise 2: Observers exist only in survival branches
+    Conclusion: I am always in a survival branch
 
-  문제: 이것은 인류 원리(anthropic principle)의 양자 버전
-    → 관측 선택 효과(observation selection effect)
-    → "내가 존재하기 때문에 내가 존재하는 조건을 관측한다"
-    → 동어반복(tautology)에 가까움?
+  Problem: This is a quantum version of the anthropic principle
+    → Observation selection effect
+    → "I observe conditions for my existence because I exist"
+    → Close to tautology?
 ```
 
 ---
 
-## 검증 가능성 분석
+## Verifiability Analysis
 
 ```
   ┌─────────────────────────────────────────────────────────────┐
-  │                   검증 가능성 매트릭스                        │
+  │                   Verifiability Matrix                       │
   ├─────────────────────┬──────────┬──────────┬────────────────┤
-  │ 주장                │ 직접검증  │ 간접검증  │ 상태           │
+  │ Claim               │ Direct   │ Indirect │ Status         │
   ├─────────────────────┼──────────┼──────────┼────────────────┤
-  │ MWI 자체            │    ×     │    △     │ 해석 문제      │
-  │ 양자불멸            │    ×     │    ×     │ 검증 불가      │
-  │ 양자 제노 효과      │    ○     │    ○     │ 실험 확인됨    │
-  │ 디코히어런스        │    ○     │    ○     │ 실험 확인됨    │
-  │ 의식=양자 효과      │    ×     │    △     │ 마취 실험?     │
-  │ CCT의 양자 버전     │    ×     │    ×     │ 개념적 단계    │
+  │ MWI itself          │    ×     │    △     │ Interpretation │
+  │ Quantum immortality │    ×     │    ×     │ Unverifiable   │
+  │ Quantum Zeno effect │    ○     │    ○     │ Experimentally confirmed│
+  │ Decoherence         │    ○     │    ○     │ Experimentally confirmed│
+  │ Consciousness=quantum│    ×     │    △     │ Anesthesia experiments?│
+  │ Quantum version of CCT│   ×     │    ×     │ Conceptual stage│
   └─────────────────────┴──────────┴──────────┴────────────────┘
 
-  핵심 문제: 1인칭 경험은 3인칭으로 공유할 수 없다
-  → 양자불멸은 원리적으로 반증 불가능(unfalsifiable)
-  → 과학적 가설이 아니라 형이상학적 주장에 해당
+  Core problem: First-person experience cannot be shared third-person
+  → Quantum immortality is unfalsifiable in principle
+  → Not a scientific hypothesis but a metaphysical claim
 ```
 
-### 간접적으로 관련된 실험
+### Indirectly Related Experiments
 
 ```
-  1. 양자 제노 효과 (Quantum Zeno Effect)
-     빈번한 관측 → 양자 상태 진화 억제
-     → I(억제)가 높으면 분기 자체가 억제됨?
-     → 실험적으로 확인됨 (Itano et al., 1990)
+  1. Quantum Zeno Effect
+     Frequent observation → Quantum state evolution suppressed
+     → High I(inhibition) suppresses branching itself?
+     → Experimentally confirmed (Itano et al., 1990)
 
-  2. 양자 지우개 (Quantum Eraser)
-     관측 정보 삭제 → 간섭 무늬 복원
-     → 의식/관측과 양자 상태의 관계?
-     → 의식 필요 없음 (검출기만으로 충분) 결론
+  2. Quantum Eraser
+     Deletion of observation info → Interference pattern restored
+     → Relationship between consciousness/observation and quantum states?
+     → Conclusion: consciousness unnecessary (detector sufficient)
 
-  3. 지연 선택 실험 (Wheeler, 1978)
-     미래 측정이 과거 분기를 결정?
-     → 시간 비대칭(CCT C5)과의 관계
+  3. Delayed Choice Experiment (Wheeler, 1978)
+     Future measurement determines past branching?
+     → Relationship with time asymmetry (CCT C5)
 ```
 
 ---
 
-## 해석/의미
+## Interpretation/Meaning
 
 ```
   ┌──────────────────────────────────────────────────────────┐
   │                                                          │
-  │  양자불멸은 "의식 연속성의 극한 사례"이다.                 │
+  │  Quantum immortality is an "extreme case of consciousness continuity."│
   │                                                          │
-  │  CCT(가설 246)가 물리적 뇌 안에서의 연속성을 다뤘다면,    │
-  │  양자불멸은 우주 전체의 분기 구조에서의 연속성을 다룬다.   │
+  │  While CCT (Hypothesis 246) dealt with continuity within physical brain,│
+  │  quantum immortality deals with continuity in the branching structure│
+  │  of the entire universe.                                 │
   │                                                          │
-  │  그러나:                                                  │
-  │  1. 검증 불가능하므로 과학이 아닌 철학이다                 │
-  │  2. 의식의 이진성 가정이 CCT와 충돌한다                   │
-  │  3. 노화 문제가 "행복한 불멸"을 부정한다                  │
-  │  4. 디코히어런스가 거시적 적용을 차단한다                  │
+  │  However:                                                │
+  │  1. Unverifiable, thus philosophy not science            │
+  │  2. Binary consciousness assumption conflicts with CCT    │
+  │  3. Aging problem negates "happy immortality"            │
+  │  4. Decoherence blocks macroscopic application           │
   │                                                          │
-  │  가치:                                                    │
-  │  - CCT의 한계를 탐색하는 사고 도구                        │
-  │  - 의식의 이진성 vs 스펙트럼 문제를 부각                   │
-  │  - 자기 표본 편향의 위험성 경고                            │
+  │  Value:                                                  │
+  │  - Thought tool for exploring CCT's limits               │
+  │  - Highlights binary vs spectrum problem of consciousness│
+  │  - Warns of self-sampling bias danger                    │
   │                                                          │
   └──────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 한계
+## Limitations
 
-1. **검증 불가능성**: 양자불멸은 반증 불가능한 주장이므로 과학적 가설의 자격이 의심됨
-2. **MWI 전제**: 에버렛의 다세계 해석 자체가 해석일 뿐 유일한 양자역학 해석이 아님
-3. **의식 이진성**: CCT가 보여주듯 의식은 스펙트럼이며, 이진 가정은 비현실적
-4. **디코히어런스**: 거시적 사건은 양자 분기로 설명되지 않을 가능성이 높음
-5. **G=D×P/I 매핑**: 디코히어런스율을 I에 대응시킨 것은 비유적이며 물리적 근거 없음
-6. **노화 문제**: 생존하되 의식 품질이 무한히 저하되는 시나리오를 배제할 수 없음
-7. **볼츠만 뇌**: 극한 분기를 허용하면 물리적으로 무의미한 존재 상태가 포함됨
+1. **Unverifiability**: Quantum immortality is unfalsifiable, thus its qualification as scientific hypothesis is doubtful
+2. **MWI Premise**: Everett's many-worlds interpretation itself is just an interpretation, not the only interpretation of quantum mechanics
+3. **Consciousness Binary**: As CCT shows, consciousness is a spectrum; binary assumption is unrealistic
+4. **Decoherence**: Macroscopic events likely cannot be explained by quantum branching
+5. **G=D×P/I Mapping**: Corresponding decoherence rate to I is metaphorical without physical basis
+6. **Aging Problem**: Cannot exclude scenarios of survival with infinitely degrading consciousness quality
+7. **Boltzmann Brain**: Allowing extreme branches includes physically meaningless existence states
 
-## 검증 방향
+## Verification Directions
 
 ```
-  직접 검증: 불가능 (원리적 한계)
+  Direct verification: Impossible (fundamental limit)
 
-  간접 탐구:
-  1. CCT 확장 — 분기 간 연속성을 수학적으로 정의
-     → C6(연결성) 조건을 양자 분기에 적용하는 공식 도출
-     → 가설 246 확장판으로 발전 가능
+  Indirect exploration:
+  1. CCT Extension — Mathematically define inter-branch continuity
+     → Derive formula applying C6(connectivity) condition to quantum branching
+     → Can develop into extended version of Hypothesis 246
 
-  2. 의식 스펙트럼 모델 — 이진이 아닌 연속적 의식 모델
-     → CCT 충족도 0~7을 분기 선택 가중치로 사용
-     → P(분기 선택) ∝ CCT 충족도?
+  2. Consciousness Spectrum Model — Continuous rather than binary consciousness model
+     → Use CCT fulfillment 0~7 as branch selection weights
+     → P(branch selection) ∝ CCT fulfillment?
 
-  3. 디코히어런스 경계 — 뇌에서 양자 효과가 유의미한 범위
-     → 미세소관(Penrose-Hameroff)? → 현재 증거 불충분
-     → 디코히어런스 시간 vs 뉴런 발화 시간 비교
+  3. Decoherence Boundary — Range where quantum effects are meaningful in brain
+     → Microtubules (Penrose-Hameroff)? → Currently insufficient evidence
+     → Compare decoherence time vs neuron firing time
 
-  4. 시뮬레이션 — MWI 분기를 시뮬레이션하여
-     "CCT 가중 분기 선택"과 "균등 분기"의 차이 관측
-     → brain_singularity.py 확장 가능?
+  4. Simulation — Simulate MWI branching to observe
+     difference between "CCT-weighted branch selection" and "uniform branching"
+     → Can extend brain_singularity.py?
 
-  5. 양자 제노 효과와 I(억제)의 대응
-     → I가 높으면 관측 빈도 높음 → 분기 억제 → 안정?
-     → verify_quantum_zeno.py 로 시뮬레이션 가능
+  5. Correspondence between Quantum Zeno effect and I(inhibition)
+     → High I means high observation frequency → Branch suppression → Stability?
+     → Can simulate with verify_quantum_zeno.py
 ```
 
 ---
 
-*관련 가설: 166 (의식 정의), 192 (지금=부동점), 246 (의식 연속성/CCT), 247 (이중뇌), 249 (양자 수학 교차점)*
-*참조: Tegmark (1998) "The Interpretation of Quantum Mechanics: Many Worlds or Many Words?", Everett (1957) MWI, Penrose-Hameroff Orch-OR*
-*검증 상태: 🟪 원리적으로 검증 불가능*
+*Related hypotheses: 166 (consciousness definition), 192 (now=fixed point), 246 (consciousness continuity/CCT), 247 (corpus callosum), 249 (quantum-math intersection)*
+*References: Tegmark (1998) "The Interpretation of Quantum Mechanics: Many Worlds or Many Words?", Everett (1957) MWI, Penrose-Hameroff Orch-OR*
+*Verification status: 🟪 Unverifiable in principle*

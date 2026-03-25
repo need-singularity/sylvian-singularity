@@ -1,37 +1,37 @@
-# H354: Color Vision의 6각 구조는 완전수 6의 산술에서 유래한다
+# H354: Hexagonal Architecture of Color Vision Derives from the Arithmetic of Perfect Number 6
 
-## 가설
+## Hypothesis
 
-> 인간 색각 시스템은 6각(hexagonal) 대칭을 가진다: 3종 추체(L,M,S)가
-> 3쌍의 반대색 채널(R-G, Y-B, W-K)로 변환되어 총 6개 색각 endpoint를
-> 형성한다. HSV 색상환은 정확히 6개 sextant로 분할된다.
-> 이 구조가 σ(6)/τ(6) = 3 (추체 수), τ(6)/φ(6) = 2 (이중성),
-> 6 = P₁ (반대색 endpoint 수)와 정확히 대응한다.
+> The human color vision system has hexagonal symmetry: 3 cone types (L,M,S) are
+> transformed into 3 pairs of opponent color channels (R-G, Y-B, W-K) forming a total of 6 color endpoints.
+> The HSV color wheel is divided into exactly 6 sextants.
+> This structure corresponds precisely to σ(6)/τ(6) = 3 (cone count), τ(6)/φ(6) = 2 (duality),
+> 6 = P₁ (opponent color endpoint count).
 
-## 상태: 관찰적 (🟨)
+## Status: Observational (🟨)
 
-수학적 사실은 정확. 색각과의 대응은 구조적 관찰이며 인과관계 미확인.
+Mathematical facts are accurate. Correspondence with color vision is structural observation with causality unconfirmed.
 
-## 배경
+## Background
 
-### 색각의 이중 과정 이론 (Dual Process Theory)
+### Dual Process Theory of Color Vision
 
-인간 색각은 두 단계로 작동한다:
+Human color vision operates in two stages:
 
-**1단계 — 추체 (Young-Helmholtz, 1802/1867)**
-- L-추체: ~564nm (적), M-추체: ~534nm (녹), S-추체: ~420nm (청)
-- 추체 수 = 3 = σ(6)/τ(6) = 약수 평균
+**Stage 1 — Cones (Young-Helmholtz, 1802/1867)**
+- L-cone: ~564nm (red), M-cone: ~534nm (green), S-cone: ~420nm (blue)
+- Cone count = 3 = σ(6)/τ(6) = divisor average
 
-**2단계 — 반대색 채널 (Hering, 1878)**
-- R-G 채널: L - M (적-녹 반대)
-- Y-B 채널: (L+M) - S (황-청 반대)
-- W-K 채널: L + M + S (명-암)
-- 반대색 endpoint = 6 = P₁ = 첫째 완전수
+**Stage 2 — Opponent Color Channels (Hering, 1878)**
+- R-G channel: L - M (red-green opponent)
+- Y-B channel: (L+M) - S (yellow-blue opponent)
+- W-K channel: L + M + S (white-black)
+- Opponent color endpoints = 6 = P₁ = first perfect number
 
-### HSV/HSL 색상 모델의 6-Sextant 구조
+### 6-Sextant Structure of HSV/HSL Color Model
 
 ```
-  색상환 (0° ~ 360°):
+  Color wheel (0° ~ 360°):
 
        0° Red
       /    \
@@ -44,90 +44,90 @@
       180° Cyan
 
   6 sextants × 60° = 360°
-  sextant 각도 = 360/P₁ = 60°
+  sextant angle = 360/P₁ = 60°
 ```
 
-각 sextant은 정확히 360/6 = 60도를 차지한다.
+Each sextant occupies exactly 360/6 = 60 degrees.
 
-### 약수함수와 색상 조화
+### Divisor Functions and Color Harmony
 
-| 조화 유형 | 각도 | 공식 | 색상 이론 |
-|-----------|------|------|-----------|
-| 보색 | 180° | 360/φ(6) | 반대편 색 (최대 대비) |
-| 직각 사분 | 90° | 360/τ(6) | 4색 조화 (정사각형) |
-| 삼색 조화 | 60° | 360/P₁ | 6각 sextant 경계 |
-| 유사색 | 30° | 360/σ(6) | 인접 색조 간격 |
+| Harmony Type | Angle | Formula | Color Theory |
+|-------------|-------|---------|--------------|
+| Complementary | 180° | 360/φ(6) | Opposite color (max contrast) |
+| Square | 90° | 360/τ(6) | 4-color harmony (square) |
+| Triadic | 60° | 360/P₁ | Hexagonal sextant boundary |
+| Analogous | 30° | 360/σ(6) | Adjacent hue interval |
 
-**모든 주요 색상 조화 각도가 360을 약수함수로 나눈 값!**
+**All major color harmony angles are 360 divided by divisor functions!**
 
-### 망막의 수치적 대응
-
-```
-  추체(cone) 수:   ~6,000,000 = P₁ × 10⁶
-  간상체(rod) 수:  ~120,000,000 = 5! × 10⁶ = σ⁴(6) × 10⁶
-  추체/간상체 비:  ~1/20 = 1/(τ × sopfr)
-
-  추체 분포:
-    L-추체: ~64% → 가장 많음
-    M-추체: ~32% → L의 절반
-    S-추체: ~2%  → φ(6)% !
-    L/M 비율 ≈ 2:1 = φ(6):1
-```
-
-## 산술 대응 테이블
-
-| 색각 구조 | 값 | σ,τ 표현 | 정확도 |
-|-----------|-----|---------|--------|
-| 추체 종류 | 3 | σ/τ | 정확 |
-| 반대색 쌍 | 3 | σ/τ | 정확 |
-| 반대색 endpoint | 6 | P₁ | 정확 |
-| Sextant 수 | 6 | P₁ | 정확 |
-| Sextant 각도 | 60° | 360/P₁ | 정확 |
-| 보색 각도 | 180° | 360/φ | 정확 |
-| 사분 각도 | 90° | 360/τ | 정확 |
-| 유사색 각도 | 30° | 360/σ | 정확 |
-| S-추체 비율 | ~2% | ~φ% | 근사 |
-| 추체 총수 | ~6M | ~P₁ × 10⁶ | 근사(5-7M) |
-
-## ASCII 그래프: 색상환 ↔ 약수함수
+### Retinal Numerical Correspondence
 
 ```
-  조화 각도와 약수함수의 관계:
+  Cone count:      ~6,000,000 = P₁ × 10⁶
+  Rod count:       ~120,000,000 = 5! × 10⁶ = σ⁴(6) × 10⁶
+  Cone/Rod ratio:  ~1/20 = 1/(τ × sopfr)
 
-  각도  ^
+  Cone distribution:
+    L-cones: ~64% → most numerous
+    M-cones: ~32% → half of L
+    S-cones: ~2%  → φ(6)% !
+    L/M ratio ≈ 2:1 = φ(6):1
+```
+
+## Arithmetic Correspondence Table
+
+| Color Vision Structure | Value | σ,τ Expression | Accuracy |
+|----------------------|-------|----------------|----------|
+| Cone types | 3 | σ/τ | Exact |
+| Opponent pairs | 3 | σ/τ | Exact |
+| Opponent endpoints | 6 | P₁ | Exact |
+| Sextant count | 6 | P₁ | Exact |
+| Sextant angle | 60° | 360/P₁ | Exact |
+| Complementary angle | 180° | 360/φ | Exact |
+| Square angle | 90° | 360/τ | Exact |
+| Analogous angle | 30° | 360/σ | Exact |
+| S-cone ratio | ~2% | ~φ% | Approx |
+| Total cones | ~6M | ~P₁ × 10⁶ | Approx(5-7M) |
+
+## ASCII Graph: Color Wheel ↔ Divisor Functions
+
+```
+  Harmony Angles and Divisor Function Relationship:
+
+  Angle  ^
   360° |======================== 360 = lcm(σ,τ,φ,P₁) × ...
        |
-  180° |============  360/φ(6)  보색
+  180° |============  360/φ(6)  Complementary
        |
-   90° |======  360/τ(6)  사분조화
+   90° |======  360/τ(6)  Square harmony
        |
-   60° |====  360/P₁  삼색조화/sextant
+   60° |====  360/P₁  Triadic/sextant
        |
-   30° |==  360/σ(6)  유사색
+   30° |==  360/σ(6)  Analogous
        |
     0° +--+--+--+--+--+--+--
-          φ  τ  P₁  σ  약수함수 값
+          φ  τ  P₁  σ  Divisor function values
 ```
 
-## 교차 연결
+## Cross-Connections
 
-- **H-CHEM-1 (신경전달물질)**: 6종 주요 신경전달물질 ↔ 6 색각 endpoint
-- **H-CX-43 (Out(S₆))**: S₆의 유일한 외부자기동형 ↔ 색상환의 보색 대칭 (180° 회전)
-- **R281 (Platonic/tiling)**: 정육각형 타일링 = 색상환의 기하적 기반
-- **H-LATT-1**: hex kiss = 6, 정육각형 최밀충전 = 색상 배치의 최적 구조
+- **H-CHEM-1 (Neurotransmitters)**: 6 major neurotransmitters ↔ 6 color endpoints
+- **H-CX-43 (Out(S₆))**: S₆'s unique outer automorphism ↔ color wheel's complementary symmetry (180° rotation)
+- **R281 (Platonic/tiling)**: Hexagonal tiling = geometric basis of color wheel
+- **H-LATT-1**: hex kiss = 6, hexagonal close packing = optimal color arrangement structure
 
-## 한계
+## Limitations
 
-1. 360도 체계는 인간이 만든 관습 (바빌로니아 60진법 기원)
-2. 추체 수 ~6M은 근사값 (실측 4.5-7M 범위)
-3. "3종 추체"는 대부분 포유류에 해당, 조류는 4종 (tetrachromat)
-4. σ/τ=3이 "3추체"와 같은 것은 small number 영역의 우연일 수 있음
-5. HSV 6-sextant은 구현 편의상의 선택이지 물리 법칙이 아님
+1. 360-degree system is human convention (Babylonian sexagesimal origin)
+2. Cone count ~6M is approximate (measured range 4.5-7M)
+3. "3 cone types" applies to most mammals, birds have 4 (tetrachromat)
+4. σ/τ=3 matching "3 cones" may be coincidence in small number domain
+5. HSV 6-sextant is implementation convenience, not physical law
 
-## 검증 방향
+## Verification Directions
 
-1. **사색시(tetrachromacy)**: 4추체 종이면 약수함수 어떤 수? τ(6)=4?
-2. **색각 이상**: 이색시(dichromacy)=2추체=φ(6), 단색시=1=ω(6)?
-3. **비인간 시각**: 갯가재(mantis shrimp) 16종 광수용체 = 2^τ(6)?
-4. **Grassmann 법칙**: 색 혼합의 선형성 ↔ 3차원 벡터공간 ↔ σ/τ차원
-5. **MacAdam 타원**: 색차별 문턱의 기하 ↔ 약수 격자 구조?
+1. **Tetrachromacy**: For 4-cone species, what divisor function? τ(6)=4?
+2. **Color blindness**: Dichromacy=2 cones=φ(6), Monochromacy=1=ω(6)?
+3. **Non-human vision**: Mantis shrimp 16 photoreceptor types = 2^τ(6)?
+4. **Grassmann's laws**: Color mixing linearity ↔ 3D vector space ↔ σ/τ dimensions
+5. **MacAdam ellipses**: Color discrimination threshold geometry ↔ divisor lattice structure?

@@ -1,67 +1,67 @@
-# 가설 285: 이미지 분류 너머 — 반발력장은 다른 데이터 형태에서도 작동하는가?
+# Hypothesis 285: Beyond Image Classification — Does the Repulsion Field Work in Other Data Modalities?
 
-> **현재 모든 실험은 이미지 분류(MNIST/CIFAR)에 한정. 반발력장의 핵심 메커니즘(장력=다양성=정보)이 텍스트, 시계열, 음성, 그래프 등 다른 데이터 형태에서도 작동하는가?**
+> **All current experiments are limited to image classification (MNIST/CIFAR). Does the core mechanism of the repulsion field (tension=diversity=information) work in other data modalities like text, time series, speech, graphs?**
 
-## 현재 한계
-
-```
-  실험: MNIST(28x28 흑백) + CIFAR(32x32 컬러) → 모두 이미지 분류
-  문제: "장력이 보편적"이라는 주장의 근거가 이미지 2개뿐
-  → 텍스트/음성/시계열에서 재현 안 되면 "이미지 분류 전용" 기법
-```
-
-## 테스트 가능한 데이터 형태
+## Current Limitations
 
 ```
-  1. 텍스트 분류 (NLP)
-     → SST-2 감성 분류, AG News 토픽 분류
-     → 입력: 토큰 임베딩 → 반발력장
-     → 장력이 감성/토픽 구분에 도움?
-     → "의미(what)" vs "문체(how)" 축 역전?
-
-  2. 시계열 분류
-     → ECG 심전도, 가속도계 활동 인식
-     → 시간 축이 있음 → Phase 4(시간 연속성)와 자연스러운 결합
-     → 장력의 시간적 변화 패턴
-
-  3. 음성 인식
-     → Speech Commands (짧은 명령어)
-     → 스펙트로그램 → 이미지처럼 처리 가능
-     → 또는: raw waveform → 1D 반발력장
-
-  4. 그래프 분류
-     → 분자 구조 분류 (MUTAG, PROTEINS)
-     → GNN + 반발력장
-     → 그래프 라플라시안과 선험적 잠재 공간(model_fiber_bundle.py) 연결
-
-  5. 생성 (이미지 외)
-     → 텍스트 생성: 반발력장 VAE로 문장 생성?
-     → 장력 제어 = 창의성 제어가 텍스트에서도?
+  Experiments: MNIST (28x28 grayscale) + CIFAR (32x32 color) → All image classification
+  Problem: Evidence for "tension is universal" based on only 2 image datasets
+  → If not reproducible in text/speech/time series, it's just an "image classification-specific" technique
 ```
 
-## 예측
+## Testable Data Modalities
 
 ```
-  가설 270(다양성=정보)이 보편적이면:
-    → 다른 데이터에서도 반발력장 > 단순 조합
-    → MI 효율 ≈ ln(2)가 데이터 무관?
+  1. Text Classification (NLP)
+     → SST-2 sentiment classification, AG News topic classification
+     → Input: Token embeddings → Repulsion field
+     → Does tension help with sentiment/topic discrimination?
+     → "Meaning (what)" vs "Style (how)" axis reversal?
 
-  가설 282(고정확도 전용)가 보편적이면:
-    → 쉬운 분류(99%+)에서만 장력 효과 큼
-    → 어려운 분류에서는 CIFAR처럼 미미
+  2. Time Series Classification
+     → ECG electrocardiogram, accelerometer activity recognition
+     → Has time axis → Natural combination with Phase 4 (temporal continuity)
+     → Temporal variation patterns of tension
 
-  가설 268(축 역전)이 보편적이면:
-    → 텍스트: 의미 축 > 구조 축? (MNIST와 같은 패턴?)
-    → 음성: 구조 축 > 의미 축? (CIFAR와 같은 패턴?)
+  3. Speech Recognition
+     → Speech Commands (short commands)
+     → Spectrogram → Can be processed like images
+     → Or: raw waveform → 1D repulsion field
+
+  4. Graph Classification
+     → Molecular structure classification (MUTAG, PROTEINS)
+     → GNN + repulsion field
+     → Connection between graph Laplacian and fiber bundle prior (model_fiber_bundle.py)
+
+  5. Generation (beyond images)
+     → Text generation: Sentence generation with repulsion field VAE?
+     → Tension control = creativity control in text too?
 ```
 
-## 실험 결과 (2026-03-24)
+## Predictions
 
-### 실험 1: 텍스트 분류 (20 Newsgroups, 4 classes)
+```
+  If Hypothesis 270 (diversity=information) is universal:
+    → Repulsion field > simple combination in other data too
+    → MI efficiency ≈ ln(2) regardless of data?
 
-스크립트: `experiments/experiment_h285_text_timeseries.py`
+  If Hypothesis 282 (high accuracy only) is universal:
+    → Large tension effect only in easy classification (99%+)
+    → Minimal effect in hard classification like CIFAR
 
-#### A. TF-IDF (희소, 1000-dim)
+  If Hypothesis 268 (axis reversal) is universal:
+    → Text: meaning axis > structure axis? (same pattern as MNIST?)
+    → Speech: structure axis > meaning axis? (same pattern as CIFAR?)
+```
+
+## Experimental Results (2026-03-24)
+
+### Experiment 1: Text Classification (20 Newsgroups, 4 classes)
+
+Script: `experiments/experiment_h285_text_timeseries.py`
+
+#### A. TF-IDF (sparse, 1000-dim)
 
 | Seed | Dense   | Repulsion | tension_scale |
 |------|---------|-----------|---------------|
@@ -70,9 +70,9 @@
 | 2    | 85.2%   | 85.0%     | 0.7361        |
 | **Mean** | **85.30%** | **85.02%** | **0.724** |
 
-Delta: **-0.28%** (Dense 우세)
+Delta: **-0.28%** (Dense wins)
 
-#### B. 학습 임베딩 (밀집, 64-dim)
+#### B. Learned Embeddings (dense, 64-dim)
 
 | Seed | Dense   | Repulsion | tension_scale |
 |------|---------|-----------|---------------|
@@ -81,19 +81,19 @@ Delta: **-0.28%** (Dense 우세)
 | 2    | 69.5%   | 68.7%     | 0.5824        |
 | **Mean** | **69.78%** | **68.98%** | **0.620** |
 
-Delta: **-0.80%** (Dense 우세)
+Delta: **-0.80%** (Dense wins)
 
-#### 텍스트 핵심 발견
+#### Key Findings for Text
 
 ```
-  TF-IDF(희소) delta:  -0.28%
-  임베딩(밀집) delta:  -0.80%
-  "밀집이면 나아질까?" → NO (-0.52% 악화)
-  → 텍스트 도메인에서 반발력장은 효과 없음
-  → 데이터의 밀집/희소가 아니라 도메인 특성이 핵심
+  TF-IDF (sparse) delta:  -0.28%
+  Embedding (dense) delta:  -0.80%
+  "Would it improve if dense?" → NO (-0.52% worse)
+  → Repulsion field has no effect in text domain
+  → Domain characteristics matter, not dense/sparse data
 ```
 
-### 실험 2: 시계열 분류
+### Experiment 2: Time Series Classification
 
 #### A. Easy: 4-class waveforms (sine/square/sawtooth/triangle)
 
@@ -106,7 +106,7 @@ Delta: **-0.80%** (Dense 우세)
 | 4    | 83.3%   | 91.7%     | 77.55    | 0.7417        |
 | **Mean** | **84.50%** | **93.50%** | **63.51** | **0.929** |
 
-Delta: **+9.00%** (Repulsion 대승)
+Delta: **+9.00%** (Repulsion big win)
 
 #### B. Hard: signal processing (damped/chirp/AM, 3 classes)
 
@@ -119,11 +119,11 @@ Delta: **+9.00%** (Repulsion 대승)
 | 4    | 90.8%   | 92.5%     | 26.58    | 0.6315        |
 | **Mean** | **86.50%** | **90.50%** | **37.06** | **0.618** |
 
-Delta: **+4.00%** (Repulsion 우세)
+Delta: **+4.00%** (Repulsion wins)
 
-### 실험 3: 확장 표형 데이터 (6개 데이터셋)
+### Experiment 3: Extended Tabular Data (6 datasets)
 
-스크립트: `experiments/experiment_h285_tabular_extended.py`
+Script: `experiments/experiment_h285_tabular_extended.py`
 
 | Dataset          | Features | Classes | N     | Dense   | Repulsion | Delta   | Winner    |
 |------------------|----------|---------|-------|---------|-----------|---------|-----------|
@@ -134,9 +134,9 @@ Delta: **+4.00%** (Repulsion 우세)
 | Diabetes (binned)| 10       | 3       | 442   | 63.05%  | 62.52%    | -0.53%  | Dense     |
 | Synthetic 100D   | 100      | 4       | 500   | 65.00%  | 68.27%    | +3.27%  | Repulsion |
 
-표형 평균 delta: **+0.79%**
+Tabular average delta: **+0.79%**
 
-#### 장력 분석 (표형)
+#### Tension Analysis (Tabular)
 
 | Dataset          | Avg Tension | tension_scale |
 |------------------|-------------|---------------|
@@ -148,11 +148,11 @@ Delta: **+4.00%** (Repulsion 우세)
 | Synthetic 100D   | 94.88       | 0.5870        |
 
 ```
-  Tension-Delta 상관: r=-0.303, p=0.560 (비유의)
-  Feature-Delta 상관: r=0.484, p=0.331 (비유의)
+  Tension-Delta correlation: r=-0.303, p=0.560 (not significant)
+  Feature-Delta correlation: r=0.484, p=0.331 (not significant)
 ```
 
-## 전체 도메인 비교 (Cross-Domain Summary)
+## Cross-Domain Summary
 
 | Domain              | Type   | Dense   | Repulsion | Delta   |
 |---------------------|--------|---------|-----------|---------|
@@ -175,44 +175,44 @@ Delta: **+4.00%** (Repulsion 우세)
   CIFAR               |...............+++++++++++++++++++++| +4.80%
 ```
 
-## 핵심 발견
+## Key Findings
 
 ```
-  1. 텍스트에서 반발력장은 효과 없음 (-0.28% ~ -0.80%)
-     → TF-IDF(희소)든 임베딩(밀집)이든 무관
-     → "밀집 > 희소" 법칙 반증: 텍스트 임베딩이 오히려 더 나빴음
+  1. Repulsion field has no effect in text (-0.28% ~ -0.80%)
+     → Regardless of TF-IDF (sparse) or embedding (dense)
+     → "Dense > sparse" rule refuted: text embedding was worse
 
-  2. 시계열에서 반발력장 대승 (+4% ~ +9%)
-     → 가장 큰 효과! CIFAR(+4.8%)보다도 큼
-     → 시간적 패턴(파형 차이)을 장력이 잘 포착함
-     → tension_scale이 1.0 근처까지 상승 (초기 1/3의 3배)
+  2. Repulsion field wins big in time series (+4% ~ +9%)
+     → Biggest effect! Even larger than CIFAR (+4.8%)
+     → Tension captures temporal patterns (waveform differences) well
+     → tension_scale rises to near 1.0 (3x initial 1/3)
 
-  3. 표형 데이터는 중립 (평균 +0.79%)
-     → 작은 데이터(Iris)에서 +2.22%, 합성 고차원에서 +3.27%
-     → 큰 데이터(Digits, Breast Cancer)에서는 동률
+  3. Tabular data is neutral (average +0.79%)
+     → Small data (Iris) +2.22%, synthetic high-dim +3.27%
+     → Large data (Digits, Breast Cancer) ties
 
-  4. 도메인별 효과 패턴:
-     시계열 >> 이미지 > 표형 > 텍스트
-     → 반발력장은 "공간적/시간적 패턴"에 강함
-     → 의미론적(semantic) 분류에는 약함
+  4. Domain-specific effect pattern:
+     Time series >> Images > Tabular > Text
+     → Repulsion field is strong for "spatial/temporal patterns"
+     → Weak for semantic classification
 ```
 
-## 한계
+## Limitations
 
 ```
-  - 텍스트 실험이 단순 MLP 기반, Transformer 없음
-  - 시계열이 합성 데이터, 실제 ECG/센서 미테스트
-  - 임베딩이 단순 평균 풀링, attention 없음
-  - 표형 데이터셋이 모두 작음 (<2000 samples)
+  - Text experiments based on simple MLP, no Transformer
+  - Time series uses synthetic data, no real ECG/sensor tests
+  - Embeddings use simple average pooling, no attention
+  - All tabular datasets are small (<2000 samples)
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  - 시계열 실증: 실제 ECG/HAR 데이터로 재현
-  - 텍스트 심층: Transformer 인코더 + RepulsionField
-  - 음성 (스펙트로그램): 시계열+이미지 혼합, 큰 효과 예상
-  - 비디오: 시간+공간 결합, 최대 효과 후보
+  - Time series validation: Reproduce with real ECG/HAR data
+  - Deep text: Transformer encoder + RepulsionField
+  - Speech (spectrogram): Time series + image hybrid, expect large effect
+  - Video: Time + space combination, candidate for maximum effect
 ```
 
-## 상태: 🟧 부분 검증 (텍스트 ❌, 시계열 ✅✅, 표형 ≈ 중립)
+## Status: 🟧 Partially Verified (Text ❌, Time Series ✅✅, Tabular ≈ neutral)

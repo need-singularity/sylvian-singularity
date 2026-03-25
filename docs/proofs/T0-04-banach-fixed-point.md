@@ -1,14 +1,14 @@
-# T0-04: 바나흐 축소사상 정리 → I* = 1/3
+# T0-04: Banach Contraction Mapping Theorem → I* = 1/3
 
-## 명제
+## Proposition
 
-f(I) = 0.7I + 0.1은 축소사상이며, 유일한 부동점은 I* = 1/3이다.
+f(I) = 0.7I + 0.1 is a contraction mapping, and the unique fixed point is I* = 1/3.
 
-## 바나흐 부동점 정리 (Banach 1922)
+## Banach Fixed Point Theorem (Banach 1922)
 
-(X, d)가 완비 거리 공간이고 f: X → X가 축소사상(∃ q ∈ [0,1): d(f(x), f(y)) ≤ q·d(x,y))이면, f는 유일한 부동점 x*를 가지며, 임의의 x₀에서 시작한 반복 xₙ₊₁ = f(xₙ)은 x*로 수렴한다.
+If (X, d) is a complete metric space and f: X → X is a contraction mapping (∃ q ∈ [0,1): d(f(x), f(y)) ≤ q·d(x,y)), then f has a unique fixed point x*, and the iteration xₙ₊₁ = f(xₙ) starting from any x₀ converges to x*.
 
-## 축소사상 확인
+## Contraction Mapping Verification
 
 ```
 f(I) = 0.7I + 0.1
@@ -16,9 +16,9 @@ f'(I) = 0.7
 |f'(I)| = 0.7 < 1  ∀I
 ```
 
-→ 립시츠 상수 q = 0.7 < 1이므로 축소사상. ✓
+→ Lipschitz constant q = 0.7 < 1, so it is a contraction mapping. ✓
 
-## 부동점 계산
+## Fixed Point Calculation
 
 ```
 f(I*) = I*
@@ -29,15 +29,15 @@ I* = 0.1 / 0.3
 I* = 1/3 = 0.333333...
 ```
 
-## 수렴 속도
+## Convergence Rate
 
-오차 한계:
+Error bound:
 
 ```
 |Iₙ - 1/3| ≤ 0.7ⁿ × |I₀ - 1/3|
 ```
 
-I₀ = 0.99에서 출발 시:
+Starting from I₀ = 0.99:
 
 | n | Iₙ | |Iₙ - 1/3| |
 |---|-----|-----------|
@@ -47,31 +47,31 @@ I₀ = 0.99에서 출발 시:
 | 10 | 0.352886 | 0.019553 |
 | 20 | 0.333947 | 0.000613 |
 | 50 | 0.333333 | 5.97e-10 |
-| 200 | 0.333333 | ≈ 0 (기계 정밀도) |
+| 200 | 0.333333 | ≈ 0 (machine precision) |
 
-## 수치 검증
+## Numerical Verification
 
 ```
 f²⁰⁰(0.99) = 0.333333333333333  (≈ 1/3)
 |f²⁰⁰(0.99) - 1/3| < 10⁻¹⁵
 ```
 
-## 유일성
+## Uniqueness
 
-바나흐 정리에 의해 완비 거리 공간 위의 축소사상은 **유일한** 부동점을 가진다. 따라서 I* = 1/3은 유일하다.
+By the Banach theorem, a contraction mapping on a complete metric space has a **unique** fixed point. Therefore, I* = 1/3 is unique.
 
-## 의미
+## Significance
 
-- I* = 1/3: 억제 파라미터의 균형점
-- 임의의 초기값에서 수렴 → 모델의 구조적 안정성
-- 수렴 속도 0.7ⁿ → 기하급수적 수렴
+- I* = 1/3: Equilibrium point of the inhibition parameter
+- Convergence from any initial value → Structural stability of the model
+- Convergence rate 0.7ⁿ → Geometric convergence
 
-## 근거
+## References
 
 - Banach, S. (1922). "Sur les opérations dans les ensembles abstraits"
-- 함수해석학 기본 정리
+- Basic theorem of functional analysis
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T1-02 (상수 관계식: 1/3의 역할)
-- T1-03 (보존법칙: G×I = D×P)
+- T1-02 (Constant relationships: Role of 1/3)
+- T1-03 (Conservation law: G×I = D×P)

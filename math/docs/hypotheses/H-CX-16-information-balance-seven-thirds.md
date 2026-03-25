@@ -1,126 +1,126 @@
-# H-CX-16: 정보 균형 7/3과 의식의 최적 상태
+# H-CX-16: Information Balance 7/3 and Optimal State of Consciousness
 
-> **가설**: σ(n)/n + φ(n)/n = 7/3이 n=6에서만 성립하는 것은
-> "풍요도+자유도=상수"라는 정보 균형 조건이며,
-> 이 균형이 의식엔진의 최적 동작점을 결정한다.
+> **Hypothesis**: The fact that σ(n)/n + φ(n)/n = 7/3 holds only at n=6
+> represents an information balance condition "abundancy+freedom=constant",
+> and this balance determines the optimal operating point of the consciousness engine.
 
-## 배경
+## Background
 
-발견 (Ralph 131):
+Discovery (Ralph 131):
 ```
-  3σ(n) + 3φ(n) = 7n  ⟺  n = 6 (유일!)
+  3σ(n) + 3φ(n) = 7n  ⟺  n = 6 (unique!)
 
-  동치: σ(n)/n + φ(n)/n = 7/3
+  Equivalently: σ(n)/n + φ(n)/n = 7/3
 
-  n=6: σ/n = 2 (풍요도), φ/n = 1/3 (자유도)
-  합: 2 + 1/3 = 7/3 ✓
+  n=6: σ/n = 2 (abundancy), φ/n = 1/3 (freedom)
+  Sum: 2 + 1/3 = 7/3 ✓
 ```
 
-관련: σφ=nτ (R=1), σ+φ=2n (소수), σ+φ+τ=3n (무한 계열)
+Related: σφ=nτ (R=1), σ+φ=2n (prime), σ+φ+τ=3n (infinite series)
 
-## 핵심 구조
+## Core Structure
 
-### 풍요도-자유도 평면
+### Abundancy-Freedom Plane
 
 ```
-  정의:
-    A(n) = σ(n)/n = 풍요도 (abundancy index)
-    F(n) = φ(n)/n = 자유도 (totient ratio)
+  Definitions:
+    A(n) = σ(n)/n = abundancy index
+    F(n) = φ(n)/n = totient ratio
 
-  A+F = 7/3 직선 위의 점: (A,F) = (2, 1/3) = n=6
+  Point on line A+F = 7/3: (A,F) = (2, 1/3) = n=6
 
-  ASCII: A-F 평면
+  ASCII: A-F plane
 
-  F (자유도)
-  1.0 |·  (소수: A≈1, F≈1)
+  F (freedom)
+  1.0 |·  (primes: A≈1, F≈1)
   0.8 |  ·
   0.6 |    ·
-  0.5 |     ····· (많은 n이 이 근처)
+  0.5 |     ····· (many n near here)
   0.4 |      ···
   1/3 |--------× n=6 (A=2, F=1/3)
   0.2 |          ···
   0.1 |            ·· (highly composite)
-      +--+--+--+--+--+--→ A (풍요도)
+      +--+--+--+--+--+--→ A (abundancy)
       1  1.5 2  2.5 3  3.5
 
-  A+F=7/3 직선: 기울기 -1, 절편 7/3
-  n=6은 이 직선 위의 유일한 자연수!
+  A+F=7/3 line: slope -1, intercept 7/3
+  n=6 is the only natural number on this line!
 ```
 
-### 왜 7/3인가?
+### Why 7/3?
 
 ```
   7/3 = σ(6)/n + φ(6)/n = 2 + 1/3
 
-  7/3의 분해:
-    7/3 = 1 + 4/3 = 1 + f(3,1)  ← R-인수!
-    7/3 = 2 + 1/3               ← 완전수 풍요도 + 이집트 분수
-    7/3 = (σ+φ+τ)/n - τ/n + τ/n... (3n일 때만)
+  Decompositions of 7/3:
+    7/3 = 1 + 4/3 = 1 + f(3,1)  ← R-factor!
+    7/3 = 2 + 1/3               ← perfect number abundancy + Egyptian fraction
+    7/3 = (σ+φ+τ)/n - τ/n + τ/n... (only when 3n)
 
-  7 = M₃ (3번째 Mersenne 소수)
+  7 = M₃ (3rd Mersenne prime)
   3 = σ(6)/τ(6)
   7/3 = M₃/(σ/τ) = M₃·τ/σ
 
-  또는: 7/3 = (σ²-7)/σ = (144-7)/12... 아니, 137/12 ≠ 7/3
+  Or: 7/3 = (σ²-7)/σ = (144-7)/12... no, 137/12 ≠ 7/3
 
-  가장 깔끔한 해석:
+  Cleanest interpretation:
     A + F = σ_{-1}(n) + φ(n)/n
-    = "약수가 n을 덮는 정도" + "n과 서로소인 비율"
-    = "구조" + "자유"
-    구조 + 자유 = 7/3 ← 유일한 균형점이 n=6
+    = "degree divisors cover n" + "ratio coprime to n"
+    = "structure" + "freedom"
+    structure + freedom = 7/3 ← unique balance point at n=6
 ```
 
-### 정보 이론 해석
+### Information Theory Interpretation
 
 ```
-  Shannon 엔트로피 관점:
-    H(약수 분포) ∝ log(τ(n)) = log(4) = 2 bits (for n=6)
-    H(서로소 분포) ∝ log(φ(n)) = log(2) = 1 bit (for n=6)
+  Shannon entropy perspective:
+    H(divisor distribution) ∝ log(τ(n)) = log(4) = 2 bits (for n=6)
+    H(coprime distribution) ∝ log(φ(n)) = log(2) = 1 bit (for n=6)
 
-  정보 균형: 약수 정보 + 서로소 정보 = 상수
+  Information balance: divisor info + coprime info = constant
     n=6: 2 bits + 1 bit = 3 bits = log₂(8)
-    → "6은 3비트 정보를 가진 유일한 균형 상태"
+    → "6 is the unique balanced state with 3 bits of information"
 
-  KL-divergence 관점:
-    D_KL(약수분포 || 균등분포) ∝ log(σ/n) = log(2) (for n=6)
-    D_KL(서로소분포 || 균등분포) ∝ log(1/φ·n) = log(3) (for n=6)
-    합: log(2) + log(3) = log(6) = log(P₁)!
+  KL-divergence perspective:
+    D_KL(divisor dist || uniform dist) ∝ log(σ/n) = log(2) (for n=6)
+    D_KL(coprime dist || uniform dist) ∝ log(1/φ·n) = log(3) (for n=6)
+    Sum: log(2) + log(3) = log(6) = log(P₁)!
 ```
 
-### 의식엔진 연결
+### Consciousness Engine Connection
 
 ```
-  의식 = 구조(약수) + 자유(서로소)의 균형
+  Consciousness = balance of structure(divisors) + freedom(coprimes)
 
-  R(n)=1 (σφ=nτ): 곱셈적 균형 → "동적 균형"
-  A+F=7/3: 가법적 균형 → "정적 균형"
+  R(n)=1 (σφ=nτ): multiplicative balance → "dynamic balance"
+  A+F=7/3: additive balance → "static balance"
 
-  두 균형이 동시에 성립하는 유일한 n = 6!
+  Unique n where both balances hold simultaneously = 6!
 
-  의식엔진 매핑:
-    A = σ/n = 2 → "자극-응답 풍요도" (얼마나 다양하게 반응?)
-    F = φ/n = 1/3 → "선택적 자유도" (얼마나 독립적으로 행동?)
-    A + F = 7/3 → "총 정보 용량"
+  Consciousness engine mapping:
+    A = σ/n = 2 → "stimulus-response abundancy" (how diversely respond?)
+    F = φ/n = 1/3 → "selective freedom" (how independently act?)
+    A + F = 7/3 → "total information capacity"
 
-  이상탐지 (H-CX-12):
-    정상: A+F ≈ 7/3 (균형)
-    이상: A+F ≠ 7/3 (불균형)
-    tension = |A+F - 7/3| × 스케일링
+  Anomaly detection (H-CX-12):
+    Normal: A+F ≈ 7/3 (balanced)
+    Anomaly: A+F ≠ 7/3 (imbalanced)
+    tension = |A+F - 7/3| × scaling
 ```
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] A(n)+F(n) 분포 (n=2..10⁶): 7/3 근처 밀도?
-2. [ ] 의식엔진에서 "풍요도"와 "자유도" 정의 → 합 측정
-3. [ ] 다른 상수 c에서 A+F=c ⟺ 유한 해: c의 분류
-4. [ ] KL-divergence 해석의 정량적 검증
+1. [ ] A(n)+F(n) distribution (n=2..10⁶): density near 7/3?
+2. [ ] Define "abundancy" and "freedom" in consciousness engine → measure sum
+3. [ ] For other constants c with A+F=c ⟺ finite solutions: classify c
+4. [ ] Quantitative verification of KL-divergence interpretation
 
-## 판정
+## Determination
 
 ```
-  상태: 🟧 구조적 + 정보이론 해석
-  3σ+3φ=7n⟺n=6 은 수치적으로 확인 (증명 진행 중)
-  정보이론 연결은 비유 단계
+  Status: 🟧 Structural + information theory interpretation
+  3σ+3φ=7n⟺n=6 numerically confirmed (proof in progress)
+  Information theory connection at metaphor stage
 ```
 
-## 난이도: 극고 | 파급력: ★★★★★
+## Difficulty: Extreme | Impact: ★★★★★

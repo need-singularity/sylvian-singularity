@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CIFAR-10 장력 인과 실험 — C48을 CIFAR에서 재현"""
+"""CIFAR-10 Tension Causal Experiment — Reproducing C48 on CIFAR"""
 
 import sys, os, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))

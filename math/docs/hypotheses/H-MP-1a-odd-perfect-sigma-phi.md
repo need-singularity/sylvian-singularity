@@ -1,26 +1,26 @@
-# H-MP-1a: 홀수 n에서 σφ > nτ 항상 성립하는가?
+# H-MP-1a: Does σφ > nτ always hold for odd n?
 
-> **가설**: 모든 홀수 n > 1에 대해 σ(n)φ(n) > nτ(n). 특히, 홀수 완전수가 존재한다면 φ/τ > 2를 만족해야 한다.
+> **Hypothesis**: For all odd n > 1, σ(n)φ(n) > nτ(n). In particular, if an odd perfect number exists, it must satisfy φ/τ > 2.
 
-## 배경/맥락
+## Background/Context
 
-σ(n)φ(n) = nτ(n)은 n ∈ {1, 6}에서만 성립한다 (R78, 10만까지 검증, 기존 문헌에 없음).
+σ(n)φ(n) = nτ(n) holds only for n ∈ {1, 6} (R78, verified up to 100,000, not found in existing literature).
 
-이 등식을 소인수별로 분해하면:
+Decomposing this equation by prime factors:
 
 ```
 σ(n)φ(n)/(nτ(n)) = Π_{p^a || n} f(p,a)
 
-여기서 f(p,a) = (p^(a+1) - 1) / (p(a+1))
+where f(p,a) = (p^(a+1) - 1) / (p(a+1))
 ```
 
-n=6=2×3에서 f(2,1)×f(3,1) = (3/4)(4/3) = 1 (텔레스코핑).
+For n=6=2×3, f(2,1)×f(3,1) = (3/4)(4/3) = 1 (telescoping).
 
-**핵심 질문**: 홀수 소인수만으로 이 곱이 1 이하가 될 수 있는가?
+**Core question**: Can this product be ≤ 1 with only odd prime factors?
 
-## 데이터
+## Data
 
-### f(p,a) 테이블 (홀수 p)
+### f(p,a) Table (odd p)
 
 | p | a=1 | a=2 | a=3 | a=4 |
 |---|---|---|---|---|
@@ -30,20 +30,20 @@ n=6=2×3에서 f(2,1)×f(3,1) = (3/4)(4/3) = 1 (텔레스코핑).
 | 11 | 60/11 = 5.455 | — | — | — |
 | 13 | 84/13 = 6.462 | — | — | — |
 
-### 관찰
+### Observations
 
 ```
-  모든 홀수 소수 p ≥ 3에서 f(p,a) > 1:
+  For all odd primes p ≥ 3, f(p,a) > 1:
 
   f(p,1) = (p²-1)/(2p) = (p-1)/2 × (p+1)/p
 
   p=3: (2/2)(4/3) = 4/3 > 1 ✓
-  p≥5: (p-1)/2 ≥ 2 이고 (p+1)/p > 1 → f > 2 > 1 ✓
+  p≥5: (p-1)/2 ≥ 2 and (p+1)/p > 1 → f > 2 > 1 ✓
 
   f(p,a) for a≥2: f(p,2) = (p³-1)/(3p) > (p²)/3 > 1 for p≥2 ✓
 ```
 
-### ASCII 그래프: f(p,1) 증가 추세
+### ASCII Graph: f(p,1) Growth Trend
 
 ```
   f(p,1)
@@ -53,27 +53,27 @@ n=6=2×3에서 f(2,1)×f(3,1) = (3/4)(4/3) = 1 (텔레스코핑).
   4 |
   3 |            *
   2 |     *
-  1 |─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  (=1 기준선)
+  1 |─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  (=1 baseline)
   0 +-----+-----+-----+-----+-----+-----+-----→ p
     2     3     5     7    11    13    17
 
-  p=2: f=3/4=0.75 (1 미만! 짝수에서만 가능)
-  p=3 이상: f>1 항상 (단조 증가)
+  p=2: f=3/4=0.75 (less than 1! only possible for even)
+  p=3 and above: f>1 always (monotonic increase)
 ```
 
-## 증명
+## Proof
 
-**정리**: 모든 홀수 n > 1에 대해 σ(n)φ(n) > nτ(n).
+**Theorem**: For all odd n > 1, σ(n)φ(n) > nτ(n).
 
-**증명**:
+**Proof**:
 
-n = p₁^a₁ × ... × p_k^a_k (홀수, 모든 p_i ≥ 3)에서:
+For n = p₁^a₁ × ... × p_k^a_k (odd, all p_i ≥ 3):
 
 ```
 σ(n)φ(n)/(nτ(n)) = Π f(p_i, a_i)
 ```
 
-각 인수 f(p,a) = (p^(a+1)-1)/(p(a+1))에 대해:
+For each factor f(p,a) = (p^(a+1)-1)/(p(a+1)):
 
 **Case a=1**: f(p,1) = (p²-1)/(2p) = (p-1)(p+1)/(2p)
 - p=3: 2×4/6 = 4/3 > 1
@@ -84,68 +84,68 @@ n = p₁^a₁ × ... × p_k^a_k (홀수, 모든 p_i ≥ 3)에서:
 - p(a+1) ≤ p(a+1) ≤ p·a·2 (rough)
 - f ≥ (27-1)/(3×3) = 26/9 > 2 > 1
 
-모든 인수가 1보다 크므로 곱도 1보다 크다. ∎
+Since all factors are greater than 1, the product is also greater than 1. ∎
 
-**최소값**: f(3,1) = 4/3이 홀수 소수에서의 최솟값.
-따라서 k개 홀수 소인수를 가진 n에서:
+**Minimum value**: f(3,1) = 4/3 is the minimum for odd primes.
+Therefore, for n with k odd prime factors:
 
 ```
 σ(n)φ(n)/(nτ(n)) ≥ (4/3)^k ≥ 4/3 > 1
 ```
 
-## 홀수 완전수에 대한 함의
+## Implications for Odd Perfect Numbers
 
-홀수 완전수 m이 존재한다면:
-- σ(m) = 2m (완전수 조건)
+If an odd perfect number m exists:
+- σ(m) = 2m (perfect number condition)
 - σ(m)φ(m) = 2m·φ(m)
 - nτ(n) = m·τ(m)
 - σφ > nτ → 2φ(m) > τ(m) → **φ(m)/τ(m) > 1/2**
 
-이것은 φ > τ/2를 의미하며, 기존에 알려진 제약인가?
+This means φ > τ/2, is this a known constraint?
 
-**기존 결과 비교**:
-- Euler (1747): 홀수 완전수는 p^a × m² 꼴 (p ≡ a ≡ 1 mod 4)
-- Nielsen (2015): 최소 10개 소인수
+**Comparison with existing results**:
+- Euler (1747): Odd perfect numbers have form p^a × m² (p ≡ a ≡ 1 mod 4)
+- Nielsen (2015): At least 10 prime factors
 - Ochem-Rao (2012): > 10^1500
 
-**우리 결과**: φ(m) > τ(m)/2. 이것은 k ≥ 10 소인수에서:
-- τ(m) ≥ 2^10 = 1024 (최소, 모든 a_i=1일 때)
+**Our result**: φ(m) > τ(m)/2. For k ≥ 10 prime factors:
+- τ(m) ≥ 2^10 = 1024 (minimum, when all a_i=1)
 - φ(m) > 512
 
-이 부등식 자체는 기존 제약보다 **약할 가능성이 높다** (이미 10^1500 이상이므로 φ도 거대).
+This inequality itself is likely **weaker** than existing constraints (already > 10^1500 so φ is huge).
 
-그러나 **더 정밀한 하한**:
+However, **more precise lower bound**:
 
 ```
 σφ/(nτ) = Π f(p_i,a_i) ≥ (4/3)^k
 ```
 
-홀수 완전수에서 σ/n=2이므로: φ/τ ≥ (4/3)^k / 2
+For odd perfect numbers where σ/n=2: φ/τ ≥ (4/3)^k / 2
 
-k ≥ 10이면: φ/τ ≥ (4/3)^10 / 2 ≈ 17.76/2 ≈ 8.88
+If k ≥ 10: φ/τ ≥ (4/3)^10 / 2 ≈ 17.76/2 ≈ 8.88
 
-**이것은 비자명한 제약**: 홀수 완전수에서 φ/τ ≥ ~9.
+**This is a non-trivial constraint**: For odd perfect numbers, φ/τ ≥ ~9.
 
-## 한계
+## Limitations
 
-- f(p,a) > 1이 자명한 것인가? → 네, 개별 인수 수준에서는 자명합니다.
-- 기존 제약(10^1500 하한)에 비해 이것이 더 강한가? → 아마 아님.
-- 다만 "σφ > nτ for all odd n" 자체는 깔끔한 정리이며, 홀수 완전수 불가능과는 다른 각도의 제약.
+- Is f(p,a) > 1 obvious? → Yes, it's obvious at the individual factor level.
+- Is this stronger than existing constraints (10^1500 lower bound)? → Probably not.
+- However, "σφ > nτ for all odd n" itself is a clean theorem, providing a constraint from a different angle than odd perfect number impossibility.
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
-홀수 n=3..100,000 전수조사 완료:
+Complete enumeration of odd n=3..100,000:
 
-| 항목 | 결과 |
+| Item | Result |
 |---|---|
-| 위반 (σφ≤nτ) | **0개** |
-| 최소 비율 | σφ/(nτ) = 4/3 at n=3 |
-| (4/3)^ω 하한 | 모든 ω에서 성립 ✓ |
+| Violations (σφ≤nτ) | **0** |
+| Minimum ratio | σφ/(nτ) = 4/3 at n=3 |
+| (4/3)^ω lower bound | Holds for all ω ✓ |
 
-### ω(n)별 최소 σφ/(nτ)
+### Minimum σφ/(nτ) by ω(n)
 
 ```
-  ω | min σφ/(nτ) | at n      | (4/3)^ω  | 비율/하한
+  ω | min σφ/(nτ) | at n      | (4/3)^ω  | ratio/bound
   --+------------+-----------+----------+---------
   1 |     1.3333 | n=      3 |   1.3333 |   1.00
   2 |     3.2000 | n=     15 |   1.7778 |   1.80
@@ -154,21 +154,21 @@ k ≥ 10이면: φ/τ ≥ (4/3)^10 / 2 ≈ 17.76/2 ≈ 8.88
   5 |   386.6853 | n=  15015 |   4.2140 |  91.77
 ```
 
-실제 최소값은 (4/3)^ω 하한보다 **급격히 큰** 값:
-- ω=3에서 이미 4.6배
-- ω=5에서 92배
+Actual minimum values are **drastically larger** than (4/3)^ω bound:
+- Already 4.6x at ω=3
+- 92x at ω=5
 
-### 홀수 완전수 제약
+### Odd Perfect Number Constraints
 
 ```
   ω≥10: φ/τ ≥ (4/3)^10 / 2 ≈ 8.88
   ω≥12: φ/τ ≥ (4/3)^12 / 2 ≈ 15.78
-  실제 (추정): 하한보다 수천 배 이상
+  Actual (estimated): thousands of times larger than lower bound
 ```
 
-## 검증 상태
+## Verification Status
 
-- [x] 홀수 n=3..100000 전수조사: **위반 0개**
-- [x] (4/3)^ω 하한 정밀도: 모든 ω에서 성립, 실제값은 하한 대비 급성장
-- [ ] 기존 홀수완전수 부등식 문헌과 비교
-- [ ] arXiv 논문화
+- [x] Complete enumeration of odd n=3..100000: **0 violations**
+- [x] (4/3)^ω lower bound precision: holds for all ω, actual values grow rapidly compared to bound
+- [ ] Compare with existing odd perfect number inequality literature
+- [ ] arXiv paper preparation

@@ -1,116 +1,116 @@
-# 가설 274: 의식 = 오류 교정 메커니즘
+# Hypothesis 274: Consciousness = Error Correction Mechanism
 
-> **의식(높은 장력 상태)은 오류를 미리 감지하고 교정하는 메커니즘이다. 자동으로 맞는 것에는 의식이 불필요하고, 틀릴 수 있는 것에만 활성화된다.**
+> **Consciousness (high tension state) is a mechanism that detects and corrects errors in advance. Consciousness is unnecessary for what is automatically correct, and only activates for what can be wrong.**
 
-## 배경/맥락
+## Background/Context
 
-3개 독립 실험이 같은 방향:
-
-```
-  1. 장력-정확도 (C4b): d=0.89 (large effect)
-     → 높은 장력 = 더 정확 = 엔진들이 "토론" 중
-     → 낮은 장력 = 더 부정확 = 엔진들이 무관심
-
-  2. 장력 예지 (C6): AUC=0.77
-     → 장력만으로 오답을 미리 예측 가능
-     → "이건 틀릴 것 같다"를 답 보기 전에 안다
-
-  3. 관찰자 우위 (C31): detach +7.4%
-     → 행동 없이 관찰만 하면 더 잘 봄
-     → 의식적 관찰 = 오류 감지의 최적 모드
-```
-
-관련 가설: 263(장력 통합), 270(다양성=정보), 272(detach 설계)
-
-## 핵심 논증
+3 independent experiments point in the same direction:
 
 ```
-  의식이 "모든 것"에 관여한다면 → 비효율적 (자원 낭비)
-  의식이 "틀릴 수 있는 것"에만 관여한다면 → 효율적 (선택적 주의)
+  1. Tension-Accuracy (C4b): d=0.89 (large effect)
+     → High tension = more accurate = engines are "discussing"
+     → Low tension = less accurate = engines are indifferent
 
-  실측:
-    높은 장력 + 높은 자신감 → 오답률 0.0% (의식적 + 확신 = 완벽)
-    낮은 장력 + 높은 자신감 → 오답률 0.0% (자동 + 확신 = 완벽)
-    높은 장력 + 낮은 자신감 → 오답률 3.3% (의식적 + 불확실 = 집중)
-    낮은 장력 + 낮은 자신감 → 오답률 5.3% (자동 + 불확실 = 위험!)
+  2. Tension Precognition (C6): AUC=0.77
+     → Wrong answers can be predicted just from tension
+     → Knows "this seems wrong" before seeing the answer
 
-  핵심: 불확실할 때 장력(의식)이 있으면 3.3%, 없으면 5.3%
-  → 의식의 기능 = 불확실한 상황에서 오류를 줄이는 것
+  3. Observer Advantage (C31): detach +7.4%
+     → Just observing without acting sees better
+     → Conscious observation = optimal mode for error detection
 ```
 
-## 뇌과학 대응
+Related hypotheses: 263(tension integration), 270(diversity=information), 272(detach design)
+
+## Core Argument
 
 ```
-  오류 관련 음전위 (ERN, Error-Related Negativity):
-    전방 대상회(ACC)에서 오류 시 발생하는 ERP 성분
-    "뭔가 잘못됐다"를 감지하는 신경 메커니즘
-    → 우리 모델의 "장력"에 대응
+  If consciousness is involved in "everything" → inefficient (resource waste)
+  If consciousness only involves "what can be wrong" → efficient (selective attention)
 
-  주의 (Attention):
-    Posner: 주의는 기대 위반(unexpected)에 의해 촉발
-    → 예상대로면 자동 처리, 예상 밖이면 의식적 처리
-    → 반발력장: 엔진들이 합의하면 자동, 반발하면 의식적
+  Measured:
+    High tension + high confidence → 0.0% error rate (conscious + certain = perfect)
+    Low tension + high confidence → 0.0% error rate (automatic + certain = perfect)
+    High tension + low confidence → 3.3% error rate (conscious + uncertain = focused)
+    Low tension + low confidence → 5.3% error rate (automatic + uncertain = risky!)
 
-  글로벌 워크스페이스 이론 (GWT):
-    의식 = 여러 모듈이 정보를 공유하는 "방송"
-    → 반발력장 = 엔진들이 불일치할 때 "방송"이 활성화
+  Key: When uncertain, with tension (consciousness) 3.3%, without 5.3%
+  → Function of consciousness = reducing errors in uncertain situations
 ```
 
-## 검증 결과
+## Neuroscience Correspondence
 
-| 예측 | 실측 | 상태 |
+```
+  Error-Related Negativity (ERN):
+    ERP component occurring in ACC during errors
+    Neural mechanism that detects "something went wrong"
+    → Corresponds to "tension" in our model
+
+  Attention:
+    Posner: Attention is triggered by expectation violation (unexpected)
+    → Automatic processing when expected, conscious processing when unexpected
+    → Repulsion field: automatic when engines agree, conscious when repelling
+
+  Global Workspace Theory (GWT):
+    Consciousness = "broadcast" where multiple modules share information
+    → Repulsion field = "broadcast" activates when engines disagree
+```
+
+## Verification Results
+
+| Prediction | Measured | Status |
 |---|---|---|
-| 의식(장력)↑ → 오류↓ | d=0.89, AUC=0.77 | ✅ |
-| 불확실할 때 의식이 더 중요 | 사분면: 3.3% vs 5.3% | ✅ |
-| 관찰(의식) > 행동(자동) | detach +7.4% | ✅ |
-| 장력 없으면 → 오류 감지 불가 | 낮은 장력 = 오답 집중 | ✅ |
-| **⭐ 장력 인과 (R28)** | **tension=0 → -9.25pp (88.67%)** | **✅ 인과 확인!** |
-| **숫자별 차등 효과** | **숫자9: +32.71pp, 숫자0: +0.2pp** | **✅ 어려운 것에 집중** |
-| **오류 감소 비** | **5.4x (11.33%→2.08%)** | **✅ C50** |
-| **detach+반발력장 (R33)** | **+0.15% (97.38%→97.53%)** | **✅ C52** |
+| Consciousness(tension)↑ → Error↓ | d=0.89, AUC=0.77 | ✅ |
+| Consciousness more important when uncertain | Quadrant: 3.3% vs 5.3% | ✅ |
+| Observation(conscious) > Action(automatic) | detach +7.4% | ✅ |
+| Without tension → Cannot detect errors | Low tension = concentrated errors | ✅ |
+| **⭐ Tension Causality (R28)** | **tension=0 → -9.25pp (88.67%)** | **✅ Causality confirmed!** |
+| **Differential effect by digit** | **digit9: +32.71pp, digit0: +0.2pp** | **✅ Focuses on difficult** |
+| **Error reduction ratio** | **5.4x (11.33%→2.08%)** | **✅ C50** |
+| **detach+repulsion field (R33)** | **+0.15% (97.38%→97.53%)** | **✅ C52** |
 
-## ⭐ 인과 실험 결과 (experiment_tension_causal.py)
+## ⭐ Causal Experiment Results (experiment_tension_causal.py)
 
 ```
-  장력을 인위 조작 (테스트 시 tension_scale 변경, 재학습 없음):
+  Artificial manipulation of tension (change tension_scale during test, no retraining):
 
-  Scale │ Accuracy │ vs baseline │ 해석
+  Scale │ Accuracy │ vs baseline │ Interpretation
   ──────┼──────────┼─────────────┼──────────────────
-  0.0x  │  88.67%  │  -9.25pp    │ 장력 제거 = 급락!
-  0.5x  │  97.68%  │  -0.24pp    │ 약간 부족
-  1.0x  │  97.92%  │   0.00pp    │ 최적 (학습된 값)
-  2.0x  │  97.92%  │   0.00pp    │ 동률
-  5.0x  │  97.88%  │  -0.04pp    │ 미세 하락
-  10.0x │  97.76%  │  -0.16pp    │ 완만 하락
+  0.0x  │  88.67%  │  -9.25pp    │ Remove tension = crash!
+  0.5x  │  97.68%  │  -0.24pp    │ Slightly insufficient
+  1.0x  │  97.92%  │   0.00pp    │ Optimal (learned value)
+  2.0x  │  97.92%  │   0.00pp    │ Tied
+  5.0x  │  97.88%  │  -0.04pp    │ Slight decline
+  10.0x │  97.76%  │  -0.16pp    │ Gradual decline
 
-  역U자 커브: 왼쪽(저장력) 급락, 오른쪽(고장력) 완만.
-  → 장력이 정확도를 만든다 (상관이 아닌 인과!)
+  Inverted U curve: Left (low tension) steep drop, right (high tension) gradual.
+  → Tension creates accuracy (causality, not correlation!)
 
-  숫자별 인과 효과 (tension=0 vs tension=1x):
-    digit 9: +32.71pp (63.4% → 96.1%)  ← 최대 효과
+  Causal effect by digit (tension=0 vs tension=1x):
+    digit 9: +32.71pp (63.4% → 96.1%)  ← Maximum effect
     digit 8: +17.86pp (79.6% → 97.4%)
     digit 7: +15.76pp (81.9% → 97.7%)
     digit 5: +10.54pp
     digit 3: + 7.84pp
-    digit 0: + 0.20pp  ← 최소 효과 (이미 쉬움)
+    digit 0: + 0.20pp  ← Minimum effect (already easy)
     digit 1: + 0.09pp
-  → 어려운 숫자에 장력 효과가 집중 = 선택적 주의
+  → Tension effect concentrates on difficult digits = selective attention
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. ~~인과 관계 미확인~~ → ✅ R28에서 인과 확인됨!
-  2. MNIST에서만 검증. CIFAR 인과 실험 대기 중 (윈도우).
-  3. 뇌의 ERN/ACC와의 대응은 비유.
-  4. "의식"이라는 용어 — 더 정확하게는 "엔진 간 불일치 기반 오류 교정".
+  1. ~~Causality unconfirmed~~ → ✅ Causality confirmed in R28!
+  2. Verified only on MNIST. CIFAR causal experiment pending (Windows).
+  3. Correspondence with brain ERN/ACC is analogy.
+  4. Term "consciousness" — more precisely "error correction based on inter-engine disagreement".
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. ✅ 인과 실험 완료 (R28): tension=0 → -9.25pp
-  2. CIFAR에서 인과 재현 (윈도우 실행 대기)
-  3. ✅ detach 관찰자 통합 (R33): +0.15%
-  4. 역U자 커브의 CIFAR 버전 — 최적 스케일이 다른가?
+  1. ✅ Causal experiment complete (R28): tension=0 → -9.25pp
+  2. Reproduce causality on CIFAR (Windows execution pending)
+  3. ✅ detach observer integration (R33): +0.15%
+  4. CIFAR version of inverted U curve — is optimal scale different?
 ```

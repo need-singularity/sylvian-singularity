@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""H-CX-104 + H-CX-105: FGSM 취약성 + 서브에폭 전이
+"""H-CX-104 + H-CX-105: FGSM Vulnerability + Sub-epoch Transition
 
-H-CX-104: merge distance 짧은 쌍 → FGSM 취약
-H-CX-105: 위상 전이가 0.5에폭에서 발생
+H-CX-104: Short merge distance pairs → FGSM vulnerable
+H-CX-105: Phase transition occurs at 0.5 epochs
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')

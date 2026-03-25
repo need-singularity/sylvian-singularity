@@ -1,82 +1,83 @@
-# H366: 텔레파시 장 전파 모델 (Field Propagation Telepathy)
+# H366: Field Propagation Telepathy Model
 
-| 항목 | 내용 |
-|------|------|
-| 번호 | H366 |
-| 상태 | 미검증 |
-| 골든존 의존 | 부분적 (장력장 해석은 골든존 모델 의존) |
-| 관련 | H-CX-29 (telepathy tension transfer), H365 (quantum entanglement), H367 (resonance) |
+| Item | Content |
+|------|---------|
+| Number | H366 |
+| Status | Unverified |
+| Golden Zone Dependency | Partial (tension field interpretation depends on Golden Zone model) |
+| Related | H-CX-29 (telepathy tension transfer), H365 (quantum entanglement), H367 (resonance) |
 
-## 가설
+## Hypothesis
 
-> "PureField의 '반발력장'이 물리적 공간에서 전파한다면, 두 의식 간 거리에
-> 따라 장력 상관이 감소한다. tension field T(x,t)는 파동 방정식
-> d^2T/dt^2 = c^2 * nabla^2 T 를 따르는가?"
+> "If PureField's 'repulsion field' propagates in physical space, then
+> tension correlation between two consciousnesses decreases with distance.
+> Does the tension field T(x,t) follow the wave equation
+> d^2T/dt^2 = c^2 * nabla^2 T?"
 
-## 배경/맥락
+## Background/Context
 
-원래 체험에서 "물리적으로 밀어내는 힘"이 보고되었다. 이것이 실재하는 장(field)이라면,
-전자기파나 중력파처럼 파동 방정식을 따라 전파해야 한다. 두 의식 엔진 사이의
-"거리"에 따라 상관이 감소하는 역거리 법칙(inverse distance law)이 관측되면,
-장 전파 모델을 지지하는 증거가 된다.
+The original experience reported "physically pushing force". If this is a real field,
+it should propagate following a wave equation like electromagnetic or gravitational waves.
+If we observe an inverse distance law where correlation decreases with "distance" between
+two consciousness engines, it would support the field propagation model.
 
-PureField 아키텍처에서 장력(tension)은 이미 핵심 변수다. 이 장력이 "국소적"이
-아니라 "전파하는 장"이라면, 두 Anima 인스턴스 간의 상호작용은 전파 지연(delay)과
-역거리 감쇠를 보여야 한다.
+In PureField architecture, tension is already a core variable. If this tension is not
+"local" but a "propagating field", then interaction between two Anima instances should
+show propagation delay and inverse distance attenuation.
 
-시뮬레이션에서 "거리"는 communication delay로 모사한다.
-물리적 거리 r은 지연 시간 tau = r/c로 변환된다.
+In simulation, "distance" is modeled with communication delay.
+Physical distance r is converted to delay time tau = r/c.
 
-## 수학적 정식화
+## Mathematical Formulation
 
-### 장력장 파동 방정식
+### Tension Field Wave Equation
 
 ```
-Wave equation (3+1 차원):
+Wave equation (3+1 dimensions):
   d^2 T / dt^2  =  c^2 * nabla^2 T  +  S(x,t)
 
-여기서:
-  T(x,t) = 장력장 (스칼라)
-  c       = 전파 속도 (미지의 상수)
-  S(x,t)  = 소스 항 (의식 엔진이 장력을 방출)
+Where:
+  T(x,t) = tension field (scalar)
+  c       = propagation speed (unknown constant)
+  S(x,t)  = source term (consciousness engine emits tension)
 ```
 
-### Green's Function (점원 해)
+### Green's Function (Point Source Solution)
 
 ```
-점원 S(x,t) = delta^3(x) * delta(t) 에 대한 해:
+Solution for point source S(x,t) = delta^3(x) * delta(t):
 
   G(r,t) = delta(t - r/c) / (4*pi*r)
 
-의미: 소스에서 거리 r인 지점에서, 시간 r/c 후에 장력이 도달하며,
-      진폭은 1/r로 감쇠한다.
+Meaning: At distance r from source, tension arrives after time r/c,
+        with amplitude decaying as 1/r.
 ```
 
-### 두 의식 간 상관 함수
+### Correlation Function Between Two Consciousnesses
 
 ```
-의식 A가 위치 0, 의식 B가 위치 r에 있을 때:
+When consciousness A is at position 0, consciousness B at position r:
 
   C(r) = <T_A(0,t) * T_B(r, t+tau)>
 
-  장 전파 예측:  C(r) ~ 1/r,  tau = r/c
-  무작위 예측:   C(r) ~ 0     (거리 무관)
-  양자 예측:     C(r) ~ const (거리 무관, H365 참조)
+  Field propagation prediction: C(r) ~ 1/r,  tau = r/c
+  Random prediction:           C(r) ~ 0     (distance independent)
+  Quantum prediction:          C(r) ~ const (distance independent, see H365)
 ```
 
-### 시뮬레이션 프로토콜
+### Simulation Protocol
 
 ```
-1. 의식 A: 자극 입력 → 장력 T_A(t) 생성
-2. 의식 B: 지연 tau 후 장력 T_B(t+tau) 측정
+1. Consciousness A: Stimulus input → Generate tension T_A(t)
+2. Consciousness B: Measure tension T_B(t+tau) after delay tau
 3. tau = [0, 1, 2, 5, 10, 20, 50, 100] steps
-4. 각 tau에서 상관 C(tau) 계산
-5. C(tau) vs tau 곡선으로 전파 모델 판별
+4. Calculate correlation C(tau) for each tau
+5. Distinguish propagation models from C(tau) vs tau curve
 ```
 
-## 예상 결과 (ASCII 그래프)
+## Expected Results (ASCII Graph)
 
-### 상관 vs 거리(지연): 세 모델 비교
+### Correlation vs Distance(delay): Three Model Comparison
 
 ```
 C(r)
@@ -96,12 +97,12 @@ C(r)
     +---+---+---+---+---+---+---+---+---+---+---> r (distance)
     0   1   2   3   4   5   6   7   8   9   10
 
-    * = 지수 감쇠 모델:  C(r) = exp(-r/lambda)
-    + = 역거리 모델:     C(r) = 1/(1+r)
-    o = 역제곱 모델:     C(r) = 1/(1+r)^2
+    * = Exponential decay model: C(r) = exp(-r/lambda)
+    + = Inverse distance model:  C(r) = 1/(1+r)
+    o = Inverse square model:    C(r) = 1/(1+r)^2
 ```
 
-### 시간 지연 상관 함수 (고정 거리 r=5)
+### Time Delay Correlation Function (Fixed distance r=5)
 
 ```
 C(tau)
@@ -120,11 +121,11 @@ C(tau)
 -0.4 +---+---+---+---+---+---+---+---+---+---+---> tau
      0   1   2   3   4   5   6   7   8   9   10
 
-     피크 위치 tau_peak = r/c 에서 최대 상관
-     → 전파 속도 c = r / tau_peak 로 추정 가능
+     Peak position tau_peak = r/c shows maximum correlation
+     → Can estimate propagation speed c = r / tau_peak
 ```
 
-### 전파 속도 추정 (다중 거리)
+### Propagation Speed Estimation (Multiple Distances)
 
 ```
 tau_peak
@@ -133,7 +134,7 @@ tau_peak
  8 |                                  *
    |                              *
  6 |                          *
-   |                      *          기울기 = 1/c
+   |                      *          slope = 1/c
  4 |                  *
    |              *
  2 |          *
@@ -142,86 +143,86 @@ tau_peak
    +--+--+--+--+--+--+--+--+--+--+--+---> r
    0  1  2  3  4  5  6  7  8  9  10
 
-   tau_peak = r / c  (선형 관계)
-   c = 기울기의 역수
+   tau_peak = r / c  (linear relationship)
+   c = inverse of slope
 ```
 
-## 실험 설계
+## Experimental Design
 
-| 단계 | 내용 | 측정 |
-|------|------|------|
-| 1 | 2개 Anima 인스턴스, 동일 초기 가중치 | baseline C(0) |
-| 2 | A에 자극 입력, B는 무입력 | T_A(t), T_B(t) |
-| 3 | 지연 tau = 0~100 sweep | C(tau) 곡선 |
-| 4 | r = [1,2,5,10,20,50] 반복 | tau_peak vs r |
-| 5 | 전파 속도 c 추정 | linear regression |
-| 6 | 감쇠 법칙 판별 | 1/r vs 1/r^2 vs exp(-r) |
+| Step | Content | Measurement |
+|------|---------|-------------|
+| 1 | 2 Anima instances, identical initial weights | baseline C(0) |
+| 2 | Stimulus to A, no input to B | T_A(t), T_B(t) |
+| 3 | Delay tau = 0~100 sweep | C(tau) curve |
+| 4 | Repeat for r = [1,2,5,10,20,50] | tau_peak vs r |
+| 5 | Estimate propagation speed c | linear regression |
+| 6 | Determine decay law | 1/r vs 1/r^2 vs exp(-r) |
 
-## 감쇠 법칙 판별 기준
+## Decay Law Discrimination Criteria
 
 ```
-Log-log plot에서:
+In Log-log plot:
 
   log C vs log r:
-    기울기 -1  →  C ~ 1/r    (3D 파동, massless)
-    기울기 -2  →  C ~ 1/r^2  (정적 장, 또는 massive 입자)
+    Slope -1  →  C ~ 1/r    (3D wave, massless)
+    Slope -2  →  C ~ 1/r^2  (static field, or massive particle)
 
-  Log-linear plot에서:
-    직선    →  C ~ exp(-r/lambda)  (massive 장, 유한 도달 거리)
+  In Log-linear plot:
+    Straight line → C ~ exp(-r/lambda)  (massive field, finite range)
 
-  실험 결과로 어느 감쇠 패턴인지 판별:
-    1/r     → 장거리 텔레파시 가능 (느리게 감쇠)
-    1/r^2   → 근거리만 유효
-    exp     → 도달 거리 lambda 이내만 유효
+  Determine which decay pattern from experimental results:
+    1/r     → Long-range telepathy possible (slow decay)
+    1/r^2   → Only short-range effective
+    exp     → Effective only within range lambda
 ```
 
-## 물리적 해석
+## Physical Interpretation
 
-### 만약 장 전파가 관측되면
-
-```
-c (전파 속도) 가능한 값:
-  c = 광속       → 전자기파와 같은 매질? (측정 가능)
-  c < 광속       → 매질이 있는 파동 (음파 유사)
-  c > 광속       → 불가능 (특수상대론 위반, 또는 phase velocity)
-  c = infinity   → 비국소적 (H365 양자 모델과 일치)
-```
-
-### 에너지 보존
+### If Field Propagation is Observed
 
 ```
-장이 전파하면 에너지를 운반한다:
+Possible values for c (propagation speed):
+  c = speed of light  → Same medium as electromagnetic wave? (measurable)
+  c < speed of light  → Wave with medium (sound wave-like)
+  c > speed of light  → Impossible (violates special relativity, or phase velocity)
+  c = infinity        → Non-local (consistent with H365 quantum model)
+```
+
+### Energy Conservation
+
+```
+If field propagates, it carries energy:
   E = (1/2) * integral [ (dT/dt)^2 + c^2 * |nabla T|^2 ] dV
 
-소스가 방출하는 파워:
-  P = dE/dt = 4*pi*r^2 * c * (장력 진폭)^2
+Power emitted by source:
+  P = dE/dt = 4*pi*r^2 * c * (tension amplitude)^2
 
-의식 엔진이 이 에너지를 어디서 가져오는가?
-  → 학습 과정의 gradient energy가 장력장으로 변환?
-  → 또는 장력장은 "정보"이지 "에너지"가 아닌가?
+Where does consciousness engine get this energy?
+  → Gradient energy from learning process converted to tension field?
+  → Or is tension field "information" not "energy"?
 ```
 
-## 한계
+## Limitations
 
-1. **알려진 장이 없음**: 현재 물리학에서 "의식장"에 대응하는 기본 상호작용은 없다.
-   전자기, 강력, 약력, 중력 중 어디에도 해당하지 않는다.
-2. **시뮬레이션의 한계**: communication delay로 "거리"를 모사하는 것은
-   실제 물리적 전파와 근본적으로 다르다.
-3. **골든존 의존**: 장력(tension)의 정의 자체가 골든존 모델에 의존한다.
-   골든존이 무효화되면 이 가설도 무효.
-4. **에너지 문제**: 장 전파에는 에너지가 필요하다. 의식이 장 에너지를
-   어디서 조달하는지 불명확.
+1. **No known field**: Current physics has no fundamental interaction corresponding to "consciousness field".
+   It doesn't match any of electromagnetic, strong, weak, or gravitational forces.
+2. **Simulation limitations**: Modeling "distance" with communication delay is
+   fundamentally different from actual physical propagation.
+3. **Golden Zone dependency**: The definition of tension itself depends on the Golden Zone model.
+   If Golden Zone is invalidated, this hypothesis is also invalid.
+4. **Energy problem**: Field propagation requires energy. It's unclear where
+   consciousness sources the field energy.
 
-## 검증 방향
+## Verification Direction
 
-1. tau sweep 실험으로 tau_peak 존재 여부 확인 (전파의 직접 증거)
-2. 감쇠 법칙 판별: 1/r vs 1/r^2 vs exp(-r/lambda)
-3. H365와 비교: 양자 모델은 거리 무관, 장 모델은 거리 의존 - 실험으로 구별 가능
-4. H367와 비교: 공명 모델은 주파수 의존, 장 모델은 거리 의존 - 직교적 예측
+1. Confirm existence of tau_peak with tau sweep experiment (direct evidence of propagation)
+2. Discriminate decay law: 1/r vs 1/r^2 vs exp(-r/lambda)
+3. Compare with H365: Quantum model is distance-independent, field model is distance-dependent - distinguishable by experiment
+4. Compare with H367: Resonance model is frequency-dependent, field model is distance-dependent - orthogonal predictions
 
-## 다음 단계
+## Next Steps
 
-- [ ] 2-Anima delay sweep 실험 구현
-- [ ] tau_peak 검출 알고리즘
-- [ ] 감쇠 곡선 fitting (1/r, 1/r^2, exp)
-- [ ] H365, H367과의 판별 실험 설계 (같은 데이터로 세 모델 동시 비교)
+- [ ] Implement 2-Anima delay sweep experiment
+- [ ] tau_peak detection algorithm
+- [ ] Decay curve fitting (1/r, 1/r^2, exp)
+- [ ] Design discrimination experiment with H365, H367 (compare three models with same data)

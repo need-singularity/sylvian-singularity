@@ -1,30 +1,30 @@
-# 가설 180: 왜 3변수(D, P, I)인가 = 왜 3차원인가?
+# Hypothesis 180: Why 3 Variables (D, P, I) = Why 3 Dimensions?
 
-**Status: ⚠️ 검증 진행 중**
+**Status: ⚠️ Verification in Progress**
 
-## 핵심 질문
+## Core Question
 
-왜 우리 프레임워크는 정확히 3개의 변수(Deficit, Performance, Instability)를
-사용하는가? 이것은 임의적 선택인가, 아니면 수학적 필연인가?
+Why does our framework use exactly 3 variables (Deficit, Performance, Instability)?
+Is this an arbitrary choice or a mathematical necessity?
 
-## 골든존 폭과 변수 수의 관계
+## Relationship Between Golden Zone Width and Number of Variables
 
-N개의 변수를 사용할 때, 골든존의 폭은 다음과 같이 결정된다:
-
-```
-골든존 폭 = ln((N+1) / N)
-
-N=2:  ln(3/2) = 0.405   ← 너무 넓음 (선택성 부족)
-N=3:  ln(4/3) = 0.288   ← 적절함 (골디락스)
-N=4:  ln(5/4) = 0.223   ← 너무 좁음 (도달 어려움)
-N=5:  ln(6/5) = 0.182   ← 실용성 상실
-N=10: ln(11/10)= 0.095  ← 극도로 좁음
-```
-
-## ASCII 그래프: N vs 골든존 폭
+When using N variables, the Golden Zone width is determined as follows:
 
 ```
-폭(width)
+Golden Zone Width = ln((N+1) / N)
+
+N=2:  ln(3/2) = 0.405   ← Too wide (lacks selectivity)
+N=3:  ln(4/3) = 0.288   ← Appropriate (Goldilocks)
+N=4:  ln(5/4) = 0.223   ← Too narrow (hard to reach)
+N=5:  ln(6/5) = 0.182   ← Loss of practicality
+N=10: ln(11/10)= 0.095  ← Extremely narrow
+```
+
+## ASCII Graph: N vs Golden Zone Width
+
+```
+Width
   |
 0.7|*
    | *  N=1 (0.693)
@@ -33,95 +33,96 @@ N=10: ln(11/10)= 0.095  ← 극도로 좁음
 0.5|
    |   *  N=2 (0.405)
 0.4|
-   |      * N=3 (0.288)  ◀── 우리의 선택
+   |      * N=3 (0.288)  ◀── Our choice
 0.3|.......*...................
    |         * N=4 (0.223)
 0.2|          * * N=5,6
    |             * * *
 0.1|                  * * * *
    |__________________________|
-   1  2  3  4  5  6  7  8  9 10   N(변수 수)
+   1  2  3  4  5  6  7  8  9 10   N(number of variables)
 ```
 
-## 왜 N=3이 특별한가?
+## Why is N=3 Special?
 
-### 1. 수학적 근거: 완전수 연결
-
-```
-3의 특별함:
-  - 3 = 완전수 6의 가장 작은 소수 약수
-  - 6 = 1 + 2 + 3 (자기 자신을 제외한 약수의 합)
-  - 3! = 6 (3의 팩토리얼 = 완전수)
-  - 3변수의 상호작용 쌍 = C(3,2) = 3 (자기참조적)
-```
-
-### 2. 물리적 근거: 공간 차원
+### 1. Mathematical Basis: Perfect Number Connection
 
 ```
-우리가 사는 공간 = 3차원
-  x축 ←→ Deficit (결핍 축)
-  y축 ←→ Performance (성능 축)
-  z축 ←→ Instability (불안정성 축)
-
-2차원이면: 평면 → 정보 부족 → 폭 0.405 (과대)
-3차원이면: 공간 → 적절한 정보 → 폭 0.288 (적정)
-4차원이면: 초공간 → 정보 과잉 → 폭 0.223 (과소)
+The specialness of 3:
+  - 3 = smallest prime divisor of perfect number 6
+  - 6 = 1 + 2 + 3 (sum of divisors excluding itself)
+  - 3! = 6 (factorial of 3 = perfect number)
+  - Interaction pairs of 3 variables = C(3,2) = 3 (self-referential)
 ```
 
-### 3. 정보이론적 근거
+### 2. Physical Basis: Spatial Dimensions
 
 ```
-변수 수(N)  |  엔트로피 기여  |  한계수익
------------|--------------|---------
-  1 → 2    |   +0.288     |  매우 큼
-  2 → 3    |   +0.117     |  적절함   ◀── 수확체감 시작점
-  3 → 4    |   +0.065     |  작음
-  4 → 5    |   +0.041     |  매우 작음
+Our living space = 3 dimensions
+  x-axis ←→ Deficit (deficiency axis)
+  y-axis ←→ Performance (performance axis)
+  z-axis ←→ Instability (instability axis)
+
+If 2D: Plane → Insufficient information → Width 0.405 (excessive)
+If 3D: Space → Appropriate information → Width 0.288 (optimal)
+If 4D: Hyperspace → Information overload → Width 0.223 (insufficient)
 ```
 
-## 2변수 모델의 문제점
+### 3. Information Theoretic Basis
 
 ```
-D-P 모델 (Instability 없음):
+Variables(N)  |  Entropy Contribution  |  Marginal Return
+-----------|--------------------|-------------
+  1 → 2    |   +0.288          |  Very large
+  2 → 3    |   +0.117          |  Appropriate   ◀── Diminishing returns begin
+  3 → 4    |   +0.065          |  Small
+  4 → 5    |   +0.041          |  Very small
+```
+
+## Problems with 2-Variable Model
+
+```
+D-P Model (without Instability):
 ┌─────────────────────┐
-│  넓은 골든존 (0.405) │
+│  Wide Golden Zone (0.405) │
 │  ┌─────────────┐    │
-│  │  참 골든존    │    │  구별 불가!
-│  │  + 거짓양성  │    │
+│  │  True GZ     │    │  Cannot distinguish!
+│  │  + False     │    │
+│  │   Positives  │    │
 │  └─────────────┘    │
-│  선택성 = 낮음       │
+│  Selectivity = Low   │
 └─────────────────────┘
-→ 불안정한 모델도 "좋다"고 판정
+→ Unstable models also judged as "good"
 ```
 
-## 4변수 모델의 문제점
+## Problems with 4-Variable Model
 
 ```
-D-P-I-X 모델 (변수 추가):
+D-P-I-X Model (additional variable):
 ┌─────────────────────┐
-│  좁은 골든존 (0.223) │
+│  Narrow Golden Zone (0.223) │
 │      ┌───┐          │
-│      │ ! │ ← 도달   │
-│      └───┘   어려움  │
-│  대부분 골든존 밖     │
+│      │ ! │ ← Hard   │
+│      └───┘   to reach│
+│  Most outside GZ     │
 └─────────────────────┘
-→ 실제로 좋은 모델도 골든존 진입 실패
+→ Even good models fail to enter Golden Zone
 ```
 
-## 결론
+## Conclusion
 
 ```
-N=3은 "골디락스 수":
-  - 충분한 선택성 (거짓양성 제거)
-  - 충분한 도달성 (좋은 모델이 진입 가능)
-  - 완전수 6과의 연결
-  - 3차원 공간과의 대응
+N=3 is the "Goldilocks number":
+  - Sufficient selectivity (eliminates false positives)
+  - Sufficient reachability (good models can enter)
+  - Connection with perfect number 6
+  - Correspondence with 3D space
 
-"3은 선택이 아니라 필연이다."
+"3 is not a choice but a necessity."
 ```
 
-## 후속 연구
+## Follow-up Research
 
-- [ ] N=3의 위상학적 필연성 증명
-- [ ] 완전수 연결의 깊은 의미 탐구
-- [ ] 다른 프레임워크에서의 3변수 패턴 조사
+- [ ] Prove topological necessity of N=3
+- [ ] Explore deeper meaning of perfect number connection
+- [ ] Investigate 3-variable patterns in other frameworks

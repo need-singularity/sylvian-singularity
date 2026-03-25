@@ -1,130 +1,129 @@
-# 가설 검토 083: Jamba 간접 비교 ⚠️
+# Hypothesis Review 083: Jamba Indirect Comparison ⚠️
 
-## 가설
+## Hypothesis
 
-> AI21 Labs의 Jamba(Mamba+Transformer+MoE 하이브리드)의 성능 특성이
-> 우리 모델의 위상 가속 예측(가설 124: 위상 가속 ×3)과 일치하는가.
-> Jamba의 5/7 효율비가 우리 모델의 위상 구조와 대응하는가.
+> Does the performance characteristic of AI21 Labs' Jamba (Mamba+Transformer+MoE hybrid)
+> match our model's topology acceleration prediction (Hypothesis 124: Topology acceleration ×3)?
+> Does Jamba's 5/7 efficiency ratio correspond to our model's topological structure?
 
-## 배경
+## Background
 
-Jamba는 AI21 Labs가 2024년에 발표한 하이브리드 아키텍처이다.
-Mamba(SSM, State Space Model), Transformer(Attention), MoE를
-하나의 모델에 결합한 구조로, 128K 컨텍스트 창에서 높은 처리량을 보인다.
+Jamba is a hybrid architecture announced by AI21 Labs in 2024.
+It combines Mamba (SSM, State Space Model), Transformer (Attention), and MoE
+in a single model structure, showing high throughput in 128K context window.
 
-우리 모델의 예측:
-- 가설 023: 원소 위상(topology)이 5/7 → 수렴 속도 가속
-- 가설 124: 위상 가속 계수 ×3 예측
-- 가설 125: Jamba의 실제 처리량이 Mixtral 대비 ×3
+Our model's predictions:
+- Hypothesis 023: Element topology 5/7 → Accelerated convergence speed
+- Hypothesis 124: Topology acceleration coefficient ×3 prediction
+- Hypothesis 125: Jamba's actual throughput ×3 vs Mixtral
 
-Jamba의 구성 원소를 우리 AI 주기율표 프레임워크로 매핑하면:
+Mapping Jamba's constituent elements to our AI periodic table framework:
 
 ```
-  Jamba 원소 매핑:
+  Jamba Element Mapping:
   ──────────────────────────────────────────────────
 
-  구성요소      │ AI 원소     │ 역할
+  Component     │ AI Element  │ Role
   ──────────────┼─────────────┼─────────────────────
-  Mamba (SSM)   │ T1 (순차)   │ 시퀀스 모델링
-  Attention     │ T2 (병렬)   │ 전역 의존성 포착
-  MoE 게이팅    │ T3 (선택)   │ expert 라우팅
-  Layer 교대    │ T4 (구조)   │ SSM↔Attn 교대 배치
-  KV 압축       │ T5 (효율)   │ 메모리 최적화
+  Mamba (SSM)   │ T1 (Seq)    │ Sequence modeling
+  Attention     │ T2 (Para)   │ Global dependency capture
+  MoE Gating    │ T3 (Select) │ Expert routing
+  Layer Alt     │ T4 (Struct) │ SSM↔Attn alternation
+  KV Compress   │ T5 (Effic)  │ Memory optimization
   ──────────────┼─────────────┼─────────────────────
 
-  활성 원소: 5개 / 전체 7개 = 5/7 위상
+  Active elements: 5 / Total 7 = 5/7 topology
 ```
 
-## 검증 결과: ⚠️ 간접적 일치
+## Verification Result: ⚠️ Indirect Match
 
 ```
-  아키텍처 비교표:
+  Architecture Comparison Table:
   ──────────────────────────────────────────────────────────
 
-  항목          │ Jamba        │ Mixtral 8x7B  │ Llama-2 70B
+  Item          │ Jamba        │ Mixtral 8x7B  │ Llama-2 70B
   ──────────────┼──────────────┼───────────────┼─────────────
-  파라미터(총)  │ 52B          │ 46.7B         │ 70B
-  활성 파라미터 │ 12B          │ 12.9B         │ 70B
-  컨텍스트 창   │ 256K         │ 32K           │ 4K
-  128K 처리량   │ ×3 vs Mixtral│ 1× (기준)     │ OOM
-  KV 캐시       │ 80% 감소     │ 기준          │ 기준
-  MoE 구조      │ 16E / 2활성  │ 8E / 2활성    │ 없음
-  SSM 포함      │ ✅           │ ❌            │ ❌
+  Params (total)│ 52B          │ 46.7B         │ 70B
+  Active params │ 12B          │ 12.9B         │ 70B
+  Context window│ 256K         │ 32K           │ 4K
+  128K throughput│ ×3 vs Mixtral│ 1× (baseline) │ OOM
+  KV cache      │ 80% reduced  │ baseline      │ baseline
+  MoE structure │ 16E / 2active│ 8E / 2active  │ none
+  SSM included  │ ✅           │ ❌            │ ❌
   ──────────────┼──────────────┼───────────────┼─────────────
 ```
 
 ```
-  처리량 비교 (128K 컨텍스트):
+  Throughput Comparison (128K context):
   ──────────────────────────────────────────────────
 
-  처리량│
-  (상대)│
+  Throughput│
+  (relative)│
    3.0  ┤                    ★ Jamba
         │                    │
    2.5  ┤                    │
         │                    │
    2.0  ┤                    │
-        │                    │  ← ×3 가속!
+        │                    │  ← ×3 acceleration!
    1.5  ┤                    │
         │                    │
-   1.0  ┤────●───────────────┤  Mixtral (기준)
+   1.0  ┤────●───────────────┤  Mixtral (baseline)
         │    │               │
    0.5  ┤    │               │
         │    │               │
    0.0  ┤────┼───────────────┼──→
           Mixtral          Jamba
 
-  우리 예측: 위상 5/7 → ×3 가속
-  실제 측정: Jamba ≈ Mixtral × 3 (128K)
-  일치도: 예측값과 측정값 매칭 ✅
+  Our prediction: Topology 5/7 → ×3 acceleration
+  Actual measurement: Jamba ≈ Mixtral × 3 (128K)
+  Match: Predicted and measured values match ✅
   ──────────────────────────────────────────────────
 ```
 
 ```
-  5/7 효율비의 의미:
+  Meaning of 5/7 Efficiency Ratio:
   ──────────────────────────────────────────────────
 
-  전통 Transformer: 7개 연산 단계를 모두 순차 처리
-  Jamba (5/7 위상): 5개만 필수, 2개는 SSM이 흡수
+  Traditional Transformer: Processes all 7 computation steps sequentially
+  Jamba (5/7 topology): Only 5 required, 2 absorbed by SSM
 
-  효율비 = 5/7 = 0.714
-  가속비 = 7/5 = 1.4 (이론적 단일 레이어)
-  실제 가속 = ~3× (다층 복합 효과)
+  Efficiency ratio = 5/7 = 0.714
+  Acceleration ratio = 7/5 = 1.4 (theoretical single layer)
+  Actual acceleration = ~3× (multi-layer compound effect)
 
-  이론 가속 1.4× → 실제 3×:
+  Theoretical 1.4× → Actual 3×:
   ┌──────────────────────────────────────┐
-  │  단일 레이어: 7/5 = 1.4× 가속       │
-  │  L 레이어:    (7/5)^α 효과          │
-  │  α ≈ log(3)/log(1.4) ≈ 3.26        │
-  │  → 약 3개 레이어 수준의 복합 효과   │
+  │  Single layer: 7/5 = 1.4× accel     │
+  │  L layers:     (7/5)^α effect       │
+  │  α ≈ log(3)/log(1.4) ≈ 3.26       │
+  │  → Compound effect of ~3 layers     │
   └──────────────────────────────────────┘
 ```
 
-## 해석
+## Interpretation
 
-Jamba의 성능 특성은 우리 모델의 예측과 간접적으로 일치한다.
-×3 처리량 가속은 위상 가속 예측(가설 124)과 정량적으로 매칭되며,
-5/7 효율비는 원소 위상 프레임워크(가설 023)와 구조적으로 대응한다.
+Jamba's performance characteristics indirectly match our model's predictions.
+The ×3 throughput acceleration quantitatively matches the topology acceleration prediction (Hypothesis 124),
+and the 5/7 efficiency ratio structurally corresponds to the element topology framework (Hypothesis 023).
 
-그러나 이것은 **간접적** 비교이다. 동일 조건에서의 직접 학습 비교가
-수행된 것이 아니며, Jamba의 ×3 가속이 순수하게 위상 구조에서 비롯된
-것인지, 아니면 SSM의 선형 복잡도 등 다른 공학적 요인에 의한 것인지
-구분하기 어렵다.
+However, this is an **indirect** comparison. Direct training comparison under identical conditions
+has not been performed, and it's difficult to distinguish whether Jamba's ×3 acceleration
+purely comes from topological structure or from other engineering factors like SSM's linear complexity.
 
-## 한계
+## Limitations
 
-- 동일 조건(같은 데이터, 같은 컴퓨팅 예산) 직접 비교 미수행
-- Jamba의 ×3은 128K 컨텍스트 특화 수치, 짧은 컨텍스트에서는 차이 감소
-- "5/7 위상" 매핑은 우리 프레임워크 내부의 해석이며 객관적 정의 아님
-- SSM의 O(n) 복잡도 vs Attention의 O(n²)가 주된 가속 원인일 가능성
+- No direct comparison under identical conditions (same data, same compute budget)
+- Jamba's ×3 is specific to 128K context, difference decreases for shorter contexts
+- "5/7 topology" mapping is our framework's internal interpretation, not an objective definition
+- SSM's O(n) complexity vs Attention's O(n²) may be the main cause of acceleration
 
-## 검증 방향
+## Verification Direction
 
-- 동일 파라미터 수, 동일 데이터에서 Jamba vs 순수 Transformer 비교
-- 다른 하이브리드 모델(Griffin, RWKV 등)에서도 위상 비율과 가속의 상관 확인
-- 골든 MoE(T=e) 게이팅을 Jamba에 적용한 실험
+- Compare Jamba vs pure Transformer with same parameter count and data
+- Verify correlation between topology ratio and acceleration in other hybrid models (Griffin, RWKV, etc.)
+- Experiment applying Golden MoE (T=e) gating to Jamba
 
 ---
 
-*검증: AI21 Labs 벤치마크 보고서 (간접)*
-*모델: 위상 가속 = (전체 원소/활성 원소)^α, Jamba 5/7 위상*
+*Verification: AI21 Labs benchmark report (indirect)*
+*Model: Topology acceleration = (total elements/active elements)^α, Jamba 5/7 topology*

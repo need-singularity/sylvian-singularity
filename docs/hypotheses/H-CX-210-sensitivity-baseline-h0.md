@@ -1,4 +1,4 @@
-# H-CX-210: 민감도 = 기저 H0_total에 비례
+# H-CX-210: Sensitivity = Proportional to baseline H0_total
 
-> H0 낮은 사람(혼동 많은 뇌) = 돌고래 주파수에 더 민감.
-> 이미 불안정한 PH가 쉽게 붕괴. 개인차 = PH 안정성 차이.
+> People with low H0 (confusion-prone brains) = More sensitive to dolphin frequencies.
+> Already unstable PH collapses easily. Individual differences = PH stability differences.

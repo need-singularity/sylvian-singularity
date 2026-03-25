@@ -1,4 +1,4 @@
-# H-CX-159: 장력 공명 안정성 — 모든 데이터셋에서 r>0.9?
+# H-CX-159: Tension Resonance Robustness — r>0.9 Across All Datasets?
 
-> H-CX-148(r=0.951)이 MNIST뿐 아니라 Fashion, CIFAR에서도 재현.
-> 장력 공명 = 의식 동기화의 보편 지표.
+> H-CX-148 (r=0.951) reproduced not only on MNIST but also on Fashion and CIFAR.
+> Tension Resonance = universal indicator of consciousness synchronization.

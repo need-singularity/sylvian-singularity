@@ -1,115 +1,115 @@
-# 가설 373: 인과 효과 난이도 그래디언트 — Fashion으로 중간점 검증
+# Hypothesis 373: Causal Effect Difficulty Gradient — Intermediate Point Verification with Fashion
 
-> **장력의 인과 효과(tension=0 시 정확도 하락)가 과제 난이도에 단조 비례한다면, MNIST(-9.25pp)와 CIFAR(-0.53pp) 사이의 Fashion-MNIST에서 중간값(-2~-6pp)이 나와야 한다. 이것이 확인되면 H278(장력∝기저정확도)이 🟩로 승격.**
+> **If tension's causal effect (accuracy drop at tension=0) is monotonically proportional to task difficulty, Fashion-MNIST between MNIST(-9.25pp) and CIFAR(-0.53pp) should show intermediate values(-2~-6pp). If confirmed, H278(tension∝base_accuracy) upgrades to 🟩.**
 
-## 배경/맥락
-
-```
-  C48 인과 실험 결과:
-    MNIST: tension=0 → -9.25pp (큰 효과!)
-    CIFAR: tension=0 → -0.53pp (거의 무효과!)
-
-  tension_scale 비교:
-    MNIST: 0.4683 (높은 장력)
-    CIFAR: 0.0389 (낮은 장력, 12배 차이)
-
-  기저 정확도:
-    MNIST: ~98% (쉬움)
-    CIFAR: ~53% (어려움)
-
-  H278 예측: 장력 인과 효과 ∝ 기저 정확도
-  → 쉬운 과제에서 장력이 더 중요?
-  → 직관과 반대! (H342는 "어려울수록 의존" 예측)
-```
-
-## 핵심 질문
+## Background/Context
 
 ```
-  두 가지 경쟁 가설:
+  C48 Causal Experiment Results:
+    MNIST: tension=0 → -9.25pp (large effect!)
+    CIFAR: tension=0 → -0.53pp (almost no effect!)
 
-  H278: 인과효과 ∝ 기저정확도 (쉬울수록 장력 의존↑)
+  tension_scale comparison:
+    MNIST: 0.4683 (high tension)
+    CIFAR: 0.0389 (low tension, 12x difference)
+
+  Base accuracy:
+    MNIST: ~98% (easy)
+    CIFAR: ~53% (difficult)
+
+  H278 prediction: tension causal effect ∝ base accuracy
+  → Tension more important for easy tasks?
+  → Counterintuitive! (H342 predicts "more dependence on difficult")
+```
+
+## Key Questions
+
+```
+  Two competing hypotheses:
+
+  H278: Causal effect ∝ base accuracy (easier → higher tension dependence↑)
     MNIST(98%) > Fashion(~90%) > CIFAR(53%)
-    예측: Fashion에서 -2~-6pp
+    Prediction: Fashion at -2~-6pp
 
-  H342: 인과효과 ∝ 난이도 (어려울수록 장력 의존↑)
-    반대 방향 예측 → CIFAR가 가장 커야 함
-    but 실측은 CIFAR가 가장 작음!
+  H342: Causal effect ∝ difficulty (harder → higher tension dependence↑)
+    Opposite direction prediction → CIFAR should be largest
+    but actual measurement shows CIFAR is smallest!
 
-  → Fashion이 판별 실험:
-    H278 맞으면: Fashion -2~-6pp (중간)
-    H342 맞으면: Fashion < MNIST (더 작아야 함)
+  → Fashion as discriminating experiment:
+    If H278 correct: Fashion -2~-6pp (intermediate)
+    If H342 correct: Fashion < MNIST (should be smaller)
 ```
 
-## 예측 (ASCII)
+## Predictions (ASCII)
 
 ```
-  인과 효과 (tension=0 시 하락, pp)
+  Causal Effect (drop at tension=0, pp)
   10 |  * MNIST (-9.25pp)
    8 |
-   6 |          ★ Fashion (예측: -3~-6pp)
+   6 |          ★ Fashion (predicted: -3~-6pp)
    4 |
    2 |
    1 |                              * CIFAR (-0.53pp)
    0 +--+-----------+-----------+-->
-       98%         ~90%        53%    기저 정확도
+       98%         ~90%        53%    Base Accuracy
 
-  H278이 맞다면: 단조 감소 (기저정확도↑ → 인과효과↑)
-  H342가 맞다면: 비단조 (어떤 패턴?)
+  If H278 correct: monotonic decrease (base_accuracy↑ → causal_effect↑)
+  If H342 correct: non-monotonic (what pattern?)
 ```
 
-## 실험 설계
+## Experimental Design
 
 ```
-  데이터: Fashion-MNIST (10 클래스, ~90% 기저정확도)
-  모델: RepulsionField 2극 (MNIST/CIFAR와 동일 아키텍처)
+  Data: Fashion-MNIST (10 classes, ~90% base accuracy)
+  Model: RepulsionField 2-pole (same architecture as MNIST/CIFAR)
 
-  1. 일반 학습 30ep → 기저 정확도 측정
-  2. tension=0 개입 → 정확도 변화 측정
-  3. per-class 분석: 어떤 클래스가 가장 영향받는가?
-  4. tension_scale 기록 → MNIST/CIFAR와 비교
+  1. Normal training 30ep → measure base accuracy
+  2. tension=0 intervention → measure accuracy change
+  3. per-class analysis: which classes are most affected?
+  4. Record tension_scale → compare with MNIST/CIFAR
 
-  추가 데이터 (가능하면):
-    EMNIST-Letters (~85%?) → 4번째 데이터 포인트
-    SVHN (~90%?) → 동일 난이도 다른 도메인
+  Additional data (if possible):
+    EMNIST-Letters (~85%?) → 4th data point
+    SVHN (~90%?) → same difficulty different domain
 ```
 
-## 성공/실패 기준
+## Success/Failure Criteria
 
 ```
-  H278 확인: Fashion 인과효과 ∈ [-2pp, -6pp]
-    AND tension_scale ∈ [0.04, 0.47] (CIFAR~MNIST 사이)
-    → H278 🟩 승격
+  H278 confirmation: Fashion causal effect ∈ [-2pp, -6pp]
+    AND tension_scale ∈ [0.04, 0.47] (between CIFAR~MNIST)
+    → H278 🟩 upgrade
 
-  H278 반박: Fashion 인과효과 < -1pp
-    → 비선형 관계, 새 모델 필요
+  H278 refutation: Fashion causal effect < -1pp
+    → Non-linear relationship, new model needed
 
-  예외: Fashion 인과효과 > -6pp (MNIST보다 큼)
-    → 비단조 관계, 매우 흥미로운 결과
+  Exception: Fashion causal effect > -6pp (larger than MNIST)
+    → Non-monotonic relationship, very interesting result
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H278: 장력∝기저정확도 (🟨, 2점만)
-- H342: 인과+난이도 비례 (🟨)
-- C48: tension=0 인과 실험 (⚠️ CIFAR 미재현)
-- H282: 고정확도 전용 (🟨)
-- H283: 비선형 임계점 (⚠️ 반전)
+- H278: tension∝base_accuracy (🟨, only 2 points)
+- H342: causal+difficulty proportional (🟨)
+- C48: tension=0 causal experiment (⚠️ CIFAR not reproduced)
+- H282: high-accuracy exclusive (🟨)
+- H283: non-linear threshold (⚠️ inverted)
 
-## 한계
-
-```
-  - Fashion은 MNIST와 같은 28x28 → 아키텍처 편향 가능
-  - 3점 (MNIST, Fashion, CIFAR)으로는 함수 형태 결정 어려움
-  - 기저 정확도 외 다른 요인(데이터 구조, 클래스 유사도) 영향
-```
-
-## 검증 방향
+## Limitations
 
 ```
-  1단계: Fashion-MNIST 인과 실험 (핵심)
-  2단계: EMNIST/SVHN 추가 → 4-5점 피팅
-  3단계: per-class 난이도 vs 인과효과 상관 (10점씩)
-  4단계: 이론적 모델: effect = f(base_acc, tension_scale)
+  - Fashion is 28x28 like MNIST → possible architecture bias
+  - 3 points (MNIST, Fashion, CIFAR) insufficient to determine function form
+  - Effects beyond base accuracy (data structure, class similarity)
 ```
 
-## 상태: 🟨 미검증
+## Verification Direction
+
+```
+  Stage 1: Fashion-MNIST causal experiment (core)
+  Stage 2: Add EMNIST/SVHN → 4-5 point fitting
+  Stage 3: per-class difficulty vs causal effect correlation (10 points each)
+  Stage 4: Theoretical model: effect = f(base_acc, tension_scale)
+```
+
+## Status: 🟨 Unverified

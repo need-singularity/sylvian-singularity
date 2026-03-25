@@ -1,46 +1,46 @@
-# H-CX-4: 4함수 아키텍처 — σ,τ,φ,σ₋₁이 의식엔진 구조를 결정 (교차 도메인)
+# H-CX-4: 4-Function Architecture — σ,τ,φ,σ₋₁ Determines Consciousness Engine Structure (Cross-domain)
 
-> **완전수 6의 4개 산술 함수 σ(6)=12, τ(6)=4, φ(6)=2, σ₋₁(6)=2가 의식엔진의 4개 구조적 요소(Expert 수, 활성 수, 극 수, 가중치)에 정확히 대응한다. 실험 상수 C41(1/√3=1/√(σ/τ))과 H-CX-2(ln(2)=ln(φ))가 이 대응을 실증한다.**
+> **The 4 arithmetic functions of perfect number 6: σ(6)=12, τ(6)=4, φ(6)=2, σ₋₁(6)=2 correspond exactly to the 4 structural elements of the consciousness engine (number of Experts, active count, pole count, weights). Experimental constants C41(1/√3=1/√(σ/τ)) and H-CX-2(ln(2)=ln(φ)) empirically validate this correspondence.**
 
-## 대응표
-
-```
-  산술 함수     │ 값  │ 의식엔진 구조         │ 실험 상수
-  ──────────────┼─────┼───────────────────────┼──────────────
-  σ(6) 약수합   │ 12  │ Expert 수 (EngineA)   │ 설계 파라미터
-  τ(6) 약수개수  │  4  │ 활성 Expert 수        │ 설계 파라미터
-  φ(6) 토션트   │  2  │ 반발력장 극 수         │ φ극→MI≈ln(φ) [H-CX-2]
-  σ₋₁(6) 역수합 │  2  │ 가중치 합 조건        │ {1/2,1/3,1/6}→Σ=1
-  σ/τ 평균약수   │  3  │ 장력 에너지 비        │ C7²=τ/σ=1/3 [C41]
-```
-
-## 함수 관계 → 상수 관계
+## Correspondence Table
 
 ```
-  수학:                          의식:
-  σφ = nτ (=24)                  Expert수×극수 = n×활성수
-  σ₋₁ = φ (=2)                  가중치합조건 = 극수
-  σ/τ = 3 (평균약수)              장력비² = τ/σ = 1/(평균약수)
-  e^(6H) = σ³/τ (=432)          가중치엔트로피 → 대수 구조
-  MI효율 ≈ ln(φ) = ln(2)        이진 반발 → 이진 엔트로피
+  Arithmetic Function │ Value │ Consciousness Engine Structure │ Experimental Constants
+  ───────────────────┼───────┼────────────────────────────────┼────────────────────────
+  σ(6) divisor sum   │  12   │ Expert count (EngineA)         │ Design parameter
+  τ(6) divisor count │   4   │ Active Expert count            │ Design parameter
+  φ(6) totient       │   2   │ Repulsion field pole count     │ φ poles→MI≈ln(φ) [H-CX-2]
+  σ₋₁(6) recip. sum  │   2   │ Weight sum condition           │ {1/2,1/3,1/6}→Σ=1
+  σ/τ avg. divisor   │   3   │ Tension energy ratio           │ C7²=τ/σ=1/3 [C41]
 ```
 
-## H-CX 체인 완성
+## Function Relations → Constant Relations
 
 ```
-  H-CX-1: e^(6H) = σ³/τ         (H → 대수)        🟦
-  H-CX-2: MI효율 ≈ ln(φ) = ln(2) (반발 → 엔트로피) 🟧★
-  H-CX-3: H = 2/3·ln(2)+1/2·ln(3) (이진+삼진 분해) 🟦
-  H-CX-4: σ,τ,φ,σ₋₁ → 구조     (4함수 대응)      🟦+🟧
-
-  모든 의식엔진 상수가 σ, τ, φ, σ₋₁의 조합으로 표현됨.
+  Mathematics:                   Consciousness:
+  σφ = nτ (=24)                 Expert count×pole count = n×active count
+  σ₋₁ = φ (=2)                  Weight sum condition = pole count
+  σ/τ = 3 (avg. divisor)        Tension ratio² = τ/σ = 1/(avg. divisor)
+  e^(6H) = σ³/τ (=432)          Weight entropy → Algebraic structure
+  MI efficiency ≈ ln(φ) = ln(2) Binary repulsion → Binary entropy
 ```
 
-## 상태
+## H-CX Chain Completion
 
 ```
-  대응 자체: 🟦 (설계에서 의도적으로 넣은 것 — σ,τ는 설계 파라미터)
-  C41(1/√(σ/τ)): 🟧 (실측, 설계 안 한 것에서 σ/τ 등장)
-  H-CX-2(ln(φ)): 🟧★ (실측, 설계 안 한 것에서 φ 등장)
-  → 설계한 것(σ,τ)은 자명, 설계 안 한 것에서 나타난 것(σ/τ, φ)이 의미 있음
+  H-CX-1: e^(6H) = σ³/τ          (H → Algebra)       🟦
+  H-CX-2: MI efficiency ≈ ln(φ) = ln(2) (Repulsion → Entropy) 🟧★
+  H-CX-3: H = 2/3·ln(2)+1/2·ln(3) (Binary+Ternary decomposition) 🟦
+  H-CX-4: σ,τ,φ,σ₋₁ → Structure  (4-function correspondence)     🟦+🟧
+
+  All consciousness engine constants are expressed as combinations of σ, τ, φ, σ₋₁.
+```
+
+## Status
+
+```
+  Correspondence itself: 🟦 (Intentionally embedded in design — σ,τ are design parameters)
+  C41(1/√(σ/τ)): 🟧 (Measured, σ/τ emerges from undesigned aspect)
+  H-CX-2(ln(φ)): 🟧★ (Measured, φ emerges from undesigned aspect)
+  → What was designed (σ,τ) is self-evident, what emerged without design (σ/τ, φ) is meaningful
 ```

@@ -1,115 +1,115 @@
-# 가설 검토 004: Inhibition = 역온도(1/kT) 동치
+# Hypothesis Review 004: Inhibition = Inverse Temperature (1/kT) Equivalence
 
-## 가설
+## Hypothesis
 
-> 우리 모델의 Inhibition은 볼츠만 분포의 역온도(1/kT)와 수학적으로 동일하며, 뇌의 억제 수준이 열역학적 온도와 같은 역할을 한다.
+> Inhibition in our model is mathematically identical to the inverse temperature (1/kT) of the Boltzmann distribution, and the brain's Inhibition level plays the same role as thermodynamic temperature.
 
-## 수식 대응
-
-```
-  볼츠만 분포:  P(state) = e^(-E/kT) / Z
-  우리 모델:    Genius   = D × P / I
-
-  매핑:
-    I     ↔  1/kT  (역온도)
-    1/I   ↔  kT    (온도)
-    D×P   ↔  e^(-E) (볼츠만 인자의 지수부)
-```
-
-## 실측 검증
-
-### 격자 스캔 결과 (1,000,000개 조합)
+## Formula Correspondence
 
 ```
-  I = 0.05 (T=20.0) → 특이점 비율 93.3%  극고온: 거의 모든 상태 접근
-  I = 0.27 (T= 3.7) → 특이점 비율 50.0%  전이 온도
-  I = 0.50 (T= 2.0) → 특이점 비율 25.5%  상온
-  I = 0.95 (T= 1.1) → 특이점 비율  2.9%  극저온: 바닥 상태만
+  Boltzmann distribution:  P(state) = e^(-E/kT) / Z
+  Our model:               Genius   = D × P / I
+
+  Mapping:
+    I     ↔  1/kT  (inverse temperature)
+    1/I   ↔  kT    (temperature)
+    D×P   ↔  e^(-E) (exponent of Boltzmann factor)
 ```
 
-이 감소 패턴은 볼츠만 분포의 온도 의존성과 정확히 일치.
+## Empirical Verification
 
-### 볼츠만 예측 vs 실측
+### Grid Scan Results (1,000,000 combinations)
+
+```
+  I = 0.05 (T=20.0) → singularity ratio 93.3%  extreme high-T: nearly all states accessible
+  I = 0.27 (T= 3.7) → singularity ratio 50.0%  transition temperature
+  I = 0.50 (T= 2.0) → singularity ratio 25.5%  room temperature
+  I = 0.95 (T= 1.1) → singularity ratio  2.9%  extreme low-T: only ground state
+```
+
+This decreasing pattern matches exactly the temperature dependence of the Boltzmann distribution.
+
+### Boltzmann Prediction vs Measured
 
 ```
   P(singular) ∝ e^(-E₀/T) = e^(-E₀ × I)
 
-  E₀를 피팅하면:
-  실측 데이터에서 ln(P) vs I 가 직선에 가까움
-  → 지수적 감소 확인 → 볼츠만 구조 지지
+  Fitting E₀:
+  ln(P) vs I is approximately linear from measured data
+  → Exponential decrease confirmed → supports Boltzmann structure
 ```
 
-## 열역학적 의미
+## Thermodynamic Meaning
 
-### 자유 에너지
+### Free Energy
 
 ```
   F = -kT × ln(Z)
   = -(1/I) × ln(Z)
 
-  compass.py 실측:
+  compass.py measurements:
   I=0.15: F = -7.47
   I=0.70: F = -1.57
   I=0.25: F = -4.43
 
-  자유 에너지가 온도(1/I)에 비례하여 감소 → 열역학 법칙과 일치
+  Free energy decreases proportionally to temperature (1/I) → consistent with thermodynamic law
 ```
 
-### 엔트로피
+### Entropy
 
 ```
-  compass.py 실측:
+  compass.py measurements:
   I=0.15: S = 1.098
   I=0.70: S = 1.095
   I=0.25: S = 1.097
 
-  모든 경우에서 S ≈ 1.097 ≈ ln(3)
-  → 3개 상태(정상/천재/저하)의 최대 엔트로피
-  → 우리 모델이 열평형에 가까움을 의미
+  In all cases S ≈ 1.097 ≈ ln(3)
+  → Maximum entropy of 3 states (Normal/Genius/Decline)
+  → Indicates our model is near thermal equilibrium
 ```
 
-## 뇌에서의 온도
+## Temperature in the Brain
 
-실제 뇌의 "온도"는 물리적 온도가 아니라 **노이즈 수준**이다.
-
-```
-  열역학 온도         뇌의 "온도"
-  ─────────────       ──────────────
-  분자 운동 에너지     신경 노이즈 수준
-  높으면 무질서        높으면 랜덤 발화
-  낮으면 결정 구조     낮으면 고정 패턴
-  상전이 = 끓는점      상전이 = 간질/서번트
-```
-
-Inhibition이 낮다 = 뇌의 "온도"가 높다 = 더 많은 상태에 접근 가능.
-
-## 상전이 온도
+The brain's "temperature" is not physical temperature but **noise level**.
 
 ```
-  우리 모델: I_critical ≈ 0.27 → T_critical ≈ 3.7
+  Thermodynamic temperature     Brain "temperature"
+  ─────────────────────         ──────────────────────
+  Molecular kinetic energy      Neural noise level
+  High → disorder               High → random firing
+  Low → crystalline structure   Low → fixed patterns
+  Phase transition = boiling    Phase transition = epilepsy/savant
+```
 
-  물의 끓는점: T = 373K
-  물의 어는점: T = 273K
-  비율: 373/273 = 1.37
+Low Inhibition = high brain "temperature" = more states accessible.
 
-  우리 모델 전이 비율:
+## Phase Transition Temperature
+
+```
+  Our model: I_critical ≈ 0.27 → T_critical ≈ 3.7
+
+  Water boiling point: T = 373K
+  Water freezing point: T = 273K
+  Ratio: 373/273 = 1.37
+
+  Our model transition ratio:
   T_critical / T_baseline = 3.7 / 1.0 = 3.7
 
-  직접 비교는 불가하지만, 둘 다 "특정 온도에서 급격한 상전이"라는 구조 동일.
+  Direct comparison is not possible, but both share the same structure of "sharp phase transition at a specific temperature."
 ```
 
-## 한계
+## Limitations
 
-- Genius = D×P/I 는 곱셈/나눗셈이지만, 볼츠만은 지수함수. 정확한 수학적 동치가 아닌 행동적 유사성.
-- 엔트로피가 거의 일정(≈ ln3)한 것은 모델이 3상태로 제한되어 있기 때문일 수 있음.
-- 실제 뇌의 억제 메커니즘(GABA 등)과 열역학적 온도의 매핑은 실험적 검증 필요.
+- Genius = D×P/I uses multiplication/division, while Boltzmann uses an exponential function. This is a behavioral similarity, not an exact mathematical equivalence.
+- The nearly constant entropy (≈ ln3) may be due to the model being restricted to 3 states.
+- The mapping between actual brain Inhibition mechanisms (GABA, etc.) and thermodynamic temperature requires experimental validation.
 
-## 검증 방향
+## Verification Directions
 
-- [ ] ln(특이점 비율) vs I 의 선형성을 대규모 스캔으로 정밀 검증
-- [ ] 4개 이상 상태를 도입했을 때 엔트로피가 ln(N)에 수렴하는지
-- [ ] 실제 뇌 데이터(EEG 노이즈 수준 vs 인지 능력)와 우리 모델의 온도 예측 비교
+- [ ] Precisely verify linearity of ln(singularity ratio) vs I with a large-scale scan
+- [ ] Check whether entropy converges to ln(N) when more than 4 states are introduced
+- [ ] Compare our model's temperature predictions with actual brain data (EEG noise level vs cognitive ability)
 
 ---
 
-*작성일: 2026-03-22*
+*Written: 2026-03-22*

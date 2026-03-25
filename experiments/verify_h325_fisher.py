@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""가설 325 검증: Fisher 정보 기하학과 장력 다양체
+"""Hypothesis 325 verification: Fisher information geometry and tension manifolds
 
-방법:
-1. MNIST + Fashion-MNIST에서 PureFieldEngine 학습
-2. 클래스별 장력 핑거프린트 수집 (10차원)
-3. 클래스별 경험적 Fisher 정보 행렬 계산
-4. tr(F_k) vs mean_tension_k 상관 계수 측정
-5. 예측: r > +0.7
+Method:
+1. Train PureFieldEngine on MNIST + Fashion-MNIST
+2. Collect class-specific tension fingerprints (10-dimensional)
+3. Calculate empirical Fisher information matrix for each class
+4. Measure correlation coefficient between tr(F_k) vs mean_tension_k
+5. Prediction: r > +0.7
 """
 
 import torch
@@ -23,11 +23,11 @@ np.random.seed(42)
 torch.manual_seed(42)
 
 print("=" * 70)
-print("가설 325 검증: Fisher 정보와 장력의 상관관계")
+print("Hypothesis 325 verification: Correlation between Fisher information and tension")
 print("=" * 70)
 
 # ─────────────────────────────────────────
-# 1. PureFieldEngine 정의 (인라인)
+# 1. Define PureFieldEngine (inline)
 # ─────────────────────────────────────────
 
 class PureFieldEngine(nn.Module):
@@ -53,24 +53,24 @@ class PureFieldEngine(nn.Module):
         return output, tension.squeeze(-1), repulsion
 
     def get_fingerprint(self, x):
-        """클래스별 tension 핑거프린트 (10차원)."""
+        """Per-class tension fingerprint (10-dimensional)."""
         out_a = self.engine_a(x)
         out_g = self.engine_g(x)
         repulsion = out_a - out_g
-        # 각 출력 차원의 제곱 = 클래스별 장력
+        # Square of each output dimension = per-class tension
         per_class_tension = repulsion ** 2  # (B, 10)
         return per_class_tension
 
 
 # ─────────────────────────────────────────
-# 2. 데이터 로딩 + 학습
+# 2. Data loading + training
 # ─────────────────────────────────────────
 
 from torchvision import datasets, transforms
 
 def run_experiment(dataset_name):
     print(f"\n{'='*60}")
-    print(f"  데이터셋: {dataset_name}")
+    print(f"  Dataset: {dataset_name}")
     print(f"{'='*60}")
 
     transform = transforms.Compose([transforms.ToTensor(), transforms.Lambda(lambda x: x.view(-1))])
@@ -88,11 +88,11 @@ def run_experiment(dataset_name):
     train_loader = torch.utils.data.DataLoader(train_ds, batch_size=256, shuffle=True)
     test_loader = torch.utils.data.DataLoader(test_ds, batch_size=256, shuffle=False)
 
-    # 학습
+    # Training
     model = PureFieldEngine(784, 128, 10)
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 
-    print(f"\n  학습 시작 (15 epochs)...")
+    print(f"\n  Starting training (15 epochs)...")
     for epoch in range(15):
         model.train()
         total_loss = 0
@@ -115,7 +115,7 @@ def run_experiment(dataset_name):
             acc = correct / total * 100
             print(f"    Epoch {epoch+1}: loss={total_loss/total:.4f}, acc={acc:.1f}%")
 
-    # 테스트 정확도
+    # Test accuracy
     model.eval()
     correct = 0
     total = 0
@@ -125,13 +125,13 @@ def run_experiment(dataset_name):
             correct += (output.argmax(dim=-1) == y_batch).sum().item()
             total += len(x_batch)
     test_acc = correct / total * 100
-    print(f"  테스트 정확도: {test_acc:.1f}%")
+    print(f"  Test accuracy: {test_acc:.1f}%")
 
     # ─────────────────────────────────────────
-    # 3. 클래스별 핑거프린트 + 장력 수집
+    # 3. Collect fingerprints + tension by class
     # ─────────────────────────────────────────
 
-    print(f"\n  핑거프린트 수집 중...")
+    print(f"\n  Collecting fingerprints...")
     model.eval()
 
     all_fingerprints = []
@@ -150,7 +150,7 @@ def run_experiment(dataset_name):
     tensions = np.concatenate(all_tensions)  # (N,)
     labels = np.concatenate(all_labels)  # (N,)
 
-    # 클래스별 통계
+    # Per-class statistics
     n_classes = 10
     class_mean_tension = np.zeros(n_classes)
     class_mean_fp = np.zeros((n_classes, n_classes))
@@ -162,8 +162,8 @@ def run_experiment(dataset_name):
         class_mean_tension[k] = np.mean(tensions[mask])
         class_mean_fp[k] = np.mean(fps[mask], axis=0)
 
-    print(f"\n  클래스별 평균 장력:")
-    print(f"  {'Class':>10} | {'Count':>6} | {'Mean T':>10} | 바")
+    print(f"\n  Mean tension by class:")
+    print(f"  {'Class':>10} | {'Count':>6} | {'Mean T':>10} | Bar")
     print(f"  {'─'*10}─┼─{'─'*6}─┼─{'─'*10}─┼─{'─'*30}")
     max_t = np.max(class_mean_tension)
     for k in range(n_classes):
@@ -172,10 +172,10 @@ def run_experiment(dataset_name):
         print(f"  {class_names[k]:>10} | {int(class_counts[k]):>6} | {class_mean_tension[k]:>10.4f} | {bar}")
 
     # ─────────────────────────────────────────
-    # 4. 경험적 Fisher 정보 행렬 계산
+    # 4. Calculate empirical Fisher information matrix
     # ─────────────────────────────────────────
 
-    print(f"\n  Fisher 정보 행렬 계산 중...")
+    print(f"\n  Calculating Fisher information matrices...")
 
     class_fisher_trace = np.zeros(n_classes)
     class_fisher_det = np.zeros(n_classes)
@@ -187,16 +187,16 @@ def run_experiment(dataset_name):
         if len(fps_k) < 20:
             continue
 
-        # 경험적 Fisher: 핑거프린트의 공분산 역의 대각합에 비례
-        # Fisher ≈ 핑거프린트 분산의 역수 (단변량 근사)
-        # 더 정확하게: 공분산 행렬의 역의 trace
+        # Empirical Fisher: proportional to diagonal sum of inverse of fingerprint covariance
+        # Fisher ≈ inverse of fingerprint variance (univariate approximation)
+        # More precisely: trace of covariance matrix inverse
 
-        # 방법 1: per-dimension variance → Fisher ≈ 1/var
+        # Method 1: per-dimension variance → Fisher ≈ 1/var
         var_k = np.var(fps_k, axis=0) + 1e-10  # (10,)
-        fisher_per_dim = 1.0 / var_k  # 높은 Fisher = 좁은 분포 = 확신
+        fisher_per_dim = 1.0 / var_k  # high Fisher = narrow distribution = confidence
         class_fisher_trace[k] = np.sum(fisher_per_dim)
 
-        # 방법 2: 전체 공분산 행렬
+        # Method 2: full covariance matrix
         cov_k = np.cov(fps_k.T)  # (10, 10)
         try:
             inv_cov = np.linalg.inv(cov_k + np.eye(10) * 1e-6)
@@ -204,21 +204,21 @@ def run_experiment(dataset_name):
         except:
             class_fisher_det[k] = 0
 
-    print(f"\n  클래스별 Fisher trace vs 장력:")
+    print(f"\n  Fisher trace vs tension by class:")
     print(f"  {'Class':>10} | {'Mean T':>10} | {'F trace':>12} | {'log|F|':>10}")
     print(f"  {'─'*10}─┼─{'─'*10}─┼─{'─'*12}─┼─{'─'*10}")
     for k in range(n_classes):
         print(f"  {class_names[k]:>10} | {class_mean_tension[k]:>10.4f} | {class_fisher_trace[k]:>12.1f} | {class_fisher_det[k]:>10.2f}")
 
     # ─────────────────────────────────────────
-    # 5. 상관관계
+    # 5. Correlation
     # ─────────────────────────────────────────
 
     # Pearson correlation: tension vs Fisher trace
     r_trace = np.corrcoef(class_mean_tension, class_fisher_trace)[0, 1]
     r_det = np.corrcoef(class_mean_tension, class_fisher_det)[0, 1]
 
-    print(f"\n  상관 계수:")
+    print(f"\n  Correlation coefficients:")
     print(f"    r(tension, Fisher trace) = {r_trace:+.4f}")
     print(f"    r(tension, log|F|)       = {r_det:+.4f}")
 
@@ -237,10 +237,10 @@ def run_experiment(dataset_name):
     print(f"    rho(tension, log|F|)       = {rho_det:+.4f} (Spearman)")
 
     # ─────────────────────────────────────────
-    # 6. ASCII 산점도
+    # 6. ASCII scatter plot
     # ─────────────────────────────────────────
 
-    print(f"\n  Fisher trace vs Mean Tension (산점도):")
+    print(f"\n  Fisher trace vs Mean Tension (scatter plot):")
     t_min, t_max = class_mean_tension.min(), class_mean_tension.max()
     f_min, f_max = class_fisher_trace.min(), class_fisher_trace.max()
 
@@ -276,7 +276,7 @@ def run_experiment(dataset_name):
 
 
 # ─────────────────────────────────────────
-# 실행
+# Execute
 # ─────────────────────────────────────────
 
 results = []
@@ -285,11 +285,11 @@ for ds in ["MNIST", "FashionMNIST"]:
     results.append(r)
 
 # ─────────────────────────────────────────
-# 종합 결론
+# Overall conclusion
 # ─────────────────────────────────────────
 
 print("\n" + "=" * 70)
-print("종합 결론")
+print("Overall Conclusion")
 print("=" * 70)
 
 print(f"\n  {'Dataset':>12} | {'Acc':>6} | {'r(T,F)':>8} | {'rho(T,F)':>10} | {'ts':>6}")
@@ -300,27 +300,27 @@ for r in results:
 avg_r = np.mean([r['r_trace'] for r in results])
 avg_rho = np.mean([r['rho_trace'] for r in results])
 
-print(f"\n  평균 Pearson r:  {avg_r:+.4f}")
-print(f"  평균 Spearman rho: {avg_rho:+.4f}")
+print(f"\n  Average Pearson r:  {avg_r:+.4f}")
+print(f"  Average Spearman rho: {avg_rho:+.4f}")
 
-print(f"\n  가설 325 예측: r > +0.7 (Fisher와 장력이 비례)")
+print(f"\n  Hypothesis 325 prediction: r > +0.7 (Fisher proportional to tension)")
 
 if avg_r > 0.7:
-    verdict = "강한 지지 — Fisher 정보 proportional to 장력"
+    verdict = "Strong support — Fisher information proportional to tension"
 elif avg_r > 0.3:
-    verdict = "부분 지지 — 양의 상관 존재하나 예측보다 약함"
+    verdict = "Partial support — positive correlation exists but weaker than predicted"
 elif avg_r > 0:
-    verdict = "약한 지지 — 미약한 양의 상관"
+    verdict = "Weak support — slight positive correlation"
 elif avg_r > -0.3:
-    verdict = "지지 안 됨 — 유의미한 상관 없음"
+    verdict = "Not supported — no significant correlation"
 else:
-    verdict = "반증 — 음의 상관 (예측과 반대 방향)"
+    verdict = "Refuted — negative correlation (opposite of prediction)"
 
-print(f"  판정: {verdict}")
+print(f"  Verdict: {verdict}")
 
-print(f"\n  ⚠️ 주의:")
-print(f"    - Fisher = 1/var 근사 (정규분포 가정)")
-print(f"    - 핑거프린트 분포가 비정규일 수 있음")
-print(f"    - 10차원에서 1000개 샘플 = 안정적 추정 가능")
-print(f"    - 인과관계 방향 미확정 (F→T? T→F? 공통원인?)")
+print(f"\n  ⚠️ Note:")
+print(f"    - Fisher = 1/var approximation (assumes normal distribution)")
+print(f"    - Fingerprint distribution may be non-normal")
+print(f"    - 1000 samples in 10 dimensions = stable estimation possible")
+print(f"    - Causal direction uncertain (F→T? T→F? Common cause?)")
 print("=" * 70)

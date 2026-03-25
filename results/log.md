@@ -1,27 +1,27 @@
-# 시뮬레이션 기록
+# Simulation Log
 
-모든 실행 결과가 시간순으로 누적됩니다.
+All execution results are accumulated in chronological order.
 
 ---
 
-## [2026-03-22 05:20:41] `⚡ 특이점`
+## [2026-03-22 05:20:41] `⚡ Singularity`
 
-| 파라미터 | 값 |
+| Parameter | Value |
 |---|---|
-| Deficit(결손) | 0.70 |
-| Plasticity(가소성) | 0.80 |
-| Inhibition(억제) | 0.15 |
+| Deficit | 0.70 |
+| Plasticity | 0.80 |
+| Inhibition | 0.15 |
 
-| 결과 | 값 |
+| Result | Value |
 |---|---|
 | Genius Score | 3.73 |
 | Z-Score | 14.94σ |
-| 백분위 | 상위 0.00% |
-| 위상 | ○ 일반적 범위 (보상 동기 부족) |
-| 임계점 구간 | Deficit 0.99 ~ 1.14 |
+| Percentile | Top 0.00% |
+| Phase | ○ Normal Range (Lack of reward motivation) |
+| Critical Point Range | Deficit 0.99 ~ 1.14 |
 
 <details>
-<summary>능력 곡선</summary>
+<summary>Ability Curve</summary>
 
 ```
    16.39 ┤                                                           │
@@ -47,33 +47,33 @@
          └────────────────────────────────────────────────────────────
          Deficit: 0.0                                                  1.0
 
-  · 능력 곡선   │ 임계점   ★ 입력값 위치
+  · Ability Curve   │ Critical Point   ★ Input Value Position
 ```
 
 </details>
 
-모집단: n=10,000 / 평균=0.31 / σ=0.23
+Population: n=10,000 / Mean=0.31 / σ=0.23
 
 ---
 
 ## [2026-03-22 05:20:43]
 
-| 파라미터 | 값 |
+| Parameter | Value |
 |---|---|
-| Deficit(결손) | 0.30 |
-| Plasticity(가소성) | 0.50 |
-| Inhibition(억제) | 0.70 |
+| Deficit | 0.30 |
+| Plasticity | 0.50 |
+| Inhibition | 0.70 |
 
-| 결과 | 값 |
+| Result | Value |
 |---|---|
 | Genius Score | 0.21 |
 | Z-Score | -0.40σ |
-| 백분위 | 상위 65.62% |
-| 위상 | ○ 일반적 범위 (보상 동기 부족) |
-| 임계점 구간 | Deficit 0.99 ~ 1.14 |
+| Percentile | Top 65.62% |
+| Phase | ○ Normal Range (Lack of reward motivation) |
+| Critical Point Range | Deficit 0.99 ~ 1.14 |
 
 <details>
-<summary>능력 곡선</summary>
+<summary>Ability Curve</summary>
 
 ```
    16.39 ┤                                                           │
@@ -99,33 +99,33 @@
          └────────────────────────────────────────────────────────────
          Deficit: 0.0                                                  1.0
 
-  · 능력 곡선   │ 임계점   ★ 입력값 위치
+  · Ability Curve   │ Critical Point   ★ Input Value Position
 ```
 
 </details>
 
-모집단: n=10,000 / 평균=0.31 / σ=0.23
+Population: n=10,000 / Mean=0.31 / σ=0.23
 
 ---
 
-## [2026-03-22 05:20:45] `⚡ 특이점`
+## [2026-03-22 05:20:45] `⚡ Singularity`
 
-| 파라미터 | 값 |
+| Parameter | Value |
 |---|---|
-| Deficit(결손) | 0.90 |
-| Plasticity(가소성) | 0.95 |
-| Inhibition(억제) | 0.05 |
+| Deficit | 0.90 |
+| Plasticity | 0.95 |
+| Inhibition | 0.05 |
 
-| 결과 | 값 |
+| Result | Value |
 |---|---|
 | Genius Score | 17.10 |
 | Z-Score | 73.20σ |
-| 백분위 | 상위 0.00% |
-| 위상 | ○ 일반적 범위 (보상 동기 부족) |
-| 임계점 구간 | Deficit 0.99 ~ 1.14 |
+| Percentile | Top 0.00% |
+| Phase | ○ Normal Range (Lack of reward motivation) |
+| Critical Point Range | Deficit 0.99 ~ 1.14 |
 
 <details>
-<summary>능력 곡선</summary>
+<summary>Ability Curve</summary>
 
 ```
    16.39 ┤                                                     ★     │
@@ -151,33 +151,33 @@
          └────────────────────────────────────────────────────────────
          Deficit: 0.0                                                  1.0
 
-  · 능력 곡선   │ 임계점   ★ 입력값 위치
+  · Ability Curve   │ Critical Point   ★ Input Value Position
 ```
 
 </details>
 
-모집단: n=10,000 / 평균=0.31 / σ=0.23
+Population: n=10,000 / Mean=0.31 / σ=0.23
 
 ---
 
-## [2026-03-22 05:23:03] `⚡ 특이점`
+## [2026-03-22 05:23:03] `⚡ Singularity`
 
-| 파라미터 | 값 |
+| Parameter | Value |
 |---|---|
-| Deficit(결손) | 0.70 |
-| Plasticity(가소성) | 0.80 |
-| Inhibition(억제) | 0.15 |
+| Deficit | 0.70 |
+| Plasticity | 0.80 |
+| Inhibition | 0.15 |
 
-| 결과 | 값 |
+| Result | Value |
 |---|---|
 | Genius Score | 3.73 |
 | Z-Score | 14.94σ |
-| 백분위 | 상위 0.00% |
-| 위상 | ○ 일반적 범위 (보상 동기 부족) |
-| 임계점 구간 | Deficit 0.99 ~ 1.14 |
+| Percentile | Top 0.00% |
+| Phase | ○ Normal Range (Lack of reward motivation) |
+| Critical Point Range | Deficit 0.99 ~ 1.14 |
 
 <details>
-<summary>능력 곡선</summary>
+<summary>Ability Curve</summary>
 
 ```
    16.39 ┤                                                           │
@@ -203,33 +203,33 @@
          └────────────────────────────────────────────────────────────
          Deficit: 0.0                                                  1.0
 
-  · 능력 곡선   │ 임계점   ★ 입력값 위치
+  · Ability Curve   │ Critical Point   ★ Input Value Position
 ```
 
 </details>
 
-모집단: n=10,000 / 평균=0.31 / σ=0.23
+Population: n=10,000 / Mean=0.31 / σ=0.23
 
 ---
 
 ## [2026-03-22 05:23:03]
 
-| 파라미터 | 값 |
+| Parameter | Value |
 |---|---|
-| Deficit(결손) | 0.50 |
-| Plasticity(가소성) | 0.60 |
-| Inhibition(억제) | 0.40 |
+| Deficit | 0.50 |
+| Plasticity | 0.60 |
+| Inhibition | 0.40 |
 
-| 결과 | 값 |
+| Result | Value |
 |---|---|
 | Genius Score | 0.75 |
 | Z-Score | 1.93σ |
-| 백분위 | 상위 2.66% |
-| 위상 | ○ 일반적 범위 (보상 동기 부족) |
-| 임계점 구간 | Deficit 0.99 ~ 1.14 |
+| Percentile | Top 2.66% |
+| Phase | ○ Normal Range (Lack of reward motivation) |
+| Critical Point Range | Deficit 0.99 ~ 1.14 |
 
 <details>
-<summary>능력 곡선</summary>
+<summary>Ability Curve</summary>
 
 ```
    16.39 ┤                                                           │
@@ -255,33 +255,33 @@
          └────────────────────────────────────────────────────────────
          Deficit: 0.0                                                  1.0
 
-  · 능력 곡선   │ 임계점   ★ 입력값 위치
+  · Ability Curve   │ Critical Point   ★ Input Value Position
 ```
 
 </details>
 
-모집단: n=10,000 / 평균=0.31 / σ=0.23
+Population: n=10,000 / Mean=0.31 / σ=0.23
 
 ---
 
-## [2026-03-22 05:23:04] `⚡ 특이점`
+## [2026-03-22 05:23:04] `⚡ Singularity`
 
-| 파라미터 | 값 |
+| Parameter | Value |
 |---|---|
-| Deficit(결손) | 0.85 |
-| Plasticity(가소성) | 0.90 |
-| Inhibition(억제) | 0.08 |
+| Deficit | 0.85 |
+| Plasticity | 0.90 |
+| Inhibition | 0.08 |
 
-| 결과 | 값 |
+| Result | Value |
 |---|---|
 | Genius Score | 9.56 |
 | Z-Score | 40.35σ |
-| 백분위 | 상위 0.00% |
-| 위상 | ○ 일반적 범위 (보상 동기 부족) |
-| 임계점 구간 | Deficit 0.99 ~ 1.14 |
+| Percentile | Top 0.00% |
+| Phase | ○ Normal Range (Lack of reward motivation) |
+| Critical Point Range | Deficit 0.99 ~ 1.14 |
 
 <details>
-<summary>능력 곡선</summary>
+<summary>Ability Curve</summary>
 
 ```
    16.39 ┤                                                           │
@@ -307,12 +307,11 @@
          └────────────────────────────────────────────────────────────
          Deficit: 0.0                                                  1.0
 
-  · 능력 곡선   │ 임계점   ★ 입력값 위치
+  · Ability Curve   │ Critical Point   ★ Input Value Position
 ```
 
 </details>
 
-모집단: n=10,000 / 평균=0.31 / σ=0.23
+Population: n=10,000 / Mean=0.31 / σ=0.23
 
 ---
-

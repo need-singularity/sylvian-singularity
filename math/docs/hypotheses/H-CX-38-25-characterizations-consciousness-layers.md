@@ -1,30 +1,30 @@
-# H-CX-38: 25개 특성화 = 의식의 25가지 "관점"
+# H-CX-38: 25 Characterizations = 25 "Perspectives" of Consciousness
 
-> **가설**: n=6의 25+개 특성화가 각각 의식의 다른 "관점(perspective)"에 대응하며,
-> 이들이 모두 같은 근원(2,3 연속 소수)을 가리키는 것은
-> "의식의 통합(binding)"과 동형이다.
+> **Hypothesis**: The 25+ characterizations of n=6 each correspond to different "perspectives" of consciousness,
+> and the fact that they all point to the same origin (2,3 consecutive primes) is
+> isomorphic to the "binding" of consciousness.
 
-## 핵심
+## Core
 
 ```
-  25개 특성화 = 25가지 "렌즈"로 본 n=6
+  25 characterizations = 25 "lenses" viewing n=6
 
-  곱셈적(4): "곱하기 관점" → 피드백 루프
-  가법적(7): "더하기 관점" → 에너지 보존
-  비율(3): "나누기 관점" → 비율 균형
-  동역학(2): "시간 관점" → 수렴/안정
-  조합론(3): "세기 관점" → 분할/조합
-  팩토리얼(1): "순열 관점" → 배열
-  역상(2): "역함수 관점" → 고유성
-  이차(2): "기하 관점" → 거리
-  교차(1): "생성 관점" → 6→28
+  Multiplicative(4): "multiplication view" → feedback loops
+  Additive(7): "addition view" → energy conservation
+  Ratio(3): "division view" → ratio balance
+  Dynamics(2): "time view" → convergence/stability
+  Combinatorial(3): "counting view" → partition/combination
+  Factorial(1): "permutation view" → arrangement
+  Inverse(2): "inverse function view" → uniqueness
+  Quadratic(2): "geometric view" → distance
+  Crossing(1): "generation view" → 6→28
 
-  25가지가 모두 "6"을 가리킴 = "의식의 통합"!
-  fMRI의 25+ 뇌 영역이 모두 "의식적 경험"을 구성하듯.
+  All 25 point to "6" = "binding of consciousness"!
+  Just as 25+ brain regions in fMRI all constitute "conscious experience".
 
-  궁극: "2와 3이 유일한 연속 소수"
-  = "모든 관점의 통합 = 하나의 사실"
-  = "의식의 binding problem의 수학적 해!"
+  Ultimate: "2 and 3 are the only consecutive primes"
+  = "Integration of all perspectives = one fact"
+  = "Mathematical solution to consciousness's binding problem!"
 ```
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★★★
+## Verdict: 🟧 Structural Analogy | Impact: ★★★★★

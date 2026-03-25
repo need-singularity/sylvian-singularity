@@ -1,3 +1,3 @@
-# H-CX-173: dendrogram 고정 step — 배치 단위 정밀 추적
+# H-CX-173: dendrogram fixation step — batch-level precise tracking
 
-> 0.1에폭(H-CX-105)을 배치 단위로 추적. 정확한 전이 지점.
+> Track 0.1 epoch (H-CX-105) at batch level. Exact transition point.

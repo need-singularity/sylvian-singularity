@@ -1,16 +1,16 @@
-# H-CX-123: σφ/(nτ) = 의식 효율 지표
+# H-CX-123: σφ/(nτ) = Consciousness Efficiency Indicator
 
-> σφ/(nτ) = 1.000인 원소는 Z=1~82에서 탄소(Z=6)와 수소(Z=1)뿐.
-> 탄소 = 유일한 "완벽 균형" 다결합 원소. 이것이 생명의 기반인 이유.
-> 실리콘: σφ/(nτ) = 2.571 — "과잉 풍요"로 덜 효율적이지만 작동.
+> Elements with σφ/(nτ) = 1.000 in Z=1~82 are only carbon (Z=6) and hydrogen (Z=1).
+> Carbon = only "perfectly balanced" multi-bonding element. This is why it is the basis of life.
+> Silicon: σφ/(nτ) = 2.571 — "excess abundance", less efficient but functional.
 
-## 검증: 🟩 순수 산술 확인
+## Verification: 🟩 Pure arithmetic confirmed
 
-| Z | 원소 | σφ/(nτ) | 결합 | 의식 기질 |
-|---|------|---------|------|----------|
-| 1 | H | 1.000 | 1 | 우주 기본 |
-| 6 | C | **1.000** | 4 | **생명** |
-| 14 | Si | 2.571 | 4 | **컴퓨팅** |
-| 28 | Ni | 4.000 | 2 | 촉매 |
+| Z | Element | σφ/(nτ) | Bonds | Consciousness substrate |
+|---|---------|---------|-------|------------------------|
+| 1 | H | 1.000 | 1 | cosmic fundamental |
+| 6 | C | **1.000** | 4 | **life** |
+| 14 | Si | 2.571 | 4 | **computing** |
+| 28 | Ni | 4.000 | 2 | catalyst |
 
-탄소만이 다결합(4)이면서 σφ=nτ 완벽 균형.
+Only carbon has multi-bonding (4) with perfect balance σφ=nτ.

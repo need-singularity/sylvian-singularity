@@ -1,5 +1,5 @@
-# H-CX-201: 돌고래 치료 → 우울증 개선 = 장력 복원?
+# H-CX-201: Dolphin Therapy → Depression Improvement = Tension Restoration?
 
-> Frontiers 2024: DAT로 우울증 성인 삶의 질 개선 + 근육 장력 변화.
-> PH 해석: 우울 = 낮은 장력(확신 부족), 치료 = 장력 복원 = H0 정상화?
-> H313(장력=확신)의 임상 적용?
+> Frontiers 2024: DAT improves quality of life in depressed adults + muscle tension changes.
+> PH interpretation: Depression = low tension (lack of confidence), therapy = tension restoration = H0 normalization?
+> Clinical application of H313 (tension=confidence)?

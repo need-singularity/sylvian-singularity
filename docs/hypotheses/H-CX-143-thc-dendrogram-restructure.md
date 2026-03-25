@@ -1,37 +1,35 @@
-# H-CX-143: THC = dendrogram 재구조화
+# H-CX-143: THC = Dendrogram Restructuring
 
-> 동물/기계 분리가 색상/형태/감정 기반 분리로 전환. "다른 시각으로 세상을 봄."
+> Animal/machine separation transitions to color/shape/emotion-based separation. "Seeing the world from a different perspective."
 
-## 배경
+## Background
 
-정상 의식 상태에서 CIFAR-10 PH dendrogram은 animal/vehicle이라는
-의미적(semantic) 상위 범주로 분리된다. 이것은 인간 인지의 기본 범주화
-(Rosch, 1975)와 일치하며, 학습된 feature가 의미적 유사성을 반영한다.
+In a normal consciousness state, the CIFAR-10 PH dendrogram separates into
+animal/vehicle as semantic top-level categories. This aligns with the basic categorization
+of human cognition (Rosch, 1975), and the learned features reflect semantic similarity.
 
-THC는 CB1 수용체를 통해 top-down inhibition을 약화시킨다.
-이 경우 의미적 범주화(semantic categorization)가 약해지고,
-대신 저수준 지각 특성(색상, 형태, 텍스처)이나 정서적 반응(감정)이
-범주화의 새로운 기준이 될 수 있다.
+THC weakens top-down inhibition through CB1 receptors.
+In this case, semantic categorization weakens, and instead
+low-level perceptual features (color, shape, texture) or emotional responses
+can become the new basis of categorization.
 
-이는 "공감각(synesthesia)" 유사 경험과도 연결된다:
-THC 사용자가 보고하는 "색이 더 선명하게 보인다", "음악이 시각적으로 느껴진다"는
-범주화 기준의 전환으로 해석할 수 있다.
+This also connects to synesthesia-like experiences:
+THC users report "colors appear more vivid", "music feels visual" —
+these can be interpreted as a shift in categorization criteria.
 
-선행 가설 H-CX-142에서 H0_total이 감소한다면, 기존 dendrogram이 붕괴하고
-새로운 기준으로 재조직될 가능성이 있다. 이것이 단순한 붕괴인지 재구조화인지가
-본 가설의 핵심 질문이다.
+If H0_total decreases as predicted in the prior hypothesis H-CX-142, the existing dendrogram could collapse and reorganize under new criteria. Whether this is simple collapse or restructuring is the core question of this hypothesis.
 
-## 예측
+## Predictions
 
-| 측정 | 정상 dendrogram | THC dendrogram (예측) |
-|------|----------------|----------------------|
-| 최상위 분리 | animal vs vehicle | color-warm vs color-cool 또는 round vs angular |
-| 분리 기준 | semantic meaning | perceptual features |
-| 깊이 | 3-4 레벨 | 2-3 레벨 (단순화) |
-| 안정성 | trial 간 일관 | trial 간 변동 증가 |
+| Measurement | Normal dendrogram | THC dendrogram (predicted) |
+|------------|-------------------|---------------------------|
+| Top-level separation | animal vs vehicle | color-warm vs color-cool or round vs angular |
+| Separation basis | semantic meaning | perceptual features |
+| Depth | 3-4 levels | 2-3 levels (simplified) |
+| Stability | consistent across trials | increased trial-to-trial variation |
 
 ```
-정상 상태 dendrogram:         THC 상태 dendrogram (예측):
+Normal state dendrogram:      THC state dendrogram (predicted):
 
      ALL                           ALL
     /   \                         /   \
@@ -42,40 +40,40 @@ deer frog ship plane        deer frog ship plane
          horse bird         (orange)  (blue/gray)
 ```
 
-구체적 예측:
-1. dendrogram의 cophenetic correlation이 정상 vs THC 간 r < 0.3 (구조 변화)
-2. THC dendrogram에서 같은 색상 계열의 클래스가 가까이 배치
-3. 정상 → THC 전환 시 dendrogram topology가 불연속적으로 변화 (위상 전이)
+Specific predictions:
+1. cophenetic correlation between normal vs THC dendrograms r < 0.3 (structural change)
+2. THC dendrogram places same color-family classes close together
+3. Transition from normal → THC shows discontinuous change in dendrogram topology (phase transition)
 
-## 검증 방법
+## Verification Methods
 
-1. PureField 모델에서 tension_scale을 단계적으로 줄이며 dendrogram 생성
-2. 각 단계에서 cophenetic distance matrix 계산
-3. 정상 vs 변조 dendrogram의 cophenetic correlation 측정
-4. 클러스터링 기준 분석: semantic vs perceptual feature 기여도
+1. Generate dendrogram while progressively reducing tension_scale in PureField model
+2. Calculate cophenetic distance matrix at each step
+3. Measure cophenetic correlation between normal vs modulated dendrograms
+4. Analyze clustering basis: semantic vs perceptual feature contribution
 
-EEG 프로토콜 (H-CX-142와 동일 세션):
-- 정상/THC 상태에서 이미지 분류 과제
-- 각 상태에서 activation pattern으로 PH dendrogram 구성
-- dendrogram topology 비교
+EEG protocol (same session as H-CX-142):
+- Image classification task in normal/THC state
+- Build PH dendrogram from activation patterns in each state
+- Compare dendrogram topology
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-142**: THC PH 단순화 (H0_total 감소, 선행 가설)
-- **H-CX-85**: PH dendrogram 구조와 의식
-- **H-CX-152**: Rosch 원형 이론과 PH dendrogram
-- **H-CX-144**: 감마 억제 (dendrogram 재구조화의 메커니즘)
+- **H-CX-142**: THC PH simplification (H0_total decrease, prior hypothesis)
+- **H-CX-85**: PH dendrogram structure and consciousness
+- **H-CX-152**: Rosch prototype theory and PH dendrogram
+- **H-CX-144**: Gamma suppression (mechanism of dendrogram restructuring)
 
-## 한계
+## Limitations
 
-1. "색상/형태/감정 기반 분리"는 여러 가능성 중 하나이며 실제 재구조화 기준은 다를 수 있음
-2. 재구조화가 아니라 단순 붕괴(무구조)일 가능성도 있음
-3. CIFAR-10의 10개 클래스는 재구조화를 관찰하기에 충분하지 않을 수 있음
-4. AI 모델에서의 tension_scale 변조가 생물학적 THC 효과를 얼마나 반영하는지 불확실
+1. "Color/shape/emotion-based separation" is one of many possibilities; actual restructuring criteria may differ
+2. Simple collapse (no structure) rather than restructuring is also possible
+3. CIFAR-10's 10 classes may not be sufficient to observe restructuring
+4. Uncertain how well tension_scale modulation in AI models reflects biological THC effects
 
-## 검증 상태
+## Verification Status
 
-- [ ] AI 모델 dendrogram 비교 (tension_scale 변조)
-- [ ] cophenetic correlation 측정
-- [ ] 재구조화 vs 붕괴 판별
-- 현재: **미검증**
+- [ ] AI model dendrogram comparison (tension_scale modulation)
+- [ ] cophenetic correlation measurement
+- [ ] Distinguish restructuring vs collapse
+- Currently: **unverified**

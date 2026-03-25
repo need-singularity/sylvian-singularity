@@ -1,23 +1,23 @@
-# H-CX-112: 12→13 정보 점프 = ln(13/12)
+# H-CX-112: 12→13 Information Jump = ln(13/12)
 
-> N상태 폭 = ln((N+1)/N). 12→13 전이 비용 ln(13/12)=0.0800.
-> 이 값이 다른 N→N+1 전이와 비교하여 특별한 위치인지.
+> N-state width = ln((N+1)/N). 12→13 transition cost ln(13/12)=0.0800.
+> Whether this value occupies a special position compared to other N→N+1 transitions.
 
-## 검증 상태
-- [x] N-state 폭 비교
+## Verification Status
+- [x] N-state width comparison
 
-## 검증 결과
+## Verification Results
 
-**산술 확인**
+**Arithmetic confirmed**
 
-| 수식 | 값 |
-|------|-----|
+| Formula | Value |
+|---------|-------|
 | ln(13/12) | 0.08004 |
 | 12 × ln(13/12) | 0.9605 |
-| 오차 (vs 1) | 3.95% |
+| Error (vs 1) | 3.95% |
 
-- 12 × ln(13/12) = 0.9605 ≈ 1 -- 산술적으로 확인
-- 해석: 12개 상태가 각각 ln(13/12)만큼의 정보 비용을 지불하면 총합이 거의 1
-- 일반 공식 N × ln((N+1)/N) → 1 (N→∞에서 수렴)이므로, N=12에서 이미 96% 도달
-- 이는 12가 특별하다기보다 N이 클수록 1에 접근하는 일반적 성질
-- 등급: 🟧 (근사, 구조적이나 일반화 시 특별성 약화)
+- 12 × ln(13/12) = 0.9605 ≈ 1 — arithmetically confirmed
+- Interpretation: if 12 states each pay ln(13/12) in information cost, the total is almost 1
+- Since the general formula N × ln((N+1)/N) → 1 (converges as N→∞), N=12 already reaches 96%
+- This is a general property of approaching 1 as N grows, not a special property of 12
+- Grade: 🟧 (approximate, structural but special quality weakens upon generalization)

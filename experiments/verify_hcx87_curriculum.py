@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""H-CX-87 검증: PH-guided curriculum — 혼동 쌍 우선 학습
+"""H-CX-87 Verification: PH-guided curriculum — confusion pair priority learning
 
-baseline vs curriculum (혼동 쌍 oversampling) 비교
+baseline vs curriculum (confusion pair oversampling) comparison
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -13,7 +13,7 @@ from calc.direction_analyzer import load_data
 
 
 def get_confusion_pairs(dataset_name):
-    """CIFAR/Fashion/MNIST의 알려진 혼동 쌍 (H-CX-66 결과)"""
+    """Known confusion pairs from CIFAR/Fashion/MNIST (H-CX-66 results)"""
     if dataset_name == 'cifar':
         return [(3,5), (0,8), (1,9), (2,4)]  # cat-dog, plane-ship, auto-truck, bird-deer
     elif dataset_name == 'fashion':

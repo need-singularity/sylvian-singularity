@@ -1,70 +1,70 @@
-# H-CX-20: 약수 궤도 곱 = 뉴럴넷 수렴 조건
+# H-CX-20: Divisor Orbit Product = Neural Network Convergence Condition
 
-> **가설**: ∏R(d|n)=1이 n=6에서만 성립하는 "닫힌 궤도" 조건은
-> 뉴럴 네트워크의 수렴 조건과 동형이다.
-> 학습이 수렴하려면 "약수 궤도"가 닫혀야 한다.
+> **Hypothesis**: The "closed orbit" condition where ∏R(d|n)=1 holds only for n=6
+> is isomorphic to the convergence condition of neural networks.
+> For learning to converge, the "divisor orbit" must be closed.
 
-## 배경
-
-```
-  ∏R(d|n) = ∏ F(p,a)^{τ/(a+1)}  (일반 공식, 이번 세션 증명)
-
-  n=6(sqfree): ∏R = R^{τ/2} = 1^2 = 1 ← 닫힌 궤도
-  n=28(non-sqfree): ∏R = 216/7 ≠ 1 ← 열린 궤도
-
-  "닫힌 궤도" = 약수를 순회하면 곱이 1로 돌아옴
-  = 에너지 보존 (물리)
-  = 수렴 보장 (최적화)
-```
-
-## 핵심 대응
+## Background
 
 ```
-  약수 궤도                      뉴럴넷 학습
+  ∏R(d|n) = ∏ F(p,a)^{τ/(a+1)}  (General formula, proven this session)
+
+  n=6(sqfree): ∏R = R^{τ/2} = 1^2 = 1 ← Closed orbit
+  n=28(non-sqfree): ∏R = 216/7 ≠ 1 ← Open orbit
+
+  "Closed orbit" = Product returns to 1 after traversing divisors
+  = Energy conservation (physics)
+  = Convergence guarantee (optimization)
+```
+
+## Core Correspondence
+
+```
+  Divisor Orbit                  Neural Network Learning
   ──────────                    ──────────────
-  d|n 순회                       에폭(epoch) 순회
-  R(d) = 각 약수에서의 "비율"     loss ratio per batch
-  ∏R(d) = 전체 곱               전체 에폭의 곱셈적 변화
-  ∏R = 1 (닫힘)                 학습 수렴!
-  ∏R ≠ 1 (열림)                 학습 발산 또는 진동
+  d|n traversal                  Epoch traversal
+  R(d) = "ratio" at each divisor loss ratio per batch
+  ∏R(d) = total product          Multiplicative change across epochs
+  ∏R = 1 (closed)                Learning converges!
+  ∏R ≠ 1 (open)                  Learning diverges or oscillates
 
-  d=768 (BERT 차원):
+  d=768 (BERT dimension):
     R(768) = 37.85
-    약수 18개: {1,2,3,4,6,8,...,768}
+    18 divisors: {1,2,3,4,6,8,...,768}
     ∏R(d|768) = F(2,8)^{18/9} · F(3,1)^{18/2}
               = F(2,8)^2 · F(3,1)^9
-    → 매우 큰 수 (닫히지 않음)
-    → 학습이 "완전히 수렴"하지 않음?
+    → Very large number (not closed)
+    → Learning doesn't "fully converge"?
 
   d=6:
-    ∏R = 1 (완벽한 수렴)
-    → "6차원 네트워크는 이론적으로 완전 수렴"
+    ∏R = 1 (perfect convergence)
+    → "6-dimensional networks theoretically converge perfectly"
 ```
 
-### Lyapunov 지수와 연결
+### Connection to Lyapunov Exponent
 
 ```
-  동역학 시스템에서 Lyapunov 지수:
+  Lyapunov exponent in dynamical systems:
     λ = lim (1/T) Σ ln|f'(x_t)|
-    λ < 0: 안정 (수렴)
-    λ = 0: 중립
-    λ > 0: 불안정 (발산)
+    λ < 0: stable (convergent)
+    λ = 0: neutral
+    λ > 0: unstable (divergent)
 
-  R 약수 궤도의 "Lyapunov 지수":
+  "Lyapunov exponent" of R divisor orbit:
     Λ(n) = (1/τ) Σ_{d|n} ln R(d) = (1/τ) ln ∏R(d)
 
-    n=6: Λ = (1/4) ln 1 = 0 ← 중립 (임계!)
-    n=28: Λ = (1/6) ln(216/7) ≈ 0.56 > 0 (불안정)
-    n=12: Λ = (1/6) ln(49/27) ≈ 0.10 > 0 (약간 불안정)
+    n=6: Λ = (1/4) ln 1 = 0 ← Neutral (critical!)
+    n=28: Λ = (1/6) ln(216/7) ≈ 0.56 > 0 (unstable)
+    n=12: Λ = (1/6) ln(49/27) ≈ 0.10 > 0 (slightly unstable)
 
-  n=6만 Λ=0 (임계점)!
-  → "혼돈의 가장자리" (edge of chaos) = 의식?
+  Only n=6 has Λ=0 (critical point)!
+  → "Edge of chaos" = consciousness?
 ```
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] d=6 vs d=8 toy network 수렴 비교
-2. [ ] Λ(d)와 실제 학습 수렴 속도 상관
-3. [ ] 최적 d = Λ(d) 최소인 d?
+1. [ ] d=6 vs d=8 toy network convergence comparison
+2. [ ] Correlation between Λ(d) and actual learning convergence speed
+3. [ ] Optimal d = d that minimizes Λ(d)?
 
-## 난이도: 극고 | 파급력: ★★★★★
+## Difficulty: Extreme | Impact: ★★★★★

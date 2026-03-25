@@ -1,35 +1,35 @@
-# 나침반 공통 특이점 분석 [2026-03-22 05:46:16]
+# Compass Common Singularity Analysis [2026-03-22 05:46:16]
 
-격자: 30³ = 27,000개 조합
+Grid: 30³ = 27,000 combinations
 
-## 개별 모델 판정
+## Individual Model Judgments
 
-| 모델 | 특이점 수 | 비율 |
+| Model | Singularity Count | Ratio |
 |---|---|---|
-| 우리 모델 (Z>2σ) | 9,018 | 33.4% |
-| 커스프 (임계근접+상향) | 7,200 | 26.7% |
-| 볼츠만 (천재성 최우세) | 27,000 | 100.0% |
+| Our Model (Z>2σ) | 9,018 | 33.4% |
+| Cusp (Critical Proximity+Upward) | 7,200 | 26.7% |
+| Boltzmann (Genius Dominance) | 27,000 | 100.0% |
 
-## 합의도
+## Consensus
 
-| 합의 수 | 개수 | 비율 |
+| Consensus Count | Count | Ratio |
 |---|---|---|
-| 0 (정상) | 0 | 0.0% |
-| 1 (약한 신호) | 13,222 | 49.0% |
-| 2 (강한 신호) | 11,338 | 42.0% |
-| **3 (공통 특이점)** | **2,440** | **9.0%** |
+| 0 (Normal) | 0 | 0.0% |
+| 1 (Weak Signal) | 13,222 | 49.0% |
+| 2 (Strong Signal) | 11,338 | 42.0% |
+| **3 (Common Singularity)** | **2,440** | **9.0%** |
 
-## 🎯 골든 존
+## 🎯 Golden Zone
 
-| 파라미터 | 범위 | AI 매핑 |
+| Parameter | Range | AI Mapping |
 |---|---|---|
 | Deficit | 0.21 ~ 0.95 | Dropout 21%~95% |
-| Plasticity | 0.28 ~ 0.95 | LR 계수 |
+| Plasticity | 0.28 ~ 0.95 | LR Coefficient |
 | Inhibition | 0.24 ~ 0.48 | Gating 24%~48% |
 
-## Top 10 공통 특이점
+## Top 10 Common Singularities
 
-| Rank | D | P | I | Z-Score | 커스프거리 | 천재성% |
+| Rank | D | P | I | Z-Score | Cusp Distance | Genius% |
 |---|---|---|---|---|---|---|
 | 1 | 0.83 | 0.95 | 0.30 | 10.36σ | 0.1888 | 38.9% |
 | 2 | 0.73 | 0.95 | 0.27 | 10.25σ | 0.1902 | 37.7% |
@@ -43,4 +43,3 @@
 | 10 | 0.83 | 0.89 | 0.30 | 9.64σ | 0.1888 | 38.7% |
 
 ---
-

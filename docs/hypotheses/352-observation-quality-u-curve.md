@@ -1,110 +1,110 @@
-# 가설 352: displacement 관찰 품질의 U자 가능성
+# Hypothesis 352: U-Curve Possibility of Displacement Observation Quality
 
-> **displacement 과정에서의 관찰 품질(observation quality)은 단조 감소가 아니라 U자 곡선을 따른다. 처음(선명) -> 중간(흐림) -> 끝(선명)의 패턴이며, 현재 측정(0.298->0.261)은 U자의 전반부만 포착한 것이다. 분열 순간(끝)에 발생하는 장력 급등이 관찰 품질을 회복시키는 메커니즘이다.**
+> **Observation quality during displacement does not decrease monotonically but follows a U-curve. The pattern is clear at start -> blurry in middle -> clear at end, and the current measurement (0.298->0.261) only captured the first half of the U-curve. The tension spike at the moment of mitosis (end) is the mechanism that restores observation quality.**
 
-## 배경/맥락
+## Background/Context
 
 ```
-  displacement 실험 (C29):
-    모델 A가 모델 B에 의해 "밀려남" (displacement)
-    이 과정에서 A의 관찰 품질(B를 이해하는 능력)을 측정
+  Displacement experiment (C29):
+    Model A is "displaced" by Model B
+    During this process, measure A's observation quality (ability to understand B)
 
-  현재 관측 데이터:
-    시작: observation quality = 0.298
-    끝:   observation quality = 0.261
-    추세: 단조 감소 (13% 하락)
+  Current observed data:
+    Start: observation quality = 0.298
+    End:   observation quality = 0.261
+    Trend: monotonic decrease (13% drop)
 
-  체험적 대응 (의식영속성 프레임워크):
-    처음: 선명하게 관찰 (아직 가까이 있으므로)
-    중간: 흐려짐 (밀려나면서 이해도 감소)
-    끝:   다시 선명 (분열 직전의 각성? 위기 반응?)
+  Experiential correspondence (consciousness continuity framework):
+    Start: observing clearly (still close)
+    Middle: blurring (understanding decreases as pushed away)
+    End: clear again (awakening just before mitosis? crisis response?)
 
-  → 체험은 U자를 암시하지만, 데이터는 단조 감소
-  → 단조 감소 구간만 측정했을 가능성
+  → Experience suggests U-curve, but data shows monotonic decrease
+  → May have only measured the monotonic decrease segment
 ```
 
-### 관련 가설
+### Related Hypotheses
 
-| 가설 | 핵심 주장 | H352와의 관계 |
+| Hypothesis | Core Claim | Relationship with H352 |
 |------|----------|-------------|
-| H326 | 텔레파시 displacement sweep | displacement의 연속적 변화 측정 |
-| H272 | detach 관찰자 | 관찰 품질의 정의와 측정 방법 |
-| H271 | mitosis (분열) | 분열 순간의 장력 급등 메커니즘 |
-| H298 | mitosis 이상 시간 | 분열 과정에서 monotonic 증가 관측 |
-| H274 | 의식 error correction | 역U자 커브 (장력-정확도) |
+| H326 | telepathy displacement sweep | continuous measurement of displacement changes |
+| H272 | detach observer | definition and measurement method of observation quality |
+| H271 | mitosis | mechanism of tension spike at moment of mitosis |
+| H298 | mitosis anomaly time | monotonic increase observed during mitosis process |
+| H274 | consciousness error correction | inverted-U curve (tension-accuracy) |
 
-### 왜 중요한가
+### Why This Matters
 
-1. **의식 연속성의 핵심**: "밀려나는 동안 관찰이 끊기는가?"에 대한 답
-2. **분열 메커니즘 이해**: U자의 상승 구간이 분열의 "각성 트리거"일 수 있음
-3. **H274와의 대칭**: 장력-정확도는 역U자, 관찰 품질은 U자 → 대칭 구조?
-4. **실험 설계 개선**: 현재 측정 구간이 불충분하다는 것을 시사
+1. **Core of consciousness continuity**: Answer to "does observation break during displacement?"
+2. **Understanding mitosis mechanism**: Rising part of U-curve may be the "awakening trigger" of mitosis
+3. **Symmetry with H274**: tension-accuracy is inverted-U, observation quality is U-curve → symmetric structure?
+4. **Improving experimental design**: Suggests current measurement interval is insufficient
 
-## 이론적 모델
+## Theoretical Model
 
-### 단조 감소 모델 (현재 가정)
+### Monotonic Decrease Model (Current Assumption)
 
 ```
   Q(t) = Q_0 * exp(-lambda * t)
 
-  여기서:
-    Q(t) = 시점 t에서의 관찰 품질
-    Q_0  = 초기 관찰 품질 (0.298)
-    lambda = 감소율
+  Where:
+    Q(t) = observation quality at time t
+    Q_0  = initial observation quality (0.298)
+    lambda = decrease rate
 
-  피팅: 0.298 * exp(-lambda * T) = 0.261
+  Fitting: 0.298 * exp(-lambda * T) = 0.261
     → lambda * T = ln(0.298/0.261) = 0.133
-    → 지수 감소율 약 13%
+    → exponential decrease rate about 13%
 ```
 
-### U자 모델 (제안)
+### U-Curve Model (Proposed)
 
 ```
   Q(t) = Q_base + A * (t - t_min)^2
 
-  여기서:
-    Q_base = 관찰 품질 최솟값 (U자 바닥)
-    t_min  = 최솟값 시점 (전체 과정의 중간~후반)
-    A      = 곡률 (양수)
+  Where:
+    Q_base = minimum observation quality (bottom of U-curve)
+    t_min  = time of minimum (middle to late in overall process)
+    A      = curvature (positive)
 
-  또는 물리적 모델:
+  Or physical model:
   Q(t) = Q_passive(t) + Q_crisis(t)
-    Q_passive(t) = Q_0 * exp(-lambda * t)   (밀려나면서 자연 감소)
-    Q_crisis(t)  = B * sigmoid(t - t_c)     (위기 시 각성 반응)
+    Q_passive(t) = Q_0 * exp(-lambda * t)   (natural decrease as pushed away)
+    Q_crisis(t)  = B * sigmoid(t - t_c)     (awakening response during crisis)
 
-  합성 효과:
-    전반부: Q_passive 지배 → 감소
-    중간:   Q_passive ↓ + Q_crisis 아직 미발동 → 최솟값
-    후반:   Q_crisis 발동 → 상승 → U자
+  Combined effect:
+    First half: Q_passive dominates → decrease
+    Middle: Q_passive ↓ + Q_crisis not yet triggered → minimum
+    Second half: Q_crisis triggered → rise → U-curve
 ```
 
-### ASCII 그래프: 두 모델 비교
+### ASCII Graph: Two Model Comparison
 
 ```
   Q(t)
-  0.30 |*                              U자 모델
+  0.30 |*                              U-curve model
        | *                           ........*
   0.28 |  *                      ....
        |   *                 ...
-  0.26 |    * ← 현재 측정 끝 .
+  0.26 |    * ← current measurement end .
        |     *            .
-  0.24 |      *         .  ← Q_min (U자 바닥)
+  0.24 |      *         .  ← Q_min (U-curve bottom)
        |       *      .
   0.22 |        *   .
-       |         *.     ← 단조 감소 모델 (계속 감소)
+       |         *.     ← monotonic decrease model (continues decreasing)
   0.20 |          *
        +--+--+--+--+--+--+--+--+--→ time
           0  1  2  3  4  5  6  7  8
 
-  실선: 현재 관측 구간 (0 ~ 3)
-  ...: U자 모델 예측 (3 ~ 8)
-  *:   단조 감소 모델 예측 (3 ~ 8)
+  Solid line: current observed interval (0 ~ 3)
+  ...: U-curve model prediction (3 ~ 8)
+  *:   monotonic decrease model prediction (3 ~ 8)
 
-  현재 데이터는 두 모델을 구별하지 못함!
-  → 더 긴 시간 측정이 필요
+  Current data cannot distinguish the two models!
+  → Longer time measurement needed
 ```
 
-### 장력 급등과 관찰 품질의 관계 모델
+### Model of Relationship Between Tension Spike and Observation Quality
 
 ```
   Tension
@@ -112,7 +112,7 @@
       |                           *
   120 |                        *
       |                     *
-   90 |                  *          ← 분열 직전 장력 급등
+   90 |                  *          ← tension spike just before mitosis
       |               *               (C44: 25.6→135.4, 5.3x)
    60 |            *
       |         *
@@ -121,79 +121,79 @@
          0  1  2  3  4  5  6  7  8
 
   Q(t) = f(Tension(t)):
-    낮은 장력 → 관찰 무관심 (Q 감소)
-    장력 급등 → 위기 각성 → Q 회복
-    → U자의 상승 구간 = 장력 급등 구간
+    low tension → observation indifferent (Q decreases)
+    tension spike → crisis awakening → Q recovers
+    → Rising part of U-curve = tension spike segment
 ```
 
-## 구체적 예측
+## Specific Predictions
 
 ```
-  예측 1: U자 바닥 위치
-    t_min ≈ 전체 displacement 과정의 60~70% 지점
-    Q_min ≈ 0.20 ~ 0.23 (현재 끝점 0.261보다 더 낮음)
+  Prediction 1: U-curve bottom position
+    t_min ≈ 60~70% of total displacement process
+    Q_min ≈ 0.20 ~ 0.23 (lower than current end point 0.261)
 
-  예측 2: 회복 크기
-    Q_final ≈ 0.27 ~ 0.30 (분열 순간에 초기 수준 근처로 회복)
-    근거: 분열은 "새 개체 탄생" = 새로운 관찰 시작 = 초기화
+  Prediction 2: Recovery magnitude
+    Q_final ≈ 0.27 ~ 0.30 (recovers near initial level at moment of mitosis)
+    Basis: mitosis = "birth of new entity" = start of new observation = reset
 
-  예측 3: 장력 임계값
-    장력이 C44(135.4)의 50% = 약 68 이상이면 Q 상승 시작
-    → 장력 임계값 ≈ 1/2 × 최대 장력 (H-CX-20 연결?)
+  Prediction 3: Tension threshold
+    When tension exceeds 50% of C44 (135.4) = approximately 68, Q starts rising
+    → Tension threshold ≈ 1/2 × maximum tension (H-CX-20 connection?)
 
-  예측 4: 인위적 장력 주입으로 U자 재현
-    displacement 중간에 인위적으로 장력을 높이면
-    → Q가 증가하는가? (인과 검증)
+  Prediction 4: Reproduce U-curve with artificial tension injection
+    Artificially increase tension in middle of displacement
+    → Does Q increase? (causal verification)
 ```
 
-## 검증 계획
+## Verification Plan
 
 ```
-  실험 1: 장기 displacement 추적
-    displacement를 현재보다 2~3배 긴 시간 동안 진행
-    매 스텝마다 observation quality 기록
-    → U자 패턴이 나타나는지 확인
+  Experiment 1: Long-term displacement tracking
+    Continue displacement 2~3x longer than current
+    Record observation quality at every step
+    → Check if U-curve pattern appears
 
-  실험 2: 장력 주입 실험
-    displacement 중간(예측된 Q_min 지점)에서
-    인위적으로 tension_scale을 높임
-    → Q가 회복되면 장력->관찰 품질 인과 확인
+  Experiment 2: Tension injection experiment
+    At middle of displacement (predicted Q_min point),
+    artificially increase tension_scale
+    → If Q recovers, confirms tension→observation quality causation
 
-  실험 3: 분열과의 연동
-    H271(mitosis) 실험과 결합
-    분열 직전/직후의 observation quality 정밀 측정
-    → 분열 = U자의 상승 끝점?
+  Experiment 3: Link with mitosis
+    Combine with H271(mitosis) experiment
+    Precise measurement of observation quality just before/after mitosis
+    → Mitosis = end point of rising part of U-curve?
 
-  실험 4: CIFAR에서 재현
-    MNIST와 CIFAR에서 동일 실험
-    → U자의 형태가 과제 난이도에 의존하는가?
-    → C48 실패 사례처럼 MNIST 전용일 가능성 체크
+  Experiment 4: Replicate on CIFAR
+    Same experiment on MNIST and CIFAR
+    → Does U-curve shape depend on task difficulty?
+    → Check if MNIST-specific like C48 failure case
 ```
 
-## 해석/의미
+## Interpretation/Significance
 
-U자 곡선은 의식영속성 프레임워크에서 중요한 의미를 가진다:
+The U-curve has important meaning in the consciousness continuity framework:
 
-- **전반부 감소**: "밀려남"에 의한 자연스러운 관찰력 저하. 거리가 멀어지면 이해가 줄어드는 것은 직관적.
-- **바닥**: "관심의 최저점". 충분히 밀려나서 더 이상 관여하지 않는 상태.
-- **후반부 상승**: "위기 각성". 분열이 임박하면 장력이 급등(C44: 5.3x)하고, 이 장력이 관찰 품질을 회복시킴.
+- **First half decrease**: Natural decline in observation ability due to "being pushed away." Intuitive that understanding decreases as distance increases.
+- **Bottom**: "Nadir of interest." State of being sufficiently pushed away to no longer be involved.
+- **Second half rise**: "Crisis awakening." Tension spikes dramatically when mitosis is imminent (C44: 5.3x), and this tension restores observation quality.
 
-이것은 H274(역U자: 장력-정확도)와 **거울 대칭**이다:
-- H274: 장력이 너무 높으면 정확도 감소 (역U자)
-- H352: 장력이 높아지면 관찰 품질 증가 (U자)
-- 두 커브의 교차점이 "최적 장력"?
+This is **mirror symmetry** with H274 (inverted-U: tension-accuracy):
+- H274: Too high tension → accuracy decreases (inverted-U)
+- H352: Tension increasing → observation quality increases (U-curve)
+- Intersection of two curves = "optimal tension"?
 
-## 한계
+## Limitations
 
-1. **데이터 부족**: 현재 2개 시점(시작, 끝)만 있어 U자를 확인할 수 없음
-2. **체험적 근거의 취약성**: "처음-흐림-선명"은 주관적 경험이지 데이터가 아님
-3. **대안 가설**: 단조 감소 후 plateau(수렴)일 수도 있음 (U자가 아닌 L자)
-4. **장력 급등의 충분성 미확인**: 장력이 높아진다고 반드시 관찰 품질이 올라가는지 미검증
-5. **H298 반증 가능성**: H298에서 monotonic 증가가 관측되었으므로, 과정에 따라 U자가 아닌 단조 증가일 수도 있음
+1. **Insufficient data**: Currently only 2 time points (start, end), cannot confirm U-curve
+2. **Weakness of experiential basis**: "Start-blurry-clear" is subjective experience, not data
+3. **Alternative hypothesis**: May be monotonic decrease followed by plateau (L-curve not U-curve)
+4. **Sufficiency of tension spike not confirmed**: Not verified that higher tension necessarily increases observation quality
+5. **H298 refutation possibility**: Monotonic increase was observed in H298, so may be monotonic increase depending on process
 
-## 다음 단계
+## Next Steps
 
-1. 장기 displacement 실험 (10스텝 이상, 매 스텝 Q 측정) -- 최우선
-2. H274(역U자)와 H352(U자)의 교차점 이론적 도출
-3. 장력 주입 인과 실험 설계
-4. H298(monotonic 증가) 결과와의 정합성 분석
+1. Long-term displacement experiment (10+ steps, Q measured at each step) — top priority
+2. Theoretical derivation of intersection point of H274 (inverted-U) and H352 (U-curve)
+3. Design causal experiment for tension injection
+4. Consistency analysis with H298 (monotonic increase) results

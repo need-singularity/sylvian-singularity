@@ -1,5 +1,5 @@
-# H-CX-204: 돌고래 휘슬 비트 주파수 = 알파파 유도
+# H-CX-204: Dolphin Whistle Beat Frequency = Alpha Wave Induction
 
-> 두 시그니처 휘슬(예: 5kHz, 5.01kHz) 차이 = 10Hz = α파 범위!
-> 바이노럴 비트처럼 α파 유도? 40Hz/τ(6)=10Hz(H-CX-166)과 일치.
-> 돌고래가 자연적 바이노럴 비트 생성기?
+> Difference between two signature whistles (e.g., 5kHz, 5.01kHz) = 10Hz = α wave range!
+> Alpha wave induction like binaural beats? Matches 40Hz/τ(6)=10Hz(H-CX-166).
+> Are dolphins natural binaural beat generators?

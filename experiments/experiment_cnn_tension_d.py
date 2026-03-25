@@ -1,7 +1,8 @@
+```python
 #!/usr/bin/env python3
-"""C56 검증: CNN CIFAR에서 장력-정확도 Cohen's d 측정
-기저 정확도 78%에서 d는? (예측: d=0.55)
-2점 피팅 d = 1.30*acc - 0.46 → 3번째 점 검증"""
+"""C56 Verification: CNN CIFAR tension-accuracy Cohen's d measurement
+At baseline accuracy 78%, what is d? (Prediction: d=0.55)
+2-point fitting d = 1.30*acc - 0.46 → Verify 3rd point"""
 import sys, os, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import torch
@@ -9,7 +10,7 @@ import torch.nn as nn
 import numpy as np
 from model_utils import count_params
 
-# CNN + RepulsionQuad (model_cnn_repulsion.py에서 가져올 수 없으면 직접 구현)
+# CNN + RepulsionQuad (implement directly if cannot import from model_cnn_repulsion.py)
 class SimpleCNN(nn.Module):
     def __init__(self):
         super().__init__()
@@ -109,14 +110,14 @@ def main():
     print(f"  Cohen's d = {d:.4f}")
     print()
 
-    # 예측 비교
+    # Compare prediction
     predicted_d = 1.2955 * acc - 0.4595
     print(f"  Predicted d (linear fit): {predicted_d:.4f}")
     print(f"  Actual d:                 {d:.4f}")
     print(f"  Difference:               {abs(d-predicted_d):.4f}")
     print()
 
-    # C56 검증
+    # C56 Verification
     print(f"  3-point validation:")
     print(f"    MNIST (98%): d=0.81 (measured)")
     print(f"    MLP CIFAR (54%): d=0.24 (measured)")
@@ -128,3 +129,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

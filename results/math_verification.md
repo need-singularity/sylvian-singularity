@@ -1,9 +1,9 @@
-# 수학적 미검증 가설 검증 결과 [2026-03-22 06:19:09]
+# Mathematical Unverified Hypothesis Verification Results [2026-03-22 06:19:09]
 
-| 가설 | 결과 |
+| Hypothesis | Result |
 |---|---|
-| A. 1/3 법칙 | 0.3017 |
+| A. 1/3 Rule | 0.3017 |
 | B. Z_max | 86.26σ |
-| C. 엔트로피 | 1.0889 ± 0.0142 |
-| D. 확산 R² | ΔI²=0.7839, ΔI=0.7885 |
-| G. 분포 | gamma |
+| C. Entropy | 1.0889 ± 0.0142 |
+| D. Diffusion R² | ΔI²=0.7839, ΔI=0.7885 |
+| G. Distribution | gamma |

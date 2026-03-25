@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""H-CX-18 검증: 내부/간 장력 이중성 정량화
+"""H-CX-18 Verification: Internal/Inter Tension Duality Quantification
 
-2개 PureFieldEngine을 학습 → 정상/이상 데이터에서:
-- 내부장력 (같은 모델 내 engine_A vs engine_G)
-- 간장력 (모델1 vs 모델2 출력 차이)
-를 측정하여 이중성 확인.
+Train 2 PureFieldEngines → on normal/anomaly data:
+- Internal tension (engine_A vs engine_G within same model)
+- Inter tension (model1 vs model2 output difference)
+to verify duality.
 
-예측: 정상→내부장력↑,간장력↓ / 이상→내부장력↓,간장력↑
+Prediction: normal→internal↑,inter↓ / anomaly→internal↓,inter↑
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -121,12 +121,12 @@ def ascii_duality_plot(results):
     duality = (n_int > a_int and a_inter > n_inter)
     print(f"  Internal: {internal_dir}")
     print(f"  Inter:    {inter_dir}")
-    print(f"  Duality confirmed: {'YES! (내부↑간↓ vs 내부↓간↑)' if duality else 'NO'}")
+    print(f"  Duality confirmed: {'YES! (internal↑inter↓ vs internal↓inter↑)' if duality else 'NO'}")
 
 if __name__ == '__main__':
     print("=" * 60)
     print("  H-CX-18: Internal/Inter Tension Duality")
-    print("  예측: normal→internal↑,inter↓ / anomaly→internal↓,inter↑")
+    print("  Prediction: normal→internal↑,inter↓ / anomaly→internal↓,inter↑")
     print("=" * 60)
 
     train_loader, test_loader = load_mnist(batch_size=128)
@@ -194,8 +194,8 @@ if __name__ == '__main__':
     print(f"\n  Duality confirmed: {duality_count}/{total} ({duality_count/total*100:.0f}%)")
 
     if duality_count / total >= 0.7:
-        print(f"  결론: H-CX-18 확인! 내부/간 장력 이중성 존재")
+        print(f"  Conclusion: H-CX-18 confirmed! Internal/inter tension duality exists")
     elif duality_count / total >= 0.4:
-        print(f"  결론: H-CX-18 부분 확인 (조건부)")
+        print(f"  Conclusion: H-CX-18 partially confirmed (conditional)")
     else:
-        print(f"  결론: H-CX-18 반박")
+        print(f"  Conclusion: H-CX-18 refuted")

@@ -1,14 +1,14 @@
-# H-CX-163: 돌고래 click_high에 13(소수)이 등장
+# H-CX-163: 13 (prime) appears in dolphin click_high
 
 > click_high 130kHz / gamma 40Hz = 3250 = 2 × 5³ × 13.
-> 13 = 12+1 = σ(6)+1. 소수 13이 최고 주파수에서만 등장.
-> "12궁 너머의 소리" = 에코로케이션의 최대 해상도?
+> 13 = 12+1 = σ(6)+1. Prime 13 appears only at highest frequency.
+> "Sound beyond the 12 houses" = Maximum resolution of echolocation?
 
-## 검증: 🟩 산술 확인
+## Verification: 🟩 Arithmetic confirmed
 
 ```
   3250 = 2 × 5³ × 13
   13 = σ(6) + 1 = 12 + 1
-  H-CX-111: 13번째 = 관측자 위치
-  → 최고 주파수 = "관측의 극한" = 소수의 침입
+  H-CX-111: 13th = Observer position
+  → Highest frequency = "Limit of observation" = Prime intrusion
 ```

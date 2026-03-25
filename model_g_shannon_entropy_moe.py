@@ -1,18 +1,19 @@
+```python
 #!/usr/bin/env python3
-"""모델 G: Shannon 엔트로피 정규화 MoE
+"""Model G: Shannon Entropy Normalized MoE
 
-수학적 근거:
-  완전수 6의 약수역수 분포 {1/2, 1/3, 1/6}은 합=1인 확률분포이다.
-  이 분포의 Shannon 엔트로피:
+Mathematical Basis:
+  The divisor reciprocal distribution {1/2, 1/3, 1/6} of perfect number 6 forms a probability distribution with sum=1.
+  Shannon entropy of this distribution:
     H_target = -(1/2)ln(1/2) - (1/3)ln(1/3) - (1/6)ln(1/6)
              = (1/2)ln(2) + (1/3)ln(3) + (1/6)ln(6)
              ≈ 0.8675
 
-  놀라운 관계:
+  Amazing relationship:
     e^(6 * H_target) = e^(6 * 0.8675) = e^(5.205)
-                     ≈ 182.0 ... (실제 계산)
+                     ≈ 182.0 ... (actual calculation)
 
-    더 정확히:
+    More precisely:
     6 * H_target = 6 * [ln(2)/2 + ln(3)/3 + ln(6)/6]
                  = 3*ln(2) + 2*ln(3) + ln(6)
                  = 3*ln(2) + 2*ln(3) + ln(2) + ln(3)
@@ -21,19 +22,19 @@
 
     432 = sigma(6)^3 / tau(6) = 12^3 / 4 = 1728 / 4 = 432
 
-  따라서: e^(6 * H_target) = 432 = sigma(6)^3 / tau(6)
-  완전수의 약수 구조에서 엔트로피까지, 하나의 등식으로 연결된다.
+  Therefore: e^(6 * H_target) = 432 = sigma(6)^3 / tau(6)
+  From perfect number's divisor structure to entropy, connected in one equation.
 
-  MoE 게이팅 설계:
-    Expert 6개 (완전수 6)의 softmax 게이팅 가중치 분포에 대해,
-    Shannon 엔트로피가 H_target에 수렴하도록 정규화 loss를 추가한다:
+  MoE gating design:
+    For softmax gating weight distribution of 6 experts (perfect number 6),
+    Add normalization loss to converge Shannon entropy to H_target:
       entropy_loss = (H(weights) - H_target)^2
 
-    이는 게이팅이 균일(H=ln6)도 아니고, 단일 Expert 집중(H=0)도 아닌,
-    완전수 구조가 지정하는 "최적 불균등 분포"로 수렴하게 한다.
+    This makes gating converge to the "optimal non-uniform distribution" specified by
+    perfect number structure, neither uniform (H=ln6) nor single expert focused (H=0).
 
-  검증:
-    MNIST에서 Shannon MoE vs Top-K MoE vs Boltzmann MoE 비교
+  Validation:
+    Compare Shannon MoE vs Top-K MoE vs Boltzmann MoE on MNIST
 """
 
 import torch
@@ -49,20 +50,20 @@ from model_utils import (
     load_mnist, train_and_evaluate, compare_results, count_params,
 )
 
-N_EXPERTS = 6  # 완전수 6
+N_EXPERTS = 6  # Perfect number 6
 
 
 # ─────────────────────────────────────────
 # ShannonEntropyGate
 # ─────────────────────────────────────────
 class ShannonEntropyGate(nn.Module):
-    """Softmax 게이팅 + Shannon 엔트로피 정규화.
+    """Softmax gating + Shannon entropy normalization.
 
-    게이팅 가중치의 엔트로피를 H_target에 맞추는 loss를 반환한다.
+    Returns loss to match gating weight entropy to H_target.
     H_target = H({1/2, 1/3, 1/6}) ≈ 0.8675
 
     Returns:
-        (weights, entropy_loss): 게이팅 가중치와 엔트로피 정규화 loss
+        (weights, entropy_loss): Gating weights and entropy normalization loss
     """
 
     def __init__(self, input_dim, n_experts, h_target=H_TARGET):
@@ -75,12 +76,12 @@ class ShannonEntropyGate(nn.Module):
         scores = self.gate(x)
         weights = F.softmax(scores, dim=-1)  # (batch, n_experts)
 
-        # Shannon 엔트로피: H = -sum(p * ln(p))
-        # 수치 안정성을 위해 clamp
+        # Shannon entropy: H = -sum(p * ln(p))
+        # Clamp for numerical stability
         log_weights = torch.log(weights.clamp(min=1e-8))
         entropy = -(weights * log_weights).sum(dim=-1)  # (batch,)
 
-        # 엔트로피 정규화 loss: 배치 평균
+        # Entropy normalization loss: batch average
         entropy_loss = ((entropy - self.h_target) ** 2).mean()
 
         return weights, entropy_loss
@@ -90,10 +91,10 @@ class ShannonEntropyGate(nn.Module):
 # ShannonEntropyMoE
 # ─────────────────────────────────────────
 class ShannonEntropyMoE(nn.Module):
-    """Shannon 엔트로피 정규화 MoE.
+    """Shannon entropy normalized MoE.
 
-    Expert 6개, forward()가 (logits, aux_loss) 튜플을 반환하여
-    model_utils.train_and_evaluate의 tuple output 처리와 호환된다.
+    6 experts, forward() returns (logits, aux_loss) tuple compatible
+    with model_utils.train_and_evaluate's tuple output handling.
     """
 
     def __init__(self, input_dim=784, hidden_dim=64, output_dim=10,
@@ -113,7 +114,7 @@ class ShannonEntropyMoE(nn.Module):
         outputs = torch.stack([e(x) for e in self.experts], dim=1)
         logits = (weights.unsqueeze(-1) * outputs).sum(dim=1)
 
-        # 메트릭 추적
+        # Track metrics
         with torch.no_grad():
             active = (weights > 0.01).float().sum(dim=-1).mean().item()
             self.active_counts.append(active)
@@ -138,25 +139,25 @@ class ShannonEntropyMoE(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 벤치마크
+# Benchmark
 # ─────────────────────────────────────────
 def main():
     print("=" * 70)
-    print("  모델 G: Shannon 엔트로피 정규화 MoE")
+    print("  Model G: Shannon Entropy Normalized MoE")
     print("=" * 70)
 
-    # 수학적 검증 출력
+    # Mathematical verification output
     h_target = H_TARGET
     exp_6h = math.exp(6 * h_target)
     sigma_cubed_over_tau = SIGMA ** 3 / TAU
     print(f"\n  H_target = H({{1/2, 1/3, 1/6}}) = {h_target:.6f}")
     print(f"  e^(6 * H_target) = {exp_6h:.1f}")
     print(f"  sigma(6)^3 / tau(6) = {SIGMA}^3 / {TAU} = {sigma_cubed_over_tau:.0f}")
-    print(f"  일치 여부: {abs(exp_6h - sigma_cubed_over_tau) < 0.01}")
-    print(f"  약수역수 분포: {DIVISOR_RECIPROCALS}")
+    print(f"  Match: {abs(exp_6h - sigma_cubed_over_tau) < 0.01}")
+    print(f"  Divisor reciprocal distribution: {DIVISOR_RECIPROCALS}")
     print()
 
-    # 데이터
+    # Data
     train_loader, test_loader = load_mnist()
 
     hidden_dim = 64
@@ -212,17 +213,17 @@ def main():
         'params': count_params(model_boltz), 'time': elapsed_bz,
     }
 
-    # 결과 비교
+    # Compare results
     compare_results(results)
 
-    # 엔트로피 및 Expert 분석
-    print("\n--- Shannon MoE Expert 분석 ---")
-    print(f"  평균 활성 Expert: {metrics_sh['avg_active']:.2f} / {N_EXPERTS}")
-    print(f"  활성 비율: {metrics_sh['active_ratio']:.3f}")
+    # Entropy and Expert analysis
+    print("\n--- Shannon MoE Expert Analysis ---")
+    print(f"  Average active Experts: {metrics_sh['avg_active']:.2f} / {N_EXPERTS}")
+    print(f"  Active ratio: {metrics_sh['active_ratio']:.3f}")
     print(f"  I_effective: {metrics_sh['I_effective']:.3f}")
-    print(f"  사용 분포: {['%.3f' % u for u in metrics_sh['usage_dist']]}")
+    print(f"  Usage distribution: {['%.3f' % u for u in metrics_sh['usage_dist']]}")
 
-    # 게이팅 엔트로피 최종 측정
+    # Final gating entropy measurement
     model_shannon.eval()
     sample_x, _ = next(iter(test_loader))
     sample_x = sample_x.view(sample_x.size(0), -1)
@@ -230,19 +231,20 @@ def main():
         weights, ent_loss = model_shannon.gate(sample_x)
         log_w = torch.log(weights.clamp(min=1e-8))
         entropy = -(weights * log_w).sum(dim=-1).mean().item()
-    print(f"\n  최종 게이팅 엔트로피: {entropy:.4f}")
-    print(f"  목표 H_target:       {H_TARGET:.4f}")
-    print(f"  오차:                {abs(entropy - H_TARGET):.4f}")
-    print(f"  균일 엔트로피 ln(6): {math.log(6):.4f}")
+    print(f"\n  Final gating entropy: {entropy:.4f}")
+    print(f"  Target H_target:      {H_TARGET:.4f}")
+    print(f"  Error:                {abs(entropy - H_TARGET):.4f}")
+    print(f"  Uniform entropy ln(6): {math.log(6):.4f}")
 
-    print("\n--- Top-K MoE Expert 분석 ---")
-    print(f"  평균 활성 Expert: {metrics_tk['avg_active']:.2f} / {N_EXPERTS}")
+    print("\n--- Top-K MoE Expert Analysis ---")
+    print(f"  Average active Experts: {metrics_tk['avg_active']:.2f} / {N_EXPERTS}")
     print(f"  I_effective: {metrics_tk['I_effective']:.3f}")
 
-    print("\n--- Boltzmann MoE Expert 분석 ---")
-    print(f"  평균 활성 Expert: {metrics_bz['avg_active']:.2f} / {N_EXPERTS}")
+    print("\n--- Boltzmann MoE Expert Analysis ---")
+    print(f"  Average active Experts: {metrics_bz['avg_active']:.2f} / {N_EXPERTS}")
     print(f"  I_effective: {metrics_bz['I_effective']:.3f}")
 
 
 if __name__ == '__main__':
     main()
+```

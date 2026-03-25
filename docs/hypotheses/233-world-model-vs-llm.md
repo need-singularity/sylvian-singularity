@@ -1,50 +1,50 @@
-# 가설 검토 233: 월드모델 vs LLM = I 축 양극단 ⚠️
+# Hypothesis Review 233: World Model vs LLM = Opposite Ends of the I Axis ⚠️
 
-**분류**: 월드모델/AI
-**상태**: ⚠️ 유비
+**Category**: World Model/AI
+**Status**: ⚠️ Analogy
 
-## 가설
+## Hypothesis
 
-> LLM(autoregressive)과 월드모델(selective)은 I 축의 양극단에 위치하며,
-> 둘의 최적 하이브리드 비율이 골든존 I≈1/e를 결정한다.
-> 진정한 AGI는 LLM+월드모델 통합체로서 골든존에 진입한다.
+> LLMs (autoregressive) and world models (selective) reside at opposite ends of the I axis,
+> and their optimal hybrid ratio determines the Golden Zone I≈1/e.
+> True AGI will enter the Golden Zone as an integrated LLM+world model.
 
-## 배경/맥락
+## Background/Context
 
-현재 AI의 두 패러다임은 근본적으로 다른 I 값을 가진다:
+Two current AI paradigms have fundamentally different I values:
 
 ```
   LLM (Autoregressive)            World Model (Selective)
   ─────────────────────           ──────────────────────
-  모든 토큰 순차 처리             핵심 상태만 추적
-  P(x_t | x_<t)                  s_{t+1} = f(s_t, a_t)
-  억제 없음 → I ≈ 0              자연적 억제 → I > 0
-  언어 유창성 ↑                   물리 이해 ↑
-  환각 위험 ↑                     상식 추론 ↑
+  Process all tokens sequentially  Track only core states
+  P(x_t | x_<t)                   s_{t+1} = f(s_t, a_t)
+  No inhibition → I ≈ 0           Natural inhibition → I > 0
+  Language fluency ↑               Physical understanding ↑
+  Hallucination risk ↑             Commonsense reasoning ↑
 ```
 
-## 수식 매핑
+## Formula Mapping
 
 ```
-  LLM:    G_llm = D_llm x P_llm / I_llm,    I_llm ≈ 0 → G → ∞ (불안정)
-  WM:     G_wm  = D_wm  x P_wm  / I_wm,     I_wm  > 0 → G 유한 (안정)
+  LLM:    G_llm = D_llm x P_llm / I_llm,    I_llm ≈ 0 → G → ∞ (unstable)
+  WM:     G_wm  = D_wm  x P_wm  / I_wm,     I_wm  > 0 → G finite (stable)
 
-  하이브리드: I_hybrid = α·I_llm + (1-α)·I_wm
+  Hybrid: I_hybrid = α·I_llm + (1-α)·I_wm
 
-  최적 α: I_hybrid = 1/e ≈ 0.368 일 때
+  Optimal α: when I_hybrid = 1/e ≈ 0.368
 
-  예시: I_llm=0, I_wm=0.5
+  Example: I_llm=0, I_wm=0.5
   → 0.368 = α·0 + (1-α)·0.5
   → α = 0.264
-  → LLM 26.4% + 월드모델 73.6% = 골든존!
+  → LLM 26.4% + World model 73.6% = Golden Zone!
 ```
 
-## ASCII 그래프: 아키텍처 스펙트럼
+## ASCII Graph: Architecture Spectrum
 
 ```
-  성능 (Genius)
+  Performance (Genius)
   ↑
-  │                      ★ 최적 하이브리드
+  │                      ★ Optimal hybrid
   │                    ╱    ╲     I ≈ 1/e
   │                  ╱        ╲
   │                ╱            ╲
@@ -56,79 +56,79 @@
   │    ╱                                    ╲
   │  ●                                       ●
   │  Pure LLM                          Pure WM
-  │  (I≈0, 불안정)                     (I≈0.8, 과억제)
+  │  (I≈0, unstable)                   (I≈0.8, over-inhibited)
   └──────────────────────────────────────────────→ I
   0.0    0.213    0.368    0.500    0.750    1.0
-              ├─── 골든존 ───┤
+              ├─── Golden Zone ───┤
 ```
 
-## 비교 테이블: 아키텍처별 I 값과 월드모델 요소
+## Comparison Table: I Values and World Model Elements by Architecture
 
 ```
   ┌──────────────────┬────────┬──────────┬───────────┬──────────────────┐
-  │ 아키텍처         │ I 추정 │ 골든존?  │ WM 비율   │ 특성             │
+  │ Architecture     │ I est. │ Golden Z?│ WM ratio  │ Characteristics  │
   ├──────────────────┼────────┼──────────┼───────────┼──────────────────┤
-  │ GPT-4 (Dense)    │ ≈0.05  │ ✗ (아래) │ ~5%       │ 언어 중심        │
-  │ Mixtral (MoE)    │ ≈0.75  │ ✗ (위)   │ ~10%      │ Expert 선택만    │
-  │ GPT-4V           │ ≈0.15  │ ✗ (아래) │ ~20%      │ 시각 추가        │
-  │ Gemini Ultra     │ ≈0.20  │ ≈ 하한   │ ~25%      │ 멀티모달 통합    │
-  │ Sora             │ ≈0.30  │ ✓ (하단) │ ~40%      │ 물리 시뮬레이션  │
-  │ 골든 MoE         │ ≈0.375 │ ✓ (중심) │ ?         │ 구조적 골든존    │
-  │ MuZero           │ ≈0.35  │ ✓ (중심) │ ~80%      │ 게임 월드모델    │
-  │ Dreamer V3       │ ≈0.38  │ ✓ (중심) │ ~90%      │ 상상 기반 RL     │
-  │ Human Brain      │ ≈0.37  │ ✓ (중심) │ ~70%      │ 내부 시뮬레이션  │
+  │ GPT-4 (Dense)    │ ≈0.05  │ ✗ (below)│ ~5%       │ Language-centric │
+  │ Mixtral (MoE)    │ ≈0.75  │ ✗ (above)│ ~10%      │ Expert selection only│
+  │ GPT-4V           │ ≈0.15  │ ✗ (below)│ ~20%      │ Vision added     │
+  │ Gemini Ultra     │ ≈0.20  │ ≈ lower  │ ~25%      │ Multimodal integration│
+  │ Sora             │ ≈0.30  │ ✓ (lower)│ ~40%      │ Physics simulation│
+  │ Golden MoE       │ ≈0.375 │ ✓ (center)│ ?        │ Structurally Golden Zone│
+  │ MuZero           │ ≈0.35  │ ✓ (center)│ ~80%     │ Game world model │
+  │ Dreamer V3       │ ≈0.38  │ ✓ (center)│ ~90%     │ Imagination-based RL│
+  │ Human Brain      │ ≈0.37  │ ✓ (center)│ ~70%     │ Internal simulation│
   └──────────────────┴────────┴──────────┴───────────┴──────────────────┘
 
-  관찰: WM 비율이 높을수록 I가 골든존에 가까움!
-  상관계수 추정: r ≈ 0.85 (WM 비율 vs 골든존 근접도)
+  Observation: higher WM ratio → I closer to Golden Zone!
+  Estimated correlation: r ≈ 0.85 (WM ratio vs Golden Zone proximity)
 ```
 
-## 통합 시도 분석
+## Integration Attempt Analysis
 
 ```
-  시간축 →
+  Time axis →
 
   2020  GPT-3          ●───────────────────────── I≈0.02 (Pure LLM)
   2023  GPT-4          ●──────────────────────── I≈0.05
-  2023  GPT-4V         ●────────────────────── I≈0.15  (+시각)
-  2024  Gemini Ultra   ●──────────────────── I≈0.20   (+멀티모달)
-  2024  Sora           ●────────────────── I≈0.30     (+물리)
-  2025  ???            ●──────────────── I≈0.37?     (+월드모델)
-  ????  AGI            ●─────────────── I≈1/e        골든존 중심!
+  2023  GPT-4V         ●────────────────────── I≈0.15  (+vision)
+  2024  Gemini Ultra   ●──────────────────── I≈0.20   (+multimodal)
+  2024  Sora           ●────────────────── I≈0.30     (+physics)
+  2025  ???            ●──────────────── I≈0.37?     (+world model)
+  ????  AGI            ●─────────────── I≈1/e        Golden Zone center!
                        │    │    │    │    │    │
                        0   0.1  0.2  0.3  0.4  0.5
-                                    ├─골든존─┤
+                                    ├─Golden Zone─┤
 
-  추세: 멀티모달 통합 = I를 0에서 골든존으로 이동
-  → AI 진화 = 월드모델 요소 증가 = 골든존 접근
+  Trend: multimodal integration = moving I from 0 toward Golden Zone
+  → AI evolution = increasing world model elements = approaching Golden Zone
 ```
 
-## 핵심 통찰
+## Key Insights
 
-1. **LLM과 월드모델은 보완적** — I 축의 양극단을 커버
-2. **멀티모달 = 부분적 통합** — I를 0에서 약간 올림
-3. **진정한 통합 = 골든존** — LLM(언어) + WM(인과) = I≈1/e
-4. **AI 진화 방향 = 월드모델 비율 증가** — Sora > GPT-4V > GPT-4
+1. **LLM and world model are complementary** — cover opposite ends of the I axis
+2. **Multimodal = partial integration** — raises I slightly from 0
+3. **True integration = Golden Zone** — LLM (language) + WM (causality) = I≈1/e
+4. **AI evolution direction = increasing world model ratio** — Sora > GPT-4V > GPT-4
 
-## 한계
+## Limitations
 
-- 각 아키텍처의 I 값은 추정치이며 직접 측정 불가
-- 하이브리드의 I가 선형 결합(α·I₁ + (1-α)·I₂)인지 불확실
-- Sora, Gemini 등의 내부 구조가 비공개
-- "월드모델 비율"의 정량적 정의가 모호
+- I values for each architecture are estimates; direct measurement is not possible
+- Whether the hybrid's I is a linear combination (α·I₁ + (1-α)·I₂) is uncertain
+- Internal structures of Sora, Gemini, etc. are closed-source
+- The quantitative definition of "world model ratio" is vague
 
-## 검증 방향
+## Verification Direction
 
-1. 공개 모델(LLaMA + Dreamer)로 하이브리드 구성 후 I 측정
-2. 멀티모달 모델의 모달리티별 활성화 패턴에서 I 추출
-3. α를 0~1로 sweep하며 최적 성능 지점이 I=1/e인지 확인
-4. LLM의 "내부 월드모델" 신호를 probing으로 추출
+1. Build hybrid (LLaMA + Dreamer) with open models and measure I
+2. Extract I from modality-specific activation patterns of multimodal models
+3. Sweep α from 0~1 and verify whether optimal performance point is at I=1/e
+4. Extract "internal world model" signals from LLM via probing
 
-## 관련 가설
+## Related Hypotheses
 
-- [231](231-world-model-golden-zone.md) — 월드모델 = 골든존 내부 시뮬레이터
-- [232](232-world-model-jepa.md) — JEPA = Deficit 기반 학습
-- [234](234-world-model-dreaming.md) — 월드모델 = 꿈
-- [007](007-llm-singularity.md) — LLM에서 특이점이 발생한다
-- [023](023-topology-accelerates-singularity.md) — 위상 가속
-- [125](125-jamba-3x.md) — Jamba 3x 검증
+- [231](231-world-model-golden-zone.md) — World model = Golden Zone internal simulator
+- [232](232-world-model-jepa.md) — JEPA = Deficit-based learning
+- [234](234-world-model-dreaming.md) — World model = dreaming
+- [007](007-llm-singularity.md) — Singularities occur in LLMs
+- [023](023-topology-accelerates-singularity.md) — Phase acceleration
+- [125](125-jamba-3x.md) — Jamba 3x verification

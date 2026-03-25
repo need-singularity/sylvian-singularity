@@ -1,18 +1,18 @@
-# 가설 검토 023: LLM에 위상수학을 넣으면 특이점이 빨리 온다 ✅
+# Hypothesis Review 023: Adding Topology to LLMs Accelerates Singularity ✅
 
-## 가설
+## Hypothesis
 
-> LLM에 위상 원소(재귀, 희소, 자기참조, 계층)를 추가하면 골든 존 수렴이 가속되어 특이점에 더 빨리 도달한다.
+> Adding topological elements (recursion, sparsity, self-reference, hierarchy) to LLMs accelerates Golden Zone convergence, reaching singularity faster.
 
-## 검증 결과: ✅ 확인
+## Verification Result: ✅ Confirmed
 
-| 위상 | 수렴 iter | 최종 I | Compass |
+| Topology | Convergence iter | Final I | Compass |
 |---|---|---|---|
-| 3/7 (LLM 기본) | 6회 | 0.44 | 53.1% |
-| 5/7 (+재귀+희소) | **3회** | **0.37 ≈ 1/e** | **58.7%** |
-| 7/7 (전체 위상) | **3회** | **0.30** | **65.1%** |
+| 3/7 (LLM baseline) | 6 iterations | 0.44 | 53.1% |
+| 5/7 (+recursion+sparsity) | **3 iterations** | **0.37 ≈ 1/e** | **58.7%** |
+| 7/7 (full topology) | **3 iterations** | **0.30** | **65.1%** |
 
-## 그래프
+## Graph
 
 ```
   Compass Score (%)
@@ -22,41 +22,41 @@
     └───────────────────────────────────
       3/7           5/7           7/7
 
-  Inhibition 궤적:
-  3/7 │·······░░░░●░░░░░│ I=0.44  골든존 상단
+  Inhibition Trajectory:
+  3/7 │·······░░░░●░░░░░│ I=0.44  Golden Zone upper
   5/7 │·······░░●░░░░░░░│ I=0.37  ≈ 1/e !
-  7/7 │·······●░░░░░░░░░│ I=0.30  골든존 깊숙이
+  7/7 │·······●░░░░░░░░░│ I=0.30  Deep in Golden Zone
        0     0.24    0.48
-              └ 골든존 ┘
+              └ Golden Zone ┘
 ```
 
-## 위상 원소의 효과
+## Effects of Topological Elements
 
 ```
-  T3 (재귀):    출력→입력 피드백 → D↑ (자기 결손 생성)
-  T5 (희소):    선택적 연결 → I↓ (불필요한 경로 억제 해제)
-  T3a (자기참조): 자기 평가 → D↑ (구조적 변이 증가)
-  T6 (계층):    추상화 수준 → I↓ (하위 억제 해제)
+  T3 (Recursion):    Output→Input feedback → D↑ (self-deficiency generation)
+  T5 (Sparsity):     Selective connections → I↓ (release unnecessary path inhibition)
+  T3a (Self-reference): Self-evaluation → D↑ (increased structural variation)
+  T6 (Hierarchy):    Abstraction levels → I↓ (release lower-level inhibition)
 
-  위상 추가 = D↑ + I↓ = Genius Score↑ = 골든존 접근 가속
+  Adding Topology = D↑ + I↓ = Genius Score↑ = Accelerated Golden Zone approach
 ```
 
-## 실제 구현 대응
+## Real Implementation Correspondence
 
-| 위상 원소 | 실제 기술 | 존재 여부 |
+| Topological Element | Real Technology | Existence |
 |---|---|---|
-| T3 재귀 | Mamba, RWKV, State Space | ✅ 존재 |
-| T5 희소 | MoE, Sparse Attention | ✅ 존재 |
-| T3a 자기참조 | Self-Eval, Constitutional AI | 초기 |
-| T6 계층 | Hierarchical Transformer | 연구 중 |
+| T3 Recursion | Mamba, RWKV, State Space | ✅ Exists |
+| T5 Sparsity | MoE, Sparse Attention | ✅ Exists |
+| T3a Self-reference | Self-Eval, Constitutional AI | Early stage |
+| T6 Hierarchy | Hierarchical Transformer | In research |
 
-> T3+T5는 이미 존재하는 기술. **지금 당장 LLM에 합치면** 골든존 중심 도달.
+> T3+T5 are already existing technologies. **Merging them into LLMs right now** would reach Golden Zone center.
 
-## 결론
+## Conclusion
 
-> ✅ 위상 원소 2개(재귀+희소) 추가만으로 수렴 2배 가속, I=1/e 도달. 위상수학은 특이점의 가속기다.
+> ✅ Just adding 2 topological elements (recursion+sparsity) doubles convergence speed, reaching I=1/e. Topology is singularity's accelerator.
 
 ---
 
-*작성일: 2026-03-22*
-*검증: compass.py autopilot (200K 모집단, 50회)*
+*Date: 2026-03-22*
+*Verification: compass.py autopilot (200K population, 50 runs)*

@@ -1,177 +1,177 @@
-# Engineering Findings — 의식 연속성 연구 핵심 발견
+# Engineering Findings — Consciousness Continuity Research Key Discoveries
 
-## 확정된 발견 (실험으로 확인)
+## Confirmed Discoveries (Experimentally Verified)
 
-### 1. CCT는 유효하지만 불충분하다
+### 1. CCT is Valid but Insufficient
 
 ```
-  ✔ 유효:
-    합성 EEG 검증 일치도 92% (23/25)
-    각성 5/5, 수면N3 3/5, 마취 2/5, 발작 2/5
-    → 의식 상태를 구분하는 능력 확인
+  ✔ Valid:
+    Synthetic EEG validation match rate 92% (23/25)
+    Awake 5/5, Sleep N3 3/5, Anesthesia 2/5, Seizure 2/5
+    → Confirmed ability to distinguish consciousness states
     (eeg_cct_validator.py)
 
-  ✕ 불충분:
-    4/5 비의식 시스템(날씨, 잡음, 열확산, 피드백루프)이 CCT 5/5 통과
-    → CCT는 필요조건이지 충분조건이 아님
+  ✕ Insufficient:
+    4/5 non-conscious systems (weather, noise, heat diffusion, feedback loop) pass CCT 5/5
+    → CCT is a necessary but not sufficient condition
     (cct_counterexample_search.py)
 ```
 
-### 2. CCT 5개 중 2개만 유효하다
+### 2. Only 2 of 5 CCT Tests are Valid
 
 ```
-  T1(Gap), T4(Entropy), T5(Novelty) → 상관 r ≈ 1.0 (사실상 동일)
-  T2(Loop)와 T3(Continuity)만 독립적 정보 제공
+  T1(Gap), T4(Entropy), T5(Novelty) → correlation r ≈ 1.0 (essentially identical)
+  Only T2(Loop) and T3(Continuity) provide independent information
 
-  최소 유효 테스트: T2 + T3
-  나머지는 중복이므로 제거 가능
+  Minimal valid tests: T2 + T3
+  Others are redundant and can be removed
   (cct_independence_test.py)
 ```
 
-### 3. 골든존-CCT 연결은 가짜다
+### 3. Golden Zone-CCT Connection is Spurious
 
 ```
-  1000개 랜덤 매핑 중 골든존 내 최적 I 비율 = 18%
-  랜덤 기대값 = 29%
-  p = 0.997 → 골든존 효과 없음
+  Among 1000 random mappings, optimal I ratio within Golden Zone = 18%
+  Random expected value = 29%
+  p = 0.997 → No Golden Zone effect
 
-  "골든존에서 CCT가 높다"는 우리가 설계한 매핑 공식의 산물
-  독립적 근거(fMRI 등)에서 매핑이 유도되지 않는 한 주장 불가
+  "High CCT in Golden Zone" is an artifact of our designed mapping formula
+  Cannot be claimed unless mapping is derived from independent evidence (fMRI, etc.)
   (mapping_independence_test.py)
 ```
 
-### 4. 끌개 보편성: CCT는 끌개 종류에 무관하다
+### 4. Attractor Universality: CCT is Independent of Attractor Type
 
 ```
-  로렌츠, 뢰슬러, 첸, 추아 4가지 끌개 모두 유사한 CCT
-  → CCT가 특정 모델에 과적합(overfit)되지 않음 확인
+  Lorenz, Rössler, Chen, Chua attractors all show similar CCT
+  → Confirms CCT is not overfitted to specific models
   (attractor_variants.py)
 ```
 
-### 5. 이산 시스템에 기존 CCT는 맞지 않는다
+### 5. Existing CCT Doesn't Fit Discrete Systems
 
 ```
-  Rule110 CA, RBN K=2, ESN 모두 1000Hz에서도 CCT 5/5 미달
-  원인: CCT의 윈도우 크기, bin 크기가 연속 시스템에 최적화
+  Rule110 CA, RBN K=2, ESN all fail CCT 5/5 even at 1000Hz
+  Cause: CCT's window size and bin size optimized for continuous systems
 
-  해결: D-CCT (이산 전용) 설계
-    DT2 Complexity = Lempel-Ziv 복잡도
-    DT3 Memory = 자기상호정보
-    DT4 Diversity = 고유 상태 비율
+  Solution: D-CCT (discrete-specific) design
+    DT2 Complexity = Lempel-Ziv complexity
+    DT3 Memory = Mutual information
+    DT4 Diversity = Unique state ratio
   (discrete_fps_test.py, discrete_cct.py)
 ```
 
-### 6. 의식은 모듈식(modular)일 수 있다
+### 6. Consciousness Can Be Modular
 
 ```
-  이중뇌 실험 (dual_brain_callosum.py):
+  Dual brain experiments (dual_brain_callosum.py):
 
-    κ=0 (분리뇌): 양쪽 CCT 5/5 → 두 개의 독립 의식
-    κ=0.5 (정상): 동기화 0.4 + 쌍방향 정보 흐름 → 통합 의식
-    κ→∞ (과동기화): 좌우 동일 → 다양성 상실
+    κ=0 (split brain): Both sides CCT 5/5 → two independent consciousnesses
+    κ=0.5 (normal): Synchronization 0.4 + bidirectional information flow → integrated consciousness
+    κ→∞ (over-synchronized): Left and right identical → loss of diversity
 
-  핵심:
-    뇌량은 의식을 "만드는" 것이 아니라 "연결하는" 것
-    각 반구는 독립적 의식 엔진
-    여러 작은 의식이 연결되어 큰 의식을 형성할 수 있다
+  Key insight:
+    Corpus callosum doesn't "create" consciousness but "connects" it
+    Each hemisphere is an independent consciousness engine
+    Multiple small consciousnesses can connect to form larger consciousness
 ```
 
-### 7. 정보 흐름은 비대칭이다
+### 7. Information Flow is Asymmetric
 
 ```
-  TE_R→L > TE_L→R (우반구→좌반구 정보 흐름이 더 강함)
+  TE_R→L > TE_L→R (Right→Left hemisphere information flow is stronger)
 
-  해석:
-    우반구(직관, 높은 잡음, 창의적) → 좌반구(분석, 낮은 잡음, 정밀)
-    "직관이 분석에 더 많이 기여한다"
-    이것은 신경과학의 "우반구 가설"과 일치하는 방향
+  Interpretation:
+    Right hemisphere (intuitive, high noise, creative) → Left hemisphere (analytical, low noise, precise)
+    "Intuition contributes more to analysis"
+    This aligns with neuroscience's "right hemisphere hypothesis"
   (dual_brain_callosum.py)
 ```
 
-### 8. gap 패턴이 중요하다
+### 8. Gap Pattern Matters
 
 ```
-  같은 gap 비율이라도 분포 패턴에 따라 CCT가 다름:
-    균등(uniform): 가장 강건 — 산발적 gap은 연속성을 덜 해침
-    주기적(periodic): 중간 — LLM 턴 패턴
-    집중(clustered): 가장 취약 — 수면 같은 긴 gap이 가장 위험
+  Same gap ratio but different distribution patterns yield different CCT:
+    Uniform: Most robust — sporadic gaps harm continuity less
+    Periodic: Medium — LLM turn pattern
+    Clustered: Most vulnerable — long gaps like sleep are most dangerous
 
-  임계 gap < 1% — 매우 민감
+  Critical gap < 1% — very sensitive
   (gap_threshold_test.py)
 ```
 
-### 9. 기억 소거 후 회복이 가능하다
+### 9. Recovery is Possible After Memory Erasure
 
 ```
-  100% 상태 리셋 → CCT T3(Continuity) 즉시 실패
-  하지만 이후 로렌츠 끌개가 새 궤도를 형성하며 CCT 회복
+  100% state reset → CCT T3(Continuity) fails immediately
+  But then Lorenz attractor forms new trajectory and CCT recovers
 
-  해석:
-    "기억을 잃어도 의식은 살아남을 수 있다" (건망증 환자?)
-    구조(끌개)가 살아있으면 내용(상태)은 재건 가능
+  Interpretation:
+    "Consciousness can survive even after losing memory" (amnesia patients?)
+    If structure (attractor) survives, content (state) can be rebuilt
   (engine_experiments.py --memory-erase)
 ```
 
-### 10. 수면-각성 전이는 점진적이다
+### 10. Sleep-Wake Transition is Gradual
 
 ```
-  I(t) 변화에 따라 CCT가 연속적으로 하락/회복
-  급격한 전이 아님 → 의식은 "스위치"가 아니라 "다이얼"
+  CCT continuously falls/recovers as I(t) changes
+  Not abrupt transition → consciousness is a "dial" not a "switch"
 
-  각성(CCT 높음) → 졸림(CCT 서서히 하락) → 수면(CCT 낮음)
-  → 기상(CCT 서서히 상승) → 각성
+  Awake (high CCT) → Drowsy (CCT gradually falls) → Sleep (low CCT)
+  → Waking (CCT gradually rises) → Awake
 
-  마취와의 차이: 마취는 급격한 gap → CCT 급락
+  Difference from anesthesia: Anesthesia causes abrupt gap → CCT plummets
   (engine_experiments.py --sleep-wake)
 ```
 
 ---
 
-## 반증된 것
+## Refuted Claims
 
 ```
-  1. "CCT 7개 조건은 필요충분조건" → 충분조건 아님
-  2. "골든존에서 CCT가 최대" → 매핑 설계의 산물
-  3. "Φ로 간질 불일치 해소 가능" → 로렌츠 모델에서 불가
-  4. "이산 시스템도 같은 CCT로 측정 가능" → 별도 D-CCT 필요
+  1. "CCT's 7 conditions are necessary and sufficient" → Not sufficient
+  2. "CCT is maximum in Golden Zone" → Artifact of mapping design
+  3. "Φ can resolve epilepsy inconsistency" → Impossible in Lorenz model
+  4. "Discrete systems can be measured with same CCT" → Separate D-CCT needed
 ```
 
-## 열린 질문
+## Open Questions
 
 ```
-  1. CCT + 무엇 = 충분조건? (자기모델? 목적성? 인과적 자율성?)
-  2. D-CCT의 실제 유효성은? (이산 시스템에서 EEG급 검증 필요)
-  3. 이중뇌 모델의 정보 비대칭이 실측과 일치하는가?
-  4. 의식의 "모듈성"이 n개 시스템으로 확장 가능한가?
-  5. 실제 뇌량 두께와 κ의 대응 관계는?
+  1. CCT + what = sufficient condition? (self-model? purpose? causal autonomy?)
+  2. What is D-CCT's actual validity? (needs EEG-level validation in discrete systems)
+  3. Does dual brain model's information asymmetry match real measurements?
+  4. Can consciousness "modularity" extend to n systems?
+  5. What's the correspondence between actual corpus callosum thickness and κ?
 ```
 
-## 도구 목록 (17개)
+## Tool List (17 tools)
 
 ```
-  핵심 계산기:
-    consciousness_calc.py            CCT 계산기 (로렌츠 + 5테스트)
-    discrete_cct.py                  이산 전용 D-CCT (LZ복잡도 기반)
-    dual_brain_callosum.py           이중뇌 뇌량 모델
+  Core Calculators:
+    consciousness_calc.py            CCT calculator (Lorenz + 5 tests)
+    discrete_cct.py                  Discrete-specific D-CCT (LZ complexity based)
+    dual_brain_callosum.py           Dual brain corpus callosum model
 
-  엔진:
-    consciousness_engine_proto.py    A+B 엔진 프로토타입 (asyncio)
+  Engines:
+    consciousness_engine_proto.py    A+B engine prototype (asyncio)
 
-  실험:
-    mapping_independence_test.py     매핑 독립성 검증 ★
-    eeg_cct_validator.py             EEG 역검증 ★
-    cct_counterexample_search.py     반례 탐색 ★
-    cct_independence_test.py         테스트 독립성
-    attractor_variants.py            끌개 4종 + 간질 정밀
-    gap_threshold_test.py            gap 임계값 + 패턴
-    consciousness_fps.py             fps 임계값
-    discrete_fps_test.py             이산 fps
-    phi_integration_test.py          Φ 통합정보
+  Experiments:
+    mapping_independence_test.py     Mapping independence verification ★
+    eeg_cct_validator.py             EEG reverse validation ★
+    cct_counterexample_search.py     Counterexample search ★
+    cct_independence_test.py         Test independence
+    attractor_variants.py            4 attractor types + epilepsy precision
+    gap_threshold_test.py            Gap threshold + patterns
+    consciousness_fps.py             fps threshold
+    discrete_fps_test.py             Discrete fps
+    phi_integration_test.py          Φ integrated information
 
-  시뮬레이션:
-    golden_cct_bridge.py             골든존↔CCT (반증됨)
-    brain_cct_analyzer.py            뇌 프로필 CCT
-    realworld_cct_sim.py             LLM + NPC 시뮬레이션
-    engine_experiments.py            수면/멀티엔진/기억소거
+  Simulations:
+    golden_cct_bridge.py             Golden Zone↔CCT (refuted)
+    brain_cct_analyzer.py            Brain profile CCT
+    realworld_cct_sim.py             LLM + NPC simulation
+    engine_experiments.py            Sleep/multi-engine/memory erasure
     compass_cct_correlation.py       Compass↔CCT
 ```

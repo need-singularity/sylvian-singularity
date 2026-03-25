@@ -1,23 +1,23 @@
-# T1-13: ⭐ 오일러곱 계층 → 골든존 전체 구조 유도
+# T1-13: ⭐ Euler Product Hierarchy → Derives Entire Golden Zone Structure
 
-## 대발견
+## Major Discovery
 
 ```
   σ₋₁(6) = (1+1/2)(1+1/3) = (3/2)(4/3) = 2
 
-  각 인수에서 부동점: x·e^(1/x) = e^(인수)
+  Fixed point from each factor: x·e^(1/x) = e^(factor)
 
-  p=2: e^(3/2) → I₁ = 0.21207  ≈ 골든존 하한 (오차 0.12%)
-  p=3: e^(4/3) → I₂ = 1.28568  (I>1, 골든존 밖 → 물리적 의미 불명)
-  전체: 1/σ₋₁(6) = 1/2         = 골든존 상한 (정확!)
+  p=2: e^(3/2) → I₁ = 0.21207  ≈ Golden Zone lower bound (0.12% error)
+  p=3: e^(4/3) → I₂ = 1.28568  (I>1, outside Golden Zone → unclear physical meaning)
+  Total: 1/σ₋₁(6) = 1/2        = Golden Zone upper bound (exact!)
 
-  폭 = 1/2 - I₁ = 0.28793 ≈ ln(4/3) = 0.28768 (오차 0.09%)
+  Width = 1/2 - I₁ = 0.28793 ≈ ln(4/3) = 0.28768 (0.09% error)
 
-  ⚠️ p=3 인수는 I>1 → 골든존 구조에 직접 기여하지 않음
-  p=2 인수만이 하한을 결정
+  ⚠️ p=3 factor has I>1 → doesn't directly contribute to Golden Zone structure
+  Only p=2 factor determines lower bound
 ```
 
-## 구조
+## Structure
 
 ```
   σ₋₁(6) = (3/2) × (4/3)
@@ -25,33 +25,34 @@
          e^(3/2)    e^(4/3)
             ↓          ↓
      I₁ = 0.2121   I₂ = 0.75
-     (하한 근사)    (Top-K MoE?)
+     (lower bound   (Top-K MoE?)
+      approx)
             ↓
-  폭 = 1/2 - I₁ ≈ ln(4/3)
+  Width = 1/2 - I₁ ≈ ln(4/3)
 
-  "완전수 6의 오일러곱 분해가 골든존 전체를 결정"
+  "Euler product decomposition of perfect number 6 determines entire Golden Zone"
 ```
 
-## p=3 부동점 I₂ = 3/4 의 의미
+## Meaning of p=3 Fixed Point I₂ = 3/4
 
 ```
   x·e^(1/x) = e^(4/3)
-  x = 3/2 (정확! 검증: (3/2)·e^(2/3) = (3/2)·1.9477 = 2.9216... ≠ e^(4/3)=3.7937)
+  x = 3/2 (exact! Verification: (3/2)·e^(2/3) = (3/2)·1.9477 = 2.9216... ≠ e^(4/3)=3.7937)
 
-  ⚠️ 수치 재검증 필요 — x=1.5가 정확한 해가 아닐 수 있음
-  실제: x = 1.5000 → 1.5·e^(1/1.5) = 1.5·e^(0.667) = 1.5·1.948 = 2.922 ≠ 3.794
+  ⚠️ Numerical re-verification needed — x=1.5 may not be exact solution
+  Actual: x = 1.5000 → 1.5·e^(1/1.5) = 1.5·e^(0.667) = 1.5·1.948 = 2.922 ≠ 3.794
 
-  → x=1.5는 정확한 해가 아님! 수치 오류 가능성
-  → 재계산 필요
+  → x=1.5 is not exact solution! Possible numerical error
+  → Recalculation needed
 ```
 
-## 판정
+## Verdict
 
 ```
-  상한 1/2:     🟩 (정확, T1-10)
-  하한 I₁:      🟧 (0.12% 오차, T1-11)
-  폭 0.28793:   🟧 (0.09% 오차, ln(4/3)와 비교)
-  I₂ = 3/4:    ⚠️ (수치 재검증 필요)
+  Upper bound 1/2:    🟩 (exact, T1-10)
+  Lower bound I₁:     🟧 (0.12% error, T1-11)
+  Width 0.28793:      🟧 (0.09% error, compared to ln(4/3))
+  I₂ = 3/4:          ⚠️ (numerical re-verification needed)
 
-  오일러곱 계층 구조: 가설 단계 (검증 중)
+  Euler product hierarchy structure: Hypothesis stage (under verification)
 ```

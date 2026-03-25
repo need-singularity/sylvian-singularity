@@ -1,41 +1,41 @@
-# 가설 검토 098: 왜 6인가 — 완전수의 유일성 ✅
+# Hypothesis Review 098: Why 6 — The Uniqueness of Perfect Numbers ✅
 
-## 가설
+## Hypothesis
 
-> 6이 특별한가, 아니면 완전수 급수의 첫 항일 뿐인가?
+> Is 6 special, or is it just the first term in the perfect number series?
 
-## 배경
+## Background
 
 ```
-  완전수(Perfect Number):
+  Perfect Number:
   ┌─────────────────────────────────────────────────┐
-  │  자신을 제외한 약수(진약수)의 합이 자기 자신        │
+  │  Sum of proper divisors equals the number itself │
   │  6 = 1+2+3                                      │
   │  28 = 1+2+4+7+14                                │
   │  496 = 1+2+4+8+16+31+62+124+248                 │
   │  8128 = ...                                      │
   │                                                  │
-  │  질문: 6이 "첫 번째" 완전수일 뿐인가,             │
-  │        아니면 구조적으로 유일한가?                  │
+  │  Question: Is 6 just the "first" perfect number, │
+  │            or is it structurally unique?          │
   └─────────────────────────────────────────────────┘
 ```
 
-## 검증 결과: ✅ 6은 유일하게 특별하다
+## Verification Result: ✅ 6 is uniquely special
 
 ```
-  완전수 진약수 역수합 (1 제외):
-  p=    6: 1.000000  ← 정확히 1! 유일!
-  p=   28: 0.964286  ← 1 아님
+  Perfect number proper divisor reciprocal sum (excluding 1):
+  p=    6: 1.000000  ← Exactly 1! Unique!
+  p=   28: 0.964286  ← Not 1
   p=  496: 0.997984
-  p= 8128: 0.999877  → 1에 수렴하지만 도달 못함
+  p= 8128: 0.999877  → Converges to 1 but never reaches
 ```
 
-## 완전수 비교 테이블 (확장)
+## Perfect Number Comparison Table (Extended)
 
 ```
   ┌──────────┬──────────────┬────────────┬────────────┬──────────┐
-  │ 완전수   │ 소인수분해   │ 약수 개수  │ 역수합     │ 1과 차이  │
-  │          │              │ (1 제외)   │ (1 제외)   │          │
+  │ Perfect  │ Prime        │ # Divisors │ Reciprocal │ Diff     │
+  │ Number   │ Factorization│ (excl. 1)  │ Sum (ex.1) │ from 1   │
   ├──────────┼──────────────┼────────────┼────────────┼──────────┤
   │     6    │ 2 × 3        │ 3          │ 1.000000   │ 0.000000 │
   │    28    │ 2² × 7       │ 5          │ 0.964286   │ 0.035714 │
@@ -44,16 +44,16 @@
   │ 33550336 │ 2¹² × 8191   │ 25         │ 0.999999   │ 0.000001 │
   └──────────┴──────────────┴────────────┴────────────┴──────────┘
 
-  → 약수가 많아질수록 역수합이 1에 수렴하지만
-    정확히 1이 되는 것은 6뿐!
+  → As divisors increase, reciprocal sum converges to 1 but
+    only 6 achieves exactly 1!
 ```
 
-## 역수합 수렴 그래프 (ASCII)
+## Reciprocal Sum Convergence Graph (ASCII)
 
 ```
-  역수합
-  (1 제외)
-  1.000│──●────────────────────────── 6 (정확히 1!)
+  Reciprocal
+  Sum (ex. 1)
+  1.000│──●────────────────────────── 6 (exactly 1!)
        │        ●        ●      ●
   0.995│              ●
        │
@@ -68,99 +68,99 @@
   0.950│
        └──┼──┼──┼──┼──┼──┼──
           6  28 496 8128 33M  ...
-             완전수
+             Perfect Numbers
 
-  → 6만이 정확히 1.000을 달성
-  → 나머지는 수렴하지만 도달하지 못함
-  → 1에 대한 "오컴의 면도날" = 6
+  → Only 6 achieves exactly 1.000
+  → Others converge but never reach
+  → "Occam's razor" for 1 = 6
 ```
 
-## 6이 유일한 이유: 수학적 증명
+## Why 6 is Unique: Mathematical Proof
 
 ```
-  6 = 2 × 3 (소수 2개의 곱)
-  약수(1 제외) = {2, 3, 6}
-  1/2 + 1/3 + 1/6 = 3/6 + 2/6 + 1/6 = 6/6 = 1  ← 정확!
+  6 = 2 × 3 (product of 2 primes)
+  Divisors (excl. 1) = {2, 3, 6}
+  1/2 + 1/3 + 1/6 = 3/6 + 2/6 + 1/6 = 6/6 = 1  ← Exact!
 
-  28 = 2² × 7 (약수 5개)
+  28 = 2² × 7 (5 divisors)
   1/2 + 1/4 + 1/7 + 1/14 + 1/28
   = 14/28 + 7/28 + 4/28 + 2/28 + 1/28
-  = 28/28 = 1? → 아니! 1/2+1/4+1/7+1/14+1/28 = 0.964
+  = 28/28 = 1? → No! 1/2+1/4+1/7+1/14+1/28 = 0.964
 
-  왜 28은 안 되는가?
+  Why doesn't 28 work?
   ┌────────────────────────────────────────────────┐
-  │  28의 약수(1제외): {2, 4, 7, 14, 28}            │
-  │  이 약수들의 역수합:                              │
+  │  Divisors of 28 (excl. 1): {2, 4, 7, 14, 28}   │
+  │  Sum of reciprocals:                             │
   │  = Σ(1/d) for d|28, d≠1                         │
-  │  = 1 - 1/28 × σ₋₁(28)의 보정                   │
+  │  = 1 - 1/28 × correction of σ₋₁(28)            │
   │                                                  │
-  │  6의 특별함:                                      │
+  │  6's specialness:                                │
   │  σ₋₁(6) = Σ(1/d) for all d|6                    │
   │  = 1/1 + 1/2 + 1/3 + 1/6 = 2                    │
-  │  → 1을 빼면 정확히 1!                             │
+  │  → Minus 1 equals exactly 1!                     │
   │                                                  │
-  │  σ₋₁(n) = 2는 완전수의 정의 (약수역수합 = 2)      │
-  │  그러나 "1을 제외한" 역수합 = 1은 6만 성립!        │
-  │  → 1/p + 1/q + 1/(pq) = 1 ↔ p=2, q=3             │
-  │  → 이집트 분수 분해의 유일성!                      │
+  │  σ₋₁(n) = 2 defines perfect numbers              │
+  │  But reciprocal sum "excluding 1" = 1 only for 6!│
+  │  → 1/p + 1/q + 1/(pq) = 1 ↔ p=2, q=3            │
+  │  → Uniqueness of Egyptian fraction decomposition!│
   └────────────────────────────────────────────────┘
 ```
 
-## 이집트 분수와 6
+## Egyptian Fractions and 6
 
 ```
-  1 = 1/2 + 1/3 + 1/6  (유일한 3항 이집트 분수 분해)
+  1 = 1/2 + 1/3 + 1/6  (unique 3-term Egyptian fraction decomposition)
 
-  증명:
-  1/a + 1/b + 1/c = 1  (a ≤ b ≤ c, 정수)
-  → a ≤ 3 (a=2가 필수)
+  Proof:
+  1/a + 1/b + 1/c = 1  (a ≤ b ≤ c, integers)
+  → a ≤ 3 (a=2 required)
   → 1/b + 1/c = 1/2
   → b ≤ 4
-  → b=3, c=6 또는 b=4, c=4
+  → b=3, c=6 or b=4, c=4
 
-  해: {2,3,6} 또는 {2,4,4}
-  → {2,4,4}는 중복 → 약수 구조 불가
-  → {2,3,6}이 유일! → 6 = 2×3이 유일!
+  Solutions: {2,3,6} or {2,4,4}
+  → {2,4,4} has duplicates → Cannot be divisor structure
+  → {2,3,6} is unique! → 6 = 2×3 is unique!
 
-  → 가설 078 (이집트 분수 유일성)과 연결
+  → Connects to Hypothesis 078 (Egyptian fraction uniqueness)
 ```
 
-## 우리 모델에서 6의 역할
+## Role of 6 in Our Model
 
 ```
-  1/2 = 골든존 상한 (리만 임계선)
-  1/3 = 메타 부동점 (축소사상 수렴)
-  1/6 = 호기심 (불완전도)
+  1/2 = Golden Zone upper bound (Riemann critical line)
+  1/3 = Meta fixed point (contraction mapping convergence)
+  1/6 = Curiosity (incompleteness)
 
-  1/2 + 1/3 + 1/6 = 1 (완전)
+  1/2 + 1/3 + 1/6 = 1 (complete)
 
-  → 경계(1/2) + 수렴(1/3) + 호기심(1/6) = 완전(1)
-  → 자연이 6을 선택한 이유:
-    "가장 적은 상수(2개 소수)로 완전(=1)에 도달하는 유일한 구조"
+  → Boundary(1/2) + Convergence(1/3) + Curiosity(1/6) = Complete(1)
+  → Why nature chose 6:
+    "The unique structure reaching completeness(=1) with minimal constants (2 primes)"
 ```
 
-## 다른 가설과의 교차점
+## Intersections with Other Hypotheses
 
 ```
-  가설 067 (상수 관계):     1/2+1/3=5/6
-  가설 072 (호기심이 완전): 1/2+1/3+1/6=1
-  가설 078 (이집트 분수):   유일한 3항 분해
-  가설 090 (마스터 공식):   σ₋₁(6)=2, 완전수 구조
-  가설 092 (ζ 오일러 곱):   ζ의 p=2,3 절단 = 6의 소인수
+  Hypothesis 067 (constant relations): 1/2+1/3=5/6
+  Hypothesis 072 (curiosity completes): 1/2+1/3+1/6=1
+  Hypothesis 078 (Egyptian fractions): Unique 3-term decomposition
+  Hypothesis 090 (master formula): σ₋₁(6)=2, perfect number structure
+  Hypothesis 092 (ζ Euler product): ζ truncation at p=2,3 = prime factors of 6
 ```
 
-## 한계
+## Limitations
 
-1. "1 제외 역수합 = 1"이라는 기준 자체가 임의적일 수 있음
-2. 다른 기준으로 보면 다른 완전수가 "특별"할 수 있음
-3. 완전수의 무한성조차 미해결 문제
+1. The criterion "reciprocal sum excluding 1 = 1" itself may be arbitrary
+2. By different criteria, other perfect numbers might be "special"
+3. Even the infinity of perfect numbers is an unsolved problem
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 홀수 완전수(존재 시)에서 역수합 패턴 분석
-- [ ] 유사완전수(Almost Perfect Number)에서 역수합 = 1 조건 탐색
-- [ ] 6의 유일성이 모델 구조에 필수적인지, 우연인지 텍사스 명사수 검정
+- [ ] Analyze reciprocal sum patterns in odd perfect numbers (if they exist)
+- [ ] Explore reciprocal sum = 1 condition in Almost Perfect Numbers
+- [ ] Texas sharpshooter test whether 6's uniqueness is essential or accidental to model structure
 
 ---
 
-*검증: 완전수 6, 28, 496, 8128, 33550336 비교*
+*Verification: Comparison of perfect numbers 6, 28, 496, 8128, 33550336*

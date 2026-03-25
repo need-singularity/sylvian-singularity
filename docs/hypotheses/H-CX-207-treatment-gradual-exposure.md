@@ -1,4 +1,4 @@
-# H-CX-207: 치료 — 점진적 노출 (위상 적응)
+# H-CX-207: Treatment — Gradual Exposure (Phase Adaptation)
 
-> 0.1에폭 위상 전이(H-CX-105)처럼 저강도→고강도 점진 노출.
-> 뇌가 PH 변화에 '적응'할 시간 확보.
+> Like 0.1 epoch phase transition (H-CX-105), gradual exposure from low intensity → high intensity.
+> Securing time for the brain to 'adapt' to PH changes.

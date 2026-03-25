@@ -1,69 +1,67 @@
-# H-CX-21: 골든존 폭 = ln(abundancy(3)) — 모델↔순수수학 다리
+# H-CX-21: Golden Zone Width = ln(abundancy(3)) — Model↔Pure Mathematics Bridge
 
-> **가설**: 골든존 폭 ln(4/3)이 소수 3의 풍요도(abundancy) σ(3)/3의
-> 로그와 정확히 일치하는 것은, 골든존 모델과 σφ=nτ 순수 수학을
-> 연결하는 비자명한 다리이다.
+> **Hypothesis**: The exact match between Golden Zone width ln(4/3) and the logarithm of prime 3's abundancy σ(3)/3 is a non-trivial bridge connecting the Golden Zone model and σφ=nτ pure mathematics.
 
-## 배경
+## Background
 
 ```
-  골든존 (모델, 미검증):
-    상한 = 1/2 (리만 임계선)
-    하한 = 1/2 - ln(4/3) ≈ 0.212
-    폭   = ln(4/3) ≈ 0.288
-    정의: 3→4 상태 전이의 엔트로피 점프
+  Golden Zone (model, unverified):
+    Upper bound = 1/2 (Riemann critical line)
+    Lower bound = 1/2 - ln(4/3) ≈ 0.212
+    Width   = ln(4/3) ≈ 0.288
+    Definition: Entropy jump in 3→4 state transition
 
-  σφ=nτ (순수 수학, 증명됨):
+  σφ=nτ (pure mathematics, proven):
     f(3,1) = (3²-1)/(2·3) = 4/3 = σ(3)/3
-    텔레스코핑: (3/4)·(4/3) = 1 → n=6 유일
+    Telescoping: (3/4)·(4/3) = 1 → n=6 unique
 ```
 
-## 교차
+## Crossing
 
 ```
-  골든존 폭 = ln(4/3) = ln(σ(3)/3) = ln(abundancy(3))
+  Golden Zone width = ln(4/3) = ln(σ(3)/3) = ln(abundancy(3))
 
-  "3에서 4로의 정보 증가"(골든존 정의)
-  = "소수 3의 풍요도의 로그"(산술함수)
+  "Information increase from 3 to 4"(Golden Zone definition)
+  = "Logarithm of prime 3's abundancy"(arithmetic function)
 
-  이것은 정의상 같은 수(4/3)이지만, 의미가 다른 두 맥락:
-    골든존: 상태 수 N=3→4의 Shannon 엔트로피 차이
-    산술:   σ(3)/3 = (1+3)/3 = 약수합/자신
+  This is the same number (4/3) by definition, but from different contexts:
+    Golden Zone: Shannon entropy difference for state count N=3→4
+    Arithmetic:   σ(3)/3 = (1+3)/3 = sum of divisors/itself
 
-  왜 같은가?
-    σ(p)/p = (p+1)/p = 1+1/p (소수의 풍요도)
-    ln((p+1)/p) = 1/p - 1/(2p²) + ... ≈ 1/p (p 클 때)
+  Why are they equal?
+    σ(p)/p = (p+1)/p = 1+1/p (prime abundancy)
+    ln((p+1)/p) = 1/p - 1/(2p²) + ... ≈ 1/p (for large p)
     ln(4/3) = ln(1+1/3) = 1/3 - 1/18 + ...
 
-  p=3에서: ln(σ(3)/3) = ln(4/3) = "3의 산술 정보"
-  골든존에서: N=3→4 = "3상태에서 4상태로의 정보 점프"
+  At p=3: ln(σ(3)/3) = ln(4/3) = "arithmetic information of 3"
+  In Golden Zone: N=3→4 = "information jump from 3-state to 4-state"
 
-  → 같은 "3의 정보"를 두 가지 다른 방식으로 측정!
+  → The same "information of 3" measured in two different ways!
 ```
 
-### 재해석: 골든존 = σφ=nτ의 정보이론적 그림자?
+### Reinterpretation: Golden Zone = Information-theoretic shadow of σφ=nτ?
 
 ```
-  만약 골든존이 실재한다면:
-    골든존 폭 = ln(f(3,1)) = σφ=nτ 텔레스코핑의 "상쇄 크기"
-    → 골든존의 크기 = 6의 특성화에서 "3이 기여하는 정도"
+  If Golden Zone is real:
+    Golden Zone width = ln(f(3,1)) = "cancellation size" in σφ=nτ telescoping
+    → Golden Zone size = "degree of 3's contribution" in characterization of 6
 
-  더 나아가:
-    상한 1/2: 리만 ζ 임계선 Re(s)=1/2
-    하한 1/2-ln(4/3): "리만 - 산술정보(3)"
-    → 골든존 = [리만-σ(3), 리만]
+  Furthermore:
+    Upper bound 1/2: Riemann ζ critical line Re(s)=1/2
+    Lower bound 1/2-ln(4/3): "Riemann - arithmetic_info(3)"
+    → Golden Zone = [Riemann-σ(3), Riemann]
 
-  이것은 골든존이 ζ 함수와 산술함수의 "교차 영역"임을 시사?
+  This suggests Golden Zone is the "intersection region" of ζ function and arithmetic functions?
 ```
 
-## 판정
+## Verdict
 
 ```
-  상태: 🟧★ 비자명한 교차 (같은 수이지만 다른 맥락)
-  주의: 골든존 자체가 미검증 모델
-  하지만 ln(4/3) = ln(σ(3)/3)은 수학적 사실
+  Status: 🟧★ Non-trivial crossing (same number but different contexts)
+  Note: Golden Zone itself is an unverified model
+  However ln(4/3) = ln(σ(3)/3) is a mathematical fact
 ```
 
-## 난이도: 극고 | 파급력: ★★★★★
+## Difficulty: Extreme | Impact: ★★★★★
 
-골든존 모델과 순수 수학을 연결하는 유일한 비자명 다리.
+The only non-trivial bridge connecting the Golden Zone model and pure mathematics.

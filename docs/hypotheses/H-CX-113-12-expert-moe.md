@@ -1,22 +1,22 @@
-# H-CX-113: 12 Expert MoE = 완전 MoE
+# H-CX-113: 12 Expert MoE = Perfect MoE
 
-> σ(6)=12개 Expert MoE가 "완전한" 라우팅. 13번째 추가 시 성능 불연속.
+> σ(6)=12 Expert MoE has "perfect" routing. Performance discontinuity when 13th is added.
 
-## 검증 상태
+## Verification Status
 - [x] Expert sweep 6/8/12/13
 
-## 검증 결과
+## Verification Results
 
 **REJECTED**
 
-| n_out (Expert 수) | test_acc | 차이 |
-|-------------------|----------|------|
+| n_out (Expert count) | test_acc | difference |
+|---------------------|----------|------------|
 | 10 | 98.0% | baseline |
 | 12 | 98.0% | ±0.0% |
 | 13 | 98.1% | +0.1% |
 | 16 | 98.0% | ±0.0% |
 
-- 모든 Expert 수에서 98.0±0.1% -- 통계적 유의차 없음
-- 예측(12 Expert에서 성능 불연속/최적): 기각
-- 12가 "완전한 라우팅"이라는 주장을 지지하는 증거 없음
-- MNIST에서는 모델이 이미 포화 상태이므로 더 어려운 데이터셋에서 재검증 필요
+- 98.0±0.1% across all Expert counts — no statistically significant difference
+- Prediction (performance discontinuity/optimum at 12 Experts): rejected
+- No evidence supporting claim that 12 is "perfect routing"
+- Model is already saturated on MNIST — re-verification needed on harder datasets

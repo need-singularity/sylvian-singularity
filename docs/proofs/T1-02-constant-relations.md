@@ -1,36 +1,36 @@
-# T1-02: 상수 관계식
+# T1-02: Constant Relations
 
-## 명제
+## Proposition
 
-모델 상수 {1/2, 1/3, 1/6, 5/6} 사이에는 산술적으로 검증 가능한 정확한 관계식이 성립한다.
+Arithmetically verifiable exact relationships exist between the model constants {1/2, 1/3, 1/6, 5/6}.
 
-## 관계식 1: 덧셈
+## Relation 1: Addition
 
 ```
 1/2 + 1/3 = 3/6 + 2/6 = 5/6  ✓
 ```
 
-## 관계식 2: 뺄셈
+## Relation 2: Subtraction
 
 ```
 1/2 - 1/3 = 3/6 - 2/6 = 1/6  ✓
 ```
 
-## 관계식 3: 곱셈
+## Relation 3: Multiplication
 
 ```
 1/2 × 1/3 = 1/6  ✓
 ```
 
-## 주목할 우연의 일치
+## Notable Coincidence
 
-관계식 2와 3이 같은 결과를 산출한다:
+Relations 2 and 3 yield the same result:
 
 ```
 1/2 - 1/3 = 1/2 × 1/3 = 1/6
 ```
 
-이것이 성립하는 이유: a - b = a × b를 풀면
+Why this holds: Solving a - b = a × b
 
 ```
 a - b = ab
@@ -38,50 +38,50 @@ a = b + ab = b(1 + a)
 b = a/(1 + a)
 ```
 
-a = 1/2일 때: b = (1/2)/(3/2) = 1/3. 즉 (a, b) = (1/2, 1/3)은 이 등식을 만족하는 해이다.
+When a = 1/2: b = (1/2)/(3/2) = 1/3. That is, (a, b) = (1/2, 1/3) is a solution to this equation.
 
-## 관계식 4: 조화급수 연결
+## Relation 4: Harmonic Series Connection
 
 ```
 H₃ = 1 + 1/2 + 1/3 = 11/6
 H₃ - 1 = 5/6  ✓
 ```
 
-## 관계식 5: 137 연결
+## Relation 5: 137 Connection
 
 ```
 8 × 17 + 1 = 136 + 1 = 137  ✓
 ```
 
-여기서:
-- 8 = 2³ (임계 차원과 관련)
-- 17 = 소수
-- 137 ≈ 1/α (미세구조상수의 역수, α ≈ 1/137.036)
+Where:
+- 8 = 2³ (related to critical dimension)
+- 17 = prime
+- 137 ≈ 1/α (inverse of fine structure constant, α ≈ 1/137.036)
 
-## 수치 검증 요약
+## Numerical Verification Summary
 
-| 관계식 | 좌변 | 우변 | 일치 |
-|--------|------|------|------|
+| Relation | LHS | RHS | Match |
+|----------|-----|-----|-------|
 | 1/2 + 1/3 | 0.833333... | 5/6 | ✓ |
 | 1/2 - 1/3 | 0.166666... | 1/6 | ✓ |
 | 1/2 × 1/3 | 0.166666... | 1/6 | ✓ |
 | H₃ - 1 | 0.833333... | 5/6 | ✓ |
 | 8×17 + 1 | 137 | 137 | ✓ |
 
-전부 정확한 산술 등식 (근사 아님).
+All are exact arithmetic equalities (not approximations).
 
-## 의미
+## Significance
 
-- 모델의 핵심 상수들이 단순한 산술 관계로 연결됨
-- 뺄셈 = 곱셈 우연의 일치는 (1/2, 1/3) 쌍의 특수성
-- 137 연결은 관찰적 사실 (인과적 주장이 아닌 수적 일치)
+- Core model constants are connected by simple arithmetic relations
+- Subtraction = multiplication coincidence is special to the (1/2, 1/3) pair
+- 137 connection is an observational fact (numerical coincidence, not causal claim)
 
-## 근거
+## Basis
 
-- 기본 산술 연산
-- 조화급수 정의
+- Basic arithmetic operations
+- Harmonic series definition
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T1-01 (완전성)
-- T0-04 (바나흐 부동점 I* = 1/3)
+- T1-01 (Completeness)
+- T0-04 (Banach fixed point I* = 1/3)

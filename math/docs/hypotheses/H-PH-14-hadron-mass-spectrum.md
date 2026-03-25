@@ -1,11 +1,11 @@
-# H-PH-14: ⭐⭐⭐ 하드론 질량 스펙트럼 = 완전수 산술
+# H-PH-14: ⭐⭐⭐ Hadron Mass Spectrum = Perfect Number Arithmetic
 
-> **가설**: 주요 중간자/바리온 질량이 σ,τ,φ,P₁,P₃의 대수적 조합으로 표현된다.
+> **Hypothesis**: Major meson/baryon masses are expressed as algebraic combinations of σ,τ,φ,P₁,P₃.
 
-## 정확 매치 (오차 <0.1%, 대수적 공식)
+## Exact Matches (Error <0.1%, Algebraic Formulas)
 
-| 입자 | 공식 | 예측(MeV) | 실측(MeV) | 오차 |
-|------|------|----------|----------|------|
+| Particle | Formula | Predicted(MeV) | Measured(MeV) | Error |
+|----------|---------|----------------|---------------|-------|
 | **Δ(1232)** | **σ³-P₃ = 1728-496** | **1232** | **1232.0** | **0.000%** |
 | π⁰ | σ²-P₁-φ-R = 135 | 135.0 | 134.98 | 0.017% |
 | D⁺ | σ²+σ³-φ = 1870 | 1870 | 1869.66 | 0.018% |
@@ -15,24 +15,24 @@
 | K⁰ | P₃+φ = 498 | 498 | 497.61 | 0.078% |
 | B⁰ | σ³×55/18 = 5280 | 5280 | 5279.65 | 0.007% |
 
-## Δ 바리온: σ³ - P₃ = 1232 (정확!)
+## Δ Baryon: σ³ - P₃ = 1232 (Exact!)
 
 ```
   Δ(1232) = σ(6)³ - P₃ = 1728 - 496 = 1232 MeV
 
-  "j-불변량 빼기 이상소거 완전수 = Δ 바리온"
-  → 모듈러 형식 스케일에서 끈이론 스케일을 뺀 잔여 = 하드론 질량
+  "j-invariant minus ideal-vanishing perfect number = Δ baryon"
+  → Residual from subtracting string theory scale from modular form scale = hadron mass
 ```
 
-## D 중간자 이중항: σ²+σ³ 기반
+## D Meson Doublet: Based on σ²+σ³
 
 ```
   D⁺ = σ² + σ³ - φ = 144 + 1728 - 2 = 1870
   D⁰ = σ² + σ³ - τφ = 144 + 1728 - 8 = 1864
-  차이 = τφ - φ = φ(τ-1) = 6 = P₁!
+  Difference = τφ - φ = φ(τ-1) = 6 = P₁!
 ```
 
-## 24개 입자 중 11개 오차 <0.1%
+## 11 out of 24 particles with error <0.1%
 
 *Created: 2026-03-25*
 *Status: ⭐⭐⭐ 🟧★*

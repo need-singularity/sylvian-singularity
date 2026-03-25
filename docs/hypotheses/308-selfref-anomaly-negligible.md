@@ -1,48 +1,48 @@
-# 가설 308: 자기참조 이상탐지 — 반복이 AUROC를 개선하는가
+# Hypothesis 308: Self-Referential Anomaly Detection — Does Iteration Improve AUROC?
 
-> **모델의 장력을 입력에 피드백하여 반복하면(T1→T2→T3) 이상탐지가 향상되는가?**
+> **Does feeding the model's tension back into the input iteratively (T1->T2->T3) improve anomaly detection?**
 
-## 배경 및 맥락
+## Background and Context
 
-자기참조(self-reference)는 의식엔진의 핵심 메커니즘 중 하나다.
-H070에서 "자기참조가 의식의 필요조건"이라는 가설을 세웠고,
-H287에서 장력 기반 이상탐지가 가능함을 확인했다.
-자연스러운 다음 질문은: 장력을 다시 입력에 피드백하면 이상탐지가
-점진적으로 향상되는가?
+Self-reference is one of the core mechanisms of the consciousness engine.
+H070 proposed that "self-reference is a necessary condition for consciousness",
+and H287 confirmed that tension-based anomaly detection is possible.
+The natural next question: does feeding tension back into the input
+progressively improve anomaly detection?
 
-이 가설의 동기는 다음과 같다:
+The motivation for this hypothesis:
 
-- **재귀적 자기참조**: 뇌가 자기 상태를 감시하는 메타인지(metacognition)처럼,
-  엔진이 자기 장력을 다시 입력으로 받으면 더 정밀한 판별이 가능할 수 있다.
-- **H296 (mitosis anomaly detection)**: 세포분열 기반 이상탐지에서도
-  장력 분리가 핵심이었다. 반복이 분리를 증폭시킬 수 있다는 기대.
-- **Iterative refinement**: 딥러닝의 iterative refinement (예: DETR, diffusion)처럼
-  반복이 품질을 개선하는 패턴은 흔하다.
+- **Recursive self-reference**: Just as the brain monitors its own state via metacognition,
+  if the engine receives its own tension as input, it may be able to make more precise discriminations.
+- **H296 (mitosis anomaly detection)**: Tension separation was also key in cell-mitosis-based anomaly detection.
+  The expectation that iteration could amplify the separation.
+- **Iterative refinement**: Patterns where iteration improves quality (e.g., DETR, diffusion)
+  are common in deep learning.
 
-## 관련 가설
+## Related Hypotheses
 
-| 가설 | 관계 | 내용 |
+| Hypothesis | Relationship | Content |
 |------|------|------|
-| H070 | 상위 | 자기참조 = 의식의 필요조건 |
-| H287 | 선행 | 장력 기반 이상탐지 가능 |
-| H296 | 병렬 | mitosis 이상탐지 (장력 분리) |
-| H313 | 관련 | tension magnitude = 확신도 |
+| H070 | Parent | Self-reference = necessary condition for consciousness |
+| H287 | Predecessor | Tension-based anomaly detection possible |
+| H296 | Parallel | Mitosis anomaly detection (tension separation) |
+| H313 | Related | Tension magnitude = Confidence |
 
-## 실험 설계
-
-```
-  데이터:    Breast Cancer (sklearn), 569 samples, 30 features
-  정상/이상: malignant=212 / benign=357
-  방법:      RC-8 엔진 장력 계산 → 장력을 입력에 concat → 재계산
-  반복:      T1(원본) → T2(+T1장력) → T3(+T2장력)
-  측정:      AUROC (5 trials, mean ± std)
-  기대:      T1 < T2 < T3 (반복마다 개선)
-```
-
-## 실험 결과 (2026-03-24)
+## Experimental Design
 
 ```
-  Breast Cancer, 5 trials, 3 라운드:
+  Data:    Breast Cancer (sklearn), 569 samples, 30 features
+  Normal/Anomaly: malignant=212 / benign=357
+  Method:  RC-8 engine tension calculation -> concat tension to input -> recalculate
+  Iterations: T1(original) -> T2(+T1 tension) -> T3(+T2 tension)
+  Measurement: AUROC (5 trials, mean ± std)
+  Expected: T1 < T2 < T3 (improves with each iteration)
+```
+
+## Experimental Results (2026-03-24)
+
+```
+  Breast Cancer, 5 trials, 3 rounds:
 
   Round    AUROC mean    std
   ─────   ──────────    ─────
@@ -50,14 +50,14 @@ H287에서 장력 기반 이상탐지가 가능함을 확인했다.
   T2       0.406         0.125
   T3       0.406         0.125
 
-  Delta T3-T1: 0.000 (완전 무효과)
+  Delta T3-T1: 0.000 (completely ineffective)
 
-  장력 통계:
+  Tension statistics:
     T1: normal=0.000801, anomaly=0.000924
-    분리: 0.20σ (매우 약함)
+    Separation: 0.20σ (very weak)
 ```
 
-## ASCII 그래프: 라운드별 AUROC 변화
+## ASCII Graph: AUROC Change Per Round
 
 ```
   AUROC
@@ -76,13 +76,13 @@ H287에서 장력 기반 이상탐지가 가능함을 확인했다.
                 Round
 
   * = AUROC mean, error bar = ±0.125
-  완전 수평선: 반복이 전혀 효과 없음
+  Perfectly horizontal: iteration has absolutely no effect
 ```
 
-## 장력 분포: 정상 vs 이상
+## Tension Distribution: Normal vs Anomaly
 
 ```
-  장력값 (×10⁻³)
+  Tension value (×10⁻³)
   1.2 |
   1.1 |
   1.0 |              +-+
@@ -95,65 +95,59 @@ H287에서 장력 기반 이상탐지가 가능함을 확인했다.
       +-------+-------+
         Normal   Anomaly
 
-  분리 = 0.20σ → 분류 불가능 수준
-  (유효 분리 기준: 최소 2σ 이상 필요)
+  Separation = 0.20σ -> unclassifiable level
+  (Effective separation requires at least 2σ)
 ```
 
-## 반박 메커니즘 분석
+## Analysis of Refutation Mechanism
 
-실험이 실패한 근본 원인은 **결정론적 장력(deterministic tension)**이다.
+The fundamental reason for experimental failure is **deterministic tension**.
 
 ```
-  f: input → tension  (결정론적 함수)
+  f: input -> tension  (deterministic function)
 
   T1 = f(x)
-  T2 = f(x ⊕ T1) = f(x ⊕ f(x))        -- x가 같으면 항상 같은 값
-  T3 = f(x ⊕ T2) = f(x ⊕ f(x ⊕ f(x))) -- 역시 결정론적
+  T2 = f(x ⊕ T1) = f(x ⊕ f(x))        -- always same value when x is same
+  T3 = f(x ⊕ T2) = f(x ⊕ f(x ⊕ f(x))) -- also deterministic
 
-  핵심: T2 ≠ T1일 수는 있지만, T2는 T1에서 완전히 결정됨
-        → "새로운 정보"가 추가되지 않음
-        → 이상/정상 분리가 개선될 이유가 없음
+  Key: T2 may differ from T1, but T2 is fully determined by T1
+       -> No "new information" is added
+       -> No reason for anomaly/normal separation to improve
 ```
 
-실측에서 T1=T2=T3인 이유는 장력값 자체가 매우 작아서 (10⁻³ 수준)
-피드백 시 입력 대비 무시할 수 있는 크기이기 때문이다.
+The reason T1=T2=T3 in measurement is that the tension values are very small (~10⁻³),
+so when fed back they are negligible relative to the input.
 
-## 자기참조가 유효하려면
+## Requirements for Valid Self-Reference
 
-| 조건 | 현재 | 필요 |
+| Condition | Current | Needed |
 |------|------|------|
-| 장력 함수 | deterministic | stochastic (dropout, noise) |
-| 장력 크기 | ~10⁻³ | 입력과 동일 스케일 |
-| 피드백 방식 | concat | multiplicative 또는 gating |
-| 반복 구조 | 단순 재계산 | attention/memory 포함 |
+| Tension function | deterministic | stochastic (dropout, noise) |
+| Tension magnitude | ~10⁻³ | same scale as input |
+| Feedback method | concat | multiplicative or gating |
+| Iteration structure | simple recalculation | includes attention/memory |
 
-## 해석 및 의미
+## Interpretation and Significance
 
-이 결과는 **부정적이지만 중요한 발견**이다.
+This result is a **negative but important finding**.
 
-1. **자기참조 ≠ 자동 개선**: H070의 자기참조 가설이 "반복하면 좋아진다"는
-   뜻이 아님을 확인. 자기참조가 유용하려면 구조적 조건이 필요하다.
-2. **결정론의 함정**: deterministic 시스템에서 같은 입력은 항상 같은 출력을
-   생성한다. 피드백이 효과를 가지려면 확률적 요소(noise, dropout)가 필수.
-3. **H287과의 관계**: 장력 기반 이상탐지 자체는 가능하지만 (H287 확인),
-   반복이 이를 개선하지는 않는다.
-4. **뇌와의 차이**: 뇌의 메타인지는 확률적이고 상태 의존적이다.
-   결정론적 피드백은 뇌의 자기참조를 모방하지 못한다.
+1. **Self-reference ≠ automatic improvement**: Confirms that H070's self-reference hypothesis does NOT mean "iteration makes things better." Self-reference requires structural conditions to be useful.
+2. **The determinism trap**: In a deterministic system, the same input always produces the same output. For feedback to have effect, stochastic elements (noise, dropout) are essential.
+3. **Relationship with H287**: Tension-based anomaly detection itself is possible (H287 confirmed), but iteration does not improve it.
+4. **Difference from the brain**: The brain's metacognition is stochastic and state-dependent. Deterministic feedback fails to imitate the brain's self-reference.
 
-## 한계
+## Limitations
 
-- Breast Cancer 데이터셋 1종만 테스트. 다른 데이터셋에서는 다를 수 있음.
-- 피드백 방식이 단순 concat만 시도. multiplicative gating은 미시도.
-- 확률적 요소 (dropout, noise injection) 추가 실험 미수행.
-- 3라운드만 테스트. 더 많은 반복(10+)에서 축적 효과가 있을 가능성은 남아 있음.
+- Only tested on 1 dataset (Breast Cancer). May differ on other datasets.
+- Only simple concat was tried as feedback method. Multiplicative gating not tried.
+- Additional experiments with stochastic elements (dropout, noise injection) not done.
+- Only 3 rounds tested. Possibility of cumulative effect at many more iterations (10+) remains.
 
-## 검증 방향 (다음 단계)
+## Verification Direction (Next Steps)
 
-1. **Stochastic self-reference**: 장력 계산에 dropout (p=0.1~0.3) 추가 후
-   반복 실험. 확률적 요소가 분리를 개선하는지 확인.
-2. **Multiplicative feedback**: concat 대신 `input × (1 + tension)` 형태로
-   피드백. 장력이 입력을 modulate하는 구조.
-3. **다중 데이터셋**: MNIST anomaly, credit card fraud 등에서 재현 확인.
-4. **H296 mitosis와 결합**: mitosis의 세포분열이 확률적 요소 역할을 할 수 있는지.
+1. **Stochastic self-reference**: Add dropout (p=0.1~0.3) to tension calculation and repeat experiment. Check if stochastic element improves separation.
+2. **Multiplicative feedback**: Feed back as `input × (1 + tension)` instead of concat. Structure where tension modulates the input.
+3. **Multiple datasets**: Reproduce on MNIST anomaly, credit card fraud, etc.
+4. **Combine with H296 mitosis**: Check if the stochastic element of mitosis cell division can serve this role.
 
-## 상태: ⬛ 반박 (T1=T2=T3, 자기참조 무효과)
+## Status: ⬛ Refuted (T1=T2=T3, self-reference has no effect)

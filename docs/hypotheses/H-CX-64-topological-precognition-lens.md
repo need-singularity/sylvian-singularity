@@ -1,54 +1,54 @@
-# H-CX-64: 위상 예지 렌즈 — H0_total 감소율이 예지 AUC를 예측한다
+# H-CX-64: Topological Precognition Lens — H0_total Decay Rate Predicts Precognition AUC
 
-> H0_total_persistence의 에폭별 감소율(dH0/dep)이
-> 예지 AUC의 변화를 예측한다. PH가 빠르게 단순화되는 모델 = 더 강한 예지 렌즈.
+> The epoch-wise decay rate of H0_total_persistence (dH0/dep)
+> predicts changes in precognition AUC. Models where PH simplifies rapidly = stronger precognition lens.
 
-## 배경
+## Background
 
-- H-CX-62 v2: H0_total과 accuracy 상관 r=-0.97 (Fashion)
-- H-CX-58: tension_scale과 AUC 상관 r=0.982
-- 두 가설의 교차점: PH 변화율 → 예지 강도 예측
+- H-CX-62 v2: H0_total and accuracy correlation r=-0.97 (Fashion)
+- H-CX-58: tension_scale and AUC correlation r=0.982
+- Intersection of both hypotheses: PH rate of change → precognition strength prediction
 
-**핵심 연결**: tension_scale이 "렌즈의 배율"이라면,
-H0_total의 감소율은 "렌즈가 초점을 맞추는 속도".
-빠른 위상 단순화 = 빠른 초점 = 강한 예지.
+**Key Connection**: If tension_scale is the "lens magnification",
+then H0_total's decay rate is "how fast the lens focuses".
+Rapid topological simplification = rapid focusing = strong precognition.
 
-## 예측
+## Predictions
 
-1. dH0/dep (감소율)과 final AUC의 상관 r > 0.7
-2. H0_total이 빠르게 감소하는 데이터셋에서 예지 AUC 높음
-3. H0_total 감소율 × tension_scale = 예지 강도 복합 지표
-4. 복합 지표가 단일 지표보다 예지 AUC 예측력 높음
+1. Correlation between dH0/dep (decay rate) and final AUC r > 0.7
+2. High precognition AUC in datasets where H0_total decreases rapidly
+3. H0_total decay rate × tension_scale = composite precognition strength metric
+4. Composite metric has higher predictive power for precognition AUC than single metrics
 
-## 검증 방법
+## Verification Method
 
 ```
-1. 3 데이터셋에서 에폭별 (H0_total, tension_scale, precog_AUC) 수집
+1. Collect epoch-wise (H0_total, tension_scale, precog_AUC) from 3 datasets
 2. dH0/dep = linear regression slope of H0_total vs epoch
-3. Corr(dH0/dep, final_AUC) 계산
-4. 복합 지표: dH0/dep × tension_scale vs AUC
+3. Calculate Corr(dH0/dep, final_AUC)
+4. Composite metric: dH0/dep × tension_scale vs AUC
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H-CX-62 (위상 예지), H-CX-58 (예지 렌즈)
-- H320 (tension_scale log 성장)
+- H-CX-62 (topological precognition), H-CX-58 (precognition lens)
+- H320 (tension_scale log growth)
 
-## 한계
+## Limitations
 
-- 3개 데이터셋만으로 cross-dataset 상관의 통계적 유의성 약함
-- dH0/dep이 선형이 아닐 수 있음
+- Statistical significance of cross-dataset correlation is weak with only 3 datasets
+- dH0/dep may not be linear
 
-## 검증 상태
+## Verification Status
 
-- [x] dH0/dep vs AUC 상관
-- [x] 복합 지표 검증
+- [x] dH0/dep vs AUC correlation
+- [x] Composite metric verification
 
-## 검증 결과
+## Verification Results
 
-**판정: SUPPORTED (cross-dataset r=0.912)**
+**Verdict: SUPPORTED (cross-dataset r=0.912)**
 
-### dH0/dep (선형 감소율)
+### dH0/dep (Linear Decay Rate)
 
 | Dataset | dH0/dep | final AUC |
 |---------|---------|-----------|
@@ -56,7 +56,7 @@ H0_total의 감소율은 "렌즈가 초점을 맞추는 속도".
 | Fashion | -0.0358 | 0.871     |
 | CIFAR   | -0.0338 | 0.612     |
 
-### Cross-dataset 상관
+### Cross-dataset Correlation
 
 ```
 Cross-dataset |dH0/dep| vs final_AUC: r = 0.912
@@ -75,17 +75,17 @@ Cross-dataset |dH0/dep| vs final_AUC: r = 0.912
               |dH0/dep|
 ```
 
-### Epoch-level 상관 (데이터셋 내부)
+### Epoch-level Correlation (Within Dataset)
 
-| Dataset | corr(H0, AUC) | 해석 |
-|---------|---------------|------|
-| MNIST   | 0.39          | 약한 양의 상관 |
-| Fashion | -0.05         | 무상관 |
-| CIFAR   | -0.15         | 약한 음의 상관 |
+| Dataset | corr(H0, AUC) | Interpretation |
+|---------|---------------|----------------|
+| MNIST   | 0.39          | Weak positive correlation |
+| Fashion | -0.05         | No correlation |
+| CIFAR   | -0.15         | Weak negative correlation |
 
-에폭 내부에서는 H0과 AUC의 상관이 약함 -- cross-dataset 수준에서만 강한 상관.
+Within epochs, the correlation between H0 and AUC is weak -- strong correlation only at cross-dataset level.
 
-### 복합 지표: |dH0/dep| x ts_final
+### Composite Metric: |dH0/dep| x ts_final
 
 | Dataset | |dH0/dep| x ts_final |
 |---------|----------------------|
@@ -94,7 +94,7 @@ Cross-dataset |dH0/dep| vs final_AUC: r = 0.912
 | CIFAR   | 0.041                |
 
 ```
-  복합지표
+  Composite Metric
   0.07 |  ##  MNIST
   0.06 |  ##  ##  Fashion
   0.05 |  ##  ##
@@ -104,5 +104,5 @@ Cross-dataset |dH0/dep| vs final_AUC: r = 0.912
          MNI  FAS  CIF
 ```
 
-복합 지표도 AUC 순서(MNIST > Fashion > CIFAR)와 일치하여 예측 1, 2 확인.
-단, cross-dataset 포인트가 3개뿐이므로 통계적 유의성에 한계가 있다.
+The composite metric also aligns with AUC order (MNIST > Fashion > CIFAR), confirming predictions 1 and 2.
+However, with only 3 cross-dataset points, statistical significance is limited.

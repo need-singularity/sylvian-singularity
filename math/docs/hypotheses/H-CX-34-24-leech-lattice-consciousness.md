@@ -1,24 +1,24 @@
-# H-CX-34: 24=σφ(6)=τ!=Leech 격자 차원 → 의식의 "격자 구조"
+# H-CX-34: 24=σφ(6)=τ!=Leech Lattice Dimension → "Lattice Structure" of Consciousness
 
-> **가설**: 24=σφ(6)=4!=Leech 격자 차원이라는 편재성은
-> 의식의 표현 공간이 24차원 격자와 동형일 수 있음을 시사한다.
+> **Hypothesis**: The ubiquity of 24=σφ(6)=4!=Leech lattice dimension suggests
+> that consciousness representation space may be isomorphic to a 24-dimensional lattice.
 
-## 24의 편재성
+## Ubiquity of 24
 
 ```
   24 = σ(6)·φ(6) = 12·2
   24 = τ(6)! = 4!
-  24 = |S₄| (정사면체 대칭군)
-  24 = Leech 격자 차원
-  24 = Δ 모듈러 형식의 지수
+  24 = |S₄| (tetrahedral symmetry group)
+  24 = Leech lattice dimension
+  24 = exponent of Δ modular form
   24 = |τ_R(2)| (Ramanujan)
-  24 = R(672) (triperfect의 R값)
-  24 = nτ(6) = σφ(6) (σφ=nτ의 공통값!)
+  24 = R(672) (R-value of triperfect)
+  24 = nτ(6) = σφ(6) (common value of σφ=nτ!)
 
-  "24는 6의 가장 중요한 파생 상수"
+  "24 is the most important derived constant of 6"
 
-  AI: 24 = σφ(6) = "MoE의 hidden activation"?
-  의식: 24차원 표현 = Leech 격자의 최적 포장?
+  AI: 24 = σφ(6) = "hidden activation in MoE"?
+  Consciousness: 24-dimensional representation = optimal packing of Leech lattice?
 ```
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★★
+## Verdict: 🟧 Structural analogy | Impact: ★★★★

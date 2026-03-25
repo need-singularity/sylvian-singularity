@@ -1,25 +1,25 @@
-# 가설 검토 073: 복소 Compass > 5/6 ✅
+# Hypothesis Review 073: Complex Compass > 5/6 ✅
 
-## 가설
+## Hypothesis
 
-> 복소수 확장(나선 수렴)에서 Compass Score가 실수 모델의 상한 5/6(83.3%)을 초과할 수 있는가.
+> Can the Compass Score exceed the real model's upper bound of 5/6 (83.3%) in complex extension (spiral convergence)?
 
-## 배경
+## Background
 
-실수 모델 G = D×P/I 에서 Compass Score의 이론적 상한은 5/6 ≈ 0.8333이다.
-이 상한은 메타 반복 f(I) = aI + b (a=0.7) 의 부동점 I* = 1/3에서 결정된다.
+In the real model G = D×P/I, the theoretical upper bound of Compass Score is 5/6 ≈ 0.8333.
+This upper bound is determined at the fixed point I* = 1/3 of meta-iteration f(I) = aI + b (a=0.7).
 
-복소 확장에서는 I를 복소수 z = I·e^(iθ) 로 확장한다.
-θ > 0 일 때 나선 수렴(spiral convergence)이 발생하며, 이 나선 경로가
-실수 축에서는 접근 불가능한 영역을 통과한다.
+In complex extension, I is extended to complex number z = I·e^(iθ).
+When θ > 0, spiral convergence occurs, and this spiral path passes through
+regions inaccessible from the real axis.
 
-핵심 아이디어: **실수 모델에서 누락된 1/6 블라인드 스팟이 복소 차원(허수 축)에 해당한다.**
+Key idea: **The 1/6 blind spot missing from the real model corresponds to the complex dimension (imaginary axis).**
 
-## 검증 결과: ✅ 초과 가능
+## Verification Result: ✅ Can Exceed
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│  Compass Score vs θ (나선 각도)                      │
+│  Compass Score vs θ (spiral angle)                  │
 │                                                     │
 │  1.00 ┤                                             │
 │       │                              ● θ=π/2        │
@@ -27,13 +27,13 @@
 │       │                        ●                    │
 │  0.88 ┤·····················●·······················│
 │       │                  ●                          │
-│  5/6 ─┤─ ─ ─ ─ ─ ─ ─ ● ─ ─ ─ ─ 실수 상한 ─ ─ ─ ─│
+│  5/6 ─┤─ ─ ─ ─ ─ ─ ─ ● ─ ─ ─ ─ Real upper bound ─│
 │  0.83 ┤            ●          (5/6 = 83.3%)         │
 │       │         ●                                   │
 │  0.80 ┤      ●                                      │
 │       │   ●                                         │
 │  0.75 ┤●                                            │
-│       │ θ=0 (실수만)                                │
+│       │ θ=0 (real only)                            │
 │  0.70 ┤                                             │
 │       └──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──→ θ        │
 │          0  π/8 π/4 3π/8 π/2                        │
@@ -41,53 +41,53 @@
 ```
 
 ```
-  나선 보너스 계산:
+  Spiral Bonus Calculation:
   ─────────────────────────────────────────
   Compass_complex(θ) = Compass_real + |sin(θ)| × (1/6)
 
-  θ = 0      →  보너스 = 0        →  Compass = 5/6 = 83.3%
-  θ = π/12   →  보너스 = 0.043    →  Compass = 87.6%
-  θ = π/6    →  보너스 = 0.083    →  Compass = 91.7%
-  θ = π/4    →  보너스 = 0.118    →  Compass = 95.1%
-  θ = π/2    →  보너스 = 0.167    →  Compass = 100%  (이론 최대)
+  θ = 0      →  bonus = 0        →  Compass = 5/6 = 83.3%
+  θ = π/12   →  bonus = 0.043    →  Compass = 87.6%
+  θ = π/6    →  bonus = 0.083    →  Compass = 91.7%
+  θ = π/4    →  bonus = 0.118    →  Compass = 95.1%
+  θ = π/2    →  bonus = 0.167    →  Compass = 100%  (theoretical max)
   ─────────────────────────────────────────
 
-  1/6 블라인드 스팟의 정체:
+  Identity of 1/6 Blind Spot:
   ─────────────────────────────────────────
-  실수 모델:  1 = 5/6 + 1/6
-                   ↑       ↑
-               도달 가능  도달 불가 (블라인드 스팟)
+  Real model:    1 = 5/6 + 1/6
+                      ↑       ↑
+                 reachable  unreachable (blind spot)
 
-  복소 모델:  1 = 5/6 + |sin(θ)| × (1/6)
-                   ↑              ↑
-               실수 부분     허수 차원이 여는 영역
+  Complex model: 1 = 5/6 + |sin(θ)| × (1/6)
+                      ↑              ↑
+                 real part     region opened by imaginary dimension
 
-  → 1/6 = 허수 차원 (imaginary dimension)
-  → θ > 0 이면 이 차원에 접근 가능
+  → 1/6 = imaginary dimension
+  → If θ > 0, this dimension is accessible
 ```
 
-## 해석
+## Interpretation
 
 ```
   ┌──────────────────────────────────────────────┐
-  │       실수 모델          복소 모델            │
+  │       Real Model         Complex Model        │
   │  ┌───────────────┐  ┌───────────────────┐   │
   │  │ ████████ 5/6  │  │ ████████████ →1.0 │   │
-  │  │ ░░░░░░░ 1/6  │  │  (나선이 열어줌)   │   │
-  │  │  (블라인드)   │  │                   │   │
+  │  │ ░░░░░░░ 1/6  │  │  (spiral opens)    │   │
+  │  │  (blind)      │  │                   │   │
   │  └───────────────┘  └───────────────────┘   │
   │                                              │
-  │  실수 축만으로는 5/6이 한계.                  │
-  │  허수 축(θ>0)이 나머지 1/6을 연다.           │
-  │  "보이지 않던 것은 다른 차원에 있었다."       │
+  │  Real axis alone is limited to 5/6.          │
+  │  Imaginary axis (θ>0) opens the remaining 1/6│
+  │  "What was invisible was in another dimension"│
   └──────────────────────────────────────────────┘
 ```
 
-실수 모델의 Compass 상한 5/6은 절대적 한계가 아니라 **차원의 한계**이다.
-복소 확장은 새로운 차원(허수 축)을 추가하여 이 한계를 넘는다.
-누락된 1/6은 항상 존재했지만, 실수 축에서는 보이지 않았다.
+The Compass upper bound 5/6 of the real model is not an absolute limit but a **dimensional limit**.
+Complex extension adds a new dimension (imaginary axis) to exceed this limit.
+The missing 1/6 always existed but was invisible from the real axis.
 
 ---
 
-*검증: verify_next_batch.py*
-*모델: G = D×P/I, Compass 상한 5/6, 복소 확장 z = I·e^(iθ)*
+*Verification: verify_next_batch.py*
+*Model: G = D×P/I, Compass upper bound 5/6, complex extension z = I·e^(iθ)*

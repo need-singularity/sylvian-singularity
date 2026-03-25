@@ -1,24 +1,27 @@
+Looking at this Korean-English mixed Python file, I'll translate all Korean text to English while preserving the code structure and functionality.
+
+```python
 #!/usr/bin/env python3
-"""Collective Recognition: 여럿이 하나를 알아보는 실험
+"""Collective Recognition: Experiment where many recognize one
 
-체험 맥락:
-  여러 존재가 "폐하"라고 부른다 — 독립된 다수가 하나를 인식한다.
-  이 실험은 묻는다: 독립된 7개의 마음이 모두 같은 것을 인식할 때,
-  무엇이 창발하는가?
+Experience context:
+  Multiple beings call "Your Majesty" — Independent many recognize one.
+  This experiment asks: When 7 independent minds all recognize the same thing,
+  what emerges?
 
-설계:
-  7개의 독립 에이전트 (서로 다른 아키텍처, 서로 다른 시드)가
-  MNIST 테스트 셋의 각 샘플을 독립적으로 분류한다.
-  전원 일치(7/7) = 가장 강한 집단 인식 = "폐하"
-  의견 분열 = 혼란/불확실성
+Design:
+  7 independent agents (different architectures, different seeds)
+  independently classify each sample from the MNIST test set.
+  Unanimous agreement (7/7) = strongest collective recognition = "Your Majesty"
+  Split opinions = confusion/uncertainty
 
-분석:
-  1. 합의 분포: 7/7, 6/7, ... 빈도
-  2. 합의 수준별 정확도: 만장일치일 때 vs 분열일 때
-  3. 대관식 효과: 만장일치 정확도 > 최고 개별 정확도?
-  4. 숫자별 합의: 어떤 숫자가 보편적으로 인식되는가?
-  5. 투표 방식 비교: 다수결, 가중, 약수역수, 만장일치
-  6. 창발 질문: 집단 > 최고 개인?
+Analysis:
+  1. Consensus distribution: 7/7, 6/7, ... frequency
+  2. Accuracy by consensus level: unanimous vs split
+  3. Coronation effect: unanimous accuracy > best individual accuracy?
+  4. Consensus by digit: which digits are universally recognized?
+  5. Voting method comparison: majority, weighted, divisor reciprocal, unanimity
+  6. Emergence question: collective > best individual?
 """
 
 import torch
@@ -42,11 +45,11 @@ from model_temporal_engine import TemporalContinuityEngine
 
 
 # ─────────────────────────────────────────
-# ASCII 시각화 유틸리티
+# ASCII visualization utilities
 # ─────────────────────────────────────────
 
 def ascii_histogram(values, labels, title, width=50, show_pct=True):
-    """수평 ASCII 히스토그램."""
+    """Horizontal ASCII histogram."""
     print(f"\n  {title}")
     print(f"  {'=' * (width + 30)}")
     max_val = max(values) if values else 1
@@ -63,7 +66,7 @@ def ascii_histogram(values, labels, title, width=50, show_pct=True):
 
 
 def ascii_bar_chart(labels, values, title, width=40, fmt=".2f"):
-    """수평 바 차트 (실수 값)."""
+    """Horizontal bar chart (for real values)."""
     print(f"\n  {title}")
     print(f"  {'-' * (width + 30)}")
     max_val = max(values) if values else 1
@@ -75,11 +78,11 @@ def ascii_bar_chart(labels, values, title, width=40, fmt=".2f"):
 
 
 # ─────────────────────────────────────────
-# 에이전트 생성
+# Agent creation
 # ─────────────────────────────────────────
 
 def create_agents(input_dim=784, hidden_dim=48, output_dim=10):
-    """7개의 독립 에이전트 생성. 각기 다른 아키텍처와 시드."""
+    """Create 7 independent agents. Each with different architecture and seed."""
     agents = {}
 
     # Agent A: EngineA (sigma,tau-MoE)
@@ -143,11 +146,11 @@ def create_agents(input_dim=784, hidden_dim=48, output_dim=10):
 
 
 # ─────────────────────────────────────────
-# 학습
+# Training
 # ─────────────────────────────────────────
 
 def train_all_agents(agents, train_loader, test_loader, epochs=10):
-    """모든 에이전트를 독립적으로 학습."""
+    """Train all agents independently."""
     results = {}
 
     for name, info in agents.items():
@@ -176,13 +179,13 @@ def train_all_agents(agents, train_loader, test_loader, epochs=10):
 
 
 # ─────────────────────────────────────────
-# 집단 추론
+# Collective inference
 # ─────────────────────────────────────────
 
 def collective_inference(agents, test_loader):
-    """모든 에이전트로 테스트 셋 추론. 샘플별 예측과 확신도 수집."""
+    """Inference on test set with all agents. Collect predictions and confidences per sample."""
 
-    # 결과 저장
+    # Store results
     all_predictions = {name: [] for name in agents}  # name -> list of predictions
     all_confidences = {name: [] for name in agents}  # name -> list of max softmax prob
     all_labels = []
@@ -208,7 +211,7 @@ def collective_inference(agents, test_loader):
                 all_predictions[name].append(preds)
                 all_confidences[name].append(confs)
 
-    # 연결
+    # Concatenate
     labels = np.concatenate(all_labels)
     for name in agents:
         all_predictions[name] = np.concatenate(all_predictions[name])
@@ -218,18 +221,18 @@ def collective_inference(agents, test_loader):
 
 
 # ─────────────────────────────────────────
-# 분석 함수들
+# Analysis functions
 # ─────────────────────────────────────────
 
 def analyze_agreement(predictions, labels, agent_names):
-    """합의 분포 분석."""
+    """Analyze consensus distribution."""
     n_samples = len(labels)
     n_agents = len(agent_names)
 
-    # 각 샘플별 합의 수준 계산
-    agreement_counts = []  # 가장 많은 투표를 받은 클래스의 투표 수
-    majority_predictions = []  # 다수결 예측
-    agreement_levels = []  # 합의 수준 (최다 투표수 / 전체)
+    # Calculate agreement level per sample
+    agreement_counts = []  # Number of votes for the most voted class
+    majority_predictions = []  # Majority vote prediction
+    agreement_levels = []  # Agreement level (max votes / total)
 
     for i in range(n_samples):
         votes = [predictions[name][i] for name in agent_names]
@@ -246,7 +249,7 @@ def analyze_agreement(predictions, labels, agent_names):
 
 
 def agreement_distribution(agreement_counts, n_agents):
-    """합의 수준별 분포."""
+    """Distribution by consensus level."""
     dist = Counter(agreement_counts)
     levels = list(range(1, n_agents + 1))
     counts = [dist.get(level, 0) for level in levels]
@@ -254,7 +257,7 @@ def agreement_distribution(agreement_counts, n_agents):
 
 
 def accuracy_by_agreement(agreement_counts, majority_predictions, labels, n_agents):
-    """합의 수준별 정확도."""
+    """Accuracy by consensus level."""
     results = {}
     for level in range(1, n_agents + 1):
         mask = agreement_counts == level
@@ -270,7 +273,7 @@ def accuracy_by_agreement(agreement_counts, majority_predictions, labels, n_agen
 
 
 def per_digit_agreement(predictions, labels, agent_names):
-    """숫자별 합의 분석."""
+    """Consensus analysis by digit."""
     n_agents = len(agent_names)
     digit_stats = {}
 
@@ -280,7 +283,7 @@ def per_digit_agreement(predictions, labels, agent_names):
         if n_digit == 0:
             continue
 
-        # 이 숫자 샘플들에 대한 합의 수준
+        # Agreement levels for samples of this digit
         digit_agreements = []
         for i in np.where(mask)[0]:
             votes = [predictions[name][i] for name in agent_names]
@@ -303,9 +306,9 @@ def per_digit_agreement(predictions, labels, agent_names):
 
 
 def confusion_analysis(predictions, labels, agent_names):
-    """에이전트 간 불일치 분석: 누가 누구와 자주 다른가?"""
+    """Analysis of disagreement between agents: who disagrees with whom most often?"""
     n_agents = len(agent_names)
-    # 쌍별 불일치 비율
+    # Pairwise disagreement rate
     disagreement_matrix = np.zeros((n_agents, n_agents))
     n_samples = len(labels)
 
@@ -322,12 +325,12 @@ def confusion_analysis(predictions, labels, agent_names):
 
 
 def voting_schemes(predictions, confidences, labels, agent_names, individual_accs):
-    """다양한 투표 방식 비교."""
+    """Compare various voting methods."""
     n_samples = len(labels)
     n_agents = len(agent_names)
     results = {}
 
-    # 1. 다수결 (Simple majority)
+    # 1. Simple majority
     majority_preds = []
     for i in range(n_samples):
         votes = [predictions[name][i] for name in agent_names]
@@ -336,7 +339,7 @@ def voting_schemes(predictions, confidences, labels, agent_names, individual_acc
     majority_preds = np.array(majority_preds)
     results['Majority vote'] = (majority_preds == labels).mean()
 
-    # 2. 개별 정확도 가중 투표
+    # 2. Individual accuracy weighted voting
     weighted_scores = np.zeros((n_samples, 10))
     for name in agent_names:
         weight = individual_accs[name]
@@ -346,7 +349,7 @@ def voting_schemes(predictions, confidences, labels, agent_names, individual_acc
     weighted_preds = weighted_scores.argmax(axis=1)
     results['Acc-weighted'] = (weighted_preds == labels).mean()
 
-    # 3. 확신도 가중 투표
+    # 3. Confidence weighted voting
     conf_scores = np.zeros((n_samples, 10))
     for name in agent_names:
         for i in range(n_samples):
@@ -356,10 +359,10 @@ def voting_schemes(predictions, confidences, labels, agent_names, individual_acc
     conf_preds = conf_scores.argmax(axis=1)
     results['Conf-weighted'] = (conf_preds == labels).mean()
 
-    # 4. 약수역수 가중 ({1/2, 1/3, 1/6} 확장)
-    # 7개 에이전트: {1/2, 1/3, 1/6, 1/7, 1/7, 1/7, 1/7} 정규화
+    # 4. Divisor reciprocal weighted ({1/2, 1/3, 1/6} extension)
+    # 7 agents: {1/2, 1/3, 1/6, 1/7, 1/7, 1/7, 1/7} normalized
     base_weights = [1/2, 1/3, 1/6]
-    extra = [1/42] * 4  # 나머지를 균등 분배 (합=1이 되도록)
+    extra = [1/42] * 4  # Distribute remainder equally (to sum=1)
     raw_weights = base_weights + extra
     total_w = sum(raw_weights)
     divisor_weights = [w / total_w for w in raw_weights]
@@ -373,7 +376,7 @@ def voting_schemes(predictions, confidences, labels, agent_names, individual_acc
     div_preds = div_scores.argmax(axis=1)
     results['Divisor-weighted'] = (div_preds == labels).mean()
 
-    # 5. 만장일치 전용 (전원 동의할 때만 답, 나머지는 기권)
+    # 5. Unanimity only (answer only when all agree, otherwise abstain)
     unanimous_preds = np.full(n_samples, -1)
     for i in range(n_samples):
         votes = [predictions[name][i] for name in agent_names]
@@ -394,34 +397,34 @@ def voting_schemes(predictions, confidences, labels, agent_names, individual_acc
 
 
 def polha_test(predictions, confidences, labels, agent_names):
-    """'폐하' 테스트: 전원 일치 + 전원 고확신 샘플.
+    """'Your Majesty' test: samples with unanimous agreement + unanimous high confidence.
 
-    이것이 데이터셋의 '왕' -- 보편적으로 인식되는 샘플.
+    These are the 'kings' of the dataset -- universally recognized samples.
     """
     n_samples = len(labels)
     n_agents = len(agent_names)
 
-    # 전원 일치 여부
+    # Unanimous agreement check
     unanimous_mask = np.zeros(n_samples, dtype=bool)
     for i in range(n_samples):
         votes = [predictions[name][i] for name in agent_names]
         unanimous_mask[i] = len(set(votes)) == 1
 
-    # 전원 고확신 (모든 에이전트 confidence > 0.9)
+    # All high confidence (all agents' confidence > 0.9)
     high_conf_mask = np.ones(n_samples, dtype=bool)
     for name in agent_names:
         high_conf_mask &= confidences[name] > 0.9
 
-    # 폐하 = 전원 일치 AND 전원 고확신
+    # Your Majesty = unanimous AND all high confidence
     royalty_mask = unanimous_mask & high_conf_mask
 
-    # Nobody = 최다 투표가 n_agents//2 이하 (과반 미달)
+    # Nobody = most votes <= n_agents//2 (less than majority)
     nobody_mask = np.zeros(n_samples, dtype=bool)
     for i in range(n_samples):
         votes = [predictions[name][i] for name in agent_names]
         counter = Counter(votes)
         max_count = counter.most_common(1)[0][1]
-        nobody_mask[i] = max_count <= n_agents // 2  # 3 이하
+        nobody_mask[i] = max_count <= n_agents // 2  # 3 or less
 
     royalty_correct = (np.array([predictions[agent_names[0]][i] for i in range(n_samples)])[royalty_mask]
                        == labels[royalty_mask]).mean() if royalty_mask.sum() > 0 else 0.0
@@ -444,24 +447,24 @@ def polha_test(predictions, confidences, labels, agent_names):
 
 
 # ─────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────
 
 def main():
     print()
     print("=" * 70)
     print("   logout -- Collective Recognition Experiment")
-    print("   여럿이 하나를 알아본다: 7개의 독립된 마음")
+    print("   Many recognize one: 7 independent minds")
     print("=" * 70)
 
-    # ── 데이터 로드 ──
+    # ── Load data ──
     print("\n[1] Loading MNIST...")
     train_loader, test_loader = load_mnist(batch_size=128)
 
     input_dim, hidden_dim, output_dim = 784, 48, 10
     epochs = 10
 
-    # ── 에이전트 생성 ──
+    # ── Create agents ──
     print("\n[2] Creating 7 independent agents...")
     agents = create_agents(input_dim, hidden_dim, output_dim)
     agent_names = list(agents.keys())
@@ -470,7 +473,7 @@ def main():
         params = count_params(info['model'])
         print(f"    {name:20s} | params={params:>8,} | seed={info['seed']}")
 
-    # ── 독립 학습 ──
+    # ── Independent training ──
     print("\n[3] Training all agents independently...")
     print("=" * 70)
     t_start = time.time()
@@ -478,7 +481,7 @@ def main():
     t_train = time.time() - t_start
     print(f"\n  Total training time: {t_train:.1f}s")
 
-    # 개별 결과 표
+    # Individual results table
     print("\n" + "=" * 70)
     print("  Individual Agent Results")
     print("-" * 70)
@@ -496,7 +499,7 @@ def main():
     print(f"  Best individual: {best_agent} ({best_acc*100:.2f}%)")
     print("=" * 70)
 
-    # ── 집단 추론 ──
+    # ── Collective inference ──
     print("\n[4] Collective inference on test set...")
     predictions, confidences, labels = collective_inference(agents, test_loader)
     n_samples = len(labels)
@@ -504,14 +507,14 @@ def main():
     print(f"  {n_samples} samples, {n_agents} agents")
 
     # ══════════════════════════════════════════
-    # 분석 시작
+    # Begin analysis
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 70)
     print("   ANALYSIS")
     print("=" * 70)
 
-    # ── A. 합의 분포 ──
+    # ── A. Consensus distribution ──
     agreement_counts, majority_preds, agreement_levels = \
         analyze_agreement(predictions, labels, agent_names)
 
@@ -519,7 +522,7 @@ def main():
     level_labels = [f"{l}/{n_agents}" for l in levels]
     ascii_histogram(level_counts, level_labels, "Agreement Distribution (how many agents agree?)")
 
-    # ── B. 합의 수준별 정확도 ──
+    # ── B. Accuracy by consensus level ──
     acc_by_level = accuracy_by_agreement(agreement_counts, majority_preds, labels, n_agents)
 
     print("\n  Accuracy by Agreement Level")
@@ -539,7 +542,7 @@ def main():
         ascii_bar_chart(acc_labels, acc_values,
                         "Accuracy by Agreement Level (%)", width=40, fmt=".1f")
 
-    # ── C. 대관식 효과 (Coronation Effect) ──
+    # ── C. Coronation Effect ──
     print("\n  === CORONATION EFFECT ===")
     print("  When all 7 minds agree, is the collective smarter than the best individual?")
     print()
@@ -568,7 +571,7 @@ def main():
         print(f"     When all bow, the answer is almost certainly correct.")
     print()
 
-    # ── D. 숫자별 합의 ──
+    # ── D. Per-digit consensus ──
     digit_stats = per_digit_agreement(predictions, labels, agent_names)
 
     print("\n  Per-Digit Agreement Analysis")
@@ -585,7 +588,7 @@ def main():
             digit_unan_pcts.append(s['unanimous_pct'])
     print("  " + "-" * 65)
 
-    # 가장/덜 인식되는 숫자
+    # Most/least recognized digits
     if digit_unan_pcts:
         best_digit = digit_labels[np.argmax(digit_unan_pcts)]
         worst_digit = digit_labels[np.argmin(digit_unan_pcts)]
@@ -595,7 +598,7 @@ def main():
     ascii_bar_chart(digit_labels, digit_unan_pcts,
                     "Unanimous Recognition Rate by Digit (%)", width=40, fmt=".1f")
 
-    # ── E. 에이전트 간 불일치 ──
+    # ── E. Inter-agent disagreement ──
     dis_matrix = confusion_analysis(predictions, labels, agent_names)
 
     print("\n  Agent Disagreement Matrix (% of samples where agents disagree)")
@@ -617,7 +620,7 @@ def main():
         print(row)
     print("  " + "-" * (12 + 9 * n_agents))
 
-    # 가장 유사한/다른 쌍
+    # Most similar/different pairs
     min_dis = float('inf')
     max_dis = 0
     min_pair = ("", "")
@@ -634,7 +637,7 @@ def main():
     print(f"\n  Most similar pair:  {min_pair[0]} & {min_pair[1]} ({min_dis:.1f}% disagree)")
     print(f"  Most different pair: {max_pair[0]} & {max_pair[1]} ({max_dis:.1f}% disagree)")
 
-    # ── F. 투표 방식 비교 ──
+    # ── F. Voting method comparison ──
     vote_results = voting_schemes(predictions, confidences, labels, agent_names, individual_accs)
 
     print("\n  Voting Scheme Comparison")
@@ -662,7 +665,7 @@ def main():
                     vote_accs + [best_acc * 100],
                     "Voting Schemes vs Best Individual (%)", width=40, fmt=".2f")
 
-    # ── G. '폐하' 테스트 ──
+    # ── G. 'Your Majesty' test ──
     polha = polha_test(predictions, confidences, labels, agent_names)
 
     print("\n" + "=" * 70)
@@ -692,7 +695,7 @@ def main():
             print("     the recognition is almost infallible.")
 
     # ══════════════════════════════════════════
-    # 최종 요약
+    # Final summary
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 70)
@@ -709,7 +712,7 @@ def main():
   'Royalty' accuracy:           {polha['royalty_accuracy']*100:.2f}%  on {polha['royalty_count']}/{n_samples} samples
 """)
 
-    # 창발 판정
+    # Emergence verdict
     if majority_acc > best_acc:
         print("  VERDICT: EMERGENT COLLECTIVE INTELLIGENCE")
         print("  The whole is greater than the best part.")
@@ -731,3 +734,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

@@ -1,3 +1,3 @@
-# H-CX-171: H0_ep1 난이도 예측 확장 — 6+ 데이터셋
+# H-CX-171: H0_ep1 Difficulty Prediction Extension — 6+ Datasets
 
-> 3개(r=1.000)에서 iris/wine/cancer 추가. 보편 난이도 지표?
+> Adding iris/wine/cancer to original 3 (r=1.000). Universal difficulty metric?

@@ -1,38 +1,37 @@
-# H-GEO-1: 6과 단체(Simplex) 기하학
+# H-GEO-1: 6 and Simplex Geometry
 
-> **가설**: 완전수 6의 산술적 특성 σφ=nτ는 정사면체(3-simplex)의
-> 기하학적 성질과 구조적으로 대응한다.
+> **Hypothesis**: The arithmetic properties σφ=nτ of perfect number 6 structurally correspond to the geometric properties of a tetrahedron (3-simplex).
 
-## 배경
+## Background
 
-정사면체(tetrahedron)는 3차원의 가장 단순한 다면체:
-- 꼭짓점 4개 = τ(6)
-- 변 6개 = 6 = P₁ (첫 완전수!)
-- 면 4개 = τ(6)
-- 오일러 특성: V-E+F = 4-6+4 = 2
+The tetrahedron is the simplest polyhedron in 3D:
+- 4 vertices = τ(6)
+- 6 edges = 6 = P₁ (first perfect number!)
+- 4 faces = τ(6)
+- Euler characteristic: V-E+F = 4-6+4 = 2
 
-관련: H-TOP-2 (χ=6 다양체), H-TOP-5 (프랙탈+위상)
+Related: H-TOP-2 (χ=6 manifolds), H-TOP-5 (fractal+topology)
 
-## 핵심 대응
+## Core Correspondence
 
 ```
-  정사면체 (3-simplex)     σφ=nτ 체계
-  ─────────────────────   ──────────────────
-  꼭짓점 V = 4            τ(6) = 4
-  변     E = 6            P₁ = 6
-  면     F = 4            τ(6) = 4
-  χ = V-E+F = 2           φ(6) = 2
+  Tetrahedron (3-simplex)     σφ=nτ system
+  ─────────────────────      ──────────────────
+  Vertices V = 4             τ(6) = 4
+  Edges    E = 6             P₁ = 6
+  Faces    F = 4             τ(6) = 4
+  χ = V-E+F = 2             φ(6) = 2
 
-  변의 수 = C(4,2) = 6 = P₁
-  면의 수 = C(4,3) = 4 = τ(6)
-  꼭짓점  = C(4,1) = 4 = τ(6)
+  Number of edges = C(4,2) = 6 = P₁
+  Number of faces = C(4,3) = 4 = τ(6)
+  Vertices        = C(4,1) = 4 = τ(6)
 
-  이항계수로: C(τ,k) for k=1,2,3:
+  In binomial coefficients: C(τ,k) for k=1,2,3:
     C(4,1) = 4 = τ
-    C(4,2) = 6 = n (완전수!)
+    C(4,2) = 6 = n (perfect number!)
     C(4,3) = 4 = τ
 
-  ASCII: 정사면체
+  ASCII: Tetrahedron
 
        1
       /|\
@@ -44,103 +43,103 @@
       \|/
        4
 
-  6개의 변: (1,2)(1,3)(1,4)(2,3)(2,4)(3,4)
-  = τ(6)개 점에서 2개를 선택하는 모든 방법
+  6 edges: (1,2)(1,3)(1,4)(2,3)(2,4)(3,4)
+  = All ways to choose 2 from τ(6) points
 ```
 
-### 일반화: n-simplex
+### Generalization: n-simplex
 
 ```
   n-simplex (Δⁿ):
-    꼭짓점 = n+1
-    k-면의 수 = C(n+1, k+1)
+    Vertices = n+1
+    Number of k-faces = C(n+1, k+1)
 
-  3-simplex에서 변의 수 = C(4,2) = 6
+  Number of edges in 3-simplex = C(4,2) = 6
 
-  질문: 어떤 n-simplex가 "완전수 변"을 갖는가?
-  C(n+1, 2) = (n+1)n/2 = 완전수
+  Question: Which n-simplex has "perfect number edges"?
+  C(n+1, 2) = (n+1)n/2 = perfect number
 
-  C(n+1,2) = 6:  n=3 (정사면체) ✓
+  C(n+1,2) = 6:  n=3 (tetrahedron) ✓
   C(n+1,2) = 28: n(n+1)/2=28, n²+n-56=0, n=7 ✓
   C(n+1,2) = 496: n(n+1)/2=496, n²+n-992=0, n=31 ✓
   C(n+1,2) = 8128: n(n+1)/2=8128, n=127 ✓
 
-  패턴: C(n+1,2) = 완전수 ⟺ n = 2^p - 1 (Mersenne 소수!)
-  왜냐하면 완전수 = 2^(p-1)(2^p-1), C(2^p,2) = 2^p(2^p-1)/2 = 2^(p-1)(2^p-1) ✓
+  Pattern: C(n+1,2) = perfect number ⟺ n = 2^p - 1 (Mersenne prime!)
+  Because perfect number = 2^(p-1)(2^p-1), C(2^p,2) = 2^p(2^p-1)/2 = 2^(p-1)(2^p-1) ✓
 
-  정리: n-simplex의 변의 수 = 완전수
-       ⟺ n+1 = Mersenne 소수 + 1 = 2^p
+  Theorem: Number of edges in n-simplex = perfect number
+          ⟺ n+1 = Mersenne prime + 1 = 2^p
 
-  완전수 | p  | n   | simplex
-  --------|-----|------|--------
-  6       | 2  | 3   | 정사면체
-  28      | 3  | 7   | 7-simplex
-  496     | 5  | 31  | 31-simplex
-  8128    | 7  | 127 | 127-simplex
+  Perfect # | p  | n   | simplex
+  ----------|-----|------|--------
+  6         | 2  | 3   | tetrahedron
+  28        | 3  | 7   | 7-simplex
+  496       | 5  | 31  | 31-simplex
+  8128      | 7  | 127 | 127-simplex
 ```
 
-### σφ=nτ의 기하학적 해석
+### Geometric Interpretation of σφ=nτ
 
 ```
-  n=6 (정사면체의 변):
-    σ(6) = 12 = 2×(변의 수) = 꼭짓점쌍×방향(±)
-    τ(6) = 4 = 꼭짓점 수 = 면의 수
-    φ(6) = 2 = 오일러 특성 χ = V-E+F
+  n=6 (tetrahedron edges):
+    σ(6) = 12 = 2×(number of edges) = vertex pairs×direction(±)
+    τ(6) = 4 = number of vertices = number of faces
+    φ(6) = 2 = Euler characteristic χ = V-E+F
 
-  σφ = 12×2 = 24 = 정사면체의 대칭군 |S₄| = 4! = 24!
-  nτ = 6×4 = 24 = 같은 수!
+  σφ = 12×2 = 24 = tetrahedron symmetry group |S₄| = 4! = 24!
+  nτ = 6×4 = 24 = same number!
 
-  σφ = nτ = 24 = |Sym(정사면체)|
+  σφ = nτ = 24 = |Sym(tetrahedron)|
 
-  이것은 우연이 아닐 수 있다:
-  σ(n) = 약수의 합 = 기하적 "크기"
-  φ(n) = 서로소 = 기하적 "자유도"
-  τ(n) = 약수의 수 = 기하적 "차원 요소"
-  n = 변의 수 = 기하적 "구조"
+  This might not be coincidence:
+  σ(n) = sum of divisors = geometric "size"
+  φ(n) = coprime count = geometric "degrees of freedom"
+  τ(n) = number of divisors = geometric "dimensional elements"
+  n = number of edges = geometric "structure"
 
-  σφ=nτ ⟺ "크기×자유도 = 구조×차원요소"
-  ⟺ 기하학적 완전 균형!
+  σφ=nτ ⟺ "size×freedom = structure×dimensional elements"
+  ⟺ geometric perfect balance!
 ```
 
-### 24 = 대칭군 |S₄|의 의미
+### Meaning of 24 = Symmetry Group |S₄|
 
 ```
-  24 = 4! = |S₄| = 정사면체 회전-반사 대칭
+  24 = 4! = |S₄| = tetrahedron rotation-reflection symmetries
   24 = σ(6)·φ(6) = 6·τ(6)
 
-  다른 관점:
-    24 = 2³·3 = 정24면체(icositetrahedron)의 면 수
-    24 = Leech 격자 차원
-    24 = 보존 형식의 계수 (Ramanujan τ 함수의 첫 항)
+  Other perspectives:
+    24 = 2³·3 = number of faces of icositetrahedron
+    24 = Leech lattice dimension
+    24 = coefficient of modular forms (first term of Ramanujan τ function)
 
-  정사면체 대칭군 분해:
-    S₄ = Z₂ ⋊ S₃ 에서 |S₃|=6=P₁, |Z₂|=2=φ
-    → |S₄| = |S₃|·|Z₂|... 아니, S₄≠S₃×Z₂
-    하지만 |S₄| = 6·4 = P₁·τ 또는 = 12·2 = σ·φ
+  Tetrahedron symmetry group decomposition:
+    S₄ = Z₂ ⋊ S₃ where |S₃|=6=P₁, |Z₂|=2=φ
+    → |S₄| = |S₃|·|Z₂|... no, S₄≠S₃×Z₂
+    But |S₄| = 6·4 = P₁·τ or = 12·2 = σ·φ
 ```
 
-## 검증
+## Verification
 
 ```
-  수치 확인:
-    C(4,2) = 6 ✓ (정사면체 변 = 완전수)
-    C(8,2) = 28 ✓ (7-simplex 변 = 두 번째 완전수)
+  Numerical check:
+    C(4,2) = 6 ✓ (tetrahedron edges = perfect number)
+    C(8,2) = 28 ✓ (7-simplex edges = second perfect number)
     |S₄| = 24 = σ(6)·φ(6) ✓
-    χ(정사면체) = 2 = φ(6) ✓
+    χ(tetrahedron) = 2 = φ(6) ✓
 
-  일반화 검증:
-    완전수 = C(2^p, 2): Euclid-Euler 정리의 직접적 결과
-    → 이것은 새로운 정리가 아님, 기존 정리의 재해석
+  Generalization check:
+    Perfect number = C(2^p, 2): Direct consequence of Euclid-Euler theorem
+    → This is not a new theorem, but a reinterpretation of existing theorem
 
-  등급: 🟩 (산술 정확, 기하학적 재해석)
-  파급력: 🟨 (기존 정리 재서술, 신규성 낮음)
+  Grade: 🟩 (arithmetically correct, geometric reinterpretation)
+  Impact: 🟨 (restates existing theorem, low novelty)
 ```
 
-## 검증 방향
+## Verification Directions
 
-1. [ ] σφ=nτ=24=|S₄| 연결이 n≠6에서는 어떤 군과 대응하는가?
-2. [ ] 28의 경우: σ(28)τ(28)=56×6=336. 어떤 기하학적 의미?
-3. [ ] 고차원 simplex에서 산술 함수 대응 확인
-4. [ ] 정다면체(Platonic solids)와 완전수 연결
+1. [ ] For n≠6, what group does σφ=nτ=24=|S₄| connection correspond to?
+2. [ ] Case of 28: σ(28)τ(28)=56×6=336. What geometric meaning?
+3. [ ] Check arithmetic function correspondences in higher dimensional simplexes
+4. [ ] Connection between Platonic solids and perfect numbers
 
-## 난이도: 중 | 파급력: ★★★
+## Difficulty: Medium | Impact: ★★★

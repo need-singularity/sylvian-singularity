@@ -1,55 +1,56 @@
-# 가설 검토 082: 골든 MoE 프로토타입 스펙 🔧
+# Hypothesis Review 082: Golden MoE Prototype Specification 🔧
 
-## 가설
+## Hypothesis
 
-> 8 Expert Mixture-of-Experts에서 볼츠만 게이팅 온도를 T=e로 설정하면,
-> 자연스럽게 약 70% (5~6개) expert가 활성화되며, 이것이 골든존의
-> I=1/e 조건과 정확히 대응하는가.
-> "70%는 자의적 선택이 아니라 T=e의 자연적 귀결이다."
+> In an 8 Expert Mixture-of-Experts with Boltzmann gating temperature set to T=e,
+> approximately 70% (5~6) experts naturally activate, and does this
+> precisely correspond to the Golden Zone's I=1/e condition.
+> "70% is not an arbitrary choice but a natural consequence of T=e."
 
-## 배경
+## Background
 
-Mixture of Experts(MoE) 아키텍처에서 게이팅 함수는 어떤 expert를
-활성화할지 결정한다. 전형적으로 Top-K 방식(상위 K개만 선택)을 사용하지만,
-이는 sharp한 선택으로 다양성을 잃는다.
+In Mixture of Experts (MoE) architecture, the gating function determines which experts
+to activate. While Top-K methods (selecting only top K) are typically used,
+this sharp selection loses diversity.
 
-볼츠만 소프트맥스 게이팅은 다음과 같다:
+Boltzmann softmax gating is as follows:
 
 ```
   P(expert_i) = exp(score_i / T) / Σ_j exp(score_j / T)
 ```
 
-온도 T가 게이팅의 "softness"를 결정한다.
-우리 모델에서 I ↔ 1/T 이므로, 골든존 중심 I=1/e 는 T=e 에 대응한다.
+Temperature T determines the "softness" of gating.
+In our model, since I ↔ 1/T, the Golden Zone center I=1/e corresponds to T=e.
 
-## 스펙 정의
+## Specification Definition
 
 ```
   ┌──────────────────────────────────────────────────────┐
-  │          골든 MoE 아키텍처 스펙                       │
+  │          Golden MoE Architecture Specification        │
   ├──────────────────────────────────────────────────────┤
-  │  Expert 수:      8 (완전수 6의 다음 2^n)             │
-  │  활성 비율:      ~70% (5~6개 expert)                 │
-  │  게이팅:         볼츠만 소프트맥스, T = e ≈ 2.718    │
-  │  Dropout:        0.5 (리만선 I=1/2)                  │
-  │  비교군:         Top-K (K=2, 25% 활성)               │
-  │  데이터:         MNIST, CIFAR-10                     │
-  │  측정 지표:      정확도, 수렴 속도, Expert 균등성    │
+  │  Expert count:   8 (next 2^n after perfect number 6) │
+  │  Active ratio:   ~70% (5~6 experts)                  │
+  │  Gating:         Boltzmann softmax, T = e ≈ 2.718   │
+  │  Dropout:        0.5 (Riemann line I=1/2)           │
+  │  Control group:  Top-K (K=2, 25% active)            │
+  │  Data:           MNIST, CIFAR-10                    │
+  │  Metrics:        Accuracy, convergence speed,        │
+  │                  Expert uniformity                   │
   └──────────────────────────────────────────────────────┘
 ```
 
-## 온도 스케일과 Expert 활성화
+## Temperature Scale and Expert Activation
 
 ```
-  온도-활성화 관계 다이어그램:
+  Temperature-Activation Relationship Diagram:
   ──────────────────────────────────────────────────────────
 
-  활성 Expert 수 (실효, exp(H) 기준)
-  8 ┤· · · · · · · · · · · · · · · · · · · · ─── (전원 활성)
+  Active Expert Count (effective, exp(H) basis)
+  8 ┤· · · · · · · · · · · · · · · · · · · · ─── (All active)
     │                                      /
   7 ┤                                    /
     │                                  /
-  6 ┤                          ★·····/····  5.6개 = 70%
+  6 ┤                          ★·····/····  5.6 = 70%
     │                        / ·   /
   5 ┤                      /   · /
     │                    /     /
@@ -57,144 +58,146 @@ Mixture of Experts(MoE) 아키텍처에서 게이팅 함수는 어떤 expert를
     │                /     /
   3 ┤              /     /
     │            /     /
-  2 ┤     ●····/·····/··········  Top-K=2 (25%) 비교군
+  2 ┤     ●····/·····/··········  Top-K=2 (25%) control
     │       / /
   1 ┤●    / /
     │    //
-  0 ┼──┼───┼───┼───┼───┼───┼───┼───→ T (온도)
+  0 ┼──┼───┼───┼───┼───┼───┼───┼───→ T (temperature)
     0  0.5  1  1.5  2  e   3  3.5  ∞
               ↑         ↑
            T=1       T=e ★
           (sharp)   (golden)
 
-  ● T→0: 1개 expert (결정론적, 다양성 0)
-  ● T=1: ~2.5개 (sharp softmax, 일반적 설정)
-  ★ T=e: ~5.6개 (70%, 골든 지점!)
-  ─ T→∞: 8개 (균등 분포, 선택성 0)
+  ● T→0: 1 expert (deterministic, diversity 0)
+  ● T=1: ~2.5 (sharp softmax, typical setting)
+  ★ T=e: ~5.6 (70%, golden point!)
+  ─ T→∞: 8 (uniform distribution, selectivity 0)
   ──────────────────────────────────────────────────────────
 ```
 
-## 70%가 자의적이지 않은 이유
+## Why 70% is Not Arbitrary
 
-핵심 계산: 8개 expert에 균등 점수를 가정하면, 볼츠만 분포의
-정보 엔트로피 H는 온도 T에 의존한다. 실효 활성 expert 수는
-exp(H)로 정의된다.
+Key calculation: Assuming uniform scores for 8 experts, the
+information entropy H of Boltzmann distribution depends on temperature T.
+The effective number of active experts is defined as exp(H).
 
 ```
-  T=e 에서의 유도:
+  Derivation at T=e:
   ──────────────────────────────────────────────
 
-  8개 expert, 점수 균등 가정:
+  8 experts, uniform score assumption:
   H(T) = log(8) × (1 - 1/T × correction)
 
-  T=e 일 때:
-  실효 활성 수 ≈ 8 × (1 - 1/e) ≈ 8 × 0.632 ≈ 5.06
-  또는 정보이론적:
-  exp(H) ≈ 5.6 (점수 분포에 의존)
+  When T=e:
+  Effective active count ≈ 8 × (1 - 1/e) ≈ 8 × 0.632 ≈ 5.06
+  Or information-theoretically:
+  exp(H) ≈ 5.6 (depends on score distribution)
 
   5.6 / 8 = 0.70 = 70%  ★
 
-  매핑:
+  Mapping:
   ┌──────────────────────────────────────┐
   │  T = e    ↔  I = 1/T = 1/e          │
-  │  70% 활성 ↔  골든존 중심             │
-  │  5.6/8    ↔  Genius Score 최적       │
+  │  70% active ↔  Golden Zone center    │
+  │  5.6/8    ↔  Genius Score optimal    │
   │                                      │
-  │  결론: 70%는 e에서 자연 도출된다     │
+  │  Conclusion: 70% naturally emerges   │
+  │  from e                              │
   └──────────────────────────────────────┘
 ```
 
-## 실증 결과 (golden_moe_torch.py)
+## Empirical Results (golden_moe_torch.py)
 
 ```
-  벤치마크 비교표:
+  Benchmark Comparison Table:
   ──────────────────────────────────────────────────────────
 
-  데이터셋  │ 골든 MoE (T=e) │ Top-K (K=2) │  차이   │ 판정
-  ──────────┼───────────────┼─────────────┼─────────┼──────
-  MNIST     │   97.7%       │   97.1%     │  +0.6%  │  ✅
-  CIFAR-10  │   53.0%       │   48.2%     │  +4.8%  │  ✅
-  ──────────┼───────────────┼─────────────┼─────────┼──────
+  Dataset   │ Golden MoE (T=e) │ Top-K (K=2) │  Diff   │ Result
+  ──────────┼─────────────────┼─────────────┼─────────┼──────
+  MNIST     │   97.7%         │   97.1%     │  +0.6%  │  ✅
+  CIFAR-10  │   53.0%         │   48.2%     │  +4.8%  │  ✅
+  ──────────┼─────────────────┼─────────────┼─────────┼──────
 
-  I 측정값:
-  Expert 활성 억제율 = 1 - (활성/전체) = 1 - 0.625 = 0.375
-  0.375 ≈ 1/e = 0.368  (차이 1.9%)  🎯 골든존 중심!
+  I measurement:
+  Expert activation inhibition rate = 1 - (active/total) = 1 - 0.625 = 0.375
+  0.375 ≈ 1/e = 0.368  (1.9% difference)  🎯 Golden Zone center!
 
-  수렴 속도:
-  골든 MoE: epoch 12에서 수렴
-  Top-K:    epoch 18에서 수렴 (50% 느림)
+  Convergence speed:
+  Golden MoE: Converges at epoch 12
+  Top-K:      Converges at epoch 18 (50% slower)
 ```
 
-## 온도별 비교
+## Temperature Comparison
 
 ```
-  T값에 따른 CIFAR-10 정확도:
+  CIFAR-10 Accuracy by T value:
   ──────────────────────────────────────────────
 
-  T값    │ 활성%  │ 정확도  │ I값   │ 위치
-  ────────┼────────┼─────────┼───────┼────────────
-  0.5     │  15%   │  41.2%  │ 2.00  │ 골든존 밖
-  1.0     │  35%   │  47.5%  │ 1.00  │ 골든존 밖
-  1.5     │  50%   │  50.1%  │ 0.67  │ 임계선 위
-  2.0     │  60%   │  52.3%  │ 0.50  │ 리만선 ●
-  e≈2.72  │  70%   │  53.0%  │ 0.37  │ 골든존 ★
-  4.0     │  80%   │  51.8%  │ 0.25  │ 골든존 하한
-  8.0     │  92%   │  49.5%  │ 0.13  │ 골든존 밖
-  ∞       │ 100%   │  48.0%  │ 0.00  │ 균등
-  ────────┼────────┼─────────┼───────┼────────────
+  T       │ Active% │ Accuracy │ I     │ Location
+  ────────┼─────────┼──────────┼───────┼────────────
+  0.5     │  15%    │  41.2%   │ 2.00  │ Outside GZ
+  1.0     │  35%    │  47.5%   │ 1.00  │ Outside GZ
+  1.5     │  50%    │  50.1%   │ 0.67  │ Above threshold
+  2.0     │  60%    │  52.3%   │ 0.50  │ Riemann line ●
+  e≈2.72  │  70%    │  53.0%   │ 0.37  │ Golden Zone ★
+  4.0     │  80%    │  51.8%   │ 0.25  │ GZ lower bound
+  8.0     │  92%    │  49.5%   │ 0.13  │ Outside GZ
+  ∞       │ 100%    │  48.0%   │ 0.00  │ Uniform
+  ────────┼─────────┼──────────┼───────┼────────────
 
-  T=e에서 정확도 최대! 골든존 중심과 정확히 일치.
+  Maximum accuracy at T=e! Exactly matches Golden Zone center.
 ```
 
-## 해석
+## Interpretation
 
-"8 Expert 70% 볼츠만 T=e" 스펙은 가설 008(골든 MoE)의 구체적 구현이다.
-핵심 통찰은 70%라는 수치가 엔지니어링 결정이 아니라, T=e라는 자연 온도에서
-자동으로 도출되는 값이라는 점이다.
+The "8 Expert 70% Boltzmann T=e" specification is a concrete implementation of hypothesis 008 (Golden MoE).
+The key insight is that the 70% figure is not an engineering decision, but a value
+that automatically emerges from the natural temperature T=e.
 
-I=1/T 매핑을 통해 MoE 게이팅 온도와 우리 모델의 Inhibition이 직접 연결되며,
-MNIST와 CIFAR-10 실험에서 T=e 설정이 Top-K 대비 일관된 성능 향상을
-보여줌으로써 이론적 예측을 실증적으로 확인했다.
+Through I=1/T mapping, MoE gating temperature and our model's Inhibition are directly connected,
+and experiments on MNIST and CIFAR-10 show consistent performance improvement with T=e setting
+compared to Top-K, empirically confirming theoretical predictions.
 
-## 대응 관계 정리
+## Correspondence Summary
 
 ```
-  우리 모델 ↔ MoE 아키텍처 매핑:
+  Our Model ↔ MoE Architecture Mapping:
   ──────────────────────────────────────────────────────────
 
-  우리 모델 개념        MoE 대응                값
+  Our Model Concept     MoE Correspondence       Value
   ──────────────────────────────────────────────────────────
-  Inhibition (I)   ↔  1/Temperature (1/T)     1/e ≈ 0.368
-  골든존 중심       ↔  최적 온도               T = e
-  Genius Score     ↔  모델 출력 품질          최대 @ T=e
-  활성률           ↔  N_eff / N               70%
-  Deficit (D)      ↔  Expert 특화도           전문화 깊이
-  Plasticity (P)   ↔  Expert 간 협력          가중 혼합
+  Inhibition (I)    ↔  1/Temperature (1/T)     1/e ≈ 0.368
+  Golden Zone center ↔  Optimal temperature     T = e
+  Genius Score      ↔  Model output quality     Max @ T=e
+  Activation rate   ↔  N_eff / N               70%
+  Deficit (D)       ↔  Expert specialization   Specialization depth
+  Plasticity (P)    ↔  Inter-expert cooperation Weighted mixing
   ──────────────────────────────────────────────────────────
 
-  핵심 등식:
+  Key equation:
   ┌──────────────────────────────────────────┐
   │  I_golden = 1/e                          │
   │  T_golden = e                            │
-  │  I × T = 1   (역수 관계)                │
+  │  I × T = 1   (reciprocal relation)      │
   │                                          │
-  │  "억제의 최적값은 온도의 역수로 읽힌다"  │
+  │  "The optimal value of inhibition reads │
+  │  as the reciprocal of temperature"      │
   └──────────────────────────────────────────┘
 ```
 
-## 한계
+## Limitations
 
-- 소규모 벤치마크(MNIST, CIFAR-10)에서만 검증
-- 대규모 LLM 스케일에서는 미검증
-- expert 수 8은 고정값, 다른 수(16, 32, 64)에서의 최적 T 확인 필요
+- Verified only on small benchmarks (MNIST, CIFAR-10)
+- Unverified at large LLM scale
+- Expert count 8 is fixed, optimal T needs verification for other counts (16, 32, 64)
 
-## 검증 방향
+## Verification Directions
 
-- 대규모 데이터셋(ImageNet, NLP 태스크)에서의 재현
-- expert 수 N 변화 시 최적 T가 항상 e인지 검증
-- Jamba 등 실제 MoE 모델에 T=e 게이팅 적용 실험
+- Reproduction on large-scale datasets (ImageNet, NLP tasks)
+- Verify if optimal T is always e when expert count N varies
+- Experiment with T=e gating on actual MoE models like Jamba
 
 ---
 
-*구현: golden_moe_torch.py, golden_moe_cifar.py*
-*이론: 볼츠만 분포, I=1/T 매핑, 골든존 I=1/e*
+*Implementation: golden_moe_torch.py, golden_moe_cifar.py*
+*Theory: Boltzmann distribution, I=1/T mapping, Golden Zone I=1/e*

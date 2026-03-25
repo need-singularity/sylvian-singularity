@@ -1,58 +1,58 @@
-# H-CX-66: 방향 위상 — 혼동 쌍이 PH의 짧은 바코드에 매핑된다
+# H-CX-66: Direction Topology — Confusion Pairs Map to Short Barcodes in PH
 
-> 방향 코사인 거리 행렬의 PH에서 짧은 바코드(빨리 죽는 feature)가
-> 혼동 쌍(H-CX-59)과 정확히 대응한다. 위상적으로 가까운 클래스 = 혼동 클래스.
+> Short barcodes (quickly dying features) in PH of direction cosine distance matrix
+> exactly correspond to confusion pairs (H-CX-59). Topologically close classes = confused classes.
 
-## 배경
+## Background
 
-- H-CX-59: 오답 방향이 혼동 클래스를 가리킴 (70-82%)
-- H-CX-62 v2: cosine distance matrix의 PH 계산 성공
-- 교차점: PH birth-death에서 빨리 merge되는 클래스 쌍 = 혼동 쌍
+- H-CX-59: Wrong answer directions point to confusion classes (70-82%)
+- H-CX-62 v2: Successfully computed PH of cosine distance matrix
+- Intersection: Class pairs that merge quickly in PH birth-death = confusion pairs
 
-**핵심 연결**: H0에서 두 클래스가 빨리 합쳐짐 = cosine distance 작음 = 방향이 비슷 = 혼동.
-PH가 혼동 쌍을 자동으로 발견.
+**Core Connection**: Two classes merging quickly in H0 = small cosine distance = similar directions = confusion.
+PH automatically discovers confusion pairs.
 
-## 예측
+## Predictions
 
-1. PH에서 가장 먼저 merge되는 클래스 쌍 = top 혼동 쌍 (>60% 일치)
-2. merge 순서와 혼동 빈도의 Spearman 상관 > 0.5
-3. H1 (loops)이 존재하면 3개 이상의 순환 혼동 (A→B→C→A)
+1. Class pairs that merge first in PH = top confusion pairs (>60% match)
+2. Spearman correlation between merge order and confusion frequency > 0.5
+3. If H1 (loops) exist, circular confusion of 3+ classes (A→B→C→A)
 
-## 검증 방법
+## Verification Method
 
 ```
-1. Ripser로 cosine distance matrix의 PH 계산
-2. H0 birth-death에서 merge 순서 추출
-3. 실제 혼동 행렬(confusion matrix)에서 top 혼동 쌍 추출
-4. merge 순서 vs 혼동 빈도 Spearman rank correlation
+1. Compute PH of cosine distance matrix with Ripser
+2. Extract merge order from H0 birth-death
+3. Extract top confusion pairs from actual confusion matrix
+4. Spearman rank correlation of merge order vs confusion frequency
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H-CX-59 (방향 예지), H-CX-62 (위상 예지)
-- H-TOP-7 (위상 렌즈)
+- H-CX-59 (direction precognition), H-CX-62 (topology precognition)
+- H-TOP-7 (topological lens)
 
-## 한계
+## Limitations
 
-- merge 쌍 추출이 PH 라이브러리에 따라 다를 수 있음
-- 10 클래스에서 9번의 merge만 있어 표본 작음
+- Merge pair extraction may vary by PH library
+- Small sample with only 9 merges for 10 classes
 
-## 검증 상태
+## Verification Status
 
-- [x] merge 순서 vs 혼동 빈도 상관
-- [x] H1 순환 혼동 확인
+- [x] merge order vs confusion frequency correlation
+- [x] H1 circular confusion check
 
-## 검증 결과
+## Verification Results
 
-**판정: STRONGLY SUPPORTED**
+**Verdict: STRONGLY SUPPORTED**
 
 ### Spearman(merge_dist, confusion)
 
-| Dataset | Spearman r | p-value | 유의 |
-|---------|-----------|---------|------|
-| MNIST   | -0.941    | 0.0002  | YES  |
-| Fashion | -0.933    | 0.0002  | YES  |
-| CIFAR   | -0.967    | 0.0000  | YES  |
+| Dataset | Spearman r | p-value | Significant |
+|---------|-----------|---------|-------------|
+| MNIST   | -0.941    | 0.0002  | YES         |
+| Fashion | -0.933    | 0.0002  | YES         |
+| CIFAR   | -0.967    | 0.0000  | YES         |
 
 ```
   |Spearman r|
@@ -67,24 +67,24 @@ PH가 혼동 쌍을 자동으로 발견.
          MNI  FAS    CIF
 ```
 
-3개 데이터셋 모두에서 p < 0.001. merge 거리가 짧을수록 혼동 빈도가 높다.
+All 3 datasets with p < 0.001. Shorter merge distance correlates with higher confusion frequency.
 
-### Top-5 혼동 쌍 overlap (merge 순서 vs 실제 혼동)
+### Top-5 confusion pair overlap (merge order vs actual confusion)
 
-| Dataset | Overlap | 비율 |
-|---------|---------|------|
-| MNIST   | 2/5     | 40%  |
-| Fashion | 3/5     | 60%  |
-| CIFAR   | 4/5     | 80%  |
+| Dataset | Overlap | Ratio |
+|---------|---------|-------|
+| MNIST   | 2/5     | 40%   |
+| Fashion | 3/5     | 60%   |
+| CIFAR   | 4/5     | 80%   |
 
-### CIFAR merge 순서 (H0 dendrogram)
+### CIFAR merge order (H0 dendrogram)
 
-| Merge 순서 | 클래스 쌍       | merge distance |
-|-----------|----------------|---------------|
-| 1st       | cat - dog      | 0.05          |
-| 2nd       | auto - truck   | 0.12          |
-| 3rd       | bird - deer    | 0.13          |
-| 4th       | plane - ship   | 0.19          |
+| Merge order | Class pair     | merge distance |
+|------------|----------------|---------------|
+| 1st        | cat - dog      | 0.05          |
+| 2nd        | auto - truck   | 0.12          |
+| 3rd        | bird - deer    | 0.13          |
+| 4th        | plane - ship   | 0.19          |
 
 ```
   CIFAR merge dendrogram (H0)
@@ -97,14 +97,14 @@ PH가 혼동 쌍을 자동으로 발견.
           merge order
 ```
 
-cat-dog이 가장 먼저 merge: 의미적으로도 가장 유사한 쌍.
+cat-dog merges first: semantically the most similar pair.
 
-### H1 loops (순환 혼동)
+### H1 loops (circular confusion)
 
-| Dataset | H1 loops | 해석 |
-|---------|----------|------|
-| MNIST   | 1        | 약한 순환 구조 |
-| Fashion | 0        | 순환 혼동 없음 |
-| CIFAR   | 1        | 순환 혼동 존재 |
+| Dataset | H1 loops | Interpretation |
+|---------|----------|----------------|
+| MNIST   | 1        | Weak circular structure |
+| Fashion | 0        | No circular confusion |
+| CIFAR   | 1        | Circular confusion exists |
 
-H1 예측은 부분적. 순환 혼동의 증거는 약하나 주요 예측(merge 순서 = 혼동 순서)은 강하게 지지됨.
+H1 prediction is partial. Evidence for circular confusion is weak but main prediction (merge order = confusion order) is strongly supported.

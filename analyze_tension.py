@@ -1,17 +1,20 @@
+I'll translate the Korean text to English in this file:
+
+```python
 #!/usr/bin/env python3
-"""반발력장 텐션 분석 — MNIST 입력별 장력 프로파일링
+"""Repulsion Field Tension Analysis — MNIST Input-wise Tension Profiling
 
-분석 대상:
-  1. RepulsionFieldQuad: 4극 반발력장 (내용축 A|G, 구조축 E|F)
-  2. SelfReferentialField: 자기참조 반발력장 (장력 수렴 패턴)
+Analysis targets:
+  1. RepulsionFieldQuad: 4-pole repulsion field (content axis A|G, structure axis E|F)
+  2. SelfReferentialField: Self-referential repulsion field (tension convergence patterns)
 
-분석 항목:
-  - 숫자(0-9)별 평균 장력 (내용/구조 축 분리)
-  - 장력 분포 ASCII 히스토그램
-  - 고장력/저장력 Top-10 샘플
-  - 오분류와 장력의 상관관계
-  - 숫자 x 숫자 혼동 히트맵 (장력 관련)
-  - 자기참조 루프 수렴 속도 (숫자별)
+Analysis items:
+  - Average tension by digit (0-9) (content/structure axes separated)
+  - Tension distribution ASCII histogram
+  - High tension/Low tension Top-10 samples
+  - Correlation between misclassification and tension
+  - Digit x Digit confusion heatmap (tension-related)
+  - Self-referential loop convergence speed (by digit)
 """
 
 import os
@@ -35,11 +38,11 @@ from model_meta_engine import (
 
 
 # ─────────────────────────────────────────
-# ASCII 출력 유틸리티
+# ASCII output utilities
 # ─────────────────────────────────────────
 
 def ascii_bar(value, max_value, width=40, fill='#'):
-    """값에 비례하는 ASCII 바."""
+    """ASCII bar proportional to value."""
     if max_value <= 0:
         return ''
     n = int(round(value / max_value * width))
@@ -48,7 +51,7 @@ def ascii_bar(value, max_value, width=40, fill='#'):
 
 
 def ascii_histogram(values, bins=20, width=50, title=''):
-    """값 배열의 ASCII 히스토그램."""
+    """ASCII histogram of value array."""
     counts, edges = np.histogram(values, bins=bins)
     max_count = max(counts) if len(counts) > 0 else 1
     print(f"\n  {title}")
@@ -64,14 +67,14 @@ def ascii_histogram(values, bins=20, width=50, title=''):
 
 
 def ascii_heatmap(matrix, row_labels, col_labels, title='', fmt='.1f'):
-    """2D 행렬의 ASCII 히트맵 (밀도 문자 사용)."""
+    """ASCII heatmap of 2D matrix (using density characters)."""
     shades = ' .:-=+*#%@'
     vmin = matrix.min()
     vmax = matrix.max()
     rng = vmax - vmin if vmax > vmin else 1.0
 
     print(f"\n  {title}")
-    # 헤더
+    # Header
     header = '     ' + ''.join(f'{c:>6}' for c in col_labels)
     print(f"  {header}")
     print(f"  {'─' * (5 + 6 * len(col_labels))}")
@@ -105,13 +108,13 @@ def print_section(title):
 
 
 # ─────────────────────────────────────────
-# 텐션 수집기 (per-sample)
+# Tension collector (per-sample)
 # ─────────────────────────────────────────
 
 def collect_quad_tension(model, test_loader):
-    """RepulsionFieldQuad에서 per-sample 텐션을 수집.
+    """Collect per-sample tension from RepulsionFieldQuad.
 
-    모델의 forward를 직접 분해하여 sample별 텐션 벡터를 얻는다.
+    Directly decomposes the model's forward to obtain per-sample tension vectors.
     Returns:
         dict with keys: labels, preds, t_content, t_structure, t_total, correct
     """
@@ -125,21 +128,21 @@ def collect_quad_tension(model, test_loader):
         for X, y in test_loader:
             X_flat = X.view(X.size(0), -1)
 
-            # 엔진 출력 직접 계산 (per-sample 텐션 필요)
+            # Direct engine output calculation (need per-sample tension)
             out_a = model.engine_a(X_flat)
             out_e = model.engine_e(X_flat)
             out_g = model.engine_g(X_flat)
             out_f = model.engine_f(X_flat)
 
-            # 축별 반발력
+            # Repulsion by axis
             rep_content = out_a - out_g      # (batch, 10)
             rep_structure = out_e - out_f    # (batch, 10)
 
-            # per-sample 텐션 (스칼라)
+            # per-sample tension (scalar)
             t_content = (rep_content ** 2).sum(dim=-1)       # (batch,)
             t_structure = (rep_structure ** 2).sum(dim=-1)   # (batch,)
 
-            # 모델의 실제 출력으로 예측
+            # Actual model output for prediction
             output, _ = model(X_flat)
             preds = output.argmax(dim=1)
 
@@ -152,7 +155,7 @@ def collect_quad_tension(model, test_loader):
     preds = np.concatenate(all_preds)
     t_content = np.concatenate(all_t_content)
     t_structure = np.concatenate(all_t_structure)
-    t_total = np.sqrt(t_content * t_structure)  # 기하평균 (모델과 동일)
+    t_total = np.sqrt(t_content * t_structure)  # geometric mean (same as model)
     correct = (labels == preds)
 
     return {
@@ -166,9 +169,9 @@ def collect_quad_tension(model, test_loader):
 
 
 def collect_selfref_tension(model, test_loader):
-    """SelfReferentialField에서 per-sample 텐션 수렴 패턴을 수집.
+    """Collect per-sample tension convergence patterns from SelfReferentialField.
 
-    자기참조 루프를 step별로 분해하여 sample별 tension trajectory를 얻는다.
+    Decomposes the self-referential loop step by step to obtain per-sample tension trajectories.
     Returns:
         dict with keys: labels, preds, tensions_per_step, correct
     """
@@ -182,11 +185,11 @@ def collect_selfref_tension(model, test_loader):
             X_flat = X.view(X.size(0), -1)
             batch_size = X_flat.size(0)
 
-            # 두 극의 기본 출력
+            # Base output from two poles
             out_plus = model.pole_plus(X_flat)
             out_minus = model.pole_minus(X_flat)
 
-            # 초기 반발력과 장력
+            # Initial repulsion and tension
             repulsion = out_plus - out_minus
             prev_tension = (repulsion ** 2).sum(dim=-1)  # (batch,)
 
@@ -210,7 +213,7 @@ def collect_selfref_tension(model, test_loader):
                 prev_tension = (modified_repulsion ** 2).sum(dim=-1)
                 step_tensions.append(prev_tension.cpu().numpy().copy())
 
-            # 실제 예측
+            # Actual prediction
             output, _ = model(X_flat)
             preds = output.argmax(dim=1)
 
@@ -235,11 +238,11 @@ def collect_selfref_tension(model, test_loader):
 
 
 # ─────────────────────────────────────────
-# 분석 함수들
+# Analysis functions
 # ─────────────────────────────────────────
 
 def analyze_per_digit_tension(data):
-    """숫자(0-9)별 평균 텐션 분석."""
+    """Analyze average tension per digit (0-9)."""
     print_section("Per-Digit Average Tension (RepulsionFieldQuad)")
 
     labels = data['labels']
@@ -275,7 +278,7 @@ def analyze_per_digit_tension(data):
         print(f"  {d:>5} | {s['count']:>5} | {s['content']:>9.2f} | {s['structure']:>9.2f} | "
               f"{s['total']:>9.2f} | {s['acc']*100:>7.1f}% | {bar}")
 
-    # 상관관계 요약
+    # Correlation summary
     accs = [digit_stats[d]['acc'] for d in range(10)]
     totals = [digit_stats[d]['total'] for d in range(10)]
     corr = np.corrcoef(totals, accs)[0, 1]
@@ -291,7 +294,7 @@ def analyze_per_digit_tension(data):
 
 
 def analyze_tension_distribution(data):
-    """텐션 분포 히스토그램."""
+    """Tension distribution histogram."""
     print_section("Tension Distribution")
 
     ascii_histogram(data['t_content'], bins=20, width=45,
@@ -303,7 +306,7 @@ def analyze_tension_distribution(data):
 
 
 def analyze_extreme_samples(data, top_n=10):
-    """고장력/저장력 Top-N 샘플."""
+    """Top-N samples with highest/lowest tension."""
     print_section(f"Top-{top_n} Highest and Lowest Tension Samples")
 
     t_total = data['t_total']
@@ -337,7 +340,7 @@ def analyze_extreme_samples(data, top_n=10):
         print(f"  {rank:>4} | {i:>6} | {labels[i]:>5} | {preds[i]:>4} | {ok:>3} | "
               f"{t_c[i]:>9.2f} | {t_s[i]:>9.2f} | {t_total[i]:>9.2f}")
 
-    # 통계 비교
+    # Statistical comparison
     high_acc = correct[idx_high].mean()
     low_acc = correct[idx_low].mean()
     overall_acc = correct.mean()
@@ -348,7 +351,7 @@ def analyze_extreme_samples(data, top_n=10):
 
 
 def analyze_confusion_tension(data):
-    """오분류와 텐션의 상관관계 + 혼동 히트맵."""
+    """Correlation between misclassification and tension + confusion heatmap."""
     print_section("Confusion Analysis: Tension vs Misclassification")
 
     labels = data['labels']
@@ -356,7 +359,7 @@ def analyze_confusion_tension(data):
     correct = data['correct']
     t_total = data['t_total']
 
-    # 정답 vs 오답 텐션 비교
+    # Correct vs wrong tension comparison
     t_correct = t_total[correct]
     t_wrong = t_total[~correct]
 
@@ -379,12 +382,12 @@ def analyze_confusion_tension(data):
     else:
         print(f"  {'Misclassified':>15} | {0:>6} | {'N/A':>9} | {'N/A':>9} | {'N/A':>9}")
 
-    # 혼동 행렬 (raw counts)
+    # Confusion matrix (raw counts)
     confusion = np.zeros((10, 10), dtype=int)
     for l, p in zip(labels, preds):
         confusion[l, p] += 1
 
-    # 혼동 히트맵 (오분류만, 대각선 제외)
+    # Confusion heatmap (misclassifications only, exclude diagonal)
     confusion_off = confusion.copy().astype(float)
     np.fill_diagonal(confusion_off, 0)
 
@@ -393,7 +396,7 @@ def analyze_confusion_tension(data):
                   title='Confusion Matrix (off-diagonal = misclassifications)',
                   fmt='.0f')
 
-    # 텐션 가중 혼동 히트맵: 오분류 시 평균 텐션
+    # Tension-weighted confusion heatmap: average tension on misclassification
     tension_confusion = np.zeros((10, 10))
     tension_counts = np.zeros((10, 10))
     for i in range(len(labels)):
@@ -401,7 +404,7 @@ def analyze_confusion_tension(data):
             tension_confusion[labels[i], preds[i]] += t_total[i]
             tension_counts[labels[i], preds[i]] += 1
 
-    # 평균 텐션 (0으로 나누기 방지)
+    # Average tension (prevent division by zero)
     with np.errstate(divide='ignore', invalid='ignore'):
         avg_tension_conf = np.where(tension_counts > 0,
                                      tension_confusion / tension_counts, 0)
@@ -410,7 +413,7 @@ def analyze_confusion_tension(data):
                   title='Average Tension of Misclassified Pairs (true x pred)',
                   fmt='.1f')
 
-    # 가장 혼동되는 쌍 Top-5
+    # Top-5 most confused pairs
     print(f"\n  Top-5 most confused digit pairs:")
     print(f"  {'true':>4} -> {'pred':>4} | {'count':>5} | {'avg_tension':>11}")
     print(f"  {'─' * 4}────{'─' * 4}─┼─{'─' * 5}─┼─{'─' * 11}")
@@ -425,7 +428,7 @@ def analyze_confusion_tension(data):
 
 
 def analyze_selfref_convergence(data):
-    """SelfReferentialField: 숫자별 텐션 수렴 패턴."""
+    """SelfReferentialField: Tension convergence patterns per digit."""
     print_section("Self-Referential Field: Tension Convergence Per Digit")
 
     labels = data['labels']
@@ -433,7 +436,7 @@ def analyze_selfref_convergence(data):
     correct = data['correct']
     n_steps = tensions.shape[1]
 
-    # 숫자별 평균 텐션 경로
+    # Average tension trajectory per digit
     print(f"\n  Step-by-step tension trajectory (mean per digit):")
     step_headers = ''.join(f'{"s" + str(i):>10}' for i in range(n_steps))
     print(f"  {'digit':>5} | {step_headers} | {'delta':>8} | {'conv%':>6} | {'acc':>6}")
@@ -445,7 +448,7 @@ def analyze_selfref_convergence(data):
         if mask.sum() == 0:
             continue
         mean_path = tensions[mask].mean(axis=0)
-        # 수렴도: 마지막 변화 / 첫 변화
+        # Convergence: last change / first change
         first_delta = abs(mean_path[1] - mean_path[0]) if n_steps > 1 else 0
         last_delta = abs(mean_path[-1] - mean_path[-2]) if n_steps > 1 else 0
         conv_pct = (1 - last_delta / (first_delta + 1e-8)) * 100 if first_delta > 0 else 100
@@ -464,7 +467,7 @@ def analyze_selfref_convergence(data):
             'acc': acc,
         }
 
-    # 수렴 속도 랭킹
+    # Convergence speed ranking
     print(f"\n  Convergence speed ranking (fastest -> slowest):")
     sorted_digits = sorted(digit_convergence.items(),
                           key=lambda x: -x[1]['conv_pct'])
@@ -473,7 +476,7 @@ def analyze_selfref_convergence(data):
         print(f"  {rank:>3}. digit {d}: conv={s['conv_pct']:>5.1f}% "
               f"delta={s['total_delta']:>+7.2f} acc={s['acc']*100:>5.1f}% |{bar}|")
 
-    # ASCII 수렴 그래프 (텐션 변화를 step별로 표시)
+    # ASCII convergence graph (show tension changes by step)
     print(f"\n  Tension trajectory (ASCII graph, mean per digit):")
     all_means = []
     for d in range(10):
@@ -487,7 +490,7 @@ def analyze_selfref_convergence(data):
         graph_height = 12
         graph_width = n_steps
 
-        # 간단한 ASCII 라인 차트 (각 digit을 한 행씩)
+        # Simple ASCII line chart (one row per digit)
         print(f"  {'digit':>5} | {'trajectory (min={v_min:.1f} ... max={v_max:.1f})':^{graph_width * 8}}")
         print(f"  {'─' * 5}─┼─{'─' * (graph_width * 8)}")
         for d in range(10):
@@ -503,7 +506,7 @@ def analyze_selfref_convergence(data):
                 line += f'  {chars[pos]}({v:>6.1f})'
             print(f"  {d:>5} | {line}")
 
-    # 정답/오답 수렴 비교
+    # Correct/Misclassified convergence comparison
     print(f"\n  Convergence: Correct vs Misclassified samples:")
     correct_tensions = tensions[correct]
     wrong_tensions = tensions[~correct]
@@ -533,7 +536,7 @@ def analyze_selfref_convergence(data):
 
 
 def summary_findings(quad_data, selfref_data):
-    """최종 요약."""
+    """Final summary."""
     print_header("Summary of Findings")
 
     labels = quad_data['labels']
@@ -541,7 +544,7 @@ def summary_findings(quad_data, selfref_data):
     correct_q = quad_data['correct']
     correct_s = selfref_data['correct']
 
-    # 핵심 수치
+    # Key figures
     print(f"\n  RepulsionFieldQuad:")
     print(f"    Accuracy:           {correct_q.mean() * 100:.1f}%")
     print(f"    Mean total tension: {t_total.mean():.2f}")
@@ -561,7 +564,7 @@ def summary_findings(quad_data, selfref_data):
     print(f"    Tension change:     {final_t - init_t:+.2f} "
           f"({'converging' if final_t < init_t else 'diverging'})")
 
-    # 가장 어려운/쉬운 숫자
+    # Hardest/easiest digits
     digit_tensions = {}
     for d in range(10):
         mask = labels == d
@@ -574,7 +577,7 @@ def summary_findings(quad_data, selfref_data):
     print(f"  Easiest digit (lowest tension):  {easiest} "
           f"(tension={digit_tensions[easiest]:.2f})")
 
-    # 의식 가설 해석
+    # Consciousness hypothesis interpretation
     print(f"\n  Consciousness hypothesis interpretation:")
     print(f"    Tension = subjective difficulty of input")
     print(f"    High tension -> engines disagree -> 'hard' perception")
@@ -600,7 +603,7 @@ def main():
     input_dim, hidden_dim, output_dim = 784, 48, 10
     epochs = 10
 
-    # ── 데이터 로드 ──
+    # ── Data loading ──
     print("\n  Loading MNIST...")
     train_loader, test_loader = load_mnist(batch_size=128)
 
@@ -621,12 +624,12 @@ def main():
     print(f"  Batch tension (last): content={quad_model.tension_content:.4f}, "
           f"structure={quad_model.tension_structure:.4f}")
 
-    # Per-sample 텐션 수집
+    # Per-sample tension collection
     print("\n  Collecting per-sample tension on test set (10,000 samples)...")
     quad_data = collect_quad_tension(quad_model, test_loader)
     print(f"  Collected {len(quad_data['labels'])} samples.")
 
-    # 분석 실행
+    # Run analysis
     analyze_per_digit_tension(quad_data)
     analyze_tension_distribution(quad_data)
     analyze_extreme_samples(quad_data, top_n=10)
@@ -651,13 +654,13 @@ def main():
           f"{['%.2f' % t for t in selfref_model.tension_history]}")
     print(f"  Self-state norm: {selfref_model.self_state_norm:.4f}")
 
-    # Per-sample 텐션 수렴 수집
+    # Per-sample tension convergence collection
     print("\n  Collecting per-sample tension convergence on test set...")
     selfref_data = collect_selfref_tension(selfref_model, test_loader)
     print(f"  Collected {len(selfref_data['labels'])} samples, "
           f"{selfref_data['tensions'].shape[1]} steps each.")
 
-    # 자기참조 수렴 분석
+    # Self-referential convergence analysis
     analyze_selfref_convergence(selfref_data)
 
     # ══════════════════════════════════════════
@@ -673,3 +676,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

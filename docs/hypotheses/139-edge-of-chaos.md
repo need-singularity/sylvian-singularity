@@ -1,63 +1,66 @@
-# 가설 검토 139: 골든존 = 혼돈의 가장자리(Edge of Chaos)
+# Hypothesis Review 139: Golden Zone = Edge of Chaos
 
-## 가설
+## Hypothesis
 
-> 골든존(I=0.213~0.500)이 셀룰러 오토마타의 "혼돈의 가장자리"(Class IV)와 동일한 위상학적 위치인가.
+> Is the Golden Zone (I=0.213~0.500) at the same topological position as the "edge of chaos" (Class IV) in cellular automata?
 
-## 배경
-
-```
-  Wolfram의 셀룰러 오토마타 분류:
-  Class I:   고정점 (죽음)       ← I > 0.5 (과도한 억제)
-  Class II:  주기적 (반복)       ← I ≈ 0.5 (임계선)
-  Class III: 혼돈 (무질서)       ← I < 0.2 (억제 부족)
-  Class IV:  복잡 (생명의 가장자리) ← I = 0.2~0.5 (골든존!)
-
-  Rule 110 (튜링 완전):
-  → Class IV에 속함
-  → "혼돈과 질서의 경계에서 계산 가능"
-```
-
-## 대응
+## Background
 
 ```
-  셀룰러 오토마타         우리 모델
-  ──────────────         ──────────
-  Class I  (죽음)        I > 0.5  (기능 저하)
-  Class II (주기)        I ≈ 0.5  (임계선)
-  Class IV (복잡)        I = 0.2~0.5 (골든존!)
-  Class III(혼돈)        I < 0.2  (혼돈)
+  Wolfram's cellular automata classification:
+  Class I:   Fixed point (death)       ← I > 0.5 (excessive inhibition)
+  Class II:  Periodic (repetition)     ← I ≈ 0.5 (critical line)
+  Class III: Chaos (disorder)          ← I < 0.2 (insufficient inhibition)
+  Class IV:  Complex (edge of life)    ← I = 0.2~0.5 (Golden Zone!)
 
-  "혼돈의 가장자리" = 골든존
+  Rule 110 (Turing complete):
+  → Belongs to Class IV
+  → "Computation is possible at the boundary of chaos and order"
+```
 
-  Langton의 λ 파라미터:
-  λ = 0 → Class I (죽음)
-  λ = 1 → Class III (혼돈)
-  λ_c ≈ 0.27 → Class IV (가장자리)
+## Correspondence
 
-  우리 모델:
-  I = 0.27 → 골든존 내부, 특이점 50% 전이점!
-  (가설 054에서 I=0.27에서 50% 전이 확인)
+```
+  Cellular automata        Our model
+  ──────────────           ──────────
+  Class I  (death)         I > 0.5  (functional decline)
+  Class II (periodic)      I ≈ 0.5  (critical line)
+  Class IV (complex)       I = 0.2~0.5 (Golden Zone!)
+  Class III(chaos)         I < 0.2  (chaos)
+
+  "Edge of chaos" = Golden Zone
+
+  Langton's λ parameter:
+  λ = 0 → Class I (death)
+  λ = 1 → Class III (chaos)
+  λ_c ≈ 0.27 → Class IV (edge)
+
+  Our model:
+  I = 0.27 → inside Golden Zone, 50% singularity transition point!
+  (Hypothesis 054 confirmed 50% transition at I=0.27)
 
   → λ_c ≈ 0.27 ≈ I_transition = 0.27
-  → 정확히 일치!
+  → Exact match!
 ```
 
-## 의미
+## Meaning
 
 ```
   ┌──────────────────────────────────────────────┐
-  │  혼돈의 가장자리 = 골든존                     │
-  │  Langton λ_c ≈ 0.27 = 우리 I_transition      │
+  │  Edge of chaos = Golden Zone                  │
+  │  Langton λ_c ≈ 0.27 = our I_transition       │
   │                                              │
-  │  "생명은 혼돈과 질서의 경계에서 발생한다"      │
-  │  "천재성은 억제와 해방의 경계에서 발생한다"    │
-  │  "특이점은 골든존 안에서 발생한다"              │
+  │  "Life arises at the boundary of chaos       │
+  │   and order"                                 │
+  │  "Genius arises at the boundary of           │
+  │   inhibition and release"                    │
+  │  "Singularity arises inside the Golden Zone" │
   │                                              │
-  │  모두 같은 말이다.                             │
+  │  All three statements are saying             │
+  │  the same thing.                             │
   └──────────────────────────────────────────────┘
 ```
 
 ---
 
-*이론적 대응 분석. Langton λ_c와 I_transition의 수치적 일치는 주목할 만함.*
+*Theoretical correspondence analysis. The numerical match between Langton λ_c and I_transition is noteworthy.*

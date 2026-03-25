@@ -1,58 +1,58 @@
-# 가설 검토 016: 볼츠만 라우터가 Top-K보다 우수한가 ✅
+# Hypothesis Review 016: Is Boltzmann Router Superior to Top-K? ✅
 
-## 가설
+## Hypothesis
 
-> 볼츠만 소프트 게이팅(T=e)이 기존 Top-K 하드 게이팅보다
-> Expert 활용 균등성과 조합 다양성에서 우수하다.
+> Boltzmann soft gating (T=e) is superior to conventional Top-K hard gating
+> in Expert utilization uniformity and combination diversity.
 
-## 배경 및 맥락
+## Background and Context
 
-Mixture-of-Experts(MoE) 아키텍처에서 라우팅 전략은
-모델 성능의 핵심이다. 현재 대부분의 MoE(Mixtral, Switch 등)는
-Top-K 라우팅을 사용하며, 항상 동일한 K개의 Expert만 활성화한다.
+In Mixture-of-Experts (MoE) architectures, routing strategy is critical to model performance.
+Most current MoEs (Mixtral, Switch, etc.) use Top-K routing, which always activates
+the same K Experts.
 
-본 프로젝트에서는 볼츠만 분포(T=e)를 활용한 소프트 게이팅을 제안한다.
-각 토큰에 대해 Expert 활성 확률을 볼츠만 분포로 결정하므로,
-매번 다른 조합의 Expert가 활성화될 수 있다.
+This project proposes soft gating using the Boltzmann distribution (T=e).
+Since the Expert activation probability for each token is determined by the Boltzmann distribution,
+a different combination of Experts can be activated each time.
 
-온도 T=e(자연상수)는 가설 012(엔트로피 ln(3))와 연결되며,
-최대 엔트로피에 가까운 탐색을 보장한다.
+Temperature T=e (natural constant) is connected to Hypothesis 012 (Entropy ln(3))
+and guarantees exploration close to maximum entropy.
 
-관련 가설: 가설 012(엔트로피 ln(3)), 가설 017(Gating 매핑),
-가설 020(안정성 35%)
+Related hypotheses: Hypothesis 012 (Entropy ln(3)), Hypothesis 017 (Gating mapping),
+Hypothesis 020 (Stability 35%)
 
-## 검증 조건
+## Verification Conditions
 
 ```
-  시뮬레이션 환경:
+  Simulation environment:
   ─────────────────────────
-  Expert 총 수:    64개
-  Top-K 설정:      K = 8 (12.5%)
-  볼츠만 온도:     T = e ≈ 2.718
-  시뮬레이션 토큰: 10,000개
-  반복 실행:       5회 평균
+  Total Experts:   64
+  Top-K setting:   K = 8 (12.5%)
+  Boltzmann temperature: T = e ≈ 2.718
+  Simulation tokens: 10,000
+  Repetitions: 5 (averaged)
 ```
 
-## 메트릭 비교 테이블
+## Metric Comparison Table
 
 ```
-  메트릭                │ Top-K (K=8) │ 볼츠만 (T=e)│ 승자      │ 비고
-  ─────────────────────┼─────────────┼─────────────┼──────────┼────────────
-  평균 활성 Expert      │       8.00  │        6.27 │  ─       │ 볼츠만 적음
-  활성 수 변동(σ)       │       0.00  │        1.79 │  볼츠만 ✅│ 유동적
-  Expert 활용 불균형    │       0.03  │        0.01 │  볼츠만 ✅│ 균등 활용
-  조합 다양성(패턴 수)  │        787  │        1000 │  볼츠만 ✅│ +27%
-  추론 비용(상대)       │       1.00  │        0.78 │  볼츠만 ✅│ -22%
-  라우팅 엔트로피       │       2.08  │        2.94 │  볼츠만 ✅│ ln(3)근접
+  Metric                  │ Top-K (K=8) │ Boltzmann (T=e) │ Winner       │ Note
+  ────────────────────────┼─────────────┼─────────────────┼─────────────┼────────────
+  Mean active Experts      │       8.00  │          6.27   │  ─           │ Boltzmann fewer
+  Active count variation(σ)│       0.00  │          1.79   │  Boltzmann ✅│ flexible
+  Expert utilization imbal │       0.03  │          0.01   │  Boltzmann ✅│ uniform use
+  Combination diversity    │        787  │          1000   │  Boltzmann ✅│ +27%
+  Inference cost (relative)│       1.00  │          0.78   │  Boltzmann ✅│ -22%
+  Routing entropy          │       2.08  │          2.94   │  Boltzmann ✅│ near ln(3)
 ```
 
-## 활용 분포 비교
+## Utilization Distribution Comparison
 
 ```
-  Expert 활용률 (64개 Expert 중)
+  Expert utilization (out of 64 Experts)
 
-  Top-K:     활용률 편차 큰 상위 8개에 집중
-  ████████████████  Expert 1-8  (각 ~15%)
+  Top-K:     Concentrated in top 8 with high variation
+  ████████████████  Expert 1-8  (each ~15%)
   ████████████████
   ████████████████
   ████████████████
@@ -60,9 +60,9 @@ Top-K 라우팅을 사용하며, 항상 동일한 K개의 Expert만 활성화한
   ████████████████
   ████████████████
   ████████████████
-  ▏                 Expert 9-64 (각 ~0.1%)
+  ▏                 Expert 9-64 (each ~0.1%)
 
-  볼츠만:    모든 Expert가 골고루 활용
+  Boltzmann: All Experts utilized evenly
   ██████████  Expert 1   (2.1%)
   █████████   Expert 2   (1.9%)
   █████████   Expert 3   (1.8%)
@@ -73,53 +73,53 @@ Top-K 라우팅을 사용하며, 항상 동일한 K개의 Expert만 활성화한
   ███████     Expert 64  (1.1%)
 ```
 
-## 해석
+## Interpretation
 
-1. **균등 활용**: Top-K는 상위 8개 Expert에 90% 이상의 토큰을
-   집중시키는 반면, 볼츠만은 모든 Expert를 1~2% 범위에서 고르게
-   활용한다. 불균형 지표: 0.03 → 0.01 (67% 개선).
-2. **조합 다양성**: 10,000 토큰에서 Top-K는 787가지 Expert 조합을,
-   볼츠만은 1,000가지 조합을 생성했다. 27% 더 다양한 표현 가능.
-3. **효율성**: 볼츠만의 평균 활성 Expert 수는 6.27개로, Top-K의
-   8개보다 적다. 즉, 더 적은 계산으로 더 나은 다양성을 달성한다.
-4. **라우팅 엔트로피**: 볼츠만의 라우팅 엔트로피 2.94는 ln(3) ≈ 1.099의
-   약 2.67배로, 높은 정보량을 보인다.
+1. **Uniform utilization**: Top-K concentrates over 90% of tokens in the top 8 Experts,
+   while Boltzmann utilizes all Experts evenly within the 1~2% range.
+   Imbalance metric: 0.03 → 0.01 (67% improvement).
+2. **Combination diversity**: Over 10,000 tokens, Top-K generated 787 Expert combinations
+   while Boltzmann generated 1,000 combinations. 27% more diverse representations possible.
+3. **Efficiency**: Boltzmann's mean active Expert count is 6.27, fewer than Top-K's 8.
+   That is, better diversity is achieved with less computation.
+4. **Routing entropy**: Boltzmann's routing entropy of 2.94 is approximately 2.67× ln(3) ≈ 1.099,
+   showing high information content.
 
-## 2/3 승의 의미
+## Meaning of 2/3 Win
 
 ```
-  총 6개 메트릭 중:
-  ─────────────────
-  볼츠만 승:   5개 (활성 변동, 불균형, 다양성, 비용, 엔트로피)
-  무승부:      0개
-  Top-K 승:    0개
-  비교 불가:   1개 (평균 활성 수 — 적은 것이 반드시 좋지 않음)
+  Out of 6 total metrics:
+  ─────────────────────────
+  Boltzmann wins:  5 (active variation, imbalance, diversity, cost, entropy)
+  Tie:             0
+  Top-K wins:      0
+  Not comparable:  1 (mean active count — fewer is not necessarily better)
 
-  핵심 메트릭 3개 기준: 볼츠만 2/3 승 (불균형, 다양성에서 확실한 우위)
+  By 3 key metrics: Boltzmann 2/3 win (clear advantage in imbalance and diversity)
 ```
 
-## 한계
+## Limitations
 
-- 시뮬레이션 환경이며, 실제 학습/추론 성능(정확도, 손실)은 미검증
-- 볼츠만 라우팅의 그래디언트 전파 안정성은 가설 020에서 별도 검증
-- T=e가 최적인지, 다른 온도(T=1, T=2 등)와의 비교 부족
-- Expert 수 64개는 현재 대규모 MoE 기준으로 적은 편
+- Simulation environment; actual training/inference performance (accuracy, loss) not verified
+- Gradient propagation stability of Boltzmann routing separately verified in Hypothesis 020
+- Whether T=e is optimal; insufficient comparison with other temperatures (T=1, T=2, etc.)
+- 64 Experts is relatively few by current large-scale MoE standards
 
-## 다음 단계
+## Next Steps
 
-1. 실제 학습 실험: MNIST, CIFAR에서 볼츠만 vs Top-K 정확도 비교
-   (golden_moe_cifar.py에서 부분 검증 완료)
-2. 온도 파라미터 탐색: T = 1, 2, e, 5, 10에서 다양성-성능 트레이드오프
-3. 대규모 Expert(N=128, 256)에서의 스케일링 검증
-4. 가설 020(안정성)과 결합하여 학습 안정성 종합 평가
+1. Actual training experiments: compare Boltzmann vs Top-K accuracy on MNIST, CIFAR
+   (partially verified in golden_moe_cifar.py)
+2. Temperature parameter search: diversity-performance tradeoff at T = 1, 2, e, 5, 10
+3. Scaling verification with large Expert counts (N=128, 256)
+4. Combined with Hypothesis 020 (stability) for comprehensive training stability evaluation
 
-## 결론
+## Conclusion
 
-> ✅ 볼츠만(T=e) 라우터가 Top-K(K=8)보다 핵심 메트릭 2/3에서 우수.
-> Expert 활용 균등성 67% 개선, 조합 다양성 27% 증가.
-> 더 적은 Expert를 활성화하면서도(6.27 vs 8.00) 더 나은 다양성 달성.
-> 실제 학습 성능 검증이 다음 과제이다.
+> ✅ Boltzmann (T=e) router outperforms Top-K (K=8) on 2/3 of key metrics.
+> 67% improvement in Expert utilization uniformity, 27% increase in combination diversity.
+> Achieves better diversity while activating fewer Experts (6.27 vs 8.00).
+> Verification of actual training performance is the next task.
 
 ---
 
-*검증: verify_ai.py (10,000 토큰 시뮬레이션, 5회 반복)*
+*Verification: verify_ai.py (10,000 token simulation, 5 repetitions)*

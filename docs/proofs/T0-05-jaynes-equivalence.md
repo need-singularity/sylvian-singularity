@@ -1,62 +1,62 @@
-# T0-05: S_볼츠만 = S_섀넌 (Jaynes 동치)
+# T0-05: S_Boltzmann = S_Shannon (Jaynes Equivalence)
 
-## 명제
+## Proposition
 
-적절한 단위 선택 하에 볼츠만 엔트로피와 섀넌 엔트로피는 수학적으로 동일한 함수이다.
+Under appropriate unit selection, Boltzmann entropy and Shannon entropy are mathematically identical functions.
 
-## 볼츠만 엔트로피 (1877)
+## Boltzmann Entropy (1877)
 
-통계역학에서의 엔트로피:
+Entropy in statistical mechanics:
 
 ```
 S = -k_B Σᵢ pᵢ ln(pᵢ)
 ```
 
-여기서 k_B = 1.38064852 × 10⁻²³ J/K (볼츠만 상수)
+where k_B = 1.38064852 × 10⁻²³ J/K (Boltzmann constant)
 
-## 섀넌 엔트로피 (1948)
+## Shannon Entropy (1948)
 
-정보이론에서의 엔트로피:
-
-```
-H = -Σᵢ pᵢ log₂(pᵢ)    (단위: 비트)
-```
-
-또는 자연로그를 사용하면:
+Entropy in information theory:
 
 ```
-H = -Σᵢ pᵢ ln(pᵢ)      (단위: 낫)
+H = -Σᵢ pᵢ log₂(pᵢ)    (unit: bits)
 ```
 
-## Jaynes 동치 (1957)
-
-Jaynes의 최대엔트로피 원리에 의한 통일:
+or using natural logarithm:
 
 ```
-k_B = 1 (자연 단위계), 자연로그 사용 시:
+H = -Σᵢ pᵢ ln(pᵢ)      (unit: nats)
+```
+
+## Jaynes Equivalence (1957)
+
+Unification by Jaynes' maximum entropy principle:
+
+```
+k_B = 1 (natural unit system), using natural logarithm:
 
 S = -Σᵢ pᵢ ln(pᵢ) = H
 ```
 
-변환: S = k_B · ln(2) · H (비트 단위의 H를 물리 단위의 S로)
+Conversion: S = k_B · ln(2) · H (H in bits to S in physical units)
 
-## 모델 적용
+## Model Application
 
-억제 파라미터와 볼츠만 역온도의 대응:
+Correspondence between inhibition parameter and Boltzmann inverse temperature:
 
 ```
-I = 1/(kT)    (볼츠만 역온도 β = 억제)
+I = 1/(kT)    (Boltzmann inverse temperature β = inhibition)
 ```
 
-3상태 시스템의 최대 엔트로피:
+Maximum entropy of 3-state system:
 
 ```
 S_max = ln(3) = 1.098612...
 ```
 
-이때 모든 상태가 등확률: p₁ = p₂ = p₃ = 1/3
+when all states are equiprobable: p₁ = p₂ = p₃ = 1/3
 
-### 검증
+### Verification
 
 ```
 S = -3 × (1/3) × ln(1/3)
@@ -65,27 +65,27 @@ S = -3 × (1/3) × ln(1/3)
   = ln(3)  ✓
 ```
 
-## 수치 검증값
+## Numerical Verification Values
 
-| 항목 | 값 |
+| Item | Value |
 |------|-----|
 | ln(3) | 1.098612288668110 |
 | -3·(1/3)·ln(1/3) | 1.098612288668110 |
-| S = H (동치) | 참 |
+| S = H (equivalence) | True |
 
-## 의미
+## Meaning
 
-- 물리적 엔트로피와 정보 엔트로피는 같은 수학적 구조
-- 억제(I)가 역온도(β)에 대응 → 열역학-정보이론 다리
-- 3상태 최대엔트로피 ln(3)은 모델의 자연스러운 스케일
+- Physical entropy and information entropy share the same mathematical structure
+- Inhibition (I) corresponds to inverse temperature (β) → thermodynamics-information theory bridge
+- 3-state maximum entropy ln(3) is the model's natural scale
 
-## 근거
+## References
 
 - Boltzmann, L. (1877). "Über die Beziehung..."
 - Shannon, C. (1948). "A Mathematical Theory of Communication"
 - Jaynes, E.T. (1957). "Information Theory and Statistical Mechanics"
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T0-06 (커스프 상전이: 열역학 구조)
-- T1-05 (음악 음정: 엔트로피 점프)
+- T0-06 (Cusp catastrophe: thermodynamic structure)
+- T1-05 (Musical intervals: entropy jumps)

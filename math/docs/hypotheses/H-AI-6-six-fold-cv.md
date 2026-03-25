@@ -1,22 +1,22 @@
-# H-AI-6: 6-fold CV가 k-fold 중 최적인 이유
+# H-AI-6: Why 6-fold CV is Optimal Among k-fold
 
-> **가설**: k-fold cross-validation에서 k=6이 bias-variance tradeoff의 최적점이며, 이는 σφ=nτ 균형과 관련된다.
+> **Hypothesis**: In k-fold cross-validation, k=6 is the optimal point for bias-variance tradeoff, related to σφ=nτ balance.
 
-## 배경
-- 실무: k=5 또는 k=10이 관례. k=6은 드묾.
-- 이론: k가 커지면 bias 감소하지만 variance 증가, k가 작으면 반대
-- σφ/(kτ)=1 at k=6: "데이터 분할의 산술적 균형"
-- Hastie, Tibshirani, Friedman (ESL): 최적 k는 단일 값이 없으며 데이터/모델에 의존
+## Background
+- Practice: k=5 or k=10 is conventional. k=6 is rare.
+- Theory: As k increases, bias decreases but variance increases; opposite for small k
+- σφ/(kτ)=1 at k=6: "Arithmetic balance of data partitioning"
+- Hastie, Tibshirani, Friedman (ESL): No single optimal k exists; depends on data/model
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
-### 실험 설정
+### Experimental Setup
 - 1000 samples, 20 features, LogisticRegression
 - k = 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20
-- 100 반복 (서로 다른 random seed)
-- 3개 데이터셋: easy / medium / hard
+- 100 iterations (different random seeds)
+- 3 datasets: easy / medium / hard
 
-### Easy 데이터셋 (n_informative=15, flip_y=0.01)
+### Easy Dataset (n_informative=15, flip_y=0.01)
 
 |  k | Mean Acc   | Std Acc    | Variance     | MSE x1e4  |
 |----|-----------|-----------|-------------|----------|
@@ -34,7 +34,7 @@
 
 **Winner: k=4** (both variance and MSE)
 
-### Medium 데이터셋 (n_informative=10, flip_y=0.05)
+### Medium Dataset (n_informative=10, flip_y=0.05)
 
 |  k | Mean Acc   | Std Acc    | Variance     | MSE x1e4  |
 |----|-----------|-----------|-------------|----------|
@@ -52,7 +52,7 @@
 
 **Winner: k=6** (both variance and MSE)
 
-### Hard 데이터셋 (n_informative=5, flip_y=0.15)
+### Hard Dataset (n_informative=5, flip_y=0.15)
 
 |  k | Mean Acc   | Std Acc    | Variance     | MSE x1e4  |
 |----|-----------|-----------|-------------|----------|
@@ -107,24 +107,24 @@
 
 **No statistically significant difference between k=6 and k=5 or k=10 in any dataset.**
 
-## 해석
+## Interpretation
 
-1. k=6은 1/3 데이터셋(medium)에서 우승했으나, easy에서는 k=4, hard에서는 k=3이 우승
-2. k=5~10 범위의 모든 k는 서로 통계적으로 유의미한 차이가 없음 (p > 0.2)
-3. 어떤 k가 "최적"인지는 데이터셋 난이도와 특성에 의존
-4. 이론적으로도 단일 최적 k는 존재하지 않음 (Hastie et al.)
+1. k=6 won in 1/3 datasets (medium), but k=4 won in easy, k=3 won in hard
+2. All k in the k=5~10 range have no statistically significant difference (p > 0.2)
+3. Which k is "optimal" depends on dataset difficulty and characteristics
+4. Theoretically, no single optimal k exists (Hastie et al.)
 
-## 한계
+## Limitations
 
-- LogisticRegression 한 모델만 테스트 (트리, SVM 등 미테스트)
-- 합성 데이터만 사용 (실제 데이터셋 미테스트)
-- 1000 샘플 고정 (샘플 수에 따라 최적 k가 변할 수 있음)
+- Only LogisticRegression tested (trees, SVM etc. not tested)
+- Only synthetic data used (real datasets not tested)
+- Fixed 1000 samples (optimal k may vary with sample size)
 
-## 결론
+## Conclusion
 
-> **가설 반증: k=6은 특별하지 않다.**
-> k=5~10 범위에서 어떤 k를 택해도 통계적으로 유의미한 차이가 없다.
-> k=6이 medium 난이도에서 우연히 우승한 것이지, 완전수 6의 구조적 속성과 무관하다.
+> **Hypothesis refuted: k=6 is not special.**
+> Any k in the k=5~10 range yields no statistically significant difference.
+> k=6's win in medium difficulty is coincidental, unrelated to perfect number 6's structural properties.
 
-## 등급: 흰 동그라미 (우연, 구조적 근거 없음)
-## 난이도: 저 | 파급력: 없음
+## Grade: White Circle (coincidence, no structural basis)
+## Difficulty: Low | Impact: None

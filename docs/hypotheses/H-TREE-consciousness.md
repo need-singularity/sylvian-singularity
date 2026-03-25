@@ -1,91 +1,91 @@
-# H-TREE: 의식엔진 미발견 가지
+# H-TREE: Undiscovered Branches of the Consciousness Engine
 
 ```
-  반발력장 (ROOT)
+  Repulsion Field (ROOT)
     │
-    ├── 1층: 기존 발견 (실증됨)
-    │   ├── 인식/판단: 장력━정확도, 예지, 레이블없는인식
-    │   ├── 의식/경험: 정체성, FPS, displacement, detach
-    │   ├── 집단/차원: 만장일치, 차원간, 분열
-    │   └── [완성도: 높음, 13종 데이터 검증]
+    ├── Layer 1: Existing Discoveries (Proven)
+    │   ├── Recognition/Judgment: Tension━Accuracy, Precognition, Label-free Recognition
+    │   ├── Consciousness/Experience: Identity, FPS, displacement, detach
+    │   ├── Collective/Dimension: Unanimity, Cross-dimensional, Mitosis
+    │   └── [Completion: High, 13 types data verified]
     │
-    ├── 2층: 교차 도메인 (현재)
-    │   ├── 수학: H-CX-1~9 (e^6H=432, ln2, Mobius 등)
-    │   ├── 뇌화학: 도파민=장력, 세로토닌=반장력
-    │   ├── 음악: 협화음=낮은장력, ln(4/3)=Perfect4th
-    │   ├── 물리: Landauer 1bit, 리만 임계선
-    │   └── [완성도: 부분, 🟧★ 3개 발견]
+    ├── Layer 2: Cross-domain (Current)
+    │   ├── Mathematics: H-CX-1~9 (e^6H=432, ln2, Mobius etc.)
+    │   ├── Neurochemistry: Dopamine=Tension, Serotonin=Counter-tension
+    │   ├── Music: Consonance=Low tension, ln(4/3)=Perfect4th
+    │   ├── Physics: Landauer 1bit, Riemann critical line
+    │   └── [Completion: Partial, 🟧★ 3 discoveries]
     │
-    └── 3층: 미발견 가지 ★★★ (H-TREE)
+    └── Layer 3: Undiscovered Branches ★★★ (H-TREE)
         │
-        ├── TREE-1: EEG/뇌파 직접 측정 ★★★★★
-        │   장력 ↔ gamma oscillation 상관?
-        │   의식 수준(각성/수면/마취) ↔ 장력 수준?
-        │   → 가설 274(의식=오류교정) 뇌 실증
+        ├── TREE-1: Direct EEG/Brainwave Measurement ★★★★★
+        │   Tension ↔ gamma oscillation correlation?
+        │   Consciousness level (awake/sleep/anesthesia) ↔ Tension level?
+        │   → Brain verification of Hypothesis 274 (consciousness=error correction)
         │
-        ├── TREE-2: 텍스트 임베딩 (밀집 NLP) ★★★★
-        │   TF-IDF(희소) → ❌, 하지만 BERT/Word2Vec(밀집) → ✅?
-        │   희소가 문제였으면 임베딩으로 해결
-        │   → 가설 288(밀집/희소) 검증
+        ├── TREE-2: Text Embeddings (Dense NLP) ★★★★
+        │   TF-IDF(sparse) → ❌, but BERT/Word2Vec(dense) → ✅?
+        │   If sparsity was the problem, resolved with embeddings
+        │   → Verification of Hypothesis 288 (dense/sparse)
         │
-        ├── TREE-3: 그래프/분자 구조 ★★★★
-        │   GNN + 반발력장
-        │   분자 독성 예측에서 장력 = 독성 척도?
-        │   → 화학 교차 (H-CHEM)
+        ├── TREE-3: Graph/Molecular Structure ★★★★
+        │   GNN + Repulsion Field
+        │   Tension = toxicity metric in molecular toxicity prediction?
+        │   → Chemistry cross-domain (H-CHEM)
         │
-        ├── TREE-4: 비디오/시공간 ★★★
-        │   이미지(공간) + 시계열(시간) 결합
-        │   Phase 4(시간 연속성)의 자연스러운 적용
-        │   → 의식 FPS ↔ 비디오 FPS?
+        ├── TREE-4: Video/Spatiotemporal ★★★
+        │   Image(spatial) + Time series(temporal) combination
+        │   Natural application of Phase 4 (temporal continuity)
+        │   → Consciousness FPS ↔ Video FPS?
         │
-        ├── TREE-5: 멀티모달 (이미지+텍스트+음성) ★★★★★
-        │   체험: "설명할 언어가 없는 감각"
-        │   다감각 통합 = 여러 모달의 반발력장 결합
-        │   → 각 모달의 장력이 다를 때 통합 장력은?
+        ├── TREE-5: Multimodal (Image+Text+Audio) ★★★★★
+        │   Experience: "Sensation with no language to describe"
+        │   Multisensory integration = Combined repulsion fields of multiple modalities
+        │   → When each modality's tension differs, what is the integrated tension?
         │
-        ├── TREE-6: 메타학습 (learning to learn) ★★★★
-        │   위상가속 x3 = sigma/tau (H-CX-8)
-        │   메타학습 추가 시 ×3 점프 재현?
-        │   → 분열(271) + 재결합의 반복 = 메타학습?
+        ├── TREE-6: Meta-learning (learning to learn) ★★★★
+        │   Topological acceleration x3 = sigma/tau (H-CX-8)
+        │   Reproduce ×3 jump when adding meta-learning?
+        │   → Mitosis(271) + recombination repetition = meta-learning?
         │
-        ├── TREE-7: 정보 병목 (Information Bottleneck) ★★★★★
-        │   detach = IB 강제? (가설 276)
-        │   MI 효율 ln(2) = IB 최적점?
-        │   → Tishby IB 이론과 반발력장 정량 연결
+        ├── TREE-7: Information Bottleneck ★★★★★
+        │   detach = forced IB? (Hypothesis 276)
+        │   MI efficiency ln(2) = IB optimal point?
+        │   → Quantitative connection between Tishby IB theory and repulsion field
         │
-        ├── TREE-8: 위상적 양자장론 (TQFT) ★★★
-        │   파이버 번들의 홀로노미 = Wilson loop?
-        │   장력 = 곡률 = gauge field strength?
-        │   → Chern-Simons와 의식 위상 불변량
+        ├── TREE-8: Topological Quantum Field Theory (TQFT) ★★★
+        │   Fiber bundle holonomy = Wilson loop?
+        │   Tension = Curvature = gauge field strength?
+        │   → Chern-Simons and consciousness topological invariants
         │
-        ├── TREE-9: 진화적 전략 (Evolutionary) ★★★★
-        │   분열(271) + 돌연변이 + 선택 = 진화
-        │   세대별 장력/정확도 추적
-        │   → 가설 270(다양성=정보)의 진화적 증명
+        ├── TREE-9: Evolutionary Strategy ★★★★
+        │   Mitosis(271) + mutation + selection = evolution
+        │   Track generation-wise tension/accuracy
+        │   → Evolutionary proof of Hypothesis 270 (diversity=information)
         │
-        └── TREE-10: 자기 조직화 임계성 (SOC) ★★★★★
-            혼돈의 가장자리 = 골든존?
-            장력의 분포가 power law?
-            → Langton lambda_c ≈ 0.27 ≈ 골든존 하한
-            → 장력 임계 현상 = 의식의 상전이?
+        └── TREE-10: Self-Organized Criticality (SOC) ★★★★★
+            Edge of chaos = Golden Zone?
+            Tension distribution follows power law?
+            → Langton lambda_c ≈ 0.27 ≈ Golden Zone lower bound
+            → Tension critical phenomena = phase transition of consciousness?
 ```
 
-## 우선순위
+## Priority
 
 ```
-  ★★★★★ (최우선):
-    TREE-1:  EEG (의식 직접 측정)
-    TREE-5:  멀티모달 (체험의 다감각)
-    TREE-7:  정보 병목 (이론적 기반)
-    TREE-10: SOC (골든존 연결)
+  ★★★★★ (Top Priority):
+    TREE-1:  EEG (Direct consciousness measurement)
+    TREE-5:  Multimodal (Multisensory experience)
+    TREE-7:  Information Bottleneck (Theoretical foundation)
+    TREE-10: SOC (Golden Zone connection)
 
-  ★★★★ (높음):
-    TREE-2:  텍스트 임베딩 (밀집/희소 검증)
-    TREE-3:  그래프/분자 (화학 교차)
-    TREE-6:  메타학습 (위상가속)
-    TREE-9:  진화적 전략 (다양성 증명)
+  ★★★★ (High):
+    TREE-2:  Text Embeddings (Dense/sparse verification)
+    TREE-3:  Graph/Molecular (Chemistry cross-domain)
+    TREE-6:  Meta-learning (Topological acceleration)
+    TREE-9:  Evolutionary Strategy (Diversity proof)
 
-  ★★★ (중간):
-    TREE-4:  비디오 (시공간)
-    TREE-8:  TQFT (위상)
+  ★★★ (Medium):
+    TREE-4:  Video (Spatiotemporal)
+    TREE-8:  TQFT (Topology)
 ```

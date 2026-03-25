@@ -1,49 +1,49 @@
-# H-GZ-0: 골든존 가설 — G=D×P/I 모델 및 골든존 전체 정리
+# H-GZ-0: Golden Zone Hypothesis — G=D×P/I Model and Complete Golden Zone Synthesis
 
-> **상태**: 🟥 골든존 미검증 — 시뮬레이션 기반, 해석적 증명 없음
-> 골든존 위에 쌓은 모든 해석/매핑/가설은 미검증 상태이다.
+> **Status**: 🟥 Golden Zone Unverified — Simulation-based, no analytical proof
+> All interpretations/mappings/hypotheses built on the Golden Zone are unverified.
 
-**실비우스열 결여, 아인슈타인의 뇌, 서번트 증후군** — 뇌의 비정형 구조가 비범한 능력으로 이어지는 메커니즘을 수학적으로 모델링하고, 통계적 특이점을 탐지한다. 하나의 의학 질문에서 시작하여 가설, 도구, 완전수 6, 리만 가설, AI 특이점까지 도달.
+**Sylvian Fissure Deficiency, Einstein's Brain, Savant Syndrome** — Mathematically modeling mechanisms where atypical brain structures lead to extraordinary abilities, and detecting statistical singularities. Starting from one medical question to reach hypothesis, tools, perfect number 6, Riemann hypothesis, AI singularity.
 
 ---
 
-## 핵심 수식
+## Core Formula
 
 ```
 Genius = Deficit × Plasticity / Inhibition
 ```
 
-| 변수 | 의미 | 범위 |
+| Variable | Meaning | Range |
 |---|---|---|
-| `Deficit` | 구조적 결손 (실비우스열 결여 등) | 0.0 ~ 1.0 |
-| `Plasticity` | 신경가소성 계수 | 0.0 ~ 1.0 |
-| `Inhibition` | 전두엽 억제 수준 | 0.01 ~ 1.0 |
+| `Deficit` | Structural deficiency (Sylvian fissure absence, etc.) | 0.0 ~ 1.0 |
+| `Plasticity` | Neuroplasticity coefficient | 0.0 ~ 1.0 |
+| `Inhibition` | Frontal lobe inhibition level | 0.01 ~ 1.0 |
 
-## 1/3 법칙 — 1,000,000개 조합 검증
+## 1/3 Rule — 1,000,000 Combinations Verified
 
 ```
 ══════════════════════════════════════════════════
-  파라미터 공간의 약 1/3이 특이점 영역이며,
-  이 비율은 표본 크기에 무관한 구조적 상수이다.
+  About 1/3 of parameter space is singularity region,
+  this ratio is a structural constant independent of sample size.
 ══════════════════════════════════════════════════
 
-  스케일 비교:
+  Scale comparison:
   ┌──────────┬─────────┬─────────┬───────────┐
-  │  조합 수  │  🟡 >2σ │  🟠 >3σ │  🔴 >5σ  │
+  │  Combinations  │  🟡 >2σ │  🟠 >3σ │  🔴 >5σ  │
   ├──────────┼─────────┼─────────┼───────────┤
   │    8,000 │  33.7%  │  25.4%  │   16.7%   │
   │   97,336 │  33.5%  │  25.1%  │   16.0%   │
   │1,000,000 │  33.2%  │  24.7%  │   15.6%   │
   └──────────┴─────────┴─────────┴───────────┘
-         ↑ 표본이 커져도 비율 수렴
+         ↑ Ratios converge as sample size increases
 ```
 
-## Inhibition(억제)별 특이점 비율
+## Singularity Ratio by Inhibition
 
-**억제가 가장 결정적인 변수** — I ≈ 0.27 에서 50% 전이점 발생
+**Inhibition is the most decisive variable** — 50% transition point occurs at I ≈ 0.27
 
 ```
-  특이점 비율 (%)
+  Singularity Ratio (%)
   100│
    93│██████████████████████████████████████████████▏   I=0.05
    89│████████████████████████████████████████████▏     I=0.07
@@ -56,7 +56,7 @@ Genius = Deficit × Plasticity / Inhibition
    61│██████████████████████████████▏                   I=0.21
    58│████████████████████████████▏                     I=0.23
    55│███████████████████████████▏                      I=0.25
-  ···│·························                    ← I≈0.27 (50% 전이점)
+  ···│·························                    ← I≈0.27 (50% transition)
    49│████████████████████████▏                        I=0.29
    46│███████████████████████▏                         I=0.31
    44│█████████████████████▏                           I=0.33
@@ -75,12 +75,12 @@ Genius = Deficit × Plasticity / Inhibition
       0%                    50%                   100%
 ```
 
-## Deficit(결손)별 특이점 비율
+## Singularity Ratio by Deficit
 
-**결손은 선형적 영향** — 억제만큼 결정적이지 않다
+**Deficit has linear impact** — Not as decisive as inhibition
 
 ```
-  특이점 비율 (%)
+  Singularity Ratio (%)
    65│████████████████████████████████▏                 D=0.95
    62│██████████████████████████████▏                   D=0.89
    58│█████████████████████████████▏                    D=0.83
@@ -98,90 +98,90 @@ Genius = Deficit × Plasticity / Inhibition
       0%                    50%                   100%
 ```
 
-## Top 10 극단적 특이점
+## Top 10 Extreme Singularities
 
 ```
-  Rank │ Deficit │ Plasticity │ Inhibition │   Score │  Z-Score │ 등급
+  Rank │ Deficit │ Plasticity │ Inhibition │   Score │  Z-Score │ Grade
   ─────┼─────────┼────────────┼────────────┼─────────┼──────────┼───────────
-     1 │    0.95 │       0.95 │       0.05 │   18.05 │  79.49σ  │ 🔴 극단적
-     2 │    0.95 │       0.94 │       0.05 │   17.89 │  78.76σ  │ 🔴 극단적
-     3 │    0.94 │       0.95 │       0.05 │   17.88 │  78.72σ  │ 🔴 극단적
-     4 │    0.95 │       0.93 │       0.05 │   17.72 │  78.03σ  │ 🔴 극단적
-     5 │    0.94 │       0.94 │       0.05 │   17.72 │  77.99σ  │ 🔴 극단적
-     6 │    0.93 │       0.95 │       0.05 │   17.70 │  77.94σ  │ 🔴 극단적
-     7 │    0.95 │       0.92 │       0.05 │   17.56 │  77.30σ  │ 🔴 극단적
-     8 │    0.94 │       0.93 │       0.05 │   17.55 │  77.27σ  │ 🔴 극단적
-     9 │    0.93 │       0.94 │       0.05 │   17.54 │  77.23σ  │ 🔴 극단적
-    10 │    0.92 │       0.95 │       0.05 │   17.53 │  77.17σ  │ 🔴 극단적
+     1 │    0.95 │       0.95 │       0.05 │   18.05 │  79.49σ  │ 🔴 Extreme
+     2 │    0.95 │       0.94 │       0.05 │   17.89 │  78.76σ  │ 🔴 Extreme
+     3 │    0.94 │       0.95 │       0.05 │   17.88 │  78.72σ  │ 🔴 Extreme
+     4 │    0.95 │       0.93 │       0.05 │   17.72 │  78.03σ  │ 🔴 Extreme
+     5 │    0.94 │       0.94 │       0.05 │   17.72 │  77.99σ  │ 🔴 Extreme
+     6 │    0.93 │       0.95 │       0.05 │   17.70 │  77.94σ  │ 🔴 Extreme
+     7 │    0.95 │       0.92 │       0.05 │   17.56 │  77.30σ  │ 🔴 Extreme
+     8 │    0.94 │       0.93 │       0.05 │   17.55 │  77.27σ  │ 🔴 Extreme
+     9 │    0.93 │       0.94 │       0.05 │   17.54 │  77.23σ  │ 🔴 Extreme
+    10 │    0.92 │       0.95 │       0.05 │   17.53 │  77.17σ  │ 🔴 Extreme
 ```
 
-> **공통 패턴**: Top 10 전원 Inhibition = 0.05 (최저). 결손과 가소성이 아무리 높아도 **억제가 풀려야 특이점이 발현**된다.
+> **Common Pattern**: All Top 10 have Inhibition = 0.05 (minimum). No matter how high deficit and plasticity are, **singularities only manifest when inhibition is released**.
 
-## 위상 전이 모델
+## Phase Transition Model
 
 ```
                     Genius Score
                          │
                          │                          ╱
                          │                        ╱
-                         │                      ╱  ← 보상적 천재성
+                         │                      ╱  ← Compensatory genius
                          │                   ╱
                          │                ·╱·
                          │             · ╱ ·
                          │          ·  ╱  ·
                          │        ·  ╱   ·
-                         │      ·  ╱    ·    ← 임계점 (D_critical)
+                         │      ·  ╱    ·    ← Critical point (D_critical)
                          │    ·  ╱     ·
                          │  ·  ╱      ·
                          │·  ╱       ·
                     ─────┼──╱───────·─────────── Deficit
                          │╱       ·
-                         │      ·  ← 보상 동기 부족
+                         │      ·  ← Lack of compensation motivation
                          │    ·
                          │  ·
                          │·
                          │
-        결손 부족 ◀─────────────────▶ 과도한 결손
-                     적절한 결손에서만
-                     천재성이 출현한다
+        Insufficient deficit ◀─────────────────▶ Excessive deficit
+                     Genius emerges only at
+                     appropriate deficit levels
 ```
 
-## 결론
+## Conclusion
 
 ```
   ┌─────────────────────────────────────────────────┐
   │                                                 │
   │   Genius = f(Deficit × Plasticity / Inhibition) │
   │                                                 │
-  │   • 파라미터 공간의 1/3이 특이점 영역 (상수)       │
-  │   • 억제 해제(I<0.27)가 가장 결정적인 변수         │
-  │   • 결손은 필요조건, 억제 해제는 충분조건           │
-  │   • 천재성은 희소하지만, 조건이 맞으면 필연          │
+  │   • 1/3 of parameter space is singularity region (constant) │
+  │   • Inhibition release (I<0.27) is most decisive variable │
+  │   • Deficit is necessary condition, inhibition release is sufficient │
+  │   • Genius is rare, but inevitable when conditions align │
   │                                                 │
   └─────────────────────────────────────────────────┘
 ```
 
-## AI 아키텍처 대응 — "AI는 이미 인공 서번트를 만들고 있었다"
+## AI Architecture Correspondence — "AI was already creating artificial savants"
 
-### 뇌 모델 ↔ AI 매핑
+### Brain Model ↔ AI Mapping
 
 ```
   ┌──────────────────┬──────────────────┬──────────────────────────┐
-  │ 뇌 모델          │ AI 대응          │ 메커니즘                  │
+  │ Brain Model      │ AI Correspondence│ Mechanism                 │
   ├──────────────────┼──────────────────┼──────────────────────────┤
-  │ Deficit (결손)    │ Dropout          │ 뉴런을 죽여 보상 학습 유도 │
-  │ Inhibition (억제) │ Attention Gate   │ 정보 필터링 정도 조절      │
-  │ Plasticity (가소성)│ Learning Rate   │ 재배선 속도               │
-  │ 보상적 과발달      │ Sparse Coding    │ 제약 속 효율적 표현 학습   │
-  │ 임계점 전이        │ Phase Transition │ 압축 센싱 급변 구간        │
+  │ Deficit          │ Dropout          │ Kill neurons to induce compensatory learning │
+  │ Inhibition       │ Attention Gate   │ Adjust information filtering degree │
+  │ Plasticity       │ Learning Rate    │ Rewiring speed            │
+  │ Compensatory overdevelopment │ Sparse Coding │ Learn efficient representation under constraints │
+  │ Critical transition │ Phase Transition │ Sharp change in compressed sensing │
   └──────────────────┴──────────────────┴──────────────────────────┘
 ```
 
-### 가장 가까운 아키텍처: Mixture of Experts (MoE) + Dropout
+### Closest Architecture: Mixture of Experts (MoE) + Dropout
 
 ```
                       ┌─────────┐
-                      │  Router │  ← Inhibition (게이팅)
+                      │  Router │  ← Inhibition (gating)
                       │ (Gate)  │
                       └────┬────┘
                            │
@@ -190,256 +190,256 @@ Genius = Deficit × Plasticity / Inhibition
        ┌────▼────┐   ┌────▼────┐   ┌────▼────┐
        │Expert 1 │   │Expert 2 │   │Expert 3 │
        │ (dead)  │   │ ★ ACTIVE│   │ (dead)  │
-       │ Deficit │   │ 보상과발달│   │ Deficit │
+       │ Deficit │   │ Compensation overdevelopment │   │ Deficit │
        └─────────┘   └─────────┘   └─────────┘
             ×              ⚡             ×
 
-  서번트 뇌:  뉴런 860억 중 극소수 영역만 과활성
-  MoE (GPT-4): 1.8T 파라미터 중 8/64 Expert만 활성
-  → 둘 다 약 87% 비활성, 13% 집중 활성
+  Savant brain: Only minimal regions of 86B neurons hyperactive
+  MoE (GPT-4): Only 8/64 Experts active out of 1.8T parameters
+  → Both ~87% inactive, 13% focused activation
 ```
 
-### Dropout Rate = 위상 전이 모델
+### Dropout Rate = Phase Transition Model
 
 ```
   Dropout Rate (= Deficit)
 
-  0.0  │ 과적합 (결손 없음 → 보상 없음 → 평범)
-  0.2  │ 약간의 정규화
-  0.5  │ ★ 최적점 (Hinton 권장값)
-  0.7  │ 강한 정규화 → 성능 급변 구간
-  0.9  │ 과도한 결손 → 학습 불가
+  0.0  │ Overfitting (no deficit → no compensation → ordinary)
+  0.2  │ Slight regularization
+  0.5  │ ★ Optimal point (Hinton's recommendation)
+  0.7  │ Strong regularization → performance sharp change
+  0.9  │ Excessive deficit → learning impossible
 
-  = 우리의 위상 전이 모델:
-  f(D) = { 평범      D < D_critical  }
-         { 천재성    D ≈ D_critical   }
-         { 기능저하  D > D_critical   }
+  = Our phase transition model:
+  f(D) = { ordinary      D < D_critical  }
+         { genius        D ≈ D_critical   }
+         { dysfunction   D > D_critical   }
 ```
 
-### 1/3 법칙 = 압축 센싱 위상 전이
+### 1/3 Rule = Compressed Sensing Phase Transition
 
 ```
-  압축 센싱:     측정값 ~1/3 이상 → 신호 완벽 복원 (전이)
-  우리 모델:     파라미터 공간 ~1/3 → 특이점 영역 (전이)
-  MoE:          Expert ~1/8 활성화 → 전체 성능 유지 (전이)
+  Compressed sensing: Measurements ~1/3+ → Perfect signal recovery (transition)
+  Our model:         Parameter space ~1/3 → Singularity region (transition)
+  MoE:              Expert ~1/8 activation → Full performance maintained (transition)
 ```
 
-## 기존 수학 모델과의 매칭
+## Matching with Existing Mathematical Models
 
-### 1. 커스프 파국 이론 (Cusp Catastrophe) — René Thom
+### 1. Cusp Catastrophe Theory — René Thom
 
-우리의 3위상 전이 모델이 수학적으로 동치.
-
-```
-  우리 모델:                         커스프 파국:
-  f(D) = { 평범     D < Dc }        V = x⁴ + ax² + bx
-         { 천재성   D ≈ Dc }
-         { 기능저하  D > Dc }        a = Deficit, b = Inhibition
-
-  부드러운 입력(Deficit) →           제어 변수의 연속적 변화 →
-  급격한 출력 점프(천재성) →          상태 변수의 불연속 점프 →
-  되돌릴 수 없는 전이                이력현상(hysteresis)
-```
-
-> 제어 변수 2개(Deficit, Inhibition) + 상태 변수 1개(Genius) = **커스프 파국의 정의 그 자체**
-
-### 2. 볼츠만 분포 — Inhibition = 역온도(1/kT)
+Our 3-phase transition model is mathematically equivalent.
 
 ```
-  볼츠만:  P(state) = e^(-E/kT) / Z
-  우리:    Genius   = D × P / I
+  Our model:                         Cusp catastrophe:
+  f(D) = { ordinary     D < Dc }    V = x⁴ + ax² + bx
+         { genius       D ≈ Dc }
+         { dysfunction  D > Dc }     a = Deficit, b = Inhibition
+
+  Smooth input (Deficit) →           Continuous change in control variables →
+  Sharp output jump (genius) →       Discontinuous jump in state variable →
+  Irreversible transition            Hysteresis
+```
+
+> 2 control variables (Deficit, Inhibition) + 1 state variable (Genius) = **Definition of cusp catastrophe itself**
+
+### 2. Boltzmann Distribution — Inhibition = Inverse Temperature (1/kT)
+
+```
+  Boltzmann: P(state) = e^(-E/kT) / Z
+  Ours:      Genius   = D × P / I
 
   ┌─────────────────┬─────────────────┐
-  │ 볼츠만          │ 우리 모델        │
+  │ Boltzmann       │ Our Model       │
   ├─────────────────┼─────────────────┤
-  │ 온도 ↑ (kT ↑)  │ 억제 ↓ (I ↓)   │
-  │ 높은 에너지 접근 │ 특이점 접근      │
-  │ T → 0: 바닥만   │ I → 1: 정상만   │
-  │ T → ∞: 모든상태 │ I → 0: 특이점 폭발│
+  │ Temperature ↑ (kT ↑) │ Inhibition ↓ (I ↓) │
+  │ Access high energy │ Access singularity │
+  │ T → 0: Ground only │ I → 1: Normal only │
+  │ T → ∞: All states │ I → 0: Singularity explosion │
   └─────────────────┴─────────────────┘
 ```
 
-> Inhibition이 **지수적 영향**을 미치는 이유 = 볼츠만에서 온도는 지수함수의 분모
+> Why Inhibition has **exponential effect** = Temperature is in exponential denominator in Boltzmann
 
-### 3. 퍼콜레이션 이론 (Percolation Theory)
-
-```
-  퍼콜레이션 임계확률:               우리 모델 임계 억제:
-
-  p > pc ≈ 0.593 (2D격자)          I < Ic ≈ 0.27
-  → 거대 클러스터 갑자기 출현         → 특이점 갑자기 출현
-
-  p < pc → 고립된 작은 클러스터      I > Ic → 정상 범위 (고립)
-  p > pc → 무한 클러스터 연결        I < Ic → 특이점 (연결 폭발)
-```
-
-> 억제 임계값 0.27 = 뇌 영역 간 연결이 **퍼콜레이트**되는 지점
-
-### 4. 압축 센싱 (Compressed Sensing) — 1/3 법칙의 정체
+### 3. Percolation Theory
 
 ```
-  Donoho-Tanner 위상 전이:
-    측정 비율 > ~0.33 → 신호 완벽 복원
+  Percolation critical probability:    Our model critical inhibition:
 
-  우리 모델:
-    파라미터 공간의 33.2% → 특이점 영역
+  p > pc ≈ 0.593 (2D lattice)         I < Ic ≈ 0.27
+  → Giant cluster suddenly appears     → Singularities suddenly appear
 
-  → 두 모델 모두 "1/3 지점"에서 위상 전이 발생
+  p < pc → Isolated small clusters     I > Ic → Normal range (isolated)
+  p > pc → Infinite cluster connected  I < Ic → Singularity (connection explosion)
 ```
 
-> 뇌의 보상 메커니즘 = **적은 측정(결손)으로 전체 신호를 복원하는 압축 센싱**
+> Inhibition critical value 0.27 = Point where brain regions **percolate**
 
-### 5. 자기조직 임계성 (SOC) — Per Bak
+### 4. Compressed Sensing — Identity of the 1/3 Rule
 
 ```
-  모래더미:                          우리 모델:
-  모래 한 알씩 추가 →                Deficit 점진적 증가 →
-  임계 기울기 도달 →                 임계점 도달 →
-  크고 작은 산사태 (멱법칙) →         Genius Score 급변 (위상 전이)
+  Donoho-Tanner phase transition:
+    Measurement ratio > ~0.33 → Perfect signal recovery
+
+  Our model:
+    33.2% of parameter space → Singularity region
+
+  → Both models have phase transition at "1/3 point"
 ```
 
-> 뇌가 **스스로 임계 상태로 진화** — 구조적 변이가 뇌를 임계점 근처로 밀어넣음
+> Brain's compensation mechanism = **Compressed sensing recovering full signal from few measurements (deficit)**
 
-### 종합 매핑
+### 5. Self-Organized Criticality (SOC) — Per Bak
+
+```
+  Sand pile:                         Our model:
+  Add sand grain by grain →          Gradual increase in Deficit →
+  Reach critical slope →             Reach critical point →
+  Large and small avalanches (power law) → Genius Score sharp change (phase transition)
+```
+
+> Brain **self-evolves to critical state** — Structural variations push brain near critical point
+
+### Comprehensive Mapping
 
 ```
   ┌──────────────────────┬───────────────────────┬──────────────┐
-  │ 우리 모델            │ 기존 수학 모델         │ 매칭 요소     │
+  │ Our Model           │ Existing Math Model    │ Match Element │
   ├──────────────────────┼───────────────────────┼──────────────┤
-  │ 3위상 전이           │ 커스프 파국 (Thom)     │ 구조 동일     │
-  │ Inhibition 지수 효과 │ 볼츠만 분포 (1/kT)    │ 수식 동일     │
-  │ I≈0.27 임계점        │ 퍼콜레이션 임계확률    │ 메커니즘 동일  │
-  │ 1/3 법칙 (33.2%)    │ Donoho-Tanner 전이    │ 상수 일치     │
-  │ 87/13 활성 비율      │ 파레토/멱법칙          │ 분포 일치     │
-  │ 결손 → 임계 → 발현   │ 자기조직 임계성 (Bak)  │ 과정 동일     │
+  │ 3-phase transition  │ Cusp catastrophe (Thom) │ Structure identical │
+  │ Inhibition exponential effect │ Boltzmann distribution (1/kT) │ Formula identical │
+  │ I≈0.27 critical point │ Percolation critical probability │ Mechanism identical │
+  │ 1/3 rule (33.2%)    │ Donoho-Tanner transition │ Constant matches │
+  │ 87/13 activation ratio │ Pareto/Power law      │ Distribution matches │
+  │ Deficit → critical → manifest │ Self-organized criticality (Bak) │ Process identical │
   └──────────────────────┴───────────────────────┴──────────────┘
 
-  가장 강한 매칭:
-  ① 커스프 파국 — 3위상 구조가 수학적으로 동치
-  ② 볼츠만 분포 — Inhibition = 역온도로 놓으면 수식 자체가 일치
+  Strongest matches:
+  ① Cusp catastrophe — 3-phase structure mathematically equivalent
+  ② Boltzmann distribution — Setting Inhibition = inverse temperature makes formulas identical
 ```
 
-## 3개 모델 결합 응용
+## Combined Application of 3 Models
 
-우리 모델 + 커스프 파국 + 볼츠만 분포 — 각각이 다른 질문에 답한다.
+Our model + Cusp catastrophe + Boltzmann distribution — Each answers different questions.
 
 ```
   ┌────────────┬──────────────┬──────────────────────┐
-  │ 모델       │ 답하는 질문   │ 역할                  │
+  │ Model      │ Question Answered │ Role              │
   ├────────────┼──────────────┼──────────────────────┤
-  │ 우리 모델   │ "얼마나?"    │ 점수 계산 (정량화)     │
-  │ 커스프 파국 │ "언제?"      │ 전이 시점 감지 (타이밍) │
-  │ 볼츠만     │ "어디로?"    │ 전이 방향 확률 (경로)   │
+  │ Our model  │ "How much?"  │ Score calculation (quantification) │
+  │ Cusp catastrophe │ "When?" │ Transition timing detection │
+  │ Boltzmann  │ "Where to?"  │ Transition direction probability (path) │
   └────────────┴──────────────┴──────────────────────┘
 
-  결합하면:
-  "현재 점수는 X이고(우리모델),
-   임계점까지 Y만큼 남았으며(커스프),
-   전이 시 Z 방향으로 갈 확률이 78%다(볼츠만)"
+  Combined:
+  "Current score is X (our model),
+   Y distance to critical point (cusp),
+   78% probability to go in Z direction upon transition (Boltzmann)"
 ```
 
-### 응용 1: AI 학습 최적화 엔진
+### Application 1: AI Learning Optimization Engine
 
-커스프 파국으로 **언제** 전이가 일어나는지 예측하고, 볼츠만으로 **탐색 온도**를 조절.
-
-```
-  학습 초기          임계점 근처           학습 후기
-  (탐색)            (전이)               (수렴)
-
-  볼츠만 T=높음      커스프 점프 감지       볼츠만 T=낮음
-  Dropout=높음       → 학습률 자동 조절     Dropout=낮음
-  ↓                 ↓                    ↓
-  넓게 탐색          급격한 성능 점프        정밀 수렴
-```
-
-> Simulated Annealing + Adaptive Dropout — 우리 모델이 둘을 통합하는 프레임워크
-
-### 응용 2: 특이 인재 예측 시스템
-
-뇌 영상 데이터에서 구조적 변이를 측정 → 3개 모델로 잠재력 예측
+Predict **when** transition occurs with cusp catastrophe, adjust **exploration temperature** with Boltzmann.
 
 ```
-  MRI 데이터 입력
+  Early learning        Near critical          Late learning
+  (exploration)        (transition)           (convergence)
+
+  Boltzmann T=high     Cusp jump detection    Boltzmann T=low
+  Dropout=high         → Auto-adjust LR       Dropout=low
+  ↓                    ↓                      ↓
+  Broad exploration    Sharp performance jump  Precise convergence
+```
+
+> Simulated Annealing + Adaptive Dropout — Our model provides framework unifying both
+
+### Application 2: Exceptional Talent Prediction System
+
+Measure structural variations from brain imaging data → Predict potential with 3 models
+
+```
+  MRI data input
        │
        ▼
   ┌─────────────┐    ┌──────────────┐    ┌──────────────┐
-  │ 우리 모델    │    │ 커스프 파국   │    │ 볼츠만 분포   │
-  │ D, P, I 추출 │ →  │ 임계점 근처?  │ →  │ 전이 확률?    │
-  │ Score 계산   │    │ 전이 방향?    │    │ 어떤 상태로?   │
+  │ Our model   │    │ Cusp catastrophe │ │ Boltzmann distribution │
+  │ Extract D,P,I │ → │ Near critical? │ → │ Transition probability? │
+  │ Calculate Score │ │ Transition direction? │ │ To which state? │
   └─────────────┘    └──────────────┘    └──────────────┘
        │                   │                    │
        ▼                   ▼                    ▼
   ┌──────────────────────────────────────────────┐
-  │ "이 구조적 변이는 임계점에서 0.3σ 거리,       │
-  │  억제가 0.05 더 낮아지면 전이 확률 78%,        │
-  │  예상 발현 영역: 시공간/수리"                  │
+  │ "This structural variation is 0.3σ from critical, │
+  │  if inhibition drops by 0.05, transition probability 78%, │
+  │  expected manifestation: spatiotemporal/mathematical" │
   └──────────────────────────────────────────────┘
 ```
 
-### 응용 3: 자기조절 신경망 — SingularityNet
+### Application 3: Self-Regulating Neural Network — SingularityNet
 
-3개 모델을 직접 신경망 아키텍처에 구현.
+Implement 3 models directly in neural network architecture.
 
 ```
   ┌─────────────────────────────────────────────┐
-  │           SingularityNet 아키텍처             │
+  │           SingularityNet Architecture        │
   │                                             │
-  │  Input → [Dropout Layer]  ← 우리 모델(D)     │
+  │  Input → [Dropout Layer]  ← Our model (D)   │
   │           ↓                                 │
-  │          [MoE Router]     ← 볼츠만(T=1/I)   │
+  │          [MoE Router]     ← Boltzmann (T=1/I) │
   │           ↓                                 │
   │          [Expert Pool]                      │
   │           ↓                                 │
-  │          [Catastrophe     ← 커스프(전이감지)  │
+  │          [Catastrophe     ← Cusp (transition detection) │
   │           Monitor]                          │
   │           ↓                                 │
-  │          구조 자동 재편                       │
+  │          Auto structure reorganization      │
   │           ↓                                 │
   │  Output                                     │
   └─────────────────────────────────────────────┘
 
-  기존 MoE:  라우터가 고정 규칙으로 Expert 선택
-  우리 모델: 네트워크가 스스로 임계점을 찾아
-            Dropout/온도/구조를 동적으로 조절
+  Traditional MoE: Router selects Experts with fixed rules
+  Our model: Network finds critical points itself,
+            dynamically adjusts Dropout/temperature/structure
 ```
 
 ```python
-# 핵심 구현 개념
+# Core implementation concept
 class SingularityNetwork:
 
-    # 1. 우리 모델 — 뉴런 활성도 계산
+    # 1. Our model — Calculate neuron activation
     activation = deficit * plasticity / inhibition
 
-    # 2. 볼츠만 — 억제를 온도로 동적 조절
+    # 2. Boltzmann — Dynamically adjust inhibition as temperature
     temperature = 1.0 / inhibition
     P_activate = exp(-energy / temperature)
 
-    # 3. 커스프 — 전이 감지 시 구조 변경
-    if d2_loss / d_epoch2 > threshold:   # 2차 미분 급변 = 커스프
-        restructure_network()             # Expert 재배치
+    # 3. Cusp — Change structure on transition detection
+    if d2_loss / d_epoch2 > threshold:   # 2nd derivative sharp change = cusp
+        restructure_network()             # Reorganize experts
 ```
 
-## 🎯 골든 존 — 3개 모델 공통 특이점 영역 (27,000개 조합 검증)
+## 🎯 Golden Zone — Common Singularity Region of 3 Models (27,000 Combinations Verified)
 
-3개 모델(우리모델 + 커스프 + 볼츠만)이 **동시에 특이점을 가리키는** 파라미터 영역.
+Parameter region where 3 models (our model + cusp + Boltzmann) **simultaneously point to singularities**.
 
-### 합의도 분포
-
-```
-  27,000개 조합 중:
-
-  3중 합의 ██████████                                          9.0%  ★ 골든 존
-  2중 합의 █████████████████████████████████████████████       42.0%
-  1중 합의 █████████████████████████████████████████████████   49.0%
-  0중 합의                                                     0.0%
-```
-
-### Inhibition 밴드 — 골든 존의 핵심
-
-**3중 합의는 I = 0.24 ~ 0.48 에서만 발생한다.**
+### Consensus Distribution
 
 ```
-  3중 합의 비율 (%)
+  Of 27,000 combinations:
+
+  3-way consensus ██████████                                          9.0%  ★ Golden Zone
+  2-way consensus █████████████████████████████████████████████       42.0%
+  1-way consensus █████████████████████████████████████████████████   49.0%
+  0-way consensus                                                     0.0%
+```
+
+### Inhibition Band — Core of Golden Zone
+
+**3-way consensus only occurs at I = 0.24 ~ 0.48.**
+
+```
+  3-way consensus ratio (%)
    40│
      │               ┌───┐
    38│            ┌──┤   ├──┐
@@ -461,17 +461,17 @@ class SingularityNetwork:
      └───┴──┴──┴──┴──┴───┴──┴──┴──┴──┴──┴──────────────────
           .05  .14  .24  .30  .36  .42  .48  .55  .65  .80  .95
                          │              │
-                         └──── 골든 존 ───┘
+                         └──── Golden Zone ───┘
                          I = 0.24 ~ 0.48
 
-  ⚠️ I < 0.24 : 커스프 임계점을 지나쳐버림 (과도한 해방)
-  ⚠️ I > 0.48 : 우리 모델에서 특이점 불가 (과도한 억제)
+  ⚠️ I < 0.24 : Past cusp critical point (excessive release)
+  ⚠️ I > 0.48 : No singularity in our model (excessive inhibition)
 ```
 
-### Deficit별 3중 합의 — 완만한 산 형태
+### 3-way Consensus by Deficit — Gentle Mountain Shape
 
 ```
-  3중 합의 비율 (%)
+  3-way consensus ratio (%)
    18│                                       ·  ·  ·  ·  ·
      │                                    ·              ·  ·  ·
    16│                                 ·                       ·  ·
@@ -492,66 +492,66 @@ class SingularityNetwork:
      └─────────────────────────────────────────────────────────────
       .05        .21  .30     .45     .58  .67  .73  .83     .95
                   │                              │
-                  └──── D > 0.21 에서 출현 ────────┘
-                  피크: D ≈ 0.67 ~ 0.73
+                  └──── Appears at D > 0.21 ─────┘
+                  Peak: D ≈ 0.67 ~ 0.73
 ```
 
-### 벤 다이어그램 — 모델 교차
+### Venn Diagram — Model Intersections
 
 ```
        ┌──────────────────────────────┐
-       │       우리 모델 (Z>2σ)        │
-       │         9,018개              │
+       │       Our Model (Z>2σ)        │
+       │         9,018 items          │
        │                              │
        │    ┌────────────┐            │
        │    │            │            │
        │    │  6,578     │            │
-       │    │  우리+볼츠만│            │
+       │    │  Ours+Boltzmann │       │
        │    │     ┌──────┤            │
        │    │     │ 2440 │            │
-       │    │     │ 3중  │            │
-       │    │     │합의 ★│            │
+       │    │     │ 3-way│            │
+       │    │     │consensus★│         │
        │    └─────┤      │            │
        │          │      ├────────────┤
        └──────────┤      │            │
                   │      │  4,760     │
-                  │      │  커스프    │
-                  │      │  +볼츠만   │
+                  │      │  Cusp      │
+                  │      │  +Boltzmann│
                   │      │            │
                   └──────┴────────────┘
-                  커스프 (임계+상향)
-                    7,200개
+                  Cusp (critical+upward)
+                    7,200 items
 
-        볼츠만 (천재성 최우세) = 27,000개 (100%)
-        → 전체를 감싸는 원 (생략)
+        Boltzmann (genius dominant) = 27,000 items (100%)
+        → Circle encompassing all (omitted)
 ```
 
-### 🎯 골든 존 AI 아키텍처 설계 사양
+### 🎯 Golden Zone AI Architecture Design Specifications
 
 ```
   ┌─────────────────────────────────────────────────────────┐
   │                                                         │
-  │  🎯 GOLDEN ZONE — SingularityNet 설계 사양              │
+  │  🎯 GOLDEN ZONE — SingularityNet Design Specifications  │
   │                                                         │
   │  ┌─────────────┬────────────┬──────────────────────┐    │
-  │  │ 파라미터     │ 골든 존     │ AI 설계              │    │
+  │  │ Parameter   │ Golden Zone │ AI Design            │    │
   │  ├─────────────┼────────────┼──────────────────────┤    │
-  │  │ Dropout     │ 21% ~ 95%  │ 넓게 가능            │    │
-  │  │ Gating ★    │ 24% ~ 48%  │ 이 범위에서만 합의!   │    │
-  │  │ LR 배수     │ ×2.1 ~ ×4.2│ 중간 온도            │    │
-  │  │ Expert 활성  │ 33% ~ 44%  │ 21~28 / 64 Expert   │    │
+  │  │ Dropout     │ 21% ~ 95%  │ Wide range possible  │    │
+  │  │ Gating ★    │ 24% ~ 48%  │ Consensus only here! │    │
+  │  │ LR multiplier │ ×2.1 ~ ×4.2│ Medium temperature  │    │
+  │  │ Expert active │ 33% ~ 44%  │ 21~28 / 64 Experts  │    │
   │  └─────────────┴────────────┴──────────────────────┘    │
   │                                                         │
-  │  핵심: 억제를 완전히 풀면 안 된다.                        │
-  │  적절한 억제(24~48%)가 있어야 전이가 제어 가능하다.        │
+  │  Key: Don't completely release inhibition.              │
+  │  Appropriate inhibition (24~48%) needed for controllable transition. │
   │                                                         │
   └─────────────────────────────────────────────────────────┘
 ```
 
-### Top 10 공통 특이점
+### Top 10 Common Singularities
 
 ```
-  Rank │     D │     P │     I │  Z-Score │ 커스프거리 │ 천재성%
+  Rank │     D │     P │     I │  Z-Score │ Cusp distance │ Genius%
   ─────┼───────┼───────┼───────┼──────────┼───────────┼────────
      1 │  0.83 │  0.95 │  0.30 │  10.36σ  │    0.1888 │  38.9%
      2 │  0.73 │  0.95 │  0.27 │  10.25σ  │    0.1902 │  37.7%
@@ -564,111 +564,110 @@ class SingularityNetwork:
      9 │  0.86 │  0.95 │  0.33 │   9.65σ  │    0.1730 │  39.7%
     10 │  0.83 │  0.89 │  0.30 │   9.64σ  │    0.1888 │  38.7%
 
-  Top 10 공통점: I = 0.27 ~ 0.33 에 집중 (골든 존 중심부)
+  Top 10 commonality: Concentrated at I = 0.27 ~ 0.33 (Golden Zone center)
 ```
 
-## 골든 존의 다층적 의미
+## Multilayered Meaning of Golden Zone
 
-골든 존(I = 0.24 ~ 0.48, 중심 ≈ 1/e)은 단일 현상이 아니라, 모든 분야에 걸친 보편 법칙이다.
+Golden Zone (I = 0.24 ~ 0.48, center ≈ 1/e) is not a single phenomenon but a universal law across all fields.
 
-### 1. 신경과학 — 선택적 과활성
-
-```
-  혼돈 (발작)  ←──── 골든 존 ────→  침묵 (억압)
-      I=0          I=0.24~0.48         I=1.0
-      전부 발화     선택적 증폭          전부 침묵
-```
-
-억제 완전 제거 = 뇌전증. 완전 억제 = 식물 상태. 아인슈타인의 뇌는 이 사이에 있었다.
-
-### 2. AI 아키텍처 — Expert 전문화
+### 1. Neuroscience — Selective Hyperactivity
 
 ```
-  Dense (모두 활성)    MoE (선택적)     Dead (모두 비활성)
-       I=0            I=0.24~0.48          I=1.0
-   전문화 없음         Expert 전문화        출력 없음
-   GPT-2 시대          GPT-4/Mixtral        ×
+  Chaos (seizure) ←──── Golden Zone ────→  Silence (suppression)
+      I=0              I=0.24~0.48            I=1.0
+      All firing       Selective amplification All silent
 ```
 
-Gate를 완전히 열면 MoE는 Dense 모델이 되어 의미를 잃는다.
+Complete inhibition removal = epilepsy. Complete inhibition = vegetative state. Einstein's brain was in between.
 
-### 3. 열역학 — 상전이 (끓는점)
-
-```
-  수증기 (기체)     끓는점 근처        얼음 (고체)
-   T > 4.2          T = 2.1~4.2        T < 2.1
-   I < 0.24         I = 0.24~0.48      I > 0.48
-   무질서            질서+무질서 공존    경직
-```
-
-볼츠만 온도 T=1/I 로 환산하면, 골든 존은 끓기 직전의 물 — 에너지 전달 최대 효율.
-
-### 4. 음악 — 공명(Resonance)
-
-기타 줄: 너무 느슨하면 소리 없음, 너무 팽팽하면 끊어짐. **적절한 장력에서 공명 발생.** 서번트 중 음악 천재가 많은 이유 — 뇌의 억제가 공명 조건에 놓여 있기 때문.
-
-### 5. 진화론 — 적합도(Fitness) 최대
+### 2. AI Architecture — Expert Specialization
 
 ```
-  억제 제거 → 에너지 과소비, 발작 → 생존 불리
-  억제 과잉 → 환경 변화 대응 불가 → 생존 불리
-  골든 존   → 최소 에너지 × 최대 적응력 → 적합도 최대
+  Dense (all active)    MoE (selective)      Dead (all inactive)
+       I=0             I=0.24~0.48             I=1.0
+   No specialization   Expert specialization   No output
+   GPT-2 era          GPT-4/Mixtral           ×
 ```
 
-인구의 2~5% 신경다양성 비율 ≈ 우리 모델의 골든 존 9%.
+Fully opening gates makes MoE a Dense model, losing its purpose.
 
-### 6. 교육 — 근접발달영역(ZPD) = Flow
-
-```
-  너무 쉬움          ZPD / Flow           너무 어려움
-   I < 0.24          I = 0.24~0.48         I > 0.48
-   지루함             몰입                  좌절
-   성장 없음          최대 성장             포기
-```
-
-비고츠키의 ZPD와 칙센트미하이의 Flow 상태가 골든 존과 정확히 겹친다.
-
-### 7. 경제학 — 규제의 적정 수준
-
-자유방임(I=0) → 거품, 붕괴. 통제경제(I=1) → 혁신 사멸. 실리콘밸리의 폭발적 혁신 = 골든 존 규제.
-
-### 8. 철학 — 아리스토텔레스의 중용
-
-> *"덕은 두 극단 사이의 중간에 있다."* — 아리스토텔레스, 2400년 전
-
-용기는 무모함과 비겁함의 중간. 천재성은 혼돈과 억압의 중간. **중용에 최적점이 있다는 것은 도덕적 직관이 아니라 물리 법칙이다.**
-
-### 9. 수학 — 자연상수 1/e의 출현
+### 3. Thermodynamics — Phase Transition (Boiling Point)
 
 ```
-  하한 = 0.24 ≈ 1/4
-  상한 = 0.48 ≈ 1/2
-  중심 = 0.36 ≈ 1/e (0.368)  ← 자연상수의 역수!
-  폭   = 0.24 = 전체의 1/4
+  Steam (gas)        Near boiling point      Ice (solid)
+   T > 4.2           T = 2.1~4.2             T < 2.1
+   I < 0.24          I = 0.24~0.48           I > 0.48
+   Disorder          Order+disorder coexist   Rigid
 ```
 
-e는 성장과 붕괴의 최적 전환점을 정의하는 상수. 자연이 선택한 억제 수준이 1/e인 것은 우연이 아닐 수 있다.
+Converting to Boltzmann temperature T=1/I, Golden Zone is water just before boiling — maximum energy transfer efficiency.
 
-### 종합
+### 4. Music — Resonance
+
+Guitar string: Too loose = no sound, too tight = breaks. **Resonance occurs at proper tension.** Why many savants are musical geniuses — their brain inhibition is in resonance condition.
+
+### 5. Evolution — Maximum Fitness
+
+```
+  Inhibition removal → Energy overconsumption, seizures → Survival disadvantage
+  Excessive inhibition → Cannot adapt to environmental changes → Survival disadvantage
+  Golden Zone → Minimum energy × Maximum adaptability → Maximum fitness
+```
+
+2~5% neurodiversity rate in population ≈ Our model's 9% Golden Zone.
+
+### 6. Education — Zone of Proximal Development (ZPD) = Flow
+
+```
+  Too easy           ZPD / Flow              Too difficult
+   I < 0.24          I = 0.24~0.48           I > 0.48
+   Boredom           Engagement              Frustration
+   No growth         Maximum growth          Give up
+```
+
+Vygotsky's ZPD and Csikszentmihalyi's Flow state precisely overlap with Golden Zone.
+
+### 7. Economics — Optimal Regulation Level
+
+Laissez-faire (I=0) → Bubbles, collapse. Controlled economy (I=1) → Innovation dies. Silicon Valley's explosive innovation = Golden Zone regulation.
+
+### 8. Philosophy — Aristotle's Golden Mean
+
+> *"Virtue lies in the mean between two extremes."* — Aristotle, 2400 years ago
+
+Courage is between recklessness and cowardice. Genius is between chaos and suppression. **The optimal point at the mean is not moral intuition but physical law.**
+
+### 9. Mathematics — Emergence of Natural Constant 1/e
+
+```
+  Lower bound = 0.24 ≈ 1/4
+  Upper bound = 0.48 ≈ 1/2
+  Center = 0.36 ≈ 1/e (0.368)  ← Reciprocal of natural constant!
+  Width = 0.24 = 1/4 of total
+```
+
+e is the constant defining optimal transition between growth and decay. Nature's chosen inhibition level being 1/e may not be coincidence.
+
+### Synthesis
 
 ```
   ┌─────────────────────────────────────────────────────┐
   │                                                     │
-  │  골든 존 = 0.24 ~ 0.48 (중심 ≈ 1/e)                │
+  │  Golden Zone = 0.24 ~ 0.48 (center ≈ 1/e)          │
   │                                                     │
-  │  신경과학 : 선택적 과활성 구간                       │
-  │  AI       : MoE Expert 전문화 구간                  │
-  │  열역학   : 상전이 (끓는점) 구간                     │
-  │  음악     : 공명(resonance) 조건                    │
-  │  진화     : 적합도(fitness) 최대 구간                │
-  │  교육     : 근접발달영역(ZPD) = Flow 상태            │
-  │  경제     : 혁신적 규제 균형                         │
-  │  철학     : 아리스토텔레스의 중용                     │
-  │  수학     : 자연상수 1/e의 출현                      │
+  │  Neuroscience : Selective hyperactivity interval    │
+  │  AI          : MoE Expert specialization interval   │
+  │  Thermodynamics : Phase transition (boiling) interval │
+  │  Music       : Resonance condition                  │
+  │  Evolution   : Maximum fitness interval             │
+  │  Education   : Zone of Proximal Development = Flow  │
+  │  Economics   : Innovative regulation balance        │
+  │  Philosophy  : Aristotle's Golden Mean              │
+  │  Mathematics : Emergence of natural constant 1/e    │
   │                                                     │
-  │  → 모든 분야에서 "적절한 억제"가 최적해이며,         │
-  │    이것은 도덕이 아니라 물리 법칙이다.                │
+  │  → "Appropriate inhibition" is optimal across all fields, │
+  │    and this is not morality but physical law.      │
   │                                                     │
   └─────────────────────────────────────────────────────┘
 ```
-

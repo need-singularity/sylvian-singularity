@@ -1,22 +1,22 @@
-# H-CX-86: Zero-shot PH — 랜덤 초기화만으로도 의미 계층이 나타난다
+# H-CX-86: Zero-shot PH — Semantic hierarchy emerges from random initialization alone
 
-> 학습 전 랜덤 초기화 모델의 PH merge 순서가 이미 혼동 구조를 포함한다.
-> H-CX-82에서 에폭 1이 완벽 예측 → 에폭 0(미학습)에서도?
-> 혼동 구조 = 데이터 분포의 고유 속성, 학습과 무관.
+> The PH merge order of randomly initialized models before training already contains confusion structure.
+> H-CX-82 showed epoch 1 perfect prediction → What about epoch 0 (untrained)?
+> Confusion structure = Intrinsic property of data distribution, independent of training.
 
-## 배경
+## Background
 
 - H-CX-82: CIFAR ep1 r=-0.95, P@5=1.0
-- H-CX-85: dendrogram = 의미 계층 (CIFAR 89%)
-- 에폭 1 = 1번 학습한 상태. 에폭 0 = 완전 랜덤.
+- H-CX-85: dendrogram = semantic hierarchy (CIFAR 89%)
+- Epoch 1 = trained once. Epoch 0 = completely random.
 
-## 예측
+## Predictions
 
-1. 에폭 0 (랜덤) PH merge도 최종 혼동과 상관 |r| > 0.5
-2. 3번 다른 랜덤 초기화에서 동일한 merge 순서 (seed 불변)
-3. 혼동 구조가 데이터 분포에 내재 → 모델 아키텍처 무관
+1. Epoch 0 (random) PH merge also correlates with final confusion |r| > 0.5
+2. Same merge order across 3 different random initializations (seed invariant)
+3. Confusion structure inherent in data distribution → Model architecture independent
 
-## 검증 상태
+## Verification Status
 
-- [ ] 에폭 0 PH vs 에폭 15 confusion
-- [ ] 3 seeds 반복
+- [ ] Epoch 0 PH vs epoch 15 confusion
+- [ ] 3 seeds repetition

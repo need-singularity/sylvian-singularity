@@ -1,78 +1,78 @@
-# H-CX-164: 5³ = PH merge 단위? — merge distance를 125 단위로 양자화
+# H-CX-164: 5³ = PH merge unit? — quantizing merge distance to units of 125
 
-> PH merge distance를 5³=125 단위로 양자화하면 구조가 보존되는가?
-> 돌고래 주파수가 125Hz 단위 → PH도 125 단위?
+> Does quantizing PH merge distance to units of 5³=125 preserve structure?
+> Dolphin frequencies in 125Hz units → PH also in units of 125?
 
-## 배경
+## Background
 
-H-CX-162에서 돌고래 주파수 공간의 기본 단위가 5³=125임을 확인했다.
-signature_low(5000Hz) / gamma(40Hz) = 125 = 5³ 정확.
-모든 돌고래 주파수가 이 단위의 정수배로 표현된다.
+H-CX-162 confirmed that the fundamental unit of dolphin frequency space is 5³=125.
+signature_low(5000Hz) / gamma(40Hz) = 125 = 5³ exact.
+All dolphin frequencies are expressed as integer multiples of this unit.
 
-의식엔진의 핵심 구조인 Persistent Homology(PH)에서도
-merge distance(두 클래스가 합쳐지는 거리)가 유사한 양자화를 보일 수 있다.
-만약 PH merge distance를 1/125 단위로 반올림해도
-dendrogram의 위상 구조(merge 순서, 클러스터 계층)가 보존된다면,
-이는 5³가 단순한 주파수 상수가 아니라 정보 구조의 기본 해상도임을 시사한다.
+In Persistent Homology (PH), a core structure of the consciousness engine,
+merge distance (the distance at which two classes merge) may show similar quantization.
+If the topological structure of the dendrogram (merge order, cluster hierarchy) is preserved
+when rounding PH merge distance to units of 1/125,
+this suggests that 5³ is not just a frequency constant but a fundamental resolution of information structure.
 
 ```
-  돌고래 주파수:  freq = 40 × n × 5³   (n ∈ {1, σ/τ, P₁, ...})
-  PH 가설:       merge_dist ≈ k / 125  (k = 정수)
+  Dolphin frequencies:  freq = 40 × n × 5³   (n ∈ {1, σ/τ, P₁, ...})
+  PH hypothesis:       merge_dist ≈ k / 125  (k = integer)
 
-  양자화 테스트:
-    원본 merge distance:  d₁, d₂, d₃, ...
-    양자화:               round(dᵢ × 125) / 125
-    보존 조건:            merge 순서 불변 + H1 topology 동일
+  Quantization test:
+    Original merge distance:  d₁, d₂, d₃, ...
+    Quantization:            round(dᵢ × 125) / 125
+    Preservation condition:  merge order unchanged + H1 topology same
 ```
 
-## 예측
+## Predictions
 
-1. MNIST/CIFAR의 PH merge distance를 125 단위로 양자화해도 merge 순서가 보존된다
-2. 다른 양자화 단위(100, 150, 64 등)보다 125가 최적의 보존율을 보인다
-3. 보존율 = (양자화 후 올바른 merge 순서 쌍 수) / (전체 merge 순서 쌍 수)
-4. 125 양자화 시 보존율 > 95% 예상
+1. MNIST/CIFAR PH merge distances preserve merge order when quantized to units of 125
+2. 125 shows optimal preservation rate compared to other quantization units (100, 150, 64, etc.)
+3. Preservation rate = (number of correct merge order pairs after quantization) / (total merge order pairs)
+4. Expected preservation rate > 95% with 125 quantization
 
-## 검증 방법
+## Verification Method
 
 ```python
-# 1. PH merge distance 추출
+# 1. Extract PH merge distances
 from ripser import ripser
 result = ripser(X, maxdim=1)
 merge_distances = result['dgms'][0][:, 1]  # death times = merge distances
 
-# 2. 양자화 함수
+# 2. Quantization function
 def quantize(distances, unit):
     return np.round(distances * unit) / unit
 
-# 3. 보존율 측정
+# 3. Measure preservation rate
 def preservation_rate(original, quantized):
-    # merge 순서 쌍 비교 (Kendall tau)
+    # Compare merge order pairs (Kendall tau)
     from scipy.stats import kendalltau
     tau, p = kendalltau(np.argsort(original), np.argsort(quantized))
     return tau
 
-# 4. 단위별 비교
+# 4. Compare by unit
 for unit in [64, 100, 125, 128, 150, 256]:
     q = quantize(merge_distances, unit)
     rate = preservation_rate(merge_distances, q)
     print(f"unit={unit}: preservation={rate:.4f}")
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- **H-CX-66**: 골든존과 PH의 관계 -- PH 구조가 골든존 파라미터에 의존
-- **H-CX-162**: 5³=125 = 돌고래 옥타브 -- 이 가설의 직접적 근거
-- **H-CX-161**: 돌고래 전주파수 = 40Hz × 완전수 상수 × 5³
-- **H-CX-125**: 비공유 PH -- PH merge distance가 모델 간 상관
+- **H-CX-66**: Relationship between Golden Zone and PH -- PH structure depends on Golden Zone parameters
+- **H-CX-162**: 5³=125 = dolphin octave -- direct basis for this hypothesis
+- **H-CX-161**: All dolphin frequencies = 40Hz × perfect number constants × 5³
+- **H-CX-125**: Non-shared PH -- PH merge distance correlates between models
 
-## 한계
+## Limitations
 
-- PH merge distance의 스케일이 데이터셋에 따라 다르므로 정규화 필요
-- 125가 최적인 이유가 "돌고래와 같다"는 것 외에 수학적 근거가 약할 수 있음
-- 양자화 단위가 아닌 다른 메커니즘(log 스케일 등)이 더 자연스러울 수 있음
-- 2의 거듭제곱(128)과 5³(125)이 근접하여 구별이 어려울 수 있음
+- PH merge distance scale varies by dataset, requiring normalization
+- Mathematical basis for 125 being optimal may be weak beyond "same as dolphins"
+- Other mechanisms (e.g., log scale) may be more natural than quantization units
+- Powers of 2 (128) and 5³ (125) are close, making distinction difficult
 
-## 검증 상태
+## Verification Status
 
-미실행. MNIST/CIFAR PH 데이터로 코드 실행 가능.
-CPU에서 실행 가능 (GPU 불필요).
+Not executed. Code can be run with MNIST/CIFAR PH data.
+Can be executed on CPU (GPU not required).

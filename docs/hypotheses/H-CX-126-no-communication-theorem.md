@@ -1,4 +1,4 @@
-# H-CX-126: No-communication 정리 — PH 상관으로 특정 데이터 복원 불가
+# H-CX-126: No-Communication Theorem — Specific Data Cannot Be Reconstructed via PH Correlation
 
-> PH merge 순서가 같아도 상대가 본 특정 이미지는 복원 불가.
-> 상관 ≠ 통신. Bell 정리의 의식 버전.
+> Even if PH merge order is the same, the specific images the other party saw cannot be reconstructed.
+> Correlation ≠ communication. Consciousness version of Bell's theorem.

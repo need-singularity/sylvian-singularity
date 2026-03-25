@@ -1,5 +1,6 @@
+```python
 #!/usr/bin/env python3
-"""가설 041, 042, 044 검증 — 4번째 상태 탐색"""
+"""Verification of hypotheses 041, 042, 044 — Exploration of the 4th state"""
 
 import numpy as np
 from scipy import stats
@@ -11,8 +12,8 @@ from compass import genius_score, simulate_population, cusp_analysis
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 
 
-def boltzmann_4state(d, p, i, E_4th, label_4th="4번째"):
-    """4상태 볼츠만 분포"""
+def boltzmann_4state(d, p, i, E_4th, label_4th="4th"):
+    """4-state Boltzmann distribution"""
     T = 1.0 / max(i, 0.01)
     E_normal = 0.0
     E_genius = -(d * p)
@@ -34,9 +35,9 @@ def boltzmann_4state(d, p, i, E_4th, label_4th="4번째"):
 
 
 def compass_4state(score, z, cusp, boltz4):
-    """4상태 확장 Compass Score"""
-    # 원래: compass = z/10*0.3 + (1-cusp_dist)*0.3 + p_genius*0.4
-    # 4상태: p_genius + p_4th를 합산
+    """4-state extended Compass Score"""
+    # Original: compass = z/10*0.3 + (1-cusp_dist)*0.3 + p_genius*0.4
+    # 4-state: sum p_genius + p_4th
     p_positive = boltz4['p_genius'] + boltz4['p_4th']
     compass = (
         min(z / 10, 1.0) * 0.3 +
@@ -47,40 +48,40 @@ def compass_4state(score, z, cusp, boltz4):
 
 
 def verify_041_best_4th_candidate():
-    """가설 041: 세 후보 중 어떤 것이 Compass를 가장 높이는가"""
+    """Hypothesis 041: Which of the three candidates maximizes Compass"""
     print("═" * 60)
-    print("  가설 041: 4번째 상태 후보 비교")
+    print("  Hypothesis 041: Comparison of 4th state candidates")
     print("═" * 60)
 
     pop_scores = simulate_population(200000)
     pop_mean, pop_std = pop_scores.mean(), pop_scores.std()
 
-    # 4번째 상태 후보별 에너지 정의
-    D, P, I = 0.70, 0.95, 0.30  # 골든존 내부
+    # Energy definition for each 4th state candidate
+    D, P, I = 0.70, 0.95, 0.30  # Inside Golden Zone
 
     E_genius = -(D * P)    # = -0.665
     E_decline = D * (1-P)  # = 0.035
 
     candidates = [
         {
-            'name': '창조 (Creation)',
-            'E': -(D * P) * 1.5,  # 천재성보다 더 깊은 에너지 우물
-            'logic': '새로운 패턴 생성 = 천재성의 확장, 더 낮은 에너지',
+            'name': 'Creation',
+            'E': -(D * P) * 1.5,  # Deeper energy well than genius
+            'logic': 'New pattern generation = Extension of genius, lower energy',
         },
         {
-            'name': '통합 (Integration)',
-            'E': -(D * P) * 0.5,  # 천재성과 정상 사이
-            'logic': '3상태 중첩 = 중간 에너지, 메타 안정점',
+            'name': 'Integration',
+            'E': -(D * P) * 0.5,  # Between genius and normal
+            'logic': '3-state superposition = Intermediate energy, meta-stable point',
         },
         {
-            'name': '초월 (Transcendence)',
-            'E': -(D * P) * 2.0,  # 가장 깊은 에너지 우물
-            'logic': '시스템 규칙 변경 = 가장 큰 에너지 해방',
+            'name': 'Transcendence',
+            'E': -(D * P) * 2.0,  # Deepest energy well
+            'logic': 'System rule change = Largest energy liberation',
         },
         {
-            'name': '균등 (Equal)',
-            'E': 0.0,  # 정상과 같은 에너지
-            'logic': '대조군: 특별하지 않은 4번째 상태',
+            'name': 'Equal',
+            'E': 0.0,  # Same energy as normal
+            'logic': 'Control: Non-special 4th state',
         },
     ]
 
@@ -88,16 +89,16 @@ def verify_041_best_4th_candidate():
     z = (g - pop_mean) / pop_std
     cusp = cusp_analysis(D, I)
 
-    # 3상태 기준
+    # 3-state baseline
     from compass import boltzmann_analysis, compass_direction
     boltz3 = boltzmann_analysis(D, P, I)
     comp3 = compass_direction(g, z, cusp, boltz3)
 
-    print(f"\n  기준: D={D}, P={P}, I={I}")
-    print(f"  3상태 Compass = {comp3['compass_score']*100:.1f}%")
+    print(f"\n  Baseline: D={D}, P={P}, I={I}")
+    print(f"  3-state Compass = {comp3['compass_score']*100:.1f}%")
     print(f"  E_genius={E_genius:.3f}, E_decline={E_decline:.3f}")
 
-    print(f"\n  {'후보':20} │ {'E_4th':>7} │ {'p_4th':>6} │ {'p_genius':>8} │ {'p_합산':>6} │ {'Compass':>7} │ {'Δ':>6}")
+    print(f"\n  {'Candidate':20} │ {'E_4th':>7} │ {'p_4th':>6} │ {'p_genius':>8} │ {'p_sum':>6} │ {'Compass':>7} │ {'Δ':>6}")
     print(f"  {'─'*20}─┼─{'─'*7}─┼─{'─'*6}─┼─{'─'*8}─┼─{'─'*6}─┼─{'─'*7}─┼─{'─'*6}")
 
     results = []
@@ -108,12 +109,12 @@ def verify_041_best_4th_candidate():
         results.append({**c, 'boltz': b4, 'compass': cs4, 'delta': delta})
         print(f"  {c['name']:20} │ {c['E']:>7.3f} │ {b4['p_4th']*100:>5.1f}% │ {b4['p_genius']*100:>7.1f}% │ {(b4['p_genius']+b4['p_4th'])*100:>5.1f}% │ {cs4*100:>6.1f}% │ {delta*100:>+5.1f}%")
 
-    # 승자
+    # Winner
     best = max(results, key=lambda x: x['compass'])
-    print(f"\n  🏆 승자: {best['name']} (Compass {best['compass']*100:.1f}%, Δ={best['delta']*100:+.1f}%)")
+    print(f"\n  🏆 Winner: {best['name']} (Compass {best['compass']*100:.1f}%, Δ={best['delta']*100:+.1f}%)")
 
-    # E_4th를 연속 변화시켜 최적 에너지 탐색
-    print(f"\n  E_4th 연속 스캔 — 최적 에너지 탐색:")
+    # Continuous E_4th variation to find optimal energy
+    print(f"\n  E_4th continuous scan — Finding optimal energy:")
     e_range = np.linspace(0.5, -2.0, 26)
     best_e = None
     best_cs = 0
@@ -126,20 +127,20 @@ def verify_041_best_4th_candidate():
         if cs4 > best_cs:
             best_cs = cs4
             best_e = e4
-            marker = " ← 최대"
+            marker = " ← Maximum"
         print(f"    E={e4:>+6.2f} │{bar}│ {cs4*100:>5.1f}%{marker}")
 
-    print(f"\n  최적 E_4th = {best_e:.2f}, Compass = {best_cs*100:.1f}%")
+    print(f"\n  Optimal E_4th = {best_e:.2f}, Compass = {best_cs*100:.1f}%")
     print(f"  E_genius = {E_genius:.3f}")
-    print(f"  비율: E_4th/E_genius = {best_e/E_genius:.2f}")
+    print(f"  Ratio: E_4th/E_genius = {best_e/E_genius:.2f}")
 
     return best, best_e, best_cs
 
 
 def verify_042_entropy_jump():
-    """가설 042: 3→4상태 전이 시 엔트로피 ln(3)→ln(4) 점프"""
+    """Hypothesis 042: Entropy jump ln(3)→ln(4) in 3→4 state transition"""
     print(f"\n{'═' * 60}")
-    print(f"  가설 042: 엔트로피 ln(3) → ln(4) 점프")
+    print(f"  Hypothesis 042: Entropy jump ln(3) → ln(4)")
     print(f"{'═' * 60}")
 
     ln3 = np.log(3)  # 1.0986
@@ -148,9 +149,9 @@ def verify_042_entropy_jump():
 
     print(f"\n  ln(3) = {ln3:.4f}")
     print(f"  ln(4) = {ln4:.4f}")
-    print(f"  점프  = {jump:.4f}")
+    print(f"  Jump  = {jump:.4f}")
 
-    # 다양한 파라미터에서 3상태 vs 4상태 엔트로피
+    # 3-state vs 4-state entropy for various parameters
     test_params = [
         (0.30, 0.95, 0.50),
         (0.50, 0.85, 0.36),
@@ -162,10 +163,10 @@ def verify_042_entropy_jump():
         (0.20, 0.60, 0.70),
     ]
 
-    # 4번째 에너지: 최적값 사용 (041에서 결정)
+    # 4th energy: use optimal values (determined in 041)
     E_4th_options = [-0.5, -1.0, -1.5]
 
-    print(f"\n  {'D':>5} {'P':>5} {'I':>5} │ {'S(3상태)':>8} │", end="")
+    print(f"\n  {'D':>5} {'P':>5} {'I':>5} │ {'S(3-state)':>8} │", end="")
     for e4 in E_4th_options:
         print(f" {'S(E4='+str(e4)+')':>12} │", end="")
     print(f" {'ln(3)':>6} │ {'ln(4)':>6}")
@@ -176,7 +177,7 @@ def verify_042_entropy_jump():
 
     for d, p, i in test_params:
         T = 1.0 / max(i, 0.01)
-        # 3상태
+        # 3-state
         e3 = np.array([0.0, -(d*p), d*(1-p)])
         exp3 = np.exp(-e3 / T)
         p3 = exp3 / exp3.sum()
@@ -193,8 +194,8 @@ def verify_042_entropy_jump():
 
         print(f" {ln3:>6.4f} │ {ln4:>6.4f}")
 
-    # 대규모: E_4th를 변화시키며 엔트로피 곡선
-    print(f"\n  E_4th vs 엔트로피 (D=0.7, P=0.95, I=0.30):")
+    # Large scale: Entropy curve with varying E_4th
+    print(f"\n  E_4th vs Entropy (D=0.7, P=0.95, I=0.30):")
     D, P, I = 0.7, 0.95, 0.30
     T = 1.0 / I
 
@@ -213,28 +214,28 @@ def verify_042_entropy_jump():
         ln4_mark = " ← ln(4)" if abs(s4 - ln4) < 0.01 else ""
         print(f"    E={e4:>+6.2f} │{bar}│ S={s4:.4f}{ln3_mark}{ln4_mark}")
 
-    # ln(4) 도달하는 E_4th 찾기
+    # Find E_4th that reaches ln(4)
     for e4 in np.linspace(-3, 1, 1000):
         e_all = np.array([0.0, -(D*P), D*(1-P), e4])
         exp4 = np.exp(-e_all / T)
         p4 = exp4 / exp4.sum()
         s4 = -np.sum(p4 * np.log(p4 + 1e-10))
         if abs(s4 - ln4) < 0.005:
-            print(f"\n  ln(4) 도달: E_4th = {e4:.3f}, S = {s4:.4f}")
-            print(f"  이때 확률: 정상={p4[0]*100:.1f}% 천재={p4[1]*100:.1f}% 저하={p4[2]*100:.1f}% 4th={p4[3]*100:.1f}%")
+            print(f"\n  Reaching ln(4): E_4th = {e4:.3f}, S = {s4:.4f}")
+            print(f"  Probabilities: Normal={p4[0]*100:.1f}% Genius={p4[1]*100:.1f}% Decline={p4[2]*100:.1f}% 4th={p4[3]*100:.1f}%")
             break
 
-    print(f"\n  판정:")
-    print(f"    3상태 S ≈ ln(3) = {ln3:.4f}")
-    print(f"    4상태 S → ln(4) = {ln4:.4f} (적절한 E_4th에서)")
-    print(f"    점프 = {jump:.4f}")
-    print(f"    → Compass 상한 증가분 예측: +{jump/ln3*20:.1f}% (엔트로피 비율)")
+    print(f"\n  Verdict:")
+    print(f"    3-state S ≈ ln(3) = {ln3:.4f}")
+    print(f"    4-state S → ln(4) = {ln4:.4f} (at appropriate E_4th)")
+    print(f"    Jump = {jump:.4f}")
+    print(f"    → Predicted Compass ceiling increase: +{jump/ln3*20:.1f}% (entropy ratio)")
 
 
 def verify_044_golden_zone_4state():
-    """가설 044: 4상태 모델에서 골든존이 변하는가"""
+    """Hypothesis 044: Does the Golden Zone change in the 4-state model"""
     print(f"\n{'═' * 60}")
-    print(f"  가설 044: 4상태 모델의 골든존 변화")
+    print(f"  Hypothesis 044: Golden Zone change in 4-state model")
     print(f"{'═' * 60}")
 
     pop_scores = simulate_population(200000)
@@ -245,10 +246,10 @@ def verify_044_golden_zone_4state():
     inhibitions = np.linspace(0.05, 0.95, grid)
     P_fixed = 0.85
 
-    E_4th_values = [None, -0.5, -1.0, -1.5]  # None = 3상태
+    E_4th_values = [None, -0.5, -1.0, -1.5]  # None = 3-state
 
     for e4_val in E_4th_values:
-        label = "3상태" if e4_val is None else f"4상태 E={e4_val}"
+        label = "3-state" if e4_val is None else f"4-state E={e4_val}"
         triple_is = []
 
         for di in deficits:
@@ -275,7 +276,7 @@ def verify_044_golden_zone_4state():
                 if e4_val is None:
                     m3 = probs[1] > probs[0] and probs[1] > probs[2]
                 else:
-                    # 4상태: 천재성+4번째 합산이 최대
+                    # 4-state: genius+4th sum is maximum
                     p_positive = probs[1] + probs[3]
                     m3 = p_positive > probs[0] and p_positive > probs[2]
 
@@ -287,13 +288,13 @@ def verify_044_golden_zone_4state():
             i_max = max(triple_is)
             width = i_max - i_min
             center = np.mean(triple_is)
-            print(f"\n  {label}: I = [{i_min:.3f}, {i_max:.3f}] 폭={width:.3f} 중심={center:.3f}")
+            print(f"\n  {label}: I = [{i_min:.3f}, {i_max:.3f}] width={width:.3f} center={center:.3f}")
         else:
-            print(f"\n  {label}: 골든존 없음")
+            print(f"\n  {label}: No Golden Zone")
 
-    # 시각화: 3상태 vs 4상태 골든존
-    print(f"\n  골든존 비교:")
-    print(f"  3상태   │{'·'*5}{'░'*12}{'·'*8}{'░'*12}{'·'*13}│ I=0.24~0.48 (기존)")
+    # Visualization: 3-state vs 4-state Golden Zone
+    print(f"\n  Golden Zone comparison:")
+    print(f"  3-state   │{'·'*5}{'░'*12}{'·'*8}{'░'*12}{'·'*13}│ I=0.24~0.48 (original)")
 
     for e4_val in [-0.5, -1.0, -1.5]:
         triple_is = []
@@ -329,7 +330,7 @@ def verify_044_golden_zone_4state():
 def main():
     print()
     print("▓" * 60)
-    print("  4번째 상태 탐색 — 041, 042, 044")
+    print("  4th State Exploration — 041, 042, 044")
     print("▓" * 60)
 
     best, best_e, best_cs = verify_041_best_4th_candidate()
@@ -337,30 +338,31 @@ def main():
     verify_044_golden_zone_4state()
 
     print(f"\n{'▓' * 60}")
-    print(f"  종합")
+    print(f"  Summary")
     print(f"{'▓' * 60}")
     print(f"""
-  041. 4번째 상태 승자  : {best['name']} (Compass {best['compass']*100:.1f}%)
-       최적 E_4th      : {best_e:.2f}
-       상한 돌파        : {best_cs*100:.1f}% (기존 83.6%)
+  041. 4th State Winner : {best['name']} (Compass {best['compass']*100:.1f}%)
+       Optimal E_4th    : {best_e:.2f}
+       Ceiling Breakthrough : {best_cs*100:.1f}% (previous 83.6%)
 
-  042. 엔트로피 점프    : ln(3)→ln(4) 확인
-       점프 크기        : {np.log(4)-np.log(3):.4f}
+  042. Entropy Jump     : ln(3)→ln(4) confirmed
+       Jump Size        : {np.log(4)-np.log(3):.4f}
 
-  044. 4상태 골든존     : E_4th에 따라 변화
+  044. 4-state Golden Zone : Changes with E_4th
 """)
 
     os.makedirs(RESULTS_DIR, exist_ok=True)
     with open(os.path.join(RESULTS_DIR, "4th_state_report.md"), 'w', encoding='utf-8') as f:
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        f.write(f"# 4번째 상태 탐색 결과 [{now}]\n\n")
-        f.write(f"승자: {best['name']}\n")
-        f.write(f"최적 E_4th: {best_e:.2f}\n")
-        f.write(f"Compass 상한: {best_cs*100:.1f}%\n\n---\n")
+        f.write(f"# 4th State Exploration Results [{now}]\n\n")
+        f.write(f"Winner: {best['name']}\n")
+        f.write(f"Optimal E_4th: {best_e:.2f}\n")
+        f.write(f"Compass ceiling: {best_cs*100:.1f}%\n\n---\n")
 
-    print(f"  📁 보고서 → results/4th_state_report.md")
+    print(f"  📁 Report → results/4th_state_report.md")
     print()
 
 
 if __name__ == '__main__':
     main()
+```

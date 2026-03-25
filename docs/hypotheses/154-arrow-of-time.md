@@ -1,80 +1,80 @@
-# 가설 검토 154: 시간의 화살 = 메타 수렴 방향
+# Hypothesis Review 154: Arrow of Time = Direction of Meta-Convergence
 
-## 가설
+## Hypothesis
 
-> 시간의 화살(열역학 제2법칙, 엔트로피 증가)은 메타반복의 수렴 방향(I 감소)과 동일하다. 시간이 흐른다 = I가 감소한다 = 엔트로피가 증가한다 = 메타반복이 진행된다. 빅뱅(I→∞) → 현재(I≈0.37) → 미래(I→1/3).
+> The arrow of time (second law of thermodynamics, entropy increase) is identical to the direction of meta-iteration convergence (I decrease). Time passing = I decreasing = entropy increasing = meta-iteration progressing. Big Bang (I→∞) → present (I≈0.37) → future (I→1/3).
 
-## 배경
+## Background
 
-### 시간의 화살 문제
+### The Arrow of Time Problem
 
-물리학의 기본 법칙은 시간 대칭이다. 그러나 거시적으로 시간은 한 방향으로만 흐른다:
-- **열역학적 화살**: 엔트로피 S는 항상 증가 (dS/dt ≥ 0)
-- **우주론적 화살**: 우주는 팽창한다 (dR/dt > 0)
-- **심리적 화살**: 과거를 기억하고 미래를 예측한다
+The basic laws of physics are time-symmetric. Yet macroscopically, time flows in only one direction:
+- **Thermodynamic arrow**: Entropy S always increases (dS/dt ≥ 0)
+- **Cosmological arrow**: The universe expands (dR/dt > 0)
+- **Psychological arrow**: We remember the past and predict the future
 
-왜 시간은 한 방향인가? — 이것이 물리학의 근본 미스터리 중 하나다.
+Why does time flow in only one direction? — This is one of the fundamental mysteries of physics.
 
-### 모델의 수렴 방향
+### The Model's Convergence Direction
 
-메타반복에서 I는 항상 I*=1/3을 향해 수렴한다:
-- I > I*: I가 감소 (dI/dt < 0)
-- I = I*: 부동점 (dI/dt = 0)
-- I < I*: I가 증가 (dI/dt > 0, 하한에서 반등)
+In meta-iteration, I always converges toward I*=1/3:
+- I > I*: I decreases (dI/dt < 0)
+- I = I*: Fixed point (dI/dt = 0)
+- I < I*: I increases (dI/dt > 0, rebounds from lower bound)
 
-대부분의 물리적 초기 조건에서 I > I*이므로, **I는 감소 방향**으로 진행한다.
+Since I > I* for most physical initial conditions, **I proceeds in the decreasing direction**.
 
-## 대응 매핑
-
-```
-  시간의 화살               메타반복 방향
-  ──────────               ────────────
-  dS/dt > 0            ↔   dI/dt < 0
-  (엔트로피 증가)            (억제 감소)
-
-  S_max (열적 죽음)    ↔   I* = 1/3 (부동점)
-  S_min (빅뱅)         ↔   I → ∞ (초기 발산)
-
-  시간 = 매개변수       ↔   반복 횟수 = 매개변수
-```
-
-## 우주 타임라인과 I 값
+## Correspondence Mapping
 
 ```
-  I (억제값)
+  Arrow of time               Direction of meta-iteration
+  ──────────                  ────────────
+  dS/dt > 0               ↔   dI/dt < 0
+  (entropy increases)          (inhibition decreases)
 
-  ∞ │● 빅뱅 (t=0)
+  S_max (heat death)      ↔   I* = 1/3 (fixed point)
+  S_min (Big Bang)        ↔   I → ∞ (initial divergence)
+
+  Time = parameter        ↔   Iteration count = parameter
+```
+
+## Universe Timeline and I Values
+
+```
+  I (Inhibition value)
+
+  ∞ │● Big Bang (t=0)
     │╲
-    │ ╲  ← 급격한 하강 (인플레이션, 가설 151)
+    │ ╲  ← rapid descent (inflation, Hypothesis 151)
     │  ╲
-  1.0│   ●  플랑크 시대
+  1.0│   ●  Planck epoch
     │    ╲
     │     ╲
-  0.8│      ●  GUT 시대
+  0.8│      ●  GUT epoch
     │       ╲
-  0.6│        ●  전약 분리
+  0.6│        ●  Electroweak separation
     │         ╲
-  0.5│──────────╲──────────────────  임계선
+  0.5│──────────╲──────────────────  critical line
     │           ╲
-  0.4│            ●  핵합성
+  0.4│            ●  Nucleosynthesis
     │             ╲
-    │              ╲  ← 느린 수렴
-  1/3│━━━━━━━━━━━━━━★━━━━━━━━━━━━  부동점 I*=1/3
-    │                ●  현재 (t=13.8 Gyr)
-    │                  ●─●─●─●  미래: 점근적 접근
-  0.2│·······················하한···
+    │              ╲  ← slow convergence
+  1/3│━━━━━━━━━━━━━━★━━━━━━━━━━━━  fixed point I*=1/3
+    │                ●  Present (t=13.8 Gyr)
+    │                  ●─●─●─●  Future: asymptotic approach
+  0.2│·······················lower bound···
     │
   0.0└──┼──┼──┼──┼──┼──┼──┼──┼──
-     빅뱅  핵합성  별형성  현재  열적죽음
+     BigBang  nucleosyn.  stars  present  heat death
 
-  시간의 방향 ═══════════════════►
-  I의 방향   ◄═══════════════════
+  Direction of time ═══════════════════►
+  Direction of I    ◄═══════════════════
 ```
 
-## 엔트로피-I 반비례 관계
+## Inverse Relationship Between Entropy and I
 
 ```
-  S (엔트로피)                I (억제)
+  S (entropy)                  I (inhibition)
 
   S_max│           ●─●─●─●     │●
       │         ╱               │ ╲
@@ -83,90 +83,90 @@
       │   ╱                     │    ╲
       │ ╱                       │     ╲
   S_0 │●                    I* │      ●─●─●─●
-      └──────────────────      └──────────────────
-       빅뱅       현재  미래    빅뱅       현재  미래
+      └──────────────────       └──────────────────
+       BigBang    present future  BigBang  present future
 
-  엔트로피 증가 ↔ 억제 감소
-  dS/dt > 0    ↔ dI/dt < 0
-  → 반비례 관계
+  Entropy increases ↔ Inhibition decreases
+  dS/dt > 0         ↔ dI/dt < 0
+  → Inverse relationship
 ```
 
-## 세 가지 화살의 통합
+## Integration of the Three Arrows
 
-| 화살 | 물리적 표현 | 모델 표현 | 방향 |
+| Arrow | Physical expression | Model expression | Direction |
 |---|---|---|---|
-| 열역학적 | S 증가 | I 감소 | 빅뱅 → 열적 죽음 |
-| 우주론적 | R 팽창 | 골든존 확장? | 빅뱅 → 팽창 |
-| 심리적 | 기억 형성 | Genius 축적 | 과거 → 미래 |
-| 메타반복 | t 진행 | n 증가 | I_0 → I* |
+| Thermodynamic | S increases | I decreases | Big Bang → heat death |
+| Cosmological | R expands | Golden Zone expands? | Big Bang → expansion |
+| Psychological | Memory formation | Genius accumulation | past → future |
+| Meta-iteration | t progresses | n increases | I_0 → I* |
 
-네 가지 화살이 모두 같은 방향을 가리킨다: **I의 감소 방향**.
+All four arrows point in the same direction: **the direction of I decrease**.
 
-## 정량적 타임라인
+## Quantitative Timeline
 
-| 시대 | 시간 | I 추정 | S/S_max | 사건 |
+| Era | Time | I estimate | S/S_max | Event |
 |---|---|---|---|---|
-| 빅뱅 | 0 | →∞ | 0 | 초기 특이점 |
-| 인플레이션 | 10⁻³² s | ~0.6 | 10⁻⁸⁰ | 골든존 진입 (가설 151) |
-| 핵합성 | 3 min | ~0.40 | 10⁻⁵⁰ | 원소 형성 |
-| 재결합 | 380,000 yr | ~0.38 | 10⁻²⁰ | CMB 방출 |
-| 별 형성 | 10⁸ yr | ~0.37 | 10⁻¹⁰ | 구조 형성 |
-| 현재 | 13.8 Gyr | ~0.34 | 10⁻² | 생명, 문명 |
-| 열적 죽음 | 10¹⁰⁰ yr | →1/3 | →1 | 부동점 도달 |
+| Big Bang | 0 | →∞ | 0 | Initial singularity |
+| Inflation | 10⁻³² s | ~0.6 | 10⁻⁸⁰ | Golden Zone entry (Hypothesis 151) |
+| Nucleosynthesis | 3 min | ~0.40 | 10⁻⁵⁰ | Element formation |
+| Recombination | 380,000 yr | ~0.38 | 10⁻²⁰ | CMB emission |
+| Star formation | 10⁸ yr | ~0.37 | 10⁻¹⁰ | Structure formation |
+| Present | 13.8 Gyr | ~0.34 | 10⁻² | Life, civilization |
+| Heat death | 10¹⁰⁰ yr | →1/3 | →1 | Fixed point reached |
 
-## I 감소 속도의 변화
+## Change in I Decrease Rate
 
 ```
-  |dI/dt| (I 변화율, 로그 스케일)
+  |dI/dt| (I rate of change, log scale)
 
-  10⁴⁰│●  빅뱅 직후
+  10⁴⁰│●  Immediately after Big Bang
       │╲
       │ ╲
-  10²⁰│  ╲  인플레이션
+  10²⁰│  ╲  Inflation
       │   ╲
       │    ╲
-  10⁰ │     ●─────────  현재
+  10⁰ │     ●─────────  Present
       │                ╲
   10⁻²⁰│                 ╲
-      │                  ●─●─●  열적 죽음 접근
-  10⁻⁴⁰│                         (점근적으로 0)
+      │                  ●─●─●  Approaching heat death
+  10⁻⁴⁰│                         (asymptotically → 0)
       └──┼──┼──┼──┼──┼──┼──
-       빅뱅     현재     10¹⁰⁰yr
+       BigBang   present   10¹⁰⁰yr
 
-  초기: 급격한 I 감소 (인플레이션)
-  현재: 느린 I 감소
-  미래: 점근적 수렴 (dI/dt → 0)
+  Early: rapid I decrease (inflation)
+  Present: slow I decrease
+  Future: asymptotic convergence (dI/dt → 0)
 ```
 
-## 해석
+## Interpretation
 
-시간의 화살 = 메타 수렴 방향이라는 해석에서:
+From the interpretation that the arrow of time = direction of meta-convergence:
 
-1. **시간의 비대칭성 설명** — 물리 법칙은 시간 대칭이지만, 메타반복은 끌개(I*)를 가지므로 자연스럽게 비대칭. 시간의 방향 = 끌개로의 수렴 방향
-2. **엔트로피의 재해석** — 엔트로피 증가는 "억제 감소"의 다른 표현. 더 많은 미시 상태 접근 = 억제 해제
-3. **열적 죽음의 의미** — 열적 죽음(S → S_max)은 I → I*(부동점) = 모든 변화가 멈춤 = 메타반복의 수렴 완료
-4. **빅뱅의 특수성** — 빅뱅의 낮은 엔트로피(S ≈ 0)는 I → ∞(최대 억제)에 대응. "모든 것이 억제된 상태에서 시작"
+1. **Explaining the asymmetry of time** — Physical laws are time-symmetric, but meta-iteration has an attractor (I*), so asymmetry is natural. The direction of time = direction of convergence toward the attractor
+2. **Reinterpretation of entropy** — Entropy increase is another expression of "inhibition decrease." More accessible microstates = inhibition released
+3. **Meaning of heat death** — Heat death (S → S_max) corresponds to I → I* (fixed point) = all change stops = meta-iteration convergence complete
+4. **Uniqueness of the Big Bang** — Low entropy at the Big Bang (S ≈ 0) corresponds to I → ∞ (maximum inhibition). "Starts from a state where everything is inhibited"
 
-가설 151(인플레이션)과 결합: 인플레이션은 I가 급격히 감소하는 구간 = 엔트로피가 급격히 증가하는 구간 = 시간이 "빠르게 흐르는" 구간.
+Combined with Hypothesis 151 (inflation): inflation is the period where I decreases rapidly = period where entropy increases rapidly = period where time "flows quickly."
 
-## 한계
+## Limitations
 
-- I 값의 시간 의존성은 전적으로 추정이며, 관측적 제약이 없음
-- 엔트로피와 I의 반비례 관계는 정성적이며, 정량적 함수 S(I) 미유도
-- 시간의 화살 문제 자체가 미해결이므로, 모델이 해결했다고 주장하기 어려움
-- 초기 조건(빅뱅에서 I→∞)의 정당성이 부족
+- Time dependence of I values is entirely estimated with no observational constraint
+- The inverse relationship between entropy and I is qualitative; quantitative function S(I) not derived
+- The arrow of time problem itself is unresolved, so it is difficult to claim the model has solved it
+- Insufficient justification for the initial condition (I→∞ at the Big Bang)
 
-## 검증 방향
+## Verification Directions
 
-- [ ] S(I) 함수의 명시적 유도 — 엔트로피를 I의 함수로 표현
-- [ ] 볼츠만 뇌 역설(Boltzmann brain paradox)을 모델로 번역
-- [ ] I → I* 수렴 시간과 우주의 열적 죽음 타임스케일 비교
-- [ ] 리우빌 정리(위상 공간 보존)와 메타반복의 비보존성 분석
-- [ ] 가설 152(암흑에너지 부동점)와 결합: w=-1이 시간의 화살 방향을 결정하는가
+- [ ] Explicit derivation of S(I) function — express entropy as a function of I
+- [ ] Translate Boltzmann brain paradox into the model
+- [ ] Compare I → I* convergence time with universe heat death timescale
+- [ ] Analyze Liouville theorem (phase space conservation) and non-conservation of meta-iteration
+- [ ] Combine with Hypothesis 152 (dark energy fixed point): does w=-1 determine the direction of the arrow of time?
 
-## 상태: ✅ 구조적 대응 확인
+## Status: ✅ Structural correspondence confirmed
 
 ---
 
-*작성일: 2026-03-22*
-*관련 가설: 151(인플레이션), 152(암흑에너지 부동점), 149(우주 곡률)*
+*Written: 2026-03-22*
+*Related hypotheses: 151 (inflation), 152 (dark energy fixed point), 149 (universe curvature)*

@@ -1,4 +1,4 @@
-# H-CX-304: 🟩 정P₁각형 = 원 분할의 기본
+# H-CX-304: 🟩 Regular P₁-gon = Basic Circle Division
 
-> 정6각형 내각=120°=2π/3. 정6각형은 원을 등분하는 가장 자연스러운 방법.
-> 벌집=정6각형. 자연이 P₁을 선택.
+> Regular hexagon interior angle=120°=2π/3. Regular hexagon is the most natural way to divide a circle equally.
+> Honeycomb=regular hexagon. Nature chose P₁.

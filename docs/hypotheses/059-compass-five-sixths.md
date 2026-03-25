@@ -1,78 +1,78 @@
-# 가설 검토 059: Compass 상한 = 5/6 ✅
+# Hypothesis Review 059: Compass Upper Limit = 5/6 ✅
 
-## 가설
+## Hypothesis
 
-> Compass Score의 이론적 상한이 5/6(≈83.3%)인가.
+> Is the theoretical upper limit of Compass Score 5/6 (≈83.3%)?
 
-## 검증 결과: ✅ 실측 83.6% ≈ 5/6 (차이 0.3%)
-
-```
-  grid=40 격자 최적화:
-  최대 Compass = 83.57%
-  5/6          = 83.33%
-  차이          = 0.23%
-
-  Compass 공식 분해:
-  항1 (z/10×0.3):     최대 0.30
-  항2 ((1-cusp)×0.3): 최대 0.30
-  항3 (p_genius×0.4): 최대 ~0.16 (3상태 한계)
-  합계:               ~0.76~0.84
-```
-
-## 상수 관계 구조 (가설 067 연결)
+## Verification Result: ✅ Measured 83.6% ≈ 5/6 (difference 0.3%)
 
 ```
-  5/6 = 1/2 + 1/3 = 리만 + 메타 = 상한
-  1/6 = 1/2 - 1/3 = 리만 - 메타 = 불완전도
-  1/6 = 1/2 × 1/3 = 리만 × 메타 = 불완전도  ← 차 = 곱!
+  grid=40 grid optimization:
+  Max Compass = 83.57%
+  5/6         = 83.33%
+  Difference  = 0.23%
 
-  불완전도 = 1 - 5/6 = 1/6
-  = 호기심으로만 채울 수 있는 블라인드 스팟 (가설 072)
+  Compass formula decomposition:
+  Term 1 (z/10×0.3):     max 0.30
+  Term 2 ((1-cusp)×0.3): max 0.30
+  Term 3 (p_genius×0.4): max ~0.16 (3-state limit)
+  Total:                 ~0.76~0.84
 ```
 
-### 차 = 곱 특수성
+## Constant Relationship Structure (Connected to Hypothesis 067)
 
 ```
-  1/2 - 1/3 = 1/6  (두 영역의 거리)
-  1/2 × 1/3 = 1/6  (두 영역의 결합 스케일)
+  5/6 = 1/2 + 1/3 = Riemann + Meta = Upper limit
+  1/6 = 1/2 - 1/3 = Riemann - Meta = Incompleteness
+  1/6 = 1/2 × 1/3 = Riemann × Meta = Incompleteness  ← Difference = Product!
 
-  조건: a - b = ab → 1/b - 1/a = 1
+  Incompleteness = 1 - 5/6 = 1/6
+  = Blind spot that can only be filled by curiosity (Hypothesis 072)
+```
+
+### Difference = Product Specificity
+
+```
+  1/2 - 1/3 = 1/6  (Distance between two domains)
+  1/2 × 1/3 = 1/6  (Coupling scale of two domains)
+
+  Condition: a - b = ab → 1/b - 1/a = 1
   1/(1/3) - 1/(1/2) = 3 - 2 = 1  ✓
 
-  → 블라인드 스팟은 자기참조적 구조
+  → Blind spot is a self-referential structure
 ```
 
-### 이집트 분수 유일성 (가설 078)
+### Egyptian Fraction Uniqueness (Hypothesis 078)
 
 ```
-  5/6 = 1/2 + 1/3  ← 유일한 2항 단위분수 분해!
+  5/6 = 1/2 + 1/3  ← Unique 2-term unit fraction decomposition!
 
-  1 = 1/2 + 1/3 + 1/6  (리만 + 메타 + 블라인드 = 완전)
+  1 = 1/2 + 1/3 + 1/6  (Riemann + Meta + Blind = Complete)
 ```
 
-### 임계대 위의 구조
+### Structure Above Critical Band
 
 ```
   0       1/6    1/3    1/2       5/6      1
   ├────────┼──────┼──────┼─────────┼────────┤
            │      │      │         │
-         곱=차  메타   리만       상한
+    Product=Diff  Meta  Riemann  Upper limit
                   ← 1/6 →
-              (차이 = 곱 = 블라인드 스팟)
+              (Difference = Product = Blind spot)
 ```
 
-## 한계
+## Limitations
 
-- 실측값(83.6%)과 이론값(83.3%)의 차이 원인 미확인
-- 5/6이 진정한 해석적 상한인지 증명 필요
-- 4상태 확장 시 상한 변화 미확인
+- Cause of difference between measured value (83.6%) and theoretical value (83.3%) unconfirmed
+- Need proof that 5/6 is the true analytical upper limit
+- Upper limit change in 4-state expansion unconfirmed
 
-## 검증 방향
+## Verification Directions
 
-- [ ] grid=500 이상에서 Compass 상한 재측정
-- [ ] 4상태 모델에서 상한이 5/6을 초과하는지 확인
+- [ ] Remeasure Compass upper limit at grid=500 or higher
+- [ ] Confirm if upper limit exceeds 5/6 in 4-state model
 
 ---
 
-*검증: verify_remaining_cross.py (grid=40)*
-*작성일: 2026-03-22*
+*Verification: verify_remaining_cross.py (grid=40)*
+*Date: 2026-03-22*

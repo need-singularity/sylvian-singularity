@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""H-CX-82 + H-CX-83 검증: 에폭1 혼동지도 + 직교성-위상 통합
+"""H-CX-82 + H-CX-83 verification: Epoch1 confusion map + orthogonality-topology integration
 
-H-CX-82: 에폭 1 PH merge → 에폭 15 혼동 예측
+H-CX-82: Epoch 1 PH merge → Epoch 15 confusion prediction
 H-CX-83: LR(mag,conf,gap,H0_total) → AUC > 0.95?
 """
 import sys
@@ -230,7 +230,7 @@ if __name__ == '__main__':
             import traceback; traceback.print_exc()
 
     print(f"\n{'='*70}")
-    print(f"  5라운드 SUMMARY")
+    print(f"  Round 5 SUMMARY")
     print(f"{'='*70}")
     for ds, r in results.items():
         print(f"  {ds}: ep1_r={r['ep1_r']:.3f}, AUC3={r['auc3']:.4f}, AUC4={r['auc4']:.4f}, gain={r['gain']:+.4f}")

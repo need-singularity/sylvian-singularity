@@ -1,121 +1,121 @@
-# 가설 313: 장력 = 확신 (Tension is Confidence) — 통합 원리
+# Hypothesis 313: Tension = Confidence — Unified Principle
 
-> **의식엔진의 내부장력은 "불확실성"이 아니라 "확신"을 측정한다. 이것은 H307(이중 메커니즘), H-CX-21(tension∝1/PPL), H287(AUROC=1.0), 원래 C4b(d=0.89)를 모두 통합하는 단일 원리.**
+> **The internal tension of the consciousness engine measures "confidence", not "uncertainty". This is the single principle that unifies H307 (dual mechanism), H-CX-21 (tension∝1/PPL), H287 (AUROC=1.0), and the original C4b (d=0.89).**
 
-## 증거 종합
+## Evidence Synthesis
 
 ```
-  1. H-CX-21: 높은 장력 = 낮은 PPL = 확신
-     정답: tension=702, PPL=1.01
-     오답: tension=495, PPL=283K
+  1. H-CX-21: high tension = low PPL = confidence
+     Correct: tension=702, PPL=1.01
+     Wrong: tension=495, PPL=283K
 
-  2. H307: 내부장력 반전
-     정상: 높은 내부장력 → 엔진들이 "강하게 자기 의견 표출"
-     이상: 낮은 내부장력 → 엔진들이 "의견 없음" (혼동의 합의)
+  2. H307: internal tension inversion
+     Normal: high internal tension -> engines "strongly express their opinions"
+     Anomaly: low internal tension -> engines have "no opinion" (Agreement in Confusion)
 
   3. C4b: Cohen's d = 0.89
-     정답 샘플의 장력 > 오답 샘플의 장력
-     → 맞출 때 장력이 더 높음 = 확신할 때 장력 높음
+     Tension of correct samples > tension of wrong samples
+     -> Higher tension when correct = high tension when confident
 
-  4. H287: AUROC=1.0 (합성 데이터)
-     정상(학습 데이터와 비슷): 높은 장력 = 확신
-     이상(학습 데이터와 다름): 낮은 장력 = 불확신
-     → 95x 차이는 "확신 대 혼란"의 차이
+  4. H287: AUROC=1.0 (synthetic data)
+     Normal (similar to training data): high tension = confident
+     Anomaly (different from training data): low tension = not confident
+     -> 95x difference is the difference between "confidence" and "confusion"
 
-  5. C48: 장력=0이면 -9.25pp
-     장력 제거 = 확신 제거 = 성능 급락
-     → 장력(확신)이 정확도에 직접 기여
+  5. C48: tension=0 -> -9.25pp
+     Removing tension = removing confidence = performance crash
+     -> Tension (confidence) directly contributes to accuracy
 ```
 
-## 통합 해석
+## Unified Interpretation
 
 ```
-  장력(tension) = |engine_A(x) - engine_G(x)|²
+  tension(tension) = |engine_A(x) - engine_G(x)|²
 
-  높은 장력:
-    engine_A: "이건 확실히 3이야!" → 강한 출력
-    engine_G: "이건 확실히 7이야!" → 강한 출력
-    → 서로 다르지만 둘 다 강한 의견 → |A-G|² 크다
-    → "확신의 반발" = 높은 장력
+  High tension:
+    engine_A: "This is definitely 3!" -> strong output
+    engine_G: "This is definitely 7!" -> strong output
+    -> Different but both strong opinions -> |A-G|² is large
+    -> "Confident repulsion" = high tension
 
-  낮은 장력:
-    engine_A: "뭔지 모르겠어..." → 약한 출력
-    engine_G: "나도 모르겠어..." → 약한 출력
-    → 서로 비슷하게 약한 의견 → |A-G|² 작다
-    → "혼동의 합의" = 낮은 장력
+  Low tension:
+    engine_A: "I'm not sure what this is..." -> weak output
+    engine_G: "I'm not sure either..." -> weak output
+    -> Similarly weak opinions -> |A-G|² is small
+    -> "Agreement in Confusion" = low tension
 
-  최종 출력 = equilibrium + tension_scale × sqrt(tension) × direction
-    확신할 때: 큰 보정 → 정확한 분류
-    불확신할 때: 작은 보정 → equilibrium에 의존 (덜 정확)
+  Final output = equilibrium + tension_scale × sqrt(tension) × direction
+    When confident: large correction -> accurate classification
+    When not confident: small correction -> relies on equilibrium (less accurate)
 ```
 
-## 기존 해석 수정
+## Revision of Original Interpretation
 
 ```
-  원래 해석 (가설 263): "장력 = 불확실성"
-  → 반박됨!
+  Original interpretation (Hypothesis 263): "tension = uncertainty"
+  -> Refuted!
 
-  수정된 해석: "장력 = 확신"
-  → 이것이 C4b(d=0.89)의 진짜 의미:
-    정답 샘플에서 장력 높음 = 확신할 때 맞춤
-    → 당연하다! 확신하니까 맞추는 것
+  Revised interpretation: "tension = confidence"
+  -> This is the true meaning of C4b (d=0.89):
+    High tension on correct samples = confident when correct
+    -> Of course! It's correct because it's confident
 
-  하지만 간장력은 다르다 (H307):
-    간장력 = |child_a(x) - child_b(x)|²
-    이상에서 높음 = "서로 다르게 실패" = 불확실
-    → 간장력 ≈ 불확실성 (원래 해석이 간장력에는 맞음)
+  But inter-tension is different (H307):
+    inter-tension = |child_a(x) - child_b(x)|²
+    Higher on anomaly = "failing in different ways" = uncertain
+    -> inter-tension ≈ uncertainty (original interpretation fits inter-tension)
 ```
 
-## 이중 메커니즘 최종 정리
+## Final Summary of Dual Mechanism
 
 ```
-  내부장력 (engine_a vs engine_g):
-    = 각 엔진의 "확신 강도"의 차이
-    = 확신이 강할수록 → 서로 다른 강한 의견 → 높은 장력
-    = 확신이 약할수록 → 비슷한 약한 의견 → 낮은 장력
-    → tension = confidence
+  Internal tension (engine_a vs engine_g):
+    = difference in "confidence strength" of each engine
+    = stronger confidence -> different strong opinions -> high tension
+    = weaker confidence -> similar weak opinions -> low tension
+    -> tension = confidence
 
-  간장력 (child_a vs child_b):
-    = 서로 다르게 학습한 모델의 "출력 불일치"
-    = 정상: 비슷하게 잘 복원 → 낮은 불일치
-    = 이상: 다르게 실패 → 높은 불일치
-    → inter_tension = uncertainty (원래 해석)
+  Inter-tension (child_a vs child_b):
+    = "output disagreement" between independently trained models
+    = normal: similarly good reconstruction -> low disagreement
+    = anomaly: fail differently -> high disagreement
+    -> inter_tension = uncertainty (original interpretation)
 
-  통합: 내부 = confidence, 간 = uncertainty
-  → 보완적 관점 (H-CX-18 파동-입자 이중성)
+  Unified: internal = confidence, inter = uncertainty
+  -> Complementary perspectives (H-CX-18 wave-particle duality)
 ```
 
-## 수학 연결
+## Mathematical Connections
 
 ```
-  H-CX-2: MI 효율 ≈ ln(2) = 1 bit
-  → 이진 반발(2극)이 추가하는 "확신"의 양 = 1 bit?
+  H-CX-2: MI efficiency ≈ ln(2) = 1 bit
+  -> Amount of "confidence" added by binary repulsion (2-pole) = 1 bit?
 
-  H-CX-20: 최적 활성 = 1/2
-  → 절반의 Expert가 확신 표출, 절반은 침묵
-  → 이진 엔트로피 최대 = 최대 "확신 표현력"?
+  H-CX-20: Optimal activation = 1/2
+  -> Half the Experts express confidence, half are silent
+  -> Binary entropy maximum = maximum "confidence expressiveness"?
 
-  C48: tension=0 → -9.25pp
-  → 확신=0 → 성능 급락 (확신 없이 분류 불가)
+  C48: tension=0 -> -9.25pp
+  -> Confidence=0 -> performance crash (cannot classify without confidence)
 ```
 
-## CIFAR-10 추가 확인 (2026-03-24)
+## CIFAR-10 Additional Confirmation (2026-03-24)
 
 ```
   CIFAR-10 (15ep):
-    정답: tension=155.4, PPL=1.4
-    오답: tension=120.4, PPL=16,939
-    ratio (정답/오답): 1.29x ← CIFAR에서도 확인!
+    Correct: tension=155.4, PPL=1.4
+    Wrong: tension=120.4, PPL=16,939
+    Ratio (correct/wrong): 1.29x <- confirmed on CIFAR too!
 
   MNIST vs CIFAR:
-    MNIST: ratio=1.42x (정답/오답)
-    CIFAR: ratio=1.29x (정답/오답)
-    → 두 데이터셋 모두 "정답=높은장력=확신"
+    MNIST: ratio=1.42x (correct/wrong)
+    CIFAR: ratio=1.29x (correct/wrong)
+    -> Both datasets: "correct=high tension=confidence"
 
-  3중 확인:
-    1. MNIST: tension(정답)=702 > tension(오답)=495
-    2. CIFAR: tension(정답)=155 > tension(오답)=120
-    3. Breast Cancer (H307): internal(정상)=2.76 > internal(이상)=1.03
+  Triple confirmation:
+    1. MNIST: tension(correct)=702 > tension(wrong)=495
+    2. CIFAR: tension(correct)=155 > tension(wrong)=120
+    3. Breast Cancer (H307): internal(normal)=2.76 > internal(anomaly)=1.03
 ```
 
-## 상태: 🟩 통합 원리 (3데이터셋 확인, H307+CX21+C4b+C48 통합)
+## Status: 🟩 Unified principle (confirmed in 3 datasets, unifies H307+CX21+C4b+C48)

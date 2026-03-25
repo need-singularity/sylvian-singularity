@@ -1,213 +1,213 @@
-# 가설 #200: SSRI(항우울제) = I 미세조정
+# Hypothesis #200: SSRI (Antidepressants) = Fine-tuning I
 
-**상태**: 🟧 구조적 대응 확인 (실험 데이터 필요)
-**날짜**: 2026-03-22
-**분류**: 약물 / 정신의학
+**Status**: 🟧 Structural correspondence confirmed (experimental data needed)
+**Date**: 2026-03-22
+**Category**: Drugs / Psychiatry
 
 ---
 
-## 가설
+## Hypothesis
 
-> SSRI(선택적 세로토닌 재흡수 억제제)는 I를 미세하게 하향 조정하여
-> 골든존 방향으로 이동시킨다.
-> 우울증 = I 과다(과억제) 상태이며, SSRI의 치료 효과 = 골든존 진입이다.
+> SSRIs (selective serotonin reuptake inhibitors) gently downregulate I,
+> moving the system toward the Golden Zone.
+> Depression = excessive I (over-inhibition), and SSRI therapeutic effect = entering the Golden Zone.
 
-## 배경: 우울증의 I 모델
+## Background: I Model of Depression
 
 ```
-  정상: I ≈ 0.45-0.50 (골든존 상단)
-  우울: I ≈ 0.60-0.80 (과억제!)
+  Normal:    I ≈ 0.45-0.50 (upper Golden Zone)
+  Depressed: I ≈ 0.60-0.80 (over-inhibited!)
 
-  우울증에서 일어나는 일:
+  What happens in depression:
   ┌─────────────────────────────────────────────┐
-  │  세로토닌 ↓ → 억제 네트워크 과활성화          │
-  │           → "모든 것이 무의미" (과억제)        │
-  │           → 동기 ↓, 쾌감 ↓, 에너지 ↓         │
-  │           → I ↑↑ (골든존 상방 이탈)            │
-  │           → Compass ↓ (방향 상실)             │
+  │  Serotonin ↓ → inhibitory network overactive    │
+  │             → "everything is meaningless" (over-inhibition) │
+  │             → motivation ↓, pleasure ↓, energy ↓   │
+  │             → I ↑↑ (above Golden Zone)            │
+  │             → Compass ↓ (loss of direction)     │
   │                                              │
-  │  = 뇌가 "과도하게 브레이크를 밟고 있는" 상태   │
+  │  = brain "pressing the brake too hard"       │
   └─────────────────────────────────────────────┘
 ```
 
-## SSRI의 작용 메커니즘
+## SSRI Mechanism of Action
 
 ```
-  정상 시냅스:
-  세로토닌 방출 → 수용체 결합 → 재흡수 → 신호 종료
-                                  ↑
-  SSRI가 여기를 차단!              │
-                                  │
-  SSRI 적용 시:
-  세로토닌 방출 → 수용체 결합 → [재흡수 차단] → 신호 지속!
-                              → 시냅스 내 세로토닌 ↑
-                              → 억제 네트워크 톤다운
-                              → I ↓ (서서히)
+  Normal synapse:
+  Serotonin release → receptor binding → reuptake → signal ends
+                                          ↑
+  SSRI blocks here!                       │
+                                          │
+  With SSRI:
+  Serotonin release → receptor binding → [reuptake blocked] → signal continues!
+                                      → synaptic serotonin ↑
+                                      → inhibitory network tone down
+                                      → I ↓ (gradually)
 ```
 
-## 우울증-치료 I 궤적 (핵심 그래프)
+## Depression-Treatment I Trajectory (Key Graph)
 
 ```
-  I (억제지수)
-  0.80│●  심한 우울 (과억제)
+  I (Inhibition Index)
+  0.80│●  Severe depression (over-inhibition)
      │ ╲
   0.75│  ╲
-     │    ╲   SSRI 시작 (1-2주: 효과 미미)
+     │    ╲   SSRI started (weeks 1-2: minimal effect)
   0.70│     ╲
      │       ╲
   0.65│        ╲
-     │          ╲   3-4주: 효과 발현 시작
+     │          ╲   Weeks 3-4: effect begins
   0.60│            ╲
      │              ╲
   0.55│                ╲
-     │                  ╲   6-8주: 주요 효과
-  0.50│────────────────────╲──────── 골든존 상한
+     │                  ╲   Weeks 6-8: main effect
+  0.50│────────────────────╲──────── Golden Zone upper bound
      │                      ╲
-  0.45│                       ╲  ★ 치료 목표 도달
-     │                        ●●●●●●●●● 유지
+  0.45│                       ╲  ★ Treatment target reached
+     │                        ●●●●●●●●● maintained
   0.40│
      │
-  1/e│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  골든존 중심
+  1/e│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Golden Zone center
      │
-  0.21│───────────────────────────────── 골든존 하한
+  0.21│───────────────────────────────── Golden Zone lower bound
      └──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──
-       0  1주 2주 4주 6주 8주 12주 6월 1년
-              SSRI 복용 기간
+       0  1w 2w 4w 6w 8w 12w 6mo 1yr
+              SSRI duration
 
-  ░░░ = 우울 영역 (I > 0.50)
-  ★  = 치료 효과 = 골든존 진입
+  ░░░ = Depression zone (I > 0.50)
+  ★  = Therapeutic effect = Golden Zone entry
 ```
 
-## 왜 SSRI는 효과가 느린가 (2-6주)
+## Why SSRIs Are Slow to Work (2-6 weeks)
 
 ```
-  약물적 효과:  세로토닌 ↑ = 즉시 (1일)
-  임상적 효과:  우울 개선 = 느림 (2-6주)
+  Pharmacological effect:  serotonin ↑ = immediate (day 1)
+  Clinical effect:          depression improvement = slow (2-6 weeks)
 
-  우리 모델의 설명:
+  Our model's explanation:
   ┌────────────────────────────────────────────┐
-  │  즉시: 시냅스 세로토닌 ↑                     │
-  │  1주:  자가수용체 하향조절 시작               │
-  │  2주:  억제 네트워크 톤 변화 시작 (I↓ 시작)   │
-  │  4주:  I가 골든존 경계에 접근                 │
-  │  6주:  I가 안정적으로 골든존 내부에 정착       │
-  │  8주:  새로운 정상 상태(steady state) 도달    │
+  │  Immediately: synaptic serotonin ↑           │
+  │  Week 1:  autoreceptor downregulation begins │
+  │  Week 2:  inhibitory network tone begins to change (I↓ starts) │
+  │  Week 4:  I approaches Golden Zone boundary  │
+  │  Week 6:  I stably settles inside Golden Zone │
+  │  Week 8:  new steady state reached           │
   └────────────────────────────────────────────┘
 
-  I의 시간 상수 τ ≈ 2-3주
-  → SSRI의 "지연 효과"는 I가 골든존에 도달하는 데 걸리는 시간
+  Time constant of I: τ ≈ 2-3 weeks
+  → SSRI "delayed effect" = time it takes for I to reach the Golden Zone
 ```
 
-## 다양한 항우울제의 I 매핑
+## I Mapping for Various Antidepressants
 
 ```
-  약물               │ 메커니즘          │ I 변화    │ 속도
+  Drug               │ Mechanism          │ I Change   │ Speed
   ──────────────────┼──────────────────┼──────────┼────────
-  SSRI (플루옥세틴)  │ 5-HT 재흡수 억제  │ I↓ 미세  │ 느림
-  SNRI (벤라팍신)    │ 5-HT+NE 재흡수   │ I↓ 중간  │ 보통
-  TCA (아미트립틸린) │ 다중 수용체       │ I↓ 중간  │ 보통
-  MAOI (페넬진)      │ MAO 효소 억제     │ I↓ 강함  │ 빠름
-  케타민             │ NMDA 길항         │ I↓ 급격  │ 매우빠름
-  실로시빈           │ 5-HT2A 작용      │ I↓↓ 급격│ 즉시
+  SSRI (fluoxetine)  │ 5-HT reuptake inh.│ I↓ subtle │ slow
+  SNRI (venlafaxine) │ 5-HT+NE reuptake  │ I↓ moderate│ moderate
+  TCA (amitriptyline)│ multi-receptor    │ I↓ moderate│ moderate
+  MAOI (phenelzine)  │ MAO enzyme inh.   │ I↓ strong │ fast
+  Ketamine           │ NMDA antagonist   │ I↓ rapid  │ very fast
+  Psilocybin         │ 5-HT2A agonist    │ I↓↓ rapid │ immediate
 
-  I 변화 크기:
-  SSRI  │────│         미세 (ΔI ≈ 0.1-0.2)
-  SNRI  │──────│       중간 (ΔI ≈ 0.15-0.25)
-  MAOI  │────────│     강함 (ΔI ≈ 0.2-0.3)
-  케타민│──────────│   급격 (ΔI ≈ 0.2-0.35)
-  실로  │────────────│ 극적 (ΔI ≈ 0.3-0.4)
+  I change magnitude:
+  SSRI  │────│         subtle (ΔI ≈ 0.1-0.2)
+  SNRI  │──────│       moderate (ΔI ≈ 0.15-0.25)
+  MAOI  │────────│     strong (ΔI ≈ 0.2-0.3)
+  Ketamine│──────────│   rapid (ΔI ≈ 0.2-0.35)
+  Psilocybin│────────────│ dramatic (ΔI ≈ 0.3-0.4)
 ```
 
-## 과치료 위험: I를 너무 낮추면
+## Risk of Over-treatment: Lowering I Too Much
 
 ```
   I
-  0.80│● 우울 (시작)
+  0.80│● Depression (start)
      │  ╲
   0.60│    ╲
      │      ╲
-  0.50│────────╲──── 골든존 상한
+  0.50│────────╲──── Golden Zone upper bound
      │          ╲
-  0.40│           ╲  ★ 목표 (정상)
+  0.40│           ╲  ★ Target (normal)
      │             ╲
   0.30│              ╲
      │                ╲
-  0.21│─────────────────╲── 골든존 하한
+  0.21│─────────────────╲── Golden Zone lower bound
      │                    ╲
-  0.15│                     ● 과치료! (조증 전환)
+  0.15│                     ● Over-treatment! (manic switch)
      │
-     │  우울 → [적정 치료] → 정상 → [과치료] → 조증
-     │  I↑↑      I↓          I=골든존    I↓↓      I<골든존
+     │  Depression → [proper treatment] → normal → [over-treatment] → mania
+     │  I↑↑          I↓              I=Golden Zone    I↓↓          I<Golden Zone
 ```
 
-## 양극성 장애: I의 진동
+## Bipolar Disorder: Oscillation of I
 
 ```
   I
-  0.80│●     우울삽화        ●  우울삽화
-     │ ╲                  ╱ ╲
-  0.60│   ╲              ╱     ╲
-     │     ╲           ╱        ╲
-  0.50│──────╲────────╱───────────╲── 골든존 상한
-     │        ╲    ╱                ╲
-  0.40│         ╲╱                    ╲
-     │         ╱╲                      ╲
-  0.21│────────╱──╲──────────────────────── 골든존 하한
+  0.80│●     depressive episode   ●  depressive episode
+     │ ╲                        ╱ ╲
+  0.60│   ╲              ╱           ╲
+     │     ╲           ╱               ╲
+  0.50│──────╲────────╱──────────────────╲── Golden Zone upper bound
+     │        ╲    ╱                      ╲
+  0.40│         ╲╱                          ╲
+     │         ╱╲                            ╲
+  0.21│────────╱──╲────────────────────────────── Golden Zone lower bound
      │      ╱      ╲
-  0.10│   ●          ● 조증삽화
+  0.10│   ●          ● manic episode
      └──┼──┼──┼──┼──┼──┼──┼──┼──
-       0  1월 3월 6월 9월 1년 15월
+       0  1mo 3mo 6mo 9mo 1yr 15mo
 
-  양극성 = I가 골든존을 중심으로 과도하게 진동
-  기분안정제(리튬) = 진동 진폭 감소 = I를 골든존 안에 가둠
+  Bipolar = I oscillating excessively around the Golden Zone
+  Mood stabilizer (lithium) = reduces oscillation amplitude = confines I within Golden Zone
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 155 (GABA=I):    세로토닌은 GABA와 다른 경로로 I에 영향
-  가설 166 (의식):       우울 = 의식은 있지만 Compass ↓ (무방향)
-  가설 195 (카페인):     카페인은 일시적 I↓, SSRI는 지속적 I↓
-  가설 199 (명상vs약물): SSRI = 약물이지만 점진적 (명상과 비슷한 시간)
+  Hypothesis 155 (GABA=I):    serotonin affects I via a different pathway than GABA
+  Hypothesis 166 (consciousness): depression = consciousness intact but Compass ↓ (directionless)
+  Hypothesis 195 (caffeine):  caffeine is temporary I↓, SSRI is sustained I↓
+  Hypothesis 199 (meditation vs drugs): SSRI = drug but gradual (similar timeline to meditation)
 ```
 
-## 한계
+## Limitations
 
-1. "우울 = I 과다"는 단순화이며, 우울증의 다양한 아형을 설명하지 못함
-2. SSRI 비반응자(약 30%)는 I 모델로 설명 불가
-3. 세로토닌 → I 매핑의 정량적 관계가 확립되지 않음
-4. 위약 효과(우울증 치료의 30-40%)가 I 모델에 미치는 영향 불명
+1. "Depression = excessive I" is a simplification and cannot explain the diverse subtypes of depression
+2. SSRI non-responders (~30%) cannot be explained by the I model
+3. Quantitative relationship between serotonin → I mapping not established
+4. Effect of placebo response (30-40% in depression treatment) on I model unknown
 
-## 검증 방향
+## Verification Direction
 
-- [ ] SSRI 복용 전후 fMRI GABA 분광 → I 변화 측정
-- [ ] 치료 반응자 vs 비반응자의 기저 I 차이 분석
-- [ ] SSRI 효과 발현 시점과 I 골든존 진입 시점 비교
-- [ ] 양극성 장애 환자의 I 시계열 데이터 → 진동 패턴 확인
+- [ ] fMRI GABA spectroscopy before/after SSRI → measure I change
+- [ ] Analyze baseline I difference between treatment responders vs non-responders
+- [ ] Compare SSRI onset timing with Golden Zone entry timing of I
+- [ ] Bipolar disorder patient I time-series data → confirm oscillation pattern
 
-## 검증 결과 (2026-03-24, verify_pharmacology.py)
+## Verification Results (2026-03-24, verify_pharmacology.py)
 
 ```
-  검증 항목         결과    설명
-  ──────────────  ──────  ──────────────────────────
-  I↑→G↓ 역상관    ✅     우울 I=0.65→치료 I=0.50, G↑ 40.8%
-  골든존 적합성    ✅     치료 목표 I=0.45~0.50 = 골든존 상단
-  시간 상수 검증   ✅     모델: τ=2.5주 → 골든존 진입 5주
-                          실제 SSRI 효과 발현: 2-6주 → 일치!
-  양극성 모델      ✅     I 진동 = 우울↔조증, 리튬=진폭 감소
-  텍사스 p-value   0.003  (Bonferroni 보정, 6개 약물 동시)
+  Verification item     Result  Description
+  ──────────────────  ──────  ──────────────────────────
+  I↑→G↓ inverse corr.  ✅     depressed I=0.65→treated I=0.50, G↑ 40.8%
+  Golden Zone fit       ✅     treatment target I=0.45~0.50 = upper Golden Zone
+  Time constant check   ✅     model: τ=2.5w → Golden Zone entry 5w
+                               actual SSRI onset: 2-6w → consistent!
+  Bipolar model         ✅     I oscillation = depression↔mania, lithium=amplitude reduction
+  Texas p-value         0.003  (Bonferroni correction, 6 drugs simultaneous)
 
-  독립 검증 포인트: SSRI의 "지연 효과"가 모델의 시간 상수와
-  독립적으로 일치한다는 점이 가장 강력한 구조적 증거.
-  이것은 사후적 매핑이 아니라 모델에서 자연스럽게 도출됨.
+  Independent verification point: The SSRI "delayed effect" independently
+  matching the model's time constant is the strongest structural evidence.
+  This is not a post-hoc mapping but naturally derived from the model.
 
-  등급: 🟧 (구조적 대응 확인, 복용 전후 fMRI GABA 측정으로 검증 필요)
+  Grade: 🟧 (structural correspondence confirmed, needs pre/post fMRI GABA measurement)
 
-  ⚠️ 텍사스 명사수 위험: 낮음
-  시간 상수 일치는 구조적 (I의 지수감소 → 골든존 도달 시간)
+  ⚠️ Texas Sharpshooter risk: Low
+  Time constant match is structural (exponential decay of I → time to reach Golden Zone)
 ```
 
 ---
 
-*관련: 가설 155, 166, 195, 199*
-*분류: 약물-골든존 매핑 시리즈 (195-200)*
+*Related: Hypothesis 155, 166, 195, 199*
+*Category: Drug-Golden Zone Mapping Series (195-200)*

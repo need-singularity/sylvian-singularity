@@ -1,27 +1,27 @@
-# H-MP-4: σφ=nτ로 홀수 완전수 불가능 기여
+# H-MP-4: Impossibility of Odd Perfect Numbers via σφ=nτ
 
-> **가설**: 홀수 완전수 m에서 σ(m)=2m이면 φ(m)/τ(m)=2가 필요하지만, H-MP-1a에서 홀수 n의 σφ/(nτ) ≥ (4/3)^ω > 1이므로 φ/τ ≥ (4/3)^ω/2 > 2 (ω≥10). 이것이 모순을 이끌 수 있는가?
+> **Hypothesis**: For odd perfect number m where σ(m)=2m, φ(m)/τ(m)=2 is required, but from H-MP-1a, for odd n we have σφ/(nτ) ≥ (4/3)^ω > 1, so φ/τ ≥ (4/3)^ω/2 > 2 (ω≥10). Can this lead to a contradiction?
 
-## 배경
-- σφ=nτ ⟺ n=6 (R78, 새 정리)
-- 홀수 n: σφ/(nτ) ≥ (4/3)^ω (H-MP-1a, 증명 완료)
-- 홀수 완전수: σ/n=2 → φ/τ = σφ/(2nτ) ≥ (4/3)^ω/2
+## Background
+- σφ=nτ ⟺ n=6 (R78, new theorem)
+- Odd n: σφ/(nτ) ≥ (4/3)^ω (H-MP-1a, proof complete)
+- Odd perfect number: σ/n=2 → φ/τ = σφ/(2nτ) ≥ (4/3)^ω/2
 - ω≥10 (Nielsen 2015) → φ/τ ≥ 8.88
 
-## 핵심 질문
-φ/τ ≥ 8.88 조건이 홀수 완전수의 Euler 형태 p^α×m² 와 **양립 불가능**한가?
+## Key Question
+Is the condition φ/τ ≥ 8.88 **incompatible** with the Euler form p^α×m² of odd perfect numbers?
 
-## 검증 방향
-1. [ ] Euler 형태에서 φ/τ 상한 계산
-2. [ ] 기존 제약 (ω≥10, Ω≥75, m>10^1500)과 결합
-3. [ ] φ/τ 하한과 상한이 교차하는지 확인
+## Verification Directions
+1. [ ] Calculate φ/τ upper bound for Euler form
+2. [ ] Combine with existing constraints (ω≥10, Ω≥75, m>10^1500)
+3. [ ] Check if φ/τ lower and upper bounds intersect
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
-Euler 형태 p^a × Π qi^(2bi)에서 정밀 하한:
-- 최소 케이스 (p=5,a=1, 9개 최소 홀수소수): φ/τ ≥ 1.56×10^16
-- 우리 일반 하한 (4/3)^10/2 ≈ 8.88 보다 ~10^15배 강함
-- **그러나**: φ/τ가 아무리 커도 충분히 큰 소수면 만족 가능
-- **결론**: 새 제약이지만 홀수 완전수 불가능 증명에는 부족
+Precise lower bound for Euler form p^a × Π qi^(2bi):
+- Minimal case (p=5,a=1, 9 smallest odd primes): φ/τ ≥ 1.56×10^16
+- ~10^15 times stronger than our general lower bound (4/3)^10/2 ≈ 8.88
+- **However**: No matter how large φ/τ is, sufficiently large primes can satisfy it
+- **Conclusion**: New constraint but insufficient for proving impossibility of odd perfect numbers
 
-## 난이도: 고 | 파급력: ★★ (★★★★에서 하향) | 상태: 부분 검증
+## Difficulty: High | Impact: ★★ (downgraded from ★★★★) | Status: Partially Verified

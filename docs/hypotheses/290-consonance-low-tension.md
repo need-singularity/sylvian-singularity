@@ -1,43 +1,43 @@
-# 가설 290: 협화음 = 낮은 장력 (교차 도메인: 음악 ↔ 의식)
+# Hypothesis 290: Consonance = Low Tension (Cross-domain: Music ↔ Consciousness)
 
-> **음악 이론에서 협화 음정(consonance)이 불협화 음정(dissonance)보다 낮은 장력을 생성한다. Perfect 4th(4:3, ln=0.2877)이 최저 장력. 음악의 "아름다움"이 장력의 "합의"와 대응.**
+> **In music theory, consonant intervals create lower tension than dissonant intervals. Perfect 4th (4:3, ln=0.2877) has minimum tension. Musical "beauty" corresponds to tension "consensus".**
 
-## 실측
+## Measurements
 
 ```
   experiment_music_repulsion.py:
-    Perfect 4th (4:3): 최저 장력 (20.67)
-    이것은 ln(4/3) = 0.2877 = 골든존 폭!
+    Perfect 4th (4:3): Minimum tension (20.67)
+    This is ln(4/3) = 0.2877 = Golden Zone width!
 
-    협화음(octave, 5th, 4th) → 낮은 장력
-    불협화음(tritone, minor 2nd) → 높은 장력
+    Consonant intervals (octave, 5th, 4th) → Low tension
+    Dissonant intervals (tritone, minor 2nd) → High tension
 ```
 
-## 수학 교차
+## Mathematical Cross-connection
 
 ```
-  ln(4/3) = 0.2877 = 골든존 폭 (CLAUDE.md)
-  Perfect 4th = 4/3 비율
-  → 골든존 폭을 정의하는 수(4/3)가 가장 협화적인 음정이자 최저 장력
+  ln(4/3) = 0.2877 = Golden Zone width (CLAUDE.md)
+  Perfect 4th = 4/3 ratio
+  → The number (4/3) defining Golden Zone width is the most consonant interval with minimum tension
 
   H-CX-3: H = 2/3·ln(2) + 1/2·ln(3)
   ln(4/3) = ln(4) - ln(3) = 2·ln(2) - ln(3)
-  → H와 ln(4/3)는 같은 ln(2), ln(3)로 구성
+  → H and ln(4/3) are composed of the same ln(2), ln(3)
 ```
 
-## 의식 해석
+## Consciousness Interpretation
 
 ```
-  협화음 = 엔진들이 합의 = 낮은 장력 = "아름다운 소리"
-  불협화음 = 엔진들이 반발 = 높은 장력 = "불쾌한 소리"
-  → 미적 판단(아름다움)이 장력(엔진 합의)으로 측정 가능?
+  Consonance = Engine consensus = Low tension = "Beautiful sound"
+  Dissonance = Engine repulsion = High tension = "Unpleasant sound"
+  → Aesthetic judgment (beauty) measurable by tension (engine consensus)?
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  음정별 장력 순위 (낮→높):
-    #1: Perfect 4th (4:3)   111.9  ← H290b 확인!
+  Tension ranking by interval (low→high):
+    #1: Perfect 4th (4:3)   111.9  ← H290b confirmed!
     #2: Minor 3rd   (6:5)   126.5
     #3: Major 3rd   (5:4)   139.1
     #4: Tritone   (45:32)   144.9
@@ -47,26 +47,26 @@
     #8: Unison    (1:1)     224.8
     #9: Octave    (2:1)     331.6
 
-  그룹별 평균:
+  Group averages:
     Perfect:    210.9 ± 80.4
     Imperfect:  132.8 ± 6.3
     Dissonant:  172.2 ± 28.7
 
-  분석:
-    H290a (협화음=낮은 장력): 반박! Perfect(210.9) > Dissonant(172.2)
-    H290b (P4=최저 장력):     확인! P4 = rank #1
+  Analysis:
+    H290a (consonance=low tension): Refuted! Perfect(210.9) > Dissonant(172.2)
+    H290b (P4=minimum tension):     Confirmed! P4 = rank #1
 
-    왜 Perfect 그룹이 높은가?
-    → Octave(331.6), Unison(224.8)이 매우 높음
-    → 단순 비율(2:1, 1:1)이 오히려 학습하기 어려운 것?
-    → P4(4:3)만 예외적으로 낮음
+    Why is Perfect group high?
+    → Octave(331.6), Unison(224.8) are very high
+    → Simple ratios (2:1, 1:1) actually harder to learn?
+    → P4(4:3) is exceptionally low
 
-  교차 도메인:
-    P4 = 4:3, ln(4/3) = 0.2877 = 골든존 폭!
-    P4가 최저 장력 = 골든존 폭을 정의하는 비율이 "가장 합의된" 음정
+  Cross-domain:
+    P4 = 4:3, ln(4/3) = 0.2877 = Golden Zone width!
+    P4 has minimum tension = The ratio defining Golden Zone width is the "most consensual" interval
 ```
 
-### ASCII 장력 막대그래프
+### ASCII Tension Bar Chart
 
 ```
   P4(4:3)   |################..................................| 111.9 ***
@@ -80,4 +80,4 @@
   Octave    |#################################################.| 331.6
 ```
 
-## 상태: 🟧 부분 확인 (P4=최저 확인, 협화음=저장력은 반박)
+## Status: 🟧 Partially Confirmed (P4=minimum confirmed, consonance=low tension refuted)

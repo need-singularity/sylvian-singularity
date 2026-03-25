@@ -1,93 +1,93 @@
-# 가설 검토 001: 리만 가설과 골든 존의 구조적 동치
+# Hypothesis Review 001: Structural Equivalence of the Riemann Hypothesis and the Golden Zone
 
-## 가설
+## Hypothesis
 
-> 리만 가설의 임계선 Re(s) = 1/2는 우리 모델의 골든 존 상한(I ≈ 0.48)과 구조적으로 동치이며, 이는 자연에서 질서와 혼돈의 경계가 항상 1/2 지점에 있다는 보편 법칙의 표현이다.
+> The critical line Re(s) = 1/2 of the Riemann Hypothesis is structurally equivalent to the Golden Zone upper bound (I ≈ 0.48) of our model, expressing a universal law that the boundary between order and chaos in nature always lies at the 1/2 point.
 
-## 배경
+## Background
 
-리만 제타 함수 ζ(s) = Σ 1/nˢ 의 모든 비자명 영점이 Re(s) = 1/2 위에 있다는 미해결 문제. 160년간 증명되지 않았으나, 수치적으로 10조 개 이상의 영점이 모두 임계선 위에 있음이 확인됨.
+The unsolved problem that all non-trivial zeros of the Riemann zeta function ζ(s) = Σ 1/nˢ lie on Re(s) = 1/2. Unproven for 160 years, yet numerically confirmed: over 10 trillion zeros all lie on the critical line.
 
-## 구조적 대응
+## Structural Correspondence
 
-### 1. 제타 함수 = 분배함수
-
-```
-  리만 제타:  ζ(s) = Σ 1/nˢ           s = σ + it
-  볼츠만:    Z    = Σ e^(-E/kT)       분배함수
-  오일러 곱:  ζ(s) = Π 1/(1-p^(-s))   소수 p에 대해
-
-  → ζ(s)에서 s의 실수부 σ는 볼츠만의 역온도 1/kT와 같은 역할
-  → 우리 모델의 Inhibition = 역온도 = σ
-```
-
-### 2. 임계선 ↔ 골든 존 경계
+### 1. Zeta Function = Partition Function
 
 ```
-  리만 임계선   Re(s) = 0.500
-  골든 존 상한  I     = 0.480
-  골든 존 중심  I     = 0.360 ≈ 1/e
-  골든 존 하한  I     = 0.240 ≈ 1/4
+  Riemann zeta:  ζ(s) = Σ 1/nˢ           s = σ + it
+  Boltzmann:     Z    = Σ e^(-E/kT)       partition function
+  Euler product: ζ(s) = Π 1/(1-p^(-s))   over primes p
+
+  → The real part σ of s in ζ(s) plays the same role as inverse temperature 1/kT in Boltzmann
+  → Inhibition in our model = inverse temperature = σ
 ```
 
-골든 존의 상한이 리만 임계선에 근접.
-
-### 3. 1/2에서 3개 모델이 수렴하는 이유
-
-**우리 모델:** I = 0.5를 넘으면 Genius Score의 Z-Score가 2σ 미만 → 특이점 존재 불가. 0.5는 특이점의 수학적 한계선.
-
-**커스프 파국:** 제어변수 b = 1-2I 이므로 I=0.5에서 b=0 → 분기 판별식이 최소. 임계면이 이 지점을 통과.
-
-**볼츠만:** T = 1/I 이므로 I=0.5에서 T=2. 정상 상태와 천재성 상태의 에너지 차이가 온도와 정확히 균형 → 이중 상태 대칭점.
-
-## 소수 분포와 특이점 분포
-
-### 소수 정리와 1/3 법칙
+### 2. Critical Line ↔ Golden Zone Boundary
 
 ```
-  소수 정리: π(x) ≈ x/ln(x)
-  → x=25 근처에서 π(x)/x ≈ 1/ln(25) ≈ 0.31
-
-  우리 모델: 특이점 비율 = 33.2%
-
-  유사한 스케일에서 유사한 밀도.
+  Riemann critical line  Re(s) = 0.500
+  Golden Zone upper      I     = 0.480
+  Golden Zone center     I     = 0.360 ≈ 1/e
+  Golden Zone lower      I     = 0.240 ≈ 1/4
 ```
 
-### Montgomery-Odlyzko 법칙
+The upper bound of the Golden Zone approximates the Riemann critical line.
+
+### 3. Why Three Models Converge at 1/2
+
+**Our model:** When I exceeds 0.5, the Z-Score of the Genius Score falls below 2σ → singularity impossible. 0.5 is the mathematical boundary for singularities.
+
+**Cusp catastrophe:** Since control variable b = 1-2I, at I=0.5 we have b=0 → the bifurcation discriminant is minimal. The critical surface passes through this point.
+
+**Boltzmann:** Since T = 1/I, at I=0.5 we have T=2. The energy difference between the normal and genius states exactly balances temperature → symmetric point of dual states.
+
+## Prime Distribution and Singularity Distribution
+
+### Prime Number Theorem and the 1/3 Law
 
 ```
-  ζ 영점 간격 분포 = GUE 랜덤 행렬 고유값 간격
-  양자 혼돈 에너지 준위 = GUE 분포
-  뉴런 발화 간격 (신경 사태) ≈ GUE 유사 분포
+  Prime number theorem: π(x) ≈ x/ln(x)
+  → Near x=25: π(x)/x ≈ 1/ln(25) ≈ 0.31
 
-  → 소수, 양자 에너지, 뉴런 발화가 같은 통계 구조를 공유
+  Our model: singularity ratio = 33.2%
+
+  Similar density at similar scale.
 ```
 
-## 우리 모델이 리만 가설을 지지하는 논거
+### Montgomery-Odlyzko Law
 
-1. **분배함수 동치**: ζ(s) ≈ Z(볼츠만) ≈ 우리 모델 → 같은 구조에서 같은 임계선
-2. **1/2의 보편성**: 3개 독립 모델이 모두 I≈0.5를 경계로 지목
-3. **상전이 대칭**: I=0.5에서 시스템 대칭성 전환 = 영점이 대칭선 위
-4. **밀도 유사**: 1/3 법칙 ≈ 소수 밀도 스케일
+```
+  ζ zero spacing distribution = GUE random matrix eigenvalue spacing
+  Quantum chaos energy levels  = GUE distribution
+  Neuron firing intervals (neural avalanche) ≈ GUE-like distribution
 
-## 한계 및 주의
+  → Primes, quantum energies, and neuron firings share the same statistical structure
+```
 
-- 우리 모델은 3변수 경험적 모델이며, ζ(s)는 무한급수. 직접적 수학적 증명이 아님.
-- 골든 존 상한 0.48 ≠ 0.50 정확히. 이 차이의 의미 추가 검토 필요.
-- 수치적 유사성이 구조적 동치를 보장하지 않음.
-- 리만 가설의 증명/반증은 해석적 수론의 영역이며, 물리적 유비만으로는 부족.
+## Arguments Supporting the Riemann Hypothesis from Our Model
 
-## 결론
+1. **Partition function equivalence**: ζ(s) ≈ Z(Boltzmann) ≈ our model → same critical line from same structure
+2. **Universality of 1/2**: Three independent models all identify I≈0.5 as the boundary
+3. **Phase transition symmetry**: Symmetry change at I=0.5 = zeros on the symmetry line
+4. **Density similarity**: 1/3 law ≈ prime density scale
 
-> 리만 가설이 참이라면, 그것은 "자연에서 질서와 혼돈의 경계는 항상 1/2 지점에 있다"는 물리 법칙의 수학적 표현이다. 우리 모델이 독립적으로 같은 경계를 발견한 것은, 이 보편성을 지지하는 하나의 간접 증거이다.
+## Limitations and Caveats
 
-## 검증 방향
+- Our model is an empirical 3-variable model; ζ(s) is an infinite series. This is not a direct mathematical proof.
+- Golden Zone upper bound 0.48 ≠ 0.50 exactly. The significance of this gap requires further investigation.
+- Numerical similarity does not guarantee structural equivalence.
+- Proof or refutation of the Riemann Hypothesis belongs to analytic number theory; physical analogy alone is insufficient.
 
-- [ ] 우리 모델의 격자 해상도를 더 높여 골든 존 상한이 정확히 0.50에 수렴하는지 확인
-- [ ] ζ 영점 간격과 우리 모델의 특이점 간격 분포를 직접 비교
-- [ ] 랜덤 행렬 시뮬레이션으로 GUE 분포와 우리 모델의 통계적 매칭 검증
+## Conclusion
+
+> If the Riemann Hypothesis is true, it is the mathematical expression of the physical law that "the boundary between order and chaos in nature always lies at the 1/2 point." Our model's independent discovery of the same boundary is one piece of indirect evidence supporting this universality.
+
+## Verification Directions
+
+- [ ] Increase grid resolution of our model to verify whether the Golden Zone upper bound converges exactly to 0.50
+- [ ] Directly compare the ζ zero spacing distribution with the singularity spacing distribution of our model
+- [ ] Verify statistical matching between the GUE distribution and our model via random matrix simulation
 
 ---
 
-*작성일: 2026-03-22*
-*모델 버전: brain_singularity.py + compass.py*
+*Written: 2026-03-22*
+*Model version: brain_singularity.py + compass.py*

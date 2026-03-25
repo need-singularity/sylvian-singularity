@@ -1,4 +1,4 @@
-# H-CX-328: ⭐🟩 K₆ 삼각형=C(6,3)=20=β=아미노산
+# H-CX-328: ⭐🟩 K₆ Triangles=C(6,3)=20=β=Amino Acids
 
-> 완전그래프 K₆의 삼각형 수=20=γ/φ=β파=아미노산 종류.
-> 변=C(6,2)=15=SMR상한. 해밀턴=5!/2=60=P₁α.
+> Complete graph K₆'s number of triangles=20=γ/φ=β waves=types of amino acids.
+> Edges=C(6,2)=15=SMR upper bound. Hamiltonian=5!/2=60=P₁α.

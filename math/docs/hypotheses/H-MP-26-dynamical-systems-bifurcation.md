@@ -1,70 +1,70 @@
 ---
 id: H-MP-12
-title: "R-map 동역학계: 분기, 리아푸노프 스펙트럼, 기호 동역학"
-domain: 동역학계 (Dynamical Systems)
-status: 탐색중
+title: "R-map Dynamical Systems: Bifurcation, Lyapunov Spectrum, Symbolic Dynamics"
+domain: Dynamical Systems
+status: exploring
 created: 2026-03-24
 depends_on: [H-MP-01, H-MP-03]
 golden_zone_dependent: false
 tags: [sigma-phi, dynamical-systems, bifurcation, lyapunov, symbolic-dynamics]
 ---
 
-# H-MP-12: R-map 동역학계 — 분기, 리아푸노프 스펙트럼, 기호 동역학
+# H-MP-12: R-map Dynamical Systems — Bifurcation, Lyapunov Spectrum, Symbolic Dynamics
 
-> **가설**: R(n) = σ(n)φ(n)/(nτ(n)) 사상과 T(n) = nR(n) = σ(n)φ(n)/τ(n) 사상은
-> 비자명한 동역학적 구조를 갖는다. n=6은 유일한 안정 고정점이며,
-> 매개변수화된 T_α(n) = σ(n)^α · φ(n)^(1-α) / τ(n) 에서 α에 따라
-> 분기(bifurcation) 현상이 나타난다.
+> **Hypothesis**: The R(n) = σ(n)φ(n)/(nτ(n)) map and T(n) = nR(n) = σ(n)φ(n)/τ(n) map have
+> non-trivial dynamical structure. n=6 is the unique stable fixed point, and
+> in the parameterized T_α(n) = σ(n)^α · φ(n)^(1-α) / τ(n), bifurcation
+> phenomena appear according to α.
 
-## 배경
+## Background
 
-σφ = nτ 프로젝트에서 R(n) = σ(n)φ(n)/(nτ(n)) 비율은 핵심 지표이다.
-R(6) = 1 (완전수의 고정점 성질)이 알려져 있고, R-chain (반복 적용)에서
-모든 체인이 R < n 방향으로 수렴하는 것이 관찰되었다.
+In the σφ = nτ project, the ratio R(n) = σ(n)φ(n)/(nτ(n)) is a key indicator.
+R(6) = 1 (fixed point property of perfect numbers) is known, and in R-chains (repeated application)
+all chains are observed to converge in the R < n direction.
 
-이 가설은 R과 T를 **이산 동역학계(discrete dynamical system)**로 분석한다.
-ODE 연속 보간, 분기 매개변수, 리아푸노프 지수, 기호 동역학을 통해
-정수론적 구조의 동적 행동을 탐구한다.
+This hypothesis analyzes R and T as **discrete dynamical systems**.
+Through ODE continuous interpolation, bifurcation parameters, Lyapunov exponents, and symbolic dynamics,
+we explore the dynamic behavior of number-theoretic structures.
 
-관련 가설:
-- H-MP-01: σφ = nτ 항등식 (기본 구조)
-- H-MP-03: R-chain 수렴 (동역학적 행동의 출발점)
+Related hypotheses:
+- H-MP-01: σφ = nτ identity (basic structure)
+- H-MP-03: R-chain convergence (starting point of dynamical behavior)
 
-## 1. T(n) 사상의 궤도 구조
+## 1. Orbit Structure of T(n) Map
 
-T(n) = σ(n)φ(n)/τ(n) 사상을 정수 사상 T_int(n) = round(T(n))으로 정의하면,
-이산 동역학계 n → T_int(n)의 궤도를 추적할 수 있다.
+Defining the T(n) = σ(n)φ(n)/τ(n) map as the integer map T_int(n) = round(T(n)),
+we can trace orbits of the discrete dynamical system n → T_int(n).
 
-### 고정점
+### Fixed Points
 
-| n | σ(n) | φ(n) | τ(n) | T(n) | T_int(n) | 고정점? |
+| n | σ(n) | φ(n) | τ(n) | T(n) | T_int(n) | Fixed point? |
 |---|------|------|------|------|----------|---------|
-| 2 | 3 | 1 | 2 | 1.50 | 2 | YES (반올림) |
-| 6 | 12 | 2 | 4 | 6.00 | 6 | YES (정확) |
+| 2 | 3 | 1 | 2 | 1.50 | 2 | YES (rounded) |
+| 6 | 12 | 2 | 4 | 6.00 | 6 | YES (exact) |
 | 28 | 56 | 12 | 6 | 112 | 112 | NO |
 
-**n = 2..10000 범위에서 T_int의 고정점은 오직 n=2와 n=6 두 개뿐이다.**
-n=2는 반올림에 의한 유사 고정점(T(2)=1.5→2)이고, n=6은 정확한 고정점(T(6)=6.0)이다.
+**In the range n = 2..10000, T_int has only two fixed points: n=2 and n=6.**
+n=2 is a quasi-fixed point by rounding (T(2)=1.5→2), and n=6 is an exact fixed point (T(6)=6.0).
 
-### 주기 궤도
+### Periodic Orbits
 
-n = 2..200 전체 탐색 결과: **주기 궤도 없음**. T_int의 모든 궤도는 단조 발산하거나
-고정점(n=2, n=6)에 도달한다. 주기-배증(period-doubling) 현상은 관찰되지 않았다.
+Full search result for n = 2..200: **No periodic orbits**. All orbits of T_int either diverge monotonically
+or reach fixed points (n=2, n=6). No period-doubling phenomena observed.
 
-### 대표 궤도
+### Representative Orbits
 
 ```
-  n=3:  3 → 4 → 5 → 12 → 19 → 180 → 1456 → 99994 → ...  (발산)
-  n=6:  6 → 6  (고정점)
-  n=9:  9 → 26 → 126 → 936 → 32760 → ...  (발산)
-  n=28: 28 → 112 → 1190 → 62208 → ...  (발산)
+  n=3:  3 → 4 → 5 → 12 → 19 → 180 → 1456 → 99994 → ...  (divergent)
+  n=6:  6 → 6  (fixed point)
+  n=9:  9 → 26 → 126 → 936 → 32760 → ...  (divergent)
+  n=28: 28 → 112 → 1190 → 62208 → ...  (divergent)
 ```
 
-## 2. 탈출 속도 (Chain Length)
+## 2. Escape Velocity (Chain Length)
 
-n에서 시작하여 T^k(n) > 10000이 되는 최소 k를 "탈출 시간"으로 정의한다.
+Define the minimal k such that T^k(n) > 10000 starting from n as "escape time".
 
-### 탈출 시간 분포 (n=2..100)
+### Escape Time Distribution (n=2..100)
 
 ```
   steps | count | histogram
@@ -78,18 +78,18 @@ n에서 시작하여 T^k(n) > 10000이 되는 최소 k를 "탈출 시간"으로 
       7 |     1 | #                                    (n=3)
 ```
 
-대부분의 n은 2-3단계 만에 10000을 초과한다. 작은 소수(n=3,4,5)만이
-더 긴 체인을 가진다. R(n) > 1이 n=2를 제외한 모든 n에서 성립하므로
-T(n) > n이고, 궤도는 **지수적으로 발산**한다.
+Most n exceed 10000 in just 2-3 steps. Only small primes (n=3,4,5) have
+longer chains. Since R(n) > 1 holds for all n except n=2,
+T(n) > n, and orbits **diverge exponentially**.
 
-## 3. 기호 동역학 (Symbolic Dynamics)
+## 3. Symbolic Dynamics
 
-R(n)의 부호에 따라 기호를 부여한다:
+Assign symbols according to the sign of R(n):
 - U (Up): R(n) > 1
 - D (Down): R(n) < 1
 - F (Fixed): R(n) = 1
 
-### 기호 열 (n=2..100)
+### Symbol Sequence (n=2..100)
 
 ```
   n=2-51:  D U U U F U U U U U U U U U U U U U U U U U U U U
@@ -97,36 +97,36 @@ R(n)의 부호에 따라 기호를 부여한다:
   n=52-100: U U U U U U U U U U U U U U U U U U U U U U U U U
             U U U U U U U U U U U U U U U U U U U U U U U U U
 
-  통계 (n=2..100):
-    U (R>1):  97개 (98.0%)
-    D (R<1):   1개 ( 1.0%)  — n=2만
-    F (R=1):   1개 ( 1.0%)  — n=6만
+  Statistics (n=2..100):
+    U (R>1):  97 (98.0%)
+    D (R<1):   1 ( 1.0%)  — only n=2
+    F (R=1):   1 ( 1.0%)  — only n=6
 
-  n=2..1000 전체에서도 R(n)<1인 것은 n=2 하나뿐!
+  Even for n=2..1000, R(n)<1 only for n=2!
 ```
 
-**핵심 발견**: R(n) < 1인 정수는 n=2가 유일하다 (n=2..1000 확인).
-이것은 σ(n)φ(n) < nτ(n)이 n=2에서만 성립한다는 뜻이다.
+**Key discovery**: The integer with R(n) < 1 is unique: n=2 (confirmed for n=2..1000).
+This means σ(n)φ(n) < nτ(n) holds only for n=2.
 R(2) = 3·1/(2·2) = 3/4.
 
-## 4. 리아푸노프 스펙트럼
+## 4. Lyapunov Spectrum
 
-### 단일 지수 Λ(n) = ln(R(n))
+### Single Exponent Λ(n) = ln(R(n))
 
-R(n)=1 (n=6)에서 Λ=0은 **중립 안정성**을 의미한다.
-R(n)<1 (n=2)에서 Λ<0은 **수축**을 의미한다.
-R(n)>1 (나머지 전부)에서 Λ>0은 **팽창**을 의미한다.
+R(n)=1 (n=6) with Λ=0 means **neutral stability**.
+R(n)<1 (n=2) with Λ<0 means **contraction**.
+R(n)>1 (all others) with Λ>0 means **expansion**.
 
 ```
-  Lyapunov exponent Λ(n) = ln(R(n))    (* = 특이)
+  Lyapunov exponent Λ(n) = ln(R(n))    (* = special)
   ─────────────────────────────────────────────────
   n   R(n)       Λ(n)
   ─────────────────────────────────────────────────
-  2   0.7500    -0.2877  *  유일한 음수
+  2   0.7500    -0.2877  *  Unique negative
   3   1.3333     0.2877     = -Λ(2) = ln(4/3)!
   4   1.1667     0.1542
   5   2.4000     0.8755
-  6   1.0000     0.0000  *  고정점 (Λ=0)
+  6   1.0000     0.0000  *  Fixed point (Λ=0)
   7   3.4286     1.2321
   8   1.8750     0.6286
   ...
@@ -136,10 +136,10 @@ R(n)>1 (나머지 전부)에서 Λ>0은 **팽창**을 의미한다.
   47  23.4894    3.1565
 ```
 
-**주목**: Λ(2) = -ln(4/3) ≈ -0.2877이고 Λ(3) = +ln(4/3) ≈ +0.2877.
-정확히 부호만 반대! |Λ(2)| = Λ(3) = ln(4/3) = 골든존 폭.
+**Note**: Λ(2) = -ln(4/3) ≈ -0.2877 and Λ(3) = +ln(4/3) ≈ +0.2877.
+Exactly opposite sign! |Λ(2)| = Λ(3) = ln(4/3) = Golden Zone width.
 
-### 체인 평균 리아푸노프 지수
+### Chain-Average Lyapunov Exponent
 
 ```
   n  |  avg Λ along T-chain
@@ -154,34 +154,34 @@ R(n)>1 (나머지 전부)에서 Λ>0은 **팽창**을 의미한다.
   47 |  ######################################       5.40
 ```
 
-소수 p에 대해 평균 Λ이 크다 (R(p) = (p+1)(p-1)/2p ≈ p/2, 지수적 성장).
+For primes p, average Λ is large (R(p) = (p+1)(p-1)/2p ≈ p/2, exponential growth).
 
-## 5. 분기 분석 (Bifurcation)
+## 5. Bifurcation Analysis
 
-### 매개변수화: T_α(n) = σ(n)^α · φ(n)^(1-α) / τ(n)
+### Parameterization: T_α(n) = σ(n)^α · φ(n)^(1-α) / τ(n)
 
-고정점 조건 T_α(n) = n의 해 α*를 구한다:
+Find α* solving the fixed point condition T_α(n) = n:
 (σ/φ)^α = nτ/φ → **α* = ln(nτ/φ) / ln(σ/φ)**
 
-### 임계 α* 값
+### Critical α* Values
 
-| n | σ | φ | τ | α* | 비고 |
+| n | σ | φ | τ | α* | Note |
 |---|---|---|---|----|----|
 | 2 | 3 | 1 | 2 | 1.2619 | |
 | 3 | 4 | 2 | 2 | 1.5850 | |
-| 6 | 12 | 2 | 4 | **1.3869** | 완전수 |
+| 6 | 12 | 2 | 4 | **1.3869** | Perfect number |
 | 12 | 28 | 4 | 6 | 1.4854 | |
-| 28 | 56 | 12 | 6 | **1.7132** | 완전수 |
-| 소수 p | p+1 | p-1 | 2 | ~ln(p)/ln(2) → ∞ | p 증가 시 발산 |
+| 28 | 56 | 12 | 6 | **1.7132** | Perfect number |
+| Prime p | p+1 | p-1 | 2 | ~ln(p)/ln(2) → ∞ | Diverges as p increases |
 
-### α* 분포 (n=2..50)
+### α* Distribution (n=2..50)
 
 ```
   α*   | count | histogram
   -----+-------+----------------------------------
   1.2  |     1 | #
   1.4  |     3 | ###
-  1.6  |    13 | #############        ← 최빈 구간
+  1.6  |    13 | #############        ← Mode
   1.8  |    10 | ##########
   2.0  |     3 | ###
   2.2  |     4 | ####
@@ -189,73 +189,73 @@ R(n)>1 (나머지 전부)에서 Λ>0은 **팽창**을 의미한다.
   3.0  |     2 | ##
 ```
 
-**소수의 α*는 발산한다**: p가 소수이면 σ(p)=p+1, φ(p)=p-1이므로
+**α* for primes diverges**: If p is prime, then σ(p)=p+1, φ(p)=p-1, so
 α*(p) = ln(p) / ln((p+1)/(p-1)) ≈ p·ln(p)/2 → ∞.
-즉 소수에서는 어떤 α로도 T_α를 고정시키기 어렵다.
+That is, primes cannot be fixed by T_α for any α.
 
-### n=6에서의 T_α 값
+### T_α Values at n=6
 
-| α | T_α(6) | T_α(6)/6 | 행동 |
+| α | T_α(6) | T_α(6)/6 | Behavior |
 |---|--------|----------|------|
-| 0.0 | 0.50 | 0.083 | 강한 수축 |
-| 0.3 | 0.86 | 0.143 | 수축 |
-| 0.5 | 1.22 | 0.204 | 약한 팽창 |
-| 0.7 | 1.75 | 0.292 | 팽창 |
+| 0.0 | 0.50 | 0.083 | Strong contraction |
+| 0.3 | 0.86 | 0.143 | Contraction |
+| 0.5 | 1.22 | 0.204 | Weak expansion |
+| 0.7 | 1.75 | 0.292 | Expansion |
 | 1.0 | 3.00 | 0.500 | σ/τ |
-| **1.387** | **6.00** | **1.000** | **고정점** |
+| **1.387** | **6.00** | **1.000** | **Fixed point** |
 
-α = ln(12)/ln(6) ≈ 1.3869에서 정확히 T_α(6) = 6.
-이 값은 ln(12)/ln(6) = ln(2·6)/ln(6) = 1 + ln(2)/ln(6).
+At α = ln(12)/ln(6) ≈ 1.3869, exactly T_α(6) = 6.
+This value is ln(12)/ln(6) = ln(2·6)/ln(6) = 1 + ln(2)/ln(6).
 
-## 6. ODE 연속 보간
+## 6. ODE Continuous Interpolation
 
-dx/dt = σ(x)/x - τ(x)를 연속 변수 x로 확장하면,
-고정점은 σ(x)/x = τ(x)를 만족하는 x이다.
+Extending dx/dt = σ(x)/x - τ(x) to continuous variable x,
+fixed points satisfy σ(x)/x = τ(x).
 
-정수점에서:
-- x=6: σ(6)/6 = 12/6 = 2, τ(6) = 4. σ/x ≠ τ이므로 ODE 고정점이 아님.
-- ODE의 고정점은 별도의 보간 방법에 의존하며, 정수론적 T 사상의 고정점과
-  일반적으로 일치하지 않는다.
+At integer points:
+- x=6: σ(6)/6 = 12/6 = 2, τ(6) = 4. σ/x ≠ τ, so not an ODE fixed point.
+- ODE fixed points depend on the specific interpolation method and generally
+  do not coincide with fixed points of the number-theoretic T map.
 
-이 ODE 접근은 σ, τ의 연속 보간이 자연스럽지 않으므로 한계가 있다.
-정수론적 동역학계로서의 분석이 더 적절하다.
+This ODE approach has limitations since continuous interpolation of σ, τ is not natural.
+Analysis as a number-theoretic dynamical system is more appropriate.
 
-## 해석
+## Interpretation
 
-1. **n=6의 독자성**: T_int 사상의 정확한 고정점은 n=6이 유일하다.
-   n=2는 반올림에 의한 유사 고정점. n=2..10000에서 확인됨.
+1. **Uniqueness of n=6**: The exact fixed point of T_int map is unique: n=6.
+   n=2 is a quasi-fixed point by rounding. Confirmed for n=2..10000.
 
-2. **보편적 발산**: n=2, 6을 제외한 모든 궤도는 단조 발산한다.
-   주기 궤도, 주기-배증 없음. 혼돈(chaos)이 아니라 **단조 팽창**.
+2. **Universal divergence**: All orbits except n=2, 6 diverge monotonically.
+   No periodic orbits, no period-doubling. Not chaos but **monotonic expansion**.
 
-3. **Λ(2)과 Λ(3)의 대칭**: |Λ(2)| = Λ(3) = ln(4/3) = 골든존 폭.
-   이것은 R(2)·R(3) = (3/4)·(4/3) = 1이라는 산술적 사실의 반영이지만,
-   이 두 값이 골든존 폭과 정확히 일치하는 것은 주목할 만하다.
+3. **Symmetry of Λ(2) and Λ(3)**: |Λ(2)| = Λ(3) = ln(4/3) = Golden Zone width.
+   This reflects the arithmetic fact R(2)·R(3) = (3/4)·(4/3) = 1, but
+   the exact coincidence with the Golden Zone width is noteworthy.
 
-4. **소수의 불안정성**: 소수 p에서 α*가 발산하므로, 소수는 T_α 패밀리의
-   어떤 멤버에서도 고정점이 될 수 없다 (유한 α에서).
+4. **Instability of primes**: Since α* diverges at primes p, primes cannot
+   be fixed points in any member of the T_α family (for finite α).
 
-5. **R < 1의 희귀성**: n=2가 유일하게 R(n) < 1. 이것은 σ(n)φ(n) ≥ nτ(n)이
-   n ≥ 3에서 항상 성립함을 시사한다 (증명 필요).
+5. **Rarity of R < 1**: n=2 uniquely has R(n) < 1. This suggests σ(n)φ(n) ≥ nτ(n)
+   always holds for n ≥ 3 (proof needed).
 
-## 한계
+## Limitations
 
-- ODE 연속 보간은 σ, τ의 자연스러운 연속 확장이 없으므로 형식적이다.
-- T_int 사상은 round() 의존이며, floor나 ceil을 쓰면 결과가 달라진다.
-- α* 분석은 각 n에 대한 개별 값이며, 전역적 분기 구조는 아니다.
-- n=2가 유일한 R < 1이라는 관찰은 1000까지만 확인. 증명은 미완.
+- ODE continuous interpolation is formal since there's no natural continuous extension of σ, τ.
+- T_int map depends on round(); using floor or ceil gives different results.
+- α* analysis is individual values for each n, not a global bifurcation structure.
+- Observation that n=2 is the unique R < 1 is confirmed only up to 1000. Proof incomplete.
 
-## 검증 방향
+## Verification Directions
 
-1. **σ(n)φ(n) ≥ nτ(n) for n ≥ 3 증명**: 이것이 참이면 n=2 유일성이 확정.
-   소수/소수 거듭제곱/합성수로 분류하여 각각 부등식 증명 시도.
+1. **Prove σ(n)φ(n) ≥ nτ(n) for n ≥ 3**: If true, uniqueness of n=2 is confirmed.
+   Try proving inequality by classifying into primes/prime powers/composites.
 
-2. **α*(완전수) 패턴**: 완전수 6, 28, 496에서 α* 값의 규칙성 탐색.
-   α*(6) = ln(12)/ln(6), α*(28) = ln(14)/ln(14/3). 일반 공식?
+2. **Pattern in α*(perfect numbers)**: Explore regularity in α* values for perfect numbers 6, 28, 496.
+   α*(6) = ln(12)/ln(6), α*(28) = ln(14)/ln(14/3). General formula?
 
-3. **floor 기반 T 사상**: round 대신 floor를 써서 T_floor(n) = floor(σφ/τ) 정의.
-   고정점/주기궤도가 달라지는가?
+3. **Floor-based T map**: Define T_floor(n) = floor(σφ/τ) instead of round.
+   Do fixed points/periodic orbits change?
 
-4. **R(2)·R(3) = 1 일반화**: R(n)·R(m) = 1인 (n,m) 쌍이 더 있는가?
+4. **Generalize R(2)·R(3) = 1**: Are there more (n,m) pairs with R(n)·R(m) = 1?
 
-5. **Λ(n) 점근 행동**: 소수에서 Λ(p) ≈ ln(p/2). 합성수에서의 패턴?
+5. **Asymptotic behavior of Λ(n)**: For primes Λ(p) ≈ ln(p/2). Pattern for composites?

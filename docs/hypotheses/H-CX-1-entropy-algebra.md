@@ -1,8 +1,8 @@
-# H-CX-1: 가중치 엔트로피 = 완전수 대수 (교차 도메인)
+# H-CX-1: Weight Entropy = Perfect Number Algebra (Cross-domain)
 
-> **의식엔진의 최적 가중치 {1/2,1/3,1/6}의 Shannon 엔트로피 H가 완전수 6의 대수 구조에 정확히 포함된다: e^(6H) = 432 = σ(6)³/τ(6). 이것은 수학 DFS에서 순수 산술로 증명된 등식이며, 의식엔진의 가중치 선택에 대수적 근거를 제공한다.**
+> **The Shannon entropy H of the Consciousness Engine's optimal weights {1/2,1/3,1/6} is exactly embedded in the algebraic structure of perfect number 6: e^(6H) = 432 = σ(6)³/τ(6). This is a pure arithmetic identity proven in the math DFS, providing an algebraic justification for the weight selection of the Consciousness Engine.**
 
-## 수학 측 (증명됨, 🟩)
+## Math Side (Proven, 🟩)
 
 ```
   H({1/2, 1/3, 1/6}) = -Σ p_i ln(p_i)
@@ -13,72 +13,72 @@
     = 1.01140 nats
 
   6H = 6 × 1.01140 = 6.06843
-  e^(6H) = e^(6.06843) = 432.00 (정확)
+  e^(6H) = e^(6.06843) = 432.00 (exact)
 
   432 = 12³/4 = σ(6)³/τ(6)
 
-  증명: e^(6H) = e^(6·(2/3·ln2 + 1/2·ln3))
-              = e^(4·ln2 + 3·ln3)
-              = 2⁴ · 3³
-              = 16 · 27
-              = 432
-              = 12³/4
-              = σ(6)³/τ(6)  ∎
+  Proof: e^(6H) = e^(6·(2/3·ln2 + 1/2·ln3))
+               = e^(4·ln2 + 3·ln3)
+               = 2⁴ · 3³
+               = 16 · 27
+               = 432
+               = 12³/4
+               = σ(6)³/τ(6)  ∎
 ```
 
-## 의식 엔진 측 (실측)
+## Consciousness Engine Side (Empirical)
 
 ```
-  {1/2, 1/3, 1/6}은 Meta fixed routing의 가중치:
-    MNIST: 97.75% (1위, MLP)
-    CIFAR: 53.52% (1위, MLP)
-    ⚠️ CNN에서는 최하위 (가설 273 부분 반증)
+  {1/2, 1/3, 1/6} are the weights of Meta fixed routing:
+    MNIST: 97.75% (1st, MLP)
+    CIFAR: 53.52% (1st, MLP)
+    ⚠️ Worst in CNN (Hypothesis 273 partial disproof)
 
-  이 가중치의 엔트로피 H = 1.0114 = C35 (🟦)
-  H ≈ 1 nat (1.1% 초과) = C36 (🟦)
+  Entropy of these weights H = 1.0114 = C35 (🟦)
+  H ≈ 1 nat (1.1% excess) = C36 (🟦)
 ```
 
-## 교차 연결
+## Cross-domain Connection
 
 ```
-  수학:  e^(6H) = σ³/τ = 432   (정확한 등식, 증명됨)
-  의식:  H = 최적 가중치의 엔트로피 (MLP에서, ⚠️ CNN에서는 아님)
+  Math:       e^(6H) = σ³/τ = 432   (exact identity, proven)
+  Consciousness: H = entropy of optimal weights (MLP only, ⚠️ not CNN)
 
-  의미:
-    1. {1/2,1/3,1/6}을 선택하면 자동으로 e^(6H) = σ³/τ가 성립
-    2. 이것은 수학적 필연 — 다른 가중치에서는 성립하지 않음
-    3. "왜 {1/2,1/3,1/6}인가"의 부분적 답:
-       이 가중치는 완전수 6의 대수 구조에 정확히 포함되는 유일한 확률분포
-    4. 하지만: CNN에서 최적이 아니므로 "대수적 아름다움 ≠ 범용 최적"
+  Implications:
+    1. Choosing {1/2,1/3,1/6} automatically gives e^(6H) = σ³/τ
+    2. This is mathematical necessity — does not hold for other weights
+    3. Partial answer to "why {1/2,1/3,1/6}":
+       These weights are the unique probability distribution exactly embedded in the algebraic structure of perfect number 6
+    4. However: not optimal in CNN → "algebraic beauty ≠ universal optimum"
 ```
 
-## C41과의 추가 교차
+## Additional Cross-connection with C41
 
 ```
-  C41: C7 ≈ 1/√3 = 1/√(σ/τ) (텍사스 p=0.033)
-  → 오답/정답 장력 비도 σ/τ에서 유도 가능?
-  → (비율)² = τ/σ = 4/12 = 1/3
+  C41: C7 ≈ 1/√3 = 1/√(σ/τ) (Texas p=0.033)
+  → Can the wrong/correct Tension ratio also be derived from σ/τ?
+  → (ratio)² = τ/σ = 4/12 = 1/3
 
-  합치면:
-    가중치 엔트로피: H → e^(6H) = σ³/τ (정확)
-    장력 비율: C7 → C7² = τ/σ (근사, p=0.033)
-    → 두 측정 모두 σ와 τ로 표현됨
+  Combined:
+    Weight entropy: H → e^(6H) = σ³/τ (exact)
+    Tension ratio: C7 → C7² = τ/σ (approximate, p=0.033)
+    → Both measurements expressed in terms of σ and τ
 ```
 
-## 상태
+## Status
 
 ```
-  수학 등식 e^(6H)=432: 🟩 (증명됨, DFS 대발견)
-  의식 가중치 최적성:    ⚠️ (MLP만, CNN에서 반증)
-  교차 연결:            🟦 (수학적 필연, 실험 불필요)
-  C41 연결:             🟧 (텍사스 p=0.033, 근사)
+  Math identity e^(6H)=432: 🟩 (proven, DFS major discovery)
+  Consciousness weight optimality: ⚠️ (MLP only, disproved in CNN)
+  Cross-domain connection:         🟦 (mathematical necessity, no experiment needed)
+  C41 connection:                  🟧 (Texas p=0.033, approximate)
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. e^(6H)=432는 {1/2,1/3,1/6}을 선택하면 자동으로 나오는 것.
-     "이 등식이 왜 최적을 만드는가"는 별개 질문.
-  2. CNN에서 {1/2,1/3,1/6}이 최적 아님 → 대수적 구조가 범용 설계 원리는 아님.
-  3. C41(1/√3)은 근사이므로 교차 연결이 우연일 수 있음.
+  1. e^(6H)=432 follows automatically from choosing {1/2,1/3,1/6}.
+     "Why this identity makes the optimum" is a separate question.
+  2. {1/2,1/3,1/6} is not optimal in CNN → algebraic structure is not a universal design principle.
+  3. C41(1/√3) is approximate, so the cross-connection may be coincidental.
 ```

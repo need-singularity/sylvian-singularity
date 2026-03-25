@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""H359 검증: 서번트 = 골든존 하한의 억제 해제
+"""H359 Verification: Savant = Inhibition Release at Golden Zone Lower Bound
 
-분열 후 dropout 비대칭으로 서번트 특성 유도:
-- child_savant: dropout=0.21 (골든존 하한), digits 0-4만 학습
-- child_normal: dropout=0.37 (골든존 중심), 전체 학습
+Inducing savant characteristics through dropout asymmetry after mitosis:
+- child_savant: dropout=0.21 (Golden Zone lower bound), learns only digits 0-4
+- child_normal: dropout=0.37 (Golden Zone center), learns all
 - Savant Index = max(class_tension) / min(class_tension)
 """
 import sys, os
@@ -23,13 +23,13 @@ GOLDEN_LOWER = 0.5 - math.log(4/3)  # 0.2123
 GOLDEN_CENTER = 1/math.e              # 0.3679
 
 def set_dropout(model, p):
-    """모든 Dropout layer의 p를 변경."""
+    """Change p for all Dropout layers."""
     for m in model.modules():
         if isinstance(m, nn.Dropout):
             m.p = p
 
 def filter_dataset(dataset, classes):
-    """특정 클래스만 포함하는 Subset 생성."""
+    """Create Subset containing only specific classes."""
     indices = [i for i, (_, y) in enumerate(dataset) if y in classes]
     return Subset(dataset, indices)
 
@@ -48,7 +48,7 @@ def train_model(model, loader, epochs=15, lr=0.001):
     return model
 
 def measure_per_class_tension(model, test_loader):
-    """클래스별 평균 장력 측정."""
+    """Measure average tension per class."""
     class_tensions = {i: [] for i in range(10)}
     class_correct = {i: 0 for i in range(10)}
     class_total = {i: 0 for i in range(10)}
@@ -85,34 +85,34 @@ def compute_savant_index(results):
 
 if __name__ == '__main__':
     print("=" * 65)
-    print(f"  H359: 서번트 = 골든존 하한의 억제 해제")
+    print(f"  H359: Savant = Inhibition Release at Golden Zone Lower Bound")
     print(f"  I_min = {GOLDEN_LOWER:.4f}, I_center = {GOLDEN_CENTER:.4f}")
-    print(f"  예측 증폭비 = {GOLDEN_CENTER/GOLDEN_LOWER:.4f} ≈ √3 = {math.sqrt(3):.4f}")
+    print(f"  Predicted amplification ratio = {GOLDEN_CENTER/GOLDEN_LOWER:.4f} ≈ √3 = {math.sqrt(3):.4f}")
     print("=" * 65)
 
-    # 데이터 준비
+    # Data preparation
     train_loader, test_loader = load_mnist(batch_size=128)
     train_ds = train_loader.dataset
 
-    # 도메인 분리
+    # Domain separation
     domain_a = set(range(5))   # digits 0-4
     domain_b = set(range(5, 10))  # digits 5-9
 
     train_a = filter_dataset(train_ds, domain_a)
     loader_a = DataLoader(train_a, batch_size=128, shuffle=True)
 
-    # Dropout sweep: 0.1, 0.21(골든하한), 0.30, 0.37(골든중심), 0.50
+    # Dropout sweep: 0.1, 0.21(Golden lower), 0.30, 0.37(Golden center), 0.50
     dropouts = [0.10, GOLDEN_LOWER, 0.30, GOLDEN_CENTER, 0.50]
 
-    print(f"\n  Phase 1: 부모 학습 (전체 MNIST, dropout=0.3, 15ep)")
+    print(f"\n  Phase 1: Parent training (full MNIST, dropout=0.3, 15ep)")
     parent = PureFieldEngine(784, 128, 10)
     parent = train_model(parent, train_loader, epochs=15)
 
     parent_results = measure_per_class_tension(parent, test_loader)
     parent_si = compute_savant_index(parent_results)
-    print(f"  부모 SI = {parent_si:.2f}")
+    print(f"  Parent SI = {parent_si:.2f}")
 
-    print(f"\n  Phase 2: Dropout sweep — 도메인 0-4만 학습, 20ep")
+    print(f"\n  Phase 2: Dropout sweep — training only domain 0-4, 20ep")
     print(f"  {'dropout':>8} {'SI':>8} {'Acc(0-4)':>10} {'Acc(5-9)':>10} {'T(0-4)':>10} {'T(5-9)':>10}")
     print(f"  {'─'*8} {'─'*8} {'─'*10} {'─'*10} {'─'*10} {'─'*10}")
 
@@ -130,15 +130,15 @@ if __name__ == '__main__':
         t_a = np.mean([results[c]['mean_tension'] for c in range(5)])
         t_b = np.mean([results[c]['mean_tension'] for c in range(5, 10)])
 
-        marker = " ← 골든하한" if abs(dp - GOLDEN_LOWER) < 0.01 else \
-                 " ← 골든중심" if abs(dp - GOLDEN_CENTER) < 0.01 else ""
+        marker = " ← Golden lower" if abs(dp - GOLDEN_LOWER) < 0.01 else \
+                 " ← Golden center" if abs(dp - GOLDEN_CENTER) < 0.01 else ""
 
         print(f"  {dp:>8.4f} {si:>8.2f} {acc_a*100:>9.1f}% {acc_b*100:>9.1f}% {t_a:>10.1f} {t_b:>10.1f}{marker}")
         all_results[dp] = {'si': si, 'acc_a': acc_a, 'acc_b': acc_b, 't_a': t_a, 't_b': t_b, 'details': results}
 
     # Per-class detail for golden lower
     gl_results = all_results[GOLDEN_LOWER]['details']
-    print(f"\n  === dropout={GOLDEN_LOWER:.4f} (골든존 하한) Per-class ===")
+    print(f"\n  === dropout={GOLDEN_LOWER:.4f} (Golden Zone lower bound) Per-class ===")
     print(f"  {'Digit':>5} {'Tension':>10} {'Acc':>8} {'Bar'}")
     print(f"  {'─'*5} {'─'*10} {'─'*8} {'─'*30}")
     max_t = max(r['mean_tension'] for r in gl_results.values())
@@ -148,27 +148,27 @@ if __name__ == '__main__':
         domain = "★" if c < 5 else " "
         print(f"  {c:>5} {r['mean_tension']:>10.1f} {r['accuracy']*100:>7.1f}% {domain}{'█' * bar_len}")
 
-    # SI 비교
-    print(f"\n  === Savant Index 비교 ===")
-    print(f"  부모 (전체학습, dp=0.3):  SI = {parent_si:.2f}")
+    # SI comparison
+    print(f"\n  === Savant Index Comparison ===")
+    print(f"  Parent (full training, dp=0.3):  SI = {parent_si:.2f}")
     for dp in dropouts:
         r = all_results[dp]
-        marker = " ← 골든하한" if abs(dp - GOLDEN_LOWER) < 0.01 else \
-                 " ← 골든중심" if abs(dp - GOLDEN_CENTER) < 0.01 else ""
+        marker = " ← Golden lower" if abs(dp - GOLDEN_LOWER) < 0.01 else \
+                 " ← Golden center" if abs(dp - GOLDEN_CENTER) < 0.01 else ""
         bar = "█" * int(r['si'])
         print(f"  child (dp={dp:.4f}): SI = {r['si']:>6.2f} {bar}{marker}")
 
-    # √3 검증
+    # √3 verification
     si_lower = all_results[GOLDEN_LOWER]['si']
     si_center = all_results[GOLDEN_CENTER]['si']
     if si_center > 0.01:
         ratio = si_lower / si_center
-        print(f"\n  SI(하한)/SI(중심) = {si_lower:.2f}/{si_center:.2f} = {ratio:.4f}")
+        print(f"\n  SI(lower)/SI(center) = {si_lower:.2f}/{si_center:.2f} = {ratio:.4f}")
         print(f"  √3 = {math.sqrt(3):.4f}")
-        print(f"  오차 = {abs(ratio - math.sqrt(3))/math.sqrt(3)*100:.1f}%")
+        print(f"  Error = {abs(ratio - math.sqrt(3))/math.sqrt(3)*100:.1f}%")
 
-    print(f"\n  결론:")
+    print(f"\n  Conclusion:")
     if si_lower > 3:
-        print(f"  ✅ dropout={GOLDEN_LOWER:.4f}에서 SI={si_lower:.1f} > 3 → 서번트 확인!")
+        print(f"  ✅ dropout={GOLDEN_LOWER:.4f} has SI={si_lower:.1f} > 3 → Savant confirmed!")
     else:
-        print(f"  ❌ SI={si_lower:.1f} < 3 → 서번트 미달 (더 긴 학습 필요?)")
+        print(f"  ❌ SI={si_lower:.1f} < 3 → Savant not achieved (needs longer training?)")

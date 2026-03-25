@@ -1,5 +1,6 @@
+```python
 #!/usr/bin/env python3
-"""자기참조 장력 수렴/발산 실험
+"""Self-referential tension convergence/divergence experiment
 
 MNIST: tension [446->484->491->490] -- converges
 CIFAR: tension [205->208->254->247] -- diverges (jumps up then down)
@@ -654,3 +655,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

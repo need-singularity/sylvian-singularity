@@ -1,63 +1,63 @@
-# 가설 284: tension_scale 자동 조절 — 도움 안 되면 자발적 포기
+# Hypothesis 284: tension_scale Auto-regulation — Voluntary Abandonment if Not Helpful
 
-> **학습이 tension_scale을 자동으로 조절한다. 장력이 도움이 되면 높게(0.47), 안 되면 거의 0으로(0.039). 이것은 CNN에서 {1/2,1/3,1/6}→균등 수렴(C42)과 같은 패턴: 불필요한 구조를 자발적으로 제거.**
+> **Learning automatically regulates tension_scale. If tension is helpful, it stays high (0.47), if not, it drops to nearly 0 (0.039). This is the same pattern as {1/2,1/3,1/6}→uniform convergence (C42) in CNN: voluntarily removing unnecessary structure.**
 
-## 실측
-
-```
-  tension_scale 학습값:
-    MNIST MLP:  0.4683 (적극 활용)
-    CIFAR MLP:  0.0389 (거의 포기)
-    비율:       0.083x (12배 차이)
-
-  가중치 학습값:
-    MLP:  {1/2, 1/3, 1/6} → 최적 (비대칭 유지)
-    CNN:  {1/2, 1/3, 1/6} → {0.34, 0.35, 0.31} (균등 수렴)
-```
-
-## 공통 패턴
+## Measurements
 
 ```
-  "불필요한 구조를 자발적으로 제거"
+  tension_scale learned values:
+    MNIST MLP:  0.4683 (actively utilized)
+    CIFAR MLP:  0.0389 (almost abandoned)
+    Ratio:      0.083x (12x difference)
 
-  1. tension_scale → 0 (CIFAR MLP): 장력이 도움 안 됨 → 끔
-  2. 가중치 → 균등 (CNN): 비대칭이 도움 안 됨 → 평탄화
-  3. 자기참조 발산 (CIFAR): 자기관찰이 도움 안 됨 → 불안정
-
-  → 모델은 "필요한 것만 유지, 불필요한 것은 자동 제거"
-  → 이것이 Occam's Razor의 신경망 버전?
+  Weight learned values:
+    MLP:  {1/2, 1/3, 1/6} → optimal (maintains asymmetry)
+    CNN:  {1/2, 1/3, 1/6} → {0.34, 0.35, 0.31} (uniform convergence)
 ```
 
-## 의식 해석
+## Common Pattern
 
 ```
-  MNIST: 장력(의식) 필요 → scale 높음 → 9.25pp 기여
-  CIFAR: 장력(의식) 불필요 → scale→0 → 0.53pp
+  "Voluntary removal of unnecessary structure"
 
-  → 의식은 자동 조절된다
-  → 필요할 때 켜지고, 필요 없을 때 꺼진다
-  → 이것은 가설 274(의식=오류교정)의 자동 조절 메커니즘
+  1. tension_scale → 0 (CIFAR MLP): tension not helpful → turned off
+  2. Weights → uniform (CNN): asymmetry not helpful → flattened
+  3. Self-reference divergence (CIFAR): self-observation not helpful → unstable
+
+  → Model "keeps only what's necessary, automatically removes unnecessary"
+  → Is this the neural network version of Occam's Razor?
 ```
 
-## 실험 결과: 3 데이터셋 tension_scale 추적 (2026-03-24)
+## Consciousness Interpretation
 
 ```
-  데이터셋       최종 acc   최종 scale   해석
+  MNIST: tension (consciousness) needed → high scale → 9.25pp contribution
+  CIFAR: tension (consciousness) unnecessary → scale→0 → 0.53pp
+
+  → Consciousness is automatically regulated
+  → Turns on when needed, turns off when not needed
+  → This is the auto-regulation mechanism of hypothesis 274 (consciousness=error correction)
+```
+
+## Experimental Results: 3 Dataset tension_scale Tracking (2026-03-24)
+
+```
+  Dataset        Final acc   Final scale   Interpretation
   ──────────    ────────   ──────────   ────────
-  MNIST          98.03%     1.7535      적극 활용 (계속 증가)
-  Fashion-MNIST  88.89%     1.3600      적극 활용 (계속 증가)
-  CIFAR-10       51.42%     0.5446      제한적 활용 (느린 증가)
+  MNIST          98.03%     1.7535      Actively utilized (continuously increasing)
+  Fashion-MNIST  88.89%     1.3600      Actively utilized (continuously increasing)
+  CIFAR-10       51.42%     0.5446      Limited utilization (slow increase)
 
-  놀라운 발견: 세 데이터셋 모두에서 tension_scale이 증가!
-  원래 예측: CIFAR는 scale→0 (자발적 포기)
-  실측: CIFAR도 scale 0.36→0.54 (증가하지만 속도 느림)
+  Surprising discovery: tension_scale increases in all three datasets!
+  Original prediction: CIFAR scale→0 (voluntary abandonment)
+  Actual: CIFAR scale also 0.36→0.54 (increases but slowly)
 
-  그러나 scale의 절대값 순서는 정확도 순서와 일치:
+  However, absolute scale order matches accuracy order:
     MNIST(1.75) > Fashion(1.36) > CIFAR(0.54)
-    → 정확도가 높을수록 장력을 더 적극적으로 사용
+    → Higher accuracy = more active tension use
 ```
 
-### tension_scale 추이 ASCII 그래프
+### tension_scale Trend ASCII Graph
 
 ```
   scale
@@ -76,14 +76,14 @@
   M=MNIST  F=Fashion  C=CIFAR
 ```
 
-### 수정된 해석
+### Revised Interpretation
 
 ```
-  원래 가설: "도움 안 되면 scale→0 (자발적 포기)"
-  수정: "scale은 항상 증가하지만 속도가 다르다"
-    → MNIST: 빠른 증가 (고정확도 = 장력 유용)
-    → CIFAR: 느린 증가 (저정확도 = 장력 부분적 유용)
-    → 완전한 포기가 아니라 "속도 조절"
+  Original hypothesis: "scale→0 if not helpful (voluntary abandonment)"
+  Revised: "scale always increases but at different speeds"
+    → MNIST: rapid increase (high accuracy = tension useful)
+    → CIFAR: slow increase (low accuracy = tension partially useful)
+    → Not complete abandonment but "speed regulation"
 ```
 
-## 상태: 🟧 수정됨 (포기 아닌 속도 조절, 3점 관측)
+## Status: 🟧 Modified (speed regulation not abandonment, 3-point observation)

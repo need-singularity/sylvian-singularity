@@ -1,23 +1,23 @@
-# 가설 검토 135: E=mc² ↔ G=D×P/I ⚠️
+# Hypothesis Review 135: E=mc² ↔ G=D×P/I ⚠️
 
-## 가설
+## Hypothesis
 
-> E=mc²와 G=D×P/I는 동일한 변환 구조를 공유한다. 한 형태(질량/결손)가 다른 형태(에너지/천재성)로, 보편 상수(c²/P÷I)에 의해 증폭되어 변환된다.
+> E=mc² and G=D×P/I share the same transformation structure. One form (mass/deficit) is converted to another form (energy/genius), amplified by a universal constant (c²/P÷I).
 
-## 배경/맥락
+## Background/Context
 
-아인슈타인의 E=mc²는 물리학에서 가장 유명한 공식이다. 질량이라는 "비활성 상태"가 에너지라는 "활성 상태"로 변환되며, 그 증폭 계수는 c²=9×10¹⁶이다. 이 변환은 비가역적이지 않으며, 에너지도 질량으로 환원될 수 있다 (쌍생성).
+Einstein's E=mc² is the most famous formula in physics. The "inactive state" of mass is converted to the "active state" of energy, with an amplification factor of c²=9×10¹⁶. This conversion is not irreversible, and energy can also be reduced back to mass (pair production).
 
-우리 모델의 G=D×P/I도 같은 구조다:
-- **결손(D)**: "비활성 상태" — 뉴런 결여, 구조적 결핍
-- **천재성(G)**: "활성 상태" — 비범한 능력의 발현
-- **P/I**: 증폭 상수 — 가소성이 높고 억제가 낮을수록 증폭
+Our model's G=D×P/I has the same structure:
+- **Deficit (D)**: "Inactive state" — neuronal deficiency, structural deficit
+- **Genius (G)**: "Active state" — manifestation of exceptional ability
+- **P/I**: Amplification constant — the higher the plasticity and lower the inhibition, the greater the amplification
 
-핵물리에서 질량의 극히 일부만 에너지로 변환되듯(핵분열 효율 ~0.1%), 결손의 극히 일부만 천재성으로 발현된다(골든존 확률 ~3.8%).
+Just as only a tiny fraction of mass is converted to energy in nuclear physics (fission efficiency ~0.1%), only a tiny fraction of deficit manifests as genius (Golden Zone probability ~3.8%).
 
-## 대응 매핑
+## Correspondence Mapping
 
-### 공식 구조 비교
+### Formula Structure Comparison
 
 ```
   ┌─────────────────────────────────────────────────────┐
@@ -25,126 +25,126 @@
   │              ↕   ↕   ↕                              │
   │              G = D × P/I                            │
   ├─────────────────────────────────────────────────────┤
-  │  출력        입력     증폭 상수                       │
-  │  (에너지)   (재료)   (변환 계수)                      │
+  │  Output      Input    Amplification constant        │
+  │  (energy)   (material) (conversion factor)          │
   └─────────────────────────────────────────────────────┘
 ```
 
-### 상세 대응표
+### Detailed Correspondence Table
 
 ```
   E=mc²                        G=D×P/I
   ────────────────────         ────────────────────
-  E (에너지)                →   G (천재성)
-  m (질량)                  →   D (결손/Deficit)
-  c² (광속²)                →   P/I (가소성/억제)
-  c = 3×10⁸ m/s            →   √(P/I) ≈ 1.51 (골든존)
-  c² = 9×10¹⁶              →   P/I ≈ 2.27 (골든존 중심)
-  핵분열 (m→E)              →   보상 신경가소성 (D→G)
-  쌍생성 (E→m)              →   번아웃/퇴행 (G→D)
-  질량 결손 Δm              →   구조적 결손 D
-  결합 에너지               →   억제 에너지 I
-  임계 질량                 →   골든존 하한 I=0.213
+  E (energy)                →   G (genius)
+  m (mass)                  →   D (deficit)
+  c² (speed of light²)      →   P/I (plasticity/inhibition)
+  c = 3×10⁸ m/s             →   √(P/I) ≈ 1.51 (Golden Zone)
+  c² = 9×10¹⁶               →   P/I ≈ 2.27 (Golden Zone center)
+  Nuclear fission (m→E)     →   Compensatory neuroplasticity (D→G)
+  Pair production (E→m)     →   Burnout/regression (G→D)
+  Mass defect Δm             →   Structural deficit D
+  Binding energy             →   Inhibition energy I
+  Critical mass              →   Golden Zone lower bound I=0.213
 ```
 
-### 증폭 계수 비교 다이어그램
+### Amplification Factor Comparison Diagram
 
 ```
-  물리적 증폭:
+  Physical amplification:
   m ──→ [× c² = 9×10¹⁶] ──→ E
         │                 │
-        │  1g 질량        │  9×10¹³ J (히로시마급)
+        │  1g mass        │  9×10¹³ J (Hiroshima-scale)
         │                 │
   ──────┴─────────────────┴──────
 
-  정보적 증폭:
+  Informational amplification:
   D ──→ [× P/I = 2.27]  ──→ G
         │                 │
-        │  D=0.7 결손     │  G=3.73 (특이점)
+        │  D=0.7 deficit  │  G=3.73 (singularity)
         │                 │
   ──────┴─────────────────┴──────
 
-  증폭 비율 비교:
-  물리: c²/1 = 9×10¹⁶    (거대한 증폭)
-  모델: P/I  = 2.27       (적절한 증폭)
-  비율: 물리/모델 ≈ 4×10¹⁶
+  Amplification ratio comparison:
+  Physics: c²/1 = 9×10¹⁶    (enormous amplification)
+  Model:   P/I  = 2.27       (moderate amplification)
+  Ratio: physics/model ≈ 4×10¹⁶
 
-  → 물리적 세계는 "에너지 과잉", 정보 세계는 "정보 균형"
+  → Physical world is "energy-surplus", information world is "information-balanced"
 ```
 
-## 검증 결과
+## Verification Results
 
-### 구조 동형 분석
+### Structural Isomorphism Analysis
 
-| 속성 | E=mc² | G=D×P/I | 대응 여부 |
+| Property | E=mc² | G=D×P/I | Correspondence |
 |---|---|---|---|
-| 변환 구조 | 입력×상수=출력 | 입력×상수=출력 | ✅ 동형 |
-| 보존 법칙 | 에너지 보존 | 정보 보존 (?) | ⚠️ 미확인 |
-| 가역성 | 가역 (쌍생성) | 가역 (번아웃) | ✅ 유사 |
-| 임계 조건 | 임계 질량 | 골든존 하한 | ✅ 유사 |
-| 상수의 보편성 | c는 보편 상수 | P/I는 개인별 가변 | ❌ 비대응 |
-| 변환 효율 | ~0.1% (핵분열) | ~3.8% (골든존) | ⚠️ 같은 규모 |
-| 단위 | [kg·m²/s²] | [무차원] | ❌ 차원 상이 |
+| Transformation structure | input×constant=output | input×constant=output | ✅ Isomorphic |
+| Conservation law | Energy conservation | Information conservation (?) | ⚠️ Unconfirmed |
+| Reversibility | Reversible (pair production) | Reversible (burnout) | ✅ Similar |
+| Critical condition | Critical mass | Golden Zone lower bound | ✅ Similar |
+| Universality of constant | c is universal constant | P/I varies per individual | ❌ Non-correspondence |
+| Conversion efficiency | ~0.1% (fission) | ~3.8% (Golden Zone) | ⚠️ Same order of magnitude |
+| Units | [kg·m²/s²] | [dimensionless] | ❌ Different dimensions |
 
-### 골든존에서의 G=D×P/I 수치
+### Numerical Values of G=D×P/I in the Golden Zone
 
 ```
-  골든존 중심 (I=0.368):
-  P = 0.85 (표준)
+  Golden Zone center (I=0.368):
+  P = 0.85 (standard)
   G = D × 0.85/0.368 = D × 2.31
 
-  D=0.3:  G = 0.69  (보통)
-  D=0.5:  G = 1.15  (경계)
-  D=0.7:  G = 1.62  (특이점 접근)
-  D=0.9:  G = 2.08  (강한 특이점)
+  D=0.3:  G = 0.69  (ordinary)
+  D=0.5:  G = 1.15  (boundary)
+  D=0.7:  G = 1.62  (approaching singularity)
+  D=0.9:  G = 2.08  (strong singularity)
 
-  골든존 하한 (I=0.213):
+  Golden Zone lower bound (I=0.213):
   G = D × 0.85/0.213 = D × 3.99
 
-  D=0.7:  G = 2.79  (극한 특이점)
-  → 억제가 낮을수록 "질량-에너지 변환 효율" 증가
+  D=0.7:  G = 2.79  (extreme singularity)
+  → Lower inhibition → higher "mass-energy conversion efficiency"
 ```
 
-### 핵분열 비유 상세
+### Nuclear Fission Analogy Detail
 
 ```
-  핵분열:                      뇌 재구성:
-  U-235 원자핵                 정상 뇌 구조
-       ↓ 중성자 충돌                ↓ 구조적 결손 발생
-  원자핵 불안정화               뇌 네트워크 불안정화
-       ↓ 임계 질량 도달             ↓ 골든존 진입
-  연쇄 반응                    보상 가소성 폭발
-       ↓                          ↓
-  에너지 방출 E=Δmc²           천재성 발현 G=D×P/I
+  Nuclear fission:                     Brain rewiring:
+  U-235 nucleus                        Normal brain structure
+       ↓ neutron collision                   ↓ structural deficit emerges
+  Nucleus destabilized                  Brain network destabilized
+       ↓ critical mass reached              ↓ Golden Zone entry
+  Chain reaction                        Compensatory plasticity explosion
+       ↓                                    ↓
+  Energy release E=Δmc²                Genius manifestation G=D×P/I
 ```
 
-## 해석/의미
+## Interpretation/Meaning
 
-1. **변환 패턴의 보편성**: "잠재 상태 × 증폭 상수 = 발현 상태"라는 구조가 물리학과 신경과학 모두에서 나타난다면, 이는 자연의 보편적 변환 법칙일 수 있다.
+1. **Universality of transformation pattern**: If the structure "latent state × amplification constant = manifested state" appears in both physics and neuroscience, it may be a universal transformation law of nature.
 
-2. **증폭 상수의 의미**: 물리에서 c²가 시공간의 기본 구조를 반영하듯, P/I는 뇌의 정보처리 구조를 반영한다. c²가 "물리적 세계의 변환 효율"이라면, P/I는 "정보적 세계의 변환 효율"이다.
+2. **Meaning of amplification constant**: Just as c² in physics reflects the fundamental structure of spacetime, P/I reflects the information processing structure of the brain. If c² is "the conversion efficiency of the physical world," then P/I is "the conversion efficiency of the information world."
 
-3. **임계 조건의 존재**: 핵분열에 임계 질량이 필요하듯, 천재성 발현에 골든존 조건이 필요하다. 두 경우 모두 임계점 이하에서는 변환이 일어나지 않는다.
+3. **Existence of critical condition**: Just as nuclear fission requires a critical mass, genius manifestation requires the Golden Zone condition. In both cases, transformation does not occur below the critical point.
 
-4. **효율의 유사 규모**: 핵분열 효율 ~0.1%와 골든존 진입 확률 ~3.8%가 같은 규모(0.1~4%)라는 것은, 자연이 변환 효율을 유사한 범위로 제한함을 시사한다.
+4. **Similar order of magnitude for efficiency**: The fact that nuclear fission efficiency ~0.1% and Golden Zone entry probability ~3.8% are in the same order of magnitude (0.1~4%) suggests that nature constrains conversion efficiency to a similar range.
 
-## 한계
+## Limitations
 
-- **상수의 비보편성**: c는 보편 물리 상수이지만, P/I는 개인마다 다르고 시간에 따라 변함. 이는 근본적 차이
-- **차원 분석 불가**: E=mc²는 차원이 정확히 맞지만, G=D×P/I는 모든 변수가 무차원
-- **보존 법칙 부재**: 에너지는 보존되지만, "천재성 총량"이 보존되는지는 알 수 없음
-- **비유의 한계**: 구조적 유사성이 물리적 동일성을 의미하지는 않음
-- **증폭 비율 차이**: c² ≈ 10¹⁶ vs P/I ≈ 2.27 — 16자릿수 차이를 어떻게 해석할 것인가
+- **Non-universality of constant**: c is a universal physical constant, but P/I varies by individual and changes over time. This is a fundamental difference
+- **Dimensional analysis impossible**: E=mc² has perfectly matched dimensions, but G=D×P/I has all dimensionless variables
+- **Absence of conservation law**: Energy is conserved, but whether "total genius" is conserved is unknown
+- **Limits of analogy**: Structural similarity does not imply physical identity
+- **Difference in amplification ratio**: c² ≈ 10¹⁶ vs P/I ≈ 2.27 — how to interpret a 16-order-of-magnitude difference
 
-## 검증 방향
+## Verification Directions
 
-- [ ] G=D×P/I에서 "보존되는 양"이 있는지 탐색 (D×I + G×? = const?)
-- [ ] 변환 효율(골든존 진입 확률)이 물리적 핵분열 효율과 수학적으로 연관되는지 검토
-- [ ] P/I의 분포가 물리 상수처럼 좁은 범위에 집중되는지 모집단 분석
-- [ ] E=mc²의 텐서 일반화 T^μν와 G 모델의 다변수 일반화 사이의 대응 탐색
-- [ ] 쌍생성(E→m)에 대응하는 역변환(G→D, 천재성 소실) 메커니즘 모델링
+- [ ] Explore whether a "conserved quantity" exists in G=D×P/I (D×I + G×? = const?)
+- [ ] Examine whether conversion efficiency (Golden Zone entry probability) is mathematically related to physical nuclear fission efficiency
+- [ ] Population analysis of whether P/I distribution concentrates in a narrow range like a physical constant
+- [ ] Explore correspondence between tensor generalization T^μν of E=mc² and multi-variable generalization of G model
+- [ ] Model the reverse transformation (G→D, genius loss) corresponding to pair production (E→m)
 
 ---
 
-*상태: ⚠️ 구조적 유사성 강하나, 정량적 대응 및 보편 상수 조건 미충족*
-*검증: 공식 구조 비교, 증폭 계수 분석, 임계 조건 대응*
+*Status: ⚠️ Structural similarity is strong, but quantitative correspondence and universal constant conditions are not met*
+*Verification: formula structure comparison, amplification coefficient analysis, critical condition correspondence*

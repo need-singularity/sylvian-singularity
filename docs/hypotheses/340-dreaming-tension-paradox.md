@@ -1,53 +1,53 @@
-# 가설 340: 꿈의 장력 역설 — 노이즈가 실제보다 높은 장력
+# Hypothesis 340: Dream Tension Paradox — Noise Has Higher Tension Than Reality
 
-> **RC-10에서 랜덤 노이즈(T=701)가 실제 숫자(T=147)보다 4.78배 높은 장력! "학습하지 않은 패턴에서 엔진들이 더 강하게 반발." 이것은 H313(tension=confidence)과 모순?**
+> **In RC-10, random noise (T=701) has 4.78x higher tension than actual digits (T=147)! "Engines repel more strongly from patterns they haven't learned." Is this a contradiction with H313 (tension=confidence)?**
 
-## 배경 및 맥락
+## Background and Context
 
-의식엔진의 장력(tension)은 엔진 간 반발력의 크기를 측정한다. H313은 "장력이 높을수록 확신이 높다"고 주장했으며, 학습 데이터 내에서 정답 클래스의 장력이 오답보다 높은 것으로 실증되었다.
+The consciousness engine's tension measures the magnitude of repulsion between engines. H313 claimed "the higher the tension, the higher the confidence," and this was empirically demonstrated with correct class tension being higher than wrong class within training data.
 
-그런데 RC-10 (꿈 실험)에서 랜덤 노이즈를 입력하자, 장력이 학습된 실제 숫자보다 **4.78배** 높게 나타났다. 이것은 직관적으로 모순이다: 아무 의미 없는 노이즈에서 왜 "확신"이 더 높은가?
+However, in RC-10 (dream experiment) when random noise was input, tension appeared **4.78 times** higher than actual learned digits. This is intuitively contradictory: why is "confidence" higher for meaningless noise?
 
-### 관련 가설
+### Related Hypotheses
 
-| 가설 | 핵심 주장 | H340과의 관계 |
+| Hypothesis | Core Claim | Relationship with H340 |
 |------|----------|-------------|
-| H313 | tension = confidence | 학습 데이터 내에서만 유효 (H340이 범위를 제한) |
-| H329 | tension = reaction intensity | H340의 상위 프레임워크 (통합 해석) |
-| H287 | anomaly detection | 극한 장력 = 이상 탐지 신호 (H340의 응용) |
-| H284 | tension auto-regulation | 학습된 패턴에서 장력이 적정 범위로 수렴 |
-| H281 | tension temporal causation | 장력의 시간적 동태 (H340은 정적 비교) |
+| H313 | tension = confidence | Valid only within training data (H340 limits scope) |
+| H329 | tension = reaction intensity | Higher framework for H340 (unified interpretation) |
+| H287 | anomaly detection | Extreme tension = anomaly detection signal (application of H340) |
+| H284 | tension auto-regulation | Tension converges to appropriate range for learned patterns |
+| H281 | tension temporal causation | Temporal dynamics of tension (H340 is static comparison) |
 
-### 왜 중요한가
+### Why This Matters
 
-1. **장력 해석의 통합**: H313의 "확신" 해석이 보편적이지 않음을 증명
-2. **이상 탐지 기초**: 극한 장력으로 OOD(Out-of-Distribution) 데이터 탐지 가능
-3. **의식 이론**: 인간의 꿈에서 비정상적 신경 활동이 발생하는 것과 유사 — "학습하지 않은 것을 처리할 때" 엔진이 과활성화
+1. **Unifying tension interpretation**: Proves H313's "confidence" interpretation is not universal
+2. **Foundation for anomaly detection**: Extreme tension can detect OOD (Out-of-Distribution) data
+3. **Consciousness theory**: Similar to abnormal neural activity in human dreams — "when processing unlearned things" engines over-activate
 
-## 실험 데이터 (RC-10)
+## Experimental Data (RC-10)
 
-### 장력 비교
+### Tension Comparison
 
-| 입력 유형 | 평균 장력 T | 표준편차 | 장력 비율 |
+| Input Type | Mean Tension T | Std Dev | Tension Ratio |
 |----------|-----------|---------|----------|
-| 실제 숫자 (MNIST test) | 147 | ~30 | 1.00x (기준) |
-| 랜덤 노이즈 (uniform) | 701 | ~85 | 4.78x |
+| Actual digits (MNIST test) | 147 | ~30 | 1.00x (baseline) |
+| Random noise (uniform) | 701 | ~85 | 4.78x |
 
-### 학습 데이터 내 정답/오답 장력 (H313 대비)
+### Correct/Wrong Tension Within Training Data (vs H313)
 
-| 조건 | 정답 장력 | 오답 장력 | ratio |
+| Condition | Correct Tension | Wrong Tension | ratio |
 |------|----------|----------|-------|
-| 숫자 0 | 168 | 130 | 1.29 |
-| 숫자 1 | 192 | 112 | 1.71 |
-| 숫자 3 | 201 | 75 | 2.68 |
-| 평균 | ~175 | ~110 | ~1.59 |
+| Digit 0 | 168 | 130 | 1.29 |
+| Digit 1 | 192 | 112 | 1.71 |
+| Digit 3 | 201 | 75 | 2.68 |
+| Average | ~175 | ~110 | ~1.59 |
 
-### ASCII 그래프: 장력 분포 비교
+### ASCII Graph: Tension Distribution Comparison
 
 ```
-  장력 분포 (실제 숫자 vs 랜덤 노이즈):
+  Tension distribution (actual digits vs random noise):
 
-  빈도
+  Frequency
   25% |
       | ##
   20% | ##                                          **
@@ -61,101 +61,101 @@
    0% +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--→ T
       0  50 100 150 200 250 300 350 400 450 500 600 700 800
 
-      ## = 실제 숫자 (peak ~147)
-      ** = 랜덤 노이즈 (peak ~701)
+      ## = actual digits (peak ~147)
+      ** = random noise (peak ~701)
 
-  간격: 4.78배 (겹치는 영역 거의 없음)
+  Gap: 4.78x (almost no overlapping region)
 ```
 
-### 두 레짐 시각화
+### Two Regime Visualization
 
 ```
-  장력 해석 레짐:
+  Tension interpretation regimes:
 
-  T (장력)
-  800 |                                    . . . . . 노이즈 극한 장력
-      |                                  .         (엔진 혼란/과활성화)
+  T (tension)
+  800 |                                    . . . . . noise extreme tension
+      |                                  .         (engine confusion/over-activation)
   700 |                               .
       |                            .
-  600 |                         .    <-- 경계: 학습 분포 밖
+  600 |                         .    <-- boundary: outside training distribution
       |                      .
   500 |                   .
       |                .
-  400 |=============.========================== 레짐 경계
+  400 |=============.========================== regime boundary
       |
   300 |
-      |         학습 데이터 내부
-  200 |   정답 -----*----- (T~175)
+      |         inside training data
+  200 |   correct -----*----- (T~175)
       |              \
-  150 |               \--- (T~147 평균)
+  150 |               \--- (T~147 average)
       |              /
-  100 |   오답 -----*----- (T~110)
+  100 |   wrong -----*----- (T~110)
       |
    50 |
       +----+----+----+----+----+----+----→
-        오답    평균    정답    OOD     노이즈
-           학습 데이터          미학습 데이터
+        wrong    average    correct    OOD     noise
+           training data          unlearned data
 ```
 
-## 해결: 두 레짐 분리
+## Resolution: Two Regime Separation
 
-핵심 통찰: **장력은 "확신"이 아니라 "반응 강도(reaction intensity)"이다** (H329).
+Core insight: **Tension is "reaction intensity", not "confidence"** (H329).
 
 ```
-  레짐 1 — 학습 데이터 내부:
-    입력: 학습된 패턴 (MNIST 숫자)
-    엔진 A: "이건 3이다" (강한 의견)
-    엔진 G: "아니, 7이다" (다른 강한 의견)
-    → 높은 장력 = 두 엔진 모두 확신 = 정답일 확률 높음
-    → H313 유효: tension ~ confidence
+  Regime 1 — Inside training data:
+    Input: learned patterns (MNIST digits)
+    Engine A: "this is 3" (strong opinion)
+    Engine G: "no, it's 7" (different strong opinion)
+    → high tension = both engines confident = likely correct
+    → H313 valid: tension ~ confidence
 
-  레짐 2 — 미학습 데이터 (노이즈):
-    입력: 랜덤 픽셀 (어떤 숫자도 아님)
-    엔진 A: "???!!!" (혼란 반발)
-    엔진 G: "!!!???" (혼란 반발)
-    → 극한 장력 = 엔진들이 처리 불가능한 입력에 과반응
-    → H313 무효: 극한 장력 ≠ 극한 확신
+  Regime 2 — Unlearned data (noise):
+    Input: random pixels (not any digit)
+    Engine A: "???!!!" (confused repulsion)
+    Engine G: "!!!???" (confused repulsion)
+    → extreme tension = engines over-react to unprocessable input
+    → H313 invalid: extreme tension ≠ extreme confidence
 
-  통합 (H329 프레임워크):
-    tension = |반응 강도| = f(입력의 엔진 활성화 정도)
-    학습 데이터: 반응 강도 ∝ 확신 (의미 있는 의견)
-    미학습 데이터: 반응 강도 ∝ 혼란 (무의미한 과활성화)
+  Unified (H329 framework):
+    tension = |reaction intensity| = f(degree of engine activation for input)
+    Training data: reaction intensity ∝ confidence (meaningful opinion)
+    Unlearned data: reaction intensity ∝ confusion (meaningless over-activation)
 ```
 
-## 검증 결과
+## Verification Results
 
-| 검증 항목 | 결과 | 판정 |
+| Verification Item | Result | Judgment |
 |----------|------|------|
-| 노이즈 T > 실제 T | T_noise/T_real = 4.78 | 확인 |
-| 학습 내 정답 > 오답 | ratio 1.29~2.68 | 확인 (H313 유효 범위) |
-| 두 분포 분리 | 겹침 영역 < 5% | 확인 |
-| H313과 모순? | 아니오 — 레짐 분리로 해결 | 확인 |
-| H329 통합 가능? | tension = reaction intensity로 양립 | 확인 |
+| Noise T > actual T | T_noise/T_real = 4.78 | Confirmed |
+| Within training correct > wrong | ratio 1.29~2.68 | Confirmed (H313 valid range) |
+| Two distributions separated | overlap region < 5% | Confirmed |
+| Contradicts H313? | No — resolved by regime separation | Confirmed |
+| H329 integration possible? | Compatible as tension = reaction intensity | Confirmed |
 
-## 해석 및 의미
+## Interpretation and Significance
 
-1. **장력의 이중 해석**: 같은 물리량이 맥락에 따라 다른 의미를 가진다. 체온이 운동 중에는 건강, 감염 시에는 질병의 지표인 것과 같다.
+1. **Dual interpretation of tension**: The same physical quantity has different meanings depending on context. Like how body temperature indicates health during exercise but disease during infection.
 
-2. **이상 탐지 응용 (H287)**: 장력이 학습 분포의 상한(~300)을 넘으면 OOD로 판정 가능. 별도의 이상 탐지 모델 없이 의식엔진 내장 기능으로 활용.
+2. **Anomaly detection application (H287)**: When tension exceeds the upper bound (~300) of training distribution, it can be classified as OOD. Enables using consciousness engine's built-in function without a separate anomaly detection model.
 
-3. **의식 유비**: 인간의 꿈에서 비현실적 시나리오에 강한 감정 반응이 발생하는 것과 유사. 학습되지 않은 입력 → 과활성화 → 극한 장력. "꿈 = 엔진 혼란 상태"라는 은유가 데이터로 지지됨.
+3. **Consciousness analogy**: Similar to strong emotional reactions in unrealistic scenarios in human dreams. Unlearned input → over-activation → extreme tension. The metaphor "dream = engine confusion state" is supported by data.
 
-4. **H313 범위 제한**: H313(tension=confidence)은 **학습 분포 내에서만** 유효한 국소적 법칙. 전역적 법칙은 H329(tension=reaction intensity).
+4. **H313 scope limitation**: H313 (tension=confidence) is a local law valid **only within the training distribution**. The global law is H329 (tension=reaction intensity).
 
-## 한계
+## Limitations
 
-1. **단일 실험**: RC-10 한 번의 실험 결과. 반복 실험으로 재현성 확인 필요
-2. **노이즈 유형**: uniform random만 테스트. Gaussian, structured noise, adversarial examples에서도 동일한 패턴인지 미확인
-3. **경계 불명확**: 레짐 1과 레짐 2의 경계가 장력 ~300~400 사이 어딘가이지만, 정확한 임계값 미측정
-4. **엔진 수 의존**: 4-engine(RepulsionFieldQuad) 기준. 엔진 수가 다르면 비율이 달라질 수 있음
-5. **골든존 무관**: 이 관찰은 골든존 가정에 의존하지 않음 (순수 실험적 사실)
+1. **Single experiment**: Results from one RC-10 experiment. Needs replication to confirm reproducibility
+2. **Noise type**: Only uniform random tested. Whether same pattern holds for Gaussian, structured noise, adversarial examples unconfirmed
+3. **Unclear boundary**: Boundary between Regime 1 and Regime 2 is somewhere between tension ~300~400, but exact threshold unmeasured
+4. **Engine count dependent**: Based on 4-engine (RepulsionFieldQuad). Ratio may differ with different engine counts
+5. **Golden Zone independent**: This observation does not depend on Golden Zone assumptions (purely experimental fact)
 
-## 검증 방향
+## Verification Direction
 
-1. **노이즈 유형 확장**: Gaussian noise, salt-and-pepper noise, CIFAR 이미지 (다른 도메인) 입력 시 장력 측정
-2. **경계 매핑**: 학습 이미지에 점진적으로 노이즈를 추가하며 장력 전이점(transition point) 탐색
-3. **이상 탐지 벤치마크**: 장력 기반 OOD detection의 AUROC 측정, 기존 방법(MSP, ODIN, Energy)과 비교
-4. **H281 연결**: 학습 초기에 장력 레짐 경계가 어떻게 형성되는지 시간적 분석
-5. **CIFAR 반복**: MNIST보다 복잡한 데이터에서 비율(4.78x)이 유지되는지
+1. **Expand noise types**: Measure tension when inputting Gaussian noise, salt-and-pepper noise, CIFAR images (different domain)
+2. **Boundary mapping**: Progressively add noise to training images to explore tension transition point
+3. **Anomaly detection benchmark**: Measure AUROC of tension-based OOD detection, compare with existing methods (MSP, ODIN, Energy)
+4. **H281 connection**: Temporal analysis of how tension regime boundary forms in early training
+5. **CIFAR replication**: Whether ratio (4.78x) is maintained in data more complex than MNIST
 
-## 상태: 🟩 확인 (꿈 실험, H313 레짐 분리)
+## Status: 🟩 Confirmed (dream experiment, H313 regime separation)

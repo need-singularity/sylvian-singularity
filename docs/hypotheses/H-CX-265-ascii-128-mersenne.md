@@ -1,3 +1,3 @@
-# H-CX-265: 🟩 ASCII 128 = 2⁷, 7=메르센 지수
+# H-CX-265: 🟩 ASCII 128 = 2⁷, 7=Mersenne exponent
 
-> 128 = 2⁷. 7은 P₄=8128의 메르센 지수.
+> 128 = 2⁷. 7 is the Mersenne exponent of P₄=8128.

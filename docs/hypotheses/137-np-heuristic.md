@@ -1,52 +1,53 @@
-# 가설 검토 137: P≠NP 간극이 NP 휴리스틱에 적용 가능한가
+# Hypothesis Review 137: Is P≠NP Gap Applicable to NP Heuristics?
 
-## 가설
+## Hypothesis
 
-> 골든존 I(≈1/e)로 NP 문제 탐색 파라미터를 설정하면 기존 휴리스틱보다 성능이 향상되는가.
+> Does setting NP problem search parameters to Golden Zone I(≈1/e) improve performance over existing heuristics?
 
-## 배경
+## Background
 
 ```
-  가설 048: 3→4상태 볼츠만 간극 = 18.6%
-  P≠NP가 시사하는 것: 다항시간으로 풀 수 없는 문제가 존재
+  Hypothesis 048: 3→4 state Boltzmann gap = 18.6%
+  What P≠NP suggests: there exist problems unsolvable in polynomial time
 
-  NP 문제 휴리스틱(SA, GA 등)에서:
-  온도/탐색률 = I 에 대응
-  → 골든존(I≈1/e) 설정이 최적?
+  In NP problem heuristics (SA, GA, etc.):
+  temperature/search rate = corresponds to I
+  → Is Golden Zone (I≈1/e) setting optimal?
 ```
 
-## 대응 매핑
+## Correspondence Mapping
 
 ```
   Simulated Annealing:
-    초기 온도 T₀ → I 낮음 (넓은 탐색)
-    냉각 스케줄 → I 점진 증가
-    최적 온도 → I = 1/e? (골든존 중심)
+    Initial temperature T₀ → low I (wide search)
+    Cooling schedule       → gradual I increase
+    Optimal temperature    → I = 1/e? (Golden Zone center)
 
-  유전 알고리즘:
-    돌연변이율 → D (Deficit)
-    선택 압력 → I (Inhibition)
-    교차율 → P (Plasticity)
-    → G = D×P/I 최적화 = 골든존 진입?
+  Genetic Algorithm:
+    Mutation rate    → D (Deficit)
+    Selection pressure → I (Inhibition)
+    Crossover rate   → P (Plasticity)
+    → G = D×P/I optimization = Golden Zone entry?
 
-  메타휴리스틱 공통:
-    탐색(exploration) ↔ I 낮음
-    수렴(exploitation) ↔ I 높음
-    최적 균형 ↔ I = 1/e
+  Common to metaheuristics:
+    Exploration ↔ low I
+    Exploitation ↔ high I
+    Optimal balance ↔ I = 1/e
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. TSP(외판원)에서 SA 온도 스케줄을 골든존 기반으로 설정
-  2. 기존 기하 냉각(T×0.95) vs 볼츠만 어닐링(T→e) 비교
-  3. 성능 차이가 가설 128(스케일 의존)처럼 문제 크기에 비례하는가
+  1. Set SA temperature schedule for TSP (Travelling Salesman) based on Golden Zone
+  2. Compare conventional geometric cooling (T×0.95) vs Boltzmann annealing (T→e)
+  3. Does performance difference scale with problem size proportionally,
+     as in Hypothesis 128 (scale dependence)?
 ```
 
-## 한계
+## Limitations
 
-SA/GA의 온도와 우리 모델의 I는 정확한 대응이 아닌 유비. 실제 NP 문제에서 실험 필요.
+Temperature in SA/GA and I in our model are analogies, not exact correspondences. Experiments on actual NP problems are needed.
 
 ---
 
-*상태: 실험 필요 🔧*
+*Status: Experiment needed 🔧*

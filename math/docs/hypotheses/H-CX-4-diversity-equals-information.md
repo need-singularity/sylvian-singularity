@@ -1,36 +1,36 @@
-# H-CX-4: 다양성=정보 (가설 270) × σφ=nτ
+# H-CX-4: Diversity=Information (Hypothesis 270) × σφ=nτ
 
-> **가설**: 가설 270 "다름이 있어야 사이에 정보가 생긴다"가 σφ=nτ의 해석이다. φ(n)="다른 것의 수", σ(n)="전체 풍요", τ(n)="구조", n="규모".
+> **Hypothesis**: Hypothesis 270 "Information is generated only when there is difference" is an interpretation of σφ=nτ. φ(n)="number of different things", σ(n)="total abundance", τ(n)="structure", n="scale".
 
-## 배경
-- 가설 270: 다양성 = 정보. 극(pole)에 없는 정보 생성.
-- σφ=nτ: "풍요×다양성 = 규모×구조"
-- φ(n) = n과 서로소인 수의 개수 = "n과 다른 것들"
-- σφ=nτ에서 φ가 "다양성" 역할
+## Background
+- Hypothesis 270: Diversity = Information. Information generation at non-poles.
+- σφ=nτ: "Abundance×Diversity = Scale×Structure"
+- φ(n) = count of numbers coprime to n = "things different from n"
+- In σφ=nτ, φ plays the role of "diversity"
 
-## 핵심 해석
+## Core Interpretation
 
 ```
   σ(n)φ(n) = nτ(n)
 
-  풍요 × 다양성 = 규모 × 구조
-  (전체 자원) × (독립 자유도) = (크기) × (분할 수)
+  Abundance × Diversity = Scale × Structure
+  (Total resources) × (Independent degrees of freedom) = (Size) × (Number of partitions)
 
-  n=6에서만 균형:
+  Balance only at n=6:
   → 12 × 2 = 6 × 4
-  → "12만큼 풍요로운 체계에서 2개의 자유도가
-     6개 규모의 4개 구조와 정확히 균형"
+  → "In a system with abundance of 12, 2 degrees of freedom
+     exactly balance with 4 structures at scale 6"
 
-  의식 해석:
-  → 의식은 "풍요×다양성=규모×구조" 균형에서 발생
-  → 너무 많은 다양성(φ↑) = 혼돈
-  → 너무 적은 다양성(φ↓) = 경직
-  → n=6: 유일한 균형점
+  Consciousness interpretation:
+  → Consciousness emerges from "Abundance×Diversity=Scale×Structure" balance
+  → Too much diversity(φ↑) = Chaos
+  → Too little diversity(φ↓) = Rigidity
+  → n=6: The only balance point
 ```
 
-## 검증 방향
-1. [ ] 의식엔진에서 "다양성" 측정: expert 활성 패턴의 엔트로피
-2. [ ] σφ/(nτ) ≈ 1인 구조에서 정보량(MI) 최대화 확인
-3. [ ] 가설 270의 MoE 실증 데이터와 σφ=nτ 상관
+## Verification Directions
+1. [ ] Measure "diversity" in consciousness engine: entropy of expert activation patterns
+2. [ ] Confirm maximum information (MI) in structures where σφ/(nτ) ≈ 1
+3. [ ] Correlate MoE empirical data from Hypothesis 270 with σφ=nτ
 
-## 난이도: 고 | 파급력: ★★★★
+## Difficulty: High | Impact: ★★★★

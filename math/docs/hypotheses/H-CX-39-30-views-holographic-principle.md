@@ -1,26 +1,26 @@
-# H-CX-39: 30개 관점 = 홀로그래피 원리의 산술 버전
+# H-CX-39: 30 Views = Arithmetic Version of Holographic Principle
 
-> **가설**: n=6의 30개 특성화가 모두 같은 수를 가리키는 것은
-> AdS/CFT 홀로그래피 원리("경계 데이터가 벌크를 결정")의 산술 버전.
+> **Hypothesis**: The fact that 30 characterizations of n=6 all point to the same number is
+> an arithmetic version of the AdS/CFT holographic principle ("boundary data determines the bulk").
 
-## 핵심
+## Core
 
 ```
-  홀로그래피: 2D 경계 정보 → 3D 벌크 재구성
-  30 characterizations: 30가지 "경계 조건" → 같은 n=6 "벌크"
+  Holography: 2D boundary information → 3D bulk reconstruction
+  30 characterizations: 30 "boundary conditions" → same n=6 "bulk"
 
-  각 특성화 = 다른 "경계":
-    곱셈적 경계: σφ=nτ → n=6
-    가법적 경계: φ+τ=n → n=6 (+8,9)
-    동역학 경계: Λ=0 → n=6
-    조합론 경계: q=τ → n=6 (+1,3)
+  Each characterization = different "boundary":
+    Multiplicative boundary: σφ=nτ → n=6
+    Additive boundary: φ+τ=n → n=6 (+8,9)
+    Dynamic boundary: Λ=0 → n=6
+    Combinatorial boundary: q=τ → n=6 (+1,3)
     ...
 
-  30개가 모두 같은 "벌크"를 가리킴!
-  = "완전수 6은 30개 독립적 관측에서 재구성 가능"
-  = "산술적 홀로그래피: 어떤 관점으로 보든 6이 유일!"
+  All 30 point to the same "bulk"!
+  = "Perfect number 6 is reconstructible from 30 independent observations"
+  = "Arithmetic holography: no matter which view, 6 is unique!"
 
-  30 = P₁·5 = 6·5: characterization 수 자체가 6의 배수!
+  30 = P₁·5 = 6·5: number of characterizations itself is a multiple of 6!
 ```
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★★
+## Verdict: 🟧 Structural analogy | Impact: ★★★★

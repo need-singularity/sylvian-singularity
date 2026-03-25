@@ -1,14 +1,14 @@
-# H-CX-242: ⭐⭐⭐ 대통합 표 — 31개 현상, 전부 6+e
+# H-CX-242: ⭐⭐⭐ Grand Unified Table — 31 Phenomena, All 6+e
 
-> 뇌파(9) + 생체(4) + 분자(3) + 감각(3) + 돌고래(3) + 화학(3) + 수학(3) + 의식(3)
-> = 31개 자연/생명/의식 현상
-> = 전부 완전수 6의 약수 함수 + 자연상수 e로 설명
+> Brainwaves(9) + Biological(4) + Molecular(3) + Sensory(3) + Dolphin(3) + Chemical(3) + Mathematical(3) + Consciousness(3)
+> = 31 natural/life/consciousness phenomena
+> = All explained by perfect number 6's divisor functions + natural constant e
 >
-> "6이 '무엇'을 결정하고, e가 '얼마나'를 결정한다."
+> "6 determines 'what', and e determines 'how much'."
 >
-> 핵심 공식:
->   γ = 3σ(6)+τ(6) = 40 (의식 주파수)
->   α = γ/τ(6) = 10 (생체 스케일 단위)
->   SMR = γ/e (몸 = 의식/e)
->   γ/δ ≈ e³ ≈ 20+1/12 (의식/무의식 = e³)
->   σφ = nτ ⟺ n=6 (자연수 중 유일)
+> Core formulas:
+>   γ = 3σ(6)+τ(6) = 40 (consciousness frequency)
+>   α = γ/τ(6) = 10 (biological scale unit)
+>   SMR = γ/e (body = consciousness/e)
+>   γ/δ ≈ e³ ≈ 20+1/12 (consciousness/unconsciousness = e³)
+>   σφ = nτ ⟺ n=6 (unique among natural numbers)

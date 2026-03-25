@@ -1,11 +1,11 @@
 #!/opt/homebrew/bin/python3
-"""H368: Tension Natural Frequency — PureFieldEngine의 고유 진동수 측정
+"""H368: Tension Natural Frequency — Measuring PureFieldEngine's Natural Frequency
 
-실험:
-  1. 일정 입력 500스텝 → tension 시계열 → FFT로 고유 주파수 측정
-  2. 정현파 변조 입력 → 주파수 응답 (공진 탐색)
-  3. 학습 전/후 비교
-  4. tension_scale별 비교 → omega_0 proportional to sqrt(tension_scale)?
+Experiment:
+  1. Constant input 500 steps → tension time series → FFT for natural frequency measurement
+  2. Sinusoidal modulated input → frequency response (resonance search)
+  3. Before/after training comparison
+  4. tension_scale comparison → omega_0 proportional to sqrt(tension_scale)?
 """
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

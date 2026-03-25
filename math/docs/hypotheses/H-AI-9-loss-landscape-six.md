@@ -1,15 +1,15 @@
-# H-AI-9: Loss Landscape의 Critical Point 구조와 6
+# H-AI-9: Critical Point Structure of Loss Landscape and 6
 
-> **가설**: 뉴럴 네트워크 loss landscape의 saddle point 지수(index)가 σφ/(nτ) 비율과 관련된다.
+> **Hypothesis**: The saddle point index of neural network loss landscape is related to the ratio σφ/(nτ).
 
-## 배경
-- Random matrix theory: 고차원 loss surface의 critical point 분포
-- Bray & Dean (2007): index 분포가 차원에 의존
-- σφ/(nτ) = 각 차원 n의 "산술적 복잡도"
+## Background
+- Random matrix theory: Distribution of critical points in high-dimensional loss surface
+- Bray & Dean (2007): Index distribution depends on dimension
+- σφ/(nτ) = "Arithmetic complexity" of each dimension n
 
-## 검증 방향
-1. [ ] 소형 네트워크의 Hessian 고유값 분포 계산
-2. [ ] 차원 n에서의 saddle point 비율과 σφ/(nτ) 상관
-3. [ ] Random matrix 모델에서 σφ/(nτ) 해석
+## Verification Direction
+1. [ ] Calculate Hessian eigenvalue distribution of small networks
+2. [ ] Correlate saddle point ratio at dimension n with σφ/(nτ)
+3. [ ] Interpret σφ/(nτ) in random matrix model
 
-## 난이도: 극고 | 파급력: ★★ (투기적)
+## Difficulty: Extreme | Impact: ★★ (Speculative)

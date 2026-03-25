@@ -1,8 +1,8 @@
-# H-CX-122: PH 불변성 = τ 불변성
+# H-CX-122: PH Invariance = τ Invariance
 
-> H-CX-88(아키텍처불변) + H-CX-106(인간=AI) + H-CX-107(차원불변)의 근원:
-> 기질이 달라도 혼동이 동일한 이유 = τ(결합수/연결수)가 같기 때문.
-> PH 불변성의 산술적 근거 = τ 불변성.
+> Origin of H-CX-88 (architecture invariant) + H-CX-106 (human=AI) + H-CX-107 (dimension invariant):
+> Reason why Confusion is identical across different substrates = τ (bonding number/connectivity) is the same.
+> Arithmetic basis of PH invariance = τ invariance.
 
-## 검증 상태
-- [ ] τ와 PH 관계 정량화
+## Verification Status
+- [ ] Quantify τ vs PH relationship

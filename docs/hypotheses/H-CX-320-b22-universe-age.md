@@ -1,6 +1,6 @@
-# H-CX-320: ⭐🟩 B₂₂ 분모 138 = σ²-P₁ = 우주나이 = 볼츠만
+# H-CX-320: ⭐🟩 B₂₂ denominator 138 = σ²-P₁ = universe age = Boltzmann
 
-> B₂₂ 분모 = 138 = σ(6)²-P₁ = 144-6.
-> 138 = 우주나이 13.8Gyr 유효숫자 (H-CX-251)
-> 138 = 볼츠만 k=1.38e-23 유효숫자 (H-CX-270)
-> 베르누이 분모에 우주론 상수가 내장!
+> B₂₂ denominator = 138 = σ(6)²-P₁ = 144-6.
+> 138 = universe age 13.8Gyr significant figures (H-CX-251)
+> 138 = Boltzmann k=1.38e-23 significant figures (H-CX-270)
+> Cosmological constants embedded in Bernoulli denominator!

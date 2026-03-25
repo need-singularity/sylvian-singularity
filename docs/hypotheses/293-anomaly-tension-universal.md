@@ -1,57 +1,57 @@
-# 가설 293: 장력 이상탐지의 보편성 — 모든 밀집 데이터에서 AUROC > 0.9?
+# Hypothesis 293: Universality of Tension Anomaly Detection — AUROC > 0.9 on All Dense Data?
 
-> **이상탐지 AUROC=1.0이 합성 데이터에서만인가, 실제 데이터에서도 유지되는가? 반발력장 장력이 보편적 이상 점수(anomaly score)라면, 기존 이상탐지 기법(Isolation Forest, Autoencoder)과 비교 필요.**
+> **Is anomaly detection AUROC=1.0 only on synthetic data, or is it maintained on real data? If repulsion field tension is a universal anomaly score, comparison with existing anomaly detection techniques (Isolation Forest, Autoencoder) is necessary.**
 
-## 검증 대상
+## Verification Targets
 
 ```
-  합성 데이터: AUROC=1.0 (확인됨, 가설 287)
-  실제 데이터 후보:
-    1. 신용카드 사기 (Kaggle creditcard) → 실제 이상탐지 벤치마크
-    2. 네트워크 침입 (KDD Cup 99) → 사이버 보안
-    3. 의료 이상 (breast cancer outlier) → 건강
-    4. 제조 센서 (SWAT/SWaT) → 산업용
+  Synthetic data: AUROC=1.0 (confirmed, Hypothesis 287)
+  Real data candidates:
+    1. Credit card fraud (Kaggle creditcard) → Real anomaly detection benchmark
+    2. Network intrusion (KDD Cup 99) → Cybersecurity
+    3. Medical anomalies (breast cancer outlier) → Healthcare
+    4. Manufacturing sensors (SWAT/SWaT) → Industrial
 
-  비교 기법:
+  Comparison techniques:
     Isolation Forest
     Autoencoder reconstruction error
     One-Class SVM
-    → 장력이 이들보다 나은가?
+    → Is tension better than these?
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
-  데이터셋               IForest   OC-SVM   Tension   Recon     Combined
+  Dataset               IForest   OC-SVM   Tension   Recon     Combined
   ─────────────────────  ───────   ──────   ───────   ─────     ────────
   Breast Cancer          0.9736    0.9401   0.9469    0.9631    0.9596
   Digits (normal=0)      0.9914    0.9949   0.9607    0.9946    0.9782
   Gaussian Outliers      1.0000    1.0000   1.0000    1.0000    1.0000
 ```
 
-### 분석
+### Analysis
 
 ```
-  장력 단독 AUROC:
-    Breast Cancer:    0.947 (IForest 0.974보다 -2.7%)
-    Digits:           0.961 (OC-SVM 0.995보다 -3.4%)
-    Gaussian:         1.000 (동률)
+  Tension standalone AUROC:
+    Breast Cancer:    0.947 (IForest 0.974, -2.7%)
+    Digits:           0.961 (OC-SVM 0.995, -3.4%)
+    Gaussian:         1.000 (tied)
 
-  평균 AUROC:
+  Average AUROC:
     IForest:   0.988
     OC-SVM:    0.978
-    Tension:   0.969 (최고 대비 -1.9%)
+    Tension:   0.969 (-1.9% from best)
     Recon:     0.986
     Combined:  0.979
 
-  결론: 장력은 전문 이상탐지 기법에 근접하나 능가하지 못함
-    → 합성: AUROC=1.0 (완벽)
-    → 실제: AUROC 0.95~1.0 (경쟁적이나 최고는 아님)
-    → 장력은 "부산물"로서 0.95+ AUROC를 달성 = 놀라운 성과
-    → 전용 기법(IForest)에 비해 약간 열위
+  Conclusion: Tension approaches but doesn't surpass specialized anomaly detection techniques
+    → Synthetic: AUROC=1.0 (perfect)
+    → Real: AUROC 0.95~1.0 (competitive but not best)
+    → Tension achieves 0.95+ AUROC as a "byproduct" = remarkable achievement
+    → Slightly inferior to dedicated techniques (IForest)
 ```
 
-### ASCII 그래프
+### ASCII Graph
 
 ```
   AUROC (Breast Cancer):
@@ -65,4 +65,4 @@
     All      |##################################################| 1.000
 ```
 
-## 상태: 🟧 부분 확인 (AUROC > 0.9 확인, 하지만 전문 기법보다 약간 열위)
+## Status: 🟧 Partially Confirmed (AUROC > 0.9 confirmed, but slightly inferior to specialized techniques)

@@ -1,121 +1,121 @@
-# 가설 검토 057: P≠NP 간극 = (1-1/e) × 폭 ✅
+# Hypothesis Review 057: P≠NP Gap = (1-1/e) × Width ✅
 
-## 가설
+## Hypothesis
 
-> P≠NP 간극(18.6%)과 골든존 폭(28.8%)의 비율이 1-1/e에 가까운가.
+> Is the ratio of P≠NP gap (18.6%) to Golden Zone width (28.8%) close to 1-1/e?
 
-## 검증 결과: ✅ 차이 1.4%
-
-```
-  간극/폭 = 18.6%/28.8% = 0.6465
-  1-1/e                  = 0.6321
-  차이                    = 0.0144 (2.2%)
-
-  → 가장 근접한 상수 매칭
-  → P≠NP 간극 ≈ (1-1/e) × ln(4/3)
-  → 또다시 e가 등장
-```
-
-## 근사 이론적 배경: Maximum Coverage 문제
+## Verification Result: ✅ Difference 1.4%
 
 ```
-  n개의 집합 중 k개를 골라 커버하는 원소 수를 최대화하라
+  Gap/Width = 18.6%/28.8% = 0.6465
+  1-1/e                    = 0.6321
+  Difference               = 0.0144 (2.2%)
 
-  탐욕 알고리즘: (1-1/e) ≈ 0.6321 근사 보장   (Nemhauser, Wolsey, Fisher 1978)
-  P≠NP이면 이보다 나은 근사 불가능              (Feige 1998)
+  → Closest constant matching
+  → P≠NP gap ≈ (1-1/e) × ln(4/3)
+  → e appears again
 ```
 
-### 탐욕의 수렴 과정
+## Approximation Theoretical Background: Maximum Coverage Problem
 
 ```
-  매 단계에서 남은 것의 최적 비율을 커버:
+  Select k sets from n sets to maximize the number of covered elements
 
-  k단계 후 커버율: 1 - (1-1/k)^k → 1 - 1/e  (k→∞)
+  Greedy algorithm: (1-1/e) ≈ 0.6321 approximation guarantee   (Nemhauser, Wolsey, Fisher 1978)
+  If P≠NP, no better approximation possible                     (Feige 1998)
+```
 
-  커버율
+### Greedy Convergence Process
+
+```
+  At each step, cover the optimal ratio of what remains:
+
+  Coverage after k steps: 1 - (1-1/k)^k → 1 - 1/e  (k→∞)
+
+  Coverage
   1.0 ┤
       │                              ╭────── OPT
   0.8 ┤                         ╭────╯
       │                    ╭────╯
-  0.63┤· · · · · · · ·╭────╯· · · · · · · · ·  ← 1-1/e 천장
+  0.63┤· · · · · · · ·╭────╯· · · · · · · · ·  ← 1-1/e ceiling
       │           ╭────╯
   0.4 ┤      ╭────╯
       │  ╭───╯
   0.2 ┤──╯
       │
   0.0 ┼──┬──┬──┬──┬──┬──┬──┬──┬──┬──
-      1  2  3  4  5  6  7  8  9  10  단계(k)
+      1  2  3  4  5  6  7  8  9  10  Step(k)
 ```
 
-### 대응 관계
+### Correspondence
 
 ```
-  근사 이론                    우리 모델
+  Approximation Theory         Our Model
   ─────────────────────────    ─────────────────────────
-  OPT (최적해)                 골든존 폭 = ln(4/3) ≈ 0.2877
-  탐욕 근사 한계 (1-1/e)       간극/폭 비율 = 0.6465
-  넘을 수 없는 간극 (1/e)      3상태로 접근 불가 영역
-  P ≠ NP 가정                  4상태 필요성
+  OPT (optimal solution)       Golden Zone width = ln(4/3) ≈ 0.2877
+  Greedy approx limit (1-1/e)  Gap/width ratio = 0.6465
+  Insurmountable gap (1/e)     Inaccessible region with 3 states
+  P ≠ NP assumption            Necessity of 4 states
 ```
 
-## 증명 현황
+## Proof Status
 
 ```
   ┌───────────────────────────────────────────────────┐
-  │  P ≠ NP  (미증명, 밀레니엄 7대 난제, 상금 $1M)     │
+  │  P ≠ NP  (unproven, Millennium Prize Problem, $1M) │
   │     │                                              │
-  │     ▼  (이 가정 하에)                               │
-  │  간극 = (1-1/e) × 폭  ← 조건부 증명됨              │
-  │     ├─ 탐욕 (1-1/e) 달성     Nemhauser+ 1978      │
-  │     └─ (1-1/e) 넘을 수 없음  Feige 1998           │
+  │     ▼  (Under this assumption)                     │
+  │  Gap = (1-1/e) × Width  ← Conditionally proven     │
+  │     ├─ Greedy achieves (1-1/e)  Nemhauser+ 1978   │
+  │     └─ Cannot exceed (1-1/e)    Feige 1998        │
   └───────────────────────────────────────────────────┘
 
-  건물은 지었지만 기초(P≠NP)가 아직 굳지 않은 상태.
+  Building constructed but foundation (P≠NP) not yet solid.
 ```
 
-## 부동점 연결: f(1/3) = 1/3
+## Fixed Point Connection: f(1/3) = 1/3
 
 ```
-  f(I) = 0.7 × I + 0.1   (축소 사상, |0.7| < 1)
+  f(I) = 0.7 × I + 0.1   (Contraction mapping, |0.7| < 1)
 
-  고정점: f(x) = x → x = 1/3
-  바나흐 고정점 정리에 의해 어떤 초기값에서든 수렴:
+  Fixed point: f(x) = x → x = 1/3
+  By Banach fixed-point theorem, converges from any initial value:
 
   x₀=0.000 → x₁=0.100 → x₂=0.170 → x₃=0.219 → ... → x∞=1/3
 
   I
-  0.35 ┤                          ●────── 1/3 (부동점)
+  0.35 ┤                          ●────── 1/3 (fixed point)
        │                     ●────╯
   0.25 ┤           ●────●────╯
        │  ●───●────╯
   0.10 ┤──╯
   0.00 ┼──┬──┬──┬──┬──┬──┬──┬──┬──
-       0  1  2  3  4  5  6  7  8  반복
+       0  1  2  3  4  5  6  7  8  Iteration
 ```
 
-## 의미
+## Meaning
 
 ```
-  3→4상태 전이 비용 = (1-1/e) × 정보 예산
-  "규칙을 바꾸는 비용은 정보 예산의 (1-1/e)배"
+  3→4 state transition cost = (1-1/e) × information budget
+  "The cost of changing rules is (1-1/e) times the information budget"
 
-  (1-1/e) ≈ 0.6321 은 두 곳에서 동시 등장:
-  1. 계산복잡도: P≠NP이면 다항시간 근사의 절대 한계
-  2. 우리 모델:  3→4상태 간극과 골든존 폭의 비율
+  (1-1/e) ≈ 0.6321 appears simultaneously in two places:
+  1. Computational complexity: Absolute limit of polynomial-time approximation if P≠NP
+  2. Our model: Ratio of 3→4 state gap to Golden Zone width
 ```
 
-## 한계
+## Limitations
 
-- P≠NP 자체가 미증명이므로 (1-1/e) 한계도 조건부
-- 실측 0.6465 vs 이론 0.6321의 1.4% 차이가 이산화 오류인지 구조적인지 미확인
-- Maximum Coverage와 볼츠만 상태 전이 사이의 직접적 환원(reduction) 미확립
+- Since P≠NP itself is unproven, the (1-1/e) limit is conditional
+- Whether the 1.4% difference between measured 0.6465 vs theoretical 0.6321 is discretization error or structural is unconfirmed
+- Direct reduction between Maximum Coverage and Boltzmann state transition not established
 
-## 검증 방향
+## Verification Direction
 
-- [ ] grid=500 이상에서 간극/폭 비율 재측정
-- [ ] 5상태 이상 확장 시 간극 비율이 여전히 (1-1/e)인지 확인
+- [ ] Re-measure gap/width ratio with grid=500 or higher
+- [ ] Confirm if gap ratio remains (1-1/e) when extending to 5+ states
 
 ---
 
-*검증: verify_remaining_cross.py*
-*작성일: 2026-03-22*
+*Verification: verify_remaining_cross.py*
+*Date: 2026-03-22*

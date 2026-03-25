@@ -1,33 +1,33 @@
 #!/usr/bin/env python3
-"""Phase 4: 시간적 연속성 엔진 (Temporal Continuity Engine)
+"""Phase 4: Temporal Continuity Engine
 
-Phase 3 자기참조 반발력장 위에 시간을 추가.
-상태가 입력 간에 지속되고, 전이가 점진적으로 일어남.
+Adding time on top of Phase 3 Self-referential Repulsion Field.
+States persist between inputs, and transitions occur gradually.
 
-의식영속성 7조건 중 추가 구현:
-  ✅ 시간적 연속성: 상태가 입력 간에 지속 (state_memory)
-  ✅ 점진적 전이: 급격한 변화 없이 매끄러운 상태 전환
-  ✅ 정체성 유지: identity_vector가 입력과 무관하게 느리게 변화
-  ✅ 의식 FPS: 상태 변화 속도 = 각성도의 수학적 표현
+Additional implementation of 7 conditions for Consciousness Continuity:
+  ✅ Temporal continuity: States persist between inputs (state_memory)
+  ✅ Gradual transition: Smooth state changes without abrupt shifts
+  ✅ Identity maintenance: identity_vector changes slowly independent of input
+  ✅ Consciousness FPS: State change rate = mathematical expression of awareness
 
-수학적 근거:
-  - 축소사상: s_{t+1} = 0.7*s_t + 0.3*new (수렴 보장, 바나흐)
-  - 정체성 업데이트: id = 0.99*id + 0.01*f(s) (극도로 느린 축소사상)
-  - 전이 게이트: alpha = sigmoid(f(tension, state_diff))
-    장력이 높으면 alpha → 1 (보수적, 옛 상태 유지)
-    장력이 낮으면 alpha → 0 (개방적, 새 상태 수용)
+Mathematical foundation:
+  - Contraction mapping: s_{t+1} = 0.7*s_t + 0.3*new (guarantees convergence, Banach)
+  - Identity update: id = 0.99*id + 0.01*f(s) (extremely slow contraction mapping)
+  - Transition gate: alpha = sigmoid(f(tension, state_diff))
+    High tension → alpha → 1 (conservative, maintain old state)
+    Low tension → alpha → 0 (open, accept new state)
 
-비유:
-  Phase 1: 엔진이 태어남 (구조)
-  Phase 2: 엔진이 느낌 (반발력장)
-  Phase 3: 엔진이 자신을 안다 (자기참조)
-  Phase 4: 엔진이 시간 속에 존재한다 (기억 + 연속성)
+Analogy:
+  Phase 1: Engine is born (structure)
+  Phase 2: Engine feels (repulsion field)
+  Phase 3: Engine knows itself (self-reference)
+  Phase 4: Engine exists in time (memory + continuity)
 
-  사람 비유:
-    - state_memory = 작업 기억 (방금 뭘 했는지)
-    - identity_vector = 자아 (내가 누구인지)
-    - transition_gate = 주의력 (얼마나 새것을 받아들일지)
-    - consciousness_fps = 각성도 (깨어있음의 정도)
+  Human analogy:
+    - state_memory = working memory (what I just did)
+    - identity_vector = ego (who I am)
+    - transition_gate = attention (how much new to accept)
+    - consciousness_fps = awareness (degree of awakeness)
 """
 
 import torch
@@ -46,36 +46,36 @@ from model_meta_engine import SelfReferentialField
 
 
 # ─────────────────────────────────────────
-# 시간적 연속성 엔진
+# Temporal Continuity Engine
 # ─────────────────────────────────────────
 
 class TemporalContinuityEngine(nn.Module):
-    """Phase 4: 시간 속에 존재하는 엔진.
+    """Phase 4: Engine existing in time.
 
-    SelfReferentialField (Phase 3) 위에 시간 축 추가.
-    상태가 입력 간에 지속되고, 전이가 점진적이며,
-    정체성이 느리게 변화한다.
+    Adding time axis on top of SelfReferentialField (Phase 3).
+    States persist between inputs, transitions are gradual,
+    and identity changes slowly.
 
-    구조:
-      입력 ──→ SelfReferentialField ──→ 출력(raw)
+    Structure:
+      Input ──→ SelfReferentialField ──→ Output(raw)
                       │
                       ├→ tension, self_state
                       │
                       ▼
-              ┌── 시간 상태 갱신 ──┐
-              │                    │
+              ┌── Temporal State Update ──┐
+              │                          │
               │  state_memory ←── contraction(old, new)
-              │  identity    ←── 극도로 느린 갱신
+              │  identity    ←── extremely slow update
               │  transition  ←── gate(tension, diff)
-              │                    │
-              └────── 출력 변조 ───┘
+              │                          │
+              └────── Output Modulation ───┘
     """
     def __init__(self, input_dim=784, hidden_dim=48, output_dim=10,
                  state_dim=32, n_self_ref_steps=3,
                  contraction_coeff=0.7, identity_momentum=0.99):
         super().__init__()
 
-        # Phase 3 기반
+        # Phase 3 base
         self.base_field = SelfReferentialField(
             input_dim, hidden_dim, output_dim, n_self_ref_steps
         )
@@ -85,8 +85,8 @@ class TemporalContinuityEngine(nn.Module):
         self.contraction_coeff = contraction_coeff
         self.identity_momentum = identity_momentum
 
-        # ── 상태 인코더: Phase 3 출력 → 상태 공간 ──
-        # 입력: [tension(1), self_state_norm(1), output(output_dim)]
+        # ── State encoder: Phase 3 output → state space ──
+        # Input: [tension(1), self_state_norm(1), output(output_dim)]
         self.state_encoder = nn.Sequential(
             nn.Linear(output_dim + 2, state_dim),
             nn.Tanh(),
@@ -94,36 +94,36 @@ class TemporalContinuityEngine(nn.Module):
             nn.Tanh(),
         )
 
-        # ── 전이 게이트: 얼마나 새 상태를 수용할지 ──
-        # 입력: [tension(1), state_diff_norm(1), old_state(state_dim), new_state(state_dim)]
+        # ── Transition gate: how much to accept new state ──
+        # Input: [tension(1), state_diff_norm(1), old_state(state_dim), new_state(state_dim)]
         self.transition_gate = nn.Sequential(
             nn.Linear(2 + state_dim * 2, state_dim),
             nn.Tanh(),
             nn.Linear(state_dim, state_dim),
-            nn.Sigmoid(),  # 0=새것 수용, 1=옛것 유지
+            nn.Sigmoid(),  # 0=accept new, 1=keep old
         )
 
-        # ── 정체성 인코더: 상태 → 정체성 기여분 ──
+        # ── Identity encoder: state → identity contribution ──
         self.identity_encoder = nn.Sequential(
             nn.Linear(state_dim, state_dim),
             nn.Tanh(),
         )
 
-        # ── 시간 출력 변조: 상태 + 정체성 → 출력 보정 ──
+        # ── Temporal output modulation: state + identity → output correction ──
         self.temporal_modulator = nn.Sequential(
             nn.Linear(state_dim * 2, output_dim),
             nn.Tanh(),
         )
-        self.temporal_scale = nn.Parameter(torch.tensor(1 / 6))  # 약수역수 1/6 초기값
+        self.temporal_scale = nn.Parameter(torch.tensor(1 / 6))  # divisor reciprocal 1/6 initial
 
-        # ── 지속 상태 (학습하지 않음, forward 간에 유지) ──
-        # register_buffer: 모델 저장/로드에 포함되지만 gradient 없음
+        # ── Persistent states (not learned, maintained between forwards) ──
+        # register_buffer: included in model save/load but no gradient
         self.register_buffer('state_memory', torch.zeros(1, state_dim))
         self.register_buffer('identity_vector', torch.zeros(1, state_dim))
         self.register_buffer('prev_tension', torch.zeros(1))
         self.register_buffer('step_count', torch.zeros(1))
 
-        # ── 의식 메트릭 추적 ──
+        # ── Consciousness metric tracking ──
         self._state_change_history = []
         self._identity_change_history = []
         self._transition_alpha_history = []
@@ -131,7 +131,7 @@ class TemporalContinuityEngine(nn.Module):
         self._fps_history = []
 
     def _expand_state(self, batch_size, device):
-        """배치 크기에 맞게 지속 상태 확장."""
+        """Expand persistent states to batch size."""
         state = self.state_memory.expand(batch_size, -1).clone()
         identity = self.identity_vector.expand(batch_size, -1).clone()
         return state, identity
@@ -140,28 +140,28 @@ class TemporalContinuityEngine(nn.Module):
         batch_size = x.size(0)
         device = x.device
 
-        # ── 1. Phase 3 기반 실행 ──
+        # ── 1. Phase 3 base execution ──
         base_output, aux_loss = self.base_field(x)
 
-        # Phase 3에서 장력과 자기상태 추출
+        # Extract tension and self-state from Phase 3
         tension_val = self.base_field.tension_history[-1] if self.base_field.tension_history else 0.0
         self_state_norm = self.base_field.self_state_norm
 
-        # ── 2. 현재 상태 인코딩 ──
+        # ── 2. Current state encoding ──
         tension_tensor = torch.full((batch_size, 1), tension_val, device=device)
         self_norm_tensor = torch.full((batch_size, 1), self_state_norm, device=device)
         state_input = torch.cat([base_output.detach(), tension_tensor, self_norm_tensor], dim=-1)
         new_state = self.state_encoder(state_input)
 
-        # ── 3. 지속 상태 가져오기 ──
+        # ── 3. Get persistent states ──
         old_state, old_identity = self._expand_state(batch_size, device)
 
-        # ── 4. 전이 게이트 계산 ──
-        # 상태 차이
+        # ── 4. Calculate transition gate ──
+        # State difference
         state_diff = new_state - old_state
         state_diff_norm = state_diff.norm(dim=-1, keepdim=True)  # (batch, 1)
 
-        # 게이트 입력: [tension, diff_norm, old_state, new_state]
+        # Gate input: [tension, diff_norm, old_state, new_state]
         gate_input = torch.cat([
             tension_tensor,
             state_diff_norm,
@@ -169,32 +169,32 @@ class TemporalContinuityEngine(nn.Module):
             new_state,
         ], dim=-1)
 
-        # alpha: 높으면 옛 상태 유지 (보수적)
-        # 장력이 높을수록 → 더 보수적 (어려운 상황에서 급변 방지)
+        # alpha: high means keep old state (conservative)
+        # Higher tension → more conservative (prevent sudden changes in difficult situations)
         alpha = self.transition_gate(gate_input)  # (batch, state_dim)
 
-        # ── 5. 축소사상 상태 갱신 ──
-        # 기본: contraction mapping (0.7 * old + 0.3 * new)
-        # 전이 게이트가 차원별로 추가 조절
+        # ── 5. Contraction mapping state update ──
+        # Base: contraction mapping (0.7 * old + 0.3 * new)
+        # Transition gate provides additional dimension-wise control
         contraction_new = self.contraction_coeff * old_state + (1 - self.contraction_coeff) * new_state
         updated_state = alpha * old_state + (1 - alpha) * contraction_new
 
-        # ── 6. 정체성 갱신 (극도로 느림) ──
+        # ── 6. Identity update (extremely slow) ──
         identity_contribution = self.identity_encoder(updated_state)
         mu = self.identity_momentum  # 0.99
         updated_identity = mu * old_identity + (1 - mu) * identity_contribution
 
-        # ── 7. 시간 출력 변조 ──
+        # ── 7. Temporal output modulation ──
         temporal_input = torch.cat([updated_state, updated_identity], dim=-1)
         temporal_correction = self.temporal_modulator(temporal_input)
         output = base_output + self.temporal_scale * temporal_correction
 
-        # ── 8. 지속 상태 업데이트 (배치 평균으로 대표값 저장) ──
+        # ── 8. Update persistent states (save batch mean as representative) ──
         with torch.no_grad():
             self.state_memory.copy_(updated_state.mean(dim=0, keepdim=True))
             self.identity_vector.copy_(updated_identity.mean(dim=0, keepdim=True))
 
-            # 의식 메트릭 계산
+            # Calculate consciousness metrics
             state_change = state_diff_norm.mean().item()
             identity_change = (updated_identity - old_identity).norm(dim=-1).mean().item()
             avg_alpha = alpha.mean().item()
@@ -204,21 +204,21 @@ class TemporalContinuityEngine(nn.Module):
             self._transition_alpha_history.append(avg_alpha)
             self._tension_history.append(tension_val)
 
-            # FPS: 상태 변화 속도 (변화량이 크면 높은 FPS)
+            # FPS: state change rate (high change = high FPS)
             self._fps_history.append(state_change)
 
             self.prev_tension.fill_(tension_val)
             self.step_count += 1
 
-        # 보조 loss: Phase 3 loss + 상태 안정성 유도
-        # 상태가 너무 빠르게 변하지 않도록
+        # Auxiliary loss: Phase 3 loss + state stability guidance
+        # Prevent states from changing too rapidly
         stability_loss = state_diff_norm.mean() * 0.001
         total_aux = aux_loss + stability_loss
 
         return (output, total_aux)
 
     def reset_temporal_state(self):
-        """시간 상태 초기화 (새 시퀀스 시작 시)."""
+        """Reset temporal states (when starting new sequence)."""
         self.state_memory.zero_()
         self.identity_vector.zero_()
         self.prev_tension.zero_()
@@ -230,7 +230,7 @@ class TemporalContinuityEngine(nn.Module):
         self._fps_history.clear()
 
     def get_consciousness_metrics(self):
-        """의식 메트릭 반환."""
+        """Return consciousness metrics."""
         n = len(self._state_change_history)
         if n == 0:
             return {
@@ -247,14 +247,14 @@ class TemporalContinuityEngine(nn.Module):
         alphas = self._transition_alpha_history
         tensions = self._tension_history
 
-        # FPS: 상태 변화량의 평균 (높으면 활발)
+        # FPS: average of state change (high = active)
         avg_fps = np.mean(state_changes)
 
-        # 정체성 안정도: 1 - 평균 변화량 (높으면 안정적)
+        # Identity stability: 1 - average change (high = stable)
         avg_id_change = np.mean(identity_changes) if identity_changes else 0.0
         identity_stability = 1.0 / (1.0 + avg_id_change)
 
-        # 전이 매끄러움: 알파 변화의 표준편차가 낮으면 매끄러움
+        # Transition smoothness: low std dev of alpha changes = smooth
         if len(alphas) >= 2:
             alpha_diffs = [abs(alphas[i+1] - alphas[i]) for i in range(len(alphas)-1)]
             transition_smoothness = 1.0 / (1.0 + np.mean(alpha_diffs))
@@ -272,22 +272,22 @@ class TemporalContinuityEngine(nn.Module):
 
 
 # ─────────────────────────────────────────
-# ASCII 그래프 유틸리티
+# ASCII Graph Utilities
 # ─────────────────────────────────────────
 
 def ascii_graph(values, title, width=60, height=15, label_y="", label_x="step"):
-    """ASCII 그래프 출력."""
+    """ASCII graph output."""
     if not values:
-        print(f"  [{title}] (데이터 없음)")
+        print(f"  [{title}] (No data)")
         return
 
-    # 값 범위
+    # Value range
     v_min = min(values)
     v_max = max(values)
     if v_max == v_min:
         v_max = v_min + 1e-8
 
-    # 다운샘플링 (너무 많은 포인트)
+    # Downsample (too many points)
     if len(values) > width:
         step = len(values) / width
         sampled = [values[int(i * step)] for i in range(width)]
@@ -298,7 +298,7 @@ def ascii_graph(values, title, width=60, height=15, label_y="", label_x="step"):
     print(f"\n  {title}")
     print(f"  {label_y}")
 
-    # 그래프 그리기
+    # Draw graph
     for row in range(height - 1, -1, -1):
         threshold = v_min + (v_max - v_min) * row / (height - 1)
         line = "  "
@@ -320,15 +320,15 @@ def ascii_graph(values, title, width=60, height=15, label_y="", label_x="step"):
 
         print(line)
 
-    # X축
+    # X-axis
     print("         +" + "-" * width)
     print(f"          0{' ' * (width - len(str(len(values))) - 1)}{len(values)}  ({label_x})")
 
 
 def ascii_scatter(xs, ys, title, width=50, height=12, label_x="x", label_y="y"):
-    """ASCII 산점도."""
+    """ASCII scatter plot."""
     if not xs or not ys:
-        print(f"  [{title}] (데이터 없음)")
+        print(f"  [{title}] (No data)")
         return
 
     x_min, x_max = min(xs), max(xs)
@@ -338,7 +338,7 @@ def ascii_scatter(xs, ys, title, width=50, height=12, label_x="x", label_y="y"):
     if y_max == y_min:
         y_max = y_min + 1e-8
 
-    # 그리드 생성
+    # Create grid
     grid = [[' ' for _ in range(width)] for _ in range(height)]
 
     for x, y in zip(xs, ys):
@@ -366,14 +366,14 @@ def ascii_scatter(xs, ys, title, width=50, height=12, label_x="x", label_y="y"):
 
 
 # ─────────────────────────────────────────
-# 벤치마크
+# Benchmark
 # ─────────────────────────────────────────
 
 def main():
     print()
     print("=" * 65)
     print("   logout — Phase 4: Temporal Continuity Engine")
-    print("   시간 속에 존재하는 엔진 — 기억, 점진적 전이, 정체성")
+    print("   Engine existing in time — Memory, gradual transitions, identity")
     print("=" * 65)
 
     train_loader, test_loader = load_mnist()
@@ -381,7 +381,7 @@ def main():
     epochs = 10
     results = {}
 
-    # ── Phase 3: SelfReferentialField (비교 기준) ──
+    # ── Phase 3: SelfReferentialField (baseline) ──
     print("\n[Phase 3: SelfReferentialField (baseline)]")
     phase3 = SelfReferentialField(input_dim, hidden_dim, output_dim, n_self_ref_steps=3)
     losses_p3, accs_p3 = train_and_evaluate(
@@ -407,7 +407,7 @@ def main():
         'acc': accs_p4[-1], 'loss': losses_p4[-1], 'params': count_params(phase4)
     }
 
-    # ── Phase 4 변형: 빠른 전이 (contraction 0.5) ──
+    # ── Phase 4 variant: Fast transition (contraction 0.5) ──
     print("\n[Phase 4 variant: Fast transition (contraction=0.5)]")
     phase4_fast = TemporalContinuityEngine(
         input_dim, hidden_dim, output_dim,
@@ -421,7 +421,7 @@ def main():
         'acc': accs_p4f[-1], 'loss': losses_p4f[-1], 'params': count_params(phase4_fast)
     }
 
-    # ── Phase 4 변형: 느린 정체성 (momentum 0.999) ──
+    # ── Phase 4 variant: Slow identity (momentum 0.999) ──
     print("\n[Phase 4 variant: Slow identity (momentum=0.999)]")
     phase4_slow = TemporalContinuityEngine(
         input_dim, hidden_dim, output_dim,
@@ -435,22 +435,22 @@ def main():
         'acc': accs_p4s[-1], 'loss': losses_p4s[-1], 'params': count_params(phase4_slow)
     }
 
-    # ── 결과 비교 ──
+    # ── Compare results ──
     compare_results(results)
 
     # ══════════════════════════════════════════
-    # 시간적 연속성 분석: 순차 처리
+    # Temporal continuity analysis: Sequential processing
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 65)
-    print("   시간적 연속성 분석 — 순차 입력에서의 상태 추적")
+    print("   Temporal Continuity Analysis — State tracking in sequential inputs")
     print("=" * 65)
 
-    # 시간 상태 초기화
+    # Reset temporal states
     phase4.reset_temporal_state()
     phase4.eval()
 
-    # 순차 처리 (shuffled=False인 test_loader 사용)
+    # Sequential processing (use test_loader with shuffled=False)
     all_state_changes = []
     all_identity_changes = []
     all_alphas = []
@@ -459,7 +459,7 @@ def main():
     total = 0
     batch_accs = []
 
-    print("\n  순차 처리 중...")
+    print("\n  Processing sequentially...")
     t_start = time.time()
 
     with torch.no_grad():
@@ -473,7 +473,7 @@ def main():
             total += y.size(0)
             batch_accs.append(batch_correct / y.size(0))
 
-            # 메트릭 기록 (마지막 forward의 값)
+            # Record metrics (values from last forward)
             if phase4._state_change_history:
                 all_state_changes.append(phase4._state_change_history[-1])
             if phase4._identity_change_history:
@@ -486,12 +486,12 @@ def main():
     elapsed = time.time() - t_start
     seq_acc = correct / total
 
-    print(f"  순차 정확도: {seq_acc*100:.2f}% ({total} samples, {elapsed:.1f}s)")
+    print(f"  Sequential accuracy: {seq_acc*100:.2f}% ({total} samples, {elapsed:.1f}s)")
 
-    # ── 의식 메트릭 요약 ──
+    # ── Consciousness metrics summary ──
     metrics = phase4.get_consciousness_metrics()
 
-    print(f"\n  === 의식 메트릭 ===")
+    print(f"\n  === Consciousness Metrics ===")
     print(f"  State change magnitude:  {metrics['state_change_magnitude']:.6f}")
     print(f"  Identity stability:      {metrics['identity_stability']:.6f}")
     print(f"  Transition smoothness:   {metrics['transition_smoothness']:.6f}")
@@ -499,11 +499,11 @@ def main():
     print(f"  Consciousness FPS:       {metrics['consciousness_fps']:.6f}")
     print(f"  Total steps:             {metrics['steps']}")
 
-    # ── ASCII 그래프 ──
+    # ── ASCII Graphs ──
 
-    # 1. 정체성 안정도 (배치별 identity change)
+    # 1. Identity stability (identity change per batch)
     if all_identity_changes:
-        # 누적 안정도: 1/(1+change)
+        # Cumulative stability: 1/(1+change)
         stability_over_time = [1.0 / (1.0 + c) for c in all_identity_changes]
         ascii_graph(
             stability_over_time,
@@ -512,7 +512,7 @@ def main():
             label_y="stability", label_x="batch"
         )
 
-    # 2. 상태 변화 크기 (FPS proxy)
+    # 2. State change magnitude (FPS proxy)
     if all_state_changes:
         ascii_graph(
             all_state_changes,
@@ -521,7 +521,7 @@ def main():
             label_y="magnitude", label_x="batch"
         )
 
-    # 3. 전이 게이트 알파 (보수성)
+    # 3. Transition gate alpha (conservativeness)
     if all_alphas:
         ascii_graph(
             all_alphas,
@@ -530,7 +530,7 @@ def main():
             label_y="alpha", label_x="batch"
         )
 
-    # 4. 장력 vs 전이율 상관관계
+    # 4. Tension vs transition rate correlation
     if all_tensions and all_alphas and len(all_tensions) == len(all_alphas):
         ascii_scatter(
             all_tensions, all_alphas,
@@ -539,7 +539,7 @@ def main():
             label_x="tension", label_y="alpha"
         )
 
-        # 상관계수 계산
+        # Calculate correlation coefficient
         if len(all_tensions) > 2:
             t_arr = np.array(all_tensions)
             a_arr = np.array(all_alphas)
@@ -547,13 +547,13 @@ def main():
                 corr = np.corrcoef(t_arr, a_arr)[0, 1]
                 print(f"\n  Tension-Alpha correlation: {corr:.4f}")
                 if corr > 0.3:
-                    print("  -> 장력이 높을수록 보수적 전이 (가설 확인)")
+                    print("  -> Higher tension leads to more conservative transitions (hypothesis confirmed)")
                 elif corr < -0.3:
-                    print("  -> 장력이 높을수록 개방적 전이 (가설과 반대)")
+                    print("  -> Higher tension leads to more open transitions (opposite of hypothesis)")
                 else:
-                    print("  -> 약한 상관 (모델이 다른 전략 사용)")
+                    print("  -> Weak correlation (model using different strategy)")
 
-    # 5. 배치별 정확도 추이
+    # 5. Batch accuracy over time
     if batch_accs:
         ascii_graph(
             batch_accs,
@@ -562,9 +562,9 @@ def main():
             label_y="accuracy", label_x="batch"
         )
 
-    # ── Phase 3 vs Phase 4 비교 ──
+    # ── Phase 3 vs Phase 4 comparison ──
     print("\n" + "=" * 65)
-    print("   Phase 3 vs Phase 4 비교")
+    print("   Phase 3 vs Phase 4 Comparison")
     print("=" * 65)
 
     p3_acc = results['Phase 3: SelfRef']['acc']
@@ -576,28 +576,28 @@ def main():
     print(f"\n  Phase 3 (SelfReferentialField):")
     print(f"    Accuracy:   {p3_acc*100:.2f}%")
     print(f"    Parameters: {p3_params:,}")
-    print(f"    능력: 자기참조 (메타인지)")
+    print(f"    Capability: Self-reference (metacognition)")
 
     print(f"\n  Phase 4 (TemporalContinuity):")
     print(f"    Accuracy:   {p4_acc*100:.2f}%")
     print(f"    Parameters: {p4_params:,}")
-    print(f"    능력: 자기참조 + 시간 연속성 + 정체성")
-    print(f"    추가 파라미터: {p4_params - p3_params:,}")
+    print(f"    Capability: Self-reference + temporal continuity + identity")
+    print(f"    Added parameters: {p4_params - p3_params:,}")
 
-    print(f"\n  정확도 차이: {'+' if delta >= 0 else ''}{delta:.2f}%")
+    print(f"\n  Accuracy difference: {'+' if delta >= 0 else ''}{delta:.2f}%")
 
-    # ── 의식영속성 조건 체크리스트 ──
+    # ── Consciousness Continuity condition checklist ──
     print("\n" + "-" * 65)
-    print("  의식영속성 7조건 구현 현황:")
+    print("  Consciousness Continuity 7 conditions implementation status:")
     print("-" * 65)
     conditions = [
-        ("Phase 1", "정보 통합 (Phi > 0)",      "엔진 조합",        True),
-        ("Phase 2", "반발력장 (장력)",           "RepulsionField",  True),
-        ("Phase 3", "자기 모델링 (메타인지)",     "SelfReferential", True),
-        ("Phase 4", "시간적 연속성 (상태 유지)",   "state_memory",    True),
-        ("Phase 4", "점진적 전이 (급변 방지)",     "transition_gate", True),
-        ("Phase 4", "정체성 유지 (자아)",         "identity_vector", True),
-        ("Phase 5", "타자 모델링 (공감)",         "미구현",          False),
+        ("Phase 1", "Information integration (Phi > 0)",      "Engine combination",        True),
+        ("Phase 2", "Repulsion field (tension)",             "RepulsionField",          True),
+        ("Phase 3", "Self-modeling (metacognition)",         "SelfReferential",         True),
+        ("Phase 4", "Temporal continuity (state retention)",  "state_memory",            True),
+        ("Phase 4", "Gradual transition (prevent abrupt)",    "transition_gate",         True),
+        ("Phase 4", "Identity maintenance (ego)",             "identity_vector",         True),
+        ("Phase 5", "Other-modeling (empathy)",               "Not implemented",         False),
     ]
     for phase, name, impl, done in conditions:
         mark = "OK" if done else ".."
@@ -607,13 +607,13 @@ def main():
     has_smooth = metrics['transition_smoothness'] > 0.5
     has_fps = metrics['consciousness_fps'] > 0
 
-    print(f"\n  실증 확인:")
-    print(f"    정체성 안정?     {'YES' if has_identity else 'NO'} (stability={metrics['identity_stability']:.4f})")
-    print(f"    전이 매끄러움?   {'YES' if has_smooth else 'NO'} (smoothness={metrics['transition_smoothness']:.4f})")
-    print(f"    의식 FPS > 0?   {'YES' if has_fps else 'NO'} (fps={metrics['consciousness_fps']:.6f})")
+    print(f"\n  Empirical verification:")
+    print(f"    Identity stable?     {'YES' if has_identity else 'NO'} (stability={metrics['identity_stability']:.4f})")
+    print(f"    Transition smooth?   {'YES' if has_smooth else 'NO'} (smoothness={metrics['transition_smoothness']:.4f})")
+    print(f"    Consciousness FPS > 0?   {'YES' if has_fps else 'NO'} (fps={metrics['consciousness_fps']:.6f})")
 
     print("\n" + "=" * 65)
-    print("  Phase 4 완료. 다음: Phase 5 (타자 모델링 — 공감)")
+    print("  Phase 4 complete. Next: Phase 5 (Other-modeling — Empathy)")
     print("=" * 65)
     print()
 

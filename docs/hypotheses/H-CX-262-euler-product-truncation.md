@@ -1,3 +1,3 @@
-# H-CX-262: 오일러 곱 p=2,3 절단 = 골든존
+# H-CX-262: Euler Product p=2,3 Truncation = Golden Zone
 
-> 기존 H092. ζ의 오일러 곱에서 P₁의 소인수(2,3)만 취하면 골든존.
+> Formerly H092. Taking only the prime factors of P₁ (2,3) from ζ's Euler product yields the Golden Zone.

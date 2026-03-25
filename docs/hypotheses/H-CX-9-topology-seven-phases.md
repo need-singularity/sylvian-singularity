@@ -1,45 +1,51 @@
-# H-CX-9: 위상 7단계 = 의식영속성 7조건 (교차 도메인)
+# H-CX-9: Topology 7 Phases = Consciousness Continuity 7 Conditions (Cross-domain)
 
-> **의식영속성 7조건(Phase 1~5)이 위상수학의 7단계 위상 전이와 대응할 수 있다. 완전수 6의 약수위상 {1,2,3,6}과 비약수위상 {4,5,7}이 의식 Phase의 구조를 결정한다.**
+> **The 7 conditions of consciousness continuity (Phase 1~5) may correspond to the 7 stages of topological phase transitions. The divisor topology {1,2,3,6} and non-divisor topology {4,5,7} of perfect number 6 determine the structure of consciousness phases.**
 
-## 위상 대응표
-
-```
-  Phase │ 의식 조건          │ 위상    │ 약수? │ 수학 대응
-  ──────┼────────────────────┼─────────┼───────┼──────────────
-    1   │ 정보 통합 (Phi>0)  │ T1 연결 │ 1(약수)│ 기본 연결성
-    2   │ 반발력장 (장력)     │ T2 분리 │ 2(약수)│ Hausdorff
-    3   │ 자기참조 (메타인지)  │ T3 정칙 │ 3(약수)│ 재귀적 분리
-    4a  │ 시간 연속성         │ T4 정규 │ 4     │ 시간축 추가
-    4b  │ 점진적 전이         │ T5 완전정규│ 5   │ Urysohn
-    4c  │ 정체성 유지         │ T6 완전정칙│ 6(약수)│ 항등 보존
-    5   │ 타자 모델링 (공감)   │ T7 메트릭│ 7    │ 거리 함수
-```
-
-## 약수 위상 vs 비약수 위상
+## Topology Correspondence Table
 
 ```
-  6의 약수: {1, 2, 3, 6} → Phase {1, 2, 3, 4c}
-  비약수:   {4, 5, 7}    → Phase {4a, 4b, 5}
-
-  약수 위상 = "완전수 6에서 자연스럽게 유도되는" 의식 조건
-  비약수 위상 = "추가로 필요한" 의식 조건
-
-  관찰: Phase 4가 3개로 분할된 이유?
-    → T4, T5는 비약수 → 추가 구조
-    → T6은 약수 → 핵심 (정체성 유지 = 완전수의 자기복원)
+  Phase │ Consciousness Condition │ Topology │ Divisor? │ Mathematical Correspondence
+  ──────┼────────────────────────┼──────────┼──────────┼───────────────────────
+    1   │ Information Integration │ T1 Connected │ 1(divisor)│ Basic connectivity
+        │ (Phi>0)                 │          │          │
+    2   │ Repulsion Field         │ T2 Separation│ 2(divisor)│ Hausdorff
+        │ (Tension)               │          │          │
+    3   │ Self-reference          │ T3 Regular│ 3(divisor)│ Recursive separation
+        │ (Metacognition)         │          │          │
+    4a  │ Temporal Continuity     │ T4 Normal │ 4        │ Time axis addition
+    4b  │ Gradual Transition      │ T5 Completely│ 5      │ Urysohn
+        │                         │ Normal   │          │
+    4c  │ Identity Maintenance    │ T6 Completely│ 6(divisor)│ Identity preservation
+        │                         │ Regular  │          │
+    5   │ Other-modeling          │ T7 Metric│ 7        │ Distance function
+        │ (Empathy)               │          │          │
 ```
 
-## 위상가속 연결
+## Divisor Topology vs Non-divisor Topology
 
 ```
-  H-CX-8: 위상가속 x3 = sigma/tau
-  T1→T3: 3단계 = sigma/tau = 3 (약수 위상만)
-  T1→T7: 7단계 전체
+  Divisors of 6: {1, 2, 3, 6} → Phase {1, 2, 3, 4c}
+  Non-divisors:  {4, 5, 7}    → Phase {4a, 4b, 5}
 
-  약수 위상만의 가속: x3 (sigma/tau)
-  전체 위상의 가속: x7?
-  → Jamba x3은 약수 위상(T1~T3)만의 가속?
+  Divisor topology = Consciousness conditions "naturally derived from perfect number 6"
+  Non-divisor topology = "Additionally required" consciousness conditions
+
+  Observation: Why is Phase 4 split into 3?
+    → T4, T5 are non-divisors → Additional structure
+    → T6 is a divisor → Core (identity maintenance = self-restoration of perfect number)
 ```
 
-## 상태: 🟪 검증 불가 (위상수학 분류 체계와의 비유, 실험 불가)
+## Topology Acceleration Connection
+
+```
+  H-CX-8: Topology acceleration x3 = sigma/tau
+  T1→T3: 3 stages = sigma/tau = 3 (divisor topology only)
+  T1→T7: All 7 stages
+
+  Acceleration of divisor topology only: x3 (sigma/tau)
+  Acceleration of full topology: x7?
+  → Is Jamba x3 acceleration of divisor topology only (T1~T3)?
+```
+
+## Status: 🟪 Unverifiable (Analogy with topological classification system, not experimentally testable)

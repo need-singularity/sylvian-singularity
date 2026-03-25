@@ -1,117 +1,117 @@
-# 가설 검토 002: 골든 존의 보편성 — 1/e는 자연 상수인가
+# Hypothesis Review 002: Universality of the Golden Zone — Is 1/e a Natural Constant?
 
-## 가설
+## Hypothesis
 
-> 골든 존의 중심 I ≈ 0.36 ≈ 1/e(0.368)는 우연이 아니며, 자연상수 e가 성장과 붕괴의 최적 전환점을 정의하는 것처럼, 억제의 최적 수준은 1/e에 수렴한다.
+> The Golden Zone center I ≈ 0.36 ≈ 1/e (0.368) is not coincidental; just as the natural constant e defines the optimal transition point between growth and decay, the optimal level of Inhibition converges to 1/e.
 
-## 관찰된 사실
-
-```
-  골든 존: I = 0.24 ~ 0.48
-  중심값:  I = 0.36
-  1/e   =  0.3679...
-  오차  =  0.008 (2.2%)
-```
-
-## 1/e가 등장하는 다른 자연 현상
-
-### 최적 정지 문제 (Secretary Problem)
+## Observed Facts
 
 ```
-  n명의 후보 중 최선을 선택하는 문제
-  최적 전략: 처음 n/e 명은 무조건 거절, 이후 최고를 선택
-  성공 확률: 1/e ≈ 36.8%
+  Golden Zone: I = 0.24 ~ 0.48
+  Center:      I = 0.36
+  1/e        =  0.3679...
+  Error      =  0.008 (2.2%)
 ```
 
-우리 모델에서 볼츠만 천재성 확률이 35~39%로 1/e 근처에 수렴한 것과 일치.
+## Other Natural Phenomena Where 1/e Appears
 
-### 방사성 붕괴
+### Optimal Stopping Problem (Secretary Problem)
+
+```
+  Problem: selecting the best candidate from n applicants
+  Optimal strategy: unconditionally reject the first n/e candidates, then choose the best thereafter
+  Success probability: 1/e ≈ 36.8%
+```
+
+Consistent with the Boltzmann genius probability in our model converging near 35~39% ≈ 1/e.
+
+### Radioactive Decay
 
 ```
   N(t) = N₀ × e^(-λt)
-  반감기에서 잔존 비율의 자연로그 밑 = e
-  1/e 시간 후 잔존량 = 36.8%
+  The natural logarithm base for residual ratio at half-life = e
+  Remaining amount after 1/e time = 36.8%
 ```
 
-### 정보 이론 (Shannon)
+### Information Theory (Shannon)
 
 ```
-  최대 엔트로피 분포에서 e가 자연스럽게 등장
+  e appears naturally in the maximum entropy distribution
   H = -Σ p ln(p)
-  최적 코딩에서 정보 밀도의 전환점 ≈ 1/e
+  Transition point of information density in optimal coding ≈ 1/e
 ```
 
-### 신경과학 — 뉴런 발화 역치
+### Neuroscience — Neuron Firing Threshold
 
 ```
-  Hodgkin-Huxley 모델에서
-  막전위의 시간 상수 τ 후 도달률 = 1 - 1/e ≈ 63.2%
-  억제 후 회복률의 전환점 = 1/e
+  In the Hodgkin-Huxley model:
+  Fraction reaching firing threshold after time constant τ = 1 - 1/e ≈ 63.2%
+  Transition point of recovery after Inhibition = 1/e
 ```
 
-## 우리 모델에서 1/e의 의미
+## Meaning of 1/e in Our Model
 
-### 볼츠만 해석
+### Boltzmann Interpretation
 
 ```
   P(genius) = e^(-E_genius / T) / Z
 
-  T = 1/I 이므로, I = 1/e 일 때:
+  Since T = 1/I, at I = 1/e:
   T = e ≈ 2.718
 
-  이 온도에서:
+  At this temperature:
   e^(-E/e) = e^(-E × (1/e))
-  → 에너지 E와 온도 T의 비율이 정확히 1
-  → 에너지-엔트로피 균형점
+  → The ratio of energy E to temperature T is exactly 1
+  → Energy-entropy equilibrium point
 ```
 
-> I = 1/e 는 **에너지와 엔트로피가 정확히 균형을 이루는 지점**이다.
+> I = 1/e is the point where **energy and entropy are in exact balance**.
 
-### 커스프 해석
+### Cusp Interpretation
 
 ```
-  제어 변수 b = 1 - 2I
-  I = 1/e ≈ 0.368 일 때:
+  Control variable b = 1 - 2I
+  At I = 1/e ≈ 0.368:
   b = 1 - 2(0.368) = 0.264
 
-  이 값은 커스프 분기 곡면에서
-  "전이가 시작되는 초입" — 이중 안정이 막 나타나려는 지점
+  On the cusp bifurcation surface, this value corresponds to
+  the "onset of transition" — the point where bistability is just beginning to emerge
 ```
 
-### 정보론적 해석
+### Information-Theoretic Interpretation
 
 ```
-  골든 존에서의 엔트로피 ≈ 1.097 (실측)
-  ln(3) = 1.099 (3개 상태의 최대 엔트로피)
+  Entropy within the Golden Zone ≈ 1.097 (measured)
+  ln(3) = 1.099 (maximum entropy of 3 states)
 
-  → 정상/천재/기능저하 3개 상태가 거의 동등한 확률
-  → 시스템의 불확실성이 최대 = 전이 가능성이 최대
-  → 이것이 I = 1/e 에서 일어남
+  → Normal / Genius / Decline states have nearly equal probability
+  → Maximum system uncertainty = maximum transition potential
+  → This occurs at I = 1/e
 ```
 
-## 다분야 검증
+## Multi-Domain Verification
 
-| 분야 | 현상 | 최적점 | 1/e 관련 |
+| Domain | Phenomenon | Optimal Point | Relation to 1/e |
 |---|---|---|---|
-| 수학 | 최적 정지 문제 | 36.8% | = 1/e |
-| 물리 | 방사성 붕괴 전환 | 36.8% | = 1/e |
-| 정보 | Shannon 엔트로피 | ln 밑 = e | e 관련 |
-| 신경 | 막전위 시간상수 | 63.2% | = 1-1/e |
-| 진화 | 돌연변이 최적 비율 | ~1-5% | 1/e² 근처 |
-| 우리 모델 | 골든 존 중심 | 36% | ≈ 1/e |
+| Mathematics | Optimal stopping problem | 36.8% | = 1/e |
+| Physics | Radioactive decay transition | 36.8% | = 1/e |
+| Information | Shannon entropy | log base = e | e-related |
+| Neuroscience | Membrane potential time constant | 63.2% | = 1-1/e |
+| Evolution | Optimal mutation rate | ~1-5% | near 1/e² |
+| Our model | Golden Zone center | 36% | ≈ 1/e |
 
-## 한계
+## Limitations
 
-- 골든 존 중심이 정확히 1/e인지는 격자 해상도에 의존. 더 정밀한 측정 필요.
-- 우리 모델의 파라미터 분포(Beta 분포)가 결과에 영향을 줄 수 있음.
-- 1/e의 출현이 모델 구조의 인위적 결과인지, 자연적 결과인지 분리 필요.
+- Whether the Golden Zone center is exactly 1/e depends on grid resolution. More precise measurement is needed.
+- The population distribution (Beta distribution) of our model may influence results.
+- It is necessary to separate whether the appearance of 1/e is an artifact of the model structure or a natural result.
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 격자 해상도 500³으로 골든 존 중심의 정확한 수렴값 측정
-- [ ] Beta 분포 파라미터를 변경해도 1/e에 수렴하는지 강건성 테스트
-- [ ] 다른 Genius Score 함수(곱셈 아닌 다른 결합)에서도 1/e가 나타나는지
+- [ ] Measure the precise convergence value of the Golden Zone center at grid resolution 500³
+- [ ] Robustness test: does the center still converge to 1/e when Beta distribution parameters are changed?
+- [ ] Check whether 1/e appears with other Genius Score functions (combinations other than multiplication)
 
 ---
 
-*작성일: 2026-03-22*
+*Written: 2026-03-22*

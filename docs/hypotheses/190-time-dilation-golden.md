@@ -1,118 +1,118 @@
-# 가설 190: 시간 지연 ↔ I 변화율
+# Hypothesis 190: Time Dilation ↔ I Rate of Change
 
-## 상태: ⚠️ 탐구 중
+## Status: ⚠️ Under Investigation
 
-## 핵심 명제
+## Core Proposition
 
-상대론적 시간 지연은 I 변화율의 차이로 재해석될 수 있다.
-중력이 강한 곳 = I가 높은 곳 = 변화가 느린 곳 = 시간이 느린 곳.
+Relativistic time dilation can be reinterpreted as differences in I rate of change.
+Strong gravity = High I = Slow change = Slow time.
 
-## 상대론과의 대응
+## Correspondence with Relativity
 
 ```
-상대론                          우리 프레임워크
+Relativity                          Our Framework
 ─────────────────────────────    ─────────────────────────────
-중력 강함 → 시간 느림            I 높음 → 수렴 느림
-중력 약함 → 시간 빠름            I 낮음 → 수렴 빠름
-블랙홀 사건의 지평선 → 시간 정지  I → ∞ → 변화 정지
-자유 공간 → 정상 시간            I ≈ 0.37 → 정상 수렴
+Strong gravity → Slow time            High I → Slow convergence
+Weak gravity → Fast time             Low I → Fast convergence
+Black hole event horizon → Time stop  I → ∞ → Change stops
+Free space → Normal time             I ≈ 0.37 → Normal convergence
 ```
 
-## 시간-I 그래프 (Time-I Graph)
+## Time-I Graph
 
 ```
-시간 흐름 속도 (dI/dt)
+Time flow rate (dI/dt)
 |
 |  *
 |    *
 |      *
-|        *         ← 자유 공간 (정상 속도)
+|        *         ← Free space (normal speed)
 |          *
-|            * - - - - - - - ← 골든존 (최적 속도)
+|            * - - - - - - - ← Golden Zone (optimal speed)
 |              *
 |                *
 |                  *
 |                    *
 |                      *
-|                        *    ← 강한 중력장
+|                        *    ← Strong gravitational field
 |                          *
-|                            * ← 블랙홀 접근
-+──────────────────────────────→ I (억제값)
+|                            * ← Approaching black hole
++──────────────────────────────→ I (inhibition value)
 0    0.2   0.37  0.5    1.0   ∞
-     골든존 하한   부동점  골든존 상한    블랙홀
+     Golden Zone lower   Fixed point  Golden Zone upper    Black hole
 ```
 
-## 골든존 안의 시간
+## Time in the Golden Zone
 
-골든존: I = 0.2 ~ 0.5
+Golden Zone: I = 0.2 ~ 0.5
 
-이 범위 안에서 시간은 "최적 속도"로 흐른다.
-너무 빠르지도, 너무 느리지도 않은 변화율.
-
-```
-I 범위별 시간 특성:
-
-I < 0.2    : 너무 빠른 변화 → 불안정 → 시간 왜곡
-I = 0.2~0.5: 골든존 → 안정적 시간 흐름 → 최적
-I > 0.5    : 너무 느린 변화 → 정체 → 시간 둔화
-I → ∞      : 변화 없음 → 시간 정지 → 블랙홀
-```
-
-## 블랙홀 근처의 I
+Within this range, time flows at "optimal speed".
+Neither too fast nor too slow rate of change.
 
 ```
-       블랙홀
+Time characteristics by I range:
+
+I < 0.2    : Too fast change → Unstable → Time distortion
+I = 0.2~0.5: Golden Zone → Stable time flow → Optimal
+I > 0.5    : Too slow change → Stagnation → Time slowing
+I → ∞      : No change → Time stop → Black hole
+```
+
+## I Near Black Hole
+
+```
+       Black hole
         (I→∞)
          ||
-         ||  사건의 지평선
+         ||  Event horizon
     ─────||─────
    /     ||     \
-  /   I=10      \     ← 시간 극도로 느림
- /    I=5        \    ← 시간 매우 느림
-/     I=1         \   ← 시간 느림
-      I=0.5           ← 골든존 경계
-      I=0.37          ← 정상 시간 (지구 근처)
+  /   I=10      \     ← Time extremely slow
+ /    I=5        \    ← Time very slow
+/     I=1         \   ← Time slow
+      I=0.5           ← Golden Zone boundary
+      I=0.37          ← Normal time (near Earth)
 ```
 
-## 수학적 제안
+## Mathematical Proposal
 
-시간 지연 인자 gamma를 I로 표현:
-
-```
-gamma = 1 / sqrt(1 - v^2/c^2)     ← 특수 상대론
-
-gamma_I = I / I_ref                 ← I 프레임워크
-
-여기서 I_ref = 1/3 (부동점)
-
-시간 지연 비율:
-  dt_관측자 / dt_고유 = gamma_I = I / (1/3) = 3I
-
-I = 1/3 일 때: gamma_I = 1 (지연 없음, 부동점)
-I = 1 일 때:   gamma_I = 3 (3배 느림)
-I → ∞ 일 때:   gamma_I → ∞ (시간 정지)
-```
-
-## 중력과 I의 관계
+Expressing time dilation factor gamma in terms of I:
 
 ```
-중력 퍼텐셜 phi      I (억제값)
+gamma = 1 / sqrt(1 - v^2/c^2)     ← Special relativity
+
+gamma_I = I / I_ref                 ← I framework
+
+where I_ref = 1/3 (fixed point)
+
+Time dilation ratio:
+  dt_observer / dt_proper = gamma_I = I / (1/3) = 3I
+
+When I = 1/3: gamma_I = 1 (no dilation, fixed point)
+When I = 1:   gamma_I = 3 (3x slower)
+When I → ∞:   gamma_I → ∞ (time stop)
+```
+
+## Relationship between Gravity and I
+
+```
+Gravitational potential phi      I (inhibition value)
      |                    |
-  깊음 ◄──────────► 높음
+  Deep ◄──────────► High
      |                    |
-  얕음 ◄──────────► 낮음
+  Shallow ◄──────────► Low
      |                    |
-  없음 ◄──────────► 1/3 (부동점)
+  None ◄──────────► 1/3 (fixed point)
 ```
 
-## 검증 가능성
+## Testability
 
-1. GPS 위성의 시간 보정 ↔ 고도별 I 차이로 설명 가능한가?
-2. 블랙홀 근처 적색편이 ↔ I 증가로 해석 가능한가?
-3. 골든존 내부에서의 시간 흐름이 왜 "자연스러운가"?
+1. Can GPS satellite time correction be explained by altitude-dependent I differences?
+2. Can redshift near black holes be interpreted as I increase?
+3. Why is time flow within the Golden Zone "natural"?
 
-## 한계
+## Limitations
 
-- I와 중력장의 정확한 수학적 관계는 아직 미정립
-- 특수 상대론(속도에 의한 시간 지연)과의 대응은 추가 연구 필요
-- 양자 중력 이론과의 접점 탐색 필요
+- Exact mathematical relationship between I and gravitational field not yet established
+- Correspondence with special relativity (velocity-induced time dilation) needs further research
+- Connection with quantum gravity theory needs exploration

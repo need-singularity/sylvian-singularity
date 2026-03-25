@@ -1,16 +1,16 @@
-# H-CX-100: PH 학습률 가이드 — dH0/dep으로 최적 학습률 탐색
+# H-CX-100: PH Learning Rate Guide — Optimal LR Search via dH0/dep
 
-> H0_total의 에폭별 감소 속도(dH0/dep)가 학습률에 따라 달라진다.
-> 최적 학습률 = H0가 안정적으로 감소하되 진동하지 않는 LR.
-> LR이 너무 크면 H0 진동, 너무 작으면 H0 정체.
+> The per-epoch decrease rate of H0_total (dH0/dep) varies with learning rate.
+> Optimal LR = LR where H0 decreases steadily without oscillation.
+> LR too large → H0 oscillation, LR too small → H0 stagnation.
 
-## 예측
+## Predictions
 
-1. LR sweep에서 H0 감소 안정성이 최적 LR을 가리킴
-2. H0 기반 최적 LR에서의 test_acc가 수동 튜닝과 동등
-3. H0 변동계수(CV)가 최소인 LR = 최적 LR
+1. H0 decrease stability in LR sweep points to optimal LR
+2. test_acc at H0-based optimal LR is equivalent to manual tuning
+3. LR with minimum H0 coefficient of variation (CV) = optimal LR
 
-## 검증 상태
+## Verification Status
 
-- [ ] LR sweep + H0 안정성
-- [ ] 최적 LR 비교
+- [ ] LR sweep + H0 stability
+- [ ] Optimal LR comparison

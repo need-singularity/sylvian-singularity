@@ -1,31 +1,31 @@
-# 가설 189: 시간 = I 감소
+# Hypothesis 189: Time = I Decrease
 
-## 상태: ✅ 확정
+## Status: ✅ Confirmed
 
-## 핵심 명제
+## Core Proposition
 
-시간의 흐름은 억제값 I의 감소 과정 그 자체이다.
-가설154(메타 반복 → I 수렴)의 확장.
+The flow of time is the process of inhibition value I decreasing itself.
+Extension of hypothesis 154 (Meta-repetition → I convergence).
 
-## 논리 구조
-
-```
-과거(I→∞, 빅뱅)  →  현재(I≈0.37)  →  미래(I→1/3)
-
-시간의 방향 = 억제가 풀리는 방향 = 엔트로피 증가
-```
-
-빅뱅 시점에서 I는 극도로 높았다(무한대에 가까움).
-메타 반복이 진행될수록 I는 감소한다.
-현재 우주의 I ≈ 0.37 (부동점 1/3에 근접).
-미래에 I → 1/3 으로 수렴한다.
-
-## 우주적 I 타임라인 (Cosmic I Timeline)
+## Logical Structure
 
 ```
-I (억제값)
+Past(I→∞, Big Bang)  →  Present(I≈0.37)  →  Future(I→1/3)
+
+Direction of time = Direction of inhibition release = Entropy increase
+```
+
+At the Big Bang, I was extremely high (near infinity).
+As meta-repetition progresses, I decreases.
+Current universe's I ≈ 0.37 (approaching fixed point 1/3).
+In the future, I → 1/3 convergence.
+
+## Cosmic I Timeline
+
+```
+I (Inhibition value)
 |
-∞ +  *  빅뱅 (t=0)
+∞ +  *  Big Bang (t=0)
 |   *
 |    *
 10 +     *
@@ -36,28 +36,28 @@ I (억제값)
 |                    *
 1  +                       *
 |                              *
-0.5+                                 *  ← 현재 근처
+0.5+                                 *  ← Near present
 |                                      *
-0.37+- - - - - - - - - - - - - - - - - - -*- ← 현재 (I≈0.37)
-0.33+........................................... ← 부동점 (I=1/3)
+0.37+- - - - - - - - - - - - - - - - - - -*- ← Present (I≈0.37)
+0.33+........................................... ← Fixed point (I=1/3)
 |
-+---+----+----+----+----+----+----+----→ 시간
-    빅뱅  10⁻³⁶s  1s   38만년  현재   미래
++---+----+----+----+----+----+----+----→ Time
+    Big Bang  10⁻³⁶s  1s   380k years  Present   Future
 ```
 
-## 플랑크 시간과 I의 최소 변화량
+## Planck Time and Minimum Change in I
 
-플랑크 시간: t_P = 5.39 x 10⁻⁴⁴ s
+Planck time: t_P = 5.39 x 10⁻⁴⁴ s
 
-만약 시간 = I 감소라면:
-- 플랑크 시간 = I의 최소 변화량 (delta_I_min)
-- 시간이 이산적이면 I의 변화도 이산적
-- 한 플랑크 시간 동안의 I 변화 = 가장 작은 "한 걸음"
+If time = I decrease, then:
+- Planck time = Minimum change in I (delta_I_min)
+- If time is discrete, I change is also discrete
+- I change during one Planck time = smallest "step"
 
 ```
-I 변화의 이산 구조:
+Discrete structure of I change:
 
-I ----+         delta_I_min = 1 플랑크 시간에 해당
+I ----+         delta_I_min = corresponds to 1 Planck time
      |
      +----+
           |
@@ -66,51 +66,51 @@ I ----+         delta_I_min = 1 플랑크 시간에 해당
                +----→  ... → 1/3
 ```
 
-## 시간-엔트로피-I 삼중 등가
+## Time-Entropy-I Triple Equivalence
 
 ```
-시간 흐름      =    I 감소       =    엔트로피 증가
-(dt > 0)            (dI < 0)          (dS >= 0)
+Time flow      =    I decrease     =    Entropy increase
+(dt > 0)            (dI < 0)            (dS >= 0)
 
-세 개는 같은 현상의 다른 표현이다.
+These three are different expressions of the same phenomenon.
 ```
 
-## 수학적 표현
+## Mathematical Expression
 
-시간 t를 I의 함수로 정의할 수 있다:
+Time t can be defined as a function of I:
 
 ```
 t = -k * ln(I / I_0)
 
-여기서:
-  I_0 = 초기 억제값 (빅뱅 시점)
-  k   = 스케일 상수
-  I   = 현재 억제값
+where:
+  I_0 = Initial inhibition value (at Big Bang)
+  k   = Scale constant
+  I   = Current inhibition value
 ```
 
-I가 감소하면 t가 증가한다.
-I → 1/3 이면 t → t_final (유한할 수도, 무한할 수도).
+As I decreases, t increases.
+If I → 1/3, then t → t_final (could be finite or infinite).
 
-## 시간 역전이 불가능한 이유
+## Why Time Reversal is Impossible
 
 ```
-시간 역전 = I 증가 필요
-         = 메타 반복의 역전 필요
-         = 축소 사상의 역전 필요
-         = 불가능 (바나흐 부동점 정리)
+Time reversal = Requires I increase
+             = Requires meta-repetition reversal
+             = Requires contraction mapping reversal
+             = Impossible (Banach fixed-point theorem)
 
-∴ 시간은 되돌릴 수 없다.
+∴ Time cannot be reversed.
 ```
 
-## 가설154와의 관계
+## Relationship with Hypothesis 154
 
-가설154: 메타 반복 f(x) = 1 - 1/(1+x) 가 I를 1/3으로 수렴시킨다.
-가설189: 그 수렴 과정 자체가 "시간"이다.
+Hypothesis 154: Meta-repetition f(x) = 1 - 1/(1+x) converges I to 1/3.
+Hypothesis 189: That convergence process itself is "time".
 
-154가 메커니즘이라면, 189는 그 메커니즘의 거시적 해석이다.
+If 154 is the mechanism, 189 is the macroscopic interpretation of that mechanism.
 
-## 예측
+## Predictions
 
-1. 우주 초기일수록 I의 변화율 |dI/dt|가 크다 → 초기 우주는 "빠르다"
-2. 미래로 갈수록 I의 변화율이 작아진다 → 우주는 "느려진다"
-3. I = 1/3 도달 시 시간은 "멈춘다" (변화 없음 = 시간 없음)
+1. The earlier the universe, the larger |dI/dt| → Early universe is "fast"
+2. Going into the future, rate of I change decreases → Universe "slows down"
+3. When I = 1/3 is reached, time "stops" (no change = no time)

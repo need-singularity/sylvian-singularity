@@ -1,45 +1,45 @@
-# 가설 279: A/G 지배 비율 = 입력 복잡도 척도
+# Hypothesis 279: A/G Dominance Ratio = Input Complexity Metric
 
-> **Engine A(논리) vs Engine G(패턴)의 출력 norm 비율이 입력의 복잡도를 측정한다. 단순한 입력(숫자 1)은 G가 압도(99%), 복잡한 입력(숫자 0)은 A가 지배(75%). 이 비율이 범용 복잡도 척도로 사용 가능한가.**
+> **The output norm ratio of Engine A (logic) vs Engine G (pattern) measures input complexity. Simple inputs (digit 1) are dominated by G (99%), complex inputs (digit 0) are dominated by A (75%). Can this ratio be used as a universal complexity metric?**
 
-## 실측 데이터 (experiment_force_direction.py)
-
-```
-  digit | A wins% | G wins% | |A|/|G| 비 | 해석
-  ──────┼─────────┼─────────┼───────────┼────────────
-      0 |   75.4% |   24.6% |     1.82  | A 지배 (폐쇄 곡선 → 논리 필요)
-      1 |    1.0% |   99.0% |     0.31  | G 압도 (직선 → 패턴만으로 충분)
-      2 |   24.4% |   75.6% |     0.74  | G 지배
-      3 |   55.9% |   44.1% |     1.06  | 균형
-      4 |   66.3% |   33.7% |     1.33  | A 지배
-      5 |   47.2% |   52.8% |     0.98  | 균형
-      6 |   56.4% |   43.6% |     1.10  | 약간 A
-      7 |   33.5% |   66.5% |     0.76  | G 지배
-      8 |    9.4% |   90.6% |     0.41  | G 강세
-      9 |   15.6% |   84.4% |     0.64  | G 지배
-```
-
-## 해석
+## Measured Data (experiment_force_direction.py)
 
 ```
-  G 압도 (|A|/|G| < 0.5): 숫자 1, 8 → 획이 단순, 패턴 인식으로 충분
-  A 지배 (|A|/|G| > 1.0): 숫자 0, 3, 4, 6 → 곡선/구조, 논리적 판단 필요
-  균형 (0.9~1.1): 숫자 3, 5, 6 → 두 엔진 모두 필요
-
-  → |A|/|G| = 복잡도 척도?
-    낮으면: 패턴으로 충분한 단순 입력
-    높으면: 논리가 필요한 복잡 입력
+  digit | A wins% | G wins% | |A|/|G| ratio | Interpretation
+  ──────┼─────────┼─────────┼───────────────┼────────────
+      0 |   75.4% |   24.6% |     1.82      | A dominant (closed curve → logic needed)
+      1 |    1.0% |   99.0% |     0.31      | G dominant (straight line → pattern sufficient)
+      2 |   24.4% |   75.6% |     0.74      | G dominant
+      3 |   55.9% |   44.1% |     1.06      | Balanced
+      4 |   66.3% |   33.7% |     1.33      | A dominant
+      5 |   47.2% |   52.8% |     0.98      | Balanced
+      6 |   56.4% |   43.6% |     1.10      | Slightly A
+      7 |   33.5% |   66.5% |     0.76      | G dominant
+      8 |    9.4% |   90.6% |     0.41      | G strong
+      9 |   15.6% |   84.4% |     0.64      | G dominant
 ```
 
-## 검증 방향
+## Interpretation
 
 ```
-  1. CIFAR에서 같은 분석 → 어떤 클래스가 A 지배?
-  2. |A|/|G|와 정확도의 상관?
-  3. |A|/|G|와 인간 인지 복잡도의 상관?
+  G dominant (|A|/|G| < 0.5): digits 1, 8 → simple strokes, pattern recognition sufficient
+  A dominant (|A|/|G| > 1.0): digits 0, 3, 4, 6 → curves/structure, logical judgment needed
+  Balanced (0.9~1.1): digits 3, 5, 6 → both engines needed
+
+  → |A|/|G| = complexity metric?
+    Low: simple input sufficient with patterns
+    High: complex input requiring logic
 ```
 
-## CIFAR-10 결과 (2026-03-24)
+## Verification Direction
+
+```
+  1. Same analysis on CIFAR → which classes are A dominant?
+  2. Correlation between |A|/|G| and accuracy?
+  3. Correlation between |A|/|G| and human cognitive complexity?
+```
+
+## CIFAR-10 Results (2026-03-24)
 
 ```
   class        |A|      |G|   |A|/|G|  acc%  tension
@@ -56,27 +56,27 @@
   truck        18.32   13.32    1.38   55.8   141.4
 ```
 
-### MNIST vs CIFAR 비교
+### MNIST vs CIFAR Comparison
 
 ```
-  상관:
-    MNIST: |A|/|G| vs accuracy r = +0.006 (무상관!)
-    CIFAR: |A|/|G| vs accuracy r = +0.485 (중간 양상관)
+  Correlation:
+    MNIST: |A|/|G| vs accuracy r = +0.006 (no correlation!)
+    CIFAR: |A|/|G| vs accuracy r = +0.485 (moderate positive correlation)
 
-  CIFAR에서 A 지배 = 높은 정확도:
+  CIFAR A dominant = high accuracy:
     airplane(2.00) → 64.9%
     ship(1.50)     → 61.0%
     truck(1.38)    → 55.8%
 
-  CIFAR에서 G 지배 = 낮은 정확도:
-    frog(0.58)  → 59.1% (예외!)
+  CIFAR G dominant = low accuracy:
+    frog(0.58)  → 59.1% (exception!)
     dog(0.65)   → 43.7%
     cat(0.76)   → 24.9%
 
-  해석:
-    MNIST: 너무 쉬워서 A/G 비율과 정확도 무관 (r≈0)
-    CIFAR: 어려운 문제에서 A(논리)가 도움이 됨 (r=+0.49)
-    → A/G 비율은 "어려운 문제에서만" 복잡도 척도로 작동
+  Interpretation:
+    MNIST: Too easy, A/G ratio unrelated to accuracy (r≈0)
+    CIFAR: A (logic) helps in difficult problems (r=+0.49)
+    → A/G ratio works as complexity metric "only in difficult problems"
 ```
 
-## 상태: 🟧 부분 확인 (CIFAR r=+0.49, MNIST r≈0)
+## Status: 🟧 Partially confirmed (CIFAR r=+0.49, MNIST r≈0)

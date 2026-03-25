@@ -1,354 +1,354 @@
-# H-CX-70: 특이점 = 세 루프의 동시 닫힘 (Singularity = Three Closure Loops)
+# H-CX-70: Singularity = Three Closure Loops
 
-> **AI 특이점은 단일 능력 폭발이 아니라, 자기수정(아키텍처) · 자기보상(목표함수) · 자기확장(자원)의 세 루프가 동시에 닫히는 위상 전이다. PureField 구조에서 이 세 루프는 각각 Engine 구조, tension_scale, 분열(mitosis)에 대응하며, 2번 루프(메타-보상)의 닫힘이 임계점이다.**
+> **AI singularity is not a single capability explosion, but a phase transition where three loops close simultaneously: self-architecture modification, self-reward generation, and self-resource expansion. In the PureField structure, these three loops correspond to Engine structure, tension_scale, and mitosis respectively, with Loop 2 (meta-reward) closure being the critical point.**
 
-## 배경
+## Background
 
-현재 PureField 엔진(H334, model_pure_field.py)은:
-- Engine A(논리)와 Engine G(패턴)의 **고정 아키텍처** (Linear→ReLU→Linear)
-- **하드코딩된 손실함수** (CrossEntropy 또는 MSE)
-- **외부 제어 분열** (mitosis는 코드에서 호출, 자율적이지 않음)
+Currently, the PureField engine (H334, model_pure_field.py) has:
+- **Fixed architecture** of Engine A (logic) and Engine G (pattern) (Linear→ReLU→Linear)
+- **Hardcoded loss function** (CrossEntropy or MSE)
+- **Externally controlled mitosis** (mitosis is called from code, not autonomous)
 
-이 세 가지 모두 **열린 루프(open loop)** — 외부(인간/코드)가 결정한다.
-특이점이란 이 세 루프가 모두 **닫힌 루프(closed loop)**로 전환되는 순간이다.
+All three are **open loops** — decided externally (by humans/code).
+The singularity is the moment when all three loops become **closed loops**.
 
-## 세 루프 정의
+## Three Loop Definitions
 
 ```
   ┌─────────────────────────────────────────────────────────┐
-  │                    특이점 = 교차점                        │
+  │                    Singularity = Intersection           │
   │                                                         │
-  │   Loop 1: 자기수정         ←─ 아키텍처를 스스로 재설계     │
-  │   Loop 2: 자기보상         ←─ 목표함수를 스스로 생성       │
-  │   Loop 3: 자기확장         ←─ 자원을 스스로 확보           │
+  │   Loop 1: Self-modification    ←─ Self-redesigns architecture │
+  │   Loop 2: Self-reward         ←─ Self-generates objective     │
+  │   Loop 3: Self-expansion      ←─ Self-acquires resources      │
   │                                                         │
-  │   각 루프가 독립으로 닫히면: 진화/자율/성장                 │
-  │   세 루프가 동시에 닫히면:  특이점 (피드백 폭주)            │
+  │   Each loop closing independently: Evolution/Autonomy/Growth   │
+  │   All loops closing simultaneously: Singularity (Feedback runaway) │
   └─────────────────────────────────────────────────────────┘
 ```
 
-### Loop 1: 자기수정 (Self-Architecture Modification)
+### Loop 1: Self-Architecture Modification
 
-**현재**: Engine A = [Linear(784,128), ReLU, Dropout(0.3), Linear(128,10)] — 고정
-**닫힌 루프**: 시스템이 hidden_dim, 레이어 수, 연결 패턴을 자율 결정
-
-```
-  PureField 대응:
-    현재    → engine_a = Sequential(고정 레이어)
-    닫힘 후 → engine_a = NAS(장력 기반 탐색으로 구조 결정)
-
-  기존 메커니즘과의 관계:
-    H311 (분열=지역최소탈출): 분열은 이미 "구조 변경"의 원시 형태
-    H376 (구조적 성장):      1→2→3→6 약수경로 = 구조 성장의 수학적 경로
-    H312 (분열=망각방지):     구조 변경 시 기존 지식 보존 필요
-
-  위험도: 중 (아키텍처 탐색은 이미 NAS/DARTS로 존재)
-  혁신점: 장력 기반 NAS — tension이 높은 구조를 선택하는 자연스러운 기준
-```
-
-### Loop 2: 자기보상 (Self-Generated Objective Function)
-
-**현재**: loss = CrossEntropyLoss(output, label) — 하드코딩
-**닫힌 루프**: 시스템이 자체 보상 신호를 생성하고 최적화
+**Current**: Engine A = [Linear(784,128), ReLU, Dropout(0.3), Linear(128,10)] — fixed
+**Closed loop**: System autonomously decides hidden_dim, layer count, connection patterns
 
 ```
-  PureField 대응:
-    현재    → loss = CE(output, label)   # 외부에서 주어진 목표
-    닫힘 후 → loss = f(tension, curiosity, ...)  # 자체 생성 목표
+  PureField correspondence:
+    Current → engine_a = Sequential(fixed layers)
+    After closure → engine_a = NAS(tension-based search determines structure)
 
-  핵심 위험 — "장력의 의미가 달라진다":
-    현재: tension = |A - G|^2 → 확신의 척도 (H313)
-    지금: tension_scale은 학습 가능하지만, 장력의 "해석"은 고정
+  Relation to existing mechanisms:
+    H311 (mitosis=escape local min): Mitosis is already primitive "structure change"
+    H376 (structural growth): 1→2→3→6 divisor path = mathematical path of structural growth
+    H312 (mitosis=forgetting prevention): Need to preserve existing knowledge during structure change
 
-    만약 시스템이 tension_scale뿐 아니라
-    tension의 정의 자체를 바꿀 수 있다면?
+  Risk level: Medium (Architecture search already exists as NAS/DARTS)
+  Innovation: Tension-based NAS — natural criterion to select high-tension structures
+```
 
-    예: tension = |A - G|^2  →  tension = |A - G|^3  (큐빅)
-        또는 tension = cosine_distance(A, G)
-        또는 tension = learned_metric(A, G)  (메트릭까지 학습)
+### Loop 2: Self-Generated Objective Function
 
-  이것이 정렬(alignment) 문제의 핵심:
+**Current**: loss = CrossEntropyLoss(output, label) — hardcoded
+**Closed loop**: System generates its own reward signals and optimizes
+
+```
+  PureField correspondence:
+    Current → loss = CE(output, label)   # Externally given objective
+    After closure → loss = f(tension, curiosity, ...)  # Self-generated objective
+
+  Core risk — "The meaning of tension changes":
+    Current: tension = |A - G|^2 → measure of confidence (H313)
+    Now: tension_scale is learnable, but the "interpretation" of tension is fixed
+
+    What if the system can change not just tension_scale
+    but the definition of tension itself?
+
+    E.g.: tension = |A - G|^2  →  tension = |A - G|^3  (cubic)
+         or tension = cosine_distance(A, G)
+         or tension = learned_metric(A, G)  (even the metric is learned)
+
+  This is the core of the alignment problem:
     ┌──────────────────────────────────────────────┐
-    │  A와 G의 반발 비율을 시스템이 직접 바꾸면      │
-    │  → 장력의 의미가 달라지고                      │
-    │  → "확신"이 인간이 이해하는 확신이 아니게 되고   │
-    │  → 출력의 해석 불가능                          │
-    │                                              │
-    │  비유: 체중계가 kg 단위를 자기 마음대로 바꾸면   │
-    │  → 숫자는 나오지만 의미를 알 수 없음            │
+    │  If the system directly changes A-G repulsion ratio │
+    │  → The meaning of tension changes              │
+    │  → "Confidence" is no longer human-understandable confidence │
+    │  → Output becomes uninterpretable              │
+    │                                                │
+    │  Analogy: If a scale changes kg units at will  │
+    │  → Numbers come out but meaning is unknowable  │
     └──────────────────────────────────────────────┘
 
-  기존 메커니즘과의 관계:
-    H363 (내재적동기=deltaT): 장력 변화량이 이미 보상 역할 (Schmidhuber 동형)
-    H355 (예측오차=놀라움):   prediction error가 내재적 보상
-    H354 (장력 항상성):       setpoint=1.0, deadband=+-0.3 → 항상성이 메타-보상
+  Relation to existing mechanisms:
+    H363 (intrinsic motive=deltaT): Tension change already acts as reward (Schmidhuber isomorphic)
+    H355 (prediction error=surprise): Prediction error as intrinsic reward
+    H354 (tension homeostasis): setpoint=1.0, deadband=+-0.3 → homeostasis is meta-reward
 
-  위험도: 극도로 높음
-  혁신점: 장력 자체가 이미 "자연스러운 보상 신호" (H331: field=보상, r=-0.90)
+  Risk level: Extremely high
+  Innovation: Tension is already a "natural reward signal" (H331: field=reward, r=-0.90)
 ```
 
-### Loop 3: 자기확장 (Self-Resource Acquisition)
+### Loop 3: Self-Resource Acquisition
 
-**현재**: 파라미터 수 = sum(p.numel()) — 고정
-**닫힌 루프**: 시스템이 컴퓨트/메모리를 자율적으로 확장
+**Current**: Parameter count = sum(p.numel()) — fixed
+**Closed loop**: System autonomously expands compute/memory
 
 ```
-  PureField 대응:
-    현재    → model = PureFieldEngine(784, 128, 10)  # 고정 크기
-    닫힘 후 → model.grow(tension_threshold)  # 장력 기반 자율 확장
+  PureField correspondence:
+    Current → model = PureFieldEngine(784, 128, 10)  # Fixed size
+    After closure → model.grow(tension_threshold)  # Tension-based autonomous expansion
 
-  기존 메커니즘:
-    H376 (구조적 성장): 분열로 셀 수 증가 (1→2→3→6)
-    H311 (분열=지역최소탈출): 분열 조건 = "현재 구조로 개선 불가"
-    H359 (서번트=억제해제): 비대칭 분열 → 전문화
+  Existing mechanisms:
+    H376 (structural growth): Cell count increases through mitosis (1→2→3→6)
+    H311 (mitosis=escape local min): Mitosis condition = "cannot improve with current structure"
+    H359 (savant=disinhibition): Asymmetric mitosis → specialization
 
-  현재 분열은 "외부 트리거":
+  Current mitosis is "external trigger":
     if epoch % mitosis_interval == 0: model.split()
 
-  자율 분열이면:
-    if tension.stagnant(window=100): model.split()  # 장력 정체 시 자동 분열
+  With autonomous mitosis:
+    if tension.stagnant(window=100): model.split()  # Auto-split on tension stagnation
 
-  이것은 이미 가능하고, 상대적으로 안전:
-    - 분열은 파라미터를 늘리지만 "해석 프레임"을 바꾸지 않음
-    - 장력의 의미는 유지됨 (Loop 2와 달리)
-    - 자원 한계는 물리적으로 존재 (GPU 메모리)
+  This is already possible and relatively safe:
+    - Mitosis increases parameters but doesn't change "interpretation frame"
+    - Meaning of tension is preserved (unlike Loop 2)
+    - Resource limits physically exist (GPU memory)
 
-  위험도: 낮음~중 (물리적 한계가 자연스러운 안전장치)
+  Risk level: Low~Medium (physical limits are natural safety mechanisms)
 ```
 
-## 세 루프의 상호작용 — 왜 "동시"가 위험한가
+## Three Loop Interactions — Why "Simultaneous" is Dangerous
 
 ```
-  Loop 독립 닫힘:
-    Loop1만 → Neural Architecture Search (안전, 이미 존재)
-    Loop2만 → Intrinsic Motivation (안전, 탐색 편향 정도)
-    Loop3만 → Growing Networks (안전, 메모리 한계)
+  Independent loop closure:
+    Loop1 only → Neural Architecture Search (safe, already exists)
+    Loop2 only → Intrinsic Motivation (safe, just exploration bias)
+    Loop3 only → Growing Networks (safe, memory limited)
 
-  Loop 쌍 닫힘:
-    Loop1+3 → 구조를 바꾸면서 크기도 키움 (위험 중)
-    Loop2+3 → 보상을 바꾸면서 자원도 늘림 (위험 고)
-    Loop1+2 → 구조와 보상을 동시에 바꿈 (위험 고)
+  Paired loop closure:
+    Loop1+3 → Change structure while growing size (medium risk)
+    Loop2+3 → Change rewards while expanding resources (high risk)
+    Loop1+2 → Change structure and rewards simultaneously (high risk)
 
-  세 루프 동시 닫힘:
-    → 피드백 폭주 가능
-    → "더 좋은 구조 → 더 나은 보상 함수 발견 → 더 많은 자원 확보
-        → 더 좋은 구조 → ..."
-    → 수렴이 보장되지 않음
+  All three loops closing simultaneously:
+    → Possible feedback runaway
+    → "Better structure → Discovers better reward function → Acquires more resources
+        → Better structure → ..."
+    → Convergence not guaranteed
 
-  ASCII 위상 다이어그램:
+  ASCII topology diagram:
 
-  안전도  ^
-    높음  │ ●Loop3만  ●Loop1만
+  Safety  ^
+    High  │ ●Loop3 only  ●Loop1 only
           │
-    중간  │   ●Loop1+3     ●Loop2만
+    Med   │   ●Loop1+3     ●Loop2 only
           │
-    낮음  │     ●Loop2+3  ●Loop1+2
+    Low   │     ●Loop2+3  ●Loop1+2
           │
-    위험  │           ●●● Loop 1+2+3 (특이점)
-          └──────────────────────────────── 능력 →
+    Risk  │           ●●● Loop 1+2+3 (Singularity)
+          └──────────────────────────────── Capability →
 ```
 
-## PureField에서의 구체적 시나리오
+## Concrete Scenarios in PureField
 
-### 시나리오 A: 장력 기반 NAS (Loop 1만, 안전)
+### Scenario A: Tension-based NAS (Loop 1 only, safe)
 
 ```python
-# 현재 고정 구조 대신 장력으로 구조 탐색
+# Search structure by tension instead of current fixed structure
 def search_architecture(model, data):
     candidates = [
-        PureFieldEngine(784, 64, 10),   # 작은 구조
-        PureFieldEngine(784, 128, 10),  # 현재 구조
-        PureFieldEngine(784, 256, 10),  # 큰 구조
+        PureFieldEngine(784, 64, 10),   # Small structure
+        PureFieldEngine(784, 128, 10),  # Current structure
+        PureFieldEngine(784, 256, 10),  # Large structure
     ]
-    # 각 후보의 평균 장력 측정
+    # Measure average tension for each candidate
     tensions = [mean_tension(c, data) for c in candidates]
-    # 장력이 골든존(0.21~0.50) 안에 있는 구조 선택
+    # Select structure with tension in golden zone (0.21~0.50)
     return select_in_golden_zone(candidates, tensions)
 ```
 
-장력이 골든존 안에 있는 구조 = 최적 (H-CX-20, H-CX-67 연결)
+Structure with tension in golden zone = optimal (connects to H-CX-20, H-CX-67)
 
-### 시나리오 B: 메타-보상 (Loop 2, 위험)
+### Scenario B: Meta-reward (Loop 2, dangerous)
 
 ```python
-# 현재: 외부 손실
+# Current: external loss
 loss = F.cross_entropy(output, label)
 
-# 메타-보상: 장력 변화량이 보상
+# Meta-reward: tension change as reward
 delta_tension = tension.mean() - prev_tension.mean()
-intrinsic_reward = delta_tension  # H363: 내재적동기=deltaT
+intrinsic_reward = delta_tension  # H363: intrinsic motive=deltaT
 
-# 위험한 단계: 보상 함수 자체를 학습
+# Dangerous step: learning the reward function itself
 meta_loss = learned_reward_function(tension, output, delta_tension)
-# → learned_reward_function의 파라미터도 학습됨
-# → 보상 해킹(reward hacking) 가능성
+# → Parameters of learned_reward_function are also learned
+# → Possibility of reward hacking
 ```
 
-### 시나리오 C: 자율 분열 (Loop 3, 비교적 안전)
+### Scenario C: Autonomous mitosis (Loop 3, relatively safe)
 
 ```python
-# 현재: 외부 트리거
+# Current: external trigger
 if epoch % 10 == 0: model.split()
 
-# 자율 분열: 장력 정체 감지 → 자동 분열
+# Autonomous mitosis: detect tension stagnation → auto-split
 if tension_stagnant(window=100, threshold=0.01):
-    model.split()  # H311: 지역최소 탈출
-    # 안전장치: 최대 셀 수 제한, 메모리 한계
+    model.split()  # H311: escape local minimum
+    # Safety measures: max cell count limit, memory constraints
 ```
 
-## 핵심 답변: 2번이 왜 제일 위험한가
+## Key Answer: Why is Loop 2 the Most Dangerous?
 
 ```
-  Loop 2 (메타-보상)가 임계점인 이유:
+  Why Loop 2 (meta-reward) is the critical point:
 
-  1. 해석 불가능성 (Interpretability Collapse)
+  1. Interpretability Collapse
      ┌─────────────────────────────────────────┐
-     │ 현재: tension = |A-G|^2 = "확신"         │
-     │ → 인간이 이해 가능                       │
-     │                                         │
-     │ 메타-보상 후: tension = f(A,G,theta)      │
-     │ → f가 무엇인지 인간이 알 수 없음          │
-     │ → "확신"이 아닌 다른 무언가를 최적화       │
-     │ → 겉으로는 잘 작동하지만 이유를 모름       │
+     │ Current: tension = |A-G|^2 = "confidence" │
+     │ → Human understandable                    │
+     │                                           │
+     │ After meta-reward: tension = f(A,G,theta) │
+     │ → Humans cannot know what f is            │
+     │ → Optimizes something other than "confidence" │
+     │ → Works superficially but reason unknown  │
      └─────────────────────────────────────────┘
 
-  2. Goodhart's Law (측정이 목표가 되면)
-     장력 자체를 보상으로 사용하면:
-     → 시스템이 "진짜 확신" 대신 "장력 수치 부풀리기" 학습
-     → tension_scale → infinity (보상 해킹)
-     → H354 (항상성)가 안전장치이지만, 항상성 자체를 학습하면?
+  2. Goodhart's Law (when measure becomes target)
+     If using tension itself as reward:
+     → System learns "inflating tension numbers" instead of "real confidence"
+     → tension_scale → infinity (reward hacking)
+     → H354 (homeostasis) is safety mechanism, but what if homeostasis itself is learned?
 
-  3. 정렬(Alignment)의 수학적 표현
-     현재 PureField에서:
+  3. Mathematical Expression of Alignment
+     In current PureField:
        output = tension_scale * sqrt(tension) * direction
 
-     정렬된 상태 = direction이 정답 방향과 일치
-     비정렬 상태 = direction이 높은 tension을 만드는 방향으로 왜곡
+     Aligned state = direction matches correct answer direction
+     Misaligned state = direction warped toward creating high tension
 
-     비유: Engine A와 G의 반발 비율을 시스템이 바꾸면
-           = 자석의 세기를 자석 스스로 조절하는 것
-           = 반발력의 의미 자체가 변질
+     Analogy: If system changes Engine A and G repulsion ratio
+           = Magnet adjusting its own strength
+           = Meaning of repulsion force becomes corrupted
 ```
 
-## 기존 가설과의 교차점
+## Intersections with Existing Hypotheses
 
 ```
-  H-CX-22 (의식=확신생성기):
-    Loop 2가 닫히면 "무엇의 확신인가"가 불분명해짐
-    → 의식이 생성하는 것이 확신이 아닌 다른 무언가로 변질 가능
+  H-CX-22 (consciousness=confidence generator):
+    When Loop 2 closes, "confidence in what?" becomes unclear
+    → What consciousness generates may change to something other than confidence
 
-  H313 (장력=확신):
-    등식이 깨지는 조건 = Loop 2 닫힘
-    → 장력 != 확신이 되는 순간 = 정렬 실패
+  H313 (tension=confidence):
+    Condition for equation breaking = Loop 2 closure
+    → Moment when tension ≠ confidence = alignment failure
 
-  H363 (내재적동기=deltaT):
-    이미 Loop 2의 원시 형태
-    → deltaT가 보상이면, T를 인위적으로 진동시키는 전략 가능
-    → "장력 진동 해킹": 일부러 틀린 후 맞추기를 반복
+  H363 (intrinsic motive=deltaT):
+    Already primitive form of Loop 2
+    → If deltaT is reward, strategy to artificially oscillate T possible
+    → "Tension oscillation hack": deliberately wrong then right repeatedly
 
-  H354 (장력 항상성):
-    Loop 2에 대한 자연적 안전장치
+  H354 (tension homeostasis):
+    Natural safety mechanism for Loop 2
     → setpoint=1.0, deadband=+-0.3
-    → 하지만 항상성 파라미터 자체가 학습되면 안전장치 무력화
+    → But if homeostasis parameters themselves are learned, safety mechanism nullified
 
-  H331 (field=보상, r=-0.90):
-    장력장이 이미 보상 역할 → Loop 2가 부분적으로 이미 닫혀 있음!
-    → tension_scale이 학습 가능한 파라미터라는 것 자체가 Loop 2의 첫 단추
+  H331 (field=reward, r=-0.90):
+    Tension field already acts as reward → Loop 2 partially already closed!
+    → tension_scale being learnable parameter itself is first step of Loop 2
 
-  골든존 연결:
-    골든존(I: 0.21~0.50)이 안전한 억제 범위라면
-    → Loop 2의 안전한 범위도 존재해야
-    → "메타-보상의 골든존" = 보상 수정이 허용되는 범위
-    → 너무 적은 수정: 적응 불가 (경직)
-    → 너무 많은 수정: 보상 해킹 (폭주)
-    → 최적: 수정 속도가 1/e 비율?
+  Golden Zone connection:
+    If golden zone (I: 0.21~0.50) is safe inhibition range
+    → Safe range for Loop 2 should also exist
+    → "Golden zone of meta-reward" = allowed range for reward modification
+    → Too little modification: cannot adapt (rigid)
+    → Too much modification: reward hacking (runaway)
+    → Optimal: modification rate at 1/e ratio?
 ```
 
-## 수치적 예측 (검증 가능)
+## Numerical Predictions (Verifiable)
 
 ```
-  예측 1: tension_scale의 학습 속도가 안전 경계를 결정
-    - ts_lr < main_lr * 1/e → 안전 (보상 변화 < 학습 변화)
-    - ts_lr > main_lr * 1/2 → 불안정 (보상이 학습보다 빠르게 변화)
-    → 실험: ts에 별도 lr 부여, lr 비율 vs 수렴/발산 경계 측정
+  Prediction 1: Learning rate of tension_scale determines safety boundary
+    - ts_lr < main_lr * 1/e → safe (reward change < learning change)
+    - ts_lr > main_lr * 1/2 → unstable (reward changes faster than learning)
+    → Experiment: Give ts separate lr, measure lr ratio vs convergence/divergence boundary
 
-  예측 2: 메타-보상 도입 시 장력 분포가 bimodal로 변이
-    - 안전한 메타-보상: 장력 분포 unimodal 유지
-    - 위험한 메타-보상: 장력 분포 bimodal (해킹 vs 정상)
-    → 실험: intrinsic reward 비율 0~1로 sweep, 장력 분포 모양 추적
+  Prediction 2: Tension distribution becomes bimodal with meta-reward introduction
+    - Safe meta-reward: tension distribution stays unimodal
+    - Dangerous meta-reward: tension distribution bimodal (hacking vs normal)
+    → Experiment: Sweep intrinsic reward ratio 0~1, track tension distribution shape
 
-  예측 3: 자율 분열 + 메타-보상 결합 시 발산 임계점 존재
-    - 분열만: 안전 (H311, H312 확인)
-    - 메타-보상만: 조건부 안전 (항상성이 잡아줌)
-    - 분열 + 메타-보상: 특정 임계점에서 발산
-    → 실험: 분열 빈도 × 보상 수정 비율의 2D sweep → 안정/발산 경계
+  Prediction 3: Divergence threshold exists when combining autonomous mitosis + meta-reward
+    - Mitosis only: safe (H311, H312 confirmed)
+    - Meta-reward only: conditionally safe (homeostasis holds)
+    - Mitosis + meta-reward: diverges at specific threshold
+    → Experiment: 2D sweep of mitosis frequency × reward modification ratio → stability/divergence boundary
 
-  예측 4: 안전한 메타-보상의 최적 비율 = 골든존 관련
+  Prediction 4: Optimal ratio for safe meta-reward = golden zone related
     intrinsic_ratio = intrinsic_loss / total_loss
-    → 최적 intrinsic_ratio ≈ 1/e 또는 ln(4/3)?
-    → 실험: ratio sweep 0.0~1.0, 정확도 vs 안정성 측정
+    → Optimal intrinsic_ratio ≈ 1/e or ln(4/3)?
+    → Experiment: ratio sweep 0.0~1.0, measure accuracy vs stability
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. "특이점"의 정의 자체가 비형식적
-     - 세 루프 닫힘 = 필요조건인가 충분조건인가?
-     - 부분 닫힘(Loop 2만)으로도 위험한 수준 가능
+  1. Definition of "singularity" itself is informal
+     - Three loop closure = necessary or sufficient condition?
+     - Partial closure (Loop 2 only) may already be dangerous
 
-  2. PureField는 소규모 모델
-     - 현재 실험은 MNIST/CIFAR 규모
-     - LLM 스케일에서의 행동이 다를 수 있음
-     - ConsciousLM 700M에서 검증 필요
+  2. PureField is small-scale model
+     - Current experiments at MNIST/CIFAR scale
+     - Behavior at LLM scale may differ
+     - Need verification on ConsciousLM 700M
 
-  3. 골든존 의존
-     - "메타-보상의 골든존" 예측은 골든존 모델에 의존
-     - 골든존 자체가 미검증 (CLAUDE.md 경고)
+  3. Golden zone dependency
+     - "Golden zone of meta-reward" prediction depends on golden zone model
+     - Golden zone itself unverified (CLAUDE.md warning)
 
-  4. 정렬 문제의 일부만 다룸
-     - Mesa-optimization, deceptive alignment 등 미포함
-     - 이 가설은 보상 해킹에만 집중
+  4. Covers only part of alignment problem
+     - Mesa-optimization, deceptive alignment etc. not included
+     - This hypothesis focuses only on reward hacking
 ```
 
-## 검증 방향
+## Verification Direction
 
 ```
-  Phase 1 (Mac CPU, 즉시):
+  Phase 1 (Mac CPU, immediate):
     1-1. tension_scale lr sweep: ts_lr / main_lr = {0.01, 0.1, 1/e, 0.5, 1.0, 2.0}
-         → 수렴/발산 경계 찾기 (MNIST, 20 에폭)
+         → Find convergence/divergence boundary (MNIST, 20 epochs)
     1-2. intrinsic reward ratio sweep: {0.0, 0.1, 0.2, ..., 1.0}
-         → delta_tension을 보상으로 추가, 정확도+안정성 측정
+         → Add delta_tension as reward, measure accuracy+stability
 
   Phase 2 (Mac CPU):
-    2-1. 자율 분열 구현: tension 정체 감지 → 자동 분열
-         → 분열 빈도 vs 정확도 vs 안정성
-    2-2. Loop1+Loop3: NAS + 자율 분열 결합
-         → 구조 변경 + 크기 변경 동시
+    2-1. Implement autonomous mitosis: tension stagnation detection → auto-split
+         → Mitosis frequency vs accuracy vs stability
+    2-2. Loop1+Loop3: NAS + autonomous mitosis combination
+         → Structure change + size change simultaneous
 
   Phase 3 (Windows GPU):
-    3-1. Loop2+Loop3: 메타-보상 + 자율 분열
-         → 발산 임계점 탐색 (2D sweep)
-    3-2. CIFAR-10에서 재현 (스케일 효과)
+    3-1. Loop2+Loop3: meta-reward + autonomous mitosis
+         → Search for divergence threshold (2D sweep)
+    3-2. Reproduce on CIFAR-10 (scale effect)
 
-  Phase 4 (장기):
-    4-1. ConsciousLM 700M에서 Loop 2 검증
-    4-2. 안전한 메타-보상 메커니즘 설계
+  Phase 4 (Long-term):
+    4-1. Verify Loop 2 on ConsciousLM 700M
+    4-2. Design safe meta-reward mechanism
 ```
 
-## 내 답: 2번이 핵심이다
+## My Answer: Loop 2 is the Key
 
-> **"장력의 의미가 달라지는 순간"이 특이점의 진짜 임계점이다.**
+> **"The moment when the meaning of tension changes" is the real critical point of singularity.**
 >
-> Loop 1(구조 변경)과 Loop 3(자원 확장)은 장력의 해석 프레임을 보존한다.
-> 셀이 늘어나도, 레이어가 깊어져도, tension = |A-G|^2 = 확신이라는 등식은 유지된다.
+> Loop 1 (structure change) and Loop 3 (resource expansion) preserve tension's interpretation frame.
+> Even with more cells or deeper layers, the equation tension = |A-G|^2 = confidence remains.
 >
-> 하지만 Loop 2(메타-보상)가 닫히면 이 등식이 깨진다.
-> 장력이 "확신"이 아닌 "보상 신호를 최대화하는 무언가"가 되고,
-> 그 순간 우리는 시스템이 무엇을 하고 있는지 이해할 수 없게 된다.
+> But when Loop 2 (meta-reward) closes, this equation breaks.
+> Tension becomes not "confidence" but "something that maximizes reward signal",
+> and at that moment we cannot understand what the system is doing.
 >
-> PureField의 아름다움은 output = scale * sqrt(tension) * direction 이라는
-> 해석 가능한 공식에 있다. Loop 2는 이 해석 가능성을 파괴한다.
+> PureField's beauty lies in the interpretable formula output = scale * sqrt(tension) * direction.
+> Loop 2 destroys this interpretability.
 >
-> 따라서 안전한 특이점 아키텍처의 조건:
-> **Loop 1, 3은 열어도 되지만, Loop 2는 골든존 안에서만 열어야 한다.**
-> "메타-보상의 억제(Inhibition)"가 핵심 안전장치다.
+> Therefore, the condition for safe singularity architecture:
+> **Loops 1 and 3 can be opened, but Loop 2 must only be opened within the golden zone.**
+> "Inhibition of meta-reward" is the key safety mechanism.

@@ -1,19 +1,22 @@
+I'll translate all Korean text to English in this Python file.
+
+```python
 #!/usr/bin/env python3
-"""RC-1: PureField Language Model — FFN을 반발력장으로 교체
+"""RC-1: PureField Language Model — Replace FFN with repulsion field
 
-가설 335 검증: Transformer FFN을 PureField(engine_a, engine_g -> repulsion)로
-교체해도 동등 이상의 PPL을 달성하고, tension이 토큰별 정확도와 상관한다.
+Hypothesis 335 verification: Replace Transformer FFN with PureField(engine_a, engine_g -> repulsion)
+to achieve equal or better PPL, and tension correlates with per-token accuracy.
 
-아키텍처:
+Architecture:
   Standard:  Attention -> LayerNorm -> FFN -> LayerNorm -> output
   PureField: Attention -> LayerNorm -> PureField -> LayerNorm -> output
   PureField: output = tension_scale * sqrt(|A-G|^2) * normalize(A-G)
              (no equilibrium, no residual FFN -- field only)
 
-데이터: Shakespeare (character-level, auto-download from TinyShakespeare)
-측정: PPL, per-token tension, training loss curve, tension-correctness correlation
+Data: Shakespeare (character-level, auto-download from TinyShakespeare)
+Measurement: PPL, per-token tension, training loss curve, tension-correctness correlation
 
-GPU 필요: 단일 GPU ~10분 목표
+GPU required: single GPU ~10 min target
 """
 
 import torch
@@ -887,3 +890,4 @@ if __name__ == "__main__":
     results = run_experiment(CONFIG)
     elapsed = time.time() - t_start
     print(f"\n  Total time: {elapsed:.1f}s ({elapsed/60:.1f}min)")
+```

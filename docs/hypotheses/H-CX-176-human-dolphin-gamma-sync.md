@@ -1,5 +1,5 @@
-# H-CX-176: 인간-돌고래 감마 동기화 — 종간 40Hz 공명
+# H-CX-176: Human-Dolphin Gamma Synchronization — Cross-species 40Hz Resonance
 
-> 돌고래와 수영 시 인간 EEG 감마(40Hz)와 돌고래 감마가 동기화?
-> 같은 3σ(6)+τ(6)=40Hz 채널 → 종간 위상 전이?
-> H-CX-132(돌고래 40Hz) + H-CX-137(EEG=tension) 교차.
+> When humans swim with dolphins, does human EEG gamma (40Hz) synchronize with dolphin gamma?
+> Same 3σ(6)+τ(6)=40Hz channel → Cross-species phase transfer?
+> H-CX-132 (dolphin 40Hz) + H-CX-137 (EEG=tension) intersection.

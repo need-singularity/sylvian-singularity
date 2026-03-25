@@ -1,19 +1,19 @@
-# H-MP-13: "연속 소수" 일반화 — (p,p+2k) 쌍둥이형 분석
+# H-MP-13: Generalization of "Consecutive Primes" — Twin-type Analysis for (p,p+2k)
 
-> **가설**: (p-1)(q-1)=2가 (2,3)에서 유일한 것처럼, (p-1)(q-1)=2k의 해 구조가 k에 따라 체계적으로 변한다.
+> **Hypothesis**: Just as (p-1)(q-1)=2 has the unique solution (2,3), the solution structure of (p-1)(q-1)=2k changes systematically with k.
 
-## 배경
-- k=1: (p-1)(q-1)=2 → (2,3) 유일
-- k=2: (p-1)(q-1)=4 → (2,5), (3,3 제외)
-- k=3: (p-1)(q-1)=6 → (2,7), (3,4 제외)
-- 일반: (p-1)(q-1)=2k → p=2일 때 q=2k+1 (소수이면)
+## Background
+- k=1: (p-1)(q-1)=2 → (2,3) unique
+- k=2: (p-1)(q-1)=4 → (2,5), (3,3 excluded)
+- k=3: (p-1)(q-1)=6 → (2,7), (3,4 excluded)
+- General: (p-1)(q-1)=2k → when p=2, q=2k+1 (if prime)
 
-## 핵심 질문
-각 k에서 n=pq가 어떤 산술적 성질을 유일하게 만족하는가?
+## Core Question
+For each k, what arithmetic property does n=pq uniquely satisfy?
 
-## 검증 방향
-1. [ ] k=1..20에서 해 (p,q) 열거
-2. [ ] 각 n=pq에서 σφ/(nτ) 비율 계산 → k와의 관계
-3. [ ] 쌍둥이 소수 (p,p+2)와의 연결
+## Verification Direction
+1. [ ] Enumerate solutions (p,q) for k=1..20
+2. [ ] Calculate σφ/(nτ) ratio for each n=pq → relationship with k
+3. [ ] Connection with twin primes (p,p+2)
 
-## 난이도: 중 | 파급력: ★★
+## Difficulty: Medium | Impact: ★★

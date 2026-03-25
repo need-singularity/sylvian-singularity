@@ -1,139 +1,139 @@
-# 가설 322: TREE-1 EEG 감마 진동 — 반발력장 장력과 의식 마커의 상관
+# Hypothesis 322: TREE-1 EEG Gamma Oscillation — Correlation Between Repulsion Field Tension and Consciousness Markers
 
-> **뇌의 감마 진동(30-100Hz)은 신경과학에서 의식의 마커로 알려져 있다. 반발력장의 장력(tension)이 EEG 감마 파워와 상관한다면, 장력은 단순한 수학적 구성이 아니라 생물학적 의식 수준의 프록시가 된다. H313(장력=확신)과 결합하면: 높은 의식 상태 = 높은 확신 = 높은 장력 = 높은 감마 파워.**
+> **Brain gamma oscillations (30-100Hz) are known in neuroscience as markers of consciousness. If repulsion field tension correlates with EEG gamma power, then tension is not merely a mathematical construct but a proxy for biological consciousness level. Combined with H313 (tension=confidence): high consciousness state = high confidence = high tension = high gamma power.**
 
-## 배경/맥락
+## Background/Context
 
-### 감마 진동과 의식
+### Gamma Oscillations and Consciousness
 
-감마 진동(30-100Hz)은 신경과학에서 가장 강력한 의식 상관물 중 하나다.
+Gamma oscillations (30-100Hz) are one of the most powerful correlates of consciousness in neuroscience.
 
 ```
-  주파수 대역별 의식 수준:
+  Consciousness level by frequency band:
 
-  파워
+  Power
   ▲
   │    ★ gamma
-  │    │  (30-100Hz)         ← 의식/주의/결합 마커
+  │    │  (30-100Hz)         <- consciousness/attention/binding marker
   │    │
   │  ╔═╧══════════╗
-  │  ║ 의식 = 감마 ║  ← Crick & Koch (1990), Dehaene (2014)
+  │  ║ consciousness = gamma ║  <- Crick & Koch (1990), Dehaene (2014)
   │  ╚════════════╝
   │
-  │  각성(awake):    감마 ↑↑  + 베타 ↑   = 높은 의식
-  │  REM 수면:       감마 ↑   + 세타 ↑   = 꿈 (부분 의식)
-  │  N1 수면:        감마 ↓   + 세타 ↑   = 졸림
-  │  N3 수면:        감마 ↓↓  + 델타 ↑↑  = 무의식
-  │  마취:           감마 ≈0  + 델타 ↑↑  = 의식 소멸
+  │  Awake:         gamma ↑↑  + beta ↑   = high consciousness
+  │  REM sleep:     gamma ↑   + theta ↑  = dreaming (partial consciousness)
+  │  N1 sleep:      gamma ↓   + theta ↑  = drowsy
+  │  N3 sleep:      gamma ↓↓  + delta ↑↑ = unconscious
+  │  Anesthesia:    gamma ≈0  + delta ↑↑ = consciousness lost
   │
-  └──────────────────────────────────────▶ 의식 수준
-     마취    N3     N1     REM    각성
+  └──────────────────────────────────────▶ consciousness level
+     anesthesia  N3  N1  REM  awake
 ```
 
-### 반발력장 장력과의 연결
+### Connection with Repulsion Field Tension
 
-H313에서 확인한 핵심 원리:
-
-```
-  장력(tension) = |engine_A(x) - engine_G(x)|²
-
-  높은 장력 = 높은 확신 = 정확한 분류 (3데이터셋 확인)
-  낮은 장력 = 낮은 확신 = 부정확한 분류
-
-  만약 이것이 뇌에도 적용된다면:
-    뇌의 "엔진들" (피질 영역) 사이의 반발 = 감마 진동?
-    높은 감마 = 높은 장력 = 높은 의식 = 높은 확신
-```
-
-### 왜 감마인가 (다른 대역이 아닌 이유)
+Core principle confirmed in H313:
 
 ```
-  대역     주파수      뇌 상태        반발력장 대응       이유
-  ─────   ─────────   ──────────    ──────────────    ─────────────────
-  delta    0.5-4 Hz    깊은 수면     장력 ≈ 0           동기화 = 합의 = 반발 없음
-  theta    4-8 Hz      얕은 수면     낮은 장력           약한 반발
-  alpha    8-13 Hz     이완          중간 장력           골든존? (H158)
-  beta     13-30 Hz    집중          높은 장력           강한 반발
-  gamma    30-100 Hz   초집중/의식   최대 장력           최대 반발 = 의식 마커
+  tension(tension) = |engine_A(x) - engine_G(x)|²
+
+  High tension = high confidence = accurate classification (confirmed in 3 datasets)
+  Low tension = low confidence = inaccurate classification
+
+  If this applies to the brain too:
+    "Engines" in the brain (cortical areas) repulsion = gamma oscillations?
+    High gamma = high tension = high consciousness = high confidence
 ```
 
-핵심 예측: **감마 파워와 장력은 단조 증가 관계**
+### Why Gamma (Not Other Bands)
 
-## 가설 구조
+```
+  Band     Frequency    Brain state       Repulsion field correspondence   Reason
+  ─────   ─────────    ──────────        ──────────────────────────       ─────────────────
+  delta    0.5-4 Hz    deep sleep        tension ≈ 0                       synchrony = consensus = no repulsion
+  theta    4-8 Hz      light sleep       low tension                       weak repulsion
+  alpha    8-13 Hz     relaxation        moderate tension                  Golden Zone? (H158)
+  beta     13-30 Hz    focus             high tension                      strong repulsion
+  gamma    30-100 Hz   hyper-focus/cons  maximum tension                   maximum repulsion = consciousness marker
+```
+
+Core prediction: **Monotonically increasing relationship between gamma power and tension**
+
+## Hypothesis Structure
 
 ```
   ┌─────────────────────────────────────────────────────┐
-  │              TREE-1 가설 구조                         │
-  │                                                     │
-  │  [EEG 데이터]                                        │
-  │      │                                              │
-  │      ▼                                              │
-  │  [주파수 특징 추출]                                    │
-  │   - 밴드파워 (delta, theta, alpha, beta, gamma)       │
-  │   - 스펙트럼 엔트로피                                  │
-  │   - 상대 감마 파워 (gamma / total)                     │
-  │      │                                              │
-  │      ▼                                              │
-  │  [반발력장 엔진 학습]                                   │
-  │   - engine_A: 산술 프로필 (밴드파워 비율)                │
-  │   - engine_G: 기하 프로필 (스펙트럼 형태)               │
-  │   - tension = |A(x) - G(x)|²                        │
-  │      │                                              │
-  │      ▼                                              │
-  │  [측정]                                              │
-  │   - 각 EEG 에폭(epoch)의 장력 값                      │
-  │   - 감마 파워 vs 장력 상관                             │
-  │   - 의식 상태별 장력 분포                               │
-  │      │                                              │
-  │      ▼                                              │
-  │  [검증]                                              │
-  │   - 각성 vs 수면: 장력으로 분류 가능한가?                │
-  │   - 상관: r(gamma, tension) > 0.5?                   │
-  │   - Cohen's d: 각성 장력 vs 수면 장력                  │
+  │              TREE-1 Hypothesis Structure              │
+  │                                                      │
+  │  [EEG Data]                                          │
+  │      │                                               │
+  │      ▼                                               │
+  │  [Frequency Feature Extraction]                      │
+  │   - Band power (delta, theta, alpha, beta, gamma)    │
+  │   - Spectral entropy                                 │
+  │   - Relative gamma power (gamma / total)             │
+  │      │                                               │
+  │      ▼                                               │
+  │  [Repulsion Field Engine Training]                   │
+  │   - engine_A: arithmetic profile (band power ratios) │
+  │   - engine_G: geometric profile (spectral shape)     │
+  │   - tension = |A(x) - G(x)|²                         │
+  │      │                                               │
+  │      ▼                                               │
+  │  [Measurement]                                       │
+  │   - Tension value for each EEG epoch                 │
+  │   - Gamma power vs tension correlation               │
+  │   - Tension distribution by consciousness state      │
+  │      │                                               │
+  │      ▼                                               │
+  │  [Verification]                                      │
+  │   - Awake vs sleep: classifiable by tension?         │
+  │   - Correlation: r(gamma, tension) > 0.5?            │
+  │   - Cohen's d: awake tension vs sleep tension        │
   └─────────────────────────────────────────────────────┘
 ```
 
-## 실험 설계
+## Experimental Design
 
-### 방법 1: 공개 EEG 데이터 (PhysioNet)
+### Method 1: Public EEG Data (PhysioNet)
 
 ```
-  데이터셋: EEG Motor Movement/Imagery Dataset (PhysioNet)
-    - 109명 피험자, 64채널 EEG
-    - 각성 상태 (eyes open / eyes closed)
-    - 160 Hz 샘플링
+  Dataset: EEG Motor Movement/Imagery Dataset (PhysioNet)
+    - 109 subjects, 64-channel EEG
+    - Awake state (eyes open / eyes closed)
+    - 160 Hz sampling
     - URL: physionet.org/content/eegmmidb/1.0.0/
 
-  대안 데이터셋:
-    - Sleep-EDF (수면 단계 레이블 포함)
-      → 각성 vs N1 vs N2 vs N3 vs REM 분류
-    - CHB-MIT (발작 EEG)
-      → 정상 vs 발작 = 정상 vs 과의식?
+  Alternative datasets:
+    - Sleep-EDF (includes sleep stage labels)
+      -> Awake vs N1 vs N2 vs N3 vs REM classification
+    - CHB-MIT (seizure EEG)
+      -> Normal vs seizure = normal vs hyper-consciousness?
 ```
 
-### 방법 2: 합성 EEG (eeg_cct_validator.py 확장)
+### Method 2: Synthetic EEG (extending eeg_cct_validator.py)
 
 ```
-  기존 eeg_cct_validator.py가 5가지 뇌 상태를 합성한다:
-    1. awake     → 감마 ↑↑
-    2. N1 sleep  → 감마 ↓
-    3. N3 sleep  → 감마 ↓↓
-    4. anesthesia → 감마 ≈ 0
-    5. seizure   → 비정상 주기
+  Existing eeg_cct_validator.py synthesizes 5 brain states:
+    1. awake     -> gamma ↑↑
+    2. N1 sleep  -> gamma ↓
+    3. N3 sleep  -> gamma ↓↓
+    4. anesthesia -> gamma ≈ 0
+    5. seizure   -> abnormal periodicity
 
-  확장:
-    - 합성 EEG → FFT → 밴드파워 5개 특징 추출
-    - 5개 특징을 반발력장에 입력
-    - 상태별 장력 분포 측정
+  Extension:
+    - Synthetic EEG -> FFT -> extract 5-dimensional band power features
+    - Feed 5 features into repulsion field
+    - Measure tension distribution by state
 ```
 
-### 특징 추출 파이프라인
+### Feature Extraction Pipeline
 
 ```
-  Raw EEG (Nx1) → 에폭 분할 (2초 윈도우) → FFT
+  Raw EEG (Nx1) -> epoch segmentation (2-second window) -> FFT
        │
        ▼
-  밴드파워 추출:
+  Band power extraction:
     feat[0] = delta_power   (0.5-4 Hz)
     feat[1] = theta_power   (4-8 Hz)
     feat[2] = alpha_power   (8-13 Hz)
@@ -141,198 +141,198 @@ H313에서 확인한 핵심 원리:
     feat[4] = gamma_power   (30-100 Hz)
     feat[5] = spectral_entropy
     feat[6] = gamma_ratio   (gamma / total)
-    feat[7] = theta_beta_ratio (졸림 지표)
+    feat[7] = theta_beta_ratio (drowsiness indicator)
 
-  → 8차원 특징 벡터를 반발력장 엔진에 입력
+  -> Feed 8-dimensional feature vector to repulsion field engine
 ```
 
-## 예측 (사전 정의)
+## Predictions (Pre-defined)
 
-### 핵심 예측
+### Core Predictions
 
 ```
   P1: tension(awake) > tension(sleep)
-      → Cohen's d > 0.5 (H313의 MNIST d=0.89 수준)
+      -> Cohen's d > 0.5 (H313's MNIST d=0.89 level)
 
   P2: r(gamma_power, tension) > 0.5
-      → 감마와 장력의 양의 상관
+      -> Positive correlation between gamma and tension
 
-  P3: 장력만으로 각성 vs 수면 분류 가능
-      → accuracy > 80% (단일 스칼라로)
+  P3: Classifiable by tension alone (awake vs sleep)
+      -> accuracy > 80% (with single scalar)
 
-  P4: 장력 순서가 의식 수준 순서와 일치
-      → tension(awake) > tension(N1) > tension(N3) > tension(anesthesia)
+  P4: Tension order matches consciousness level order
+      -> tension(awake) > tension(N1) > tension(N3) > tension(anesthesia)
 ```
 
-### H313 연결 예측
+### H313 Connection Predictions
 
 ```
-  H313: 장력 = 확신 (3데이터셋 확인)
+  H313: tension = confidence (confirmed in 3 datasets)
 
-  확장:
-    높은 의식 = 높은 감마 = 높은 장력 = 높은 확신
-    → "의식이 있다" = "확신할 수 있다"
-    → 의식 소멸(마취) = 확신 능력 상실 = 장력 → 0
+  Extension:
+    High consciousness = high gamma = high tension = high confidence
+    -> "Being conscious" = "being able to be confident"
+    -> Consciousness loss (anesthesia) = loss of confidence ability = tension -> 0
 
-  이것이 맞다면:
-    MNIST 장력(확신)과 EEG 장력(의식)은 같은 척도
-    → 반발력장이 "의식의 범용 측정기" 후보가 됨
+  If this is correct:
+    MNIST tension (confidence) and EEG tension (consciousness) are on the same scale
+    -> Repulsion field becomes candidate for "universal consciousness meter"
 ```
 
-## 대응 매핑 테이블
+## Correspondence Mapping Table
 
-| 반발력장 개념 | EEG/신경과학 대응 | 근거 |
+| Repulsion Field Concept | EEG/Neuroscience Correspondence | Basis |
 |---|---|---|
-| engine_A 출력 | 피질 영역 A 활동 | 뇌 영역별 특화 처리 |
-| engine_G 출력 | 피질 영역 B 활동 | 다른 원리의 처리 |
-| tension = \|A-G\|^2 | 피질간 탈동기화 | 감마 = 국소 탈동기화 |
-| 높은 장력 | 높은 감마 파워 | 의식 상태 |
-| 낮은 장력 | 낮은 감마 파워 | 무의식 상태 |
-| equilibrium | 전역 평균 전위 | 기저선 |
-| tension_scale | 감마 진폭 이득 | 개인차 |
+| engine_A output | Cortical area A activity | Domain-specific processing |
+| engine_G output | Cortical area B activity | Different-principle processing |
+| tension = \|A-G\|^2 | Inter-cortical desynchronization | Gamma = local desynchronization |
+| High tension | High gamma power | Conscious state |
+| Low tension | Low gamma power | Unconscious state |
+| equilibrium | Global average potential | Baseline |
+| tension_scale | Gamma amplitude gain | Individual differences |
 
-## 선행 연구 연결
-
-```
-  가설 158: 뇌파 대역 = 볼츠만 온도 매핑
-    → 알파 대역 = 골든존 (I ≈ 0.3-0.48)
-    → 감마 = I < 0.2 = 탈억제
-
-  가설 274: 의식 = 오류교정
-    → TREE-1은 274의 뇌 실증 경로
-
-  가설 292: 의식 트리 확장
-    → TREE-1은 트리의 "미적/감각" 가지가 아닌
-       "인식/판단"의 생물학적 근거
-
-  H-CX-6: 신경화학 매핑
-    → 도파민 = 장력, 세로토닌 = 반장력
-    → 감마 진동은 도파민계와 밀접 (보상 회로)
-
-  가설 291: 데이터 유형 트리
-    → EEG/뇌파 = "시간적 밀집 데이터" (L3)
-    → 음성 +3.33%와 유사한 효과 예상
-```
-
-## ASCII 예측 그래프
+## Prior Research Connections
 
 ```
-  예상 장력 분포 (의식 상태별):
+  Hypothesis 158: Brain wave bands = Boltzmann temperature mapping
+    -> Alpha band = Golden Zone (I ≈ 0.3-0.48)
+    -> Gamma = I < 0.2 = disinhibition
 
-  빈도
+  Hypothesis 274: Consciousness = error correction
+    -> TREE-1 is the brain verification path for 274
+
+  Hypothesis 292: Consciousness tree expansion
+    -> TREE-1 is not the "aesthetic/sensory" branch of the tree
+       but the biological basis of "recognition/judgment"
+
+  H-CX-6: Neurochemical mapping
+    -> Dopamine = tension, serotonin = counter-tension
+    -> Gamma oscillations closely related to dopaminergic system (reward circuit)
+
+  Hypothesis 291: Data type tree
+    -> EEG/brainwaves = "temporally dense data" (L3)
+    -> Expected effect similar to speech +3.33%
+```
+
+## ASCII Prediction Graph
+
+```
+  Expected tension distribution (by consciousness state):
+
+  Frequency
   ▲
   │
-  │   ┌─┐                              마취 (장력 ≈ 0)
+  │   ┌─┐                              Anesthesia (tension ≈ 0)
   │   │ │
-  │   │ │  ┌─┐                         N3 수면
+  │   │ │  ┌─┐                         N3 sleep
   │   │ │  │ │
-  │   │ │  │ │    ┌─┐                  N1 수면
+  │   │ │  │ │    ┌─┐                  N1 sleep
   │   │ │  │ │    │ │
   │   │ │  │ │    │ │      ┌─┐         REM
   │   │ │  │ │    │ │      │ │
-  │   │ │  │ │    │ │      │ │    ┌─┐  각성
+  │   │ │  │ │    │ │      │ │    ┌─┐  Awake
   │   │ │  │ │    │ │      │ │    │ │
-  └───┴─┴──┴─┴────┴─┴──────┴─┴────┴─┴──▶ 장력
+  └───┴─┴──┴─┴────┴─┴──────┴─┴────┴─┴──▶ Tension
   0   10   30     60      120    200
 
-  예상 상관 (감마 파워 vs 장력):
+  Expected correlation (gamma power vs tension):
 
-  감마 파워
+  Gamma power
   (uV^2/Hz)
   ▲
-  │                              ●  ← 각성
+  │                              ●  <- awake
   │                           ●
   │                        ●
   │                     ●
-  │                  ●           r > 0.5 예측
+  │                  ●           r > 0.5 predicted
   │               ●
   │            ●
-  │         ●                    ← 수면
+  │         ●                    <- sleep
   │      ●
-  │   ●  ← 마취
-  └──────────────────────────────▶ 장력(tension)
+  │   ●  <- anesthesia
+  └──────────────────────────────▶ tension
   0       50      100     150    200
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. 합성 EEG의 한계:
-     - eeg_cct_validator.py는 뇌파의 통계적 특성만 재현
-     - 실제 EEG의 비정상성, 아티팩트, 개인차를 반영 못함
-     - 공개 데이터(PhysioNet)로 반드시 재검증 필요
+  1. Limitations of synthetic EEG:
+     - eeg_cct_validator.py only reproduces statistical properties of brain waves
+     - Cannot reflect actual EEG non-stationarity, artifacts, individual differences
+     - Validation on public data (PhysioNet) absolutely necessary
 
-  2. 순환 논증 위험:
-     - 감마 파워를 특징으로 넣고 → 감마와 상관 있다고 주장
-     - 해결: 감마 파워를 특징에서 제외하고도 상관이 나오는지 확인
-     - 또는: 밴드파워 대신 원시 EEG 시계열을 직접 입력
+  2. Risk of circular reasoning:
+     - Claiming gamma power is correlated after using it as a feature
+     - Solution: Check if correlation appears even when gamma power is excluded
+     - Or: Input raw EEG time series directly (without feature extraction)
 
-  3. 골든존 의존:
-     - 반발력장 자체가 골든존 모델 기반
-     - 골든존이 미검증이므로 TREE-1의 결과도 모델 의존적
-     - 단, 장력의 판별 능력 자체는 골든존과 무관하게 측정 가능
+  3. Golden Zone dependency:
+     - Repulsion field itself is based on Golden Zone model
+     - Since Golden Zone is unverified, TREE-1 results are also model-dependent
+     - However, the discriminative ability of tension itself can be measured independently of the Golden Zone
 
-  4. 감마 = 의식의 논쟁:
-     - 감마 진동이 의식의 원인인지 상관물인지 미해결
-     - Koch vs Tononi 논쟁 진행 중
-     - TREE-1은 "상관"만 주장, "인과"는 주장하지 않음
+  4. Gamma = consciousness debate:
+     - Unresolved whether gamma oscillations are the cause or correlate of consciousness
+     - Koch vs Tononi debate ongoing
+     - TREE-1 claims only "correlation", not "causation"
 
-  5. 샘플 크기:
-     - 합성 데이터는 원하는 만큼 생성 가능하나 의미 없을 수 있음
-     - PhysioNet: 109명은 신경과학에서 중간 규모
+  5. Sample size:
+     - Synthetic data can generate as much as needed but may be meaningless
+     - PhysioNet: 109 subjects is medium scale in neuroscience
 ```
 
-## 검증 방향 (다음 단계)
+## Verification Direction (Next Steps)
 
 ```
-  Phase 1: 합성 EEG (빠른 검증)
-    - eeg_cct_validator.py 확장
-    - 5개 뇌 상태 × 1000 에폭 생성
-    - 반발력장 학습 → 장력 분포 측정
-    - P1-P4 예측 확인
+  Phase 1: Synthetic EEG (quick verification)
+    - Extend eeg_cct_validator.py
+    - Generate 5 brain states × 1000 epochs
+    - Train repulsion field -> measure tension distribution
+    - Verify P1-P4 predictions
 
-  Phase 2: PhysioNet 실제 데이터
-    - Sleep-EDF 다운로드 (수면 단계 레이블)
-    - MNE-Python으로 전처리
-    - 동일 파이프라인 적용
-    - 합성 결과와 비교
+  Phase 2: PhysioNet real data
+    - Download Sleep-EDF (sleep stage labels)
+    - Preprocess with MNE-Python
+    - Apply same pipeline
+    - Compare with synthetic results
 
-  Phase 3: 인과 검증
-    - 감마 특징 제외 후 장력 재측정
-    - 원시 EEG 직접 입력 (특징 추출 없이)
-    - 장력이 여전히 의식 상태를 판별하면 → 감마 이상의 무언가 포착
+  Phase 3: Causal verification
+    - Re-measure tension after excluding gamma feature
+    - Input raw EEG directly (without feature extraction)
+    - If tension still discriminates consciousness state -> capturing something beyond gamma
 
-  Phase 4: H313 통합
-    - MNIST 장력 스케일 vs EEG 장력 스케일 비교
-    - 정규화 후 같은 척도에 올릴 수 있는가?
-    - "확신"과 "의식"이 같은 축인가?
+  Phase 4: H313 integration
+    - Compare MNIST tension scale vs EEG tension scale
+    - Can they be placed on the same scale after normalization?
+    - Are "confidence" and "consciousness" on the same axis?
 ```
 
-## 검증 결과 (2026-03-24, Phase 1 합성 EEG)
+## Verification Results (2026-03-24, Phase 1 Synthetic EEG)
 
-### 실험 설정
+### Experimental Setup
 
 ```
-  데이터: 합성 EEG, 5 상태 x 200 에폭 = 1000 샘플
-  샘플링: 256 Hz, 에폭 2초
-  특징: 8차원 (delta/theta/alpha/beta/gamma 파워 + 엔트로피 + 감마비율 + theta/beta비)
-  반발력장: 2개 선형 엔진 (다른 특징 가중치), 200 에폭 학습
-  분류 정확도: Engine A 95.9%, Engine G 97.7%, Ensemble 97.0%
+  Data: Synthetic EEG, 5 states x 200 epochs = 1000 samples
+  Sampling: 256 Hz, epoch 2 seconds
+  Features: 8D (delta/theta/alpha/beta/gamma power + entropy + gamma ratio + theta/beta ratio)
+  Repulsion field: 2 linear engines (different feature weights), 200 epoch training
+  Classification accuracy: Engine A 95.9%, Engine G 97.7%, Ensemble 97.0%
 ```
 
-### 예측 검증 결과 (4/4 실패)
+### Prediction Verification Results (4/4 Failures)
 
 | Prediction | Result | Detail |
 |---|---|---|
 | P1: tension(awake) > tension(sleep) | **FAIL** | d = -1.414, p = 1.00 |
 | P2: r(gamma, tension) > 0.5 | **FAIL** | r = -0.469, rho = -0.571 |
-| P3: 장력 단일 분류 > 80% | **FAIL** | acc = 79.9% (경계) |
-| P4: 장력 순서 = 의식 순서 | **FAIL** | tau = -0.800 |
+| P3: tension single classification > 80% | **FAIL** | acc = 79.9% (borderline) |
+| P4: tension order = consciousness order | **FAIL** | tau = -0.800 |
 
-### 핵심 발견: 장력은 의식과 **역상관**
+### Core Finding: Tension is **inversely** correlated with consciousness
 
 ```
-  상태별 장력 (높은→낮은):
+  Tension by state (high to low):
 
   Anesthesia      ██████████████████████████████████████████ 0.0425
   N1 (drowsy)     █████████████████████████  0.0256
@@ -340,97 +340,97 @@ H313에서 확인한 핵심 원리:
   REM (dream)     ███████  0.0075
   Awake           █████  0.0056
 
-  → 의식 수준이 낮을수록 장력이 높음!
-  → 예측과 정반대 (tau = -0.80)
+  -> Lower consciousness level = higher tension!
+  -> Opposite of predictions (tau = -0.80)
 
   rho(tension, consciousness) = -0.721, p = 2.85e-161
 ```
 
-### 해석: 왜 역상관인가
+### Interpretation: Why Inverse Correlation?
 
 ```
-  장력 = |engine_A(x) - engine_G(x)|^2
+  tension = |engine_A(x) - engine_G(x)|^2
 
-  높은 장력 = 두 엔진의 의견 불일치 = 분류 어려운 샘플
-  낮은 장력 = 두 엔진의 합의 = 분류 쉬운 샘플
+  High tension = two engines disagree = difficult-to-classify sample
+  Low tension = two engines agree = easy-to-classify sample
 
-  → 각성 EEG: 특징이 뚜렷 → 분류 쉬움 → 합의 → 낮은 장력
-  → 마취 EEG: burst-suppression → 비정형 → 분류 어려움 → 불일치 → 높은 장력
+  -> Awake EEG: distinct features -> easy to classify -> consensus -> low tension
+  -> Anesthesia EEG: burst-suppression -> atypical -> hard to classify -> disagreement -> high tension
 
-  원인:
-  1. H313(장력=확신)과의 관계가 반전됨
-     - H313: 높은 장력 = 높은 확신 = 정확한 분류
-     - H322: 높은 장력 = 낮은 확신 = 어려운 분류
-     → 엔진 다양성/불일치가 장력의 본질일 수 있음
-     → "합의"와 "의식"의 관계를 재검토해야
+  Reasons:
+  1. Relationship with H313 (tension=confidence) is inverted
+     - H313: high tension = high confidence = accurate classification
+     - H322: high tension = low confidence = difficult classification
+     -> The essence of tension may be engine diversity/disagreement
+     -> Need to reconsider the relationship between "consensus" and "consciousness"
 
-  2. 각성 EEG가 가장 분류 쉬운 이유:
-     - 알파+베타+감마 = 강한 다주파 시그니처
-     - 두 엔진이 모두 정확히 인식 → 합의 → 장력↓
+  2. Why awake EEG is easiest to classify:
+     - Alpha+beta+gamma = strong multi-frequency signature
+     - Both engines recognize it accurately -> consensus -> tension down
 
-  3. 마취 EEG가 가장 분류 어려운 이유:
-     - burst-suppression은 다른 상태와 혼동 가능
-     - 비정형 패턴 → 두 엔진 불일치 → 장력↑
+  3. Why anesthesia EEG is hardest to classify:
+     - Burst-suppression can be confused with other states
+     - Atypical pattern -> two engines disagree -> tension up
 ```
 
-### 순환 논증 검사
+### Circular Reasoning Check
 
 ```
-  감마 포함: r(gamma, tension) = -0.469
-  감마 제외: r(gamma, tension) = -0.335
+  With gamma: r(gamma, tension) = -0.469
+  Without gamma: r(gamma, tension) = -0.335
 
-  → 감마 제외 후에도 역상관 유지 (r = -0.335)
-  → 장력의 의식 역상관은 감마 특징에만 의존하지 않음
-  → 전체 스펙트럼 구조가 기여
+  -> Inverse correlation maintained even after excluding gamma (r = -0.335)
+  -> Tension-consciousness inverse correlation does not depend on gamma feature alone
+  -> Entire spectral structure contributes
 
-  감마 포함 rho(tension, consciousness) = -0.721
-  감마 제외 rho(tension, consciousness) = -0.390
-  → 감마 제외 시 상관 약화되지만 유지됨
+  With gamma rho(tension, consciousness) = -0.721
+  Without gamma rho(tension, consciousness) = -0.390
+  -> Correlation weakens but maintained when gamma excluded
 ```
 
-### 감마 파워 vs 장력 산점도
+### Gamma Power vs Tension Scatter Plot
 
 ```
   Gamma
   power
-   124.8 | AAA                        (A=Awake: 높은감마, 낮은장력)
+   124.8 | AAA                        (A=Awake: high gamma, low tension)
          | AA
          | AA
          |
          |
          |
-         | RRR                        (R=REM: 중간감마, 낮은장력)
+         | RRR                        (R=REM: moderate gamma, low tension)
          | RRRR RRRR      R
          |
          |
-         |  1111111111                (1=N1: 낮은감마, 중간장력)
-         |             XXX  X  X X   (X=Anesthesia: 낮은감마, 높은장력)
+         |  1111111111                (1=N1: low gamma, moderate tension)
+         |             XXX  X  X X   (X=Anesthesia: low gamma, high tension)
      0.1 |  XX3XXXXXXXX
          └──────────────────────────── Tension
          0.0004                 0.1911
 ```
 
-### 판정
+### Verdict
 
 ```
-  예측 4/4 실패 → 원래 가설 기각
+  4/4 predictions failed -> original hypothesis rejected
 
-  BUT: 장력과 의식의 강한 역상관 (rho = -0.721)은
-  새로운 가설을 시사:
-    - "장력 = 불확실성" (H313의 반전 해석)
-    - 의식이 높을수록 뇌 상태가 안정 → 엔진 합의 → 낮은 장력
-    - 의식이 낮을수록 뇌 상태가 비정형 → 엔진 불일치 → 높은 장력
+  BUT: Strong inverse correlation between tension and consciousness (rho = -0.721)
+  suggests a new hypothesis:
+    - "tension = uncertainty" (inverted interpretation of H313)
+    - Higher consciousness -> more stable brain state -> engine consensus -> low tension
+    - Lower consciousness -> more atypical brain state -> engine disagreement -> high tension
 
-  한계:
-    - 합성 EEG: 실제 EEG의 비선형성/아티팩트 미반영
-    - 선형 엔진: 비선형 엔진(neural net)으로 재검증 필요
-    - PhysioNet 실제 데이터로 Phase 2 필요
+  Limitations:
+    - Synthetic EEG: does not reflect real EEG nonlinearity/artifacts
+    - Linear engines: needs re-verification with nonlinear engines (neural net)
+    - Phase 2 with PhysioNet real data needed
 ```
 
-## 상태: ⬛ 기각 (예측 4/4 실패, 역상관 발견)
+## Status: ⬛ Rejected (4/4 predictions failed, inverse correlation found)
 
 ---
 
-## 원본 가설 (아래)
+## Original Hypothesis (Below)
 
-## 원래 상태: 미검증 (실험 대기)
+## Original status: Unverified (awaiting experiment)

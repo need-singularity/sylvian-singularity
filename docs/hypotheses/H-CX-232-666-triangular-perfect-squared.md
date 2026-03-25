@@ -1,11 +1,11 @@
-# H-CX-232: ⭐🟩 666 = T(6²) = T(P₁²) — 완전수²번째 삼각수
+# H-CX-232: ⭐🟩 666 = T(6²) = T(P₁²) — Perfect number² triangular number
 
 > 666 = T(36) = 1+2+...+36. 36 = 6² = P₁².
-> 666 = (완전수)²번째 삼각수!
+> 666 = (Perfect number)²th triangular number!
 >
-> 추가:
-> τ(666) = 12 = σ(6) — 666의 약수 개수 = 6의 약수합!
-> φ(666) = 216 = 6³ = P₁³ — 666의 토션트 = 완전수의 세제곱!
+> Additional:
+> τ(666) = 12 = σ(6) — Number of divisors of 666 = Sum of divisors of 6!
+> φ(666) = 216 = 6³ = P₁³ — Euler's totient of 666 = Perfect number cubed!
 >
-> 666은 완전수 6의 "거울":
+> 666 is the "mirror" of perfect number 6:
 >   T(6²) = 666, τ(666) = σ(6), φ(666) = 6³

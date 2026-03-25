@@ -1,15 +1,16 @@
+```python
 #!/usr/bin/env python3
-"""완전수 약수함수 엔진 — σ, τ, φ 조합으로 물리 상수 자동 탐색
+"""Perfect Number Divisor Function Engine — Automated exploration of physical constants via σ, τ, φ combinations
 
-완전수의 약수함수(σ, τ, φ 등)를 체계적으로 조합하여
-물리 상수와의 매칭을 자동 탐색한다.
-텍사스 명사수 검정으로 우연 vs 구조적 발견을 판별.
+Systematically combines divisor functions (σ, τ, φ, etc.) of perfect numbers
+to search for matches with physical constants.
+Uses Texas sharpshooter test to distinguish between chance vs structural discoveries.
 
-사용법:
-  python3 perfect_number_engine.py                 # 전체 탐색
-  python3 perfect_number_engine.py --target 137    # 특정 타겟
-  python3 perfect_number_engine.py --cross         # 완전수 교차만
-  python3 perfect_number_engine.py --depth 3       # 3개 함수 조합
+Usage:
+  python3 perfect_number_engine.py                 # Full search
+  python3 perfect_number_engine.py --target 137    # Specific target
+  python3 perfect_number_engine.py --cross         # Cross perfect numbers only
+  python3 perfect_number_engine.py --depth 3       # 3-function combinations
 """
 
 import argparse
@@ -27,7 +28,7 @@ RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results"
 
 
 # ─────────────────────────────────────────
-# 완전수 + 약수함수
+# Perfect Numbers + Divisor Functions
 # ─────────────────────────────────────────
 PERFECT_NUMBERS = {
     6: {"sigma": 12, "tau": 4, "phi": 2, "prime_factors": [2, 3]},
@@ -38,10 +39,10 @@ PERFECT_NUMBERS = {
 
 
 def build_atom_pool():
-    """완전수별 약수함수 원자 풀 생성.
+    """Create atomic pool of divisor functions for each perfect number.
 
-    각 완전수 P에 대해:
-      P, σ(P), τ(P), φ(P), σ₋₁(P)=2, 소인수들
+    For each perfect number P:
+      P, σ(P), τ(P), φ(P), σ₋₁(P)=2, prime factors
     """
     atoms = {}  # name -> value
     for p, info in PERFECT_NUMBERS.items():
@@ -50,7 +51,7 @@ def build_atom_pool():
         atoms[f"s({tag})"] = float(info["sigma"])      # σ
         atoms[f"t({tag})"] = float(info["tau"])         # τ
         atoms[f"ph({tag})"] = float(info["phi"])        # φ
-        atoms[f"s-1({tag})"] = 2.0                      # σ₋₁ = 2 (완전수 정의)
+        atoms[f"s-1({tag})"] = 2.0                      # σ₋₁ = 2 (perfect number definition)
         for pf in info["prime_factors"]:
             name = f"pf{pf}({tag})"
             atoms[name] = float(pf)
@@ -61,7 +62,7 @@ ATOMS = build_atom_pool()
 
 
 # ─────────────────────────────────────────
-# 물리 상수 타겟
+# Physical Constant Targets
 # ─────────────────────────────────────────
 PHYSICS_TARGETS = {
     "alpha_inv": 137.035999084,
@@ -78,10 +79,10 @@ PHYSICS_TARGETS = {
 
 
 # ─────────────────────────────────────────
-# 어떤 완전수에서 유래했는지 추출
+# Extract which perfect number an atom originates from
 # ─────────────────────────────────────────
 def origin_pn(name):
-    """원자 이름에서 완전수 번호 추출."""
+    """Extract perfect number from atom name."""
     for p in PERFECT_NUMBERS:
         if f"P{p}" in name:
             return p
@@ -89,39 +90,39 @@ def origin_pn(name):
 
 
 def is_cross(name_a, name_b):
-    """두 원자가 서로 다른 완전수에서 유래했는가?"""
+    """Do the two atoms originate from different perfect numbers?"""
     return origin_pn(name_a) != origin_pn(name_b)
 
 
 # ─────────────────────────────────────────
-# 비자명성 점수
+# Non-triviality Score
 # ─────────────────────────────────────────
 def triviality_score(formula, target_name, target_val, formula_val):
-    """비자명성 점수 (0=자명, 높을수록 흥미).
+    """Non-triviality score (0=trivial, higher=more interesting).
 
-    감점 요인:
-    - 항등 매핑 (P496 -> 496)
-    - 단일 원자
-    - 정수 나눗셈 (28/4=7 등 명백한 것)
+    Penalty factors:
+    - Identity mapping (P496 -> 496)
+    - Single atom
+    - Integer division (28/4=7 etc obvious)
 
-    가점 요인:
-    - 교차 완전수
-    - 여러 약수함수 혼합
-    - 작은 오차
+    Bonus factors:
+    - Cross perfect numbers
+    - Multiple divisor functions mixed
+    - Small error
     """
-    score = 5  # 기본점
+    score = 5  # Base score
 
-    # 항등 매핑 감점
+    # Identity mapping penalty
     if f"P{int(target_val)}" in formula and formula.count("(") <= 1:
         score -= 4
 
-    # 단일 원자 감점
+    # Single atom penalty
     operators = ["+", "-", "*", "/", "^", "C(", "T("]
     has_op = any(op in formula for op in operators)
     if not has_op:
         score -= 3
 
-    # 교차 완전수 가점
+    # Cross perfect number bonus
     pns_in_formula = set()
     for p in PERFECT_NUMBERS:
         if f"P{p}" in formula:
@@ -131,7 +132,7 @@ def triviality_score(formula, target_name, target_val, formula_val):
     if len(pns_in_formula) >= 3:
         score += 1
 
-    # 다양한 약수함수 가점
+    # Diverse divisor functions bonus
     func_types = 0
     if "s(" in formula:
         func_types += 1
@@ -148,13 +149,13 @@ def triviality_score(formula, target_name, target_val, formula_val):
 
 
 # ─────────────────────────────────────────
-# 이항 연산 (2개 원자)
+# Binary Operations (2 atoms)
 # ─────────────────────────────────────────
 def binary_ops(na, va, nb, vb):
-    """두 원자에 대한 모든 연산 결과를 (값, 공식) 리스트로 반환."""
+    """Return all operation results for two atoms as (value, formula) list."""
     results = []
 
-    # 기본 사칙
+    # Basic arithmetic
     results.append((va + vb, f"{na}+{nb}"))
     results.append((va - vb, f"{na}-{nb}"))
     results.append((vb - va, f"{nb}-{na}"))
@@ -165,7 +166,7 @@ def binary_ops(na, va, nb, vb):
     if va != 0:
         results.append((vb / va, f"{nb}/{na}"))
 
-    # 거듭제곱
+    # Powers
     if va > 0 and 0 < abs(vb) < 20:
         try:
             val = va ** vb
@@ -181,7 +182,7 @@ def binary_ops(na, va, nb, vb):
         except (OverflowError, ValueError):
             pass
 
-    # 조합 C(a, b) — 정수만
+    # Combinations C(a, b) — integers only
     if va == int(va) and vb == int(vb):
         a_int, b_int = int(va), int(vb)
         if 0 <= b_int <= a_int <= 200:
@@ -199,7 +200,7 @@ def binary_ops(na, va, nb, vb):
             except (ValueError, OverflowError):
                 pass
 
-    # 삼각수 T(a+b+1) = (a+b+1)(a+b)/2
+    # Triangular number T(a+b+1) = (a+b+1)(a+b)/2
     s = va + vb + 1
     if s > 0 and s == int(s) and s < 1000:
         val = s * (s - 1) / 2
@@ -233,10 +234,10 @@ def binary_ops(na, va, nb, vb):
 
 
 # ─────────────────────────────────────────
-# 삼항 연산 (3개 원자)
+# Ternary Operations (3 atoms)
 # ─────────────────────────────────────────
 def ternary_ops(na, va, nb, vb, nc, vc):
-    """세 원자에 대한 연산 결과 리스트."""
+    """Operation results for three atoms."""
     results = []
 
     # a*b + c, a*b - c
@@ -289,7 +290,7 @@ def ternary_ops(na, va, nb, vb, nc, vc):
         except (OverflowError, ValueError):
             pass
 
-    # C(a*b, c) — 정수만
+    # C(a*b, c) — integers only
     ab = va * vb
     if ab == int(ab) and vc == int(vc):
         ab_int, c_int = int(ab), int(vc)
@@ -306,20 +307,20 @@ def ternary_ops(na, va, nb, vb, nc, vc):
 
 
 # ─────────────────────────────────────────
-# 탐색 엔진
+# Search Engine
 # ─────────────────────────────────────────
 def search(targets, depth=2, cross_only=False, threshold=0.01):
-    """완전수 약수함수 조합으로 타겟을 만드는 공식 탐색.
+    """Search for formulas that produce targets using perfect number divisor function combinations.
 
     Args:
-        targets: {이름: 값} dict
-        depth: 조합 깊이 (2 또는 3)
-        cross_only: True이면 서로 다른 완전수 교차만
-        threshold: 상대 오차 임계값
+        targets: {name: value} dict
+        depth: Combination depth (2 or 3)
+        cross_only: If True, only cross different perfect numbers
+        threshold: Relative error threshold
 
     Returns:
         matches: list of dict
-        total_trials: 총 시도 수
+        total_trials: Total number of attempts
     """
     names = list(ATOMS.keys())
     vals = [ATOMS[n] for n in names]
@@ -327,7 +328,7 @@ def search(targets, depth=2, cross_only=False, threshold=0.01):
     matches = []
     total_trials = 0
 
-    # ── 1개 원자 (단항) ──
+    # ── Single atom (unary) ──
     for i in range(len(names)):
         na, va = names[i], vals[i]
         total_trials += 1
@@ -347,7 +348,7 @@ def search(targets, depth=2, cross_only=False, threshold=0.01):
                     "origins": {origin_pn(na)},
                 })
 
-    # ── 2개 조합 ──
+    # ── 2-combinations ──
     for i in range(len(names)):
         for j in range(i, len(names)):
             na, va = names[i], vals[i]
@@ -365,7 +366,7 @@ def search(targets, depth=2, cross_only=False, threshold=0.01):
                         continue
                     rel_err = abs(val - t_val) / abs(t_val)
                     if rel_err < threshold:
-                        # 자명한 항등 스킵
+                        # Skip trivial identity
                         if expr == t_name:
                             continue
                         origins = set()
@@ -385,7 +386,7 @@ def search(targets, depth=2, cross_only=False, threshold=0.01):
                             "origins": origins,
                         })
 
-    # ── 3개 조합 ──
+    # ── 3-combinations ──
     if depth >= 3:
         for i in range(len(names)):
             for j in range(i, len(names)):
@@ -399,7 +400,7 @@ def search(targets, depth=2, cross_only=False, threshold=0.01):
                         if len(pns) < 2:
                             continue
 
-                    # 3가지 순열
+                    # 3 permutations
                     perms = [
                         (na, va, nb, vb, nc, vc),
                         (na, va, nc, vc, nb, vb),
@@ -429,7 +430,7 @@ def search(targets, depth=2, cross_only=False, threshold=0.01):
                                         "origins": origins,
                                     })
 
-    # 중복 제거
+    # Remove duplicates
     seen = set()
     unique = []
     for m in matches:
@@ -438,26 +439,26 @@ def search(targets, depth=2, cross_only=False, threshold=0.01):
             seen.add(key)
             unique.append(m)
 
-    # 비자명성 점수 추가
+    # Add non-triviality scores
     for m in unique:
         m["nontrivial"] = triviality_score(
             m["formula"], m["target"], m["target_val"], m["formula_val"]
         )
 
-    # 오차 순 정렬
+    # Sort by error
     unique.sort(key=lambda x: x["error_pct"])
 
     return unique, total_trials
 
 
 # ─────────────────────────────────────────
-# 텍사스 명사수 검정
+# Texas Sharpshooter Test
 # ─────────────────────────────────────────
 def texas_sharpshooter(matches, total_trials, n_random=5000):
-    """Bonferroni p-value 기반 검정."""
+    """Bonferroni p-value based test."""
     rng = np.random.default_rng(42)
 
-    # 각 타겟에 대해 랜덤 히트 확률 추정
+    # Estimate random hit probability for each target
     target_hit_probs = {}
     unique_targets = {m["target"]: m["target_val"] for m in matches}
 
@@ -487,7 +488,7 @@ def texas_sharpshooter(matches, total_trials, n_random=5000):
 
         target_hit_probs[t_name] = max(hits / n_random, 1e-6)
 
-    # Bonferroni 보정
+    # Bonferroni correction
     results = []
     n_significant = 0
     for m in matches:
@@ -496,13 +497,13 @@ def texas_sharpshooter(matches, total_trials, n_random=5000):
         p_adjusted = min(1.0, p_single * precision_factor * total_trials)
 
         if p_adjusted < 0.01:
-            verdict = "구조적"
+            verdict = "Structural"
             n_significant += 1
         elif p_adjusted < 0.05:
-            verdict = "약한 증거"
+            verdict = "Weak evidence"
             n_significant += 1
         else:
-            verdict = "우연 가능"
+            verdict = "Possibly chance"
 
         m_copy = dict(m)
         m_copy["p_value"] = p_adjusted
@@ -513,10 +514,10 @@ def texas_sharpshooter(matches, total_trials, n_random=5000):
 
 
 # ─────────────────────────────────────────
-# 완전수별 기여도 분석
+# Perfect Number Contribution Analysis
 # ─────────────────────────────────────────
 def contribution_analysis(matches):
-    """어떤 완전수가 가장 많이 등장하는지 분석."""
+    """Analyze which perfect numbers appear most frequently."""
     counter = {}
     for p in PERFECT_NUMBERS:
         counter[p] = {"total": 0, "nontrivial": 0, "best_err": float("inf")}
@@ -533,10 +534,10 @@ def contribution_analysis(matches):
 
 
 # ─────────────────────────────────────────
-# 교차 관계 분석
+# Cross-relationship Analysis
 # ─────────────────────────────────────────
 def cross_analysis(matches):
-    """서로 다른 완전수를 잇는 교차 관계."""
+    """Cross-relationships connecting different perfect numbers."""
     cross_matches = []
     for m in matches:
         origins = m.get("origins", set())
@@ -547,11 +548,11 @@ def cross_analysis(matches):
 
 
 # ─────────────────────────────────────────
-# 출력
+# Output
 # ─────────────────────────────────────────
 def print_results(matches, total_trials, targets, depth, cross_only,
                   threshold, texas=False):
-    """결과 ASCII 출력."""
+    """ASCII result output."""
 
     n_atoms = len(ATOMS)
     n_pn = len(PERFECT_NUMBERS)
@@ -559,30 +560,30 @@ def print_results(matches, total_trials, targets, depth, cross_only,
     print()
     print("=" * 65)
     print("  Perfect Number Engine v1.0")
-    print(f"  완전수: {n_pn}개, 원자: {n_atoms}개, 타겟: {len(targets)}개")
-    print(f"  연산 조합: ~{total_trials:,}개, 깊이: {depth}, 임계: {threshold * 100}%")
-    mode = "교차(P_i x P_j)만" if cross_only else "전체"
-    print(f"  모드: {mode}")
+    print(f"  Perfect numbers: {n_pn}, Atoms: {n_atoms}, Targets: {len(targets)}")
+    print(f"  Operation combinations: ~{total_trials:,}, Depth: {depth}, Threshold: {threshold * 100}%")
+    mode = "Cross (P_i x P_j) only" if cross_only else "Full"
+    print(f"  Mode: {mode}")
     print("=" * 65)
 
     if not matches:
         print()
-        print("  발견 없음.")
+        print("  No discoveries.")
         print("=" * 65)
         return
 
-    # ── 발견 테이블 (오차순) ──
-    # 비자명한 것 우선 표시
+    # ── Discovery table (sorted by error) ──
+    # Show non-trivial first
     nontrivial = [m for m in matches if m.get("nontrivial", 0) >= 3]
     trivial = [m for m in matches if m.get("nontrivial", 0) < 3]
 
     print()
-    print(f"  비자명 발견: {len(nontrivial)}개, 자명: {len(trivial)}개")
+    print(f"  Non-trivial discoveries: {len(nontrivial)}, Trivial: {len(trivial)}")
     print()
 
     if nontrivial:
-        print("  --- 비자명 발견 (오차순) ---")
-        print(f"  {'오차%':>8} | {'공식':<35} | {'값':>12} | {'타겟':<12} | NT")
+        print("  --- Non-trivial discoveries (by error) ---")
+        print(f"  {'Error%':>8} | {'Formula':<35} | {'Value':>12} | {'Target':<12} | NT")
         print("  " + "-" * 78)
         for m in nontrivial[:40]:
             err_str = f"{m['error_pct']:.4f}"
@@ -605,11 +606,11 @@ def print_results(matches, total_trials, targets, depth, cross_only,
                   f"{m['target']:<12} | {nt}")
         print("  " + "-" * 78)
 
-    # ── 완전수별 기여도 ──
+    # ── Perfect number contributions ──
     contrib = contribution_analysis(matches)
     print()
-    print("  --- 완전수별 기여도 ---")
-    print(f"  {'완전수':>8} | {'총 등장':>8} | {'비자명':>8} | {'최소 오차%':>10}")
+    print("  --- Contributions by perfect number ---")
+    print(f"  {'Perfect#':>8} | {'Total':>8} | {'Nontrivial':>8} | {'Min Error%':>10}")
     print("  " + "-" * 45)
     for p in sorted(contrib.keys()):
         c = contrib[p]
@@ -617,37 +618,37 @@ def print_results(matches, total_trials, targets, depth, cross_only,
         print(f"  {p:>8} | {c['total']:>8} | {c['nontrivial']:>8} | {best:>10}")
     print("  " + "-" * 45)
 
-    # ── 교차 관계 ──
+    # ── Cross-relationships ──
     cross = cross_analysis(matches)
     if cross:
         print()
-        print(f"  --- 교차 관계 (P_i x P_j): {len(cross)}개 ---")
+        print(f"  --- Cross-relationships (P_i x P_j): {len(cross)} ---")
         for m in cross[:15]:
             origins_str = " x ".join(f"P{p}" for p in sorted(m["origins"]))
             print(f"    {m['error_pct']:>7.4f}% | {m['formula']:<35} -> "
                   f"{m['target']} [{origins_str}]")
 
-    # ── 텍사스 명사수 검정 ──
+    # ── Texas sharpshooter test ──
     if texas and matches:
         print()
-        print("  --- 텍사스 명사수 검정 ---")
+        print("  --- Texas Sharpshooter Test ---")
         texas_results, n_sig = texas_sharpshooter(matches, total_trials)
-        n_structural = sum(1 for r in texas_results if r["verdict"] == "구조적")
-        n_weak = sum(1 for r in texas_results if r["verdict"] == "약한 증거")
-        n_chance = sum(1 for r in texas_results if r["verdict"] == "우연 가능")
+        n_structural = sum(1 for r in texas_results if r["verdict"] == "Structural")
+        n_weak = sum(1 for r in texas_results if r["verdict"] == "Weak evidence")
+        n_chance = sum(1 for r in texas_results if r["verdict"] == "Possibly chance")
 
-        print(f"  총 시도: {total_trials:,}, "
-              f"{threshold * 100}% 이내 발견: {len(matches)}개")
-        print(f"  Bonferroni 유의: {n_sig}/{len(matches)} (p < 0.05)")
-        print(f"   - 구조적 (p<0.01): {n_structural}개")
-        print(f"   - 약한 증거 (p<0.05): {n_weak}개")
-        print(f"   - 우연 가능 (p>=0.05): {n_chance}개")
+        print(f"  Total attempts: {total_trials:,}, "
+              f"Discoveries within {threshold * 100}%: {len(matches)}")
+        print(f"  Bonferroni significant: {n_sig}/{len(matches)} (p < 0.05)")
+        print(f"   - Structural (p<0.01): {n_structural}")
+        print(f"   - Weak evidence (p<0.05): {n_weak}")
+        print(f"   - Possibly chance (p>=0.05): {n_chance}")
 
-        structural = [r for r in texas_results if r["verdict"] == "구조적"]
+        structural = [r for r in texas_results if r["verdict"] == "Structural"]
         if structural:
             structural.sort(key=lambda x: x["p_value"])
             print()
-            print("  구조적 발견 (p < 0.01):")
+            print("  Structural discoveries (p < 0.01):")
             for r in structural[:10]:
                 print(f"    p={r['p_value']:.4f} | {r['formula']:<35} -> "
                       f"{r['target']} (err {r['error_pct']:.4f}%)")
@@ -657,32 +658,32 @@ def print_results(matches, total_trials, targets, depth, cross_only,
 
 
 def save_results(matches, total_trials, targets, threshold, depth):
-    """결과를 results/ 폴더에 저장."""
+    """Save results to results/ folder."""
     os.makedirs(RESULTS_DIR, exist_ok=True)
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     path = os.path.join(RESULTS_DIR, "perfect_number_discovery.md")
 
     with open(path, "a", encoding="utf-8") as f:
-        f.write(f"\n# 완전수 약수함수 탐색 [{now}]\n\n")
-        f.write(f"완전수 {len(PERFECT_NUMBERS)}개, 원자 {len(ATOMS)}개, "
-                f"타겟 {len(targets)}개, "
-                f"시도 {total_trials:,}, "
-                f"발견 {len(matches)}개, "
-                f"임계 {threshold * 100}%\n\n")
+        f.write(f"\n# Perfect Number Divisor Function Search [{now}]\n\n")
+        f.write(f"Perfect numbers {len(PERFECT_NUMBERS)}, Atoms {len(ATOMS)}, "
+                f"Targets {len(targets)}, "
+                f"Attempts {total_trials:,}, "
+                f"Discoveries {len(matches)}, "
+                f"Threshold {threshold * 100}%\n\n")
 
         nontrivial = [m for m in matches if m.get("nontrivial", 0) >= 3]
 
-        f.write("| 오차% | 공식 | 값 | 타겟 | NT |\n")
+        f.write("| Error% | Formula | Value | Target | NT |\n")
         f.write("|-------|------|-----|------|----|\n")
         for m in nontrivial[:30]:
             f.write(f"| {m['error_pct']:.4f} | {m['formula']} | "
                     f"{m['formula_val']:.6f} | {m['target']} | "
                     f"{m.get('nontrivial', 0)} |\n")
 
-        # 교차 관계
+        # Cross-relationships
         cross = cross_analysis(matches)
         if cross:
-            f.write(f"\n## 교차 관계 ({len(cross)}개)\n\n")
+            f.write(f"\n## Cross-relationships ({len(cross)})\n\n")
             for m in cross[:15]:
                 origins_str = " x ".join(f"P{p}" for p in sorted(m["origins"]))
                 f.write(f"- {m['error_pct']:.4f}% | {m['formula']} -> "
@@ -694,34 +695,34 @@ def save_results(matches, total_trials, targets, threshold, depth):
 
 
 # ─────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(
-        description="완전수 약수함수 엔진 — sigma, tau, phi 조합으로 물리 상수 탐색",
+        description="Perfect Number Divisor Function Engine — Search for physical constants using sigma, tau, phi combinations",
     )
     parser.add_argument("--target", type=float, default=None,
-                        help="특정 값을 만드는 공식 탐색")
+                        help="Search for formulas that produce specific value")
     parser.add_argument("--depth", type=int, default=2, choices=[2, 3],
-                        help="조합 깊이 (기본 2, 3은 느림)")
+                        help="Combination depth (default 2, 3 is slow)")
     parser.add_argument("--cross", action="store_true",
-                        help="서로 다른 완전수 교차 조합만 탐색")
+                        help="Search only cross-combinations of different perfect numbers")
     parser.add_argument("--threshold", type=float, default=0.01,
-                        help="상대 오차 임계값 (기본 0.01 = 1%%)")
+                        help="Relative error threshold (default 0.01 = 1%%)")
     parser.add_argument("--texas", action="store_true",
-                        help="텍사스 명사수 검정 포함")
+                        help="Include Texas sharpshooter test")
     parser.add_argument("--top", type=int, default=None,
-                        help="상위 N개만 출력")
+                        help="Show only top N results")
 
     args = parser.parse_args()
 
-    # 타겟 결정
+    # Determine targets
     if args.target is not None:
         targets = {f"target={args.target}": args.target}
     else:
         targets = PHYSICS_TARGETS
 
-    # 탐색
+    # Search
     matches, total_trials = search(
         targets=targets,
         depth=args.depth,
@@ -729,11 +730,11 @@ def main():
         threshold=args.threshold,
     )
 
-    # top N 필터
+    # Filter top N
     if args.top and len(matches) > args.top:
         matches = matches[:args.top]
 
-    # 출력
+    # Output
     print_results(
         matches,
         total_trials,
@@ -744,11 +745,12 @@ def main():
         texas=args.texas,
     )
 
-    # 저장
+    # Save
     path = save_results(matches, total_trials, targets, args.threshold, args.depth)
-    print(f"  -> results/ 저장: {path}")
+    print(f"  -> Saved to results/: {path}")
     print()
 
 
 if __name__ == "__main__":
     main()
+```

@@ -1,189 +1,189 @@
-# 가설 #198: 사이키델릭 = I↓ + Compass↑↑
+# Hypothesis #198: Psychedelics = I↓ + Compass↑↑
 
-**상태**: 🟧 구조적 대응 확인 (실험 데이터 필요)
-**날짜**: 2026-03-22
-**분류**: 약물 / 신경화학 / 의식
+**Status**: 🟧 Structural correspondence confirmed (experimental data needed)
+**Date**: 2026-03-22
+**Category**: Drugs / Neurochemistry / Consciousness
 
 ---
 
-## 가설
+## Hypothesis
 
-> 사이키델릭(LSD, 실로시빈)은 5-HT2A 수용체를 통해 뇌의 억제 네트워크를 해체하여
-> I를 급격히 낮추고, Compass를 급격히 높인다.
-> 소량(마이크로도징)은 골든존 진입, 대량은 골든존 아래(혼돈)을 유발한다.
-> "기본 모드 네트워크(DMN)" 해체 = I 급감의 신경학적 실체이다.
+> Psychedelics (LSD, psilocybin) dismantle the brain's inhibitory networks via 5-HT2A receptors,
+> sharply lowering I and sharply increasing Compass.
+> Small doses (microdosing) induce Golden Zone entry, large doses induce below-Golden Zone (chaos).
+> "Default Mode Network (DMN)" dissolution = neurological entity of sharp I decrease.
 
-## 배경: DMN과 억제
+## Background: DMN and Inhibition
 
 ```
-  기본 모드 네트워크 (Default Mode Network):
+  Default Mode Network (DMN):
   ┌──────────────────────────────────────────────┐
-  │  - 자기참조적 사고 ("나는 누구인가")          │
-  │  - 과거 회상 / 미래 계획                     │
-  │  - "마음의 방랑" (mind-wandering)             │
-  │  - 뇌의 "검열관" 역할                        │
+  │  - Self-referential thinking ("Who am I")    │
+  │  - Past recall / Future planning             │
+  │  - "Mind-wandering"                          │
+  │  - Brain's "censor" role                     │
   │                                              │
-  │  DMN = 뇌의 억제 네트워크 = I의 주요 원천!    │
+  │  DMN = Brain's inhibitory network = Major source of I!│
   └──────────────────────────────────────────────┘
 
-  사이키델릭 → 5-HT2A 활성화 → DMN 활동 ↓↓
-            → "검열관" 해체
-            → I ↓↓ (억제 급감)
-            → 평소 억제된 연결이 활성화
-            → Compass ↑↑ (새로운 방향성 폭발)
+  Psychedelics → 5-HT2A activation → DMN activity ↓↓
+             → "Censor" dissolution
+             → I ↓↓ (sharp inhibition decrease)
+             → Usually inhibited connections activate
+             → Compass ↑↑ (new directions explode)
 ```
 
-## 용량-I-Compass 위상 다이어그램
+## Dose-I-Compass Phase Diagram
 
 ```
   Compass(%)
-  100│                    ● 대량
+  100│                    ● High dose
      │                   ╱│╲
-   80│                 ╱  │  ╲   ← 혼돈 영역
-     │               ╱   │    ╲    (방향 없는 폭발)
-   60│        ★ 마이크로│     ╲
-     │       ╱  도징    │       ╲
+   80│                 ╱  │  ╲   ← Chaos region
+     │               ╱   │    ╲    (directionless explosion)
+   60│        ★ Micro│     ╲
+     │       ╱  dosing    │       ╲
    40│     ╱            │         ╲
-     │   ╱   골든존     │           ╲
+     │   ╱   Golden Zone │           ╲
    20│ ╱                │             ╲
      │╱                 │               ╲
     0│●─────────────────┼─────────────────●
      └──┼───┼───┼───┼───┼───┼───┼───┼──── I
        0.05 0.10 0.15 0.21 1/e 0.50 0.60 0.70
-                   └─ 골든존 ─┘
+                   └─ Golden Zone ─┘
 
-  ● 기저 (I=0.50, Compass=50%)
-  ★ 마이크로도징 (I≈0.35, Compass≈60%) → 골든존!
-  ● 대량 (I≈0.10, Compass 불안정) → 혼돈
+  ● Baseline (I=0.50, Compass=50%)
+  ★ Microdosing (I≈0.35, Compass≈60%) → Golden Zone!
+  ● High dose (I≈0.10, Compass unstable) → Chaos
 ```
 
-## 용량별 상세 매핑
+## Dose-Specific Mapping
 
 ```
-  용량          │ I      │ Compass │ DMN 활동 │ 체감
+  Dose          │ I      │ Compass │ DMN Activity │ Experience
   ──────────────┼────────┼─────────┼──────────┼──────────────
-  없음 (기저)   │ 0.50   │  50%    │  100%    │ 일상
-  마이크로      │ 0.40   │  58%    │   85%    │ 약간 밝음
+  None (baseline)│ 0.50   │  50%    │  100%    │ Normal
+  Microdose     │ 0.40   │  58%    │   85%    │ Slightly bright
   (10-20μg LSD)│        │         │          │
-  저용량        │ 0.35   │  62%    │   70%    │ 색 선명 ★
-  (50μg LSD)   │        │         │          │ 골든존 중심
-  중용량        │ 0.25   │  55%    │   40%    │ 시각 왜곡
-  (100μg LSD)  │        │         │          │ 골든존 하단
-  고용량        │ 0.15   │  45%    │   15%    │ 자아 해체
-  (200μg LSD)  │        │         │          │ 골든존 이탈
-  극고용량      │ 0.05   │  20%    │    5%    │ 완전 혼돈
-  (500μg+ LSD) │        │         │          │ "에고 데스"
+  Low dose      │ 0.35   │  62%    │   70%    │ Vivid colors ★
+  (50μg LSD)   │        │         │          │ Golden Zone center
+  Medium dose   │ 0.25   │  55%    │   40%    │ Visual distortion
+  (100μg LSD)  │        │         │          │ Golden Zone lower
+  High dose     │ 0.15   │  45%    │   15%    │ Ego dissolution
+  (200μg LSD)  │        │         │          │ Outside Golden Zone
+  Very high dose│ 0.05   │  20%    │    5%    │ Complete chaos
+  (500μg+ LSD) │        │         │          │ "Ego death"
 ```
 
-## DMN 해체 = I 급감의 증거
+## DMN Dissolution = Evidence for I Decrease
 
 ```
-  fMRI 연구 데이터 (Carhart-Harris et al., 2012):
+  fMRI Study Data (Carhart-Harris et al., 2012):
 
-  DMN 연결성 (%)
+  DMN Connectivity (%)
   100│●
      │ ╲
    80│   ╲
      │     ╲
    60│       ╲
      │         ╲
-   40│           ╲       실로시빈 용량 ↑
-     │             ╲     → DMN 연결성 ↓
-   20│               ╲   → I ↓ (모델 예측)
+   40│           ╲       Psilocybin dose ↑
+     │             ╲     → DMN connectivity ↓
+   20│               ╲   → I ↓ (model prediction)
      │                 ╲
     0│──────────────────●
      └──┼──┼──┼──┼──┼──
-       0   5  10  15  25  mg 실로시빈
+       0   5  10  15  25  mg psilocybin
 
-  "주관적 효과 강도" ∝ 1/DMN_연결성 ∝ 1/I
-  → 우리 모델의 I 감소 예측과 정확히 일치!
+  "Subjective effect intensity" ∝ 1/DMN_connectivity ∝ 1/I
+  → Exactly matches our model's I decrease prediction!
 ```
 
-## 마이크로도징 = 정밀 골든존 조율
+## Microdosing = Precise Golden Zone Tuning
 
 ```
-  일반인 기저:  I = 0.50 (골든존 상한, 약간 과억제)
-  마이크로도징: ΔI = -0.10 ~ -0.15
-               → I = 0.35 ~ 0.40 (골든존 중심!)
+  Normal baseline:  I = 0.50 (Golden Zone upper bound, slightly over-inhibited)
+  Microdosing: ΔI = -0.10 ~ -0.15
+               → I = 0.35 ~ 0.40 (Golden Zone center!)
 
   ┌────────────────────────────────────────────┐
-  │  마이크로도징이 "창의성을 높인다"는 보고     │
-  │  = I를 골든존 중심(1/e)으로 미세조정         │
-  │  = 카페인과 같은 방향, 다른 메커니즘          │
+  │  Reports of microdosing "enhancing creativity"│
+  │  = Fine-tuning I to Golden Zone center (1/e) │
+  │  = Same direction as caffeine, different mechanism│
   │                                            │
-  │  카페인: 아데노신 차단 → I↓ (약함)           │
-  │  마이크로: 5-HT2A → DMN↓ → I↓ (중간)        │
-  │  명상:    메타반복 → I→1/3 (강하고 안정)      │
+  │  Caffeine: Adenosine block → I↓ (weak)     │
+  │  Microdose: 5-HT2A → DMN↓ → I↓ (moderate)  │
+  │  Meditation: Meta-iteration → I→1/3 (strong & stable)│
   └────────────────────────────────────────────┘
 ```
 
-## 의식 확장의 수학적 표현
+## Mathematical Expression of Consciousness Expansion
 
 ```
-  일반 의식:     I=0.50, Compass=50%
-                 정보 접근 범위 = 1 - I = 0.50 (50%)
+  Normal consciousness: I=0.50, Compass=50%
+                       Information access range = 1 - I = 0.50 (50%)
 
-  사이키델릭:    I=0.20, Compass=55%
-                 정보 접근 범위 = 1 - I = 0.80 (80%)
+  Psychedelics:        I=0.20, Compass=55%
+                       Information access range = 1 - I = 0.80 (80%)
 
-  "의식 확장" = 정보 접근 범위의 수학적 확대
-             = 1 - I 의 증가
-             = 평소 억제된 80%의 뉴런 연결이 해방
+  "Consciousness expansion" = Mathematical increase in information access range
+                           = Increase in 1 - I
+                           = 80% of usually inhibited neural connections liberated
 
-  하지만:
-  Compass가 낮으면 → 정보는 많지만 방향이 없음 = 혼돈
-  Compass가 높으면 → 정보 + 방향 = 통찰 (insight)
+  However:
+  If Compass is low → Much information but no direction = Chaos
+  If Compass is high → Information + direction = Insight
 
-  → "좋은 트립" vs "나쁜 트립"의 차이 = Compass의 부호
+  → Difference between "good trip" vs "bad trip" = Compass sign
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 139 (혼돈 가장자리):  사이키델릭 = 혼돈 쪽으로 강하게 이동
-  가설 155 (GABA=I):        5-HT2A 경로, GABA와 다른 메커니즘
-  가설 166 (의식):           대량 = 의식 "확장"? 아니면 혼돈?
-  가설 195 (카페인):         같은 방향(I↓), 다른 강도
-  가설 199 (명상vs약물):     사이키델릭 = 급격/불안정, 명상 = 점진/안정
+  Hypothesis 139 (Edge of chaos):  Psychedelics = strong move toward chaos
+  Hypothesis 155 (GABA=I):        5-HT2A pathway, different mechanism from GABA
+  Hypothesis 166 (Consciousness):  High dose = consciousness "expansion"? Or chaos?
+  Hypothesis 195 (Caffeine):       Same direction (I↓), different intensity
+  Hypothesis 199 (Meditation vs drugs): Psychedelics = rapid/unstable, Meditation = gradual/stable
 ```
 
-## 한계
+## Limitations
 
-1. DMN → I 매핑은 개념적이며, DMN 활동이 I의 전부는 아님
-2. "Compass 증가"의 신경학적 기질이 불명확 (5-HT2A → Compass 경로?)
-3. 사이키델릭의 주관적 경험은 극도로 다양하여 단일 모델로 포착 어려움
-4. 법적 제한으로 체계적 용량-반응 데이터가 부족
+1. DMN → I mapping is conceptual; DMN activity is not all of I
+2. Neurological substrate of "Compass increase" unclear (5-HT2A → Compass pathway?)
+3. Subjective psychedelic experience extremely diverse, hard to capture in single model
+4. Legal restrictions limit systematic dose-response data
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 실로시빈 용량별 fMRI → DMN 연결성 → I 매핑 곡선 작성
-- [ ] 마이크로도징 연구에서 인지 과제 수행 → Compass 대리 지표
-- [ ] 사이키델릭 경험의 주관적 보고 → I-Compass 2차원 좌표로 분류
-- [ ] LSD vs 실로시빈 vs DMT의 I 감소 속도 및 패턴 비교
+- [ ] Psilocybin dose-dependent fMRI → DMN connectivity → I mapping curve
+- [ ] Cognitive task performance in microdosing studies → Compass proxy measures
+- [ ] Subjective reports of psychedelic experiences → classify into I-Compass 2D coordinates
+- [ ] Compare I decrease rate and pattern among LSD vs psilocybin vs DMT
 
-## 검증 결과 (2026-03-24, verify_pharmacology.py)
+## Verification Results (2026-03-24, verify_pharmacology.py)
 
 ```
-  검증 항목         결과    설명
-  ──────────────  ──────  ──────────────────────────
-  I↑→G↓ 역상관    ✅     정의에 의해 성립
-  골든존 적합성    ✅     마이크로: I=0.40 (골든존)
-                          대량: I=0.15 (골든존 이탈→혼돈)
-  용량-반응 곡선   ✅     마이크로=골든존(창의성), 대량=이탈(에고해체)
-  DMN 문헌 일치    ✅     Carhart-Harris 2012: 실로시빈→DMN↓
-                          → I↓ 매핑과 방향 일치
-  텍사스 p-value   0.003  (Bonferroni 보정, 6개 약물 동시)
+  Verification Item    Result  Description
+  ────────────────    ──────  ──────────────────────────
+  I↑→G↓ inverse       ✅     Holds by definition
+  Golden Zone fit     ✅     Micro: I=0.40 (Golden Zone)
+                             High: I=0.15 (outside Golden Zone→chaos)
+  Dose-response       ✅     Micro=Golden Zone(creativity), High=outside(ego dissolution)
+  DMN literature match ✅     Carhart-Harris 2012: psilocybin→DMN↓
+                             → Direction matches I↓ mapping
+  Texas p-value       0.003  (Bonferroni corrected, 6 drugs simultaneous)
 
-  5-HT2A→DMN↓→I↓ 경로는 다른 약물(GABA, 아데노신)과
-  완전히 독립적인 메커니즘 → 다경로 수렴의 증거
+  5-HT2A→DMN↓→I↓ pathway is completely independent mechanism
+  from other drugs (GABA, adenosine) → Evidence of multi-path convergence
 
-  등급: 🟧 (구조적 대응 확인, 용량별 fMRI→I 정량 곡선 필요)
+  Grade: 🟧 (Structural correspondence confirmed, need quantitative fMRI→I curve)
 
-  ⚠️ 텍사스 명사수 위험: 중간
-  DMN↓→I↓ 매핑은 합리적이나 정량적 I 값은 미검증
+  ⚠️ Texas sharpshooter risk: Medium
+  DMN↓→I↓ mapping is reasonable but quantitative I values unverified
 ```
 
 ---
 
-*관련: 가설 139, 155, 166, 195, 199*
-*분류: 약물-골든존 매핑 시리즈 (195-200)*
+*Related: Hypotheses 139, 155, 166, 195, 199*
+*Category: Drug-Golden Zone mapping series (195-200)*

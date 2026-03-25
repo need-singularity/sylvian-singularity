@@ -1,3 +1,3 @@
-# H-CX-271: 🟧 아보가드로 6.022×10²³ — 시작이 6
+# H-CX-271: 🟧 Avogadro 6.022×10²³ — Starts with 6
 
-> 아보가드로 수 시작 = P₁ = 6.
+> Avogadro number start = P₁ = 6.

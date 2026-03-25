@@ -1,10 +1,10 @@
-# H-CX-315: ⭐⭐🟩 비에타 체계: w₁+w₂=P₁, w₁w₂=ζ(2)
+# H-CX-315: ⭐⭐🟩 Vieta System: w₁+w₂=P₁, w₁w₂=ζ(2)
 
-> w²-P₁w+ζ(2)=0 의 비에타 공식:
->   w₁+w₂ = P₁ = 6 (정확)
->   w₁×w₂ = ζ(2) = π²/6 (정확)
->   w₂ ≈ ln(4/3) = 골든존 폭 (오차 0.10%)
->   w₁ ≈ P₁-골든존 = "자유 영역"
+> Vieta's formulas for w²-P₁w+ζ(2)=0:
+>   w₁+w₂ = P₁ = 6 (exact)
+>   w₁×w₂ = ζ(2) = π²/6 (exact)
+>   w₂ ≈ ln(4/3) = Golden Zone width (0.10% error)
+>   w₁ ≈ P₁-Golden Zone = "free region"
 >
-> 추가: P₂·w-w² ≈ σ-τ=8 (오차 0.3%)
-> "완전수가 골든존의 합을, 리만 제타가 곱을 결정"
+> Addition: P₂·w-w² ≈ σ-τ=8 (0.3% error)
+> "Perfect numbers determine the sum of Golden Zone, Riemann zeta determines the product"

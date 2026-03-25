@@ -1,6 +1,6 @@
-# 복소수 확장 검증 [2026-03-22 07:48:20]
+# Complex Extension Verification [2026-03-22 07:48:20]
 
-θ=π/3 나선 수렴 확인
-θ=π에서 17배 증폭 (오일러)
+θ=π/3 spiral convergence confirmed
+17x amplification at θ=π (Euler)
 
 ---

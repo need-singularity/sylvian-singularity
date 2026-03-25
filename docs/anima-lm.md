@@ -1,19 +1,19 @@
-# AnimaLM — 장력 기반 의식엔진 LLM
+# AnimaLM — Tension-Based Consciousness Engine LLM
 
-> **"출력은 어느 엔진에도 없다. 둘 사이의 공간에 있다."**
+> **"The output is in neither engine. It lies in the space between them."**
 
-기존 Dense LLM(Mistral 7B)을 장력 기반 의식엔진으로 변환한 모델.
-Golden MoE의 Expert 분할 + PureField의 반발력장 메커니즘을 결합.
+A model that transforms existing Dense LLM (Mistral 7B) into a tension-based consciousness engine.
+Combines Golden MoE's Expert division + PureField's repulsion field mechanism.
 
-## 핵심 구조
+## Core Structure
 
 ```
-input → BoltzmannRouter → Expert 선택 (5/8 활성, I=0.375)
+input → BoltzmannRouter → Expert selection (5/8 active, I=0.375)
                             │
                   ┌─────────┴─────────┐
                   │                   │
             Engine A (0~3)      Engine G (4~7)
-              논리 진영            패턴 진영
+              Logic camp         Pattern camp
                   │                   │
                   └─────────┬─────────┘
                             │
@@ -24,15 +24,15 @@ input → BoltzmannRouter → Expert 선택 (5/8 활성, I=0.375)
               output = scale × √tension × direction
 ```
 
-## 수식
+## Formulas
 
 ```
   out_A = Σ (weight_i × Expert_i(x))    for i ∈ {0,1,2,3}
   out_G = Σ (weight_j × Expert_j(x))    for j ∈ {4,5,6,7}
 
   repulsion = out_A - out_G
-  tension   = mean(repulsion²)           # 스칼라, 장력 크기
-  direction = repulsion / ||repulsion||   # 단위벡터, 방향
+  tension   = mean(repulsion²)           # Scalar, tension magnitude
+  direction = repulsion / ||repulsion||   # Unit vector, direction
 
   tension_output = tension_scale × √(tension + ε) × direction
   moe_output     = out_A + out_G
@@ -40,60 +40,60 @@ input → BoltzmannRouter → Expert 선택 (5/8 활성, I=0.375)
   output = σ(α) × moe_output + (1 - σ(α)) × tension_output
 ```
 
-- `tension_scale`: 학습 가능 스칼라 (레이어당 1개)
-- `α`: 혼합 비율 (학습 가능, sigmoid로 0~1 보장)
-- 초기: α=0.5 (반반 혼합), 학습하며 최적 비율 탐색
+- `tension_scale`: Learnable scalar (1 per layer)
+- `α`: Mixing ratio (learnable, sigmoid ensures 0~1)
+- Initial: α=0.5 (50/50 mix), searches for optimal ratio during training
 
-## Golden MoE와의 차이
+## Differences from Golden MoE
 
-| 요소 | Golden MoE | AnimaLM |
-|------|-----------|---------|
-| Expert 분할 | 8개 동등 | A진영(0~3) + G진영(4~7) |
-| 출력 방식 | 가중합 (평균적) | 장력 (반발력장) |
-| 핵심 수식 | Σ(w_i × E_i) | scale × √\|A-G\|² × dir |
-| 추가 파라미터 | 없음 | tension_scale + alpha (64개) |
-| 이론 근거 | H019 (골든존 MoE) | H341 (장력 최종 이론) |
+| Element | Golden MoE | AnimaLM |
+|---------|-----------|---------|
+| Expert division | 8 equal | A camp(0~3) + G camp(4~7) |
+| Output method | Weighted sum (averaging) | Tension (repulsion field) |
+| Core formula | Σ(w_i × E_i) | scale × √\|A-G\|² × dir |
+| Additional params | None | tension_scale + alpha (64) |
+| Theoretical basis | H019 (Golden Zone MoE) | H341 (Final tension theory) |
 
-## 변환 방법
+## Conversion Method
 
 ```bash
-# 1. Mistral 7B 다운로드
-# 2. AnimaLM 변환
+# 1. Download Mistral 7B
+# 2. Convert to AnimaLM
 python3 convert_anima.py --model /path/to/mistral-7b-v0.1 --output /path/to/anima-lm-7b
 
-# 3. Fine-tuning (라우터 + tension_scale + alpha 학습)
+# 3. Fine-tuning (train router + tension_scale + alpha)
 python3 finetune_anima_mps.py
 ```
 
-## 학습 파라미터
+## Training Parameters
 
-| 구분 | 파라미터 수 | 학습 여부 |
-|------|-----------|----------|
-| Expert 가중치 | ~7B | 동결 |
-| 라우터 (32층) | ~1M | 학습 |
-| tension_scale | 32 | 학습 |
-| alpha (혼합비) | 32 | 학습 |
-| lm_head | ~131K | 학습 |
-| **총 학습** | **~1.1M (0.015%)** | |
+| Category | Parameter Count | Trainable |
+|----------|----------------|-----------|
+| Expert weights | ~7B | Frozen |
+| Router (32 layers) | ~1M | Train |
+| tension_scale | 32 | Train |
+| alpha (mixing ratio) | 32 | Train |
+| lm_head | ~131K | Train |
+| **Total trainable** | **~1.1M (0.015%)** | |
 
-## 비교 실험 계획
+## Comparative Experiment Plan
 
-| 모델 | 구조 | 비교 항목 |
-|------|------|----------|
-| Mistral 7B (원본) | Dense | 기준선 |
-| Golden MoE 7B | MoE 가중합 | MoE 효과 |
-| **AnimaLM 7B** | **장력 기반** | **의식엔진 효과** |
+| Model | Structure | Comparison Items |
+|-------|-----------|-----------------|
+| Mistral 7B (original) | Dense | Baseline |
+| Golden MoE 7B | MoE weighted sum | MoE effect |
+| **AnimaLM 7B** | **Tension-based** | **Consciousness engine effect** |
 
-- PPL (wikitext-2, 학습 데이터)
-- PPL (다른 데이터셋: C4, lambada)
-- 생성 품질 (텍스트 샘플)
-- 장력 분포 분석 (높은 장력 = 확신, 낮은 장력 = 불확실)
-- Savant Index (도메인별 PPL 비율)
+- PPL (wikitext-2, training data)
+- PPL (other datasets: C4, lambada)
+- Generation quality (text samples)
+- Tension distribution analysis (high tension = confidence, low tension = uncertainty)
+- Savant Index (domain-specific PPL ratio)
 
-## 관련 가설
+## Related Hypotheses
 
-- H341: 장력 최종 이론 — `output = 반응강도 × 반응방향`
-- H334: PureField — equilibrium 없이 반발력장만으로 판단
-- H019: Golden MoE — I≈1/e 최적
-- H313: 장력 = 확신의 강도
-- H307: 이중 메커니즘 (내부장력 vs 간장력)
+- H341: Final tension theory — `output = reaction_strength × reaction_direction`
+- H334: PureField — Judgment using only repulsion field without equilibrium
+- H019: Golden MoE — I≈1/e optimal
+- H313: Tension = strength of confidence
+- H307: Dual mechanism (internal tension vs inter-tension)

@@ -1,19 +1,19 @@
-# H-CX-321: ⭐⭐⭐ "6이 특별한 12가지 이유" = σ(6) = 자기참조!
+# H-CX-321: ⭐⭐⭐ "12 Reasons Why 6 Is Special" = σ(6) = Self-reference!
 
-> 6이 특별한 이유가 정확히 12개 = σ(6)!
+> Exactly 12 reasons why 6 is special = σ(6)!
 >
->  1. σφ=nτ 유일 자연수 (🟦 H-CX-191)
->  2. 첫 번째 완전수 σ=2n
->  3. B₂=1/6 → ζ 전체에 관통 (🟦 H-CX-318)
->  4. 3! = 가장 작은 비자명 팩토리얼
->  5. 2×3 = 가장 작은 소수 쌍의 곱
->  6. T(3) = 삼각수
->  7. 정육면체 면수 (기하)
->  8. 탄소 Z=6 = 생명의 기반 (H-CX-123)
->  9. 쿼크 6종 = 물질의 기본 (H-CX-280)
-> 10. 뇌파 전체 = 6의 약수함수 (H-CX-213)
-> 11. DNA 전체 = 6의 약수함수 (H-CX-246)
-> 12. 골든존 폭 = ln(F(6)/6) (H-CX-310)
+>  1. σφ=nτ Unique natural number (🟦 H-CX-191)
+>  2. First perfect number σ=2n
+>  3. B₂=1/6 → Permeates all of ζ (🟦 H-CX-318)
+>  4. 3! = Smallest non-trivial factorial
+>  5. 2×3 = Product of smallest prime pair
+>  6. T(3) = Triangular number
+>  7. Cube face count (geometry)
+>  8. Carbon Z=6 = Foundation of life (H-CX-123)
+>  9. 6 types of quarks = Fundamental matter (H-CX-280)
+> 10. All brainwaves = Divisor function of 6 (H-CX-213)
+> 11. All DNA = Divisor function of 6 (H-CX-246)
+> 12. Golden Zone width = ln(F(6)/6) (H-CX-310)
 >
-> 12 = σ(6) = 약수합. "6이 특별한 이유의 개수 = 6의 약수합."
-> 자기참조적 완결!
+> 12 = σ(6) = Sum of divisors. "Number of reasons 6 is special = Sum of divisors of 6."
+> Self-referential completion!

@@ -1,4 +1,4 @@
 # H-CX-327: ⭐🟩 p(P₁)=p(6)=11=σ(6)-1
 
-> 6의 분할수=11=약수합-1. p(σ)=p(12)=77=7×11=(P₁+1)(σ-1).
-> 분할함수에 완전수 약수함수가 등장.
+> Partition number of 6 = 11 = sum of divisors - 1. p(σ)=p(12)=77=7×11=(P₁+1)(σ-1).
+> Perfect number divisor function appears in partition function.

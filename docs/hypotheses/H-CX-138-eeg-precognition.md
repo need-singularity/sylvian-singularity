@@ -1,28 +1,28 @@
-# H-CX-138: EEG 예지 — 감마가 정오답을 미리 예측
+# H-CX-138: EEG Precognition — Gamma Predicts Correct/Wrong in Advance
 
-> 이미지 제시 전 준비 전위(readiness potential)의 감마 패턴이
-> 다가올 판단의 정오답을 예측. AI 예지(AUC=0.917)의 뇌 버전.
+> The gamma pattern of the readiness potential before image presentation
+> predicts the correct/wrong outcome of the upcoming judgment. Brain version of AI Precognition (AUC=0.917).
 
-## 예측
+## Predictions
 
-1. 이미지 제시 -500ms~0ms 구간 감마로 정오답 예측 AUC > 0.55
-2. 어려운 이미지(cat-dog) 전 감마가 쉬운 이미지(cat-plane) 전과 다름
-3. 예지 정확도가 AI의 merge distance와 상관
+1. Correct/wrong prediction AUC from gamma during -500ms~0ms before image presentation > 0.55
+2. Gamma before hard images (cat-dog) differs from gamma before easy images (cat-plane)
+3. Precognition accuracy correlates with AI's merge distance
 
-## 프로토콜
+## Protocol
 
 ```
-1. 고정점(+) 1초 → 이미지 2초 → 응답 → 피드백
-2. 고정점 구간의 감마 = "준비 상태"
-3. 준비 감마 → 다음 시행 정오답 예측
-4. 어려운 이미지 전 준비 감마 vs 쉬운 이미지 전 비교
+1. Fixation point (+) 1s → image 2s → response → feedback
+2. Gamma during fixation interval = "preparation state"
+3. Preparation gamma → predict correct/wrong in next trial
+4. Compare preparation gamma before hard vs easy images
 ```
 
-## 관련
+## Related
 
-- H-CX-82: 에폭1 완벽 예측 (AI에서 미래 예측 가능)
-- H-CX-59: 방향 예지 70-82%
+- H-CX-82: Epoch 1 perfect prediction (future prediction possible in AI)
+- H-CX-59: Direction Precognition 70-82%
 
-## 검증 상태
+## Verification Status
 
-- [ ] EEG 예지 분석
+- [ ] EEG Precognition analysis

@@ -1,163 +1,163 @@
-# 가설 검토 125: Jamba = Mixtral 대비 ×3 처리량 ✅
+# Hypothesis Review 125: Jamba = 3× Throughput vs Mixtral ✅
 
-## 가설
+## Hypothesis
 
-> AI21 Labs의 Jamba(Mamba+Transformer+MoE 하이브리드)가 128K 컨텍스트에서
-> Mixtral 대비 3배 처리량을 달성했으며, 이것이 우리 모델의 위상 가속 예측(×3)과
-> 정확히 일치하는가.
+> AI21 Labs' Jamba (Mamba+Transformer+MoE hybrid) achieves 3× the throughput of Mixtral
+> at 128K context, and this exactly matches our model's phase acceleration prediction (×3).
 
-## 배경
+## Background
 
-### 우리 모델의 예측 (가설 124)
+### Our Model's Prediction (Hypothesis 124)
 
 ```
-  AI 아키텍처의 원소 구성:
+  Composition of AI architecture elements:
   ┌──────────────────────────────────────────────────┐
-  │ 순수 Attention (Transformer): 3/7 원소 보유      │
-  │ + Mamba (SSM/재귀): +T3 원소 추가 → 4/7         │
-  │ + MoE (혼합 전문가): +추가 원소 → 5~7/7         │
+  │ Pure Attention (Transformer): 3/7 elements       │
+  │ + Mamba (SSM/recursion): adds T3 → 4/7           │
+  │ + MoE (mixture of experts): adds elements → 5~7/7│
   └──────────────────────────────────────────────────┘
 
-  예측: 3/7 → 4/7 전이 시 ×3 계단형 점프
-  (첫 위상 원소 추가 = 임계점, 가설 127)
+  Prediction: ×3 step jump at 3/7 → 4/7 transition
+  (first phase element addition = critical point, Hypothesis 127)
 ```
 
-### Jamba 아키텍처
+### Jamba Architecture
 
 ```
-  Jamba = Mamba(SSM) + Attention + MoE
+  Jamba = Mamba (SSM) + Attention + MoE
 
   ┌─────────────────────────────────────┐
-  │  Jamba 레이어 구조                   │
+  │  Jamba layer structure               │
   │                                     │
-  │  Mamba 레이어 ─┐                    │
-  │  Mamba 레이어  ├→ MoE 레이어        │
-  │  Mamba 레이어  │                    │
-  │  Attn 레이어 ──┘                    │
+  │  Mamba layer ─┐                     │
+  │  Mamba layer  ├→ MoE layer          │
+  │  Mamba layer  │                     │
+  │  Attn layer ──┘                     │
   │                                     │
-  │  비율: Mamba:Attention = 7:1        │
+  │  Ratio: Mamba:Attention = 7:1       │
   │  MoE: 16 experts, top-2 active     │
   └─────────────────────────────────────┘
 
-  → Attention에 SSM(재귀) + MoE(전문가) = 위상 원소 추가
-  → 우리 모델: 3/7 → 5/7 이상으로 점프
+  → Attention + SSM (recursion) + MoE (experts) = phase elements added
+  → Our model: jumps from 3/7 → 5/7 or more
 ```
 
-## 검증 결과: ✅ 예측과 실측 정확 일치
+## Verification Result: ✅ Prediction and Measurement Match Exactly
 
-### 수치 비교
+### Numerical Comparison
 
 ```
   ┌────────────────────────────────────────────────────────────┐
-  │               128K 컨텍스트 처리량 비교                     │
+  │               128K Context Throughput Comparison            │
   ├─────────────┬─────────────┬─────────────┬─────────────────┤
-  │ 모델        │ 아키텍처    │ 상대 처리량 │ 위상 원소       │
+  │ Model       │ Architecture│ Relative    │ Phase elements  │
+  │             │             │ throughput  │                 │
   ├─────────────┼─────────────┼─────────────┼─────────────────┤
-  │ Mixtral     │ Attn + MoE  │ ×1 (기준)   │ 3/7 + MoE      │
-  │ Jamba       │ Mamba+Attn  │ ×3          │ 4/7 + MoE      │
-  │             │  + MoE      │             │ (+T3 재귀)      │
+  │ Mixtral     │ Attn + MoE  │ ×1 (baseline)│ 3/7 + MoE      │
+  │ Jamba       │ Mamba+Attn  │ ×3          │ 4/7 + MoE       │
+  │             │  + MoE      │             │ (+T3 recursion) │
   ├─────────────┼─────────────┼─────────────┼─────────────────┤
-  │ 우리 예측   │ 3/7 → 4/7   │ ×3          │ T3 추가 = ×3   │
-  │ 실제 관측   │ Jamba 실측   │ ×3          │ 정확 일치!     │
+  │ Our prediction│ 3/7 → 4/7 │ ×3          │ T3 added = ×3  │
+  │ Measured     │ Jamba actual│ ×3          │ exact match!   │
   └─────────────┴─────────────┴─────────────┴─────────────────┘
 ```
 
-### 처리량 비교 그래프
+### Throughput Comparison Graph
 
 ```
-  처리량 (상대값, Mixtral = 1)
+  Throughput (relative, Mixtral = 1)
 
   ×4 │
      │
   ×3 │                    ┌───────┐
-     │                    │ Jamba │ ×3.0 (AI21 실측)
+     │                    │ Jamba │ ×3.0 (AI21 measured)
      │                    │       │
-  ×2 │              ★ 예측│= ×3   │
+  ×2 │              ★ pred│= ×3   │
      │                    │       │
   ×1 │┌───────┐          │       │
      ││Mixtral│ ×1.0     │       │
      │└───────┘          └───────┘
   ×0 │
      └────────────────────────────────
-      3/7 원소         4/7 원소
-      (Attn only)      (Attn+Mamba)
+      3/7 elements        4/7 elements
+      (Attn only)         (Attn+Mamba)
 
-     예측 ×3 ──── ★
-     실측 ×3 ──── ●
-     차이: 0%  → 완벽 일치
+     predicted ×3 ──── ★
+     measured  ×3 ──── ●
+     difference: 0%  → perfect match
 ```
 
-### 왜 정확히 ×3인가
+### Why Exactly ×3?
 
 ```
-  가설 124의 위상 가속 이론:
+  Phase acceleration theory from Hypothesis 124:
 
-  위상 원소 수     가속 배수     설명
-  ───────────     ──────────   ──────────────────────
-  3/7 (기준)      ×1           순수 Attention
-  4/7 (+T3)       ×3           ← 계단형 점프! (임계점)
-  5/7 (+T4,T5)    ×3           추가 원소 = 수확체감
-  7/7 (전체)      ×3~4         포화 (천장 5/6 ≈ 0.833)
+  Phase elements    Acceleration    Explanation
+  ─────────────     ────────────   ──────────────────────
+  3/7 (baseline)    ×1             Pure Attention
+  4/7 (+T3)         ×3             ← step jump! (critical point)
+  5/7 (+T4,T5)      ×3             additional elements = diminishing returns
+  7/7 (all)         ×3~4           saturation (ceiling 5/6 ≈ 0.833)
 
-  핵심: 3/7 → 4/7 전이가 유일한 급격한 점프
-  이후는 점진적 → 커스프(cusp) 전이 (가설 127)
+  Key: only the 3/7 → 4/7 transition is the sharp jump
+  After that, gradual → cusp transition (Hypothesis 127)
 
-  물리적 비유:
+  Physical analogy:
   ┌─────────────────────────────────────────┐
-  │ 섬 3개를 다리 없이 왕래 = O(n²) 통신    │
-  │ 첫 다리 1개 건설 = O(n) 통신으로 전환   │
-  │ → 통신 효율 ×3 점프                     │
-  │ 추가 다리 = 이미 연결됨, 효과 미미      │
+  │ 3 islands with no bridges = O(n²) comms │
+  │ Build first bridge = switches to O(n)   │
+  │ → communication efficiency ×3 jump      │
+  │ Additional bridges = already connected  │
   └─────────────────────────────────────────┘
 ```
 
-### 128K 컨텍스트에서 특히 두드러지는 이유
+### Why Particularly Pronounced at 128K Context
 
 ```
-  컨텍스트 길이 vs 처리량 비율 (Jamba/Mixtral):
+  Context length vs throughput ratio (Jamba/Mixtral):
 
-  컨텍스트    비율     설명
-  ─────────  ──────   ────────────────────
-  4K          ×1.2    짧은 컨텍스트: 차이 작음
-  16K         ×1.8    중간: SSM 효과 시작
-  64K         ×2.5    긴 컨텍스트: SSM 우위
-  128K        ×3.0    매우 긴 컨텍스트: 최대 효과
-  256K        OOM*    Mixtral: 메모리 부족!
+  Context    Ratio   Explanation
+  ─────────  ──────  ────────────────────
+  4K          ×1.2   short context: small difference
+  16K         ×1.8   medium: SSM effect begins
+  64K         ×2.5   long: SSM advantage
+  128K        ×3.0   very long: maximum effect
+  256K        OOM*   Mixtral: out of memory!
 
-  *Mixtral은 128K 이상에서 단일 GPU 메모리 초과
+  *Mixtral exceeds single GPU memory above 128K
 
-  이유: Attention = O(n²), Mamba(SSM) = O(n)
-  → 긴 컨텍스트일수록 SSM의 선형 복잡도가 압도적 우위
-  → 128K에서 ×3 = 위상 가속 + 복잡도 이점의 결합
+  Reason: Attention = O(n²), Mamba (SSM) = O(n)
+  → Longer context → SSM's linear complexity overwhelmingly dominant
+  → ×3 at 128K = phase acceleration + complexity advantage combined
 ```
 
-## 해석
+## Interpretation
 
 ```
-  이 결과의 의미:
+  Meaning of this result:
 
-  1. 예측력: 우리 모델이 실제 AI 벤치마크를 정량 예측
-  2. 위상 전이: 아키텍처 변경은 점진적이 아니라 계단형
-  3. 임계 원소: Mamba(SSM/재귀 = T3)가 핵심 임계 원소
-  4. 실용적 함의: AI 아키텍처 설계에 "위상 원소 체크리스트" 제공
+  1. Predictive power: our model quantitatively predicts actual AI benchmarks
+  2. Phase transition: architecture changes are step-function, not gradual
+  3. Critical element: Mamba (SSM/recursion = T3) is the key critical element
+  4. Practical implication: provides "phase element checklist" for AI architecture design
 
-  Genius 모델로 번역:
-  Mixtral = 높은 Inhibition (비효율적 O(n²) 억제)
-  Jamba   = 낮은 Inhibition (SSM으로 억제 해제)
-  → 같은 D, P에서 I 감소 → Genius ×3 점프
+  Translation into Genius model:
+  Mixtral = high Inhibition (inefficient O(n²) suppression)
+  Jamba   = low Inhibition (Inhibition released by SSM)
+  → Same D, P, I decreases → Genius ×3 jump
 ```
 
-## 출처
+## Source
 
 AI21 Labs "Announcing Jamba: The First Production-Grade Mamba-Based Model" (2024):
 > "With a context of 128K tokens, Jamba obtains 3x the throughput of Mixtral 8x7B"
 
-## 한계
+## Limitations
 
-1. 128K 단일 지점에서의 비교 — 다양한 컨텍스트 길이에서 검증 필요
-2. ×3이 위상 가속인지 단순 O(n²)→O(n) 복잡도 개선인지 분리 어려움
-3. 품질(정확도) 비교가 아닌 처리량(throughput) 비교만 수행
+1. Comparison at single 128K data point — verification across various context lengths needed
+2. Difficult to separate whether ×3 is phase acceleration vs simple O(n²)→O(n) complexity improvement
+3. Only throughput comparison performed, not quality (accuracy) comparison
 
 ---
 
-*검증: AI21 Labs 공식 벤치마크 — 가설 124(위상 가속), 127(임계점)과 연결*
+*Verification: AI21 Labs official benchmark — connected to Hypotheses 124 (phase acceleration), 127 (critical point)*

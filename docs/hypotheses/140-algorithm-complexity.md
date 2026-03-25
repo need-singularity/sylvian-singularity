@@ -1,53 +1,53 @@
-# 가설 검토 140: 골든 MoE 알고리즘 복잡도
+# Hypothesis Review 140: Golden MoE Algorithm Complexity
 
-## 가설
+## Hypothesis
 
-> 골든 MoE의 정확도 이득이 알고리즘 복잡도 증가를 정당화하는가.
+> Does the accuracy gain of Golden MoE justify the increase in algorithm complexity?
 
-## 복잡도 비교
+## Complexity Comparison
 
 ```
-  라우팅 복잡도 (N = Expert 수):
+  Routing complexity (N = number of Experts):
 
   Top-K:
-    점수 계산: O(N)
-    상위 K 선택: O(N log K)  ← K=2면 O(N)
-    총: O(N)
+    Score calculation: O(N)
+    Top K selection:   O(N log K)  ← O(N) for K=2
+    Total:             O(N)
 
-  볼츠만:
-    점수 계산: O(N)
-    softmax: O(N)
-    상위 70% 선택: O(N log N)
-    총: O(N log N)
+  Boltzmann:
+    Score calculation: O(N)
+    softmax:           O(N)
+    Top 70% selection: O(N log N)
+    Total:             O(N log N)
 
-  차이: O(log N) — N=8이면 log₂8 = 3배
+  Difference: O(log N) — 3× for N=8 since log₂8 = 3
 ```
 
-## 실측 시간 비교
+## Measured Time Comparison
 
 ```
-  MNIST (10 에폭):
-    Top-K:    31.3초
-    볼츠만:   31.3초
-    → 실측 차이 없음! (O(log N) 오버헤드가 미미)
+  MNIST (10 epochs):
+    Top-K:    31.3 seconds
+    Boltzmann: 31.3 seconds
+    → No measurable difference! (O(log N) overhead is negligible)
 
-  이유: N=8로 작아서 라우팅 비용 < 전체 연산의 1%
-  대규모(N=64+): 라우팅 비용이 커질 수 있음
+  Reason: N=8 is small, so routing cost < 1% of total computation
+  Large scale (N=64+): Routing cost may become significant
 ```
 
-## 정확도/복잡도 트레이드오프
+## Accuracy/Complexity Tradeoff
 
 ```
-  정확도 이득 / 복잡도 비용:
+  Accuracy gain / complexity cost:
 
-  MNIST:   +0.6% / O(1)  = 공짜 개선
-  CIFAR:   +4.8% / O(1)  = 공짜 개선
-  대규모:  +10%? / O(log N) = 여전히 가치 있음
+  MNIST:      +0.6% / O(1)     = free improvement
+  CIFAR:      +4.8% / O(1)     = free improvement
+  Large scale: +10%? / O(log N) = still worthwhile
 
-  → N이 작으면(≤64) 볼츠만 라우팅 비용 무시 가능
-  → 정확도 이득이 비용을 압도
+  → For small N (≤64), Boltzmann routing cost is negligible
+  → Accuracy gain overwhelms the cost
 ```
 
 ---
 
-*검증: golden_moe_torch.py 실측 시간*
+*Verification: measured time from golden_moe_torch.py*

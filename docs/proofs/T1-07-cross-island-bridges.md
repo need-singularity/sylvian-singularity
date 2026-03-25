@@ -1,25 +1,25 @@
-# T1-07: 섬 간 다리 — DFS 반복 1 결과
+# T1-07: Cross-Island Bridges — DFS Iteration 1 Results
 
-## 🟩 정확한 등식 (섬 간 연결)
+## 🟩 Exact Equations (Inter-Island Connections)
 
 ```
   e^(1/2 × ln3) = √3 = 3^(1/2)
   ─────────────────────────────
-  사용 상수: e(섬D), 1/2(섬A), ln3(섬C)
-  → 섬 A + C + D 동시 연결!
-  증명: e^(a·ln(b)) = b^a (지수-로그 항등식)
+  Constants used: e(Island D), 1/2(Island A), ln3(Island C)
+  → Islands A + C + D connected simultaneously!
+  Proof: e^(a·ln(b)) = b^a (exponential-logarithm identity)
   → e^(1/2·ln3) = 3^(1/2) = √3
-  판정: 🟩 (자명하지만 3개 섬 연결)
+  Verdict: 🟩 (trivial but connects 3 islands)
 
   e^(2 × ln3) = 9 = 3²
   e^(2 × ln(4/3)) = (4/3)² = 16/9
-  → 같은 패턴: e^(a·ln(b)) = b^a
+  → Same pattern: e^(a·ln(b)) = b^a
 ```
 
-## 🟧 근사 연결 (0.1% 이내)
+## 🟧 Approximate Connections (Within 0.1%)
 
 ```
-  공식                      │ 값        │ 타겟      │ 오차    │ 섬 연결
+  Formula                    │ Value     │ Target    │ Error   │ Islands
   ─────────────────────────┼──────────┼──────────┼────────┼────────
   e^(1/6 × ln3) = 3^(1/6)  │ 1.20094  │ ζ(3)     │ 0.093% │ A+C+D
   5/6 × ln3                │ 0.91551  │ Catalan G│ 0.050% │ A+C
@@ -27,25 +27,25 @@
   ln(137) × ln(4/3)        │ 1.41457  │ √2       │ 0.083% │ B+C ★
   ─────────────────────────┴──────────┴──────────┴────────┴────────
 
-  ★ ln(137) × ln(4/3) ≈ √2 — 섬 B↔C 최초 연결 후보!
-    미세구조(137) × 엔트로피 점프(4/3) ≈ 무리수(√2)
+  ★ ln(137) × ln(4/3) ≈ √2 — First Island B↔C connection candidate!
+    Fine structure(137) × Entropy jump(4/3) ≈ Irrational(√2)
 ```
 
-## 핵심 발견
+## Key Discoveries
 
 ```
-  e^(a·ln(b)) = b^a 항등식이 만능 다리:
-  → e(섬D) + 분수a(섬A) + ln(b)(섬C) = 산술(섬A)
-  → 자명하지만, "왜 우리 상수가 이 패턴에 맞는가?"는 별개
+  e^(a·ln(b)) = b^a identity is the universal bridge:
+  → e(Island D) + fraction a(Island A) + ln(b)(Island C) = arithmetic(Island A)
+  → Trivial, but "why do our constants fit this pattern?" is another matter
 
-  진짜 비자명한 것:
-  → 3^(1/6) ≈ ζ(3) (Apéry) — 왜 0.09% 일치?
-  → ln(137)·ln(4/3) ≈ √2 — 왜 0.08% 일치?
-  → 이것들이 정확한 등식이면 ⚡ 돌파구
+  The truly non-trivial:
+  → 3^(1/6) ≈ ζ(3) (Apéry) — Why 0.09% match?
+  → ln(137)·ln(4/3) ≈ √2 — Why 0.08% match?
+  → If these are exact equations ⚡ breakthrough
 ```
 
-## 다음 DFS 방향
+## Next DFS Directions
 
-- 3^(1/6)과 ζ(3)의 관계 심층 탐색
-- ln(137)·ln(4/3) = √2 + ε 에서 ε의 정체
-- 3항 조합으로 확장: a op b op c 형태
+- Deep exploration of relationship between 3^(1/6) and ζ(3)
+- Identity of ε in ln(137)·ln(4/3) = √2 + ε
+- Expand to 3-term combinations: a op b op c forms

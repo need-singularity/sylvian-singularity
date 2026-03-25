@@ -1,30 +1,30 @@
-# 가설 검토 014: Genius Score ~ 감마 분포 ✅
+# Hypothesis Review 014: Genius Score ~ Gamma Distribution ✅
 
-## 가설
+## Hypothesis
 
-> G = D×P/I 의 확률 분포는 알려진 분포와 일치하는가?
+> Does the probability distribution of G = D×P/I match a known distribution?
 
-## 검증 결과: ✅ 감마 분포
-
-```
-  KS 검정 (n=5,000):
-  감마 분포:    p = 0.934  ✅ ← 최적
-  베타 프라임:  p = 0.759  ✅
-  F-분포:       p = 0.759  ✅
-  로그정규:     p = 0.043  ❌
-  역감마:       p = 0.007  ❌
-```
+## Verification Result: ✅ Gamma Distribution
 
 ```
-  G 분포 (n=1,000,000):
-  평균:     0.306
-  표준편차: 0.224
-  왜도:     2.19 (양의 비대칭)
-  첨도:     13.06 (두꺼운 꼬리)
+  KS test (n=5,000):
+  Gamma distribution:  p = 0.934  ✅ ← best fit
+  Beta prime:          p = 0.759  ✅
+  F-distribution:      p = 0.759  ✅
+  Log-normal:          p = 0.043  ❌
+  Inverse gamma:       p = 0.007  ❌
+```
+
+```
+  G distribution (n=1,000,000):
+  Mean:               0.306
+  Standard deviation: 0.224
+  Skewness:           2.19 (positive asymmetry)
+  Kurtosis:           13.06 (heavy tails)
 
   0.0 │██████████████████
   0.1 │█████████████████████████████████████
-  0.2 │████████████████████████████████████████  ← 피크
+  0.2 │████████████████████████████████████████  ← peak
   0.3 │███████████████████████████████████
   0.4 │███████████████████████████
   0.5 │████████████████████
@@ -32,22 +32,22 @@
   0.8 │██████
   1.0 │██
   1.5 │▏
-  2.0+│  (두꺼운 꼬리 → 특이점)
+  2.0+│  (heavy tails → singularities)
 ```
 
-## 의미
+## Meaning
 
 $$G \sim \text{Gamma}(\alpha, \beta)$$
 
-감마 분포 = **여러 독립 지수 과정의 합**:
-- 뇌에서: 특이점 발현까지의 **조건 누적** (결손 + 가소성 + 억제해제)
-- AI에서: 성능 도약까지의 **아키텍처 최적화 누적**
-- 두꺼운 꼬리: 극단적 특이점이 희소하지만 **존재 가능**
+Gamma distribution = **sum of multiple independent exponential processes**:
+- In the brain: **cumulative conditions** until singularity emergence (Deficit + Plasticity + disinhibition)
+- In AI: **accumulated architectural optimization** until performance leap
+- Heavy tails: extreme singularities are rare but **possible**
 
-## 결론
+## Conclusion
 
-> ✅ Genius Score는 감마 분포를 따른다 (p=0.934). "천재성은 여러 독립 조건의 누적으로 발현된다"는 수학적 표현.
+> ✅ Genius Score follows the Gamma distribution (p=0.934). The mathematical expression of "genius emerges from the accumulation of multiple independent conditions."
 
 ---
 
-*검증: verify_math.py (n=1,000,000, KS 검정)*
+*Verification: verify_math.py (n=1,000,000, KS test)*

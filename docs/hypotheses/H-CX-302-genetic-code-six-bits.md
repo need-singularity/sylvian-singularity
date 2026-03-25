@@ -1,3 +1,3 @@
-# H-CX-302: ⭐🟩 유전코드 = P₁ bits = log₂(64) = 6
+# H-CX-302: ⭐🟩 Genetic Code = P₁ bits = log₂(64) = 6
 
-> 64코돈=2⁶=2^P₁. 정보량=P₁=6bits. 생물+정보+수학 삼중 교차.
+> 64 codons=2⁶=2^P₁. Information content=P₁=6bits. Biology+information+mathematics triple intersection.

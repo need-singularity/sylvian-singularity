@@ -1,95 +1,95 @@
-# T1-04: G ~ Γ(α=2) (감마분포 형상모수의 수학적 결정)
+# T1-04: G ~ Γ(α=2) (Mathematical Determination of Gamma Distribution Shape Parameter)
 
-## 명제
+## Proposition
 
-D, P ~ Uniform(0,1) 독립일 때, G ∝ D×P의 분포에서 α=2는 수학적으로 결정된다.
+When D, P ~ Uniform(0,1) independent, α=2 is mathematically determined in the distribution of G ∝ D×P.
 
-## 단계 1: D×P의 PDF
+## Step 1: PDF of D×P
 
-X = D × P, 여기서 D, P ~ U(0,1) 독립.
+X = D × P, where D, P ~ U(0,1) independent.
 
 ```
 f_X(x) = -ln(x),  0 < x < 1
 ```
 
-유도: F_X(x) = P(DP ≤ x) = x - x·ln(x) (직접 적분으로 확인)
-미분하면 f_X(x) = -ln(x).
+Derivation: F_X(x) = P(DP ≤ x) = x - x·ln(x) (verified by direct integration)
+Differentiating gives f_X(x) = -ln(x).
 
-## 단계 2: 로그 변환
+## Step 2: Log Transform
 
-Y = -ln(X) = -ln(D×P)로 변환:
+Transform Y = -ln(X) = -ln(D×P):
 
 ```
 Y = -ln(D) + (-ln(P))
 ```
 
-## 단계 3: 각 항의 분포
+## Step 3: Distribution of Each Term
 
-역변환 정리에 의해 U ~ U(0,1)이면:
+By the inverse transform theorem, if U ~ U(0,1):
 
 ```
 -ln(U) ~ Exp(1)
 ```
 
-증명:
+Proof:
 
 ```
 P(-ln(U) ≤ y) = P(U ≥ e⁻ʸ) = 1 - e⁻ʸ,  y ≥ 0
 ```
 
-이것은 Exp(1)의 CDF이다. ✓
+This is the CDF of Exp(1). ✓
 
-## 단계 4: 합의 분포
+## Step 4: Distribution of Sum
 
 ```
--ln(D) ~ Exp(1)  (독립)
--ln(P) ~ Exp(1)  (독립)
+-ln(D) ~ Exp(1)  (independent)
+-ln(P) ~ Exp(1)  (independent)
 ```
 
-T0-07 (감마-지수 합 정리)에 의해:
+By T0-07 (Gamma-Exponential Sum Theorem):
 
 ```
 Y = -ln(D) + (-ln(P)) ~ Γ(2, 1)
 ```
 
-형상모수 α = 2는 **합하는 항의 개수**에서 결정된다.
+Shape parameter α = 2 is determined by **the number of terms summed**.
 
-## 단계 5: α=2의 필연성
+## Step 5: Necessity of α=2
 
-| 변수 개수 | 곱 | -ln(곱) | 분포 |
+| Number of Variables | Product | -ln(Product) | Distribution |
 |-----------|-----|---------|------|
-| 1개 (D만) | D | -ln(D) | Γ(1,1) = Exp(1) |
-| **2개 (D×P)** | **D×P** | **-ln(D)-ln(P)** | **Γ(2,1)** |
-| 3개 | D×P×Q | -ln(D)-ln(P)-ln(Q) | Γ(3,1) |
+| 1 (D only) | D | -ln(D) | Γ(1,1) = Exp(1) |
+| **2 (D×P)** | **D×P** | **-ln(D)-ln(P)** | **Γ(2,1)** |
+| 3 | D×P×Q | -ln(D)-ln(P)-ln(Q) | Γ(3,1) |
 
-α = (독립 균등분포 변수의 개수). 모델이 D와 P 2개를 사용하므로 α = 2.
+α = (number of independent uniform variables). Since the model uses 2 variables D and P, α = 2.
 
-## 수치 검증
+## Numerical Verification
 
-시뮬레이션 (N = 100,000):
+Simulation (N = 100,000):
 
 ```
-D, P ~ U(0,1) 독립 생성
+Generate D, P ~ U(0,1) independent
 G = D × P
--ln(G)에 Γ(α, β) 적합
+Fit Γ(α, β) to -ln(G)
 ```
 
-| 모수 | 이론값 | 추정값 |
+| Parameter | Theoretical Value | Estimated Value |
 |------|--------|--------|
 | α | 2.00 | 2.03 |
 | β | 1.00 | 1.01 |
 
-KS 검정: D = 0.0041, p = 0.934
+KS test: D = 0.0041, p = 0.934
 
-p = 0.934 ≫ 0.05 → Γ(2,1) 기각 불가 ✓
+p = 0.934 ≫ 0.05 → Cannot reject Γ(2,1) ✓
 
-## 근거
+## References
 
-- 역변환 정리 (확률론 기본)
-- T0-07 (감마-지수 합 정리)
-- Kolmogorov-Smirnov 검정
+- Inverse transform theorem (Basic probability theory)
+- T0-07 (Gamma-Exponential Sum Theorem)
+- Kolmogorov-Smirnov test
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T0-07 (Γ(n,λ) = n개 Exp(λ)의 합)
-- T1-03 (보존법칙: G×I = D×P)
+- T0-07 (Γ(n,λ) = sum of n Exp(λ))
+- T1-03 (Conservation law: G×I = D×P)

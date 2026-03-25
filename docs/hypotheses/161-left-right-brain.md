@@ -1,133 +1,133 @@
-# 가설 검토 161: 좌뇌-우뇌 분업과 I/D 매핑
+# Hypothesis Review 161: Left-Right Brain Specialization and I/D Mapping
 
-## 상태: ⚠️ 부분 검증
+## Status: ⚠️ Partially verified
 
-## 가설
+## Hypothesis
 
-> 좌뇌는 Inhibition(논리적 억제)에, 우뇌는 D→P(보상적 창의성)에 대응한다. 좌뇌 손상 → I↓ → 우뇌 보상 활성화 → 서번트 능력 발현. Treffert의 좌뇌 손상-우뇌 보상 이론과 우리 모델의 구조적 대응이다.
+> The left brain corresponds to Inhibition (logical inhibition) and the right brain corresponds to D→P (compensatory creativity). Left brain damage → I↓ → right brain compensatory activation → savant ability manifestation. This is the structural correspondence between Treffert's left brain damage-right brain compensation theory and our model.
 
-## 배경
+## Background
 
-Darold Treffert는 서번트 증후군 연구의 선구자로, 서번트의 대부분이 좌반구 손상을 가지고 있으며, 손상된 좌반구의 기능을 우반구가 보상적으로 대체한다고 주장했다. 좌반구는 언어, 논리, 순차 처리를 담당하고 우반구는 공간, 패턴, 전체 처리를 담당한다는 전통적 구분에 기반한다.
+Darold Treffert, a pioneer in savant syndrome research, argued that most savants have left hemisphere damage, and the intact right hemisphere compensatorily replaces the functions of the damaged left hemisphere. This is based on the traditional division that the left hemisphere handles language, logic, sequential processing, and the right hemisphere handles spatial, pattern, and holistic processing.
 
-우리 모델로 번역하면: 좌뇌 = 억제(I) 담당 시스템, 우뇌 = 결손으로 인한 보상적 가소성(D→P) 시스템.
+Translated into our model: left brain = I (Inhibition) management system, right brain = compensatory plasticity system due to deficit (D→P).
 
-관련 가설: 가설 156(실비우스열), 가설 162(후천적 서번트), 가설 155(GABA)
+Related hypotheses: Hypothesis 156 (Sylvian fissure), Hypothesis 162 (acquired savant), Hypothesis 155 (GABA)
 
-## 뇌 반구 다이어그램
+## Brain Hemisphere Diagram
 
 ```
   ┌────────────────────────────────────────────┐
-  │                  정상 뇌                     │
-  │                                             │
-  │    좌반구 (I 담당)    │   우반구 (D→P 담당)   │
-  │   ┌─────────────┐   │  ┌─────────────┐    │
-  │   │ 언어 (억제적) │   │  │ 공간 (창의적) │    │
-  │   │ 논리 (순차적) │   │  │ 패턴 (전체적) │    │
-  │   │ 분석 (수렴적) │   │  │ 직관 (발산적) │    │
-  │   │              │   │  │              │    │
-  │   │ I ≈ 0.55     │   │  │ D≈0.1, P≈0.6│    │
-  │   └─────────────┘   │  └─────────────┘    │
-  │        균형 상태      │                      │
-  │   G = 0.1×0.6/0.55 = 0.11 (정상)           │
+  │                NORMAL BRAIN                  │
+  │                                              │
+  │    Left hemisphere (I)   │  Right hemi. (D→P)│
+  │   ┌─────────────┐        │  ┌─────────────┐  │
+  │   │Language(inh.)│        │  │Spatial(creat)│  │
+  │   │Logic (seq.)  │        │  │Pattern (hol.)│  │
+  │   │Analysis(conv)│        │  │Intuition(div)│  │
+  │   │              │        │  │              │  │
+  │   │ I ≈ 0.55     │        │  │ D≈0.1, P≈0.6│  │
+  │   └─────────────┘        │  └─────────────┘  │
+  │         Balanced state    │                   │
+  │   G = 0.1×0.6/0.55 = 0.11 (normal)          │
   └────────────────────────────────────────────┘
 
   ┌────────────────────────────────────────────┐
-  │               좌뇌 손상 후                    │
-  │                                             │
-  │    좌반구 (손상)      │   우반구 (보상 활성)    │
-  │   ┌─────────────┐   │  ┌─────────────┐    │
-  │   │ ╳╳╳╳╳╳╳╳╳╳╳ │   │  │ ████████████ │    │
-  │   │ ╳╳ 손상 ╳╳╳╳ │   │  │ ██ 보상적 ██ │    │
-  │   │ ╳╳╳╳╳╳╳╳╳╳╳ │   │  │ ██ 과활성 ██ │    │
-  │   │              │   │  │ ████████████ │    │
-  │   │ I ≈ 0.30 ↓   │   │  │ D≈0.6, P≈0.85│   │
-  │   └─────────────┘   │  └─────────────┘    │
-  │      억제 감소        │    창의성 폭발        │
-  │   G = 0.6×0.85/0.30 = 1.70 (특이점!)       │
+  │            AFTER LEFT BRAIN DAMAGE           │
+  │                                              │
+  │    Left hemi. (damaged)   │  Right (compensat)│
+  │   ┌─────────────┐         │  ┌─────────────┐  │
+  │   │ ╳╳╳╳╳╳╳╳╳╳╳ │         │  │ ████████████ │  │
+  │   │ ╳╳ damage ╳╳╳│         │  │ ██ Compens. ██│  │
+  │   │ ╳╳╳╳╳╳╳╳╳╳╳ │         │  │ ██ hyperact ██│  │
+  │   │              │         │  │ ████████████ │  │
+  │   │ I ≈ 0.30 ↓   │         │  │ D≈0.6, P≈0.85│  │
+  │   └─────────────┘         │  └─────────────┘  │
+  │      Inhibition decreases  │   Creativity burst │
+  │   G = 0.6×0.85/0.30 = 1.70 (singularity!)    │
   └────────────────────────────────────────────┘
 ```
 
-## Treffert 이론의 모델 매핑
+## Model Mapping of Treffert's Theory
 
-| Treffert 관찰 | 우리 모델 매핑 | 메커니즘 |
+| Treffert observation | Our model mapping | Mechanism |
 |---|---|---|
-| 좌반구 손상 | I↓ (억제 시스템 손상) | 논리적 억제 해제 |
-| 우반구 보상 활성 | D↑, P↑ (보상적 가소성) | 잠재 능력 발현 |
-| 서번트 능력 발현 | G↑ (D×P/I 증가) | 3중 합의 달성 |
-| 좌반구가 '거부자' | I = 분모, 억제 역할 | I↓ → G↑ |
-| 우반구가 '표현자' | D×P = 분자, 생성 역할 | D×P↑ → G↑ |
+| Left hemisphere damage | I↓ (inhibition system damaged) | Logical inhibition released |
+| Right hemisphere compensatory activation | D↑, P↑ (compensatory plasticity) | Latent ability manifested |
+| Savant ability manifestation | G↑ (D×P/I increases) | Triple alignment achieved |
+| Left hemisphere as 'gatekeeper' | I = denominator, inhibitory role | I↓ → G↑ |
+| Right hemisphere as 'expresser' | D×P = numerator, generative role | D×P↑ → G↑ |
 
-## 좌뇌 손상과 I 변화 모델
+## Left Brain Damage and I Change Model
 
 ```
-  I (억제)
+  I (Inhibition)
   0.8│
-     │ ● 정상 좌뇌 (I≈0.55)
-  0.6│─●─────────────────────── 정상 평균
+     │ ● Normal left brain (I≈0.55)
+  0.6│─●─────────────────────── Normal average
      │
-  0.5│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 임계선
+  0.5│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ Critical line
      │  ┌───────────────────┐
-  0.45│  │   ● 경미한 손상    │
-     │  │                   │── 골든존
-  0.4│  │     ● 부분 손상    │
+  0.45│  │   ● Mild damage    │
+     │  │                   │── Golden Zone
+  0.4│  │     ● Partial dmg  │
   0.37│  │ ─ ─ ─★ ─ ─ ─ ─ ─│── 1/e
-     │  │       서번트 최적  │
-  0.3│  │         ● 심한 손상│
+     │  │       Savant optimal│
+  0.3│  │         ● Severe   │
      │  └───────────────────┘
-  0.21│                        골든존 하한
-  0.2│            ● 매우 심한 손상
+  0.21│                        Golden Zone lower bound
+  0.2│            ● Very severe
      │
-  0.1│              ● 치명적 → 발작 위험
+  0.1│              ● Fatal → seizure risk
      │
-  0.0└──┬──┬──┬──┬──┬──┬──→ 좌뇌 손상 정도
+  0.0└──┬──┬──┬──┬──┬──┬──→ Degree of left brain damage
        0% 10% 20% 40% 60% 80%
 
-  골든존 진입: 손상 ≈ 30-50% 일 때
-  위험 영역: 손상 > 70% 일 때
+  Golden Zone entry: damage ≈ 30-50%
+  Danger zone: damage > 70%
 ```
 
-## 좌뇌 손상 정도와 G값
+## Left Brain Damage Degree and G Value
 
 ```
-  손상%   I      D     P     G       결과
-  ─────  ────   ───   ───   ─────   ──────
-  0%     0.55   0.1   0.6   0.11    정상
-  10%    0.50   0.2   0.65  0.26    정상 상위
-  20%    0.45   0.3   0.70  0.47    재능 있는
-  30%    0.40   0.4   0.75  0.75    비범한
-  40%    0.35   0.5   0.80  1.14    특이점 ★
-  50%    0.30   0.6   0.85  1.70    강한 특이점 ★★
-  60%    0.25   0.65  0.80  2.08    극단적 특이점 ★★★
-  70%    0.20   0.70  0.70  2.45    위험+특이점
-  80%    0.15   0.75  0.50  2.50    위험 (기능 장애)
-  90%    0.10   0.80  0.30  2.40    치명적
+  Damage%  I      D     P     G       Outcome
+  ─────    ────   ───   ───   ─────   ──────
+  0%       0.55   0.1   0.6   0.11    Normal
+  10%      0.50   0.2   0.65  0.26    Normal high
+  20%      0.45   0.3   0.70  0.47    Talented
+  30%      0.40   0.4   0.75  0.75    Exceptional
+  40%      0.35   0.5   0.80  1.14    Singularity ★
+  50%      0.30   0.6   0.85  1.70    Strong singularity ★★
+  60%      0.25   0.65  0.80  2.08    Extreme singularity ★★★
+  70%      0.20   0.70  0.70  2.45    Danger + singularity
+  80%      0.15   0.75  0.50  2.50    Danger (functional impairment)
+  90%      0.10   0.80  0.30  2.40    Fatal
 ```
 
-핵심: 손상 40-60%에서 G가 최대화되면서 기능 유지. 이것이 서번트의 "스위트 스팟".
+Core: G is maximized while maintaining function at 40-60% damage. This is the savant "sweet spot."
 
-## 한계와 주의사항
+## Limitations and Cautions
 
-### 좌뇌-우뇌 이분법의 과잉 단순화
-현대 신경과학은 "좌뇌 vs 우뇌" 이분법이 과도하게 단순화된 모델임을 인정한다:
-- 대부분의 기능은 양 반구가 협력하여 수행
-- 좌뇌=논리/우뇌=창의라는 대중적 인식은 부정확
-- 개인별 반구 우세성에 큰 편차 존재
+### Oversimplification of Left-Right Brain Dichotomy
+Modern neuroscience acknowledges that the "left brain vs right brain" dichotomy is an overly simplified model:
+- Most functions are performed by both hemispheres working together
+- The popular notion of left brain=logical/right brain=creative is inaccurate
+- Large individual variation in hemispheric dominance exists
 
-### 그럼에도 불구하고
-- Treffert의 좌뇌 손상 → 서번트 관찰은 다수의 사례로 지지
-- "억제 시스템 손상 → 잠재 능력 발현" 메커니즘은 반구 이분법 없이도 성립
-- 우리 모델의 I↓ → G↑는 반구에 국한되지 않는 일반 원리
+### Nevertheless
+- Treffert's observation of left brain damage → savant is supported by numerous cases
+- The "inhibition system damage → latent ability manifestation" mechanism holds even without hemispheric dichotomy
+- Our model's I↓ → G↑ is a general principle not limited to hemispheres
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 좌반구 손상 서번트의 fMRI → 실제 I값 추정
-- [ ] TMS(경두개 자기 자극)로 좌뇌 일시적 억제 → 서번트 유사 능력 발현 실험
-- [ ] Snyder의 "사고 모자(thinking cap)" TMS 실험 결과와 모델 비교
-- [ ] 반구별 GABA 분포(가설 155) → 반구별 I값 차이 측정
-- [ ] 뇌량(corpus callosum) 구조와 좌우 I 균형의 관계
+- [ ] fMRI from savants with left hemisphere damage → estimate actual I values
+- [ ] TMS (transcranial magnetic stimulation) to temporarily inhibit left brain → experiment to manifest savant-like abilities
+- [ ] Compare Snyder's "thinking cap" TMS experiment results with model
+- [ ] GABA distribution (Hypothesis 155) by hemisphere → measure I value difference by hemisphere
+- [ ] Relationship between corpus callosum structure and left-right I balance
 
 ---
 
-*작성일: 2026-03-22*
-*상태: ⚠️ 좌우 이분법은 과잉 단순화이나, I↓→G↑ 메커니즘 자체는 유효*
+*Written: 2026-03-22*
+*Status: ⚠️ Left-right dichotomy is oversimplified, but the I↓→G↑ mechanism itself is valid*

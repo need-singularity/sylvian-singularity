@@ -1,177 +1,177 @@
-# 가설 #195: 카페인 = I 미세 감소 + Compass 증가
+# Hypothesis #195: Caffeine = Slight I Decrease + Compass Increase
 
-**상태**: 🟧 구조적 대응 확인 (실험 데이터 필요)
-**날짜**: 2026-03-22
-**분류**: 약물 / 신경화학
+**Status**: 🟧 Structural correspondence confirmed (experimental data needed)
+**Date**: 2026-03-22
+**Category**: Drug / Neurochemistry
 
 ---
 
-## 가설
+## Hypothesis
 
-> 카페인은 아데노신 수용체를 차단하여 억제(I)를 미세하게 감소시키고,
-> 그 결과 Compass(방향성)가 증가한다.
-> 최적 카페인 섭취량은 I를 정확히 1/e로 맞추는 양이다.
+> Caffeine blocks adenosine receptors, slightly reducing Inhibition (I),
+> resulting in increased Compass (directionality).
+> The optimal caffeine intake is the amount that sets I to exactly 1/e.
 
-## 배경
+## Background
 
-카페인은 세계에서 가장 널리 사용되는 정신활성 물질이다.
-아데노신은 뇌의 억제성 신경조절물질로, 각성 뉴런을 억제한다.
-카페인이 아데노신 수용체(A1, A2A)를 차단하면:
+Caffeine is the world's most widely used psychoactive substance.
+Adenosine is an inhibitory neuromodulator in the brain that inhibits arousal neurons.
+When caffeine blocks adenosine receptors (A1, A2A):
 
 ```
-  아데노신 → A1/A2A 수용체 → 억제 신호 → 졸음/피로
+  Adenosine → A1/A2A receptors → Inhibitory signal → Sleepiness/Fatigue
      ↑
-  카페인이 차단 (경쟁적 길항제)
+  Caffeine blocks (competitive antagonist)
      ↓
-  억제 신호 감소 → 각성 상태 유지
+  Reduced inhibitory signal → Maintained arousal state
 ```
 
-## 모델 매핑
+## Model Mapping
 
 ```
-  신경화학               우리 모델        근거
+  Neurochemistry         Our Model        Rationale
   ─────────────         ──────────      ─────────
-  아데노신 농도      →    I (억제지수)    억제성 조절
-  카페인 차단 효과   →    ΔI (I 감소량)   억제 감소
-  각성도/집중력      →    Compass         방향성 지표
-  도파민 방출 증가   →    P 미세 증가     가소성 향상
+  Adenosine level    →    I (Inhibition)   Inhibitory regulation
+  Caffeine blocking  →    ΔI (I decrease)  Reduced inhibition
+  Alertness/Focus    →    Compass          Directionality metric
+  Dopamine release   →    Slight P increase Enhanced plasticity
 ```
 
-## 용량-반응 곡선 (카페인 mg vs I)
+## Dose-Response Curve (Caffeine mg vs I)
 
 ```
-  I (억제지수)
+  I (Inhibition Index)
   0.60│●
      │  ●
-  0.50│────●──────────────────────── 골든존 상한
+  0.50│────●──────────────────────── Golden Zone upper limit
      │      ●
   0.40│        ●
      │          ●
-  1/e│─ ─ ─ ─ ─ ─●─ ─ ─ ─ ─ ─ ─  최적점 (I=1/e)
+  1/e│─ ─ ─ ─ ─ ─●─ ─ ─ ─ ─ ─ ─  Optimal point (I=1/e)
      │              ●
   0.30│                ●
      │                  ●
-  0.21│────────────────────●──────── 골든존 하한
+  0.21│────────────────────●──────── Golden Zone lower limit
      │                      ●
-  0.10│                        ●  ← 과다 (불안/떨림)
+  0.10│                        ●  ← Excessive (anxiety/tremors)
      └──┼──┼──┼──┼──┼──┼──┼──┼──
        0  50 100 150 200 300 400 600
-                카페인 (mg)
+                Caffeine (mg)
 
-  ░░░░░░░░░░░░░░░░░░░░░ = 골든존 영역
+  ░░░░░░░░░░░░░░░░░░░░░ = Golden Zone region
 ```
 
-## 골든존 오버레이 (Compass 동시 표시)
+## Golden Zone Overlay (with Compass display)
 
 ```
   Compass(%)   I
   80│         0.20│
-    │    ╱╲        │        ★ 골든존 (최적)
+    │    ╱╲        │        ★ Golden Zone (optimal)
   60│  ╱    ╲  0.30│   ┌─────────────────────┐
-    │╱   ★  ╲      │   │  카페인 100-200mg   │
-  40│  최적   ╲0.40│   │  I ≈ 0.35-0.40      │
-    │ 영역     ╲   │   │  Compass 최대        │
-  20│           ╲  │   │  = "집중의 흐름"     │
+    │╱   ★  ╲      │   │  Caffeine 100-200mg │
+  40│  Optimal╲0.40│   │  I ≈ 0.35-0.40      │
+    │ Region   ╲   │   │  Maximum Compass    │
+  20│           ╲  │   │  = "Flow of focus"  │
     │            ╲ │   └─────────────────────┘
    0│             ─│
     └──┼──┼──┼──┼──┼──
       0  100 200 400 600
-         카페인 (mg)
+         Caffeine (mg)
 
     ── Compass    ─ ─ I
 ```
 
-## 최적 카페인량 계산
+## Optimal Caffeine Calculation
 
 ```
-  가정: 기저 I₀ = 0.50 (일반 성인, 아침)
-  목표: I_target = 1/e ≈ 0.368
+  Assumption: Baseline I₀ = 0.50 (average adult, morning)
+  Target: I_target = 1/e ≈ 0.368
 
-  ΔI 필요 = 0.50 - 0.368 = 0.132
+  Required ΔI = 0.50 - 0.368 = 0.132
 
-  카페인 1mg당 I 감소율 ≈ 0.001 (추정)
-  필요량 = 0.132 / 0.001 = 132 mg
+  I reduction rate per mg caffeine ≈ 0.001 (estimated)
+  Required amount = 0.132 / 0.001 = 132 mg
 
-  → 커피 1잔 (약 95-150mg) ≈ 최적!
-  → "커피 한 잔"이 최적인 이유가 있었다
+  → 1 cup of coffee (about 95-150mg) ≈ Optimal!
+  → There was a reason why "one cup of coffee" is optimal
 ```
 
-## 시간에 따른 카페인 효과
+## Time Course of Caffeine Effects
 
 ```
   I
-  0.50│●─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─●  기저선
+  0.50│●─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─●  Baseline
      │  ╲                             ╱
   0.45│    ╲                         ╱
      │      ╲                     ╱
-  0.40│        ╲                 ╱        반감기
-     │          ╲             ╱          ≈ 5시간
+  0.40│        ╲                 ╱        Half-life
+     │          ╲             ╱          ≈ 5 hours
   1/e│─ ─ ─ ─ ─ ─●─ ─ ─ ─●─ ─ ─ ─ ─ ─
-     │            │ 골든존 │
-  0.35│            │ 체류  │
-     │            │≈2-3시간│
+     │            │ Golden │
+  0.35│            │  Zone │
+     │            │≈2-3hrs │
      └──┼──┼──┼──┼──┼──┼──┼──┼──┼──
-       0  30  60  90 120 180 240 360 분
-           섭취후 시간 (분)
+       0  30  60  90 120 180 240 360 min
+           Time after intake (min)
 ```
 
-## 카페인 내성과 I 재조정
+## Caffeine Tolerance and I Readjustment
 
 ```
-  반복 섭취 시:
-  Day 1:  I₀=0.50 → 카페인 → I=0.37 (골든존!)
-  Day 7:  I₀=0.48 → 카페인 → I=0.38 (아직 골든존)
-  Day 30: I₀=0.45 → 카페인 → I=0.40 (골든존이지만 약해짐)
-  Day 90: I₀=0.42 → 카페인 → I=0.41 (거의 효과 없음)
+  With repeated intake:
+  Day 1:  I₀=0.50 → Caffeine → I=0.37 (Golden Zone!)
+  Day 7:  I₀=0.48 → Caffeine → I=0.38 (Still Golden Zone)
+  Day 30: I₀=0.45 → Caffeine → I=0.40 (Golden Zone but weakened)
+  Day 90: I₀=0.42 → Caffeine → I=0.41 (Almost no effect)
 
-  → 아데노신 수용체 상향조절 = I₀ 자체가 낮아짐
-  → 뇌가 새로운 기저선을 설정 = 항상성
-  → "내성" = I₀의 하향 이동
+  → Adenosine receptor upregulation = I₀ itself decreases
+  → Brain sets new baseline = Homeostasis
+  → "Tolerance" = Downward shift of I₀
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 155 (GABA=I):    카페인은 GABA가 아닌 아데노신 경로
-  가설 166 (의식):       카페인 = 의식 수준 1→2 전환 촉진
-  가설 194 (시간 인식):  카페인 → I↓ → 시간이 빨리 감 (주관적)
-  가설 199 (명상vs약물): 카페인 = 약한 외부 섭동, 명상과 다른 경로
+  Hypothesis 155 (GABA=I):    Caffeine affects adenosine not GABA pathway
+  Hypothesis 166 (Consciousness): Caffeine = facilitates level 1→2 transition
+  Hypothesis 194 (Time perception): Caffeine → I↓ → Time feels faster (subjective)
+  Hypothesis 199 (Meditation vs drugs): Caffeine = weak external perturbation, different path from meditation
 ```
 
-## 한계
+## Limitations
 
-1. 카페인의 I 감소율(mg당 0.001)은 추정치이며 개인차가 큼
-2. 카페인은 아데노신 외에도 도파민, 노르에피네프린 등 다수 경로에 영향
-3. 유전적 차이(CYP1A2 다형성)로 대사 속도가 2-10배 차이
-4. "커피 한 잔 = 최적"은 후향적 정당화(텍사스 명사수)일 수 있음
+1. Caffeine's I reduction rate (0.001 per mg) is an estimate with high individual variation
+2. Caffeine affects multiple pathways beyond adenosine: dopamine, norepinephrine, etc.
+3. Genetic differences (CYP1A2 polymorphism) cause 2-10x metabolic rate variations
+4. "One cup = optimal" might be post-hoc rationalization (Texas sharpshooter)
 
-## 검증 방향
+## Verification Directions
 
-- [ ] fMRI로 카페인 섭취 전후 GABA/글루타메이트 비율 측정 → I 변화 확인
-- [ ] 카페인 용량별 Compass(집중력/방향성) 측정 실험 설계
-- [ ] CYP1A2 유전형별 최적 카페인량 차이 → I 매핑 차이 확인
-- [ ] 카페인 금단 시 I 반등(rebound) 패턴 측정
+- [ ] fMRI measurement of GABA/glutamate ratios before/after caffeine → Confirm I changes
+- [ ] Design experiments measuring Compass (focus/directionality) by caffeine dose
+- [ ] Confirm optimal caffeine differences by CYP1A2 genotype → I mapping differences
+- [ ] Measure I rebound patterns during caffeine withdrawal
 
-## 검증 결과 (2026-03-24, verify_pharmacology.py)
+## Verification Results (2026-03-24, verify_pharmacology.py)
 
 ```
-  검증 항목         결과    설명
+  Test Item        Result  Explanation
   ──────────────  ──────  ──────────────────────────
-  I↑→G↓ 역상관    ✅     정의에 의해 성립 (G=D×P/I)
-  골든존 적합성    ✅     I=0.50→0.37, 골든존 내부
-  용량-반응 곡선   ✅     지수감소 모델 I=I0*exp(-0.002*mg)
-                          최적 카페인량 = 153mg ≈ 커피 1잔
-  교차 일관성      ✅     다른 약물과 방향/크기 일관
-  텍사스 p-value   0.003  (Bonferroni 보정, 6개 약물 동시)
+  I↑→G↓ inverse   ✅     Holds by definition (G=D×P/I)
+  Golden Zone fit  ✅     I=0.50→0.37, within Golden Zone
+  Dose-response    ✅     Exponential decay model I=I0*exp(-0.002*mg)
+                          Optimal caffeine = 153mg ≈ 1 cup of coffee
+  Cross-consistency ✅     Direction/magnitude consistent with other drugs
+  Texas p-value    0.003  (Bonferroni corrected, 6 drugs simultaneous)
 
-  등급: 🟧 (구조적 대응 확인, fMRI 실측 데이터로 정량 검증 필요)
+  Rating: 🟧 (Structural correspondence confirmed, quantitative verification needed with fMRI data)
 
-  ⚠️ 텍사스 명사수 위험: 중간
-  "커피 한 잔 = 최적"은 사후적 정당화일 가능성 있음
-  CYP1A2 유전형별 최적량 차이로 검증 가능
+  ⚠️ Texas sharpshooter risk: Medium
+  "One cup = optimal" might be post-hoc rationalization
+  Can be verified by CYP1A2 genotype-specific optimal differences
 ```
 
 ---
 
-*관련: 가설 155, 166, 194, 199*
-*분류: 약물-골든존 매핑 시리즈 (195-200)*
+*Related: Hypotheses 155, 166, 194, 199*
+*Category: Drug-Golden Zone mapping series (195-200)*

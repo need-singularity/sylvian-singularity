@@ -1,3 +1,3 @@
-# H-CX-255: 🟩 바리온 5% = P₁-1
+# H-CX-255: 🟩 Baryon 5% = P₁-1
 
-> 우주 바리온 물질 비율 5% = 6-1 = P₁-1.
+> Universe baryon matter ratio 5% = 6-1 = P₁-1.

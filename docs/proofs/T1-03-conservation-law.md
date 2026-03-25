@@ -1,72 +1,72 @@
-# T1-03: G×I = D×P (보존법칙)
+# T1-03: G×I = D×P (Conservation Law)
 
-## 명제
+## Proposition
 
-G = D×P/I의 정의로부터 G×I = D×P이 항등적으로 성립하며, 이는 보존량을 형성한다.
+From the definition G = D×P/I, it follows that G×I = D×P holds identically, forming a conserved quantity.
 
-## 유도
+## Derivation
 
-정의에서 출발:
+Starting from the definition:
 
 ```
 G = (D × P) / I
 ```
 
-양변에 I를 곱하면:
+Multiplying both sides by I:
 
 ```
 G × I = D × P
 ```
 
-이것은 정의에서 직접 유도되는 **항등식**이다. ∎
+This is an **identity** directly derived from the definition. ∎
 
-## 보존량의 의미
-
-```
-Q ≡ G × I = D × P = const  (D, P 고정 시)
-```
-
-- Genius(G)가 증가하면 억제(I)는 반비례적으로 감소
-- 결손(D)과 가소성(P)의 곱은 보존됨
-- 에너지 보존(E_k + E_p = const)과 구조적으로 유사
-
-## 수치 검증
-
-10,000개의 랜덤 (D, P, I) 삼중쌍으로 검증:
+## Meaning of Conserved Quantity
 
 ```
-D, P, I ~ Uniform(0, 1)  독립 추출
+Q ≡ G × I = D × P = const  (when D, P fixed)
+```
+
+- When Genius(G) increases, Inhibition(I) decreases proportionally
+- The product of Deficit(D) and Plasticity(P) is conserved
+- Structurally similar to energy conservation (E_k + E_p = const)
+
+## Numerical Verification
+
+Verified with 10,000 random (D, P, I) triplets:
+
+```
+D, P, I ~ Uniform(0, 1)  independent draws
 G = D × P / I
-검증: |G×I - D×P| < ε
+Verify: |G×I - D×P| < ε
 ```
 
-| 항목 | 값 |
-|------|-----|
-| 시행 횟수 | 10,000 |
-| 위반 건수 | 0 |
-| 최대 절대오차 | 1.11 × 10⁻¹⁶ |
-| 평균 절대오차 | 3.2 × 10⁻¹⁷ |
+| Item | Value |
+|------|-------|
+| Number of trials | 10,000 |
+| Violations | 0 |
+| Maximum absolute error | 1.11 × 10⁻¹⁶ |
+| Mean absolute error | 3.2 × 10⁻¹⁷ |
 
-최대오차 1.11e-16은 IEEE 754 배정밀도 부동소수점의 기계 엡실론(2.22e-16)보다 작다.
+Maximum error 1.11e-16 is smaller than IEEE 754 double-precision machine epsilon (2.22e-16).
 
-## 항등식 vs 물리법칙
+## Identity vs Physical Law
 
-이 보존법칙은 **정의에 의한 항등식**이므로:
+This conservation law is an **identity by definition**, so:
 
-- 반증 불가능 (수학적 참)
-- 모든 D, P, I > 0에서 성립
-- 물리적 보존법칙과 달리 실험적 검증 불필요
+- Cannot be refuted (mathematically true)
+- Holds for all D, P, I > 0
+- Unlike physical conservation laws, no experimental verification needed
 
-그러나 모델 해석에서는:
-- G와 I의 역관계를 명시화
-- 시스템의 자유도 제약 (4변수 → 3 자유도)
+However, in model interpretation:
+- Makes the inverse relationship between G and I explicit
+- Constrains system degrees of freedom (4 variables → 3 degrees of freedom)
 
-## 근거
+## Basis
 
-- 대수적 항등식 (정의에서 직접 유도)
-- IEEE 754 부동소수점 산술 표준
+- Algebraic identity (directly derived from definition)
+- IEEE 754 floating-point arithmetic standard
 
-## 관련 가설/도구
+## Related Hypotheses/Tools
 
-- T0-04 (바나흐 부동점: I* = 1/3)
-- T1-04 (G ~ Γ(α=2): 보존량의 분포)
+- T0-04 (Banach fixed point: I* = 1/3)
+- T1-04 (G ~ Γ(α=2): distribution of conserved quantity)

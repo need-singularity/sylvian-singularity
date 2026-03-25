@@ -1,114 +1,114 @@
-# 가설 265: 1/3 수렴 법칙 [반증됨 — 초기값 편향]
+# Hypothesis 265: 1/3 Convergence Law [Refuted — Initial Value Bias]
 
-> ~~반발력장의 학습된 tension_scale이 1/3에 수렴한다.~~ **반증: 다른 초기값에서 시작하면 다른 값으로 수렴. init-final 상관 0.998. 1/3은 초기값 편향이었다.**
+> ~~The learned tension_scale of repulsion fields converges to 1/3.~~ **Refuted: Starting from different initial values leads to different convergence. init-final correlation 0.998. 1/3 was initial value bias.**
 
-## 배경/맥락
+## Background/Context
 
-프로젝트 전체에서 1/3이 반복 출현:
+1/3 appears repeatedly throughout the project:
 
 ```
-  축소사상 f(x) = 0.7x + 0.1 → 부동점 x* = 1/3
-  메타 라우터 수축 계수: 0.7 → 수렴 목표 1/3
-  반발력장 tension_scale 초기값: 1/3
-  반발력장 tension_scale 학습값: 0.34 (분류, MNIST)
-  생성 엔진 tension_scale 학습값: 0.34 (VAE, MNIST)
-  파이버 곡률 curvature_scale 학습값: 1.58 (발산!)
-  완전수 6: 1/2 + 1/3 + 1/6 = 1 (1/3이 중간 항)
+  Contraction mapping f(x) = 0.7x + 0.1 → Fixed point x* = 1/3
+  Meta router contraction coefficient: 0.7 → Convergence target 1/3
+  Repulsion field tension_scale initial value: 1/3
+  Repulsion field tension_scale learned value: 0.34 (classification, MNIST)
+  Generative engine tension_scale learned value: 0.34 (VAE, MNIST)
+  Fiber curvature curvature_scale learned value: 1.58 (diverged!)
+  Perfect number 6: 1/2 + 1/3 + 1/6 = 1 (1/3 is the middle term)
 ```
 
-관련 가설: 263(장력 통합), 264(설계 원칙), 172(보존법칙)
+Related hypotheses: 263(Tension Integration), 264(Design Principles), 172(Conservation Laws)
 
-## 수렴 데이터
+## Convergence Data
 
-| 모델 | 초기값 | 학습된 값 | 1/3과의 차이 | 데이터셋 |
+| Model | Initial Value | Learned Value | Difference from 1/3 | Dataset |
 |---|---|---|---|---|
 | RepulsionFieldEngine | 1/3 | 0.34 | +0.007 | MNIST |
 | RepulsionFieldQuad | 1/3 | 0.34 | +0.007 | MNIST |
-| RepulsionFieldVAE (생성) | 1/3 | 0.34 | +0.003 | MNIST |
+| RepulsionFieldVAE (generative) | 1/3 | 0.34 | +0.003 | MNIST |
 | **FiberBundleEngine** | **1/3** | **1.58** | **+1.25** | **MNIST** |
 
 ```
-  분류 모델: 1/3 → 0.34 (미세 조정, 1/3 근처 유지)
-  생성 모델: 1/3 → 0.34 (동일)
-  파이버:    1/3 → 1.58 (4.7배 증가, 발산)
+  Classification models: 1/3 → 0.34 (fine-tuning, stays near 1/3)
+  Generative model: 1/3 → 0.34 (same)
+  Fiber:    1/3 → 1.58 (4.7x increase, diverged)
 
-  왜 파이버만 다른가?
+  Why is fiber different?
 ```
 
-## 가설: 1/3은 밑공간의 최적 결합 상수
+## Hypothesis: 1/3 is the Optimal Coupling Constant for Base Space
 
 ```
-  반발력장:  output = equilibrium + scale × tension × direction
+  Repulsion field:  output = equilibrium + scale × tension × direction
 
-  scale이 너무 크면 → 장력이 출력을 지배 → 불안정
-  scale이 너무 작으면 → 장력 정보 소실 → 그냥 평균
-  scale = 1/3 → 최적 균형점
+  If scale too large → tension dominates output → unstable
+  If scale too small → tension information lost → just averaging
+  scale = 1/3 → optimal balance point
 
-  축소사상 관점:
+  From contraction mapping perspective:
     f(w) = a×w + (1-a)×target, a=0.7
-    부동점 = target/(1-a+a) = 0.1/(1-0.7) = 1/3
-    → 수축과 목표의 균형이 1/3에서 달성
+    Fixed point = target/(1-a+a) = 0.1/(1-0.7) = 1/3
+    → Balance between contraction and target achieved at 1/3
 ```
 
-## 파이버 발산의 의미
+## Meaning of Fiber Divergence
 
 ```
-  파이버 번들에서:
+  In fiber bundle:
     base output = equilibrium + curvature_scale × fiber_info
 
-  fiber_info는 base와 다른 차원의 정보.
-  이 정보를 base에 주입하려면 더 큰 스케일이 필요.
+  fiber_info is information from a different dimension than base.
+  To inject this information into base requires larger scale.
 
-  해석 1: 상위 차원 정보는 "작은 신호"가 아니다
-    → 강하게 주입해야 base에 영향을 미침
-    → 1/3으로는 부족, 1.58이 필요
+  Interpretation 1: Higher dimensional info is not a "small signal"
+    → Must inject strongly to affect base
+    → 1/3 insufficient, needs 1.58
 
-  해석 2: 파이버와 밑공간의 차원이 다르면 최적 결합 상수도 다르다
-    → 같은 차원 내 결합: 1/3
-    → 다른 차원 간 결합: ~5/3 ≈ 1.58?
-    → 5/3 = 1 + 2/3 = 1 + 2×(1/3) — 1/3의 변형?
+  Interpretation 2: Different dimensions require different optimal coupling constants
+    → Same dimension coupling: 1/3
+    → Cross-dimension coupling: ~5/3 ≈ 1.58?
+    → 5/3 = 1 + 2/3 = 1 + 2×(1/3) — variation of 1/3?
 
-  해석 3: 초기값 편향
-    → 1/3에서 시작했기 때문에 분류에서는 근처에 머무름
-    → 파이버는 구조가 다르므로 초기값에서 벗어남
-    → 다른 초기값으로 실험 필요
+  Interpretation 3: Initial value bias
+    → Starting from 1/3, classification stays nearby
+    → Fiber has different structure, escapes initial value
+    → Need experiments with different initial values
 ```
 
-## 검증 방향
+## Verification Directions
 
 ```
-  1. tension_scale을 0.1, 0.5, 1.0 등 다른 초기값으로 시작
-     → 여전히 1/3 근처로 수렴하는가?
-  2. 파이버 curvature_scale을 1.0, 2.0에서 시작
-     → 1.58로 수렴하는가, 다른 값인가?
-  3. CIFAR에서 tension_scale 학습값 확인
-     → MNIST와 같은 1/3인가?
-  4. 1/3의 정보이론적 의미 탐색
-     → 3상태 시스템의 최대 엔트로피 기여?
-  5. 5/3 ≈ 1.58 이 다른 맥락에서 나타나는가?
+  1. Start tension_scale from 0.1, 0.5, 1.0 etc.
+     → Does it still converge near 1/3?
+  2. Start fiber curvature_scale from 1.0, 2.0
+     → Does it converge to 1.58, or other values?
+  3. Check tension_scale learned values on CIFAR
+     → Same 1/3 as MNIST?
+  4. Explore information-theoretic meaning of 1/3
+     → Maximum entropy contribution in 3-state system?
+  5. Does 5/3 ≈ 1.58 appear in other contexts?
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. MNIST에서만 확인. 다른 데이터셋에서 재현 필요.
-  2. 초기값이 1/3이므로 초기값 편향 가능성 배제 못함.
-  3. 학습률, 에폭 수 등 하이퍼파라미터에 따라 다를 수 있음.
-  4. "왜 1/3인가"에 대한 수학적 증명 없음.
+  1. Only confirmed on MNIST. Need reproduction on other datasets.
+  2. Initial value was 1/3, cannot exclude initial value bias.
+  3. May vary with hyperparameters like learning rate, epochs.
+  4. No mathematical proof for "why 1/3".
 ```
 
-## 후속 발견: 다른 경로의 1/3 (C41)
+## Subsequent Discovery: 1/3 via Different Path (C41)
 
 ```
-  가설 265 반증: tension_scale ≈ 1/3은 초기값 편향
-  하지만 C41 발견: (T_wrong / T_correct)² ≈ 1/3 (텍사스 p=0.033)
+  Hypothesis 265 refuted: tension_scale ≈ 1/3 was initial value bias
+  But C41 discovered: (T_wrong / T_correct)² ≈ 1/3 (Texas p=0.033)
 
-  스케일(C1-C3): 1/3 → ❌ (초기값 편향)
-  비율(C41):    1/3 → 🟧 (실측, 다른 경로)
+  Scale(C1-C3): 1/3 → ❌ (initial value bias)
+  Ratio(C41):    1/3 → 🟧 (measured, different path)
 
-  해석: 오답의 장력 에너지가 정답의 정확히 1/3
-  에너지 손실: 1 - 1/3 = 2/3 = 1 - 1/3 = CLAUDE.md의 P≠NP 간극비
+  Interpretation: Wrong answer's tension energy is exactly 1/3 of correct
+  Energy loss: 1 - 1/3 = 2/3 = 1 - 1/3 = P≠NP gap ratio from CLAUDE.md
 
-  1/3은 초기값이 아니라 비율에서 나타남.
-  가설 265의 정신은 살아있을 수 있음 — 다른 형태로.
+  1/3 appears not from initial values but from ratios.
+  The spirit of Hypothesis 265 may live on — in a different form.
 ```

@@ -1,21 +1,21 @@
-# H-CX-85: merge dendrogram = 의식 계층 구조
+# H-CX-85: merge dendrogram = consciousness hierarchy structure
 
-> PH single-linkage dendrogram이 의식엔진의 개념 계층을 반영한다.
-> CIFAR: {cat,dog}→동물, {auto,truck}→차량, {plane,ship}→운송수단
-> 의미적 계층이 merge distance에 인코딩.
+> PH single-linkage dendrogram reflects the conceptual hierarchy of the consciousness engine.
+> CIFAR: {cat,dog}→animals, {auto,truck}→vehicles, {plane,ship}→transportation
+> Semantic hierarchy is encoded in merge distance.
 
-## 배경
+## Background
 
-- H-CX-66: merge 순서가 의미적 (cat-dog 가장 먼저)
-- H-TREE: 의식엔진 미발견 가지 트리 구조
+- H-CX-66: merge order is semantic (cat-dog merges first)
+- H-TREE: undiscovered branches in consciousness engine tree structure
 
-## 예측
+## Predictions
 
-1. dendrogram의 subtree가 의미적 카테고리와 일치
-2. CIFAR: 동물(cat,dog,bird,deer,frog,horse), 기계(auto,truck,plane,ship) 2대 클러스터
-3. Fashion: 상의(Tshirt,Pullover,Coat,Shirt), 하의(Trouser,Dress), 신발(Sandal,Sneaker,Boot)
+1. Dendrogram subtrees match semantic categories
+2. CIFAR: Two major clusters - animals (cat,dog,bird,deer,frog,horse), machines (auto,truck,plane,ship)
+3. Fashion: Upper garments (Tshirt,Pullover,Coat,Shirt), lower garments (Trouser,Dress), footwear (Sandal,Sneaker,Boot)
 
-## 검증 상태
+## Verification Status
 
-- [ ] dendrogram 추출
-- [ ] 의미적 카테고리 일치율
+- [ ] Extract dendrogram
+- [ ] Semantic category match rate

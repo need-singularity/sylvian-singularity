@@ -1,180 +1,180 @@
-# 가설 #214: 핵심 소수 {2, 3, 17, 137}
+# Hypothesis #214: Core Primes {2, 3, 17, 137}
 
-**상태**: ✅ 확인
-**날짜**: 2026-03-22
-**분류**: 수론 / 핵심 상수
+**Status**: ✅ Confirmed
+**Date**: 2026-03-22
+**Category**: Number Theory / Core Constants
 
 ---
 
-## 가설
+## Hypothesis
 
-> 우리 모델의 모든 핵심 상수는 4개의 소수 {2, 3, 17, 137}로부터 유도된다.
-> 이 4개 소수는 2→3→17→137의 유도 체인을 형성하며, 각각이 모델의 서로 다른 층위를 결정한다.
+> All core constants of our model are derived from 4 primes {2, 3, 17, 137}.
+> These 4 primes form a derivation chain 2→3→17→137, each determining a different layer of the model.
 
-## 배경
+## Background
 
-우리 모델에서 반복적으로 등장하는 수들을 소인수분해하면, 놀랍게도 극소수의 소수만이 관여한다. 이 소수들은 단순히 "나타나는" 것이 아니라, 각각 물리적·수학적 의미를 갖고 있으며 서로를 유도한다.
+When you factor the numbers that repeatedly appear in our model, surprisingly only a very small number of primes are involved. These primes don't just "appear" — each has a physical/mathematical meaning and derives the others.
 
-## 4개 핵심 소수의 정체
+## Identity of the 4 Core Primes
 
 ```
   ┌────────┬────────────────────┬─────────────────────────────────┐
-  │ 소수   │ 수학적 성질         │ 모델에서의 역할                  │
+  │ Prime  │ Mathematical property│ Role in model                  │
   ├────────┼────────────────────┼─────────────────────────────────┤
-  │   2    │ 유일한 짝수 소수    │ 완전수 6의 소인수, ζ 오일러곱     │
-  │   3    │ 메르센 소수 (2²-1) │ 완전수 6의 소인수, 메타부동점 1/3  │
-  │  17    │ 페르마 소수 (2⁴+1) │ 증폭률 θ=π, 강력 상호작용         │
-  │ 137    │ 미세구조상수 1/α    │ 8×17+1, 우주의 근본 커플링         │
+  │   2    │ only even prime     │ prime factor of perfect number 6, ζ Euler product │
+  │   3    │ Mersenne prime (2²-1)│ prime factor of 6, meta fixed point 1/3 │
+  │  17    │ Fermat prime (2⁴+1) │ amplification rate θ=π, strong interaction │
+  │ 137    │ fine structure constant 1/α│ 8×17+1, universe's fundamental coupling │
   └────────┴────────────────────┴─────────────────────────────────┘
 ```
 
-## 유도 체인: 2 → 3 → 17 → 137
+## Derivation Chain: 2 → 3 → 17 → 137
 
 ```
   2 ──────────→ 3 ──────────→ 17 ──────────→ 137
   │              │              │               │
   │ 2²-1=3      │ 2⁴+1=17     │ 8×17+1=137    │
-  │ (메르센)     │ (페르마)     │ (미세구조)     │
+  │ (Mersenne)  │ (Fermat)    │ (fine structure)│
   │              │              │               │
   ▼              ▼              ▼               ▼
-  짝수의 기초    삼위일체       증폭의 극한     우주의 미세 조율
-  ζ(s) p=2항   ζ(s) p=3항    θ=π 증폭률      α⁻¹=137
+  basis of even  trinity       limit of amp.   universe's fine-tuning
+  ζ(s) p=2 term  ζ(s) p=3 term θ=π amplification α⁻¹=137
 
-  연결 화살표:
-  2 ─[2²-1]─→ 3 ─[3과 2⁴]─→ 17 ─[8×17+1]─→ 137
-      메르센        페르마          미세구조
+  Connection arrows:
+  2 ─[2²-1]─→ 3 ─[3 and 2⁴]─→ 17 ─[8×17+1]─→ 137
+      Mersenne       Fermat           fine structure
 ```
 
-## 각 소수의 상세 분석
+## Detailed Analysis of Each Prime
 
-### 소수 2: 기초
-
-```
-  2 = 유일한 짝수 소수
-  2 → σ₋₁(6) = 1/1 + 1/2 + 1/3 + 1/6 = 2  (완전수의 정의)
-  2 → ζ 오일러곱의 첫 번째 항: (1 - 2⁻ˢ)⁻¹
-  2 → 이진법의 기초 → 정보이론의 bit
-  2 → 골든존 상한 1/2 = 리만 임계선 Re(s) = 1/2
-```
-
-### 소수 3: 균형
+### Prime 2: Foundation
 
 ```
-  3 = 2² - 1 (메르센 소수)
-  3 → 메타부동점 1/3 (축소사상 수렴값)
-  3 → 완전수 6 = 2 × 3
-  3 → ζ 오일러곱의 두 번째 항: (1 - 3⁻ˢ)⁻¹
-  3 → 엔트로피 ln(3) = 3상태 균등분포
-  3 → 위상 가속 ×3 (T₃ 추가 시)
+  2 = only even prime
+  2 → σ₋₁(6) = 1/1 + 1/2 + 1/3 + 1/6 = 2  (definition of perfect number)
+  2 → first term of ζ Euler product: (1 - 2⁻ˢ)⁻¹
+  2 → foundation of binary → bit in information theory
+  2 → Golden Zone upper bound 1/2 = Riemann critical line Re(s) = 1/2
 ```
 
-### 소수 17: 증폭
+### Prime 3: Balance
 
 ```
-  17 = 2⁴ + 1 (페르마 소수, F₂)
-  17 = θ=π 증폭률 (가설 148)
-  17 = 정17각형 작도 가능 (가우스)
+  3 = 2² - 1 (Mersenne prime)
+  3 → meta fixed point 1/3 (contraction mapping convergence value)
+  3 → perfect number 6 = 2 × 3
+  3 → second term of ζ Euler product: (1 - 3⁻ˢ)⁻¹
+  3 → entropy ln(3) = uniform distribution of 3 states
+  3 → phase acceleration ×3 (when T₃ is added)
+```
+
+### Prime 17: Amplification
+
+```
+  17 = 2⁴ + 1 (Fermat prime, F₂)
+  17 = θ=π amplification rate (Hypothesis 148)
+  17 = regular 17-gon constructible (Gauss)
   17 × 8 = 136 → 136 + 1 = 137
-  17 = 강력 상호작용의 내부 구조
+  17 = internal structure of strong interaction
 ```
 
-### 소수 137: 우주의 미세 조율
+### Prime 137: Universe's Fine-Tuning
 
 ```
-  137 = 1/α (미세구조상수의 정수부)
+  137 = 1/α (integer part of fine structure constant)
   137 = 8 × 17 + 1
   137 = 2⁷ + 2³ + 2⁰ = 128 + 8 + 1
-  137 = 10001001₂ (이진 표현)
-  137 - 128 = 9 = 3²  (소수 3의 제곱!)
-  137 = 33번째 소수
+  137 = 10001001₂ (binary representation)
+  137 - 128 = 9 = 3²  (square of prime 3!)
+  137 = 33rd prime
 ```
 
-## 모든 핵심 상수의 소인수 분해
+## Prime Factorization of All Core Constants
 
 ```
   ┌──────────────────┬────────────┬──────────────────────┐
-  │ 상수             │ 값         │ 소인수 분해           │
+  │ Constant         │ Value      │ Prime factorization   │
   ├──────────────────┼────────────┼──────────────────────┤
-  │ 완전수           │ 6          │ 2 × 3                │
-  │ 증폭률           │ 17         │ 17 (소수)            │
-  │ 미세구조         │ 137        │ 137 (소수)           │
-  │ 8 (강력)        │ 8          │ 2³                   │
-  │ σ₋₁(6)          │ 2          │ 2 (소수)             │
-  │ Compass 상한분모 │ 6          │ 2 × 3                │
-  │ 위상가속         │ 3          │ 3 (소수)             │
-  │ 완전수 28        │ 28         │ 2² × 7              │
+  │ Perfect number   │ 6          │ 2 × 3                │
+  │ Amplification    │ 17         │ 17 (prime)           │
+  │ Fine structure   │ 137        │ 137 (prime)          │
+  │ 8 (strong)       │ 8          │ 2³                   │
+  │ σ₋₁(6)          │ 2          │ 2 (prime)            │
+  │ Compass upper denominator│ 6  │ 2 × 3               │
+  │ Phase acceleration│ 3         │ 3 (prime)            │
+  │ Perfect number 28│ 28         │ 2² × 7              │
   └──────────────────┴────────────┴──────────────────────┘
-  → {2, 3, 17, 137} 외 유일한 침입자: 7 (메르센 소수 2³-1)
+  → Only intruder outside {2, 3, 17, 137}: 7 (Mersenne prime 2³-1)
 ```
 
-## 소수 체인 다이어그램
+## Prime Chain Diagram
 
 ```
-  계층         소수     연산        의미
+  Level        Prime    Operation    Meaning
 
-  Level 0      2       ───         존재의 기초 (bit)
+  Level 0       2       ───          foundation of existence (bit)
                │
                ├─[2²-1]
                │
-  Level 1      3       2²-1=3      균형 (trinity)
+  Level 1       3       2²-1=3       balance (trinity)
                │
                ├─[2⁴+1]
                │
-  Level 2     17       2⁴+1=17     증폭 (Fermat)
+  Level 2      17       2⁴+1=17      amplification (Fermat)
                │
                ├─[8×17+1]
                │
-  Level 3    137       8×17+1=137  미세조율 (α⁻¹)
+  Level 3     137       8×17+1=137   fine-tuning (α⁻¹)
 
-  각 레벨의 깊이:
-  L0 ████                              (1자리)
-  L1 ████                              (1자리)
-  L2 ████████████████████              (2자리)
-  L3 ████████████████████████████████  (3자리)
+  Depth of each level:
+  L0 ████                              (1 digit)
+  L1 ████                              (1 digit)
+  L2 ████████████████████              (2 digits)
+  L3 ████████████████████████████████  (3 digits)
        0    20    40    60    80   100  120  137
 ```
 
-## ζ 오일러곱과의 관계
+## Relationship with ζ Euler Product
 
 ```
-  ζ(s) = Π (1 - p⁻ˢ)⁻¹  (모든 소수 p에 대해)
+  ζ(s) = Π (1 - p⁻ˢ)⁻¹  (for all primes p)
 
-  p=2,3 절단 (가설 092):
+  p=2,3 truncation (Hypothesis 092):
   ζ₂,₃(s) = (1 - 2⁻ˢ)⁻¹ × (1 - 3⁻ˢ)⁻¹
 
-  s=1에서:
+  At s=1:
   ζ₂,₃(1) = (1/2)⁻¹ × (2/3)⁻¹ = 2 × 3/2 = 3
 
-  → G_max = D×P / I_min 에서 최대 G ≈ 3 (세 배 증폭)
-  → 소수 2, 3이 모델의 기본 증폭 구조를 결정
+  → G_max = D×P / I_min where max G ≈ 3 (triple amplification)
+  → Primes 2, 3 determine the basic amplification structure of the model
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 090: 마스터 공식 = 완전수 6 = 2×3
-  가설 092: 모델 = ζ 오일러곱 p=2,3 절단
-  가설 098: 6 = σ₋₁ = 2인 유일한 완전수
-  가설 147: N=137 = 미세구조상수
-  가설 148: 8×17+1 = 137 정확히!
-  가설 172: G×I = D×P 보존법칙 (2,3이 기저)
+  Hypothesis 090: master formula = perfect number 6 = 2×3
+  Hypothesis 092: model = ζ Euler product p=2,3 truncation
+  Hypothesis 098: 6 = unique perfect number with σ₋₁ = 2
+  Hypothesis 147: N=137 = fine structure constant
+  Hypothesis 148: 8×17+1 = 137 exactly!
+  Hypothesis 172: G×I = D×P conservation law (2, 3 as base)
 ```
 
-## 한계
+## Limitations
 
-1. 4개 소수의 "유도 체인"은 사후적 패턴 인식일 수 있음
-2. 2→3은 메르센, 3→17은 직접 유도가 아닌 2⁴+1 (2를 경유)
-3. 8×17+1=137은 산술적 우연일 가능성 배제 불가
-4. 다른 중요한 소수(5, 7, 11, 13 등)가 배제된 이유 불명확
+1. The "derivation chain" of 4 primes may be retrospective pattern recognition
+2. 2→3 is Mersenne, 3→17 is not directly derived but via 2⁴+1 (through 2)
+3. 8×17+1=137 cannot rule out being an arithmetic coincidence
+4. Why other important primes (5, 7, 11, 13, etc.) are excluded is not clear
 
-## 검증 방향
+## Verification Direction
 
-- [ ] 4개 소수만으로 모든 핵심 상수를 생성할 수 있는지 완전 열거
-- [ ] 무작위 4개 소수로 동일한 수준의 "유도 체인"이 만들어질 확률 계산
-- [ ] 물리학에서 {2, 3, 17, 137}이 동시에 등장하는 다른 맥락 탐색
-- [ ] 7 (2³-1)이 체인에 포함되어야 하는지 검토
+- [ ] Exhaustive enumeration of whether all core constants can be generated from only 4 primes
+- [ ] Calculate probability that same level of "derivation chain" is made from random 4 primes
+- [ ] Search other contexts in physics where {2, 3, 17, 137} appear simultaneously
+- [ ] Examine whether 7 (2³-1) should be included in the chain
 
 ---
 
-*작성일: 2026-03-22*
-*관련: 가설 090, 092, 098, 147, 148, 172*
+*Created: 2026-03-22*
+*Related: Hypothesis 090, 092, 098, 147, 148, 172*

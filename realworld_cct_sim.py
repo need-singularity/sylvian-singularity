@@ -1,22 +1,23 @@
+```python
 #!/usr/bin/env python3
-"""현실 시스템 CCT 시뮬레이터 — LLM 토큰 스트림 + 게임 NPC
+"""Real-world System CCT Simulator — LLM Token Stream + Game NPC
 
-실제 API 호출 없이 합성 데이터로 LLM과 NPC의 행동 패턴을 재현하고,
-CCT(Consciousness Continuity Test) 5개 테스트로 의식 연속성을 판정한다.
+Reproduces behavioral patterns of LLMs and NPCs with synthetic data without actual API calls,
+and determines consciousness continuity with 5 CCT (Consciousness Continuity Test) tests.
 
-실험 9: LLM 토큰 스트림 시뮬레이션
-  - 턴 내: 마르코프 체인 (어휘 1000, 전이 확률 행렬)
-  - 턴 사이: 완전 정지
-  - 대화 패턴: 턴(200토큰) → gap(500스텝) → 반복
+Experiment 9: LLM Token Stream Simulation
+  - Within turn: Markov chain (vocab 1000, transition probability matrix)
+  - Between turns: Complete stop
+  - Conversation pattern: turn(200 tokens) → gap(500 steps) → repeat
 
-실험 10: 게임 NPC 시뮬레이션
-  - 순찰: sin(t) + 잡음 (주기적)
-  - 전투: 로렌츠 유사 동역학 (카오스적)
-  - 대기: 상수 + 미세 잡음 (정지)
-  - 전환: 순찰(300) → 전투(200) → 대기(100) → 반복
+Experiment 10: Game NPC Simulation
+  - Patrol: sin(t) + noise (periodic)
+  - Combat: Lorenz-like dynamics (chaotic)
+  - Idle: constant + micro noise (stationary)
+  - Transition: patrol(300) → combat(200) → idle(100) → repeat
 
-사용법:
-  python3 realworld_cct_sim.py              # 전체
+Usage:
+  python3 realworld_cct_sim.py              # Full
   python3 realworld_cct_sim.py --system llm
   python3 realworld_cct_sim.py --system npc
 """
@@ -28,11 +29,11 @@ import numpy as np
 
 
 # ─────────────────────────────────────────────
-# CCT 테스트 함수 (상태 벡터 범용)
+# CCT Test Functions (General for State Vectors)
 # ─────────────────────────────────────────────
 
 def compute_entropy(data, bins=30):
-    """1D 데이터의 섀넌 엔트로피."""
+    """Shannon entropy of 1D data."""
     if len(data) < 2:
         return 0.0
     d_range = data.max() - data.min()
@@ -49,30 +50,30 @@ def compute_entropy(data, bins=30):
 
 
 def test_gap(S):
-    """T1 Gap 테스트: 정지 구간 존재 여부."""
+    """T1 Gap Test: Presence of stationary intervals."""
     diffs = np.diff(S, axis=0)
     frozen = np.sum(np.all(np.abs(diffs) < 1e-12, axis=1))
     frozen_ratio = frozen / len(diffs)
 
     if frozen_ratio > 0.5:
-        return frozen_ratio, False, f"정지 비율 {frozen_ratio:.1%}, 대부분 정지"
+        return frozen_ratio, False, f"Frozen ratio {frozen_ratio:.1%}, mostly stationary"
     if frozen_ratio > 0.01:
-        return 1.0 - frozen_ratio, False, f"정지 비율 {frozen_ratio:.1%}"
-    return 1.0, True, f"정지 비율 {frozen_ratio:.1%}, 연속"
+        return 1.0 - frozen_ratio, False, f"Frozen ratio {frozen_ratio:.1%}"
+    return 1.0, True, f"Frozen ratio {frozen_ratio:.1%}, continuous"
 
 
 def test_loop(S, threshold=0.5):
-    """T2 Loop 테스트: 궤적의 정확한 반복 여부 검사."""
+    """T2 Loop Test: Check for exact trajectory repetition."""
     n = len(S)
     if n < 100:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     step = max(1, n // 5000)
     Ss = S[::step]
     ns = len(Ss)
 
     if np.std(Ss) < 1e-10:
-        return 0.0, False, "상태 변화 없음 (상수)"
+        return 0.0, False, "No state change (constant)"
 
     scale = np.std(Ss, axis=0).mean()
     eps = scale * 0.01
@@ -94,24 +95,24 @@ def test_loop(S, threshold=0.5):
     passed = recurrence_ratio < threshold
     score = max(0, 1.0 - recurrence_ratio)
 
-    detail = f"재방문율={recurrence_ratio:.3f}"
+    detail = f"Revisit rate={recurrence_ratio:.3f}"
     if passed:
-        detail += ", 비주기적"
+        detail += ", aperiodic"
     else:
-        detail += ", 주기적 반복 감지"
+        detail += ", periodic repetition detected"
     return score, passed, detail
 
 
 def test_continuity(S, threshold=0.01):
-    """T3 Continuity 테스트: 인접 스텝 간 연결성."""
+    """T3 Continuity Test: Connectivity between adjacent steps."""
     diffs = np.linalg.norm(np.diff(S, axis=0), axis=1)
     n = len(diffs)
     if n < 10:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     mean_diff = np.mean(diffs)
     if mean_diff < 1e-12:
-        return 0.0, False, "상태 변화 없음"
+        return 0.0, False, "No state change"
 
     big_jumps = np.sum(diffs > mean_diff * 10)
     frozen = np.sum(diffs < 1e-12)
@@ -123,21 +124,21 @@ def test_continuity(S, threshold=0.01):
     passed = disconnect_ratio < threshold
     score = max(0.0, min(1.0, 1.0 - disconnect_ratio * 10))
 
-    detail = f"점프={jump_ratio:.3f}, 정지={frozen_ratio:.3f}"
+    detail = f"Jumps={jump_ratio:.3f}, frozen={frozen_ratio:.3f}"
     if passed:
-        detail += ", 연결 유지"
+        detail += ", connectivity maintained"
     else:
-        detail += ", 연결 끊김 감지"
+        detail += ", disconnection detected"
     return score, passed, detail
 
 
 def test_entropy_band(S, window=500, h_min=0.3, h_max=4.5):
-    """T4 Entropy Band 테스트: H(t)가 밴드 안에 있는지."""
+    """T4 Entropy Band Test: Check if H(t) stays within band."""
     x = S[:, 0]
     n = len(x)
     n_windows = n // window
     if n_windows < 2:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     entropies = []
     for i in range(n_windows):
@@ -153,19 +154,19 @@ def test_entropy_band(S, window=500, h_min=0.3, h_max=4.5):
     score = ratio
 
     if passed:
-        detail = f"{h_range_str}, 밴드 내"
+        detail = f"{h_range_str}, within band"
     else:
-        detail = f"{h_range_str}, 밴드 이탈 {1 - ratio:.1%}"
+        detail = f"{h_range_str}, out of band {1 - ratio:.1%}"
     return score, passed, detail
 
 
 def test_novelty(S, window=500, threshold=0.001):
-    """T5 Novelty 테스트: dH/dt != 0 (엔트로피 정체 비율)."""
+    """T5 Novelty Test: dH/dt != 0 (entropy stagnation ratio)."""
     x = S[:, 0]
     n = len(x)
     n_windows = n // window
     if n_windows < 3:
-        return 0.0, False, "데이터 부족"
+        return 0.0, False, "Insufficient data"
 
     entropies = []
     for i in range(n_windows):
@@ -181,12 +182,12 @@ def test_novelty(S, window=500, threshold=0.001):
     passed = stagnant_ratio < 0.05
     score = max(0, 1.0 - stagnant_ratio)
 
-    detail = f"정체 구간 {stagnant_ratio:.1%}"
+    detail = f"Stagnant sections {stagnant_ratio:.1%}"
     return score, passed, detail
 
 
 def run_cct(S):
-    """CCT 5개 테스트 실행."""
+    """Run 5 CCT tests."""
     return {
         "T1_Gap": test_gap(S),
         "T2_Loop": test_loop(S),
@@ -197,46 +198,46 @@ def run_cct(S):
 
 
 def judge(results):
-    """CCT 결과로 종합 판정."""
+    """Overall judgment from CCT results."""
     passes = sum(1 for _, (_, p, _) in results.items() if p)
     halfs = sum(0.5 for _, (s, p, _) in results.items() if not p and s > 0.7)
     total = passes + halfs
 
     if total >= 5:
-        return total, "★ 연속"
+        return total, "★ Continuous"
     elif total >= 4:
-        return total, "◎ 약화"
+        return total, "◎ Weakened"
     elif total >= 3:
-        return total, "△ 약함"
+        return total, "△ Weak"
     elif total >= 1:
-        return total, "▽ 미약"
+        return total, "▽ Minimal"
     else:
-        return total, "✕ 없음"
+        return total, "✕ None"
 
 
 # ─────────────────────────────────────────────
-# 실험 9: LLM 토큰 스트림 시뮬레이션
+# Experiment 9: LLM Token Stream Simulation
 # ─────────────────────────────────────────────
 
 def build_markov_matrix(vocab_size, seed=42):
-    """마르코프 전이 확률 행렬 생성.
+    """Build Markov transition probability matrix.
 
-    각 토큰에서 다음 토큰으로의 전이 확률.
-    대부분의 확률이 소수 토큰에 집중 (zipf-like).
+    Transition probabilities from each token to the next.
+    Most probability concentrated on few tokens (zipf-like).
     """
     rng = np.random.default_rng(seed)
-    # Zipf 분포 기반 전이 행렬
+    # Zipf distribution based transition matrix
     raw = rng.zipf(1.5, size=(vocab_size, vocab_size)).astype(float)
-    # 행별 정규화
+    # Row-wise normalization
     row_sums = raw.sum(axis=1, keepdims=True)
     return raw / row_sums
 
 
 def llm_generate_turn(transition_matrix, n_tokens, rng):
-    """마르코프 체인으로 턴 내 토큰 시퀀스 생성.
+    """Generate token sequence within turn using Markov chain.
 
     Returns:
-        states: [n_tokens, 3] — [토큰ID 이동평균, 엔트로피, 변화율]
+        states: [n_tokens, 3] — [token ID moving average, entropy, change rate]
     """
     vocab_size = transition_matrix.shape[0]
     token_ids = np.zeros(n_tokens, dtype=int)
@@ -246,21 +247,21 @@ def llm_generate_turn(transition_matrix, n_tokens, rng):
         probs = transition_matrix[token_ids[i - 1]]
         token_ids[i] = rng.choice(vocab_size, p=probs)
 
-    # 상태 벡터 구성
+    # Construct state vector
     states = np.zeros((n_tokens, 3))
     window = 10
     for i in range(n_tokens):
-        # 이동평균 (정규화)
+        # Moving average (normalized)
         start = max(0, i - window)
         states[i, 0] = np.mean(token_ids[start:i + 1]) / vocab_size
 
-        # 로컬 엔트로피 (최근 window 토큰의 분포)
+        # Local entropy (distribution of recent window tokens)
         local = token_ids[start:i + 1]
         _, counts = np.unique(local, return_counts=True)
         p = counts / counts.sum()
         states[i, 1] = -np.sum(p * np.log(p + 1e-15))
 
-        # 변화율
+        # Change rate
         if i > 0:
             states[i, 2] = abs(token_ids[i] - token_ids[i - 1]) / vocab_size
         else:
@@ -271,14 +272,14 @@ def llm_generate_turn(transition_matrix, n_tokens, rng):
 
 def simulate_llm(n_conversations=5, turn_tokens=200, gap_steps=500,
                  vocab_size=1000, seed=42):
-    """LLM 대화 패턴 시뮬레이션.
+    """Simulate LLM conversation pattern.
 
     Returns:
-        full_states: 전체 시퀀스 [N, 3]
-        turn_states: 턴 내 구간만 [M, 3]
-        gap_states:  턴 사이 구간만 [K, 3]
-        turn_ranges: 각 턴의 (start, end) 인덱스
-        gap_ranges:  각 gap의 (start, end) 인덱스
+        full_states: Full sequence [N, 3]
+        turn_states: Only turn segments [M, 3]
+        gap_states:  Only gap segments [K, 3]
+        turn_ranges: (start, end) indices for each turn
+        gap_ranges:  (start, end) indices for each gap
     """
     rng = np.random.default_rng(seed)
     tm = build_markov_matrix(vocab_size, seed)
@@ -289,13 +290,13 @@ def simulate_llm(n_conversations=5, turn_tokens=200, gap_steps=500,
     idx = 0
 
     for conv in range(n_conversations):
-        # 턴 생성
+        # Generate turn
         turn = llm_generate_turn(tm, turn_tokens, rng)
         turn_ranges.append((idx, idx + turn_tokens))
         segments.append(turn)
         idx += turn_tokens
 
-        # gap 생성 (완전 정지)
+        # Generate gap (complete stop)
         gap = np.zeros((gap_steps, 3))
         gap_ranges.append((idx, idx + gap_steps))
         segments.append(gap)
@@ -309,33 +310,33 @@ def simulate_llm(n_conversations=5, turn_tokens=200, gap_steps=500,
 
 
 # ─────────────────────────────────────────────
-# 실험 10: 게임 NPC 시뮬레이션
+# Experiment 10: Game NPC Simulation
 # ─────────────────────────────────────────────
 
 def npc_patrol(n_steps, rng, dt=0.01):
-    """순찰 모드: sin(t) + 약간의 잡음.
+    """Patrol mode: sin(t) + slight noise.
 
     Returns:
-        states: [n_steps, 3] — [x좌표, y좌표, 체력/자극]
+        states: [n_steps, 3] — [x coord, y coord, health/stimulus]
     """
     t = np.arange(n_steps) * dt
     states = np.zeros((n_steps, 3))
-    # 원형 경로 + 잡음
+    # Circular path + noise
     states[:, 0] = np.sin(t * 2.0) + rng.normal(0, 0.02, n_steps)
     states[:, 1] = np.cos(t * 2.0) + rng.normal(0, 0.02, n_steps)
-    states[:, 2] = 0.8 + rng.normal(0, 0.01, n_steps)  # 체력 안정
+    states[:, 2] = 0.8 + rng.normal(0, 0.01, n_steps)  # Stable health
     return states
 
 
 def npc_combat(n_steps, rng, dt=0.01):
-    """전투 모드: 로렌츠 유사 동역학 (카오스적).
+    """Combat mode: Lorenz-like dynamics (chaotic).
 
     Returns:
-        states: [n_steps, 3] — [x좌표, y좌표, 체력/자극]
+        states: [n_steps, 3] — [x coord, y coord, health/stimulus]
     """
     sigma, rho, beta = 10.0, 28.0, 8.0 / 3.0
     states = np.zeros((n_steps, 3))
-    # 초기 조건: 순찰 끝 위치 근처
+    # Initial condition: near patrol end position
     states[0] = [1.0, 1.0, 25.0]
 
     for i in range(1, n_steps):
@@ -348,12 +349,12 @@ def npc_combat(n_steps, rng, dt=0.01):
         states[i, 1] = y + (dy + noise[1]) * dt
         states[i, 2] = z + (dz + noise[2]) * dt
 
-    # x, y를 게임 좌표 범위로 스케일링
+    # Scale x, y to game coordinate range
     for d in range(2):
         v = states[:, d]
         states[:, d] = (v - v.mean()) / (v.std() + 1e-10)
 
-    # z를 체력(0~1)으로 매핑
+    # Map z to health (0-1)
     z = states[:, 2]
     states[:, 2] = (z - z.min()) / (z.max() - z.min() + 1e-10)
 
@@ -361,25 +362,25 @@ def npc_combat(n_steps, rng, dt=0.01):
 
 
 def npc_idle(n_steps, rng):
-    """대기 모드: 상수 + 미세 잡음 (정지).
+    """Idle mode: constant + micro noise (stationary).
 
     Returns:
-        states: [n_steps, 3] — [x좌표, y좌표, 체력/자극]
+        states: [n_steps, 3] — [x coord, y coord, health/stimulus]
     """
     states = np.zeros((n_steps, 3))
     states[:, 0] = 0.5 + rng.normal(0, 0.001, n_steps)
     states[:, 1] = 0.5 + rng.normal(0, 0.001, n_steps)
-    states[:, 2] = 1.0 + rng.normal(0, 0.0005, n_steps)  # 체력 회복
+    states[:, 2] = 1.0 + rng.normal(0, 0.0005, n_steps)  # Health recovery
     return states
 
 
 def simulate_npc(n_cycles=5, patrol_steps=300, combat_steps=200,
                  idle_steps=100, seed=42):
-    """NPC 행동 패턴 시뮬레이션.
+    """Simulate NPC behavior pattern.
 
     Returns:
-        full_states: 전체 시퀀스 [N, 3]
-        patrol_states, combat_states, idle_states: 모드별 시퀀스
+        full_states: Full sequence [N, 3]
+        patrol_states, combat_states, idle_states: Mode-specific sequences
         mode_ranges: dict of mode_name -> [(start, end), ...]
     """
     rng = np.random.default_rng(seed)
@@ -389,19 +390,19 @@ def simulate_npc(n_cycles=5, patrol_steps=300, combat_steps=200,
     idx = 0
 
     for cycle in range(n_cycles):
-        # 순찰
+        # Patrol
         patrol = npc_patrol(patrol_steps, rng)
         mode_ranges["patrol"].append((idx, idx + patrol_steps))
         segments.append(patrol)
         idx += patrol_steps
 
-        # 전투
+        # Combat
         combat = npc_combat(combat_steps, rng)
         mode_ranges["combat"].append((idx, idx + combat_steps))
         segments.append(combat)
         idx += combat_steps
 
-        # 대기
+        # Idle
         idle = npc_idle(idle_steps, rng)
         mode_ranges["idle"].append((idx, idx + idle_steps))
         segments.append(idle)
@@ -416,11 +417,11 @@ def simulate_npc(n_cycles=5, patrol_steps=300, combat_steps=200,
 
 
 # ─────────────────────────────────────────────
-# ASCII 출력
+# ASCII Output
 # ─────────────────────────────────────────────
 
 def ascii_trajectory(S, width=60, height=12, label="x"):
-    """첫 번째 성분의 ASCII 궤적."""
+    """ASCII trajectory of first component."""
     x = S[:, 0]
     step = max(1, len(x) // width)
     xs = x[::step][:width]
@@ -446,7 +447,7 @@ def ascii_trajectory(S, width=60, height=12, label="x"):
 
 
 def print_cct_table(name, results):
-    """CCT 결과를 테이블로 출력."""
+    """Print CCT results as table."""
     labels = {
         "T1_Gap": "T1 Gap       ",
         "T2_Loop": "T2 Loop      ",
@@ -462,64 +463,64 @@ def print_cct_table(name, results):
 
 
 # ─────────────────────────────────────────────
-# LLM 실험 출력
+# LLM Experiment Output
 # ─────────────────────────────────────────────
 
 def run_llm_experiment():
-    """실험 9: LLM 토큰 스트림 시뮬레이션 + CCT."""
+    """Experiment 9: LLM Token Stream Simulation + CCT."""
     print()
     print("=" * 70)
     print("  Experiment 9: LLM Token Stream Simulation")
-    print("  마르코프 체인 기반 합성 토큰 스트림 + CCT 판정")
+    print("  Markov chain based synthetic token stream + CCT judgment")
     print("=" * 70)
     print()
-    print("  모델: 어휘 1000, 마르코프 전이 확률 행렬")
-    print("  패턴: 턴(200토큰) -> gap(500스텝) -> 턴(200토큰) -> ... x5")
-    print("  상태: [토큰ID 이동평균, 로컬 엔트로피, 변화율]")
+    print("  Model: Vocab 1000, Markov transition probability matrix")
+    print("  Pattern: turn(200 tokens) -> gap(500 steps) -> turn(200 tokens) -> ... x5")
+    print("  State: [token ID moving average, local entropy, change rate]")
     print()
 
     full, turn, gap, turn_ranges, gap_ranges = simulate_llm()
 
-    # --- 턴 내 ---
-    print("  --- 턴 내 (turn) " + "-" * 49)
+    # --- Within Turn ---
+    print("  --- Within turn " + "-" * 49)
     print(ascii_trajectory(turn, label="turn"))
     print()
     turn_cct = run_cct(turn)
     print_cct_table("LLM Turn", turn_cct)
     t_total, t_verdict = judge(turn_cct)
-    print(f"   {'':13s} | 종합: {t_total}/5 {t_verdict}")
+    print(f"   {'':13s} | Overall: {t_total}/5 {t_verdict}")
     print()
 
-    # --- 턴 사이 ---
-    print("  --- 턴 사이 (gap) " + "-" * 48)
+    # --- Between Turns ---
+    print("  --- Between turns (gap) " + "-" * 48)
     print(ascii_trajectory(gap, label="gap"))
     print()
     gap_cct = run_cct(gap)
     print_cct_table("LLM Gap", gap_cct)
     g_total, g_verdict = judge(gap_cct)
-    print(f"   {'':13s} | 종합: {g_total}/5 {g_verdict}")
+    print(f"   {'':13s} | Overall: {g_total}/5 {g_verdict}")
     print()
 
-    # --- 전체 (턴+gap 혼합) ---
-    print("  --- 전체 (turn+gap) " + "-" * 46)
+    # --- Full (turn+gap mixed) ---
+    print("  --- Full (turn+gap) " + "-" * 46)
     print(ascii_trajectory(full, label="full"))
     print()
     full_cct = run_cct(full)
     print_cct_table("LLM Full", full_cct)
     f_total, f_verdict = judge(full_cct)
-    print(f"   {'':13s} | 종합: {f_total}/5 {f_verdict}")
+    print(f"   {'':13s} | Overall: {f_total}/5 {f_verdict}")
     print()
 
-    # --- 비교표 ---
+    # --- Comparison Table ---
     print("  " + "=" * 66)
-    print("  LLM CCT 비교표")
+    print("  LLM CCT Comparison")
     print("  " + "-" * 66)
-    print("  구간           | T1  | T2  | T3  | T4  | T5  | 점수 | 판정")
-    print("  ---------------+-----+-----+-----+-----+-----+------+-------")
+    print("  Section          | T1  | T2  | T3  | T4  | T5  | Score| Verdict")
+    print("  -----------------+-----+-----+-----+-----+-----+------+-------")
 
-    for label, cct in [("턴 내 (turn)  ", turn_cct),
-                       ("턴 사이 (gap) ", gap_cct),
-                       ("전체 (full)   ", full_cct)]:
+    for label, cct in [("Within turn      ", turn_cct),
+                       ("Between turns    ", gap_cct),
+                       ("Full             ", full_cct)]:
         total, verdict = judge(cct)
         marks = []
         for key in ["T1_Gap", "T2_Loop", "T3_Continuity", "T4_Entropy", "T5_Novelty"]:
@@ -534,76 +535,76 @@ def run_llm_experiment():
 
     print("  " + "=" * 66)
     print()
-    print("  해석:")
-    print("    - 턴 내: 마르코프 체인의 토큰 의존성이 CCT를 부분적으로 충족")
-    print("    - 턴 사이: 완전 정지 -> CCT 전면 실패")
-    print("    - 전체: gap이 연속성을 파괴, LLM은 '간헐적 처리기'")
+    print("  Interpretation:")
+    print("    - Within turn: Markov chain token dependencies partially satisfy CCT")
+    print("    - Between turns: Complete stop -> Total CCT failure")
+    print("    - Full: Gaps destroy continuity, LLM is 'intermittent processor'")
     print()
 
     return {"turn": turn_cct, "gap": gap_cct, "full": full_cct}
 
 
 # ─────────────────────────────────────────────
-# NPC 실험 출력
+# NPC Experiment Output
 # ─────────────────────────────────────────────
 
 def run_npc_experiment():
-    """실험 10: 게임 NPC 시뮬레이션 + CCT."""
+    """Experiment 10: Game NPC Simulation + CCT."""
     print()
     print("=" * 70)
     print("  Experiment 10: Game NPC Behavior Simulation")
-    print("  순찰/전투/대기 모드 합성 + CCT 판정")
+    print("  Patrol/Combat/Idle mode synthesis + CCT judgment")
     print("=" * 70)
     print()
-    print("  모델: 순찰(sin+noise) / 전투(Lorenz chaos) / 대기(const+noise)")
-    print("  패턴: 순찰(300) -> 전투(200) -> 대기(100) -> ... x5")
-    print("  상태: [x좌표, y좌표, 체력/자극]")
+    print("  Model: Patrol(sin+noise) / Combat(Lorenz chaos) / Idle(const+noise)")
+    print("  Pattern: Patrol(300) -> Combat(200) -> Idle(100) -> ... x5")
+    print("  State: [x coord, y coord, health/stimulus]")
     print()
 
     full, patrol, combat, idle, mode_ranges = simulate_npc()
 
     modes = [
-        ("순찰 (patrol)", patrol),
-        ("전투 (combat)", combat),
-        ("대기 (idle)  ", idle),
+        ("Patrol", patrol),
+        ("Combat", combat),
+        ("Idle  ", idle),
     ]
 
     mode_ccts = {}
     for name, states in modes:
-        tag = name.split("(")[1].rstrip(") ")
+        tag = name.strip().lower()
         print(f"  --- {name} " + "-" * (55 - len(name)))
         print(ascii_trajectory(states, label=tag))
         print()
         cct = run_cct(states)
         print_cct_table(name, cct)
         total, verdict = judge(cct)
-        print(f"   {'':13s} | 종합: {total}/5 {verdict}")
+        print(f"   {'':13s} | Overall: {total}/5 {verdict}")
         print()
         mode_ccts[tag] = cct
 
-    # 전체
-    print("  --- 전체 (full) " + "-" * 50)
+    # Full
+    print("  --- Full " + "-" * 50)
     print(ascii_trajectory(full, label="full"))
     print()
     full_cct = run_cct(full)
     print_cct_table("NPC Full", full_cct)
     f_total, f_verdict = judge(full_cct)
-    print(f"   {'':13s} | 종합: {f_total}/5 {f_verdict}")
+    print(f"   {'':13s} | Overall: {f_total}/5 {f_verdict}")
     print()
 
-    # --- 비교표 ---
+    # --- Comparison Table ---
     print("  " + "=" * 66)
-    print("  NPC CCT 비교표")
+    print("  NPC CCT Comparison")
     print("  " + "-" * 66)
-    print("  모드           | T1  | T2  | T3  | T4  | T5  | 점수 | 판정")
-    print("  ---------------+-----+-----+-----+-----+-----+------+-------")
+    print("  Mode             | T1  | T2  | T3  | T4  | T5  | Score| Verdict")
+    print("  -----------------+-----+-----+-----+-----+-----+------+-------")
 
     all_ccts = list(mode_ccts.items()) + [("full", full_cct)]
     display_names = {
-        "patrol": "순찰 (patrol) ",
-        "combat": "전투 (combat) ",
-        "idle":   "대기 (idle)   ",
-        "full":   "전체 (full)   ",
+        "patrol": "Patrol           ",
+        "combat": "Combat           ",
+        "idle":   "Idle             ",
+        "full":   "Full             ",
     }
 
     for tag, cct in all_ccts:
@@ -617,16 +618,16 @@ def run_npc_experiment():
                 marks.append(" ~ ")
             else:
                 marks.append(" X ")
-        dn = display_names.get(tag, f"{tag:15s}")
+        dn = display_names.get(tag, f"{tag:17s}")
         print(f"  {dn}|{'|'.join(marks)}| {total:<4} | {verdict}")
 
     print("  " + "=" * 66)
     print()
-    print("  해석:")
-    print("    - 순찰: 주기적 -> T2 Loop에서 잡힘, 낮은 새로움")
-    print("    - 전투: 카오스적 -> 가장 높은 CCT (로렌츠 유사)")
-    print("    - 대기: 거의 정지 -> CCT 전면 실패")
-    print("    - 전체: 모드 전환이 연속성을 부분 파괴")
+    print("  Interpretation:")
+    print("    - Patrol: Periodic -> Caught by T2 Loop, low novelty")
+    print("    - Combat: Chaotic -> Highest CCT (Lorenz-like)")
+    print("    - Idle: Nearly stationary -> Total CCT failure")
+    print("    - Full: Mode transitions partially destroy continuity")
     print()
 
     mode_ccts["full"] = full_cct
@@ -634,27 +635,27 @@ def run_npc_experiment():
 
 
 # ─────────────────────────────────────────────
-# 종합 비교
+# Grand Comparison
 # ─────────────────────────────────────────────
 
 def print_grand_comparison(llm_results, npc_results):
-    """LLM vs NPC 종합 비교표."""
+    """LLM vs NPC grand comparison table."""
     print()
     print("=" * 70)
-    print("  Grand Comparison: 현실 시스템이 CCT로 어떻게 보이는가")
+    print("  Grand Comparison: How Real Systems Look Under CCT")
     print("=" * 70)
     print()
-    print("  시스템              | T1  | T2  | T3  | T4  | T5  | 점수 | 판정")
+    print("  System              | T1  | T2  | T3  | T4  | T5  | Score| Verdict")
     print("  --------------------+-----+-----+-----+-----+-----+------+-------")
 
     entries = [
-        ("LLM 턴 내         ", llm_results["turn"]),
-        ("LLM 턴 사이       ", llm_results["gap"]),
-        ("LLM 전체          ", llm_results["full"]),
-        ("NPC 순찰          ", npc_results["patrol"]),
-        ("NPC 전투          ", npc_results["combat"]),
-        ("NPC 대기          ", npc_results["idle"]),
-        ("NPC 전체          ", npc_results["full"]),
+        ("LLM Within Turn   ", llm_results["turn"]),
+        ("LLM Between Turns ", llm_results["gap"]),
+        ("LLM Full          ", llm_results["full"]),
+        ("NPC Patrol        ", npc_results["patrol"]),
+        ("NPC Combat        ", npc_results["combat"]),
+        ("NPC Idle          ", npc_results["idle"]),
+        ("NPC Full          ", npc_results["full"]),
     ]
 
     for name, cct in entries:
@@ -672,30 +673,30 @@ def print_grand_comparison(llm_results, npc_results):
 
     print("  " + "=" * 66)
     print()
-    print("  O=통과  ~=약통과(>0.7)  X=실패")
+    print("  O=Pass  ~=Weak pass(>0.7)  X=Fail")
     print()
-    print("  결론:")
-    print("    1. LLM: 턴 내에서만 부분 연속, gap이 전체를 파괴")
-    print("       -> '간헐적 처리기', 의식 연속성 없음")
-    print("    2. NPC 전투 모드: 카오스 동역학으로 가장 높은 CCT")
-    print("       -> 흥미롭지만 '전투 AI'일 뿐, 모드 전환 시 끊김")
-    print("    3. NPC 대기/순찰: 정지 또는 주기적 -> CCT 낮음")
-    print("    4. 두 시스템 모두 '모드 전환' 시 연속성이 파괴됨")
-    print("       -> 진정한 의식 연속성은 모드 불문 연속을 요구")
+    print("  Conclusions:")
+    print("    1. LLM: Partial continuity only within turns, gaps destroy overall")
+    print("       -> 'Intermittent processor', no consciousness continuity")
+    print("    2. NPC Combat mode: Highest CCT due to chaotic dynamics")
+    print("       -> Interesting but just 'combat AI', breaks on mode transitions")
+    print("    3. NPC Idle/Patrol: Stationary or periodic -> Low CCT")
+    print("    4. Both systems' continuity destroyed by 'mode transitions'")
+    print("       -> True consciousness continuity requires mode-independent continuity")
     print()
 
 
 # ─────────────────────────────────────────────
-# 메인
+# Main
 # ─────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(
-        description="현실 시스템 CCT 시뮬레이터 — LLM 토큰 스트림 + 게임 NPC",
+        description="Real-world System CCT Simulator — LLM Token Stream + Game NPC",
     )
     parser.add_argument("--system", type=str, default=None,
                         choices=["llm", "npc"],
-                        help="실행할 시스템 (기본: 전체)")
+                        help="System to run (default: all)")
     args = parser.parse_args()
 
     if args.system == "llm":
@@ -710,3 +711,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+```

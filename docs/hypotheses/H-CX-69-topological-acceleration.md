@@ -1,57 +1,57 @@
-# H-CX-69: 위상 가속 — H0_total 감소 속도가 tension_scale 성장률과 일치
+# H-CX-69: Topological Acceleration — H0_total Decay Rate Matches tension_scale Growth Rate
 
-> H0_total_persistence의 감소 속도 ∝ (1/3)·ln(epoch) (H320의 tension_scale 성장률).
-> 위상 단순화와 장력 성장이 동일한 동역학을 따른다.
+> H0_total_persistence decay rate ∝ (1/3)·ln(epoch) (H320's tension_scale growth rate).
+> Topological simplification and tension growth follow the same dynamics.
 
-## 배경
+## Background
 
-- H-CX-62 v2: H0_total이 에폭 진행시 단조 감소
+- H-CX-62 v2: H0_total monotonically decreases during epoch progression
 - H320: tension_scale ≈ (1/3)·ln(epoch), R²=0.964
-- 교차점: H0_total의 감소 곡선도 로그 형태?
+- Intersection: Does H0_total's decay curve also follow logarithmic form?
 
-**핵심 연결**: tension_scale이 로그로 성장 → 클래스 방향이 분리
-→ cosine distance 증가 → H0_total 감소. 같은 동역학.
+**Key connection**: tension_scale grows logarithmically → class directions separate
+→ cosine distance increases → H0_total decreases. Same dynamics.
 H0_total(ep) ≈ H0_total(0) - k·ln(ep) ?
 
-## 예측
+## Predictions
 
-1. H0_total(ep) = a - b·ln(ep) 피팅의 R² > 0.9
-2. b ≈ (1/3)·H0_total(0) (1/3 재등장)
-3. tension_scale(ep) × H0_total(ep) ≈ const (역관계 보존)
-4. dH0/dep ∝ -1/ep (로그 미분)
+1. H0_total(ep) = a - b·ln(ep) fitting yields R² > 0.9
+2. b ≈ (1/3)·H0_total(0) (1/3 reappears)
+3. tension_scale(ep) × H0_total(ep) ≈ const (inverse relationship preserved)
+4. dH0/dep ∝ -1/ep (logarithmic derivative)
 
-## 검증 방법
+## Verification Method
 
 ```
-1. H-CX-62 v2 데이터에서 (epoch, H0_total, tension_scale) 추출
-2. H0_total = a - b*ln(ep) 피팅 → R² 계산
-3. b/(H0_total(0)) 비교 → 1/3 근처?
-4. tension_scale * H0_total 의 에폭별 변동 측정
+1. Extract (epoch, H0_total, tension_scale) from H-CX-62 v2 data
+2. Fit H0_total = a - b*ln(ep) → calculate R²
+3. Compare b/(H0_total(0)) → near 1/3?
+4. Measure epoch-wise variation of tension_scale * H0_total
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H-CX-62 (위상 예지), H320 (tension_scale log 성장)
-- H005 (메타 부동점 1/3)
+- H-CX-62 (topological precognition), H320 (tension_scale log growth)
+- H005 (meta fixed point 1/3)
 
-## 한계
+## Limitations
 
-- 15 에폭으로 로그 피팅의 자유도 충분하지만 주의 필요
-- tension_scale과 H0_total이 독립적으로 측정되지 않음 (같은 모델)
+- 15 epochs provide sufficient degrees of freedom for log fitting but caution needed
+- tension_scale and H0_total not measured independently (same model)
 
-## 검증 상태
+## Verification Status
 
-- [x] 로그 피팅 R²
-- [x] 1/3 계수 확인
-- [x] 곱 보존 확인
+- [x] Log fitting R²
+- [x] 1/3 coefficient check
+- [x] Product conservation check
 
-## 검증 결과
+## Verification Results
 
-**판정: PARTIAL**
+**Verdict: PARTIAL**
 
-### 예측 1: H0_total = a - b*ln(ep) 피팅
+### Prediction 1: H0_total = a - b*ln(ep) fitting
 
-| Dataset | R²    | 판정 |
+| Dataset | R²    | Verdict |
 |---------|-------|------|
 | MNIST   | 0.691 | WEAK (< 0.9) |
 | Fashion | 0.941 | PASS |
@@ -70,9 +70,9 @@ H0_total(ep) ≈ H0_total(0) - k·ln(ep) ?
         MNI  FAS   CIF
 ```
 
-평균 R²=0.821. Fashion에서만 0.9 초과, MNIST에서는 로그 피팅이 약함.
+Mean R²=0.821. Only Fashion exceeds 0.9, MNIST shows weak log fitting.
 
-### 예측 2: b/H0(1) ≈ 1/3?
+### Prediction 2: b/H0(1) ≈ 1/3?
 
 | Dataset | b/H0(1) | delta from 1/3 |
 |---------|---------|---------------|
@@ -93,9 +93,9 @@ H0_total(ep) ≈ H0_total(0) - k·ln(ep) ?
          MNI  FAS  CIF
 ```
 
-1/3 예측은 명확히 실패. 실제값 0.044-0.095로, 1/3(0.333)의 1/4 수준.
+1/3 prediction clearly fails. Actual values 0.044-0.095, only 1/4 of 1/3(0.333).
 
-### 예측 3: tension_scale 성장: ts = c + d*ln(ep)
+### Prediction 3: tension_scale growth: ts = c + d*ln(ep)
 
 | Dataset | R²   | d/ts(1) |
 |---------|------|---------|
@@ -103,11 +103,11 @@ H0_total(ep) ≈ H0_total(0) - k·ln(ep) ?
 | Fashion | 0.93 | 0.24    |
 | CIFAR   | 0.91 | 0.06    |
 
-tension_scale의 로그 성장은 R² > 0.9로 잘 피팅됨.
+tension_scale log growth fits well with R² > 0.9.
 
-### 예측 3 (추가): ts x H0 곱 보존
+### Prediction 3 (additional): ts x H0 product conservation
 
-| Dataset | CV(ts x H0) | 판정 |
+| Dataset | CV(ts x H0) | Verdict |
 |---------|-------------|------|
 | MNIST   | 0.128       | WEAK (CV > 0.1) |
 | Fashion | 0.070       | CONSERVED |
@@ -125,11 +125,11 @@ tension_scale의 로그 성장은 R² > 0.9로 잘 피팅됨.
          MNI  FAS  CIF
 ```
 
-Fashion과 CIFAR에서 ts x H0 곱이 보존됨 (CV < 0.1). MNIST는 경계선.
+Fashion and CIFAR show ts x H0 product conservation (CV < 0.1). MNIST borderline.
 
-### 종합
+### Summary
 
-- 로그 피팅: 부분 지지 (Fashion 강, MNIST 약)
-- 1/3 계수: 기각 (실제값 ~0.07, 목표 0.33)
-- 곱 보존: 2/3 데이터셋에서 성립 -- 가장 흥미로운 결과
-- H0 감소와 ts 성장의 역관계는 존재하나, 정확한 1/3 비율은 아님
+- Log fitting: Partial support (Fashion strong, MNIST weak)
+- 1/3 coefficient: Rejected (actual ~0.07, target 0.33)
+- Product conservation: Holds in 2/3 datasets -- most interesting result
+- Inverse relationship between H0 decay and ts growth exists, but not exact 1/3 ratio

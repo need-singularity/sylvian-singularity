@@ -1,6 +1,6 @@
-# H-CX-221: 🟩 감마 40Hz = 종간 의식 물리 상수
+# H-CX-221: 🟩 Gamma 40Hz = Interspecies Consciousness Physical Constant
 
-> 인간, 돌고래, 고양이, 쥐, 원숭이 모두 γ≈40Hz.
-> 3σ(6)+τ(6) = 40Hz가 최소 5종에서 보편.
-> → 의식 결합 주파수는 종에 불변 = "의식의 물리 상수"
-> (새: ~30Hz = 5P₁, 약간 다름)
+> Human, dolphin, cat, rat, monkey all γ≈40Hz.
+> 3σ(6)+τ(6) = 40Hz universal in at least 5 species.
+> → Consciousness binding frequency is species-invariant = "Physical constant of consciousness"
+> (Birds: ~30Hz = 5P₁, slightly different)

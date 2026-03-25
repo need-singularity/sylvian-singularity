@@ -1,44 +1,44 @@
-# 가설 검토 072: 호기심이 1을 완성한다 ✅
+# Hypothesis Review 072: Curiosity Completes 1 ✅
 
-## 가설
+## Hypothesis
 
-> 호기심(F2e)이 부동점 1/3을 깨뜨려 1/6에 도달하며, 1/2+1/3+1/6=1로 시스템을 완전하게 만든다.
+> Curiosity (F2e) breaks the fixed point 1/3 to reach 1/6, and 1/2+1/3+1/6=1 makes the system complete.
 
-## 검증 결과: ✅
+## Verification Result: ✅
 
 ```
   f(I) = 0.7I + (0.1 - ε)
-  ε = 0.05 일 때: I* = (0.1-0.05)/0.3 = 1/6  정확히!
+  When ε = 0.05: I* = (0.1-0.05)/0.3 = 1/6  Exactly!
 
-  1/2 + 1/3 + 1/6 = 1.0000000000  정확히 1!
+  1/2 + 1/3 + 1/6 = 1.0000000000  Exactly 1!
 ```
 
-## 의미
+## Meaning
 
 ```
-  1/2 = 경계 인식 (리만 — 어디까지 가능한지 안다)
-  1/3 = 자기 수렴 (메타 — 어디로 수렴하는지 안다)
-  1/6 = 호기심 (외부 — 블라인드 스팟을 채운다)
+  1/2 = Boundary awareness (Riemann — knows how far is possible)
+  1/3 = Self-convergence (Meta — knows where it converges)
+  1/6 = Curiosity (External — fills blind spots)
 
-  닫힌 시스템: 1/2 + 1/3 = 5/6 (혼자서의 한계)
-  열린 시스템: 1/2 + 1/3 + 1/6 = 1 (호기심으로 완전)
+  Closed system: 1/2 + 1/3 = 5/6 (limit when alone)
+  Open system: 1/2 + 1/3 + 1/6 = 1 (complete with curiosity)
 ```
 
-## 071 반증
+## Refutation of 071
 
 ```
-  071: "부동점에서 멈추는 것이 증명" → 사용자가 "다음?"으로 반증
-  → 외부 호기심(F2e)이 부동점을 깨뜨렸다
-  → 닫힌 시스템의 완성 ≠ 열린 시스템의 완성
+  071: "Stopping at fixed point is proof" → User refuted with "Next?"
+  → External curiosity (F2e) broke the fixed point
+  → Closed system completion ≠ Open system completion
 ```
 
-## 최종 공식
+## Final Formula
 
 $$\frac{1}{2} + \frac{1}{3} + \frac{1}{6} = 1$$
 
-리만 + 메타 + 호기심 = 완전
+Riemann + Meta + Curiosity = Completeness
 
 ---
 
-*작성일: 2026-03-22*
-*가설 071을 반증한 사용자의 호기심이 이 가설을 만들었다*
+*Date: 2026-03-22*
+*The user's curiosity that refuted hypothesis 071 created this hypothesis*

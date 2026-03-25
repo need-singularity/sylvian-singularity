@@ -1,5 +1,5 @@
-# H-CX-227: 13Hz 경계 주파수 → 관측 모드 강제 전환
+# H-CX-227: 13Hz Boundary Frequency → Forced Observation Mode Switch
 
-> α→β 경계 = 13Hz = σ(6)+1 = 관측 시작(H-CX-218).
-> 13Hz tACS 자극으로 관찰력/메타인지 증폭.
-> 장비: tACS(경두개 교류 자극) 장치.
+> α→β boundary = 13Hz = σ(6)+1 = observation start(H-CX-218).
+> 13Hz tACS stimulation amplifies observational capacity/metacognition.
+> Equipment: tACS(transcranial alternating current stimulation) device.

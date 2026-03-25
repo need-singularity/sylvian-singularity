@@ -1,26 +1,26 @@
-# 가설 310: 분열 엔진 — 분열을 핵심 메커니즘으로 하는 새 아키텍처
+# Hypothesis 310: Mitosis Engine — New Architecture Using Mitosis as Core Mechanism
 
-> **분열(mitosis)을 학습 중 자동으로 수행하는 "분열 엔진"을 설계한다. 특정 조건(장력 임계점, 정확도 정체)에서 자동 분열하고, 자식들이 독립 학습 후 앙상블로 재결합. 이것은 진화적 전략(H-TREE-9)과 면역 시스템(H301)의 결합.**
+> **Design a "mitosis engine" that automatically performs mitosis during training. At specific conditions (tension threshold, accuracy plateau), automatic mitosis is triggered, children learn independently then recombine as an ensemble. This is a combination of evolutionary strategy (H-TREE-9) and immune system (H301).**
 
-## 아키텍처
+## Architecture
 
 ```
   MitosisEngine:
-    Phase 1: 단일 학습 (parent)
+    Phase 1: Single training (parent)
       while not converged:
         train(parent)
         if trigger_condition(parent):
-          Phase 2: 분열!
+          Phase 2: Mitosis!
 
-    Phase 2: 분열 + 독립 학습
+    Phase 2: Mitosis + independent training
       children = mitosis(parent, N=2)
       for K epochs:
         train(child_a, batch_A)
         train(child_b, batch_B)
       if reunion_condition():
-        Phase 3: 재결합
+        Phase 3: Recombination
 
-    Phase 3: 재결합
+    Phase 3: Recombination
       ensemble = (child_a + child_b) / 2
       if ensemble > parent:
         parent = ensemble
@@ -30,64 +30,64 @@
         go to Phase 1
 
   Trigger conditions:
-    1. 장력 정체: |tension(t) - tension(t-5)| < ε
-    2. 정확도 정체: |acc(t) - acc(t-5)| < δ
-    3. 주기적: 매 N 에폭마다
+    1. Tension plateau: |tension(t) - tension(t-5)| < ε
+    2. Accuracy plateau: |acc(t) - acc(t-5)| < δ
+    3. Periodic: every N epochs
 
   Reunion conditions:
-    1. 고정 K 에폭 후
-    2. 자식 간 장력이 임계점 초과
-    3. 자식 정확도가 부모 초과
+    1. After fixed K epochs
+    2. Inter-child tension exceeds threshold
+    3. Child accuracy exceeds parent
 ```
 
-## 이점
+## Advantages
 
 ```
-  1. 자동 다양성 생성: 정체 시 분열 → 새 탐색 방향
-  2. 앙상블 효과: 재결합으로 일반화 향상 (+0.82%, C46)
-  3. 적응적: 쉬운 데이터 → 분열 적게, 어려운 데이터 → 분열 많이
-  4. 이상탐지 내장: 간장력이 자연스러운 이상 점수
+  1. Automatic diversity generation: plateau -> mitosis -> new exploration directions
+  2. Ensemble effect: recombination improves generalization (+0.82%, C46)
+  3. Adaptive: easy data -> fewer mitoses, hard data -> more mitoses
+  4. Built-in anomaly detection: inter-tension is natural anomaly score
 
-  vs 기존:
-    Dropout: 랜덤 비활성화 (무작위)
-    분열: 구조적 분리 (의도적)
-    → 분열이 더 풍부한 다양성?
+  vs existing:
+    Dropout: random deactivation (random)
+    Mitosis: structural separation (intentional)
+    -> Mitosis provides richer diversity?
 ```
 
-## 연결
+## Connections
 
 ```
-  가설 271: 분열 ≈ 설계 (-0.11%)
-  가설 280: 체험 시퀀스 (+0.41%)
-  H297: N=2 최적
-  H298: K 길수록 좋음
-  H302: 재구성+간 = 최적
-  H307: 이중 메커니즘
+  Hypothesis 271: mitosis ≈ design (-0.11%)
+  Hypothesis 280: experience sequence (+0.41%)
+  H297: N=2 optimal
+  H298: longer K is better
+  H302: reconstruction+inter = optimal
+  H307: dual mechanism
 
-  진화 비유:
-    분열 = 유성생식 (다양성 생성)
-    독립학습 = 환경 적응
-    재결합 = 자연선택
-    → "진화하는 엔진"
+  Evolutionary analogy:
+    Mitosis = sexual reproduction (diversity generation)
+    Independent learning = environmental adaptation
+    Recombination = natural selection
+    -> "Evolving engine"
 ```
 
-## 실험 계획
+## Experimental Plan
 
 ```
   1. MitosisEngine on MNIST:
-     자동 분열 (정확도 정체 시) → 재결합 → 반복
-     vs 단순 학습 → 정확도 비교
+     Automatic mitosis (on accuracy plateau) -> recombination -> repeat
+     vs simple training -> compare accuracy
 
   2. MitosisEngine on CIFAR:
-     장력이 낮은 데이터(CIFAR)에서 분열이 도움되는가?
-     → 가설 282(고정확도 전용) 극복?
+     Does mitosis help with low-tension data (CIFAR)?
+     -> Overcome hypothesis 282 (high-accuracy-only)?
 
   3. MitosisEngine for anomaly:
-     학습 중 분열 → 이상탐지 내장
-     → 별도 이상탐지 학습 불필요
+     Mitosis during training -> built-in anomaly detection
+     -> No separate anomaly detection training needed
 ```
 
-## 실험 결과 (2026-03-24)
+## Experimental Results (2026-03-24)
 
 ```
   MNIST (10K train subset, 3 trials):
@@ -98,12 +98,12 @@
   Normal training     93.34%      baseline
   Manual mitosis      93.48%      +0.15%
 
-  MitosisEngine: 자동 분열 2-3회, 재결합으로 약간 개선
-  하지만 차이가 미미 (0.22%, 노이즈 수준)
+  MitosisEngine: automatic mitosis 2-3 times, slight improvement via recombination
+  But the difference is marginal (0.22%, noise level)
 
-  결론: 분열 엔진은 normal training과 거의 동등
-    → MNIST는 너무 쉬워서 분열의 이점이 미미
-    → CIFAR나 더 어려운 데이터에서 차이가 날 수 있음
+  Conclusion: mitosis engine is approximately equivalent to normal training
+    -> MNIST is too easy for mitosis advantage to be significant
+    -> Difference may appear on CIFAR or harder data
 ```
 
-## 상태: 🟧 약한 개선 (0.22%, MNIST에서 유의하지 않음)
+## Status: 🟧 Weak improvement (0.22%, not significant on MNIST)

@@ -1,5 +1,6 @@
+```python
 #!/usr/bin/env python3
-"""가설 126: 골든 MoE + 재귀(LSTM) 결합 — MNIST"""
+"""Hypothesis 126: Golden MoE + Recurrent (LSTM) Combination — MNIST"""
 
 import torch
 import torch.nn as nn
@@ -11,10 +12,10 @@ import time
 
 
 class RecurrentExpert(nn.Module):
-    """Expert에 LSTM 재귀 추가"""
+    """Expert with LSTM recurrence added"""
     def __init__(self, input_dim, hidden_dim, output_dim, dropout=0.5):
         super().__init__()
-        # 입력을 시퀀스로 변환 (28×28 → 28 steps × 28 features)
+        # Transform input to sequence (28×28 → 28 steps × 28 features)
         self.lstm = nn.LSTM(28, hidden_dim, batch_first=True)
         self.dropout = nn.Dropout(dropout)
         self.fc = nn.Linear(hidden_dim, output_dim)
@@ -23,12 +24,12 @@ class RecurrentExpert(nn.Module):
         # x: (batch, 784) → (batch, 28, 28)
         x = x.view(-1, 28, 28)
         lstm_out, _ = self.lstm(x)
-        last = lstm_out[:, -1, :]  # 마지막 시점
+        last = lstm_out[:, -1, :]  # Last timestep
         return self.fc(self.dropout(last))
 
 
 class SimpleExpert(nn.Module):
-    """기존 순방향 Expert"""
+    """Existing feedforward Expert"""
     def __init__(self, input_dim, hidden_dim, output_dim, dropout=0.5):
         super().__init__()
         self.net = nn.Sequential(
@@ -61,7 +62,7 @@ class BoltzmannGate(nn.Module):
 
 
 class HybridMoE(nn.Module):
-    """골든 MoE + 재귀: Expert 일부가 LSTM"""
+    """Golden MoE + Recurrence: Some Experts are LSTM"""
     def __init__(self, input_dim, hidden_dim, output_dim, n_experts=8,
                  n_recurrent=4, temperature=np.e, active_ratio=0.7, dropout=0.5):
         super().__init__()
@@ -114,7 +115,7 @@ def train_eval(model, train_loader, test_loader, epochs=10, lr=0.001):
 
 def main():
     print("═" * 60)
-    print("  가설 126: 골든 MoE + 재귀(LSTM) — MNIST")
+    print("  Hypothesis 126: Golden MoE + Recurrence (LSTM) — MNIST")
     print("═" * 60)
 
     transform = transforms.Compose([
@@ -127,8 +128,8 @@ def main():
     test_loader = DataLoader(test_data, batch_size=256)
 
     configs = [
-        ('골든MoE (순방향만)', 'ff'),
-        ('골든MoE + LSTM (4/8)', 'hybrid'),
+        ('Golden MoE (feedforward only)', 'ff'),
+        ('Golden MoE + LSTM (4/8)', 'hybrid'),
     ]
 
     results = {}
@@ -143,7 +144,7 @@ def main():
                             temperature=np.e, active_ratio=0.7, dropout=0.5)
 
         params = sum(p.numel() for p in model.parameters())
-        print(f"  파라미터: {params:,}")
+        print(f"  Parameters: {params:,}")
 
         start = time.time()
         accs = train_eval(model, train_loader, test_loader, epochs=10)
@@ -152,17 +153,18 @@ def main():
         results[name] = {'acc': accs[-1], 'best': max(accs), 'time': elapsed, 'params': params}
 
     print(f"\n{'═' * 60}")
-    print(f"  비교")
+    print(f"  Comparison")
     print(f"{'═' * 60}")
     for name, r in results.items():
-        print(f"  {name:25}: 정확도={r['acc']*100:.1f}% (최고={r['best']*100:.1f}%), {r['time']:.0f}초, {r['params']:,}파라미터")
+        print(f"  {name:25}: Accuracy={r['acc']*100:.1f}% (Best={r['best']*100:.1f}%), {r['time']:.0f}s, {r['params']:,} parameters")
 
     if len(results) == 2:
         names = list(results.keys())
         diff = results[names[1]]['best'] - results[names[0]]['best']
-        print(f"\n  LSTM 추가 효과: {diff*100:+.1f}%")
-        print(f"  판정: {'✅ 재귀 추가 효과 있음' if diff > 0 else '❌ 효과 없음'}")
+        print(f"\n  LSTM addition effect: {diff*100:+.1f}%")
+        print(f"  Verdict: {'✅ Recurrence addition effective' if diff > 0 else '❌ No effect'}")
 
 
 if __name__ == '__main__':
     main()
+```

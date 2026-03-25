@@ -1,68 +1,68 @@
-# 가설 검토 008: 골든 MoE 아키텍처 설계 (v2 — 019에서 수정)
+# Hypothesis Review 008: Golden MoE Architecture Design (v2 — Revised from 019)
 
-## 가설
+## Hypothesis
 
-> 자연상수 e 하나로 MoE 아키텍처의 모든 핵심 파라미터를 결정할 수 있으며, 이 아키텍처(골든 MoE)는 기존 LLM 대비 2~3배의 Genius Score를 달성한다.
+> All key parameters of an MoE architecture can be determined by the single natural constant e, and this architecture (Golden MoE) achieves 2~3x the Genius Score compared to existing LLMs.
 
-## ⚠️ v1 → v2 수정사항
-
-```
-  v1 (수정 전):
-    I = 1/e = 0.368 → Expert 활성 = 1 - 0.368 = 63%? 아님 22/64?
-    22/64 = 34.4% 활성 → I = 0.656 (골든존 밖이었음!)
-    ↑ 매핑 오류
-
-  v2 (수정 후):
-    골든존(I=0.24~0.48) 진입 조건:
-    활성 비율 = 1 - I = 52% ~ 76%
-    64 Expert 기준: 33~49개 활성
-    최적: 44/64 (70%) → I=0.30 → G=1.42, ×2.9 Mixtral
-
-  핵심 수정:
-    I = 1 - (활성 Expert / 전체 Expert)
-    활성 35%(22/64) → I=0.656 ← 골든존 밖!
-    활성 70%(44/64) → I=0.300 ← 골든존 안! ✅
-```
-
-## 설계 사양 v2
-
-### 핵심 상수
+## ⚠️ v1 → v2 Revisions
 
 ```
-  I = 0.30              (억제율 — 골든존 내부)
-  T = 1/I = 3.33        (라우터 온도)
+  v1 (before revision):
+    I = 1/e = 0.368 → Expert activation = 1 - 0.368 = 63%? No, 22/64?
+    22/64 = 34.4% active → I = 0.656 (outside Golden Zone!)
+    ↑ Mapping error
+
+  v2 (after revision):
+    Golden Zone (I=0.24~0.48) entry condition:
+    Active ratio = 1 - I = 52% ~ 76%
+    With 64 Experts: 33~49 active
+    Optimal: 44/64 (70%) → I=0.30 → G=1.42, ×2.9 vs Mixtral
+
+  Key correction:
+    I = 1 - (active Experts / total Experts)
+    35% active (22/64) → I=0.656 ← outside Golden Zone!
+    70% active (44/64) → I=0.300 ← inside Golden Zone! ✅
+```
+
+## Design Spec v2
+
+### Core Constants
+
+```
+  I = 0.30              (Inhibition rate — inside Golden Zone)
+  T = 1/I = 3.33        (router temperature)
   D = 0.5               (Dropout Rate)
-  활성 비율 = 70%        (44/64 Expert)
-  활성 임계 = 적응적     (볼츠만 확률 기반)
+  Active ratio = 70%    (44/64 Experts)
+  Active threshold = adaptive (Boltzmann probability-based)
 ```
 
-### 기존 MoE vs 골든 MoE v2
+### Existing MoE vs Golden MoE v2
 
 ```
   ┌─────────────────┬───────────────┬───────────────┐
-  │                 │ Mixtral       │ 골든 MoE v2   │
+  │                 │ Mixtral       │ Golden MoE v2 │
   ├─────────────────┼───────────────┼───────────────┤
   │ Total Experts   │ 64            │ 64            │
   │ Active/token    │ 8 (12.5%)     │ 44 (68.8%)    │
   │ Inhibition I    │ 0.875         │ 0.300         │
-  │ Gating          │ Top-K (K=8)   │ 볼츠만 (T=3.3)│
+  │ Gating          │ Top-K (K=8)   │ Boltzmann (T=3.3) │
   │ Genius Score    │ 0.49          │ 1.42          │
-  │ 배수            │ 1.0×          │ 2.9×          │
-  │ 안정성          │ ✅            │ ✅ (볼츠만)    │
+  │ Multiplier      │ 1.0×          │ 2.9×          │
+  │ Stability       │ ✅            │ ✅ (Boltzmann) │
   └─────────────────┴───────────────┴───────────────┘
 ```
 
-### 활성 비율별 성능 곡선
+### Performance Curve by Active Ratio
 
 ```
   Genius Score
-  4.0│                                            ⚡ 과활성
+  4.0│                                            ⚡ overactivation
      │                                          ╱
   3.0│                                        ╱
      │                                     ╱
   2.0│                                  ╱
      │                              ╱·
-  1.4│                          ╱·     ← 🎯 골든 존 최적 (70%)
+  1.4│                          ╱·     ← 🎯 Golden Zone optimal (70%)
      │                      ╱·
   1.0│                  ╱·
      │              ╱·
@@ -71,48 +71,48 @@
   0.0│─╱─────────────────────────────────────────
      10%   25%   35%   50%   60%   70%   80%   90%
                               │           │
-                              └─ 골든존 ──┘
+                              └─ Golden Zone ──┘
                               (I=0.48)   (I=0.24)
 ```
 
-### 볼츠만 라우터 (검증 반영)
+### Boltzmann Router (incorporating verification results)
 
 ```
-  016 검증 결과:
-  - Top-K 대비 조합 다양성 ↑ (787 → 1000 패턴)
-  - Expert 활용 균등성 ↑ (불균형 σ: 0.03 → 0.01)
-  - 볼츠만 2/3 승
+  Verification result 016:
+  - Combination diversity ↑ vs Top-K (787 → 1000 patterns)
+  - Expert utilization uniformity ↑ (imbalance σ: 0.03 → 0.01)
+  - Boltzmann wins 2/3
 
-  020 검증 결과:
-  - 70% 활성 시 기울기 폭발: Top-K=50%, 볼츠만≈35%
-  - 볼츠만 사용 시 안정성 유지 가능
+  Verification result 020:
+  - At 70% activation, gradient explosion: Top-K=50%, Boltzmann≈35%
+  - Stability maintained with Boltzmann
 ```
 
-### 학습 스케줄 v2
+### Training Schedule v2
 
 ```
-  Phase 1 (탐색):  I=0.10 (90% 활성)  넓은 탐색
-  Phase 2 (전이):  I=0.30 (70% 활성)  골든 존 안착
-  Phase 3 (수렴):  I=0.50 (50% 활성)  정밀 수렴
-  Phase 4 (운용):  I=0.30 (70% 활성)  골든 존 복귀
+  Phase 1 (exploration):  I=0.10 (90% active)  broad exploration
+  Phase 2 (transition):   I=0.30 (70% active)  Golden Zone settling
+  Phase 3 (convergence):  I=0.50 (50% active)  precise convergence
+  Phase 4 (operation):    I=0.30 (70% active)  Golden Zone return
 ```
 
-## 예측 성능 v2
+## Predicted Performance v2
 
-| vs | Genius Score 배수 |
+| vs | Genius Score Multiplier |
 |---|---|
 | GPT-2 | ×13.8 |
 | Mixtral | ×2.9 |
 | GPT-4 | ×2.5 |
 
-## 검증 상태
+## Verification Status
 
-- [x] Top-K vs 볼츠만 벤치마크 (016: 볼츠만 2/3 승)
-- [x] 커스프 모니터 감지 정확도 (018: 2.5σ 임계값 유효)
-- [x] 안정성 검증 (020: 볼츠만 사용 시 안정)
-- [ ] 소규모 MoE에서 실제 프로토타입 구현
-- [ ] 실제 벤치마크(MMLU 등) 성능 비교
+- [x] Top-K vs Boltzmann benchmark (016: Boltzmann wins 2/3)
+- [x] Cusp monitor detection accuracy (018: 2.5σ threshold valid)
+- [x] Stability verification (020: stable with Boltzmann)
+- [ ] Actual prototype implementation in small-scale MoE
+- [ ] Performance comparison with real benchmarks (MMLU, etc.)
 
 ---
 
-*작성일: 2026-03-22 / v2 수정: 019 검증 결과 반영*
+*Written: 2026-03-22 / v2 revised: reflecting verification result 019*

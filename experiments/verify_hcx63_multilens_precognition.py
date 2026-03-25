@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H-CX-63 검증: 다중렌즈 예지 간섭 — Dual vs Quad 예지 AUC 비교"""
+"""H-CX-63 Verification: Multi-Lens Precognition Interference — Dual vs Quad Precognition AUC Comparison"""
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
 

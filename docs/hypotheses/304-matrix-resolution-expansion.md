@@ -1,112 +1,112 @@
-# 가설 304: 2×2 매트릭스의 고해상도 확장 — 학습목표 × 장력유형 × 엔진구조
+# Hypothesis 304: High-Resolution Expansion of 2×2 Matrix — Learning Objective × Tension Type × Engine Structure
 
-> **H302의 2×2 매트릭스(학습목표 × 장력유형)를 3차원 이상으로 확장한다. 추가 축: 엔진 수(2극/4극), 분열 수(N=1/2/4), 데이터셋(Breast Cancer/MNIST/CIFAR), 학습 기간(K). 이 고차원 매트릭스에서 최적 조합을 찾는다.**
+> **Expand H302's 2×2 matrix (learning objective × tension type) to 3 or more dimensions. Additional axes: number of engines (2-pole/4-pole), number of mitoses (N=1/2/4), dataset (Breast Cancer/MNIST/CIFAR), training duration (K). Find the optimal combination in this high-dimensional matrix.**
 
-## H302 기본 결과 (2×2)
+## H302 Basic Results (2×2)
 
 ```
-                    내부장력(I)   간장력(M)
+                    Internal(I)   Inter(M)
   ──────────────   ──────────   ──────────
-  분류(CE)          0.259        0.589
-  재구성(MSE)       0.144        0.802  ← 최적
+  Classification(CE)  0.259        0.589
+  Reconstruction(MSE) 0.144        0.802  <- Optimal
 ```
 
-## 확장 1: 학습목표 세분화 (4×2)
+## Extension 1: Learning Objective Subdivision (4×2)
 
 ```
-  추가 학습 목표:
-    - 대조학습 (Contrastive): 정상끼리 가깝게, 이상과 멀게
-    - 변분추론 (VAE): 재구성 + KL divergence
-    - 자기감독 (Self-supervised): 마스킹 후 복원
+  Additional learning objectives:
+    - Contrastive learning: pull normal together, push away anomalies
+    - Variational inference (VAE): reconstruction + KL divergence
+    - Self-supervised: mask then reconstruct
 
-  예측 매트릭스:
-                    내부장력   간장력
+  Predicted matrix:
+                    Internal   Inter
   ──────────────   ────────   ────────
-  분류(CE)          0.26       0.59
-  재구성(MSE)       0.14       0.80
-  대조학습(CL)      ?          ?      ← 예측: 간장력 0.85+?
-  VAE              ?          ?      ← 예측: 간장력 0.82?
-  자기감독(SS)      ?          ?
+  Classification(CE)  0.26       0.59
+  Reconstruction(MSE) 0.14       0.80
+  Contrastive(CL)     ?          ?      <- Prediction: inter 0.85+?
+  VAE                 ?          ?      <- Prediction: inter 0.82?
+  Self-supervised(SS) ?          ?
 
-  대조학습이 최고일 수 있는 이유:
-    CL = "같은 것은 가깝게, 다른 것은 멀게"
-    → 정상 클러스터 타이트하게 형성
-    → 이상은 클러스터 밖
-    → 간 장력이 더 명확한 경계
+  Why contrastive might be best:
+    CL = "pull similar together, push different apart"
+    -> Normal cluster forms tightly
+    -> Anomalies naturally fall outside
+    -> Inter-tension has clearer boundaries
 ```
 
-## 확장 2: 엔진 구조 세분화 (2×2×3)
+## Extension 2: Engine Structure Subdivision (2×2×3)
 
 ```
-  엔진 구조:
-    - 2극 (Engine A + G): 기본
-    - 4극 (Quad: A + E + G + F): 다양한 관점
-    - 계층 (Hierarchical: (A+E) + (G+F)): 계층적
+  Engine structure:
+    - 2-pole (Engine A + G): basic
+    - 4-pole (Quad: A + E + G + F): multiple perspectives
+    - Hierarchical ((A+E) + (G+F)): layered
 
-  2극 vs 4극:
-    2극: 장력 = |A-G|² → 1차원 이상 점수
-    4극: 장력 = |A-G|² + |E-F|² + ... → 다차원 이상 점수
-    → 4극이 더 풍부한 이상 프로파일?
+  2-pole vs 4-pole:
+    2-pole: tension = |A-G|² -> 1D anomaly score
+    4-pole: tension = |A-G|² + |E-F|² + ... -> multi-dimensional anomaly score
+    -> 4-pole provides richer anomaly profile?
 
-  예측:
-    4극+재구성+간장력 > 2극+재구성+간장력
-    이유: 더 많은 관점에서 불일치 감지
+  Prediction:
+    4-pole+reconstruction+inter > 2-pole+reconstruction+inter
+    Reason: detects inconsistency from more perspectives
 ```
 
-## 확장 3: 데이터셋 의존성 (2×2×4)
+## Extension 3: Dataset Dependency (2×2×4)
 
 ```
-  데이터셋:
-    Breast Cancer (30 features, 밀집)
-    MNIST digit anomaly (784 features, 밀집)
-    Iris (4 features, 소규모)
-    Synthetic Gaussian (N features, 가변)
+  Datasets:
+    Breast Cancer (30 features, dense)
+    MNIST digit anomaly (784 features, dense)
+    Iris (4 features, small scale)
+    Synthetic Gaussian (N features, variable)
 
-  질문: 최적 조합이 데이터셋에 따라 바뀌는가?
-    소규모: 분류+내부가 충분?
-    대규모: 재구성+간이 필수?
+  Question: does the optimal combination change by dataset?
+    Small scale: classification+internal sufficient?
+    Large scale: reconstruction+inter essential?
 ```
 
-## 확장 4: 분열 깊이 (2×2×3)
+## Extension 4: Mitosis Depth (2×2×3)
 
 ```
-  분열 깊이:
-    depth 0: 내부 장력만 (분열 없음)
+  Mitosis depth:
+    depth 0: internal tension only (no mitosis)
     depth 1: 2 children
-    depth 2: 4 children (이중 분열)
+    depth 2: 4 children (double mitosis)
 
-  H297에서 N=2가 최적이므로:
-    depth 1이 최적일 것으로 예측
-    depth 2는 과잉 분화로 성능 하락?
+  Since H297 shows N=2 is optimal:
+    depth 1 predicted to be optimal
+    depth 2 may over-differentiate and degrade performance?
 ```
 
-## 종합: 4D 매트릭스
+## Summary: 4D Matrix
 
 ```
-  축 1: 학습목표 {CE, MSE, CL, VAE, SS}
-  축 2: 장력유형 {내부, 간(N=2), 간(N=4)}
-  축 3: 엔진구조 {2극, 4극, 계층}
-  축 4: 데이터셋 {Cancer, MNIST, Iris}
+  Axis 1: Learning objective {CE, MSE, CL, VAE, SS}
+  Axis 2: Tension type {internal, inter(N=2), inter(N=4)}
+  Axis 3: Engine structure {2-pole, 4-pole, hierarchical}
+  Axis 4: Dataset {Cancer, MNIST, Iris}
 
-  총 조합: 5 × 3 × 3 × 3 = 135
-  → 전수 탐색은 비현실적
-  → 핵심 조합만 선택하여 실험
+  Total combinations: 5 × 3 × 3 × 3 = 135
+  -> Full search is impractical
+  -> Select key combinations for experiments
 ```
 
-## 우선순위 실험
+## Priority Experiments
 
 ```
-  1순위 (학습목표 확장):
-    대조학습 + 간장력 vs 재구성 + 간장력 (Cancer)
-    → 대조학습이 더 나은가?
+  Priority 1 (learning objective extension):
+    Contrastive + inter vs reconstruction + inter (Cancer)
+    -> Is contrastive better?
 
-  2순위 (엔진 구조):
-    2극 vs 4극 × {재구성+간장력} (Cancer)
-    → 4극이 이상탐지에 유리한가?
+  Priority 2 (engine structure):
+    2-pole vs 4-pole × {reconstruction+inter} (Cancer)
+    -> Is 4-pole better for anomaly detection?
 
-  3순위 (데이터셋):
-    최적 조합(재구성+간) × {Cancer, MNIST, Iris}
-    → 최적 조합이 보편적인가?
+  Priority 3 (dataset):
+    Optimal combination (reconstruction+inter) × {Cancer, MNIST, Iris}
+    -> Is the optimal combination universal?
 ```
 
-## 상태: 🟨 미실험 (프레임워크 설계 완료)
+## Status: 🟨 Untested (framework design complete)

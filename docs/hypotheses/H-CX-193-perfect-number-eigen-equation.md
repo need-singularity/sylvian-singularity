@@ -1,8 +1,8 @@
-# H-CX-193: ⭐ 완전수 고유 등식 — 각 P_k에 고유한 σ-τ-φ 등식
+# H-CX-193: ⭐ Perfect Number Eigen Equation — Each P_k has a unique σ-τ-φ equation
 
-> P₁=6:  σφ = nτ (H-CX-191, 증명)
-> P₂=28: στ = nφ (H-CX-192, 100K 확인)
-> P₃=496: ??? (미탐색)
+> P₁=6:  σφ = nτ (H-CX-191, proven)
+> P₂=28: στ = nφ (H-CX-192, 100K verified)
+> P₃=496: ??? (unexplored)
 >
-> 각 완전수가 σ,τ,φ 세 함수의 다른 조합으로 "자기 등식"을 가진다.
-> 완전수 = 약수 함수의 "고유벡터"?
+> Each perfect number has a "self-equation" with a different combination of the three functions σ,τ,φ.
+> Perfect number = "eigenvector" of divisor functions?

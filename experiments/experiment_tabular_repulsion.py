@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""TABULAR 도메인 반발력장 실험 — sklearn built-in datasets
+"""TABULAR Domain Repulsion Field Experiment — sklearn built-in datasets
 
-구조화된 데이터(정형 데이터)에서 RepulsionField가 Dense baseline보다 나은지 검증.
+Verify whether RepulsionField is better than Dense baseline on structured data (tabular data).
 
-데이터셋:
+Datasets:
   - Iris: 4 features, 3 classes, 150 samples
   - Wine: 13 features, 3 classes, 178 samples
   - Breast Cancer: 30 features, 2 classes, 569 samples
   - Digits: 64 features, 10 classes, 1797 samples
 
-비교:
+Comparison:
   - Dense baseline (1-hidden MLP)
   - RepulsionField (two-pole with tension)
 
-측정:
-  - 5-fold CV accuracy (3 seeds 평균)
+Measurements:
+  - 5-fold CV accuracy (average of 3 seeds)
   - tension per class
 """
 
@@ -33,7 +33,7 @@ from sklearn.model_selection import StratifiedKFold
 from model_utils import Expert
 
 # ─────────────────────────────────────────
-# 상수
+# Constants
 # ─────────────────────────────────────────
 SEEDS = [42, 123, 777]
 N_FOLDS = 5
@@ -102,7 +102,7 @@ class TabularRepulsionField(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 데이터 로더
+# Data loaders
 # ─────────────────────────────────────────
 DATASETS = {
     'Iris': load_iris,

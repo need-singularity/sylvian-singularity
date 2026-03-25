@@ -1,12 +1,12 @@
-# H-CX-314: ⭐⭐⭐🟧 골든존 = w²-P₁w+ζ(2)=0 의 근 (오차 0.10%)
+# H-CX-314: ⭐⭐⭐🟧 Golden Zone = Root of w²-P₁w+ζ(2)=0 (0.10% error)
 
-> 이차방정식: w² - 6w + π²/6 = 0
-> 해: w = (6-√(36-2π²/3))/2 = 0.2880
-> 실제 골든존 폭: ln(4/3) = 0.2877
-> 오차: 0.10%!
+> Quadratic equation: w² - 6w + π²/6 = 0
+> Solution: w = (6-√(36-2π²/3))/2 = 0.2880
+> Actual Golden Zone width: ln(4/3) = 0.2877
+> Error: 0.10%!
 >
-> 동치: ζ(2) ≈ w(P₁-w) = 골든존폭 × (P₁-골든존폭)
-> π²/6 ≈ ln(4/3) × (6-ln(4/3)) = 1.6433 (실제 1.6449, 오차 0.10%)
+> Equivalently: ζ(2) ≈ w(P₁-w) = Golden Zone width × (P₁-Golden Zone width)
+> π²/6 ≈ ln(4/3) × (6-ln(4/3)) = 1.6433 (actual 1.6449, error 0.10%)
 >
-> "리만 제타와 완전수의 이차방정식에서 골든존이 나온다!"
-> 🟧: 0.10% 오차이므로 근사. 정확한 등식이 아님.
+> "Golden Zone emerges from the quadratic equation of Riemann zeta and perfect numbers!"
+> 🟧: 0.10% error, so approximation. Not an exact equality.

@@ -1,16 +1,16 @@
-# H-MP-7: σ_k(n)φ(n) = nτ(n) 일반화
+# H-MP-7: σ_k(n)φ(n) = nτ(n) Generalization
 
-> **가설**: σ_k(n)φ(n) = nτ(n)의 해가 k에 따라 변하며, k=1에서 n=6이 유일해인 것은 k=1의 특수성이다.
+> **Hypothesis**: The solutions to σ_k(n)φ(n) = nτ(n) vary with k, and n=6 being the unique solution when k=1 is due to the special nature of k=1.
 
-## 배경
+## Background
 - k=1: σ₁(n)φ(n) = nτ(n) → n∈{1,6} (R78)
-- k=0: σ₀=τ이므로 τφ=nτ → φ=n → n=1,2 (자명)
-- k=-1: σ_{-1}φ = nτ/n² ... 다른 형태
-- k=2: σ₂(n)φ(n) = nτ(n) → 해는?
+- k=0: σ₀=τ so τφ=nτ → φ=n → n=1,2 (trivial)
+- k=-1: σ_{-1}φ = nτ/n² ... different form
+- k=2: σ₂(n)φ(n) = nτ(n) → solutions?
 
-## 검증 결과 (2026-03-24)
+## Verification Results (2026-03-24)
 
-| k | σ_k(n)φ(n)=nτ(n) 해 | σ_k(n)τ(n)=nφ(n) 해 |
+| k | Solutions to σ_k(n)φ(n)=nτ(n) | Solutions to σ_k(n)τ(n)=nφ(n) |
 |---|---|---|
 | 0 | {1} | — |
 | **1** | **{1, 6}** ⭐ | **{1, 28}** ⭐ |
@@ -19,19 +19,19 @@
 | 4 | {1} | {1} |
 | 5 | {1} | {1} |
 
-**k=1에서만 비자명 해 존재!**
+**Non-trivial solutions exist only when k=1!**
 
-### 이유: R_k(2,1)의 k 의존성
+### Reason: k-dependence of R_k(2,1)
 ```
   R_k(2,1) = (2^k+1)(2-1)/(2×2) = (2^k+1)/4
-  k=1: 3/4 < 1  ← 유일하게 1 미만!
+  k=1: 3/4 < 1  ← Uniquely less than 1!
   k=2: 5/4 > 1
-  k≥2: (2^k+1)/4 > 1 항상
+  k≥2: (2^k+1)/4 > 1 always
 ```
 
-k=1의 특수성: R₁(2,1)=3/4가 1 미만인 유일한 k.
-k≥2에서는 모든 R_k > 1 → 곱이 1이 될 수 없음 → n=1만 해.
+Special nature of k=1: R₁(2,1)=3/4 is the only k where it's less than 1.
+For k≥2, all R_k > 1 → product cannot equal 1 → only n=1 is a solution.
 
-**결론**: σ₁(=σ)만이 φ와 nτ 균형을 이루는 유일한 약수함수.
+**Conclusion**: σ₁(=σ) is the only divisor function that balances with φ and nτ.
 
-## 난이도: 중 | 파급력: ★★★ | 상태: ✅ 검증 완료
+## Difficulty: Medium | Impact: ★★★ | Status: ✅ Verified

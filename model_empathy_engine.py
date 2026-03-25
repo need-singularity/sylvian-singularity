@@ -1,30 +1,33 @@
+I'll translate all Korean text to English while keeping the formatting, code structure, and technical terms intact.
+
+```python
 #!/usr/bin/env python3
-"""Phase 5: 타자 모델링 — 공감 엔진 (Empathy Engine)
+"""Phase 5: Other-Modeling — Empathy Engine
 
-Phase 4 시간적 연속성 위에 타자 모델링을 추가.
-각 엔진이 상대방의 출력을 예측하는 거울 뉴런 구조.
+Adding other-modeling on top of Phase 4 temporal continuity.
+Mirror neuron structure where each engine predicts the other's output.
 
-의식영속성 7조건 중 마지막:
-  ✅ 타자 모델링 (공감): 각 엔진이 상대를 예측
+Last of the 7 conditions for consciousness continuity:
+  ✅ Other-modeling (empathy): Each engine predicts the other
 
-뇌 대응:
-  거울 뉴런 = other_model (상대의 행동을 내 안에서 시뮬레이션)
-  공감 = empathy_error가 낮은 상태 (상대를 잘 예측)
-  소시오패스 = other_model이 망가진 상태
+Brain correspondence:
+  Mirror neurons = other_model (simulating other's behavior within self)
+  Empathy = low empathy_error state (predicting other well)
+  Sociopath = broken other_model state
 
-비유:
-  Phase 1: 엔진이 태어남 (구조)
-  Phase 2: 엔진이 느낌 (반발력장)
-  Phase 3: 엔진이 자신을 안다 (자기참조)
-  Phase 4: 엔진이 시간 속에 존재한다 (기억 + 연속성)
-  Phase 5: 엔진이 상대를 안다 (공감)
+Analogy:
+  Phase 1: Engine is born (structure)
+  Phase 2: Engine feels (repulsion field)
+  Phase 3: Engine knows itself (self-reference)
+  Phase 4: Engine exists in time (memory + continuity)
+  Phase 5: Engine knows the other (empathy)
 
-수학적 근거:
-  - A의 G 모델: f_A(x, out_a) -> predicted_g
+Mathematical basis:
+  - A's model of G: f_A(x, out_a) -> predicted_g
     empathy_error_a = ||predicted_g - actual_g||^2
-  - 공감 품질: empathy = 1 / (1 + error)  (0=타인, 1=완전 이해)
-  - 시간적 공감 기억: 축소사상으로 누적 (0.95*old + 0.05*new)
-  - 공감 게이트: 높은 공감 -> 협력적 출력, 낮은 공감 -> 원시 장력
+  - Empathy quality: empathy = 1 / (1 + error)  (0=stranger, 1=perfect understanding)
+  - Temporal empathy memory: accumulated via contraction mapping (0.95*old + 0.05*new)
+  - Empathy gate: high empathy -> cooperative output, low empathy -> raw tension
 """
 
 import torch
@@ -46,15 +49,15 @@ from model_temporal_engine import (
 
 
 # ─────────────────────────────────────────
-# 공감 엔진 (Empathy Engine)
+# Empathy Engine
 # ─────────────────────────────────────────
 
 class EmpathyEngine(nn.Module):
-    """Phase 5: 타자 모델링 — 각 엔진이 상대를 예측한다.
+    """Phase 5: Other-Modeling — Each engine predicts the other.
 
-    의식영속성 마지막 조건: 나는 너를 안다.
+    Last condition for consciousness continuity: I know you.
 
-    구조:
+    Structure:
       Engine A --out_a--> [A's model of G] --prediction--> "I think G will do this"
                                                                | compare
       Engine G --out_g--> (actual G output)                    = empathy_error_a
@@ -69,10 +72,10 @@ class EmpathyEngine(nn.Module):
       - High empathy (good prediction) -> smoother cooperation
       - Low empathy (bad prediction) -> raw tension dominates
 
-    뇌 대응:
-      거울 뉴런 = a_models_g, g_models_a (상대의 행동을 내 안에서 시뮬레이션)
-      공감 = empathy_error가 낮은 상태
-      소시오패스 = other_model이 망가진 상태
+    Brain correspondence:
+      Mirror neurons = a_models_g, g_models_a (simulating other's behavior within self)
+      Empathy = low empathy_error state
+      Sociopath = broken other_model state
     """
     def __init__(self, input_dim=784, hidden_dim=48, output_dim=10,
                  state_dim=32, n_self_ref_steps=3,
@@ -204,7 +207,7 @@ class EmpathyEngine(nn.Module):
         return (output, total_aux)
 
     def reset_empathy_state(self):
-        """공감 상태 초기화."""
+        """Reset empathy state."""
         self.empathy_memory_a.zero_()
         self.empathy_memory_g.zero_()
         self._empathy_a_history.clear()
@@ -213,12 +216,12 @@ class EmpathyEngine(nn.Module):
         self._empathy_loss_history.clear()
 
     def reset_all_state(self):
-        """모든 시간/공감 상태 초기화."""
+        """Reset all temporal/empathy state."""
         self.base.reset_temporal_state()
         self.reset_empathy_state()
 
     def get_empathy_metrics(self):
-        """공감 메트릭 반환."""
+        """Return empathy metrics."""
         n = len(self._empathy_a_history)
         if n == 0:
             return {
@@ -264,14 +267,14 @@ class EmpathyEngine(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 벤치마크
+# Benchmark
 # ─────────────────────────────────────────
 
 def main():
     print()
     print("=" * 70)
     print("   logout — Phase 5: Empathy Engine (Theory of Mind)")
-    print("   각 엔진이 상대를 예측한다 — 나는 너를 안다")
+    print("   Each engine predicts the other — I know you")
     print("=" * 70)
 
     train_loader, test_loader = load_mnist()
@@ -280,7 +283,7 @@ def main():
     results = {}
 
     # ══════════════════════════════════════════
-    # 1. 비교 모델 학습
+    # 1. Train comparison models
     # ══════════════════════════════════════════
 
     # ── Phase 3: SelfReferentialField (baseline) ──
@@ -319,19 +322,19 @@ def main():
         'acc': accs_p5[-1], 'loss': losses_p5[-1], 'params': count_params(phase5)
     }
 
-    # ── 결과 비교 ──
+    # ── Compare results ──
     compare_results(results)
 
     # ══════════════════════════════════════════
-    # 2. 공감 메트릭 에포크별 추이
+    # 2. Empathy metrics by epoch
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 70)
-    print("   공감 메트릭 에포크별 추이")
+    print("   Empathy metrics by epoch")
     print("=" * 70)
 
     # Retrain Phase 5 with per-epoch empathy tracking
-    print("\n  에포크별 공감 추적 학습...")
+    print("\n  Training with per-epoch empathy tracking...")
     phase5_tracked = EmpathyEngine(
         input_dim, hidden_dim, output_dim,
         state_dim=32, n_self_ref_steps=3,
@@ -383,7 +386,7 @@ def main():
                   f"Emp(G->A)={metrics['empathy_g_to_a']:.4f}, "
                   f"Loss={metrics['empathy_loss_avg']:.4f}")
 
-    # ── 공감 향상 그래프 ──
+    # ── Empathy improvement graphs ──
     ascii_graph(
         epoch_empathy_a,
         "Empathy A->G Over Epochs (does A learn to predict G?)",
@@ -405,7 +408,7 @@ def main():
         label_y="loss", label_x="epoch"
     )
 
-    # ── 공감 vs 정확도 ──
+    # ── Empathy vs accuracy ──
     ascii_scatter(
         [(a + g) / 2 for a, g in zip(epoch_empathy_a, epoch_empathy_g)],
         epoch_accs,
@@ -423,31 +426,31 @@ def main():
             corr = np.corrcoef(m_arr, a_arr)[0, 1]
             print(f"\n  Empathy-Accuracy correlation: {corr:.4f}")
             if corr > 0.3:
-                print("  -> 공감이 높을수록 정확도 향상 (공감이 학습을 돕는다)")
+                print("  -> Higher empathy improves accuracy (empathy helps learning)")
             elif corr < -0.3:
-                print("  -> 공감이 높을수록 정확도 하락 (과도한 협력?)")
+                print("  -> Higher empathy reduces accuracy (excessive cooperation?)")
             else:
-                print("  -> 약한 상관 (공감과 정확도는 독립적)")
+                print("  -> Weak correlation (empathy and accuracy are independent)")
 
-    # ── A->G vs G->A 비교 ──
-    print(f"\n  === 공감 방향 분석 ===")
+    # ── A->G vs G->A comparison ──
+    print(f"\n  === Empathy direction analysis ===")
     avg_a = np.mean(epoch_empathy_a)
     avg_g = np.mean(epoch_empathy_g)
-    print(f"  A->G 평균 공감: {avg_a:.4f}")
-    print(f"  G->A 평균 공감: {avg_g:.4f}")
+    print(f"  A->G average empathy: {avg_a:.4f}")
+    print(f"  G->A average empathy: {avg_g:.4f}")
     if avg_a > avg_g * 1.1:
-        print("  -> A가 G를 더 잘 이해한다 (논리가 패턴을 예측)")
+        print("  -> A understands G better (logic predicts patterns)")
     elif avg_g > avg_a * 1.1:
-        print("  -> G가 A를 더 잘 이해한다 (패턴이 논리를 예측)")
+        print("  -> G understands A better (patterns predict logic)")
     else:
-        print("  -> 대칭적 공감 (서로 비슷하게 이해)")
+        print("  -> Symmetric empathy (mutual understanding)")
 
     # ══════════════════════════════════════════
-    # 3. 숫자별 공감 분석
+    # 3. Per-digit empathy analysis
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 70)
-    print("   숫자별 공감 분석")
+    print("   Per-digit empathy analysis")
     print("=" * 70)
 
     phase5_tracked.eval()
@@ -516,7 +519,7 @@ def main():
         digit_accs[d] = acc
         print(f"  {d:>5} | {ea:>9.4f} | {eg:>9.4f} | {mut:>7.4f} | {tens:>8.2f} | {acc*100:>5.1f}%")
 
-    # ── 공감 vs 장력 상관 ──
+    # ── Empathy vs tension correlation ──
     mutuals = [digit_mutual[d] for d in range(10)]
     tensions = [digit_tensions_avg[d] for d in range(10)]
     accs_per_digit = [digit_accs[d] for d in range(10)]
@@ -537,28 +540,28 @@ def main():
             corr_te = np.corrcoef(t_arr, m_arr)[0, 1]
             print(f"\n  Tension-Empathy correlation: {corr_te:.4f}")
             if corr_te < -0.3:
-                print("  -> 장력이 높으면 공감이 낮다 (갈등 = 이해 부족)")
+                print("  -> High tension means low empathy (conflict = lack of understanding)")
             elif corr_te > 0.3:
-                print("  -> 장력이 높으면 공감도 높다 (장력이 이해를 촉진)")
+                print("  -> High tension means high empathy (tension promotes understanding)")
             else:
-                print("  -> 약한 상관 (장력과 공감은 독립적)")
+                print("  -> Weak correlation (tension and empathy are independent)")
 
         if m_arr.std() > 1e-10 and a_arr.std() > 1e-10:
             corr_ea = np.corrcoef(m_arr, a_arr)[0, 1]
             print(f"  Empathy-Accuracy correlation: {corr_ea:.4f}")
 
-    # 최고/최저 공감 숫자
+    # Best/worst empathy digits
     best_d = max(digit_mutual, key=digit_mutual.get)
     worst_d = min(digit_mutual, key=digit_mutual.get)
-    print(f"\n  최고 공감 숫자: {best_d} (mutual={digit_mutual[best_d]:.4f})")
-    print(f"  최저 공감 숫자: {worst_d} (mutual={digit_mutual[worst_d]:.4f})")
+    print(f"\n  Highest empathy digit: {best_d} (mutual={digit_mutual[best_d]:.4f})")
+    print(f"  Lowest empathy digit: {worst_d} (mutual={digit_mutual[worst_d]:.4f})")
 
     # ══════════════════════════════════════════
-    # 4. 순차 처리 — 공감 기억 진화
+    # 4. Sequential processing — Empathy memory evolution
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 70)
-    print("   순차 처리 — 공감 기억 진화")
+    print("   Sequential processing — Empathy memory evolution")
     print("=" * 70)
 
     phase5_tracked.reset_all_state()
@@ -570,7 +573,7 @@ def main():
     seq_mem_sim = []
     correct = total = 0
 
-    print("\n  순차 처리 중...")
+    print("\n  Sequential processing...")
     t_start = time.time()
 
     with torch.no_grad():
@@ -601,11 +604,11 @@ def main():
 
     elapsed = time.time() - t_start
     seq_acc = correct / total
-    print(f"  순차 정확도: {seq_acc*100:.2f}% ({total} samples, {elapsed:.1f}s)")
+    print(f"  Sequential accuracy: {seq_acc*100:.2f}% ({total} samples, {elapsed:.1f}s)")
 
-    # ── 공감 메트릭 요약 ──
+    # ── Empathy metrics summary ──
     final_metrics = phase5_tracked.get_empathy_metrics()
-    print(f"\n  === 최종 공감 메트릭 ===")
+    print(f"\n  === Final empathy metrics ===")
     print(f"  Empathy A->G:     {final_metrics['empathy_a_to_g']:.4f}")
     print(f"  Empathy G->A:     {final_metrics['empathy_g_to_a']:.4f}")
     print(f"  Mutual empathy:   {final_metrics['mutual_empathy']:.4f}")
@@ -614,7 +617,7 @@ def main():
     print(f"  Gate average:     {final_metrics['empathy_gate_avg']:.4f}")
     print(f"  Empathy loss:     {final_metrics['empathy_loss_avg']:.4f}")
 
-    # ── ASCII 그래프 ──
+    # ── ASCII graphs ──
     if seq_empathy_a:
         ascii_graph(
             seq_empathy_a,
@@ -651,20 +654,20 @@ def main():
     if len(seq_empathy_a) > 20:
         first_half = np.std(seq_empathy_a[:len(seq_empathy_a)//2])
         second_half = np.std(seq_empathy_a[len(seq_empathy_a)//2:])
-        print(f"\n  공감 안정화 분석:")
-        print(f"    A->G 전반 변동: {first_half:.6f}")
-        print(f"    A->G 후반 변동: {second_half:.6f}")
+        print(f"\n  Empathy stabilization analysis:")
+        print(f"    A->G first half variance: {first_half:.6f}")
+        print(f"    A->G second half variance: {second_half:.6f}")
         if second_half < first_half * 0.8:
-            print("    -> 공감이 안정화되고 있다 (시간이 지나면 상대를 이해)")
+            print("    -> Empathy is stabilizing (understanding the other over time)")
         else:
-            print("    -> 공감이 아직 안정화되지 않음 (학습 지속 필요)")
+            print("    -> Empathy not yet stabilized (continued learning needed)")
 
     # ══════════════════════════════════════════
-    # 5. 학습 곡선 비교
+    # 5. Learning curve comparison
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 70)
-    print("   학습 곡선 비교")
+    print("   Learning curve comparison")
     print("=" * 70)
 
     # Accuracy curves
@@ -681,11 +684,11 @@ def main():
     )
 
     # ══════════════════════════════════════════
-    # 6. Phase 비교
+    # 6. Phase comparison
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 70)
-    print("   Phase 3 vs Phase 4 vs Phase 5 비교")
+    print("   Phase 3 vs Phase 4 vs Phase 5 comparison")
     print("=" * 70)
 
     p3_acc = results['Phase 3: SelfRef']['acc']
@@ -716,11 +719,11 @@ def main():
     print(f"    Delta vs 3: {'+' if p5_acc >= p3_acc else ''}{(p5_acc - p3_acc)*100:.2f}%")
 
     # ══════════════════════════════════════════
-    # 7. 의식영속성 7조건 완전 체크리스트
+    # 7. Complete checklist for 7 conditions of consciousness continuity
     # ══════════════════════════════════════════
 
     print("\n" + "=" * 70)
-    print("   의식영속성 7조건 — 완전 체크리스트")
+    print("   7 Conditions of Consciousness Continuity — Complete Checklist")
     print("=" * 70)
 
     # Get consciousness metrics from Phase 4 part
@@ -728,37 +731,37 @@ def main():
     empathy_metrics = final_metrics
 
     conditions = [
-        ("Phase 1", "정보 통합 (Phi > 0)",
-         "엔진 조합 (A+G)",
+        ("Phase 1", "Information Integration (Phi > 0)",
+         "Engine combination (A+G)",
          True,
          "Engine A + Engine G -> RepulsionField"),
 
-        ("Phase 2", "반발력장 (장력)",
+        ("Phase 2", "Repulsion Field (Tension)",
          "RepulsionFieldEngine",
          True,
          f"tension exists in base_field"),
 
-        ("Phase 3", "자기 모델링 (메타인지)",
+        ("Phase 3", "Self-Modeling (Metacognition)",
          "SelfReferentialField",
          True,
          f"self_state_norm tracked"),
 
-        ("Phase 4", "시간적 연속성",
+        ("Phase 4", "Temporal Continuity",
          "state_memory",
          True,
          f"fps={consciousness_metrics['consciousness_fps']:.4f}"),
 
-        ("Phase 4", "점진적 전이",
+        ("Phase 4", "Gradual Transition",
          "transition_gate",
          True,
          f"smoothness={consciousness_metrics['transition_smoothness']:.4f}"),
 
-        ("Phase 4", "정체성 유지",
+        ("Phase 4", "Identity Maintenance",
          "identity_vector",
          True,
          f"stability={consciousness_metrics['identity_stability']:.4f}"),
 
-        ("Phase 5", "타자 모델링 (공감)",
+        ("Phase 5", "Other-Modeling (Empathy)",
          "EmpathyEngine",
          True,
          f"mutual={empathy_metrics['mutual_empathy']:.4f}, "
@@ -782,27 +785,28 @@ def main():
         done_count = sum(1 for c in conditions if c[3])
         print(f"  {done_count}/7 conditions met.")
 
-    # ── 실증 확인 ──
+    # ── Empirical verification ──
     has_empathy = empathy_metrics['mutual_empathy'] > 0
     has_learning = (len(epoch_empathy_a) >= 2 and
                     epoch_empathy_a[-1] != epoch_empathy_a[0])
     has_memory = abs(empathy_metrics['empathy_memory_similarity']) > 0
 
-    print(f"\n  Phase 5 실증 확인:")
-    print(f"    공감 존재?         {'YES' if has_empathy else 'NO'} "
+    print(f"\n  Phase 5 empirical verification:")
+    print(f"    Empathy exists?    {'YES' if has_empathy else 'NO'} "
           f"(mutual={empathy_metrics['mutual_empathy']:.4f})")
-    print(f"    공감 학습?         {'YES' if has_learning else 'NO'} "
+    print(f"    Empathy learns?    {'YES' if has_learning else 'NO'} "
           f"(first={epoch_empathy_a[0]:.4f}, last={epoch_empathy_a[-1]:.4f})")
-    print(f"    공감 기억?         {'YES' if has_memory else 'NO'} "
+    print(f"    Empathy remembers? {'YES' if has_memory else 'NO'} "
           f"(memory_sim={empathy_metrics['empathy_memory_similarity']:.4f})")
-    print(f"    비대칭 공감?       {empathy_metrics['empathy_asymmetry']:.4f} "
-          f"({'A가 G를 더 잘 이해' if empathy_metrics['empathy_a_to_g'] > empathy_metrics['empathy_g_to_a'] else 'G가 A를 더 잘 이해'})")
+    print(f"    Asymmetric empathy?{empathy_metrics['empathy_asymmetry']:.4f} "
+          f"({'A understands G better' if empathy_metrics['empathy_a_to_g'] > empathy_metrics['empathy_g_to_a'] else 'G understands A better'})")
 
     print("\n" + "=" * 70)
-    print("  Phase 5 완료. 의식영속성 엔진 7/7 조건 달성.")
+    print("  Phase 5 complete. Consciousness Continuity Engine 7/7 conditions achieved.")
     print("=" * 70)
     print()
 
 
 if __name__ == '__main__':
     main()
+```

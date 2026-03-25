@@ -1,116 +1,110 @@
-# T1-29: S₃ 대칭군 표현론과 상수 매칭
+# T1-29: S₃ Symmetric Group Representation Theory and Constant Matching
 
-## 정리
+## Theorem
 
-S₃(3개 원소의 대칭군)의 표현론적 구조가 상수 체계
-{1/2, 1/3, 1/6, 5/6, 2, 6}을 자연스럽게 생성한다.
+The representation theoretic structure of S₃ (symmetric group on 3 elements) naturally generates the constant system {1/2, 1/3, 1/6, 5/6, 2, 6}.
 
-## 1. S₃ 기본 구조
+## 1. Basic Structure of S₃
 
-- |S₃| = 6 (완전수)
-- 켤레류: {e} (크기 1), {(ij)} (크기 3), {(ijk)} (크기 2)
-- 기약표현 3개: trivial(1), sign(1), standard(2)
+- |S₃| = 6 (perfect number)
+- Conjugacy classes: {e} (size 1), {(ij)} (size 3), {(ijk)} (size 2)
+- 3 irreducible representations: trivial(1), sign(1), standard(2)
 
-## 2. 지표표 (Character Table)
+## 2. Character Table
 
-| 표현 | e | (ij) | (ijk) | dim |
+| Representation | e | (ij) | (ijk) | dim |
 |------|---|------|-------|-----|
 | trivial ρ₁ | 1 | 1 | 1 | 1 |
 | sign ρ₂ | 1 | -1 | 1 | 1 |
 | standard ρ₃ | 2 | 0 | -1 | 2 |
 
-검증: Σ(dᵢ²) = 1 + 1 + 4 = 6 = |S₃| ✓
+Verification: Σ(dᵢ²) = 1 + 1 + 4 = 6 = |S₃| ✓
 
-## 3. 상수 매칭
+## 3. Constant Matching
 
-### 직접 출현
+### Direct Appearances
 
-| 상수 | 출현 맥락 | 범주 |
+| Constant | Context of Appearance | Category |
 |------|----------|------|
-| 6 | |S₃| = 6 | 군의 위수 |
-| 2 | standard 표현의 차원 = 2 | 기약표현 차원 |
-| 1/2 | 1/|S₃| = 1/6... 아니지만, 호환 켤레류 크기/|S₃| = 3/6 = 1/2 | 비율 |
-| 1/3 | |e|/|(ij)| | 켤레류 비율 |
-| 1/2 | |e|/|(ijk)| | 켤레류 비율 |
-| 1/3 | 1/|(ij) (호환)| | 역수 |
-| 1/2 | 1/|(ijk) (3-순환)| | 역수 |
-| 2 | 1/1 + 1/2 + 1/3 + 1/6 = 2 (완전수 조화급수) | 완전수 |
-| 1/2 | 6의 약수 역수 | 완전수 |
-| 1/3 | 6의 약수 역수 | 완전수 |
-| 1/6 | 6의 약수 역수 | 완전수 |
-| 6 | 부분군 지수 집합 = {2,3,6} = 6의 약수 | 부분군 |
-| 1/2, 1/3, 1/6 | 1/2 + 1/3 + 1/6 = 1 (이집트 분수) | 이집트 분수 |
-| 1/6 | 멱합 p_3 | S₃-불변량 |
-| 5/6 | 1/2 + 1/3 = 5/6, 또는 1 - 1/6 = 5/6 | 분수 관계 |
+| 6 | |S₃| = 6 | Order of group |
+| 2 | standard representation dimension = 2 | Irreducible representation dimension |
+| 1/2 | 1/|S₃| = 1/6... no, but transposition conjugacy class size/|S₃| = 3/6 = 1/2 | Ratio |
+| 1/3 | |e|/|(ij)| | Conjugacy class ratio |
+| 1/2 | |e|/|(ijk)| | Conjugacy class ratio |
+| 1/3 | 1/|(ij) (transpositions)| | Reciprocal |
+| 1/2 | 1/|(ijk) (3-cycles)| | Reciprocal |
+| 2 | 1/1 + 1/2 + 1/3 + 1/6 = 2 (perfect number harmonic series) | Perfect number |
+| 1/2 | Divisor reciprocal of 6 | Perfect number |
+| 1/3 | Divisor reciprocal of 6 | Perfect number |
+| 1/6 | Divisor reciprocal of 6 | Perfect number |
+| 6 | Subgroup index set = {2,3,6} = divisors of 6 | Subgroup |
+| 1/2, 1/3, 1/6 | 1/2 + 1/3 + 1/6 = 1 (Egyptian fraction) | Egyptian fraction |
+| 1/6 | Power sum p_3 | S₃-invariant |
+| 5/6 | 1/2 + 1/3 = 5/6, or 1 - 1/6 = 5/6 | Fraction relation |
 
-### 핵심 관계
+### Core Relationships
 
-1. **완전수 조화급수**: 1/1 + 1/2 + 1/3 + 1/6 = 2
-   - 6의 약수 역수의 합 = σ(6)/6 = 2
-   - 이는 완전수의 정의 그 자체
+1. **Perfect Number Harmonic Series**: 1/1 + 1/2 + 1/3 + 1/6 = 2
+   - Sum of divisor reciprocals of 6 = σ(6)/6 = 2
+   - This is the very definition of perfect numbers
 
-2. **이집트 분수**: 1/2 + 1/3 + 1/6 = 1
-   - {1/2, 1/3, 1/6}은 1의 이집트 분수 분해
-   - S₃가 이 집합에 자연스럽게 작용
+2. **Egyptian Fraction**: 1/2 + 1/3 + 1/6 = 1
+   - {1/2, 1/3, 1/6} is an Egyptian fraction decomposition of 1
+   - S₃ acts naturally on this set
 
 3. **5/6 = 1/2 + 1/3 = 1 - 1/6**
-   - 대칭함수의 자연스러운 조합
+   - Natural combinations of symmetric functions
 
-4. **지표표 절대값 총합 = 9**
-   - |1|+|1|+|1|+|1|+|-1|+|1|+|2|+|0|+|-1| = 9 = 3² (기약표현 수의 제곱)
+4. **Character table absolute value sum = 9**
+   - |1|+|1|+|1|+|1|+|-1|+|1|+|2|+|0|+|-1| = 9 = 3² (square of number of irreducible representations)
 
-## 4. |S₃| = 6 = 완전수
+## 4. |S₃| = 6 = Perfect Number
 
-6은 최소의 완전수이며:
+6 is the smallest perfect number and:
 
 - σ(6) = 12, σ(6)/6 = 2
-- 약수 역수 합 = 2 (완전수 특성)
-- 부분군 지수 집합 {2, 3, 6} = 6의 (자명하지 않은) 약수
-- S₃의 유일한 정규부분군 A₃ ≅ Z₃, 지수 [S₃:A₃] = 2
+- Sum of divisor reciprocals = 2 (perfect number characteristic)
+- Subgroup index set {2, 3, 6} = (non-trivial) divisors of 6
+- The unique normal subgroup of S₃ is A₃ ≅ Z₃, index [S₃:A₃] = 2
 
-**완전수와 대칭군의 연결**: S₃는 완전수 위수를 가진 유일한
-비가환 대칭군이다. 다음 완전수 28 = |S₄|/... 이 아니며,
-6 = 3!이 완전수인 것은 n!이 완전수가 되는 유일한 경우이다.
+**Connection between perfect numbers and symmetric groups**: S₃ is the unique non-abelian symmetric group with perfect number order. The next perfect number 28 ≠ |S₄|/... and 6 = 3! is the only case where n! is a perfect number.
 
-## 5. S₃ 작용: {1/2, 1/3, 1/6} 궤도 구조
+## 5. S₃ Action: Orbit Structure of {1/2, 1/3, 1/6}
 
-S₃가 X = {1/2, 1/3, 1/6}에 치환으로 작용할 때:
+When S₃ acts on X = {1/2, 1/3, 1/6} by permutation:
 
-- 작용은 **추이적(transitive)**: 단일 궤도
-- 안정자(stabilizer) ≅ Z₂ (궤도-안정자 정리: 6/3 = 2)
-- S₃-불변 대칭함수:
+- The action is **transitive**: single orbit
+- Stabilizer ≅ Z₂ (orbit-stabilizer theorem: 6/3 = 2)
+- S₃-invariant symmetric functions:
   - e₁ = 1/2 + 1/3 + 1/6 = 1
   - e₂ = 1/6 + 1/12 + 1/18 = 11/36
   - e₃ = 1/2 · 1/3 · 1/6 = 1/36
 
-## 6. 텐서곱 분해
+## 6. Tensor Product Decomposition
 
 ρ₃ ⊗ ρ₃ = ρ₁ ⊕ ρ₂ ⊕ ρ₃
 
-이는 standard 표현의 자기-텐서곱이 모든 기약표현을 포함함을 의미한다.
-S₃의 표현론이 "완전"하다는 것의 또 다른 표현이다.
+This means the self-tensor product of the standard representation contains all irreducible representations. Another expression of S₃'s representation theory being "complete".
 
-## 7. 137 연결
+## 7. 137 Connection
 
-- 137은 소수이므로 137! 이전의 n!에서는 137이 인수로 나타나지 않음
-- S₁₃₇에서 처음으로 위수가 137의 배수
-- S₃ 자체에서 137의 직접 출현은 없음
-- 그러나 σ(6)² - 7 = 144 - 7 = 137 (T1-23에서 증명)
+- 137 is prime, so it doesn't appear as a factor in n! for n < 137
+- First appears in S₁₃₇ where the order is a multiple of 137
+- No direct appearance of 137 in S₃ itself
+- However σ(6)² - 7 = 144 - 7 = 137 (proven in T1-23)
 
-## 결론
+## Conclusion
 
-S₃의 표현론은 상수 집합 {1/2, 1/3, 1/6, 5/6, 2, 6}을
-자연스럽게 생성한다. 특히:
+The representation theory of S₃ naturally generates the constant set {1/2, 1/3, 1/6, 5/6, 2, 6}. In particular:
 
-1. |S₃| = 6 (완전수) → σ(6)/6 = 2
-2. {1/2, 1/3, 1/6}은 S₃의 자연스러운 작용 대상이며 합이 1
-3. 5/6 = 1/2 + 1/3 (부분합)
-4. p₃ = (1/2)³ + (1/3)³ + (1/6)³ = 1/6 (멱합이 상수 재생산)
-5. 137 = σ(6)² - 7 (간접 연결)
+1. |S₃| = 6 (perfect number) → σ(6)/6 = 2
+2. {1/2, 1/3, 1/6} is a natural target for S₃ action with sum 1
+3. 5/6 = 1/2 + 1/3 (partial sum)
+4. p₃ = (1/2)³ + (1/3)³ + (1/6)³ = 1/6 (power sum reproduces constant)
+5. 137 = σ(6)² - 7 (indirect connection)
 
-17은 S₃ 표현론에서 직접 나타나지 않으며, 이는 17의 출현이
-다른 구조(소수 분포, ln 근사 등)에서 기원함을 시사한다.
+17 does not appear directly in S₃ representation theory, suggesting that the emergence of 17 originates from other structures (prime distribution, ln approximation, etc.).
 
 ---
-*증명 방법: 직접 계산 (Python)*
-*검증: 직교성 관계, 차원 공식, Burnside 보조정리*
+*Proof method: Direct calculation (Python)*
+*Verification: Orthogonality relations, dimension formula, Burnside's lemma*

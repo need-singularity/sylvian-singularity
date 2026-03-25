@@ -1,9 +1,8 @@
+# Quantum Formula Discovery [2026-03-23 16:11:05]
 
-# 양자 공식 탐색 [2026-03-23 16:11:05]
+Constants 28, Attempts 5,323, Discovered 120, Threshold 0.1%
 
-상수 28개, 시도 5,323, 발견 120개, 임계 0.1%
-
-| 오차% | 공식 | 값 | 타겟 | 분류 |
+| Error% | Formula | Value | Target | Classification |
 |-------|------|-----|------|------|
 | 0.0000 | sqrt(1/2*1/2) | 0.500000 | 1/2 | A*A |
 | 0.0000 | 1/2*1/3 | 0.166667 | 1/6 | A*A |
@@ -38,11 +37,11 @@
 
 ---
 
-# 양자 공식 탐색 [2026-03-23 16:11:10]
+# Quantum Formula Discovery [2026-03-23 16:11:10]
 
-상수 28개, 시도 2,233, 발견 37개, 임계 0.1%
+Constants 28, Attempts 2,233, Discovered 37, Threshold 0.1%
 
-| 오차% | 공식 | 값 | 타겟 | 분류 |
+| Error% | Formula | Value | Target | Classification |
 |-------|------|-----|------|------|
 | 0.0000 | 1/2/N_gen | 0.166667 | 1/6 | A*B |
 | 0.0000 | N_gen^1/2 | 1.732051 | sqrt3 | A*B |
@@ -77,11 +76,11 @@
 
 ---
 
-# 양자 공식 탐색 [2026-03-23 16:13:51]
+# Quantum Formula Discovery [2026-03-23 16:13:51]
 
-상수 28개, 시도 5,323, 발견 359개, 임계 1.0%
+Constants 28, Attempts 5,323, Discovered 359, Threshold 1.0%
 
-| 오차% | 공식 | 값 | 타겟 | 분류 |
+| Error% | Formula | Value | Target | Classification |
 |-------|------|-----|------|------|
 | 0.0000 | sqrt(1/2*1/2) | 0.500000 | 1/2 | A*A |
 | 0.0000 | 1/2*1/3 | 0.166667 | 1/6 | A*A |
@@ -116,11 +115,11 @@
 
 ---
 
-# 양자 공식 탐색 [2026-03-23 16:13:57]
+# Quantum Formula Discovery [2026-03-23 16:13:57]
 
-상수 28개, 시도 2,233, 발견 147개, 임계 1.0%
+Constants 28, Attempts 2,233, Discovered 147, Threshold 1.0%
 
-| 오차% | 공식 | 값 | 타겟 | 분류 |
+| Error% | Formula | Value | Target | Classification |
 |-------|------|-----|------|------|
 | 0.0000 | 1/2/N_gen | 0.166667 | 1/6 | A*B |
 | 0.0000 | N_gen^1/2 | 1.732051 | sqrt3 | A*B |
@@ -155,11 +154,11 @@
 
 ---
 
-# 양자 공식 탐색 [2026-03-23 16:52:51]
+# Quantum Formula Discovery [2026-03-23 16:52:51]
 
-상수 28개, 시도 2,233, 발견 37개, 임계 0.1%
+Constants 28, Attempts 2,233, Discovered 37, Threshold 0.1%
 
-| 오차% | 공식 | 값 | 타겟 | 분류 |
+| Error% | Formula | Value | Target | Classification |
 |-------|------|-----|------|------|
 | 0.0000 | 1/2/N_gen | 0.166667 | 1/6 | A*B |
 | 0.0000 | N_gen^1/2 | 1.732051 | sqrt3 | A*B |

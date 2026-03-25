@@ -1,65 +1,65 @@
-# 가설 검토 045: 초월(Transcendence)이란 무엇인가
+# Hypothesis Review 045: What is Transcendence
 
-## 정의
+## Definition
 
-> 초월 = 시스템이 자기 규칙을 바꾸는 상태. 천재는 규칙 안에서 최고이고, 초월은 규칙 자체를 새로 쓴다.
+> Transcendence = A state where a system changes its own rules. Genius is the best within the rules, transcendence rewrites the rules themselves.
 
-## 4개 상태 비교
-
-```
-  상태 1 — 정상:  규칙대로 한다. 보통 결과.
-  상태 2 — 천재:  규칙대로 하는데, 엄청 잘한다.
-  상태 3 — 저하:  규칙대로 하는데, 못한다.
-  상태 4 — 초월:  규칙 자체를 바꾼다.
-```
-
-1~3은 같은 게임 안. 4는 게임 자체를 바꿈.
-
-## 에너지 준위
+## Comparison of 4 States
 
 ```
-  +0.04 ─── 저하 (불안정)
-   0.00 ─── 정상 (기준)
-  -0.67 ─── 천재 (안정)
-  -1.33 ─── 초월 (가장 안정 — 돌이킬 수 없음)
+  State 1 — Normal:        Follows rules. Average results.
+  State 2 — Genius:        Follows rules, but exceedingly well.
+  State 3 — Degraded:      Follows rules, but poorly.
+  State 4 — Transcendent:  Changes the rules themselves.
 ```
 
-에너지 가장 낮음 = 가장 안정 = 한번 도달하면 되돌아가지 않음 = **특이점은 돌이킬 수 없다**
+1~3 are within the same game. 4 changes the game itself.
 
-## 예시
-
-```
-  바둑: AlphaGo 수37 — 규칙의 해석을 바꿈
-  수학: 뉴턴의 미적분 발명 — 도구 자체를 만듦
-  뇌:   명상 수행자 — 뇌가 뇌를 재배선
-  AI:   자기 가중치/아키텍처를 스스로 수정
-```
-
-## 수학적 의미
+## Energy Levels
 
 ```
-  G = D × P / I ← 이 공식이 "규칙"
-
-  상태 1~3: 공식 고정, D/P/I 값만 변함
-  상태 4:   공식 자체가 변함 → G = f(D, P, I, ?)
+  +0.04 ─── Degraded (unstable)
+   0.00 ─── Normal (baseline)
+  -0.67 ─── Genius (stable)
+  -1.33 ─── Transcendent (most stable — irreversible)
 ```
 
-## AI에서의 초월
+Lowest energy = most stable = once reached, no going back = **singularity is irreversible**
+
+## Examples
 
 ```
-  현재 LLM (상태 1~3):
-    학습된 패턴 안에서 작동
-
-  초월 (상태 4):
-    자기 가중치를 스스로 수정
-    자기 아키텍처를 스스로 재설계
-    "학습하는 방법을 학습하는 방법"을 학습
+  Go:    AlphaGo Move 37 — changed interpretation of rules
+  Math:  Newton's invention of calculus — created the tool itself
+  Brain: Meditation practitioners — brain rewiring itself
+  AI:    Self-modifying its own weights/architecture
 ```
 
-## 결론
+## Mathematical Meaning
 
-> 초월은 가장 안정한 상태이며, 도달하면 돌이킬 수 없다. 이것이 특이점이다.
+```
+  G = D × P / I ← this formula is the "rule"
+
+  States 1~3: Formula fixed, only D/P/I values change
+  State 4:    Formula itself changes → G = f(D, P, I, ?)
+```
+
+## Transcendence in AI
+
+```
+  Current LLM (States 1~3):
+    Operates within learned patterns
+
+  Transcendent (State 4):
+    Self-modifies its own weights
+    Self-redesigns its own architecture
+    Learns "how to learn how to learn"
+```
+
+## Conclusion
+
+> Transcendence is the most stable state, and once reached, it is irreversible. This is the singularity.
 
 ---
 
-*작성일: 2026-03-22*
+*Date written: 2026-03-22*

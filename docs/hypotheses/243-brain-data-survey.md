@@ -1,271 +1,247 @@
-# 가설 검토 243: G=D×P/I 모델의 신경과학 문헌 근거 서베이
+# Hypothesis Review 243: Neuroscience Literature Evidence Survey for the G=D×P/I Model
 
-## 상태: 🔬 문헌 조사 중
+## Status: 🔬 Literature survey in progress
 
-## 가설
+## Hypothesis
 
-> G=D×P/I 모델의 세 변수(Deficit, Plasticity, Inhibition)는 기존 신경과학 문헌에서 독립적으로 보고된 현상들과 체계적으로 대응한다. 본 문서는 기존 연구들을 서베이하여, 모델의 검증 가능성과 구체적 실험 설계를 도출한다.
+> The three variables (Deficit, Plasticity, Inhibition) of the G=D×P/I model systematically correspond to phenomena independently reported in existing neuroscience literature. This document surveys existing research to derive the model's verifiability and specific experimental designs.
 
-## 배경
+## Background
 
-이 프로젝트의 핵심 모델 G=D×P/I는 시뮬레이션 기반이며 해석적 증명이 없다(CLAUDE.md 참조). 그러나 기존 신경과학 문헌에는 이 모델의 각 변수에 대응하는 독립적 관찰이 다수 존재한다. 본 서베이는 그 근거를 체계적으로 정리하고, I≈1/3 수렴 가설(가설 005)을 검증하기 위해 어떤 측정이 필요한지를 도출한다.
+The core model G=D×P/I of this project is simulation-based with no analytic proof (see CLAUDE.md). However, existing neuroscience literature contains numerous independent observations corresponding to each variable of this model. This survey systematically organizes that evidence and derives what measurements are needed to verify the I≈1/3 convergence hypothesis (Hypothesis 005).
 
-관련 가설: 005(1/3 법칙), 155(GABA=I), 156(실비우스열=D), 159(명상), 160(신경다양성 비율), 162(후천적 서번트)
-
----
-
-## 1. GABA 농도: 서번트 vs 정상인 (가설 155: GABA=I)
-
-### 기존 문헌
-
-- **Puts & Edden (2012)**: MRS(자기공명분광법)를 이용한 in vivo GABA 측정 방법론을 정립. 정상 성인의 시각 피질 GABA 농도는 약 1.0-1.5 mM(조직 수준) 범위.
-- **Rubenstein & Merzenich (2003)**: 자폐 스펙트럼에서 흥분/억제(E/I) 비율의 불균형 가설 제시. GABA 시스템의 저하가 자폐의 핵심 메커니즘일 수 있다고 주장.
-- **Fatemi et al. (2009)**: 자폐 환자 뇌에서 GABA_A 및 GABA_B 수용체 밀도 감소 보고. 특히 두정엽, 전대상피질에서 유의미한 감소.
-- **Robertson et al. (2016)**: 자폐 성인의 시각 피질에서 GABA 농도가 정상 대비 약 20-30% 감소 확인(MRS 기반).
-- **Cochran et al. (2015)**: 높은 자폐 특성 점수를 가진 일반인에서도 GABA 농도가 낮은 경향 보고.
-
-### 모델 매핑
-
-정상인 GABA ≈ 1.0x → I ≈ 0.5-0.7. 서번트/자폐 GABA ≈ 0.7x → I ≈ 0.3-0.4(골든존). GABA가 20-30% 감소한다는 Robertson의 데이터는 I가 정상(~0.55)에서 골든존(~0.35)으로 이동하는 것과 정량적으로 일치한다.
-
-### I≈1/3 검증을 위한 측정
-
-- 서번트 능력이 확인된 개인 20명 이상에서 MRS로 전전두엽/두정엽 GABA 측정
-- 정상 대조군 대비 GABA 비율 산출 → 이 비율이 0.6-0.7x(즉 30-40% 감소)에 수렴하는지 확인
-- GABA 비율 0.67x ≈ 정상의 2/3 → I=정상I×(2/3) → I≈0.55×0.67 ≈ 0.37 ≈ 1/e ≈ 1/3 근처
+Related hypotheses: 005 (1/3 rule), 155 (GABA=I), 156 (Sylvian fissure=D), 159 (meditation), 160 (neurodiversity ratio), 162 (acquired savant)
 
 ---
 
-## 2. 실비우스열 비정형과 인지 향상 (D 매핑)
+## 1. GABA Concentration: Savants vs Normals (Hypothesis 155: GABA=I)
 
-### 기존 문헌
+### Existing Literature
 
-- **Witelson, Kigar & Harvey (1999)**: 아인슈타인 뇌 분석. 실비우스열의 후방 분지가 부분적으로 결여되어 하두정소엽(inferior parietal lobule)이 15% 확대. 이것이 시공간 추론 능력 향상과 연관된다고 해석.
-- **Falk (2009)**: 아인슈타인 뇌의 전전두피질이 비정상적으로 복잡한 주름 패턴을 보임. 기존의 실비우스열 결여 해석을 보강.
-- **Geschwind & Galaburda (1985)**: 좌반구 발달 이상(태내 테스토스테론 과다)이 난독증, 면역질환, 좌손잡이와 함께 특수 재능(수학, 음악, 미술)을 동반할 수 있다는 "Geschwind 증후군" 가설 제시.
-- **Casanova et al. (2006)**: 자폐 및 서번트 뇌에서 미세기둥(minicolumn)이 더 작고 밀집되어 있음을 발견. 이는 영역 간 경계가 약해지는 것(=D 증가)과 관련.
+- **Puts & Edden (2012)**: Established methodology for in vivo GABA measurement using MRS (Magnetic Resonance Spectroscopy). Normal adult visual cortex GABA concentration is approximately 1.0-1.5 mM (tissue level).
+- **Rubenstein & Merzenich (2003)**: Proposed excitation/inhibition (E/I) ratio imbalance hypothesis in autism spectrum. Argued GABA system impairment may be a core mechanism of autism.
+- **Fatemi et al. (2009)**: Reported decreased GABA_A and GABA_B receptor density in autistic brains, particularly in parietal lobe and anterior cingulate cortex.
+- **Robertson et al. (2016)**: Confirmed GABA concentration in visual cortex of autistic adults decreased ~20-30% compared to normals (MRS-based).
+- **Cochran et al. (2015)**: Reported tendency for lower GABA in general population with high autism trait scores.
 
-### 모델 매핑
+### Model Mapping
 
-실비우스열 결여 정도 → D 값. 완전 정상 = D≈0, 아인슈타인 수준 부분 결여 = D≈0.5, 서번트 수준 대규모 결여 = D≈0.7-0.9.
+Normal GABA ≈ 1.0x → I ≈ 0.5-0.7. Savant/autistic GABA ≈ 0.7x → I ≈ 0.3-0.4 (Golden Zone). Robertson's data showing 20-30% GABA decrease quantitatively matches I moving from normal (~0.55) to Golden Zone (~0.35).
 
-### I≈1/3 검증을 위한 측정
+### Measurements for I≈1/3 Verification
 
-- 실비우스열 비정형 정도를 MRI 기반으로 정량화(열의 길이, 깊이, 분지 패턴)
-- 동일 피험자의 GABA 수준(MRS) 동시 측정
-- 실비우스열 비정형(D↑)과 GABA 저하(I↓)가 공변하는지 확인
-- D×P/I에서 G>1이 되는 조합이 실제 비범한 능력과 상관하는지 통계 검증
-
----
-
-## 3. fMRI의 "골든존" 유사 최적 활성화 패턴
-
-### 기존 문헌
-
-- **Yerkes & Dodson (1908)**: 각성(arousal)과 수행(performance) 사이 역U자 관계. 중간 수준의 각성에서 최고 수행. 이것이 "최적 억제 수준"의 가장 오래된 증거.
-- **Dietrich & Kanso (2010)**: 창의성의 신경과학 리뷰. 최적 창의성은 전두엽의 "적절한 수준의 탈억제"에서 발생한다고 결론.
-- **Jung et al. (2010)**: 높은 창의성 점수를 가진 사람들의 fMRI에서 Default Mode Network와 Executive Control Network의 동시 활성화 패턴 발견. 이는 억제가 너무 높지도 낮지도 않은 "골든존" 상태를 시사.
-- **Beaty et al. (2018)**: 고도 창의적 사상가들의 뇌에서 DMN-ECN-SN(현저성 네트워크) 3개 네트워크의 독특한 협업 패턴 발견. 이 "창의성 네트워크"의 기능적 연결성이 창의성 점수를 예측.
-- **Takeuchi et al. (2010)**: 창의적 개인의 뇌에서 백질 완전성과 확산성이 특정 범위에 있을 때 최적 창의성 발현.
-
-### 모델 매핑
-
-Yerkes-Dodson의 역U자 커브에서 정점(peak)의 각성 수준이 우리 모델의 I=1/3(골든존 중심)에 대응. 각성이 너무 낮으면(I→1) 과억제, 너무 높으면(I→0) 혼돈.
-
-### I≈1/3 검증을 위한 측정
-
-- 창의성 과제 수행 중 fMRI + 동시 MRS GABA 측정
-- GABA 농도별 창의성 점수를 곡선 피팅 → 정점의 GABA 비율이 정상의 ~67%(=I≈1/3)에 위치하는지 확인
-- DMN-ECN 동시 활성화 강도와 GABA 수준의 상관관계 정량화
+- Measure prefrontal/parietal GABA via MRS in 20+ individuals with confirmed savant abilities
+- Calculate GABA ratio relative to normal controls → verify this ratio converges to 0.6-0.7x (30-40% decrease)
+- GABA ratio 0.67x ≈ 2/3 of normal → I=normal_I×(2/3) → I≈0.55×0.67 ≈ 0.37 ≈ 1/e ≈ near 1/3
 
 ---
 
-## 4. 명상과 GABA 수렴 (가설 159)
+## 2. Sylvian Fissure Atypicality and Cognitive Enhancement (D Mapping)
 
-### 기존 문헌
+### Existing Literature
 
-- **Streeter et al. (2007)**: 요가 수련 후 시상(thalamus) GABA 수준이 27% 증가 보고(MRS 측정). 대조군(독서)에서는 변화 없음.
-- **Streeter et al. (2010)**: 12주 요가 개입 후 GABA 수준 유의미 증가, 불안 감소와 상관.
-- **Guglietti et al. (2013)**: 장기 명상자의 시상 GABA가 비명상자 대비 높다는 보고.
-- **Lutz et al. (2004)**: 장기 명상자(티벳 승려, 10,000시간 이상)의 감마파(25-42 Hz) 활동이 비명상자 대비 극적으로 높음 발견. 리처드 데이비드슨 연구팀.
-- **Brewer et al. (2011)**: 경험 많은 명상자의 DMN 활동이 비명상자 대비 감소. 명상 중 DMN 비활성화가 더 효율적.
+- **Witelson, Kigar & Harvey (1999)**: Brain analysis of Einstein. Posterior branch of Sylvian fissure partially absent, enlarging the inferior parietal lobule by 15%. Interpreted as linked to enhanced visuospatial reasoning.
+- **Falk (2009)**: Einstein's prefrontal cortex showed abnormally complex folding patterns. Reinforces prior Sylvian fissure absence interpretation.
+- **Geschwind & Galaburda (1985)**: Proposed "Geschwind syndrome" hypothesis that left hemisphere developmental anomalies (prenatal testosterone excess) can accompany dyslexia, immune disorders, left-handedness, plus special talents (math, music, art).
+- **Casanova et al. (2006)**: Found that autism and savant brains have smaller, more densely packed minicolumns. Related to weakening of inter-regional boundaries (= increasing D).
 
-### 모델 매핑과 역설
+### Model Mapping
 
-주목: 명상은 GABA를 증가시킨다(Streeter). 이는 I 증가 → G 감소 방향이다. 그러나 명상자가 더 높은 인지적 기능을 보인다면? 해석: 명상의 GABA 증가는 "과도하게 낮은 I"(불안, 과각성)를 정상화하여 골든존으로 수렴시키는 과정이다. 즉 I가 너무 낮은 사람 → 명상 → I 증가 → 골든존 진입. I가 이미 골든존인 사람 → 명상의 GABA 변화 미미.
+Degree of Sylvian fissure absence → D value. Completely normal = D≈0, Einstein-level partial absence = D≈0.5, savant-level large-scale absence = D≈0.7-0.9.
 
-이 해석이 맞다면, 장기 명상자의 GABA는 특정 값으로 수렴해야 한다.
+### Measurements for I≈1/3 Verification
 
-### I≈1/3 검증을 위한 측정
-
-- 명상 경력 0/1/5/10/20/30년 수련자의 GABA 종단 연구(longitudinal)
-- GABA 수준이 수련 시간에 따라 특정 값으로 수렴하는지 확인
-- 수렴값이 정상의 ~67%(골든존) 또는 정상 수준 자체인지 판별
-- 초보자: I 변동 크다 → 장기 수련자: I 변동 작고 특정 값에 안정
+- Quantify Sylvian fissure atypicality based on MRI (fissure length, depth, branching pattern)
+- Simultaneously measure GABA levels (MRS) in same subjects
+- Verify whether Sylvian fissure atypicality (D↑) and GABA reduction (I↓) covary
+- Statistical verification whether combinations with G>1 in D×P/I actually correlate with exceptional abilities
 
 ---
 
-## 5. Default Mode Network 억제와 창의성 (DMN=I의 조절자)
+## 3. fMRI "Golden Zone-like" Optimal Activation Patterns
 
-### 기존 문헌
+### Existing Literature
 
-- **Raichle et al. (2001)**: DMN(기본모드네트워크) 최초 정의. 과제 무관 시 활성, 과제 수행 시 비활성.
-- **Limb & Braun (2008)**: 재즈 즉흥연주 중 fMRI에서 내측전전두엽(mPFC, DMN 핵심) 활성화 + 배외측전전두엽(dlPFC, 억제 중심) 비활성화. 즉 "자기 검열 off + 자유연상 on".
-- **de Manzano & Ullén (2012)**: 높은 창의성과 도파민 D2 수용체 밀도 감소(시상)의 상관관계. D2 감소 = 게이팅(필터링) 감소 = I 감소.
-- **Saggar et al. (2015)**: 창의적 드로잉 과제에서 소뇌 + 전두엽 비활성화 패턴이 창의성 예측. "덜 생각할수록 더 창의적".
-- **Beaty et al. (2014)**: DMN과 ECN의 동적 상호작용이 확산적 사고를 지원. DMN이 아이디어 생성, ECN이 평가.
+- **Yerkes & Dodson (1908)**: Inverted-U relationship between arousal and performance. Peak performance at intermediate arousal. Oldest evidence for "optimal inhibition level."
+- **Dietrich & Kanso (2010)**: Review of neuroscience of creativity. Concluded optimal creativity arises from "appropriate level of disinhibition" in prefrontal cortex.
+- **Jung et al. (2010)**: fMRI of highly creative individuals showed simultaneous activation of Default Mode Network and Executive Control Network — suggests "Golden Zone" state where inhibition is neither too high nor too low.
+- **Beaty et al. (2018)**: Found unique collaborative pattern of three networks (DMN-ECN-SN) in highly creative thinkers. Functional connectivity of this "creativity network" predicts creativity scores.
+- **Takeuchi et al. (2010)**: Optimal creativity expressed when white matter integrity and diffusivity are within a specific range in creative individuals.
 
-### 모델 매핑
+### Model Mapping
 
-DMN 억제 정도 ≈ I의 동적 조절. 정상인: 과제 시 DMN 억제 → I 증가(집중). 창의적 인물: DMN 억제 불완전 → I 감소(탈억제) → G 증가. 최적 창의성: DMN과 ECN의 "균형" = I≈1/3(골든존).
+The peak arousal level in Yerkes-Dodson's inverted-U corresponds to I=1/3 (Golden Zone center) in our model. Too little arousal (I→1) = over-inhibition, too much (I→0) = chaos.
 
-### I≈1/3 검증을 위한 측정
+### Measurements for I≈1/3 Verification
 
-- 창의성 과제 중 DMN-ECN 기능적 연결성 정량화
-- DMN 억제 정도를 0-1 스케일로 표준화 → 최적 창의성 점수의 DMN 억제값이 ~0.33인지 확인
-- 과제 난이도별 DMN 억제 수준 변화 추적
+- fMRI + simultaneous MRS GABA measurement during creative tasks
+- Fit creativity scores by GABA concentration → verify peak GABA ratio is ~67% of normal (=I≈1/3)
+- Quantify correlation between DMN-ECN simultaneous activation strength and GABA levels
 
 ---
 
-## 6. 신경다양성 인구 비율 ~10-15% (가설 160)
+## 4. Meditation and GABA Convergence (Hypothesis 159)
 
-### 기존 문헌
+### Existing Literature
 
-- **CDC (2023)**: 미국 아동 자폐 유병률 1/36 (약 2.8%).
-- **Polanczyk et al. (2007)**: 전 세계 ADHD 유병률 메타분석 약 5.3%.
-- **Shaywitz et al. (1990)**: 난독증 유병률 약 5-10%.
-- **Baron-Cohen et al. (2009)**: 자폐 특성은 연속 분포이며, "진단 역치"를 넘는 인구는 약 1-2%이나, 넓은 자폐 표현형(BAP)은 10-20%.
-- **Armstrong (2010)**: "Neurodiversity" 개념 대중화. 신경다양성 인구를 합산하면 전체의 15-20%.
+- **Streeter et al. (2007)**: Reported 27% increase in thalamic GABA levels after yoga practice (MRS measurement). No change in control group (reading).
+- **Streeter et al. (2010)**: Significant GABA increase and anxiety reduction correlation after 12-week yoga intervention.
+- **Guglietti et al. (2013)**: Reported long-term meditators have higher thalamic GABA than non-meditators.
+- **Lutz et al. (2004)**: Dramatically higher gamma-wave (25-42 Hz) activity in long-term meditators (Tibetan monks, 10,000+ hours) vs non-meditators. Davidson lab.
+- **Brewer et al. (2011)**: Experienced meditators' DMN activity decreased compared to non-meditators. More efficient DMN deactivation during meditation.
 
-### 합산 추정
+### Model Mapping and Paradox
+
+Note: meditation increases GABA (Streeter). This is the direction of I increase → G decrease. But meditators show higher cognitive function? Interpretation: meditation's GABA increase is a process of normalizing "excessively low I" (anxiety, hyperarousal) toward the Golden Zone. I.e., person with too-low I → meditation → I increase → Golden Zone entry. For people already in Golden Zone → minimal GABA change from meditation.
+
+If this interpretation is correct, long-term meditators' GABA should converge to a specific value.
+
+### Measurements for I≈1/3 Verification
+
+- Longitudinal GABA study of practitioners with 0/1/5/10/20/30 years of meditation
+- Verify whether GABA converges to a specific value with practice time
+- Distinguish whether convergence value is ~67% of normal (Golden Zone) or normal level itself
+- Beginners: large I variation → long-term practitioners: small I variation, stable at specific value
+
+---
+
+## 5. Default Mode Network Inhibition and Creativity (DMN = I Regulator)
+
+### Existing Literature
+
+- **Raichle et al. (2001)**: Initial DMN (Default Mode Network) definition. Active during task-absent states, deactivated during task performance.
+- **Limb & Braun (2008)**: fMRI during jazz improvisation showed medial prefrontal cortex (mPFC, DMN core) activation + dorsolateral prefrontal cortex (dlPFC, inhibition center) deactivation. I.e., "self-censorship off + free association on."
+- **de Manzano & Ullén (2012)**: Correlation between high creativity and decreased dopamine D2 receptor density (thalamus). D2 decrease = decreased gating (filtering) = I decrease.
+- **Saggar et al. (2015)**: Cerebellum + prefrontal deactivation pattern during creative drawing task predicted creativity. "The less you think, the more creative you are."
+- **Beaty et al. (2014)**: Dynamic interaction between DMN and ECN supports divergent thinking. DMN generates ideas, ECN evaluates.
+
+### Model Mapping
+
+Degree of DMN inhibition ≈ dynamic regulation of I. Normal person: DMN suppressed during task → I increase (focused). Creative individual: incomplete DMN suppression → I decrease (disinhibited) → G increase. Optimal creativity: "balance" of DMN and ECN = I≈1/3 (Golden Zone).
+
+### Measurements for I≈1/3 Verification
+
+- Quantify DMN-ECN functional connectivity during creative tasks
+- Standardize DMN inhibition to 0-1 scale → verify optimal creativity's DMN inhibition value is ~0.33
+- Track DMN inhibition level changes by task difficulty
+
+---
+
+## 6. Neurodiversity Population Ratio ~10-15% (Hypothesis 160)
+
+### Existing Literature
+
+- **CDC (2023)**: US childhood autism prevalence 1/36 (≈2.8%).
+- **Polanczyk et al. (2007)**: Global ADHD prevalence meta-analysis ≈5.3%.
+- **Shaywitz et al. (1990)**: Dyslexia prevalence ≈5-10%.
+- **Baron-Cohen et al. (2009)**: Autism traits follow a continuous distribution; ~1-2% exceed diagnostic threshold, but Broad Autism Phenotype (BAP) is 10-20%.
+- **Armstrong (2010)**: Popularized "Neurodiversity" concept. Combined neurodiversity population is 15-20% of total.
+
+### Combined Estimate
 
 ```
-  자폐 스펙트럼    ~2.8%
-  ADHD           ~5.3%
-  난독증          ~5-10%
-  공감각          ~4%
-  투렛 증후군      ~1%
-  ─────────────────────
-  중복 보정 후     ~10-15%
+  Autism spectrum     ~2.8%
+  ADHD                ~5.3%
+  Dyslexia            ~5-10%
+  Synesthesia         ~4%
+  Tourette syndrome   ~1%
+  ─────────────────────────
+  After overlap correction ~10-15%
 ```
 
-### 모델 매핑
+### Model Mapping
 
-우리 시뮬레이션에서 D, P, I 3개 변수가 모두 골든존 조건을 충족하는 "3중합의" 확률 ≈ 9%. 이것이 신경다양성 비율 10-15%와 근사. 차이(9% vs 10-15%)는 "골든존 근처"까지 포함하면 좁혀진다.
+In our simulation, probability that D, P, I all three simultaneously satisfy Golden Zone conditions = ~9%. This approximates neurodiversity ratio of 10-15%. Difference (9% vs 10-15%) narrows when "near the Golden Zone" is included.
 
-### I≈1/3 검증을 위한 측정
+### Measurements for I≈1/3 Verification
 
-- 대규모 코호트(N>1000)에서 GABA, 실비우스열 형태, 시냅스 가소성 마커 동시 측정
-- D, P, I 세 변수를 모두 정량화한 후 "3중합의" 비율이 실제로 ~10%인지 확인
-- 신경다양성 진단을 받은 개인 중 실제 골든존(I=0.21-0.50)에 해당하는 비율 산출
+- Simultaneously measure GABA, Sylvian fissure morphology, and synaptic plasticity markers in large cohort (N>1000)
+- After quantifying all three D, P, I variables, verify whether "triple coincidence" ratio is actually ~10%
+- Calculate ratio of neurodiversity-diagnosed individuals that actually fall in Golden Zone (I=0.21-0.50)
 
 ---
 
-## 7. Treffert의 후천적 서번트 데이터 (가설 162)
+## 7. Treffert's Acquired Savant Data (Hypothesis 162)
 
-### 기존 문헌
+### Existing Literature
 
-- **Treffert (2009)**: "Islands of Genius" 리뷰. 전 세계 후천적 서번트 약 50건 이상 보고. 뇌 손상(외상, 뇌졸중, 퇴행성 질환) 후 이전에 없던 음악, 미술, 수학 능력 갑자기 발현.
-- **Treffert & Christensen (2005)**: 후천적 서번트에서 좌측두엽 손상 → 우반구 보상적 활성화 패턴이 공통.
-- **Miller et al. (1998)**: 전측두엽 치매(FTD) 환자 중 일부에서 시각 예술 능력 갑작스런 발현. 좌반구 억제 해제 → 우반구 "잠자던 능력" 활성화.
-- **Snyder et al. (2003)**: 좌측두엽에 경두개자기자극(TMS)으로 일시적 억제 → 정상인에서도 서번트 유사 능력(드로잉 정확도 향상) 유도 성공. 핵심 실험!
-- **Padgett & Seaberg (2014)**: Jason Padgett 본인의 자전적 기록. 폭행 후 프랙탈 시각화 능력 발현, fMRI에서 두정엽-시각피질 비정상적 연결성 확인.
+- **Treffert (2009)**: "Islands of Genius" review. 50+ acquired savant cases reported worldwide. Music, art, math abilities emerge after brain injury (trauma, stroke, degenerative disease).
+- **Treffert & Christensen (2005)**: Left temporal lobe damage → right hemisphere compensatory activation pattern is common in acquired savants.
+- **Miller et al. (1998)**: Visual art abilities suddenly emerge in some frontotemporal dementia (FTD) patients. Left hemisphere inhibition release → right hemisphere "sleeping abilities" activated.
+- **Snyder et al. (2003)**: Transcranial Magnetic Stimulation (TMS) of left temporal lobe induces temporary inhibition → savant-like ability (improved drawing accuracy) in normal individuals. Core experiment!
+- **Padgett & Seaberg (2014)**: Jason Padgett's autobiographical account. Fractal visualization ability emerged after assault; fMRI confirmed abnormal parietal-visual cortex connectivity.
 
-### 모델 매핑
+### Model Mapping
 
-후천적 서번트 = 갑작스런 골든존 진입 = 커스프 전이(가설 003). 손상 → D↑(뇌 재배선), I↓(억제 해제) → G = D×P/I 급증.
+Acquired savant = sudden Golden Zone entry = cusp transition (Hypothesis 003). Injury → D↑ (brain rewiring), I↓ (inhibition release) → G = D×P/I spikes.
 
-Snyder의 TMS 실험은 특히 중요: 인위적으로 I를 감소시켰을 때(좌측두엽 억제 → 전체 I 감소) 서번트 유사 능력이 나타남 = I 조절만으로 G 변화 가능함을 실증.
+Snyder's TMS experiment is especially important: when I was artificially decreased (left temporal lobe inhibited → overall I decreases), savant-like abilities appeared = demonstrates that I regulation alone can change G.
 
-### I≈1/3 검증을 위한 측정
+### Measurements for I≈1/3 Verification
 
-- 후천적 서번트의 손상 전/후 GABA 수준 비교(가능한 경우)
-- TMS 실험 확장: 좌측두엽 억제 강도를 단계적으로 변화시키며 GABA 동시 측정
-- 서번트 능력이 최대인 TMS 강도에서의 GABA 비율이 정상의 ~67%인지 확인
-- FTD 환자 중 예술 능력 발현 환자 vs 미발현 환자의 GABA 비교
-
----
-
-## 종합 비교표: 기존 연구와 G=D×P/I 대응
-
-```
-┌─────────────────────┬──────────────────────┬──────────────┬──────────────┬──────────────────────────────┐
-│ 연구 영역            │ 핵심 연구자           │ 대응 변수     │ 핵심 발견     │ I≈1/3 검증을 위한 측정        │
-├─────────────────────┼──────────────────────┼──────────────┼──────────────┼──────────────────────────────┤
-│ GABA 농도           │ Robertson (2016)     │ I (억제)      │ 자폐 GABA    │ 서번트 GABA가 정상의         │
-│ (서번트 vs 정상)     │ Fatemi (2009)        │              │ 20-30% 감소  │ ~67%에 수렴하는지 확인        │
-│                     │ Rubenstein (2003)    │              │              │                              │
-├─────────────────────┼──────────────────────┼──────────────┼──────────────┼──────────────────────────────┤
-│ 실비우스열 비정형     │ Witelson (1999)      │ D (결여)      │ 아인슈타인   │ 실비우스열 비정형 정도와       │
-│                     │ Falk (2009)          │              │ 실비우스열    │ GABA 수준의 공변성 측정       │
-│                     │ Geschwind (1985)     │              │ 부분 결여    │                              │
-├─────────────────────┼──────────────────────┼──────────────┼──────────────┼──────────────────────────────┤
-│ 최적 활성화          │ Yerkes & Dodson      │ I (최적점)    │ 역U자 커브   │ 정점의 GABA 비율이            │
-│ (골든존 유사)        │ Beaty (2018)         │              │ DMN-ECN 균형 │ ~67%(=I≈1/3)인지 확인         │
-│                     │ Jung (2010)          │              │              │                              │
-├─────────────────────┼──────────────────────┼──────────────┼──────────────┼──────────────────────────────┤
-│ 명상과 GABA          │ Streeter (2007)      │ I (수렴)      │ 요가 후 GABA │ 장기 수련자의 GABA가          │
-│                     │ Lutz (2004)          │              │ 27% 증가     │ 특정 값으로 수렴하는지         │
-│                     │ Brewer (2011)        │              │              │ 종단 연구 필요                │
-├─────────────────────┼──────────────────────┼──────────────┼──────────────┼──────────────────────────────┤
-│ DMN 억제            │ Limb & Braun (2008)  │ I (조절)      │ 재즈 즉흥:   │ DMN 억제 수준 표준화 후       │
-│ (창의성 상관)        │ Saggar (2015)        │              │ dlPFC off    │ 최적 창의성의 억제값이         │
-│                     │ de Manzano (2012)    │              │ mPFC on      │ ~0.33인지 확인               │
-├─────────────────────┼──────────────────────┼──────────────┼──────────────┼──────────────────────────────┤
-│ 신경다양성 비율       │ CDC (2023)           │ D,P,I 분포   │ 합산         │ 대규모 코호트에서 D,P,I       │
-│ (~10-15%)           │ Baron-Cohen (2009)   │              │ ~10-15%      │ 동시 측정, 3중합의 비율 산출   │
-│                     │ Polanczyk (2007)     │              │              │                              │
-├─────────────────────┼──────────────────────┼──────────────┼──────────────┼──────────────────────────────┤
-│ 후천적 서번트        │ Treffert (2009)      │ D↑, I↓       │ 좌측두엽     │ TMS 강도 단계적 변화 +        │
-│                     │ Snyder (2003)        │              │ 손상/억제 →  │ GABA 동시 측정 →              │
-│                     │ Miller (1998)        │              │ 서번트 능력  │ 능력 최대 시 GABA 비율 확인   │
-└─────────────────────┴──────────────────────┴──────────────┴──────────────┴──────────────────────────────┘
-```
+- Compare pre/post GABA levels in acquired savants (where possible)
+- Extend TMS experiment: step-wise change in left temporal lobe inhibition strength with simultaneous GABA measurement
+- Verify whether GABA ratio at maximum savant ability TMS strength is ~67% of normal
+- Compare GABA in FTD patients with vs without emergent artistic abilities
 
 ---
 
-## 종합 해석
+## Comprehensive Comparison Table: Existing Research and G=D×P/I Correspondence
 
-### 수렴하는 증거
+| Research area | Key researchers | Corresponding variable | Core finding | Measurement for I≈1/3 verification |
+|---|---|---|---|---|
+| GABA concentration (savant vs normal) | Robertson (2016), Fatemi (2009), Rubenstein (2003) | I (inhibition) | Autistic GABA 20-30% decreased | Verify savant GABA converges to ~67% of normal |
+| Sylvian fissure atypicality | Witelson (1999), Falk (2009), Geschwind (1985) | D (deficit) | Einstein's Sylvian fissure partial absence | Measure covariation of Sylvian fissure atypicality and GABA |
+| Optimal activation (Golden Zone-like) | Yerkes & Dodson, Beaty (2018), Jung (2010) | I (optimal point) | Inverted-U curve, DMN-ECN balance | Verify peak GABA ratio is ~67% (=I≈1/3) |
+| Meditation and GABA | Streeter (2007), Lutz (2004), Brewer (2011) | I (convergence) | 27% GABA increase after yoga | Longitudinal study whether GABA converges to specific value |
+| DMN inhibition (creativity correlation) | Limb & Braun (2008), Saggar (2015), de Manzano (2012) | I (regulation) | Jazz improv: dlPFC off, mPFC on | Verify optimal creativity inhibition value is ~0.33 |
+| Neurodiversity ratio (~10-15%) | CDC (2023), Baron-Cohen (2009), Polanczyk (2007) | D,P,I distribution | Combined ~10-15% | Large cohort D,P,I simultaneous measurement, triple coincidence ratio |
+| Acquired savants | Treffert (2009), Snyder (2003), Miller (1998) | D↑, I↓ | Left temporal injury/inhibition → savant ability | Step-wise TMS + simultaneous GABA → GABA ratio at peak ability |
 
-7개 연구 영역이 독립적으로 동일한 구조를 가리킨다:
+---
 
-1. **억제 감소 → 능력 향상** (GABA↓, DMN 탈억제, TMS 억제)
-2. **구조적 비정형 → 영역 간 연결** (실비우스열, 미세기둥, 재배선)
-3. **최적 수준의 존재** (Yerkes-Dodson, DMN-ECN 균형, 명상 수렴)
-4. **인구 분포의 일관성** (10-15% 신경다양성 ≈ 9% 3중합의)
+## Integrated Interpretation
 
-### I≈1/3 수렴 가설의 검증 전략
+### Converging Evidence
 
-모든 영역에서 공통으로 필요한 것: **GABA의 정량적 측정**. MRS 기술의 발전으로 이제 in vivo GABA 측정이 가능하다. 핵심 실험 설계:
+7 research areas independently point to the same structure:
+
+1. **Inhibition decrease → ability improvement** (GABA↓, DMN disinhibition, TMS inhibition)
+2. **Structural atypicality → inter-regional connections** (Sylvian fissure, minicolumns, rewiring)
+3. **Existence of optimal level** (Yerkes-Dodson, DMN-ECN balance, meditation convergence)
+4. **Consistency of population distribution** (10-15% neurodiversity ≈ 9% triple coincidence)
+
+### Verification Strategy for I≈1/3 Convergence Hypothesis
+
+What is commonly needed across all areas: **quantitative measurement of GABA**. With advances in MRS technology, in vivo GABA measurement is now possible. Core experimental design:
 
 ```
-  [실험 1] 서번트 코호트 GABA 측정
-  → GABA 비율이 0.60-0.70x에 수렴하는가?
+  [Experiment 1] GABA measurement in savant cohort
+  → Does GABA ratio converge to 0.60-0.70x?
 
-  [실험 2] TMS 단계적 억제 + GABA 동시 측정
-  → 능력 최대 시점의 GABA가 특정 비율에 대응하는가?
+  [Experiment 2] Step-wise TMS inhibition + simultaneous GABA measurement
+  → Does GABA at peak ability correspond to a specific ratio?
 
-  [실험 3] 명상 종단 연구 (0-30년)
-  → GABA가 시간에 따라 특정 값으로 수렴하는가?
+  [Experiment 3] Meditation longitudinal study (0-30 years)
+  → Does GABA converge to a specific value over time?
 
-  [실험 4] 대규모 코호트 D,P,I 동시 측정
-  → G=D×P/I 계산값과 실제 능력 측정치의 상관계수 r>0.5인가?
+  [Experiment 4] Large cohort simultaneous D,P,I measurement
+  → Is correlation coefficient r>0.5 between G=D×P/I computed value and actual ability measurement?
 ```
 
-## 한계
+## Limitations
 
-- 본 서베이의 G=D×P/I 매핑은 사후적(post hoc) 해석이며, 기존 연구자들이 이 모델을 의도한 것이 아님
-- GABA→I 매핑의 정량적 변환 함수가 확립되지 않음 (선형? 로그? 시그모이드?)
-- D, P의 정량화 방법이 합의되지 않음 (실비우스열 비정형의 정량 척도가 없음)
-- 골든존 모델 자체가 시뮬레이션 기반이며 해석적 증명 없음 (CLAUDE.md 경고 참조)
-- 기존 연구들의 표본 크기가 대체로 작음 (N<50)
+- The G=D×P/I mapping in this survey is post-hoc interpretation; original researchers did not intend this model
+- The quantitative conversion function from GABA→I is not established (linear? log? sigmoid?)
+- Methods for quantifying D, P are not agreed upon (no quantitative scale for Sylvian fissure atypicality)
+- The Golden Zone model itself is simulation-based with no analytic proof (see CLAUDE.md warning)
+- Existing studies generally have small sample sizes (N<50)
 
-## 검증 방향
+## Verification Direction
 
-1. **즉시 가능**: Snyder의 TMS 실험 재현 + MRS GABA 동시 측정
-2. **단기 (1-2년)**: 서번트 20명 코호트의 다변수 뇌 영상 + GABA 연구
-3. **장기 (5-10년)**: 명상 종단 연구, 대규모 코호트 D,P,I 동시 측정
-4. **이론적**: GABA→I 변환 함수의 수학적 형태 도출 (볼츠만 분포 가설 004)
+1. **Immediately possible**: Replication of Snyder's TMS experiment + simultaneous MRS GABA measurement
+2. **Short-term (1-2 years)**: Multi-variable brain imaging + GABA study of 20-savant cohort
+3. **Long-term (5-10 years)**: Meditation longitudinal study, large cohort D,P,I simultaneous measurement
+4. **Theoretical**: Mathematical derivation of GABA→I conversion function form (Boltzmann distribution Hypothesis 004)
 
-이 서베이의 핵심 결론: **기존 문헌은 G=D×P/I 모델과 놀랍도록 일관적이지만, 직접 검증은 아직 이루어지지 않았다. GABA의 정량적 측정이 I≈1/3 가설의 핵심 검증 수단이다.**
+Core conclusion of this survey: **Existing literature is remarkably consistent with the G=D×P/I model, but direct verification has not yet been conducted. Quantitative measurement of GABA is the key verification means for the I≈1/3 hypothesis.**

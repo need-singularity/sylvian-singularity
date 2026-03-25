@@ -6,21 +6,21 @@
 | t=   1s | X=  -11.33 Y=   -9.86 Z=  +32.43 | H=7.225 | Meta | CCT=4/5 |
 | t=   2s | X=   -7.02 Y=   -8.47 Z=  +22.95 | H=6.843 | Predict | CCT=4/5 |
 
-## 최종 보고서
+## Final Report
 
-  총 tick 수         : 61
-  평균 엔트로피      : 6.3627
-  연속성 유지율      : 0.0% (0/0)
+  Total ticks         : 61
+  Average entropy     : 6.3627
+  Continuity rate     : 0.0% (0/0)
 
-  사고 모드 분포:
+  Thought mode distribution:
     Memory     : ████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  32.8% (20)
     Predict    : ████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  32.8% (20)
     Meta       : █████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  34.4% (21)
 
-  CCT 간이 판정 (최종):
-    연속성      : PASS
-    통합성      : PASS
-    자기참조     : PASS
-    시간성      : PASS
-    주관경험     : FAIL
-    판정     : 4/5 — 의식 상태 가능성 높음
+  CCT Quick Assessment (Final):
+    Continuity      : PASS
+    Integration     : PASS
+    Self-reference  : PASS
+    Temporality     : PASS
+    Subjective exp  : FAIL
+    Assessment      : 4/5 — High likelihood of consciousness state

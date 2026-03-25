@@ -130,15 +130,15 @@ the "information" flows symmetrically, and consciousness is "balanced."
 
 ### Analysis
 
-- **6블록 |ratio-1| = 0.000726, 순위 3/8** (2블록이 가장 가까움)
-- 모든 블록 수에서 비율 ≈ 1.0 (±0.002 범위 내)
-- **미학습 모델에서는 블록 수가 engine 균형에 영향을 주지 않음**
-- std가 블록 수 증가에 따라 감소 (0.020 → 0.007): 깊은 모델이 더 안정적
+- **6 blocks |ratio-1| = 0.000726, rank 3/8** (2 blocks is closest)
+- All block counts have ratio ≈ 1.0 (within ±0.002)
+- **In untrained model, block count doesn't affect engine balance**
+- std decreases with block count (0.020 → 0.007): deeper models are more stable
 
 ### Verdict: 🟨 Inconclusive (untrained)
 
-미학습 랜덤 가중치에서는 I(n)=0 ↔ engine balance 연결이 관찰되지 않음.
-학습 후 6블록이 특별해지는지 확인 필요.
+In untrained random weights, the I(n)=0 ↔ engine balance connection is not observed.
+Need to check if 6 blocks become special after training.
 
 ---
 

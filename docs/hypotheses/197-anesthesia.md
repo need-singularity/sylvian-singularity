@@ -1,78 +1,78 @@
-# 가설 #197: 전신마취 = I → 1 (완전 억제)
+# Hypothesis #197: General Anesthesia = I → 1 (Complete Inhibition)
 
-**상태**: 🟧 구조적 대응 확인 (실험 데이터 필요)
-**날짜**: 2026-03-22
-**분류**: 약물 / 마취학
+**Status**: 🟧 Structural correspondence confirmed (experimental data needed)
+**Date**: 2026-03-22
+**Category**: Pharmacology / Anesthesiology
 
 ---
 
-## 가설
+## Hypothesis
 
-> 전신마취는 I를 1(완전 억제)로 밀어올려 Compass → 0, 의식 소실을 유발한다.
-> 프로포폴은 GABA-A를 극대화하여 I ↑↑ → Compass → 0.
-> BIS(Bispectral Index, 마취 심도 지표) ↔ I 가 직접 대응한다.
-> MAC(최소폐포농도) = 골든존 상한을 통과하는 농도이다.
+> General anesthesia pushes I to 1 (complete inhibition), causing Compass → 0 and loss of consciousness.
+> Propofol maximizes GABA-A, causing I ↑↑ → Compass → 0.
+> BIS (Bispectral Index, anesthesia depth indicator) ↔ I corresponds directly.
+> MAC (Minimum Alveolar Concentration) = concentration that passes the Golden Zone upper limit.
 
-## 배경: 전신마취의 미스터리
+## Background: The Mystery of General Anesthesia
 
-전신마취의 정확한 메커니즘은 의학의 최대 미해결 문제 중 하나.
-"왜 의식이 사라지는가?"에 대한 완전한 답은 없다.
-우리 모델로 답할 수 있을까?
-
-```
-  프로포폴의 작용:
-  프로포폴 → GABA-A 수용체 양성 조절 → 억제 극대화
-           → 시상-피질 루프 차단
-           → 통합 정보 소실
-           → 의식 소실
-
-  우리 모델 번역:
-  프로포폴 → I ↑↑ → 골든존 이탈(상방) → Compass → 0 → 의식 소실
-```
-
-## 마취 심도 vs I 매핑
+The exact mechanism of general anesthesia is one of medicine's greatest unsolved problems.
+There is no complete answer to "Why does consciousness disappear?"
+Can our model answer this?
 
 ```
-  BIS    │ 의식 상태      │  I (매핑)  │ Compass │ 임상 상태
-  ───────┼───────────────┼───────────┼─────────┼──────────────
-  100    │ 완전 각성      │  0.40     │  50%    │ 정상
-   80    │ 진정 시작      │  0.50     │  40%    │ 골든존 상한 ←
-   60    │ 전신마취       │  0.70     │  15%    │ 수술 가능
-   40    │ 깊은 마취      │  0.85     │   5%    │ 깊은 억제
-   20    │ 버스트 억제    │  0.95     │   0%    │ 거의 평탄
-    0    │ 뇌사           │  1.00     │   0%    │ 활동 없음
+  Propofol's action:
+  Propofol → GABA-A receptor positive modulation → Maximal inhibition
+           → Thalamo-cortical loop blockade
+           → Integrated information loss
+           → Loss of consciousness
+
+  Our model translation:
+  Propofol → I ↑↑ → Golden Zone exit (upward) → Compass → 0 → Loss of consciousness
 ```
 
-## 마취 심도 vs I 그래프
+## Anesthesia Depth vs I Mapping
 
 ```
-  I (억제지수)
-  1.00│                                    ● 뇌사
+  BIS    │ Conscious State │  I (mapping) │ Compass │ Clinical State
+  ───────┼────────────────┼─────────────┼─────────┼──────────────
+  100    │ Fully awake    │  0.40       │  50%    │ Normal
+   80    │ Sedation start │  0.50       │  40%    │ Golden Zone upper limit ←
+   60    │ General anesthesia│ 0.70    │  15%    │ Surgical
+   40    │ Deep anesthesia│  0.85       │   5%    │ Deep inhibition
+   20    │ Burst suppression│ 0.95     │   0%    │ Nearly flat
+    0    │ Brain death    │  1.00       │   0%    │ No activity
+```
+
+## Anesthesia Depth vs I Graph
+
+```
+  I (Inhibition Index)
+  1.00│                                    ● Brain death
      │                                 ╱
-  0.95│                              ● 버스트억제
+  0.95│                              ● Burst suppression
      │                            ╱
-  0.85│                         ●  깊은마취
+  0.85│                         ●  Deep anesthesia
      │                       ╱
-  0.70│                    ●  전신마취
+  0.70│                    ●  General anesthesia
      │                  ╱
   0.60│               ╱
      │            ╱
-  0.50│─────────●──────────────────── 골든존 상한
-     │       ╱   ← 의식 소실 시점
-  0.40│    ●  각성
+  0.50│─────────●──────────────────── Golden Zone upper limit
+     │       ╱   ← Loss of consciousness point
+  0.40│    ●  Awake
      │  ╱
-  1/e│●─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  골든존 중심
+  1/e│●─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Golden Zone center
      │
-  0.21│──────────────────────────── 골든존 하한
+  0.21│──────────────────────────── Golden Zone lower limit
      └──┼──┼──┼──┼──┼──┼──┼──┼──
        100  80  60  40  20   0
-              BIS 지수
+              BIS Index
 
-  BIS ↓ = I ↑ (거의 선형 역관계)
-  의식 소실 = I가 골든존 상한(0.50) 통과 시점
+  BIS ↓ = I ↑ (nearly linear inverse relationship)
+  Loss of consciousness = I passing Golden Zone upper limit (0.50)
 ```
 
-## Compass 동시 변화
+## Simultaneous Compass Change
 
 ```
   Compass(%)    I
@@ -91,118 +91,118 @@
    0│──────────────────────● │
     └──┼──┼──┼──┼──┼──       └──┼──┼──┼──┼──
      0.4 0.5 0.6 0.7 0.9      0.4 0.5 0.6 0.7 0.9
-          I (억제지수)              I (억제지수)
+          I (Inhibition Index)       I (Inhibition Index)
 
-  Compass: I=0.5에서 급강하       I: 프로포폴 농도에 비례 증가
-  → 의식 소실 = 위상 전이 (커스프!)
+  Compass: Sharp drop at I=0.5     I: Increases proportionally with propofol concentration
+  → Loss of consciousness = Phase transition (cusp!)
 ```
 
-## MAC과 골든존
+## MAC and Golden Zone
 
 ```
   MAC (Minimum Alveolar Concentration):
-  흡입마취제의 50%가 수술 자극에 반응 안 하는 농도
+  Concentration where 50% don't respond to surgical stimulation
 
-  MAC = 1.0 → BIS ≈ 50 → I ≈ 0.55 → 골든존 상한 바로 위
-  MAC = 0.5 → BIS ≈ 70 → I ≈ 0.50 → 골든존 상한 경계
+  MAC = 1.0 → BIS ≈ 50 → I ≈ 0.55 → Just above Golden Zone upper limit
+  MAC = 0.5 → BIS ≈ 70 → I ≈ 0.50 → Golden Zone upper boundary
 
-  → MAC 1.0 = I가 골든존 상한(0.50)을 확실히 통과하는 농도
-  → MAC은 골든존 이탈 농도의 조작적 정의!
+  → MAC 1.0 = Concentration where I reliably passes Golden Zone upper limit (0.50)
+  → MAC is an operational definition of Golden Zone exit concentration!
 
-  프로포폴 농도 (μg/mL)    I      상태
-  ──────────────────────  ─────  ────────
-       0                  0.40   각성
-       1                  0.45   이완
-       2                  0.50   진정 (골든존 상한) ←
-       3                  0.60   의식 소실
-       4                  0.70   수술 마취
-       6                  0.85   깊은 마취
+  Propofol concentration (μg/mL)    I      State
+  ──────────────────────────────  ─────  ────────
+       0                          0.40   Awake
+       1                          0.45   Relaxed
+       2                          0.50   Sedation (Golden Zone upper limit) ←
+       3                          0.60   Loss of consciousness
+       4                          0.70   Surgical anesthesia
+       6                          0.85   Deep anesthesia
 ```
 
-## 마취에서 깨어나기 = I의 골든존 재진입
+## Emergence from Anesthesia = I Re-entering Golden Zone
 
 ```
   I
-  0.90│    ●─────────● 수술 중 (I 유지)
+  0.90│    ●─────────● During surgery (I maintained)
      │   ╱            ╲
   0.70│  ╱              ╲
-     │╱                  ╲  프로포폴 중단
-  0.50│─────────────────────╲──────── 골든존 상한
+     │╱                  ╲  Propofol stopped
+  0.50│─────────────────────╲──────── Golden Zone upper limit
      │                       ╲
-  0.40│                        ●─── 각성 (약간 멍함)
+  0.40│                        ●─── Awakening (slightly groggy)
      │                         ╲
-  1/e│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─● ─ 완전 각성
+  1/e│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─● ─ Fully awake
      │
      └──┼──┼──┼──┼──┼──┼──┼──┼──
-      유도  5  15  수술  중단 +5 +15 +30 분
+      Induction  5  15  Surgery  Stop +5 +15 +30 min
 
-  마취 유도: I가 골든존을 빠르게 상향 이탈
-  마취 각성: I가 골든존으로 서서히 복귀
-  "마취에서 깨어나는 데 시간이 걸리는 이유" = I의 점진적 하강
+  Anesthesia induction: I rapidly exits Golden Zone upward
+  Anesthesia emergence: I gradually returns to Golden Zone
+  "Why emergence takes time" = Gradual descent of I
 ```
 
-## 수술 중 각성(awareness) 사고
+## Intraoperative Awareness Incidents
 
 ```
-  수술 중 각성 = I가 잠시 골든존으로 복귀
+  Intraoperative awareness = I briefly returns to Golden Zone
 
   I
-  0.80│    ●───●        ●───● 정상 마취
+  0.80│    ●───●        ●───● Normal anesthesia
      │   ╱     ╲      ╱     ╲
   0.60│  ╱       ╲  ╱         ╲
-     │╱          ●              ╲   ← 각성 사고!
-  0.50│────────────── 골든존 상한 ───────
-     │         (I가 골든존 진입 = 의식 복귀)
+     │╱          ●              ╲   ← Awareness incident!
+  0.50│────────────── Golden Zone upper limit ───────
+     │         (I entering Golden Zone = consciousness returns)
 
-  발생 빈도 ≈ 0.1-0.2% → I 제어 실패 확률과 대응?
+  Incidence ≈ 0.1-0.2% → Corresponds to I control failure probability?
 ```
 
-## 다른 가설과의 연결
+## Connections to Other Hypotheses
 
 ```
-  가설 155 (GABA=I):    마취 = GABA 극대화 = I 극대화
-  가설 166 (의식):       마취 = I > 골든존 + Compass=0 = 무의식
-  가설 196 (알코올):     알코올 과다 = 마취의 약한 버전
-  가설 194 (시간 인식):  마취 = 시간 인식 소실 = I > 골든존
+  Hypothesis 155 (GABA=I):    Anesthesia = GABA maximization = I maximization
+  Hypothesis 166 (Consciousness): Anesthesia = I > Golden Zone + Compass=0 = Unconscious
+  Hypothesis 196 (Alcohol):   Alcohol excess = Weak version of anesthesia
+  Hypothesis 194 (Time perception): Anesthesia = Loss of time perception = I > Golden Zone
 ```
 
-## 한계
+## Limitations
 
-1. BIS → I 매핑이 선형인지 비선형인지 확인 불가
-2. 프로포폴 외 다른 마취제(케타민 등)는 NMDA 경로이므로 I 매핑이 다를 수 있음
-3. 국소 마취는 I를 전체적으로 올리지 않으므로 모델 범위 밖
-4. "의식 소실 = I가 0.50 통과"는 가설 166의 정의에 의존
+1. Cannot confirm if BIS → I mapping is linear or nonlinear
+2. Other anesthetics (e.g., ketamine) use NMDA pathway, so I mapping may differ
+3. Local anesthesia doesn't raise I globally, so outside model scope
+4. "Loss of consciousness = I passing 0.50" depends on Hypothesis 166's definition
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 프로포폴 TCI(목표농도주입) 중 실시간 BIS와 I 매핑 검증
-- [ ] 마취 유도/각성 시 I의 시간 추이 vs BIS 시간 추이 상관 분석
-- [ ] 케타민(NMDA 길항제) 마취 시 I 매핑 → GABA 경로와의 차이
-- [ ] 수술 중 각성 사례에서 BIS 데이터 → I 역산
+- [ ] Real-time BIS vs I mapping verification during propofol TCI (target controlled infusion)
+- [ ] Correlation analysis of I time course vs BIS time course during induction/emergence
+- [ ] I mapping during ketamine (NMDA antagonist) anesthesia → Difference from GABA pathway
+- [ ] Back-calculate I from BIS data in intraoperative awareness cases
 
-## 검증 결과 (2026-03-24, verify_pharmacology.py)
+## Verification Results (2026-03-24, verify_pharmacology.py)
 
 ```
-  검증 항목         결과    설명
+  Test Item        Result  Description
   ──────────────  ──────  ──────────────────────────
-  I↑→G↓ 역상관    ✅     I=0.50→0.80, G↓ 58.3% (의식소실)
-  골든존 적합성    ✅     I=0.80 → 골든존 상방 이탈 = 의식소실
-  BIS↔I 선형성    ✅     Pearson r=-0.985, R²=0.970
-                          선형회귀: I = -0.0064*BIS + 1.055
-                          최대 잔차 0.055 (약한 비선형)
-  의식소실 임계점  ✅     BIS≈80 → I≈0.50 = 골든존 상한 정확히
-  텍사스 p-value   0.003  (Bonferroni 보정, 6개 약물 동시)
+  I↑→G↓ inverse   ✅     I=0.50→0.80, G↓ 58.3% (consciousness loss)
+  Golden Zone fit  ✅     I=0.80 → Golden Zone upward exit = consciousness loss
+  BIS↔I linearity  ✅     Pearson r=-0.985, R²=0.970
+                          Linear regression: I = -0.0064*BIS + 1.055
+                          Max residual 0.055 (weak nonlinearity)
+  LOC threshold    ✅     BIS≈80 → I≈0.50 = Exactly Golden Zone upper limit
+  Texas p-value    0.003  (Bonferroni corrected, 6 drugs simultaneous)
 
-  유일하게 I↑ 방향인 약물: 다른 5개는 I↓인데 마취만 I↑
-  → GABA-A 직접 극대화 메커니즘으로 설명 가능 → 모순 없음
+  Only drug in I↑ direction: Other 5 are I↓, only anesthesia is I↑
+  → Explainable by direct GABA-A maximization mechanism → No contradiction
 
-  등급: 🟧 (구조적 대응 확인, 프로포폴 TCI 중 BIS-I 실시간 대응 검증 필요)
+  Grade: 🟧 (Structural correspondence confirmed, real-time BIS-I correspondence verification during propofol TCI needed)
 
-  ⚠️ 텍사스 명사수 위험: 낮음
-  BIS≈80에서 의식소실은 마취학 교과서적 사실
+  ⚠️ Texas sharpshooter risk: Low
+  Loss of consciousness at BIS≈80 is textbook anesthesiology fact
 ```
 
 ---
 
-*관련: 가설 155, 166, 194, 196*
-*분류: 약물-골든존 매핑 시리즈 (195-200)*
+*Related: Hypotheses 155, 166, 194, 196*
+*Category: Drug-Golden Zone mapping series (195-200)*

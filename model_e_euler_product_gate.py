@@ -1,38 +1,38 @@
 #!/usr/bin/env python3
-"""모델 E: 오일러곱 p=2,3 절단 게이트 (EulerProductGate)
+"""Model E: Euler Product p=2,3 Truncated Gate (EulerProductGate)
 
-수학적 근거:
-  리만 제타 함수의 오일러 곱 표현:
+Mathematical Basis:
+  Euler product representation of Riemann zeta function:
     zeta(s) = prod_{p prime} 1/(1 - p^{-s})
 
-  p=2,3에서 절단하면:
+  Truncating at p=2,3:
     zeta_{2,3}(s) = 1/(1-2^{-s}) * 1/(1-3^{-s})
 
-  가설 092에서 발견: 골든존 모델 = zeta 오일러곱 p=2,3 절단
-    G = D * P / I  <-->  zeta_{2,3} 구조
+  Discovery in hypothesis 092: Golden Zone model = zeta Euler product p=2,3 truncation
+    G = D * P / I  <-->  zeta_{2,3} structure
 
-  이 절단은 두 소인수의 곱으로 6개 상태를 생성:
-    p=2: {0, 1}      (이진 분류, 2개 상태)
-    p=3: {0, 1, 2}   (삼진 분류, 3개 상태)
-    합계: 2 x 3 = 6  (= 완전수 6개 Expert)
+  This truncation generates 6 states via product of two prime factors:
+    p=2: {0, 1}      (binary classification, 2 states)
+    p=3: {0, 1, 2}   (ternary classification, 3 states)
+    Total: 2 x 3 = 6  (= perfect number 6 Experts)
 
-  게이팅 설계 — EulerProductGate:
-    1단계 (p=2): sigmoid(W_2 @ x + b_2)
-      -> 이진 게이트 [alpha, 1-alpha]
-      -> "기본 on/off 결정"
+  Gating Design — EulerProductGate:
+    Stage 1 (p=2): sigmoid(W_2 @ x + b_2)
+      -> Binary gate [alpha, 1-alpha]
+      -> "Basic on/off decision"
 
-    2단계 (p=3): softmax(W_3 @ x + b_3)
-      -> 삼진 분포 [beta_0, beta_1, beta_2]
-      -> "세부 라우팅"
+    Stage 2 (p=3): softmax(W_3 @ x + b_3)
+      -> Ternary distribution [beta_0, beta_1, beta_2]
+      -> "Fine-grained routing"
 
-    최종 가중치 (6개 Expert):
+    Final weights (6 Experts):
       w_{i,j} = gate_2[i] * gate_3[j]
       where i in {0,1}, j in {0,1,2}
 
-    이는 오일러곱의 곱셈적 구조를 정확히 반영:
-      zeta_{2,3} = (1단계) * (2단계)
+    This precisely reflects the multiplicative structure of Euler product:
+      zeta_{2,3} = (Stage 1) * (Stage 2)
 
-  Expert 배치:
+  Expert layout:
     Expert 0: (0,0) = (1-alpha) * beta_0
     Expert 1: (0,1) = (1-alpha) * beta_1
     Expert 2: (0,2) = (1-alpha) * beta_2
@@ -40,9 +40,9 @@
     Expert 4: (1,1) = alpha * beta_1
     Expert 5: (1,2) = alpha * beta_2
 
-  핵심 질문:
-  2단계 계층적 게이팅이 flat Top-K나 Boltzmann보다 효율적인가?
-  오일러곱의 곱셈적 독립 구조가 Expert 분화를 촉진하는가?
+  Key questions:
+  Is 2-stage hierarchical gating more efficient than flat Top-K or Boltzmann?
+  Does the multiplicative independence structure of Euler product promote Expert differentiation?
 """
 
 import sys
@@ -60,40 +60,40 @@ from model_utils import (
 
 
 # ─────────────────────────────────────────
-# 오일러곱 상수
+# Euler Product Constants
 # ─────────────────────────────────────────
-P_BINARY = 2   # 첫째 소수
-P_TERNARY = 3  # 둘째 소수
-N_EXPERTS = P_BINARY * P_TERNARY  # = 6 (완전수!)
+P_BINARY = 2   # First prime
+P_TERNARY = 3  # Second prime
+N_EXPERTS = P_BINARY * P_TERNARY  # = 6 (perfect number!)
 
 
 # ─────────────────────────────────────────
 # EulerProductGate
 # ─────────────────────────────────────────
 class EulerProductGate(nn.Module):
-    """오일러곱 p=2,3 절단 기반 2단계 계층 게이트.
+    """2-stage hierarchical gate based on Euler product p=2,3 truncation.
 
-    1단계: sigmoid (이진, p=2) -> alpha in [0,1]
-    2단계: softmax (삼진, p=3) -> beta in simplex(3)
-    최종:  w[i,j] = gate_2[i] * gate_3[j], i=0..1, j=0..2
+    Stage 1: sigmoid (binary, p=2) -> alpha in [0,1]
+    Stage 2: softmax (ternary, p=3) -> beta in simplex(3)
+    Final:   w[i,j] = gate_2[i] * gate_3[j], i=0..1, j=0..2
     """
     def __init__(self, input_dim, temperature=1.0):
         super().__init__()
-        # p=2 이진 게이트
+        # p=2 binary gate
         self.linear_2 = nn.Linear(input_dim, 1)
-        # p=3 삼진 게이트
+        # p=3 ternary gate
         self.linear_3 = nn.Linear(input_dim, P_TERNARY)
         self.temperature = temperature
 
     def forward(self, x):
-        # 1단계: p=2 이진 분류
+        # Stage 1: p=2 binary classification
         alpha = torch.sigmoid(self.linear_2(x))  # (batch, 1), [0,1]
         gate_2 = torch.cat([1 - alpha, alpha], dim=-1)  # (batch, 2)
 
-        # 2단계: p=3 삼진 분류
+        # Stage 2: p=3 ternary classification
         gate_3 = F.softmax(self.linear_3(x) / self.temperature, dim=-1)  # (batch, 3)
 
-        # 오일러곱: 외적으로 6개 Expert 가중치 생성
+        # Euler product: generate 6 Expert weights via outer product
         # w[i,j] = gate_2[i] * gate_3[j]
         # gate_2: (batch, 2, 1), gate_3: (batch, 1, 3)
         weights = gate_2.unsqueeze(-1) * gate_3.unsqueeze(-2)  # (batch, 2, 3)
@@ -106,9 +106,9 @@ class EulerProductGate(nn.Module):
 # Euler Product MoE
 # ─────────────────────────────────────────
 class EulerProductMoE(nn.Module):
-    """오일러곱 게이트 기반 MoE 모델.
+    """MoE model based on Euler product gate.
 
-    6개 Expert를 2x3 계층적으로 라우팅한다.
+    Routes to 6 Experts hierarchically in 2x3 structure.
     """
     def __init__(self, input_dim=784, hidden_dim=128, output_dim=10, temperature=1.0):
         super().__init__()
@@ -119,7 +119,7 @@ class EulerProductMoE(nn.Module):
         self.gate = EulerProductGate(input_dim, temperature=temperature)
         self.n_experts = N_EXPERTS
 
-        # 메트릭 추적
+        # Metric tracking
         self.expert_usage = torch.zeros(N_EXPERTS)
         self.active_counts = []
         self.binary_entropy_history = []
@@ -135,7 +135,7 @@ class EulerProductMoE(nn.Module):
             self.active_counts.append(active)
             self.expert_usage += (weights > 0.01).float().sum(dim=0).mean(dim=0).cpu()
 
-            # 2x3 구조 분석
+            # Analyze 2x3 structure
             w_2d = weights.reshape(-1, P_BINARY, P_TERNARY)
             binary_probs = w_2d.sum(dim=-1)  # (batch, 2)
             ternary_probs = w_2d.sum(dim=-2)  # (batch, 3)
@@ -173,42 +173,42 @@ class EulerProductMoE(nn.Module):
 
 
 # ─────────────────────────────────────────
-# 벤치마크
+# Benchmark
 # ─────────────────────────────────────────
 def main():
     print("=" * 70)
-    print("  모델 E: 오일러곱 p=2,3 절단 게이트")
+    print("  Model E: Euler Product p=2,3 Truncated Gate")
     print("=" * 70)
 
-    # 오일러곱 구조 설명
-    print("\n[오일러곱 구조]")
+    # Explain Euler product structure
+    print("\n[Euler Product Structure]")
     print(f"  zeta_{{2,3}}(s) = 1/(1-2^{{-s}}) * 1/(1-3^{{-s}})")
-    print(f"  p=2 이진 게이트: sigmoid -> [alpha, 1-alpha]")
-    print(f"  p=3 삼진 게이트: softmax -> [beta_0, beta_1, beta_2]")
-    print(f"  Expert 수: {P_BINARY} x {P_TERNARY} = {N_EXPERTS} (완전수 6)")
-    print(f"\n  Expert 배치 (2x3):")
+    print(f"  p=2 binary gate: sigmoid -> [alpha, 1-alpha]")
+    print(f"  p=3 ternary gate: softmax -> [beta_0, beta_1, beta_2]")
+    print(f"  Number of Experts: {P_BINARY} x {P_TERNARY} = {N_EXPERTS} (perfect number 6)")
+    print(f"\n  Expert layout (2x3):")
     print(f"          j=0       j=1       j=2")
     print(f"  i=0  [(1-a)*b0  (1-a)*b1  (1-a)*b2]")
     print(f"  i=1  [  a*b0      a*b1      a*b2  ]")
 
-    # 데이터 로드
-    print("\n[데이터 로드]")
+    # Load data
+    print("\n[Loading Data]")
     train_loader, test_loader = load_mnist()
 
-    # 모델 정의
+    # Define models
     INPUT_DIM = 784
     HIDDEN_DIM = 128
     OUTPUT_DIM = 10
     EPOCHS = 10
 
-    # 오일러곱 MoE
+    # Euler product MoE
     euler_model = EulerProductMoE(INPUT_DIM, HIDDEN_DIM, OUTPUT_DIM)
 
-    # Top-K(6, k=2) MoE (비교)
+    # Top-K(6, k=2) MoE (comparison)
     topk_gate = TopKGate(INPUT_DIM, N_EXPERTS, k=2)
     topk_model = BaseMoE(INPUT_DIM, HIDDEN_DIM, OUTPUT_DIM, N_EXPERTS, topk_gate)
 
-    # Boltzmann(6) MoE (비교)
+    # Boltzmann(6) MoE (comparison)
     boltz_gate = BoltzmannGate(INPUT_DIM, N_EXPERTS)
     boltz_model = BaseMoE(INPUT_DIM, HIDDEN_DIM, OUTPUT_DIM, N_EXPERTS, boltz_gate)
 
@@ -221,8 +221,8 @@ def main():
     results = {}
     for name, model in models.items():
         print(f"\n{'─' * 50}")
-        print(f"  학습: {name}")
-        print(f"  파라미터: {count_params(model):,}")
+        print(f"  Training: {name}")
+        print(f"  Parameters: {count_params(model):,}")
         print(f"{'─' * 50}")
 
         if hasattr(model, 'reset_metrics'):
@@ -235,46 +235,46 @@ def main():
             'params': count_params(model),
         }
 
-        # 메트릭 수집
+        # Collect metrics
         if hasattr(model, 'get_metrics'):
             metrics = model.get_metrics()
             results[name].update(metrics)
 
     compare_results(results)
 
-    # 오일러곱 구조 분석
-    print("\n[오일러곱 게이트 분석]")
+    # Analyze Euler product structure
+    print("\n[Euler Product Gate Analysis]")
     euler_metrics = euler_model.get_metrics()
-    print(f"  평균 활성 Expert: {euler_metrics['avg_active']:.2f} / {N_EXPERTS}")
-    print(f"  활성 비율:        {euler_metrics['active_ratio']:.4f}")
-    print(f"  I_effective:      {euler_metrics['I_effective']:.4f}")
-    print(f"  이진 엔트로피:    {euler_metrics['binary_entropy']:.4f}  (max={np.log(2):.4f})")
-    print(f"  삼진 엔트로피:    {euler_metrics['ternary_entropy']:.4f}  (max={np.log(3):.4f})")
+    print(f"  Average active Experts: {euler_metrics['avg_active']:.2f} / {N_EXPERTS}")
+    print(f"  Active ratio:          {euler_metrics['active_ratio']:.4f}")
+    print(f"  I_effective:           {euler_metrics['I_effective']:.4f}")
+    print(f"  Binary entropy:        {euler_metrics['binary_entropy']:.4f}  (max={np.log(2):.4f})")
+    print(f"  Ternary entropy:       {euler_metrics['ternary_entropy']:.4f}  (max={np.log(3):.4f})")
 
-    # Expert 사용량 (2x3 격자)
+    # Expert usage (2x3 grid)
     usage = euler_metrics['usage_per_expert']
-    print(f"\n  Expert 사용량 (2x3 격자):")
+    print(f"\n  Expert usage (2x3 grid):")
     print(f"          j=0      j=1      j=2")
     for i in range(P_BINARY):
         row = [usage[i * P_TERNARY + j] for j in range(P_TERNARY)]
         print(f"  i={i}  [{' '.join(f'{v:7.4f}' for v in row)}]")
 
-    # Top-K 메트릭
-    print(f"\n[Top-K 게이트 분석]")
+    # Top-K metrics
+    print(f"\n[Top-K Gate Analysis]")
     topk_metrics = topk_model.get_metrics()
-    print(f"  평균 활성 Expert: {topk_metrics['avg_active']:.2f} / {N_EXPERTS}")
-    print(f"  I_effective:      {topk_metrics['I_effective']:.4f}")
+    print(f"  Average active Experts: {topk_metrics['avg_active']:.2f} / {N_EXPERTS}")
+    print(f"  I_effective:           {topk_metrics['I_effective']:.4f}")
 
-    # Boltzmann 메트릭
-    print(f"\n[Boltzmann 게이트 분석]")
+    # Boltzmann metrics
+    print(f"\n[Boltzmann Gate Analysis]")
     boltz_metrics = boltz_model.get_metrics()
-    print(f"  평균 활성 Expert: {boltz_metrics['avg_active']:.2f} / {N_EXPERTS}")
-    print(f"  I_effective:      {boltz_metrics['I_effective']:.4f}")
+    print(f"  Average active Experts: {boltz_metrics['avg_active']:.2f} / {N_EXPERTS}")
+    print(f"  I_effective:           {boltz_metrics['I_effective']:.4f}")
 
-    # 결론
-    print("\n[결론]")
+    # Conclusion
+    print("\n[Conclusion]")
     best = max(results, key=lambda k: results[k]['acc'])
-    print(f"  최고 성능: {best} ({results[best]['acc']*100:.2f}%)")
+    print(f"  Best performance: {best} ({results[best]['acc']*100:.2f}%)")
 
     euler_acc = results['EulerProduct (2x3)']['acc']
     topk_acc = results['Top-K (6, k=2)']['acc']
@@ -283,9 +283,9 @@ def main():
     print(f"  EulerProduct vs Boltzmann: {(euler_acc - boltz_acc)*100:+.2f}%p")
 
     if euler_metrics['I_effective'] > 0.2 and euler_metrics['I_effective'] < 0.5:
-        print(f"  I_effective = {euler_metrics['I_effective']:.4f} -> 골든존 근방!")
+        print(f"  I_effective = {euler_metrics['I_effective']:.4f} -> Near Golden Zone!")
     else:
-        print(f"  I_effective = {euler_metrics['I_effective']:.4f} -> 골든존 밖")
+        print(f"  I_effective = {euler_metrics['I_effective']:.4f} -> Outside Golden Zone")
 
 
 if __name__ == '__main__':

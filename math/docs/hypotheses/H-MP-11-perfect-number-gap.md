@@ -1,15 +1,15 @@
-# H-MP-11: σφ/(nτ) 비율로 완전수 사이 간격 특성화
+# H-MP-11: Characterizing gaps between perfect numbers via σφ/(nτ) ratio
 
-> **가설**: 연속 완전수 P_k, P_{k+1} 사이에서 σφ/(nτ)=1의 "그림자"(근사해)가 존재하며, 이것이 완전수 분포에 정보를 준다.
+> **Hypothesis**: Between consecutive perfect numbers P_k, P_{k+1}, there exist "shadows" (approximations) of σφ/(nτ)=1, which provide information about the distribution of perfect numbers.
 
-## 배경
-- σφ/(nτ)=1 at n=6만. 가장 가까운: n=4 (1.167)
-- 완전수: 6, 28, 496, 8128, ...
-- 각 완전수 근처에서 σφ/(nτ)의 극소점이 있는가?
+## Background
+- σφ/(nτ)=1 only at n=6. Closest: n=4 (1.167)
+- Perfect numbers: 6, 28, 496, 8128, ...
+- Is there a local minimum of σφ/(nτ) near each perfect number?
 
-## 검증 방향
-1. [ ] n=20..35 (28 근처) 에서 σφ/(nτ) 그래프
-2. [ ] n=490..500 (496 근처) 에서 극소점 탐색
-3. [ ] 완전수에서 σ/n=2 → σφ/(nτ)=2φ/τ: φ/τ가 최소인 n 분포
+## Verification Direction
+1. [ ] Graph σφ/(nτ) for n=20..35 (near 28)
+2. [ ] Search for local minima at n=490..500 (near 496)
+3. [ ] At perfect numbers σ/n=2 → σφ/(nτ)=2φ/τ: distribution of n where φ/τ is minimum
 
-## 난이도: 중 | 파급력: ★★
+## Difficulty: Medium | Impact: ★★

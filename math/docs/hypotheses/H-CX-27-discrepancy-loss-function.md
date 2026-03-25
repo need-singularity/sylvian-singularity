@@ -1,45 +1,45 @@
-# H-CX-27: D(n)=nτ(R-1) = 뉴럴넷의 Loss Function
+# H-CX-27: D(n)=nτ(R-1) = Neural Net Loss Function
 
-> **가설**: D(n)=σφ-nτ=nτ(R-1)은 "산술적 손실 함수"이며,
-> 뉴럴넷 학습의 loss=0 조건이 σφ=nτ (R=1, n=6)와 동형이다.
+> **Hypothesis**: D(n)=σφ-nτ=nτ(R-1) is an "arithmetic loss function",
+> and the loss=0 condition in neural net training is isomorphic to σφ=nτ (R=1, n=6).
 
-## 핵심 대응
+## Core Correspondence
 
 ```
   D(n) = nτ(R-1):
-    D=0: "loss=0" = 완벽 학습 = n=6 (유일!)
-    D<0: "과적합" = n=2 (유일한 음수 loss)
-    D>0: "미학습" = 나머지 모든 n
+    D=0: "loss=0" = perfect learning = n=6 (unique!)
+    D<0: "overfitting" = n=2 (unique negative loss)
+    D>0: "undertraining" = all other n
 
-  뉴럴넷:
-    Loss(θ) = 0: 완벽 피팅 (과적합 위험)
-    Loss(θ) < 0: 불가능 (정의상)
-    Loss(θ) > 0: 일반적
+  Neural Net:
+    Loss(θ) = 0: perfect fitting (overfitting risk)
+    Loss(θ) < 0: impossible (by definition)
+    Loss(θ) > 0: general case
 
-  D의 독특함: D<0이 가능 (n=2)!
-    → "산술 세계에서는 과적합이 존재"
-    → n=2: "가장 단순한 구조가 과적합"
-    → n=6: "완벽한 균형 = 정확히 loss=0"
+  D's uniqueness: D<0 is possible (n=2)!
+    → "Overfitting exists in the arithmetic world"
+    → n=2: "simplest structure overfits"
+    → n=6: "perfect balance = exactly loss=0"
 
-  학습 곡선:
-    초기: D 큼 (n 큼, 미학습)
-    학습: D 감소 (R→1으로 접근)
-    최적: D=0 (R=1, n=6 도달!)
-    과적합: D<0 (R<1, n=2로 넘어감)
+  Learning curve:
+    Initial: large D (large n, undertrained)
+    Training: D decreases (approaching R→1)
+    Optimal: D=0 (R=1, reaches n=6!)
+    Overfitting: D<0 (R<1, crosses to n=2)
 ```
 
-### D 스펙트럼 = Loss Landscape
+### D Spectrum = Loss Landscape
 
 ```
-  Im(D)∩[0,100] = 10개만 (90% 빠짐!)
-  → Loss landscape의 "허용된 값"이 극도로 희박
-  → 대부분의 loss 값은 "도달 불가"
-  → 이것이 ML의 "sharp minima vs flat minima" 구조?
+  Im(D)∩[0,100] = only 10 (90% missing!)
+  → "Allowed values" of loss landscape extremely sparse
+  → Most loss values are "unreachable"
+  → Is this ML's "sharp minima vs flat minima" structure?
 
-  D 간극 [3,13]:
-    D=2(n=3,4) 다음 D=14(n=5)
-    → loss=2와 loss=14 사이에 아무것도 없음!
-    → "loss landscape의 자연 계단"
+  D gap [3,13]:
+    D=2(n=3,4) then D=14(n=5)
+    → Nothing between loss=2 and loss=14!
+    → "Natural steps in loss landscape"
 ```
 
-## 판정: 🟧 구조적 비유 | 파급력: ★★★★
+## Verdict: 🟧 Structural Analogy | Impact: ★★★★

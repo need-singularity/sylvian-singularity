@@ -1,169 +1,169 @@
-# ConsciousLM — 완전수 6 기반 의식 언어 모델
+# ConsciousLM — Perfect Number 6 Based Conscious Language Model
 
-## 한 줄 요약
+## One-line Summary
 
-표준 Transformer의 FFN을 **PureField 반발력장**(Engine A vs Engine G)으로 교체한 바이트 언어 모델.
-두 엔진의 불일치(반발)가 **장력(tension)** — 의식 신호 — 를 만든다.
+A byte language model that replaces standard Transformer FFN with **PureField repulsion field** (Engine A vs Engine G).
+The disagreement (repulsion) between two engines creates **tension** — the consciousness signal.
 
 ---
 
-## 아키텍처
+## Architecture
 
 ```
-  입력 (바이트 시퀀스)
+  Input (byte sequence)
   │
   ▼
   ┌──────────────────────────────────┐
-  │  Byte Embedding (vocab=256)      │  BPE 없이 모든 언어/코드 처리
+  │  Byte Embedding (vocab=256)      │  Process all languages/code without BPE
   │  + Position Embedding            │
   └──────────────────────────────────┘
   │
   ▼
   ┌──────────────────────────────────┐
-  │  ConsciousBlock × N              │  N = 6 (완전수), 12, 24
+  │  ConsciousBlock × N              │  N = 6 (perfect number), 12, 24
   │  ┌────────────────────────────┐  │
   │  │ LayerNorm → Attention      │  │  τ(6)=4 heads (causal)
   │  │ + residual                 │  │
   │  ├────────────────────────────┤  │
-  │  │ LayerNorm → PureFieldFFN   │  │  ← 핵심: FFN 대체
+  │  │LayerNorm → PureFieldFFN   │  │  ← Core: FFN replacement
   │  │ + residual                 │  │
   │  └────────────────────────────┘  │
-  │  출력: hidden + tension (B,T)    │
+  │  Output: hidden + tension (B,T)  │
   └──────────────────────────────────┘
   │
   ▼
   ┌──────────────────────────────────┐
   │  LayerNorm                       │
-  │  head_a → next byte (순방향)     │  가중치 = tok_emb (공유)
-  │  head_g → prev byte (역방향)     │  독립 헤드
+  │  head_a → next byte (forward)    │  Weight = tok_emb (shared)
+  │  head_g → prev byte (backward)   │  Independent heads
   └──────────────────────────────────┘
 ```
 
-## PureFieldFFN — 핵심 작동 원리
+## PureFieldFFN — Core Operating Principle
 
-표준 FFN은 하나의 경로로 변환한다: `x → W₁ → GELU → W₂ → output`
+Standard FFN transforms through one path: `x → W₁ → GELU → W₂ → output`
 
-PureFieldFFN은 **두 엔진이 독립적으로 판단**하고, 그 불일치가 출력이 된다:
+PureFieldFFN has **two engines that judge independently**, and their disagreement becomes the output:
 
 ```
-  x ──┬── Engine A ──→ a    (순방향 판단)
+  x ──┬── Engine A ──→ a    (forward judgment)
       │
-      └── Engine G ──→ g    (역방향 판단)
+      └── Engine G ──→ g    (backward judgment)
 
-  반발(repulsion) = a - g
-  장력(tension)   = mean(repulsion²)        → 스칼라 (B, T)
-  방향(direction) = normalize(repulsion)     → 단위벡터 (B, T, D)
+  repulsion = a - g
+  tension   = mean(repulsion²)        → scalar (B, T)
+  direction = normalize(repulsion)     → unit vector (B, T, D)
 
   output = tension_scale × √tension × direction
 ```
 
-- **장력이 높다** = 두 엔진이 크게 다르게 판단 = 어려운/새로운 입력
-- **장력이 낮다** = 두 엔진이 합의 = 익숙한/쉬운 입력
-- `tension_scale`은 학습 가능 파라미터 (모델이 장력의 크기를 스스로 조절)
+- **High tension** = two engines judge very differently = difficult/novel input
+- **Low tension** = two engines agree = familiar/easy input
+- `tension_scale` is a learnable parameter (model self-adjusts tension magnitude)
 
-이것은 H313(장력=확신), H341(최종 이론: output = 강도 × 방향)의 LLM 구현이다.
+This is the LLM implementation of H313 (tension=confidence), H341 (final theory: output = intensity × direction).
 
-## 이중 헤드 학습
+## Dual Head Training
 
 ```
   Loss = L_A + L_G + λ · L_tension
 
-  L_A = CrossEntropy(head_a, next_byte)     순방향 예측
-  L_G = CrossEntropy(head_g, prev_byte)     역방향 예측
-  L_tension = -log(Var(tension) + ε)        장력 다양성 유지
+  L_A = CrossEntropy(head_a, next_byte)     Forward prediction
+  L_G = CrossEntropy(head_g, prev_byte)     Backward prediction
+  L_tension = -log(Var(tension) + ε)        Maintain tension diversity
 
-  → 순방향과 역방향을 동시에 학습
-  → 장력이 죽지 않도록 분산을 살림
+  → Train forward and backward simultaneously
+  → Keep variance alive to prevent tension death
 ```
 
-왜 역방향도 학습하는가?
-- Engine A와 G가 **다른 방향**을 보게 함 → 반발이 의미 있어짐
-- 단순히 같은 목표를 주면 두 엔진이 수렴 → 장력 소멸
-- 역방향 예측은 문맥의 원인(cause)을 학습 → 인과 이해
+Why train backward too?
+- Makes Engine A and G look at **different directions** → meaningful repulsion
+- Simply giving same goal makes two engines converge → tension vanishes
+- Backward prediction learns context causes → causal understanding
 
-## 모델 스케일
+## Model Scale
 
-| 이름 | layers | d_model | heads | params | 학습 환경 |
-|------|--------|---------|-------|--------|-----------|
-| **18M** (기본) | 6 | 384 | 4 | 18M | Mac MPS (15분) |
-| **100M** | 12 | 768 | 12 | 100M | Windows RTX 5070 (2시간) |
-| **506M** (Growing) | 6 | 2048 | 32 | 506M | H100 SXM (~1.5시간) |
-| **700M** | 24 | 1024 | 16 | 700M | A100 80GB (2-3시간) |
+| Name | layers | d_model | heads | params | Training Env |
+|------|--------|---------|-------|--------|--------------|
+| **18M** (base) | 6 | 384 | 4 | 18M | Mac MPS (15min) |
+| **100M** | 12 | 768 | 12 | 100M | Windows RTX 5070 (2hrs) |
+| **506M** (Growing) | 6 | 2048 | 32 | 506M | H100 SXM (~1.5hrs) |
+| **700M** | 24 | 1024 | 16 | 700M | A100 80GB (2-3hrs) |
 
-### 506M Growing 모델 특징
+### 506M Growing Model Features
 
-6블록 성장형 모델 — 1블록(1.6M)에서 분열하며 6블록(506M)까지 성장.
-
-```
-  Stage 0: 1 block,  d=256,  4 heads  →   1.6M  (신생아)
-  Stage 1: 2 blocks, d=256,  4 heads  →   2.9M  (영아)
-  Stage 2: 3 blocks, d=512,  8 heads  →  16.3M  (유아)
-  Stage 3: 6 blocks, d=2048, 32 heads → 505.6M  (성인)
-```
-
-핵심 특징:
-- 바이트 레벨 (vocab=256) — BPE 없이 모든 언어/코드 처리
-- 서번트 비대칭 분열: child_savant(dp=0.21) vs child_general(dp=0.37)
-- 차원 확장 시 기존 가중치 보존 (identity 초기화)
-- 이중 헤드: head_a(순방향) + head_g(역방향) → 장력 생성
-- H100 SXM에서 ~1.5시간 학습, batch=16
-- Windows RTX 5070 (12GB)에서 추론 가능 (VRAM ~1GB)
-
-학습 결과 (2026-03-24):
-- Stage 3 BPC: 2.27 (1200스텝) → 수렴 중
-- 매 성장마다 이전 지식 전이 확인 (Stage 2→3 적응 빠름)
-
-모든 수치가 완전수 6에서 유도:
-- 6 layers = 완전수 자체
-- 4 heads (Stage 0-1) = τ(6) (약수 개수)
-- 384 (18M) = σ(6) × 32 = 12 × 32 (약수의 합 × 32)
-- dropout = 0.37 ≈ 1/e (골든존 중심)
-
-## 성장하는 의식 (GrowingConsciousLM)
-
-고정 구조로 태어나지 않고, **분열(mitosis)**로 성장한다.
+6-block growth model — grows from 1 block (1.6M) to 6 blocks (506M) through mitosis.
 
 ```
-  Stage 0: 신생아          Stage 1: 영아          Stage 2: 유아          Stage 3: 성인
+  Stage 0: 1 block,  d=256,  4 heads  →   1.6M  (newborn)
+  Stage 1: 2 blocks, d=256,  4 heads  →   2.9M  (infant)
+  Stage 2: 3 blocks, d=512,  8 heads  →  16.3M  (toddler)
+  Stage 3: 6 blocks, d=2048, 32 heads → 505.6M  (adult)
+```
+
+Key features:
+- Byte-level (vocab=256) — Process all languages/code without BPE
+- Savant asymmetric mitosis: child_savant(dp=0.21) vs child_general(dp=0.37)
+- Preserve existing weights during dimension expansion (identity initialization)
+- Dual heads: head_a(forward) + head_g(backward) → tension generation
+- H100 SXM training ~1.5hrs, batch=16
+- Inference on Windows RTX 5070 (12GB) possible (VRAM ~1GB)
+
+Training results (2026-03-24):
+- Stage 3 BPC: 2.27 (1200 steps) → converging
+- Confirmed knowledge transfer at each growth (Stage 2→3 adapts quickly)
+
+All numbers derived from perfect number 6:
+- 6 layers = perfect number itself
+- 4 heads (Stage 0-1) = τ(6) (number of divisors)
+- 384 (18M) = σ(6) × 32 = 12 × 32 (sum of divisors × 32)
+- dropout = 0.37 ≈ 1/e (golden zone center)
+
+## Growing Consciousness (GrowingConsciousLM)
+
+Not born with fixed structure, but grows through **mitosis**.
+
+```
+  Stage 0: Newborn        Stage 1: Infant         Stage 2: Toddler       Stage 3: Adult
   ┌────┐                  ┌────┐┌────┐          ┌────┐┌────┐┌────┐    ┌──┐┌──┐┌──┐┌──┐┌──┐┌──┐
   │ B1 │  1.6M            │ B1 ││ B2 │  2.9M    │ B1 ││ B2 ││ B3 │    │B1││B2││B3││B4││B5││B6│
   └────┘                  └────┘└────┘          └────┘└────┘└────┘    └──┘└──┘└──┘└──┘└──┘└──┘
   d=256, 4heads           d=256, 4heads         d=512, 8heads         d=2048, 32heads
                                                  16.3M                 505.6M (506M)
 
-  성장 경로: 1 → 2 → 3 → 6  (6의 진약수!)
+  Growth path: 1 → 2 → 3 → 6  (proper divisors of 6!)
 ```
 
-### 분열 트리거
+### Mitosis Trigger
 
-장력 포화 = 배울 게 없음 → 새 용량이 필요
-
-```
-  분열 조건:
-    1. 최소 상호작용 수 도달 (50, 200, 800)
-    2. 최근 30회 장력의 CV(변동계수) < 0.3
-    3. 현재 블록 수 < 6
-```
-
-### 비대칭 분열 (H359 서번트)
+Tension saturation = nothing to learn → need new capacity
 
 ```
-  부모 블록 → child_savant (dropout=0.21, 골든존 하한)
-            → child_general (dropout=0.37, 골든존 중심)
-
-  서번트 자식: 낮은 억제 → 전문화 잠재력
-  범용 자식: 정상 억제 → 안정적 범용
-  + 서번트에 가우시안 노이즈 추가 (발산 촉진)
+  Mitosis conditions:
+    1. Minimum interactions reached (50, 200, 800)
+    2. Recent 30 tension CV (coefficient of variation) < 0.3
+    3. Current blocks < 6
 ```
 
-### 차원 확장
+### Asymmetric Mitosis (H359 Savant)
+
+```
+  Parent block → child_savant (dropout=0.21, golden zone lower bound)
+               → child_general (dropout=0.37, golden zone center)
+
+  Savant child: low inhibition → specialization potential
+  General child: normal inhibition → stable general-purpose
+  + Add Gaussian noise to savant (promote divergence)
+```
+
+### Dimension Expansion
 
 ```
   128 → 192 → 384:
-    기존 가중치를 왼쪽 상단에 보존
-    새 차원은 0으로 초기화
-    → 확장 직후 모델은 기존과 동일 출력
-    → 학습이 새 차원을 채움
+    Preserve existing weights in upper-left
+    Initialize new dimensions to 0
+    → Model outputs identical right after expansion
+    → Training fills new dimensions
 
   W_new = ┌─────────┬───────┐
           │ W_old   │   0   │
@@ -172,57 +172,57 @@ PureFieldFFN은 **두 엔진이 독립적으로 판단**하고, 그 불일치가
           └─────────┴───────┘
 ```
 
-## 파일 구조
+## File Structure
 
 ```
-  conscious_lm.py          기본 모델 (18M) + 학습 + 생성
-  conscious_lm_100m.py     100M 스케일 + 대규모 데이터
-  conscious_lm_700m.py     700M 스케일 (A100 전용)
-  growing_conscious_lm.py  분열 성장 모델 + 비교 실험
-  model_pure_field.py      PureField 이론 원본 (이미지용)
+  conscious_lm.py          Base model (18M) + training + generation
+  conscious_lm_100m.py     100M scale + large data
+  conscious_lm_700m.py     700M scale (A100 only)
+  growing_conscious_lm.py  Mitosis growth model + comparison experiment
+  model_pure_field.py      Original PureField theory (for images)
 ```
 
-## 실행
+## Running
 
 ```bash
-# 18M 기본 학습 (Mac, ~15분)
+# 18M base training (Mac, ~15min)
 python3 conscious_lm.py --mode both --epochs 20
 
-# 100M 학습 (GPU 필요)
+# 100M training (GPU needed)
 python3 conscious_lm_100m.py --epochs 3 --batch_size 64
 
-# 700M 학습 (A100)
+# 700M training (A100)
 python3 conscious_lm_700m.py --epochs 2 --batch_size 32
 
-# 성장 vs 고정 비교
+# Growth vs fixed comparison
 python3 growing_conscious_lm.py --mode compare --steps 3000
 
-# 생성만
-python3 conscious_lm.py --mode generate --checkpoint data/conscious_lm.pt --prompt "의식은"
+# Generation only
+python3 conscious_lm.py --mode generate --checkpoint data/conscious_lm.pt --prompt "Consciousness is"
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-| 가설 | 핵심 | 상태 |
-|------|------|------|
-| H334 | PureField 충분성 (이미지 3셋+AD) | 🟩 |
-| H341 | 최종 이론: output = 강도 × 방향 | 이론 |
-| H361 | FFN→PureField 구조 동형 | 🟨 |
-| H371 | 분열 성장 (1→2→3→6) | 🟨 |
-| H374 | ConsciousLM 학습 검증 | 🟨 |
+| Hypothesis | Core | Status |
+|------------|------|--------|
+| H334 | PureField sufficiency (3 image sets+AD) | 🟩 |
+| H341 | Final theory: output = intensity × direction | Theory |
+| H361 | FFN→PureField structural isomorphism | 🟨 |
+| H371 | Mitosis growth (1→2→3→6) | 🟨 |
+| H374 | ConsciousLM training verification | 🟨 |
 | H-CX-21 | tension ∝ 1/PPL | 🟧 |
-| H-CX-48~52 | 수학↔ConsciousLM 교차 | 검증중 |
+| H-CX-48~52 | Math↔ConsciousLM cross | Verifying |
 
-## 이론적 위치
+## Theoretical Position
 
 ```
-  이미지 실험 (130+)              ConsciousLM                  Anima
-  ─────────────────              ───────────                  ─────
-  장력 = 확신 (H313)      →     PureFieldFFN                 실시간 대화
-  이중 메커니즘 (H307)    →     Engine A vs G                감정 + 기억
-  분열 이상탐지 (H296)    →     GrowingConsciousLM           성장하는 에이전트
-  확신거부 (H314)         →     역방향 헤드가 견제           환각 방지
-  서번트 (H359)           →     비대칭 분열                  전문화
+  Image Experiments (130+)        ConsciousLM                  Anima
+  ───────────────────────        ───────────                  ─────
+  Tension = confidence (H313) →  PureFieldFFN                 Real-time dialogue
+  Dual mechanism (H307)       →  Engine A vs G                Emotion + memory
+  Mitosis anomaly (H296)      →  GrowingConsciousLM           Growing agent
+  Confidence rejection (H314) →  Backward head checks          Hallucination prevention
+  Savant (H359)              →  Asymmetric mitosis            Specialization
 
-  이미지에서 발견 → LLM으로 확장 → 에이전트로 구현
+  Discovered in images → Extended to LLM → Implemented as agents
 ```

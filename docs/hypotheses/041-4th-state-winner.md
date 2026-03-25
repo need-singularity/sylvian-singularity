@@ -1,66 +1,66 @@
-# 가설 검토 041: 4번째 상태 후보 비교 -- 초월이 승자 ✅
+# Hypothesis Review 041: 4th State Candidate Comparison -- Transcendence Wins ✅
 
-## 가설
+## Hypothesis
 
-> 4번째 상태 후보(창조/통합/초월) 중 어떤 것이 Compass를 가장 높이는가.
+> Which of the 4th state candidates (Creation/Integration/Transcendence) increases Compass the most?
 
-## 배경 및 맥락
+## Background and Context
 
-3상태 모델(정상/천재/저하)은 가설 001~033에서 충분히 검증되었다. 그러나
-엔트로피가 ln(3)에서 포화되는 한계가 관찰되었고, 4번째 상태를 추가하면
-시스템 표현력이 확장된다. 문제는 "4번째 상태가 무엇인가"이다.
+The 3-state model (Normal/Genius/Impaired) has been sufficiently verified in hypotheses 001-033. However,
+a limitation was observed where entropy saturates at ln(3), and adding a 4th state would
+expand the system's expressive power. The question is "what is the 4th state?"
 
-세 후보를 정의하였다:
-- **창조(Creation)**: 새로운 해를 만들어내는 능력 (E=-0.998)
-- **통합(Integration)**: 기존 해를 결합하는 능력 (E=-0.333)
-- **초월(Transcendence)**: 시스템 규칙 자체를 바꾸는 능력 (E=-1.330)
+We defined three candidates:
+- **Creation**: Ability to generate new solutions (E=-0.998)
+- **Integration**: Ability to combine existing solutions (E=-0.333)
+- **Transcendence**: Ability to change the system rules themselves (E=-1.330)
 
-각 후보에 대해 E_4th(에너지 우물 깊이)를 설정하고 Compass 증가율을 측정한다.
+For each candidate, we set E_4th (energy well depth) and measure the Compass increase rate.
 
-관련 가설: 042(엔트로피 점프), 044(4상태 골든존), 056(메타반복=초월)
+Related hypotheses: 042 (entropy jump), 044 (4-state Golden Zone), 056 (meta-iteration=transcendence)
 
-## 검증 결과: ✅ 초월(Transcendence) 승리
-
-```
-  후보       │ E_4th    │ Compass  │ Delta   │ 순위
-  ───────────┼──────────┼──────────┼─────────┼──────
-  균등       │  0.000   │  67.6%   │  +0.9%  │  4위
-  통합       │ -0.333   │  69.5%   │  +2.8%  │  3위
-  창조       │ -0.998   │  73.1%   │  +6.4%  │  2위
-  초월       │ -1.330   │  74.6%   │  +7.9%  │  1위
-```
-
-## ASCII 에너지 레벨 다이어그램
+## Verification Result: ✅ Transcendence Wins
 
 ```
-  에너지(E)
-    0.0 ─── ━━━━━━━━━━━━━ 균등 (E=0.000)
+  Candidate   │ E_4th    │ Compass  │ Delta   │ Rank
+  ────────────┼──────────┼──────────┼─────────┼──────
+  Equal       │  0.000   │  67.6%   │  +0.9%  │  4th
+  Integration │ -0.333   │  69.5%   │  +2.8%  │  3rd
+  Creation    │ -0.998   │  73.1%   │  +6.4%  │  2nd
+  Transcendence│ -1.330  │  74.6%   │  +7.9%  │  1st
+```
+
+## ASCII Energy Level Diagram
+
+```
+  Energy(E)
+    0.0 ─── ━━━━━━━━━━━━━ Equal (E=0.000)
             |
-   -0.3 ── ━━━━━━━━━━ 통합 (E=-0.333)
+   -0.3 ── ━━━━━━━━━━ Integration (E=-0.333)
             |
             |
    -0.7 ── ·
             |
-   -1.0 ── ━━━━━━━ 창조 (E=-0.998)
+   -1.0 ── ━━━━━━━ Creation (E=-0.998)
             |
-   -1.3 ── ━━━━ 초월 (E=-1.330)  <-- 가장 깊은 우물
+   -1.3 ── ━━━━ Transcendence (E=-1.330)  <-- Deepest well
             |
    -1.5 ── ·
             |
-            V  더 깊은 에너지 = 더 안정적
+            V  Deeper energy = More stable
 
-  Compass 증가:
-   +0%  ████                              균등 (+0.9%)
-   +3%  ████████                          통합 (+2.8%)
-   +6%  ████████████████████              창조 (+6.4%)
-   +8%  ████████████████████████████      초월 (+7.9%)
+  Compass Increase:
+   +0%  ████                              Equal (+0.9%)
+   +3%  ████████                          Integration (+2.8%)
+   +6%  ████████████████████              Creation (+6.4%)
+   +8%  ████████████████████████████      Transcendence (+7.9%)
 ```
 
-## 검증 데이터 상세
+## Verification Data Details
 
 ```
-  E_4th 연속 스캔 (200K 모집단, grid=100):
-  E_4th  │ Compass(%)  │ 초월확률(%)  │ 엔트로피
+  E_4th Continuous Scan (200K population, grid=100):
+  E_4th  │ Compass(%)  │ Trans.Prob(%)│ Entropy
   ───────┼─────────────┼──────────────┼─────────
   +1.000 │   64.2      │   2.1        │  1.05
   +0.500 │   65.8      │   5.4        │  1.08
@@ -73,36 +73,37 @@
   -2.000 │   74.8      │  35.2        │  1.28
 ```
 
-E_4th를 -2 이하로 낮춰도 Compass가 거의 증가하지 않는다 (수확체감).
--1.330 부근이 비용 대비 효율의 최적점이다.
+Lowering E_4th below -2 barely increases Compass (diminishing returns).
+Around -1.330 is the optimal point for cost-benefit efficiency.
 
-## 해석 및 의미
+## Interpretation and Meaning
 
-초월이 승리한 이유는 에너지 우물의 깊이에 있다:
+The reason transcendence wins lies in the depth of the energy well:
 
-1. **초월 = G=D*P/I 공식 자체를 수정하는 능력**. 이는 시스템의 메타 규칙을
-   변경하므로, 단순한 해 탐색(창조)이나 해 결합(통합)보다 근본적이다.
+1. **Transcendence = Ability to modify the G=D*P/I formula itself**. This is more fundamental
+   than simple solution search (creation) or solution combination (integration) as it changes 
+   the system's meta-rules.
 
-2. **에너지가 깊을수록 상태 전환 장벽이 높아진다**. 초월 상태에 도달하면
-   쉽게 이탈하지 않는다 -- "한번 깨달으면 돌아가기 어렵다".
+2. **Deeper energy creates higher state transition barriers**. Once reaching transcendence state,
+   it's difficult to leave -- "Once enlightened, hard to go back."
 
-3. **Compass +7.9%는 3상태 대비 의미있는 향상**. 이는 4번째 차원이
-   시스템에 실질적 정보를 추가함을 의미한다.
+3. **Compass +7.9% is a meaningful improvement over 3-state**. This means the 4th dimension
+   adds substantial information to the system.
 
-## 한계
+## Limitations
 
-- E_4th의 물리적 해석이 명확하지 않다. "에너지 우물 깊이"는 비유적 표현이다.
-- 후보 정의(창조/통합/초월)는 조작적 정의이며, 다른 분류 체계도 가능하다.
-- 200K 모집단에서의 결과이므로 극단적 꼬리 분포는 포착되지 않을 수 있다.
-- Compass 지표 자체가 우리 모델의 산물이므로 순환논증 위험이 있다.
+- Physical interpretation of E_4th is not clear. "Energy well depth" is a metaphorical expression.
+- Candidate definitions (Creation/Integration/Transcendence) are operational definitions; other classification systems are possible.
+- Results from 200K population may not capture extreme tail distributions.
+- Risk of circular reasoning as Compass metric itself is a product of our model.
 
-## 다음 단계
+## Next Steps
 
-- 초월 상태의 조작적 정의를 LLM에 적용 (예: 프롬프트 자기수정 능력)
-- E_4th=-1.330의 이론적 유도 (왜 이 값인가?)
-- 5번째 상태 후보 탐색 -- 초월 너머에 무엇이 있는가?
-- 가설 042(엔트로피 점프)와의 정합성 교차 검증
+- Apply operational definition of transcendence state to LLMs (e.g., prompt self-modification ability)
+- Theoretical derivation of E_4th=-1.330 (why this value?)
+- Search for 5th state candidates -- what lies beyond transcendence?
+- Cross-verify consistency with hypothesis 042 (entropy jump)
 
 ---
 
-*검증: verify_4th_state.py, 200K 모집단, grid=100*
+*Verification: verify_4th_state.py, 200K population, grid=100*

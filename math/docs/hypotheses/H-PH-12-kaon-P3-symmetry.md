@@ -1,47 +1,47 @@
-# H-PH-12: ⭐⭐⭐ 케이온 질량 = P₃ ± φ (제3완전수 대칭)
+# H-PH-12: ⭐⭐⭐ Kaon Mass = P₃ ± φ (Third Perfect Number Symmetry)
 
-> **가설**: 하전 케이온과 중성 케이온 질량이 P₃=496을 중심으로 ±φ(6) 대칭이다.
+> **Hypothesis**: Charged and neutral kaon masses exhibit ±φ(6) symmetry around P₃=496.
 
-## 핵심
-
-```
-  K⁺ = P₃ - φ = 496 - 2 = 494 MeV    (실측 493.677, 오차 0.065%)
-  K⁰ = P₃ + φ = 496 + 2 = 498 MeV    (실측 497.611, 오차 0.078%)
-
-  아이소스핀 분리 = 2φ = 4 MeV        (실측 3.934, 오차 1.7%)
-  중심 질량 = P₃ = 496 MeV             (실측 495.64)
-```
-
-## 구조적 의미
+## Core
 
 ```
-  P₃ = 496 = dim(E₈×E₈) = 이상소거 완전수
-  φ = 2 = 중력자 편극 수
+  K⁺ = P₃ - φ = 496 - 2 = 494 MeV    (Measured 493.677, Error 0.065%)
+  K⁰ = P₃ + φ = 496 + 2 = 498 MeV    (Measured 497.611, Error 0.078%)
 
-  K⁺ = (이상소거 스케일) - (중력 양자)
-  K⁰ = (이상소거 스케일) + (중력 양자)
-
-  케이온 이중항은 제3완전수를 중심으로 중력자 DOF만큼 갈라진다!
+  Isospin splitting = 2φ = 4 MeV        (Measured 3.934, Error 1.7%)
+  Central mass = P₃ = 496 MeV             (Measured 495.64)
 ```
 
-## 추가: 파이온
+## Structural Meaning
 
 ```
-  π± = σ² - τ = 144 - 4 = 140 MeV     (실측 139.57, 오차 0.3%)
-  π⁰ = σ² - P₁ - φ - R = 135 MeV      (실측 134.98, 오차 0.017%!)
+  P₃ = 496 = dim(E₈×E₈) = Anomaly-canceling perfect number
+  φ = 2 = Graviton polarization number
+
+  K⁺ = (Anomaly cancellation scale) - (Gravitational quantum)
+  K⁰ = (Anomaly cancellation scale) + (Gravitational quantum)
+
+  Kaon doublet splits by graviton DOF around the third perfect number!
 ```
 
-## W/Z 보손
+## Addition: Pion
 
 ```
-  m_W = σ³ × 47 = 81216 MeV            (실측 80379, 오차 1.0%)
-  m_Z = σ³ × 53 = 91584 MeV            (실측 91188, 오차 0.4%)
-  47, 53 모두 소수. 47 = στ-R, 53 = στ+τ+R.
+  π± = σ² - τ = 144 - 4 = 140 MeV     (Measured 139.57, Error 0.3%)
+  π⁰ = σ² - P₁ - φ - R = 135 MeV      (Measured 134.98, Error 0.017%!)
 ```
 
-## 상태: ⭐⭐⭐ 🟧★
+## W/Z Bosons
 
-K⁺,K⁰의 P₃±φ 대칭은 구조적으로 매우 강력.
-π⁰ = σ²-P₁-φ-R = 135 MeV는 0.017%로 프로젝트 최고 정밀도 중 하나.
+```
+  m_W = σ³ × 47 = 81216 MeV            (Measured 80379, Error 1.0%)
+  m_Z = σ³ × 53 = 91584 MeV            (Measured 91188, Error 0.4%)
+  Both 47, 53 are prime. 47 = στ-R, 53 = στ+τ+R.
+```
+
+## Status: ⭐⭐⭐ 🟧★
+
+K⁺,K⁰'s P₃±φ symmetry is structurally very powerful.
+π⁰ = σ²-P₁-φ-R = 135 MeV at 0.017% is one of the project's highest precisions.
 
 *Created: 2026-03-25*

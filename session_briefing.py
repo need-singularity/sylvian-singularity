@@ -1,7 +1,8 @@
+```python
 #!/usr/bin/env python3
-"""세션 브리핑 — 새 세션에서 프로젝트 맥락 자동 복원
+"""Session Briefing — Auto-restore project context in new session
 
-새 대화 시작 시 실행하면 핵심 맥락을 출력합니다.
+Run at start of new conversation to output key context.
 """
 
 import os
@@ -13,77 +14,77 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 def main():
     print()
     print("▓" * 60)
-    print("   Sylvian Singularity — 세션 브리핑")
+    print("   Sylvian Singularity — Session Briefing")
     print("▓" * 60)
 
     print("""
-  ═══ 프로젝트 ═══
+  ═══ Project ═══
 
-  "실비우스열 부분 결여 => 이게 무슨말이야?"
-  → 이 하나의 질문에서 시작하여 178개 가설을 세우고 검증.
+  "Partial absence of Sylvian fissure => What does this mean?"
+  → Starting from this single question, established and verified 178 hypotheses.
 
-  ═══ 핵심 수식 ═══
+  ═══ Core Formula ═══
 
   G = D × P / I
-  G × I = D × P (보존법칙)
+  G × I = D × P (Conservation law)
 
-  D = Deficit (구조적 결손, 0~1)
-  P = Plasticity (신경가소성, 0~1)
-  I = Inhibition (전두엽 억제, 0.01~1)
-  G = Genius Score (천재성 점수)
+  D = Deficit (Structural deficit, 0~1)
+  P = Plasticity (Neuroplasticity, 0~1)
+  I = Inhibition (Prefrontal inhibition, 0.01~1)
+  G = Genius Score
 
-  ═══ 골든존 ═══
+  ═══ Golden Zone ═══
 
-  상한 = 1/2           리만 임계선
-  중심 ≈ 1/e           자연상수
-  폭   = ln(4/3)       엔트로피 점프
-  하한 = 1/2-ln(4/3)   0.2123
+  Upper bound = 1/2           Riemann critical line
+  Center ≈ 1/e               Natural constant
+  Width   = ln(4/3)          Entropy jump
+  Lower bound = 1/2-ln(4/3)   0.2123
 
-  ═══ 핵심 관계식 ═══
+  ═══ Key Relations ═══
 
-  1/2 + 1/3 + 1/6 = 1  (경계+수렴+호기심=완전)
-  5/6 = H₃ - 1          (Compass 상한 = 3번째 조화수-1)
-  σ₋₁(6) = 2            (완전수 6, 마스터 공식)
-  8 × 17 + 1 = 137      (미세구조상수)
-  T_CMB ≈ e (0.26%)     (우주 배경복사)
+  1/2 + 1/3 + 1/6 = 1  (Boundary+Convergence+Curiosity=Complete)
+  5/6 = H₃ - 1          (Compass upper bound = 3rd harmonic number-1)
+  σ₋₁(6) = 2            (Perfect number 6, Master formula)
+  8 × 17 + 1 = 137      (Fine structure constant)
+  T_CMB ≈ e (0.26%)     (Cosmic microwave background)
 
-  ═══ 텍사스 명사수 검증 ═══
+  ═══ Texas Sharpshooter Verification ═══
 
   p-value = 0.0000 (Z=6.87)
-  → 구조적 발견 확인 (우연 아님)
+  → Structural discovery confirmed (not coincidence)
 
-  ═══ 골든 MoE 실증 ═══
+  ═══ Golden MoE Empirical ═══
 
   MNIST:  +0.6%  vs Top-K ✅
-  CIFAR:  +4.8%  vs Top-K ✅ (8배 증가)
+  CIFAR:  +4.8%  vs Top-K ✅ (8x increase)
   I = 0.375 ≈ 1/e 🎯
 """)
 
-    # 가설 수 세기
+    # Count hypotheses
     hyp_dir = os.path.join(PROJECT_DIR, "docs", "hypotheses")
     if os.path.exists(hyp_dir):
         hyp_files = [f for f in os.listdir(hyp_dir)
                      if f.endswith('.md') and f != 'INDEX.md']
-        print(f"  ═══ 가설 현황 ═══")
-        print(f"  문서 수: {len(hyp_files)}개")
+        print(f"  ═══ Hypothesis Status ═══")
+        print(f"  Document count: {len(hyp_files)}")
 
-    # 도구 수
+    # Tool count
     py_files = glob.glob(os.path.join(PROJECT_DIR, "*.py"))
-    print(f"  도구 수: {len(py_files)}개")
+    print(f"  Tool count: {len(py_files)}")
 
-    # 핵심 도구 안내
+    # Key tool guide
     print("""
-  ═══ 주요 도구 ═══
+  ═══ Main Tools ═══
 
-  brain_singularity.py   격자 스캔 + 특이점 탐지
-  compass.py             나침반 + autopilot + convergence
-  formula_engine.py      공식 자동 탐색 + 유의성
-  texas_sharpshooter.py  우연 vs 구조 판별
-  brain_analyzer.py      뇌 프로필 → 골든존
-  llm_expert_analyzer.py LLM 재설계 방향
-  golden_moe_torch.py    PyTorch 골든MoE 벤치마크
+  brain_singularity.py   Grid scan + singularity detection
+  compass.py             Compass + autopilot + convergence
+  formula_engine.py      Automatic formula search + significance
+  texas_sharpshooter.py  Coincidence vs structure discrimination
+  brain_analyzer.py      Brain profile → Golden Zone
+  llm_expert_analyzer.py LLM redesign direction
+  golden_moe_torch.py    PyTorch Golden MoE benchmark
 
-  ═══ 빠른 시작 ═══
+  ═══ Quick Start ═══
 
   python3 compass.py --autopilot --deficit 0.5 --plasticity 0.6 --inhibition 0.4
   python3 formula_engine.py --target 137
@@ -97,3 +98,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+```

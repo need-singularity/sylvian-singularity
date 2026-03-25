@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""H-CX-98~101: 9라운드 — PH 실용 도구 검증
+"""H-CX-98~101: Round 9 — PH Practical Tool Verification
 
 H-CX-98: PH early stopping vs val_loss early stopping
-H-CX-99: H0_gap 최소 에폭 = 최적 체크포인트?
-H-CX-100: LR sweep에서 H0 안정성 → 최적 LR
-H-CX-101: 에폭 1 H0_total = 데이터셋 난이도 점수
+H-CX-99: H0_gap minimum epoch = optimal checkpoint?
+H-CX-100: H0 stability in LR sweep → optimal LR
+H-CX-101: Epoch 1 H0_total = dataset difficulty score
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -213,7 +213,7 @@ if __name__ == '__main__':
     lr_results = run_lr_sweep('cifar')
 
     print(f"\n{'='*70}")
-    print(f"  9라운드 FINAL SUMMARY")
+    print(f"  Round 9 FINAL SUMMARY")
     print(f"{'='*70}")
     for ds in ['mnist', 'fashion', 'cifar']:
         r = all_results[ds]

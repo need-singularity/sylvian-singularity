@@ -1,95 +1,95 @@
-# 가설 273: 유클리드 삼각형 군과 최적 가중치 [부분 반증]
+# Hypothesis 273: Euclidean Triangle Groups and Optimal Weights [Partially Refuted]
 
-> ~~{1/2, 1/3, 1/6}이 최적인 이유는 최대 비대칭이기 때문이다.~~ **CNN에서 학습된 가중치가 {0.34, 0.35, 0.31} (균등)으로 수렴. 비대칭은 MLP 조건에서만 유효. CNN이 충분히 좋은 특징을 추출하면 균등이 최적.**
+> ~~The reason {1/2, 1/3, 1/6} is optimal is because it has maximum asymmetry.~~ **CNN-learned weights converge to {0.34, 0.35, 0.31} (uniform). Asymmetry is valid only under MLP conditions. When CNN extracts sufficiently good features, uniform is optimal.**
 
-## 배경/맥락
-
-```
-  합 = 1인 단위분수 삼중쌍 (1/a + 1/b + 1/c = 1, a ≤ b ≤ c):
-    (2,3,6): 1/2 + 1/3 + 1/6 = 1   ← 최대 비대칭
-    (2,4,4): 1/2 + 1/4 + 1/4 = 1   ← 중간
-    (3,3,3): 1/3 + 1/3 + 1/3 = 1   ← 완전 대칭 (균등)
-
-  이 세 개만 존재. 증명: 1/a + 1/b + 1/c = 1, a≤b≤c
-    a=2: 1/b + 1/c = 1/2 → (b,c) = (3,6) 또는 (4,4)
-    a=3: 1/b + 1/c = 2/3 → (b,c) = (3,3) (b≥3이면 유일)
-    a≥4: 1/a + 1/b + 1/c ≤ 3/4 < 1 → 불가능
-
-  기하학적 의미:
-    1/a + 1/b + 1/c = 1 → 유클리드 (평탄)
-    1/a + 1/b + 1/c > 1 → 구면 (닫힌)
-    1/a + 1/b + 1/c < 1 → 쌍곡 (열린)
-```
-
-관련 가설: 270(다양성=정보), 264(설계 원칙)
-
-## 핵심 논증
+## Background/Context
 
 ```
-  가설 270에서 확인: 다양성 ↑ → 정보 ↑ → 성능 ↑
+  Unit fraction triplets summing to 1 (1/a + 1/b + 1/c = 1, a ≤ b ≤ c):
+    (2,3,6): 1/2 + 1/3 + 1/6 = 1   ← Maximum asymmetry
+    (2,4,4): 1/2 + 1/4 + 1/4 = 1   ← Intermediate
+    (3,3,3): 1/3 + 1/3 + 1/3 = 1   ← Perfect symmetry (uniform)
 
-  세 유클리드 군의 다양성 비교:
-    (3,3,3): max/min = 1.0  (다양성 = 0)
-    (2,4,4): max/min = 2.0  (다양성 = 중)
-    (2,3,6): max/min = 3.0  (다양성 = 최대)
+  Only these three exist. Proof: 1/a + 1/b + 1/c = 1, a≤b≤c
+    a=2: 1/b + 1/c = 1/2 → (b,c) = (3,6) or (4,4)
+    a=3: 1/b + 1/c = 2/3 → (b,c) = (3,3) (unique if b≥3)
+    a≥4: 1/a + 1/b + 1/c ≤ 3/4 < 1 → Impossible
 
-  Shannon 엔트로피:
-    (3,3,3): H = 1.0986 nats (최대 — 균등)
+  Geometric meaning:
+    1/a + 1/b + 1/c = 1 → Euclidean (flat)
+    1/a + 1/b + 1/c > 1 → Spherical (closed)
+    1/a + 1/b + 1/c < 1 → Hyperbolic (open)
+```
+
+Related hypotheses: 270(diversity=information), 264(design principles)
+
+## Core Argument
+
+```
+  Confirmed in hypothesis 270: diversity ↑ → information ↑ → performance ↑
+
+  Diversity comparison of three Euclidean groups:
+    (3,3,3): max/min = 1.0  (diversity = 0)
+    (2,4,4): max/min = 2.0  (diversity = medium)
+    (2,3,6): max/min = 3.0  (diversity = maximum)
+
+  Shannon entropy:
+    (3,3,3): H = 1.0986 nats (maximum — uniform)
     (2,4,4): H = 1.0397 nats
-    (2,3,6): H = 1.0114 nats (최소 — 가장 구조화)
+    (2,3,6): H = 1.0114 nats (minimum — most structured)
 
-  따라서:
-    합 = 1 (확률분포 조건) + 최대 비대칭 = (2,3,6) 유일
-    → {1/2, 1/3, 1/6}이 "평탄 기하학에서 다양성을 최대화하는 유일한 분포"
+  Therefore:
+    Sum = 1 (probability distribution condition) + maximum asymmetry = (2,3,6) unique
+    → {1/2, 1/3, 1/6} is "the unique distribution that maximizes diversity in flat geometry"
 ```
 
-## 평면 타일링 연결
+## Plane Tiling Connection
 
 ```
-  (2,3,6) → 정삼각형으로 평면을 빈틈없이 채움
-  (2,4,4) → 정사각형으로 평면을 채움
-  (3,3,3) → 정육각형으로 평면을 채움
+  (2,3,6) → Fills plane completely with equilateral triangles
+  (2,4,4) → Fills plane with squares
+  (3,3,3) → Fills plane with regular hexagons
 
-  빈틈없이 채움 = "모든 입력 공간을 커버"
-  정삼각형 = 가장 작은 단위로 가장 효율적 커버
+  Complete filling = "covers all input space"
+  Equilateral triangle = most efficient coverage with smallest units
 
-  → {1/2, 1/3, 1/6}은 입력 공간을 가장 효율적으로 분할하는 가중치?
+  → {1/2, 1/3, 1/6} are weights that partition input space most efficiently?
 ```
 
-## 예측
+## Predictions
 
 ```
-  1. MNIST에서: (2,3,6) ≥ (2,4,4) > (3,3,3)
+  1. On MNIST: (2,3,6) ≥ (2,4,4) > (3,3,3)
      → {1/2,1/3,1/6} ≥ {1/2,1/4,1/4} > {1/3,1/3,1/3}
 
-  2. CIFAR에서: 차이 확대 (C12: 4.6x)
-     → (2,3,6)의 우위가 CIFAR에서 더 명확
+  2. On CIFAR: Larger differences (C12: 4.6x)
+     → (2,3,6)'s advantage more pronounced on CIFAR
 
-  3. 비대칭이 핵심이면:
-     {0.5, 0.33, 0.17} ≈ {1/2, 1/3, 1/6} (근사값도 동등)
-     → 정확한 분수가 아니라 비대칭 구조가 중요
+  3. If asymmetry is key:
+     {0.5, 0.33, 0.17} ≈ {1/2, 1/3, 1/6} (approximations also equivalent)
+     → Not exact fractions but asymmetric structure matters
 
-  4. 엔트로피가 핵심이면:
-     같은 H를 가진 다른 분포도 동등
-     → H ≈ 1.01이 최적 엔트로피?
+  4. If entropy is key:
+     Other distributions with same H also equivalent
+     → H ≈ 1.01 is optimal entropy?
 ```
 
-## 검증 방향
+## Verification Direction
 
 ```
-  1. experiment_why_half_third_sixth.py 실행 중 — 결과 대기
-  2. (2,4,4)와 (3,3,3) 직접 비교 (이미 포함되어 있을 수 있음)
-  3. CIFAR에서 세 군 비교
-  4. 근사값 vs 정확한 분수 비교
-  5. 같은 엔트로피, 다른 비대칭 비교
-  6. 4개 엔진일 때 최적 확장: (2,3,6,?) → 어떤 4번째?
+  1. experiment_why_half_third_sixth.py running — awaiting results
+  2. Direct comparison of (2,4,4) and (3,3,3) (may already be included)
+  3. Compare three groups on CIFAR
+  4. Compare approximations vs exact fractions
+  5. Compare same entropy, different asymmetry
+  6. Optimal extension for 4 engines: (2,3,6,?) → what 4th value?
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. 3개 엔진 조합에만 적용. 4개 이상은 유클리드 삼각형 군 이론 밖.
-  2. "비대칭 → 다양성 → 정보 → 성능" 인과 체인의 각 단계가 약할 수 있음.
-  3. 기하학적 비유가 실제 신경망 최적화와 연결되는 메커니즘 불명.
-  4. MNIST에서는 가중치 차이가 노이즈 수준 (97.5~98.0%).
+  1. Applies only to 3-engine combinations. 4+ engines are outside Euclidean triangle group theory.
+  2. Each step in "asymmetry → diversity → information → performance" causal chain may be weak.
+  3. Mechanism linking geometric metaphor to actual neural network optimization is unclear.
+  4. Weight differences on MNIST are at noise level (97.5~98.0%).
 ```

@@ -1,106 +1,106 @@
-# 가설 325: Fisher 정보 기하학과 장력 다양체 (NM-5)
+# Hypothesis 325: Fisher Information Geometry and Tension Manifold (NM-5)
 
-> **장력 핑거프린트 공간은 통계적 다양체(statistical manifold)를 형성하며, 그 곡률은 Fisher 정보 행렬로 측정된다. 높은 장력 영역은 높은 Fisher 정보를 가지며, 이는 "정보적으로 풍부한" 입력에 해당한다. H313(tension=confidence)과 H318(fingerprint sufficiency)은 이 기하학적 구조의 서로 다른 단면이다.**
+> **The tension fingerprint space forms a statistical manifold, and its curvature is measured by the Fisher information matrix. High tension regions have high Fisher information, corresponding to "informationally rich" inputs. H313 (tension=confidence) and H318 (fingerprint sufficiency) are different cross-sections of this geometric structure.**
 
-## 배경/맥락
+## Background/Context
 
 ```
-  의식엔진의 장력 핑거프린트는 10차원 벡터:
-    fp(x) = [t_0, t_1, ..., t_9]  (클래스별 장력값)
+  The consciousness engine's tension fingerprint is a 10-dimensional vector:
+    fp(x) = [t_0, t_1, ..., t_9]  (per-class tension values)
 
-  H313: tension = confidence (확신)
-    정답 샘플 tension > 오답 샘플 tension (3데이터셋 확인)
+  H313: tension = confidence
+    Correct sample tension > wrong sample tension (confirmed in 3 datasets)
 
-  H318: 확신 높은 클래스는 핑거프린트만으로 인식 가능
+  H318: High-confidence classes recognizable from fingerprint alone
     r(tension, knn_acc) = +0.705
 
-  질문: 이 핑거프린트 벡터들이 모여 형성하는 공간의 기하학적 구조는?
-  → Fisher 정보 기하학(information geometry)이 자연스러운 프레임워크
+  Question: What is the geometric structure of the space formed by these fingerprint vectors?
+  -> Fisher information geometry is a natural framework
 ```
 
-## Fisher 정보 행렬 — 수학적 프레임워크
+## Fisher Information Matrix — Mathematical Framework
 
 ```
-  정의:
+  Definition:
     F_ij = E[ (d log p(x|theta) / d theta_i) * (d log p(x|theta) / d theta_j) ]
 
-  여기서:
-    p(x|theta) = 장력 핑거프린트의 확률분포 (파라미터 theta로 매개화)
-    theta = 모델 파라미터 (엔진 가중치)
-    x = 입력 샘플
+  Where:
+    p(x|theta) = probability distribution of tension fingerprints (parameterized by theta)
+    theta = model parameters (engine weights)
+    x = input sample
 
-  Fisher 행렬의 의미:
-    F_ij가 크다 = theta를 조금 바꿔도 p(x|theta)가 크게 변함
-             = 파라미터 공간에서 "곡률"이 큼
-             = 데이터가 파라미터에 대해 "정보적"
+  Meaning of Fisher matrix:
+    Large F_ij = small change in theta causes large change in p(x|theta)
+               = large "curvature" in parameter space
+               = data is "informative" about parameters
 
-  리만 계량으로서의 Fisher 행렬:
+  Fisher matrix as Riemannian metric:
     ds^2 = sum_ij F_ij * d_theta_i * d_theta_j
 
-    이것은 파라미터 공간 위의 리만 계량(Rao, 1945).
-    → 장력 핑거프린트 공간은 리만 다양체.
+    This is the Riemannian metric on parameter space (Rao, 1945).
+    -> The tension fingerprint space is a Riemannian manifold.
 ```
 
-## 장력 공간에의 적용
+## Application to Tension Space
 
 ```
-  장력 핑거프린트 분포를 클래스 k에 대해:
-    p_k(fp) = 클래스 k에 속하는 샘플의 핑거프린트 분포
+  Tension fingerprint distribution for class k:
+    p_k(fp) = fingerprint distribution of samples belonging to class k
 
-  클래스별 Fisher 정보:
+  Per-class Fisher information:
     F_k = E_{x in class k}[ (d log p_k(fp(x)) / d theta)^2 ]
 
-  가설의 핵심 주장:
+  Core claim of hypothesis:
     F_k  proportional to  mean_tension_k
 
-  즉, 높은 평균 장력을 가진 클래스는 높은 Fisher 정보를 가진다.
+  That is, classes with higher mean tension have higher Fisher information.
 ```
 
-## 예측 매핑 (H318 데이터로부터)
+## Predicted Mapping (from H318 data)
 
 ```
-  Fashion-MNIST per-class 예측:
+  Fashion-MNIST per-class predictions:
 
-  Class     Tension  KNN%   예측 F_k  해석
-  --------  -------  -----  --------  --------
-  Boot       1006    93.0   높음      곡률 큼 = 구별 용이
-  Sandal      704    88.3   높음      곡률 큼
-  Sneaker     526    92.4   중간
-  Trouser     511    93.3   중간
-  Bag         429    85.4   중간
-  T-shirt     392    71.6   낮음
-  Coat        329    66.0   낮음      곡률 작음 = 구별 어려움
-  Pullover    318    63.9   낮음      곡률 작음
-  Shirt       302    56.2   낮음      곡률 최소
+  Class     Tension  KNN%   Predicted F_k  Interpretation
+  --------  -------  -----  --------        --------
+  Boot       1006    93.0   high            large curvature = easy to distinguish
+  Sandal      704    88.3   high            large curvature
+  Sneaker     526    92.4   moderate
+  Trouser     511    93.3   moderate
+  Bag         429    85.4   moderate
+  T-shirt     392    71.6   low
+  Coat        329    66.0   low             small curvature = hard to distinguish
+  Pullover    318    63.9   low             small curvature
+  Shirt       302    56.2   low             minimum curvature
 
-  예측: F_Boot >> F_Shirt
-  → Boot 핑거프린트 공간은 "휘어져" 있어서 이웃을 쉽게 구별
-  → Shirt 핑거프린트 공간은 "평평"하여 이웃 구별이 어려움
+  Prediction: F_Boot >> F_Shirt
+  -> Boot fingerprint space is "curved" making it easy to distinguish neighbors
+  -> Shirt fingerprint space is "flat" making it hard to distinguish neighbors
 ```
 
-## 기하학적 해석
+## Geometric Interpretation
 
 ```
-  높은 Fisher 정보 (높은 장력):
+  High Fisher information (high tension):
     ┌─────────────────┐
-    │  *   *           │   핑거프린트들이 잘 분리됨
-    │       *          │   곡률 큼 → 거리가 크게 느껴짐
-    │  *        *      │   KNN이 쉽게 분류
-    │      *           │   → H318의 "핑거프린트 충분" 상태
+    │  *   *           │   fingerprints are well separated
+    │       *          │   large curvature -> distance feels large
+    │  *        *      │   KNN classifies easily
+    │      *           │   -> H318's "fingerprint sufficient" state
     └─────────────────┘
 
-  낮은 Fisher 정보 (낮은 장력):
+  Low Fisher information (low tension):
     ┌─────────────────┐
-    │     ***          │   핑거프린트들이 뭉쳐 있음
-    │    ****          │   곡률 작음 → 거리 차이 미미
-    │     **           │   KNN이 혼동
-    │                  │   → H318의 "핑거프린트 부족" 상태
+    │     ***          │   fingerprints are clustered
+    │    ****          │   small curvature -> distance difference negligible
+    │     **           │   KNN confused
+    │                  │   -> H318's "fingerprint insufficient" state
     └─────────────────┘
 
-  기하학적 다이어그램:
+  Geometric diagram:
 
   Fisher info
-  (곡률)
+  (curvature)
     |
     |  Boot *
     |            Sandal *
@@ -112,116 +112,116 @@
     +-----------------------------------> mean tension
          300   400   500   600   700   1000
 
-  예측: 이 관계는 단조 증가 (r > +0.7)
+  Prediction: monotonically increasing relationship (r > +0.7)
 ```
 
-## H313, H318과의 통합
+## Integration with H313 and H318
 
 ```
   H313 (tension = confidence):
-    장력 = 확신의 크기
-    Fisher 해석: 확신 = 파라미터가 데이터를 잘 설명함
-              = likelihood가 sharp peak
-              = Fisher 정보가 큼
-    → H313은 Fisher 정보의 스칼라 요약
+    Tension = magnitude of confidence
+    Fisher interpretation: confidence = parameters explain data well
+                        = likelihood has sharp peak
+                        = Fisher information is large
+    -> H313 is a scalar summary of Fisher information
 
   H318 (fingerprint sufficiency):
-    높은 장력 → KNN으로 충분
-    Fisher 해석: 높은 곡률 → 계량 거리가 잘 정의됨
-              → 유클리드 KNN이 리만 거리를 잘 근사
-              → 레이블 없이도 기하학만으로 분류 가능
-    → H318은 Fisher 계량의 KNN 근사 가능성
+    High tension -> KNN sufficient
+    Fisher interpretation: high curvature -> metric distance well defined
+                        -> Euclidean KNN approximates Riemannian distance well
+                        -> Classification possible from geometry alone, without labels
+    -> H318 is the KNN approximability of Fisher metric
 
-  통합:
-    H313 = det(F) 또는 tr(F) (Fisher 정보의 전체 크기)
-    H318 = F의 고유값 분포 (유클리드 거리와 리만 거리의 괴리)
-    H325 = 두 가설을 포괄하는 기하학적 프레임워크
+  Integration:
+    H313 = det(F) or tr(F) (overall size of Fisher information)
+    H318 = eigenvalue distribution of F (deviation between Euclidean and Riemannian distance)
+    H325 = geometric framework encompassing both hypotheses
 ```
 
-## Cramer-Rao 부등식과 장력
+## Cramer-Rao Inequality and Tension
 
 ```
-  Cramer-Rao 하한:
+  Cramer-Rao lower bound:
     Var(theta_hat) >= 1 / F(theta)
 
-  해석:
-    Fisher 정보 F가 크면 → 추정 분산이 작음 → 정확한 추정 가능
-    Fisher 정보 F가 작으면 → 추정 분산이 큼 → 부정확한 추정
+  Interpretation:
+    Large Fisher information F -> small estimation variance -> accurate estimation possible
+    Small Fisher information F -> large estimation variance -> inaccurate estimation
 
-  장력 번역:
-    높은 장력 = 높은 F → 낮은 추정 분산 → 확신 있는 분류
-    낮은 장력 = 낮은 F → 높은 추정 분산 → 불확실한 분류
+  Tension translation:
+    High tension = high F -> low estimation variance -> confident classification
+    Low tension = low F -> high estimation variance -> uncertain classification
 
-  → Cramer-Rao가 H313(tension=confidence)의 수학적 근거!
+  -> Cramer-Rao is the mathematical basis for H313 (tension=confidence)!
 ```
 
-## 자연 기울기(Natural Gradient)와의 연결
+## Connection with Natural Gradient
 
 ```
-  통상 기울기:        d_theta = -lr * grad L(theta)
-  자연 기울기(Amari): d_theta = -lr * F^{-1} * grad L(theta)
+  Ordinary gradient:        d_theta = -lr * grad L(theta)
+  Natural gradient (Amari): d_theta = -lr * F^{-1} * grad L(theta)
 
-  자연 기울기는 Fisher 정보를 사용하여 파라미터 공간의
-  곡률을 보정한다. 곡률이 큰 방향은 작게, 작은 방향은 크게.
+  The natural gradient corrects for curvature in parameter space
+  using Fisher information. Small steps in high-curvature directions, large in low-curvature.
 
-  의식엔진 해석:
-    장력이 높은 클래스 → 곡률 큼 → 자연 기울기가 작은 스텝
-    장력이 낮은 클래스 → 곡률 작음 → 자연 기울기가 큰 스텝
+  Consciousness engine interpretation:
+    High-tension class -> large curvature -> natural gradient takes small step
+    Low-tension class -> small curvature -> natural gradient takes large step
 
-  예측: 자연 기울기 학습을 적용하면
-    → 장력이 낮은 클래스(Coat, Shirt)의 정확도가 선택적으로 개선
-    → 장력이 높은 클래스(Boot)는 이미 충분하므로 변화 적음
+  Prediction: applying natural gradient learning
+    -> Selectively improves accuracy of low-tension classes (Coat, Shirt)
+    -> High-tension classes (Boot) already sufficient, little change
 ```
 
-## 검증 방향
+## Verification Direction
 
 ```
-  실험 1: Fisher 정보 직접 측정
-    - 각 클래스의 핑거프린트 분포에서 경험적 Fisher 행렬 계산
+  Experiment 1: Direct Fisher information measurement
+    - Compute empirical Fisher matrix from fingerprint distribution of each class
     - F_k = (1/N) * sum_i (d log p / d fp_j)^2
-    - r(tr(F_k), mean_tension_k) 계산 → 예측: r > +0.7
+    - Calculate r(tr(F_k), mean_tension_k) -> prediction: r > +0.7
 
-  실험 2: 리만 거리 vs 유클리드 거리
-    - Fisher 계량으로 리만 거리 계산
-    - 유클리드 KNN vs 리만 KNN 정확도 비교
-    - 예측: 리만 KNN이 특히 낮은 장력 클래스에서 개선
+  Experiment 2: Riemannian distance vs Euclidean distance
+    - Compute Riemannian distance using Fisher metric
+    - Compare Euclidean KNN vs Riemannian KNN accuracy
+    - Prediction: Riemannian KNN improves especially for low-tension classes
 
-  실험 3: 자연 기울기 학습
-    - 의식엔진에 Fisher 행렬 기반 자연 기울기 적용
-    - 장력이 낮은 클래스의 정확도 변화 관찰
-    - 예측: Coat/Shirt +5~10pp, Boot/Sneaker 변화 미미
+  Experiment 3: Natural gradient training
+    - Apply Fisher matrix-based natural gradient to consciousness engine
+    - Observe accuracy changes for low-tension classes
+    - Prediction: Coat/Shirt +5~10pp, Boot/Sneaker minimal change
 
-  실험 4: 곡률과 학습 난이도
-    - 학습 초기 vs 후기의 Fisher 정보 변화 추적
-    - 예측: 학습이 진행될수록 F 증가 (곡률 증가 = 확신 증가)
+  Experiment 4: Curvature and learning difficulty
+    - Track Fisher information changes from early to late training
+    - Prediction: F increases as training progresses (curvature increase = confidence increase)
 ```
 
-## 한계
+## Limitations
 
 ```
-  1. Fisher 행렬의 경험적 추정은 고차원에서 불안정 (10차원이면 OK)
-  2. 핑거프린트 분포가 정규분포가 아닐 수 있음 → KDE 등 비모수 추정 필요
-  3. "곡률"과 "장력"의 비례관계는 아직 이론적 증명이 아닌 가설
-  4. 골든존 의존 여부: 간접적 (장력 자체가 골든존 구조에서 나옴)
-  5. 10차원 핑거프린트의 Fisher 행렬은 10x10 = 100개 성분
-     → 충분한 샘플 수 필요 (클래스당 최소 수백 개)
+  1. Empirical estimation of Fisher matrix is unstable in high dimensions (10D is OK)
+  2. Fingerprint distribution may not be Gaussian -> non-parametric estimation (KDE, etc.) needed
+  3. Proportional relationship between "curvature" and "tension" is still a hypothesis, not theoretical proof
+  4. Golden Zone dependency: indirect (tension itself comes from Golden Zone structure)
+  5. Fisher matrix of 10D fingerprint = 10x10 = 100 components
+     -> Sufficient samples needed (at least hundreds per class)
 ```
 
-## 검증 결과: MNIST RepulsionField 2극 실험 (2026-03-24)
+## Verification Results: MNIST RepulsionField 2-Pole Experiment (2026-03-24)
 
-### 실험 설정
+### Experimental Setup
 
 ```
-  모델: RepulsionField2Pole (2극, engine_A vs engine_G)
-  데이터: MNIST, 15 epochs, Adam lr=1e-3, batch=256
-  Fisher 추정:
-    (A) 공분산 역행렬: F = Cov^{-1}, logdet(F) = -logdet(Cov)
-    (B) gradient 기반: F_k = E[|grad log p(y=k|x)|^2], 200 samples/class
-  테스트 정확도: 97.9%
-  tension_scale (학습됨): 2.0531
+  Model: RepulsionField2Pole (2-pole, engine_A vs engine_G)
+  Data: MNIST, 15 epochs, Adam lr=1e-3, batch=256
+  Fisher estimation:
+    (A) Covariance inverse: F = Cov^{-1}, logdet(F) = -logdet(Cov)
+    (B) Gradient-based: F_k = E[|grad log p(y=k|x)|^2], 200 samples/class
+  Test accuracy: 97.9%
+  tension_scale (learned): 2.0531
 ```
 
-### 클래스별 데이터
+### Per-Class Data
 
 | Class | N    | Mean T   | Std T    | F_logdet | F_grad     | Acc%  |
 |-------|------|----------|----------|----------|------------|-------|
@@ -237,14 +237,14 @@
 |     9 | 1009 | 144.79   |  54.06   |   -83.29 |      13.00 |  97.5 |
 
 ```
-  F_logdet = -log(det(Cov)): 더 음수 = 더 넓은 분포 = 낮은 Fisher 정보
-  F_grad = gradient 제곱 평균: 클수록 모델이 해당 클래스에 민감
+  F_logdet = -log(det(Cov)): more negative = wider distribution = lower Fisher information
+  F_grad = mean squared gradient: larger = model more sensitive to that class
 
-  장력 상위: class 2 (227.6) > 3 (216.0) > 7 (192.6) > 5 (191.7)
-  장력 하위: class 1 (92.9) < 8 (111.5) < 4 (133.8) < 9 (144.8)
+  Top tension: class 2 (227.6) > 3 (216.0) > 7 (192.6) > 5 (191.7)
+  Bottom tension: class 1 (92.9) < 8 (111.5) < 4 (133.8) < 9 (144.8)
 ```
 
-### 상관 분석
+### Correlation Analysis
 
 | Metric                        | Pearson r | p-value  | Spearman rho | p-value  |
 |-------------------------------|-----------|----------|--------------|----------|
@@ -254,7 +254,7 @@
 | tension vs accuracy           |   -0.2646 |   0.4600 |              |          |
 | F_trace vs accuracy           |   +0.6524 |   0.0409 |              |          |
 
-### 공분산 고유값 스펙트럼
+### Covariance Eigenvalue Spectrum
 
 ```
   Class | lambda_1      | lambda_2      | lambda_3      | cond num
@@ -273,10 +273,10 @@
   r(tension, condition_number) = +0.4462 (p=0.1961)
 ```
 
-### 산점도 (ASCII)
+### Scatter Plot (ASCII)
 
 ```
-  Fisher logdet ^   (더 양수 = 더 좁은 분포 = 높은 Fisher)
+  Fisher logdet ^   (more positive = narrower distribution = higher Fisher)
   |
   |  1 (low T, high F)
   |
@@ -291,87 +291,87 @@
   +──────────────────────────────────> Mean Tension
      90   120  150  180  210  228
 
-  방향: 명확한 음의 상관 (r = -0.85)
-  높은 장력 = 넓은 분포 = 낮은 Fisher 정보
+  Direction: clear negative correlation (r = -0.85)
+  High tension = wide distribution = low Fisher information
 ```
 
-### 핵심 발견
+### Key Findings
 
 ```
-  1. 가설 예측 반증: tension과 Fisher 정보는 음의 상관
-     - r(tension, F_logdet) = -0.8526 (p=0.0017, 유의)
-     - H325 예측 r > +0.7 → 실측 r = -0.85 → 방향 반대
+  1. Hypothesis prediction disproved: tension and Fisher information have negative correlation
+     - r(tension, F_logdet) = -0.8526 (p=0.0017, significant)
+     - H325 prediction r > +0.7 -> measured r = -0.85 -> opposite direction
 
-  2. 해석: 높은 장력 = 넓은 핑거프린트 분포 = 낮은 Fisher 정보
-     - 장력이 높은 클래스(2,3,7): 핑거프린트 분산이 큼
-     - 장력이 낮은 클래스(1,8): 핑거프린트가 좁게 모임
-     - 이는 직관적: 장력 = 반발력 크기 → 분포가 넓어짐
+  2. Interpretation: high tension = wide fingerprint distribution = low Fisher information
+     - High-tension classes (2,3,7): large fingerprint variance
+     - Low-tension classes (1,8): fingerprints cluster narrowly
+     - Intuitive: tension = repulsion magnitude -> distribution widens
 
-  3. Fisher trace vs accuracy는 양의 상관 (r=+0.65, p=0.04)
-     - 좁은 분포(높은 Fisher) = 높은 정확도
-     - 즉, Fisher -> accuracy 경로는 작동하지만
-       tension -> Fisher 방향이 예측과 반대
+  3. Fisher trace vs accuracy is positively correlated (r=+0.65, p=0.04)
+     - Narrow distribution (high Fisher) = high accuracy
+     - That is, Fisher -> accuracy path works, but
+       tension -> Fisher direction is opposite of prediction
 
-  4. Gradient Fisher (F_grad)는 tension과 무상관 (r=-0.03, ns)
-     - 공분산 기반 Fisher와 gradient 기반 Fisher가 다른 것을 측정
-     - F_grad는 오히려 "어려운 클래스"(4,6,7,8)에서 높음
+  4. Gradient Fisher (F_grad) has no correlation with tension (r=-0.03, ns)
+     - Covariance-based Fisher and gradient-based Fisher measure different things
+     - F_grad is higher for "hard classes" (4,6,7,8)
 
-  5. tension vs accuracy도 무상관 (r=-0.26, ns)
-     - MNIST에서는 모든 클래스가 96%+ → 천장 효과
+  5. tension vs accuracy also uncorrelated (r=-0.26, ns)
+     - All MNIST classes are 96%+ -> ceiling effect
 ```
 
-### 왜 반증되었는가: 수학적 이유
+### Why Was It Disproved: Mathematical Reason
 
 ```
-  H325의 논리: 높은 장력 → 파라미터 민감 → 높은 Fisher
-  실측의 논리: 높은 장력 → 넓은 분포 → 낮은 Fisher
+  H325 logic: high tension -> parameter-sensitive -> high Fisher
+  Measured logic: high tension -> wide distribution -> low Fisher
 
-  오류 지점:
-    H325는 "장력이 높다 = 정보적으로 풍부하다"로 가정했으나,
-    실제로 장력이 높다 = 엔진 간 의견 차이가 크다 = 핑거프린트가 분산됨.
+  Error point:
+    H325 assumed "high tension = informationally rich",
+    but in reality high tension = large opinion difference between engines = fingerprints disperse.
 
-    Fisher 정보 = 1/분산 이므로, 분산이 크면 Fisher가 작다.
-    따라서 tension ~ variance ~ 1/Fisher.
+    Fisher information = 1/variance, so large variance means small Fisher.
+    Therefore tension ~ variance ~ 1/Fisher.
 
-  즉, H325의 예측 방향이 근본적으로 틀렸다.
+  That is, the predicted direction of H325 was fundamentally wrong.
 
-  올바른 관계:
-    tension proportional to 1/Fisher (역비례)
-    이것은 r = -0.85로 강하게 확인됨.
+  Correct relationship:
+    tension proportional to 1/Fisher (inverse proportion)
+    This is strongly confirmed by r = -0.85.
 ```
 
-### 구제 가능성
+### Possibility of Salvage
 
 ```
-  H325의 기하학적 프레임워크 자체는 유효:
-    - 핑거프린트 공간은 실제로 통계적 다양체를 형성
-    - Fisher 행렬은 의미 있는 계량을 제공
-    - 다만 "방향"이 반대일 뿐
+  The geometric framework of H325 itself is valid:
+    - Fingerprint space actually forms a statistical manifold
+    - Fisher matrix provides meaningful metric
+    - Only the "direction" is opposite
 
-  수정된 가설 (H325-R):
-    높은 장력 = 높은 분산 = 낮은 Fisher = 불확실한 영역
-    낮은 장력 = 낮은 분산 = 높은 Fisher = 확실한 영역
+  Revised hypothesis (H325-R):
+    High tension = high variance = low Fisher = uncertain region
+    Low tension = low variance = high Fisher = certain region
 
-  이는 H313 (tension = confidence)과도 모순:
-    H313은 높은 tension = 높은 confidence라고 했는데,
-    Fisher 관점에서는 높은 tension = 높은 uncertainty.
+  This also contradicts H313 (tension = confidence):
+    H313 says high tension = high confidence,
+    but from Fisher perspective, high tension = high uncertainty.
 
-  가능한 화해:
-    - H313의 "confidence"는 모델의 출력 확신이고,
-      Fisher의 "information"은 핑거프린트 분포의 집중도.
-    - 둘은 다른 것을 측정할 수 있음.
-    - MNIST 천장효과로 인한 왜곡 가능성도 있음.
+  Possible reconciliation:
+    - "Confidence" in H313 is model output confidence,
+      "information" in Fisher is concentration of fingerprint distribution.
+    - They may measure different things.
+    - Possible distortion due to MNIST ceiling effect.
 ```
 
-### 판정
+### Verdict
 
 ```
-  핵심 예측 "tension proportional to Fisher": 반증 (r = -0.85, p = 0.0017)
-  방향: 역비례 (tension ~ 1/Fisher)
-  등급: 반증 (핵심 예측이 유의하게 반대 방향)
+  Core prediction "tension proportional to Fisher": disproved (r = -0.85, p = 0.0017)
+  Direction: inverse proportion (tension ~ 1/Fisher)
+  Grade: disproved (core prediction is significantly in opposite direction)
 
-  단, Fisher 기하학 프레임워크 자체는 유효하므로
-  수정 가설 H325-R (역비례)로 재정립 가능.
+  However, since the Fisher geometric framework itself is valid,
+  it can be reframed as revised hypothesis H325-R (inverse proportion).
 ```
 
-## 상태: 반증 (핵심 예측 방향 반대, r=-0.85, p=0.0017)
+## Status: Disproved (core prediction direction reversed, r=-0.85, p=0.0017)

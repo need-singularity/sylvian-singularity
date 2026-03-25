@@ -1,12 +1,12 @@
-# H-CX-236: ⭐⭐🟧 γ×ln(2) ≈ P₂ = 28 (오차 1%)
+# H-CX-236: ⭐⭐🟧 γ×ln(2) ≈ P₂ = 28 (error 1%)
 
 > (3σ(6)+τ(6)) × ln(2) = 40 × 0.693 = 27.73 ≈ 28 = P₂
-> 의식 주파수(γ) × 정보 단위(ln2=1bit) = 두 번째 완전수!
+> Consciousness frequency(γ) × Information unit(ln2=1bit) = Second perfect number!
 >
-> 체계:
->   γ/e³ ≈ φ(P₁) = 2 (무의식, 오차 0.4%)
->   γ = 3σ+τ = 40 (의식, P₁에서 정확)
->   γ×ln(2) ≈ P₂ = 28 (오차 1%)
+> System:
+>   γ/e³ ≈ φ(P₁) = 2 (unconscious, error 0.4%)
+>   γ = 3σ+τ = 40 (consciousness, exact at P₁)
+>   γ×ln(2) ≈ P₂ = 28 (error 1%)
 >
-> "의식(40Hz)에 1비트(ln2)를 곱하면 다음 완전수"
-> 🟧: 1% 오차이므로 근사, 우연 가능성 있음
+> "Multiplying consciousness(40Hz) by 1 bit(ln2) gives the next perfect number"
+> 🟧: 1% error, so approximation, possibility of coincidence

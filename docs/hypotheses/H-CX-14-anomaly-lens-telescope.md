@@ -1,104 +1,104 @@
-# H-CX-14: 이상탐지 = 중력렌즈 + 차원망원경 (교차 도메인: 수학기하 ↔ 이상탐지)
+# H-CX-14: Anomaly Detection = Gravitational Lens + Dimensional Telescope (Cross-domain: Math Geometry ↔ Anomaly Detection)
 
-> **R 스펙트럼의 "중력렌즈"(H-GEO-3)와 "차원망원경"(H-GEO-4)이 이상탐지의 2×2 매트릭스(H302)와 구조적으로 동형이다. 학습목표=배율(s), 장력유형=렌즈/망원경, 이상=R≠1인 점.**
+> **The "gravitational lens" (H-GEO-3) and "dimensional telescope" (H-GEO-4) of the R-spectrum are structurally isomorphic to the 2×2 matrix of Anomaly Detection (H302). Learning objective = magnification (s), Tension type = lens/telescope, anomaly = point where R≠1.**
 
-## 대응표
+## Correspondence Table
 
 ```
-  수학 (R 스펙트럼)             의식엔진 (이상탐지)
+  Math (R spectrum)              Consciousness Engine (Anomaly Detection)
   ──────────────────────      ──────────────────────
-  R(n) = σφ/(nτ)             장력 T(x) = |A(x)-G(x)|²
-  R(n) = 1 (완전수)           정상 데이터 (T ≈ 기대값)
-  R(n) ≠ 1 (비완전수)          이상 데이터 (T >> 기대값)
-  간극 (R=1 주위)              결정 경계 (정상/이상)
-  배율 s (Dirichlet)           학습 에폭 K (분화 시간)
-  렌즈 (간극 생성)              분열 (다양성 생성)
-  망원경 (해상도)               학습목표 (CE/MSE/CL)
+  R(n) = σφ/(nτ)             Tension T(x) = |A(x)-G(x)|²
+  R(n) = 1 (perfect number)  Normal data (T ≈ expected)
+  R(n) ≠ 1 (non-perfect)     Anomalous data (T >> expected)
+  Gap (around R=1)            Decision boundary (normal/anomaly)
+  Magnification s (Dirichlet)  Training epoch K (differentiation time)
+  Lens (gap creation)         Mitosis (diversity creation)
+  Telescope (resolution)      Learning objective (CE/MSE/CL)
 ```
 
-## 핵심 교차
+## Key Cross-connections
 
 ```
-  1. 간극 = 이상 감지 경계
-     수학: R=1 양쪽에 간극 (3/4, 1) ∪ (1, 7/6)
-     엔진: 정상 장력 T₀ 양쪽에 경계
-     → "간극의 폭" = "이상 감지 민감도"?
+  1. Gap = anomaly detection boundary
+     Math: gap on both sides of R=1 — (3/4, 1) ∪ (1, 7/6)
+     Engine: boundary on both sides of normal Tension T₀
+     → "Gap width" = "anomaly detection sensitivity"?
 
-  2. 배율 s ↔ 학습 시간 K
-     수학: s→1에서 최대 분해능 (발산 직전)
-     엔진: K→∞에서 최대 분화 (과적합 직전)
-     H298: K=50에서 AUROC=0.95 (아직 포화 없음)
-     → K→∞에서 AUROC→1.0? = s→1에서 F→∞?
+  2. Magnification s ↔ training time K
+     Math: maximum resolution as s→1 (just before divergence)
+     Engine: maximum differentiation as K→∞ (just before overfitting)
+     H298: AUROC=0.95 at K=50 (not yet saturated)
+     → AUROC→1.0 as K→∞? = F→∞ as s→1?
 
-  3. 렌즈 ↔ 분열
-     수학: 완전수가 "렌즈" = 주위를 굴절
-     엔진: 분열이 "렌즈" = 관점을 분리
-     → N=2 분열 = "이중 슬릿" = 간섭 패턴?
+  3. Lens ↔ Mitosis
+     Math: perfect number as "lens" = refracts surroundings
+     Engine: Mitosis as "lens" = separates perspectives
+     → N=2 Mitosis = "double slit" = interference pattern?
 
-  4. 2차원 관측 공간 ↔ 2×2 매트릭스
-     수학: (s, R₀) = (배율, 위치)
-     엔진: (학습목표, 장력유형) = (해상도, 관점)
+  4. 2D observation space ↔ 2×2 matrix
+     Math: (s, R₀) = (magnification, position)
+     Engine: (learning objective, Tension type) = (resolution, perspective)
 
-     수학                     엔진
-     s=∞ (점):               K=0 (분화 없음): AUROC=0.58
-     s=2 (선명):             K=10: AUROC=0.74
-     s=1+ε (극한):           K=50: AUROC=0.95
-     s=1 (발산):             K→∞: AUROC→1.0?
+     Math                     Engine
+     s=∞ (point):            K=0 (no differentiation): AUROC=0.58
+     s=2 (sharp):            K=10: AUROC=0.74
+     s=1+ε (limit):          K=50: AUROC=0.95
+     s=1 (divergence):       K→∞: AUROC→1.0?
 ```
 
-## 새 예측
+## New Predictions
 
 ```
-  수학에서: F(s) ~ 1/(s-1) as s→1 (단극 발산)
-  엔진에서: AUROC(K) ~ 1 - c/K^α as K→∞?
+  From math: F(s) ~ 1/(s-1) as s→1 (simple pole divergence)
+  From engine: AUROC(K) ~ 1 - c/K^α as K→∞?
 
-  피팅 (H298 데이터):
+  Fit (H298 data):
     K:     0    1    2    5   10   20   50
     AUROC: .58  .58  .69  .67  .74  .84  .95
 
   AUROC(K) ≈ 1 - a × K^(-b)?
-  → 거듭제곱 감쇠?
-  → 또는: AUROC(K) ≈ 1 - a × e^(-bK)?
-  → 수학의 1/(s-1) 발산 구조와 대응?
+  → Power law decay?
+  → Or: AUROC(K) ≈ 1 - a × e^(-bK)?
+  → Corresponds to the 1/(s-1) divergence structure of math?
 
-  수학의 렌즈 효과:
-    렌즈 강도 = 1/|M(n)| = 1/|σ(n)/n - 2|
-    n=6: M=0 → 무한 렌즈 (완전!)
-    n=5: M=1/5 → 렌즈 강도 5
-    n=12: M=1/3 → 렌즈 강도 3
+  Lens effect in math:
+    Lens strength = 1/|M(n)| = 1/|σ(n)/n - 2|
+    n=6: M=0 → infinite lens (perfect!)
+    n=5: M=1/5 → lens strength 5
+    n=12: M=1/3 → lens strength 3
 
-  엔진의 분열 효과:
-    분열 scale=0.01 → 약한 렌즈 (T_ab 작음)
-    분열 scale=0.5 → 강한 렌즈 (T_ab 큼)
+  Mitosis effect in engine:
+    Mitosis scale=0.01 → weak lens (T_ab small)
+    Mitosis scale=0.5 → strong lens (T_ab large)
     H-CX-12: T_ab(final) ~ scale^0.36
 
-  → 렌즈 강도(M) ↔ 분열 scale?
-    완전수(M=0) ↔ scale=0 (동일한 복사) → "완전한 렌즈"
-    부족수(M>0) ↔ scale>0 (다른 복사) → "부분 렌즈"
+  → Lens strength (M) ↔ Mitosis scale?
+    Perfect number (M=0) ↔ scale=0 (identical copy) → "perfect lens"
+    Deficient number (M>0) ↔ scale>0 (different copy) → "partial lens"
 ```
 
-## 검증 실험
+## Verification Experiments
 
 ```
-  1. AUROC(K) 피팅: 1-a/K^b vs 1-a·e^(-bK) vs 1/(1+a·e^(-bK))
-     → 어떤 함수형이 H298 데이터에 맞는가?
-     → F(s)의 1/(s-1) 발산과 같은 구조인가?
+  1. AUROC(K) fit: 1-a/K^b vs 1-a·e^(-bK) vs 1/(1+a·e^(-bK))
+     → Which functional form fits H298 data?
+     → Same structure as the 1/(s-1) divergence of F(s)?
 
-  2. 분열 scale vs 이상 감지 "해상도":
-     작은 scale = 높은 해상도 (미세한 이상 감지)?
-     큰 scale = 낮은 해상도 (큰 이상만 감지)?
-     → 수학의 s↔해상도와 동일한 구조?
+  2. Mitosis scale vs Anomaly Detection "resolution":
+     Small scale = high resolution (detect subtle anomalies)?
+     Large scale = low resolution (detect only large anomalies)?
+     → Same structure as s↔resolution in math?
 
-  3. R 스펙트럼의 간극 폭 vs AUROC
-     간극이 넓을수록 (R=1에서 멀리) → 이상 감지 쉬움?
+  3. R-spectrum gap width vs AUROC
+     Wider gap (farther from R=1) → easier anomaly detection?
 ```
 
-## 관련 가설
+## Related Hypotheses
 
 ```
-  수학: H-GEO-3 (중력렌즈), H-GEO-4 (차원망원경), H-GEO-5 (통합)
-  엔진: H302 (2×2 매트릭스), H298 (시간축), H-CX-12 (scale)
-  교차: R(n)=σφ/(nτ) ↔ 장력 T(x)=|A-G|²
+  Math: H-GEO-3 (gravitational lens), H-GEO-4 (dimensional telescope), H-GEO-5 (unified)
+  Engine: H302 (2×2 matrix), H298 (time axis), H-CX-12 (scale)
+  Cross: R(n)=σφ/(nτ) ↔ Tension T(x)=|A-G|²
 ```
 
-## 상태: 🟨 (구조적 대응 제안, 정량 검증 필요)
+## Status: 🟨 (structural correspondence proposed, quantitative verification needed)

@@ -1,139 +1,139 @@
-# 가설 검토 126: 골든MoE + LSTM 결합 ❌
+# Hypothesis Review 126: Golden MoE + LSTM Combination ❌
 
-## 가설
+## Hypothesis
 
-> 골든MoE(골든존 기반 Mixture of Experts)에 LSTM(재귀 구조)을 결합하면
-> 위상 원소 추가(T3)로 인해 성능이 향상되는가.
+> When LSTM (recurrent structure) is combined with Golden MoE (Golden Zone-based Mixture of Experts),
+> does performance improve due to the addition of phase element T3?
 
-## 배경
+## Background
 
-가설 124, 125, 127에서 위상 원소 추가(특히 T3 재귀)가 계단형 성능 점프를
-일으킨다고 예측했다. LSTM은 재귀 구조(T3에 대응)이므로, 골든MoE에 LSTM을
-추가하면 성능이 향상되어야 한다.
+Hypotheses 124, 125, 127 predicted that adding phase elements (especially T3 recursion) would cause
+a step-function performance jump. Since LSTM is a recurrent structure (corresponding to T3),
+adding LSTM to Golden MoE should improve performance.
 
 ```
-  예측: 골든MoE(순방향) + LSTM(재귀) → 위상 점프
-  테스트: MNIST 손글씨 숫자 분류
+  Prediction: Golden MoE (feedforward) + LSTM (recursion) → phase jump
+  Test: MNIST handwritten digit classification
 ```
 
-## 검증 결과: ❌ MNIST에서 효과 없음
+## Verification Result: ❌ No Effect on MNIST
 
 ```
   ┌───────────────────────────────────────────────────────────────┐
-  │           MNIST 10-에폭 성능 비교                              │
+  │           MNIST 10-epoch Performance Comparison                │
   ├──────────────────┬──────────┬────────────┬────────────────────┤
-  │ 모델             │ 정확도   │ 파라미터   │ 효율 (정확도/파람) │
+  │ Model            │ Accuracy │ Parameters │ Efficiency(acc/param)│
   ├──────────────────┼──────────┼────────────┼────────────────────┤
-  │ 골든MoE (순방향) │ 97.7%    │ 413K       │ 0.237%/K           │
-  │ 골든MoE + LSTM   │ 97.6%    │ 309K       │ 0.316%/K           │
-  │ 차이             │ −0.1%    │ −104K      │ +33% 효율          │
+  │ Golden MoE (FF)  │ 97.7%    │ 413K       │ 0.237%/K           │
+  │ Golden MoE + LSTM│ 97.6%    │ 309K       │ 0.316%/K           │
+  │ Difference       │ −0.1%    │ −104K      │ +33% efficiency    │
   └──────────────────┴──────────┴────────────┴────────────────────┘
 ```
 
-### 성능 비교 그래프
+### Performance Comparison Graph
 
 ```
-  정확도 (%)
+  Accuracy (%)
   100│
      │
   98 │  ┌──────┐  ┌──────┐
      │  │97.7% │  │97.6% │
-  97 │  │ 골든 │  │ 골든 │
+  97 │  │Golden│  │Golden│
      │  │ MoE  │  │+LSTM │
   96 │  │      │  │      │
      │  │ 413K │  │ 309K │
   95 │  │      │  │      │
      │  └──────┘  └──────┘
   94 │
-     │  차이: -0.1% (무의미)
+     │  Difference: -0.1% (negligible)
   93 │
      └─────────────────────
-       순방향      +재귀
+       Feedforward    +Recurrent
 
-  파라미터 효율 (정확도/1K파라미터):
-  골든MoE       │████████████        │ 0.237%/K
-  골든MoE+LSTM  │████████████████    │ 0.316%/K  (+33% 효율!)
-                0       0.1     0.2     0.3
+  Parameter efficiency (accuracy per 1K params):
+  Golden MoE       │████████████        │ 0.237%/K
+  Golden MoE+LSTM  │████████████████    │ 0.316%/K  (+33% efficiency!)
+                   0       0.1     0.2     0.3
 ```
 
-## 해석
+## Interpretation
 
-### 왜 실패했는가
+### Why It Failed
 
 ```
-  MNIST의 특성:
+  Characteristics of MNIST:
   ┌─────────────────────────────────────────────────────────┐
-  │ ● 정적 이미지 → 시간적 의존성 없음                      │
-  │ ● 28×28 = 784 픽셀 → 짧은 시퀀스                       │
-  │ ● 10 클래스 → 낮은 복잡도                               │
-  │ ● 기존 MLP로 98%+ 달성 가능 → 천장 효과(ceiling)        │
+  │ ● Static images → no temporal dependency                │
+  │ ● 28×28 = 784 pixels → short sequence                  │
+  │ ● 10 classes → low complexity                          │
+  │ ● Achievable 98%+ with existing MLP → ceiling effect   │
   └─────────────────────────────────────────────────────────┘
 
-  위상 원소(재귀)가 효과를 발휘하려면:
+  For phase elements (recursion) to be effective:
   ┌─────────────────────────────────────────────────────────┐
-  │ ✗ MNIST: 재귀 불필요 (정적 데이터)                      │
-  │ ✓ NLP: 재귀 필수 (시퀀스 의존성)                        │
-  │ ✓ 시계열: 재귀 필수 (시간 패턴)                         │
-  │ ✓ 128K 컨텍스트: 재귀 필수 (가설 125에서 ×3 확인!)     │
+  │ ✗ MNIST: recursion unnecessary (static data)           │
+  │ ✓ NLP: recursion essential (sequence dependency)       │
+  │ ✓ Time series: recursion essential (temporal patterns) │
+  │ ✓ 128K context: recursion essential (×3 confirmed H125)│
   └─────────────────────────────────────────────────────────┘
 ```
 
-### 우리 모델 해석
+### Our Model Interpretation
 
 ```
   Genius = D × P / I
 
-  MNIST에서:
-  - D (결손/복잡도) = 낮음 → 재귀 원소가 해결할 결손이 없음
-  - P (가소성) = 이미 포화 (97.7%)
-  - I (억제) = 순방향으로 충분히 낮음
+  In MNIST:
+  - D (Deficit/complexity) = low → no Deficit for recursion to solve
+  - P (Plasticity) = already saturated (97.7%)
+  - I (Inhibition) = sufficiently low with feedforward
 
-  → Genius = (낮은D) × P / I ≈ 일정
-  → 위상 원소(LSTM) 추가해도 D가 낮아서 점프 불발
+  → Genius = (low D) × P / I ≈ constant
+  → Adding phase element (LSTM) doesn't produce jump due to low D
 
-  128K 컨텍스트에서 (가설 125):
-  - D (결손/복잡도) = 높음 → 재귀 원소 필수
-  - I (억제) = O(n²) 주의 메커니즘이 높은 억제
-  - → LSTM/SSM이 I를 극적으로 감소 → ×3 점프
+  In 128K context (Hypothesis 125):
+  - D (Deficit/complexity) = high → recursion element essential
+  - I (Inhibition) = O(n²) attention mechanism creates high Inhibition
+  - → LSTM/SSM dramatically reduces I → ×3 jump
 ```
 
-### 가설 128과의 관계
+### Relationship with Hypothesis 128
 
 ```
-  가설 128: 스케일 의존성 — 복잡할수록 골든MoE 우위 증가
+  Hypothesis 128: Scale dependence — Golden MoE advantage increases with complexity
 
-  MNIST (단순):  +0.6% 차이  │ 재귀 효과 없음 (이 가설)
-  CIFAR-10 (복잡): +4.8% 차이  │ 8배 증가
-  128K NLP (매우 복잡): ×3 처리량 │ 가설 125에서 확인
+  MNIST (simple):      +0.6% difference  │ no recursion effect (this hypothesis)
+  CIFAR-10 (complex):  +4.8% difference  │ 8× increase
+  128K NLP (very complex): ×3 throughput │ confirmed in Hypothesis 125
 
-  → 위상 원소의 효과는 데이터 복잡도에 비례한다
-  → MNIST에서 LSTM이 안 먹히는 것은 모델의 예측과 정확히 일치
+  → The effect of phase elements is proportional to data complexity
+  → LSTM not working on MNIST is exactly consistent with our model's prediction
 ```
 
-### 긍정적 발견: 파라미터 효율
+### Positive Finding: Parameter Efficiency
 
 ```
-  주목: 골든MoE+LSTM은 정확도는 같지만 파라미터가 25% 적다
+  Notable: Golden MoE+LSTM achieves the same accuracy with 25% fewer parameters
 
-  413K → 309K (-104K, -25%)로 같은 성능
-  → 재귀가 표현력을 압축하는 효과는 있음
-  → 성능 향상이 아니라 효율 향상으로 나타남
-  → 복잡한 데이터에서는 이 효율이 성능으로 전환될 가능성
+  413K → 309K (-104K, -25%) for same performance
+  → Recursion does compress representational capacity
+  → Manifests as efficiency gain rather than performance gain
+  → Possibility that this efficiency translates to performance on complex data
 ```
 
-## 한계
+## Limitations
 
-1. MNIST 단일 벤치마크에서만 테스트 — 일반화 불가
-2. 10 에폭만 훈련 — 수렴 미확인
-3. LSTM 하이퍼파라미터 최적화 미수행
-4. NLP/시계열 데이터에서 재검증 필요 (핵심)
+1. Tested on MNIST alone — cannot generalize
+2. Only 10 epochs trained — convergence unconfirmed
+3. LSTM hyperparameter optimization not performed
+4. Re-verification required on NLP/time-series data (critical)
 
-## 검증 방향
+## Verification Directions
 
-- 시퀀스 데이터(IMDb, PTB 등)에서 골든MoE+LSTM 재검증
-- CIFAR-10에서 재귀 추가 효과 테스트 (가설 128 확장)
-- Mamba(SSM)로 LSTM 교체 후 비교 (가설 125와 직접 대응)
+- Re-verify Golden MoE+LSTM on sequence data (IMDb, PTB, etc.)
+- Test recursion addition effect on CIFAR-10 (extend Hypothesis 128)
+- Compare after replacing LSTM with Mamba (SSM) (directly corresponds to Hypothesis 125)
 
 ---
 
-*검증: golden_moe_recurrent.py (MNIST, 10 에폭) — 가설 124, 125, 127, 128과 연결*
+*Verification: golden_moe_recurrent.py (MNIST, 10 epochs) — connected to Hypotheses 124, 125, 127, 128*

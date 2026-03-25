@@ -1,3 +1,3 @@
-# H-CX-339: 🟩 눈 결정 6각 대칭 = P₁
+# H-CX-339: 🟩 Snowflake Hexagonal Symmetry = P₁
 
-> 수소결합 각도(104.5°≈2π/P₁?) → 6각 대칭. 자연의 P₁.
+> Hydrogen bond angle (104.5°≈2π/P₁?) → hexagonal symmetry. Nature's P₁.

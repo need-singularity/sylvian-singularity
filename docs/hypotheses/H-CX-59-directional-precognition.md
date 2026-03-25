@@ -1,89 +1,89 @@
-# H-CX-59: 방향 예지 — 방향벡터가 혼동 클래스를 미리 가리킨다
+# H-CX-59: Directional Precognition — Direction Vectors Pre-indicate Confusion Classes
 
-> 예지는 "맞을지 틀릴지"뿐 아니라 "어떤 클래스와 혼동할지"도 예측한다.
-> 방향벡터(H339)가 예측 클래스 대신 혼동 클래스를 가리킬 때, 오답이 발생한다.
+> Precognition predicts not just "right or wrong" but also "which class will be confused with."
+> When direction vectors (H339) point to confusion classes instead of predicted classes, errors occur.
 
-## 배경
+## Background
 
-- H339: direction = concept (방향이 개념을 인코딩)
-- H341: output = magnitude x direction = 확신 x 개념
-- 예지: 장력으로 정오답 예측 가능 (AUC=0.925)
+- H339: direction = concept (direction encodes concept)
+- H341: output = magnitude x direction = confidence x concept
+- Precognition: Can predict correct/incorrect with tension (AUC=0.925)
 
-**핵심 통찰**: 방향벡터의 코사인 유사도를 분석하면,
-오답 샘플의 방향이 정답 클래스가 아닌 혼동 클래스를 가리키고 있을 것.
-이것이 "방향 예지" — 방향이 미래 오류의 종류를 미리 알려준다.
+**Key Insight**: Analyzing cosine similarity of direction vectors,
+directions of incorrect samples point to confusion classes rather than correct classes.
+This is "directional precognition" — directions reveal the type of future errors in advance.
 
-## 대응 매핑
+## Correspondence Mapping
 
-| 방향 분석 (H339) | 방향 예지 (H-CX-59) |
+| Direction Analysis (H339) | Directional Precognition (H-CX-59) |
 |---|---|
-| direction = concept | 정답 방향 = 정답 개념 |
-| wrong direction | 혼동 방향 = 오답 개념 |
-| cosine(dir, class_mean) | 예지 신호: 가장 가까운 class_mean |
-| direction stability | 예지 확실성 |
+| direction = concept | correct direction = correct concept |
+| wrong direction | confusion direction = incorrect concept |
+| cosine(dir, class_mean) | precognitive signal: closest class_mean |
+| direction stability | precognitive certainty |
 
-## 예측
+## Predictions
 
-1. 오답 샘플의 방향벡터는 실제 오답 클래스 방향과 cos > 0.5
-2. 방향 코사인 TOP-2 클래스 = 실제 혼동 쌍 (정확도 > 70%)
-3. cos(direction, true_class) - cos(direction, pred_class) < 0 일 때 오답 발생
-4. 이 "방향 간극"이 오류 심각도와 비례
+1. Direction vectors of incorrect samples have cos > 0.5 with actual incorrect class directions
+2. TOP-2 classes by direction cosine = actual confusion pairs (accuracy > 70%)
+3. Errors occur when cos(direction, true_class) - cos(direction, pred_class) < 0
+4. This "direction gap" is proportional to error severity
 
-## 검증 방법
-
-```
-1. PureFieldEngine 학습
-2. 오답 샘플 추출
-3. 각 오답의 direction과 모든 class_mean의 cosine 계산
-4. direction이 가리키는 클래스 vs 실제 예측 클래스 비교
-5. "방향이 가리키는 클래스 = 오답 클래스" 비율 측정
-```
-
-## ASCII 예측
+## Verification Method
 
 ```
-  True=3, Pred=8 (오답)
-
-  direction →  class_mean_8 (cos=0.72)  ← 방향이 8을 가리킴
-               class_mean_3 (cos=0.31)  ← 정답 3은 멀리
-
-  ⇒ 방향이 이미 "8로 착각할 것"을 예고
+1. Train PureFieldEngine
+2. Extract incorrect samples
+3. Calculate cosine between each error's direction and all class_means
+4. Compare class pointed by direction vs actual predicted class
+5. Measure ratio of "class pointed by direction = incorrect class"
 ```
 
-## 관련 가설
+## ASCII Prediction
 
-- H339 (방향=개념), H341 (최종이론), H313 (장력=확신)
-- H-GEO-9 (렌즈수차 — 색수차가 클래스별 혼동과 대응)
-- H-CX-15 (주의=산술렌즈)
+```
+  True=3, Pred=8 (incorrect)
 
-## 한계
+  direction →  class_mean_8 (cos=0.72)  ← direction points to 8
+               class_mean_3 (cos=0.31)  ← correct answer 3 is far
 
-- 다중 혼동 시 방향이 여러 클래스 사이에 있을 수 있음
-- 10클래스 중 유사 클래스(3/8, 4/9 등)에만 유효할 수 있음
+  ⇒ Direction already foreshadows "will mistake for 8"
+```
 
-## 검증 상태
+## Related Hypotheses
 
-- [x] 오답 방향 분석
-- [x] 혼동 쌍 예측 정확도
-- [x] 다중 데이터셋 검증
+- H339 (direction=concept), H341 (final theory), H313 (tension=confidence)
+- H-GEO-9 (lens aberration — chromatic aberration corresponds to class-wise confusion)
+- H-CX-15 (attention=arithmetic lens)
 
-## 검증 결과
+## Limitations
 
-**SUPPORTED.** 방향벡터가 예측(오답) 클래스를 70-82% 비율로 가리킴.
+- For multiple confusions, direction may be between several classes
+- May only be valid for similar classes (3/8, 4/9, etc.) among 10 classes
 
-| 데이터셋 | Dir→Pred 비율 | cos(pred) | cos(true) | cos 차이 |
+## Verification Status
+
+- [x] Wrong answer direction analysis
+- [x] Confusion pair prediction accuracy
+- [x] Multi-dataset verification
+
+## Verification Results
+
+**SUPPORTED.** Direction vectors point to predicted (incorrect) classes at 70-82% ratio.
+
+| Dataset | Dir→Pred Ratio | cos(pred) | cos(true) | cos difference |
 |---|---|---|---|---|
 | MNIST | 75.6% | 0.760 | 0.645 | +0.115 |
 | Fashion | 70.8% | 0.935 | 0.902 | +0.033 |
 | CIFAR | 81.5% | 0.770 | 0.575 | +0.195 |
 
-- 모든 데이터셋에서 cos(pred) > cos(true) → 방향이 정답보다 오답 쪽을 가리킴
-- CIFAR에서 가장 강력 (81.5%, cos 차이 0.195)
-- Top 혼동 쌍이 의미적으로 유의미:
-  - cat-dog, auto-truck, Tshirt-Shirt 등
+- In all datasets, cos(pred) > cos(true) → direction points toward wrong answer rather than correct
+- Strongest in CIFAR (81.5%, cos difference 0.195)
+- Top confusion pairs are semantically meaningful:
+  - cat-dog, auto-truck, Tshirt-Shirt, etc.
 
 ```
-  Dir→Pred 비율:
+  Dir→Pred Ratio:
   82% |              ●              CIFAR
   78% |
   76% |  ●                          MNIST
@@ -92,5 +92,5 @@
       +----+----+----→ Dataset
        MNIST Fashion CIFAR
 
-  모든 데이터셋에서 70% 이상 → 방향 예지 확인
+  Over 70% in all datasets → Directional precognition confirmed
 ```

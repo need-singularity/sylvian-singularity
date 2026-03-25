@@ -1,44 +1,44 @@
-# T1-09: 초월수 장벽 — 섬 간 정확 등식이 불가능한 이유
+# T1-09: Transcendental Wall — Why Exact Equations Between Islands Are Impossible
 
-## 발견 (반증)
-
-```
-  초월수(e, ln3, ln4/3)와 유리수(1/2, 1/3, 1/6 등) 사이에
-  비자명한 정확 등식은 존재하지 않는다.
-
-  이것은 초월수의 수학적 본성이다:
-  - e, ln(3)은 초월수 (리우빌 1844, 에르미트 1873)
-  - 초월수는 유리수 계수 다항식의 근이 아님
-  - 따라서 유한 사칙연산으로 유리수와 정확히 같아질 수 없음
-```
-
-## 자명한 연결만 존재
+## Discovery (Refuted)
 
 ```
-  e^ln(3) = 3           ← 정의에서 자명
-  e^(1/2·ln3) = √3      ← 위와 동일 패턴
-  ln(e) = 1              ← 정의에서 자명
+  No non-trivial exact equation exists between transcendental numbers 
+  (e, ln3, ln4/3) and rational numbers (1/2, 1/3, 1/6 etc).
 
-  이것들은 "e와 ln이 역함수"라는 정의의 결과일 뿐
-  섬 간의 본질적 연결이 아님
+  This is the mathematical nature of transcendental numbers:
+  - e, ln(3) are transcendental (Liouville 1844, Hermite 1873)
+  - Transcendentals are not roots of polynomials with rational coefficients
+  - Therefore cannot equal rationals through finite arithmetic operations
 ```
 
-## 의미
+## Only Trivial Connections Exist
 
 ```
-  섬 A (유리수) ←→ 섬 C (로그) ←→ 섬 D (e)
+  e^ln(3) = 3           ← Trivial from definition
+  e^(1/2·ln3) = √3      ← Same pattern as above
+  ln(e) = 1             ← Trivial from definition
 
-  정확 등식(🟩)으로는 연결 불가능 (수학적 한계)
-  근사(🟧)만 가능: 5/102+√3 ≈ e^γ (0.00011%)
-
-  → 근사가 왜 이렇게 정밀한지를 설명하는 것이
-     정확 등식을 찾는 것보다 가치 있을 수 있음
+  These are just consequences of "e and ln are inverse functions"
+  Not essential connections between islands
 ```
 
-## 판정
+## Meaning
 
 ```
-  비자명 정확 등식: ❌ 불가능 (초월수의 본성)
-  탐색 종료 근거: 수학적 한계
-  남은 방향: 근사의 정밀도가 왜 높은지 설명
+  Island A (Rationals) ←→ Island C (Logs) ←→ Island D (e)
+
+  Cannot connect with exact equations (🟩) (mathematical limit)
+  Only approximations (🟧) possible: 5/102+√3 ≈ e^γ (0.00011%)
+
+  → Explaining why approximations are so precise
+    may be more valuable than finding exact equations
+```
+
+## Judgment
+
+```
+  Non-trivial exact equations: ❌ Impossible (nature of transcendentals)
+  Reason to end search: Mathematical limit
+  Remaining direction: Explain why approximation precision is so high
 ```

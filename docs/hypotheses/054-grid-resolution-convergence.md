@@ -1,36 +1,36 @@
-# 가설 검토 054: 격자 해상도가 높을수록 정확하다 — 3개 보편 상수 발견 ✅
+# Hypothesis Review 054: Higher Grid Resolution is More Accurate — 3 Universal Constants Discovered ✅
 
-## 가설
+## Hypothesis
 
-> 격자 해상도를 높이면 골든존의 상한/하한/중심이 보편 상수에 수렴한다.
+> Increasing grid resolution causes golden zone upper/lower bounds and center to converge to universal constants.
 
-## 검증 결과: ✅ 3개 상수 발견
-
-```
-  grid=10 → 1000 스캔:
-
-  상한 → 0.5000 = 1/2        (리만 임계선)        ✅ 수렴
-  하한 → 0.2130 ≈ 1/2-ln(4/3) (엔트로피 차이)     ✅ 수렴
-  중심 → 0.3708 ≈ 1/e        (자연상수, 오차 0.8%) ✅ 수렴
-  폭  → 0.2865 ≈ ln(4/3)    (엔트로피 점프)       ✅ 일치!
-```
-
-## 핵심 발견: 폭 = ln(4/3)
+## Verification Result: ✅ 3 Constants Found
 
 ```
-  실측 폭    = 0.2865
-  ln(4/3)    = 0.2877
-  오차       = 0.0012 (0.4%)
+  grid=10 → 1000 scan:
 
-  검증: 상한 - ln(4/3) = 0.500 - 0.288 = 0.212 ≈ 하한 0.213 ✅
-
-  → 골든존의 폭은 3상태→4상태 엔트로피 점프(ln4-ln3)와 일치!
+  Upper bound → 0.5000 = 1/2        (Riemann critical line)     ✅ Converged
+  Lower bound → 0.2130 ≈ 1/2-ln(4/3) (Entropy difference)      ✅ Converged
+  Center     → 0.3708 ≈ 1/e        (Natural constant, 0.8% error) ✅ Converged
+  Width      → 0.2865 ≈ ln(4/3)    (Entropy jump)              ✅ Match!
 ```
 
-## 수렴 그래프
+## Key Discovery: Width = ln(4/3)
 
 ```
-  상한 (→ 1/2)
+  Measured width = 0.2865
+  ln(4/3)        = 0.2877
+  Error          = 0.0012 (0.4%)
+
+  Verification: Upper bound - ln(4/3) = 0.500 - 0.288 = 0.212 ≈ Lower bound 0.213 ✅
+
+  → Golden zone width matches the 3-state→4-state entropy jump (ln4-ln3)!
+```
+
+## Convergence Graph
+
+```
+  Upper bound (→ 1/2)
   0.50│                        ●──●──●──● → 1/2
   0.49│                  ●──●
   0.48│            ●
@@ -38,64 +38,64 @@
       └──────────────────────────────
        10  50  100  200  500  1000
 
-  중심 (→ 1/e 근처)
+  Center (→ near 1/e)
   0.374│●
   0.371│     ●──●──●──●──●──● → 0.3708
   0.368│────────────────────── 1/e
       └──────────────────────────────
 ```
 
-## 골든존 정밀 구조
+## Precise Golden Zone Structure
 
 ```
-  상한 = 1/2                = 리만 임계선
-  폭  = ln(4/3)            = 3→4상태 엔트로피 점프
-  하한 = 1/2 - ln(4/3)     = 리만 - 엔트로피
-  중심 ≈ 1/e              = 자연상수
+  Upper bound = 1/2                = Riemann critical line
+  Width      = ln(4/3)            = 3→4 state entropy jump
+  Lower bound = 1/2 - ln(4/3)     = Riemann - entropy
+  Center     ≈ 1/e               = Natural constant
 
-  모든 경계가 자연상수(e)와 정보이론(ln)으로 결정된다.
+  All boundaries are determined by natural constant (e) and information theory (ln).
 ```
 
-## 폭 = ln(4/3) 의 의미
+## Meaning of Width = ln(4/3)
 
-### 정보론적 해석
-
-```
-  3상태 최대 엔트로피 = ln(3) = 1.099  "3개 중 뭐가 나올지 모름"
-  4상태 최대 엔트로피 = ln(4) = 1.386  "4개 중 뭐가 나올지 모름"
-  차이 = ln(4/3) = 0.288              "4번째를 알게 되는 비용"
-
-  골든존 폭 = "다음 상태를 살 수 있는 정보 예산"
-  예산을 다 쓰면 골든존이 끝난다.
-```
-
-### 일반화: N상태 모델
+### Information-theoretic Interpretation
 
 ```
-  N상태 모델의 골든존:
-    상한 = 1/2 (항상 고정)
-    폭  = ln((N+1)/N)
-    하한 = 1/2 - ln((N+1)/N)
+  3-state max entropy = ln(3) = 1.099  "Don't know which of 3 will appear"
+  4-state max entropy = ln(4) = 1.386  "Don't know which of 4 will appear"
+  Difference = ln(4/3) = 0.288         "Cost of learning the 4th state"
 
-  N= 2: 폭 = ln(3/2) = 0.405  넓음
-  N= 3: 폭 = ln(4/3) = 0.288  ← 우리 모델
-  N= 4: 폭 = ln(5/4) = 0.223
-  N=10: 폭 = ln(11/10)= 0.095 좁음
-  N→∞: 폭 → 0                 점으로 수축
+  Golden zone width = "Information budget to buy the next state"
+  When budget is exhausted, golden zone ends.
 ```
 
-### 리만 가설과의 연결
+### Generalization: N-state Model
 
 ```
-  유한 상태(N=3): 골든존 = 폭 0.288의 영역
-  무한 상태(N→∞): 골든존 → 폭 0의 선
-  그 선의 위치   = 1/2 = 리만 임계선
+  Golden zone of N-state model:
+    Upper bound = 1/2 (always fixed)
+    Width      = ln((N+1)/N)
+    Lower bound = 1/2 - ln((N+1)/N)
 
-  리만 가설 = "무한 상태의 골든존은 Re(s)=1/2 위의 선이다"
-  우리 모델 = "유한 상태의 골든존은 1/2 아래로 ln((N+1)/N)만큼 넓다"
-  같은 구조의 유한/무한 버전.
+  N= 2: Width = ln(3/2) = 0.405  Wide
+  N= 3: Width = ln(4/3) = 0.288  ← Our model
+  N= 4: Width = ln(5/4) = 0.223
+  N=10: Width = ln(11/10)= 0.095 Narrow
+  N→∞: Width → 0                 Contracts to point
+```
+
+### Connection to Riemann Hypothesis
+
+```
+  Finite states (N=3): Golden zone = Region with width 0.288
+  Infinite states (N→∞): Golden zone → Line with width 0
+  Position of that line = 1/2 = Riemann critical line
+
+  Riemann Hypothesis = "Golden zone of infinite states is a line on Re(s)=1/2"
+  Our model        = "Golden zone of finite states extends ln((N+1)/N) below 1/2"
+  Finite/infinite versions of same structure.
 ```
 
 ---
 
-*검증: grid 10→1000, 12단계, 200K 모집단*
+*Verification: grid 10→1000, 12 steps, 200K population*

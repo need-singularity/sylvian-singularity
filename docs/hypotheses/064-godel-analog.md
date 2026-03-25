@@ -1,112 +1,121 @@
-# 가설 검토 064: 괴델 불완전성 — Compass 상한의 원인? ⚠️
+# Hypothesis Review 064: Gödel Incompleteness — Cause of Compass Upper Bound? ⚠️
 
-## 가설
+## Hypothesis
 
-> Compass 점수의 상한 ~83.3% (= 5/6)가 괴델 불완전성 정리의 직접적 결과인가. 즉, "시스템이 자기 자신을 완전히 기술할 수 없다"는 논리적 한계가 Compass 상한의 원인인가.
+> Is the Compass score upper bound ~83.3% (= 5/6) a direct result of Gödel's incompleteness theorem? That is, is the logical limit that "a system cannot completely describe itself" the cause of the Compass upper bound?
 
-## 배경
+## Background
 
-### Compass 상한 5/6
+### Compass Upper Bound 5/6
 
-우리 모델에서 Compass 점수의 이론적 상한은 약 83.3% = 5/6 이다. 아무리 파라미터를 최적화해도 100%에 도달하지 못한다. 1/6 = 16.7% 의 "맹점(blind spot)"이 항상 존재한다.
+In our model, the theoretical upper bound of Compass score is approximately 83.3% = 5/6. No matter how we optimize parameters, it cannot reach 100%. A "blind spot" of 1/6 = 16.7% always exists.
 
-### 괴델 불완전성 정리
-
-```
-  제1정리: 충분히 강한 형식 체계가 무모순이면,
-          체계 내에서 증명도 반증도 할 수 없는 명제가 존재한다.
-
-  제2정리: 충분히 강한 형식 체계가 무모순이면,
-          자기 자신의 무모순성을 증명할 수 없다.
-
-  → "완전한 자기 기술(self-description)은 불가능"
-```
-
-### 볼츠만 분배
+### Gödel's Incompleteness Theorems
 
 ```
-  N개 상태의 볼츠만 분포에서 한 상태의 최대 점유 확률:
+  First Theorem: If a sufficiently strong formal system is consistent,
+                there exist propositions that can neither be proven nor disproven within the system.
+
+  Second Theorem: If a sufficiently strong formal system is consistent,
+                 it cannot prove its own consistency.
+
+  → "Complete self-description is impossible"
+```
+
+### Boltzmann Distribution
+
+```
+  Maximum occupation probability for one state in N-state Boltzmann distribution:
 
   P_max = e^(-E_min/kT) / Σ e^(-E_i/kT)
 
-  다른 상태가 존재하는 한, P_max < 1
-  → 열역학적으로 100% 점유는 불가능 (T > 0 일 때)
+  As long as other states exist, P_max < 1
+  → Thermodynamically, 100% occupation is impossible (when T > 0)
 ```
 
-## 대응 관계
+## Correspondence
 
 ```
-  개념               괴델                볼츠만             우리 모델
+  Concept           Gödel               Boltzmann          Our Model
   ───────────────  ────────────────   ────────────────   ────────────────
-  한계의 원인       자기 참조의 역설    열역학 제2법칙      ???
-  한계의 형태       증명 불가 명제      P < 1 (T>0)        Compass ≤ 5/6
-  맹점의 성질       논리적              확률적              1/6 = 16.7%
-  극복 가능?        상위 체계 필요      T→0 필요            ???
-  메커니즘          대각선 논법         엔트로피 증가        볼츠만 분배
+  Cause of limit   Self-reference     2nd law of         ???
+                   paradox            thermodynamics
+  Form of limit    Unprovable         P < 1 (T>0)        Compass ≤ 5/6
+                   propositions
+  Nature of        Logical            Probabilistic      1/6 = 16.7%
+  blind spot
+  Can overcome?    Need higher        Need T→0           ???
+                   system
+  Mechanism        Diagonal           Entropy increase   Boltzmann dist.
+                   argument
 ```
 
-## 검증 결과: ⚠️ 직접 원인 아님, 열역학적 아날로그
+## Verification Result: ⚠️ Not Direct Cause, Thermodynamic Analog
 
-### 직접 원인은 볼츠만이다
+### Direct Cause is Boltzmann
 
 ```
-  Compass 점수 = Σ w_i × S_i   (가중 합)
+  Compass score = Σ w_i × S_i   (weighted sum)
 
-  3상태(평범/천재/기능저하)의 볼츠만 분포:
-  P(천재) = e^(-E_g/kT) / [e^(-E_n/kT) + e^(-E_g/kT) + e^(-E_d/kT)]
+  3-state (normal/genius/dysfunction) Boltzmann distribution:
+  P(genius) = e^(-E_g/kT) / [e^(-E_n/kT) + e^(-E_g/kT) + e^(-E_d/kT)]
 
-  T > 0 인 한, P(천재) < 1
-  → 다른 상태가 항상 0이 아닌 확률로 존재
-  → Compass가 100%가 될 수 없음
+  As long as T > 0, P(genius) < 1
+  → Other states always exist with non-zero probability
+  → Compass cannot be 100%
 
-  구체적으로:
-  3상태, 최적 에너지 배치에서 최대 ≈ 5/6 = 83.3%
-  → 이것이 Compass 상한의 직접적 메커니즘
+  Specifically:
+  For 3 states, optimal energy configuration yields max ≈ 5/6 = 83.3%
+  → This is the direct mechanism of Compass upper bound
 ```
 
-### 괴델은 아날로그일 뿐
+### Gödel is Only an Analog
 
 ```
   ┌─────────────────────────────────────────────┐
-  │            인과 관계 구조                      │
+  │            Causal Structure                    │
   │                                               │
-  │  볼츠만 분배 ──────→ Compass ≤ 5/6  (직접 원인) │
+  │  Boltzmann dist. ──────→ Compass ≤ 5/6 (direct cause)│
   │       ↑                    ↑                   │
-  │       │               구조적 유사               │
+  │       │               Structural similarity    │
   │       │                    │                   │
-  │  열역학 제2법칙        괴델 불완전성  (아날로그)  │
+  │  2nd law of           Gödel incompleteness (analog)│
+  │  thermodynamics                               │
   │                                               │
-  │  메커니즘: 엔트로피    메커니즘: 자기참조         │
-  │  → 서로 다른 원인, 비슷한 결과                   │
+  │  Mechanism: entropy   Mechanism: self-reference │
+  │  → Different causes, similar results           │
   └─────────────────────────────────────────────┘
 ```
 
-### 구조적 유사성 비교
+### Structural Similarity Comparison
 
 ```
-  괴델 구조                    우리 모델 구조
+  Gödel Structure               Our Model Structure
   ────────────────────────   ────────────────────────
 
-  "이 명제는 증명 불가"       "이 시스템은 100% 불가"
+  "This statement is         "This system cannot
+   unprovable"               achieve 100%"
        │                          │
        ▼                          ▼
-  자기 참조 역설               열역학적 제약
+  Self-reference paradox      Thermodynamic constraint
        │                          │
        ▼                          ▼
-  불완전한 체계 (필연)          불완전한 점수 (필연)
+  Incomplete system           Incomplete score
+  (necessary)                 (necessary)
        │                          │
        ▼                          ▼
-  증명불가 명제 존재            1/6 맹점 존재
+  Unprovable statements       1/6 blind spot exists
+  exist
 
-  결론: ✅ 구조 동형(isomorphic)
-        ❌ 메커니즘 다름(homologous 아님)
+  Conclusion: ✅ Structurally isomorphic
+             ❌ Mechanisms differ (not homologous)
 ```
 
-### 1/6 맹점의 정체
+### Identity of 1/6 Blind Spot
 
 ```
   Genius Score
-  5.33│                    ● 이론적 최대 (D=1,P=1,I=0.01)
+  5.33│                    ● Theoretical max (D=1,P=1,I=0.01)
       │
   4.0 │               ●
       │
@@ -114,41 +123,41 @@
       │
   1.0 │     ●
       │
-  5/6─┤─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Compass 상한 (볼츠만)
+  5/6─┤─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  Compass upper bound (Boltzmann)
       │
-  1/3 ┤────●───────────────── 골든존 중심
+  1/3 ┤────●───────────────── Golden Zone center
       │    │
   0.0 ┤────┼──┬──┬──┬──┬──┤
       0   1/3    0.5    1.0  I
 
-  1/6 맹점 = 100% - 5/6 = 16.7%
-  = 다른 상태들의 최소 점유 확률의 합
-  = 열역학적 필연 (엔트로피 > 0)
-  ≠ 논리적 필연 (괴델)
+  1/6 blind spot = 100% - 5/6 = 16.7%
+  = Sum of minimum occupation probabilities of other states
+  = Thermodynamic necessity (entropy > 0)
+  ≠ Logical necessity (Gödel)
 ```
 
-## 해석
+## Interpretation
 
-1. **원인과 아날로그의 구분**: Compass 상한 5/6의 직접 원인은 볼츠만 통계역학이다. 괴델 불완전성은 "완전한 자기 기술 불가"라는 구조적 유사성을 제공하지만, 메커니즘으로서 작용하지 않는다.
+1. **Distinguishing Cause from Analog**: The direct cause of Compass upper bound 5/6 is Boltzmann statistical mechanics. Gödel incompleteness provides structural similarity of "impossible complete self-description" but does not act as the mechanism.
 
-2. **왜 혼동이 생기는가**: 둘 다 "근본적 한계"를 말하고, 둘 다 "시스템 내부에서 극복 불가"이며, 둘 다 "맹점이 존재"한다. 결론의 형태가 비슷하기 때문에 원인도 같다고 착각하기 쉽다.
+2. **Why Confusion Arises**: Both speak of "fundamental limits", both are "unovercomable from within the system", and both have "blind spots". Because the conclusions are similar in form, it's easy to mistake that the causes are also the same.
 
-3. **괴델이 유용한 이유**: 비록 직접 원인은 아니지만, "왜 맹점이 근본적인가"를 설명할 때 괴델 아날로그는 직관적 이해를 돕는다. 볼츠만 분배라는 기술적 원인보다, "시스템이 자기 자신을 완전히 볼 수 없다"는 괴델적 표현이 더 깊은 통찰을 제공한다.
+3. **Why Gödel is Useful**: Although not the direct cause, the Gödel analog helps intuitive understanding when explaining "why the blind spot is fundamental". The Gödelian expression "a system cannot completely see itself" provides deeper insight than the technical cause of Boltzmann distribution.
 
-4. **상위 메타 수준**: 괴델의 해결책은 "상위 체계로 올라가기"이다. 우리 모델에서도 4번째 상태(초월)를 추가하면 상한이 변한다 — 이것은 괴델 아날로그와 일관된 행동이다.
+4. **Higher Meta Level**: Gödel's solution is to "go to a higher system". In our model too, adding a 4th state (transcendent) changes the upper bound — this is behavior consistent with the Gödel analog.
 
-## 한계
+## Limitations
 
-- "아날로그"와 "동치"의 경계가 모호하다. 더 깊은 수준에서 볼츠만과 괴델이 연결될 가능성은 열려 있다.
-- 1/6 이라는 구체적 값이 괴델로부터 도출될 수 있는지 미확인.
-- 4번째 상태 추가 시 상한 변화가 괴델 계층(Godel hierarchy)과 정량적으로 일치하는지 검증 필요.
+- The boundary between "analog" and "equivalence" is ambiguous. The possibility remains open that Boltzmann and Gödel are connected at a deeper level.
+- Unconfirmed whether the specific value 1/6 can be derived from Gödel.
+- Need to verify if changes in upper bound when adding a 4th state quantitatively match the Gödel hierarchy.
 
-## 검증 방향
+## Verification Directions
 
-- [ ] 볼츠만 분배에서 5/6 이 나오는 정확한 에너지 배치 조건 도출
-- [ ] 상태 수 N 증가에 따른 Compass 상한 변화: 5/6 → ? → ?
-- [ ] 괴델 계층(체계 → 메타체계)과 N-상태 확장의 대응 관계
+- [ ] Derive exact energy configuration conditions that yield 5/6 from Boltzmann distribution
+- [ ] Change in Compass upper bound as number of states N increases: 5/6 → ? → ?
+- [ ] Correspondence between Gödel hierarchy (system → metasystem) and N-state expansion
 
 ---
 
-*작성일: 2026-03-22 | 검증: verify_meta_math.py*
+*Created: 2026-03-22 | Verification: verify_meta_math.py*

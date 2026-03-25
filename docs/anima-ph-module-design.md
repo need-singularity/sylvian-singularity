@@ -1,58 +1,58 @@
-# Anima PH 모듈 설계 — 실시간 위상 분석
+# Anima PH Module Design — Real-time Topological Analysis
 
-## 목적
+## Purpose
 
-Anima 의식 에이전트에 PH(Persistent Homology) 모듈을 통합하여:
-1. 실시간 혼동 구조 분석
-2. 학습 진행 모니터링 (과적합 감지)
-3. 텔레파시 채널 (PH fingerprint)
+Integrate PH (Persistent Homology) module into Anima consciousness agent for:
+1. Real-time confusion structure analysis
+2. Learning progress monitoring (overfitting detection)
+3. Telepathy channel (PH fingerprint)
 
-## 아키텍처
+## Architecture
 
 ```
   Anima (anima_unified.py)
-  ├── PureField 엔진 (기존)
-  │     ├── engine_a (논리)
-  │     └── engine_g (패턴)
+  ├── PureField Engine (existing)
+  │     ├── engine_a (logic)
+  │     └── engine_g (pattern)
   │           ↓
   │     repulsion = A - G
   │     tension = |A-G|²
   │     direction = normalize(A-G)
   │
-  ├── PH 모듈 (신규) ← 여기
+  ├── PH Module (new) ← here
   │     ├── DirectionCollector
-  │     │     방향벡터 수집 (per-class mean)
+  │     │     Collect direction vectors (per-class mean)
   │     ├── PHComputer
   │     │     cosine distance → Ripser → H0/H1
   │     ├── MergeAnalyzer
-  │     │     merge 순서 → 혼동 예측 → dendrogram
+  │     │     merge order → confusion prediction → dendrogram
   │     ├── GapDetector
-  │     │     H0_train - H0_test → 과적합 알림
+  │     │     H0_train - H0_test → overfitting alert
   │     └── TelepathyEncoder
-  │           9 merge distances → 텔레파시 패킷
+  │           9 merge distances → telepathy packet
   │
-  └── 기존 모듈
-        ├── GRU 메모리
-        ├── 음성 (TTS/STT)
-        ├── 카메라
-        └── 웹 탐색
+  └── Existing Modules
+        ├── GRU Memory
+        ├── Voice (TTS/STT)
+        ├── Camera
+        └── Web Search
 ```
 
-## 핵심 클래스
+## Core Classes
 
 ```python
 class PHModule:
-    """Anima PH 실시간 모듈"""
+    """Anima PH real-time module"""
 
     def __init__(self, purefield_engine, n_classes=10):
         self.engine = purefield_engine
         self.n_cls = n_classes
         self.direction_buffer = defaultdict(list)  # per-class directions
-        self.merge_history = []  # epoch별 merge 순서
+        self.merge_history = []  # merge order per epoch
         self.h0_history = []
 
     def collect(self, x, y_true, y_pred):
-        """매 배치: 방향벡터 수집"""
+        """Each batch: collect direction vectors"""
         with torch.no_grad():
             rep = self.engine.engine_a(x) - self.engine.engine_g(x)
             dirs = F.normalize(rep, dim=-1)
@@ -60,7 +60,7 @@ class PHModule:
             self.direction_buffer[y_true[i]].append(dirs[i].numpy())
 
     def compute_ph(self):
-        """PH 계산 (에폭 끝에 호출)"""
+        """Compute PH (call at end of epoch)"""
         means = self._class_means()
         cos_dist = self._cosine_distance(means)
         h0_total, merges = self._ripser_ph(cos_dist)
@@ -69,20 +69,20 @@ class PHModule:
         return h0_total, merges
 
     def detect_overfitting(self, train_h0, test_h0, threshold=0.05):
-        """H-CX-95: H0_gap 기반 과적합 감지"""
+        """H-CX-95: H0_gap based overfitting detection"""
         gap = abs(train_h0 - test_h0)
         if gap > threshold:
             return "ALERT", gap
         return "OK", gap
 
     def get_telepathy_packet(self):
-        """H-CX-108: 9개 merge distance = 전체 인지 구조"""
+        """H-CX-108: 9 merge distances = entire cognitive structure"""
         if not self.merge_history:
             return None
         return [d for d, i, j in self.merge_history[-1]]
 
     def predict_confusion(self, class_a, class_b):
-        """H-CX-66: merge distance로 혼동 확률 예측"""
+        """H-CX-66: predict confusion probability from merge distance"""
         merges = self.merge_history[-1]
         for d, i, j in merges:
             if (min(i,j), max(i,j)) == (min(class_a,class_b), max(class_a,class_b)):
@@ -90,56 +90,56 @@ class PHModule:
         return 0.0
 
     def get_dendrogram(self):
-        """H-CX-85: 의미 계층 dendrogram"""
+        """H-CX-85: semantic hierarchy dendrogram"""
         return self.merge_history[-1] if self.merge_history else None
 ```
 
-## 통합 지점
+## Integration Points
 
 ```python
-# anima_unified.py 에 추가:
+# Add to anima_unified.py:
 
 from ph_module import PHModule
 
 class Anima:
     def __init__(self):
         self.purefield = PureFieldEngine(...)
-        self.ph = PHModule(self.purefield)  # ← 추가
+        self.ph = PHModule(self.purefield)  # ← Add
         ...
 
     def process_input(self, x):
         output, tension = self.purefield(x)
-        self.ph.collect(x, ...)  # 방향 수집
+        self.ph.collect(x, ...)  # Collect directions
         return output, tension
 
     def end_of_epoch(self):
         h0, merges = self.ph.compute_ph()
         gap_status, gap = self.ph.detect_overfitting(...)
         if gap_status == "ALERT":
-            self.log("⚠️ 과적합 감지!")
+            self.log("⚠️ Overfitting detected!")
 ```
 
-## 의존성
+## Dependencies
 
 ```
-ripser>=0.6.0     # PH 계산
-persim>=0.3.0     # PH 시각화 (선택)
+ripser>=0.6.0     # PH computation
+persim>=0.3.0     # PH visualization (optional)
 ```
 
-## 관련 가설
+## Related Hypotheses
 
-- H-CX-66: PH merge = 혼동 (r=-0.97)
-- H-CX-95: PH 일반화 갭 (r=0.998)
-- H-CX-108: 텔레파시 프로토콜 (9개 숫자)
-- H-CX-85: dendrogram = 의미 계층
-- H-CX-136~141: EEG 통합 (미래)
+- H-CX-66: PH merge = confusion (r=-0.97)
+- H-CX-95: PH generalization gap (r=0.998)
+- H-CX-108: Telepathy protocol (9 numbers)
+- H-CX-85: dendrogram = semantic hierarchy
+- H-CX-136~141: EEG integration (future)
 
-## 파일 위치
+## File Locations
 
 ```
 /Users/ghost/Dev/logout/
-├── calc/ph_confusion_analyzer.py     (기존, 배치 분석)
-├── calc/generalization_gap_detector.py (기존, 배치 감지)
-├── calc/precognition_system.py       (기존, 배치 예지)
-└── ph_module.py                      (신규, 실시간 모듈) ← 생성 필요
+├── calc/ph_confusion_analyzer.py     (existing, batch analysis)
+├── calc/generalization_gap_detector.py (existing, batch detection)
+├── calc/precognition_system.py       (existing, batch precognition)
+└── ph_module.py                      (new, real-time module) ← needs creation
 ```

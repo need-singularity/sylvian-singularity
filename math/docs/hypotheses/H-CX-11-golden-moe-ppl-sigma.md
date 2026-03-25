@@ -1,23 +1,23 @@
-# H-CX-11: 골든MoE PPL 수렴값 ≈ σ(6) 관계
+# H-CX-11: GoldenMoE PPL Convergence Value ≈ σ(6) Relationship
 
-> **가설**: 골든MoE의 PPL 수렴값이 σ-1=11 또는 σ=12 근처로 안착하며, 이는 σφ=nτ 균형의 AI 표현이다.
+> **Hypothesis**: GoldenMoE's PPL convergence value settles near σ-1=11 or σ=12, which is the AI representation of σφ=nτ balance.
 
-## 관측 데이터
+## Observation Data
 ```
   Step 2597: PPL=11.1 ≈ σ-1=11
-  원본 Dense: PPL=7.1 ≈ M₃=7
+  Original Dense: PPL=7.1 ≈ M₃=7
 
-  PPL 추이 (σ,τ 마일스톤):
+  PPL Trend (σ,τ milestones):
   Step  100: PPL≈706  (>>σ)
   Step  500: PPL≈63   (>>σ)
   Step 1000: PPL≈21   (≈2σ-3)
-  Step 2000: PPL≈26   (변동)
+  Step 2000: PPL≈26   (fluctuation)
   Step 2597: PPL≈11.1 (≈σ-1!)
 ```
 
-## 검증 방향
-1. [ ] 학습 완료 시(20000 step) 최종 PPL 확인
-2. [ ] PPL이 σ-1=11 vs M₃=7 vs P₁=6 중 어디에 수렴?
-3. [ ] 다른 MoE 구조(expert=6 vs 8 vs 12)에서 PPL 비교
+## Verification Direction
+1. [ ] Check final PPL at training completion (20000 step)
+2. [ ] Does PPL converge to σ-1=11 vs M₃=7 vs P₁=6?
+3. [ ] Compare PPL across different MoE structures (expert=6 vs 8 vs 12)
 
-## 난이도: 중 | 파급력: ★★★
+## Difficulty: Medium | Impact: ★★★

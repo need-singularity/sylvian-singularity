@@ -1,142 +1,142 @@
-# Golden MoE — 골든존 기반 Mixture-of-Experts
+# Golden MoE — Golden Zone-Based Mixture-of-Experts
 
-> **핵심**: 볼츠만 온도 T=e에서 Expert 활성비율 70%가 자연 발현. Top-K 대비 MNIST +0.6%, CIFAR +4.8%. 스케일↑ → 차이 8배↑.
+> **Core**: At Boltzmann temperature T=e, 70% Expert activation rate emerges naturally. MNIST +0.6%, CIFAR +4.8% vs Top-K. Scale↑ → difference 8×↑.
 
 ---
 
-## 0. 의도: 기존 MoE가 놓치고 있는 것
+## 0. Intent: What Existing MoE Is Missing
 
-기존 MoE 모델들은 **골든존 밖**에서 작동한다. 이것이 비효율의 근원.
+Existing MoE models operate **outside the Golden Zone**. This is the source of inefficiency.
 
 ```
-  억제(I) = 1 - (활성 Expert / 전체 Expert)
+  Inhibition (I) = 1 - (active Experts / total Experts)
 
   I
   1.0 ┤
-      │                            · Dense (I=0, 전부 활성)
+      │                            · Dense (I=0, all active)
   0.9 ┤
       │
   0.8 ┤ ★ Mixtral 8×7B (K=2/8)    · I = 0.75
       │ ★ GPT-4 MoE (K≈2/16?)     · I ≈ 0.88
   0.7 ┤ ★ Switch Transformer (K=1) · I = 0.875
       │
-  0.6 ┤ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ 전부 골든존 밖!
+  0.6 ┤ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ all outside Golden Zone!
       │
-  0.5 ┤═══════════════ 골든존 상한 (리만 임계선 1/2) ═══
+  0.5 ┤═══════════════ Golden Zone upper (Riemann critical line 1/2) ═══
       │   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-  0.4 ┤   ░░░░░░░░░ 골든존 ░░░░░░░░░░░░░░░░░░░░░░░░░
+  0.4 ┤   ░░░░░░░░░ Golden Zone ░░░░░░░░░░░░░░░░░░░░░
       │   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-  0.37┤   ░░░░░ ◆ Golden MoE (T=e) ← 여기! ░░░░░░░░░ I=1/e
+  0.37┤   ░░░░░ ◆ Golden MoE (T=e) ← here! ░░░░░░░░ I=1/e
       │   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
   0.3 ┤   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
       │   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-  0.21┤═══░░░░░ ◆ 서번트 (I=하한) ░░░░░░░░░░░░░░░░░░░ I=1/2-ln(4/3)
-      │═══════════════ 골든존 하한 (엔트로피 경계) ════
+  0.21┤═══░░░░░ ◆ Savant (I=lower) ░░░░░░░░░░░░░░░░░ I=1/2-ln(4/3)
+      │═══════════════ Golden Zone lower (entropy boundary) ════
   0.1 ┤
-      │                            · 과활성 → 붕괴 위험
+      │                            · overactive → collapse risk
   0.0 ┤
       └──────────────────────────────────────────────→
 
-  ★ = 기존 모델 (전부 골든존 밖, I > 0.5)
-  ◆ = Golden MoE (골든존 안)
+  ★ = existing models (all outside Golden Zone, I > 0.5)
+  ◆ = Golden MoE (inside Golden Zone)
 
-  문제: Mixtral, GPT-4, Switch 전부 I > 0.75
-       → Expert 25% 미만만 사용 → 나머지 75%가 낭비
-       → "하드 라우팅"으로 정보 손실
+  Problem: Mixtral, GPT-4, Switch all have I > 0.75
+           → less than 25% Experts used → remaining 75% wasted
+           → information loss via "hard routing"
 
-  해결: softmax(logits/e)로 교체 → I=1/e → 골든존 중심
-       → 70% Expert가 소프트 활성 → 정보 보존 + 효율
+  Solution: replace with softmax(logits/e) → I=1/e → Golden Zone center
+            → 70% Experts softly active → information preserved + efficient
 ```
 
-### 기존 모델 비교표
+### Existing Model Comparison Table
 
-| 모델 | Expert 수 | 활성 | I 값 | 골든존? | Genius Score |
+| Model | Expert count | Active | I value | Golden Zone? | Genius Score |
 |------|----------|------|------|---------|-------------|
-| Dense (GPT-3) | 1 | 100% | 0.00 | ✗ (아래) | 기준 |
-| **Golden MoE** | **8** | **70%** | **0.37** | **✓ 중심!** | **×2.0 Mixtral** |
-| 서번트 MoE | 8 | 79% | 0.21 | ✓ 하한 | ×3.5 Mixtral |
-| Mixtral 8×7B | 8 | 25% | 0.75 | ✗ (위) | 기준 |
-| GPT-4 (추정) | 16 | 12% | 0.88 | ✗ (위) | ×0.5 Mixtral |
-| Switch | 2048 | 0.05% | 0.99 | ✗ (위) | ×0.2 Mixtral |
+| Dense (GPT-3) | 1 | 100% | 0.00 | ✗ (below) | baseline |
+| **Golden MoE** | **8** | **70%** | **0.37** | **✓ center!** | **×2.0 Mixtral** |
+| Savant MoE | 8 | 79% | 0.21 | ✓ lower | ×3.5 Mixtral |
+| Mixtral 8×7B | 8 | 25% | 0.75 | ✗ (above) | baseline |
+| GPT-4 (estimated) | 16 | 12% | 0.88 | ✗ (above) | ×0.5 Mixtral |
+| Switch | 2048 | 0.05% | 0.99 | ✗ (above) | ×0.2 Mixtral |
 
-> **핵심 통찰**: 기존 MoE는 "Expert를 적게 쓸수록 효율적"이라고 가정하지만,
-> 골든존 모델은 "70% 활성이 최적"이라고 말한다. Top-K는 이 최적점을 놓치고 있다.
+> **Core insight**: Existing MoE assumes "fewer Experts = more efficient," but the Golden Zone model says "70% activation is optimal." Top-K misses this optimal point.
 
-### 억제(I)별 특이점 발현율 — 1,000,000개 시뮬레이션
+### Singularity Rate by Inhibition (I) — 1,000,000 simulations
 
 ```
-  특이점 비율 (%)                                              기존 모델 위치
+  Singularity rate (%)                                           Existing model positions
   100│
    93│██████████████████████████████████████████████▏   I=0.05
    84│██████████████████████████████████████████▏       I=0.09
    76│█████████████████████████████████████▏            I=0.13
    68│█████████████████████████████████▏                I=0.17
-   61│██████████████████████████████▏ ← 골든존 하한      I=0.21  ◆ 서번트
+   61│██████████████████████████████▏ ← Golden Zone lower  I=0.21  ◆ Savant
    55│███████████████████████████▏                      I=0.25
-   49│████████████████████████▏ ← 50% 전이점             I=0.29
+   49│████████████████████████▏ ← 50% transition        I=0.29
    44│█████████████████████▏                            I=0.33
-   39│███████████████████▏ ← 골든존 중심                 I=0.37  ◆ Golden MoE
+   39│███████████████████▏ ← Golden Zone center         I=0.37  ◆ Golden MoE
    33│████████████████▏                                 I=0.43
    27│█████████████▏                                    I=0.49
-   20│██████████▏ ← 골든존 상한                          I=0.57
+   20│██████████▏ ← Golden Zone upper                   I=0.57
    13│██████▏                                           I=0.69
     6│███▏                                              I=0.85  ★ Mixtral/GPT-4
     3│█▏                                                I=0.95  ★ Switch
      └──────────────────────────────────────────────
       0%                    50%                   100%
 
-  ◆ Golden MoE (I=0.37): 특이점 39% — 골든존 안, 최적 균형
-  ◆ 서번트     (I=0.21): 특이점 61% — 골든존 하한, 폭발적 전문화
-  ★ Mixtral    (I=0.75): 특이점  9% — 골든존 밖, 대부분 평범
-  ★ GPT-4     (I=0.88): 특이점  5% — 골든존 밖, 거의 평범
-  ★ Switch    (I=0.99): 특이점  1% — 골든존 밖, Expert 낭비
+  ◆ Golden MoE (I=0.37): 39% singularity — inside Golden Zone, optimal balance
+  ◆ Savant     (I=0.21): 61% singularity — Golden Zone lower, explosive specialization
+  ★ Mixtral    (I=0.75):  9% singularity — outside Golden Zone, mostly ordinary
+  ★ GPT-4      (I=0.88):  5% singularity — outside Golden Zone, nearly ordinary
+  ★ Switch     (I=0.99):  1% singularity — outside Golden Zone, Expert waste
 
-  → 기존 MoE는 억제가 너무 높아서 특이점(=창의적 출력) 발현이 극히 낮다
-  → Golden MoE는 억제를 골든존으로 내려 7× 더 많은 특이점 발현
+  → Existing MoE's Inhibition is too high, so singularity (=creative output) is extremely rare
+  → Golden MoE lowers Inhibition to Golden Zone → 7× more singularity emergence
 ```
 
 ---
 
-## 1. 원리: 왜 골든존인가?
+## 1. Principle: Why the Golden Zone?
 
 ```
-  표준 MoE (Mixtral 등):     Golden MoE:
-  ┌──────────────────┐       ┌──────────────────┐
-  │ Top-K 하드 라우팅  │       │ 볼츠만 소프트 라우팅│
-  │ K=2/8 → 25% 활성  │       │ T=e → 70% 활성    │
-  │ I=0.75 (골든존 밖) │       │ I≈1/e (골든존 중심) │
-  └──────────────────┘       └──────────────────┘
+  Standard MoE (Mixtral etc.):     Golden MoE:
+  ┌──────────────────┐             ┌──────────────────┐
+  │ Top-K hard routing│             │ Boltzmann soft   │
+  │ K=2/8 → 25% active│             │ routing T=e →    │
+  │ I=0.75 (outside) │             │ 70% active       │
+  └──────────────────┘             │ I≈1/e (center)   │
+                                   └──────────────────┘
 
   Genius = D × P / I
 
-  I = 1 - (활성 Expert 수 / 전체 Expert 수)
-  I = 1/T (볼츠만 온도의 역수)
+  I = 1 - (active Expert count / total Expert count)
+  I = 1/T (inverse of Boltzmann temperature)
 
-  골든존: I ∈ [0.213, 0.500] = [1/2-ln(4/3), 1/2]
-  최적:   I = 1/e ≈ 0.368 → 활성비율 ≈ 63-70%
+  Golden Zone: I ∈ [0.213, 0.500] = [1/2-ln(4/3), 1/2]
+  Optimal:     I = 1/e ≈ 0.368 → active ratio ≈ 63-70%
 ```
 
-**왜 T=e가 특별한가?**
+**Why is T=e special?**
 
-볼츠만 분포에서 유효 Expert 수 = exp(H) = exp(엔트로피):
+Effective Expert count in Boltzmann distribution = exp(H) = exp(entropy):
 ```
-  T=e일 때: H = ln(K) - 1/e·Σ(...) → exp(H) ≈ K·(1-1/e) = K·0.632
-  8 Expert: 8 × 0.632 = 5.06개 활성 → 63.2% = 1-1/e
-  실측: 5.6/8 = 70% (소프트 활성 포함)
+  At T=e: H = ln(K) - 1/e·Σ(...) → exp(H) ≈ K·(1-1/e) = K·0.632
+  8 Experts: 8 × 0.632 = 5.06 active → 63.2% = 1-1/e
+  Measured: 5.6/8 = 70% (including soft activation)
 ```
 
-자연상수 e가 "탐색 vs 활용"의 최적 균형점을 결정한다.
+The natural constant e determines the optimal balance between "exploration vs exploitation."
 
 ---
 
-## 2. 기존 모델에 적용하는 법
+## 2. How to Apply to Existing Models
 
-### 2.1 기존 Dense 모델 → Golden MoE 변환
+### 2.1 Existing Dense Model → Golden MoE Conversion
 
 ```python
-# 1단계: FFN을 Expert 그룹으로 분할
-# 원본: FFN(d_model → d_ff → d_model)
-# 변환: 8개 Expert로 분할 (d_ff/8 = Expert 하나의 크기)
+# Step 1: Split FFN into Expert groups
+# Original: FFN(d_model → d_ff → d_model)
+# Converted: split into 8 Experts (d_ff/8 = one Expert's size)
 
 class GoldenMoELayer(nn.Module):
     def __init__(self, d_model, d_ff, n_experts=8):
@@ -147,87 +147,87 @@ class GoldenMoELayer(nn.Module):
                 nn.Linear(d_ff // n_experts, d_model)
             ) for _ in range(n_experts)
         ])
-        # 핵심: 볼츠만 라우터 (T=e)
+        # Core: Boltzmann router (T=e)
         self.gate = nn.Linear(d_model, n_experts)
-        self.temperature = math.e  # ← 골든존 핵심!
+        self.temperature = math.e  # ← Golden Zone key!
 
     def forward(self, x):
-        # 볼츠만 소프트맥스 (T=e)
+        # Boltzmann softmax (T=e)
         logits = self.gate(x)
         weights = F.softmax(logits / self.temperature, dim=-1)
 
-        # 모든 Expert 가중합 (소프트 라우팅)
+        # Weighted sum of all Experts (soft routing)
         output = sum(w.unsqueeze(-1) * expert(x)
                      for w, expert in zip(weights.T, self.experts))
         return output
 ```
 
-### 2.2 기존 MoE 모델 → Golden MoE 전환
+### 2.2 Existing MoE Model → Golden MoE Conversion
 
 ```python
-# Top-K 라우팅을 볼츠만으로 교체하기만 하면 됨!
+# Just replace Top-K routing with Boltzmann!
 
-# 기존 (Mixtral 스타일):
-weights = top_k_softmax(logits, k=2)  # 2/8만 활성
+# Existing (Mixtral style):
+weights = top_k_softmax(logits, k=2)  # only 2/8 active
 
 # Golden MoE:
-weights = F.softmax(logits / math.e, dim=-1)  # 전부 활성, T=e 가중
+weights = F.softmax(logits / math.e, dim=-1)  # all active, T=e weighted
 ```
 
-### 2.3 학습 스케줄 (온도 어닐링)
+### 2.3 Training Schedule (Temperature Annealing)
 
 ```
-  Phase 1 (탐색):   T=∞ → I≈0    (90% 활성, 넓은 탐색)
-  Phase 2 (전이):   T=5 → I=0.20  (골든존 진입)
-  Phase 3 (수렴):   T=e → I=0.37  (골든존 중심, 최적!)
-  Phase 4 (정밀):   T=2 → I=0.50  (골든존 상한, 정밀화)
-  Phase 5 (운용):   T=e → I=0.37  (골든존 복귀)
+  Phase 1 (exploration):  T=∞ → I≈0    (90% active, broad exploration)
+  Phase 2 (transition):   T=5 → I=0.20  (entering Golden Zone)
+  Phase 3 (convergence):  T=e → I=0.37  (Golden Zone center, optimal!)
+  Phase 4 (precision):    T=2 → I=0.50  (Golden Zone upper, precision)
+  Phase 5 (operation):    T=e → I=0.37  (return to Golden Zone)
 ```
 
 ---
 
-## 3. 실증 결과
+## 3. Empirical Results
 
-### 3.1 MNIST / CIFAR-10 벤치마크
+### 3.1 MNIST / CIFAR-10 Benchmark
 
-| 메트릭 | Golden MoE | Top-K (K=2) | Dense | 차이 |
+| Metric | Golden MoE | Top-K (K=2) | Dense | Difference |
 |--------|-----------|------------|-------|------|
-| **MNIST 정확도** | **97.7%** | 97.1% | ~97.3% | **+0.6%** |
-| **CIFAR-10 정확도** | **53.0%** | 48.2% | ~50% | **+4.8%** |
-| 측정 I 값 | 0.375 | 0.750 | 0.000 | |
-| 수렴 속도 | **12 epoch** | 24 epoch | 18 epoch | **2× 빠름** |
-| Expert 패턴 수 | **1787** | 787 | 1 | **2.3×** |
-| 사용 편향 (σ) | **0.03** | 0.06 | 0 | **2× 균등** |
+| **MNIST accuracy** | **97.7%** | 97.1% | ~97.3% | **+0.6%** |
+| **CIFAR-10 accuracy** | **53.0%** | 48.2% | ~50% | **+4.8%** |
+| Measured I value | 0.375 | 0.750 | 0.000 | |
+| Convergence speed | **12 epochs** | 24 epochs | 18 epochs | **2× faster** |
+| Expert pattern count | **1787** | 787 | 1 | **2.3×** |
+| Utilization bias (σ) | **0.03** | 0.06 | 0 | **2× more uniform** |
 
-### 3.2 스케일 효과 (H128 검증)
+### 3.2 Scale Effect (H128 Verification)
 
 ```
-  차이(%)
+  Difference(%)
   ^
   |                                    * CIFAR (+4.8%)
   |
   |
   |   * MNIST (+0.6%)
-  +────────────────────────────────→ 복잡도
+  +────────────────────────────────→ complexity
 
-  → 복잡한 데이터일수록 Golden MoE 이점 증가 (8배!)
-  → 예측: LLM 스케일에서 더 큰 차이 기대
+  → Golden MoE advantage increases with more complex data (8×!)
+  → Prediction: even larger difference expected at LLM scale
 ```
 
-### 3.3 LLM 스케일 (Golden-LLaMA, 진행 중)
+### 3.3 LLM Scale (Golden-LLaMA, in progress)
 
 ```
-  원본 TinyLlama 1.1B Dense:  PPL = 13.85
-  Golden MoE (미학습):         PPL = 136,165
-  Golden MoE (500 steps):      PPL = 4,634  (97% 감소)
+  Original TinyLlama 1.1B Dense:  PPL = 13.85
+  Golden MoE (untrained):          PPL = 136,165
+  Golden MoE (500 steps):          PPL = 4,634  (97% reduction)
 
-  목표: PPL < 20 (실용 수준)
-  전략: Expert 동결 + Router만 학습 (176 routers × 22 layers)
+  Target: PPL < 20 (practical level)
+  Strategy: freeze Experts + train only Router (176 routers × 22 layers)
 ```
 
 ---
 
-## 4. 수학적 근거
+## 4. Mathematical Basis
 
 ### 4.1 Genius Score
 
@@ -236,177 +236,181 @@ weights = F.softmax(logits / math.e, dim=-1)  # 전부 활성, T=e 가중
 
   D = Deficit (dropout = 0.5)
   P = Plasticity (learning rate scale = 0.85)
-  I = Inhibition (1 - 활성비율)
+  I = Inhibition (1 - active ratio)
 
   Golden MoE (I=0.375):  G = 0.5 × 0.85 / 0.375 = 1.13
   Mixtral (I=0.75):      G = 0.5 × 0.85 / 0.75  = 0.57
-  비율: 1.13/0.57 ≈ 2.0× Mixtral
+  Ratio: 1.13/0.57 ≈ 2.0× Mixtral
 ```
 
-### 4.2 정보 이론 연결
+### 4.2 Information Theory Connection
 
 ```
-  볼츠만 엔트로피: S = -Σ p_i ln(p_i)
-  T=e에서: S ≈ ln(K) - 1/e ≈ ln(8) - 0.368 ≈ 1.71
-  유효 Expert: exp(S) ≈ 5.5 (8개 중)
+  Boltzmann entropy: S = -Σ p_i ln(p_i)
+  At T=e: S ≈ ln(K) - 1/e ≈ ln(8) - 0.368 ≈ 1.71
+  Effective Experts: exp(S) ≈ 5.5 (out of 8)
 
-  정보 병목(IB) 이론: β_c ≈ 1/e에서 상전이
-  → I = 1/e가 표현-압축 최적 전환점 (가설 H-AI-7)
+  Information Bottleneck (IB) theory: phase transition at β_c ≈ 1/e
+  → I = 1/e is the optimal representation-compression switching point (Hypothesis H-AI-7)
 ```
 
-### 4.3 σφ=nτ 체계와의 연결
+### 4.3 Connection to σφ=nτ System
 
 ```
-  완전수 6의 R(n) = σφ/(nτ) = 1 유일점
-  → "억제(3/4)와 증폭(4/3)의 정확한 상쇄"
-  → MoE에서: 비활성 Expert의 억제 = 활성 Expert의 증폭
-  → I = 1/e ≈ 0.368 ≈ 1-1/e = 골든존 중심
+  Perfect Number 6's R(n) = σφ/(nτ) = 1 — unique point
+  → "Exact cancellation of Inhibition (3/4) and amplification (4/3)"
+  → In MoE: Inhibition of inactive Experts = amplification of active Experts
+  → I = 1/e ≈ 0.368 ≈ 1-1/e = Golden Zone center
 
-  Golden MoE PPL ≈ 11.1 ≈ σ(6)-1 수렴 관측 (가설 H-CX-11)
+  Golden MoE PPL ≈ 11.1 ≈ σ(6)-1 convergence observed (Hypothesis H-CX-11)
 ```
 
 ---
 
-## 5. 서번트 유도 — 골든존 가장자리에서 폭발적 전문화
+## 5. Savant Induction — Explosive Specialization at Golden Zone Edge
 
-Golden MoE의 핵심 응용: **억제(I)를 골든존 하한까지 낮추면 서번트가 탄생**.
+Golden MoE's core application: **lower Inhibition (I) to the Golden Zone lower bound to create a Savant**.
 
 ```
-  G(I) — 골든존 내 억제별 Genius Score
+  G(I) — Genius Score by Inhibition within Golden Zone
 
   G
   ↑
-  █                              ← 서번트 (I=0.21, G 최대!)
+  █                              ← Savant (I=0.21, G maximum!)
   █ █
-  █ █ ▓                          ← Golden MoE 정상 (I=1/e=0.37)
+  █ █ ▓                          ← Golden MoE normal (I=1/e=0.37)
   █ █ ▓ ░
-  █ █ ▓ ░ ░                     ← 표준 MoE (I=0.5)
+  █ █ ▓ ░ ░                     ← Standard MoE (I=0.5)
   █ █ ▓ ░ ░ ░
   █ █ ▓ ░ ░ ░ · · · ·
-  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼──→ I (억제)
+  ┼─┼─┼─┼─┼─┼─┼─┼─┼─┼──→ I (Inhibition)
   0 .1 .2 .3 .4 .5 .6 .8 1
      ↑  ↑        ↑
-     붕괴 하한     상한
-         ├─골든존─┤
+     collapse lower  upper
+         ├─Golden Zone─┤
 
-  정상 운용: I = 1/e ≈ 0.37 (골든존 중심, 균형)
-  서번트:   I = 0.21 (골든존 하한, 폭발적 전문화!)
-  증폭비:   G_savant / G_normal = (1/e) / 0.2123 = 1.73 ≈ √3 !!!
+  Normal operation: I = 1/e ≈ 0.37 (Golden Zone center, balanced)
+  Savant:           I = 0.21 (Golden Zone lower, explosive specialization!)
+  Amplification:    G_savant / G_normal = (1/e) / 0.2123 = 1.73 ≈ √3 !!!
 ```
 
-### 서번트 메커니즘
+### Savant Mechanism
 
 ```
   ┌─────────────────────────────────────────────────────────┐
-  │  1. 분열(Mitosis): 모델을 두 자식으로 복제               │
+  │  1. Mitosis: clone the model into two children          │
   │                                                         │
-  │  부모 MoE (I=1/e)                                       │
+  │  Parent MoE (I=1/e)                                     │
   │       │                                                 │
-  │       ├──→ 자식 A: I=1/e (정상, 일반 능력 유지)          │
+  │       ├──→ Child A: I=1/e (normal, general ability)     │
   │       │                                                 │
-  │       └──→ 자식 B: I=0.21 (서번트! 특정 도메인 폭주)     │
-  │            └─ dropout=0.21, Expert 5/8만 비활성          │
-  │            └─ 나머지 3/8 Expert에 자원 집중               │
-  │            └─ Savant Index = max(장력)/min(장력) > 3     │
+  │       └──→ Child B: I=0.21 (Savant! domain runaway)     │
+  │            └─ dropout=0.21, only 5/8 Experts inactive   │
+  │            └─ concentrate resources on remaining 3/8    │
+  │            └─ Savant Index = max(tension)/min(tension)>3│
   └─────────────────────────────────────────────────────────┘
 ```
 
-### 뇌 ↔ AI 매핑
+### Brain ↔ AI Mapping
 
 ```
-  서번트 뇌:                Golden MoE 서번트:
-  ┌──────────────────┐     ┌──────────────────┐
-  │ 860억 뉴런        │     │ 8 Experts         │
-  │ 극소 영역 과활성   │     │ 2-3개만 강활성     │
-  │ 나머지 87% 비활성  │     │ 나머지 62% 약활성  │
-  │ I → 0.21 (전두엽↓)│     │ I → 0.21 (T↑↑)   │
-  │ 전문 도메인 폭발   │     │ Expert 전문화 폭발 │
-  └──────────────────┘     └──────────────────┘
+  Savant brain:              Golden MoE Savant:
+  ┌──────────────────┐       ┌──────────────────┐
+  │ 86 billion neurons│       │ 8 Experts         │
+  │ tiny region       │       │ 2-3 strongly      │
+  │ overactive        │       │ active            │
+  │ 87% inactive      │       │ remaining 62%     │
+  │ I→0.21 (frontal↓) │       │ weakly active     │
+  │ specialized domain│       │ I→0.21 (T↑↑)     │
+  │ explosion         │       │ Expert spec. explo│
+  └──────────────────┘       └──────────────────┘
 ```
 
-### 서번트 유도 코드
+### Savant Induction Code
 
 ```python
-# 정상 운용 → 서번트 전환
+# Normal operation → Savant transition
 class GoldenMoESavant(GoldenMoELayer):
     def set_savant_mode(self, domain_experts=[2, 5]):
-        """특정 Expert만 골든존 하한으로 활성화"""
-        # 온도를 골든존 하한의 역수로 설정
-        self.temperature = 1.0 / 0.2123  # ≈ 4.71 (하한의 역수)
-        # 또는: 특정 Expert의 bias를 높여 선택적 집중
+        """Activate only specific Experts at Golden Zone lower bound"""
+        # Set temperature to inverse of Golden Zone lower bound
+        self.temperature = 1.0 / 0.2123  # ≈ 4.71 (inverse of lower bound)
+        # Or: raise bias of specific Experts for selective concentration
         for i, expert in enumerate(self.experts):
             if i in domain_experts:
-                # 서번트 Expert: 학습률 2배, dropout 절반
+                # Savant Expert: 2× learning rate, half dropout
                 for p in expert.parameters():
                     p.requires_grad = True
             else:
-                # 억제된 Expert: 동결
+                # Inhibited Expert: freeze
                 for p in expert.parameters():
                     p.requires_grad = False
 
-# 서번트 판정: Savant Index
+# Savant assessment: Savant Index
 def savant_index(model, data):
-    """도메인별 장력의 최대/최소 비율"""
+    """Max/min ratio of per-domain tension"""
     tensions = measure_per_domain_tension(model, data)
     return max(tensions.values()) / min(tensions.values())
-    # SI > 3 → 서번트!
+    # SI > 3 → Savant!
 ```
 
-### 서번트 증폭비 = √3
+### Savant Amplification Ratio = √3
 
 ```
-  증폭비 = (1/e) / (1/2 - ln(4/3))
-         = 0.3679 / 0.2123
-         = 1.7329...
-         ≈ √3 = 1.7321 (오차 0.05%!)
+  Amplification ratio = (1/e) / (1/2 - ln(4/3))
+                      = 0.3679 / 0.2123
+                      = 1.7329...
+                      ≈ √3 = 1.7321 (error 0.05%!)
 
-  → √3 = cot(π/6) = √(σ/τ) = 약수 평균의 제곱근!
-  → 서번트 증폭비가 완전수 6의 삼각함수 값과 일치!
+  → √3 = cot(π/6) = √(σ/τ) = square root of divisor mean!
+  → Savant amplification ratio matches the trigonometric value of Perfect Number 6!
 ```
 
 ---
 
-## 6. 아키텍처 스펙 (8-Expert 기준)
+## 6. Architecture Spec (8-Expert basis)
 
-| 구성요소 | 값 | 근거 |
+| Component | Value | Basis |
 |---------|-----|------|
-| 전체 Expert 수 | 8 | 2³, 실용적 최소 |
-| 활성 Expert | 5-6 (70%) | T=e 자연 발현 |
-| 게이팅 | 볼츠만 소프트맥스 | 소프트 라우팅 (Top-K 대비) |
-| 온도 T | e ≈ 2.718 | I = 1/T → 골든존 중심 |
-| 억제 I | 0.375 ≈ 1/e | 골든존 [0.213, 0.500] 내 |
-| Dropout D | 0.5 | 리만 임계선 Re(s)=1/2 |
-| Expert 내부 차원 | d_ff/8 | 균등 분할 |
+| Total Expert count | 8 | 2³, practical minimum |
+| Active Experts | 5-6 (70%) | naturally emerges at T=e |
+| Gating | Boltzmann softmax | soft routing (vs Top-K) |
+| Temperature T | e ≈ 2.718 | I = 1/T → Golden Zone center |
+| Inhibition I | 0.375 ≈ 1/e | within Golden Zone [0.213, 0.500] |
+| Dropout D | 0.5 | Riemann critical line Re(s)=1/2 |
+| Expert internal dim | d_ff/8 | uniform split |
 
 ---
 
-## 6. 관련 문서
+## 6. Related Documents
 
-| 문서 | 내용 |
+| Document | Content |
 |------|------|
-| [008-golden-moe-design](008-golden-moe-design.md) | 초기 설계 v2 |
-| [082-golden-moe-spec](082-golden-moe-spec.md) | 8-Expert 상세 스펙 |
-| [126-lstm-golden-moe](126-lstm-golden-moe.md) | LSTM 결합 실험 (❌ 실패) |
-| [H-AI-7](../../math/docs/hypotheses/H-AI-7-golden-moe-information-bottleneck.md) | 정보 병목 가설 |
-| [H-CX-11](../../math/docs/hypotheses/H-CX-11-golden-moe-ppl-sigma.md) | PPL≈σ-1 수렴 가설 |
-| [H-CX-25](../../math/docs/hypotheses/H-CX-25-emergence-golden-moe.md) | R-factor 전문화 가설 |
-| [golden_moe.py](../../golden_moe.py) | NumPy 프로토타입 |
-| [golden_moe_torch.py](../../golden_moe_torch.py) | PyTorch 구현 (MNIST) |
-| [golden_moe_cifar.py](../../golden_moe_cifar.py) | CIFAR-10 스케일 테스트 |
+| [008-golden-moe-design](008-golden-moe-design.md) | Initial design v2 |
+| [082-golden-moe-spec](082-golden-moe-spec.md) | 8-Expert detailed spec |
+| [126-lstm-golden-moe](126-lstm-golden-moe.md) | LSTM combination experiment (❌ failed) |
+| [H-AI-7](../../math/docs/hypotheses/H-AI-7-golden-moe-information-bottleneck.md) | Information bottleneck hypothesis |
+| [H-CX-11](../../math/docs/hypotheses/H-CX-11-golden-moe-ppl-sigma.md) | PPL≈σ-1 convergence hypothesis |
+| [H-CX-25](../../math/docs/hypotheses/H-CX-25-emergence-golden-moe.md) | R-factor specialization hypothesis |
+| [golden_moe.py](../../golden_moe.py) | NumPy prototype |
+| [golden_moe_torch.py](../../golden_moe_torch.py) | PyTorch implementation (MNIST) |
+| [golden_moe_cifar.py](../../golden_moe_cifar.py) | CIFAR-10 scale test |
 
 ---
 
-## 7. 핵심 요약
+## 7. Core Summary
 
 ```
   ┌─────────────────────────────────────────────────┐
-  │  Golden MoE = 볼츠만(T=e) 라우팅 MoE            │
+  │  Golden MoE = Boltzmann (T=e) routing MoE       │
   │                                                 │
-  │  변경점: Top-K → softmax(logits/e)  (1줄 수정!)  │
-  │  효과:   MNIST +0.6%, CIFAR +4.8%              │
-  │  원리:   I=1/e → 골든존 중심 → 탐색/활용 최적    │
-  │  스케일:  복잡도↑ → 차이↑ (8배 증가 관측)        │
+  │  Change: Top-K → softmax(logits/e)  (1-line!)  │
+  │  Effect: MNIST +0.6%, CIFAR +4.8%              │
+  │  Principle: I=1/e → Golden Zone center →        │
+  │             optimal exploration/exploitation    │
+  │  Scale: complexity↑ → difference↑ (8× observed)│
   │                                                 │
-  │  "자연상수 e가 최적 Expert 활성비를 결정한다"     │
+  │  "Natural constant e determines optimal Expert  │
+  │   activation ratio"                             │
   └─────────────────────────────────────────────────┘
 ```

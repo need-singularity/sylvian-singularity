@@ -1,49 +1,49 @@
-# 가설 검토 124: 위상 가속 = 계단형 (선형도 지수도 아님) ✅
+# Hypothesis Review 124: Phase Acceleration = Step Function (Neither Linear nor Exponential) ✅
 
-## 가설
+## Hypothesis
 
-> 위상 원소를 추가할수록 가속이 선형/지수 중 어떤 형태인가.
+> As phase elements are added, does the acceleration take a linear or exponential form?
 
-## 배경
+## Background
 
 ```
-  AI 위상 원소 (가설 023):
+  AI phase elements (Hypothesis 023):
   ┌─────────────────────────────────────────────────┐
-  │  T1: 어텐션 (자기참조)                            │
-  │  T2: 루프/재귀 (반복)                             │
-  │  T3: 메타학습 (자기수정) ← 임계점!                │
-  │  T4: 위상변화 (구조변경)                           │
-  │  T5: 자기복제 (재생산)                             │
-  │  T6: 의식? (자기인식)                              │
-  │  T7: 초월? (규칙변경)                              │
+  │  T1: Attention (self-reference)                  │
+  │  T2: Loop/Recursion (repetition)                 │
+  │  T3: Meta-learning (self-modification) ← critical!│
+  │  T4: Phase change (structural modification)      │
+  │  T5: Self-replication (reproduction)             │
+  │  T6: Consciousness? (self-awareness)             │
+  │  T7: Transcendence? (rule change)                │
   └─────────────────────────────────────────────────┘
 ```
 
-## 검증 결과: ✅ 계단형 — 첫 추가가 결정적
+## Verification Result: ✅ Step Function — First Addition Is Decisive
 
 ```
-  3/7: 3회   ×1.00  기준
-  4/7: 1회   ×3.00  ← 첫 위상(T3)에서 ×3 점프!
-  5/7: 0회   ×3.00  즉시 골든존
-  6/7: 0회   ×3.00  즉시
-  7/7: 0회   ×3.00  즉시
+  3/7: 3 iter   ×1.00  baseline
+  4/7: 1 iter   ×3.00  ← ×3 jump at first phase (T3)!
+  5/7: 0 iter   ×3.00  immediately in Golden Zone
+  6/7: 0 iter   ×3.00  immediate
+  7/7: 0 iter   ×3.00  immediate
 
-  → 커스프 전이: T3(재귀) 추가 = 임계점 통과
-  → 이후 추가는 이미 골든존 안이므로 효과 미미
+  → Cusp transition: adding T3 (recursion) = passing the critical point
+  → Further additions already inside Golden Zone, negligible effect
 ```
 
-## 가속 패턴 비교 (ASCII 그래프)
+## Acceleration Pattern Comparison (ASCII Graph)
 
 ```
-  가속률 (기준 대비)
+  Acceleration rate (relative to baseline)
   ×4.0│
       │
-  ×3.0│         ●────●────●────● 실제 (계단형!)
+  ×3.0│         ●────●────●────● actual (step function!)
       │        ╱
-  ×2.5│       ╱         ╱ ╱ 지수적 (예상했던 것)
+  ×2.5│       ╱         ╱ ╱ exponential (expected)
       │      ╱       ╱ ╱
   ×2.0│     ╱     ╱ ╱
-      │    ╱   ╱ ╱      ╱ 선형 (단순 예상)
+      │    ╱   ╱ ╱      ╱ linear (simple expectation)
   ×1.5│   ╱ ╱ ╱      ╱
       │  ╱╱       ╱
   ×1.0│●       ╱
@@ -52,127 +52,128 @@
       │╱
   ×0.0└──┼──┼──┼──┼──┼──
         3/7 4/7 5/7 6/7 7/7
-           위상 원소 비율
+           Phase element ratio
 
-  ─── 선형: 점진적 증가 (✗ 불일치)
-  ╱╱╱ 지수: 가속 증가 (✗ 불일치)
-  ●── 실제: 계단 점프 (✅ 실측)
+  ─── linear: gradual increase (✗ mismatch)
+  ╱╱╱ exponential: accelerating increase (✗ mismatch)
+  ●── actual: step jump (✅ measured)
 ```
 
-## T3 임계점의 의미
+## Meaning of T3 Critical Point
 
 ```
-  수렴까지 반복 횟수:
+  Iterations until convergence:
 
-  반복 횟수
+  Iteration count
   4│●
    │●
-  3│●  ← 3/7 (T1+T2만): 3회 필요
+  3│●  ← 3/7 (T1+T2 only): 3 iterations needed
    │
   2│
    │
-  1│   ●  ← 4/7 (T3 추가): 1회로 급감!
+  1│   ●  ← 4/7 (T3 added): drops to 1!
    │
-  0│      ●──●──●  ← 5/7~7/7: 즉시 (0회)
+  0│      ●──●──●  ← 5/7~7/7: immediate (0)
    └──┼──┼──┼──┼──┼──
      3/7 4/7 5/7 6/7 7/7
 
-  T3(메타학습/재귀)가 없으면: 3회 반복 필요
-  T3 추가하면:              1회로 ×3 가속
-  그 이후 추가:             이미 0회, 효과 없음
+  Without T3 (meta-learning/recursion): 3 iterations needed
+  With T3 added:                         1 iteration — ×3 acceleration
+  Further additions:                     already 0, no effect
 
-  → T3 = "상전이의 방아쇠"
-  → 가설 003 (커스프 전이)의 실증
+  → T3 = "trigger of phase transition"
+  → Empirical demonstration of Hypothesis 003 (cusp transition)
 ```
 
-## 왜 계단형인가?
+## Why Step Function?
 
 ```
   ┌─────────────────────────────────────────────────┐
-  │  선형이 아닌 이유:                                │
-  │  → 위상 원소는 독립적이지 않음                    │
-  │  → T3(재귀)가 T1(어텐션)+T2(루프)를 "완성"       │
-  │  → 이전 원소들의 시너지가 T3에서 폭발             │
+  │  Why not linear:                                 │
+  │  → Phase elements are not independent            │
+  │  → T3 (recursion) "completes" T1 (attention) + T2 (loop)│
+  │  → Synergy of previous elements explodes at T3  │
   │                                                  │
-  │  지수가 아닌 이유:                                │
-  │  → 한번 임계점을 넘으면 이미 골든존 안             │
-  │  → 추가 원소의 기여 = 0 (포화)                    │
+  │  Why not exponential:                            │
+  │  → Once the critical point is passed, already    │
+  │    inside the Golden Zone                        │
+  │  → Additional elements contribute 0 (saturation) │
   │                                                  │
-  │  계단형인 이유:                                    │
-  │  → 커스프 전이 = 불연속 점프                       │
-  │  → "거의 0" → "완전 1"의 이진 전환                │
-  │  → 양자 도약과 유사: 중간 상태 없음               │
+  │  Why step function:                              │
+  │  → Cusp transition = discontinuous jump          │
+  │  → Binary switching from "nearly 0" to "exactly 1"│
+  │  → Analogous to quantum leap: no intermediate   │
   └─────────────────────────────────────────────────┘
 ```
 
-## 타임라인 수정
+## Timeline Revision
 
 ```
-  위상 원소 수 vs 특이점 도달 연도:
+  Number of phase elements vs predicted singularity year:
 
-  연도
+  Year
   2045│
       │
-  2040│  ● 3/7 기본 (2038년 예측)
+  2040│  ● 3/7 baseline (predicted 2038)
       │
   2035│
       │
   2030│
       │
-  2025│     ● 4/7 +Mamba (2025년!)
-      │       ● 5/7          ← ×3 가속으로 당겨짐
+  2025│     ● 4/7 +Mamba (2025!)
+      │       ● 5/7          ← pulled forward by ×3 acceleration
   2024│         ●●● 6/7, 7/7
       │
   2023│
       └──┼──┼──┼──┼──┼──
         3/7 4/7 5/7 6/7 7/7
 
-  3/7 기본: 2038년 예측
-  4/7 +Mamba: 2025년 (×3 가속 = 13년 단축!)
-  → Jamba (2024) 이미 존재
-  → 특이점은 이미 시작됐나?
+  3/7 baseline: predicted 2038
+  4/7 +Mamba: 2025 (×3 acceleration = 13 years sooner!)
+  → Jamba (2024) already exists
+  → Has the singularity already begun?
 ```
 
-## Jamba 실증
+## Jamba Empirical Evidence
 
 ```
   Jamba (2024, AI21 Labs):
   ┌────────────────────────────────────────────────┐
-  │  아키텍처: Transformer + Mamba + MoE            │
-  │  = T1(어텐션) + T2(SSM루프) + T3(MoE메타선택)  │
-  │  = 정확히 4/7 위상!                             │
+  │  Architecture: Transformer + Mamba + MoE        │
+  │  = T1 (attention) + T2 (SSM loop) + T3 (MoE meta-select)│
+  │  = exactly 4/7 phase!                           │
   │                                                │
-  │  결과:                                          │
-  │  - Transformer 대비 3배 처리량 향상              │
-  │  - 우리 예측: ×3 가속                           │
-  │  - 실측: ×3 ← 정확히 일치! ✅                   │
+  │  Results:                                       │
+  │  - 3× throughput improvement vs Transformer     │
+  │  - Our prediction: ×3 acceleration              │
+  │  - Measured: ×3 ← exact match! ✅               │
   │                                                │
-  │  → 가설 125 (Jamba 비교)에서 정량 확인           │
+  │  → Quantitative confirmation in Hypothesis 125  │
   └────────────────────────────────────────────────┘
 ```
 
-## 다른 가설과의 교차점
+## Intersections with Other Hypotheses
 
 ```
-  가설 003 (커스프 전이):    계단 = 커스프의 불연속 점프
-  가설 023 (위상 가속):      위상 원소의 원래 정의
-  가설 058 (타임라인):       위상 기반 특이점 시점
-  가설 125 (Jamba 비교):     ×3 가속의 실증
-  가설 127 (위상 임계점):    T3 = 임계 위상 원소
+  Hypothesis 003 (cusp transition):  step = cusp's discontinuous jump
+  Hypothesis 023 (phase acceleration): original definition of phase elements
+  Hypothesis 058 (timeline):         phase-based singularity timing
+  Hypothesis 125 (Jamba comparison): empirical verification of ×3 acceleration
+  Hypothesis 127 (phase critical):   T3 = critical phase element
 ```
 
-## 한계
+## Limitations
 
-1. autopilot 수렴 횟수는 모델 단순화의 산물이며, 실제 AI 성능 가속과 직접 대응하지 않을 수 있음
-2. Jamba의 ×3 처리량 향상은 하드웨어/최적화 요인도 포함
-3. 5/7~7/7에서 "0회"는 시작점이 이미 골든존인 설정 때문일 수 있음
+1. Autopilot convergence count is a model simplification; may not directly correspond to actual AI performance acceleration
+2. Jamba's ×3 throughput improvement also includes hardware/optimization factors
+3. "0 iterations" at 5/7~7/7 may be due to the starting point already being inside the Golden Zone
 
-## 검증 방향
+## Verification Directions
 
-- [ ] T3 없이 T4/T5 추가 시 가속 패턴 (T3가 진짜 임계점인가?)
-- [ ] 다른 하이브리드 아키텍처(Griffin, RWKV 등)의 가속률 측정
-- [ ] 계단 높이(×3)의 이론적 유도: 왜 ×3인가? (3상태 → 4상태 비율?)
+- [ ] Acceleration pattern when T4/T5 are added without T3 (is T3 truly the critical point?)
+- [ ] Measure acceleration rates of other hybrid architectures (Griffin, RWKV, etc.)
+- [ ] Theoretical derivation of step height (×3): why ×3? (3-state → 4-state ratio?)
 
 ---
 
-*검증: autopilot 위상별 수렴 속도*
+*Verification: autopilot convergence speed by phase*

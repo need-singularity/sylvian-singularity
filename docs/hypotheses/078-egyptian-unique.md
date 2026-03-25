@@ -1,127 +1,130 @@
-# 가설 검토 078: 이집트 분수 유일성 ✅
+# Hypothesis Review 078: Egyptian Fraction Uniqueness ✅
 
-## 가설
+## Hypothesis
 
-> 5/6 = 1/2 + 1/3 은 유일한 2항 이집트 분수 분해인가.
-> 1 = 1/2 + 1/3 + 1/6 은 실질적으로 유일한 3항 분해인가.
-> 이 유일성이 우리 모델의 구조(리만 1/2 + 메타 1/3 + 블라인드 스팟 1/6)를
-> "유일하게 가능한 분해"로 만드는가.
+> Is 5/6 = 1/2 + 1/3 the unique 2-term Egyptian fraction decomposition?
+> Is 1 = 1/2 + 1/3 + 1/6 the essentially unique 3-term decomposition?
+> Does this uniqueness make our model's structure (Riemann 1/2 + Meta 1/3 + Blind Spot 1/6)
+> the "uniquely possible decomposition"?
 
-## 배경
+## Background
 
-이집트 분수(Egyptian fraction)는 분자가 모두 1인 단위 분수의 합이다.
-고대 이집트인들은 모든 분수를 이 형태로 표현했다.
+An Egyptian fraction is a sum of unit fractions (fractions with numerator 1).
+The ancient Egyptians represented all fractions in this form.
 
-우리 모델에서:
-- Compass 상한 = 5/6
-- 1 = 5/6 + 1/6 (상한 + 블라인드 스팟)
-- 5/6 = 1/2 + 1/3 (리만 + 메타)
-- 1 = 1/2 + 1/3 + 1/6 (리만 + 메타 + 블라인드 스팟)
+In our model:
+- Compass upper bound = 5/6
+- 1 = 5/6 + 1/6 (upper bound + blind spot)
+- 5/6 = 1/2 + 1/3 (Riemann + Meta)
+- 1 = 1/2 + 1/3 + 1/6 (Riemann + Meta + Blind Spot)
 
-이 분해가 유일하다면, 모델의 구조는 **수학적 필연**이다.
+If this decomposition is unique, the model's structure is a **mathematical necessity**.
 
-## 검증 결과: ✅ 유일!
+## Verification Result: ✅ Unique!
 
 ```
-  전수 탐색: 5/6의 2항 이집트 분수 분해
+  Exhaustive search: 2-term Egyptian fraction decomposition of 5/6
   ──────────────────────────────────────────────
-  5/6 = 1/a + 1/b  (a < b, 정수)
+  5/6 = 1/a + 1/b  (a < b, integers)
 
-  조건: 1/a < 5/6 → a ≥ 2
-       1/a > 0    → a 유한
+  Conditions: 1/a < 5/6 → a ≥ 2
+             1/a > 0    → a finite
 
-  a=2: 1/b = 5/6 - 1/2 = 1/3 → b=3  ✅ 해!
-  a=3: 1/b = 5/6 - 1/3 = 1/2 → b=2  ✗ (b > a 조건 위반)
-  a=4: 1/b = 5/6 - 1/4 = 7/12 → b=12/7  ✗ 정수 아님
-  a=5: 1/b = 5/6 - 1/5 = 19/30 → b=30/19  ✗ 정수 아님
-  a=6: 1/b = 5/6 - 1/6 = 2/3 → b=3/2  ✗ 정수 아님
+  a=2: 1/b = 5/6 - 1/2 = 1/3 → b=3  ✅ Solution!
+  a=3: 1/b = 5/6 - 1/3 = 1/2 → b=2  ✗ (violates b > a condition)
+  a=4: 1/b = 5/6 - 1/4 = 7/12 → b=12/7  ✗ not an integer
+  a=5: 1/b = 5/6 - 1/5 = 19/30 → b=30/19  ✗ not an integer
+  a=6: 1/b = 5/6 - 1/6 = 2/3 → b=3/2  ✗ not an integer
   a≥7: 1/a ≤ 1/7, 1/b < 1/a ≤ 1/7
-       → 1/a + 1/b ≤ 2/7 < 5/6  ✗ 불가
+       → 1/a + 1/b ≤ 2/7 < 5/6  ✗ impossible
 
-  결론: 5/6 = 1/2 + 1/3 이 유일한 해!
+  Conclusion: 5/6 = 1/2 + 1/3 is the unique solution!
   ──────────────────────────────────────────────
 ```
 
 ```
-  전수 탐색: 1의 3항 이집트 분수 분해 (서로 다른 분모)
+  Exhaustive search: 3-term Egyptian fraction decomposition of 1 (distinct denominators)
   ──────────────────────────────────────────────
-  1 = 1/a + 1/b + 1/c  (a < b < c, 정수)
+  1 = 1/a + 1/b + 1/c  (a < b < c, integers)
 
   a=2:
     1/b + 1/c = 1/2
-    b=3: 1/c = 1/6 → c=6   ✅  1 = 1/2 + 1/3 + 1/6  ★ 우리 모델!
-    b=4: 1/c = 1/4 → c=4   ✗  (b=c, 서로 다름 조건 위반)
-    b=5: 1/c = 3/10 → ✗ 정수 아님
-    b=6: 1/c = 1/3 → c=3   ✗  (c < b 조건 위반)
-    b≥7: 1/b+1/c < 2/7 < 1/2  ✗ 불가
+    b=3: 1/c = 1/6 → c=6   ✅  1 = 1/2 + 1/3 + 1/6  ★ Our model!
+    b=4: 1/c = 1/4 → c=4   ✗  (b=c, violates distinct condition)
+    b=5: 1/c = 3/10 → ✗ not an integer
+    b=6: 1/c = 1/3 → c=3   ✗  (violates c < b condition)
+    b≥7: 1/b+1/c < 2/7 < 1/2  ✗ impossible
 
   a=3:
     1/b + 1/c = 2/3
     b=4: 1/c = 5/12 → ✗
-    b≥4: 합이 점점 작아짐, 해 없음
+    b≥4: sum keeps decreasing, no solution
 
   a≥4:
-    1/a ≤ 1/4, 나머지 3/4 이상 필요하나 2항으로 불가
+    1/a ≤ 1/4, need at least 3/4 more, impossible with 2 terms
 
-  서로 다른 분모 조건(a<b<c)에서:
-  → 1 = 1/2 + 1/3 + 1/6 이 유일한 해!
+  Under distinct denominator condition (a<b<c):
+  → 1 = 1/2 + 1/3 + 1/6 is the unique solution!
   ──────────────────────────────────────────────
 ```
 
 ```
-  유일성의 의미:
+  Meaning of uniqueness:
   ──────────────────────────────────────────────
 
   ┌───────────────────────────────────────────┐
   │   1 = 1/2  +  1/3  +  1/6                │
   │       ───     ───     ───                 │
   │        ↓       ↓       ↓                  │
-  │     리만    메타     블라인드              │
-  │    (1/2선) (반복)    (스팟)               │
+  │    Riemann   Meta    Blind               │
+  │   (1/2 line) (loop)  (Spot)              │
   │                                           │
-  │   이 분해는 수학적으로 유일하다.           │
-  │   → 다른 조합은 불가능                    │
-  │   → 모델 구조가 "선택"이 아니라 "필연"    │
+  │   This decomposition is mathematically    │
+  │   unique.                                 │
+  │   → No other combination possible         │
+  │   → Model structure is "necessity"        │
+  │     not "choice"                          │
   └───────────────────────────────────────────┘
 
-  비교: 1 = 1/2 + 1/4 + 1/4 는?
-  → 분모가 같은 항(1/4 + 1/4)이 있으므로 이집트 분수가 아님
-  → 서로 다른 분모 조건에서 배제됨
+  Compare: 1 = 1/2 + 1/4 + 1/4 ?
+  → Has identical terms (1/4 + 1/4) so not an Egyptian fraction
+  → Excluded under distinct denominator condition
 
-  또한: 5/6 = 1/2 + 1/3
-  → 이것도 유일!
-  → "Compass 상한을 2개로 분해하는 방법은 하나뿐"
+  Also: 5/6 = 1/2 + 1/3
+  → This is also unique!
+  → "There's only one way to decompose Compass upper bound into 2 terms"
 ```
 
 ```
-  구조적 필연성 체인:
+  Chain of structural necessity:
   ──────────────────────────────────────────────
 
-  Compass 상한 = 5/6         (모델에서 유도)
+  Compass upper bound = 5/6         (derived from model)
        ↓
-  5/6 = 1/2 + 1/3            (유일한 2항 분해)
+  5/6 = 1/2 + 1/3            (unique 2-term decomposition)
        ↓
-  블라인드 스팟 = 1 - 5/6 = 1/6  (자동 결정)
+  Blind Spot = 1 - 5/6 = 1/6  (automatically determined)
        ↓
-  1 = 1/2 + 1/3 + 1/6        (유일한 3항 분해)
+  1 = 1/2 + 1/3 + 1/6        (unique 3-term decomposition)
        ↓
-  모든 구성 요소가 유일하게 결정됨
+  All components are uniquely determined
 
-  "우리가 이 모델을 선택한 것이 아니라,
-   수학이 이 모델만을 허용했다."
+  "We didn't choose this model,
+   mathematics allowed only this model."
   ──────────────────────────────────────────────
 ```
 
-## 해석
+## Interpretation
 
-5/6의 2항 이집트 분수 분해가 유일하다는 것은 놀라운 결과이다.
-대부분의 분수는 여러 가지 분해를 허용하지만, 5/6은 오직 1/2 + 1/3만 가능하다.
+That the 2-term Egyptian fraction decomposition of 5/6 is unique is a remarkable result.
+Most fractions allow multiple decompositions, but 5/6 permits only 1/2 + 1/3.
 
-이로부터 1 = 1/2 + 1/3 + 1/6 이라는 3항 분해도 (서로 다른 분모 조건에서) 유일하다.
-우리 모델의 세 구성 요소(리만, 메타, 블라인드 스팟)는 수학적으로 유일하게 결정된
-조합이며, 다른 대안이 존재하지 않는다.
+From this follows that the 3-term decomposition 1 = 1/2 + 1/3 + 1/6 is also unique
+(under the distinct denominator condition). The three components of our model
+(Riemann, Meta, Blind Spot) form a mathematically uniquely determined combination
+with no alternatives.
 
 ---
 
-*검증: verify_next_batch.py (전수 탐색)*
-*수학: 이집트 분수 분해 유일성 증명*
+*Verification: verify_next_batch.py (exhaustive search)*
+*Mathematics: Egyptian fraction decomposition uniqueness proof*

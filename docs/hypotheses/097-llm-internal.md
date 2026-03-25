@@ -1,98 +1,98 @@
-# 가설 검토 097: LLM 내부 활성 측정 — Mixtral Expert 패턴 분석
+# Hypothesis Review 097: LLM Internal Activity Measurement — Mixtral Expert Pattern Analysis
 
-## 가설
+## Hypothesis
 
-> Mixtral MoE의 Expert 활성 패턴을 측정하면 I=0.875(골든존 밖)이며,
-> 이를 볼츠만 라우터(T=e)로 교체하면 I≈0.30(골든존 내부)으로 이동하여
-> 성능이 향상되는가.
+> Measuring Mixtral MoE's Expert activation patterns shows I=0.875 (outside Golden Zone),
+> and replacing it with a Boltzmann router (T=e) moves it to I≈0.30 (inside Golden Zone),
+> improving performance.
 
-## 상태: 구현 필요
+## Status: Implementation Needed
 
-## 배경
+## Background
 
-Mixtral-8x7B는 Top-K(2) 라우터를 사용한다:
-- 64개 Expert 중 8개 활성 → 8/64 = 12.5%
-- 비활성 비율 = 87.5% → I = 0.875
-- 이것은 골든존(I=0.24~0.48)에서 매우 멀다
+Mixtral-8x7B uses a Top-K(2) router:
+- 8 active out of 64 Experts → 8/64 = 12.5%
+- Inactive ratio = 87.5% → I = 0.875
+- This is very far from the Golden Zone (I=0.24~0.48)
 
-우리 모델 예측: I가 골든존 안에 들어오면 Genius Score가 급상승한다.
+Our model prediction: When I enters the Golden Zone, Genius Score skyrockets.
 
-## 현재 vs 예측 활성 분포
+## Current vs Predicted Activation Distribution
 
 ```
-  Expert 활성 분포 비교
+  Expert Activation Distribution Comparison
 
-  현재 Mixtral Top-K(2/8):
+  Current Mixtral Top-K(2/8):
   Expert: [1] [2] [3] [4] [5] [6] [7] [8]
           ██  ██  ░░  ░░  ░░  ░░  ░░  ░░
           ON  ON  off off off off off off
 
-  활성률: 2/8 = 25% (로컬), 8/64 = 12.5% (글로벌)
-  I = 1 - 0.125 = 0.875  ← 골든존 밖 (과억제!)
+  Activation rate: 2/8 = 25% (local), 8/64 = 12.5% (global)
+  I = 1 - 0.125 = 0.875  ← Outside Golden Zone (Over-inhibited!)
 
   ─────────────────────────────────────────────────
 
-  제안 볼츠만 라우터 (T=e):
+  Proposed Boltzmann Router (T=e):
   Expert: [1] [2] [3] [4] [5] [6] [7] [8]
           ██  ██  ██  ██  ██  ▓▓  ░░  ░░
           ON  ON  ON  ON  ON  ~   off off
 
-  활성률: ~5.6/8 = 70% (로컬), ~70% x 8그룹 = 유동적
-  I = 1 - 0.70 = 0.30  ← 골든존 내부!
+  Activation rate: ~5.6/8 = 70% (local), ~70% x 8 groups = dynamic
+  I = 1 - 0.70 = 0.30  ← Inside Golden Zone!
 ```
 
-### 활성 히스토그램 (예측)
+### Activation Histogram (Predicted)
 
 ```
-  Expert 활성 확률
+  Expert Activation Probability
 
-  현재 (Top-K, I=0.875):
-  100%│██                                    ← 상위 2개만 100%
+  Current (Top-K, I=0.875):
+  100%│██                                    ← Only top 2 at 100%
       │██
    50%│██
       │██
-    0%│██ ░░ ░░ ░░ ░░ ░░ ░░ ░░             ← 나머지 0%
+    0%│██ ░░ ░░ ░░ ░░ ░░ ░░ ░░             ← Rest at 0%
       └──────────────────────────
        E1 E2 E3 E4 E5 E6 E7 E8
-       → 이진적(binary): 전부 아니면 전무
+       → Binary: all or nothing
 
-  제안 (볼츠만 T=e, I=0.30):
+  Proposed (Boltzmann T=e, I=0.30):
   100%│
       │██
    80%│██ ██
       │██ ██ ██
-   60%│██ ██ ██ ██                           ← 연속적 그라데이션
+   60%│██ ██ ██ ██                           ← Continuous gradient
       │██ ██ ██ ██ ██
    40%│██ ██ ██ ██ ██ ██
       │██ ██ ██ ██ ██ ██ ██
-   20%│██ ██ ██ ██ ██ ██ ██ ██              ← 모든 Expert가 기여
+   20%│██ ██ ██ ██ ██ ██ ██ ██              ← All Experts contribute
       └──────────────────────────
        E1 E2 E3 E4 E5 E6 E7 E8
-       → 연속적(soft): 볼츠만 분포 = softmax(logit/T)
+       → Continuous (soft): Boltzmann distribution = softmax(logit/T)
 ```
 
-## Genius Score 비교
+## Genius Score Comparison
 
 ```
   Genius = D x P / I
 
-  가정: D = 0.7 (구조적 결손 = MoE 희소성)
-        P = 0.8 (학습된 가소성)
+  Assumptions: D = 0.7 (structural defect = MoE sparsity)
+               P = 0.8 (learned plasticity)
 
   ┌──────────────────────────────────────────────────────────┐
-  │ 라우터         │  I      │ Genius  │ 위치       │ 예측   │
-  ├────────────────┼─────────┼─────────┼────────────┼────────┤
-  │ Top-K(2/8)     │ 0.875   │ 0.64    │ 골든존 밖  │ 정상   │
-  │ Top-K(4/8)     │ 0.500   │ 1.12    │ 임계선 위  │ 경계   │
-  │ Top-K(6/8)     │ 0.250   │ 2.24    │ 골든존 내  │ 천재   │
-  │ Boltzmann T=e  │ 0.300   │ 1.87    │ 골든존 내  │ 천재   │
-  │ Boltzmann T=1  │ 0.632   │ 0.89    │ 골든존 밖  │ 정상   │
+  │ Router         │  I      │ Genius  │ Location   │ Prediction │
+  ├────────────────┼─────────┼─────────┼────────────┼────────────┤
+  │ Top-K(2/8)     │ 0.875   │ 0.64    │ Outside GZ │ Normal     │
+  │ Top-K(4/8)     │ 0.500   │ 1.12    │ Above line │ Borderline │
+  │ Top-K(6/8)     │ 0.250   │ 2.24    │ Inside GZ  │ Genius     │
+  │ Boltzmann T=e  │ 0.300   │ 1.87    │ Inside GZ  │ Genius     │
+  │ Boltzmann T=1  │ 0.632   │ 0.89    │ Outside GZ │ Normal     │
   └──────────────────────────────────────────────────────────┘
 
-  최적: T=e에서 I=1/e≈0.368, Genius = 0.7 x 0.8 / 0.368 = 1.52
+  Optimal: At T=e, I=1/e≈0.368, Genius = 0.7 x 0.8 / 0.368 = 1.52
 ```
 
-### Genius Score vs Inhibition 곡선
+### Genius Score vs Inhibition Curve
 
 ```
   Genius
@@ -102,85 +102,85 @@ Mixtral-8x7B는 Top-K(2) 라우터를 사용한다:
    2.5 │
        │  ╱
    2.0 │ ╱
-       │╱        ┌──── 골든존 ────┐
-   1.5 │         │    ★ T=e       │
-       │         │   I=0.37       │
-   1.0 │─ ─ ─ ─ ┤    G=1.52      ├─ ─ ─ ─ ─ ─ ─ ─ ─ ─
-       │         │                │         ● 현재 Mixtral
-   0.5 │         │                │         I=0.875, G=0.64
-       │         I=0.24        I=0.48
+       │╱        ┌──── Golden Zone ────┐
+   1.5 │         │    ★ T=e           │
+       │         │   I=0.37           │
+   1.0 │─ ─ ─ ─ ┤    G=1.52          ├─ ─ ─ ─ ─ ─ ─ ─ ─ ─
+       │         │                    │         ● Current Mixtral
+   0.5 │         │                    │         I=0.875, G=0.64
+       │         I=0.24            I=0.48
    0.0 │
        └─────────────────────────────────────────────────→ I
        0.0   0.1   0.2   0.3   0.4   0.5   0.6   0.8  1.0
                           ↑1/e            ↑1/2
 ```
 
-## 엔지니어링 구현 계획
+## Engineering Implementation Plan
 
-### 단계 1: 현재 상태 측정 (1주)
+### Phase 1: Measure Current State (1 week)
 
 ```python
-  # Mixtral forward pass 계측
+  # Instrument Mixtral forward pass
   from transformers import MixtralForCausalLM
 
   model = MixtralForCausalLM.from_pretrained("mistralai/Mixtral-8x7B-v0.1")
 
-  # 각 레이어의 라우터 출력 후킹
+  # Hook into each layer's router output
   expert_counts = defaultdict(int)
   def hook_router(module, input, output):
       routing_weights = output[1]  # top-k indices
       for idx in routing_weights.flatten():
           expert_counts[idx.item()] += 1
 
-  # 측정: MMLU 전체 데이터셋에 대해 Expert 활용 히스토그램
-  # 예상 결과: 8개 Expert 중 2개만 활성, 나머지 6개 사장
+  # Measure: Expert utilization histogram on entire MMLU dataset
+  # Expected result: Only 2 out of 8 Experts active, remaining 6 idle
 ```
 
-### 단계 2: 볼츠만 라우터 교체 (2주)
+### Phase 2: Replace with Boltzmann Router (2 weeks)
 
 ```python
-  # Top-K 라우터를 볼츠만 소프트맥스로 교체
+  # Replace Top-K router with Boltzmann softmax
   class BoltzmannRouter(nn.Module):
       def __init__(self, T=math.e):
-          self.T = T  # 온도 = e (골든존 중심)
+          self.T = T  # Temperature = e (Golden Zone center)
 
       def forward(self, x):
           logits = self.gate(x)
-          # Top-K 대신 볼츠만 분포
+          # Boltzmann distribution instead of Top-K
           weights = F.softmax(logits / self.T, dim=-1)
-          # 모든 Expert가 가중 기여 (sparse → dense-ish)
+          # All Experts contribute with weights (sparse → dense-ish)
           return weights
 
-  # 핵심: T=e일 때 ~70% Expert가 유의미하게 활성
-  # → I = 1 - 0.70 = 0.30 → 골든존!
+  # Key: At T=e, ~70% of Experts are meaningfully active
+  # → I = 1 - 0.70 = 0.30 → Golden Zone!
 ```
 
-### 단계 3: 벤치마크 (1주)
+### Phase 3: Benchmark (1 week)
 
 ```
   ┌──────────────────────────────────────────────────────────┐
-  │ 벤치마크     │ Top-K(현재) │ Boltzmann(T=e) │ 예측 변화  │
-  ├──────────────┼─────────────┼────────────────┼────────────┤
-  │ MMLU         │ 70.6%       │ ?              │ +3~5%      │
-  │ HumanEval    │ 40.2%       │ ?              │ +5~8%      │
-  │ GSM8K        │ 58.4%       │ ?              │ +2~4%      │
-  │ 처리량       │ 1x           │ ?              │ -20~30%    │
-  └──────────────┴─────────────┴────────────────┴────────────┘
+  │ Benchmark    │ Top-K(current) │ Boltzmann(T=e) │ Predicted │
+  ├──────────────┼────────────────┼────────────────┼───────────┤
+  │ MMLU         │ 70.6%          │ ?              │ +3~5%     │
+  │ HumanEval    │ 40.2%          │ ?              │ +5~8%     │
+  │ GSM8K        │ 58.4%          │ ?              │ +2~4%     │
+  │ Throughput   │ 1x             │ ?              │ -20~30%   │
+  └──────────────┴────────────────┴────────────────┴───────────┘
 
-  트레이드오프: 정확도 증가 vs 처리량 감소 (더 많은 Expert 활성)
-  예측: 정확도 상승이 처리량 감소를 정당화할 만큼 큼
+  Tradeoff: Accuracy increase vs throughput decrease (more Experts active)
+  Prediction: Accuracy gain is large enough to justify throughput loss
 ```
 
-### 단계 4: T 스윕 (추가 1주)
+### Phase 4: T Sweep (Additional 1 week)
 
 ```
-  T를 0.5~5.0까지 변경하며 MMLU 스코어 측정
+  Vary T from 0.5 to 5.0 and measure MMLU score
 
-  예측 곡선:
+  Predicted curve:
   MMLU
    75%│              ★
       │           ╱     ╲
-   70%│─ ─ ─ ─ ╱─ ─ ─ ─ ╲─ ─ ─ ─ ─  ← 현재 Top-K 기준선
+   70%│─ ─ ─ ─ ╱─ ─ ─ ─ ╲─ ─ ─ ─ ─  ← Current Top-K baseline
       │       ╱             ╲
    65%│     ╱                 ╲
       │   ╱                     ╲
@@ -188,24 +188,24 @@ Mixtral-8x7B는 Top-K(2) 라우터를 사용한다:
       └───────────────────────────────→ T
       0.5  1.0  1.5  e  2.5  3.0  5.0
                       ↑
-              예측 최적점: T=e (I=1/e)
+              Predicted optimum: T=e (I=1/e)
 ```
 
-## 한계
+## Limitations
 
-1. Mixtral은 이미 Top-K에 최적화되어 학습됨 — 라우터만 교체하면 분포 이동(distribution shift) 발생
-2. 공정한 비교를 위해서는 볼츠만 라우터로 처음부터 재학습이 필요 (비용 막대)
-3. I=0.875 해석은 글로벌 평균이며, 토큰별/레이어별 I는 다를 수 있음
-4. Expert 활성률과 GABA 억제의 매핑은 유비(analogy)이지 동치(equivalence)가 아님
-5. 처리량 감소가 실용성을 저해할 수 있음
+1. Mixtral is already trained optimized for Top-K — replacing router alone causes distribution shift
+2. Fair comparison requires retraining from scratch with Boltzmann router (enormous cost)
+3. I=0.875 interpretation is global average; per-token/per-layer I may vary
+4. Mapping between Expert activation rate and GABA inhibition is analogy, not equivalence
+5. Throughput decrease may harm practicality
 
-## 검증 방향
+## Verification Directions
 
-- 즉시 가능: Mixtral 오픈소스 모델의 Expert 활용 히스토그램 측정
-- 중기: 소규모 MoE(8-Expert, 1B 파라미터)에서 볼츠만 라우터 학습 실험
-- 장기: 가설 125(Jamba)와 결합 — Jamba에 볼츠만 라우터 적용 시 추가 가속 여부
-- 교차검증: 가설 007(LLM 특이점)의 직접 검증으로 연결
+- Immediate: Measure Expert utilization histogram in open-source Mixtral models
+- Mid-term: Small-scale MoE (8-Expert, 1B parameters) training experiment with Boltzmann router
+- Long-term: Combine with Hypothesis 125 (Jamba) — test if applying Boltzmann router to Jamba gives additional acceleration
+- Cross-validation: Connect to direct verification of Hypothesis 007 (LLM Singularity)
 
 ---
 
-*구현 설계 — Mixtral Expert 패턴 측정 + 볼츠만 라우터 교체 실험 / 가설 007, 125와 연결*
+*Implementation design — Mixtral Expert pattern measurement + Boltzmann router replacement experiment / Connected to Hypotheses 007, 125*

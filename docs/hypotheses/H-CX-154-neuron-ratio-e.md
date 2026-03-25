@@ -1,101 +1,101 @@
-# H-CX-154: 인간/돌고래 뉴런 비 ~ e
+# H-CX-154: Human/Dolphin Neuron Ratio ~ e
 
-> 인간 대뇌피질 뉴런 16B / 돌고래 5.8B = 2.759 ~ e = 2.718. delta = 0.04.
-> 두 의식 기질 간 비율이 자연상수? 골든존 중심 1/e의 역수?
+> Human cortical neurons 16B / Dolphin 5.8B = 2.759 ~ e = 2.718. delta = 0.04.
+> The ratio between two consciousness substrates is the natural constant? Inverse of Golden Zone center 1/e?
 
-## 배경
+## Background
 
-인간(Homo sapiens)과 병코돌고래(Tursiops truncatus)는
-지구에서 가장 높은 인지 능력을 가진 두 종으로 간주된다.
-두 종 모두 자기 인식(mirror test 통과), 도구 사용, 사회적 학습을 보인다.
+Humans (Homo sapiens) and bottlenose dolphins (Tursiops truncatus) are
+considered the two species with the highest cognitive abilities on Earth.
+Both species show self-recognition (passing mirror test), tool use, and social learning.
 
-대뇌피질 뉴런 수 (Herculano-Houzel, 2009; 2017):
-- 인간: ~16 billion (16 * 10^9)
-- 병코돌고래: ~5.8 billion (5.8 * 10^9)
+Cerebral cortex neuron count (Herculano-Houzel, 2009; 2017):
+- Human: ~16 billion (16 * 10^9)
+- Bottlenose dolphin: ~5.8 billion (5.8 * 10^9)
 
-비율: 16 / 5.8 = 2.759
+Ratio: 16 / 5.8 = 2.759
 
-자연상수 e = 2.71828...
+Natural constant e = 2.71828...
 
-| 값 | 수치 | 차이 |
+| Value | Number | Difference |
 |----|------|------|
-| 인간/돌고래 뉴런 비 | 2.759 | |
+| Human/dolphin neuron ratio | 2.759 | |
 | e | 2.718 | delta = 0.041 |
-| 상대 오차 | | 1.5% |
+| Relative error | | 1.5% |
 
-골든존 모델에서 중심값은 1/e = 0.3679이며, 이의 역수가 e이다.
-만약 "의식의 최적 기질 크기"가 골든존 중심과 관련된다면,
-가장 높은 의식을 가진 두 종의 뉴런 비율이 e인 것은
-의미 있는 연결일 수 있다.
+In the Golden Zone model, the center value is 1/e = 0.3679, and its reciprocal is e.
+If "optimal substrate size for consciousness" is related to the Golden Zone center,
+the fact that the neuron ratio of the two highest-consciousness species equals e
+could be a meaningful connection.
 
-## 예측
+## Predictions
 
-| 비교 | 비율 | e와의 차이 | 해석 |
+| Comparison | Ratio | Difference from e | Interpretation |
 |------|------|-----------|------|
-| 인간/돌고래 | 2.759 | +0.041 (+1.5%) | 주장의 핵심 |
-| 인간/침팬지 | 16B/6.2B = 2.58 | -0.14 (-5.1%) | 덜 정확 |
-| 인간/코끼리 | 16B/5.6B = 2.86 | +0.14 (+5.2%) | 덜 정확 |
-| 인간/까마귀 | 16B/1.2B = 13.3 | 해당 없음 | 매우 다름 |
+| Human/dolphin | 2.759 | +0.041 (+1.5%) | core of the claim |
+| Human/chimpanzee | 16B/6.2B = 2.58 | -0.14 (-5.1%) | less accurate |
+| Human/elephant | 16B/5.6B = 2.86 | +0.14 (+5.2%) | less accurate |
+| Human/crow | 16B/1.2B = 13.3 | N/A | very different |
 
 ```
-뉴런 비율 vs e:
+Neuron ratio vs e:
 
-비율 |
- 3.0 |     * 코끼리 (2.86)
- 2.8 |   * 돌고래 (2.759)    <-- e에 가장 근접
+ratio |
+ 3.0 |     * elephant (2.86)
+ 2.8 |   * dolphin (2.759)    <-- closest to e
  2.7 | --e-- (2.718)
- 2.6 |       * 침팬지 (2.58)
+ 2.6 |       * chimpanzee (2.58)
  2.4 |
      +--+--+--+--+-->
-        종
+        species
 ```
 
-핵심 예측:
-1. 인간/돌고래 비율이 e에 가장 가까운 종 쌍이다
-2. 다른 고인지 종과의 비율은 e에서 벗어난다
-3. 이 관계는 피질 뉴런에 특이적이며, 전체 뇌 뉴런 비율에서는 성립하지 않을 것
+Key predictions:
+1. Human/dolphin ratio is the species pair closest to e
+2. Ratios with other high-cognition species deviate from e
+3. This relationship is cortex-neuron-specific and will not hold for total brain neuron ratios
 
-## 검증 방법
+## Verification Methods
 
-**문헌 조사:**
-1. Herculano-Houzel(2009, 2017) 논문에서 정확한 뉴런 수 확인
-2. 다른 고인지 종의 피질 뉴런 수 수집:
-   - 침팬지, 고릴라, 코끼리, 범고래, 까마귀, 앵무새 등
-3. 모든 종 쌍의 뉴런 비율 계산
-4. e에 가장 가까운 쌍 탐색
+**Literature review:**
+1. Confirm exact neuron counts from Herculano-Houzel(2009, 2017) papers
+2. Collect cortical neuron counts for other high-cognition species:
+   - chimpanzee, gorilla, elephant, orca, crow, parrot, etc.
+3. Calculate neuron ratios for all species pairs
+4. Search for pairs closest to e
 
-**통계 검증:**
-1. 귀무가설: 임의의 두 종의 뉴런 비율이 e에 가까울 확률
-2. 모든 가능한 종 쌍에서 |ratio - e| 분포 계산
-3. 인간/돌고래의 p-value = (인간/돌고래보다 e에 가까운 쌍 수) / (전체 쌍 수)
-4. Bonferroni 보정 적용
+**Statistical verification:**
+1. Null hypothesis: probability that two arbitrary species' neuron ratio is close to e
+2. Calculate |ratio - e| distribution for all possible species pairs
+3. Human/dolphin p-value = (pairs closer to e than human/dolphin) / (total pairs)
+4. Apply Bonferroni correction
 
-**주의사항:**
-- 뉴런 수 자체에 측정 불확실성이 큼 (10-20%)
-- 16B, 5.8B은 추정치이며 정확한 값이 아님
-- 측정 오차 범위 내에서 비율이 2.5 ~ 3.1까지 변할 수 있음
+**Notes:**
+- There is large measurement uncertainty in neuron counts themselves (10-20%)
+- 16B, 5.8B are estimates, not exact values
+- Within measurement error range, ratio can vary from 2.5 ~ 3.1
 
-## 관련 가설
+## Related Hypotheses
 
-- 골든존 중심 = 1/e (자연상수의 역수)
-- **H-CX-155**: sigma*phi/(n*tau) = 1 스캔 (e가 등장하는 다른 맥락)
-- **H-CX-153**: N*ln((N+1)/N) 수열 (자연상수 관련)
-- 뇌 구조 관련: brain_analyzer.py 도구
+- Golden Zone center = 1/e (reciprocal of natural constant)
+- **H-CX-155**: sigma*phi/(n*tau) = 1 scan (another context where e appears)
+- **H-CX-153**: N*ln((N+1)/N) sequence (related to natural constant)
+- Brain structure related: brain_analyzer.py tool
 
-## 한계
+## Limitations
 
-1. **측정 불확실성**: 뉴런 수의 오차 범위(~20%)가 delta(1.5%)보다 훨씬 큼
-   - 16B +/- 3.2B, 5.8B +/- 1.2B이면 비율은 2.0 ~ 4.0 범위
-   - 이 범위 안에 e가 있는 것은 의미가 약함
-2. **선택 편향**: 인간과 비교할 종으로 돌고래를 "선택"한 것 자체가 편향
-3. **Strong Law of Small Numbers**: 2-3 범위의 비율에서 e가 나올 확률이 상당히 높음
-4. **인과 메커니즘 부재**: 왜 뉴런 비율이 e여야 하는지에 대한 이론적 근거 없음
-5. **다른 상수**: pi/2 = 1.571과 같은 다른 상수도 비슷한 "근사"를 주장할 수 있음
+1. **Measurement uncertainty**: error range of neuron counts (~20%) is far larger than delta (1.5%)
+   - 16B +/- 3.2B, 5.8B +/- 1.2B gives ratio range of 2.0 ~ 4.0
+   - e falling within this range has weak significance
+2. **Selection bias**: "choosing" dolphins as the species to compare with humans is itself a bias
+3. **Strong Law of Small Numbers**: probability of e appearing in ratios in the 2-3 range is fairly high
+4. **No causal mechanism**: no theoretical basis for why neuron ratio should be e
+5. **Other constants**: other constants like pi/2 = 1.571 can also make similar "approximation" claims
 
-## 검증 상태
+## Verification Status
 
-- [ ] 문헌 뉴런 수 정밀 확인
-- [ ] 다종 뉴런 비율 테이블 작성
-- [ ] 텍사스 명사수 p-value 계산
-- [ ] 측정 불확실성 전파 분석
-- 현재: **미검증** (Strong Law of Small Numbers 경고 해당)
+- [ ] Precise literature neuron count confirmation
+- [ ] Multi-species neuron ratio table
+- [ ] Texas Sharpshooter p-value calculation
+- [ ] Measurement uncertainty propagation analysis
+- Currently: **unverified** (Strong Law of Small Numbers warning applies)

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""H-CX-84 + H-CX-85 검증: 보존→시너지 조건 + dendrogram 계층
+"""H-CX-84 + H-CX-85 Verification: Conservation→Synergy Condition + dendrogram hierarchy
 
-H-CX-84: CV(ts×H0) vs synergy 음의 상관
-H-CX-85: dendrogram subtree = 의미적 카테고리
+H-CX-84: CV(ts×H0) vs synergy negative correlation
+H-CX-85: dendrogram subtree = semantic category
 """
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -238,7 +238,7 @@ if __name__ == '__main__':
             import traceback; traceback.print_exc()
 
     print(f"\n{'='*70}")
-    print(f"  5라운드 SUMMARY")
+    print(f"  Round 5 SUMMARY")
     print(f"{'='*70}")
 
     # H-CX-84

@@ -1,8 +1,8 @@
-# 가설 337: Fisher-Tension-Accuracy 삼각관계
+# Hypothesis 337: Fisher-Tension-Accuracy Triangle
 
-> **gradient(Fisher), 장력(Tension), 정확도(Accuracy)가 삼각관계. Fisher∝1/Accuracy(r=-0.97), Tension∝Accuracy(r=+0.14), Fisher∝1/Tension(r=-0.15). "gradient=배울것, tension=배운것, accuracy=결과".**
+> **Gradient (Fisher), Tension, and Accuracy form a triangle. Fisher∝1/Accuracy (r=-0.97), Tension∝Accuracy (r=+0.14), Fisher∝1/Tension (r=-0.15). "gradient=what remains to learn, tension=what has been learned, accuracy=result".**
 
-## 실측 (PureField, MNIST, per-class)
+## Measurements (PureField, MNIST, per-class)
 
 ```
   digit  Fisher   Tension   Accuracy
@@ -18,30 +18,30 @@
   d8     0.0026      162     96.3%
   d9     0.0035      199     94.6%
 
-  상관:
-    r(F, acc)  = -0.972  ← 거의 완벽!
+  Correlations:
+    r(F, acc)  = -0.972  ← nearly perfect!
     r(T, acc)  = +0.139
     r(F, T)    = -0.157
 
-  삼각관계:
+  Triangle:
     Fisher ←(-0.97)→ Accuracy ←(+0.14)→ Tension ←(-0.16)→ Fisher
 ```
 
-## 해석
+## Interpretation
 
 ```
-  Fisher = ∂Loss/∂x = "이 입력에서 얼마나 배울 게 남았나"
-  Tension = |A-G|² = "이 입력에 대해 얼마나 확신하나"
-  Accuracy = P(correct) = "실제로 맞추는가"
+  Fisher = ∂Loss/∂x = "how much remains to learn for this input"
+  Tension = |A-G|² = "how confident about this input"
+  Accuracy = P(correct) = "actually getting it right"
 
-  Fisher→Accuracy: 강함(-0.97) = gradient 큰 클래스는 못 맞춤
-  Tension→Accuracy: 약함(+0.14) = 확신이 높으면 약간 더 맞춤
-  Fisher→Tension: 약함(-0.16) = gradient 크면 장력 약간 낮음
+  Fisher→Accuracy: strong (-0.97) = class with large gradient gets it wrong
+  Tension→Accuracy: weak (+0.14) = higher confidence slightly improves accuracy
+  Fisher→Tension: weak (-0.16) = larger gradient slightly lowers tension
 
-  왜 Fisher-Accuracy가 가장 강한가?
-    Fisher는 loss에서 직접 계산 = accuracy와 직결
-    Tension은 A-G 차이 = accuracy의 간접 지표
-    → Fisher = "직접 측정", Tension = "간접 측정"
+  Why is Fisher-Accuracy the strongest?
+    Fisher is computed directly from loss = directly tied to accuracy
+    Tension is A-G difference = indirect indicator of accuracy
+    → Fisher = "direct measurement", Tension = "indirect measurement"
 ```
 
-## 상태: 🟩 확인 (r(F,acc)=-0.972, 삼각관계 수립)
+## Status: 🟩 Confirmed (r(F,acc)=-0.972, triangle relationship established)

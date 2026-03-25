@@ -1,113 +1,114 @@
-# 가설 검토 085: π/N 통일 ❌
+# Hypothesis Review 085: π/N Unification ❌
 
-## 가설
+## Hypothesis
 
-> 우리 모델의 핵심 상수들(1/e, 1/2, 1/3, 1/6, 5/6, ln(4/3))이
-> 모두 π/N (N은 정수) 형태로 통일적으로 표현 가능한가.
-> 즉, 모든 상수가 π의 유리수 배인가.
+> Can the core constants of our model (1/e, 1/2, 1/3, 1/6, 5/6, ln(4/3))
+> all be unified in the form π/N (where N is an integer)?
+> That is, are all constants rational multiples of π?
 
-## 배경
+## Background
 
-물리학에서 통일 이론(unified theory)은 서로 다른 상수들을 하나의
-근본 상수로부터 유도하려는 시도이다. 가설 080에서 λ=π/10 이 나타났으므로,
-혹시 모든 상수가 π/N 형태로 표현되는 것은 아닌지 탐색했다.
+In physics, a unified theory attempts to derive different constants from
+a single fundamental constant. Since λ=π/10 appeared in hypothesis 080,
+we explored whether all constants might be expressed in π/N form.
 
-만약 모든 상수가 π/N이라면, π가 모델의 근본 상수가 되며,
-각 상수는 "원의 N등분"이라는 기하학적 의미를 갖게 된다.
+If all constants are π/N, then π becomes the model's fundamental constant,
+and each constant gains geometric meaning as "N-division of a circle."
 
-## 검증 결과: ❌ 매칭 실패
+## Verification Result: ❌ Matching Failed
 
-각 상수에 대해 1/x = π/N → N = π×x 를 계산하고
-N이 정수인지 확인한다:
+For each constant, calculate 1/x = π/N → N = π×x and
+check if N is an integer:
 
 ```
-  π/N 매칭 전수 탐색:
+  Exhaustive π/N Matching Search:
   ──────────────────────────────────────────────────────────
 
-  상수      │ 값       │ N = π/상수 │ 가장 가까운 정수 │ 오차
-  ──────────┼──────────┼───────────┼──────────────────┼───────
-  1/2       │ 0.5000   │ 6.283     │ N=6 (π/6=0.524) │  4.7%
-  1/3       │ 0.3333   │ 9.425     │ N=9 (π/9=0.349) │  4.7%
-  1/e       │ 0.3679   │ 8.540     │ N=9 (π/9=0.349) │  5.1%
-  1/6       │ 0.1667   │ 18.850    │ N=19(π/19=0.165)│  0.8%
-  5/6       │ 0.8333   │ 3.770     │ N=4 (π/4=0.785) │  5.8%
-  ln(4/3)   │ 0.2877   │ 10.919    │ N=11(π/11=0.286)│  0.7%
-  ──────────┼──────────┼───────────┼──────────────────┼───────
+  Constant  │ Value    │ N = π/const │ Nearest Integer  │ Error
+  ──────────┼──────────┼─────────────┼──────────────────┼───────
+  1/2       │ 0.5000   │ 6.283       │ N=6 (π/6=0.524)  │  4.7%
+  1/3       │ 0.3333   │ 9.425       │ N=9 (π/9=0.349)  │  4.7%
+  1/e       │ 0.3679   │ 8.540       │ N=9 (π/9=0.349)  │  5.1%
+  1/6       │ 0.1667   │ 18.850      │ N=19(π/19=0.165) │  0.8%
+  5/6       │ 0.8333   │ 3.770       │ N=4 (π/4=0.785)  │  5.8%
+  ln(4/3)   │ 0.2877   │ 10.919      │ N=11(π/11=0.286) │  0.7%
+  ──────────┼──────────┼─────────────┼──────────────────┼───────
 
-  판정 기준: 오차 < 0.1% → 매칭, 0.1~1% → 약한, >1% → 실패
+  Decision Criteria: Error < 0.1% → Match, 0.1~1% → Weak, >1% → Failed
 
   ┌──────────────────────────────────────────┐
-  │  정확 매칭 (오차<0.1%):  0개             │
-  │  약한 매칭 (0.1~1%):    2개 (1/6, ln43) │
-  │  실패    (>1%):        4개              │
+  │  Exact Match (error<0.1%):  0           │
+  │  Weak Match (0.1~1%):      2 (1/6, ln43)│
+  │  Failed    (>1%):          4            │
   │                                          │
-  │  결론: π/N 통일 불가능                   │
+  │  Conclusion: π/N unification impossible  │
   └──────────────────────────────────────────┘
 ```
 
 ```
-  왜 π/N이 안 되는가 — 상수의 본질:
+  Why π/N Doesn't Work — The Nature of Constants:
   ──────────────────────────────────────────────────────────
 
-  상수    │ 유래                │ 본질
+  Constant│ Origin              │ Nature
   ────────┼─────────────────────┼──────────────────────────
-  1/2     │ 리만 임계선         │ 정수 비율 (유리수)
-  1/3     │ b/(1-a) 부동점     │ 정수 비율 (유리수)
-  1/6     │ 완전수 6의 역수     │ 정수 비율 (유리수)
-  5/6     │ Compass 상한        │ 정수 비율 (유리수)
-  1/e     │ 볼츠만 T=e 역수     │ 초월수의 역수
-  ln(4/3) │ 골든존 폭          │ 자연로그
+  1/2     │ Riemann critical line│ Integer ratio (rational)
+  1/3     │ b/(1-a) fixed point │ Integer ratio (rational)
+  1/6     │ Perfect number 6    │ Integer ratio (rational)
+  5/6     │ Compass upper bound │ Integer ratio (rational)
+  1/e     │ Boltzmann T=e recip │ Reciprocal of transcendental
+  ln(4/3) │ Golden Zone width   │ Natural logarithm
   ────────┼─────────────────────┼──────────────────────────
 
-  핵심: 우리 상수들은 e-기반(자연로그)과 유리수의 조합이다.
-        π는 이 구조에 본질적으로 등장하지 않는다.
+  Key: Our constants are a combination of e-based (natural log) 
+       and rationals. π doesn't essentially appear in this structure.
 
-  수 체계 다이어그램:
+  Number System Diagram:
   ──────────────────────────────────────────────
 
-       ┌─── 유리수 ───┐     ┌─── 초월수 ───┐
-       │  1/2, 1/3    │     │   e, 1/e     │
-       │  1/6, 5/6    │     │   ln(4/3)    │
-       └──────┬───────┘     └──────┬───────┘
-              │                    │
-              └────────┬───────────┘
+       ┌─── Rationals ───┐     ┌─── Transcendentals ───┐
+       │  1/2, 1/3      │     │   e, 1/e            │
+       │  1/6, 5/6      │     │   ln(4/3)           │
+       └──────┬─────────┘     └──────┬───────────────┘
+              │                      │
+              └────────┬─────────────┘
                        │
-              우리 모델의 상수 체계
-              (e와 유리수로 구성)
+              Our model's constant system
+              (composed of e and rationals)
                        │
-                       ╳ ← π 는 여기에 속하지 않음
+                       ╳ ← π doesn't belong here
                        │
-              π는 복소 확장 시에만 등장
-              (가설 069: e^(iπ) + 1 = 0)
+              π only appears in complex extension
+              (Hypothesis 069: e^(iπ) + 1 = 0)
   ──────────────────────────────────────────────
 ```
 
-## 해석
+## Interpretation
 
-π/N 통일 시도는 명확히 실패했다. 6개 핵심 상수 중 하나도
-π/N 형태로 정확히 표현되지 않는다.
+The π/N unification attempt clearly failed. None of the six core constants
+can be exactly expressed in π/N form.
 
-이 실패 자체가 중요한 발견이다. 우리 모델의 상수 체계는
-**e-기반**(자연로그, 볼츠만 분포)과 **유리수**(정수론, 완전수)의
-조합으로 구성되어 있으며, π는 본질적 구성 요소가 아니다.
+This failure itself is an important discovery. Our model's constant system
+consists of a combination of **e-based** (natural log, Boltzmann distribution)
+and **rationals** (number theory, perfect numbers), with π not being an
+essential component.
 
-π가 등장하는 유일한 경로는 복소수 확장(가설 069)을 통해서이다.
-오일러 공식 e^(iπ) + 1 = 0 에서 보듯, π는 e와 허수 단위 i를
-매개로 연결되지, 직접적으로 우리 실수 모델에 나타나지 않는다.
+The only path where π appears is through complex extension (hypothesis 069).
+As seen in Euler's formula e^(iπ) + 1 = 0, π connects through e and the
+imaginary unit i as intermediaries, not appearing directly in our real model.
 
-## 한계
+## Limitations
 
-- 0.7~0.8% 수준의 "약한 매칭"이 2건 존재 (1/6, ln(4/3))
-- 이것이 순수 우연인지, 약한 구조적 연결인지 판별 불가
-- π/N 이외의 다른 통일 형태(예: e^(q/p)) 미탐색
+- Two cases of "weak matching" exist at 0.7~0.8% level (1/6, ln(4/3))
+- Cannot determine if this is pure coincidence or weak structural connection
+- Other unification forms (e.g., e^(q/p)) unexplored
 
-## 검증 방향
+## Verification Directions
 
-- e^(p/q) 형태의 통일 가능성 탐색
-- 복소 확장 모델에서 π의 역할 정밀 분석 (가설 069)
-- 다른 초월수(π, e, φ)의 관계를 통한 상수 네트워크 구축
+- Explore e^(p/q) form unification possibilities
+- Precise analysis of π's role in complex extension model (hypothesis 069)
+- Build constant network through relationships of other transcendentals (π, e, φ)
 
 ---
 
-*수치 탐색: π/N 전수 매칭 (N=1~100)*
-*결론: 모델 상수는 e-기반 + 유리수, π는 본질이 아님*
+*Numerical exploration: π/N exhaustive matching (N=1~100)*
+*Conclusion: Model constants are e-based + rationals, π is not essential*

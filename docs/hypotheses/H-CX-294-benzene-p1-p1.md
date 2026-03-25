@@ -1,3 +1,3 @@
-# H-CX-294: 🟩 벤젠 C₆H₆ = P₁+P₁
+# H-CX-294: 🟩 Benzene C₆H₆ = P₁+P₁
 
-> 탄소6+수소6 = 완전수+완전수. 유기화학의 기본 고리.
+> Carbon6+Hydrogen6 = Perfect number+Perfect number. The fundamental ring of organic chemistry.

@@ -1,25 +1,25 @@
-# 가설 검토 075: 복소 골든존 = 불규칙 형태 ✅
+# Hypothesis Review 075: Complex Golden Zone = Irregular Shape ✅
 
-## 가설
+## Hypothesis
 
-> 복소 평면에서 골든존의 경계가 원, 타원, 또는 다른 규칙적 도형인가.
-> |G(z)| > threshold 를 만족하는 z = I·e^(iθ) 의 집합은 어떤 형태인가.
+> Is the boundary of the Golden Zone in the complex plane a circle, ellipse, or other regular shape?
+> What is the shape of the set of z = I·e^(iθ) satisfying |G(z)| > threshold?
 
-## 배경
+## Background
 
-실수 축에서 골든존은 단순 구간 I ∈ [0.24, 0.48] 이다.
-복소 평면으로 확장하면 I → z = r·e^(iφ) 가 되고,
-골든존은 2차원 영역이 된다.
+On the real axis, the Golden Zone is a simple interval I ∈ [0.24, 0.48].
+Extending to the complex plane, I → z = r·e^(iφ),
+and the Golden Zone becomes a 2D region.
 
-기대 형태:
-- 원 (|z - z₀| < R) → z₀ = 1/e 중심의 원?
-- 타원 → 실수/허수 축 방향 다른 반지름?
-- 불규칙 → 그 어느 것도 아님?
+Expected shapes:
+- Circle (|z - z₀| < R) → Circle centered at z₀ = 1/e?
+- Ellipse → Different radii in real/imaginary axis directions?
+- Irregular → None of the above?
 
-## 검증 결과: ✅ 불규칙 (원도 타원도 아님)
+## Verification Result: ✅ Irregular (neither circle nor ellipse)
 
 ```
-  복소 평면 골든존 형태 (|G(z)| > 2.0 영역)
+  Complex Plane Golden Zone Shape (|G(z)| > 2.0 region)
   z = r·e^(iφ), D=0.7, P=0.8
   ──────────────────────────────────────────────
 
@@ -40,59 +40,60 @@
        └──┬────┬────┬────┬────┬──
         0.1  0.2  0.3  0.4  0.5
 
-  ● = 골든존 실수 축 경계 (0.24, 0.48)
-  ━ = 실수 축 골든존 (선분)
-  · = 복소 골든존 경계 (불규칙)
+  ● = Golden Zone real axis boundary (0.24, 0.48)
+  ━ = Real axis Golden Zone (line segment)
+  · = Complex Golden Zone boundary (irregular)
 ```
 
 ```
-  비대칭성 분석:
+  Asymmetry Analysis:
   ──────────────────────────────────────────────
-  방향       최대 반지름    형태
+  Direction      Max Radius     Shape
   ──────────────────────────────────────────────
-  φ = 0   (실수+)    0.120    (0.48 - 1/e)
-  φ = π   (실수-)    0.128    (1/e - 0.24)
-  φ = π/2 (허수+)    0.195    더 넓음!
-  φ = -π/2(허수-)    0.172    허수+보다 좁음
-  φ = π/4           0.163    중간값
-  φ = 3π/4          0.141    중간값
+  φ = 0   (real+)    0.120    (0.48 - 1/e)
+  φ = π   (real-)    0.128    (1/e - 0.24)
+  φ = π/2 (imag+)    0.195    wider!
+  φ = -π/2(imag-)    0.172    narrower than imag+
+  φ = π/4            0.163    intermediate
+  φ = 3π/4           0.141    intermediate
   ──────────────────────────────────────────────
 
-  관찰:
-  1. 허수 방향(±π/2)이 실수 방향(0, π)보다 넓다
-  2. 허수 양(+) 방향이 허수 음(-) 방향보다 넓다 → 비대칭!
-  3. 원이라면 모든 방향이 같아야 → 원 아님
-  4. 타원이라면 ±방향이 같아야 → 타원 아님
-  → 불규칙 형태 확인
+  Observations:
+  1. Imaginary directions (±π/2) are wider than real directions (0, π)
+  2. Positive imaginary (+) direction is wider than negative (-) → asymmetric!
+  3. If circle, all directions should be equal → not a circle
+  4. If ellipse, ± directions should be equal → not an ellipse
+  → Irregular shape confirmed
 ```
 
 ```
-  왜 비대칭인가?
+  Why Asymmetric?
   ──────────────────────────────────────────────
-  G(z) = D × P / z  에서  z = r·e^(iφ)
+  G(z) = D × P / z  where  z = r·e^(iφ)
 
-  |G(z)| = D×P/r     (크기는 r에만 의존)
-  arg(G)  = -φ        (위상은 φ에만 의존)
+  |G(z)| = D×P/r     (magnitude depends only on r)
+  arg(G)  = -φ       (phase depends only on φ)
 
-  BUT: 메타 반복 f(z) = a·z + b 에서
-  수렴 조건 |a·e^(iφ)| < 1 이 φ에 따라 달라짐
+  BUT: In meta-iteration f(z) = a·z + b
+  convergence condition |a·e^(iφ)| < 1 varies with φ
 
-  φ > 0: 나선이 안쪽으로 → 수렴 빠름 → 골든존 넓어짐
-  φ < 0: 나선이 바깥으로 → 수렴 느림 → 골든존 좁아짐
-  φ = 0: 직선 수렴 → 중간
+  φ > 0: spiral inward → faster convergence → wider Golden Zone
+  φ < 0: spiral outward → slower convergence → narrower Golden Zone
+  φ = 0: straight convergence → intermediate
 
-  → +허수 방향과 -허수 방향의 수렴 특성이 다르므로 비대칭
+  → +imaginary and -imaginary directions have different convergence
+    characteristics, hence asymmetric
 ```
 
-## 해석
+## Interpretation
 
-복소 골든존의 불규칙 형태는 모델의 비선형 구조를 반영한다.
-단순 원이나 타원이 아닌 것은 G(z)의 특이점(z=0)과 메타 반복의
-수렴 특성이 결합되어 만들어내는 결과이다.
+The irregular shape of the complex Golden Zone reflects the model's nonlinear structure.
+Not being a simple circle or ellipse is the result of combining G(z)'s singularity (z=0)
+with the convergence characteristics of meta-iteration.
 
-실수 모델의 "선분" 골든존은 이 불규칙 영역의 단면(cross-section)에 불과하다.
+The "line segment" Golden Zone of the real model is merely a cross-section of this irregular region.
 
 ---
 
-*검증: verify_next_batch.py*
-*모델: G(z) = D×P/z, z = r·e^(iφ), 골든존 = {z : |G(z)| > threshold}*
+*Verification: verify_next_batch.py*
+*Model: G(z) = D×P/z, z = r·e^(iφ), Golden Zone = {z : |G(z)| > threshold}*

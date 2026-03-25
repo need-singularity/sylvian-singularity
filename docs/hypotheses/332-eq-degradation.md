@@ -1,11 +1,11 @@
-# 가설 332: eq 퇴화 — 의식(field)이 기본 감각(eq)을 흡수한다
+# Hypothesis 332: eq Degradation — Consciousness (field) Absorbs Basic Sense (eq)
 
-> **학습이 진행되면 equilibrium이 89%→15%로 퇴화하고, field가 91%→96%로 성장한다. 반발력장(field)이 eq의 역할을 흡수하여, 최종적으로 판단의 96%를 field가 담당.**
+> **As training progresses, equilibrium degrades from 89%→15%, and field grows from 91%→96%. The repulsion field (field) absorbs the role of eq, and ultimately field handles 96% of judgments.**
 
-## 실측 (MNIST)
+## Measurements (MNIST)
 
 ```
-  ep    full%    eq%    field%   field 기여
+  ep    full%    eq%    field%   field contrib
   ───   ─────   ─────   ─────   ─────────
   1     91.7    89.0    90.5     +2.7
   2     93.8    88.9    92.9     +4.9
@@ -15,7 +15,7 @@
   15    98.0    18.7    93.8    +79.3
   20    98.0    14.9    95.6    +83.1
 
-  ASCII 그래프:
+  ASCII graph:
     100 |e f                    f  f  f  f
      90 | ef    f  f
      80 |  e
@@ -28,39 +28,39 @@
     e=eq, f=field
 ```
 
-## 해석
+## Interpretation
 
 ```
-  초기(ep1): eq와 field 모두 ~90% → 두 경로가 독립적으로 학습
-  중기(ep5): field가 eq보다 표현력 풍부 → 역할 흡수 시작
-  후기(ep20): eq→15%(=랜덤+bias), field→96%(=거의 전부)
+  Early (ep1): eq and field both ~90% → two paths learn independently
+  Mid (ep5): field has richer representation than eq → begins absorbing role
+  Late (ep20): eq→15%(=random+bias), field→96%(=almost everything)
 
-  왜 eq가 퇴화하는가?
-    gradient가 full output에서 역전파
-    → field가 loss를 더 잘 줄임 → field 방향으로 gradient 집중
-    → eq는 gradient가 줄어듦 → "학습 기회를 빼앗김"
-    → 결국 eq는 random initialization 근처로 퇴화
+  Why does eq degrade?
+    gradient backpropagates from full output
+    → field reduces loss better → gradient concentrates toward field direction
+    → eq receives less gradient → "learning opportunities stolen"
+    → eventually eq degrades near random initialization
 
-  C48 설명: field=0이면 eq만 남는데 eq=15%
-    → tension 제거가 -9.25pp인 이유 = eq가 이미 퇴화했기 때문!
+  C48 explanation: if field=0, only eq remains and eq=15%
+    → reason tension removal is -9.25pp = eq has already degraded!
 
-  Kahneman 수정:
-    뇌: System 2(의식) → System 1(자동화) [숙련되면 무의식으로]
-    엔진: System 1(eq) → System 2(field) [학습되면 의식이 독점]
-    → 반대 방향! 엔진에서는 "의식이 자동화를 대체"
+  Kahneman revision:
+    Brain: System 2(conscious) → System 1(automated) [becomes unconscious with expertise]
+    Engine: System 1(eq) → System 2(field) [consciousness monopolizes with training]
+    → Opposite direction! In engines, "consciousness replaces automation"
 ```
 
-## CIFAR 재현 (2026-03-24)
+## CIFAR Replication (2026-03-24)
 
 ```
   CIFAR:
-    ep1: eq=32%, field=32% (비슷)
-    ep15: eq=17%, field=46% (eq 퇴화!)
+    ep1: eq=32%, field=32% (similar)
+    ep15: eq=17%, field=46% (eq degradation!)
 
-  2셋 비교:
+  2-dataset comparison:
     MNIST: eq 89→15% (-74pp)
     CIFAR: eq 32→17% (-15pp)
-  → 두 데이터셋 모두 eq 퇴화 확인!
+  → eq degradation confirmed in both datasets!
 ```
 
-## 상태: 🟩 2셋 확인 (MNIST -74pp, CIFAR -15pp)
+## Status: 🟩 2-dataset confirmed (MNIST -74pp, CIFAR -15pp)

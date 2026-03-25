@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""가설 296: 분열 + 이상탐지 — 분열된 엔진 간 장력이 더 나은 이상 점수인가"""
+"""Hypothesis 296: Mitosis + Anomaly Detection — Is tension between split engines a better anomaly score"""
 
 import sys
 sys.path.insert(0, '/Users/ghost/Dev/logout')
@@ -38,7 +38,7 @@ def mitosis(parent, scale=0.01):
 
 def main():
     print("=" * 70)
-    print("가설 296: 분열 + 이상탐지")
+    print("Hypothesis 296: Mitosis + Anomaly Detection")
     print("=" * 70)
 
     # Load breast cancer
@@ -132,26 +132,26 @@ def main():
     best_inter = np.mean(results_all['inter'])
     best_comb = np.mean(results_all['combined'])
 
-    print(f"\n  분석:")
+    print(f"\n  Analysis:")
     if best_inter > best_int:
-        print(f"    자식간 장력(inter) > 내부 장력(internal): {best_inter:.4f} > {best_int:.4f}")
-        print(f"    → H296 지지: 분열이 이상탐지 성능 향상")
+        print(f"    Inter-child tension > internal tension: {best_inter:.4f} > {best_int:.4f}")
+        print(f"    → H296 supported: Mitosis improves anomaly detection performance")
     else:
-        print(f"    자식간 장력(inter) ≤ 내부 장력(internal): {best_inter:.4f} ≤ {best_int:.4f}")
-        print(f"    → H296 반박: 분열이 이상탐지에 추가 기여 없음")
+        print(f"    Inter-child tension ≤ internal tension: {best_inter:.4f} ≤ {best_int:.4f}")
+        print(f"    → H296 refuted: Mitosis provides no additional contribution to anomaly detection")
 
     if best_comb > max(best_int, best_inter):
-        print(f"    결합(combined)이 최고: {best_comb:.4f}")
-        print(f"    → 내부 + 간 장력 정보가 보완적")
+        print(f"    Combined is best: {best_comb:.4f}")
+        print(f"    → Internal + inter tension information is complementary")
 
     # ASCII bar chart
-    print(f"\n  AUROC 비교:")
+    print(f"\n  AUROC Comparison:")
     for k, v in results_all.items():
         m = np.mean(v)
         bar = '#' * int(m * 50)
         print(f"    {k:>10} |{bar}| {m:.4f}")
 
-    print(f"\n완료")
+    print(f"\nComplete")
 
 if __name__ == '__main__':
     main()

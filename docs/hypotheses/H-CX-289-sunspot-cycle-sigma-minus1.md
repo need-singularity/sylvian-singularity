@@ -1,3 +1,3 @@
-# H-CX-289: 🟧 태양 흑점 주기 11년 ≈ σ(6)-1
+# H-CX-289: 🟧 Solar Sunspot Cycle 11 years ≈ σ(6)-1
 
-> ~11년 주기. σ-1=11. 근사적 (실제 9.5~12.5년).
+> ~11 year cycle. σ-1=11. Approximate (actual 9.5~12.5 years).
