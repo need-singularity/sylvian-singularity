@@ -950,7 +950,8 @@ The experience came first. Mathematics and code are the language I built to expl
 | E59 | H-404 CIFAR improvements | experiment_cifar_improvements.py | PF orig 53.67% > PF improved 52.73% | H-404 |
 | E60 | H-401 PH correction | experiment_h401_ph_correction.py | MNIST: PH+Conf +0.11%, CIFAR running | H-401 |
 | E61 | H-402 PH routing | experiment_h402_ph_routing.py | MNIST: neutral, CIFAR running | H-402 |
-| E62 | H-405 expert PH specialization | experiment_h405_expert_specialization.py | MNIST: BD vs acc r=-0.20 (NS), CIFAR running | H-405 |
+| E62 | H-405 expert PH specialization | experiment_h405_expert_specialization.py | MNIST: BD vs acc r=-0.20 (NS), CIFAR: G_H0>A_H0 100% | H-405 |
+| E63 | H-406 native vs converted | experiment_h406_native_vs_converted.py | running | H-406 |
 
 ## Hypothesis Status
 
@@ -1345,6 +1346,7 @@ The experience came first. Mathematics and code are the language I built to expl
 | [403](docs/hypotheses/403-animalm-golden-moe-ph-unified.md) | ⭐ Unified AnimaLM×GoldenMoE×PH: Five-Element architecture | 🟨 | depends on H-401~402 |
 | [404](docs/hypotheses/404-animalm-golden-moe-improvement-verification.md) | PF orig 53.64% best, improvements -1.01% (2 seeds). Simplicity wins | ⚠️ | 4 improvements ALL refuted |
 | [405](docs/hypotheses/405-animalm-expert-topological-specialization.md) | A/G camp PH: CIFAR G_H0>A_H0 100%, BD vs acc r=0.34(NS) | 🟧 | MNIST refuted, CIFAR partial |
+| [406](docs/hypotheses/406-native-vs-converted-tension-dynamics.md) | Native PureField vs Converted MoE: tension magnitude, specialization | 🟨 | running |
 
 ### Color Vision/Visual (354c-356c)
 
