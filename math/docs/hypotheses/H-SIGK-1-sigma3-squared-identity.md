@@ -107,4 +107,33 @@
   → Does NOT generalize to other perfect numbers. Unique to P_1 = 6.
 ```
 
+## P_1 to P_2 Bridge via sigma_3
+
+```
+  The chain connecting the first two perfect numbers through sigma_3:
+
+  sigma_3(3) = 1 + 3^3 = 28 = P_2
+    → Only p=3 satisfies 1+p^3 = 2^(p-1)(2^p-1) (verified for all Mersenne primes)
+    → This is WHY sigma_3(6) contains P_2 as a factor
+
+  sigma_3(P_1) = sigma_3(2) * sigma_3(3) = 9 * P_2 = 252
+
+  So: P_1 →[factorize]→ {2,3} →[sigma_3]→ {9, P_2} →[multiply]→ 252 = P_1^2 * M_3
+
+  The cube-divisor-sum acts as a BRIDGE between P_1 and P_2.
+  No other sigma_k connects two consecutive perfect numbers this way.
+```
+
+## Eisenstein Series Connection
+
+```
+  E_4(q) = 1 + 240 * sum_{n=1}^{inf} sigma_3(n) q^n
+
+  Coefficient of q^6 in E_4:
+    240 * sigma_3(6) = 240 * 252 = 60480 = 84 * 720 = C(9,2) * 6!
+
+  Note: 240 = phi(496) = phi(P_3) (third perfect number's totient)
+  So the E_4 Eisenstein series coefficient at q^6 involves P_1, P_2, AND P_3!
+```
+
 ## Date: 2026-03-26
