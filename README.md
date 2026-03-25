@@ -1326,7 +1326,7 @@ The experience came first. Mathematics and code are the language I built to expl
 | [398](docs/hypotheses/398-sodium-channel-4x6-perfect-architecture.md) | Nav 4×6=24=4!=2σ(6), ALL ion channels universal, 600Myr conserved | 🟨 | ⭐ GZ-independent biology |
 | [399](docs/hypotheses/399-human-ttx-fugu-consciousness.md) | Fugu = human TTX microdose, lip tingle = β≈0.95, 2300yr tradition | 🟨 | H-359 savant cross |
 | [400](docs/hypotheses/400-dolphin-thc-impossible-experiment.md) | ⭐ Species-substance matching: organisms navigate toward (1/e,1/e) diagonal | 🟨 | ⭐ variational principle |
-| [401](docs/hypotheses/401-animalm-ph-correction.md) | AnimaLM + PH: content vs structural tension | 🟧 | MNIST: PH+Conf +0.11%, CIFAR running |
+| [401](docs/hypotheses/401-animalm-ph-correction.md) | PH correction +0.66% CIFAR (2 seeds). alpha<0 = dampen mode | 🟩 | ⭐ H-401 SUPPORTED |
 | [402](docs/hypotheses/402-golden-moe-ph-routing.md) | Golden MoE + PH routing: topology-aware expert selection | 🟨 | MNIST: neutral (ceiling), CIFAR running |
 | [403](docs/hypotheses/403-animalm-golden-moe-ph-unified.md) | ⭐ Unified AnimaLM×GoldenMoE×PH: Five-Element architecture | 🟨 | depends on H-401~402 |
 | [404](docs/hypotheses/404-animalm-golden-moe-improvement-verification.md) | PF orig 53.64% best, improvements -1.01% (2 seeds). Simplicity wins | ⚠️ | 4 improvements ALL refuted |
