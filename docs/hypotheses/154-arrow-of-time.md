@@ -1,4 +1,4 @@
-# Hypothesis Review 154: Arrow of Time = Direction of Meta-Convergence
+# Hypothesis Review 154: Arrow of Time = Direction of Meta-Convergence — REFUTED
 
 ## Hypothesis
 
@@ -165,6 +165,22 @@ Combined with Hypothesis 151 (inflation): inflation is the period where I decrea
 - [ ] Combine with Hypothesis 152 (dark energy fixed point): does w=-1 determine the direction of the arrow of time?
 
 ## Status: ✅ Structural correspondence confirmed
+
+## Verification Result — REFUTED (2026-03-26)
+
+**Status: REFUTED (internal contradiction)**
+
+The hypothesis contains a fatal internal contradiction with the I=1/(kT) mapping listed in CLAUDE.md:
+
+- As the universe cools (T decreases over time), I=1/(kT) INCREASES. But the hypothesis requires I to DECREASE over time. These go in opposite directions.
+- At Big Bang: T approaches infinity, so I=1/(kT) approaches 0 — not infinity as the hypothesis claims.
+- At heat death: T approaches 0, so I=1/(kT) approaches infinity — not 1/3 as the hypothesis claims.
+
+The direction is exactly backwards. The entire timeline and correspondence mapping are inverted.
+
+If I is NOT defined as 1/(kT), then the mapping becomes vacuous: any monotonically decreasing function paired with any monotonically increasing function will show an "inverse relationship," which is not a meaningful structural correspondence.
+
+Additionally, the argument is circular: the f(I) iteration presupposes a time ordering (iteration count n increases), so it cannot explain the arrow of time — it already assumes it.
 
 ---
 

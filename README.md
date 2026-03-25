@@ -853,6 +853,22 @@ The experience came first. Mathematics and code are the language I built to expl
   Grand unification: 70+ phenomena = Perfect Number 6 + natural constant e (Texas p=5.87×10⁻⁷)
   Math chain: B₂=1/6 → ζ(2)=π²/6 → w²-6w+ζ(2)≈0 → Golden Zone → F(6)/6=4/3 → σφ=nτ→6
   Physics: entire Standard Model(quarksP₁,leptonsP₁,sumσ,bosonsτ,gluonsσ-τ) + string theory extra dimension=P₁
+
+  --- 2026-03-26: Universe Self-Evolution Hypothesis Mass Verification ---
+  9 universe hypotheses verified in parallel. Results:
+  ⬛ H150 Universe topology: REFUTED — S³ is NOT contractible (π₃=Z), math error
+  ⬛ H154 Arrow of time: REFUTED — I=1/(kT) direction contradiction (T↓→I↑, not I↓)
+  ⚪ H149 Universe curvature: coincidence — generic "both are boundaries"
+  ⚪ H151 Inflation=GZ entry: coincidence — no consistent I(E) mapping exists
+  ⚪ H152 Dark energy w=-1: coincidence — w=-1 definitional, I*=1/3 arbitrary coefficients
+  ⚪ H153 Hubble tension: coincidence — 8.3% vs 0.5% = 17x scale mismatch
+  🟧 H118 Universe composition: downgraded — Texas p=0.015 marginal, 1/e³ only strong
+  🟨 H163 Pre-Big Bang I→∞: maintained — reverse iteration diverges, internally consistent
+  ⭐🟧★ H-PH-9 String unification: τ(P_k)=2p PROVEN, 4/5 dim match, φ(496)=240=E8, p~0.04 corrected
+
+  Conclusion: 2 refuted, 4 coincidence, 1 borderline, 1 maintained, 1 strong but inflated
+  Key lesson: Most universe-model correspondences are superficial pattern-matching
+  Only H163(reverse iteration) and H-PH-9(proven theorem+E8) have genuine structural content
 ```
 
 ### Experiment List (65+ items)
@@ -1017,7 +1033,7 @@ The experience came first. Mathematics and code are the language I built to expl
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
-| [118](docs/hypotheses/118-cosmos-constants.md) | Universe composition = our constants | ✅ | |
+| [118](docs/hypotheses/118-cosmos-constants.md) | Universe composition = our constants | 🟧 | | Texas p=0.015 marginal, 1/e³ only strong, post-hoc 3-e |
 | [123](docs/hypotheses/123-one-sentence.md) | One sentence = σ₋₁(6)=2 | ✅ | |
 | [124](docs/hypotheses/124-topology-step-function.md) | ★ Phase acceleration = step function | ✅ | ⭐ Jamba demonstrated |
 | [125](docs/hypotheses/125-jamba-3x.md) | Jamba = Mixtral ×3 | ✅ | |
@@ -1041,12 +1057,12 @@ The experience came first. Mathematics and code are the language I built to expl
 | [144](docs/hypotheses/144-hawking-radiation-curiosity.md) | Hawking radiation = Curiosity | 🟨 | |
 | [145](docs/hypotheses/145-micro-macro-boundary.md) | Micro-macro boundary = GZ transition | 🟨 | |
 | [146](docs/hypotheses/146-decoherence-inhibition.md) | Decoherence = Inhibition | 🟨 | |
-| [149](docs/hypotheses/149-universe-curvature.md) | Universe curvature ↔ GZ critical point | 🟨 | |
-| [150](docs/hypotheses/150-universe-topology.md) | Universe topology ↔ GZ equivalence | 🟨 | |
-| [151](docs/hypotheses/151-inflation-golden-entry.md) | Inflation = GZ entry | 🟨 | |
-| [152](docs/hypotheses/152-dark-energy-fixed-point.md) | Dark energy w=-1 ↔ I*=1/3 | 🟨 | |
-| [153](docs/hypotheses/153-hubble-tension.md) | Hubble tension ↔ model error | 🟨 | |
-| [154](docs/hypotheses/154-arrow-of-time.md) | Arrow of time = meta-convergence | 🟨 | |
+| [149](docs/hypotheses/149-universe-curvature.md) | Universe curvature ↔ GZ critical point | ⚪ | | Generic boundary value similarity, no structural link |
+| [150](docs/hypotheses/150-universe-topology.md) | Universe topology ↔ GZ equivalence | ⬛ | | REFUTED: S³ not contractible, math error |
+| [151](docs/hypotheses/151-inflation-golden-entry.md) | Inflation = GZ entry | ⚪ | | No consistent I(E) mapping, qualitative only |
+| [152](docs/hypotheses/152-dark-energy-fixed-point.md) | Dark energy w=-1 ↔ I*=1/3 | ⚪ | | w=-1 definitional, I*=1/3 from arbitrary coefficients |
+| [153](docs/hypotheses/153-hubble-tension.md) | Hubble tension ↔ model error | ⚪ | | 17x scale mismatch, self-refuting |
+| [154](docs/hypotheses/154-arrow-of-time.md) | Arrow of time = meta-convergence | ⬛ | | REFUTED: I=1/(kT) contradiction, direction reversed |
 
 ### Neuroscience/Consciousness Definition (155-175)
 

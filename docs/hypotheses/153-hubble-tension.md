@@ -162,10 +162,19 @@ However, the general lesson that "discrepancies arise when measuring the same th
 - [ ] Check whether "scale-dependent I" exists in the model (see Hypothesis 128)
 - [ ] Explore correspondence with other cosmological tensions (S₈ tension, etc.)
 
-## Status: ❌ Direct correspondence fails (scale mismatch)
+## Status: ⚪ Downgraded to coincidence
+
+---
+
+## Verification (2026-03-26)
+
+**Result: Confirmed as ⚪ (coincidence)**
+
+The Hubble discrepancy of 8.31% vs grid error of 0.5% represents a 17x scale mismatch. To match the 8.3% error, a grid of approximately 6 would be needed, which is absurd. The document already self-refutes in its own analysis. The physical quantities being compared (cosmological expansion rate measurement discrepancy vs numerical grid discretization error) are entirely unrelated. No structural connection exists.
 
 ---
 
 *Written: 2026-03-22*
+*Verification: 2026-03-26*
 *Reference: Planck 2018, Riess et al. 2022 (SH0ES)*
 *Related hypotheses: 128 (scale dependence), 149 (universe curvature)*

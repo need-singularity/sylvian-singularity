@@ -123,9 +123,18 @@ Interpreting inflation as Golden Zone entry:
 - [ ] Numerical simulation of 3-step cascade of Hypothesis 124 step function
 - [ ] Compare observed tensor-to-scalar ratio r with model prediction
 
-## Status: ⚠️ Qualitative correspondence confirmed, quantitative verification needed
+## Status: ⚪ Downgraded to coincidence
+
+---
+
+## Verification (2026-03-26)
+
+**Result: Downgraded from ⚠️ to ⚪ (coincidence)**
+
+No consistent I(E) mapping exists. Five different mappings from cosmological energy scales to inhibition values were attempted, and none reproduces the hypothesis table above. The I values assigned to each cosmological epoch (I=1.0 at Planck epoch, I=0.8 at GUT, etc.) are free parameters chosen to fit the narrative, not derived from any formula or physical principle. Any monotonically decreasing function could be post-hoc fit to the timeline. This is a qualitative analogy only, with no predictive or explanatory content.
 
 ---
 
 *Written: 2026-03-22*
+*Verification: 2026-03-26*
 *Related hypotheses: 124 (step function), 149 (universe curvature), 154 (arrow of time)*

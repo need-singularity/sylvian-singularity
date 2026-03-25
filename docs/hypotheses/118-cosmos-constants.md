@@ -183,6 +183,17 @@ Problem: 10% discrepancy in dark matter mapping (1/e = 36.8% vs 26.8%).
 - Combine with Hypothesis 120 (CMB temperature) for consistency check
 - Estimate prior probability of coincidental matching via multiverse simulation
 
+## Status: 🟧 Downgraded from 🟩 (marginal evidence)
+
+---
+
+## Verification (2026-03-26)
+
+**Result: Downgraded from 🟩 to 🟧 (weak structural evidence)**
+
+Texas Sharpshooter p=0.015 (marginal, above the 0.01 threshold for structural confirmation). Only the ordinary matter match (1/e^3 = 4.98% vs observed 4.9%, 0.08pp error) is genuinely strong. The dark matter constant 3-e was a post-hoc replacement after the original 1/e mapping failed (10% discrepancy). The match degrades for WMAP data and DESI preliminary results, indicating the correspondence is survey-dependent rather than fundamental. The document's own honest assessment section already acknowledges that cherry-picking from 6+ candidate constants across 120 combinations almost guarantees a match.
+
 ---
 
 *Verification: Planck 2018 cosmological observations vs model constants — connected to Hypotheses 120, 121, 122*
+*Verification update: 2026-03-26*

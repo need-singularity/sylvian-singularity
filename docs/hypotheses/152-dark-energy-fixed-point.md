@@ -150,10 +150,19 @@ Combined with Hypothesis 149 (Ω=1=I=0.5): the universe entered the Golden Zone 
 - [ ] Quantitative comparison of w(z) time evolution data (DESI, Euclid) with I(t) convergence trajectory
 - [ ] Combine with Hypothesis 154: calculate I → I* convergence speed in the direction of the arrow of time
 
-## Status: ✅ Structural correspondence confirmed
+## Status: ⚪ Downgraded to coincidence
+
+---
+
+## Verification (2026-03-26)
+
+**Result: Downgraded from ✅ to ⚪ (coincidence)**
+
+w=-1 is definitional for the cosmological constant Lambda, not a dynamical attractor. It is not "discovered" that w=-1 is a fixed point — it is defined that way. Meanwhile, I*=1/3 depends on the arbitrary coefficients (0.7, 0.1) in the iteration f(I)=0.7I+0.1. Different coefficients give different fixed points (e.g., f(I)=0.8I+0.05 gives I*=0.25). There is no numerical or structural link between -1 and 1/3. The shared property of "being a fixed point" is too generic to constitute a meaningful correspondence — every dynamical system has fixed points.
 
 ---
 
 *Written: 2026-03-22*
+*Verification: 2026-03-26*
 *Reference: Planck 2018 w = -1.03 ± 0.03, model grid scan I* ≈ 0.333*
 *Related hypotheses: 149 (universe curvature), 154 (arrow of time)*
