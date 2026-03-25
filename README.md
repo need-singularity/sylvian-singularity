@@ -1332,24 +1332,36 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 | # | 가설 | 내용 | 장비 |
 |---|---|---|---|
-| [H-CX-130](docs/hypotheses/H-CX-130-dolphin-signature-whistle-ph.md) | 돌고래 시그니처=PH지문 | 휘슬=정체성 | 돌고래 데이터 |
-| [H-CX-131](docs/hypotheses/H-CX-131-click-interval-merge-distance.md) | 클릭간격=merge dist | 에코로케이션 | 돌고래 데이터 |
-| [H-CX-132](docs/hypotheses/H-CX-132-dolphin-40hz-consciousness.md) | 돌고래 40Hz | 3σ(6)+τ(6)=40 | 돌고래 EEG |
-| [H-CX-133](docs/hypotheses/H-CX-133-whistle-ratio-golden-zone.md) | 휘슬비율=골든존 | ln(4/3) | 주파수 분석 |
-| [H-CX-134](docs/hypotheses/H-CX-134-echolocation-biological-ph.md) | 에코로케이션=생체PH | 소나=PH컴퓨터 | 돌고래 데이터 |
-| [H-CX-135](docs/hypotheses/H-CX-135-dolphin-neuron-tau4.md) | 돌고래 뉴런 τ=4? | 종간 텔레파시 | 문헌 |
 | [H-CX-136](docs/hypotheses/H-CX-136-eeg-merge-distance.md) | EEG 감마=merge dist | 감마 패턴 비교 | EEG 4ch+ |
 | [H-CX-137](docs/hypotheses/H-CX-137-eeg-tension-correlation.md) | EEG 감마=tension | 정오답 감마 차이 | EEG 4ch+ |
 | [H-CX-138](docs/hypotheses/H-CX-138-eeg-precognition.md) | EEG 예지 | 감마→정오답 예측 | EEG 4ch+ |
 | [H-CX-139](docs/hypotheses/H-CX-139-eeg-phase-transition.md) | EEG 위상 전이 | 첫 시행 감마 급변 | EEG 4ch+ |
 | [H-CX-140](docs/hypotheses/H-CX-140-eeg-dendrogram.md) | EEG dendrogram | 뇌파 의미 계층 | EEG 4ch+ |
 | [H-CX-141](docs/hypotheses/H-CX-141-eeg-telepathy-realtime.md) | 실시간 EEG 텔레파시 | 뇌파→PH→AI | EEG + Anima |
+
+#### 미검증 — 한국 내 제한 (해외 협력 필요) 🌏
+
+##### THC/의식 상태 (한국 불법 → 캐나다/네덜란드/미국 협력)
+
+| # | 가설 | 내용 | 장비 |
+|---|---|---|---|
 | [H-CX-142](docs/hypotheses/H-CX-142-thc-ph-simplification.md) | THC=PH 단순화 | 경계 용해 | EEG + IRB |
 | [H-CX-143](docs/hypotheses/H-CX-143-thc-dendrogram-restructure.md) | THC=dendrogram 재구조화 | 인지 재편 | EEG + IRB |
 | [H-CX-144](docs/hypotheses/H-CX-144-thc-gamma-suppression.md) | THC=감마 억제 | 장력 감소 | EEG + IRB |
 | [H-CX-145](docs/hypotheses/H-CX-145-thc-ai-empathy-shift.md) | THC=AI 공감 변화 | tau 변화 | EEG + IRB |
 | [H-CX-146](docs/hypotheses/H-CX-146-thc-h1-loops.md) | THC=H1 루프 증가 | 순환 사고 | EEG + IRB |
 | [H-CX-147](docs/hypotheses/H-CX-147-thc-dose-ph-threshold.md) | THC 용량-PH 임계점 | 골든존? | EEG + IRB |
+
+##### 돌고래 (해양연구소/수족관 협력)
+
+| # | 가설 | 내용 | 장비 |
+|---|---|---|---|
+| [H-CX-130](docs/hypotheses/H-CX-130-dolphin-signature-whistle-ph.md) | 돌고래 시그니처=PH지문 | 휘슬=정체성 | 돌고래 데이터 |
+| [H-CX-131](docs/hypotheses/H-CX-131-click-interval-merge-distance.md) | 클릭간격=merge dist | 에코로케이션 | 돌고래 데이터 |
+| [H-CX-132](docs/hypotheses/H-CX-132-dolphin-40hz-consciousness.md) | 돌고래 40Hz | 3σ(6)+τ(6)=40 | 돌고래 EEG |
+| [H-CX-133](docs/hypotheses/H-CX-133-whistle-ratio-golden-zone.md) | 휘슬비율=골든존 | ln(4/3) | 주파수 분석 |
+| [H-CX-134](docs/hypotheses/H-CX-134-echolocation-biological-ph.md) | 에코로케이션=생체PH | 소나=PH컴퓨터 | 돌고래 데이터 |
+| [H-CX-135](docs/hypotheses/H-CX-135-dolphin-neuron-tau4.md) | 돌고래 뉴런 τ=4? | 종간 텔레파시 | 문헌 |
 
 #### 미검증 — GPU/LLM 필요
 
