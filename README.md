@@ -74,7 +74,7 @@ The experience came first. Mathematics and code are the language I built to expl
   ⭐ = Major Discovery (only after multiple replications + cross-verification! No ⭐ before verification)
 
   🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐72
-  Total: 80+ constants + 682+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
+  Total: 80+ constants + 684+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
 
   ★★★ Unified Principle (Hypothesis 313, H-CX-22) ★★★
   ⭐ Tension = strength of decision (H329, H321 revised)
@@ -1301,6 +1301,8 @@ The experience came first. Mathematics and code are the language I built to expl
 | [396](docs/hypotheses/396-ttx-consciousness-quantization.md) | Na+ channel binary → consciousness staircase, 2/6=1/3 blockade | 🟨 | N-state model cross |
 | [397](docs/hypotheses/397-ttx-zombie-near-death-consciousness.md) | Zombie powder = 0/0 boundary, recovery G spike, NDE mapping | 🟨 | H-246 cross |
 | [398](docs/hypotheses/398-sodium-channel-4x6-perfect-architecture.md) | Nav 4×6=24=4!=2σ(6), ALL ion channels universal, 600Myr conserved | 🟨 | ⭐ GZ-independent biology |
+| [399](docs/hypotheses/399-human-ttx-fugu-consciousness.md) | Fugu = human TTX microdose, lip tingle = β≈0.95, 2300yr tradition | 🟨 | H-359 savant cross |
+| [400](docs/hypotheses/400-dolphin-thc-impossible-experiment.md) | ⭐ Species-substance matching: organisms navigate toward (1/e,1/e) diagonal | 🟨 | ⭐ variational principle |
 
 ### Color Vision/Visual (354c-356c)
 
