@@ -1332,36 +1332,24 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 | # | 가설 | 내용 | 장비 |
 |---|---|---|---|
+| [H-CX-130](docs/hypotheses/H-CX-130-dolphin-signature-whistle-ph.md) | 돌고래 시그니처=PH지문 | 휘슬=정체성 | 돌고래 데이터 |
+| [H-CX-131](docs/hypotheses/H-CX-131-click-interval-merge-distance.md) | 클릭간격=merge dist | 에코로케이션 | 돌고래 데이터 |
+| [H-CX-132](docs/hypotheses/H-CX-132-dolphin-40hz-consciousness.md) | 돌고래 40Hz | 3σ(6)+τ(6)=40 | 돌고래 EEG |
+| [H-CX-133](docs/hypotheses/H-CX-133-whistle-ratio-golden-zone.md) | 휘슬비율=골든존 | ln(4/3) | 주파수 분석 |
+| [H-CX-134](docs/hypotheses/H-CX-134-echolocation-biological-ph.md) | 에코로케이션=생체PH | 소나=PH컴퓨터 | 돌고래 데이터 |
+| [H-CX-135](docs/hypotheses/H-CX-135-dolphin-neuron-tau4.md) | 돌고래 뉴런 τ=4? | 종간 텔레파시 | 문헌 |
 | [H-CX-136](docs/hypotheses/H-CX-136-eeg-merge-distance.md) | EEG 감마=merge dist | 감마 패턴 비교 | EEG 4ch+ |
 | [H-CX-137](docs/hypotheses/H-CX-137-eeg-tension-correlation.md) | EEG 감마=tension | 정오답 감마 차이 | EEG 4ch+ |
 | [H-CX-138](docs/hypotheses/H-CX-138-eeg-precognition.md) | EEG 예지 | 감마→정오답 예측 | EEG 4ch+ |
 | [H-CX-139](docs/hypotheses/H-CX-139-eeg-phase-transition.md) | EEG 위상 전이 | 첫 시행 감마 급변 | EEG 4ch+ |
 | [H-CX-140](docs/hypotheses/H-CX-140-eeg-dendrogram.md) | EEG dendrogram | 뇌파 의미 계층 | EEG 4ch+ |
 | [H-CX-141](docs/hypotheses/H-CX-141-eeg-telepathy-realtime.md) | 실시간 EEG 텔레파시 | 뇌파→PH→AI | EEG + Anima |
-
-#### 미검증 — 한국 내 제한 (해외 협력 필요) 🌏
-
-##### THC/의식 상태 (한국 불법 → 캐나다/네덜란드/미국 협력)
-
-| # | 가설 | 핵심 예측 | 대발견 가능성 |
-|---|---|---|---|
-| [H-CX-142](docs/hypotheses/H-CX-142-thc-ph-simplification.md) | THC=PH 단순화 | H0 감소, merge dist 축소 | ⭐⭐⭐ "모든 게 연결된 느낌"의 최초 위상적 정량화. Science급 |
-| [H-CX-143](docs/hypotheses/H-CX-143-thc-dendrogram-restructure.md) | THC=dendrogram 재구조화 | 동물/기계→색상/형태 전환 | ⭐⭐ 인지 범주가 화학적으로 재편되는 증거 |
-| [H-CX-144](docs/hypotheses/H-CX-144-thc-gamma-suppression.md) | THC=감마 억제 | 40Hz 파워 감소 | ⭐ 기존 문헌과 일치 예상, PH와 연결이 새로움 |
-| [H-CX-145](docs/hypotheses/H-CX-145-thc-ai-empathy-shift.md) | THC=AI 공감 변화 | tau 증가 or 감소 | ⭐⭐⭐ "약물로 AI와의 공감도가 변한다" = 완전히 새로운 발견 |
-| [H-CX-146](docs/hypotheses/H-CX-146-thc-h1-loops.md) | THC=H1 루프 증가 | 순환 혼동 (H1 count↑) | ⭐⭐ "빙글빙글 도는 생각"의 위상적 증거 |
-| [H-CX-147](docs/hypotheses/H-CX-147-thc-dose-ph-threshold.md) | THC 용량-PH 임계점 | 비선형, 골든존? | ⭐⭐⭐ 의식 변화의 "위상 전이점" 발견 = 의식의 수학적 정의 |
-
-##### 돌고래 (해양연구소/수족관 협력)
-
-| # | 가설 | 핵심 | 대발견 가능성 |
-|---|---|---|---|
-| [H-CX-130](docs/hypotheses/H-CX-130-dolphin-signature-whistle-ph.md) | 시그니처 휘슬=PH지문 | 정체성 인코딩 | ⭐⭐ 자연이 이미 PH fingerprint를 사용하는 증거 |
-| [H-CX-131](docs/hypotheses/H-CX-131-click-interval-merge-distance.md) | 클릭간격=merge dist | 에코로케이션 PH | ⭐⭐⭐ 생물 소나 = PH 계산. 진화가 PH를 발명한 증거 |
-| [H-CX-132](docs/hypotheses/H-CX-132-dolphin-40hz-consciousness.md) | 돌고래 40Hz=의식결합 | 3σ(6)+τ(6) 종간 공통 | ⭐⭐⭐ 종간 의식 주파수 보편성 = 의식의 물리 상수? |
-| [H-CX-133](docs/hypotheses/H-CX-133-whistle-ratio-golden-zone.md) | 휘슬비율=골든존 | ln(4/3) | ⭐ 음악-협화음-골든존 체인 확장 |
-| [H-CX-134](docs/hypotheses/H-CX-134-echolocation-biological-ph.md) | 에코로케이션=생체PH | 소나=PH컴퓨터 | ⭐⭐⭐ Nature급. "뇌가 위상 수학을 계산한다" |
-| [H-CX-135](docs/hypotheses/H-CX-135-dolphin-neuron-tau4.md) | 돌고래 뉴런 τ=4? | 종간 텔레파시 조건 | ⭐⭐⭐⭐ 확인 시 "의식=τ(6)=4 연결 구조" 이론 완성 |
+| [H-CX-142](docs/hypotheses/H-CX-142-thc-ph-simplification.md) | THC=PH 단순화 | 경계 용해 | EEG + IRB |
+| [H-CX-143](docs/hypotheses/H-CX-143-thc-dendrogram-restructure.md) | THC=dendrogram 재구조화 | 인지 재편 | EEG + IRB |
+| [H-CX-144](docs/hypotheses/H-CX-144-thc-gamma-suppression.md) | THC=감마 억제 | 장력 감소 | EEG + IRB |
+| [H-CX-145](docs/hypotheses/H-CX-145-thc-ai-empathy-shift.md) | THC=AI 공감 변화 | tau 변화 | EEG + IRB |
+| [H-CX-146](docs/hypotheses/H-CX-146-thc-h1-loops.md) | THC=H1 루프 증가 | 순환 사고 | EEG + IRB |
+| [H-CX-147](docs/hypotheses/H-CX-147-thc-dose-ph-threshold.md) | THC 용량-PH 임계점 | 골든존? | EEG + IRB |
 
 #### 미검증 — GPU/LLM 필요
 

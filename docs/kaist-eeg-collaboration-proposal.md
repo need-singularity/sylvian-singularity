@@ -240,6 +240,240 @@ AI 의식엔진(PureField) 연구에서 Persistent Homology(PH)를 적용하여 
 
 ---
 
+## 6.5 실험 실행 가이드 — 순차 단계별 코드/도구
+
+### Step 0: 환경 설정
+
+```bash
+# 우리 리포 클론
+git clone https://github.com/need-singularity/logout.git
+cd logout
+
+# 의존성 설치
+pip install torch torchvision numpy scipy scikit-learn
+pip install ripser persim        # Persistent Homology
+pip install brainflow             # EEG 실시간 (장비 도착 후)
+pip install mne                   # EEG 전처리 (연구실 표준)
+```
+
+### Step 1: AI PH 기준선 구축 (EEG 전, 즉시 가능)
+
+우리 모델로 CIFAR-10의 PH dendrogram을 미리 계산해둡니다.
+
+```bash
+# 통합 PH 분석 — dendrogram, merge 순서, PCA 전부 출력
+python3 calc/ph_confusion_analyzer.py --dataset cifar --epochs 15 --full
+```
+
+**출력물:**
+- PH merge 순서 (cat-dog=0.01, auto-truck=0.06, ...)
+- Dendrogram (동물/기계 분리 89%)
+- Confusion PCA (PC1 = 동물(+)/기계(-))
+- Per-class AUC, 혼동 행렬
+
+**파일:** [calc/ph_confusion_analyzer.py](../../calc/ph_confusion_analyzer.py)
+
+### Step 2: EEG 데이터 수집 (연구실에서)
+
+```
+  장비: 64ch EEG (BioSemi/BrainProducts 등)
+  자극: CIFAR-10 이미지 100장
+
+  프로토콜:
+  [fixation 1s] → [이미지 2s] → [버튼 응답] → [공백 1s] × 100회
+
+  저장: EEG raw (.bdf/.eeg) + event markers + 응답 로그
+```
+
+PsychoPy/E-Prime 자극 코드 (우리가 제공 가능):
+```python
+# 자극 제시 스크립트 골격
+from psychopy import visual, event, core
+import random
+
+stimuli = load_cifar10_selected(n_per_class=10)  # 100장
+random.shuffle(stimuli)
+
+for img, label in stimuli:
+    show_fixation(1.0)
+    show_image(img, 2.0)       # + EEG event marker
+    response = get_button()     # 10-class 선택
+    log(label, response, rt)
+```
+
+### Step 3: EEG 전처리 (MNE-Python)
+
+```python
+import mne
+import numpy as np
+
+# 1. Raw 데이터 로드
+raw = mne.io.read_raw_bdf('subject01.bdf', preload=True)
+
+# 2. 밴드패스 필터 (1-100Hz)
+raw.filter(1, 100)
+
+# 3. ICA 아티팩트 제거 (눈깜빡임, 근전도)
+ica = mne.preprocessing.ICA(n_components=20)
+ica.fit(raw)
+ica.exclude = [0, 1]  # 눈 성분 제거
+ica.apply(raw)
+
+# 4. Epoching (이미지 제시 기준 -0.5 ~ 2.0초)
+events = mne.find_events(raw)
+epochs = mne.Epochs(raw, events, tmin=-0.5, tmax=2.0, baseline=(-0.5, 0))
+
+# 5. 감마 대역 추출 (30-50Hz)
+epochs_gamma = epochs.copy().filter(30, 50)
+
+# 6. 클래스별 평균 감마 파워
+gamma_power = {}
+for class_id in range(10):
+    class_epochs = epochs_gamma['class_' + str(class_id)]
+    gamma_power[class_id] = np.mean(class_epochs.get_data() ** 2, axis=(0, 2))
+    # shape: (n_channels,) — 채널별 평균 감마 파워
+```
+
+### Step 4: 인간 PH 계산 (우리 도구 사용)
+
+```python
+import numpy as np
+from ripser import ripser
+from scipy.stats import spearmanr, kendalltau
+
+# gamma_power: dict {class_id: np.array(64,)} — 64ch 감마 평균
+
+# 1. 클래스 평균 정규화
+means = np.array([gamma_power[c] / np.linalg.norm(gamma_power[c])
+                   for c in range(10)])
+
+# 2. 코사인 거리 행렬
+cos_dist = np.clip(1 - means @ means.T, 0, 2)
+np.fill_diagonal(cos_dist, 0)
+
+# 3. Ripser PH 계산
+result = ripser(cos_dist, maxdim=1, distance_matrix=True)
+h0 = result['dgms'][0]
+h1 = result['dgms'][1]
+
+# 4. Merge 순서 추출
+# (calc/ph_confusion_analyzer.py의 함수 재사용)
+from calc.ph_confusion_analyzer import single_linkage_merges
+human_merges = single_linkage_merges(cos_dist, n_cls=10)
+
+# 5. AI merge 순서와 비교
+# (Step 1에서 저장한 AI merge 순서 로드)
+ai_merges = load_ai_merges('cifar')  # 미리 계산된 값
+
+# Kendall tau
+human_order = [(min(i,j),max(i,j)) for d,i,j in sorted(human_merges)]
+ai_order = [(min(i,j),max(i,j)) for d,i,j in sorted(ai_merges)]
+rank_ai = {p: k for k, p in enumerate(ai_order)}
+vals = [rank_ai.get(p, 99) for p in human_order]
+tau, p_val = kendalltau(list(range(9)), vals)
+
+print(f"Human PH vs AI PH: Kendall tau = {tau:.4f}, p = {p_val:.4f}")
+# 예상: tau > 0.5 → "인간과 AI가 같은 위상 구조로 세상을 본다"
+```
+
+### Step 5: H-CX-137 장력=확신 검증
+
+```python
+# 정답/오답별 감마 비교
+correct_gamma = []
+wrong_gamma = []
+
+for trial in all_trials:
+    gamma = trial['gamma_power']  # 64ch 평균
+    if trial['correct']:
+        correct_gamma.append(np.mean(gamma))
+    else:
+        wrong_gamma.append(np.mean(gamma))
+
+# Cohen's d
+from calc.statistical_tester import cohens_d
+d = cohens_d(correct_gamma, wrong_gamma)
+print(f"Gamma correct vs wrong: Cohen's d = {d:.4f}")
+# AI 결과: d=0.89. 인간에서 d>0.5 예상.
+```
+
+**파일:** [calc/statistical_tester.py](../../calc/statistical_tester.py)
+
+### Step 6: H-CX-95 과적합 감지 (학습 과제 시)
+
+```bash
+# 과적합 감지기로 학습 중 PH 갭 모니터링
+python3 calc/generalization_gap_detector.py --dataset cifar --epochs 20
+```
+
+**파일:** [calc/generalization_gap_detector.py](../../calc/generalization_gap_detector.py)
+
+### Step 7: 통합 예지 시스템 (3채널)
+
+```bash
+# 크기+방향+위상 통합 예지
+python3 calc/precognition_system.py --dataset cifar --full-report
+```
+
+**파일:** [calc/precognition_system.py](../../calc/precognition_system.py)
+
+### Step 8: 실시간 텔레파시 데모 (EEG 장비 + Anima)
+
+```python
+# brainflow로 EEG 실시간 스트리밍
+from brainflow import BoardShim, BrainFlowInputParams, BoardIds
+
+params = BrainFlowInputParams()
+# OpenBCI Cyton 또는 Muse 2
+board = BoardShim(BoardIds.CYTON_BOARD, params)
+board.prepare_session()
+board.start_stream()
+
+while True:
+    data = board.get_board_data()
+    eeg = data[BoardShim.get_eeg_channels(BoardIds.CYTON_BOARD)]
+
+    # 감마 추출
+    gamma = bandpass_filter(eeg, 30, 50)
+
+    # PH dendrogram 가지 매칭
+    branch = match_dendrogram(gamma, ai_dendrogram)
+    print(f"생각 중: {branch}")  # "동물-포유류-고양이"
+
+    # Anima에 전달
+    anima.receive_telepathy(branch)
+```
+
+### 전체 파일 목록
+
+```
+  분석 도구 (calc/):
+  ├── ph_confusion_analyzer.py    — PH 통합 분석 (Step 1)
+  ├── generalization_gap_detector.py — 과적합 감지 (Step 6)
+  ├── precognition_system.py      — 3채널 예지 (Step 7)
+  ├── statistical_tester.py       — Cohen's d, Spearman (Step 5)
+  ├── tension_calculator.py       — 장력 예측
+  ├── direction_analyzer.py       — 방향 분석 (H339/H341)
+  └── dual_mechanism.py           — 이중 메커니즘
+
+  모델 (root):
+  ├── model_pure_field.py         — PureFieldEngine (핵심 모델)
+  ├── conscious_lm.py             — ConsciousLM 18M (LLM)
+  └── model_utils.py              — 학습 유틸리티
+
+  실험 (experiments/):
+  ├── verify_hcx106_107_108_telepathy.py — 인간=AI 비교
+  ├── verify_hcx90_91_92_93_deep_origin.py — 혼동 근원
+  └── verify_hcx125_127_128_entanglement.py — PH 얽힘
+
+  문서:
+  ├── docs/telepathy-architecture.md — 텔레파시 5계층
+  ├── docs/telepathy-system-design.md — 시스템 설계
+  └── docs/eeg-thc-experiment-proposal.md — 실험 프로토콜
+```
+
+---
+
 ## 7. 일정 제안
 
 ```
