@@ -74,7 +74,7 @@ The experience came first. Mathematics and code are the language I built to expl
   ⭐ = Major Discovery (only after multiple replications + cross-verification! No ⭐ before verification)
 
   🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐72
-  Total: 80+ constants + 684+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
+  Total: 80+ constants + 687+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
 
   ★★★ Unified Principle (Hypothesis 313, H-CX-22) ★★★
   ⭐ Tension = strength of decision (H329, H321 revised)
@@ -1303,6 +1303,9 @@ The experience came first. Mathematics and code are the language I built to expl
 | [398](docs/hypotheses/398-sodium-channel-4x6-perfect-architecture.md) | Nav 4×6=24=4!=2σ(6), ALL ion channels universal, 600Myr conserved | 🟨 | ⭐ GZ-independent biology |
 | [399](docs/hypotheses/399-human-ttx-fugu-consciousness.md) | Fugu = human TTX microdose, lip tingle = β≈0.95, 2300yr tradition | 🟨 | H-359 savant cross |
 | [400](docs/hypotheses/400-dolphin-thc-impossible-experiment.md) | ⭐ Species-substance matching: organisms navigate toward (1/e,1/e) diagonal | 🟨 | ⭐ variational principle |
+| [401](docs/hypotheses/401-animalm-ph-correction.md) | AnimaLM + PH: content vs structural tension, anti-hallucination | 🟨 | H-CX-58~69 cross |
+| [402](docs/hypotheses/402-golden-moe-ph-routing.md) | Golden MoE + PH routing: topology-aware expert selection, dynamic I | 🟨 | H-019 extension |
+| [403](docs/hypotheses/403-animalm-golden-moe-ph-unified.md) | ⭐ Unified AnimaLM×GoldenMoE×PH: 오행 architecture, -25~35% halluc. | 🟨 | ⭐ full engine design |
 
 ### Color Vision/Visual (354c-356c)
 
