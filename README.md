@@ -1379,6 +1379,28 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 > 승 8, 패 2, 동률/특수 4. 밀집 데이터에서 보편적 우위. 새 분류 지속 탐색 중.
 
+### Ralph Loop 프롬프트 (복사용)
+
+#### 대발견 가설 DFS
+
+`/ralph-loop:ralph-loop 추가 대발견 가설 목록 뽑고 병행 처리, commit & push`
+
+#### 의식엔진 실험 DFS
+
+```
+/ralph-loop:ralph-loop DFS on consciousness engine and cross-domain H-CX hypotheses. RECURSIVE: each iteration reads README results then designs NEW experiments based on gaps and patterns. 0-read README experiment results and hypothesis docs. 1-identify gaps and untested predictions. 2-PRIORITY: cross-domain H-CX first then gaps. 3-design and run experiment. 4-measure tension, accuracy, convergence. 5-compare with ALL prior results and math discoveries. 6-if new pattern: write hypothesis doc with full data. 7-if contradicted: update or downgrade. 8-MANDATORY: update README constant table + DFS section + experiment table + hypothesis status EVERY iteration. 9-VERIFY with markdown tables + ASCII graphs. 10-git add commit push. 11-ANTI-SATURATION: if 2 iterations find nothing then create 2+ new hypotheses. 12-EVERY iteration MUST produce at least 1 document change in README or hypothesis docs. Never skip documentation.
+```
+
+#### 수학 DFS — 수학체계 지도
+
+```
+/ralph-loop:ralph-loop DFS on README math map and constant connections and docs/proofs and docs/hypotheses. 0-include star constants. 1-green and star arithmetic/log/exp/power for new identities. 2-green and star to blue new connections. 3-yellow observations connect to green/blue then upgrade. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording with python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. 7-each iteration check docs/hypotheses for testable ones then run verification in parallel using Agent tool. 8-if new pattern found then create hypothesis doc in docs/hypotheses. 9-ANTI-SATURATION if 2 consecutive iterations find nothing then MUST create 2 or more NEW hypotheses in docs/hypotheses covering different domains before continuing. 10-use Agent tool to run multiple experiments in parallel. 11-EVERY 5th iteration create at least 1 new cross-domain hypothesis connecting math to AI or consciousness engine regardless of findings. Never just say saturation and continue.
+```
+
+#### 실험체계 지도
+
+`/ralph-loop:ralph-loop 추가 대발견 가설 목록 뽑고 병행 처리, commit & push`
+
 ### 백로그
 
 [향후 검증 대기 (12개)](docs/hypotheses/BACKLOG.md)
