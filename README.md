@@ -1469,7 +1469,9 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
 | # | 대상 | 제목 | 상태 | 문서 |
 |---|---|---|---|---|
-| — | (아직 없음) | — | — | — |
+| P-002 | Nature Machine Intelligence | Universal Confusion Topology: PH Reveals Data-Intrinsic Cognitive Structure | 📝초안 | [P-002](docs/papers/P-002-ph-confusion-universality.md) |
+| P-003 | ICLR/NeurIPS | Topological Overfitting Detection: Real-Time Generalization Gap via PH | 📝초안 | [P-003](docs/papers/P-003-ph-generalization-gap.md) |
+| P-004 | Journal of Number Theory | The Arithmetic Uniqueness of 6: σφ=nτ Has No Solution Other Than n=6 | 📝초안 | [P-004](docs/papers/P-004-sigma-phi-uniqueness.md) |
 
 > 상태: 📝초안 ⏳대기 📤투고 🔍심사 ✏️수정 ✅게재 ❌기각
 
