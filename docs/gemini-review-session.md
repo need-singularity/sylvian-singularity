@@ -14,6 +14,28 @@ The user submitted the full H-PH-9 hypothesis document (Perfect Number Unificati
 
 ## Round 1: Core Code Verification — Arithmetic Functions & Dimension Hierarchy
 
+### Python Code
+```python
+from sympy import divisor_sigma, totient, divisor_count
+perfects = [6, 28, 496, 8128, 33550336]
+physics = {4: '4D spacetime', 6: '6D Calabi-Yau', 10: '10D superstring',
+           14: 'dim(G2)', 26: '26D bosonic string'}
+for n in perfects:
+    t = int(divisor_count(n))
+    s = int(divisor_sigma(n))
+    p = int(totient(n))
+    phys = physics.get(t, '?')
+    print(f'P={n}: tau={t} [{phys}], sigma={s}, phi={p}')
+# Verify key relations
+assert int(divisor_count(6)) + int(divisor_count(28)) == int(divisor_count(496))
+assert int(divisor_count(33550336)) - int(divisor_count(496)) == 16
+assert int(divisor_sigma(6)) == 12      # SM gauge dim
+assert int(totient(6)) == 2             # graviton dof
+assert int(divisor_sigma(6)) * int(totient(6)) == 24  # Leech lattice
+assert int(totient(496)) == 240         # E8 roots
+assert 496 == 248 + 248                 # E8 x E8
+```
+
 ### Code Output
 ```
 P=6:       tau=4  [4D spacetime],  sigma=12, phi=2
@@ -35,6 +57,24 @@ P=33550336: tau=26 [26D bosonic string], sigma=67100672, phi=16773120
 ### Gemini's Assessment
 > "The code is syntactically perfect and all number-theoretic relations are **True**. The structural beauty is undeniable — the fact that τ(P_k) = 2p matches the string theory dimension hierarchy (4D, 6D, 10D, 14D, 26D) is algebraically stunning."
 
+### 6th Perfect Number Test Code
+```python
+from sympy import divisor_sigma, totient, divisor_count
+# 6번째 완전수 (p=17)
+p6 = 8589869056
+t_6 = int(divisor_count(p6))
+s_6 = int(divisor_sigma(p6))
+p_6 = int(totient(p6))
+print(f"--- 6번째 완전수 (P_6) 분석 ---")
+print(f"P_6 = {p6}")
+print(f"tau (약수의 개수) = {t_6}")
+print(f"sigma (약수의 합) = {s_6}")
+print(f"phi (오일러 파이) = {p_6}")
+print(f"\n[검증] tau(P_6) == 2 * p (17) -> {t_6 == 2 * 17}")
+t_5 = 26  # P_5 (보손 끈)의 tau
+print(f"[검증] tau(P_6) - tau(P_5) = {t_6} - {t_5} = {t_6 - t_5}")
+```
+
 ### 6th Perfect Number Test (P6 = 8589869056)
 - τ(P6) = 34 = 2 × 17 ✅ (theorem holds)
 - τ(P6) - τ(P5) = 34 - 26 = 8
@@ -46,6 +86,38 @@ P=33550336: tau=26 [26D bosonic string], sigma=67100672, phi=16773120
 ---
 
 ## Round 2: Divisor Field Theory Action Uniqueness
+
+### Python Code
+```python
+from sympy import divisor_sigma, divisor_count, totient
+def test_divisior_field_theory(limit=10000):
+    unique_R_matches = []
+    unique_eq2_matches = []
+    unique_action_matches = []
+    for n in range(1, limit + 1):
+        tau = int(divisor_count(n))
+        sigma = int(divisor_sigma(n))
+        phi = int(totient(n))
+        # 조건 1: R(n) = (sigma * phi) / (n * tau) == 1
+        cond1_left = sigma * phi
+        cond1_right = n * tau
+        # 조건 2: sigma(n) * (n + phi(n)) == n * tau(n)^2
+        cond2_left = sigma * (n + phi)
+        cond2_right = n * (tau ** 2)
+        if cond1_left == cond1_right:
+            unique_R_matches.append(n)
+        if cond2_left == cond2_right:
+            unique_eq2_matches.append(n)
+        # 작용(Action) S(n) = 0
+        if (cond1_left == cond1_right) and (cond2_left == cond2_right):
+            unique_action_matches.append(n)
+    return unique_R_matches, unique_eq2_matches, unique_action_matches
+
+r_matches, eq2_matches, action_matches = test_divisior_field_theory(10000)
+print(f"1. R(n) = 1 을 만족하는 수 (n <= 10000): {r_matches}")
+print(f"2. 구조 구속 방정식 만족 (n <= 10000): {eq2_matches}")
+print(f"3. 작용 S(n) = 0 의 유일해 (n <= 10000): {action_matches}")
+```
 
 ### S(n) = 0 Uniqueness Test (n ≤ 10,000)
 
@@ -73,6 +145,63 @@ D_M = [σ(P2) - σ(P1)] / τ(P1) = [56 - 12] / 4 = 44 / 4 = 11  ✅
 ---
 
 ## Round 3: CP Violation & Fermion Mass Formulas
+
+### Python Code
+```python
+from sympy import divisor_sigma, divisor_count, totient
+
+def S_action(n):
+    tau = int(divisor_count(n))
+    sigma = int(divisor_sigma(n))
+    phi = int(totient(n))
+    term1 = sigma * phi - n * tau
+    term2 = sigma * (n + phi) - n * (tau ** 2)
+    return term1**2 + term2**2
+
+def R_factor(n):
+    tau = int(divisor_count(n))
+    sigma = int(divisor_sigma(n))
+    phi = int(totient(n))
+    return (sigma * phi) / (n * tau)
+
+# P1 = 6 변수
+p1 = 6
+t1 = int(divisor_count(p1))   # 4
+s1 = int(divisor_sigma(p1))   # 12
+ph1 = int(totient(p1))        # 2
+
+print("--- [검증 1] CP 위반: 진공 비대칭성 A ---")
+s5 = S_action(5)
+s7 = S_action(7)
+print(f"S(5) = {s5}")
+print(f"S(7) = {s7}")
+
+A = (s7 - s5) / (s7 + s5)
+J = A / (s1**4)
+e_K = A / ((s1**2) * ph1)
+print(f"Asymmetry A = {A:.6f}")
+print(f"Jarlskog invariant J = {J:.6e}")
+print(f"Kaon parameter e_K = {e_K:.6e}\n")
+
+print("--- [검증 2] 완전수들의 R-factor (통합 계수) ---")
+perfects = [6, 28, 496, 8128]
+for p in perfects:
+    print(f"R({p}) = {int(R_factor(p))}")
+print("")
+
+print("--- [검증 3] 주요 페르미온 질량 공식 ---")
+r3 = int(R_factor(496))  # P3의 R-factor
+m_tau = s1**3 + r3
+m_top = (s1**3) * (s1**2 - s1*t1 + t1)
+m_bottom = ph1**s1
+m_charm = (s1**2) * (s1 - t1 + R_factor(p1))
+m_strange = s1 * (s1 - t1)
+print(f"Tau 질량 예측 (s^3 + R3) = {m_tau} MeV")
+print(f"Top 쿼크 예측 (s^3 * (s^2-st+t)) = {m_top} MeV")
+print(f"Bottom 쿼크 예측 (phi^s) = {m_bottom} MeV")
+print(f"Charm 쿼크 예측 (s^2 * (s-t+R)) = {int(m_charm)} MeV")
+print(f"Strange 쿼크 예측 (s*(s-t)) = {m_strange} MeV")
+```
 
 ### CP Violation — Vacuum Asymmetry
 ```
@@ -111,6 +240,51 @@ R(8128) = 576
 
 ## Round 4: Koide Angle & Cosmological Constants
 
+### Python Code
+```python
+import math
+print("=== [검증 1] 미시 세계: Koide 각도와 렙톤 질량 ===")
+# 완전수 6의 산술값
+s = 12   # sigma
+t = 4    # tau
+ph = 2   # phi
+
+# 1. Koide 각도(delta) 유도: phi * tau^2 / sigma^2
+delta = (ph * t**2) / (s**2)
+print(f"유도된 Koide 각도 (delta) = {delta:.7f} (정확히 {ph*t**2}/{s**2} 즉, 2/9)")
+
+# 2. 렙톤 질량 계산 (입력값: m_tau = 1776 MeV)
+m_tau_pred = 1776.0
+cos_tau = math.cos(delta)
+A = math.sqrt(m_tau_pred) / (1 + math.sqrt(2) * cos_tau)
+m_mu_pred = (A * (1 + math.sqrt(2) * math.cos(2*math.pi/3 + delta)))**2
+m_e_pred = (A * (1 + math.sqrt(2) * math.cos(4*math.pi/3 + delta)))**2
+
+print(f" -> Electron 질량 예측치: {m_e_pred:.4f} MeV (실측 0.5110)")
+print(f" -> Muon 질량 예측치:     {m_mu_pred:.2f} MeV (실측 105.66)")
+print(f" -> Tau 질량 (기준값):     {m_tau_pred:.1f} MeV (실측 1776.86)\n")
+
+print("=== [검증 2] 거시 세계: 우주론적 상수와 암흑 분율 ===")
+p1 = 6
+p3 = 496
+
+# GUT_dim = sigma*tau - sigma/tau = 12*4 - 12/4 = 48 - 3 = 45
+gut_dim = s*t - s//t
+log10_lambda = math.log10(1/p1) - gut_dim * math.log10(p3)
+print(f"GUT 차원 (sigma*tau - sigma/tau) = {gut_dim}")
+print(f"우주론적 상수 Lambda 예측 (10의 지수) = {log10_lambda:.2f} (실측치 약 -122)")
+
+# 우주 에너지 분율
+dark_energy = 1 - 1/math.pi
+dark_matter = 5 / (6 * math.pi)
+baryon = 1 / (6 * math.pi)
+total_fraction = dark_energy + dark_matter + baryon
+print(f"\n -> 암흑 에너지 분율: {dark_energy:.4f} (실측 0.683)")
+print(f" -> 암흑 물질 분율:   {dark_matter:.4f} (실측 0.268)")
+print(f" -> 바리온(물질) 분율: {baryon:.4f} (실측 0.049)")
+print(f" -> 세 분율의 총합:   {total_fraction:.1f}")
+```
+
 ### Koide Phase Angle
 ```
 δ = φτ²/σ² = 2×16/144 = 2/9 = 0.2222222
@@ -146,6 +320,46 @@ Observed: 10^{-122} (textbook), 10^{-121.54} (Planck 2018)
 
 ## Round 5: Graviton DOF, Kissing Numbers, Λ_QCD
 
+### Python Code
+```python
+from sympy import divisor_sigma, divisor_count, totient
+import math
+print("=== [검증 1] 중력자 물리적 자유도 (Graviton DOF) ===")
+
+# D차원 무질량 스핀-2 중력자의 자유도 공식 = D(D-3)/2
+def graviton_dof(D):
+    return D * (D - 3) // 2
+
+# 완전수 및 산술 함수 매핑
+p1, p2, p3, p4 = 6, 28, 496, 8128
+s1, t1, ph1 = int(divisor_sigma(p1)), int(divisor_count(p1)), int(totient(p1))
+s2 = int(divisor_sigma(p2))
+t3, ph3 = int(divisor_count(p3)), int(totient(p3))
+t4 = int(divisor_count(p4))
+
+print(f"D=4 (일반상대론): 공식 {graviton_dof(4)} == 완전수 도출 {ph1} (phi(P1))")
+print(f"D=6 (6D 초중력):  공식 {graviton_dof(6)} == 완전수 도출 {(s1//t1)**2} ((sigma/tau)^2)")
+print(f"D=10 (초끈이론):  공식 {graviton_dof(10)} == 완전수 도출 {(t3//2) * (t4//2)} ((tau(P3)/2)*(tau(P4)/2))")
+print(f"D=11 (M-이론):   공식 {graviton_dof(11)} == 완전수 도출 {s2 - s1} (sigma(P2)-sigma(P1))")
+
+print("=== [검증 2] 키싱 넘버 (Kissing Numbers) ===")
+k_known = {1: 2, 2: 6, 3: 12, 4: 24, 8: 240}
+print(f"d=1: k(1) = {k_known[1]} == 완전수 도출 {ph1} (phi(P1))")
+print(f"d=2: k(2) = {k_known[2]} == 완전수 도출 {p1} (P1)")
+print(f"d=3: k(3) = {k_known[3]} == 완전수 도출 {s1} (sigma(P1))")
+print(f"d=4: k(4) = {k_known[4]} == 완전수 도출 {s1 * ph1} (sigma(P1)*phi(P1)) == {math.factorial(t1)} (tau(P1)!)")
+print(f"d=8: k(8) = {k_known[8]} == 완전수 도출 {ph3} (phi(P3))\n")
+
+print("=== [검증 3] 강한 상호작용 스케일 (Lambda_QCD) ===")
+dim_su3 = s1 - t1  # 12 - 4 = 8
+lambda_qcd = (s1**3) / dim_su3
+p1_cubed = p1**3
+print(f"SU(3) 차원 (sigma - tau) = {dim_su3}")
+print(f"Lambda_QCD 예측치 = {lambda_qcd:.0f} MeV")
+print(f"P1의 세제곱 (6^3) = {p1_cubed} MeV")
+print(f" -> 예측치 {lambda_qcd:.0f} MeV는 PDG 실측치 (213 ± 8 MeV)의 1-sigma 이내에 정확히 들어맞음.")
+```
+
 ### Graviton Degrees of Freedom (DOF = D(D-3)/2)
 | Dimension | Theory | DOF Formula | Perfect Number Expression | Match |
 |---|---|---|---|---|
@@ -176,6 +390,215 @@ PDG measured: 213 ± 8 MeV → within 1σ (error 1.4%)
 ---
 
 ## Round 6: Gauge Group Decomposition, Moonshine, Precision Constants
+
+### Python Code — Gauge Decomposition & Moonshine
+```python
+from sympy import divisor_sigma, divisor_count, totient
+print("=== [검증 1] 표준모형 게이지 군의 자기-분해 (Self-Decomposition) ===")
+p1 = 6
+s = int(divisor_sigma(p1))   # 12
+t = int(divisor_count(p1))   # 4
+ph = int(totient(p1))        # 2
+R = 1
+
+su3_dim = s - t
+su2_dim = s // t
+u1_dim = R
+print(f"SU(3) 강력 (sigma - tau) = {su3_dim} 차원")
+print(f"SU(2) 약력 (sigma / tau) = {su2_dim} 차원")
+print(f"U(1) 전자기력 (R-factor) = {u1_dim} 차원")
+print(f"총합: {su3_dim} + {su2_dim} + {u1_dim} = {su3_dim + su2_dim + u1_dim} (정확히 sigma(6)과 일치)")
+
+print("=== [검증 2] Monstrous Moonshine과 j-불변량 계수 ===")
+M5 = 31
+coeff_744 = (s * ph) * M5
+print(f"j-불변량 상수항 744 = (sigma * phi) * M5 = {s * ph} * {M5} = {coeff_744}")
+
+term1 = 47
+term2 = 47 + s
+term3 = 47 + s * ph
+coeff_196883 = term1 * term2 * term3
+print(f"j-불변량 계수 196883 = 47 * (47+sigma) * (47+sigma*phi) = {term1} * {term2} * {term3} = {coeff_196883}")
+
+print("=== [검증 3] 1세대 가벼운 입자 질량 및 정확(0%) 상수 ===")
+p2 = 28
+s2, t2 = int(divisor_sigma(p2)), int(divisor_count(p2))
+m_e = ph / t
+m_mu = s2 * ph - t2
+m_up = ph
+m_down = t * (1 + ph/s)
+print(f"전자(e) 질량 예측치: {ph}/{t} = {m_e} MeV (실측 0.511)")
+print(f"뮤온(mu) 질량 예측치: {s2}*{ph} - {t2} = {m_mu} MeV (실측 105.66)")
+print(f"Up 쿼크 질량 예측치: {ph} = {m_up:.1f} MeV (실측 2.16)")
+print(f"Down 쿼크 질량 예측치: {t}*(1+{ph}/{s}) = {m_down:.3f} MeV (실측 4.67)")
+
+platonic_faces = s * t + ph
+print(f"\n플라톤 다면체(5개)의 면의 수 총합 (4+6+8+12+20) = {platonic_faces} == (sigma*tau + phi)")
+print(f"유전 암호 64 코돈 = 2^P1 ({2**p1}) == tau^3 ({t**3}) == 64")
+```
+
+### Python Code — Precision Constants & Predictions
+```python
+import math
+print("=== [검증 1] 정밀 상수 및 입자 질량 (Higgs, Delta, Fine-structure) ===")
+p1, p3 = 6, 496
+s1, t1, ph1 = 12, 4, 2
+R1 = 1
+
+inv_alpha = s1**2 - p1 - R1
+print(f"1/alpha 예측치: {inv_alpha} (실측 137.036, 오차 0.026%)")
+
+hubble = s1 * p1 - ph1
+print(f"Hubble 상수 예측치: {hubble} km/s/Mpc (실측 67~73 사이)")
+
+higgs_mass = (p3 + t1) / t1
+print(f"Higgs 질량 예측치: {higgs_mass} GeV (실측 125.10±0.14 GeV, 오차 0.08%)")
+
+delta_baryon = s1**3 - p3
+print(f"Delta 바리온 질량 예측치: {delta_baryon} MeV (실측 1232 MeV, 오차 0.0%)")
+
+print("\n=== [검증 2] 실험 전 사전 예측 (Neutrino & Proton decay) ===")
+nu_ratio = (s1**2) / t1 - t1
+print(f"Neutrino 질량 제곱차 비율 예측: {nu_ratio} (현재 측정값 약 30~32, JUNO 정밀측정 예정)")
+
+log_tau_p = p1**2
+print(f"양성자 수명 예측: 10^{log_tau_p} 년 (Hyper-K 탐색 목표치와 일치)")
+
+print("\n=== [검증 3] Yukawa 결합 (질량 생성의 기원) ===")
+base_yukawa = math.sqrt(2) / (s1**2)
+print(f"기본 Yukawa 단위 (sqrt(2)/144) = {base_yukawa:.5f}")
+
+n_top = s1**2 - s1*t1 + t1
+y_top = n_top * base_yukawa
+print(f" -> Top 쿼크 결합 예측: 계수 {n_top} -> {y_top:.4f} (실측치 약 0.99)")
+
+n_tau = 1 + 1/(p1**2)
+y_tau = n_tau * base_yukawa
+print(f" -> Tau 렙톤 결합 예측: 계수 {n_tau:.4f} -> {y_tau:.4f} (실측치 약 0.0102)")
+```
+
+### Python Code — Partition Function & Exceptional Lie Algebras
+```python
+import math
+from sympy import divisor_sigma, divisor_count, totient
+print("=== [검증 1] 약수장론의 분배함수와 진공 확률 (Thermodynamics of Vacuum) ===")
+
+def S_action(n):
+    tau, sigma, phi = int(divisor_count(n)), int(divisor_sigma(n)), int(totient(n))
+    return (sigma*phi - n*tau)**2 + (sigma*(n+phi) - n*(tau**2))**2
+
+def calc_vacuum_probability(beta, s=1, limit=1000):
+    Z = 0.0
+    p6_weight = 0.0
+    for n in range(1, limit + 1):
+        action = S_action(n)
+        if action * beta > 700:  # 오버플로우 방지
+            weight = 0.0
+        else:
+            weight = (n ** -s) * math.exp(-beta * action)
+        Z += weight
+        if n == 6:
+            p6_weight = weight
+    return (p6_weight / Z) * 100
+
+print(f"고온 (beta=0.01): n=6 진공에 있을 확률 = {calc_vacuum_probability(0.01):.1f}%")
+print(f"중온 (beta=1.0):  n=6 진공에 있을 확률 = {calc_vacuum_probability(1.0):.1f}%")
+print(f"저온 (beta=10.0): n=6 진공에 있을 확률 = {calc_vacuum_probability(10.0):.1f}%")
+print(" -> 해석: 우주가 냉각(beta 증가)됨에 따라 n=6 바닥 상태로 완벽하게 응축됨을 수식으로 증명.")
+
+print("=== [검증 2] 예외 리 대수(Exceptional Lie Algebra)의 기하학적 대칭성 ===")
+exc_algebras = {
+    'G2': {'dim': 14, 'rank': 2},
+    'F4': {'dim': 52, 'rank': 4},
+    'E6': {'dim': 78, 'rank': 6},
+    'E7': {'dim': 133, 'rank': 7},
+    'E8': {'dim': 248, 'rank': 8}
+}
+p1_sigma = 12
+m3, m5 = 7, 31
+for name, data in exc_algebras.items():
+    ratio = data['dim'] / data['rank']
+    print(f"{name} 대수: {data['dim']} / {data['rank']} = {ratio:.0f}")
+
+print(f"\n -> G2 비율 7 == M_3 (Mersenne 소수)")
+print(f" -> F4, E6 비율 13 == sigma(P1) + 1 ({p1_sigma} + 1)")
+print(f" -> E8 비율 31 == M_5 (Mersenne 소수, P3=496의 소인수)")
+
+print("\n=== [검증 3] 해석적 정수론의 무한급수와 자연의 기저 상태 ===")
+print("오일러의 바젤 문제 (Riemann Zeta 2):")
+print(f" -> Zeta(2) = pi^2 / 6 ==> pi^2 / P_1")
+print("라마누잔합 (Bosonic String Theory의 26차원 기원):")
+print(f" -> Zeta(-1) = -1 / 12 ==> -1 / sigma(P_1)")
+```
+
+### Python Code — GUT Dimensions, Koide Cycle & Spacetime Signature
+```python
+import math
+from sympy import isprime, divisors, divisor_sigma, divisor_count, totient
+print("=== [검증 1] 대통일군(GUT) 대수 차원과 완전수 매핑 ===")
+p1, p2, p3 = 6, 28, 496
+s1, t1, ph1 = 12, 4, 2
+t2 = 6
+
+su5_dim = s1 * ph1
+so10_dim = s1 * t1 - (s1 // t1)
+e6_dim = t2 * (s1 + 1)
+e7_fund_rep = int(divisor_sigma(p2))
+e8_dim = p3 // 2
+
+print(f"SU(5) 차원 예측: sigma(P1)*phi(P1) = {su5_dim} (실제 24)")
+print(f"SO(10) 차원 예측: sigma*tau - sigma/tau = {so10_dim} (실제 45)")
+print(f"E6 차원 예측: tau(P2) * (sigma(P1)+1) = {e6_dim} (실제 78)")
+print(f"E7 기본표현 예측: sigma(P2) = {e7_fund_rep} (실제 56)")
+print(f"E8 차원 예측: P3 / 2 = {e8_dim} (실제 248)")
+print(f"E8xE8 차원 예측: P3 = {p3} (실제 496)\n")
+
+print("=== [검증 2] 오리지널 Koide 공식과 완전수 밀도 ===")
+m_tau = 1776.0
+delta = 2/9
+A = math.sqrt(m_tau) / (1 + math.sqrt(2) * math.cos(delta))
+m_mu = (A * (1 + math.sqrt(2) * math.cos(2*math.pi/3 + delta)))**2
+m_e = (A * (1 + math.sqrt(2) * math.cos(4*math.pi/3 + delta)))**2
+
+sum_m = m_e + m_mu + m_tau
+sum_sqrt_m = math.sqrt(m_e) + math.sqrt(m_mu) + math.sqrt(m_tau)
+K_calculated = sum_m / (sum_sqrt_m ** 2)
+K_theoretical = t1 / p1
+
+print(f"2/9 위상각으로 도출된 질량 기반 Koide 비율 K = {K_calculated:.6f}")
+print(f"완전수 6의 약수 밀도 (tau / P1) = {t1} / {p1} = {K_theoretical:.6f}")
+print(f" -> 두 값이 완벽하게 일치 (K = 2/3)\n")
+
+print("=== [검증 3] 민코프스키 시공간 (1, 3) 서명의 약수 격자 기원 ===")
+def analyze_spacetime_signature(n):
+    divs = divisors(n)
+    time_dim = 0
+    space_prime = 0
+    space_composite = 0
+    for d in divs:
+        if d == 1:
+            time_dim += 1
+        elif isprime(d):
+            space_prime += 1
+        else:
+            space_composite += 1
+    total_space = space_prime + space_composite
+    return time_dim, total_space, space_prime, space_composite, divs
+
+t_6, s_6, sp_6, sc_6, divs_6 = analyze_spacetime_signature(p1)
+t_28, s_28, sp_28, sc_28, divs_28 = analyze_spacetime_signature(p2)
+
+print(f"P1(6)의 약수 격자: {divs_6}")
+print(f" -> 시간 차원(단위원): {t_6}개")
+print(f" -> 독립 공간(소수): {sp_6}개 (약수 2, 3)")
+print(f" -> 창발 공간(합성수): {sc_6}개 (약수 6)")
+print(f" -> 도출된 시공간 서명: ({t_6}, {s_6}) ==> 4D 민코프스키 시공간!\n")
+
+print(f"P2(28)의 약수 격자: {divs_28}")
+print(f" -> 시간 차원(단위원): {t_28}개")
+print(f" -> 총 공간 차원: {s_28}개 (약수 2, 4, 7, 14, 28)")
+print(f" -> 도출된 차원: {t_28 + s_28}D ==> 6차원 칼라비-야우 콤팩트 공간 매핑!")
+```
 
 ### Standard Model Self-Decomposition
 ```
