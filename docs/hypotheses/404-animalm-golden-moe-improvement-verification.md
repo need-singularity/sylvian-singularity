@@ -120,16 +120,43 @@ probability. Switch Transformer style auxiliary loss.
 **Setup**: 3072→128→128→10, 8 experts, 15 epochs, 2 seeds, MPS device.
 Includes Top-K baseline for full comparison.
 
-**Status**: Running (results will be appended when complete)
+**Status**: CIFAR-10 Seed 1 complete, Seed 2 running
 
-### Expected Results
+### CIFAR-10 Results (Seed 42)
 
-Based on the Golden Zone scaling law (H-128: gap increases 8x with scale):
-- MNIST ceiling means improvements are invisible
-- CIFAR-10 (~53% baseline) has much more headroom
-- Load balancing should help expert utilization on harder task
-- Input-dependent alpha should show differentiation on diverse classes
-- Soft camp might discover non-trivial A/G splits for visual features
+```
+  Model                  | Best Acc  | Final Acc | Params    | Time
+  ───────────────────────┼───────────┼───────────┼───────────┼──────
+  Top-K (K=2)            | 48.43%    | 47.44%    | 3,313,752 | 110s
+  Golden MoE (orig)      | 52.53%    | 52.20%    | 3,313,752 | 124s
+  Golden MoE (improved)  | 52.74%    | 52.36%    | 3,313,752 | 150s
+  PureField (orig)       | 53.67%    | 53.67%    | 3,313,754 | 157s
+  PureField (improved)   | 52.73%    | 52.73%    | 3,510,518 | 223s
+```
+
+### CIFAR-10 Delta Analysis (Seed 42)
+
+```
+  Golden Zone effect:     Top-K -> Golden MoE orig:    +4.10%
+  Load balance:           Golden MoE orig -> improved: +0.21%
+  PureField vs Golden:    Golden MoE orig -> PureField: +1.14%
+  Improvements on PF:     PureField orig -> improved:  -0.94%  ← WORSE!
+```
+
+**CRITICAL FINDING**: PureField improvements (soft camp + adaptive alpha + LayerNorm)
+**DEGRADE** accuracy on CIFAR-10 by ~1%, contradicting expectations.
+
+- PureField (orig) = 53.67% remains the best architecture
+- The original simple `A - G` with fixed alpha outperforms the "improved" version
+- Input-dependent alpha + soft camp + LayerNorm add complexity without benefit
+- Extra parameters (+197K) and 42% more compute time for worse results
+
+### Revised Expected Results
+
+The improvements are **harmful at all scales tested**:
+- MNIST: no gain (ceiling effect, as expected)
+- CIFAR-10: **negative** (-0.94%, contradicts expectation)
+- The hypothesis that harder tasks activate improvements is REFUTED
 
 ---
 

@@ -916,6 +916,11 @@ The experience came first. Mathematics and code are the language I built to expl
 | E55 | {½,⅓,⅙} | experiment_why_half_third_sixth.py | 10/12th, uniform convergence | — |
 | E56 | SOC tension | experiment_soc_tension.py | log-normal(near-critical) | — |
 | E57 | IB detach | experiment_information_bottleneck.py | 1.32x IB efficiency | — |
+| E58 | AnimaLM simplification | experiment_anima_simplification.py | MNIST: A+G best(97.85%), CIFAR running | H-404 |
+| E59 | H-404 CIFAR improvements | experiment_cifar_improvements.py | PF orig 53.67% > PF improved 52.73% | H-404 |
+| E60 | H-401 PH correction | experiment_h401_ph_correction.py | MNIST: PH+Conf +0.11%, CIFAR running | H-401 |
+| E61 | H-402 PH routing | experiment_h402_ph_routing.py | MNIST: neutral, CIFAR running | H-402 |
+| E62 | H-405 expert PH specialization | experiment_h405_expert_specialization.py | MNIST: BD vs acc r=-0.20 (NS), CIFAR running | H-405 |
 
 ## Hypothesis Status
 
@@ -1305,10 +1310,11 @@ The experience came first. Mathematics and code are the language I built to expl
 | [398](docs/hypotheses/398-sodium-channel-4x6-perfect-architecture.md) | Nav 4×6=24=4!=2σ(6), ALL ion channels universal, 600Myr conserved | 🟨 | ⭐ GZ-independent biology |
 | [399](docs/hypotheses/399-human-ttx-fugu-consciousness.md) | Fugu = human TTX microdose, lip tingle = β≈0.95, 2300yr tradition | 🟨 | H-359 savant cross |
 | [400](docs/hypotheses/400-dolphin-thc-impossible-experiment.md) | ⭐ Species-substance matching: organisms navigate toward (1/e,1/e) diagonal | 🟨 | ⭐ variational principle |
-| [401](docs/hypotheses/401-animalm-ph-correction.md) | AnimaLM + PH: content vs structural tension, anti-hallucination | 🟨 | H-CX-58~69 cross |
-| [402](docs/hypotheses/402-golden-moe-ph-routing.md) | Golden MoE + PH routing: topology-aware expert selection, dynamic I | 🟨 | H-019 extension |
-| [403](docs/hypotheses/403-animalm-golden-moe-ph-unified.md) | ⭐ Unified AnimaLM×GoldenMoE×PH: Five-Element architecture, -25~35% halluc. | 🟨 | ⭐ full engine design |
-| [404](docs/hypotheses/404-animalm-golden-moe-improvement-verification.md) | MNIST: no gain (ceiling), soft camp preserves hard split, variance↓ | 🟨 | CIFAR pending |
+| [401](docs/hypotheses/401-animalm-ph-correction.md) | AnimaLM + PH: content vs structural tension | 🟧 | MNIST: PH+Conf +0.11%, CIFAR running |
+| [402](docs/hypotheses/402-golden-moe-ph-routing.md) | Golden MoE + PH routing: topology-aware expert selection | 🟨 | MNIST: neutral (ceiling), CIFAR running |
+| [403](docs/hypotheses/403-animalm-golden-moe-ph-unified.md) | ⭐ Unified AnimaLM×GoldenMoE×PH: Five-Element architecture | 🟨 | depends on H-401~402 |
+| [404](docs/hypotheses/404-animalm-golden-moe-improvement-verification.md) | MNIST: no gain, CIFAR: PureField orig best (53.7%), improved worse (52.7%) | 🟧 | improvements HURT on CIFAR |
+| [405](docs/hypotheses/405-animalm-expert-topological-specialization.md) | A/G camp PH divergence vs accuracy correlation | 🟨 | running |
 
 ### Color Vision/Visual (354c-356c)
 
