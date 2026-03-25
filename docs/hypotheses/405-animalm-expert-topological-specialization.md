@@ -158,11 +158,94 @@ wasserstein_h1 = wasserstein_distance(barcode_a_h1, barcode_g_h1)
 
 ---
 
+## Experimental Results
+
+### MNIST (10 epochs, seed 42)
+
+```
+  Ep |    Acc |  A_H0   |  G_H0   |  A_H1  |  G_H1  |    BD   | BD_rnd
+  ───┼────────┼─────────┼─────────┼────────┼────────┼─────────┼────────
+   1 | 95.73% | 367.021 | 290.809 | 11.044 |  5.564 | 0.1897  | 0.1674
+   2 | 96.60% | 410.462 | 379.805 | 12.497 |  7.990 | 0.0646  | 0.0721
+   3 | 97.08% | 469.517 | 429.329 | 10.256 |  9.430 | 0.0119  | 0.0884
+   5 | 97.38% | 542.319 | 507.003 | 10.880 |  9.737 | 0.0036  | 0.0323
+   7 | 97.47% | 662.553 | 563.465 | 14.301 |  6.476 | 0.0875  | 0.1539
+  10 | 97.89% | 584.784 | 789.295 | 10.408 | 18.843 | 0.1186  | 0.0881
+
+  BD vs Acc: r = -0.200, p = 0.58  → NO CORRELATION
+  |H0_diff| vs Acc: r = -0.018, p = 0.96  → NO CORRELATION
+  BD real (0.058) < BD random (0.072) → A/G split ≤ random (ratio 0.81)
+```
+
+**MNIST VERDICT: NOT SUPPORTED** — No topological specialization on ceiling-bound data.
+
+Notable: at epoch 10, G_H0 (789) surpassed A_H0 (585) — late reversal, but
+overall no consistent direction (A>G or G>A alternates randomly).
+
+### CIFAR-10 (15 epochs, seed 42)
+
+```
+  Ep |    Acc |  A_H0   |  G_H0   |  A_H1  |  G_H1  |    BD   | BD_rnd
+  ───┼────────┼─────────┼─────────┼────────┼────────┼─────────┼────────
+   1 | 44.58% | 102.496 | 131.710 |  2.753 |  3.578 | 0.1446  | 0.1867
+   3 | 48.42% | 129.025 | 139.996 |  3.664 |  4.203 | 0.0841  | 0.0054
+   5 | 49.95% | 136.403 | 186.402 |  4.631 |  5.313 | 0.0874  | 0.2159
+   7 | 51.28% | 170.415 | 196.170 |  4.001 |  3.287 | 0.0419  | 0.0148
+  10 | 51.23% | 171.843 | 257.303 |  3.661 |  5.993 | 0.1840  | 0.1672
+  12 | 52.57% | 172.083 | 192.512 |  3.229 |  4.629 | 0.0412  | 0.1924
+  15 | 53.26% | 174.554 | 204.165 |  4.444 |  5.272 | 0.1659  | 0.0009
+
+  BD vs Acc: r = +0.336, p = 0.22  → WEAK POSITIVE (not significant)
+  |H0_diff| vs Acc: r = +0.232, p = 0.41  → WEAK
+  BD real (0.097) ≈ BD random (0.093) → ratio 1.04
+
+  G_H0 > A_H0: 15/15 epochs (100%)  ← CONSISTENT PATTERN
+  G_H1 > A_H1: 10/15 epochs (67%)
+```
+
+**CIFAR-10 VERDICT: PARTIAL SUPPORT** — G-camp consistently develops higher H0
+persistence (100% of epochs), indicating G-experts learn more distributed/complex
+representations than A-experts. However, BD vs Acc correlation is weak (r=0.34)
+and not statistically significant (p=0.22).
+
+### Key Finding: G-camp H0 > A-camp H0 on Complex Data
+
+```
+  MNIST (simple):    G_H0 > A_H0 in  1/10 epochs (10%)  — no pattern
+  CIFAR (complex):   G_H0 > A_H0 in 15/15 epochs (100%) — strong pattern
+
+  G_H0/A_H0 ratio over CIFAR training:
+  1.0 ─── no difference ──────────────────────────────────────────
+       │●         ●
+  1.1 ─│──────●──────────────●──────────────────────────────────
+       │         ●     ●
+  1.2 ─│────────────●────────●──────●──────────●────●───────●──
+       │
+  1.3 ─│───────────────────────────────────────────────────────
+       │●                                ●
+  1.4 ─│──────────────●──────────────────────────────────────
+       │                          ●
+  1.5 ─│────────────────────●──────────────────────────────────
+       └───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬──
+           1   2   3   4   5   6   7   8   9  10  11  12  13  14 15
+                                 Epoch
+
+  Interpretation: On complex data (CIFAR), the G-camp (pattern/creative)
+  consistently develops MORE topological structure than A-camp (logic).
+  This suggests the camps DO specialize — but specialization does NOT
+  predict accuracy improvement (BD vs Acc r=0.34, p=0.22).
+```
+
+---
+
 ## Falsification Criteria
 
-1. If Wasserstein(A,G) shows no correlation with accuracy (r < 0.3): REFUTED
-2. If A-camp and G-camp develop identical PH profiles: REFUTED (no specialization)
-3. If random A/G assignment achieves same Wasserstein: REFUTED (split doesn't matter)
+1. If Wasserstein(A,G) shows no correlation with accuracy (r < 0.3): **MNIST REFUTED (r=-0.20)**
+2. If A-camp and G-camp develop identical PH profiles: **CIFAR REFUTED — clear G>A pattern**
+3. If random A/G assignment achieves same Wasserstein: **MNIST: yes (ratio 0.81), CIFAR: borderline (ratio 1.04)**
+
+**Overall: Criterion 2 is refuted on CIFAR (camps DO specialize), but criterion 1 is
+not met (specialization doesn't predict accuracy). Mixed result.**
 
 ---
 
@@ -175,18 +258,19 @@ wasserstein_h1 = wasserstein_distance(barcode_a_h1, barcode_g_h1)
    Hidden dim PH would be richer but more expensive
 5. **Confound**: divergence and accuracy both increase with training.
    Must control for epoch (partial correlation or detrending)
+6. **Single seed**: only seed 42 tested. Need 3+ seeds for statistical confidence.
 
 ---
 
 ## Next Steps
 
-1. Implement measurement in `experiment_anima_simplification.py` (add PH tracking)
-2. Run on MNIST + CIFAR-10 with per-epoch PH snapshots
-3. If divergence correlates: this validates H-401 and H-402 foundations
-4. If divergence doesn't correlate: reconsider A/G camp assignment strategy
-5. Cross-reference with H-CX-93 (semantic axes) — do A/G camps align with PC1?
+1. Run with 3+ seeds to confirm G_H0 > A_H0 pattern on CIFAR
+2. Measure on hidden representations (not just output) for richer PH signal
+3. Detrend BD and Acc to remove shared training trend (partial correlation)
+4. Cross-reference with H-CX-93: do A/G camps align with animal/machine semantic axis?
+5. If confirmed: G-camp specialization supports H-401 (PH correction has real signal)
 
 ---
 
-*H-405 | Status: Proposed | GZ-dependency: Partial (PH independent, A/G interpretation dependent)*
+*H-405 | Status: Partial (CIFAR: G_H0>A_H0 100%, but BD vs Acc r=0.34 NS) | GZ-dependency: Partial*
 *Related: H-401, H-402, H-404, H-CX-62, H-CX-82, H-CX-88, H-CX-93*
