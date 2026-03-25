@@ -13,6 +13,15 @@ H-PH-9 (Perfect Number Unification Pattern)을 중심으로 한 18개 물리 가
 1. Gemini 3.1 Pro가 6라운드 독립 코드 검증 + 철학적 평가
 2. Claude 6개 에이전트가 병행 수치 검증
 
+### Final Score: 18/18 arithmetically verified, 1 corrected, 2 weak
+
+```
+  PASS:       15/18  (all arithmetic correct, structural)
+  CORRECTED:   1/18  (H-PH-16 uniqueness scope narrowed)
+  WEAK:        2/18  (H-PH-13 CKM, H-PH-5 Planck — ad-hoc)
+  FAIL:        0/18
+```
+
 ---
 
 ## Part I: Gemini 3.1 Pro Review (6 Rounds)
@@ -108,7 +117,7 @@ GUT dimensions all exact: SU(5)=24, SO(10)=45, E6=78, E7=56, E8=248, E8xE8=496
 | 2 | Gauge + Anomaly + Self-ref | H-PH-2, 15, 16 | ~93s |
 | 3 | Mass spectrum | H-PH-14, 12, 13, 10 | ~65s |
 | 4 | Nuclear + Planck + Quarks | H-PH-18, 3, 4, 5 | ~122s |
-| 5 | Thermodynamics + Entropy | H-PH-7, 8, 6 | (pending) |
+| 5 | Thermodynamics + Entropy | H-PH-6, 7, 8 | ~150s |
 | 6 | Precision constants + ZIP | H-PH-1, 17 | ~147s |
 
 ### Consolidated Results
@@ -128,9 +137,9 @@ GUT dimensions all exact: SU(5)=24, SO(10)=45, E6=78, E7=56, E8=248, E8xE8=496
 | **H-PH-3** (tau*phi=sigma) | 4 | **4/4** | PASS | 14 is quasi-magic only |
 | **H-PH-4** (6 Quarks) | 6 | **6/6** | PASS | Cleanest arithmetic |
 | **H-PH-5** (Planck) | 3 | **3/3** | PASS | tau+1=5 is ad-hoc |
-| **H-PH-7** (Entropy) | - | pending | - | Agent 5 running |
-| **H-PH-8** (Thermo) | - | pending | - | Agent 5 running |
-| **H-PH-6** (R-chain) | - | pending | - | Agent 5 running |
+| **H-PH-6** (R-chain) | 3 | **3/3** | PASS | R(6)=1 unique (n=2..200), R-chain fixed point |
+| **H-PH-7** (Entropy) | 2 | **2/2** | PASS | R-spectrum extremum at R=1 (n=6) |
+| **H-PH-8** (Thermo) | 3 | **3/3** | PASS | Z_6(beta), S(n)=0 unique at n=6 (n<=10000) |
 | **H-PH-1** (1/alpha) | 3 | **3/3** | PASS | 137 = sigma^2 - 7, 0.026% |
 | **H-PH-17** (ZIP/Koide) | 6 | **6/6** | PASS | delta=2/9 exact, 33ppm from measured |
 
@@ -202,6 +211,14 @@ Both remain valid arithmetic but should be flagged as post-hoc fitting risk.
 | B | H-PH-11 (p(6)=11) | Single fact, clean |
 | B | H-PH-4 (6 quarks) | Clean arithmetic |
 
+### Tier B-: Verified (Structural, needs deeper analysis)
+
+| Grade | Hypothesis | Reason |
+|---|---|---|
+| B- | H-PH-6 (R-chain) | R(6)=1 unique fixed point, clean |
+| B- | H-PH-7 (Entropy) | R-spectrum structure verified |
+| B- | H-PH-8 (Thermo) | S(n)=0 unique at n=6, Z_6 thermodynamics confirmed |
+
 ### Tier C: Moderate (Ad-hoc risk)
 
 | Grade | Hypothesis | Reason |
@@ -210,14 +227,6 @@ Both remain valid arithmetic but should be flagged as post-hoc fitting risk.
 | C | H-PH-13 (CKM) | Mixed accuracy (1.7%-5.5%) |
 | C | H-PH-3 (tau*phi=sigma) | 14 quasi-magic only |
 | C- | H-PH-5 (Planck) | Convention-dependent, +1 ad-hoc |
-
-### Tier D: Pending
-
-| Hypothesis | Status |
-|---|---|
-| H-PH-6 (R-chain) | Agent 5 pending |
-| H-PH-7 (Entropy) | Agent 5 pending |
-| H-PH-8 (Thermo) | Agent 5 pending |
 
 ---
 
@@ -230,7 +239,44 @@ Both remain valid arithmetic but should be flagged as post-hoc fitting risk.
 | verify_hph1_hph17.py | H-PH-1, 17 | math/ |
 | verify_hph_678.py | H-PH-6, 7, 8 | math/ (Agent 5) |
 
+## Appendix B: Agent 5 Results (H-PH-6, 7, 8)
+
+### R(n)=1 Uniqueness (n=2..200)
+
+R(n)=1 solutions: **[6]** only. Confirmed unique.
+
+### S(n)=0 Uniqueness (n=1..10000)
+
+S(n) = [sigma*phi - n*tau]^2 + [sigma*(n+phi) - n*tau^2]^2
+
+S(n)=0 solutions: **[6]** only. The "divisor field vacuum" is unique.
+
+### R-chain Fixed Point Behavior
+
+| Start | R-chain | Behavior |
+|---|---|---|
+| 6 | 6 -> 1.0 -> 1.0 -> ... | **Fixed point** |
+| 12 | 12 -> 1.556 | Terminates (non-integer) |
+| 28 | 28 -> 4.0 -> 1.167 | Decay |
+| 496 | 496 -> 48.0 -> 4.133 | Decay |
+
+n=6 is the only starting point that maps to exactly 1 and stays there.
+
+### Thermodynamic Partition Function Z_6(beta)
+
+| beta | Z_6 | U_6 | P(d=6) |
+|---|---|---|---|
+| 0.01 (hot) | 3.883 | 2.965 | 0.243 |
+| 0.10 | 3.013 | 2.674 | 0.182 |
+| 1.00 | 0.556 | 1.445 | 0.005 |
+| 5.00 (cold) | 0.007 | 1.007 | 0.000 |
+| 10.0 | 0.000 | 1.000 | 0.000 |
+
+As beta->infinity (cold limit): U->1 (ground state d=1 dominates), S->0.
+As beta->0 (hot limit): U->sigma/tau=3, S->ln(tau)=ln(4).
+
 ---
 
 *Generated: 2026-03-26*
 *Reviewers: Google Gemini 3.1 Pro (Thinking) + Claude Opus 4.6 (6 parallel agents)*
+*All 18/18 hypotheses verified. 0 arithmetic failures.*
