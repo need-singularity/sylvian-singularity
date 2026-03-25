@@ -79,7 +79,10 @@ class AnimaMLP(nn.Module):
     """Tension-based MLP replacing Mistral's dense MLP.
 
     8 experts split into Engine A (0-3) and Engine G (4-7).
-    Output combines MoE weighted sum with tension field.
+    Output = A - G (pure repulsion field).
+
+    H404 simplification: scale, sqrt, normalize, alpha mixing all removed.
+    Raw repulsion >= complex formula on MNIST/CIFAR (verified).
     """
 
     def __init__(self, hidden_size: int, intermediate_size: int, n_experts: int = 8):
@@ -95,13 +98,11 @@ class AnimaMLP(nn.Module):
         ])
 
         self.router = BoltzmannRouter(hidden_size, n_experts, n_active=5)
-        self.tension_scale = nn.Parameter(torch.ones(1))
-        self.alpha = nn.Parameter(torch.zeros(1))  # sigmoid(0) = 0.5
 
     def forward(self, x: torch.Tensor):
         """
         Returns:
-            output: (batch, seq, hidden)
+            output: (batch, seq, hidden) — pure repulsion A - G
             tension_scalar: scalar tension magnitude for logging
         """
         B, T, D = x.shape
@@ -119,21 +120,11 @@ class AnimaMLP(nn.Module):
             else:
                 out_g = out_g + w * expert_out
 
-        # Tension field
-        repulsion = out_a - out_g
-        tension = repulsion.pow(2).mean(dim=-1, keepdim=True)  # (B, T, 1)
-        direction = repulsion / (repulsion.norm(dim=-1, keepdim=True) + 1e-8)
-        tension_output = self.tension_scale * torch.sqrt(tension + 1e-8) * direction
-
-        # MoE output (standard weighted sum)
-        moe_output = out_a + out_g
-
-        # Mix
-        mix = torch.sigmoid(self.alpha)
-        output = mix * moe_output + (1.0 - mix) * tension_output
+        # Pure repulsion: output = A - G
+        output = out_a - out_g
 
         # Tension scalar for logging
-        tension_scalar = tension.mean().detach()
+        tension_scalar = output.pow(2).mean().detach()
 
         return output, tension_scalar
 

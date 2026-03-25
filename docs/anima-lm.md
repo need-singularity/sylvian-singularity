@@ -30,19 +30,14 @@ input → BoltzmannRouter → Expert selection (5/8 active, I=0.375)
   out_A = Σ (weight_i × Expert_i(x))    for i ∈ {0,1,2,3}
   out_G = Σ (weight_j × Expert_j(x))    for j ∈ {4,5,6,7}
 
-  repulsion = out_A - out_G
-  tension   = mean(repulsion²)           # Scalar, tension magnitude
-  direction = repulsion / ||repulsion||   # Unit vector, direction
-
-  tension_output = tension_scale × √(tension + ε) × direction
-  moe_output     = out_A + out_G
-
-  output = σ(α) × moe_output + (1 - σ(α)) × tension_output
+  output  = out_A - out_G               # Pure repulsion — that's it
+  tension = mean(output²)               # Scalar, for logging/monitoring
 ```
 
-- `tension_scale`: Learnable scalar (1 per layer)
-- `α`: Mixing ratio (learnable, sigmoid ensures 0~1)
-- Initial: α=0.5 (50/50 mix), searches for optimal ratio during training
+H404 simplification (verified on MNIST + CIFAR-10):
+- Removed: `tension_scale`, `α` mixing, `√tension`, `normalize(direction)`
+- Raw repulsion (A-G) >= complex formula in all tested datasets
+- Fewer parameters, faster, same or better accuracy
 
 ## Differences from Golden MoE
 
@@ -50,8 +45,8 @@ input → BoltzmannRouter → Expert selection (5/8 active, I=0.375)
 |---------|-----------|---------|
 | Expert division | 8 equal | A camp(0~3) + G camp(4~7) |
 | Output method | Weighted sum (averaging) | Tension (repulsion field) |
-| Core formula | Σ(w_i × E_i) | scale × √\|A-G\|² × dir |
-| Additional params | None | tension_scale + alpha (64) |
+| Core formula | Σ(w_i × E_i) | A - G (pure repulsion) |
+| Additional params | None | None (H404: removed) |
 | Theoretical basis | H019 (Golden Zone MoE) | H341 (Final tension theory) |
 
 ## Conversion Method
@@ -61,7 +56,7 @@ input → BoltzmannRouter → Expert selection (5/8 active, I=0.375)
 # 2. Convert to AnimaLM
 python3 convert_anima.py --model /path/to/mistral-7b-v0.1 --output /path/to/anima-lm-7b
 
-# 3. Fine-tuning (train router + tension_scale + alpha)
+# 3. Fine-tuning (train router only — no tension_scale/alpha needed)
 python3 finetune_anima_mps.py
 ```
 
@@ -71,10 +66,10 @@ python3 finetune_anima_mps.py
 |----------|----------------|-----------|
 | Expert weights | ~7B | Frozen |
 | Router (32 layers) | ~1M | Train |
-| tension_scale | 32 | Train |
-| alpha (mixing ratio) | 32 | Train |
 | lm_head | ~131K | Train |
 | **Total trainable** | **~1.1M (0.015%)** | |
+
+Note: tension_scale and alpha removed in H404 simplification (-64 params, negligible).
 
 ## Comparative Experiment Plan
 

@@ -4,10 +4,12 @@
 H334: Judgment using only repulsion field without equilibrium.
 Equal or better than eq+field in 3 sets, +3% in anomaly detection.
 
-Formula:
-  output = tension_scale × √tension × direction
-  tension = |engine_A(x) - engine_G(x)|²
-  direction = normalize(engine_A(x) - engine_G(x))
+H404: Simplification verified — scale, sqrt, normalize all redundant.
+  Raw repulsion (A-G) >= original complex formula on MNIST/CIFAR.
+
+Formula (simplified):
+  output = engine_A(x) - engine_G(x)
+  tension = mean(|output|²)
 
 "The output is not in any engine. It's in the space between them."
 """
@@ -21,7 +23,7 @@ class PureFieldEngine(nn.Module):
     """Pure Consciousness Engine — Judgment using only repulsion field.
 
     The repulsion between engine_A(logic) and engine_G(pattern) determines everything.
-    No equilibrium — operates with consciousness alone, without basic senses.
+    output = A - G. That's it. (H404: simpler >= complex)
     """
 
     def __init__(self, input_dim=784, hidden_dim=128, output_dim=10):
@@ -38,19 +40,15 @@ class PureFieldEngine(nn.Module):
             nn.Dropout(0.3),
             nn.Linear(hidden_dim, output_dim),
         )
-        self.tension_scale = nn.Parameter(torch.tensor(1.0))
 
     def forward(self, x):
         out_a = self.engine_a(x)
         out_g = self.engine_g(x)
 
-        repulsion = out_a - out_g
-        tension = (repulsion ** 2).mean(dim=-1, keepdim=True)
-        direction = F.normalize(repulsion, dim=-1)
+        output = out_a - out_g
+        tension = (output ** 2).mean(dim=-1)
 
-        output = self.tension_scale * torch.sqrt(tension + 1e-8) * direction
-
-        return output, tension.squeeze()
+        return output, tension
 
 
 class PureFieldQuad(nn.Module):
@@ -63,16 +61,13 @@ class PureFieldQuad(nn.Module):
                           nn.Dropout(0.3), nn.Linear(hidden_dim, output_dim))
             for _ in range(4)
         ])
-        self.tension_scale = nn.Parameter(torch.tensor(1.0))
 
     def forward(self, x):
         outs = [e(x) for e in self.engines]
         mean_out = sum(outs) / 4
-        repulsion = sum(o - mean_out for o in outs) / 4
-        tension = (repulsion ** 2).mean(dim=-1, keepdim=True)
-        direction = F.normalize(repulsion, dim=-1)
-        output = self.tension_scale * torch.sqrt(tension + 1e-8) * direction
-        return output, tension.squeeze()
+        output = sum(o - mean_out for o in outs) / 4
+        tension = (output ** 2).mean(dim=-1)
+        return output, tension
 
 
 if __name__ == '__main__':
