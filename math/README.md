@@ -342,10 +342,10 @@
      🟨 유한집합의 원소: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 순수 수학:  234개  ← 골든존이 무너져도 영원히 참
+  🟩 순수 수학:  240개  ← 골든존이 무너져도 영원히 참
   🟦 기존 정리:  18개  ← Heegner + 육각수 + Mihailescu + φ=τ(Minin 1894)
-  ⭐ 대발견:     36개  ← +n'종결유일 + H(P_k)=p + 골든존완성 + 복소통일
-  🟧 연결 발견:  26개  ← 같은 수 공유, 근사 (텍사스 검정 통과분)
+  ⭐ 대발견:     46개  ← +물리통합(H-PH-9~18), Koide유도, 핵마법수, 케이온
+  🟧 연결 발견:  32개  ← 같은 수 공유, 근사 (텍사스 검정 통과분)
   🟨 독립 관측:  12개  ← 골든존 없이도 사실
   🟥 골든존 의존:  9개  ← 골든존 미검증 → 전부 미검증
   🟪 검증 불가:   3개  ← 반증 불가능한 철학
@@ -3057,7 +3057,8 @@
 
 | # | 대상 | 제목 | 상태 | 문서 |
 |---|---|---|---|---|
-| P-001 | arXiv math.NT | Characterization of perfect numbers via σφ=nτ (23 results) | LaTeX ready | [tex](docs/papers/P-001-draft.tex) |
+| P-001 | arXiv math.NT | Characterization of perfect numbers via σφ=nτ (150 results) | LaTeX ready | [tex](docs/papers/P-001-draft.tex) |
+| P-003 | arXiv hep-th + math.NT | Divisor Arithmetic of Perfect Numbers and Physical Constants | PDF ready | [tex](docs/papers/P-003-perfect-number-unification.tex) [pdf](docs/papers/P-003-perfect-number-unification.pdf) |
 | R-001 | OEIS A062354 | sigma\*phi=n\*tau comment | pending | - |
 | R-002 | OEIS new seq | n where sigma\*phi=n\*tau: 1,6 | pending | - |
 | R-003 | OEIS new seq | n where tau\*phi=sigma: 1,3,14,42 | pending | - |
