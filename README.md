@@ -869,6 +869,15 @@ The experience came first. Mathematics and code are the language I built to expl
   Conclusion: 2 refuted, 4 coincidence, 1 borderline, 1 maintained, 1 strong but inflated
   Key lesson: Most universe-model correspondences are superficial pattern-matching
   Only H163(reverse iteration) and H-PH-9(proven theorem+E8) have genuine structural content
+
+  ⚪ H-CX-345 sigma-phi balance in PureFieldEngine: NOT significant
+    A/G ratio matches divisor targets 5/10 classes (Z=0.76, p=0.326)
+    Random baseline: 3.8/10, observed 5/10 = noise level
+    trained(mean=1.11) vs shuffled(mean=1.25) = class structure affects ratio
+
+  🟩⭐ H-SIGK-1: sigma_3(n) = n^2(n+1) iff n=6 (proved for semiprimes!)
+    sigma_3(6)=252=9*28=sigma_3(2)*P_2, Texas p=0.0018
+    Ramanujan: tau_R(3)=252=sigma_3(6), tau_R(6)=-6048=-sigma^2*phi*T(6)
 ```
 
 ### Experiment List (65+ items)
