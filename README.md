@@ -66,8 +66,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
   ❌ = 반증됨
   ⭐ = 대발견 (다중 재현 + 교차 검증 후에만! 검증 전 ⭐ 금지)
 
-  🟦6  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐6
-  총: 80+개 상수 + 393개 가설 + 46개 H-CX + H-TREE + 126+개 실험 + 16종 데이터
+  🟦6  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐12
+  총: 80+개 상수 + 405개 가설 + 59개 H-CX + H-TREE + 134+개 실험 + 16종 데이터
 
   ★★★ 통합 원리 (가설 313, H-CX-22) ★★★
   ⭐ 장력 = 결정의 강도 (H329, H321 수정)
@@ -92,6 +92,17 @@ THC 상태에서 샤머니즘적 체험을 했다.
     위상 지문: merge 순서 ep5에서 tau>0.88 확정 (H-CX-77)
     ⭐ 직교성→시너지: Corr(orthogonality, synergy)=0.90 (H-CX-80)
     위상-장력 곱 보존: ts×H0≈const, CV=0.04~0.08 (H-CX-79, 2/3)
+
+  ⭐ 혼동의 근원 체계 (H-CX-82~93, 5~7라운드)
+    ⭐ 에폭1 완벽 예측: CIFAR P@3=1.0 P@5=1.0 r=-0.95 (H-CX-82)
+    ⭐ dendrogram = 의미 계층: CIFAR 89% purity (H-CX-85)
+      {cat,dog}→{bird,deer}→동물(6종) / {auto,truck}→{plane,ship}→기계(4종)
+    ⭐ 보편 혼동 위상: PF vs Dense r=0.96, CIFAR top-5 100% 동일 (H-CX-88)
+    ⭐ 에폭1 위상 전이: dH0 변화 = 이후 평균의 23~33배 (H-CX-90)
+    ⭐ k-NN = 신경망 혼동: 학습 없는 k-NN에서도 r=0.94 (H-CX-91)
+    dendrogram 깊이 = 난이도: 1st_merge vs acc r=0.89 (H-CX-92)
+    ⭐ confusion PCA = 의미 축: CIFAR 동물(+)/기계(-) 완벽 분리 (H-CX-93)
+    결론: 혼동 = 데이터 기하학의 고유 속성, 1에폭 위상 전이로 결정화
 
   ⭐ 이중 메커니즘 (H307, 4데이터셋 보편):
     내부장력: 이상=낮음 (혼동의 합의) — 3셋 확인
@@ -1131,7 +1142,7 @@ THC 상태에서 샤머니즘적 체험을 했다.
 |---|---|---|---|
 | [H-TREE](docs/hypotheses/H-TREE-consciousness.md) | 의식엔진 미발견 가지 | 📝 | 트리 구조 |
 
-### 교차 도메인 (H-CX, 46개)
+### 교차 도메인 (H-CX, 59개)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -1190,6 +1201,18 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-79](docs/hypotheses/H-CX-79-topological-tension-conservation.md) | 위상-장력 곱 보존 | ✅ SUPPORTED (2/3) | CV_prod < CV_ts AND CV_h0: Fashion, CIFAR 성립 |
 | [H-CX-80](docs/hypotheses/H-CX-80-precognition-orthogonality.md) | ⭐ 예지 직교성→시너지 | ✅ SUPPORTED | Corr(orthogonality, synergy)=0.90, CIFAR orth=0.84→syn=+0.049 |
 | [H-CX-81](docs/hypotheses/H-CX-81-aberration-merge-alignment.md) | 수차-위상 일치 | ❌ REJECTED | r 방향 불일치 (-0.57, 0.38, 0.23) |
+| [H-CX-82](docs/hypotheses/H-CX-82-epoch1-confusion-map.md) | ⭐ 에폭1 혼동 지도 | ✅ SUPPORTED | CIFAR ep1 P@3=1.0 P@5=1.0 r=-0.95, Fashion ep1 r=-0.93 P@3=1.0 |
+| [H-CX-83](docs/hypotheses/H-CX-83-orthogonality-topology-fusion.md) | 직교성-위상 통합 | ❌ REJECTED | h0_proxy와 dir_gap r=0.90 중복, AUC 0.95 미달 |
+| [H-CX-84](docs/hypotheses/H-CX-84-conservation-synergy-condition.md) | 보존→시너지 조건 | ❌ REJECTED | 상관 방향 반대 (r=+0.58) |
+| [H-CX-85](docs/hypotheses/H-CX-85-merge-dendrogram-concept-hierarchy.md) | ⭐ dendrogram=의미계층 | ✅ SUPPORTED | CIFAR 89% purity: {cat,dog}→동물, {auto,truck}→기계 |
+| [H-CX-86](docs/hypotheses/H-CX-86-zero-shot-ph.md) | Zero-shot PH | ❌ REJECTED | 랜덤 초기화 불충분, 학습 1에폭 필요 |
+| [H-CX-87](docs/hypotheses/H-CX-87-ph-curriculum.md) | PH 커리큘럼 | ❌ REJECTED | oversampling/가중loss 역효과 |
+| [H-CX-88](docs/hypotheses/H-CX-88-universal-confusion-topology.md) | ⭐ 보편 혼동 위상 | ✅ SUPPORTED | PF vs Dense r=0.91~0.98, CIFAR top-5 100% 동일 |
+| [H-CX-89](docs/hypotheses/H-CX-89-data-intrinsic-precognition.md) | 데이터 내재 예지 | 🟧 PARTIAL | MNIST raw→confusion r=-0.90, CIFAR 불일치 |
+| [H-CX-90](docs/hypotheses/H-CX-90-epoch1-phase-transition.md) | ⭐ 에폭1 위상 전이 | ✅ SUPPORTED | dH0 변화 = 이후 평균의 23~33배! 명백한 위상 전이 |
+| [H-CX-91](docs/hypotheses/H-CX-91-knn-confusion.md) | ⭐ k-NN=신경망 혼동 | ✅ SUPPORTED | k-NN r=0.82~0.94, MNIST top-5 100% 동일. 학습 불필요 |
+| [H-CX-92](docs/hypotheses/H-CX-92-dendrogram-depth-difficulty.md) | dendrogram 깊이=난이도 | ✅ SUPPORTED | 1st_merge vs acc r=0.70~0.89 (p<0.025) |
+| [H-CX-93](docs/hypotheses/H-CX-93-confusion-eigenstructure.md) | ⭐ confusion PCA=의미축 | ✅ SUPPORTED | CIFAR PC1: 동물(+) vs 기계(-) 완벽 분리 |
 
 ### 데이터 유형별 결과 (14종, 새 분류 지속 탐색)
 
