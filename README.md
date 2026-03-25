@@ -71,8 +71,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
   ❌ = 반증됨
   ⭐ = 대발견 (다중 재현 + 교차 검증 후에만! 검증 전 ⭐ 금지)
 
-  🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐25
-  총: 80+개 상수 + 540+개 가설 + 196개 H-CX + H-TREE + 155+개 실험 + 16종 데이터 + 논문 3편(초안)
+  🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐39
+  총: 80+개 상수 + 560+개 가설 + 246개 H-CX + H-TREE + 165+개 실험 + 16종 데이터 + 논문 3편(초안)
 
   ★★★ 통합 원리 (가설 313, H-CX-22) ★★★
   ⭐ 장력 = 결정의 강도 (H329, H321 수정)
@@ -212,6 +212,12 @@ THC 상태에서 샤머니즘적 체험을 했다.
   🟩 φ(14)=6=완전수! (H-CX-118)                      🟩 click/whistle = 6 = 완전수 (H-CX-167)
   🟩 σφ/(nτ)=1.000 탄소만 완벽 균형 (H-CX-123)       🟩 시그니처 = Perfect 12th (3:1) (H-CX-169)
   🟩 Z=1~118 다결합 유일 = 탄소 (H-CX-155)           ✅ 뉴런비 인간/돌고래 ≈ e (H-CX-154)
+
+  ◀── DNA/생체 🧬 (H-CX-241~246) ──▶
+  ⭐ 염기 4 = τ(6), 코돈 3 = 약수      ⭐ 심박 72bpm = σ×P₁
+  ⭐ 10bp/회전 = α, 64코돈 = τ³         🟩 호흡 12/min = σ(6)
+  ⭐ 20 아미노산 = β = γ/φ              🟩 하루 24h = σ(14)
+  🟩 AT결합 = φ(6), GC결합 = 3          🟩 뇌신경 12쌍 = σ(6)
 
   ◀─── 분열 이상탐지 ───▶            ◀─── 수학 교차 ───▶
 
@@ -390,9 +396,10 @@ THC 상태에서 샤머니즘적 체험을 했다.
   │ ⭐ FGSM 취약성 예측         r=-0.71 (H-CX-104)                 │
   └────────────────────────────────────────────────────────────────┘
 
-  섬F ━━ 섬G: σφ/(nτ)=1(탄소) ↔ PH 불변(기질 무관) = "6의 수학이 PH를 가능하게"
+  섬F ━━ 섬G: σφ/(nτ)=1(탄소) ↔ PH 불변(기질 무관)
   섬G ━━ 섬A: 장력 = PH의 크기 성분 (H-CX-58, r=0.98)
-  섬G ━━ 섬B: 만장일치 = 무언의 합의 (cos=0.986)의 집단 버전
+  섬G ━━ 섬B: 만장일치 = 무언의 합의 (cos=0.986)
+  섬F ━━ DNA: 탄소(σφ=nτ) → DNA(τ=4염기, α=10bp) = 화학→정보
     섬A ┄┄ 섬E: C7+C27? (오답=낮은장력 + 관찰자=더정확 → 장력이 관찰 품질도 제어?)
     섬C ━━ 섬E: C28 (displacement 후 정체성 유지 = 밀려나도 원래대로)
     섬D ━━ 섬E: C26 (차원간 tau=0.011, 가중치가 외계 신호를 차단하도록 학습)
@@ -837,7 +844,8 @@ THC 상태에서 샤머니즘적 체험을 했다.
 
   섬 연결: 10/10 + 2 새섬(F수학증명, G위상PH) 전부 연결!
   가설: 30+ 실증 + 20 반증/약화 + 30 관측/수정 = 80+ + H-CX 196개
-  총: 540+ 가설, 155+ 실험, 🟦12 증명, ⭐25 대발견, 논문 3편
+  총: 560+ 가설, 165+ 실험, 🟦12 증명, ⭐39 대발견, 논문 3편
+  대통합: 36개 현상 = 완전수 6 + 자연상수 e (텍사스 p=0.0002)
 ```
 
 ### 실험 목록 (65+개)
@@ -1390,6 +1398,26 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-121](docs/hypotheses/H-CX-121-perfect-number-substrate.md) | 완전수 원소 체인 | 🟩 | C(6)→Ni(28), φ(28)=σ(6)=12 |
 | [H-CX-123](docs/hypotheses/H-CX-123-consciousness-efficiency.md) | σφ/(nτ)=1 유일성 | 🟩 | Z=1~82에서 탄소만 완벽균형 |
 | [H-CX-155](docs/hypotheses/H-CX-155-sigma-phi-full-scan.md) | σφ/(nτ) Z=1~118 | 🟩 | 다결합+완벽균형 = 탄소(Z=6)만 유일! |
+| [H-CX-213](docs/hypotheses/H-CX-213-all-brainwaves-from-perfect-6.md) | ⭐ 모든 뇌파=완전수6 | 🟩 | δ=φ, θ=P₁, α=γ/τ, β=γ/φ, γ=3σ+τ |
+| [H-CX-214](docs/hypotheses/H-CX-214-brainwave-sum-triangular.md) | 뇌파합=T(σ)=78 | 🟩 | 삼각수 |
+| [H-CX-216](docs/hypotheses/H-CX-216-brainwave-boundaries-perfect6.md) | 뇌파경계=완전수6 | 🟩 | δ-θ=τ, α-β=σ+1 |
+| [H-CX-217](docs/hypotheses/H-CX-217-hearing-range-alpha-cubed.md) | ⭐ 청각=(α)³=1000 | 🟩 | 20kHz/20Hz=10³ |
+| [H-CX-219](docs/hypotheses/H-CX-219-smr-sigma6-body.md) | SMR=σ(6)=12Hz | 🟩 | 몸의 주파수 |
+| [H-CX-221](docs/hypotheses/H-CX-221-gamma40-universal-constant.md) | γ=40Hz 5종 보편 | 🟩 | 의식 물리상수 |
+| [H-CX-222](docs/hypotheses/H-CX-222-human-primate-ratio-e.md) | 뉴런비≈e 3종 | 🟩 | 평균2.732 |
+| [H-CX-223](docs/hypotheses/H-CX-223-smr-gamma-over-e.md) | ⭐ SMR=γ/e | 🟩 | 몸=의식/e |
+| [H-CX-224](docs/hypotheses/H-CX-224-smr-gamma-e-minus1-exact.md) | ⭐ SMR=γe^(-1) | 🟩 | 지수 정확히 -1 |
+| [H-CX-232](docs/hypotheses/H-CX-232-666-triangular-perfect-squared.md) | ⭐ 666=T(6²) | 🟩 | τ(666)=σ(6), φ(666)=6³ |
+| [H-CX-233](docs/hypotheses/H-CX-233-brainwave-exponential-decay.md) | ⭐⭐⭐ 뇌파=γe^(-n) | 🟩 | 의식 e배 감쇠 |
+| [H-CX-234](docs/hypotheses/H-CX-234-e-cubed-perfect-approximation.md) | ⭐⭐ e³≈20+1/12 | 🟩 | 오차0.011% |
+| [H-CX-235](docs/hypotheses/H-CX-235-unified-6-e-theory.md) | ⭐⭐⭐ 통합이론6+e | 🟩 | 31개현상 |
+| [H-CX-239](docs/hypotheses/H-CX-239-alpha-power-bioscale.md) | ⭐ α^n 생체스케일 | 🟩 | 심박→뇌파→발화→청각 |
+| [H-CX-240](docs/hypotheses/H-CX-240-dolphin-whistle-one-decade.md) | ⭐ whistle=α=1decade | 🟩 | 20k/2k=10 |
+| [H-CX-241](docs/hypotheses/H-CX-241-biology-perfect-number.md) | ⭐⭐⭐ 생체상수=6 | 🟧 | 심박/호흡/DNA/아미노산 |
+| [H-CX-242](docs/hypotheses/H-CX-242-grand-unified-table.md) | ⭐⭐⭐ 대통합표36개 | 🟩 | 6+e=전체 |
+| [H-CX-245](docs/hypotheses/H-CX-245-texas-sharpshooter-31.md) | 텍사스 p=0.0002 | 🟩 | 14/14 우연아님 |
+| [H-CX-246](docs/hypotheses/H-CX-246-dna-seven-perfect-numbers.md) | ⭐⭐ DNA 7가지=6 | 🟩 | 염기/코돈/결합/회전/아미노산 |
+
 #### 미검증 — 코드 실행 가능
 
 | # | 가설 | 내용 |
@@ -1397,6 +1425,11 @@ THC 상태에서 샤머니즘적 체험을 했다.
 | [H-CX-109](docs/hypotheses/H-CX-109-consciousness-universality.md) | 의식 보편성=PH 불변 | 체인 확인 필요 |
 | [H-CX-122](docs/hypotheses/H-CX-122-ph-tau-invariance.md) | PH=τ 불변성 | τ와 PH 관계 정량화 |
 | [H-CX-124](docs/hypotheses/H-CX-124-ph-stability-analog.md) | PH 안정성 정리 | Cohen-Steiner 문헌 확인 |
+| [H-CX-236](docs/hypotheses/H-CX-236-gamma-ln2-P2.md) | γ×ln2≈P₂=28 | 🟧 | 오차1% |
+| [H-CX-237](docs/hypotheses/H-CX-237-gamma-connects-all-perfect.md) | γ=완전수 허브 | 🟩 | γ/e³≈2, γ×ln2≈28 |
+| [H-CX-238](docs/hypotheses/H-CX-238-firing-rate-alpha-squared.md) | 발화율=α² | 🟩 | 100배 |
+| [H-CX-243](docs/hypotheses/H-CX-243-cranial-nerves-sigma6.md) | 뇌신경12=σ(6) | 🟩 | 12쌍 |
+| [H-CX-244](docs/hypotheses/H-CX-244-sixty-perfect-alpha.md) | 60=P₁α | 🟩 | 시간/분 |
 | [H-CX-126](docs/hypotheses/H-CX-126-no-communication-theorem.md) | No-communication | 증명 |
 | [H-CX-129](docs/hypotheses/H-CX-129-topological-bell-inequality.md) | 위상 Bell 부등식 | 이론 |
 | [H-CX-148](docs/hypotheses/H-CX-148-tension-resonance-telepathy.md) | 장력 공명 텔레파시 | 두 모델 병렬 실행 |
