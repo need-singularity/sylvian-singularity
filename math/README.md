@@ -3168,7 +3168,7 @@
 | [H-CX-51](docs/hypotheses/H-CX-51-arithmetic-derivative-learning-rate.md) | ld(6)=5/6 ↔ 최적 학습률 비율 | ⚪ 미확인 | lr scan: 5/6 순위 6/11, 단조 감소 패턴 |
 | [H-CX-52](docs/hypotheses/H-CX-52-multiplicative-tension-scale.md) | R(n) 곱셈적 ↔ tension_scale 곱=1 at n=6 | ⚪ 미확인 | 곱=0.577, 3블록(0.975)이 1에 가장 가까움. 블록 수에 단조감소 |
 
-### 물리 (H-PH, 7개)
+### 물리 (H-PH, 18개 — 🟩3 🟧★6 🟧2 🟨2 ⚪5)
 
 | # | 가설 | 상태 | 비고 |
 |---|---|---|---|
@@ -3179,7 +3179,16 @@
 | [H-PH-5](docs/hypotheses/H-PH-5-planck-units-six.md) | 플랑크 단위 | ⚪ 기각 | 무관 |
 | [H-PH-6](docs/hypotheses/H-PH-6-R-chain-decay.md) | R-chain↔방사성 붕괴 | ⚪ 기각 | 피상적 비유 |
 | [H-PH-8](docs/hypotheses/H-PH-8-thermodynamic-partition.md) | 열역학적 분배함수 | 🟩 검증 | σ=τ·U(0), S(0)=ln(τ), Schottky 이상 |
-| [H-PH-9](docs/hypotheses/H-PH-9-perfect-number-string-unification.md) | ⭐⭐⭐ 완전수 통합이론 | 🟧★ p<10⁻⁶ | 50+매치: 차원5/5, Koide=2/3(유도), δ=2/9(5ppm), 렙톤3개(0.06%), 힉스125.0GeV, Δ1232MeV, CP J(2.2%), Λ_QCD=216, 작용원리S(n), UV유한, 시공간창발 |
+| [H-PH-9](docs/hypotheses/H-PH-9-perfect-number-string-unification.md) | ⭐⭐⭐ 완전수 통합이론 | 🟧★ p<10⁻⁶ | 60+매치, Koide유도, δ=2/9(5ppm), 렙톤0.06%, CP 2.2%, 작용원리, UV유한 |
+| [H-PH-10](docs/hypotheses/H-PH-10-pmns-neutrino-mixing.md) | ⭐⭐⭐ PMNS 혼합각 | 🟧★ | sin²θ₁₂=4/13(0.22%), sin²θ₂₃=6/11(0.10%) |
+| [H-PH-11](docs/hypotheses/H-PH-11-partition-mtheory.md) | ⭐⭐⭐ p(6)=11=M-이론 | 🟧★ | 정수분할(완전수)=물리차원, 파트분포=시공간+CY |
+| [H-PH-12](docs/hypotheses/H-PH-12-kaon-P3-symmetry.md) | ⭐⭐⭐ 케이온=P₃±φ | 🟧★ | K⁺=494(0.065%), K⁰=498(0.078%), π⁰=135(0.017%) |
+| [H-PH-13](docs/hypotheses/H-PH-13-ckm-divisor.md) | ⭐⭐ CKM+α_s | 🟧 | Vus=√7/12, Vcb=1/24, α_s=2/17(0.3%) |
+| [H-PH-14](docs/hypotheses/H-PH-14-hadron-mass-spectrum.md) | ⭐⭐⭐ 하드론 스펙트럼 | 🟧★ | 24입자 11개<0.1%, Δ=σ³-P₃=1232(정확!), B⁰=5280(0.007%) |
+| [H-PH-15](docs/hypotheses/H-PH-15-anomaly-perfect-theorem.md) | ⭐⭐⭐🟩 이상소거⟺완전수 | 🟩 증명 | dim(SO(2^p))=P_k ⟺ Mersenne소수 |
+| [H-PH-16](docs/hypotheses/H-PH-16-self-reference-cycle.md) | ⭐⭐⭐🟩 자기참조 순환 | 🟩 증명 | 6→12→28→6 유일 완전수 순환 |
+| [H-PH-17](docs/hypotheses/H-PH-17-zip-divisor-equivalence.md) | ⭐⭐ ZIP↔약수장론 | 🟧 | δ=2/9 이중유도, 다리항등식 σ/τ=τ-1 |
+| [H-PH-18](docs/hypotheses/H-PH-18-nuclear-magic-numbers.md) | ⭐⭐⭐ 핵 마법수 7/7 | 🟧★ p=0.014 | 2=φ,8=σ-τ,20=σφ-τ,28=P₂,50=στ+φ,82=P₂(σ/τ)-φ,126=P₃/τ+φ |
 
 ### 화학/뇌화학/약리 (H-CHEM, 5개)
 
