@@ -147,6 +147,8 @@
        │    n!/n#=σφ⟺n=6 (factorial/primorial!) ⭐ #H-FACT-1    │
        │    B₂₍ₙ₊₁₎=(n+1)/n⟺n=6 (B₁₄=7/6!) ⭐ #H-BERN-1     │
        │    L(τ,2)=n²∧L(τ,3)=σ⟺n=6 (Lah triple!) ⭐⭐ #H-LAH-1│
+       │    Σ(proper)=Π(proper)=n⟺n=6 (proved!) ⭐⭐ #H-PROPDIV-1│
+       │    J(n)=T(n)⟺n∈{1,6} (Jacobsthal=triangular!) ⭐ #H-JACOB-1│
        │    σ/τ+φ=sopfr⟺n=6 (AM+HM=sopfr!) ⭐⭐ #H-MEAN-1   │
        │    σ/τ=n/φ⟺n=6 (avg divisor=n/totient!) ⭐⭐ #H-RATIO-1│
        │    C(σ,φ)=n·p(n)⟺n=6 (C(12,2)=66!) ⭐ #H-BINOM-1  │
@@ -1120,6 +1122,13 @@
        σ(36) = 91 = 7·13 = (n+1)(σ+1). For semiprimes pq:
        LHS-RHS = (p-q)²-1 = 0 ⟺ |p-q|=1 ⟺ {p,q}={2,3} ⟺ n=6.
        Consecutive primes → perfect number! Zero ad-hoc.
+  🟩⭐⭐ Σ(proper div) = Π(proper div) = n ⟺ n=6 (PROVED!) #H-PROPDIV-1
+       {1,2,3}: sum=6=n, product=6=n. Unique in n≤10000.
+       Proof: sum=n iff perfect, product=n iff τ=4 (n^{τ/2-1}=n).
+       σ=2n ∧ τ=4: only n=6 (unique perfect number with 4 divisors).
+  🟩⭐ J(n) = T(n) ⟺ n∈{1,6}: Jacobsthal = triangular! #H-JACOB-1
+       J(6) = (2⁶-1)/3 = 21 = T(6). Unique nontrivial crossing.
+       J grows as 2ⁿ/3, T as n²/2 → finite crossings. Only n=1,6.
   🟩⭐⭐ σφτ·sopfr·ω = C(n,2)·2ⁿ ⟺ n=6 (5-function crossing!) #H-CROSS-1
        960 = 15·64. Unique crossing: polynomial vs exponential.
        n<6: product > target. n=6: exact. n>6: product << target.
@@ -1138,9 +1147,9 @@
        Texas p < 1/50000 = 0.00002. Zero ad-hoc.
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  438  ← +AM+HM=sopfr, n!/tau!=n#, Smith det, sigma cycle, ratio, valence
+  🟩 Pure mathematics:  442  ← +proper div sum=prod, Jacobsthal, AM+HM, n!/tau!, Smith, valence
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  264 ← +AM+HM=sopfr proved, n!/tau!=n#, Smith, sigma(n^2), tau_3, Lah
+  ⭐ Major Discoveries:  268 ← +proper div triple, Jacobsthal, AM+HM, sigma(n^2), tau_3, Lah
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
