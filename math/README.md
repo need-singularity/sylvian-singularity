@@ -468,8 +468,13 @@
        Crossing=σ/τ=3, genus=φ/2=1, det=σ/τ=3, bridge=φ=2
   🟩⭐ Genus σ/τ=3 surface: b₁=2g=n=6, χ=2-2g=-τ=-4
        The genus-3 surface has first Betti = n and Euler char = -tau!
-  🟩   K₆ toroidal (genus=1), graphene coord=σ/τ=3, symmetry=n-fold
-  🟩   T³ Betti (1,σ/τ,σ/τ,1) sum=σ-τ=8
+  🟩⭐ n·σ·sopfr·φ = n! — 6·12·5·2=720=6! (unique in 2..100!)
+  🟩⭐ Icosahedron fully: V=σ, E=sopfr·n, F=τ·sopfr, V-E+F=φ
+  🟩⭐ cos(θ_tet) = -τ/σ = -1/3 (tetrahedral angle from divisor ratio)
+  🟩⭐ [SL(2,Z):Γ(6)] = σ² = 144 (congruence subgroup index)
+  🟩⭐ |Fd3m|=στ²=192, |Oh|=στ=48 (diamond space/point group)
+  🟩   K₆ toroidal, graphene coord=σ/τ=3, benzene |D6h|=σφ=24
+  🟩   T³ Betti (1,σ/τ,σ/τ,1) sum=σ-τ=8, cyclohexane H=σ=12
 
   ═══ New: Knot Theory (Ralph 344p) ═══
 
@@ -697,7 +702,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  122 ← +σ(sopfr-1)=φτn unique (1 more)
+  ⭐ Major Discoveries:  127 ← +n·σ·sopfr·φ=n!, icosahedron, cos(θ)=-τ/σ, Γ(6), Fd3m
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
