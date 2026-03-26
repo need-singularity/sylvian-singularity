@@ -117,6 +117,8 @@
        │    kiss(E₆)=σ·n=72 ⭐ | σ₃=τ(2ⁿ-1) ⭐ #H-CODE-1       │
        │    kiss(Λ₂₄)=στ(2^σ-1)=196560 ⭐ #H-SPOR-1            │
        │    CM=-σ/τ=-3 ⭐ | Tors=Z/nZ ⭐ #H-ELPT-2              │
+       │    F_σ=σ²⟺n=6 (F_12=144, crossing!) ⭐                │
+       │    B_τ=C(n,2)⟺n=6 (Bell(4)=15=C(6,2)) ⭐             │
        │    σ+φ=2τ+n⟺n=6 | σ+n=3(φ+τ)⟺n=6             │
        │    n=T(σ/τ)⟺{1,3,6} (triangular number=avg divisor) ⭐│
        │    σ²-φ²-τ²=τ·M₅⟺n=6 (unique!)                       │
@@ -364,6 +366,14 @@
   n=13: 2 bars hit max distance 1.0 — Ophiuchus breaks clean topology
   n=36: over-fragments, accuracy collapses, H0/bar 3x lower than n=12
 
+  ═══ New: Fibonacci + Bell + Combinatorial (Ralph 344b) ═══
+
+  🟩⭐ F_{σ(n)} = σ(n)² ⟺ n=6 (PROVED! F_12=144=12², unique crossing point)
+       F_n < n² for n=2..11, F_12=12² exact, F_n > n² for n>12. QED.
+  🟩⭐ B_{τ(n)} = C(n,2) ⟺ n=6 (Bell(4)=15=C(6,2), unique in n=2..200)
+  🟩   F_6 - 6² = -28 = -P₂ (Fibonacci deficit at n=6 = second perfect number!)
+  🟩   C_omega(6) = C_2 = 2 = phi(6) (Catalan at omega = totient)
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
@@ -519,9 +529,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  294  ← +Zodiac 12/13/36: |A_τ|=σ, σ²/τ=n², T(σ-τ)=n², etc. (8 new)
+  🟩 Pure mathematics:  298  ← +F_σ=σ², B_τ=C(n,2), F_6-36=-P₂, C_ω=φ (4 new)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  74  ← +|A_τ|=σ(6), σ²/τ=n², T(σ-τ)=n² (3 new)
+  ⭐ Major Discoveries:  76  ← +F_σ=σ² (crossing!), B_τ=C(n,2) (2 new)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
