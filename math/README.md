@@ -3915,7 +3915,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
-| H-CROSS-1 | Universal crossing: recurrence vs polynomial cross at n=6 | ⏳ conjecture | F,L,sigma_3,Pad all cross |
+| H-CROSS-1 | Universal crossing: recurrence vs polynomial cross at n=6 | ⚪ refuted (universal) | p=0.133, individual crossings 🟩 but not universal |
 | H-CROSS-2 | Shadow of P2: 28 appears in every deep n=6 identity | ⏳ conjecture | sigma^2, Theta_7, F_6-36, Pad_13 |
 
 ### Zodiac 12/13/36 (H-ZODIAC, 1)
