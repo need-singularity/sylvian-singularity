@@ -124,6 +124,7 @@
        │    G24=[σφ,σ,σ-τ] (Golay code!) ⭐⭐ #H-CODE-1         │
        │    kiss(E₆)=σ·n=72 ⭐ | σ₃=τ(2ⁿ-1) ⭐ #H-CODE-1       │
        │    kiss(Λ₂₄)=στ(2^σ-1)=196560 ⭐ #H-SPOR-1            │
+       │    γ(K_σ)=n=6 ⭐ | R(σ/τ,σ/τ)=n ⭐ #H-GRAPH-1          │
        │    CM=-σ/τ=-3 ⭐ | Tors=Z/nZ ⭐ #H-ELPT-2              │
        │    F_σ=σ²⟺n=6 (F_12=144, crossing!) ⭐                │
        │    Pell(2,3,4)=(φ,sopfr,σ) consecutive! ⭐              │
@@ -3603,6 +3604,12 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
 | [H-ELPT-2](docs/hypotheses/H-ELPT-2-bsd-cascade-cm.md) | BSD cascade: CM=-(σ/τ), Tors=Z/nZ, Cond=n², Tam=primes | ✅ proved | unique among perfect numbers |
+
+### Integer Sequences (H-SEQ, 1)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-SEQ-1](docs/hypotheses/H-SEQ-1-integer-sequences.md) | F_σ=σ², Pell(2,3,4)=(φ,sopfr,σ), L_n=σ+φ+τ, Bell, Motzkin, Padovan | ✅ all verified | 8 major |
 
 ### Zodiac 12/13/36 (H-ZODIAC, 1)
 
