@@ -20,7 +20,6 @@ CONTENT=$(cat "$SHARED")
 
 sync_file() {
   local file="$1"
-  local repo_name="$2"
 
   if [ ! -f "$file" ]; then
     echo "  SKIP: $file not found"
@@ -28,11 +27,10 @@ sync_file() {
   fi
 
   if ! grep -q "$MARKER_START" "$file"; then
-    echo "  SKIP: $file has no markers (add $MARKER_START / $MARKER_END)"
+    echo "  SKIP: $file has no markers"
     return
   fi
 
-  # Replace content between markers
   python3 -c "
 import sys
 start_marker = '$MARKER_START'
@@ -52,26 +50,49 @@ with open('$file', 'w') as f:
   echo "  SYNCED: $file"
 }
 
+commit_and_push() {
+  local repo_dir="$1"
+  local repo_name="$2"
+
+  cd "$repo_dir"
+  if git diff --quiet README.md 2>/dev/null; then
+    echo "  No changes"
+  else
+    git add README.md
+    git pull --rebase --quiet 2>/dev/null || true
+    git commit -m "Sync project list from TECS-L"
+    git push
+    echo "  Pushed!"
+  fi
+  cd - > /dev/null
+}
+
+BASE="$(cd "$(dirname "$SHARED")/.." && pwd)"
+PARENT="$(cd "$BASE/.." && pwd)"
+
 echo "=== Syncing project descriptions ==="
 echo "Source: $SHARED"
 echo ""
 
 # TECS-L
 echo "[TECS-L]"
-sync_file "$(dirname "$SHARED")/../README.md" "TECS-L"
+sync_file "$BASE/README.md"
+commit_and_push "$BASE" "TECS-L"
 
 # Anima
 echo "[Anima]"
-sync_file "$(dirname "$SHARED")/../../anima/README.md" "anima"
+sync_file "$PARENT/anima/README.md"
+commit_and_push "$PARENT/anima" "anima"
 
 # PH Training
 echo "[PH Training]"
-sync_file "$(dirname "$SHARED")/../../ph-training/README.md" "ph-training"
+sync_file "$PARENT/ph-training/README.md"
+commit_and_push "$PARENT/ph-training" "ph-training"
 
 # SEDI
 echo "[SEDI]"
-sync_file "$(dirname "$SHARED")/../../sedi/README.md" "sedi"
+sync_file "$PARENT/sedi/README.md"
+commit_and_push "$PARENT/sedi" "sedi"
 
 echo ""
-echo "Done! Review changes with: git diff"
-echo "Then commit each repo separately."
+echo "Done!"
