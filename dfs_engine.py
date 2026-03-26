@@ -1,6 +1,3 @@
-I'll translate all Korean text to English in this Python file:
-
-```python
 #!/usr/bin/env python3
 """DFS Automatic Search Engine — Automates ralph-loop manual iteration
 
@@ -705,4 +702,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

@@ -304,7 +304,7 @@ def main():
     datasets_config = [
         ('MNIST', load_mnist, 784, True),
         ('Fashion-MNIST', load_fashion_mnist, 784, True),
-        ('CIFAR-10', load_cifar10, 3072, False),
+        ('CIFAR-10', load_cifar10, 3072, True),
     ]
 
     all_results = []
