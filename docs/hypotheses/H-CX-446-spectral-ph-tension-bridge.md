@@ -1,6 +1,6 @@
 # H-CX-446: Spectral Gap <-> PH H0 <-> Tension Gap — Trinity Bridge
 
-**Status**: PARTIALLY SUPPORTED (SG-H0 link) / NOT SUPPORTED (full trinity)
+**Status**: NOT SUPPORTED (MNIST-only, fails on Fashion/CIFAR)
 **Golden Zone Dependency**: None
 **Related**: H-CX-445 (spectral gap=tension gap, r=0.97), H-CX-66 (PH merge=confusion, r=-0.97)
 
@@ -110,3 +110,14 @@ Key insight: **Weight geometry (spectral) determines representation topology (PH
 - PureFieldEngine specific (needs dense MLP comparison)
 - Tension gap is magnitude, not structure — different metric needed for structural comparison
 - N=16 epochs may be too few to separate early dynamics from convergence behavior
+
+## Cross-Dataset Verification (H-CX-446b)
+
+| Dataset | Pearson r | p-value  | Verdict |
+|---------|-----------|----------|---------|
+| MNIST   | 0.719     | 1.7e-03  | Moderate |
+| Fashion | 0.027     | 9.2e-01  | NONE |
+| CIFAR   | 0.230     | 3.9e-01  | NONE |
+
+**Universal bridge: NO.** The SG-H0 correlation is MNIST-specific and does not generalize.
+Per-layer analysis also shows no consistent pattern across datasets.
