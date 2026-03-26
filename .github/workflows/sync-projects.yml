@@ -1,0 +1,69 @@
+name: Sync projects.md to all repos
+
+on:
+  push:
+    paths: ['.shared/projects.md']
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync to target repos
+        env:
+          GH_TOKEN: ${{ secrets.REPO_SYNC_TOKEN }}
+        run: |
+          set -e
+
+          SHARED_CONTENT=$(cat .shared/projects.md)
+          REPOS="sedi anima ph-training"
+
+          for repo in $REPOS; do
+            echo "=== Syncing to need-singularity/$repo ==="
+
+            # Clone target repo
+            git clone "https://x-access-token:${GH_TOKEN}@github.com/need-singularity/${repo}.git" "/tmp/${repo}" 2>/dev/null || {
+              echo "  SKIP: repo $repo not found or no access"
+              continue
+            }
+
+            cd "/tmp/${repo}"
+
+            # Check if README has markers
+            if ! grep -q 'SHARED:PROJECTS:START' README.md 2>/dev/null; then
+              echo "  SKIP: no SHARED markers in README.md"
+              cd /github/workspace
+              continue
+            fi
+
+            # Replace content between markers
+            python3 -c "
+import re
+with open('README.md', 'r') as f:
+    content = f.read()
+
+shared = open('/github/workspace/.shared/projects.md').read()
+pattern = r'(<!-- SHARED:PROJECTS:START -->).*?(<!-- SHARED:PROJECTS:END -->)'
+replacement = r'\1\n' + shared + r'\n\2'
+new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+
+with open('README.md', 'w') as f:
+    f.write(new_content)
+"
+
+            # Check if changed
+            if git diff --quiet README.md; then
+              echo "  No changes needed"
+            else
+              git config user.name "github-actions[bot]"
+              git config user.email "github-actions[bot]@users.noreply.github.com"
+              git add README.md
+              git commit -m "Sync project list from TECS-L"
+              git push
+              echo "  Synced!"
+            fi
+
+            cd /github/workspace
+          done
