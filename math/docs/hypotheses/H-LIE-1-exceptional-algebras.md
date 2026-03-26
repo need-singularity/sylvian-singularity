@@ -169,3 +169,34 @@ mathematically inevitable consequences of the structure of symmetry itself —
 are COMPLETELY parameterized by arithmetic functions of the smallest
 perfect number n=6. And the REASON is that the ADE classification terminates
 at the Egyptian fraction 1/2+1/3+1/6=1, which is perfection itself.
+
+## McKay Correspondence (added 2026-03-26)
+
+Binary polyhedral groups (finite subgroups of SU(2)) via McKay:
+
+```
+  E6 <-> 2T (binary tetrahedral): |2T| = sigma*phi = 24
+  E7 <-> 2O (binary octahedral):  |2O| = sigma*tau = 48
+  E8 <-> 2I (binary icosahedral): |2I| = sigma^4(6) = 120 = 5!
+  Ratios: |2O|/|2T| = 2 = phi, |2I|/|2T| = 5 = sopfr
+```
+
+## Du Val Singularity Exponents
+
+```
+  E6: x^2 + y^3 + z^4 = 0  exponents (2,3,4) = (p, q, tau)
+  E8: x^2 + y^3 + z^5 = 0  exponents (2,3,5) = (p, q, sopfr)
+```
+
+## Chang Graphs (H-CROSS-2 connection)
+
+The three Chang graphs are srg(28, 12, 6, 4) = srg(P2, sigma, n, tau):
+ALL FOUR SRG parameters are n=6 arithmetic functions.
+Eigenvalues: r = tau = 4, s = -phi = -2.
+Six invariants from one graph family.
+
+## Seifert Fibered Space (2,3,6)
+
+The Seifert space with exceptional fibers (2,3,6) has FLAT geometry (chi_orb = 0).
+This is the same boundary 1/2+1/3+1/6=1 as ADE.
+Geometry classification: spherical -> FLAT -> hyperbolic at n=6.

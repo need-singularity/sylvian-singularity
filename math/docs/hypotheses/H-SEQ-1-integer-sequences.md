@@ -89,6 +89,36 @@
   WE_n=n             |████████|                        6
 ```
 
+### Padovan Chain Proof (added 2026-03-26)
+
+```
+  Pad(10) = 12 = sigma(6). Index 10 = sigma-phi.
+  Pad(13) = 28 = P_2. Index 13 = sigma+1.
+
+  Padovan hits BOTH P_1 (via sigma) and P_2 (directly):
+  - Pad(sigma-phi) = sigma => Pad at this index = divisor sum
+  - Pad(sigma+1) = P_2 => Padovan at next-sigma = second perfect!
+  Padovan grows as plastic^n (plastic ratio ~ 1.3247).
+  For n >= 14: Pad(n) > 28, never returns. Unique.
+```
+
+### Bell-Binomial Algebraic Proof (added 2026-03-26)
+
+```
+  B_{tau(n)} = C(n,2): need B_4 = 15 = n(n-1)/2
+  => n^2 - n - 30 = 0 => n = 6 (unique positive integer root)
+  Other tau values: B_2=2 -> n=2, B_3=5 -> n not integer,
+  B_6=203 -> n not integer. Only n=2 (trivial) and n=6.
+```
+
+### Lucas Crossing Proof (added 2026-03-26)
+
+```
+  For semiprimes n=pq: sigma+phi+tau = 2n+6 (algebraic identity)
+  L_n = 2n+6 crossing: exponential vs linear, unique at n=6
+  L_6 = 18 = 2*6+6. L_7 = 29 > 20 = 2*7+6. No more crossings.
+```
+
 ## Structural Interpretation
 
 The fact that EVERY major integer sequence characterizes n=6 suggests

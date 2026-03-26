@@ -106,6 +106,8 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
     calc/small_n_validator.py         — Small-sample correlation validator (n<=5 warning, power analysis)
     calc/spurious_trend_detector.py   — Detrending + first-diff to detect training-trend spurious correlations
     calc/permutation_tester.py        — Null baseline via permutation (purity, correlation, overlap tests)
+    calc/lie_algebra_calculator.py   — Exceptional Lie algebra invariants from n=6 (--verify --exotic --all)
+    calc/sequence_scanner.py         — Integer sequence scanner for n=6 characterizations (--custom)
 ```
 
 ## How to Run
