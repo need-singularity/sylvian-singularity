@@ -14,7 +14,7 @@
 >
 > **[📐 PH Training](https://github.com/need-singularity/ph-training)** — PH (Topology/Phase)-based automatic training. Epoch-1 difficulty prediction, automatic LR search, real-time overfitting detection (r=0.998). MNIST 98.3%, Fashion 87.4%, CIFAR 52.0% (early stop)
 >
-> **[⚡ Energy Efficiency](https://github.com/need-singularity/TECS-L/blob/main/docs/energy-efficiency.md)** — AI energy efficiency: three discoveries from number theory. Phi6Simple (GELU replacement, 71% FLOPs savings), HCN dimensions (10-20% parameter reduction), Phi-Bottleneck (67% FFN compression)
+> **[⚡ Energy Efficiency](https://github.com/need-singularity/TECS-L/blob/main/docs/energy-efficiency.md)** — AI energy efficiency: 8 discoveries from number theory. Phi6Simple, HCN dimensions, Phi-Bottleneck, Phi MoE, entropy early stopping, R-filter phase detection, Takens dim=6, FFT-Mix attention (3x faster, +0.55%)
 >
 > **[🗺️ Math System Map](https://github.com/need-singularity/TECS-L/blob/main/math/README.md)** — 150 characterizations + 8 Major Discoveries + 152 hypotheses. Each one proving the next in a snowball
 >

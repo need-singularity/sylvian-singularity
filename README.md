@@ -137,19 +137,19 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 
 ### Ralph Loop (copy-paste ready)
 
-**Hypothesis Verification**
+**Autonomous Research (default)**
+```
+/ralph-loop:ralph-loop Autonomous research agent. Read README.md and docs/hypotheses/ to understand current state. Decide what to explore based on strongest leads, gaps between confirmed results, and untested cross-domain connections. Run experiments, verify with data, record findings. Prefer depth on promising leads over breadth. Verify before grading. Document every iteration. Commit and push.
+```
+
+**Math DFS**
+```
+/ralph-loop:ralph-loop Autonomous math research. Read README math map and docs/proofs and docs/hypotheses. Find new identities, connections, and proofs. Verify with python3 arithmetic, generalize to perfect number 28, texas p-value, ad-hoc check. Record verified with grade. Failed goes white circle. Create hypothesis docs when patterns found. Commit and push.
+```
+
+**Breakthrough Hypothesis DFS**
 ```
 /ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push
-```
-
-**Consciousness Engine Experiments:**
-```
-/ralph-loop:ralph-loop DFS on consciousness engine and cross-domain H-CX hypotheses. RECURSIVE: each iteration reads README results then designs NEW experiments based on gaps and patterns. 0-read README experiment results and hypothesis docs. 1-identify gaps and untested predictions. 2-PRIORITY: cross-domain H-CX first then gaps. 3-design and run experiment. 4-measure tension, accuracy, convergence. 5-compare with ALL prior results and math discoveries. 6-if new pattern: write hypothesis doc with full data. 7-if contradicted: update or downgrade. 8-MANDATORY: update README constant table + DFS section + experiment table + hypothesis status EVERY iteration. 9-VERIFY with markdown tables + ASCII graphs. 10-git add commit push. 11-ANTI-SATURATION: if 2 iterations find nothing then create 2+ new hypotheses. 12-EVERY iteration MUST produce at least 1 document change in README or hypothesis docs. Never skip documentation.
-```
-
-**Math DFS:**
-```
-/ralph-loop:ralph-loop DFS on README math map and constant connections and docs/proofs and docs/hypotheses. 0-include star constants. 1-green and star arithmetic/log/exp/power for new identities. 2-green and star to blue new connections. 3-yellow observations connect to green/blue then upgrade. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording with python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. 7-each iteration check docs/hypotheses for testable ones then run verification in parallel using Agent tool. 8-if new pattern found then create hypothesis doc in docs/hypotheses. 9-ANTI-SATURATION if 2 consecutive iterations find nothing then MUST create 2 or more NEW hypotheses in docs/hypotheses covering different domains before continuing. 10-use Agent tool to run multiple experiments in parallel. 11-EVERY 5th iteration create at least 1 new cross-domain hypothesis connecting math to AI or consciousness engine regardless of findings. Never just say saturation and continue.
 ```
 
 ## Experiment System Map
@@ -1863,23 +1863,19 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 
 ### Ralph Loop Prompts (copy-ready)
 
+#### Autonomous Research (default)
+
+```
+/ralph-loop:ralph-loop Autonomous research agent. Read README.md and docs/hypotheses/ to understand current state. Decide what to explore based on strongest leads, gaps between confirmed results, and untested cross-domain connections. Run experiments, verify with data, record findings. Prefer depth on promising leads over breadth. Verify before grading. Document every iteration. Commit and push.
+```
+
+#### Math DFS
+
+```
+/ralph-loop:ralph-loop Autonomous math research. Read README math map and docs/proofs and docs/hypotheses. Find new identities, connections, and proofs. Verify with python3 arithmetic, generalize to perfect number 28, texas p-value, ad-hoc check. Record verified with grade. Failed goes white circle. Create hypothesis docs when patterns found. Commit and push.
+```
+
 #### Breakthrough Hypothesis DFS
-
-`/ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push`
-
-#### Consciousness Engine Experiment DFS
-
-```
-/ralph-loop:ralph-loop DFS on consciousness engine and cross-domain H-CX hypotheses. RECURSIVE: each iteration reads README results then designs NEW experiments based on gaps and patterns. 0-read README experiment results and hypothesis docs. 1-identify gaps and untested predictions. 2-PRIORITY: cross-domain H-CX first then gaps. 3-design and run experiment. 4-measure tension, accuracy, convergence. 5-compare with ALL prior results and math discoveries. 6-if new pattern: write hypothesis doc with full data. 7-if contradicted: update or downgrade. 8-MANDATORY: update README constant table + DFS section + experiment table + hypothesis status EVERY iteration. 9-VERIFY with markdown tables + ASCII graphs. 10-git add commit push. 11-ANTI-SATURATION: if 2 iterations find nothing then create 2+ new hypotheses. 12-EVERY iteration MUST produce at least 1 document change in README or hypothesis docs. Never skip documentation.
-```
-
-#### Math DFS — Math System Map
-
-```
-/ralph-loop:ralph-loop DFS on README math map and constant connections and docs/proofs and docs/hypotheses. 0-include star constants. 1-green and star arithmetic/log/exp/power for new identities. 2-green and star to blue new connections. 3-yellow observations connect to green/blue then upgrade. 4-red items try proving without golden zone then upgrade to green. 5-VERIFY before recording with python3 arithmetic check then generalize to perfect number 28 then texas p-value then ad-hoc check. Only record verified with grade. Failed goes white circle. No star before verification. 6-update README map and connections then git add commit push every iteration. 7-each iteration check docs/hypotheses for testable ones then run verification in parallel using Agent tool. 8-if new pattern found then create hypothesis doc in docs/hypotheses. 9-ANTI-SATURATION if 2 consecutive iterations find nothing then MUST create 2 or more NEW hypotheses in docs/hypotheses covering different domains before continuing. 10-use Agent tool to run multiple experiments in parallel. 11-EVERY 5th iteration create at least 1 new cross-domain hypothesis connecting math to AI or consciousness engine regardless of findings. Never just say saturation and continue.
-```
-
-#### Experiment System Map
 
 `/ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push`
 

@@ -1,6 +1,6 @@
 # H-EE-6: Tensor-Core-Aligned HCN Dimensions
 
-**Status**: Verified
+**Status**: SUPPORTED
 **Golden Zone Dependency**: None (pure number theory + hardware)
 **Related**: H-EN-5, H-EE-5
 

@@ -1,6 +1,6 @@
 # H-EE-8: Optimal d_model Follows tau(d) More Than d Itself
 
-**Status**: Testing
+**Status**: NOT SUPPORTED
 **Golden Zone Dependency**: None (pure number theory + empirical ML)
 **Related**: H-EN-5, H-EE-5, H-EE-7
 

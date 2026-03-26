@@ -1,6 +1,6 @@
 # H-EE-5: R(d_model) Correlates with Training Efficiency
 
-**Status**: Testing
+**Status**: NOT SUPPORTED (R as predictor) / PARTIALLY SUPPORTED (HCN efficiency)
 **Golden Zone Dependency**: None (pure number theory + empirical ML)
 **Related**: H-EN-5, H-SPEC-1, H-EE-1
 
