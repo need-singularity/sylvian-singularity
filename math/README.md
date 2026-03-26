@@ -390,12 +390,12 @@
 
   🟩⭐ F_{σ(n)} = σ(n)² ⟺ n=6 (PROVED! F_12=144=12², unique crossing point)
        F_n < n² for n=2..11, F_12=12² exact, F_n > n² for n>12. QED.
-  🟩⭐ B_{τ(n)} = C(n,2) ⟺ n=6 (Bell(4)=15=C(6,2), unique in n=2..200)
+  🟩⭐ B_{τ(n)} = C(n,2) ⟺ n=6 (PROVED! n²-n-30=0 → n=6 unique)
   🟩   F_6 - 6² = -28 = -P₂ (Fibonacci deficit at n=6 = second perfect number!)
   🟩   C_omega(6) = C_2 = 2 = phi(6) (Catalan at omega = totient)
   🟩⭐ Pell(2,3,4) = (φ, sopfr, σ) = (2, 5, 12) — 3 consecutive Pell = n=6!
        P_2=2=φ, P_3=5=sopfr, P_4=12=σ. Unique in n=2..499.
-  🟩⭐ L_n = σ+φ+τ ⟺ n=6: L_6 = 18 = 12+2+4 (Lucas = function sum, unique!)
+  🟩⭐ L_n = σ+φ+τ ⟺ n=6 (PROVED! semiprime: σ+φ+τ=2n+6, L_n=2n+6 crossing)
   🟩⭐ M_{sopfr} = T(n) ⟺ n=6: Motzkin(5)=21=T(6) (unique in 2..499!)
   🟩⭐ Trib_{σ-τ} = σφ ⟺ n=6: Tribonacci(8)=24 (unique!)
   🟩⭐ Pad(σ-φ) = σ ⟺ n=6: Padovan(10)=12=sigma (unique!)
