@@ -2003,6 +2003,13 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 | 471 | Null baseline (depth 3) | Positive | ⚪ | Random=structured at depth 3. Saturation is trivial |
 | 472 | ζ(3) unique PORTAL | Refuted | ⚪ | √2 and γ also PORTAL. Not unique |
 | 473 | Divisor reciprocal sum=1 | **Confirmed** | 🟧 | γ/√3+GZ/γ+GZ/√3 = 0.9977 ≈ 1 (0.23%). Ranks #1 among all triples |
+| 474 | Depth-1 TRUE convergence map | **Confirmed** | 🟩 | **ln(2)=6dom (1위!), √2=4, ln(3)=4, e²=4.** Texas Z=9.05 |
+| 475 | sin²θ_W×3≈ln(2) | Striking but excluded | 🟧 | 0.074% but 5.7σ excluded as exact. Scale-dependent |
+| 476 | {ζ(3),ln(2)} generator pair | **Confirmed** | 🟩 | Best pair (3/9 depth1, 10/10 depth2). γ≈ζ(3)×ln(2)² (0.057%) |
+| 477 | π isolated to Analysis | **Confirmed** | 🟩 | π reachable from A only. 7 other domains cannot reach π |
+| 478 | Q algebraic-irrational barrier | Depth-1 only | 🟧 | Barrier exists at d1 (√2,φ unreachable) but breaks at d2 |
+| 479 | S→ln(3) Ising→qutrit | **Confirmed** | 🟩 | 1/(γ₃D-β₃D) ≈ ln(3) (0.051%). Critical exponent gap = qutrit entropy |
+| 480 | Domain specialization matrix | **Confirmed** | 🟩 | I=logarithmic(100%), A=algebraic(100%), G=algebraic+log |
 
 ```
   H-CX-454 strongest relations (all within 0.35%):
