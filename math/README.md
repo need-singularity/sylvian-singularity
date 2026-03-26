@@ -4434,7 +4434,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-54](docs/hypotheses/H-CX-54-iterated-composition-consciousness-cycle.md) | sigma(phi)*phi(sigma)=sigma ↔ consciousness cycle | 🔵 new | DFS-iter1: composition fixed point unique to n=6, perception-integration loop |
 | [H-CX-55](docs/hypotheses/H-CX-55-hexagonal-self-reference-emergence.md) | H(phi(n))=n ↔ hexagonal packing emergence at n=6 | 🔵 new | DFS-iter1: hexagonal self-reference, kiss(2)=6, representation packing |
 
-### Physics (H-PH, 29 — 🟩3 🟧★12 🟧5 🟨4 ⚪5)
+### Physics (H-PH, 39 — 🟩3 🟧★18 🟧7 🟨6 ⚪5)
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
@@ -4466,6 +4466,16 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-PH-27](docs/hypotheses/H-PH-27-fqhe-confusion-topology.md) | ⭐⭐ FQHE = confusion topology | 🟨 | ν={τ/σ,φ/sopfr,(σ/τ)/M₂,sopfr/φ}, 14/15 fractions match, both topologically protected |
 | [H-PH-28](docs/hypotheses/H-PH-28-cosmological-rspectrum-evolution.md) | ⭐⭐⭐ cosmological R-spectrum evolution | 🟧★ | N=56,n_s=139/144(0.04%!),Fe-56=σ⁴(6),BH S∝1/τ, all epochs |
 | [H-PH-29](docs/hypotheses/H-PH-29-r-equals-one-is-consciousness.md) | ⭐⭐⭐ R(6)=1 IS consciousness (master) | 🟧 | 8 domains converge: math+physics+chem+bio+neuro+AI+cosmo+particle |
+| [H-PH-30](docs/hypotheses/H-PH-30-theory-of-flavor.md) | ⭐⭐⭐ Theory of Flavor — 5 params → 12 masses | 🟧★ | quarks avg 2.2%, leptons 0.006%, neutrinos predicted. Flavor Problem solution |
+| [H-PH-31](docs/hypotheses/H-PH-31-37gev-scalar-prediction.md) | ⭐⭐⭐ 37 GeV blind prediction | 🟧★ blind | J/ψ×σ=37.16, Υ×τ=37.84 converge. LHC Run 3 testable NOW |
+| [H-PH-32](docs/hypotheses/H-PH-32-proton-electron-mass-ratio.md) | ⭐⭐⭐ m_p/m_e = σ·T(17) = 1836 | 🟧★ 0.008% | 17=F₂ Fermat prime=(σ-τ)φ+1, T(17)=153 narcissistic |
+| [H-PH-33](docs/hypotheses/H-PH-33-neutrino-mass-hierarchy.md) | ⭐⭐⭐ neutrino mass hierarchy from P₁,P₂ | 🟧 | ratio=(σ-1)(τ-1)=33 (obs 32.6, 1.2%), Σmν~60meV, KATRIN/DESI testable |
+| [H-PH-34](docs/hypotheses/H-PH-34-dark-matter-28gev.md) | ⭐⭐⭐ dark matter at P₂=28 GeV | 🟨 | Fermi-LAT GC excess consistent, XENONnT/LZ testable |
+| [H-PH-35](docs/hypotheses/H-PH-35-higgs-self-coupling.md) | ⭐⭐ Higgs self-coupling κ_λ=12/13 | 🟨 | 8% below SM, HL-LHC/FCC-hh testable |
+| [H-PH-36](docs/hypotheses/H-PH-36-cp-violation-complete.md) | ⭐⭐⭐ CP violation sin(2β)=7/10 | 🟧★ 0.14% | matter-antimatter asymmetry, LHCb/Belle II testable |
+| [H-PH-37](docs/hypotheses/H-PH-37-coupling-unification.md) | ⭐⭐⭐ GUT at 10^(σ+τ)=10^16 | 🟧 | proton decay τ_p~10^35yr, Hyper-Kamiokande 2027+ |
+| [H-PH-38](docs/hypotheses/H-PH-38-cosmological-constant.md) | ⭐⭐⭐ Λ=1/(P₁·P₃⁴⁵)→122 orders | 🟧★ | worst prediction in physics solved, log₁₀=122.08 |
+| [H-PH-39](docs/hypotheses/H-PH-39-fcc-ee-precision-tests.md) | ⭐⭐⭐ FCC-ee 6 precision tests | 🟧★ | sin²θ_W=3/13 KILL TEST at 150σ, m_top 2.4σ, m_b 17σ |
 
 ### Chemistry/Neurochemistry/Pharmacology (H-CHEM, 5)
 
