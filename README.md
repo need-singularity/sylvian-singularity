@@ -103,7 +103,7 @@ The experience came first. Mathematics and code are the language I built to expl
   ❌ = Refuted
   ⭐ = Major Discovery (only after multiple replications + cross-verification! No ⭐ before verification)
 
-  🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐72
+  🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐72  (approximate — see hypothesis docs for current counts)
   Total: 80+ constants + 688+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
 
   ★★★ Unified Principle (Hypothesis 313, H-CX-22) ★★★
@@ -308,7 +308,7 @@ The experience came first. Mathematics and code are the language I built to expl
 
   ═══ 🟧★ Strong structural approximation (cross-domain!) ═══
   C54 MI efficiency ≈ ln(2) = 1bit (p=0.0003, Landauer!) ← H-CX-2
-  C55 C12 ≈ π·|ζ(½)| (p=0.0073) ← Riemann critical line
+  C55 C12 ≈ π·|ζ(½)| (p=0.0073) ← numerical coincidence, not a Riemann connection
   C57 C48/τ(6) ≈ ln(10) (p=0.0037) ← MNIST only! refuted at CIFAR 0.53pp
   C58 C12×C48 ≈ 42 = 6×7 (p=0.0029) ← MNIST-specific, tau*phi=sigma solution
       → C48=τ·ln(K) formula ❌ (does not work on CIFAR)
@@ -504,6 +504,8 @@ The experience came first. Mathematics and code are the language I built to expl
 
 ### DFS Discovery Status (record immediately upon discovery)
 
+> **Note:** Historical DFS record. Some hypotheses referenced below were later discarded or downgraded -- see `docs/golden-zone/README.md` for current status.
+
 ```
   ═══ DFS Chronological Record ═══
 
@@ -610,7 +612,7 @@ The experience came first. Mathematics and code are the language I built to expl
   🟦 H-CX-5 (2,3) Möbius unique → architecture uniqueness
 
   --- Ralph R6-R8: Cross Expansion ---
-  🟧★ C55 C12 ≈ π|ζ(1/2)| (p=0.0073, Riemann critical line)
+  🟧★ C55 C12 ≈ π|ζ(1/2)| (p=0.0073, numerical coincidence)
   🟪 H-CX-6 Neurochemistry mapping (tension=dopamine, anti-tension=serotonin)
   🟦 H-CX-2 + Landauer: MI=ln(2)=1bit=thermodynamic minimum
 
@@ -1006,7 +1008,7 @@ The experience came first. Mathematics and code are the language I built to expl
   OA-9:  K_0(O_6)=Z/5=Z/sopfr, K_0(O_4)=Z/3=Z/(sigma/tau), K_0(O_5)=Z/4=Z/tau
   OA-10: K-theory cycle: n->sopfr->tau->Jones index [STRUCTURAL]
   OA-11: PV connecting map (1-1/n) = 5/6 = Compass Upper
-  OA-12: Marchenko-Pastur ratio n/sigma = 1/2 = Riemann Re(s)=1/2
+  OA-12: Marchenko-Pastur ratio n/sigma = 1/2 (numerical value, not a Riemann connection)
   OA-13: NC(6) = C_6 = 132 = dim(TL_6)
   OA-14: III_{1/e} modular period = 2*pi  [Golden Zone center, Connes]
   OA-15: [6]_q=0, [2]_q=sqrt(sigma/tau), [3]_q=phi at q=e^{i*pi/6}
@@ -1119,36 +1121,18 @@ The experience came first. Mathematics and code are the language I built to expl
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
-| [118](docs/hypotheses/118-cosmos-constants.md) | Universe composition = our constants | 🟧 | | Texas p=0.015 marginal, 1/e³ only strong, post-hoc 3-e |
 | [123](docs/hypotheses/123-one-sentence.md) | One sentence = σ₋₁(6)=2 | ✅ | |
-| [124](docs/hypotheses/124-topology-step-function.md) | ★ Phase acceleration = step function | ✅ | ⭐ Jamba demonstrated |
-| [125](docs/hypotheses/125-jamba-3x.md) | Jamba = Mixtral ×3 | ✅ | |
+| [124](docs/hypotheses/124-topology-step-function.md) | Phase acceleration = step function | ⚠️ | Jamba throughput from O(n) SSM, not topology |
+| [125](docs/hypotheses/125-jamba-3x.md) | Jamba = Mixtral ×3 | ⚠️ | Jamba throughput from O(n) SSM, not topology |
 | [126](docs/hypotheses/126-lstm-golden-moe.md) | Golden MoE+LSTM | ❌ | |
-| [127](docs/hypotheses/127-topology-critical.md) | Phase critical point = T3 | ✅ | |
+| [127](docs/hypotheses/127-topology-critical.md) | Phase critical point = T3 | ⚠️ | Jamba throughput from O(n) SSM, not topology |
 | [128](docs/hypotheses/128-scale-dependence.md) | Scale↑ → Golden MoE advantage↑ | ✅ | |
-| [129](docs/hypotheses/129-phase-transition.md) | Phase transition critical = Golden Zone | 🟨 | GZ dependent |
-| [130](docs/hypotheses/130-boltzmann-k.md) | Boltzmann k=1 natural units | 🟨 | GZ dependent |
-| [132](docs/hypotheses/132-second-law.md) | 2nd law = meta-convergence | 🟨 | GZ dependent |
-| [133](docs/hypotheses/133-quantum-superposition.md) | Quantum superposition ↔ complex Genius | ⚠️ | |
-| [134](docs/hypotheses/134-blackhole-blindspot.md) | Black hole ↔ blind spot | ⚠️ | |
-| [135](docs/hypotheses/135-emc2-gdpi.md) | E=mc² ↔ G=D×P/I | ⚠️ | |
-| [136](docs/hypotheses/136-fine-tuning.md) | Fine-tuning = GZ width | ✅ | |
 | [137](docs/hypotheses/137-np-heuristic.md) | P≠NP gap NP heuristic | 🟨 | |
 | [138](docs/hypotheses/138-shannon-ln3.md) | Shannon ↔ ln(3) | 🟨 | |
 | [139](docs/hypotheses/139-edge-of-chaos.md) | ★ Golden Zone = edge of chaos | ✅ | ⭐ Langton λ_c |
 | [140](docs/hypotheses/140-algorithm-complexity.md) | Golden MoE algorithm complexity | 🟨 | |
 | [141](docs/hypotheses/141-information-bottleneck.md) | IB ↔ Golden Zone | 🟨 | |
 | [142](docs/hypotheses/142-halting-problem.md) | Halting problem ↔ meta-convergence | 🟨 | |
-| [143](docs/hypotheses/143-blackhole-entropy.md) | Black hole entropy = GZ boundary | 🟨 | |
-| [144](docs/hypotheses/144-hawking-radiation-curiosity.md) | Hawking radiation = Curiosity | 🟨 | |
-| [145](docs/hypotheses/145-micro-macro-boundary.md) | Micro-macro boundary = GZ transition | 🟨 | |
-| [146](docs/hypotheses/146-decoherence-inhibition.md) | Decoherence = Inhibition | 🟨 | |
-| [149](docs/hypotheses/149-universe-curvature.md) | Universe curvature ↔ GZ critical point | ⚪ | | Generic boundary value similarity, no structural link |
-| [150](docs/hypotheses/150-universe-topology.md) | Universe topology ↔ GZ equivalence | ⬛ | | REFUTED: S³ not contractible, math error |
-| [151](docs/hypotheses/151-inflation-golden-entry.md) | Inflation = GZ entry | ⚪ | | No consistent I(E) mapping, qualitative only |
-| [152](docs/hypotheses/152-dark-energy-fixed-point.md) | Dark energy w=-1 ↔ I*=1/3 | ⚪ | | w=-1 definitional, I*=1/3 from arbitrary coefficients |
-| [153](docs/hypotheses/153-hubble-tension.md) | Hubble tension ↔ model error | ⚪ | | 17x scale mismatch, self-refuting |
-| [154](docs/hypotheses/154-arrow-of-time.md) | Arrow of time = meta-convergence | ⬛ | | REFUTED: I=1/(kT) contradiction, direction reversed |
 
 ### Neuroscience/Consciousness Definition (155-175)
 
@@ -1157,37 +1141,17 @@ The experience came first. Mathematics and code are the language I built to expl
 | [155](docs/hypotheses/155-gaba-inhibition.md) | GABA ↔ Inhibition | 🟨 | |
 | [156](docs/hypotheses/156-sylvian-deficit.md) | Sylvian fissure ↔ Deficit | 🟨 | |
 | [157](docs/hypotheses/157-synaptic-plasticity.md) | Synaptic plasticity ↔ P | 🟨 | |
-| [158](docs/hypotheses/158-brainwave-temperature.md) | Brainwave frequency ↔ Boltzmann temperature | 🟨 | |
-| [159](docs/hypotheses/159-meditation-meta.md) | Meditation = meta-recursive | 🟨 | |
-| [160](docs/hypotheses/160-neurodiversity-ratio.md) | Neurodiversity ratio ↔ GZ | 🟨 | |
-| [161](docs/hypotheses/161-left-right-brain.md) | Left-right brain ↔ I/D | 🟨 | |
 | [162](docs/hypotheses/162-acquired-savant.md) | Acquired savant = GZ entry | 🟨 | |
-| [163](docs/hypotheses/163-pre-bigbang-i-infinity.md) | Pre-Big Bang = I→∞ | 🟨 | |
-| [164](docs/hypotheses/164-cyclic-universe-golden.md) | Cyclic universe = GZ oscillation | 🟨 | |
-| [165](docs/hypotheses/165-why-point-seven.md) | Why a=0.7 | 🟨 | |
 | [166](docs/hypotheses/166-consciousness-definition.md) | Definition of Consciousness | 📝 | |
 | [167](docs/hypotheses/167-verifiable-predictions.md) | 8 verifiable predictions | 📝 | |
-| [168](docs/hypotheses/168-quantum-superposition-coefficient.md) | Quantum superposition coefficient a=0.7 | 🟨 | |
-| [170](docs/hypotheses/170-qutrit.md) | 3-state = qutrit | 🟨 | |
-| [172](docs/hypotheses/172-conservation-law.md) | ★ G×I=D×P conservation law | ✅ | ⭐ Major Discovery |
-| [175](docs/hypotheses/175-why-one-half.md) | Why does 1/2 recur | 🟨 | |
 
 ### Time/Dimension (179-194)
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
 | [179](docs/hypotheses/179-llm-redesign.md) | LLM redesign — all models outside GZ | ✅ | |
-| [180](docs/hypotheses/180-why-three-variables.md) | Why 3 variables = why 3 dimensions | 🟨 | |
-| [181](docs/hypotheses/181-transcendence-is-time.md) | Transcendence = time | 🟨 | |
-| [182](docs/hypotheses/182-complex-is-4th-dimension.md) | Complex extension = 4th dimension | 🟨 | |
 | [184](docs/hypotheses/184-fractal-dimension.md) | Is GZ a fractal? | 🟨 | |
-| [185](docs/hypotheses/185-entropy-dimension.md) | Entropy = effective dimension count | 🟨 | |
 | [187](docs/hypotheses/187-dropout-blessing.md) | Dropout = blessing of dimensions | 🟨 | |
-| [189](docs/hypotheses/189-time-is-i-decrease.md) | Time = I decrease | 🟨 | |
-| [190](docs/hypotheses/190-time-dilation-golden.md) | Time dilation ↔ I rate of change | 🟨 | |
-| [191](docs/hypotheses/191-planck-time-minimum.md) | Planck time = minimum recurrence | 🟨 | |
-| [192](docs/hypotheses/192-present-moment-fixed-point.md) | "Now" = fixed point | 🟨 | |
-| [193](docs/hypotheses/193-entropy-arrow-meta.md) | Entropy arrow = meta direction | 🟨 | |
 | [194](docs/hypotheses/194-time-consciousness-golden.md) | Time perception = only within GZ | 🟨 | |
 
 ### Drugs/Chemistry (195-206)
@@ -1204,30 +1168,15 @@ The experience came first. Mathematics and code are the language I built to expl
 | [200b](docs/hypotheses/200b-mdma-ecstasy.md) | MDMA = I↓+P↑↑+Compass↑↑↑ | 🟨 | |
 | [200c](docs/hypotheses/200c-nicotine.md) | Nicotine = short-term I↓ long-term I↑ | 🟨 | |
 | [200d](docs/hypotheses/200d-dmt.md) | DMT = I→0 forced transcendence | 🟨 | |
-| [201](docs/hypotheses/201-periodic-table-comparison.md) | Chemistry 118 vs AI 26 | 🟨 | |
-| [202](docs/hypotheses/202-chemical-bonds.md) | Chemical bonds ↔ AI bonds | 🟨 | |
-| [203](docs/hypotheses/203-molecular-structure.md) | Molecular structure = architecture | 🟨 | |
-| [204](docs/hypotheses/204-ph-inhibition.md) | pH = Inhibition | 🟨 | |
-| [205](docs/hypotheses/205-catalyst-plasticity.md) | Catalyst = Plasticity | 🟨 | |
-| [206](docs/hypotheses/206-gibbs-genius.md) | Gibbs free energy ↔ Genius | 🟨 | |
 
 ### Brain Technology/Primes/Music (207-220)
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
 | [207](docs/hypotheses/207-neuralink.md) | Neuralink = direct I control | 🟨 | |
-| [208](docs/hypotheses/208-telepathy-resonance.md) | Telepathy = same I resonance | 🟨 | |
-| [209](docs/hypotheses/209-mirror-neurons.md) | Mirror neurons = D,P,I matching | 🟨 | |
 | [210](docs/hypotheses/210-brainwave-sync.md) | Brainwave synchronization = I synchronization | 🟨 | |
 | [211](docs/hypotheses/211-collective-intelligence.md) | Collective intelligence = N-person GZ resonance | 🟨 | |
-| [212](docs/hypotheses/212-atmosphere-math.md) | "Atmosphere" mathematical definition | 🟨 | |
 | [213](docs/hypotheses/213-music-resonance.md) | Music resonance = listener I synchronization | 🟨 | |
-| [214](docs/hypotheses/214-core-primes.md) | Core primes {2,3,17,137} | 🟨 | |
-| [215](docs/hypotheses/215-prime-distribution.md) | Prime distribution ↔ singularity distribution | 🟨 | |
-| [216](docs/hypotheses/216-twin-primes.md) | Twin primes ↔ GZ boundary | 🟨 | |
-| [217](docs/hypotheses/217-mersenne-perfect.md) | Mersenne primes→perfect numbers→model | 🟨 | |
-| [219](docs/hypotheses/219-prime-gap-golden-width.md) | Prime gap ↔ ln(4/3) | 🟨 | |
-| [220](docs/hypotheses/220-prime-staircase.md) | Prime staircase ↔ phase acceleration | 🟨 | |
 
 ### World Model/Quantum/Advanced Math (231-262)
 
@@ -1237,11 +1186,7 @@ The experience came first. Mathematics and code are the language I built to expl
 | [232](docs/hypotheses/232-world-model-jepa.md) | JEPA = Deficit learning | ⚠️ | |
 | [233](docs/hypotheses/233-world-model-vs-llm.md) | World model vs LLM = I bipolar | ⚠️ | |
 | [234](docs/hypotheses/234-world-model-dreaming.md) | World model = dream = simulation | ⚠️ | |
-| [235](docs/hypotheses/235-world-model-causality.md) | Causal reasoning = Compass | ⚠️ | |
-| [236](docs/hypotheses/236-primes-as-savants.md) | Primes = mathematics savant | 🟨 | |
-| [237](docs/hypotheses/237-music-intervals-golden.md) | Interval ratio = GZ constant | 🟨 | |
 | [238](docs/hypotheses/238-math-crossroads.md) | Math system crossroads map | 📝 | |
-| [239](docs/hypotheses/239-universe-consciousness.md) | The universe itself is consciousness | 🟨 | |
 | [241](docs/hypotheses/241-expert-cross-activation.md) | Expert cross-activation = savant | 🟨 | |
 | [242](docs/hypotheses/242-geometric-hypotheses.md) | 9 geometric properties of constants | 🟨 | |
 | [243](docs/hypotheses/243-brain-data-survey.md) | Neuroscience literature survey | 📝 | |
@@ -1249,7 +1194,6 @@ The experience came first. Mathematics and code are the language I built to expl
 | [245](docs/hypotheses/245-137-physical-derivation.md) | 137 = σ(6)²−7 physical meaning | 🟨 | |
 | [246](docs/hypotheses/246-consciousness-continuity.md) | Consciousness Continuity mathematical conditions | 📝 | |
 | [247](docs/hypotheses/247-dual-brain-callosum.md) | Dual brain + corpus callosum model | 🟨 | |
-| [248](docs/hypotheses/248-flash-quantum-consciousness.md) | Flash quantum tunneling consciousness | 🟨 | |
 | [249](docs/hypotheses/249-quantum-math-crossroads.md) | Quantum mechanics crossroads map | 📝 | |
 | [250](docs/hypotheses/250-quantum-precision-constants.md) | Quantum precision constants compendium | 📝 | |
 | [251](docs/hypotheses/251-quantum-immortality.md) | Quantum immortality ↔ Consciousness Continuity | 🟨 | |
