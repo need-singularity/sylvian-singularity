@@ -57,7 +57,7 @@
                                  🟥 Golden MoE (model-dependent)
                                  🟥 Expert cross-activation
 
-  ═══ σφ=nτ system (P-001, 191 characterizations, 152 hypotheses) ═══
+  ═══ σφ=nτ system (P-001, 192 characterizations, 152 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -3676,7 +3676,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
      → denom(B_2) = 6 (von Staudt-Clausen: primes with (p-1)|2 = {2,3})
      → R(denom(B_2)) = R(6) = 1. Unique: R(denom(B_{2k})) > 1 for k≥2
 
-  📊 Total: +27 chars (#165-191), 3 ⭐⭐⭐ + 8 ⭐⭐ + 16 ⭐ = 191 characterizations!
+  ⭐ 2φ(n)=τ(n) ⟺ {2,6} (doubling totient=divisor count) #192
+
+  📊 Total: +28 chars (#165-192), 3 ⭐⭐⭐ + 8 ⭐⭐ + 17 ⭐ = 192 characterizations!
 ```
 
 ---
