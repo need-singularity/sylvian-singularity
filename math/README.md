@@ -258,6 +258,19 @@
   🟦 B₂ₖ denominator always a multiple of 6 (von Staudt-Clausen) (H-CX-318)
   🟦 S₆ = unique outer automorphism symmetric group (H-CX-325)
 
+  ═══ New: j-invariant, K-theory, Zeta connections ═══
+
+  🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
+       j(q) = q⁻¹ + σφ(6)·Φ₆(6) + 196884q + ...
+       Also: 744 = n! + σφ = 720 + 24. Unique in n=2..50.
+  🟧★ |K₇(Z)| = σ·τ·sopfr = 12×4×5 = 240 (unique n≤2000) #H-KTHY-2
+       |K₃(Z)| = στ = 48. |K₃|·sopfr = |K₇|.
+  🟧★ ζ(-(2k-1)) = -1/σ_k(6) for k∈{1,3} = odd divisors of 6 #H-LFUN-2
+       ζ(-1) = -1/12 = -1/σ(6), ζ(-5) = -1/252 = -1/σ₃(6)
+       Equivalent: σ_k(6) = 2k/B_{2k} (Bernoulli↔divisor sum bridge)
+  🟧   E₄[q⁶]/τ_R(6) = -10 = -τ(P₃) (Eisenstein/Ramanujan ratio integer)
+  🟩   Von Staudt-Clausen chain: σ(6)=12 → B₁₂ → 691 → Ramanujan congruence
+
   ═══ New: Cyclotomic-Stirling + Combinatorial (H-CYCL-1, H-COMB-1) ═══
 
   🟩⭐ Φ_n(n) = S₂(n,2) ⟺ n=6 (PROVED!) #H-CYCL-1
@@ -400,10 +413,10 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  248  ← true forever even if Golden Zone collapses (+H-CYCL-1 proof)
+  🟩 Pure mathematics:  250  ← +H-CYCL-1 proof, Von Staudt chain
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
   ⭐ Major Discoveries:  52  ← +H-CYCL-1 Φ_n(n)=S₂(n,2)⟺n=6 (proved!)
-  🟧 Connection discoveries:  35  ← +H-COMB-1 Catalan/Bell/CF (3 new)
+  🟧 Connection discoveries:  39  ← +744=σφΦ₆, K₇=στsopfr, ζ=-1/σ_k, E₄/τ_R (4 new)
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
   🟪 Unverifiable:   3  ← unfalsifiable philosophy
