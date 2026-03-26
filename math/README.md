@@ -3761,6 +3761,14 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
 ---
 
+## Paper Candidates
+
+| # | Title | Core Results | Target | Status |
+|---|-------|-------------|--------|--------|
+| P-002 | The arithmetic balance ratio R(n)=σφ/(nτ) and n=6 | Thm 1-8 from H-SPEC-1: multiplicativity, gap theorem, σφf=1, φ/τ+τ/σ+1/n=1, Fermat, G≅Z^{primes-1} | Amer. Math. Monthly | Draft |
+
+---
+
 ## Connection to Millennium Problems
 
 | Problem | Connection | Status | Document |
