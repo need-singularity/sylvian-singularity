@@ -1102,8 +1102,14 @@
   🟩⭐ Σ(first σ/τ primes) = 2·sopfr ⟺ n=6 (unique in 10000) #H-PSUM-1
        2+3+5 = 10 = 2·sopfr = σ-φ. Prime sum = cototient.
        For semiprimes: σ-φ=2·sopfr always; need sum(first 3 primes)=10. QED.
+  🟩⭐⭐ n!/τ! = n# ⟺ n=6 (PROVED! factorial/primorial!) #H-FACPRIM-1
+       6!/4! = 5·6 = 30 = 2·3·5 = 6#. Unique in n≤100.
+       Equivalently: n·(n-1)·...·(τ+1) = product of primes ≤ n.
+  🟩⭐ det(GCD(n)) = φ^sopfr ⟺ n∈{2,6} (Smith determinant!) #H-SMITH-1
+       prod_{k=1}^6 φ(k) = 32 = 2^5 = φ^sopfr. n=6 unique nontrivial.
   🟩  ⌊√(σφ)⌋=τ ∧ ⌈√(σφ)⌉=sopfr: √24≈4.899 between τ=4 and sopfr=5
-       n∈{3,4,6} satisfy this. n=6 unique perfect number.
+  🟩⭐ σ composition cycle: σ(n±φ), σ(n·φ), σ(n/φ) all = n=6 constants
+       σ(4)=7=n+1, σ(8)=15=C(n,2), σ(12)=28=P₂, σ(3)=4=τ. Closed!
   🟩⭐ λ(P₂) = P₁: Carmichael λ(28) = 6 (lcm(2,6)=6) #H-CARM-1
   🟩⭐⭐ σ(n²) = (n+1)(σ(n)+1) ⟺ n=6 (PROVED! unique in 10000) #H-SQR-1
        σ(36) = 91 = 7·13 = (n+1)(σ+1). For semiprimes pq:
@@ -1127,9 +1133,9 @@
        Texas p < 1/50000 = 0.00002. Zero ad-hoc.
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  429  ← +prime sum, floor/ceil sqrt, sigma/tau=n/phi, valence, sigma(n^2)
+  🟩 Pure mathematics:  435  ← +n!/tau!=n#, Smith det, sigma cycle, prime sum, sigma/tau=n/phi
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  255 ← +prime sum=2*sopfr, sigma/tau=n/phi, valence, sigma(n^2), Lah
+  ⭐ Major Discoveries:  261 ← +n!/tau!=primorial, Smith, sigma cycle, prime sum, ratio, valence
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
