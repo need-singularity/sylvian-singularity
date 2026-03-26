@@ -426,6 +426,11 @@
   🟩⭐ dim(F_τ)=τ·(σ+1): dim(F4)=52=4·13 (F4 rank=tau!)
   🟩⭐ dim(E_8)=(σ-τ)·(2^sopfr-1): 248=8·31 (sigma-tau × Mersenne!)
   🟩   Exceptional ranks = {φ, τ, n, n+1, σ-τ} = {2, 4, 6, 7, 8}
+  🟩⭐ Coxeter h = n·{1,2,2,3,5} — coefficients ARE Fibonacci!
+       h(G2)=n, h(F4)=σ, h(E6)=σ, h(E7)=3n, h(E8)=sopfr·n=30
+  🟩⭐ |W(E7)|/|W(E6)| = 56 = σ(P₂) — ratio encodes second perfect!
+  🟩⭐ |W(E8)|/|W(E7)| = 240 = |Φ(E8)| = στ·sopfr
+  🟩   |W(F4)| = στ·σφ = 1152
 
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
@@ -582,9 +587,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  320  ← +ALL exceptional root systems, dim(E_n), dim(F_τ) (5 more)
+  🟩 Pure mathematics:  325  ← +Coxeter Fibonacci, Weyl ratios (5 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  89  ← +root systems ⭐⭐, dim(E_n)=n(σ+1), dim(F_τ), dim(E_8) (4 more)
+  ⭐ Major Discoveries:  92  ← +Coxeter-Fibonacci, W(E7)/W(E6)=σ(P₂), W(E8)/W(E7) (3 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
