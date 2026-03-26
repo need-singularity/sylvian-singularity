@@ -530,6 +530,14 @@
   🟩⭐ σ(sopfr-1) = φτn ⟺ n=6: 12·4=48=2·4·6 (UNIQUE in 2..5000!)
        Four-function identity linking sigma, sopfr, phi, tau, n.
 
+  ═══ New: P₃=496 Shadow (Ralph 345b) ═══
+
+  🟩⭐ P₃ = 2^τ(6) · Φ₆(6) = 16·31 = 496 (NEW! P₁→P₃ arithmetic path)
+       τ(6)=4 and Φ₆(6)=31(Mersenne). Direct connection, zero corrections.
+  🟩   P₃ shadow density ~11% (vs P₂=14.6%). 10 structural hits.
+       dim(SO(32)) = dim(E₈×E₈) = 496 = P₃ (string theory anomaly)
+       σ(P₃) = 992 = |Θ₁₁| (exotic spheres)
+
   ═══ New: Physics connections (Ralph 344r, mostly observational) ═══
 
   🟩⭐ dim(E₈×E₈) = 2·dim(E₈) = 496 = P₃ — anomaly cancellation needs P₃!
@@ -716,7 +724,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  133 ← +QEC [[21,15,3]], toric [[σ,φ,σ/τ]], surface genus (3 more)
+  ⭐ Major Discoveries:  134 ← +P₃=2^τ·Φ₆(6) identity (1 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
