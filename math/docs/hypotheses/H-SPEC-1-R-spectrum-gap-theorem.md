@@ -402,6 +402,19 @@ of n = 6 as an "arithmetic lens" in the spectrum.
   COROLLARY: Spec_R is countable with no limit points.
   COROLLARY: Every R value is isolated (separated by a gap from neighbors).
 
+  THEOREM: inf Spec_R = 3/4, achieved uniquely at n = 2.
+
+  PROOF: R(2) = 3/4. For n ≥ 3 with factorization ∏ p_i^{a_i}:
+    If 2 ∤ n: all R(p^a) ≥ R(3) = 4/3 > 3/4. Product ≥ 4/3 > 3/4.
+    If 2 | n: R(n) includes factor R(2^a).
+      a=1: R(2) = 3/4, other factors ≥ R(3) = 4/3.
+        Product ≥ 3/4 · 4/3 = 1 > 3/4. (equality at n=6)
+      a≥2: R(2^a) ≥ R(4) = 7/6 > 3/4. Other factors ≥ 1.
+        Product ≥ 7/6 > 3/4.
+    So R(n) ≥ 3/4 with equality iff n = 2.  ■
+
+  Combined: 3/4 ≤ R(n) < n/2 for all n ≥ 2.
+
   Empirically: π_R(x) ≈ 2x·ln(x) (verified to x=100).
   Per unit interval: [k, k+1) contains 5-12 R values (N=100000).
 ```
