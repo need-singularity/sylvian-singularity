@@ -57,7 +57,7 @@
                                  🟥 Golden MoE (model-dependent)
                                  🟥 Expert cross-activation
 
-  ═══ σφ=nτ system (P-001, 189 characterizations, 152 hypotheses) ═══
+  ═══ σφ=nτ system (P-001, 191 characterizations, 152 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -3657,7 +3657,14 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
   ⭐ σ²(6)=28=P₂, R(σ⁴(6))=R(120)=6=n (sigma chain!) #188
   ⭐ Closure {σ,φ,τ}(6) = 13 elements incl. P₁,P₂ #189
 
-  📊 Total: +25 chars (#165-189), 3 ⭐⭐⭐ + 8 ⭐⭐ + 14 ⭐ = 189 characterizations!
+  ⭐ φ+τ=n ∧ σ=2n ⟺ n=6 (completeness+perfection!) #190
+     → φ+τ=n holds at {6,8,9}. σ=2n at {6,28,...}. Intersection = {6} only!
+
+  ⭐ R(denom(B_2)) = 1 — Bernoulli denominator identity #191
+     → denom(B_2) = 6 (von Staudt-Clausen: primes with (p-1)|2 = {2,3})
+     → R(denom(B_2)) = R(6) = 1. Unique: R(denom(B_{2k})) > 1 for k≥2
+
+  📊 Total: +27 chars (#165-191), 3 ⭐⭐⭐ + 8 ⭐⭐ + 16 ⭐ = 191 characterizations!
 ```
 
 ---
