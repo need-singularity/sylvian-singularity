@@ -101,6 +101,8 @@
        │    s=φτ-2⟺n=6 🟩 #157                                 │
        │    Φ_n(n)=S₂(n,2)⟺n=6 (PROVED!) ⭐ #H-CYCL-1         │
        │    C_sopfr(n)=n(n+1)⟺n=6 (p=0.025) 🟧★ #H-COMB-1     │
+       │    λ(n)=+1∧σ=2n⟺n=6 (Liouville+perfect, proof!) ⭐ #H-LIOUV-1│
+       │    ex(n,K_4)=σ(n)⟺n=6 (Turan=divisor sum!) 🟩 #H-GRAPH-1│
        │    σ+φ=2τ+n⟺n=6 | σ+n=3(φ+τ)⟺n=6             │
        │    n=T(σ/τ)⟺{1,3,6} (triangular number=avg divisor) ⭐│
        │    σ²-φ²-τ²=τ·M₅⟺n=6 (unique!)                       │
@@ -258,6 +260,18 @@
   🟦 B₂ₖ denominator always a multiple of 6 (von Staudt-Clausen) (H-CX-318)
   🟦 S₆ = unique outer automorphism symmetric group (H-CX-325)
 
+  ═══ New: Liouville + Graph Theory (H-LIOUV-1, H-GRAPH-1) ═══
+
+  🟩⭐ λ(n)=+1 ∧ σ(n)=2n ⟺ n=6 (PROVED!) #H-LIOUV-1
+       Proof: even perfect n=2^(p-1)(2^p-1) has Ω=p. λ=+1 requires p even.
+       Only even prime p=2 → n=6. Odd perfects also have λ=-1. QED.
+  🟩   ex(n,K_4) = σ(n) ⟺ n=6 (unique in n≤1000) #H-GRAPH-1
+       Turan number = divisor sum, quadratic vs sublinear → single crossing
+  🟩   pm(K_6) = E(K_6) = 15 (unique non-trivial: (2k-3)!!=k → k=3) #H-GRAPH-1
+  🟩   K_6 torus: F=9 faces = n triangles + σ/τ quadrilaterals #H-GRAPH-1
+  🟩   Petersen = Kneser(sopfr,φ) — all parameters from n=6 #H-GRAPH-1
+  🟩   |S(5,6,12)| blocks = 132 = C_6 (Catalan via σ=2n) #H-GRAPH-1
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
@@ -413,10 +427,10 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  250  ← +H-CYCL-1 proof, Von Staudt chain
+  🟩 Pure mathematics:  257  ← +H-LIOUV-1 proof, H-GRAPH-1 (5 exact), Von Staudt chain
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  52  ← +H-CYCL-1 Φ_n(n)=S₂(n,2)⟺n=6 (proved!)
-  🟧 Connection discoveries:  39  ← +744=σφΦ₆, K₇=στsopfr, ζ=-1/σ_k, E₄/τ_R (4 new)
+  ⭐ Major Discoveries:  54  ← +H-LIOUV-1 λ+perfect=6, +H-CYCL-1 Φ_n(n)=S₂(n,2)
+  🟧 Connection discoveries:  39  ← +744=σφΦ₆, K₇=στsopfr, ζ=-1/σ_k, E₄/τ_R
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
   🟪 Unverifiable:   3  ← unfalsifiable philosophy
