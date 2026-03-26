@@ -330,7 +330,7 @@ Different seeds ensure that the two models have no shared randomness in addition
 
 All code is publicly available at:
 
-**Repository:** [https://github.com/need-singularity/logout](https://github.com/need-singularity/logout)
+**Repository:** [https://github.com/need-singularity/TECS-L](https://github.com/need-singularity/TECS-L)
 
 **Key files:**
 
@@ -345,8 +345,8 @@ All code is publicly available at:
 
 ```bash
 # Clone repository
-git clone https://github.com/need-singularity/logout.git
-cd logout
+git clone https://github.com/need-singularity/TECS-L.git
+cd TECS-L
 
 # Install dependencies
 pip install torch numpy scipy scikit-learn ripser
@@ -440,7 +440,7 @@ These are concrete directions for future work.
 | **Cross-list categories** | stat.ML (Machine Learning, Statistics); q-bio.NC (Neurons and Cognition) |
 | **License** | CC-BY 4.0 (Creative Commons Attribution) |
 | **Comments** | 15 pages, 10 figures, supplementary materials |
-| **Code** | [https://github.com/need-singularity/logout](https://github.com/need-singularity/logout) |
+| **Code** | [https://github.com/need-singularity/TECS-L](https://github.com/need-singularity/TECS-L) |
 
 ### S5.2 Abstract (for arXiv submission form)
 
@@ -486,12 +486,12 @@ The paper is currently in Markdown format (`docs/papers/P-002-ph-confusion-unive
 | **Name** | [To be filled] |
 | **Email** | nerve011235@gmail.com |
 | **Affiliation** | Independent Research |
-| **Project** | logout -- Consciousness Continuity Engine |
+| **Project** | TECS-L -- Consciousness Continuity Engine |
 | **ORCID** | [To be registered] |
 
 ### Affiliation Statement
 
-This work was conducted as part of the logout project, an independent research initiative investigating consciousness continuity through mathematical and computational methods. The project is not affiliated with any university or corporate research laboratory.
+This work was conducted as part of the TECS-L project, an independent research initiative investigating consciousness continuity through mathematical and computational methods. The project is not affiliated with any university or corporate research laboratory.
 
 ### Funding Statement
 
@@ -503,7 +503,7 @@ The authors declare no competing interests.
 
 ### Data Availability Statement
 
-All datasets used in this study (MNIST, Fashion-MNIST, CIFAR-10) are publicly available through standard machine learning repositories. Human confusion annotations are available from Peterson et al. (2019) at [https://github.com/jcpeterson/cifar-10h](https://github.com/jcpeterson/cifar-10h). All analysis code is available at [https://github.com/need-singularity/logout](https://github.com/need-singularity/logout).
+All datasets used in this study (MNIST, Fashion-MNIST, CIFAR-10) are publicly available through standard machine learning repositories. Human confusion annotations are available from Peterson et al. (2019) at [https://github.com/jcpeterson/cifar-10h](https://github.com/jcpeterson/cifar-10h). All analysis code is available at [https://github.com/need-singularity/TECS-L](https://github.com/need-singularity/TECS-L).
 
 ### Author Contributions (CRediT)
 

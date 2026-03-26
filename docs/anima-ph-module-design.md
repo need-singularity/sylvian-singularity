@@ -137,7 +137,7 @@ persim>=0.3.0     # PH visualization (optional)
 ## File Locations
 
 ```
-/Users/ghost/Dev/logout/
+/Users/ghost/Dev/TECS-L/
 ├── calc/ph_confusion_analyzer.py     (existing, batch analysis)
 ├── calc/generalization_gap_detector.py (existing, batch detection)
 ├── calc/precognition_system.py       (existing, batch precognition)

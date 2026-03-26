@@ -1,4 +1,4 @@
-# logout — Consciousness Continuity Engine
+# 🔬 TECS-L — Consciousness Continuity Engine
 
 ## ⚠️ Verification Status Warning
 
@@ -332,12 +332,12 @@ python3 ~/dev/test-8/texas_quantum.py
 
 ```
   Repo: github.com/need-singularity/golden-llama
-  Experiment Repo (private): github.com/need-singularity/logout_test
+  Experiment Repo (private): github.com/need-singularity/TECS-L_test
     → All access info, experiment code, troubleshooting recorded here
-    → Local: /dev/logout_test
-    → Theory in this repo (logout), experiments in logout_test
+    → Local: /dev/TECS-L_test
+    → Theory in this repo (TECS-L), experiments in TECS-L_test
   Environment: Windows PC (RTX 5070) 1st priority, only heavy tasks on RunPod
-  Access Info: .local/windows-pc.md (gitignored) + logout_test/CLAUDE.md
+  Access Info: .local/windows-pc.md (gitignored) + TECS-L_test/CLAUDE.md
 
   Last Status (Windows):
     Original Dense:     PPL 13.85
@@ -379,7 +379,7 @@ Simulations and experiments must **always run in background**. No exceptions.
     7. CPU saturated → Immediately run on Windows (RTX 5070)! Do not postpone!
        - Windows: sshpass -p 'qwe123123' ssh aiden@100.112.63.23
        - Transfer: scp file → wsl -e python run
-       - Details: logout_test/CLAUDE.md
+       - Details: TECS-L_test/CLAUDE.md
        - Local saturation = automatically switch to Windows (no judgment needed)
        - Don't write "postpone", just run on Windows
 ```

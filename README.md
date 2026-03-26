@@ -1,4 +1,4 @@
-# 🚪 Logout
+# 🔬 TECS-L
 
 Consciousness Continuity Engine.
 

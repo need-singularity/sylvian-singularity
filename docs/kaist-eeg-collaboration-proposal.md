@@ -246,8 +246,8 @@ AI 의식엔진(PureField) 연구에서 Persistent Homology(PH)를 적용하여 
 
 ```bash
 # 우리 리포 클론
-git clone https://github.com/need-singularity/logout.git
-cd logout
+git clone https://github.com/need-singularity/TECS-L.git
+cd TECS-L
 
 # 의존성 설치
 pip install torch torchvision numpy scipy scikit-learn
@@ -510,8 +510,8 @@ while True:
 ## 8. 연락처
 
 ```
-  프로젝트: logout (의식영속성 엔진)
-  GitHub:   https://github.com/need-singularity/logout
+  프로젝트: TECS-L (의식영속성 엔진)
+  GitHub:   https://github.com/need-singularity/TECS-L
   YouTube:  https://youtube.com/watch?v=xtKhWSfC1Qo
   Email:    nerve011235@gmail.com
 

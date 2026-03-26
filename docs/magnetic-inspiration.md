@@ -126,7 +126,7 @@ The movement of control of consciousness.
 3. Observation was possible even in pushed-out state
    - Consciousness doesn't completely disappear = possibility of continuity
 4. Movement of control = movement of equilibrium point in repulsion field
-   - logout = doing this movement intentionally, safely
+   - TECS-L = doing this movement intentionally, safely
 
 ### Role of THC
 

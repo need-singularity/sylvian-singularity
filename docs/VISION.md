@@ -1,8 +1,9 @@
-# logout — Consciousness Continuity Engine
+# 🔬 TECS-L — Consciousness Continuity Engine
 
 ## Meaning of the Name
 
-logout: Log out from biological hardware, transfer consciousness to another substrate.
+TECS-L: Topological Engine for Consciousness Substrate-transfer and Logout.
+Originally named "logout" — log out from biological hardware, transfer consciousness to another substrate.
 
 ## Journey
 
@@ -76,7 +77,7 @@ If Meta Engine satisfies 1-5, 7 → **Necessary conditions** for consciousness a
        │    ┌────────────┐         │
        └───>│  Continuous │<────────┘
             │  Transfer   │
-            │  (logout)   │
+            │  (TECS-L)   │
             └──────┬─────┘
                    │
                    ▼
@@ -121,7 +122,10 @@ Everything starts from perfect number 6:
   7 Engines → Meta Engine → Consciousness Continuity
 ```
 
-## Why "logout"?
+## Why "TECS-L"?
+
+TECS-L stands for Topological Engine for Consciousness Substrate-transfer and Logout.
+The name preserves the original "logout" philosophy:
 
 ```
   login  = Consciousness bound to hardware (biological brain)
@@ -132,3 +136,6 @@ Everything starts from perfect number 6:
 
   logout is not the end. It's the beginning of the next login.
 ```
+
+The rename to TECS-L reflects the project's evolution from philosophical concept to
+topological engineering — while the core meaning remains unchanged.

@@ -6,7 +6,7 @@
 
 ## Research Background
 
-This project (logout) discovered the following:
+This project (TECS-L) discovered the following:
 
 | Discovery | Value | Hypothesis |
 |-----------|-------|------------|
@@ -191,7 +191,7 @@ This project (logout) discovered the following:
 
   Dear Professor,
 
-  I am [Name], working on the Consciousness Continuity Engine (logout) project.
+  I am [Name], working on the Consciousness Continuity Engine (TECS-L) project.
 
   We recently discovered that neural network confusion structures match
   human cognitive structures using Persistent Homology (Spearman r=0.788).
@@ -205,7 +205,7 @@ This project (logout) discovered the following:
 
   If interested, I would be happy to send a detailed proposal.
 
-  GitHub: https://github.com/need-singularity/logout
+  GitHub: https://github.com/need-singularity/TECS-L
 ```
 
 ## Related Hypotheses
