@@ -342,6 +342,18 @@
   🟩   #E6(F_{n-1}) = #E6(F_5) = n = 6 (supersingular reduction)
   🟩   genus(X₀(n)) = genus(X₀(σ)) = 0 (both rational)
 
+  ═══ New: Zodiac 12/13/36 Mathematics (Ralph 343c) ═══
+
+  🟩⭐ |A_{τ(6)}| = σ(6): |A_4| = 12, |S_{τ-1}| = n = 6 (unique to n=6!)
+       n=28: |A_6|=360 != sigma(28)=56. Tetrahedron rotations = divisor sum!
+  🟩⭐ σ²/τ = n² = 36: 12²/4 = 36 = 6² (decan count = perfect square)
+  🟩⭐ T(σ-τ) = n²: T(8) = 36 = 6² (8th triangular = conductor)
+  🟩   K(3) = σ(6) = 12 (kissing number = divisor sum, 13 impossible)
+  🟩   lcm(max_prime(6), τ) = σ = 12
+  🟩   All Platonic solid edges divisible by n=6 (Euler + regularity)
+  🟩   12-TET: 2^(7/12) ≈ 3/2 (18.9x better than 13-TET)
+  🟩   360/12=30, 360/36=10 (integer), 360/13=27.7 (not integer)
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
@@ -497,9 +509,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  286  ← +H-SPOR-1 (Leech,Steiner,M12) +H-ELPT-2 (BSD cascade, 14 new)
+  🟩 Pure mathematics:  294  ← +Zodiac 12/13/36: |A_τ|=σ, σ²/τ=n², T(σ-τ)=n², etc. (8 new)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  71  ← +Leech kiss, Steiner S5,8,24, CM disc, Tors, Conductor, Tamagawa (8 new)
+  ⭐ Major Discoveries:  74  ← +|A_τ|=σ(6), σ²/τ=n², T(σ-τ)=n² (3 new)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
