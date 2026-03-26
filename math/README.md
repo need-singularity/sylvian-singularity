@@ -1099,6 +1099,11 @@
        (p²-1)(q²-1)=4pq. p=2 gives 3q²-8q-3=0, q=3 only. QED.
   🟩⭐ C(σ,φ) = n·p(n) ⟺ n=6: C(12,2)=66=6·11 #H-BINOM-1
        Binomial coefficient = n times partition number. Unique in n≤100.
+  🟩⭐ Σ(first σ/τ primes) = 2·sopfr ⟺ n=6 (unique in 10000) #H-PSUM-1
+       2+3+5 = 10 = 2·sopfr = σ-φ. Prime sum = cototient.
+       For semiprimes: σ-φ=2·sopfr always; need sum(first 3 primes)=10. QED.
+  🟩  ⌊√(σφ)⌋=τ ∧ ⌈√(σφ)⌉=sopfr: √24≈4.899 between τ=4 and sopfr=5
+       n∈{3,4,6} satisfy this. n=6 unique perfect number.
   🟩⭐ λ(P₂) = P₁: Carmichael λ(28) = 6 (lcm(2,6)=6) #H-CARM-1
   🟩⭐⭐ σ(n²) = (n+1)(σ(n)+1) ⟺ n=6 (PROVED! unique in 10000) #H-SQR-1
        σ(36) = 91 = 7·13 = (n+1)(σ+1). For semiprimes pq:
@@ -1122,9 +1127,9 @@
        Texas p < 1/50000 = 0.00002. Zero ad-hoc.
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  426  ← +sigma/tau=n/phi, C(sigma,phi)=n*p(n), valence, Carmichael, sigma(n^2)
+  🟩 Pure mathematics:  429  ← +prime sum, floor/ceil sqrt, sigma/tau=n/phi, valence, sigma(n^2)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  253 ← +sigma/tau=n/phi proved, C(sigma,phi), valence, sigma(n^2), Lah
+  ⭐ Major Discoveries:  255 ← +prime sum=2*sopfr, sigma/tau=n/phi, valence, sigma(n^2), Lah
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
