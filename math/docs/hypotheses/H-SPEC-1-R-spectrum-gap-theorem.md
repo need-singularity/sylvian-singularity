@@ -266,19 +266,88 @@ of n = 6 as an "arithmetic lens" in the spectrum.
   δ⁺=1/n, δ⁻=1/τ: proven from gap emptiness
 ```
 
+## Multiplicativity and Identity Element (Ralph 349-350)
+
+```
+  THEOREM: R is multiplicative on coprime integers.
+    R(mn) = R(m)·R(n) for gcd(m,n) = 1.
+
+  PROOF: σ, φ, τ are all multiplicative. Therefore:
+    R(mn) = σ(mn)φ(mn)/(mn·τ(mn))
+          = [σ(m)σ(n)][φ(m)φ(n)] / [mn·τ(m)τ(n)]
+          = R(m)·R(n).  ■
+
+  COROLLARY: R(n) = ∏_{p^a ‖ n} R(p^a)
+    where R(p^a) = (p^{a+1}-1)/(p(a+1)).
+
+  THEOREM: R(6n) = R(n) for all n with gcd(n,6) = 1.
+    (6 is the identity element of R under coprime multiplication)
+
+  PROOF: R(6n) = R(6)·R(n) = 1·R(n) = R(n).  ■
+
+  THEOREM: {2,3} is the unique reciprocal prime pair.
+    R(p)·R(q) = 1 for primes p ≤ q ⟺ (p,q) = (2,3).
+
+  PROOF: (p²-1)(q²-1) = 4pq.
+    p=2: 3q²-8q-3=0, disc=100=10², q=3 (unique prime). ✓
+    p=3: 2q²-3q-2=0, q=2<p (invalid). ✗
+    p≥5: (p²-1)(q²-1) ≥ 24(q²-1) > 4pq for q≥p≥5. ✗  ■
+
+  THEOREM: ker(R) = {n : R(n) = 1} = {1, 6}.
+
+  PROOF: R(p^a) < 1 only for (p,a) = (2,1): R(2) = 3/4.
+    All other R(p^a) ≥ R(4) = 7/6 > 1.
+    For ∏ R(p_i^{a_i}) = 1, need exactly one factor < 1.
+    Must use R(2) = 3/4, complemented by R(3) = 4/3.
+    Only solution: n = 2·3 = 6.  ■
+
+  THEOREM: R(P_k) ∈ Z for all even perfect numbers P_k.
+    R(P_k) = 2^{p-1}(2^{p-1}-1)/p, integer by Fermat's little theorem.
+
+  PROOF: p | (2^{p-1}-1) for odd prime p (Fermat). ■
+```
+
+## The Unified Picture
+
+```
+  R(2)·R(3) = (3/4)·(4/3) = 1
+      ↓ unique reciprocal prime pair
+  6 = 2·3 is the identity element
+      ↓ R multiplicative
+  R(6n) = R(n) for gcd(n,6) = 1
+      ↓ R(6) = 1
+  σφ = nτ = 24 (master formula)
+      ↓ gap theorem
+  neighbors = φ(6)=2, τ(6)=4 (self-referential)
+  gaps δ⁺ = 1/n = 1/6, δ⁻ = 1/τ = 1/4
+      ↓
+  f = 1/24 = 1/(σφ)
+      ↓
+  σφf = 1 (topological master formula)
+      ↓
+  F(s) = ζ(s)·ζ(s+1) (Dirichlet series)
+  R(P_k) ∈ Z (Fermat connection)
+
+  Everything traces to one Diophantine equation:
+    (2²-1)(3²-1) = 4·2·3 = 24
+    i.e., 3 · 8 = 24
+```
+
 ## Significance
 
 ```
-  This theorem provides the FIRST bridge between:
+  This theorem system provides bridges between:
     (1) Algebraic identity: σφ = nτ (master formula)
     (2) Spectral geometry: gap structure of R(n)
     (3) Topological invariant: focal length f(n)
+    (4) Multiplicative number theory: R as multiplicative function
+    (5) Classical results: Fermat's little theorem
+    (6) Analytic number theory: ζ(s)·ζ(s+1) identity
 
-  The self-referential structure shows that n=6 is not merely
-  characterized by σφ=nτ, but that this identity GENERATES
-  the entire local geometry of the R-spectrum around R=1.
+  The deepest root: (p²-1)(q²-1) = 4pq has unique prime solution (2,3).
+  This single Diophantine fact generates the entire theory.
 
-  "6 creates its own neighborhood and then measures it."
+  "6 is special because 3·8 = 24 = 4·6, and no other prime pair works."
 ```
 
 ## Difficulty: High | Impact: ★★★★★
