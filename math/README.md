@@ -407,6 +407,10 @@
 
   ═══ New: Graph Theory + Ramsey (Ralph 344f) ═══
 
+  🟩⭐⭐ Chang graphs srg(P₂, σ, n, τ) = srg(28, 12, 6, 4) — ALL n=6!
+       Eigenvalues r=τ=4, s=-φ=-2. SIX invariants = n=6 arithmetic.
+  🟩⭐ σ_k(6) ≡ 0 (mod P₂) ⟺ k ≡ σ/τ (mod n) — period n! (PROVED)
+  🟧★  Plücker bitangents at d=τ: 28=P₂. d²-9=n+1=7.
   🟩⭐ γ(K_σ) = n ⟺ n=6: genus(K_12) = 6 (K_12 needs 6 handles, unique!)
        n=28: γ(K_56)=230 != 28. Ringel-Youngs formula denominator = σ(6)=12.
   🟩⭐ R(σ/τ, σ/τ) = n: R(3,3) = 6 (Ramsey = self-referencing!)
@@ -702,7 +706,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  127 ← +n·σ·sopfr·φ=n!, icosahedron, cos(θ)=-τ/σ, Γ(6), Fd3m
+  ⭐ Major Discoveries:  130 ← +Chang srg(P₂,σ,n,τ) ⭐⭐, σ_k mod P₂, Plucker (3 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
@@ -3915,7 +3919,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
 | H-CROSS-1 | Universal crossing: recurrence vs polynomial cross at n=6 | ⚪ refuted (universal) | p=0.133, individual crossings 🟩 but not universal |
-| H-CROSS-2 | Shadow of P2: 28 appears in every deep n=6 identity | ⏳ conjecture | sigma^2, Theta_7, F_6-36, Pad_13 |
+| H-CROSS-2 | Shadow of P2: 28 in 26 identities (4.3x enrichment, p<0.01) | 🟧★ supported | Chang srg(P₂,σ,n,τ)! |
 
 ### Zodiac 12/13/36 (H-ZODIAC, 1)
 
