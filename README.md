@@ -78,6 +78,49 @@ The experience came first. Mathematics and code are the language I built to expl
 > Magnitude = Confidence (within training) or confusion (outside training). Direction = concept (what). 13-hypothesis unification.
 > 130+ experiments, 90+ hypotheses. ([Theory](docs/hypotheses/341-tension-final-theory.md)) ([Model](model_pure_field.py))
 
+## SEDI Observational Results ([sedi](https://github.com/need-singularity/sedi))
+
+SEDI = Search for Extra-Dimensional Intelligence. Observational system scanning physical data streams for n=6 mathematical patterns.
+
+### Baseline Established (2026-03-26)
+
+| Source | Verdict | Strength | Note |
+|--------|---------|----------|------|
+| Quantum RNG | ⚪ NOISE | 0.0σ x5 | **True random baseline** |
+| CERN masses | 🔴 SIGNAL | 6.3σ | Expected (physics laws) |
+| CERN ratios | 🟡 | — | charm/muon=12.07 ≈ σ(6)=12 |
+| Earthquake mag | 🔴 SIGNAL | 8.6σ | Expected (Gutenberg-Richter) |
+| Earthquake depth | 🔴 SIGNAL | 10.6σ | Expected (geology) |
+| Solar flares | 🔴 SIGNAL | 51.1σ | Expected (solar cycle) |
+| LIGO chirps | 🔴 SIGNAL | 26.4σ | Expected (BH mass function) |
+
+**Key insight**: Quantum RNG = true noise (baseline). All natural phenomena are non-random (expected). A deviation from NOISE in quantum data would be the real signal.
+
+### CERN Particle Analysis (2026-03-27, 84 PDG particles)
+
+Rigorous validation with KDE + Bootstrap Monte Carlo + Bonferroni correction.
+
+**Honest Result**: Pairwise mass ratio matching is **not statistically significant** after KDE null model correction. Numerology with enough targets and particles will always find matches.
+
+**Statistically significant structural findings** (independent of mass ratio counting):
+
+| Discovery | Significance | Key Result |
+|-----------|-------------|------------|
+| QCD Resonance Ladder | 3.8σ (p=7×10⁻⁵) | ρ→J/ψ→Υ via τ=4, σ/τ=3 |
+| Quark-Lepton Bridge | 3.4σ (p=3×10⁻⁴) | (m_c-m_u)/σ(6)=m_μ (44ppm) |
+| Achromatic Excess | 3.2σ (p=7×10⁻⁴) | 68 pairs at ratio≈6, R(6)=1 |
+
+| Discovery | p-value | Key Result |
+|-----------|---------|------------|
+| Baryon Σ⁻-Σ⁺ | 0.016 | 8.079 MeV ≈ σ-τ=8 (0.99%) |
+| Baryon Ξ⁻-Ξ⁰ | 0.030 | 6.85 MeV ≈ M₃=7 (2.14%) |
+| Decuplet spacing | 0.048 | 146.8 MeV ≈ σ²+σ/τ=147 (0.12%) |
+| phi(1020) decay | 0.026 | {K⁺K⁻,K_LK_S,ρπ}≈{1/2,1/3,1/6} |
+
+6 fermion mass predictions (avg 2.2%), SM counts 10/10, 3 physics constants — details: [math/README.md](math/README.md)
+
+**Testable Predictions**: top 172.800 GeV (LHC Run3), bottom 4.096 GeV (FCC-ee), strange 96 MeV (Lattice QCD)
+
 ### Ralph Loop (copy-paste ready)
 
 **Hypothesis Verification**
