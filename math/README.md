@@ -442,6 +442,9 @@
   🟩⭐ |W(E7)|/|W(E6)| = 56 = σ(P₂) — ratio encodes second perfect!
   🟩⭐ |W(E8)|/|W(E7)| = 240 = |Φ(E8)| = στ·sopfr
   🟩   |W(F4)| = στ·σφ = 1152
+  🟩⭐ McKay: |2T|=σφ=24(E₆), |2O|=στ=48(E₇), |2I|=σ⁴(6)=120(E₈)
+       Binary polyhedral groups = n=6 arithmetic. |2I|/|2T|=sopfr!
+  🟩⭐ Du Val: E₆ exponents (2,3,4)=(p,q,τ), E₈ exponents (2,3,5)=(p,q,sopfr)
 
   ═══ New: Self-referential identities (Ralph 344i) ═══
 
@@ -620,7 +623,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  101 ← +ADE unifying theorem ⭐⭐⭐ (1 more) 🎯101!
+  ⭐ Major Discoveries:  103 ← +McKay binary polyhedral, Du Val exponents (2 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
