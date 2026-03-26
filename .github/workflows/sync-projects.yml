@@ -48,6 +48,21 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.REPO_SYNC_TOKEN }}
         run: |
+          # Sync TECS-L itself first
+          echo "=== TECS-L (self) ==="
+          python3 /tmp/sync.py "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/.shared/projects.md"
+          if ! git diff --quiet README.md 2>/dev/null; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "Sync project list [skip ci]"
+            git push
+            echo "  Self-synced!"
+          else
+            echo "  No changes"
+          fi
+
+          # Sync other repos
           REPOS="sedi anima ph-training"
           for repo in $REPOS; do
             echo "=== $repo ==="
