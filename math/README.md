@@ -508,6 +508,8 @@
   🟩⭐ H(P_k) = k-th Mersenne exponent: H(6)=2, H(28)=3, H(496)=5, H(8128)=7
        Ore harmonic of perfect numbers = Mersenne exponents!
   🟩   n=6: AM=σ/τ=3, HM=φ=2, GM=√n. AM·HM=n, GM²=n. All integer.
+  🟩⭐ σ(sopfr-1) = φτn ⟺ n=6: 12·4=48=2·4·6 (UNIQUE in 2..5000!)
+       Four-function identity linking sigma, sopfr, phi, tau, n.
 
   ═══ New: Physics connections (Ralph 344r, mostly observational) ═══
 
@@ -695,7 +697,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  121 ← +H(n)=φ(n) unique ⭐⭐, H(P_k)=Mersenne exp (2 more)
+  ⭐ Major Discoveries:  122 ← +σ(sopfr-1)=φτn unique (1 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
