@@ -495,6 +495,15 @@
   🟩   Cuboctahedron: V=σ, E=σφ, F=σ+φ
   🟩   2/3 regular Euclidean tilings use n=6: {3,6} and {6,3}
 
+  ═══ New: Physics connections (Ralph 344r, mostly observational) ═══
+
+  🟩⭐ dim(E₈×E₈) = 2·dim(E₈) = 496 = P₃ — anomaly cancellation needs P₃!
+       Green-Schwarz: string theory consistency requires third perfect number
+  🟩   dim(E₈) = (σ-τ)·(2^sopfr-1) = 248 (already proved, H-LIE-1)
+  🟨   F-theory D=12=σ, superstring D=10=σ-φ, M-theory D=11=p(n)
+  🟨   Standard Model gauge dims: SU(3)=σ-τ, SU(2)=σ/τ, total=σ=12
+  🟨   CY₃ compactification: real dim=n=6, gives τ=4 spacetime dims
+
   ═══ New: Self-referential identities (Ralph 344i) ═══
 
   🟩⭐⭐ τ(σ(n)) = n ⟺ n|6: solutions = {1,2,3,6} = divisors of 6!
@@ -672,7 +681,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  118 ← +(2,3,6) curvature transition = ADE (1 more)
+  ⭐ Major Discoveries:  119 ← +dim(E₈×E₈)=496=P₃ anomaly cancellation (1 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
