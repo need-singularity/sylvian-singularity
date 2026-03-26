@@ -143,6 +143,9 @@
        │    n=T(σ/τ)⟺{1,3,6} (triangular number=avg divisor) ⭐│
        │    σ²-φ²-τ²=τ·M₅⟺n=6 (unique!)                       │
        │    n=3(τ-φ)⟺n=6                                  │
+       │    σ₃/σ₁=T(n)⟺n∈Sylvester={2,6,42,1806} ⭐ #H-SYLV-1│
+       │    n!/n#=σφ⟺n=6 (factorial/primorial!) ⭐ #H-FACT-1    │
+       │    B₂₍ₙ₊₁₎=(n+1)/n⟺n=6 (B₁₄=7/6!) ⭐ #H-BERN-1     │
        │    rad(σ(n))=n, n>1⟺n=6 (proof!) ⭐ #49               │
        │    ψ(n)=σ(n)=2n⟺n=6 (proof!) ⭐ #51                   │
        │    λ(n)=+1∧σ=2n⟺n=6 (proof!) #52                      │
@@ -1054,10 +1057,26 @@
        Plancherel weight, DFT eigenvalue multiplicity, subtraction game period.
   🟩⭐ S₃ Plancherel: {1/n, 1/n, τ/n} = {1/6, 1/6, 4/6}
 
+  ═══ New: Sylvester + Factorial-Primorial + Bernoulli (Ralph 349) ═══
+
+  🟩⭐ σ₃(n)/σ₁(n) = T(n) ⟺ n∈{2,6,42,1806} = Sylvester sequence!
+       6 is the ONLY perfect number in this set. Proof for semiprimes:
+       (1-p+p²)(1-q+q²) = pq(pq+1)/2 → only (p,q)=(2,3) works.
+       Sylvester: a(k+1)=a(k)·(a(k)-1)+1. Egyptian fraction 1/2+1/3+1/7+1/43+...=1
+       p=0.0024 (hypergeometric). Zero ad-hoc. #H-SYLV-1
+  🟩⭐ n!/n# = σφ ⟺ n=6 (unique in n=2..29, factorial/primorial crossing!)
+       6!/6# = 720/30 = 24 = σ·φ. Also: prod(p-1, p≤6) = 1·2·4 = 8 = σ-τ.
+       So φ(n!) = σφ·(σ-τ) = 24·8 = 192 = (σ/τ)·2ⁿ ⟺ n=6.
+       Super-exponential vs polynomial → at most 1 crossing. #H-FACT-1
+  🟩⭐ B₂₍ₙ₊₁₎ = (n+1)/n for n=6: B₁₄ = 7/6 (Bernoulli number!)
+       Von Staudt-Clausen: denom(B₁₄) = 6 = n (only p=2,3 have (p-1)|14).
+       n=28: denom(B₅₈) includes 59 → FAILS. Unique among perfect numbers.
+       Also: B₁₄·n = 7 = n+1 = M₃ (Mersenne prime!). #H-BERN-1
+
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  395  ← +MP/RMT, Lorenz, matroid, associahedron, Clifford, CF, BB, PART, GEOM, STAT, GAME, ERGODIC, POLY, ANT, FOURIER
+  🟩 Pure mathematics:  401  ← +Sylvester sigma_3/sigma_1, factorial-primorial, Bernoulli B_14
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  224 ← +MP algebraic proof, Lorenz exact, PG staircase, Fano, K₆ f-vector, Gauss-Kuzmin, Ramanujan, ACS, χ², Ackermann, spectral gap
+  ⭐ Major Discoveries:  227 ← +Sylvester sequence, n!/n#=sigma*phi, B_14=7/6
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
