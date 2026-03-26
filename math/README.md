@@ -57,7 +57,7 @@
                                  🟥 Golden MoE (model-dependent)
                                  🟥 Expert cross-activation
 
-  ═══ σφ=nτ system (P-001, 192 characterizations, 152 hypotheses) ═══
+  ═══ σφ=nτ system (P-001, 195 characterizations, 152 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -3717,7 +3717,15 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
   ⭐ 2φ(n)=τ(n) ⟺ {2,6} (doubling totient=divisor count) #192
 
-  📊 Total: +28 chars (#165-192), 3 ⭐⭐⭐ + 8 ⭐⭐ + 17 ⭐ = 192 characterizations!
+  --- Ralph 359: Additive identities ---
+
+  ⭐ σ+φ = n+2τ ⟺ n=6 (unique in n=1..10000!) #193
+     → 12+2 = 6+8 = 14. Clean additive identity, no other solution!
+  ⭐ σ = φ(φ+τ) ⟺ {2,6} (sigma = phi*(phi+tau)) #194
+     → 12 = 2*(2+4) = 12. Also: σ/φ = φ+τ
+  ⭐ σ/φ = φ+τ ⟺ {2,6} (abundancy = totient+divisor count) #195
+
+  📊 Total: +31 chars (#165-195), 3 ⭐⭐⭐ + 8 ⭐⭐ + 20 ⭐ = 195 characterizations!
 ```
 
 ---
