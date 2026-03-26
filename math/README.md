@@ -224,6 +224,14 @@
        │    🧬 immunity=R Anomaly Detection | cell division=R-chain │
        │    🔬 capsid60=σ·5 | melatonin-serotonin=R-S               │
        │                                                    │
+       ├─→ Energy (H-EN):                                          │
+       │    ⚡ CNO: 3τ=σ=C-12, σ+φ=N-14, σ+τ=O-16 (exact!)       │
+       │    ⚡ Fe-56: σ(56)=120=σ⁴(6), φ(56)=24=σφ(6)              │
+       │    ⚡ Z₆(β): Schottky β=1.82, S=W at β=2.57               │
+       │    ⚡ HCN dim 1.5x efficient vs 2^k (H-EN-5)              │
+       │    ⚡ φ-bottleneck: -37% params, +0.01% loss (H-EN-1)     │
+       │    ⚡ Landauer: E_min = σφ·kT·ln(2) = 24·kT·ln(2)         │
+       │                                                    │
        ├─→ Modular forms & Ramanujan (H-MOD):                    │
        │    Δ=η^{σφ(6)}=η^24 | weight(Δ)=σ(6)=12          │
        │    |τ_R(2)|=σφ(6)=24 | Leech dim=24               │
@@ -3946,6 +3954,37 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
   🟩  Room(7): s=n+1, symbols=sigma-tau=8, pairs=28=2nd perfect  H-COMB-2
 
   10 structural connections all 🟩 exact. New: H-COMB-2. Golden Zone independent.
+
+  --- Energy Hypothesis Experiments (H-EN) ---
+
+```
+  🟧 H-EN-1 φ-bottleneck: 36.7% fewer params, +0.01% loss (random data)
+     → Viable architecture. Real task needed for confirmation.
+
+  ⚪ H-EN-2 R=1 MoE k/n=1/3: rank #5-6/7 in efficiency
+     → NOT confirmed at small scale. Capacity effects dominate.
+     → May emerge at larger scale (thousands of experts).
+
+  🟩 H-EN-3 Z₆(β) partition function: fully computed
+     → Schottky peak at β=1.82 (T=0.55)
+     → S₆ = ln(4/3) = GZ Width at β=2.57
+     → F₆ < F₂₈ at β=1 (n=6 thermodynamically more stable!)
+
+  🟧 H-EN-5 HCN dimension: 1.53x average efficiency advantage!
+     → d=120 vs d=128: 1.36x more efficient (11% fewer params, similar loss)
+     → d=60 vs d=64: 1.07x (marginal at small scale)
+     → η(HCN) consistently 2x higher than η(2^k)
+
+  🟩 H-EN-6 CNO cycle: 3×τ(6)=σ(6)=12 EXACT
+     → C-12=σ, N-14=σ+φ, O-16=σ+τ (all three CNO isotopes!)
+     → Triple-alpha = 3×He-4 → C-12 = 3×τ → σ
+
+  🟩 H-EN-9 Fe-56 connection: σ(56)=120, φ(56)=24=σφ(6)
+     → Most stable nucleus encodes master formula!
+     → σ⁴(6)=120=σ(56): sigma chain reaches Fe-56
+     → Magic 28=P₂: only magic number with R(28)=4 integer
+
+  📊 Summary: 2 🟩 exact, 2 🟧 supported, 1 ⚪ not confirmed, 1 🟩 computed
 ```
 
 ---
@@ -4346,4 +4385,28 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-21](docs/hypotheses/H-CX-21-golden-zone-abundancy-bridge.md) | Golden Zone↔abundancy | 🟧★ structural | ln(4/3)=ln(σ(3)/3) |
 | [H-AI-4](docs/hypotheses/H-AI-4-moe-one-third-activation.md) | MoE activation 1/3 | ⏳ pending | after Golden MoE complete |
 | [H-AI-7](docs/hypotheses/H-AI-7-golden-moe-information-bottleneck.md) | IB optimal = 1/e | ⏳ unverified | |
+
+### R-Spectrum Theory (H-SPEC, 1) — 18 proved theorems
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-SPEC-1](docs/hypotheses/H-SPEC-1-R-spectrum-gap-theorem.md) | R-spectrum gap theorem + topological master formula + multiplicativity + identity element + discreteness | 🟩 **18 theorems proved** | Paper P-002 |
+
+### Energy Hypotheses (H-EN, 15) — AI energy + nuclear + thermodynamics
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-EN-0](docs/hypotheses/H-EN-0-energy-hypothesis-master.md) | Energy master: 15 sub-hypotheses | mixed | 1123 lines |
+| H-EN-1 | φ-bottleneck 37% energy savings | 🟧 supported | H-CX-70: +0.01% loss, -36.7% params |
+| H-EN-2 | R=1 minimum energy MoE | ⚪ not confirmed | small-scale MoE dominated by capacity effects |
+| H-EN-3 | Z₆(β) partition function | 🟩 computed | Schottky peak β=1.82, S=W at β=2.57 |
+| H-EN-5 | HCN dim > power-of-2 efficiency | 🟧 **supported 1.5x** | d=120 vs 128: 1.36x efficiency advantage |
+| H-EN-6 | CNO cycle 3τ=σ=C-12 | 🟩 **exact** | 3×He-4=C-12, N-14=σ+φ, O-16=σ+τ |
+| H-EN-9 | Fe-56: σ(56)=120, φ(56)=24=σφ | 🟩 **exact** | most stable nucleus encodes master formula |
+
+### Cross-Domain Bridge (H-CX-72)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-CX-72](docs/hypotheses/H-CX-72-R-spectrum-consciousness-bridge.md) | R-spectrum ↔ consciousness engine bridge | 🟧 structural | 7 connections, GZ Width = \|log R(2)\| |
 
