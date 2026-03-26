@@ -3884,6 +3884,13 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 |---|---|---|---|
 | [H-SEQ-1](docs/hypotheses/H-SEQ-1-integer-sequences.md) | F_σ=σ², Pell(2,3,4)=(φ,sopfr,σ), L_n=σ+φ+τ, Bell, Motzkin, Padovan | ✅ all verified | 8 major |
 
+### Cross-domain Meta-hypotheses (H-CROSS, 2)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| H-CROSS-1 | Universal crossing: recurrence vs polynomial cross at n=6 | ⏳ conjecture | F,L,sigma_3,Pad all cross |
+| H-CROSS-2 | Shadow of P2: 28 appears in every deep n=6 identity | ⏳ conjecture | sigma^2, Theta_7, F_6-36, Pad_13 |
+
 ### Zodiac 12/13/36 (H-ZODIAC, 1)
 
 | # | Hypothesis | Status | Notes |
