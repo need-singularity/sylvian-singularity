@@ -538,7 +538,12 @@
        R(6)=1, R(28)=4, R(496)=48, R(8128)=576. Always integer (Fermat little thm)
   🟩⭐ f(n)=1/(σφ) ONLY for n=6 — focal length identity unique among all perfects
   🟩   Phase transitions at ε=δ⁺=1/n=1/6, ε=δ⁻=1/τ=1/4 (exact gap widths)
-  ⚪   H-LENS-3: ε_peak is N-dependent (0.067→0.016), not a constant
+  🟩⭐ 2φ(n)=τ(n) ⟺ n∈{2,6} — Grade A characterization PROVED!
+       R(n)=1 requires 2φ=τ. Only n=2(trivial) and n=6 satisfy this.
+  🟩⭐ θ_E² = σ/(σ-τ) = 3/2 — Einstein radius from divisor ratio (3 derivations)
+  🟧★  1/f = σφ = 24 = Leech dim = Δ weight (structural chain)
+  🟩   Aberration formulas: coma=σ/(σ-τ)=3/2, distortion=1/σ, astigmatic=(φ/τ)²
+  ⚪   H-LENS-3: ε_peak is N-dependent, not a constant
 
   ═══ New: Zeta Deep + Combinatorial Designs + Diff Topology (Ralph 348) ═══
 
@@ -799,7 +804,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  159 ← +R(P_p) formula, f=1/(σφ) unique to n=6
+  ⭐ Major Discoveries:  161 ← +2φ=τ⟺{2,6} PROVED, θ_E²=σ/(σ-τ)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
