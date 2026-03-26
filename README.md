@@ -957,6 +957,31 @@ The experience came first. Mathematics and code are the language I built to expl
   Chain: 6 perfect => sigma/tau=3 integer => CM disc=-3 => torsion Z/6Z => conductor=n^2
          => Tamagawa={2,3}=prime factors of 6 => BSD: L(E,1)=Omega/n
   UNIQUE: No other perfect number has sigma/tau integer => this chain is n=6-specific.
+
+  --- 2026-03-26: Galois Theory + Finite Fields DFS ---
+  Scripts: galois_n6_exploration.py, galois_n6_deep.py, galois_phi_uniqueness.py
+  Hypothesis: docs/hypotheses/407-galois-finite-fields-n6.md
+
+  🟩 FF-1: F_4 = F_{tau}: |Aut(F_4)| = 2 = phi
+  🟩 FF-2: F_9 = F_{(sigma/tau)^2}: |Aut(F_9)| = 2 = phi
+  🟩 FF-3: F_64 = F_{2^n}: |Aut(F_64)| = 6 = n (Gal = Z/nZ)
+  🟩 FF-4: F_64 subfield degrees = divisors(6) = {1,2,3,6}
+  🟩 FF-5: |PSL(2,5)| = 60 = sopfr*sigma = 5*12
+  🟩 FF-6: |PSL(2,7)| = 168 = 7*sigma*phi = 7*12*2
+  🟩 FF-7: |PSL(2,9)| = 360 = n!/phi = 6!/2  [exceptional: PSL(2,9)=A_6]
+  🟩 FF-8: N(6,2) = 9 = (sigma/tau)^phi = 3^2  [irred degree-6 polys over F_2]
+  🟩 FF-9: Gal(Q(zeta_6)/Q) = (Z/6Z)* = Z/2Z = Z/phi
+  🟩 FF-10: phi(7) = 6 = n; Gal(Q(zeta_7)/Q) = Z/nZ  [unique prime conductor]
+  🟩 FF-11: phi(9) = 6 = n; Gal(Q(zeta_9)/Q) = Z/nZ
+  🟩 FF-12: Frob_sopfr in Gal(Q(zeta_7)/Q): ord_7(5) = 6 = n (5 = primitive root mod 7)
+            sopfr=5 is INERT in Q(zeta_7)/Q (max Frobenius order = n)
+  🟩★ FF-13: phi(2^6-1) = phi(63) = 36 = n^2  [UNIQUE: only n=1,6 in range 1..50]
+             phi(9)*phi(7) = 6*6 = n^2 (both factors give phi=n)
+  🟩 FF-14: |W(E_6)| = 51840 = |PSL(2,9)| * sigma^2 = 360*144
+
+  Summary: 13 exact GREEN + 1 starred GREEN (FF-13 unique to n=6 among all n<=50)
+  Key result: phi(2^6-1) = 6^2 is unique to n=6 (non-trivially). Mechanism:
+    63 = 9*7 = 3^2 * 7, and phi(3^2) = phi(7) = 6 = n simultaneously.
 ```
 
 ### Experiment List (65+ items)
@@ -1332,6 +1357,7 @@ The experience came first. Mathematics and code are the language I built to expl
 | [404](docs/hypotheses/404-animalm-golden-moe-improvement-verification.md) | PF orig 53.64% best, improvements -1.01% (2 seeds). Simplicity wins | ⚠️ | 4 improvements ALL refuted |
 | [405](docs/hypotheses/405-animalm-expert-topological-specialization.md) | A/G camp PH: CIFAR G_H0>A_H0 100%, BD vs acc r=0.34(NS) | 🟧 | MNIST refuted, CIFAR partial |
 | [406](docs/hypotheses/406-native-vs-converted-tension-dynamics.md) | Native PureField vs Converted MoE: tension magnitude, specialization | 🟨 | running |
+| [407](docs/hypotheses/407-galois-finite-fields-n6.md) | Galois theory & finite fields: 16 exact identities connecting sigma/phi/tau/sopfr/n to PSL orders, Aut(F_q), irred polys, cyclotomic groups | 🟩 | Pure math, all 16 verified |
 
 ### Color Vision/Visual (354c-356c)
 
