@@ -534,6 +534,11 @@
        R-spectrum phase transition at ε=1/B_τ, drop size=K₃(Z)
   🟩   f(6)=1/(σφ)=1/24 confirmed by BOTH gravitational and topological lens
   🟩   n=6 is the ONLY Grade A in n=2..100 (confirmed by full sweep)
+  🟩⭐ R(P_p) = 2^{p-1}(2^{p-1}-1)/p — exact formula for perfect number R-values
+       R(6)=1, R(28)=4, R(496)=48, R(8128)=576. Always integer (Fermat little thm)
+  🟩⭐ f(n)=1/(σφ) ONLY for n=6 — focal length identity unique among all perfects
+  🟩   Phase transitions at ε=δ⁺=1/n=1/6, ε=δ⁻=1/τ=1/4 (exact gap widths)
+  ⚪   H-LENS-3: ε_peak is N-dependent (0.067→0.016), not a constant
 
   ═══ New: Zeta Deep + Combinatorial Designs + Diff Topology (Ralph 348) ═══
 
@@ -794,7 +799,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  157 ← +ζ(-3)=1/Γ(n), AG(2,3), PG(2,5), h-cobordism, φ(2ⁿ-1)=n², L(6), lens
+  ⭐ Major Discoveries:  159 ← +R(P_p) formula, f=1/(σφ) unique to n=6
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
