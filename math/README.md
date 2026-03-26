@@ -383,6 +383,8 @@
   🟩⭐ L_n = σ+φ+τ ⟺ n=6: L_6 = 18 = 12+2+4 (Lucas = function sum, unique!)
   🟩⭐ M_{sopfr} = T(n) ⟺ n=6: Motzkin(5)=21=T(6) (unique in 2..499!)
   🟩⭐ Trib_{σ-τ} = σφ ⟺ n=6: Tribonacci(8)=24 (unique!)
+  🟩   Φ_{σ(6)}(2) = σ+1 = 13 (12th cyclotomic at 2 = sigma+1)
+  🟩   2^σ-1 = 4095 = 3²·5·7·13: primes = {σ/τ, sopfr, n+1, σ+1}
   🟩   Var(Uniform{1..n}) = (n²-1)/σ(6) — denominator 12 always (lcm(n,τ)=σ)
 
   ═══ New: j-invariant, K-theory, Zeta connections ═══
