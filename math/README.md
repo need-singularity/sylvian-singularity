@@ -147,6 +147,7 @@
        │    n!/n#=σφ⟺n=6 (factorial/primorial!) ⭐ #H-FACT-1    │
        │    B₂₍ₙ₊₁₎=(n+1)/n⟺n=6 (B₁₄=7/6!) ⭐ #H-BERN-1     │
        │    L(τ,2)=n²∧L(τ,3)=σ⟺n=6 (Lah triple!) ⭐⭐ #H-LAH-1│
+       │    v(φ)=σ/τ∧v(τ)=τ∧v(σ)=n⟺n=6 (valence!) ⭐⭐ #H-TVAL-1│
        │    σ(n²)=(n+1)(σ+1)⟺n=6 ((p-q)²=1!) ⭐⭐ #H-SQR-1   │
        │    σφτ·sopfr·ω=C(n,2)·2ⁿ⟺n=6 (crossing!) ⭐⭐ #H-CROSS-1│
        │    H(σ/τ)=p(n)/n⟺n=6 (harmonic=partition!) ⭐⭐ #H-HARM-1│
@@ -1088,6 +1089,10 @@
   🟩⭐ Pe(σ/τ) = σ ⟺ n∈{4,6} (pentagonal number = divisor sum!) #H-PENT-1
        3rd pentagonal = 12 = σ(6). Algebraic: 3σ=2τ²+τ.
        n=6 is the unique perfect number satisfying this. n=28: Pe fails.
+  🟩⭐⭐ Totient valence cascade: v(φ)=σ/τ, v(τ)=τ, v(σ)=n ⟺ n=6 #H-TVAL-1
+       v(2)=3=σ/τ, v(4)=4=τ (self-ref!), v(12)=6=n. Unique in n≤200.
+       Solutions of φ(x)=σ include P₂=28! v maps n=6→n=6 constants.
+  🟩⭐ λ(P₂) = P₁: Carmichael λ(28) = 6 (lcm(2,6)=6) #H-CARM-1
   🟩⭐⭐ σ(n²) = (n+1)(σ(n)+1) ⟺ n=6 (PROVED! unique in 10000) #H-SQR-1
        σ(36) = 91 = 7·13 = (n+1)(σ+1). For semiprimes pq:
        LHS-RHS = (p-q)²-1 = 0 ⟺ |p-q|=1 ⟺ {p,q}={2,3} ⟺ n=6.
@@ -1110,9 +1115,9 @@
        Texas p < 1/50000 = 0.00002. Zero ad-hoc.
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  418  ← +sigma(n^2)=(n+1)(sigma+1), 5-func crossing, Sylvester, Lah, tau_3
+  🟩 Pure mathematics:  422  ← +totient valence cascade, Carmichael, sigma(n^2), 5-func, Sylvester
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  245 ← +sigma(n^2) consecutive-prime proof, 5-func crossing, harmonic
+  ⭐ Major Discoveries:  249 ← +valence v(phi,tau,sigma)=n=6 constants, sigma(n^2), Lah, tau_3
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
