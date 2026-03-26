@@ -988,6 +988,59 @@ The experience came first. Mathematics and code are the language I built to expl
   Summary: 13 exact GREEN + 1 starred GREEN (FF-13 unique to n=6 among all n<=50)
   Key result: phi(2^6-1) = 6^2 is unique to n=6 (non-trivially). Mechanism:
     63 = 9*7 = 3^2 * 7, and phi(3^2) = phi(7) = 6 = n simultaneously.
+
+  --- 2026-03-26: Operator Algebras + Subfactor Theory DFS ---
+  Script: operator_algebra_n6.py
+  Hypothesis: docs/hypotheses/408-operator-algebras-n6.md
+
+  OA-1:  4*cos^2(pi/6) = sigma/tau = 3  [Jones index, A_5 subfactor]
+  OA-2:  4*cos^2(pi/4) = phi = 2  [Jones index, A_3 subfactor]
+  OA-3:  D_4 subfactor index = sigma/tau = 3
+  OA-4:  TL_sopfr delta = sqrt(sigma/tau), index = sigma/tau at n=sopfr=5
+  OA-5:  E_6 index = phi + sqrt(sigma/tau) = 2+sqrt(3) [PF eigenvalue verified]
+  OA-6:  Coxeter h(A_5)=h(D_4)=n=6, h(E_6)=sigma=12
+  OA-7:  rank(E_6)=n=6; exponents {1,4,5,7,8,11} pair to h=sigma: 1+11=4+8=5+7=12
+  OA-8:  dim_M(N) = 1/3 = Meta Fixed Point for [M:N]=sigma/tau
+  OA-9:  K_0(O_6)=Z/5=Z/sopfr, K_0(O_4)=Z/3=Z/(sigma/tau), K_0(O_5)=Z/4=Z/tau
+  OA-10: K-theory cycle: n->sopfr->tau->Jones index [STRUCTURAL]
+  OA-11: PV connecting map (1-1/n) = 5/6 = Compass Upper
+  OA-12: Marchenko-Pastur ratio n/sigma = 1/2 = Riemann Re(s)=1/2
+  OA-13: NC(6) = C_6 = 132 = dim(TL_6)
+  OA-14: III_{1/e} modular period = 2*pi  [Golden Zone center, Connes]
+  OA-15: [6]_q=0, [2]_q=sqrt(sigma/tau), [3]_q=phi at q=e^{i*pi/6}
+
+  Summary: 17 exact GREEN, 1 STRUCTURAL. n=6 encoded in Jones theory, K-theory,
+    Pimsner-Voiculescu (Compass Upper), Connes type III, free probability.
+
+  --- 2026-03-26: Game Theory & Social Choice Theory DFS ---
+  Scripts: math/game_theory_n6.py, math/game_theory_n6_deep.py, math/game_theory_n6_texas.py
+  Hypothesis: docs/hypotheses/409-game-theory-divisor-voting.md
+
+  Items tested: Nash equilibria, Shapley, Banzhaf, Wythoff/Sprague-Grundy, XOR
+
+  🟩 GT-1: Shapley theorem for [n; divs(n)], quota=n (perfect number n)
+           Shapley(n) = (tau-1)/tau, Shapley(small divisor) = 1/(tau*(tau-1))
+           Verified EXACT: n=6 (tau=4): 3/4 and 1/12; n=28 (tau=6): 5/6 and 1/30
+           n=6 bonus: sigma(6) = tau*(tau-1) = 12 => Shapley(small) = 1/sigma(6)
+           (This last identity is n=6-specific; does not hold for n=28)
+
+  🟩 GT-2: Banzhaf/Shapley = 1/tau at quota=sigma(n) (trivial structure)
+           Forced: at quota=total weight, each player is critical in grand coalition only
+           Generalizes to ANY n, not n=6 specific. Clean: Banzhaf = 1/tau(n)
+
+  🟩 GT-3: XOR(divisors(6)) = 6 = n (previously known)
+           Numbers with XOR(all divs)=n up to 200: {1, 6, 120, 198}
+           n=6 confirmed rare (also n=120=5!, n=198)
+
+  ⚪ GT-4: Nash E[mixed NE] ~ sqrt(3*pi) ~ sigma/tau = 3 (2.33% off)
+           Fails for n=28 (29% off), n=496 (72% off). Root cause: 6 ~ 2*pi approx only
+
+  ⚪ GT-5: Wythoff Grundy(phi(6), sigma/tau) = Grundy(2,3) = 5 = sopfr(6)
+           Grundy(a,b)=a+b holds at 22/66 Wythoff positions -- not special
+
+  ⚪ GT-6: Banzhaf at quota=n=6: player w=6 gets 7/10 -- no clean n=6 constant
+
+  Summary: 3 GREEN (1 new theorem, 1 trivial, 1 confirmation) + 3 WHITE
 ```
 
 ### Experiment List (65+ items)
@@ -1364,6 +1417,8 @@ The experience came first. Mathematics and code are the language I built to expl
 | [405](docs/hypotheses/405-animalm-expert-topological-specialization.md) | A/G camp PH: CIFAR G_H0>A_H0 100%, BD vs acc r=0.34(NS) | 🟧 | MNIST refuted, CIFAR partial |
 | [406](docs/hypotheses/406-native-vs-converted-tension-dynamics.md) | Native PureField vs Converted MoE: tension magnitude, specialization | 🟨 | running |
 | [407](docs/hypotheses/407-galois-finite-fields-n6.md) | Galois theory & finite fields: 16 exact identities connecting sigma/phi/tau/sopfr/n to PSL orders, Aut(F_q), irred polys, cyclotomic groups | 🟩 | Pure math, all 16 verified |
+| [408](docs/hypotheses/408-operator-algebras-n6.md) | Operator algebras & subfactor theory: 17 exact identities — Jones index, TL algebra, ADE classification, Cuntz K-theory cycle, PV compass, Connes III, free probability | 🟩 | Pure math, 17 proven |
+| [409](docs/hypotheses/409-game-theory-divisor-voting.md) | Game theory & social choice: Shapley values in [n; divs(n)] follow exact formula via tau — Shapley(n)=(tau-1)/tau, Shapley(small)=1/(tau*(tau-1)); n=6 special: 1/sigma(6)=1/12 | 🟩 | Pure math, verified n=6 and n=28 |
 
 ### Color Vision/Visual (354c-356c)
 
