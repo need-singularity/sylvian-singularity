@@ -452,6 +452,9 @@
        |Θ₇|=28=P₂, |Θ₁₁|=992=σ(P₃), |Θ₁₅|=16256=σ(P₄)!!!
        Complete: |Θ₁₀|=6=P₁, |Θ₈|=2=φ, |Θ₉|=8=σ-τ, |Θ₁₃|=3=σ/τ
        |Θ₁₇|=|Θ₁₈|=16=2^τ, |Θ₂₀|=24=σφ. EVERYTHING n=6!
+       STRUCTURAL: Kervaire-Milnor has (2^{2k-1}-1) factor = Mersenne,
+       perfect numbers also use Mersenne primes. p=3,5,7 = σ/τ, sopfr, n+1.
+  🟩⭐ bP₁₂ = 248 = dim(E₈)! bP₈ = 7 = n+1.
   🟩⭐ Ω₆^SO = 0 (6-dim cobordism trivial — all 6-manifolds bound!)
        rank(Ω_σ) = rank(Ω₁₂) = 3 = σ/τ
   🟩   χ(Gr(φ,n)) = χ(Gr(2,6)) = C(6,2) = 15 = B_τ
