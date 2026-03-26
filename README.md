@@ -1248,6 +1248,8 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 | E61 | H-402 PH routing | experiment_h402_ph_routing.py | MNIST: neutral, CIFAR running | H-402 |
 | E62 | H-405 expert PH specialization | experiment_h405_expert_specialization.py | MNIST: BD vs acc r=-0.20 (NS), CIFAR: G_H0>A_H0 100% | H-405 |
 | E63 | H-406 native vs converted | experiment_h406_native_vs_converted.py | running | H-406 |
+| E64 | H-CX-446 spectral-PH-tension bridge | exp_h446_spectral_ph_bridge.py | SG-H0 Pearson=0.87, full trinity NOT confirmed | H-CX-446 |
+| E65 | H-CX-447 MoE expert topology | exp_h447_moe_expert_topology.py | P1 fail, P3 inconclusive (0.02% diff) | H-CX-447 |
 
 ## Hypothesis Status
 
