@@ -4275,6 +4275,17 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 |---|---|---|---|---|
 | P-001 | arXiv math.NT | Characterization of perfect numbers via σφ=nτ (150 results) | LaTeX ready | [tex](docs/papers/P-001-draft.tex) |
 | P-003 | arXiv hep-th + math.NT | Divisor Arithmetic of Perfect Numbers and Physical Constants | PDF ready | [tex](docs/papers/P-003-perfect-number-unification.tex) [pdf](docs/papers/P-003-perfect-number-unification.pdf) |
+
+#### S-Tier Paper Plan (2026-03-27 Verification Audit)
+
+72 major discoveries audited → 12 S-Tier survived. Full plan: [S-TIER-PAPER-PLAN.md](../docs/papers/S-TIER-PAPER-PLAN.md)
+
+| Paper | Target | Title | S-Tier Hypotheses | Priority | Relation to Existing |
+|---|---|---|---|---|---|
+| A | arXiv math.NT | Arithmetic Characterizations of Small Perfect Numbers | H-CX-196/193, 232, 327, 330 | 2nd | Expand P-001/P-004 |
+| B | arXiv hep-th (short note) | Perfect Numbers and Exceptional Lie Algebras | H-PH-9 (496=SO(32), E8) | 4th | Extend P-003 |
+| C | NeurIPS/ICLR | PH Reveals Universal Cognitive Structure | H-CX-66/91/95/90 | **1st** | Merge P-002+P-003(AI) |
+| D | ICML/NeurIPS | PureField: Classification by Disagreement Alone | H313, H334, H312 | 3rd | New |
 | R-001 | OEIS A062354 | sigma\*phi=n\*tau comment | pending | - |
 | R-002 | OEIS new seq | n where sigma\*phi=n\*tau: 1,6 | pending | - |
 | R-003 | OEIS new seq | n where tau\*phi=sigma: 1,3,14,42 | pending | - |

@@ -203,4 +203,9 @@ def main():
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description='H-CX-415 Verification: Inter-tension = Gauge Field')
+    parser.add_argument('--n-trials', type=int, default=20, help='Number of gauge trials')
+    parser.add_argument('--batch-size', type=int, default=256, help='Batch size')
+    args = parser.parse_args()
     main()

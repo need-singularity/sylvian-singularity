@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Unified Precognition System — Size+Direction+Topology Combined Precognition (H-CX-58+59+62)
 
@@ -18,14 +17,19 @@ Usage:
 import sys, argparse
 sys.path.insert(0, '/Users/ghost/Dev/logout')
 
-import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
-from sklearn.metrics import roc_auc_score
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import cross_val_score
-from scipy.stats import spearmanr
-from ripser import ripser
-from model_pure_field import PureFieldEngine
-from calc.direction_analyzer import load_data
+try:
+    import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
+    from sklearn.metrics import roc_auc_score
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.model_selection import cross_val_score
+    from scipy.stats import spearmanr
+    from ripser import ripser
+    from model_pure_field import PureFieldEngine
+    from calc.direction_analyzer import load_data
+    _HAS_DEPS = True
+except ImportError as e:
+    _HAS_DEPS = False
+    _IMPORT_ERR = str(e)
 
 
 def run_precognition(dataset_name='mnist', epochs=15, predict_confusion=False, full_report=False):
@@ -168,9 +172,14 @@ def main():
     parser.add_argument('--predict-confusion', action='store_true')
     parser.add_argument('--full-report', action='store_true')
     args = parser.parse_args()
+
+    if not _HAS_DEPS:
+        print(f"Error: Missing dependency — {_IMPORT_ERR}")
+        print("Install with: pip install torch numpy scikit-learn scipy ripser")
+        sys.exit(1)
+
     run_precognition(args.dataset, args.epochs, args.predict_confusion, args.full_report)
 
 
 if __name__ == '__main__':
     main()
-```

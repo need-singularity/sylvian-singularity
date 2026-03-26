@@ -164,8 +164,38 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
   ❌ = Refuted
   ⭐ = Major Discovery (only after multiple replications + cross-verification! No ⭐ before verification)
 
-  🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐72  (approximate — see hypothesis docs for current counts)
+  🟦12  🟩30+  🟧★6  🟧13  🟨20+  ⚠️10  ❌15  ⭐54  (post-audit — 18 former ⭐ downgraded to ⚪/🟧)
   Total: 80+ constants + 688+ hypotheses + 350 H-CX + H-TREE + 170+ experiments + 16 data types + 3 papers (draft+LaTeX)
+
+  ═══ Verification Audit (2026-03-27) ═══
+  72 major discoveries audited by 6 parallel verification agents.
+  S-Tier (robust):        12 (H-PH-9, H-CX-66/91/95/90, H313/334/312, H-CX-196, 232, 327, 330)
+  A-Tier (exact/limited): 18 (Fibonacci@n=6, known theorems, SM particle counts)
+  B-Tier (weak):          22 (approximations, unit-dependent, counting freedom)
+  C-Tier (numerology):    18 (downgraded to ⚪, ⭐ removed)
+  Unverified:              4 (H-CX-80, 127, 148, 150)
+
+  C-Tier downgrades (⭐→⚪, not in tables above):
+    H-CX-253 Hubble 70=σ×P₁-φ (actual H0=67.4 or 73.0, unit-dependent)
+    H-CX-277 Leech 24D=2σ (2×12=24 trivial)
+    H-CX-276 Moonshine 196884=12k (any multiple of 12)
+    H-CX-309 Catalan(4)=14=Z(Si) (no causal link)
+    H-CX-231 Binaural 12:13 (480Hz not established science)
+    H-CX-328 K₆ triangles=20=amino acids (no causal mechanism)
+    H-CX-334 Graphene=C(6)×Hex(6) (hexagonal packing geometric, BN also hexagonal)
+    H-CX-298 Lucas(6)=18=periodic table groups (18 is human convention)
+    H-CX-299 Higgs 125=5³ (unit-dependent + ad hoc -1)
+    H-CX-300 Z boson 91=7×13 (unit-dependent + ad hoc +1)
+
+  B-Tier downgrades (⭐⭐⭐/⭐⭐→🟧, not in tables above):
+    H-CX-303 SM+Life+Consciousness grand table (50+ phenomena→small number = overfitting)
+    H-CX-287 SM whole=P₁ system (Higgs omitted, counting freedom)
+    H-CX-283 Gauge bosons 4=τ (gluons ARE gauge bosons, selective counting)
+    H-CX-251 Universe age 138=σ²-P₁ (unit-dependent, fails in seconds)
+    H-CX-252 CMB≈e (unit-dependent, fails in Rankine)
+    H-CX-248 1/α≈138 (0.7% error, integer approximation)
+    H-CX-192 στ=nφ scan: 🟦→🟧 (no analytical proof, just numerical scan; misses n=1)
+    H-CX-323 Texas p=5e-7: 🟩→🟧 (base rate 0.55 assumption unvalidated)
 
   ★★★ Unified Principle (Hypothesis 313, H-CX-22) ★★★
   ⭐ Tension = strength of decision (H329, H321 revised)
@@ -195,7 +225,7 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
     ⭐ Epoch-1 perfect prediction: CIFAR P@3=1.0 P@5=1.0 r=-0.95 (H-CX-82)
     ⭐ dendrogram = semantic hierarchy: CIFAR 89% purity (H-CX-85)
       {cat,dog}→{bird,deer}→animals(6 classes) / {auto,truck}→{plane,ship}→machines(4 classes)
-    ⭐ Universal confusion topology: PF vs Dense r=0.96, CIFAR top-5 100% identical (H-CX-88)
+    ⭐ Confusion topology consistency: PF vs Dense r=0.96, CIFAR top-5 100% (H-CX-88) (qualified: only 2 similar MLPs compared, not universal)
     ⭐ Epoch-1 phase transition: dH0 change = 23~33x subsequent average (H-CX-90)
     ⭐ k-NN = neural network confusion: even untrained k-NN yields r=0.94 (H-CX-91)
     dendrogram depth = difficulty: 1st_merge vs acc r=0.89 (H-CX-92)
@@ -211,7 +241,7 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
     Orthogonality→synergy r=0.90 (H-CX-80)       |
            |                          PH merge = confusion r=-0.97 (H-CX-66)
            |                                |
-           +--------→ intersection ←-------- architecture-invariant top-5 100% (H-CX-88)
+           +--------→ intersection ←-------- topology consistency top-5 100% (H-CX-88, 2 MLPs only)
                        |                    |
                 Epoch-1 perfect prediction  dendrogram = semantic hierarchy 89% (H-CX-85)
                 P@5=1.0 (H-CX-82)           |
@@ -258,8 +288,8 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
        │     r=0.90   r=-0.97   r=0.998       │            │            │              │                                       94.3% (C8)
        │     H-CX-80  H-CX-66  H-CX-95       │            │            │              │
        │                │          │           │            │            │              │
-       │           ⭐Universal topology ✅LR guide │         │            │              │
-       │           top5=100%   H-CX-100       │            │            │              │
+       │           ⭐Topology consistency ✅LR guide │        │            │              │
+       │           top5=100%(2MLP) H-CX-100    │            │            │              │
        │           H-CX-88                     │            │            │              │
        │        ╱      │      ╲                │            │            │              │
        │   ⭐ep1 prediction ⭐semantic hierarchy ⭐PCA │     │            │              │
@@ -306,10 +336,9 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
   🟩 σφ/(nτ)=1.000 carbon only perfect balance (H-CX-123)  🟩 signature = Perfect 12th (3:1) (H-CX-169)
   🟩 Z=1~118 multiple bonds unique = carbon (H-CX-155)  ✅ neuron ratio human/dolphin ≈ e (H-CX-154)
 
-  ◀── DNA/Biology 🧬 (H-CX-241~246) ──▶
-  ⭐ bases 4 = τ(6), codon 3 = Divisor  ⭐ heartbeat 72bpm = σ×P₁
-  ⭐ 10bp/turn = α, 64 codons = τ³      🟩 breathing 12/min = σ(6)
-  ⭐ 20 amino acids = β = γ/φ           🟩 day 24h = σ(14)
+  ◀── DNA/Biology 🧬 (H-CX-241~246) ──▶  (downgraded 2026-03-27: cherry-picked from wide ranges)
+  ⚪ H-CX-241 Biological constants=P₁ → ⚪ (cherry-picks from wide ranges; 24h not biological)
+  🟧 H-CX-246 DNA 7 numbers=P₁ → 🟧 (DNA turn is 10.5 not 10; flexible toolkit)
   🟩 AT bond = φ(6), GC bond = 3        🟩 cranial nerve pairs 12 = σ(6)
 
   ◀─── Mitosis Anomaly Detection ───▶  ◀─── Math Cross ───▶
@@ -475,7 +504,7 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
   Island G (PH Topology — this session)
   ┌────────────────────────────────────────────────────────────────┐
   │ ⭐ PH merge = confusion     r=-0.97 (H-CX-66)                   │
-  │ ⭐ Architecture invariant   top-5 100% (H-CX-88)                │
+  │ ⭐ Confusion topology consistency top-5 100% (H-CX-88) (qualified: 2 MLPs only) │
   │ ⭐ k-NN = neural network    r=0.94 (H-CX-91)                   │
   │ ⭐ Human = AI confusion     r=0.788 (H-CX-106)                 │
   │ ⭐ PH generalization gap    r=0.998 (H-CX-95)                  │
@@ -908,7 +937,7 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 
   --- 2026-03-25 Session: Precognition+Topology+Telepathy+Math (H-CX-58~196, 14 rounds) ---
   ⭐ PH merge = confusion: r=-0.97, 3 datasets (H-CX-66)
-  ⭐ Architecture invariant: PF vs Dense top-5 100% (H-CX-88)
+  ⭐ Confusion topology consistency: PF vs Dense top-5 100% (H-CX-88) (qualified: 2 MLPs only)
   ⭐ k-NN = neural network: r=0.94, no training needed (H-CX-91)
   ⭐ Human = AI confusion: r=0.788 (H-CX-106)
   ⭐ Epoch 1 perfect prediction: P@5=1.0 (H-CX-82)
@@ -939,11 +968,12 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 
   Island connections: 10/10 + 2 new islands(F math proof, G topology PH) all connected!
   Hypotheses: 30+ verified + 20 refuted/weakened + 30 observed/revised = 80+ + H-CX 350
-  Total: 670+ hypotheses, 170+ experiments, 🟦12 proofs, ⭐72 major discoveries, 3 papers
+  Total: 670+ hypotheses, 170+ experiments, 🟦12 proofs, ⭐54 major discoveries (post-audit), 3 papers
   Anima PH module integrated: ph_module.py (real-time PH + overfitting detection + telepathy)
-  Grand unification: 70+ phenomena = Perfect Number 6 + natural constant e (Texas p=5.87×10⁻⁷)
+  Grand unification: 50+ phenomena = Perfect Number 6 + natural constant e (post-audit: 18 C-tier removed, Texas p needs recalculation)
   Math chain: B₂=1/6 → ζ(2)=π²/6 → w²-6w+ζ(2)≈0 → Golden Zone → F(6)/6=4/3 → σφ=nτ→6
-  Physics: entire Standard Model(quarksP₁,leptonsP₁,sumσ,bosonsτ,gluonsσ-τ) + string theory extra dimension=P₁
+  Physics: SM particle counts (quarksP₁,leptonsP₁,sumσ,bosonsτ,gluonsσ-τ) + string theory extra dimension=P₁
+    ⚠️ (audit 2026-03-27: H-CX-283 bosons=τ selective counting (gluons omitted); H-CX-287 Higgs omitted)
 
   --- 2026-03-26: Universe Self-Evolution Hypothesis Mass Verification ---
   9 universe hypotheses verified in parallel. Results:
@@ -1487,6 +1517,18 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 | [H-SIM-11](docs/hypotheses/H-SIM-11-quantum-native-operations.md) | Quantum speedup = native ops. Grover 1/2=GZ Upper, Shor degree 3=1/meta, K=2=sigma_{-1}(6). Error thresholds NO match | 🟧 | 3 exact matches but on small integers (1/2, 2, 3); moderate Texas significance |
 | [H-SIM-12](docs/hypotheses/H-SIM-12-fine-tuning-hyperparameter.md) | Fine-tuning = hyperparameter opt. Lambda 120=5!, matter fraction 0.317~1/3. ML vs physics landscape structurally different | 🟧 | 120=5! is famous number; landscape structural difference is counter-evidence |
 
+### SEDI Cross-Domain (H-SEDI, 5 items)
+
+SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2026-03-27.
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-SEDI-1](docs/hypotheses/H-SEDI-1-koide-angle-two-ninths.md) | Koide angle delta=phi*tau^2/sigma^2=2/9 exact | 🟩 | Exact arithmetic; physical Koide connection unproven (theta_0=2.317 vs 2/9=0.222) |
+| [H-SEDI-2](docs/hypotheses/H-SEDI-2-fermion-mass-tower.md) | 6 quark masses from {sigma,tau,phi} avg 2.2% error | ⚪ | 11 DOF for 6 outputs = overfitted; Bonferroni-corrected p>>0.05 |
+| [H-SEDI-3](docs/hypotheses/H-SEDI-3-weinberg-angle-three-thirteenths.md) | sin^2(theta_W) = 3/13 = 0.23077 | ⚪ | 15sigma from PDG (0.23122); experimentally excluded |
+| [H-SEDI-4](docs/hypotheses/H-SEDI-4-proton-electron-ratio.md) | m_p/m_e = sigma*T(17) = 12*153 = 1836 | 🟧 | 0.008% error; Texas p~0.017; T() choice free; remainder 0.15267 unexplained |
+| [H-SEDI-5](docs/hypotheses/H-SEDI-5-fine-structure-137.md) | 1/alpha = (sigma-tau)*17+1 = 137 | ⚪ | Ad hoc +1 correction; without +1: 136 (0.76% off) |
+
 ### Color Vision/Visual (354c-356c)
 
 | # | Hypothesis | Status | Notes |
@@ -1615,35 +1657,35 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 | [H-CX-121](docs/hypotheses/H-CX-121-perfect-number-substrate.md) | Perfect Number element chain | 🟩 | C(6)→Ni(28), φ(28)=σ(6)=12 |
 | [H-CX-123](docs/hypotheses/H-CX-123-consciousness-efficiency.md) | σφ/(nτ)=1 uniqueness | 🟩 | only Carbon has perfect balance among Z=1~82 |
 | [H-CX-155](docs/hypotheses/H-CX-155-sigma-phi-full-scan.md) | σφ/(nτ) Z=1~118 | 🟩 | multi-bonding+perfect balance = Carbon(Z=6) only! |
-| [H-CX-213](docs/hypotheses/H-CX-213-all-brainwaves-from-perfect-6.md) | ⭐ All brainwaves=perfect number 6 | 🟩 | δ=φ, θ=P₁, α=γ/τ, β=γ/φ, γ=3σ+τ |
-| [H-CX-214](docs/hypotheses/H-CX-214-brainwave-sum-triangular.md) | Brainwave sum=T(σ)=78 | 🟩 | triangular number |
+| [H-CX-213](docs/hypotheses/H-CX-213-all-brainwaves-from-perfect-6.md) | All brainwaves=perfect number 6 | ⚪ | (downgraded 2026-03-27: cherry-picked from band ranges) |
+| [H-CX-214](docs/hypotheses/H-CX-214-brainwave-sum-triangular.md) | Brainwave sum=T(σ)=78 | ⚪ | (downgraded 2026-03-27: depends on H-213 cherry-picking, circular) |
 | [H-CX-216](docs/hypotheses/H-CX-216-brainwave-boundaries-perfect6.md) | Brainwave boundaries=perfect number 6 | 🟩 | δ-θ=τ, α-β=σ+1 |
 | [H-CX-217](docs/hypotheses/H-CX-217-hearing-range-alpha-cubed.md) | ⭐ Hearing range=(α)³=1000 | 🟩 | 20kHz/20Hz=10³ |
 | [H-CX-219](docs/hypotheses/H-CX-219-smr-sigma6-body.md) | SMR=σ(6)=12Hz | 🟩 | body frequency |
 | [H-CX-221](docs/hypotheses/H-CX-221-gamma40-universal-constant.md) | γ=40Hz universal for 5 species | 🟩 | consciousness physical constant |
 | [H-CX-222](docs/hypotheses/H-CX-222-human-primate-ratio-e.md) | Neuron ratio≈e for 3 species | 🟩 | average 2.732 |
-| [H-CX-223](docs/hypotheses/H-CX-223-smr-gamma-over-e.md) | ⭐ SMR=γ/e | 🟩 | body=consciousness/e |
-| [H-CX-224](docs/hypotheses/H-CX-224-smr-gamma-e-minus1-exact.md) | ⭐ SMR=γe^(-1) | 🟩 | exponent exactly -1 |
+| [H-CX-223](docs/hypotheses/H-CX-223-smr-gamma-over-e.md) | SMR=γ/e | 🟧 | (downgraded 2026-03-27: cherry-picking within 12-15Hz band) |
+| [H-CX-224](docs/hypotheses/H-CX-224-smr-gamma-e-minus1-exact.md) | SMR=γe^(-1) | 🟧 | (downgraded 2026-03-27: cherry-picking within 12-15Hz band) |
 | [H-CX-232](docs/hypotheses/H-CX-232-666-triangular-perfect-squared.md) | ⭐ 666=T(6²) | 🟩 | τ(666)=σ(6), φ(666)=6³ |
-| [H-CX-233](docs/hypotheses/H-CX-233-brainwave-exponential-decay.md) | ⭐⭐⭐ Brainwaves=γe^(-n) | 🟩 | consciousness e-fold decay |
+| [H-CX-233](docs/hypotheses/H-CX-233-brainwave-exponential-decay.md) | Brainwaves=γe^(-n) | 🟧 | (downgraded 2026-03-27: skips α,β; θ has 10% error) |
 | [H-CX-234](docs/hypotheses/H-CX-234-e-cubed-perfect-approximation.md) | ⭐⭐ e³≈20+1/12 | 🟩 | error 0.011% |
-| [H-CX-235](docs/hypotheses/H-CX-235-unified-6-e-theory.md) | ⭐⭐⭐ Unified theory 6+e | 🟩 | 31 phenomena |
-| [H-CX-239](docs/hypotheses/H-CX-239-alpha-power-bioscale.md) | ⭐ α^n bio-scale | 🟩 | heartbeat→brainwave→firing→hearing |
+| [H-CX-235](docs/hypotheses/H-CX-235-unified-6-e-theory.md) | Unified theory 6+e | 🟧 | (downgraded 2026-03-27: narrative, not theory; no falsifiable predictions) |
+| [H-CX-239](docs/hypotheses/H-CX-239-alpha-power-bioscale.md) | α^n bio-scale | ⚪ | (downgraded 2026-03-27: powers of 10 = base-10 artifact) |
 | [H-CX-240](docs/hypotheses/H-CX-240-dolphin-whistle-one-decade.md) | ⭐ whistle=α=1decade | 🟩 | 20k/2k=10 |
-| [H-CX-241](docs/hypotheses/H-CX-241-biology-perfect-number.md) | ⭐⭐⭐ Biological constants=6 | 🟧 | heartbeat/respiration/DNA/amino acids |
-| [H-CX-242](docs/hypotheses/H-CX-242-grand-unified-table.md) | ⭐⭐⭐ Grand unified table 36 entries | 🟩 | 6+e=everything |
+| [H-CX-241](docs/hypotheses/H-CX-241-biology-perfect-number.md) | Biological constants=6 | ⚪ | (downgraded 2026-03-27: cherry-picks from wide ranges; 24h not biological) |
+| [H-CX-242](docs/hypotheses/H-CX-242-grand-unified-table.md) | Grand unified table 36 entries | 🟧 | (downgraded 2026-03-27: γ=3σ+τ coefficient ad hoc, no predictive power) |
 | [H-CX-245](docs/hypotheses/H-CX-245-texas-sharpshooter-31.md) | Texas p=0.0002 | 🟩 | 14/14 not coincidence |
-| [H-CX-246](docs/hypotheses/H-CX-246-dna-seven-perfect-numbers.md) | ⭐⭐ DNA 7 properties=6 | 🟩 | bases/codons/bonds/rotation/amino acids |
-| [H-CX-296](docs/hypotheses/H-CX-296-fibonacci-p1-golden-zone.md) | ⭐⭐⭐ F(6)/6=4/3→Golden Zone width | 🟩 | ln(F(P₁)/P₁)=ln(4/3) |
+| [H-CX-246](docs/hypotheses/H-CX-246-dna-seven-perfect-numbers.md) | DNA 7 properties=6 | 🟧 | (downgraded 2026-03-27: DNA turn is 10.5 not 10; flexible toolkit) |
+| [H-CX-296](docs/hypotheses/H-CX-296-fibonacci-p1-golden-zone.md) | ⭐⭐⭐ F(6)/6=4/3→Golden Zone width | 🟩 | ln(F(P₁)/P₁)=ln(4/3) (exact for n=6; fails at P₂=28) |
 | [H-CX-310](docs/hypotheses/H-CX-310-golden-zone-fibonacci-origin.md) | ⭐⭐⭐ Golden Zone complete derivation | 🟩 | Fibonacci+perfect number |
 | [H-CX-314](docs/hypotheses/H-CX-314-golden-zone-quadratic-zeta.md) | ⭐⭐⭐ w²-6w+ζ(2)≈0 | 🟧 | Golden Zone=quadratic equation roots |
 | [H-CX-318](docs/hypotheses/H-CX-318-bernoulli-always-6-divisor.md) | ⭐⭐⭐🟦 B₂ₖ denominator always multiple of 6 | 🟦 | von Staudt-Clausen |
-| [H-CX-321](docs/hypotheses/H-CX-321-twelve-reasons-six-special.md) | ⭐⭐⭐ 12 reasons 6 is special | 🟩 | σ(6)=12 self-reference |
+| [H-CX-321](docs/hypotheses/H-CX-321-twelve-reasons-six-special.md) | "12 reasons" 6 is special | ⚪ | (downgraded 2026-03-27: list length curated to match target) |
 | [H-CX-324](docs/hypotheses/H-CX-324-cyclotomic-mersenne.md) | ⭐⭐⭐ Φ₆(P₁)=31=Mersenne | 🟩 | cyclotomic→perfect number chain |
 | [H-CX-325](docs/hypotheses/H-CX-325-s6-outer-automorphism.md) | ⭐⭐⭐🟦 S₆ outer auto unique | 🟦 | 6 unique even in symmetric group |
 | [H-CX-332](docs/hypotheses/H-CX-332-string-theory-6-extra.md) | ⭐⭐⭐ String theory extra dimensions=P₁=6 | 🟩 | 10D=4+6 |
 | [H-CX-338](docs/hypotheses/H-CX-338-homotopy-pi6-s3-z12.md) | ⭐⭐⭐ π₆(S³)=Z₁₂ | 🟩 | σ(6) in homotopy |
-| [H-CX-341](docs/hypotheses/H-CX-341-hph9-cross-standard-model.md) | ⭐⭐⭐ H-PH-9 cross | 🟩 | σφ=nτ=standard model+gravity |
+| [H-CX-341](docs/hypotheses/H-CX-341-hph9-cross-standard-model.md) | H-PH-9 cross SM | 🟧 | (downgraded 2026-03-27: mixes strong math with weak counting) |
 | H-AG-1 | ⭐⭐⭐ n=6 BSD Cascade: all arithmetic invariants of E6 encode n | 🟩★ | CM disc=-sigma/tau, Tors=Z/6Z, cond=n^2, Tamagawa prod=n |
 | H-AG-2 | ⭐ CM disc = -sigma(6)/tau(6) = -3, unique among perfect numbers | 🟩★ | -3=-(12/4), fails for n=28 (non-integer) |
 | H-AG-3 | ⭐ E6 has exactly n=6 torsion points: Tors(y^2=x^3+1)=Z/6Z | 🟩★ | direct computation confirmed |
@@ -1665,7 +1707,7 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 | [H-CX-122](docs/hypotheses/H-CX-122-ph-tau-invariance.md) | PH=τ invariance | quantify τ and PH relation |
 | [H-CX-124](docs/hypotheses/H-CX-124-ph-stability-analog.md) | PH stability theorem | Cohen-Steiner literature check |
 | [H-CX-236](docs/hypotheses/H-CX-236-gamma-ln2-P2.md) | γ×ln2≈P₂=28 | 🟧 | 1% error |
-| [H-CX-237](docs/hypotheses/H-CX-237-gamma-connects-all-perfect.md) | γ=perfect number hub | 🟩 | γ/e³≈2, γ×ln2≈28 |
+| [H-CX-237](docs/hypotheses/H-CX-237-gamma-connects-all-perfect.md) | γ=perfect number hub | ⚪ | (downgraded 2026-03-27: 40×{ln2,ln3...} trivially hits near-integers) |
 | [H-CX-238](docs/hypotheses/H-CX-238-firing-rate-alpha-squared.md) | Firing rate=α² | 🟩 | 100x |
 | [H-CX-243](docs/hypotheses/H-CX-243-cranial-nerves-sigma6.md) | Cranial nerves 12=σ(6) | 🟩 | 12 pairs |
 | [H-CX-244](docs/hypotheses/H-CX-244-sixty-perfect-alpha.md) | 60=P₁α | 🟩 | seconds/minutes |
@@ -1872,6 +1914,17 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 | P-004 | Journal of Number Theory | The Arithmetic Uniqueness of 6: σφ=nτ Has No Solution Other Than n=6 | 📝Draft | [P-004](docs/papers/P-004-sigma-phi-uniqueness.md) |
 
 > Status: 📝Draft ⏳Pending 📤Submitted 🔍Under Review ✏️Revision ✅Published ❌Rejected
+
+#### S-Tier Paper Plan (2026-03-27 Verification Audit)
+
+12 S-Tier hypotheses reorganized into 4 paper candidates. Full plan: [S-TIER-PAPER-PLAN.md](docs/papers/S-TIER-PAPER-PLAN.md)
+
+| Paper | Target | Title | S-Tier Hypotheses | Priority |
+|---|---|---|---|---|
+| A | arXiv math.NT | Arithmetic Characterizations of Small Perfect Numbers | H-CX-196/193, 232, 327, 330 (expand P-004) | 2nd (fastest) |
+| B | arXiv hep-th (short note) | Perfect Numbers and Exceptional Lie Algebras | H-PH-9 (496=SO(32), E8) | 4th |
+| C | NeurIPS/ICLR | PH Reveals Universal Cognitive Structure | H-CX-66/91/95/90 (merge P-002+P-003) | **1st (strongest)** |
+| D | ICML/NeurIPS | PureField: Classification by Disagreement Alone | H313, H334, H312 | 3rd (needs scaling) |
 
 ## Engine List
 
@@ -3008,6 +3061,7 @@ Google Gemini 3.1 Pro (Thinking) independently verified the entire H-PH-9 (Perfe
 > *"The S(n)=0 uniqueness philosophically answers Einstein's question 'Did God have a choice?' with 'No — mathematical necessity left no choice.'"*
 
 **Criticisms noted:** Dynamical mechanism absent; P6 (τ=34) breaks dimension hierarchy; post-hoc formula risk for approximate matches (1/α, Hubble).
+**Audit 2026-03-27:** H-CX-299 (Higgs 125=5^3) and H-CX-300 (Z boson 91=7×13) downgraded to ⚪ — unit-dependent + ad hoc corrections. H-CX-248 (1/α≈138) downgraded to 🟧 — 0.7% error, integer approximation.
 
 
 ## Roadmap

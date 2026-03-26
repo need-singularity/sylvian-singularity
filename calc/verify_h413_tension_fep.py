@@ -203,4 +203,9 @@ def main():
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description='H-CX-413 Verification: Tension = Free Energy (Friston FEP)')
+    parser.add_argument('--epochs', type=int, default=5, help='Training epochs')
+    parser.add_argument('--batch-size', type=int, default=256, help='Batch size')
+    args = parser.parse_args()
     main()

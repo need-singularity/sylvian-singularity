@@ -14,12 +14,17 @@ Usage:
 import sys, argparse
 sys.path.insert(0, '/Users/ghost/Dev/logout')
 
-import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
-from sklearn.metrics import roc_auc_score
-from scipy.stats import spearmanr
-from ripser import ripser
-from model_pure_field import PureFieldEngine
-from calc.direction_analyzer import load_data
+try:
+    import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
+    from sklearn.metrics import roc_auc_score
+    from scipy.stats import spearmanr
+    from ripser import ripser
+    from model_pure_field import PureFieldEngine
+    from calc.direction_analyzer import load_data
+    _HAS_DEPS = True
+except ImportError as e:
+    _HAS_DEPS = False
+    _IMPORT_ERR = str(e)
 
 
 def compute_h0(D, Y, n_cls=10):
@@ -133,6 +138,12 @@ def main():
     parser.add_argument('--epochs', type=int, default=15)
     parser.add_argument('--alert-threshold', type=float, default=0.1)
     args = parser.parse_args()
+
+    if not _HAS_DEPS:
+        print(f"Error: Missing dependency — {_IMPORT_ERR}")
+        print("Install with: pip install torch numpy scikit-learn scipy ripser")
+        sys.exit(1)
+
     run_detector(args.dataset, args.epochs, args.alert_threshold)
 
 

@@ -15,9 +15,14 @@ Usage:
 import sys, argparse
 sys.path.insert(0, '/Users/ghost/Dev/logout')
 
-import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
-from model_pure_field import PureFieldEngine
-from model_utils import load_mnist
+try:
+    import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
+    from model_pure_field import PureFieldEngine
+    from model_utils import load_mnist
+    _HAS_DEPS = True
+except ImportError as e:
+    _HAS_DEPS = False
+    _IMPORT_ERR = str(e)
 
 DATASETS = {
     'mnist':   dict(dim=784, norm=(0.1307, 0.3081), cls_names=[str(i) for i in range(10)]),
@@ -77,6 +82,11 @@ def main():
     parser.add_argument('--dataset', default='mnist', choices=['mnist','fashion','cifar'])
     parser.add_argument('--epochs', type=int, default=15)
     args = parser.parse_args()
+
+    if not _HAS_DEPS:
+        print(f"Error: Missing dependency — {_IMPORT_ERR}")
+        print("Install with: pip install torch numpy")
+        sys.exit(1)
 
     dim, tl, te, names = load_data(args.dataset)
     model = PureFieldEngine(dim, 128, 10)

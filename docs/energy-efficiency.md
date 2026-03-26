@@ -5,6 +5,24 @@
 
 ---
 
+## Project Goal
+
+> **AI 개발과 에너지 부족의 병목 해결.**
+> AI 모델의 에너지 소비를 수학적 원리(완전수 6)로부터 도출된 기법으로 근본적으로 절감한다.
+> 새로운 가설을 지속적으로 발견하고 기존 가설을 보완하며, 이론→실험→검증 사이클을 반복한다.
+
+### Discovery Roadmap
+
+| Phase | Status | Focus |
+|-------|--------|-------|
+| Phase 1: Foundations | ✅ Done | Phi6Simple, HCN dims, Phi-bottleneck (3 discoveries) |
+| Phase 2: Verification | 🔄 In progress | H-EE-1~13 hypotheses, scale testing |
+| Phase 3: SEDI Cross | 🔄 In progress | R-filter for training, Takens embedding, multi-engine |
+| Phase 4: Scale-up | ⏳ Planned | 1B+ model validation, CUDA kernels |
+| Phase 5: Hardware | ⏳ Planned | ASIC/FPGA co-design for polynomial activations |
+
+---
+
 ## Executive Summary
 
 We discovered three techniques for reducing AI model energy consumption, derived from the mathematical properties of the number 6 (the smallest perfect number). All three are empirically validated and include drop-in code.

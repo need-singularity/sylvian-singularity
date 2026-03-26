@@ -8,8 +8,13 @@ Usage:
 """
 import argparse, time, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import torch, torch.nn as nn, numpy as np
-from model_utils import Expert
+try:
+    import torch, torch.nn as nn, numpy as np
+    from model_utils import Expert
+    _HAS_DEPS = True
+except ImportError as e:
+    _HAS_DEPS = False
+    _IMPORT_ERR = str(e)
 
 class QuickRepulsionField(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_dim):
@@ -65,6 +70,11 @@ def main():
     parser.add_argument('--epochs', type=int, default=20)
     parser.add_argument('--list', action='store_true')
     args = parser.parse_args()
+
+    if not _HAS_DEPS:
+        print(f"Error: Missing dependency — {_IMPORT_ERR}")
+        print("Install with: pip install torch numpy")
+        sys.exit(1)
 
     if args.list:
         print("Available: iris, wine, digits, cancer, random")

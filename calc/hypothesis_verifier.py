@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """
 Hypothesis Verification Calculator
@@ -685,4 +684,3 @@ Available functions in formulas:
 
 if __name__ == '__main__':
     main()
-```
