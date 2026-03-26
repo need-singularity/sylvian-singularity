@@ -108,6 +108,9 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
     calc/permutation_tester.py        — Null baseline via permutation (purity, correlation, overlap tests)
     calc/lie_algebra_calculator.py   — Exceptional Lie algebra invariants from n=6 (--verify --exotic --all)
     calc/sequence_scanner.py         — Integer sequence scanner for n=6 characterizations (--custom)
+    calc/r_spectrum.py              — R-spectrum calculator (R(n)=σφ/(nτ), identity tests, gap structure, multiplicativity)
+    calc/gravitational_optics.py    — Gravitational lens (aberrations, gap, Einstein radius) + telescope (F(s)=ζζ, scan)
+    calc/topological_optics.py      — Topological lens (focal length, PH barcode) + telescope (β₀ sweep, sensitivity)
 ```
 
 ## How to Run
