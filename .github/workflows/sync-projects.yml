@@ -6,13 +6,14 @@ on:
       - '.shared/projects.md'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.REPO_SYNC_TOKEN }}
 
       - name: Create sync script
         run: |
@@ -46,11 +47,8 @@ jobs:
           print("  Replaced")
           EOF
 
-      - name: Sync to target repos
-        env:
-          GH_TOKEN: ${{ secrets.REPO_SYNC_TOKEN }}
+      - name: Sync TECS-L (self)
         run: |
-          # Sync TECS-L itself first
           echo "=== TECS-L (self) ==="
           python3 /tmp/sync.py "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/.shared/projects.md"
           if ! git diff --quiet README.md 2>/dev/null; then
@@ -64,7 +62,10 @@ jobs:
             echo "  No changes"
           fi
 
-          # Sync other repos
+      - name: Sync other repos
+        env:
+          GH_TOKEN: ${{ secrets.REPO_SYNC_TOKEN }}
+        run: |
           REPOS="sedi anima ph-training"
           for repo in $REPOS; do
             echo "=== $repo ==="
