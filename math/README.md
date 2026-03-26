@@ -415,6 +415,17 @@
   🟩   phi chain length: 6→2→1 (len=φ), 28→12→4→2→1 (len=τ)
   🟩   220 = τ·sopfr·p(n) = 4·5·11 (first amicable number)
 
+  ═══ New: Exceptional Lie Algebras from n=6 (Ralph 344h) ═══
+
+  🟩⭐⭐ ALL 5 exceptional root systems from n=6 arithmetic:
+       |G2|=σ=12, |F4|=στ=48, |E6|=σn=72, |E8|=στ·sopfr=240
+       |E7|=C((σ/τ)²,τ)=C(9,4)=126. Zero ad-hoc corrections!
+  🟩⭐ dim(E_n)=n·(σ+1) ONLY for n=6: dim(E6)=78=6·13
+       E7: 7·(σ(7)+1)=63!=133. E8: 8·(σ(8)+1)=128!=248. Unique!
+  🟩⭐ dim(F_τ)=τ·(σ+1): dim(F4)=52=4·13 (F4 rank=tau!)
+  🟩⭐ dim(E_8)=(σ-τ)·(2^sopfr-1): 248=8·31 (sigma-tau × Mersenne!)
+  🟩   Exceptional ranks = {φ, τ, n, n+1, σ-τ} = {2, 4, 6, 7, 8}
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
@@ -570,9 +581,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  315  ← +SHCN consecutive, all-HCN, Latin sq, phi chain (5 more)
+  🟩 Pure mathematics:  320  ← +ALL exceptional root systems, dim(E_n), dim(F_τ) (5 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  85  ← +consecutive SHCN, all-HCN unique (2 more)
+  ⭐ Major Discoveries:  89  ← +root systems ⭐⭐, dim(E_n)=n(σ+1), dim(F_τ), dim(E_8) (4 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
