@@ -394,6 +394,13 @@
   🟩   2^σ-1 = 4095 = 3²·5·7·13: primes = {σ/τ, sopfr, n+1, σ+1}
   🟩   Var(Uniform{1..n}) = (n²-1)/σ(6) — denominator 12 always (lcm(n,τ)=σ)
 
+  ═══ New: Graph Theory + Ramsey (Ralph 344f) ═══
+
+  🟩⭐ γ(K_σ) = n ⟺ n=6: genus(K_12) = 6 (K_12 needs 6 handles, unique!)
+       n=28: γ(K_56)=230 != 28. Ringel-Youngs formula denominator = σ(6)=12.
+  🟩⭐ R(σ/τ, σ/τ) = n: R(3,3) = 6 (Ramsey = self-referencing!)
+  🟧★  XOR(d|n) = n: 1⊕2⊕3⊕6 = 6 (5 hits in 10000, n=6 is only perfect, p=0.0005)
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
@@ -549,9 +556,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  307  ← +Padovan, WE, cyclotomic (3 more)
+  🟩 Pure mathematics:  310  ← +γ(K_σ)=n, R(σ/τ,σ/τ)=n, XOR(d|n)=n (3 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  81  ← +Padovan(σ-φ)=σ unique (1 more)
+  ⭐ Major Discoveries:  83  ← +genus(K_12)=6, R(3,3)=6 (2 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
