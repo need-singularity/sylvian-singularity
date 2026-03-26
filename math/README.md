@@ -865,10 +865,68 @@
   🟩⭐ Σ(3) = 6 = P₁ (Busy Beaver 3-state = first perfect number!)
   🟩  Σ(2) = 4 = τ(6), S(3) = 21 = T(6)
 
+  ═══ New: Ramanujan Partition Congruences encode n=6 (H-PART-1) ═══
+
+  🟩⭐⭐⭐ Ramanujan offsets {4,5,6}={τ,sopfr,n} from 24^{-1} mod {5,7,11}
+       24=σφ controls ALL partition congruences. {5,7,11}={sopfr,n+1,p(n)}!
+  🟩⭐⭐ p(p(6))=56=σ(P₂): partition double iteration → P₂ divisor sum
+  🟩⭐⭐ Crank mod p(6)=11: perfect self-classification (11 classes of size 1)
+
+  ═══ New: Almost Complex Spheres = {S^φ, S^n} (H-GEOM-1) ═══
+
+  🟩⭐⭐⭐ Borel-Serre: ACS only on S²=S^φ and S⁶=S^n (THEOREM!)
+  🟩⭐⭐ G₂: roots=σ=12, rank=φ=2, dim=σ+φ=14. S⁶=G₂/SU(3).
+  🟩⭐⭐ vol(S⁶)=2^τ·π^{σ/τ}/C(n,2). 5!!=C(6,2) d=6 unique.
+  🟩⭐ Dirac on S⁶: λ₀=σ/τ=3, spinor dim=σ-τ=8
+  🟩⭐ Todd genus denom=σφ=24. (n/2+1)!=σφ ⟺ n=6
+
+  ═══ New: χ²(6) Quadruple Match (H-STAT-1) ═══
+
+  🟩⭐⭐⭐ χ²(n=6): mean=n, var=σ, mode=τ, kurtosis=φ — ALL FOUR!
+       χ²(n)=Γ(σ/τ, φ). Unique among perfect numbers.
+  🟩⭐⭐ Beta(φ,τ): mean=1/3=meta-FP, mode=1/τ, var=(σ-τ)/σ₃(6)
+  🟩⭐ B(σ,1/2): mean=n, var=σ/τ. NB(σ/τ,1/2): var=n.
+
+  ═══ New: Game Theory — Nim + Ackermann (H-GAME-1) ═══
+
+  🟩⭐⭐⭐ A(2,n)=C(n,2) ⟺ n=6 (PROVED! (n-6)(n+1)=0)
+       Ackermann function meets binomial coefficient ONLY at n=6.
+  🟩⭐⭐ Nim(1,2,3)=0: proper divisor heaps P-position (P.N. unique!)
+  🟩⭐⭐ Divisor subtraction G(P_k)=p (Mersenne exponent!) G(6)=2,G(28)=3
+  🟩⭐⭐ Ramsey 8/9 match: R(3,3)=P₁, R(3,8)=P₂, R(3,3,3)=σ+sopfr=17
+  🟩⭐ D(τ)/n=D(4)/6=28=P₂ (Dedekind number)
+
+  ═══ New: Spectral Gap + Ergodic Theory (H-ERGODIC-1) ═══
+
+  🟩⭐⭐⭐ C₆ spectral gap = 1/2 = GZ upper bound (UNIQUE among all C_n!)
+       cos(2π/n)=1/2 ⟺ n=6. Hexagonal symmetry.
+  🟩⭐⭐ Gauss map h_KS=ζ(2)/ln2=π²/(n·lnφ). Basel problem → ergodic.
+  🟩⭐⭐ GL 6-point degree 2n-1=p(n)=11 ⟺ n∈{1,6} (unique nontrivial!)
+  🟩⭐ T₆ Chebyshev: στ=n·2^{n-3} ⟺ n=6
+
+  ═══ New: 6-Cube Palindrome + Polytopes (H-POLY-1) ═══
+
+  🟩⭐⭐ 6-cube 2-faces = 6-orthoplex 3-faces = 240 = |Φ(E₈)|
+       d=6 unique in d≤20. Palindrome pivot of dual f-vectors.
+  🟩⭐ k(1..4)={φ,n,σ,σφ}={2,6,12,24} (4 consecutive kissing numbers)
+
+  ═══ New: Algebraic Number Theory (H-ANT-1) ═══
+
+  🟩⭐⭐ |Z[ζ₆]*|=6=n (unit group order = perfect number itself!)
+  🟩⭐⭐ ε(Q(√6))=sopfr+φ√n=5+2√6 (fundamental unit from n=6 arithmetic)
+  🟩⭐ disc(Q(√6))=σφ=24, h=1. disc(Q(√-6))=-σφ=-24, h=φ=2.
+  🟩⭐ Heegner numbers: 9=(σ/τ)² count. Contains {σ/τ, n+1, p(n)}.
+
+  ═══ New: Fourier Analysis + φ²=τ (H-FOURIER-1) ═══
+
+  🟩⭐⭐ φ(6)²=τ(6) ⟺ n=6 (among perfect numbers). Cascades to:
+       Plancherel weight, DFT eigenvalue multiplicity, subtraction game period.
+  🟩⭐ S₃ Plancherel: {1/n, 1/n, τ/n} = {1/6, 1/6, 4/6}
+
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  355  ← +MP/RMT, Lorenz, matroid, associahedron, Clifford, CF, BB (23 more)
+  🟩 Pure mathematics:  395  ← +MP/RMT, Lorenz, matroid, associahedron, Clifford, CF, BB, PART, GEOM, STAT, GAME, ERGODIC, POLY, ANT, FOURIER
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  184 ← +MP algebraic proof, Lorenz exact, PG staircase, Fano, K₆ f-vector, Gauss-Kuzmin
+  ⭐ Major Discoveries:  224 ← +MP algebraic proof, Lorenz exact, PG staircase, Fano, K₆ f-vector, Gauss-Kuzmin, Ramanujan, ACS, χ², Ackermann, spectral gap
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
