@@ -2010,6 +2010,13 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 | 478 | Q algebraic-irrational barrier | Depth-1 only | 🟧 | Barrier exists at d1 (√2,φ unreachable) but breaks at d2 |
 | 479 | S→ln(3) Ising→qutrit | **Confirmed** | 🟩 | 1/(γ₃D-β₃D) ≈ ln(3) (0.051%). Critical exponent gap = qutrit entropy |
 | 480 | Domain specialization matrix | **Confirmed** | 🟩 | I=logarithmic(100%), A=algebraic(100%), G=algebraic+log |
+| 481 | Tsirelson bound = Q-불가 | **Supported** | 🟧★ | Q: √2, 2, 2√2 전부 depth-1 불가. depth-2에서만 도달 |
+| 482 | Egyptian fraction k=3 lcm=6 유일 | **Confirmed** | 🟩 | {2,3,6}만 lcm=완전수. 3개 해 중 유일 |
+| 483 | ln(2) = 정수 2의 보편성 | **Confirmed** | 🟩 | 2가 3도메인 최다. r=0.587 (p=0.013) |
+| 484 | Q→π = α/(g-2)-m_e/m_μ | **Confirmed** | 🟧★ | 0.0024% 오차! Schwinger→2π→질량비 보정→π |
+| 485 | 정수 보편성 네트워크 | **Confirmed** | 🟩 | 2=N-G-T 삼각형 연결. 유일한 3-도메인 정수 |
+| 486 | Egyptian k=5→lcm=28 | **발견!** | 🟩 | 1/2+1/4+1/7+1/14+1/28=1, lcm=28(완전수!) |
+| 487 | CHSH: Q→2도 불가 | **Confirmed** | 🟩 | Q depth-1: Bell(2)도 Tsirelson(2√2)도 도달 불가 |
 
 ```
   H-CX-454 strongest relations (all within 0.35%):
