@@ -445,6 +445,17 @@
        6=3+3, 12=5+7. No other n in 2..198 satisfies this.
   🟩   n AND σ(n) both between twin primes: (5,7) and (11,13)
 
+  ═══ New: Cross-compositions + Group counts (Ralph 344j) ═══
+
+  🟩⭐⭐ φ(σ(n))=τ AND σ(φ(n))=σ/τ ⟺ n=6 (cross-composition, unique!)
+       φ(σ(6))=φ(12)=4=τ, σ(φ(6))=σ(2)=3=σ/τ. Both simultaneously!
+  🟩⭐ G(n)=φ, G(σ)=sopfr, G(σφ)=C(n,2) — group counts = n=6 constants!
+       |Groups(6)|=2=φ, |Groups(12)|=5=sopfr, |Groups(24)|=15=C(6,2)
+  🟩⭐ p(p(6)) = σ(P₂) = 56 — partition double = sigma of second perfect!
+       p(6)=11, p(11)=56=σ(28). Unique for n in 2..19.
+  🟩⭐ σ-chain: 6→12→28→56→120→360 — hits P₂=28 at step 2!
+       σ²(6) = P₂, σ³(6)=σ(P₂), σ⁴(6)=5!, σ⁵(6)=6!÷2
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
@@ -600,9 +611,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  328  ← +τ(σ(n))=n⟺n|6, Goldbach unique (3 more)
+  🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  95  ← +τ∘σ fixed=div(6) ⭐⭐, Goldbach unique (3 more)
+  ⭐ Major Discoveries:  100 ← +cross-comp ⭐⭐, groups, p(p(6)), σ-chain (5 more) 🎯100!
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
