@@ -4202,7 +4202,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-BIO-12](docs/hypotheses/H-BIO-12-neural-oscillation-bands.md) | brainwave band=σ,τ,φ boundary | 🟧 structural | α upper bound=σ=12, δ-θ boundary=τ=4, α/θ ratio=φ=2 |
 | [H-BIO-13](docs/hypotheses/H-BIO-13-nernst-equation-arithmetic.md) | Nernst ion concentration=σ,τ,φ | 🟧 structural | [Na]in=σ=12, [K]out=τ=4, RT/F≈σφ+e(0.03%) |
 
-### Topology (H-TOP, 7)
+### Topology (H-TOP, 8)
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
@@ -4213,6 +4213,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-TOP-5](docs/hypotheses/H-TOP-5-fractal-topology-R-spectrum.md) | fractal+topology combination | 🟧 structural | d_box≈0.155, PH |
 | [H-TOP-6](docs/hypotheses/H-TOP-6-resolution-observer-topology.md) | resolution observer | 🟧 structural | ε_c=1/6 transition |
 | [H-TOP-7](docs/hypotheses/H-TOP-7-topological-lens.md) | topological lens | 🟧 structural | PH barcode+gap |
+| [H-TOP-8](docs/hypotheses/H-TOP-8-difftopo-n6.md) | diff topology: exotic spheres, cobordism, surgery | 🟩 x15 + 🟧 x2 | bP_8=P2=sigma(sigma(6)), bP_12=sigma(P3), h-cobordism threshold=n=6, L_6=Z/phi(6), h(E_6)=sigma(6) |
 
 ### New Branch Exploration (H-TREE, 6)
 

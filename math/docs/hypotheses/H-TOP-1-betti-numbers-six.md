@@ -128,3 +128,15 @@ While chi(CY3) is always even making chi=6 possible (not odd),
 this is numerical coincidence rather than structural connection.
 
 ## Difficulty: Extreme | Impact: - (refuted)
+
+## Superseded By
+
+H-GEO-11 found the correct version: the original attempt asked for chi=6 AND sum_b=12
+(incompatible). The correct reformulation:
+
+- sum_b = sigma(6) = 12  iff  h11 + h21 = tau(6) = 4  (not chi=6)
+- This is compatible: e.g., (h11,h21) = (2,2), (3,1), (1,3), (4,0), (0,4)
+- The unique self-mirror solution: h11=h21=2=phi(6), sum_b=12=sigma(6)
+- The unique pair with chi=tau(6): h11=3, h21=1
+
+See: [H-GEO-11](H-GEO-11-calabi-yau-n6-arithmetic.md)
