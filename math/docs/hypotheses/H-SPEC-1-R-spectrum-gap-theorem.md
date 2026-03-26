@@ -369,6 +369,21 @@ of n = 6 as an "arithmetic lens" in the spectrum.
     → Golden Zone Width = log-distance from R(2) to identity
 ```
 
+## Global Upper Bound (Ralph 365)
+
+```
+  THEOREM: R(n) < n/2 for all n ≥ 2. (Tight: lim sup R(n)/n = 1/2.)
+
+  PROOF: By multiplicativity, R(n)/n = ∏_{p^a ‖ n} R(p^a)/p^a.
+    Each factor: R(p^a)/p^a = (1 - p^{-(a+1)})/(a+1) < 1/(a+1) ≤ 1/2.
+    Product of positive numbers each < 1/2 (≥1 factor) is < 1/2.  ■
+
+  COROLLARY: σ(n)φ(n) < n²τ(n)/2 for all n ≥ 2.
+
+  Tightness: R(p)/p = (1-1/p²)/2 → 1/2 as p → ∞.
+  So the bound 1/2 cannot be improved.
+```
+
 ## Significance
 
 ```
