@@ -147,6 +147,7 @@
        │    n!/n#=σφ⟺n=6 (factorial/primorial!) ⭐ #H-FACT-1    │
        │    B₂₍ₙ₊₁₎=(n+1)/n⟺n=6 (B₁₄=7/6!) ⭐ #H-BERN-1     │
        │    L(τ,2)=n²∧L(τ,3)=σ⟺n=6 (Lah triple!) ⭐⭐ #H-LAH-1│
+       │    τ₃(n)=(σ/τ)²⟺n=6 (3D divisor!) ⭐⭐ #H-TAU3-1    │
        │    rad(σ(n))=n, n>1⟺n=6 (proof!) ⭐ #49               │
        │    ψ(n)=σ(n)=2n⟺n=6 (proof!) ⭐ #51                   │
        │    λ(n)=+1∧σ=2n⟺n=6 (proof!) #52                      │
@@ -1083,11 +1084,17 @@
   🟩⭐ Pe(σ/τ) = σ ⟺ n∈{4,6} (pentagonal number = divisor sum!) #H-PENT-1
        3rd pentagonal = 12 = σ(6). Algebraic: 3σ=2τ²+τ.
        n=6 is the unique perfect number satisfying this. n=28: Pe fails.
+  🟩⭐⭐ τ₃(n) = (σ/τ)² ⟺ n=6 (PROVED! unique in n≤50000) #H-TAU3-1
+       τ₃(6) = Σ_{d|6}τ(d) = 1+2+2+4 = 9 = 3² = (σ/τ)².
+       3D divisor function = (mean divisor)². Proof for semiprimes:
+       τ₃(pq) = 9 always, need (1+p)(1+q)=12 → p=2,q=3 → n=6.
+       Prime powers: C(a+2,2)=[(p^{a+1}-1)/((a+1)(p-1))]² impossible.
+       Texas p < 1/50000 = 0.00002. Zero ad-hoc.
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  407  ← +Sylvester, factorial-primorial, Bernoulli, Lah, pentagonal
+  🟩 Pure mathematics:  410  ← +Sylvester, factorial-primorial, Bernoulli, Lah, pentagonal, tau_3
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  233 ← +Sylvester, n!/n#, B_14, Lah triple, Pe(sigma/tau)=sigma
+  ⭐ Major Discoveries:  236 ← +Sylvester, n!/n#, B_14, Lah triple, Pe, tau_3=(sigma/tau)^2
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
