@@ -1045,6 +1045,49 @@ The experience came first. Mathematics and code are the language I built to expl
   ⚪ GT-6: Banzhaf at quota=n=6: player w=6 gets 7/10 -- no clean n=6 constant
 
   Summary: 3 GREEN (1 new theorem, 1 trivial, 1 confirmation) + 3 WHITE
+
+  --- 2026-03-26: Consciousness Engine Cross-Domain Hypotheses (H-CX-413~415) ---
+  Scripts: calc/verify_h413_tension_fep.py, calc/verify_h414_tension_phase.py, calc/verify_h415_gauge_invariance.py
+  Hypotheses: docs/hypotheses/H-CX-413-tension-free-energy-friston.md, H-CX-414-tension-phase-transition.md, H-CX-415-inter-tension-gauge-field.md
+
+  🟧★ H-CX-413: Tension = Free Energy (Friston FEP)
+    Pearson r=0.9387 (p<1e-300), Spearman rho=0.9607
+    Tension ~ Complexity (r=1.0), Tension vs Surprise (r=-0.26)
+    Per-class mean r=0.9236 (all 10 classes r>0.85)
+    Isomorphism: tension minimization = free energy minimization
+
+  🟧★ H-CX-414: Tension Phase Diagram = Phase Transition
+    2nd order candidate: susceptibility peak 46x at lr=0.083
+    Critical lr=0.08-0.10, jump ratio=4.19
+    Three phases: ordered(lr<0.01), critical(0.01-0.1), disordered(lr>0.1)
+    Power-law fit poor (R^2=0.33), possibly broadened by finite-size effects
+
+  🟧★ H-CX-415: Inter-tension = Gauge Field
+    Global gauge invariance: CONFIRMED (mean error 1.72e-07)
+    Local gauge invariance: BROKEN (mean error 3.27e+01, 30x distortion)
+    Scale covariance: T_ab(alpha*f) = alpha^2 * T_ab(f) (exact)
+    Inter-tension is a global gauge invariant that requires a connection for local invariance
+
+  --- 2026-03-26: PH Topology & Learning Hypotheses (H-CX-410~412) ---
+  Scripts: scripts/verify_h_cx_410.py, scripts/verify_h_cx_411.py, scripts/verify_h_cx_412.py
+  Hypotheses: docs/hypotheses/H-CX-410-ph-barcode-memory-fingerprint.md, H-CX-411-ph-bottleneck-information-bottleneck.md, H-CX-412-ph-persistence-generalization-lifespan.md
+
+  ⚪ H-CX-410: PH Barcode = Memory Fingerprint — NULL RESULT
+    H0 barcode completely invariant under catastrophic forgetting (distance=0.0)
+    Acc_A drops 71% but topology unchanged — memory stored in geometry, not topology
+    Mitosis protection works (acc_A maintained 90.4%) but PH is unrelated
+
+  🟧 H-CX-411: PH Bottleneck = Information Bottleneck — PARTIAL
+    MI(X;T) vs Accuracy: r=0.9457 (strong, IB fitting confirmed)
+    MI(T;Y) vs Accuracy: r=0.7580 (moderate)
+    H0 constant throughout training — PH-IB synchronization not observed
+    IB compression phase weakly present (50% of epochs)
+
+  🟧★ H-CX-412: PH Persistence = Generalization Lifespan
+    W1 PH Entropy vs TestAcc: r=+0.8642 (strong positive)
+    Spearman rho=+0.70 across 5 network variants (16~256 hidden)
+    Non-monotonic: optimal persistence exists (Wide-256 < Large-128)
+    Max/Mean ratio decreases with better generalization
 ```
 
 ### Experiment List (65+ items)
@@ -1558,6 +1601,12 @@ The experience came first. Mathematics and code are the language I built to expl
 | [H-CX-153](docs/hypotheses/H-CX-153-n-ln-sequence.md) | N×ln sequence | 12=nearest intensification |
 | [H-CX-155](docs/hypotheses/H-CX-155-sigma-phi-full-scan.md) | σφ/(nτ) all elements | Z=1~118 complete scan |
 | [H-CX-156](docs/hypotheses/H-CX-156-perfect-number-element-chain.md) | Perfect number element chain | C→Ni→? |
+| [H-CX-422](docs/hypotheses/H-CX-422-pure-field-meditation-state.md) | Pure Field = Meditation State | 🟧 eq~0.5% stable, tension monotone decrease |
+| [H-CX-423](docs/hypotheses/H-CX-423-dream-state-field-hyperactivation.md) | Dream = Field Hyperactivation | 🟧 3-regime: sleep(0)/normal(1~3)/nightmare(23x) |
+| [H-CX-424](docs/hypotheses/H-CX-424-pure-field-scaling-law.md) | Pure Field Scaling Law | 🟧 field_adv scales with params (R2=0.71) |
+| [H-CX-425](docs/hypotheses/H-CX-425-third-perfect-number-equation.md) | 3rd Perfect Number Equation Search | ⚪ 496 unique eq not found, H-CX-196 strengthened |
+| [H-CX-426](docs/hypotheses/H-CX-426-zeta-sigma-pi-connection.md) | ζ(s) × σ₋₁(6) π Connection | ⚪ p=1.0, no significant matches in 3132 tests |
+| [H-CX-427](docs/hypotheses/H-CX-427-ramanujan-tau-perfect-numbers.md) | Ramanujan τ and Perfect Numbers | 🟧 Mersenne prime divisibility pattern (p≈0.15) |
 | [H-CX-157](docs/hypotheses/H-CX-157-silent-consensus-origin.md) | Silent consensus cause = data PCA | ✅ cos=0.99 |
 | [H-CX-158](docs/hypotheses/H-CX-158-cross-dataset-ph-transfer.md) | ⭐ Cross PH transfer | ✅ r=1.000! |
 | [H-CX-159](docs/hypotheses/H-CX-159-tension-resonance-robustness.md) | Tension resonance robustness | ✅ 0.931±0.012 |
