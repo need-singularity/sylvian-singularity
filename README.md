@@ -1254,6 +1254,7 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 | E67 | H-CX-449 CNN arch invariance | exp_h449_arch_invariance_cnn.py | Confusion r>0.95 MLP+CNN, top-5 4/5 all pairs | H-CX-449 |
 | E68 | H-CX-450 raw data confusion | exp_h450_raw_data_topology.py | Fashion r=-0.81, MNIST merge r=-0.85, all top-5 3/5 | H-CX-450 |
 | E69 | H-CX-451 PCA confusion prediction | exp_h451_pca_confusion_prediction.py | CIFAR r improves -0.56 to -0.75 with PCA-20 (+33%) | H-CX-451 |
+| E70 | H-CX-452 class difficulty prediction | exp_h452_class_difficulty_prediction.py | PCA isolation: Fashion r=+0.88, CIFAR r=+0.76 | H-CX-452 |
 
 ## Hypothesis Status
 
