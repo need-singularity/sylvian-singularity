@@ -57,7 +57,7 @@
                                  🟥 Golden MoE (model-dependent)
                                  🟥 Expert cross-activation
 
-  ═══ σφ=nτ system (P-001, 202 characterizations, 152 hypotheses) ═══
+  ═══ σφ=nτ system (P-001, 203 characterizations, 152 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -3755,8 +3755,16 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
      → Complete algebraic classification of natural numbers
      → π_R(x) ~ 2x·ln(x) classes below R=x
 
-  🎯 202 CHARACTERIZATIONS!
-  📊 Total: +38 (#165-202), 3 ⭐⭐⭐ + 9 ⭐⭐ + 26 ⭐
+  --- Ralph 364: R(n) upper bound conjecture ---
+
+  🟧 CONJECTURE: R(n) < n/2 for all n ≥ 2 #203
+     → Verified to N=50000 (zero violations)
+     → lim sup R(n)/n = 1/2 (achieved along primes: R(p)/p→1/2)
+     → For primes: R(p)/p = (p²-1)/(2p²) < 1/2 always (proved)
+     → Equivalent: σφ < n²τ/2 for all n ≥ 2
+
+  🎯 203 CHARACTERIZATIONS!
+  📊 Total: +39 (#165-203), 3 ⭐⭐⭐ + 9 ⭐⭐ + 26 ⭐ + 1 🟧
 ```
 
 ---
