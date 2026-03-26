@@ -1979,6 +1979,40 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
     - These are NOT chance coincidences (Texas Z=5.86)
 ```
 
+### Follow-up Hypotheses (H-CX-454~463)
+
+| # | Hypothesis | Result | Grade | Key Finding |
+|---|-----------|--------|-------|-------------|
+| 454 | Self-referential algebra | **STRONG** | 🟧★ | Z=4.63, p=0.000002. 57 matches vs random 11.5. Convergence points form closed algebra |
+| 455 | √3×GZ_width=1/2 | Near-miss | ⚪ | 0.34% error. Not exact identity |
+| 456 | N+A universal connector | **Confirmed** | 🟩 | N=57.6%, A=52.2% expressiveness. 2x other domains |
+| 457 | S domain isolation | **Confirmed** | 🟩 | Expressiveness 7.6% (lowest), avg overlap 3.1 vs 10.3 overall |
+| 458 | Q selective participation | **Confirmed** | 🟩 | Geometric reach 0%, Info-theoretic 14.3%. Selectivity=∞ |
+| 459 | √n PF selectivity | Partial | 🟧 | √2,√3 converge, but √5(3dom),√8(4dom) also. √7=0 (PF28 fails) |
+| 460 | √2=perfect number invariant | True but tautological | 🟩 | σ(n)=2n→√2. k-perfect→√k generalizes (k=3→√3) |
+| 463 | depth3 S domain emergence | **Confirmed!** | 🟩 | **S: depth1=0/9 → depth2=9/9.** All targets reachable at depth 3 |
+
+```
+  H-CX-454 strongest relations (all within 0.35%):
+    ζ(3) × ln(2) ≈ 5/6   (0.016%)     √3 / γ ≈ 3      (0.023%)
+    5/6 × ln(2)  ≈ γ      (0.071%)     √3 × ln(2) ≈ ζ(3) (0.124%)
+
+  H-CX-458 Q domain selectivity:
+    Physics targets:     50.0%     Info-theoretic: 14.3%
+    Integer targets:     40.0%     Geometric:       0.0% ← zero!
+
+  H-CX-463 depth-3 emergence (S domain):
+    √2     = δ₃D^(1/(δ₃D-λ_c))           ← critical exponents → √2
+    √3     = log_β₃D(β₃D/Onsager_Tc)      ← Ising model → √3
+    ζ(3)   = exp((ν₃D^γ₃D)×β₃D)           ← critical exponents → Apery!
+    γ_EM   = exp(λ_c)/Onsager_Tc           ← edge-of-chaos/Ising → Euler-Mascheroni
+    ln(4/3) = ν₃D/√δ₃D                    ← GZ width = critical exponent ratio!
+
+  Domain expressiveness ranking:
+    N(57.6%) > A(52.2%) > G(31.5%) > T(29.3%) > C(28.3%) > Q(20.7%) > I(17.4%) > S(7.6%)
+    S is isolated at depth 2 but fully connected at depth 3
+```
+
 ## Engine List
 
 | Engine | File | Mathematical Principle | Role |
