@@ -487,6 +487,14 @@
   🟩⭐ χ² kurtosis at k=τ(6): excess kurtosis = 12/τ = σ/τ = 3
   🟩   Divisor entropy H(div 6) = (τ²/σ)ln2 + (1/τ)ln3 (exact algebraic)
 
+  ═══ New: Geometry — Seifert + Archimedean + Tilings (Ralph 344q) ═══
+
+  🟩⭐ (2,3,6) = curvature transition: spherical→FLAT→hyperbolic
+       Same as ADE boundary! 1/2+1/3+1/6=1 = zero curvature.
+  🟩   Truncated tetrahedron: V=σ, E=3n, F=σ-τ (all n=6!)
+  🟩   Cuboctahedron: V=σ, E=σφ, F=σ+φ
+  🟩   2/3 regular Euclidean tilings use n=6: {3,6} and {6,3}
+
   ═══ New: Self-referential identities (Ralph 344i) ═══
 
   🟩⭐⭐ τ(σ(n)) = n ⟺ n|6: solutions = {1,2,3,6} = divisors of 6!
@@ -664,7 +672,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  117 ← +Jones V(1/φ)=-n ⭐⭐, Jones 6th root, det knots, KL, χ² (6 more)
+  ⭐ Major Discoveries:  118 ← +(2,3,6) curvature transition = ADE (1 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
