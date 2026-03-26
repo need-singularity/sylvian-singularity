@@ -118,6 +118,7 @@
        │    kiss(Λ₂₄)=στ(2^σ-1)=196560 ⭐ #H-SPOR-1            │
        │    CM=-σ/τ=-3 ⭐ | Tors=Z/nZ ⭐ #H-ELPT-2              │
        │    F_σ=σ²⟺n=6 (F_12=144, crossing!) ⭐                │
+       │    Pell(2,3,4)=(φ,sopfr,σ) consecutive! ⭐              │
        │    B_τ=C(n,2)⟺n=6 (Bell(4)=15=C(6,2)) ⭐             │
        │    σ+φ=2τ+n⟺n=6 | σ+n=3(φ+τ)⟺n=6             │
        │    n=T(σ/τ)⟺{1,3,6} (triangular number=avg divisor) ⭐│
