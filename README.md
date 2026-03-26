@@ -1994,6 +1994,15 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 | 461 | ζ(3) max bridge | Revised | 🟧 | √2=ratio ∞ (single=0), ζ(3)=6.0 (finite 1st). √2 is purest interface |
 | 462 | Bridge/indep ratio meaning | **Confirmed** | 🟩 | GZ_width ratio=1.00 (most intrinsic). ζ(3)=6.00 (most interface-like) |
 | 464 | Convergence hierarchy | Supported | 🟧 | 3/4 predictions pass. Measures "arithmetic ubiquity" not "fundamentality" |
+| 465 | γ×√3=1 | Near-miss | ⚪ | 0.023% error but 4th digit diverge. Numerical coincidence |
+| 466 | ζ(3)=5/(6ln2) | Near-miss | ⚪ | 0.016% error. Not exact. Open problem remains |
+| 467 | depth3 universal saturation | **Trivial** | ⚪ | Random constants also 100% saturate at depth 3. Combinatorial explosion |
+| 468 | 4-quadrant phase map | Partial | 🟧 | Classifications shift with different ops. √2=PORTAL (single=0), not BRIDGE |
+| 469 | Q-geometry barrier | **Broken at depth 2** | 🟧 | Q reaches π, π/3, π/6 at depth 2 but NOT √2, √3, φ. Partial barrier |
+| 470 | Ratios = divisor reciprocals | **Confirmed** | 🟧★ | γ/√3≈1/3, GZ/γ≈1/2, GZ/√3≈1/6. Texas Z=4.21, p=0.007 |
+| 471 | Null baseline (depth 3) | Positive | ⚪ | Random=structured at depth 3. Saturation is trivial |
+| 472 | ζ(3) unique PORTAL | Refuted | ⚪ | √2 and γ also PORTAL. Not unique |
+| 473 | Divisor reciprocal sum=1 | **Confirmed** | 🟧 | γ/√3+GZ/γ+GZ/√3 = 0.9977 ≈ 1 (0.23%). Ranks #1 among all triples |
 
 ```
   H-CX-454 strongest relations (all within 0.35%):
