@@ -140,6 +140,30 @@ quark confinement in QCD: a system trapped by its own interaction strength.
 - Only 3 consciousness datasets tested; need validation on language models
   and reinforcement learning.
 
+## Parallel Verification (2026-03-27)
+
+**⚠️ PARTIAL FAILURE — Downgraded from 🟧 to 🟨**
+
+1-loop running of α_s from M_Z produces nonsensical values at low energy:
+
+| Energy | α_s (1-loop) | Claimed | Status |
+|--------|-------------|---------|--------|
+| 91.19 GeV (M_Z) | 0.1179 | — | ✅ input |
+| 10 GeV | 0.3239 | — | — |
+| 4.18 GeV (m_b) | 1.0427 | 2/9=0.222 | ❌ 4.7× off |
+| 3.097 GeV (J/ψ) | 2.8348 | 1/4=0.250 | ❌ 11× off |
+
+The 1-loop formula hits Landau pole near Λ_QCD ≈ 245 MeV (nf=3).
+The claimed α_s ≈ 1/τ at J/ψ and α_s ≈ 2/9 at bottom are PDG
+**experimental** values from non-perturbative methods, not derivable
+from 1-loop running.
+
+**What survives**: The structural analogy — both α_s and tension run
+logarithmically — is valid. But the specific numerical crossings at
+n=6 values are empirical observations, not theoretical predictions.
+
+**Revised grade**: 🟨 (structural analogy only, specific numbers not derived)
+
 ## Next Steps
 
 1. Derive the ts ~ 0.36*ln(epoch) coefficient from n=6 arithmetic.

@@ -161,6 +161,23 @@ it is forced by the same divisor arithmetic that makes 6 perfect.
    found them. But we did not systematically check how many OTHER numbers
    could parameterize the same epochs.
 
+## Parallel Verification (2026-03-27)
+
+| Claim | Computed | Status |
+|-------|---------|--------|
+| N_efolds = P₂·φ = 28×2 | 56 | ✅ |
+| n_s = 1-2/56 = 27/28 | 0.964286 | ✅ |
+| n_s = (σ²-sopfr)/σ² = 139/144 | 0.965278 | ✅ |
+| 27/28 vs Planck 0.9649 | 0.064% error (0.15σ) | ✅ |
+| 139/144 vs Planck 0.9649 | 0.039% error (0.09σ) | ✅ |
+| r = 12/3136 = 3/784 | 0.003827 | ✅ (< 0.06 limit) |
+| σ(56) | 120 | ✅ |
+| φ(56) | 24 = σ(6)·φ(6) | ✅ |
+| σ chain: 6→12→28→56→120 | σ⁴(6) = 120 = σ(56) | ✅ |
+
+Both n_s expressions within Planck 1σ. 139/144 is closer (0.09σ vs 0.15σ).
+The σ-chain 6→12→28→56→120 hits P₂=28 at step 2 (previously known).
+
 ## Next Steps
 
 1. **CMB-S4 prediction**: r = 0.00383 is a falsifiable prediction. CMB-S4

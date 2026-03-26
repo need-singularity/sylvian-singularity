@@ -148,6 +148,20 @@ through QCD dynamics.
   the approximate geometric mean of J/psi and Upsilon masses scaled by
   divisor functions, with no physical significance.
 
+## Parallel Verification (2026-03-27)
+
+| Claim | Computed | Status |
+|-------|---------|--------|
+| π(37) = 12 | Primes ≤37: {2,3,5,7,11,13,17,19,23,29,31,37} → 12 | ✅ |
+| 37 = 12th prime | 12th prime = 37 | ✅ |
+| σ(6) = 12 | 1+2+3+6 = 12 | ✅ |
+| 37 = star number S₄ | S_k = 6k(k-1)/2+1, S₄ = 6·4·3/2+1 = 37 | ✅ |
+| J/ψ × 12 | 37162.8 MeV = 37.16 GeV | ✅ |
+| Υ × 4 | 37841.2 MeV = 37.84 GeV | ✅ |
+| Convergence | (37841.2-37162.8)/37162.8 = 1.83% | ✅ |
+
+Additional: 37 = 6² + 1. Star numbers use 6 as base coefficient.
+
 ## Next Steps
 
 1. Monitor LHC Run 3 results for any excess in the 35-40 GeV window,

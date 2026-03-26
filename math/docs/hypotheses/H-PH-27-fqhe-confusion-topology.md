@@ -5,7 +5,7 @@
 > Fractional quantum Hall effect (FQHE) filling fractions and neural network
 > confusion hierarchies share identical n=6 arithmetic and topological protection
 > mechanisms. FQHE plateaus nu = {1/3, 2/5, 3/7, 5/2} = {tau/sigma, phi/sopfr,
-> (sigma/tau)/M_3, sopfr/phi} map to confusion dendrogram levels, with both
+> (sigma/tau)/M_2, sopfr/phi} map to confusion dendrogram levels, with both
 > hierarchies being topologically protected against perturbation.
 
 ## Background / Context
@@ -41,10 +41,10 @@ Neural network confusion patterns also form a topologically protected hierarchy:
 |---------------|-------|----------------|--------------|
 | nu = 1/3 | 0.3333 | tau/sigma = 4/12 | Exact |
 | nu = 2/5 | 0.4000 | phi/sopfr = 2/5 | Exact |
-| nu = 3/7 | 0.4286 | (sigma/tau)/M_3 = 3/7 | Exact |
+| nu = 3/7 | 0.4286 | (sigma/tau)/M_2 = 3/7 | Exact |
 | nu = 5/2 | 2.5000 | sopfr/phi = 5/2 | Exact |
 
-where M_3 = 2^3 - 1 = 7 is the third Mersenne prime.
+where M_2 = 2^3 - 1 = 7 is the 2nd Mersenne prime.
 
 ## Structural Isomorphism (ASCII Diagram)
 
@@ -60,7 +60,7 @@ where M_3 = 2^3 - 1 = 7 is the third Mersenne prime.
     |        phi/sopfr = 2/5            |           similar shape
     |                                   |
   nu=3/7 --------weaker----------> {bird, deer}    weaker
-    |        (sigma/tau)/M_3            |           same habitat
+    |        (sigma/tau)/M_2            |           same habitat
     |                                   |
   nu=5/2 --------exotic----------> {plane, ship}   cross-domain
              sopfr/phi = 5/2                        unexpected pair
@@ -167,6 +167,32 @@ pairs represent unexpected semantic connections (useful for creativity).
 5. The 4-level hierarchy may be an artifact of having exactly 4 FQHE
    fractions to match. More FQHE fractions exist (2/3, 4/9, etc.) and
    the mapping for those is not specified.
+
+## Parallel Verification (2026-03-27)
+
+**Notation fix**: 7 = 2³-1 is M₂ (2nd Mersenne prime), not M₃. Corrected throughout.
+
+14 of 15 principal FQHE fractions match n=6 expressions:
+
+| ν | n=6 Expression | Status |
+|---|---------------|--------|
+| 1/3 | τ/σ | ✅ |
+| 2/5 | φ/sopfr | ✅ |
+| 3/7 | (σ/τ)/M₂ | ✅ |
+| 2/3 | τ/n | ✅ |
+| 3/5 | (σ/τ)/sopfr | ✅ |
+| 1/5 | 1/sopfr | ✅ |
+| 5/2 | sopfr/φ | ✅ |
+| 5/7 | sopfr/M₂ | ✅ |
+| 4/3 | τ/(σ/τ) | ✅ |
+| 7/3 | M₂/(σ/τ) | ✅ |
+| 1/7 | 1/M₂ | ✅ |
+| 4/5 | τ/sopfr | ✅ |
+| 5/9 | sopfr/(τ+sopfr) | ✅ |
+| 7/9 | M₂/(τ+sopfr) | ✅ |
+| 4/9 | — | ❌ no match |
+
+**14/15 match** (93.3%). Only ν=4/9 has no clean n=6 expression.
 
 ## Next Steps
 

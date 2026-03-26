@@ -160,6 +160,21 @@ attention, decay probability) among channels.
 - The consciousness engine experiments use small models (18M parameters).
   The {1/2, 1/3, 1/6} weights may not persist at GPT-scale.
 
+## Parallel Verification (2026-03-27)
+
+| Channel | PDG Value | n=6 Fraction | Fraction Value | Error |
+|---------|-----------|-------------|----------------|-------|
+| H→bb | 0.5824 | 7/12 = (n+1)/σ | 0.58333 | 0.16% |
+| H→ττ | 0.0632 | 1/16 = 1/φ^τ | 0.06250 | 1.11% |
+| φ→K⁺K⁻ | 0.491 | 1/2 | 0.500 | 1.83% |
+| φ→K_LK_S | 0.340 | 1/3 | 0.333 | 1.96% |
+| φ→ρπ | 0.153 | 1/6 | 0.167 | 8.93% |
+
+Higgs branching ratios: tight (0.16%, 1.11%).
+φ(1020) decay: K channels tight (1.8–2.0%), ρπ rougher (8.9%).
+φ(1020) channels sum: 0.984 (1.6% to minor channels).
+7/12 = (n+1)/σ and 1/16 = 1/φ^τ confirmed exact arithmetic.
+
 ## Next Steps
 
 1. Predict additional Higgs branching ratios from n=6 arithmetic. Can WW (21.4%)

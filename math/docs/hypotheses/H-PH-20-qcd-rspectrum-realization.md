@@ -100,6 +100,21 @@ perfect number through the divisor function structure encoded in meson masses.
 - The MC test assumes uniform random ratios; different priors could change
   the significance.
 
+## Parallel Verification (2026-03-27)
+
+All claims confirmed by independent Python calculation:
+
+| Claim | Computed | Status |
+|-------|---------|--------|
+| R(2) = 3·1/(2·2) = 3/4 | 0.75 exact | ✅ |
+| R(3) = 4·2/(3·2) = 4/3 | 1.3333 exact | ✅ |
+| R(2)·R(3) = 1 | 1 exact (fraction arithmetic) | ✅ |
+| J/ψ/ρ = τ(6) = 4 | 3096.9/775.26 = 3.9947 (0.13%) | ✅ |
+| Υ/J/ψ = σ/τ = 3 | 9460.3/3096.9 = 3.0548 (1.83%) | ✅ |
+| Υ/ρ = σ(6) = 12 | 9460.3/775.26 = 12.2027 (1.69%) | ✅ |
+
+Pure number theory exact. Meson ratios 0.13–1.83% error.
+
 ## Next Steps
 
 1. Check excited state ratios: psi(2S)/J/psi, Upsilon(2S)/Upsilon(1S), etc.

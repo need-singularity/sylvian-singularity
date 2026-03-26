@@ -135,6 +135,24 @@ a deep structural connection, not mere numerical coincidence.
    If |Theta_4| turns out to be nonzero, it could either support or
    undermine this hypothesis depending on the value.
 
+## Parallel Verification (2026-03-27)
+
+All 7 exotic sphere counts verified against n=6 arithmetic:
+
+| d | |Θ_d| | n=6 Expression | Status |
+|---|-------|---------------|--------|
+| 7 | 28 | P₂ (2nd perfect number) | ✅ |
+| 8 | 2 | φ(6) | ✅ |
+| 9 | 8 | σ(6)-τ(6) = 12-4 | ✅ |
+| 10 | 6 | P₁ (1st perfect number) | ✅ |
+| 11 | 992 | σ(496) = σ(P₃) = 2·496 | ✅ |
+| 13 | 3 | σ(6)/τ(6) = 12/4 | ✅ |
+| 15 | 16256 | σ(8128) = σ(P₄) = 2·8128 | ✅ |
+
+**7/7 exact match**. Note: σ(P_k) = 2·P_k for any perfect number
+(by definition of perfect numbers), so the |Θ₁₁| and |Θ₁₅| matches
+follow from |Θ₇|=P₂ being exact.
+
 ## Next Steps
 
 1. Investigate whether the 6 exotic structures on S^10 have distinct
