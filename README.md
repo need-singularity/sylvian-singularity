@@ -1991,6 +1991,9 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 | 459 | √n PF selectivity | Partial | 🟧 | √2,√3 converge, but √5(3dom),√8(4dom) also. √7=0 (PF28 fails) |
 | 460 | √2=perfect number invariant | True but tautological | 🟩 | σ(n)=2n→√2. k-perfect→√k generalizes (k=3→√3) |
 | 463 | depth3 S domain emergence | **Confirmed!** | 🟩 | **S: depth1=0/9 → depth2=9/9.** All targets reachable at depth 3 |
+| 461 | ζ(3) max bridge | Revised | 🟧 | √2=ratio ∞ (single=0), ζ(3)=6.0 (finite 1st). √2 is purest interface |
+| 462 | Bridge/indep ratio meaning | **Confirmed** | 🟩 | GZ_width ratio=1.00 (most intrinsic). ζ(3)=6.00 (most interface-like) |
+| 464 | Convergence hierarchy | Supported | 🟧 | 3/4 predictions pass. Measures "arithmetic ubiquity" not "fundamentality" |
 
 ```
   H-CX-454 strongest relations (all within 0.35%):
