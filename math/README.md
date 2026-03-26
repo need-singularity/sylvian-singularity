@@ -3486,6 +3486,30 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-MP-25](docs/hypotheses/H-MP-25-analytic-nt-extensions.md) | Analytic number theory extensions | 🟩 verified | R multiplicative, d_box≈0.574, non-uniform |
 | [H-MP-26](docs/hypotheses/H-MP-26-dynamical-systems-bifurcation.md) | Dynamical systems bifurcation | 🟩 verified | T fixed point=6 unique, Λ symmetry=ln(4/3) |
 
+### Coding Theory + Lattices (H-CODE, 1)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-CODE-1](docs/hypotheses/H-CODE-1-golay-hamming-lattice.md) | G24=[σφ,σ,σ-τ], E₆ kiss=σn, σ₃=τ(2ⁿ-1), Leech chain | ✅ all proved | 6 major, 2 structural |
+
+### Sporadic Groups (H-SPOR, 1)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-SPOR-1](docs/hypotheses/H-SPOR-1-sporadic-groups-mathieu.md) | kiss(Λ₂₄)=στ(2^σ-1), S(5,8,24)=S(sopfr,σ-τ,σφ), M12/M11=σ | ✅ verified | 2 major |
+
+### Elliptic Curves (H-ELPT, 2)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-ELPT-2](docs/hypotheses/H-ELPT-2-bsd-cascade-cm.md) | BSD cascade: CM=-(σ/τ), Tors=Z/nZ, Cond=n², Tam=primes | ✅ proved | unique among perfect numbers |
+
+### Zodiac 12/13/36 (H-ZODIAC, 1)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-ZODIAC-1](docs/hypotheses/H-ZODIAC-1-twelve-thirteen-thirtysix.md) | \|A_τ\|=σ, σ²/τ=n², K(3)=σ, 12-TET optimal, 13 excluded | ✅ verified | 3 major, 5 exact |
+
 ### AI (H-AI, 9)
 
 | # | Hypothesis | Status | Notes |
