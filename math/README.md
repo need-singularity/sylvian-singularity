@@ -3757,11 +3757,11 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
   --- Ralph 364: R(n) upper bound conjecture ---
 
-  🟧 CONJECTURE: R(n) < n/2 for all n ≥ 2 #203
-     → Verified to N=50000 (zero violations)
-     → lim sup R(n)/n = 1/2 (achieved along primes: R(p)/p→1/2)
-     → For primes: R(p)/p = (p²-1)/(2p²) < 1/2 always (proved)
-     → Equivalent: σφ < n²τ/2 for all n ≥ 2
+  🟩⭐ THEOREM: R(n) < n/2 for all n ≥ 2 — PROVED! #203
+     → R(n)/n = ∏ R(p^a)/p^a, each factor = (1-p^{-(a+1)})/(a+1) < 1/2
+     → Product of positive factors each < 1/2 is < 1/2. QED
+     → lim sup R(n)/n = 1/2 (tight: R(p)/p → 1/2 along primes)
+     → Equivalent: σφ < n²τ/2 for all n ≥ 2 (proved)
 
   🎯 203 CHARACTERIZATIONS!
   📊 Total: +39 (#165-203), 3 ⭐⭐⭐ + 9 ⭐⭐ + 26 ⭐ + 1 🟧
