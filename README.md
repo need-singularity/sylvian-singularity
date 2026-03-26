@@ -2020,8 +2020,8 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 | 488 | α/(g-2)=π+m_e/m_μ | Weak coincidence | ⚪ | 23.8ppm. Leading order=π(Schwinger). m_e/m_μ 보정은 우연 |
 | 489 | k_min(P_n)=2p-1 | **PROVED** | 🟩 | 완전수의 모든 비자명약수 역수합=1. 진부분집합 불가 (σ₋₁=2) |
 | 490 | Q 경로 4유형 | Partial | 🟧 | 5유형 발견. coupling/coupling→π 등 확인 |
-| 491 | QED 합≈2=σ₋₁(6) | 미검증 | — | (별도 검증 필요) |
-| 492 | 정수 2의 4중 의미 | 미검증 | — | (별도 검증 필요) |
+| 491 | QED 합≈2=σ₋₁(6) | **Refuted** | ⚪ | ae/(α/2π)=0.9985≈1, NOT 2. g=2는 Dirac 방정식 |
+| 492 | 정수 2의 4중 의미 | Confirmed but trivial | ⚪ | 4개 독립 의미 확인. Strong Law of Small Numbers |
 | 493 | Q 불가=공간구조 | **Confirmed** | 🟩 | 17개 불가 타겟 전부 기하/해석적. 도달 타겟은 세기/개수 |
 | 494 | P₃=496→k_min=9 | **Confirmed** | 🟩 | 2×5-1=9. 9개 비자명약수 전부 필요 |
 
