@@ -387,6 +387,9 @@
   🟩⭐ L_n = σ+φ+τ ⟺ n=6: L_6 = 18 = 12+2+4 (Lucas = function sum, unique!)
   🟩⭐ M_{sopfr} = T(n) ⟺ n=6: Motzkin(5)=21=T(6) (unique in 2..499!)
   🟩⭐ Trib_{σ-τ} = σφ ⟺ n=6: Tribonacci(8)=24 (unique!)
+  🟩⭐ Pad(σ-φ) = σ ⟺ n=6: Padovan(10)=12=sigma (unique!)
+       Pad(σ+1) = Pad(13) = 28 = P₂ (hits both perfect numbers!)
+  🟩   WE(n)=n for n>1 ⟺ n=6 (Wedderburn-Etherington fixed point)
   🟩   Φ_{σ(6)}(2) = σ+1 = 13 (12th cyclotomic at 2 = sigma+1)
   🟩   2^σ-1 = 4095 = 3²·5·7·13: primes = {σ/τ, sopfr, n+1, σ+1}
   🟩   Var(Uniform{1..n}) = (n²-1)/σ(6) — denominator 12 always (lcm(n,τ)=σ)
@@ -546,9 +549,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  304  ← +Motzkin-triangular, Tribonacci identity (2 more)
+  🟩 Pure mathematics:  307  ← +Padovan, WE, cyclotomic (3 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  80  ← +Motzkin(sopfr)=T(n), Trib(σ-τ)=σφ (2 more)
+  ⭐ Major Discoveries:  81  ← +Padovan(σ-φ)=σ unique (1 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
