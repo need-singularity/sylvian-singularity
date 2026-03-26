@@ -57,7 +57,7 @@
                                  🟥 Golden MoE (model-dependent)
                                  🟥 Expert cross-activation
 
-  ═══ σφ=nτ system (P-001, 168 characterizations, 152 hypotheses) ═══
+  ═══ σφ=nτ system (P-001, 172 characterizations, 152 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -117,6 +117,10 @@
        │    R-neighbor=φ,τ (self-referential gap!) ⭐⭐ #166           │
        │    δ⁺=1/n, δ⁻=1/τ (gap=reciprocal arithmetic!) ⭐⭐ #167    │
        │    F(s)=ζ(s)ζ(s+1) (telescope=zeta product!) ⭐⭐ #168       │
+       │    |δ⁺-δ⁻|=1/σ, δ⁺+δ⁻=5/σ (gap arithmetic!) ⭐ #169       │
+       │    R(φ(n))=R(n)-1/τ⟺n=6 (neighbor identity!) ⭐ #170       │
+       │    R(τ(n))=R(n)+1/n⟺n=6 (neighbor identity!) ⭐ #171       │
+       │    1/f=σφ=nτ=24=weight(Δ) (lens power!) ⭐ #172             │
        │    G24=[σφ,σ,σ-τ] (Golay code!) ⭐⭐ #H-CODE-1         │
        │    kiss(E₆)=σ·n=72 ⭐ | σ₃=τ(2ⁿ-1) ⭐ #H-CODE-1       │
        │    kiss(Λ₂₄)=στ(2^σ-1)=196560 ⭐ #H-SPOR-1            │
@@ -3457,10 +3461,28 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
      → Analytic continuation via meromorphic ζ
      → "Magnification" at resolution s has exact closed form!
 
-  📊 Summary: +4 characterizations (#165-168), 1 ⭐⭐⭐ + 3 ⭐⭐
-     → Total: 168 characterizations!
+  --- Ralph 346: Self-referential system deepening ---
+
+  ⭐ |δ⁺-δ⁻| = 1/σ = 1/12, δ⁺+δ⁻ = 5/σ = 5/12 #169
+     → ALL gap combinations expressible in σ alone!
+     → δ⁺/δ⁻ = (σ-τ)/σ = 2/3, δ⁻/δ⁺ = σ/(σ-τ) = 3/2
+     → 2/3 = 1-1/3 = H₂-1 (harmonic connection!)
+
+  ⭐ R(φ(n))=R(n)-1/τ(n) ⟺ n=6 (unique! n=2..200) #170
+  ⭐ R(τ(n))=R(n)+1/n ⟺ n=6 (unique! n=2..200) #171
+     → Each sub-identity independently characterizes n=6
+
+  ⭐ 1/f = σφ = nτ = 24 = weight(Δ_Ramanujan) = |τ_R(2)| #172
+     → Lens power = master formula = modular form weight!
+     → 1/(2f) = σ/2 = 6 = n (another self-reference!)
+
+  📊 Summary: +8 characterizations (#165-172), 1 ⭐⭐⭐ + 3 ⭐⭐ + 4 ⭐
+     → Total: 172 characterizations!
      → #165 is FIRST algebra↔topology bridge in the system
-     → Self-referential gap: unique to n=6, connects σφ=nτ to R-spectrum
+     → Complete self-referential closed loop:
+       σφ=nτ → R=1 → neighbors are φ,τ → gaps 1/n,1/τ
+       → f=1/σφ → σφf=1 → back to master formula
+     → ALL gap arithmetic reduces to σ,τ,n,φ of 6
 ```
 
 ---
