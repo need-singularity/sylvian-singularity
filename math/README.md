@@ -471,6 +471,22 @@
   🟩   K₆ toroidal (genus=1), graphene coord=σ/τ=3, symmetry=n-fold
   🟩   T³ Betti (1,σ/τ,σ/τ,1) sum=σ-τ=8
 
+  ═══ New: Knot Theory (Ralph 344p) ═══
+
+  🟩⭐⭐ V_trefoil(1/φ) = -n = -6 (Jones polynomial at t=1/phi!)
+       V(1/2) = -16+8+2 = -6. Canonical evaluation. Zero corrections.
+  🟩⭐ |V_trefoil(e^{2πi/6})|² = σ/τ = 3 (Jones at 6th root of unity!)
+  🟩⭐ det(trefoil) = σ/τ = 3, det(figure-eight) = sopfr = 5
+       The two simplest knots have determinants = n=6 constants!
+  🟩   Figure-eight crossing number = τ = 4, trefoil crossing = σ/τ = 3
+
+  ═══ New: Information Theory (Ralph 344p) ═══
+
+  🟩⭐ KL(Unif(n) ‖ Unif(σ)) = ln(φ) = ln(2) (unique to n=6!)
+       Requires σ/n = φ, which is perfection + φ=2. Unique in 2..1000.
+  🟩⭐ χ² kurtosis at k=τ(6): excess kurtosis = 12/τ = σ/τ = 3
+  🟩   Divisor entropy H(div 6) = (τ²/σ)ln2 + (1/τ)ln3 (exact algebraic)
+
   ═══ New: Self-referential identities (Ralph 344i) ═══
 
   🟩⭐⭐ τ(σ(n)) = n ⟺ n|6: solutions = {1,2,3,6} = divisors of 6!
@@ -648,7 +664,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  111 ← +Diamond lattice, C60, trefoil T(2,3), genus-3 surface (4 more)
+  ⭐ Major Discoveries:  117 ← +Jones V(1/φ)=-n ⭐⭐, Jones 6th root, det knots, KL, χ² (6 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
