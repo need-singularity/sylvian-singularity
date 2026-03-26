@@ -14,6 +14,18 @@
   When writing new hypotheses, always specify Golden Zone dependency.
 ```
 
+## README 프로젝트 설명 동기화 (필수)
+
+```
+  중앙 소스: TECS-L/.shared/projects.md (이것만 수정)
+  동기화 대상: TECS-L/README.md, anima/README.md, ph-training/README.md
+  마커: <!-- SHARED:PROJECTS:START --> ~ <!-- SHARED:PROJECTS:END -->
+
+  수동 동기화: cd ~/Dev/TECS-L && bash .shared/sync-readmes.sh
+  프로젝트 설명 수정 시 반드시 projects.md 수정 → sync → 각 리포 커밋/푸시
+  개별 README 직접 수정 금지 (마커 구간) — sync 시 덮어씌워짐
+```
+
 ## Project Overview
 Meta-engine project aiming for Consciousness Continuity.
 From brain's atypical structure → mathematics of perfect number 6 → multi-engine architecture → continuity of consciousness.
