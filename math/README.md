@@ -495,6 +495,12 @@
   🟩   Cuboctahedron: V=σ, E=σφ, F=σ+φ
   🟩   2/3 regular Euclidean tilings use n=6: {3,6} and {6,3}
 
+  ═══ New: Ramanujan sums (Ralph 344s) ═══
+
+  🟧★  c_{σ(n)}(n) = -τ(n) ⟺ n∈{6,204,360}: Ramanujan sum at (σ,n) = -tau
+       c_12(6) = -4. 3 hits in 500, p=0.006. n=6 is smallest.
+  🟩   c_6(6) = φ = 2, c_36(6) = n = 6
+
   ═══ New: Physics connections (Ralph 344r, mostly observational) ═══
 
   🟩⭐ dim(E₈×E₈) = 2·dim(E₈) = 496 = P₃ — anomaly cancellation needs P₃!
