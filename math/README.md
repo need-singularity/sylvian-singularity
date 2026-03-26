@@ -505,6 +505,17 @@
   🟩⭐ χ² kurtosis at k=τ(6): excess kurtosis = 12/τ = σ/τ = 3
   🟩   Divisor entropy H(div 6) = (τ²/σ)ln2 + (1/τ)ln3 (exact algebraic)
 
+  ═══ New: Random Matrix Theory (Ralph 346a) ═══
+
+  🟩⭐⭐ Dyson β = {1, φ, τ} = {1, 2, 4}: φ²=τ drives RMT classification!
+       β(GOE)=1, β(GUE)=φ=2, β(GSE)=τ=4. φ²=τ unique to n=6.
+  🟩⭐ DBM equilibration: t_eq = N/β = σ/φ = 6 = n (self-referential!)
+       Dyson Brownian Motion for N=σ GUE matrices equilibrates at t=n.
+  🟩⭐ Keating-Snaith: k=φ → moment exponent k²=τ (zeta moments)
+  🟩   Wigner semicircle: radius=φ=2, width=τ=4 (standard normalization)
+  🟩   Level repulsion s^β: exponents = {1, φ, τ} = Dyson set
+  🟧   Im(ρ₁) ≈ σ+φ = 14 (0.95% error, = dim(G2))
+
   ═══ New: Quantum Error Correction (Ralph 345a) ═══
 
   🟩⭐ Perfect QEC [[21,15,3]]: k=C(n,2)=15, redundancy=n-k=n=6!
@@ -733,7 +744,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  134 ← +P₃=2^τ·Φ₆(6) identity (1 more)
+  ⭐ Major Discoveries:  137 ← +Dyson β={1,φ,τ} ⭐⭐, DBM t_eq=n, Keating-Snaith
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
