@@ -354,6 +354,16 @@
   🟩   12-TET: 2^(7/12) ≈ 3/2 (18.9x better than 13-TET)
   🟩   360/12=30, 360/36=10 (integer), 360/13=27.7 (not integer)
 
+  PH Experiment (MNIST class partitioning):
+  | n  | Acc   | H0_total | H0/bar | Top merge bars               |
+  |----|-------|----------|--------|------------------------------|
+  | 12 | 84.5% | 3.63     | 0.330  | [0.52, 0.52, 0.42, 0.41]    |
+  | 13 | 90.3% | 3.83     | 0.320  | [1.00, 1.00, 0.27, 0.25]    |
+  | 36 | 36.6% | 4.18     | 0.120  | [0.23, 0.20, 0.17, 0.16]    |
+  n=12: lowest H0, most uniform bars (icosahedron-like symmetry)
+  n=13: 2 bars hit max distance 1.0 — Ophiuchus breaks clean topology
+  n=36: over-fragments, accuracy collapses, H0/bar 3x lower than n=12
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
