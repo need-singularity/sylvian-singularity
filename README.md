@@ -119,7 +119,21 @@ Rigorous validation with KDE + Bootstrap Monte Carlo + Bonferroni correction.
 
 6 fermion mass predictions (avg 2.2%), SM counts 10/10, 3 physics constants — details: [math/README.md](math/README.md)
 
-**Testable Predictions**: top 172.800 GeV (LHC Run3), bottom 4.096 GeV (FCC-ee), strange 96 MeV (Lattice QCD)
+### Extended Analyses (2026-03-27)
+
+| Discovery | Significance | Key Result |
+|-----------|-------------|------------|
+| **Fisher Combined (1+2+3)** | **5.0σ** (Stouffer 5.2σ) | 3 independent findings combined |
+| Higgs bb+ττ joint | 3.89σ (p=5×10⁻⁵) | H→bb=7/12, H→ττ=1/16 |
+| CMB spectral index n_s | 0.04% error | (σ²-sopfr)/σ²=139/144=0.96528 vs Planck 0.9649 |
+| CP asymmetry sin(2β) | 0.14% error | M₃/(σ-φ)=7/10=0.700 vs 0.699±0.017 |
+| BH entropy | structural | S=A/(τ·l_p²), denominator=τ(6)=4 |
+| Nuclear magic 7/7 | structural | All 7 shell closures = n=6 expressions |
+| 37-38 GeV convergence | blind prediction | J/ψ×σ=37.16, Υ×τ=37.84 (testable at LHC) |
+
+FQHE fractions, coupling unification, dark matter candidates, biology/DNA — details: [math/README.md](math/README.md)
+
+**Testable Predictions**: top 172.800 GeV (LHC Run3), bottom 4.096 GeV (FCC-ee), strange 96 MeV (Lattice QCD), 37-38 GeV resonance (LHC), tensor ratio r=0.00383 (CMB-S4), proton decay ~10³⁵yr (Hyper-K)
 
 ### Ralph Loop (copy-paste ready)
 
