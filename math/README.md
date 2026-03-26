@@ -407,8 +407,17 @@
 
   ═══ New: Graph Theory + Ramsey (Ralph 344f) ═══
 
-  🟩⭐⭐ Chang graphs srg(P₂, σ, n, τ) = srg(28, 12, 6, 4) — ALL n=6!
-       Eigenvalues r=τ=4, s=-φ=-2. SIX invariants = n=6 arithmetic.
+  🟩⭐⭐ Chang graphs srg(P₂, σ, n, τ) = srg(28, 12, 6, 4) — ALL n=6! #H-GRAPH-2
+       Eigenvalues r=τ=4, s=-φ=-2. ALL 8 params (v,k,λ,μ,r,s,f,g) = n=6.
+       PROVED: tau(6)=n-2 unique -> lambda=n. Texas p=0.000020.
+  🟩⭐⭐ Schläfli srg(27,16,10,8): ALL 8 params = n=6! #H-GRAPH-2
+       v=(σ/τ)^3, k=φ^τ, λ=sopfr·φ, μ=σ-τ, r=τ, s=-φ, f=n, g=sopfr·τ
+       Shares eigenvalues with Chang: k-μ=8=σ-τ, λ-μ=2=φ. Disc=n^2=36.
+  🟩⭐  Hoffman-Singleton srg(50,7,0,1): 6/6 params = n=6! #H-GRAPH-2
+       v=σ_2(6)=50, k=σ-τ-1=7, r=φ=2, s=-σ/τ=-3
+       f=C(σ-τ,2)=28=v(Chang), g=C(σ-τ-1,2)=21
+  🟩   tau(P₂) = n: tau(28) = 6 = first perfect number #H-GRAPH-2
+       Chain: n=6 -> T(σ-τ)=T(8) -> v=C(8,2)=28=P₂ -> tau(P₂)=6=n (cycle!)
   🟩⭐ σ_k(6) ≡ 0 (mod P₂) ⟺ k ≡ σ/τ (mod n) — period n! (PROVED)
   🟧★  Plücker bitangents at d=τ: 28=P₂. d²-9=n+1=7.
   🟩⭐ γ(K_σ) = n ⟺ n=6: genus(K_12) = 6 (K_12 needs 6 handles, unique!)
@@ -3924,6 +3933,13 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
 | [H-SPOR-1](docs/hypotheses/H-SPOR-1-sporadic-groups-mathieu.md) | kiss(Λ₂₄)=στ(2^σ-1), S(5,8,24)=S(sopfr,σ-τ,σφ), M12/M11=σ | ✅ verified | 2 major |
+
+### Graph Theory — SRG Family (H-GRAPH, 2)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-GRAPH-1](docs/hypotheses/H-GRAPH-1-graph-theory-characterizations.md) | K_6 graph: Turan=σ, pm=E, torus, Petersen=Kneser(sopfr,φ), Steiner=C_6 | ✅ verified | 5 exact |
+| [H-GRAPH-2](docs/hypotheses/H-GRAPH-2-chang-srg-n6-parameters.md) | Chang srg ALL 8 params=n=6 (PROVED), Schlafli 8/8, HS 6/6, tau(P₂)=n cycle | ✅ proved+verified | 3 major, p=0.000020 |
 
 ### Elliptic Curves (H-ELPT, 2)
 

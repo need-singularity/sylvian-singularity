@@ -127,3 +127,9 @@ Every parameter of the Petersen graph is expressible via arithmetic functions of
 - Calculate Texas p-value for the full collection of graph-theoretic coincidences
 - Check if any of these extend to n=28 (expected: no)
 - Investigate spectral properties of K_6 Laplacian
+
+## See Also
+
+- H-GRAPH-2: Deep analysis of Chang graphs srg(28,12,6,4), Hoffman-Singleton,
+  Schläfli, and the SRG family with n=6 arithmetic parameters. Includes structural
+  theorem proving ALL 8 Chang parameters = n=6 functions.
