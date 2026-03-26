@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """PH-based automatic learning pipeline
 
@@ -28,11 +27,31 @@ from model_pure_field import PureFieldEngine
 from calc.direction_analyzer import load_data
 
 try:
-    from ripser import ripser
-    HAS_RIPSER = True
+    import gudhi
+    HAS_GUDHI = True
 except ImportError:
-    HAS_RIPSER = False
-    print("⚠️ ripser not installed — pip install ripser")
+    HAS_GUDHI = False
+    try:
+        from ripser import ripser
+        HAS_RIPSER = True
+    except ImportError:
+        HAS_RIPSER = False
+        print("⚠️ gudhi/ripser not installed — pip install gudhi")
+
+
+def _ph_h0_lifetime(cos_dist):
+    """Compute total H0 lifetime from distance matrix using fastest available backend."""
+    if HAS_GUDHI:
+        st = gudhi.SimplexTree.create_from_array(cos_dist)
+        st.persistence()
+        h0 = np.array(st.persistence_intervals_in_dimension(0))
+    elif HAS_RIPSER:
+        result = ripser(cos_dist, maxdim=0, distance_matrix=True)
+        h0 = result['dgms'][0]
+    else:
+        return cos_dist[np.triu_indices(cos_dist.shape[0], 1)].sum()
+    h0_finite = h0[h0[:, 1] < np.inf]
+    return np.sum(h0_finite[:, 1] - h0_finite[:, 0]) if len(h0_finite) > 0 else 0
 
 
 def compute_h0(D, Y, n_cls=10):
@@ -48,15 +67,7 @@ def compute_h0(D, Y, n_cls=10):
     means = np.array(means)
     cos_dist = np.clip(1 - means @ means.T, 0, 2)
     np.fill_diagonal(cos_dist, 0)
-
-    if HAS_RIPSER:
-        result = ripser(cos_dist, maxdim=0, distance_matrix=True)
-        h0 = result['dgms'][0]
-        h0_finite = h0[h0[:, 1] < np.inf]
-        return np.sum(h0_finite[:, 1] - h0_finite[:, 0]) if len(h0_finite) > 0 else 0
-    else:
-        # fallback: sum of upper triangle
-        return cos_dist[np.triu_indices(n_cls, 1)].sum()
+    return _ph_h0_lifetime(cos_dist)
 
 
 def extract_dirs(model, dim, loader):
@@ -379,4 +390,3 @@ if __name__ == '__main__':
     t0 = time.time()
     main()
     print(f"\n  Total time: {(time.time() - t0) / 60:.1f} min")
-```

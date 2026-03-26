@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """PH Confusion Analyzer — Analyzing Confusion Structure with Persistent Homology
 
@@ -16,15 +15,19 @@ Usage:
   python3 calc/ph_confusion_analyzer.py --dataset cifar --epochs 15
   python3 calc/ph_confusion_analyzer.py --dataset fashion --full
 """
-import sys, argparse
-sys.path.insert(0, '/Users/ghost/Dev/logout')
+import sys, os, argparse
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
 from sklearn.metrics import roc_auc_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.decomposition import PCA
 from scipy.stats import spearmanr, kendalltau
-from ripser import ripser
+try:
+    import gudhi
+    HAS_GUDHI = True
+except ImportError:
+    HAS_GUDHI = False
 from model_pure_field import PureFieldEngine
 from calc.direction_analyzer import load_data
 
@@ -63,8 +66,14 @@ def single_linkage_merges(cos_dist, n_cls=10):
 
 
 def ph_h0_total(cos_dist):
-    result = ripser(cos_dist, maxdim=0, distance_matrix=True)
-    h0 = result['dgms'][0]
+    if HAS_GUDHI:
+        st = gudhi.SimplexTree.create_from_array(cos_dist)
+        st.persistence()
+        h0 = np.array(st.persistence_intervals_in_dimension(0))
+    else:
+        from ripser import ripser
+        result = ripser(cos_dist, maxdim=0, distance_matrix=True)
+        h0 = result['dgms'][0]
     h0_finite = h0[h0[:, 1] < np.inf]
     return np.sum(h0_finite[:, 1] - h0_finite[:, 0]) if len(h0_finite) > 0 else 0
 
@@ -271,4 +280,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```
