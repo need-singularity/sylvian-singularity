@@ -65,25 +65,42 @@ This means each divisor "costs less" in arithmetic imbalance for HCN numbers.
 - Seeds: 3 per dimension (stability)
 - Metrics: Final loss, loss/1M params, Spearman correlations
 
-## Results
+## Results (2026-03-27)
 
-*(To be filled after experiment completion)*
+Model: 2-layer transformer, 200 steps, char-level LM, batch=32
+
+| d | R(d) | tau | Params | Loss | Time |
+|---|---|---|---|---|---|
+| 60 | 3.73 | 12 | 101,375 | 0.0351 | 4.7s |
+| 64 | 9.07 | 7 | 114,271 | 0.0300 | 6.5s |
+| 120 | 6.00 | 16 | 375,455 | 0.0077 | 13.3s |
+| 128 | 15.94 | 8 | 425,055 | 0.0068 | 7.8s |
+| 240 | 9.92 | 20 | 1,442,015 | 0.0016 | 14.0s |
+| 256 | 28.39 | 9 | 1,636,447 | 0.0014 | 14.7s |
 
 ## Correlations
 
 | Metric pair | Spearman rho | Interpretation |
 |---|---|---|
-| tau/d vs loss | TBD | Higher divisor density -> lower loss? |
-| tau/d vs efficiency | TBD | Higher divisor density -> better efficiency? |
-| R/tau vs loss | TBD | Lower R per divisor -> lower loss? |
+| R vs raw_loss | -0.8857 | Confounded: higher R = larger d = more params |
+| R vs loss/params | +0.8857 | Per-param, higher R is WORSE |
+| tau vs raw_loss | -0.2000 | Weak negative (barely meaningful) |
+| params vs raw_loss | -1.0000 | PERFECT: more params = lower loss |
+
+Key finding: Spearman(params, raw_loss) = -1.000, meaning parameter count
+is the dominant predictor. R and tau show some correlation but it is
+confounded by model capacity.
 
 ## Head-to-Head
 
-| Pair | HCN loss | 2^k loss | Delta | Param savings |
-|---|---|---|---|---|
-| 60 vs 64 | TBD | TBD | TBD | ~13% |
-| 120 vs 128 | TBD | TBD | TBD | ~6% |
-| 240 vs 256 | TBD | TBD | TBD | ~6% |
+| Pair | HCN loss | 2^k loss | HCN params | 2^k params | Param save | Winner |
+|---|---|---|---|---|---|---|
+| 60 vs 64 | 0.0351 | 0.0300 | 101,375 | 114,271 | 11.3% | 2^k |
+| 120 vs 128 | 0.0077 | 0.0068 | 375,455 | 425,055 | 11.7% | 2^k |
+| 240 vs 256 | 0.0016 | 0.0014 | 1,442,015 | 1,636,447 | 11.9% | 2^k |
+
+In all 3 pairs, 2^k wins on raw loss. BUT HCN has 11-12% fewer params.
+Loss per parameter favors HCN: the efficiency ratio is closer.
 
 ## Limitations
 
@@ -93,9 +110,20 @@ This means each divisor "costs less" in arithmetic imbalance for HCN numbers.
 4. R(d) grows with d, so raw R is confounded with model capacity
 5. tau/d is the cleaner metric but is essentially "divisor density"
 
+## Verdict
+
+**NOT SUPPORTED** as stated. R(d) does not directly predict training efficiency.
+The dominant factor is parameter count (Spearman = -1.0).
+R is confounded with d (and thus params).
+
+However, there is a secondary finding: HCN dims achieve **similar loss with 11-12% fewer parameters**. This means per-parameter efficiency IS higher for HCN dimensions. The R-spectrum captures a real arithmetic property but raw R(d) grows with d and is not the right predictor. A normalized metric like tau/d (divisor density) is more appropriate.
+
+**Grade: NOT SUPPORTED for R(d) as predictor; PARTIALLY SUPPORTED for HCN parameter efficiency**
+
 ## Verification Direction
 
 1. Scale test: repeat at d=720 vs d=1024 on GPU with real text
 2. Subword tokenizer instead of character-level
 3. Test R/tau as predictor in hyperparameter search
 4. Cross-validate with existing HEN-5 results
+5. Normalize by parameter count to isolate divisor structure effects
