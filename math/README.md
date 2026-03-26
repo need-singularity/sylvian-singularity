@@ -4150,7 +4150,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-54](docs/hypotheses/H-CX-54-iterated-composition-consciousness-cycle.md) | sigma(phi)*phi(sigma)=sigma ↔ consciousness cycle | 🔵 new | DFS-iter1: composition fixed point unique to n=6, perception-integration loop |
 | [H-CX-55](docs/hypotheses/H-CX-55-hexagonal-self-reference-emergence.md) | H(phi(n))=n ↔ hexagonal packing emergence at n=6 | 🔵 new | DFS-iter1: hexagonal self-reference, kiss(2)=6, representation packing |
 
-### Physics (H-PH, 18 — 🟩3 🟧★6 🟧2 🟨2 ⚪5)
+### Physics (H-PH, 19 — 🟩3 🟧★6 🟧3 🟨2 ⚪5)
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
@@ -4171,6 +4171,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-PH-16](docs/hypotheses/H-PH-16-self-reference-cycle.md) | ⭐⭐⭐🟩 self-reference cycle | 🟩 proven | 6→12→28→6 unique perfect number cycle |
 | [H-PH-17](docs/hypotheses/H-PH-17-zip-divisor-equivalence.md) | ⭐⭐ ZIP↔divisor field theory | 🟧 | δ=2/9 double derivation, bridge identity σ/τ=τ-1 |
 | [H-PH-18](docs/hypotheses/H-PH-18-nuclear-magic-numbers.md) | ⭐⭐⭐ nuclear magic numbers 7/7 | 🟧★ p=0.014 | 2=φ,8=σ-τ,20=σφ-τ,28=P₂,50=στ+φ,82=P₂(σ/τ)-φ,126=P₃/τ+φ |
+| [H-PH-19](docs/hypotheses/H-PH-19-cosmological-constants-n6.md) | cosmological constants vs n=6 lens | 🟧 | D=10(exact),mp/me≈1836(0.008%),1/α≈137(0.026%),sin²θ_W≈3/13(0.2%) |
 
 ### Chemistry/Neurochemistry/Pharmacology (H-CHEM, 5)
 

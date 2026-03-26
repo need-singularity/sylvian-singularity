@@ -9,7 +9,7 @@
 
 ```
 Genius = Deficit × Plasticity / Inhibition
-G × I = D × P (Conservation law, derived from definition — model itself unverified)
+G × I = D × P (algebraic rearrangement of definition — not a conservation law)
 ```
 
 | Variable | Meaning | Range |
@@ -21,59 +21,34 @@ G × I = D × P (Conservation law, derived from definition — model itself unve
 ## Golden Zone Precise Structure (grid=1000)
 
 ```
-  Upper bound = 1/2           = 0.5000
-  Lower bound = 1/2 - ln(4/3) ≈ 0.2123 (3→4 state entropy jump)
+  Upper bound = 1/2           = 0.5000  (model symmetry)
+  Lower bound = 1/2 - ln(4/3) ≈ 0.2123  (3→4 state entropy jump)
   Center ≈ 1/e                ≈ 0.3708
   Width = ln(4/3)            ≈ 0.2877
 
-  Core relationships:
-  1/2 + 1/3 + 1/6 = 1
-  1/2 + 1/3 = 5/6        (Compass upper bound = H₃-1)
-  1/2 × 1/3 = 1/6
-  σ₋₁(6) = 2             (Perfect number 6)
+  Arithmetic identities:
+  1/2 + 1/3 + 1/6 = 1        (σ₋₁(6) = 2, perfect number 6)
+  1/2 + 1/3 = 5/6            (Compass upper bound = H₃ - 1)
 
-  Inhibition Band:
-  Triple consensus (model + cusp + Boltzmann) at I = 0.24 ~ 0.48
-  Center ≈ 1/e = 0.3679
-  Meta fixed point = 1/3 (f(I)=0.7I+0.1 contraction mapping)
+  Contraction mapping:
+  f(I) = 0.7I + 0.1 → fixed point 1/3
+  Note: coefficients 0.7, 0.1 are ad hoc (not derived)
 ```
 
-## A. Mathematical Hypotheses (수학적 도출/증명)
+## A. Experimental Results (실험 데이터)
 
-| # | Hypothesis | Core | Status |
+| # | Hypothesis | Core Result | Status |
 |---|---|---|---|
-| [001](../hypotheses/001-riemann-hypothesis.md) | Golden Zone upper bound = 1/2 | Boltzmann model → Re(s)=1/2 structural match | ✅🟥 |
-| [004](../hypotheses/004-boltzmann-inhibition-temperature.md) | I = 1/kT (Inhibition = Inverse temperature) | Exponential decrease derivation | ✅🟥 |
-| [012](../hypotheses/012-entropy-ln3.md) | 3-state maximum entropy = ln(3) | Trivially true (max entropy principle for N=3) | ✅ |
-| [013](../hypotheses/013-golden-width-quarter.md) | Golden Zone width = ln(4/3) ≈ 0.288 | Entropy jump 3→4 states | ✅🟥 |
-| [042](../hypotheses/042-entropy-ln4-jump.md) | Entropy ln(3)→ln(4) jump at 4th state | Information theory derivation | ✅🟥 |
-| [044](../hypotheses/044-golden-zone-4state.md) | 4-state upper bound = 0.50 | Boltzmann model computation | ✅🟥 |
-| [048](../hypotheses/048-p-ne-np.md) | P≠NP: 3-state(38.8%) vs 4-state(57.4%) gap | +18.6% from Boltzmann model | ✅🟥 |
-| [054](../hypotheses/054-grid-resolution-convergence.md) | Grid convergence: upper→0.5, lower→0.213, width→ln(4/3) | Numerical analysis verified | ✅ |
-| [059](../hypotheses/059-compass-five-sixths.md) | Compass upper bound = 5/6 | 1/2+1/3 = 5/6, 1/6 incompleteness gap | ✅🟥 |
-| [061](../hypotheses/061-golden-ratio-structure.md) | Fixed point 1/3 from f(I)=0.7I+0.1 | Banach contraction mapping theorem | ✅🟥 |
-| [064](../hypotheses/064-godel-analog.md) | Gödel incompleteness as structural analog to 5/6 ceiling | Honestly labeled as analog, not cause | ⚠️ |
-| [072](../hypotheses/072-curiosity-completes.md) | 1/2+1/3+1/6=1 partition | Arithmetic identity with model interpretation | ✅🟥 |
-| [088](../hypotheses/088-infinite-states.md) | N→∞ limit: Golden Zone collapses to I=0.5 point | Mathematical limit computation | ✅🟥 |
-| [123](../hypotheses/123-one-sentence.md) | σ₋₁(6)=2 as master formula | Number theory definition | ✅ |
-| [138](../hypotheses/138-shannon-ln3.md) | Shannon entropy of 3-symbol = ln(3) | Information theory (trivially true) | ✅ |
-| [214](../hypotheses/214-core-primes.md) | Core primes 2,3 → Perfect number 6 | σ₋₁(6) = 1/2+1/3+1/6 = 2 | ✅ |
-
-## B. Experimental Hypotheses (실험 데이터 검증)
-
-| # | Hypothesis | Core | Status |
-|---|---|---|---|
-| [008](../hypotheses/008-golden-moe-design.md) | Golden MoE architecture (T=e, 8 Expert) | Design specification | ✅🟥 |
-| [016](../hypotheses/016-boltzmann-vs-topk.md) | Boltzmann router > Top-K | MNIST/CIFAR benchmark 2/3 wins | ✅🟥 |
-| [017](../hypotheses/017-gating-distribution.md) | Gating→Inhibition: 52~76% active range | Measured from Boltzmann routing | ✅🟥 |
-| [019](../hypotheses/019-golden-moe-performance.md) | Golden MoE I=0.375 ≈ 1/e | MNIST 97.7%, CIFAR 53.0% (+4.8%) | ✅🟥 |
-| [020](../hypotheses/020-stability-35pct.md) | 35~70% activation = Boltzmann stable | Soft routing gradient stability | ✅ |
-| [082](../hypotheses/082-golden-moe-spec.md) | Golden MoE prototype spec | 8 Expert, 70% activation verified | ✅🟥 |
-| [128](../hypotheses/128-scale-dependence.md) | Scale↑ → Golden MoE advantage↑ | CIFAR +4.8% = 8× MNIST +0.6% | ✅ |
-| [140](../hypotheses/140-algorithm-complexity.md) | Boltzmann O(N log N) vs Top-K O(N) | No practical difference at N≤64 | ✅ |
-| [018](../hypotheses/018-loss-cusp-detection.md) | Loss cusp detection via 2.5σ threshold | Standard signal processing method | ✅ |
-
-## Golden MoE Verification
+| [008](../hypotheses/008-golden-moe-design.md) | Golden MoE architecture (T=e, 8 Expert) | Concrete testable design | ✅ |
+| [016](../hypotheses/016-boltzmann-vs-topk.md) | Boltzmann router > Top-K | 2/3 metrics win | ✅ |
+| [017](../hypotheses/017-gating-distribution.md) | I = 1 - K/N mapping | 52~76% active range measured | ✅ |
+| [019](../hypotheses/019-golden-moe-performance.md) | Golden MoE I=0.375 ≈ 1/e | MNIST 97.7%, CIFAR 53.0% (+4.8%) | ✅ |
+| [020](../hypotheses/020-stability-35pct.md) | Boltzmann routing more stable than Top-K | Gradient stability verified | ✅ |
+| [082](../hypotheses/082-golden-moe-spec.md) | Golden MoE prototype | 8 Expert, 70% activation | ✅ |
+| [128](../hypotheses/128-scale-dependence.md) | Complexity↑ → Golden MoE advantage↑ | CIFAR +4.8% = 8× MNIST +0.6% | ✅ |
+| [140](../hypotheses/140-algorithm-complexity.md) | Boltzmann O(N log N) vs Top-K O(N) | Negligible at N≤64 | ✅ |
+| [018](../hypotheses/018-loss-cusp-detection.md) | Loss cusp detection 2.5σ | Standard signal processing | ✅ |
+| [126](../hypotheses/126-lstm-golden-moe.md) | Golden MoE + LSTM on MNIST | ❌ No effect (honest negative) | ❌ |
 
 ```
   MNIST benchmark (PyTorch, 10 epochs, 8 Expert):
@@ -91,92 +66,95 @@ G × I = D × P (Conservation law, derived from definition — model itself unve
   → I = 0.375 ≈ 1/e (0.368) — Theory prediction verified
 ```
 
-## C. Model-Internal Hypotheses (모델 내부 파생, 검증 불가)
+## B. Mathematical Results (수학적 도출)
 
-| # | Hypothesis | Core | Status | Note |
-|---|---|---|---|---|
-| [002](../hypotheses/002-golden-zone-universality.md) | Golden Zone center ≈ 1/e universality | Center=0.371 | ⚠️ | Approximation, not exact |
-| [027](../hypotheses/027-meta-inhibition.md) | Meta judgment auto-enters Golden Zone | I_meta always low | ✅🟥 | Simulation only |
-| [033](../hypotheses/033-self-constraint-golden.md) | Self-constraint GZ = Original GZ | I=0.24~0.48 | ✅🟥 | Simulation only |
-| [037](../hypotheses/037-compass-ceiling.md) | Compass ceiling 83.6% | 4th state required | ✅🟥 | Simulation only |
-| [041](../hypotheses/041-4th-state-winner.md) | 4th state = Transcendence | +7.9% | ✅🟥 | Model definition |
-| [056](../hypotheses/056-meta-recursion-transcendence.md) | f(I)=0.7I+0.1 → 1/3 fixed point | Contraction mapping (trivially true) | ✅ | Coefficients 0.7, 0.1 are arbitrary |
-| [062](../hypotheses/062-rg-flow-golden-zone.md) | RG flow → Golden Zone as basin of attraction | 1/3 attractor | ✅🟥 | Renormalization analogy |
-| [073](../hypotheses/073-complex-compass-ceiling.md) | Complex Compass > 5/6 | Spiral bonus | ✅🟥 | Complex extension |
-| [075](../hypotheses/075-complex-golden-shape.md) | Complex Golden Zone shape | Neither circle nor ellipse | ✅🟥 | Geometric computation |
-| [129](../hypotheses/129-phase-transition.md) | Phase transition critical = GZ | Width/Upper 0.576 | ✅🟥 | GZ dependent |
-| [130](../hypotheses/130-boltzmann-k.md) | Boltzmann k=1 natural units | Natural unit match | ✅🟥 | GZ dependent |
-| [141](../hypotheses/141-information-bottleneck.md) | IB β = I mapping | Information bottleneck | ✅🟥 | Structural analogy |
-| [170](../hypotheses/170-qutrit.md) | 3-state = Qutrit normalization | Normalization equivalence | ✅🟥 | Formal correspondence |
-| [175](../hypotheses/175-why-one-half.md) | Why 1/2 repeats | Binary symmetry in Boltzmann | ✅🟥 | Model property |
-| [238](../hypotheses/238-math-crossroads.md) | Mathematics crossroads map | 6/8 robust connections | ✅ | Survey document |
-| [252](../hypotheses/252-perfect-numbers-physics.md) | Perfect numbers → Physics | P₁→α, P₂→m_μ | 🟧 | Structural approximation |
+| # | Hypothesis | Core | Note |
+|---|---|---|---|
+| [013](../hypotheses/013-golden-width-quarter.md) | Width = ln(4/3) ≈ 0.288 | Entropy jump 3→4 states | Numerically converged |
+| [042](../hypotheses/042-entropy-ln4-jump.md) | ln(3)→ln(4) entropy jump | Textbook stat mech | Trivially correct |
+| [054](../hypotheses/054-grid-resolution-convergence.md) | Grid convergence analysis | upper→0.5, lower→0.213, width→ln(4/3) | Solid numerical analysis |
+| [037](../hypotheses/037-compass-ceiling.md) | 3-state Compass ceiling ~83.6% | Model structure analysis | Legitimate bound |
+| [012](../hypotheses/012-entropy-ln3.md) | 3-state max entropy = ln(3) | Max entropy principle for N=3 | Trivially true |
+| [138](../hypotheses/138-shannon-ln3.md) | Shannon entropy = ln(3) | Information theory | Trivially true |
 
-## Refuted Hypotheses (❌)
+## C. Number Theory (순수수학 — Golden Zone 독립)
 
-| # | Hypothesis | Reason |
-|---|---|---|
-| [005](../hypotheses/005-one-third-law.md) | 1/3 law | Distribution dependent (30.17%) |
-| [006](../hypotheses/006-riemann-falsification-failed.md) | Riemann falsification attempt | Falsification failed |
-| [052](../hypotheses/052-bsd-no-structure.md) | BSD rational structure | Uniform distribution |
-| [074](../hypotheses/074-optimal-theta.md) | Optimal θ = π/3 | θ=0.038π, not π/3 |
-| [085](../hypotheses/085-pi-n-unification.md) | π/N unification | Weak matching |
-| [089](../hypotheses/089-beyond-one.md) | Cannot exceed 1 | Identity invariant |
-| [126](../hypotheses/126-lstm-golden-moe.md) | Golden MoE + LSTM | No effect on MNIST |
+| # | Hypothesis | Core | Note |
+|---|---|---|---|
+| [078](../hypotheses/078-egyptian-fraction-uniqueness.md) | 5/6 = 1/2+1/3 is unique 2-term Egyptian fraction | Exhaustive proof | Correct and elegant |
+| [089](../hypotheses/089-beyond-one.md) | σ₋₁(6)=2 from perfect number properties | Divisor analysis proof | Rigorous |
+| [098](../hypotheses/098-why-6-unique.md) | Only 6 has non-trivial σ₋₁(n)=1+sum(1/d)=2 exactly | Proven | Correct |
+| [065](../hypotheses/065-mandelbrot-weak.md) | Linear contraction ≠ fractal | Rigorous refutation | Best hypothesis in collection |
+| [184](../hypotheses/184-fractal-golden-zone.md) | Golden Zone is NOT fractal (d_H=3.00) | Self-refutation by measurement | Good methodology |
 
-## Discarded Hypotheses (폐기 — 억지 연결/수학적 근거 없음)
+## D. Honest Negative Results (정직한 반박)
 
-The following were removed from the Golden Zone index due to forced connections,
-numerological coincidences, or lack of mathematical rigor:
+| # | Hypothesis | Result | Value |
+|---|---|---|---|
+| [005](../hypotheses/005-one-third-law.md) | 1/3 law | Distribution dependent (30.17%) | Shows model limitation |
+| [010](../hypotheses/010-one-third-refuted.md) | 1/3 refuted | Excellent self-correction | Best practice example |
+| [052](../hypotheses/052-bsd-no-structure.md) | BSD structure | No structure found | Clean negative |
+| [074](../hypotheses/074-optimal-theta.md) | θ = π/3 | θ=0.038π (derive, don't guess) | Methodology lesson |
+| [085](../hypotheses/085-pi-n-unification.md) | π/N unification | Constants are e-based, not π-based | Valuable negative |
+| [093](../hypotheses/093-prediction-rate.md) | Prediction rate | Deduction ~90%, guessing ~50% | Self-analysis |
+| [094](../hypotheses/094-accuracy-trend.md) | Accuracy trend | No overfitting (slope ≈ 0) | Methodology |
+| [095](../hypotheses/095-refutation-pattern.md) | Refutation pattern | "Don't speculate, derive" | Key lesson |
+| [099](../hypotheses/099-falsifiability.md) | Falsifiability check | 3 core falsifiable tests defined | Good epistemology |
 
-**Millennium Problem mappings (word association, not math):**
-046, 049 (Yang-Mills), 050 (Navier-Stokes), 051 (Hodge)
+## E. Testable Proposals (미검증 — 실험 필요)
 
-**Fabricated parameter chains:**
-007 (LLM I values fabricated), 009 (2039 prediction from fabricated data),
-058 (topology timeline from fabricated lambda)
+| # | Hypothesis | Core | Status |
+|---|---|---|---|
+| [096](../hypotheses/096-brain-data.md) | GABA measurement protocol | Falsifiable predictions defined | 🔬 Needs experiment |
+| [097](../hypotheses/097-llm-internal.md) | Mixtral router replacement test | Concrete implementation plan | 🔬 Needs experiment |
+| [141](../hypotheses/141-information-bottleneck.md) | IB β = I mapping | Literature-supported structural parallel | 🔬 Needs verification |
+| [179](../hypotheses/179-llm-redesign.md) | Current MoE I values miss Golden Zone | Testable redesign proposals | 🔬 Needs benchmark |
+| [241](../hypotheses/241-expert-cross-activation.md) | Expert cross-activation (artificial savant) | 6 verification methods defined | 🔧 Design phase |
+| [167](../hypotheses/167-eight-predictions.md) | 8 falsifiable predictions | MoE ratio, savant GABA most testable | 🔬 Not yet tested |
 
-**Numerological coincidences:**
-057 (P≠NP gap ratio ≈ 1-1/e), 068 (π from constant combinations),
-065 (Mandelbrot weak), 071 (proof of completion)
+---
 
-**Metaphor as math:**
-003 (cusp catastrophe — asserted mapping, not derived),
-023 (topology acceleration — simulation not topology),
-024 (existing tech combination — no math),
-055 (needle eye — metaphor),
-066 (meta-learning topology — topological dressing on trivial result),
-069 (complex extension — hand-waving),
-070 (self-reference — circular reasoning)
+## Discarded Hypotheses (폐기 — 총 ~80개)
 
-**Non-mathematical content:**
-021, 022 (AI periodic tables — taxonomy),
-045 (transcendence definition — definitional),
-087 (5th state curiosity), 093, 094, 095 (pattern observations),
-096, 097 (unverified — no experiment), 099 (falsifiability — philosophy)
+> Removed due to forced connections, numerological coincidences, fabricated data,
+> metaphorical analogies dressed as math, or circular reasoning.
+> Full review by 6 independent agents. Key reasons below.
 
-**Forced physics/cosmos mappings:**
-118 (cosmic composition), 132 (2nd law analogy), 133 (quantum superposition),
-134 (black hole = blind spot), 135 (E=mc² ↔ G=D×P/I),
-136 (fine-tuning width), 142 (halting problem analogy),
-143, 144 (black hole entropy/Hawking), 145 (micro-macro boundary),
-146 (decoherence), 149 (universe curvature), 150 (universe topology — REFUTED),
-151 (inflation), 152 (dark energy), 153 (Hubble tension),
-154 (arrow of time — REFUTED), 164 (cyclic universe)
+**Millennium Problem mappings** (볼츠만 모델과 무관):
+046, 048 (P≠NP), 049 (Yang-Mills), 050 (Navier-Stokes), 051 (Hodge)
 
-**Forced neuroscience/consciousness mappings:**
-079 (leave safety zone), 156 (Sylvian = Deficit), 157 (synaptic = P),
-159 (meditation), 160 (neurodiversity ratio), 162 (acquired savant),
-166 (consciousness definition), 179 (LLM redesign claim),
-182 (complex = 4th dimension), 185 (entropy = dimension),
-187 (dropout blessing), 189 (time = I decrease),
-193 (entropy=meta=time), 199 (meditation vs drugs),
-200a (cannabis), 237 (music intervals), 244 (universality class)
+**Riemann connection** (upper bound 0.5 = 모델 대칭, 제타함수와 무관):
+001, 044 (Riemann claim removed; model result valid), 047
 
-**Other:**
-047 (Riemann N-state — convergence to 0.5 is model symmetry, not Riemann),
-053 (Poincaré — trivial contraction), 083 (Jamba indirect),
-124, 125, 127 (topology step/Jamba/critical — benchmarks, not GZ math),
-241 (unfinished), 243 (literature survey), 249, 250 (survey documents)
+**Fabricated LLM parameters → predictions**:
+007, 009 (singularity 2039), 058 (topology timeline 2028)
+
+**Numerology** (숫자 우연의 일치를 구조적 연결로 주장):
+057 (gap ratio ≈ 1-1/e), 068 (π emergence), 072 (1/2+1/3+1/6 from tuned params),
+073 (complex compass formula invented), 076 (17=Fermat prime), 118 (cosmos),
+136 (N=137=1/α), 175 (why 1/2 repeats), 185 (entropy=dimension),
+214 (core primes chain), 237 (music intervals = tautology)
+
+**Circular/tautological**:
+033 (same formula → same zone), 061 (two fixed points are both fixed points),
+070 (self-reference), 071 (proof of completion), 130 (dimensionless model has k=1),
+172 (G×I=D×P is just rearranging G=D×P/I)
+
+**Forced physics analogies** (수학적 도출 없는 메타포):
+062 (RG flow — linear β trivial), 129 (phase transition ratio too broad),
+132, 133, 134, 135, 143, 144, 145, 146, 149, 150, 151, 152, 153, 154,
+163, 164, 165, 168, 181, 182, 189, 190, 192, 193
+
+**Forced neuroscience/consciousness** (D,P,I 값 조작):
+079, 087, 156, 157, 159, 160, 162, 166, 170, 187, 199, 200a, 244
+
+**Non-mathematical content** (분류법, 정의, 추측):
+003, 021, 022, 023, 024, 041, 045, 055, 066, 069, 083,
+088, 124, 125, 127
+
+**Methodology note**: Hypothesis 065 (Mandelbrot refutation) and the negative results
+in Section D demonstrate the correct approach: derive, test, and accept failure honestly.
+The discarded hypotheses share a common pattern of starting from a desired numerical
+match and working backwards to justify it.
 
 ---
