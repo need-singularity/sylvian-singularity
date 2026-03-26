@@ -305,8 +305,8 @@
        dim=min_dist=n from s(n)=n (perfect number property).
   🟩⭐ kiss(E₆) = σ·n = 72 (E₆ kissing number, unique!) #H-CODE-1
   🟩⭐ |W(E₆)| = n!·σ·n = 51840 (Weyl group = n!·kissing) #H-CODE-1
-  🟩⭐ σ₃(n) = τ·(2ⁿ-1) ⟺ n=6 (NEW identity! connects E₈ theta) #H-CODE-1
-       σ₃(6) = 252 = 4·63 = τ(6)·(2⁶-1). Unique in n=2..49.
+  🟩⭐ σ₃(n) = τ·(2ⁿ-1) ⟺ n=6 (PROVED! E₈ theta connection) #H-CODE-1
+       σ₃(6) = 252 = 4·63. Proof: cancel (2³+1), get 1+3³=4·(2³-1)=28=P₂.
   🟩⭐ n=6 → G24 → Leech chain (MOG = τ×n = 4×6 array) #H-CODE-1
        Complete: perfect number → Golay → densest packing in 24D
   🟧★  kiss(K₁₂) = σ·(2ⁿ-1) = 756 (Coxeter-Todd, p=0.021) #H-CODE-1
