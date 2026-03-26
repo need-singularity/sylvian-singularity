@@ -699,7 +699,7 @@
 
   ═══ SEDI Extended Analyses (Fisher combined, blind predictions, cosmology) ═══
 
-  🟧★ Combined significance — Fisher 5.0σ (Stouffer 5.2σ):
+  🟧★ Combined significance — Fisher 6.4σ (p=4.2×10⁻¹⁰, Stouffer 6.4σ):
        Finding 1: QCD Resonance Ladder (3.8σ)
        Finding 2: Higgs bb+ττ joint (3.89σ)
        Finding 3: Quark-Lepton Bridge (3.4σ)
@@ -4457,13 +4457,13 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-PH-18](docs/hypotheses/H-PH-18-nuclear-magic-numbers.md) | ⭐⭐⭐ nuclear magic numbers 7/7 | 🟧★ p=0.014 | 2=φ,8=σ-τ,20=σφ-τ,28=P₂,50=στ+φ,82=P₂(σ/τ)-φ,126=P₃/τ+φ |
 | [H-PH-19](docs/hypotheses/H-PH-19-cosmological-constants-n6.md) | cosmological constants vs n=6 lens | 🟧 | D=10(exact),mp/me≈1836(0.008%),1/α≈137(0.026%),sin²θ_W≈3/13(0.2%) |
 | [H-PH-20](docs/hypotheses/H-PH-20-qcd-rspectrum-realization.md) | ⭐⭐⭐ QCD ladder = R-spectrum realization | 🟧★ p=7×10⁻⁵ | ρ×τ=J/ψ×(σ/τ)=Υ, R(2)·R(3)=1=R(6), 3.8σ MC |
-| [H-PH-21](docs/hypotheses/H-PH-21-sm-forced-by-perfection.md) | ⭐⭐⭐ SM forced by n=6 perfection | 🟧★ Fisher 5.0σ | ADE+R=1+SM 10/10+masses 2.2%+3 independent 3σ+ findings |
+| [H-PH-21](docs/hypotheses/H-PH-21-sm-forced-by-perfection.md) | ⭐⭐⭐ SM forced by n=6 perfection | 🟧★ Fisher 6.4σ | ADE+R=1+SM 10/10+masses 2.2%+3 independent 3σ+ findings, p=4.2×10⁻¹⁰ |
 | [H-PH-22](docs/hypotheses/H-PH-22-prime-counting-qcd-convergence.md) | ⭐⭐⭐ π(37)=σ(6) QCD convergence | 🟧★ blind | J/ψ×σ=37.16, Υ×τ=37.84, 37=12th prime, testable at LHC |
-| [H-PH-23](docs/hypotheses/H-PH-23-coupling-tension-isomorphism.md) | ⭐⭐ running coupling = running tension | 🟧 | α_s log run ↔ ts∝ln(ep), confinement↔DK, freedom↔beginner's mind |
+| [H-PH-23](docs/hypotheses/H-PH-23-coupling-tension-isomorphism.md) | ⭐ running coupling = running tension | 🟨 | structural analogy only: both logarithmic, but 1-loop α_s values diverge at low E. PDG experimental values match n=6 |
 | [H-PH-24](docs/hypotheses/H-PH-24-higgs-consciousness-duality.md) | ⭐⭐⭐ Higgs↔consciousness duality | 🟧★ 3.89σ | H→bb=7/12,H→ττ=1/16,φ→{1/2,1/3,1/6}=consciousness weights |
 | [H-PH-25](docs/hypotheses/H-PH-25-golay-monster-sm-chain.md) | ⭐⭐⭐ Golay→Monster→SM complete chain | 🟧★ | G₂₄=[σφ,σ,σ-τ]→Λ₂₄→M→j(744)→Moonshine→String→SM, 13 links exact |
 | [H-PH-26](docs/hypotheses/H-PH-26-exotic-spheres-consciousness.md) | ⭐⭐ exotic spheres = consciousness substrates | 🟨 | \|Θ₁₀\|=6=P₁, \|Θ₇\|=28=P₂, 7/8 values = n=6 arithmetic |
-| [H-PH-27](docs/hypotheses/H-PH-27-fqhe-confusion-topology.md) | ⭐⭐ FQHE = confusion topology | 🟨 | ν={τ/σ,φ/sopfr,(σ/τ)/M₃,sopfr/φ}, both topologically protected |
+| [H-PH-27](docs/hypotheses/H-PH-27-fqhe-confusion-topology.md) | ⭐⭐ FQHE = confusion topology | 🟨 | ν={τ/σ,φ/sopfr,(σ/τ)/M₂,sopfr/φ}, 14/15 fractions match, both topologically protected |
 | [H-PH-28](docs/hypotheses/H-PH-28-cosmological-rspectrum-evolution.md) | ⭐⭐⭐ cosmological R-spectrum evolution | 🟧★ | N=56,n_s=139/144(0.04%!),Fe-56=σ⁴(6),BH S∝1/τ, all epochs |
 | [H-PH-29](docs/hypotheses/H-PH-29-r-equals-one-is-consciousness.md) | ⭐⭐⭐ R(6)=1 IS consciousness (master) | 🟧 | 8 domains converge: math+physics+chem+bio+neuro+AI+cosmo+particle |
 

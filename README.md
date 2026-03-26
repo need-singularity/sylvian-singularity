@@ -123,7 +123,7 @@ Rigorous validation with KDE + Bootstrap Monte Carlo + Bonferroni correction.
 
 | Discovery | Significance | Key Result |
 |-----------|-------------|------------|
-| **Fisher Combined (1+2+3)** | **5.0σ** (Stouffer 5.2σ) | 3 independent findings combined |
+| **Fisher Combined (1+2+3)** | **6.4σ** (p=4.2×10⁻¹⁰) | 3 independent findings combined |
 | Higgs bb+ττ joint | 3.89σ (p=5×10⁻⁵) | H→bb=7/12, H→ττ=1/16 |
 | CMB spectral index n_s | 0.04% error | (σ²-sopfr)/σ²=139/144=0.96528 vs Planck 0.9649 |
 | CP asymmetry sin(2β) | 0.14% error | M₃/(σ-φ)=7/10=0.700 vs 0.699±0.017 |
