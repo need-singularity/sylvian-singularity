@@ -2,7 +2,7 @@
 
 ## Gemini 3.1 Pro — H-PH-9 Full Verification (2026-03-26)
 
-Google Gemini 3.1 Pro (Thinking) independently verified the entire H-PH-9 (Perfect Number Unification) hypothesis through 6 rounds of Python code execution. Full transcript: `docs/gemini-review-session.md`
+Google Gemini 3.1 Pro (Thinking) independently verified the entire H-PH-9 (Perfect Number Unification) hypothesis through 6 rounds of Python code execution. Full transcript: [docs/gemini-review-session.md](../../docs/gemini-review-session.md)
 
 **Verification Results:**
 
