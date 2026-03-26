@@ -168,6 +168,77 @@ Shared values (e.g., 2.0 appears in N, G, T) are excluded from independence coun
 - Some "independent" paths may share implicit structure (e.g., N and A both use ln)
 - Not all convergence implies causal connection — some may be analytical identities
 
+## Golden Zone Implications
+
+### GZ_width as Most Intrinsic Constant (H-CX-462)
+
+The bridge/independent ratio analysis reveals GZ_width = ln(4/3) has ratio = 1.00,
+meaning it has equal single-domain and cross-domain reachability. This makes it the
+**most intrinsic** constant in the convergence map -- it is not merely a "bridge"
+between domains but genuinely belongs to each domain that reaches it.
+
+GZ_width is confirmed from 4 independent domains: A (Analysis), C (Combinatorics),
+I (Quantum Info), N (Number Theory). Each domain reaches ln(4/3) through its own
+native operations without borrowing from other domains.
+
+### Convergence Point Ratios Reproduce {1/2, 1/3, 1/6} (H-CX-470, H-CX-473)
+
+The ratios between convergence point values reproduce the divisor reciprocals of 6:
+
+```
+  gamma / sqrt(3)    = 0.3334  approx  1/3   (0.023%)
+  GZ_width / gamma   = 0.4982  approx  1/2   (0.36%)
+  GZ_width / sqrt(3) = 0.1661  approx  1/6   (0.34%)
+
+  Sum: gamma/sqrt(3) + GZ/gamma + GZ/sqrt(3) = 0.9977 approx 1   (0.23% error)
+  Texas Sharpshooter: Z=4.21, p=0.007 (structural)
+```
+
+This is the convergence map's internal echo of {1/2, 1/3, 1/6} -- the same
+structure that defines perfect number 6 emerges from ratios between independently
+discovered convergence points.
+
+### Depth-1 is the TRUE Structure (H-CX-467, H-CX-474)
+
+Depth-3 convergence is trivially saturated: even random constants achieve 100%
+reachability at depth 3 due to combinatorial explosion (H-CX-467). The meaningful
+structure lives at depth 1, where the ranking changes significantly:
+
+```
+  Depth-1 ranking:
+    ln(2)    = 6 domains (champion!)
+    sqrt(2)  = 4 domains
+    ln(3)    = 4 domains
+    e^2      = 4 domains
+    GZ_width = 2 domains but ratio=1.00 (most intrinsic)
+
+  Texas Sharpshooter: Z=9.05 (depth-1 is MORE structured than depth-2)
+```
+
+### Egyptian Fraction Uniqueness (H-CX-482, H-CX-489)
+
+**Why 1/2 + 1/3 + 1/6 = 1 is special:**
+
+{2, 3, 6} is the ONLY k=3 Egyptian fraction solution to 1/a + 1/b + 1/c = 1
+whose lcm is a perfect number. Among all three k=3 solutions:
+
+```
+  {2, 3, 6}:  lcm = 6   = perfect number  <-- UNIQUE
+  {2, 4, 4}:  lcm = 4   (not perfect)
+  {3, 3, 3}:  lcm = 3   (not perfect)
+```
+
+Furthermore, k_min(P_n) = 2p - 1 is PROVED (H-CX-489): for any perfect number
+P_n = 2^(p-1)(2^p - 1), the minimum number of unit fractions summing to 1 using
+only divisors of P_n requires ALL non-trivial proper divisors. No proper subset
+of divisors suffices (since sigma_{-1}(P_n) = 2 exactly).
+
+For P_1 = 6: k_min = 2(2) - 1 = 3, requiring divisors {2, 3, 6} -- all of them.
+For P_2 = 28: k_min = 2(3) - 1 = 5, and indeed 1/2+1/4+1/7+1/14+1/28 = 1 (H-CX-486).
+
+This gives mathematical justification for why {1/2, 1/3, 1/6} is special: it is
+the unique intersection of "Egyptian fraction completeness" and "perfect number structure."
+
 ## Next Steps
 
 1. Run at depth 3 with tighter threshold (0.01%) for higher-precision convergence

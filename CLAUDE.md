@@ -89,7 +89,7 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
   → Structural discovery confirmed
 ```
 
-## Tool List (44 tools)
+## Tool List (50 tools)
 
 ```
   Core:          brain_singularity.py, compass.py, timeline.py
@@ -98,11 +98,12 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
                  nstate_calculator.py, brain_analyzer.py, llm_expert_analyzer.py
   Physics/Chem:  physics_constant_engine.py, chemistry_engine.py, nuclear_engine.py
   Structure:     congruence_chain_engine.py
+  Convergence: convergence_engine.py
   DFS Search:    dfs_engine.py
   Verification:  verify_*.py (11 files)
   Session:       session_briefing.py
   Consciousness: model_pure_field.py, model_utils.py
-  calc calculators (15 tools):
+  calc calculators (20 tools):
     calc/tension_calculator.py        — Tension→Accuracy/Precognition prediction
     calc/mitosis_calculator.py        — Mitosis parameter optimization
     calc/anomaly_scorer.py            — Tension-based anomaly detection
@@ -123,6 +124,11 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
     calc/r_spectrum.py              — R-spectrum calculator (R(n)=σφ/(nτ), identity tests, gap structure, multiplicativity)
     calc/gravitational_optics.py    — Gravitational lens (aberrations, gap, Einstein radius) + telescope (F(s)=ζζ, scan)
     calc/topological_optics.py      — Topological lens (focal length, PH barcode) + telescope (β₀ sweep, sensitivity)
+    calc/convergence_analyzer.py     — Depth-1 domain reachability analysis
+    calc/domain_distance.py          — Inter-domain overlap/distance matrix
+    calc/generator_finder.py         — Minimal generating set discovery
+    calc/bridge_ratio_analyzer.py    — Bridge/independent ratio classification
+    calc/depth_reachability.py       — Per-domain depth-level reach analysis
 ```
 
 ## How to Run
