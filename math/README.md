@@ -459,6 +459,18 @@
        rank(Ω_σ) = rank(Ω₁₂) = 3 = σ/τ
   🟩   χ(Gr(φ,n)) = χ(Gr(2,6)) = C(6,2) = 15 = B_τ
 
+  ═══ New: Diamond + Torus Topology (Ralph 344o) ═══
+
+  🟩⭐ Diamond lattice: degree=τ=4, ring=n=6, atoms/cell=σ-τ=8
+       Carbon Z=6=n, C-12 mass=σ=12, valence=τ=4. ALL n=6!
+  🟩⭐ C60: pentagons=σ=12, atoms=sopfr·σ=60, edges=C(n,2)·n=90
+  🟩⭐ Trefoil=T(2,3): torus knot from PRIME FACTORS of 6
+       Crossing=σ/τ=3, genus=φ/2=1, det=σ/τ=3, bridge=φ=2
+  🟩⭐ Genus σ/τ=3 surface: b₁=2g=n=6, χ=2-2g=-τ=-4
+       The genus-3 surface has first Betti = n and Euler char = -tau!
+  🟩   K₆ toroidal (genus=1), graphene coord=σ/τ=3, symmetry=n-fold
+  🟩   T³ Betti (1,σ/τ,σ/τ,1) sum=σ-τ=8
+
   ═══ New: Self-referential identities (Ralph 344i) ═══
 
   🟩⭐⭐ τ(σ(n)) = n ⟺ n|6: solutions = {1,2,3,6} = divisors of 6!
@@ -636,7 +648,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  107 ← +Θ₁₅=σ(P₄) pattern confirmed (extended exotic spheres)
+  ⭐ Major Discoveries:  111 ← +Diamond lattice, C60, trefoil T(2,3), genus-3 surface (4 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
