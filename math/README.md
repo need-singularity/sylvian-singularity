@@ -57,7 +57,7 @@
                                  🟥 Golden MoE (model-dependent)
                                  🟥 Expert cross-activation
 
-  ═══ σφ=nτ system (P-001, 187 characterizations, 152 hypotheses) ═══
+  ═══ σφ=nτ system (P-001, 189 characterizations, 152 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -3654,7 +3654,10 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
   ⭐ τ/σ + τ/n = 1 ⟺ n=6 (τ = HM(σ,n)/2) #186
   ⭐ φ/n + τ/σ = 2/3 ⟺ n=6 (both terms = 1/3) #187
 
-  📊 Total: +23 chars (#165-187), 3 ⭐⭐⭐ + 8 ⭐⭐ + 12 ⭐ = 187 characterizations!
+  ⭐ σ²(6)=28=P₂, R(σ⁴(6))=R(120)=6=n (sigma chain!) #188
+  ⭐ Closure {σ,φ,τ}(6) = 13 elements incl. P₁,P₂ #189
+
+  📊 Total: +25 chars (#165-189), 3 ⭐⭐⭐ + 8 ⭐⭐ + 14 ⭐ = 189 characterizations!
 ```
 
 ---
