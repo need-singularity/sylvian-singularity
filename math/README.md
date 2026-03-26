@@ -3646,9 +3646,10 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
      → Bottom spectrum stabilizes: each R<x from finitely many n
      → gap₂ = gap₃ = 1/6 (two consecutive equal gaps!)
 
-  ⭐ π_R(x) ~ 2x·ln(x) — R-spectrum counting function #175
-     → π_R(100)/[2·100·ln(100)] = 0.995 (excellent fit!)
-     → DUAL to PNT: primes thin (π(x)/x→0), R thickens (π_R(x)/x→∞)
+  ⭐ π_R(x) ~ C·x·√(ln x), C≈4.3 — counting function (refined) #175
+     → π_R(x)/(x·√(ln x)): 4.19(x=10), 4.27(x=100), 4.47(x=500)
+     → Previous 2x·ln(x) was coincidental at x=100
+     → Finiteness PROVED (Theorem: Spec_R discrete)
 
   ⭐ R(φ)·R(τ) = 7/8 = 1-1/2³ — neighbor product #176
      → σ(φ(6))=3 (numerator of R(φ)), σ(τ(6))=7 (numerator of R(τ))
