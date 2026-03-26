@@ -57,7 +57,7 @@
                                  🟥 Golden MoE (model-dependent)
                                  🟥 Expert cross-activation
 
-  ═══ σφ=nτ system (P-001, 205 characterizations, 152 hypotheses) ═══
+  ═══ σφ=nτ system (P-001, 206 characterizations, 152 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -3773,6 +3773,10 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
      → lim sup R(n)/n = 1/2 (tight: R(p)/p → 1/2 along primes)
      → Equivalent: σφ < n²τ/2 for all n ≥ 2 (proved)
 
+  🟩⭐ THEOREM: min Spec_R = 3/4, uniquely at n=2 — PROVED! #206
+     → R(n) ≥ 3/4 for all n ≥ 1, equality iff n=2
+     → Complete bounds: 3/4 ≤ R(n) < n/2 for n ≥ 2
+
   --- Ralph 367: R-spectrum is DISCRETE below 3! ---
 
   ⭐⭐⭐ Spec_R is EVERYWHERE DISCRETE — all R values isolated! #204
@@ -3786,8 +3790,8 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
      → R(2)=3/4, R(1)=R(6)=1, R(4)=7/6, R(3)=4/3, R(12)=14/9
      → Source: {1,2,3,4,6,12} = div(12) = div(σ(6))
 
-  🎯 205 CHARACTERIZATIONS!
-  📊 Total: +41 (#165-205), 4 ⭐⭐⭐ + 9 ⭐⭐ + 28 ⭐
+  🎯 206 CHARACTERIZATIONS!
+  📊 Total: +42 (#165-206), 4 ⭐⭐⭐ + 9 ⭐⭐ + 29 ⭐
 ```
 
 ---
