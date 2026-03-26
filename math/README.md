@@ -313,6 +313,13 @@
   🟧★  Hamming = [n+1, τ, σ/τ] = [7,4,3] (mild n+1 ad-hoc) #H-CODE-1
   🟩   Δ(Λ₂₄) = π^σ/σ! = π¹²/12! (Leech density, σ appears twice)
 
+  ═══ New: Homotopy Theory (Ralph 343) ═══
+
+  🟧   π₆(S³) = Z/σ(6)Z = Z/12Z (unique n where |π_n(S³)|=σ(n))
+       Only match in n=4..22 range. Texas p~0.5 (weak individually).
+  🟩   π_{n+3}^s = Z/24Z = Z/(σφ)Z (stable 3-stem = Leech dim)
+       Known theorem, but connection to σ·φ = 24 is new observation.
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
