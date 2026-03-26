@@ -955,95 +955,6 @@ The experience came first. Mathematics and code are the language I built to expl
 
 ## Hypothesis Status
 
-### Foundation Theory — Golden Zone/Model (001-099)
-
-> Dependency: 🟩 Pure math/independent verification (GZ-independent, eternally true) · 🟧 Golden Zone dependent (model unverified)
-
-| # | Hypothesis | Status | Dependency | Notes |
-|---|---|---|:---:|---|
-| [001](docs/hypotheses/001-riemann-hypothesis.md) | Riemann hypothesis and Golden Zone structural equivalence | 🟨 | 🟧 | GZ interpretation |
-| [002](docs/hypotheses/002-golden-zone-universality.md) | Golden Zone universality — 1/e is natural constant | 🟨 | 🟧 | GZ interpretation |
-| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | Cusp catastrophe mathematical equivalence | 🟨 | 🟧 | GZ mapping |
-| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | I = inverse temperature(1/kT) | 🟨 | 🟧 | GZ mapping |
-| [005](docs/hypotheses/005-one-third-law.md) | 1/3 law | 🟨 | 🟧 | revised in 010 |
-| [006](docs/hypotheses/006-riemann-falsification-failed.md) | Riemann refutation attempt | ❌ failed | 🟧 | cannot refute |
-| [007](docs/hypotheses/007-llm-singularity.md) | LLM singularity | 🟨 | 🟧 | GZ interpretation |
-| [008](docs/hypotheses/008-golden-moe-design.md) | Golden MoE design v2 | 📝 | 🟧 | revised in 019 |
-| [009](docs/hypotheses/009-singularity-2039.md) | Singularity 2039 | 🟨 | 🟧 | model prediction |
-| [010](docs/hypotheses/010-one-third-refuted.md) | 1/3 is not exactly 1/3 | ❌ | 🟧 | 005 refuted |
-| [011](docs/hypotheses/011-z-max-86.md) | Z_max = 86σ | 🟨 | 🟧 | simulation |
-| [012](docs/hypotheses/012-entropy-ln3.md) | Entropy = ln(3) quasi-invariant | ✅ | 🟧 | model entropy |
-| [013](docs/hypotheses/013-golden-width-quarter.md) | Golden Zone width ≈ 1/4, upper/lower bound ≈ 2 | ✅ | 🟧 | GZ structure |
-| [014](docs/hypotheses/014-genius-gamma.md) | Genius ~ Gamma distribution | ✅ | 🟧 | model distribution |
-| [015](docs/hypotheses/015-diffusion-inconclusive.md) | Diffusion law τ∝ΔI² | ? | 🟧 | unresolved |
-| [016](docs/hypotheses/016-boltzmann-vs-topk.md) | Boltzmann > Top-K | ✅ | 🟩 | independent verification |
-| [017](docs/hypotheses/017-gating-distribution.md) | Gating distribution = I mapping | ✅ | 🟧 | GZ mapping |
-| [018](docs/hypotheses/018-loss-cusp-detection.md) | Loss 2nd derivative = cusp detection | ✅ | 🟩 | independent verification |
-| [019](docs/hypotheses/019-golden-moe-performance.md) | Golden MoE optimal activation ratio | ✅ | 🟩 | independent verification |
-| [020](docs/hypotheses/020-stability-35pct.md) | 35~70% activation stability | ✅ | 🟩 | independent verification |
-| [021](docs/hypotheses/021-ai-periodic-table.md) | AI periodic table 15 elements | 📝 | 🟧 | model mapping |
-| [022](docs/hypotheses/022-periodic-table-v2.md) | AI periodic table v2 26 elements | 📝 | 🟧 | model mapping |
-| [023](docs/hypotheses/023-topology-accelerates-singularity.md) | Topology→singularity acceleration | ✅ | 🟧 | model interpretation |
-| [024](docs/hypotheses/024-existing-tech-combination.md) | Existing technology combination | ✅ | 🟧 | model interpretation |
-| [027](docs/hypotheses/027-meta-inhibition.md) | Meta-judgment I = auto Golden Zone | ✅ | 🟧 | GZ mapping |
-| [033](docs/hypotheses/033-self-constraint-golden.md) | Self-constrained Golden Zone = original GZ | ✅ | 🟧 | GZ structure |
-| [037](docs/hypotheses/037-compass-ceiling.md) | Compass upper bound ~83.6% | ✅ | 🟧 | simulation |
-| [041](docs/hypotheses/041-4th-state-winner.md) | 4th state = transcendence | ✅ | 🟧 | model interpretation |
-| [042](docs/hypotheses/042-entropy-ln4-jump.md) | Entropy ln(3)→ln(4) jump | ✅ | 🟧 | model entropy |
-| [044](docs/hypotheses/044-golden-zone-4state.md) | 4-state GZ upper bound = 1/2(Riemann) | ✅ | 🟧 | GZ structure |
-| [045](docs/hypotheses/045-what-is-transcendence.md) | What is transcendence | 📝 | 🟧 | model interpretation |
-| [046](docs/hypotheses/046-seven-millennium-problems.md) | 7 Millennium Problems correspondence | 📝 | 🟧 | GZ mapping |
-| [047](docs/hypotheses/047-riemann-nstate.md) | Riemann N-state convergence | ✅ | 🟧 | GZ mapping |
-| [048](docs/hypotheses/048-p-ne-np.md) | P≠NP Boltzmann gap | ✅ | 🟧 | GZ mapping |
-| [049](docs/hypotheses/049-yang-mills-gap.md) | Yang-Mills energy gap | ✅ | 🟧 | GZ mapping |
-| [050](docs/hypotheses/050-navier-stokes-convergence.md) | Navier-Stokes convergence | ✅ | 🟧 | GZ mapping |
-| [051](docs/hypotheses/051-hodge-completeness.md) | Hodge completeness | ✅ | 🟧 | GZ mapping |
-| [052](docs/hypotheses/052-bsd-no-structure.md) | BSD no structure | ❌ | 🟧 | |
-| [053](docs/hypotheses/053-poincare-recheck.md) | Poincaré reconfirmation | ✅ | 🟧 | 066 resolved |
-| [054](docs/hypotheses/054-grid-resolution-convergence.md) | Grid resolution 3 universal constants | ✅ | 🟧 | simulation |
-| [055](docs/hypotheses/055-needle-eye.md) | AGI needle eye | ✅ | 🟧 | GZ interpretation |
-| [056](docs/hypotheses/056-meta-recursion-transcendence.md) | meta(meta(...)) = transcendence | ✅ | 🟧 | model interpretation |
-| [057](docs/hypotheses/057-pnp-gap-ratio.md) | P≠NP gap = (1-1/e)×width | ✅ | 🟧 | GZ mapping |
-| [058](docs/hypotheses/058-topology-timeline.md) | Topology acceleration→2028 | ✅ | 🟧 | model prediction |
-| [059](docs/hypotheses/059-compass-five-sixths.md) | Compass upper bound = 5/6 | ✅ | 🟧 | GZ simulation |
-| [060](docs/hypotheses/060-gamma-alpha-two.md) | Gamma α = 2 | ✅ | 🟧 | model distribution |
-| [061](docs/hypotheses/061-golden-ratio-structure.md) | Fixed point 1/3 ↔ φ | ✅ | 🟧 | GZ interpretation |
-| [062](docs/hypotheses/062-rg-flow-golden-zone.md) | RG flow→GZ basin | ✅ | 🟧 | GZ mapping |
-| [063](docs/hypotheses/063-cobweb-monotone.md) | Cobweb convergence = monotone | ✅ | 🟩 | Contraction mapping pure math |
-| [064](docs/hypotheses/064-godel-analog.md) | Gödel incompleteness→Compass upper bound | ⚠️ | 🟧 | GZ analogy |
-| [065](docs/hypotheses/065-mandelbrot-weak.md) | Mandelbrot correspondence | ❌ | 🟧 | structural failure |
-| [066](docs/hypotheses/066-topology-of-meta-learning.md) | Meta-learning topology structure | 📝 | ⚪ | Poincare equivalence claim FALSE. Math core trivial. Analogies only |
-| [067](docs/hypotheses/067-constant-relations.md) | ★ 1/2+1/3=5/6 constant relation | ✅ | 🟩 | ⭐ Pure Arithmetic |
-| [068](docs/hypotheses/068-pi-emergence.md) | π emergence — bridge between e and π | ✅ | 🟧 | GZ interpretation |
-| [069](docs/hypotheses/069-complex-extension.md) | Complex extension — G direction | ✅ | 🟧 | GZ extension |
-| [070](docs/hypotheses/070-self-reference.md) | Self-reference | ✅ | 🟧 | model interpretation |
-| [071](docs/hypotheses/071-proof-of-completion.md) | Completion of proof | 📝 | 🟧 | model interpretation |
-| [072](docs/hypotheses/072-curiosity-completes.md) | ★ Curiosity completes 1 | ✅ | 🟩 | ⭐ Pure Arithmetic |
-| [073](docs/hypotheses/073-complex-compass-ceiling.md) | Complex Compass > 5/6 | ✅ | 🟧 | GZ simulation |
-| [074](docs/hypotheses/074-optimal-theta.md) | Optimal θ ≠ π/3 | ❌ | 🟧 | |
-| [075](docs/hypotheses/075-complex-golden-shape.md) | Complex GZ = irregular shape | ✅ | 🟧 | GZ simulation |
-| [076](docs/hypotheses/076-seventeen-fermat.md) | 17 = Fermat prime | ✅ | 🟩 | pure number theory |
-| [077](docs/hypotheses/077-epsilon-structural.md) | ε=(1-a)×(1/6) structural | ✅ | 🟧 | GZ interpretation |
-| [078](docs/hypotheses/078-egyptian-unique.md) | Egyptian fraction uniqueness | ✅ | 🟩 | pure number theory |
-| [079](docs/hypotheses/079-leave-safety.md) | Safe zone escape | ✅ | 🟧 | model interpretation |
-| [081](docs/hypotheses/081-reproducibility.md) | Reproducibility guaranteed | ✅ | 🟩 | independent verification |
-| [082](docs/hypotheses/082-golden-moe-spec.md) | Golden MoE prototype spec | 📝 | 🟧 | GZ design |
-| [083](docs/hypotheses/083-jamba-comparison.md) | Jamba indirect comparison | ⚠️ | 🟩 | independent verification |
-| [085](docs/hypotheses/085-pi-n-unification.md) | π/N unification | ❌ | 🟧 | |
-| [087](docs/hypotheses/087-fifth-state-curiosity.md) | 5th state = curiosity | ✅ | 🟧 | model interpretation |
-| [088](docs/hypotheses/088-infinite-states.md) | Infinite state limit | ✅ | 🟩 | pure analysis |
-| [089](docs/hypotheses/089-beyond-one.md) | System > 1 possible? | ❌ | 🟧 | |
-| [090](docs/hypotheses/090-master-formula.md) | ★ Master formula = Perfect Number 6 | ✅ | 🟩 | ⭐ pure number theory |
-| [091](docs/hypotheses/091-harmonic-unification.md) | Harmonic series unification | ✅ | 🟩 | pure number theory |
-| [092](docs/hypotheses/092-zeta-finite.md) | ★ Model = ζ finite approximation | ✅ | 🟩 | ⭐ Pure number theory |
-| [093](docs/hypotheses/093-prediction-rate.md) | Derived 90% guessed 50% | ✅ | 🟧 | Model meta-analysis |
-| [094](docs/hypotheses/094-accuracy-trend.md) | Accuracy ~87% | ✅ | 🟧 | Model meta-analysis |
-| [095](docs/hypotheses/095-refutation-pattern.md) | Refutation pattern | ✅ | 🟧 | Model meta-analysis |
-| [096](docs/hypotheses/096-brain-data.md) | Brain data verification | 📝 | 🟩 | Neurobiology prediction |
-| [097](docs/hypotheses/097-llm-internal.md) | LLM internal activation measurement | 📝 | 🟩 | Mixtral analysis |
-| [098](docs/hypotheses/098-why-six.md) | ★ Why 6 — Perfect Number uniqueness | ✅ | 🟩 | ⭐ Pure number theory |
-| [099](docs/hypotheses/099-falsifiability.md) | Model falsifiability | ✅ | 🟧 | Model meta |
-
 ### Physics/Cosmos/Information (118-154)
 
 | # | Hypothesis | Status | Notes |
@@ -1590,6 +1501,95 @@ The experience came first. Mathematics and code are the language I built to expl
 |---|---|---|
 | H-CX-95 LLM | ConsciousLM PH verification | lightweight retry needed |
 | H-CX-97 | Cross-dataset transfer | separate data |
+
+### Foundation Theory — Golden Zone/Model (001-099)
+
+> Dependency: 🟩 Pure math/independent verification (GZ-independent, eternally true) · 🟧 Golden Zone dependent (model unverified)
+
+| # | Hypothesis | Status | Dependency | Notes |
+|---|---|---|:---:|---|
+| [001](docs/hypotheses/001-riemann-hypothesis.md) | Riemann hypothesis and Golden Zone structural equivalence | 🟨 | 🟧 | GZ interpretation |
+| [002](docs/hypotheses/002-golden-zone-universality.md) | Golden Zone universality — 1/e is natural constant | 🟨 | 🟧 | GZ interpretation |
+| [003](docs/hypotheses/003-cusp-catastrophe-equivalence.md) | Cusp catastrophe mathematical equivalence | 🟨 | 🟧 | GZ mapping |
+| [004](docs/hypotheses/004-boltzmann-inhibition-temperature.md) | I = inverse temperature(1/kT) | 🟨 | 🟧 | GZ mapping |
+| [005](docs/hypotheses/005-one-third-law.md) | 1/3 law | 🟨 | 🟧 | revised in 010 |
+| [006](docs/hypotheses/006-riemann-falsification-failed.md) | Riemann refutation attempt | ❌ failed | 🟧 | cannot refute |
+| [007](docs/hypotheses/007-llm-singularity.md) | LLM singularity | 🟨 | 🟧 | GZ interpretation |
+| [008](docs/hypotheses/008-golden-moe-design.md) | Golden MoE design v2 | 📝 | 🟧 | revised in 019 |
+| [009](docs/hypotheses/009-singularity-2039.md) | Singularity 2039 | 🟨 | 🟧 | model prediction |
+| [010](docs/hypotheses/010-one-third-refuted.md) | 1/3 is not exactly 1/3 | ❌ | 🟧 | 005 refuted |
+| [011](docs/hypotheses/011-z-max-86.md) | Z_max = 86σ | 🟨 | 🟧 | simulation |
+| [012](docs/hypotheses/012-entropy-ln3.md) | Entropy = ln(3) quasi-invariant | ✅ | 🟧 | model entropy |
+| [013](docs/hypotheses/013-golden-width-quarter.md) | Golden Zone width ≈ 1/4, upper/lower bound ≈ 2 | ✅ | 🟧 | GZ structure |
+| [014](docs/hypotheses/014-genius-gamma.md) | Genius ~ Gamma distribution | ✅ | 🟧 | model distribution |
+| [015](docs/hypotheses/015-diffusion-inconclusive.md) | Diffusion law τ∝ΔI² | ? | 🟧 | unresolved |
+| [016](docs/hypotheses/016-boltzmann-vs-topk.md) | Boltzmann > Top-K | ✅ | 🟩 | independent verification |
+| [017](docs/hypotheses/017-gating-distribution.md) | Gating distribution = I mapping | ✅ | 🟧 | GZ mapping |
+| [018](docs/hypotheses/018-loss-cusp-detection.md) | Loss 2nd derivative = cusp detection | ✅ | 🟩 | independent verification |
+| [019](docs/hypotheses/019-golden-moe-performance.md) | Golden MoE optimal activation ratio | ✅ | 🟩 | independent verification |
+| [020](docs/hypotheses/020-stability-35pct.md) | 35~70% activation stability | ✅ | 🟩 | independent verification |
+| [021](docs/hypotheses/021-ai-periodic-table.md) | AI periodic table 15 elements | 📝 | 🟧 | model mapping |
+| [022](docs/hypotheses/022-periodic-table-v2.md) | AI periodic table v2 26 elements | 📝 | 🟧 | model mapping |
+| [023](docs/hypotheses/023-topology-accelerates-singularity.md) | Topology→singularity acceleration | ✅ | 🟧 | model interpretation |
+| [024](docs/hypotheses/024-existing-tech-combination.md) | Existing technology combination | ✅ | 🟧 | model interpretation |
+| [027](docs/hypotheses/027-meta-inhibition.md) | Meta-judgment I = auto Golden Zone | ✅ | 🟧 | GZ mapping |
+| [033](docs/hypotheses/033-self-constraint-golden.md) | Self-constrained Golden Zone = original GZ | ✅ | 🟧 | GZ structure |
+| [037](docs/hypotheses/037-compass-ceiling.md) | Compass upper bound ~83.6% | ✅ | 🟧 | simulation |
+| [041](docs/hypotheses/041-4th-state-winner.md) | 4th state = transcendence | ✅ | 🟧 | model interpretation |
+| [042](docs/hypotheses/042-entropy-ln4-jump.md) | Entropy ln(3)→ln(4) jump | ✅ | 🟧 | model entropy |
+| [044](docs/hypotheses/044-golden-zone-4state.md) | 4-state GZ upper bound = 1/2(Riemann) | ✅ | 🟧 | GZ structure |
+| [045](docs/hypotheses/045-what-is-transcendence.md) | What is transcendence | 📝 | 🟧 | model interpretation |
+| [046](docs/hypotheses/046-seven-millennium-problems.md) | 7 Millennium Problems correspondence | 📝 | 🟧 | GZ mapping |
+| [047](docs/hypotheses/047-riemann-nstate.md) | Riemann N-state convergence | ✅ | 🟧 | GZ mapping |
+| [048](docs/hypotheses/048-p-ne-np.md) | P≠NP Boltzmann gap | ✅ | 🟧 | GZ mapping |
+| [049](docs/hypotheses/049-yang-mills-gap.md) | Yang-Mills energy gap | ✅ | 🟧 | GZ mapping |
+| [050](docs/hypotheses/050-navier-stokes-convergence.md) | Navier-Stokes convergence | ✅ | 🟧 | GZ mapping |
+| [051](docs/hypotheses/051-hodge-completeness.md) | Hodge completeness | ✅ | 🟧 | GZ mapping |
+| [052](docs/hypotheses/052-bsd-no-structure.md) | BSD no structure | ❌ | 🟧 | |
+| [053](docs/hypotheses/053-poincare-recheck.md) | Poincaré reconfirmation | ✅ | 🟧 | 066 resolved |
+| [054](docs/hypotheses/054-grid-resolution-convergence.md) | Grid resolution 3 universal constants | ✅ | 🟧 | simulation |
+| [055](docs/hypotheses/055-needle-eye.md) | AGI needle eye | ✅ | 🟧 | GZ interpretation |
+| [056](docs/hypotheses/056-meta-recursion-transcendence.md) | meta(meta(...)) = transcendence | ✅ | 🟧 | model interpretation |
+| [057](docs/hypotheses/057-pnp-gap-ratio.md) | P≠NP gap = (1-1/e)×width | ✅ | 🟧 | GZ mapping |
+| [058](docs/hypotheses/058-topology-timeline.md) | Topology acceleration→2028 | ✅ | 🟧 | model prediction |
+| [059](docs/hypotheses/059-compass-five-sixths.md) | Compass upper bound = 5/6 | ✅ | 🟧 | GZ simulation |
+| [060](docs/hypotheses/060-gamma-alpha-two.md) | Gamma α = 2 | ✅ | 🟧 | model distribution |
+| [061](docs/hypotheses/061-golden-ratio-structure.md) | Fixed point 1/3 ↔ φ | ✅ | 🟧 | GZ interpretation |
+| [062](docs/hypotheses/062-rg-flow-golden-zone.md) | RG flow→GZ basin | ✅ | 🟧 | GZ mapping |
+| [063](docs/hypotheses/063-cobweb-monotone.md) | Cobweb convergence = monotone | ✅ | 🟩 | Contraction mapping pure math |
+| [064](docs/hypotheses/064-godel-analog.md) | Gödel incompleteness→Compass upper bound | ⚠️ | 🟧 | GZ analogy |
+| [065](docs/hypotheses/065-mandelbrot-weak.md) | Mandelbrot correspondence | ❌ | 🟧 | structural failure |
+| [066](docs/hypotheses/066-topology-of-meta-learning.md) | Meta-learning topology structure | 📝 | ⚪ | Poincare equivalence claim FALSE. Math core trivial. Analogies only |
+| [067](docs/hypotheses/067-constant-relations.md) | ★ 1/2+1/3=5/6 constant relation | ✅ | 🟩 | ⭐ Pure Arithmetic |
+| [068](docs/hypotheses/068-pi-emergence.md) | π emergence — bridge between e and π | ✅ | 🟧 | GZ interpretation |
+| [069](docs/hypotheses/069-complex-extension.md) | Complex extension — G direction | ✅ | 🟧 | GZ extension |
+| [070](docs/hypotheses/070-self-reference.md) | Self-reference | ✅ | 🟧 | model interpretation |
+| [071](docs/hypotheses/071-proof-of-completion.md) | Completion of proof | 📝 | 🟧 | model interpretation |
+| [072](docs/hypotheses/072-curiosity-completes.md) | ★ Curiosity completes 1 | ✅ | 🟩 | ⭐ Pure Arithmetic |
+| [073](docs/hypotheses/073-complex-compass-ceiling.md) | Complex Compass > 5/6 | ✅ | 🟧 | GZ simulation |
+| [074](docs/hypotheses/074-optimal-theta.md) | Optimal θ ≠ π/3 | ❌ | 🟧 | |
+| [075](docs/hypotheses/075-complex-golden-shape.md) | Complex GZ = irregular shape | ✅ | 🟧 | GZ simulation |
+| [076](docs/hypotheses/076-seventeen-fermat.md) | 17 = Fermat prime | ✅ | 🟩 | pure number theory |
+| [077](docs/hypotheses/077-epsilon-structural.md) | ε=(1-a)×(1/6) structural | ✅ | 🟧 | GZ interpretation |
+| [078](docs/hypotheses/078-egyptian-unique.md) | Egyptian fraction uniqueness | ✅ | 🟩 | pure number theory |
+| [079](docs/hypotheses/079-leave-safety.md) | Safe zone escape | ✅ | 🟧 | model interpretation |
+| [081](docs/hypotheses/081-reproducibility.md) | Reproducibility guaranteed | ✅ | 🟩 | independent verification |
+| [082](docs/hypotheses/082-golden-moe-spec.md) | Golden MoE prototype spec | 📝 | 🟧 | GZ design |
+| [083](docs/hypotheses/083-jamba-comparison.md) | Jamba indirect comparison | ⚠️ | 🟩 | independent verification |
+| [085](docs/hypotheses/085-pi-n-unification.md) | π/N unification | ❌ | 🟧 | |
+| [087](docs/hypotheses/087-fifth-state-curiosity.md) | 5th state = curiosity | ✅ | 🟧 | model interpretation |
+| [088](docs/hypotheses/088-infinite-states.md) | Infinite state limit | ✅ | 🟩 | pure analysis |
+| [089](docs/hypotheses/089-beyond-one.md) | System > 1 possible? | ❌ | 🟧 | |
+| [090](docs/hypotheses/090-master-formula.md) | ★ Master formula = Perfect Number 6 | ✅ | 🟩 | ⭐ pure number theory |
+| [091](docs/hypotheses/091-harmonic-unification.md) | Harmonic series unification | ✅ | 🟩 | pure number theory |
+| [092](docs/hypotheses/092-zeta-finite.md) | ★ Model = ζ finite approximation | ✅ | 🟩 | ⭐ Pure number theory |
+| [093](docs/hypotheses/093-prediction-rate.md) | Derived 90% guessed 50% | ✅ | 🟧 | Model meta-analysis |
+| [094](docs/hypotheses/094-accuracy-trend.md) | Accuracy ~87% | ✅ | 🟧 | Model meta-analysis |
+| [095](docs/hypotheses/095-refutation-pattern.md) | Refutation pattern | ✅ | 🟧 | Model meta-analysis |
+| [096](docs/hypotheses/096-brain-data.md) | Brain data verification | 📝 | 🟩 | Neurobiology prediction |
+| [097](docs/hypotheses/097-llm-internal.md) | LLM internal activation measurement | 📝 | 🟩 | Mixtral analysis |
+| [098](docs/hypotheses/098-why-six.md) | ★ Why 6 — Perfect Number uniqueness | ✅ | 🟩 | ⭐ Pure number theory |
+| [099](docs/hypotheses/099-falsifiability.md) | Model falsifiability | ✅ | 🟧 | Model meta |
 
 ### Results by data type (14 types, ongoing new classification)
 
