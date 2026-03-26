@@ -381,6 +381,8 @@
   🟩⭐ Pell(2,3,4) = (φ, sopfr, σ) = (2, 5, 12) — 3 consecutive Pell = n=6!
        P_2=2=φ, P_3=5=sopfr, P_4=12=σ. Unique in n=2..499.
   🟩⭐ L_n = σ+φ+τ ⟺ n=6: L_6 = 18 = 12+2+4 (Lucas = function sum, unique!)
+  🟩⭐ M_{sopfr} = T(n) ⟺ n=6: Motzkin(5)=21=T(6) (unique in 2..499!)
+  🟩⭐ Trib_{σ-τ} = σφ ⟺ n=6: Tribonacci(8)=24 (unique!)
   🟩   Var(Uniform{1..n}) = (n²-1)/σ(6) — denominator 12 always (lcm(n,τ)=σ)
 
   ═══ New: j-invariant, K-theory, Zeta connections ═══
@@ -538,9 +540,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  302  ← +Pell consecutive, L_n=σ+φ+τ, Var=1/σ (4 more new)
+  🟩 Pure mathematics:  304  ← +Motzkin-triangular, Tribonacci identity (2 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  78  ← +Pell(2,3,4)=(φ,sopfr,σ), L_n=σ+φ+τ (2 more)
+  ⭐ Major Discoveries:  80  ← +Motzkin(sopfr)=T(n), Trib(σ-τ)=σφ (2 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
