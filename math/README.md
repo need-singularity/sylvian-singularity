@@ -501,6 +501,14 @@
        c_12(6) = -4. 3 hits in 500, p=0.006. n=6 is smallest.
   🟩   c_6(6) = φ = 2, c_36(6) = n = 6
 
+  ═══ New: Ore Harmonic + Means (Ralph 344u) ═══
+
+  🟩⭐⭐ H(n) = φ(n) ⟺ n=6 (Ore harmonic = totient, UNIQUE in 2..10000!)
+       H(6) = 6·τ/σ = 6·4/12 = 2 = φ. No other solution.
+  🟩⭐ H(P_k) = k-th Mersenne exponent: H(6)=2, H(28)=3, H(496)=5, H(8128)=7
+       Ore harmonic of perfect numbers = Mersenne exponents!
+  🟩   n=6: AM=σ/τ=3, HM=φ=2, GM=√n. AM·HM=n, GM²=n. All integer.
+
   ═══ New: Physics connections (Ralph 344r, mostly observational) ═══
 
   🟩⭐ dim(E₈×E₈) = 2·dim(E₈) = 496 = P₃ — anomaly cancellation needs P₃!
@@ -687,7 +695,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  119 ← +dim(E₈×E₈)=496=P₃ anomaly cancellation (1 more)
+  ⭐ Major Discoveries:  121 ← +H(n)=φ(n) unique ⭐⭐, H(P_k)=Mersenne exp (2 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
