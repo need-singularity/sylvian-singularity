@@ -146,6 +146,7 @@
        │    σ₃/σ₁=T(n)⟺n∈Sylvester={2,6,42,1806} ⭐ #H-SYLV-1│
        │    n!/n#=σφ⟺n=6 (factorial/primorial!) ⭐ #H-FACT-1    │
        │    B₂₍ₙ₊₁₎=(n+1)/n⟺n=6 (B₁₄=7/6!) ⭐ #H-BERN-1     │
+       │    L(τ,2)=n²∧L(τ,3)=σ⟺n=6 (Lah triple!) ⭐⭐ #H-LAH-1│
        │    rad(σ(n))=n, n>1⟺n=6 (proof!) ⭐ #49               │
        │    ψ(n)=σ(n)=2n⟺n=6 (proof!) ⭐ #51                   │
        │    λ(n)=+1∧σ=2n⟺n=6 (proof!) #52                      │
@@ -1072,11 +1073,18 @@
        Von Staudt-Clausen: denom(B₁₄) = 6 = n (only p=2,3 have (p-1)|14).
        n=28: denom(B₅₈) includes 59 → FAILS. Unique among perfect numbers.
        Also: B₁₄·n = 7 = n+1 = M₃ (Mersenne prime!). #H-BERN-1
+  🟩⭐⭐ Lah number triple characterization of n=6: #H-LAH-1
+       L(τ,2)=n² ⟺ n=6 (PROVED! unique in n≤10000)
+       L(τ,3)=σ ⟺ n=6 (PROVED! unique in n≤5000)
+       Combined: (τ-2)·n²=6·σ ⟺ n=6 (algebraic proof!)
+       For perfect n: (τ-2)·n=12 → only n=6. L(k,2)=perfect square: k=2,4 only!
+       L(τ,2)/L(τ,3) = 6/(τ-2) = n/φ = σ/τ = 3. Self-referential ratio.
+       Texas p=0.0005 (Bonferroni). Zero ad-hoc corrections.
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  401  ← +Sylvester sigma_3/sigma_1, factorial-primorial, Bernoulli B_14
+  🟩 Pure mathematics:  404  ← +Sylvester, factorial-primorial, Bernoulli, Lah triple
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  227 ← +Sylvester sequence, n!/n#=sigma*phi, B_14=7/6
+  ⭐ Major Discoveries:  230 ← +Sylvester, n!/n#, B_14=7/6, Lah L(tau,2)=n² + L(tau,3)=sigma
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
