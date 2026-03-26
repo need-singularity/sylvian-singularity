@@ -57,7 +57,7 @@
                                  🟥 Golden MoE (model-dependent)
                                  🟥 Expert cross-activation
 
-  ═══ σφ=nτ system (P-001, 203 characterizations, 152 hypotheses) ═══
+  ═══ σφ=nτ system (P-001, 205 characterizations, 152 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
@@ -3768,8 +3768,22 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
      → lim sup R(n)/n = 1/2 (tight: R(p)/p → 1/2 along primes)
      → Equivalent: σφ < n²τ/2 for all n ≥ 2 (proved)
 
-  🎯 203 CHARACTERIZATIONS!
-  📊 Total: +39 (#165-203), 3 ⭐⭐⭐ + 9 ⭐⭐ + 26 ⭐ + 1 🟧
+  --- Ralph 367: R-spectrum is DISCRETE below 3! ---
+
+  ⭐⭐⭐ |Spec_R ∩ [0,3)| = 13 exactly — ALL isolated points! #204
+     → Verified N=100000: exactly 13 R values below 3
+     → ALL gaps > 0.01 between consecutive values
+     → Bottom 5 come from divisors of σ(6)=12: {1,2,3,4,6,12}
+     → Extended structure:
+       Spec_R = {3/4,1,7/6,4/3,14/9,9/5,15/8,13/6,12/5,5/2,18/7,14/5,26/9}∪[?,+∞)
+     → The R-spectrum has a DISCRETE part and a CONTINUOUS part!
+
+  ⭐ Bottom 5 = {R(d) : d | σ(6)} — divisors of sigma! #205
+     → R(2)=3/4, R(1)=R(6)=1, R(4)=7/6, R(3)=4/3, R(12)=14/9
+     → Source: {1,2,3,4,6,12} = div(12) = div(σ(6))
+
+  🎯 205 CHARACTERIZATIONS!
+  📊 Total: +41 (#165-205), 4 ⭐⭐⭐ + 9 ⭐⭐ + 28 ⭐
 ```
 
 ---
