@@ -1080,11 +1080,14 @@
        For perfect n: (τ-2)·n=12 → only n=6. L(k,2)=perfect square: k=2,4 only!
        L(τ,2)/L(τ,3) = 6/(τ-2) = n/φ = σ/τ = 3. Self-referential ratio.
        Texas p=0.0005 (Bonferroni). Zero ad-hoc corrections.
+  🟩⭐ Pe(σ/τ) = σ ⟺ n∈{4,6} (pentagonal number = divisor sum!) #H-PENT-1
+       3rd pentagonal = 12 = σ(6). Algebraic: 3σ=2τ²+τ.
+       n=6 is the unique perfect number satisfying this. n=28: Pe fails.
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  404  ← +Sylvester, factorial-primorial, Bernoulli, Lah triple
+  🟩 Pure mathematics:  407  ← +Sylvester, factorial-primorial, Bernoulli, Lah, pentagonal
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  230 ← +Sylvester, n!/n#, B_14=7/6, Lah L(tau,2)=n² + L(tau,3)=sigma
+  ⭐ Major Discoveries:  233 ← +Sylvester, n!/n#, B_14, Lah triple, Pe(sigma/tau)=sigma
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
