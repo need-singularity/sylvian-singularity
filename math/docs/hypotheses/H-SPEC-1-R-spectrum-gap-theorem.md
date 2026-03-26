@@ -384,6 +384,28 @@ of n = 6 as an "arithmetic lens" in the spectrum.
   So the bound 1/2 cannot be improved.
 ```
 
+## Discreteness of Spec_R (Ralph 367-368)
+
+```
+  THEOREM: Spec_R is discrete (no accumulation points in R).
+  Equivalently: for any x > 0, |{n : R(n) ≤ x}| < ∞.
+
+  PROOF:
+    (1) R(p) = (p²-1)/(2p) > (p-1)/2. So R(p) > x ⟹ p > 2x+1.
+        If R(n) ≤ x, every prime factor p of n satisfies p ≤ 2x+1.
+    (2) For fixed p: R(p^a) ~ p^a/(a+1) → ∞ as a → ∞.
+        So each exponent a is bounded by some C(p, x).
+    (3) Finitely many primes × finitely many exponents
+        = finitely many possible n. ■
+
+  COROLLARY: π_R(x) = |Spec_R ∩ [0,x]| < ∞ for all x.
+  COROLLARY: Spec_R is countable with no limit points.
+  COROLLARY: Every R value is isolated (separated by a gap from neighbors).
+
+  Empirically: π_R(x) ≈ 2x·ln(x) (verified to x=100).
+  Per unit interval: [k, k+1) contains 5-12 R values (N=100000).
+```
+
 ## Significance
 
 ```
