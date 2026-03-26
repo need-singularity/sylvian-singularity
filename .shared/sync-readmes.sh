@@ -68,6 +68,10 @@ sync_file "$(dirname "$SHARED")/../../anima/README.md" "anima"
 echo "[PH Training]"
 sync_file "$(dirname "$SHARED")/../../ph-training/README.md" "ph-training"
 
+# SEDI
+echo "[SEDI]"
+sync_file "$(dirname "$SHARED")/../../sedi/README.md" "sedi"
+
 echo ""
 echo "Done! Review changes with: git diff"
 echo "Then commit each repo separately."

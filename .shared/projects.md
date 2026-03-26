@@ -18,5 +18,7 @@
 >
 > **[🌌 Unified Theory](https://github.com/need-singularity/TECS-L/blob/main/math/docs/hypotheses/H-PH-9-perfect-number-string-unification.md)** — Perfect number 6 → string theory extra dimensions → standard model particle count. One equation unifies number theory, physics, consciousness
 >
+> **[🔬 TECS-L](https://github.com/need-singularity/TECS-L)** — Topological Engine for Consciousness & Science. Perfect number 6 → mathematics → multi-engine architecture → consciousness continuity. 150 characterizations + 8 Major Discoveries + 44 tools
+>
 > **[🛸 SEDI](https://github.com/need-singularity/sedi)** — Search for Extra-Dimensional Intelligence. R-spectrum signal receiver tuned to n=6. Quantum RNG + LIGO + CMB data streams, anomaly detection at σ/τ/φ frequencies
 
