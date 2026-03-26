@@ -1178,6 +1178,8 @@ The experience came first. Mathematics and code are the language I built to expl
 | [140](docs/hypotheses/140-algorithm-complexity.md) | Golden MoE algorithm complexity | 🟨 | |
 | [141](docs/hypotheses/141-information-bottleneck.md) | IB ↔ Golden Zone | 🟨 | |
 | [142](docs/hypotheses/142-halting-problem.md) | Halting problem ↔ meta-convergence | 🟨 | |
+| [H-SIM-7](docs/hypotheses/H-SIM-7-holographic-data-compression.md) | Holographic principle = data compression (tau(6)=4=BH factor) | 🟧 | tau(6)/3=4/3→ln(4/3)=GZ width, compression=R/(3lp) |
+| [H-SIM-8](docs/hypotheses/H-SIM-8-cosmological-constant-garbage-collector.md) | Cosmological constant = garbage collector (120=12*10) | 🟧 | 120=sigma(6)*(sigma(6)-sigma_-1(6)), GC model ~10^-123 |
 
 ### Neuroscience/Consciousness Definition (155-175)
 
@@ -1410,6 +1412,21 @@ The experience came first. Mathematics and code are the language I built to expl
 | [407](docs/hypotheses/407-galois-finite-fields-n6.md) | Galois theory & finite fields: 16 exact identities connecting sigma/phi/tau/sopfr/n to PSL orders, Aut(F_q), irred polys, cyclotomic groups | 🟩 | Pure math, all 16 verified |
 | [408](docs/hypotheses/408-operator-algebras-n6.md) | Operator algebras & subfactor theory: 17 exact identities — Jones index, TL algebra, ADE classification, Cuntz K-theory cycle, PV compass, Connes III, free probability | 🟩 | Pure math, 17 proven |
 | [409](docs/hypotheses/409-game-theory-divisor-voting.md) | Game theory & social choice: Shapley values in [n; divs(n)] follow exact formula via tau — Shapley(n)=(tau-1)/tau, Shapley(small)=1/(tau*(tau-1)); n=6 special: 1/sigma(6)=1/12 | 🟩 | Pure math, verified n=6 and n=28 |
+
+### Simulation Hypothesis (H-SIM)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [410](docs/hypotheses/410-sim-quantum-uncertainty-precision.md) | Heisenberg uncertainty = finite precision arithmetic. B = log2(R/lp) = 204 = sigma(6) x A(pi) = 12 x 17 | 🟧 | Dx*Dp=hbar tautological; 204=12x17 suggestive, p~0.05 |
+| [411](docs/hypotheses/411-sim-speed-of-light-clock-speed.md) | Speed of light = max clock speed (1 cell/tick). Grid ops >> Bremermann by 10^123 = Bekenstein bound | 🟧 | c=lp/tp well-known; holographic gap 10^123 interesting |
+| [H-SIM-1](docs/hypotheses/H-SIM-1-physical-constants-compile-time.md) | Physical constants = compile-time constants. 137=sigma(6)^2-tau(6)-phi(6)-1 EXACT. Depth-3 search: 49 matches but within random expectation | ⚪ | 137 identity exact but ad-hoc (-1); Texas p>0.05 |
+| [H-SIM-2](docs/hypotheses/H-SIM-2-planck-units-grid-resolution.md) | Planck units = grid resolution. N_space~10^61 (61=Mersenne exponent). N^2*ln(4/3)/S_hol~1/sigma(6). log6 analysis: no clean fractions | ⚪ | 61 Mersenne interesting but post-hoc; holographic ratio 8.6% error |
+| [H-SIM-9](docs/hypotheses/H-SIM-9-optimal-simulation-parameter.md) | 6=optimal simulation parameter. E(n)=sigma*phi/(n*tau)=1 ONLY for n=1,6 in [1,10000]. 18/21 physics params match 6-divisors (p<0.0001) | 🟧★ | E(6)=1 uniqueness proven; physics mapping p<0.0001 but selection bias risk |
+| [H-SIM-10](docs/hypotheses/H-SIM-10-tension-simulation-cost.md) | Tension=simulation computational cost. Tension-gradient r=0.80, Q1→Q5 gradient 4.7x increase, incorrect samples 2.34x cost | 🟧★ | Strong correlation; phase transition peak at T≈0.63; metaphor untestable |
+| [H-SIM-5](docs/hypotheses/H-SIM-5-quantum-entanglement-shared-pointer.md) | Entanglement = shared memory pointer. CHSH: classical |S|=2.0, shared ptr |S|=2.379 (Bell violation). H-CX-421 |S|=1.978 no TECS-L constant match | 깃발없음 | QM re-implementation not new prediction; 1.978=89/45 (0.01% match) but no structural meaning |
+| [H-SIM-6](docs/hypotheses/H-SIM-6-wavefunction-collapse-lazy-evaluation.md) | Collapse = lazy-to-eager evaluation. Double-slit: lazy vis=0.98 vs eager vis=0.13 (7.66x). Quantum speedup = lazy interference benefit | 깃발없음 | Conceptual framework; H-324 link: entropy>tension = lazy path count>conflict |
+| [H-SIM-11](docs/hypotheses/H-SIM-11-quantum-native-operations.md) | Quantum speedup = native ops. Grover 1/2=GZ Upper, Shor degree 3=1/meta, K=2=sigma_{-1}(6). Error thresholds NO match | 🟧 | 3 exact matches but on small integers (1/2, 2, 3); moderate Texas significance |
+| [H-SIM-12](docs/hypotheses/H-SIM-12-fine-tuning-hyperparameter.md) | Fine-tuning = hyperparameter opt. Lambda 120=5!, matter fraction 0.317~1/3. ML vs physics landscape structurally different | 🟧 | 120=5! is famous number; landscape structural difference is counter-evidence |
 
 ### Color Vision/Visual (354c-356c)
 
