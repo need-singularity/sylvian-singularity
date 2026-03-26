@@ -173,6 +173,17 @@ If kappa_lambda = 12/13, several consistency conditions must hold:
 5. The exponent in sigma/(sigma+1) vs other possible combinations like
    (sigma-1)/sigma = 11/12 = 0.917 is not uniquely determined.
 
+## Parallel Verification (2026-03-27)
+
+| Claim | Computed | Status |
+|-------|---------|--------|
+| κ_λ = 12/13 | 0.9231 | ✅ |
+| SM deviation | 7.69% | ✅ |
+| m_H = (P₃+τ)/τ = 500/4 | 125.00 GeV (obs 125.25, 0.20%) | ✅ |
+| sin²θ_W = 3/13 | 0.23077 (obs 0.23122, 0.19%) | ✅ |
+| HL-LHC sensitivity | 0.15σ (marginal) | ✅ |
+| FCC-hh sensitivity | 1.54σ (visible) | ✅ |
+
 ## Verification Direction
 
 - Monitor HL-LHC di-Higgs searches (2029-2035)

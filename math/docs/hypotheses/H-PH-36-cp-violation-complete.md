@@ -256,6 +256,20 @@ Understanding the ORIGIN of CP violation is directly connected to:
    the ratio 7/10 is a simple fraction that would match many numbers near 0.7.
    The Texas Sharpshooter p-value needs calculation.
 
+## Parallel Verification (2026-03-27)
+
+| Observable | Predicted | Measured | Error | σ |
+|-----------|-----------|----------|-------|---|
+| sin(2β) = 7/10 | 0.7000 | 0.699±0.017 | 0.14% | 0.06 |
+| |V_cb| = 1/24 | 0.04167 | 0.0405±0.0015 | 2.88% | 0.78 |
+| |V_us| = √7/12 | 0.2205 | 0.2243±0.0005 | 1.70% | **7.64** |
+| |V_ub| = 1/132 | 0.007576 | 0.00382±0.0002 | **98.3%** | **18.78** |
+| Jarlskog J | 2.77×10⁻⁵ | 3.0×10⁻⁵ | 7.8% | — |
+
+**⚠️ |V_ub| = 1/132 is catastrophically wrong** (98% error, 18.8σ). Must be removed or replaced.
+**⚠️ |V_us| = √7/12 is 7.6σ off** — poor match despite low % error.
+sin(2β) = 7/10 remains the strongest CP prediction (0.06σ).
+
 ## Verification Direction
 
 1. Monitor Belle II sin(2beta) measurements as statistics accumulate

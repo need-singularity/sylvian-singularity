@@ -245,6 +245,17 @@ total fermion degrees of freedom.
 6. **Not derived from a Lagrangian**: The connection sigma+tau -> GUT scale
    exponent is a numerical observation, not a consequence of unified theory.
 
+## Parallel Verification (2026-03-27)
+
+| Claim | Computed | Status |
+|-------|---------|--------|
+| σ+τ = 16 | 12+4 = 16 | ✅ |
+| 2^τ = 16 | 2⁴ = 16 | ✅ |
+| φ^τ = 16 | φ(6)=2, 2⁴=16 | ✅ (φ=Euler totient, NOT golden ratio) |
+| Proton decay ~10³⁵ yr | 4.17× current limit | ✅ within Hyper-K reach |
+
+Note: φ^τ=16 is correct when φ=φ(6)=2 (Euler totient), NOT golden ratio φ_gold=1.618.
+
 ## Verification Direction
 
 1. Monitor Hyper-Kamiokande proton decay results starting 2027

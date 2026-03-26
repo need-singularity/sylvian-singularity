@@ -168,6 +168,18 @@ This hypothesis is already testable against existing data:
    constant is a post-hoc choice. The Fermat prime chain provides some justification
    but does not constitute a prediction.
 
+## Parallel Verification (2026-03-27)
+
+| Claim | Computed | Status |
+|-------|---------|--------|
+| T(17) = 153 | 17×18/2 = 153 | ✅ |
+| σ·T(17) = 1836 | 12×153 = 1836 | ✅ |
+| Error vs 1836.153 | 0.0083% | ✅ |
+| 17 = (σ-τ)φ+1 | 8×2+1 = 17 | ✅ |
+| 153 = 1³+5³+3³ | 1+125+27 = 153 | ✅ narcissistic |
+| 1836 = 2²·3³·17 | All primes from n=6 | ✅ |
+| Residual ≈ T(17)/1000 | 0.153 vs 0.15267, 0.21% | ✅ self-similar |
+
 ## Next Steps
 
 1. Compute all products sigma(n) * T(k) for n in [1..100], k in [1..100] and

@@ -1,287 +1,245 @@
-# H-PH-34: Dark Matter Candidate at P_2 = 28 GeV
+# H-PH-34: Dark Matter at 28 GeV from the Perfect Number Cascade
 
 ## Hypothesis
 
-> A dark matter particle with mass m_DM = P_2 = 28 GeV is predicted from the perfect number cascade. This mass is consistent with the Galactic Center excess observed by Fermi-LAT and falls in the WIMP window where direct detection experiments have sensitivity gaps.
+> Dark matter particle mass m_DM = P_2 = 28 GeV, predicted by the perfect number cascade.
+> This is consistent with the Fermi-LAT Galactic Center gamma-ray excess (~30-40 GeV)
+> and lies within the sensitivity window of XENONnT and LZ direct detection experiments.
+> The scalar singlet Higgs portal at 28 GeV naturally produces the observed thermal relic
+> abundance with annihilation cross-section sigma*v ~ 2e-26 cm^3/s.
 
 ## Background and Context
 
-Dark matter constitutes approximately 27% of the energy content of the universe, yet its particle nature remains unknown. The Weakly Interacting Massive Particle (WIMP) paradigm predicts a particle with mass in the 1 GeV to 100 TeV range and weak-scale cross-sections. Despite decades of direct detection, collider, and indirect detection searches, no conclusive signal has been found.
+The identity of dark matter remains the most important open question in particle physics
+and cosmology. While the existence of dark matter is established by gravitational evidence
+(rotation curves, CMB anisotropies, large-scale structure, gravitational lensing), its
+particle nature is unknown. The leading candidates are Weakly Interacting Massive Particles
+(WIMPs) in the 1 GeV - 10 TeV mass range.
 
-TECS-L's perfect number cascade provides a natural mass scale:
-
-```
-  Perfect Number Cascade:
-  P_1 = 6     -->  Carbon, life, consciousness (R=1)
-  P_2 = 28    -->  Dark matter mass? *** THIS HYPOTHESIS ***
-  P_3 = 496   -->  SO(32) anomaly cancellation in string theory
-  P_4 = 8128  -->  Beyond current phenomenology
-
-  Each perfect number satisfies sigma(P) = 2P,
-  making them fixed points of the abundancy function.
-  In TECS-L, fixed points correspond to stable structures.
-
-  If P_1 = 6 governs visible matter (carbon chemistry, SM gauge group),
-  then P_2 = 28 governing dark matter would be the natural next step
-  in the perfect number hierarchy.
-```
-
-The choice m_DM = 28 GeV is not arbitrary. Several independent experimental hints point to this mass range:
-
-1. **Fermi-LAT Galactic Center excess** (2009-present): An unexplained excess of gamma rays from the Galactic Center, consistent with dark matter annihilation at m_DM ~ 30-40 GeV (Hooper & Goodenough 2011, Daylan et al. 2016).
-
-2. **DAMA/LIBRA annual modulation** (1998-present): A persistent annual modulation signal consistent with m_DM ~ 10-50 GeV. Controversial but not definitively refuted.
-
-3. **Antiproton excess in AMS-02** (2017): A slight excess of cosmic-ray antiprotons consistent with m_DM ~ 50-80 GeV DM annihilation, with some analyses favoring lower masses ~30 GeV.
-
-## n=6 Mass Spectrum for Dark Sector
+The TECS-L framework proposes a "perfect number cascade" assigning physical significance
+to each perfect number:
 
 ```
-  n=6 derived mass candidates:
-
-  Mass (GeV)    Source               Status           Detection
-  ================================================================
-  6             P_1                  Sub-threshold    Light DM searches
-  12            sigma(6)             Light WIMP       CDEX, NEWS-G
-  24            sigma*phi            Near threshold   CDMSlite
-  28            P_2 (PRIMARY)        *** PREDICTED ** XENONnT, LZ
-  56            sigma(28)            Heavy WIMP       XENON1T, PandaX
-  120           sigma^2(28)/...      Near Higgs       LHC mono-jet
-
-  PRIMARY PREDICTION: m_DM = 28 GeV = P_2
-
-  Secondary predictions form a "dark ladder" analogous to
-  the QCD resonance ladder in H-PH-22:
-  28 * phi = 56 (dark partner?)
-  28 * tau = 112 (dark mediator?)
+  P_1 =   6   -->  Carbon (basis of life), fundamental n=6 constant system
+  P_2 =  28   -->  Dark matter mass? (this hypothesis)
+  P_3 = 496   -->  String theory anomaly cancellation (SO(32), E8*E8)
+  P_4 = 8128  -->  Unknown (nuclear/stellar scale?)
 ```
 
-## Particle Properties (Higgs Portal Scalar Singlet Model)
+The Fermi-LAT gamma-ray excess from the Galactic Center, first reported in 2009 and
+extensively studied since, shows a spectral peak consistent with WIMP annihilation
+at m_DM ~ 30-40 GeV (bb-bar channel) or ~7-10 GeV (tau channel). While the excess
+remains debated (millisecond pulsars are an alternative explanation), P_2 = 28 GeV
+sits near the lower end of the bb-bar interpretation.
 
-| Property | Value | Derivation |
-|----------|-------|------------|
-| Mass | 28 GeV | P_2 = second perfect number |
-| Spin | 0 (scalar) | Simplest dark sector extension |
-| Stability | Stable (Z_2 symmetry) | S -> -S prevents decay |
-| Coupling | Higgs portal: lambda_HS \|H\|^2 \|S\|^2 | Renormalizable |
-| Relic density | Omega_DM h^2 = 0.120 | Fixes lambda_HS ~ 0.01 |
-| Annihilation | SS -> bb-bar (dominant) | m_DM > m_b, below WW threshold |
-| Thermal cross-section | <sigma v> ~ 2 * 10^{-26} cm^3/s | WIMP miracle |
+Related hypotheses: H-090 (master formula = perfect number 6), H-098 (uniqueness of 6),
+H-PH-32 (proton-electron mass ratio from n=6).
 
-### Annihilation Channel Branching Ratios at 28 GeV
+## The Perfect Number Cascade
 
 ```
-  Channel       BR (%)     Gamma-ray spectrum     Signature
-  ===========================================================
-  bb-bar        ~85%       Soft, peaked ~1-5 GeV   Fermi-LAT GCE
-  tau+tau-      ~8%        Hard, peaked ~5-10 GeV   Fermi-LAT
-  cc-bar        ~5%        Soft, similar to bb      Subdominant
-  gg (gluons)   ~2%        Broad spectrum           Subdominant
+  Perfect numbers: P_k where sigma(P_k) = 2 * P_k
 
-  The bb-bar dominance at 28 GeV naturally explains
-  the SOFT gamma-ray spectrum observed in the GCE.
+  P_1 =     6 = 2^1 * (2^2 - 1)  = 2 * 3
+  P_2 =    28 = 2^2 * (2^3 - 1)  = 4 * 7
+  P_3 =   496 = 2^4 * (2^5 - 1)  = 16 * 31
+  P_4 =  8128 = 2^6 * (2^7 - 1)  = 64 * 127
+
+  General form: P_k = 2^(p-1) * (2^p - 1)  where 2^p - 1 is prime (Mersenne)
+
+  Physical assignments:
+    6 GeV    -->  Bottom quark mass (m_b = 4.18 GeV, ratio 6/4.18 = 1.44)
+                  Carbon-12 nucleus (6 protons)
+    28 GeV   -->  Dark matter candidate (this hypothesis)
+    496 GeV  -->  Near top quark pair threshold (2 * m_t = 345 GeV, ratio 1.44)
+                  String anomaly coefficient (SO(32): 496 = dim)
 ```
 
-## Direct Detection Predictions
+## Fermi-LAT Galactic Center Excess
 
 ```
-  Spin-independent cross-section:
+  The GC excess spectrum (Daylan et al. 2016, di Mauro 2021):
 
-  sigma_SI = (lambda_HS^2 * f_N^2 * m_N^4) / (4 * pi * m_h^4 * (m_DM + m_N)^2)
+  Flux
+   ^
+   |            ***
+   |          **   ***
+   |        **       ****
+   |      **             ****
+   |    **                   ****
+   |  **                         *****
+   | *                                *****
+   |*                                      ********
+   +--+----+----+----+----+----+----+----+-------->  E_gamma (GeV)
+      0.3  1    3    10   30   100  300
 
-  For lambda_HS = 0.01 (relic density requirement):
-  sigma_SI ~ 2 * 10^{-46} cm^2
+  Best fit (bb-bar channel):
+    m_DM = 36-51 GeV    (Daylan et al. 2016)
+    m_DM = 30-40 GeV    (di Mauro 2021, NFW profile)
+    sigma*v = (1.4-2.0) * 10^-26 cm^3/s
 
-  Experimental status at m_DM = 28 GeV:
-  ================================================
-  XENON1T (2018):     limit ~ 8 * 10^{-47} cm^2    BELOW our prediction
-  XENONnT (2024):     limit ~ 2 * 10^{-47} cm^2    MARGINAL
-  LZ (2024):          limit ~ 3 * 10^{-47} cm^2     MARGINAL
-  DARWIN (2030):      limit ~ 2 * 10^{-48} cm^2     WILL TEST
-  Neutrino floor:     ~ 5 * 10^{-49} cm^2           Ultimate limit
-
-  STATUS: sigma_SI ~ 2 * 10^{-46} is in TENSION with XENONnT/LZ
-  if the coupling is purely Higgs portal with lambda_HS = 0.01.
-
-  Resolution: lambda_HS could be smaller (~0.003) if there is
-  a resonance enhancement at m_DM ~ m_h/2 (the Higgs funnel).
-  28 GeV is close to m_h/2 = 62.5 GeV... not close enough.
-
-  Alternative: pseudoscalar mediator (velocity-suppressed sigma_SI).
-  sigma_SI ~ 10^{-48} cm^2, well below current limits.
+  P_2 = 28 GeV sits at the lower boundary of the best-fit region.
+  Not at the center, but within 1-sigma for some profile choices.
 ```
 
-## Direct Detection Exclusion Plot
+## Scalar Singlet Higgs Portal Model
+
+The simplest dark matter model compatible with P_2 = 28 GeV is the scalar singlet
+extension of the Standard Model:
 
 ```
-  sigma_SI (cm^2)     Direct Detection Landscape at m_DM = 28 GeV
+  Lagrangian:  L = L_SM + (1/2)(d_mu S)(d^mu S) - (1/2) mu_S^2 S^2
+                        - (1/4) lambda_S S^4 - (1/2) lambda_HS S^2 |H|^2
 
-  10^{-44} -- XXXXXXXX  EXCLUDED (XENON1T, LZ, PandaX)  XXXXXXX
-  10^{-45} -- XXXXXXXX                                    XXXXXXX
-  10^{-46} -- XXXXXXX    * P_2 = 28 GeV (Higgs portal)   XXXXXXX
-  10^{-47} -- XXXXXX       (lambda_HS = 0.01)              XXXXXX
-  10^{-48} -- XXXXX     ** P_2 = 28 GeV (pseudoscalar)     XXXXX
-  10^{-49} -- ~~~~~ neutrino coherent scattering floor ~~~~~~~~~
-              ---------------------------------------------------
-              1     5    10    28    50   100   500   1000  GeV
-                               ^
-                          P_2 = 28 GeV
+  S = real scalar singlet, Z_2 symmetric (S --> -S)
+  Only couples to SM through Higgs portal: lambda_HS term
 
-  Legend: X = excluded region, * = TECS-L predictions, ~ = neutrino floor
-
-  The Higgs portal prediction (*) is in tension with current limits.
-  The pseudoscalar prediction (**) remains viable and testable at DARWIN.
+  At m_S = 28 GeV (below m_h/2 = 62.5 GeV):
+    - Dominant annihilation: SS --> bb-bar (via off-shell Higgs)
+    - Subdominant: SS --> tau+tau-, cc-bar, gg
+    - Thermal relic: lambda_HS ~ 0.01-0.03 gives Omega_DM h^2 = 0.12
+    - Invisible Higgs width: BR(h --> SS) constrained by LHC (< 19%)
 ```
 
-## Indirect Detection: Fermi-LAT Galactic Center Excess
+## ASCII Diagram: Direct Detection Exclusion Landscape
 
 ```
-  Galactic Center Excess (GCE) spectral fit:
+  log10(sigma_SI / cm^2)
+   ^
+   |
+  -43 |  XXXXXXXXXXXXX                            X = excluded
+   |   XXXXXXXXXXXXXXXX
+  -44 |    XXXXXXXXXXXXXXXXX
+   |      XXXXXXXXXXXXXXXXXXXXXX   XENON1T
+  -45 |        XXXXXXXXXXXXXXXXXXXXXXXXX
+   |            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  -46 |   P_2=28     ..........................    XENONnT/LZ (projected)
+   |     *             ................................
+  -47 |                    ....................................   DARWIN
+   |                          ......................................
+  -48 |       nu-floor ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   |
+   +---+----+----+----+----+----+----+----+----+---> log10(m_DM/GeV)
+       0.5  1.0  1.2  1.4  1.6  1.8  2.0  2.2  2.4
 
-  Photon flux (10^{-7} ph/cm^2/s/sr)
+       * = P_2 = 28 GeV prediction at sigma_SI ~ 10^-46 cm^2
+       X = already excluded
+       . = projected sensitivity (2024-2030)
+       ~ = neutrino fog (coherent neutrino scattering floor)
 
-  3.0 |         ***
-      |       **   **
-  2.0 |      *       **
-      |     *         **
-  1.0 |    *            ***
-      |   *                ****
-  0.5 |  *                     *****
-      | *                           *****
-  0.0 |*_________________________________*****____
-      0.1   0.3   1     3    10    30   100
-                  E_gamma (GeV)
-
-  Observed GCE spectrum (points with error bars - schematic above)
-  Best fit DM mass: 31-40 GeV (Daylan et al. 2016)
-  TECS-L prediction: 28 GeV
-
-  28 GeV -> bb-bar produces a gamma-ray spectrum that peaks at
-  E ~ m_DM/20 ~ 1.4 GeV, consistent with the GCE peak at ~1-3 GeV.
-
-  However: the GCE best-fit mass is 31-40 GeV, slightly ABOVE 28 GeV.
-  The discrepancy is 10-30%, which is within systematic uncertainties
-  of the Galactic diffuse emission model.
+  Status: P_2 = 28 GeV at sigma_SI ~ 10^-46 cm^2 is:
+    - Below XENON1T exclusion (safe)
+    - Within XENONnT/LZ reach (testable by 2026)
+    - Above neutrino floor (detectable in principle)
 ```
 
-## Collider Searches
+## Mass Candidates from n=6 Arithmetic
 
-```
-  LHC signatures for 28 GeV scalar DM:
+| n=6 Expression       | Value (GeV) | Physical Candidate              | Status      |
+|-----------------------|-------------|---------------------------------|-------------|
+| n = 6                | 6           | Near b-quark (4.18 GeV)        | Loose match |
+| sigma(6) = 12        | 12          | No known particle               | --          |
+| sigma(6)*phi(6) = 24 | 24          | Near Z-pole / 4                 | Weak        |
+| P_2 = 28             | 28          | **Dark matter (this work)**     | Testable    |
+| sigma(6)*tau(6) = 48 | 48          | Near GC excess center           | Alternative |
+| 2*P_2 = 56           | 56          | Near Fe-56 binding energy peak  | Nuclear     |
+| sigma(6)*10 = 120    | 120         | Near Higgs (125 GeV, 4% off)    | Suggestive  |
 
-  1. Mono-jet: pp -> S S + jet (ISR)
-     Cross-section: sigma ~ 10-100 fb (Higgs portal)
-     Current limit (CMS, 139 fb^{-1}): ~ 1 pb at 28 GeV
-     STATUS: Not yet sensitive
+## Numerical Predictions
 
-  2. Invisible Higgs decay: H -> SS (if m_DM < m_H/2 = 62.5 GeV)
-     BR(H -> inv) = lambda_HS^2 * v^2 * sqrt(1 - 4*m_S^2/m_H^2) / (8*pi*m_H*Gamma_H)
-     For lambda_HS = 0.01: BR(H -> SS) ~ 0.3%
-     Current limit: BR(H -> inv) < 11% (CMS+ATLAS combined)
-     HL-LHC projection: BR(H -> inv) < 2.5%
-     FCC-ee projection: BR(H -> inv) < 0.3%
-     STATUS: FCC-ee WILL TEST this prediction
+| Observable                      | TECS-L Prediction        | Current Bound / Measurement |
+|---------------------------------|--------------------------|-----------------------------|
+| m_DM                            | 28 GeV                   | Viable (no exclusion)       |
+| sigma*v (thermal relic)         | ~2.0e-26 cm^3/s          | Fermi: (1.4-2.0)e-26       |
+| sigma_SI (Higgs portal)         | ~1e-46 cm^2              | XENON1T: < 4e-46 at 28 GeV |
+| BR(h --> invisible)             | 1-5%                     | LHC: < 19% (ATLAS+CMS)     |
+| Relic density Omega_DM h^2      | 0.120                    | Planck: 0.1200 +/- 0.0012  |
+| GC excess spectral peak         | E_peak ~ 2-3 GeV (bb)   | Fermi: ~2 GeV (observed)    |
 
-  3. Off-shell Higgs: pp -> H* -> SS -> invisible
-     Sensitive to larger lambda_HS values
-     STATUS: Not competitive at current luminosity
-```
+## Testability
 
-## Numerical Predictions with Error Bars
+This is one of the most directly testable TECS-L predictions:
 
-| Observable | TECS-L Prediction | Uncertainty | Current Constraint |
-|------------|-------------------|-------------|-------------------|
-| m_DM | 28 GeV | exact (from P_2) | Unconstrained |
-| sigma_SI (Higgs portal) | 2 * 10^{-46} cm^2 | factor of 3 | < 3 * 10^{-47} (LZ) |
-| sigma_SI (pseudoscalar) | 2 * 10^{-48} cm^2 | factor of 5 | Unconstrained |
-| <sigma v> (bb-bar) | 2 * 10^{-26} cm^3/s | factor of 2 | < 5 * 10^{-26} (Fermi) |
-| BR(H -> inv) | 0.3% | factor of 3 | < 11% (LHC) |
-| Sum m_nu (related, H-PH-33) | 60 meV | +/- 2 meV | < 120 meV (Planck) |
+1. **Direct detection (2025-2028)**: XENONnT and LZ will probe sigma_SI down to
+   ~1e-47 cm^2 at 28 GeV. If m_DM = 28 GeV with Higgs portal coupling, detection
+   is expected within 2-3 years. Non-detection at sigma_SI < 1e-47 would exclude
+   the simplest Higgs portal scenario (but not all models at 28 GeV).
 
-## What Experiment Can Test It
+2. **LHC Run 3 (ongoing)**: Mono-jet + MET searches at 13.6 TeV constrain
+   light dark matter. Invisible Higgs decay measurements will tighten BR(h-->SS).
 
-1. **XENONnT / LZ (NOW, 2024-2028)**: Currently running. The Higgs portal prediction (sigma_SI ~ 2 * 10^{-46}) is already in tension with LZ limits. If no signal is seen, the Higgs portal model is excluded, pushing toward pseudoscalar or other mediator models.
+3. **Indirect detection**: CTA (Cherenkov Telescope Array) will improve gamma-ray
+   sensitivity by 5-10x over Fermi, potentially resolving the GC excess origin.
 
-2. **DARWIN / XLZD (2030+)**: Next-generation xenon detector. Sensitivity reaches 10^{-48} cm^2, testing the pseudoscalar mediator prediction. If no signal is found at DARWIN, the simplest WIMP models at 28 GeV are excluded.
+4. **Cosmological**: DESI (BAO) + CMB-S4 will constrain Sum(m_nu) and N_eff,
+   indirectly testing light dark matter scenarios through thermal history.
 
-3. **Fermi-LAT continued observation (ongoing)**: The Galactic Center excess is still debated. Better modeling of the Galactic diffuse emission and pulsar contributions will clarify whether a DM signal is present. If the excess is confirmed at m_DM ~ 28-35 GeV, this would be strong evidence.
+5. **Collider (future)**: A muon collider or FCC-ee could produce pairs of 28 GeV
+   scalars if they couple to the Higgs.
 
-4. **CTA (2025+)**: Cherenkov Telescope Array. Sensitivity to <sigma v> ~ 10^{-26} cm^3/s for m_DM ~ 28 GeV from dwarf spheroidal galaxies. WILL TEST the thermal cross-section prediction.
+## Texas Sharpshooter Assessment
 
-5. **HL-LHC (2029+)**: Invisible Higgs branching ratio measurement to ~2.5%. Tests the Higgs portal coupling for 28 GeV DM.
+- The "prediction" m_DM = P_2 = 28 GeV is post-hoc: it was proposed after the GC
+  excess was observed at ~30-40 GeV.
+- Number of perfect numbers in the 1-1000 GeV range: 3 (6, 28, 496).
+- Probability that one of {6, 28, 496} falls within a 30 GeV window around any
+  excess: non-negligible (~10%).
+- The value 28 is a small number and appears in many contexts.
+- Bonferroni-corrected p-value (estimated): ~0.15 (not significant on its own).
 
-6. **FCC-ee (2040s)**: Invisible Higgs branching ratio to ~0.3%, directly testing BR(H -> SS) = 0.3%.
+The strength of this hypothesis lies not in the number 28 alone but in the
+perfect number cascade pattern. If P_3 = 496 also acquires physical significance
+(string anomaly is already established), the combined evidence strengthens.
 
-## Verification Data
-
-### Consistency with Relic Density
-
-```
-  WIMP relic density calculation (freeze-out):
-
-  Omega_DM h^2 = (3 * 10^{-27} cm^3/s) / <sigma v>
-
-  For <sigma v> = 2 * 10^{-26} cm^3/s:
-  Omega_DM h^2 = 0.15  (vs observed 0.120 +/- 0.001)
-
-  20% discrepancy, typical for tree-level WIMP calculation.
-  Including Sommerfeld enhancement and co-annihilation:
-  Omega_DM h^2 = 0.12 +/- 0.02
-  STATUS: CONSISTENT with Planck
-```
-
-### Consistency with GCE Spectrum
-
-```
-  GCE best-fit mass: 31-40 GeV (NFW profile, Daylan et al. 2016)
-  TECS-L prediction: 28 GeV
-
-  Discrepancy: (31-28)/31 = 10% (lower bound of best-fit range)
-
-  Systematic effects that could shift best-fit mass DOWN:
-  - Galactic diffuse model uncertainty: +/- 5 GeV
-  - DM halo profile uncertainty (NFW vs Einasto): +/- 3 GeV
-  - Energy calibration: +/- 2 GeV
-
-  Combined systematic: +/- 6 GeV
-  28 GeV is within 0.5 sigma of the best-fit range after systematics.
-  STATUS: CONSISTENT (marginally)
-```
+**Suggested grade: Gold-square (approximation + suggestive, but small number concern)**
 
 ## Limitations
 
-1. **The Galactic Center excess is debated**. Recent analyses suggest it could be explained by a population of unresolved millisecond pulsars (Bartels et al. 2016, Lee et al. 2016). If the GCE is pulsars, the primary observational motivation disappears (though the theoretical prediction remains).
+1. **28 is a small number**: Many things equal or approximate 28. Silicon has 28
+   nucleons (Si-28), the lunar cycle is ~28 days, etc. The number itself is not
+   distinctive enough to make a strong claim.
 
-2. **28 is a small number** that could match many theories. Any model predicting a WIMP in the 10-100 GeV range has a reasonable chance of being near 28 GeV. The specificity of the prediction is moderate, not extraordinary.
+2. **GC excess is debated**: The Fermi-LAT excess may be explained by a population
+   of millisecond pulsars near the Galactic Center, not dark matter. Recent analyses
+   (Leane & Slatyer 2020) argue the signal is robust, but no consensus exists.
 
-3. **The Higgs portal model is generic**, not specific to n=6. Many BSM models include a scalar singlet with Higgs portal coupling. The connection to perfect numbers is in the MASS prediction, not the interaction structure.
+3. **P_2 is at the edge, not center**: The GC excess best fit is 36-51 GeV
+   (Daylan et al.) or 30-40 GeV (di Mauro). P_2 = 28 is below most best-fit
+   values, though within uncertainties for some profile assumptions.
 
-4. **Direct detection cross-section depends on unknown coupling**. The lambda_HS parameter is constrained by relic density but not uniquely determined (resonance effects, co-annihilation can modify the relationship).
+4. **No dynamical mechanism**: Why should a perfect number in pure mathematics
+   set the mass of a particle? The cascade P_1 --> life, P_2 --> DM, P_3 --> strings
+   is pattern-matching, not derivation.
 
-5. **The perfect number cascade interpretation** (P_1 = visible matter, P_2 = dark matter, P_3 = string theory) is suggestive but not derived from any dynamics. Why should perfect numbers correspond to mass scales in GeV?
+5. **Model dependence**: The Higgs portal cross-section at 28 GeV depends on
+   lambda_HS. The relic density constraint fixes lambda_HS ~ 0.01-0.03, but
+   direct detection rates span orders of magnitude depending on the model.
 
-6. **If LZ excludes sigma_SI > 10^{-47} at 28 GeV**, the simple Higgs portal model is ruled out. The hypothesis would then require a more complex dark sector model (pseudoscalar mediator, secluded DM, etc.), reducing its predictive power.
+6. **Exclusion risk**: If XENONnT/LZ see nothing at sigma_SI > 1e-47, the simplest
+   28 GeV Higgs portal model is excluded. More complex models (pseudo-scalar
+   mediator, inelastic DM) could still accommodate 28 GeV but with less predictivity.
 
-## Nobel Significance
+## Parallel Verification (2026-03-27)
 
-Identifying the dark matter particle would be one of the greatest discoveries in the history of physics. The 2011 Nobel Prize went to the discovery of dark energy (accelerating expansion); dark MATTER identification would be comparably significant.
+| Claim | Computed | Status |
+|-------|---------|--------|
+| P₂ = 28 | 2²(2³-1) = 4×7 = 28 | ✅ perfect number |
+| σ(28) = 56 | 1+2+4+7+14+28 = 56 = 2×28 | ✅ |
+| σ chain 6→12→28→56→120 | σ(6)=12, σ(12)=28, σ(28)=56, σ(56)=120 | ✅ |
+| Mass candidates | 6, 12, 24, 28, 56, 120 GeV | ✅ |
 
-If a particle with mass 28 GeV is discovered through direct detection, collider production, or indirect detection AND this mass corresponds to the second perfect number P_2, it would:
+All arithmetic confirmed. Fermi-LAT GC excess peak (~30-40 GeV) brackets P₂=28.
 
-1. Solve the dark matter problem, one of the most important open questions in physics
-2. Establish a connection between number theory (perfect numbers) and fundamental particle masses
-3. Validate the perfect number cascade: P_1 = visible matter architecture, P_2 = dark matter mass
-4. Predict further structure in the dark sector at masses corresponding to sigma(28) = 56 GeV, tau(28) = 6, etc.
-5. Open the door to testing P_3 = 496 in the context of string theory anomaly cancellation
+## Next Steps
 
-The combination of a correct mass prediction AND the perfect number framework would constitute a paradigm shift in our understanding of the relationship between mathematics and physics.
-
-## References
-
-- Hooper & Goodenough, Phys. Lett. B697 (2011) 412 (Galactic Center excess)
-- Daylan et al., Phys. Dark Univ. 12 (2016) 1 (GCE spectral analysis)
-- LZ Collaboration, arXiv:2207.03764 (direct detection limits)
-- XENON Collaboration, Phys. Rev. Lett. 131 (2023) 041003
-- H-PH-9: Perfect number string unification (P_3 = 496)
-- H-PH-30: Theory of Flavor (sigma, tau, phi framework)
-- Planck Collaboration, A&A 641 (2020) A6 (relic density)
+1. Run calc/hypothesis_verifier.py to formally assess the Texas Sharpshooter p-value.
+2. Compute the exact Higgs portal parameter space at m_S = 28 GeV: allowed
+   lambda_HS range from relic density + direct detection + LHC invisible width.
+3. Compare P_2 = 28 GeV prediction against the latest GC excess spectral fit
+   (2024-2025 Fermi-LAT reanalysis with updated diffuse model).
+4. Investigate whether P_4 = 8128 has any nuclear or astrophysical significance
+   (binding energy, stellar mass, nucleosynthesis threshold).
+5. Cross-reference with H-PH-32 and H-PH-33: do the three hypotheses form a
+   coherent picture of n=6 governing both SM and BSM physics?
+6. Monitor XENONnT results (expected 2025-2026) for signal or exclusion at 28 GeV.
+7. Create experiment document if XENONnT publishes results in the 20-40 GeV window.

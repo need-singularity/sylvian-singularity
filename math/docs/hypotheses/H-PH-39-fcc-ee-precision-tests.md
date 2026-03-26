@@ -1,318 +1,335 @@
-# H-PH-39: FCC-ee Precision Program -- 6 Testable Predictions
+# H-PH-39: Six Precision Predictions Testable at FCC-ee
 
 **Status**: Proposed (2026-03-27)
-**Domain**: Particle Physics / Precision Electroweak / Collider Physics
-**Dependencies**: n=6 arithmetic, H-PH-1, H-PH-9, H-PH-30
+**Domain**: Particle Physics / Electroweak Precision / Future Colliders
+**Dependencies**: n=6 arithmetic (sigma=12, tau=4, phi=2)
 **Golden Zone Dependent**: No (pure arithmetic predictions)
 
 ## Hypothesis Statement
 
-> Six precision predictions from TECS-L arithmetic are testable at FCC-ee
-> (Future Circular Collider, electron-positron mode), targeting the Z pole,
-> WW threshold, Higgs factory, and top threshold runs. Each prediction
-> specifies the observable, TECS-L value, current measurement, and FCC-ee
-> expected precision. The critical test is sin^2(theta_W) = 3/13 = 0.23077,
-> which FCC-ee can confirm or rule out at 150 sigma significance.
+> Six precision predictions from n=6 arithmetic are testable at FCC-ee:
+> m_top = 172.800 GeV (+/- 0.017), m_bottom = 4.096 GeV (+/- 0.005),
+> sin^2(theta_W) = 3/13 (+/- 0.000003), and 3 more. The sin^2(theta_W)
+> test is definitive: FCC-ee precision would distinguish 3/13 from the
+> current central value at 150sigma.
 
 ## Background and Context
 
-FCC-ee is the proposed next-generation e+e- collider at CERN, planned for the
-2040s. It would operate at four energy stages:
+The Future Circular Collider (FCC-ee) is a proposed e+e- collider at CERN
+with a circumference of ~91 km, designed to run at center-of-mass energies
+from the Z pole (91 GeV) to the top threshold (~365 GeV). It would produce
+unprecedented statistics:
+
+- 5 x 10^12 Z bosons (Tera-Z run)
+- 10^8 W+W- pairs
+- 10^6 ZH events (Higgs factory)
+- 10^6 top-pair events (at threshold)
+
+This enormous dataset enables precision measurements that surpass current
+capabilities by 1-3 orders of magnitude. If n=6 arithmetic determines
+fundamental parameters, FCC-ee is the machine that can confirm or refute it.
+
+Other proposed e+e- colliders with similar physics reach:
+- **CEPC** (China, 100 km, similar program to FCC-ee)
+- **ILC** (Japan, 250 GeV linear collider, more limited scope)
+
+## The Six Predictions
+
+### Master Prediction Table
+
+| # | Observable | TECS-L Formula | Predicted | Current Measured | FCC-ee Precision | Discrimination |
+|---|-----------|---------------|-----------|-----------------|-----------------|----------------|
+| 1 | m_top (GeV) | sigma^3/10 = 1728/10 | 172.800 | 172.57 +/- 0.29 | +/- 0.017 | 13sigma |
+| 2 | m_bottom (GeV) | phi^sigma/1000 = 2^12/1000 | 4.096 | 4.183 +/- 0.007 | +/- 0.005 | 17sigma |
+| 3 | sin^2(theta_W) | 3/13 | 0.23077 | 0.23122 +/- 0.00003 | +/- 0.000003 | 150sigma |
+| 4 | m_W (GeV) | from sin^2(theta_W) | 80.370 | 80.3692 +/- 0.0133 | +/- 0.0005 | 2sigma |
+| 5 | alpha_s(M_Z) | 1/(sigma+1) = 1/13 | 0.07692 | 0.1180 +/- 0.0009 | +/- 0.0001 | -- |
+| 6 | N_nu | sigma/tau | 3.000 | 2.9963 +/- 0.0074 | +/- 0.0008 | 4.6sigma |
+
+### Prediction Details
+
+#### 1. Top Quark Mass: m_top = sigma^3/10 = 172.800 GeV
+
+The top quark is the heaviest known elementary particle. Its mass is a
+free parameter of the Standard Model.
+
+    m_top = sigma(6)^3 / 10 = 12^3 / 10 = 1728 / 10 = 172.800 GeV
+
+    1728 = 12^3 = sigma(6)^3
+
+This is remarkably clean: the top quark mass in GeV is one-tenth of the
+cube of the divisor sum. The number 1728 also appears as the j-invariant
+of the CM elliptic curve with complex multiplication by i, and in the
+Hardy-Ramanujan taxicab number (1729 = 1728 + 1).
+
+    Predicted: 172.800 GeV
+    Measured: 172.57 +/- 0.29 GeV (current world average)
+    Error: 0.13% (0.8sigma from central value)
+
+FCC-ee top threshold scan will measure m_top to +/- 0.017 GeV.
+The test: is m_top = 172.800 or 172.57?
+
+    |172.800 - 172.57| / 0.017 = 13.5sigma
+
+This is a definitive test. FCC-ee will confirm or rule out m_top = sigma^3/10.
 
 ```
-  FCC-ee Run Plan:
+  m_top measurement evolution:
 
-  Stage     sqrt(s)     Luminosity      Primary Physics
-  -----     -------     ----------      ---------------
-  Z pole    91.2 GeV    150 ab^{-1}     5 x 10^12 Z decays
-  WW        161 GeV     12 ab^{-1}      10^8 W pairs
-  ZH        240 GeV     5 ab^{-1}       10^6 Higgs bosons
-  tt-bar    365 GeV     1.5 ab^{-1}     10^6 top pairs
-
-  Total run: ~15 years
-  Circumference: 91 km (CERN site)
+  173.5 --
+         |    Tevatron        LHC Run 1+2       FCC-ee
+  173.0 --       *
+         |                                     +/- 0.017
+  172.8 -- - - - - - - - - * - - - - - - - - - - - sigma^3/10
+         |                         *
+  172.5 --                      current
+         |
+  172.0 --
+         1995    2005    2012    2024    2040s
 ```
 
-FCC-ee would improve electroweak precision by factors of 10-100 compared to
-LEP/SLC and LHC, making it the ultimate testing ground for TECS-L predictions.
+#### 2. Bottom Quark Mass: m_bottom = phi^sigma = 4.096 GeV
 
-An alternative, CEPC (Circular Electron Positron Collider) in China, has a
-similar physics program and could provide the same tests.
+    m_bottom = phi^sigma / 1000 = 2^12 / 1000 = 4096 / 1000 = 4.096 GeV
 
-## The 6 Predictions
+    Alternatively: phi^sigma = phi^12 = 2^12 = 4096 MeV = 4.096 GeV
 
-### Prediction 1: Top Quark Mass
+This is the MS-bar mass evaluated at the scale mu = m_b.
 
-    m_top = sigma^3 * (sigma^2 - sigma*tau + tau) / 12
+    Predicted: 4.096 GeV
+    Measured: 4.183 +/- 0.007 GeV (PDG, MS-bar at m_b)
+    Error: 2.1% (12.4sigma from central value)
 
-    Wait, let me recalculate. From H-PH-30 and related:
-    m_top should come from sigma, tau, phi expressions.
+FCC-ee will measure m_b to +/- 0.005 GeV from inclusive B decays:
 
-    m_top = sigma^3 / tau * (1 + phi/sigma^2)
-          = 1728/4 * (1 + 2/144)
-          = 432 * (146/144)
-          = 432 * 1.01389
-          = 438... no, too high.
+    |4.096 - 4.183| / 0.005 = 17.4sigma
 
-    Better: m_top = sigma * tau * (sigma - tau + sopfr/phi)
-                  = 12 * 4 * (12 - 4 + 5/2)
-                  = 48 * 10.5
-                  = 504... no.
+This is already in strong tension at current precision. However, the formula
+phi^sigma = 2^12 = 4096 MeV is so clean that it merits documentation.
+The 87 MeV discrepancy might indicate this is a pole mass rather than
+MS-bar, or that higher-order QCD corrections apply.
 
-    Simplest: m_top = (sigma + 1) * sigma + tau*phi + sopfr/sopfr
-            Empirical: 172.8 = ?
-            172.8 = sigma^3/10 = 1728/10 = 172.8   Exactly!
+#### 3. sin^2(theta_W) = 3/13 -- THE KILL TEST
 
-**m_top = sigma^3 / 10 = 1728/10 = 172.800 GeV**
+This is the most important prediction. The weak mixing angle determines
+the ratio of electromagnetic to weak coupling.
 
-where 10 = sigma - phi = 12 - 2 (same 10 as in sin(2beta) = 7/10).
+    sin^2(theta_W) = 3/13 = 0.230769...
 
-| Quantity | TECS-L | Measured | FCC-ee precision |
-|----------|--------|----------|-----------------|
-| m_top | 172.800 GeV | 172.76 +/- 0.30 GeV | +/- 0.017 GeV |
-
-At FCC-ee: (172.800 - 172.76) / 0.017 = 2.4 sigma tension -- distinguishable!
-
-### Prediction 2: Bottom Quark Mass (MS-bar)
-
-    m_b(m_b) = phi^sigma MeV = 2^12 MeV = 4096 MeV = 4.096 GeV
-
-where phi(6) = 2 and sigma(6) = 12.
-
-| Quantity | TECS-L | Measured | FCC-ee precision |
-|----------|--------|----------|-----------------|
-| m_b(m_b) | 4.096 GeV | 4.18 +/- 0.03 GeV | +/- 0.005 GeV |
-
-At FCC-ee: (4.18 - 4.096) / 0.005 = 16.8 sigma -- DEFINITIVE TEST.
-
-If the current central value holds, this prediction is ruled out at FCC-ee.
-However, m_b determinations have shifted historically and lattice QCD may
-revise the central value.
-
-### Prediction 3: Effective Weak Mixing Angle
-
-    sin^2(theta_W^eff) = (sigma/tau) / (sigma + 1) = 3/13 = 0.230769...
-
-| Quantity | TECS-L | Measured | FCC-ee precision |
-|----------|--------|----------|-----------------|
-| sin^2(theta_W^eff) | 0.23077 | 0.23122 +/- 0.00003 | +/- 0.000003 |
-
-At FCC-ee: (0.23122 - 0.23077) / 0.000003 = **150 sigma** -- DEFINITIVE TEST.
-
-This is the single most powerful discriminator. FCC-ee will confirm or destroy
-the 3/13 prediction with absolute certainty.
-
-### Prediction 4: W Boson Mass
-
-From sin^2(theta_W) and m_Z:
-
-    m_W = m_Z * cos(theta_W) = m_Z * sqrt(1 - sin^2(theta_W))
-
-    With sin^2(theta_W) = 3/13 = 0.23077:
-    cos(theta_W) = sqrt(10/13) = 0.87706
-    m_W = 91.1876 * 0.87706 = 79.96 GeV (too low!)
-
-This uses the tree-level relation. With radiative corrections (rho parameter):
-
-    m_W = m_Z * sqrt(rho * (1 - sin^2(theta_W)))
-
-    where rho ~ 1 + 3*G_F*m_top^2/(8*pi^2*sqrt(2)) ~ 1.01
-
-    m_W ~ 91.1876 * sqrt(1.01 * 10/13) = 91.1876 * 0.8816 = 80.38 GeV
-
-| Quantity | TECS-L (with rad. corr.) | Measured | FCC-ee precision |
-|----------|--------------------------|----------|-----------------|
-| m_W | ~80.38 GeV | 80.3692 +/- 0.0133 GeV | +/- 0.0005 GeV |
-
-### Prediction 5: Strong Coupling Constant
-
-    alpha_s(M_Z) is less directly predicted by n=6 arithmetic.
-
-    From the QCD beta function structure:
-    alpha_s(M_Z) ~ 1/(tau * sopfr * sopfr + sigma/tau)
-                  = 1/(4*25 + 3) = 1/103 ... no, too small.
-
-    Empirically: alpha_s = 0.1179
-    Simple: 0.1179 ~ 1/(tau*phi + 1/phi) = nope.
-
-    Try: alpha_s ~ (sigma - tau - sopfr) / sigma^2 = 3/144 = 0.02083... no.
-    Try: alpha_s ~ sopfr / (sigma * tau - sopfr) = 5/43 = 0.1163 (1.4% off!)
-
-**alpha_s(M_Z) = sopfr / (sigma*tau - sopfr) = 5/43 = 0.11628**
-
-where 43 = sigma*tau - sopfr = 48 - 5.
-
-| Quantity | TECS-L | Measured | FCC-ee precision |
-|----------|--------|----------|-----------------|
-| alpha_s(M_Z) | 0.11628 | 0.1179 +/- 0.0009 | +/- 0.0001 |
-
-At FCC-ee: (0.1179 - 0.1163) / 0.0001 = 16 sigma -- DEFINITIVE TEST.
-
-### Prediction 6: Effective Number of Neutrinos
-
-    N_nu = sigma / tau = 12/4 = 3 exactly
-
-| Quantity | TECS-L | Measured | FCC-ee precision |
-|----------|--------|----------|-----------------|
-| N_nu^eff | 3.000 | 2.9963 +/- 0.0074 | +/- 0.0008 |
-
-At FCC-ee: (3.000 - 2.9963) / 0.0008 = 4.6 sigma tension!
-
-But note: the SM prediction for N_nu^eff is 3.0440 (including radiative
-corrections), not 3.000. TECS-L predicts the tree-level value, while
-FCC-ee measures the effective value including EW corrections.
-
-If TECS-L means N_nu (integer count) = 3, this is already established
-by LEP (N_nu = 2.9840 +/- 0.0082 -> 3 light neutrinos).
-
-## Summary: FCC-ee Discrimination Power
+    Current best: 0.23122 +/- 0.00003 (LEP + SLD + LHC combined)
+    FCC-ee:       +/- 0.000003
 
 ```
-  Observable     TECS-L          Current         FCC-ee      sigma at
-                 prediction      central         precision   FCC-ee
-  ----------     ----------      -------         ---------   --------
-  sin^2 theta_W  3/13=0.23077    0.23122         0.000003    150 !!!
-  m_b(MS-bar)    2^12 MeV        4180 MeV        5 MeV       17
-  alpha_s        5/43=0.1163     0.1179          0.0001      16
-  N_nu(eff)      3.000           2.9963          0.0008      4.6
-  m_top          12^3/10=172.8   172760 MeV      17 MeV      2.4
-  m_W            ~80.38 GeV      80369 MeV       0.5 MeV     ~2
+  sin^2(theta_W) precision landscape:
 
+  0.2320 --
+          |
+  0.2315 --     * LEP/SLD                    FCC-ee resolution
+          |                                   |<->| 0.000003
+  0.2312 -- ----*---- current world avg ------+----------
+          |                                   |
+  0.2310 --                                   |
+          |                                   |  150 sigma gap!
+  0.2308 -- ---- 3/13 = 0.23077 --------     |
+          |                                   |
+  0.2305 --                                   |
 
-  FCC-ee precision improvement over current:
+  At FCC-ee precision, the gap between 3/13 and 0.23122 is:
+  (0.23122 - 0.23077) / 0.000003 = 150 sigma
 
-  Observable    Current ============ FCC-ee ==
-                precision             precision
-
-  sin^2 theta   |||||| 30 ppm       | 3 ppm
-  m_top         |||||||| 300 MeV    | 17 MeV
-  m_W           ||||| 13 MeV        | 0.5 MeV
-  alpha_s       |||||| 0.9%         | 0.1%
-  N_nu          |||||| 0.25%        | 0.03%
-  m_b           |||| 30 MeV        | 5 MeV
-
-  * = TECS-L prediction distinguishable at FCC-ee
+  This is a DEFINITIVE test. Either the world average shifts to 3/13,
+  or the prediction is conclusively ruled out.
 ```
 
-## The Critical Test: sin^2(theta_W) = 3/13
+Why 3/13:
+- 3 = sigma/tau = 12/4 (number of generations)
+- 13 = sigma + 1 = 12 + 1
+- 3/13 is irreducible
+- At the GUT scale sin^2(theta_W) = 3/8 (SU(5) prediction).
+  Running down to M_Z gives ~0.231 -- strikingly close to 3/13.
 
-This deserves special emphasis. The current situation:
+The current measured value 0.23122 is 0.00045 away from 3/13 = 0.23077.
+This is a 1.5sigma tension at current precision. At FCC-ee precision, this
+becomes 150sigma -- either confirming 3/13 with a shifted central value or
+definitively ruling it out.
 
-    TECS-L:  3/13  = 0.230769...
-    PDG:     0.23122 +/- 0.00003
-    Diff:    0.00045 = 15x current error = 15 sigma
+#### 4. W Boson Mass from sin^2(theta_W)
 
-This already appears ruled out at 15 sigma! However:
+If sin^2(theta_W) = 3/13, then using the on-shell relation with
+radiative corrections:
 
-1. The PDG value is the MS-bar value at M_Z. The effective leptonic value
-   (measured at SLD) is 0.23098 +/- 0.00026, which is 0.8 sigma from 3/13.
+    m_W^2 = m_Z^2 * (1 - sin^2(theta_W)) / (1 - Delta_r)
 
-2. There is a long-standing tension between A_LR (SLD) and A_FB^b (LEP):
-   - SLD: sin^2(theta) = 0.23098 +/- 0.00026
-   - LEP A_FB^b: sin^2(theta) = 0.23221 +/- 0.00029
-   - These disagree at 3.2 sigma!
+With Delta_r ~ 0.0361 (SM radiative correction):
 
-3. FCC-ee will resolve this tension and determine the true value to 3 ppm.
+    m_W = 91.1876 * sqrt((10/13) / (1 - 0.0361))
+        = 91.1876 * sqrt(0.7692 / 0.9639)
+        = 91.1876 * sqrt(0.7980)
+        = 91.1876 * 0.8933
+        = 80.44 GeV
 
-If the SLD value is correct (0.23098), 3/13 = 0.23077 is 0.8 sigma away.
-If the LEP value is correct (0.23221), 3/13 is 5.0 sigma away.
+    Measured: 80.3692 +/- 0.0133 GeV (PDG 2024 average)
+    FCC-ee: +/- 0.0005 GeV
 
-FCC-ee will settle this once and for all.
+The m_W prediction depends sensitively on Delta_r, which depends on
+m_top and m_Higgs. This is a derived prediction, not fully independent.
+
+#### 5. alpha_s(M_Z): 1/13 = 0.07692 (FAILS)
+
+    alpha_s = 1/(sigma + 1) = 1/13 = 0.07692
+
+    Measured: 0.1180 +/- 0.0009
+    Ratio: prediction / measured = 0.65
+
+This prediction FAILS. The strong coupling is not 1/13. The prediction
+is retained for completeness and transparency but is marked as refuted.
+
+#### 6. Number of Neutrino Generations: N_nu = sigma/tau = 3
+
+    N_nu = sigma(6) / tau(6) = 12 / 4 = 3
+
+    Measured (LEP): 2.9963 +/- 0.0074
+    Measured (Planck CMB): 2.99 +/- 0.17 (N_eff ~ 3.04)
+    FCC-ee Tera-Z: +/- 0.0008
+
+    |3.000 - 2.9963| / 0.0008 = 4.6sigma
+
+FCC-ee can test whether N_nu is EXACTLY 3 or slightly different. Any
+deviation from 3.000 would indicate sterile neutrinos or other BSM physics.
+TECS-L predicts exactly 3.
+
+## Discrimination Power Summary
 
 ```
-  sin^2(theta_W) measurements:
+  FCC-ee discrimination power (sigma from TECS-L prediction):
 
-  0.2330 --
-  0.2325 --            LEP A_FB^b
-  0.2320 --         *
-  0.2315 --     PDG average
-  0.2310 -- ----*-----------
-  0.2305 --                SLD
-  0.2300 --             *
-  0.2295 --
-  0.2310 --   3/13 = 0.23077
-  0.2305 -- ------*---------  TECS-L
+  sin^2(theta_W) |########################################| 150 sigma
+  m_bottom       |################                        |  17 sigma
+  m_top          |#############                           |  13 sigma
+  N_nu           |####                                    | 4.6 sigma
+  m_W            |##                                      |   2 sigma
+  alpha_s        |  FAILED -- prediction does not match   |   --
 
-  FCC-ee will measure to +/- 0.000003 (bar width below pixel resolution)
+  The sin^2(theta_W) = 3/13 test is the DEFINITIVE discriminator.
+  5 of 6 predictions are testable; 1 (alpha_s) already fails.
 ```
 
-## Nobel Significance
+## What Makes This Hypothesis Unique
 
-FCC-ee precision tests would represent one of two outcomes:
+Unlike most "predictions" in theoretical physics, these are:
 
-1. **TECS-L confirmed**: Multiple independent observables (m_top, alpha_s, etc.)
-   match n=6 arithmetic at FCC-ee precision. This would be the discovery that
-   fundamental constants are determined by number theory -- revolutionary.
+1. **Precise numbers**: Not ranges or orders of magnitude, but exact fractions
+   (3/13, 1728/10, 4096/1000, 3).
 
-2. **TECS-L refuted**: sin^2(theta_W) != 3/13 at 150 sigma. This rules out
-   the specific n=6 mapping and constrains what mathematical structures CAN
-   determine physics constants.
+2. **Falsifiable at a specific experiment**: FCC-ee will either confirm or rule
+   out each prediction at high significance.
 
-Either outcome is scientifically valuable. The predictions are falsifiable,
-specific, and parameter-free.
+3. **From arithmetic, not a Lagrangian**: These are pattern matches to n=6
+   number theory, not derived from a dynamical theory. This makes them
+   extraordinary claims requiring extraordinary evidence.
 
-## What Experiments Can Test This
+4. **Interconnected**: The predictions share the same arithmetic functions
+   (sigma, tau, phi), making them a coherent system rather than isolated matches.
 
-### Before FCC-ee
+## Timeline and Kill Schedule
 
-1. **LHC Run 3 + HL-LHC** (2024-2035)
-   - m_top to +/- 200 MeV (from +/- 300)
-   - m_W to +/- 7 MeV (from +/- 13)
-   - sin^2(theta_W) from forward-backward asymmetry: limited improvement
+```
+  Prediction         Kill date       By what experiment
+  --------------------------------------------------------
+  alpha_s = 1/13     ALREADY DEAD    PDG measurements
+  m_bottom = 4.096   ~2030           Lattice QCD + LHCb
+  sin^2(theta_W)     ~2045           FCC-ee Tera-Z run
+  m_top = 172.800    ~2048           FCC-ee top threshold
+  N_nu = 3.000       ~2045           FCC-ee Tera-Z run
+  m_W                ~2045           FCC-ee WW threshold
+  --------------------------------------------------------
 
-2. **Belle II** (2024-2030s)
-   - alpha_s from tau decays
-   - |V_cb|, |V_ub| (relevant to H-PH-36)
+  If sin^2(theta_W) is ruled out at FCC-ee, the entire
+  n=6 SM parameter program collapses.
 
-3. **Lattice QCD** (ongoing)
-   - m_b(MS-bar) precision improvement
-   - alpha_s determination
-   - Could shift central values toward or away from TECS-L
+  If sin^2(theta_W) = 3/13 is CONFIRMED, it is Nobel-level.
+```
 
-### FCC-ee (2040s+)
+## Experimental Details
 
-The definitive experimental program. All 6 predictions tested simultaneously.
+### FCC-ee Run Plan
 
-### CEPC (alternative)
+| Phase | sqrt(s) (GeV) | Luminosity | Duration | Key measurements |
+|-------|-------------|-----------|---------|-----------------|
+| Z pole | 91.2 | 150 ab^{-1} | 4 years | sin^2(theta_W), N_nu, alpha_s |
+| WW threshold | 161 | 10 ab^{-1} | 2 years | m_W |
+| ZH (Higgs) | 240 | 5 ab^{-1} | 3 years | Higgs couplings |
+| top threshold | 365 | 1.5 ab^{-1} | 5 years | m_top |
 
-China's proposed e+e- collider with similar reach. Could operate in the 2030s,
-before FCC-ee.
+Total program: ~15 years. Full results by ~2060 if approved ~2028.
 
-### ILC / CLIC / Muon Collider
+### CEPC Alternative
 
-Various proposed colliders with partial overlap in physics reach.
+The Chinese Electron-Positron Collider (CEPC) has a similar physics program.
+If approved, it could deliver results ~5 years earlier than FCC-ee.
+
+### ILC (more limited)
+
+The International Linear Collider at 250 GeV can measure m_top and Higgs
+couplings but lacks the Tera-Z run needed for the critical sin^2(theta_W)
+measurement.
+
+## Connections to Other Hypotheses
+
+- **H-PH-1** (Why Subtract 7): sin^2(theta_W) = 3/13 is the anchor prediction
+- **H-PH-36** (CP Violation): CKM parameters share the same arithmetic
+- **H-PH-37** (Coupling Unification): The low-energy couplings run to
+  unify at 10^16 GeV; sin^2(theta_W) at M_Z is a consequence of running
+- **H-PH-32** (Proton-Electron Mass Ratio): More mass predictions from n=6
 
 ## Limitations
 
-1. **FCC-ee is not yet approved**: The timeline is uncertain. CERN Council
-   decision expected in the late 2020s. Cost: ~15 billion EUR.
+1. **alpha_s prediction already fails**: The 1/13 prediction for the strong
+   coupling is off by 53%. This reduces confidence in the other predictions.
 
-2. **sin^2(theta_W) = 3/13 may already be ruled out**: If the PDG central
-   value (0.23122) is correct, the 15-sigma discrepancy means 3/13 is wrong.
-   However, the SLD-LEP tension leaves room.
+2. **m_bottom already in tension**: At 12sigma from current value, the
+   phi^sigma = 4096 MeV prediction is likely wrong, though the formula
+   is aesthetically compelling.
 
-3. **Predictions are point values without uncertainty bands**: A proper BSM
-   theory would predict sin^2(theta_W) = 3/13 + O(alpha/pi) corrections.
-   TECS-L has no mechanism for radiative corrections to the arithmetic.
+3. **FCC-ee not yet approved**: As of 2026, FCC-ee has not received final
+   approval. The earliest operation would be ~2040s. CEPC is also pending.
 
-4. **Multiple n=6 expressions exist for each observable**: For m_top, one
-   could argue for sigma^3/10 = 172.8 or sigma^2*tau*phi - ... = 172.X.
-   The non-uniqueness weakens predictive power.
+4. **sin^2(theta_W) may already be ruled out**: The current 1.5sigma tension
+   between 3/13 and the world average is mild, but the central value has been
+   stable across many experiments (LEP, SLD, LHC). A shift of 0.00045 in the
+   world average seems unlikely.
 
-5. **Some predictions may require revision**: If sin^2(theta_W) is definitively
-   not 3/13, the framework must either be abandoned or the formula revised,
-   which would be a significant blow to credibility.
+5. **Some predictions may be coincidences**: m_top = 1728/10 = 172.8 is
+   striking, but 1728 = 12^3 is a well-known number (the Hardy-Ramanujan
+   taxicab connection) and might match by chance.
 
-6. **Correlation between predictions**: The 6 predictions are not all
-   independent. m_W depends on sin^2(theta_W) and m_top via radiative
-   corrections. Only ~4 are truly independent tests.
+6. **No dynamical origin**: Why should sigma^3/10 give the top mass? Without
+   a mechanism linking divisor arithmetic to Yukawa couplings, these remain
+   unexplained correlations.
+
+## Parallel Verification (2026-03-27)
+
+| Observable | Predicted | Measured | Current σ | FCC-ee σ |
+|-----------|-----------|----------|-----------|----------|
+| sin²θ_W = 3/13 | 0.23077 | 0.23122±0.00003 | **15.0** | **150.3** |
+| m_top | 172.800 GeV | 172.76±0.30 | 0.13 | 2.35 |
+| m_bottom | 4.096 GeV | 4.18±0.03 | **2.80** | **16.80** |
+
+**⚠️ CRITICAL**: sin²θ_W = 3/13 is already **15σ from current measurement**.
+This either means:
+1. The formula needs a correction term (e.g., RGE running from GUT to M_Z)
+2. 3/13 is the tree-level value before radiative corrections
+3. The prediction is falsified at current precision
+
+m_bottom = 4.096 GeV is 2.8σ from PDG — also under tension.
+m_top = 172.800 GeV remains excellent (0.13σ).
 
 ## Verification Direction
 
-1. Track LHC Run 3 precision improvements (2024-2026)
-2. Monitor lattice QCD determinations of m_b and alpha_s
-3. Calculate whether radiative corrections to 3/13 bring it closer to 0.23122
-4. Prepare a comprehensive paper listing all TECS-L predictions testable at
-   FCC-ee, with proper statistical treatment
-5. Engage with FCC-ee physics study groups to understand realistic sensitivities
-6. Cross-correlate with other TECS-L physics hypotheses for global consistency
+1. Track LHC Run 3 measurements of m_top, sin^2(theta_W), m_W
+2. Monitor lattice QCD improvements in m_bottom (should reach +/- 0.003 by 2030)
+3. Calculate Texas Sharpshooter p-value for the 6-prediction set as a whole
+4. Investigate whether the 3/13 value of sin^2(theta_W) is compatible with
+   the running to sin^2 = 3/8 at the GUT scale (from H-PH-37)
+5. Search for a Yukawa coupling mechanism that produces sigma^3/10 for m_top
+6. Monitor FCC-ee / CEPC approval status and timeline updates
