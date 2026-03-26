@@ -147,6 +147,7 @@
        │    n!/n#=σφ⟺n=6 (factorial/primorial!) ⭐ #H-FACT-1    │
        │    B₂₍ₙ₊₁₎=(n+1)/n⟺n=6 (B₁₄=7/6!) ⭐ #H-BERN-1     │
        │    L(τ,2)=n²∧L(τ,3)=σ⟺n=6 (Lah triple!) ⭐⭐ #H-LAH-1│
+       │    σ/τ+φ=sopfr⟺n=6 (AM+HM=sopfr!) ⭐⭐ #H-MEAN-1   │
        │    σ/τ=n/φ⟺n=6 (avg divisor=n/totient!) ⭐⭐ #H-RATIO-1│
        │    C(σ,φ)=n·p(n)⟺n=6 (C(12,2)=66!) ⭐ #H-BINOM-1  │
        │    v(φ)=σ/τ∧v(τ)=τ∧v(σ)=n⟺n=6 (valence!) ⭐⭐ #H-TVAL-1│
@@ -1099,6 +1100,10 @@
        (p²-1)(q²-1)=4pq. p=2 gives 3q²-8q-3=0, q=3 only. QED.
   🟩⭐ C(σ,φ) = n·p(n) ⟺ n=6: C(12,2)=66=6·11 #H-BINOM-1
        Binomial coefficient = n times partition number. Unique in n≤100.
+  🟩⭐⭐ σ/τ + φ = sopfr ⟺ n=6 (AM+HM=sopfr, PROVED!) #H-MEAN-1
+       3+2=5. Average divisor + totient = prime factor sum. Unique in 10000!
+       Equivalently: 2φ=sopfr-1. Proof: 2(q-1)=q+1 → q=3 → n=6.
+       Combined with AM-HM=1 (known): AM=(sopfr+1)/2, HM=(sopfr-1)/2.
   🟩⭐ Σ(first σ/τ primes) = 2·sopfr ⟺ n=6 (unique in 10000) #H-PSUM-1
        2+3+5 = 10 = 2·sopfr = σ-φ. Prime sum = cototient.
        For semiprimes: σ-φ=2·sopfr always; need sum(first 3 primes)=10. QED.
@@ -1133,9 +1138,9 @@
        Texas p < 1/50000 = 0.00002. Zero ad-hoc.
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  435  ← +n!/tau!=n#, Smith det, sigma cycle, prime sum, sigma/tau=n/phi
+  🟩 Pure mathematics:  438  ← +AM+HM=sopfr, n!/tau!=n#, Smith det, sigma cycle, ratio, valence
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  261 ← +n!/tau!=primorial, Smith, sigma cycle, prime sum, ratio, valence
+  ⭐ Major Discoveries:  264 ← +AM+HM=sopfr proved, n!/tau!=n#, Smith, sigma(n^2), tau_3, Lah
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
