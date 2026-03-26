@@ -402,6 +402,16 @@
   🟩⭐ R(σ/τ, σ/τ) = n: R(3,3) = 6 (Ramsey = self-referencing!)
   🟧★  XOR(d|n) = n: 1⊕2⊕3⊕6 = 6 (5 hits in 10000, n=6 is only perfect, p=0.0005)
 
+  ═══ New: Highly Composite + Latin Squares (Ralph 344g) ═══
+
+  🟩⭐ n AND σ(n) are consecutive SHCN ⟺ n=6 (Ramanujan SHCN: ...2,6,12,60...)
+       n=28,496,8128: neither n nor σ is SHCN. Unique among ALL perfect numbers!
+  🟩⭐ {n, σ, σφ, n²} all HCN ⟺ n=6: {6,12,24,36} all highly composite
+       Unique in n=2..199.
+  🟩   L(σ/τ) = σ: Latin squares of order 3 = 12 = sigma
+  🟩   phi chain length: 6→2→1 (len=φ), 28→12→4→2→1 (len=τ)
+  🟩   220 = τ·sopfr·p(n) = 4·5·11 (first amicable number)
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
@@ -557,9 +567,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  310  ← +γ(K_σ)=n, R(σ/τ,σ/τ)=n, XOR(d|n)=n (3 more)
+  🟩 Pure mathematics:  315  ← +SHCN consecutive, all-HCN, Latin sq, phi chain (5 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  83  ← +genus(K_12)=6, R(3,3)=6 (2 more)
+  ⭐ Major Discoveries:  85  ← +consecutive SHCN, all-HCN unique (2 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
