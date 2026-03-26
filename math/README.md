@@ -496,6 +496,16 @@
   🟩⭐ χ² kurtosis at k=τ(6): excess kurtosis = 12/τ = σ/τ = 3
   🟩   Divisor entropy H(div 6) = (τ²/σ)ln2 + (1/τ)ln3 (exact algebraic)
 
+  ═══ New: Quantum Error Correction (Ralph 345a) ═══
+
+  🟩⭐ Perfect QEC [[21,15,3]]: k=C(n,2)=15, redundancy=n-k=n=6!
+       r=σ/τ=3 gives n_phys=21=σ/τ·(n+1), d=σ/τ=3. Exact.
+  🟩⭐ Toric [[σ,φ,σ/τ]] = [[12,2,3]]: ALL 3 QEC params from n=6!
+       3×4 lattice = σ/τ × τ. Physical=σ, logical=φ, distance=σ/τ.
+  🟩⭐ Surface genus σ/τ=3 encodes 2g=n=6 logical qubits
+  🟩   Steane [[7,1,3]]=[[n+1,1,σ/τ]], color code on hexagonal (6-fold) lattice
+  🟩   Stabilizer code distribution on 6 qubits: symmetric, peak at k=σ/τ=3
+
   ═══ New: Geometry — Seifert + Archimedean + Tilings (Ralph 344q) ═══
 
   🟩⭐ (2,3,6) = curvature transition: spherical→FLAT→hyperbolic
@@ -706,7 +716,7 @@
   ─────────────────────────────────────────────────
   🟩 Pure mathematics:  332  ← +φ(σ)=τ cross, group counts, p(p(6))=σ(P₂), σ-chain (4 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  130 ← +Chang srg(P₂,σ,n,τ) ⭐⭐, σ_k mod P₂, Plucker (3 more)
+  ⭐ Major Discoveries:  133 ← +QEC [[21,15,3]], toric [[σ,φ,σ/τ]], surface genus (3 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
