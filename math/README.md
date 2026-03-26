@@ -3812,7 +3812,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | R-008 | OEIS new seq | n where sigma^2=n^2\*tau: 6 | pending | - |
 | R-009 | OEIS new seq | n where sigma+phi+tau=3n: 2,4,6,90,408,5856,... | pending | - |
 | R-010 | OEIS new seq | n where prod R(d\|n)=1: 1,6 | pending | - |
-| R-011 | OEIS new seq | R(n) integer: 6,28,54,96,120,135,196,... | pending | - |
+| R-011 | OEIS new seq | R(n) integer: 1,6,28,54,96,120,135,196,224,... (53/10K) | pending | P-002 |
+| R-012 | OEIS new seq | R(n) numerators: 1,3,4,7,12,1,24,15,26,9,60,... | pending | P-002 |
+| R-013 | OEIS new seq | sigma*phi-n*tau: 0,-1,2,2,14,0,34,28,51,32,... | pending | P-002 |
 
 ## Open Problems
 
