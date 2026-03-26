@@ -57,7 +57,7 @@
                                  🟥 Golden MoE (model-dependent)
                                  🟥 Expert cross-activation
 
-  ═══ σφ=nτ system (P-001, 183 characterizations, 152 hypotheses) ═══
+  ═══ σφ=nτ system (P-001, 187 characterizations, 152 hypotheses) ═══
 
   ⭐⭐⭐ σ(n)φ(n)=nτ(n) ⟺ n∈{1,6} ────────────────────────┐
        │                                                    │
