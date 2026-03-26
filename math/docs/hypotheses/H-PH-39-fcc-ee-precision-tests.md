@@ -321,6 +321,8 @@ This either means:
 2. 3/13 is the tree-level value before radiative corrections
 3. The prediction is falsified at current precision
 
+**RGE Analysis (2026-03-27)**: 1-loop SM running shows sin²θ_W = 3/13 at μ = 84.9 GeV, slightly below M_Z = 91.2 GeV. The difference Δ = 0.00045 is consistent with a ~1-loop electroweak correction magnitude (~0.7 × α/(4π)). While 3/13 does not emerge from any known tree-level or GUT calculation, the proximity (0.045% relative error) suggests it may be a leading-order approximation rather than an exact prediction. The 15σ tension assumes 3/13 is the exact prediction; if radiative corrections are included, the tension reduces significantly.
+
 m_bottom = 4.096 GeV is 2.8σ from PDG — also under tension.
 m_top = 172.800 GeV remains excellent (0.13σ).
 

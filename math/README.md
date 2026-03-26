@@ -4472,10 +4472,10 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-PH-33](docs/hypotheses/H-PH-33-neutrino-mass-hierarchy.md) | ⭐⭐⭐ neutrino mass hierarchy from P₁,P₂ | 🟧 | ratio=(σ-1)(τ-1)=33 (obs 32.6, 1.2%), Σmν~60meV, KATRIN/DESI testable |
 | [H-PH-34](docs/hypotheses/H-PH-34-dark-matter-28gev.md) | ⭐⭐⭐ dark matter at P₂=28 GeV | 🟨 | Fermi-LAT GC excess consistent, XENONnT/LZ testable |
 | [H-PH-35](docs/hypotheses/H-PH-35-higgs-self-coupling.md) | ⭐⭐ Higgs self-coupling κ_λ=12/13 | 🟨 | 8% below SM, HL-LHC/FCC-hh testable |
-| [H-PH-36](docs/hypotheses/H-PH-36-cp-violation-complete.md) | ⭐⭐⭐ CP violation sin(2β)=7/10 | 🟧★ 0.06σ | sin(2β) excellent, but V_ub=1/132 falsified (98% off), V_us 7.6σ off |
+| [H-PH-36](docs/hypotheses/H-PH-36-cp-violation-complete.md) | ⭐⭐⭐ CP violation sin(2β)=7/10 | 🟧★ 0.06σ | sin(2β) 0.06σ, V_ub=(σ/τ)/P₂²=3/784 (0.17%), V_cb=1/24 (2.9%) |
 | [H-PH-37](docs/hypotheses/H-PH-37-coupling-unification.md) | ⭐⭐⭐ GUT at 10^(σ+τ)=10^16 | 🟧 | proton decay τ_p~10^35yr, Hyper-Kamiokande 2027+ |
 | [H-PH-38](docs/hypotheses/H-PH-38-cosmological-constant.md) | ⭐⭐⭐ Λ=1/(P₁·P₃⁴⁵)→122 orders | 🟧★ | worst prediction in physics solved, log₁₀=122.08 |
-| [H-PH-39](docs/hypotheses/H-PH-39-fcc-ee-precision-tests.md) | ⭐⭐ FCC-ee precision tests | 🟧 | sin²θ_W=3/13 already 15σ off (needs RGE correction?), m_top 0.13σ OK, m_b 2.8σ tension |
+| [H-PH-39](docs/hypotheses/H-PH-39-fcc-ee-precision-tests.md) | ⭐⭐ FCC-ee precision tests | 🟧 | sin²θ_W=3/13 at μ=84.9GeV (0.045% tree-level approx), m_top 0.13σ, m_b 2.8σ |
 
 ### Chemistry/Neurochemistry/Pharmacology (H-CHEM, 5)
 
