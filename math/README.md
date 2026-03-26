@@ -4227,6 +4227,17 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-BIO-12](docs/hypotheses/H-BIO-12-neural-oscillation-bands.md) | brainwave band=σ,τ,φ boundary | 🟧 structural | α upper bound=σ=12, δ-θ boundary=τ=4, α/θ ratio=φ=2 |
 | [H-BIO-13](docs/hypotheses/H-BIO-13-nernst-equation-arithmetic.md) | Nernst ion concentration=σ,τ,φ | 🟧 structural | [Na]in=σ=12, [K]out=τ=4, RT/F≈σφ+e(0.03%) |
 
+### Cosmic Topology (H-TOPO-COSMO, 6)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-TOPO-COSMO-1](docs/hypotheses/H-TOPO-COSMO-1-poincare-sigma-chain.md) | Poincare sphere: sigma^4(6)=120=|2I|=5! | 🟩 arithmetic / ⚪ cosmology | arithmetic exact; sigma^4(10)=120 too; CMB not confirmed |
+| [H-TOPO-COSMO-2](docs/hypotheses/H-TOPO-COSMO-2-spectral-index.md) | n_s-1≈-1/P2=-1/28 | ⚪ coincidence | -0.15sigma fit; no derivation from F(s); pole at s=1 |
+| [H-TOPO-COSMO-3](docs/hypotheses/H-TOPO-COSMO-3-holographic-sigma.md) | Holographic tau(6)=4=A/4G coeff | ⚪ coincidence | tau=4 not unique; F-theory sigma=12 speculative |
+| [H-TOPO-COSMO-4](docs/hypotheses/H-TOPO-COSMO-4-universe-lens.md) | Universe as physical gravitational lens | ⬛ refuted | theta_E=70deg (should be arcsec); dimensional analysis fails |
+| [H-TOPO-COSMO-5](docs/hypotheses/H-TOPO-COSMO-5-thurston-ADE-boundary.md) | 1/2+1/3+1/6=1 <=> Seifert(2,3,6)=E^3 flat; sigma-tau=8=|Thurston| | 🟩 pure math | R-spectrum identity = ADE boundary; equivalence proven |
+| [H-TOPO-COSMO-6](docs/hypotheses/H-TOPO-COSMO-6-R-landscape.md) | R(6)=1 unique among perfect numbers | 🟩 verified | R(28)=4, R(496)=48; only n=6 non-trivial R=1 in [1..10000] |
+
 ### Topology (H-TOP, 8)
 
 | # | Hypothesis | Status | Notes |
