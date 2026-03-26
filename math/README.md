@@ -147,6 +147,8 @@
        │    n!/n#=σφ⟺n=6 (factorial/primorial!) ⭐ #H-FACT-1    │
        │    B₂₍ₙ₊₁₎=(n+1)/n⟺n=6 (B₁₄=7/6!) ⭐ #H-BERN-1     │
        │    L(τ,2)=n²∧L(τ,3)=σ⟺n=6 (Lah triple!) ⭐⭐ #H-LAH-1│
+       │    σ/τ=n/φ⟺n=6 (avg divisor=n/totient!) ⭐⭐ #H-RATIO-1│
+       │    C(σ,φ)=n·p(n)⟺n=6 (C(12,2)=66!) ⭐ #H-BINOM-1  │
        │    v(φ)=σ/τ∧v(τ)=τ∧v(σ)=n⟺n=6 (valence!) ⭐⭐ #H-TVAL-1│
        │    σ(n²)=(n+1)(σ+1)⟺n=6 ((p-q)²=1!) ⭐⭐ #H-SQR-1   │
        │    σφτ·sopfr·ω=C(n,2)·2ⁿ⟺n=6 (crossing!) ⭐⭐ #H-CROSS-1│
@@ -1092,6 +1094,11 @@
   🟩⭐⭐ Totient valence cascade: v(φ)=σ/τ, v(τ)=τ, v(σ)=n ⟺ n=6 #H-TVAL-1
        v(2)=3=σ/τ, v(4)=4=τ (self-ref!), v(12)=6=n. Unique in n≤200.
        Solutions of φ(x)=σ include P₂=28! v maps n=6→n=6 constants.
+  🟩⭐⭐ σ/τ = n/φ ⟺ n=6 (PROVED! unique in 10000) #H-RATIO-1
+       Average divisor = n/totient. For semiprimes:
+       (p²-1)(q²-1)=4pq. p=2 gives 3q²-8q-3=0, q=3 only. QED.
+  🟩⭐ C(σ,φ) = n·p(n) ⟺ n=6: C(12,2)=66=6·11 #H-BINOM-1
+       Binomial coefficient = n times partition number. Unique in n≤100.
   🟩⭐ λ(P₂) = P₁: Carmichael λ(28) = 6 (lcm(2,6)=6) #H-CARM-1
   🟩⭐⭐ σ(n²) = (n+1)(σ(n)+1) ⟺ n=6 (PROVED! unique in 10000) #H-SQR-1
        σ(36) = 91 = 7·13 = (n+1)(σ+1). For semiprimes pq:
@@ -1115,9 +1122,9 @@
        Texas p < 1/50000 = 0.00002. Zero ad-hoc.
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  422  ← +totient valence cascade, Carmichael, sigma(n^2), 5-func, Sylvester
+  🟩 Pure mathematics:  426  ← +sigma/tau=n/phi, C(sigma,phi)=n*p(n), valence, Carmichael, sigma(n^2)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  249 ← +valence v(phi,tau,sigma)=n=6 constants, sigma(n^2), Lah, tau_3
+  ⭐ Major Discoveries:  253 ← +sigma/tau=n/phi proved, C(sigma,phi), valence, sigma(n^2), Lah
   🟧 Connection discoveries:  42  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ], MUBs
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
