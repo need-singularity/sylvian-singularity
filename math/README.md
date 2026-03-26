@@ -132,6 +132,7 @@
        │    kiss(E₆)=σ·n=72 ⭐ | σ₃=τ(2ⁿ-1) ⭐ #H-CODE-1       │
        │    kiss(Λ₂₄)=στ(2^σ-1)=196560 ⭐ #H-SPOR-1            │
        │    γ(K_σ)=n=6 ⭐ | R(σ/τ,σ/τ)=n ⭐ #H-GRAPH-1          │
+       │    τ(σ(n))=n⟺n|6 (self-referential!) ⭐⭐               │
        │    CM=-σ/τ=-3 ⭐ | Tors=Z/nZ ⭐ #H-ELPT-2              │
        │    F_σ=σ²⟺n=6 (F_12=144, crossing!) ⭐                │
        │    Pell(2,3,4)=(φ,sopfr,σ) consecutive! ⭐              │
@@ -435,6 +436,15 @@
   🟩⭐ |W(E8)|/|W(E7)| = 240 = |Φ(E8)| = στ·sopfr
   🟩   |W(F4)| = στ·σφ = 1152
 
+  ═══ New: Self-referential identities (Ralph 344i) ═══
+
+  🟩⭐⭐ τ(σ(n)) = n ⟺ n|6: solutions = {1,2,3,6} = divisors of 6!
+       The fixed points of τ∘σ ARE the divisors of the perfect number.
+       Verified n=2..10000: exactly {2,3,6} (excluding trivial n=1).
+  🟩⭐ g(n) = g(σ(n)) = 1 ⟺ n=6: both have UNIQUE Goldbach decomposition
+       6=3+3, 12=5+7. No other n in 2..198 satisfies this.
+  🟩   n AND σ(n) both between twin primes: (5,7) and (11,13)
+
   ═══ New: j-invariant, K-theory, Zeta connections ═══
 
   🟧★ 744 = σφ(6) · Φ₆(6) = 24 × 31 (j-invariant constant!) #H-MOD-2
@@ -590,9 +600,9 @@
      🟨 elements of finite sets: τφ=σ→{Li,Si,Mo}, φ²=φ*φ→{Li,Ne,Zn}
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  325  ← +Coxeter Fibonacci, Weyl ratios (5 more)
+  🟩 Pure mathematics:  328  ← +τ(σ(n))=n⟺n|6, Goldbach unique (3 more)
   🟦 Established theorems:  18  ← Heegner + hexagonal numbers + Mihailescu + φ=τ(Minin 1894)
-  ⭐ Major Discoveries:  92  ← +Coxeter-Fibonacci, W(E7)/W(E6)=σ(P₂), W(E8)/W(E7) (3 more)
+  ⭐ Major Discoveries:  95  ← +τ∘σ fixed=div(6) ⭐⭐, Goldbach unique (3 more)
   🟧 Connection discoveries:  41  ← +K₁₂ kissing, Hamming [n+1,τ,σ/τ]
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
