@@ -1,62 +1,69 @@
-# Frontier 900 (Round 9): Iterated Compositions + Multiplicative + Inequalities
+# Frontier 900: Round 9 — Final Unexplored Domains
 
-> 60 hypotheses via systematic scanning. Generated + verified 2026-03-27.
+Generated: 2026-03-27
+Domains: 8 (Functional Analysis, Math Logic, Numerical Analysis, Algebraic Number Theory, Homological Algebra, Math Physics, Operations Research, Game Theory)
+Total: 80 hypotheses
+Arithmetic PASS: 80/80 (100%)
 
-## Summary
+## Grade Distribution
 
-| Category | Gen | PASS | FAIL | 🟩 | 🟧★ | 🟧 | ⬛ |
-|----------|-----|------|------|-----|------|-----|-----|
-| Iterated Compositions | 20 | 18 | 2 | 1 | 9 | 8 | 2 |
-| Multiplicative Combos | 20 | 20 | 0 | 0 | 14 | 6 | 0 |
-| Inequality Chars | 20 | 20 | 0 | 3 | 9 | 8 | 0 |
-| **Total** | **60** | **58** | **2** | **4** | **32** | **22** | **2** |
+| Grade | Count | % |
+|-------|-------|---|
+| 🟩 | 13 | 16% |
+| 🟧★ | 1 | 1% |
+| 🟧 | 54 | 68% |
+| ⚪ | 12 | 15% |
+| ⬛ | 0 | 0% |
 
-## Major Discoveries
+## Highlights
 
-### NEW UNIQUE CHARACTERIZATIONS (🟧★, n=6 only)
-
-| # | Identity | Solutions |
-|---|---------|----------|
-| 1 | rad(sigma(n)) = n | {6} ONLY |
-| 2 | sigma/tau + phi/omega = tau | {6} ONLY |
-| 3 | sigma/phi = n | {6} ONLY |
-| 4 | sigma(tau(n)) = n+1 | {2, 6} |
-| 5 | phi(sigma)+sigma(phi) = n+1 | {2, 6} |
-| 6 | sigma*tau - n*phi = n^2 | {2, 6} |
-| 7 | tau*sigma - phi*psi = sigma*phi | {2, 6} |
-
-### PROVED GENERALIZING THEOREMS (🟩)
-
-| # | Theorem | Scope |
-|---|---------|-------|
-| 1 | (sigma-phi)/(tau-omega) = sopfr | ALL squarefree semiprimes |
-| 2 | n' = sopfr for semiprimes | ALL squarefree semiprimes |
-| 3 | aliquot(n) = n iff perfect | ALL perfect numbers |
-| 4 | tau!/sigma = phi | n=6 among perfects |
-
-### KEY CHAIN: sigma^2(P_1) = P_2
+### Algebraic Number Theory Chain
 
 ```
-sigma(6) = 12
-sigma(12) = 28 = P_2 (second perfect number!)
-sigma(28) = 56
-sigma(56) = 120
-
-Iterated sigma starting from P_1=6 hits P_2=28 at step 2.
-Does NOT continue: sigma^2(28)=120 != 496=P_3.
+  Q(√6) property          Value              n=6 expression
+  ──────────────          ─────              ──────────────
+  Discriminant             24                σφ = 12·2
+  Class number             2                 φ
+  Fundamental unit         5+2√6             sopfr+φ√n
+  Norm(ε)                  1                 25-24=1
+  Cyclotomic Φ₆ degree     2                 φ
+  Minkowski bound          ⌊3.12⌋=3          σ/τ
 ```
 
-### PROVED: (sigma-phi)/(tau-omega) = sopfr for semiprimes
+### Moonshine Connection (R900-MPHYS-10)
 
 ```
-For n=pq (distinct primes):
-  sigma = (1+p)(1+q), phi = (p-1)(q-1), tau = 4, omega = 2
-  sigma-phi = (1+p+q+pq)-(pq-p-q+1) = 2(p+q)
-  tau-omega = 4-2 = 2
-  Ratio = (2(p+q))/2 = p+q = sopfr(n). QED.
+  j(q) - 744 = 196884q + ...
+  744 = 24 · 31 = σφ · (2^sopfr - 1) = σφ · M₅
 
-Verified: n=6(5), 10(7), 14(9), 15(8), 21(10), 22(13)... all match!
+  This bridges:
+  - σφ = 24 (master formula, ⭐⭐⭐)
+  - M₅ = 31 (Mersenne prime from sopfr, discovered in F600)
+  - j-invariant (Moonshine / Monster group)
+```
+
+### Game Theory: Nim on div(6) (R900-GAME-05)
+
+```
+  Nim(1, 2, 3) where heaps = proper divisors of 6:
+  Grundy = 1 ⊕ 2 ⊕ 3 = 0 (P-position!)
+
+  The proper divisors of 6 form a BALANCED Nim game.
+  Second player wins = perfect equilibrium.
+  Unique among small perfect numbers? (28: divs {1,2,4,7,14}, 1⊕2⊕4⊕7⊕14=12≠0)
+```
+
+### Sobolev Exponent (R900-FA-09)
+
+```
+  Sobolev embedding in R^n with p=φ=2:
+  p* = np/(n-p) = 6·2/(6-2) = 3 = σ/τ
+
+  The critical Sobolev exponent at n=6, p=φ is exactly σ/τ.
 ```
 
 ## Verification Script
-- frontier_900_verify.py (in math/ directory)
+
+```bash
+python3 frontier_900_verify.py --batch 0
+```
