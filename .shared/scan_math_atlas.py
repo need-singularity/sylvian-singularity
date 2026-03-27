@@ -951,6 +951,347 @@ def write_markdown(atlas, mdpath):
         f.write('\n'.join(lines) + '\n')
 
 
+# ── HTML output ──────────────────────────────────────────────────
+
+HTML_TEMPLATE = r'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Atlas</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; background: #1a1a2e; color: #e0e0e0; padding: 20px; }
+.header { text-align: center; margin-bottom: 20px; }
+.header h1 { font-size: 1.5em; color: #fff; }
+.stats { color: #888; font-size: 0.85em; margin-top: 5px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; align-items: center; }
+.search { flex: 1; min-width: 200px; padding: 8px 12px; background: #16213e; border: 1px solid #333; color: #fff; font-family: inherit; font-size: 0.9em; border-radius: 4px; outline: none; }
+.search:focus { border-color: #4A90D9; }
+.filters { display: flex; gap: 15px; flex-wrap: wrap; }
+.filter-group { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
+.filter-group label { font-size: 0.8em; cursor: pointer; padding: 3px 8px; border-radius: 3px; border: 1px solid #333; transition: all 0.15s; }
+.filter-group label:hover { border-color: #666; }
+.filter-group label.active { border-color: #4A90D9; background: #16213e; }
+.filter-group input[type="checkbox"] { display: none; }
+.repo-tecs-l { color: #4A90D9; }
+.repo-sedi { color: #E67E22; }
+.repo-anima { color: #2ECC71; }
+.tabs { display: flex; gap: 5px; margin-bottom: 10px; }
+.tab { padding: 6px 16px; background: #16213e; border: 1px solid #333; color: #888; cursor: pointer; border-radius: 4px 4px 0 0; font-family: inherit; font-size: 0.85em; transition: all 0.15s; }
+.tab.active { background: #1a1a2e; color: #fff; border-bottom-color: #1a1a2e; }
+.tab:hover { color: #ccc; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.8em; }
+th { background: #16213e; padding: 6px 8px; text-align: left; cursor: pointer; user-select: none; position: sticky; top: 0; white-space: nowrap; }
+th:hover { background: #1f305e; }
+th .sort-arrow { margin-left: 4px; color: #555; }
+th .sort-arrow.asc::after { content: ' \25B2'; }
+th .sort-arrow.desc::after { content: ' \25BC'; }
+td { padding: 4px 8px; border-bottom: 1px solid #222; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 400px; }
+td.title-col { white-space: normal; max-width: 500px; }
+tr:hover { background: #16213e; }
+.count { background: #16213e; padding: 5px 10px; border-radius: 4px; font-size: 0.8em; color: #888; white-space: nowrap; }
+.no-results { text-align: center; padding: 40px; color: #555; }
+@media (max-width: 768px) {
+  body { padding: 10px; }
+  .controls { flex-direction: column; }
+  td { font-size: 0.75em; padding: 3px 5px; }
+  td.title-col { max-width: 200px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Math Atlas</h1>
+  <div class="stats" id="stats"></div>
+</div>
+
+<div class="controls">
+  <input type="text" class="search" id="search" placeholder="Search ID, title, domain, grade...">
+  <div class="filters">
+    <div class="filter-group" id="repo-filters"></div>
+    <div class="filter-group" id="grade-filters"></div>
+  </div>
+  <div class="count" id="count"></div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" id="tab-hypotheses" onclick="switchTab('hypotheses')">Hypotheses</div>
+  <div class="tab" id="tab-constants" onclick="switchTab('constants')">Constant Maps</div>
+</div>
+
+<div class="table-wrap" id="hypotheses-table"></div>
+<div class="table-wrap" id="constants-table" style="display:none"></div>
+
+<script>
+const ATLAS = __ATLAS_JSON__;
+
+let currentTab = 'hypotheses';
+let sortCol = null;
+let sortAsc = true;
+let searchText = '';
+let activeRepos = new Set(['TECS-L', 'SEDI', 'anima']);
+let activeGrades = null;
+
+const REPO_COLORS = {'TECS-L': '#4A90D9', 'SEDI': '#E67E22', 'anima': '#2ECC71'};
+const ALL_REPOS = ['TECS-L', 'SEDI', 'anima'];
+
+function init() {
+  var statsEl = document.getElementById('stats');
+  statsEl.textContent = 'Generated: ' + ATLAS.generated + ' | ' + ATLAS.total + ' hypotheses | ' + ATLAS.constant_maps.length + ' constant maps';
+
+  var repoDiv = document.getElementById('repo-filters');
+  ALL_REPOS.forEach(function(r) {
+    var lbl = document.createElement('label');
+    lbl.className = 'active';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.checked = true;
+    cb.value = r;
+    cb.addEventListener('change', function() {
+      if (this.checked) { activeRepos.add(r); lbl.classList.add('active'); }
+      else { activeRepos.delete(r); lbl.classList.remove('active'); }
+      render();
+    });
+    var span = document.createElement('span');
+    span.className = repoClass(r);
+    span.textContent = r;
+    lbl.appendChild(cb);
+    lbl.appendChild(span);
+    repoDiv.appendChild(lbl);
+  });
+
+  var grades = collectGrades();
+  var gradeDiv = document.getElementById('grade-filters');
+  grades.forEach(function(g) {
+    var lbl = document.createElement('label');
+    lbl.className = 'active';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.checked = true;
+    cb.value = g;
+    cb.addEventListener('change', function() {
+      if (activeGrades === null) {
+        activeGrades = new Set(grades);
+      }
+      if (this.checked) { activeGrades.add(g); lbl.classList.add('active'); }
+      else { activeGrades.delete(g); lbl.classList.remove('active'); }
+      render();
+    });
+    var span = document.createElement('span');
+    span.textContent = g || '(none)';
+    lbl.appendChild(cb);
+    lbl.appendChild(span);
+    lbl.appendChild(document.createTextNode(' '));
+    gradeDiv.appendChild(lbl);
+  });
+
+  document.getElementById('search').addEventListener('input', function() {
+    searchText = this.value.toLowerCase();
+    render();
+  });
+
+  render();
+}
+
+function collectGrades() {
+  var seen = {};
+  ATLAS.hypotheses.forEach(function(h) {
+    var g = h.grade || '(none)';
+    if (!seen[g]) seen[g] = 0;
+    seen[g]++;
+  });
+  var arr = Object.keys(seen);
+  arr.sort(function(a, b) { return seen[b] - seen[a]; });
+  return arr.slice(0, 12);
+}
+
+function repoClass(r) {
+  return 'repo-' + r.toLowerCase().replace('-', '-');
+}
+
+function repoCssClass(r) {
+  if (r === 'TECS-L') return 'repo-tecs-l';
+  if (r === 'SEDI') return 'repo-sedi';
+  if (r === 'anima') return 'repo-anima';
+  return '';
+}
+
+function esc(s) {
+  if (!s) return '';
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function shortId(fullId) {
+  var idx = fullId.indexOf(':');
+  return idx >= 0 ? fullId.substring(idx + 1) : fullId;
+}
+
+function matches(item, text) {
+  var fields = [item.id, item.title, item.grade, item.domain, item.repo, item.name, item.file, item.type, item.category];
+  for (var i = 0; i < fields.length; i++) {
+    if (fields[i] && String(fields[i]).toLowerCase().indexOf(text) >= 0) return true;
+  }
+  return false;
+}
+
+function cmp(a, b) {
+  var va = a[sortCol], vb = b[sortCol];
+  if (va == null) va = '';
+  if (vb == null) vb = '';
+  if (typeof va === 'number' && typeof vb === 'number') return sortAsc ? va - vb : vb - va;
+  va = String(va).toLowerCase();
+  vb = String(vb).toLowerCase();
+  if (va < vb) return sortAsc ? -1 : 1;
+  if (va > vb) return sortAsc ? 1 : -1;
+  return 0;
+}
+
+function sortBy(col) {
+  if (sortCol === col) { sortAsc = !sortAsc; }
+  else { sortCol = col; sortAsc = true; }
+  render();
+}
+
+function switchTab(tab) {
+  currentTab = tab;
+  document.getElementById('tab-hypotheses').className = tab === 'hypotheses' ? 'tab active' : 'tab';
+  document.getElementById('tab-constants').className = tab === 'constants' ? 'tab active' : 'tab';
+  document.getElementById('hypotheses-table').style.display = tab === 'hypotheses' ? '' : 'none';
+  document.getElementById('constants-table').style.display = tab === 'constants' ? '' : 'none';
+  sortCol = null;
+  sortAsc = true;
+  render();
+}
+
+function render() {
+  if (currentTab === 'hypotheses') renderHypotheses();
+  else renderConstants();
+}
+
+function sortArrow(col) {
+  if (sortCol !== col) return '<span class="sort-arrow"></span>';
+  return '<span class="sort-arrow ' + (sortAsc ? 'asc' : 'desc') + '"></span>';
+}
+
+function renderHypotheses() {
+  var data = ATLAS.hypotheses.filter(function(h) {
+    if (!activeRepos.has(h.repo)) return false;
+    if (activeGrades !== null) {
+      var g = h.grade || '(none)';
+      if (!activeGrades.has(g)) return false;
+    }
+    if (searchText && !matches(h, searchText)) return false;
+    return true;
+  });
+  if (sortCol) data.sort(cmp);
+  var cols = ['id', 'title', 'grade', 'domain', 'repo', 'file'];
+  var html = '<table><thead><tr>';
+  cols.forEach(function(c) {
+    html += '<th onclick="sortBy(\'' + c + '\')">' + c + sortArrow(c) + '</th>';
+  });
+  html += '</tr></thead><tbody>';
+  if (data.length === 0) {
+    html += '<tr><td colspan="' + cols.length + '" class="no-results">No matching hypotheses</td></tr>';
+  }
+  data.forEach(function(h) {
+    var rc = repoCssClass(h.repo);
+    html += '<tr>';
+    html += '<td class="' + rc + '">' + esc(shortId(h.id)) + '</td>';
+    html += '<td class="title-col">' + esc(h.title || '') + '</td>';
+    html += '<td>' + esc(h.grade || '-') + '</td>';
+    html += '<td>' + esc(h.domain || '-') + '</td>';
+    html += '<td class="' + rc + '">' + esc(h.repo) + '</td>';
+    html += '<td>' + esc(h.file || '') + '</td>';
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  document.getElementById('hypotheses-table').innerHTML = html;
+  document.getElementById('count').textContent = data.length + ' / ' + ATLAS.hypotheses.length;
+}
+
+function renderConstants() {
+  var data = ATLAS.constant_maps.filter(function(c) {
+    if (!activeRepos.has(c.repo)) return false;
+    if (searchText && !matches(c, searchText)) return false;
+    return true;
+  });
+  if (sortCol) data.sort(cmp);
+  var cols = ['name', 'repo', 'file', 'type', 'size', 'category', 'evaluable'];
+  var html = '<table><thead><tr>';
+  cols.forEach(function(c) {
+    html += '<th onclick="sortBy(\'' + c + '\')">' + c + sortArrow(c) + '</th>';
+  });
+  html += '</tr></thead><tbody>';
+  if (data.length === 0) {
+    html += '<tr><td colspan="' + cols.length + '" class="no-results">No matching constants</td></tr>';
+  }
+  data.forEach(function(c) {
+    var rc = repoCssClass(c.repo);
+    html += '<tr>';
+    html += '<td>' + esc(c.name) + '</td>';
+    html += '<td class="' + rc + '">' + esc(c.repo) + '</td>';
+    html += '<td>' + esc(c.file) + ':' + c.line + '</td>';
+    html += '<td>' + esc(c.type || '-') + '</td>';
+    html += '<td>' + c.size + '</td>';
+    html += '<td>' + esc(c.category || '-') + '</td>';
+    html += '<td>' + (c.evaluable ? 'Y' : '-') + '</td>';
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  document.getElementById('constants-table').innerHTML = html;
+  document.getElementById('count').textContent = data.length + ' / ' + ATLAS.constant_maps.length;
+}
+
+init();
+</script>
+</body>
+</html>'''
+
+
+def write_html(atlas, htmlpath):
+    """Write atlas data as a self-contained interactive HTML file.
+
+    Embeds a slimmed-down version of the atlas JSON (constant_maps without
+    values/keys) directly into the HTML as a JavaScript variable.
+
+    Args:
+        atlas: dict returned by build_atlas().
+        htmlpath: Path to the output .html file.
+    """
+    # Strip values/keys from constant_maps to keep HTML small
+    slim_constants = []
+    for cm in atlas.get("constant_maps", []):
+        slim_constants.append({
+            "name": cm["name"],
+            "repo": cm["repo"],
+            "file": cm["file"],
+            "line": cm["line"],
+            "type": cm["type"],
+            "size": cm["size"],
+            "category": cm["category"],
+            "evaluable": cm["evaluable"],
+        })
+
+    slim_atlas = {
+        "generated": atlas["generated"],
+        "total": atlas["total"],
+        "stats": atlas["stats"],
+        "constant_stats": atlas.get("constant_stats", {}),
+        "hypotheses": atlas["hypotheses"],
+        "constant_maps": slim_constants,
+    }
+
+    atlas_json = json.dumps(slim_atlas, ensure_ascii=False)
+
+    html = HTML_TEMPLATE.replace("__ATLAS_JSON__", atlas_json)
+
+    with open(htmlpath, 'w', encoding='utf-8') as f:
+        f.write(html)
+
+
 # ── CLI ──────────────────────────────────────────────────────────
 
 def main():
@@ -1009,6 +1350,10 @@ def main():
         md_path = out_dir / "MATH_ATLAS.md"
         write_markdown(atlas, str(md_path))
         print(f"  Markdown: {md_path}")
+
+        html_path = out_dir / "math_atlas.html"
+        write_html(atlas, str(html_path))
+        print(f"  HTML: {html_path}")
 
     # --summary
     if args.summary:
