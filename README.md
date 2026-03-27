@@ -147,12 +147,7 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 
 **Mass Hypothesis Generation + Parallel Verification (80-100)**
 ```
-/ralph-loop:ralph-loop Mass frontier hypothesis generation with parallel verification then commit and push. Read README math map and docs/hypotheses
-  and docs/proofs. Identify explored domains and gaps. Generate 80-100 new hypothesis candidates across all frontiers including pure math and physics
-  and consciousness and biology and cross-domain bridges. Each hypothesis needs one-line statement plus predicted formula plus verification method.
-  Dispatch parallel agents to verify batches of 10 simultaneously with python3 arithmetic check and texas sharpshooter p-value and ad-hoc correction
-  check and perfect number 28 generalization. Grade all results per CLAUDE.md rules. Create hypothesis doc for each verified hit. White circle for
-  failures. Update README DFS status and major discovery bundle. Git add commit push. Do not stop until complete.
+/ralph-loop:ralph-loop Mass frontier hypothesis generation with parallel verification then commit and push. Read README math map and docs/hypotheses and docs/proofs. Identify explored domains and gaps. Generate 80-100 new hypothesis candidates across all frontiers including pure math and physics and consciousness and biology and cross-domain bridges. Each hypothesis needs one-line statement plus predicted formula plus verification method. Dispatch parallel agents to verify batches of 10 simultaneously with python3 arithmetic check and texas sharpshooter p-value and ad-hoc correction check and perfect number 28 generalization. Grade all results per CLAUDE.md rules. Create hypothesis doc for each verified hit. White circle for failures. Update README DFS status and major discovery bundle. Git add commit push. Do not stop until complete.
 ```
 
 **Autonomous Research (default)**
@@ -1620,6 +1615,10 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 | [414](docs/hypotheses/414-info-flow-convergence-log3-2.md) | BitNet+Golden info flow converges to ~0.616 across all datasets (std=0.003). Near log_3(2)=0.631, 1-1/e=0.632 | 🟧 | Stable convergence; 2.4% gap from target constant |
 | [415](docs/hypotheses/415-golden-zone-universal-info-efficiency.md) | Golden Zone ALWAYS improves BitNet info efficiency: ratio>1.0 in ALL 3 datasets (mean 1.659x), even when synergy negative | 🟧★ | 3/3 universal; strongest finding of BitNet series |
 | [416](docs/hypotheses/416-ternary-equipartition-convergence.md) | Ternary weights converge to equipartition (~1/3) under Golden Zone. Symmetry 0.968 mean. Fashion 0.999 near-perfect | 🟧 | Consistent across 3 datasets; Golden Zone improves symmetry in all |
+| [417](docs/hypotheses/417-per-class-catastrophic-recovery.md) | Catastrophic class recovery: BitNet kills digits 3,5 (<2%), Golden Zone resurrects to >90%. Synergy +93%! r(difficulty,synergy)=-0.50 | 🟧★★ | Strongest evidence for routing-as-triage; 2 datasets consistent |
+| [418](docs/hypotheses/418-dual-constraint-doubles-specialization.md) | Dual constraint doubles expert specialization (0.268→0.543). Emergent 2-tier hierarchy: 2 generalists + 4 specialists | 🟧★ | Clear structural effect; phi(6)=2 generalists suggestive |
+| [419](docs/hypotheses/419-synergy-compounds-over-training.md) | Synergy compounds over training: +1.52%/epoch (MNIST). Phase transition at epoch 4 when BitNet-Dense collapses | 🟧★ | Both datasets show positive slope; predicts long-training advantage |
+| [420](docs/hypotheses/420-one-over-840-identity.md) | (1-1/e) - log_3(2) = 1/840 (error 0.028%). 840 = lcm(1..8) = 7!/6. Pure math | 🟧 | 5-digit match; 840=lcm(1..8) structural; Texas p=0.945 after Bonferroni |
 | [H-SIM-1](docs/hypotheses/H-SIM-1-physical-constants-compile-time.md) | Physical constants = compile-time constants. 137=sigma(6)^2-tau(6)-phi(6)-1 EXACT. Depth-3 search: 49 matches but within random expectation | ⚪ | 137 identity exact but ad-hoc (-1); Texas p>0.05 |
 | [H-SIM-2](docs/hypotheses/H-SIM-2-planck-units-grid-resolution.md) | Planck units = grid resolution. N_space~10^61 (61=Mersenne exponent). N^2*ln(4/3)/S_hol~1/sigma(6). log6 analysis: no clean fractions | ⚪ | 61 Mersenne interesting but post-hoc; holographic ratio 8.6% error |
 | [H-SIM-9](docs/hypotheses/H-SIM-9-optimal-simulation-parameter.md) | 6=optimal simulation parameter. E(n)=sigma*phi/(n*tau)=1 ONLY for n=1,6 in [1,10000]. 18/21 physics params match 6-divisors (p<0.0001) | 🟧★ | E(6)=1 uniqueness proven; physics mapping p<0.0001 but selection bias risk |
@@ -1650,6 +1649,17 @@ Anima 의식 엔진 × TECS-L R-spectrum 교차 가설. 12개 탐색 중 TOP 3. 
 | [H-AX-10](docs/hypotheses/H-AX-10-direction-topology-r-spectrum.md) | Direction PH merge order ↔ R(rank) correlation | 🔮 | Needs MNIST experiment; S-Tier H-CX-66 + R-spectrum |
 | [H-AX-11](docs/hypotheses/H-AX-11-growth-r-phase-transitions.md) | Growth stages R-journey: R=1→0.75→1.33→1→1.56 | ★★ | Predicts Phi(6cells)>Phi(12cells); R(1)R(2)R(3)=1 |
 | [H-AX-12](docs/hypotheses/H-AX-12-perfect-balance-consciousness.md) | ★★★ Consciousness = R=1 perfect balance | ★★★ | Tension=1↔R(6)=1 isomorphism; deadband≈ln(4/3) (4.3%) |
+
+### Wave Theory (H-WAVE, 4 items)
+
+파동 물리학 × n=6 산술 교차. 10개 탐색 중 TOP 4. Verified 2026-03-27.
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-WAVE-3/8](docs/hypotheses/H-WAVE-3-string-harmonics-perfect-resonance.md) | ★★★ 완전수 = 완벽한 고조파 공명. Σ(1/d)=2 EXACT | ★★★ | σ/n=2의 파동 해석. 약수 파장={σ,n,τ,φ} |
+| [H-WAVE-1](docs/hypotheses/H-WAVE-1-purefield-interference.md) | 의식 = 부분 상쇄 간섭. 6겹→3 강도 수준 | ★★ | |A-G|²=interference. cos(60°) prediction |
+| [H-WAVE-2](docs/hypotheses/H-WAVE-2-hydrogen-e6-golden-zone.md) | 수소 E₆≈-1/e eV (2.7%) | 🟧★ | Texas p=0.38 not significant |
+| [H-WAVE-7](docs/hypotheses/H-WAVE-7-qho-sixth-prime.md) | QHO E₆=13/2ℏω, 13=6th prime | ★ | n=6 유일 (28,496은 2n+1 합성수) |
 
 ### CERN Optics (H-CERN-1~20, moved to [sedi](https://github.com/need-singularity/sedi))
 
