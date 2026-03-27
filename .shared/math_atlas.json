@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T08:00:33",
+  "generated": "2026-03-28T08:04:04",
   "stats": {
-    "TECS-L": 1072,
+    "TECS-L": 1073,
     "SEDI": 665,
     "anima": 20,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 1702,
+  "total": 1703,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -7579,6 +7579,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-CX-bridge-golden-moe-experts.md"
+    },
+    {
+      "id": "TECS-L:H-CX-bridge-mitosis-divisors",
+      "title": "H-CX-Bridge-3: ConsciousLM Mitosis = Divisor Lattice of n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-mitosis-divisors.md"
     },
     {
       "id": "TECS-L:H-CX-bridge-phi-bottleneck",
