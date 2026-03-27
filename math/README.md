@@ -4609,6 +4609,38 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
   📊 Summary: 🟧★ 2, 🟧 92, ⚪ 4, ⬛ 2
   Full details: docs/hypotheses/frontier-600-round6.md
+
+  ═══ Frontier 700 (Ralph 700): Deeper Characterizations ═══
+
+  80 hypotheses across 7 domains. 77 PASS / 3 FAIL.
+  Domains: Novel Arithmetic, Order Theory, Matroid Theory, Game Theory,
+           Harmonic Analysis, Self-Reference, Automata Theory
+
+  --- PROVED THEOREMS (🟩) ---
+
+  🟩 F7-AR-03: sigma(n)=n+rad(n) iff n squarefree perfect → only n=6
+  🟩 F7-AR-04: sigma(n)/rad(n)=2 iff n squarefree perfect → only n=6
+  🟩 F7-AR-07: aliquot(n)=n iff n perfect (aliquot fixed point)
+  🟩 F7-AR-19: Sum of totatives = n*phi(n)/2 (general identity for all n)
+  🟩 F7-ORD-05: tau(n)=2^omega(n) iff n squarefree
+
+  --- NEW CHARACTERIZATIONS (🟧★, proved) ---
+
+  ⭐ F7-SELF-06: sopfr(n)=n-1 iff n=6 (PROVED: (p-1)(q-1)=2) → H-NT-430
+  ⭐ F7-AR-11: sigma(n)*(phi(n)+1)=n^2 among perfects iff n=6 (PROVED: p=2) → H-NT-431
+  🟧★ F7-AR-10: n^2=sigma*(phi+1) equivalent formulation
+  🟧★ F7-AR-14: phi(n)|sigma(n) among perfects: only n=6
+  🟧★ F7-GAME-04: XOR(proper divisors)=0: n in {6,120,198,...} (rare)
+  🟧★ F7-AR-05: phi(n)+omega(n)=tau(n): n in {2,4,6,12}
+
+  --- Failures ---
+
+  ⬛ F7-AR-01: sigma!=n*omega*Omega
+  ⬛ F7-AR-06: n/phi!=sopfr/omega
+  ⬛ F7-AR-16: formula invalid
+
+  📊 Summary: 🟩 5, 🟧★ 15, 🟧 52, ⚪ 5, ⬛ 3
+  Full details: docs/hypotheses/frontier-700-round7.md
 ```
 
 ---
@@ -5018,6 +5050,8 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-NT-426](docs/hypotheses/H-NT-426-sigma2-phi-sopfr.md) | sigma_2(n)=phi(n)*sopfr(n)^2 iff n=6 | 🟧★ structural | 50=2*25, fails for n=28 |
 | [H-NT-427](docs/hypotheses/H-NT-427-catalan-sopfr.md) | Catalan(n/2)=sopfr(n) iff n=6 | 🟧★ structural | C_3=5=sopfr(6), fails for n=28 |
 | [H-NT-428](docs/hypotheses/H-NT-428-sigma-phi-factorial-tau.md) | sigma(n)*phi(n)=tau(n)! iff n=6 | 🟧★ structural | 12*2=24=4!, fails for n=28 |
+| [H-NT-430](docs/hypotheses/H-NT-430-sopfr-n-minus-1.md) | sopfr(n)=n-1 iff n=6 | 🟩 **proved** ⭐ | (p-1)(q-1)=2 forces p=2,q=3 |
+| [H-NT-431](docs/hypotheses/H-NT-431-sigma-phi-n-squared.md) | sigma*(phi+1)=n^2 among perfects iff n=6 | 🟩 **proved** ⭐ | p=2 required, full proof |
 
 ### Frontier 500: Topology + Cross-domain (H-TOP-426, H-CROSS-426, 2)
 
