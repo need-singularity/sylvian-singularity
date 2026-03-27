@@ -161,6 +161,110 @@ def test_write_dot():
         os.unlink(dotpath)
 
 
+from scan_math_atlas import extract_constants_from_py
+
+
+def test_extract_constants():
+    """Test constant extraction from a known file."""
+    results = extract_constants_from_py(
+        "/Users/ghost/Dev/SEDI/sedi/tecs.py", "SEDI"
+    )
+    names = [r["name"] for r in results]
+    assert "TARGETS_BASIC" in names
+    assert "PHYSICS_MATCHES" in names
+    # Should have values for simple dicts
+    tb = next(r for r in results if r["name"] == "TARGETS_BASIC")
+    assert tb["type"] == "dict"
+    assert tb["size"] > 0
+    assert tb["category"] == "targets"
+
+
+def test_extract_constants_evaluable():
+    """Test that simple dicts with only literals are evaluable."""
+    results = extract_constants_from_py(
+        "/Users/ghost/Dev/SEDI/sedi/tecs.py", "SEDI"
+    )
+    # SM_COUNTS has only integer literals - should be evaluable
+    sm = next((r for r in results if r["name"] == "SM_COUNTS"), None)
+    if sm:
+        assert sm["evaluable"] is True
+        assert isinstance(sm["values"], dict)
+        assert sm["values"]["quark_flavors"] == 6
+    # TARGETS_BASIC has 5/6, 1/6 etc. (BinOp) so may not be literal_eval-able
+    tb = next(r for r in results if r["name"] == "TARGETS_BASIC")
+    assert tb["type"] == "dict"
+    assert tb["size"] > 0
+    assert tb["keys"] is not None
+
+
+def test_extract_constants_non_evaluable():
+    """Test that dicts with expressions are marked non-evaluable."""
+    results = extract_constants_from_py(
+        "/Users/ghost/Dev/SEDI/sedi/tecs.py", "SEDI"
+    )
+    # DIMENSION_MAP uses function calls like tau(6) - not literal_eval-able
+    dm = next((r for r in results if r["name"] == "DIMENSION_MAP"), None)
+    if dm:
+        assert dm["evaluable"] is False
+        assert dm["keys"] is not None
+
+
+def test_extract_constants_skips_lowercase():
+    """Test that lowercase and non-constant names are skipped."""
+    results = extract_constants_from_py(
+        "/Users/ghost/Dev/SEDI/sedi/tecs.py", "SEDI"
+    )
+    names = [r["name"] for r in results]
+    # Should not include lowercase variable names
+    for name in names:
+        assert name == name.upper() or name.replace("_", "").isupper()
+
+
+def test_extract_constants_list():
+    """Test extraction of list constants."""
+    results = extract_constants_from_py(
+        "/Users/ghost/Dev/SEDI/sedi/tecs.py", "SEDI"
+    )
+    ef = next((r for r in results if r["name"] == "EGYPTIAN_FRACTIONS"), None)
+    if ef:
+        assert ef["type"] == "list"
+        assert ef["size"] == 3
+
+
+def test_build_atlas_has_constants():
+    """Test that build_atlas includes constant_maps."""
+    atlas = build_atlas()
+    assert "constant_maps" in atlas
+    assert len(atlas["constant_maps"]) > 50  # expect many across 3 repos
+    assert "constant_stats" in atlas
+
+
+def test_constants_json_serializable():
+    """Test that constant maps are JSON-serializable."""
+    atlas = build_atlas()
+    json.dumps(atlas["constant_maps"], ensure_ascii=False)
+
+
+def test_write_sqlite_with_constants():
+    """Test that SQLite output includes constant_maps table."""
+    atlas = build_atlas()
+    with tempfile.NamedTemporaryFile(suffix='.db', delete=False) as f:
+        dbpath = f.name
+    try:
+        write_sqlite(atlas, dbpath)
+        conn = sqlite3.connect(dbpath)
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM constant_maps")
+        count = cur.fetchone()[0]
+        assert count == len(atlas["constant_maps"])
+        cur.execute("SELECT DISTINCT category FROM constant_maps")
+        categories = [row[0] for row in cur.fetchall()]
+        assert len(categories) > 1
+        conn.close()
+    finally:
+        os.unlink(dbpath)
+
+
 if __name__ == "__main__":
     import pytest
     pytest.main([__file__, "-v"])

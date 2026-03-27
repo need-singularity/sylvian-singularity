@@ -6,6 +6,7 @@ and extracts structured metadata (id, title, grade, refs, etc.).
 """
 
 import re
+import ast
 import json
 import sys
 import sqlite3
@@ -256,17 +257,20 @@ REPO_SCANS = [
         "name": "TECS-L",
         "root": BASE,
         "hypothesis_dirs": ["docs/hypotheses", "math/docs/hypotheses"],
+        "constant_dirs": [".", "calc", "math"],
     },
     {
         "name": "SEDI",
         "root": DEV / "SEDI",
         "hypothesis_dirs": ["docs/hypotheses"],
+        "constant_dirs": ["sedi", "sedi/sources"],
     },
     {
         "name": "anima",
         "root": DEV / "anima",
         "hypothesis_dirs": [],
         "python_sources": ["hypothesis_recommender.py"],
+        "constant_dirs": ["."],
     },
 ]
 
@@ -333,6 +337,247 @@ def _scan_anima_python(repo_root, source_file):
     return results
 
 
+def _make_json_safe(obj):
+    """Recursively convert non-JSON-serializable types (sets, tuples) to lists."""
+    if isinstance(obj, set):
+        return sorted(list(obj), key=str)
+    if isinstance(obj, tuple):
+        return [_make_json_safe(v) for v in obj]
+    if isinstance(obj, dict):
+        return {str(k): _make_json_safe(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_make_json_safe(v) for v in obj]
+    if isinstance(obj, (int, float, str, bool, type(None))):
+        return obj
+    # Fallback: stringify
+    return str(obj)
+
+
+def _categorize_constant(name):
+    """Auto-categorize a constant map by its name."""
+    upper = name.upper()
+    if "TARGET" in upper:
+        return "targets"
+    if "PHYSICS" in upper or "PARTICLE" in upper or "MASS" in upper:
+        return "physics"
+    if "CONSTANT" in upper or "POOL" in upper:
+        return "constants"
+    if "DOMAIN" in upper:
+        return "domains"
+    if "MAGIC" in upper or "NUCLEAR" in upper:
+        return "nuclear"
+    if "EXPRESSION" in upper:
+        return "expressions"
+    if "OBSERVED" in upper:
+        return "observed"
+    if "PROFILE" in upper or "BRAIN" in upper or "EEG" in upper:
+        return "neuroscience"
+    return "other"
+
+
+def _is_uppercase_name(name):
+    """Check if a name is an UPPERCASE constant (all caps with underscores)."""
+    return bool(re.match(r'^[A-Z][A-Z0-9_]*$', name))
+
+
+def _try_extract_ordered_dict(node):
+    """Try to extract keys/values from OrderedDict([(...), ...]) calls."""
+    if not isinstance(node, ast.Call):
+        return None
+    # Check for OrderedDict(...)
+    func = node.func
+    func_name = None
+    if isinstance(func, ast.Name):
+        func_name = func.id
+    elif isinstance(func, ast.Attribute):
+        func_name = func.attr
+    if func_name != "OrderedDict":
+        return None
+    if not node.args:
+        return None
+    arg = node.args[0]
+    if not isinstance(arg, (ast.List, ast.Tuple)):
+        return None
+    keys = []
+    values = {}
+    evaluable = True
+    for elt in arg.elts:
+        if not isinstance(elt, (ast.Tuple, ast.List)) or len(elt.elts) != 2:
+            continue
+        try:
+            key = ast.literal_eval(elt.elts[0])
+            keys.append(key)
+        except (ValueError, TypeError):
+            keys.append("?")
+            evaluable = False
+            continue
+        try:
+            val = ast.literal_eval(elt.elts[1])
+            values[key] = val
+        except (ValueError, TypeError):
+            evaluable = False
+    return {"keys": keys, "values": values if evaluable else None, "evaluable": evaluable}
+
+
+def extract_constants_from_py(filepath, repo_name):
+    """Extract UPPERCASE constant maps (dicts, lists, OrderedDicts) from a Python file.
+
+    Uses the ast module to parse the file and find top-level assignments
+    to UPPERCASE names that are dicts, lists, or OrderedDict calls.
+
+    Args:
+        filepath: Absolute path to the Python file.
+        repo_name: Repository name (TECS-L, SEDI, anima).
+
+    Returns:
+        list of constant map entry dicts.
+    """
+    filepath = Path(filepath)
+    try:
+        source = filepath.read_text(encoding="utf-8", errors="replace")
+        tree = ast.parse(source)
+    except (OSError, SyntaxError):
+        return []
+
+    # Find repo root for relative path
+    repo_roots = {
+        "TECS-L": BASE,
+        "SEDI": DEV / "SEDI",
+        "anima": DEV / "anima",
+    }
+    repo_root = repo_roots.get(repo_name, BASE)
+    try:
+        rel_path = str(filepath.relative_to(repo_root))
+    except ValueError:
+        rel_path = filepath.name
+
+    results = []
+    for node in ast.iter_child_nodes(tree):
+        if not isinstance(node, ast.Assign):
+            continue
+        if len(node.targets) != 1:
+            continue
+        target = node.targets[0]
+        if not isinstance(target, ast.Name):
+            continue
+        name = target.id
+        if not _is_uppercase_name(name):
+            continue
+        if name.startswith("_"):
+            continue
+
+        value_node = node.value
+        entry = {
+            "name": name,
+            "repo": repo_name,
+            "file": rel_path,
+            "line": node.lineno,
+            "type": None,
+            "size": 0,
+            "keys": None,
+            "evaluable": False,
+            "values": None,
+            "category": _categorize_constant(name),
+        }
+
+        # Dict literal
+        if isinstance(value_node, ast.Dict):
+            entry["type"] = "dict"
+            # Try to extract keys
+            keys = []
+            for k in value_node.keys:
+                if k is None:
+                    keys.append("**")
+                    continue
+                try:
+                    keys.append(ast.literal_eval(k))
+                except (ValueError, TypeError):
+                    keys.append("?")
+            entry["keys"] = keys
+            entry["size"] = len(value_node.keys)
+
+            # Try full literal_eval
+            try:
+                val = ast.literal_eval(value_node)
+                entry["evaluable"] = True
+                entry["values"] = val
+            except (ValueError, TypeError):
+                entry["evaluable"] = False
+
+        # List/Tuple literal
+        elif isinstance(value_node, (ast.List, ast.Tuple)):
+            entry["type"] = "list"
+            entry["size"] = len(value_node.elts)
+            try:
+                val = ast.literal_eval(value_node)
+                entry["evaluable"] = True
+                entry["values"] = val
+            except (ValueError, TypeError):
+                entry["evaluable"] = False
+
+        # Dict comprehension
+        elif isinstance(value_node, ast.DictComp):
+            entry["type"] = "dict"
+            entry["size"] = 0  # unknown
+            entry["evaluable"] = False
+
+        # OrderedDict(...) call
+        elif isinstance(value_node, ast.Call):
+            od = _try_extract_ordered_dict(value_node)
+            if od is not None:
+                entry["type"] = "OrderedDict"
+                entry["keys"] = od["keys"]
+                entry["size"] = len(od["keys"])
+                entry["evaluable"] = od["evaluable"]
+                entry["values"] = od["values"]
+            else:
+                continue  # Not a recognized constant pattern
+
+        # {**A, **B} style merge (still a Dict node, handled above)
+        else:
+            continue  # Skip non-collection assignments
+
+        # Filtering: skip empty and very large
+        if entry["size"] == 0 and entry["type"] != "dict":
+            continue
+        if entry["size"] > 500:
+            continue
+
+        # Make values JSON-safe (convert sets, tuples, etc.)
+        if entry["values"] is not None:
+            entry["values"] = _make_json_safe(entry["values"])
+        if entry["keys"] is not None:
+            entry["keys"] = [_make_json_safe(k) for k in entry["keys"]]
+
+        results.append(entry)
+
+    return results
+
+
+def _scan_py_constants(repo_name, repo_root, scan_dirs):
+    """Scan Python files in given directories for constant maps.
+
+    Args:
+        repo_name: Repository name.
+        repo_root: Path to the repository root.
+        scan_dirs: List of relative directory paths to scan.
+
+    Returns:
+        list of constant map entry dicts.
+    """
+    results = []
+    for rel_dir in scan_dirs:
+        dirpath = repo_root / rel_dir
+        if not dirpath.is_dir():
+            continue
+        for pyfile in sorted(dirpath.glob("*.py")):
+            if pyfile.name.startswith('.'):
+                continue
+            entries = extract_constants_from_py(pyfile, repo_name)
+            results.extend(entries)
+    return results
+
+
 def build_atlas():
     """Scan all repos and build a unified atlas of hypotheses.
 
@@ -369,12 +614,26 @@ def build_atlas():
             seen.add(h["id"])
             unique.append(h)
 
+    # Scan constant maps from Python files
+    all_constants = []
+    constant_stats = {}
+    for repo_cfg in REPO_SCANS:
+        name = repo_cfg["name"]
+        root = repo_cfg["root"]
+        cdirs = repo_cfg.get("constant_dirs", [])
+        if cdirs:
+            entries = _scan_py_constants(name, root, cdirs)
+            all_constants.extend(entries)
+            constant_stats[name] = len(entries)
+
     return {
-        "version": "1.0",
+        "version": "1.1",
         "generated": datetime.now().isoformat(timespec="seconds"),
         "stats": stats,
         "total": len(unique),
         "hypotheses": unique,
+        "constant_maps": all_constants,
+        "constant_stats": constant_stats,
     }
 
 
@@ -454,6 +713,38 @@ def write_sqlite(atlas, dbpath):
                     "INSERT INTO edges VALUES (?, ?, ?)",
                     (source, target, "ref"),
                 )
+
+    # ── constant_maps table ──
+    cur.execute("DROP TABLE IF EXISTS constant_maps")
+    cur.execute("""
+        CREATE TABLE constant_maps (
+            name TEXT,
+            repo TEXT,
+            file TEXT,
+            line INTEGER,
+            type TEXT,
+            size INTEGER,
+            keys TEXT,
+            evaluable INTEGER,
+            val_json TEXT,
+            category TEXT
+        )
+    """)
+    cur.execute("CREATE INDEX idx_cm_repo ON constant_maps(repo)")
+    cur.execute("CREATE INDEX idx_cm_category ON constant_maps(category)")
+
+    for cm in atlas.get("constant_maps", []):
+        cur.execute(
+            "INSERT INTO constant_maps VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            (
+                cm["name"], cm["repo"], cm["file"], cm["line"],
+                cm["type"], cm["size"],
+                json.dumps(cm["keys"]) if cm["keys"] is not None else None,
+                1 if cm["evaluable"] else 0,
+                json.dumps(cm["values"]) if cm["values"] is not None else None,
+                cm["category"],
+            ),
+        )
 
     conn.commit()
     conn.close()
@@ -631,6 +922,24 @@ def main():
         for grade, count in sorted(grade_dist.items(), key=lambda x: -x[1])[:10]:
             bar = "#" * min(count // 5, 40)
             print(f"    {grade:6s} {count:>5d}  {bar}")
+
+        # Constant map stats
+        cmaps = atlas.get("constant_maps", [])
+        if cmaps:
+            print(f"\n  Constant maps: {len(cmaps)}")
+            cstats = atlas.get("constant_stats", {})
+            for repo, count in sorted(cstats.items()):
+                print(f"    {repo:10s} {count:>5d}")
+            # Category distribution
+            cat_dist = {}
+            for cm in cmaps:
+                cat = cm.get("category", "other")
+                cat_dist[cat] = cat_dist.get(cat, 0) + 1
+            print("  By category:")
+            for cat, count in sorted(cat_dist.items(), key=lambda x: -x[1]):
+                print(f"    {cat:16s} {count:>5d}")
+            evaluable = sum(1 for cm in cmaps if cm.get("evaluable"))
+            print(f"  Evaluable: {evaluable}/{len(cmaps)}")
 
     # --query FIELD=VALUE
     if args.query:
