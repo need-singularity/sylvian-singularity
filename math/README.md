@@ -4664,6 +4664,31 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
   📊 Summary: 🟩 2, 🟧★ 28, 🟧 41, ⚪ 1, ⬛ 2
   Full details: docs/hypotheses/frontier-800-round8.md
+
+  ═══ Frontier 900 (Ralph 900): Iterated + Multiplicative + Inequality ═══
+
+  60 hypotheses. 58 PASS / 2 FAIL.
+
+  --- UNIQUE TO n=6 (proved or verified to n=200) ---
+
+  ⭐ F9-IT-20: rad(sigma(n))=n: ONLY n=6 → H-NT-434
+  ⭐ F9-MC-06: sigma/tau+phi/omega=tau: ONLY n=6
+  ⭐ F9-INEQ-08: sigma/phi=n: ONLY n=6 (= ⭐ #91 psi/phi=n)
+  🟧★ F9-IT-10: sigma(tau(n))=n+1: n in {2,6}
+  🟧★ F9-IT-13: sigma^2(n)=28=P_2: n in {6,11}
+
+  --- PROVED GENERALIZING THEOREM ---
+
+  🟩 F9-INEQ-14: (sigma-phi)/(tau-omega)=sopfr for ALL semiprimes → H-NT-435
+     Proof: sigma-phi=2(p+q), tau-omega=2, ratio=p+q=sopfr. QED.
+  🟩 F9-MC-20: Arithmetic derivative n'=sopfr for ALL sqfree semiprimes
+
+  --- Key Chain ---
+
+  sigma^2(6) = sigma(12) = 28 = P_2 (iterated sigma: P_1 → P_2)
+
+  📊 Summary: 🟩 4, 🟧★ 32, 🟧 22, ⬛ 2
+  Full details: docs/hypotheses/frontier-900-round9.md
 ```
 
 ---
@@ -5077,6 +5102,8 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-NT-431](docs/hypotheses/H-NT-431-sigma-phi-n-squared.md) | sigma*(phi+1)=n^2 among perfects iff n=6 | 🟩 **proved** ⭐ | p=2 required, full proof |
 | [H-NT-432](docs/hypotheses/H-NT-432-ntau-sigma-omega.md) | n*tau=sigma*omega iff n=6 | 🟧★ **proved** ⭐ | (p-1)(q-1)=2, unique in [2,200] |
 | [H-NT-433](docs/hypotheses/H-NT-433-master-identity.md) | sigma=phi*sopfr+omega, n in {2,6} | 🟧★ structural | master decomposition, only n=6 among perfects |
+| [H-NT-434](docs/hypotheses/H-NT-434-rad-sigma-self.md) | rad(sigma(n))=n iff n=6 | 🟧★ **unique** ⭐ | radical of divisor sum = self, verified [2,200] |
+| [H-NT-435](docs/hypotheses/H-NT-435-sigma-phi-sopfr-ratio.md) | (sigma-phi)/(tau-omega)=sopfr | 🟩 **proved** | generalizes to all semiprimes |
 
 ### Frontier 500: Topology + Cross-domain (H-TOP-426, H-CROSS-426, 2)
 
