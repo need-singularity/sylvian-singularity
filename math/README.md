@@ -5001,11 +5001,17 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
   📊 Summary: ⭐ 21, 🟩 31, 🟧 4, ⚪ 19, ⬛ 25
 
-  ═══ GRAND TOTAL (Frontiers 500-1900, 18 iterations) ═══
+  ═══ Frontier 1900b (Ralph 1900b): Provable Theorems (limit=200) ═══
 
-  Total hypotheses generated: 1584
-  Proved theorems unique to n=6: 289+
-  Unique-to-6 characterizations: 265+
+  100 hypotheses, 25⭐, 10🟩, 2🟧 at strengthened limit=200.
+  ⭐ Phi(n)=sigma(n) composite only n=6, CF(sqrt(6)) period sum=6
+  ⭐ 8 characterizations confirmed unique at n<=200
+
+  ═══ GRAND TOTAL (Frontiers 500-1900b, 19 iterations) ═══
+
+  Total hypotheses generated: 1684
+  Proved theorems unique to n=6: 314+
+  Unique-to-6 characterizations: 290+
   Generalizing theorems (all perfects): 64+
   Hypothesis documents created: 27+
 ```
