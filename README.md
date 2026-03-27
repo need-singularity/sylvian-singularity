@@ -287,8 +287,6 @@ Details: [Pure mathematics](math/) | [Golden Zone model](docs/golden-zone/) | [V
   tension catches what softmax misses
 ```
 
-```
-
 ### Engine List
 
 | Engine | File | Principle | Role |
