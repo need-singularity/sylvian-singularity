@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T05:02:06",
+  "generated": "2026-03-28T05:07:40",
   "stats": {
     "TECS-L": 1070,
     "SEDI": 665,
@@ -27556,7 +27556,7 @@
       "name": "EMOTION_COLORS",
       "repo": "anima",
       "file": "anima_alive.py",
-      "line": 951,
+      "line": 973,
       "type": "dict",
       "size": 8,
       "keys": [

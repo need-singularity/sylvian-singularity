@@ -1,6 +1,6 @@
 # Math Atlas
 
-> Auto-generated: 2026-03-28T05:06:14 | 1700 hypotheses | 283 constant maps
+> Auto-generated: 2026-03-28T05:07:40 | 1700 hypotheses | 283 constant maps
 
 ## Summary
 
@@ -2026,7 +2026,7 @@
 
 | # | Name | File | Type | Size | Category | Eval |
 |---|------|------|------|------|----------|------|
-| 1 | EMOTION_COLORS | anima_alive.py:951 | dict | 8 | other | Y |
+| 1 | EMOTION_COLORS | anima_alive.py:973 | dict | 8 | other | Y |
 | 2 | AUTO_PROMPTS | anima_cli_test.py:249 | list | 20 | other | Y |
 | 3 | STRESS_PROMPTS | anima_cli_test.py:272 | list | 10 | other | - |
 | 4 | ALL_HYPOTHESES | bench_phi_hypotheses.py:20764 | dict | 16 | other | - |
