@@ -380,9 +380,12 @@ digraph math_atlas {
   TECS_L_H_CX_70 [label="Singularity = Three Closure Loops" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_8 [label="Phase Acceleration x3 = sigma/tau (Cross" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_81 [label="Aberration-Phase Alignment — Classes wit" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_82 [label="Epoch 1 PH = Final Confusion Map" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_88 [label="Universal Confusion Topology — PH merge " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_90 [label="Epoch 1 Phase Transition — Confusion Str" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_95 [label="Predicting Generalization Gap with PH — " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_96 [label="Weight Change Triggers Topological Trans" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_bridge_epoch1_ph_tension [label="H-CX-Bridge-5: Epoch-1 Crystallization =" fillcolor="#4A90D9" shape=box];
   TECS_L_H_CYCL_1 [label="Cyclotomic-Stirling Identity: Phi_n(n) =" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_EE_12 [label="Optimal FFN Expansion Ratio" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_EN_0 [label="Energy Hypothesis Master — n=6 and Energ" fillcolor="#4A90D9" shape=ellipse];
@@ -660,6 +663,9 @@ digraph math_atlas {
   TECS_L_H_CX_81 -> TECS_L_H_CX_60;
   TECS_L_H_CX_81 -> TECS_L_H_CX_66;
   TECS_L_H_CX_96 -> TECS_L_H_CX_90;
+  TECS_L_H_CX_bridge_epoch1_ph_tension -> TECS_L_H_CX_82;
+  TECS_L_H_CX_bridge_epoch1_ph_tension -> TECS_L_H_CX_95;
+  TECS_L_H_CX_bridge_epoch1_ph_tension -> TECS_L_H_CX_90;
   TECS_L_H_MOTIV_1 -> TECS_L_H_KTHY_1;
   TECS_L_H_NT_426_sigma2_phi_sopfr -> TECS_L_090;
   TECS_L_H_NT_426_sigma2_phi_sopfr -> TECS_L_098;

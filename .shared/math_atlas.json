@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T08:04:04",
+  "generated": "2026-03-28T08:08:43",
   "stats": {
-    "TECS-L": 1073,
+    "TECS-L": 1075,
     "SEDI": 665,
     "anima": 20,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 1703,
+  "total": 1705,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -7569,6 +7569,30 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-CX-99-ph-optimal-checkpoint.md"
+    },
+    {
+      "id": "TECS-L:H-CX-bridge-6criteria-R6",
+      "title": "H-CX-Bridge-4: Anima's 6 Consciousness Criteria = R(6)=1 Balance",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-6criteria-R6.md"
+    },
+    {
+      "id": "TECS-L:H-CX-bridge-epoch1-ph-tension",
+      "title": "H-CX-Bridge-5: Epoch-1 Crystallization = Tension + PH Topology",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [
+        "H-CX-82",
+        "H-CX-95",
+        "H-CX-90"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-epoch1-ph-tension.md"
     },
     {
       "id": "TECS-L:H-CX-bridge-golden-moe-experts",
@@ -26171,6 +26195,31 @@
       "category": "other"
     },
     {
+      "name": "N6",
+      "repo": "anima",
+      "file": "optimal_config.py",
+      "line": 24,
+      "type": "dict",
+      "size": 12,
+      "keys": [
+        "n",
+        "tau",
+        "sigma",
+        "phi",
+        "omega",
+        "sopfr",
+        "sigma_phi",
+        "miller",
+        "kuramoto_r",
+        "ade_triad",
+        "phi_n",
+        "dedekind"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
       "name": "EMPIRICAL",
       "repo": "anima",
       "file": "phi_scaling_calculator.py",
@@ -26853,7 +26902,7 @@
   "constant_stats": {
     "TECS-L": 72,
     "SEDI": 110,
-    "anima": 25,
+    "anima": 26,
     "golden-moe": 3,
     "conscious-lm": 4,
     "energy-efficiency": 10
