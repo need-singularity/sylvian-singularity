@@ -4917,12 +4917,32 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
   📊 Summary: ⭐ 72, 🟩 15, 🟧 0, ⚪ 4, ⬛ 9
   Scripts: math/frontier_1700_verify.py
 
-  ═══ GRAND TOTAL (Frontiers 500-1700, 14 iterations) ═══
+  ═══ Frontier 1700b (Ralph 1700b): Pure Math Single-Condition ═══
 
-  Total hypotheses generated: 1184
-  Proved theorems unique to n=6: 171+
-  Unique-to-6 characterizations: 179+
-  Generalizing theorems proved: 14+
+  100 SINGLE-CONDITION hypotheses (no AND-chains), 15⭐, 17🟩, 8🟧.
+
+  NEW genuinely surprising unique-to-6:
+  ⭐ L(n)=sigma+phi+tau: L(6)=18=12+2+4 — Lucas = three-function sum!
+  ⭐ F(n+1)=sigma+1: F(7)=13=12+1 — next Fibonacci exceeds sigma by 1!
+  ⭐ denom(B_n)=sigma*tau-n: denom(B_6)=42=48-6 — Bernoulli from n=6!
+  ⭐ C(sigma,phi)=n*p(n): C(12,2)=66=6*11 — binomial = n*partition!
+  ⭐ Phi_6(phi)=sigma/tau: 6th cyclotomic at totient = average divisor!
+  ⭐ lcm(sigma,phi,tau,n)=sigma — sigma is LCM of all four!
+  ⭐ sigma+n=phi*(tau+sopfr): 18=2*9 unique linear decomposition!
+
+  Green generalizing to 28 (perfect number theorems):
+  🟩 rad(sigma)=rad(n) for {6,28} | sigma(sigma-n)=sigma for {6,28}
+  🟩 sum F(d|n)=sigma for {5,6} | p(n)=sigma-1 for {2,3,6}
+
+  📊 Summary: ⭐ 15, 🟩 17, 🟧 8, ⚪ 13, ⬛ 47
+  Scripts: math/frontier_1700b_verify.py
+
+  ═══ GRAND TOTAL (Frontiers 500-1700b, 15 iterations) ═══
+
+  Total hypotheses generated: 1284
+  Proved theorems unique to n=6: 186+
+  Unique-to-6 characterizations: 196+
+  Generalizing theorems proved: 17+
   Hypothesis documents created: 25+
 ```
 
