@@ -1047,10 +1047,14 @@ tr:hover { background: #16213e; }
   <div class="tab active" id="tab-hypotheses" onclick="switchTab('hypotheses')">Hypotheses</div>
   <div class="tab" id="tab-constants" onclick="switchTab('constants')">Constant Maps</div>
   <div class="tab" id="tab-graph" onclick="switchTab('graph')">Graph</div>
+  <div class="tab" id="tab-tree" onclick="switchTab('tree')">Tree</div>
 </div>
 
 <div class="table-wrap" id="hypotheses-table"></div>
 <div class="table-wrap" id="constants-table" style="display:none"></div>
+<div id="tree-container" style="display:none; overflow:auto; background:#0f0f23; border-radius:4px; padding:20px; font-size:0.7em; line-height:1.3;">
+<pre id="tree-content" style="color:#e0e0e0;">__TREE_ASCII__</pre>
+</div>
 <div id="graph-container" style="display:none">
   <canvas id="graph-canvas" height="800"></canvas>
   <div id="graph-tooltip"></div>
@@ -1193,9 +1197,11 @@ function switchTab(tab) {
   document.getElementById('tab-hypotheses').className = tab === 'hypotheses' ? 'tab active' : 'tab';
   document.getElementById('tab-constants').className = tab === 'constants' ? 'tab active' : 'tab';
   document.getElementById('tab-graph').className = tab === 'graph' ? 'tab active' : 'tab';
+  document.getElementById('tab-tree').className = tab === 'tree' ? 'tab active' : 'tab';
   document.getElementById('hypotheses-table').style.display = tab === 'hypotheses' ? '' : 'none';
   document.getElementById('constants-table').style.display = tab === 'constants' ? '' : 'none';
   document.getElementById('graph-container').style.display = tab === 'graph' ? 'block' : 'none';
+  document.getElementById('tree-container').style.display = tab === 'tree' ? 'block' : 'none';
   sortCol = null;
   sortAsc = true;
   if (tab === 'graph') { setTimeout(initGraph, 50); }
@@ -1627,7 +1633,7 @@ def write_html(atlas, htmlpath):
 
     # Run simulation (500 iterations)
     alpha = 1.0
-    for tick in range(800):
+    for tick in range(1200):
         alpha *= 0.995
         if alpha < 0.005:
             break
@@ -1641,9 +1647,11 @@ def write_html(atlas, htmlpath):
                 dy = nj["y"] - ni["y"]
                 d2 = dx * dx + dy * dy + 1.0
                 dist = math.sqrt(d2)
-                # Coulomb-like repulsion, capped at min distance 20
-                eff_dist = max(dist, 20.0)
-                force = -3000.0 / (eff_dist * eff_dist)
+                # Strong repulsion, especially at close range
+                eff_dist = max(dist, 15.0)
+                force = -5000.0 / (eff_dist * eff_dist)
+                if dist < 50:
+                    force *= 2.5  # extra push for overlapping nodes
                 fx = force * dx / dist
                 fy = force * dy / dist
                 ni["vx"] -= fx
@@ -1707,9 +1715,18 @@ def write_html(atlas, htmlpath):
     repos = list(atlas.get("stats", {}).keys())
     repo_list_json = json.dumps(repos, ensure_ascii=False)
 
+    # Load ASCII tree from file
+    tree_path = Path(__file__).resolve().parent / "atlas_tree.txt"
+    tree_ascii = ""
+    if tree_path.exists():
+        tree_ascii = tree_path.read_text(encoding='utf-8', errors='replace')
+    # Escape HTML entities in tree
+    tree_ascii = tree_ascii.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
     html = HTML_TEMPLATE.replace("__ATLAS_JSON__", atlas_json)
     html = html.replace("__GRAPH_JSON__", graph_data)
     html = html.replace("__REPO_LIST__", repo_list_json)
+    html = html.replace("__TREE_ASCII__", tree_ascii)
 
     with open(htmlpath, 'w', encoding='utf-8') as f:
         f.write(html)
