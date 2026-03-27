@@ -1641,7 +1641,7 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 | [H-SEDI-4](docs/hypotheses/H-SEDI-4-proton-electron-ratio.md) | m_p/m_e = sigma*T(17) = 12*153 = 1836 | 🟧 | 0.008% error; Texas p~0.017; T() choice free; remainder 0.15267 unexplained |
 | [H-SEDI-5](docs/hypotheses/H-SEDI-5-fine-structure-137.md) | 1/alpha = (sigma-tau)*17+1 = 137 | ⚪ | Ad hoc +1 correction; without +1: 136 (0.76% off) |
 
-### CERN Optics (H-CERN-4~15, 12 items)
+### CERN Optics (H-CERN-4~20, 17 items)
 
 R-spectrum lens/telescope/topology를 CERN 입자 데이터에 적용. Verified 2026-03-27.
 
@@ -1659,6 +1659,11 @@ R-spectrum lens/telescope/topology를 CERN 입자 데이터에 적용. Verified 
 | [H-CERN-13](docs/hypotheses/H-CERN-13-topological-sensitivity-bsm.md) | Topological sensitivity peak → BSM energy scale | 🔮 | Speculative; needs full SM point cloud |
 | [H-CERN-14](docs/hypotheses/H-CERN-14-rho-omega-perfect-lens.md) | ⭐ ρ/ω at perfect lens n≈6 (R=1) | 🟧 | n≈5.77 (3.8% from 6); m_π unit dependent |
 | [H-CERN-15](docs/hypotheses/H-CERN-15-optics-grand-unification.md) | ⭐ R-spectrum optics grand unification | META | 3 SUPPORTED, 2 REJECTED, 4 PARTIAL |
+| [H-CERN-16](docs/hypotheses/H-CERN-16-perfect-number-mass-ladder.md) | ⭐⭐ Perfect number mass ladder: P₂×m_π=ψ(3770) | 🟧★ | 0.15% err (5.74 MeV); Texas p≈4.3% marginal |
+| [H-CERN-17](docs/hypotheses/H-CERN-17-dimensionless-ratio-spectrum.md) | Dimensionless ratios confirm τ=4,σ/τ=3,σ=12 | 🟩 | Known, unit-independent reconfirmation |
+| [H-CERN-18](docs/hypotheses/H-CERN-18-r-multiplicativity-factorization.md) | R-multiplicativity: R(2)×R(3)=R(6)=1 | 🟩 | Exact arithmetic identity, trivial |
+| [H-CERN-19](docs/hypotheses/H-CERN-19-sigma-chain-mass-predictions.md) | σ-chain 6→12→28: first 3 terms match resonances | 🟧 | σ²(6)=28=P₂→ψ(3770); chain breaks at k=3 |
+| [H-CERN-20](docs/hypotheses/H-CERN-20-achromatic-corridor.md) | Achromatic corridor: R=1 at n=1(π),6(ρ/ω) only | 🟩 | Known observation, no new content |
 
 ### Color Vision/Visual (354c-356c)
 
