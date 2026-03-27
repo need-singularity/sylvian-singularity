@@ -6,7 +6,12 @@ and extracts structured metadata (id, title, grade, refs, etc.).
 """
 
 import re
+import json
+import sys
+import sqlite3
+import argparse
 from pathlib import Path
+from datetime import datetime
 
 # ── Grade emojis (detection order matters) ──────────────────────────
 GRADE_EMOJIS = ["\u2b50", "\U0001f7e9", "\U0001f7e7", "\U0001f7e6", "\U0001f7e8", "\U0001f7e5", "\U0001f7ea", "\u26aa", "\u2b1b", "\u2605", "\u26a1", "\u2705"]
@@ -241,3 +246,133 @@ def parse_anima_recommender(source):
         })
 
     return results
+
+
+# ── Repo scan configuration ──────────────────────────────────────
+
+BASE = Path(__file__).resolve().parent.parent  # TECS-L root
+DEV = BASE.parent  # ~/Dev
+
+REPO_SCANS = [
+    {
+        "name": "TECS-L",
+        "root": BASE,
+        "hypothesis_dirs": ["docs/hypotheses", "math/docs/hypotheses"],
+    },
+    {
+        "name": "SEDI",
+        "root": DEV / "SEDI",
+        "hypothesis_dirs": ["docs/hypotheses"],
+    },
+    {
+        "name": "anima",
+        "root": DEV / "anima",
+        "hypothesis_dirs": [],
+        "python_sources": ["hypothesis_recommender.py"],
+    },
+]
+
+
+def _scan_md_dir(repo_name, repo_root, rel_dir):
+    """Scan a directory for *.md files and parse each as a hypothesis.
+
+    Args:
+        repo_name: Repository name (TECS-L, SEDI, anima).
+        repo_root: Path to the repository root.
+        rel_dir: Relative directory path within the repo.
+
+    Returns:
+        list of parsed hypothesis dicts.
+    """
+    results = []
+    dirpath = repo_root / rel_dir
+    if not dirpath.is_dir():
+        return results
+    for mdfile in sorted(dirpath.glob("*.md")):
+        try:
+            text = mdfile.read_text(encoding="utf-8", errors="replace")
+        except (OSError, IOError):
+            continue
+        filepath = str(mdfile.relative_to(repo_root))
+        h = parse_hypothesis_md(text, repo_name, filepath)
+        results.append(h)
+    return results
+
+
+def _scan_anima_python(repo_root, source_file):
+    """Read and parse an anima Python source file.
+
+    Args:
+        repo_root: Path to the anima repository root.
+        source_file: Relative path to the Python source.
+
+    Returns:
+        list of parsed hypothesis dicts (anima format).
+    """
+    fpath = repo_root / source_file
+    if not fpath.is_file():
+        return []
+    try:
+        text = fpath.read_text(encoding="utf-8", errors="replace")
+    except (OSError, IOError):
+        return []
+    entries = parse_anima_recommender(text)
+    # Normalize anima entries to match MD hypothesis shape
+    results = []
+    for e in entries:
+        results.append({
+            "id": e["id"],
+            "title": e["title"],
+            "repo": "anima",
+            "domain": e.get("category"),
+            "grade": e.get("grade"),
+            "refs": [],
+            "gz_dependent": None,
+            "filepath": source_file,
+        })
+    return results
+
+
+def build_atlas():
+    """Scan all repos and build a unified atlas of hypotheses.
+
+    Returns:
+        dict with keys: version, generated, stats, total, hypotheses
+    """
+    all_hypotheses = []
+    stats = {}
+
+    for repo_cfg in REPO_SCANS:
+        name = repo_cfg["name"]
+        root = repo_cfg["root"]
+        repo_count = 0
+
+        # Scan markdown hypothesis directories
+        for rel_dir in repo_cfg.get("hypothesis_dirs", []):
+            entries = _scan_md_dir(name, root, rel_dir)
+            all_hypotheses.extend(entries)
+            repo_count += len(entries)
+
+        # Scan Python sources (anima)
+        for src in repo_cfg.get("python_sources", []):
+            entries = _scan_anima_python(root, src)
+            all_hypotheses.extend(entries)
+            repo_count += len(entries)
+
+        stats[name] = repo_count
+
+    # Deduplicate by ID (keep first occurrence)
+    seen = set()
+    unique = []
+    for h in all_hypotheses:
+        if h["id"] not in seen:
+            seen.add(h["id"])
+            unique.append(h)
+
+    return {
+        "version": "1.0",
+        "generated": datetime.now().isoformat(timespec="seconds"),
+        "stats": stats,
+        "total": len(unique),
+        "hypotheses": unique,
+    }

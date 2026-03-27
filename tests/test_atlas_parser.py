@@ -1,5 +1,5 @@
 """Tests for math atlas hypothesis parser."""
-import sys, os
+import sys, os, json, tempfile, sqlite3
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '.shared'))
 
 from scan_math_atlas import parse_hypothesis_md
@@ -105,6 +105,29 @@ HYPOTHESIS_DB = [
     assert results[0]["title"] == "Bidirectional coupling"
     assert results[1]["id"] == "anima:DD94"
     assert results[1]["grade"] is None
+
+
+from scan_math_atlas import build_atlas
+
+
+def test_build_atlas_returns_dict():
+    atlas = build_atlas()
+    assert "version" in atlas
+    assert "hypotheses" in atlas
+    assert isinstance(atlas["hypotheses"], list)
+    assert len(atlas["hypotheses"]) > 1000
+
+
+def test_build_atlas_no_duplicate_ids():
+    atlas = build_atlas()
+    ids = [h["id"] for h in atlas["hypotheses"]]
+    dupes = [x for x in ids if ids.count(x) > 1]
+    assert len(dupes) == 0, f"Duplicate IDs: {set(dupes)}"
+
+
+def test_build_atlas_json_serializable():
+    atlas = build_atlas()
+    json.dumps(atlas, ensure_ascii=False)
 
 
 if __name__ == "__main__":
