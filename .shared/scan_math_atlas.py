@@ -993,6 +993,11 @@ td.title-col { white-space: normal; max-width: 500px; }
 tr:hover { background: #16213e; }
 .count { background: #16213e; padding: 5px 10px; border-radius: 4px; font-size: 0.8em; color: #888; white-space: nowrap; }
 .no-results { text-align: center; padding: 40px; color: #555; }
+#graph-container { display: none; position: relative; }
+#graph-canvas { background: #0f0f23; border-radius: 4px; cursor: grab; width: 100%; }
+#graph-canvas:active { cursor: grabbing; }
+#graph-tooltip { position: absolute; display: none; padding: 6px 10px; background: rgba(22,33,62,0.95); border: 1px solid #444; border-radius: 4px; font-size: 0.8em; pointer-events: none; max-width: 300px; white-space: nowrap; color: #e0e0e0; z-index: 10; }
+#graph-stats { position: absolute; top: 10px; right: 10px; font-size: 0.75em; color: #666; }
 @media (max-width: 768px) {
   body { padding: 10px; }
   .controls { flex-direction: column; }
@@ -1020,13 +1025,20 @@ tr:hover { background: #16213e; }
 <div class="tabs">
   <div class="tab active" id="tab-hypotheses" onclick="switchTab('hypotheses')">Hypotheses</div>
   <div class="tab" id="tab-constants" onclick="switchTab('constants')">Constant Maps</div>
+  <div class="tab" id="tab-graph" onclick="switchTab('graph')">Graph</div>
 </div>
 
 <div class="table-wrap" id="hypotheses-table"></div>
 <div class="table-wrap" id="constants-table" style="display:none"></div>
+<div id="graph-container" style="display:none">
+  <canvas id="graph-canvas" height="600"></canvas>
+  <div id="graph-tooltip"></div>
+  <div id="graph-stats"></div>
+</div>
 
 <script>
 const ATLAS = __ATLAS_JSON__;
+const GRAPH = __GRAPH_JSON__;
 
 let currentTab = 'hypotheses';
 let sortCol = null;
@@ -1159,16 +1171,20 @@ function switchTab(tab) {
   currentTab = tab;
   document.getElementById('tab-hypotheses').className = tab === 'hypotheses' ? 'tab active' : 'tab';
   document.getElementById('tab-constants').className = tab === 'constants' ? 'tab active' : 'tab';
+  document.getElementById('tab-graph').className = tab === 'graph' ? 'tab active' : 'tab';
   document.getElementById('hypotheses-table').style.display = tab === 'hypotheses' ? '' : 'none';
   document.getElementById('constants-table').style.display = tab === 'constants' ? '' : 'none';
+  document.getElementById('graph-container').style.display = tab === 'graph' ? '' : 'none';
   sortCol = null;
   sortAsc = true;
+  if (tab === 'graph') { initGraph(); }
   render();
 }
 
 function render() {
   if (currentTab === 'hypotheses') renderHypotheses();
-  else renderConstants();
+  else if (currentTab === 'constants') renderConstants();
+  else if (currentTab === 'graph') renderGraph();
 }
 
 function sortArrow(col) {
@@ -1245,6 +1261,299 @@ function renderConstants() {
   document.getElementById('count').textContent = data.length + ' / ' + ATLAS.constant_maps.length;
 }
 
+var forceGraph = null;
+var graphInited = false;
+
+var GRAPH_REPO_COLORS = {'TECS-L': '#4A90D9', 'SEDI': '#E67E22', 'anima': '#2ECC71'};
+
+function gradeRadius(grade) {
+  if (!grade) return 4;
+  if (grade.indexOf('\u2b50') >= 0 || grade.indexOf('\u2605') >= 0) return 12;
+  if (grade.indexOf('\uD83D\uDFE9') >= 0) return 8;
+  if (grade.indexOf('\uD83D\uDFE7') >= 0) return 6;
+  return 4;
+}
+
+function initGraph() {
+  if (graphInited) return;
+  graphInited = true;
+  var canvas = document.getElementById('graph-canvas');
+  var container = document.getElementById('graph-container');
+  canvas.width = container.offsetWidth || document.body.clientWidth - 40;
+  canvas.height = 600;
+
+  var nodes = GRAPH.nodes.map(function(n, i) {
+    var shortId = n.id.indexOf(':') >= 0 ? n.id.substring(n.id.indexOf(':') + 1) : n.id;
+    return {
+      idx: i, id: n.id, shortId: shortId, title: n.title, repo: n.repo,
+      grade: n.grade, color: GRAPH_REPO_COLORS[n.repo] || '#999',
+      radius: gradeRadius(n.grade),
+      x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+      vx: 0, vy: 0, hidden: false, dimmed: false, highlighted: false
+    };
+  });
+
+  var edges = GRAPH.edges.map(function(e) {
+    return { source: e.source, target: e.target };
+  });
+
+  // Build adjacency for click-highlight
+  var adj = {};
+  nodes.forEach(function(n, i) { adj[i] = new Set(); });
+  edges.forEach(function(e) { adj[e.source].add(e.target); adj[e.target].add(e.source); });
+
+  var statsEl = document.getElementById('graph-stats');
+  statsEl.textContent = nodes.length + ' nodes, ' + edges.length + ' edges';
+
+  forceGraph = {
+    nodes: nodes, edges: edges, adj: adj, canvas: canvas,
+    ctx: canvas.getContext('2d'),
+    transform: { x: 0, y: 0, k: 1 },
+    alpha: 1, running: true, dragging: null, selected: null,
+    dragStart: null, panStart: null, isPanning: false
+  };
+
+  setupGraphEvents();
+  tickGraph();
+}
+
+function tickGraph() {
+  var g = forceGraph;
+  if (!g) return;
+  if (g.alpha < 0.001) { g.running = false; drawGraph(); return; }
+  g.alpha *= 0.995;
+  var nodes = g.nodes;
+  var edges = g.edges;
+  var W = g.canvas.width;
+  var H = g.canvas.height;
+
+  // Repulsion (many-body) -- O(n^2), fine for ~300 nodes
+  for (var i = 0; i < nodes.length; i++) {
+    for (var j = i + 1; j < nodes.length; j++) {
+      var dx = nodes[j].x - nodes[i].x;
+      var dy = nodes[j].y - nodes[i].y;
+      var d2 = dx * dx + dy * dy + 1;
+      var force = -300 / d2;
+      var dist = Math.sqrt(d2);
+      var fx = force * dx / dist;
+      var fy = force * dy / dist;
+      nodes[i].vx -= fx; nodes[i].vy -= fy;
+      nodes[j].vx += fx; nodes[j].vy += fy;
+    }
+  }
+
+  // Attraction (links)
+  for (var ei = 0; ei < edges.length; ei++) {
+    var e = edges[ei];
+    var s = nodes[e.source]; var t = nodes[e.target];
+    var dx = t.x - s.x; var dy = t.y - s.y;
+    var d = Math.sqrt(dx * dx + dy * dy) + 1;
+    var force = (d - 80) * 0.01;
+    var fx = force * dx / d; var fy = force * dy / d;
+    s.vx += fx; s.vy += fy;
+    t.vx -= fx; t.vy -= fy;
+  }
+
+  // Center gravity
+  var cx = W / 2; var cy = H / 2;
+  for (var i = 0; i < nodes.length; i++) {
+    nodes[i].vx += (cx - nodes[i].x) * 0.001;
+    nodes[i].vy += (cy - nodes[i].y) * 0.001;
+  }
+
+  // Apply velocity with damping
+  for (var i = 0; i < nodes.length; i++) {
+    var n = nodes[i];
+    if (n === g.dragging) continue;
+    n.vx *= 0.6; n.vy *= 0.6;
+    n.x += n.vx * g.alpha;
+    n.y += n.vy * g.alpha;
+  }
+
+  drawGraph();
+  requestAnimationFrame(tickGraph);
+}
+
+function drawGraph() {
+  var g = forceGraph;
+  if (!g) return;
+  var ctx = g.ctx;
+  var W = g.canvas.width; var H = g.canvas.height;
+  ctx.clearRect(0, 0, W, H);
+  ctx.save();
+  ctx.translate(g.transform.x, g.transform.y);
+  ctx.scale(g.transform.k, g.transform.k);
+
+  var nodes = g.nodes; var edges = g.edges;
+  var hasSel = g.selected !== null;
+
+  // Draw edges
+  for (var i = 0; i < edges.length; i++) {
+    var e = edges[i];
+    var s = nodes[e.source]; var t = nodes[e.target];
+    if (s.hidden || t.hidden) continue;
+    var edgeDim = s.dimmed && t.dimmed;
+    var edgeHi = hasSel && (e.source === g.selected || e.target === g.selected);
+    ctx.strokeStyle = edgeHi ? 'rgba(255,255,100,0.6)' : (edgeDim ? 'rgba(100,100,100,0.1)' : 'rgba(100,100,100,0.3)');
+    ctx.lineWidth = edgeHi ? 1.5 : 0.5;
+    ctx.beginPath();
+    ctx.moveTo(s.x, s.y);
+    ctx.lineTo(t.x, t.y);
+    ctx.stroke();
+  }
+
+  // Draw nodes
+  for (var i = 0; i < nodes.length; i++) {
+    var n = nodes[i];
+    if (n.hidden) continue;
+    var isHi = hasSel && (i === g.selected || g.adj[g.selected].has(i));
+    ctx.fillStyle = n.dimmed ? 'rgba(80,80,80,0.3)' : (isHi ? '#fff' : n.color);
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
+    ctx.fill();
+    if (isHi) {
+      ctx.strokeStyle = n.color;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+    // Label for large nodes
+    if (n.radius >= 8 && g.transform.k > 0.5 && !n.dimmed) {
+      ctx.fillStyle = '#ddd';
+      ctx.font = '9px monospace';
+      ctx.fillText(n.shortId, n.x + n.radius + 3, n.y + 3);
+    }
+  }
+  ctx.restore();
+}
+
+function canvasToWorld(g, cx, cy) {
+  return { x: (cx - g.transform.x) / g.transform.k, y: (cy - g.transform.y) / g.transform.k };
+}
+
+function findNodeAt(g, wx, wy) {
+  for (var i = g.nodes.length - 1; i >= 0; i--) {
+    var n = g.nodes[i];
+    if (n.hidden) continue;
+    var dx = n.x - wx; var dy = n.y - wy;
+    if (dx * dx + dy * dy <= (n.radius + 3) * (n.radius + 3)) return i;
+  }
+  return -1;
+}
+
+function setupGraphEvents() {
+  var g = forceGraph;
+  var canvas = g.canvas;
+  var tooltip = document.getElementById('graph-tooltip');
+
+  canvas.addEventListener('mousedown', function(ev) {
+    var rect = canvas.getBoundingClientRect();
+    var mx = ev.clientX - rect.left; var my = ev.clientY - rect.top;
+    var w = canvasToWorld(g, mx, my);
+    var idx = findNodeAt(g, w.x, w.y);
+    if (idx >= 0) {
+      g.dragging = g.nodes[idx];
+      g.dragStart = { mx: mx, my: my, nx: g.nodes[idx].x, ny: g.nodes[idx].y };
+      // Reheat simulation on drag
+      if (!g.running) { g.alpha = 0.3; g.running = true; tickGraph(); }
+    } else {
+      g.isPanning = true;
+      g.panStart = { mx: mx, my: my, tx: g.transform.x, ty: g.transform.y };
+    }
+  });
+
+  canvas.addEventListener('mousemove', function(ev) {
+    var rect = canvas.getBoundingClientRect();
+    var mx = ev.clientX - rect.left; var my = ev.clientY - rect.top;
+    if (g.dragging) {
+      var w = canvasToWorld(g, mx, my);
+      g.dragging.x = w.x;
+      g.dragging.y = w.y;
+      g.dragging.vx = 0; g.dragging.vy = 0;
+      if (!g.running) drawGraph();
+    } else if (g.isPanning && g.panStart) {
+      g.transform.x = g.panStart.tx + (mx - g.panStart.mx);
+      g.transform.y = g.panStart.ty + (my - g.panStart.my);
+      if (!g.running) drawGraph();
+    } else {
+      // Hover tooltip
+      var w = canvasToWorld(g, mx, my);
+      var idx = findNodeAt(g, w.x, w.y);
+      if (idx >= 0) {
+        var n = g.nodes[idx];
+        tooltip.innerHTML = '<b>' + esc(n.shortId) + '</b> ' + esc(n.grade || '') + '<br>' + esc(n.title) + '<br><span style="color:' + n.color + '">' + esc(n.repo) + '</span>';
+        tooltip.style.display = 'block';
+        tooltip.style.left = (mx + 12) + 'px';
+        tooltip.style.top = (my - 10) + 'px';
+        canvas.style.cursor = 'pointer';
+      } else {
+        tooltip.style.display = 'none';
+        canvas.style.cursor = g.isPanning ? 'grabbing' : 'grab';
+      }
+    }
+  });
+
+  canvas.addEventListener('mouseup', function(ev) {
+    if (g.dragging) {
+      g.dragging = null;
+      g.dragStart = null;
+    } else if (g.isPanning) {
+      g.isPanning = false;
+      g.panStart = null;
+    } else {
+      // Click -- select/deselect
+      var rect = canvas.getBoundingClientRect();
+      var mx = ev.clientX - rect.left; var my = ev.clientY - rect.top;
+      var w = canvasToWorld(g, mx, my);
+      var idx = findNodeAt(g, w.x, w.y);
+      if (idx >= 0 && g.selected !== idx) {
+        g.selected = idx;
+      } else {
+        g.selected = null;
+      }
+      if (!g.running) drawGraph();
+    }
+  });
+
+  canvas.addEventListener('mouseleave', function() {
+    tooltip.style.display = 'none';
+    g.dragging = null; g.isPanning = false;
+  });
+
+  canvas.addEventListener('wheel', function(ev) {
+    ev.preventDefault();
+    var rect = canvas.getBoundingClientRect();
+    var mx = ev.clientX - rect.left; var my = ev.clientY - rect.top;
+    var delta = ev.deltaY > 0 ? 0.9 : 1.1;
+    var newK = Math.max(0.1, Math.min(5, g.transform.k * delta));
+    var ratio = newK / g.transform.k;
+    g.transform.x = mx - (mx - g.transform.x) * ratio;
+    g.transform.y = my - (my - g.transform.y) * ratio;
+    g.transform.k = newK;
+    if (!g.running) drawGraph();
+  }, { passive: false });
+}
+
+function renderGraph() {
+  if (!forceGraph) return;
+  var g = forceGraph;
+  var hasSearch = searchText.length > 0;
+
+  // Apply search filter + repo filter to graph nodes
+  var visibleCount = 0;
+  for (var i = 0; i < g.nodes.length; i++) {
+    var n = g.nodes[i];
+    var repoOk = activeRepos.has(n.repo);
+    var searchOk = !hasSearch || matches(n, searchText);
+    n.hidden = !repoOk;
+    n.dimmed = hasSearch && !searchOk;
+    if (!n.hidden && !n.dimmed) visibleCount++;
+  }
+
+  document.getElementById('count').textContent = visibleCount + ' / ' + g.nodes.length + ' nodes';
+
+  if (!g.running) drawGraph();
+}
+
 init();
 </script>
 </body>
@@ -1286,7 +1595,51 @@ def write_html(atlas, htmlpath):
 
     atlas_json = json.dumps(slim_atlas, ensure_ascii=False)
 
+    # Build graph data (only connected nodes)
+    id_lookup = {}
+    for h in atlas["hypotheses"]:
+        full_id = h["id"]
+        short = full_id.split(":", 1)[1] if ":" in full_id else full_id
+        if short not in id_lookup:
+            id_lookup[short] = full_id
+
+    edges = []
+    connected = set()
+    for h in atlas["hypotheses"]:
+        for ref in h.get("refs", []):
+            target = id_lookup.get(ref)
+            if target and target != h["id"]:
+                edges.append({"source": h["id"], "target": target})
+                connected.add(h["id"])
+                connected.add(target)
+
+    hyp_by_id = {h["id"]: h for h in atlas["hypotheses"]}
+    graph_nodes = []
+    node_idx = {}
+    for hid in sorted(connected):
+        h = hyp_by_id.get(hid)
+        if not h:
+            continue
+        idx = len(graph_nodes)
+        node_idx[hid] = idx
+        graph_nodes.append({
+            "id": hid,
+            "title": (h.get("title") or "")[:60],
+            "repo": h["repo"],
+            "grade": h.get("grade") or "",
+        })
+
+    graph_edges = []
+    for e in edges:
+        si = node_idx.get(e["source"])
+        ti = node_idx.get(e["target"])
+        if si is not None and ti is not None:
+            graph_edges.append({"source": si, "target": ti})
+
+    graph_data = json.dumps({"nodes": graph_nodes, "edges": graph_edges}, ensure_ascii=False)
+
     html = HTML_TEMPLATE.replace("__ATLAS_JSON__", atlas_json)
+    html = html.replace("__GRAPH_JSON__", graph_data)
 
     with open(htmlpath, 'w', encoding='utf-8') as f:
         f.write(html)
