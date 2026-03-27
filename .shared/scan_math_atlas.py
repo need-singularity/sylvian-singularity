@@ -546,3 +546,105 @@ def write_dot(atlas, dotpath):
 
     with open(dotpath, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines) + '\n')
+
+
+# ── CLI ──────────────────────────────────────────────────────────
+
+def main():
+    """CLI entry point for the Math Atlas scanner."""
+    parser = argparse.ArgumentParser(
+        description="Math Atlas — scan hypothesis files across repos",
+    )
+    parser.add_argument("--json", action="store_true",
+                        help="Print full atlas as JSON to stdout")
+    parser.add_argument("--summary", action="store_true",
+                        help="Print stats (total, per-repo, grade distribution)")
+    parser.add_argument("--save", action="store_true",
+                        help="Save JSON, SQLite, DOT to .shared/")
+    parser.add_argument("--query",
+                        help="Filter: FIELD=VALUE (e.g. grade=green, domain=CX)")
+    parser.add_argument("--repo",
+                        help="Filter to a single repo (TECS-L, SEDI, anima)")
+    args = parser.parse_args()
+
+    # Default: --save --summary
+    if not (args.json or args.summary or args.save or args.query):
+        args.save = True
+        args.summary = True
+
+    atlas = build_atlas()
+
+    # --repo filter
+    if args.repo:
+        atlas["hypotheses"] = [
+            h for h in atlas["hypotheses"] if h["repo"] == args.repo
+        ]
+        atlas["total"] = len(atlas["hypotheses"])
+
+    # --json
+    if args.json:
+        print(json.dumps(atlas, indent=2, ensure_ascii=False))
+        return
+
+    # --save
+    if args.save:
+        out_dir = Path(__file__).resolve().parent
+        json_path = out_dir / "math_atlas.json"
+        db_path = out_dir / "math_atlas.db"
+        dot_path = out_dir / "math_atlas.dot"
+
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump(atlas, f, indent=2, ensure_ascii=False)
+        print(f"  JSON: {json_path}")
+
+        write_sqlite(atlas, str(db_path))
+        print(f"  SQLite: {db_path}")
+
+        write_dot(atlas, str(dot_path))
+        print(f"  DOT: {dot_path}")
+
+    # --summary
+    if args.summary:
+        print(f"\n=== Math Atlas Summary ===")
+        print(f"  Total hypotheses: {atlas['total']}")
+        print(f"  Generated: {atlas.get('generated', 'N/A')}")
+        print()
+        print("  Per-repo:")
+        for repo, count in atlas.get("stats", {}).items():
+            print(f"    {repo:10s} {count:>5d}")
+        print()
+
+        # Grade distribution
+        grade_dist = {}
+        for h in atlas["hypotheses"]:
+            g = h.get("grade") or "(none)"
+            # Normalize to first emoji or short label
+            key = g[:2] if len(g) >= 2 else g
+            grade_dist[key] = grade_dist.get(key, 0) + 1
+
+        print("  Grade distribution (top 10):")
+        for grade, count in sorted(grade_dist.items(), key=lambda x: -x[1])[:10]:
+            bar = "#" * min(count // 5, 40)
+            print(f"    {grade:6s} {count:>5d}  {bar}")
+
+    # --query FIELD=VALUE
+    if args.query:
+        if "=" not in args.query:
+            print(f"Error: --query must be FIELD=VALUE (e.g. domain=CX)", file=sys.stderr)
+            sys.exit(1)
+        field, value = args.query.split("=", 1)
+        matches = []
+        for h in atlas["hypotheses"]:
+            hval = str(h.get(field, ""))
+            if value.lower() in hval.lower():
+                matches.append(h)
+        print(f"\n  Query: {field}={value} ({len(matches)} matches)")
+        for h in matches[:30]:
+            g = h.get("grade") or "-"
+            print(f"    {g:4s} {h['id']:30s} {(h.get('title') or '')[:50]}")
+        if len(matches) > 30:
+            print(f"    ... and {len(matches) - 30} more")
+
+
+if __name__ == "__main__":
+    main()
