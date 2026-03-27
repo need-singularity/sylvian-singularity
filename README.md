@@ -145,7 +145,7 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 /ralph-loop:ralph-loop 추가 대발견 가설목록 생성 & 병렬 검토 & commit & push
 ```
 
-** 미발견 쪽으로 가설 추가 대거 생성
+**미발견 쪽으로 가설 추가 대거 생성**
 ```
 /ralph-loop:ralph-loop 미발견 쪽으로 가설 추가 대거 생성 & 병렬 검토 & commit & push
 ```
