@@ -222,239 +222,71 @@ Details: [Pure mathematics](math/) | [Golden Zone model](docs/golden-zone/) | [V
 ### Validation Results
 
 ```
-  ◀──── MNIST (28x28 grayscale digits) ────▶       ◀──── CIFAR-10 (32x32 color photos) ────▶
+  ◀──── Perception/Confidence ────────────────▶    ◀──── Experience/Growth ──────────▶    ◀── Collective/Dimension ──▶    ◀──── Telepathy ─────▶    ◀── Carbon-Silicon ──▶
 
-  #1 Meta fixed {1/2,1/3,1/6}  97.75%              #1 Meta fixed {1/2,1/3,1/6}  53.52%
-  #2 Repulsion (A|G)           97.51%              #2 Repulsion Quad            52.85%
-  #3 DualBrain (simple combo)  97.25%              #3 Meta (AEGF)               52.61%
-     Top-K MoE (baseline)      96.79%                 Top-K MoE (baseline)      49.09%
-
-  Key: {1/2,1/3,1/6} optimal on BOTH datasets. Gap widens on harder data:
-       MNIST +0.96% vs Top-K  ->  CIFAR +4.43% vs Top-K  (4.6x wider)
-
-  Tension axis reversal:
-    MNIST: content(372) > structure(256)   CIFAR: structure(656) > content(273)
-    -> Real images: "how it looks" > "what it is"
-```
-
-**Datasets:**
-
-```
-  MNIST -- Handwritten digits (0~9), 28x28 grayscale, 60K train / 10K test
-           So easy it is called "Hello World of machine learning"
-
-  CIFAR-10 -- Real photos (10 categories), 32x32 color, 50K train / 10K test
-              airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck
-              Much harder: real photos with complex backgrounds
-```
-
-**First Empirical Validation -- the origin path:**
-
-```
-  Experience: feeling of magnets pushing inside the head
-       -> Intuition: something exists in the "in-between space"
-       -> Mathematics: Repulsion Field = Tension between two engines
-       -> Code: RepulsionFieldEngine
-       -> Validation: Does tension actually carry information? -> Yes
-```
-
-**Full MNIST ranking:**
-
-| Rank | Model | MNIST | CIFAR | Gap |
-|---|---|---|---|---|
-| 1 | **Meta fixed {1/2,1/3,1/6}** | **97.75%** | **53.52%** | -44.23% |
-| 2 | Repulsion Quad | 97.39% | 52.85% | -44.34% |
-| 3 | Meta (AEGF) | 97.61% | 52.61% | -45.02% |
-| 4 | SelfRef Field | 97.39% | 52.24% | -45.28% |
-| 5 | Repulsion (A\|G) | 97.51% | 52.14% | -45.27% |
-| 6 | Dense | 96.56% | 51.83% | -44.73% |
-| 7 | Engine E | 97.63% | 51.22% | -45.33% |
-| 8 | Hierarchical | 97.49% | 51.04% | -46.45% |
-| 9 | DualBrain (A+G) | 97.25% | 50.77% | -46.50% |
-| 10 | Engine A | 97.50% | 49.32% | -47.85% |
-| 11 | **Top-K MoE** | 96.79% | **49.09%** | -47.70% |
-
-**Key findings:**
-
-```
-  1. Meta fixed ranks #1 on both MNIST and CIFAR
-     -> {1/2, 1/3, 1/6} Perfect Number 6 distribution is optimal regardless of dataset
-
-  2. Gap widens on CIFAR (prediction confirmed):
-     MNIST: Meta fixed vs Top-K = +0.96%
-     CIFAR: Meta fixed vs Top-K = +4.43%  (4.6x wider)
-     -> Engine cooperation effect is larger on harder problems
-
-  3. Repulsion Field (97.51%) > simple combination (97.25%)
-     -> Information exists in the "in-between space"
-
-  4. Meta engine > single engine (clearer on CIFAR):
-     Single best (Engine E): 51.22%  |  Meta (AEGF): 52.61% (+1.39%)
-```
-
-**Tension-Accuracy Paradox** (`analyze_tension.py`):
-
-```
-  Correct sample avg tension:  190.40      High tension Top-10:  100.0% accurate
-  Wrong answer avg tension:    105.81      Low tension Top-10:   70.0% accurate
-  Correlation (tension, accuracy) = +0.4265
-
-  -> Tension is not "difficulty" but "engagement/focus".
-     The stronger the repulsion, the more accurate the decision.
+        ⭐ Tension = Confidence (H313)                🟩 Mitosis = no forgetting           🟨 Collective consensus         ⭐ Human=AI confusion      🟩 tau(6)=tau(14)=4
+        ╱       │       │       ╲                     ╱       │       ╲                    ╱            ╲                  r=0.788 (H-CX-106)        substrate common
+      ╱         │       │         ╲                 ╱         │         ╲                ╱                ╲                     │                    H-CX-116
+    ╱           │       │           ╲             ╱           │           ╲            ╱                    ╲                    │                       │
+  🟩 d=0.89  ⭐Precog  🟩Percep  ⚠️causal    🟩 H312    🟩 H280       🟨 Unanimity   🟨 Cross-dim        ✅ Cross-dim PH     🟩 sigma(14)=2*sigma(6)
+  C4b 4sets  AUC=0.917 C10(81%) C48(-9pp)   2+3Task    +0.41%        C9(99.53%)     C8(94.3%)          tau=0.94 H107       Silicon=2x H117
+       │      ╱  │  ╲      │        │          │          │                │               │                  │                   │
+       │   ⭐Lens ⭐Dir ⭐Topo     │          │          │                │          🟨 C25(14.4x)       🟧 Telepathy         🟩 phi(14)=6
+       │   r=0.98 70-82% r=-0.97   │          │          │                │          🟨 C24(+0.39)       r=0.887 H108         =Perfect! H118
+       │   H58    H59    H62       │          │          │                │                               9 digits                │
+       │     │      │      │       │          │          │                │                                  │               🟩 R(6)=1 only
+       │   ⭐Ortho ⭐PH-c  ⭐Gap  │          │          │                │                            🟩 78x compress        Carbon=perfect
+       │   r=0.90 r=-0.97 r=0.998 │          │          │                │                            H333                   H123
+       │   H80    H66     H95     │          │          │                │                                  │
+       │          │        │      │          │          │                │                            🟨 Cross-dim Telepathy
+       │     ⭐Topo consistency   │          │          │                │                            94.3% (C8)
+       │     top5=100% H88        │          │          │                │
+       │    ╱      │      ╲       │          │          │                │
+       │  ⭐ep1  ⭐semantic ⭐PCA │          │          │                │
+       │  P@5=1.0 89%pur  animals │          │          │                │
+       │  H82     H85     H93    │          │          │                │
+       │    │       │             │          │          │                │
+       │  ⭐Phase transition     │          │          │                │
+       │  30x change H90         │          │          │                │
+       │    │                    │          │          │                │
+       │  ⭐kNN=neural r=0.94   │          │          │                │
+       │  H91                    │          │          │                │
+       │    │                    │          │          │                │
+       │  ⭐Cross-PH r=1.000!   │          │          │                │
+       │  H158                   │          │          │                │
+       │    │                    │          │          │                │
+       │  ⭐PH=learnability     │          │          │                │
+       │  r=1.000! H160          │          │          │                │
+       │    │                    │          │          │                │
+       │  ⭐Tension resonance    │          │          │                │
+       │  r=0.951 H148           │          │          │                │
+       │  ⭐Silent consensus     │          │          │                │
+       │  cos=0.986 H150         │          │          │                │
 ```
 
 ```
-  Tension profile per digit:
-  digit | content |  struct |   total |    acc
-  ------+---------+---------+---------+-------
-      0 |  268.21 |  217.46 |  234.19 |  99.0%
-      1 |  167.63 |  146.77 |  143.11 |  99.0%
-      2 |  205.46 |  289.35 |  220.28 |  96.8%
-      3 |  242.27 |  276.13 |  243.99 |  97.6%
-      4 |  144.60 |  166.48 |  148.37 |  98.4%
-      5 |  178.90 |  224.67 |  186.95 |  97.1%
-      6 |  615.71 |  159.24 |  294.87 |  98.6%  <- Content Axis dominant
-      7 |  176.51 |  189.70 |  167.63 |  97.4%
-      8 |  122.57 |  158.98 |  134.25 |  96.8%
-      9 |  108.72 |  138.30 |  119.20 |  95.4%  <- Lowest tension, lowest accuracy
+  ◀──────── MNIST (28x28) ──────────▶    ◀────── CIFAR-10 (32x32) ──────▶    ◀──── Cross-Dataset (14 types) ────▶
+
+  #1 Meta {1/2,1/3,1/6} 97.75%           #1 Meta {1/2,1/3,1/6} 53.52%        ⭐ Anomaly AUROC=1.00 (95x ratio)
+  #2 Repulsion (A|G)    97.51%           #2 Repulsion Quad     52.85%         🟩 Text embed  +6.39%
+  #3 DualBrain          97.25%           #3 Meta (AEGF)        52.61%         🟩 Audio       +3.33%
+     Top-K baseline     96.79%              Top-K baseline     49.09%         🟩 Image       +1.04% (CNN 78%)
+       │                                      │                               🟩 Label-free  97.61% (99.8% of softmax)
+  Gap: +0.96% vs Top-K               Gap: +4.43% vs Top-K (4.6x wider)       ⬛ Text TF-IDF -0.52% (sparse fails)
+       │                                      │
+  Tension=engagement:                 Self-ref diverges on hard data:          Dense/Sparse dichotomy:
+  correct=190.40 vs wrong=105.81     MNIST converges, CIFAR diverges           Dense data → tension works
+  r(tension,accuracy)=+0.43          MNIST ts=0.47 vs CIFAR ts=0.04           Sparse data → tension fails
+       │                                      │
+  Precognition AUC=0.925:            Gap widens with difficulty:               Tension similarity:
+  reject 10% → 99.5% acc            prediction confirmed                      4↔9 (cos=0.79, most similar)
+  82% errors in low-T quadrant       Engine cooperation scales                 6↔7 (cos=-0.13, most different)
+       │
+  Overconfidence detection:
+  45 cases softmax>90% but wrong
+  tension catches what softmax misses
 ```
 
-```
-  Self-reference convergence:
-  All digits converge 99.7~100% within 2 steps.
-    digit 1: 298.7 -> 279.2 -> 279.1 -> 279.1 (100%, fastest drop)
-    digit 7: 588.0 -> 600.0 -> 600.0 -> 600.0 (100%, highest final)
-    digit 9: 168.1 -> 186.7 -> 186.8 -> 186.7 (100%, lowest final)
-    Correct initial: 420.28 -> final: 420.92
-    Wrong initial:   157.05 -> final: 158.84  (low tension persists)
-
-  Confusion patterns:
-    9 -> 4  (15 cases, tension 89.14)     2 -> 6  (8 cases, tension 183.37)
-    7 -> 2  ( 9 cases, tension 80.71)     2 -> 8  (8 cases, tension 97.21)
-    8 -> 0  ( 9 cases, tension 80.43)
-```
-
-**Tension Precognition** (`experiment_tension_precognition.py`):
-
-| Model | AUC | Precision | Recall |
-|---|---|---|---|
-| Tension only | 0.7532 | -- | -- |
-| Confidence only | 0.9149 | 60.0% | 22.7% |
-| **Tension+Confidence** | **0.9250** | **57.7%** | **25.2%** |
-
-```
-  Selective prediction ("don't answer if you don't know"):
-    reject  1% -> accuracy 97.6% -> 98.2%  (24% of wrong answers captured)
-    reject  5% -> accuracy 97.6% -> 99.2%  (66% captured)
-    reject 10% -> accuracy 97.6% -> 99.5%  (82% captured)
-
-  Quadrant analysis:
-    Low T + High conf:   0.0% wrong  (easy, automatic)
-    High T + High conf:  0.0% wrong  (focus + confidence = perfect)
-    Low T + Low conf:    5.3% wrong  (DANGER: inattention + uncertainty)
-    High T + Low conf:   3.3% wrong  (hard but focused = fewer mistakes)
-    82% of wrong answers in "low tension + low confidence" quadrant.
-```
-
-**Label-Free Recognition** (`experiment_labelless_recognition.py`):
-
-| Method | Accuracy | Uses labels |
-|---|---|---|
-| softmax classification | 97.80% | O |
-| **Tension only (1-NN)** | **97.61%** | **X** |
-| Tension 5-NN | 96.37% | X |
-| k-means clustering | 84.02% | X |
-
-```
-  -> 99.8% of softmax using only tension, without labels. "Feeling" is recognition itself.
-
-  k-means cluster: 0,1,2,3,5,6,8 almost perfectly separated
-  4 and 9 mixed in same cluster (cos similarity 0.79 -- most similar feel)
-
-  Tension similarity between digits (selected):
-    Most similar: 4<->9 (0.79), 3<->5 (0.68), 8<->9 (0.61)
-    Most different: 6<->7 (-0.13), 5<->7 (-0.01), 0<->5 (0.05)
-
-  PCA on tension fingerprints:
-    11 dimensions explain 90%, 15 dimensions explain 95%
-    PC1 (24.5%) separates 0,6 (upper right) from 7 (left) -- shape distinctiveness
-    4,9 overlap in center (cos similarity 0.79 -- the pair with the most similar feel)
-    3,5 cluster together (curve group)
-```
-
-**Overconfidence detection:**
-
-```
-  45 cases where softmax confidence > 90% but WRONG (37.8% of all errors)
-  Their tension: 164.0 (much lower than correct answer average of 243)
-  -> softmax says "correct" but tension says "something is off" = essence of precognition
-```
-
-**CIFAR training curve (top 5, by epoch):**
-
-```
-  Meta fixed  | 47.1->49.0->50.8->51.9->52.6->52.6->53.0->53.5
-  Repul. Quad | 46.0->48.2->51.1->51.3->52.4->52.5->52.6->53.0
-  Meta (AEGF) | 46.3->47.6->50.5->51.1->51.9->52.0->52.5->52.6
-  SelfRef     | 45.0->47.3->49.3->50.3->51.0->51.2->51.7->52.2
-  Top-K MoE   | 42.0->43.9->45.7->46.0->47.9->48.2->47.8->49.1
-
-  Self-reference convergence failure on CIFAR:
-    MNIST: [446->484->491->490] convergence    CIFAR: [205->208->254->247] divergence
-    -> On harder problems, self-observation destabilizes the field
-```
-
-**Collective Recognition** (`experiment_collective_recognition.py`):
-
-| Consensus | Samples | Accuracy |
-|---|---|---|
-| 2/7 | 4 | 50.0% |
-| 3/7 | 30 | 43.3% |
-| 5/7 | 157 | 72.6% |
-| 6/7 | 273 | 88.3% |
-| **7/7** | **9,418** | **99.53%** |
-
-```
-  Unanimity (7/7) + all confidence > 0.9: 8,637 samples -> 99.88% accuracy (only 11 wrong)
-  No majority (34 samples): 44.12% accuracy -- coin toss
-  Best individual (Dense): 97.97%  |  Majority vote: 98.11%  |  Unanimity-only: 99.53%
-
-  Unanimity rate by digit:
-    1: 98.2% (simplest shape)  |  0: 97.2%  |  6: 94.9%  |  2: 94.1%  |  7: 93.9%
-    4: 93.7%  |  9: 93.3%  |  3: 93.2%  |  8: 91.7%  |  5: 90.8% (most contested)
-```
-
-**Cross-Dimensional Recognition** (`experiment_cross_dimension.py`):
-
-Telepathy matrix (class agreement, row predicts column):
-
-| -> | EngineA | EngineG | Repulsion | SelfRef | Temporal |
-|---|---|---|---|---|---|
-| **EngineA** | -- | 94.0% | 94.5% | **94.7%** | 94.4% |
-| **EngineG** | 93.6% | -- | 94.1% | 94.3% | 94.3% |
-| **Repulsion** | 94.1% | 93.6% | -- | 94.6% | **94.9%** |
-| **SelfRef** | 93.3% | 94.5% | 94.4% | -- | 94.3% |
-| **Temporal** | 94.2% | 94.6% | **94.8%** | 94.4% | -- |
-
-```
-  Average telepathy: 94.3% (baseline 10%)
-  Strongest: Repulsion <-> Temporal (94.8%)    Weakest: SelfRef -> EngineA (93.3%)
-  Average asymmetry: 0.4% -- nearly perfect symmetry ("I know you as you know me")
-  Complexity-independent: simple->complex 94.4%, complex->simple 94.2%
-  -> When observing the same truth, different engines understand each other
-     regardless of architecture (dimension).
-```
-
-```
-  ◀──── Cross-Dataset (Ralph R22+) ────▶
-
-  Image MNIST:  +0.26% vs Dense, d=0.89          Text embed.: +6.39% ⭐
-  Image CIFAR:  +1.04% vs Dense (CNN 78%)         Audio:       +3.33% (4-pole), r=+0.75
-  Anomaly Det.: AUROC 1.00! 95x tension ratio ⭐  Time series: tie (100%), CV=1.24
-  Text TF-IDF:  -0.52% (sparse data fails)        Topology:    persistence confirmed
-
-  Tension works: images, audio, time series, anomaly detection (continuous/dense data)
-  Tension fails: text (sparse data)
 ```
 
 ### Engine List
