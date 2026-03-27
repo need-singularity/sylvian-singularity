@@ -1641,6 +1641,16 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 | [H-SEDI-4](docs/hypotheses/H-SEDI-4-proton-electron-ratio.md) | m_p/m_e = sigma*T(17) = 12*153 = 1836 | 🟧 | 0.008% error; Texas p~0.017; T() choice free; remainder 0.15267 unexplained |
 | [H-SEDI-5](docs/hypotheses/H-SEDI-5-fine-structure-137.md) | 1/alpha = (sigma-tau)*17+1 = 137 | ⚪ | Ad hoc +1 correction; without +1: 136 (0.76% off) |
 
+### Anima Cross-Domain (H-AX, 3 items)
+
+Anima 의식 엔진 × TECS-L R-spectrum 교차 가설. 12개 탐색 중 TOP 3. Verified 2026-03-27.
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-AX-10](docs/hypotheses/H-AX-10-direction-topology-r-spectrum.md) | Direction PH merge order ↔ R(rank) correlation | 🔮 | Needs MNIST experiment; S-Tier H-CX-66 + R-spectrum |
+| [H-AX-11](docs/hypotheses/H-AX-11-growth-r-phase-transitions.md) | Growth stages R-journey: R=1→0.75→1.33→1→1.56 | ★★ | Predicts Phi(6cells)>Phi(12cells); R(1)R(2)R(3)=1 |
+| [H-AX-12](docs/hypotheses/H-AX-12-perfect-balance-consciousness.md) | ★★★ Consciousness = R=1 perfect balance | ★★★ | Tension=1↔R(6)=1 isomorphism; deadband≈ln(4/3) (4.3%) |
+
 ### CERN Optics (H-CERN-1~20, moved to [sedi](https://github.com/need-singularity/sedi))
 
 R-spectrum lens/telescope/topology를 CERN 입자 데이터에 적용. 20개 가설 + 9개 검증 스크립트 → sedi repo로 이전 (2026-03-27).
