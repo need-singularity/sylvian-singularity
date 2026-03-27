@@ -1,15 +1,15 @@
 # Math Atlas
 
-> Auto-generated: 2026-03-28T06:16:33 | 1700 hypotheses | 300 constant maps
+> Auto-generated: 2026-03-28T07:13:27 | 1700 hypotheses | 224 constant maps
 
 ## Summary
 
 | Repo | Hypotheses | Constant Maps |
 |------|-----------|--------------|
-| TECS-L | 1,070 | 148 |
+| TECS-L | 1,070 | 72 |
 | SEDI | 665 | 110 |
 | anima | 20 | 25 |
-| **Total** | **1,755** | **283** |
+| **Total** | **1,755** | **207** |
 
 ### Grade Distribution
 
@@ -1754,158 +1754,82 @@
 
 ## Constant Maps
 
-### TECS-L (148)
+### TECS-L (72)
 
 | # | Name | File | Type | Size | Category | Eval |
 |---|------|------|------|------|----------|------|
 | 1 | PROFILES | brain_analyzer.py:85 | dict | 9 | neuroscience | Y |
-| 2 | SYSTEMS | cct_counterexample_search.py:33 | dict | 5 | other | Y |
-| 3 | SIMULATORS | cct_counterexample_search.py:208 | dict | 5 | other | - |
-| 4 | D_VALUES | compass_cct_correlation.py:25 | list | 4 | other | Y |
-| 5 | P_VALUES | compass_cct_correlation.py:26 | list | 4 | other | Y |
-| 6 | I_VALUES | compass_cct_correlation.py:27 | list | 7 | other | Y |
-| 7 | PRESETS | consciousness_calc.py:28 | dict | 7 | other | Y |
-| 8 | BRAIN_WAVES | consciousness_fps.py:35 | dict | 5 | neuroscience | Y |
-| 9 | DOMAINS | convergence_engine.py:37 | dict | 8 | domains | - |
-| 10 | KNOWN_VALUES | convergence_engine.py:163 | dict | 6 | other | - |
-| 11 | TARGETS | convergence_engine.py:177 | dict | 0 | targets | Y |
-| 12 | SIGNATURE_CONSTS | convergence_engine.py:350 | dict | 0 | other | Y |
-| 13 | ISLANDS | dfs_engine.py:33 | dict | 4 | other | - |
-| 14 | TARGETS | dfs_engine.py:67 | dict | 0 | targets | Y |
-| 15 | BRAIN_WAVES | discrete_fps_test.py:40 | dict | 5 | neuroscience | Y |
-| 16 | FPS_VALUES | discrete_fps_test.py:48 | list | 10 | other | Y |
-| 17 | RULE110_TABLE | discrete_fps_test.py:55 | dict | 0 | other | Y |
-| 18 | SYSTEMS | discrete_fps_test.py:254 | dict | 3 | other | - |
-| 19 | LEFT_HEMISPHERE | dual_brain_callosum.py:43 | dict | 5 | other | Y |
-| 20 | RIGHT_HEMISPHERE | dual_brain_callosum.py:48 | dict | 5 | other | Y |
-| 21 | KAPPA_SCAN_VALUES | dual_brain_callosum.py:54 | list | 9 | other | Y |
-| 22 | TIER_1 | formula_cross_validator.py:20 | dict | 7 | other | - |
-| 23 | TIER_2 | formula_cross_validator.py:30 | dict | 7 | other | - |
-| 24 | TIER_3 | formula_cross_validator.py:40 | dict | 8 | other | - |
-| 25 | CONSTANTS | formula_cross_validator.py:51 | dict | 15 | constants | - |
-| 26 | GAP_RATIOS | gap_threshold_test.py:99 | list | 13 | other | Y |
-| 27 | SCALES | golden_moe_gpu_benchmark.py:263 | dict | 4 | other | Y |
-| 28 | GATE_CONFIGS | golden_moe_gpu_benchmark.py:270 | list | 3 | other | - |
-| 29 | GROWTH_STAGES | growing_conscious_lm_700m.py:26 | list | 4 | other | Y |
-| 30 | LR_SCHEDULE | growing_vs_fixed.py:44 | dict | 4 | other | Y |
-| 31 | STAGE_BOUNDARIES | growing_vs_fixed.py:52 | list | 4 | other | Y |
-| 32 | LLM_SPECS | llm_expert_analyzer.py:14 | dict | 8 | other | Y |
-| 33 | LAPLACIAN_EIGENVALUES | model_d_g6_topology.py:69 | list | 4 | other | Y |
-| 34 | NONZERO_EIGENVALUES | model_d_g6_topology.py:71 | list | 3 | other | Y |
-| 35 | DIVISOR_RECIPROCALS | model_utils.py:28 | list | 3 | other | - |
-| 36 | EPILEPSY_PRESET | phi_integration_test.py:31 | dict | 6 | other | Y |
-| 37 | DERIVED | physics_constant_engine.py:29 | dict | 21 | other | - |
-| 38 | PHYSICS_CONSTANTS | physics_constant_engine.py:56 | dict | 16 | physics | - |
-| 39 | ELEMENTS | physics_constant_engine.py:81 | dict | 10 | other | Y |
-| 40 | KNOWN_MATCHES | physics_constant_engine.py:88 | dict | 3 | other | - |
-| 41 | DIVISORS | predict_post_discovery.py:30 | list | 4 | other | Y |
-| 42 | N6_FUNCTIONS | predict_post_discovery.py:42 | dict | 12 | other | - |
-| 43 | N6_MULTIPLIERS | predict_post_discovery.py:58 | dict | 11 | other | Y |
-| 44 | SEED_PARTICLES | predict_post_discovery.py:76 | dict | 27 | physics | Y |
-| 45 | KNOWN_STATES | predict_post_discovery.py:120 | dict | 26 | other | Y |
-| 46 | SOURCES | prepare_korean_sft.py:35 | list | 4 | other | Y |
-| 47 | FORMATTERS | prepare_korean_sft.py:116 | dict | 4 | other | - |
-| 48 | TOKEN_PATHS | publish.py:48 | dict | 4 | other | - |
-| 49 | ENV_VARS | publish.py:55 | dict | 4 | other | Y |
-| 50 | TOKEN_URLS | publish.py:62 | dict | 4 | other | Y |
-| 51 | ZENODO_URLS | publish.py:105 | dict | 2 | other | Y |
-| 52 | OSF_URLS | publish.py:217 | dict | 2 | other | Y |
-| 53 | SUBJECT_ALIASES | publish.py:222 | dict | 8 | other | Y |
-| 54 | N_VALUES | sim_h_rob_5.py:19 | list | 9 | other | Y |
-| 55 | THRESHOLD_SCAN | sim_h_rob_6.py:16 | list | 14 | other | Y |
-| 56 | DISCOVERIES | texas_quantum.py:38 | list | 8 | other | Y |
-| 57 | CLAIMS | texas_sharpshooter.py:17 | list | 10 | other | - |
-| 58 | STATES | verify_322_eeg_gamma.py:101 | list | 5 | other | Y |
-| 59 | STATE_NAMES | verify_322_eeg_gamma.py:102 | dict | 5 | other | Y |
-| 60 | CONSCIOUSNESS_ORDER | verify_322_eeg_gamma.py:110 | dict | 5 | other | Y |
-| 61 | CONST_MAP | verify_frontier4_biology.py:21 | dict | 8 | other | - |
-| 62 | TEST_NS | verify_h459_sqrt_selectivity.py:30 | list | 9 | other | Y |
-| 63 | TARGETS | verify_h459_sqrt_selectivity.py:31 | dict | 0 | targets | - |
-| 64 | OPS | verify_h459_sqrt_selectivity.py:34 | dict | 5 | other | - |
-| 65 | TARGETS | verify_h461_bridge_ratio.py:32 | dict | 9 | targets | - |
-| 66 | OPS | verify_h461_bridge_ratio.py:45 | dict | 6 | other | - |
-| 67 | TARGETS | verify_h462_ratio_meaning.py:30 | dict | 9 | targets | - |
-| 68 | INDEP_DOMAINS | verify_h462_ratio_meaning.py:43 | dict | 9 | domains | Y |
-| 69 | BRIDGES | verify_h462_ratio_meaning.py:56 | dict | 9 | other | Y |
-| 70 | OPS | verify_h462_ratio_meaning.py:71 | dict | 5 | other | - |
-| 71 | DOMAINS | verify_h463_depth3_s_domain.py:27 | dict | 3 | domains | - |
-| 72 | TARGETS | verify_h463_depth3_s_domain.py:72 | dict | 9 | targets | - |
-| 73 | TARGETS | verify_h464_hierarchy.py:31 | dict | 0 | targets | Y |
-| 74 | OPS | verify_h464_hierarchy.py:89 | dict | 4 | other | - |
-| 75 | TARGETS | verify_h467_h471_saturation.py:21 | dict | 9 | targets | - |
-| 76 | TARGETS | verify_h468_to_h473.py:29 | dict | 9 | targets | - |
-| 77 | OPS | verify_h468_to_h473.py:41 | dict | 4 | other | - |
-| 78 | TARGETS | verify_h474_depth1_map.py:32 | dict | 24 | targets | - |
-| 79 | Q_VALS | verify_h484_h487_qed_chsh.py:17 | dict | 0 | other | - |
-| 80 | Q_TYPES | verify_h490_h493_q_pathways.py:40 | dict | 0 | other | Y |
-| 81 | TARGETS | verify_h490_h493_q_pathways.py:105 | dict | 28 | targets | - |
-| 82 | UNREACHABLE_CLASSES | verify_h490_h493_q_pathways.py:137 | dict | 21 | other | Y |
-| 83 | DOMAINS | verify_h491_h492_qed_integer2.py:316 | dict | 8 | domains | - |
-| 84 | EXTRA_TWOS | verify_h491_h492_qed_integer2.py:392 | dict | 1 | other | Y |
-| 85 | GZ_CONSTANTS | verify_h499_h500_gz_domain.py:17 | dict | 6 | constants | - |
-| 86 | DOMAIN_SPEC | verify_h499_h500_gz_domain.py:30 | dict | 8 | domains | Y |
-| 87 | GZ_CONSTANTS | verify_h_ee_16_19_20_theory.py:25 | dict | 6 | constants | - |
-| 88 | DOMAIN_SPEC | verify_h_ee_16_19_20_theory.py:34 | dict | 8 | domains | Y |
-| 89 | ACTIVATIONS | verify_h_ee_17_activation.py:46 | dict | 6 | other | - |
-| 90 | GRADIENTS | verify_h_ee_17_activation.py:87 | dict | 6 | other | - |
-| 91 | BIS | verify_pharmacology.py:247 | list | 6 | other | Y |
-| 92 | DIVISORS | verify_round2_bridge.py:21 | list | 4 | other | Y |
-| 93 | NEW_AREAS | verify_round3_math.py:526 | list | 20 | other | Y |
-| 94 | CONVERGENCE_POINTS | calc/algebra_closure.py:24 | dict | 9 | other | - |
-| 95 | DIVISOR_RATIOS | calc/algebra_closure.py:37 | dict | 3 | other | - |
-| 96 | DEFAULT_BASES | calc/base_dependence_checker.py:17 | list | 7 | other | Y |
-| 97 | DEFAULT_TARGETS | calc/bridge_ratio_analyzer.py:36 | dict | 9 | targets | - |
-| 98 | BUILTIN_BANDS | calc/cherry_pick_detector.py:23 | list | 12 | other | Y |
-| 99 | PERFECT_NUMBERS | calc/claim_verifier.py:148 | list | 4 | other | Y |
-| 100 | N6 | calc/claim_verifier.py:152 | dict | 12 | other | Y |
-| 101 | STANDARD_TARGETS | calc/convergence_analyzer.py:43 | dict | 21 | targets | - |
-| 102 | TARGET_ALIASES | calc/convergence_analyzer.py:68 | dict | 14 | targets | Y |
-| 103 | PARTICLE_GROUPS | calc/counting_freedom_analyzer.py:20 | list | 11 | physics | Y |
-| 104 | DEFAULT_TARGETS | calc/depth_reachability.py:38 | dict | 9 | targets | - |
-| 105 | DATASETS | calc/direction_analyzer.py:27 | dict | 3 | other | - |
-| 106 | CATEGORIES | calc/domain_distance.py:38 | dict | 4 | other | - |
-| 107 | ALL_TARGETS | calc/domain_distance.py:67 | dict | 0 | targets | Y |
-| 108 | BROAD_TARGETS | calc/domain_distance.py:72 | dict | 0 | targets | Y |
-| 109 | KNOWN_PERFECTS | calc/egyptian_fraction.py:63 | list | 5 | other | Y |
-| 110 | PERFECT_NUMBERS | calc/gauge_cosmology_calculator.py:21 | list | 5 | other | Y |
-| 111 | PN_DATA | calc/gauge_cosmology_calculator.py:24 | dict | 0 | other | Y |
-| 112 | DEFAULT_TARGETS | calc/generator_finder.py:24 | dict | 9 | targets | - |
-| 113 | KNOWN_PERFECT | calc/gz_hierarchy.py:21 | dict | 8 | other | Y |
-| 114 | MATH_CONSTANTS | calc/hypothesis_verifier.py:30 | dict | 19 | constants | - |
-| 115 | PERFECT_NUMBERS | calc/hypothesis_verifier.py:67 | dict | 2 | other | Y |
-| 116 | GRADE_EMOJI | calc/hypothesis_verifier.py:489 | dict | 5 | other | Y |
-| 117 | MUTATION_DATA | calc/mitosis_calculator.py:16 | dict | 3 | other | Y |
-| 118 | DIVERGENCE | calc/mitosis_calculator.py:23 | list | 10 | other | Y |
-| 119 | SPLITS_DATA | calc/mitosis_calculator.py:45 | dict | 3 | other | Y |
-| 120 | PERFECT_NUMBERS | calc/perfect_number_generalizer.py:24 | list | 4 | other | Y |
-| 121 | PN_LABELS | calc/perfect_number_generalizer.py:71 | list | 4 | other | Y |
-| 122 | BUILTIN_FORMULAS | calc/perfect_number_generalizer.py:413 | list | 10 | other | Y |
-| 123 | PERFECT_NUMBERS | calc/perfect_number_physics.py:18 | list | 5 | other | Y |
-| 124 | DIMENSION_MAP | calc/perfect_number_physics.py:19 | dict | 5 | other | Y |
-| 125 | STRING_CONSTANTS | calc/perfect_number_physics.py:28 | list | 16 | constants | - |
-| 126 | DRUG_DB | calc/pharmacology_verifier.py:47 | dict | 12 | other | Y |
-| 127 | EXPECTED_DI_ORDER | calc/pharmacology_verifier.py:198 | list | 9 | other | Y |
-| 128 | I_INCREASE_DRUGS | calc/pharmacology_verifier.py:203 | list | 2 | other | Y |
-| 129 | Q_CONSTANTS | calc/q_barrier_checker.py:25 | dict | 10 | constants | - |
-| 130 | GZ_TARGETS | calc/q_barrier_checker.py:40 | dict | 6 | targets | - |
-| 131 | STANDARD_TARGETS | calc/q_barrier_checker.py:49 | dict | 13 | targets | - |
-| 132 | TARGET_CATEGORIES | calc/q_barrier_checker.py:65 | dict | 18 | targets | Y |
-| 133 | CONSTANTS | calc/statistical_tester.py:15 | dict | 13 | constants | - |
-| 134 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
-| 135 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:793 | dict | 11 | other | - |
-| 136 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
-| 137 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
-| 138 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
-| 139 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
-| 140 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
-| 141 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
-| 142 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | other | Y |
-| 143 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | other | Y |
-| 144 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
-| 145 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
-| 146 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
-| 147 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
-| 148 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
+| 2 | PRESETS | consciousness_calc.py:28 | dict | 7 | other | Y |
+| 3 | BRAIN_WAVES | consciousness_fps.py:35 | dict | 5 | neuroscience | Y |
+| 4 | DOMAINS | convergence_engine.py:37 | dict | 8 | domains | - |
+| 5 | KNOWN_VALUES | convergence_engine.py:163 | dict | 6 | other | - |
+| 6 | TARGETS | convergence_engine.py:177 | dict | 0 | targets | Y |
+| 7 | SIGNATURE_CONSTS | convergence_engine.py:350 | dict | 0 | other | Y |
+| 8 | ISLANDS | dfs_engine.py:33 | dict | 4 | other | - |
+| 9 | TARGETS | dfs_engine.py:67 | dict | 0 | targets | Y |
+| 10 | LLM_SPECS | llm_expert_analyzer.py:14 | dict | 8 | other | Y |
+| 11 | DIVISOR_RECIPROCALS | model_utils.py:28 | list | 3 | other | - |
+| 12 | DERIVED | physics_constant_engine.py:29 | dict | 21 | other | - |
+| 13 | PHYSICS_CONSTANTS | physics_constant_engine.py:56 | dict | 16 | physics | - |
+| 14 | ELEMENTS | physics_constant_engine.py:81 | dict | 10 | other | Y |
+| 15 | KNOWN_MATCHES | physics_constant_engine.py:88 | dict | 3 | other | - |
+| 16 | DISCOVERIES | texas_quantum.py:38 | list | 8 | other | Y |
+| 17 | CLAIMS | texas_sharpshooter.py:17 | list | 10 | other | - |
+| 18 | CONVERGENCE_POINTS | calc/algebra_closure.py:24 | dict | 9 | other | - |
+| 19 | DIVISOR_RATIOS | calc/algebra_closure.py:37 | dict | 3 | other | - |
+| 20 | DEFAULT_BASES | calc/base_dependence_checker.py:17 | list | 7 | other | Y |
+| 21 | DEFAULT_TARGETS | calc/bridge_ratio_analyzer.py:36 | dict | 9 | targets | - |
+| 22 | BUILTIN_BANDS | calc/cherry_pick_detector.py:23 | list | 12 | other | Y |
+| 23 | PERFECT_NUMBERS | calc/claim_verifier.py:148 | list | 4 | other | Y |
+| 24 | N6 | calc/claim_verifier.py:152 | dict | 12 | other | Y |
+| 25 | STANDARD_TARGETS | calc/convergence_analyzer.py:43 | dict | 21 | targets | - |
+| 26 | TARGET_ALIASES | calc/convergence_analyzer.py:68 | dict | 14 | targets | Y |
+| 27 | PARTICLE_GROUPS | calc/counting_freedom_analyzer.py:20 | list | 11 | physics | Y |
+| 28 | DEFAULT_TARGETS | calc/depth_reachability.py:38 | dict | 9 | targets | - |
+| 29 | DATASETS | calc/direction_analyzer.py:27 | dict | 3 | other | - |
+| 30 | CATEGORIES | calc/domain_distance.py:38 | dict | 4 | other | - |
+| 31 | ALL_TARGETS | calc/domain_distance.py:67 | dict | 0 | targets | Y |
+| 32 | BROAD_TARGETS | calc/domain_distance.py:72 | dict | 0 | targets | Y |
+| 33 | KNOWN_PERFECTS | calc/egyptian_fraction.py:63 | list | 5 | other | Y |
+| 34 | PERFECT_NUMBERS | calc/gauge_cosmology_calculator.py:21 | list | 5 | other | Y |
+| 35 | PN_DATA | calc/gauge_cosmology_calculator.py:24 | dict | 0 | other | Y |
+| 36 | DEFAULT_TARGETS | calc/generator_finder.py:24 | dict | 9 | targets | - |
+| 37 | KNOWN_PERFECT | calc/gz_hierarchy.py:21 | dict | 8 | other | Y |
+| 38 | MATH_CONSTANTS | calc/hypothesis_verifier.py:30 | dict | 19 | constants | - |
+| 39 | PERFECT_NUMBERS | calc/hypothesis_verifier.py:67 | dict | 2 | other | Y |
+| 40 | GRADE_EMOJI | calc/hypothesis_verifier.py:489 | dict | 5 | other | Y |
+| 41 | MUTATION_DATA | calc/mitosis_calculator.py:16 | dict | 3 | other | Y |
+| 42 | DIVERGENCE | calc/mitosis_calculator.py:23 | list | 10 | other | Y |
+| 43 | SPLITS_DATA | calc/mitosis_calculator.py:45 | dict | 3 | other | Y |
+| 44 | PERFECT_NUMBERS | calc/perfect_number_generalizer.py:24 | list | 4 | other | Y |
+| 45 | PN_LABELS | calc/perfect_number_generalizer.py:71 | list | 4 | other | Y |
+| 46 | BUILTIN_FORMULAS | calc/perfect_number_generalizer.py:413 | list | 10 | other | Y |
+| 47 | PERFECT_NUMBERS | calc/perfect_number_physics.py:18 | list | 5 | other | Y |
+| 48 | DIMENSION_MAP | calc/perfect_number_physics.py:19 | dict | 5 | other | Y |
+| 49 | STRING_CONSTANTS | calc/perfect_number_physics.py:28 | list | 16 | constants | - |
+| 50 | DRUG_DB | calc/pharmacology_verifier.py:47 | dict | 12 | other | Y |
+| 51 | EXPECTED_DI_ORDER | calc/pharmacology_verifier.py:198 | list | 9 | other | Y |
+| 52 | I_INCREASE_DRUGS | calc/pharmacology_verifier.py:203 | list | 2 | other | Y |
+| 53 | Q_CONSTANTS | calc/q_barrier_checker.py:25 | dict | 10 | constants | - |
+| 54 | GZ_TARGETS | calc/q_barrier_checker.py:40 | dict | 6 | targets | - |
+| 55 | STANDARD_TARGETS | calc/q_barrier_checker.py:49 | dict | 13 | targets | - |
+| 56 | TARGET_CATEGORIES | calc/q_barrier_checker.py:65 | dict | 18 | targets | Y |
+| 57 | CONSTANTS | calc/statistical_tester.py:15 | dict | 13 | constants | - |
+| 58 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
+| 59 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:793 | dict | 11 | other | - |
+| 60 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
+| 61 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
+| 62 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
+| 63 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
+| 64 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
+| 65 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
+| 66 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | other | Y |
+| 67 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | other | Y |
+| 68 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
+| 69 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
+| 70 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
+| 71 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
+| 72 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
 
 ### SEDI (110)
 
