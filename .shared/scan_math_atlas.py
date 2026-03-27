@@ -272,6 +272,24 @@ REPO_SCANS = [
         "python_sources": ["hypothesis_recommender.py"],
         "constant_dirs": ["."],
     },
+    {
+        "name": "golden-moe",
+        "root": DEV / "golden-moe",
+        "hypothesis_dirs": [],
+        "constant_dirs": ["."],
+    },
+    {
+        "name": "conscious-lm",
+        "root": DEV / "conscious-lm",
+        "hypothesis_dirs": [],
+        "constant_dirs": ["."],
+    },
+    {
+        "name": "energy-efficiency",
+        "root": DEV / "energy-efficiency",
+        "hypothesis_dirs": [],
+        "constant_dirs": [".", "techniques", "experiments"],
+    },
 ]
 
 
@@ -756,6 +774,9 @@ REPO_COLORS = {
     "TECS-L": "#4A90D9",
     "SEDI": "#E67E22",
     "anima": "#2ECC71",
+    "golden-moe": "#F1C40F",
+    "conscious-lm": "#9B59B6",
+    "energy-efficiency": "#1ABC9C",
 }
 
 GRADE_SHAPES = {
@@ -1044,11 +1065,11 @@ let currentTab = 'hypotheses';
 let sortCol = null;
 let sortAsc = true;
 let searchText = '';
-let activeRepos = new Set(['TECS-L', 'SEDI', 'anima']);
+let activeRepos = new Set(__REPO_LIST__);
 let activeGrades = null;
 
 const REPO_COLORS = {'TECS-L': '#4A90D9', 'SEDI': '#E67E22', 'anima': '#2ECC71'};
-const ALL_REPOS = ['TECS-L', 'SEDI', 'anima'];
+const ALL_REPOS = __REPO_LIST__;
 
 function init() {
   var statsEl = document.getElementById('stats');
@@ -1177,7 +1198,7 @@ function switchTab(tab) {
   document.getElementById('graph-container').style.display = tab === 'graph' ? '' : 'none';
   sortCol = null;
   sortAsc = true;
-  if (tab === 'graph') { initGraph(); }
+  if (tab === 'graph') { setTimeout(initGraph, 50); }
   render();
 }
 
@@ -1264,7 +1285,7 @@ function renderConstants() {
 var forceGraph = null;
 var graphInited = false;
 
-var GRAPH_REPO_COLORS = {'TECS-L': '#4A90D9', 'SEDI': '#E67E22', 'anima': '#2ECC71'};
+var GRAPH_REPO_COLORS = {'TECS-L': '#4A90D9', 'SEDI': '#E67E22', 'anima': '#2ECC71', 'golden-moe': '#F1C40F', 'conscious-lm': '#9B59B6', 'energy-efficiency': '#1ABC9C'};
 
 function gradeRadius(grade) {
   if (!grade) return 4;
@@ -1279,7 +1300,8 @@ function initGraph() {
   graphInited = true;
   var canvas = document.getElementById('graph-canvas');
   var container = document.getElementById('graph-container');
-  canvas.width = container.offsetWidth || document.body.clientWidth - 40;
+  canvas.width = container.offsetWidth || container.parentElement.offsetWidth || document.body.clientWidth - 40;
+  if (canvas.width < 100) canvas.width = document.body.clientWidth - 40;
   canvas.height = 600;
 
   var nodes = GRAPH.nodes.map(function(n, i) {
@@ -1638,8 +1660,13 @@ def write_html(atlas, htmlpath):
 
     graph_data = json.dumps({"nodes": graph_nodes, "edges": graph_edges}, ensure_ascii=False)
 
+    # Build repo list from atlas data
+    repos = list(atlas.get("stats", {}).keys())
+    repo_list_json = json.dumps(repos, ensure_ascii=False)
+
     html = HTML_TEMPLATE.replace("__ATLAS_JSON__", atlas_json)
     html = html.replace("__GRAPH_JSON__", graph_data)
+    html = html.replace("__REPO_LIST__", repo_list_json)
 
     with open(htmlpath, 'w', encoding='utf-8') as f:
         f.write(html)

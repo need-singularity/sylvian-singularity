@@ -1,10 +1,13 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T05:24:25",
+  "generated": "2026-03-28T05:37:27",
   "stats": {
     "TECS-L": 1070,
     "SEDI": 665,
-    "anima": 20
+    "anima": 20,
+    "golden-moe": 0,
+    "conscious-lm": 0,
+    "energy-efficiency": 0
   },
   "total": 1700,
   "hypotheses": [
@@ -28343,11 +28346,349 @@
         48
       ],
       "category": "other"
+    },
+    {
+      "name": "SCALES",
+      "repo": "golden-moe",
+      "file": "golden_moe_gpu_benchmark.py",
+      "line": 263,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "Small",
+        "Medium",
+        "Large",
+        "XL"
+      ],
+      "evaluable": true,
+      "values": {
+        "Small": {
+          "n_experts": 8,
+          "hidden_dim": 128
+        },
+        "Medium": {
+          "n_experts": 16,
+          "hidden_dim": 256
+        },
+        "Large": {
+          "n_experts": 32,
+          "hidden_dim": 512
+        },
+        "XL": {
+          "n_experts": 64,
+          "hidden_dim": 1024
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "GATE_CONFIGS",
+      "repo": "golden-moe",
+      "file": "golden_moe_gpu_benchmark.py",
+      "line": 270,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "DIVISOR_RECIPROCALS",
+      "repo": "golden-moe",
+      "file": "model_utils.py",
+      "line": 28,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "GROWTH_STAGES",
+      "repo": "conscious-lm",
+      "file": "growing_conscious_lm_700m.py",
+      "line": 26,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        {
+          "blocks": 1,
+          "d_model": 256,
+          "n_head": 4,
+          "min_steps": 0,
+          "train_steps": 2000
+        },
+        {
+          "blocks": 2,
+          "d_model": 256,
+          "n_head": 4,
+          "min_steps": 2000,
+          "train_steps": 3000
+        },
+        {
+          "blocks": 3,
+          "d_model": 512,
+          "n_head": 8,
+          "min_steps": 5000,
+          "train_steps": 5000
+        },
+        {
+          "blocks": 6,
+          "d_model": 2048,
+          "n_head": 32,
+          "min_steps": 10000,
+          "train_steps": 10000
+        }
+      ],
+      "category": "other"
+    },
+    {
+      "name": "DIVISOR_RECIPROCALS",
+      "repo": "conscious-lm",
+      "file": "model_utils.py",
+      "line": 28,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "SOURCES",
+      "repo": "conscious-lm",
+      "file": "prepare_korean_sft.py",
+      "line": 35,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        {
+          "name": "beomi/KoAlpaca-v1.1a",
+          "split": "train",
+          "format": "koalpaca"
+        },
+        {
+          "name": "kyujinpy/KOR-OpenOrca-Platypus-v3",
+          "split": "train",
+          "format": "openorca"
+        },
+        {
+          "name": "squarelike/OpenOrca-gugugo-ko",
+          "split": "train",
+          "format": "gugugo"
+        },
+        {
+          "name": "nlpai-lab/kullm-v2",
+          "split": "train",
+          "format": "openorca"
+        }
+      ],
+      "category": "other"
+    },
+    {
+      "name": "FORMATTERS",
+      "repo": "conscious-lm",
+      "file": "prepare_korean_sft.py",
+      "line": 116,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "ko_chatgpt",
+        "openorca",
+        "koalpaca",
+        "gugugo"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "DIVISOR_RECIPROCALS",
+      "repo": "energy-efficiency",
+      "file": "model_utils.py",
+      "line": 28,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "ACTIVATIONS",
+      "repo": "energy-efficiency",
+      "file": "phi6simple.py",
+      "line": 74,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "GELU",
+        "ReLU",
+        "Phi3",
+        "Phi4",
+        "Phi6",
+        "Phi8",
+        "Phi12"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "FLOP_COUNT",
+      "repo": "energy-efficiency",
+      "file": "phi6simple.py",
+      "line": 84,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "GELU",
+        "ReLU",
+        "Phi3",
+        "Phi4",
+        "Phi6",
+        "Phi8",
+        "Phi12"
+      ],
+      "evaluable": true,
+      "values": {
+        "GELU": 14,
+        "ReLU": 1,
+        "Phi3": 4,
+        "Phi4": 3,
+        "Phi6": 4,
+        "Phi8": 4,
+        "Phi12": 5
+      },
+      "category": "other"
+    },
+    {
+      "name": "ACTIVATIONS",
+      "repo": "energy-efficiency",
+      "file": "zetaln2_activation.py",
+      "line": 46,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "Phi6Simple",
+        "Phi6Centered",
+        "ZetaLn2",
+        "GZActivation",
+        "GELU",
+        "ReLU"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "GRADIENTS",
+      "repo": "energy-efficiency",
+      "file": "zetaln2_activation.py",
+      "line": 87,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "Phi6Simple",
+        "Phi6Centered",
+        "ZetaLn2",
+        "GZActivation",
+        "GELU",
+        "ReLU"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "RATIOS",
+      "repo": "energy-efficiency",
+      "file": "experiment_h_ee_12_optimal_expansion_ratio.py",
+      "line": 47,
+      "type": "list",
+      "size": 6,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "DEPTHS",
+      "repo": "energy-efficiency",
+      "file": "experiment_h_ee_13_depth_scaling.py",
+      "line": 48,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "category": "other"
+    },
+    {
+      "name": "C2I",
+      "repo": "energy-efficiency",
+      "file": "experiment_h_ee_7_head_dim_diversity.py",
+      "line": 42,
+      "type": "dict",
+      "size": 0,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "ACTIVATIONS",
+      "repo": "energy-efficiency",
+      "file": "h_ee_2_gradient_properties.py",
+      "line": 54,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "GELU",
+        "ReLU",
+        "SiLU",
+        "Phi6_clamped",
+        "Phi6_unclamped"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "ACTIVATIONS",
+      "repo": "energy-efficiency",
+      "file": "h_ee_3_training_stability.py",
+      "line": 55,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "GELU",
+        "ReLU",
+        "SiLU",
+        "Phi6"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
     }
   ],
   "constant_stats": {
     "TECS-L": 148,
     "SEDI": 110,
-    "anima": 25
+    "anima": 25,
+    "golden-moe": 3,
+    "conscious-lm": 4,
+    "energy-efficiency": 10
   }
 }
