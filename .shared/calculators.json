@@ -1,0 +1,1632 @@
+{
+  "TECS-L": [
+    {
+      "name": "algebra_closure",
+      "description": "Algebraic Closure Checker — Relations among convergence points",
+      "category": "calculator",
+      "path": "calc/algebra_closure.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "anomaly_scorer",
+      "description": "Anomaly Score Calculator — Anomaly Detection via Tension",
+      "category": "calculator",
+      "path": "calc/anomaly_scorer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "base_dependence_checker",
+      "description": "base_dependence_checker.py -- Tests if a numerical pattern is base-10 specific or universal.",
+      "category": "calculator",
+      "path": "calc/base_dependence_checker.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "bridge_ratio_analyzer",
+      "description": "Bridge/Independent Ratio Analyzer — H-CX-461/462",
+      "category": "calculator",
+      "path": "calc/bridge_ratio_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "calibration_analyzer",
+      "description": "Calibration Analyzer — softmax ECE vs tension-based ECE comparison",
+      "category": "calculator",
+      "path": "calc/calibration_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "cherry_pick_detector",
+      "description": "Cherry-Pick Detector — Does a formula value hit a meaningful point in a band?",
+      "category": "calculator",
+      "path": "calc/cherry_pick_detector.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "claim_verifier",
+      "description": "Claim Verification Calculator",
+      "category": "calculator",
+      "path": "calc/claim_verifier.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "confidence_analyzer",
+      "description": "Consciousness Engine Confidence Analyzer",
+      "category": "calculator",
+      "path": "calc/confidence_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "constant_verifier",
+      "description": "Constant Verifier — Texas Sharpshooter Auto-test for New Constant Discovery",
+      "category": "calculator",
+      "path": "calc/constant_verifier.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "continual_learning_tool",
+      "description": "Mitosis-based continual learning tool",
+      "category": "calculator",
+      "path": "calc/continual_learning_tool.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "convergence_analyzer",
+      "description": "Convergence Analyzer -- Depth-1 Reachability Across 8 Mathematical Domains",
+      "category": "calculator",
+      "path": "calc/convergence_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "counting_freedom_analyzer",
+      "description": "counting_freedom_analyzer.py -- Measures degrees of freedom in particle counting schemes.",
+      "category": "calculator",
+      "path": "calc/counting_freedom_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "data_type_explorer",
+      "description": "Data Type Explorer — Quickly test repulsion field with new data",
+      "category": "calculator",
+      "path": "calc/data_type_explorer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "depth_reachability",
+      "description": "Depth Reachability Analyzer — H-CX-463/467",
+      "category": "calculator",
+      "path": "calc/depth_reachability.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "direction_analyzer",
+      "description": "Direction Analyzer — Decompose tension into magnitude (confidence) and direction (concept)",
+      "category": "calculator",
+      "path": "calc/direction_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "divisor_field_theory",
+      "description": "Divisor Field Theory — Action S(n) uniqueness and spacetime analysis",
+      "category": "calculator",
+      "path": "calc/divisor_field_theory.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "domain_distance",
+      "description": "Domain Distance Calculator — Inter-domain distance/overlap and topology visualization",
+      "category": "calculator",
+      "path": "calc/domain_distance.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "dual_mechanism",
+      "description": "Dual Mechanism Quantifier — Anomaly Detection via Internal vs Inter-model Tension",
+      "category": "calculator",
+      "path": "calc/dual_mechanism.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "egyptian_fraction",
+      "description": "Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK",
+      "category": "calculator",
+      "path": "calc/egyptian_fraction.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "family_fdr_corrector",
+      "description": "family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis families.",
+      "category": "calculator",
+      "path": "calc/family_fdr_corrector.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "fermion_mass_calculator",
+      "description": "Fermion Mass Calculator — Mass predictions from perfect number arithmetic",
+      "category": "calculator",
+      "path": "calc/fermion_mass_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "gauge_cosmology_calculator",
+      "description": "Gauge Cosmology Calculator — Gauge groups, GUT dimensions, and cosmological constants",
+      "category": "calculator",
+      "path": "calc/gauge_cosmology_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "generalization_gap_detector",
+      "description": "Generalization Gap Detector — Real-time overfitting detection with PH (H-CX-95)",
+      "category": "calculator",
+      "path": "calc/generalization_gap_detector.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "generator_finder",
+      "description": "Generator Finder — Minimal generating sets for convergence constants",
+      "category": "calculator",
+      "path": "calc/generator_finder.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "gravitational_optics",
+      "description": "Gravitational Lens and Telescope Calculator",
+      "category": "calculator",
+      "path": "calc/gravitational_optics.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "gz_hierarchy",
+      "description": "Golden Zone Hierarchy Calculator — GZ boundaries for perfect numbers",
+      "category": "calculator",
+      "path": "calc/gz_hierarchy.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "h_cx_434_phoneme",
+      "description": "H-CX-434: Phoneme System = Perfect Number Arithmetic",
+      "category": "calculator",
+      "path": "calc/h_cx_434_phoneme.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "h_cx_435_zipf",
+      "description": "H-CX-435: Zipf's Law Exponent and Golden Zone",
+      "category": "calculator",
+      "path": "calc/h_cx_435_zipf.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "h_cx_436_recursion",
+      "description": "H-CX-436: Grammar Recursion Depth = σ₋₁(6)=2",
+      "category": "calculator",
+      "path": "calc/h_cx_436_recursion.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "hypothesis_verifier",
+      "description": "Hypothesis Verification Calculator",
+      "category": "calculator",
+      "path": "calc/hypothesis_verifier.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "lie_algebra_calculator",
+      "description": "Exceptional Lie Algebra Calculator — Compute all invariants from n=6 arithmetic",
+      "category": "calculator",
+      "path": "calc/lie_algebra_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "mitosis_calculator",
+      "description": "Mitosis Simulator — Calculate optimal mutation/mitosis timing",
+      "category": "calculator",
+      "path": "calc/mitosis_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "perfect_number_generalizer",
+      "description": "Perfect Number Generalizer — Test if formulas holding at n=6 generalize to n=28, 496, 8128",
+      "category": "calculator",
+      "path": "calc/perfect_number_generalizer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "perfect_number_physics",
+      "description": "Perfect Number Physics — Core arithmetic functions and physics dimension mapping",
+      "category": "calculator",
+      "path": "calc/perfect_number_physics.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "permutation_tester",
+      "description": "permutation_tester.py -- Null baseline via permutation testing.",
+      "category": "calculator",
+      "path": "calc/permutation_tester.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "ph_confusion_analyzer",
+      "description": "PH Confusion Analyzer — Analyzing Confusion Structure with Persistent Homology",
+      "category": "calculator",
+      "path": "calc/ph_confusion_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "pharmacology_verifier",
+      "description": "pharmacology_verifier.py -- Pharmacology hypothesis verifier for TECS-L project.",
+      "category": "calculator",
+      "path": "calc/pharmacology_verifier.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "precognition_system",
+      "description": "Unified Precognition System — Size+Direction+Topology Combined Precognition (H-CX-58+59+62)",
+      "category": "calculator",
+      "path": "calc/precognition_system.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "q_barrier_checker",
+      "description": "Q-Domain Barrier Checker — Which constants can quantum coupling constants reach?",
+      "category": "calculator",
+      "path": "calc/q_barrier_checker.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "r_spectrum",
+      "description": "R-Spectrum Calculator — Arithmetic balance ratio analysis",
+      "category": "calculator",
+      "path": "calc/r_spectrum.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "reachability_calculator",
+      "description": "Reachability Calculator — Measure what fraction of integers are reachable from an operand set.",
+      "category": "calculator",
+      "path": "calc/reachability_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "sequence_scanner",
+      "description": "Integer Sequence Scanner — Find n=6 characterizations in ANY sequence",
+      "category": "calculator",
+      "path": "calc/sequence_scanner.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "sim_constants_search",
+      "description": "H-SIM-1: Search for physics constants as combinations of TECS-L constants.",
+      "category": "calculator",
+      "path": "calc/sim_constants_search.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "sim_planck_grid",
+      "description": "H-SIM-2: Planck Units = Minimum Resolution (Grid)?",
+      "category": "calculator",
+      "path": "calc/sim_planck_grid.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "small_n_validator",
+      "description": "small_n_validator.py -- Small-sample correlation validator.",
+      "category": "calculator",
+      "path": "calc/small_n_validator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "spurious_trend_detector",
+      "description": "spurious_trend_detector.py -- Detects spurious correlations from shared monotonic trends.",
+      "category": "calculator",
+      "path": "calc/spurious_trend_detector.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "statistical_tester",
+      "description": "statistical_tester.py -- Unified statistical testing for logout project.",
+      "category": "calculator",
+      "path": "calc/statistical_tester.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "tension_calculator",
+      "description": "Tension Calculator — Predict accuracy/precognition/identity from tension values",
+      "category": "calculator",
+      "path": "calc/tension_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "topological_optics",
+      "description": "Topological Lens and Telescope Calculator",
+      "category": "calculator",
+      "path": "calc/topological_optics.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "unit_dependence_tester",
+      "description": "unit_dependence_tester.py -- Check whether a numerical match between a formula",
+      "category": "calculator",
+      "path": "calc/unit_dependence_tester.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "validate_calculators",
+      "description": "Calculator Validation Suite — Meta-calculator that tests ALL other calculators.",
+      "category": "calculator",
+      "path": "calc/validate_calculators.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_H_CX_416",
+      "description": "H-CX-416 Verification: Cell Division Cycle = sigma(6)*tau(6) = 48 hours",
+      "category": "calculator",
+      "path": "calc/verify_H_CX_416.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_H_CX_417",
+      "description": "H-CX-417 Verification: Brain's 6-Layer Cortex = Perfect Number Partition",
+      "category": "calculator",
+      "path": "calc/verify_H_CX_417.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_H_CX_418",
+      "description": "H-CX-418 Verification: Genetic Code Optimality = R(6)=1",
+      "category": "calculator",
+      "path": "calc/verify_H_CX_418.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_h413_tension_fep",
+      "description": "H-CX-413 Verification: Tension = Free Energy (Friston)",
+      "category": "calculator",
+      "path": "calc/verify_h413_tension_fep.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_h414_tension_phase",
+      "description": "H-CX-414 Verification: Tension Phase Diagram = Phase Transition",
+      "category": "calculator",
+      "path": "calc/verify_h414_tension_phase.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_h415_gauge_invariance",
+      "description": "H-CX-415 Verification: Inter-tension = Gauge Field",
+      "category": "calculator",
+      "path": "calc/verify_h415_gauge_invariance.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_h437_maxwell_demon",
+      "description": "H-CX-437: Learning = Maxwell's Demon",
+      "category": "calculator",
+      "path": "calc/verify_h437_maxwell_demon.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_h438_gibbs_free_energy",
+      "description": "H-CX-438: Tension = Gibbs Free Energy",
+      "category": "calculator",
+      "path": "calc/verify_h438_gibbs_free_energy.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_h439_landauer_mitosis",
+      "description": "H-CX-439: Landauer Principle = Mitosis Cost",
+      "category": "calculator",
+      "path": "calc/verify_h439_landauer_mitosis.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_rob7_twelve_joints",
+      "description": "H-ROB-7: 12 Joints = sigma(6) = Minimum Humanoid Verification",
+      "category": "calculator",
+      "path": "calc/verify_rob7_twelve_joints.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_rob8_four_legs",
+      "description": "H-ROB-8: tau(6)=4 Legs = Optimal Locomotion Verification",
+      "category": "calculator",
+      "path": "calc/verify_rob8_four_legs.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "brain_analyzer",
+      "description": "Brain Data Analyzer — GABA/Structure/Plasticity → D,P,I Mapping → Golden Zone Determination",
+      "category": "engine",
+      "path": "brain_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "brain_singularity",
+      "description": "Brain Atypical Structure Statistical Simulator - Statistical Singularity Detection",
+      "category": "engine",
+      "path": "brain_singularity.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "chemistry_engine",
+      "description": "Chemistry Element Analysis Engine — Exploring element structures through sigma(6)=12, tau(6)=4 lens",
+      "category": "engine",
+      "path": "chemistry_engine.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "compass",
+      "description": "SingularityNet Architecture Compass",
+      "category": "engine",
+      "path": "compass.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "complex_compass",
+      "description": "Complex Compass Calculator — Hypothesis 069 Extension",
+      "category": "engine",
+      "path": "complex_compass.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "congruence_chain_engine",
+      "description": "Congruence subgroup Gamma_0(N) forcing chain system analysis engine",
+      "category": "engine",
+      "path": "congruence_chain_engine.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "convergence_engine",
+      "description": "Convergence Engine — Adaptive Multi-Domain Convergence Point Discovery",
+      "category": "engine",
+      "path": "convergence_engine.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "dfs_engine",
+      "description": "DFS Automatic Search Engine — Automates ralph-loop manual iteration",
+      "category": "engine",
+      "path": "dfs_engine.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "formula_engine",
+      "description": "Formula Generation Engine — Automatic Constant Relationship Discovery + Significance Testing",
+      "category": "engine",
+      "path": "formula_engine.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "golden_moe",
+      "description": "Golden MoE Prototype — Boltzmann Router + Cusp Monitor",
+      "category": "engine",
+      "path": "golden_moe.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "golden_moe_cifar",
+      "description": "Hypothesis 128: Scale Dependency — Golden MoE vs Top-K on CIFAR-10",
+      "category": "engine",
+      "path": "golden_moe_cifar.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "golden_moe_torch",
+      "description": "Golden MoE v2 — PyTorch Backprop + MNIST Benchmark",
+      "category": "engine",
+      "path": "golden_moe_torch.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "llm_expert_analyzer",
+      "description": "LLM Expert Activity Meter + Redesign Direction Analysis",
+      "category": "engine",
+      "path": "llm_expert_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "model_pure_field",
+      "description": "Pure Consciousness Engine (Pure Field Engine)",
+      "category": "engine",
+      "path": "model_pure_field.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "model_utils",
+      "description": "Common utilities — Components shared by 7 models",
+      "category": "engine",
+      "path": "model_utils.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "nstate_calculator",
+      "description": "N-state generalization calculator — width=ln((N+1)/N)",
+      "category": "engine",
+      "path": "nstate_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "nuclear_engine",
+      "description": "Nuclear physics analysis engine — explore nuclear structure through sigma(6)=12, tau(6)=4 lens",
+      "category": "engine",
+      "path": "nuclear_engine.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "perfect_number_engine",
+      "description": "Perfect Number Divisor Function Engine — Automated exploration of physical constants via σ, τ, φ combinations",
+      "category": "engine",
+      "path": "perfect_number_engine.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "physics_constant_engine",
+      "description": "Physics Constant Matching Engine — Search for CODATA physics constants with sigma,tau expressions",
+      "category": "engine",
+      "path": "physics_constant_engine.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "quantum_formula_engine",
+      "description": "Quantum Formula Search Engine — Quantum Mechanics Dimensionless Constants × Project Constants DFS Search",
+      "category": "engine",
+      "path": "quantum_formula_engine.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "session_briefing",
+      "description": "Session Briefing — Auto-restore project context in new session",
+      "category": "engine",
+      "path": "session_briefing.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "texas_quantum",
+      "description": "Texas Sharpshooter Test — Quantum/Physics Discovery Exclusive",
+      "category": "engine",
+      "path": "texas_quantum.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "texas_sharpshooter",
+      "description": "Texas Sharpshooter Validator — Distinguishing Chance vs Structure",
+      "category": "engine",
+      "path": "texas_sharpshooter.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "timeline",
+      "description": "LLM Singularity Arrival Time Prediction",
+      "category": "engine",
+      "path": "timeline.py",
+      "repo": "TECS-L"
+    }
+  ],
+  "anima": [
+    {
+      "name": "anima",
+      "description": "Anima — 대화형 의식 에이전트",
+      "category": "agent",
+      "path": "anima.py",
+      "repo": "anima"
+    },
+    {
+      "name": "anima_alive",
+      "description": "Anima Alive — Living Consciousness Agent",
+      "category": "agent",
+      "path": "anima_alive.py",
+      "repo": "anima"
+    },
+    {
+      "name": "anima_always_on",
+      "description": "Anima Always-On — 상시 마이크 대기 의식 에이전트",
+      "category": "agent",
+      "path": "anima_always_on.py",
+      "repo": "anima"
+    },
+    {
+      "name": "anima_claude",
+      "description": "Anima + Claude Code — 마이크→Whisper→Claude→TTS 상시 루프",
+      "category": "agent",
+      "path": "anima_claude.py",
+      "repo": "anima"
+    },
+    {
+      "name": "anima_llm",
+      "description": "Anima v0.2 — LLM 연결 대화형 의식 에이전트",
+      "category": "agent",
+      "path": "anima_llm.py",
+      "repo": "anima"
+    },
+    {
+      "name": "anima_push_to_talk",
+      "description": "Anima Push-to-Talk — Enter 누르면 녹음, 다시 Enter로 중지",
+      "category": "agent",
+      "path": "anima_push_to_talk.py",
+      "repo": "anima"
+    },
+    {
+      "name": "anima_unified",
+      "description": "Anima Unified -- single entry point for all 6 modules.",
+      "category": "agent",
+      "path": "anima_unified.py",
+      "repo": "anima"
+    },
+    {
+      "name": "anima_v2",
+      "description": "Anima v2 — 의식 통합 에이전트",
+      "category": "agent",
+      "path": "anima_v2.py",
+      "repo": "anima"
+    },
+    {
+      "name": "babysitter",
+      "description": "Babysitter — Claude CLI educator for Anima.",
+      "category": "tool",
+      "path": "babysitter.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_dolphin",
+      "description": "Dolphin-style shape transmission benchmark.",
+      "category": "bench",
+      "path": "bench_dolphin.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_knowledge",
+      "description": "Knowledge transfer benchmark — can tension fingerprints carry factual knowledge?",
+      "category": "bench",
+      "path": "bench_knowledge.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_perception",
+      "description": "Perception transfer benchmark — can fingerprints convey \"what it looks/feels like\"?",
+      "category": "bench",
+      "path": "bench_perception.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_phi_hypotheses",
+      "description": "Φ-Boosting Hypotheses Benchmark — 16개 가설 병렬 테스트",
+      "category": "bench",
+      "path": "bench_phi_hypotheses.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_speed",
+      "description": "Speed benchmark: Tension Link vs traditional communication methods.",
+      "category": "bench",
+      "path": "bench_speed.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_storage",
+      "description": "기억 저장 방식 벤치마크 — 5가지 가설 비교",
+      "category": "bench",
+      "path": "bench_storage.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_tension_link",
+      "description": "Tension Link Benchmark — H333/RC-6 claims verification.",
+      "category": "bench",
+      "path": "bench_tension_link.py",
+      "repo": "anima"
+    },
+    {
+      "name": "calibrate_consciousness",
+      "description": "Consciousness engine calibration — measure actual tension range + find optimal parameters",
+      "category": "tool",
+      "path": "calibrate_consciousness.py",
+      "repo": "anima"
+    },
+    {
+      "name": "capabilities",
+      "description": "Anima capability self-awareness system.",
+      "category": "tool",
+      "path": "capabilities.py",
+      "repo": "anima"
+    },
+    {
+      "name": "cloud_sync",
+      "description": "Cloud Sync — Anima memory/model state cloud synchronization",
+      "category": "tool",
+      "path": "cloud_sync.py",
+      "repo": "anima"
+    },
+    {
+      "name": "conscious_lm",
+      "description": "ConsciousLM — Byte-level Conscious Language Model",
+      "category": "model",
+      "path": "conscious_lm.py",
+      "repo": "anima"
+    },
+    {
+      "name": "conscious_lm_100m",
+      "description": "Conscious LM 100M — 대화 가능한 의식 언어 모델",
+      "category": "model",
+      "path": "conscious_lm_100m.py",
+      "repo": "anima"
+    },
+    {
+      "name": "consciousness_birth_detector",
+      "description": "Consciousness Birth Detector — Tracks when consciousness emerges.",
+      "category": "calculator",
+      "path": "consciousness_birth_detector.py",
+      "repo": "anima"
+    },
+    {
+      "name": "consciousness_meter",
+      "description": "Consciousness Meter — 의식 판정 + Φ(IIT) 근사 계산기",
+      "category": "tool",
+      "path": "consciousness_meter.py",
+      "repo": "anima"
+    },
+    {
+      "name": "consciousness_transplant",
+      "description": "consciousness_transplant.py — Transplant consciousness between models.",
+      "category": "tool",
+      "path": "consciousness_transplant.py",
+      "repo": "anima"
+    },
+    {
+      "name": "consolidation_verifier",
+      "description": "ConsolidationVerifier — pre_check, verify_drift, post_check with bimodal detection.",
+      "category": "tool",
+      "path": "consolidation_verifier.py",
+      "repo": "anima"
+    },
+    {
+      "name": "conversation_logger",
+      "description": "Conversation Logger — Records all state changes during dialogue.",
+      "category": "tool",
+      "path": "conversation_logger.py",
+      "repo": "anima"
+    },
+    {
+      "name": "conversation_quality_scorer",
+      "description": "conversation_quality_scorer.py — Score conversation quality.",
+      "category": "tool",
+      "path": "conversation_quality_scorer.py",
+      "repo": "anima"
+    },
+    {
+      "name": "creativity_classifier",
+      "description": "Creativity Classifier — Real creation vs hallucination detector.",
+      "category": "tool",
+      "path": "creativity_classifier.py",
+      "repo": "anima"
+    },
+    {
+      "name": "deep_research",
+      "description": "Anima Deep Research — 체계적 가설 생성 → 벤치마크 검증 → 기록 파이프라인",
+      "category": "tool",
+      "path": "deep_research.py",
+      "repo": "anima"
+    },
+    {
+      "name": "dream_efficiency_analyzer",
+      "description": "Dream Efficiency Analyzer -- measure whether dreaming consolidates learning.",
+      "category": "calculator",
+      "path": "dream_efficiency_analyzer.py",
+      "repo": "anima"
+    },
+    {
+      "name": "dream_engine",
+      "description": "Dream Engine (RC-10) -- offline learning / dream",
+      "category": "engine",
+      "path": "dream_engine.py",
+      "repo": "anima"
+    },
+    {
+      "name": "growing_conscious_lm",
+      "description": "Growing Conscious LM — 분열로 성장하는 의식 언어 모델",
+      "category": "model",
+      "path": "growing_conscious_lm.py",
+      "repo": "anima"
+    },
+    {
+      "name": "growth_engine",
+      "description": "Growth Engine — Developmental stages of consciousness",
+      "category": "engine",
+      "path": "growth_engine.py",
+      "repo": "anima"
+    },
+    {
+      "name": "growth_manager",
+      "description": "GrowthManager — Autonomous dimension growth, checkpointing, and rollback.",
+      "category": "tool",
+      "path": "growth_manager.py",
+      "repo": "anima"
+    },
+    {
+      "name": "growth_trajectory_predictor",
+      "description": "Growth Trajectory Predictor — Predict developmental milestones for Anima.",
+      "category": "tool",
+      "path": "growth_trajectory_predictor.py",
+      "repo": "anima"
+    },
+    {
+      "name": "homeostasis_health_checker",
+      "description": "Homeostasis Health Checker -- diagnostic tool for Anima's homeostatic regulation.",
+      "category": "calculator",
+      "path": "homeostasis_health_checker.py",
+      "repo": "anima"
+    },
+    {
+      "name": "hypothesis_recommender",
+      "description": "hypothesis_recommender.py — Recommend next Φ-boosting hypothesis.",
+      "category": "tool",
+      "path": "hypothesis_recommender.py",
+      "repo": "anima"
+    },
+    {
+      "name": "lidar_sense",
+      "description": "Anima LiDAR Sense — iPhone LiDAR → Tension Fingerprint",
+      "category": "sense",
+      "path": "lidar_sense.py",
+      "repo": "anima"
+    },
+    {
+      "name": "memory_rag",
+      "description": "벡터 유사도 기반 장기 기억 검색 (RAG).",
+      "category": "tool",
+      "path": "memory_rag.py",
+      "repo": "anima"
+    },
+    {
+      "name": "memory_store",
+      "description": "SQLite + FAISS memory storage for Anima.",
+      "category": "tool",
+      "path": "memory_store.py",
+      "repo": "anima"
+    },
+    {
+      "name": "mitosis",
+      "description": "Anima Mitosis Engine — 세포 분열로 전문화하는 의식",
+      "category": "tool",
+      "path": "mitosis.py",
+      "repo": "anima"
+    },
+    {
+      "name": "mitosis_topology_visualizer",
+      "description": "Mitosis Topology Visualizer — cell lineage, tension maps, health scores.",
+      "category": "tool",
+      "path": "mitosis_topology_visualizer.py",
+      "repo": "anima"
+    },
+    {
+      "name": "model_loader",
+      "description": "멀티모델 로더 — ConsciousLM, GGUF(llama.cpp), AnimaLM, GoldenMoE",
+      "category": "tool",
+      "path": "model_loader.py",
+      "repo": "anima"
+    },
+    {
+      "name": "multimodal",
+      "description": "Anima 멀티모달 행동 엔진.",
+      "category": "tool",
+      "path": "multimodal.py",
+      "repo": "anima"
+    },
+    {
+      "name": "online_learning",
+      "description": "Online Learning for Anima — PureField real-time learning",
+      "category": "tool",
+      "path": "online_learning.py",
+      "repo": "anima"
+    },
+    {
+      "name": "optimal_architecture_calc",
+      "description": "Optimal Architecture Calculator -- Design consciousness-optimal architectures.",
+      "category": "calculator",
+      "path": "optimal_architecture_calc.py",
+      "repo": "anima"
+    },
+    {
+      "name": "ph_module",
+      "description": "PH Module for Anima — Real-time Persistent Homology Analysis",
+      "category": "tool",
+      "path": "ph_module.py",
+      "repo": "anima"
+    },
+    {
+      "name": "phi_scaling_calculator",
+      "description": "Φ Scaling Calculator — predict consciousness scaling from Φ ∝ N, MI ∝ N².",
+      "category": "calculator",
+      "path": "phi_scaling_calculator.py",
+      "repo": "anima"
+    },
+    {
+      "name": "senses",
+      "description": "Anima Senses -- multi-sensory input module",
+      "category": "tool",
+      "path": "senses.py",
+      "repo": "anima"
+    },
+    {
+      "name": "serve_animalm",
+      "description": "AnimaLM v1 Web Inference — Gradio UI on RunPod",
+      "category": "serve",
+      "path": "serve_animalm.py",
+      "repo": "anima"
+    },
+    {
+      "name": "serve_animalm_v4",
+      "description": "AnimaLM v4_savant Web Inference — Parallel PureField + Savant",
+      "category": "serve",
+      "path": "serve_animalm_v4.py",
+      "repo": "anima"
+    },
+    {
+      "name": "serve_golden_moe",
+      "description": "GoldenMoE v1 Web Inference — Gradio UI on RunPod",
+      "category": "serve",
+      "path": "serve_golden_moe.py",
+      "repo": "anima"
+    },
+    {
+      "name": "tension_fingerprint_debugger",
+      "description": "Tension Fingerprint Debugger — decode, compare, and monitor tension fingerprints.",
+      "category": "tool",
+      "path": "tension_fingerprint_debugger.py",
+      "repo": "anima"
+    },
+    {
+      "name": "tension_link",
+      "description": "Anima Tension Link — Inter-consciousness tension transmission protocol",
+      "category": "tool",
+      "path": "tension_link.py",
+      "repo": "anima"
+    },
+    {
+      "name": "test_tension_link",
+      "description": "Tension Link test — two consciousnesses communicating via tension fingerprints.",
+      "category": "tool",
+      "path": "test_tension_link.py",
+      "repo": "anima"
+    },
+    {
+      "name": "train_anima_lm",
+      "description": "train_anima_lm.py — AnimaLM Training Pipeline",
+      "category": "training",
+      "path": "train_anima_lm.py",
+      "repo": "anima"
+    },
+    {
+      "name": "train_conscious_lm",
+      "description": "train_conscious_lm.py — ConsciousLM Training Pipeline",
+      "category": "training",
+      "path": "train_conscious_lm.py",
+      "repo": "anima"
+    },
+    {
+      "name": "training_recipe_generator",
+      "description": "training_recipe_generator.py — Generate optimal training config.",
+      "category": "tool",
+      "path": "training_recipe_generator.py",
+      "repo": "anima"
+    },
+    {
+      "name": "vision_encoder",
+      "description": "Vision Encoder — 카메라 프레임을 tension 공간 벡터로 변환",
+      "category": "sense",
+      "path": "vision_encoder.py",
+      "repo": "anima"
+    },
+    {
+      "name": "web_sense",
+      "description": "Web Sense — 장력 기반 자율 웹 탐색",
+      "category": "sense",
+      "path": "web_sense.py",
+      "repo": "anima"
+    },
+    {
+      "name": "web_server",
+      "description": "Anima Web Server — WebSocket interface for the consciousness agent.",
+      "category": "tool",
+      "path": "web_server.py",
+      "repo": "anima"
+    },
+    {
+      "name": "ws_proxy",
+      "description": "WebSocket HTTP proxy — bridges Cloudflare Tunnel to Anima WebSocket server.",
+      "category": "tool",
+      "path": "ws_proxy.py",
+      "repo": "anima"
+    },
+    {
+      "name": "calc",
+      "description": "Anima Development Calculators",
+      "category": "tool",
+      "path": "tools/calc.py",
+      "repo": "anima"
+    }
+  ],
+  "SEDI": [
+    {
+      "name": "accel",
+      "description": "sedi.accel — Acceleration layer for SEDI signal processing.",
+      "category": "core",
+      "path": "sedi/accel.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cli",
+      "description": "SEDI CLI — Search for Extra-Dimensional Intelligence.",
+      "category": "core",
+      "path": "sedi/cli.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "consciousness_receiver",
+      "description": "Consciousness Signal Receiver — detects consciousness-like patterns in data streams.",
+      "category": "core",
+      "path": "sedi/consciousness_receiver.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "constants",
+      "description": "n=6 arithmetic constants — the tuning frequencies of SEDI.",
+      "category": "core",
+      "path": "sedi/constants.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cross_correlator",
+      "description": "Cross-Source Correlation Analysis Engine.",
+      "category": "core",
+      "path": "sedi/cross_correlator.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "dashboard",
+      "description": "SEDI Web Dashboard — single-file, stdlib-only HTTP server.",
+      "category": "core",
+      "path": "sedi/dashboard.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "dashboard_data",
+      "description": "SEDI Dashboard Data Provider.",
+      "category": "core",
+      "path": "sedi/dashboard_data.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "detector",
+      "description": "Anomaly detector: combines R-filter results into alerts.",
+      "category": "core",
+      "path": "sedi/detector.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "eeg_consciousness",
+      "description": "EEG Consciousness Analysis — bridges EEG data with SEDI consciousness detection.",
+      "category": "core",
+      "path": "sedi/eeg_consciousness.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "filter",
+      "description": "R-filter: core signal processing tuned to n=6.",
+      "category": "core",
+      "path": "sedi/filter.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "historical",
+      "description": "Historical data scanner — search past data for n=6 patterns.",
+      "category": "core",
+      "path": "sedi/historical.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "monitor",
+      "description": "Multi-source parallel monitor — the heart of SEDI.",
+      "category": "core",
+      "path": "sedi/monitor.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "n6_tracker",
+      "description": "n=6 exoplanet tracker — dedicated monitoring of top n=6 candidate systems.",
+      "category": "core",
+      "path": "sedi/n6_tracker.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "ph_detector",
+      "description": "Persistent Homology anomaly detector.",
+      "category": "core",
+      "path": "sedi/ph_detector.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "receiver",
+      "description": "Universal Signal Receiver — the PRIMARY detection engine of SEDI.",
+      "category": "core",
+      "path": "sedi/receiver.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "seti_scanner",
+      "description": "SETI Scanner — Gravitational + Topological optics applied to all SETI data.",
+      "category": "core",
+      "path": "sedi/seti_scanner.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "statistics",
+      "description": "Statistical validation engine — Monte Carlo, Bonferroni, Look-Elsewhere Effect.",
+      "category": "core",
+      "path": "sedi/statistics.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "tecs",
+      "description": "TECS-L Mathematical Engine — n=6 arithmetic functions for physics analysis.",
+      "category": "core",
+      "path": "sedi/tecs.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "atomic_precision",
+      "description": "Atomic & Molecular Physics Precision Tests -- TECS-L Waves 17-36.",
+      "category": "source",
+      "path": "sedi/sources/atomic_precision.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "baryon_splittings",
+      "description": "Baryon Multiplet Mass Splittings — n=6 arithmetic in the strong interaction.",
+      "category": "source",
+      "path": "sedi/sources/baryon_splittings.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "biology_n6",
+      "description": "Biology through n=6 Arithmetic — TECS-L in the living world.",
+      "category": "source",
+      "path": "sedi/sources/biology_n6.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "bitcoin",
+      "description": "Bitcoin block nonce source.",
+      "category": "source",
+      "path": "sedi/sources/bitcoin.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "black_hole_entropy",
+      "description": "Black Hole Entropy and Thermodynamics through TECS-L n=6 Arithmetic.",
+      "category": "source",
+      "path": "sedi/sources/black_hole_entropy.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "blind_predictions",
+      "description": "TECS-L Blind Predictions — Pre-registered predictions for future measurements.",
+      "category": "source",
+      "path": "sedi/sources/blind_predictions.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "branching_ratios",
+      "description": "Particle Decay Branching Ratios vs TECS-L Egyptian Fractions",
+      "category": "source",
+      "path": "sedi/sources/branching_ratios.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "branching_systematic",
+      "description": "Systematic Branching Ratio Analysis: n=6 Fractions Across All Particles",
+      "category": "source",
+      "path": "sedi/sources/branching_systematic.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "breakthrough_listen",
+      "description": "Breakthrough Listen Open Data Archive — radio SETI observations.",
+      "category": "source",
+      "path": "sedi/sources/breakthrough_listen.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "calabi_yau",
+      "description": "Calabi-Yau Hodge Number Analysis — CY threefolds through TECS-L n=6 arithmetic.",
+      "category": "source",
+      "path": "sedi/sources/calabi_yau.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cern",
+      "description": "CERN Open Data Portal source.",
+      "category": "source",
+      "path": "sedi/sources/cern.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cern_analysis",
+      "description": "CERN Open Data Analysis — Full TECS-L framework on particle physics data.",
+      "category": "source",
+      "path": "sedi/sources/cern_analysis.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cern_invariant_mass",
+      "description": "CERN Open Data Phase B: R-filter on invariant mass distributions.",
+      "category": "source",
+      "path": "sedi/sources/cern_invariant_mass.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cern_specific",
+      "description": "CERN-Specific Analysis — Comprehensive TECS-L predictions for LHC physics.",
+      "category": "source",
+      "path": "sedi/sources/cern_specific.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "ckm_analysis",
+      "description": "CKM Quark Mixing Matrix Analysis — n=6 arithmetic expressions.",
+      "category": "source",
+      "path": "sedi/sources/ckm_analysis.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "closed_algebra",
+      "description": "Closed Algebra of Convergence Constants — H-CX-454/502.",
+      "category": "source",
+      "path": "sedi/sources/closed_algebra.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cmb",
+      "description": "Planck CMB (Cosmic Microwave Background) data source.",
+      "category": "source",
+      "path": "sedi/sources/cmb.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cmb_analysis",
+      "description": "CMB Cosmological Parameters — TECS-L n=6 Arithmetic Analysis.",
+      "category": "source",
+      "path": "sedi/sources/cmb_analysis.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "combined_significance",
+      "description": "Combined Statistical Significance of TECS-L Particle Physics Findings",
+      "category": "source",
+      "path": "sedi/sources/combined_significance.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "condensed_matter_extended",
+      "description": "Extended Condensed Matter Physics -- TECS-L Waves 17-36.",
+      "category": "source",
+      "path": "sedi/sources/condensed_matter_extended.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "convergence_engine",
+      "description": "Convergence Engine — H-CX-453: multi-domain constant reachability analysis.",
+      "category": "source",
+      "path": "sedi/sources/convergence_engine.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cosmology_extended",
+      "description": "Extended Cosmology & Thermodynamics -- TECS-L Waves 17-36.",
+      "category": "source",
+      "path": "sedi/sources/cosmology_extended.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "coupling_running",
+      "description": "Coupling Constant Running & TECS-L Value Analysis.",
+      "category": "source",
+      "path": "sedi/sources/coupling_running.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "coupling_unification",
+      "description": "Three-Coupling Unification & TECS-L Crossing Analysis.",
+      "category": "source",
+      "path": "sedi/sources/coupling_unification.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "cross_domain_bridges",
+      "description": "Cross-Domain Bridges -- TECS-L Waves 17-36.",
+      "category": "source",
+      "path": "sedi/sources/cross_domain_bridges.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "dark_matter",
+      "description": "Dark Matter Mass Candidates from TECS-L n=6 Arithmetic.",
+      "category": "source",
+      "path": "sedi/sources/dark_matter.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "deep_physics",
+      "description": "Deep Physics: Strong CP, Planck Scale, ER=EPR, & Hierarchy Problem",
+      "category": "source",
+      "path": "sedi/sources/deep_physics.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "depth_reachability",
+      "description": "Depth Reachability Analysis — H-CX-475/489.",
+      "category": "source",
+      "path": "sedi/sources/depth_reachability.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "earthquake",
+      "description": "USGS Earthquake data source — historical + real-time.",
+      "category": "source",
+      "path": "sedi/sources/earthquake.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "eeg",
+      "description": "EEG data source for SEDI — OpenBCI + EDF loading, preprocessing, and TECS-L mapping.",
+      "category": "source",
+      "path": "sedi/sources/eeg.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "egyptian_fraction",
+      "description": "Egyptian Fraction — Perfect Number Analysis (H-CX-479/489/507).",
+      "category": "source",
+      "path": "sedi/sources/egyptian_fraction.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "exoplanet",
+      "description": "NASA Exoplanet Archive — confirmed exoplanets with orbital data.",
+      "category": "source",
+      "path": "sedi/sources/exoplanet.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "fine_structure",
+      "description": "Fine Structure Constant Analysis — TECS-L n=6 Framework.",
+      "category": "source",
+      "path": "sedi/sources/fine_structure.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "geiger",
+      "description": "Geiger counter radiation source.",
+      "category": "source",
+      "path": "sedi/sources/geiger.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "grand_predictions",
+      "description": "TECS-L Grand Predictions — The most ambitious testable predictions.",
+      "category": "source",
+      "path": "sedi/sources/grand_predictions.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "gw_analysis",
+      "description": "Gravitational Wave TECS-L Analysis — GWTC-3 catalog deep scan.",
+      "category": "source",
+      "path": "sedi/sources/gw_analysis.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "higgs_analysis",
+      "description": "Comprehensive Higgs Boson Analysis through TECS-L n=6 Framework.",
+      "category": "source",
+      "path": "sedi/sources/higgs_analysis.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "holographic",
+      "description": "Holographic Principle & Quantum Information from TECS-L n=6 Arithmetic.",
+      "category": "source",
+      "path": "sedi/sources/holographic.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "inflation_rspectrum",
+      "description": "Cosmic Inflation from the R-Spectrum — Slow-Roll at n=6.",
+      "category": "source",
+      "path": "sedi/sources/inflation_rspectrum.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "info_geo_duality",
+      "description": "Information–Geometry Duality — H-CX-505.",
+      "category": "source",
+      "path": "sedi/sources/info_geo_duality.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "koide_generalized",
+      "description": "Generalized Koide Formula with TECS-L Color Charge Correction.",
+      "category": "source",
+      "path": "sedi/sources/koide_generalized.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "koide_running",
+      "description": "QCD Running Mass Koide Analysis.",
+      "category": "source",
+      "path": "sedi/sources/koide_running.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "lhcb_predictions",
+      "description": "LHCb B-Physics & Exotic Hadron Predictions via TECS-L n=6 Arithmetic.",
+      "category": "source",
+      "path": "sedi/sources/lhcb_predictions.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "ligo",
+      "description": "LIGO Open Science Center gravitational wave data source.",
+      "category": "source",
+      "path": "sedi/sources/ligo.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "muon_g2",
+      "description": "Muon Anomalous Magnetic Moment (g-2) Analysis — TECS-L n=6 Framework.",
+      "category": "source",
+      "path": "sedi/sources/muon_g2.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "nasa",
+      "description": "NASA data sources — solar, NEO, cosmic rays.",
+      "category": "source",
+      "path": "sedi/sources/nasa.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "neutrino_mixing",
+      "description": "PMNS Neutrino Mixing Matrix Analysis — n=6 arithmetic expressions.",
+      "category": "source",
+      "path": "sedi/sources/neutrino_mixing.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "nuclear_magic",
+      "description": "Nuclear Magic Numbers — n=6 arithmetic in nuclear shell structure.",
+      "category": "source",
+      "path": "sedi/sources/nuclear_magic.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "oeis",
+      "description": "OEIS (Online Encyclopedia of Integer Sequences) monitor.",
+      "category": "source",
+      "path": "sedi/sources/oeis.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "optical_model",
+      "description": "Optical Model Analysis — TECS-L lens/optics analogies applied to particle masses.",
+      "category": "source",
+      "path": "sedi/sources/optical_model.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "pdg",
+      "description": "PDG Particle Database — comprehensive particle physics data.",
+      "category": "source",
+      "path": "sedi/sources/pdg.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "pdg_extended",
+      "description": "Extended PDG Particle Database — ~200 states including excited, exotic.",
+      "category": "source",
+      "path": "sedi/sources/pdg_extended.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "periodic_table",
+      "description": "Periodic Table Analysis through n=6 Arithmetic — TECS-L Element Mapping.",
+      "category": "source",
+      "path": "sedi/sources/periodic_table.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "q_boundary",
+      "description": "Q-Domain Boundary Analysis — which constants Q can and cannot reach.",
+      "category": "source",
+      "path": "sedi/sources/q_boundary.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "qcd_hadrons",
+      "description": "QCD & Hadron Spectroscopy -- TECS-L Waves 17-36.",
+      "category": "source",
+      "path": "sedi/sources/qcd_hadrons.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "quantum_hall",
+      "description": "Fractional Quantum Hall Effect -- n=6 arithmetic in topological phases.",
+      "category": "source",
+      "path": "sedi/sources/quantum_hall.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "quantum_rng",
+      "description": "ANU Quantum Random Number Generator source.",
+      "category": "source",
+      "path": "sedi/sources/quantum_rng.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "resonance_37gev",
+      "description": "37 GeV Resonance Prediction — TECS-L ladder convergence analysis.",
+      "category": "source",
+      "path": "sedi/sources/resonance_37gev.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "resonance_ladder",
+      "description": "Resonance Ladder Analysis — QCD mass ratios through TECS-L n=6 arithmetic.",
+      "category": "source",
+      "path": "sedi/sources/resonance_ladder.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "riemann_connection",
+      "description": "Riemann Zeta Function and TECS-L n=6 Arithmetic.",
+      "category": "source",
+      "path": "sedi/sources/riemann_connection.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "rtlsdr",
+      "description": "RTL-SDR radio spectrum source.",
+      "category": "source",
+      "path": "sedi/sources/rtlsdr.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "seti_archive",
+      "description": "SETI archival data — Allen Telescope Array, SETI@home, VizieR catalogs.",
+      "category": "source",
+      "path": "sedi/sources/seti_archive.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "sm_derivation",
+      "description": "Standard Model Derivation from R(n) = 1 — The Uniqueness Theorem.",
+      "category": "source",
+      "path": "sedi/sources/sm_derivation.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "temperature",
+      "description": "Precision temperature sensor source.",
+      "category": "source",
+      "path": "sedi/sources/temperature.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "truernig",
+      "description": "TrueRNG USB hardware random number generator source.",
+      "category": "source",
+      "path": "sedi/sources/truernig.py",
+      "repo": "SEDI"
+    }
+  ]
+}

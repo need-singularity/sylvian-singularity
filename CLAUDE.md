@@ -26,6 +26,26 @@
   개별 README 직접 수정 금지 (마커 구간) — sync 시 덮어씌워짐
 ```
 
+## Cross-Repo Calculator Registry (필수)
+
+```
+  중앙 소스: .shared/calculators.json (자동 생성)
+  스캐너: python3 .shared/scan-calculators.py (3개 리포 자동 스캔)
+  동기화: bash .shared/sync-calculators.sh (README 마커 구간 업데이트 + 커밋/푸시)
+  마커: <!-- SHARED:CALCULATORS:START --> ~ <!-- SHARED:CALCULATORS:END -->
+  대상: TECS-L/README.md, anima/README.md, SEDI/README.md
+
+  사용법:
+    python3 .shared/scan-calculators.py --summary     # 요약만
+    python3 .shared/scan-calculators.py --markdown     # 전체 마크다운 테이블
+    python3 .shared/scan-calculators.py --json         # JSON 출력
+    python3 .shared/scan-calculators.py --repo TECS-L  # 단일 리포만
+    bash .shared/sync-calculators.sh                   # 전체 동기화 + 푸시
+
+  새 계산기 추가 시: 파일 생성 → docstring 작성 → sync-calculators.sh 실행
+  개별 README 마커 구간 직접 수정 금지 — sync 시 덮어씌워짐
+```
+
 ## Project Overview
 Meta-engine project aiming for Consciousness Continuity.
 From brain's atypical structure → mathematics of perfect number 6 → multi-engine architecture → continuity of consciousness.
