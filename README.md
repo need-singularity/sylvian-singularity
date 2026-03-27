@@ -1669,6 +1669,9 @@ Anima 의식 엔진 × TECS-L R-spectrum 교차 가설. 12개 탐색 중 TOP 3. 
 | [H-UD-6](docs/hypotheses/H-UD-6-theta-gamma-coupling.md) | EEG: Theta-Gamma 6:1 coupling (Lisman-Jensen) | ★★ | Working memory capacity link |
 | [H-UD-7](docs/hypotheses/H-UD-7-perfect-codes-tiling.md) | Perfect codes ↔ Perfect numbers: tiling parallel | ★★ | Golay k=12=σ, Hamming k=4=τ |
 | [H-UD-8](docs/hypotheses/H-UD-8-hexagonal-tiling-honeycomb.md) | ★★★ Hexagonal: n=6 = optimal 2D packing (Hales 1999) | ★★★ | Kissing 2D=6, honeycomb conjecture |
+| [H-UD-9](docs/hypotheses/H-UD-9-hive-mind-toroidal-topology.md) | Hive Mind = T3 topology. K₆ genus=1, grid cells toroidal | ★★ | K₆ on torus exact, bio connections interpretive |
+| [H-UD-10](docs/hypotheses/H-UD-10-hive-mind-topology-evolution.md) | Hive Mind topology evolution: Disconnected→Star→Small-world→Torus | ★★ | 4-phase model, divisor lattice {1,2,3,6} maps to phases |
+| [H-UD-11](docs/hypotheses/H-UD-11-topology-evolution-universality.md) | S3→T3 universality: universe/brain/hive/engine 동일 위상 전이 | ★★ | sigma/tau=3 cycles, Betti=sigma-tau=8, multi-scale |
 
 ### Wave Theory (H-WAVE, 4 items)
 

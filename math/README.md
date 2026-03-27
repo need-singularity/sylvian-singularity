@@ -4846,7 +4846,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-BIO-12](docs/hypotheses/H-BIO-12-neural-oscillation-bands.md) | brainwave band=σ,τ,φ boundary | 🟧 structural | α upper bound=σ=12, δ-θ boundary=τ=4, α/θ ratio=φ=2 |
 | [H-BIO-13](docs/hypotheses/H-BIO-13-nernst-equation-arithmetic.md) | Nernst ion concentration=σ,τ,φ | 🟧 structural | [Na]in=σ=12, [K]out=τ=4, RT/F≈σφ+e(0.03%) |
 
-### Cosmic Topology (H-TOPO-COSMO, 6)
+### Cosmic Topology (H-TOPO-COSMO, 7)
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
@@ -4856,6 +4856,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-TOPO-COSMO-4](docs/hypotheses/H-TOPO-COSMO-4-universe-lens.md) | Universe as physical gravitational lens | ⬛ refuted | theta_E=70deg (should be arcsec); dimensional analysis fails |
 | [H-TOPO-COSMO-5](docs/hypotheses/H-TOPO-COSMO-5-thurston-ADE-boundary.md) | 1/2+1/3+1/6=1 <=> Seifert(2,3,6)=E^3 flat; sigma-tau=8=|Thurston| | 🟩 pure math | R-spectrum identity = ADE boundary; equivalence proven |
 | [H-TOPO-COSMO-6](docs/hypotheses/H-TOPO-COSMO-6-R-landscape.md) | R(6)=1 unique among perfect numbers | 🟩 verified | R(28)=4, R(496)=48; only n=6 non-trivial R=1 in [1..10000] |
+| [H-TOPO-COSMO-7](../docs/hypotheses/H-TOPO-COSMO-7-sphere-to-torus-evolution.md) | S3->T3 evolution: Betti=8=sigma-tau, K6 genus=1, Seifert(2,3,6)=E3 | 🟧 structural | arithmetic exact; Geroch forbids classical; QG required |
 
 ### Topology (H-TOP, 8)
 
