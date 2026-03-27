@@ -2,7 +2,7 @@
 id: H-STAT-1
 title: "Chi-Squared(6) Quadruple Moment Match and Distribution Encodings"
 status: "VERIFIED"
-grade: "🟩⭐⭐⭐ (chi-squared quadruple) / 🟩⭐⭐ (Beta meta-FP)"
+grade: "🟦 PROVED (chi-squared quadruple) / 🟩⭐⭐ (Beta meta-FP)"
 date: 2026-03-26
 ---
 
@@ -146,22 +146,62 @@ f(I) = 0.7I + 0.1 that governs Golden Zone convergence.
 | Gamma | (3,2)=(n/2,phi) | 6=n | 12=sigma | 4=tau | =chi^2(6) |
 | Poisson | lambda=6 | 6=n | 6=n | {5,6} | mean=var=n |
 
-## Uniqueness Proof Sketch
+## Uniqueness Proof (Rigorous)
 
-The chi^2 quadruple requires solving:
+**THEOREM.** Among all positive integers k >= 2, the chi-squared distribution
+chi^2(k) has all four moments simultaneously matching number-theoretic
+functions of k if and only if k = 6.
+
+**PROOF.**
+
+The four conditions are:
+
 ```
-  sigma(n) = 2n        ... (1) perfect number
-  tau(n)   = n - 2     ... (2)
-  phi(n)   = 12/n      ... (3)
-
-  From (3): n | 12, so n in {1,2,3,4,6,12}.
-  From (1): n must be perfect, so n in {6, 28, 496, ...}.
-  Intersection: n = 6 only.
+  (1) sigma(k) = 2k         (variance = divisor sum)
+  (2) tau(k)   = k - 2      (mode = divisor count)
+  (3) phi(k)   = 12/k       (excess kurtosis = Euler totient)
 ```
 
-This is a PROOF, not just computation. No perfect number other than 6
-can satisfy (3) because phi(n) >= 1 requires n <= 12, and the only
-perfect number <= 12 is 6.
+Condition (1) is the definition of a perfect number.
+
+From condition (3): phi(k) = 12/k requires 12/k to be a positive integer,
+so k | 12. The divisors of 12 are {1, 2, 3, 4, 6, 12}.
+
+We verify condition (3) for each divisor of 12:
+
+```
+  k=1:  phi(1)=1,  12/1=12.  1 != 12.  FAIL.
+  k=2:  phi(2)=1,  12/2=6.   1 != 6.   FAIL.
+  k=3:  phi(3)=2,  12/3=4.   2 != 4.   FAIL.
+  k=4:  phi(4)=2,  12/4=3.   2 != 3.   FAIL.
+  k=6:  phi(6)=2,  12/6=2.   2 = 2.    PASS.
+  k=12: phi(12)=4, 12/12=1.  4 != 1.   FAIL.
+```
+
+Only k=6 satisfies condition (3).
+
+We verify conditions (1) and (2) for k=6:
+
+```
+  sigma(6) = 1+2+3+6 = 12 = 2*6.  PASS (6 is perfect).
+  tau(6)   = |{1,2,3,6}| = 4 = 6-2.  PASS.
+```
+
+Therefore k=6 is the unique solution. QED.
+
+**Alternative proof structure (without enumeration):**
+
+Condition (1) requires k to be perfect: k in {6, 28, 496, 8128, ...}.
+Condition (3) requires k | 12: k in {1, 2, 3, 4, 6, 12}.
+The intersection is {6}, since no perfect number > 12 can divide 12,
+and 6 is the only perfect number <= 12. QED.
+
+### Computational Verification
+
+Exhaustive search over k = 2..10000 confirms k = 6 as the unique solution.
+No partial matches (2 of 3 conditions) exist for any k != 6 in [2, 1000].
+
+Script: `math/verify_h_stat_1.py`
 
 ## Limitations
 
@@ -173,7 +213,7 @@ perfect number <= 12 is 6.
 
 ## Grade
 
-- 🟩⭐⭐⭐: Chi-squared quadruple match. Proved unique among perfect numbers.
+- 🟦 PROVED: Chi-squared quadruple match. Unique among ALL k >= 2 (not just perfect numbers).
 - 🟩⭐⭐: Beta(phi,tau) mean = 1/3 = meta-fixed-point.
 - 🟩⭐: Binomial/NB parameter duality. Interesting but less deep.
 
