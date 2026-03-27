@@ -4579,6 +4579,36 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
   📊 Summary: 🟩 4, 🟧★ 10, 🟧 79, ⚪ 9, ⬛ 3
   Full details: docs/hypotheses/frontier-500-round5.md
+
+  ═══ Frontier 600 (Ralph 600): Deep Mathematics ═══
+
+  100 hypotheses across 10 new domains. 98 PASS / 2 FAIL.
+  Domains: Representation Theory, Algebraic Number Theory, Differential Geometry,
+           Dynamical Systems, Coding Theory, Knot Theory, Probability,
+           Functional Analysis, Deep Unification, Category Theory
+
+  --- Structural Discoveries ---
+
+  🟧★ F6-ANT-08: Phi_6(6)=31=M_{sopfr(6)}=2^5-1 (cyclotomic-Mersenne bridge) → H-ANT-429
+  🟧★ F6-PROB-07: Chi-sq(df=6): mode=tau=4, mean=n=6, var=sigma=12 → H-PROB-429
+
+  --- Notable Chains ---
+
+  🟧 Moonshine Chain: hexacode[6,3,4]→Golay[24,12,8]→Leech_24→Monster → H-DEEP-429
+     n=6 arithmetic at every step: n→sigma→sigma*phi→j=744=31*24
+  🟧 Geometry Chain: CY_3(dim 6)→G_2(dim 14=sigma+phi)→Spin(7)(dim 21)
+     S^6 = G_2/SU(3): dim(G_2)-dim(SU(3))=14-8=6=n
+  🟧 Knot Bridge: Trefoil=T(2,3)=T(prime_1(6),prime_2(6))
+  🟧 Coding Theory: hexacode[6,3,tau]→Golay[sigma*phi,sigma,sigma-tau]
+  🟧 Sobolev: W^{1,3}(R^6)→L^6 (self-embedding with primes of 6)
+
+  --- Failures ---
+
+  ⬛ F6-PROB-03: Coupon collector computation error
+  ⬛ F6-CAT-10: PA axiom count incorrect
+
+  📊 Summary: 🟧★ 2, 🟧 92, ⚪ 4, ⬛ 2
+  Full details: docs/hypotheses/frontier-600-round6.md
 ```
 
 ---
@@ -4995,6 +5025,14 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 |---|---|---|---|
 | [H-TOP-426](docs/hypotheses/H-TOP-426-kissing-240.md) | Kissing(8D)=240=sigma*tau*sopfr | 🟧 observational | E8 lattice connection |
 | [H-CROSS-426](docs/hypotheses/H-CROSS-426-j-invariant-744.md) | j(q) const 744=(2^sopfr-1)*sigma*phi | 🟧 cross-domain | Moonshine-Mersenne bridge |
+
+### Frontier 600: Deep Mathematics (H-ANT-429, H-PROB-429, H-DEEP-429, 3)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-ANT-429](docs/hypotheses/H-ANT-429-cyclotomic-mersenne.md) | Phi_6(6)=31=M_{sopfr(6)} cyclotomic-Mersenne | 🟧★ structural | unique among composites |
+| [H-PROB-429](docs/hypotheses/H-PROB-429-chi-squared-identity.md) | Chi-sq(df=6): mode=tau, var=sigma | 🟧★ structural | only df with both mode=tau AND var=sigma |
+| [H-DEEP-429](docs/hypotheses/H-DEEP-429-moonshine-chain.md) | Moonshine chain n=6→hexacode→Golay→Leech→Monster | 🟧 observational | n=6 at every step |
 
 ### Pure Constant Theorems (T0, 7) — independent of Golden Zone, eternally true
 
