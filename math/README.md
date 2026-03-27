@@ -4641,6 +4641,29 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
   📊 Summary: 🟩 5, 🟧★ 15, 🟧 52, ⚪ 5, ⬛ 3
   Full details: docs/hypotheses/frontier-700-round7.md
+
+  ═══ Frontier 800 (Ralph 800): Systematic Characterization Search ═══
+
+  74 hypotheses via computational scanning f(n)=g(n) for n=2..200.
+  72 PASS / 2 FAIL. Focus: provable characterizations.
+
+  --- MAJOR NEW CHARACTERIZATIONS ---
+
+  ⭐ F8-SYS-03: n*tau(n)=sigma(n)*omega(n): ONLY n=6 in [2,200] → H-NT-432
+     Proved: (p-1)(q-1)=2 for semiprimes, other types eliminated
+  ⭐ F8-SYNTH-15: phi(n)+tau(n)=n AND sigma=2n: ONLY n=6 (conjunction)
+  🟧★ F8-CHAR-20: sigma=phi*sopfr+omega: n in {2,6} only → H-NT-433
+  🟧★ F8-CHAR-16: phi(sigma(n))=n-omega(n): n in {3,6}
+  🟧★ F8-SYS-11: sigma*phi/n=tau: unique among tested range
+  🟧★ F8-NT-13: 6 = only number that is perfect+factorial+primorial+HC
+
+  --- Failures ---
+
+  ⬛ F8-SYS-06: sigma+phi=psi+tau does NOT hold at n=6
+  ⬛ F8-SYS-08: J_2(n)!=n^2-n for n=6
+
+  📊 Summary: 🟩 2, 🟧★ 28, 🟧 41, ⚪ 1, ⬛ 2
+  Full details: docs/hypotheses/frontier-800-round8.md
 ```
 
 ---
@@ -5052,6 +5075,8 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-NT-428](docs/hypotheses/H-NT-428-sigma-phi-factorial-tau.md) | sigma(n)*phi(n)=tau(n)! iff n=6 | 🟧★ structural | 12*2=24=4!, fails for n=28 |
 | [H-NT-430](docs/hypotheses/H-NT-430-sopfr-n-minus-1.md) | sopfr(n)=n-1 iff n=6 | 🟩 **proved** ⭐ | (p-1)(q-1)=2 forces p=2,q=3 |
 | [H-NT-431](docs/hypotheses/H-NT-431-sigma-phi-n-squared.md) | sigma*(phi+1)=n^2 among perfects iff n=6 | 🟩 **proved** ⭐ | p=2 required, full proof |
+| [H-NT-432](docs/hypotheses/H-NT-432-ntau-sigma-omega.md) | n*tau=sigma*omega iff n=6 | 🟧★ **proved** ⭐ | (p-1)(q-1)=2, unique in [2,200] |
+| [H-NT-433](docs/hypotheses/H-NT-433-master-identity.md) | sigma=phi*sopfr+omega, n in {2,6} | 🟧★ structural | master decomposition, only n=6 among perfects |
 
 ### Frontier 500: Topology + Cross-domain (H-TOP-426, H-CROSS-426, 2)
 
