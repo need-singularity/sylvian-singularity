@@ -1245,7 +1245,7 @@
 
   🟩⭐⭐⭐ E₆ singularity x³+y⁴: μ=n=6, h=σ=12, Σexp=n²=36, |Φ|=nσ=72 #H-SING-1
        The MOST complete single-object encoding of n=6 arithmetic.
-  🟩⭐⭐ Exponent pairs: 3 pairs summing to σ+1=13. |W(E₆)|=|Φ|×n!=72×720.
+  🟩⭐⭐ Exponent pairs: 3 pairs summing to h=σ=12. |W(E₆)|=|Φ|×n!=72×720.
   🟩⭐⭐ Resolution: 6 exceptional curves, self-intersection = -φ = -2.
 
   ═══ New: Connes NCG KO-dim = 6 (H-NCG-1) ═══

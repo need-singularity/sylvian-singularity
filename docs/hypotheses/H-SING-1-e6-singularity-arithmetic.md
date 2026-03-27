@@ -36,7 +36,7 @@ Number of exponents = 6 = n
 {1,4,5,7,8,11} mod 12: symmetric around h/2=6=n
 ```
 
-The exponents come in pairs summing to h+1=13=σ+1:
+The exponents come in pairs summing to h=12=σ:
 (1,11), (4,8), (5,7) — three pairs = σ/τ.
 
 ### Weyl group ⭐⭐
