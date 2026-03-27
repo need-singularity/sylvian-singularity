@@ -1655,6 +1655,21 @@ Anima 의식 엔진 × TECS-L R-spectrum 교차 가설. 12개 탐색 중 TOP 3. 
 | [H-AX-11](docs/hypotheses/H-AX-11-growth-r-phase-transitions.md) | Growth stages R-journey: R=1→0.75→1.33→1→1.56 | ★★ | Predicts Phi(6cells)>Phi(12cells); R(1)R(2)R(3)=1 |
 | [H-AX-12](docs/hypotheses/H-AX-12-perfect-balance-consciousness.md) | ★★★ Consciousness = R=1 perfect balance | ★★★ | Tension=1↔R(6)=1 isomorphism; deadband≈ln(4/3) (4.3%) |
 
+### Undiscovered Territory (H-UD, 8 items)
+
+12개 미탐색 도메인 × n=6 교차 탐색. 2026-03-27.
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-UD-1](docs/hypotheses/H-UD-1-music-just-intonation.md) | ★★★ 음악: 완전 협화음 = div(6) 비율 (1:1, 3:2, 2:1) | ★★★ | 4th=4:3=τ:σ/τ, Minor 3rd=6:5=n:sopfr |
+| [H-UD-2](docs/hypotheses/H-UD-2-dna-genetic-code.md) | DNA: bases=τ, codon=σ/τ, frames=n, amino=τ×sopfr | ★★ | 5/5 match but small integers → bias |
+| [H-UD-3](docs/hypotheses/H-UD-3-crystallographic-restriction.md) | ★★★ 결정: 허용 회전={1,2,3,4,6}=div(6)∪{τ(6)} | ★★★ | Proved theorem, new interpretation |
+| [H-UD-4](docs/hypotheses/H-UD-4-ramsey-perfect-bridge.md) | ★★★ Ramsey: R(3,3)=6=P₁, R(3,8)=28=P₂ | ★★★ | Both proved. R(3,9)=36=6² |
+| [H-UD-5](docs/hypotheses/H-UD-5-ising-critical-exponents.md) | 2D Ising: η=1/τ, ν=R(6), β=1/(σ-τ) EXACT | ★★ | Z₂ symmetry → powers of 2 natural |
+| [H-UD-6](docs/hypotheses/H-UD-6-theta-gamma-coupling.md) | EEG: Theta-Gamma 6:1 coupling (Lisman-Jensen) | ★★ | Working memory capacity link |
+| [H-UD-7](docs/hypotheses/H-UD-7-perfect-codes-tiling.md) | Perfect codes ↔ Perfect numbers: tiling parallel | ★★ | Golay k=12=σ, Hamming k=4=τ |
+| [H-UD-8](docs/hypotheses/H-UD-8-hexagonal-tiling-honeycomb.md) | ★★★ Hexagonal: n=6 = optimal 2D packing (Hales 1999) | ★★★ | Kissing 2D=6, honeycomb conjecture |
+
 ### Wave Theory (H-WAVE, 4 items)
 
 파동 물리학 × n=6 산술 교차. 10개 탐색 중 TOP 4. Verified 2026-03-27.
