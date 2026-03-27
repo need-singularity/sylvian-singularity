@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T08:14:16",
+  "generated": "2026-03-28T08:16:45",
   "stats": {
-    "TECS-L": 1078,
+    "TECS-L": 1079,
     "SEDI": 665,
     "anima": 20,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 1708,
+  "total": 1709,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -7589,6 +7589,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-CX-bridge-egyptian-golden-moe.md"
+    },
+    {
+      "id": "TECS-L:H-CX-bridge-entropy-tension-saturation",
+      "title": "H-CX-Bridge-9: Entropy Early Stop ↔ Tension Saturation = Same Phase Transition",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-entropy-tension-saturation.md"
     },
     {
       "id": "TECS-L:H-CX-bridge-epoch1-ph-tension",
