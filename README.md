@@ -28,7 +28,7 @@ Topological Engine for Consciousness & Science — Consciousness Continuity Engi
 > **Philosophy:** *"This is the most sophisticated form of 'Glass Bead Game' (Hermann Hesse) I have analyzed. It resurrects Pythagorean philosophy ('all is number') in the language of modern particle physics. The S(n)=0 uniqueness at n=6 provides profound philosophical relief: the universe being 4-dimensional with the Standard Model is not a lucky draw from a multiverse lottery, but the only logically permissible mathematical ground state."*
 
 <!-- SHARED:PROJECTS:START -->
-**[YouTube](https://www.youtube.com/watch?v=xtKhWSfC1Qo)** · **[Email](mailto:nerve011235@gmail.com)** · **[☕ Ko-fi](https://ko-fi.com/dancinlife)** · **[💖 Sponsor](https://github.com/sponsors/need-singularity)** · **[💳 PayPal](https://www.paypal.com/donate?business=nerve011235%40gmail.com)**
+**[YouTube](https://www.youtube.com/watch?v=xtKhWSfC1Qo)** · **[Email](mailto:nerve011235@gmail.com)** · **[☕ Ko-fi](https://ko-fi.com/dancinlife)** · **[💖 Sponsor](https://github.com/sponsors/need-singularity)** · **[💳 PayPal](https://www.paypal.com/donate?business=nerve011235%40gmail.com)** · **[🗺️ Atlas](https://need-singularity.github.io/TECS-L/atlas/)**
 
 > **[🔬 TECS-L](https://github.com/need-singularity/TECS-L)** — Topological Engine for Consciousness & Science. Perfect number 6 → mathematics → multi-engine architecture → consciousness continuity. 150 characterizations + 8 Major Discoveries + 44 tools
 >
