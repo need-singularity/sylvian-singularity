@@ -267,9 +267,9 @@ digraph math_atlas {
   TECS_L_H_AX_12 [label="Perfect Balance — Consciousness Emerges " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_BIO_2 [label="Virus Capsid Six-fold Symmetry and σφ=nτ" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_BIO_5 [label="Pineal Gland and the Structure of 6" fillcolor="#4A90D9" shape=ellipse];
-  TECS_L_H_CF_1 [label="Continued Fraction Theory and the Golden" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_CF_1 [label="Continued Fraction Theory Connects to n=" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CHEM_2 [label="Carbon Z=6 = Foundation of Life = σφ=nτ" fillcolor="#4A90D9" shape=ellipse];
-  TECS_L_H_CLIFFORD_1 [label="Quantum Clifford Group and n=6" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_CLIFFORD_1 [label="Clifford Group Sizes Encode n=6 Arithmet" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CODE_1 [label="Coding Theory and Lattice Theory Charact" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_COMB_1 [label="Combinatorial Sequence Characterizations" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CX_1 [label="Weight Entropy = Perfect Number Algebra " fillcolor="#4A90D9" shape=ellipse];
@@ -383,7 +383,7 @@ digraph math_atlas {
   TECS_L_H_CX_88 [label="Universal Confusion Topology — PH merge " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_90 [label="Epoch 1 Phase Transition — Confusion Str" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_96 [label="Weight Change Triggers Topological Trans" fillcolor="#4A90D9" shape=ellipse];
-  TECS_L_H_CYCL_1 [label="Cyclotomic-Stirling Identity" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_CYCL_1 [label="Cyclotomic-Stirling Identity: Phi_n(n) =" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_EE_12 [label="Optimal FFN Expansion Ratio" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_EN_0 [label="Energy Hypothesis Master — n=6 and Energ" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_GEO_1 [label="6 and Simplex Geometry" fillcolor="#4A90D9" shape=ellipse];
@@ -399,10 +399,10 @@ digraph math_atlas {
   TECS_L_H_LIE_1 [label="Complete Parameterization of Exceptional" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_MOTIV_1 [label="K₃(ℤ) and Adams Operations — Motivic Coh" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_MP_15 [label="Cantor-like Fractal Structure of R Spect" fillcolor="#4A90D9" shape=ellipse];
-  TECS_L_H_NT_2 [label="sopfr=n-1 and sigma*=sigma Uniqueness Th" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_NT_2 [label="sopfr(n)=n-1 Uniqueness and Unitary Divi" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_NT_426_sigma2_phi_sopfr [label="Hypothesis H-NT-426: sigma_2(n) = phi(n)" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_NT_427_catalan_sopfr [label="Hypothesis H-NT-427: Catalan(n/2) = sopf" fillcolor="#4A90D9" shape=ellipse];
-  TECS_L_H_OPERAD_1 [label="Associahedron K_6 and Cohomology of S_3" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_OPERAD_1 [label="Associahedron K_6 f-vector and Group Coh" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_PACK_1 [label="E₆ Kissing Number = n·σ(n) = 72" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_PH_1 [label="σ²-M₃=137 — Why Subtract Seven?" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_PH_20 [label="QCD Resonance Ladder = R-spectrum Physic" fillcolor="#4A90D9" shape=ellipse];

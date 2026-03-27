@@ -176,13 +176,11 @@ def parse_hypothesis_md(text, repo, filepath):
             hid = f"F-{m.group(1)}"
             title = m.group(2).strip()
 
-    # Pattern D: YAML frontmatter id field
+    # Pattern D: YAML frontmatter id field (highest priority — overrides heading)
     if yaml.get("id"):
-        yaml_id = yaml["id"]
-        if not hid or hid == yaml_id:
-            hid = yaml_id
-            domain = _extract_domain(yaml_id)
-        if not title and yaml.get("title"):
+        hid = yaml["id"]
+        domain = _extract_domain(hid)
+        if yaml.get("title"):
             title = yaml["title"]
 
     # Fallback: no pattern matched
@@ -208,7 +206,7 @@ def parse_hypothesis_md(text, repo, filepath):
         "grade": grade,
         "refs": refs,
         "gz_dependent": gz_dependent,
-        "filepath": filepath,
+        "file": filepath,
     }
 
 
@@ -289,6 +287,8 @@ def _scan_md_dir(repo_name, repo_root, rel_dir):
     if not dirpath.is_dir():
         return results
     for mdfile in sorted(dirpath.glob("*.md")):
+        if mdfile.name.startswith('.') or mdfile.name == 'README.md':
+            continue
         try:
             text = mdfile.read_text(encoding="utf-8", errors="replace")
         except (OSError, IOError):
@@ -328,7 +328,7 @@ def _scan_anima_python(repo_root, source_file):
             "grade": e.get("grade"),
             "refs": [],
             "gz_dependent": None,
-            "filepath": source_file,
+            "file": source_file,
         })
     return results
 
@@ -430,7 +430,7 @@ def write_sqlite(atlas, dbpath):
             gz = 0
         cur.execute(
             "INSERT INTO hypotheses VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-            (h["id"], h["repo"], h["filepath"], h["title"],
+            (h["id"], h["repo"], h["file"], h["title"],
              h["grade"], h["domain"], gz, json.dumps(h["refs"])),
         )
 
@@ -563,8 +563,8 @@ def main():
                         help="Save JSON, SQLite, DOT to .shared/")
     parser.add_argument("--query",
                         help="Filter: FIELD=VALUE (e.g. grade=green, domain=CX)")
-    parser.add_argument("--repo",
-                        help="Filter to a single repo (TECS-L, SEDI, anima)")
+    parser.add_argument("--repo", choices=["TECS-L", "SEDI", "anima"],
+                        help="Filter to a single repo")
     args = parser.parse_args()
 
     # Default: --save --summary
@@ -614,12 +614,17 @@ def main():
             print(f"    {repo:10s} {count:>5d}")
         print()
 
-        # Grade distribution
+        # Grade distribution (group by first emoji)
         grade_dist = {}
         for h in atlas["hypotheses"]:
             g = h.get("grade") or "(none)"
-            # Normalize to first emoji or short label
-            key = g[:2] if len(g) >= 2 else g
+            key = "(none)"
+            for emoji in GRADE_EMOJIS:
+                if emoji in g:
+                    key = emoji
+                    break
+            if key == "(none)" and g != "(none)":
+                key = g[:6]  # short label for non-emoji grades
             grade_dist[key] = grade_dist.get(key, 0) + 1
 
         print("  Grade distribution (top 10):")
