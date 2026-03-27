@@ -1641,6 +1641,25 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 | [H-SEDI-4](docs/hypotheses/H-SEDI-4-proton-electron-ratio.md) | m_p/m_e = sigma*T(17) = 12*153 = 1836 | 🟧 | 0.008% error; Texas p~0.017; T() choice free; remainder 0.15267 unexplained |
 | [H-SEDI-5](docs/hypotheses/H-SEDI-5-fine-structure-137.md) | 1/alpha = (sigma-tau)*17+1 = 137 | ⚪ | Ad hoc +1 correction; without +1: 136 (0.76% off) |
 
+### CERN Optics (H-CERN-4~15, 12 items)
+
+R-spectrum lens/telescope/topology를 CERN 입자 데이터에 적용. Verified 2026-03-27.
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-CERN-4](docs/hypotheses/H-CERN-4-gravitational-lens-mass-spectrum.md) | Grav lens strength ↔ resonance visibility | 🟧 | Spearman rho=0.30 (weak positive) |
+| [H-CERN-5](docs/hypotheses/H-CERN-5-topological-barcode-dimuon.md) | PH barcode → generation structure, β₀=3 plateau | ✅ | β₀=3 plateau width=0.169, σ/τ=3 generations |
+| [H-CERN-6](docs/hypotheses/H-CERN-6-telescope-mass-ratio-scan.md) | F(s)=ζ(s)ζ(s+1) → mass ratio ladder | ✅ | τ=4: 0.1% err, σ=12: 0.7% err, σ/τ=3: 1.3% err |
+| [H-CERN-7](docs/hypotheses/H-CERN-7-aberration-profile-sm-particles.md) | Aberration profile → particle quantum numbers | 🟧 | ρ/ω→n=6(R=1) confirmed; large n: R≫1 |
+| [H-CERN-8](docs/hypotheses/H-CERN-8-einstein-radius-decay-width.md) | Einstein radius θ_E ↔ decay width Γ | ❌ | Spearman rho=-0.30 (anti-correlation) |
+| [H-CERN-9](docs/hypotheses/H-CERN-9-topological-phase-generations.md) | β₀ phase transitions = 3 particle generations | ✅ | Gen2/Gen1≈τ(5.5%), ε_c/ln(4/3)≈3.28 |
+| [H-CERN-10](docs/hypotheses/H-CERN-10-focal-length-37gev.md) | Lens focal length → 37 GeV blind prediction | 🟧 | 37.5 GeV (1.8% convergence); lens path not independent |
+| [H-CERN-11](docs/hypotheses/H-CERN-11-r-gap-qcd-mass-gap.md) | R-spectrum gap = QCD mass gap analogue | 🟨 | π,ρ/ω at R=1; gap δ+=1/6 at n=4 |
+| [H-CERN-12](docs/hypotheses/H-CERN-12-multilens-mixing-matrix.md) | Multi-lens interference = CKM mixing matrix | ❌ | CKM hierarchy direction reversed |
+| [H-CERN-13](docs/hypotheses/H-CERN-13-topological-sensitivity-bsm.md) | Topological sensitivity peak → BSM energy scale | 🔮 | Speculative; needs full SM point cloud |
+| [H-CERN-14](docs/hypotheses/H-CERN-14-rho-omega-perfect-lens.md) | ⭐ ρ/ω at perfect lens n≈6 (R=1) | 🟧 | n≈5.77 (3.8% from 6); m_π unit dependent |
+| [H-CERN-15](docs/hypotheses/H-CERN-15-optics-grand-unification.md) | ⭐ R-spectrum optics grand unification | META | 3 SUPPORTED, 2 REJECTED, 4 PARTIAL |
+
 ### Color Vision/Visual (354c-356c)
 
 | # | Hypothesis | Status | Notes |
