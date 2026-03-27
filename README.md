@@ -202,6 +202,22 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
     tau(n)+n = 10 AND phi(n) = 2 ONLY for n=6 (spacetime+compact dims)
     H(divisor dist) closest to 1 nat: n=6 is 24x closer than n=28
 
+  ═══ Frontier 200 Round 2 (2026-03-27) ═══
+  102 new hypotheses (non-overlapping with Frontier 100), 100/102 verified.
+  docs/hypotheses/frontier-200-round2.md
+
+  Round 2 top verified:
+    R2-MATH-14   2n-1=p(n) unique n>1 (EGZ=partition)                     ⭐⭐⭐
+    R2-MATH-18   SU(2)_4 quantum dim^2 = sigma, unique in [3,10000]       ⭐⭐⭐
+    R2-MATH-20   K_7(Z)=240=sigma*tau*sopfr=phi(496) K-theory bridge      ⭐⭐⭐
+    R2-PHYS-02   sin^2(theta_W) tree = (sigma/tau)/(sigma-tau) = 3/8      ⭐⭐⭐
+    R2-PHYS-04   Fe-56: A=sigma*tau+sigma-tau, Z=sigma*phi+phi (both!)    ⭐⭐⭐
+    R2-PHYS-16   1/alpha_GUT(MSSM) = sigma*phi = 24                       ⭐⭐⭐
+    R2-PHYS-18   alpha_s(M_Z) = omega/(sigma+sopfr) = 2/17 (0.30%)       ⭐⭐
+    R2-BIO-19    Caspase cascade: 5 simultaneous n=6 matches (p=0.004)    ⭐⭐
+    R2-CROSS-16  Crystallographic restriction max = 6 = n                   ⭐⭐
+    R2-BRIDGE-12 kiss(2,3,4)={n,sigma,sigma*phi} exact                     ⭐⭐⭐
+
   ═══ Verification Audit (2026-03-27) ═══
   72 major discoveries audited by 6 parallel verification agents.
   S-Tier (robust):        12 (H-PH-9, H-CX-66/91/95/90, H313/334/312, H-CX-196, 232, 327, 330)
