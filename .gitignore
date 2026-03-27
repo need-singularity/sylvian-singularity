@@ -5,3 +5,4 @@ __pycache__/
 dimuon_data.csv
 eeg_env/
 eeg/data/
+.claude/
