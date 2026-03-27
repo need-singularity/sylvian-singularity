@@ -1659,7 +1659,7 @@ R-spectrum lens/telescope/topology를 CERN 입자 데이터에 적용. Verified 
 | [H-CERN-13](docs/hypotheses/H-CERN-13-topological-sensitivity-bsm.md) | Topological sensitivity peak → BSM energy scale | 🔮 | Speculative; needs full SM point cloud |
 | [H-CERN-14](docs/hypotheses/H-CERN-14-rho-omega-perfect-lens.md) | ρ/ω at perfect lens n≈6 (R=1) | 🟧 | strict MC p=2.2%; m_π⁰ only unit that works |
 | [H-CERN-15](docs/hypotheses/H-CERN-15-optics-grand-unification.md) | R-spectrum optics grand unification | META | 0 SUPPORTED, 3 REJECTED, 7 PARTIAL after rigorous test |
-| [H-CERN-16](docs/hypotheses/H-CERN-16-perfect-number-mass-ladder.md) | Perfect number mass ladder: P₂×m_π=ψ(3770) | 🟧★ | 0.15% err; Bonferroni p=1.85%; rank 11/1000; m_π dependent |
+| [H-CERN-16](docs/hypotheses/H-CERN-16-perfect-number-mass-ladder.md) | Perfect number mass ladder: P₂×m_π=ψ(3770) | ⚪ | Extreme test: ultimate MC p=13.3%; root cause is m_D≈14×m_π (QCD); ΛQCD=217 equally good |
 | [H-CERN-17](docs/hypotheses/H-CERN-17-dimensionless-ratio-spectrum.md) | Dimensionless ratios confirm τ=4,σ/τ=3,σ=12 | 🟩 | Known, unit-independent reconfirmation |
 | [H-CERN-18](docs/hypotheses/H-CERN-18-r-multiplicativity-factorization.md) | R-multiplicativity: R(2)×R(3)=R(6)=1 | 🟩 | Exact arithmetic identity, trivial |
 | [H-CERN-19](docs/hypotheses/H-CERN-19-sigma-chain-mass-predictions.md) | σ-chain 6→12→28: first 3 terms match resonances | 🟧 | σ²(6)=28=P₂→ψ(3770); chain breaks at k=3 |
