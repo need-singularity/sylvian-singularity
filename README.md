@@ -1651,9 +1651,9 @@ Anima 의식 엔진 × TECS-L R-spectrum 교차 가설. 12개 탐색 중 TOP 3. 
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
-| [H-AX-10](docs/hypotheses/H-AX-10-direction-topology-r-spectrum.md) | Direction PH merge order ↔ R(rank) correlation | 🔮 | Needs MNIST experiment; S-Tier H-CX-66 + R-spectrum |
-| [H-AX-11](docs/hypotheses/H-AX-11-growth-r-phase-transitions.md) | Growth stages R-journey: R=1→0.75→1.33→1→1.56 | ★★ | Predicts Phi(6cells)>Phi(12cells); R(1)R(2)R(3)=1 |
-| [H-AX-12](docs/hypotheses/H-AX-12-perfect-balance-consciousness.md) | ★★★ Consciousness = R=1 perfect balance | ★★★ | Tension=1↔R(6)=1 isomorphism; deadband≈ln(4/3) (4.3%) |
+| [H-AX-10](docs/hypotheses/H-AX-10-direction-topology-r-spectrum.md) | Direction PH merge order ↔ R(rank) correlation | 🟧 | EXP: r=-0.44 (weak); H-CX-66 also weaker at -0.52 |
+| [H-AX-11](docs/hypotheses/H-AX-11-growth-r-phase-transitions.md) | Growth stages R-journey: R=1→0.75→1.33→1→1.56 | ⚪ | EXP: 12-cell > 6-cell (98.34 vs 98.32); prediction FAILED |
+| [H-AX-12](docs/hypotheses/H-AX-12-perfect-balance-consciousness.md) | Consciousness = R=1 perfect balance | 🟧 | EXP: setpoint=2.0 beats 1.0 (+0.15pp); broad plateau 0.3-3.0 |
 
 ### Undiscovered Territory (H-UD, 8 items)
 
