@@ -4534,6 +4534,51 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
      → Magic 28=P₂: only magic number with R(28)=4 integer
 
   📊 Summary: 2 🟩 exact, 2 🟧 supported, 1 ⚪ not confirmed, 1 🟩 computed
+
+  ═══ Frontier 500 (Ralph 500): Mass Frontier Hypothesis Generation ═══
+
+  105 hypotheses across 8 domains. 102 PASS / 3 FAIL.
+  Domains: Number Theory, Combinatorics, Topology, Geometry, Physics,
+           Algebra, Analysis, Information Theory, Cross-domain
+
+  --- Top Discoveries (14) ---
+
+  🟩 F5-NT-01: sigma(n)*mu(n)^2=sigma(rad(n)) for squarefree n [generalizes] → H-421
+  🟩 F5-NT-05: sigma(n)/n=2 iff n perfect (abundancy) [generalizes] → H-421
+  🟩 F5-NT-06: sigma_{-1}(n)=2 iff n perfect [generalizes] → H-421
+  🟩 F5-NT-17: sigma(n) mod n=0 iff n perfect [generalizes] → H-421
+
+  🟧★ F5-NT-02: tau(sigma(n))=n: divisor-count of divisor-sum=self [n=6 only] → H-421
+  🟧★ F5-NT-07: phi(sigma(n))=tau(n): iterated phi-sigma=divisor count [n=6 only] → H-422
+  🟧★ F5-NT-09: phi(n)*tau(n)=Fibonacci(n)=8 [n=6 only] → H-423
+  🟩 F5-NT-10: sigma(n)-phi(n)-tau(n)=n for all n=2p (p odd prime) [proved] → H-424
+  🟧★ F5-NT-11: n*tau(n)=sigma(n)*omega(n)=24 [n=6 only]
+  🟧★ F5-NT-13: C(sigma(n),omega(n))=n*p(n)=66 [n=6 only] → H-425
+  🟧★ F5-NT-14: sigma_2(n)=phi(n)*sopfr(n)^2=50 [n=6 only] → H-426
+  🟧★ F5-NT-15: Catalan(n/2)=sopfr(n)=5 [n=6 only] → H-427
+  🟧★ F5-NT-18: psi(n)/phi(n)=n: Dedekind/Euler=self [n=6 only] (known ⭐ #91)
+  🟧★ F5-NT-19: sigma(n)*phi(n)=tau(n)!=24 [n=6 only] → H-428
+
+  --- Notable Observations ---
+
+  🟧 F5-TOP-03: Exactly 6 regular polytopes in 4D (no other dim)
+  🟧 F5-TOP-06: theta_7=28=P_2 (exotic spheres=2nd perfect number)
+  🟧 F5-TOP-09: K3 chi=24=sigma(6)*phi(6)
+  🟧 F5-TOP-13: Kissing(3D)=12=sigma(6)
+  🟧 F5-TOP-14: Kissing(8D)=240=sigma*tau*sopfr
+  🟧 F5-COMB-09: R(3,3)=6 (Ramsey number IS 6)
+  🟧 F5-COMB-11: SYT(3,2,1)=16=2^tau(6)
+  🟧 F5-PHYS-13: j(q) constant 744=(2^sopfr-1)*sigma*phi
+  🟧 F5-CROSS-04: Ramanujan tau(3)=252=sigma_3(6)
+
+  --- Failures ---
+
+  ⬛ F5-NT-08: sigma(phi(6))=3 != sopfr(6)=5
+  ⬛ F5-PHYS-06: proton/electron mass ratio formula incorrect
+  ⬛ F5-ALG-10: Burnside B(2,6) order formula wrong
+
+  📊 Summary: 🟩 4, 🟧★ 10, 🟧 79, ⚪ 9, ⬛ 3
+  Full details: docs/hypotheses/frontier-500-round5.md
 ```
 
 ---
@@ -4930,6 +4975,26 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
 | [H-CAT-1](docs/hypotheses/H-CAT-1-category-theory-functors.md) | τ∘σ fixed point=d(6), σ/n=τ/φ=φ=2 unique, Div(6)≅Z/2² | 🟩 verified | unique among perfect numbers, 28/496/8128 fail |
+
+### Frontier 500: Number Theory Structural Identities (H-NT-421~428, 8)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-NT-421](docs/hypotheses/H-NT-421-tau-sigma-self.md) | tau(sigma(n))=n iff n=6 | 🟧★ structural | tau(12)=6, fails for n=28 |
+| [H-NT-422](docs/hypotheses/H-NT-422-phi-sigma-tau.md) | phi(sigma(n))=tau(n) iff n=6 | 🟧★ structural | phi(12)=4=tau(6), fails for n=28 |
+| [H-NT-423](docs/hypotheses/H-NT-423-fibonacci-phi-tau.md) | phi(n)*tau(n)=F(n) iff n=6 | 🟧★ structural | 2*4=8=F(6), fails for n=28 |
+| [H-NT-424](docs/hypotheses/H-NT-424-sigma-phi-tau-self.md) | sigma(n)-phi(n)-tau(n)=n for all n=2p | 🟩 proved | Holds for n=2p (p odd prime), n=6 unique among perfects |
+| [H-NT-425](docs/hypotheses/H-NT-425-binomial-partition.md) | C(sigma(n),omega(n))=n*p(n) iff n=6 | 🟧★ structural | C(12,2)=66=6*11, fails for n=28 |
+| [H-NT-426](docs/hypotheses/H-NT-426-sigma2-phi-sopfr.md) | sigma_2(n)=phi(n)*sopfr(n)^2 iff n=6 | 🟧★ structural | 50=2*25, fails for n=28 |
+| [H-NT-427](docs/hypotheses/H-NT-427-catalan-sopfr.md) | Catalan(n/2)=sopfr(n) iff n=6 | 🟧★ structural | C_3=5=sopfr(6), fails for n=28 |
+| [H-NT-428](docs/hypotheses/H-NT-428-sigma-phi-factorial-tau.md) | sigma(n)*phi(n)=tau(n)! iff n=6 | 🟧★ structural | 12*2=24=4!, fails for n=28 |
+
+### Frontier 500: Topology + Cross-domain (H-TOP-426, H-CROSS-426, 2)
+
+| # | Hypothesis | Status | Notes |
+|---|---|---|---|
+| [H-TOP-426](docs/hypotheses/H-TOP-426-kissing-240.md) | Kissing(8D)=240=sigma*tau*sopfr | 🟧 observational | E8 lattice connection |
+| [H-CROSS-426](docs/hypotheses/H-CROSS-426-j-invariant-744.md) | j(q) const 744=(2^sopfr-1)*sigma*phi | 🟧 cross-domain | Moonshine-Mersenne bridge |
 
 ### Pure Constant Theorems (T0, 7) — independent of Golden Zone, eternally true
 

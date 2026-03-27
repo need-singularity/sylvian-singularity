@@ -38,7 +38,7 @@
 | 5 | F5-NT-02 | tau(sigma(n)) = n: divisor count of divisor sum = self | 🟧★ |
 | 6 | F5-NT-07 | phi(sigma(n)) = tau(n): iterated phi-sigma = divisor count | 🟧★ |
 | 7 | F5-NT-09 | phi(n)*tau(n) = Fibonacci(n) = 8 | 🟧★ |
-| 8 | F5-NT-10 | sigma(n)-phi(n)-tau(n) = n: self-referential identity | 🟧★ |
+| 8 | F5-NT-10 | sigma(n)-phi(n)-tau(n) = n for all n=2p (proved!) | 🟩 |
 | 9 | F5-NT-11 | n*tau(n) = sigma(n)*omega(n) = 24 | 🟧★ |
 | 10 | F5-NT-13 | C(sigma(n),omega(n)) = n*p(n) = 66 | 🟧★ |
 | 11 | F5-NT-14 | sigma_2(n) = phi(n)*sopfr(n)^2 = 50 | 🟧★ |
