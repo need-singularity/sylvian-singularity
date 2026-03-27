@@ -94,5 +94,20 @@ echo "[SEDI]"
 sync_file "$PARENT/sedi/README.md"
 commit_and_push "$PARENT/sedi" "sedi"
 
+# Golden MoE
+echo "[Golden MoE]"
+sync_file "$PARENT/golden-moe/README.md"
+commit_and_push "$PARENT/golden-moe" "golden-moe"
+
+# ConsciousLM
+echo "[ConsciousLM]"
+sync_file "$PARENT/conscious-lm/README.md"
+commit_and_push "$PARENT/conscious-lm" "conscious-lm"
+
+# Energy Efficiency
+echo "[Energy Efficiency]"
+sync_file "$PARENT/energy-efficiency/README.md"
+commit_and_push "$PARENT/energy-efficiency" "energy-efficiency"
+
 echo ""
 echo "Done!"
