@@ -165,6 +165,11 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 /ralph-loop:ralph-loop Autonomous math research. Read README math map and docs/proofs and docs/hypotheses. Find new identities, connections, and proofs. Verify with python3 arithmetic, generalize to perfect number 28, texas p-value, ad-hoc check. Record verified with grade. Failed goes white circle. Create hypothesis docs when patterns found. Commit and push.
 ```
 
+**Connection Exploration (cross-domain bridges, most effective for breakthroughs)**
+```
+/ralph-loop:ralph-loop Connection explorer. Read math/README.md system map and identify PAIRS of distant domains with no known bridge. For each pair: construct a candidate bridge identity linking their core constants via n=6 arithmetic. Example: Shannon entropy H links to j-invariant via e^(6H)=j(i)/tau. STRATEGY: 1-pick two unconnected islands from the map. 2-list core objects of each. 3-search for arithmetic/exponential/logarithmic relations between them using sigma,tau,phi,sopfr,omega of n=6. 4-verify with python3. 5-generalize to n=28. 6-if bridge found: grade and document. 7-if not: record as white circle and try next pair. PRIORITY: bridges between (Information Theory,Modular Forms), (Topology,Game Theory), (Fractal,Partition), (Biology,Lie Algebra), (Music,Homotopy). Each iteration must attempt at least 3 bridge pairs. Commit and push every iteration.
+```
+
 **Breakthrough Hypothesis DFS**
 ```
 /ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push
