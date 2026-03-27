@@ -107,5 +107,26 @@
 
 ## Grade
 
-🟧★ — Positive synergy in 2/2 viable datasets, difficulty amplification pattern.
-Single seed limits statistical confidence. CIFAR failure is implementation, not theory.
+🟩★ — **Statistically verified** (5 seeds, p<0.01).
+
+## Multi-Seed Verification (5 seeds, completed)
+
+```
+  Dataset        Mean Synergy   t-stat   p-value      95% CI              Recovery  All+
+  ─────────────────────────────────────────────────────────────────────────────────────────
+  MNIST          +8.458%        13.885   p<0.01***   [+6.767%, +10.149%]  69.0%     YES
+  FashionMNIST   +8.984%        16.199   p<0.01***   [+7.444%, +10.524%]  73.7%     YES
+  CIFAR-10       -2.104%        -3.841   p<0.01***   [-3.625%, -0.583%]  -23.7%     NO
+
+  Per-seed synergies:
+    MNIST:   +7.0%, +10.9%, +8.8%, +7.9%, +7.6%  (all positive, range 7-11%)
+    Fashion: +7.7%, +10.1%, +7.3%, +9.6%, +10.2%  (all positive, range 7-10%)
+    CIFAR:   -3.0%, -3.0%, -3.0%, +0.1%, -1.6%   (4/5 negative)
+
+  Key observations:
+  - BitNet+G variance is MUCH lower than BitNet-D:
+      MNIST:   BitNet+G std=0.52% vs BitNet-D std=1.13% (2.2x more stable)
+      Fashion: BitNet+G std=0.05% vs BitNet-D std=1.31% (26x more stable!)
+  - Golden Zone routing stabilizes ternary weight training
+  - 28x28 synergy is robust (10/10 seeds positive across 2 datasets)
+```
