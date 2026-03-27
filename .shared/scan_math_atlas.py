@@ -839,6 +839,118 @@ def write_dot(atlas, dotpath):
         f.write('\n'.join(lines) + '\n')
 
 
+# ── Markdown output ──────────────────────────────────────────────
+
+def write_markdown(atlas, mdpath):
+    """Write complete atlas as a readable markdown document."""
+    lines = []
+
+    # Header
+    total = atlas["total"]
+    cm_count = len(atlas.get("constant_maps", []))
+    lines.append("# Math Atlas")
+    lines.append("")
+    lines.append(f"> Auto-generated: {atlas['generated']} | {total} hypotheses | {cm_count} constant maps")
+    lines.append("")
+
+    # Summary table
+    lines.append("## Summary")
+    lines.append("")
+    lines.append("| Repo | Hypotheses | Constant Maps |")
+    lines.append("|------|-----------|--------------|")
+    total_h = 0
+    total_c = 0
+    for repo in ["TECS-L", "SEDI", "anima"]:
+        h_count = atlas["stats"].get(repo, 0)
+        c_count = atlas.get("constant_stats", {}).get(repo, 0)
+        total_h += h_count
+        total_c += c_count
+        lines.append(f"| {repo} | {h_count:,} | {c_count} |")
+    lines.append(f"| **Total** | **{total_h:,}** | **{total_c}** |")
+    lines.append("")
+
+    # Grade distribution
+    grade_dist = {}
+    for h in atlas["hypotheses"]:
+        g = h.get("grade") or "(none)"
+        grade_dist[g] = grade_dist.get(g, 0) + 1
+    lines.append("### Grade Distribution")
+    lines.append("")
+    lines.append("| Grade | Count |")
+    lines.append("|-------|-------|")
+    for g, c in sorted(grade_dist.items(), key=lambda x: -x[1])[:15]:
+        lines.append(f"| {g} | {c} |")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+
+    # Hypotheses by repo
+    lines.append("## Hypotheses")
+    lines.append("")
+    for repo in ["TECS-L", "SEDI", "anima"]:
+        hyps = [h for h in atlas["hypotheses"] if h["repo"] == repo]
+        lines.append(f"### {repo} ({len(hyps)})")
+        lines.append("")
+        lines.append("| # | ID | Title | Grade | Domain |")
+        lines.append("|---|-----|-------|-------|--------|")
+        for i, h in enumerate(hyps, 1):
+            hid = h["id"].split(":", 1)[1] if ":" in h["id"] else h["id"]
+            title = (h.get("title") or "")[:60]
+            grade = h.get("grade") or "-"
+            domain = h.get("domain") or "-"
+            lines.append(f"| {i} | {hid} | {title} | {grade} | {domain} |")
+        lines.append("")
+
+    lines.append("---")
+    lines.append("")
+
+    # Constant maps by repo
+    lines.append("## Constant Maps")
+    lines.append("")
+    cmaps = atlas.get("constant_maps", [])
+    for repo in ["TECS-L", "SEDI", "anima"]:
+        repo_cms = [cm for cm in cmaps if cm["repo"] == repo]
+        if not repo_cms:
+            continue
+        lines.append(f"### {repo} ({len(repo_cms)})")
+        lines.append("")
+        lines.append("| # | Name | File | Type | Size | Category | Eval |")
+        lines.append("|---|------|------|------|------|----------|------|")
+        for i, cm in enumerate(repo_cms, 1):
+            ev = "Y" if cm.get("evaluable") else "-"
+            lines.append(f"| {i} | {cm['name']} | {cm['file']}:{cm['line']} | {cm['type']} | {cm['size']} | {cm['category']} | {ev} |")
+        lines.append("")
+
+    lines.append("---")
+    lines.append("")
+
+    # Edges (build from hypotheses refs using id_lookup)
+    id_lookup = {}
+    for h in atlas["hypotheses"]:
+        full_id = h["id"]
+        short = full_id.split(":", 1)[1] if ":" in full_id else full_id
+        if short not in id_lookup:
+            id_lookup[short] = full_id
+
+    edge_list = []
+    for h in atlas["hypotheses"]:
+        for ref in h.get("refs", []):
+            target = id_lookup.get(ref)
+            if target and target != h["id"]:
+                edge_list.append((h["id"], target))
+
+    lines.append(f"## Cross-Reference Edges ({len(edge_list)})")
+    lines.append("")
+    lines.append("| Source | Target |")
+    lines.append("|--------|--------|")
+    for src, tgt in edge_list:
+        lines.append(f"| {src} | {tgt} |")
+    lines.append("")
+
+    with open(mdpath, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines) + '\n')
+
+
 # ── CLI ──────────────────────────────────────────────────────────
 
 def main():
@@ -893,6 +1005,10 @@ def main():
 
         write_dot(atlas, str(dot_path))
         print(f"  DOT: {dot_path}")
+
+        md_path = out_dir / "MATH_ATLAS.md"
+        write_markdown(atlas, str(md_path))
+        print(f"  Markdown: {md_path}")
 
     # --summary
     if args.summary:
