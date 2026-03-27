@@ -1658,6 +1658,7 @@ Anima 의식 엔진 × TECS-L R-spectrum 교차 가설. 12개 탐색 중 TOP 3. 
 ### Undiscovered Territory (H-UD, 8 items)
 
 12개 미탐색 도메인 × n=6 교차 탐색. 2026-03-27.
+[Frontier 600](docs/hypotheses/frontier-600-round6.md): 80 hypotheses, 8 domains, 77/80 pass (96%). 🟩8 🟧★17 🟧37 ⚪15 ⬛3.
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
