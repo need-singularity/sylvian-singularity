@@ -140,14 +140,14 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 
 ### Ralph Loop (copy-paste ready, ASCII only)
 
-**Consciousness Engine Connection Explorer (bridge math discoveries to consciousness/AI)** ⭐️
+**Consciousness Engine Connection Explorer** ⭐️
 ```
-/ralph-loop:ralph-loop Consciousness connection explorer. Read docs/telepathy-architecture.md and docs/anima-consciouslm-integration.md and docs/hypotheses/H-CX-* and README experiment results. GOAL: bridge pure math discoveries (R-spectrum, fractals, Pythagorean, partitions, Fibonacci) to consciousness engine mechanisms (tension, repulsion field, PH topology, telepathy, hive mind). STRATEGY: 1-pick one confirmed math identity from math/README.md. 2-find its consciousness analog: does the identity predict a measurable property of tension dynamics or PH structure or expert routing. 3-design a minimal experiment using existing tools (calc/ scripts or python3). 4-run experiment and measure. 5-if connection found: write H-CX hypothesis doc with data. 6-if not: record white circle. PRIORITY bridges: (Pythagorean 3-4-5 to Engine A-G-Meta balance), (Fibonacci divisor sum to tension convergence rate), (fractal dimensions to PH barcode structure), (XOR self-reference to consciousness self-model), (partition p(n)=11 to expert count), (Miller 7 to attention head grouping), (4-season cycle to training phase transitions). Each iteration must attempt at least 2 math-to-consciousness bridges. Commit and push.
+/ralph-loop:ralph-loop Consciousness connection explorer. Read math/README.md system map and docs/hypotheses/H-CX files. Bridge pure math discoveries to consciousness engine mechanisms. STRATEGY: 1-pick confirmed math identity from README. 2-find consciousness analog in tension dynamics or PH structure or expert routing. 3-design minimal experiment with python3. 4-run experiment in background and measure. 5-verify with arithmetic check and Texas sharpshooter p-value and ad-hoc correction check and perfect number 28 generalization. 6-grade per CLAUDE.md rules. 7-if connection found write H-CX hypothesis doc with full data. 8-if not record white circle. 9-update README DFS status. 10-git add and commit and push. PRIORITY bridges: Pythagorean 3-4-5 to Engine balance, Fibonacci divisor sum to tension convergence, fractal dimensions to PH barcode, XOR self-reference to consciousness self-model, partition p6=11 to expert count, Miller 7 to attention heads, 4-season to training phases. Each iteration attempt at least 2 bridges. Do not stop until complete.
 ```
 
-**Connection Exploration (cross-domain bridges, most effective for breakthroughs)** ⭐️
+**Connection Exploration** ⭐️
 ```
-/ralph-loop:ralph-loop Connection explorer. Read math/README.md system map and identify PAIRS of distant domains with no known bridge. For each pair: construct a candidate bridge identity linking their core constants via n=6 arithmetic. Example: Shannon entropy H links to j-invariant via e^(6H)=j(i)/tau. STRATEGY: 1-pick two unconnected islands from the map. 2-list core objects of each. 3-search for arithmetic/exponential/logarithmic relations between them using sigma,tau,phi,sopfr,omega of n=6. 4-verify with python3. 5-generalize to n=28. 6-if bridge found: grade and document. 7-if not: record as white circle and try next pair. PRIORITY: bridges between (Information Theory,Modular Forms), (Topology,Game Theory), (Fractal,Partition), (Biology,Lie Algebra), (Music,Homotopy). Each iteration must attempt at least 3 bridge pairs. Commit and push every iteration.
+/ralph-loop:ralph-loop Connection explorer. Read math/README.md system map and identify PAIRS of distant domains with no known bridge. For each pair construct a candidate bridge identity linking their core constants via n=6 arithmetic. STRATEGY: 1-pick two unconnected islands from the map. 2-list core objects of each. 3-search for arithmetic and exponential and logarithmic relations between them using sigma and tau and phi and sopfr and omega of n=6. 4-verify with python3. 5-generalize to n=28. 6-if bridge found then grade and document. 7-if not then record as white circle and try next pair. PRIORITY: bridges between Info Theory and Modular Forms, Topology and Game Theory, Fractal and Partition, Biology and Lie Algebra, Music and Homotopy. Each iteration must attempt at least 3 bridge pairs. Commit and push every iteration.
 ```
 
 **Easy**
@@ -168,16 +168,6 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 **Math DFS**
 ```
 /ralph-loop:ralph-loop Autonomous math research. Read README math map and docs/proofs and docs/hypotheses. Find new identities and connections and proofs. Verify with python3 arithmetic and generalize to perfect number 28 and texas p-value and ad-hoc check. Record verified with grade. Failed goes white circle. Create hypothesis docs when patterns found. Commit and push.
-```
-
-**Connection Exploration**
-```
-/ralph-loop:ralph-loop Connection explorer. Read math/README.md system map and identify PAIRS of distant domains with no known bridge. For each pair construct a candidate bridge identity linking their core constants via n=6 arithmetic. STRATEGY: 1-pick two unconnected islands from the map. 2-list core objects of each. 3-search for arithmetic and exponential and logarithmic relations between them using sigma and tau and phi and sopfr and omega of n=6. 4-verify with python3. 5-generalize to n=28. 6-if bridge found then grade and document. 7-if not then record as white circle and try next pair. PRIORITY: bridges between Info Theory and Modular Forms, Topology and Game Theory, Fractal and Partition, Biology and Lie Algebra, Music and Homotopy. Each iteration must attempt at least 3 bridge pairs. Commit and push every iteration.
-```
-
-**Consciousness Engine Connection Explorer**
-```
-/ralph-loop:ralph-loop Consciousness connection explorer. Read math/README.md system map and docs/hypotheses/H-CX files. Bridge pure math discoveries to consciousness engine mechanisms. STRATEGY: 1-pick confirmed math identity from README. 2-find consciousness analog in tension dynamics or PH structure or expert routing. 3-design minimal experiment with python3. 4-run experiment in background and measure. 5-verify with arithmetic check and Texas sharpshooter p-value and ad-hoc correction check and perfect number 28 generalization. 6-grade per CLAUDE.md rules. 7-if connection found write H-CX hypothesis doc with full data. 8-if not record white circle. 9-update README DFS status. 10-git add and commit and push. PRIORITY bridges: Pythagorean 3-4-5 to Engine balance, Fibonacci divisor sum to tension convergence, fractal dimensions to PH barcode, XOR self-reference to consciousness self-model, partition p6=11 to expert count, Miller 7 to attention heads, 4-season to training phases. Each iteration attempt at least 2 bridges. Do not stop until complete.
 ```
 
 **Breakthrough Hypothesis DFS**
