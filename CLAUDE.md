@@ -138,55 +138,44 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
   → Structural discovery confirmed
 ```
 
-## Tool List (50 tools)
+## Directory Structure (post-cleanup)
 
 ```
-  Core:          brain_singularity.py, compass.py, timeline.py
-  Golden MoE:    golden_moe.py, golden_moe_torch.py, golden_moe_cifar.py
-  Analysis:      formula_engine.py, texas_sharpshooter.py, complex_compass.py
-                 nstate_calculator.py, brain_analyzer.py, llm_expert_analyzer.py
-  Physics/Chem:  physics_constant_engine.py, chemistry_engine.py, nuclear_engine.py
-  Structure:     congruence_chain_engine.py
-  Convergence: convergence_engine.py
-  DFS Search:    dfs_engine.py
-  Verification:  verify_*.py (11 files)
-  Session:       session_briefing.py
-  Consciousness: model_pure_field.py, model_utils.py
-  calc calculators (20 tools):
-    calc/tension_calculator.py        — Tension→Accuracy/Precognition prediction
-    calc/mitosis_calculator.py        — Mitosis parameter optimization
-    calc/anomaly_scorer.py            — Tension-based anomaly detection
-    calc/confidence_analyzer.py       — Per-class confidence profiling
-    calc/constant_verifier.py         — Basic constant verification
-    calc/continual_learning_tool.py   — Forgetting mitigation
-    calc/data_type_explorer.py        — Data type classification
-    calc/hypothesis_verifier.py       — 5-step hypothesis verification (arithmetic/ad-hoc/prime/generalization/Texas)
-    calc/calibration_analyzer.py      — ECE/MCE calibration analysis (softmax vs tension)
-    calc/direction_analyzer.py        — Direction=concept decomposition (H339/H341)
-    calc/dual_mechanism.py            — Internal/inter tension duality (H296-H307)
-    calc/statistical_tester.py        — Unified statistical testing (Cohen's d, Bonferroni, CI)
-    calc/small_n_validator.py         — Small-sample correlation validator (n<=5 warning, power analysis)
-    calc/spurious_trend_detector.py   — Detrending + first-diff to detect training-trend spurious correlations
-    calc/permutation_tester.py        — Null baseline via permutation (purity, correlation, overlap tests)
-    calc/lie_algebra_calculator.py   — Exceptional Lie algebra invariants from n=6 (--verify --exotic --all)
-    calc/sequence_scanner.py         — Integer sequence scanner for n=6 characterizations (--custom)
-    calc/r_spectrum.py              — R-spectrum calculator (R(n)=σφ/(nτ), identity tests, gap structure, multiplicativity)
-    calc/gravitational_optics.py    — Gravitational lens (aberrations, gap, Einstein radius) + telescope (F(s)=ζζ, scan)
-    calc/topological_optics.py      — Topological lens (focal length, PH barcode) + telescope (β₀ sweep, sensitivity)
-    calc/convergence_analyzer.py     — Depth-1 domain reachability analysis
-    calc/domain_distance.py          — Inter-domain overlap/distance matrix
-    calc/generator_finder.py         — Minimal generating set discovery
-    calc/bridge_ratio_analyzer.py    — Bridge/independent ratio classification
-    calc/depth_reachability.py       — Per-domain depth-level reach analysis
+  루트 (25 files) — 핵심 엔진 + 공유 모듈
+    brain_singularity.py, compass.py, convergence_engine.py,
+    dfs_engine.py, formula_engine.py, model_pure_field.py,
+    model_utils.py, model_meta_engine.py, session_briefing.py, ...
+
+  engines/ (30 files) — 아키텍처 모델 + 분리 리포 원본
+    golden_moe*.py, conscious_lm*.py, growing_*.py,
+    model_a~g_*.py (7 engine variants), model_cnn_repulsion.py, ...
+
+  verify/ (90 files) — 가설 검증 스크립트
+    verify_*.py, frontier_*.py
+
+  scripts/ (55 files) — 분석/변환/훈련/유틸리티
+    analyze_*.py, convert_*.py, finetune_*.py, prepare_*.py,
+    galois_*.py, sim_*.py, publish.py, translate_to_english.py, ...
+
+  calc/ (62 files) — 계산기 도구
+    hypothesis_verifier.py, r_spectrum.py, statistical_tester.py, ...
+
+  math/ — 순수 수학 증명 + 실험
+  docs/ — 가설 문서 + 논문 + 스펙
+  .shared/ — 크로스 리포 동기화 인프라 + Atlas
 ```
 
 ## How to Run
-```bash
-# Session briefing (when starting new session)
-python3 ~/dev/test-8/session_briefing.py
 
-# Single analysis
-python3 ~/dev/test-8/brain_singularity.py --deficit 0.7 --plasticity 0.8 --inhibition 0.15
+```bash
+  # 서브디렉토리 스크립트 실행 시 PYTHONPATH=. 필수 (루트 모듈 import 위해)
+  PYTHONPATH=. python3 verify/verify_322_eeg_gamma.py
+  PYTHONPATH=. python3 scripts/analyze_tension.py
+  PYTHONPATH=. python3 engines/model_cnn_repulsion.py
+
+  # 루트 스크립트는 그냥 실행
+  python3 session_briefing.py
+  python3 brain_singularity.py --deficit 0.7 --plasticity 0.8 --inhibition 0.15
 
 # Compass
 python3 ~/dev/test-8/compass.py --autopilot --deficit 0.5 --plasticity 0.6 --inhibition 0.4
