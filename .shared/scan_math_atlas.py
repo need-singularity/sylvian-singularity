@@ -1292,6 +1292,125 @@ def write_html(atlas, htmlpath):
         f.write(html)
 
 
+# ── README summary ────────────────────────────────────────────────
+
+def generate_readme_summary(atlas):
+    """Generate a markdown summary for README marker insertion.
+
+    Produces a compact overview (~170 lines) of the atlas suitable for
+    injection between <!-- SHARED:ATLAS:START --> / <!-- SHARED:ATLAS:END -->
+    markers in README files.
+
+    Args:
+        atlas: dict returned by build_atlas().
+
+    Returns:
+        str: Markdown text.
+    """
+    lines = []
+    total_h = atlas["total"]
+    cm_count = len(atlas.get("constant_maps", []))
+
+    lines.append("### Math Atlas (auto-generated)")
+    lines.append("")
+    lines.append(
+        f"> {total_h:,} hypotheses + {cm_count} constant maps across 3 repos"
+        " | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)"
+    )
+    lines.append("")
+
+    # ── Per-repo summary table ──
+    # Count grade categories per repo
+    star_chars = ("\u2b50", "\u2605")   # ⭐ ★
+    green_char = "\U0001f7e9"           # 🟩
+    orange_char = "\U0001f7e7"          # 🟧
+
+    repo_grades = {}  # repo -> {star, green, orange}
+    for h in atlas["hypotheses"]:
+        repo = h["repo"]
+        if repo not in repo_grades:
+            repo_grades[repo] = {"star": 0, "green": 0, "orange": 0}
+        g = h.get("grade") or ""
+        if any(c in g for c in star_chars):
+            repo_grades[repo]["star"] += 1
+        if green_char in g:
+            repo_grades[repo]["green"] += 1
+        if orange_char in g:
+            repo_grades[repo]["orange"] += 1
+
+    lines.append("| Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |")
+    lines.append("|------|-----------|---------|-------------|---------------|--------------|")
+
+    totals = {"h": 0, "star": 0, "green": 0, "orange": 0, "cm": 0}
+    for repo in ["TECS-L", "SEDI", "anima"]:
+        h_count = atlas["stats"].get(repo, 0)
+        c_count = atlas.get("constant_stats", {}).get(repo, 0)
+        rg = repo_grades.get(repo, {"star": 0, "green": 0, "orange": 0})
+        star_str = str(rg["star"]) if rg["star"] else "-"
+        green_str = str(rg["green"]) if rg["green"] else "-"
+        orange_str = str(rg["orange"]) if rg["orange"] else "-"
+        lines.append(
+            f"| {repo} | {h_count:,} | {star_str} | {green_str} | {orange_str} | {c_count} |"
+        )
+        totals["h"] += h_count
+        totals["star"] += rg["star"]
+        totals["green"] += rg["green"]
+        totals["orange"] += rg["orange"]
+        totals["cm"] += c_count
+
+    lines.append(
+        f"| **Total** | **{totals['h']:,}** | **{totals['star']}** "
+        f"| **{totals['green']}** | **{totals['orange']}** | **{totals['cm']}** |"
+    )
+    lines.append("")
+
+    # ── Top Discoveries (⭐) ──
+    star_hyps = []
+    for h in atlas["hypotheses"]:
+        g = h.get("grade") or ""
+        if any(c in g for c in star_chars):
+            short_id = h["id"].split(":", 1)[1] if ":" in h["id"] else h["id"]
+            star_hyps.append({
+                "id": short_id,
+                "title": (h.get("title") or "")[:80],
+                "repo": h["repo"],
+            })
+
+    if star_hyps:
+        lines.append("#### Top Discoveries (\u2b50)")
+        lines.append("")
+        lines.append("| ID | Title | Repo |")
+        lines.append("|-----|-------|------|")
+        for sh in star_hyps:
+            lines.append(f"| {sh['id']} | {sh['title']} | {sh['repo']} |")
+        lines.append("")
+
+    # ── Constant Maps by Category ──
+    cmaps = atlas.get("constant_maps", [])
+    if cmaps:
+        cat_data = {}  # category -> {count, examples}
+        for cm in cmaps:
+            cat = cm.get("category", "other")
+            if cat not in cat_data:
+                cat_data[cat] = {"count": 0, "examples": []}
+            cat_data[cat]["count"] += 1
+            if len(cat_data[cat]["examples"]) < 3:
+                cat_data[cat]["examples"].append(cm["name"])
+
+        lines.append("#### Constant Maps by Category")
+        lines.append("")
+        lines.append("| Category | Count | Example Maps |")
+        lines.append("|----------|-------|-------------|")
+        for cat, data in sorted(cat_data.items(), key=lambda x: -x[1]["count"]):
+            examples = ", ".join(data["examples"])
+            if data["count"] > 3:
+                examples += ", ..."
+            lines.append(f"| {cat} | {data['count']} | {examples} |")
+        lines.append("")
+
+    return "\n".join(lines)
+
+
 # ── CLI ──────────────────────────────────────────────────────────
 
 def main():
@@ -1309,14 +1428,21 @@ def main():
                         help="Filter: FIELD=VALUE (e.g. grade=green, domain=CX)")
     parser.add_argument("--repo", choices=["TECS-L", "SEDI", "anima"],
                         help="Filter to a single repo")
+    parser.add_argument("--readme-summary", action="store_true",
+                        help="Print README marker summary to stdout (used by sync script)")
     args = parser.parse_args()
 
     # Default: --save --summary
-    if not (args.json or args.summary or args.save or args.query):
+    if not (args.json or args.summary or args.save or args.query or args.readme_summary):
         args.save = True
         args.summary = True
 
     atlas = build_atlas()
+
+    # --readme-summary (print and exit)
+    if args.readme_summary:
+        print(generate_readme_summary(atlas))
+        return
 
     # --repo filter
     if args.repo:
