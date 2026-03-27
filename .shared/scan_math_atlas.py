@@ -1362,8 +1362,9 @@ function autoFitGraph() {
 function tickGraph() {
   var g = forceGraph;
   if (!g) return;
-  if (g.alpha < 0.001) { g.running = false; autoFitGraph(); drawGraph(); return; }
-  g.alpha *= 0.997;
+  g.ticks = (g.ticks || 0) + 1;
+  if (g.alpha < 0.005 || g.ticks > 500) { g.running = false; autoFitGraph(); drawGraph(); return; }
+  g.alpha *= 0.99;
   var nodes = g.nodes;
   var edges = g.edges;
   var W = g.canvas.width;
@@ -1496,7 +1497,7 @@ function setupGraphEvents() {
       g.dragging = g.nodes[idx];
       g.dragStart = { mx: mx, my: my, nx: g.nodes[idx].x, ny: g.nodes[idx].y };
       // Reheat simulation on drag
-      if (!g.running) { g.alpha = 0.3; g.running = true; tickGraph(); }
+      if (!g.running) { g.alpha = 0.1; g.ticks = 400; g.running = true; tickGraph(); }
     } else {
       g.isPanning = true;
       g.panStart = { mx: mx, my: my, tx: g.transform.x, ty: g.transform.y };
