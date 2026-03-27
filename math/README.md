@@ -1295,10 +1295,10 @@
   🟩⭐⭐ ĤF(T³)=ℤ⁸: rank=8=σ-τ (Heegaard-Floer of 3-torus).
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  538  ← +Painlevé, 6j, packing, codes, +8 domains
+  🟩 Pure mathematics:  539  ← +H-CX-76(self-reference τ(σ)=n⟺n|6)
   🟦 Established theorems:  22  ← +Tsirelson(H-CX-481), Egyptian(H-CX-479), Galois(H-CX-490)
   ⭐ Major Discoveries:  339 ← +Painlevé, 6j-symbol, V₆=π³/n, A(6,d) codes
-  🟧 Connection discoveries:  42  ← +H-CX-73(Pythagorean), +H-CX-74(partition-expert)
+  🟧 Connection discoveries:  43  ← +H-CX-73(Pythagorean), +H-CX-74(partition), +H-CX-75(Fibonacci)
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
   🟪 Unverifiable:   3  ← unfalsifiable philosophy
@@ -5547,11 +5547,13 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | H-EN-6 | CNO cycle 3τ=σ=C-12 | 🟩 **exact** | 3×He-4=C-12, N-14=σ+φ, O-16=σ+τ |
 | H-EN-9 | Fe-56: σ(56)=120, φ(56)=24=σφ | 🟩 **exact** | most stable nucleus encodes master formula |
 
-### Cross-Domain Bridge (H-CX-72~74)
+### Cross-Domain Bridge (H-CX-72~76)
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
 | [H-CX-72](docs/hypotheses/H-CX-72-R-spectrum-consciousness-bridge.md) | R-spectrum ↔ consciousness engine bridge | 🟧 structural | 7 connections, GZ Width = \|log R(2)\| |
 | [H-CX-73](docs/hypotheses/H-CX-73-pythagorean-engine-balance.md) | Pythagorean 3²+4²=5² engine balance | 🟧 connection | (σ/τ)²+τ²=sopfr², unique n=2..200, p=0.02 |
 | [H-CX-74](docs/hypotheses/H-CX-74-partition-expert-count.md) | Partition p(6)=11 → expert count | 🟧 connection | p=σ-1 only for n\|6, self-conjugate=[3,2,1] |
+| [H-CX-75](docs/hypotheses/H-CX-75-fibonacci-sigma-convergence.md) | Fibonacci F(σ)=σ² tension convergence | 🟧 connection | F(12)=144=12², last Fibonacci square |
+| [H-CX-76](docs/hypotheses/H-CX-76-self-reference-consciousness-model.md) | Self-reference τ(σ(n))=n consciousness | 🟩⭐ proved | n\|6 only, period-4 cycle {6,12,4,7} |
 
