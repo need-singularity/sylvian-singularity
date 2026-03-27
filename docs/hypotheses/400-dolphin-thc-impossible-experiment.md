@@ -245,12 +245,12 @@ coordination is itself a consciousness-altering mechanism.
 
 | Species | Baseline (α, β) | Baseline state | Deficit | Optimal vector | Substance | Evidence |
 |---------|----------------|----------------|---------|----------------|-----------|----------|
-| Dolphin | (0.25, 0.85) | High gamma, USWS | Too excited | β↓ | TTX | Observed (H-CX-130) |
+| Dolphin | (0.25, 0.85) | High gamma, USWS | Too excited | β↓ | TTX | Filmed but disputed (BBC 2014, scientific consensus unresolved) |
 | Human | (0.65, 0.35) | High self-criticism | Too inhibited | α↓ | THC / alcohol | Widespread use |
 | Cat | (0.50, 0.55) | Moderate both | Mild excess β | α↓ slightly | Catnip (nepetalactone) | Observed |
-| Jaguar | (0.40, 0.60) | Moderate excitation | Mild excess β | β↓ slightly | Ayahuasca vine (B. caapi) | Observed eating |
+| Jaguar | (0.40, 0.60) | Moderate excitation | Mild excess β | β↓ slightly | Ayahuasca vine (B. caapi) | Limited video evidence (BBC Weird Nature), not rigorously documented |
 | Reindeer | (0.55, 0.50) | Near-balanced | Mild excess α | α↓ | Amanita muscaria | Observed |
-| Elephant | (0.45, 0.65) | High social sensitivity | Excess β | β↓ | Fermented marula fruit | Observed |
+| Elephant | (0.45, 0.65) | High social sensitivity | Excess β | β↓ | Fermented marula fruit | Largely debunked myth (Bristol University study) |
 
 All observed cases are consistent with the prediction: each species selects
 the substance that pushes its (α, β) baseline toward the diagonal α = β.

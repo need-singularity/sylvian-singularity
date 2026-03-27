@@ -8,7 +8,7 @@
 
 Most psychoactive substances operate on a continuum. Alcohol displaces water molecules in membrane lipids and nonspecifically reduces excitability across a smooth gradient. THC binds CB1 receptors and modulates G-protein signaling — a graded, analog process. Serotonergic psychedelics act on 5-HT2A receptors and partially agonize them to varying degrees depending on dose and receptor occupancy, producing smooth dose-response curves.
 
-TTX is categorically different. It is a voltage-gated Na+ channel blocker with picomolar affinity. When TTX binds the outer pore of a Na+ channel, that channel becomes non-conducting — permanently silent until TTX diffuses away. There is no partial blockade of a single channel. Each channel is in one of two states:
+TTX is categorically different. It is a voltage-gated Na+ channel blocker with low nanomolar affinity (KD ~10-15 nM). When TTX binds the outer pore of a Na+ channel, that channel becomes non-conducting — permanently silent until TTX diffuses away. There is no partial blockade of a single channel. Each channel is in one of two states:
 
 - **Open/Conducting**: normal Na+ influx during depolarization
 - **Blocked**: zero conductance, regardless of voltage
@@ -34,7 +34,7 @@ A single Na+ channel can be modeled as a two-state system:
 State:    OPEN ──[TTX binds]──> BLOCKED
                <──[TTX unbinds]──
 
-Conductance: OPEN = ~20 pS (picosiemens)
+Conductance: OPEN = ~40-55 pS (picosiemens, NaV1.4)
              BLOCKED = 0 pS (exactly zero, not reduced)
 ```
 
@@ -55,8 +55,8 @@ When f > f_crit, the neuron fails to generate action potentials entirely. This t
 ### Functional Unit Level (The Staircase)
 
 Neurons do not operate in isolation. Na+ channels cluster at functionally critical locations:
-- Nodes of Ranvier (~1000 channels per node, spaced 1-2 mm along myelinated axons)
-- Axon initial segment (~10,000 channels in ~50 μm)
+- Nodes of Ranvier (~700,000 channels per node at ~12,000/um^2 density, spaced 1-2 mm along myelinated axons)
+- Axon initial segment (~100,000-500,000 channels in ~50 μm)
 - Presynaptic terminals (~500-2000 channels per terminal)
 
 Each node of Ranvier operates as an independent amplification station. Blocking all channels at one node eliminates conduction through that node — a discrete jump in signal transmission fidelity.
@@ -286,3 +286,16 @@ The 3→4 transition corresponds to ~1.0 nM TTX in the dolphin sonar model — t
 TTX occupies a unique pharmacological niche: it is the only common psychoactive agent with a strictly binary mechanism at the channel level. This binary mechanism propagates upward through functional units (nodes, terminals) to create a staircase consciousness dose-response curve. In the dolphin sonar system, 6 hierarchical processing levels predict 6 discrete consciousness states under TTX exposure. Microdose at 1/3 blockade (Levels 1-2 of 6) produces sonar silence while preserving higher cognition — a pharmacologically precise consciousness quantization that no continuous-mechanism drug can replicate.
 
 The hypothesis is independently grounded in channel biophysics. The connection to the N-state model and Golden Zone constants is speculative and requires experimental confirmation.
+
+---
+
+## Corrections (2026-03-27, literature review)
+
+The following factual values were corrected from the original draft:
+
+| Parameter | Original (incorrect) | Corrected | Error factor |
+|---|---|---|---|
+| Nodes of Ranvier channel count | ~1,000/node | ~700,000/node (~12,000/um^2 density) | 700x underestimate |
+| TTX binding affinity | picomolar | low nanomolar (KD ~10-15 nM) | ~1000x overestimate |
+| Single channel conductance | ~20 pS | ~40-55 pS (NaV1.4) | 2-3x underestimate |
+| AIS channel count | ~10,000 | ~100,000-500,000 | 10-50x underestimate |

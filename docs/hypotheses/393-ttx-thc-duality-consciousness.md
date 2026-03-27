@@ -1,6 +1,6 @@
 # H-393: TTX-THC Duality in Consciousness Modulation
 
-**Status:** Theoretical (GZ-dependent) | **Date:** 2026-03-26 | **Related:** H-386, H-387, H-391, H-199
+**Status:** ⬛ Refuted (phi claim disproven) | **Date:** 2026-03-26 | **Corrected:** 2026-03-27 | **Related:** H-386, H-387, H-391, H-199
 
 ---
 
@@ -29,7 +29,7 @@ Metal, Water) is:
 Where:
 - A_s = Sangseang adjacency (generation cycle: Wood→Fire→Earth→Metal→Water→Wood)
 - A_k = Sanggeuk adjacency (overcoming cycle: Wood→Earth→Water→Fire→Metal→Wood)
-- M = net information flow, eigenvalues related to phi (golden ratio)
+- M = net information flow matrix
 
 In the sober/normal state, both cycles are at full strength (alpha=1, beta=1), and the
 system maintains dynamic balance. The tension between generation and control is what
@@ -49,6 +49,13 @@ control and overcoming pathways. The generative/excitatory cycle runs with less 
 These are mathematically DUAL transformations:
 - THC: keeps generation (beta=1), removes control (alpha < 1) → expansion, creativity, chaos
 - TTX: keeps control (alpha=1), removes generation (beta < 1) → stillness, trance, sonar silence
+
+**Important note on K5 symmetry:** Due to the circulant structure of K5, swapping alpha
+and beta permutes eigenvalues but preserves their magnitudes. Thus THC (0.5, 1.0) and
+TTX (1.0, 0.5) have IDENTICAL spectral radius (rho = 1.435). The duality is expressed
+through eigenvalue PHASE differences, not magnitude differences. THC and TTX produce
+the same "intensity" of consciousness alteration but rotate the eigenvalue phases in
+conjugate directions.
 
 ---
 
@@ -118,41 +125,46 @@ For K5 with A_s and A_k as their standard adjacency matrices:
 ```
   (alpha, beta)   rho     State
   (1.00, 1.00)    1.902   Sober baseline
-  (0.50, 1.00)    1.618   THC (golden ratio!)
-  (1.00, 0.50)    1.176   TTX micro-dose
+  (0.50, 1.00)    1.435   THC
+  (1.00, 0.50)    1.435   TTX micro-dose (same rho as THC — K5 symmetry)
   (0.37, 0.37)    0.700   Meditation (1/e scaled)
   (0.10, 0.10)    0.190   Heavy sedation
   (0.00, 0.00)    0.000   Flat / unconscious
-  (1.30, 1.00)    2.110   Caffeine / stimulant
-  (0.50, 1.50)    2.058   MDMA peak
-  (0.10, 1.20)    1.931   Psilocybin
+  (1.00, 1.30)    2.189   Caffeine / stimulant
+  (0.50, 1.50)    1.927   MDMA peak
+  (0.10, 1.20)    1.282   Psilocybin
 ```
 
-**Remarkable finding:** At THC state (alpha=0.5, beta=1.0):
-```
-  rho = phi = (1 + sqrt(5)) / 2 = 1.6180...
-```
-This is not a coincidence — the golden ratio emerges as the natural spectral radius
-when Sanggeuk is halved. (GZ-dependent interpretation.)
+**Note on K5 symmetry:** THC (0.5, 1.0) and TTX (1.0, 0.5) have identical spectral
+radius (1.435) because the K5 circulant structure means swapping alpha and beta
+permutes eigenvalues but preserves their magnitudes. The duality between THC and TTX
+is expressed through eigenvalue phase differences, not magnitude differences.
+
+**Correction (2026-03-27):** An earlier version of this document claimed rho(THC) = phi
+= 1.618. This was arithmetically wrong. The correct value is 1.435. The golden ratio
+does NOT emerge from halving Sanggeuk. See verify_h393_spectral_radius.py for the
+computation.
 
 ### ASCII Spectral Radius Contour
 
 ```
   beta
-  2.0 | 2.5  2.8  3.1  3.4  3.7   <-- High intensity (stimulants, mania)
-  1.8 | 2.2  2.5  2.7  3.0  3.3
-  1.6 | 1.9  2.1  2.4  2.6  2.9
-  1.4 | 1.7  1.9  2.1  2.3  2.5
-  1.2 | 1.5  1.6  1.8  2.0  2.2
-  1.0 | 1.2  1.4  1.6  1.9  2.1   <-- THC at (0.5, 1.0): rho=phi
-  0.8 | 1.0  1.1  1.3  1.5  1.8
-  0.6 | 0.7  0.8  1.0  1.2  1.4
-  0.4 | 0.5  0.6  0.7  0.9  1.1   <-- Meditation zone (0.37,0.37)
-  0.2 | 0.3  0.3  0.4  0.5  0.7
-  0.0 | 0.0  0.1  0.2  0.3  0.4   <-- Near death
-       0.0  0.2  0.4  0.6  0.8  --> alpha
-       ^           ^
-       TTX(1,0.5)  Sober(1,1)
+  2.0 | 2.0  2.2  2.3  2.5  2.7  2.9   <-- High intensity (stimulants, mania)
+  1.8 | 1.8  2.0  2.1  2.3  2.5  2.7
+  1.6 | 1.6  1.8  1.9  2.1  2.3  2.5
+  1.4 | 1.4  1.6  1.7  1.9  2.1  2.3
+  1.2 | 1.2  1.4  1.5  1.7  1.9  2.1
+  1.0 | 1.0  1.2  1.3  1.5  1.7  1.9   <-- THC at (0.5, 1.0): rho=1.435
+  0.8 | 0.8  1.0  1.1  1.3  1.5  1.7
+  0.6 | 0.6  0.8  1.0  1.1  1.3  1.5
+  0.4 | 0.4  0.6  0.8  1.0  1.1  1.3   <-- Meditation zone (0.37,0.37)
+  0.2 | 0.2  0.4  0.6  0.8  1.0  1.2
+  0.0 | 0.0  0.2  0.4  0.6  0.8  1.0   <-- Near death
+       0.0  0.2  0.4  0.6  0.8  1.0 --> alpha
+                              ^    ^
+                        TTX(1,0.5) Sober(1,1)
+
+  Note: The grid is symmetric under alpha<->beta reflection due to K5 circulant structure.
 ```
 
 ---
@@ -164,18 +176,20 @@ when Sanggeuk is halved. (GZ-dependent interpretation.)
 | Substance | alpha (Sanggeuk) | beta (Sangseang) | rho | Primary Effect |
 |-----------|-----------------|-----------------|-----|----------------|
 | Sober | 1.00 | 1.00 | 1.902 | Balanced baseline |
-| THC (cannabis) | 0.50 | 1.00 | 1.618 (phi!) | Disinhibition, creativity |
-| TTX micro-dose | 1.00 | 0.50 | 1.176 | Sonar silence, trance |
-| Alcohol (moderate) | 0.70 | 0.70 | 1.332 | Both dampened |
-| Caffeine | 1.00 | 1.30 | 2.473 | Sangseang enhanced |
-| Psilocybin | 0.10 | 1.20 | 1.931 | Deep Sanggeuk removal |
-| MDMA | 0.50 | 1.50 | 2.058 | Sanggeuk down + Sangseang up |
-| Ketamine | 0.80 | 0.20 | 0.804 | Mostly Sangseang blocked |
+| THC (cannabis) | 0.50 | 1.00 | 1.435 | Disinhibition, creativity |
+| TTX micro-dose | 1.00 | 0.50 | 1.435 | Sonar silence, trance |
+| Alcohol (moderate) | 0.70 | 0.70 | 1.331 | Both dampened |
+| Caffeine | 1.00 | 1.30 | 2.189 | Sangseang enhanced |
+| Psilocybin | 0.10 | 1.20 | 1.282 | Deep Sanggeuk removal |
+| MDMA | 0.50 | 1.50 | 1.927 | Sanggeuk down + Sangseang up |
+| Ketamine | 0.80 | 0.20 | 0.969 | Mostly Sangseang blocked |
 | General anesthesia | 0.10 | 0.10 | 0.190 | Both near zero |
 | Deep meditation | 0.37 | 0.37 | 0.700 | Balanced, scaled by 1/e |
-| Nicotine | 1.10 | 1.00 | 1.973 | Mild Sanggeuk boost |
-| SSRI (chronic) | 0.90 | 1.10 | 1.924 | Slight rebalancing |
-| DMT peak | 0.05 | 1.50 | 2.261 | Extreme Sanggeuk removal |
+| Nicotine | 1.10 | 1.00 | 1.997 | Mild Sanggeuk boost |
+| SSRI (chronic) | 0.90 | 1.10 | 1.903 | Slight rebalancing |
+| DMT peak | 0.05 | 1.50 | 1.541 | Extreme Sanggeuk removal |
+
+**Note:** THC and TTX have identical rho (1.435) due to K5 circulant symmetry. See correction note above.
 
 ### ASCII 2D Phase Diagram
 
@@ -225,8 +239,8 @@ Prediction table:
 | Sober | 1.000 | 1.000 | 1.902 | 1.000 | Baseline |
 | Alcohol | 0.700 | 0.700 | 1.332 | 1.000 | Same structure, lower |
 | Meditation | 0.368 | 0.368 | 0.700 | 1.000 | Same structure, minimal |
-| THC | 0.500 | 1.000 | 1.618 | 0.618 | Distorted (asymmetric) |
-| Ketamine | 0.800 | 0.200 | 0.804 | 0.250 | Highly distorted |
+| THC | 0.500 | 1.000 | 1.435 | 0.500 | Distorted (asymmetric) |
+| Ketamine | 0.800 | 0.200 | 0.969 | 0.250 | Highly distorted |
 | Anesthesia | 0.100 | 0.100 | 0.190 | 1.000 | Near-zero, any structure |
 
 **Coherence** defined as: min(alpha, beta) / max(alpha, beta) — ratio of symmetry.
@@ -240,45 +254,46 @@ The diagonal (alpha=beta) states have coherence=1 regardless of intensity.
 
 ```
   |lambda_k| for k=0,1,2,3,4:
-  k=0: |1-1| = 0.000  [zero mode]
-  k=1: 1.902          ████████████████████
-  k=2: 1.176          ████████████
-  k=3: 1.176          ████████████
-  k=4: 1.902          ████████████████████
+  k=0: 0.000          [zero mode]
+  k=1: 1.176          ████████████
+  k=2: 1.902          ████████████████████
+  k=3: 1.902          ████████████████████
+  k=4: 1.176          ████████████
 ```
 
 ### At (alpha=0.5, beta=1.0) — THC
 
 ```
   k=0: 0.500          █████
-  k=1: 1.618          █████████████████  [= phi!]
-  k=2: 0.882          █████████
-  k=3: 0.882          █████████
-  k=4: 1.618          █████████████████
+  k=1: 0.970          ██████████
+  k=2: 1.435          ███████████████
+  k=3: 1.435          ███████████████
+  k=4: 0.970          ██████████
 ```
 
 ### At (alpha=1.0, beta=0.5) — TTX micro-dose
 
 ```
   k=0: 0.500          █████
-  k=1: 1.176          ████████████
-  k=2: 0.882          █████████
-  k=3: 0.882          █████████
-  k=4: 1.176          ████████████
+  k=1: 0.970          ██████████
+  k=2: 1.435          ███████████████
+  k=3: 1.435          ███████████████
+  k=4: 0.970          ██████████
 ```
 
 ### At (alpha=0.368, beta=0.368) — Meditation
 
 ```
   k=0: 0.000          [preserved zero mode]
-  k=1: 0.700          ███████
-  k=2: 0.433          ████
-  k=3: 0.433          ████
-  k=4: 0.700          ███████
+  k=1: 0.433          ████
+  k=2: 0.700          ███████
+  k=3: 0.700          ███████
+  k=4: 0.433          ████
 ```
 
 Note: Sober and Meditation have the SAME spectral shape (same ratios), just scaled by 1/e.
-THC and TTX break this symmetry in conjugate directions.
+THC and TTX have IDENTICAL magnitude spectra (both rho = 1.435) due to K5 circulant
+symmetry — they differ only in eigenvalue phases, not magnitudes.
 
 ---
 
@@ -288,7 +303,7 @@ THC and TTX break this symmetry in conjugate directions.
 |-----------|------------|-----------|-----------------|
 | alpha (Sanggeuk) | 1.0 (intact) | 0.3-0.5 (reduced) | 0.37 (1/e) |
 | beta (Sangseang) | 0.3-0.5 (reduced) | 1.0 (intact) | 0.37 (1/e) |
-| rho | 1.176 | 1.618 | 0.700 |
+| rho | 1.435 | 1.435 | 0.700 |
 | Coherence (alpha=beta?) | No (IV quadrant) | No (I quadrant) | Yes (diagonal) |
 | EEG signature | Reduced gamma, maintained delta | Increased theta, reduced beta | Increased alpha, coherent gamma |
 | Subjective state | Stillness, trance, sonar clarity | Expansion, creativity, time distortion | Equanimity, clarity, non-attachment |
@@ -359,9 +374,9 @@ of the state is distorted by the asymmetry.
    in EEG power spectra relative to sober baseline. If THC increases theta/decreases beta,
    TTX micro-dose should decrease theta/increase beta (or vice versa).
 
-2. **Golden ratio spectral radius:** At precisely alpha=0.5, beta=1.0 (cannabis dose
-   corresponding to 50% CB1 activation), the dominant neural oscillation frequency ratio
-   should approach phi=1.618. Measurable in LFP recordings.
+2. **~~Golden ratio spectral radius~~** [REFUTED]: The claim that rho = phi at (0.5, 1.0)
+   was arithmetically incorrect. The actual spectral radius is 1.435, not 1.618.
+   This prediction is withdrawn.
 
 3. **Meditation diagonal:** EEG coherence between hemispheres should be highest for
    experienced meditators (alpha≈beta, diagonal state) and lowest for heavy drug users
@@ -406,15 +421,26 @@ of the state is distorted by the asymmetry.
    to Sangseang suppression follows from H-386 and H-391 interpretations. Alternative
    mappings are possible.
 
+7. **[2026-03-27 CORRECTION] Spectral radius errors and refuted phi claim:**
+   The original version of this document contained critical arithmetic errors in 5 of 8
+   spectral radius values. Most significantly, it claimed rho(THC) = phi = 1.618, but the
+   correct value is 1.435. Additionally, due to K5 circulant symmetry, THC and TTX have
+   IDENTICAL spectral radius (both 1.435), not different values as originally claimed
+   (1.618 vs 1.176). The "duality" between THC and TTX cannot be expressed through
+   spectral radius magnitude -- it must be sought in eigenvalue phase structure instead.
+   All rho values in this document have been corrected. See verify_h393_spectral_radius.py
+   for the computation. Grade changed to ⬛ (phi claim refuted).
+
 ---
 
 ## Verification Direction
 
 ### Short-term (theoretical)
 
-- Compute exact eigenvalues of K5 A_s and A_k matrices numerically
-- Verify phi emerges at (alpha=0.5, beta=1.0) analytically
-- Derive the curve in (alpha, beta) space where rho = phi (not just at one point)
+- [DONE] Computed exact eigenvalues of K5 system numerically (verify_h393_spectral_radius.py)
+- [REFUTED] Phi does NOT emerge at (0.5, 1.0). Actual rho = 1.435.
+- [DONE] Proved K5 circulant symmetry: rho(alpha, beta) = rho(beta, alpha) for all values
+- Investigate eigenvalue PHASE structure as the true duality mechanism
 - Compute det(M(alpha, beta)) = 0 condition and map it
 
 ### Medium-term (computational)

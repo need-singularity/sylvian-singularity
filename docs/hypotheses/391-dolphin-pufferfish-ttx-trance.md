@@ -69,7 +69,7 @@ Key pharmacological parameters:
 
 | Parameter | Value | Notes |
 |-----------|-------|-------|
-| LD50 (human, ingested) | ~8 μg/kg | ~0.5 mg total for 60 kg person |
+| LD50 (human, oral) | ~17-33 μg/kg | ~1-2 mg total for 60 kg person; IV LD50 ~2-10 μg/kg |
 | Sub-lethal range | 0.1-0.5 μg/kg | Tingling, altered perception |
 | Potency vs cyanide | 1200× more potent | By weight |
 | Onset (ingested) | 10-45 min | Delayed by absorption |
@@ -229,6 +229,10 @@ TTX is the active ingredient in ethnobotanist Wade Davis's analysis of Haitian "
 - Sub-lethal TTX dose → apparent death (vastly reduced vital signs)
 - Recovery → extreme dissociative state, high suggestibility
 - Cultural framing: "zombification" as social control mechanism
+
+**Scientific criticism:** Kao & Yasumoto (1986) analyzed zombie powder samples and found
+insufficient TTX in most preparations. Only 1 of 8 samples contained detectable TTX.
+This claim is scientifically contested, and the zombie powder hypothesis remains unproven.
 
 In the G = D×P/I framework:
 ```
@@ -426,29 +430,37 @@ the usual sonar-driven environmental engagement.
 
 ## Limitations
 
-1. **No direct neural data**: The trance behavior is documented but no EEG, LFP, or
+1. **Blood-brain barrier (BBB) penetration is scientifically unresolved (KEY limitation):**
+   TTX BBB penetration is a fundamental prerequisite for the central consciousness hypothesis
+   proposed here. Some studies (Ogura 1958) detected limited brain penetration, but others
+   report BBB impermeability. If TTX does not cross the BBB in meaningful quantities, the
+   entire "sonar silence" and consciousness-alteration mechanism must be reconsidered —
+   peripheral nerve effects (numbness, tingling) could explain the observed behavior without
+   any central nervous system involvement. This remains an open question in TTX pharmacology.
+
+2. **No direct neural data**: The trance behavior is documented but no EEG, LFP, or
    electrophysiology data exists from dolphins during pufferfish interaction. All neural
    predictions are inferential.
 
-2. **Alternative explanations**: The "trance" could be thermoregulatory (floating near surface),
+3. **Alternative explanations**: The "trance" could be thermoregulatory (floating near surface),
    social bonding behavior using pufferfish as play object, or general endorphin release from
    the novel tactile stimulation. TTX-specific effects are not confirmed.
 
-3. **Dose quantification unknown**: We do not know how much TTX is released per bite or
+4. **Dose quantification unknown**: We do not know how much TTX is released per bite or
    how much is absorbed through dolphin oral mucosa vs swallowed. The "Zone C targeting"
    hypothesis requires dose validation.
 
-4. **GZ mapping is speculative**: The Five Phase framework itself is model-dependent (GZ unverified).
+5. **GZ mapping is speculative**: The Five Phase framework itself is model-dependent (GZ unverified).
    The TTX = sangsaeng suppressor mapping is an analogy, not a derivation.
 
-5. **Single documentary source**: The original footage is from one BBC production. Independent
+6. **Single documentary source**: The original footage is from one BBC production. Independent
    scientific replication of the observation has been limited, though cetacean researchers
    have accepted it as credible.
 
-6. **Species specificity**: Bottlenose dolphins are the primary observed species. Whether
+7. **Species specificity**: Bottlenose dolphins are the primary observed species. Whether
    other dolphin species or cetaceans show similar behavior is unknown.
 
-7. **Social vs pharmacological**: The ritual passing behavior may have social functions
+8. **Social vs pharmacological**: The ritual passing behavior may have social functions
    (bonding, hierarchy signaling) independent of any pharmacological effect.
 
 ---
