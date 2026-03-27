@@ -1456,6 +1456,59 @@ function setupGraphEvents() {
     G.transform.k = newK;
     drawGraph();
   }, { passive: false });
+
+  // ── Touch events (mobile) ──
+  var lastTouchDist = 0;
+
+  canvas.addEventListener('touchstart', function(ev) {
+    ev.preventDefault();
+    var rect = canvas.getBoundingClientRect();
+    if (ev.touches.length === 1) {
+      var t = ev.touches[0];
+      var mx = t.clientX - rect.left, my = t.clientY - rect.top;
+      G.isPanning = true;
+      G.panStart = { mx: mx, my: my, tx: G.transform.x, ty: G.transform.y };
+    } else if (ev.touches.length === 2) {
+      var dx = ev.touches[1].clientX - ev.touches[0].clientX;
+      var dy = ev.touches[1].clientY - ev.touches[0].clientY;
+      lastTouchDist = Math.sqrt(dx * dx + dy * dy);
+    }
+  }, { passive: false });
+
+  canvas.addEventListener('touchmove', function(ev) {
+    ev.preventDefault();
+    var rect = canvas.getBoundingClientRect();
+    if (ev.touches.length === 1 && G.isPanning && G.panStart) {
+      var t = ev.touches[0];
+      var mx = t.clientX - rect.left, my = t.clientY - rect.top;
+      G.transform.x = G.panStart.tx + (mx - G.panStart.mx);
+      G.transform.y = G.panStart.ty + (my - G.panStart.my);
+      drawGraph();
+    } else if (ev.touches.length === 2) {
+      var dx = ev.touches[1].clientX - ev.touches[0].clientX;
+      var dy = ev.touches[1].clientY - ev.touches[0].clientY;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (lastTouchDist > 0) {
+        var scale = dist / lastTouchDist;
+        var cx = (ev.touches[0].clientX + ev.touches[1].clientX) / 2 - rect.left;
+        var cy = (ev.touches[0].clientY + ev.touches[1].clientY) / 2 - rect.top;
+        var newK = Math.max(0.1, Math.min(5, G.transform.k * scale));
+        var ratio = newK / G.transform.k;
+        G.transform.x = cx - (cx - G.transform.x) * ratio;
+        G.transform.y = cy - (cy - G.transform.y) * ratio;
+        G.transform.k = newK;
+        drawGraph();
+      }
+      lastTouchDist = dist;
+    }
+  }, { passive: false });
+
+  canvas.addEventListener('touchend', function(ev) {
+    if (ev.touches.length === 0) {
+      if (G.isPanning) { G.isPanning = false; G.panStart = null; }
+      lastTouchDist = 0;
+    }
+  });
 }
 
 function renderGraph() {
