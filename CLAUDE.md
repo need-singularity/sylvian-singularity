@@ -14,35 +14,64 @@
   When writing new hypotheses, always specify Golden Zone dependency.
 ```
 
-## README 프로젝트 설명 동기화 (필수)
+## 리포 구조 (7개 리포)
 
 ```
-  중앙 소스: TECS-L/.shared/projects.md (이것만 수정)
-  동기화 대상: TECS-L/README.md, anima/README.md, ph-training/README.md
+  need-singularity/
+  ├── TECS-L              ← 수학 엔진 코어 (이 리포)
+  ├── anima               ← 의식 에이전트
+  ├── SEDI (sedi)         ← 물리 검증
+  ├── ph-training         ← PH 훈련
+  ├── golden-moe          ← MoE 라이브러리 (TECS-L에서 분리)
+  ├── conscious-lm        ← 의식 언어모델 (TECS-L에서 분리)
+  └── energy-efficiency   ← 에너지 효율 기법 (TECS-L에서 분리)
+
+  모든 리포 로컬 경로: ~/Dev/{리포이름}
+  iTerm2 프로필: Cmd+Ctrl+3~9 (리포별 자동 cd + claude 실행)
+```
+
+## .shared/ 동기화 시스템 (필수)
+
+```
+  TECS-L/.shared/ = 모든 리포의 공유 인프라 허브
+
+  ── 프로젝트 설명 동기화 ──
+  중앙 소스: .shared/projects.md (이것만 수정)
+  동기화 대상: 7개 리포 README.md
   마커: <!-- SHARED:PROJECTS:START --> ~ <!-- SHARED:PROJECTS:END -->
+  실행: bash .shared/sync-readmes.sh
 
-  수동 동기화: cd ~/Dev/TECS-L && bash .shared/sync-readmes.sh
-  프로젝트 설명 수정 시 반드시 projects.md 수정 → sync → 각 리포 커밋/푸시
-  개별 README 직접 수정 금지 (마커 구간) — sync 시 덮어씌워짐
-```
-
-## Cross-Repo Calculator Registry (필수)
-
-```
+  ── 계산기 레지스트리 ──
   중앙 소스: .shared/calculators.json (자동 생성)
-  스캐너: python3 .shared/scan-calculators.py (3개 리포 자동 스캔)
-  동기화: bash .shared/sync-calculators.sh (README 마커 구간 업데이트 + 커밋/푸시)
+  스캐너: python3 .shared/scan-calculators.py
+  동기화: bash .shared/sync-calculators.sh
   마커: <!-- SHARED:CALCULATORS:START --> ~ <!-- SHARED:CALCULATORS:END -->
-  대상: TECS-L/README.md, anima/README.md, SEDI/README.md
+
+  ── Math Atlas (수학 지도 통합) ──
+  스캐너: python3 .shared/scan_math_atlas.py
+  동기화: bash .shared/sync-math-atlas.sh
+  마커: <!-- SHARED:ATLAS:START --> ~ <!-- SHARED:ATLAS:END -->
+  출력물:
+    .shared/math_atlas.json    ← 1,700 가설 + 300 상수맵 (JSON)
+    .shared/math_atlas.db      ← SQLite (쿼리용)
+    .shared/math_atlas.dot     ← Graphviz (그래프)
+    .shared/MATH_ATLAS.md      ← 전체 목록 (마크다운)
+    .shared/math_atlas.html    ← 인터랙티브 웹페이지 (검색/필터/그래프)
+    docs/atlas/index.html      ← GitHub Pages 배포
+  URL: https://need-singularity.github.io/TECS-L/atlas/
 
   사용법:
-    python3 .shared/scan-calculators.py --summary     # 요약만
-    python3 .shared/scan-calculators.py --markdown     # 전체 마크다운 테이블
-    python3 .shared/scan-calculators.py --json         # JSON 출력
-    python3 .shared/scan-calculators.py --repo TECS-L  # 단일 리포만
-    bash .shared/sync-calculators.sh                   # 전체 동기화 + 푸시
+    python3 .shared/scan_math_atlas.py --save --summary    # 전체 빌드
+    python3 .shared/scan_math_atlas.py --query "grade=⭐"   # 쿼리
+    python3 .shared/scan_math_atlas.py --repo SEDI          # 단일 리포
+    sqlite3 .shared/math_atlas.db "SELECT ..."              # SQL 쿼리
+    bash .shared/sync-math-atlas.sh                         # 빌드+README+커밋
 
-  새 계산기 추가 시: 파일 생성 → docstring 작성 → sync-calculators.sh 실행
+  ── 전체 동기화 순서 ──
+    1. bash .shared/sync-math-atlas.sh    # Atlas 빌드 + README 주입
+    2. bash .shared/sync-calculators.sh   # 계산기 레지스트리
+    3. bash .shared/sync-readmes.sh       # 프로젝트 설명
+
   개별 README 마커 구간 직접 수정 금지 — sync 시 덮어씌워짐
 ```
 
