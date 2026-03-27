@@ -4986,13 +4986,28 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
   📊 Summary: ⭐ 80, 🟩 0, 🟧 0, ⚪ 3, ⬛ 17
   Scripts: math/frontier_1800_verify.py (regenerated with perf focus)
 
-  ═══ GRAND TOTAL (Frontiers 500-1800b, 17 iterations) ═══
+  ═══ Frontier 1900 (Ralph 1900): Pure Single-Condition Deep ═══
 
-  Total hypotheses generated: 1484
-  Proved theorems unique to n=6: 278+
-  Unique-to-6 characterizations: 254+
+  100 SINGLE-CONDITION hypotheses, 21⭐, 31🟩, 4🟧. 56% pass rate.
+
+  NEW unique-to-6 single identities:
+  ⭐ F19-FACT-01: n!=σ·n·sopfr·φ (720=12·6·5·2, 4-function factorial!)
+  ⭐ F19-FACT-09: n!/σ²=sopfr (720/144=5!)
+  ⭐ F19-EXP-04: e^(σ/τ)≈σφ-τ=20 (e³≈amino acids, 0.4%!)
+  ⭐ F19-GL-09: lcm(1..n)=σ·sopfr (lcm(1..6)=60=12·5!)
+  ⭐ F19-GL-06: lcm(σ,φ,τ,n)=σ (LCM of four = sigma!)
+  ⭐ F19-FACT-07: C(σ,τ)=P₃-1=495 (one below 3rd perfect!)
+  ⭐ F19-BIN-05: C(2n,n)=924 (central binomial at n=6)
+
+  📊 Summary: ⭐ 21, 🟩 31, 🟧 4, ⚪ 19, ⬛ 25
+
+  ═══ GRAND TOTAL (Frontiers 500-1900, 18 iterations) ═══
+
+  Total hypotheses generated: 1584
+  Proved theorems unique to n=6: 289+
+  Unique-to-6 characterizations: 265+
   Generalizing theorems (all perfects): 64+
-  Hypothesis documents created: 26+
+  Hypothesis documents created: 27+
 ```
 
 ---
