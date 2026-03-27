@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T07:13:27",
+  "generated": "2026-03-28T08:00:33",
   "stats": {
-    "TECS-L": 1070,
+    "TECS-L": 1072,
     "SEDI": 665,
     "anima": 20,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 1700,
+  "total": 1702,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -7571,6 +7571,26 @@
       "file": "docs/hypotheses/H-CX-99-ph-optimal-checkpoint.md"
     },
     {
+      "id": "TECS-L:H-CX-bridge-golden-moe-experts",
+      "title": "H-CX-Bridge-2: Golden MoE Expert Count = sigma(6)-tau(6) = 8",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-golden-moe-experts.md"
+    },
+    {
+      "id": "TECS-L:H-CX-bridge-phi-bottleneck",
+      "title": "H-CX-Bridge-1: Phi-Bottleneck FFN Ratio = tau(6)^2/sigma(6) = 4/3",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-phi-bottleneck.md"
+    },
+    {
       "id": "TECS-L:H-DEEP-429",
       "title": "Moonshine Chain — n=6 Parameters at Every Step",
       "repo": "TECS-L",
@@ -7883,7 +7903,7 @@
       "title": "sopfr(n) = n-1 iff n=6",
       "repo": "TECS-L",
       "domain": "NT",
-      "grade": "🟧★",
+      "grade": "🟦",
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-NT-430-sopfr-n-minus-1.md"
@@ -10496,7 +10516,7 @@
       "title": "Chi-Squared(6) Quadruple Moment Match and Distribution Encodings",
       "repo": "TECS-L",
       "domain": "STAT",
-      "grade": "🟩⭐⭐⭐ (chi-squared quadruple) / 🟩⭐⭐ (Beta meta-FP)",
+      "grade": "🟦 PROVED (chi-squared quadruple) / 🟩⭐⭐ (Beta meta-FP)",
       "refs": [],
       "gz_dependent": null,
       "file": "math/docs/hypotheses/H-STAT-1-chi-squared-perfect-number.md"
@@ -25696,7 +25716,7 @@
       "name": "EMOTION_COLORS",
       "repo": "anima",
       "file": "anima_alive.py",
-      "line": 1076,
+      "line": 1136,
       "type": "dict",
       "size": 8,
       "keys": [
