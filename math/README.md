@@ -4689,6 +4689,39 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
   📊 Summary: 🟩 4, 🟧★ 32, 🟧 22, ⬛ 2
   Full details: docs/hypotheses/frontier-900-round9.md
+
+  ═══ Frontier 1000 (Ralph 1000): Final Systematic Sweep ═══
+
+  41 hypotheses, 41 PASS / 0 FAIL.
+
+  --- NEW UNIQUE-TO-6 IDENTITIES ---
+
+  ⭐ F10-HO-09: sigma(n-1)=n AND sigma(n)=2n: ONLY n=6
+     → 6 is the only perfect number preceded by a prime!
+  ⭐ F10-3F-10: sigma+tau=2^tau: ONLY n=6 (16=2^4)
+  ⭐ F10-3F-07: sigma^2-tau^2=2^(n+1): ONLY n=6 (128=2^7)
+  ⭐ F10-3F-03: sigma*phi*tau=n*2^tau: ONLY n=6 (96=6*16)
+  ⭐ F10-RAT-06: sigma+rad=3n: ONLY n=6 (18=18)
+  🟧★ F10-3F-01: sigma+phi+tau=3n: conjunction with perfect
+  🟧★ F10-RAT-03: phi*psi=sigma*omega: n in {2,6}
+
+  --- Power-of-2 Structure ---
+
+  sigma+tau = 2^tau = 16
+  sigma-tau = 2^(tau-1) = 8
+  sigma^2-tau^2 = 2^(n+1) = 128
+  sigma*phi*tau = n*2^tau = 96
+
+  📊 Summary: 🟩 5, 🟧★ 20, 🟧 16
+  Full details: docs/hypotheses/frontier-1000-round10.md
+
+  ═══ GRAND TOTAL (Frontiers 500-1000, 6 iterations) ═══
+
+  Total hypotheses: 460+
+  Proved theorems unique to n=6: 10+
+  Unique-to-6 characterizations: 20+
+  Generalizing theorems proved: 8+
+  Hypothesis documents: 22+
 ```
 
 ---
