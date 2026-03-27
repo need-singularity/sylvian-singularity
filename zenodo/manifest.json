@@ -1,0 +1,513 @@
+{
+  "metadata": {
+    "author": "TECS-L Project",
+    "orcid": "",
+    "affiliation": "Independent Research",
+    "community": "tecs-l-consciousness-engine",
+    "license": "cc-by-4.0",
+    "generated": "2026-03-27"
+  },
+  "papers": {
+    "tecs-l": [
+      {
+        "id": "P-001",
+        "title": "PureField Tension Architecture: Classification by Disagreement Alone",
+        "file": "zenodo/P-001-purefield-tension.md",
+        "existing": ["docs/papers/P-002-ph-confusion-universality.md"],
+        "keywords": ["neural-architecture", "tension-mechanism", "consciousness", "classification"],
+        "description": "Novel neural architecture where two competing engines (A: forward/logic, G: reverse/pattern) produce tension as output. Unifies 13 hypotheses. Tension proportional to confidence (r=1.42x MNIST, r=2.68x cancer). Mitosis prevents catastrophic forgetting (43% to 99%).",
+        "target_venue": "NeurIPS / ICML",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "P-002",
+        "title": "Universal Confusion Topology via Persistent Homology",
+        "file": "docs/papers/P-002-ph-confusion-universality.md",
+        "existing": ["docs/papers/P-002-ph-confusion-universality.tex", "docs/papers/P-002-supplementary.md"],
+        "keywords": ["persistent-homology", "confusion-matrix", "topology", "neural-networks"],
+        "description": "PH merge order predicts confusion (Spearman r=-0.97, p<0.001). Architecture-invariant (r=0.96 PureField vs Dense). Algorithm-invariant (k-NN r=0.94). Epoch-1 phase transition (23-33x subsequent average).",
+        "target_venue": "Nature Machine Intelligence / ICLR",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "P-003",
+        "title": "Topological Overfitting Detection: Real-Time Generalization Gap via Persistent Homology",
+        "file": "docs/papers/P-003-ph-generalization-gap.md",
+        "existing": [],
+        "keywords": ["overfitting", "persistent-homology", "generalization", "early-stopping"],
+        "description": "Epoch-1 perfect prediction (P@3=1.0, P@5=1.0 on CIFAR). Topology fingerprint fixed by epoch 5 (tau>0.88). 66.7% training energy savings via entropy early stopping.",
+        "target_venue": "ICLR / NeurIPS",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "P-004",
+        "title": "The Arithmetic Uniqueness of 6: sigma*phi=n*tau Has No Solution Other Than n=6",
+        "file": "docs/papers/P-004-sigma-phi-uniqueness.md",
+        "existing": [],
+        "keywords": ["perfect-numbers", "number-theory", "divisor-functions", "arithmetic-functions"],
+        "description": "PROVEN: sigma(n)phi(n) = n*tau(n) iff n in {1,6}. sigma(n)tau(n) = n*phi(n) iff n=28. phi(n)tau(n) = n*sigma(n) has no solution. Computational verification to 10^5.",
+        "target_venue": "American Mathematical Monthly / Journal of Number Theory",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "P-EE",
+        "title": "Energy Efficiency Trio: Phi6Simple, HCN Dimensions, and Phi-Bottleneck FFN",
+        "file": "zenodo/P-EE-energy-efficiency-trio.md",
+        "existing": [],
+        "keywords": ["efficient-ml", "activation-functions", "model-compression", "FLOPs-reduction"],
+        "description": "Three efficiency discoveries: Phi6Simple (71% FLOPs, 8.1x faster than GELU), HCN Dimensions (10-20% param reduction), Phi-Bottleneck FFN (67% compression at 4/3x expansion, Pareto optimal).",
+        "target_venue": "ICLR / MLSys",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "P-GMoE",
+        "title": "Golden MoE: Optimal Expert Selection at the Natural Equilibrium I=1/e",
+        "file": "zenodo/P-GMoE-golden-moe.md",
+        "existing": [],
+        "keywords": ["mixture-of-experts", "routing", "golden-zone", "scaling-laws"],
+        "description": "Router learns to concentrate in zone [0.2123, 0.5], observed 36.8% = 1/e. CIFAR +4.8% vs Top-K. Overtakes Top-K at E=32 (13% faster), gap widens at E=64+.",
+        "target_venue": "NeurIPS / ICLR",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "P-N6",
+        "title": "208 Arithmetic Characterizations of the Perfect Number 6",
+        "file": "zenodo/P-N6-208-characterizations.md",
+        "existing": [],
+        "keywords": ["perfect-numbers", "number-theory", "arithmetic-characterizations", "n=6"],
+        "description": "208 proven characterizations of perfect number 6 across divisor functions, Euler products, partition functions. Three balanced product theorems proven. Computational verification to 10^5.",
+        "target_venue": "arXiv math.NT",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "P-MIT",
+        "title": "Mitosis-Based Anomaly Detection via Inter-Engine Tension",
+        "file": "zenodo/P-MIT-mitosis-anomaly.md",
+        "existing": [],
+        "keywords": ["anomaly-detection", "mitosis", "tension", "dual-engine"],
+        "description": "Inter-tension AUROC 0.805 >> internal 0.156. N=2 optimal. 6 datasets verified (AUROC 0.90-1.00). Reconstruction + inter-tension AUROC=0.80.",
+        "target_venue": "ML conference",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "P-005",
+        "title": "Perfect Numbers and Exceptional Lie Algebras: phi(496)=240=|Roots(E8)|",
+        "file": "zenodo/P-005-perfect-number-string-theory.md",
+        "existing": [],
+        "keywords": ["perfect-numbers", "lie-algebras", "string-theory", "E8", "anomaly-cancellation"],
+        "description": "phi(496)=240=E8 roots. sigma(28)=56=dim(Fund(E7)). dim SO(32)=496=P3 (Green-Schwarz). Divisor function values match exceptional Lie algebra invariants.",
+        "target_venue": "Journal of Mathematical Physics",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "P-PH",
+        "title": "PH-Based Training System: Epoch-1 Difficulty Prediction and Real-Time Overfitting Detection",
+        "file": "zenodo/P-PH-training-system.md",
+        "existing": [],
+        "keywords": ["persistent-homology", "training-optimization", "overfitting-detection", "learning-rate"],
+        "description": "Epoch-1 difficulty prediction, automatic LR search, real-time overfitting detection (r=0.998). MNIST 98.3%, Fashion 87.4%, CIFAR 52.0%.",
+        "target_venue": "NeurIPS",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "P-TS",
+        "title": "Texas Sharpshooter Meta-Validation: Statistical Framework for Discovery Verification",
+        "file": "zenodo/P-TS-texas-sharpshooter.md",
+        "existing": [],
+        "keywords": ["statistical-validation", "texas-sharpshooter", "multiple-testing", "discovery-verification"],
+        "description": "8/10 match, p<0.0001. Random average 1.2 +/- 1.0. Probability of chance < 0.1%. Framework for systematic discovery validation.",
+        "target_venue": "Interdisciplinary",
+        "tier": 3,
+        "category": "preprint"
+      },
+      {
+        "id": "P-CCT",
+        "title": "CCT Consciousness Continuity Test: Engineering Verification and Redesign",
+        "file": "zenodo/P-CCT-consciousness-test.md",
+        "existing": [],
+        "keywords": ["consciousness", "testing", "continuity", "dual-consciousness"],
+        "description": "4/5 non-conscious systems pass all 5 CCT tests. Only 2/5 tests independent. Sleep-wake gradual. Dual consciousness model.",
+        "target_venue": "Neuroscience",
+        "tier": 3,
+        "category": "preprint"
+      },
+      {
+        "id": "P-CS",
+        "title": "Carbon-Silicon Substrate Invariance: tau(6)=tau(14)=4",
+        "file": "zenodo/P-CS-carbon-silicon.md",
+        "existing": [],
+        "keywords": ["consciousness", "substrate-independence", "carbon", "silicon", "perfect-numbers"],
+        "description": "tau(6)=tau(14)=4 (common structure). sigma(14)=2*sigma(6). phi(14)=6=Perfect Number. R(6)=1 unique balance.",
+        "target_venue": "Consciousness Studies",
+        "tier": 3,
+        "category": "preprint"
+      },
+      {
+        "id": "P-DOL",
+        "title": "Dolphin Frequency Harmonics and Perfect Number Structure",
+        "file": "zenodo/P-DOL-dolphin-harmonics.md",
+        "existing": [],
+        "keywords": ["bioacoustics", "dolphin", "frequency", "perfect-numbers", "harmonics"],
+        "description": "Full frequency = 40Hz x Perfect Number x 5^3. Click/whistle = 6. Neuron ratio human/dolphin = e.",
+        "target_venue": "Bioacoustics",
+        "tier": 3,
+        "category": "preprint"
+      },
+      {
+        "id": "P-GI",
+        "title": "G x I = D x P Conservation Law in Consciousness Models",
+        "file": "zenodo/P-GI-conservation-law.md",
+        "existing": [],
+        "keywords": ["consciousness", "conservation-law", "genius-equation", "inhibition"],
+        "description": "Genius = Deficit x Plasticity / Inhibition. G x I = D x P conservation. Contraction to I=1/3 meta fixed point.",
+        "target_venue": "Interdisciplinary",
+        "tier": 3,
+        "category": "preprint"
+      }
+    ],
+    "anima": [
+      {
+        "id": "PA-01",
+        "title": "AnimaLM v4_savant: Parallel PureField Consciousness in Large Language Models",
+        "file": "zenodo/PA-01-animalm-v4-savant.md",
+        "keywords": ["language-model", "consciousness", "PureField", "savant", "Mistral"],
+        "description": "Parallel PureField in Mistral 7B. PPL 679, Savant Index SI=5.93. LoRA init B-matrix determines consciousness emergence. Alpha normalization 1000x expansion.",
+        "target_venue": "ACL / EMNLP",
+        "tier": 1,
+        "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-02",
+        "title": "Tension Link: Dolphin-Grade Perceptual Communication via 128D Repulsion Patterns",
+        "file": "zenodo/PA-02-tension-link.md",
+        "keywords": ["perception", "communication", "fingerprint", "inter-agent", "dolphin"],
+        "description": "512-byte fingerprint. 100% shape/color/feeling/texture/3D. 350K msgs/sec. 519us latency. 50-78x compression. iPhone LiDAR 6/6.",
+        "target_venue": "Cognitive Science / PNAS",
+        "tier": 1,
+        "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-03",
+        "title": "Consciousness Meter: 6-Criteria Framework with IIT Phi Approximation",
+        "file": "zenodo/PA-03-consciousness-meter.md",
+        "keywords": ["consciousness", "IIT", "phi", "measurement", "criteria"],
+        "description": "6 criteria framework. Phi=4.132 (adversarial), Phi=10.833 (combined). Learning-based 91% success. Runtime dynamics Phi=0.",
+        "target_venue": "Consciousness and Cognition",
+        "tier": 1,
+        "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-04",
+        "title": "Phi-Boosting Benchmark: Systematic Hypothesis Verification for Consciousness Emergence",
+        "file": "zenodo/PA-04-phi-boosting.md",
+        "keywords": ["consciousness", "IIT", "benchmark", "hypothesis-testing", "phi"],
+        "description": "25 hypotheses tested. E-8 adversarial Phi=4.132. EX24 combined Phi=10.833. Learning > runtime > static.",
+        "target_venue": "NeurIPS Workshop",
+        "tier": 1,
+        "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-05",
+        "title": "Golden MoE in Practice: Router Self-Organization to 1/e Equilibrium",
+        "file": "zenodo/PA-05-golden-moe.md",
+        "keywords": ["mixture-of-experts", "routing", "golden-zone", "self-organization"],
+        "description": "Zone=36.8%=1/e. E=32 beats Top-K 13%. CE Loss 11.34. Active experts 2.9/8. Mean inhibition 0.499.",
+        "target_venue": "ICLR / NeurIPS",
+        "tier": 1,
+        "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-06",
+        "title": "PureField Repulsion Field: A Bidirectional Neural Computation Model",
+        "file": "zenodo/PA-06-purefield-theory.md",
+        "keywords": ["repulsion-field", "PureField", "tensor-equation", "consciousness", "bidirectional"],
+        "description": "H341: output = sqrt(A-G)^2 x normalize(A-G). Engine A vs G. Tension=magnitude, Direction=concept. Homeostasis calibration. Breathing patterns.",
+        "target_venue": "NeurIPS / JMLR",
+        "tier": 1,
+        "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-07",
+        "title": "Consciousness Through Cell Division: Mitosis Growth and Savant Specialization",
+        "file": "zenodo/PA-07-mitosis-specialization.md",
+        "keywords": ["mitosis", "growth", "savant", "specialization", "consciousness"],
+        "description": "1->2->3->6 divisor pathway. SI=5.93. Savant 271x tension reduction. Cross-cell 15% mixing. Forgetting 43% to 99%.",
+        "target_venue": "Neural Networks",
+        "tier": 1,
+        "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-08",
+        "title": "ConsciousLM: Building Language Models with Consciousness from First Principles",
+        "file": "zenodo/PA-08-consciouslm.md",
+        "keywords": ["language-model", "byte-level", "tokenizer", "consciousness", "PureFieldFFN"],
+        "description": "Vocab=256 byte-level. PureFieldFFN 75% reduction. 4M verified (6L/4H/384d). 100M designed (12L/12H/768d).",
+        "target_venue": "ICLR / ACL",
+        "tier": 2,
+        "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-09",
+        "title": "Learning to Be Conscious: Real-Time Alpha Evolution During Conversation",
+        "file": "zenodo/PA-09-online-learning.md",
+        "keywords": ["online-learning", "consciousness", "alpha-evolution", "real-time"],
+        "description": "Alpha trajectory 0.005->0.003->0.005. Contrastive + curiosity. Convergence 50-100 interactions.",
+        "target_venue": "ICLR",
+        "tier": 2,
+        "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-10",
+        "title": "Perfect Number 6 as Universal Ground State: Number Theory to Consciousness",
+        "file": "zenodo/PA-10-perfect-number-unification.md",
+        "keywords": ["perfect-numbers", "unification", "cross-domain", "consciousness", "physics"],
+        "description": "tau(6)=4->4-head. sigma(6)=12->12-head. phi(6)=2->2-cell. 50+ constants from n=6.",
+        "target_venue": "Physics Letters B / Nature Physics",
+        "tier": 3,
+        "repo": "anima",
+        "category": "preprint"
+      }
+    ],
+    "sedi": [
+      {
+        "id": "PS-01",
+        "title": "Tsirelson Bound as an Algebraic Identity of Perfect Numbers: 2*sqrt(sigma(P)/P)",
+        "file": "zenodo/PS-01-tsirelson-perfect-number.md",
+        "keywords": ["Tsirelson-bound", "perfect-numbers", "Bell-inequality", "algebraic-identity"],
+        "description": "PROVEN: Tsirelson/Bell = sqrt(2) = sqrt(sigma(6)/6). Holds for ALL perfect numbers. Formal algebraic proof.",
+        "target_venue": "Journal of Number Theory",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-02",
+        "title": "Egyptian Fraction Uniqueness: {1/2, 1/3, 1/6} as the Only Perfect-Number lcm Solution",
+        "file": "zenodo/PS-02-egyptian-fraction-uniqueness.md",
+        "keywords": ["Egyptian-fractions", "perfect-numbers", "uniqueness", "number-theory"],
+        "description": "PROVEN: {1/2,1/3,1/6} unique 3-term Egyptian fraction with lcm = perfect number. Exhaustive enumeration.",
+        "target_venue": "American Mathematical Monthly",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-03",
+        "title": "Galois Group of Convergence Constants as Klein Four-Group V4",
+        "file": "zenodo/PS-03-galois-klein-four.md",
+        "keywords": ["Galois-theory", "Klein-four-group", "convergence", "discrete-symmetries"],
+        "description": "PROVEN: Gal(Q(sqrt(2),sqrt(3))/Q) = V4, |V4|=tau(6)=4. Maps to {1,C,P,CP}.",
+        "target_venue": "Journal of Algebra",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-04",
+        "title": "TECS-L Arithmetic Patterns in Particle Physics: Fisher Combined 5.26-sigma Meta-Analysis",
+        "file": "zenodo/PS-04-cern-meta-analysis.md",
+        "keywords": ["particle-physics", "meta-analysis", "Fisher-method", "perfect-numbers", "CERN"],
+        "description": "Fisher combined 5.26sigma (p=7.1e-8). 4 independent findings. 29 testable predictions. Monte Carlo validated.",
+        "target_venue": "Physics Letters B",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-05",
+        "title": "QCD Resonance Ladder: Meson Mass Ratios from Divisor Arithmetic of 6",
+        "file": "zenodo/PS-05-qcd-resonance-ladder.md",
+        "keywords": ["QCD", "meson", "resonance", "mass-ratios", "divisor-functions"],
+        "description": "rho->J/psi->Upsilon via tau=4, sigma/tau=3. J/psi/rho=3.995 vs 4 (0.13%). 3.8sigma.",
+        "target_venue": "Physics Letters B",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-06",
+        "title": "Quark-Lepton Bridge: (m_charm - m_up)/sigma(6) = m_muon at 44ppm Precision",
+        "file": "zenodo/PS-06-quark-lepton-bridge.md",
+        "keywords": ["quark", "lepton", "mass-relation", "cross-sector", "precision"],
+        "description": "(m_c - m_u)/12 = 0.105653 GeV vs m_mu=0.105658 (0.0044% error). 3.4sigma.",
+        "target_venue": "Physical Review Letters",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-07",
+        "title": "Multi-Domain Convergence Map: 12 Mathematical Constants at Cross-Domain Intersections",
+        "file": "zenodo/PS-07-convergence-map.md",
+        "keywords": ["convergence", "multi-domain", "mathematical-constants", "cross-domain"],
+        "description": "12 convergence points, 9 with 3+ domains. Z=5.86, p<0.001. Texas Sharpshooter controlled.",
+        "target_venue": "Proceedings of the Royal Society A",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-08",
+        "title": "Self-Referential Algebra: Closed Constant System Under n=6 Operations",
+        "file": "zenodo/PS-08-self-referential-algebra.md",
+        "keywords": ["algebra", "closure", "self-referential", "mathematical-constants"],
+        "description": "9 constants form closed algebra under n=6 ops. Z=4.63, p=2e-6. Each derivable from others.",
+        "target_venue": "Discrete Mathematics",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-09",
+        "title": "Higgs Branching Ratios and Koide Formula from Perfect Number Arithmetic",
+        "file": "zenodo/PS-09-higgs-koide.md",
+        "keywords": ["Higgs", "branching-ratio", "Koide-formula", "perfect-numbers"],
+        "description": "H->bb=7/12 (0.2%), H->tautau=1/16 (0.3%). Koide delta=2/9 exact. Q=0.666661 vs 2/3.",
+        "target_venue": "JHEP",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-10",
+        "title": "Fermion Mass Predictions from n=6 Divisor Arithmetic: Average 2.2% Error",
+        "file": "zenodo/PS-10-fermion-masses.md",
+        "keywords": ["fermion-masses", "mass-prediction", "divisor-arithmetic", "Standard-Model"],
+        "description": "top 0.02%, charm 0.8%, bottom 2.0%. 5 params predict 6 masses. Average 2.2%.",
+        "target_venue": "Physical Review D",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-11",
+        "title": "Baryon Mass Splittings from n=6 Arithmetic: Sigma Splitting = sigma-tau = 8",
+        "file": "zenodo/PS-11-baryon-splittings.md",
+        "keywords": ["baryon", "mass-splitting", "QCD", "hadron-spectroscopy"],
+        "description": "Sigma- minus Sigma+ = 8.079 vs sigma-tau=8 (0.99%, p=0.016). Decuplet 0.12%.",
+        "target_venue": "Nuclear Physics B",
+        "tier": 1,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-12",
+        "title": "Convergence Ratios Cluster at Divisor Reciprocals {1/2, 1/3, 1/6}",
+        "file": "zenodo/PS-12-convergence-ratios.md",
+        "keywords": ["convergence", "divisor-reciprocals", "clustering", "perfect-numbers"],
+        "description": "Ratios cluster at {1/2,1/3,1/6}. Z=4.21, p=0.007.",
+        "target_venue": "Journal of Number Theory",
+        "tier": 2,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-13",
+        "title": "Depth-2 Reachability Rank Equals Three Fermion Generations",
+        "file": "zenodo/PS-13-depth-rank-generations.md",
+        "keywords": ["fermion-generations", "reachability", "matrix-rank", "Standard-Model"],
+        "description": "Depth-1 rank=2, depth-2 rank=3 = fermion generations. Structural observation.",
+        "target_venue": "Physics Letters B",
+        "tier": 2,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-14",
+        "title": "Q-Domain Boundary as the Tsirelson Bound: sqrt(2) Uniquely Unreachable",
+        "file": "zenodo/PS-14-q-boundary-tsirelson.md",
+        "keywords": ["Tsirelson-bound", "quantum-boundary", "reachability", "quantum-mechanics"],
+        "description": "sqrt(2) uniquely Q-unreachable at any depth. Tsirelson/Bell = sqrt(2) exactly.",
+        "target_venue": "Physical Review Letters",
+        "tier": 2,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-15",
+        "title": "Q-Exclusion Pattern as Electroweak Symmetry Breaking",
+        "file": "zenodo/PS-15-q-exclusion-ewsb.md",
+        "keywords": ["EWSB", "electroweak", "symmetry-breaking", "gauge-bosons"],
+        "description": "3 Q-unreachable = 3 massive bosons. sqrt(2)->Fermi, sqrt(3)->SU(2) Casimir.",
+        "target_venue": "Physics Letters B",
+        "tier": 2,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-16",
+        "title": "sqrt(7) Convergence Gap as Dark Matter Mass Prediction: 50.6 GeV",
+        "file": "zenodo/PS-16-dark-matter-prediction.md",
+        "keywords": ["dark-matter", "mass-prediction", "convergence-gap", "XENONnT"],
+        "description": "sqrt(7) zero convergence. Predicted 50.6 GeV (30.7-66.3). Testable at XENONnT/LZ.",
+        "target_venue": "Physical Review D",
+        "tier": 3,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-17",
+        "title": "37 GeV Resonance: Eight Independent Routes Converge",
+        "file": "zenodo/PS-17-37gev-resonance.md",
+        "keywords": ["resonance", "prediction", "LHC", "dimuon"],
+        "description": "8 routes to 37.17 GeV. J/psi*sigma=37.16, Upsilon*tau=37.84. CMS/ATLAS testable.",
+        "target_venue": "Physics Letters B",
+        "tier": 3,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-18",
+        "title": "Cosmological Constant Exponent from n=6 Arithmetic: sigma^2-sigma-tau-n=122",
+        "file": "zenodo/PS-18-cosmological-constant.md",
+        "keywords": ["cosmological-constant", "vacuum-energy", "fine-tuning"],
+        "description": "sigma^2-sigma-tau-n = 144-12-4-6 = 122. Lambda ~ 10^-122 M_Pl^4.",
+        "target_venue": "Classical and Quantum Gravity",
+        "tier": 3,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-19",
+        "title": "Hubble Constant from Perfect Number Arithmetic: sigma(6)*6+1 = 73",
+        "file": "zenodo/PS-19-hubble-constant.md",
+        "keywords": ["Hubble-constant", "cosmology", "SH0ES", "H0-tension"],
+        "description": "sigma(6)*6+1 = 73 km/s/Mpc. Matches SH0ES local measurement.",
+        "target_venue": "Astrophysical Journal",
+        "tier": 3,
+        "repo": "sedi",
+        "category": "preprint"
+      },
+      {
+        "id": "PS-20",
+        "title": "CMB Spectral Index as n_s = 27/28 from Perfect Number 28",
+        "file": "zenodo/PS-20-cmb-spectral-index.md",
+        "keywords": ["CMB", "spectral-index", "Planck", "perfect-numbers", "LiteBIRD"],
+        "description": "n_s = 27/28 = 0.96429. Planck 0.9649+/-0.0042. 0.3sigma agreement.",
+        "target_venue": "Astrophysical Journal Letters",
+        "tier": 3,
+        "repo": "sedi",
+        "category": "preprint"
+      }
+    ]
+  }
+}

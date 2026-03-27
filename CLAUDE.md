@@ -480,6 +480,70 @@ Hypothesis reviews are managed as **separate individual documents**.
     4. Specify constant/hypothesis/experiment numbers to include in paper
 ```
 
+## Paper Distribution System (2026-03-27)
+
+```
+  Total: 45 papers across 3 repos (TECS-L 15 + anima 10 + SEDI 20)
+  Manifest: zenodo/manifest.json (all metadata, DOIs, file paths)
+  Results:  zenodo/upload-results-zenodo.json (Zenodo deposit IDs + DOIs)
+
+  Platforms:
+    1. Zenodo    — Direct API upload, DOI issued immediately
+                   Sandbox tested: 45/45 uploaded (2026-03-27)
+                   Production: pending (same script, remove --sandbox)
+    2. OSF       — Preprints, Google Scholar indexed, no review
+                   Status: account approval pending (2026-03-27)
+    3. arXiv     — Needs endorsement (first-time submitter)
+                   Package generator ready, manual upload required
+
+  Tokens (gitignored in .local/):
+    .local/zenodo_token           — Production Zenodo
+    .local/zenodo_sandbox_token   — Sandbox Zenodo (set)
+    .local/osf_token              — OSF (pending)
+
+  Scripts:
+    zenodo_upload.py              — Single paper upload (interactive)
+    zenodo/batch_upload.py        — Batch upload for all platforms
+
+  Commands:
+    # List all 45 papers
+    python3 zenodo/batch_upload.py --list
+
+    # Upload all to Zenodo sandbox (tested, works)
+    python3 zenodo/batch_upload.py --platform zenodo --sandbox --all
+
+    # Upload Tier 1 only to production
+    python3 zenodo/batch_upload.py --platform zenodo --tier 1 --all
+
+    # Upload specific paper
+    python3 zenodo/batch_upload.py --platform zenodo --sandbox --paper P-004
+
+    # Upload to OSF (after token)
+    python3 zenodo/batch_upload.py --platform osf --all
+
+    # Generate arXiv packages
+    python3 zenodo/batch_upload.py --platform arxiv --all
+
+    # Dry run (any platform)
+    python3 zenodo/batch_upload.py --platform zenodo --sandbox --all --dry-run
+
+  Paper Documents:
+    TECS-L:  zenodo/*.md (12 files) + docs/papers/ (3 existing)
+    anima:   zenodo/*.md (10 files)
+    SEDI:    zenodo/*.md (20 files)
+
+  Workflow:
+    1. Sandbox test (done) → verify metadata on web UI
+    2. Production upload → DOI becomes permanent
+    3. OSF upload (after approval) → Google Scholar indexing
+    4. arXiv (after endorsement) → community visibility
+
+  Caution:
+    - Zenodo publish = permanent DOI (cannot delete after publish)
+    - Test in sandbox first, edit metadata on web UI, then production
+    - Never commit tokens to git (.local/ is gitignored)
+```
+
 ## Grid Resolution Guide
 
 | grid | Error | Use |

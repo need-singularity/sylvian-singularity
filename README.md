@@ -1948,33 +1948,33 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 
 #### Tier 1: Ready to Submit
 
-| # | Target | Title | Evidence | Status | Document |
-|---|--------|-------|----------|--------|----------|
-| P-004 | Amer. Math. Monthly / J. Number Theory | The Arithmetic Uniqueness of 6: sigma-phi=n-tau Has No Solution Other Than n=6 | Proven theorem | 📝Draft | [P-004](docs/papers/P-004-sigma-phi-uniqueness.md) |
-| P-002 | Nature Machine Intelligence / ICLR | Universal Confusion Topology via Persistent Homology (r=-0.97, architecture-invariant) | S-Tier empirical | 📝Draft+LaTeX | [P-002](docs/papers/P-002-ph-confusion-universality.md) |
-| P-001 | NeurIPS / ICML | PureField Tension Architecture: Classification by Disagreement Alone (13 hypotheses unified) | S-Tier empirical | 📝Draft | [P-001](docs/papers/) |
-| P-EE | ICLR / MLSys | Energy Efficiency Trio: Phi6Simple 71% FLOPs + HCN Dims 10-20% params + Phi-Bottleneck 67% FFN | Verified empirical | ⏳Pending | — |
-| P-GMoE | NeurIPS / ICLR | Golden MoE: Optimal Expert Selection at I=1/e (CIFAR +4.8% vs Top-K) | Verified empirical | ⏳Pending | — |
-| P-N6 | arXiv math.NT | 208 Arithmetic Characterizations of Perfect Number 6 | Proven (T1-27) | ⏳Pending | [math/README.md](math/README.md) |
+| # | Target | Title | Evidence | Zenodo (sandbox) | Status |
+|---|--------|-------|----------|------------------|--------|
+| P-004 | Amer. Math. Monthly | sigma*phi=n*tau Has No Solution Other Than n=6 | Proven theorem | [10.5281/zenodo.474494](https://sandbox.zenodo.org/deposit/474494) | 📝Draft |
+| P-002 | Nature MI / ICLR | Universal Confusion Topology via PH (r=-0.97) | S-Tier empirical | [10.5281/zenodo.474490](https://sandbox.zenodo.org/deposit/474490) | 📝Draft+LaTeX |
+| P-001 | NeurIPS / ICML | PureField Tension Architecture (13 hypotheses unified) | S-Tier empirical | [10.5281/zenodo.474486](https://sandbox.zenodo.org/deposit/474486) | 📝Draft |
+| P-EE | ICLR / MLSys | Energy Efficiency Trio (71% FLOPs + 67% FFN) | Verified empirical | [10.5281/zenodo.474496](https://sandbox.zenodo.org/deposit/474496) | ⏳Pending |
+| P-GMoE | NeurIPS / ICLR | Golden MoE at I=1/e (CIFAR +4.8%) | Verified empirical | [10.5281/zenodo.474498](https://sandbox.zenodo.org/deposit/474498) | ⏳Pending |
+| P-N6 | arXiv math.NT | 208 Characterizations of Perfect Number 6 | Proven (T1-27) | [10.5281/zenodo.474500](https://sandbox.zenodo.org/deposit/474500) | ⏳Pending |
 
 #### Tier 2: Needs Additional Work
 
-| # | Target | Title | Evidence | Status | Needed |
-|---|--------|-------|----------|--------|--------|
-| P-003 | ICLR / NeurIPS | Topological Overfitting Detection: Epoch-1 Perfect Prediction (P@3=1.0) | S-Tier empirical | 📝Draft | Scale validation | [P-003](docs/papers/P-003-ph-generalization-gap.md) |
-| P-MIT | ML conference | Mitosis Anomaly Detection: Inter-Tension AUROC 0.805 (6 datasets) | Verified empirical | ⏳Pending | Paper writeup |
-| P-005 | J. Math. Physics | Perfect Numbers in String Theory: phi(496)=240=E8 roots | Proven+physics | ⏳Pending | Literature survey |
-| P-PH | NeurIPS | PH-Based Training System: r=0.998 Overfitting Detection | Verified empirical | ⏳Pending | Paper writeup |
+| # | Target | Title | Evidence | Zenodo (sandbox) | Needed |
+|---|--------|-------|----------|------------------|--------|
+| P-003 | ICLR / NeurIPS | Topological Overfitting Detection (P@3=1.0) | S-Tier empirical | [10.5281/zenodo.474492](https://sandbox.zenodo.org/deposit/474492) | Scale validation |
+| P-MIT | ML conference | Mitosis Anomaly Detection (AUROC 0.805) | Verified empirical | [10.5281/zenodo.474502](https://sandbox.zenodo.org/deposit/474502) | Paper writeup |
+| P-005 | J. Math. Physics | Perfect Numbers + Lie Algebras (phi(496)=240=E8) | Proven+physics | [10.5281/zenodo.474504](https://sandbox.zenodo.org/deposit/474504) | Literature survey |
+| P-PH | NeurIPS | PH Training System (r=0.998) | Verified empirical | [10.5281/zenodo.474506](https://sandbox.zenodo.org/deposit/474506) | Paper writeup |
 
 #### Tier 3: Theoretical / Long-term
 
-| # | Target | Title | Evidence | Status | Needed |
-|---|--------|-------|----------|--------|--------|
-| P-TS | Interdisciplinary | Texas Sharpshooter Meta-Validation: 8/10 match, p<0.0001 | Statistical | ⏳Pending | Supplementary analysis |
-| P-CCT | Neuroscience | CCT Consciousness Continuity Test: 4/5 Non-Conscious Pass = Redesign | Empirical | ⏳Pending | Paper writeup |
-| P-CS | Consciousness Studies | Carbon-Silicon Substrate Invariance: tau(6)=tau(14)=4 | Theoretical | ⏳Pending | Empirical validation |
-| P-DOL | Bioacoustics | Dolphin Frequency Harmonics: 40Hz x Perfect Number x 5^3 | Observational | ⏳Pending | Verification |
-| P-GI | Interdisciplinary | G x I = D x P Conservation Law in Consciousness Models | Model | ⏳Pending | Analytical proof |
+| # | Target | Title | Evidence | Zenodo (sandbox) | Needed |
+|---|--------|-------|----------|------------------|--------|
+| P-TS | Interdisciplinary | Texas Sharpshooter (8/10, p<0.0001) | Statistical | [10.5281/zenodo.474508](https://sandbox.zenodo.org/deposit/474508) | Supplementary |
+| P-CCT | Neuroscience | CCT Consciousness Test (4/5 pass) | Empirical | [10.5281/zenodo.474510](https://sandbox.zenodo.org/deposit/474510) | Paper writeup |
+| P-CS | Consciousness Studies | Carbon-Silicon Invariance tau(6)=tau(14)=4 | Theoretical | [10.5281/zenodo.474512](https://sandbox.zenodo.org/deposit/474512) | Validation |
+| P-DOL | Bioacoustics | Dolphin Frequency Harmonics | Observational | [10.5281/zenodo.474514](https://sandbox.zenodo.org/deposit/474514) | Verification |
+| P-GI | Interdisciplinary | G x I = D x P Conservation Law | Model | [10.5281/zenodo.474516](https://sandbox.zenodo.org/deposit/474516) | Proof |
 
 #### S-Tier Paper Plan (2026-03-27 Verification Audit)
 
