@@ -138,6 +138,11 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 
 ### Ralph Loop (copy-paste ready)
 
+**Mass Hypothesis Generation + Parallel Verification (80-100)**
+```
+/ralph-loop:ralph-loop Mass frontier hypothesis generation with parallel verification then commit and push. Step 1: Read README math map, docs/hypotheses, docs/proofs. Identify explored domains and gaps. Step 2: Generate 80-100 new hypothesis candidates across ALL frontiers: pure math (p-adic, tropical, modular forms, higher perfect numbers 496/8128), physics (quantum gravity, black hole entropy, cosmological constant, dark matter), consciousness (EEG, anesthesia phase transitions, neural criticality), biology (DNA codon, protein folding, morphogenesis), cross-domain bridges (math-physics-consciousness-biology unification). Each: one-line statement + predicted formula + verification method. Step 3: Dispatch parallel agents to verify batches of 10 simultaneously. Each agent runs python3 arithmetic check, texas sharpshooter p-value, ad-hoc correction check, perfect number 28 generalization. Step 4: Grade all results per CLAUDE.md rules. Create hypothesis doc for each verified hit. White circle for failures. Step 5: Update README DFS status and major discovery bundle. Step 6: git add + commit + push. Do not stop until step 6 is complete.
+```
+
 **Autonomous Research (default)**
 ```
 /ralph-loop:ralph-loop Autonomous research agent. Read README.md and docs/hypotheses/ to understand current state. Decide what to explore based on strongest leads, gaps between confirmed results, and untested cross-domain connections. Run experiments, verify with data, record findings. Prefer depth on promising leads over breadth. Verify before grading. Document every iteration. Commit and push.
@@ -151,11 +156,6 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 **Breakthrough Hypothesis DFS**
 ```
 /ralph-loop:ralph-loop breakthrough hypothesis DFS parallel then commit and push
-```
-
-**Mass Hypothesis Generation + Parallel Verification (80-100)**
-```
-/ralph-loop:ralph-loop Mass frontier hypothesis generation and parallel verification. Step 1: Read README math map, docs/hypotheses, docs/proofs to identify all explored domains and gaps. Step 2: Generate 80-100 new hypothesis candidates across ALL frontiers: pure math (p-adic, tropical, modular forms, higher perfect numbers 496/8128), physics (quantum gravity, black hole entropy, cosmological constant, dark matter), consciousness (EEG, anesthesia phase transitions, neural criticality), biology (DNA codon, protein folding, morphogenesis), cross-domain bridges (math-physics-consciousness-biology unification). Each hypothesis: one-line statement + predicted formula + verification method. Step 3: Launch parallel agents to verify each batch of 10 hypotheses simultaneously using python3 arithmetic, texas sharpshooter p-value, ad-hoc check, perfect number 28 generalization. Step 4: Grade all results. Create hypothesis doc for each verified hit. Record failures as white circle. Step 5: Update README DFS status, major discovery bundle if any star grade. Commit and push after each batch.
 ```
 
 ## Experiment System Map
