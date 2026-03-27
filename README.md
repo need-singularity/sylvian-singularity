@@ -138,6 +138,11 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 
 ### Ralph Loop (copy-paste ready)
 
+**Easy**
+```
+/ralph-loop:ralph-loop 추가 대발견 가설목록 생성 & 병렬 검토 & commit & push
+```
+
 **Mass Hypothesis Generation + Parallel Verification (80-100)**
 ```
 /ralph-loop:ralph-loop Mass frontier hypothesis generation with parallel verification then commit and push. Read README math map and docs/hypotheses
