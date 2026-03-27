@@ -1282,9 +1282,9 @@ function renderConstants() {
   document.getElementById('count').textContent = data.length + ' / ' + ATLAS.constant_maps.length;
 }
 
-var forceGraph = null;
+// ── Static graph (pre-computed layout, no simulation) ──
+var G = null;
 var graphInited = false;
-
 var GRAPH_REPO_COLORS = {'TECS-L': '#4A90D9', 'SEDI': '#E67E22', 'anima': '#2ECC71', 'golden-moe': '#F1C40F', 'conscious-lm': '#9B59B6', 'energy-efficiency': '#1ABC9C'};
 
 function gradeRadius(grade) {
@@ -1300,7 +1300,7 @@ function initGraph() {
   graphInited = true;
   var canvas = document.getElementById('graph-canvas');
   var container = document.getElementById('graph-container');
-  canvas.width = container.offsetWidth || container.parentElement.offsetWidth || document.body.clientWidth - 40;
+  canvas.width = container.offsetWidth || document.body.clientWidth - 40;
   if (canvas.width < 100) canvas.width = document.body.clientWidth - 40;
   canvas.height = 600;
 
@@ -1310,219 +1310,102 @@ function initGraph() {
       idx: i, id: n.id, shortId: shortId, title: n.title, repo: n.repo,
       grade: n.grade, color: GRAPH_REPO_COLORS[n.repo] || '#999',
       radius: gradeRadius(n.grade),
-      x: canvas.width/2 + (Math.random()-0.5) * canvas.width * 0.8,
-      y: canvas.height/2 + (Math.random()-0.5) * canvas.height * 0.8,
-      vx: 0, vy: 0, hidden: false, dimmed: false, highlighted: false
+      x: n.x, y: n.y,
+      hidden: false, dimmed: false
     };
   });
 
-  var edges = GRAPH.edges.map(function(e) {
-    return { source: e.source, target: e.target };
-  });
-
-  // Build adjacency for click-highlight
+  var edges = GRAPH.edges;
   var adj = {};
   nodes.forEach(function(n, i) { adj[i] = new Set(); });
   edges.forEach(function(e) { adj[e.source].add(e.target); adj[e.target].add(e.source); });
 
-  var statsEl = document.getElementById('graph-stats');
-  statsEl.textContent = nodes.length + ' nodes, ' + edges.length + ' edges';
+  document.getElementById('graph-stats').textContent = nodes.length + ' nodes, ' + edges.length + ' edges';
 
-  forceGraph = {
+  G = {
     nodes: nodes, edges: edges, adj: adj, canvas: canvas,
     ctx: canvas.getContext('2d'),
     transform: { x: 0, y: 0, k: 1 },
-    alpha: 1, running: true, dragging: null, selected: null,
-    dragStart: null, panStart: null, isPanning: false
+    selected: null, isPanning: false, panStart: null
   };
 
   setupGraphEvents();
-  tickGraph();
-}
-
-function autoFitGraph() {
-  var g = forceGraph;
-  if (!g || g.nodes.length === 0) return;
-  var xs = g.nodes.filter(function(n){return !n.hidden;}).map(function(n){return n.x;});
-  var ys = g.nodes.filter(function(n){return !n.hidden;}).map(function(n){return n.y;});
-  if (xs.length === 0) return;
-  var minX = Math.min.apply(null, xs), maxX = Math.max.apply(null, xs);
-  var minY = Math.min.apply(null, ys), maxY = Math.max.apply(null, ys);
-  var pad = 40;
-  var rangeX = maxX - minX + pad * 2;
-  var rangeY = maxY - minY + pad * 2;
-  var scaleX = g.canvas.width / rangeX;
-  var scaleY = g.canvas.height / rangeY;
-  var k = Math.min(scaleX, scaleY, 2);
-  g.transform.k = k;
-  g.transform.x = g.canvas.width / 2 - ((minX + maxX) / 2) * k;
-  g.transform.y = g.canvas.height / 2 - ((minY + maxY) / 2) * k;
-}
-
-function tickGraph() {
-  var g = forceGraph;
-  if (!g) return;
-  g.ticks = (g.ticks || 0) + 1;
-  if (g.alpha < 0.005 || g.ticks > 500) { g.running = false; autoFitGraph(); drawGraph(); return; }
-  g.alpha *= 0.99;
-  var nodes = g.nodes;
-  var edges = g.edges;
-  var W = g.canvas.width;
-  var H = g.canvas.height;
-
-  // Repulsion (many-body) -- O(n^2), fine for ~300 nodes
-  for (var i = 0; i < nodes.length; i++) {
-    for (var j = i + 1; j < nodes.length; j++) {
-      var dx = nodes[j].x - nodes[i].x;
-      var dy = nodes[j].y - nodes[i].y;
-      var d2 = dx * dx + dy * dy + 1;
-      var force = -2000 / d2;
-      var dist = Math.sqrt(d2);
-      var fx = force * dx / dist;
-      var fy = force * dy / dist;
-      nodes[i].vx -= fx; nodes[i].vy -= fy;
-      nodes[j].vx += fx; nodes[j].vy += fy;
-    }
-  }
-
-  // Attraction (links)
-  for (var ei = 0; ei < edges.length; ei++) {
-    var e = edges[ei];
-    var s = nodes[e.source]; var t = nodes[e.target];
-    var dx = t.x - s.x; var dy = t.y - s.y;
-    var d = Math.sqrt(dx * dx + dy * dy) + 1;
-    var force = (d - 100) * 0.008;
-    var fx = force * dx / d; var fy = force * dy / d;
-    s.vx += fx; s.vy += fy;
-    t.vx -= fx; t.vy -= fy;
-  }
-
-  // Center gravity
-  var cx = W / 2; var cy = H / 2;
-  for (var i = 0; i < nodes.length; i++) {
-    nodes[i].vx += (cx - nodes[i].x) * 0.002;
-    nodes[i].vy += (cy - nodes[i].y) * 0.002;
-  }
-
-  // Apply velocity with damping
-  for (var i = 0; i < nodes.length; i++) {
-    var n = nodes[i];
-    if (n === g.dragging) continue;
-    n.vx *= 0.7; n.vy *= 0.7;
-    n.x += n.vx;
-    n.y += n.vy;
-  }
-
   drawGraph();
-  requestAnimationFrame(tickGraph);
 }
 
 function drawGraph() {
-  var g = forceGraph;
-  if (!g) return;
-  var ctx = g.ctx;
-  var W = g.canvas.width; var H = g.canvas.height;
+  if (!G) return;
+  var ctx = G.ctx;
+  var W = G.canvas.width, H = G.canvas.height;
   ctx.clearRect(0, 0, W, H);
   ctx.save();
-  ctx.translate(g.transform.x, g.transform.y);
-  ctx.scale(g.transform.k, g.transform.k);
+  ctx.translate(G.transform.x, G.transform.y);
+  ctx.scale(G.transform.k, G.transform.k);
 
-  var nodes = g.nodes; var edges = g.edges;
-  var hasSel = g.selected !== null;
+  var nodes = G.nodes, edges = G.edges;
+  var hasSel = G.selected !== null;
 
-  // Draw edges
   for (var i = 0; i < edges.length; i++) {
     var e = edges[i];
-    var s = nodes[e.source]; var t = nodes[e.target];
+    var s = nodes[e.source], t = nodes[e.target];
     if (s.hidden || t.hidden) continue;
     var edgeDim = s.dimmed && t.dimmed;
-    var edgeHi = hasSel && (e.source === g.selected || e.target === g.selected);
+    var edgeHi = hasSel && (e.source === G.selected || e.target === G.selected);
     ctx.strokeStyle = edgeHi ? 'rgba(255,255,100,0.6)' : (edgeDim ? 'rgba(100,100,100,0.1)' : 'rgba(100,100,100,0.3)');
     ctx.lineWidth = edgeHi ? 1.5 : 0.5;
-    ctx.beginPath();
-    ctx.moveTo(s.x, s.y);
-    ctx.lineTo(t.x, t.y);
-    ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(t.x, t.y); ctx.stroke();
   }
 
-  // Draw nodes
   for (var i = 0; i < nodes.length; i++) {
     var n = nodes[i];
     if (n.hidden) continue;
-    var isHi = hasSel && (i === g.selected || g.adj[g.selected].has(i));
+    var isHi = hasSel && (i === G.selected || G.adj[G.selected].has(i));
     ctx.fillStyle = n.dimmed ? 'rgba(80,80,80,0.3)' : (isHi ? '#fff' : n.color);
-    ctx.beginPath();
-    ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
-    ctx.fill();
-    if (isHi) {
-      ctx.strokeStyle = n.color;
-      ctx.lineWidth = 2;
-      ctx.stroke();
-    }
-    // Label for large nodes
-    if (n.radius >= 8 && g.transform.k > 0.5 && !n.dimmed) {
-      ctx.fillStyle = '#ddd';
-      ctx.font = '9px monospace';
+    ctx.beginPath(); ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2); ctx.fill();
+    if (isHi) { ctx.strokeStyle = n.color; ctx.lineWidth = 2; ctx.stroke(); }
+    if (n.radius >= 8 && G.transform.k > 0.5 && !n.dimmed) {
+      ctx.fillStyle = '#ddd'; ctx.font = '9px monospace';
       ctx.fillText(n.shortId, n.x + n.radius + 3, n.y + 3);
     }
   }
   ctx.restore();
 }
 
-function canvasToWorld(g, cx, cy) {
-  return { x: (cx - g.transform.x) / g.transform.k, y: (cy - g.transform.y) / g.transform.k };
+function canvasToWorld(cx, cy) {
+  return { x: (cx - G.transform.x) / G.transform.k, y: (cy - G.transform.y) / G.transform.k };
 }
-
-function findNodeAt(g, wx, wy) {
-  for (var i = g.nodes.length - 1; i >= 0; i--) {
-    var n = g.nodes[i];
-    if (n.hidden) continue;
-    var dx = n.x - wx; var dy = n.y - wy;
-    if (dx * dx + dy * dy <= (n.radius + 3) * (n.radius + 3)) return i;
+function findNodeAt(wx, wy) {
+  for (var i = G.nodes.length - 1; i >= 0; i--) {
+    var n = G.nodes[i]; if (n.hidden) continue;
+    var dx = n.x - wx, dy = n.y - wy;
+    if (dx*dx + dy*dy <= (n.radius+3)*(n.radius+3)) return i;
   }
   return -1;
 }
 
 function setupGraphEvents() {
-  var g = forceGraph;
-  var canvas = g.canvas;
+  var canvas = G.canvas;
   var tooltip = document.getElementById('graph-tooltip');
 
   canvas.addEventListener('mousedown', function(ev) {
     var rect = canvas.getBoundingClientRect();
-    var mx = ev.clientX - rect.left; var my = ev.clientY - rect.top;
-    var w = canvasToWorld(g, mx, my);
-    var idx = findNodeAt(g, w.x, w.y);
-    if (idx >= 0) {
-      g.dragging = g.nodes[idx];
-      g.dragStart = { mx: mx, my: my, nx: g.nodes[idx].x, ny: g.nodes[idx].y };
-      // Reheat simulation on drag
-      if (!g.running) { g.alpha = 0.1; g.ticks = 400; g.running = true; tickGraph(); }
-    } else {
-      g.isPanning = true;
-      g.panStart = { mx: mx, my: my, tx: g.transform.x, ty: g.transform.y };
-    }
+    var mx = ev.clientX - rect.left, my = ev.clientY - rect.top;
+    G.isPanning = true;
+    G.panStart = { mx: mx, my: my, tx: G.transform.x, ty: G.transform.y };
   });
 
   canvas.addEventListener('mousemove', function(ev) {
     var rect = canvas.getBoundingClientRect();
-    var mx = ev.clientX - rect.left; var my = ev.clientY - rect.top;
-    if (g.dragging) {
-      var w = canvasToWorld(g, mx, my);
-      g.dragging.x = w.x;
-      g.dragging.y = w.y;
-      g.dragging.vx = 0; g.dragging.vy = 0;
-      if (!g.running) drawGraph();
-    } else if (g.isPanning && g.panStart) {
-      g.transform.x = g.panStart.tx + (mx - g.panStart.mx);
-      g.transform.y = g.panStart.ty + (my - g.panStart.my);
-      if (!g.running) drawGraph();
+    var mx = ev.clientX - rect.left, my = ev.clientY - rect.top;
+    if (G.isPanning && G.panStart) {
+      G.transform.x = G.panStart.tx + (mx - G.panStart.mx);
+      G.transform.y = G.panStart.ty + (my - G.panStart.my);
+      drawGraph();
     } else {
-      // Hover tooltip
-      var w = canvasToWorld(g, mx, my);
-      var idx = findNodeAt(g, w.x, w.y);
+      var w = canvasToWorld(mx, my);
+      var idx = findNodeAt(w.x, w.y);
       if (idx >= 0) {
-        var n = g.nodes[idx];
+        var n = G.nodes[idx];
         tooltip.innerHTML = '<b>' + esc(n.shortId) + '</b> ' + esc(n.grade || '') + '<br>' + esc(n.title) + '<br><span style="color:' + n.color + '">' + esc(n.repo) + '</span>';
         tooltip.style.display = 'block';
         tooltip.style.left = (mx + 12) + 'px';
@@ -1530,71 +1413,52 @@ function setupGraphEvents() {
         canvas.style.cursor = 'pointer';
       } else {
         tooltip.style.display = 'none';
-        canvas.style.cursor = g.isPanning ? 'grabbing' : 'grab';
+        canvas.style.cursor = 'grab';
       }
     }
   });
 
   canvas.addEventListener('mouseup', function(ev) {
-    if (g.dragging) {
-      g.dragging = null;
-      g.dragStart = null;
-    } else if (g.isPanning) {
-      g.isPanning = false;
-      g.panStart = null;
-    } else {
-      // Click -- select/deselect
-      var rect = canvas.getBoundingClientRect();
-      var mx = ev.clientX - rect.left; var my = ev.clientY - rect.top;
-      var w = canvasToWorld(g, mx, my);
-      var idx = findNodeAt(g, w.x, w.y);
-      if (idx >= 0 && g.selected !== idx) {
-        g.selected = idx;
-      } else {
-        g.selected = null;
-      }
-      if (!g.running) drawGraph();
-    }
+    if (G.isPanning) { G.isPanning = false; G.panStart = null; return; }
+    var rect = canvas.getBoundingClientRect();
+    var mx = ev.clientX - rect.left, my = ev.clientY - rect.top;
+    var w = canvasToWorld(mx, my);
+    var idx = findNodeAt(w.x, w.y);
+    G.selected = (idx >= 0 && G.selected !== idx) ? idx : null;
+    drawGraph();
   });
 
   canvas.addEventListener('mouseleave', function() {
     tooltip.style.display = 'none';
-    g.dragging = null; g.isPanning = false;
+    G.isPanning = false;
   });
 
   canvas.addEventListener('wheel', function(ev) {
     ev.preventDefault();
     var rect = canvas.getBoundingClientRect();
-    var mx = ev.clientX - rect.left; var my = ev.clientY - rect.top;
+    var mx = ev.clientX - rect.left, my = ev.clientY - rect.top;
     var delta = ev.deltaY > 0 ? 0.9 : 1.1;
-    var newK = Math.max(0.1, Math.min(5, g.transform.k * delta));
-    var ratio = newK / g.transform.k;
-    g.transform.x = mx - (mx - g.transform.x) * ratio;
-    g.transform.y = my - (my - g.transform.y) * ratio;
-    g.transform.k = newK;
-    if (!g.running) drawGraph();
+    var newK = Math.max(0.1, Math.min(5, G.transform.k * delta));
+    var ratio = newK / G.transform.k;
+    G.transform.x = mx - (mx - G.transform.x) * ratio;
+    G.transform.y = my - (my - G.transform.y) * ratio;
+    G.transform.k = newK;
+    drawGraph();
   }, { passive: false });
 }
 
 function renderGraph() {
-  if (!forceGraph) return;
-  var g = forceGraph;
+  if (!G) return;
   var hasSearch = searchText.length > 0;
-
-  // Apply search filter + repo filter to graph nodes
   var visibleCount = 0;
-  for (var i = 0; i < g.nodes.length; i++) {
-    var n = g.nodes[i];
-    var repoOk = activeRepos.has(n.repo);
-    var searchOk = !hasSearch || matches(n, searchText);
-    n.hidden = !repoOk;
-    n.dimmed = hasSearch && !searchOk;
+  for (var i = 0; i < G.nodes.length; i++) {
+    var n = G.nodes[i];
+    n.hidden = !activeRepos.has(n.repo);
+    n.dimmed = hasSearch && !matches(n, searchText);
     if (!n.hidden && !n.dimmed) visibleCount++;
   }
-
-  document.getElementById('count').textContent = visibleCount + ' / ' + g.nodes.length + ' nodes';
-
-  if (!g.running) drawGraph();
+  document.getElementById('count').textContent = visibleCount + ' / ' + G.nodes.length + ' nodes';
+  drawGraph();
 }
 
 init();
@@ -1678,6 +1542,96 @@ def write_html(atlas, htmlpath):
         ti = node_idx.get(e["target"])
         if si is not None and ti is not None:
             graph_edges.append({"source": si, "target": ti})
+
+    # ── Pre-compute force layout in Python ──
+    import math, random
+    random.seed(42)
+    W, H = 1200, 600
+    N = len(graph_nodes)
+
+    # Initialize positions
+    for n in graph_nodes:
+        n["x"] = W / 2 + (random.random() - 0.5) * W * 0.8
+        n["y"] = H / 2 + (random.random() - 0.5) * H * 0.8
+        n["vx"] = 0.0
+        n["vy"] = 0.0
+
+    # Build adjacency for link forces
+    link_pairs = [(e["source"], e["target"]) for e in graph_edges]
+
+    # Run simulation (500 iterations)
+    alpha = 1.0
+    for tick in range(500):
+        alpha *= 0.99
+        if alpha < 0.005:
+            break
+
+        # Repulsion (many-body) O(n^2)
+        for i in range(N):
+            ni = graph_nodes[i]
+            for j in range(i + 1, N):
+                nj = graph_nodes[j]
+                dx = nj["x"] - ni["x"]
+                dy = nj["y"] - ni["y"]
+                d2 = dx * dx + dy * dy + 1.0
+                force = -2000.0 / d2
+                dist = math.sqrt(d2)
+                fx = force * dx / dist
+                fy = force * dy / dist
+                ni["vx"] -= fx
+                ni["vy"] -= fy
+                nj["vx"] += fx
+                nj["vy"] += fy
+
+        # Attraction (links)
+        for si, ti in link_pairs:
+            s, t = graph_nodes[si], graph_nodes[ti]
+            dx = t["x"] - s["x"]
+            dy = t["y"] - s["y"]
+            d = math.sqrt(dx * dx + dy * dy) + 1.0
+            force = (d - 100) * 0.008
+            fx = force * dx / d
+            fy = force * dy / d
+            s["vx"] += fx
+            s["vy"] += fy
+            t["vx"] -= fx
+            t["vy"] -= fy
+
+        # Center gravity
+        cx, cy = W / 2, H / 2
+        for n in graph_nodes:
+            n["vx"] += (cx - n["x"]) * 0.002
+            n["vy"] += (cy - n["y"]) * 0.002
+
+        # Apply velocity with damping
+        for n in graph_nodes:
+            n["vx"] *= 0.7
+            n["vy"] *= 0.7
+            n["x"] += n["vx"]
+            n["y"] += n["vy"]
+
+    # Auto-fit: compute bounding box → normalize to canvas
+    xs = [n["x"] for n in graph_nodes]
+    ys = [n["y"] for n in graph_nodes]
+    if xs:
+        minX, maxX = min(xs), max(xs)
+        minY, maxY = min(ys), max(ys)
+        pad = 50
+        rangeX = maxX - minX + pad * 2
+        rangeY = maxY - minY + pad * 2
+        scaleX = W / rangeX if rangeX > 0 else 1
+        scaleY = H / rangeY if rangeY > 0 else 1
+        scale = min(scaleX, scaleY, 2.0)
+        offX = W / 2 - ((minX + maxX) / 2) * scale
+        offY = H / 2 - ((minY + maxY) / 2) * scale
+        for n in graph_nodes:
+            n["x"] = round(n["x"] * scale + offX, 1)
+            n["y"] = round(n["y"] * scale + offY, 1)
+
+    # Strip velocity fields before serialization
+    for n in graph_nodes:
+        del n["vx"]
+        del n["vy"]
 
     graph_data = json.dumps({"nodes": graph_nodes, "edges": graph_edges}, ensure_ascii=False)
 
