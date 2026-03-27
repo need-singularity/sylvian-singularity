@@ -3,3 +3,5 @@ __pycache__/
 .local/
 .env
 dimuon_data.csv
+eeg_env/
+eeg/data/
