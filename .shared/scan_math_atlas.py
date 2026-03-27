@@ -1014,8 +1014,8 @@ td.title-col { white-space: normal; max-width: 500px; }
 tr:hover { background: #16213e; }
 .count { background: #16213e; padding: 5px 10px; border-radius: 4px; font-size: 0.8em; color: #888; white-space: nowrap; }
 .no-results { text-align: center; padding: 40px; color: #555; }
-#graph-container { display: none; position: relative; width: 100%; min-height: 600px; }
-#graph-canvas { background: #0f0f23; border-radius: 4px; cursor: grab; width: 100%; height: 600px; display: block; }
+#graph-container { display: none; position: relative; width: 100%; min-height: 800px; }
+#graph-canvas { background: #0f0f23; border-radius: 4px; cursor: grab; width: 100%; height: 800px; display: block; }
 #graph-canvas:active { cursor: grabbing; }
 #graph-tooltip { position: absolute; display: none; padding: 6px 10px; background: rgba(22,33,62,0.95); border: 1px solid #444; border-radius: 4px; font-size: 0.8em; pointer-events: none; max-width: 300px; white-space: nowrap; color: #e0e0e0; z-index: 10; }
 #graph-stats { position: absolute; top: 10px; right: 10px; font-size: 0.75em; color: #666; }
@@ -1052,7 +1052,7 @@ tr:hover { background: #16213e; }
 <div class="table-wrap" id="hypotheses-table"></div>
 <div class="table-wrap" id="constants-table" style="display:none"></div>
 <div id="graph-container" style="display:none">
-  <canvas id="graph-canvas" height="600"></canvas>
+  <canvas id="graph-canvas" height="800"></canvas>
   <div id="graph-tooltip"></div>
   <div id="graph-stats"></div>
 </div>
@@ -1285,7 +1285,18 @@ function renderConstants() {
 // ── Static graph (pre-computed layout, no simulation) ──
 var G = null;
 var graphInited = false;
-var GRAPH_REPO_COLORS = {'TECS-L': '#4A90D9', 'SEDI': '#E67E22', 'anima': '#2ECC71', 'golden-moe': '#F1C40F', 'conscious-lm': '#9B59B6', 'energy-efficiency': '#1ABC9C'};
+// Grade-based colors (emoji → color)
+function gradeColor(grade) {
+  if (!grade) return '#556677';
+  if (grade.indexOf('\u2b50') >= 0 || grade.indexOf('\u2605') >= 0) return '#FFD700';
+  if (grade.indexOf('\uD83D\uDFE9') >= 0) return '#2ECC71';
+  if (grade.indexOf('\uD83D\uDFE7') >= 0) return '#E67E22';
+  if (grade.indexOf('\uD83D\uDFE6') >= 0) return '#3498DB';
+  if (grade.indexOf('\u2705') >= 0) return '#27AE60';
+  if (grade.indexOf('\u26AA') >= 0) return '#7F8C8D';
+  if (grade.indexOf('\u2B1B') >= 0) return '#2C3E50';
+  return '#556677';
+}
 
 function gradeRadius(grade) {
   if (!grade) return 4;
@@ -1302,13 +1313,13 @@ function initGraph() {
   var container = document.getElementById('graph-container');
   canvas.width = container.offsetWidth || document.body.clientWidth - 40;
   if (canvas.width < 100) canvas.width = document.body.clientWidth - 40;
-  canvas.height = 600;
+  canvas.height = 800;
 
   var nodes = GRAPH.nodes.map(function(n, i) {
     var shortId = n.id.indexOf(':') >= 0 ? n.id.substring(n.id.indexOf(':') + 1) : n.id;
     return {
       idx: i, id: n.id, shortId: shortId, title: n.title, repo: n.repo,
-      grade: n.grade, color: GRAPH_REPO_COLORS[n.repo] || '#999',
+      grade: n.grade, color: gradeColor(n.grade),
       radius: gradeRadius(n.grade),
       x: n.x, y: n.y,
       hidden: false, dimmed: false
@@ -1546,13 +1557,15 @@ def write_html(atlas, htmlpath):
     # ── Pre-compute force layout in Python ──
     import math, random
     random.seed(42)
-    W, H = 1200, 600
+    W, H = 1200, 800
     N = len(graph_nodes)
 
-    # Initialize positions
+    # Initialize positions (spread proportional to canvas aspect ratio)
     for n in graph_nodes:
-        n["x"] = W / 2 + (random.random() - 0.5) * W * 0.8
-        n["y"] = H / 2 + (random.random() - 0.5) * H * 0.8
+        angle = random.random() * 2 * math.pi
+        r = random.random() * 250
+        n["x"] = W / 2 + math.cos(angle) * r * 1.5  # wider horizontal
+        n["y"] = H / 2 + math.sin(angle) * r
         n["vx"] = 0.0
         n["vy"] = 0.0
 
@@ -1561,8 +1574,8 @@ def write_html(atlas, htmlpath):
 
     # Run simulation (500 iterations)
     alpha = 1.0
-    for tick in range(500):
-        alpha *= 0.99
+    for tick in range(800):
+        alpha *= 0.995
         if alpha < 0.005:
             break
 
@@ -1574,8 +1587,10 @@ def write_html(atlas, htmlpath):
                 dx = nj["x"] - ni["x"]
                 dy = nj["y"] - ni["y"]
                 d2 = dx * dx + dy * dy + 1.0
-                force = -2000.0 / d2
                 dist = math.sqrt(d2)
+                # Coulomb-like repulsion, capped at min distance 20
+                eff_dist = max(dist, 20.0)
+                force = -3000.0 / (eff_dist * eff_dist)
                 fx = force * dx / dist
                 fy = force * dy / dist
                 ni["vx"] -= fx
@@ -1589,7 +1604,7 @@ def write_html(atlas, htmlpath):
             dx = t["x"] - s["x"]
             dy = t["y"] - s["y"]
             d = math.sqrt(dx * dx + dy * dy) + 1.0
-            force = (d - 100) * 0.008
+            force = (d - 120) * 0.006
             fx = force * dx / d
             fy = force * dy / d
             s["vx"] += fx
@@ -1597,16 +1612,16 @@ def write_html(atlas, htmlpath):
             t["vx"] -= fx
             t["vy"] -= fy
 
-        # Center gravity
+        # Weak center gravity (just prevent drift)
         cx, cy = W / 2, H / 2
         for n in graph_nodes:
-            n["vx"] += (cx - n["x"]) * 0.002
-            n["vy"] += (cy - n["y"]) * 0.002
+            n["vx"] += (cx - n["x"]) * 0.0008
+            n["vy"] += (cy - n["y"]) * 0.0008
 
         # Apply velocity with damping
         for n in graph_nodes:
-            n["vx"] *= 0.7
-            n["vy"] *= 0.7
+            n["vx"] *= 0.75
+            n["vy"] *= 0.75
             n["x"] += n["vx"]
             n["y"] += n["vy"]
 
