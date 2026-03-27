@@ -4455,7 +4455,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
   Strong results:
 
   🟩  |W(E_6)| = kiss(E_6) * n! = 51840 = n*sigma*n!  H-TOP-8
-  🟩  |Aut(del Pezzo deg 6)| = 72 = n*sigma = kiss(E_6)  H-TOP-8
+  🟩  del Pezzo deg 6: χ=n=6, (-1)-curves=n=6, ρ=τ=4 (unique degree where χ=d AND curves=d)  H-TOP-8
   🟩  Theta_7 = 28 = P_2 = sigma(sigma(n)) (exotic 7-spheres, Kervaire-Milnor)  H-TOP-8
   🟩  SO(6) = SU(4) (accidental isomorphism, unique to dim 6)  H-TOP-8
   🟩  dim(E_6) = 78 = n(2n+1) = dim(Sp(12))  H-TOP-8
@@ -4474,7 +4474,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 
   Package:
 
-  🟩  del Pezzo deg 6 package: chi=n, (-1)-curves=n, |Aut|=n*sigma, rho=tau  H-TOP-8
+  🟩  del Pezzo deg 6 package: chi=n, (-1)-curves=n, rho=tau (unique degree where chi=d AND curves=d)  H-TOP-8
 
   H-SPEC-1 extensions (new theorem candidates):
 
@@ -4766,7 +4766,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-PH-12](docs/hypotheses/H-PH-12-kaon-P3-symmetry.md) | ⭐⭐⭐ kaon=P₃±φ | 🟧★ | K⁺=494(0.065%), K⁰=498(0.078%), π⁰=135(0.017%) |
 | [H-PH-13](docs/hypotheses/H-PH-13-ckm-divisor.md) | ⭐⭐ CKM+α_s | 🟧 | Vus=√7/12, Vcb=1/24, α_s=2/17(0.3%) |
 | [H-PH-14](docs/hypotheses/H-PH-14-hadron-mass-spectrum.md) | ⭐⭐⭐ hadron spectrum | 🟧★ | 24 particles 11<0.1%, Δ=σ³-P₃=1232(exact!), B⁰=5280(0.007%) |
-| [H-PH-15](docs/hypotheses/H-PH-15-anomaly-perfect-theorem.md) | ⭐⭐⭐🟩 anomaly cancellation⟺perfect numbers | 🟩 proven | dim(SO(2^p))=P_k ⟺ Mersenne prime |
+| [H-PH-15](docs/hypotheses/H-PH-15-anomaly-perfect-theorem.md) | ⭐⭐⭐ anomaly cancellation⟺perfect numbers | 🟧 observation (Green-Schwarz dim(G)=496=P₃, biconditional not established) | dim(SO(2^p))=P_k ⟺ Mersenne prime |
 | [H-PH-16](docs/hypotheses/H-PH-16-self-reference-cycle.md) | ⭐⭐⭐🟩 self-reference cycle | 🟩 proven | 6→12→28→6 unique perfect number cycle |
 | [H-PH-17](docs/hypotheses/H-PH-17-zip-divisor-equivalence.md) | ⭐⭐ ZIP↔divisor field theory | 🟧 | δ=2/9 double derivation, bridge identity σ/τ=τ-1 |
 | [H-PH-18](docs/hypotheses/H-PH-18-nuclear-magic-numbers.md) | ⭐⭐⭐ nuclear magic numbers 7/7 | 🟧★ p=0.014 | 2=φ,8=σ-τ,20=σφ-τ,28=P₂,50=στ+φ,82=P₂(σ/τ)-φ,126=P₃/τ+φ |

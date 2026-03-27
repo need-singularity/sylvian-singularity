@@ -1790,6 +1790,9 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 | [H-CX-325](docs/hypotheses/H-CX-325-s6-outer-automorphism.md) | ⭐⭐⭐🟦 S₆ outer auto unique | 🟦 | 6 unique even in symmetric group |
 | [H-CX-332](docs/hypotheses/H-CX-332-string-theory-6-extra.md) | ⭐⭐⭐ String theory extra dimensions=P₁=6 | 🟩 | 10D=4+6 |
 | [H-CX-338](docs/hypotheses/H-CX-338-homotopy-pi6-s3-z12.md) | ⭐⭐⭐ π₆(S³)=Z₁₂ | 🟩 | σ(6) in homotopy |
+| [H-GEO-12](docs/hypotheses/H-GEO-12-homotopy-sigma.md) | ⭐🟩 π₆(S³)=Z/σ(6)Z full analysis | 🟩 | spike at k=6, irregular sequence, Toda 1962 |
+| [H-TOP-9](docs/hypotheses/H-TOP-9-adams-e-invariant.md) | ⭐🟩 |im(J)₇|=240=σ×τ×sopfr | 🟩 | Adams J-homomorphism, Bernoulli B₄ denominator |
+| [H-NT-3](docs/hypotheses/H-NT-3-popcount-phi.md) | ⭐🟩 popcount(n)=φ(n) iff n∈Div(6) | 🟩 | provable: {1,2,3,6} only solutions, finite check |
 | [H-CX-341](docs/hypotheses/H-CX-341-hph9-cross-standard-model.md) | H-PH-9 cross SM | 🟧 | (downgraded 2026-03-27: mixes strong math with weak counting) |
 | H-AG-1 | ⭐⭐⭐ n=6 BSD Cascade: all arithmetic invariants of E6 encode n | 🟩★ | CM disc=-sigma/tau, Tors=Z/6Z, cond=n^2, Tamagawa prod=n |
 | H-AG-2 | ⭐ CM disc = -sigma(6)/tau(6) = -3, unique among perfect numbers | 🟩★ | -3=-(12/4), fails for n=28 (non-integer) |
