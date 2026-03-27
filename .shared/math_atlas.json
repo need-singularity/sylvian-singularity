@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T08:08:43",
+  "generated": "2026-03-28T08:12:05",
   "stats": {
-    "TECS-L": 1075,
+    "TECS-L": 1077,
     "SEDI": 665,
     "anima": 20,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 1705,
+  "total": 1707,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -7581,6 +7581,16 @@
       "file": "docs/hypotheses/H-CX-bridge-6criteria-R6.md"
     },
     {
+      "id": "TECS-L:H-CX-bridge-egyptian-golden-moe",
+      "title": "H-CX-Bridge-6: Egyptian MoE {1/2,1/3,1/6} = Golden MoE Optimal Weights",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-egyptian-golden-moe.md"
+    },
+    {
       "id": "TECS-L:H-CX-bridge-epoch1-ph-tension",
       "title": "H-CX-Bridge-5: Epoch-1 Crystallization = Tension + PH Topology",
       "repo": "TECS-L",
@@ -7623,6 +7633,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-CX-bridge-phi-bottleneck.md"
+    },
+    {
+      "id": "TECS-L:H-CX-bridge-phi-tension-master",
+      "title": "H-CX-Bridge-7: Phi/tension = sigma*phi = 24 (Master Identity)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟧★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-phi-tension-master.md"
     },
     {
       "id": "TECS-L:H-DEEP-429",
