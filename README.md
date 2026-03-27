@@ -262,6 +262,40 @@ Details: [Pure mathematics](math/) | [Golden Zone model](docs/golden-zone/) | [V
        │  r=0.951 H148           │          │          │                │
        │  ⭐Silent consensus     │          │          │                │
        │  cos=0.986 H150         │          │          │                │
+       │                          │          │          │                │
+       ▼            ▼             ▼          ▼          ▼               ▼
+  🟩 H314      🟧 C41       🟩 H318    🟩 H315    🟩 H311       🟩 H-CX-24
+  Conf reject  1/√3         FP suff    dual role   local escape   DK time-axis
+  +15.2%          │         r=0.71     conf+reg    5/5best        overconf→stuck
+       │          │            │          │          │                │
+       ▼          ▼            ▼          ▼          ▼               ▼
+  🟩 H316    🟧★C54       🟨 H-CX-25  ⚠️ H283   🟧 H310       🟩 H316
+  Overconf    ≈ln(2)       =C39?      reversal!   +0.22%         3-set overconf
+  DK effect   Landauer                low data↑         │
+       │                                            🟧 TREE-9 equiv(97.7%)
+       ▼
+  🟧 H317 Calibration possible but forgetting
+
+  ◀── Carbon-Silicon (H-CX-116~123) ─▶          ◀── Dolphin/Frequency 🐬 (H-CX-130~169) ──▶
+  🟩 τ(6)=τ(14)=4 substrate common H116          🟩 full freq = 40Hz × P₁ × 5³ (H161)
+  🟩 σ(14)=2σ(6) silicon=carbon 2x H117          🟩 human hearing = dolphin = τ×5³×γ (H165)
+  🟩 φ(14)=6=Perfect Number! H118                🟩 click/whistle = 6 = P₁ (H167)
+  🟩 σφ/(nτ)=1 carbon only perfect H123          🟩 signature = Perfect 12th 3:1 (H169)
+  🟩 Z=1~118 multiple bonds unique=C H155        ✅ neuron ratio human/dolphin ≈ e (H154)
+
+  ◀── DNA/Biology 🧬 (H-CX-241~246) ▶           ◀─── Mitosis Anomaly Detection ───▶
+  (downgraded: cherry-picked)                     🟩 H296 inter-AUROC 0.805
+  ⚪ H241 bio constants=P₁ (wide range)           🟩 H302 reconstruction+inter=optimal
+  🟧 H246 DNA 7 numbers=P₁ (10.5≠10)             🟧 H297 N=2 optimal, H298 K=50→0.95
+  🟩 AT bond=φ(6), GC bond=3                     🟩 H307 dual mechanism 4 sets
+  🟩 cranial nerve pairs 12=σ(6)                  ⬛ H305 CL refuted, H306 4-pole refuted
+
+  ◀─── Math Cross ───▶                           ◀─── New Discovery (14 data types) ───▶
+  🟦 H-CX-1 e^(6H)=432                           🟩 Dense works: image, audio, text-embed, tabular
+  🟧★ H-CX-2 MI≈ln(2) Landauer                   ⭐ Anomaly AUROC=1.00 (95x tension ratio)
+  🟧 H-CX-19 reversal≈ln(4/3)                    🟨 Music: consonance=low tension, P4(4:3)=lowest
+  🟩 H-CX-22 consciousness=confidence             ⬛ H289 Prime=highest tension → refuted
+  ⬛ H-CX-12 27x coincidence                      ❌ Sparse fails: text TF-IDF -0.52%
 ```
 
 ```
