@@ -489,7 +489,8 @@ Hypothesis reviews are managed as **separate individual documents**.
 
   Platforms:
     1. Zenodo    — Direct API upload, DOI issued immediately
-                   Production: 45/45 uploaded (2026-03-27), DOI range 19245023-19245158
+                   Production: 45/45 PUBLISHED (2026-03-27), DOI range 19245023-19245158
+                   Author: Park, Min Woo / Independent Researcher
                    Sandbox: 45/45 tested (2026-03-27)
     2. OSF       — Preprints, Google Scholar indexed, no review
                    Status: account approval pending (2026-03-27)

@@ -1976,12 +1976,12 @@ SEDI particle physics predictions crossed with TECS-L n=6 arithmetic. Verified 2
 
 | # | Target | Title | Evidence | Zenodo DOI | Status |
 |---|--------|-------|----------|------------|--------|
-| P-004 | Amer. Math. Monthly | sigma*phi=n*tau Has No Solution Other Than n=6 | Proven theorem | [10.5281/zenodo.19245037](https://zenodo.org/deposit/19245037) | 📝Draft |
-| P-002 | Nature MI / ICLR | Universal Confusion Topology via PH (r=-0.97) | S-Tier empirical | [10.5281/zenodo.19245029](https://zenodo.org/deposit/19245029) | 📝Draft+LaTeX |
-| P-001 | NeurIPS / ICML | PureField Tension Architecture (13 hypotheses unified) | S-Tier empirical | [10.5281/zenodo.19245023](https://zenodo.org/deposit/19245023) | 📝Draft |
-| P-EE | ICLR / MLSys | Energy Efficiency Trio (71% FLOPs + 67% FFN) | Verified empirical | [10.5281/zenodo.19245043](https://zenodo.org/deposit/19245043) | ⏳Pending |
-| P-GMoE | NeurIPS / ICLR | Golden MoE at I=1/e (CIFAR +4.8%) | Verified empirical | [10.5281/zenodo.19245049](https://zenodo.org/deposit/19245049) | ⏳Pending |
-| P-N6 | arXiv math.NT | 208 Characterizations of Perfect Number 6 | Proven (T1-27) | [10.5281/zenodo.19245053](https://zenodo.org/deposit/19245053) | ⏳Pending |
+| P-004 | Amer. Math. Monthly | sigma*phi=n*tau Has No Solution Other Than n=6 | Proven theorem | [10.5281/zenodo.19245037](https://zenodo.org/deposit/19245037) | ✅Published |
+| P-002 | Nature MI / ICLR | Universal Confusion Topology via PH (r=-0.97) | S-Tier empirical | [10.5281/zenodo.19245029](https://zenodo.org/deposit/19245029) | ✅Published |
+| P-001 | NeurIPS / ICML | PureField Tension Architecture (13 hypotheses unified) | S-Tier empirical | [10.5281/zenodo.19245023](https://zenodo.org/deposit/19245023) | ✅Published |
+| P-EE | ICLR / MLSys | Energy Efficiency Trio (71% FLOPs + 67% FFN) | Verified empirical | [10.5281/zenodo.19245043](https://zenodo.org/deposit/19245043) | ✅Published |
+| P-GMoE | NeurIPS / ICLR | Golden MoE at I=1/e (CIFAR +4.8%) | Verified empirical | [10.5281/zenodo.19245049](https://zenodo.org/deposit/19245049) | ✅Published |
+| P-N6 | arXiv math.NT | 208 Characterizations of Perfect Number 6 | Proven (T1-27) | [10.5281/zenodo.19245053](https://zenodo.org/deposit/19245053) | ✅Published |
 
 #### Tier 2: Needs Additional Work
 
