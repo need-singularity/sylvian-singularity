@@ -1,85 +1,69 @@
-# Frontier 800 (Round 8): Systematic Characterization Search
+# Frontier 800: Round 8 — Differential Geometry to Mathematical Biology
 
-> 74 hypotheses via systematic scanning. Generated + verified 2026-03-27.
-> Strategy: computationally scan f(n)=g(n) for n=2..200.
+Generated: 2026-03-27
+Domains: 8 (Diff Geometry, Harmonic Analysis, Optimization, Graph Spectral, Cryptography, Category Theory, Measure Theory, Math Biology)
+Total: 80 hypotheses
+Arithmetic PASS: 80/80 (100%)
 
-## Summary
+## Grade Distribution
 
-| Category | Generated | PASS | FAIL | 🟩 | 🟧★ | 🟧 | ⚪ | ⬛ |
-|----------|-----------|------|------|-----|------|-----|-----|-----|
-| Systematic Scans | 14 | 12 | 2 | 2 | 7 | 3 | 0 | 2 |
-| Characterizations | 20 | 20 | 0 | 0 | 14 | 6 | 0 | 0 |
-| Number Theory | 20 | 20 | 0 | 0 | 1 | 18 | 1 | 0 |
-| Synthesis | 20 | 20 | 0 | 0 | 6 | 14 | 0 | 0 |
-| **Total** | **74** | **72** | **2** | **2** | **28** | **41** | **1** | **2** |
+| Grade | Count | % |
+|-------|-------|---|
+| 🟩 | 8 | 10% |
+| 🟧★ | 6 | 8% |
+| 🟧 | 53 | 66% |
+| ⚪ | 13 | 16% |
+| ⬛ | 0 | 0% |
 
-## Major New Characterizations
+## Highlights
 
-### 1. n*tau(n) = sigma(n)*omega(n): ONLY n=6 in [2,200] (H-NT-432)
-
-```
-6*4 = 12*2 = 24
-Proved for semiprimes: (p-1)(q-1)=2 forces p=2,q=3.
-Other factorization types ruled out.
-```
-
-### 2. phi(n)+tau(n)=n AND sigma(n)=2n: ONLY n=6 (H-SYNTH-14/15)
+### S⁶ Differential Geometry Chain
 
 ```
-phi(6)+tau(6) = 2+4 = 6 = n
-sigma(6) = 12 = 2*6
-Conjunction uniquely characterizes 6 among ALL integers.
-phi+tau=n alone: solutions {6, 8, 9}
-sigma=2n alone: solutions {6, 28, 496, ...}
-Intersection: {6}
+  Property of S⁶          Value   n=6 expression
+  ────────────────         ─────   ──────────────
+  Ric(S⁶)                 5g      sopfr·g
+  Scalar curvature R       30      C(n,2)·φ
+  Nearly Kähler             YES    UNIQUE among S^n (n>2)
+  Spin(6) ≅ SU(4)          YES    Exceptional isomorphism
+  SO(6) ≅ SU(4)/Z₂         YES    Exceptional isomorphism
+  dim SO(6)                 15     C(n,2)
+  dim Gr(2,6)               8     σ-τ
+  dim V₂(R⁶)                9     n+σ/τ
 ```
 
-### 3. sigma(n) = phi(n)*sopfr(n) + omega(n): n in {2, 6} (H-NT-433)
+### Fractal Dimension Chain (Measure Theory)
 
 ```
-12 = 2*5 + 2
-Master decomposition: divisor sum = totient*prime_weight + prime_count.
-Only n=6 among perfect numbers.
+  Fractal              dim_H        n=6 expression
+  ───────              ─────        ──────────────
+  Cantor set           0.631        ln(φ)/ln(σ/τ)
+  Koch snowflake       1.262        ln(τ)/ln(σ/τ)
+  Sierpinski triangle  1.585        ln(σ/τ)/ln(φ)
+  Menger sponge        2.727        ln(sopfr·τ)/ln(σ/τ)
+
+  ALL four classical fractals expressed via {φ,τ,σ/τ,sopfr}!
 ```
 
-### 4. phi*sopfr = sigma - omega: n in {2, 6}
+### Cryptography Connections
 
 ```
-2*5 = 10 = 12-2
-Equivalent to master identity above.
+  System          Parameter    Value    n=6 expression
+  ──────          ─────────    ─────    ──────────────
+  RSA modulus     smallest     6        n = 2·3
+  DES key         bits         56       σ(P₂) = σ(28)
+  SHA-256         rounds       64       2^n
+  P-256           field exp    256      2^(σ-τ) = 2^8
+  GF(64)          mult order   63       (n+1)·(σ/τ)²
+  Affine cipher   keys mod n   12       σ = φ·n
 ```
 
-### 5. phi(sigma(n)) = n - omega(n): n in {3, 6}
+## Biology Saturation Confirmed (Again)
 
-```
-phi(12) = 4 = 6-2
-Near-unique: also n=3 (phi(4)=2=3-1).
-```
-
-### 6. sigma*phi/n = tau: ONLY n=6 among tested range
-
-```
-12*2/6 = 4 = tau(6)
-Equivalently: sigma*phi = n*tau = 24.
-```
-
-### 7. 6 is the only number that is perfect + factorial + primorial + highly composite
-
-```
-Perfect: sigma(6)=12=2*6 ✓
-Factorial: 6=3! ✓
-Primorial: 6=2*3=2# ✓
-Highly composite: tau(6)>tau(m) for all m<6 ✓
-Triangular: 6=T_3 ✓
-Practical: all 1..12 representable ✓
-```
-
-## Failures (2)
-
-| ID | Error |
-|----|-------|
-| F8-SYS-06 | sigma+phi=psi+tau: solutions include {3,4,10,30}, not {6} |
-| F8-SYS-08 | J_2(n)=n^2-n: solutions are prime squares, not n=6 |
+Batch 8 (Biology): 7/10 ⚪ (coincidence). Matches F400 finding. Small numbers 1-6 cover most biological classification counts.
 
 ## Verification Script
-- frontier_800_verify.py (in math/ directory)
+
+```bash
+python3 frontier_800_verify.py --batch 0
+```

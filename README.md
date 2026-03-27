@@ -1660,6 +1660,7 @@ Anima 의식 엔진 × TECS-L R-spectrum 교차 가설. 12개 탐색 중 TOP 3. 
 12개 미탐색 도메인 × n=6 교차 탐색. 2026-03-27.
 [Frontier 600](docs/hypotheses/frontier-600-round6.md): 80 hypotheses, 8 domains, 77/80 pass (96%). 🟩8 🟧★17 🟧37 ⚪15 ⬛3.
 [Frontier 700](docs/hypotheses/frontier-700-round7.md): 80 hypotheses, 8 NEW domains, 80/80 pass (100%). 🟩12 🟧★6 🟧54 ⚪8. Lorenz triple EXACT.
+[Frontier 800](docs/hypotheses/frontier-800-round8.md): 80 hypotheses, 8 NEW domains, 80/80 pass (100%). 🟩8 🟧★6 🟧53 ⚪13. S⁶ geometry + fractal chain.
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
