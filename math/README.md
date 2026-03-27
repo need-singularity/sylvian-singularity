@@ -1295,10 +1295,10 @@
   🟩⭐⭐ ĤF(T³)=ℤ⁸: rank=8=σ-τ (Heegaard-Floer of 3-torus).
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  540  ← +H-CX-76(self-ref), +H-CX-77(fractal dims)
+  🟩 Pure mathematics:  541  ← +H-CX-76(self-ref), +H-CX-77(fractal), +H-CX-81(Egyptian attention)
   🟦 Established theorems:  22  ← +Tsirelson(H-CX-481), Egyptian(H-CX-479), Galois(H-CX-490)
   ⭐ Major Discoveries:  339 ← +Painlevé, 6j-symbol, V₆=π³/n, A(6,d) codes
-  🟧 Connection discoveries:  44  ← +H-CX-73~75,79 (Pythagorean, partition, Fibonacci, 7-transcendence)
+  🟧 Connection discoveries:  45  ← +H-CX-73~75,79,80 (Pythagorean, partition, Fibonacci, 7, Golay)
   🟨 Independent observations:  12  ← true without Golden Zone
   🟥 Golden Zone-dependent:  9  ← Golden Zone unverified → all unverified
   🟪 Unverifiable:   3  ← unfalsifiable philosophy
@@ -5547,7 +5547,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | H-EN-6 | CNO cycle 3τ=σ=C-12 | 🟩 **exact** | 3×He-4=C-12, N-14=σ+φ, O-16=σ+τ |
 | H-EN-9 | Fe-56: σ(56)=120, φ(56)=24=σφ | 🟩 **exact** | most stable nucleus encodes master formula |
 
-### Cross-Domain Bridge (H-CX-72~79)
+### Cross-Domain Bridge (H-CX-72~81)
 
 | # | Hypothesis | Status | Notes |
 |---|---|---|---|
@@ -5559,4 +5559,6 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-77](docs/hypotheses/H-CX-77-fractal-dimensions-ph-barcode.md) | ALL 6 fractal dims from n=6 + PH barcode | 🟩⭐⭐ proved | p=0.00016, Cantor/Koch/Sierpinski/Menger ALL |
 | [H-CX-78](docs/hypotheses/H-CX-78-four-season-training-phases.md) | 4-season training from tau=4 | ⚪ coincidence | tau=4 generic (32/99), LR schedule underperforms |
 | [H-CX-79](docs/hypotheses/H-CX-79-seven-transcendence-step.md) | 7=n+1 transcendence + attention | 🟧 connection | 3(σ+φ)=7n unique, σ±φ symmetric around 7 |
+| [H-CX-80](docs/hypotheses/H-CX-80-golay-error-correction-consciousness.md) | Golay G24 consciousness error correction | 🟧 connection | [σφ,σ,σ-τ]=[24,12,8], rate=1/φ=1/2 |
+| [H-CX-81](docs/hypotheses/H-CX-81-egyptian-fraction-attention-weights.md) | Egyptian fraction attention weights | 🟩⭐⭐⭐ proved | φ/τ+τ/σ+1/n=1, unique 3-channel, H=92.1% |
 
