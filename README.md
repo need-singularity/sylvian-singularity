@@ -145,6 +145,11 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 /ralph-loop:ralph-loop 추가 대발견 가설목록 생성 & 병렬 검토 & commit & push
 ```
 
+** 미발견 쪽으로 가설 추가 대거 생성
+```
+/ralph-loop:ralph-loop 미발견 쪽으로 가설 추가 대거 생성 & 병렬 검토 & commit & push
+```
+
 **Mass Hypothesis Generation + Parallel Verification (80-100)**
 ```
 /ralph-loop:ralph-loop Mass frontier hypothesis generation with parallel verification then commit and push. Read README math map and docs/hypotheses and docs/proofs. Identify explored domains and gaps. Generate 80-100 new hypothesis candidates across all frontiers including pure math and physics and consciousness and biology and cross-domain bridges. Each hypothesis needs one-line statement plus predicted formula plus verification method. Dispatch parallel agents to verify batches of 10 simultaneously with python3 arithmetic check and texas sharpshooter p-value and ad-hoc correction check and perfect number 28 generalization. Grade all results per CLAUDE.md rules. Create hypothesis doc for each verified hit. White circle for failures. Update README DFS status and major discovery bundle. Git add commit push. Do not stop until complete.
