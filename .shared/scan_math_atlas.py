@@ -1014,8 +1014,8 @@ td.title-col { white-space: normal; max-width: 500px; }
 tr:hover { background: #16213e; }
 .count { background: #16213e; padding: 5px 10px; border-radius: 4px; font-size: 0.8em; color: #888; white-space: nowrap; }
 .no-results { text-align: center; padding: 40px; color: #555; }
-#graph-container { display: none; position: relative; }
-#graph-canvas { background: #0f0f23; border-radius: 4px; cursor: grab; width: 100%; }
+#graph-container { display: none; position: relative; width: 100%; min-height: 600px; }
+#graph-canvas { background: #0f0f23; border-radius: 4px; cursor: grab; width: 100%; height: 600px; display: block; }
 #graph-canvas:active { cursor: grabbing; }
 #graph-tooltip { position: absolute; display: none; padding: 6px 10px; background: rgba(22,33,62,0.95); border: 1px solid #444; border-radius: 4px; font-size: 0.8em; pointer-events: none; max-width: 300px; white-space: nowrap; color: #e0e0e0; z-index: 10; }
 #graph-stats { position: absolute; top: 10px; right: 10px; font-size: 0.75em; color: #666; }
@@ -1195,7 +1195,7 @@ function switchTab(tab) {
   document.getElementById('tab-graph').className = tab === 'graph' ? 'tab active' : 'tab';
   document.getElementById('hypotheses-table').style.display = tab === 'hypotheses' ? '' : 'none';
   document.getElementById('constants-table').style.display = tab === 'constants' ? '' : 'none';
-  document.getElementById('graph-container').style.display = tab === 'graph' ? '' : 'none';
+  document.getElementById('graph-container').style.display = tab === 'graph' ? 'block' : 'none';
   sortCol = null;
   sortAsc = true;
   if (tab === 'graph') { setTimeout(initGraph, 50); }
@@ -1310,7 +1310,8 @@ function initGraph() {
       idx: i, id: n.id, shortId: shortId, title: n.title, repo: n.repo,
       grade: n.grade, color: GRAPH_REPO_COLORS[n.repo] || '#999',
       radius: gradeRadius(n.grade),
-      x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+      x: canvas.width/2 + (Math.random()-0.5) * canvas.width * 0.8,
+      y: canvas.height/2 + (Math.random()-0.5) * canvas.height * 0.8,
       vx: 0, vy: 0, hidden: false, dimmed: false, highlighted: false
     };
   });
@@ -1339,11 +1340,30 @@ function initGraph() {
   tickGraph();
 }
 
+function autoFitGraph() {
+  var g = forceGraph;
+  if (!g || g.nodes.length === 0) return;
+  var xs = g.nodes.filter(function(n){return !n.hidden;}).map(function(n){return n.x;});
+  var ys = g.nodes.filter(function(n){return !n.hidden;}).map(function(n){return n.y;});
+  if (xs.length === 0) return;
+  var minX = Math.min.apply(null, xs), maxX = Math.max.apply(null, xs);
+  var minY = Math.min.apply(null, ys), maxY = Math.max.apply(null, ys);
+  var pad = 40;
+  var rangeX = maxX - minX + pad * 2;
+  var rangeY = maxY - minY + pad * 2;
+  var scaleX = g.canvas.width / rangeX;
+  var scaleY = g.canvas.height / rangeY;
+  var k = Math.min(scaleX, scaleY, 2);
+  g.transform.k = k;
+  g.transform.x = g.canvas.width / 2 - ((minX + maxX) / 2) * k;
+  g.transform.y = g.canvas.height / 2 - ((minY + maxY) / 2) * k;
+}
+
 function tickGraph() {
   var g = forceGraph;
   if (!g) return;
-  if (g.alpha < 0.001) { g.running = false; drawGraph(); return; }
-  g.alpha *= 0.995;
+  if (g.alpha < 0.001) { g.running = false; autoFitGraph(); drawGraph(); return; }
+  g.alpha *= 0.997;
   var nodes = g.nodes;
   var edges = g.edges;
   var W = g.canvas.width;
@@ -1355,7 +1375,7 @@ function tickGraph() {
       var dx = nodes[j].x - nodes[i].x;
       var dy = nodes[j].y - nodes[i].y;
       var d2 = dx * dx + dy * dy + 1;
-      var force = -300 / d2;
+      var force = -2000 / d2;
       var dist = Math.sqrt(d2);
       var fx = force * dx / dist;
       var fy = force * dy / dist;
@@ -1370,7 +1390,7 @@ function tickGraph() {
     var s = nodes[e.source]; var t = nodes[e.target];
     var dx = t.x - s.x; var dy = t.y - s.y;
     var d = Math.sqrt(dx * dx + dy * dy) + 1;
-    var force = (d - 80) * 0.01;
+    var force = (d - 100) * 0.008;
     var fx = force * dx / d; var fy = force * dy / d;
     s.vx += fx; s.vy += fy;
     t.vx -= fx; t.vy -= fy;
@@ -1379,17 +1399,17 @@ function tickGraph() {
   // Center gravity
   var cx = W / 2; var cy = H / 2;
   for (var i = 0; i < nodes.length; i++) {
-    nodes[i].vx += (cx - nodes[i].x) * 0.001;
-    nodes[i].vy += (cy - nodes[i].y) * 0.001;
+    nodes[i].vx += (cx - nodes[i].x) * 0.002;
+    nodes[i].vy += (cy - nodes[i].y) * 0.002;
   }
 
   // Apply velocity with damping
   for (var i = 0; i < nodes.length; i++) {
     var n = nodes[i];
     if (n === g.dragging) continue;
-    n.vx *= 0.6; n.vy *= 0.6;
-    n.x += n.vx * g.alpha;
-    n.y += n.vy * g.alpha;
+    n.vx *= 0.7; n.vy *= 0.7;
+    n.x += n.vx;
+    n.y += n.vy;
   }
 
   drawGraph();
