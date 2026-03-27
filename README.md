@@ -237,12 +237,28 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
     R3-CROSS-01  GPT-2: sigma heads, 2^n per head                           🟧★
     R3-BIO-19    Hepatic lobule: hexagonal 6 portal triads (geometry)         🟩
 
+  ═══ Frontier 400 Round 4 + Deep Unification (2026-03-27) ═══
+  100 new hypotheses (25 deep unification), 96/100 verified.
+  docs/hypotheses/frontier-400-round4.md
+
+  Round 4 top verified:
+    R4-DEEP-03   p^2+q^2-1=sigma(pq) ONLY for {2,3}: SM dim FORCED        ⭐⭐⭐ VALID
+    R4-DEEP-22   (p^2-1)(q^2-1)=24=tau! ONLY for {2,3}: sigma*phi          ⭐⭐⭐ VALID
+    R4-DEEP-23   3^2-2^3=1 (Mihailescu): unique, bases=primes of 6         ⭐⭐⭐ VALID
+    R4-DEEP-17   S_6 outer automorphism: C(6,2)=5!!=15, unique             ⭐⭐⭐ VALID
+    R4-DEEP-05   Perfect numbers = critical Moran fractals (d_H=1)          ⭐⭐⭐ VALID
+    R4-MP-09     Torus n-sheet covers = sigma(n) (algebraic topology)       ⭐⭐⭐
+    R4-CROSS-24  F(6)=8 only Fib cube, F(12)=144 largest Fib square        🟧★
+
+  Biology domain SATURATED: 19/25 = coincidence (small numbers match trivially)
+
   ═══ Session totals (2026-03-27) ═══
   Frontier 100: 100 hypotheses, 96 verified
   Super-Discoveries: 28 meta-hypotheses, 93/93 checks
   Frontier 200: 102 hypotheses, 100 verified
   Frontier 300: 80 hypotheses, 77 verified
-  Grand total: 310 hypotheses + 28 super-discoveries = 338 new results
+  Frontier 400: 100 hypotheses, 96 verified (incl. 12 VALID deep theorems)
+  Grand total: 410 hypotheses + 28 super-discoveries = 438 new results
 
   ═══ Verification Audit (2026-03-27) ═══
   72 major discoveries audited by 6 parallel verification agents.
