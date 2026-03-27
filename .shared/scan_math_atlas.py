@@ -376,3 +376,173 @@ def build_atlas():
         "total": len(unique),
         "hypotheses": unique,
     }
+
+
+# ── SQLite output ────────────────────────────────────────────────
+
+def write_sqlite(atlas, dbpath):
+    """Write atlas data to a SQLite database.
+
+    Creates tables:
+        hypotheses: id (PK), repo, file, title, grade, domain, gz_dependent, refs (JSON)
+        edges: source_id, target_id, relation
+
+    Args:
+        atlas: dict returned by build_atlas().
+        dbpath: Path to the SQLite database file.
+    """
+    conn = sqlite3.connect(dbpath)
+    cur = conn.cursor()
+
+    cur.execute("DROP TABLE IF EXISTS hypotheses")
+    cur.execute("DROP TABLE IF EXISTS edges")
+
+    cur.execute("""
+        CREATE TABLE hypotheses (
+            id TEXT PRIMARY KEY,
+            repo TEXT,
+            file TEXT,
+            title TEXT,
+            grade TEXT,
+            domain TEXT,
+            gz_dependent INTEGER,
+            refs TEXT
+        )
+    """)
+    cur.execute("""
+        CREATE TABLE edges (
+            source_id TEXT,
+            target_id TEXT,
+            relation TEXT
+        )
+    """)
+
+    cur.execute("CREATE INDEX idx_repo ON hypotheses(repo)")
+    cur.execute("CREATE INDEX idx_grade ON hypotheses(grade)")
+    cur.execute("CREATE INDEX idx_domain ON hypotheses(domain)")
+
+    # Insert hypotheses
+    for h in atlas["hypotheses"]:
+        gz = None
+        if h["gz_dependent"] is True:
+            gz = 1
+        elif h["gz_dependent"] is False:
+            gz = 0
+        cur.execute(
+            "INSERT INTO hypotheses VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+            (h["id"], h["repo"], h["filepath"], h["title"],
+             h["grade"], h["domain"], gz, json.dumps(h["refs"])),
+        )
+
+    # Build ID lookup: short_id -> full_id (for resolving refs)
+    id_lookup = {}
+    for h in atlas["hypotheses"]:
+        full_id = h["id"]
+        # e.g. "TECS-L:056" -> short "056", "TECS-L:H-CX-215" -> short "H-CX-215"
+        short = full_id.split(":", 1)[1] if ":" in full_id else full_id
+        # Map short -> full (first wins for collisions)
+        if short not in id_lookup:
+            id_lookup[short] = full_id
+
+    # Build edges from refs
+    for h in atlas["hypotheses"]:
+        source = h["id"]
+        for ref in h.get("refs", []):
+            target = id_lookup.get(ref)
+            if target and target != source:
+                cur.execute(
+                    "INSERT INTO edges VALUES (?, ?, ?)",
+                    (source, target, "ref"),
+                )
+
+    conn.commit()
+    conn.close()
+
+
+# ── Graphviz DOT output ──────────────────────────────────────────
+
+REPO_COLORS = {
+    "TECS-L": "#4A90D9",
+    "SEDI": "#E67E22",
+    "anima": "#2ECC71",
+}
+
+GRADE_SHAPES = {
+    "\u2b50": "doubleoctagon",   # star
+    "\u2605": "doubleoctagon",   # filled star
+    "\U0001f7e9": "box",         # green square
+    "\U0001f7e7": "diamond",     # orange square
+    "\u26aa": "ellipse",         # white circle
+    "\u2b1b": "point",           # black square
+}
+
+
+def _sanitize_dot_id(hid):
+    """Sanitize a hypothesis ID for use as a DOT node ID."""
+    return re.sub(r'[:\-]', '_', hid)
+
+
+def _grade_to_shape(grade):
+    """Map a grade string to a DOT shape."""
+    if not grade:
+        return "ellipse"
+    for emoji, shape in GRADE_SHAPES.items():
+        if emoji in grade:
+            return shape
+    return "ellipse"
+
+
+def write_dot(atlas, dotpath):
+    """Write atlas graph to a Graphviz DOT file.
+
+    Only includes nodes that have at least one edge (ref connection).
+
+    Args:
+        atlas: dict returned by build_atlas().
+        dotpath: Path to the output .dot file.
+    """
+    # Build ID lookup for resolving refs
+    id_lookup = {}
+    hyp_by_id = {}
+    for h in atlas["hypotheses"]:
+        full_id = h["id"]
+        short = full_id.split(":", 1)[1] if ":" in full_id else full_id
+        if short not in id_lookup:
+            id_lookup[short] = full_id
+        hyp_by_id[full_id] = h
+
+    # Collect edges
+    edges = []
+    connected = set()
+    for h in atlas["hypotheses"]:
+        source = h["id"]
+        for ref in h.get("refs", []):
+            target = id_lookup.get(ref)
+            if target and target != source:
+                edges.append((source, target))
+                connected.add(source)
+                connected.add(target)
+
+    lines = ['digraph math_atlas {', '  rankdir=LR;', '  node [style=filled];', '']
+
+    # Emit connected nodes
+    for nid in sorted(connected):
+        h = hyp_by_id.get(nid)
+        if not h:
+            continue
+        safe = _sanitize_dot_id(nid)
+        color = REPO_COLORS.get(h["repo"], "#999999")
+        shape = _grade_to_shape(h.get("grade"))
+        label = h["title"][:40].replace('"', '\\"') if h.get("title") else nid
+        lines.append(f'  {safe} [label="{label}" fillcolor="{color}" shape={shape}];')
+
+    lines.append('')
+
+    # Emit edges
+    for src, tgt in edges:
+        lines.append(f'  {_sanitize_dot_id(src)} -> {_sanitize_dot_id(tgt)};')
+
+    lines.append('}')
+
+    with open(dotpath, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines) + '\n')

@@ -107,7 +107,7 @@ HYPOTHESIS_DB = [
     assert results[1]["grade"] is None
 
 
-from scan_math_atlas import build_atlas
+from scan_math_atlas import build_atlas, write_sqlite, write_dot
 
 
 def test_build_atlas_returns_dict():
@@ -128,6 +128,37 @@ def test_build_atlas_no_duplicate_ids():
 def test_build_atlas_json_serializable():
     atlas = build_atlas()
     json.dumps(atlas, ensure_ascii=False)
+
+
+def test_write_sqlite():
+    atlas = build_atlas()
+    with tempfile.NamedTemporaryFile(suffix='.db', delete=False) as f:
+        dbpath = f.name
+    try:
+        write_sqlite(atlas, dbpath)
+        conn = sqlite3.connect(dbpath)
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM hypotheses")
+        count = cur.fetchone()[0]
+        assert count == atlas["total"]
+        cur.execute("SELECT COUNT(*) FROM edges")
+        conn.close()
+    finally:
+        os.unlink(dbpath)
+
+
+def test_write_dot():
+    atlas = build_atlas()
+    with tempfile.NamedTemporaryFile(suffix='.dot', delete=False, mode='w') as f:
+        dotpath = f.name
+    try:
+        write_dot(atlas, dotpath)
+        content = open(dotpath).read()
+        assert content.startswith("digraph math_atlas {")
+        assert "}" in content
+        assert "label=" in content
+    finally:
+        os.unlink(dotpath)
 
 
 if __name__ == "__main__":
