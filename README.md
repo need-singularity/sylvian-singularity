@@ -1613,6 +1613,11 @@ FQHE fractions, coupling unification, dark matter candidates, biology/DNA — de
 |---|---|---|---|
 | [410](docs/hypotheses/410-sim-quantum-uncertainty-precision.md) | Heisenberg uncertainty = finite precision arithmetic. B = log2(R/lp) = 204 = sigma(6) x A(pi) = 12 x 17 | 🟧 | Dx*Dp=hbar tautological; 204=12x17 suggestive, p~0.05 |
 | [411](docs/hypotheses/411-sim-speed-of-light-clock-speed.md) | Speed of light = max clock speed (1 cell/tick). Grid ops >> Bremermann by 10^123 = Bekenstein bound | 🟧 | c=lp/tp well-known; holographic gap 10^123 interesting |
+| [412](docs/hypotheses/412-bitnet-golden-zone-dual-constraint.md) | BitNet b1.58 x Golden MoE dual constraint: MNIST +4.3% synergy, 1.68x info efficiency. log_3(2)~1-1/e (0.19%) | 🟧 | MNIST synergy real; CIFAR absent (naive STE); needs full BitNet impl |
+| [413](docs/hypotheses/413-bitnet-golden-synergy-universality.md) | Dual constraint synergy universal in 28x28: MNIST +7.4%, Fashion +11.3%. Harder task = stronger synergy | 🟧★ | 2/2 viable datasets positive; difficulty amplification pattern |
+| [414](docs/hypotheses/414-info-flow-convergence-log3-2.md) | BitNet+Golden info flow converges to ~0.616 across all datasets (std=0.003). Near log_3(2)=0.631, 1-1/e=0.632 | 🟧 | Stable convergence; 2.4% gap from target constant |
+| [415](docs/hypotheses/415-golden-zone-universal-info-efficiency.md) | Golden Zone ALWAYS improves BitNet info efficiency: ratio>1.0 in ALL 3 datasets (mean 1.659x), even when synergy negative | 🟧★ | 3/3 universal; strongest finding of BitNet series |
+| [416](docs/hypotheses/416-ternary-equipartition-convergence.md) | Ternary weights converge to equipartition (~1/3) under Golden Zone. Symmetry 0.968 mean. Fashion 0.999 near-perfect | 🟧 | Consistent across 3 datasets; Golden Zone improves symmetry in all |
 | [H-SIM-1](docs/hypotheses/H-SIM-1-physical-constants-compile-time.md) | Physical constants = compile-time constants. 137=sigma(6)^2-tau(6)-phi(6)-1 EXACT. Depth-3 search: 49 matches but within random expectation | ⚪ | 137 identity exact but ad-hoc (-1); Texas p>0.05 |
 | [H-SIM-2](docs/hypotheses/H-SIM-2-planck-units-grid-resolution.md) | Planck units = grid resolution. N_space~10^61 (61=Mersenne exponent). N^2*ln(4/3)/S_hol~1/sigma(6). log6 analysis: no clean fractions | ⚪ | 61 Mersenne interesting but post-hoc; holographic ratio 8.6% error |
 | [H-SIM-9](docs/hypotheses/H-SIM-9-optimal-simulation-parameter.md) | 6=optimal simulation parameter. E(n)=sigma*phi/(n*tau)=1 ONLY for n=1,6 in [1,10000]. 18/21 physics params match 6-divisors (p<0.0001) | 🟧★ | E(6)=1 uniqueness proven; physics mapping p<0.0001 but selection bias risk |
@@ -3322,6 +3327,107 @@ Google Gemini 3.1 Pro (Thinking) independently verified the entire H-PH-9 (Perfe
   Phase 4: Temporal continuity                         ✅ Done, identity stability confirmed
   Phase 4.5: Generative engine                        ✅ Done, recognition and generation are the same field
   Phase 5: Other modeling (empathy)                    ✅ Done, 7/7 condition achieved
+```
+
+## EEG Experiment — G=D×P/I Biological Verification
+
+### Hardware
+
+```
+  All-in-One Biosensing R&D Bundle (OpenBCI)     €3,964.95
+  + Earclip Electrode                                €52.95
+  ────────────────────────────────────────────────────────
+  Total                                           €4,017.90
+
+  Board:      Cyton+Daisy 16-channel (250Hz, 24-bit, BLE wireless)
+  Headset:    UltraCortex Mark IV (Medium, Pro-Assembled, 16ch)
+  Electrodes: Dry Comb (Ag-AgCl) + Gold Cup (wet) + Earclip (reference)
+  Also:       EMG/ECG cables, Gel electrodes, Pulse sensor, Ten20 paste
+  Status:     Ordered (2026-03-27)
+```
+
+### G=D×P/I → EEG Mapping
+
+```
+  Parameter        EEG Proxy                         Brain Region
+  ───────────────────────────────────────────────────────────────
+  I (Inhibition)   Frontal Alpha power (8-12Hz)      Fp1, Fp2, F3, F4
+  P (Plasticity)   Global Gamma power (30-100Hz)     All 16 channels
+  D (Deficit)      Alpha asymmetry |ln(R)-ln(L)|     Frontal pairs
+  G (Genius)       D × P / I                         Computed
+
+  Golden Zone: [1/2 - ln(4/3), 1/2] = [0.2123, 0.5000]
+```
+
+### 16-Channel Layout (10-20 System)
+
+```
+          Fp1   Fp2            Frontal pole
+            \   /
+       F7 - F3 - F4 - F8      Frontal
+            |   |
+       T7 - C3 - C4 - T8      Central / Temporal
+            |   |
+            P3 - P4            Parietal
+           / | | \
+       P7         P8           Parietal-temporal
+          O1   O2              Occipital
+
+  Cyton (1-8):  Fp1, Fp2, C3, C4, P7, P8, O1, O2
+  Daisy (9-16): F7, F8, F3, F4, T7, T8, P3, P4
+  Reference:    Earclip (both earlobes)
+```
+
+### Experiment Protocols
+
+```
+  Protocol 1 — Resting State Baseline
+    Eyes closed 60s → Eyes open 60s → Eyes closed 60s
+    Measure: Alpha power change, asymmetry baseline
+
+  Protocol 2 — Cognitive Load (N-back)
+    0-back → 1-back → 2-back → 3-back (60s each)
+    Measure: Beta/Gamma increase, Alpha suppression = I change
+
+  Protocol 3 — Creative vs Analytical
+    Math problem 120s → Free association 120s
+    Measure: Gamma pattern difference = P proxy
+
+  Protocol 4 — Meditation / Flow State
+    Normal → Focused breathing 300s → Post
+    Measure: Alpha/Theta ratio, Golden Zone approach
+```
+
+### Software
+
+```bash
+  # Environment
+  source eeg_env/bin/activate   # MNE 1.11 + BrainFlow 5.21 + scipy + matplotlib
+
+  # Collect (16ch, 60 seconds)
+  python eeg/collect.py --duration 60 --tag resting_eyes_closed
+
+  # Analyze (band power + asymmetry + G=D×P/I + topomap)
+  python eeg/analyze.py eeg/data/<file>.npy --topomap
+
+  # Test without hardware
+  python eeg/collect.py --duration 5 --board synthetic --tag test
+```
+
+### Predicted Outcomes
+
+```
+  If G=D×P/I model is biologically real:
+    1. Individuals with known high-G traits → G value in Golden Zone
+    2. Cognitive load increases → I decreases (alpha suppression) → G shifts
+    3. Meditation → Alpha increases → I increases → G decreases
+    4. Asymmetry (D) correlates with specialization patterns
+    5. Gamma bursts (P) correlate with creative insight moments
+
+  Falsification criteria:
+    - G shows no systematic pattern across states → model is wrong
+    - G values cluster outside Golden Zone for everyone → zone is wrong
+    - No correlation between EEG-derived G and cognitive performance → mapping is wrong
 ```
 
 ## Running
