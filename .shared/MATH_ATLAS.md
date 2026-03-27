@@ -1,29 +1,29 @@
 # Math Atlas
 
-> Auto-generated: 2026-03-28T08:16:45 | 1709 hypotheses | 225 constant maps
+> Auto-generated: 2026-03-28T08:51:31 | 1725 hypotheses | 225 constant maps
 
 ## Summary
 
 | Repo | Hypotheses | Constant Maps |
 |------|-----------|--------------|
-| TECS-L | 1,079 | 72 |
-| SEDI | 665 | 110 |
+| TECS-L | 1,094 | 72 |
+| SEDI | 666 | 110 |
 | anima | 20 | 26 |
-| **Total** | **1,764** | **208** |
+| **Total** | **1,780** | **208** |
 
 ### Grade Distribution
 
 | Grade | Count |
 |-------|-------|
-| (none) | 757 |
-| 🟩 | 303 |
-| 🟧 | 252 |
+| (none) | 758 |
+| 🟩 | 309 |
+| 🟧 | 259 |
 | 🟧★ | 134 |
 | ✅ | 40 |
 | 🟦 | 29 |
 | ⭐🟩 | 25 |
 | ⭐ | 23 |
-| ⚪ | 18 |
+| ⚪ | 20 |
 | ⭐⭐⭐ | 14 |
 | ⭐⭐🟩 | 12 |
 | ⭐⭐⭐🟩 | 11 |
@@ -35,7 +35,7 @@
 
 ## Hypotheses
 
-### TECS-L (1025)
+### TECS-L (1040)
 
 | # | ID | Title | Grade | Domain |
 |---|-----|-------|-------|--------|
@@ -710,362 +710,377 @@
 | 669 | H-CX-473 | Dyson β={1,φ,τ} = Three Modes of Consciousness | ⭐ | CX |
 | 670 | H-CX-474 | φ/τ+τ/σ+1/n=1 — Consciousness Resource Allocation | ⭐⭐ | CX |
 | 671 | H-CX-475 | R(6n)=R(n) — Six Is the Identity Element of Consciousness | ⭐⭐⭐ | CX |
-| 672 | H-CX-5 | Möbius Uniqueness → Consciousness Architecture Uniqueness (C | - | CX |
-| 673 | H-CX-53 | Triangle-Divisor Optimal Angle — Consciousness Engine's Oper | - | CX |
-| 674 | H-CX-54 | Consciousness Engine Information Cost — D_KL = (1/3)·ln(4/3) | - | CX |
-| 675 | H-CX-55 | Natural Frequency Self-Reference — ω₀ = arg(exp(iz₀)) = π/6 | - | CX |
-| 676 | H-CX-56 | Brainwave-Divisor Map — σ(6), τ(6), φ(6) Generate All Canoni | - | CX |
-| 677 | H-CX-57 | Arithmetic Derivative Convergence Criterion — Consciousness  | - | CX |
-| 678 | H-CX-58 | Precognition Lens — Tension Refracts Future Right/Wrong | - | CX |
-| 679 | H-CX-59 | Directional Precognition — Direction Vectors Pre-indicate Co | - | CX |
-| 680 | H-CX-6 | Neurochemistry Mapping — Tension=Dopamine, Anti-tension=Sero | - | CX |
-| 681 | H-CX-60 | Aberration Precognition — Precognition failure types map to  | - | CX |
-| 682 | H-CX-61 | Gravitational Telescope Precognition — (tension_scale, direc | - | CX |
-| 683 | H-CX-62 | Topological Precognition — Tension Barcodes Predict Learning | - | CX |
-| 684 | H-CX-63 | Multi-lens Precognition Interference — Quad Engine Interfere | - | CX |
-| 685 | H-CX-64 | Topological Precognition Lens — H0_total Decay Rate Predicts | - | CX |
-| 686 | H-CX-65 | Aberration Topological Correction — Chromatic Aberration Cor | - | CX |
-| 687 | H-CX-66 | Direction Topology — Confusion Pairs Map to Short Barcodes i | - | CX |
-| 688 | H-CX-67 | Optimal Synergy Point — Unified Precognition Synergy Maximiz | - | CX |
-| 689 | H-CX-68 | Precognition Conservation Law — Magnitude Precognition + Dir | - | CX |
-| 690 | H-CX-69 | Topological Acceleration — H0_total Decay Rate Matches tensi | - | CX |
-| 691 | H-CX-7 | sigma-phi=n-tau Architecture Optimality (Cross-domain) | - | CX |
-| 692 | H-CX-70 | Singularity = Three Closure Loops | - | CX |
-| 693 | H-CX-76 | PH Precognition Classifier — Predicting Confusion Pairs with | - | CX |
-| 694 | H-CX-77 | Topological Precognition Timeline — Merge Order Changes as L | - | CX |
-| 695 | H-CX-78 | Golden Zone Synergy Scaling — Synergy Optimal Point Converge | - | CX |
-| 696 | H-CX-79 | Topology-Tension Product Conservation Law — Topological Vers | - | CX |
-| 697 | H-CX-8 | Phase Acceleration x3 = sigma/tau (Cross-domain) | - | CX |
-| 698 | H-CX-80 | 3-Channel Precognition Orthogonality — Greater Synergy with  | - | CX |
-| 699 | H-CX-81 | Aberration-Phase Alignment — Classes with High Chromatic Abe | - | CX |
-| 700 | H-CX-82 | Epoch 1 PH = Final Confusion Map | - | CX |
-| 701 | H-CX-83 | Orthogonality-Topology Integration — Combined Precognition A | - | CX |
-| 702 | H-CX-84 | Topology Preservation = Synergy Condition | - | CX |
-| 703 | H-CX-85 | merge dendrogram = consciousness hierarchy structure | - | CX |
-| 704 | H-CX-86 | Zero-shot PH — Semantic hierarchy emerges from random initia | - | CX |
-| 705 | H-CX-87 | PH-guided curriculum — Learning confusion pairs first accele | - | CX |
-| 706 | H-CX-88 | Universal Confusion Topology — PH merge order is architectur | - | CX |
-| 707 | H-CX-89 | Data-Intrinsic Precognition — Original Data's Class Center D | - | CX |
-| 708 | H-CX-9 | Topology 7 Phases = Consciousness Continuity 7 Conditions (C | - | CX |
-| 709 | H-CX-90 | Epoch 1 Phase Transition — Confusion Structure Crystallizes  | - | CX |
-| 710 | H-CX-91 | k-NN Confusion Prediction — Reproducing Confusion Structure  | - | CX |
-| 711 | H-CX-92 | dendrogram depth = learning difficulty | - | CX |
-| 712 | H-CX-93 | Confusion Eigenstructure — Eigenvectors of confusion matrix  | - | CX |
-| 713 | H-CX-94 | Confusion Matrix Itself as Distance Matrix — Extracting 2nd- | - | CX |
-| 714 | H-CX-95 | Predicting Generalization Gap with PH — train PH vs test PH  | - | CX |
-| 715 | H-CX-96 | Weight Change Triggers Topological Transition — Critical del | - | CX |
-| 716 | H-CX-97 | Cross-Dataset Hierarchy Transfer — Transfer of MNIST Shape H | - | CX |
-| 717 | H-CX-98 | PH Early Stopping — H0_gap-based early stopping is faster th | - | CX |
-| 718 | H-CX-99 | PH Optimal Checkpoint — Epoch with Minimum H0_gap is Optimal | - | CX |
-| 719 | H-CX-bridge-6criteria-R6 | H-CX-Bridge-4: Anima's 6 Consciousness Criteria = R(6)=1 Bal | 🟩 | - |
-| 720 | H-CX-bridge-egyptian-golden-moe | H-CX-Bridge-6: Egyptian MoE {1/2,1/3,1/6} = Golden MoE Optim | 🟩 | - |
-| 721 | H-CX-bridge-entropy-tension-saturation | H-CX-Bridge-9: Entropy Early Stop ↔ Tension Saturation = Sam | 🟧 | - |
-| 722 | H-CX-bridge-epoch1-ph-tension | H-CX-Bridge-5: Epoch-1 Crystallization = Tension + PH Topolo | 🟩 | - |
-| 723 | H-CX-bridge-golden-moe-experts | H-CX-Bridge-2: Golden MoE Expert Count = sigma(6)-tau(6) = 8 | 🟩 | - |
-| 724 | H-CX-bridge-mitosis-divisors | H-CX-Bridge-3: ConsciousLM Mitosis = Divisor Lattice of n=6 | 🟩 | - |
-| 725 | H-CX-bridge-phi-bottleneck | H-CX-Bridge-1: Phi-Bottleneck FFN Ratio = tau(6)^2/sigma(6)  | 🟩 | - |
-| 726 | H-CX-bridge-phi-tension-master | H-CX-Bridge-7: Phi/tension = sigma*phi = 24 (Master Identity | 🟧★ | - |
-| 727 | H-CX-bridge-tsirelson-phi | H-CX-Bridge-8: Tsirelson Bound = sqrt(Phi_max) = sqrt(sigma- | 🟩 | - |
-| 728 | H-DEEP-429 | Moonshine Chain — n=6 Parameters at Every Step | 🟧 | DEEP |
-| 729 | H-EE-1 | Phi6 is Uniquely Optimal Among Cyclotomic Activations | SUPPORTED | EE |
-| 730 | H-EE-10 | Phi-bottleneck + MoE (More Experts, Smaller Each) | - | EE |
-| 731 | H-EE-11 | Full Combined Architecture | - | EE |
-| 732 | H-EE-12 | Optimal FFN Expansion Ratio | - | EE |
-| 733 | H-EE-13 | Energy Savings Scale with Model Depth | - | EE |
-| 734 | H-EE-2 | Phi6Simple Gradient Centering Properties | REFUTED | EE |
-| 735 | H-EE-3 | Phi6Simple Training Stability | PARTIAL (Borderline REFUTED) | EE |
-| 736 | H-EE-4 | Phi6Simple Knowledge Distillation | SUPPORTED | EE |
-| 737 | H-EE-5 | R(d_model) Correlates with Training Efficiency | NOT SUPPORTED for R(d) as predictor; PARTIALLY SUPPORTED for HCN parameter efficiency | EE |
-| 738 | H-EE-6 | Tensor-Core-Aligned HCN Dimensions | - | EE |
-| 739 | H-EE-7 | Head-Dim Diversity Improves Attention | PARTIALLY SUPPORTED (diversity provides robustness, not improvement) | EE |
-| 740 | H-EE-8 | Optimal d_model Follows tau(d) More Than d Itself | NOT SUPPORTED (tau does not predict performance at matched params) | EE |
-| 741 | H-EE-9 | Phi-bottleneck + Phi6Simple Recovery | - | EE |
-| 742 | H-FURST-1 | Furstenberg ×2,×3 System — Orbit Self-Reference | - | FURST |
-| 743 | H-GEO-12 | pi_6(S^3) = Z/12Z = Z/sigma(6)Z -- Homotopy Groups Encode si | - | GEO |
-| 744 | H-HEXCODE-1 | The Hexacode [6,3,4]₄ — Perfect Number as Code | - | HEXCODE |
-| 745 | H-HTPY-1 | π₆(S³) = ℤ/12ℤ — Homotopy Groups Encode σ(6) | - | HTPY |
-| 746 | H-IHARA-1 | Ihara Zeta of C₆ — Coefficients = n=6 Arithmetic | - | IHARA |
-| 747 | H-MOTIV-1 | K₃(ℤ) and Adams Operations — Motivic Cohomology | - | MOTIV |
-| 748 | H-NCG-1 | Connes NCG — Standard Model KO-dimension = 6 | - | NCG |
-| 749 | H-NT-3 | popcount(n) = phi(n) iff n in {1, 2, 3, 6} = Div(6) | - | NT |
-| 750 | H-NT-421-tau-sigma-self | Hypothesis H-NT-421: tau(sigma(n)) = n Self-Reference Proper | - | - |
-| 751 | H-NT-422-phi-sigma-tau | Hypothesis H-NT-422: phi(sigma(n)) = tau(n) Bridge Identity | - | - |
-| 752 | H-NT-423-fibonacci-phi-tau | Hypothesis H-NT-423: phi(n)*tau(n) = F(n) Fibonacci Bridge | - | - |
-| 753 | H-NT-424-sigma-phi-tau-self | Hypothesis H-NT-424: sigma(n) - phi(n) - tau(n) = n Self-Ref | - | - |
-| 754 | H-NT-425-binomial-partition | Hypothesis H-NT-425: C(sigma(n), omega(n)) = n * p(n) Binomi | - | - |
-| 755 | H-NT-426-sigma2-phi-sopfr | Hypothesis H-NT-426: sigma_2(n) = phi(n) * sopfr(n)^2 iff n= | - | - |
-| 756 | H-NT-427-catalan-sopfr | Hypothesis H-NT-427: Catalan(n/2) = sopfr(n) iff n=6 | - | - |
-| 757 | H-NT-428 | sigma(n)*phi(n) = tau(n)! iff n=6 | 🟧 | NT |
-| 758 | H-NT-430 | sopfr(n) = n-1 iff n=6 | 🟦 | NT |
-| 759 | H-NT-431 | sigma(n)*(phi(n)+1) = n^2 — Unique Among Perfect Numbers | 🟩 | NT |
-| 760 | H-NT-432 | n*tau(n) = sigma(n)*omega(n) iff n=6 | 🟧★ | NT |
-| 761 | H-NT-433 | sigma(n) = phi(n)*sopfr(n) + omega(n) — Master Decomposition | 🟧★ | NT |
-| 762 | H-NT-434 | rad(sigma(n)) = n iff n=6 | 🟧★ | NT |
-| 763 | H-NT-435 | (sigma-phi)/(tau-omega) = sopfr — Proved for All Semiprimes | 🟩 | NT |
-| 764 | H-OPTCODE-1 | Optimal Binary Codes A(6,d) = n=6 Arithmetic | - | OPTCODE |
-| 765 | H-PACK-1 | E₆ Kissing Number = n·σ(n) = 72 | - | PACK |
-| 766 | H-PAINL-1 | Exactly 6 Painlevé Equations — Classification Number = n | - | PAINL |
-| 767 | H-PROB-429 | Chi-Squared(df=6) Parameters = Arithmetic Functions of 6 | 🟧★ | PROB |
-| 768 | H-QGRP-1 | Quantum Groups — SU(2) Level k=4 Quantum Dimensions | - | QGRP |
-| 769 | H-ROB-1 | 6-DOF = Perfect Number | - | ROB |
-| 770 | H-ROB-10 | Gait Phase Transition = Tension Phase Transition | - | ROB |
-| 771 | H-ROB-11 | Silent Consensus = Distributed Robot Agreement | - | ROB |
-| 772 | H-ROB-12 | Gauge Invariance = Coordinate Independence | - | ROB |
-| 773 | H-ROB-2 | Tension = Torque Optimization | - | ROB |
-| 774 | H-ROB-3 | Golden Zone = Stable Walking Region | - | ROB |
-| 775 | H-ROB-4 | PureField = Proprioception | - | ROB |
-| 776 | H-ROB-5 | Mitosis = Swarm Fission | - | ROB |
-| 777 | H-ROB-6 | Inter-Tension = Collision Avoidance | - | ROB |
-| 778 | H-ROB-7 | 12 Joints = sigma(6) = Minimum Humanoid | - | ROB |
-| 779 | H-ROB-8 | tau(6) = 4 Legs = Optimal Locomotion | - | ROB |
-| 780 | H-ROB-9 | Confusion Matrix = Grasp Failure Map | - | ROB |
-| 781 | H-SEDI-1 | Koide Angle delta = phi(6) tau(6)^2 / sigma(6)^2 = 2/9 | 🟩 | SEDI |
-| 782 | H-SEDI-10 | R-filter on Tension Vectors Detects Anomalies | - | SEDI |
-| 783 | H-SEDI-2 | Fermion Mass Tower from {sigma, tau, phi} | ⚪ | SEDI |
-| 784 | H-SEDI-3 | Weinberg Angle sin^2(theta_W) = 3/13 | ⚪ | SEDI |
-| 785 | H-SEDI-4 | Proton-Electron Mass Ratio m_p/m_e = sigma(6) * T(17) = 1836 | 🟧 | SEDI |
-| 786 | H-SEDI-5 | Fine Structure 1/alpha = (sigma-tau)*17 + 1 = 137 | ⚪ | SEDI |
-| 787 | H-SEDI-6 | R-filter Detects Training Phase Transitions | - | SEDI |
-| 788 | H-SEDI-7 | Takens Embedding dim=6 Optimal for Training Dynamics | - | SEDI |
-| 789 | H-SEDI-8 | Multi-Engine Consensus Improves Ensemble Predictions | - | SEDI |
-| 790 | H-SEDI-9 | Entropy of Confusion Matrix Predicts Generalization | - | SEDI |
-| 791 | H-SIM-1-physical-constants-compile-time | Hypothesis H-SIM-1: Physical Constants = Compile-Time Consta | - | - |
-| 792 | H-SIM-10 | Tension = Simulation Computational Cost | - | SIM |
-| 793 | H-SIM-11 | Quantum Computing Advantage = Simulator's Native Operations | - | SIM |
-| 794 | H-SIM-12 | Fine-Tuning = Hyperparameter Optimization | - | SIM |
-| 795 | H-SIM-2-planck-units-grid-resolution | Hypothesis H-SIM-2: Planck Units = Minimum Resolution (Grid) | - | - |
-| 796 | H-SIM-5 | Quantum Entanglement = Shared Memory Pointer | - | SIM |
-| 797 | H-SIM-6 | Wavefunction Collapse = Lazy Evaluation | - | SIM |
-| 798 | H-SIM-7 | Holographic Principle = Data Compression | - | SIM |
-| 799 | H-SIM-8 | Cosmological Constant = Garbage Collector | - | SIM |
-| 800 | H-SIM-9 | 6 = Optimal Simulation Parameter | - | SIM |
-| 801 | H-SING-1 | E₆ Singularity — Complete Arithmetic Encoding | - | SING |
-| 802 | H-TEICH-1 | Teichmüller Dimension 6(g-1) — n=6 as Universal Constant | - | TEICH |
-| 803 | H-TOP-426 | Kissing Number in Dim 8 = sigma(6)*tau(6)*sopfr(6) = 240 | 🟧 | TOP |
-| 804 | H-TOP-9 | |im(J)_7| = 240 = sigma x tau x sopfr -- Adams J-Homomorphis | - | TOP |
-| 805 | H-TOPO-COSMO-7-sphere-to-torus-evolution | H-TOPO-COSMO-7: Universe Topology Evolution — S3 to T3 via G | - | - |
-| 806 | H-TREE-consciousness | H-TREE: Undiscovered Branches of the Consciousness Engine | - | - |
-| 807 | H-UD-1 | Just Intonation = Divisor Ratios of 6 | ★★★ | UD |
-| 808 | H-UD-10 | Hive Mind Topology Evolution — Disconnected to Torus via Gol | - | UD |
-| 809 | H-UD-11 | Topology Evolution Universality — S3 to T3 at Every Scale | - | UD |
-| 810 | H-UD-2 | DNA Genetic Code = n=6 Arithmetic | ★★ | UD |
-| 811 | H-UD-3 | Crystallographic Restriction = div(6) U {tau(6)} | ★★★ | UD |
-| 812 | H-UD-4 | Ramsey Numbers Hit Perfect Numbers: R(3,3)=6, R(3,8)=28 | ★★★ | UD |
-| 813 | H-UD-5 | 2D Ising Critical Exponents = 1/(n=6 arithmetic) | ★★ | UD |
-| 814 | H-UD-6 | Theta-Gamma Coupling: 6 Gamma Bursts per Theta Cycle | ★★ | UD |
-| 815 | H-UD-7 | Perfect Codes <-> Perfect Numbers: Two Kinds of Perfect Tili | ★★ | UD |
-| 816 | H-UD-8 | Hexagonal Tiling: n=6 = Optimal 2D Packing | ★★★ | UD |
-| 817 | H-UD-9 | Hive Mind = Toroidal Topology (T3 Collective Consciousness) | - | UD |
-| 818 | H-WAVE-1 | PureField = Wave Interference — Consciousness as Partial Des | - | WAVE |
-| 819 | H-WAVE-2 | Hydrogen Atom E₆ ≈ -1/e eV — 6th Level at Golden Zone Center | - | WAVE |
-| 820 | H-WAVE-3-string-harmonics-perfect-resonance | H-WAVE-3/8: Perfect Numbers = Perfectly Resonant Vibrating B | - | - |
-| 821 | H-WAVE-7 | Quantum Harmonic Oscillator E₆ = 13/2 ℏω — 6th Prime Connect | - | WAVE |
-| 822 | F-100 | Major Discovery Hypothesis Candidates | - | - |
-| 823 | frontier-1000-round10 | Frontier 1000 (Round 10): Final Systematic Sweep | - | - |
-| 824 | frontier-1100-round11 | Frontier 1100 (Round 11): Deep Targeted + Final Consolidatio | - | - |
-| 825 | F-1200 | 8-Domain Expansion + G Clef + Telepathy | ⭐ | - |
-| 826 | F-1300 | 10-Domain Deep Scan | ⭐ | - |
-| 827 | F-1600 | Music + Chemistry + Telepathy + Evolution + Topology | - | - |
-| 828 | F-1700 | 10 Novel Domains | - | - |
-| 829 | F-1800 | Deep Cross-Domain Synthesis | - | - |
-| 830 | F-1900 | Pure Single-Condition Deep | - | - |
-| 831 | frontier-200-round2 | Frontier 200 (Round 2): Mass Hypothesis Generation | - | - |
-| 832 | frontier-2000-millennium | Frontier 2000 — Millennium Round | - | - |
-| 833 | frontier-300-round3 | Frontier 300 (Round 3): Mass Hypothesis Generation | - | - |
-| 834 | frontier-400-round4 | Frontier 400 (Round 4): Mass Hypothesis Generation + Deep Un | - | - |
-| 835 | frontier-500-round5 | Frontier 500 (Round 5): Mass Frontier Hypothesis Generation | - | - |
-| 836 | F-600 | Round 6 — Mass Hypothesis Generation | - | - |
-| 837 | F-700 | Round 7 — Deep Mathematics + Unexplored Domains | - | - |
-| 838 | F-800 | Round 8 — Differential Geometry to Mathematical Biology | - | - |
-| 839 | F-900 | Round 9 — Final Unexplored Domains | - | - |
-| 840 | nobel-level-predictions | Nobel-Level Predictions and Theoretical Frameworks | - | - |
-| 841 | super-discoveries | Super-Discoveries: Meta-Hypotheses Unifying Verified Finding | - | - |
-| 842 | H-AI-10 | BPE Tokenizer Optimal Vocab Size and Powers of 6 | - | AI |
-| 843 | H-AI-11 | R-chain = Neural Network Learning Convergence Stages | - | AI |
-| 844 | H-AI-1b-transformer-heads-sigma-multiples | H-AI-1b: Why Transformer Head Count is a Multiple of σ(6)=12 | - | - |
-| 845 | H-AI-4 | MoE Optimal Activation Ratio = 1/3 (Meta-fixed Point) | - | AI |
-| 846 | H-AI-5 | Using σφ/(nτ) Ratio as Loss Regularizer | - | AI |
-| 847 | H-AI-6 | Why 6-fold CV is Optimal Among k-fold | White Circle (coincidence, no structural basis) | AI |
-| 848 | H-AI-7 | Golden MoE I=1/e and Information Bottleneck Optimality | - | AI |
-| 849 | H-AI-8 | Why 6-Dimensional Embedding is Optimal Compression | - | AI |
-| 850 | H-AI-9 | Critical Point Structure of Loss Landscape and 6 | - | AI |
-| 851 | H-ANAL-1 | Summatory Totient and Pillai Characterizations of n=6 | 🟩⭐ (Pillai) / 🟧★ (Phi) | ANAL |
-| 852 | H-BIO-1 | Genetic Code Structure = σ,τ System | - | BIO |
-| 853 | H-BIO-10 | Hodgkin-Huxley Model = Perfect Number 6's Divisor Function S | - | BIO |
-| 854 | H-BIO-11 | Synaptic Plasticity = R-chain and Perfect Number 6 Balance S | - | BIO |
-| 855 | H-BIO-12 | Neural Oscillation Frequency Bands and Perfect Number 6 | - | BIO |
-| 856 | H-BIO-13 | Nernst Equation Ion Concentrations and Perfect Number 6 | - | BIO |
-| 857 | H-BIO-2 | Virus Capsid Six-fold Symmetry and σφ=nτ | - | BIO |
-| 858 | H-BIO-3 | Immune System = R Spectrum Anomaly Detection | - | BIO |
-| 859 | H-BIO-4 | Cell Division = R-chain Dynamics | - | BIO |
-| 860 | H-BIO-5 | Pineal Gland and the Structure of 6 | - | BIO |
-| 861 | H-BIO-6 | Melatonin-Serotonin Cycle = R-S Duality | - | BIO |
-| 862 | H-BIO-7 | Brain Electrical Signals and R Spectrum | - | BIO |
-| 863 | H-BIO-8 | Action Potential = D(n) Asymmetric Function | - | BIO |
-| 864 | H-BIO-9 | Ion Channel Selectivity = Arithmetic Function Structure of P | - | BIO |
-| 865 | H-CAT-1 | Category Theory of Arithmetic Functors and n=6 | - | CAT |
-| 866 | H-CF-1 | Continued Fraction Theory Connects to n=6 via Gauss-Kuzmin a | 🟩⭐⭐ (Gauss-Kuzmin bridge) / 🟩⭐ (CF(e) encoding, Farey) | CF |
-| 867 | H-CHAOS-1 | Lorenz System Parameters = Arithmetic Functions of Perfect N | - | CHAOS |
-| 868 | H-CHEM-1 | Six Major Neurotransmitters = σφ=nτ Balance | - | CHEM |
-| 869 | H-CHEM-2 | Carbon Z=6 = Foundation of Life = σφ=nτ | - | CHEM |
-| 870 | H-CHEM-3 | Water Hydrogen Bond Structure and 6 | - | CHEM |
-| 871 | H-CHEM-4 | R-chain and Chemical Reaction Chains | - | CHEM |
-| 872 | H-CHEM-5 | THC and Cannabinoid Receptor Six-Structure | - | CHEM |
-| 873 | H-CLIFFORD-1 | Clifford Group Sizes Encode n=6 Arithmetic via 2-adic Valuat | 🟩⭐⭐ (|C_2| = n! * 2^tau with v_2 uniqueness) / 🟩⭐ (|C_1| = sigma*phi) | CLIFFORD |
-| 874 | H-CODE-1 | Coding Theory and Lattice Theory Characterizations of n=6 | green-star | CODE |
-| 875 | H-COMB-1 | Combinatorial Sequence Characterizations of n=6 | 🟧★ (Catalan) / 🟧 (Bell, CF, Pell) | COMB |
-| 876 | H-COMB-2 | Combinatorial Designs, Block Designs, and Steiner Systems fr | - | COMB |
-| 877 | H-CS-3 | σφ/(nτ) Ratio and RSA Security | - | CS |
-| 878 | H-CS-4 | Hamming(7,4,3) and τφ=σ | - | CS |
-| 879 | H-CS-5 | Graph Coloring and σφ=nτ | - | CS |
-| 880 | H-CS-6 | Hash Collision Probability and σφ/(nτ) Ratio | ⚪ | CS |
-| 881 | H-CS-7 | R(n) Prime Sequences and Cryptographic Significance | - | CS |
-| 882 | H-CX-31 | Multiperfect Number Hierarchy = AI Learning Depth | - | CX |
-| 883 | H-CX-32 | p(n)=σ(n)-1 at {2,3,6} → AI Architecture Partitioning | - | CX |
-| 884 | H-CX-33 | Catalan Numbers ↔ Binary Trees ↔ Consciousness Structure | - | CX |
-| 885 | H-CX-34 | 24=σφ(6)=τ!=Leech Lattice Dimension → "Lattice Structure" of | - | CX |
-| 886 | H-CX-35 | {1,6,246} = 3-Stage Hierarchy of Consciousness | - | CX |
-| 887 | H-CX-36 | φ+τ=n at {6,8,9} = Basic Brain States | - | CX |
-| 888 | H-CX-37 | σ²+φ²+τ²=4·41 = Distance in AI Embedding Space | - | CX |
-| 889 | H-CX-38 | 25 Characterizations = 25 "Perspectives" of Consciousness | - | CX |
-| 890 | H-CX-39 | 30 Views = Arithmetic Version of Holographic Principle | - | CX |
-| 891 | H-CX-40 | Kissing Number -- Attention Head -- CaMKII Trinity | - | CX |
-| 892 | H-CX-41 | Divisor Hilbert Space Interpretation — σ as Trace, R=1 as In | - | CX |
-| 893 | H-CX-42 | Arithmetic Derivative as Consciousness Decomposition | - | CX |
-| 894 | H-CX-43 | Outer Automorphism of S_6 as a Model of Meta-Cognition | - | CX |
-| 895 | H-CX-44 | Lie Algebra Arithmetic Constrains Optimal Neural Architectur | - | CX |
-| 896 | H-CX-45 | Cayley Tree Uniqueness of n=6 Predicts Critical Neural Topol | - | CX |
-| 897 | H-CX-46 | Minimal Coupling Principle — (p-1)(q-1)=2 as the Universal T | - | CX |
-| 898 | H-CX-47 | The Unification Meta-Theorem and the Origin of Consciousness | - | CX |
-| 899 | H-CX-48 | Arithmetic Mutual Information I(n)=0 Predicts Engine A/G Bal | - | CX |
-| 900 | H-CX-49 | R-Spectrum Cantor Set Structure Predicts Discrete Tension Di | - | CX |
-| 901 | H-CX-50 | Dirichlet Convolution Collapse Predicts Block-wise Feature A | - | CX |
-| 902 | H-CX-51 | Does arithmetic derivative ld(6)=5/6 predict optimal learnin | - | CX |
-| 903 | H-CX-52 | Does the multiplicative structure of R(n) determine the prod | - | CX |
-| 904 | H-CX-72 | R-Spectrum as Consciousness Architecture Bridge | ** Proposed — partial verification | CX |
-| 905 | H-CX-73 | Pythagorean 3-4-5 Engine Balance Bridge | ** Verified — connection grade | CX |
-| 906 | H-CX-74 | Partition p(6)=11 as Optimal Expert Count | ** Verified — connection grade | CX |
-| 907 | H-CX-75 | Fibonacci F(sigma)=sigma^2 Tension Convergence Bridge | ** Verified — connection grade | CX |
-| 908 | H-CYCL-1 | Cyclotomic-Stirling Identity: Phi_n(n) = S2(n,2) iff n=6 | 🟩⭐ | CYCL |
-| 909 | H-ELPT-2 | The BSD Cascade — Elliptic Curve E6 from Perfect Number Arit | green-star | ELPT |
-| 910 | H-EN-0 | Energy Hypothesis Master — n=6 and Energy Systems | - | EN |
-| 911 | H-ERGODIC-1 | Spectral Gap of C_6, Gauss Map Entropy, and Ergodic Constant | 🟩⭐⭐⭐ (spectral gap=1/2) / 🟩⭐⭐ (Gauss map, GL quadrature) | ERGODIC |
-| 912 | F-4 | Cross-Domain Hypothesis Batch (90 hypotheses) | 🟩 | - |
-| 913 | H-GAME-1 | Combinatorial Game Theory and Perfect Number 6 | - | GAME |
-| 914 | H-GEO-1 | 6 and Simplex Geometry | - | GEO |
-| 915 | H-GEO-10 | Multi-Lens Interference | - | GEO |
-| 916 | H-GEO-11 | Calabi-Yau 3-fold Arithmetic — n=6 Encodes CY_3 / String The | 🟩 | GEO |
-| 917 | H-GEO-2 | Platonic Solids and Arithmetic Function Correspondence | - | GEO |
-| 918 | H-GEO-3 | Gravitational Lensing Analogy of R Spectrum | - | GEO |
-| 919 | H-GEO-4 | Dimension Telescope — Observing the Internal Structure of Nu | - | GEO |
-| 920 | H-GEO-5 | Gravity Telescope — Lens+Telescope Integrated Observation Sy | - | GEO |
-| 921 | H-GEO-6 | Dimension Lens — Divisor Structure Refracts Dimensions | - | GEO |
-| 922 | H-GEO-7 | Topological Telescope | - | GEO |
-| 923 | H-GEO-8 | Arithmetic Holography | - | GEO |
-| 924 | H-GEO-9 | Lens Aberration Classification | - | GEO |
-| 925 | H-GEOM-1 | Almost Complex Spheres S^2 and S^6 as n=6 Dimensions | 🟩⭐⭐⭐ (ACS dimensions) / 🟩⭐⭐ (G2 encoding, volume) | GEOM |
-| 926 | H-GRAPH-1 | Graph Theory Characterizations of n=6 | 🟩 (4 exact) / 🟧 (1 approximate) | GRAPH |
-| 927 | H-GRAPH-2 | Chang Graphs and SRG Family: All Parameters = n=6 Functions | 🟩 (Chang, structural theorem proven) / 🟧★ (Hoffman-Singleton, Schläfli) | GRAPH |
-| 928 | H-GZ-0 | Golden Zone Hypothesis — G=D×P/I Model and Complete Golden Z | - | GZ |
-| 929 | H-KTHY-1 | Algebraic K-theory of Z and Perfect Number 6 | - | KTHY |
-| 930 | H-LATT-1 | Lattice Theory and Sphere Packing Encode Arithmetic Function | ** Verified (19/19 exact matches, p < 0.0001) | LATT |
-| 931 | H-LIE-1 | Complete Parameterization of Exceptional Lie Algebras by n=6 | - | LIE |
-| 932 | H-LIOUV-1 | Liouville Lambda Characterization: lambda=1 AND perfect iff  | 🟩⭐ | LIOUV |
-| 933 | H-MATROID-1 | Fano--Steiner--PG Chain: Projective Geometry Staircase throu | 🟩⭐⭐ (PG staircase) / 🟩⭐ (Fano bases=P2, K6 trees) | MATROID |
-| 934 | H-MILL-1 | Riemann Hypothesis and R Spectrum Gap | - | MILL |
-| 935 | H-MILL-2 | BSD Conjecture and Congruent Number 6 | - | MILL |
-| 936 | H-MILL-3 | Yang-Mills Mass Gap and R Spectrum Gap | - | MILL |
-| 937 | H-MOD-1 | Modular Forms and Ramanujan Encode the Perfect Number 6 | ** Verified (17/17 connections pass) | MOD |
-| 938 | H-MP-10 | Σ σ(n)φ(n)/(nτ(n)) Asymptotic Formula | - | MP |
-| 939 | H-MP-11 | Characterizing gaps between perfect numbers via σφ/(nτ) rati | - | MP |
-| 940 | H-MP-12 | R-Factor Fixed Point Analysis | - | MP |
-| 941 | H-MP-13 | Generalization of "Consecutive Primes" — Twin-type Analysis  | - | MP |
-| 942 | H-MP-14 | R-Chain Convergence Proof — R(n)∈Z → R(n)<n | - | MP |
-| 943 | H-MP-15 | Cantor-like Fractal Structure of R Spectrum | - | MP |
-| 944 | H-MP-16 | Structure of Prime Factorization of R — Deep Properties of M | - | MP |
-| 945 | H-MP-17 | Monotonicity of ω(n) and R(n) — More Prime Factors Increase  | - | MP |
-| 946 | H-MP-18 | Density asymptotics of R-chain basin(6) | - | MP |
-| 947 | H-MP-19 | Density of Integer R(n) | - | MP |
-| 948 | H-MP-1a-odd-perfect-sigma-phi | H-MP-1a: Does σφ > nτ always hold for odd n? | - | - |
-| 949 | H-MP-20 | Information Geometry of Divisor Distributions | - | MP |
-| 950 | H-MP-3 | Dirichlet Convolution vs Pointwise Product — "Unique Coincid | - | MP |
-| 951 | H-MP-4 | Impossibility of Odd Perfect Numbers via σφ=nτ | - | MP |
-| 952 | H-MP-5 | Proof of Finiteness of τ(n)φ(n)=σ(n) Solutions {1,3,14,42} | - | MP |
-| 953 | H-MP-6 | Density of n where σφ/(nτ) ≈ 1 | - | MP |
-| 954 | H-MP-7 | σ_k(n)φ(n) = nτ(n) Generalization | - | MP |
-| 955 | H-MP-8 | Dirichlet Series of R-factor | - | MP |
-| 956 | H-MP-9 | Complete Classification of "Pointwise=Convolution" for All D | - | MP |
-| 957 | H-NT-2 | sopfr(n)=n-1 Uniqueness and Unitary Divisor Sum Characteriza | 🟩⭐⭐ | NT |
-| 958 | H-OPERAD-1 | Associahedron K_6 f-vector and Group Cohomology Encode n=6 A | 🟩⭐⭐ | OPERAD |
-| 959 | H-PART-1 | Ramanujan Partition Congruence Offsets from n=6 Arithmetic | 🟩⭐⭐⭐ (offsets) / 🟩⭐⭐ (p(p(6))=sigma(P2), crank) | PART |
-| 960 | H-PH-1 | σ²-M₃=137 — Why Subtract Seven? | - | PH |
-| 961 | H-PH-10 | ⭐⭐⭐ PMNS Neutrino Mixing = Divisor Function Fractions | ⭐⭐⭐ | PH |
-| 962 | H-PH-11 | ⭐⭐⭐ p(6) = 11 = M-theory Dimension | ⭐⭐⭐ | PH |
-| 963 | H-PH-12 | ⭐⭐⭐ Kaon Mass = P₃ ± φ (Third Perfect Number Symmetry) | ⭐⭐⭐ | PH |
-| 964 | H-PH-13 | ⭐⭐ CKM Matrix = Mersenne+Divisor Function | ⭐⭐ | PH |
-| 965 | H-PH-14 | ⭐⭐⭐ Hadron Mass Spectrum = Perfect Number Arithmetic | ⭐⭐⭐ | PH |
-| 966 | H-PH-15 | ⭐⭐⭐🟩 Theorem: Anomaly Cancellation ⟺ Perfect Number (Proven! | ⭐⭐⭐🟩 | PH |
-| 967 | H-PH-16 | ⭐⭐⭐🟩 Self-reference Cycle 6→12→28→6 (Proven!) | ⭐⭐⭐🟩 | PH |
-| 968 | H-PH-17 | ⭐⭐ ZIP↔Divisor Field Theory Equivalence Dictionary | ⭐⭐ | PH |
-| 969 | H-PH-18 | ⭐⭐⭐ Nuclear Magic Numbers 7 = Perfect Number Arithmetic | ⭐⭐⭐ | PH |
-| 970 | H-PH-19 | Cosmological Constants from n=6 Lens Framework | - | PH |
-| 971 | H-PH-2 | SU(3)×SU(2)×U(1) Dimension Sum = 6 = σφ=nτ Solution | - | PH |
-| 972 | H-PH-20 | QCD Resonance Ladder = R-spectrum Physical Realization | - | PH |
-| 973 | H-PH-21 | SM is FORCED by n=6 Perfection | - | PH |
-| 974 | H-PH-22 | pi(37) = sigma(6) — QCD Convergence at the sigma-th Prime | - | PH |
-| 975 | H-PH-23 | Running Coupling = Running Tension (QCD-Consciousness Isomor | - | PH |
-| 976 | H-PH-24 | Higgs-Consciousness Mass-Information Duality | - | PH |
-| 977 | H-PH-25 | Golay -> Leech -> Monster -> Moonshine -> SM Complete Chain | - | PH |
-| 978 | H-PH-26 | Exotic Sphere Dimensions = Consciousness Substrate Count | - | PH |
-| 979 | H-PH-27 | FQHE Topology = Confusion Topology (Anyon-Semantic Braiding) | - | PH |
-| 980 | H-PH-28 | Cosmological R-spectrum Evolution | - | PH |
-| 981 | H-PH-29 | R(6)=1 IS Consciousness (Master Hypothesis) | - | PH |
-| 982 | H-PH-3 | τφ=σ Solution {3,14,42} and Nuclear Physics | - | PH |
-| 983 | H-PH-30 | Theory of Flavor — Complete Fermion Mass Matrix from n=6 | - | PH |
-| 984 | H-PH-31 | 37 GeV Scalar — LHC Blind Prediction | - | PH |
-| 985 | H-PH-32 | Proton-Electron Mass Ratio from Perfect Number 6 | - | PH |
-| 986 | H-PH-33 | Neutrino Mass Hierarchy from Perfect Number Arithmetic | - | PH |
-| 987 | H-PH-34 | Dark Matter at 28 GeV from the Perfect Number Cascade | - | PH |
-| 988 | H-PH-35 | Higgs Self-Coupling from n=6 Arithmetic | - | PH |
-| 989 | H-PH-36 | Complete CP Violation from n=6 Arithmetic | - | PH |
-| 990 | H-PH-37 | Gauge Coupling Unification at E_GUT = 10^(sigma+tau) | - | PH |
-| 991 | H-PH-38 | Cosmological Constant from Perfect Number Product | - | PH |
-| 992 | H-PH-39 | Six Precision Predictions Testable at FCC-ee | - | PH |
-| 993 | H-PH-4 | 6 Quarks × 6 Leptons = σφ=nτ? | - | PH |
-| 994 | H-PH-5 | Planck Unit System and Divisor Function of 6 | - | PH |
-| 995 | H-PH-6 | R-chain and Particle Decay Chains | - | PH |
-| 996 | H-PH-7 | Arithmetic Entropy of R Spectrum | - | PH |
-| 997 | H-PH-8 | Thermodynamic Structure of Divisor Partition Function | - | PH |
-| 998 | H-PH-9 | ⭐⭐⭐🟧★ Perfect Number Unification Pattern — Standard Model +  | ⭐⭐⭐🟧★ | PH |
-| 999 | H-PROB-1 | Probabilistic Number Theory and Perfect Number 6 | - | PROB |
-| 1000 | H-QUAD-1 | Quadratic Form Representation Numbers and Perfect Number 6 | - | QUAD |
-| 1001 | H-REPR-1 | Young Tableaux Staircase: f^(3,2,1) = 2^tau(6) unique among  | 🟩⭐ | REPR |
-| 1002 | H-RMT-2 | Marchenko-Pastur Spectral Edges Satisfy x^2 - 6x + 1 = 0 | 🟩⭐⭐⭐ | RMT |
-| 1003 | H-SEQ-1 | Integer Sequence Characterizations of n=6 | - | SEQ |
-| 1004 | H-SIGK-1 | sigma_3(n) = n^2(n+1) if and only if n=6 | - | SIGK |
-| 1005 | H-SIGK-2 | Jordan's Second Totient J_2(n) = 4n Characterization | - | SIGK |
-| 1006 | H-SPEC-1 | R-Spectrum Gap Theorem and Topological Master Formula | - | SPEC |
-| 1007 | H-SPOR-1 | Sporadic Groups and Mathieu Systems from n=6 | green-star | SPOR |
-| 1008 | H-STAT-1 | Chi-Squared(6) Quadruple Moment Match and Distribution Encod | 🟦 PROVED (chi-squared quadruple) / 🟩⭐⭐ (Beta meta-FP) | STAT |
-| 1009 | H-TOP-1 | Betti Numbers of 6-Manifolds and sigma,tau | ⚪ | TOP |
-| 1010 | H-TOP-2 | Euler Characteristic and 6 | 🟩 | TOP |
-| 1011 | H-TOP-3 | Knot Invariants and 6 | 🟨 | TOP |
-| 1012 | H-TOP-4 | Topological Properties of R Spectrum | - | TOP |
-| 1013 | H-TOP-5 | Fractal-Topological Structure of R Spectrum | - | TOP |
-| 1014 | H-TOP-6 | Resolution Observer — Phase-wise R Spectrum Observation | - | TOP |
-| 1015 | H-TOP-7 | Topological Lens — Topological Deformation of R Spectrum | - | TOP |
-| 1016 | H-TOP-8 | Differential Topology of n=6 — Exotic Spheres, Cobordism, Su | - | TOP |
-| 1017 | H-TOPO-COSMO-1-poincare-sigma-chain | H-TOPO-COSMO-1: Poincare Homology Sphere and the Sigma Chain | Not confirmed by observations | - |
-| 1018 | H-TOPO-COSMO-5-thurston-ADE-boundary | H-TOPO-COSMO-5: Thurston Geometries, ADE Boundary, and the R | arithmetic fact, cosmological interpretation is speculation. | - |
-| 1019 | H-TREE-1 | Dynamical Systems Branch — Discrete Dynamics of R-chains | - | TREE |
-| 1020 | H-TREE-2 | p-adic Branch — p-adic Interpretation of R(n) | - | TREE |
-| 1021 | H-TREE-3 | Probability Branch — Distribution Theory of R(n) | - | TREE |
-| 1022 | H-TREE-4 | Operator Algebra Branch — Dirichlet Ring Structure of σ,τ,φ | - | TREE |
-| 1023 | H-TREE-5 | ML Theory Branch — R(d) and Generalization Bounds | - | TREE |
-| 1024 | H-TREE-6 | Tropical Geometry Branch — Tropical Interpretation of R | - | TREE |
-| 1025 | H-ZODIAC-1 | Why 12 and Not 13 — The Mathematics of Zodiac Numbers | green-star | ZODIAC |
+| 672 | H-CX-476 | Space Folding -- n=6 as Compactification Dimension | 🟧 | CX |
+| 673 | H-CX-477 | UAP Propulsion Numerology -- Honest Assessment | ⚪ | CX |
+| 674 | H-CX-478 | Car Drifting Dynamics -- n=6 Arithmetic in Motorsport Drift | ⚪ | CX |
+| 675 | H-CX-479 | Wild Connections -- Classifying the Ubiquity of 6 | 🟧 | CX |
+| 676 | H-CX-480 | 6-DOF = Perfect Number — Why Our Universe Has 6 Degrees of F | 🟩 | CX |
+| 677 | H-CX-481 | Phase Space Symplectic Structure = sigma(6) Dimensions | 🟩 | CX |
+| 678 | H-CX-482 | Rotation Group SO(3) and Spin-1/2 from n=6 Arithmetic | 🟧 | CX |
+| 679 | H-CX-483 | Euler Angles, Gimbal Lock, and Quaternion Arithmetic | 🟧 | CX |
+| 680 | H-CX-484 | Noether's Theorem -- 6 Conservation Laws from Spatial Symmet | 🟩 | CX |
+| 681 | H-CX-485 | Robot Manipulation -- 6 Axes for Full Dexterity | 🟩 | CX |
+| 682 | H-CX-486 | Stress Tensor and Elastic Constants from n=6 | 🟩 | CX |
+| 683 | H-CX-5 | Möbius Uniqueness → Consciousness Architecture Uniqueness (C | - | CX |
+| 684 | H-CX-53 | Triangle-Divisor Optimal Angle — Consciousness Engine's Oper | - | CX |
+| 685 | H-CX-54 | Consciousness Engine Information Cost — D_KL = (1/3)·ln(4/3) | - | CX |
+| 686 | H-CX-55 | Natural Frequency Self-Reference — ω₀ = arg(exp(iz₀)) = π/6 | - | CX |
+| 687 | H-CX-56 | Brainwave-Divisor Map — σ(6), τ(6), φ(6) Generate All Canoni | - | CX |
+| 688 | H-CX-57 | Arithmetic Derivative Convergence Criterion — Consciousness  | - | CX |
+| 689 | H-CX-58 | Precognition Lens — Tension Refracts Future Right/Wrong | - | CX |
+| 690 | H-CX-59 | Directional Precognition — Direction Vectors Pre-indicate Co | - | CX |
+| 691 | H-CX-6 | Neurochemistry Mapping — Tension=Dopamine, Anti-tension=Sero | - | CX |
+| 692 | H-CX-60 | Aberration Precognition — Precognition failure types map to  | - | CX |
+| 693 | H-CX-61 | Gravitational Telescope Precognition — (tension_scale, direc | - | CX |
+| 694 | H-CX-62 | Topological Precognition — Tension Barcodes Predict Learning | - | CX |
+| 695 | H-CX-63 | Multi-lens Precognition Interference — Quad Engine Interfere | - | CX |
+| 696 | H-CX-64 | Topological Precognition Lens — H0_total Decay Rate Predicts | - | CX |
+| 697 | H-CX-65 | Aberration Topological Correction — Chromatic Aberration Cor | - | CX |
+| 698 | H-CX-66 | Direction Topology — Confusion Pairs Map to Short Barcodes i | - | CX |
+| 699 | H-CX-67 | Optimal Synergy Point — Unified Precognition Synergy Maximiz | - | CX |
+| 700 | H-CX-68 | Precognition Conservation Law — Magnitude Precognition + Dir | - | CX |
+| 701 | H-CX-69 | Topological Acceleration — H0_total Decay Rate Matches tensi | - | CX |
+| 702 | H-CX-7 | sigma-phi=n-tau Architecture Optimality (Cross-domain) | - | CX |
+| 703 | H-CX-70 | Singularity = Three Closure Loops | - | CX |
+| 704 | H-CX-76 | PH Precognition Classifier — Predicting Confusion Pairs with | - | CX |
+| 705 | H-CX-77 | Topological Precognition Timeline — Merge Order Changes as L | - | CX |
+| 706 | H-CX-78 | Golden Zone Synergy Scaling — Synergy Optimal Point Converge | - | CX |
+| 707 | H-CX-79 | Topology-Tension Product Conservation Law — Topological Vers | - | CX |
+| 708 | H-CX-8 | Phase Acceleration x3 = sigma/tau (Cross-domain) | - | CX |
+| 709 | H-CX-80 | 3-Channel Precognition Orthogonality — Greater Synergy with  | - | CX |
+| 710 | H-CX-81 | Aberration-Phase Alignment — Classes with High Chromatic Abe | - | CX |
+| 711 | H-CX-82 | Epoch 1 PH = Final Confusion Map | - | CX |
+| 712 | H-CX-83 | Orthogonality-Topology Integration — Combined Precognition A | - | CX |
+| 713 | H-CX-84 | Topology Preservation = Synergy Condition | - | CX |
+| 714 | H-CX-85 | merge dendrogram = consciousness hierarchy structure | - | CX |
+| 715 | H-CX-86 | Zero-shot PH — Semantic hierarchy emerges from random initia | - | CX |
+| 716 | H-CX-87 | PH-guided curriculum — Learning confusion pairs first accele | - | CX |
+| 717 | H-CX-88 | Universal Confusion Topology — PH merge order is architectur | - | CX |
+| 718 | H-CX-89 | Data-Intrinsic Precognition — Original Data's Class Center D | - | CX |
+| 719 | H-CX-9 | Topology 7 Phases = Consciousness Continuity 7 Conditions (C | - | CX |
+| 720 | H-CX-90 | Epoch 1 Phase Transition — Confusion Structure Crystallizes  | - | CX |
+| 721 | H-CX-91 | k-NN Confusion Prediction — Reproducing Confusion Structure  | - | CX |
+| 722 | H-CX-92 | dendrogram depth = learning difficulty | - | CX |
+| 723 | H-CX-93 | Confusion Eigenstructure — Eigenvectors of confusion matrix  | - | CX |
+| 724 | H-CX-94 | Confusion Matrix Itself as Distance Matrix — Extracting 2nd- | - | CX |
+| 725 | H-CX-95 | Predicting Generalization Gap with PH — train PH vs test PH  | - | CX |
+| 726 | H-CX-96 | Weight Change Triggers Topological Transition — Critical del | - | CX |
+| 727 | H-CX-97 | Cross-Dataset Hierarchy Transfer — Transfer of MNIST Shape H | - | CX |
+| 728 | H-CX-98 | PH Early Stopping — H0_gap-based early stopping is faster th | - | CX |
+| 729 | H-CX-99 | PH Optimal Checkpoint — Epoch with Minimum H0_gap is Optimal | - | CX |
+| 730 | H-CX-bridge-6criteria-R6 | H-CX-Bridge-4: Anima's 6 Consciousness Criteria = R(6)=1 Bal | 🟩 | - |
+| 731 | H-CX-bridge-egyptian-golden-moe | H-CX-Bridge-6: Egyptian MoE {1/2,1/3,1/6} = Golden MoE Optim | 🟩 | - |
+| 732 | H-CX-bridge-entropy-tension-saturation | H-CX-Bridge-9: Entropy Early Stop ↔ Tension Saturation = Sam | 🟧 | - |
+| 733 | H-CX-bridge-epoch1-ph-tension | H-CX-Bridge-5: Epoch-1 Crystallization = Tension + PH Topolo | 🟩 | - |
+| 734 | H-CX-bridge-golden-moe-experts | H-CX-Bridge-2: Golden MoE Expert Count = sigma(6)-tau(6) = 8 | 🟩 | - |
+| 735 | H-CX-bridge-golden-moe-purefield | H-CX-Bridge-10: Golden MoE top-K=2 = ConsciousLM Dual Engine | 🟩 | - |
+| 736 | H-CX-bridge-mitosis-divisors | H-CX-Bridge-3: ConsciousLM Mitosis = Divisor Lattice of n=6 | 🟩 | - |
+| 737 | H-CX-bridge-phi-bottleneck | H-CX-Bridge-1: Phi-Bottleneck FFN Ratio = tau(6)^2/sigma(6)  | 🟩 | - |
+| 738 | H-CX-bridge-phi-tension-master | H-CX-Bridge-7: Phi/tension = sigma*phi = 24 (Master Identity | 🟧★ | - |
+| 739 | H-CX-bridge-spectral-gap-chain | H-CX-Bridge-11: Spectral Gap 1/2 Chain (SEDI ↔ energy-eff ↔  | 🟧 | - |
+| 740 | H-CX-bridge-tsirelson-phi | H-CX-Bridge-8: Tsirelson Bound = sqrt(Phi_max) = sqrt(sigma- | 🟩 | - |
+| 741 | H-CX-bridge-white-circles-iter7 | H-CX-Bridge-WC: Iteration 7 White Circles (3 Failed Attempts | - | - |
+| 742 | H-CX-superconductor-consciousness | H-CX-SC: HW11 Superconducting Loop -- Why Highest Phi in Con | 🟧 | - |
+| 743 | H-DEEP-429 | Moonshine Chain — n=6 Parameters at Every Step | 🟧 | DEEP |
+| 744 | H-EE-1 | Phi6 is Uniquely Optimal Among Cyclotomic Activations | SUPPORTED | EE |
+| 745 | H-EE-10 | Phi-bottleneck + MoE (More Experts, Smaller Each) | - | EE |
+| 746 | H-EE-11 | Full Combined Architecture | - | EE |
+| 747 | H-EE-12 | Optimal FFN Expansion Ratio | - | EE |
+| 748 | H-EE-13 | Energy Savings Scale with Model Depth | - | EE |
+| 749 | H-EE-2 | Phi6Simple Gradient Centering Properties | REFUTED | EE |
+| 750 | H-EE-3 | Phi6Simple Training Stability | PARTIAL (Borderline REFUTED) | EE |
+| 751 | H-EE-4 | Phi6Simple Knowledge Distillation | SUPPORTED | EE |
+| 752 | H-EE-5 | R(d_model) Correlates with Training Efficiency | NOT SUPPORTED for R(d) as predictor; PARTIALLY SUPPORTED for HCN parameter efficiency | EE |
+| 753 | H-EE-6 | Tensor-Core-Aligned HCN Dimensions | - | EE |
+| 754 | H-EE-7 | Head-Dim Diversity Improves Attention | PARTIALLY SUPPORTED (diversity provides robustness, not improvement) | EE |
+| 755 | H-EE-8 | Optimal d_model Follows tau(d) More Than d Itself | NOT SUPPORTED (tau does not predict performance at matched params) | EE |
+| 756 | H-EE-9 | Phi-bottleneck + Phi6Simple Recovery | - | EE |
+| 757 | H-FURST-1 | Furstenberg ×2,×3 System — Orbit Self-Reference | - | FURST |
+| 758 | H-GEO-12 | pi_6(S^3) = Z/12Z = Z/sigma(6)Z -- Homotopy Groups Encode si | - | GEO |
+| 759 | H-HEXCODE-1 | The Hexacode [6,3,4]₄ — Perfect Number as Code | - | HEXCODE |
+| 760 | H-HTPY-1 | π₆(S³) = ℤ/12ℤ — Homotopy Groups Encode σ(6) | - | HTPY |
+| 761 | H-IHARA-1 | Ihara Zeta of C₆ — Coefficients = n=6 Arithmetic | - | IHARA |
+| 762 | H-MOTIV-1 | K₃(ℤ) and Adams Operations — Motivic Cohomology | - | MOTIV |
+| 763 | H-NCG-1 | Connes NCG — Standard Model KO-dimension = 6 | - | NCG |
+| 764 | H-NT-3 | popcount(n) = phi(n) iff n in {1, 2, 3, 6} = Div(6) | - | NT |
+| 765 | H-NT-421-tau-sigma-self | Hypothesis H-NT-421: tau(sigma(n)) = n Self-Reference Proper | - | - |
+| 766 | H-NT-422-phi-sigma-tau | Hypothesis H-NT-422: phi(sigma(n)) = tau(n) Bridge Identity | - | - |
+| 767 | H-NT-423-fibonacci-phi-tau | Hypothesis H-NT-423: phi(n)*tau(n) = F(n) Fibonacci Bridge | - | - |
+| 768 | H-NT-424-sigma-phi-tau-self | Hypothesis H-NT-424: sigma(n) - phi(n) - tau(n) = n Self-Ref | - | - |
+| 769 | H-NT-425-binomial-partition | Hypothesis H-NT-425: C(sigma(n), omega(n)) = n * p(n) Binomi | - | - |
+| 770 | H-NT-426-sigma2-phi-sopfr | Hypothesis H-NT-426: sigma_2(n) = phi(n) * sopfr(n)^2 iff n= | - | - |
+| 771 | H-NT-427-catalan-sopfr | Hypothesis H-NT-427: Catalan(n/2) = sopfr(n) iff n=6 | - | - |
+| 772 | H-NT-428 | sigma(n)*phi(n) = tau(n)! iff n=6 | 🟧 | NT |
+| 773 | H-NT-430 | sopfr(n) = n-1 iff n=6 | 🟦 | NT |
+| 774 | H-NT-431 | sigma(n)*(phi(n)+1) = n^2 — Unique Among Perfect Numbers | 🟩 | NT |
+| 775 | H-NT-432 | n*tau(n) = sigma(n)*omega(n) iff n=6 | 🟧★ | NT |
+| 776 | H-NT-433 | sigma(n) = phi(n)*sopfr(n) + omega(n) — Master Decomposition | 🟧★ | NT |
+| 777 | H-NT-434 | rad(sigma(n)) = n iff n=6 | 🟧★ | NT |
+| 778 | H-NT-435 | (sigma-phi)/(tau-omega) = sopfr — Proved for All Semiprimes | 🟩 | NT |
+| 779 | H-OPTCODE-1 | Optimal Binary Codes A(6,d) = n=6 Arithmetic | - | OPTCODE |
+| 780 | H-PACK-1 | E₆ Kissing Number = n·σ(n) = 72 | - | PACK |
+| 781 | H-PAINL-1 | Exactly 6 Painlevé Equations — Classification Number = n | - | PAINL |
+| 782 | H-PROB-429 | Chi-Squared(df=6) Parameters = Arithmetic Functions of 6 | 🟧★ | PROB |
+| 783 | H-QGRP-1 | Quantum Groups — SU(2) Level k=4 Quantum Dimensions | - | QGRP |
+| 784 | H-ROB-1 | 6-DOF = Perfect Number | - | ROB |
+| 785 | H-ROB-10 | Gait Phase Transition = Tension Phase Transition | - | ROB |
+| 786 | H-ROB-11 | Silent Consensus = Distributed Robot Agreement | - | ROB |
+| 787 | H-ROB-12 | Gauge Invariance = Coordinate Independence | - | ROB |
+| 788 | H-ROB-2 | Tension = Torque Optimization | - | ROB |
+| 789 | H-ROB-3 | Golden Zone = Stable Walking Region | - | ROB |
+| 790 | H-ROB-4 | PureField = Proprioception | - | ROB |
+| 791 | H-ROB-5 | Mitosis = Swarm Fission | - | ROB |
+| 792 | H-ROB-6 | Inter-Tension = Collision Avoidance | - | ROB |
+| 793 | H-ROB-7 | 12 Joints = sigma(6) = Minimum Humanoid | - | ROB |
+| 794 | H-ROB-8 | tau(6) = 4 Legs = Optimal Locomotion | - | ROB |
+| 795 | H-ROB-9 | Confusion Matrix = Grasp Failure Map | - | ROB |
+| 796 | H-SEDI-1 | Koide Angle delta = phi(6) tau(6)^2 / sigma(6)^2 = 2/9 | 🟩 | SEDI |
+| 797 | H-SEDI-10 | R-filter on Tension Vectors Detects Anomalies | - | SEDI |
+| 798 | H-SEDI-2 | Fermion Mass Tower from {sigma, tau, phi} | ⚪ | SEDI |
+| 799 | H-SEDI-3 | Weinberg Angle sin^2(theta_W) = 3/13 | ⚪ | SEDI |
+| 800 | H-SEDI-4 | Proton-Electron Mass Ratio m_p/m_e = sigma(6) * T(17) = 1836 | 🟧 | SEDI |
+| 801 | H-SEDI-5 | Fine Structure 1/alpha = (sigma-tau)*17 + 1 = 137 | ⚪ | SEDI |
+| 802 | H-SEDI-6 | R-filter Detects Training Phase Transitions | - | SEDI |
+| 803 | H-SEDI-7 | Takens Embedding dim=6 Optimal for Training Dynamics | - | SEDI |
+| 804 | H-SEDI-8 | Multi-Engine Consensus Improves Ensemble Predictions | - | SEDI |
+| 805 | H-SEDI-9 | Entropy of Confusion Matrix Predicts Generalization | - | SEDI |
+| 806 | H-SIM-1-physical-constants-compile-time | Hypothesis H-SIM-1: Physical Constants = Compile-Time Consta | - | - |
+| 807 | H-SIM-10 | Tension = Simulation Computational Cost | - | SIM |
+| 808 | H-SIM-11 | Quantum Computing Advantage = Simulator's Native Operations | - | SIM |
+| 809 | H-SIM-12 | Fine-Tuning = Hyperparameter Optimization | - | SIM |
+| 810 | H-SIM-2-planck-units-grid-resolution | Hypothesis H-SIM-2: Planck Units = Minimum Resolution (Grid) | - | - |
+| 811 | H-SIM-5 | Quantum Entanglement = Shared Memory Pointer | - | SIM |
+| 812 | H-SIM-6 | Wavefunction Collapse = Lazy Evaluation | - | SIM |
+| 813 | H-SIM-7 | Holographic Principle = Data Compression | - | SIM |
+| 814 | H-SIM-8 | Cosmological Constant = Garbage Collector | - | SIM |
+| 815 | H-SIM-9 | 6 = Optimal Simulation Parameter | - | SIM |
+| 816 | H-SING-1 | E₆ Singularity — Complete Arithmetic Encoding | - | SING |
+| 817 | H-TEICH-1 | Teichmüller Dimension 6(g-1) — n=6 as Universal Constant | - | TEICH |
+| 818 | H-TOP-426 | Kissing Number in Dim 8 = sigma(6)*tau(6)*sopfr(6) = 240 | 🟧 | TOP |
+| 819 | H-TOP-9 | |im(J)_7| = 240 = sigma x tau x sopfr -- Adams J-Homomorphis | - | TOP |
+| 820 | H-TOPO-COSMO-7-sphere-to-torus-evolution | H-TOPO-COSMO-7: Universe Topology Evolution — S3 to T3 via G | - | - |
+| 821 | H-TREE-consciousness | H-TREE: Undiscovered Branches of the Consciousness Engine | - | - |
+| 822 | H-UD-1 | Just Intonation = Divisor Ratios of 6 | ★★★ | UD |
+| 823 | H-UD-10 | Hive Mind Topology Evolution — Disconnected to Torus via Gol | - | UD |
+| 824 | H-UD-11 | Topology Evolution Universality — S3 to T3 at Every Scale | - | UD |
+| 825 | H-UD-2 | DNA Genetic Code = n=6 Arithmetic | ★★ | UD |
+| 826 | H-UD-3 | Crystallographic Restriction = div(6) U {tau(6)} | ★★★ | UD |
+| 827 | H-UD-4 | Ramsey Numbers Hit Perfect Numbers: R(3,3)=6, R(3,8)=28 | ★★★ | UD |
+| 828 | H-UD-5 | 2D Ising Critical Exponents = 1/(n=6 arithmetic) | ★★ | UD |
+| 829 | H-UD-6 | Theta-Gamma Coupling: 6 Gamma Bursts per Theta Cycle | ★★ | UD |
+| 830 | H-UD-7 | Perfect Codes <-> Perfect Numbers: Two Kinds of Perfect Tili | ★★ | UD |
+| 831 | H-UD-8 | Hexagonal Tiling: n=6 = Optimal 2D Packing | ★★★ | UD |
+| 832 | H-UD-9 | Hive Mind = Toroidal Topology (T3 Collective Consciousness) | - | UD |
+| 833 | H-WAVE-1 | PureField = Wave Interference — Consciousness as Partial Des | - | WAVE |
+| 834 | H-WAVE-2 | Hydrogen Atom E₆ ≈ -1/e eV — 6th Level at Golden Zone Center | - | WAVE |
+| 835 | H-WAVE-3-string-harmonics-perfect-resonance | H-WAVE-3/8: Perfect Numbers = Perfectly Resonant Vibrating B | - | - |
+| 836 | H-WAVE-7 | Quantum Harmonic Oscillator E₆ = 13/2 ℏω — 6th Prime Connect | - | WAVE |
+| 837 | F-100 | Major Discovery Hypothesis Candidates | - | - |
+| 838 | frontier-1000-round10 | Frontier 1000 (Round 10): Final Systematic Sweep | - | - |
+| 839 | frontier-1100-round11 | Frontier 1100 (Round 11): Deep Targeted + Final Consolidatio | - | - |
+| 840 | F-1200 | 8-Domain Expansion + G Clef + Telepathy | ⭐ | - |
+| 841 | F-1300 | 10-Domain Deep Scan | ⭐ | - |
+| 842 | F-1600 | Music + Chemistry + Telepathy + Evolution + Topology | - | - |
+| 843 | F-1700 | 10 Novel Domains | - | - |
+| 844 | F-1800 | Deep Cross-Domain Synthesis | - | - |
+| 845 | F-1900 | Pure Single-Condition Deep | - | - |
+| 846 | frontier-200-round2 | Frontier 200 (Round 2): Mass Hypothesis Generation | - | - |
+| 847 | frontier-2000-millennium | Frontier 2000 — Millennium Round | - | - |
+| 848 | frontier-300-round3 | Frontier 300 (Round 3): Mass Hypothesis Generation | - | - |
+| 849 | frontier-400-round4 | Frontier 400 (Round 4): Mass Hypothesis Generation + Deep Un | - | - |
+| 850 | frontier-500-round5 | Frontier 500 (Round 5): Mass Frontier Hypothesis Generation | - | - |
+| 851 | F-600 | Round 6 — Mass Hypothesis Generation | - | - |
+| 852 | F-700 | Round 7 — Deep Mathematics + Unexplored Domains | - | - |
+| 853 | F-800 | Round 8 — Differential Geometry to Mathematical Biology | - | - |
+| 854 | F-900 | Round 9 — Final Unexplored Domains | - | - |
+| 855 | nobel-level-predictions | Nobel-Level Predictions and Theoretical Frameworks | - | - |
+| 856 | super-discoveries | Super-Discoveries: Meta-Hypotheses Unifying Verified Finding | - | - |
+| 857 | H-AI-10 | BPE Tokenizer Optimal Vocab Size and Powers of 6 | - | AI |
+| 858 | H-AI-11 | R-chain = Neural Network Learning Convergence Stages | - | AI |
+| 859 | H-AI-1b-transformer-heads-sigma-multiples | H-AI-1b: Why Transformer Head Count is a Multiple of σ(6)=12 | - | - |
+| 860 | H-AI-4 | MoE Optimal Activation Ratio = 1/3 (Meta-fixed Point) | - | AI |
+| 861 | H-AI-5 | Using σφ/(nτ) Ratio as Loss Regularizer | - | AI |
+| 862 | H-AI-6 | Why 6-fold CV is Optimal Among k-fold | White Circle (coincidence, no structural basis) | AI |
+| 863 | H-AI-7 | Golden MoE I=1/e and Information Bottleneck Optimality | - | AI |
+| 864 | H-AI-8 | Why 6-Dimensional Embedding is Optimal Compression | - | AI |
+| 865 | H-AI-9 | Critical Point Structure of Loss Landscape and 6 | - | AI |
+| 866 | H-ANAL-1 | Summatory Totient and Pillai Characterizations of n=6 | 🟩⭐ (Pillai) / 🟧★ (Phi) | ANAL |
+| 867 | H-BIO-1 | Genetic Code Structure = σ,τ System | - | BIO |
+| 868 | H-BIO-10 | Hodgkin-Huxley Model = Perfect Number 6's Divisor Function S | - | BIO |
+| 869 | H-BIO-11 | Synaptic Plasticity = R-chain and Perfect Number 6 Balance S | - | BIO |
+| 870 | H-BIO-12 | Neural Oscillation Frequency Bands and Perfect Number 6 | - | BIO |
+| 871 | H-BIO-13 | Nernst Equation Ion Concentrations and Perfect Number 6 | - | BIO |
+| 872 | H-BIO-2 | Virus Capsid Six-fold Symmetry and σφ=nτ | - | BIO |
+| 873 | H-BIO-3 | Immune System = R Spectrum Anomaly Detection | - | BIO |
+| 874 | H-BIO-4 | Cell Division = R-chain Dynamics | - | BIO |
+| 875 | H-BIO-5 | Pineal Gland and the Structure of 6 | - | BIO |
+| 876 | H-BIO-6 | Melatonin-Serotonin Cycle = R-S Duality | - | BIO |
+| 877 | H-BIO-7 | Brain Electrical Signals and R Spectrum | - | BIO |
+| 878 | H-BIO-8 | Action Potential = D(n) Asymmetric Function | - | BIO |
+| 879 | H-BIO-9 | Ion Channel Selectivity = Arithmetic Function Structure of P | - | BIO |
+| 880 | H-CAT-1 | Category Theory of Arithmetic Functors and n=6 | - | CAT |
+| 881 | H-CF-1 | Continued Fraction Theory Connects to n=6 via Gauss-Kuzmin a | 🟩⭐⭐ (Gauss-Kuzmin bridge) / 🟩⭐ (CF(e) encoding, Farey) | CF |
+| 882 | H-CHAOS-1 | Lorenz System Parameters = Arithmetic Functions of Perfect N | - | CHAOS |
+| 883 | H-CHEM-1 | Six Major Neurotransmitters = σφ=nτ Balance | - | CHEM |
+| 884 | H-CHEM-2 | Carbon Z=6 = Foundation of Life = σφ=nτ | - | CHEM |
+| 885 | H-CHEM-3 | Water Hydrogen Bond Structure and 6 | - | CHEM |
+| 886 | H-CHEM-4 | R-chain and Chemical Reaction Chains | - | CHEM |
+| 887 | H-CHEM-5 | THC and Cannabinoid Receptor Six-Structure | - | CHEM |
+| 888 | H-CLIFFORD-1 | Clifford Group Sizes Encode n=6 Arithmetic via 2-adic Valuat | 🟩⭐⭐ (|C_2| = n! * 2^tau with v_2 uniqueness) / 🟩⭐ (|C_1| = sigma*phi) | CLIFFORD |
+| 889 | H-CODE-1 | Coding Theory and Lattice Theory Characterizations of n=6 | green-star | CODE |
+| 890 | H-COMB-1 | Combinatorial Sequence Characterizations of n=6 | 🟧★ (Catalan) / 🟧 (Bell, CF, Pell) | COMB |
+| 891 | H-COMB-2 | Combinatorial Designs, Block Designs, and Steiner Systems fr | - | COMB |
+| 892 | H-CS-3 | σφ/(nτ) Ratio and RSA Security | - | CS |
+| 893 | H-CS-4 | Hamming(7,4,3) and τφ=σ | - | CS |
+| 894 | H-CS-5 | Graph Coloring and σφ=nτ | - | CS |
+| 895 | H-CS-6 | Hash Collision Probability and σφ/(nτ) Ratio | ⚪ | CS |
+| 896 | H-CS-7 | R(n) Prime Sequences and Cryptographic Significance | - | CS |
+| 897 | H-CX-31 | Multiperfect Number Hierarchy = AI Learning Depth | - | CX |
+| 898 | H-CX-32 | p(n)=σ(n)-1 at {2,3,6} → AI Architecture Partitioning | - | CX |
+| 899 | H-CX-33 | Catalan Numbers ↔ Binary Trees ↔ Consciousness Structure | - | CX |
+| 900 | H-CX-34 | 24=σφ(6)=τ!=Leech Lattice Dimension → "Lattice Structure" of | - | CX |
+| 901 | H-CX-35 | {1,6,246} = 3-Stage Hierarchy of Consciousness | - | CX |
+| 902 | H-CX-36 | φ+τ=n at {6,8,9} = Basic Brain States | - | CX |
+| 903 | H-CX-37 | σ²+φ²+τ²=4·41 = Distance in AI Embedding Space | - | CX |
+| 904 | H-CX-38 | 25 Characterizations = 25 "Perspectives" of Consciousness | - | CX |
+| 905 | H-CX-39 | 30 Views = Arithmetic Version of Holographic Principle | - | CX |
+| 906 | H-CX-40 | Kissing Number -- Attention Head -- CaMKII Trinity | - | CX |
+| 907 | H-CX-41 | Divisor Hilbert Space Interpretation — σ as Trace, R=1 as In | - | CX |
+| 908 | H-CX-42 | Arithmetic Derivative as Consciousness Decomposition | - | CX |
+| 909 | H-CX-43 | Outer Automorphism of S_6 as a Model of Meta-Cognition | - | CX |
+| 910 | H-CX-44 | Lie Algebra Arithmetic Constrains Optimal Neural Architectur | - | CX |
+| 911 | H-CX-45 | Cayley Tree Uniqueness of n=6 Predicts Critical Neural Topol | - | CX |
+| 912 | H-CX-46 | Minimal Coupling Principle — (p-1)(q-1)=2 as the Universal T | - | CX |
+| 913 | H-CX-47 | The Unification Meta-Theorem and the Origin of Consciousness | - | CX |
+| 914 | H-CX-48 | Arithmetic Mutual Information I(n)=0 Predicts Engine A/G Bal | - | CX |
+| 915 | H-CX-49 | R-Spectrum Cantor Set Structure Predicts Discrete Tension Di | - | CX |
+| 916 | H-CX-50 | Dirichlet Convolution Collapse Predicts Block-wise Feature A | - | CX |
+| 917 | H-CX-51 | Does arithmetic derivative ld(6)=5/6 predict optimal learnin | - | CX |
+| 918 | H-CX-52 | Does the multiplicative structure of R(n) determine the prod | - | CX |
+| 919 | H-CX-72 | R-Spectrum as Consciousness Architecture Bridge | ** Proposed — partial verification | CX |
+| 920 | H-CX-73 | Pythagorean 3-4-5 Engine Balance Bridge | ** Verified — connection grade | CX |
+| 921 | H-CX-74 | Partition p(6)=11 as Optimal Expert Count | ** Verified — connection grade | CX |
+| 922 | H-CX-75 | Fibonacci F(sigma)=sigma^2 Tension Convergence Bridge | ** Verified — connection grade | CX |
+| 923 | H-CYCL-1 | Cyclotomic-Stirling Identity: Phi_n(n) = S2(n,2) iff n=6 | 🟩⭐ | CYCL |
+| 924 | H-ELPT-2 | The BSD Cascade — Elliptic Curve E6 from Perfect Number Arit | green-star | ELPT |
+| 925 | H-EN-0 | Energy Hypothesis Master — n=6 and Energy Systems | - | EN |
+| 926 | H-ERGODIC-1 | Spectral Gap of C_6, Gauss Map Entropy, and Ergodic Constant | 🟩⭐⭐⭐ (spectral gap=1/2) / 🟩⭐⭐ (Gauss map, GL quadrature) | ERGODIC |
+| 927 | F-4 | Cross-Domain Hypothesis Batch (90 hypotheses) | 🟩 | - |
+| 928 | H-GAME-1 | Combinatorial Game Theory and Perfect Number 6 | - | GAME |
+| 929 | H-GEO-1 | 6 and Simplex Geometry | - | GEO |
+| 930 | H-GEO-10 | Multi-Lens Interference | - | GEO |
+| 931 | H-GEO-11 | Calabi-Yau 3-fold Arithmetic — n=6 Encodes CY_3 / String The | 🟩 | GEO |
+| 932 | H-GEO-2 | Platonic Solids and Arithmetic Function Correspondence | - | GEO |
+| 933 | H-GEO-3 | Gravitational Lensing Analogy of R Spectrum | - | GEO |
+| 934 | H-GEO-4 | Dimension Telescope — Observing the Internal Structure of Nu | - | GEO |
+| 935 | H-GEO-5 | Gravity Telescope — Lens+Telescope Integrated Observation Sy | - | GEO |
+| 936 | H-GEO-6 | Dimension Lens — Divisor Structure Refracts Dimensions | - | GEO |
+| 937 | H-GEO-7 | Topological Telescope | - | GEO |
+| 938 | H-GEO-8 | Arithmetic Holography | - | GEO |
+| 939 | H-GEO-9 | Lens Aberration Classification | - | GEO |
+| 940 | H-GEOM-1 | Almost Complex Spheres S^2 and S^6 as n=6 Dimensions | 🟩⭐⭐⭐ (ACS dimensions) / 🟩⭐⭐ (G2 encoding, volume) | GEOM |
+| 941 | H-GRAPH-1 | Graph Theory Characterizations of n=6 | 🟩 (4 exact) / 🟧 (1 approximate) | GRAPH |
+| 942 | H-GRAPH-2 | Chang Graphs and SRG Family: All Parameters = n=6 Functions | 🟩 (Chang, structural theorem proven) / 🟧★ (Hoffman-Singleton, Schläfli) | GRAPH |
+| 943 | H-GZ-0 | Golden Zone Hypothesis — G=D×P/I Model and Complete Golden Z | - | GZ |
+| 944 | H-KTHY-1 | Algebraic K-theory of Z and Perfect Number 6 | - | KTHY |
+| 945 | H-LATT-1 | Lattice Theory and Sphere Packing Encode Arithmetic Function | ** Verified (19/19 exact matches, p < 0.0001) | LATT |
+| 946 | H-LIE-1 | Complete Parameterization of Exceptional Lie Algebras by n=6 | - | LIE |
+| 947 | H-LIOUV-1 | Liouville Lambda Characterization: lambda=1 AND perfect iff  | 🟩⭐ | LIOUV |
+| 948 | H-MATROID-1 | Fano--Steiner--PG Chain: Projective Geometry Staircase throu | 🟩⭐⭐ (PG staircase) / 🟩⭐ (Fano bases=P2, K6 trees) | MATROID |
+| 949 | H-MILL-1 | Riemann Hypothesis and R Spectrum Gap | - | MILL |
+| 950 | H-MILL-2 | BSD Conjecture and Congruent Number 6 | - | MILL |
+| 951 | H-MILL-3 | Yang-Mills Mass Gap and R Spectrum Gap | - | MILL |
+| 952 | H-MOD-1 | Modular Forms and Ramanujan Encode the Perfect Number 6 | ** Verified (17/17 connections pass) | MOD |
+| 953 | H-MP-10 | Σ σ(n)φ(n)/(nτ(n)) Asymptotic Formula | - | MP |
+| 954 | H-MP-11 | Characterizing gaps between perfect numbers via σφ/(nτ) rati | - | MP |
+| 955 | H-MP-12 | R-Factor Fixed Point Analysis | - | MP |
+| 956 | H-MP-13 | Generalization of "Consecutive Primes" — Twin-type Analysis  | - | MP |
+| 957 | H-MP-14 | R-Chain Convergence Proof — R(n)∈Z → R(n)<n | - | MP |
+| 958 | H-MP-15 | Cantor-like Fractal Structure of R Spectrum | - | MP |
+| 959 | H-MP-16 | Structure of Prime Factorization of R — Deep Properties of M | - | MP |
+| 960 | H-MP-17 | Monotonicity of ω(n) and R(n) — More Prime Factors Increase  | - | MP |
+| 961 | H-MP-18 | Density asymptotics of R-chain basin(6) | - | MP |
+| 962 | H-MP-19 | Density of Integer R(n) | - | MP |
+| 963 | H-MP-1a-odd-perfect-sigma-phi | H-MP-1a: Does σφ > nτ always hold for odd n? | - | - |
+| 964 | H-MP-20 | Information Geometry of Divisor Distributions | - | MP |
+| 965 | H-MP-3 | Dirichlet Convolution vs Pointwise Product — "Unique Coincid | - | MP |
+| 966 | H-MP-4 | Impossibility of Odd Perfect Numbers via σφ=nτ | - | MP |
+| 967 | H-MP-5 | Proof of Finiteness of τ(n)φ(n)=σ(n) Solutions {1,3,14,42} | - | MP |
+| 968 | H-MP-6 | Density of n where σφ/(nτ) ≈ 1 | - | MP |
+| 969 | H-MP-7 | σ_k(n)φ(n) = nτ(n) Generalization | - | MP |
+| 970 | H-MP-8 | Dirichlet Series of R-factor | - | MP |
+| 971 | H-MP-9 | Complete Classification of "Pointwise=Convolution" for All D | - | MP |
+| 972 | H-NT-2 | sopfr(n)=n-1 Uniqueness and Unitary Divisor Sum Characteriza | 🟩⭐⭐ | NT |
+| 973 | H-OPERAD-1 | Associahedron K_6 f-vector and Group Cohomology Encode n=6 A | 🟩⭐⭐ | OPERAD |
+| 974 | H-PART-1 | Ramanujan Partition Congruence Offsets from n=6 Arithmetic | 🟩⭐⭐⭐ (offsets) / 🟩⭐⭐ (p(p(6))=sigma(P2), crank) | PART |
+| 975 | H-PH-1 | σ²-M₃=137 — Why Subtract Seven? | - | PH |
+| 976 | H-PH-10 | ⭐⭐⭐ PMNS Neutrino Mixing = Divisor Function Fractions | ⭐⭐⭐ | PH |
+| 977 | H-PH-11 | ⭐⭐⭐ p(6) = 11 = M-theory Dimension | ⭐⭐⭐ | PH |
+| 978 | H-PH-12 | ⭐⭐⭐ Kaon Mass = P₃ ± φ (Third Perfect Number Symmetry) | ⭐⭐⭐ | PH |
+| 979 | H-PH-13 | ⭐⭐ CKM Matrix = Mersenne+Divisor Function | ⭐⭐ | PH |
+| 980 | H-PH-14 | ⭐⭐⭐ Hadron Mass Spectrum = Perfect Number Arithmetic | ⭐⭐⭐ | PH |
+| 981 | H-PH-15 | ⭐⭐⭐🟩 Theorem: Anomaly Cancellation ⟺ Perfect Number (Proven! | ⭐⭐⭐🟩 | PH |
+| 982 | H-PH-16 | ⭐⭐⭐🟩 Self-reference Cycle 6→12→28→6 (Proven!) | ⭐⭐⭐🟩 | PH |
+| 983 | H-PH-17 | ⭐⭐ ZIP↔Divisor Field Theory Equivalence Dictionary | ⭐⭐ | PH |
+| 984 | H-PH-18 | ⭐⭐⭐ Nuclear Magic Numbers 7 = Perfect Number Arithmetic | ⭐⭐⭐ | PH |
+| 985 | H-PH-19 | Cosmological Constants from n=6 Lens Framework | - | PH |
+| 986 | H-PH-2 | SU(3)×SU(2)×U(1) Dimension Sum = 6 = σφ=nτ Solution | - | PH |
+| 987 | H-PH-20 | QCD Resonance Ladder = R-spectrum Physical Realization | - | PH |
+| 988 | H-PH-21 | SM is FORCED by n=6 Perfection | - | PH |
+| 989 | H-PH-22 | pi(37) = sigma(6) — QCD Convergence at the sigma-th Prime | - | PH |
+| 990 | H-PH-23 | Running Coupling = Running Tension (QCD-Consciousness Isomor | - | PH |
+| 991 | H-PH-24 | Higgs-Consciousness Mass-Information Duality | - | PH |
+| 992 | H-PH-25 | Golay -> Leech -> Monster -> Moonshine -> SM Complete Chain | - | PH |
+| 993 | H-PH-26 | Exotic Sphere Dimensions = Consciousness Substrate Count | - | PH |
+| 994 | H-PH-27 | FQHE Topology = Confusion Topology (Anyon-Semantic Braiding) | - | PH |
+| 995 | H-PH-28 | Cosmological R-spectrum Evolution | - | PH |
+| 996 | H-PH-29 | R(6)=1 IS Consciousness (Master Hypothesis) | - | PH |
+| 997 | H-PH-3 | τφ=σ Solution {3,14,42} and Nuclear Physics | - | PH |
+| 998 | H-PH-30 | Theory of Flavor — Complete Fermion Mass Matrix from n=6 | - | PH |
+| 999 | H-PH-31 | 37 GeV Scalar — LHC Blind Prediction | - | PH |
+| 1000 | H-PH-32 | Proton-Electron Mass Ratio from Perfect Number 6 | - | PH |
+| 1001 | H-PH-33 | Neutrino Mass Hierarchy from Perfect Number Arithmetic | - | PH |
+| 1002 | H-PH-34 | Dark Matter at 28 GeV from the Perfect Number Cascade | - | PH |
+| 1003 | H-PH-35 | Higgs Self-Coupling from n=6 Arithmetic | - | PH |
+| 1004 | H-PH-36 | Complete CP Violation from n=6 Arithmetic | - | PH |
+| 1005 | H-PH-37 | Gauge Coupling Unification at E_GUT = 10^(sigma+tau) | - | PH |
+| 1006 | H-PH-38 | Cosmological Constant from Perfect Number Product | - | PH |
+| 1007 | H-PH-39 | Six Precision Predictions Testable at FCC-ee | - | PH |
+| 1008 | H-PH-4 | 6 Quarks × 6 Leptons = σφ=nτ? | - | PH |
+| 1009 | H-PH-5 | Planck Unit System and Divisor Function of 6 | - | PH |
+| 1010 | H-PH-6 | R-chain and Particle Decay Chains | - | PH |
+| 1011 | H-PH-7 | Arithmetic Entropy of R Spectrum | - | PH |
+| 1012 | H-PH-8 | Thermodynamic Structure of Divisor Partition Function | - | PH |
+| 1013 | H-PH-9 | ⭐⭐⭐🟧★ Perfect Number Unification Pattern — Standard Model +  | ⭐⭐⭐🟧★ | PH |
+| 1014 | H-PROB-1 | Probabilistic Number Theory and Perfect Number 6 | - | PROB |
+| 1015 | H-QUAD-1 | Quadratic Form Representation Numbers and Perfect Number 6 | - | QUAD |
+| 1016 | H-REPR-1 | Young Tableaux Staircase: f^(3,2,1) = 2^tau(6) unique among  | 🟩⭐ | REPR |
+| 1017 | H-RMT-2 | Marchenko-Pastur Spectral Edges Satisfy x^2 - 6x + 1 = 0 | 🟩⭐⭐⭐ | RMT |
+| 1018 | H-SEQ-1 | Integer Sequence Characterizations of n=6 | - | SEQ |
+| 1019 | H-SIGK-1 | sigma_3(n) = n^2(n+1) if and only if n=6 | - | SIGK |
+| 1020 | H-SIGK-2 | Jordan's Second Totient J_2(n) = 4n Characterization | - | SIGK |
+| 1021 | H-SPEC-1 | R-Spectrum Gap Theorem and Topological Master Formula | - | SPEC |
+| 1022 | H-SPOR-1 | Sporadic Groups and Mathieu Systems from n=6 | green-star | SPOR |
+| 1023 | H-STAT-1 | Chi-Squared(6) Quadruple Moment Match and Distribution Encod | 🟦 PROVED (chi-squared quadruple) / 🟩⭐⭐ (Beta meta-FP) | STAT |
+| 1024 | H-TOP-1 | Betti Numbers of 6-Manifolds and sigma,tau | ⚪ | TOP |
+| 1025 | H-TOP-2 | Euler Characteristic and 6 | 🟩 | TOP |
+| 1026 | H-TOP-3 | Knot Invariants and 6 | 🟨 | TOP |
+| 1027 | H-TOP-4 | Topological Properties of R Spectrum | - | TOP |
+| 1028 | H-TOP-5 | Fractal-Topological Structure of R Spectrum | - | TOP |
+| 1029 | H-TOP-6 | Resolution Observer — Phase-wise R Spectrum Observation | - | TOP |
+| 1030 | H-TOP-7 | Topological Lens — Topological Deformation of R Spectrum | - | TOP |
+| 1031 | H-TOP-8 | Differential Topology of n=6 — Exotic Spheres, Cobordism, Su | - | TOP |
+| 1032 | H-TOPO-COSMO-1-poincare-sigma-chain | H-TOPO-COSMO-1: Poincare Homology Sphere and the Sigma Chain | Not confirmed by observations | - |
+| 1033 | H-TOPO-COSMO-5-thurston-ADE-boundary | H-TOPO-COSMO-5: Thurston Geometries, ADE Boundary, and the R | arithmetic fact, cosmological interpretation is speculation. | - |
+| 1034 | H-TREE-1 | Dynamical Systems Branch — Discrete Dynamics of R-chains | - | TREE |
+| 1035 | H-TREE-2 | p-adic Branch — p-adic Interpretation of R(n) | - | TREE |
+| 1036 | H-TREE-3 | Probability Branch — Distribution Theory of R(n) | - | TREE |
+| 1037 | H-TREE-4 | Operator Algebra Branch — Dirichlet Ring Structure of σ,τ,φ | - | TREE |
+| 1038 | H-TREE-5 | ML Theory Branch — R(d) and Generalization Bounds | - | TREE |
+| 1039 | H-TREE-6 | Tropical Geometry Branch — Tropical Interpretation of R | - | TREE |
+| 1040 | H-ZODIAC-1 | Why 12 and Not 13 — The Mathematics of Zodiac Numbers | green-star | ZODIAC |
 
-### SEDI (664)
+### SEDI (665)
 
 | # | ID | Title | Grade | Domain |
 |---|-----|-------|-------|--------|
@@ -1733,6 +1748,7 @@
 | 662 | H-CX-997 | Anthropic Principle Replacement | 🟧★ | CX |
 | 663 | H-CX-998 | Completeness Theorem | 🟧★ | CX |
 | 664 | H-CX-999 | Perfect Number Uniqueness | 🟩 | CX |
+| 665 | H-CX-superconductor-tc-survey | H-CX-TC-Survey: Systematic Superconductor Tc Matching with n | 🟧 | - |
 
 ### anima (20)
 
@@ -2199,7 +2215,7 @@
 | TECS-L:H-CX-453 | TECS-L:H-CX-462 |
 | TECS-L:H-CX-453 | TECS-L:H-CX-467 |
 | TECS-L:H-CX-453 | SEDI:H-CX-489 |
-| TECS-L:H-CX-453 | SEDI:H-CX-486 |
+| TECS-L:H-CX-453 | TECS-L:H-CX-486 |
 | TECS-L:H-CX-456 | TECS-L:H-CX-90 |
 | TECS-L:H-CX-468 | TECS-L:H-CX-458 |
 | TECS-L:H-CX-474 | TECS-L:H-CX-464 |
@@ -2282,7 +2298,7 @@
 | TECS-L:H-PH-34 | TECS-L:098 |
 | TECS-L:H-PH-35 | TECS-L:H-PH-1 |
 | TECS-L:H-PH-35 | TECS-L:H-PH-9 |
-| TECS-L:H-PH-9 | SEDI:H-CX-477 |
+| TECS-L:H-PH-9 | TECS-L:H-CX-477 |
 | TECS-L:H-SPOR-1 | TECS-L:H-CODE-1 |
 | TECS-L:H-TOP-2 | TECS-L:H-GEO-1 |
 | TECS-L:H-TOP-5 | TECS-L:H-CX-12 |
@@ -2300,7 +2316,7 @@
 | SEDI:H-CA-018 | SEDI:H-CX-516 |
 | SEDI:H-CA-018 | SEDI:H-CS-009 |
 | SEDI:H-CA-018 | SEDI:H-CX-505 |
-| SEDI:H-CA-018 | SEDI:H-CX-481 |
+| SEDI:H-CA-018 | TECS-L:H-CX-481 |
 | SEDI:H-CA-018 | SEDI:H-CX-507 |
 | SEDI:H-CA-018 | SEDI:H-CA-011 |
 | SEDI:H-CERN-10 | SEDI:H-CERN-8 |
@@ -2326,7 +2342,7 @@
 | SEDI:H-CX-527 | TECS-L:H-CX-454 |
 | SEDI:H-CX-531 | SEDI:H-CS-010 |
 | SEDI:H-CX-531 | SEDI:H-CX-519 |
-| SEDI:H-CX-531 | SEDI:H-CX-484 |
+| SEDI:H-CX-531 | TECS-L:H-CX-484 |
 | SEDI:H-CX-535 | SEDI:H-CX-525 |
 | SEDI:H-CX-536 | SEDI:H-CX-520 |
 | SEDI:H-CX-536 | SEDI:H-CX-528 |

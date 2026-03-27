@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T08:16:45",
+  "generated": "2026-03-28T08:51:31",
   "stats": {
-    "TECS-L": 1079,
-    "SEDI": 665,
+    "TECS-L": 1094,
+    "SEDI": 666,
     "anima": 20,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 1709,
+  "total": 1725,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -7068,6 +7068,116 @@
       "file": "docs/hypotheses/H-CX-475-six-identity-element.md"
     },
     {
+      "id": "TECS-L:H-CX-476",
+      "title": "Space Folding -- n=6 as Compactification Dimension",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-476-space-folding.md"
+    },
+    {
+      "id": "TECS-L:H-CX-477",
+      "title": "UAP Propulsion Numerology -- Honest Assessment",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "⚪",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-477-uap-propulsion.md"
+    },
+    {
+      "id": "TECS-L:H-CX-478",
+      "title": "Car Drifting Dynamics -- n=6 Arithmetic in Motorsport Drift",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "⚪",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-478-drift-dynamics.md"
+    },
+    {
+      "id": "TECS-L:H-CX-479",
+      "title": "Wild Connections -- Classifying the Ubiquity of 6",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-479-wild-connections.md"
+    },
+    {
+      "id": "TECS-L:H-CX-480",
+      "title": "6-DOF = Perfect Number — Why Our Universe Has 6 Degrees of Freedom",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-480-six-dof-perfect-number.md"
+    },
+    {
+      "id": "TECS-L:H-CX-481",
+      "title": "Phase Space Symplectic Structure = sigma(6) Dimensions",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-481-phase-space-sigma.md"
+    },
+    {
+      "id": "TECS-L:H-CX-482",
+      "title": "Rotation Group SO(3) and Spin-1/2 from n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-482-rotation-spin.md"
+    },
+    {
+      "id": "TECS-L:H-CX-483",
+      "title": "Euler Angles, Gimbal Lock, and Quaternion Arithmetic",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-483-euler-angles.md"
+    },
+    {
+      "id": "TECS-L:H-CX-484",
+      "title": "Noether's Theorem -- 6 Conservation Laws from Spatial Symmetry",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-484-noether-conservation.md"
+    },
+    {
+      "id": "TECS-L:H-CX-485",
+      "title": "Robot Manipulation -- 6 Axes for Full Dexterity",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-485-robot-dof.md"
+    },
+    {
+      "id": "TECS-L:H-CX-486",
+      "title": "Stress Tensor and Elastic Constants from n=6",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-486-stress-tensor.md"
+    },
+    {
       "id": "TECS-L:H-CX-5",
       "title": "Möbius Uniqueness → Consciousness Architecture Uniqueness (Cross-domain)",
       "repo": "TECS-L",
@@ -7625,6 +7735,16 @@
       "file": "docs/hypotheses/H-CX-bridge-golden-moe-experts.md"
     },
     {
+      "id": "TECS-L:H-CX-bridge-golden-moe-purefield",
+      "title": "H-CX-Bridge-10: Golden MoE top-K=2 = ConsciousLM Dual Engine (phi(6)=2)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-golden-moe-purefield.md"
+    },
+    {
       "id": "TECS-L:H-CX-bridge-mitosis-divisors",
       "title": "H-CX-Bridge-3: ConsciousLM Mitosis = Divisor Lattice of n=6",
       "repo": "TECS-L",
@@ -7655,6 +7775,16 @@
       "file": "docs/hypotheses/H-CX-bridge-phi-tension-master.md"
     },
     {
+      "id": "TECS-L:H-CX-bridge-spectral-gap-chain",
+      "title": "H-CX-Bridge-11: Spectral Gap 1/2 Chain (SEDI ↔ energy-eff ↔ ph-training)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-spectral-gap-chain.md"
+    },
+    {
       "id": "TECS-L:H-CX-bridge-tsirelson-phi",
       "title": "H-CX-Bridge-8: Tsirelson Bound = sqrt(Phi_max) = sqrt(sigma-tau)",
       "repo": "TECS-L",
@@ -7663,6 +7793,26 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-CX-bridge-tsirelson-phi.md"
+    },
+    {
+      "id": "TECS-L:H-CX-bridge-white-circles-iter7",
+      "title": "H-CX-Bridge-WC: Iteration 7 White Circles (3 Failed Attempts)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-bridge-white-circles-iter7.md"
+    },
+    {
+      "id": "TECS-L:H-CX-superconductor-consciousness",
+      "title": "H-CX-SC: HW11 Superconducting Loop -- Why Highest Phi in Consciousness Integration",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-superconductor-consciousness.md"
     },
     {
       "id": "TECS-L:H-DEEP-429",
@@ -17672,6 +17822,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-CX-999-perfect-number-uniqueness.md"
+    },
+    {
+      "id": "SEDI:H-CX-superconductor-tc-survey",
+      "title": "H-CX-TC-Survey: Systematic Superconductor Tc Matching with n=6 Arithmetic",
+      "repo": "SEDI",
+      "domain": null,
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-superconductor-tc-survey.md"
     },
     {
       "id": "anima:B1",

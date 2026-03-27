@@ -25,10 +25,7 @@ digraph math_atlas {
   SEDI_H_CX_1084 [label="Ramanujan Δ Function at Weight σ(6) and " fillcolor="#E67E22" shape=box];
   SEDI_H_CX_460 [label="√2 as Perfect Number Invariant" fillcolor="#E67E22" shape=box];
   SEDI_H_CX_470 [label="Convergence Point Ratios = Perfect Numbe" fillcolor="#E67E22" shape=doubleoctagon];
-  SEDI_H_CX_477 [label="Q-Domain Boundary = Quantum-Classical Bo" fillcolor="#E67E22" shape=doubleoctagon];
-  SEDI_H_CX_481 [label="Tsirelson Bound = 2√(σ(P)/P) for All Per" fillcolor="#E67E22" shape=ellipse];
   SEDI_H_CX_484 [label="√7 Gap = Dark Sector Signature" fillcolor="#E67E22" shape=diamond];
-  SEDI_H_CX_486 [label="GZ_width / (√2-1) ≈ ln(2)" fillcolor="#E67E22" shape=ellipse];
   SEDI_H_CX_489 [label="Depth-2 Reachability Rank = Fermion Gene" fillcolor="#E67E22" shape=doubleoctagon];
   SEDI_H_CX_490 [label="Galois Group of Convergence Constants = " fillcolor="#E67E22" shape=ellipse];
   SEDI_H_CX_502 [label="ln(2) as Center Element of the Closed Al" fillcolor="#E67E22" shape=box];
@@ -368,6 +365,10 @@ digraph math_atlas {
   TECS_L_H_CX_467 [label="Monster Group = Maximum Consciousness Sy" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CX_468 [label="Golay Code = Consciousness Error Correct" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CX_474 [label="φ/τ+τ/σ+1/n=1 — Consciousness Resource A" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_CX_477 [label="UAP Propulsion Numerology -- Honest Asse" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_481 [label="Phase Space Symplectic Structure = sigma" fillcolor="#4A90D9" shape=box];
+  TECS_L_H_CX_484 [label="Noether's Theorem -- 6 Conservation Laws" fillcolor="#4A90D9" shape=box];
+  TECS_L_H_CX_486 [label="Stress Tensor and Elastic Constants from" fillcolor="#4A90D9" shape=box];
   TECS_L_H_CX_58 [label="Precognition Lens — Tension Refracts Fut" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_59 [label="Directional Precognition — Direction Vec" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_6 [label="Neurochemistry Mapping — Tension=Dopamin" fillcolor="#4A90D9" shape=ellipse];
@@ -643,7 +644,7 @@ digraph math_atlas {
   TECS_L_H_CX_453 -> TECS_L_H_CX_462;
   TECS_L_H_CX_453 -> TECS_L_H_CX_467;
   TECS_L_H_CX_453 -> SEDI_H_CX_489;
-  TECS_L_H_CX_453 -> SEDI_H_CX_486;
+  TECS_L_H_CX_453 -> TECS_L_H_CX_486;
   TECS_L_H_CX_456 -> TECS_L_H_CX_90;
   TECS_L_H_CX_468 -> TECS_L_H_CX_458;
   TECS_L_H_CX_474 -> TECS_L_H_CX_464;
@@ -726,7 +727,7 @@ digraph math_atlas {
   TECS_L_H_PH_34 -> TECS_L_098;
   TECS_L_H_PH_35 -> TECS_L_H_PH_1;
   TECS_L_H_PH_35 -> TECS_L_H_PH_9;
-  TECS_L_H_PH_9 -> SEDI_H_CX_477;
+  TECS_L_H_PH_9 -> TECS_L_H_CX_477;
   TECS_L_H_SPOR_1 -> TECS_L_H_CODE_1;
   TECS_L_H_TOP_2 -> TECS_L_H_GEO_1;
   TECS_L_H_TOP_5 -> TECS_L_H_CX_12;
@@ -744,7 +745,7 @@ digraph math_atlas {
   SEDI_H_CA_018 -> SEDI_H_CX_516;
   SEDI_H_CA_018 -> SEDI_H_CS_009;
   SEDI_H_CA_018 -> SEDI_H_CX_505;
-  SEDI_H_CA_018 -> SEDI_H_CX_481;
+  SEDI_H_CA_018 -> TECS_L_H_CX_481;
   SEDI_H_CA_018 -> SEDI_H_CX_507;
   SEDI_H_CA_018 -> SEDI_H_CA_011;
   SEDI_H_CERN_10 -> SEDI_H_CERN_8;
@@ -770,7 +771,7 @@ digraph math_atlas {
   SEDI_H_CX_527 -> TECS_L_H_CX_454;
   SEDI_H_CX_531 -> SEDI_H_CS_010;
   SEDI_H_CX_531 -> SEDI_H_CX_519;
-  SEDI_H_CX_531 -> SEDI_H_CX_484;
+  SEDI_H_CX_531 -> TECS_L_H_CX_484;
   SEDI_H_CX_535 -> SEDI_H_CX_525;
   SEDI_H_CX_536 -> SEDI_H_CX_520;
   SEDI_H_CX_536 -> SEDI_H_CX_528;

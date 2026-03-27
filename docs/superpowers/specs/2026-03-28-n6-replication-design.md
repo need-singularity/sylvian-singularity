@@ -30,7 +30,7 @@ Independent replication package for the TECS-L project's 1,700+ hypotheses acros
 | GPU | `[gpu]` extras, skip without torch |
 | Reports | terminal + md + html |
 | Distribution | pip (PyPI) + Docker |
-| CLI | click-based `n6-replicate` command |
+| CLI | argparse-based `n6-replicate` command + `python -m n6_replication` |
 | Repo integration | Hybrid (Tier 1+2 embedded, Tier 3 on-demand fetch) |
 
 ---
@@ -44,7 +44,8 @@ n6-replication/                    # New directory at TECS-L root
 ├── README.md                      # Install/run guide (per user type)
 ├── src/n6_replication/
 │   ├── __init__.py                # Version, constants
-│   ├── cli.py                     # `n6-replicate` CLI (click)
+│   ├── __main__.py                # python -m n6_replication support
+│   ├── cli.py                     # `n6-replicate` CLI (argparse)
 │   ├── runner.py                  # Script execution engine
 │   ├── parser.py                  # Output parsing (emoji/pass/fail extraction)
 │   ├── reporter.py                # Terminal/md/html report generation
@@ -299,7 +300,6 @@ dependencies = [
     "scipy>=1.7",
     "sympy>=1.9",
     "mpmath>=1.2",
-    "click>=8.0",
     "jinja2>=3.0",
 ]
 
