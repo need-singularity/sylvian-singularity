@@ -1456,6 +1456,7 @@ def generate_report(results: list[dict], fmt: str):
 <p>Generated: {{ generated }}</p>
 
 <div class="summary">
+{% raw %}
 {% for tier in [1, 2, 3] %}
 {% set s = tier_summary[tier] %}
 <div class="tier-card">
@@ -1508,6 +1509,7 @@ def generate_report(results: list[dict], fmt: str):
 {% endfor %}
 </tbody>
 </table>
+{% endraw %}
 
 <script>
 function toggleDetails(el) {
