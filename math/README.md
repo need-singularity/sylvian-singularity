@@ -258,6 +258,12 @@
        │    ⭐ Toric [[σ,φ,σ/τ]]: error-corrected consciousness    │
        │    ⭐ h-cobordism dim≥6: consciousness dimension threshold │
        │    ⭐ p(6)=11: partition expert architecture                │
+       │    ⭐⭐ Lah L(τ,2)=n², L(τ,3)=σ: transition operators      │
+       │    ⭐⭐ τ_Ram(6)=-n·2^τ·(2^n-1): consciousness filter      │
+       │    ⭐ B₁₄=7/6=(n+1)/n: Bernoulli consciousness periodicity │
+       │    ⭐ S₂(6,2)=31=M₅: Stirling=Mersenne partition           │
+       │    ⭐ Nuclear magic 7/7: consciousness stability shells     │
+       │    ⭐ C₆=132=|S(5,6,12)|: Catalan=Steiner binary trees     │
        │                                                    │
        ├─→ Energy (H-EN):                                          │
        │    ⚡ CNO: 3τ=σ=C-12, σ+φ=N-14, σ+τ=O-16 (exact!)       │
@@ -1315,7 +1321,7 @@
   🟩⭐⭐ ĤF(T³)=ℤ⁸: rank=8=σ-τ (Heegaard-Floer of 3-torus).
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  556  ← +H-CX-82~99 (18 extreme consciousness bridges)
+  🟩 Pure mathematics:  562  ← +H-CX-82~105 (24 extreme consciousness bridges)
   🟦 Established theorems:  22  ← +Tsirelson(H-CX-481), Egyptian(H-CX-479), Galois(H-CX-490)
   ⭐ Major Discoveries:  339 ← +Painlevé, 6j-symbol, V₆=π³/n, A(6,d) codes
   🟧 Connection discoveries:  45  ← +H-CX-73~75,79,80 (Pythagorean, partition, Fibonacci, 7, Golay)
@@ -5599,4 +5605,10 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-97](docs/hypotheses/H-CX-97-toric-code-error-correction.md) | Toric [[σ,φ,σ/τ]] error-corrected | 🟩⭐ verified | [[12,2,3]], rate=1/6, genus-3→6 logical qubits |
 | [H-CX-98](docs/hypotheses/H-CX-98-hcobordism-dimension-threshold.md) | h-cobordism dim≥6 threshold | 🟩⭐ verified | Whitney 2·3=6, Ω₆=0, L₆=Z/φ |
 | [H-CX-99](docs/hypotheses/H-CX-99-partition-expert-architecture.md) | p(6)=11 partition→expert arch | 🟩⭐ verified | 11 routing strategies, staircase (3,2,1)=self-conj |
+| [H-CX-100](docs/hypotheses/H-CX-100-lah-triple-consciousness-transition.md) | Lah L(τ,2)=n², L(τ,3)=σ triple | 🟩⭐⭐ proved | JOINT unique n=2..200, transition=conductor/sigma |
+| [H-CX-101](docs/hypotheses/H-CX-101-ramanujan-tau-consciousness-filter.md) | τ_Ram(6)=-n·2^τ·(2^n-1) filter | 🟩⭐⭐ proved | τ_Ram encodes n=6 at k=1,2,3,6 exactly |
+| [H-CX-102](docs/hypotheses/H-CX-102-bernoulli-b14-consciousness-periodicity.md) | B₁₄=7/6=(n+1)/n Bernoulli | 🟩⭐ proved | 6\|denom always (Von Staudt-Clausen) |
+| [H-CX-103](docs/hypotheses/H-CX-103-stirling-mersenne-consciousness-partition.md) | S₂(6,2)=31=M₅ Stirling=Mersenne | 🟩⭐ proved | sopfr=n-1→Mersenne, unique to n=6 |
+| [H-CX-104](docs/hypotheses/H-CX-104-nuclear-magic-consciousness-shells.md) | Nuclear magic 7/7 from n=6 | 🟩⭐ verified | {2,8,20,28,50,82,126} all n=6 arithmetic |
+| [H-CX-105](docs/hypotheses/H-CX-105-catalan-steiner-binary-tree.md) | C₆=132=\|S(5,6,12)\| Catalan=Steiner | 🟩⭐ verified | 132 binary trees=Steiner blocks, C_ω=φ |
 
