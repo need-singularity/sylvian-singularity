@@ -515,11 +515,21 @@ Hypothesis reviews are managed as **separate individual documents**.
 ## Paper Management
 
 ```
+  ★ 모든 논문은 papers 리포에 생성! (need-singularity/papers)
+    로컬: ~/Dev/papers/
+    GitHub: https://github.com/need-singularity/papers
+    DOI: 10.5281/zenodo.19271599
+
   When paper candidate emerges:
     1. Record title+core results+target venue+status in README.md "Paper Candidates" table
     2. Status: Draft/Writing/Submitted/Review/Revision/Published/Rejected
-    3. Paper file: docs/papers/P01-title.md format
+    3. Paper file: ~/Dev/papers/{repo}/P-title.md (NOT in this repo!)
+       - TECS-L papers: ~/Dev/papers/tecs-l/
+       - anima papers:  ~/Dev/papers/anima/
+       - SEDI papers:   ~/Dev/papers/sedi/
     4. Specify constant/hypothesis/experiment numbers to include in paper
+    5. LaTeX versions: ~/Dev/papers/latex/ or ~/Dev/papers/tecs-l/*.tex
+    6. 이 리포의 docs/papers/는 redirect만 있음 — 직접 논문 생성 금지
 ```
 
 ## Paper Distribution System (2026-03-27)
