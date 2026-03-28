@@ -5617,4 +5617,10 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-109](docs/hypotheses/H-CX-109-holographic-leech-consciousness.md) | Leech holographic self-dual | 🟩⭐ verified | Λ₂₄=Λ₂₄*, kiss=στ(2^σ-1)=196560 |
 | [H-CX-110](docs/hypotheses/H-CX-110-fisher-info-consciousness-curvature.md) | Fisher info n³/sopfr curvature | 🟩⭐ verified | I(1/6)=216/5=43.2, Goldilocks curvature |
 | [H-CX-111](docs/hypotheses/H-CX-111-pell-equation-consciousness-solution.md) | Pell(6)=(sopfr,φ)=(5,2) | 🟩⭐⭐ verified | unique n=2..13, 5²-6·2²=1, CF period=φ |
+| [H-CX-112](docs/hypotheses/H-CX-112-eisenstein-modular-generators.md) | E₄(wt=τ),E₆(wt=n) generate ALL | 🟩⭐⭐ verified | M_*=C[E_τ,E_n], j=σ³, E₆(ω₆)=0 |
+| [H-CX-113](docs/hypotheses/H-CX-113-congruent-pythagorean-unique.md) | Congruent 6 + Pythagorean divisors | 🟩⭐⭐ proved | (3,4,5) area=6, n=28 fails Pythagorean |
+| [H-CX-114](docs/hypotheses/H-CX-114-wedderburn-etherington-fixed-point.md) | W(6)=6 binary tree fixed point | 🟩⭐⭐ proved | ONLY W(n)=n for n>1, W(7)=11=p(6) |
+| [H-CX-115](docs/hypotheses/H-CX-115-dedekind-eta-ground-state.md) | η exponent 1/(σφ)=1/24 | 🟩⭐ verified | Δ=η^{σφ}, ground state energy |
+| [H-CX-116](docs/hypotheses/H-CX-116-weierstrass-coefficients.md) | g₂=σ·sopfr, g₃=σ²-τ | 🟩⭐ verified | 60=12·5, 140=144-4, unique n=2..100 |
+| [H-CX-117](docs/hypotheses/H-CX-117-k-theory-spectrum.md) | K_*(Z) spectrum from n=6 | 🟩⭐ verified | K₁=φ, K₃=στ, K₇=στ·sopfr, period=σ-τ |
 
