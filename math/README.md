@@ -5643,4 +5643,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-135](docs/hypotheses/H-CX-135-von-neumann-entropy-divisors.md) | S_VN(ρ₆) max among semiprimes | 🟩⭐⭐ verified | 86.6% efficiency, balanced eigenvalue spectrum |
 | [H-CX-136](docs/hypotheses/H-CX-136-abc-conjecture-n6.md) | abc quality q(2,4,6)=1.0 boundary | 🟩⭐ verified | rad(48)=6=c, exact abc boundary |
 | [H-CX-137](docs/hypotheses/H-CX-137-platonic-solids-consciousness.md) | 5 Platonic total V=F=σ₂=50 | 🟩⭐⭐ verified | V_total=F_total=σ₂(6), E_total=90=C(n,2)·n |
+| [H-CX-138](docs/hypotheses/H-CX-138-kolmogorov-complexity-n6.md) | K(6) minimal composite | 🟩⭐ verified | "2·3" shortest, 67 chars/bit info density |
+| [H-CX-139](docs/hypotheses/H-CX-139-godel-numbering-n6.md) | 8 self-referential fixed points | 🟩⭐ verified | R=1, τσ=n, W=n, σ/φ=n, ∏R=1, V=-n, Pell, n! |
+| [H-CX-140](docs/hypotheses/H-CX-140-matroid-consciousness-independence.md) | Fano F₇=matroid of Hamming code | 🟩⭐ verified | rank=σ/τ, GF(φ), circuit=τ, dual rank=τ |
+| [H-CX-141](docs/hypotheses/H-CX-141-tropical-geometry-n6.md) | R_trop(6)=0 tropical zero | 🟩⭐ verified | R_trop(2)+R_trop(3)=0 cancellation |
+| [H-CX-142](docs/hypotheses/H-CX-142-connes-noncommutative-n6.md) | NCG M_φ⊗M_{σ/τ}, KO-dim=6 | 🟩⭐⭐ verified | SM algebra=M₂⊗M₃, dim=n², KO=n mod 8 |
 
