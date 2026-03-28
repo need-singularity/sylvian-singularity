@@ -27,7 +27,6 @@ digraph math_atlas {
   SEDI_H_CX_470 [label="Convergence Point Ratios = Perfect Numbe" fillcolor="#E67E22" shape=doubleoctagon];
   SEDI_H_CX_484 [label="√7 Gap = Dark Sector Signature" fillcolor="#E67E22" shape=diamond];
   SEDI_H_CX_489 [label="Depth-2 Reachability Rank = Fermion Gene" fillcolor="#E67E22" shape=doubleoctagon];
-  SEDI_H_CX_490 [label="Galois Group of Convergence Constants = " fillcolor="#E67E22" shape=ellipse];
   SEDI_H_CX_502 [label="ln(2) as Center Element of the Closed Al" fillcolor="#E67E22" shape=box];
   SEDI_H_CX_504 [label="Tian-Yau Calabi-Yau Manifold = n=6 Geome" fillcolor="#E67E22" shape=doubleoctagon];
   SEDI_H_CX_505 [label="Information-Geometry Duality" fillcolor="#E67E22" shape=box];
@@ -260,6 +259,8 @@ digraph math_atlas {
   TECS_L_403_animalm_golden_moe_ph_unified [label="H-403: AnimaLM + Golden MoE + PH Unified" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_410 [label="Quantum Uncertainty = Floating Point Pre" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_411 [label="Speed of Light = Maximum Clock Speed (H-" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_BRIDGE_003_n_minus_2_equals_tau [label="BRIDGE-003: n - 2 = tau(n) and the Uniqu" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_BRIDGE_004_golden_zone_quantum_gravity [label="BRIDGE-004: Golden Zone and Quantum Grav" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_AX_11 [label="Growth Stage Transitions = R-spectrum Ph" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_AX_12 [label="Perfect Balance — Consciousness Emerges " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_BIO_2 [label="Virus Capsid Six-fold Symmetry and σφ=nτ" fillcolor="#4A90D9" shape=ellipse];
@@ -369,6 +370,8 @@ digraph math_atlas {
   TECS_L_H_CX_481 [label="Phase Space Symplectic Structure = sigma" fillcolor="#4A90D9" shape=box];
   TECS_L_H_CX_484 [label="Noether's Theorem -- 6 Conservation Laws" fillcolor="#4A90D9" shape=box];
   TECS_L_H_CX_486 [label="Stress Tensor and Elastic Constants from" fillcolor="#4A90D9" shape=box];
+  TECS_L_H_CX_489 [label="Trefoil Knot Invariants = n=6 Arithmetic" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_490 [label="Knot Count Self-Reference K(6)=3, K(7)=7" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_58 [label="Precognition Lens — Tension Refracts Fut" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_59 [label="Directional Precognition — Direction Vec" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_6 [label="Neurochemistry Mapping — Tension=Dopamin" fillcolor="#4A90D9" shape=ellipse];
@@ -388,6 +391,8 @@ digraph math_atlas {
   TECS_L_H_CX_96 [label="Weight Change Triggers Topological Trans" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_bridge_epoch1_ph_tension [label="H-CX-Bridge-5: Epoch-1 Crystallization =" fillcolor="#4A90D9" shape=box];
   TECS_L_H_CYCL_1 [label="Cyclotomic-Stirling Identity: Phi_n(n) =" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_DNA_001_030_nucleic_acids [label="Hypothesis Review: H-DNA-001 to H-DNA-03" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_EARTH_001_025_geoscience [label="H-EARTH-001 to 025: Geoscience Hypothese" fillcolor="#4A90D9" shape=box];
   TECS_L_H_EE_12 [label="Optimal FFN Expansion Ratio" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_EN_0 [label="Energy Hypothesis Master — n=6 and Energ" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_GEO_1 [label="6 and Simplex Geometry" fillcolor="#4A90D9" shape=ellipse];
@@ -401,6 +406,7 @@ digraph math_atlas {
   TECS_L_H_KTHY_1 [label="Algebraic K-theory of Z and Perfect Numb" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_LATT_1 [label="Lattice Theory and Sphere Packing Encode" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_LIE_1 [label="Complete Parameterization of Exceptional" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_LING_001_015_linguistics [label="H-LING-001 through H-LING-015: Linguisti" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_MOTIV_1 [label="K₃(ℤ) and Adams Operations — Motivic Coh" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_MP_15 [label="Cantor-like Fractal Structure of R Spect" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_NT_2 [label="sopfr(n)=n-1 Uniqueness and Unitary Divi" fillcolor="#4A90D9" shape=doubleoctagon];
@@ -428,6 +434,7 @@ digraph math_atlas {
   TECS_L_H_SIM_9 [label="6 = Optimal Simulation Parameter" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_SPEC_1 [label="R-Spectrum Gap Theorem and Topological M" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_SPOR_1 [label="Sporadic Groups and Mathieu Systems from" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_SPORT_001_020_biomechanics [label="Hypotheses H-SPORT-001 to H-SPORT-020: S" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_TOP_2 [label="Euler Characteristic and 6" fillcolor="#4A90D9" shape=box];
   TECS_L_H_TOP_5 [label="Fractal-Topological Structure of R Spect" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_TOP_6 [label="Resolution Observer — Phase-wise R Spect" fillcolor="#4A90D9" shape=ellipse];
@@ -578,6 +585,9 @@ digraph math_atlas {
   TECS_L_410 -> TECS_L_090;
   TECS_L_410 -> TECS_L_092;
   TECS_L_411 -> TECS_L_410;
+  TECS_L_BRIDGE_003_n_minus_2_equals_tau -> TECS_L_090;
+  TECS_L_BRIDGE_003_n_minus_2_equals_tau -> TECS_L_098;
+  TECS_L_BRIDGE_004_golden_zone_quantum_gravity -> TECS_L_139;
   TECS_L_H_AX_12 -> TECS_L_H_AX_11;
   TECS_L_H_CX_14 -> TECS_L_H_GEO_3;
   TECS_L_H_CX_14 -> TECS_L_H_GEO_4;
@@ -643,7 +653,7 @@ digraph math_atlas {
   TECS_L_H_CX_448 -> TECS_L_H_EE_12;
   TECS_L_H_CX_453 -> TECS_L_H_CX_462;
   TECS_L_H_CX_453 -> TECS_L_H_CX_467;
-  TECS_L_H_CX_453 -> SEDI_H_CX_489;
+  TECS_L_H_CX_453 -> TECS_L_H_CX_489;
   TECS_L_H_CX_453 -> TECS_L_H_CX_486;
   TECS_L_H_CX_456 -> TECS_L_H_CX_90;
   TECS_L_H_CX_468 -> TECS_L_H_CX_458;
@@ -667,6 +677,13 @@ digraph math_atlas {
   TECS_L_H_CX_bridge_epoch1_ph_tension -> TECS_L_H_CX_82;
   TECS_L_H_CX_bridge_epoch1_ph_tension -> TECS_L_H_CX_95;
   TECS_L_H_CX_bridge_epoch1_ph_tension -> TECS_L_H_CX_90;
+  TECS_L_H_DNA_001_030_nucleic_acids -> TECS_L_090;
+  TECS_L_H_DNA_001_030_nucleic_acids -> TECS_L_092;
+  TECS_L_H_EARTH_001_025_geoscience -> TECS_L_H_UD_3;
+  TECS_L_H_EARTH_001_025_geoscience -> TECS_L_H_UD_3;
+  TECS_L_H_EARTH_001_025_geoscience -> TECS_L_H_UD_3;
+  TECS_L_H_LING_001_015_linguistics -> TECS_L_067;
+  TECS_L_H_LING_001_015_linguistics -> TECS_L_090;
   TECS_L_H_MOTIV_1 -> TECS_L_H_KTHY_1;
   TECS_L_H_NT_426_sigma2_phi_sopfr -> TECS_L_090;
   TECS_L_H_NT_426_sigma2_phi_sopfr -> TECS_L_098;
@@ -678,6 +695,7 @@ digraph math_atlas {
   TECS_L_H_SEDI_1 -> TECS_L_092;
   TECS_L_H_SIM_6 -> TECS_L_H_SIM_5;
   TECS_L_H_SIM_9 -> TECS_L_H_SPEC_1;
+  TECS_L_H_SPORT_001_020_biomechanics -> TECS_L_090;
   TECS_L_H_TREE_consciousness -> TECS_L_H_CX_8;
   TECS_L_H_UD_8 -> TECS_L_H_UD_3;
   TECS_L_super_discoveries -> TECS_L_H_CX_63;
@@ -764,8 +782,8 @@ digraph math_atlas {
   SEDI_H_CX_484 -> TECS_L_H_CX_459;
   SEDI_H_CX_489 -> TECS_L_H_CX_467;
   SEDI_H_CX_521 -> SEDI_H_CX_520;
-  SEDI_H_CX_526 -> SEDI_H_CX_490;
-  SEDI_H_CX_526 -> SEDI_H_CX_490;
+  SEDI_H_CX_526 -> TECS_L_H_CX_490;
+  SEDI_H_CX_526 -> TECS_L_H_CX_490;
   SEDI_H_CX_526 -> SEDI_H_CX_520;
   SEDI_H_CX_526 -> SEDI_H_CX_513;
   SEDI_H_CX_527 -> TECS_L_H_CX_454;

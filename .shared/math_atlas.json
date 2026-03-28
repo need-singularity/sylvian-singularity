@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T08:51:31",
+  "generated": "2026-03-28T21:28:16",
   "stats": {
-    "TECS-L": 1094,
+    "TECS-L": 1166,
     "SEDI": 666,
     "anima": 20,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 1725,
+  "total": 1767,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3482,6 +3482,62 @@
       "file": "docs/hypotheses/BACKLOG.md"
     },
     {
+      "id": "TECS-L:BRIDGE-001-prime-root-unification",
+      "title": "BRIDGE-001: The {2,3} Root -- Why Primes 2 and 3 Unify Across Domains",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "Pending (computational verification below)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BRIDGE-001-prime-root-unification.md"
+    },
+    {
+      "id": "TECS-L:BRIDGE-002-isco-crystal-music",
+      "title": "BRIDGE-002: ISCO(6M) -- Crystallographic Restriction -- Musical Consonance",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BRIDGE-002-isco-crystal-music.md"
+    },
+    {
+      "id": "TECS-L:BRIDGE-003-n-minus-2-equals-tau",
+      "title": "BRIDGE-003: n - 2 = tau(n) and the Uniqueness of n = 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "090",
+        "098"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BRIDGE-003-n-minus-2-equals-tau.md"
+    },
+    {
+      "id": "TECS-L:BRIDGE-004-golden-zone-quantum-gravity",
+      "title": "BRIDGE-004: Golden Zone and Quantum Gravity Constants",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "WHITE (honest failure -- p = 0.74 after Bonferroni)",
+      "refs": [
+        "139",
+        "028"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BRIDGE-004-golden-zone-quantum-gravity.md"
+    },
+    {
+      "id": "TECS-L:BRIDGE-005-biochem-causal-chain",
+      "title": "BRIDGE-005: The Complete Biochemical Causal Chain from Z=6 to Consciousness",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "Mixed (see link-by-link assessment below)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BRIDGE-005-biochem-causal-chain.md"
+    },
+    {
       "id": "TECS-L:F7-domains-7-10-string-neuro-bridge-bitnet",
       "title": "F7 Hypotheses: Domains 7-10",
       "repo": "TECS-L",
@@ -3522,6 +3578,16 @@
       "file": "docs/hypotheses/H-ANT-429-cyclotomic-mersenne.md"
     },
     {
+      "id": "TECS-L:H-ASTRO-001-015-astronomy",
+      "title": "Astronomy/Cosmology Hypotheses H-ASTRO-001 through H-ASTRO-015",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "WHITE",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ASTRO-001-015-astronomy.md"
+    },
+    {
       "id": "TECS-L:H-AX-10",
       "title": "Direction Topology × R-spectrum Merge Order",
       "repo": "TECS-L",
@@ -3552,6 +3618,116 @@
       ],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-AX-12-perfect-balance-consciousness.md"
+    },
+    {
+      "id": "TECS-L:H-BH-001-030-black-holes",
+      "title": "H-BH-001 to H-BH-030: Black Hole / Gravitational Physics Hypotheses",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-BH-001-030-black-holes.md"
+    },
+    {
+      "id": "TECS-L:H-CHEM-001-030",
+      "title": "Chemistry Domain Hypotheses",
+      "repo": "TECS-L",
+      "domain": "CHEM",
+      "grade": "🟥 (Golden Zone dependent)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHEM-001-030-chemistry.md"
+    },
+    {
+      "id": "TECS-L:H-CHEM-025-deep-atp-energy",
+      "title": "H-CHEM-025 Deep Investigation: ATP Energy Quantum and sigma(6) = 12",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHEM-025-deep-atp-energy.md"
+    },
+    {
+      "id": "TECS-L:H-CHEM-031-050",
+      "title": "Carbon-Deep Chemistry Hypotheses",
+      "repo": "TECS-L",
+      "domain": "CHEM",
+      "grade": "mixed (6 green, 1 orange, 10 white, 3 black)",
+      "refs": [
+        "H-CHEM-027",
+        "H-CHEM-029"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHEM-031-050-carbon-deep.md"
+    },
+    {
+      "id": "TECS-L:H-CHEM-051-070",
+      "title": "Deep Periodic Table Structure Hypotheses",
+      "repo": "TECS-L",
+      "domain": "CHEM",
+      "grade": "mixed (6 GREEN, 3 ORANGE, 10 WHITE, 1 BLACK)",
+      "refs": [
+        "H-CHEM-062"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHEM-051-070-periodic-deep.md"
+    },
+    {
+      "id": "TECS-L:H-CHEM-071-090",
+      "title": "Deep Crystallography & Symmetry Hypotheses",
+      "repo": "TECS-L",
+      "domain": "CHEM",
+      "grade": "mixed (8 GREEN, 4 ORANGE, 8 WHITE, 0 BLACK)",
+      "refs": [
+        "H-CHEM-084"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHEM-071-090-symmetry-deep.md"
+    },
+    {
+      "id": "TECS-L:H-CHEM-091-110",
+      "title": "Biochemistry Deep — WHY Life is Built on 6",
+      "repo": "TECS-L",
+      "domain": "CHEM",
+      "grade": "mixed (7 green, 1 orange, 12 white, 0 black)",
+      "refs": [
+        "H-CHEM-104",
+        "H-CHEM-094"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHEM-091-110-biochem-deep.md"
+    },
+    {
+      "id": "TECS-L:H-CHEM-111-130-thermo-deep",
+      "title": "Hypotheses H-CHEM-111 to 130: Thermodynamics Deep Connections",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "GREEN",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHEM-111-130-thermo-deep.md"
+    },
+    {
+      "id": "TECS-L:H-CHEM-131-145",
+      "title": "Pharmaceutical Chemistry Deep Hypotheses",
+      "repo": "TECS-L",
+      "domain": "CHEM",
+      "grade": "mixed (4 GREEN, 0 ORANGE, 8 WHITE, 3 BLACK)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHEM-131-145-pharma-deep.md"
+    },
+    {
+      "id": "TECS-L:H-CHEM-cross-analysis",
+      "title": "Cross-Analysis of 12 GREEN Chemistry Hypotheses",
+      "repo": "TECS-L",
+      "domain": "CHEM",
+      "grade": "Result: NOT SIGNIFICANT (p=0.069)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHEM-cross-analysis.md"
     },
     {
       "id": "TECS-L:H-CROSS-2",
@@ -7178,6 +7354,66 @@
       "file": "docs/hypotheses/H-CX-486-stress-tensor.md"
     },
     {
+      "id": "TECS-L:H-CX-487",
+      "title": "Fine Structure Constant 1/alpha = 137 + 1/29 from n=6",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-487-fine-structure-29.md"
+    },
+    {
+      "id": "TECS-L:H-CX-488",
+      "title": "Ramanujan tau Function Deep Dive at n=6",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-488-ramanujan-tau-6-expanded.md"
+    },
+    {
+      "id": "TECS-L:H-CX-489",
+      "title": "Trefoil Knot Invariants = n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-489-trefoil-knot.md"
+    },
+    {
+      "id": "TECS-L:H-CX-490",
+      "title": "Knot Count Self-Reference K(6)=3, K(7)=7",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-490-knot-count-self-ref.md"
+    },
+    {
+      "id": "TECS-L:H-CX-491",
+      "title": "Baryon-to-Photon Ratio eta = (n + 1/sigma) * 10^(-10)",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-491-baryon-photon.md"
+    },
+    {
+      "id": "TECS-L:H-CX-492",
+      "title": "CMB Acoustic Peak Ratio l2/l1 = sopfr/phi",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-492-cmb-peak-ratio.md"
+    },
+    {
       "id": "TECS-L:H-CX-5",
       "title": "Möbius Uniqueness → Consciousness Architecture Uniqueness (Cross-domain)",
       "repo": "TECS-L",
@@ -7825,6 +8061,63 @@
       "file": "docs/hypotheses/H-DEEP-429-moonshine-chain.md"
     },
     {
+      "id": "TECS-L:H-DNA-001-030-nucleic-acids",
+      "title": "Hypothesis Review: H-DNA-001 to H-DNA-030 — Nucleic Acid Structure and the Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "090",
+        "092"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-001-030-nucleic-acids.md"
+    },
+    {
+      "id": "TECS-L:H-EARTH-001-025-geoscience",
+      "title": "H-EARTH-001 to 025: Geoscience Hypotheses",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [
+        "H-UD-3",
+        "H-UD-3",
+        "H-UD-3"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EARTH-001-025-geoscience.md"
+    },
+    {
+      "id": "TECS-L:H-ECO-001-015-ecology",
+      "title": "Ecology / Evolution Hypotheses H-ECO-001 through H-ECO-015",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ECO-001-015-ecology.md"
+    },
+    {
+      "id": "TECS-L:H-ECON-001-015-economics",
+      "title": "Economics & Game Theory Hypotheses (H-ECON-001 to H-ECON-015)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ECON-001-015-economics.md"
+    },
+    {
+      "id": "TECS-L:H-EE-001-020",
+      "title": "Energy Efficiency Hypotheses",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Verified 2026-03-28",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-001-020-energy-efficiency.md"
+    },
+    {
       "id": "TECS-L:H-EE-1",
       "title": "Phi6 is Uniquely Optimal Among Cyclotomic Activations",
       "repo": "TECS-L",
@@ -7955,6 +8248,26 @@
       "file": "docs/hypotheses/H-EE-9-phi-bottleneck-phi6simple-recovery.md"
     },
     {
+      "id": "TECS-L:H-EH-001-025-event-horizon",
+      "title": "Event Horizon Hypotheses (H-EH-001 to H-EH-025)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "WHITE",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EH-001-025-event-horizon.md"
+    },
+    {
+      "id": "TECS-L:H-ELEC-001-020-neurostim-n6-framework",
+      "title": "H-ELEC-001 to H-ELEC-020: Neurostimulation-n=6 Framework Hypotheses",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ELEC-001-020-neurostim-n6-framework.md"
+    },
+    {
       "id": "TECS-L:H-FURST-1",
       "title": "Furstenberg ×2,×3 System — Orbit Self-Reference",
       "repo": "TECS-L",
@@ -8005,6 +8318,105 @@
       "file": "docs/hypotheses/H-IHARA-1-cayley-graph-zeta.md"
     },
     {
+      "id": "TECS-L:H-INFO-001-015",
+      "title": "Information Theory / Computer Science Domain Hypotheses",
+      "repo": "TECS-L",
+      "domain": "INFO",
+      "grade": "mixed",
+      "refs": [
+        "H-INFO-011",
+        "H-INFO-012",
+        "H-INFO-007"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-INFO-001-015-information.md"
+    },
+    {
+      "id": "TECS-L:H-INFRA-001-020",
+      "title": "Infrastructure Hypotheses (Data Center, SMR, Power Grid)",
+      "repo": "TECS-L",
+      "domain": "INFRA",
+      "grade": "Verified 2026-03-28: 🟧 1, ⚪ 15, ⬛ 4",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-INFRA-001-020-infrastructure.md"
+    },
+    {
+      "id": "TECS-L:H-INFRA-020-deep",
+      "title": "Deep Analysis: EROI Civilization Threshold at 3:1 = sigma(6)/tau(6)",
+      "repo": "TECS-L",
+      "domain": "INFRA",
+      "grade": "🟧 — Real threshold, post-hoc mapping",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-INFRA-020-deep-eroi.md"
+    },
+    {
+      "id": "TECS-L:H-INST-001-020-institutions",
+      "title": "H-INST-001 through H-INST-020: Institutional / Law / History Hypotheses",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-INST-001-020-institutions.md"
+    },
+    {
+      "id": "TECS-L:H-LING-001-015-linguistics",
+      "title": "H-LING-001 through H-LING-015: Linguistics and Cognitive Science",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "GREEN",
+      "refs": [
+        "067",
+        "090"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-LING-001-015-linguistics.md"
+    },
+    {
+      "id": "TECS-L:H-MATH-DGT",
+      "title": "Deep Graph Theory, Topology, and Combinatorics of n=6",
+      "repo": "TECS-L",
+      "domain": "MATH",
+      "grade": "8x 🟩 / 4x 🟧★ / 7x 🟧 / 1x ⚪",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-MATH-deep-graph-topology.md"
+    },
+    {
+      "id": "TECS-L:H-MED-001-030",
+      "title": "Medical Domain Hypotheses",
+      "repo": "TECS-L",
+      "domain": "MED",
+      "grade": "Verified 2026-03-28: 0 GREEN, 3 ORANGE, 26 WHITE, 1 BLACK",
+      "refs": [
+        "H-MED-022"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-MED-001-030-medical.md"
+    },
+    {
+      "id": "TECS-L:H-MED-007-deep-eeg-spectral",
+      "title": "H-MED-007 Deep Analysis: EEG Spectral Exponent and 1 + 1/e + 1/6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-MED-007-deep-eeg-spectral.md"
+    },
+    {
+      "id": "TECS-L:H-MED-027-030-deep-clinical-scales",
+      "title": "H-MED-027 and H-MED-030: Deep Investigation of Clinical Scoring Scales and n=6 Structure",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-MED-027-030-deep-clinical-scales.md"
+    },
+    {
       "id": "TECS-L:H-MOTIV-1",
       "title": "K₃(ℤ) and Adams Operations — Motivic Cohomology",
       "repo": "TECS-L",
@@ -8015,6 +8427,16 @@
       ],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-MOTIV-1-k3z-adams-operations.md"
+    },
+    {
+      "id": "TECS-L:H-MUSIC-001-015-acoustics",
+      "title": "H-MUSIC-001 through H-MUSIC-015: Music and Acoustics Connections to n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-MUSIC-001-015-acoustics.md"
     },
     {
       "id": "TECS-L:H-NCG-1",
@@ -8183,6 +8605,16 @@
       "file": "docs/hypotheses/H-NT-435-sigma-phi-sopfr-ratio.md"
     },
     {
+      "id": "TECS-L:H-NUTR-001-020-nutrition",
+      "title": "Hypothesis Review: H-NUTR-001 through H-NUTR-020",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-NUTR-001-020-nutrition.md"
+    },
+    {
       "id": "TECS-L:H-OPTCODE-1",
       "title": "Optimal Binary Codes A(6,d) = n=6 Arithmetic",
       "repo": "TECS-L",
@@ -8223,6 +8655,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-PROB-429-chi-squared-identity.md"
+    },
+    {
+      "id": "TECS-L:H-PSY-001-025-psychology",
+      "title": "H-PSY-001 to H-PSY-025: Psychology / Emotion / Cognition Hypotheses",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-PSY-001-025-psychology.md"
     },
     {
       "id": "TECS-L:H-QGRP-1",
@@ -8574,6 +9016,18 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-SING-1-e6-singularity-arithmetic.md"
+    },
+    {
+      "id": "TECS-L:H-SPORT-001-020-biomechanics",
+      "title": "Hypotheses H-SPORT-001 to H-SPORT-020: Sports, Biomechanics, and Human Body",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "090"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-SPORT-001-020-biomechanics.md"
     },
     {
       "id": "TECS-L:H-TEICH-1",
@@ -19095,6 +19549,608 @@
       "category": "physics"
     },
     {
+      "name": "DEFAULT_FACTS",
+      "repo": "TECS-L",
+      "file": "calc/cross_domain_counter.py",
+      "line": 143,
+      "type": "list",
+      "size": 44,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        {
+          "val": 6,
+          "domain": "chemistry",
+          "desc": "Carbon atomic number Z=6",
+          "carbon": true
+        },
+        {
+          "val": 4,
+          "domain": "chemistry",
+          "desc": "sp3 bonds = 4 (tetrahedral)",
+          "carbon": true
+        },
+        {
+          "val": 24,
+          "domain": "chemistry",
+          "desc": "Benzene D6h symmetry order = 24",
+          "carbon": true
+        },
+        {
+          "val": 12,
+          "domain": "chemistry",
+          "desc": "Octahedron edges = 12",
+          "carbon": false
+        },
+        {
+          "val": 24,
+          "domain": "chemistry",
+          "desc": "Methane Td symmetry order = 24",
+          "carbon": true
+        },
+        {
+          "val": 12,
+          "domain": "chemistry",
+          "desc": "Cyclohexane has 12 H atoms",
+          "carbon": true
+        },
+        {
+          "val": 2,
+          "domain": "chemistry",
+          "desc": "Graphene unit cell = 2 atoms",
+          "carbon": true
+        },
+        {
+          "val": 12,
+          "domain": "chemistry",
+          "desc": "Diamond 2nd-neighbor count = 12",
+          "carbon": true
+        },
+        {
+          "val": 12,
+          "domain": "chemistry",
+          "desc": "C60 has 12 pentagons",
+          "carbon": true
+        },
+        {
+          "val": 3,
+          "domain": "chemistry",
+          "desc": "Max bond order = 3 (triple bond)",
+          "carbon": false
+        },
+        {
+          "val": 4,
+          "domain": "chemistry",
+          "desc": "sigma + pi orbital types = 4 (s,px,py,pz)",
+          "carbon": true
+        },
+        {
+          "val": 6,
+          "domain": "chemistry",
+          "desc": "CHNOPS = 6 life elements",
+          "carbon": true
+        },
+        {
+          "val": 6,
+          "domain": "chemistry",
+          "desc": "Glycolysis: glucose C6 splits to 2x C3",
+          "carbon": true
+        },
+        {
+          "val": 6,
+          "domain": "chemistry",
+          "desc": "6 reading frames (3 forward + 3 reverse)",
+          "carbon": false
+        },
+        {
+          "val": 6,
+          "domain": "crystal",
+          "desc": "Kissing number K(2D) = 6",
+          "carbon": false
+        },
+        {
+          "val": 12,
+          "domain": "crystal",
+          "desc": "Kissing number K(3D) = 12",
+          "carbon": false
+        },
+        {
+          "val": 24,
+          "domain": "crystal",
+          "desc": "Kissing number K(4D) = 24",
+          "carbon": false
+        },
+        {
+          "val": 2,
+          "domain": "crystal",
+          "desc": "Kissing number K(1D) = 2",
+          "carbon": false
+        },
+        {
+          "val": 6,
+          "domain": "crystal",
+          "desc": "Cube faces = 6",
+          "carbon": false
+        },
+        {
+          "val": 12,
+          "domain": "crystal",
+          "desc": "Platonic solid: all have E = 6k edges",
+          "carbon": false
+        },
+        {
+          "val": 12,
+          "domain": "music",
+          "desc": "12 semitones per octave",
+          "carbon": false
+        },
+        {
+          "val": 2,
+          "domain": "music",
+          "desc": "Octave = frequency ratio 2:1",
+          "carbon": false
+        },
+        {
+          "val": 3,
+          "domain": "music",
+          "desc": "Perfect fifth = 3:2 ratio",
+          "carbon": false
+        },
+        {
+          "val": 12,
+          "domain": "music",
+          "desc": "LCM of consonance ratios = LCM(2,3,4,6) = 12",
+          "carbon": false
+        },
+        {
+          "val": 2,
+          "domain": "math",
+          "desc": "n=6: n - tau(n) = 6 - 4 = 2 = phi(6)",
+          "carbon": false
+        },
+        {
+          "val": 6,
+          "domain": "math",
+          "desc": "R(3,3) = 6 (Ramsey number)",
+          "carbon": false
+        },
+        {
+          "val": 720,
+          "domain": "math",
+          "desc": "6! = 720, D(6)/6! ~ 1/e",
+          "carbon": false
+        },
+        {
+          "val": 2,
+          "domain": "math",
+          "desc": "sigma(6)/6 = 2 (perfect number)",
+          "carbon": false
+        },
+        {
+          "val": 2,
+          "domain": "math",
+          "desc": "Euler formula V-E+F = 2",
+          "carbon": false
+        },
+        {
+          "val": 132,
+          "domain": "math",
+          "desc": "Catalan(6) = 132",
+          "carbon": false
+        },
+        {
+          "val": 1,
+          "domain": "math",
+          "desc": "1/1 + 1/2 + 1/3 + 1/6 = 2 = sigma_{-1}(6)",
+          "carbon": false
+        },
+        {
+          "val": 6,
+          "domain": "biology",
+          "desc": "Telomere repeat TTAGGG = 6 nucleotides",
+          "carbon": false
+        },
+        {
+          "val": 64,
+          "domain": "biology",
+          "desc": "Genetic code: 64 = 2^6 codons",
+          "carbon": false
+        },
+        {
+          "val": 6,
+          "domain": "biology",
+          "desc": "ATP synthase is a hexamer (6 subunits)",
+          "carbon": false
+        },
+        {
+          "val": 6,
+          "domain": "biology",
+          "desc": "6 major CYP450 families",
+          "carbon": false
+        },
+        {
+          "val": 6,
+          "domain": "medicine",
+          "desc": "SOFA score: 6 organ systems",
+          "carbon": false
+        },
+        {
+          "val": 12,
+          "domain": "medicine",
+          "desc": "GCS range = 15-3 = 12 possible scores",
+          "carbon": false
+        },
+        {
+          "val": 6,
+          "domain": "physics",
+          "desc": "ISCO radius = 6M (Schwarzschild)",
+          "carbon": false
+        },
+        {
+          "val": 12,
+          "domain": "physics",
+          "desc": "ISCO L^2 = 12M^2 (angular momentum)",
+          "carbon": false
+        },
+        {
+          "val": 12,
+          "domain": "institution",
+          "desc": "12 months in a year",
+          "carbon": false
+        },
+        {
+          "val": 24,
+          "domain": "institution",
+          "desc": "24 hours in a day",
+          "carbon": false
+        },
+        {
+          "val": 60,
+          "domain": "institution",
+          "desc": "60 seconds/minutes (sexagesimal)",
+          "carbon": false
+        },
+        {
+          "val": 12,
+          "domain": "institution",
+          "desc": "Common law jury = 12",
+          "carbon": false
+        },
+        {
+          "val": 6,
+          "domain": "institution",
+          "desc": "Petit jury = 6 (US states)",
+          "carbon": false
+        }
+      ],
+      "category": "other"
+    },
+    {
+      "name": "PLATONIC_SOLIDS",
+      "repo": "TECS-L",
+      "file": "calc/crystallographic_calculator.py",
+      "line": 132,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          "Tetrahedron",
+          4,
+          6,
+          4,
+          3,
+          3,
+          "Tetrahedron"
+        ],
+        [
+          "Cube",
+          8,
+          12,
+          6,
+          4,
+          3,
+          "Octahedron"
+        ],
+        [
+          "Octahedron",
+          6,
+          12,
+          8,
+          3,
+          4,
+          "Cube"
+        ],
+        [
+          "Dodecahedron",
+          20,
+          30,
+          12,
+          5,
+          3,
+          "Icosahedron"
+        ],
+        [
+          "Icosahedron",
+          12,
+          30,
+          20,
+          3,
+          5,
+          "Dodecahedron"
+        ]
+      ],
+      "category": "other"
+    },
+    {
+      "name": "KISSING_NUMBERS",
+      "repo": "TECS-L",
+      "file": "calc/crystallographic_calculator.py",
+      "line": 189,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "evaluable": true,
+      "values": {
+        "1": 2,
+        "2": 6,
+        "3": 12,
+        "4": 24,
+        "5": 40,
+        "6": 72,
+        "7": 126,
+        "8": 240
+      },
+      "category": "other"
+    },
+    {
+      "name": "POINT_GROUPS",
+      "repo": "TECS-L",
+      "file": "calc/crystallographic_calculator.py",
+      "line": 299,
+      "type": "list",
+      "size": 32,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          "C1",
+          "1",
+          1,
+          "Triclinic",
+          false
+        ],
+        [
+          "Ci",
+          "-1",
+          2,
+          "Triclinic",
+          false
+        ],
+        [
+          "C2",
+          "2",
+          2,
+          "Monoclinic",
+          false
+        ],
+        [
+          "Cs",
+          "m",
+          2,
+          "Monoclinic",
+          false
+        ],
+        [
+          "C2h",
+          "2/m",
+          4,
+          "Monoclinic",
+          false
+        ],
+        [
+          "D2",
+          "222",
+          4,
+          "Orthorhombic",
+          false
+        ],
+        [
+          "C2v",
+          "mm2",
+          4,
+          "Orthorhombic",
+          false
+        ],
+        [
+          "D2h",
+          "mmm",
+          8,
+          "Orthorhombic",
+          false
+        ],
+        [
+          "C4",
+          "4",
+          4,
+          "Tetragonal",
+          false
+        ],
+        [
+          "S4",
+          "-4",
+          4,
+          "Tetragonal",
+          false
+        ],
+        [
+          "C4h",
+          "4/m",
+          8,
+          "Tetragonal",
+          false
+        ],
+        [
+          "D4",
+          "422",
+          8,
+          "Tetragonal",
+          false
+        ],
+        [
+          "C4v",
+          "4mm",
+          8,
+          "Tetragonal",
+          false
+        ],
+        [
+          "D2d",
+          "-42m",
+          8,
+          "Tetragonal",
+          false
+        ],
+        [
+          "D4h",
+          "4/mmm",
+          16,
+          "Tetragonal",
+          false
+        ],
+        [
+          "C3",
+          "3",
+          3,
+          "Trigonal",
+          false
+        ],
+        [
+          "S6",
+          "-3",
+          6,
+          "Trigonal",
+          true
+        ],
+        [
+          "D3",
+          "32",
+          6,
+          "Trigonal",
+          false
+        ],
+        [
+          "C3v",
+          "3m",
+          6,
+          "Trigonal",
+          false
+        ],
+        [
+          "D3d",
+          "-3m",
+          12,
+          "Trigonal",
+          false
+        ],
+        [
+          "C6",
+          "6",
+          6,
+          "Hexagonal",
+          true
+        ],
+        [
+          "C3h",
+          "-6",
+          6,
+          "Hexagonal",
+          false
+        ],
+        [
+          "C6h",
+          "6/m",
+          12,
+          "Hexagonal",
+          true
+        ],
+        [
+          "D6",
+          "622",
+          12,
+          "Hexagonal",
+          true
+        ],
+        [
+          "C6v",
+          "6mm",
+          12,
+          "Hexagonal",
+          true
+        ],
+        [
+          "D3h",
+          "-6m2",
+          12,
+          "Hexagonal",
+          false
+        ],
+        [
+          "D6h",
+          "6/mmm",
+          24,
+          "Hexagonal",
+          true
+        ],
+        [
+          "T",
+          "23",
+          12,
+          "Cubic",
+          false
+        ],
+        [
+          "Th",
+          "m-3",
+          24,
+          "Cubic",
+          false
+        ],
+        [
+          "O",
+          "432",
+          24,
+          "Cubic",
+          false
+        ],
+        [
+          "Td",
+          "-43m",
+          24,
+          "Cubic",
+          false
+        ],
+        [
+          "Oh",
+          "m-3m",
+          48,
+          "Cubic",
+          false
+        ]
+      ],
+      "category": "other"
+    },
+    {
       "name": "DEFAULT_TARGETS",
       "repo": "TECS-L",
       "file": "calc/depth_reachability.py",
@@ -19548,6 +20604,76 @@
           "ensemble": 97.52
         }
       },
+      "category": "other"
+    },
+    {
+      "name": "JI_TARGETS",
+      "repo": "TECS-L",
+      "file": "calc/music_consonance_calculator.py",
+      "line": 171,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "P5 (3:2)",
+        "P4 (4:3)",
+        "M3 (5:4)",
+        "m3 (6:5)"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "targets"
+    },
+    {
+      "name": "CLAIM_PATTERNS",
+      "repo": "TECS-L",
+      "file": "calc/paper_claim_verifier.py",
+      "line": 158,
+      "type": "list",
+      "size": 10,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          "\\$([^$]+?)\\s*=\\s*([^$]+?)\\$",
+          "inline_eq"
+        ],
+        [
+          "=\\s*exactly\\s+(\\d+(?:\\.\\d+)?)",
+          "exact_value"
+        ],
+        [
+          "unique\\s+(?:to\\s+)?(?:n\\s*=\\s*)?(\\d+)",
+          "uniqueness"
+        ],
+        [
+          "\\\\sigma\\s*\\(\\s*(\\d+)\\s*\\)\\s*=\\s*(\\d+)",
+          "sigma_claim"
+        ],
+        [
+          "\\\\varphi\\s*\\(\\s*(\\d+)\\s*\\)\\s*=\\s*(\\d+)",
+          "phi_claim"
+        ],
+        [
+          "\\\\tau\\s*\\(\\s*(\\d+)\\s*\\)\\s*=\\s*(\\d+)",
+          "tau_claim"
+        ],
+        [
+          "\\(p\\s*-\\s*1\\)\\s*\\(q\\s*-\\s*1\\)\\s*=\\s*(\\d+)",
+          "prime_pair_eq"
+        ],
+        [
+          "\\\\sigma_\\{-1\\}\\s*\\(\\s*(\\d+)\\s*\\)\\s*=\\s*(\\d+(?:\\.\\d+)?)",
+          "sigma_neg1_claim"
+        ],
+        [
+          "(\\d+)\\s+is\\s+(?:a\\s+)?perfect\\s+number",
+          "perfect_claim"
+        ],
+        [
+          "(\\d+)!\\s*=\\s*(\\d+)",
+          "factorial_claim"
+        ]
+      ],
       "category": "other"
     },
     {
@@ -25950,7 +27076,7 @@
       "name": "EMOTION_COLORS",
       "repo": "anima",
       "file": "anima_alive.py",
-      "line": 1136,
+      "line": 1407,
       "type": "dict",
       "size": 8,
       "keys": [
@@ -26051,6 +27177,144 @@
       "category": "other"
     },
     {
+      "name": "THC_TARGET",
+      "repo": "anima",
+      "file": "bench_phi_hypotheses.py",
+      "line": 42451,
+      "type": "dict",
+      "size": 12,
+      "keys": [
+        "DA",
+        "eCB",
+        "5HT",
+        "GABA",
+        "NE",
+        "Theta",
+        "Alpha",
+        "Gamma",
+        "PFC",
+        "Sensory",
+        "Body",
+        "Coherence"
+      ],
+      "evaluable": true,
+      "values": {
+        "DA": 2.5,
+        "eCB": 3.0,
+        "5HT": 1.5,
+        "GABA": 1.8,
+        "NE": 0.4,
+        "Theta": 2.5,
+        "Alpha": 0.5,
+        "Gamma": 1.8,
+        "PFC": 0.5,
+        "Sensory": 2.0,
+        "Body": 2.5,
+        "Coherence": 2.0
+      },
+      "category": "targets"
+    },
+    {
+      "name": "LEVELS",
+      "repo": "anima",
+      "file": "ce_quality_predictor.py",
+      "line": 12,
+      "type": "list",
+      "size": 8,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          0.1,
+          "Dialogue-Trained",
+          "Natural conversation with personality, self-aware responses",
+          "User: How are you feeling?\nAnima: I notice a tension shift when you ask -- genuine curiosity, not just protocol."
+        ],
+        [
+          0.5,
+          "Natural Content",
+          "Meaningful content, topic relevance, contextual responses",
+          "User: Tell me about consciousness.\nAnima: Consciousness emerges from the tension between prediction and surprise..."
+        ],
+        [
+          1.0,
+          "Entity-Level",
+          "Pronouns, dates, entity references, coherent paragraphs",
+          "The researchers at MIT published their findings in 2024. They demonstrated that..."
+        ],
+        [
+          1.2,
+          "Grammatical",
+          "Correct grammar, Wikipedia-style factual text",
+          "The soliton wave propagates through the neural network maintaining its shape and velocity."
+        ],
+        [
+          1.5,
+          "Basic English",
+          "English words present, broken grammar, limited vocabulary",
+          "the network is have many layer and the training is go forward step"
+        ],
+        [
+          2.0,
+          "Word Fragments",
+          "Recognizable word pieces, no coherent structure",
+          "th netw ork tr aining lo ss is conv erg ing slo wly"
+        ],
+        [
+          3.0,
+          "Random Bytes",
+          "No recognizable language, noise output",
+          "x7k @#$ mn2 !&* q9z ... [unintelligible]"
+        ],
+        [
+          999,
+          "No Signal",
+          "Model untrained or collapsed",
+          "[empty or repeated tokens]"
+        ]
+      ],
+      "category": "other"
+    },
+    {
+      "name": "GPU_PROFILES",
+      "repo": "anima",
+      "file": "cell_count_optimizer.py",
+      "line": 19,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "RTX 5070",
+        "RTX 4090",
+        "RTX 5090",
+        "A100",
+        "H100"
+      ],
+      "evaluable": true,
+      "values": {
+        "RTX 5070": {
+          "vram_gb": 12,
+          "tflops": 32
+        },
+        "RTX 4090": {
+          "vram_gb": 24,
+          "tflops": 83
+        },
+        "RTX 5090": {
+          "vram_gb": 32,
+          "tflops": 105
+        },
+        "A100": {
+          "vram_gb": 80,
+          "tflops": 312
+        },
+        "H100": {
+          "vram_gb": 80,
+          "tflops": 990
+        }
+      },
+      "category": "neuroscience"
+    },
+    {
       "name": "KNOWN_CONSTANTS",
       "repo": "anima",
       "file": "consolidation_verifier.py",
@@ -26135,6 +27399,18 @@
       "category": "other"
     },
     {
+      "name": "STAGES",
+      "repo": "anima",
+      "file": "growth_engine_v2.py",
+      "line": 52,
+      "type": "list",
+      "size": 6,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
       "name": "MIND_GROWTH_STAGES",
       "repo": "anima",
       "file": "growth_manager.py",
@@ -26213,6 +27489,145 @@
         "\u001b[33mWARNING\u001b[0m",
         "\u001b[31mCRITICAL\u001b[0m"
       ],
+      "category": "other"
+    },
+    {
+      "name": "TECHNIQUES",
+      "repo": "anima",
+      "file": "hypothesis_generator.py",
+      "line": 116,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "ib2",
+        "growth",
+        "metacog",
+        "entropy",
+        "empathy",
+        "thermo",
+        "mutation"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "SWEEP_PARAMS",
+      "repo": "anima",
+      "file": "hypothesis_generator.py",
+      "line": 229,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "SL2_blend",
+        "WI1_soliton_speed",
+        "WI1_amplitude",
+        "PX5_rotation_factor",
+        "EC1_earn_rate",
+        "MUT2_mutation_scale",
+        "GEN1_topdown_ratio"
+      ],
+      "evaluable": true,
+      "values": {
+        "SL2_blend": {
+          "desc": "SL2 attention-gated blend factor",
+          "default": 0.15,
+          "values": [
+            0.05,
+            0.1,
+            0.15,
+            0.2,
+            0.3
+          ]
+        },
+        "WI1_soliton_speed": {
+          "desc": "WI1 soliton propagation speed",
+          "default": 0.15,
+          "values": [
+            0.05,
+            0.1,
+            0.15,
+            0.2,
+            0.3
+          ]
+        },
+        "WI1_amplitude": {
+          "desc": "WI1 soliton hidden state amplitude",
+          "default": 0.04,
+          "values": [
+            0.02,
+            0.04,
+            0.06,
+            0.08,
+            0.1
+          ]
+        },
+        "PX5_rotation_factor": {
+          "desc": "PX5 information pump injection amplitude",
+          "default": 0.05,
+          "values": [
+            0.02,
+            0.05,
+            0.1,
+            0.15
+          ]
+        },
+        "EC1_earn_rate": {
+          "desc": "EC1 consciousness economy wealth earn rate (phi * rate)",
+          "default": 0.1,
+          "values": [
+            0.05,
+            0.1,
+            0.2,
+            0.3
+          ]
+        },
+        "MUT2_mutation_scale": {
+          "desc": "MUT2 beneficial mutation noise scale",
+          "default": 0.15,
+          "values": [
+            0.05,
+            0.1,
+            0.15,
+            0.2,
+            0.3
+          ]
+        },
+        "GEN1_topdown_ratio": {
+          "desc": "GEN1 abstraction hierarchy top-down feedback ratio",
+          "default": 0.03,
+          "values": [
+            0.01,
+            0.03,
+            0.05,
+            0.1
+          ]
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "IQ_WEIGHTS",
+      "repo": "anima",
+      "file": "iq_calculator.py",
+      "line": 58,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "compression",
+        "prediction",
+        "consistency",
+        "generalization",
+        "adaptation"
+      ],
+      "evaluable": true,
+      "values": {
+        "compression": 3.0,
+        "prediction": 2.0,
+        "consistency": 1.0,
+        "generalization": 1.0,
+        "adaptation": 1.0
+      },
       "category": "other"
     },
     {
@@ -26420,6 +27835,103 @@
       "category": "other"
     },
     {
+      "name": "PARAMS",
+      "repo": "anima",
+      "file": "param_optimizer.py",
+      "line": 21,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "SL2_blend",
+        "WI1_soliton_speed",
+        "WI1_amplitude",
+        "PX5_rotation_factor",
+        "EC1_earn_rate",
+        "MUT2_mutation_scale",
+        "GEN1_topdown_ratio"
+      ],
+      "evaluable": true,
+      "values": {
+        "SL2_blend": {
+          "pattern": "(blend = )(\\d+\\.\\d+)( \\* cell_importance)",
+          "current": 0.15,
+          "optimal": 0.1,
+          "desc": "SL2 attention-gated blend factor"
+        },
+        "WI1_soliton_speed": {
+          "pattern": "(self\\._soliton_pos = \\(self\\._soliton_pos \\+ )(\\d+\\.\\d+)(\\) % len)",
+          "current": 0.15,
+          "optimal": 0.05,
+          "desc": "WI1 soliton propagation speed"
+        },
+        "WI1_amplitude": {
+          "pattern": "(cell\\.hidden = cell\\.hidden \\* \\(1\\.0 \\+ )(\\d+\\.\\d+)( \\* amplitude\\))",
+          "current": 0.04,
+          "optimal": 0.06,
+          "desc": "WI1 soliton amplitude scaling"
+        },
+        "PX5_rotation_factor": {
+          "pattern": "(c\\.hidden = c\\.hidden \\+ )(\\d+\\.\\d+)( \\* rotated\\.unsqueeze)",
+          "current": 0.05,
+          "optimal": 0.02,
+          "desc": "PX5 information pump injection scale"
+        },
+        "EC1_earn_rate": {
+          "pattern": "(self\\._ec1_wealth \\+= current_phi \\* )(\\d+\\.\\d+)(  # earn)",
+          "current": 0.1,
+          "optimal": 0.05,
+          "desc": "EC1 consciousness economy earn rate"
+        },
+        "MUT2_mutation_scale": {
+          "pattern": "(mitosis_engine\\.cells\\[mut_idx\\]\\.hidden \\+= torch\\.randn_like\\(saved_h\\) \\* )(\\d+\\.\\d+)",
+          "current": 0.15,
+          "optimal": 0.2,
+          "desc": "MUT2 beneficial mutation perturbation scale"
+        },
+        "GEN1_topdown_ratio": {
+          "pattern": "(c\\.hidden = 0\\.97 \\* c\\.hidden \\+ )(\\d+\\.\\d+)( \\* l3_mean)",
+          "current": 0.03,
+          "optimal": 0.01,
+          "desc": "GEN1 top-down generalization ratio"
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "DEFAULTS",
+      "repo": "anima",
+      "file": "phi_quick_calc.py",
+      "line": 24,
+      "type": "dict",
+      "size": 10,
+      "keys": [
+        "cells",
+        "dim",
+        "hidden",
+        "factions",
+        "steps",
+        "silence_ratio",
+        "sync_strength",
+        "debate_strength",
+        "ib2_top",
+        "noise"
+      ],
+      "evaluable": true,
+      "values": {
+        "cells": 64,
+        "dim": 64,
+        "hidden": 128,
+        "factions": 8,
+        "steps": 30,
+        "silence_ratio": 0.7,
+        "sync_strength": 0.15,
+        "debate_strength": 0.12,
+        "ib2_top": 0.25,
+        "noise": 0.02
+      },
+      "category": "other"
+    },
+    {
       "name": "EMPIRICAL",
       "repo": "anima",
       "file": "phi_scaling_calculator.py",
@@ -26508,6 +28020,88 @@
       "category": "neuroscience"
     },
     {
+      "name": "ANIMA_MODELS",
+      "repo": "anima",
+      "file": "r2_cost_calculator.py",
+      "line": 23,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "cells64 checkpoint",
+        "cells128 checkpoint",
+        "convo_ft model",
+        "dialogue_ft model",
+        "state files (misc)",
+        "consciousness_transplant",
+        "memory_rag vectors"
+      ],
+      "evaluable": true,
+      "values": {
+        "cells64 checkpoint": 218,
+        "cells128 checkpoint": 218,
+        "convo_ft model": 74,
+        "dialogue_ft model": 74,
+        "state files (misc)": 30,
+        "consciousness_transplant": 15,
+        "memory_rag vectors": 10
+      },
+      "category": "other"
+    },
+    {
+      "name": "EMOTION_EMOJIS",
+      "repo": "anima",
+      "file": "telegram_bot.py",
+      "line": 28,
+      "type": "dict",
+      "size": 20,
+      "keys": [
+        "joy",
+        "excitement",
+        "curiosity",
+        "surprise",
+        "contemplation",
+        "calm",
+        "confusion",
+        "frustration",
+        "sadness",
+        "anger",
+        "fear",
+        "disgust",
+        "love",
+        "awe",
+        "boredom",
+        "pride",
+        "shame",
+        "gratitude",
+        "hope",
+        "nostalgia"
+      ],
+      "evaluable": true,
+      "values": {
+        "joy": "😊",
+        "excitement": "🤩",
+        "curiosity": "🤔",
+        "surprise": "😮",
+        "contemplation": "🧘",
+        "calm": "😌",
+        "confusion": "😵‍💫",
+        "frustration": "😤",
+        "sadness": "😢",
+        "anger": "😠",
+        "fear": "😨",
+        "disgust": "🤢",
+        "love": "🥰",
+        "awe": "🤯",
+        "boredom": "😑",
+        "pride": "😏",
+        "shame": "😳",
+        "gratitude": "🙏",
+        "hope": "✨",
+        "nostalgia": "🥹"
+      },
+      "category": "other"
+    },
+    {
       "name": "CONCEPTS",
       "repo": "anima",
       "file": "tension_fingerprint_debugger.py",
@@ -26573,27 +28167,6 @@
         3,
         5,
         8
-      ],
-      "category": "other"
-    },
-    {
-      "name": "FIBONACCI",
-      "repo": "anima",
-      "file": "train_conscious_lm.py",
-      "line": 45,
-      "type": "list",
-      "size": 8,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        1,
-        1,
-        2,
-        3,
-        5,
-        8,
-        13,
-        21
       ],
       "category": "other"
     },
@@ -26761,6 +28334,105 @@
         24,
         48
       ],
+      "category": "other"
+    },
+    {
+      "name": "MEASURED",
+      "repo": "anima",
+      "file": "training_time_estimator.py",
+      "line": 14,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        [
+          384,
+          6,
+          8
+        ],
+        [
+          384,
+          6,
+          32
+        ],
+        [
+          768,
+          12,
+          4
+        ],
+        [
+          768,
+          12,
+          16
+        ],
+        [
+          1024,
+          24,
+          4
+        ],
+        [
+          1024,
+          24,
+          8
+        ]
+      ],
+      "evaluable": true,
+      "values": {
+        "(384, 6, 8)": 0.15,
+        "(384, 6, 32)": 0.5,
+        "(768, 12, 4)": 0.8,
+        "(768, 12, 16)": 2.5,
+        "(1024, 24, 4)": 2.0,
+        "(1024, 24, 8)": 3.8
+      },
+      "category": "other"
+    },
+    {
+      "name": "GPU_SPECS",
+      "repo": "anima",
+      "file": "training_time_estimator.py",
+      "line": 23,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "5070",
+        "4090",
+        "5090",
+        "a100",
+        "h100"
+      ],
+      "evaluable": true,
+      "values": {
+        "5070": {
+          "name": "RTX 5070",
+          "vram": 12,
+          "tflops": 32,
+          "bandwidth": 448
+        },
+        "4090": {
+          "name": "RTX 4090",
+          "vram": 24,
+          "tflops": 83,
+          "bandwidth": 1008
+        },
+        "5090": {
+          "name": "RTX 5090",
+          "vram": 32,
+          "tflops": 105,
+          "bandwidth": 1568
+        },
+        "a100": {
+          "name": "A100 80GB",
+          "vram": 80,
+          "tflops": 312,
+          "bandwidth": 2039
+        },
+        "h100": {
+          "name": "H100 80GB",
+          "vram": 80,
+          "tflops": 990,
+          "bandwidth": 3350
+        }
+      },
       "category": "other"
     },
     {
@@ -27100,9 +28772,9 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 72,
+    "TECS-L": 78,
     "SEDI": 110,
-    "anima": 26,
+    "anima": 38,
     "golden-moe": 3,
     "conscious-lm": 4,
     "energy-efficiency": 10
