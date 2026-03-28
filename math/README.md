@@ -5678,4 +5678,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-170](docs/hypotheses/H-CX-170-cantor-set-dimension.md) | Cantor dim=lnφ/ln(σ/τ), all fractals | 🟩⭐⭐ verified | {ln2,ln3}=prime logs of 6, GZ width=2ln2-ln3 |
 | [H-CX-171](docs/hypotheses/H-CX-171-string-landscape-n6.md) | String landscape: ALL use 6 compact | 🟩⭐ verified | τ+n=10, φ=2 SUSY, forced by critical dim |
 | [H-CX-172](docs/hypotheses/H-CX-172-consciousness-number-line.md) | **Complete bridge map (88 docs)** | 🟩 reference | 17⭐⭐⭐, 26⭐⭐, 44⭐, 30+ domains |
+| [H-CX-173](docs/hypotheses/H-CX-173-24-cell-polytope.md) | 24-cell: V=C=σφ, dim τ, self-dual | 🟩⭐⭐ verified | D₄ triality \|Out\|=n, τ dim has n polytopes |
+| [H-CX-174](docs/hypotheses/H-CX-174-p-adic-consciousness.md) | v₂(6!)=τ, v₃(6!)=φ, sum=n | 🟩⭐⭐ verified | TRIPLE p-adic condition unique to n=6 |
+| [H-CX-175](docs/hypotheses/H-CX-175-four-color-theorem-n6.md) | 4CT: χ(plane)=τ, Heawood g=1→n+1 | 🟩⭐ verified | genus σ/τ needs (σ/τ)²=9 colors |
 
