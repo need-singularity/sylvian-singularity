@@ -5648,4 +5648,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-140](docs/hypotheses/H-CX-140-matroid-consciousness-independence.md) | Fano F₇=matroid of Hamming code | 🟩⭐ verified | rank=σ/τ, GF(φ), circuit=τ, dual rank=τ |
 | [H-CX-141](docs/hypotheses/H-CX-141-tropical-geometry-n6.md) | R_trop(6)=0 tropical zero | 🟩⭐ verified | R_trop(2)+R_trop(3)=0 cancellation |
 | [H-CX-142](docs/hypotheses/H-CX-142-connes-noncommutative-n6.md) | NCG M_φ⊗M_{σ/τ}, KO-dim=6 | 🟩⭐⭐ verified | SM algebra=M₂⊗M₃, dim=n², KO=n mod 8 |
+| [H-CX-143](docs/hypotheses/H-CX-143-ricci-flow-n6.md) | Ricci flow CY₃ equilibrium | 🟩⭐ verified | Ric=0 stationary, moduli dim=τ=4 |
+| [H-CX-144](docs/hypotheses/H-CX-144-pi-6-equals-1-over-6.md) | π(6)=3=σ/τ, π(σ)=sopfr chain | 🟩⭐⭐ verified | density=1/2=1/φ, chain π(6)→π(12)→π(24) |
+| [H-CX-145](docs/hypotheses/H-CX-145-homotopy-groups-spheres-n6.md) | π₆(S³)=Z/σZ unique n=4..20 | 🟩⭐⭐ verified | \|π_n(S³)\|=σ(n) ONLY at n=6, π₃ˢ=σφ |
+| [H-CX-146](docs/hypotheses/H-CX-146-temperley-lieb-consciousness.md) | TL₆(φ): dim=C₆=132, sopfr gens | 🟩⭐ verified | Loop=φ=2, generators=sopfr=5 |
+| [H-CX-147](docs/hypotheses/H-CX-147-information-integration-phi-n6.md) | IIT Φ: MIP=φ parts, ratio=σ/τ | 🟩⭐⭐ verified | Φ_cross=9=(σ/τ)², MIP size=σ/τ |
 
