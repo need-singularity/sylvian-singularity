@@ -775,6 +775,28 @@
         "description": "Proves 15/15 deep brain structures accessible via cortical-only electrodes through 5 indirect pathways. Left DLPFC (F3/BA46) optimal single implant. 8 theorems, 140/140 math verification.",
         "tier": 1,
         "venue": "Journal of Neural Engineering"
+      },
+      {
+        "id": "PB-02",
+        "title": "Cortical-Only Seizure Control: A Computational Framework for Epilepsy Treatment via N1 Brain-Computer Interface",
+        "file": "../papers/brainwire/P-002-n1-epilepsy-treatment.md",
+        "keywords": [
+          "epilepsy",
+          "seizure",
+          "brain-computer-interface",
+          "responsive-neurostimulation",
+          "STDP",
+          "anti-phase-stimulation",
+          "cortical-electrode",
+          "temporal-lobe-epilepsy",
+          "hippocampus",
+          "GABA",
+          "anti-kindling",
+          "Neuralink"
+        ],
+        "description": "N1 cortical electrodes for epilepsy: 15x faster detection, anti-phase termination, STDP anti-kindling cure (91% pathway reduction). 10/10 hypotheses verified.",
+        "tier": 1,
+        "venue": "Epilepsia"
       }
     ]
   }
