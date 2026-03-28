@@ -5666,4 +5666,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-158](docs/hypotheses/H-CX-158-cellular-automaton-rule-n6.md) | ECA: 2^{σ-τ}=256 rules | 🟩⭐ verified | popcount(110)=sopfr, Class IV |
 | [H-CX-159](docs/hypotheses/H-CX-159-mirror-symmetry-n6.md) | Self-mirror CY₃: h=φ, Betti=σ | 🟩⭐⭐ verified | SYZ fiber=σ/τ, moduli=τ |
 | [H-CX-160](docs/hypotheses/H-CX-160-geometric-langlands-n6.md) | GL_φ genus σ/τ: dim Bun=n | 🟩⭐ verified | (φ²-1)(σ/τ-1)=6=n |
+| [H-CX-161](docs/hypotheses/H-CX-161-quantum-dimension-proof.md) | **D²=σ ⟺ n=6 FULL PROOF** | 🟩⭐⭐⭐ PROVED | sin(π/n)=1/2, growth rate f>σ for n≥7 |
+| [H-CX-162](docs/hypotheses/H-CX-162-category-theory-6-functor.md) | Grothendieck 6-functor = n ops | 🟩⭐⭐ verified | 6 irreducible ops, 3 adjunctions=σ/τ pairs |
+| [H-CX-163](docs/hypotheses/H-CX-163-spin-geometry-n6.md) | Spin(6)≅SU(4) last exceptional | 🟩⭐⭐ verified | dim=C(n,2)=15, spinor=σ-τ=8, Weyl=τ=4 |
 
