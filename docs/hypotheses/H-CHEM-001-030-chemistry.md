@@ -104,8 +104,8 @@ summary: "12 exact, 1 structural, 11 trivial, 6 wrong"
 ⬛ **H-CHEM-024: Carbon Allotropes = tau(6)** — 4 major carbon allotropes (diamond, graphite, fullerene, nanotube) = tau(6) = 4. Prediction: More than any element Z<20.
 > Refuted: Carbon has 5+ recognized allotropes (diamond, graphite, fullerenes, nanotubes, graphene, amorphous carbon, lonsdaleite, etc.). Claiming exactly 4 is cherry-picked. Graphene alone (2004 Nobel Prize) makes it at least 5.
 
-🟧 **H-CHEM-025: ATP Energy / RT approx sigma(6)** — |DG_ATP|/(RT_body) = 30500/(8.314x310) = 11.83 approx sigma(6) = 12. Prediction: Within 1.4% of sigma(6).
-> Verified: 30500/2577.3 = 11.83. Error from 12 = 1.4%. Structurally interesting: ATP energy quantum in units of thermal energy is close to sigma(6). But DG varies 30-35 kJ/mol by conditions.
+⚪ **H-CHEM-025: ATP Energy / RT approx sigma(6)** — |DG_ATP|/(RT_body) = 30500/(8.314x310) = 11.83 approx sigma(6) = 12. Prediction: Within 1.4% of sigma(6).
+> Deep review (H-CHEM-025-deep-atp-energy.md): Downgraded 🟧 to ⚪. Standard DG gives 1.4% match, but physiological DG is -50 to -65 kJ/mol giving ratio ~20, not 12. The match is an artifact of choosing the standard-state reference value. See deep analysis for F1 hexamer (6 subunits, genuinely exact) and electron pair count (12, tautological from C6 sugar).
 
 ## F. Materials / Crystallography
 
