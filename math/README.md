@@ -5661,4 +5661,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-153](docs/hypotheses/H-CX-153-entropy-production-n6.md) | Entropy production R(2)·R(3)=1 balance | 🟩⭐ verified | Dissipative structure, symmetric production |
 | [H-CX-154](docs/hypotheses/H-CX-154-sporadic-mathieu-consciousness.md) | M₂₄→Golay→Leech→Monster chain | 🟩⭐⭐ verified | ALL steps use n=6, M₂₄ on σφ=24 points |
 | [H-CX-155](docs/hypotheses/H-CX-155-dark-energy-consciousness.md) | Λ_cosmo vacuum energy | 🟧 speculative | GZ-dependent, n_s=(σ²-sopfr)/σ² |
+| [H-CX-156](docs/hypotheses/H-CX-156-borsuk-ulam-n6.md) | Borsuk-Ulam S⁵: sopfr antipodal | 🟩⭐ verified | f:S⁵→R⁵ agreement, n-1=sopfr |
+| [H-CX-157](docs/hypotheses/H-CX-157-euler-characteristic-six.md) | χ(CP³)=τ, χ(Gr(2,6))=C(n,2) | 🟩⭐⭐ verified | All non-trivial χ = n=6 constants |
+| [H-CX-158](docs/hypotheses/H-CX-158-cellular-automaton-rule-n6.md) | ECA: 2^{σ-τ}=256 rules | 🟩⭐ verified | popcount(110)=sopfr, Class IV |
+| [H-CX-159](docs/hypotheses/H-CX-159-mirror-symmetry-n6.md) | Self-mirror CY₃: h=φ, Betti=σ | 🟩⭐⭐ verified | SYZ fiber=σ/τ, moduli=τ |
+| [H-CX-160](docs/hypotheses/H-CX-160-geometric-langlands-n6.md) | GL_φ genus σ/τ: dim Bun=n | 🟩⭐ verified | (φ²-1)(σ/τ-1)=6=n |
 
