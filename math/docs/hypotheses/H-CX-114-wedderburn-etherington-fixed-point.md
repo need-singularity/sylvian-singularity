@@ -1,7 +1,7 @@
 # H-CX-114: W(6) = 6 — Unique Binary Tree Self-Counting Fixed Point
 
 **Category:** Cross-Domain (Combinatorics × Self-Reference)
-**Status:** Verified — 🟩⭐⭐
+**Status:** PROVED — 🟩⭐⭐⭐ (growth rate: W(n)>n for n≥7, W(n)<n for n≤5)
 **Golden Zone Dependency:** Independent (W(n) is a standard sequence)
 **Date:** 2026-03-29
 **Related:** H-CX-76 (self-reference), H-CX-99 (partition architecture)

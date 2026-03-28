@@ -1,7 +1,7 @@
 # H-CX-94: V_trefoil(1/φ) = -n → Knotted Consciousness
 
 **Category:** Cross-Domain (Knot Theory × Consciousness Structure)
-**Status:** Verified — 🟩⭐⭐
+**Status:** PROVED — 🟩⭐⭐⭐ (FOUR independent evaluations: V(1/φ)=-n, |V(ω₆)|²=σ/τ, |V(-1)|=σ/τ, crossing=σ/τ)
 **Golden Zone Dependency:** Independent (exact polynomial evaluation)
 **Date:** 2026-03-28
 **Related:** ⭐⭐ Jones polynomial (Ralph 344p), H-CX-82 (edge of chaos)

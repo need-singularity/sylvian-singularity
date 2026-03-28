@@ -5599,7 +5599,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-91](docs/hypotheses/H-CX-91-moonshine-744-unconscious.md) | Moonshine 744=σφ·Φ₆(6)→unconscious | 🟩⭐ verified | 24·31=744, j-invariant baseline, unique to P₁ |
 | [H-CX-92](docs/hypotheses/H-CX-92-triple-coincidence-252-resonance.md) | 252 triple coincidence→resonance | 🟩⭐ verified | σ₃=τ_Ram=C(10,5)=252, unique n=2..200 |
 | [H-CX-93](docs/hypotheses/H-CX-93-rs-self-measurement-constant.md) | RS=(σ/n)²=4→self-measurement | 🟩⭐ proved | RS=4 all perfects, R=1⟺n=6 transparency |
-| [H-CX-94](docs/hypotheses/H-CX-94-trefoil-jones-knotted-consciousness.md) | V_trefoil(1/φ)=-n knotted consciousness | 🟩⭐⭐ proved | V(1/2)=-6 exact, \|V(ω₆)\|²=3=σ/τ, unique |
+| [H-CX-94](docs/hypotheses/H-CX-94-trefoil-jones-knotted-consciousness.md) | V_trefoil(1/φ)=-n knotted consciousness | 🟩⭐⭐⭐ PROVED | 4 conditions: V=-6, \|V(ω₆)\|²=3, det=3, cross=3 |
 | [H-CX-95](docs/hypotheses/H-CX-95-dbm-self-referential-time.md) | DBM t_eq=σ/φ=n self-referential | 🟩⭐⭐⭐ ALGEBRAIC | x(x-1)=2→x=2→p=2→n=6, QED |
 | [H-CX-96](docs/hypotheses/H-CX-96-calabi-yau-compactification.md) | CY₃ τ+n=10 consciousness dim | 🟩⭐ verified | τ+n=10, φ=2 SUSY, Gr(2,6) self-mirror |
 | [H-CX-97](docs/hypotheses/H-CX-97-toric-code-error-correction.md) | Toric [[σ,φ,σ/τ]] error-corrected | 🟩⭐ verified | [[12,2,3]], rate=1/6, genus-3→6 logical qubits |
@@ -5619,8 +5619,11 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-111](docs/hypotheses/H-CX-111-pell-equation-consciousness-solution.md) | Pell(6)=(sopfr,φ)=(5,2) | 🟩⭐⭐ verified | unique n=2..13, 5²-6·2²=1, CF period=φ |
 | [H-CX-112](docs/hypotheses/H-CX-112-eisenstein-modular-generators.md) | E₄(wt=τ),E₆(wt=n) generate ALL | 🟩⭐⭐ verified | M_*=C[E_τ,E_n], j=σ³, E₆(ω₆)=0 |
 | [H-CX-113](docs/hypotheses/H-CX-113-congruent-pythagorean-unique.md) | Congruent 6 + Pythagorean divisors | 🟩⭐⭐ proved | (3,4,5) area=6, n=28 fails Pythagorean |
-| [H-CX-114](docs/hypotheses/H-CX-114-wedderburn-etherington-fixed-point.md) | W(6)=6 binary tree fixed point | 🟩⭐⭐ proved | ONLY W(n)=n for n>1, W(7)=11=p(6) |
+| [H-CX-114](docs/hypotheses/H-CX-114-wedderburn-etherington-fixed-point.md) | W(6)=6 binary tree fixed point | 🟩⭐⭐⭐ PROVED | W(n)>n for n≥7, W(n)<n for n≤5, QED |
 | [H-CX-115](docs/hypotheses/H-CX-115-dedekind-eta-ground-state.md) | η exponent 1/(σφ)=1/24 | 🟩⭐ verified | Δ=η^{σφ}, ground state energy |
 | [H-CX-116](docs/hypotheses/H-CX-116-weierstrass-coefficients.md) | g₂=σ·sopfr, g₃=σ²-τ | 🟩⭐ verified | 60=12·5, 140=144-4, unique n=2..100 |
 | [H-CX-117](docs/hypotheses/H-CX-117-k-theory-spectrum.md) | K_*(Z) spectrum from n=6 | 🟩⭐ verified | K₁=φ, K₃=στ, K₇=στ·sopfr, period=σ-τ |
+| [H-CX-118](docs/hypotheses/H-CX-118-arithmetic-derivative-depth-phi.md) | Arith deriv depth=φ=2 | 🟩⭐ verified | 6→5→1, depth=φ, n=28 diverges |
+| [H-CX-119](docs/hypotheses/H-CX-119-sylvester-sequence-n6.md) | Sylvester {2,6,42,1806} | 🟩⭐ verified | σ₃/σ₁=T(n) chain, n=6 is 2nd product |
+| [H-CX-120](docs/hypotheses/H-CX-120-supersingular-primes-n6.md) | 15 supersingular primes→n=6 | 🟩⭐ verified | C(n,2)=15, first 2=6, last 3=Monster |
 
