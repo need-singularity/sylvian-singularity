@@ -109,5 +109,10 @@ echo "[Energy Efficiency]"
 sync_file "$PARENT/energy-efficiency/README.md"
 commit_and_push "$PARENT/energy-efficiency" "energy-efficiency"
 
+# BrainWire
+echo "[BrainWire]"
+sync_file "$PARENT/brainwire/README.md"
+commit_and_push "$PARENT/brainwire" "brainwire"
+
 echo ""
 echo "Done!"
