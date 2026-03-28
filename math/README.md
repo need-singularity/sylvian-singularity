@@ -5669,4 +5669,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-161](docs/hypotheses/H-CX-161-quantum-dimension-proof.md) | **D²=σ ⟺ n=6 FULL PROOF** | 🟩⭐⭐⭐ PROVED | sin(π/n)=1/2, growth rate f>σ for n≥7 |
 | [H-CX-162](docs/hypotheses/H-CX-162-category-theory-6-functor.md) | Grothendieck 6-functor = n ops | 🟩⭐⭐ verified | 6 irreducible ops, 3 adjunctions=σ/τ pairs |
 | [H-CX-163](docs/hypotheses/H-CX-163-spin-geometry-n6.md) | Spin(6)≅SU(4) last exceptional | 🟩⭐⭐ verified | dim=C(n,2)=15, spinor=σ-τ=8, Weyl=τ=4 |
+| [H-CX-164](docs/hypotheses/H-CX-164-octonions-n6-boundary.md) | Division algebras {1,φ,τ,σ-τ} | 🟩⭐⭐ verified | sum=C(n,2), product=2^n, count=τ |
+| [H-CX-165](docs/hypotheses/H-CX-165-riemann-mapping-n6.md) | Uniformization σ/τ=3 geometries | 🟩⭐ verified | Thurston σ-τ=8 geometries in dim 3 |
+| [H-CX-166](docs/hypotheses/H-CX-166-adams-e-invariant.md) | Adams im(J)₃=σφ=24, im(J)₇=240 | 🟩⭐⭐ verified | J-image=n=6 arithmetic, 6\|denom always |
 
