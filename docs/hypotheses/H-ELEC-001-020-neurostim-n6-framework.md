@@ -642,28 +642,28 @@ with exponential convergence.
 
 ## Summary Table
 
-| ID          | Category   | Core claim                                  | Key constant |
-|-------------|------------|---------------------------------------------|-------------|
-| H-ELEC-001  | Optimal    | tDCS optimal at 1/e of max current          | 1/e         |
-| H-ELEC-002  | Optimal    | VNS converges to 10 Hz (1/3 fixed point)    | 1/3         |
-| H-ELEC-003  | Optimal    | TMS phase transition at 50% MSO             | 1/2         |
-| H-ELEC-004  | Optimal    | TENS window width = ln(4/3) of range        | ln(4/3)     |
-| H-ELEC-005  | Optimal    | 40 Hz buildup time constant = 1/e of session| 1/e         |
-| H-ELEC-006  | Interact   | 12 variables = sigma(6), 4 PCA components   | sigma(6)=12 |
-| H-ELEC-007  | Interact   | DA-eCB synergy = product/2                  | 6/sigma(6)  |
-| H-ELEC-008  | Interact   | 4 coupling nodes = tau(6)                   | tau(6)=4    |
-| H-ELEC-009  | Interact   | Weight decomposition 1/2+1/3+1/6=1          | perfect 6   |
-| H-ELEC-010  | Interact   | phi(6)=2 effective degrees of freedom        | phi(6)=2    |
-| H-ELEC-011  | Conscious  | DA=P, GABA=I, NE=D mapping                  | G=D*P/I     |
-| H-ELEC-012  | Conscious  | All 12 variables optimal in Golden Zone      | [0.21,0.50] |
-| H-ELEC-013  | Conscious  | Coherence = 1/6 binding term                 | 1/6         |
-| H-ELEC-014  | Conscious  | G*I=D*P conserved during stimulation         | conservation|
-| H-ELEC-015  | Conscious  | Theta/Alpha ratio tracks D/I                 | D/I ratio   |
-| H-ELEC-016  | Protocol   | 1/6 duty cycle optimal for tDCS              | 1/6         |
-| H-ELEC-017  | Protocol   | Three-phase sequence 1/2, 1/3, 1/6           | 1/2+1/3+1/6|
-| H-ELEC-018  | Protocol   | VNS-tDCS phase offset at 1/3 period          | 1/3         |
-| H-ELEC-019  | Protocol   | 6-minute fundamental cycle                   | n=6         |
-| H-ELEC-020  | Protocol   | 10-session convergence to targets             | contraction |
+| ID          | Grade | Category   | Core claim                                  | Key constant | Notes |
+|-------------|-------|------------|---------------------------------------------|-------------|-------|
+| H-ELEC-001  | ⚪    | Optimal    | tDCS optimal at 1/e of max current          | 1/e         | Arithmetic OK; mapping arbitrary |
+| H-ELEC-002  | ⚪    | Optimal    | VNS converges to 10 Hz (1/3 fixed point)    | 1/3         | Iteration table has rounding errors; range [1,30] vs [0,30] inconsistency |
+| H-ELEC-003  | ⚪    | Optimal    | TMS phase transition at 50% MSO             | 1/2         | Roughly matches lit (MT 40-60% MSO); numerological |
+| H-ELEC-004  | ⚪    | Optimal    | TENS window width = ln(4/3) of range        | ln(4/3)     | Arithmetic OK; FWHM not a universal constant |
+| H-ELEC-005  | ⚪    | Optimal    | 40 Hz buildup time constant = 1/e of session| 1/e         | Exp math OK; gamma onset is seconds not 11 min |
+| H-ELEC-006  | ⚪    | Interact   | 12 variables = sigma(6), 4 PCA components   | sigma(6)=12 | Number theory exact; variable mapping is model |
+| H-ELEC-007  | ⚪    | Interact   | DA-eCB synergy = product/2                  | 6/sigma(6)  | sigma_{-1}(6)=2 exact; synergy rule is model |
+| H-ELEC-008  | ⚪    | Interact   | 4 coupling nodes = tau(6)                   | tau(6)=4    | tau(6)=4 exact; DA-theta and GABA-alpha pairings lit-supported |
+| H-ELEC-009  | ⚪    | Interact   | Weight decomposition 1/2+1/3+1/6=1          | perfect 6   | Identity exact (n=6 property); weight assignment is model |
+| H-ELEC-010  | ⚪    | Interact   | phi(6)=2 effective degrees of freedom        | phi(6)=2    | phi(6)=2 exact; E/I ratio mapping is model |
+| H-ELEC-011  | ⚪    | Conscious  | DA=P, GABA=I, NE=D mapping                  | G=D*P/I     | Algebra OK; DA-plasticity, GABA-inhib lit-supported |
+| H-ELEC-012  | ⚪    | Conscious  | All 12 variables optimal in Golden Zone      | [0.21,0.50] | Tautological: targets chosen from GZ constants |
+| H-ELEC-013  | ⚪    | Conscious  | Coherence = 1/6 binding term                 | 1/6         | Arithmetic exact (5/6+1/6=1); binding role is model |
+| H-ELEC-014  | ⚪    | Conscious  | G*I=D*P conserved during stimulation         | conservation| Definitional tautology (G:=D*P/I) |
+| H-ELEC-015  | ⚪    | Conscious  | Theta/Alpha ratio tracks D/I                 | D/I ratio   | Trivial; theta/alpha as biomarker is lit-supported |
+| H-ELEC-016  | ⚪    | Protocol   | 1/6 duty cycle optimal for tDCS              | 1/6         | Intermittent tDCS has lit support; 1/6 not established |
+| H-ELEC-017  | ⚪    | Protocol   | Three-phase sequence 1/2, 1/3, 1/6           | 1/2+1/3+1/6| Arithmetic exact; protocol is model proposal |
+| H-ELEC-018  | ⚪    | Protocol   | VNS-tDCS phase offset at 1/3 period          | 1/3         | Trivial arithmetic; design is model assumption |
+| H-ELEC-019  | ⚪    | Protocol   | 6-minute fundamental cycle                   | n=6         | Arithmetic OK; cortisol 6-min claim is WRONG (60-90 min) |
+| H-ELEC-020  | ⚪    | Protocol   | 10-session convergence to targets             | contraction | Contraction theorem proven; table values have errors for I_0=0/1 |
 
 ---
 
@@ -680,3 +680,42 @@ arithmetic (sigma, tau, phi) is pure number theory (verified), but the
 3. H-ELEC-011, 014: Simultaneous MRS + behavioral testing during tDCS
 4. H-ELEC-016, 017, 019: Protocol comparison RCTs (most resource-intensive)
 5. H-ELEC-020: Longitudinal study (10 sessions, 20+ subjects)
+
+---
+
+## Verification Results (2026-03-28)
+
+**Script:** `verify/verify_elec_hypotheses.py`
+
+**Results:** 0 GREEN, 0 ORANGE, 20 WHITE, 0 BLACK
+
+All 20 hypotheses are arithmetically correct in their core claims. The underlying
+number theory (sigma(6)=12, tau(6)=4, phi(6)=2, 1/2+1/3+1/6=1) is exact and proven.
+
+**Issues found:**
+
+- H-ELEC-002: Iteration table values at steps 5 and 10 have rounding discrepancies
+  (computed 0.294 vs claimed 0.299 at step 5). Also, the range is stated as [1,30] Hz
+  but the calculation uses [0,30] Hz (I=1/3 maps to 10 Hz only if range starts at 0).
+- H-ELEC-019: Cortisol "6-minute microbursts" claim is factually incorrect. Cortisol
+  ultradian pulses occur at ~60-90 minute intervals (Lightman & Conway, 2003), not 6 min.
+- H-ELEC-020: Contraction mapping does NOT converge to within 0.01 of 1/3 in 10
+  iterations for all starting points (worst case I_0=1.0 gives error 0.019 after 10
+  iterations). The bio-version table also has mismatches for V5 (NE) at sessions 2-10.
+
+**Why all WHITE (no upgrades to ORANGE or GREEN):**
+
+1. GZ constants were CHOSEN as targets -- the "predictions" are tautological
+2. Synergy/coupling rules (product/2, block-diagonal) are model proposals, not derived
+3. G*I=D*P "conservation" is definitional (G := D*P/I), not a physical conservation law
+4. Protocol timing ratios (1/6, 1/3, 1/2) are prescribed from theory, not discovered in data
+5. All hypotheses are Golden Zone dependent (unverified model)
+
+**Literature alignment (partial):**
+
+- DA-plasticity link: well-established (Bhatt et al.)
+- GABA-alpha generation: well-established (Jensen & Mazaheri)
+- DA-theta coupling: well-established (Duzel et al.)
+- Motor threshold ~50% MSO: roughly correct (40-60% range)
+- Intermittent tDCS benefits: supported (Fricke et al.)
+- Theta/alpha as exploration biomarker: supported
