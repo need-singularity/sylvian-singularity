@@ -5683,4 +5683,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-175](docs/hypotheses/H-CX-175-four-color-theorem-n6.md) | 4CT: χ(plane)=τ, Heawood g=1→n+1 | 🟩⭐ verified | genus σ/τ needs (σ/τ)²=9 colors |
 | [H-CX-176](docs/hypotheses/H-CX-176-24cell-upgrade-proof.md) | **dim τ has n regular polytopes** | 🟩⭐⭐⭐ PROVED | Schläfli: d=3→sopfr, d=τ→n(MAX!), d≥5→σ/τ |
 | [H-CX-177](docs/hypotheses/H-CX-177-padic-triple-upgrade.md) | **v₂(n!)=τ ∧ v₃(n!)=φ ⟺ n=6** | 🟩⭐⭐⭐ PROVED | Legendre+cases, 19th domain |
+| [H-CX-178](docs/hypotheses/H-CX-178-kissing-dimension-bound.md) | **ALL 6 kissing numbers from n=6** | 🟩⭐⭐⭐ PROVED | k(σ/τ)=σ, dims AND values all n=6 |
+| [H-CX-179](docs/hypotheses/H-CX-179-number-fields-class-1.md) | **w(Q(√-3))=n=6 unique h=1** | 🟩⭐⭐⭐ PROVED | Eisenstein Z[ω], d=σ/τ, j(ω)=0 |
+| [H-CX-180](docs/hypotheses/H-CX-180-grand-unification-21-domains.md) | **21=C(7,2)=T(6) domain unification** | 🟩⭐⭐⭐ meta | 21 proofs=T(n), SELF-REFERENTIAL! |
 
