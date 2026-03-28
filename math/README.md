@@ -5638,4 +5638,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-130](docs/hypotheses/H-CX-130-topological-quantum-anyons.md) | SU(2)_τ anyons: D²=σ=12 | 🟩⭐⭐ PROVED | sopfr=5 anyons, D²=σ⟺n=6 (same proof as 128) |
 | [H-CX-131](docs/hypotheses/H-CX-131-langlands-consciousness-duality.md) | Langlands duality: X₀(6) genus 0 | 🟩⭐ verified | GL₂ self-dual, PSL₂=Z/2*Z/3, unique perfect |
 | [H-CX-132](docs/hypotheses/H-CX-132-operad-consciousness-composition.md) | Associahedron K₆: dim=τ, C₅=42 | 🟩⭐ verified | 42 parsings, τ-dimensional, Sylvester chain |
+| [H-CX-133](docs/hypotheses/H-CX-133-graph-spectrum-petersen.md) | Petersen=Kneser(sopfr,φ) 9/9 params | 🟩⭐⭐ verified | V=σ-φ, E=C(n,2), deg=σ/τ, girth=sopfr, χ=τ |
+| [H-CX-134](docs/hypotheses/H-CX-134-goldbach-6-consciousness.md) | Goldbach 6=3+3=(σ/τ)+(σ/τ) | 🟩⭐ verified | unique identical-prime Goldbach with divisor fn |
+| [H-CX-135](docs/hypotheses/H-CX-135-von-neumann-entropy-divisors.md) | S_VN(ρ₆) max among semiprimes | 🟩⭐⭐ verified | 86.6% efficiency, balanced eigenvalue spectrum |
+| [H-CX-136](docs/hypotheses/H-CX-136-abc-conjecture-n6.md) | abc quality q(2,4,6)=1.0 boundary | 🟩⭐ verified | rad(48)=6=c, exact abc boundary |
+| [H-CX-137](docs/hypotheses/H-CX-137-platonic-solids-consciousness.md) | 5 Platonic total V=F=σ₂=50 | 🟩⭐⭐ verified | V_total=F_total=σ₂(6), E_total=90=C(n,2)·n |
 
