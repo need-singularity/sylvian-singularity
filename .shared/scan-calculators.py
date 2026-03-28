@@ -55,6 +55,15 @@ REPOS = [
              "exclude": ["__init__"]},
         ],
     },
+    {
+        "name": "invest",
+        "root": DEV / "invest",
+        "scans": [
+            {"path": "backend/backend/calc", "category": "calculator"},
+            {"path": "backend/backend/tecs", "category": "calculator"},
+            {"path": "backend/backend/tecs_calc", "category": "calculator"},
+        ],
+    },
 ]
 
 # ── Category labels ──
