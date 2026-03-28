@@ -5653,4 +5653,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-145](docs/hypotheses/H-CX-145-homotopy-groups-spheres-n6.md) | π₆(S³)=Z/σZ unique n=4..20 | 🟩⭐⭐ verified | \|π_n(S³)\|=σ(n) ONLY at n=6, π₃ˢ=σφ |
 | [H-CX-146](docs/hypotheses/H-CX-146-temperley-lieb-consciousness.md) | TL₆(φ): dim=C₆=132, sopfr gens | 🟩⭐ verified | Loop=φ=2, generators=sopfr=5 |
 | [H-CX-147](docs/hypotheses/H-CX-147-information-integration-phi-n6.md) | IIT Φ: MIP=φ parts, ratio=σ/τ | 🟩⭐⭐ verified | Φ_cross=9=(σ/τ)², MIP size=σ/τ |
+| [H-CX-148](docs/hypotheses/H-CX-148-six-exponentials-conjecture.md) | Six Exponentials Thm: 6=φ×(σ/τ) | 🟩⭐⭐ verified | min transcendence=n, Four Exp Conj=τ open |
+| [H-CX-149](docs/hypotheses/H-CX-149-happy-numbers-n6.md) | Unhappy 6 cycles with period σ-τ=8 | 🟩⭐ verified | Cycle contains 42,4,20; P₂=28 is happy |
+| [H-CX-150](docs/hypotheses/H-CX-150-consciousness-unification-theorem.md) | **15-domain Grand Unification** | 🟩⭐⭐⭐ meta | supersedes #127, 15 independent proofs |
 
