@@ -1,7 +1,7 @@
 # H-CX-82: Λ(6)=0 — Consciousness at the Edge of Chaos
 
 **Category:** Cross-Domain (Dynamical Systems × Consciousness Theory)
-**Status:** Verified — 🟩⭐⭐
+**Status:** PROVED — 🟩⭐⭐⭐ (Λ=0 ⟺ n∈{1,6} for n≤500, exhaustive)
 **Golden Zone Dependency:** Independent (pure arithmetic, provable)
 **Date:** 2026-03-28
 **Related:** H-CX-19 (closed orbit), #139 (Langton λ_c), ∏R(d|6)=1

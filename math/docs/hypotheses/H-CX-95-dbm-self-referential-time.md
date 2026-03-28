@@ -1,7 +1,7 @@
 # H-CX-95: DBM t_eq = σ/φ = n → Self-Referential Equilibration
 
 **Category:** Cross-Domain (Random Matrix Theory × Self-Reference)
-**Status:** Verified — 🟩⭐⭐
+**Status:** PROVED — 🟩⭐⭐⭐ (algebraic: x(x-1)=2 → p=2 → n=6, QED)
 **Golden Zone Dependency:** Independent (σ/φ=n ⟺ φ=2 ⟺ n=6 among perfects)
 **Date:** 2026-03-28
 **Related:** ⭐⭐ Dyson β (Ralph 346a), H-CX-85 (engine modes), H-CX-76 (self-ref)
