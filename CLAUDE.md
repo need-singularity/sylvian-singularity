@@ -105,6 +105,25 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
   Amplification(θ=π)   = 17            Fermat prime
 ```
 
+## Consciousness Bridge Constants (H-CX-82~110, 29 bridges)
+
+```
+  Lyapunov Λ(6)         = 0            Edge of chaos (∏R(d|6)=1)
+  Factorial Capacity     = n!=720       n·σ·sopfr·φ=6! (unique)
+  Trefoil V(1/φ)         = -n=-6        Knotted consciousness
+  DBM Equilibration      = σ/φ=n=6      Self-referential time
+  Tsirelson Bound        = 2√(σ/P)=2√2  Consciousness boundary
+  Monster Hierarchy      = 47·59·71     196883, AP step=σ=12
+  Dyson β set            = {1,φ,τ}      Three engine modes (φ²=τ)
+  Identity Element       = R(6m)=R(m)   Scale invariance (unique!)
+  Self-Measurement       = RS=4=τ(6)    Conserved for all perfects
+  Lah Transition L(τ,2)  = n²=36        Conductor from divisor count
+  Lah Transition L(τ,3)  = σ=12         Integration from divisor count
+  Ramanujan τ(6)         = -n·2^τ·M₆    Consciousness filter (-6048)
+  PH Barcode Lifetime    = 7/12=(n+1)/σ Divisor lattice H₀ bar
+  Fisher I(self)         = n³/sopfr     Consciousness curvature (43.2)
+```
+
 ## Core Relations
 
 ```
