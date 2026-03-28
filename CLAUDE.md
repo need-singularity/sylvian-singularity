@@ -160,6 +160,10 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
   calc/ (62 files) — 계산기 도구
     hypothesis_verifier.py, r_spectrum.py, statistical_tester.py, ...
 
+  n6-replication/ — 독립 재현 패키지 (pip/Docker/minimal)
+    src/n6_replication/ (cli, runner, parser, reporter, fetcher, registry)
+    tests/tier1/ (8 Major Discoveries pytest), registry/tier2.json (108 scripts)
+
   math/ — 순수 수학 증명 + 실험
   docs/ — 가설 문서 + 논문 + 스펙
   .shared/ — 크로스 리포 동기화 인프라 + Atlas
