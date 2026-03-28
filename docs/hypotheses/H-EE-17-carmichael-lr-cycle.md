@@ -39,4 +39,4 @@
 H-EE-17 is CONFIRMED: lambda(6)=2 provides a zero-search LR schedule competitive with cosine annealing. The mathematical determination of both period and ratio from n=6 eliminates schedule hyperparameter search.
 
 **Status:** Ready
-**Source:** energy-efficiency/techniques/carmichael_lr.py
+**Source:** n6-architecture/techniques/carmichael_lr.py

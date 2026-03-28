@@ -1,4 +1,6 @@
-# AI Energy Efficiency: Mathematical Discoveries from Number Theory for Reducing AI Energy Consumption
+# N6 Architecture: Arithmetic Design Framework from Perfect Number 6
+
+> **Formerly: "AI Energy Efficiency"** — renamed to reflect the expanded scope (16 AI techniques + semiconductor chip design + network/crypto/OS/display patterns).
 
 **TECS-L Research Group | 2026-03-26 | Updated 2026-03-27**
 **Contact: github.com/need-singularity/TECS-L**

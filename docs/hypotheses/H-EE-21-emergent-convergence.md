@@ -34,5 +34,5 @@ Prediction: >= 50% of initializations converge to n=6 targets
 H-EE-21: Emergent convergence of architecture parameters toward n=6 optima. Demonstrates that n=6 ratios are attractors in the meta-loss landscape.
 
 **Status:** 🟧 Pending verification
-**Source:** energy-efficiency/engine/emergent_n6_trainer.py
-**Source:** energy-efficiency/experiments/experiment_emergent_convergence.py
+**Source:** n6-architecture/engine/emergent_n6_trainer.py
+**Source:** n6-architecture/experiments/experiment_emergent_convergence.py

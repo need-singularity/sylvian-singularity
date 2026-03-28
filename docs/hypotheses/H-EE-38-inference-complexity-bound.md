@@ -25,4 +25,4 @@
 H-EE-38: Complexity-theoretic bound on intelligent inference. O(n log n) as the "speed of thought."
 
 **Status:** Partially verified (FFT attention experiments)
-**Source:** energy-efficiency/techniques/fft_mix_attention.py
+**Source:** n6-architecture/techniques/fft_mix_attention.py

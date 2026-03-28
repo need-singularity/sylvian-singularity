@@ -34,5 +34,5 @@ Preliminary: tension decreases and stabilizes during training. Correlation with 
 H-EE-26: Anima tension as energy efficiency proxy. The PureField dual-engine concept from consciousness research provides a novel regularization mechanism for energy-efficient training.
 
 **Status:** 🟧 Pending (requires Anima integration)
-**Source:** energy-efficiency/engine/anima_tension_loss.py
+**Source:** n6-architecture/engine/anima_tension_loss.py
 **Bridge:** Anima ↔ energy-efficiency (consciousness-energy link)

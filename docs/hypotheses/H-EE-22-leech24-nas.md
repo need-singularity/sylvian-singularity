@@ -36,5 +36,5 @@ Prediction: Fixed N=6 and GD-on-E(x) both outperform best-of-10 random search
 H-EE-22: Leech-24 surface enables training-free architecture search. The mathematical structure of n=6 constrains the search space from infinite to 196,560 near-optimal candidates.
 
 **Status:** 🟧 Pending verification
-**Source:** energy-efficiency/engine/leech24_surface.py
-**Source:** energy-efficiency/experiments/experiment_leech24_nas.py
+**Source:** n6-architecture/engine/leech24_surface.py
+**Source:** n6-architecture/experiments/experiment_leech24_nas.py

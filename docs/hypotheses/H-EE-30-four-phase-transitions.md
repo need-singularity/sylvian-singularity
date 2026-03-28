@@ -38,5 +38,5 @@
 H-EE-30: 4 phase transitions in training. Connects tau(6) to training dynamics via Anima's GDPI cycle.
 
 **Status:** Testable
-**Source:** energy-efficiency/engine/sedi_training_monitor.py
+**Source:** n6-architecture/engine/sedi_training_monitor.py
 **Bridge:** Anima GDPI ↔ training dynamics

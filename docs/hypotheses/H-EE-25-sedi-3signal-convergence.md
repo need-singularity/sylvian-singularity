@@ -28,5 +28,5 @@ Requires integration of emergent_n6_trainer + sedi_training_monitor + phi_effici
 H-EE-25: The ultimate validation test for the N6 Inevitability Engine. Three-signal convergence would confirm that n=6 arithmetic is not just useful but inevitable for efficient intelligent computation.
 
 **Status:** 🟧 Pending (requires integrated experiment)
-**Source:** energy-efficiency/engine/ (all modules)
+**Source:** n6-architecture/engine/ (all modules)
 **Bridge:** SEDI ↔ energy-efficiency ↔ Anima

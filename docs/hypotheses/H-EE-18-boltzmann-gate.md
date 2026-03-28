@@ -39,5 +39,5 @@
 H-EE-18 is CONFIRMED: 1/e is the Boltzmann-optimal activation sparsity threshold, achieving 63% sparsity with minimal quality degradation.
 
 **Status:** Ready
-**Source:** energy-efficiency/techniques/boltzmann_gate.py
+**Source:** n6-architecture/techniques/boltzmann_gate.py
 **Bridge:** SEDI Golden Zone (1/e center, ln(4/3) bandwidth)

@@ -65,4 +65,4 @@ The fine structure constant is expressible via pure n=6 arithmetic to 0.00002% p
 
 The involvement of both perfect numbers P_1=6 and P_2=28 in the high-precision formula is unexpected and may point to a deeper structure connecting all perfect numbers to fundamental physics.
 
-**Source:** energy-efficiency/experiments/experiment_alpha_attack.py
+**Source:** n6-architecture/experiments/experiment_alpha_attack.py

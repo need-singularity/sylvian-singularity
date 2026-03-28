@@ -40,4 +40,4 @@
 H-EE-16 is PARTIAL: Squarefree dimensions show efficiency advantages, but the effect is modest. The real value is in combining squarefree with high-tau dimensions for maximum architectural flexibility.
 
 **Status:** Conditional
-**Source:** energy-efficiency/techniques/mobius_sparse.py
+**Source:** n6-architecture/techniques/mobius_sparse.py

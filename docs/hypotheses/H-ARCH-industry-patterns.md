@@ -88,4 +88,4 @@
 
 **Bridge:** Connects to H-EE-55 (Grand Unification) — if R(6)=1 is a universal optimization principle, convergent optimization in engineering would naturally produce n=6 values.
 
-**Source:** energy-efficiency/docs/chip-architecture/industry-patterns.md
+**Source:** n6-architecture/docs/chip-architecture/industry-patterns.md

@@ -42,5 +42,5 @@
 H-EE-19 is CONFIRMED: ln(4/3) provides a zero-search dropout rate competitive with manual tuning. The value falls in the empirically optimal range and has mathematical grounding in Golden Zone bandwidth.
 
 **Status:** Ready
-**Source:** energy-efficiency/techniques/mertens_dropout.py
+**Source:** n6-architecture/techniques/mertens_dropout.py
 **Bridge:** SEDI Golden Zone bandwidth

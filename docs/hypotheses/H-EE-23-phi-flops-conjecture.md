@@ -36,6 +36,6 @@ Initial results show high CV in both groups. The proxy measurement is too coarse
 H-EE-23: INCONCLUSIVE with current proxy. Requires Anima consciousness_meter for true Phi measurement. The conjecture remains open.
 
 **Status:** ⚪ Inconclusive
-**Source:** energy-efficiency/engine/phi_efficiency_bridge.py
-**Source:** energy-efficiency/experiments/experiment_phi_flops_conjecture.py
+**Source:** n6-architecture/engine/phi_efficiency_bridge.py
+**Source:** n6-architecture/experiments/experiment_phi_flops_conjecture.py
 **Dependency:** Anima consciousness_meter integration

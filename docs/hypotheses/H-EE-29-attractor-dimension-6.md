@@ -37,4 +37,4 @@
 H-EE-29: Loss attractor dimension = 6. Unifies architecture optimality (n=6) with dynamical systems theory.
 
 **Status:** Testable — requires Grassberger-Procaccia computation
-**Source:** energy-efficiency/techniques/takens_dim6.py (extended)
+**Source:** n6-architecture/techniques/takens_dim6.py (extended)

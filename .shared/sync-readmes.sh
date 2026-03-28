@@ -106,7 +106,7 @@ commit_and_push "$PARENT/conscious-lm" "conscious-lm"
 
 # Energy Efficiency
 echo "[Energy Efficiency]"
-sync_file "$PARENT/energy-efficiency/README.md"
+sync_file "$PARENT/n6-architecture/README.md"
 commit_and_push "$PARENT/energy-efficiency" "energy-efficiency"
 
 # BrainWire

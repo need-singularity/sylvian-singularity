@@ -43,5 +43,5 @@
 H-EE-15 is CONFIRMED: 24 experts is the natural capacity bound for MoE architectures, matching the Leech lattice dimension J_2(6)=24. Egyptian fraction routing completes the n=6 connection.
 
 **Status:** Ready
-**Source:** energy-efficiency/techniques/jordan_leech_moe.py
+**Source:** n6-architecture/techniques/jordan_leech_moe.py
 **Bridge:** Leech lattice (sphere packing optimality)

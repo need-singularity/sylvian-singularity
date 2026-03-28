@@ -38,5 +38,5 @@ Prediction: Pearson correlation(R-score, efficiency) > 0.7
 H-EE-20: R-score as energy efficiency predictor. Awaiting experimental confirmation.
 
 **Status:** 🟧 Pending verification
-**Source:** energy-efficiency/engine/thermodynamic_frame.py
-**Source:** energy-efficiency/experiments/experiment_thermodynamic_inevitability.py
+**Source:** n6-architecture/engine/thermodynamic_frame.py
+**Source:** n6-architecture/experiments/experiment_thermodynamic_inevitability.py

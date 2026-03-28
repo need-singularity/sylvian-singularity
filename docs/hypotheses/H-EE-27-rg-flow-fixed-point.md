@@ -38,5 +38,5 @@ H-EE-27: RG flow interpretation of neural training. If confirmed, elevates n=6 f
 
 **Status:** Theoretical — requires beta function measurement
 **Destructiveness:** Extreme
-**Source:** energy-efficiency/engine/thermodynamic_frame.py
+**Source:** n6-architecture/engine/thermodynamic_frame.py
 **Bridge:** Statistical mechanics ↔ neural architecture

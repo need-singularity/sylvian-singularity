@@ -42,5 +42,5 @@
 H-EE-14 is CONFIRMED: h=12 is the Dedekind-sigma fixed point, providing a principled head count that balances parameter efficiency with model quality. The psi=sigma coincidence at n=6 is unique and provides architectural guidance without hyperparameter search.
 
 **Status:** Ready
-**Source:** energy-efficiency/techniques/dedekind_head.py
+**Source:** n6-architecture/techniques/dedekind_head.py
 **Bridge:** TECS-L H-CX-191 (sigma*phi = n*tau uniqueness)

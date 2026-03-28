@@ -33,5 +33,5 @@ Theoretical framework established. Experimental verification requires careful en
 H-EE-24: Theoretical framework for information thermodynamics of neural architectures. Links R(6)=1 to reversible computation via Clausius inequality.
 
 **Status:** 🟧 Theoretical (pending experimental verification)
-**Source:** energy-efficiency/engine/thermodynamic_frame.py (clausius_check function)
+**Source:** n6-architecture/engine/thermodynamic_frame.py (clausius_check function)
 **Bridge:** TECS-L ↔ energy-efficiency (thermodynamic law)
