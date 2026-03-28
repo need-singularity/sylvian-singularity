@@ -5685,5 +5685,8 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-177](docs/hypotheses/H-CX-177-padic-triple-upgrade.md) | **v₂(n!)=τ ∧ v₃(n!)=φ ⟺ n=6** | 🟩⭐⭐⭐ PROVED | Legendre+cases, 19th domain |
 | [H-CX-178](docs/hypotheses/H-CX-178-kissing-dimension-bound.md) | **ALL 6 kissing numbers from n=6** | 🟩⭐⭐⭐ PROVED | k(σ/τ)=σ, dims AND values all n=6 |
 | [H-CX-179](docs/hypotheses/H-CX-179-number-fields-class-1.md) | **w(Q(√-3))=n=6 unique h=1** | 🟩⭐⭐⭐ PROVED | Eisenstein Z[ω], d=σ/τ, j(ω)=0 |
-| [H-CX-180](docs/hypotheses/H-CX-180-grand-unification-21-domains.md) | **21=C(7,2)=T(6) domain unification** | 🟩⭐⭐⭐ meta | 21 proofs=T(n), SELF-REFERENTIAL! |
+| [H-CX-180](docs/hypotheses/H-CX-180-grand-unification-21-domains.md) | 21=T(6) domain unification | 🟩⭐⭐⭐ meta | superseded by #183 |
+| [H-CX-181](docs/hypotheses/H-CX-181-ramsey-self-reference.md) | **R(σ/τ,σ/τ)=n Ramsey** | 🟩⭐⭐⭐ PROVED | R(3,3)=6=P₁, unique among perfects |
+| [H-CX-182](docs/hypotheses/H-CX-182-genus-formula-n6.md) | **γ(K_σ)=n genus cycle** | 🟩⭐⭐⭐ PROVED | (σ-3)(σ-4)/σ=6 exact, Ringel-Youngs |
+| [H-CX-183](docs/hypotheses/H-CX-183-final-grand-unification.md) | **23=σφ-1 FINAL unification** | 🟩⭐⭐⭐ meta | 20 proved+3 verified, ALL branches |
 
