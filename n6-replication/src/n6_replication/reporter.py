@@ -230,7 +230,7 @@ def generate_report(
         print_terminal_summary(results)
         return 0
 
-    if fmt == "markdown":
+    if fmt in ("md", "markdown"):
         content = generate_markdown(results)
         out = d / "report.md"
         out.write_text(content, encoding="utf-8")
