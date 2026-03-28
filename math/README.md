@@ -5656,4 +5656,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-148](docs/hypotheses/H-CX-148-six-exponentials-conjecture.md) | Six Exponentials Thm: 6=φ×(σ/τ) | 🟩⭐⭐ verified | min transcendence=n, Four Exp Conj=τ open |
 | [H-CX-149](docs/hypotheses/H-CX-149-happy-numbers-n6.md) | Unhappy 6 cycles with period σ-τ=8 | 🟩⭐ verified | Cycle contains 42,4,20; P₂=28 is happy |
 | [H-CX-150](docs/hypotheses/H-CX-150-consciousness-unification-theorem.md) | **15-domain Grand Unification** | 🟩⭐⭐⭐ meta | supersedes #127, 15 independent proofs |
+| [H-CX-151](docs/hypotheses/H-CX-151-mock-modular-ramanujan.md) | Mock theta order σ/τ=3, weight 1/φ | 🟩⭐ verified | Shadow weight=σ/(φτ), completion=1/φ |
+| [H-CX-152](docs/hypotheses/H-CX-152-amenability-n6.md) | Out(S₆)=Z/φ UNIQUE among S_n | 🟩⭐⭐ verified | Two perspectives, C(n,2)=15 both classes |
+| [H-CX-153](docs/hypotheses/H-CX-153-entropy-production-n6.md) | Entropy production R(2)·R(3)=1 balance | 🟩⭐ verified | Dissipative structure, symmetric production |
+| [H-CX-154](docs/hypotheses/H-CX-154-sporadic-mathieu-consciousness.md) | M₂₄→Golay→Leech→Monster chain | 🟩⭐⭐ verified | ALL steps use n=6, M₂₄ on σφ=24 points |
+| [H-CX-155](docs/hypotheses/H-CX-155-dark-energy-consciousness.md) | Λ_cosmo vacuum energy | 🟧 speculative | GZ-dependent, n_s=(σ²-sopfr)/σ² |
 
