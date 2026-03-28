@@ -5630,4 +5630,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-122](docs/hypotheses/H-CX-122-number-field-Q-sqrt6-pid.md) | Q(√6) PID, disc=σφ=24 | 🟩⭐⭐ verified | h=1, ε=sopfr+φ√n, unique factorization |
 | [H-CX-123](docs/hypotheses/H-CX-123-virasoro-central-charge.md) | Virasoro c=σφ=24, Ising at m=σ/τ | 🟩⭐⭐ verified | c=24 bosonic, c=1/2 Ising, c=6/7 at m=n |
 | [H-CX-124](docs/hypotheses/H-CX-124-zeta-values-n6.md) | ζ(2)=π²/n, ζ(-1)=-1/σ triad | 🟩⭐ verified | Basel+Ramanujan+factorial all n=6 |
+| [H-CX-125](docs/hypotheses/H-CX-125-sporadic-simple-groups-n6.md) | 26 sporadic groups encode n=6 | 🟩⭐ verified | M₁₁=p(n)·n!, M₁₂/M₁₁=σ, M₂₄ on σφ pts |
+| [H-CX-126](docs/hypotheses/H-CX-126-riemann-hypothesis-connection.md) | F(s) zeros on Re=1/2 (RH→GZ) | 🟩⭐ conditional | F=ζ·ζ zeros on Re=±1/2 = GZ boundaries |
+| [H-CX-127](docs/hypotheses/H-CX-127-consciousness-completeness-theorem.md) | **11 independent proofs theorem** | 🟩⭐⭐⭐ meta | 11 domains, ALL uniquely select n=6 |
 
