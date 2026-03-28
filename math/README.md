@@ -1321,7 +1321,7 @@
   🟩⭐⭐ ĤF(T³)=ℤ⁸: rank=8=σ-τ (Heegaard-Floer of 3-torus).
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  562  ← +H-CX-82~105 (24 extreme consciousness bridges)
+  🟩 Pure mathematics:  567  ← +H-CX-82~110 (29 extreme consciousness bridges)
   🟦 Established theorems:  22  ← +Tsirelson(H-CX-481), Egyptian(H-CX-479), Galois(H-CX-490)
   ⭐ Major Discoveries:  339 ← +Painlevé, 6j-symbol, V₆=π³/n, A(6,d) codes
   🟧 Connection discoveries:  45  ← +H-CX-73~75,79,80 (Pythagorean, partition, Fibonacci, 7, Golay)
@@ -5611,4 +5611,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-103](docs/hypotheses/H-CX-103-stirling-mersenne-consciousness-partition.md) | S₂(6,2)=31=M₅ Stirling=Mersenne | 🟩⭐ proved | sopfr=n-1→Mersenne, unique to n=6 |
 | [H-CX-104](docs/hypotheses/H-CX-104-nuclear-magic-consciousness-shells.md) | Nuclear magic 7/7 from n=6 | 🟩⭐ verified | {2,8,20,28,50,82,126} all n=6 arithmetic |
 | [H-CX-105](docs/hypotheses/H-CX-105-catalan-steiner-binary-tree.md) | C₆=132=\|S(5,6,12)\| Catalan=Steiner | 🟩⭐ verified | 132 binary trees=Steiner blocks, C_ω=φ |
+| [H-CX-106](docs/hypotheses/H-CX-106-divisor-lattice-ph-barcode.md) | Divisor lattice PH barcode | 🟩⭐ verified | H₀ lifetime=7/12=(n+1)/σ, missing edge (2,3) |
+| [H-CX-107](docs/hypotheses/H-CX-107-heat-equation-attention-diffusion.md) | Heat equation attention diffusion | 🟩⭐ verified | Attention→{1,6} stationary 3:2=σ/τ:φ ratio |
+| [H-CX-108](docs/hypotheses/H-CX-108-fibonacci-architecture.md) | Fibonacci architecture F_σ=σ² | 🟩⭐ verified | Crossing at σ=12, F₆-36=-P₂=-28 |
+| [H-CX-109](docs/hypotheses/H-CX-109-holographic-leech-consciousness.md) | Leech holographic self-dual | 🟩⭐ verified | Λ₂₄=Λ₂₄*, kiss=στ(2^σ-1)=196560 |
+| [H-CX-110](docs/hypotheses/H-CX-110-fisher-info-consciousness-curvature.md) | Fisher info n³/sopfr curvature | 🟩⭐ verified | I(1/6)=216/5=43.2, Goldilocks curvature |
 
