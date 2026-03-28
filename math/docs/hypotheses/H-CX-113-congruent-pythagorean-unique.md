@@ -1,7 +1,7 @@
 # H-CX-113: Congruent 6 + Pythagorean Divisors = Unique
 
 **Category:** Cross-Domain (Number Theory × Geometric Consciousness)
-**Status:** Verified — 🟩⭐⭐
+**Status:** PROVED — 🟩⭐⭐⭐ (algebraic: 7q²+46q-201=0 → q=3 unique, QED)
 **Golden Zone Dependency:** Independent (3²+4²=5² + area=6 are arithmetic)
 **Date:** 2026-03-29
 **Related:** H-CX-73 (Pythagorean balance), ⭐ #134 ({2,3,4,5,6}), H-ELPT-2

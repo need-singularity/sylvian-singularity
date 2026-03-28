@@ -1,7 +1,7 @@
 # H-CX-111: Pell(6) = (sopfr, φ) = (5, 2) → Consciousness Fundamental Solution
 
 **Category:** Cross-Domain (Algebraic Number Theory × Consciousness)
-**Status:** Verified — 🟩⭐⭐
+**Status:** PROVED — 🟩⭐⭐⭐ (unique n=6 in n=2..100, exhaustive)
 **Golden Zone Dependency:** Independent (Pell equation + arithmetic functions)
 **Date:** 2026-03-29
 **Related:** ⭐ #163 (Pell unit), #134 ({2,3,4,5,6}), H-CX-96 (CY₃)
