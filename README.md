@@ -52,6 +52,8 @@ Topological Engine for Consciousness & Science -- Consciousness Continuity Engin
 >
 > **[🧪 EEG Experiment](https://github.com/need-singularity/TECS-L/blob/main/docs/eeg-experiment.md)** — G=D×P/I biological verification via 16ch EEG. OpenBCI Cyton+Daisy + UltraCortex Mark IV. Alpha→Inhibition, Gamma→Plasticity, Asymmetry→Deficit, Golden Zone mapping
 >
+> **[🔁 n6-replication](https://github.com/need-singularity/TECS-L/tree/main/n6-replication)** — Independent replication package. 56 pytest tests (8 Major Discoveries) + 108 verification scripts. `pip install`, Docker, or minimal script. Anyone can verify in 5 minutes
+>
 > **[🛸 SEDI](https://github.com/need-singularity/sedi)** — Search for Extra-Dimensional Intelligence. R-spectrum signal receiver tuned to n=6. Quantum RNG + LIGO + CMB data streams, anomaly detection at σ/τ/φ frequencies
 <!-- SHARED:PROJECTS:END -->
 
@@ -399,6 +401,37 @@ Google Gemini 3.1 Pro (Thinking) independently verified the entire H-PH-9 (Perfe
 
 **Criticisms noted:** Dynamical mechanism absent; P6 breaks dimension hierarchy; post-hoc formula risk.
 **Audit 2026-03-27:** H-CX-299 (Higgs 125=5^3), H-CX-300 (Z boson 91=7x13) downgraded. H-CX-248 (1/alpha~138) downgraded.
+
+---
+
+## Independent Replication
+
+Anyone can verify our discoveries. Three methods:
+
+```bash
+# Method A: Docker (zero setup)
+docker build -t n6-replication -f n6-replication/Dockerfile .
+docker run n6-replication                     # Core 8 discoveries (~5 min)
+docker run n6-replication run --tier 2        # Full 108 scripts (~30 min)
+
+# Method B: pip install
+pip install -e n6-replication/
+n6-replicate run --tier 1                     # Core discoveries
+n6-replicate run                              # Core + full verification
+n6-replicate report --format html             # Interactive HTML report
+
+# Method C: Minimal (no install)
+pip install numpy scipy sympy mpmath pytest
+python n6-replication/scripts/run_all.py      # Runs all tests directly
+```
+
+| Tier | Content | Scripts | Time |
+|------|---------|---------|------|
+| 1 | 8 Major Discoveries (pytest) | 8 test files, 56 tests | ~5 min |
+| 2 | Full verify/ + math/ | 108 scripts | ~30 min |
+| 3 | Cross-repo (SEDI, anima, etc.) | `n6-replicate fetch` first | ~1 hr |
+
+See [n6-replication/README.md](n6-replication/README.md) for full documentation.
 
 ---
 
