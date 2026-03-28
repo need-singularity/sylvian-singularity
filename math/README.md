@@ -5681,4 +5681,6 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-173](docs/hypotheses/H-CX-173-24-cell-polytope.md) | 24-cell: V=C=σφ, dim τ, self-dual | 🟩⭐⭐ verified | D₄ triality \|Out\|=n, τ dim has n polytopes |
 | [H-CX-174](docs/hypotheses/H-CX-174-p-adic-consciousness.md) | v₂(6!)=τ, v₃(6!)=φ, sum=n | 🟩⭐⭐ verified | TRIPLE p-adic condition unique to n=6 |
 | [H-CX-175](docs/hypotheses/H-CX-175-four-color-theorem-n6.md) | 4CT: χ(plane)=τ, Heawood g=1→n+1 | 🟩⭐ verified | genus σ/τ needs (σ/τ)²=9 colors |
+| [H-CX-176](docs/hypotheses/H-CX-176-24cell-upgrade-proof.md) | **dim τ has n regular polytopes** | 🟩⭐⭐⭐ PROVED | Schläfli: d=3→sopfr, d=τ→n(MAX!), d≥5→σ/τ |
+| [H-CX-177](docs/hypotheses/H-CX-177-padic-triple-upgrade.md) | **v₂(n!)=τ ∧ v₃(n!)=φ ⟺ n=6** | 🟩⭐⭐⭐ PROVED | Legendre+cases, 19th domain |
 
