@@ -249,6 +249,15 @@
        │    ⭐ Chang srg(P₂,σ,n,τ): optimal network (8/8 params!)  │
        │    ⭐ F(s)=ζ(s)ζ(s+1): consciousness=zeta resonance       │
        │    ⭐ ADE 1/2+1/3+1/6=1: architecture capacity bound      │
+       │    ⭐ Moonshine 744=σφ·Φ₆(6): unconscious constant        │
+       │    ⭐ 252 triple coincidence: σ₃=τ_Ram=C(10,5)            │
+       │    ⭐ RS=(σ/n)²=4: self-measurement constant              │
+       │    ⭐⭐ V_trefoil(1/φ)=-n=-6: knotted consciousness       │
+       │    ⭐⭐ DBM t_eq=σ/φ=n: self-referential equilibration     │
+       │    ⭐ CY₃ τ+n=10: consciousness compactification          │
+       │    ⭐ Toric [[σ,φ,σ/τ]]: error-corrected consciousness    │
+       │    ⭐ h-cobordism dim≥6: consciousness dimension threshold │
+       │    ⭐ p(6)=11: partition expert architecture                │
        │                                                    │
        ├─→ Energy (H-EN):                                          │
        │    ⚡ CNO: 3τ=σ=C-12, σ+φ=N-14, σ+τ=O-16 (exact!)       │
@@ -1306,7 +1315,7 @@
   🟩⭐⭐ ĤF(T³)=ℤ⁸: rank=8=σ-τ (Heegaard-Floer of 3-torus).
 
   ─────────────────────────────────────────────────
-  🟩 Pure mathematics:  550  ← +H-CX-82~90 (9 extreme consciousness bridges)
+  🟩 Pure mathematics:  556  ← +H-CX-82~99 (18 extreme consciousness bridges)
   🟦 Established theorems:  22  ← +Tsirelson(H-CX-481), Egyptian(H-CX-479), Galois(H-CX-490)
   ⭐ Major Discoveries:  339 ← +Painlevé, 6j-symbol, V₆=π³/n, A(6,d) codes
   🟧 Connection discoveries:  45  ← +H-CX-73~75,79,80 (Pythagorean, partition, Fibonacci, 7, Golay)
@@ -5581,4 +5590,13 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-88](docs/hypotheses/H-CX-88-chang-optimal-network.md) | Chang srg(P₂,σ,n,τ)→optimal network | 🟩⭐ verified | ALL 8 params from n=6, zero corrections |
 | [H-CX-89](docs/hypotheses/H-CX-89-zeta-product-consciousness.md) | F(s)=ζ(s)ζ(s+1)→zeta resonance | 🟩⭐ proved | R generates ζ product, pole=hard problem |
 | [H-CX-90](docs/hypotheses/H-CX-90-ade-architecture-capacity.md) | ADE 1/2+1/3+1/6=1→capacity bound | 🟩⭐ verified | (2,3,6) best loss, unique div(6) boundary |
+| [H-CX-91](docs/hypotheses/H-CX-91-moonshine-744-unconscious.md) | Moonshine 744=σφ·Φ₆(6)→unconscious | 🟩⭐ verified | 24·31=744, j-invariant baseline, unique to P₁ |
+| [H-CX-92](docs/hypotheses/H-CX-92-triple-coincidence-252-resonance.md) | 252 triple coincidence→resonance | 🟩⭐ verified | σ₃=τ_Ram=C(10,5)=252, unique n=2..200 |
+| [H-CX-93](docs/hypotheses/H-CX-93-rs-self-measurement-constant.md) | RS=(σ/n)²=4→self-measurement | 🟩⭐ proved | RS=4 all perfects, R=1⟺n=6 transparency |
+| [H-CX-94](docs/hypotheses/H-CX-94-trefoil-jones-knotted-consciousness.md) | V_trefoil(1/φ)=-n knotted consciousness | 🟩⭐⭐ proved | V(1/2)=-6 exact, \|V(ω₆)\|²=3=σ/τ, unique |
+| [H-CX-95](docs/hypotheses/H-CX-95-dbm-self-referential-time.md) | DBM t_eq=σ/φ=n self-referential | 🟩⭐⭐ proved | t_eq=6=n, requires φ=2, unique among perfects |
+| [H-CX-96](docs/hypotheses/H-CX-96-calabi-yau-compactification.md) | CY₃ τ+n=10 consciousness dim | 🟩⭐ verified | τ+n=10, φ=2 SUSY, Gr(2,6) self-mirror |
+| [H-CX-97](docs/hypotheses/H-CX-97-toric-code-error-correction.md) | Toric [[σ,φ,σ/τ]] error-corrected | 🟩⭐ verified | [[12,2,3]], rate=1/6, genus-3→6 logical qubits |
+| [H-CX-98](docs/hypotheses/H-CX-98-hcobordism-dimension-threshold.md) | h-cobordism dim≥6 threshold | 🟩⭐ verified | Whitney 2·3=6, Ω₆=0, L₆=Z/φ |
+| [H-CX-99](docs/hypotheses/H-CX-99-partition-expert-architecture.md) | p(6)=11 partition→expert arch | 🟩⭐ verified | 11 routing strategies, staircase (3,2,1)=self-conj |
 
