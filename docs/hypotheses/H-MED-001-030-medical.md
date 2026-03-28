@@ -1,7 +1,7 @@
 ---
 id: H-MED-001-030
 title: Medical Domain Hypotheses
-grade: "\U0001F7E5 (Golden Zone dependent)"
+grade: "Verified 2026-03-28: 0 GREEN, 3 ORANGE, 26 WHITE, 1 BLACK"
 domain: medicine
 created: 2026-03-28
 dependency: Golden Zone model (G=D*P/I), n=6 arithmetic
@@ -1066,11 +1066,66 @@ Prediction: In trauma registries (TARN, NTDB, n>100,000), mortality will exceed 
 
 ---
 
+## Verification Results (2026-03-28)
+
+```
+  Verified by: verify/verify_med_hypotheses.py
+  Method: Arithmetic check + medical/physiological reference comparison
+
+  Total hypotheses:  30
+  Arithmetic PASS:   28/30
+
+  Grade distribution:
+    GREEN  (exact, proven):                        0
+    ORANGE (numerically correct, interesting):      3  (H-MED-007, 027, 030)
+    WHITE  (arithmetically correct, coincidental): 26
+    BLACK  (wrong or self-contradicted):            1  (H-MED-022)
+
+  Per-hypothesis grades:
+    H-MED-001  WHITE   PP/Sys = 1/3 exact, but GZ containment trivial
+    H-MED-002  WHITE   4 phases correct, ~3% error matches
+    H-MED-003  WHITE   LF/HF=2 in range, but "optimal" not established
+    H-MED-004  WHITE   QT/RR = 0.380, 3.3% from 1/e, testable
+    H-MED-005  WHITE   Exponent 2.833 in range, ad hoc corrections
+    H-MED-006  WHITE   Rank order matches, quantitative fit poor (262% mean error)
+    H-MED-007  ORANGE  beta = 1+1/e+1/6 = 1.534, literature ~1.5 (2.3% error)
+    H-MED-008  WHITE   N2=50% exact, REM model 33% vs observed 25% (large miss)
+    H-MED-009  WHITE   E/I concept correct, normalization unfalsifiable
+    H-MED-010  WHITE   Sigmoidal BBB relationship real, normalization arbitrary
+    H-MED-011  WHITE   Acetaminophen TI ~10 not 12, TI distribution too broad
+    H-MED-012  WHITE   20% windows cover only 20% of range, >60% claim too strong
+    H-MED-013  WHITE   n_max=12 normalization is circular
+    H-MED-014  WHITE   MW~360 in range, but post-hoc numerological fit
+    H-MED-015  WHITE   Meyer-Overton real, 37% anesthetic fraction unverifiable
+    H-MED-016  WHITE   NLR=2 well-established, divisor mapping post-hoc
+    H-MED-017  WHITE   TNF/IL-10~2 in range, no consensus "optimal"
+    H-MED-018  WHITE   GC kinetics ~6 weeks correct, intervals vary widely
+    H-MED-019  WHITE   Treg biology correct, SRI not a standard measure
+    H-MED-020  WHITE   Geometric mean ~5.1 (not 6), step inclusion arbitrary
+    H-MED-021  WHITE   75% divisor-of-6 degeneracy, but values constrained by 64/20
+    H-MED-022  BLACK   Self-contradicted: actual distribution NOT 1/6 each (BER=60%)
+    H-MED-023  WHITE   CV mode ~0.35-0.40 near 1/e, technology-dependent
+    H-MED-024  WHITE   1/12 per decade matches high-end estimates only
+    H-MED-025  WHITE   Mode is 3-4, not 6; mean ~6-8 is weak match
+    H-MED-026  WHITE   Weights chosen to sum to 1, not derived from data
+    H-MED-027  ORANGE  6 systems * 4 max = 24 = sigma(6)*phi(6), 50% mort at ~12
+    H-MED-028  WHITE   Inflammation fraction 0.238, 12% error from GZ lower
+    H-MED-029  WHITE   24 = sigma(6)*phi(6) exact, but 24h = Earth rotation
+    H-MED-030  ORANGE  GCS range 12=sigma(6), motor max 6=n, boundary 8=12-4
+
+  Key findings:
+    - All arithmetic is correct except H-MED-022
+    - Medical reference values are approximately accurate
+    - Nearly all mappings are post-hoc (Texas Sharpshooter risk)
+    - No hypothesis rises to GREEN (proven) level
+    - ORANGE grades (007, 027, 030) have the most striking numerical coincidences
+    - The Golden Zone covers 28.8% of [0,1], so containment claims are weak
+```
+
 ## Summary Statistics
 
 ```
   Total hypotheses:                30
-  Grade:                           all Red-square (Golden Zone dependent, unverified)
 
   Category distribution:
     A. Cardiovascular:             5  (H-MED-001 to 005)
