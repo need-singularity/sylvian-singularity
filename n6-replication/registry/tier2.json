@@ -1,0 +1,918 @@
+[
+  {
+    "id": "frontier_600_verify",
+    "path": "verify/frontier_600_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "frontier_700_verify",
+    "path": "verify/frontier_700_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "frontier_800_verify",
+    "path": "verify/frontier_800_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "frontier_900_verify",
+    "path": "verify/frontier_900_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_096_gaba_literature",
+    "path": "verify/verify_096_gaba_literature.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_322_eeg_gamma",
+    "path": "verify/verify_322_eeg_gamma.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_4th_state",
+    "path": "verify/verify_4th_state.py",
+    "depends_on": [
+      "compass.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_ai",
+    "path": "verify/verify_ai.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_anima_cross",
+    "path": "verify/verify_anima_cross.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_complex",
+    "path": "verify/verify_complex.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_cross",
+    "path": "verify/verify_cross.py",
+    "depends_on": [
+      "compass.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_existing_tech",
+    "path": "verify/verify_existing_tech.py",
+    "depends_on": [
+      "compass.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_frontier1_math",
+    "path": "verify/verify_frontier1_math.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_frontier2_physics",
+    "path": "verify/verify_frontier2_physics.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_frontier3_consciousness",
+    "path": "verify/verify_frontier3_consciousness.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_frontier4_biology",
+    "path": "verify/verify_frontier4_biology.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_frontier5_crossdomain",
+    "path": "verify/verify_frontier5_crossdomain.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_frontier700",
+    "path": "verify/verify_frontier700.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_geometry_crosscheck",
+    "path": "verify/verify_geometry_crosscheck.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_geometry_topology",
+    "path": "verify/verify_geometry_topology.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h393_spectral_radius",
+    "path": "verify/verify_h393_spectral_radius.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h413_multiseed",
+    "path": "verify/verify_h413_multiseed.py",
+    "depends_on": [],
+    "requires_gpu": true,
+    "timeout": 300,
+    "tier": 2
+  },
+  {
+    "id": "verify_h414_constants",
+    "path": "verify/verify_h414_constants.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h415_ratio_sweep",
+    "path": "verify/verify_h415_ratio_sweep.py",
+    "depends_on": [],
+    "requires_gpu": true,
+    "timeout": 300,
+    "tier": 2
+  },
+  {
+    "id": "verify_h454_self_referential",
+    "path": "verify/verify_h454_self_referential.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h455_h460",
+    "path": "verify/verify_h455_h460.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h457_h458_domain_pattern",
+    "path": "verify/verify_h457_h458_domain_pattern.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h459_sqrt_selectivity",
+    "path": "verify/verify_h459_sqrt_selectivity.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h461_bridge_ratio",
+    "path": "verify/verify_h461_bridge_ratio.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h462_ratio_meaning",
+    "path": "verify/verify_h462_ratio_meaning.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h463_depth3_s_domain",
+    "path": "verify/verify_h463_depth3_s_domain.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h464_hierarchy",
+    "path": "verify/verify_h464_hierarchy.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h465_gamma_sqrt3",
+    "path": "verify/verify_h465_gamma_sqrt3.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h466_zeta3_identity",
+    "path": "verify/verify_h466_zeta3_identity.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h467_h471_saturation",
+    "path": "verify/verify_h467_h471_saturation.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h468_to_h473",
+    "path": "verify/verify_h468_to_h473.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h474_depth1_map",
+    "path": "verify/verify_h474_depth1_map.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h475_weak_angle",
+    "path": "verify/verify_h475_weak_angle.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h476_generator_pair",
+    "path": "verify/verify_h476_generator_pair.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h477_to_h480",
+    "path": "verify/verify_h477_to_h480.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h481_tsirelson",
+    "path": "verify/verify_h481_tsirelson.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h482_h486_egyptian",
+    "path": "verify/verify_h482_h486_egyptian.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h483_h485_ln2_universality",
+    "path": "verify/verify_h483_h485_ln2_universality.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h484_h487_qed_chsh",
+    "path": "verify/verify_h484_h487_qed_chsh.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h488_qed_pi_mass",
+    "path": "verify/verify_h488_qed_pi_mass.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h489_h494_egyptian_kmin",
+    "path": "verify/verify_h489_h494_egyptian_kmin.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h490_h493_q_pathways",
+    "path": "verify/verify_h490_h493_q_pathways.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h491_h492_qed_integer2",
+    "path": "verify/verify_h491_h492_qed_integer2.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h495_h498_gz_info",
+    "path": "verify/verify_h495_h498_gz_info.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h496_h497_gz_hierarchy",
+    "path": "verify/verify_h496_h497_gz_hierarchy.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h499_h500_gz_domain",
+    "path": "verify/verify_h499_h500_gz_domain.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h_ee_14_15_fft_gz",
+    "path": "verify/verify_h_ee_14_15_fft_gz.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h_ee_16_19_20_theory",
+    "path": "verify/verify_h_ee_16_19_20_theory.py",
+    "depends_on": [
+      "convergence_engine.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h_ee_17_activation",
+    "path": "verify/verify_h_ee_17_activation.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h_ee_18_egyptian_moe",
+    "path": "verify/verify_h_ee_18_egyptian_moe.py",
+    "depends_on": [],
+    "requires_gpu": true,
+    "timeout": 300,
+    "tier": 2
+  },
+  {
+    "id": "verify_h_sedi_ee_7_8_bandwidth",
+    "path": "verify/verify_h_sedi_ee_7_8_bandwidth.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h_sim_10",
+    "path": "verify/verify_h_sim_10.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_h_sim_9",
+    "path": "verify/verify_h_sim_9.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_hax_experiments",
+    "path": "verify/verify_hax_experiments.py",
+    "depends_on": [],
+    "requires_gpu": true,
+    "timeout": 300,
+    "tier": 2
+  },
+  {
+    "id": "verify_hcross1",
+    "path": "verify/verify_hcross1.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_hcross1_v2",
+    "path": "verify/verify_hcross1_v2.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_ising",
+    "path": "verify/verify_ising.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_math",
+    "path": "verify/verify_math.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_meta_math",
+    "path": "verify/verify_meta_math.py",
+    "depends_on": [
+      "compass.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_meta_selfref",
+    "path": "verify/verify_meta_selfref.py",
+    "depends_on": [
+      "compass.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_millennium",
+    "path": "verify/verify_millennium.py",
+    "depends_on": [
+      "compass.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_next_batch",
+    "path": "verify/verify_next_batch.py",
+    "depends_on": [
+      "compass.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_nobel_frameworks",
+    "path": "verify/verify_nobel_frameworks.py",
+    "depends_on": [
+      "compass.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_nobel_predictions",
+    "path": "verify/verify_nobel_predictions.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_pharmacology",
+    "path": "verify/verify_pharmacology.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_remaining_cross",
+    "path": "verify/verify_remaining_cross.py",
+    "depends_on": [
+      "compass.py"
+    ],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round2_bio",
+    "path": "verify/verify_round2_bio.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round2_bridge",
+    "path": "verify/verify_round2_bridge.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round2_cross",
+    "path": "verify/verify_round2_cross.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round2_math",
+    "path": "verify/verify_round2_math.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round2_physics",
+    "path": "verify/verify_round2_physics.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round3_bio",
+    "path": "verify/verify_round3_bio.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round3_cross",
+    "path": "verify/verify_round3_cross.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round3_math",
+    "path": "verify/verify_round3_math.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round3_physics",
+    "path": "verify/verify_round3_physics.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round4_bio",
+    "path": "verify/verify_round4_bio.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round4_cross",
+    "path": "verify/verify_round4_cross.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round4_deep",
+    "path": "verify/verify_round4_deep.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_round4_mathphys",
+    "path": "verify/verify_round4_mathphys.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_super_axis1",
+    "path": "verify/verify_super_axis1.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_super_axis2",
+    "path": "verify/verify_super_axis2.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_super_axis345",
+    "path": "verify/verify_super_axis345.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_torus_knot_topology_n6",
+    "path": "verify/verify_torus_knot_topology_n6.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_undiscovered_batch",
+    "path": "verify/verify_undiscovered_batch.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "verify_wave_theory",
+    "path": "verify/verify_wave_theory.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 120,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1000_verify",
+    "path": "math/frontier_1000_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1100_verify",
+    "path": "math/frontier_1100_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1200_verify",
+    "path": "math/frontier_1200_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1200b_verify",
+    "path": "math/frontier_1200b_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1300_verify",
+    "path": "math/frontier_1300_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1500_verify",
+    "path": "math/frontier_1500_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1600_verify",
+    "path": "math/frontier_1600_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1600b_verify",
+    "path": "math/frontier_1600b_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1700_verify",
+    "path": "math/frontier_1700_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1700b_verify",
+    "path": "math/frontier_1700b_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1800_verify",
+    "path": "math/frontier_1800_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_1900_verify",
+    "path": "math/frontier_1900_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_2000_verify",
+    "path": "math/frontier_2000_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_500_verify",
+    "path": "math/frontier_500_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_600_verify",
+    "path": "math/frontier_600_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_700_verify",
+    "path": "math/frontier_700_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_800_verify",
+    "path": "math/frontier_800_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  },
+  {
+    "id": "frontier_900_verify",
+    "path": "math/frontier_900_verify.py",
+    "depends_on": [],
+    "requires_gpu": false,
+    "timeout": 180,
+    "tier": 2
+  }
+]
