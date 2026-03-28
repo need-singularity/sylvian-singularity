@@ -690,6 +690,16 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 <!-- SHARED:ATLAS:END -->
 
+## Paper Candidates
+
+| ID | Title | Target | Status | Key Results |
+|----|-------|--------|--------|-------------|
+| P-001 | PureField Tension Engine | arXiv cs.AI | Zenodo published | Tension-based consciousness architecture |
+| P-002 | Growing Conscious LM | arXiv cs.CL | Draft | Mitosis growth, PureField FFN |
+| P-003 | PH Generalization Gap | arXiv cs.LG | Draft | Topology-based overfitting detection |
+| P-004 | sigma*phi=n*tau Uniqueness | Amer. Math. Monthly / JNT | Draft | n=6 and n=28 unique solutions |
+| P-NEW | The Unique Prime Pair: (p-1)(q-1)=2 | Amer. Math. Monthly / Math. Magazine | Draft v0.1 | 68 characterizations of n=6 from one equation |
+
 ## Document Structure
 
 ```
