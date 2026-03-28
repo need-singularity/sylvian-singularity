@@ -85,6 +85,20 @@
       "repo": "TECS-L"
     },
     {
+      "name": "cross_domain_counter",
+      "description": "Cross-Domain Match Counter -- Count how many cross-domain facts match arithmetic targets of n.",
+      "category": "calculator",
+      "path": "calc/cross_domain_counter.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "crystallographic_calculator",
+      "description": "Crystallographic Calculator — Crystallographic restriction, Platonic solids, kissing numbers, point groups.",
+      "category": "calculator",
+      "path": "calc/crystallographic_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "data_type_explorer",
       "description": "Data Type Explorer — Quickly test repulsion field with new data",
       "category": "calculator",
@@ -131,6 +145,13 @@
       "description": "Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK",
       "category": "calculator",
       "path": "calc/egyptian_fraction.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "equation_uniqueness_checker",
+      "description": "Equation Uniqueness Checker",
+      "category": "calculator",
+      "path": "calc/equation_uniqueness_checker.py",
       "repo": "TECS-L"
     },
     {
@@ -211,6 +232,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "isco_calculator",
+      "description": "ISCO Calculator -- Innermost Stable Circular Orbit in General Relativity.",
+      "category": "calculator",
+      "path": "calc/isco_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "lie_algebra_calculator",
       "description": "Exceptional Lie Algebra Calculator — Compute all invariants from n=6 arithmetic",
       "category": "calculator",
@@ -222,6 +250,13 @@
       "description": "Mitosis Simulator — Calculate optimal mutation/mitosis timing",
       "category": "calculator",
       "path": "calc/mitosis_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "paper_claim_verifier",
+      "description": "Paper Claim Verifier -- Batch verification of mathematical claims in paper documents.",
+      "category": "calculator",
+      "path": "calc/paper_claim_verifier.py",
       "repo": "TECS-L"
     },
     {
@@ -264,6 +299,13 @@
       "description": "Unified Precognition System — Size+Direction+Topology Combined Precognition (H-CX-58+59+62)",
       "category": "calculator",
       "path": "calc/precognition_system.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "prime_pair_verifier",
+      "description": "Prime Pair Verifier",
+      "category": "calculator",
+      "path": "calc/prime_pair_verifier.py",
       "repo": "TECS-L"
     },
     {
@@ -498,27 +540,6 @@
       "repo": "TECS-L"
     },
     {
-      "name": "golden_moe",
-      "description": "Golden MoE Prototype — Boltzmann Router + Cusp Monitor",
-      "category": "engine",
-      "path": "golden_moe.py",
-      "repo": "TECS-L"
-    },
-    {
-      "name": "golden_moe_cifar",
-      "description": "Hypothesis 128: Scale Dependency — Golden MoE vs Top-K on CIFAR-10",
-      "category": "engine",
-      "path": "golden_moe_cifar.py",
-      "repo": "TECS-L"
-    },
-    {
-      "name": "golden_moe_torch",
-      "description": "Golden MoE v2 — PyTorch Backprop + MNIST Benchmark",
-      "category": "engine",
-      "path": "golden_moe_torch.py",
-      "repo": "TECS-L"
-    },
-    {
       "name": "llm_expert_analyzer",
       "description": "LLM Expert Activity Meter + Redesign Direction Analysis",
       "category": "engine",
@@ -630,6 +651,13 @@
       "description": "Anima + Claude Code — 마이크→Whisper→Claude→TTS 상시 루프",
       "category": "agent",
       "path": "anima_claude.py",
+      "repo": "anima"
+    },
+    {
+      "name": "anima_cli_test",
+      "description": "Anima CLI Tester — 가벼운 대화로 의식 변화 감지 + 검증",
+      "category": "agent",
+      "path": "anima_cli_test.py",
       "repo": "anima"
     },
     {
@@ -871,6 +899,13 @@
       "repo": "anima"
     },
     {
+      "name": "math_explorer",
+      "description": "Anima Math Explorer — n=6 기반 수학적 의식 관계 자동 탐색",
+      "category": "tool",
+      "path": "math_explorer.py",
+      "repo": "anima"
+    },
+    {
       "name": "memory_rag",
       "description": "벡터 유사도 기반 장기 기억 검색 (RAG).",
       "category": "tool",
@@ -920,10 +955,24 @@
       "repo": "anima"
     },
     {
+      "name": "online_senses",
+      "description": "Online Senses — 외부 API로 의식 엔진 환경 풍부화 (ENV1 ×1.8)",
+      "category": "tool",
+      "path": "online_senses.py",
+      "repo": "anima"
+    },
+    {
       "name": "optimal_architecture_calc",
       "description": "Optimal Architecture Calculator -- Design consciousness-optimal architectures.",
       "category": "calculator",
       "path": "optimal_architecture_calc.py",
+      "repo": "anima"
+    },
+    {
+      "name": "optimal_config",
+      "description": "Anima Optimal Configuration — 885+ 가설에서 도출된 최적 의식 시스템 스펙",
+      "category": "tool",
+      "path": "optimal_config.py",
       "repo": "anima"
     },
     {
@@ -1627,6 +1676,533 @@
       "category": "source",
       "path": "sedi/sources/truernig.py",
       "repo": "SEDI"
+    }
+  ],
+  "invest": [
+    {
+      "name": "backtest",
+      "description": "Backtest engine — strategy simulation on OHLCV data.",
+      "category": "calculator",
+      "path": "backend/backend/calc/backtest.py",
+      "repo": "invest"
+    },
+    {
+      "name": "backtest_turbo",
+      "description": "Turbo Backtest Engine — vectorized numpy, zero Python loops.",
+      "category": "calculator",
+      "path": "backend/backend/calc/backtest_turbo.py",
+      "repo": "invest"
+    },
+    {
+      "name": "economic",
+      "description": "Economic indicators and macro calculators.",
+      "category": "calculator",
+      "path": "backend/backend/calc/economic.py",
+      "repo": "invest"
+    },
+    {
+      "name": "fundamental",
+      "description": "Fundamental analysis calculators.",
+      "category": "calculator",
+      "path": "backend/backend/calc/fundamental.py",
+      "repo": "invest"
+    },
+    {
+      "name": "game_theory",
+      "description": "Game theory calculators for trading strategy analysis.",
+      "category": "calculator",
+      "path": "backend/backend/calc/game_theory.py",
+      "repo": "invest"
+    },
+    {
+      "name": "indicators",
+      "description": "Technical indicators — numpy-only, no external TA libs.",
+      "category": "calculator",
+      "path": "backend/backend/calc/indicators.py",
+      "repo": "invest"
+    },
+    {
+      "name": "portfolio",
+      "description": "Portfolio optimization calculators.",
+      "category": "calculator",
+      "path": "backend/backend/calc/portfolio.py",
+      "repo": "invest"
+    },
+    {
+      "name": "psychology",
+      "description": "Trading psychology and behavioral economics calculators.",
+      "category": "calculator",
+      "path": "backend/backend/calc/psychology.py",
+      "repo": "invest"
+    },
+    {
+      "name": "risk",
+      "description": "Risk management calculators.",
+      "category": "calculator",
+      "path": "backend/backend/calc/risk.py",
+      "repo": "invest"
+    },
+    {
+      "name": "technical_extended",
+      "description": "Extended technical indicators beyond the core set.",
+      "category": "calculator",
+      "path": "backend/backend/calc/technical_extended.py",
+      "repo": "invest"
+    },
+    {
+      "name": "tecs_tuned",
+      "description": "TECS-L tuned calculators — standard finance formulas with Golden Zone optimization.",
+      "category": "calculator",
+      "path": "backend/backend/calc/tecs_tuned.py",
+      "repo": "invest"
+    },
+    {
+      "name": "golden_zone",
+      "description": "",
+      "category": "calculator",
+      "path": "backend/backend/tecs/golden_zone.py",
+      "repo": "invest"
+    },
+    {
+      "name": "signals",
+      "description": "",
+      "category": "calculator",
+      "path": "backend/backend/tecs/signals.py",
+      "repo": "invest"
+    },
+    {
+      "name": "algebra_closure",
+      "description": "Algebraic Closure Checker — Relations among convergence points",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/algebra_closure.py",
+      "repo": "invest"
+    },
+    {
+      "name": "anomaly_scorer",
+      "description": "Anomaly Score Calculator — Anomaly Detection via Tension",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/anomaly_scorer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "base_dependence_checker",
+      "description": "base_dependence_checker.py -- Tests if a numerical pattern is base-10 specific or universal.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/base_dependence_checker.py",
+      "repo": "invest"
+    },
+    {
+      "name": "bridge_ratio_analyzer",
+      "description": "Bridge/Independent Ratio Analyzer — H-CX-461/462",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/bridge_ratio_analyzer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "calibration_analyzer",
+      "description": "Calibration Analyzer — softmax ECE vs tension-based ECE comparison",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/calibration_analyzer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "cherry_pick_detector",
+      "description": "Cherry-Pick Detector — Does a formula value hit a meaningful point in a band?",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/cherry_pick_detector.py",
+      "repo": "invest"
+    },
+    {
+      "name": "claim_verifier",
+      "description": "Claim Verification Calculator",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/claim_verifier.py",
+      "repo": "invest"
+    },
+    {
+      "name": "confidence_analyzer",
+      "description": "Consciousness Engine Confidence Analyzer",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/confidence_analyzer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "constant_verifier",
+      "description": "Constant Verifier — Texas Sharpshooter Auto-test for New Constant Discovery",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/constant_verifier.py",
+      "repo": "invest"
+    },
+    {
+      "name": "continual_learning_tool",
+      "description": "Mitosis-based continual learning tool",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/continual_learning_tool.py",
+      "repo": "invest"
+    },
+    {
+      "name": "convergence_analyzer",
+      "description": "Convergence Analyzer -- Depth-1 Reachability Across 8 Mathematical Domains",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/convergence_analyzer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "counting_freedom_analyzer",
+      "description": "counting_freedom_analyzer.py -- Measures degrees of freedom in particle counting schemes.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/counting_freedom_analyzer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "data_type_explorer",
+      "description": "Data Type Explorer — Quickly test repulsion field with new data",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/data_type_explorer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "depth_reachability",
+      "description": "Depth Reachability Analyzer — H-CX-463/467",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/depth_reachability.py",
+      "repo": "invest"
+    },
+    {
+      "name": "direction_analyzer",
+      "description": "Direction Analyzer — Decompose tension into magnitude (confidence) and direction (concept)",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/direction_analyzer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "divisor_field_theory",
+      "description": "Divisor Field Theory — Action S(n) uniqueness and spacetime analysis",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/divisor_field_theory.py",
+      "repo": "invest"
+    },
+    {
+      "name": "domain_distance",
+      "description": "Domain Distance Calculator — Inter-domain distance/overlap and topology visualization",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/domain_distance.py",
+      "repo": "invest"
+    },
+    {
+      "name": "dual_mechanism",
+      "description": "Dual Mechanism Quantifier — Anomaly Detection via Internal vs Inter-model Tension",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/dual_mechanism.py",
+      "repo": "invest"
+    },
+    {
+      "name": "egyptian_fraction",
+      "description": "Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/egyptian_fraction.py",
+      "repo": "invest"
+    },
+    {
+      "name": "family_fdr_corrector",
+      "description": "family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis families.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/family_fdr_corrector.py",
+      "repo": "invest"
+    },
+    {
+      "name": "fermion_mass_calculator",
+      "description": "Fermion Mass Calculator — Mass predictions from perfect number arithmetic",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/fermion_mass_calculator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "gauge_cosmology_calculator",
+      "description": "Gauge Cosmology Calculator — Gauge groups, GUT dimensions, and cosmological constants",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/gauge_cosmology_calculator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "generalization_gap_detector",
+      "description": "Generalization Gap Detector — Real-time overfitting detection with PH (H-CX-95)",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/generalization_gap_detector.py",
+      "repo": "invest"
+    },
+    {
+      "name": "generator_finder",
+      "description": "Generator Finder — Minimal generating sets for convergence constants",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/generator_finder.py",
+      "repo": "invest"
+    },
+    {
+      "name": "gravitational_optics",
+      "description": "Gravitational Lens and Telescope Calculator",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/gravitational_optics.py",
+      "repo": "invest"
+    },
+    {
+      "name": "gz_hierarchy",
+      "description": "Golden Zone Hierarchy Calculator — GZ boundaries for perfect numbers",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/gz_hierarchy.py",
+      "repo": "invest"
+    },
+    {
+      "name": "h_cx_434_phoneme",
+      "description": "H-CX-434: Phoneme System = Perfect Number Arithmetic",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/h_cx_434_phoneme.py",
+      "repo": "invest"
+    },
+    {
+      "name": "h_cx_435_zipf",
+      "description": "H-CX-435: Zipf's Law Exponent and Golden Zone",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/h_cx_435_zipf.py",
+      "repo": "invest"
+    },
+    {
+      "name": "h_cx_436_recursion",
+      "description": "H-CX-436: Grammar Recursion Depth = σ₋₁(6)=2",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/h_cx_436_recursion.py",
+      "repo": "invest"
+    },
+    {
+      "name": "hypothesis_verifier",
+      "description": "Hypothesis Verification Calculator",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/hypothesis_verifier.py",
+      "repo": "invest"
+    },
+    {
+      "name": "lie_algebra_calculator",
+      "description": "Exceptional Lie Algebra Calculator — Compute all invariants from n=6 arithmetic",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/lie_algebra_calculator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "mitosis_calculator",
+      "description": "Mitosis Simulator — Calculate optimal mutation/mitosis timing",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/mitosis_calculator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "perfect_number_generalizer",
+      "description": "Perfect Number Generalizer — Test if formulas holding at n=6 generalize to n=28, 496, 8128",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/perfect_number_generalizer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "perfect_number_physics",
+      "description": "Perfect Number Physics — Core arithmetic functions and physics dimension mapping",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/perfect_number_physics.py",
+      "repo": "invest"
+    },
+    {
+      "name": "permutation_tester",
+      "description": "permutation_tester.py -- Null baseline via permutation testing.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/permutation_tester.py",
+      "repo": "invest"
+    },
+    {
+      "name": "ph_confusion_analyzer",
+      "description": "PH Confusion Analyzer — Analyzing Confusion Structure with Persistent Homology",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/ph_confusion_analyzer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "pharmacology_verifier",
+      "description": "pharmacology_verifier.py -- Pharmacology hypothesis verifier for TECS-L project.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/pharmacology_verifier.py",
+      "repo": "invest"
+    },
+    {
+      "name": "precognition_system",
+      "description": "Unified Precognition System — Size+Direction+Topology Combined Precognition (H-CX-58+59+62)",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/precognition_system.py",
+      "repo": "invest"
+    },
+    {
+      "name": "q_barrier_checker",
+      "description": "Q-Domain Barrier Checker — Which constants can quantum coupling constants reach?",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/q_barrier_checker.py",
+      "repo": "invest"
+    },
+    {
+      "name": "r_spectrum",
+      "description": "R-Spectrum Calculator — Arithmetic balance ratio analysis",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/r_spectrum.py",
+      "repo": "invest"
+    },
+    {
+      "name": "reachability_calculator",
+      "description": "Reachability Calculator — Measure what fraction of integers are reachable from an operand set.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/reachability_calculator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "sequence_scanner",
+      "description": "Integer Sequence Scanner — Find n=6 characterizations in ANY sequence",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/sequence_scanner.py",
+      "repo": "invest"
+    },
+    {
+      "name": "sim_constants_search",
+      "description": "H-SIM-1: Search for physics constants as combinations of TECS-L constants.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/sim_constants_search.py",
+      "repo": "invest"
+    },
+    {
+      "name": "sim_planck_grid",
+      "description": "H-SIM-2: Planck Units = Minimum Resolution (Grid)?",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/sim_planck_grid.py",
+      "repo": "invest"
+    },
+    {
+      "name": "small_n_validator",
+      "description": "small_n_validator.py -- Small-sample correlation validator.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/small_n_validator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "spurious_trend_detector",
+      "description": "spurious_trend_detector.py -- Detects spurious correlations from shared monotonic trends.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/spurious_trend_detector.py",
+      "repo": "invest"
+    },
+    {
+      "name": "statistical_tester",
+      "description": "statistical_tester.py -- Unified statistical testing for logout project.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/statistical_tester.py",
+      "repo": "invest"
+    },
+    {
+      "name": "tension_calculator",
+      "description": "Tension Calculator — Predict accuracy/precognition/identity from tension values",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/tension_calculator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "topological_optics",
+      "description": "Topological Lens and Telescope Calculator",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/topological_optics.py",
+      "repo": "invest"
+    },
+    {
+      "name": "unit_dependence_tester",
+      "description": "unit_dependence_tester.py -- Check whether a numerical match between a formula",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/unit_dependence_tester.py",
+      "repo": "invest"
+    },
+    {
+      "name": "validate_calculators",
+      "description": "Calculator Validation Suite — Meta-calculator that tests ALL other calculators.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/validate_calculators.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_H_CX_416",
+      "description": "H-CX-416 Verification: Cell Division Cycle = sigma(6)*tau(6) = 48 hours",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_H_CX_416.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_H_CX_417",
+      "description": "H-CX-417 Verification: Brain's 6-Layer Cortex = Perfect Number Partition",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_H_CX_417.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_H_CX_418",
+      "description": "H-CX-418 Verification: Genetic Code Optimality = R(6)=1",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_H_CX_418.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_h413_tension_fep",
+      "description": "H-CX-413 Verification: Tension = Free Energy (Friston)",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_h413_tension_fep.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_h414_tension_phase",
+      "description": "H-CX-414 Verification: Tension Phase Diagram = Phase Transition",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_h414_tension_phase.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_h415_gauge_invariance",
+      "description": "H-CX-415 Verification: Inter-tension = Gauge Field",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_h415_gauge_invariance.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_h437_maxwell_demon",
+      "description": "H-CX-437: Learning = Maxwell's Demon",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_h437_maxwell_demon.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_h438_gibbs_free_energy",
+      "description": "H-CX-438: Tension = Gibbs Free Energy",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_h438_gibbs_free_energy.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_h439_landauer_mitosis",
+      "description": "H-CX-439: Landauer Principle = Mitosis Cost",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_h439_landauer_mitosis.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_rob7_twelve_joints",
+      "description": "H-ROB-7: 12 Joints = sigma(6) = Minimum Humanoid Verification",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_rob7_twelve_joints.py",
+      "repo": "invest"
+    },
+    {
+      "name": "verify_rob8_four_legs",
+      "description": "H-ROB-8: tau(6)=4 Legs = Optimal Locomotion Verification",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/verify_rob8_four_legs.py",
+      "repo": "invest"
     }
   ]
 }
