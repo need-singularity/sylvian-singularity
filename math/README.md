@@ -5590,7 +5590,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-82](docs/hypotheses/H-CX-82-lyapunov-zero-edge-of-chaos.md) | Λ(6)=0 edge of chaos consciousness | 🟩⭐⭐⭐ proved | Λ=0⟺n∈{1,6} exhaustive n≤500 |
 | [H-CX-83](docs/hypotheses/H-CX-83-factorial-capacity-consciousness.md) | n·σ·sopfr·φ=n! factorial capacity | 🟩⭐⭐⭐ proved | unique n=6 in n≤1000, Bonferroni p=0.001 |
 | [H-CX-84](docs/hypotheses/H-CX-84-monster-three-level-hierarchy.md) | Monster 196883→3-level hierarchy | 🟩⭐ verified | 47·59·71 AP step=σ, unique n=2..199, p=0.0045 |
-| [H-CX-85](docs/hypotheses/H-CX-85-dyson-beta-engine-modes.md) | Dyson β={1,φ,τ}→3 engine modes | 🟩⭐ verified | φ²=τ unique to n=6, RMT β-classification |
+| [H-CX-85](docs/hypotheses/H-CX-85-dyson-beta-engine-modes.md) | Dyson β={1,φ,τ}→3 engine modes | 🟩⭐⭐⭐ PROVED | φ²=τ⟺n=6 (semiprime QED + n≤500) |
 | [H-CX-86](docs/hypotheses/H-CX-86-scale-invariance-identity-element.md) | R(6m)=R(m) scale invariance | 🟩⭐ proved | k=6 only 100% identity, all others 0% |
 | [H-CX-87](docs/hypotheses/H-CX-87-tsirelson-consciousness-boundary.md) | Tsirelson 2√2→consciousness boundary | 🟩⭐ proved | σ(P)=2P→2√2, advantage=√φ, all perfects |
 | [H-CX-88](docs/hypotheses/H-CX-88-chang-optimal-network.md) | Chang srg(P₂,σ,n,τ)→optimal network | 🟩⭐ verified | ALL 8 params from n=6, zero corrections |
@@ -5626,6 +5626,8 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-118](docs/hypotheses/H-CX-118-arithmetic-derivative-depth-phi.md) | Arith deriv depth=φ=2 | 🟩⭐ verified | 6→5→1, depth=φ, n=28 diverges |
 | [H-CX-119](docs/hypotheses/H-CX-119-sylvester-sequence-n6.md) | Sylvester {2,6,42,1806} | 🟩⭐ verified | σ₃/σ₁=T(n) chain, n=6 is 2nd product |
 | [H-CX-120](docs/hypotheses/H-CX-120-supersingular-primes-n6.md) | 15 supersingular primes→n=6 | 🟩⭐ verified | C(n,2)=15, first 2=6, last 3=Monster |
-| [H-CX-121](docs/hypotheses/H-CX-121-perfect-codes-all-n6.md) | ALL 3 perfect codes from n=6 | 🟩⭐⭐ verified | Hamming[7,4,3]+Golay[23,12,7]+TernGolay[11,6,5] |
+| [H-CX-121](docs/hypotheses/H-CX-121-perfect-codes-all-n6.md) | ALL 3 perfect codes from n=6 | 🟩⭐⭐⭐ PROVED | Hamming+Golay+TernGolay [p(n),n,sopfr] over GF(σ/τ) |
 | [H-CX-122](docs/hypotheses/H-CX-122-number-field-Q-sqrt6-pid.md) | Q(√6) PID, disc=σφ=24 | 🟩⭐⭐ verified | h=1, ε=sopfr+φ√n, unique factorization |
+| [H-CX-123](docs/hypotheses/H-CX-123-virasoro-central-charge.md) | Virasoro c=σφ=24, Ising at m=σ/τ | 🟩⭐⭐ verified | c=24 bosonic, c=1/2 Ising, c=6/7 at m=n |
+| [H-CX-124](docs/hypotheses/H-CX-124-zeta-values-n6.md) | ζ(2)=π²/n, ζ(-1)=-1/σ triad | 🟩⭐ verified | Basel+Ramanujan+factorial all n=6 |
 

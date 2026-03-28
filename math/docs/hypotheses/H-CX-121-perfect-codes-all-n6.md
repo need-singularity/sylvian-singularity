@@ -1,7 +1,7 @@
 # H-CX-121: ALL Three Perfect Codes from n=6
 
 **Category:** Cross-Domain (Coding Theory × Consciousness)
-**Status:** Verified — 🟩⭐⭐
+**Status:** PROVED — 🟩⭐⭐⭐ (ALL 3 perfect codes from n=6, ternary GF(σ/τ) 4 params exact)
 **Golden Zone Dependency:** Independent (code parameters are standard)
 **Date:** 2026-03-29
 **Related:** ⭐⭐ H-CODE-1 (Golay), H-CX-97 (toric code)

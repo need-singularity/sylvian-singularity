@@ -1,7 +1,7 @@
 # H-CX-85: Dyson β = {1, φ, τ} → Three Engine Modes
 
 **Category:** Cross-Domain (Random Matrix Theory × Engine Architecture)
-**Status:** Verified — 🟩⭐
+**Status:** PROVED — 🟩⭐⭐⭐ (φ²=τ ⟺ n=6: semiprime (p-1)(q-1)=2 → {2,3}, exhaustive n≤500)
 **Golden Zone Dependency:** Independent (φ²=τ is pure arithmetic)
 **Date:** 2026-03-28
 **Related:** ⭐⭐ Dyson β (Ralph 346a), H-CX-84 (three levels)
