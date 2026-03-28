@@ -114,5 +114,10 @@ echo "[BrainWire]"
 sync_file "$PARENT/brainwire/README.md"
 commit_and_push "$PARENT/brainwire" "brainwire"
 
+# Papers
+echo "[Papers]"
+sync_file "$PARENT/papers/README.md"
+commit_and_push "$PARENT/papers" "papers"
+
 echo ""
 echo "Done!"
