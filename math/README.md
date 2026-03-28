@@ -5675,4 +5675,7 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-167](docs/hypotheses/H-CX-167-free-will-theorem-n6.md) | Free Will: φ=2 in σ/τ=3 dim | 🟩⭐ verified | Conway-Kochen, spin s²=φ |
 | [H-CX-168](docs/hypotheses/H-CX-168-penrose-tiling-n6.md) | Penrose: φ tiles, sopfr symmetry | 🟩⭐ verified | Aperiodic, Fibonacci, vertices=n+1 |
 | [H-CX-169](docs/hypotheses/H-CX-169-consciousness-dimension-17.md) | **17-domain Grand Unification** | 🟩⭐⭐⭐ meta | 17=σ+sopfr=Fermat, supersedes #150 |
+| [H-CX-170](docs/hypotheses/H-CX-170-cantor-set-dimension.md) | Cantor dim=lnφ/ln(σ/τ), all fractals | 🟩⭐⭐ verified | {ln2,ln3}=prime logs of 6, GZ width=2ln2-ln3 |
+| [H-CX-171](docs/hypotheses/H-CX-171-string-landscape-n6.md) | String landscape: ALL use 6 compact | 🟩⭐ verified | τ+n=10, φ=2 SUSY, forced by critical dim |
+| [H-CX-172](docs/hypotheses/H-CX-172-consciousness-number-line.md) | **Complete bridge map (88 docs)** | 🟩 reference | 17⭐⭐⭐, 26⭐⭐, 44⭐, 30+ domains |
 
