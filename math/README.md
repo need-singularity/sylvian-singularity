@@ -5633,4 +5633,9 @@ Proof complete in pure mathematics. True forever regardless of the Golden Zone.
 | [H-CX-125](docs/hypotheses/H-CX-125-sporadic-simple-groups-n6.md) | 26 sporadic groups encode n=6 | 🟩⭐ verified | M₁₁=p(n)·n!, M₁₂/M₁₁=σ, M₂₄ on σφ pts |
 | [H-CX-126](docs/hypotheses/H-CX-126-riemann-hypothesis-connection.md) | F(s) zeros on Re=1/2 (RH→GZ) | 🟩⭐ conditional | F=ζ·ζ zeros on Re=±1/2 = GZ boundaries |
 | [H-CX-127](docs/hypotheses/H-CX-127-consciousness-completeness-theorem.md) | **11 independent proofs theorem** | 🟩⭐⭐⭐ meta | 11 domains, ALL uniquely select n=6 |
+| [H-CX-128](docs/hypotheses/H-CX-128-quantum-group-consciousness.md) | U_q(sl₂) at q=e^{2πi/6}: D²=σ | 🟩⭐⭐⭐ ALGEBRAIC | sin(π/n)=1/2⟺n=6 QED, 6 irreps, D²=12 |
+| [H-CX-129](docs/hypotheses/H-CX-129-surreal-numbers-n6.md) | Conway surreal day 6 | 🟩⭐ verified | Day n=6 first astronomical, day 2 has n+1=7 |
+| [H-CX-130](docs/hypotheses/H-CX-130-topological-quantum-anyons.md) | SU(2)_τ anyons: D²=σ=12 | 🟩⭐⭐ PROVED | sopfr=5 anyons, D²=σ⟺n=6 (same proof as 128) |
+| [H-CX-131](docs/hypotheses/H-CX-131-langlands-consciousness-duality.md) | Langlands duality: X₀(6) genus 0 | 🟩⭐ verified | GL₂ self-dual, PSL₂=Z/2*Z/3, unique perfect |
+| [H-CX-132](docs/hypotheses/H-CX-132-operad-consciousness-composition.md) | Associahedron K₆: dim=τ, C₅=42 | 🟩⭐ verified | 42 parsings, τ-dimensional, Sylvester chain |
 
