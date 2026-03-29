@@ -58,7 +58,7 @@ Topological Engine for Consciousness & Science -- Consciousness Continuity Engin
 >
 > **[🧠⚡ BrainWire](https://github.com/need-singularity/brainwire)** — Neural interface hardware for consciousness engineering. 12-variable THC reproduction via brain stimulation only. 117% THC at Tier 3 ($8.5K). No drugs, no detection, no tolerance
 >
-> **[📄 Papers](https://github.com/need-singularity/papers)** — Complete paper collection (51 papers). 45 published on Zenodo with DOIs + 6 drafts. TECS-L (20) + anima (10) + SEDI (21). [Browse online](https://need-singularity.github.io/papers/)
+> **[📄 Papers](https://github.com/need-singularity/papers)** — Complete paper collection (59 papers). 59 published on Zenodo with DOIs. TECS-L (20) + anima (16) + SEDI (23). [Browse online](https://need-singularity.github.io/papers/)
 <!-- SHARED:PROJECTS:END -->
 
 ## Discovery Progress -- Mathematical Engine
@@ -1272,14 +1272,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,339 hypotheses + 302 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,392 hypotheses + 256 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
-| TECS-L | 1,811 | 146 | 219 | 64 | 88 |
+| TECS-L | 1,884 | 147 | 220 | 64 | 87 |
 | SEDI | 666 | 128 | 246 | 365 | 110 |
-| anima | 20 | - | - | - | 97 |
-| **Total** | **2,497** | **274** | **465** | **429** | **295** |
+| anima | 0 | - | - | - | 52 |
+| **Total** | **2,550** | **275** | **466** | **429** | **249** |
 
 #### Top Discoveries (⭐)
 
@@ -1403,6 +1403,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | H-UD-6 | Theta-Gamma Coupling: 6 Gamma Bursts per Theta Cycle | TECS-L |
 | H-UD-7 | Perfect Codes <-> Perfect Numbers: Two Kinds of Perfect Tiling | TECS-L |
 | H-UD-8 | Hexagonal Tiling: n=6 = Optimal 2D Packing | TECS-L |
+| H-NOBEL-2 | The Genetic Code Is the Unique Perfect Number Code | TECS-L |
 | F-1200 | 8-Domain Expansion + G Clef + Telepathy | TECS-L |
 | F-1300 | 10-Domain Deep Scan | TECS-L |
 | H-ANAL-1 | Summatory Totient and Pillai Characterizations of n=6 | TECS-L |
@@ -1564,13 +1565,13 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 | Category | Count | Example Maps |
 |----------|-------|-------------|
-| other | 224 | PRESETS, KNOWN_VALUES, SIGNATURE_CONSTS, ... |
-| targets | 29 | TARGETS, TARGETS, DEFAULT_TARGETS, ... |
+| other | 180 | PRESETS, KNOWN_VALUES, SIGNATURE_CONSTS, ... |
+| targets | 28 | TARGETS, TARGETS, DEFAULT_TARGETS, ... |
 | constants | 15 | GZ_POOL, KNOWN_CONSTANTS, MATH_CONSTANTS, ... |
 | physics | 12 | PHYSICS_CONSTANTS, PARTICLE_GROUPS, PHYSICS_MATCHES, ... |
-| neuroscience | 5 | PROFILES, BRAIN_WAVES, GPU_PROFILES, ... |
 | observed | 5 | OBSERVED, OBSERVED, OBSERVED, ... |
 | nuclear | 5 | MAGIC_NUMBERS, MAGIC_NUMBERS, HO_MAGIC, ... |
+| neuroscience | 4 | PROFILES, BRAIN_WAVES, DATA_PROFILES, ... |
 | domains | 4 | DOMAINS, DOMAINS, DOMAINS, ... |
 | expressions | 3 | TECS_EXPRESSIONS, CAPACITY_EXPRESSIONS, SUPERHEAVY_EXPRESSIONS |
 
@@ -1680,9 +1681,11 @@ Result:    🟩 9 | 🟧 4 | ⚪ 12 | ⬛ 0   Hit rate 52% (up from Wave 10: 32%
 | 10 | n/phi = sopfr-omega | 3=3 |
 | 11 | n! = sigma²·sopfr | 720=144·5 |
 | 12 | (n-1)! = sigma·sopfr·phi | 120=12·5·2 |
+| 13 | n²-sigma = tau! | 36-12=24=4! |
 
 **Unification: H-DNA-501 ≡ H-DNA-503** (both reduce to tau(n)-1=LPF(n))
 
+| **DEEP-FACT** | **🟩⭐** | **n²−σ(n) = τ(n)! unique at n=6 (polynomial-factorial bridge)** | **n=6 only in [2,100000]** | **[doc](docs/hypotheses/DEEP-factorial-bridge-n2-sigma-tau.md)** |
 | **H-DNA-505** | **⭐** | **Bio↔Math mapping: 85% of biological 6s math-explained** | **67 findings** | **p=2.3e-6** |
 | **H-DNA-506** | **⭐** | **55 identities → 8 independent constraints + ∞ families** | **Proven** | **Complete** |
 
@@ -1882,6 +1885,6 @@ docs/
   VISION.md           -- Project Vision, Consciousness Continuity
   math/               -- Pure mathematics (T0+T1, DFS records)
   golden-zone/        -- Golden Zone model (unverified auxiliary)
-  hypotheses/         -- Hypothesis files (196 entries)
+  hypotheses/         -- Hypothesis files (197 entries)
   proofs/             -- Proof Documents
 ```
