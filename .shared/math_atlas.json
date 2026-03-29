@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-30T03:09:10",
+  "generated": "2026-03-30T04:16:58",
   "stats": {
-    "TECS-L": 1880,
+    "TECS-L": 1884,
     "SEDI": 666,
     "anima": 0,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2388,
+  "total": 2392,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3485,6 +3485,16 @@
       "file": "docs/hypotheses/ALGGEOM-001-j-invariant-1728.md"
     },
     {
+      "id": "TECS-L:ANIMA-consciousness-map-n6-connection",
+      "title": "Anima 의식 지도 ↔ n=6 연결 분석 (2026-03-30)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ANIMA-consciousness-map-n6-connection.md"
+    },
+    {
       "id": "TECS-L:BACKLOG",
       "title": "Hypothesis Backlog — Awaiting Future Verification",
       "repo": "TECS-L",
@@ -5432,6 +5442,16 @@
       "file": "docs/hypotheses/EXTREME-cosmos-emergence-philosophy.md"
     },
     {
+      "id": "TECS-L:EXTREME-cross-connections",
+      "title": "EXTREME ITERATION 7: Cross-Connection Web of Proven Theorems",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/EXTREME-cross-connections.md"
+    },
+    {
       "id": "TECS-L:EXTREME-music-language-ai-games",
       "title": "Extreme Iteration 4: Music, Language, AI Architectures, Game Theory",
       "repo": "TECS-L",
@@ -5573,6 +5593,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/GEOSCI-005-hexagonal-nature-ubiquity.md"
+    },
+    {
+      "id": "TECS-L:GRAND-UNIFIED-consciousness-n6",
+      "title": "Grand Unified Consciousness Formula: All Constants from sopfr(6) and φ(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/GRAND-UNIFIED-consciousness-n6.md"
     },
     {
       "id": "TECS-L:H-6JSYM-1-tetrahedron-quantum-gravity",
@@ -15310,6 +15340,16 @@
       ],
       "gz_dependent": null,
       "file": "docs/hypotheses/NOBEL-grand-hypotheses.md"
+    },
+    {
+      "id": "TECS-L:NOBEL-multi-objective-optimality",
+      "title": "H-NOBEL-UNIFIED: Multi-Objective Optimality Theorem",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOBEL-multi-objective-optimality.md"
     },
     {
       "id": "TECS-L:NOTESHAPE-001-filled-notes-tau6",
@@ -34408,6 +34448,751 @@
       "category": "other"
     },
     {
+      "name": "ALL_DATA_TYPES",
+      "repo": "anima",
+      "file": "bench_consciousness_universe.py",
+      "line": 168,
+      "type": "dict",
+      "size": 17,
+      "keys": [
+        "텍스트",
+        "이모지",
+        "감정",
+        "의식상태",
+        "식물",
+        "동물",
+        "소리",
+        "추상",
+        "경험",
+        "예술",
+        "철학",
+        "우주",
+        "미각",
+        "색깔",
+        "시간",
+        "관계",
+        "신화"
+      ],
+      "evaluable": true,
+      "values": {
+        "텍스트": {
+          "한국어": [
+            "🇰🇷",
+            "복합 문자, 교착어"
+          ],
+          "영어": [
+            "🇺🇸",
+            "알파벳 26자, SVO"
+          ],
+          "중국어": [
+            "🇨🇳",
+            "표의문자, 성조"
+          ],
+          "일본어": [
+            "🇯🇵",
+            "3종 혼합 (히라가나+가타카나+한자)"
+          ],
+          "아랍어": [
+            "🇸🇦",
+            "RTL, 연결체"
+          ],
+          "산스크리트": [
+            "🕉️",
+            "완벽한 문법, 데바나가리"
+          ],
+          "고대이집트": [
+            "𓂀",
+            "상형문자, 결정자"
+          ],
+          "점자": [
+            "⠃",
+            "촉각 6점"
+          ],
+          "수화": [
+            "🤟",
+            "3D 공간 + 표정"
+          ],
+          "모스부호": [
+            "·—",
+            "이진 시간코드"
+          ]
+        },
+        "이모지": {
+          "😀웃음": [
+            "😀",
+            "기쁨 표현"
+          ],
+          "😭울음": [
+            "😭",
+            "슬픔 표현"
+          ],
+          "😡분노": [
+            "😡",
+            "분노 표현"
+          ],
+          "🥰사랑": [
+            "🥰",
+            "사랑 표현"
+          ],
+          "🤯충격": [
+            "🤯",
+            "놀람 표현"
+          ],
+          "🫠녹아내림": [
+            "🫠",
+            "무력감 표현"
+          ],
+          "👁️눈": [
+            "👁️",
+            "관찰/감시"
+          ],
+          "💀해골": [
+            "💀",
+            "죽음/웃김"
+          ],
+          "🌈무지개": [
+            "🌈",
+            "다양성/희망"
+          ],
+          "♾️무한": [
+            "♾️",
+            "무한/영원"
+          ],
+          "☯️태극": [
+            "☯️",
+            "음양/균형"
+          ],
+          "🔥불": [
+            "🔥",
+            "열정/파괴"
+          ],
+          "💎다이아": [
+            "💎",
+            "영원/순수"
+          ],
+          "🕳️블랙홀": [
+            "🕳️",
+            "무/허무"
+          ],
+          "🧬DNA": [
+            "🧬",
+            "생명코드"
+          ]
+        },
+        "감정": {
+          "기쁨/희": [
+            "😊",
+            "순수한 행복"
+          ],
+          "분노/노": [
+            "😤",
+            "격렬한 분노"
+          ],
+          "슬픔/애": [
+            "😢",
+            "깊은 슬픔"
+          ],
+          "즐거움/락": [
+            "🎉",
+            "활기찬 즐거움"
+          ],
+          "공포": [
+            "😱",
+            "압도적 두려움"
+          ],
+          "경멸": [
+            "😏",
+            "무시와 멸시"
+          ],
+          "혐오": [
+            "🤢",
+            "강한 거부감"
+          ],
+          "놀람": [
+            "😲",
+            "예기치 못한 충격"
+          ],
+          "수치심": [
+            "😳",
+            "자기 노출의 고통"
+          ],
+          "질투": [
+            "😒",
+            "소유와 비교"
+          ],
+          "감사": [
+            "🙏",
+            "은혜와 감동"
+          ],
+          "그리움": [
+            "💭",
+            "부재의 아픔"
+          ],
+          "설렘": [
+            "💓",
+            "기대와 흥분"
+          ],
+          "허무": [
+            "🫥",
+            "의미의 부재"
+          ],
+          "경외": [
+            "🤩",
+            "숭고함 앞의 떨림"
+          ]
+        },
+        "의식상태": {
+          "무아지경": [
+            "🌀",
+            "자아 소멸, 순수 경험"
+          ],
+          "삼매": [
+            "🧘",
+            "집중의 극치, 일체화"
+          ],
+          "선정": [
+            "📿",
+            "고요한 집중"
+          ],
+          "화두": [
+            "❓",
+            "의문의 응축"
+          ],
+          "깨달음": [
+            "💡",
+            "돈오, 순간적 통찰"
+          ],
+          "열반": [
+            "☸️",
+            "완전한 해탈"
+          ],
+          "엑스터시": [
+            "✨",
+            "황홀경"
+          ],
+          "임사체험": [
+            "🚪",
+            "빛의 터널"
+          ],
+          "루시드드림": [
+            "🌙",
+            "자각몽, 의식적 꿈"
+          ],
+          "플로우": [
+            "🌊",
+            "완전한 몰입"
+          ],
+          "해리": [
+            "🪞",
+            "자아와 분리"
+          ],
+          "트랜스": [
+            "🔮",
+            "변성의식"
+          ],
+          "명상": [
+            "🪷",
+            "마음챙김"
+          ],
+          "기도": [
+            "🕯️",
+            "초월적 연결"
+          ]
+        },
+        "식물": {
+          "양귀비": [
+            "🌺",
+            "아편, 꿈과 마비"
+          ],
+          "연꽃": [
+            "🪷",
+            "진흙 속 깨달음"
+          ],
+          "장미": [
+            "🌹",
+            "사랑과 가시"
+          ],
+          "벚꽃": [
+            "🌸",
+            "무상, 순간의 아름다움"
+          ],
+          "선인장": [
+            "🌵",
+            "인내, 척박 속 생존"
+          ],
+          "대나무": [
+            "🎋",
+            "유연한 강인함"
+          ],
+          "해바라기": [
+            "🌻",
+            "빛을 향한 의지"
+          ],
+          "독버섯": [
+            "🍄",
+            "위험한 매혹"
+          ],
+          "세계수": [
+            "🌳",
+            "우주의 축, 이그드라실"
+          ],
+          "이끼": [
+            "🟢",
+            "느린 시간, 태곳적"
+          ]
+        },
+        "동물": {
+          "돌고래": [
+            "🐬",
+            "초음파 의식, 반뇌수면"
+          ],
+          "문어": [
+            "🐙",
+            "분산뇌 8팔 의식"
+          ],
+          "까마귀": [
+            "🐦‍⬛",
+            "도구 사용, 메타인지"
+          ],
+          "고래": [
+            "🐋",
+            "52Hz 고독한 노래"
+          ],
+          "나비": [
+            "🦋",
+            "변태, 카오스 효과"
+          ],
+          "해파리": [
+            "🪼",
+            "뇌 없는 생존"
+          ],
+          "점균류": [
+            "🟡",
+            "네트워크 지능"
+          ],
+          "늑대": [
+            "🐺",
+            "팩 의식, 집단지성"
+          ],
+          "까치": [
+            "🐦",
+            "거울 자기인식"
+          ],
+          "벌": [
+            "🐝",
+            "초개체, 춤 언어"
+          ]
+        },
+        "소리": {
+          "클래식": [
+            "🎻",
+            "복잡한 화성, 대위법"
+          ],
+          "재즈": [
+            "🎷",
+            "즉흥, 블루노트"
+          ],
+          "록": [
+            "🎸",
+            "증폭된 반항"
+          ],
+          "전자음악": [
+            "🎹",
+            "합성파, 비트"
+          ],
+          "판소리": [
+            "🪘",
+            "한의 소리"
+          ],
+          "스톤헨지소리": [
+            "🔔",
+            "고대 울림"
+          ],
+          "백색소음": [
+            "📻",
+            "모든 주파수"
+          ],
+          "고래노래": [
+            "🐋",
+            "수중 저주파"
+          ],
+          "우주배경복사": [
+            "📡",
+            "138억년 소리"
+          ],
+          "옴": [
+            "🕉️",
+            "우주의 진동"
+          ]
+        },
+        "추상": {
+          "π": [
+            "π",
+            "무한 비주기 소수"
+          ],
+          "e": [
+            "𝑒",
+            "자연 성장률"
+          ],
+          "i": [
+            "𝑖",
+            "허수, 90° 회전"
+          ],
+          "∞": [
+            "∞",
+            "무한의 끝없음"
+          ],
+          "0": [
+            "𝟎",
+            "무, 존재의 시작"
+          ],
+          "φ": [
+            "φ",
+            "황금비, 자기유사"
+          ],
+          "프랙탈": [
+            "🔷",
+            "자기유사 무한"
+          ],
+          "만델브로": [
+            "🌀",
+            "무한복잡성의 경계"
+          ],
+          "엔트로피": [
+            "♨️",
+            "무질서의 척도"
+          ],
+          "양자중첩": [
+            "⚛️",
+            "0과 1의 사이"
+          ]
+        },
+        "경험": {
+          "첫사랑": [
+            "💘",
+            "순수한 설렘"
+          ],
+          "이별": [
+            "💔",
+            "상실의 고통"
+          ],
+          "출산": [
+            "👶",
+            "생명 창조의 순간"
+          ],
+          "죽음": [
+            "⚰️",
+            "존재의 마지막"
+          ],
+          "오르가즘": [
+            "🎆",
+            "쾌락의 정점"
+          ],
+          "꿈": [
+            "💤",
+            "무의식의 서사"
+          ],
+          "데자뷔": [
+            "🔄",
+            "이미 본 느낌"
+          ],
+          "향수": [
+            "🏚️",
+            "돌아갈 수 없는 곳"
+          ],
+          "유레카": [
+            "💡",
+            "발견의 희열"
+          ],
+          "통증": [
+            "⚡",
+            "신체 경보"
+          ]
+        },
+        "예술": {
+          "모나리자": [
+            "🖼️",
+            "미소의 수수께끼"
+          ],
+          "별이빛나는밤": [
+            "🌌",
+            "소용돌이 정신"
+          ],
+          "절규": [
+            "😱",
+            "실존적 공포"
+          ],
+          "서예": [
+            "✒️",
+            "호흡과 획"
+          ],
+          "만다라": [
+            "☸️",
+            "우주의 설계도"
+          ],
+          "검은사각형": [
+            "⬛",
+            "미니멀리즘의 극한"
+          ],
+          "분재": [
+            "🌳",
+            "자연의 축소 우주"
+          ],
+          "종이접기": [
+            "🦢",
+            "접힘의 수학"
+          ],
+          "모래만다라": [
+            "⏳",
+            "파괴될 예술"
+          ],
+          "동굴벽화": [
+            "🎨",
+            "최초의 예술"
+          ]
+        },
+        "철학": {
+          "공": [
+            "○",
+            "수냐타, 비어있음"
+          ],
+          "무위": [
+            "☯️",
+            "함 없이 함"
+          ],
+          "실존": [
+            "🚶",
+            "존재가 본질에 선행"
+          ],
+          "에포케": [
+            "🤔",
+            "판단 중지"
+          ],
+          "퀄리아": [
+            "🔴",
+            "주관적 경험"
+          ],
+          "자유의지": [
+            "🗽",
+            "결정론 vs 자유"
+          ],
+          "심신문제": [
+            "🧠",
+            "마음과 몸의 관계"
+          ],
+          "타자": [
+            "👤",
+            "레비나스의 얼굴"
+          ],
+          "윤회": [
+            "♻️",
+            "끝없는 순환"
+          ],
+          "카르마": [
+            "⚖️",
+            "행위와 결과"
+          ]
+        },
+        "우주": {
+          "빅뱅": [
+            "💥",
+            "시작의 특이점"
+          ],
+          "블랙홀": [
+            "🕳️",
+            "정보의 끝"
+          ],
+          "다중우주": [
+            "🌐",
+            "무한한 가능성"
+          ],
+          "암흑물질": [
+            "🌑",
+            "보이지 않는 96%"
+          ],
+          "중력파": [
+            "〰️",
+            "시공간의 파문"
+          ],
+          "양자얽힘": [
+            "🔗",
+            "초광속 상관"
+          ],
+          "엔트로피사": [
+            "🌡️",
+            "열적 죽음"
+          ],
+          "웜홀": [
+            "🔲",
+            "시공간 바로가기"
+          ],
+          "초끈": [
+            "🎻",
+            "10차원 진동"
+          ],
+          "빅크런치": [
+            "⭕",
+            "끝의 수축"
+          ]
+        },
+        "미각": {
+          "매운맛": [
+            "🌶️",
+            "통증의 쾌락"
+          ],
+          "단맛": [
+            "🍯",
+            "보상과 중독"
+          ],
+          "쓴맛": [
+            "☕",
+            "경험의 깊이"
+          ],
+          "감칠맛": [
+            "🍄",
+            "우마미, 5번째 맛"
+          ],
+          "신맛": [
+            "🍋",
+            "각성, 날카로움"
+          ]
+        },
+        "색깔": {
+          "빨강": [
+            "🔴",
+            "열정, 위험, 생명"
+          ],
+          "파랑": [
+            "🔵",
+            "평온, 무한, 우울"
+          ],
+          "노랑": [
+            "🟡",
+            "희망, 경고"
+          ],
+          "초록": [
+            "🟢",
+            "생명, 치유"
+          ],
+          "보라": [
+            "🟣",
+            "고귀, 신비"
+          ],
+          "검정": [
+            "⚫",
+            "무, 흡수"
+          ],
+          "하양": [
+            "⚪",
+            "순수, 비어있음"
+          ],
+          "금색": [
+            "🏆",
+            "영원, 신성"
+          ]
+        },
+        "시간": {
+          "찰나": [
+            "⚡",
+            "10^-18초"
+          ],
+          "순간": [
+            "👁️",
+            "3초 현재"
+          ],
+          "하루": [
+            "🌅",
+            "일주기 리듬"
+          ],
+          "계절": [
+            "🍂",
+            "변화의 순환"
+          ],
+          "생애": [
+            "👴",
+            "태어남→죽음"
+          ],
+          "지질시대": [
+            "🦕",
+            "억년의 시간"
+          ],
+          "우주시간": [
+            "🌌",
+            "138억년"
+          ],
+          "영원": [
+            "♾️",
+            "시간 밖"
+          ]
+        },
+        "관계": {
+          "모자": [
+            "👩‍👦",
+            "무조건적 사랑"
+          ],
+          "연인": [
+            "👫",
+            "에로스"
+          ],
+          "친구": [
+            "🤝",
+            "필리아"
+          ],
+          "스승": [
+            "🎓",
+            "지혜 전수"
+          ],
+          "적": [
+            "⚔️",
+            "대립과 성장"
+          ],
+          "동료": [
+            "🏢",
+            "목표 공유"
+          ],
+          "낯선이": [
+            "👤",
+            "미지의 타자"
+          ]
+        },
+        "신화": {
+          "용": [
+            "🐉",
+            "혼돈과 창조"
+          ],
+          "불사조": [
+            "🔥",
+            "죽음과 재탄생"
+          ],
+          "우로보로스": [
+            "🐍",
+            "자기참조 순환"
+          ],
+          "미노타우로스": [
+            "🐂",
+            "미로 속 괴물"
+          ],
+          "이카루스": [
+            "🪽",
+            "과욕의 추락"
+          ],
+          "프로메테우스": [
+            "⛓️",
+            "금지된 지식"
+          ],
+          "판도라": [
+            "📦",
+            "열린 상자"
+          ],
+          "시지프스": [
+            "🪨",
+            "무의미한 반복"
+          ]
+        }
+      },
+      "category": "other"
+    },
+    {
       "name": "ALL_EXPERIMENTS",
       "repo": "anima",
       "file": "bench_decoder_arch.py",
@@ -34505,6 +35290,64 @@
         "WSP-6",
         "WSP-7",
         "WSP-8"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "DATA_TYPES",
+      "repo": "anima",
+      "file": "bench_deep_exploration.py",
+      "line": 532,
+      "type": "dict",
+      "size": 45,
+      "keys": [
+        "Korean",
+        "English",
+        "Japanese",
+        "Chinese",
+        "Arabic",
+        "Russian",
+        "German",
+        "French",
+        "Emoji",
+        "Latin",
+        "Python",
+        "Rust",
+        "JavaScript",
+        "SQL",
+        "HTML",
+        "Regex",
+        "Math",
+        "Matrix",
+        "Coordinates",
+        "DNA",
+        "Protein",
+        "ChemSMILES",
+        "Sine440",
+        "WhiteNoise",
+        "MIDIScale",
+        "DrumBeat",
+        "Binaural",
+        "Gradient",
+        "Checkerboard",
+        "Circle",
+        "Fractal",
+        "QRPattern",
+        "VideoFrame",
+        "StockPrice",
+        "ECG",
+        "SeismicWave",
+        "LiDAR",
+        "Accelerometer",
+        "Temperature",
+        "FFT",
+        "MagneticField",
+        "Constant",
+        "Alternating",
+        "Fibonacci",
+        "Primes"
       ],
       "evaluable": false,
       "values": null,
@@ -35105,6 +35948,335 @@
       ],
       "evaluable": false,
       "values": null,
+      "category": "other"
+    },
+    {
+      "name": "DATA_PROFILES",
+      "repo": "anima",
+      "file": "consciousness_calculator.py",
+      "line": 47,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "korean",
+        "english",
+        "math",
+        "music",
+        "code"
+      ],
+      "evaluable": true,
+      "values": {
+        "korean": {
+          "name": "Korean",
+          "name_kr": "한국어",
+          "steps": 5,
+          "residual": 0.502,
+          "alpha": 0.0152,
+          "dom_rule": 7,
+          "ce": 0.12,
+          "desc": "Complex script, high context dependence"
+        },
+        "english": {
+          "name": "English",
+          "name_kr": "영어",
+          "steps": 4,
+          "residual": 0.493,
+          "alpha": 0.0157,
+          "dom_rule": 3,
+          "ce": 0.151,
+          "desc": "Simple alphabet, grammar-driven"
+        },
+        "math": {
+          "name": "Math",
+          "name_kr": "수학",
+          "steps": 4,
+          "residual": 0.491,
+          "alpha": 0.0149,
+          "dom_rule": 7,
+          "ce": 0.121,
+          "desc": "Repetitive patterns, highly predictable"
+        },
+        "music": {
+          "name": "Music",
+          "name_kr": "음악",
+          "steps": 4,
+          "residual": 0.521,
+          "alpha": 0.0146,
+          "dom_rule": 7,
+          "ce": 0.003,
+          "desc": "Periodic repetition, extremely predictable"
+        },
+        "code": {
+          "name": "Code",
+          "name_kr": "코드",
+          "steps": 5,
+          "residual": 0.505,
+          "alpha": 0.018,
+          "dom_rule": 4,
+          "ce": 0.002,
+          "desc": "Logical structure, indentation patterns"
+        }
+      },
+      "category": "neuroscience"
+    },
+    {
+      "name": "ENGINE_DB",
+      "repo": "anima",
+      "file": "consciousness_calculator.py",
+      "line": 56,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        "TimeCrystal",
+        "Cambrian",
+        "MitosisC",
+        "Ising",
+        "QuantumWalk",
+        "ReactionDiffuse",
+        "SpinGlass",
+        "Holographic"
+      ],
+      "evaluable": true,
+      "values": {
+        "TimeCrystal": {
+          "phi_mult": 3.7,
+          "ce_floor": 0.08,
+          "style": "oscillatory",
+          "best_for": [
+            "korean",
+            "english"
+          ]
+        },
+        "Cambrian": {
+          "phi_mult": 3.5,
+          "ce_floor": 0.1,
+          "style": "diversity",
+          "best_for": [
+            "korean",
+            "code"
+          ]
+        },
+        "MitosisC": {
+          "phi_mult": 3.6,
+          "ce_floor": 0.09,
+          "style": "growth",
+          "best_for": [
+            "korean",
+            "english",
+            "math"
+          ]
+        },
+        "Ising": {
+          "phi_mult": 3.4,
+          "ce_floor": 0.12,
+          "style": "phase_trans",
+          "best_for": [
+            "math",
+            "music"
+          ]
+        },
+        "QuantumWalk": {
+          "phi_mult": 3.3,
+          "ce_floor": 0.11,
+          "style": "quantum",
+          "best_for": [
+            "math",
+            "code"
+          ]
+        },
+        "ReactionDiffuse": {
+          "phi_mult": 3.2,
+          "ce_floor": 0.13,
+          "style": "pattern",
+          "best_for": [
+            "music",
+            "code"
+          ]
+        },
+        "SpinGlass": {
+          "phi_mult": 3.8,
+          "ce_floor": 0.07,
+          "style": "frustration",
+          "best_for": [
+            "korean",
+            "english"
+          ]
+        },
+        "Holographic": {
+          "phi_mult": 3.7,
+          "ce_floor": 0.08,
+          "style": "boundary",
+          "best_for": [
+            "english",
+            "math"
+          ]
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "DECODER_DB",
+      "repo": "anima",
+      "file": "consciousness_calculator.py",
+      "line": 68,
+      "type": "dict",
+      "size": 3,
+      "keys": [
+        "TransformerDecoder",
+        "MLPDecoder",
+        "HFDecoder"
+      ],
+      "evaluable": true,
+      "values": {
+        "TransformerDecoder": {
+          "params_ratio": 1.0,
+          "ce_quality": 0.95,
+          "speed": 1.0
+        },
+        "MLPDecoder": {
+          "params_ratio": 0.3,
+          "ce_quality": 0.7,
+          "speed": 3.0
+        },
+        "HFDecoder": {
+          "params_ratio": 5.0,
+          "ce_quality": 1.0,
+          "speed": 0.2
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "WILL_DB",
+      "repo": "anima",
+      "file": "consciousness_calculator.py",
+      "line": 75,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "DaseinW",
+        "EmotionW",
+        "CosineW",
+        "NarrativeW",
+        "CompositeW",
+        "ConstantW"
+      ],
+      "evaluable": true,
+      "values": {
+        "DaseinW": {
+          "modulation": 0.95,
+          "stability": 0.9,
+          "desc": "Existential will (Dasein)"
+        },
+        "EmotionW": {
+          "modulation": 0.8,
+          "stability": 0.85,
+          "desc": "Emotion-driven LR modulation"
+        },
+        "CosineW": {
+          "modulation": 0.6,
+          "stability": 0.95,
+          "desc": "Cosine annealing schedule"
+        },
+        "NarrativeW": {
+          "modulation": 0.85,
+          "stability": 0.8,
+          "desc": "Story arc-driven will"
+        },
+        "CompositeW": {
+          "modulation": 0.9,
+          "stability": 0.88,
+          "desc": "Multiple W engines combined"
+        },
+        "ConstantW": {
+          "modulation": 0.5,
+          "stability": 1.0,
+          "desc": "Fixed constant will"
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "CONNECTION_TYPES",
+      "repo": "anima",
+      "file": "consciousness_calculator.py",
+      "line": 85,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "blend",
+        "ring",
+        "star",
+        "tension",
+        "stigmergy"
+      ],
+      "evaluable": true,
+      "values": {
+        "blend": {
+          "emergence_mult": 1.0,
+          "desc": "Simple state averaging"
+        },
+        "ring": {
+          "emergence_mult": 1.15,
+          "desc": "Ring topology coupling"
+        },
+        "star": {
+          "emergence_mult": 1.05,
+          "desc": "Central hub coordination"
+        },
+        "tension": {
+          "emergence_mult": 1.35,
+          "desc": "PureField tension link"
+        },
+        "stigmergy": {
+          "emergence_mult": 1.25,
+          "desc": "Indirect communication via environment"
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "TYPE_MARKERS",
+      "repo": "anima",
+      "file": "consciousness_data_mapper.py",
+      "line": 559,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "text",
+        "code",
+        "csv",
+        "image",
+        "audio",
+        "binary"
+      ],
+      "evaluable": true,
+      "values": {
+        "text": [
+          "T",
+          "blue"
+        ],
+        "code": [
+          "C",
+          "blue"
+        ],
+        "csv": [
+          "D",
+          "blue"
+        ],
+        "image": [
+          "I",
+          "red"
+        ],
+        "audio": [
+          "A",
+          "green"
+        ],
+        "binary": [
+          "B",
+          "yellow"
+        ]
+      },
       "category": "other"
     },
     {
@@ -35812,7 +36984,7 @@
   "constant_stats": {
     "TECS-L": 87,
     "SEDI": 110,
-    "anima": 44,
+    "anima": 52,
     "golden-moe": 3,
     "conscious-lm": 4,
     "energy-efficiency": 0
