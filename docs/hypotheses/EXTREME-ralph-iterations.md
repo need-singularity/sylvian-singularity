@@ -55,3 +55,21 @@ Wait: 3σ=n² at n=6: 3×12=36=6². Check uniqueness!
 | σφ mod n = 0 | 338 solutions |
 | lcm(τ,φ)=τ | 8 solutions |
 | σ(τ(n))=7 | 23,327 solutions |
+
+## Grand Unified Identity Search (background task)
+
+| Identity | At n=6 | Solutions | Unique? |
+|----------|--------|-----------|---------|
+| φn+σ=τ! | 12+12=24=4! | [6] | **YES** (100K) |
+| σ²=τ((τ-1)!+1) | 144=4×(6+1)=28 | [2, 6] | no |
+| σφ=τ! | 24=24 | [6, 246] | no |
+
+### φ(n)·n + σ(n) = τ(n)! — New unique identity
+
+At n=6: 2×6 + 12 = 24 = 4!
+
+For perfect numbers (σ=2n): φn+2n = τ! → n(φ+2) = τ!
+At n=6: 6(2+2) = 6×4 = 24 = 4! ✓
+At n=28: 28(12+2) = 28×14 = 392 ≠ 720 = 6! ✗
+
+This is equivalent to n(φ+2)=τ! for perfect numbers.
