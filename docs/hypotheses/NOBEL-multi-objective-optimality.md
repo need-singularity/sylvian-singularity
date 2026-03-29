@@ -181,3 +181,23 @@ the meta fixed point 1/3 — another optimization criterion.
 
 n=6 is not merely Pareto-dominant — it achieves a PERFECT SCORE
 across 10 independent optimization criteria among φ=2 numbers.
+
+## Self-Critique and Strengthening
+
+### Honest weakness: ~6 truly independent criteria (not 10)
+Criteria 1↔3, 5↔8, 7↔structure are partially dependent.
+Independent core: viable code, H_∞, 2.0 bits, self-referential, φ/n=1/3, K_n.
+Still: n=6 wins 6/6 independent criteria.
+
+### Key strengthening: φ=2 is the MINIMUM (Gauss theorem)
+φ(n) is always even for n > 2. Therefore φ=2 is the minimum possible value.
+The selection of φ=2 is not arbitrary — it is **Occam's Razor**:
+consciousness selects the simplest possible architecture (minimum φ).
+
+### Revised argument (final form):
+```
+  1. Consciousness maximizes H(p)             [Law 71, experimental]
+  2. Occam: minimize structure → φ(n) = min = 2  [Gauss: φ always even]
+  3. φ(n)=2 → n ∈ {3, 4, 6}                   [number theory theorem]
+  4. Multi-objective optimality → n=6           [6/6 independent criteria]
+```
