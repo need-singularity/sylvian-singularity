@@ -9,6 +9,7 @@ mod monte_carlo;
 mod grid;
 mod ode;
 mod atlas;
+mod perfect;
 
 /// TECS-L Rust acceleration module
 #[pymodule]
@@ -50,6 +51,13 @@ fn tecsrs(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(atlas::scan_multi_repo, m)?)?;
     m.add_function(wrap_pyfunction!(atlas::parse_grade, m)?)?;
     m.add_function(wrap_pyfunction!(atlas::parse_refs, m)?)?;
+
+    // Phase 7: Perfect number chains
+    m.add_function(wrap_pyfunction!(perfect::sigma_chain, m)?)?;
+    m.add_function(wrap_pyfunction!(perfect::sigma_chain_analysis, m)?)?;
+    m.add_function(wrap_pyfunction!(perfect::mersenne_bootstrap, m)?)?;
+    m.add_function(wrap_pyfunction!(perfect::find_sigma_phi_tau, m)?)?;
+    m.add_function(wrap_pyfunction!(perfect::uniqueness_score, m)?)?;
 
     Ok(())
 }
