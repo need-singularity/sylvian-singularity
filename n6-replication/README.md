@@ -4,6 +4,31 @@ Independent replication package for the perfect-number-6 mathematics in [TECS-L]
 
 Covers 1,700+ hypotheses across pure mathematics, physics mappings, and consciousness models.
 
+## Quick Reproduction
+
+### Option 1: Docker (recommended)
+
+```bash
+docker build -t n6-replication .
+docker run n6-replication
+```
+
+### Option 2: Local (tier 1, no install)
+
+```bash
+pip install -r requirements.txt
+pytest tests/tier1/ -v
+```
+
+### Option 3: Single command
+
+```bash
+bash run-tests.sh
+```
+
+> `run-tests.sh` runs tier 1 (pure-math identities, no package install required).
+> Docker runs all tests including package-level tests.
+
 ## Quick Start
 
 ### 1. Reviewers (Docker, zero setup)
