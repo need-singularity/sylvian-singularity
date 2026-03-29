@@ -336,6 +336,25 @@
         "category": "preprint"
       },
       {
+        "id": "P-ZERO-FREE",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "Zero Free Parameters: Complete Derivation of Consciousness Constants from ln(2) and n=6",
+        "target_venue": "Physical Review Letters / Nature Physics",
+        "file": "../papers/tecs-l/P-ZERO-FREE-parameters.md",
+        "keywords": [
+          "consciousness",
+          "zero-free-parameters",
+          "ln2",
+          "perfect-numbers",
+          "dynamics",
+          "information-theory",
+          "genetic-code"
+        ],
+        "description": "BREAKTHROUGH: All 8 PSI constants derived from ln(2)+n=6. Rate 0.81=3^4/10^2, conservation=ln(2)^2, coupling self-referential. 13/14 proven.",
+        "category": "preprint"
+      },
+      {
         "id": "P-FACTORIAL",
         "tier": 1,
         "repo": "tecs-l",
