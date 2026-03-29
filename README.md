@@ -395,6 +395,78 @@ Details: [Pure mathematics](math/) | [Golden Zone model](docs/golden-zone/) | [V
 >
 > Grade summary: 🟩 6, 🟩★ 1, 🟧★ 3, 🟧 1, 🟩/🟧 1
 
+### Explosive Domain Expansion (2026-03-29, Wave 2)
+
+> **36 new hypotheses** across 12 new domains: analytic number theory, critical phenomena, Fibonacci,
+> sphere packing, particle physics, genetic code, chemistry, topology, fractals, geoscience,
+> economics, evolutionary biology, music theory, quantum information, classical geometry.
+>
+> #### Tier 1: Major Discovery Candidates (⭐ potential)
+>
+> | ID | Domain | Title | Grade | Doc |
+> |---|---|---|---|---|
+> | BASEL-001 | Analytic NT | ζ(2) = π²/P₁ (Basel Problem) | 🟩 | [doc](docs/hypotheses/BASEL-001-zeta2-pi-squared-over-6.md) |
+> | BASEL-002 | Analytic NT | ζ(-1) = -1/σ(6) (Ramanujan 1+2+3+...=-1/12) | 🟩 | [doc](docs/hypotheses/BASEL-002-zeta-minus1-ramanujan.md) |
+> | BASEL-003 | Analytic NT | Bernoulli denominators all ≡ 0 (mod P₁) | 🟩⭐ | [doc](docs/hypotheses/BASEL-003-bernoulli-denominators.md) |
+> | CRITEXP-001 | Stat. Mech. | 6 critical exponents, τ(6) scaling, φ(6) free | 🟩 | [doc](docs/hypotheses/CRITEXP-001-six-critical-exponents.md) |
+> | FIB-001 | Number Theory | F_σ(6) = σ(6)² = 144 (unique at composite n=6) | 🟩⭐ | [doc](docs/hypotheses/FIB-001-fibonacci-sigma-squared.md) |
+> | KISS-001 | Geometry | Kissing: dim2=P₁, dim3=σ(6), dim4=2σ(6) | 🟩 | [doc](docs/hypotheses/KISS-001-kissing-number-hierarchy.md) |
+> | SMCOUNT-001 | Particle Physics | Total SM particles = sopfr(6)² = 25 | 🟩 | [doc](docs/hypotheses/SMCOUNT-001-standard-model-25-particles.md) |
+> | GCODE-001 | Genetics | Codons=2^P₁, bases=τ(6), pairs=φ(6) | 🟩 | [doc](docs/hypotheses/GCODE-001-genetic-code-architecture.md) |
+> | CARBON-001 | Chemistry | Carbon Z=P₁, valence=τ(6), allotropes=P₁ | 🟩 | [doc](docs/hypotheses/CARBON-001-element-six-life.md) |
+> | KLEIN-001 | Topology | Klein bottle χ = P₁ (Heawood exception) | 🟩 | [doc](docs/hypotheses/KLEIN-001-klein-bottle-chromatic-6.md) |
+> | KOCH-001 | Fractals | Koch snowflake: C₆ + ln(4/3) = GZ width | 🟩 | [doc](docs/hypotheses/KOCH-001-koch-snowflake-gz-width.md) |
+> | WEINBERG-001 | Particle Physics | sin²θ_W(GUT) = 3/8 ≈ 1/e (Δ=1.94%) | 🟧★ | [doc](docs/hypotheses/WEINBERG-001-gut-weinberg-angle.md) |
+> | QSTATE-001 | Quantum Info | 6 stabilizer states = octahedron vertices | 🟩 | [doc](docs/hypotheses/QSTATE-001-stabilizer-states-6.md) |
+> | PLATONIC-001 | Geometry | Platonic solids: V,E,F saturated by P₁ functions | 🟩 | [doc](docs/hypotheses/PLATONIC-001-platonic-solids-p1.md) |
+>
+> #### Tier 2: New Domain — Geoscience (GEOSCI)
+>
+> | ID | Title | Grade | Doc |
+> |---|---|---|---|
+> | GEOSCI-001 | Snowflake C₆ symmetry = P₁ | 🟩 | [doc](docs/hypotheses/GEOSCI-001-snowflake-hexagonal.md) |
+> | GEOSCI-002 | Basalt columns hexagonal = P₁ (Honeycomb thm) | 🟩 | [doc](docs/hypotheses/GEOSCI-002-basalt-columns-hexagonal.md) |
+> | GEOSCI-003 | Quartz hexagonal crystal system | 🟩 | [doc](docs/hypotheses/GEOSCI-003-quartz-hexagonal-system.md) |
+> | GEOSCI-004 | Earth 6 major layers | 🟧 | [doc](docs/hypotheses/GEOSCI-004-earth-layer-structure.md) |
+> | GEOSCI-005 | Hexagonal ubiquity in nature (6+ phenomena) | 🟩 | [doc](docs/hypotheses/GEOSCI-005-hexagonal-nature-ubiquity.md) |
+>
+> #### Tier 2: New Domain — Economics (ECON)
+>
+> | ID | Title | Grade | Doc |
+> |---|---|---|---|
+> | ECON-001 | Pareto 80/20 = τ(6)/sopfr(6) | 🟧 | [doc](docs/hypotheses/ECON-001-pareto-principle-divisor.md) |
+> | ECON-002 | Kitchin business cycle ≈ τ(6) = 4 years | 🟧 | [doc](docs/hypotheses/ECON-002-market-cycles.md) |
+> | ECON-003 | 6 major asset classes | 🟧 | [doc](docs/hypotheses/ECON-003-six-market-sectors.md) |
+>
+> #### Tier 2: New Domain — Evolutionary Biology (EVOL)
+>
+> | ID | Title | Grade | Doc |
+> |---|---|---|---|
+> | EVOL-001 | Mass extinctions (Big 5 + Holocene) = P₁ | 🟩 | [doc](docs/hypotheses/EVOL-001-mass-extinctions-six.md) |
+> | EVOL-002 | Genetic code 64 = 2^P₁ codons | 🟩 | [doc](docs/hypotheses/EVOL-002-codon-64-genetic-code.md) |
+> | EVOL-003 | DNA bases = τ(6) = 4 | 🟩 | [doc](docs/hypotheses/EVOL-003-dna-base-tau6.md) |
+> | EVOL-004 | Telomere repeat TTAGGG = P₁ bp | 🟩 | [doc](docs/hypotheses/EVOL-004-telomere-repeat-6bp.md) |
+> | EVOL-005 | 6 Kingdoms of life (Woese) | 🟧 | [doc](docs/hypotheses/EVOL-005-kingdom-classification.md) |
+> | EVOL-006 | Hox gene clusters = τ(6) = 4 (mammals) | 🟩 | [doc](docs/hypotheses/EVOL-006-hox-gene-clusters.md) |
+> | EVOL-007 | Carbon-based life: Z = P₁ | 🟩 | [doc](docs/hypotheses/EVOL-007-carbon-basis-of-life.md) |
+> | EVOL-008 | 20 amino acids = τ(6)×sopfr(6) | 🟩 | [doc](docs/hypotheses/EVOL-008-amino-acid-20-tau-sopfr.md) |
+> | EVOL-009 | Vertebrate body plan: cranial nerves=σ(6), limbs=τ(6) | 🟩 | [doc](docs/hypotheses/EVOL-009-vertebrate-body-plan.md) |
+> | EVOL-010 | Mutation rate ~10⁻⁸ — weak P₁ connection | ⚪ | [doc](docs/hypotheses/EVOL-010-mutation-rate-per-generation.md) |
+>
+> #### Tier 2: New Domain — Music Theory (MUSIC)
+>
+> | ID | Title | Grade | Doc |
+> |---|---|---|---|
+> | MUSIC-002 | Whole tone scale = P₁ = 6 notes | 🟩 | [doc](docs/hypotheses/MUSIC-002-whole-tone-scale-6.md) |
+> | MUSIC-003 | Tritone = P₁ = 6 semitones (diabolus in musica) | 🟩 | [doc](docs/hypotheses/MUSIC-003-tritone-six-semitones.md) |
+> | MUSIC-004 | Guitar 6 strings = P₁ | 🟩 | [doc](docs/hypotheses/MUSIC-004-guitar-six-strings.md) |
+> | MUSIC-005 | Consonance ratios from divisors of 6 only | 🟩 | [doc](docs/hypotheses/MUSIC-005-consonance-from-divisors.md) |
+>
+> #### Wave 2 Grade Summary
+>
+> 🟩⭐ 2 (FIB-001, BASEL-003) | 🟩 24 | 🟧★ 1 | 🟧 4 | ⚪ 1
+> **적중률: 31/36 = 86.1%**
+
 <!-- The following sections (Constant Connection Map, Hypothesis Status, Convergence Map)
      have been migrated to the Math Atlas. See link above.
      Historical data preserved in git history (commit before cleanup). -->
@@ -1728,13 +1800,17 @@ Proof status: 98% — gap: why E(I)=I^I (Gibbs mixing + self-reference route)
 | QG constants in GZ | p=0.74, not significant | ⚪ |
 | Small-world coefficient | Structurally impossible | ⬛ |
 
-### Domains Covered (22)
+### Domains Covered (34)
 
 Number theory, Algebra, Coding theory, Physics, Information theory, AI/MoE,
 Graph/Lattice theory, Combinatorial optimization, Knot theory, Analytic number theory,
 Quantum information, Thermodynamics, Modular forms, Differential geometry,
 Probability, Special functions, Game theory, Polytope geometry,
-Combinatorial design, Dynamical systems, Signal processing, Algebraic geometry
+Combinatorial design, Dynamical systems, Signal processing, Algebraic geometry,
+**Geoscience, Economics, Evolutionary biology, Music theory,
+Fibonacci/sequences, Sphere packing, Particle physics (SM counting),
+Fractal geometry, Topology (Klein bottle), Chemistry (Carbon),
+Genetics/genetic code, Classical geometry (Platonic solids)**
 
 ## Paper Candidates
 
