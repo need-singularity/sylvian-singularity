@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-29T20:36:09",
+  "generated": "2026-03-29T20:56:44",
   "stats": {
-    "TECS-L": 1661,
+    "TECS-L": 1811,
     "SEDI": 666,
     "anima": 20,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2189,
+  "total": 2339,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3599,6 +3599,506 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/CARBON-001-element-six-life.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-001-main-clefs-tau",
+      "title": "CLEFNOTE-001: 주요 음자리표 = τ(6) = 4",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-001-main-clefs-tau.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-002-c-clef-positions-sopfr",
+      "title": "CLEFNOTE-002: C 음자리표 위치 = sopfr(6) = 5",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-002-c-clef-positions-sopfr.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-003-total-clef-system-P1",
+      "title": "CLEFNOTE-003: 전체 음자리표 체계 = P₁ = 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-003-total-clef-system-P1.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-004-staff-lines-sopfr",
+      "title": "CLEFNOTE-004: 오선 = sopfr(6) = 5",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-004-staff-lines-sopfr.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-005-staff-spaces-tau",
+      "title": "CLEFNOTE-005: 오선 칸 수 = τ(6) = 4",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-005-staff-spaces-tau.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-006-grand-staff-phi",
+      "title": "CLEFNOTE-006: 큰보표(Grand Staff) = φ(6) = 2개 보표",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-006-grand-staff-phi.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-007-note-duration-6-levels",
+      "title": "CLEFNOTE-007: 표준 음표 시가 = P₁ = 6단계",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-007-note-duration-6-levels.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-008-full-duration-hierarchy-sigma",
+      "title": "CLEFNOTE-008: 전체 음표 시가 체계 = σ(6) = 12단계",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-008-full-duration-hierarchy-sigma.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-009-pitch-class-Z12",
+      "title": "CLEFNOTE-009: 음고류 군 Z₁₂ = Z_σ(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-009-pitch-class-Z12.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-010-Z12-subgroups-P1",
+      "title": "CLEFNOTE-010: Z₁₂ 부분군 = P₁ = 6개",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-010-Z12-subgroups-P1.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-011-phi12-generators-tau",
+      "title": "CLEFNOTE-011: φ(12) 생성원 = τ(6) = 4",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-011-phi12-generators-tau.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-012-structural-intervals-P1",
+      "title": "CLEFNOTE-012: 구조적 음정 = P₁ = 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-012-structural-intervals-P1.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-013-enharmonic-pairs-sopfr",
+      "title": "CLEFNOTE-013: 이명동음 쌍 = sopfr(6) = 5",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-013-enharmonic-pairs-sopfr.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-014-key-signatures-2sigma",
+      "title": "CLEFNOTE-014: 조표 = 2σ(6) = 24개 조",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-014-key-signatures-2sigma.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-015-cents-per-octave-100sigma",
+      "title": "CLEFNOTE-015: 옥타브 센트 = 100 × σ(6) = 1200",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-015-cents-per-octave-100sigma.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-016-frequency-formula-sigma",
+      "title": "CLEFNOTE-016: 주파수 공식 = 2^(n/σ(6))",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-016-frequency-formula-sigma.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-017-clef-transposition-map",
+      "title": "CLEFNOTE-017: 음자리표 변환 = 음고 전단사 함수",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-017-clef-transposition-map.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-018-dotted-note-ratio",
+      "title": "CLEFNOTE-018: 점음표 비율 = 3:2 = 6의 약수",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-018-dotted-note-ratio.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-019-rest-duration-P1",
+      "title": "CLEFNOTE-019: 표준 쉼표 = P₁ = 6종류",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-019-rest-duration-P1.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-020-accidentals-sopfr",
+      "title": "CLEFNOTE-020: 변화표(임시표) = sopfr(6) = 5",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-020-accidentals-sopfr.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-021-rhythm-pitch-duality",
+      "title": "CLEFNOTE-021: 리듬-음고 이중성",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-021-rhythm-pitch-duality.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-022-note-head-shapes",
+      "title": "CLEFNOTE-022: 음표 머리 형태 = τ(6) = 4",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-022-note-head-shapes.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-023-ledger-lines-extension",
+      "title": "CLEFNOTE-023: 덧줄(Ledger Lines) = φ(6) 대칭",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-023-ledger-lines-extension.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-024-time-sig-numerators",
+      "title": "CLEFNOTE-024: 박자표 분자 ⊂ div(6) 함수값",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-024-time-sig-numerators.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-025-note-flag-progression",
+      "title": "CLEFNOTE-025: 음표 깃발 수 = {0, 1, 2, 3}",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-025-note-flag-progression.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-026-beam-groups-div6",
+      "title": "CLEFNOTE-026: Beaming Groups Use div(6) Values",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-026-beam-groups-div6.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-027-tuplet-ratios-div6",
+      "title": "CLEFNOTE-027: Tuplet Ratios from div(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-027-tuplet-ratios-div6.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-028-measure-subdivision-binary",
+      "title": "CLEFNOTE-028: Measure Subdivision = Binary (φ(6)=2 base)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-028-measure-subdivision-binary.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-029-tie-extends-phi",
+      "title": "CLEFNOTE-029: Tie Notation = Duration Extension by Addition",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-029-tie-extends-phi.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-030-fermata-indefinite",
+      "title": "CLEFNOTE-030: Fermata = Indefinite Duration Extension",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-030-fermata-indefinite.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-031-repeat-signs-phi",
+      "title": "CLEFNOTE-031: Repeat Signs = φ(6) = 2 Boundaries",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-031-repeat-signs-phi.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-032-octave-register-naming",
+      "title": "CLEFNOTE-032: Octave Register = σ(6) Pitch Classes per Register",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-032-octave-register-naming.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-033-middle-c-symmetry",
+      "title": "CLEFNOTE-033: Middle C = Grand Staff Symmetry Center",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-033-middle-c-symmetry.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-034-sharp-flat-duality",
+      "title": "CLEFNOTE-034: Sharp/Flat Duality = φ(6) = 2",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-034-sharp-flat-duality.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-035-natural-sign-identity",
+      "title": "CLEFNOTE-035: Natural Sign = Identity Element",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-035-natural-sign-identity.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-036-key-sig-sharps-sequence",
+      "title": "CLEFNOTE-036: Sharp Key Sequence: FCGDAEB (7 = P₁+1)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-036-key-sig-sharps-sequence.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-037-key-sig-flats-sequence",
+      "title": "CLEFNOTE-037: Flat Key Sequence: BEADGCF (7 = P₁+1)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-037-key-sig-flats-sequence.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-038-double-bar-types",
+      "title": "CLEFNOTE-038: Double Bar Types = τ(6) = 4",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-038-double-bar-types.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-039-dynamic-markings-P1",
+      "title": "CLEFNOTE-039: Dynamic Markings = P₁ = 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-039-dynamic-markings-P1.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-040-articulation-marks",
+      "title": "CLEFNOTE-040: Basic Articulation Marks = P₁ = 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-040-articulation-marks.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-041-ornament-types",
+      "title": "CLEFNOTE-041: Ornament Types = P₁ = 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-041-ornament-types.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-042-note-stem-direction-phi",
+      "title": "CLEFNOTE-042: Stem Direction = φ(6) = 2",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-042-note-stem-direction-phi.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-043-clef-change-continuity",
+      "title": "CLEFNOTE-043: Clef Change Preserves Pitch Continuity",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-043-clef-change-continuity.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-044-octave-lines-8va-15ma",
+      "title": "CLEFNOTE-044: Octave Lines: 8va and 15ma",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-044-octave-lines-8va-15ma.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-045-rehearsal-marks-sequence",
+      "title": "CLEFNOTE-045: Rehearsal Marks = Sequential Labels",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-045-rehearsal-marks-sequence.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-046-coda-segno-dal-signs",
+      "title": "CLEFNOTE-046: Navigation Signs: D.C., D.S., Coda = 3 = P₁/2",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-046-coda-segno-dal-signs.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-047-harmonic-notation-diamond",
+      "title": "CLEFNOTE-047: Harmonic Notation = Diamond Head",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-047-harmonic-notation-diamond.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-048-grace-note-types-phi",
+      "title": "CLEFNOTE-048: Grace Note Types = φ(6) = 2",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-048-grace-note-types-phi.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-049-tremolo-strokes",
+      "title": "CLEFNOTE-049: Tremolo Stroke Count = {1,2,3} ⊂ div(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-049-tremolo-strokes.md"
+    },
+    {
+      "id": "TECS-L:CLEFNOTE-050-clef-octave-variants",
+      "title": "CLEFNOTE-050: Clef Octave Variants (8/15) = φ(6) modifiers",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLEFNOTE-050-clef-octave-variants.md"
     },
     {
       "id": "TECS-L:CONDMAT-001-quantum-hall-fractions",
@@ -13414,6 +13914,1006 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/MUSIC-105-concert-pitch-A440.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-001-pitch-circle-S1-sigma6",
+      "title": "MUSICIRCLE-001: 음고류 원 S¹ — σ(6)=12 점",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-001-pitch-circle-S1-sigma6.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-002-circle-of-fifths-generator",
+      "title": "MUSICIRCLE-002: 5도권 = Z_σ(6) 순환, 생성원 7",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-002-circle-of-fifths-generator.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-003-circle-of-fourths-sopfr",
+      "title": "MUSICIRCLE-003: 4도권 = sopfr(6)=5 생성원",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-003-circle-of-fourths-sopfr.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-004-adjacent-keys-P1-common",
+      "title": "MUSICIRCLE-004: 인접 조의 공통음 = P₁ = 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-004-adjacent-keys-P1-common.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-005-tonnetz-torus-phi6-circles",
+      "title": "MUSICIRCLE-005: Tonnetz = 토러스 T² = φ(6)개 원의 곱",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-005-tonnetz-torus-phi6-circles.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-006-hexatonic-cycles-tau6",
+      "title": "MUSICIRCLE-006: 헥사토닉 순환 = τ(6) = 4개",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-006-hexatonic-cycles-tau6.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-007-octatonic-collections-P1half",
+      "title": "MUSICIRCLE-007: 옥타토닉 컬렉션 = P₁/2 = 3개",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-007-octatonic-collections-P1half.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-008-PLR-neo-riemannian-P1half",
+      "title": "MUSICIRCLE-008: Neo-Riemannian P,L,R = P₁/2 = 3 연산",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-008-PLR-neo-riemannian-P1half.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-009-whole-tone-circle-P1-notes",
+      "title": "MUSICIRCLE-009: 온음 원 = P₁ = 6 음",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-009-whole-tone-circle-P1-notes.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-010-augmented-triad-circle",
+      "title": "MUSICIRCLE-010: 증3화음 원 = τ(6)=4개",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-010-augmented-triad-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-011-diminished-seventh-circle",
+      "title": "MUSICIRCLE-011: 감7화음 원 = P₁/2=3개",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-011-diminished-seventh-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-012-tritone-pair-circle",
+      "title": "MUSICIRCLE-012: 트라이톤 쌍 = P₁ = 6쌍",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-012-tritone-pair-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-013-diatonic-circle-7gon",
+      "title": "MUSICIRCLE-013: Diatonic Set = (P₁+1)-gon on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-013-diatonic-circle-7gon.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-014-pentatonic-circle-sopfr-gon",
+      "title": "MUSICIRCLE-014: Pentatonic = sopfr(6)-gon on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-014-pentatonic-circle-sopfr-gon.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-015-chromatic-circle-complete-S1",
+      "title": "MUSICIRCLE-015: Chromatic Scale = Complete S¹ = σ(6) Points",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-015-chromatic-circle-complete-S1.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-016-blues-hexatonic-P1-gon",
+      "title": "MUSICIRCLE-016: Blues Scale = P₁-gon on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-016-blues-hexatonic-P1-gon.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-017-pitch-helix-covering-space",
+      "title": "MUSICIRCLE-017: Pitch Helix = Universal Cover of S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-017-pitch-helix-covering-space.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-018-modulation-as-rotation",
+      "title": "MUSICIRCLE-018: Modulation = Rotation on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-018-modulation-as-rotation.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-019-enharmonic-as-identity",
+      "title": "MUSICIRCLE-019: Enharmonic = Identity on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-019-enharmonic-as-identity.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-020-interval-class-as-distance",
+      "title": "MUSICIRCLE-020: Interval Class = Geodesic Distance on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-020-interval-class-as-distance.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-021-rhythm-circle-time-sigma6",
+      "title": "MUSICIRCLE-021: Rhythm Circle: 12/8 = σ(6) Pulses on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-021-rhythm-circle-time-sigma6.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-022-6-8-time-P1-circle",
+      "title": "MUSICIRCLE-022: 6/8 Time = P₁ Pulses on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-022-6-8-time-P1-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-023-clave-rhythm-circle",
+      "title": "MUSICIRCLE-023: Clave Patterns on Z_σ(6) Circle",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-023-clave-rhythm-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-024-euclidean-rhythm-P1",
+      "title": "MUSICIRCLE-024: Euclidean Rhythm E(k,n): k in div(6) Functions",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-024-euclidean-rhythm-P1.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-025-beat-circle-4-4-tau",
+      "title": "MUSICIRCLE-025: 4/4 Time = τ(6) Beats on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-025-beat-circle-4-4-tau.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-026-waltz-circle-P1half",
+      "title": "MUSICIRCLE-026: 3/4 Waltz = P₁/2 Beats on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-026-waltz-circle-P1half.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-027-compound-duple-phi",
+      "title": "MUSICIRCLE-027: Compound Duple: 2=φ(6) Groups of 3=P₁/2",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-027-compound-duple-phi.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-028-polyrhythm-circle-product",
+      "title": "MUSICIRCLE-028: Polyrhythm = Product of Circles",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-028-polyrhythm-circle-product.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-029-hemiola-circle-switch",
+      "title": "MUSICIRCLE-029: Hemiola = Circle Partition Switch (2↔3)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-029-hemiola-circle-switch.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-030-rhythmic-necklace-count",
+      "title": "MUSICIRCLE-030: Rhythmic Necklaces on Z₁₂ = Burnside Count",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-030-rhythmic-necklace-count.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-031-additive-rhythm-circle",
+      "title": "MUSICIRCLE-031: Additive Rhythms: Partitions of P₁",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-031-additive-rhythm-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-032-swing-ratio-golden",
+      "title": "MUSICIRCLE-032: Swing Ratio ≈ 2:1 to 3:1 (φ(6) to P₁/2)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-032-swing-ratio-golden.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-033-rhythmic-canon-tiling",
+      "title": "MUSICIRCLE-033: Rhythmic Canon = Tiling of Z_σ(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-033-rhythmic-canon-tiling.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-034-metric-modulation-cover",
+      "title": "MUSICIRCLE-034: Metric Modulation = Covering Map on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-034-metric-modulation-cover.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-035-tempo-circle-log",
+      "title": "MUSICIRCLE-035: Tempo Relations as Logarithmic Circle",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-035-tempo-circle-log.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-036-S1-quotient-pitch-rhythm",
+      "title": "MUSICIRCLE-036: Pitch S¹ and Rhythm S¹: Dual Circles",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-036-S1-quotient-pitch-rhythm.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-037-winding-number-octave",
+      "title": "MUSICIRCLE-037: Winding Number = Octave Count",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-037-winding-number-octave.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-038-circular-statistics-pitch",
+      "title": "MUSICIRCLE-038: Circular Statistics on Pitch S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-038-circular-statistics-pitch.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-039-fourier-on-circle",
+      "title": "MUSICIRCLE-039: Fourier Analysis on Z_σ(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-039-fourier-on-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-040-intervallic-content-on-S1",
+      "title": "MUSICIRCLE-040: Interval Vector = Distance Histogram on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-040-intervallic-content-on-S1.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-041-all-interval-tetrachord",
+      "title": "MUSICIRCLE-041: All-Interval Tetrachord in Z₁₂",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-041-all-interval-tetrachord.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-042-maximal-evenness-circle",
+      "title": "MUSICIRCLE-042: Maximally Even Sets on S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-042-maximal-evenness-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-043-z-relation-on-circle",
+      "title": "MUSICIRCLE-043: Z-Relation: Same iv on S¹, Different Sets",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-043-z-relation-on-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-044-pitch-class-complement",
+      "title": "MUSICIRCLE-044: Complement on S¹: |A| + |Ā| = σ(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-044-pitch-class-complement.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-045-hexachord-self-complement",
+      "title": "MUSICIRCLE-045: Self-Complementary Hexachord: |A| = P₁",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-045-hexachord-self-complement.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-046-circle-embeds-in-tonnetz",
+      "title": "MUSICIRCLE-046: S¹ → T² Embedding in Tonnetz",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-046-circle-embeds-in-tonnetz.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-047-musical-orbifold",
+      "title": "MUSICIRCLE-047: Chord Space Orbifold = T^n / S_n",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-047-musical-orbifold.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-048-circle-bundle-over-rhythm",
+      "title": "MUSICIRCLE-048: Music as Circle Bundle: S¹ → E → S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-048-circle-bundle-over-rhythm.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-049-voice-leading-circle",
+      "title": "MUSICIRCLE-049: Voice Leading = Path on S¹ (Minimal Motion)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-049-voice-leading-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICIRCLE-050-musical-fiber-circle",
+      "title": "MUSICIRCLE-050: Musical Fiber = Octave Equivalence Circle",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICIRCLE-050-musical-fiber-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-001-pitch-class-space-as-z_sigma6-circle",
+      "title": "MUSICTOPO-001: Pitch Class Space as Z_sigma(6) Circle",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-001-pitch-class-space-as-z_sigma6-circle.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-002-tonnetz-as-torus-t2---product-of-phi6-circles",
+      "title": "MUSICTOPO-002: Tonnetz as Torus T^2 = Product of phi(6) Circles",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-002-tonnetz-as-torus-t2---product-of-phi6-circles.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-003-chromatic-circle-has-sigma6---12-nodes",
+      "title": "MUSICTOPO-003: Chromatic Circle has sigma(6) = 12 Nodes",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-003-chromatic-circle-has-sigma6---12-nodes.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-004-circle-of-fifths-has-sigma6---12-nodes",
+      "title": "MUSICTOPO-004: Circle of Fifths has sigma(6) = 12 Nodes",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-004-circle-of-fifths-has-sigma6---12-nodes.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-005-pitch-helix-as-universal-cover-with-sigma6-coil-period",
+      "title": "MUSICTOPO-005: Pitch Helix as Universal Cover with sigma(6) Coil Period",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-005-pitch-helix-as-universal-cover-with-sigma6-coil-period.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-006-mobius-strip-in-voice-leading-via-contrary-motion",
+      "title": "MUSICTOPO-006: Mobius Strip in Voice Leading via Contrary Motion",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-006-mobius-strip-in-voice-leading-via-contrary-motion.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-007-neo-riemannian-operations-p1-2---3-generators",
+      "title": "MUSICTOPO-007: Neo-Riemannian Operations: P1/2 = 3 Generators",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-007-neo-riemannian-operations-p1-2---3-generators.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-008-hexatonic-systems-tau6---4-cycles",
+      "title": "MUSICTOPO-008: Hexatonic Systems: tau(6) = 4 Cycles",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-008-hexatonic-systems-tau6---4-cycles.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-009-octatonic-collections-p1-2---3-systems",
+      "title": "MUSICTOPO-009: Octatonic Collections: P1/2 = 3 Systems",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-009-octatonic-collections-p1-2---3-systems.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-010-major-minor-duality-as-z_phi6---z_2-symmetry",
+      "title": "MUSICTOPO-010: Major/Minor Duality as Z_phi(6) = Z_2 Symmetry",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-010-major-minor-duality-as-z_phi6---z_2-symmetry.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-011-transposition-group-t---z_sigma6",
+      "title": "MUSICTOPO-011: Transposition Group T = Z_sigma(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-011-transposition-group-t---z_sigma6.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-012-dihedral-group-d_12-of-order-2sigma6---24",
+      "title": "MUSICTOPO-012: Dihedral Group D_12 of Order 2*sigma(6) = 24",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-012-dihedral-group-d_12-of-order-2sigma6---24.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-013-triad-space-as-orbifold-t3-s_3",
+      "title": "MUSICTOPO-013: Triad Space as Orbifold T^3/S_3",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-013-triad-space-as-orbifold-t3-s_3.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-014-voice-leading-geometry-n-voices---n-torus",
+      "title": "MUSICTOPO-014: Voice-Leading Geometry: n Voices = n-Torus",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-014-voice-leading-geometry-n-voices---n-torus.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-015-dyad-space---mobius-strip-with-phi6-identification",
+      "title": "MUSICTOPO-015: Dyad Space = Mobius Strip with phi(6) Identification",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-015-dyad-space---mobius-strip-with-phi6-identification.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-016-trichord-space-as-orbifold-with-cone-points",
+      "title": "MUSICTOPO-016: Trichord Space as Orbifold with Cone Points",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-016-trichord-space-as-orbifold-with-cone-points.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-017-tetrachord-space-in-tau6---4-dimensions",
+      "title": "MUSICTOPO-017: Tetrachord Space in tau(6) = 4 Dimensions",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-017-tetrachord-space-in-tau6---4-dimensions.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-018-fundamental-domain-of-chord-space",
+      "title": "MUSICTOPO-018: Fundamental Domain of Chord Space",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-018-fundamental-domain-of-chord-space.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-019-smooth-voice-leading-as-short-geodesics",
+      "title": "MUSICTOPO-019: Smooth Voice Leading as Short Geodesics",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-019-smooth-voice-leading-as-short-geodesics.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-020-parallel-transport-of-chords-on-tonnetz-torus",
+      "title": "MUSICTOPO-020: Parallel Transport of Chords on Tonnetz Torus",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-020-parallel-transport-of-chords-on-tonnetz-torus.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-021-fiber-bundle-pitch-register-over-pitch-class-base",
+      "title": "MUSICTOPO-021: Fiber Bundle: Pitch Register over Pitch Class Base",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-021-fiber-bundle-pitch-register-over-pitch-class-base.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-022-euler-characteristic-of-chord-spaces",
+      "title": "MUSICTOPO-022: Euler Characteristic of Chord Spaces",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-022-euler-characteristic-of-chord-spaces.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-023-homology-of-pitch-class-set-complexes",
+      "title": "MUSICTOPO-023: Homology of Pitch-Class Set Complexes",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-023-homology-of-pitch-class-set-complexes.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-024-musical-canons-as-braids",
+      "title": "MUSICTOPO-024: Musical Canons as Braids",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-024-musical-canons-as-braids.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-025-contrapuntal-symmetries-as-group-actions-on-z_sigma6",
+      "title": "MUSICTOPO-025: Contrapuntal Symmetries as Group Actions on Z_sigma(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-025-contrapuntal-symmetries-as-group-actions-on-z_sigma6.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-026-rhythm-necklaces-on-z_sigma6",
+      "title": "MUSICTOPO-026: Rhythm Necklaces on Z_sigma(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-026-rhythm-necklaces-on-z_sigma6.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-027-rhythmic-canons-as-tilings-of-z_sigma6",
+      "title": "MUSICTOPO-027: Rhythmic Canons as Tilings of Z_sigma(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-027-rhythmic-canons-as-tilings-of-z_sigma6.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-028-euclidean-rhythms-and-equal-division-of-z_sigma6",
+      "title": "MUSICTOPO-028: Euclidean Rhythms and Equal Division of Z_sigma(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-028-euclidean-rhythms-and-equal-division-of-z_sigma6.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-029-beat-class-sets-as-subsets-of-z_sigma6",
+      "title": "MUSICTOPO-029: Beat Class Sets as Subsets of Z_sigma(6)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-029-beat-class-sets-as-subsets-of-z_sigma6.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-030-metric-modulation-as-covering-space-map",
+      "title": "MUSICTOPO-030: Metric Modulation as Covering Space Map",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-030-metric-modulation-as-covering-space-map.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-031-time-signature-as-lattice-point-in-z2",
+      "title": "MUSICTOPO-031: Time Signature as Lattice Point in Z^2",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-031-time-signature-as-lattice-point-in-z2.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-032-polyrhythm-as-z_m-x-z_n-orbit",
+      "title": "MUSICTOPO-032: Polyrhythm as Z_m x Z_n Orbit",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-032-polyrhythm-as-z_m-x-z_n-orbit.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-033-rhythmic-braid-groups-from-voice-crossing",
+      "title": "MUSICTOPO-033: Rhythmic Braid Groups from Voice Crossing",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-033-rhythmic-braid-groups-from-voice-crossing.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-034-phase-space-of-rhythmic-patterns",
+      "title": "MUSICTOPO-034: Phase Space of Rhythmic Patterns",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-034-phase-space-of-rhythmic-patterns.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-035-tempo-as-slope-in-time-pitch-plane",
+      "title": "MUSICTOPO-035: Tempo as Slope in Time-Pitch Plane",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-035-tempo-as-slope-in-time-pitch-plane.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-036-musical-form-as-cw-complex",
+      "title": "MUSICTOPO-036: Musical Form as CW-Complex",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-036-musical-form-as-cw-complex.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-037-persistent-homology-of-melodic-contour",
+      "title": "MUSICTOPO-037: Persistent Homology of Melodic Contour",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-037-persistent-homology-of-melodic-contour.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-038-betti-numbers-of-scale-complexes",
+      "title": "MUSICTOPO-038: Betti Numbers of Scale Complexes",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-038-betti-numbers-of-scale-complexes.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-039-simplicial-complex-of-consonance",
+      "title": "MUSICTOPO-039: Simplicial Complex of Consonance",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-039-simplicial-complex-of-consonance.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-040-homotopy-equivalence-of-enharmonic-scales",
+      "title": "MUSICTOPO-040: Homotopy Equivalence of Enharmonic Scales",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-040-homotopy-equivalence-of-enharmonic-scales.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-041-covering-spaces-and-modulation",
+      "title": "MUSICTOPO-041: Covering Spaces and Modulation",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-041-covering-spaces-and-modulation.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-042-orbifold-euler-characteristic-of-voice-leading-spaces",
+      "title": "MUSICTOPO-042: Orbifold Euler Characteristic of Voice-Leading Spaces",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-042-orbifold-euler-characteristic-of-voice-leading-spaces.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-043-topological-classification-of-musical-canons",
+      "title": "MUSICTOPO-043: Topological Classification of Musical Canons",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-043-topological-classification-of-musical-canons.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-044-euler-characteristic-of-the-tonnetz-torus-is-zero",
+      "title": "MUSICTOPO-044: Euler Characteristic of the Tonnetz Torus is Zero",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-044-euler-characteristic-of-the-tonnetz-torus-is-zero.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-045-klein-bottle-in-pitch-rhythm-duality",
+      "title": "MUSICTOPO-045: Klein Bottle in Pitch-Rhythm Duality",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-045-klein-bottle-in-pitch-rhythm-duality.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-046-fundamental-group-pi_1-of-pitch-space---z",
+      "title": "MUSICTOPO-046: Fundamental Group pi_1 of Pitch Space = Z",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-046-fundamental-group-pi_1-of-pitch-space---z.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-047-musical-manifolds-dimension---number-of-voices",
+      "title": "MUSICTOPO-047: Musical Manifolds: Dimension = Number of Voices",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-047-musical-manifolds-dimension---number-of-voices.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-048-topological-data-analysis-of-musical-structure",
+      "title": "MUSICTOPO-048: Topological Data Analysis of Musical Structure",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-048-topological-data-analysis-of-musical-structure.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-049-nerve-theorem-applied-to-chord-overlap",
+      "title": "MUSICTOPO-049: Nerve Theorem Applied to Chord Overlap",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-049-nerve-theorem-applied-to-chord-overlap.md"
+    },
+    {
+      "id": "TECS-L:MUSICTOPO-050-sheaf-theory-of-musical-analysis",
+      "title": "MUSICTOPO-050: Sheaf Theory of Musical Analysis",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MUSICTOPO-050-sheaf-theory-of-musical-analysis.md"
     },
     {
       "id": "TECS-L:NAVSTOKES-001-stress-tensor",
@@ -34148,7 +35648,7 @@
       "name": "ALL_ENGINES",
       "repo": "anima",
       "file": "measure_all.py",
-      "line": 181,
+      "line": 200,
       "type": "dict",
       "size": 16,
       "keys": [
@@ -34235,6 +35735,191 @@
           "frustration",
           "laser",
           "ib2"
+        ]
+      },
+      "category": "other"
+    },
+    {
+      "name": "BENCH_FILES",
+      "repo": "anima",
+      "file": "measure_all_engines.py",
+      "line": 92,
+      "type": "dict",
+      "size": 14,
+      "keys": [
+        "physics",
+        "thermo",
+        "emergent",
+        "geometric",
+        "extreme",
+        "evolution",
+        "music",
+        "evobio",
+        "network",
+        "new",
+        "info",
+        "social",
+        "complexity",
+        "algebra"
+      ],
+      "evaluable": true,
+      "values": {
+        "physics": [
+          "bench_physics_engines",
+          [
+            "PlasmaEngine",
+            "SuperconductorEngine",
+            "LaserEngine",
+            "BlackHoleEngine",
+            "CrystalEngine",
+            "SuperfluidEngine"
+          ]
+        ],
+        "thermo": [
+          "bench_thermo_engines",
+          [
+            "CarnotCycleEngine",
+            "MaxwellDemonEngine",
+            "DissipativeStructureEngine",
+            "FreeEnergyPrincipleEngine",
+            "HeatDeathResistanceEngine",
+            "BoltzmannBrainEngine"
+          ]
+        ],
+        "emergent": [
+          "bench_emergent_engines",
+          [
+            "ReactionDiffusionEngine",
+            "SandpileCascadeEngine",
+            "FlockingVortexEngine",
+            "PercolationEngine",
+            "SynchronizationChimeraEngine",
+            "SelfReplicatingEngine",
+            "PatternFormationEngine",
+            "ExcitableMediaEngine"
+          ]
+        ],
+        "geometric": [
+          "bench_geometric_engines",
+          [
+            "HyperbolicEngine",
+            "FiberBundleEngine",
+            "RicciFlowEngine",
+            "SymplecticEngine",
+            "CalabiYauEngine",
+            "KnotInvariantEngine"
+          ]
+        ],
+        "extreme": [
+          "bench_extreme_engines",
+          [
+            "HolographicUniverseEngine",
+            "TopologicalInsulatorEngine",
+            "TimeCrystalEngine",
+            "NeuromorphicSpikeEngine",
+            "MembraneComputingEngine",
+            "TensorNetworkEngine",
+            "AnyonicBraidingEngine",
+            "ConsciousnessFieldEngine"
+          ]
+        ],
+        "evolution": [
+          "bench_evolution_engines",
+          [
+            "CambrianExplosionEngine",
+            "SymbiogenesisEngine",
+            "EcosystemEngine",
+            "ImmuneSystemEngine",
+            "MorphogenesisEngine",
+            "NeuralCrestEngine"
+          ]
+        ],
+        "music": [
+          "bench_music_engines",
+          [
+            "PolyrhythmEngine",
+            "HarmonicSeriesEngine",
+            "CounterpointEngine",
+            "JazzImprovisationEngine",
+            "GamelanEngine",
+            "DrumCircleEngine"
+          ]
+        ],
+        "evobio": [
+          "bench_evobio_engines",
+          [
+            "MutationRateEngine",
+            "SpeciationEngine",
+            "HorizontalGeneTransferEngine",
+            "EpigeneticsEngine",
+            "RedQueenEngine",
+            "PunctuatedEquilibriumEngine",
+            "SexualSelectionEngine",
+            "KinSelectionEngine"
+          ]
+        ],
+        "network": [
+          "bench_network_engines",
+          [
+            "ScaleFreeEngine",
+            "RichClubEngine",
+            "ModularNetworkEngine",
+            "MultiplexEngine",
+            "TemporalNetworkEngine",
+            "AdaptiveNetworkEngine"
+          ]
+        ],
+        "new": [
+          "bench_new_engines",
+          [
+            "GraphNeuralEngine",
+            "EnergyBasedEngine",
+            "CellularAutomatonEngine",
+            "DiffusionEngine",
+            "SpinGlassEngine",
+            "FluidDynamicsEngine",
+            "GeneticEngine",
+            "SwarmEngine"
+          ]
+        ],
+        "info": [
+          "bench_info_engines",
+          [
+            "MaximumEntropyEngine",
+            "MinimumDescriptionLengthEngine",
+            "PredictiveInformationEngine",
+            "InformationBottleneckEngine",
+            "CausalEmergenceEngine",
+            "IntegratedInfoDecompositionEngine",
+            "ChannelCapacityEngine",
+            "KolmogorovStructureEngine"
+          ]
+        ],
+        "social": [
+          "bench_social_engines",
+          [
+            "PrisonerDilemmaEngine",
+            "VotingDynamicsEngine",
+            "MarketDynamicsEngine",
+            "LanguageGameEngine",
+            "CulturalEvolutionEngine",
+            "StigmergyEngine"
+          ]
+        ],
+        "complexity": [
+          "bench_complexity_engines",
+          [
+            "TuringMachineEngine",
+            "CellularAutomatonEngine",
+            "LambdaCalculusEngine",
+            "GameOfLifeEngine",
+            "StrangeLoopEngine",
+            "GoedelIncompletenessEngine"
+          ]
+        ],
+        "algebra": [
+          "bench_algebra_engines",
+          []
         ]
       },
       "category": "other"
@@ -35804,7 +37489,7 @@
   "constant_stats": {
     "TECS-L": 88,
     "SEDI": 110,
-    "anima": 96,
+    "anima": 97,
     "golden-moe": 3,
     "conscious-lm": 4,
     "energy-efficiency": 0
