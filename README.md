@@ -1665,6 +1665,8 @@ Combinatorial design, Dynamical systems, Signal processing, Algebraic geometry
 | P-004 | sigma*phi=n*tau Uniqueness | Amer. Math. Monthly / JNT | Draft | n=6 and n=28 unique solutions |
 | P-NEW | The Unique Prime Pair: (p-1)(q-1)=2 | Amer. Math. Monthly / Math. Magazine | Draft v0.1 | 68 characterizations of n=6 from one equation |
 | P-bridge-theorem | The Bridge Theorem: Golden Zone Center from Variational Principle | arXiv math.NT / cs.IT | Draft | I^I minimization → 1/e, φσ=nτ uniqueness, 400-hypothesis campaign (249/400, Z≈55σ) |
+| **P-DNA-A** | **100 Unique Identities of the First Perfect Number** | **JIS / Integers** | **Draft v1.0** | **σ=τ(τ-1) unique, cryst=d(6)∪{τ(6)}, 8 constraints, ∞ families** |
+| **P-DNA-B** | **The Ubiquity of Six: 500-Hypothesis Survey** | **arXiv math-ph** | **Draft v1.0** | **66 GREEN, p<10⁻²⁵, 3 root theorems, 100% explained** |
 
 ## Document Structure
 
