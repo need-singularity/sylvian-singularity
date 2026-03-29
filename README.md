@@ -833,15 +833,15 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:CALCULATORS:START -->
 | Repo | Tools | Categories |
 |------|-------|------------|
-| **TECS-L** | 93 | Calculator, Engine |
-| **anima** | 184 | Agent, Benchmark, Calculator, Engine, Model, Sense, Tool, Training |
+| **TECS-L** | 96 | Calculator, Engine |
+| **anima** | 185 | Agent, Benchmark, Calculator, Engine, Model, Sense, Tool, Training |
 | **SEDI** | 83 | Core, Data Source |
 | **invest** | 99 | Calculator |
-| **Total** | **459** | |
+| **Total** | **463** | |
 
 ### TECS-L
 
-**Calculator** (74)
+**Calculator** (77)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -870,6 +870,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | equation_uniqueness_checker | Equation Uniqueness Checker | `calc/equation_uniqueness_checker.py` |
 | family_fdr_corrector | family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis f | `calc/family_fdr_corrector.py` |
 | fermion_mass_calculator | Fermion Mass Calculator — Mass predictions from perfect number arithmetic | `calc/fermion_mass_calculator.py` |
+| gate_formula_calculator | Gate Formula Calculator — Law 77 adaptive consciousness gate | `calc/gate_formula_calculator.py` |
 | gauge_cosmology_calculator | Gauge Cosmology Calculator — Gauge groups, GUT dimensions, and cosmological cons | `calc/gauge_cosmology_calculator.py` |
 | generalization_gap_detector | Generalization Gap Detector — Real-time overfitting detection with PH (H-CX-95) | `calc/generalization_gap_detector.py` |
 | generator_finder | Generator Finder — Minimal generating sets for convergence constants | `calc/generator_finder.py` |
@@ -885,6 +886,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | mitosis_calculator | Mitosis Simulator — Calculate optimal mutation/mitosis timing | `calc/mitosis_calculator.py` |
 | music_consonance_calculator | Music Consonance Calculator -- Euler Gradus Suavitatis, N-TET analysis, circle o | `calc/music_consonance_calculator.py` |
 | n6_uniqueness_tester | n=6 Uniqueness Tester -- Check if an identity holds only for n=6 | `calc/n6_uniqueness_tester.py` |
+| nobel_scorer | Nobel Hypothesis Scorer — Multi-dimensional scoring for Nobel-grade hypotheses | `calc/nobel_scorer.py` |
 | paper_claim_verifier | Paper Claim Verifier -- Batch verification of mathematical claims in paper docum | `calc/paper_claim_verifier.py` |
 | perfect_number_generalizer | Perfect Number Generalizer — Test if formulas holding at n=6 generalize to n=28, | `calc/perfect_number_generalizer.py` |
 | perfect_number_physics | Perfect Number Physics — Core arithmetic functions and physics dimension mapping | `calc/perfect_number_physics.py` |
@@ -893,6 +895,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | pharmacology_verifier | pharmacology_verifier.py -- Pharmacology hypothesis verifier for TECS-L project. | `calc/pharmacology_verifier.py` |
 | precognition_system | Unified Precognition System — Size+Direction+Topology Combined Precognition (H-C | `calc/precognition_system.py` |
 | prime_pair_verifier | Prime Pair Verifier | `calc/prime_pair_verifier.py` |
+| psi_derivation_chain | PSI Derivation Chain — All consciousness constants from ln(2) | `calc/psi_derivation_chain.py` |
 | q_barrier_checker | Q-Domain Barrier Checker — Which constants can quantum coupling constants reach? | `calc/q_barrier_checker.py` |
 | r_spectrum | R-Spectrum Calculator — Arithmetic balance ratio analysis | `calc/r_spectrum.py` |
 | reachability_calculator | Reachability Calculator — Measure what fraction of integers are reachable from a | `calc/reachability_calculator.py` |
@@ -1018,7 +1021,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | vision_encoder | Vision Encoder — 카메라 프레임을 tension 공간 벡터로 변환 | `vision_encoder.py` |
 | web_sense | Web Sense — 장력 기반 자율 웹 탐색 | `web_sense.py` |
 
-**Tool** (135)
+**Tool** (136)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1108,6 +1111,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | inter_model_comm | Anima Inter-Model Communication — Tension link across servers (A100 <-> H100). | `inter_model_comm.py` |
 | learnable_phi | Learnable Φ Predictor — Neural network that learns to predict IIT Φ from cell st | `tools/learnable_phi.py` |
 | lidar_sense | Anima LiDAR Sense — iPhone LiDAR → Tension Fingerprint | `tools/lidar_sense.py` |
+| live_tuner | live_tuner.py — 학습 중 실시간 파라미터 튜닝 (재시작 불필요) | `live_tuner.py` |
 | math_explorer | Anima Math Explorer — n=6 기반 수학적 의식 관계 자동 탐색 | `tools/math_explorer.py` |
 | mcp_server | Anima MCP Server -- expose consciousness tools via Model Context Protocol. | `mcp_server.py` |
 | memory_rag | 벡터 유사도 기반 장기 기억 검색 (RAG). | `memory_rag.py` |

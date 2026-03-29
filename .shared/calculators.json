@@ -176,6 +176,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "gate_formula_calculator",
+      "description": "Gate Formula Calculator — Law 77 adaptive consciousness gate",
+      "category": "calculator",
+      "path": "calc/gate_formula_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "gauge_cosmology_calculator",
       "description": "Gauge Cosmology Calculator — Gauge groups, GUT dimensions, and cosmological constants",
       "category": "calculator",
@@ -281,6 +288,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "nobel_scorer",
+      "description": "Nobel Hypothesis Scorer — Multi-dimensional scoring for Nobel-grade hypotheses",
+      "category": "calculator",
+      "path": "calc/nobel_scorer.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "paper_claim_verifier",
       "description": "Paper Claim Verifier -- Batch verification of mathematical claims in paper documents.",
       "category": "calculator",
@@ -334,6 +348,13 @@
       "description": "Prime Pair Verifier",
       "category": "calculator",
       "path": "calc/prime_pair_verifier.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "psi_derivation_chain",
+      "description": "PSI Derivation Chain — All consciousness constants from ln(2)",
+      "category": "calculator",
+      "path": "calc/psi_derivation_chain.py",
       "repo": "TECS-L"
     },
     {
@@ -1435,6 +1456,13 @@
       "description": "IQ Calculator — 의식 지능 측정기 (TECS-L n=6 수학 통합)",
       "category": "calculator",
       "path": "iq_calculator.py",
+      "repo": "anima"
+    },
+    {
+      "name": "live_tuner",
+      "description": "live_tuner.py — 학습 중 실시간 파라미터 튜닝 (재시작 불필요)",
+      "category": "tool",
+      "path": "live_tuner.py",
       "repo": "anima"
     },
     {
