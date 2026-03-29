@@ -1529,6 +1529,9 @@ Result:    🟩 9 | 🟧 4 | ⚪ 12 | ⬛ 0   Hit rate 52% (up from Wave 10: 32%
 
 **Unification: H-DNA-501 ≡ H-DNA-503** (both reduce to tau(n)-1=LPF(n))
 
+| **H-DNA-505** | **⭐** | **Bio↔Math mapping: 85% of biological 6s math-explained** | **67 findings** | **p=2.3e-6** |
+| **H-DNA-506** | **⭐** | **55 identities → 8 independent constraints + ∞ families** | **Proven** | **Complete** |
+
 ```
   H-DNA-501: sigma(6) = P(tau(6), 2) = 4×3 = 12
     "Sum of divisors = ordered pairs of divisor count"
