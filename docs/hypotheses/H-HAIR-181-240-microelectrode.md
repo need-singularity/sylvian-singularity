@@ -1109,10 +1109,9 @@
   Total claims: 60 (H-HAIR-181 to 240)
 
   GREEN:  8  (13.3%)
-  ORANGE: 22 (36.7%)
-  WHITE:  29 (48.3%)
+  ORANGE: 26 (43.3%)
+  WHITE:  26 (43.3%)
   BLACK:  0  (0.0%)
-  (Note: one claim has dual grade reasoning noted in text)
 
   Evidence distribution:
     [Strong]:      7
