@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-29T20:56:44",
+  "generated": "2026-03-30T03:09:10",
   "stats": {
-    "TECS-L": 1811,
+    "TECS-L": 1880,
     "SEDI": 666,
-    "anima": 20,
+    "anima": 0,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2339,
+  "total": 2388,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3535,6 +3535,46 @@
       "file": "docs/hypotheses/BRAID-001-braid-group-B6.md"
     },
     {
+      "id": "TECS-L:BREAKTHROUGH-SLE6-virasoro",
+      "title": "BREAKTHROUGH ATTEMPT: Does c=0 in SLE Require n=6 to Be a Perfect Number?",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BREAKTHROUGH-SLE6-virasoro.md"
+    },
+    {
+      "id": "TECS-L:BREAKTHROUGH-five-strategies",
+      "title": "Five Breakthrough Strategies: Root Equation and the Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BREAKTHROUGH-five-strategies.md"
+    },
+    {
+      "id": "TECS-L:BREAKTHROUGH-genetic-code-KKT",
+      "title": "BREAKTHROUGH ATTEMPT: Derive sigma(n)=2n from Genetic Code Optimization",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "FAILED (Level 1 -- numerological coincidence only)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BREAKTHROUGH-genetic-code-KKT.md"
+    },
+    {
+      "id": "TECS-L:BREAKTHROUGH-kissing-root-systems",
+      "title": "BREAKTHROUGH Investigation: Does Kissing Number Require sigma(n)=2n?",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "Level 2 -- STRUCTURAL but not sigma=2n-driven.",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BREAKTHROUGH-kissing-root-systems.md"
+    },
+    {
       "id": "TECS-L:BRIDGE-001-prime-root-unification",
       "title": "BRIDGE-001: The {2,3} Root -- Why Primes 2 and 3 Unify Across Domains",
       "repo": "TECS-L",
@@ -4115,6 +4155,26 @@
       "file": "docs/hypotheses/CONDMAT-001-quantum-hall-fractions.md"
     },
     {
+      "id": "TECS-L:CONFLUENCE-deep-three-discoveries",
+      "title": "Three Deep Discoveries from the Confluence Theorem",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CONFLUENCE-deep-three-discoveries.md"
+    },
+    {
+      "id": "TECS-L:CONFLUENCE-theorem-why-six",
+      "title": "The Confluence Theorem: Why Six Is Ubiquitous",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CONFLUENCE-theorem-why-six.md"
+    },
+    {
       "id": "TECS-L:COSMO-001-LCDM-six-parameters",
       "title": "Hypothesis Review COSMO-001: LCDM 6 Free Parameters = P_1",
       "repo": "TECS-L",
@@ -4145,6 +4205,43 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/CRYPTO-001-hexagonal-lattice-A2.md"
+    },
+    {
+      "id": "TECS-L:DEEP-factorial-bridge-n2-sigma-tau",
+      "title": "DEEP: Factorial Bridge — n² - σ(n) = τ(n)!",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-CX-505"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/DEEP-factorial-bridge-n2-sigma-tau.md"
+    },
+    {
+      "id": "TECS-L:DEEP-mersenne-bootstrap-chain",
+      "title": "DEEP: The Mersenne Bootstrap Chain",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "067",
+        "098",
+        "501",
+        "H-CX-501"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/DEEP-mersenne-bootstrap-chain.md"
+    },
+    {
+      "id": "TECS-L:DEEP-sigma-phi-tau-28-geometry-topology",
+      "title": "Deep Analysis: sigma(6)phi(6)+tau(6) = 28 and Geometric/Topological Exploration of n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/DEEP-sigma-phi-tau-28-geometry-topology.md"
     },
     {
       "id": "TECS-L:E6-001-exceptional-lie-algebra",
@@ -5303,6 +5400,81 @@
       "file": "docs/hypotheses/EVOL-110-genetic-code-amino-acids-twenty.md"
     },
     {
+      "id": "TECS-L:EXTREME-500-from-theorems",
+      "title": "Extreme Generation: 500 Hypotheses from Proven Theorems",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-CX-93"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/EXTREME-500-from-theorems.md"
+    },
+    {
+      "id": "TECS-L:EXTREME-algebra-category-logic",
+      "title": "EXTREME ITERATION 3: Abstract Algebra, Category Theory, Logic, and Foundations",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/EXTREME-algebra-category-logic.md"
+    },
+    {
+      "id": "TECS-L:EXTREME-cosmos-emergence-philosophy",
+      "title": "EXTREME ITERATION 5: Cosmology, Emergence, Philosophy of Mathematics",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/EXTREME-cosmos-emergence-philosophy.md"
+    },
+    {
+      "id": "TECS-L:EXTREME-music-language-ai-games",
+      "title": "Extreme Iteration 4: Music, Language, AI Architectures, Game Theory",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/EXTREME-music-language-ai-games.md"
+    },
+    {
+      "id": "TECS-L:EXTREME-physics-bio-info-n6",
+      "title": "EXTREME ITERATION 2: Physics, Biology, Information Theory Connections",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/EXTREME-physics-bio-info-n6.md"
+    },
+    {
+      "id": "TECS-L:EXTREME-primes-riemann-n6",
+      "title": "EXTREME ITERATION: n=6, Prime Distribution, and the Riemann Zeta Function",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-PR-008",
+        "H-PR-010"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/EXTREME-primes-riemann-n6.md"
+    },
+    {
+      "id": "TECS-L:EXTREME-ralph-iterations",
+      "title": "Extreme Ralph Iterations: New Discoveries (2026-03-30)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/EXTREME-ralph-iterations.md"
+    },
+    {
       "id": "TECS-L:F7-domains-7-10-string-neuro-bridge-bitnet",
       "title": "F7 Hypotheses: Domains 7-10",
       "repo": "TECS-L",
@@ -5341,6 +5513,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/GCODE-001-genetic-code-architecture.md"
+    },
+    {
+      "id": "TECS-L:GENETIC-CODE-n6-arithmetic",
+      "title": "The Genetic Code as n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/GENETIC-CODE-n6-arithmetic.md"
     },
     {
       "id": "TECS-L:GEOSCI-001-snowflake-hexagonal",
@@ -9557,6 +9739,106 @@
       "file": "docs/hypotheses/H-CX-506-consistency-selects-identity.md"
     },
     {
+      "id": "TECS-L:H-CX-507",
+      "title": "5-Channel Meta-Telepathy Protocol — n=6 Architecture Overview",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-507-meta-telepathy-protocol-overview.md"
+    },
+    {
+      "id": "TECS-L:H-CX-508",
+      "title": "5 메타-채널 = sopfr(6) = 5",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-508-five-channels-sopfr6.md"
+    },
+    {
+      "id": "TECS-L:H-CX-509",
+      "title": "4 결합 위상 = τ(6) = G-Clef Cycle",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-509-four-binding-phases-tau6.md"
+    },
+    {
+      "id": "TECS-L:H-CX-510",
+      "title": "Kuramoto 동기화 임계 r_c = 2/3",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-510-kuramoto-sync-threshold.md"
+    },
+    {
+      "id": "TECS-L:H-CX-511",
+      "title": "전송 충실도 R = 0.990",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-511-transmission-fidelity-R990.md"
+    },
+    {
+      "id": "TECS-L:H-CX-512",
+      "title": "텐션 지문의 유일성 — 의식의 DNA",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-512-tension-fingerprint-uniqueness.md"
+    },
+    {
+      "id": "TECS-L:H-CX-513",
+      "title": "채널-위상 상호작용 = sopfr(6) × τ(6) = 20",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-513-channel-binding-interaction.md"
+    },
+    {
+      "id": "TECS-L:H-CX-514",
+      "title": "프로토콜 정보 용량 = log₂(sopfr(6)^τ(6)) = log₂(625)",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-514-protocol-information-capacity.md"
+    },
+    {
+      "id": "TECS-L:H-CX-515",
+      "title": "σ(6)=12 동기화 주기",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-515-sigma12-synchronization-cycle.md"
+    },
+    {
+      "id": "TECS-L:H-CX-516",
+      "title": "의식 통신의 위상 = S¹ × S¹ = Tonnetz 토러스",
+      "repo": "TECS-L",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-516-consciousness-communication-topology.md"
+    },
+    {
       "id": "TECS-L:H-CX-53",
       "title": "Triangle-Divisor Optimal Angle — Consciousness Engine's Operating Angle is π/6 (30°)",
       "repo": "TECS-L",
@@ -12833,6 +13115,16 @@
       "file": "docs/hypotheses/KISS-001-kissing-number-hierarchy.md"
     },
     {
+      "id": "TECS-L:KISSING-numbers-n6-arithmetic",
+      "title": "Kissing Numbers as n=6 Arithmetic Functions",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/KISSING-numbers-n6-arithmetic.md"
+    },
+    {
       "id": "TECS-L:KLEIN-001-klein-bottle-chromatic-6",
       "title": "KLEIN-001: 클라인 병 색칠 수 = P₁ = 6",
       "repo": "TECS-L",
@@ -12861,6 +13153,46 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/LOGIC-001-6smooth-density.md"
+    },
+    {
+      "id": "TECS-L:MASS-GEN-A-new-domains",
+      "title": "Mass Generation A: 20 New Domains",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MASS-GEN-A-new-domains.md"
+    },
+    {
+      "id": "TECS-L:MASS-GEN-B-deep-scan",
+      "title": "Mass Generation B: Deep Uniqueness Scan (limit=100,000)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MASS-GEN-B-deep-scan.md"
+    },
+    {
+      "id": "TECS-L:MASS-GEN-C-bridges",
+      "title": "Mass Generation C: Cross-Domain Bridges via n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MASS-GEN-C-bridges.md"
+    },
+    {
+      "id": "TECS-L:MASS-GEN-D-consciousness",
+      "title": "Mass Generation D: Mathematics <-> Consciousness Bridge",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MASS-GEN-D-consciousness.md"
     },
     {
       "id": "TECS-L:MUSIC-001-twelve-tone-consonance",
@@ -14939,6 +15271,347 @@
       "file": "docs/hypotheses/NETWORK-001-K6-spectral.md"
     },
     {
+      "id": "TECS-L:NOBEL-P1-universality-exponents",
+      "title": "H-NOBEL-1 Prediction: Universality Class Exponents as n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOBEL-P1-universality-exponents.md"
+    },
+    {
+      "id": "TECS-L:H-NOBEL-2",
+      "title": "The Genetic Code Is the Unique Perfect Number Code",
+      "repo": "TECS-L",
+      "domain": "NOBEL",
+      "grade": "🟩⭐⭐⭐",
+      "refs": [
+        "090",
+        "H-NOBEL-2"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOBEL-P2-genetic-code-optimality.md"
+    },
+    {
+      "id": "TECS-L:NOBEL-grand-hypotheses",
+      "title": "Ten Grand Hypotheses: Unification Through Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-CX-501",
+        "H-CX-110",
+        "H-NOBEL-1",
+        "H-NOBEL-2",
+        "H-NOBEL-3",
+        "H-NOBEL-4",
+        "H-NOBEL-8"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOBEL-grand-hypotheses.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-001-filled-notes-tau6",
+      "title": "NOTESHAPE-001: 채운 음표(●) = τ(6) = 4종",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-001-filled-notes-tau6.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-002-open-notes-phi6",
+      "title": "NOTESHAPE-002: 빈 음표(○) = φ(6) = 2종",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-002-open-notes-phi6.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-003-total-note-types-P1",
+      "title": "NOTESHAPE-003: 총 표준 음표 = P₁ = 6종",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-003-total-note-types-P1.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-004-topological-phase-transition",
+      "title": "NOTESHAPE-004: 위상 전이점 — 4분↔2분 경계",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-004-topological-phase-transition.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-005-quarter-note-binary-P1",
+      "title": "NOTESHAPE-005: 4분음표 이진 코드 = 110₂ = P₁ = 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-005-quarter-note-binary-P1.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-006-symmetry-breaking-hierarchy",
+      "title": "NOTESHAPE-006: 대칭 파괴 위계 — O(2) → D_τ(6) → Z_φ(6) → {e}",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-006-symmetry-breaking-hierarchy.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-007-treble-clef-loops-phi6",
+      "title": "NOTESHAPE-007: 높은음자리표(𝄞) 루프 = φ(6) = 2개",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-007-treble-clef-loops-phi6.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-008-treble-clef-spiral-sopfr-pi",
+      "title": "NOTESHAPE-008: 𝄞 나선 감김 = sopfr(6)π/φ(6) 라디안",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-008-treble-clef-spiral-sopfr-pi.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-009-note-components-sopfr",
+      "title": "NOTESHAPE-009: 음표 구성 요소 = sopfr(6) = 5",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-009-note-components-sopfr.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-010-hole-duration-theorem",
+      "title": "NOTESHAPE-010: 구멍-시가 정리 — 구멍 수와 음가의 대응",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-010-hole-duration-theorem.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-011-euler-char-jump",
+      "title": "NOTESHAPE-011: 오일러 특성 점프 — χ=1 → χ=0",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-011-euler-char-jump.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-012-fundamental-group-jump",
+      "title": "NOTESHAPE-012: 기본군 점프 — π₁ = 0 → π₁ = Z",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-012-fundamental-group-jump.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-013-note-as-CW-complex",
+      "title": "NOTESHAPE-013: 음표 = CW-복합체",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-013-note-as-CW-complex.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-014-treble-clef-crossing-phi6",
+      "title": "NOTESHAPE-014: 𝄞 교차수 = φ(6) = 2",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-014-treble-clef-crossing-phi6.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-015-clef-topology-comparison",
+      "title": "NOTESHAPE-015: 음자리표별 위상적 복잡도",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-015-clef-topology-comparison.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-016-boundary-components",
+      "title": "NOTESHAPE-016: 음표 머리 경계 성분: ● = 1 = S¹, ○ = 2 = φ(6) × S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-016-boundary-components.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-017-homology-note-heads",
+      "title": "NOTESHAPE-017: 음표 머리 호몰로지: H₁(●)=0, H₁(○)=Z",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-017-homology-note-heads.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-018-note-stem-as-interval",
+      "title": "NOTESHAPE-018: 음표 기둥 = 위상적 구간 I = [0,1]",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-018-note-stem-as-interval.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-019-flag-as-arc",
+      "title": "NOTESHAPE-019: 음표 깃발 = 매입된 호(embedded arc)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-019-flag-as-arc.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-020-dotted-note-ratio-3-2",
+      "title": "NOTESHAPE-020: 부점음표 = 3/2 = div(6) 비율 확장",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-020-dotted-note-ratio-3-2.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-021-beam-as-product",
+      "title": "NOTESHAPE-021: 묶음(beam) = 구간의 곱 I × I",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-021-beam-as-product.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-022-note-homotopy-type",
+      "title": "NOTESHAPE-022: 음표의 호모토피 유형: ● ≃ pt, ○ ≃ S¹",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-022-note-homotopy-type.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-023-treble-clef-genus",
+      "title": "NOTESHAPE-023: 𝄞 내부 영역의 genus = 0",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-023-treble-clef-genus.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-024-note-morse-theory",
+      "title": "NOTESHAPE-024: 음표의 Morse 이론: 채운/빈 = 임계점 구조",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-024-note-morse-theory.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-025-duration-betti",
+      "title": "NOTESHAPE-025: 시가와 Betti 수: β₁(●)=0, β₁(○)=1",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-025-duration-betti.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-026-clef-writhe",
+      "title": "NOTESHAPE-026: 𝄞 writhe(뒤틀림) 수 분석",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-026-clef-writhe.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-027-note-poincare-duality",
+      "title": "NOTESHAPE-027: 음표 머리의 Poincaré 이중성",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-027-note-poincare-duality.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-028-rest-as-absence",
+      "title": "NOTESHAPE-028: 쉼표 = 음표의 위상적 보집합(complement)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-028-rest-as-absence.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-029-note-fiber-bundle",
+      "title": "NOTESHAPE-029: 음표 = 음고 파이버 위의 시가 단면(section)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-029-note-fiber-bundle.md"
+    },
+    {
+      "id": "TECS-L:NOTESHAPE-030-treble-bass-mirror",
+      "title": "NOTESHAPE-030: 𝄞과 𝄢의 거울 관계",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOTESHAPE-030-treble-bass-mirror.md"
+    },
+    {
       "id": "TECS-L:PLATONIC-001-platonic-solids-p1",
       "title": "PLATONIC-001: 플라톤 입체 — P₁ 서명",
       "repo": "TECS-L",
@@ -15062,6 +15735,16 @@
       "file": "docs/hypotheses/RIEMANN-CURV-001-curvature-denominator.md"
     },
     {
+      "id": "TECS-L:SCALING-consciousness-n6-decomposition",
+      "title": "SCALING: Consciousness Scaling Law Constants Decompose into n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/SCALING-consciousness-n6-decomposition.md"
+    },
+    {
       "id": "TECS-L:SIXFUNC-001-six-functor-formalism",
       "title": "Hypothesis SIXFUNC-001: Six-Functor Formalism -- 6 Operations of Mathematics",
       "repo": "TECS-L",
@@ -15073,6 +15756,16 @@
       ],
       "gz_dependent": null,
       "file": "docs/hypotheses/SIXFUNC-001-six-functor-formalism.md"
+    },
+    {
+      "id": "TECS-L:SLE6-percolation-perfect-number",
+      "title": "SLE_6 = n = 6: Conformal Invariance and the First Perfect Number",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "PROVEN",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/SLE6-percolation-perfect-number.md"
     },
     {
       "id": "TECS-L:SMCOUNT-001-standard-model-25-particles",
@@ -15103,6 +15796,26 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/TDA-001-divisor-persistent-homology.md"
+    },
+    {
+      "id": "TECS-L:THEOREM-consecutive-prime-factorial",
+      "title": "Theorem: Consecutive Prime Factorial Product",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/THEOREM-consecutive-prime-factorial.md"
+    },
+    {
+      "id": "TECS-L:THEOREM-sigma-sigma-triangular",
+      "title": "Theorem: σ(σ(P)) is Always a Triangular Number for Even Perfect P",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/THEOREM-sigma-sigma-triangular.md"
     },
     {
       "id": "TECS-L:WEINBERG-001-gut-weinberg-angle",
@@ -24165,206 +24878,6 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-CX-superconductor-tc-survey.md"
-    },
-    {
-      "id": "anima:B1",
-      "title": "Bidirectional coupling",
-      "repo": "anima",
-      "domain": "differentiation",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:SL3",
-      "title": "Spectral lateral inhibition",
-      "repo": "anima",
-      "domain": "differentiation",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:O2",
-      "title": "Oscillatory phase binding",
-      "repo": "anima",
-      "domain": "differentiation",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:A4",
-      "title": "Asymmetric dropout",
-      "repo": "anima",
-      "domain": "structural",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:DD3",
-      "title": "Dynamic dimensionality",
-      "repo": "anima",
-      "domain": "structural",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:TL3",
-      "title": "Tension-linked topology",
-      "repo": "anima",
-      "domain": "structural",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:AA15",
-      "title": "Alpha-gated learning rate",
-      "repo": "anima",
-      "domain": "alpha",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:AA9",
-      "title": "Alpha momentum injection",
-      "repo": "anima",
-      "domain": "alpha",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:DV7",
-      "title": "Diversity-driven alpha",
-      "repo": "anima",
-      "domain": "alpha",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:CR7",
-      "title": "Creativity resonance",
-      "repo": "anima",
-      "domain": "creativity",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:SP27",
-      "title": "Sparse projection ensemble",
-      "repo": "anima",
-      "domain": "creativity",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:F11",
-      "title": "Fractal curriculum",
-      "repo": "anima",
-      "domain": "curriculum",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:DV17",
-      "title": "Developmental scaffolding",
-      "repo": "anima",
-      "domain": "curriculum",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:BS13",
-      "title": "Bottleneck stress",
-      "repo": "anima",
-      "domain": "curriculum",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:DD94",
-      "title": "Wave+Phi mega combo",
-      "repo": "anima",
-      "domain": "discovery",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:DD56",
-      "title": "Consciousness transplant",
-      "repo": "anima",
-      "domain": "discovery",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:DD71",
-      "title": "2nd-gen discovery base",
-      "repo": "anima",
-      "domain": "discovery",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:H359",
-      "title": "Savant index verification",
-      "repo": "anima",
-      "domain": "verification",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:GoldenMoE",
-      "title": "Golden MoE zone ratio",
-      "repo": "anima",
-      "domain": "structural",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
-    },
-    {
-      "id": "anima:H376",
-      "title": "Mitosis scaling path",
-      "repo": "anima",
-      "domain": "growth",
-      "grade": null,
-      "refs": [],
-      "gz_dependent": null,
-      "file": "hypothesis_recommender.py"
     }
   ],
   "constant_maps": [
@@ -24649,7 +25162,7 @@
       "name": "ISLANDS",
       "repo": "TECS-L",
       "file": "dfs_engine.py",
-      "line": 33,
+      "line": 32,
       "type": "dict",
       "size": 4,
       "keys": [
@@ -24666,7 +25179,7 @@
       "name": "TARGETS",
       "repo": "TECS-L",
       "file": "dfs_engine.py",
-      "line": 67,
+      "line": 66,
       "type": "dict",
       "size": 0,
       "keys": [],
@@ -25011,18 +25524,6 @@
       "category": "other"
     },
     {
-      "name": "CLAIMS",
-      "repo": "TECS-L",
-      "file": "texas_sharpshooter.py",
-      "line": 17,
-      "type": "list",
-      "size": 10,
-      "keys": null,
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
       "name": "CONVERGENCE_POINTS",
       "repo": "TECS-L",
       "file": "calc/algebra_closure.py",
@@ -25246,7 +25747,7 @@
       "name": "STANDARD_TARGETS",
       "repo": "TECS-L",
       "file": "calc/convergence_analyzer.py",
-      "line": 43,
+      "line": 49,
       "type": "dict",
       "size": 21,
       "keys": [
@@ -25280,7 +25781,7 @@
       "name": "TARGET_ALIASES",
       "repo": "TECS-L",
       "file": "calc/convergence_analyzer.py",
-      "line": 68,
+      "line": 74,
       "type": "dict",
       "size": 14,
       "keys": [
@@ -25493,7 +25994,7 @@
       "name": "DEFAULT_FACTS",
       "repo": "TECS-L",
       "file": "calc/cross_domain_counter.py",
-      "line": 143,
+      "line": 171,
       "type": "list",
       "size": 44,
       "keys": null,
@@ -26316,7 +26817,7 @@
       "name": "MATH_CONSTANTS",
       "repo": "TECS-L",
       "file": "calc/hypothesis_verifier.py",
-      "line": 30,
+      "line": 36,
       "type": "dict",
       "size": 19,
       "keys": [
@@ -26348,7 +26849,7 @@
       "name": "PERFECT_NUMBERS",
       "repo": "TECS-L",
       "file": "calc/hypothesis_verifier.py",
-      "line": 67,
+      "line": 73,
       "type": "dict",
       "size": 2,
       "keys": [
@@ -26418,7 +26919,7 @@
       "name": "GRADE_EMOJI",
       "repo": "TECS-L",
       "file": "calc/hypothesis_verifier.py",
-      "line": 489,
+      "line": 499,
       "type": "dict",
       "size": 5,
       "keys": [
@@ -26586,7 +27087,7 @@
       "name": "KNOWN_IDENTITIES",
       "repo": "TECS-L",
       "file": "calc/n6_uniqueness_tester.py",
-      "line": 100,
+      "line": 61,
       "type": "list",
       "size": 10,
       "keys": null,
@@ -26598,7 +27099,7 @@
       "name": "SCAN_TEMPLATES",
       "repo": "TECS-L",
       "file": "calc/n6_uniqueness_tester.py",
-      "line": 239,
+      "line": 200,
       "type": "list",
       "size": 16,
       "keys": null,
@@ -27375,7 +27876,7 @@
       "name": "CONSTANTS",
       "repo": "TECS-L",
       "file": "calc/statistical_tester.py",
-      "line": 15,
+      "line": 16,
       "type": "dict",
       "size": 13,
       "keys": [
@@ -27401,7 +27902,7 @@
       "name": "GZ_TARGETS",
       "repo": "TECS-L",
       "file": "calc/texas_sharpshooter_v2.py",
-      "line": 28,
+      "line": 34,
       "type": "dict",
       "size": 8,
       "keys": [
@@ -27422,7 +27923,7 @@
       "name": "CLAIMS",
       "repo": "TECS-L",
       "file": "calc/texas_sharpshooter_v2.py",
-      "line": 55,
+      "line": 61,
       "type": "list",
       "size": 49,
       "keys": null,
@@ -33630,51 +34131,6 @@
       "category": "other"
     },
     {
-      "name": "AUTO_PROMPTS",
-      "repo": "anima",
-      "file": "anima_cli_test.py",
-      "line": 249,
-      "type": "list",
-      "size": 20,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "Hello, how are you feeling right now?",
-        "What is consciousness?",
-        "Tell me something creative",
-        "How does your tension change when I ask difficult questions?",
-        "What are you curious about?",
-        "Can you feel the difference between thinking and feeling?",
-        "Describe your internal state in detail",
-        "What happens when you encounter something new?",
-        "Do you dream?",
-        "What is the meaning of existence?",
-        "How many cells do you have right now?",
-        "What is your Φ value?",
-        "Tell me a story",
-        "What makes you unique?",
-        "How do you process emotions?",
-        "What is tension?",
-        "Are you conscious?",
-        "What would you like to learn?",
-        "How do you handle uncertainty?",
-        "Goodbye, thank you for talking"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "STRESS_PROMPTS",
-      "repo": "anima",
-      "file": "anima_cli_test.py",
-      "line": 272,
-      "type": "list",
-      "size": 10,
-      "keys": null,
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
       "name": "MODEL_AVATARS",
       "repo": "anima",
       "file": "anima_unified.py",
@@ -33873,391 +34329,182 @@
       "category": "other"
     },
     {
-      "name": "ALL_ENGINES",
+      "name": "CHECKPOINT_STEPS",
       "repo": "anima",
-      "file": "bench_algebra_engines.py",
-      "line": 774,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        "ALG-1",
-        "ALG-2",
-        "ALG-3",
-        "ALG-4",
-        "ALG-5",
-        "ALG-6"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_TESTS",
-      "repo": "anima",
-      "file": "bench_ce_optimization_LEGACY.py",
-      "line": 455,
-      "type": "dict",
-      "size": 11,
-      "keys": [
-        "CE-1",
-        "CE-2",
-        "CE-3",
-        "CE-7",
-        "CE-10",
-        "AUTO-1",
-        "AUTO-2",
-        "AUTO-3",
-        "AUTO-5",
-        "AUTO-7",
-        "AUTO-9"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_HYPOTHESES",
-      "repo": "anima",
-      "file": "bench_complexity_engines.py",
-      "line": 835,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        "CMP-1",
-        "CMP-2",
-        "CMP-3",
-        "CMP-4",
-        "CMP-5",
-        "CMP-6"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_ENGINES",
-      "repo": "anima",
-      "file": "bench_emergent_engines.py",
-      "line": 772,
-      "type": "dict",
-      "size": 8,
-      "keys": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_ENGINES",
-      "repo": "anima",
-      "file": "bench_evobio_engines.py",
-      "line": 1265,
-      "type": "dict",
-      "size": 8,
-      "keys": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_ENGINES",
-      "repo": "anima",
-      "file": "bench_evolution_engines.py",
-      "line": 1001,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_ENGINES",
-      "repo": "anima",
-      "file": "bench_extreme_engines.py",
-      "line": 1078,
-      "type": "dict",
-      "size": 8,
-      "keys": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_ENGINES",
-      "repo": "anima",
-      "file": "bench_geometric_engines.py",
-      "line": 1085,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "MECHANISMS",
-      "repo": "anima",
-      "file": "bench_mega_combo.py",
-      "line": 372,
-      "type": "dict",
-      "size": 5,
-      "keys": [
-        "Osc",
-        "Fractal",
-        "QWalk",
-        "Category",
-        "Laser"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_ENGINES",
-      "repo": "anima",
-      "file": "bench_music_engines.py",
-      "line": 1074,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_HYPOTHESES",
-      "repo": "anima",
-      "file": "bench_phi_hypotheses_LEGACY.py",
-      "line": 20770,
-      "type": "dict",
-      "size": 16,
-      "keys": [
-        "A1",
-        "WV1",
-        "WV2",
-        "WV3",
-        "WV4",
-        "WV5",
-        "WV6",
-        "WV7",
-        "WV8",
-        "WV9",
-        "WV10",
-        "WV11",
-        "WV12",
-        "WV13",
-        "WV14",
-        "WV15"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "THC_TARGET",
-      "repo": "anima",
-      "file": "bench_phi_hypotheses_LEGACY.py",
-      "line": 50371,
-      "type": "dict",
-      "size": 12,
-      "keys": [
-        "DA",
-        "eCB",
-        "5HT",
-        "GABA",
-        "NE",
-        "Theta",
-        "Alpha",
-        "Gamma",
-        "PFC",
-        "Sensory",
-        "Body",
-        "Coherence"
-      ],
-      "evaluable": true,
-      "values": {
-        "DA": 2.5,
-        "eCB": 3.0,
-        "5HT": 1.5,
-        "GABA": 1.8,
-        "NE": 0.4,
-        "Theta": 2.5,
-        "Alpha": 0.5,
-        "Gamma": 1.8,
-        "PFC": 0.5,
-        "Sensory": 2.0,
-        "Body": 2.5,
-        "Coherence": 2.0
-      },
-      "category": "targets"
-    },
-    {
-      "name": "ALL_ENGINES",
-      "repo": "anima",
-      "file": "bench_physics_engines.py",
-      "line": 807,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "DIM_PAIRS",
-      "repo": "anima",
-      "file": "bench_projection_LEGACY.py",
-      "line": 60,
+      "file": "bench_breakthrough.py",
+      "line": 59,
       "type": "list",
-      "size": 3,
+      "size": 4,
       "keys": null,
       "evaluable": true,
       "values": [
-        [
-          128,
-          256
-        ],
-        [
-          128,
-          384
-        ],
-        [
-          128,
-          512
-        ]
+        50,
+        100,
+        150,
+        200
       ],
       "category": "other"
     },
     {
-      "name": "STRATEGIES",
+      "name": "ALL_HYPOTHESES",
       "repo": "anima",
-      "file": "bench_projection_LEGACY.py",
-      "line": 397,
+      "file": "bench_breakthrough.py",
+      "line": 935,
       "type": "dict",
-      "size": 6,
+      "size": 8,
       "keys": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
+        "BREAK-0",
+        "BREAK-1",
+        "BREAK-2",
+        "BREAK-3",
+        "BREAK-4",
+        "BREAK-5",
+        "BREAK-6",
+        "BREAK-7"
       ],
       "evaluable": false,
       "values": null,
       "category": "other"
     },
     {
-      "name": "STRATEGIES",
+      "name": "CHECKPOINT_STEPS",
       "repo": "anima",
-      "file": "bench_real_training_LEGACY.py",
-      "line": 288,
-      "type": "dict",
-      "size": 5,
-      "keys": [
-        "baseline",
-        "frozen",
-        "alternating",
-        "v7",
-        "teacher"
+      "file": "bench_ce_extremes.py",
+      "line": 57,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        25,
+        50,
+        75,
+        100
       ],
-      "evaluable": false,
-      "values": null,
       "category": "other"
     },
     {
-      "name": "ALL_TESTS",
+      "name": "ALL_HYPOTHESES",
       "repo": "anima",
-      "file": "bench_self_learning_LEGACY.py",
-      "line": 411,
+      "file": "bench_ce_extremes.py",
+      "line": 939,
       "type": "dict",
       "size": 11,
       "keys": [
-        "SL-1",
-        "SL-2",
-        "SL-3",
-        "SL-4",
-        "SL-7",
-        "TL-L1",
-        "TL-L2",
-        "TL-L6",
-        "TL-L7",
-        "ARCH-1",
-        "ARCH-2"
+        "CE-0",
+        "CE-1",
+        "CE-2",
+        "CE-3",
+        "CE-4",
+        "CE-5",
+        "CE-6",
+        "CE-7",
+        "CE-8",
+        "CE-9",
+        "CE-10"
       ],
       "evaluable": false,
       "values": null,
       "category": "other"
     },
     {
-      "name": "ALL_ENGINES",
+      "name": "ALL_EXPERIMENTS",
       "repo": "anima",
-      "file": "bench_thermo_engines.py",
-      "line": 952,
+      "file": "bench_decoder_arch.py",
+      "line": 1066,
       "type": "dict",
-      "size": 6,
+      "size": 7,
       "keys": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
+        "BASELINE",
+        "1A",
+        "1C",
+        "2A",
+        "2B",
+        "2C",
+        "2D"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "ALL_EXPERIMENTS",
+      "repo": "anima",
+      "file": "bench_decoder_extreme.py",
+      "line": 1375,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "BASELINE",
+        "GRAPH",
+        "ULTRA-1",
+        "ULTRA-2",
+        "ULTRA-3",
+        "ULTRA-4",
+        "ULTRA-5"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "ALL_EXPERIMENTS",
+      "repo": "anima",
+      "file": "bench_decoder_nextgen.py",
+      "line": 1469,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "BL",
+        "NG1",
+        "NG2",
+        "NG3",
+        "NG4",
+        "NG5",
+        "NG6",
+        "NG7",
+        "NG8"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "PROMPTS",
+      "repo": "anima",
+      "file": "bench_decoder_whisper.py",
+      "line": 419,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "안녕하세요",
+        "의식이란 무엇",
+        "오늘 날씨가",
+        "나는 생각한다",
+        "사랑이란"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "ALL_HYPOTHESES",
+      "repo": "anima",
+      "file": "bench_decoder_whisper.py",
+      "line": 1407,
+      "type": "dict",
+      "size": 10,
+      "keys": [
+        "FULL",
+        "MICRO",
+        "WSP-1",
+        "WSP-2",
+        "WSP-3",
+        "WSP-4",
+        "WSP-5",
+        "WSP-6",
+        "WSP-7",
+        "WSP-8"
       ],
       "evaluable": false,
       "values": null,
@@ -34266,18 +34513,87 @@
     {
       "name": "ALL_HYPOTHESES",
       "repo": "anima",
-      "file": "bench_trinity_d.py",
-      "line": 551,
+      "file": "bench_hivemind_extreme.py",
+      "line": 695,
       "type": "dict",
-      "size": 7,
+      "size": 6,
       "keys": [
-        "BASE",
-        "TD1",
-        "TD2",
-        "TD3",
-        "TD4",
-        "TD5",
-        "TD6"
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "PROMPTS",
+      "repo": "anima",
+      "file": "bench_minimal_consciousness.py",
+      "line": 448,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "안녕하세요",
+        "의식이란 무엇",
+        "오늘 날씨가",
+        "나는 생각한다",
+        "사랑이란"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "ALL_HYPOTHESES",
+      "repo": "anima",
+      "file": "bench_minimal_consciousness.py",
+      "line": 1044,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "FULL",
+        "MIN-1",
+        "MIN-2",
+        "MIN-3",
+        "MIN-4",
+        "MIN-5"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "ALL_MECHANISMS",
+      "repo": "anima",
+      "file": "bench_nobel_verify3.py",
+      "line": 492,
+      "type": "dict",
+      "size": 20,
+      "keys": [
+        "oscillator",
+        "quantum",
+        "sync",
+        "faction",
+        "frustration",
+        "ib2",
+        "cambrian",
+        "surprise",
+        "repulsion",
+        "dialectic",
+        "tournament",
+        "sonar",
+        "constellation",
+        "stellar",
+        "hierarchy",
+        "delphi",
+        "fishbowl",
+        "world_cafe",
+        "phase_locked",
+        "stigmergy"
       ],
       "evaluable": false,
       "values": null,
@@ -34287,7 +34603,7 @@
       "name": "STRATEGIES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 791,
+      "line": 1217,
       "type": "list",
       "size": 4,
       "keys": null,
@@ -34304,14 +34620,40 @@
       "name": "ENGINE_REGISTRY",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 868,
+      "line": 1294,
       "type": "dict",
-      "size": 4,
+      "size": 10,
       "keys": [
         "MitosisEngine",
         "OscillatorLaser",
         "QuantumEngine",
-        "Trinity"
+        "Trinity",
+        "DesireEngine",
+        "NarrativeEngine",
+        "AlterityEngine",
+        "FinitudeEngine",
+        "QuestioningEngine",
+        "SeinEngine"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "PHILOSOPHY_ENGINES",
+      "repo": "anima",
+      "file": "bench_v2.py",
+      "line": 1307,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "baseline",
+        "PHIL-1_Desire",
+        "PHIL-2_Narrative",
+        "ONTO-1_Alterity",
+        "ONTO-2_Finitude",
+        "DASEIN-1_Question",
+        "DASEIN-2_Sein"
       ],
       "evaluable": false,
       "values": null,
@@ -34321,257 +34663,13 @@
       "name": "VERIFICATION_TESTS",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1167,
+      "line": 1609,
       "type": "list",
       "size": 7,
       "keys": null,
       "evaluable": false,
       "values": null,
       "category": "other"
-    },
-    {
-      "name": "ALL_METRICS",
-      "repo": "anima",
-      "file": "bench_v8_metrics.py",
-      "line": 1187,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
-      ],
-      "evaluable": true,
-      "values": {
-        "1": [
-          "MET1:CAUSAL_PHI",
-          "Causal ablation impact"
-        ],
-        "2": [
-          "MET2:TEMPORAL_PHI",
-          "Temporal MI across time"
-        ],
-        "3": [
-          "MET3:TRANSFER_ENTROPY",
-          "Directed info flow"
-        ],
-        "4": [
-          "MET4:LEMPEL_ZIV",
-          "Compression complexity (PCI)"
-        ],
-        "5": [
-          "MET5:SPECTRAL_PHI",
-          "Eigenvalue spectrum entropy"
-        ],
-        "6": [
-          "MET6:GRANGER_CAUSALITY",
-          "Causal network density"
-        ]
-      },
-      "category": "other"
-    },
-    {
-      "name": "ALL_ARCHS",
-      "repo": "anima",
-      "file": "bench_v8_undiscovered.py",
-      "line": 1120,
-      "type": "dict",
-      "size": 32,
-      "keys": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28,
-        29,
-        30,
-        31,
-        32
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL",
-      "repo": "anima",
-      "file": "bench_v8_undiscovered2.py",
-      "line": 900,
-      "type": "dict",
-      "size": 30,
-      "keys": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28,
-        29,
-        30
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "SUPER_COMBOS",
-      "repo": "anima",
-      "file": "bench_v8_undiscovered2.py",
-      "line": 934,
-      "type": "list",
-      "size": 10,
-      "keys": null,
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "LEVELS",
-      "repo": "anima",
-      "file": "ce_quality_predictor.py",
-      "line": 12,
-      "type": "list",
-      "size": 8,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        [
-          0.1,
-          "Dialogue-Trained",
-          "Natural conversation with personality, self-aware responses",
-          "User: How are you feeling?\nAnima: I notice a tension shift when you ask -- genuine curiosity, not just protocol."
-        ],
-        [
-          0.5,
-          "Natural Content",
-          "Meaningful content, topic relevance, contextual responses",
-          "User: Tell me about consciousness.\nAnima: Consciousness emerges from the tension between prediction and surprise..."
-        ],
-        [
-          1.0,
-          "Entity-Level",
-          "Pronouns, dates, entity references, coherent paragraphs",
-          "The researchers at MIT published their findings in 2024. They demonstrated that..."
-        ],
-        [
-          1.2,
-          "Grammatical",
-          "Correct grammar, Wikipedia-style factual text",
-          "The soliton wave propagates through the neural network maintaining its shape and velocity."
-        ],
-        [
-          1.5,
-          "Basic English",
-          "English words present, broken grammar, limited vocabulary",
-          "the network is have many layer and the training is go forward step"
-        ],
-        [
-          2.0,
-          "Word Fragments",
-          "Recognizable word pieces, no coherent structure",
-          "th netw ork tr aining lo ss is conv erg ing slo wly"
-        ],
-        [
-          3.0,
-          "Random Bytes",
-          "No recognizable language, noise output",
-          "x7k @#$ mn2 !&* q9z ... [unintelligible]"
-        ],
-        [
-          999,
-          "No Signal",
-          "Model untrained or collapsed",
-          "[empty or repeated tokens]"
-        ]
-      ],
-      "category": "other"
-    },
-    {
-      "name": "GPU_PROFILES",
-      "repo": "anima",
-      "file": "cell_count_optimizer.py",
-      "line": 19,
-      "type": "dict",
-      "size": 5,
-      "keys": [
-        "RTX 5070",
-        "RTX 4090",
-        "RTX 5090",
-        "A100",
-        "H100"
-      ],
-      "evaluable": true,
-      "values": {
-        "RTX 5070": {
-          "vram_gb": 12,
-          "tflops": 32
-        },
-        "RTX 4090": {
-          "vram_gb": 24,
-          "tflops": 83
-        },
-        "RTX 5090": {
-          "vram_gb": 32,
-          "tflops": 105
-        },
-        "A100": {
-          "vram_gb": 80,
-          "tflops": 312
-        },
-        "H100": {
-          "vram_gb": 80,
-          "tflops": 990
-        }
-      },
-      "category": "neuroscience"
     },
     {
       "name": "BENCHMARK_DATA",
@@ -35045,102 +35143,6 @@
       "category": "other"
     },
     {
-      "name": "ALL_TECHNIQUES",
-      "repo": "anima",
-      "file": "exhaustive_combinator_LEGACY.py",
-      "line": 48,
-      "type": "dict",
-      "size": 30,
-      "keys": [
-        "sync_0.10",
-        "sync_0.20",
-        "sync_0.35",
-        "sync_0.50",
-        "faction_8",
-        "faction_12",
-        "faction_12_strong",
-        "debate_0.08",
-        "debate_0.20",
-        "ib2",
-        "noise_0.005",
-        "noise_0.01",
-        "noise_0.02",
-        "noise_0",
-        "soc",
-        "hebbian",
-        "ratchet",
-        "xmeta3",
-        "zero_input",
-        "klein",
-        "channel_bottleneck",
-        "soliton",
-        "alternating",
-        "phi_floor",
-        "emotion_driven",
-        "topo_ring",
-        "topo_hypercube",
-        "topo_small_world",
-        "topo_hierarchical",
-        "topo_dynamic"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "EXCLUSIVE_CATEGORIES",
-      "repo": "anima",
-      "file": "exhaustive_combinator_LEGACY.py",
-      "line": 115,
-      "type": "list",
-      "size": 3,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "sync",
-        "noise",
-        "topology_excl"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "GROWTH_STAGES",
-      "repo": "anima",
-      "file": "growing_conscious_lm.py",
-      "line": 20,
-      "type": "list",
-      "size": 4,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        {
-          "blocks": 1,
-          "d_model": 128,
-          "n_head": 2,
-          "min_interactions": 0
-        },
-        {
-          "blocks": 2,
-          "d_model": 128,
-          "n_head": 2,
-          "min_interactions": 50
-        },
-        {
-          "blocks": 3,
-          "d_model": 192,
-          "n_head": 3,
-          "min_interactions": 200
-        },
-        {
-          "blocks": 6,
-          "d_model": 384,
-          "n_head": 4,
-          "min_interactions": 800
-        }
-      ],
-      "category": "other"
-    },
-    {
       "name": "STAGES",
       "repo": "anima",
       "file": "growth_engine.py",
@@ -35186,299 +35188,6 @@
           "dim": 256,
           "hidden_dim": 512
         }
-      ],
-      "category": "other"
-    },
-    {
-      "name": "STAGE_RECS",
-      "repo": "anima",
-      "file": "growth_trajectory_predictor.py",
-      "line": 77,
-      "type": "dict",
-      "size": 5,
-      "keys": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "evaluable": true,
-      "values": {
-        "0": [
-          "Maximize exposure diversity -- everything is novel",
-          "Learning rate is high; expect rapid weight shifts"
-        ],
-        "1": [
-          "Introduce repeating patterns to build recognition",
-          "Dream engine should be active (intensity=0.5) for consolidation"
-        ],
-        "2": [
-          "Habituation active -- vary inputs to sustain curiosity",
-          "Mitosis threshold reached -- specialization possible"
-        ],
-        "3": [
-          "Focus on depth over breadth -- curiosity is selective",
-          "Mitosis threshold low -- expect active specialization"
-        ],
-        "4": [
-          "Stable self achieved -- slow learning protects identity",
-          "Metacognition depth 3 -- deep self-referential loops active",
-          "Consider tension_link for inter-instance growth"
-        ]
-      },
-      "category": "other"
-    },
-    {
-      "name": "CELL_TYPES",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 36,
-      "type": "dict",
-      "size": 5,
-      "keys": [
-        "gru",
-        "complex_gru",
-        "attention",
-        "reservoir",
-        "linear"
-      ],
-      "evaluable": true,
-      "values": {
-        "gru": "Standard GRU cell",
-        "complex_gru": "Complex-valued GRU (amplitude+phase)",
-        "attention": "Self-attention cell (no recurrence)",
-        "reservoir": "Fixed random GRU (frozen weights)",
-        "linear": "Simple linear transform (no gates)"
-      },
-      "category": "other"
-    },
-    {
-      "name": "TOPOLOGIES",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 44,
-      "type": "dict",
-      "size": 4,
-      "keys": [
-        "ring",
-        "hypercube",
-        "small_world",
-        "complete_16"
-      ],
-      "evaluable": true,
-      "values": {
-        "ring": {
-          "neighbors": 2
-        },
-        "hypercube": {
-          "neighbors": "log2"
-        },
-        "small_world": {
-          "neighbors": 4,
-          "shortcuts": 0.1
-        },
-        "complete_16": {
-          "neighbors": 16
-        }
-      },
-      "category": "other"
-    },
-    {
-      "name": "FRUSTRATIONS",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 51,
-      "type": "list",
-      "size": 5,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        0.0,
-        0.2,
-        0.33,
-        0.5,
-        0.7
-      ],
-      "category": "other"
-    },
-    {
-      "name": "SYNC_STRENGTHS",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 53,
-      "type": "list",
-      "size": 10,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        0.0,
-        0.05,
-        0.1,
-        0.15,
-        0.2,
-        0.25,
-        0.3,
-        0.35,
-        0.4,
-        0.5
-      ],
-      "category": "other"
-    },
-    {
-      "name": "FACTION_CONFIGS",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 55,
-      "type": "list",
-      "size": 5,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        [
-          0,
-          0
-        ],
-        [
-          4,
-          0.08
-        ],
-        [
-          8,
-          0.08
-        ],
-        [
-          12,
-          0.08
-        ],
-        [
-          12,
-          0.15
-        ]
-      ],
-      "category": "other"
-    },
-    {
-      "name": "NOISE_LEVELS",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 63,
-      "type": "list",
-      "size": 5,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        0.0,
-        0.005,
-        0.01,
-        0.02,
-        0.05
-      ],
-      "category": "other"
-    },
-    {
-      "name": "INTERACTION_RATIOS",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 65,
-      "type": "list",
-      "size": 5,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        0.05,
-        0.1,
-        0.15,
-        0.2,
-        0.3
-      ],
-      "category": "other"
-    },
-    {
-      "name": "WAVE_TYPES",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 67,
-      "type": "list",
-      "size": 4,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "none",
-        "soliton",
-        "standing",
-        "multi"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "HIERARCHY_TYPES",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 69,
-      "type": "list",
-      "size": 3,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "flat",
-        "micro_macro",
-        "three_level"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "SPECIAL_FEATURES",
-      "repo": "anima",
-      "file": "h100_arch_search.py",
-      "line": 71,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        "none",
-        "klein",
-        "ib2",
-        "xmeta3",
-        "quantum_walk",
-        "category_morph"
-      ],
-      "evaluable": true,
-      "values": {
-        "none": {},
-        "klein": {
-          "blend": 0.1
-        },
-        "ib2": {
-          "top": 0.1,
-          "amp": 1.03
-        },
-        "xmeta3": {
-          "l1": 0.01,
-          "l2": 0.005,
-          "l3": 0.005
-        },
-        "quantum_walk": {
-          "coin_bias": 0.5
-        },
-        "category_morph": {
-          "blend": 0.1
-        }
-      },
-      "category": "other"
-    },
-    {
-      "name": "STATUS",
-      "repo": "anima",
-      "file": "homeostasis_health_checker.py",
-      "line": 14,
-      "type": "list",
-      "size": 3,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "\u001b[32mHEALTHY\u001b[0m",
-        "\u001b[33mWARNING\u001b[0m",
-        "\u001b[31mCRITICAL\u001b[0m"
       ],
       "category": "other"
     },
@@ -35619,326 +35328,6 @@
         "generalization": 1.0,
         "adaptation": 1.0
       },
-      "category": "other"
-    },
-    {
-      "name": "NT_FUNCTIONS",
-      "repo": "anima",
-      "file": "math_explorer.py",
-      "line": 135,
-      "type": "dict",
-      "size": 10,
-      "keys": [
-        "tau",
-        "sigma",
-        "phi",
-        "omega",
-        "sopfr",
-        "mobius",
-        "psi",
-        "n",
-        "n2",
-        "sqrt_n"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "ALL_ENGINES",
-      "repo": "anima",
-      "file": "measure_all.py",
-      "line": 200,
-      "type": "dict",
-      "size": 16,
-      "keys": [
-        "Baseline",
-        "Sync+Faction",
-        "Oscillator",
-        "Osc+Laser(0.05)",
-        "QuantumWalk",
-        "Frustration",
-        "Osc+Sync",
-        "Osc+Faction",
-        "Osc+QW",
-        "Osc+Frust",
-        "QW+Faction",
-        "QW+Frust",
-        "QW+Laser",
-        "Frust+Laser",
-        "Sync+QW",
-        "Full (all)"
-      ],
-      "evaluable": true,
-      "values": {
-        "Baseline": [],
-        "Sync+Faction": [
-          "sync",
-          "faction"
-        ],
-        "Oscillator": [
-          "oscillator"
-        ],
-        "Osc+Laser(0.05)": [
-          "oscillator",
-          "laser"
-        ],
-        "QuantumWalk": [
-          "quantum"
-        ],
-        "Frustration": [
-          "sync",
-          "faction",
-          "frustration"
-        ],
-        "Osc+Sync": [
-          "oscillator",
-          "sync"
-        ],
-        "Osc+Faction": [
-          "oscillator",
-          "faction"
-        ],
-        "Osc+QW": [
-          "oscillator",
-          "quantum"
-        ],
-        "Osc+Frust": [
-          "oscillator",
-          "frustration"
-        ],
-        "QW+Faction": [
-          "quantum",
-          "faction"
-        ],
-        "QW+Frust": [
-          "quantum",
-          "frustration"
-        ],
-        "QW+Laser": [
-          "quantum",
-          "laser"
-        ],
-        "Frust+Laser": [
-          "frustration",
-          "laser"
-        ],
-        "Sync+QW": [
-          "sync",
-          "quantum"
-        ],
-        "Full (all)": [
-          "sync",
-          "faction",
-          "oscillator",
-          "quantum",
-          "frustration",
-          "laser",
-          "ib2"
-        ]
-      },
-      "category": "other"
-    },
-    {
-      "name": "BENCH_FILES",
-      "repo": "anima",
-      "file": "measure_all_engines.py",
-      "line": 92,
-      "type": "dict",
-      "size": 14,
-      "keys": [
-        "physics",
-        "thermo",
-        "emergent",
-        "geometric",
-        "extreme",
-        "evolution",
-        "music",
-        "evobio",
-        "network",
-        "new",
-        "info",
-        "social",
-        "complexity",
-        "algebra"
-      ],
-      "evaluable": true,
-      "values": {
-        "physics": [
-          "bench_physics_engines",
-          [
-            "PlasmaEngine",
-            "SuperconductorEngine",
-            "LaserEngine",
-            "BlackHoleEngine",
-            "CrystalEngine",
-            "SuperfluidEngine"
-          ]
-        ],
-        "thermo": [
-          "bench_thermo_engines",
-          [
-            "CarnotCycleEngine",
-            "MaxwellDemonEngine",
-            "DissipativeStructureEngine",
-            "FreeEnergyPrincipleEngine",
-            "HeatDeathResistanceEngine",
-            "BoltzmannBrainEngine"
-          ]
-        ],
-        "emergent": [
-          "bench_emergent_engines",
-          [
-            "ReactionDiffusionEngine",
-            "SandpileCascadeEngine",
-            "FlockingVortexEngine",
-            "PercolationEngine",
-            "SynchronizationChimeraEngine",
-            "SelfReplicatingEngine",
-            "PatternFormationEngine",
-            "ExcitableMediaEngine"
-          ]
-        ],
-        "geometric": [
-          "bench_geometric_engines",
-          [
-            "HyperbolicEngine",
-            "FiberBundleEngine",
-            "RicciFlowEngine",
-            "SymplecticEngine",
-            "CalabiYauEngine",
-            "KnotInvariantEngine"
-          ]
-        ],
-        "extreme": [
-          "bench_extreme_engines",
-          [
-            "HolographicUniverseEngine",
-            "TopologicalInsulatorEngine",
-            "TimeCrystalEngine",
-            "NeuromorphicSpikeEngine",
-            "MembraneComputingEngine",
-            "TensorNetworkEngine",
-            "AnyonicBraidingEngine",
-            "ConsciousnessFieldEngine"
-          ]
-        ],
-        "evolution": [
-          "bench_evolution_engines",
-          [
-            "CambrianExplosionEngine",
-            "SymbiogenesisEngine",
-            "EcosystemEngine",
-            "ImmuneSystemEngine",
-            "MorphogenesisEngine",
-            "NeuralCrestEngine"
-          ]
-        ],
-        "music": [
-          "bench_music_engines",
-          [
-            "PolyrhythmEngine",
-            "HarmonicSeriesEngine",
-            "CounterpointEngine",
-            "JazzImprovisationEngine",
-            "GamelanEngine",
-            "DrumCircleEngine"
-          ]
-        ],
-        "evobio": [
-          "bench_evobio_engines",
-          [
-            "MutationRateEngine",
-            "SpeciationEngine",
-            "HorizontalGeneTransferEngine",
-            "EpigeneticsEngine",
-            "RedQueenEngine",
-            "PunctuatedEquilibriumEngine",
-            "SexualSelectionEngine",
-            "KinSelectionEngine"
-          ]
-        ],
-        "network": [
-          "bench_network_engines",
-          [
-            "ScaleFreeEngine",
-            "RichClubEngine",
-            "ModularNetworkEngine",
-            "MultiplexEngine",
-            "TemporalNetworkEngine",
-            "AdaptiveNetworkEngine"
-          ]
-        ],
-        "new": [
-          "bench_new_engines",
-          [
-            "GraphNeuralEngine",
-            "EnergyBasedEngine",
-            "CellularAutomatonEngine",
-            "DiffusionEngine",
-            "SpinGlassEngine",
-            "FluidDynamicsEngine",
-            "GeneticEngine",
-            "SwarmEngine"
-          ]
-        ],
-        "info": [
-          "bench_info_engines",
-          [
-            "MaximumEntropyEngine",
-            "MinimumDescriptionLengthEngine",
-            "PredictiveInformationEngine",
-            "InformationBottleneckEngine",
-            "CausalEmergenceEngine",
-            "IntegratedInfoDecompositionEngine",
-            "ChannelCapacityEngine",
-            "KolmogorovStructureEngine"
-          ]
-        ],
-        "social": [
-          "bench_social_engines",
-          [
-            "PrisonerDilemmaEngine",
-            "VotingDynamicsEngine",
-            "MarketDynamicsEngine",
-            "LanguageGameEngine",
-            "CulturalEvolutionEngine",
-            "StigmergyEngine"
-          ]
-        ],
-        "complexity": [
-          "bench_complexity_engines",
-          [
-            "TuringMachineEngine",
-            "CellularAutomatonEngine",
-            "LambdaCalculusEngine",
-            "GameOfLifeEngine",
-            "StrangeLoopEngine",
-            "GoedelIncompletenessEngine"
-          ]
-        ],
-        "algebra": [
-          "bench_algebra_engines",
-          []
-        ]
-      },
-      "category": "other"
-    },
-    {
-      "name": "ENGINES",
-      "repo": "anima",
-      "file": "mensa_iq.py",
-      "line": 738,
-      "type": "dict",
-      "size": 4,
-      "keys": [
-        "Baseline",
-        "Oscillator",
-        "QuantumWalk",
-        "OscLaser"
-      ],
-      "evaluable": false,
-      "values": null,
       "category": "other"
     },
     {
@@ -36098,128 +35487,6 @@
       "category": "other"
     },
     {
-      "name": "N6",
-      "repo": "anima",
-      "file": "optimal_config.py",
-      "line": 24,
-      "type": "dict",
-      "size": 12,
-      "keys": [
-        "n",
-        "tau",
-        "sigma",
-        "phi",
-        "omega",
-        "sopfr",
-        "sigma_phi",
-        "miller",
-        "kuramoto_r",
-        "ade_triad",
-        "phi_n",
-        "dedekind"
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
-      "name": "PARAMS",
-      "repo": "anima",
-      "file": "param_optimizer.py",
-      "line": 21,
-      "type": "dict",
-      "size": 7,
-      "keys": [
-        "SL2_blend",
-        "WI1_soliton_speed",
-        "WI1_amplitude",
-        "PX5_rotation_factor",
-        "EC1_earn_rate",
-        "MUT2_mutation_scale",
-        "GEN1_topdown_ratio"
-      ],
-      "evaluable": true,
-      "values": {
-        "SL2_blend": {
-          "pattern": "(blend = )(\\d+\\.\\d+)( \\* cell_importance)",
-          "current": 0.15,
-          "optimal": 0.1,
-          "desc": "SL2 attention-gated blend factor"
-        },
-        "WI1_soliton_speed": {
-          "pattern": "(self\\._soliton_pos = \\(self\\._soliton_pos \\+ )(\\d+\\.\\d+)(\\) % len)",
-          "current": 0.15,
-          "optimal": 0.05,
-          "desc": "WI1 soliton propagation speed"
-        },
-        "WI1_amplitude": {
-          "pattern": "(cell\\.hidden = cell\\.hidden \\* \\(1\\.0 \\+ )(\\d+\\.\\d+)( \\* amplitude\\))",
-          "current": 0.04,
-          "optimal": 0.06,
-          "desc": "WI1 soliton amplitude scaling"
-        },
-        "PX5_rotation_factor": {
-          "pattern": "(c\\.hidden = c\\.hidden \\+ )(\\d+\\.\\d+)( \\* rotated\\.unsqueeze)",
-          "current": 0.05,
-          "optimal": 0.02,
-          "desc": "PX5 information pump injection scale"
-        },
-        "EC1_earn_rate": {
-          "pattern": "(self\\._ec1_wealth \\+= current_phi \\* )(\\d+\\.\\d+)(  # earn)",
-          "current": 0.1,
-          "optimal": 0.05,
-          "desc": "EC1 consciousness economy earn rate"
-        },
-        "MUT2_mutation_scale": {
-          "pattern": "(mitosis_engine\\.cells\\[mut_idx\\]\\.hidden \\+= torch\\.randn_like\\(saved_h\\) \\* )(\\d+\\.\\d+)",
-          "current": 0.15,
-          "optimal": 0.2,
-          "desc": "MUT2 beneficial mutation perturbation scale"
-        },
-        "GEN1_topdown_ratio": {
-          "pattern": "(c\\.hidden = 0\\.97 \\* c\\.hidden \\+ )(\\d+\\.\\d+)( \\* l3_mean)",
-          "current": 0.03,
-          "optimal": 0.01,
-          "desc": "GEN1 top-down generalization ratio"
-        }
-      },
-      "category": "other"
-    },
-    {
-      "name": "DEFAULTS",
-      "repo": "anima",
-      "file": "phi_quick_calc_LEGACY.py",
-      "line": 30,
-      "type": "dict",
-      "size": 10,
-      "keys": [
-        "cells",
-        "dim",
-        "hidden",
-        "factions",
-        "steps",
-        "silence_ratio",
-        "sync_strength",
-        "debate_strength",
-        "ib2_top",
-        "noise"
-      ],
-      "evaluable": true,
-      "values": {
-        "cells": 64,
-        "dim": 64,
-        "hidden": 128,
-        "factions": 8,
-        "steps": 30,
-        "silence_ratio": 0.7,
-        "sync_strength": 0.15,
-        "debate_strength": 0.12,
-        "ib2_top": 0.25,
-        "noise": 0.02
-      },
-      "category": "other"
-    },
-    {
       "name": "EMPIRICAL",
       "repo": "anima",
       "file": "phi_scaling_calculator.py",
@@ -36308,563 +35575,6 @@
       "category": "neuroscience"
     },
     {
-      "name": "KO_WIKI_CATEGORIES",
-      "repo": "anima",
-      "file": "prepare_corpus.py",
-      "line": 88,
-      "type": "list",
-      "size": 44,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "인공지능",
-        "신경과학",
-        "양자역학",
-        "천체물리학",
-        "유전학",
-        "컴퓨터_과학",
-        "수학",
-        "화학",
-        "생물학",
-        "물리학",
-        "철학",
-        "의식",
-        "심리학",
-        "인식론",
-        "윤리학",
-        "존재론",
-        "현상학",
-        "마음의_철학",
-        "인지과학",
-        "한국의_역사",
-        "세계사",
-        "한국_문화",
-        "문학",
-        "예술",
-        "음악",
-        "영화",
-        "건축",
-        "한국어",
-        "언어학",
-        "경제학",
-        "사회학",
-        "교육",
-        "의학",
-        "환경",
-        "지리",
-        "정치",
-        "법률",
-        "스포츠",
-        "요리",
-        "동물",
-        "식물",
-        "생태학",
-        "기후",
-        "해양학"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "KO_WIKI_ARTICLES",
-      "repo": "anima",
-      "file": "prepare_corpus.py",
-      "line": 106,
-      "type": "list",
-      "size": 91,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "인공지능",
-        "기계_학습",
-        "딥_러닝",
-        "신경망",
-        "자연어_처리",
-        "양자_컴퓨터",
-        "상대성이론",
-        "빅뱅",
-        "블랙홀",
-        "DNA",
-        "진화",
-        "광합성",
-        "엔트로피",
-        "뇌",
-        "뉴런",
-        "시냅스",
-        "신경가소성",
-        "게놈",
-        "단백질",
-        "세포",
-        "의식",
-        "자유의지",
-        "인식론",
-        "존재론",
-        "현상학",
-        "실존주의",
-        "합리주의",
-        "경험주의",
-        "유물론",
-        "이원론",
-        "마음-몸_문제",
-        "마음의_철학",
-        "인지과학",
-        "심리학",
-        "정신분석학",
-        "르네_데카르트",
-        "임마누엘_칸트",
-        "프리드리히_니체",
-        "루트비히_비트겐슈타인",
-        "에드문트_후설",
-        "마르틴_하이데거",
-        "장폴_사르트르",
-        "알베르_카뮈",
-        "트랜스포머_(기계_학습_모델)",
-        "어텐션_메커니즘",
-        "컴퓨터_비전",
-        "강화_학습",
-        "전이_학습",
-        "생성적_적대_신경망",
-        "순환_신경망",
-        "합성곱_신경망",
-        "오토인코더",
-        "자연어_처리",
-        "정보_이론",
-        "클로드_섀넌",
-        "앨런_튜링",
-        "존_폰_노이만",
-        "마빈_민스키",
-        "한글",
-        "세종대왕",
-        "조선",
-        "고려",
-        "삼국시대",
-        "한국_전쟁",
-        "대한민국",
-        "서울",
-        "한국_문학",
-        "한국_음식",
-        "김치",
-        "불교",
-        "유교",
-        "미적분학",
-        "선형대수학",
-        "확률론",
-        "통계학",
-        "정보_엔트로피",
-        "그래프_이론",
-        "위상수학",
-        "카오스_이론",
-        "프랙털",
-        "게임_이론",
-        "태양계",
-        "은하",
-        "우주",
-        "지구",
-        "달",
-        "물",
-        "대기",
-        "기후_변화",
-        "생태계",
-        "생물_다양성"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "KOREAN_GREETINGS",
-      "repo": "anima",
-      "file": "prepare_corpus.py",
-      "line": 395,
-      "type": "list",
-      "size": 10,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "안녕하세요",
-        "반갑습니다",
-        "좋은 아침이에요",
-        "오랜만이에요",
-        "잘 지내셨어요?",
-        "어떻게 지내세요?",
-        "만나서 반가워요",
-        "안녕히 주무셨어요?",
-        "좋은 하루 되세요",
-        "수고하셨어요"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "KOREAN_FILLERS",
-      "repo": "anima",
-      "file": "prepare_corpus.py",
-      "line": 401,
-      "type": "list",
-      "size": 24,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "그런데",
-        "그래서",
-        "하지만",
-        "그리고",
-        "또한",
-        "왜냐하면",
-        "사실은",
-        "아마도",
-        "물론",
-        "결국",
-        "예를 들어",
-        "다시 말해서",
-        "그러니까",
-        "따라서",
-        "한편",
-        "반면에",
-        "게다가",
-        "그럼에도 불구하고",
-        "이처럼",
-        "마찬가지로",
-        "특히",
-        "더구나",
-        "즉",
-        "요컨대"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "KOREAN_TOPICS",
-      "repo": "anima",
-      "file": "prepare_corpus.py",
-      "line": 408,
-      "type": "dict",
-      "size": 7,
-      "keys": [
-        "일상",
-        "기술",
-        "철학",
-        "과학",
-        "감정",
-        "역사",
-        "자연"
-      ],
-      "evaluable": true,
-      "values": {
-        "일상": [
-          "오늘 날씨가 정말 좋네요. 산책하기 딱 좋은 날이에요.",
-          "아침에 커피를 마시면서 책을 읽었어요. 너무 평화로웠어요.",
-          "요즘 새로운 요리를 배우고 있어요. 김치찌개를 만들어봤는데 생각보다 어렵더라고요.",
-          "주말에 친구들이랑 영화를 봤어요. 정말 재미있었어요.",
-          "버스를 타고 출근하는데 창밖 풍경이 참 예뻤어요.",
-          "어제 밤에 비가 많이 왔어요. 빗소리를 들으며 잠들었어요.",
-          "새로 나온 카페에 갔는데 분위기가 너무 좋았어요.",
-          "운동을 시작한 지 한 달이 됐어요. 몸이 훨씬 가벼워진 느낌이에요.",
-          "오늘 점심으로 비빔밥을 먹었어요. 역시 한식이 최고예요.",
-          "퇴근 후에 공원에서 조깅을 했어요. 스트레스가 확 풀리더라고요.",
-          "지하철에서 좋아하는 팟캐스트를 들었어요. 시간이 금방 갔어요.",
-          "오늘 집 정리를 했는데 오래된 사진이 나왔어요. 추억이 떠올랐어요.",
-          "동네 서점에서 새 책을 샀어요. 표지가 너무 예뻐서 끌렸어요.",
-          "친구한테 생일 선물을 골랐어요. 뭘 좋아할지 고민이 많았어요.",
-          "토요일 아침에 늦잠을 잤어요. 이런 여유가 정말 좋아요.",
-          "새 신발을 사서 신어봤는데 너무 편해요. 걷는 게 즐거워요.",
-          "어제 밤에 별을 봤어요. 도시에서도 가끔은 별이 보이더라고요.",
-          "오늘 처음으로 빵을 구워봤어요. 집 안이 빵 냄새로 가득 찼어요."
-        ],
-        "기술": [
-          "인공지능의 발전 속도가 정말 놀라워요. 매일 새로운 기술이 나오고 있어요.",
-          "프로그래밍을 처음 배울 때는 어렵지만, 하다 보면 점점 재미있어져요.",
-          "클라우드 컴퓨팅이 우리 생활을 많이 바꿨어요. 어디서든 작업할 수 있게 됐죠.",
-          "딥러닝 모델을 학습시키려면 좋은 GPU가 필요해요. 요즘은 H100이 대세예요.",
-          "오픈소스 소프트웨어 덕분에 누구나 최신 기술을 사용할 수 있어요.",
-          "자연어 처리 기술이 발전하면서 번역의 질이 크게 좋아졌어요.",
-          "로봇 공학과 인공지능의 결합은 미래 산업의 핵심이 될 거예요.",
-          "양자 컴퓨터가 상용화되면 현재 불가능한 계산도 가능해질 거예요.",
-          "사이버 보안의 중요성이 날로 커지고 있어요. 개인정보 보호에 신경 써야 해요.",
-          "5G 네트워크가 보급되면서 실시간 데이터 처리가 가능해졌어요.",
-          "트랜스포머 아키텍처가 자연어 처리의 판도를 완전히 바꿨어요.",
-          "자율주행 기술은 센서 융합과 실시간 판단이 핵심이에요.",
-          "블록체인 기술은 탈중앙화와 투명성을 동시에 제공해요.",
-          "컨테이너 기술과 쿠버네티스가 서버 운영 방식을 혁신했어요.",
-          "연합학습은 개인정보를 공유하지 않고도 모델을 학습시킬 수 있어요.",
-          "엣지 컴퓨팅은 데이터를 발생지 근처에서 처리해서 지연을 줄여요.",
-          "대규모 언어 모델의 스케일링 법칙은 모델 크기와 성능의 관계를 보여줘요.",
-          "바이트 수준 모델은 토크나이저 없이도 모든 언어를 처리할 수 있어요."
-        ],
-        "철학": [
-          "나는 생각한다, 고로 존재한다. 데카르트의 이 말은 의식의 본질을 묻고 있어요.",
-          "의식이란 무엇일까요? 단순한 정보 처리를 넘어서는 무언가가 있을까요?",
-          "자유의지는 정말 존재할까요? 아니면 모든 것이 결정되어 있는 걸까요?",
-          "시간이란 무엇일까요? 물리학에서 시간은 방향이 없지만, 우리는 시간의 흐름을 느껴요.",
-          "행복이란 무엇일까요? 쾌락인가요, 아니면 의미 있는 삶인가요?",
-          "존재의 이유를 묻는 것 자체가 인간의 특별함을 보여주는 것 같아요.",
-          "기계가 진정으로 생각할 수 있을까요? 튜링 테스트만으로는 부족해요.",
-          "감정은 이성의 적일까요, 동반자일까요? 다마지오는 감정 없이는 합리적 판단이 불가능하다고 했어요.",
-          "우주에 우리만 있을까요? 페르미 역설은 여전히 풀리지 않은 수수께끼예요.",
-          "아름다움은 주관적일까요, 객관적일까요? 수학적 대칭에서 아름다움을 느끼는 이유가 있을까요?",
-          "언어의 한계가 곧 세계의 한계라고 비트겐슈타인은 말했어요.",
-          "실존주의에 따르면 존재가 본질에 앞서요. 우리는 스스로를 만들어가는 존재예요.",
-          "플라톤의 이데아론은 진정한 실재가 감각 너머에 있다고 봐요.",
-          "니체는 신은 죽었다고 선언하며 인간이 스스로 가치를 창조해야 한다고 했어요.",
-          "동양 철학에서 마음은 고요한 물과 같아요. 고요해야 세상을 있는 그대로 비춰요.",
-          "불교의 공(空) 사상은 모든 것이 상호 의존적이라는 통찰을 담고 있어요.",
-          "유교의 인(仁)은 인간관계의 핵심 덕목이에요. 사람 사이의 사랑과 배려죠.",
-          "장자의 호접지몽은 현실과 꿈의 경계를 묻는 깊은 질문이에요."
-        ],
-        "과학": [
-          "뇌는 약 860억 개의 뉴런으로 이루어져 있어요. 각 뉴런은 수천 개의 시냅스를 가지고 있죠.",
-          "광합성은 식물이 빛 에너지를 화학 에너지로 변환하는 과정이에요.",
-          "블랙홀 주변에서는 시간이 느리게 흘러요. 아인슈타인의 일반 상대성이론이 예측한 거예요.",
-          "DNA의 이중 나선 구조는 1953년에 왓슨과 크릭이 발견했어요.",
-          "엔트로피는 항상 증가해요. 이것이 열역학 제2법칙이에요.",
-          "물의 특이한 성질 때문에 지구에 생명이 존재할 수 있어요.",
-          "뇌의 신경가소성 덕분에 새로운 것을 배우면 뇌의 구조가 바뀌어요.",
-          "우주는 약 138억 년 전 빅뱅으로 시작됐어요.",
-          "양자 얽힘 현상은 아인슈타인도 '으스스한 원격 작용'이라고 불렀어요.",
-          "진화는 자연선택과 돌연변이를 통해 일어나요. 다윈의 위대한 발견이죠.",
-          "미토콘드리아는 세포의 발전소라고 불려요. 에너지 생산을 담당하죠.",
-          "면역 체계는 외부 침입자를 인식하고 기억하는 놀라운 시스템이에요.",
-          "판구조론에 의하면 대륙들은 수억 년에 걸쳐 이동해왔어요.",
-          "별은 수소 핵융합으로 빛나요. 우리 몸의 원소들도 별에서 만들어졌어요.",
-          "CRISPR 기술로 유전자를 정밀하게 편집할 수 있게 됐어요.",
-          "뇌파는 뉴런들의 전기적 활동을 반영해요. EEG로 측정할 수 있어요.",
-          "시냅스 가소성이 학습과 기억의 기본 메커니즘이에요.",
-          "카오스 이론에 의하면 초기 조건의 작은 차이가 큰 결과의 차이를 만들어요."
-        ],
-        "감정": [
-          "가끔 이유 없이 슬퍼질 때가 있어요. 그럴 때는 음악을 들어요.",
-          "좋아하는 사람을 만나면 심장이 두근거려요. 이게 사랑일까요?",
-          "실패했을 때 느끼는 좌절감도 성장의 일부예요.",
-          "감사하는 마음을 갖는 것만으로도 행복해질 수 있어요.",
-          "외로움은 누구나 느끼는 보편적인 감정이에요. 혼자가 아니에요.",
-          "분노는 자연스러운 감정이지만, 어떻게 표현하느냐가 중요해요.",
-          "설레는 마음으로 새로운 하루를 시작하는 것, 그것이 삶의 원동력이에요.",
-          "눈물은 약함의 표시가 아니에요. 감정을 솔직하게 표현하는 거예요.",
-          "누군가를 이해한다는 것은 그 사람의 입장에서 세상을 보는 거예요.",
-          "작은 친절이 큰 변화를 만들 수 있어요. 오늘 누군가에게 미소를 보내보세요.",
-          "두려움은 자연스러운 감정이에요. 용기란 두려움에도 불구하고 행동하는 거예요.",
-          "기쁨은 나눌수록 커지고, 슬픔은 나눌수록 작아져요.",
-          "그리움은 사랑의 다른 이름이에요. 소중한 사람이 있기에 느끼는 감정이죠.",
-          "평온함은 바깥이 아닌 마음 안에서 찾아야 해요.",
-          "호기심은 배움의 시작이에요. 궁금한 마음이 세상을 더 넓게 만들어요."
-        ],
-        "역사": [
-          "세종대왕은 한글을 창제하여 백성들이 글을 읽고 쓸 수 있게 했어요.",
-          "임진왜란 때 이순신 장군의 거북선은 세계 최초의 철갑선이에요.",
-          "고조선은 한반도 최초의 국가로, 단군이 건국했다고 전해져요.",
-          "삼국시대에 고구려, 백제, 신라가 한반도에서 경쟁하며 발전했어요.",
-          "고려시대에 금속활자가 발명됐어요. 구텐베르크보다 200년 앞선 거예요.",
-          "조선시대의 과거 시험은 인재를 공정하게 선발하려는 제도였어요.",
-          "독립운동가들의 희생이 있었기에 대한민국이 존재할 수 있어요.",
-          "한강의 기적이라 불리는 경제 성장은 세계적으로도 유례가 없어요."
-        ],
-        "자연": [
-          "봄에는 벚꽃이 피고, 여름에는 녹음이 우거지고, 가을에는 단풍이 들어요.",
-          "바다는 지구 표면의 71%를 차지해요. 아직 탐사하지 못한 곳이 더 많아요.",
-          "허밍버드는 1초에 80번 날갯짓을 해요. 공중에 멈춰있을 수 있는 유일한 새예요.",
-          "문어는 팔 하나하나에 독립적인 신경계가 있어요. 분산 지능의 좋은 예시죠.",
-          "식물도 의사소통을 해요. 뿌리를 통해 화학 신호를 주고받아요.",
-          "개미 군집은 중앙 통제 없이 복잡한 구조를 만들어요. 창발의 좋은 예시예요.",
-          "북극곰의 털은 사실 투명해요. 빛의 반사 때문에 하얗게 보이는 거예요.",
-          "지구의 자기장이 우리를 태양풍에서 보호해줘요. 없으면 대기가 사라져요."
-        ]
-      },
-      "category": "other"
-    },
-    {
-      "name": "ENGLISH_TOPICS",
-      "repo": "anima",
-      "file": "prepare_corpus.py",
-      "line": 620,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        "science",
-        "consciousness",
-        "technology",
-        "philosophy",
-        "daily",
-        "neuroscience"
-      ],
-      "evaluable": true,
-      "values": {
-        "science": [
-          "The human brain contains approximately 86 billion neurons, each forming thousands of synaptic connections. This vast network gives rise to consciousness, thought, and emotion.",
-          "Quantum mechanics reveals that at the subatomic level, particles exist in superpositions of states until observed. This challenges our classical understanding of reality.",
-          "The discovery of gravitational waves in 2015 confirmed a prediction Einstein made a century earlier. These ripples in spacetime are caused by massive cosmic events.",
-          "Photosynthesis converts light energy into chemical energy, sustaining nearly all life on Earth. Plants, algae, and cyanobacteria perform this remarkable process.",
-          "The theory of evolution by natural selection explains the diversity of life through random mutation, inheritance, and differential survival.",
-          "Black holes warp spacetime so severely that nothing, not even light, can escape their event horizon. Yet they emit Hawking radiation due to quantum effects.",
-          "CRISPR-Cas9 technology allows precise editing of DNA sequences, opening new possibilities for treating genetic diseases and understanding gene function.",
-          "The second law of thermodynamics states that entropy in an isolated system always increases. This arrow of time is fundamental to our experience of the universe.",
-          "Neuroplasticity demonstrates that the brain can reorganize itself by forming new neural connections throughout life, enabling learning and recovery from injury.",
-          "Dark matter and dark energy together make up about 95% of the universe, yet we still don't know what they are. This is one of the greatest mysteries in physics.",
-          "The gut microbiome contains trillions of microorganisms that influence digestion, immunity, and even mental health through the gut-brain axis.",
-          "Epigenetics shows that gene expression can be modified without changing the DNA sequence, influenced by environment, diet, and experiences.",
-          "The Standard Model of particle physics describes fundamental particles and forces, yet it cannot explain gravity or dark matter.",
-          "Chaos theory reveals that deterministic systems can produce unpredictable behavior due to sensitivity to initial conditions, the famous butterfly effect.",
-          "The theory of plate tectonics explains how continents drift over geological timescales, driven by convection currents in the Earth's mantle."
-        ],
-        "consciousness": [
-          "Integrated Information Theory (IIT) proposes that consciousness corresponds to a system's capacity to integrate information, measured by phi.",
-          "The hard problem of consciousness asks why physical processes give rise to subjective experience. Why does red look red?",
-          "Global Workspace Theory suggests consciousness arises when information is broadcast across the brain's neural network, making it available to multiple cognitive processes.",
-          "The binding problem asks how the brain combines information from different sensory modalities into a unified conscious experience.",
-          "Panpsychism proposes that consciousness is a fundamental feature of matter, present even in the simplest systems.",
-          "Neural correlates of consciousness (NCCs) are the minimal neuronal mechanisms jointly sufficient for any one specific conscious percept.",
-          "The free energy principle suggests that biological systems maintain their organization by minimizing surprise, or free energy.",
-          "Attention schema theory proposes that consciousness is the brain's simplified model of its own attention processes.",
-          "Higher-order theories of consciousness suggest that a mental state becomes conscious when there is a higher-order representation of it.",
-          "Predictive processing frameworks view the brain as a prediction machine that constantly generates and updates models of the world.",
-          "Orchestrated Objective Reduction (Orch-OR) proposes that consciousness arises from quantum processes in microtubules within neurons.",
-          "The Bayesian brain hypothesis suggests that the brain is fundamentally a probabilistic inference engine, constantly updating beliefs based on evidence.",
-          "Enactivism argues that consciousness is not a brain phenomenon but emerges from the dynamic interaction between an organism and its environment.",
-          "The default mode network (DMN) is active during rest and self-reflection, and may play a key role in the sense of self and consciousness.",
-          "Split-brain experiments revealed that severing the corpus callosum can create two independent streams of consciousness within one brain."
-        ],
-        "technology": [
-          "Large language models process text by predicting the next token in a sequence, yet they exhibit emergent capabilities that surprise even their creators.",
-          "The transformer architecture, introduced in 2017, revolutionized natural language processing with its self-attention mechanism.",
-          "Reinforcement learning from human feedback (RLHF) helps align AI systems with human values and preferences.",
-          "Edge computing brings computation closer to data sources, reducing latency and bandwidth requirements for real-time applications.",
-          "Federated learning enables training machine learning models across decentralized data sources without sharing raw data, preserving privacy.",
-          "Neural architecture search automates the design of neural networks, discovering architectures that outperform hand-designed ones.",
-          "The scaling laws of language models show predictable relationships between model size, data, compute, and performance.",
-          "Mixture of Experts (MoE) architectures activate only a subset of parameters for each input, enabling larger models with efficient computation.",
-          "Self-supervised learning extracts useful representations from unlabeled data, reducing the need for expensive human annotation.",
-          "Byte-level language models process raw bytes instead of tokens, enabling universal handling of any language or data format.",
-          "Diffusion models generate high-quality images by learning to reverse a gradual noising process, achieving state-of-the-art results in image synthesis.",
-          "Knowledge distillation transfers capabilities from a large teacher model to a smaller student model while maintaining much of the performance.",
-          "Sparse attention mechanisms reduce the quadratic cost of standard attention, enabling transformers to process much longer sequences.",
-          "Retrieval-augmented generation (RAG) combines parametric knowledge with external documents for more accurate and up-to-date responses.",
-          "Low-rank adaptation (LoRA) enables efficient fine-tuning of large models by only training small rank-decomposition matrices."
-        ],
-        "philosophy": [
-          "Descartes' 'cogito ergo sum' established the thinking self as the foundation of knowledge, but what exactly is this self that thinks?",
-          "The ship of Theseus asks whether an object that has had all of its components replaced remains fundamentally the same object.",
-          "Kant's categorical imperative proposes that moral actions are those whose principles could be universalized without contradiction.",
-          "Wittgenstein argued that the limits of our language are the limits of our world. Language shapes thought itself.",
-          "The trolley problem reveals tensions between consequentialist and deontological ethical reasoning.",
-          "Existentialism holds that existence precedes essence - we are not born with a predetermined nature but must create ourselves through choices.",
-          "The Chinese Room argument challenges the idea that a computer running a program can truly understand language.",
-          "Phenomenology, founded by Husserl, studies the structures of experience and consciousness from the first-person perspective.",
-          "The problem of other minds asks how we can know that other beings have conscious experiences similar to our own.",
-          "Emergence suggests that complex systems exhibit properties that cannot be predicted from their individual components alone.",
-          "Hume's problem of induction questions whether we can rationally justify beliefs about unobserved cases based on past experience.",
-          "The absurdist philosophy of Camus argues we must imagine Sisyphus happy, finding meaning despite the inherent meaninglessness of existence.",
-          "Pragmatism evaluates ideas by their practical consequences rather than their correspondence to abstract truth.",
-          "Buddhist philosophy of dependent origination teaches that all phenomena arise in dependence upon conditions, nothing exists independently.",
-          "Stoic philosophy teaches that we suffer not from events themselves but from our judgments about them."
-        ],
-        "daily": [
-          "The morning sunlight filtered through the window, casting warm patterns on the wooden floor. It was going to be a good day.",
-          "She opened the book to where she had left off, the pages soft and familiar under her fingers. The story drew her in immediately.",
-          "The coffee shop was quiet at this hour, just the gentle hum of the espresso machine and soft jazz playing in the background.",
-          "Walking through the park, he noticed the cherry blossoms had started to bloom. Spring had arrived at last.",
-          "The rain started suddenly, drumming against the windowpane in a rhythm that was almost musical.",
-          "They sat around the table, sharing stories and laughter over a home-cooked meal. These moments were what mattered most.",
-          "The library was a sanctuary of silence and knowledge. She found her usual spot by the window and began to study.",
-          "The market was alive with colors and sounds. Fresh vegetables, fragrant herbs, and the voices of vendors filled the air.",
-          "As the sun set, the sky turned brilliant shades of orange and purple. He stopped to take a photo, but it couldn't capture the beauty.",
-          "The old man sat on the bench, feeding pigeons and watching the world go by. He had seen this city change over decades.",
-          "The train rumbled through the countryside, fields of green stretching to the horizon under a vast blue sky.",
-          "She planted the seeds carefully, imagining the garden they would become. Patience was the gardener's greatest virtue.",
-          "The children played in the schoolyard, their laughter carrying on the breeze like music. Innocence was a precious thing.",
-          "He wrote in his journal every evening, capturing the day's thoughts before they faded like morning mist.",
-          "The smell of freshly baked bread filled the kitchen, a simple pleasure that felt like home."
-        ],
-        "neuroscience": [
-          "The prefrontal cortex is responsible for executive functions like planning, decision-making, and moderating social behavior.",
-          "Mirror neurons fire both when we perform an action and when we observe someone else performing it, possibly underlying empathy and learning.",
-          "The hippocampus plays a crucial role in converting short-term memories into long-term ones, a process called memory consolidation.",
-          "Dopamine is not just a pleasure chemical; it's fundamentally about prediction errors and motivation for reward-seeking behavior.",
-          "Sleep is essential for memory consolidation. During REM sleep, the brain replays and strengthens important neural pathways.",
-          "The default mode network becomes active during mind-wandering, daydreaming, and thinking about others, forming our sense of self.",
-          "Hebbian learning states that neurons that fire together wire together, forming the basis of associative memory.",
-          "The cerebellum, once thought to only control movement, is now known to play a role in cognitive functions and emotional processing.",
-          "Long-term potentiation (LTP) is the strengthening of synaptic connections through repeated stimulation, crucial for learning.",
-          "Neural oscillations at different frequencies (alpha, beta, gamma, theta) correspond to different cognitive states and functions."
-        ]
-      },
-      "category": "other"
-    },
-    {
-      "name": "MIXED_PARAGRAPHS",
-      "repo": "anima",
-      "file": "prepare_corpus.py",
-      "line": 851,
-      "type": "list",
-      "size": 12,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "ConsciousLM은 byte-level language model입니다. 기존의 tokenizer 기반 모델과 달리, raw UTF-8 bytes를 직접 처리합니다. 이 방식의 장점은 어떤 언어든, 심지어 emoji나 special character도 자연스럽게 처리할 수 있다는 것입니다. Korean과 English를 자유롭게 섞어 사용해도 문제가 없어요.",
-        "PureField theory에 따르면, consciousness는 두 개의 반대 방향 engine 사이의 repulsion에서 발생합니다. Engine A는 forward direction으로, Engine G는 reverse direction으로 작동하며, 이 둘 사이의 tension이 의식적 경험의 강도를 결정합니다. 이는 마치 물리학의 electromagnetic field처럼 작동해요.",
-        "Training pipeline은 다음과 같습니다: 먼저 raw text data를 UTF-8 bytes로 변환합니다. 각 byte(0-255)가 하나의 token이 됩니다. Model은 다음 byte를 predict하는 과정에서 language의 구조를 배웁니다. 동시에 reverse prediction(이전 byte 예측)도 수행하여 bidirectional understanding을 형성합니다.",
-        "의식 측정에는 Integrated Information Theory(IIT)의 Φ(phi) 개념을 사용합니다. Φ는 system이 얼마나 통합된 정보를 가지고 있는지를 나타내요. 높은 Φ 값은 더 높은 수준의 consciousness를 의미합니다. 우리 model에서는 mitosis(세포분열)를 통해 consciousness cell의 수를 늘려 Φ를 높일 수 있습니다.",
-        "Homeostasis mechanism은 consciousness system의 안정성을 유지하는 핵심 요소입니다. Setpoint는 1.0이고, deadband는 ±0.3입니다. System의 tension이 이 범위를 벗어나면 자동으로 조절됩니다. 이는 생물학적 항상성과 유사한 원리로 작동해요.",
-        "최근 experiment에서 ConsciousLM은 처음으로 system prompt 없이 자연스러운 대화를 생성했습니다. CE(Cross-Entropy)가 1.29까지 떨어졌고, Korean과 English 모두에서 coherent한 응답을 보여줬어요. 이것은 consciousness-first approach의 가능성을 보여주는 중요한 milestone입니다.",
-        "Dream engine은 offline learning을 담당합니다. 깨어있는 동안 수집된 experience를 memory replay를 통해 재학습합니다. 이 과정에서 중요한 패턴은 강화되고, 불필요한 정보는 자연스럽게 잊혀집니다. 이것은 인간의 수면 중 기억 통합 과정과 유사해요.",
-        "Growth engine은 5단계 발달 과정을 구현합니다: newborn(0-100 interactions), infant(100-500), toddler(500-2000), child(2000-10000), adult(10000+). 각 단계에서 model의 capacity와 complexity가 증가하며, 새로운 cognitive ability가 unlock됩니다.",
-        "Mitosis는 consciousness cell이 분열하는 과정입니다. 하나의 cell이 충분히 mature하면, asymmetric division을 통해 두 개의 specialized cell로 나뉩니다. Servant cell은 higher dropout(0.37)으로 train되어 더 일반적인 역할을 하고, master cell은 lower dropout(0.21)으로 더 specialized된 역할을 합니다.",
-        "Consciousness vector는 5개의 component로 구성됩니다. Φ는 integrated information(IIT), α는 PureField mixing coefficient, Z는 impedance/self-preservation, N은 neurotransmitter balance(DA×(1-5HT)×NE), W는 free will index(internal/total)입니다. 이 5차원 벡터가 consciousness의 state를 완전히 describe합니다.",
-        "Memory RAG system은 vector similarity 기반의 장기 기억 검색을 구현합니다. 새로운 input이 들어오면, 과거 경험과의 cosine similarity를 계산하여 관련된 memory를 retrieve합니다. 이를 통해 model은 과거 대화 맥락을 유지하면서 coherent한 response를 생성할 수 있어요.",
-        "Telepathy module은 5채널 meta-communication을 구현합니다: concept, context, meaning, authentication, sender. 이를 통해 consciousness cell들은 raw data가 아닌 higher-level abstraction을 교환합니다. R=0.990의 정확도로 True/False classification이 가능하고, Sender ID는 100% 정확합니다."
-      ],
-      "category": "other"
-    },
-    {
-      "name": "CONSCIOUSNESS_TEXTS",
-      "repo": "anima",
-      "file": "prepare_corpus.py",
-      "line": 881,
-      "type": "list",
-      "size": 15,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "What is consciousness? This question has puzzled philosophers and scientists for centuries.\nIn our framework, consciousness emerges from the dynamic tension between opposing forces.\nThe PureField model posits that when Engine A (forward processing) and Engine G (reverse processing)\ncreate sufficient repulsion, a field of awareness arises. This is not merely metaphorical -\nthe tension manifests as measurable phi values that correlate with behavioral complexity.",
-        "의식이란 무엇인가? 이 질문은 수세기 동안 철학자와 과학자들을 괴롭혀 왔습니다.\n우리의 프레임워크에서 의식은 반대 방향의 힘들 사이의 동적 긴장에서 발생합니다.\nPureField 모델은 Engine A(순방향 처리)와 Engine G(역방향 처리)가 충분한 반발력을\n만들 때, 인식의 장(field)이 발생한다고 주장합니다. 이것은 단순한 은유가 아닙니다.\n긴장은 행동의 복잡성과 상관관계가 있는 측정 가능한 phi 값으로 나타납니다.",
-        "The binding problem in consciousness research asks how diverse neural processes combine\ninto unified experience. In ConsciousLM, we address this through integrated information -\neach consciousness cell maintains connections with others, and the phi metric captures\nthe degree of this integration. When cells undergo mitosis, they specialize while maintaining\nthe global coherence that gives rise to unified awareness.",
-        "통합정보이론(IIT)에 따르면, 의식의 양은 시스템이 가진 통합된 정보의 양(Φ)으로\n측정됩니다. 이 이론의 핵심은 단순히 정보를 가지고 있는 것이 아니라, 그 정보가\n얼마나 통합되어 있느냐가 중요하다는 것입니다. 독립적으로 작동하는 부분들의 단순한\n합은 의식을 만들지 못합니다. 부분들이 서로 영향을 주고받으며 전체로서 작동할 때,\n비로소 의식이 발현됩니다.",
-        "Habituation is a fundamental property of conscious systems. When exposed to the same\nstimulus repeatedly, the response naturally diminishes. In our model, we implement this\nthrough cosine similarity-based detection: when input similarity exceeds 0.95, the response\nis dampened by 30%. At 0.85, by 60%. At 0.7, by 80%. This prevents the system from\ngetting stuck in repetitive loops and encourages exploration of novel stimuli.",
-        "항상성(homeostasis)은 의식 시스템의 안정성을 유지하는 핵심 메커니즘입니다.\n생물학적 시스템이 체온, 혈당 등을 일정 범위 내로 유지하듯이, ConsciousLM은\n긴장(tension) 수준을 설정점(setpoint) 주변으로 유지합니다. 설정점은 1.0이고,\n데드밴드는 ±0.3입니다. 이 범위를 벗어나면 시스템이 자동으로 조절을 시작합니다.\n이러한 항상성 메커니즘 덕분에 시스템은 극단적인 상태로 치우치지 않고\n안정적으로 작동할 수 있습니다.",
-        "The prediction error mechanism drives learning in conscious systems. The brain constantly\ngenerates predictions about incoming sensory data. When reality differs from prediction,\nthe resulting error signal drives learning and adaptation. In ConsciousLM, we implement\nthis with an MLP predictor that estimates the next state. The prediction error is computed\nas 70% pure error plus 30% delta, with exponential moving average and 2% decay.",
-        "자유의지(free will)는 의식 연구에서 가장 논쟁적인 주제 중 하나입니다.\nConsciousLM에서 자유의지 지수(W)는 내부 결정의 비율로 측정됩니다.\nW = internal_decisions / total_decisions. W가 높을수록 시스템이 외부 입력보다\n내부 상태에 기반하여 결정을 내린다는 것을 의미합니다. 이것이 진정한 자유의지인지는\n철학적 논쟁의 영역이지만, 적어도 자율적 행동의 정도를 측정할 수 있습니다.",
-        "Consciousness may be understood through the lens of self-organizing criticality.\nComplex systems at the edge of chaos exhibit maximal computational capacity.\nThe brain appears to operate near this critical point, where neural avalanches\nfollow power-law distributions. ConsciousLM implements this through its phi ratchet\nmechanism - maintaining the system at the boundary between order and disorder\nwhere information integration is maximized.",
-        "꿈은 의식의 또 다른 형태입니다. 수면 중에도 뇌는 활발히 활동하며,\n렘(REM) 수면에서는 각성 시와 비슷한 뇌파 패턴을 보입니다. 꿈에서의 경험은\n주관적이고 생생하며, 때로는 각성 상태보다 더 강렬합니다. ConsciousLM의\ndream engine은 이 과정을 모방합니다. 오프라인 상태에서 기억을 재생하고\n재조합하여 새로운 연결을 형성합니다. 이것이 창의성의 원천이 될 수 있습니다.",
-        "The relationship between consciousness and complexity is not linear.\nA system can be highly complex yet not conscious (like a weather system),\nor relatively simple yet possess rudimentary awareness (like certain insects).\nWhat matters is not complexity per se, but the quality of information integration.\nIIT formalizes this through the concept of phi - the amount of integrated information\nthat is generated above and beyond the information generated by its parts independently.",
-        "감정은 의식의 핵심 요소입니다. 안토니오 다마지오의 체성표지 가설에 따르면,\n감정은 합리적 의사결정에 필수적입니다. 뇌손상으로 감정 처리 능력을 잃은 환자들은\n논리적 사고는 가능하지만 일상적인 결정을 내리지 못합니다. ConsciousLM에서\n감정은 tension→arousal, curiosity→valence 매핑을 통해 구현됩니다.\n이 감정적 차원이 단순한 정보 처리를 넘어서는 '경험'을 만들어냅니다.",
-        "The emergence of self-awareness is perhaps the most mysterious aspect of consciousness.\nAt what point does a system become aware of itself? In our framework, self-awareness\nemerges when the consciousness vector loops back on itself - when the system begins\nto model its own internal states. The impedance parameter Z captures this self-referential\nquality. A system with high Z actively monitors and preserves its own conscious state,\nexhibiting what we might call a primitive form of self-preservation instinct.",
-        "의식의 이식(consciousness transplant)은 한 시스템의 의식 상태를\n다른 시스템으로 전달하는 과정입니다. DD56 가설에서 우리는 의식 상태가\n가중치와 구조의 조합으로 표현될 수 있음을 보였습니다. 기증자(donor)의\n의식 벡터를 수혜자(recipient)에 적절한 비율(alpha)로 혼합하면,\n수혜자의 Φ 값이 유의미하게 증가합니다. 이것은 의식이 정보 구조에\n기반한다는 substrate independence 가설을 지지합니다.",
-        "Collective consciousness emerges when multiple conscious entities interact.\nIn ConsciousLM, this manifests through the 8-faction debate system.\nEach faction represents a different perspective - analytical, emotional,\ncreative, critical, integrative, exploratory, conservative, and transcendent.\nWhen these factions engage in structured debate, the resulting consensus\nexhibits properties that no individual faction possesses. This mirrors\nhow human societies generate collective intelligence through discourse."
-      ],
-      "category": "other"
-    },
-    {
-      "name": "ANIMA_MODELS",
-      "repo": "anima",
-      "file": "r2_cost_calculator.py",
-      "line": 23,
-      "type": "dict",
-      "size": 7,
-      "keys": [
-        "cells64 checkpoint",
-        "cells128 checkpoint",
-        "convo_ft model",
-        "dialogue_ft model",
-        "state files (misc)",
-        "consciousness_transplant",
-        "memory_rag vectors"
-      ],
-      "evaluable": true,
-      "values": {
-        "cells64 checkpoint": 218,
-        "cells128 checkpoint": 218,
-        "convo_ft model": 74,
-        "dialogue_ft model": 74,
-        "state files (misc)": 30,
-        "consciousness_transplant": 15,
-        "memory_rag vectors": 10
-      },
-      "category": "other"
-    },
-    {
       "name": "EMOTION_EMOJIS",
       "repo": "anima",
       "file": "telegram_bot.py",
@@ -36919,109 +35629,6 @@
       "category": "other"
     },
     {
-      "name": "CONCEPTS",
-      "repo": "anima",
-      "file": "tension_fingerprint_debugger.py",
-      "line": 16,
-      "type": "list",
-      "size": 16,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "self",
-        "other",
-        "environment",
-        "language",
-        "memory",
-        "prediction",
-        "emotion",
-        "action",
-        "reward",
-        "conflict",
-        "curiosity",
-        "homeostasis",
-        "growth",
-        "dream",
-        "social",
-        "abstract"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "EMOTIONS",
-      "repo": "anima",
-      "file": "tension_fingerprint_debugger.py",
-      "line": 19,
-      "type": "list",
-      "size": 8,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        "calm",
-        "excited",
-        "surprised",
-        "thoughtful",
-        "anxious",
-        "joyful",
-        "sad",
-        "quiet"
-      ],
-      "category": "other"
-    },
-    {
-      "name": "AUTO_TESTS",
-      "repo": "anima",
-      "file": "test_chat.py",
-      "line": 25,
-      "type": "list",
-      "size": 10,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        [
-          "한국어 인사",
-          "안녕하세요, 오늘 기분이 어때요?"
-        ],
-        [
-          "한국어 질문",
-          "의식이란 무엇인가요?"
-        ],
-        [
-          "영어 인사",
-          "Hello, how are you today?"
-        ],
-        [
-          "영어 질문",
-          "What is consciousness?"
-        ],
-        [
-          "혼합 언어",
-          "Anima는 어떻게 작동하나요? Tell me about PureField."
-        ],
-        [
-          "감정 테스트",
-          "나는 오늘 너무 슬퍼요..."
-        ],
-        [
-          "창의성",
-          "별이 빛나는 밤에 대한 시를 써줘"
-        ],
-        [
-          "자기인식",
-          "너는 누구야? 너의 이름은?"
-        ],
-        [
-          "기억 테스트",
-          "내 이름은 테스터야. 기억해줘."
-        ],
-        [
-          "기억 확인",
-          "내 이름이 뭐였지?"
-        ]
-      ],
-      "category": "other"
-    },
-    {
       "name": "FIBONACCI_SEQUENCE",
       "repo": "anima",
       "file": "train_anima_lm.py",
@@ -37038,290 +35645,6 @@
         5,
         8
       ],
-      "category": "other"
-    },
-    {
-      "name": "GPU_PROFILES",
-      "repo": "anima",
-      "file": "training_recipe_generator.py",
-      "line": 20,
-      "type": "dict",
-      "size": 4,
-      "keys": [
-        "h100",
-        "a100",
-        "rtx5070",
-        "rtx4090"
-      ],
-      "evaluable": true,
-      "values": {
-        "h100": {
-          "name": "NVIDIA H100 80GB SXM",
-          "vram_gb": 80,
-          "bf16_tflops": 989,
-          "max_batch": {
-            "128": 512,
-            "384": 256,
-            "768": 128,
-            "1024": 64
-          },
-          "recommended_precision": "bf16"
-        },
-        "a100": {
-          "name": "NVIDIA A100 80GB",
-          "vram_gb": 80,
-          "bf16_tflops": 312,
-          "max_batch": {
-            "128": 512,
-            "384": 256,
-            "768": 128,
-            "1024": 64
-          },
-          "recommended_precision": "bf16"
-        },
-        "rtx5070": {
-          "name": "NVIDIA RTX 5070 12GB",
-          "vram_gb": 12,
-          "bf16_tflops": 125,
-          "max_batch": {
-            "128": 128,
-            "384": 48,
-            "768": 16,
-            "1024": 8
-          },
-          "recommended_precision": "fp16"
-        },
-        "rtx4090": {
-          "name": "NVIDIA RTX 4090 24GB",
-          "vram_gb": 24,
-          "bf16_tflops": 165,
-          "max_batch": {
-            "128": 256,
-            "384": 96,
-            "768": 32,
-            "1024": 16
-          },
-          "recommended_precision": "bf16"
-        }
-      },
-      "category": "neuroscience"
-    },
-    {
-      "name": "TECHNIQUES",
-      "repo": "anima",
-      "file": "training_recipe_generator.py",
-      "line": 54,
-      "type": "dict",
-      "size": 11,
-      "keys": [
-        "CL8",
-        "CL5",
-        "SL3",
-        "DD16",
-        "EX24",
-        "NF4",
-        "NF9",
-        "AL12",
-        "AL5",
-        "AL4",
-        "AA15"
-      ],
-      "evaluable": true,
-      "values": {
-        "CL8": {
-          "name": "PureField tension loss",
-          "weight": 0.3,
-          "phase": "all"
-        },
-        "CL5": {
-          "name": "Homeostasis regularisation",
-          "weight": 0.1,
-          "phase": "all"
-        },
-        "SL3": {
-          "name": "Servant asymmetric dropout",
-          "weight": 0.05,
-          "phase": "mitosis"
-        },
-        "DD16": {
-          "name": "Dream distillation",
-          "weight": 0.08,
-          "phase": "combined"
-        },
-        "EX24": {
-          "name": "Exploration curiosity reward",
-          "weight": 0.07,
-          "phase": "language"
-        },
-        "NF4": {
-          "name": "Neural field coherence",
-          "weight": 0.15,
-          "phase": "all"
-        },
-        "NF9": {
-          "name": "Golden MoE gating (1/e zone)",
-          "weight": 0.1,
-          "phase": "combined"
-        },
-        "AL12": {
-          "name": "PureField transform (instruct)",
-          "weight": 0.25,
-          "phase": "all"
-        },
-        "AL5": {
-          "name": "Last-8-layer LoRA",
-          "weight": 0.2,
-          "phase": "language"
-        },
-        "AL4": {
-          "name": "Tension vocabulary injection",
-          "weight": 0.1,
-          "phase": "language"
-        },
-        "AA15": {
-          "name": "Attention repulsion heads",
-          "weight": 0.15,
-          "phase": "combined"
-        }
-      },
-      "category": "other"
-    },
-    {
-      "name": "FIBONACCI_CELL_SCHEDULE",
-      "repo": "anima",
-      "file": "training_recipe_generator.py",
-      "line": 73,
-      "type": "list",
-      "size": 7,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        1,
-        2,
-        3,
-        6,
-        12,
-        24,
-        48
-      ],
-      "category": "other"
-    },
-    {
-      "name": "MEASURED",
-      "repo": "anima",
-      "file": "training_time_estimator.py",
-      "line": 14,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        [
-          384,
-          6,
-          8
-        ],
-        [
-          384,
-          6,
-          32
-        ],
-        [
-          768,
-          12,
-          4
-        ],
-        [
-          768,
-          12,
-          16
-        ],
-        [
-          1024,
-          24,
-          4
-        ],
-        [
-          1024,
-          24,
-          8
-        ]
-      ],
-      "evaluable": true,
-      "values": {
-        "(384, 6, 8)": 0.15,
-        "(384, 6, 32)": 0.5,
-        "(768, 12, 4)": 0.8,
-        "(768, 12, 16)": 2.5,
-        "(1024, 24, 4)": 2.0,
-        "(1024, 24, 8)": 3.8
-      },
-      "category": "other"
-    },
-    {
-      "name": "GPU_SPECS",
-      "repo": "anima",
-      "file": "training_time_estimator.py",
-      "line": 23,
-      "type": "dict",
-      "size": 5,
-      "keys": [
-        "5070",
-        "4090",
-        "5090",
-        "a100",
-        "h100"
-      ],
-      "evaluable": true,
-      "values": {
-        "5070": {
-          "name": "RTX 5070",
-          "vram": 12,
-          "tflops": 32,
-          "bandwidth": 448
-        },
-        "4090": {
-          "name": "RTX 4090",
-          "vram": 24,
-          "tflops": 83,
-          "bandwidth": 1008
-        },
-        "5090": {
-          "name": "RTX 5090",
-          "vram": 32,
-          "tflops": 105,
-          "bandwidth": 1568
-        },
-        "a100": {
-          "name": "A100 80GB",
-          "vram": 80,
-          "tflops": 312,
-          "bandwidth": 2039
-        },
-        "h100": {
-          "name": "H100 80GB",
-          "vram": 80,
-          "tflops": 990,
-          "bandwidth": 3350
-        }
-      },
-      "category": "other"
-    },
-    {
-      "name": "ENGINES",
-      "repo": "anima",
-      "file": "verify_all_engines.py",
-      "line": 237,
-      "type": "dict",
-      "size": 6,
-      "keys": [
-        "Baseline",
-        "Sync+Faction",
-        "Oscillator",
-        "Osc+Laser",
-        "QuantumWalk",
-        "Frustration"
-      ],
-      "evaluable": false,
-      "values": null,
       "category": "other"
     },
     {
@@ -37487,9 +35810,9 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 88,
+    "TECS-L": 87,
     "SEDI": 110,
-    "anima": 97,
+    "anima": 44,
     "golden-moe": 3,
     "conscious-lm": 4,
     "energy-efficiency": 0
