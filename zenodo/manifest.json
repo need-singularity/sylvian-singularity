@@ -256,6 +256,34 @@
         "target_venue": "Interdisciplinary",
         "tier": 3,
         "category": "preprint"
+      },
+      {
+        "id": "P-bridge-theorem",
+        "title": "The Bridge Theorem: Golden Zone Center from Variational Principle",
+        "file": "../papers/tecs-l/P-bridge-theorem.md",
+        "existing": [],
+        "keywords": [
+          "golden-zone",
+          "variational-principle",
+          "information-theory",
+          "number-theory",
+          "I-minimization",
+          "natural-constant",
+          "MaxCal",
+          "Singleton-bound",
+          "consciousness",
+          "perfect-number-6"
+        ],
+        "description": "I^I minimization uniquely selects I=1/e (Golden Zone center). phi*sigma=n*tau uniqueness at n=6 and n=28. 400-hypothesis campaign: 249/400 verified (Z~55sigma). MaxCal derivation + Singleton bound connection.",
+        "hypotheses": [
+          "H-CX-501",
+          "H-CX-502",
+          "H-CX-503",
+          "H-CX-504"
+        ],
+        "target_venue": "arXiv math.NT / cs.IT",
+        "tier": 1,
+        "category": "preprint"
       }
     ],
     "anima": [
