@@ -616,7 +616,7 @@ Hypothesis reviews are managed as **separate individual documents**.
   Tokens (gitignored in .local/):
     .local/zenodo_token           — Production Zenodo
     .local/zenodo_sandbox_token   — Sandbox Zenodo (set)
-    .local/osf_token              — OSF (pending)
+    .local/osf_token              — OSF (approved, active)
 
   Scripts:
     zenodo_upload.py              — Single paper upload (interactive)
@@ -652,7 +652,7 @@ Hypothesis reviews are managed as **separate individual documents**.
   Workflow:
     1. Sandbox test (done) → verify metadata on web UI
     2. Production upload → DOI becomes permanent
-    3. OSF upload (after approval) → Google Scholar indexing
+    3. OSF upload (approved 2026-03-30) → Google Scholar indexing
     4. arXiv (after endorsement) → community visibility
 
   Caution:
