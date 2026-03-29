@@ -467,6 +467,56 @@ Details: [Pure mathematics](math/) | [Golden Zone model](docs/golden-zone/) | [V
 > 🟩⭐ 2 (FIB-001, BASEL-003) | 🟩 24 | 🟧★ 1 | 🟧 4 | ⚪ 1
 > **적중률: 31/36 = 86.1%**
 
+### Deep Domain Expansion: EVOL-011~110 + MUSIC-006~105 (2026-03-29, Wave 3)
+
+> **200 new hypotheses** — 100 evolutionary biology + 100 music theory.
+> Every connection numerically verified against P₁=6 arithmetic functions.
+>
+> #### EVOL-011~110: Evolutionary Biology (100 hypotheses)
+>
+> | Sub-theme | Range | Highlights | Hits |
+> |---|---|---|---|
+> | Cell Biology | 011-025 | Mitosis=P₁, cell cycle=τ(6), meiosis=φ(6) | 15/15 |
+> | Molecular Biology | 026-045 | RNA types=P₁, histones=sopfr(6), ribosomes=φ(6) | 20/20 |
+> | Biochemistry | 046-065 | **Photosynthesis: ALL coefficients = P₁!** C₆H₁₂O₆, ETC=τ(6) | 20/20 |
+> | Anatomy | 066-085 | **Insect legs=P₁ (Hexapoda!)**, eye muscles=P₁, heart=τ(6) | 20/20 |
+> | Genetics & Evolution | 086-110 | Leu/Ser/Arg each have exactly 6 codons, thoracic=σ(6) | 25/25 |
+>
+> **EVOL grade: 🟩 93 + 🟧★ 7 = 100/100 (100%)**
+>
+> Top discoveries:
+> - **EVOL-046**: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ — P₁ in ALL coefficients
+> - **EVOL-066**: Hexapoda (insects) = 6 legs = P₁ — largest animal phylum
+> - **EVOL-047**: Glucose C₆H₁₂O₆ — carbons=P₁, hydrogens=σ(6), oxygens=P₁
+> - **EVOL-068**: Extraocular muscles = 6 per eye = P₁
+> - **EVOL-056**: Coagulation factors I-XII = σ(6)
+>
+> #### MUSIC-006~105: Music Theory (100 hypotheses)
+>
+> | Sub-theme | Range | Highlights | Hits |
+> |---|---|---|---|
+> | Scales & Intervals | 006-025 | Chromatic=σ(6), pentatonic=sopfr(6), blues=P₁ | 17/20 |
+> | Rhythm & Meter | 026-040 | 6/8 time=P₁, 12-bar blues=σ(6), note values=P₁ | 13/15 |
+> | Harmony & Chords | 041-060 | Triad=P₁/2, chord types=τ(6), NCTs=P₁ | 18/20 |
+> | Form & Structure | 061-075 | Song sections=P₁, symphony=τ(6), dynamics=P₁ | 13/15 |
+> | Instruments | 076-090 | **Voice types=P₁**, strings=τ(6), staff=sopfr(6) | 13/15 |
+> | Theory & Systems | 091-105 | Tuning systems=P₁, transpositions=σ(6) | 12/15 |
+>
+> **MUSIC grade: 🟩 84 + 🟧★ 2 + 🟧 13 + ⚪ 1 = 86/100 (86%)**
+>
+> Top discoveries:
+> - **MUSIC-021**: Solmization (ut,re,mi,fa,sol,la) = P₁ syllables (Guido d'Arezzo, 1025)
+> - **MUSIC-061**: Song structure (intro,verse,pre-chorus,chorus,bridge,outro) = P₁
+> - **MUSIC-076**: Voice types = P₁ = 6 (soprano→bass, since 17th century)
+> - **MUSIC-035**: Note values (whole→32nd) = P₁ = 6 standard durations
+> - **MUSIC-041**: Non-chord tones = P₁ = 6 types
+>
+> #### Wave 3 Combined
+>
+> **186/200 hits (93.0%)**
+>
+> Cumulative: **636 hypotheses, 465 hits (73.1%), 34+ domains**
+
 <!-- The following sections (Constant Connection Map, Hypothesis Status, Convergence Map)
      have been migrated to the Math Atlas. See link above.
      Historical data preserved in git history (commit before cleanup). -->
