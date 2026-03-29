@@ -373,6 +373,28 @@ Details: [Pure mathematics](math/) | [Golden Zone model](docs/golden-zone/) | [V
 >
 > Grade counts: 14 proven, 30+ confirmed, 4 structural, 13 approx, 20+ weak, 10 warning, 15 refuted, 54 starred
 
+### Unexplored Domain Discoveries (2026-03-29)
+
+> 12 new hypotheses spanning algebraic geometry, harmonic analysis, quantum computing, cosmology, and more.
+> Each connects perfect number 6 arithmetic to a previously untouched mathematical or physical domain.
+>
+> | ID | Domain | Title | Grade | Doc |
+> |---|---|---|---|---|
+> | ALGGEOM-001 | Algebraic Geometry | j-invariant 1728 = sigma(6)^3 | 🟩 | [doc](docs/hypotheses/ALGGEOM-001-j-invariant-1728.md) |
+> | HARMONIC-001 | Harmonic Analysis | Ramanujan Sum c_6(n) = {1,-1,-phi,phi} | 🟩 | [doc](docs/hypotheses/HARMONIC-001-ramanujan-sum-c6.md) |
+> | FUNCAL-001 | Functional Analysis | Divisor Lattice Adjacency Spectrum | 🟩 | [doc](docs/hypotheses/FUNCAL-001-divisor-lattice-spectrum.md) |
+> | LOGIC-001 | Logic/Computation | 6-smooth Number Density | 🟩 | [doc](docs/hypotheses/LOGIC-001-6smooth-density.md) |
+> | COSMO-001 | Cosmology | LCDM 6 Free Parameters = P_1 | 🟧★ | [doc](docs/hypotheses/COSMO-001-LCDM-six-parameters.md) |
+> | CONDMAT-001 | Condensed Matter | QHE nu=1/3 = Meta Fixed Point | 🟧 | [doc](docs/hypotheses/CONDMAT-001-quantum-hall-fractions.md) |
+> | STATMECH-001 | Statistical Mechanics | 6-Vertex Model Entropy proportional to ln(4/3) | 🟧★ | [doc](docs/hypotheses/STATMECH-001-six-vertex-model.md) |
+> | QCOMP-001 | Quantum Computing | [[6,4,2]] Code = (n, tau, phi) | 🟧★ | [doc](docs/hypotheses/QCOMP-001-quantum-code-642.md) |
+> | CRYPTO-001 | Cryptography/Lattice | A_2 Hexagonal Lattice Kissing = 6 | 🟩 | [doc](docs/hypotheses/CRYPTO-001-hexagonal-lattice-A2.md) |
+> | NETWORK-001 | Network Science | K_6 Spectral Properties | 🟩 | [doc](docs/hypotheses/NETWORK-001-K6-spectral.md) |
+> | INFOGEO-001 | Information Geometry | Fisher I_total = p(6) = 11 | 🟩★ | [doc](docs/hypotheses/INFOGEO-001-fisher-divisor-distribution.md) |
+> | TDA-001 | Topological Data Analysis | Divisor Complex Persistent Homology | 🟩/🟧 | [doc](docs/hypotheses/TDA-001-divisor-persistent-homology.md) |
+>
+> Grade summary: 🟩 6, 🟩★ 1, 🟧★ 3, 🟧 1, 🟩/🟧 1
+
 <!-- The following sections (Constant Connection Map, Hypothesis Status, Convergence Map)
      have been migrated to the Math Atlas. See link above.
      Historical data preserved in git history (commit before cleanup). -->
