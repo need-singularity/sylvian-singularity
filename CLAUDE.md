@@ -470,6 +470,39 @@ Simulations and experiments must **always run in background**. No exceptions.
     Date: 2026-03-24
 ```
 
+## Nobel-Level Hypothesis Reporting Format (Required)
+
+```
+  When generating grand hypotheses, ALWAYS present in this table format:
+
+  | # | 가설 | 기반 | 강도 | 노벨상 |
+  |---|---|---|---|---|
+  | 1 | 임계성 정리 — 모든 상전이 파라미터 = n=6 | SLE_6 (증명) + Feigenbaum | ★★★★★ | Physics |
+  | 2 | 생물학적 최적성 — 유전코드는 n=6의 유일한 해 | Z=5σ + 정수 코돈 (증명) | ★★★★★ | Chemistry |
+  ...
+
+  Columns:
+    # = Sequential number
+    가설 = One-line hypothesis statement with key claim
+    기반 = Verified foundations (mark 증명/검증/모델 status)
+    강도 = ★ rating (1-5) based on:
+      ★★★★★ = Grounded in proven theorems
+      ★★★★☆ = Grounded in verified experiments
+      ★★★☆☆ = Partially verified, needs more data
+      ★★☆☆☆ = Speculative but testable
+      ★☆☆☆☆ = Highly speculative
+    노벨상 = Target Nobel Prize category (Physics/Chemistry/Medicine/Economics)
+
+  Each hypothesis MUST include:
+    1. Rigorous mathematical statement
+    2. List of verified foundations with PROVEN/VERIFIED/MODEL status
+    3. 3-5 falsifiable predictions
+    4. Honest risk assessment
+    5. "If Wrong: What Survives" analysis
+
+  Reference: docs/hypotheses/NOBEL-grand-hypotheses.md (10 hypotheses, 40 predictions)
+```
+
 ## Reporting Rules
 
 ### Anomaly Strong Report
