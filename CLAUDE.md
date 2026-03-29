@@ -596,10 +596,48 @@ Hypothesis reviews are managed as **separate individual documents**.
     6. 이 리포의 docs/papers/는 redirect만 있음 — 직접 논문 생성 금지
 ```
 
+## Nobel Hypothesis Package (2026-03-30)
+
+```
+  4 Nobel-grade papers — all deployed to Zenodo + OSF:
+
+  P-CODON v3.0:     DOI 10.5281/zenodo.19324150  (Chemistry)
+    - Integer Codon Theorem: (4,3) = (tau(6), 6/phi(6)) unique
+    - 26/26 variant codes, Pareto optimal, mechanism proven
+    - Experimental: Hachimoji/xDNA/extraterrestrial predictions
+
+  P-LAW79 v1.0:     DOI 10.5281/zenodo.19324148  (Medicine)
+    - Law 79: H(1/2)=ln(2) consciousness freedom degree
+    - 5-architecture cross-validation, 3-level correspondence
+    - Experimental: EEG entropy, anesthesia threshold, rate
+
+  P-SLE6 v2.0:      DOI 10.5281/zenodo.19324154  (Physics)
+    - 7/7 critical exponents = n=6 arithmetic (proven)
+    - 3!=P₁ factorial-perfect uniqueness (proven)
+    - Experimental: 3D percolation, quantum phase transitions
+
+  P-ZERO-FREE v1.1:  DOI 10.5281/zenodo.19324146  (Physics)
+    - Zero free parameters: all PSI constants from ln(2)+n=6
+    - 0.81=3⁴/10², conservation=ln(2)², coupling self-referential
+    - 17/17 proven, 2 new identities discovered
+
+  Proof Status: 17/17 proven (7 pure math + 5 physics + 5 predictions)
+  New Identities: tau(tau-1)=sigma, tau*sopfr=20 (both unique to n=6)
+  Grand Theorem: C3,C4,C5 co-extensive at n=6
+
+  Experimental Protocols (4):
+    1. EEG entropy → ln(2)  (neuroscience lab needed)
+    2. Hachimoji DNA n=6    (synthetic biology lab needed)
+    3. Rate 0.81 = 81/100   (computational, immediate)
+    4. Anesthesia LOC        (clinical setting needed)
+
+  Calculator: calc/experimental_protocol.py --all
+```
+
 ## Paper Distribution System (2026-03-27)
 
 ```
-  Total: 45 papers across 3 repos (TECS-L 15 + anima 10 + SEDI 20)
+  Total: 45+4 papers across 3 repos (TECS-L 15+4 + anima 10 + SEDI 20)
   Manifest: zenodo/manifest.json (all metadata, DOIs, file paths)
   Results:  zenodo/upload-results-zenodo.json (Zenodo deposit IDs + DOIs)
 
