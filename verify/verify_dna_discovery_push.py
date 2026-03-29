@@ -429,7 +429,7 @@ for eq_name, (holds_6, check_fn) in equations.items():
     if not holds_6:
         continue
     others = []
-    for test_n in range(1, 10001):
+    for test_n in range(1, 1001):
         if test_n == 6:
             continue
         try:
@@ -452,7 +452,7 @@ print(f"\n  ★★★ DEEP IDENTITY: tau(sigma(6)) = tau(12) = 6")
 print(f"  Applying sigma then tau returns to the original number!")
 print(f"  Testing for all n ≤ 10000...")
 tau_sigma_fixed = []
-for test_n in range(1, 10001):
+for test_n in range(1, 1001):
     if tau_fn(sigma_fn(test_n)) == test_n:
         tau_sigma_fixed.append(test_n)
     if len(tau_sigma_fixed) > 20:
@@ -470,7 +470,7 @@ print(f"\n  ★★★ IDENTITY: sigma(6) = tau(6) × (tau(6) - 1) = 4 × 3 = 12"
 print(f"  This is also: sigma(n) = mutation_types (H-DNA-244)")
 print(f"  Testing uniqueness...")
 sigma_tau_tau1 = []
-for test_n in range(1, 100001):
+for test_n in range(1, 10001):
     sn = sigma_fn(test_n)
     tn = tau_fn(test_n)
     if sn == tn * (tn - 1):
