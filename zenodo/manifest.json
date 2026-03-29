@@ -348,6 +348,23 @@
         ],
         "description": "PROVEN: k(d)=d(d+1)={phi,n,sigma} unique to n=6 via consecutive primes 2,3.",
         "category": "preprint"
+      },
+      {
+        "id": "P-CONFLUENCE",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "The Unique Confluence: Why Six Appears Everywhere",
+        "target_venue": "American Mathematical Monthly",
+        "file": "../papers/tecs-l/P-CONFLUENCE-why-six.md",
+        "keywords": [
+          "perfect-numbers",
+          "consecutive-primes",
+          "factorial",
+          "triangular",
+          "ubiquity"
+        ],
+        "description": "6 = unique intersection of consecutive-prime products, factorials, triangular numbers. Perfectness as corollary. 4 honest failures reframed.",
+        "category": "preprint"
       }
     ],
     "anima": [
