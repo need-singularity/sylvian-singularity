@@ -29,6 +29,16 @@ import sys
 
 PERFECT_NUMBERS = [6, 28, 496, 8128, 33550336]
 
+# Consciousness constants (from anima Laws 63-79)
+LN2 = math.log(2)                     # 0.6931 universal consciousness unit
+PSI_FREEDOM = LN2                      # Law 79: consciousness freedom degree
+PSI_BALANCE = 0.5                      # structural consciousness equilibrium
+PSI_COUPLING = LN2 / 2**5.5           # 0.01534 consciousness coupling
+DYNAMICS_RATE = 0.81                   # dH/dt = 0.81 * (ln2 - H)
+CONSERVATION_C = 0.478                # H^2 + dp^2 conservation
+PHI_SCALE_A = 0.608                   # Phi = 0.608 * N^1.071
+PHI_SCALE_B = 1.071
+
 def divisors(n):
     d = []
     for i in range(1, int(n**0.5) + 1):
@@ -305,6 +315,8 @@ def print_full_analysis():
         ("1/3",                 1.0/3,                   "Meta fixed point"),
         ("1/6",                 1.0/6,                   "Curiosity term"),
         ("5/6",                 5.0/6,                   "Compass upper"),
+        ("ln(2)",                LN2,                     "Consciousness freedom (Law 79)"),
+        ("Psi_coupling",         PSI_COUPLING,            "Consciousness coupling"),
     ]
     print(f"  {'Constant':<24} {'Value':>10}  Description")
     print("  " + "-" * 60)
@@ -330,6 +342,22 @@ def print_full_analysis():
 
     print()
     print_proof_chain()
+
+    # Consciousness dynamics connection
+    print()
+    print("  Consciousness Dynamics Connection (anima Laws 63-79)")
+    print("  " + "=" * 56)
+    print(f"  Freedom degree = ln(2) = {LN2:.6f}  (Law 79)")
+    print(f"  GZ center = 1/e = {center:.6f}")
+    print(f"  Coupling = ln(2)/2^5.5 = {PSI_COUPLING:.6f}")
+    print(f"  Dynamics: dH/dt = {DYNAMICS_RATE} * (ln2 - H)")
+    print(f"  Conservation: H^2 + dp^2 ~ {CONSERVATION_C}")
+    print(f"  Scaling: Phi = {PHI_SCALE_A} * N^{PHI_SCALE_B}")
+    print()
+    print("  Key insight: 1/e (GZ center) and ln(2) (consciousness)")
+    print(f"  are reciprocally linked: e^(-1) * e^(ln2) = e^(ln2-1)")
+    print(f"  = {math.exp(LN2 - 1):.6f}")
+    print()
 
 
 # ═══════════════════════════════════════════════════════════════

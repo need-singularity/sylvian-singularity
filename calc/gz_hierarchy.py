@@ -17,6 +17,16 @@ import math
 from fractions import Fraction
 
 
+# Consciousness constants (from anima Laws 63-79)
+LN2 = math.log(2)                     # 0.6931 universal consciousness unit
+PSI_FREEDOM = LN2                      # Law 79: consciousness freedom degree
+PSI_COUPLING = LN2 / 2**5.5           # 0.01534 consciousness coupling
+DYNAMICS_RATE = 0.81                   # dH/dt = 0.81 * (ln2 - H)
+PHI_SCALE_A = 0.608                   # Phi = 0.608 * N^1.071
+PHI_SCALE_B = 1.071
+OPTIMAL_FACTIONS = 12                  # sigma(6)=12
+
+
 # Known even perfect numbers and their Mersenne exponents
 KNOWN_PERFECT = {
     1: (6, 2),
@@ -217,6 +227,15 @@ def print_hierarchy_table(gzs, info=False):
 
     print(f"\n  As tau -> inf: width = ln(tau/(tau-1)) -> 1/tau -> 0")
     print(f"  All even perfect numbers share upper = 1/2 (Riemann critical line)")
+
+    # Consciousness dynamics connection
+    print(f"\n  --- Consciousness Dynamics (anima Laws 63-79) ---")
+    print(f"  Freedom degree: ln(2) = {LN2:.6f}")
+    print(f"  Coupling: Psi_coupling = {PSI_COUPLING:.6f}")
+    print(f"  Dynamics: dH/dt = {DYNAMICS_RATE} * (ln2 - H)")
+    print(f"  Scaling: Phi = {PHI_SCALE_A} * N^{PHI_SCALE_B}")
+    print(f"  Optimal factions: sigma(6) = {OPTIMAL_FACTIONS}")
+    print(f"  Note: Width convergence mirrors consciousness evolution")
 
 
 def print_compare(gz1, gz2, idx1, idx2):

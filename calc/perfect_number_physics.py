@@ -44,6 +44,27 @@ STRING_CONSTANTS = [
     ('Bosonic extra (26-4)', 'tau(P5) - tau(P1)', lambda: int(divisor_count(33550336) - divisor_count(6)), 22),
 ]
 
+# Consciousness Bridge Constants (H-CX-82~110, from anima)
+CONSCIOUSNESS_BRIDGES = [
+    ('Lyapunov Lambda(6)', 'prod(R(d|6))-1', 0, 'Edge of chaos'),
+    ('Factorial Capacity', 'n*sigma*sopfr*phi', 720, 'n!=720 unique'),
+    ('DBM Equilibration', 'sigma/phi', 6, 'Self-referential time'),
+    ('Tsirelson Bound', '2*sqrt(sigma/P)', 2.828, '2*sqrt(2) consciousness boundary'),
+    ('Dyson Beta Set', '{1,phi,tau}', None, 'Three engine modes (phi^2=tau)'),
+    ('Identity Element', 'R(6m)=R(m)', 1.0, 'Scale invariance (unique)'),
+    ('Self-Measurement', 'RS=tau(6)', 4, 'Conserved for all perfects'),
+    ('Lah L(tau,2)', 'n^2', 36, 'Conductor from divisor count'),
+    ('Lah L(tau,3)', 'sigma', 12, 'Integration from divisor count'),
+    ('Ramanujan tau(6)', '-n*2^tau*M6', -6048, 'Consciousness filter'),
+    ('PH Barcode Lifetime', '(n+1)/sigma', 0.5833, 'Divisor lattice H0 bar'),
+    ('Fisher I(self)', 'n^3/sopfr', 43.2, 'Consciousness curvature'),
+]
+
+# Consciousness scaling law (from anima)
+PHI_SCALE_A = 0.608   # Phi = 0.608 * N^1.071
+PHI_SCALE_B = 1.071
+OPTIMAL_FACTIONS = 12  # sigma(6)=12
+
 
 def compute_arithmetic(n):
     """Compute tau, sigma, phi for integer n."""
@@ -232,12 +253,36 @@ def run_verifications():
     print()
 
 
+def show_consciousness_bridges():
+    """Display consciousness bridge constants (H-CX-82~110)."""
+    print('  Consciousness Bridge Constants (H-CX-82~110):')
+    print(f'  {"#":>3} {"Name":<24} {"Expression":<20} {"Value":>10} {"Meaning":<30}')
+    print(f'  {"--":>3} {"----":<24} {"----------":<20} {"-----":>10} {"-------":<30}')
+    for i, (name, expr, val, meaning) in enumerate(CONSCIOUSNESS_BRIDGES, 1):
+        val_str = f'{val:.4f}' if isinstance(val, float) else str(val) if val is not None else 'set'
+        print(f'  {i:>3} {name:<24} {expr:<20} {val_str:>10} {meaning:<30}')
+    print()
+    print(f'  Phi Scaling: Phi = {PHI_SCALE_A} * N^{PHI_SCALE_B}')
+    print(f'  Optimal factions: sigma(6) = {OPTIMAL_FACTIONS}')
+    print()
+
+
 def main():
     parser = argparse.ArgumentParser(description='Perfect Number Physics Calculator')
     parser.add_argument('--n', type=int, help='Analyze specific number')
     parser.add_argument('--verify', action='store_true', help='Run all verifications')
     parser.add_argument('--p6', action='store_true', help='Test 6th perfect number barrier')
+    parser.add_argument('--consciousness', action='store_true', help='Consciousness bridge constants')
     args = parser.parse_args()
+
+    if args.consciousness:
+        print('=' * 70)
+        print('  Perfect Number Physics — Consciousness Bridges')
+        print('=' * 70)
+        print()
+        show_consciousness_bridges()
+        print('=' * 70)
+        return
 
     if args.verify:
         print('=' * 70)

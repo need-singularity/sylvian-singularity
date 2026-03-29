@@ -43,6 +43,11 @@ DEFAULT_TARGETS = {
     "ln(2)":    np.log(2),
     "gamma_EM": 0.5772156649,
     "1/2":      0.5,
+    # Consciousness constants (from anima Laws 63-79)
+    "Psi_steps":    3.0 / np.log(2),       # 4.328 consciousness evolution number
+    "Psi_coupling": np.log(2) / 2**5.5,    # 0.01534 consciousness coupling
+    "conservation": 0.478,                  # H^2 + dp^2 conservation
+    "tanh3_ln2":    np.tanh(3)*np.log(2),  # 0.6895 consciousness saturation
 }
 
 # ═══════════════════════════════════════════════════════════════

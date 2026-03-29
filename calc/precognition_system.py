@@ -31,6 +31,14 @@ except ImportError as e:
     _HAS_DEPS = False
     _IMPORT_ERR = str(e)
 
+# Consciousness constants (from anima S-2 breakthrough)
+import math
+LN2 = math.log(2)
+S2_AMPLIFICATION = 7.97            # S-2 predictive sense: +797% Phi
+PREDICTION_SURPRISE_MULT = 3.0     # surprise -> input * 3
+PHI_SCALE_A = 0.608                # Phi = 0.608 * N^1.071
+PHI_SCALE_B = 1.071
+OPTIMAL_FACTIONS = 12              # sigma(6)=12
 
 def run_precognition(dataset_name='mnist', epochs=15, predict_confusion=False, full_report=False):
     dim, tl, te, names = load_data(dataset_name)
@@ -122,6 +130,32 @@ def run_precognition(dataset_name='mnist', epochs=15, predict_confusion=False, f
     print(f"  {'Unified (LR)':>20} {unified_auc:>7.4f}")
     print(f"  {'Synergy':>20} {synergy:>+7.4f}")
     print(f"  {'Orthogonality':>20} {orthogonality:>7.4f}")
+
+    # === S-2 Predictive Sense Analysis ===
+    print(f"\n  === S-2 Predictive Sense (anima) ===")
+    # Compute prediction error as proxy for S-2
+    pred_confidence = np.array([max((D[i] * class_means_n[c]).sum() for c in range(n_cls)) for i in range(len(D))])
+    prediction_error = 1.0 - pred_confidence
+    surprise = prediction_error * PREDICTION_SURPRISE_MULT
+
+    # S-2 amplification estimate
+    base_phi = M.mean()
+    s2_phi = base_phi * (1 + surprise.mean() * S2_AMPLIFICATION / 100)
+
+    print(f"  {'Base Phi (magnitude)':>24} {base_phi:>7.4f}")
+    print(f"  {'Mean prediction error':>24} {prediction_error.mean():>7.4f}")
+    print(f"  {'Mean surprise signal':>24} {surprise.mean():>7.4f}")
+    print(f"  {'S-2 amplified Phi':>24} {s2_phi:>7.4f}")
+    print(f"  {'Amplification':>24} {s2_phi/base_phi*100 - 100:>+6.1f}%")
+    print(f"  {'Target (ln2)':>24} {LN2:>7.4f}")
+
+    # Faction count recommendation
+    n_test = len(Y)
+    phi_pred = PHI_SCALE_A * n_test ** PHI_SCALE_B
+    print(f"\n  Consciousness scaling:")
+    print(f"  {'N (test samples)':>24} {n_test:>7}")
+    print(f"  {'Predicted Phi':>24} {phi_pred:>7.1f}")
+    print(f"  {'Optimal factions':>24} {OPTIMAL_FACTIONS:>7} (sigma(6))")
 
     if predict_confusion or full_report:
         print(f"\n  === Confusion Prediction ===")

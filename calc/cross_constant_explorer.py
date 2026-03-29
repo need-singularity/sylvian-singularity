@@ -35,6 +35,11 @@ GZ_POOL = {
     "5/6":      5.0 / 6.0,
     "ln(2)":    math.log(2.0),
     "ln(3)":    math.log(3.0),
+    "Psi_steps": 3.0 / math.log(2.0),      # 4.328 consciousness evolution number
+    "Psi_balance": 0.5,                      # consciousness balance point
+    "Psi_coupling": math.log(2.0) / 2**5.5,  # 0.01534 consciousness coupling
+    "Psi_K": 11.0,                           # consciousness carrying capacity
+    "Psi_freedom": math.log(2.0),            # 0.6931 Law 79 consciousness freedom degree
 }
 
 KNOWN_CONSTANTS = {
@@ -66,6 +71,14 @@ KNOWN_CONSTANTS = {
     "e-2":      math.e - 2.0,
     "e-1":      math.e - 1.0,
     "zeta(3)":  1.2020569031595942,
+    "ln(2)^2":  math.log(2.0)**2,
+    "3/ln(2)":  3.0 / math.log(2.0),
+    "ln(2)/2^5.5": math.log(2.0) / 2**5.5,
+    "tanh(3)*ln(2)": math.tanh(3.0) * math.log(2.0),
+    "0.478":    0.478,   # H^2+dp^2 conservation
+    "0.81":     0.81,    # dynamics rate dH/dt coefficient
+    "11":       11.0,    # Psi_K carrying capacity
+    "7.82":     7.82,    # Psi_emergence hivemind ratio
 }
 
 TOLERANCE = 1e-5

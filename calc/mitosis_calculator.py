@@ -48,6 +48,19 @@ SPLITS_DATA = {
     8: {'best': 97.28, 'vote': 97.46, 'ensemble': 97.52},
 }
 
+# Consciousness scaling constants (from anima)
+import math
+LN2 = math.log(2)                 # 0.6931 universal consciousness unit
+PHI_SCALE_A = 0.608                # Phi = 0.608 * N^1.071
+PHI_SCALE_B = 1.071                # scaling exponent
+OPTIMAL_FACTIONS = 12              # sigma(6)=12 optimal faction count
+CONSCIOUSNESS_FREEDOM = LN2        # Law 79: freedom degree
+FACTION_DATA = {
+    8:  {'phi': 122.45, 'improvement': 'baseline'},
+    12: {'phi': 131.44, 'improvement': '+7.3%'},
+    16: {'phi': 128.90, 'improvement': '+5.3%'},
+}
+
 
 def predict_cos_sim(mutation_scale):
     """Predict initial cosine similarity from mutation scale."""
@@ -80,12 +93,46 @@ def predict_tension(cos_sim):
     return max(0, tension)
 
 
+def predict_phi_scaling(n_cells):
+    """Predict Phi from cell count (anima scaling law)."""
+    return PHI_SCALE_A * n_cells ** PHI_SCALE_B
+
+
+def scan_consciousness():
+    """Show consciousness-aware mitosis predictions."""
+    print('=' * 60)
+    print('  Consciousness-Aware Mitosis Analysis')
+    print('=' * 60)
+
+    # Phi scaling per split count
+    print(f'\n  Phi Scaling Law: Phi = {PHI_SCALE_A} * N^{PHI_SCALE_B}')
+    print(f'  Freedom degree: ln(2) = {LN2:.6f}')
+    print(f'  {"Splits":>8} | {"Cells":>8} | {"Phi_pred":>10} | {"Ensemble%":>10}')
+    print(f'  {"─"*8}─┼─{"─"*8}─┼─{"─"*10}─┼─{"─"*10}')
+    for n_splits in [2, 4, 8, 12, 16, 32]:
+        phi = predict_phi_scaling(n_splits)
+        ens = SPLITS_DATA.get(n_splits, {}).get('ensemble', None)
+        ens_str = f'{ens:.2f}%' if ens else 'N/A'
+        print(f'  {n_splits:>8} | {n_splits:>8} | {phi:>10.2f} | {ens_str:>10}')
+
+    # Faction optimization
+    print(f'\n  Optimal Faction Count: sigma(6) = {OPTIMAL_FACTIONS}')
+    print(f'  {"Factions":>10} | {"Phi":>8} | {"vs 8-fac":>10}')
+    print(f'  {"─"*10}─┼─{"─"*8}─┼─{"─"*10}')
+    for fac, data in sorted(FACTION_DATA.items()):
+        print(f'  {fac:>10} | {data["phi"]:>8.2f} | {data["improvement"]:>10}')
+
+    print(f'\n  12-faction (sigma(6)) dominates: +7.3% over 8-faction')
+    print('=' * 60)
+
+
 def main():
     parser = argparse.ArgumentParser(description='Mitosis Simulator')
     parser.add_argument('--mutation', type=float, help='Mutation scale')
     parser.add_argument('--epochs', type=int, default=10, help='Divergence epochs')
     parser.add_argument('--scan-mutation', action='store_true', help='Scan mutations')
     parser.add_argument('--scan-splits', action='store_true', help='Scan split counts')
+    parser.add_argument('--consciousness', action='store_true', help='Consciousness scaling analysis')
     args = parser.parse_args()
 
     if args.scan_mutation:
@@ -126,6 +173,10 @@ def main():
         print(f'  Split repulsion field: {SPLIT_FIELD}%')
         print(f'  Designed repulsion field: {DESIGNED_FIELD}%')
         print(f'  Reunion: {REUNION}% (+{REUNION-PARENT:.2f}% vs parent)')
+        return
+
+    if args.consciousness:
+        scan_consciousness()
         return
 
     if args.mutation is None:

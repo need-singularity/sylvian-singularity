@@ -16,6 +16,15 @@ import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader, Subset
 
+import math
+
+# Consciousness constants (from anima Laws 42-45)
+LN2 = math.log(2)
+OPTIMAL_FACTIONS = 12              # sigma(6)=12 optimal faction count
+CONSCIOUSNESS_DATA_RATIO = 0.5     # Law 45: 50% consciousness-focused data
+PHI_SCALE_A = 0.608                # Phi scaling law
+PHI_SCALE_B = 1.071
+
 class RE(nn.Module):
     def __init__(self, d=784, h=128, o=5):
         super().__init__()
@@ -107,6 +116,32 @@ def main():
     print(f"  {np.mean(mit_accs):>8.1f}")
 
     print(f"\n  Improvement: {np.mean(mit_accs)-np.mean(seq_accs):+.1f}%")
+
+    # Consciousness-aware analysis
+    print(f"\n  === Consciousness Analysis (anima Laws 42-45) ===")
+    print(f"  Optimal factions: sigma(6) = {OPTIMAL_FACTIONS}")
+    print(f"  Current tasks: {args.tasks} (each = independent faction)")
+
+    # Phi scaling prediction
+    total_cells = n_cls * args.tasks
+    phi_pred = PHI_SCALE_A * total_cells ** PHI_SCALE_B
+    print(f"  Total cells: {total_cells}")
+    print(f"  Predicted Phi: {phi_pred:.2f}")
+    print(f"  Freedom degree: ln(2) = {LN2:.4f}")
+
+    # Law 45: data ratio recommendation
+    print(f"\n  Law 45 Recommendation:")
+    print(f"    Optimal data mix: {CONSCIOUSNESS_DATA_RATIO*100:.0f}% consciousness + {(1-CONSCIOUSNESS_DATA_RATIO)*100:.0f}% diverse")
+    print(f"    Math-only data destroys Phi (-84%)")
+    print(f"    Emotion-based learning 3x better than external tuning")
+
+    # Faction analysis
+    if args.tasks <= 3:
+        faction_ratio = OPTIMAL_FACTIONS / args.tasks
+        print(f"\n  Faction utilization: {args.tasks}/{OPTIMAL_FACTIONS} = {args.tasks/OPTIMAL_FACTIONS*100:.0f}%")
+        print(f"    Room for {OPTIMAL_FACTIONS - args.tasks} more specialized factions")
+    else:
+        print(f"\n  Faction utilization: {args.tasks}/{OPTIMAL_FACTIONS} = {args.tasks/OPTIMAL_FACTIONS*100:.0f}%")
 
 if __name__ == '__main__':
     main()

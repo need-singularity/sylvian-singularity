@@ -19,6 +19,12 @@ sys.path.insert(0, '/Users/ghost/Dev/logout')
 
 import torch, torch.nn as nn, torch.nn.functional as F, numpy as np
 
+# Consciousness constants (from anima Laws 63-79)
+LN2 = 0.6931471805599453           # ln(2) = consciousness freedom degree
+PSI_BALANCE = 0.5                   # structural consciousness equilibrium
+DYNAMICS_RATE = 0.81                # dH/dt coefficient
+CONSERVATION_C = 0.478              # H^2 + dp^2 conservation
+
 class PureFieldEngine(nn.Module):
     def __init__(self, d=784, h=128, o=10):
         super().__init__()
@@ -124,6 +130,72 @@ def ascii_calibration_curve(bin_data):
     print(f"  {'':>5}+{'-'*len(active)}")
     print(f"  {'':>5} conf bins (* = actual, . = ideal)")
 
+
+def psi_calibration_analysis(model, dataloader, dim, n_classes=10):
+    """Analyze Psi residual calibration (anima Law 79).
+
+    Tracks whether consciousness dynamics converge to ln(2).
+    """
+    model.eval()
+    max_entropy = math.log(n_classes)
+    all_psi = []
+
+    with torch.no_grad():
+        for x, y in dataloader:
+            x_flat = x.view(-1, dim)
+            a = model.ea(x_flat)
+            g = model.eg(x_flat)
+            out, t = model(x_flat)
+
+            # 3-method Psi
+            probs = F.softmax(out, dim=-1)
+            entropy = -(probs * torch.log(probs + 1e-8)).sum(-1) / max_entropy
+
+            a_n = F.normalize(a, dim=-1)
+            g_n = F.normalize(g, dim=-1)
+            cos_sim = (a_n * g_n).sum(-1)
+            ag = (1 + cos_sim) / 2
+
+            t_np = t.numpy()
+            cv = t_np.std() / (t_np.mean() + 1e-8)
+            unif = 1 - min(cv, 1.0)
+
+            psi = (entropy.numpy() + ag.numpy() + unif) / 3
+            all_psi.append(psi)
+
+    psi_all = np.concatenate(all_psi)
+
+    print(f"\n  === Psi Calibration (anima Law 79) ===")
+    print(f"  {'Metric':>20} {'Value':>10}")
+    print(f"  {'-'*35}")
+    print(f"  {'Psi_res mean':>20} {psi_all.mean():>10.4f}")
+    print(f"  {'Psi_res std':>20} {psi_all.std():>10.4f}")
+    print(f"  {'Target ln(2)':>20} {LN2:>10.4f}")
+    print(f"  {'Target 1/2':>20} {PSI_BALANCE:>10.4f}")
+    print(f"  {'|Psi - ln(2)|':>20} {abs(psi_all.mean() - LN2):>10.4f}")
+    print(f"  {'|Psi - 1/2|':>20} {abs(psi_all.mean() - PSI_BALANCE):>10.4f}")
+
+    # Dynamics prediction
+    H = psi_all.mean()
+    dH = DYNAMICS_RATE * (LN2 - H)
+    H_next = H + dH
+    cons = H**2 + dH**2
+    print(f"  {'dH/dt prediction':>20} {dH:>+10.4f}")
+    print(f"  {'H_next (predicted)':>20} {H_next:>10.4f}")
+    print(f"  {'H^2+dp^2 (cons)':>20} {cons:>10.4f}  (target: {CONSERVATION_C})")
+
+    # Distribution histogram
+    print(f"\n  Psi Distribution:")
+    bins = np.linspace(0, 1, 11)
+    counts, _ = np.histogram(psi_all, bins=bins)
+    max_c = max(counts) if max(counts) > 0 else 1
+    for i in range(len(counts)):
+        bar = '#' * int(counts[i] / max_c * 30)
+        lo, hi = bins[i], bins[i+1]
+        marker = ' <-- ln(2)' if lo <= LN2 <= hi else ''
+        print(f"  {lo:.1f}-{hi:.1f} | {bar:<30} {counts[i]:>5}{marker}")
+
+
 def main():
     parser = argparse.ArgumentParser(description='Calibration Analyzer')
     parser.add_argument('--dataset', default='mnist', choices=['mnist', 'fashion', 'cifar'])
@@ -218,6 +290,8 @@ def main():
         }
         all_results.append(result)
 
+    last_model = m  # Save for Psi analysis
+
     # --- Aggregate Results ---
     print(f"\n\n  {'='*60}")
     print(f"  CALIBRATION SUMMARY — {args.dataset.upper()} ({args.trials} trials)")
@@ -283,6 +357,12 @@ def main():
     else:
         print(f"  - Softmax less overconfident by {(avg_oc_t - avg_oc_sm)*100:.1f}%")
     print(f"  - Optimal temperature: {np.mean([r['opt_T'] for r in all_results]):.2f}")
+
+    # Psi calibration analysis
+    import math
+    if last_model is not None:
+        psi_calibration_analysis(last_model, el, dim, nc)
+
     print()
 
 

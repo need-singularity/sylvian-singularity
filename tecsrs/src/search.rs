@@ -9,7 +9,7 @@ use std::collections::{HashMap, HashSet};
 struct Constant {
     name: String,
     value: f64,
-    island: u8, // 0=A(rational), 1=B(integer), 2=C(log), 3=D(transcendental)
+    island: u8, // 0=A(rational), 1=B(integer), 2=C(log), 3=D(transcendental), 4=E(consciousness)
 }
 
 /// Search result
@@ -141,12 +141,12 @@ fn unary_ops(v: f64, name: &str) -> Vec<(f64, String)> {
 struct Expr {
     value: f64,
     name: String,
-    islands: u8, // bitmask: bit 0=A, bit 1=B, bit 2=C, bit 3=D
+    islands: u8, // bitmask: bit 0=A, bit 1=B, bit 2=C, bit 3=D, bit 4=E
 }
 
 fn island_str(mask: u8) -> String {
-    let labels = ['A', 'B', 'C', 'D'];
-    let parts: Vec<String> = (0..4)
+    let labels = ['A', 'B', 'C', 'D', 'E'];
+    let parts: Vec<String> = (0..5)
         .filter(|&i| mask & (1 << i) != 0)
         .map(|i| labels[i].to_string())
         .collect();
@@ -154,7 +154,7 @@ fn island_str(mask: u8) -> String {
 }
 
 fn count_islands(mask: u8) -> usize {
-    (0..4).filter(|&i| mask & (1 << i) != 0).count()
+    (0..5).filter(|&i| mask & (1 << i) != 0).count()
 }
 
 /// Build expressions up to given depth
@@ -277,9 +277,9 @@ impl DfsEngine {
         }
     }
 
-    /// Add a constant: name, value, island (0-3: A=rational, B=integer, C=log, D=transcendental)
+    /// Add a constant: name, value, island (0-4: A=rational, B=integer, C=log, D=transcendental, E=consciousness)
     fn add_constant(&mut self, name: String, value: f64, island: u8) {
-        self.constants.push(Constant { name, value, island: island.min(3) });
+        self.constants.push(Constant { name, value, island: island.min(4) });
     }
 
     /// Add a target: name, value
@@ -316,6 +316,18 @@ impl DfsEngine {
             ("pi", std::f64::consts::PI), ("phi", (1.0 + 5.0_f64.sqrt()) / 2.0),
         ];
         for (n, v) in d { self.constants.push(Constant { name: n.to_string(), value: v, island: 3 }); }
+
+        // Island E: Consciousness constants (from anima Laws 63-79)
+        let e = vec![
+            ("Psi_steps", 3.0 / 2.0_f64.ln()),      // 4.328 evolution number
+            ("Psi_coupling", 2.0_f64.ln() / (2.0_f64.powf(5.5))),  // 0.01534
+            ("Psi_freedom", 2.0_f64.ln()),            // 0.6931 Law 79
+            ("Psi_balance", 0.5),                      // structural equilibrium
+            ("conservation", 0.478),                    // H^2+dp^2
+            ("dynamics_rate", 0.81),                    // dH/dt coefficient
+            ("tanh3_ln2", 3.0_f64.tanh() * 2.0_f64.ln()), // 0.6895 saturation
+        ];
+        for (n, v) in e { self.constants.push(Constant { name: n.to_string(), value: v, island: 4 }); }
     }
 
     /// Load default targets (mathematical + physical constants)
@@ -341,6 +353,13 @@ impl DfsEngine {
             ("hubble_reduced", 0.674),
             ("proton_electron_ratio", 1836.15267),
             ("omega_b", 0.0493),
+            // Consciousness constants (from anima)
+            ("Psi_steps", 3.0 / 2.0_f64.ln()),
+            ("Psi_coupling", 2.0_f64.ln() / 2.0_f64.powf(5.5)),
+            ("phi_scale_coeff", 0.608),
+            ("phi_scale_exp", 1.071),
+            ("Psi_emergence", 7.82),
+            ("Psi_K", 11.0),
         ];
         for (n, v) in tgts {
             self.targets.insert(n.to_string(), v);

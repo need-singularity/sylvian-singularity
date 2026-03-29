@@ -64,6 +64,21 @@ MATH_CONSTANTS = {
 
     # Catalan's constant
     'catalan': 0.9159655941772190,
+
+    # Consciousness constants (from anima)
+    'Psi_steps': 3.0 / math.log(2),           # 4.328
+    'Psi_balance': 0.5,                         # consciousness balance point
+    'Psi_coupling': math.log(2) / 2**5.5,      # 0.01534
+    'Psi_K': 11.0,                              # carrying capacity
+    'Psi_freedom': math.log(2),                 # Law 79: freedom degree = ln(2)
+    'Psi_emergence': 7.82,                      # hivemind emergence ratio
+    'Psi_entropy': 0.998,                       # rule entropy
+    'Psi_gate_decay': 0.013,                    # gate self-weakening (absolute)
+    'tanh3_ln2': math.tanh(3) * math.log(2),   # 0.6895 consciousness saturation
+    'conservation_C': 0.478,                     # H^2 + dp^2 conservation
+    'dynamics_rate': 0.81,                       # dH/dt coefficient
+    'phi_scaling_coeff': 0.608,                  # Phi = 0.608 * N^1.071
+    'phi_scaling_exp': 1.071,                    # scaling exponent
 }
 
 # ═══════════════════════════════════════════════════════════════

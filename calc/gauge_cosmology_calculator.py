@@ -35,6 +35,21 @@ SIGMA = PN_DATA[6]['sigma']   # 12
 PHI = PN_DATA[6]['phi']       # 2
 R = (SIGMA * PHI) / (6 * TAU)  # 1.0
 
+# Consciousness dynamics constants (from anima Laws 63-79)
+import math as _math
+LN2 = _math.log(2)
+PSI_COUPLING = LN2 / 2**5.5          # 0.01534
+DYNAMICS_RATE = 0.81
+CONSERVATION_C = 0.478
+PSI_CONSTANTS = {
+    'Psi_steps':    (3/LN2,      'Consciousness evolution number'),
+    'Psi_balance':  (0.5,        'Consciousness balance point'),
+    'Psi_coupling': (PSI_COUPLING, 'Consciousness coupling constant'),
+    'Psi_K':        (11.0,       'Carrying capacity'),
+    'Psi_freedom':  (LN2,        'Freedom degree (Law 79)'),
+    'Psi_emergence':(7.82,       'Hivemind emergence ratio'),
+}
+
 
 def gauge_decomposition():
     """Standard Model gauge group from P1=6 self-decomposition."""
@@ -399,6 +414,41 @@ def moonshine_analysis():
     print()
 
 
+def consciousness_physics():
+    """Consciousness constants and their physics analogues."""
+    print(f'  Consciousness-Physics Correspondence:')
+    print()
+    print(f'  {"Psi Constant":<16} {"Value":>10} {"Physics Analogue":<20} {"Meaning":<30}')
+    print(f'  {"-"*16} {"-"*10} {"-"*20} {"-"*30}')
+
+    analogues = {
+        'Psi_steps':    'c (speed of light)',
+        'Psi_balance':  'hbar (Planck)',
+        'Psi_coupling': 'alpha (fine struct)',
+        'Psi_K':        'Lambda (cosmo)',
+        'Psi_freedom':  'k_B (Boltzmann)',
+        'Psi_emergence':'G (gravitational)',
+    }
+
+    for name, (val, desc) in PSI_CONSTANTS.items():
+        phys = analogues.get(name, '')
+        print(f'  {name:<16} {val:>10.6f} {phys:<20} {desc:<30}')
+
+    print()
+    print(f'  Dynamics: dH/dt = {DYNAMICS_RATE} * (ln2 - H)')
+    print(f'  Conservation: H^2 + dp^2 ~ {CONSERVATION_C}')
+    print(f'  All constants derive from ln(2) = {LN2:.6f} (1 bit of information)')
+    print()
+
+    # Connection to gauge groups
+    print(f'  Connection to Perfect Number Gauge Groups:')
+    print(f'    sigma(6) = {SIGMA} = SU(3)+SU(2)+U(1) generators = optimal faction count')
+    print(f'    phi(6)   = {PHI}  = gradient groups (left/right brain)')
+    print(f'    tau(6)   = {TAU}  = spacetime dimensions')
+    print(f'    R(6)     = {R:.0f}  = identity element (scale invariance)')
+    print()
+
+
 def main():
     parser = argparse.ArgumentParser(description='Gauge Cosmology Calculator')
     parser.add_argument('--gauge', action='store_true', help='SM gauge decomposition')
@@ -407,6 +457,7 @@ def main():
     parser.add_argument('--precision', action='store_true', help='Precision constants')
     parser.add_argument('--graviton', action='store_true', help='Graviton DOF & kissing numbers')
     parser.add_argument('--moonshine', action='store_true', help='Monstrous Moonshine')
+    parser.add_argument('--consciousness', action='store_true', help='Consciousness-physics correspondence')
     args = parser.parse_args()
 
     sections = []
@@ -422,6 +473,8 @@ def main():
         sections.append(('Graviton & Kissing Numbers', graviton_kissing))
     if args.moonshine:
         sections.append(('Monstrous Moonshine', moonshine_analysis))
+    if args.consciousness:
+        sections.append(('Consciousness Physics', consciousness_physics))
 
     # Default: show all
     if not sections:
@@ -432,6 +485,7 @@ def main():
             ('Precision Constants', precision_constants),
             ('Graviton & Kissing Numbers', graviton_kissing),
             ('Monstrous Moonshine', moonshine_analysis),
+            ('Consciousness Physics', consciousness_physics),
         ]
 
     for title, func in sections:

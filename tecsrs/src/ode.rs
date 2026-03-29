@@ -1,6 +1,7 @@
 // Phase 5: ODE integrators — Lorenz, Rössler, Chen, Chua attractors
 // 5-15x speedup over Python step-by-step loops
 
+use std::collections::HashMap;
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use rand::prelude::*;
@@ -311,4 +312,71 @@ fn pack_result(py: Python<'_>, traj: &[State], lyap: f64, entropy: f64, name: &s
     dict.set_item("x_std", x_std)?;
 
     Ok(dict.into_any().unbind())
+}
+
+/// Consciousness evolution ODE: dH/dt = rate * (ln2 - H)
+/// Models consciousness convergence to ln(2) equilibrium
+/// Conservation law: H^2 + (dH/dt)^2 ≈ 0.478
+#[pyfunction]
+#[pyo3(signature = (h0=0.1, rate=0.81, steps=10000, dt=0.01, noise=0.0, seed=None))]
+pub fn consciousness_ode(
+    h0: f64,
+    rate: f64,
+    steps: usize,
+    dt: f64,
+    noise: f64,
+    seed: Option<u64>,
+) -> PyResult<HashMap<String, Vec<f64>>> {
+    use rand::SeedableRng;
+    use rand::Rng;
+
+    let mut rng = match seed {
+        Some(s) => rand_chacha::ChaCha8Rng::seed_from_u64(s),
+        None => rand_chacha::ChaCha8Rng::seed_from_u64(42),
+    };
+
+    let ln2 = 2.0_f64.ln();
+    let mut h = h0;
+    let mut trajectory = Vec::with_capacity(steps);
+    let mut dh_trajectory = Vec::with_capacity(steps);
+    let mut conservation = Vec::with_capacity(steps);
+    let mut time = Vec::with_capacity(steps);
+
+    for i in 0..steps {
+        let dh = rate * (ln2 - h) * dt;
+        let noise_val = if noise > 0.0 {
+            (rng.gen::<f64>() - 0.5) * noise
+        } else {
+            0.0
+        };
+        h += dh + noise_val;
+
+        let cons = h * h + dh * dh;
+
+        trajectory.push(h);
+        dh_trajectory.push(dh);
+        conservation.push(cons);
+        time.push(i as f64 * dt);
+    }
+
+    // Compute Lyapunov-like stability metric
+    let last_100 = if trajectory.len() > 100 {
+        &trajectory[trajectory.len()-100..]
+    } else {
+        &trajectory
+    };
+    let mean_h: f64 = last_100.iter().sum::<f64>() / last_100.len() as f64;
+    let std_h: f64 = (last_100.iter().map(|x| (x - mean_h).powi(2)).sum::<f64>() / last_100.len() as f64).sqrt();
+
+    let mut result = HashMap::new();
+    result.insert("h".to_string(), trajectory);
+    result.insert("dh".to_string(), dh_trajectory);
+    result.insert("conservation".to_string(), conservation);
+    result.insert("time".to_string(), time);
+    result.insert("mean_h".to_string(), vec![mean_h]);
+    result.insert("std_h".to_string(), vec![std_h]);
+    result.insert("target_ln2".to_string(), vec![ln2]);
+    result.insert("distance_to_ln2".to_string(), vec![(mean_h - ln2).abs()]);
+
+    Ok(result)
 }

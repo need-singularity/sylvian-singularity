@@ -38,6 +38,8 @@ fn tecsrs(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(grid::gz_ratio, m)?)?;
     m.add_function(wrap_pyfunction!(grid::gz_zone_stats, m)?)?;
     m.add_function(wrap_pyfunction!(grid::grid_scan, m)?)?;
+    m.add_function(wrap_pyfunction!(grid::consciousness_dynamics, m)?)?;
+    m.add_function(wrap_pyfunction!(grid::phi_scaling, m)?)?;
 
     // Phase 5: ODE
     m.add_function(wrap_pyfunction!(ode::lorenz, m)?)?;
@@ -45,6 +47,7 @@ fn tecsrs(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(ode::chen, m)?)?;
     m.add_function(wrap_pyfunction!(ode::chua, m)?)?;
     m.add_function(wrap_pyfunction!(ode::simulate_all, m)?)?;
+    m.add_function(wrap_pyfunction!(ode::consciousness_ode, m)?)?;
 
     // Phase 6: Atlas
     m.add_function(wrap_pyfunction!(atlas::scan_hypotheses, m)?)?;
@@ -58,6 +61,7 @@ fn tecsrs(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(perfect::mersenne_bootstrap, m)?)?;
     m.add_function(wrap_pyfunction!(perfect::find_sigma_phi_tau, m)?)?;
     m.add_function(wrap_pyfunction!(perfect::uniqueness_score, m)?)?;
+    m.add_function(wrap_pyfunction!(perfect::consciousness_bridges, m)?)?;
 
     Ok(())
 }

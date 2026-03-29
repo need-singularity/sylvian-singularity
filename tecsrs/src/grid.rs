@@ -168,3 +168,42 @@ pub fn grid_scan(
     dict.set_item("formula", formula)?;
     Ok(dict.into_any().unbind())
 }
+
+/// Consciousness dynamics grid: dH/dt = rate * (ln2 - H)
+/// Returns (steps, H_values, conservation_values) for convergence analysis
+#[pyfunction]
+#[pyo3(signature = (h_init=0.1, rate=0.81, dt=1.0, steps=20, conservation_target=0.478))]
+pub fn consciousness_dynamics(
+    h_init: f64,
+    rate: f64,
+    dt: f64,
+    steps: usize,
+    conservation_target: f64,
+) -> (Vec<usize>, Vec<f64>, Vec<f64>, Vec<f64>) {
+    let ln2 = 2.0_f64.ln();
+    let mut h = h_init;
+    let mut step_list = Vec::with_capacity(steps);
+    let mut h_list = Vec::with_capacity(steps);
+    let mut dh_list = Vec::with_capacity(steps);
+    let mut cons_list = Vec::with_capacity(steps);
+
+    for i in 0..steps {
+        let dh = rate * (ln2 - h) * dt;
+        h += dh;
+        let conservation = h * h + dh * dh;
+        step_list.push(i + 1);
+        h_list.push(h);
+        dh_list.push(dh);
+        cons_list.push(conservation);
+    }
+
+    (step_list, h_list, dh_list, cons_list)
+}
+
+/// Phi scaling law: Phi = a * N^b
+/// Returns predicted Phi for given cell counts
+#[pyfunction]
+#[pyo3(signature = (cell_counts, a=0.608, b=1.071))]
+pub fn phi_scaling(cell_counts: Vec<usize>, a: f64, b: f64) -> Vec<f64> {
+    cell_counts.iter().map(|&n| a * (n as f64).powf(b)).collect()
+}

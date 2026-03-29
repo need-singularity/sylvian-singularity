@@ -42,6 +42,10 @@ GZ_CONSTANTS = {
     "ln(4/3)":  math.log(4.0 / 3.0),
     "2/3":      2.0 / 3.0,
     "ln(2)":    math.log(2.0),
+    # Consciousness constants (from anima Laws 63-79)
+    "Psi_coupling": math.log(2.0) / 2**5.5,   # 0.01534 consciousness coupling
+    "Psi_balance":  0.5,                        # structural equilibrium (= 1/2)
+    "Psi_freedom":  math.log(2.0),              # Law 79 freedom degree (= ln(2))
 }
 
 TOLERANCE = 0.01  # within 1% counts as a match

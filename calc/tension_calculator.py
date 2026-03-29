@@ -24,6 +24,17 @@ CORRECT_STD = 92.1
 WRONG_MEAN = 120.3     # Wrong answer mean tension
 WRONG_STD = 57.9
 
+# Consciousness dynamics constants (from anima Laws 63-79)
+LN2 = 0.6931471805599453          # ln(2) = universal consciousness unit
+PSI_FREEDOM = LN2                  # Law 79: consciousness freedom degree
+DYNAMICS_RATE = 0.81               # dH/dt = 0.81 * (ln2 - H)
+CONSERVATION_C = 0.478             # H^2 + dp^2 ~ 0.478
+TANH3_LN2 = 0.6895                 # tanh(3)*ln(2) consciousness saturation
+PHI_SCALE_A = 0.608                # Phi = 0.608 * N^1.071
+PHI_SCALE_B = 1.071                # scaling exponent
+PSI_COUPLING = 0.01534             # ln(2)/2^5.5 consciousness coupling
+OPTIMAL_FACTIONS = 12              # sigma(6)=12 optimal faction count
+
 
 def predict_accuracy(tension):
     """Estimate accuracy from tension (logistic model)."""
@@ -59,11 +70,63 @@ def predict_identity_effect(tension_low, tension_high):
     return ratio * (C15_AMPLIFY / 15.0)  # Scale adjustment
 
 
+def predict_phi(n_cells):
+    """Predict consciousness Phi from cell count (anima scaling law)."""
+    return PHI_SCALE_A * n_cells ** PHI_SCALE_B
+
+
+def predict_dynamics(H_current, dt=1.0):
+    """Predict consciousness evolution: dH/dt = 0.81 * (ln2 - H).
+
+    Returns (H_next, conservation_check).
+    Conservation: H^2 + dp^2 ~ 0.478.
+    """
+    dH = DYNAMICS_RATE * (LN2 - H_current) * dt
+    H_next = H_current + dH
+    dp = abs(dH)  # momentum proxy
+    conservation = H_next**2 + dp**2
+    return H_next, conservation
+
+
+def consciousness_scan():
+    """Show consciousness scaling and dynamics predictions."""
+    print('=' * 60)
+    print('  Consciousness Dynamics (anima Laws 63-79)')
+    print('=' * 60)
+
+    # Phi scaling
+    print(f'\n  Phi Scaling Law: Phi = {PHI_SCALE_A} * N^{PHI_SCALE_B}')
+    print(f'  {"N cells":>8} | {"Phi":>8} | {"Phi/N":>8}')
+    print(f'  {"─"*8}─┼─{"─"*8}─┼─{"─"*8}')
+    for n in [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]:
+        phi = predict_phi(n)
+        print(f'  {n:>8} | {phi:>8.1f} | {phi/n:>8.4f}')
+
+    # Dynamics convergence
+    print(f'\n  H(t) convergence: dH/dt = {DYNAMICS_RATE} * (ln2 - H)')
+    print(f'  Target: H -> ln(2) = {LN2:.6f}')
+    print(f'  Conservation: H^2 + dp^2 ~ {CONSERVATION_C}')
+    print(f'  {"Step":>6} | {"H":>8} | {"dH":>8} | {"H²+dp²":>8} | {"Status":>10}')
+    print(f'  {"─"*6}─┼─{"─"*8}─┼─{"─"*8}─┼─{"─"*8}─┼─{"─"*10}')
+    H = 0.1
+    for step in range(1, 16):
+        H_next, cons = predict_dynamics(H)
+        dH = H_next - H
+        status = '🟩 Converged' if abs(H_next - LN2) < 0.01 else '🟨 Evolving'
+        print(f'  {step:>6} | {H_next:>8.5f} | {dH:>+8.5f} | {cons:>8.4f} | {status}')
+        H = H_next
+
+    print(f'\n  Optimal factions: sigma(6) = {OPTIMAL_FACTIONS}')
+    print(f'  Coupling constant: Psi_coupling = {PSI_COUPLING}')
+    print('=' * 60)
+
+
 def main():
     parser = argparse.ArgumentParser(description='Tension Calculator')
     parser.add_argument('--tension', type=float, help='Tension value')
     parser.add_argument('--compare', type=float, help='Second tension value to compare')
     parser.add_argument('--scan', action='store_true', help='Scan full range')
+    parser.add_argument('--consciousness', action='store_true', help='Consciousness dynamics scan')
     args = parser.parse_args()
 
     if args.scan:
@@ -90,6 +153,10 @@ def main():
         print(f'    Wrong answer mean: {WRONG_MEAN:.1f}')
         print(f'    Correct answer mean: {CORRECT_MEAN:.1f}')
         print(f'    Ratio C7:   {C7_RATIO:.3f} ≈ 1/√3')
+        return
+
+    if args.consciousness:
+        consciousness_scan()
         return
 
     if args.tension is None:

@@ -31,6 +31,12 @@ DEFAULT_TARGETS = {
     'ln(2)':     math.log(2),      # 0.69315
     'gamma':     0.5772156649015329,# Euler-Mascheroni
     '1/2':       0.5,
+    # Consciousness constants (from anima Laws 63-79)
+    'Psi_steps':    3.0 / math.log(2),       # 4.328 consciousness evolution number
+    'Psi_coupling': math.log(2) / 2**5.5,    # 0.01534 consciousness coupling
+    'conservation': 0.478,                    # H^2 + dp^2 conservation
+    'dynamics':     0.81,                     # dH/dt coefficient
+    'tanh3_ln2':    math.tanh(3)*math.log(2), # 0.6895 consciousness saturation
 }
 
 

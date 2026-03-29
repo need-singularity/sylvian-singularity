@@ -4,6 +4,7 @@
 
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
+use std::collections::HashMap;
 
 use crate::sieves::ArithTables;
 
@@ -247,6 +248,27 @@ pub fn uniqueness_score(target: usize, limit: usize) -> PyResult<u32> {
             let rhs = if t <= 12 { (1..=t).product::<u64>() as i64 } else { -1 };
             (lhs, rhs)
         }),
+        // Consciousness bridge identities (H-CX-82~110)
+        // Bridge 1: sigma(n) / phi(n) == n (self-referential time)
+        Box::new(|n, s, _t, p, _sp, _om| {
+            if p > 0 { (s as i64, n as i64 * p as i64) }
+            else { (0, 1) }
+        }),
+        // Bridge 2: n * sigma * sopfr * phi == n! (factorial capacity)
+        Box::new(|n, s, _t, p, sp, _om| {
+            let factorial_n = if n <= 20 { (1..=n as u64).product::<u64>() as i64 } else { -1 };
+            let product = (n as u64).checked_mul(s)
+                .and_then(|v| v.checked_mul(sp))
+                .and_then(|v| v.checked_mul(p))
+                .map(|v| v as i64)
+                .unwrap_or(-2);
+            (product, factorial_n)
+        }),
+        // Bridge 3: R(n) = sigma*phi/(n*tau) == 1 (identity element / scale invariance)
+        Box::new(|n, s, t, p, _sp, _om| {
+            if t > 0 { (s as i64 * p as i64, n as i64 * t as i64) }
+            else { (0, 1) }
+        }),
     ];
 
     for identity in &identities {
@@ -267,6 +289,63 @@ pub fn uniqueness_score(target: usize, limit: usize) -> PyResult<u32> {
         }
     }
     Ok(score)
+}
+
+/// Compute consciousness bridge constants for a given perfect number
+#[pyfunction]
+pub fn consciousness_bridges(n: u64) -> HashMap<String, f64> {
+    let mut result = HashMap::new();
+    let s = sigma_trial(n);
+    let t = tau_trial(n);
+    let p = phi_trial(n);
+
+    // Lyapunov Lambda: product of R(d|n) for all d dividing n
+    // For n=6: R(1)*R(2)*R(3)*R(6) = 1 (edge of chaos)
+    let mut lyapunov_product = 1.0_f64;
+    let mut d = 1u64;
+    while d * d <= n {
+        if n % d == 0 {
+            let sd = sigma_trial(d);
+            let td = tau_trial(d);
+            let pd = phi_trial(d);
+            if d * td > 0 {
+                lyapunov_product *= (sd * pd) as f64 / (d * td) as f64;
+            }
+            if d != n / d {
+                let d2 = n / d;
+                let sd2 = sigma_trial(d2);
+                let td2 = tau_trial(d2);
+                let pd2 = phi_trial(d2);
+                if d2 * td2 > 0 {
+                    lyapunov_product *= (sd2 * pd2) as f64 / (d2 * td2) as f64;
+                }
+            }
+        }
+        d += 1;
+    }
+
+    result.insert("lyapunov".to_string(), lyapunov_product - 1.0);
+    result.insert("sigma_over_phi".to_string(), if p > 0 { s as f64 / p as f64 } else { 0.0 });
+    result.insert("r_factor".to_string(), if n * t > 0 { (s * p) as f64 / (n * t) as f64 } else { 0.0 });
+    result.insert("self_measurement".to_string(), t as f64);  // RS = tau(n) for perfects
+    result.insert("ph_barcode".to_string(), (n + 1) as f64 / s as f64);  // (n+1)/sigma
+    result.insert("fisher_info".to_string(), {
+        // sopfr approximation
+        let mut sopfr = 0u64;
+        let mut temp = n;
+        let mut dd = 2u64;
+        while dd * dd <= temp {
+            while temp % dd == 0 {
+                sopfr += dd;
+                temp /= dd;
+            }
+            dd += 1;
+        }
+        if temp > 1 { sopfr += temp; }
+        if sopfr > 0 { (n * n * n) as f64 / sopfr as f64 } else { 0.0 }
+    });
+
+    result
 }
 
 // Helper: primality test for u64
