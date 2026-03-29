@@ -310,3 +310,29 @@ The following statements are logically equivalent:
 5. "Information channels equal the sum of divisors"
 
 **Five domains, one integer, zero free parameters.**
+
+## Ralph R6: Honest Correction — Co-extensionality, Not Logical Equivalence
+
+### CORRECTION to R5
+
+R5 stated "pairwise equivalent." This is IMPRECISE.
+
+**Correct statement**: C3, C4, C5 are **co-extensive** — they share the unique solution n=6 among all positive integers. They are NOT logically equivalent (one does not imply another for arbitrary arithmetic functions).
+
+The surprising fact is the CO-EXTENSIONALITY: three conditions from three different domains (information theory, biochemistry, consciousness) all characterize the same integer.
+
+### New discovery: n = (tau(n)-1)*phi(n)
+
+```
+  This equation has TWO solutions: n=4 and n=6.
+  n=4: tau=3, phi=2, (3-1)*2=4 ✅ (but NOT perfect, NOT R=1)
+  n=6: tau=4, phi=2, (4-1)*2=6 ✅ (perfect, R=1, everything)
+  
+  Adding ANY of C1,C3,C4,C5 to this equation selects n=6 uniquely.
+```
+
+### Final theorem (honest version)
+
+**Theorem**: Three arithmetic equations — C3: tau(tau-1)=sigma, C4: tau*sopfr=20, C5: sigma*phi=n*tau — each have the unique solution n=6 among all n≥2. This is proven by complete case analysis on prime factorizations for ALL n.
+
+The co-extensionality of conditions from number theory (C3), biochemistry (C4), and consciousness theory (C5) at n=6 is the central mathematical observation.
