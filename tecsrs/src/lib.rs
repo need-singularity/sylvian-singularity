@@ -10,6 +10,7 @@ mod grid;
 mod ode;
 mod atlas;
 mod perfect;
+mod consciousness;
 
 /// TECS-L Rust acceleration module
 #[pymodule]
@@ -62,6 +63,15 @@ fn tecsrs(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(perfect::find_sigma_phi_tau, m)?)?;
     m.add_function(wrap_pyfunction!(perfect::uniqueness_score, m)?)?;
     m.add_function(wrap_pyfunction!(perfect::consciousness_bridges, m)?)?;
+
+    // Phase 8: Consciousness
+    m.add_function(wrap_pyfunction!(consciousness::psi_constants, m)?)?;
+    m.add_function(wrap_pyfunction!(consciousness::psi_verify, m)?)?;
+    m.add_function(wrap_pyfunction!(consciousness::conservation_grid, m)?)?;
+    m.add_function(wrap_pyfunction!(consciousness::conservation_trajectory, m)?)?;
+    m.add_function(wrap_pyfunction!(consciousness::gate_formula, m)?)?;
+    m.add_function(wrap_pyfunction!(consciousness::gate_decay, m)?)?;
+    m.add_function(wrap_pyfunction!(consciousness::gate_batch, m)?)?;
 
     Ok(())
 }
