@@ -284,6 +284,70 @@
         "target_venue": "arXiv math.NT / cs.IT",
         "tier": 1,
         "category": "preprint"
+      },
+      {
+        "id": "P-CODON",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "Why Four Bases and Three Letters: The Integer Codon Length Theorem",
+        "target_venue": "Journal of Theoretical Biology",
+        "file": "../papers/tecs-l/P-CODON-integer-codon-theorem.md",
+        "keywords": [
+          "genetic-code",
+          "perfect-numbers",
+          "codon-length",
+          "information-theory"
+        ],
+        "description": "PROVEN: n/phi(n) is integer iff n=6 among perfect numbers. Genetic code (4,3) is uniquely optimal. Z=5.0sigma.",
+        "category": "preprint"
+      },
+      {
+        "id": "P-SLE6",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "SLE_6 and the First Perfect Number: Critical Exponents of Percolation",
+        "target_venue": "Journal of Statistical Physics",
+        "file": "../papers/tecs-l/P-SLE6-conformal-percolation.md",
+        "keywords": [
+          "SLE",
+          "percolation",
+          "conformal-invariance",
+          "perfect-numbers"
+        ],
+        "description": "All 9 percolation exponents decompose into n=6 arithmetic. c(6)=0. Locality unique to kappa=6.",
+        "category": "preprint"
+      },
+      {
+        "id": "P-FACTORIAL",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "n^2-sigma(n)=tau(n)! Unique at the First Perfect Number",
+        "target_venue": "American Mathematical Monthly",
+        "file": "../papers/tecs-l/P-FACTORIAL-bridge-identity.md",
+        "keywords": [
+          "perfect-numbers",
+          "factorial",
+          "arithmetic-functions",
+          "unique-identity"
+        ],
+        "description": "PROVEN unique for all n. 3-case proof: tau<=14 exhaustive, tau=15..50 narrow-window, tau>=51 density.",
+        "category": "preprint"
+      },
+      {
+        "id": "P-KISSING",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "Kissing Numbers k(1..3) as Arithmetic Functions of Six",
+        "target_venue": "Discrete and Computational Geometry",
+        "file": "../papers/tecs-l/P-KISSING-sphere-packing.md",
+        "keywords": [
+          "kissing-numbers",
+          "sphere-packing",
+          "root-systems",
+          "consecutive-primes"
+        ],
+        "description": "PROVEN: k(d)=d(d+1)={phi,n,sigma} unique to n=6 via consecutive primes 2,3.",
+        "category": "preprint"
       }
     ],
     "anima": [
