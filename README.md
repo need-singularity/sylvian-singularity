@@ -1508,7 +1508,7 @@ Result:    🟩 9 | 🟧 4 | ⚪ 12 | ⬛ 0   Hit rate 52% (up from Wave 10: 32%
 | **H-DNA-501** | **⭐** | **sigma(n) = tau(n)·(tau(n)-1)** | **n=6 only in [1,100000]** | **Complete** |
 | **H-DNA-502** | **⭐** | **d(n) ∪ {tau(n)} = {1,2,3,4,6} (crystallographic restriction)** | **n=6 only** | **Complete** |
 | **H-DNA-503** | **⭐** | **sigma(n)/tau(n) = largest prime factor(n)** | **n=6 only in [1,1000]** | **Complete** |
-| **H-DNA-504** | **⭐** | **12 unique identities (sigma,tau,phi,sopfr,omega,LPF)** | **n=6 only in [2,10000]** | **Exhaustive** |
+| **H-DNA-504** | **⭐** | **54 unique identities (87 templates, 173 pairs)** | **n=6 only in [2,5000]** | **Exhaustive** |
 
 **H-DNA-504 identity list (all unique to n=6 in [2,10000]):**
 

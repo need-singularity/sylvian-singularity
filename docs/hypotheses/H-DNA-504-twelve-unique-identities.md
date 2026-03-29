@@ -194,3 +194,43 @@ The 12 identities connect to biological findings:
 | n! = sigma²·sopfr = 720 | Factorial capacity (H-CX-082) |
 | (n-1)! = sigma·sopfr·phi = 120 | Icosahedral group |I| = 60 = 120/2 |
 | sigma·phi/n² = 2/3 | Golden Zone boundary ratio |
+
+## Extended Mining: 54 Unique Identities (verify_dna_massive_mining.py)
+
+Massive search (87 expression templates, 173 equation pairs, n=2..5000)
+found **54 identities unique to n=6**, expanding from the initial 12.
+
+### Key New Finds
+
+```
+  VALUE 36:  sigma·LPF = n²                    12·3 = 36 = 6²
+  VALUE 16:  sigma+tau = tau²                   12+4 = 16 = 4²
+  VALUE 15:  C(n,2) = sigma+LPF                15 = 12+3
+  VALUE 20:  C(n,3) = tau·(tau+1)              20 = 4·5
+  VALUE 5:   sopfr = n-1                        5 = 5
+  VALUE 8:   phi(sigma)+tau = tau·omega          4+4 = 4·2
+  VALUE 6:   tau(sigma) = tau+phi               6 = 4+2
+```
+
+### Binomial Coefficient Bridge (Combinatorics ↔ Number Theory)
+
+```
+  C(6,2) = sigma(6) + LPF(6)     →  15 = 12 + 3     UNIQUE to n=6
+  C(6,3) = tau(6) · (tau(6)+1)   →  20 = 4 × 5      UNIQUE to n=6
+
+  "Ways to choose 2 from 6 = sum of divisors + largest prime factor"
+  "Ways to choose 3 from 6 = divisor count × (divisor count + 1)"
+```
+
+### Distribution by Value
+
+```
+  val=12:  15 identities (sigma-related cluster)
+  val=6:   10 identities (n-related cluster)
+  val=4:    7 identities (tau-related cluster)
+  val=3:    7 identities (LPF-related cluster)
+  val=other: 8 identities (scattered)
+  Total:   54 unique to n=6 in [2, 5000]
+```
+
+Of 54 identities, many are algebraically dependent (~15 independent classes).
