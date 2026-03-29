@@ -414,6 +414,38 @@
         ],
         "description": "3\u03c3(n)=n\u00b2 unique at n=6. Proof: semiprime 4q\u00b2-9q-9=0.",
         "category": "preprint"
+      },
+      {
+        "id": "P-PARENT-IDENTITY",
+        "tier": 2,
+        "repo": "tecs-l",
+        "title": "n\u00b2=\u03c3(n)(1+\u03c6(n)): A Parent Identity Unifying Two Characterizations of Six",
+        "target_venue": "American Mathematical Monthly",
+        "file": "../papers/tecs-l/P-PARENT-IDENTITY.md",
+        "keywords": [
+          "perfect-numbers",
+          "parent-identity",
+          "unification"
+        ],
+        "description": "n\u00b2=\u03c3(1+\u03c6) unique at n=6. Implies factorial bridge AND \u03c3\u03c6+\u03c4=28.",
+        "category": "preprint"
+      },
+      {
+        "id": "P-PARADIGM",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "Four Failed Proofs and What They Taught Us: Why Six Is Not Special Because It Is Perfect",
+        "target_venue": "Mathematical Intelligencer",
+        "file": "../papers/tecs-l/P-PARADIGM-shift.md",
+        "keywords": [
+          "perfect-numbers",
+          "methodology",
+          "failed-proofs",
+          "confluence",
+          "six"
+        ],
+        "description": "4 honest failures \u2192 perfectness is corollary. 6=2\u00d73=3!=1+2+3 is the real cause.",
+        "category": "preprint"
       }
     ],
     "anima": [
