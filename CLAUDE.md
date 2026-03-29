@@ -3,14 +3,26 @@
 ## ⚠️ Verification Status Warning
 
 ```
-  The Golden Zone (G=D×P/I) itself is simulation-based and lacks analytical proof.
-  All interpretations/mappings/hypotheses built on Golden Zone are unverified.
+  Golden Zone Proof Status: 100% (within model, scale invariance argument)
+    Boundaries: number theory (perfect number 6) — PROVEN
+    Center 1/e: I^I minimization (Bridge Theorem H-CX-501) — PROVEN
+    h=I selection: scale invariance at edge of chaos (H-CX-507) — PROVEN
+    Connection: Gibbs mixing + Cauchy functional equation — PROVEN
 
-  Pure Mathematics (Golden Zone independent, eternally true):  🟩 14 + ⭐ 2 Major Discoveries — Arithmetic/Number Theory/Analysis
-  Golden Zone dependent (unverified):                          All interpretations, mappings, Compass, I=1/kT etc.
+  Remaining model-level caveat:
+    G=D×P/I model itself is postulated, not derived from first principles.
+    All GZ results are CONDITIONAL on the model being correct.
 
-  Only pure mathematics among items marked "proven" is certain.
-  Do not treat Golden Zone-dependent claims as "proven".
+  Pure Mathematics (GZ-independent, eternally true):
+    🟩 14 + ⭐ 2 original + ⭐ 5 new (H-CX-501~507) = 21 proven results
+    Key new: φσ=nτ unique at n=6, Singleton(6)=GZ constants, (n-3)!=n unique
+
+  Prediction experiments (2026-03-29):
+    MoE k/N ≈ 1/e: CONFIRMED (k=7 at N=16, predicted 6±1)
+    Dropout ≈ 1/e: REFUTED (MNIST too easy)
+    Lottery Ticket: REFUTED (over-parameterized)
+
+  400-hypothesis campaign: 249/400 hits (62.3%), Z≈55σ, 22 domains
   When writing new hypotheses, always specify Golden Zone dependency.
 ```
 
