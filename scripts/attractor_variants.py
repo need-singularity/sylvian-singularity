@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Attractor Variants + Epilepsy Region Precision Scan — CCT Universality Verification Tool
 
@@ -584,4 +583,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
