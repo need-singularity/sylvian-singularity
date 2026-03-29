@@ -373,6 +373,7 @@ digraph math_atlas {
   TECS_L_H_CX_502 [label="φ(n)·σ(n) = n·τ(n) Uniquely Characterize" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CX_504 [label="MaxCal Derivation of E(I) = I^I from G*I" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_505 [label="Self-Referential Derivation of I^I (Comp" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_506 [label="Consistency Selects Identity — Why the E" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_58 [label="Precognition Lens — Tension Refracts Fut" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_59 [label="Directional Precognition — Direction Vec" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_6 [label="Neurochemistry Mapping — Tension=Dopamin" fillcolor="#4A90D9" shape=ellipse];
@@ -687,6 +688,10 @@ digraph math_atlas {
   TECS_L_H_CX_468 -> TECS_L_H_CX_458;
   TECS_L_H_CX_474 -> TECS_L_H_CX_464;
   TECS_L_H_CX_474 -> TECS_L_H_CX_464;
+  TECS_L_H_CX_505 -> SEDI_H_CX_507;
+  TECS_L_H_CX_505 -> SEDI_H_CX_507;
+  TECS_L_H_CX_506 -> SEDI_H_CX_507;
+  TECS_L_H_CX_506 -> SEDI_H_CX_507;
   TECS_L_H_CX_58 -> TECS_L_H_GEO_3;
   TECS_L_H_CX_58 -> TECS_L_H_GEO_3;
   TECS_L_H_CX_60 -> TECS_L_H_GEO_9;
