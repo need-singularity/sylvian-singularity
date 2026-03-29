@@ -1472,6 +1472,26 @@ Result:    🟩 9 | 🟧 4 | ⚪ 12 | ⬛ 0   Hit rate 52% (up from Wave 10: 32%
 | **H-DNA-501** | **⭐** | **sigma(n) = tau(n)·(tau(n)-1)** | **n=6 only in [1,100000]** | **Complete** |
 | **H-DNA-502** | **⭐** | **d(n) ∪ {tau(n)} = {1,2,3,4,6} (crystallographic restriction)** | **n=6 only** | **Complete** |
 | **H-DNA-503** | **⭐** | **sigma(n)/tau(n) = largest prime factor(n)** | **n=6 only in [1,1000]** | **Complete** |
+| **H-DNA-504** | **⭐** | **12 unique identities (sigma,tau,phi,sopfr,omega,LPF)** | **n=6 only in [2,10000]** | **Exhaustive** |
+
+**H-DNA-504 identity list (all unique to n=6 in [2,10000]):**
+
+| # | Identity | For n=6 |
+|---|----------|---------|
+| 1 | sigma = tau·(tau-1) | 12=4·3 |
+| 2 | sigma = tau·LPF | 12=4·3 |
+| 3 | sigma·phi/n² = 2/3 | 24/36=2/3 |
+| 4 | sigma(tau) = sigma/tau + tau | 7=3+4 |
+| 5 | sigma(phi) = n/phi | 3=3 |
+| 6 | tau(sigma)·phi = sigma | 6·2=12 |
+| 7 | 3n-6 = sigma | 12=12 |
+| 8 | n-2 = tau | 4=4 |
+| 9 | n·phi = sigma+tau-sopfr+1 | 12=12 |
+| 10 | n/phi = sopfr-omega | 3=3 |
+| 11 | n! = sigma²·sopfr | 720=144·5 |
+| 12 | (n-1)! = sigma·sopfr·phi | 120=12·5·2 |
+
+**Unification: H-DNA-501 ≡ H-DNA-503** (both reduce to tau(n)-1=LPF(n))
 
 ```
   H-DNA-501: sigma(6) = P(tau(6), 2) = 4×3 = 12
