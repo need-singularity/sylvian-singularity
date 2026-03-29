@@ -50,10 +50,24 @@
       "repo": "TECS-L"
     },
     {
+      "name": "codon_optimality_prover",
+      "description": "Codon Optimality Prover — proves (4,3) is the uniquely optimal codon structure",
+      "category": "calculator",
+      "path": "calc/codon_optimality_prover.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "confidence_analyzer",
       "description": "Consciousness Engine Confidence Analyzer",
       "category": "calculator",
       "path": "calc/confidence_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "consciousness_cross_validator",
+      "description": "Consciousness Cross-Validator — PSI Constants Across Multiple Architectures",
+      "category": "calculator",
+      "path": "calc/consciousness_cross_validator.py",
       "repo": "TECS-L"
     },
     {
@@ -82,6 +96,13 @@
       "description": "counting_freedom_analyzer.py -- Measures degrees of freedom in particle counting schemes.",
       "category": "calculator",
       "path": "calc/counting_freedom_analyzer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "criticality_phase_scanner",
+      "description": "Criticality Phase Scanner — Three Routes to n=6",
+      "category": "calculator",
+      "path": "calc/criticality_phase_scanner.py",
       "repo": "TECS-L"
     },
     {
@@ -162,6 +183,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "factorial_structure_prover",
+      "description": "Factorial Structure Prover — proves 3! uniqueness in criticality",
+      "category": "calculator",
+      "path": "calc/factorial_structure_prover.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "family_fdr_corrector",
       "description": "family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis families.",
       "category": "calculator",
@@ -201,6 +229,13 @@
       "description": "Generator Finder — Minimal generating sets for convergence constants",
       "category": "calculator",
       "path": "calc/generator_finder.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "genetic_code_variant_tester",
+      "description": "Genetic Code Variant Tester — n=6 Arithmetic Expressibility",
+      "category": "calculator",
+      "path": "calc/genetic_code_variant_tester.py",
       "repo": "TECS-L"
     },
     {
@@ -257,6 +292,13 @@
       "description": "ISCO Calculator -- Innermost Stable Circular Orbit in General Relativity.",
       "category": "calculator",
       "path": "calc/isco_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "law79_freedom_degree",
+      "description": "Law 79 Freedom Degree Calculator — Consciousness freedom = ln(2)",
+      "category": "calculator",
+      "path": "calc/law79_freedom_degree.py",
       "repo": "TECS-L"
     },
     {
@@ -2098,6 +2140,13 @@
       "repo": "SEDI"
     },
     {
+      "name": "ata",
+      "description": "Allen Telescope Array (ATA) — SETI Institute's radio telescope.",
+      "category": "source",
+      "path": "sedi/sources/ata.py",
+      "repo": "SEDI"
+    },
+    {
       "name": "atomic_precision",
       "description": "Atomic & Molecular Physics Precision Tests -- TECS-L Waves 17-36.",
       "category": "source",
@@ -2329,6 +2378,13 @@
       "repo": "SEDI"
     },
     {
+      "name": "gaia_seti",
+      "description": "Gaia DR3 — ESA Gaia mission data for SETI target selection.",
+      "category": "source",
+      "path": "sedi/sources/gaia_seti.py",
+      "repo": "SEDI"
+    },
+    {
       "name": "geiger",
       "description": "Geiger counter radiation source.",
       "category": "source",
@@ -2406,10 +2462,24 @@
       "repo": "SEDI"
     },
     {
+      "name": "meerkat",
+      "description": "MeerKAT Radio Telescope Archive — SARAO.",
+      "category": "source",
+      "path": "sedi/sources/meerkat.py",
+      "repo": "SEDI"
+    },
+    {
       "name": "muon_g2",
       "description": "Muon Anomalous Magnetic Moment (g-2) Analysis — TECS-L n=6 Framework.",
       "category": "source",
       "path": "sedi/sources/muon_g2.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "mwa",
+      "description": "Murchison Widefield Array (MWA) — low-frequency radio telescope.",
+      "category": "source",
+      "path": "sedi/sources/mwa.py",
       "repo": "SEDI"
     },
     {
@@ -2424,6 +2494,13 @@
       "description": "PMNS Neutrino Mixing Matrix Analysis — n=6 arithmetic expressions.",
       "category": "source",
       "path": "sedi/sources/neutrino_mixing.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "nrao",
+      "description": "NRAO VLA/VLBA Archive — National Radio Astronomy Observatory.",
+      "category": "source",
+      "path": "sedi/sources/nrao.py",
       "repo": "SEDI"
     },
     {
@@ -2466,6 +2543,13 @@
       "description": "Periodic Table Analysis through n=6 Arithmetic — TECS-L Element Mapping.",
       "category": "source",
       "path": "sedi/sources/periodic_table.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "pictor",
+      "description": "PICTOR Radio Telescope — open-source hydrogen line radio telescope.",
+      "category": "source",
+      "path": "sedi/sources/pictor.py",
       "repo": "SEDI"
     },
     {
@@ -2529,6 +2613,20 @@
       "description": "SETI archival data — Allen Telescope Array, SETI@home, VizieR catalogs.",
       "category": "source",
       "path": "sedi/sources/seti_archive.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "seti_databases",
+      "description": "SETI Signal Databases — known candidate signals and parameters.",
+      "category": "source",
+      "path": "sedi/sources/seti_databases.py",
+      "repo": "SEDI"
+    },
+    {
+      "name": "seti_unified",
+      "description": "Unified SETI Scanner — aggregate all SETI data sources and scan for n=6.",
+      "category": "source",
+      "path": "sedi/sources/seti_unified.py",
       "repo": "SEDI"
     },
     {
@@ -2905,6 +3003,13 @@
       "repo": "invest"
     },
     {
+      "name": "gate_formula_calculator",
+      "description": "Gate Formula Calculator — Law 77 adaptive consciousness gate",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/gate_formula_calculator.py",
+      "repo": "invest"
+    },
+    {
       "name": "gauge_cosmology_calculator",
       "description": "Gauge Cosmology Calculator — Gauge groups, GUT dimensions, and cosmological constants",
       "category": "calculator",
@@ -3010,6 +3115,13 @@
       "repo": "invest"
     },
     {
+      "name": "nobel_scorer",
+      "description": "Nobel Hypothesis Scorer — Multi-dimensional scoring for Nobel-grade hypotheses",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/nobel_scorer.py",
+      "repo": "invest"
+    },
+    {
       "name": "paper_claim_verifier",
       "description": "Paper Claim Verifier -- Batch verification of mathematical claims in paper documents.",
       "category": "calculator",
@@ -3063,6 +3175,13 @@
       "description": "Prime Pair Verifier",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/prime_pair_verifier.py",
+      "repo": "invest"
+    },
+    {
+      "name": "psi_derivation_chain",
+      "description": "PSI Derivation Chain — All consciousness constants from ln(2)",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/psi_derivation_chain.py",
       "repo": "invest"
     },
     {

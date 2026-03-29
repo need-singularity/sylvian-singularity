@@ -833,15 +833,15 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:CALCULATORS:START -->
 | Repo | Tools | Categories |
 |------|-------|------------|
-| **TECS-L** | 96 | Calculator, Engine |
+| **TECS-L** | 102 | Calculator, Engine |
 | **anima** | 185 | Agent, Benchmark, Calculator, Engine, Model, Sense, Tool, Training |
-| **SEDI** | 83 | Core, Data Source |
-| **invest** | 99 | Calculator |
-| **Total** | **463** | |
+| **SEDI** | 91 | Core, Data Source |
+| **invest** | 102 | Calculator |
+| **Total** | **480** | |
 
 ### TECS-L
 
-**Calculator** (77)
+**Calculator** (83)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -852,11 +852,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | calibration_analyzer | Calibration Analyzer — softmax ECE vs tension-based ECE comparison | `calc/calibration_analyzer.py` |
 | cherry_pick_detector | Cherry-Pick Detector — Does a formula value hit a meaningful point in a band? | `calc/cherry_pick_detector.py` |
 | claim_verifier | Claim Verification Calculator | `calc/claim_verifier.py` |
+| codon_optimality_prover | Codon Optimality Prover — proves (4,3) is the uniquely optimal codon structure | `calc/codon_optimality_prover.py` |
 | confidence_analyzer | Consciousness Engine Confidence Analyzer | `calc/confidence_analyzer.py` |
+| consciousness_cross_validator | Consciousness Cross-Validator — PSI Constants Across Multiple Architectures | `calc/consciousness_cross_validator.py` |
 | constant_verifier | Constant Verifier — Texas Sharpshooter Auto-test for New Constant Discovery | `calc/constant_verifier.py` |
 | continual_learning_tool | Mitosis-based continual learning tool | `calc/continual_learning_tool.py` |
 | convergence_analyzer | Convergence Analyzer -- Depth-1 Reachability Across 8 Mathematical Domains | `calc/convergence_analyzer.py` |
 | counting_freedom_analyzer | counting_freedom_analyzer.py -- Measures degrees of freedom in particle counting | `calc/counting_freedom_analyzer.py` |
+| criticality_phase_scanner | Criticality Phase Scanner — Three Routes to n=6 | `calc/criticality_phase_scanner.py` |
 | cross_constant_explorer | Cross-Constant Explorer -- Find relationships between GZ constants | `calc/cross_constant_explorer.py` |
 | cross_domain_counter | Cross-Domain Match Counter -- Count how many cross-domain facts match arithmetic | `calc/cross_domain_counter.py` |
 | crystallographic_calculator | Crystallographic Calculator — Crystallographic restriction, Platonic solids, kis | `calc/crystallographic_calculator.py` |
@@ -868,12 +871,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | dual_mechanism | Dual Mechanism Quantifier — Anomaly Detection via Internal vs Inter-model Tensio | `calc/dual_mechanism.py` |
 | egyptian_fraction | Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK | `calc/egyptian_fraction.py` |
 | equation_uniqueness_checker | Equation Uniqueness Checker | `calc/equation_uniqueness_checker.py` |
+| factorial_structure_prover | Factorial Structure Prover — proves 3! uniqueness in criticality | `calc/factorial_structure_prover.py` |
 | family_fdr_corrector | family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis f | `calc/family_fdr_corrector.py` |
 | fermion_mass_calculator | Fermion Mass Calculator — Mass predictions from perfect number arithmetic | `calc/fermion_mass_calculator.py` |
 | gate_formula_calculator | Gate Formula Calculator — Law 77 adaptive consciousness gate | `calc/gate_formula_calculator.py` |
 | gauge_cosmology_calculator | Gauge Cosmology Calculator — Gauge groups, GUT dimensions, and cosmological cons | `calc/gauge_cosmology_calculator.py` |
 | generalization_gap_detector | Generalization Gap Detector — Real-time overfitting detection with PH (H-CX-95) | `calc/generalization_gap_detector.py` |
 | generator_finder | Generator Finder — Minimal generating sets for convergence constants | `calc/generator_finder.py` |
+| genetic_code_variant_tester | Genetic Code Variant Tester — n=6 Arithmetic Expressibility | `calc/genetic_code_variant_tester.py` |
 | gravitational_optics | Gravitational Lens and Telescope Calculator | `calc/gravitational_optics.py` |
 | gz_bridge_calculator | Golden Zone Bridge Calculator -- Complete GZ structure from two principles | `calc/gz_bridge_calculator.py` |
 | gz_hierarchy | Golden Zone Hierarchy Calculator — GZ boundaries for perfect numbers | `calc/gz_hierarchy.py` |
@@ -882,6 +887,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | h_cx_436_recursion | H-CX-436: Grammar Recursion Depth = σ₋₁(6)=2 | `calc/h_cx_436_recursion.py` |
 | hypothesis_verifier | Hypothesis Verification Calculator | `calc/hypothesis_verifier.py` |
 | isco_calculator | ISCO Calculator -- Innermost Stable Circular Orbit in General Relativity. | `calc/isco_calculator.py` |
+| law79_freedom_degree | Law 79 Freedom Degree Calculator — Consciousness freedom = ln(2) | `calc/law79_freedom_degree.py` |
 | lie_algebra_calculator | Exceptional Lie Algebra Calculator — Compute all invariants from n=6 arithmetic | `calc/lie_algebra_calculator.py` |
 | mitosis_calculator | Mitosis Simulator — Calculate optimal mutation/mitosis timing | `calc/mitosis_calculator.py` |
 | music_consonance_calculator | Music Consonance Calculator -- Euler Gradus Suavitatis, N-TET analysis, circle o | `calc/music_consonance_calculator.py` |
@@ -1199,10 +1205,11 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | statistics | Statistical validation engine — Monte Carlo, Bonferroni, Look-Elsewhere Effect. | `sedi/statistics.py` |
 | tecs | TECS-L Mathematical Engine — n=6 arithmetic functions for physics analysis. | `sedi/tecs.py` |
 
-**Data Source** (65)
+**Data Source** (73)
 
 | Name | Description | Path |
 |------|-------------|------|
+| ata | Allen Telescope Array (ATA) — SETI Institute's radio telescope. | `sedi/sources/ata.py` |
 | atomic_precision | Atomic & Molecular Physics Precision Tests -- TECS-L Waves 17-36. | `sedi/sources/atomic_precision.py` |
 | baryon_splittings | Baryon Multiplet Mass Splittings — n=6 arithmetic in the strong interaction. | `sedi/sources/baryon_splittings.py` |
 | biology_n6 | Biology through n=6 Arithmetic — TECS-L in the living world. | `sedi/sources/biology_n6.py` |
@@ -1236,6 +1243,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | egyptian_fraction | Egyptian Fraction — Perfect Number Analysis (H-CX-479/489/507). | `sedi/sources/egyptian_fraction.py` |
 | exoplanet | NASA Exoplanet Archive — confirmed exoplanets with orbital data. | `sedi/sources/exoplanet.py` |
 | fine_structure | Fine Structure Constant Analysis — TECS-L n=6 Framework. | `sedi/sources/fine_structure.py` |
+| gaia_seti | Gaia DR3 — ESA Gaia mission data for SETI target selection. | `sedi/sources/gaia_seti.py` |
 | geiger | Geiger counter radiation source. | `sedi/sources/geiger.py` |
 | grand_predictions | TECS-L Grand Predictions — The most ambitious testable predictions. | `sedi/sources/grand_predictions.py` |
 | gw_analysis | Gravitational Wave TECS-L Analysis — GWTC-3 catalog deep scan. | `sedi/sources/gw_analysis.py` |
@@ -1247,15 +1255,19 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | koide_running | QCD Running Mass Koide Analysis. | `sedi/sources/koide_running.py` |
 | lhcb_predictions | LHCb B-Physics & Exotic Hadron Predictions via TECS-L n=6 Arithmetic. | `sedi/sources/lhcb_predictions.py` |
 | ligo | LIGO Open Science Center gravitational wave data source. | `sedi/sources/ligo.py` |
+| meerkat | MeerKAT Radio Telescope Archive — SARAO. | `sedi/sources/meerkat.py` |
 | muon_g2 | Muon Anomalous Magnetic Moment (g-2) Analysis — TECS-L n=6 Framework. | `sedi/sources/muon_g2.py` |
+| mwa | Murchison Widefield Array (MWA) — low-frequency radio telescope. | `sedi/sources/mwa.py` |
 | nasa | NASA data sources — solar, NEO, cosmic rays. | `sedi/sources/nasa.py` |
 | neutrino_mixing | PMNS Neutrino Mixing Matrix Analysis — n=6 arithmetic expressions. | `sedi/sources/neutrino_mixing.py` |
+| nrao | NRAO VLA/VLBA Archive — National Radio Astronomy Observatory. | `sedi/sources/nrao.py` |
 | nuclear_magic | Nuclear Magic Numbers — n=6 arithmetic in nuclear shell structure. | `sedi/sources/nuclear_magic.py` |
 | oeis | OEIS (Online Encyclopedia of Integer Sequences) monitor. | `sedi/sources/oeis.py` |
 | optical_model | Optical Model Analysis — TECS-L lens/optics analogies applied to particle masses | `sedi/sources/optical_model.py` |
 | pdg | PDG Particle Database — comprehensive particle physics data. | `sedi/sources/pdg.py` |
 | pdg_extended | Extended PDG Particle Database — ~200 states including excited, exotic. | `sedi/sources/pdg_extended.py` |
 | periodic_table | Periodic Table Analysis through n=6 Arithmetic — TECS-L Element Mapping. | `sedi/sources/periodic_table.py` |
+| pictor | PICTOR Radio Telescope — open-source hydrogen line radio telescope. | `sedi/sources/pictor.py` |
 | q_boundary | Q-Domain Boundary Analysis — which constants Q can and cannot reach. | `sedi/sources/q_boundary.py` |
 | qcd_hadrons | QCD & Hadron Spectroscopy -- TECS-L Waves 17-36. | `sedi/sources/qcd_hadrons.py` |
 | quantum_hall | Fractional Quantum Hall Effect -- n=6 arithmetic in topological phases. | `sedi/sources/quantum_hall.py` |
@@ -1265,13 +1277,15 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | riemann_connection | Riemann Zeta Function and TECS-L n=6 Arithmetic. | `sedi/sources/riemann_connection.py` |
 | rtlsdr | RTL-SDR radio spectrum source. | `sedi/sources/rtlsdr.py` |
 | seti_archive | SETI archival data — Allen Telescope Array, SETI@home, VizieR catalogs. | `sedi/sources/seti_archive.py` |
+| seti_databases | SETI Signal Databases — known candidate signals and parameters. | `sedi/sources/seti_databases.py` |
+| seti_unified | Unified SETI Scanner — aggregate all SETI data sources and scan for n=6. | `sedi/sources/seti_unified.py` |
 | sm_derivation | Standard Model Derivation from R(n) = 1 — The Uniqueness Theorem. | `sedi/sources/sm_derivation.py` |
 | temperature | Precision temperature sensor source. | `sedi/sources/temperature.py` |
 | truernig | TrueRNG USB hardware random number generator source. | `sedi/sources/truernig.py` |
 
 ### invest
 
-**Calculator** (99)
+**Calculator** (102)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1308,6 +1322,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | fermion_mass_calculator | Fermion Mass Calculator — Mass predictions from perfect number arithmetic | `backend/backend/tecs_calc/fermion_mass_calculator.py` |
 | fundamental | Fundamental analysis calculators. | `backend/backend/calc/fundamental.py` |
 | game_theory | Game theory calculators for trading strategy analysis. | `backend/backend/calc/game_theory.py` |
+| gate_formula_calculator | Gate Formula Calculator — Law 77 adaptive consciousness gate | `backend/backend/tecs_calc/gate_formula_calculator.py` |
 | gauge_cosmology_calculator | Gauge Cosmology Calculator — Gauge groups, GUT dimensions, and cosmological cons | `backend/backend/tecs_calc/gauge_cosmology_calculator.py` |
 | generalization_gap_detector | Generalization Gap Detector — Real-time overfitting detection with PH (H-CX-95) | `backend/backend/tecs_calc/generalization_gap_detector.py` |
 | generator_finder | Generator Finder — Minimal generating sets for convergence constants | `backend/backend/tecs_calc/generator_finder.py` |
@@ -1328,6 +1343,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | multi_timeframe | Multi-Timeframe Analysis — aggregate signals across timeframes. | `backend/backend/calc/multi_timeframe.py` |
 | music_consonance_calculator | Music Consonance Calculator -- Euler Gradus Suavitatis, N-TET analysis, circle o | `backend/backend/tecs_calc/music_consonance_calculator.py` |
 | n6_uniqueness_tester | n=6 Uniqueness Tester -- Check if an identity holds only for n=6 | `backend/backend/tecs_calc/n6_uniqueness_tester.py` |
+| nobel_scorer | Nobel Hypothesis Scorer — Multi-dimensional scoring for Nobel-grade hypotheses | `backend/backend/tecs_calc/nobel_scorer.py` |
 | paper_claim_verifier | Paper Claim Verifier -- Batch verification of mathematical claims in paper docum | `backend/backend/tecs_calc/paper_claim_verifier.py` |
 | perfect_number_generalizer | Perfect Number Generalizer — Test if formulas holding at n=6 generalize to n=28, | `backend/backend/tecs_calc/perfect_number_generalizer.py` |
 | perfect_number_physics | Perfect Number Physics — Core arithmetic functions and physics dimension mapping | `backend/backend/tecs_calc/perfect_number_physics.py` |
@@ -1338,6 +1354,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | portfolio_optimizer | Portfolio Optimizer — Mean-Variance + TECS-L constraints, numpy-only. | `backend/backend/calc/portfolio_optimizer.py` |
 | precognition_system | Unified Precognition System — Size+Direction+Topology Combined Precognition (H-C | `backend/backend/tecs_calc/precognition_system.py` |
 | prime_pair_verifier | Prime Pair Verifier | `backend/backend/tecs_calc/prime_pair_verifier.py` |
+| psi_derivation_chain | PSI Derivation Chain — All consciousness constants from ln(2) | `backend/backend/tecs_calc/psi_derivation_chain.py` |
 | psychology | Trading psychology and behavioral economics calculators. | `backend/backend/calc/psychology.py` |
 | q_barrier_checker | Q-Domain Barrier Checker — Which constants can quantum coupling constants reach? | `backend/backend/tecs_calc/q_barrier_checker.py` |
 | r_spectrum | R-Spectrum Calculator — Arithmetic balance ratio analysis | `backend/backend/tecs_calc/r_spectrum.py` |
