@@ -10,6 +10,7 @@ CLI:       --test ttest|mannwhitney|correlation|effect_size|bonferroni
 import argparse, sys, math
 import numpy as np
 from scipy import stats
+import tecsrs
 
 # ── Common constants ────────────────────────────────────────────────────
 CONSTANTS = {
@@ -62,8 +63,11 @@ def bonferroni_correct(p_values, n_comparisons=None):
             "significant_005": int((corrected < 0.05).sum()),
             "significant_001": int((corrected < 0.001).sum())}
 
-def bootstrap_ci(data, stat_func=np.mean, n_boot=10000, ci=0.95):
-    """Bootstrap confidence interval for stat_func."""
+def bootstrap_ci(data, stat_func=None, n_boot=10000, ci=0.95):
+    """Bootstrap confidence interval. Uses Rust tecsrs for mean, Python for custom stat_func."""
+    if stat_func is None or stat_func is np.mean:
+        return tecsrs.bootstrap_ci(list(np.asarray(data, float)), n_boot=n_boot, ci=ci)
+    # Custom stat_func: fall back to Python
     data = np.asarray(data, float)
     rng = np.random.default_rng(42)
     boots = np.array([stat_func(rng.choice(data, len(data), replace=True))

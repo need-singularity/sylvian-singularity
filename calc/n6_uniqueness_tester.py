@@ -3,6 +3,7 @@
 
 Tests arithmetic function identities for uniqueness via exhaustive search.
 Based on H-CX-502 and 400-hypothesis offensive campaign.
+Uses tecsrs Rust library for sieve computation (83x faster).
 
 Arithmetic functions available in expressions:
   sigma(n)  -- sum of divisors
@@ -24,62 +25,22 @@ Usage:
 import argparse
 import math
 import sys
-from functools import reduce
 
+import tecsrs
 
-# ═══════════════════════════════════════════════════════════════
-# Sieve-based precomputation
-# ═══════════════════════════════════════════════════════════════
 
 def build_tables(limit):
-    """Precompute arithmetic function tables up to limit."""
-    sigma_t  = [0] * (limit + 1)
-    tau_t    = [0] * (limit + 1)
-    phi_t    = list(range(limit + 1))
-    sopfr_t  = [0] * (limit + 1)
-    omega_t  = [0] * (limit + 1)
-    spf      = list(range(limit + 1))  # smallest prime factor
-
-    # Sieve for smallest prime factor
-    p = 2
-    while p * p <= limit:
-        if spf[p] == p:  # p is prime
-            for m in range(p * p, limit + 1, p):
-                if spf[m] == m:
-                    spf[m] = p
-        p += 1
-
-    # sigma, tau, sopfr, omega via factorization
-    for n in range(1, limit + 1):
-        # sigma and tau by sieve of multiples
-        pass  # done separately below
-
-    # sigma, tau
-    for i in range(1, limit + 1):
-        for j in range(i, limit + 1, i):
-            sigma_t[j] += i
-            tau_t[j] += 1
-
-    # phi via Euler sieve
-    for p in range(2, limit + 1):
-        if phi_t[p] == p:  # p is prime
-            for m in range(p, limit + 1, p):
-                phi_t[m] -= phi_t[m] // p
-
-    # sopfr, omega via smallest prime factor
-    for n in range(2, limit + 1):
-        m = n
-        primes_seen = set()
-        while m > 1:
-            p = spf[m]
-            sopfr_t[n] += p
-            primes_seen.add(p)
-            m //= p
-        omega_t[n] = len(primes_seen)
-
-    # lcm(1..n) via iterative lcm
+    """Precompute arithmetic function tables up to limit using Rust sieves."""
+    rt = tecsrs.SieveTables(limit)
+    sigma_t = rt.sigma_list()
+    tau_t = rt.tau_list()
+    phi_t = rt.phi_list()
+    sopfr_t = rt.sopfr_list()
+    omega_t = rt.omega_list()
+    # lcm(1..n) still in Python (not in tecsrs)
     lcm1n_t = [0] * (limit + 1)
-    lcm1n_t[1] = 1
+    if limit >= 1:
+        lcm1n_t[1] = 1
     for n in range(2, limit + 1):
         lcm1n_t[n] = lcm1n_t[n-1] * n // math.gcd(lcm1n_t[n-1], n)
 

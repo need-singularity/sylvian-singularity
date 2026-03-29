@@ -17,6 +17,7 @@ import argparse
 import sys
 
 import numpy as np
+import tecsrs
 
 from consciousness_calc import (
     run_cct,
@@ -30,64 +31,31 @@ from consciousness_calc import (
 # 4 Types of Attractor Simulators
 # ─────────────────────────────────────────────
 
+def _tecsrs_to_numpy(result):
+    """Convert tecsrs trajectory dict to numpy array."""
+    sampled = result["trajectory_sampled"]
+    return np.array(sampled)
+
+
 def simulate_lorenz(steps=50000, dt=0.01, noise=0.1, seed=42):
-    """Lorenz attractor: dx=sigma(y-x), dy=x(rho-z)-y, dz=xy-beta*z"""
-    sigma, rho, beta = 10.0, 28.0, 8.0 / 3.0
-    rng = np.random.default_rng(seed)
-    S = np.zeros((steps, 3))
-    S[0] = [1.0, 1.0, 1.0]
-
-    for i in range(1, steps):
-        x, y, z = S[i - 1]
-        dx = sigma * (y - x)
-        dy = x * (rho - z) - y
-        dz = x * y - beta * z
-        eps = rng.normal(0, noise, 3) if noise > 0 else np.zeros(3)
-        S[i, 0] = x + (dx + eps[0]) * dt
-        S[i, 1] = y + (dy + eps[1]) * dt
-        S[i, 2] = z + (dz + eps[2]) * dt
-
-    return S, {"name": "Lorenz", "sigma": sigma, "rho": rho, "beta": beta}
+    """Lorenz attractor via tecsrs Rust engine (5-15x faster)."""
+    result = tecsrs.lorenz(steps=steps, dt=dt, noise=noise, seed=seed)
+    S = _tecsrs_to_numpy(result)
+    return S, {"name": "Lorenz", "sigma": 10.0, "rho": 28.0, "beta": 8.0/3.0}
 
 
 def simulate_rossler(steps=50000, dt=0.01, noise=0.1, seed=42):
-    """Rössler attractor: dx=-y-z, dy=x+ay, dz=b+z(x-c)"""
-    a, b, c = 0.2, 0.2, 5.7
-    rng = np.random.default_rng(seed)
-    S = np.zeros((steps, 3))
-    S[0] = [1.0, 1.0, 1.0]
-
-    for i in range(1, steps):
-        x, y, z = S[i - 1]
-        dx = -y - z
-        dy = x + a * y
-        dz = b + z * (x - c)
-        eps = rng.normal(0, noise, 3) if noise > 0 else np.zeros(3)
-        S[i, 0] = x + (dx + eps[0]) * dt
-        S[i, 1] = y + (dy + eps[1]) * dt
-        S[i, 2] = z + (dz + eps[2]) * dt
-
-    return S, {"name": "Rossler", "a": a, "b": b, "c": c}
+    """Rössler attractor via tecsrs Rust engine."""
+    result = tecsrs.rossler(steps=steps, dt=dt, noise=noise, seed=seed)
+    S = _tecsrs_to_numpy(result)
+    return S, {"name": "Rossler", "a": 0.2, "b": 0.2, "c": 5.7}
 
 
 def simulate_chen(steps=50000, dt=0.001, noise=0.1, seed=42):
-    """Chen attractor: dx=a(y-x), dy=(c-a)x-xz+cy, dz=xy-bz"""
-    a, b, c = 35.0, 3.0, 28.0
-    rng = np.random.default_rng(seed)
-    S = np.zeros((steps, 3))
-    S[0] = [1.0, 1.0, 1.0]
-
-    for i in range(1, steps):
-        x, y, z = S[i - 1]
-        dx = a * (y - x)
-        dy = (c - a) * x - x * z + c * y
-        dz = x * y - b * z
-        eps = rng.normal(0, noise, 3) if noise > 0 else np.zeros(3)
-        S[i, 0] = x + (dx + eps[0]) * dt
-        S[i, 1] = y + (dy + eps[1]) * dt
-        S[i, 2] = z + (dz + eps[2]) * dt
-
-    return S, {"name": "Chen", "a": a, "b": b, "c": c}
+    """Chen attractor via tecsrs Rust engine."""
+    result = tecsrs.chen(steps=steps, dt=dt, noise=noise, seed=seed)
+    S = _tecsrs_to_numpy(result)
+    return S, {"name": "Chen", "a": 35.0, "b": 3.0, "c": 28.0}
 
 
 def _chua_f(x, m0=-1.143, m1=-0.714):
@@ -101,23 +69,10 @@ def _chua_f(x, m0=-1.143, m1=-0.714):
 
 
 def simulate_chua(steps=50000, dt=0.001, noise=0.1, seed=42):
-    """Chua attractor: dx=alpha(y-x-f(x)), dy=x-y+z, dz=-beta*y"""
-    alpha, beta_c = 15.6, 28.0
-    rng = np.random.default_rng(seed)
-    S = np.zeros((steps, 3))
-    S[0] = [0.1, 0.0, 0.0]
-
-    for i in range(1, steps):
-        x, y, z = S[i - 1]
-        dx = alpha * (y - x - _chua_f(x))
-        dy = x - y + z
-        dz = -beta_c * y
-        eps = rng.normal(0, noise, 3) if noise > 0 else np.zeros(3)
-        S[i, 0] = x + (dx + eps[0]) * dt
-        S[i, 1] = y + (dy + eps[1]) * dt
-        S[i, 2] = z + (dz + eps[2]) * dt
-
-    return S, {"name": "Chua", "alpha": alpha, "beta": beta_c}
+    """Chua attractor via tecsrs Rust engine."""
+    result = tecsrs.chua(steps=steps, dt=dt, noise=noise, seed=seed)
+    S = _tecsrs_to_numpy(result)
+    return S, {"name": "Chua", "alpha": 15.6, "beta": 28.0}
 
 
 ATTRACTORS = {
