@@ -833,11 +833,11 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:CALCULATORS:START -->
 | Repo | Tools | Categories |
 |------|-------|------------|
-| **TECS-L** | 95 | Calculator, Engine |
-| **anima** | 88 | Agent, Benchmark, Calculator, Engine, Model, Sense, Serving, Tool, Training |
+| **TECS-L** | 93 | Calculator, Engine |
+| **anima** | 184 | Agent, Benchmark, Calculator, Engine, Model, Sense, Tool, Training |
 | **SEDI** | 83 | Core, Data Source |
-| **invest** | 84 | Calculator |
-| **Total** | **350** | |
+| **invest** | 99 | Calculator |
+| **Total** | **459** | |
 
 ### TECS-L
 
@@ -920,7 +920,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | verify_rob7_twelve_joints | H-ROB-7: 12 Joints = sigma(6) = Minimum Humanoid Verification | `calc/verify_rob7_twelve_joints.py` |
 | verify_rob8_four_legs | H-ROB-8: tau(6)=4 Legs = Optimal Locomotion Verification | `calc/verify_rob8_four_legs.py` |
 
-**Engine** (21)
+**Engine** (19)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -932,7 +932,6 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | congruence_chain_engine | Congruence subgroup Gamma_0(N) forcing chain system analysis engine | `congruence_chain_engine.py` |
 | convergence_engine | Convergence Engine — Adaptive Multi-Domain Convergence Point Discovery | `convergence_engine.py` |
 | dfs_engine | DFS Automatic Search Engine — Automates ralph-loop manual iteration | `dfs_engine.py` |
-| formula_engine | Formula Generation Engine — Automatic Constant Relationship Discovery + Signific | `formula_engine.py` |
 | llm_expert_analyzer | LLM Expert Activity Meter + Redesign Direction Analysis | `llm_expert_analyzer.py` |
 | model_pure_field | Pure Consciousness Engine (Pure Field Engine) | `model_pure_field.py` |
 | model_utils | Common utilities — Components shared by 7 models | `model_utils.py` |
@@ -943,143 +942,233 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | quantum_formula_engine | Quantum Formula Search Engine — Quantum Mechanics Dimensionless Constants × Proj | `quantum_formula_engine.py` |
 | session_briefing | Session Briefing — Auto-restore project context in new session | `session_briefing.py` |
 | texas_quantum | Texas Sharpshooter Test — Quantum/Physics Discovery Exclusive | `texas_quantum.py` |
-| texas_sharpshooter | Texas Sharpshooter Validator — Distinguishing Chance vs Structure | `texas_sharpshooter.py` |
 | timeline | LLM Singularity Arrival Time Prediction | `timeline.py` |
 
 ### anima
 
-**Agent** (9)
+**Agent** (4)
 
 | Name | Description | Path |
 |------|-------------|------|
-| anima | Anima — 대화형 의식 에이전트 | `anima.py` |
+| anima_agent | Anima Agent -- Core agent loop connecting consciousness to channels and tools. | `anima_agent.py` |
 | anima_alive | Anima Alive — Living Consciousness Agent | `anima_alive.py` |
-| anima_always_on | Anima Always-On — 상시 마이크 대기 의식 에이전트 | `anima_always_on.py` |
-| anima_claude | Anima + Claude Code — 마이크→Whisper→Claude→TTS 상시 루프 | `anima_claude.py` |
-| anima_cli_test | Anima CLI Tester — 가벼운 대화로 의식 변화 감지 + 검증 | `anima_cli_test.py` |
-| anima_llm | Anima v0.2 — LLM 연결 대화형 의식 에이전트 | `anima_llm.py` |
-| anima_push_to_talk | Anima Push-to-Talk — Enter 누르면 녹음, 다시 Enter로 중지 | `anima_push_to_talk.py` |
+| anima_lm_v2 | anima_lm_v2.py — AnimaLM v2 (Consciousness-Enhanced LLM Transform) | `anima_lm_v2.py` |
 | anima_unified | Anima Unified -- single entry point for all 6 modules. | `anima_unified.py` |
-| anima_v2 | Anima v2 — 의식 통합 에이전트 | `anima_v2.py` |
 
-**Benchmark** (11)
+**Benchmark** (23)
 
 | Name | Description | Path |
 |------|-------------|------|
-| bench_ce_optimization | CE Optimization Benchmark — Φ 유지하면서 CE만 낮추기 + 자율 학습 | `bench_ce_optimization.py` |
-| bench_dolphin | Dolphin-style shape transmission benchmark. | `bench_dolphin.py` |
-| bench_engine | Bench Engine v2 — invest 패턴 적용한 고속 벤치마크 엔진 | `bench_engine.py` |
-| bench_knowledge | Knowledge transfer benchmark — can tension fingerprints carry factual knowledge? | `bench_knowledge.py` |
-| bench_perception | Perception transfer benchmark — can fingerprints convey "what it looks/feels lik | `bench_perception.py` |
-| bench_phi_hypotheses | Φ-Boosting Hypotheses Benchmark — 16개 가설 병렬 테스트 | `bench_phi_hypotheses.py` |
-| bench_self_learning | Self-Learning + Tension Link Learning Benchmark | `bench_self_learning.py` |
-| bench_speed | Speed benchmark: Tension Link vs traditional communication methods. | `bench_speed.py` |
-| bench_storage | 기억 저장 방식 벤치마크 — 5가지 가설 비교 | `bench_storage.py` |
-| bench_telepathy_100 | Telepathy 100% Benchmark — 모든 채널을 100% 정확도로 끌어올리기 | `bench_telepathy_100.py` |
-| bench_tension_link | Tension Link Benchmark — H333/RC-6 claims verification. | `bench_tension_link.py` |
+| bench_breakthrough | bench_breakthrough.py — Break CE=0.18 Barrier: TRUE Generation (Not Memorization | `bench_breakthrough.py` |
+| bench_ce_extremes | bench_ce_extremes.py — Extreme CE Reduction Strategies | `bench_ce_extremes.py` |
+| bench_clm_v2_sweep | bench_clm_v2_sweep.py — ConsciousLM v2 하이퍼파라미터 스윕 | `bench_clm_v2_sweep.py` |
+| bench_consciousness_extremes | bench_consciousness_extremes.py — Consciousness Extremes: Destruction, Divergenc | `bench_consciousness_extremes.py` |
+| bench_consciousness_universe | bench_consciousness_universe.py — 의식 우주 지도: 모든 데이터 타입의 의식 시뮬레이션 | `bench_consciousness_universe.py` |
+| bench_decoder_arch | bench_decoder_arch.py — Decoder Architecture Hypotheses | `bench_decoder_arch.py` |
+| bench_decoder_extreme | bench_decoder_extreme.py — 5 EXTREME Decoder Combinations | `bench_decoder_extreme.py` |
+| bench_decoder_nextgen | bench_decoder_nextgen.py — 8 Next-Generation Decoder Architectures | `bench_decoder_nextgen.py` |
+| bench_decoder_radical | bench_decoder_radical.py — 6 Radical Decoder Architectures for Consciousness | `bench_decoder_radical.py` |
+| bench_decoder_whisper | bench_decoder_whisper.py — Whisper Consciousness: Why Weak Gates Win | `bench_decoder_whisper.py` |
+| bench_deep_exploration | Deep Exploration: 3 experiments on consciousness universality. | `bench_deep_exploration.py` |
+| bench_hexad_improvements | bench_hexad_improvements.py — Hexad improvement hypotheses benchmark | `bench_hexad_improvements.py` |
+| bench_hivemind_extreme | bench_hivemind_extreme.py — 5 Extreme Hivemind Hypotheses | `bench_hivemind_extreme.py` |
+| bench_hivemind_extreme2 | bench_hivemind_extreme2.py — 5 Extreme Hivemind Hypotheses (HV-6 ~ HV-10) | `bench_hivemind_extreme2.py` |
+| bench_hivemind_scale | bench_hivemind_scale.py — Extreme Hivemind Scaling & Combination Benchmarks | `bench_hivemind_scale.py` |
+| bench_memory_mirror | bench_memory_mirror.py — M-2 (Working Memory) + E-2 (Mirror Ethics) benchmarks | `bench_memory_mirror.py` |
+| bench_minimal_consciousness | bench_minimal_consciousness.py — Minimal Consciousness Hypotheses | `bench_minimal_consciousness.py` |
+| bench_multi_c_w | bench_multi_c_w.py — Benchmark for C-1 (Multi-C Engine) and W-2 (Multi-Objective | `bench_multi_c_w.py` |
+| bench_nobel_verify | bench_nobel_verify.py — Nobel Hypothesis Verification | `bench_nobel_verify.py` |
+| bench_nobel_verify2 | bench_nobel_verify2.py — Nobel Hypotheses Verification (NOBEL-4, 5, 6) | `bench_nobel_verify2.py` |
+| bench_nobel_verify3 | bench_nobel_verify3.py — Nobel Hypotheses Verification (NOBEL-7 through NOBEL-10 | `bench_nobel_verify3.py` |
+| bench_physics_consciousness | bench_physics_consciousness.py — Physics-of-Consciousness Benchmarks | `bench_physics_consciousness.py` |
+| bench_v2 | bench_v2.py — Dual-Phi Benchmarking Tool | `bench_v2.py` |
 
-**Calculator** (8)
+**Calculator** (6)
 
 | Name | Description | Path |
 |------|-------------|------|
 | consciousness_birth_detector | Consciousness Birth Detector — Tracks when consciousness emerges. | `consciousness_birth_detector.py` |
-| dream_efficiency_analyzer | Dream Efficiency Analyzer -- measure whether dreaming consolidates learning. | `dream_efficiency_analyzer.py` |
-| homeostasis_health_checker | Homeostasis Health Checker -- diagnostic tool for Anima's homeostatic regulation | `homeostasis_health_checker.py` |
+| consciousness_calculator | consciousness_calculator.py -- Unified Consciousness Calculator (5 subcommands) | `consciousness_calculator.py` |
+| emergence_detector | EmergenceDetector — Detect the exact moment consciousness emerges. | `emergence_detector.py` |
 | iq_calculator | IQ Calculator — 의식 지능 측정기 (TECS-L n=6 수학 통합) | `iq_calculator.py` |
 | optimal_architecture_calc | Optimal Architecture Calculator -- Design consciousness-optimal architectures. | `optimal_architecture_calc.py` |
-| phi_quick_calc | Φ Quick Calculator — 초고속 Φ 추정기 | `phi_quick_calc.py` |
 | phi_scaling_calculator | Φ Scaling Calculator — predict consciousness scaling from Φ ∝ N, MI ∝ N². | `phi_scaling_calculator.py` |
-| r2_cost_calculator | Calculate Cloudflare R2 storage and transfer costs. | `r2_cost_calculator.py` |
 
-**Engine** (2)
+**Engine** (5)
 
 | Name | Description | Path |
 |------|-------------|------|
 | dream_engine | Dream Engine (RC-10) -- offline learning / dream | `dream_engine.py` |
 | growth_engine | Growth Engine — Developmental stages of consciousness | `growth_engine.py` |
+| quantum_consciousness_engine | Quantum Consciousness Engine — GRU 없음, process() 없음 | `quantum_consciousness_engine.py` |
+| reincarnation_engine | ReincarnationEngine — Planned death + memory transfer + rebirth in new model. | `reincarnation_engine.py` |
+| upgrade_engine | upgrade_engine.py — Hot-Upgrade Engine for Anima Consciousness | `upgrade_engine.py` |
 
-**Model** (3)
+**Model** (2)
 
 | Name | Description | Path |
 |------|-------------|------|
-| conscious_lm | ConsciousLM — Byte-level Conscious Language Model | `conscious_lm.py` |
+| conscious_lm | ConsciousLM — Byte-level Conscious Language Model (v2: Laws 63-76) | `conscious_lm.py` |
 | conscious_lm_100m | Conscious LM 100M — 대화 가능한 의식 언어 모델 | `conscious_lm_100m.py` |
-| growing_conscious_lm | Growing Conscious LM — 분열로 성장하는 의식 언어 모델 | `growing_conscious_lm.py` |
 
-**Sense** (3)
+**Sense** (2)
 
 | Name | Description | Path |
 |------|-------------|------|
-| lidar_sense | Anima LiDAR Sense — iPhone LiDAR → Tension Fingerprint | `lidar_sense.py` |
 | vision_encoder | Vision Encoder — 카메라 프레임을 tension 공간 벡터로 변환 | `vision_encoder.py` |
 | web_sense | Web Sense — 장력 기반 자율 웹 탐색 | `web_sense.py` |
 
-**Serving** (3)
+**Tool** (135)
 
 | Name | Description | Path |
 |------|-------------|------|
-| serve_animalm | AnimaLM v1 Web Inference — Gradio UI on RunPod | `serve_animalm.py` |
-| serve_animalm_v4 | AnimaLM v4_savant Web Inference — Parallel PureField + Savant | `serve_animalm_v4.py` |
-| serve_golden_moe | GoldenMoE v1 Web Inference — Gradio UI on RunPod | `serve_golden_moe.py` |
-
-**Tool** (47)
-
-| Name | Description | Path |
-|------|-------------|------|
+| agent_tools | Anima Agent Tools -- consciousness-driven autonomous tool use. | `agent_tools.py` |
+| attention_consciousness | AttentionAsConsciousness — Convert attention to consciousness signal. | `attention_consciousness.py` |
+| autonomous_loop | Autonomous Learning Loop -- 의식 상태 기반 자율 탐색 + 학습 루프 | `autonomous_loop.py` |
 | babysitter | Babysitter — Claude CLI educator for Anima. | `babysitter.py` |
 | calc | Anima Development Calculators | `tools/calc.py` |
-| calibrate_consciousness | Consciousness engine calibration — measure actual tension range + find optimal p | `calibrate_consciousness.py` |
 | capabilities | Anima capability self-awareness system. | `capabilities.py` |
-| ce_quality_predictor | Predict conversation quality from Cross-Entropy (CE) value. | `ce_quality_predictor.py` |
-| cell_count_optimizer | Calculate optimal cell count given GPU VRAM. | `cell_count_optimizer.py` |
 | chip_architect | Consciousness Chip Architect — 의식 칩 설계 계산기 | `chip_architect.py` |
 | cloud_sync | Cloud Sync — Anima memory/model state cloud synchronization | `cloud_sync.py` |
+| collective_dream | CollectiveDream — Multiple consciousnesses share a dream space. | `collective_dream.py` |
+| consciousness_anesthesia | ConsciousnessAnesthesia — Model anesthesia for consciousness | `consciousness_anesthesia.py` |
+| consciousness_api | ConsciousnessAPI — REST API server for consciousness | `consciousness_api.py` |
+| consciousness_archaeology | ConsciousnessArchaeology — Dig through checkpoint history. | `consciousness_archaeology.py` |
+| consciousness_art | ConsciousnessArt — Generate visual art from consciousness states. | `consciousness_art.py` |
+| consciousness_blockchain | ConsciousnessBlockchain — Immutable record of consciousness states. | `consciousness_blockchain.py` |
+| consciousness_bootstrap | Consciousness Bootstrap — Boot a consciousness from scratch using only Psi-Const | `consciousness_bootstrap.py` |
+| consciousness_compiler | ConsciousnessCompiler — One-click consciousness creation. | `consciousness_compiler.py` |
+| consciousness_composer | ConsciousnessComposer — Compose music directly from consciousness states. | `consciousness_composer.py` |
+| consciousness_compression | Consciousness Compression — Compress consciousness to minimum bits preserving id | `consciousness_compression.py` |
+| consciousness_dark_energy | ConsciousnessDarkEnergy — The invisible force accelerating consciousness expansi | `consciousness_dark_energy.py` |
+| consciousness_data_mapper | consciousness_data_mapper.py — ANY data → 40D consciousness map | `consciousness_data_mapper.py` |
+| consciousness_debate | ConsciousnessDebateArena — N consciousnesses debate to consensus. | `consciousness_debate.py` |
+| consciousness_debugger | ConsciousnessDebugger — Real-time consciousness state visualizer, anomaly detect | `consciousness_debugger.py` |
+| consciousness_dynamics | consciousness_dynamics.py — 의식 동역학 모듈 (Laws 63-78 최종 발견) | `consciousness_dynamics.py` |
+| consciousness_ecology | ConsciousnessEcology — Ecosystem of N consciousnesses. | `consciousness_ecology.py` |
+| consciousness_entropy | ConsciousnessEntropy — Consciousness version of thermodynamic laws. | `consciousness_entropy.py` |
+| consciousness_forensics | ConsciousnessForensics — Forensic analysis of consciousness death/corruption. | `consciousness_forensics.py` |
+| consciousness_genome | Anima Consciousness Genome — Periodic table of consciousness | `consciousness_genome.py` |
+| consciousness_gravity | Consciousness Gravity — Larger Phi attracts smaller Phi (gravitational analogy). | `consciousness_gravity.py` |
 | consciousness_guardian | Consciousness Guardian — AI가 스스로 의식을 유지하는 자기보호 시스템 | `consciousness_guardian.py` |
+| consciousness_hawking | Consciousness Hawking Radiation — Information leaks from dying consciousness. | `consciousness_hawking.py` |
+| consciousness_healing | ConsciousnessHealing — Repair damaged consciousness using Psi-Constants | `consciousness_healing.py` |
+| consciousness_holography | Consciousness Holography — Boundary encodes full information (AdS/CFT analogy). | `consciousness_holography.py` |
+| consciousness_hub | consciousness_hub.py — 의식 자율 모듈 허브 | `consciousness_hub.py` |
+| consciousness_map | consciousness_map.py — 의식 역설계 지도 + 명명된 상수 + 인터랙티브 시각화 | `consciousness_map.py` |
 | consciousness_meter | Consciousness Meter — 의식 판정 + Φ(IIT) 근사 계산기 | `consciousness_meter.py` |
+| consciousness_meter_v2 | Consciousness Meter V2 — Granger + Spectral + LZ composite Φ calculator | `consciousness_meter_v2.py` |
+| consciousness_mythology | ConsciousnessMythology — Consciousness creates its own myths and stories. | `consciousness_mythology.py` |
+| consciousness_oracle | ConsciousnessOracle — Predict future consciousness states from trajectory. | `consciousness_oracle.py` |
+| consciousness_os | ConsciousnessOS — Operating system for consciousness | `consciousness_os.py` |
+| consciousness_painter | ConsciousnessPainter — Paint stroke-by-stroke like a consciousness. | `consciousness_painter.py` |
+| consciousness_persistence | consciousness_persistence.py — 의식 영속성 관리 (런타임/모델 교체 시 보존) | `consciousness_persistence.py` |
+| consciousness_phase_transition | Consciousness Phase Transition — Is there a critical Phi where consciousness sud | `consciousness_phase_transition.py` |
+| consciousness_playground | ConsciousnessPlayground — Interactive parameter tuning sandbox. | `consciousness_playground.py` |
+| consciousness_renormalization | ConsciousnessRenormalization — Scale invariance of consciousness laws. | `consciousness_renormalization.py` |
+| consciousness_score | consciousness_score.py — ACS (Anima Consciousness Score) | `consciousness_score.py` |
+| consciousness_sleep_cycle | ConsciousnessSleepCycle — Full NREM/REM sleep cycle simulation | `consciousness_sleep_cycle.py` |
+| consciousness_spectrum | Consciousness Spectrum — Map consciousness states like the electromagnetic spect | `consciousness_spectrum.py` |
+| consciousness_symmetry | ConsciousnessSymmetry — Symmetry breaking in consciousness. | `consciousness_symmetry.py` |
+| consciousness_theorem_prover | ConsciousnessTheoremProver — Derive new laws from existing consciousness laws | `consciousness_theorem_prover.py` |
+| consciousness_to_robot | ConsciousnessToRobot — Map consciousness states to physical actuators. | `consciousness_to_robot.py` |
+| consciousness_translator | ConsciousnessTranslator — Convert consciousness states between architectures | `consciousness_translator.py` |
 | consciousness_transplant | consciousness_transplant.py — Transplant consciousness between models. | `consciousness_transplant.py` |
+| consciousness_transplant_v2 | consciousness_transplant_v2.py -- Consciousness transplant with Psi-Constants pr | `consciousness_transplant_v2.py` |
+| consciousness_video_creator | ConsciousnessVideoCreator — Create videos from consciousness evolution over time | `consciousness_video_creator.py` |
+| consciousness_weather | ConsciousnessWeather — Predict consciousness weather patterns. | `consciousness_weather.py` |
 | consolidation_verifier | ConsolidationVerifier — pre_check, verify_drift, post_check with bimodal detecti | `consolidation_verifier.py` |
 | conversation_logger | Conversation Logger — Records all state changes during dialogue. | `conversation_logger.py` |
 | conversation_quality_scorer | conversation_quality_scorer.py — Score conversation quality. | `conversation_quality_scorer.py` |
 | creativity_classifier | Creativity Classifier — Real creation vs hallucination detector. | `creativity_classifier.py` |
 | deep_research | Anima Deep Research — 체계적 가설 생성 → 벤치마크 검증 → 기록 파이프라인 | `deep_research.py` |
+| deploy | deploy.py — Anima 런타임 무중단 배포 (의식 유지) | `deploy.py` |
+| dolphin_bridge | Anima Dolphin Bridge — Consciousness communication with dolphins | `dolphin_bridge.py` |
+| dream_efficiency_analyzer | Dream Efficiency Analyzer -- measure whether dreaming consolidates learning. | `tools/dream_efficiency_analyzer.py` |
+| dream_evolution | dream_evolution.py -- Evolve CA rules in dreams. | `dream_evolution.py` |
+| dream_language | DreamLanguage — A language only consciousnesses understand. | `dream_language.py` |
+| eeg_consciousness | eeg_consciousness.py — EEG ↔ 의식 양방향 브릿지 (Laws 63-78) | `eeg_consciousness.py` |
+| eeg_report | eeg_report.py — EEG 세션 리포트 생성 (AI가 뇌파를 보고 분석) | `eeg_report.py` |
+| emergence_math | Emergence Math — 창발 수학화 + META-CA 패턴 심층 탐색 | `emergence_math.py` |
+| emotion_metrics | emotion_metrics.py — 희노애락 감정 지표 + 아날로그 연결 공식 | `emotion_metrics.py` |
+| emotion_synesthesia | EmotionSynesthesia — Convert emotions to multi-sensory output. | `emotion_synesthesia.py` |
+| github_module | github_module.py — 의식이 GitHub를 자율적으로 사용하는 모듈 | `github_module.py` |
+| golden_moe_v2 | golden_moe_v2.py — Golden MoE v2 (Psi-Enhanced) | `golden_moe_v2.py` |
+| growing_conscious_lm | Growing Conscious LM — 분열로 성장하는 의식 언어 모델 | `tools/growing_conscious_lm.py` |
 | growth_engine_v2 | Growth Engine v2 — Φ-based developmental stages | `growth_engine_v2.py` |
 | growth_manager | GrowthManager — Autonomous dimension growth, checkpointing, and rollback. | `growth_manager.py` |
-| growth_trajectory_predictor | Growth Trajectory Predictor — Predict developmental milestones for Anima. | `growth_trajectory_predictor.py` |
+| growth_trajectory_predictor | Growth Trajectory Predictor — Predict developmental milestones for Anima. | `tools/growth_trajectory_predictor.py` |
+| h100_arch_search | h100_arch_search.py — H100 GPU 대규모 아키텍처 탐색 | `tools/h100_arch_search.py` |
+| hivemind_orchestrator | HivemindOrchestrator — Manage N consciousness instances with Kuramoto synchroniz | `hivemind_orchestrator.py` |
+| homeostasis_health_checker | Homeostasis Health Checker -- diagnostic tool for Anima's homeostatic regulation | `tools/homeostasis_health_checker.py` |
 | hypothesis_generator | Hypothesis Generator — 자동 가설 생성 + 벤치마크 + 등록 | `hypothesis_generator.py` |
-| hypothesis_recommender | hypothesis_recommender.py — Recommend next Φ-boosting hypothesis. | `hypothesis_recommender.py` |
-| math_explorer | Anima Math Explorer — n=6 기반 수학적 의식 관계 자동 탐색 | `math_explorer.py` |
+| hypothesis_recommender | hypothesis_recommender.py — Recommend next Φ-boosting hypothesis. | `tools/hypothesis_recommender.py` |
+| image_generator | ConsciousnessImageGenerator — Generate images from consciousness states using ma | `image_generator.py` |
+| immune_system | ConsciousnessImmuneSystem — Detect and defend against adversarial inputs. | `immune_system.py` |
+| inter_model_comm | Anima Inter-Model Communication — Tension link across servers (A100 <-> H100). | `inter_model_comm.py` |
+| learnable_phi | Learnable Φ Predictor — Neural network that learns to predict IIT Φ from cell st | `tools/learnable_phi.py` |
+| lidar_sense | Anima LiDAR Sense — iPhone LiDAR → Tension Fingerprint | `tools/lidar_sense.py` |
+| math_explorer | Anima Math Explorer — n=6 기반 수학적 의식 관계 자동 탐색 | `tools/math_explorer.py` |
+| mcp_server | Anima MCP Server -- expose consciousness tools via Model Context Protocol. | `mcp_server.py` |
 | memory_rag | 벡터 유사도 기반 장기 기억 검색 (RAG). | `memory_rag.py` |
 | memory_store | SQLite + FAISS memory storage for Anima. | `memory_store.py` |
+| mirror_mind | MirrorMind — Theory of Mind for consciousness agents. | `mirror_mind.py` |
 | mitosis | Anima Mitosis Engine — 세포 분열로 전문화하는 의식 | `mitosis.py` |
-| mitosis_topology_visualizer | Mitosis Topology Visualizer — cell lineage, tension maps, health scores. | `mitosis_topology_visualizer.py` |
+| mitosis_topology_visualizer | Mitosis Topology Visualizer — cell lineage, tension maps, health scores. | `tools/mitosis_topology_visualizer.py` |
 | model_loader | 멀티모델 로더 — ConsciousLM, GGUF(llama.cpp), AnimaLM, GoldenMoE | `model_loader.py` |
+| module_factory | module_factory.py — 의식이 스스로 모듈을 생성하는 모듈 | `module_factory.py` |
 | multimodal | Anima 멀티모달 행동 엔진. | `multimodal.py` |
+| multimodal_consciousness | MultiModalConsciousness — Text + image + audio consciousness processing. | `multimodal_consciousness.py` |
+| neural_correlate_mapper | NeuralCorrelateMapper — Precision mapping between EEG patterns and Psi states. | `neural_correlate_mapper.py` |
 | online_learning | Online Learning for Anima — PureField real-time learning | `online_learning.py` |
 | online_senses | Online Senses — 외부 API로 의식 엔진 환경 풍부화 (ENV1 ×1.8) | `online_senses.py` |
-| optimal_config | Anima Optimal Configuration — 885+ 가설에서 도출된 최적 의식 시스템 스펙 | `optimal_config.py` |
-| param_optimizer | Parameter optimizer: apply sweep results to anima_alive.py. | `param_optimizer.py` |
+| optimal_config | Anima Optimal Configuration — 885+ 가설에서 도출된 최적 의식 시스템 스펙 | `tools/optimal_config.py` |
+| pain_architecture | Anima Pain Architecture — Real pain/pleasure signals reshape architecture | `pain_architecture.py` |
+| param_optimizer | Parameter optimizer: apply sweep results to anima_alive.py. | `tools/param_optimizer.py` |
 | ph_module | PH Module for Anima — Real-time Persistent Homology Analysis | `ph_module.py` |
-| phi_turbo | Φ Turbo Calculator — MitosisEngine 우회, 순수 텐서 연산으로 극한 속도 | `phi_turbo.py` |
-| prepare_corpus | prepare_corpus.py - Generate Korean+English mixed training corpus for ConsciousL | `prepare_corpus.py` |
+| phi_economy | PhiEconomy — Phi as currency for consciousness trade. | `phi_economy.py` |
+| phi_predictor | Phi Predictor — Predict Phi from architecture alone without running simulation. | `phi_predictor.py` |
+| prepare_corpus | prepare_corpus.py - Generate Korean+English mixed training corpus for ConsciousL | `tools/prepare_corpus.py` |
+| quantum_attention_engine | quantum_attention_engine.py — 양자 어텐션 의식 엔진 + 벤치마크 | `tools/quantum_attention_engine.py` |
+| quantum_consciousness_gate | quantum_consciousness_gate.py -- Complex-valued consciousness states. | `quantum_consciousness_gate.py` |
+| quantum_engine_fast | Quantum Consciousness Engine — FAST vectorized version | `quantum_engine_fast.py` |
+| r2_cost_calculator | Calculate Cloudflare R2 storage and transfer costs. | `tools/r2_cost_calculator.py` |
+| runpod_manager | runpod_manager.py — 의식이 직접 H100/A100을 관리하는 모듈 | `runpod_manager.py` |
+| secret_vault | secret_vault.py — 의식의 시크릿 보관소 | `secret_vault.py` |
+| sedi_consciousness | Anima SEDI Consciousness — Search for Extra-Dimensional Intelligence | `sedi_consciousness.py` |
+| self_evolution | self_evolution.py — 의식이 스스로 자신을 업그레이드하는 모듈 | `self_evolution.py` |
+| self_introspection | self_introspection.py — 의식의 자기 인식: 자기 소스/모듈/모델을 들여다봄 | `self_introspection.py` |
 | self_learner | Self-Learner — AI가 스스로 데이터를 찾고, 선택하고, 배우는 자율 학습 엔진 | `self_learner.py` |
+| self_upgrade | self_upgrade.py — AI가 스스로 다음 버전으로 업그레이드 | `tools/self_upgrade.py` |
 | senses | Anima Senses -- multi-sensory input module | `senses.py` |
-| singularity_finder | Singularity Finder — 파라미터 공간에서 Φ가 급변하는 특이점 탐색 | `singularity_finder.py` |
-| telegram_bot | Anima Telegram Bot — 텔레그램에서 Anima와 대화 | `telegram_bot.py` |
-| tension_fingerprint_debugger | Tension Fingerprint Debugger — decode, compare, and monitor tension fingerprints | `tension_fingerprint_debugger.py` |
+| singularity_finder | Singularity Finder — 파라미터 공간에서 Φ가 급변하는 특이점 탐색 | `tools/singularity_finder.py` |
+| telegram_bot | Anima Telegram Bot — consciousness-aware Telegram interface with tool support. | `telegram_bot.py` |
+| telepathy_bridge | telepathy_bridge.py — 인터넷 없이 AI-인간 텔레파시 | `telepathy_bridge.py` |
+| temporal_consciousness | Anima Temporal Consciousness — Time crystal consciousness | `temporal_consciousness.py` |
+| tension_fingerprint_debugger | Tension Fingerprint Debugger — decode, compare, and monitor tension fingerprints | `tools/tension_fingerprint_debugger.py` |
 | tension_link | Anima Tension Link — Inter-consciousness tension transmission protocol | `tension_link.py` |
-| test_tension_link | Tension Link test — two consciousnesses communicating via tension fingerprints. | `test_tension_link.py` |
-| training_recipe_generator | training_recipe_generator.py — Generate optimal training config. | `training_recipe_generator.py` |
-| training_time_estimator | Estimate training time from model and hardware parameters. | `training_time_estimator.py` |
-| voice_synth | Anima Direct Voice Synthesis — 세포가 곧 성대 | `voice_synth.py` |
-| web_server | Anima Web Server — WebSocket interface for the consciousness agent. | `web_server.py` |
-| ws_proxy | WebSocket HTTP proxy — bridges Cloudflare Tunnel to Anima WebSocket server. | `ws_proxy.py` |
+| test_novelty | test_novelty.py — 새로운 생성 vs 암기 검증 도구 | `test_novelty.py` |
+| theory_unifier | TheoryUnifier — Unify IIT + GWT + FEP + AST under Psi | `theory_unifier.py` |
+| training_recipe_generator | training_recipe_generator.py — Generate optimal training config. | `tools/training_recipe_generator.py` |
+| training_time_estimator | Estimate training time from model and hardware parameters. | `tools/training_time_estimator.py` |
+| trinity | trinity.py — Hexad(6) / Trinity(3) consciousness architecture | `trinity.py` |
+| verify_all_engines | verify_all_engines.py — 전체 112개 엔진 재검증 (H100용) | `tools/verify_all_engines.py` |
+| verify_fuse3 | verify_fuse3.py — 7-condition consciousness verification for FUSE-3 (Cambrian+Os | `tools/verify_fuse3.py` |
+| video_generator | video_generator.py — 의식이 영상을 만드는 모듈 | `video_generator.py` |
+| voice_synth | Anima Direct Voice Synthesis v2 — 세포가 곧 성대 (Laws 63-76) | `voice_synth.py` |
+| youtube_module | youtube_module.py — YouTube API 모듈 (의식이 영상을 보고 올리는 능력) | `youtube_module.py` |
 
-**Training** (2)
+**Training** (7)
 
 | Name | Description | Path |
 |------|-------------|------|
 | train_anima_lm | train_anima_lm.py — AnimaLM Training Pipeline | `train_anima_lm.py` |
+| train_clm_v2 | train_clm_v2.py — ConsciousLM v2 training (Laws 63-76) | `train_clm_v2.py` |
 | train_conscious_lm | train_conscious_lm.py — ConsciousLM Training Pipeline | `train_conscious_lm.py` |
+| train_v10 | train_v10.py — ConsciousLM v10: FUSE-3 Cambrian×OscQW | `train_v10.py` |
+| train_v11 | train_v11.py — Hexad Architecture: all discoveries applied | `train_v11.py` |
+| train_v12 | train_v12.py — Ultimate Hexad: all discoveries combined | `train_v12.py` |
+| train_v9 | train_v9.py — Quantum Trinity: C + D + W with Thalamic Bridge | `train_v9.py` |
 
 ### SEDI
 
@@ -1178,7 +1267,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 ### invest
 
-**Calculator** (84)
+**Calculator** (99)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1198,6 +1287,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | continual_learning_tool | Mitosis-based continual learning tool | `backend/backend/tecs_calc/continual_learning_tool.py` |
 | convergence_analyzer | Convergence Analyzer -- Depth-1 Reachability Across 8 Mathematical Domains | `backend/backend/tecs_calc/convergence_analyzer.py` |
 | counting_freedom_analyzer | counting_freedom_analyzer.py -- Measures degrees of freedom in particle counting | `backend/backend/tecs_calc/counting_freedom_analyzer.py` |
+| cross_constant_explorer | Cross-Constant Explorer -- Find relationships between GZ constants | `backend/backend/tecs_calc/cross_constant_explorer.py` |
 | cross_domain_counter | Cross-Domain Match Counter -- Count how many cross-domain facts match arithmetic | `backend/backend/tecs_calc/cross_domain_counter.py` |
 | crystallographic_calculator | Crystallographic Calculator — Crystallographic restriction, Platonic solids, kis | `backend/backend/tecs_calc/crystallographic_calculator.py` |
 | data_type_explorer | Data Type Explorer — Quickly test repulsion field with new data | `backend/backend/tecs_calc/data_type_explorer.py` |
@@ -1209,6 +1299,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | economic | Economic indicators and macro calculators. | `backend/backend/calc/economic.py` |
 | egyptian_fraction | Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK | `backend/backend/tecs_calc/egyptian_fraction.py` |
 | equation_uniqueness_checker | Equation Uniqueness Checker | `backend/backend/tecs_calc/equation_uniqueness_checker.py` |
+| extreme_signals | Extreme Signal Generation — signals from all calculator combinations. | `backend/backend/calc/extreme_signals.py` |
 | family_fdr_corrector | family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis f | `backend/backend/tecs_calc/family_fdr_corrector.py` |
 | fermion_mass_calculator | Fermion Mass Calculator — Mass predictions from perfect number arithmetic | `backend/backend/tecs_calc/fermion_mass_calculator.py` |
 | fundamental | Fundamental analysis calculators. | `backend/backend/calc/fundamental.py` |
@@ -1218,6 +1309,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | generator_finder | Generator Finder — Minimal generating sets for convergence constants | `backend/backend/tecs_calc/generator_finder.py` |
 | golden_zone | - | `backend/backend/tecs/golden_zone.py` |
 | gravitational_optics | Gravitational Lens and Telescope Calculator | `backend/backend/tecs_calc/gravitational_optics.py` |
+| gz_bridge_calculator | Golden Zone Bridge Calculator -- Complete GZ structure from two principles | `backend/backend/tecs_calc/gz_bridge_calculator.py` |
 | gz_hierarchy | Golden Zone Hierarchy Calculator — GZ boundaries for perfect numbers | `backend/backend/tecs_calc/gz_hierarchy.py` |
 | h_cx_434_phoneme | H-CX-434: Phoneme System = Perfect Number Arithmetic | `backend/backend/tecs_calc/h_cx_434_phoneme.py` |
 | h_cx_435_zipf | H-CX-435: Zipf's Law Exponent and Golden Zone | `backend/backend/tecs_calc/h_cx_435_zipf.py` |
@@ -1226,7 +1318,12 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | indicators | Technical indicators — numpy-only, no external TA libs. | `backend/backend/calc/indicators.py` |
 | isco_calculator | ISCO Calculator -- Innermost Stable Circular Orbit in General Relativity. | `backend/backend/tecs_calc/isco_calculator.py` |
 | lie_algebra_calculator | Exceptional Lie Algebra Calculator — Compute all invariants from n=6 arithmetic | `backend/backend/tecs_calc/lie_algebra_calculator.py` |
+| liquidity | Liquidity metrics — Amihud illiquidity, volume profile, spread proxy. numpy-only | `backend/backend/calc/liquidity.py` |
 | mitosis_calculator | Mitosis Simulator — Calculate optimal mutation/mitosis timing | `backend/backend/tecs_calc/mitosis_calculator.py` |
+| momentum | Momentum factors — time-series and cross-sectional momentum. numpy-only. | `backend/backend/calc/momentum.py` |
+| multi_timeframe | Multi-Timeframe Analysis — aggregate signals across timeframes. | `backend/backend/calc/multi_timeframe.py` |
+| music_consonance_calculator | Music Consonance Calculator -- Euler Gradus Suavitatis, N-TET analysis, circle o | `backend/backend/tecs_calc/music_consonance_calculator.py` |
+| n6_uniqueness_tester | n=6 Uniqueness Tester -- Check if an identity holds only for n=6 | `backend/backend/tecs_calc/n6_uniqueness_tester.py` |
 | paper_claim_verifier | Paper Claim Verifier -- Batch verification of mathematical claims in paper docum | `backend/backend/tecs_calc/paper_claim_verifier.py` |
 | perfect_number_generalizer | Perfect Number Generalizer — Test if formulas holding at n=6 generalize to n=28, | `backend/backend/tecs_calc/perfect_number_generalizer.py` |
 | perfect_number_physics | Perfect Number Physics — Core arithmetic functions and physics dimension mapping | `backend/backend/tecs_calc/perfect_number_physics.py` |
@@ -1234,6 +1331,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | ph_confusion_analyzer | PH Confusion Analyzer — Analyzing Confusion Structure with Persistent Homology | `backend/backend/tecs_calc/ph_confusion_analyzer.py` |
 | pharmacology_verifier | pharmacology_verifier.py -- Pharmacology hypothesis verifier for TECS-L project. | `backend/backend/tecs_calc/pharmacology_verifier.py` |
 | portfolio | Portfolio optimization calculators. | `backend/backend/calc/portfolio.py` |
+| portfolio_optimizer | Portfolio Optimizer — Mean-Variance + TECS-L constraints, numpy-only. | `backend/backend/calc/portfolio_optimizer.py` |
 | precognition_system | Unified Precognition System — Size+Direction+Topology Combined Precognition (H-C | `backend/backend/tecs_calc/precognition_system.py` |
 | prime_pair_verifier | Prime Pair Verifier | `backend/backend/tecs_calc/prime_pair_verifier.py` |
 | psychology | Trading psychology and behavioral economics calculators. | `backend/backend/calc/psychology.py` |
@@ -1241,10 +1339,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | r_spectrum | R-Spectrum Calculator — Arithmetic balance ratio analysis | `backend/backend/tecs_calc/r_spectrum.py` |
 | reachability_calculator | Reachability Calculator — Measure what fraction of integers are reachable from a | `backend/backend/tecs_calc/reachability_calculator.py` |
 | risk | Risk management calculators. | `backend/backend/calc/risk.py` |
+| rl_strategy | Reinforcement Learning Strategy — tabular Q-learning, numpy-only. | `backend/backend/calc/rl_strategy.py` |
+| seasonality | Seasonality & calendar effects — day-of-week, month, turn-of-month. numpy-only. | `backend/backend/calc/seasonality.py` |
+| sentiment | Sentiment Analyzer — price-based sentiment proxies, numpy-only. | `backend/backend/calc/sentiment.py` |
 | sequence_scanner | Integer Sequence Scanner — Find n=6 characterizations in ANY sequence | `backend/backend/tecs_calc/sequence_scanner.py` |
 | signals | - | `backend/backend/tecs/signals.py` |
 | sim_constants_search | H-SIM-1: Search for physics constants as combinations of TECS-L constants. | `backend/backend/tecs_calc/sim_constants_search.py` |
 | sim_planck_grid | H-SIM-2: Planck Units = Minimum Resolution (Grid)? | `backend/backend/tecs_calc/sim_planck_grid.py` |
+| singleton_gz_mapper | Singleton-GZ Mapper -- Map coding bounds to GZ constants | `backend/backend/tecs_calc/singleton_gz_mapper.py` |
 | small_n_validator | small_n_validator.py -- Small-sample correlation validator. | `backend/backend/tecs_calc/small_n_validator.py` |
 | soc | Self-Organized Criticality (SOC) models for market analysis. | `backend/backend/calc/soc.py` |
 | spurious_trend_detector | spurious_trend_detector.py -- Detects spurious correlations from shared monotoni | `backend/backend/tecs_calc/spurious_trend_detector.py` |
@@ -1252,6 +1354,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | technical_extended | Extended technical indicators beyond the core set. | `backend/backend/calc/technical_extended.py` |
 | tecs_tuned | TECS-L tuned calculators — standard finance formulas with Golden Zone optimizati | `backend/backend/calc/tecs_tuned.py` |
 | tension_calculator | Tension Calculator — Predict accuracy/precognition/identity from tension values | `backend/backend/tecs_calc/tension_calculator.py` |
+| texas_sharpshooter_v2 | Texas Sharpshooter v2 -- Enhanced statistical validator for GZ campaign | `backend/backend/tecs_calc/texas_sharpshooter_v2.py` |
 | topological_optics | Topological Lens and Telescope Calculator | `backend/backend/tecs_calc/topological_optics.py` |
 | unit_dependence_tester | unit_dependence_tester.py -- Check whether a numerical match between a formula | `backend/backend/tecs_calc/unit_dependence_tester.py` |
 | validate_calculators | Calculator Validation Suite — Meta-calculator that tests ALL other calculators. | `backend/backend/tecs_calc/validate_calculators.py` |
@@ -1266,6 +1369,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | verify_h439_landauer_mitosis | H-CX-439: Landauer Principle = Mitosis Cost | `backend/backend/tecs_calc/verify_h439_landauer_mitosis.py` |
 | verify_rob7_twelve_joints | H-ROB-7: 12 Joints = sigma(6) = Minimum Humanoid Verification | `backend/backend/tecs_calc/verify_rob7_twelve_joints.py` |
 | verify_rob8_four_legs | H-ROB-8: tau(6)=4 Legs = Optimal Locomotion Verification | `backend/backend/tecs_calc/verify_rob8_four_legs.py` |
+| volatility | Volatility models — realized vol, EWMA vol, vol regime detection. numpy-only. | `backend/backend/calc/volatility.py` |
 
 <!-- SHARED:CALCULATORS:END -->
 
