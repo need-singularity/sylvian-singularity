@@ -382,6 +382,38 @@
         ],
         "description": "PROVED: p\u00d7q=q! for primes p<q uniquely gives (2,3), product 6. Level 3 breakthrough.",
         "category": "preprint"
+      },
+      {
+        "id": "P-SIGMA-SIGMA",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "The Double Divisor Sum of Perfect Numbers Is Always Triangular",
+        "target_venue": "Journal of Number Theory",
+        "file": "../papers/tecs-l/P-SIGMA-SIGMA-triangular.md",
+        "keywords": [
+          "perfect-numbers",
+          "triangular",
+          "divisor-sum",
+          "Mersenne"
+        ],
+        "description": "\u03c3(\u03c3(P))=T_{2^(p+1)-1} proved. \u03c3(\u03c3(6))=28 only perfect case.",
+        "category": "preprint"
+      },
+      {
+        "id": "P-THREE-SIGMA",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "3\u03c3(n)=n\u00b2: A One-Parameter Characterization of Six",
+        "target_venue": "Mathematics Magazine",
+        "file": "../papers/tecs-l/P-THREE-SIGMA-uniqueness.md",
+        "keywords": [
+          "perfect-numbers",
+          "divisor-sum",
+          "characterization",
+          "uniqueness"
+        ],
+        "description": "3\u03c3(n)=n\u00b2 unique at n=6. Proof: semiprime 4q\u00b2-9q-9=0.",
+        "category": "preprint"
       }
     ],
     "anima": [
