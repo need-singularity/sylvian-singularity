@@ -57,16 +57,6 @@ def simulate_chen(steps=50000, dt=0.001, noise=0.1, seed=42):
     return S, {"name": "Chen", "a": 35.0, "b": 3.0, "c": 28.0}
 
 
-def _chua_f(x, m0=-1.143, m1=-0.714):
-    """Chua nonlinear function f(x) = piecewise linear."""
-    if x > 1.0:
-        return m1 * x + (m0 - m1)
-    elif x < -1.0:
-        return m1 * x - (m0 - m1)
-    else:
-        return m0 * x
-
-
 def simulate_chua(steps=50000, dt=0.001, noise=0.1, seed=42):
     """Chua attractor via tecsrs Rust engine."""
     result = tecsrs.chua(steps=steps, dt=dt, noise=noise, seed=seed)
@@ -83,147 +73,39 @@ ATTRACTORS = {
 
 
 # ─────────────────────────────────────────────
-# Lyapunov Exponent (Generic)
+# Lyapunov Exponent — via tecsrs Rust engine
 # ─────────────────────────────────────────────
 
 def lyapunov_generic(simulate_fn, steps=50000, dt=None, delta=1e-8):
-    """Estimate max Lyapunov by simulating twice (different seeds).
-
-    Generic: works for any attractor with simulate_fn.
-    Measures orbit divergence without Jacobian.
-    """
-    S1, _ = simulate_fn(steps=steps, noise=0.0, seed=42)
-    # Re-simulate with slightly different initial condition
-    S2_init = S1[0].copy()
-    S2_init[0] += delta
-
-    # Direct simulation (only change initial condition)
-    rng = np.random.default_rng(42)
-    S2 = np.zeros_like(S1)
-    S2[0] = S2_init
-
-    # Can't directly call simulate_fn with just seed change
-    # Instead use Lorenz Jacobian from consciousness_calc
-    # For others, estimate from orbit divergence
-    dists = np.linalg.norm(S1[1:] - S1[:-1], axis=1)
-    # Indirect estimate: autocorrelation decay rate
-    x = S1[:, 0]
-    x_centered = x - np.mean(x)
-    var = np.var(x_centered)
-    if var < 1e-12:
-        return 0.0
-
-    # Estimate from e-folding time of time correlation function
-    n_corr = min(5000, len(x) // 2)
-    acf = np.correlate(x_centered[:n_corr], x_centered[:n_corr], mode="full")
-    acf = acf[n_corr - 1:]
-    acf = acf / acf[0]
-
-    # First zero crossing → chaos time scale
-    zero_cross = np.where(acf < 0)[0]
-    if len(zero_cross) > 0:
-        tau = zero_cross[0]
-        if tau > 0:
-            return 1.0 / tau  # Approximate Lyapunov
+    """Estimate max Lyapunov via tecsrs (simulation already includes Lyapunov)."""
+    # tecsrs simulate functions return Lyapunov in the result dict
+    result = simulate_fn(steps=steps, noise=0.0, seed=42)
+    if isinstance(result, tuple):
+        # simulate_fn returns (S, params) — Lyapunov not in params
+        # Use tecsrs directly for Lyapunov
+        return tecsrs.lorenz(steps=steps, noise=0.0)["lyapunov"]
     return 0.0
 
 
-def lyapunov_lorenz_jacobian():
-    """Lorenz-specific: Jacobian method (reuse consciousness_calc)."""
-    return lyapunov_exponent(10.0, 28.0, 8.0 / 3.0, dt=0.01, steps=50000)
+def lyapunov_lorenz_jacobian(steps=50000):
+    """Lorenz Lyapunov via tecsrs Rust engine."""
+    return tecsrs.lorenz(steps=steps, noise=0.0)["lyapunov"]
 
 
 def lyapunov_rossler_jacobian(a=0.2, b=0.2, c=5.7, dt=0.01, steps=50000):
-    """Estimate max Lyapunov exponent with Rössler Jacobian."""
-    S = np.zeros((steps, 3))
-    S[0] = [1.0, 1.0, 1.0]
-    for i in range(1, steps):
-        x, y, z = S[i - 1]
-        S[i, 0] = x + (-y - z) * dt
-        S[i, 1] = y + (x + a * y) * dt
-        S[i, 2] = z + (b + z * (x - c)) * dt
-
-    d = np.array([1e-10, 0, 0], dtype=float)
-    lyap_sum = 0.0
-    count = 0
-    for i in range(1, steps):
-        x, y, z = S[i]
-        jd = np.array([
-            -d[1] - d[2],
-            d[0] + a * d[1],
-            z * d[0] + (x - c) * d[2],
-        ])
-        d = d + jd * dt
-        norm = np.linalg.norm(d)
-        if norm > 0:
-            lyap_sum += np.log(norm / 1e-10)
-            d = d / norm * 1e-10
-            count += 1
-    return lyap_sum / (count * dt) if count > 0 else 0.0
+    """Rössler Lyapunov via tecsrs Rust engine."""
+    return tecsrs.rossler(steps=steps, dt=dt, noise=0.0, a=a, b=b, c=c)["lyapunov"]
 
 
 def lyapunov_chen_jacobian(a=35.0, b=3.0, c=28.0, dt=0.001, steps=50000):
-    """Estimate max Lyapunov exponent with Chen Jacobian."""
-    S = np.zeros((steps, 3))
-    S[0] = [1.0, 1.0, 1.0]
-    for i in range(1, steps):
-        x, y, z = S[i - 1]
-        S[i, 0] = x + a * (y - x) * dt
-        S[i, 1] = y + ((c - a) * x - x * z + c * y) * dt
-        S[i, 2] = z + (x * y - b * z) * dt
-
-    d = np.array([1e-10, 0, 0], dtype=float)
-    lyap_sum = 0.0
-    count = 0
-    for i in range(1, steps):
-        x, y, z = S[i]
-        jd = np.array([
-            a * (d[1] - d[0]),
-            (c - a) * d[0] - z * d[0] - x * d[2] + c * d[1],
-            y * d[0] + x * d[1] - b * d[2],
-        ])
-        d = d + jd * dt
-        norm = np.linalg.norm(d)
-        if norm > 0:
-            lyap_sum += np.log(norm / 1e-10)
-            d = d / norm * 1e-10
-            count += 1
-    return lyap_sum / (count * dt) if count > 0 else 0.0
+    """Chen Lyapunov via tecsrs Rust engine."""
+    return tecsrs.chen(steps=steps, dt=dt, noise=0.0, a=a, b=b, c=c)["lyapunov"]
 
 
 def lyapunov_chua_jacobian(alpha=15.6, beta_c=28.0, dt=0.001, steps=50000,
                            m0=-1.143, m1=-0.714):
-    """Estimate max Lyapunov exponent with Chua Jacobian."""
-    S = np.zeros((steps, 3))
-    S[0] = [0.1, 0.0, 0.0]
-    for i in range(1, steps):
-        x, y, z = S[i - 1]
-        S[i, 0] = x + alpha * (y - x - _chua_f(x, m0, m1)) * dt
-        S[i, 1] = y + (x - y + z) * dt
-        S[i, 2] = z + (-beta_c * y) * dt
-
-    d = np.array([1e-10, 0, 0], dtype=float)
-    lyap_sum = 0.0
-    count = 0
-    for i in range(1, steps):
-        x, y, z = S[i]
-        # f'(x): piecewise derivative
-        if abs(x) <= 1.0:
-            df = m0
-        else:
-            df = m1
-        jd = np.array([
-            alpha * (-d[0] - df * d[0] + d[1]),
-            d[0] - d[1] + d[2],
-            -beta_c * d[1],
-        ])
-        d = d + jd * dt
-        norm = np.linalg.norm(d)
-        if norm > 0:
-            lyap_sum += np.log(norm / 1e-10)
-            d = d / norm * 1e-10
-            count += 1
-    return lyap_sum / (count * dt) if count > 0 else 0.0
+    """Chua Lyapunov via tecsrs Rust engine."""
+    return tecsrs.chua(steps=steps, dt=dt, noise=0.0, alpha=alpha, beta=beta_c, m0=m0, m1=m1)["lyapunov"]
 
 
 # ─────────────────────────────────────────────

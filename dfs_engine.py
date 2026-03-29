@@ -12,10 +12,8 @@ Usage:
 """
 
 import numpy as np
-from itertools import combinations
 import argparse
 import os
-import json
 from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
@@ -118,77 +116,8 @@ TARGETS.update(_phys)
 
 
 # ─────────────────────────────────────────
-# Operators
+# Island tracking (for verification pipeline)
 # ─────────────────────────────────────────
-
-def binary_ops(a_val, a_name, b_val, b_name):
-    """Returns list of binary operation results for two values: (value, expression, set_of_islands)"""
-    results = []
-
-    def _add(v, expr):
-        if isinstance(v, (int, float)) and np.isfinite(v) and abs(v) < 1e12:
-            results.append((v, expr))
-
-    _add(a_val + b_val, f'({a_name}+{b_name})')
-    _add(a_val - b_val, f'({a_name}-{b_name})')
-    _add(b_val - a_val, f'({b_name}-{a_name})')
-    _add(a_val * b_val, f'({a_name}*{b_name})')
-
-    if b_val != 0:
-        _add(a_val / b_val, f'({a_name}/{b_name})')
-    if a_val != 0:
-        _add(b_val / a_val, f'({b_name}/{a_name})')
-
-    # Powers
-    if a_val > 0 and abs(b_val) < 20:
-        try:
-            v = a_val ** b_val
-            _add(v, f'({a_name}^{b_name})')
-        except (OverflowError, ValueError):
-            pass
-    if b_val > 0 and abs(a_val) < 20:
-        try:
-            v = b_val ** a_val
-            _add(v, f'({b_name}^{a_name})')
-        except (OverflowError, ValueError):
-            pass
-
-    # log_a(b)
-    if a_val > 0 and a_val != 1 and b_val > 0:
-        _add(np.log(b_val) / np.log(a_val), f'log_{a_name}({b_name})')
-    if b_val > 0 and b_val != 1 and a_val > 0:
-        _add(np.log(a_val) / np.log(b_val), f'log_{b_name}({a_name})')
-
-    return results
-
-
-def unary_ops(val, name):
-    """Unary operation expansion"""
-    results = [(val, name)]
-    if val > 0:
-        results.append((np.log(val), f'ln({name})'))
-        results.append((np.sqrt(val), f'sqrt({name})'))
-    results.append((np.exp(val) if val < 500 else None, f'exp({name})'))
-    if val != 0:
-        results.append((1.0 / val, f'1/{name}'))
-    results.append((abs(val), f'|{name}|'))
-    # filter
-    return [(v, n) for v, n in results
-            if v is not None and isinstance(v, (int, float))
-            and np.isfinite(v) and abs(v) < 1e12]
-
-
-# ─────────────────────────────────────────
-# Island tracking (which island's constants were used)
-# ─────────────────────────────────────────
-
-def get_island(const_name):
-    """Returns the island that a constant belongs to by its name"""
-    for island_id, consts in ISLANDS.items():
-        if const_name in consts:
-            return island_id
-    return '?'
-
 
 def extract_base_constants(expr):
     """Extract base constant names used in the expression string"""
@@ -200,138 +129,51 @@ def extract_base_constants(expr):
     return all_names
 
 
-def get_islands_from_expr(expr):
-    """Returns set of islands used in the expression"""
-    islands = set()
-    for name in extract_base_constants(expr):
-        islands.add(get_island(name))
-    return islands
-
-
 # ─────────────────────────────────────────
-# DFS Engine Core
+# DFS Engine Core — powered by tecsrs Rust
 # ─────────────────────────────────────────
 
-def build_level(depth_limit):
-    """Generate constant combinations using tecsrs Rust engine (10-50x faster).
-
-    Returns: list of (value, expression_string, set_of_islands)
-    """
-    # Use tecsrs DfsEngine for the heavy computation
+def _build_engine(depth_limit, threshold):
+    """Build tecsrs DfsEngine with project constants and targets."""
     engine = tecsrs.DfsEngine()
-
-    # Map island constants to tecsrs format (island: 0=A, 1=B, 2=C, 3=D)
     island_map = {'A': 0, 'B': 1, 'C': 2, 'D': 3}
     for island_id, consts in ISLANDS.items():
         for name, val in consts.items():
             engine.add_constant(name, float(val), island_map[island_id])
-
-    # Load targets
     for tname, tval in TARGETS.items():
         engine.add_target(tname, float(tval))
+    return engine
 
+
+def build_level(depth_limit):
+    """Generate expressions via tecsrs Rust engine. Returns expression count."""
+    engine = _build_engine(depth_limit, 0.001)
     expr_count = engine.expression_count(depth_limit)
     print(f"  [tecsrs] Generated {expr_count:,} expressions at depth {depth_limit}")
-
-    # Also build Python-side for island tracking (needed by verify_discovery)
-    # Fall back to Python build for the island tracking
-    base = []
-    for island_id, consts in ISLANDS.items():
-        for name, val in consts.items():
-            for uv, un in unary_ops(val, name):
-                base.append((uv, un, {island_id}))
-
-    if depth_limit < 1:
-        return base
-
-    current = list(base)
-
-    for depth in range(1, depth_limit + 1):
-        next_level = []
-
-        if depth == 1:
-            pool_a = base
-            pool_b = base
-        else:
-            pool_a = current
-            pool_b = base
-
-        seen_vals = set()
-        for i, (av, an, ai) in enumerate(pool_a):
-            for j, (bv, bn, bi) in enumerate(pool_b):
-                if depth == 1 and j > i:
-                    continue
-                combined_islands = ai | bi
-
-                for rv, rn in binary_ops(av, an, bv, bn):
-                    key = round(rv, 8)
-                    if key in seen_vals:
-                        continue
-                    seen_vals.add(key)
-                    next_level.append((rv, rn, combined_islands))
-
-        current = current + next_level
-        print(f"  [depth {depth}] {len(next_level):,} new expressions "
-              f"(total: {len(current):,})")
-
-    return current
+    return expr_count
 
 
-def is_trivial(expr, target_name, val, target_val):
-    """Determine if matching is trivial (already known identities etc.)"""
-    # If expression is the target name itself
-    clean_expr = expr.replace('(', '').replace(')', '')
-    if clean_expr == target_name:
-        return True
+def check_targets(depth_limit, threshold=0.001):
+    """Run DFS search entirely in Rust, return Python dicts for verification."""
+    engine = _build_engine(depth_limit, threshold)
+    raw_matches = engine.search(depth_limit, threshold)
 
-    # Simple constant identical to target
-    for consts in ISLANDS.values():
-        if target_name in consts and clean_expr in consts:
-            if abs(val - target_val) < 1e-12:
-                return True
-
-    # Expression too simple (single constant)
-    base = extract_base_constants(expr)
-    if len(base) <= 1 and abs(val - target_val) < 1e-12:
-        return True
-
-    return False
-
-
-def check_targets(expressions, threshold=0.001):
-    """Compare all expressions with targets, return matches"""
     matches = []
+    for m in raw_matches:
+        matches.append({
+            'target': m.target,
+            'target_val': m.target_val,
+            'formula': m.formula,
+            'formula_val': m.formula_val,
+            'error': m.error,
+            'error_pct': m.error_pct,
+            'islands': m.islands,
+            'n_islands': m.n_islands,
+            'significance': m.significance,
+            'is_exact': m.is_exact,
+        })
 
-    for val, expr, islands in expressions:
-        if val == 0:
-            continue
-        for t_name, t_val in TARGETS.items():
-            if t_val == 0:
-                continue
-            rel_err = abs(val - t_val) / abs(t_val)
-            if rel_err < threshold:
-                if is_trivial(expr, t_name, val, t_val):
-                    continue
-                n_islands = len(islands)
-                # Significance score: more island connections + smaller error = higher score
-                significance = n_islands * 10 + max(0, -np.log10(rel_err + 1e-15))
-                if rel_err < 1e-12:
-                    significance += 50  # exact match bonus
-
-                island_str = '+'.join(sorted(islands))
-                matches.append({
-                    'target': t_name,
-                    'target_val': t_val,
-                    'formula': expr,
-                    'formula_val': val,
-                    'error': rel_err,
-                    'error_pct': rel_err * 100,
-                    'islands': island_str,
-                    'n_islands': n_islands,
-                    'significance': significance,
-                    'is_exact': rel_err < 1e-12,
-                })
-
+    print(f"  [tecsrs] {len(matches):,} matches found")
     return matches
 
 
@@ -665,15 +507,11 @@ def main():
     print(f"Targets: {len(TARGETS)} items")
     print()
 
-    # DFS build
-    print("Generating expressions...")
-    expressions = build_level(args.depth)
-    print(f"Total expressions: {len(expressions):,} items")
-    print()
-
-    # Target matching
-    print("Matching targets...")
-    matches = check_targets(expressions, threshold=args.threshold)
+    # DFS build + target matching (all in Rust)
+    print("Generating expressions and matching targets...")
+    expr_count = build_level(args.depth)
+    print(f"Total expressions: {expr_count:,} items")
+    matches = check_targets(args.depth, threshold=args.threshold)
     print(f"Raw matches: {len(matches):,} items")
 
     # Filtering
