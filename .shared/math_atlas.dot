@@ -258,6 +258,11 @@ digraph math_atlas {
   TECS_L_411 [label="Speed of Light = Maximum Clock Speed (H-" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_BRIDGE_003_n_minus_2_equals_tau [label="BRIDGE-003: n - 2 = tau(n) and the Uniqu" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_BRIDGE_004_golden_zone_quantum_gravity [label="BRIDGE-004: Golden Zone and Quantum Grav" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_CONDMAT_001_quantum_hall_fractions [label="Hypothesis Review CONDMAT-001: Fractiona" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_COSMO_001_LCDM_six_parameters [label="Hypothesis Review COSMO-001: LCDM 6 Free" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_E6_001_exceptional_lie_algebra [label="Hypothesis E6-001: E6 Exceptional Lie Al" fillcolor="#4A90D9" shape=box];
+  TECS_L_EM_001_electromagnetic_tensor [label="Hypothesis EM-001: Electromagnetic Field" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_ALGGEOM_001 [label="j-invariant 1728 = sigma(6)^3" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_ARCH_industry_patterns [label="H-ARCH: Industry Architecture Patterns M" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_AX_11 [label="Growth Stage Transitions = R-spectrum Ph" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_AX_12 [label="Perfect Balance — Consciousness Emerges " fillcolor="#4A90D9" shape=ellipse];
@@ -394,6 +399,7 @@ digraph math_atlas {
   TECS_L_H_CX_bridge_epoch1_ph_tension [label="H-CX-Bridge-5: Epoch-1 Crystallization =" fillcolor="#4A90D9" shape=box];
   TECS_L_H_CYCL_1 [label="Cyclotomic-Stirling Identity: Phi_n(n) =" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_DNA_001_030_nucleic_acids [label="Hypothesis Review: H-DNA-001 to H-DNA-03" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_DNA_507 [label="⭐ The Last 10 — Attacking Unexplained Bi" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_EARTH_001_025_geoscience [label="H-EARTH-001 to 025: Geoscience Hypothese" fillcolor="#4A90D9" shape=box];
   TECS_L_H_EE_100 [label="NAS Will Independently Discover 4/3 FFN " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_EE_107 [label="Confirmation Bias — The Most Important C" fillcolor="#4A90D9" shape=ellipse];
@@ -431,6 +437,8 @@ digraph math_atlas {
   TECS_L_H_GEO_6 [label="Dimension Lens — Divisor Structure Refra" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_GEO_7 [label="Topological Telescope" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_GEO_9 [label="Lens Aberration Classification" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_HAIR_001_050_hair_loss_n6 [label="H-HAIR-001~050: Hair Loss, the Perfect N" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_HARMONIC_001 [label="Ramanujan Sum c_6(n) Structure" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_KTHY_1 [label="Algebraic K-theory of Z and Perfect Numb" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_LATT_1 [label="Lattice Theory and Sphere Packing Encode" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_LIE_1 [label="Complete Parameterization of Exceptional" fillcolor="#4A90D9" shape=ellipse];
@@ -470,6 +478,11 @@ digraph math_atlas {
   TECS_L_H_TREE_consciousness [label="H-TREE: Undiscovered Branches of the Con" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_UD_3 [label="Crystallographic Restriction = div(6) U " fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_UD_8 [label="Hexagonal Tiling: n=6 = Optimal 2D Packi" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_INFOGEO_001_fisher_divisor_distribution [label="Hypothesis INFOGEO-001: Fisher Informati" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_MUSIC_001_twelve_tone_consonance [label="Hypothesis MUSIC-001: 12-TET = sigma(6) " fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_NAVSTOKES_001_stress_tensor [label="Hypothesis NAVSTOKES-001: 3D Stress Tens" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_RIEMANN_CURV_001_curvature_denominator [label="Hypothesis RIEMANN-CURV-001: Riemann Ten" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_SIXFUNC_001_six_functor_formalism [label="Hypothesis SIXFUNC-001: Six-Functor Form" fillcolor="#4A90D9" shape=box];
   TECS_L_super_discoveries [label="Super-Discoveries: Meta-Hypotheses Unify" fillcolor="#4A90D9" shape=ellipse];
 
   TECS_L_010 -> TECS_L_011;
@@ -613,9 +626,19 @@ digraph math_atlas {
   TECS_L_410 -> TECS_L_090;
   TECS_L_410 -> TECS_L_092;
   TECS_L_411 -> TECS_L_410;
+  TECS_L_H_ALGGEOM_001 -> TECS_L_090;
+  TECS_L_H_ALGGEOM_001 -> TECS_L_092;
   TECS_L_BRIDGE_003_n_minus_2_equals_tau -> TECS_L_090;
   TECS_L_BRIDGE_003_n_minus_2_equals_tau -> TECS_L_098;
   TECS_L_BRIDGE_004_golden_zone_quantum_gravity -> TECS_L_139;
+  TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_005;
+  TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_067;
+  TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_098;
+  TECS_L_COSMO_001_LCDM_six_parameters -> TECS_L_098;
+  TECS_L_E6_001_exceptional_lie_algebra -> TECS_L_082;
+  TECS_L_E6_001_exceptional_lie_algebra -> TECS_L_098;
+  TECS_L_EM_001_electromagnetic_tensor -> TECS_L_090;
+  TECS_L_EM_001_electromagnetic_tensor -> TECS_L_098;
   TECS_L_H_ARCH_industry_patterns -> TECS_L_H_EE_107;
   TECS_L_H_AX_12 -> TECS_L_H_AX_11;
   TECS_L_H_CX_14 -> TECS_L_H_GEO_3;
@@ -739,6 +762,7 @@ digraph math_atlas {
   TECS_L_H_EE_48 -> TECS_L_H_EE_29;
   TECS_L_H_EE_49 -> TECS_L_H_CX_191;
   TECS_L_H_EE_90 -> TECS_L_H_EE_88;
+  TECS_L_H_HAIR_001_050_hair_loss_n6 -> TECS_L_H_DNA_507;
   TECS_L_H_LING_001_015_linguistics -> TECS_L_067;
   TECS_L_H_LING_001_015_linguistics -> TECS_L_090;
   TECS_L_H_MOTIV_1 -> TECS_L_H_KTHY_1;
@@ -755,6 +779,16 @@ digraph math_atlas {
   TECS_L_H_SPORT_001_020_biomechanics -> TECS_L_090;
   TECS_L_H_TREE_consciousness -> TECS_L_H_CX_8;
   TECS_L_H_UD_8 -> TECS_L_H_UD_3;
+  TECS_L_H_HARMONIC_001 -> TECS_L_098;
+  TECS_L_H_HARMONIC_001 -> TECS_L_067;
+  TECS_L_INFOGEO_001_fisher_divisor_distribution -> TECS_L_H_CX_82;
+  TECS_L_MUSIC_001_twelve_tone_consonance -> TECS_L_090;
+  TECS_L_MUSIC_001_twelve_tone_consonance -> TECS_L_098;
+  TECS_L_NAVSTOKES_001_stress_tensor -> TECS_L_090;
+  TECS_L_NAVSTOKES_001_stress_tensor -> TECS_L_098;
+  TECS_L_RIEMANN_CURV_001_curvature_denominator -> TECS_L_090;
+  TECS_L_SIXFUNC_001_six_functor_formalism -> TECS_L_067;
+  TECS_L_SIXFUNC_001_six_functor_formalism -> TECS_L_098;
   TECS_L_super_discoveries -> TECS_L_H_CX_63;
   TECS_L_super_discoveries -> TECS_L_H_CODE_1;
   TECS_L_H_BIO_2 -> TECS_L_H_CX_12;
