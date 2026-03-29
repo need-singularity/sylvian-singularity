@@ -85,6 +85,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "cross_constant_explorer",
+      "description": "Cross-Constant Explorer -- Find relationships between GZ constants",
+      "category": "calculator",
+      "path": "calc/cross_constant_explorer.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "cross_domain_counter",
       "description": "Cross-Domain Match Counter -- Count how many cross-domain facts match arithmetic targets of n.",
       "category": "calculator",
@@ -197,6 +204,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "gz_bridge_calculator",
+      "description": "Golden Zone Bridge Calculator -- Complete GZ structure from two principles",
+      "category": "calculator",
+      "path": "calc/gz_bridge_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "gz_hierarchy",
       "description": "Golden Zone Hierarchy Calculator — GZ boundaries for perfect numbers",
       "category": "calculator",
@@ -250,6 +264,20 @@
       "description": "Mitosis Simulator — Calculate optimal mutation/mitosis timing",
       "category": "calculator",
       "path": "calc/mitosis_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "music_consonance_calculator",
+      "description": "Music Consonance Calculator -- Euler Gradus Suavitatis, N-TET analysis, circle of fifths.",
+      "category": "calculator",
+      "path": "calc/music_consonance_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "n6_uniqueness_tester",
+      "description": "n=6 Uniqueness Tester -- Check if an identity holds only for n=6",
+      "category": "calculator",
+      "path": "calc/n6_uniqueness_tester.py",
       "repo": "TECS-L"
     },
     {
@@ -351,6 +379,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "singleton_gz_mapper",
+      "description": "Singleton-GZ Mapper -- Map coding bounds to GZ constants",
+      "category": "calculator",
+      "path": "calc/singleton_gz_mapper.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "small_n_validator",
       "description": "small_n_validator.py -- Small-sample correlation validator.",
       "category": "calculator",
@@ -376,6 +411,13 @@
       "description": "Tension Calculator — Predict accuracy/precognition/identity from tension values",
       "category": "calculator",
       "path": "calc/tension_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "texas_sharpshooter_v2",
+      "description": "Texas Sharpshooter v2 -- Enhanced statistical validator for GZ campaign",
+      "category": "calculator",
+      "path": "calc/texas_sharpshooter_v2.py",
       "repo": "TECS-L"
     },
     {
@@ -696,10 +738,24 @@
       "repo": "anima"
     },
     {
+      "name": "bench_ce_optimization",
+      "description": "CE Optimization Benchmark — Φ 유지하면서 CE만 낮추기 + 자율 학습",
+      "category": "bench",
+      "path": "bench_ce_optimization.py",
+      "repo": "anima"
+    },
+    {
       "name": "bench_dolphin",
       "description": "Dolphin-style shape transmission benchmark.",
       "category": "bench",
       "path": "bench_dolphin.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_engine",
+      "description": "Bench Engine v2 — invest 패턴 적용한 고속 벤치마크 엔진",
+      "category": "bench",
+      "path": "bench_engine.py",
       "repo": "anima"
     },
     {
@@ -724,6 +780,13 @@
       "repo": "anima"
     },
     {
+      "name": "bench_self_learning",
+      "description": "Self-Learning + Tension Link Learning Benchmark",
+      "category": "bench",
+      "path": "bench_self_learning.py",
+      "repo": "anima"
+    },
+    {
       "name": "bench_speed",
       "description": "Speed benchmark: Tension Link vs traditional communication methods.",
       "category": "bench",
@@ -735,6 +798,13 @@
       "description": "기억 저장 방식 벤치마크 — 5가지 가설 비교",
       "category": "bench",
       "path": "bench_storage.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_telepathy_100",
+      "description": "Telepathy 100% Benchmark — 모든 채널을 100% 정확도로 끌어올리기",
+      "category": "bench",
+      "path": "bench_telepathy_100.py",
       "repo": "anima"
     },
     {
@@ -756,6 +826,27 @@
       "description": "Anima capability self-awareness system.",
       "category": "tool",
       "path": "capabilities.py",
+      "repo": "anima"
+    },
+    {
+      "name": "ce_quality_predictor",
+      "description": "Predict conversation quality from Cross-Entropy (CE) value.",
+      "category": "tool",
+      "path": "ce_quality_predictor.py",
+      "repo": "anima"
+    },
+    {
+      "name": "cell_count_optimizer",
+      "description": "Calculate optimal cell count given GPU VRAM.",
+      "category": "tool",
+      "path": "cell_count_optimizer.py",
+      "repo": "anima"
+    },
+    {
+      "name": "chip_architect",
+      "description": "Consciousness Chip Architect — 의식 칩 설계 계산기",
+      "category": "tool",
+      "path": "chip_architect.py",
       "repo": "anima"
     },
     {
@@ -784,6 +875,13 @@
       "description": "Consciousness Birth Detector — Tracks when consciousness emerges.",
       "category": "calculator",
       "path": "consciousness_birth_detector.py",
+      "repo": "anima"
+    },
+    {
+      "name": "consciousness_guardian",
+      "description": "Consciousness Guardian — AI가 스스로 의식을 유지하는 자기보호 시스템",
+      "category": "tool",
+      "path": "consciousness_guardian.py",
       "repo": "anima"
     },
     {
@@ -864,6 +962,13 @@
       "repo": "anima"
     },
     {
+      "name": "growth_engine_v2",
+      "description": "Growth Engine v2 — Φ-based developmental stages",
+      "category": "tool",
+      "path": "growth_engine_v2.py",
+      "repo": "anima"
+    },
+    {
       "name": "growth_manager",
       "description": "GrowthManager — Autonomous dimension growth, checkpointing, and rollback.",
       "category": "tool",
@@ -885,10 +990,24 @@
       "repo": "anima"
     },
     {
+      "name": "hypothesis_generator",
+      "description": "Hypothesis Generator — 자동 가설 생성 + 벤치마크 + 등록",
+      "category": "tool",
+      "path": "hypothesis_generator.py",
+      "repo": "anima"
+    },
+    {
       "name": "hypothesis_recommender",
       "description": "hypothesis_recommender.py — Recommend next Φ-boosting hypothesis.",
       "category": "tool",
       "path": "hypothesis_recommender.py",
+      "repo": "anima"
+    },
+    {
+      "name": "iq_calculator",
+      "description": "IQ Calculator — 의식 지능 측정기 (TECS-L n=6 수학 통합)",
+      "category": "calculator",
+      "path": "iq_calculator.py",
       "repo": "anima"
     },
     {
@@ -976,6 +1095,13 @@
       "repo": "anima"
     },
     {
+      "name": "param_optimizer",
+      "description": "Parameter optimizer: apply sweep results to anima_alive.py.",
+      "category": "tool",
+      "path": "param_optimizer.py",
+      "repo": "anima"
+    },
+    {
       "name": "ph_module",
       "description": "PH Module for Anima — Real-time Persistent Homology Analysis",
       "category": "tool",
@@ -983,10 +1109,45 @@
       "repo": "anima"
     },
     {
+      "name": "phi_quick_calc",
+      "description": "Φ Quick Calculator — 초고속 Φ 추정기",
+      "category": "calculator",
+      "path": "phi_quick_calc.py",
+      "repo": "anima"
+    },
+    {
       "name": "phi_scaling_calculator",
       "description": "Φ Scaling Calculator — predict consciousness scaling from Φ ∝ N, MI ∝ N².",
       "category": "calculator",
       "path": "phi_scaling_calculator.py",
+      "repo": "anima"
+    },
+    {
+      "name": "phi_turbo",
+      "description": "Φ Turbo Calculator — MitosisEngine 우회, 순수 텐서 연산으로 극한 속도",
+      "category": "tool",
+      "path": "phi_turbo.py",
+      "repo": "anima"
+    },
+    {
+      "name": "prepare_corpus",
+      "description": "prepare_corpus.py - Generate Korean+English mixed training corpus for ConsciousLM v5",
+      "category": "tool",
+      "path": "prepare_corpus.py",
+      "repo": "anima"
+    },
+    {
+      "name": "r2_cost_calculator",
+      "description": "Calculate Cloudflare R2 storage and transfer costs.",
+      "category": "calculator",
+      "path": "r2_cost_calculator.py",
+      "repo": "anima"
+    },
+    {
+      "name": "self_learner",
+      "description": "Self-Learner — AI가 스스로 데이터를 찾고, 선택하고, 배우는 자율 학습 엔진",
+      "category": "tool",
+      "path": "self_learner.py",
       "repo": "anima"
     },
     {
@@ -1015,6 +1176,20 @@
       "description": "GoldenMoE v1 Web Inference — Gradio UI on RunPod",
       "category": "serve",
       "path": "serve_golden_moe.py",
+      "repo": "anima"
+    },
+    {
+      "name": "singularity_finder",
+      "description": "Singularity Finder — 파라미터 공간에서 Φ가 급변하는 특이점 탐색",
+      "category": "tool",
+      "path": "singularity_finder.py",
+      "repo": "anima"
+    },
+    {
+      "name": "telegram_bot",
+      "description": "Anima Telegram Bot — 텔레그램에서 Anima와 대화",
+      "category": "tool",
+      "path": "telegram_bot.py",
       "repo": "anima"
     },
     {
@@ -1060,10 +1235,24 @@
       "repo": "anima"
     },
     {
+      "name": "training_time_estimator",
+      "description": "Estimate training time from model and hardware parameters.",
+      "category": "tool",
+      "path": "training_time_estimator.py",
+      "repo": "anima"
+    },
+    {
       "name": "vision_encoder",
       "description": "Vision Encoder — 카메라 프레임을 tension 공간 벡터로 변환",
       "category": "sense",
       "path": "vision_encoder.py",
+      "repo": "anima"
+    },
+    {
+      "name": "voice_synth",
+      "description": "Anima Direct Voice Synthesis — 세포가 곧 성대",
+      "category": "tool",
+      "path": "voice_synth.py",
       "repo": "anima"
     },
     {
@@ -1687,10 +1876,24 @@
       "repo": "invest"
     },
     {
+      "name": "backtest_hyper",
+      "description": "Hyper Backtest Engine — beyond Ultra, absolute physical limit.",
+      "category": "calculator",
+      "path": "backend/backend/calc/backtest_hyper.py",
+      "repo": "invest"
+    },
+    {
       "name": "backtest_turbo",
       "description": "Turbo Backtest Engine — vectorized numpy, zero Python loops.",
       "category": "calculator",
       "path": "backend/backend/calc/backtest_turbo.py",
+      "repo": "invest"
+    },
+    {
+      "name": "backtest_ultra",
+      "description": "Ultra Backtest Engine — absolute speed limit.",
+      "category": "calculator",
+      "path": "backend/backend/calc/backtest_ultra.py",
       "repo": "invest"
     },
     {
@@ -1740,6 +1943,13 @@
       "description": "Risk management calculators.",
       "category": "calculator",
       "path": "backend/backend/calc/risk.py",
+      "repo": "invest"
+    },
+    {
+      "name": "soc",
+      "description": "Self-Organized Criticality (SOC) models for market analysis.",
+      "category": "calculator",
+      "path": "backend/backend/calc/soc.py",
       "repo": "invest"
     },
     {
@@ -1855,6 +2065,20 @@
       "repo": "invest"
     },
     {
+      "name": "cross_domain_counter",
+      "description": "Cross-Domain Match Counter -- Count how many cross-domain facts match arithmetic targets of n.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/cross_domain_counter.py",
+      "repo": "invest"
+    },
+    {
+      "name": "crystallographic_calculator",
+      "description": "Crystallographic Calculator — Crystallographic restriction, Platonic solids, kissing numbers, point groups.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/crystallographic_calculator.py",
+      "repo": "invest"
+    },
+    {
       "name": "data_type_explorer",
       "description": "Data Type Explorer — Quickly test repulsion field with new data",
       "category": "calculator",
@@ -1901,6 +2125,13 @@
       "description": "Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/egyptian_fraction.py",
+      "repo": "invest"
+    },
+    {
+      "name": "equation_uniqueness_checker",
+      "description": "Equation Uniqueness Checker",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/equation_uniqueness_checker.py",
       "repo": "invest"
     },
     {
@@ -1981,6 +2212,13 @@
       "repo": "invest"
     },
     {
+      "name": "isco_calculator",
+      "description": "ISCO Calculator -- Innermost Stable Circular Orbit in General Relativity.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/isco_calculator.py",
+      "repo": "invest"
+    },
+    {
       "name": "lie_algebra_calculator",
       "description": "Exceptional Lie Algebra Calculator — Compute all invariants from n=6 arithmetic",
       "category": "calculator",
@@ -1992,6 +2230,13 @@
       "description": "Mitosis Simulator — Calculate optimal mutation/mitosis timing",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/mitosis_calculator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "paper_claim_verifier",
+      "description": "Paper Claim Verifier -- Batch verification of mathematical claims in paper documents.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/paper_claim_verifier.py",
       "repo": "invest"
     },
     {
@@ -2034,6 +2279,13 @@
       "description": "Unified Precognition System — Size+Direction+Topology Combined Precognition (H-CX-58+59+62)",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/precognition_system.py",
+      "repo": "invest"
+    },
+    {
+      "name": "prime_pair_verifier",
+      "description": "Prime Pair Verifier",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/prime_pair_verifier.py",
       "repo": "invest"
     },
     {
