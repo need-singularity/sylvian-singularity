@@ -446,6 +446,24 @@
         ],
         "description": "4 honest failures \u2192 perfectness is corollary. 6=2\u00d73=3!=1+2+3 is the real cause.",
         "category": "preprint"
+      },
+      {
+        "id": "P-MULTI-OBJECTIVE",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "Why Six? A Multi-Objective Optimality Theorem from Entropy Maximization",
+        "target_venue": "Nature Physics / PNAS",
+        "file": "../papers/tecs-l/P-MULTI-OBJECTIVE-optimality.md",
+        "keywords": [
+          "perfect-numbers",
+          "entropy",
+          "variational",
+          "genetic-code",
+          "consciousness",
+          "anthropic"
+        ],
+        "description": "Level 3: max H + min \u03c6(Gauss) + 6/6 criteria \u2192 n=6 uniquely. QM to genetic code in 7 steps.",
+        "category": "preprint"
       }
     ],
     "anima": [
