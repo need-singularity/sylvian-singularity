@@ -36,13 +36,20 @@ import time
 from collections import defaultdict
 from fractions import Fraction
 
+try:
+    import tecsrs
+    _HAS_TECSRS = True
+except ImportError:
+    _HAS_TECSRS = False
+
 
 # ═══════════════════════════════════════════════════════════════
 # Prime sieve
 # ═══════════════════════════════════════════════════════════════
 
 def sieve_primes(limit):
-    """Sieve of Eratosthenes up to limit. Returns sorted list of primes."""
+    """Sieve of Eratosthenes up to limit. Returns sorted list of primes.
+    Python bytearray sieve is already fast — kept as-is."""
     is_prime = bytearray(b'\x01') * (limit + 1)
     is_prime[0] = is_prime[1] = 0
     for i in range(2, int(limit**0.5) + 1):
@@ -50,6 +57,8 @@ def sieve_primes(limit):
             is_prime[i*i::i] = bytearray(len(is_prime[i*i::i]))
     return [i for i in range(2, limit + 1) if is_prime[i]]
 
+
+_sigma_cache = None
 
 def divisors(n):
     """Return sorted list of all divisors of n."""
@@ -63,7 +72,12 @@ def divisors(n):
 
 
 def sigma_func(n, k=1):
-    """Sum of k-th powers of divisors."""
+    """Sum of k-th powers of divisors. Uses tecsrs for k=1."""
+    global _sigma_cache
+    if k == 1 and _HAS_TECSRS:
+        if _sigma_cache is None or len(_sigma_cache) <= n:
+            _sigma_cache = tecsrs.sieve_sigma(max(n + 1, 10001))
+        return int(_sigma_cache[n])
     return sum(d**k for d in divisors(n))
 
 

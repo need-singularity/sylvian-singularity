@@ -29,6 +29,12 @@ from itertools import combinations
 
 import numpy as np
 
+try:
+    import tecsrs
+    _HAS_TECSRS = True
+except ImportError:
+    _HAS_TECSRS = False
+
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
 # Import DOMAINS from convergence_engine.py
@@ -240,23 +246,40 @@ def texas_sharpshooter(reach_counts, n_targets, n_domains=8, n_trials=10000, see
     """
     Monte Carlo test: if each domain produced random values, how often
     would we see the observed total reach count?
+    Uses tecsrs Rust acceleration when available.
 
     reach_counts: list of (target_name, observed_reach_count)
     """
-    rng = np.random.default_rng(seed)
     observed_total = sum(c for _, c in reach_counts)
+    target_vals = [v for _, v in sorted(STANDARD_TARGETS.items(), key=lambda x: x[1])]
 
-    # Count expressions per domain for sizing
+    if _HAS_TECSRS:
+        tolerances = [0.001] * len(target_vals)
+        result = tecsrs.texas_sharpshooter(
+            real_hits=observed_total,
+            targets=target_vals,
+            tolerances=tolerances,
+            n_constants=sum(len(generate_depth1(did)) for did in DOMAINS),
+            n_trials=n_trials,
+            seed=seed,
+        )
+        return {
+            "observed": observed_total,
+            "null_mean": result.random_mean,
+            "null_std": result.random_std,
+            "p_value": result.p_value,
+            "z_score": result.z_score,
+        }
+
+    # Python fallback
+    rng = np.random.default_rng(seed)
+
     domain_sizes = {}
     for did in DOMAINS:
         exprs = generate_depth1(did)
         domain_sizes[did] = len(exprs)
 
-    # Null model: each domain produces N random values in [0, 10],
-    # count how many "hit" among n_targets uniformly spaced targets
     null_totals = []
-    target_vals = [v for _, v in sorted(STANDARD_TARGETS.items(), key=lambda x: x[1])]
-
     for _ in range(n_trials):
         total = 0
         for did in DOMAINS:

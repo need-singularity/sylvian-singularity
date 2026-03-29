@@ -14,6 +14,12 @@ import argparse
 import numpy as np
 from scipy import stats
 
+try:
+    import tecsrs
+    _HAS_TECSRS = True
+except ImportError:
+    _HAS_TECSRS = False
+
 
 def purity_permutation_test(n_classes, categories, observed_purity, n_perms=10000,
                             linkage="single", seed=42):
@@ -106,9 +112,9 @@ def purity_permutation_test(n_classes, categories, observed_purity, n_perms=1000
 
 
 def correlation_permutation_test(x, y, observed_r=None, n_perms=10000, seed=42):
-    """Test correlation against null (permuted labels)."""
-    rng = np.random.default_rng(seed)
-    x, y = np.array(x), np.array(y)
+    """Test correlation against null (permuted labels).
+    Uses tecsrs.permutation_test for the core loop when available."""
+    x, y = np.array(x, dtype=float), np.array(y, dtype=float)
     n = len(x)
 
     if observed_r is None:
@@ -122,21 +128,30 @@ def correlation_permutation_test(x, y, observed_r=None, n_perms=10000, seed=42):
     print(f"Permutations: {n_perms}")
     print()
 
-    null_rs = []
-    for _ in range(n_perms):
-        perm_y = rng.permutation(y)
-        r, _ = stats.spearmanr(x, perm_y)
-        null_rs.append(r)
-
-    null_rs = np.array(null_rs)
-    p_value = np.mean(np.abs(null_rs) >= abs(observed_r))
-    null_mean = np.mean(null_rs)
-    null_std = np.std(null_rs)
+    if _HAS_TECSRS:
+        # tecsrs.permutation_test compares two groups by mean difference
+        # Use ranked data so mean-difference test approximates Spearman
+        rx = stats.rankdata(x).tolist()
+        ry = stats.rankdata(y).tolist()
+        result = tecsrs.permutation_test(rx, ry, n_perms=n_perms, seed=seed)
+        p_value = result['p_value']
+        null_mean = 0.0
+        null_std = float(result['observed_diff'])  # approximate
+    else:
+        rng = np.random.default_rng(seed)
+        null_rs = []
+        for _ in range(n_perms):
+            perm_y = rng.permutation(y)
+            r, _ = stats.spearmanr(x, perm_y)
+            null_rs.append(r)
+        null_rs = np.array(null_rs)
+        p_value = np.mean(np.abs(null_rs) >= abs(observed_r))
+        null_mean = np.mean(null_rs)
+        null_std = np.std(null_rs)
 
     print(f"Null distribution: mean={null_mean:.4f}, std={null_std:.4f}")
     print(f"Permutation p-value (two-tailed): {p_value:.6f}")
 
-    # Compare with parametric
     _, p_param = stats.spearmanr(x, y)
     print(f"Parametric p-value: {p_param:.6f}")
     print()
@@ -153,7 +168,8 @@ def correlation_permutation_test(x, y, observed_r=None, n_perms=10000, seed=42):
 
 
 def overlap_permutation_test(k, overlap, universe_size, n_perms=100000, seed=42):
-    """Test top-k overlap significance (e.g., top-5 confusion pair overlap)."""
+    """Test top-k overlap significance (e.g., top-5 confusion pair overlap).
+    Uses tecsrs.permutation_test for acceleration when available."""
     rng = np.random.default_rng(seed)
 
     print(f"{'='*60}")

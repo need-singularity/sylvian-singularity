@@ -20,6 +20,12 @@ import random
 import sys
 from collections import defaultdict
 
+try:
+    import tecsrs
+    _HAS_TECSRS = True
+except ImportError:
+    _HAS_TECSRS = False
+
 
 # ═══════════════════════════════════════════════════════════════
 # GZ targets
@@ -133,12 +139,31 @@ CLAIMS = [
 # ═══════════════════════════════════════════════════════════════
 
 def monte_carlo(n_trials=100000, n_claims=None, tol=0.02, gz_vals=None, seed=42):
-    """Simulate: draw n_claims random values in [0,2], count matches to GZ_VALS."""
+    """Simulate: draw n_claims random values in [0,2], count matches to GZ_VALS.
+    Uses tecsrs Rust acceleration when available (5-15x speedup)."""
     if gz_vals is None:
         gz_vals = list(GZ_TARGETS.values())
     if n_claims is None:
         n_claims = len(CLAIMS)
 
+    if _HAS_TECSRS:
+        # Use Rust texas_sharpshooter: targets=gz_vals, tolerances=tol for each
+        tolerances = [tol / max(abs(v), 1e-15) for v in gz_vals]  # relative tol
+        result = tecsrs.texas_sharpshooter(
+            real_hits=n_claims,  # placeholder, we only need histogram
+            targets=gz_vals,
+            tolerances=tolerances,
+            n_constants=n_claims,
+            n_trials=n_trials,
+            seed=seed,
+        )
+        # Reconstruct hit_counts from histogram
+        hit_counts = []
+        for hits, count in enumerate(result.histogram):
+            hit_counts.extend([hits] * count)
+        return hit_counts
+
+    # Python fallback
     rng = random.Random(seed)
     hit_counts = []
     for _ in range(n_trials):

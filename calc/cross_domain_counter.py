@@ -21,10 +21,29 @@ import random
 import sys
 from collections import Counter, defaultdict
 
+try:
+    import tecsrs
+    _HAS_TECSRS = True
+except ImportError:
+    _HAS_TECSRS = False
+
 
 # ═══════════════════════════════════════════════════════════════
 # Number-theoretic helpers
 # ═══════════════════════════════════════════════════════════════
+
+_sieve_cache = {}
+
+def _get_sieve(limit):
+    """Get or create sieve tables up to limit."""
+    if limit in _sieve_cache:
+        return _sieve_cache[limit]
+    if _HAS_TECSRS:
+        tables = tecsrs.SieveTables(limit)
+        _sieve_cache[limit] = tables
+        return tables
+    return None
+
 
 def divisors(n):
     d = []
@@ -37,14 +56,23 @@ def divisors(n):
 
 
 def sigma(n):
+    if _HAS_TECSRS:
+        tables = _get_sieve(max(n + 1, 10001))
+        return int(tables.sigma(n))
     return sum(divisors(n))
 
 
 def tau(n):
+    if _HAS_TECSRS:
+        tables = _get_sieve(max(n + 1, 10001))
+        return int(tables.tau(n))
     return len(divisors(n))
 
 
 def phi(n):
+    if _HAS_TECSRS:
+        tables = _get_sieve(max(n + 1, 10001))
+        return int(tables.phi(n))
     result = n
     p = 2
     temp = n

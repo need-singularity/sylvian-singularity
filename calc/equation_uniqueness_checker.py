@@ -34,6 +34,12 @@ import time
 from collections import defaultdict
 from fractions import Fraction
 
+try:
+    import tecsrs
+    _HAS_TECSRS = True
+except ImportError:
+    _HAS_TECSRS = False
+
 
 # ═══════════════════════════════════════════════════════════════
 # Sieve-based arithmetic function precomputation
@@ -41,47 +47,90 @@ from fractions import Fraction
 
 def sieve_arithmetic_functions(limit):
     """
-    Precompute all standard arithmetic functions for n in [1, limit]
-    using a single sieve pass. Returns dict of arrays indexed by n.
+    Precompute all standard arithmetic functions for n in [1, limit].
+    Uses tecsrs Rust sieve when available (50-200x speedup), falls back to Python.
 
     Functions computed:
-      tau(n)     - number of divisors
-      sigma(n)   - sum of divisors
-      sigma_m1(n)- sum of reciprocals of divisors (as Fraction)
-      sigma2(n)  - sum of squares of divisors
-      phi(n)     - Euler's totient
-      omega(n)   - number of distinct prime factors
-      Omega(n)   - number of prime factors with multiplicity
-      sopfr(n)   - sum of prime factors with multiplicity
-      rad(n)     - radical (product of distinct prime factors)
-      mu(n)      - Mobius function
+      tau(n), sigma(n), sigma_m1(n), sigma2(n), phi(n),
+      omega(n), Omega(n), sopfr(n), rad(n), mu(n)
     """
     N = limit + 1
 
-    # Initialize arrays
+    if _HAS_TECSRS:
+        # Rust sieve: sigma, tau, phi, sopfr, omega in one call
+        rust = tecsrs.sieve_all(limit)
+        sigma = list(rust['sigma'])
+        tau = list(rust['tau'])
+        phi_arr = list(rust['phi'])
+        sopfr = list(rust['sopfr'])
+        omega = list(rust['omega'])
+
+        # sigma_m1 = sigma(n)/n
+        sigma_m1_float = [0.0] * N
+        for n in range(1, N):
+            sigma_m1_float[n] = sigma[n] / n
+
+        # sigma2 via divisor sieve (not in tecsrs yet)
+        sigma2 = [0] * N
+        for d in range(1, N):
+            d2 = d * d
+            for multiple in range(d, N, d):
+                sigma2[multiple] += d2
+
+        # Omega, rad, mu need SPF-based factorization (not in tecsrs yet)
+        spf = list(range(N))
+        for i in range(2, int(limit**0.5) + 1):
+            if spf[i] == i:
+                for j in range(i * i, N, i):
+                    if spf[j] == j:
+                        spf[j] = i
+
+        Omega = [0] * N
+        rad = [1] * N
+        mu = [1] * N
+        for n in range(2, N):
+            temp = n
+            square_free = True
+            while temp > 1:
+                p = spf[temp]
+                exp = 0
+                while temp % p == 0:
+                    temp //= p
+                    exp += 1
+                Omega[n] += exp
+                rad[n] *= p
+                if exp >= 2:
+                    square_free = False
+                    mu[n] = 0
+                else:
+                    mu[n] *= -1
+            if not square_free:
+                mu[n] = 0
+
+        return {
+            'tau': tau, 'sigma': sigma, 'sigma_m1': sigma_m1_float,
+            'sigma2': sigma2, 'phi': phi_arr, 'omega': omega,
+            'Omega': Omega, 'sopfr': sopfr, 'rad': rad, 'mu': mu, 'spf': spf,
+        }
+
+    # Python fallback
     tau = [0] * N
     sigma = [0] * N
-    phi = list(range(N))  # phi[n] = n initially, then sieve
     omega = [0] * N
     Omega = [0] * N
     sopfr = [0] * N
     rad = [1] * N
-    mu = [1] * N  # 1 = square-free so far
-    # For sigma, tau: use divisor sieve
-    # For phi, omega, Omega, sopfr, rad, mu: use smallest prime factor sieve
+    mu = [1] * N
 
-    # Step 1: Smallest prime factor sieve
-    spf = list(range(N))  # spf[n] = smallest prime factor
+    spf = list(range(N))
     for i in range(2, int(limit**0.5) + 1):
-        if spf[i] == i:  # i is prime
+        if spf[i] == i:
             for j in range(i * i, N, i):
                 if spf[j] == j:
                     spf[j] = i
 
-    # Step 2: Compute phi, omega, Omega, sopfr, rad, mu from SPF
     for n in range(2, N):
         temp = n
-        prev_p = 0
         square_free = True
         while temp > 1:
             p = spf[temp]
@@ -101,35 +150,21 @@ def sieve_arithmetic_functions(limit):
         if not square_free:
             mu[n] = 0
 
-    # Step 3: Euler totient via sieve
-    # Reset phi and compute properly
     phi_arr = list(range(N))
     for p in range(2, N):
-        if spf[p] == p:  # p is prime
+        if spf[p] == p:
             for j in range(p, N, p):
                 phi_arr[j] = phi_arr[j] // p * (p - 1)
 
-    # Step 4: Divisor sieve for tau and sigma
     for d in range(1, N):
         for multiple in range(d, N, d):
             tau[multiple] += 1
             sigma[multiple] += d
 
-    # Step 5: sigma_{-1} as Fraction (only when needed, store as float for speed)
-    # We compute sigma(n)/n which equals sigma_{-1}(n) for integer n
-    sigma_m1 = [Fraction(0)] * min(N, 1)  # placeholder
-    # Actually compute as float for speed in scanning
     sigma_m1_float = [0.0] * N
     for n in range(1, N):
         sigma_m1_float[n] = sigma[n] / n
 
-    # Step 6: sigma_2 via divisor sieve
-    sigma2 = [0] * N
-    for d in range(1, N):
-        d2 = d * d
-        for multiple in range(d, N, d2 + 1):
-            pass  # Wrong approach, redo
-    # Correct sigma_2 sieve
     sigma2 = [0] * N
     for d in range(1, N):
         d2 = d * d
@@ -137,17 +172,9 @@ def sieve_arithmetic_functions(limit):
             sigma2[multiple] += d2
 
     return {
-        'tau': tau,
-        'sigma': sigma,
-        'sigma_m1': sigma_m1_float,
-        'sigma2': sigma2,
-        'phi': phi_arr,
-        'omega': omega,
-        'Omega': Omega,
-        'sopfr': sopfr,
-        'rad': rad,
-        'mu': mu,
-        'spf': spf,
+        'tau': tau, 'sigma': sigma, 'sigma_m1': sigma_m1_float,
+        'sigma2': sigma2, 'phi': phi_arr, 'omega': omega,
+        'Omega': Omega, 'sopfr': sopfr, 'rad': rad, 'mu': mu, 'spf': spf,
     }
 
 

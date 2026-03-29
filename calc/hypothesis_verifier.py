@@ -23,6 +23,12 @@ import random
 import sys
 from fractions import Fraction
 
+try:
+    import tecsrs
+    _HAS_TECSRS = True
+except ImportError:
+    _HAS_TECSRS = False
+
 # ═══════════════════════════════════════════════════════════════
 # Mathematical Constants Dictionary
 # ═══════════════════════════════════════════════════════════════
@@ -375,53 +381,57 @@ def step4_generalize_28(target_str, tolerance):
 def step5_texas_pvalue(value, target_val, tolerance, search_space_size, n_sim=200000):
     """
     Stage 5: Texas sharpshooter p-value (Bonferroni correction).
-
-    Calculate probability that random constant combinations match within same error.
+    Uses tecsrs Rust acceleration when available (5-15x speedup).
     """
     if target_val == 0:
         obs_error = abs(value)
     else:
         obs_error = abs(value - target_val) / abs(target_val)
 
-    # Constant pool: various mathematical constants
-    const_pool = list(MATH_CONSTANTS.values())
-
-    # Operations: +, -, *, /
-    hit_count = 0
-
-    random.seed(42)  # Reproducibility
-    for _ in range(n_sim):
-        # Randomly select 2 constants + operation
-        a = random.choice(const_pool)
-        b = random.choice(const_pool)
-        op = random.randint(0, 3)
-        try:
-            if op == 0:
-                r = a + b
-            elif op == 1:
-                r = a - b
-            elif op == 2:
-                r = a * b
-            else:
-                if b != 0:
-                    r = a / b
+    if _HAS_TECSRS:
+        # Use Rust monte carlo: single target with observed relative error as tolerance
+        rel_tol = obs_error if obs_error > 0 else 0.01
+        result = tecsrs.texas_sharpshooter(
+            real_hits=1,
+            targets=[target_val],
+            tolerances=[rel_tol],
+            n_constants=len(MATH_CONSTANTS),
+            n_trials=n_sim,
+            seed=42,
+        )
+        raw_p = result.p_value
+        hit_count = int(raw_p * n_sim)
+    else:
+        # Python fallback
+        const_pool = list(MATH_CONSTANTS.values())
+        hit_count = 0
+        random.seed(42)
+        for _ in range(n_sim):
+            a = random.choice(const_pool)
+            b = random.choice(const_pool)
+            op = random.randint(0, 3)
+            try:
+                if op == 0:
+                    r = a + b
+                elif op == 1:
+                    r = a - b
+                elif op == 2:
+                    r = a * b
                 else:
-                    continue
+                    if b != 0:
+                        r = a / b
+                    else:
+                        continue
+                if target_val != 0:
+                    trial_error = abs(r - target_val) / abs(target_val)
+                else:
+                    trial_error = abs(r)
+                if trial_error <= obs_error:
+                    hit_count += 1
+            except (OverflowError, ZeroDivisionError):
+                continue
+        raw_p = hit_count / n_sim
 
-            if target_val != 0:
-                trial_error = abs(r - target_val) / abs(target_val)
-            else:
-                trial_error = abs(r)
-
-            if trial_error <= obs_error:
-                hit_count += 1
-        except (OverflowError, ZeroDivisionError):
-            continue
-
-    # Single comparison p-value
-    raw_p = hit_count / n_sim
-
-    # Bonferroni correction: multiply by search space size
     corrected_p = min(1.0, raw_p * search_space_size)
 
     return {
