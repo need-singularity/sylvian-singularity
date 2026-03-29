@@ -318,6 +318,24 @@
         "category": "preprint"
       },
       {
+        "id": "P-LAW79",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "The Consciousness Freedom Degree Theorem: Why ln(2) is the Fundamental Quantum",
+        "target_venue": "PNAS / Neuroscience of Consciousness",
+        "file": "../papers/tecs-l/P-LAW79-consciousness-freedom-degree.md",
+        "keywords": [
+          "consciousness",
+          "entropy",
+          "ln2",
+          "information-theory",
+          "Landauer",
+          "PSI-constants"
+        ],
+        "description": "Law 79: H(1/2)=ln(2) proven. 3-level correspondence. 5-architecture cross-validation. Zero free parameters.",
+        "category": "preprint"
+      },
+      {
         "id": "P-FACTORIAL",
         "tier": 1,
         "repo": "tecs-l",
