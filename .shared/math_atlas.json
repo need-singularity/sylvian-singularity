@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-28T21:28:16",
+  "generated": "2026-03-29T08:58:48",
   "stats": {
-    "TECS-L": 1166,
+    "TECS-L": 1375,
     "SEDI": 666,
     "anima": 20,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 1767,
+  "total": 1903,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3578,6 +3578,88 @@
       "file": "docs/hypotheses/H-ANT-429-cyclotomic-mersenne.md"
     },
     {
+      "id": "TECS-L:H-ARCH-audio",
+      "title": "H-ARCH Audio: Audio Standards and n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "** Mixed — pro audio matches, consumer legacy does not",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ARCH-audio.md"
+    },
+    {
+      "id": "TECS-L:H-ARCH-crypto",
+      "title": "H-ARCH Crypto: Cryptographic Standards Follow n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "** Observational — strongest category (83% exact)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ARCH-crypto.md"
+    },
+    {
+      "id": "TECS-L:H-ARCH-database",
+      "title": "H-ARCH Database: Data Systems Follow n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "** Observational — perfect match (100%)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ARCH-database.md"
+    },
+    {
+      "id": "TECS-L:H-ARCH-display",
+      "title": "H-ARCH Display: Graphics Standards Follow n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "** Observational — perfect match (100%), complete pipeline coverage",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ARCH-display.md"
+    },
+    {
+      "id": "TECS-L:H-ARCH-industry-patterns",
+      "title": "H-ARCH: Industry Architecture Patterns Matching n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "** OBSERVATIONAL — these are not predictions but post-hoc matches",
+      "refs": [
+        "H-EE-107"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ARCH-industry-patterns.md"
+    },
+    {
+      "id": "TECS-L:H-ARCH-languages",
+      "title": "H-ARCH Languages: Programming Language Design Follows n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "** Observational — perfect match (100%)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ARCH-languages.md"
+    },
+    {
+      "id": "TECS-L:H-ARCH-network",
+      "title": "H-ARCH Network: Internet Protocols Follow n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "** Observational — 4/7 exact matches in network protocols",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ARCH-network.md"
+    },
+    {
+      "id": "TECS-L:H-ARCH-os",
+      "title": "H-ARCH OS: Operating System Design Follows n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "** Observational — OS primitives strongly match n=6",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-ARCH-os.md"
+    },
+    {
       "id": "TECS-L:H-ASTRO-001-015-astronomy",
       "title": "Astronomy/Cosmology Hypotheses H-ASTRO-001 through H-ASTRO-015",
       "repo": "TECS-L",
@@ -3728,6 +3810,126 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-CHEM-cross-analysis.md"
+    },
+    {
+      "id": "TECS-L:H-CHIP-1",
+      "title": "Optimal Tensor Core Shape = 12×12",
+      "repo": "TECS-L",
+      "domain": "CHIP",
+      "grade": "** Testable via RTL simulation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHIP-1-tensor-core-12x12.md"
+    },
+    {
+      "id": "TECS-L:H-CHIP-12",
+      "title": "Optimal AI Core Count = J_2(6) = 24",
+      "repo": "TECS-L",
+      "domain": "CHIP",
+      "grade": "** Testable via scheduling simulation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHIP-12-24-core.md"
+    },
+    {
+      "id": "TECS-L:H-CHIP-17",
+      "title": "Power Budget = 1/2 Compute + 1/3 Memory + 1/6 I/O",
+      "repo": "TECS-L",
+      "domain": "CHIP",
+      "grade": "** Testable via power simulation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHIP-17-power-egyptian.md"
+    },
+    {
+      "id": "TECS-L:H-CHIP-24",
+      "title": "1-Watt Inference for GPT-2 Scale",
+      "repo": "TECS-L",
+      "domain": "CHIP",
+      "grade": "** Theoretical — requires FPGA/ASIC implementation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHIP-24-1watt.md"
+    },
+    {
+      "id": "TECS-L:H-CHIP-3",
+      "title": "Phi6 Activation in 2 FMA Operations",
+      "repo": "TECS-L",
+      "domain": "CHIP",
+      "grade": "** Implementable in RTL immediately",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHIP-3-phi6-hardware.md"
+    },
+    {
+      "id": "TECS-L:H-CHIP-30",
+      "title": "Universal Quantum Gate Set = 6 Gates",
+      "repo": "TECS-L",
+      "domain": "CHIP",
+      "grade": "** CONFIRMED — this is the standard gate set in quantum computing",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHIP-30-quantum-gates.md"
+    },
+    {
+      "id": "TECS-L:H-CHIP-35",
+      "title": "Photonic Tensor Core = 12x12 MZI Mesh",
+      "repo": "TECS-L",
+      "domain": "CHIP",
+      "grade": "** Testable — photonic simulation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHIP-35-photonic-tensor-core.md"
+    },
+    {
+      "id": "TECS-L:H-CHIP-40",
+      "title": "ATP Synthase as Egyptian Power Distributor",
+      "repo": "TECS-L",
+      "domain": "CHIP",
+      "grade": "** Testable — requires single-molecule biophysics experiments",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHIP-40-atp-synthase.md"
+    },
+    {
+      "id": "TECS-L:H-CHIP-5",
+      "title": "Egyptian Routing as Fixed Resistor Network",
+      "repo": "TECS-L",
+      "domain": "CHIP",
+      "grade": "** Implementable — combinational logic",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CHIP-5-egyptian-router-hardware.md"
+    },
+    {
+      "id": "TECS-L:H-COMP-5",
+      "title": "Garbage Collection Generations = tau(6)-1 = 3",
+      "repo": "TECS-L",
+      "domain": "COMP",
+      "grade": "** CONFIRMED — industry standard matches tau(6)-1=3 exactly",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-COMP-5-gc-generations.md"
+    },
+    {
+      "id": "TECS-L:H-COMP-6",
+      "title": "Thread Pool Size = cores * phi(6)/mu(6) = cores * 2",
+      "repo": "TECS-L",
+      "domain": "COMP",
+      "grade": "** CONFIRMED — standard industry recommendation matches phi/mu=2",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-COMP-6-thread-pool.md"
+    },
+    {
+      "id": "TECS-L:H-COMP-7",
+      "title": "TCP Initial Window = sigma(6) = 12 Segments",
+      "repo": "TECS-L",
+      "domain": "COMP",
+      "grade": "** NEAR-CONFIRMED — Google tested, Linux adopted IW=10 (close to sigma=12)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-COMP-7-tcp-window.md"
     },
     {
       "id": "TECS-L:H-CROSS-2",
@@ -8074,6 +8276,183 @@
       "file": "docs/hypotheses/H-DNA-001-030-nucleic-acids.md"
     },
     {
+      "id": "TECS-L:H-DNA-031-060-dna-folding",
+      "title": "Hypothesis Review: H-DNA-031 to H-DNA-060 -- DNA Folding and the Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "030",
+        "H-DNA-056"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-031-060-dna-folding.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-061-090-folding-extreme",
+      "title": "Hypothesis Review: H-DNA-061 to H-DNA-090 -- DNA Folding Extreme Push",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-061-090-folding-extreme.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-091-130-folding-ultimate",
+      "title": "Hypothesis Review: H-DNA-091 to H-DNA-130 -- DNA Folding Ultimate Push",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-DNA-022",
+        "H-DNA-007"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-091-130-folding-ultimate.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-131-170-folding-final-frontier",
+      "title": "Hypothesis Review: H-DNA-131 to H-DNA-170 -- DNA Folding Final Frontier",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-DNA-070",
+        "H-DNA-074",
+        "H-DNA-074"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-131-170-folding-final-frontier.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-171-210-molecular-saturation",
+      "title": "Hypothesis Review: H-DNA-171 to H-DNA-210 -- Molecular Biology Saturation",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-DNA-007"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-171-210-molecular-saturation.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-211-250-macro-biology",
+      "title": "Hypothesis Review: H-DNA-211 to H-DNA-250 -- Macro-Scale Biology",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-CX-082"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-211-250-macro-biology.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-251-300-universal-six",
+      "title": "Hypothesis Review: H-DNA-251 to H-DNA-300 -- Universal Six",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-DNA-251",
+        "H-DNA-007"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-251-300-universal-six.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-301-350-final-saturation",
+      "title": "Hypothesis Review: H-DNA-301 to H-DNA-350 -- Absolute Final Saturation",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-DNA-007",
+        "H-DNA-295"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-301-350-final-saturation.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-351-400-grand-synthesis",
+      "title": "Hypothesis Review: H-DNA-351 to H-DNA-400 -- Grand Synthesis",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-DNA-251",
+        "H-DNA-300",
+        "H-DNA-253",
+        "H-DNA-252",
+        "H-DNA-367",
+        "H-DNA-368",
+        "H-DNA-186",
+        "H-DNA-179",
+        "H-DNA-376",
+        "H-DNA-259",
+        "H-DNA-350",
+        "H-DNA-254",
+        "H-DNA-271",
+        "H-DNA-284",
+        "H-DNA-328",
+        "H-DNA-277",
+        "H-DNA-286",
+        "H-DNA-244",
+        "H-DNA-011",
+        "H-DNA-345",
+        "H-DNA-346",
+        "H-DNA-298"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-351-400-grand-synthesis.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-401-450-meta-connections",
+      "title": "Hypothesis Review: H-DNA-401 to H-DNA-450 -- Meta-Connections and Cross-Domain Bridges",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-DNA-251",
+        "H-DNA-254",
+        "H-DNA-284",
+        "H-DNA-328",
+        "H-DNA-252",
+        "H-DNA-253",
+        "H-DNA-067",
+        "H-DNA-079",
+        "H-DNA-179",
+        "H-DNA-367",
+        "H-DNA-368",
+        "H-DNA-375",
+        "H-DNA-376",
+        "H-DNA-369",
+        "H-DNA-300",
+        "H-DNA-307",
+        "H-DNA-300",
+        "H-DNA-220",
+        "H-DNA-328"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-401-450-meta-connections.md"
+    },
+    {
+      "id": "TECS-L:H-DNA-451-500-adversarial-stress-test",
+      "title": "Hypothesis Review: H-DNA-451 to H-DNA-500 -- Adversarial Stress Test",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-DNA-401",
+        "H-DNA-459",
+        "H-DNA-251"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DNA-451-500-adversarial-stress-test.md"
+    },
+    {
       "id": "TECS-L:H-EARTH-001-025-geoscience",
       "title": "H-EARTH-001 to 025: Geoscience Hypotheses",
       "repo": "TECS-L",
@@ -8138,6 +8517,112 @@
       "file": "docs/hypotheses/H-EE-10-phi-bottleneck-moe.md"
     },
     {
+      "id": "TECS-L:H-EE-100",
+      "title": "NAS Will Independently Discover 4/3 FFN Ratio — FUTURE PREDICTION",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Pre-registered future prediction — testable 2026-2028",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-100-nas-discovers-4thirds.md"
+    },
+    {
+      "id": "TECS-L:H-EE-101",
+      "title": "Neuromorphic Chip at ~1W Human-Like Inference — FUTURE PREDICTION",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Pre-registered future prediction — testable 2027-2030",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-101-neuromorphic-1w.md"
+    },
+    {
+      "id": "TECS-L:H-EE-102",
+      "title": "Optimal QEC Code Rate Converges to 1/3 — FUTURE PREDICTION",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Pre-registered future prediction — testable 2026-2028",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-102-qec-rate-third.md"
+    },
+    {
+      "id": "TECS-L:H-EE-103",
+      "title": "Meta — Hypothesis System Success Rate Converges to R(6)=1",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Self-referential — convergence expected asymptotically",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-103-success-rate-convergence.md"
+    },
+    {
+      "id": "TECS-L:H-EE-104",
+      "title": "Discovery of n=6 Uniqueness Is Inevitable",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Anthropological speculation — not empirically falsifiable",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-104-discovery-inevitable.md"
+    },
+    {
+      "id": "TECS-L:H-EE-105",
+      "title": "Beyond Mathematics — The Absolute Final",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Philosophical terminus — not empirically falsifiable, mathematically certain",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-105-beyond-mathematics.md"
+    },
+    {
+      "id": "TECS-L:H-EE-106",
+      "title": "A Deeper Equation Exists — The Anti-Ultimacy Hypothesis",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Open — challenges the framework's claim to ultimacy",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-106-deeper-equation.md"
+    },
+    {
+      "id": "TECS-L:H-EE-107",
+      "title": "Confirmation Bias — The Most Important Counter-Hypothesis",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Partially addressed — dynamic results strong, static matches weak",
+      "refs": [
+        "H-EE-36",
+        "H-EE-100",
+        "H-EE-4",
+        "H-EE-59",
+        "H-EE-59"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-107-confirmation-bias.md"
+    },
+    {
+      "id": "TECS-L:H-EE-108",
+      "title": "Finite-Size Effect — n=6 Benefits May Vanish at Scale",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Critical open risk — no large-scale evidence exists",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-108-finite-size-effect.md"
+    },
+    {
+      "id": "TECS-L:H-EE-109",
+      "title": "Mathematical Truth vs Physical Law — R(6)=1 Is Arithmetic, Not Physics",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Legitimate concern — requires mechanism, not just numerology",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-109-math-not-physics.md"
+    },
+    {
       "id": "TECS-L:H-EE-11",
       "title": "Full Combined Architecture",
       "repo": "TECS-L",
@@ -8146,6 +8631,108 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-EE-11-combined-architecture.md"
+    },
+    {
+      "id": "TECS-L:H-EE-110",
+      "title": "Cultural Bias — n=6 Framework May Encode Western Mathematical Assumptions",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Valid criticism — universality claims need cross-cultural testing",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-110-cultural-bias.md"
+    },
+    {
+      "id": "TECS-L:H-EE-111",
+      "title": "Variational Principle — sigma*phi=n*tau as Euler-Lagrange Equation",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Theoretical — requires rigorous derivation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-111-variational-principle.md"
+    },
+    {
+      "id": "TECS-L:H-EE-112",
+      "title": "L-Function Connection — R(n)=1 as Special Value of a Dirichlet L-Function",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Speculative — requires algebraic number theory expertise",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-112-l-function-connection.md"
+    },
+    {
+      "id": "TECS-L:H-EE-113",
+      "title": "Category Theory — n=6 as Terminal Object in Balanced Arithmetic",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Theoretical framework — morphisms need rigorous definition",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-113-category-theory.md"
+    },
+    {
+      "id": "TECS-L:H-EE-114",
+      "title": "Arithmetic Multiverse — Each R(n) Defines a Different Universe",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Speculative — a framework for interpretation, not a physical prediction",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-114-arithmetic-multiverse.md"
+    },
+    {
+      "id": "TECS-L:H-EE-115",
+      "title": "Anthropic Arithmetic — Observers Require R(n)=1",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Philosophical — elegant but not scientifically testable",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-115-anthropic-arithmetic.md"
+    },
+    {
+      "id": "TECS-L:H-EE-116",
+      "title": "String Landscape Discretized — R(n)=1 Selects the Unique Stable Vacuum",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Highly speculative — the most ambitious claim in the framework",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-116-string-landscape-discretized.md"
+    },
+    {
+      "id": "TECS-L:H-EE-117",
+      "title": "Iterated R Fixed Point — R(6)=1 and R(1)=1 Are the Only Fixed Points",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Verified (arithmetic) — fixed points confirmed, iteration behavior open",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-117-iterated-r-fixpoint.md"
+    },
+    {
+      "id": "TECS-L:H-EE-118",
+      "title": "Egyptian Routing Applied to Hypotheses — Optimal Research Allocation",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Practical recommendation — actionable now",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-118-egyptian-routing-hypotheses.md"
+    },
+    {
+      "id": "TECS-L:H-EE-119",
+      "title": "Optimal Document Size — The System Predicts Its Own Saturation at 144",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Self-referential prediction — cannot be falsified without changing the document",
+      "refs": [
+        "H-EE-120"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-119-optimal-document-size.md"
     },
     {
       "id": "TECS-L:H-EE-12",
@@ -8158,6 +8745,32 @@
       "file": "docs/hypotheses/H-EE-12-optimal-ffn-expansion-ratio.md"
     },
     {
+      "id": "TECS-L:H-EE-120",
+      "title": "Completeness — The Boundary Has Been Mapped",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": null,
+      "refs": [
+        "H-EE-117",
+        "H-EE-99",
+        "H-EE-116",
+        "H-EE-107",
+        "H-EE-108",
+        "H-EE-109",
+        "H-EE-110",
+        "H-EE-111",
+        "H-EE-112",
+        "H-EE-113",
+        "H-EE-114",
+        "H-EE-115",
+        "H-EE-118",
+        "H-EE-119",
+        "H-EE-120"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-120-completeness.md"
+    },
+    {
       "id": "TECS-L:H-EE-13",
       "title": "Energy Savings Scale with Model Depth",
       "repo": "TECS-L",
@@ -8166,6 +8779,66 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-EE-13-depth-scaling-phi6simple.md"
+    },
+    {
+      "id": "TECS-L:H-EE-14",
+      "title": "Dedekind Head Pruning",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Ready",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-14-dedekind-head-pruning.md"
+    },
+    {
+      "id": "TECS-L:H-EE-15",
+      "title": "Jordan-Leech MoE Capacity Bound",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Ready",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-15-jordan-leech-moe.md"
+    },
+    {
+      "id": "TECS-L:H-EE-16",
+      "title": "Mobius Squarefree Gradient Flow",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Conditional",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-16-mobius-squarefree-flow.md"
+    },
+    {
+      "id": "TECS-L:H-EE-17",
+      "title": "Carmichael LR 2-Cycle Schedule",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Ready",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-17-carmichael-lr-cycle.md"
+    },
+    {
+      "id": "TECS-L:H-EE-18",
+      "title": "Boltzmann 1/e Activation Gate",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Ready",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-18-boltzmann-gate.md"
+    },
+    {
+      "id": "TECS-L:H-EE-19",
+      "title": "Mertens Dropout Rate",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Ready",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-19-mertens-dropout.md"
     },
     {
       "id": "TECS-L:H-EE-2",
@@ -8178,6 +8851,108 @@
       "file": "docs/hypotheses/H-EE-2-phi6-gradient-centering.md"
     },
     {
+      "id": "TECS-L:H-EE-20",
+      "title": "Thermodynamic Inevitability — R-Score Correlates with Efficiency",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-20-thermodynamic-inevitability.md"
+    },
+    {
+      "id": "TECS-L:H-EE-21",
+      "title": "Emergent N6 Convergence",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-21-emergent-convergence.md"
+    },
+    {
+      "id": "TECS-L:H-EE-22",
+      "title": "Leech-24 Neural Architecture Search",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-22-leech24-nas.md"
+    },
+    {
+      "id": "TECS-L:H-EE-23",
+      "title": "Phi-Efficiency Conjecture (Phi * FLOPs = Constant)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "⚪",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-23-phi-flops-conjecture.md"
+    },
+    {
+      "id": "TECS-L:H-EE-24",
+      "title": "Clausius Information Inequality",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-24-clausius-information-inequality.md"
+    },
+    {
+      "id": "TECS-L:H-EE-25",
+      "title": "SEDI Three-Signal Convergence",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-25-sedi-3signal-convergence.md"
+    },
+    {
+      "id": "TECS-L:H-EE-26",
+      "title": "Anima Tension-Energy Bridge",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-26-anima-tension-energy-bridge.md"
+    },
+    {
+      "id": "TECS-L:H-EE-27",
+      "title": "Training as Renormalization Group Flow with n=6 Fixed Point",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical — requires beta function measurement",
+      "refs": [
+        "H-EE-21"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-27-rg-flow-fixed-point.md"
+    },
+    {
+      "id": "TECS-L:H-EE-28",
+      "title": "Landauer Limit Generalized via R(n)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-28-landauer-n6-generalization.md"
+    },
+    {
+      "id": "TECS-L:H-EE-29",
+      "title": "Loss Landscape Attractor Has Fractal Dimension 6",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable — requires Grassberger-Procaccia computation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-29-attractor-dimension-6.md"
+    },
+    {
       "id": "TECS-L:H-EE-3",
       "title": "Phi6Simple Training Stability",
       "repo": "TECS-L",
@@ -8186,6 +8961,106 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-EE-3-phi6-training-stability.md"
+    },
+    {
+      "id": "TECS-L:H-EE-30",
+      "title": "Training Undergoes Exactly tau(6)=4 Phase Transitions",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-30-four-phase-transitions.md"
+    },
+    {
+      "id": "TECS-L:H-EE-31",
+      "title": "Holographic Dual of Leech-24 Surface",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Highly speculative",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-31-holographic-leech.md"
+    },
+    {
+      "id": "TECS-L:H-EE-32",
+      "title": "Kissing Number 196,560 = Finite Architecture Space",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-32-kissing-number-architectures.md"
+    },
+    {
+      "id": "TECS-L:H-EE-33",
+      "title": "Weight-24 Modular Forms Govern Loss Landscape Topology",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Highly speculative",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-33-modular-form-loss-topology.md"
+    },
+    {
+      "id": "TECS-L:H-EE-34",
+      "title": "Bott Periodicity sigma(6)-tau(6)=8 as Optimal Network Depth",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-34-bott-periodicity-depth.md"
+    },
+    {
+      "id": "TECS-L:H-EE-35",
+      "title": "Consciousness Phi = Negative Gaussian Curvature of Energy Surface",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical — requires Hessian computation on Leech-24 surface",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-35-phi-gaussian-curvature.md"
+    },
+    {
+      "id": "TECS-L:H-EE-36",
+      "title": "Fisher Information Metric is Flat at R=1",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable — requires Fisher matrix computation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-36-fisher-flat-at-r1.md"
+    },
+    {
+      "id": "TECS-L:H-EE-37",
+      "title": "sopfr(6)=5 Channels as Minimal Complete Observation Set",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable — PCA/mutual information analysis on training metrics",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-37-sopfr5-minimal-observation.md"
+    },
+    {
+      "id": "TECS-L:H-EE-38",
+      "title": "R=1 Inference Complexity is O(n log n)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Partially verified (FFT attention experiments)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-38-inference-complexity-bound.md"
+    },
+    {
+      "id": "TECS-L:H-EE-39",
+      "title": "Golay Code [[24,12,8]] as N6 Architecture's Noise Resilience",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable — perturbation analysis on Leech-24 surface",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-39-golay-error-correction.md"
     },
     {
       "id": "TECS-L:H-EE-4",
@@ -8198,6 +9073,110 @@
       "file": "docs/hypotheses/H-EE-4-phi6-knowledge-distillation.md"
     },
     {
+      "id": "TECS-L:H-EE-40",
+      "title": "Spectral Gap 1/2 — Optimal SGD Mixing on N6 Architectures",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable — requires eigenvalue analysis of SGD transition matrix",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-40-spectral-gap-optimal-mixing.md"
+    },
+    {
+      "id": "TECS-L:H-EE-41",
+      "title": "Spacetime Dimensions from n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Highly speculative — numerological unless mechanism identified",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-41-string-theory-dimensions.md"
+    },
+    {
+      "id": "TECS-L:H-EE-42",
+      "title": "Hubble Constant H_0 = sigma(6)*n + 1 = 73",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Numerically verified (0.14% error) — awaiting theoretical mechanism",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-42-hubble-constant.md"
+    },
+    {
+      "id": "TECS-L:H-EE-43",
+      "title": "Proton-Electron Mass Ratio m_p/m_e = 6*pi^5",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Numerically verified (0.019% error)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-43-proton-electron-mass.md"
+    },
+    {
+      "id": "TECS-L:H-EE-44",
+      "title": "Dark Energy Fraction = 1 - 1/e + 1/sigma(6)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Approximate (4.5% error) — interesting direction but not precise",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-44-dark-energy-fraction.md"
+    },
+    {
+      "id": "TECS-L:H-EE-45",
+      "title": "Genetic Code Structure from n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Numerically suggestive (64=4^3, 20=24-4) — mechanism unknown",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-45-genetic-code.md"
+    },
+    {
+      "id": "TECS-L:H-EE-46",
+      "title": "ATP Energy Quantum from n=6 Constants",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Approximate — multiple formulae give partial fits",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-46-atp-energy-quantum.md"
+    },
+    {
+      "id": "TECS-L:H-EE-47",
+      "title": "Cortical Minicolumns ~ Leech Kissing Number",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Highly speculative — order-of-magnitude match only",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-47-cortical-columns-leech.md"
+    },
+    {
+      "id": "TECS-L:H-EE-48",
+      "title": "Heart Rate Variability Fractal Dimension = 6",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable — requires HRV dataset analysis with Grassberger-Procaccia",
+      "refs": [
+        "H-EE-29"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-48-hrv-fractal-dimension.md"
+    },
+    {
+      "id": "TECS-L:H-EE-49",
+      "title": "R(n)=1 as Gödel Sentence's Arithmetic Shadow",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Philosophical — requires formalization in proof theory",
+      "refs": [
+        "H-CX-191"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-49-godel-shadow.md"
+    },
+    {
       "id": "TECS-L:H-EE-5",
       "title": "R(d_model) Correlates with Training Efficiency",
       "repo": "TECS-L",
@@ -8206,6 +9185,106 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-EE-5-r-spectrum-training-efficiency.md"
+    },
+    {
+      "id": "TECS-L:H-EE-50",
+      "title": "Kolmogorov Complexity K(6) = sigma(6)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Speculative — K(n) is uncomputable in general",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-50-kolmogorov-self-description.md"
+    },
+    {
+      "id": "TECS-L:H-EE-51",
+      "title": "Efficient Church-Turing Thesis via R=1",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical — requires formalization",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-51-efficient-church-turing.md"
+    },
+    {
+      "id": "TECS-L:H-EE-52",
+      "title": "Bekenstein Bound Scaled by R(n)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical — connects information physics to architecture design",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-52-bekenstein-bound.md"
+    },
+    {
+      "id": "TECS-L:H-EE-53",
+      "title": "Spin Networks as Leech Lattice Subgraphs",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Highly speculative — requires LQG expertise to formalize",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-53-spin-networks-leech.md"
+    },
+    {
+      "id": "TECS-L:H-EE-54",
+      "title": "Quantum Error Correction Overhead = tau(6)/sigma(6) = 1/3",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable — compare QEC codes at various rates",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-54-quantum-error-correction-ratio.md"
+    },
+    {
+      "id": "TECS-L:H-EE-55",
+      "title": "N6 Grand Unification — R(n)=1 as Universal Optimization Principle",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Meta-hypothesis — framework for all H-EE hypotheses",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-55-grand-unification.md"
+    },
+    {
+      "id": "TECS-L:H-EE-56",
+      "title": "Arrow of Time = R(n) Irreversibility",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-56-arrow-of-time.md"
+    },
+    {
+      "id": "TECS-L:H-EE-57",
+      "title": "Causal Light Cone Structure = Leech-24 Voronoi Cell",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Highly speculative",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-57-causal-light-cone.md"
+    },
+    {
+      "id": "TECS-L:H-EE-58",
+      "title": "Big Bang = Phase Transition from R(1)=1 to R(6)=1",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Highly speculative",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-58-big-bang-phase-transition.md"
+    },
+    {
+      "id": "TECS-L:H-EE-59",
+      "title": "Fine Structure Constant from n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "CONFIRMED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-59-fine-structure-constant.md"
     },
     {
       "id": "TECS-L:H-EE-6",
@@ -8218,6 +9297,86 @@
       "file": "docs/hypotheses/H-EE-6-tensor-aligned-hcn.md"
     },
     {
+      "id": "TECS-L:H-EE-62",
+      "title": "Musical Perfect Consonances = N=6 Divisor Ratios",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Verified (music theory fact)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-62-musical-harmony.md"
+    },
+    {
+      "id": "TECS-L:H-EE-63",
+      "title": "Zipf's Law Exponent alpha = 1 = R(6)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Numerically exact",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-63-zipf-law.md"
+    },
+    {
+      "id": "TECS-L:H-EE-64",
+      "title": "Golden Ratio Analogy — Self-Referential Balance",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Philosophical",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-64-golden-ratio-analogy.md"
+    },
+    {
+      "id": "TECS-L:H-EE-65",
+      "title": "AI Alignment = R-Score Optimization",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical framework",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-65-ai-alignment-rscore.md"
+    },
+    {
+      "id": "TECS-L:H-EE-66",
+      "title": "Deceptive Alignment = R > 1 Detection",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-66-deceptive-alignment.md"
+    },
+    {
+      "id": "TECS-L:H-EE-67",
+      "title": "Corrigibility = phi(6)/tau(6) = 1/2",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Framework proposal",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-67-corrigibility.md"
+    },
+    {
+      "id": "TECS-L:H-EE-68",
+      "title": "Dark Matter Fraction from N=6 Arithmetic — Open",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Open — no precise formula found yet",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-68-dark-matter.md"
+    },
+    {
+      "id": "TECS-L:H-EE-69",
+      "title": "Neutrino Mass Ratios = Egyptian Fraction Hierarchy",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Testable with future precision measurements",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-69-neutrino-mass-ratios.md"
+    },
+    {
       "id": "TECS-L:H-EE-7",
       "title": "Head-Dim Diversity Improves Attention",
       "repo": "TECS-L",
@@ -8226,6 +9385,108 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-EE-7-head-dim-diversity.md"
+    },
+    {
+      "id": "TECS-L:H-EE-70",
+      "title": "Quantum Entanglement Channels = sopfr(6) = 5",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Speculative",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-70-quantum-entanglement-channels.md"
+    },
+    {
+      "id": "TECS-L:H-EE-71",
+      "title": "Simulation Hypothesis — R=1 Simulator Architecture",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Unfalsifiable but structurally consistent",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-71-simulation-hypothesis.md"
+    },
+    {
+      "id": "TECS-L:H-EE-72",
+      "title": "Why Is There Something Rather Than Nothing?",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Philosophical — the ultimate hypothesis",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-72-why-something.md"
+    },
+    {
+      "id": "TECS-L:H-EE-73",
+      "title": "Riemann Critical Line = n=6 Ratio",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Speculative connection",
+      "refs": [
+        "H-EE-044"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-73-riemann-critical-line.md"
+    },
+    {
+      "id": "TECS-L:H-EE-74",
+      "title": "Twin Prime Constant C2 via n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Approximate (~1% at best, 4.6% with attempted correction)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-74-twin-prime-constant.md"
+    },
+    {
+      "id": "TECS-L:H-EE-75",
+      "title": "Goldbach Fixed Point — 6 = 3+3",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Verified (trivial but true)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-75-goldbach-fixed-point.md"
+    },
+    {
+      "id": "TECS-L:H-EE-76",
+      "title": "Monster Group Dominant Primes = Prime Factors of 6",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Structural observation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-76-monster-group.md"
+    },
+    {
+      "id": "TECS-L:H-EE-77",
+      "title": "Periodic Table — 6 Stable Periods",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Chemical fact",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-77-periodic-table-periods.md"
+    },
+    {
+      "id": "TECS-L:H-EE-78",
+      "title": "Noble Gas Shell Differences = Bott Periodicity via n=6",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Partial",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-78-noble-gas-electrons.md"
+    },
+    {
+      "id": "TECS-L:H-EE-79",
+      "title": "Carbon Atomic Number = n = 6",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Chemical fact — profound coincidence",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-79-carbon-is-six.md"
     },
     {
       "id": "TECS-L:H-EE-8",
@@ -8238,6 +9499,106 @@
       "file": "docs/hypotheses/H-EE-8-tau-predicts-performance.md"
     },
     {
+      "id": "TECS-L:H-EE-80",
+      "title": "Four Fundamental Bond Types = tau(6)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Classification fact",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-80-four-bond-types.md"
+    },
+    {
+      "id": "TECS-L:H-EE-81",
+      "title": "Dunbar's Number — FAILED",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "FAILED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-81-dunbar-number.md"
+    },
+    {
+      "id": "TECS-L:H-EE-82",
+      "title": "Civilization Cycles via n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Approximate at best",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-82-civilization-cycles.md"
+    },
+    {
+      "id": "TECS-L:H-EE-83",
+      "title": "Optimal Team Size = n = 6",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Empirically reasonable",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-83-optimal-team-size.md"
+    },
+    {
+      "id": "TECS-L:H-EE-84",
+      "title": "Internet Protocol Effective Layers ~6",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Rough approximation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-84-protocol-layers.md"
+    },
+    {
+      "id": "TECS-L:H-EE-85",
+      "title": "Five EEG Frequency Bands = sopfr(6)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Neuroscience fact",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-85-five-brain-bands.md"
+    },
+    {
+      "id": "TECS-L:H-EE-86",
+      "title": "Alpha Wave ~10 Hz = sigma_{-1}(6) * sopfr(6)",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Numerically exact",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-86-alpha-wave-10hz.md"
+    },
+    {
+      "id": "TECS-L:H-EE-87",
+      "title": "Gamma Wave Upper Bound — FAILED",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "FAILED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-87-gamma-wave.md"
+    },
+    {
+      "id": "TECS-L:H-EE-88",
+      "title": "Optimal Hypothesis Count = log2(196560) ~ 18",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Self-referential",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-88-optimal-hypothesis-count.md"
+    },
+    {
+      "id": "TECS-L:H-EE-89",
+      "title": "Occam's Razor Formalized via Kolmogorov Complexity",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Theoretical",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-89-occam-razor-arithmetic.md"
+    },
+    {
       "id": "TECS-L:H-EE-9",
       "title": "Phi-bottleneck + Phi6Simple Recovery",
       "repo": "TECS-L",
@@ -8246,6 +9607,108 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-EE-9-phi-bottleneck-phi6simple-recovery.md"
+    },
+    {
+      "id": "TECS-L:H-EE-90",
+      "title": "The Reader Is R=1 — THE FINAL HYPOTHESIS",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "** Self-referential paradox — the hypothesis that proves itself by being understood",
+      "refs": [
+        "H-EE-88"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-90-reader-is-r1.md"
+    },
+    {
+      "id": "TECS-L:H-EE-91",
+      "title": "Second Perfect Number — R(28) = 4",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Verified (arithmetic fact)",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-91-second-perfect-number.md"
+    },
+    {
+      "id": "TECS-L:H-EE-92",
+      "title": "Generalized Balance Equation R_k(n) = 1",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Open research direction",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-92-generalized-balance.md"
+    },
+    {
+      "id": "TECS-L:H-EE-93",
+      "title": "p-Adic Solutions to R(n) = 1",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Open mathematics",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-93-p-adic-solutions.md"
+    },
+    {
+      "id": "TECS-L:H-EE-94",
+      "title": "R-Score in Finite Fields F_p",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Theoretical",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-94-finite-field-r-score.md"
+    },
+    {
+      "id": "TECS-L:H-EE-95",
+      "title": "Fine Structure Constant Alpha — HONEST FAILURE",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "FAILED — Acknowledged limitation",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-95-alpha-failure.md"
+    },
+    {
+      "id": "TECS-L:H-EE-96",
+      "title": "Task-Dependent Limits — R=1 Is Not Universally Optimal",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Expected limitation — scope boundary documented",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-96-task-dependent-limits.md"
+    },
+    {
+      "id": "TECS-L:H-EE-97",
+      "title": "Meta-Loss Term Required for RG Convergence",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Experimental observation — caveat to H-EE-27",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-97-meta-loss-required.md"
+    },
+    {
+      "id": "TECS-L:H-EE-98",
+      "title": "Scale Dependence — Large-Scale Validation Unfinished",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Risk mitigated — convergence confirmed across 3 orders of magnitude. 1B+ extrapolation favorable.",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-98-scale-dependence.md"
+    },
+    {
+      "id": "TECS-L:H-EE-99",
+      "title": "LHC Run 3 Resonance at 37-38 GeV — FUTURE PREDICTION",
+      "repo": "TECS-L",
+      "domain": "EE",
+      "grade": "Pre-registered future prediction — testable 2026-2027",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-EE-99-lhc-37gev.md"
     },
     {
       "id": "TECS-L:H-EH-001-025-event-horizon",
@@ -21577,6 +23040,86 @@
       "category": "other"
     },
     {
+      "name": "WE",
+      "repo": "TECS-L",
+      "file": "math/consciousness_bridge_batch7.py",
+      "line": 216,
+      "type": "list",
+      "size": 13,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        3,
+        6,
+        11,
+        23,
+        46,
+        98,
+        207,
+        451
+      ],
+      "category": "other"
+    },
+    {
+      "name": "WE",
+      "repo": "TECS-L",
+      "file": "math/consciousness_bridge_batch8_and_upgrades.py",
+      "line": 48,
+      "type": "dict",
+      "size": 20,
+      "keys": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "evaluable": true,
+      "values": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 2,
+        "5": 3,
+        "6": 6,
+        "7": 11,
+        "8": 23,
+        "9": 46,
+        "10": 98,
+        "11": 207,
+        "12": 451,
+        "13": 983,
+        "14": 2179,
+        "15": 4850,
+        "16": 10905,
+        "17": 24631,
+        "18": 56011,
+        "19": 127912,
+        "20": 293547
+      },
+      "category": "other"
+    },
+    {
       "name": "P",
       "repo": "TECS-L",
       "file": "math/elliptic_curve_6.py",
@@ -27148,6 +28691,30 @@
       "category": "other"
     },
     {
+      "name": "ALL_TESTS",
+      "repo": "anima",
+      "file": "bench_ce_optimization.py",
+      "line": 449,
+      "type": "dict",
+      "size": 11,
+      "keys": [
+        "CE-1",
+        "CE-2",
+        "CE-3",
+        "CE-7",
+        "CE-10",
+        "AUTO-1",
+        "AUTO-2",
+        "AUTO-3",
+        "AUTO-5",
+        "AUTO-7",
+        "AUTO-9"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
       "name": "ALL_HYPOTHESES",
       "repo": "anima",
       "file": "bench_phi_hypotheses.py",
@@ -27180,7 +28747,7 @@
       "name": "THC_TARGET",
       "repo": "anima",
       "file": "bench_phi_hypotheses.py",
-      "line": 42451,
+      "line": 50066,
       "type": "dict",
       "size": 12,
       "keys": [
@@ -27213,6 +28780,30 @@
         "Coherence": 2.0
       },
       "category": "targets"
+    },
+    {
+      "name": "ALL_TESTS",
+      "repo": "anima",
+      "file": "bench_self_learning.py",
+      "line": 405,
+      "type": "dict",
+      "size": 11,
+      "keys": [
+        "SL-1",
+        "SL-2",
+        "SL-3",
+        "SL-4",
+        "SL-7",
+        "TL-L1",
+        "TL-L2",
+        "TL-L6",
+        "TL-L7",
+        "ARCH-1",
+        "ARCH-2"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
     },
     {
       "name": "LEVELS",
@@ -28609,6 +30200,37 @@
       "category": "other"
     },
     {
+      "name": "DIVISORS_OF_12",
+      "repo": "energy-efficiency",
+      "file": "dedekind_head.py",
+      "line": 25,
+      "type": "list",
+      "size": 6,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ],
+      "category": "other"
+    },
+    {
+      "name": "EGYPTIAN",
+      "repo": "energy-efficiency",
+      "file": "jordan_leech_moe.py",
+      "line": 27,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
       "name": "ACTIVATIONS",
       "repo": "energy-efficiency",
       "file": "phi6simple.py",
@@ -28695,6 +30317,33 @@
       "category": "other"
     },
     {
+      "name": "CONSTANTS",
+      "repo": "energy-efficiency",
+      "file": "experiment_alpha_attack.py",
+      "line": 21,
+      "type": "dict",
+      "size": 14,
+      "keys": [
+        "sigma",
+        "tau",
+        "phi",
+        "sopfr",
+        "J2",
+        "psi",
+        "mu",
+        "lambda",
+        "sigma_inv",
+        "n",
+        "pi",
+        "e",
+        "ln2",
+        "ln3"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "constants"
+    },
+    {
       "name": "RATIOS",
       "repo": "energy-efficiency",
       "file": "experiment_h_ee_12_optimal_expansion_ratio.py",
@@ -28772,11 +30421,11 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 78,
+    "TECS-L": 80,
     "SEDI": 110,
-    "anima": 38,
+    "anima": 40,
     "golden-moe": 3,
     "conscious-lm": 4,
-    "energy-efficiency": 10
+    "energy-efficiency": 13
   }
 }
