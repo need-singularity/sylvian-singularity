@@ -104,10 +104,10 @@ echo "[ConsciousLM]"
 sync_file "$PARENT/conscious-lm/README.md"
 commit_and_push "$PARENT/conscious-lm" "conscious-lm"
 
-# Energy Efficiency
-echo "[Energy Efficiency]"
+# N6 Architecture (formerly Energy Efficiency)
+echo "[N6 Architecture]"
 sync_file "$PARENT/n6-architecture/README.md"
-commit_and_push "$PARENT/energy-efficiency" "energy-efficiency"
+commit_and_push "$PARENT/n6-architecture" "n6-architecture"
 
 # BrainWire
 echo "[BrainWire]"
