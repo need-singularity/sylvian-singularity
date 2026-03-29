@@ -365,6 +365,23 @@
         ],
         "description": "6 = unique intersection of consecutive-prime products, factorials, triangular numbers. Perfectness as corollary. 4 honest failures reframed.",
         "category": "preprint"
+      },
+      {
+        "id": "P-PRIME-FACTORIAL",
+        "tier": 1,
+        "repo": "tecs-l",
+        "title": "The Consecutive Prime Factorial Product Theorem: A New Characterization of Six",
+        "target_venue": "American Mathematical Monthly",
+        "file": "../papers/tecs-l/P-PRIME-FACTORIAL-theorem.md",
+        "keywords": [
+          "primes",
+          "factorial",
+          "characterization",
+          "six",
+          "Wilson-theorem"
+        ],
+        "description": "PROVED: p\u00d7q=q! for primes p<q uniquely gives (2,3), product 6. Level 3 breakthrough.",
+        "category": "preprint"
       }
     ],
     "anima": [
