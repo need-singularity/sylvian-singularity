@@ -233,3 +233,188 @@ pub fn gate_batch(corpus_sizes_mb: Vec<f64>) -> Vec<(f64, f64, String)> {
         (mb, gate, regime)
     }).collect()
 }
+
+
+// ═══════════════════════════════════════════════════════════════
+// Genetic code n=6 verification (NOBEL-P2)
+// ═══════════════════════════════════════════════════════════════
+
+/// Test n=6 expressibility for a genetic code variant
+/// Returns (n_matches, n_total, details) where details = Vec<(property, value, expression, exact)>
+#[pyfunction]
+pub fn genetic_code_test(stops: usize, amino_acids: usize) -> (usize, usize, Vec<(String, usize, String, bool)>) {
+    // n=6 arithmetic constants
+    let n: usize = 6;
+    let sigma: usize = 12;
+    let tau: usize = 4;
+    let phi: usize = 2;
+    let sopfr: usize = 5;
+
+    let sense = 64 - stops;
+    let mut details = Vec::new();
+    let mut matches = 0usize;
+
+    // Universal properties (same for ALL variants)
+    let universal = vec![
+        ("bases", 4usize, "tau(6)", tau),
+        ("codon_length", 3, "n/phi", n / phi),
+        ("total_codons", 64, "2^n", 1 << n),
+        ("reading_frames", 6, "n", n),
+        ("codon_families", 16, "tau^2", tau * tau),
+        ("base_pairs", 2, "phi", phi),
+        ("helix_bp_per_turn", 10, "sopfr*phi", sopfr * phi),
+        ("minor_groove", 12, "sigma", sigma),
+        ("max_degeneracy", 6, "n", n),
+    ];
+
+    for (prop, expected, expr, computed) in &universal {
+        let exact = *computed == *expected;
+        if exact { matches += 1; }
+        details.push((prop.to_string(), *expected, expr.to_string(), exact));
+    }
+
+    // Variable properties
+    // Amino acids
+    let aa_exprs: Vec<(&str, usize)> = vec![
+        ("tau*sopfr", tau * sopfr),
+        ("sigma+tau+n", sigma + tau + n),
+        ("tau*sopfr+1", tau * sopfr + 1),
+        ("tau*sopfr+2", tau * sopfr + 2),
+        ("sigma+tau+sopfr", sigma + tau + sopfr),
+        ("sigma*phi-phi", sigma * phi - phi),
+        ("n*tau-tau", n * tau - tau),
+    ];
+    let mut aa_matched = false;
+    for (expr, val) in &aa_exprs {
+        if *val == amino_acids {
+            details.push(("amino_acids".into(), amino_acids, expr.to_string(), true));
+            matches += 1;
+            aa_matched = true;
+            break;
+        }
+    }
+    if !aa_matched {
+        details.push(("amino_acids".into(), amino_acids, "no_match".into(), false));
+    }
+
+    // Stop codons
+    let stop_exprs: Vec<(&str, usize)> = vec![
+        ("n/phi", n / phi),
+        ("tau", tau),
+        ("phi", phi),
+        ("1", 1),
+        ("tau-phi", tau - phi),
+        ("sopfr-tau", sopfr - tau),
+    ];
+    let mut stop_matched = false;
+    for (expr, val) in &stop_exprs {
+        if *val == stops {
+            details.push(("stop_codons".into(), stops, expr.to_string(), true));
+            matches += 1;
+            stop_matched = true;
+            break;
+        }
+    }
+    if !stop_matched {
+        details.push(("stop_codons".into(), stops, "no_match".into(), false));
+    }
+
+    // Sense codons
+    let sense_exprs: Vec<(&str, usize)> = vec![
+        ("2^n-n/phi", 64 - n / phi),
+        ("2^n-tau", 64 - tau),
+        ("2^n-phi", 64 - phi),
+        ("2^n-1", 63),
+    ];
+    let mut sense_matched = false;
+    for (expr, val) in &sense_exprs {
+        if *val == sense {
+            details.push(("sense_codons".into(), sense, expr.to_string(), true));
+            matches += 1;
+            sense_matched = true;
+            break;
+        }
+    }
+    if !sense_matched {
+        details.push(("sense_codons".into(), sense, "no_match".into(), false));
+    }
+
+    let total = details.len();
+    (matches, total, details)
+}
+
+/// Test all 26 NCBI genetic code variants at once
+/// Returns Vec<(table_id, name, stops, aas, matches, total, match_pct)>
+#[pyfunction]
+pub fn genetic_code_all_variants() -> Vec<(usize, String, usize, usize, usize, usize, f64)> {
+    let variants: Vec<(usize, &str, usize, usize)> = vec![
+        (1,  "Standard", 3, 20),
+        (2,  "Vertebrate Mito", 4, 20),
+        (3,  "Yeast Mito", 2, 22),
+        (4,  "Mold/Protozoan Mito", 1, 22),
+        (5,  "Invertebrate Mito", 4, 20),
+        (6,  "Ciliate Nuclear", 1, 22),
+        (9,  "Echinoderm Mito", 2, 21),
+        (10, "Euplotid Nuclear", 2, 21),
+        (11, "Bacterial/Plastid", 3, 20),
+        (12, "Alt Yeast Nuclear", 3, 20),
+        (13, "Ascidian Mito", 4, 20),
+        (14, "Alt Flatworm Mito", 3, 21),
+        (15, "Blepharisma Nuclear", 2, 21),
+        (16, "Chlorophycean Mito", 2, 21),
+        (21, "Trematode Mito", 4, 20),
+        (22, "Scenedesmus Mito", 3, 21),
+        (23, "Thraustochytrium Mito", 1, 22),
+        (24, "Rhabdopleuridae Mito", 3, 21),
+        (25, "Candidate Div SR1", 2, 21),
+        (26, "Pachysolen Nuclear", 3, 20),
+        (27, "Karyorelictea Nuclear", 2, 21),
+        (28, "Condylostoma Nuclear", 2, 21),
+        (29, "Mesodinium Nuclear", 2, 21),
+        (30, "Peritrich Nuclear", 2, 21),
+        (31, "Blastocrithidia Nuclear", 2, 21),
+        (33, "Cephalodiscidae Mito", 3, 21),
+    ];
+
+    variants.iter().map(|(id, name, stops, aas)| {
+        let (matches, total, _) = genetic_code_test(*stops, *aas);
+        let pct = matches as f64 / total as f64 * 100.0;
+        (*id, name.to_string(), *stops, *aas, matches, total, pct)
+    }).collect()
+}
+
+/// Codon optimality: scan (b,L) pairs and compute cost function
+/// Returns Vec<(b, L, codons, redundancy, cost)> sorted by cost
+#[pyfunction]
+#[pyo3(signature = (max_b=8, max_l=8, min_aas=23, alpha=1.0, beta=2.0, gamma=0.5, delta=3.0))]
+pub fn codon_optimality_scan(
+    max_b: usize,
+    max_l: usize,
+    min_aas: usize,
+    alpha: f64,
+    beta: f64,
+    gamma: f64,
+    delta: f64,
+) -> Vec<(usize, usize, usize, f64, f64)> {
+    let mut results = Vec::new();
+
+    for b in 2..=max_b {
+        for l in 1..=max_l {
+            let codons = b.pow(l as u32);
+            if codons < min_aas { continue; }
+            if codons > 100000 { continue; }
+
+            let redundancy = codons as f64 / min_aas as f64;
+            let error_rate = 1.0 / b as f64;
+            let cost = alpha * b as f64
+                     + beta * l as f64
+                     + gamma * redundancy
+                     + delta * error_rate;
+
+            results.push((b, l, codons, redundancy, cost));
+        }
+    }
+
+    results.sort_by(|a, b| a.4.partial_cmp(&b.4).unwrap_or(std::cmp::Ordering::Equal));
+    results
+}

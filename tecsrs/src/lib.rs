@@ -72,6 +72,9 @@ fn tecsrs(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(consciousness::gate_formula, m)?)?;
     m.add_function(wrap_pyfunction!(consciousness::gate_decay, m)?)?;
     m.add_function(wrap_pyfunction!(consciousness::gate_batch, m)?)?;
+    m.add_function(wrap_pyfunction!(consciousness::genetic_code_test, m)?)?;
+    m.add_function(wrap_pyfunction!(consciousness::genetic_code_all_variants, m)?)?;
+    m.add_function(wrap_pyfunction!(consciousness::codon_optimality_scan, m)?)?;
 
     Ok(())
 }
