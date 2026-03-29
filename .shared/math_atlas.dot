@@ -27,9 +27,6 @@ digraph math_atlas {
   SEDI_H_CX_470 [label="Convergence Point Ratios = Perfect Numbe" fillcolor="#E67E22" shape=doubleoctagon];
   SEDI_H_CX_484 [label="√7 Gap = Dark Sector Signature" fillcolor="#E67E22" shape=diamond];
   SEDI_H_CX_489 [label="Depth-2 Reachability Rank = Fermion Gene" fillcolor="#E67E22" shape=doubleoctagon];
-  SEDI_H_CX_502 [label="ln(2) as Center Element of the Closed Al" fillcolor="#E67E22" shape=box];
-  SEDI_H_CX_504 [label="Tian-Yau Calabi-Yau Manifold = n=6 Geome" fillcolor="#E67E22" shape=doubleoctagon];
-  SEDI_H_CX_505 [label="Information-Geometry Duality" fillcolor="#E67E22" shape=box];
   SEDI_H_CX_507 [label="k_min(P₆) = 37 = prime(σ(6)) = 37 GeV Re" fillcolor="#E67E22" shape=doubleoctagon];
   SEDI_H_CX_511 [label="Depth-Rank Sequence = n=6 Arithmetic Fun" fillcolor="#E67E22" shape=doubleoctagon];
   SEDI_H_CX_513 [label="Perfect Number Tower — P₁→P₂→P₃ Encodes " fillcolor="#E67E22" shape=box];
@@ -373,6 +370,9 @@ digraph math_atlas {
   TECS_L_H_CX_486 [label="Stress Tensor and Elastic Constants from" fillcolor="#4A90D9" shape=box];
   TECS_L_H_CX_489 [label="Trefoil Knot Invariants = n=6 Arithmetic" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_490 [label="Knot Count Self-Reference K(6)=3, K(7)=7" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_502 [label="φ(n)·σ(n) = n·τ(n) Uniquely Characterize" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_CX_504 [label="MaxCal Derivation of E(I) = I^I from G*I" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_505 [label="Self-Referential Derivation of I^I (Comp" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_58 [label="Precognition Lens — Tension Refracts Fut" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_59 [label="Directional Precognition — Direction Vec" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_6 [label="Neurochemistry Mapping — Tension=Dopamin" fillcolor="#4A90D9" shape=ellipse];
@@ -814,7 +814,7 @@ digraph math_atlas {
   SEDI_H_CA_018 -> SEDI_H_CX_513;
   SEDI_H_CA_018 -> SEDI_H_CX_516;
   SEDI_H_CA_018 -> SEDI_H_CS_009;
-  SEDI_H_CA_018 -> SEDI_H_CX_505;
+  SEDI_H_CA_018 -> TECS_L_H_CX_505;
   SEDI_H_CA_018 -> TECS_L_H_CX_481;
   SEDI_H_CA_018 -> SEDI_H_CX_507;
   SEDI_H_CA_018 -> SEDI_H_CA_011;
@@ -855,11 +855,11 @@ digraph math_atlas {
   SEDI_H_CX_552 -> SEDI_H_CX_551;
   SEDI_H_CX_556 -> TECS_L_H_CX_457;
   SEDI_H_CX_556 -> SEDI_H_CX_525;
-  SEDI_H_CX_557 -> SEDI_H_CX_502;
-  SEDI_H_CX_557 -> SEDI_H_CX_502;
+  SEDI_H_CX_557 -> TECS_L_H_CX_502;
+  SEDI_H_CX_557 -> TECS_L_H_CX_502;
   SEDI_H_CX_559 -> SEDI_H_CX_515;
   SEDI_H_CX_559 -> SEDI_H_CX_526;
-  SEDI_H_CX_560 -> SEDI_H_CX_504;
+  SEDI_H_CX_560 -> TECS_L_H_CX_504;
   SEDI_H_CX_562 -> SEDI_H_CX_511;
   SEDI_H_CX_562 -> SEDI_H_CX_511;
   SEDI_H_CX_566 -> SEDI_H_CX_547;
@@ -899,7 +899,7 @@ digraph math_atlas {
   SEDI_H_CX_619 -> SEDI_H_CX_531;
   SEDI_H_CX_620 -> SEDI_H_CX_543;
   SEDI_H_CX_622 -> SEDI_H_CX_614;
-  SEDI_H_CX_623 -> SEDI_H_CX_502;
+  SEDI_H_CX_623 -> TECS_L_H_CX_502;
   SEDI_H_CX_623 -> SEDI_H_CX_515;
   SEDI_H_CX_628 -> SEDI_H_CX_533;
   SEDI_H_CX_630 -> SEDI_H_CX_626;
@@ -917,7 +917,7 @@ digraph math_atlas {
   SEDI_H_CX_645 -> SEDI_H_CX_644;
   SEDI_H_CX_649 -> SEDI_H_CX_648;
   SEDI_H_CX_650 -> SEDI_H_CX_649;
-  SEDI_H_CX_651 -> SEDI_H_CX_502;
+  SEDI_H_CX_651 -> TECS_L_H_CX_502;
   SEDI_H_CX_651 -> SEDI_H_CX_623;
   SEDI_H_CX_667 -> SEDI_H_CX_666;
   SEDI_H_CX_670 -> SEDI_H_CX_663;
