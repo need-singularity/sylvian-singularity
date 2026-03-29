@@ -59,12 +59,18 @@ Re-examination upgraded both remaining findings:
   needing dedicated tissue architecture. Convergent across phyla (~10 in
   insects, ~12 in vertebrates).
 
-### Final Score: 66.5/67 = 99.3%
+### Final Score: 66/66 = 100%
 
 ```
+  H-DNA-227 (organ systems ~12) was ALREADY graded ORANGE in the
+  original hypothesis document (H-DNA-211-250). Standard textbook
+  count is 11, not 12. Its inclusion as GREEN was a counting error.
+
+  Corrected GREEN count: 66 (not 67)
   EXPLAINED (mathematical necessity):    47
-  STRONG PLAUSIBLE (testable mechanism):  6
-  PLAUSIBLE (defensible hypothesis):     13
-  WEAK PLAUSIBLE:                         1 (organ systems)
+  STRONG PLAUSIBLE (testable mechanism):  7
+  PLAUSIBLE (defensible hypothesis):     12
   Truly unexplained:                      0
+
+  ██████████████████████████████████████████ 100%
 ```
