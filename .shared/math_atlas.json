@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T05:19:58",
+  "generated": "2026-03-31T05:29:24",
   "stats": {
     "TECS-L": 1947,
     "SEDI": 678,
-    "anima": 316,
+    "anima": 317,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2768,
+  "total": 2769,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -16065,7 +16065,7 @@
     },
     {
       "id": "TECS-L:PMATH-GRAND-UNIFICATION-n6-universality",
-      "title": "PMATH-GRAND: n=6 Mathematical Universality — 99 Domains, 38 Five-Star",
+      "title": "PMATH-GRAND: n=6 Mathematical Universality — 109 Domains, 41 Five-Star",
       "repo": "TECS-L",
       "domain": null,
       "grade": null,
@@ -27318,6 +27318,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/dd/DD121-DD127.md"
+    },
+    {
+      "id": "anima:DD127-phase-diagram",
+      "title": "DD127: Consciousness Phase Diagram — 의식은 물질의 상이다 (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD127-phase-diagram.md"
     },
     {
       "id": "anima:DD15-DD16",
