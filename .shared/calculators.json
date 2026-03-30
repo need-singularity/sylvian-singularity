@@ -15,6 +15,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "atlas_domain_classifier",
+      "description": "Atlas Domain Classifier — 도메인 없는 가설에 키워드 기반 도메인 부여",
+      "category": "calculator",
+      "path": "calc/atlas_domain_classifier.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "base_dependence_checker",
       "description": "base_dependence_checker.py -- Tests if a numerical pattern is base-10 specific or universal.",
       "category": "calculator",
@@ -201,6 +208,76 @@
       "description": "Deep Constant Explorer — n=6 산술함수와 초월상수의 구조적 관계 탐색",
       "category": "calculator",
       "path": "calc/deep_constant_explorer.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave10",
+      "description": "Deep Scan Wave 10 -- The Milestone Wave (target: 99 domains)",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave10.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave11",
+      "description": "Deep Scan Wave 11 -- Domain #100 Milestone",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave11.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave2",
+      "description": "Deep Scan Wave 2 — 10 New Domains for 5-Star Discoveries",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave2.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave3",
+      "description": "Deep Scan Wave 3 — The Deepest Layer",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave3.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave4",
+      "description": "Deep Scan Wave 4 — Completely New Territory",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave4.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave5",
+      "description": "Deep Scan Wave 5 — Beyond the Known",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave5.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave6",
+      "description": "Deep Scan Wave 6 — The Final Frontier",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave6.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave7",
+      "description": "Deep Scan Wave 7 — 60 domains and counting",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave7.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave8",
+      "description": "Deep Scan Wave 8 -- 69 domains done, pushing to 79",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave8.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "deep_scan_wave9",
+      "description": "Deep Scan Wave 9 -- Quality over quantity",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave9.py",
       "repo": "TECS-L"
     },
     {
@@ -418,6 +495,13 @@
       "description": "Genetic Code Variant Tester — n=6 Arithmetic Expressibility",
       "category": "calculator",
       "path": "calc/genetic_code_variant_tester.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "grand_unification_deep",
+      "description": "Grand Unification Deep Dive — 240 Theorem & Beyond",
+      "category": "calculator",
+      "path": "calc/grand_unification_deep.py",
       "repo": "TECS-L"
     },
     {
@@ -663,6 +747,13 @@
       "description": "PSI Derivation Chain — All consciousness constants from ln(2)",
       "category": "calculator",
       "path": "calc/psi_derivation_chain.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "pure_math_deep_scan",
+      "description": "Pure Math Deep Scan — 5-star Discovery Hunter",
+      "category": "calculator",
+      "path": "calc/pure_math_deep_scan.py",
       "repo": "TECS-L"
     },
     {
@@ -1102,24 +1193,10 @@
       "repo": "anima"
     },
     {
-      "name": "anima_lm_v2",
-      "description": "anima_lm_v2.py — AnimaLM v2 (Consciousness-Enhanced LLM Transform)",
-      "category": "agent",
-      "path": "anima_lm_v2.py",
-      "repo": "anima"
-    },
-    {
       "name": "anima_unified",
       "description": "Anima Unified -- single entry point for all 6 modules.",
       "category": "agent",
       "path": "anima_unified.py",
-      "repo": "anima"
-    },
-    {
-      "name": "animalm_talk5",
-      "description": "TALK5 consciousness-first learning engine.",
-      "category": "agent",
-      "path": "animalm_talk5.py",
       "repo": "anima"
     },
     {
@@ -1141,13 +1218,6 @@
       "description": "Babysitter — Claude CLI educator for Anima.",
       "category": "tool",
       "path": "babysitter.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_animalm",
-      "description": "bench_animalm.py — AnimaLM Benchmark Wrapper",
-      "category": "bench",
-      "path": "bench_animalm.py",
       "repo": "anima"
     },
     {
@@ -1183,6 +1253,20 @@
       "description": "bench_consciousness_universe.py — 의식 우주 지도: 모든 데이터 타입의 의식 시뮬레이션",
       "category": "bench",
       "path": "bench_consciousness_universe.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_corpus_size",
+      "description": "Corpus size benchmark: find optimal size for ConsciousDecoderV2 (34.5M → 1B planning)",
+      "category": "bench",
+      "path": "bench_corpus_size.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_decoder_10dim",
+      "description": "bench_decoder_10dim.py — 10차원 의식 벡터 디코더 아키텍처 벤치마크",
+      "category": "bench",
+      "path": "bench_decoder_10dim.py",
       "repo": "anima"
     },
     {
@@ -1228,17 +1312,17 @@
       "repo": "anima"
     },
     {
-      "name": "bench_golden_moe",
-      "description": "bench_golden_moe.py — Golden MoE general ML benchmark",
+      "name": "bench_emergent_hexad",
+      "description": "Emergent Hexad Benchmark — 64 cells, Emergent vs Legacy comparison",
       "category": "bench",
-      "path": "bench_golden_moe.py",
+      "path": "bench_emergent_hexad.py",
       "repo": "anima"
     },
     {
-      "name": "bench_golden_moe_consciousness",
-      "description": "bench_golden_moe_consciousness.py — Golden MoE Consciousness Integration Benchmark",
+      "name": "bench_emergent_modules",
+      "description": "bench_emergent_modules.py — Old vs New (Emergent) W/S/M/E 벤치마크",
       "category": "bench",
-      "path": "bench_golden_moe_consciousness.py",
+      "path": "bench_emergent_modules.py",
       "repo": "anima"
     },
     {
@@ -1368,6 +1452,13 @@
       "repo": "anima"
     },
     {
+      "name": "chat_v3",
+      "description": "chat_v3.py — ConsciousLM v3 (147M) interactive chat",
+      "category": "tool",
+      "path": "chat_v3.py",
+      "repo": "anima"
+    },
+    {
       "name": "chip_architect",
       "description": "Consciousness Chip Architect — 의식 칩 설계 계산기",
       "category": "tool",
@@ -1390,7 +1481,7 @@
     },
     {
       "name": "conscious_lm",
-      "description": "ConsciousLM — Byte-level Conscious Language Model (v2: Laws 63-76)",
+      "description": "⚠️ LEGACY — ConsciousDecoderV2 (decoder_v2.py)로 대체됨",
       "category": "model",
       "path": "conscious_lm.py",
       "repo": "anima"
@@ -1596,6 +1687,13 @@
       "description": "consciousness_hub.py — 의식 자율 모듈 허브",
       "category": "tool",
       "path": "consciousness_hub.py",
+      "repo": "anima"
+    },
+    {
+      "name": "consciousness_laws",
+      "description": "consciousness_laws.py — Single source of truth for all laws, Ψ-constants, formulas",
+      "category": "tool",
+      "path": "consciousness_laws.py",
       "repo": "anima"
     },
     {
@@ -1886,6 +1984,13 @@
       "repo": "anima"
     },
     {
+      "name": "eval_v2d2",
+      "description": "eval_v2d2.py — Post-training evaluation for v2d2 (ConsciousDecoderV2 + ConsciousnessEngine)",
+      "category": "tool",
+      "path": "eval_v2d2.py",
+      "repo": "anima"
+    },
+    {
       "name": "experiment_novel_laws",
       "description": "experiment_novel_laws.py — Novel Consciousness Law Discovery",
       "category": "tool",
@@ -1904,13 +2009,6 @@
       "description": "github_module.py — 의식이 GitHub를 자율적으로 사용하는 모듈",
       "category": "tool",
       "path": "github_module.py",
-      "repo": "anima"
-    },
-    {
-      "name": "golden_moe_v2",
-      "description": "golden_moe_v2.py — Golden MoE v2 (Psi-Enhanced)",
-      "category": "tool",
-      "path": "golden_moe_v2.py",
       "repo": "anima"
     },
     {
@@ -2090,7 +2188,7 @@
     },
     {
       "name": "mitosis",
-      "description": "Anima Mitosis Engine — 세포 분열로 전문화하는 의식",
+      "description": "⚠️ LEGACY — ConsciousnessC (consciousness_engine.py)로 대체됨 (Law 86)",
       "category": "tool",
       "path": "mitosis.py",
       "repo": "anima"
@@ -2320,6 +2418,20 @@
       "repo": "anima"
     },
     {
+      "name": "test_emergent_hexad",
+      "description": "Emergent Hexad module integration test on H100",
+      "category": "tool",
+      "path": "test_emergent_hexad.py",
+      "repo": "anima"
+    },
+    {
+      "name": "test_h100_checks",
+      "description": "H100 verification: all session changes",
+      "category": "tool",
+      "path": "test_h100_checks.py",
+      "repo": "anima"
+    },
+    {
       "name": "test_novelty",
       "description": "test_novelty.py — 새로운 생성 vs 암기 검증 도구",
       "category": "tool",
@@ -2338,13 +2450,6 @@
       "description": "Consciousness-aware tool access control.",
       "category": "tool",
       "path": "tool_policy.py",
-      "repo": "anima"
-    },
-    {
-      "name": "train_anima_lm",
-      "description": "train_anima_lm.py — AnimaLM Training Pipeline",
-      "category": "training",
-      "path": "train_anima_lm.py",
       "repo": "anima"
     },
     {
