@@ -3066,6 +3066,13 @@
       "repo": "invest"
     },
     {
+      "name": "consciousness_bridge_verifier",
+      "description": "Consciousness Bridge Verifier — All 29 H-CX-82~110 bridges in one tool.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/consciousness_bridge_verifier.py",
+      "repo": "invest"
+    },
+    {
       "name": "consciousness_cross_validator",
       "description": "Consciousness Cross-Validator — PSI Constants Across Multiple Architectures",
       "category": "calculator",
@@ -3346,6 +3353,13 @@
       "repo": "invest"
     },
     {
+      "name": "p6_uniqueness_scorer",
+      "description": "P6 Uniqueness Scorer — Why Perfect Number 6 is mathematically special.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/p6_uniqueness_scorer.py",
+      "repo": "invest"
+    },
+    {
       "name": "paper_claim_verifier",
       "description": "Paper Claim Verifier -- Batch verification of mathematical claims in paper documents.",
       "category": "calculator",
@@ -3420,6 +3434,13 @@
       "description": "R-Spectrum Calculator — Arithmetic balance ratio analysis",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/r_spectrum.py",
+      "repo": "invest"
+    },
+    {
+      "name": "rate_invariant_calculator",
+      "description": "Rate Invariant Calculator — Law 82: r₀·r∞ = 7/20 substrate independence.",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/rate_invariant_calculator.py",
       "repo": "invest"
     },
     {
