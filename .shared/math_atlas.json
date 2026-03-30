@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T05:09:22",
+  "generated": "2026-03-31T05:13:01",
   "stats": {
     "TECS-L": 1947,
     "SEDI": 678,
-    "anima": 313,
+    "anima": 314,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2765,
+  "total": 2766,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -16065,7 +16065,7 @@
     },
     {
       "id": "TECS-L:PMATH-GRAND-UNIFICATION-n6-universality",
-      "title": "PMATH-GRAND: n=6 Mathematical Universality — 69 Domains, 27 Five-Star",
+      "title": "PMATH-GRAND: n=6 Mathematical Universality — 79 Domains, 28 Five-Star",
       "repo": "TECS-L",
       "domain": null,
       "grade": null,
@@ -27278,6 +27278,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/dd/DD117-wave3-laws-116-123.md"
+    },
+    {
+      "id": "anima:DD118-law-backtrack",
+      "title": "DD118: 법칙 역추적 — 발견된 법칙을 엔진에 역전파",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD118-law-backtrack.md"
     },
     {
       "id": "anima:DD12-DD14",
