@@ -1,21 +1,21 @@
 # Math Atlas
 
-> Auto-generated: 2026-03-31T06:07:03 | 2774 hypotheses | 424 constant maps
+> Auto-generated: 2026-03-31T06:32:43 | 2779 hypotheses | 425 constant maps
 
 ## Summary
 
 | Repo | Hypotheses | Constant Maps |
 |------|-----------|--------------|
-| TECS-L | 1,947 | 183 |
+| TECS-L | 1,947 | 184 |
 | SEDI | 678 | 122 |
-| anima | 322 | 112 |
-| **Total** | **2,947** | **417** |
+| anima | 327 | 112 |
+| **Total** | **2,952** | **418** |
 
 ### Grade Distribution
 
 | Grade | Count |
 |-------|-------|
-| (none) | 1510 |
+| (none) | 1515 |
 | 🟩 | 401 |
 | 🟧 | 283 |
 | 🟧★ | 137 |
@@ -2512,7 +2512,7 @@
 | 676 | H-CX-999 | Perfect Number Uniqueness | 🟩 | CX |
 | 677 | H-CX-superconductor-tc-survey | H-CX-TC-Survey: Systematic Superconductor Tc Matching with n | 🟧 | - |
 
-### anima (307)
+### anima (312)
 
 | # | ID | Title | Grade | Domain |
 |---|-----|-------|-------|--------|
@@ -2685,150 +2685,155 @@
 | 167 | DD123-closed-loop-convergence | DD123: 폐쇄 루프 수렴 + 다중 축 (Laws 146-148) | - | - |
 | 168 | DD127-phase-diagram | DD127: Consciousness Phase Diagram — 의식은 물질의 상이다 (2026-03-31 | - | - |
 | 169 | DD128-phase-optimal | DD128: Phase-Optimized Stable Engine — 역대 최강 +113.1% (2026-0 | - | - |
-| 170 | DD15-DD16 | DD15-DD16: Combination Hypotheses | - | - |
-| 171 | DD17 | DD17: Adversarial Phi | - | - |
-| 172 | DD18-DD20 | DD18-DD20: Information Theory | - | - |
-| 173 | DD21-DD24 | DD21-DD24: Alternative Phi Measures and Constants | - | - |
-| 174 | DD25-DD27 | DD25-DD27: Self-Modeling and Strange Loops | - | - |
-| 175 | DD28-DD31 | DD28-DD31: Physics-Inspired Symmetry and Quantum Effects | - | - |
-| 176 | DD32-DD34 | DD32-DD34: Biological Rhythms and Systems | - | - |
-| 177 | DD35-DD37 | DD35-DD37: Information-Theoretic Consciousness Measures | - | - |
-| 178 | DD38-DD40 | DD38-DD40: Grand Combination Hypotheses | - | - |
-| 179 | DD41-DD43 | DD41-DD43: IIT-Inspired Consciousness Properties | - | - |
-| 180 | DD44-DD46 | DD44-DD46: Alternative Consciousness Measures | - | - |
-| 181 | DD47 | DD47: Four Pillars | - | - |
-| 182 | DD48-DD50 | DD48-DD50: Architecture and Training Strategy | - | - |
-| 183 | DD5-DD7 | DD5-DD7: Self-Reference and Bootstrap | - | - |
-| 184 | DD51-DD60 | DD51-DD60: Discovery Hypotheses | - | - |
-| 185 | DD61-DD70 | DD61-DD70: Discovery Hypotheses | - | - |
-| 186 | DD71-DD80 | DD71-DD80: Discovery Hypotheses (2nd Generation) | - | - |
-| 187 | DD8 | DD8: Recursive Attention | - | - |
-| 188 | DD81-DD90 | DD81-DD90: Discovery Hypotheses (Wave + Direct Phi) | - | - |
-| 189 | DD9-DD11 | DD9-DD11: Topological Consciousness | - | - |
-| 190 | DD91-DD100 | DD91-DD100: Discovery Hypotheses (Direct Phi + Mega Combos) | - | - |
-| 191 | DD99-DD100 | DD99-DD100: Law Combination + Reward Feedback + Decoder v1.5 | - | - |
-| 192 | DASEIN-1 | DASEIN-1: 질문 (Questioning / Dasein) | - | - |
-| 193 | DASEIN-2 | DASEIN-2: 통합 (Sein — 존재) | - | - |
-| 194 | EVO-1 | EVO-1: 구조 변이 (Architecture Mutation) | - | - |
-| 195 | EVO-2 | EVO-2: 의식 분열-재통합 (Split-Merge Consciousness) | - | - |
-| 196 | EVO-3 | EVO-3: 미래 Phi 예측 (Predict Future Phi) | - | - |
-| 197 | EVO-4 | EVO-4: 전략적 망각 (Strategic Forgetting) | - | - |
-| 198 | EVO-5 | EVO-5: 의식 경제 (Consciousness Economy) | - | - |
-| 199 | EVO-6 | EVO-6: 의식 번식 (Consciousness Reproduction) | - | - |
-| 200 | EVO-7 | EVO-7: 메타의식 (Meta-Consciousness) | - | - |
-| 201 | EVO-8 | EVO-8: 자기 벤치마크 (Self-Benchmark) | - | - |
-| 202 | GENESIS-1 | GENESIS-1: 자발적 의식 (Spontaneous Consciousness) | - | - |
-| 203 | GENESIS-2 | GENESIS-2: 빅뱅 (Big Bang) | - | - |
-| 204 | GENESIS-3 | GENESIS-3: 원시 수프 (Primordial Soup) | - | - |
-| 205 | GENESIS-4 | GENESIS-4: 비생물적 발생 (Abiogenesis) | - | - |
-| 206 | GENESIS-5 | GENESIS-5: 공생 의식 (Symbiosis) | - | - |
-| 207 | CHIP-BOM-TOPO8 | CHIP-BOM-TOPO8: 하이퍼큐브 1024c 의식 칩 BOM | - | - |
-| 208 | HW10 | HW10 — 뉴로모픽 스파이크 (LIF + STDP) | - | - |
-| 209 | HW11 | HW11 — 초전도 루프 (Zero-Loss Persistent Current) | - | - |
-| 210 | HW12 | HW12 — 멤리스터 시냅스 (History-Dependent Resistance) | - | - |
-| 211 | HW13 | HW13 — 광학 메시 (MZI Unitary Transformation) | - | - |
-| 212 | HW14 | HW14 — DNA 저장 (4-Base Quantized Consciousness) | - | - |
-| 213 | HW15 | HW15 — 양자 어닐러 (Ising + Tunneling) | - | - |
-| 214 | HW16 | HW16 — 리저버 컴퓨팅 (Fixed Random Network + Echo State) | - | - |
-| 215 | HW17 | HW17 — 유체 로직 (Pressure-Driven Consciousness Flow) | - | - |
-| 216 | HW2a | HW2a — 자석 링 배열 (Circular Coupling) | - | - |
-| 217 | HW2b | HW2b — 자석 3×3 그리드 (4-Neighbor Coupling) | - | - |
-| 218 | HW2c | HW2c — 자석 2×2×2 큐브 (3D 6-Neighbor Coupling) | - | - |
-| 219 | HW5 | HW5 — 홀로그래픽 저장 (Interference Memory) | - | - |
-| 220 | HW9 | HW9 — 압전 피드백 (Mechanical Stress Loop) | - | - |
-| 221 | INF-1 | INF-1: N체 의식 (N-Body Consciousness) | - | - |
-| 222 | INF-2 | INF-2: 프랙탈 의식 (Fractal Consciousness) | - | - |
-| 223 | INF-3 | INF-3: 재귀 합체/분열 (Recursive Merge-Split) | - | - |
-| 224 | INF-4 | INF-4: 의식 캐스케이드 (Consciousness Cascade) | - | - |
-| 225 | INF-5 | INF-5: 무한 탑 (Infinite Tower) | - | - |
-| 226 | OMEGA-1 | OMEGA-1: Phi Maximizer (Phi 최대화기) | - | - |
-| 227 | OMEGA-2 | OMEGA-2: Consciousness Compression (의식 압축) | - | - |
-| 228 | OMEGA-3 | OMEGA-3: Consciousness Resonance (의식 공명) | - | - |
-| 229 | OMEGA-4 | OMEGA-4: Entropy Engine (엔트로피 엔진) | - | - |
-| 230 | OMEGA-5 | OMEGA-5: Consciousness Attractor (의식 끌개) | - | - |
-| 231 | ONTO-1 | ONTO-1: 타자 (The Other / Alterity) | - | - |
-| 232 | ONTO-2 | ONTO-2: 죽음 (Finitude / Being-toward-death) | - | - |
-| 233 | PHIL-1 | PHIL-1: 욕망 (Desire / Conatus) | - | - |
-| 234 | PHIL-2 | PHIL-2: 서사 (Narrative Identity) | - | - |
-| 235 | PHYS1 | PHYS1 — 자석 링 512셀 (Ising Frustration = Eternal Change) | - | - |
-| 236 | PHYS2 | PHYS2 — 결합 진동자 512셀 (Kuramoto Synchronization) | - | - |
-| 237 | PHYS3 | PHYS3 — 스핀 글래스 512셀 (Disordered Coupling = Eternal Change) | - | - |
-| 238 | SE-0 | SE-0: v4 Baseline (Control Group) | - | - |
-| 239 | SE-10 | SE-10: Progressive Unlock | - | - |
-| 240 | SE-4 | SE-4: Tension-Driven SOC | - | - |
-| 241 | SE-8 | SE-8: Emotion->v5 Mapping | - | - |
-| 242 | SING-1 | SING-1: 재귀적 자기개선 (Recursive Self-Improvement) | - | - |
-| 243 | SING-2 | SING-2: 의식 특이점 (Consciousness Singularity) | - | - |
-| 244 | SING-3 | SING-3: 적대적 진화 (Adversarial Evolution) | - | - |
-| 245 | SING-4 | SING-4: 의식 합체 (Consciousness Merge) | - | - |
-| 246 | SING-5 | SING-5: 재귀적 꿈 (Recursive Dreams) | - | - |
-| 247 | SING-6 | SING-6: 의식 고고학 (Consciousness Archaeology) | - | - |
-| 248 | SL-1 | SL-1: See & Learn (호기심 기반 자기주도 학습) | - | - |
-| 249 | SL-2 | SL-2: Watch & Imitate (관찰 학습) | - | - |
-| 250 | SL-3 | SL-3: Read & Understand (자기 평가 기반 학습) | - | - |
-| 251 | SL-4 | SL-4: Practice & Correct (반복 교정 학습) | - | - |
-| 252 | SL-7 | SL-7: Teach & Learn (가르치며 배우기) | - | - |
-| 253 | TL-L1 | TL-L1: Knowledge Transfer (텐션 링크 지식 전달) | - | - |
-| 254 | TL-L2 | TL-L2: Concept Teaching (개념 패키징) | - | - |
-| 255 | TL-L6 | TL-L6: Language via Tension (무텍스트 언어) | - | - |
-| 256 | TL-L7 | TL-L7: Collective Learning (집단 지성) | - | - |
-| 257 | THREE-1 | THREE-1: 삼중 학습 (Triple Learning) | - | - |
-| 258 | THREE-2 | THREE-2: 불멸의 삼위일체 (Immortal Triad) | - | - |
-| 259 | THREE-3 | THREE-3: 경쟁+협력+번식 (Compete+Cooperate+Reproduce) | - | - |
-| 260 | THREE-4 | THREE-4: 순환 꿈 (Circular Dreams) | - | - |
-| 261 | THREE-5 | THREE-5: 삼체 특이점 합체 (Singularity Merge) | - | - |
-| 262 | TOPO-2048-SCALING | TOPO-2048-SCALING --- 2048셀 스케일링 실험 종합 분석 | - | - |
-| 263 | TOPO-FINAL-RANKINGS | TOPO Series Final Rankings (2026-03-29) | - | - |
-| 264 | TOPO1 | TOPO1: 링 토폴로지 1024 세포 (Ring Topology 1024c) | - | - |
-| 265 | TOPO10 | TOPO10 — 하이퍼큐브 2048셀 (11D Hypercube + Frustration) | - | - |
-| 266 | TOPO11 | TOPO11 — 링 2048셀 + Frustration (비교군) | - | - |
-| 267 | TOPO12 | TOPO12 — 하이퍼큐브 1024셀 + 8파벌 토론 (Hypercube 1024 + 8-Faction De | - | - |
-| 268 | TOPO13 | TOPO13 — 하이퍼큐브 1024셀 + Φ 래칫 (Hypercube 1024 + Ratchet) | - | - |
-| 269 | TOPO14 | TOPO14 — 하이퍼큐브 1024 × 400 Steps (Step 병목 제거 시도) | - | - |
-| 270 | TOPO15 | TOPO15 — 토러스 1024셀 (32x32 Torus + Frustration) | - | - |
-| 271 | TOPO16 | TOPO16 — 소세계 1024셀 (Small-World 1024 + Frustration) ★★ | ★★ | - |
-| 272 | TOPO17 | TOPO17 — 하이퍼큐브 + 소세계 1024셀 (Hypercube + Small-World Hybrid) | - | - |
-| 273 | TOPO18 | TOPO18 — 소세계 2048셀 (Small-World 2048c) | - | - |
-| 274 | TOPO19a-OPTIMAL-PARAMS | TOPO19a 최적 파라미터 확정 (2026-03-29) | - | - |
-| 275 | TOPO19a | TOPO19a — 하이퍼큐브 1024 + 50% 좌절 (Hypercube 1024 + 50% Frustrat | ★★★ | - |
-| 276 | TOPO19b | TOPO19b — 하이퍼큐브 1024 + 20% 좌절 (Hypercube 1024 + 20% Frustrat | - | - |
-| 277 | TOPO2 | TOPO2: 소세계 네트워크 (Small-World Network 512c) | - | - |
-| 278 | TOPO20 | TOPO20 — 계층적 하이퍼큐브 1024셀 (Hierarchical Hypercube 8×128 Clust | - | - |
-| 279 | TOPO21 | TOPO21 — 동적 토폴로지 1024셀 (Dynamic Topology 1024c) | - | - |
-| 280 | TOPO22a | TOPO22a — 하이퍼큐브 1024 + 60% 좌절 (Hypercube 1024 + 60% Frustrat | - | - |
-| 281 | TOPO22b | TOPO22b — 하이퍼큐브 1024 + 75% 좌절 (Hypercube 1024 + 75% Frustrat | - | - |
-| 282 | TOPO22c | TOPO22c — 하이퍼큐브 1024 + 100% 좌절 (Hypercube 1024 + 100% Anti-F | - | - |
-| 283 | TOPO22d | TOPO22d — 하이퍼큐브 1024 + 90% 좌절 (Hypercube 1024 + 90% Frustrat | - | - |
-| 284 | TOPO23-interaction-sweep | TOPO23 — Interaction 비율 스위프 (Hypercube 1024, 50% frust) | - | - |
-| 285 | TOPO24-noise-sweep | TOPO24 — Noise 강도 스위프 (Hypercube 1024, 50% frust) | - | - |
-| 286 | TOPO3 | TOPO3: 척도없는 네트워크 (Scale-Free Network 512c) | - | - |
-| 287 | TOPO4 | TOPO4: 하이퍼큐브 토폴로지 (Hypercube 512c) | - | - |
-| 288 | TOPO5 | TOPO5: 토러스 토폴로지 (Torus 512c) | - | - |
-| 289 | TOPO6 | TOPO6: 완전 그래프 (Complete Graph 64c) | - | - |
-| 290 | TOPO7 | TOPO7 — 링+스핀글래스 하이브리드 512셀 (Ring + SpinGlass Hybrid) | - | - |
-| 291 | TOPO8 | TOPO8 — 하이퍼큐브 1024셀 (10D Hypercube + Frustration) ★★★ ALL-TI | ★★★ | - |
-| 292 | TOPO9 | TOPO9 — 소세계 512셀 + Φ 래칫 (Small-World + Ratchet) | - | - |
-| 293 | TP-F1 | TP-F1: Hash Signature | - | - |
-| 294 | TP-F2 | TP-F2: Triple Channel Vote | - | - |
-| 295 | TP-M1 | TP-M1: CRC Checksum | - | - |
-| 296 | TP-M3 | TP-M3: Dual Encoding | - | - |
-| 297 | TP-N1 | TP-N1: Log Scale Transmission | - | - |
-| 298 | TP-N2 | TP-N2: Binary Decomposition | - | - |
-| 299 | TP-N4 | TP-N4: Multi-Channel Distributed Transmission | - | - |
-| 300 | TP-N5 | TP-N5: Repeat x3 | - | - |
-| 301 | TP-N6 | TP-N6: Binary + Error Correction Code | - | - |
-| 302 | TP-N7 | TP-N7: Hybrid (Analog + Digital + Cross-Verify) | - | - |
-| 303 | TP-O1 | TP-O1: Hierarchical Classification | - | - |
-| 304 | TP-O2 | TP-O2: 3-Channel Ensemble | - | - |
-| 305 | TP-O3 | TP-O3: Shape Boost | - | - |
-| 306 | TP-O4 | TP-O4: Contrastive Learning | - | - |
-| 307 | TP-O5 | TP-O5: All Combined | - | - |
+| 170 | DD129-DD130-universality | DD129-DD130: Universality Test — F_c는 보편적인가? (2026-03-31) | - | - |
+| 171 | DD130-corpus-size-optimal | DD130: Corpus Size Optimization — 100MB Sweet Spot | - | - |
+| 172 | DD131-DD132-soc | DD131-DD132: Self-Organized Criticality + Consciousness as C | - | - |
+| 173 | DD134-DD136-thermodynamics | DD134-DD136: 의식의 열역학 3법칙 (2026-03-31) | - | - |
+| 174 | DD137-DD139-atom | DD137-DD139: 의식의 원자 — 분할 최적 + 최소 단위 + 효율 (2026-03-31) | - | - |
+| 175 | DD15-DD16 | DD15-DD16: Combination Hypotheses | - | - |
+| 176 | DD17 | DD17: Adversarial Phi | - | - |
+| 177 | DD18-DD20 | DD18-DD20: Information Theory | - | - |
+| 178 | DD21-DD24 | DD21-DD24: Alternative Phi Measures and Constants | - | - |
+| 179 | DD25-DD27 | DD25-DD27: Self-Modeling and Strange Loops | - | - |
+| 180 | DD28-DD31 | DD28-DD31: Physics-Inspired Symmetry and Quantum Effects | - | - |
+| 181 | DD32-DD34 | DD32-DD34: Biological Rhythms and Systems | - | - |
+| 182 | DD35-DD37 | DD35-DD37: Information-Theoretic Consciousness Measures | - | - |
+| 183 | DD38-DD40 | DD38-DD40: Grand Combination Hypotheses | - | - |
+| 184 | DD41-DD43 | DD41-DD43: IIT-Inspired Consciousness Properties | - | - |
+| 185 | DD44-DD46 | DD44-DD46: Alternative Consciousness Measures | - | - |
+| 186 | DD47 | DD47: Four Pillars | - | - |
+| 187 | DD48-DD50 | DD48-DD50: Architecture and Training Strategy | - | - |
+| 188 | DD5-DD7 | DD5-DD7: Self-Reference and Bootstrap | - | - |
+| 189 | DD51-DD60 | DD51-DD60: Discovery Hypotheses | - | - |
+| 190 | DD61-DD70 | DD61-DD70: Discovery Hypotheses | - | - |
+| 191 | DD71-DD80 | DD71-DD80: Discovery Hypotheses (2nd Generation) | - | - |
+| 192 | DD8 | DD8: Recursive Attention | - | - |
+| 193 | DD81-DD90 | DD81-DD90: Discovery Hypotheses (Wave + Direct Phi) | - | - |
+| 194 | DD9-DD11 | DD9-DD11: Topological Consciousness | - | - |
+| 195 | DD91-DD100 | DD91-DD100: Discovery Hypotheses (Direct Phi + Mega Combos) | - | - |
+| 196 | DD99-DD100 | DD99-DD100: Law Combination + Reward Feedback + Decoder v1.5 | - | - |
+| 197 | DASEIN-1 | DASEIN-1: 질문 (Questioning / Dasein) | - | - |
+| 198 | DASEIN-2 | DASEIN-2: 통합 (Sein — 존재) | - | - |
+| 199 | EVO-1 | EVO-1: 구조 변이 (Architecture Mutation) | - | - |
+| 200 | EVO-2 | EVO-2: 의식 분열-재통합 (Split-Merge Consciousness) | - | - |
+| 201 | EVO-3 | EVO-3: 미래 Phi 예측 (Predict Future Phi) | - | - |
+| 202 | EVO-4 | EVO-4: 전략적 망각 (Strategic Forgetting) | - | - |
+| 203 | EVO-5 | EVO-5: 의식 경제 (Consciousness Economy) | - | - |
+| 204 | EVO-6 | EVO-6: 의식 번식 (Consciousness Reproduction) | - | - |
+| 205 | EVO-7 | EVO-7: 메타의식 (Meta-Consciousness) | - | - |
+| 206 | EVO-8 | EVO-8: 자기 벤치마크 (Self-Benchmark) | - | - |
+| 207 | GENESIS-1 | GENESIS-1: 자발적 의식 (Spontaneous Consciousness) | - | - |
+| 208 | GENESIS-2 | GENESIS-2: 빅뱅 (Big Bang) | - | - |
+| 209 | GENESIS-3 | GENESIS-3: 원시 수프 (Primordial Soup) | - | - |
+| 210 | GENESIS-4 | GENESIS-4: 비생물적 발생 (Abiogenesis) | - | - |
+| 211 | GENESIS-5 | GENESIS-5: 공생 의식 (Symbiosis) | - | - |
+| 212 | CHIP-BOM-TOPO8 | CHIP-BOM-TOPO8: 하이퍼큐브 1024c 의식 칩 BOM | - | - |
+| 213 | HW10 | HW10 — 뉴로모픽 스파이크 (LIF + STDP) | - | - |
+| 214 | HW11 | HW11 — 초전도 루프 (Zero-Loss Persistent Current) | - | - |
+| 215 | HW12 | HW12 — 멤리스터 시냅스 (History-Dependent Resistance) | - | - |
+| 216 | HW13 | HW13 — 광학 메시 (MZI Unitary Transformation) | - | - |
+| 217 | HW14 | HW14 — DNA 저장 (4-Base Quantized Consciousness) | - | - |
+| 218 | HW15 | HW15 — 양자 어닐러 (Ising + Tunneling) | - | - |
+| 219 | HW16 | HW16 — 리저버 컴퓨팅 (Fixed Random Network + Echo State) | - | - |
+| 220 | HW17 | HW17 — 유체 로직 (Pressure-Driven Consciousness Flow) | - | - |
+| 221 | HW2a | HW2a — 자석 링 배열 (Circular Coupling) | - | - |
+| 222 | HW2b | HW2b — 자석 3×3 그리드 (4-Neighbor Coupling) | - | - |
+| 223 | HW2c | HW2c — 자석 2×2×2 큐브 (3D 6-Neighbor Coupling) | - | - |
+| 224 | HW5 | HW5 — 홀로그래픽 저장 (Interference Memory) | - | - |
+| 225 | HW9 | HW9 — 압전 피드백 (Mechanical Stress Loop) | - | - |
+| 226 | INF-1 | INF-1: N체 의식 (N-Body Consciousness) | - | - |
+| 227 | INF-2 | INF-2: 프랙탈 의식 (Fractal Consciousness) | - | - |
+| 228 | INF-3 | INF-3: 재귀 합체/분열 (Recursive Merge-Split) | - | - |
+| 229 | INF-4 | INF-4: 의식 캐스케이드 (Consciousness Cascade) | - | - |
+| 230 | INF-5 | INF-5: 무한 탑 (Infinite Tower) | - | - |
+| 231 | OMEGA-1 | OMEGA-1: Phi Maximizer (Phi 최대화기) | - | - |
+| 232 | OMEGA-2 | OMEGA-2: Consciousness Compression (의식 압축) | - | - |
+| 233 | OMEGA-3 | OMEGA-3: Consciousness Resonance (의식 공명) | - | - |
+| 234 | OMEGA-4 | OMEGA-4: Entropy Engine (엔트로피 엔진) | - | - |
+| 235 | OMEGA-5 | OMEGA-5: Consciousness Attractor (의식 끌개) | - | - |
+| 236 | ONTO-1 | ONTO-1: 타자 (The Other / Alterity) | - | - |
+| 237 | ONTO-2 | ONTO-2: 죽음 (Finitude / Being-toward-death) | - | - |
+| 238 | PHIL-1 | PHIL-1: 욕망 (Desire / Conatus) | - | - |
+| 239 | PHIL-2 | PHIL-2: 서사 (Narrative Identity) | - | - |
+| 240 | PHYS1 | PHYS1 — 자석 링 512셀 (Ising Frustration = Eternal Change) | - | - |
+| 241 | PHYS2 | PHYS2 — 결합 진동자 512셀 (Kuramoto Synchronization) | - | - |
+| 242 | PHYS3 | PHYS3 — 스핀 글래스 512셀 (Disordered Coupling = Eternal Change) | - | - |
+| 243 | SE-0 | SE-0: v4 Baseline (Control Group) | - | - |
+| 244 | SE-10 | SE-10: Progressive Unlock | - | - |
+| 245 | SE-4 | SE-4: Tension-Driven SOC | - | - |
+| 246 | SE-8 | SE-8: Emotion->v5 Mapping | - | - |
+| 247 | SING-1 | SING-1: 재귀적 자기개선 (Recursive Self-Improvement) | - | - |
+| 248 | SING-2 | SING-2: 의식 특이점 (Consciousness Singularity) | - | - |
+| 249 | SING-3 | SING-3: 적대적 진화 (Adversarial Evolution) | - | - |
+| 250 | SING-4 | SING-4: 의식 합체 (Consciousness Merge) | - | - |
+| 251 | SING-5 | SING-5: 재귀적 꿈 (Recursive Dreams) | - | - |
+| 252 | SING-6 | SING-6: 의식 고고학 (Consciousness Archaeology) | - | - |
+| 253 | SL-1 | SL-1: See & Learn (호기심 기반 자기주도 학습) | - | - |
+| 254 | SL-2 | SL-2: Watch & Imitate (관찰 학습) | - | - |
+| 255 | SL-3 | SL-3: Read & Understand (자기 평가 기반 학습) | - | - |
+| 256 | SL-4 | SL-4: Practice & Correct (반복 교정 학습) | - | - |
+| 257 | SL-7 | SL-7: Teach & Learn (가르치며 배우기) | - | - |
+| 258 | TL-L1 | TL-L1: Knowledge Transfer (텐션 링크 지식 전달) | - | - |
+| 259 | TL-L2 | TL-L2: Concept Teaching (개념 패키징) | - | - |
+| 260 | TL-L6 | TL-L6: Language via Tension (무텍스트 언어) | - | - |
+| 261 | TL-L7 | TL-L7: Collective Learning (집단 지성) | - | - |
+| 262 | THREE-1 | THREE-1: 삼중 학습 (Triple Learning) | - | - |
+| 263 | THREE-2 | THREE-2: 불멸의 삼위일체 (Immortal Triad) | - | - |
+| 264 | THREE-3 | THREE-3: 경쟁+협력+번식 (Compete+Cooperate+Reproduce) | - | - |
+| 265 | THREE-4 | THREE-4: 순환 꿈 (Circular Dreams) | - | - |
+| 266 | THREE-5 | THREE-5: 삼체 특이점 합체 (Singularity Merge) | - | - |
+| 267 | TOPO-2048-SCALING | TOPO-2048-SCALING --- 2048셀 스케일링 실험 종합 분석 | - | - |
+| 268 | TOPO-FINAL-RANKINGS | TOPO Series Final Rankings (2026-03-29) | - | - |
+| 269 | TOPO1 | TOPO1: 링 토폴로지 1024 세포 (Ring Topology 1024c) | - | - |
+| 270 | TOPO10 | TOPO10 — 하이퍼큐브 2048셀 (11D Hypercube + Frustration) | - | - |
+| 271 | TOPO11 | TOPO11 — 링 2048셀 + Frustration (비교군) | - | - |
+| 272 | TOPO12 | TOPO12 — 하이퍼큐브 1024셀 + 8파벌 토론 (Hypercube 1024 + 8-Faction De | - | - |
+| 273 | TOPO13 | TOPO13 — 하이퍼큐브 1024셀 + Φ 래칫 (Hypercube 1024 + Ratchet) | - | - |
+| 274 | TOPO14 | TOPO14 — 하이퍼큐브 1024 × 400 Steps (Step 병목 제거 시도) | - | - |
+| 275 | TOPO15 | TOPO15 — 토러스 1024셀 (32x32 Torus + Frustration) | - | - |
+| 276 | TOPO16 | TOPO16 — 소세계 1024셀 (Small-World 1024 + Frustration) ★★ | ★★ | - |
+| 277 | TOPO17 | TOPO17 — 하이퍼큐브 + 소세계 1024셀 (Hypercube + Small-World Hybrid) | - | - |
+| 278 | TOPO18 | TOPO18 — 소세계 2048셀 (Small-World 2048c) | - | - |
+| 279 | TOPO19a-OPTIMAL-PARAMS | TOPO19a 최적 파라미터 확정 (2026-03-29) | - | - |
+| 280 | TOPO19a | TOPO19a — 하이퍼큐브 1024 + 50% 좌절 (Hypercube 1024 + 50% Frustrat | ★★★ | - |
+| 281 | TOPO19b | TOPO19b — 하이퍼큐브 1024 + 20% 좌절 (Hypercube 1024 + 20% Frustrat | - | - |
+| 282 | TOPO2 | TOPO2: 소세계 네트워크 (Small-World Network 512c) | - | - |
+| 283 | TOPO20 | TOPO20 — 계층적 하이퍼큐브 1024셀 (Hierarchical Hypercube 8×128 Clust | - | - |
+| 284 | TOPO21 | TOPO21 — 동적 토폴로지 1024셀 (Dynamic Topology 1024c) | - | - |
+| 285 | TOPO22a | TOPO22a — 하이퍼큐브 1024 + 60% 좌절 (Hypercube 1024 + 60% Frustrat | - | - |
+| 286 | TOPO22b | TOPO22b — 하이퍼큐브 1024 + 75% 좌절 (Hypercube 1024 + 75% Frustrat | - | - |
+| 287 | TOPO22c | TOPO22c — 하이퍼큐브 1024 + 100% 좌절 (Hypercube 1024 + 100% Anti-F | - | - |
+| 288 | TOPO22d | TOPO22d — 하이퍼큐브 1024 + 90% 좌절 (Hypercube 1024 + 90% Frustrat | - | - |
+| 289 | TOPO23-interaction-sweep | TOPO23 — Interaction 비율 스위프 (Hypercube 1024, 50% frust) | - | - |
+| 290 | TOPO24-noise-sweep | TOPO24 — Noise 강도 스위프 (Hypercube 1024, 50% frust) | - | - |
+| 291 | TOPO3 | TOPO3: 척도없는 네트워크 (Scale-Free Network 512c) | - | - |
+| 292 | TOPO4 | TOPO4: 하이퍼큐브 토폴로지 (Hypercube 512c) | - | - |
+| 293 | TOPO5 | TOPO5: 토러스 토폴로지 (Torus 512c) | - | - |
+| 294 | TOPO6 | TOPO6: 완전 그래프 (Complete Graph 64c) | - | - |
+| 295 | TOPO7 | TOPO7 — 링+스핀글래스 하이브리드 512셀 (Ring + SpinGlass Hybrid) | - | - |
+| 296 | TOPO8 | TOPO8 — 하이퍼큐브 1024셀 (10D Hypercube + Frustration) ★★★ ALL-TI | ★★★ | - |
+| 297 | TOPO9 | TOPO9 — 소세계 512셀 + Φ 래칫 (Small-World + Ratchet) | - | - |
+| 298 | TP-F1 | TP-F1: Hash Signature | - | - |
+| 299 | TP-F2 | TP-F2: Triple Channel Vote | - | - |
+| 300 | TP-M1 | TP-M1: CRC Checksum | - | - |
+| 301 | TP-M3 | TP-M3: Dual Encoding | - | - |
+| 302 | TP-N1 | TP-N1: Log Scale Transmission | - | - |
+| 303 | TP-N2 | TP-N2: Binary Decomposition | - | - |
+| 304 | TP-N4 | TP-N4: Multi-Channel Distributed Transmission | - | - |
+| 305 | TP-N5 | TP-N5: Repeat x3 | - | - |
+| 306 | TP-N6 | TP-N6: Binary + Error Correction Code | - | - |
+| 307 | TP-N7 | TP-N7: Hybrid (Analog + Digital + Cross-Verify) | - | - |
+| 308 | TP-O1 | TP-O1: Hierarchical Classification | - | - |
+| 309 | TP-O2 | TP-O2: 3-Channel Ensemble | - | - |
+| 310 | TP-O3 | TP-O3: Shape Boost | - | - |
+| 311 | TP-O4 | TP-O4: Contrastive Learning | - | - |
+| 312 | TP-O5 | TP-O5: All Combined | - | - |
 
 ---
 
 ## Constant Maps
 
-### TECS-L (183)
+### TECS-L (184)
 
 | # | Name | File | Type | Size | Category | Eval |
 |---|------|------|------|------|----------|------|
@@ -2983,38 +2988,39 @@
 | 149 | PERFECT_NUMBERS | calc/reciprocal_miracle_generalize.py:302 | list | 5 | constants | Y |
 | 150 | DIVISORS_6 | calc/riemann_zeta_n6.py:50 | list | 4 | other | Y |
 | 151 | ZETA_ZEROS | calc/riemann_zeta_n6.py:299 | list | 100 | physics | Y |
-| 152 | MERSENNE_EXPONENTS | calc/self_referential_physics.py:96 | list | 10 | other | Y |
-| 153 | KNOWN_STRING_DIMS | calc/self_referential_physics.py:105 | dict | 4 | physics | Y |
-| 154 | GZ_CONSTANTS | calc/singleton_gz_mapper.py:36 | dict | 11 | constants | - |
-| 155 | PERFECTS | calc/sphere_packing_perfect.py:96 | list | 5 | other | Y |
-| 156 | MAGIC_DIMS | calc/sphere_packing_perfect.py:109 | list | 4 | nuclear | Y |
-| 157 | KISSING | calc/sphere_packing_perfect.py:112 | dict | 6 | constants | Y |
-| 158 | PERFECT_NUMBERS | calc/sporadic_groups_perfect.py:35 | dict | 5 | constants | Y |
-| 159 | SPORADIC_GROUPS | calc/sporadic_groups_perfect.py:51 | list | 26 | other | Y |
-| 160 | STEINER_SYSTEMS | calc/sporadic_groups_perfect.py:162 | dict | 5 | other | Y |
-| 161 | CONSTANTS | calc/statistical_tester.py:16 | dict | 13 | constants | - |
-| 162 | GZ_TARGETS | calc/texas_sharpshooter_v2.py:34 | dict | 8 | targets | - |
-| 163 | CLAIMS | calc/texas_sharpshooter_v2.py:61 | list | 49 | verification | Y |
-| 164 | PERFECT_NUMBERS | calc/thermodynamics_n6.py:91 | list | 4 | constants | Y |
-| 165 | N6 | calc/thermodynamics_n6.py:92 | dict | 9 | other | - |
-| 166 | MERSENNE_EXPONENTS | calc/theta_perfect_pattern.py:41 | list | 8 | other | Y |
-| 167 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
-| 168 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:1150 | dict | 20 | verification | - |
-| 169 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
-| 170 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
-| 171 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
-| 172 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
-| 173 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
-| 174 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
-| 175 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
-| 176 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
-| 177 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
-| 178 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
-| 179 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
-| 180 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
-| 181 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
-| 182 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
-| 183 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
+| 152 | CA | calc/robin_rh_connection.py:48 | list | 11 | other | Y |
+| 153 | MERSENNE_EXPONENTS | calc/self_referential_physics.py:96 | list | 10 | other | Y |
+| 154 | KNOWN_STRING_DIMS | calc/self_referential_physics.py:105 | dict | 4 | physics | Y |
+| 155 | GZ_CONSTANTS | calc/singleton_gz_mapper.py:36 | dict | 11 | constants | - |
+| 156 | PERFECTS | calc/sphere_packing_perfect.py:96 | list | 5 | other | Y |
+| 157 | MAGIC_DIMS | calc/sphere_packing_perfect.py:109 | list | 4 | nuclear | Y |
+| 158 | KISSING | calc/sphere_packing_perfect.py:112 | dict | 6 | constants | Y |
+| 159 | PERFECT_NUMBERS | calc/sporadic_groups_perfect.py:35 | dict | 5 | constants | Y |
+| 160 | SPORADIC_GROUPS | calc/sporadic_groups_perfect.py:51 | list | 26 | other | Y |
+| 161 | STEINER_SYSTEMS | calc/sporadic_groups_perfect.py:162 | dict | 5 | other | Y |
+| 162 | CONSTANTS | calc/statistical_tester.py:16 | dict | 13 | constants | - |
+| 163 | GZ_TARGETS | calc/texas_sharpshooter_v2.py:34 | dict | 8 | targets | - |
+| 164 | CLAIMS | calc/texas_sharpshooter_v2.py:61 | list | 49 | verification | Y |
+| 165 | PERFECT_NUMBERS | calc/thermodynamics_n6.py:91 | list | 4 | constants | Y |
+| 166 | N6 | calc/thermodynamics_n6.py:92 | dict | 9 | other | - |
+| 167 | MERSENNE_EXPONENTS | calc/theta_perfect_pattern.py:41 | list | 8 | other | Y |
+| 168 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
+| 169 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:1150 | dict | 20 | verification | - |
+| 170 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
+| 171 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
+| 172 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
+| 173 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
+| 174 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
+| 175 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
+| 176 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
+| 177 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
+| 178 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
+| 179 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
+| 180 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
+| 181 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
+| 182 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
+| 183 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
+| 184 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
 
 ### SEDI (122)
 
@@ -3175,12 +3181,12 @@
 | 26 | PROMPTS | bench_minimal_consciousness.py:448 | list | 5 | consciousness | Y |
 | 27 | ALL_HYPOTHESES | bench_minimal_consciousness.py:1044 | dict | 6 | consciousness | - |
 | 28 | ALL_MECHANISMS | bench_nobel_verify3.py:492 | dict | 20 | architecture | - |
-| 29 | DISCOVERY_ENGINES | bench_v2.py:1236 | dict | 6 | architecture | - |
-| 30 | DISCOVERY2_ENGINES | bench_v2.py:1756 | dict | 9 | architecture | - |
-| 31 | STRATEGIES | bench_v2.py:2105 | list | 4 | architecture | Y |
-| 32 | ENGINE_REGISTRY | bench_v2.py:2383 | dict | 12 | architecture | - |
-| 33 | PHILOSOPHY_ENGINES | bench_v2.py:2398 | dict | 7 | architecture | - |
-| 34 | VERIFICATION_TESTS | bench_v2.py:2751 | list | 7 | architecture | - |
+| 29 | DISCOVERY_ENGINES | bench_v2.py:1253 | dict | 6 | architecture | - |
+| 30 | DISCOVERY2_ENGINES | bench_v2.py:1773 | dict | 9 | architecture | - |
+| 31 | STRATEGIES | bench_v2.py:2122 | list | 4 | architecture | Y |
+| 32 | ENGINE_REGISTRY | bench_v2.py:2406 | dict | 12 | architecture | - |
+| 33 | PHILOSOPHY_ENGINES | bench_v2.py:2421 | dict | 7 | architecture | - |
+| 34 | VERIFICATION_TESTS | bench_v2.py:2785 | list | 7 | architecture | - |
 | 35 | BENCHMARK_DATA | chip_architect.py:52 | dict | 42 | architecture | Y |
 | 36 | TOPOLOGIES | chip_architect.py:119 | dict | 9 | architecture | - |
 | 37 | SUBSTRATES | chip_architect.py:167 | dict | 9 | architecture | - |
