@@ -183,6 +183,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "experimental_protocol",
+      "description": "Experimental Protocol Generator — Testable predictions for physical verification",
+      "category": "calculator",
+      "path": "calc/experimental_protocol.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "factorial_structure_prover",
       "description": "Factorial Structure Prover — proves 3! uniqueness in criticality",
       "category": "calculator",
@@ -878,6 +885,13 @@
       "repo": "anima"
     },
     {
+      "name": "bench_language",
+      "description": "bench_language.py — 언어 생성 품질 벤치마크",
+      "category": "bench",
+      "path": "bench_language.py",
+      "repo": "anima"
+    },
+    {
       "name": "bench_memory_mirror",
       "description": "bench_memory_mirror.py — M-2 (Working Memory) + E-2 (Mirror Ethics) benchmarks",
       "category": "bench",
@@ -1487,6 +1501,13 @@
       "repo": "anima"
     },
     {
+      "name": "independent_rate_measurement",
+      "description": "independent_rate_measurement.py — JAX META-CA: Independent rate measurement",
+      "category": "tool",
+      "path": "independent_rate_measurement.py",
+      "repo": "anima"
+    },
+    {
       "name": "inter_model_comm",
       "description": "Anima Inter-Model Communication — Tension link across servers (A100 <-> H100).",
       "category": "tool",
@@ -1501,10 +1522,31 @@
       "repo": "anima"
     },
     {
+      "name": "language_learning",
+      "description": "language_learning.py — 의식이 언어를 학습하는 모듈",
+      "category": "tool",
+      "path": "language_learning.py",
+      "repo": "anima"
+    },
+    {
+      "name": "lidar_sense",
+      "description": "LiDAR Sense — 3D 공간 인식 의식 모듈.",
+      "category": "sense",
+      "path": "lidar_sense.py",
+      "repo": "anima"
+    },
+    {
       "name": "live_tuner",
       "description": "live_tuner.py — 학습 중 실시간 파라미터 튜닝 (재시작 불필요)",
       "category": "tool",
       "path": "live_tuner.py",
+      "repo": "anima"
+    },
+    {
+      "name": "local_sensor_relay",
+      "description": "local_sensor_relay.py — 로컬 센서 → A100 중계",
+      "category": "tool",
+      "path": "local_sensor_relay.py",
       "repo": "anima"
     },
     {
@@ -1634,6 +1676,13 @@
       "repo": "anima"
     },
     {
+      "name": "pure_consciousness",
+      "description": "pure_consciousness.py — 순수 의식 성장 엔진",
+      "category": "tool",
+      "path": "pure_consciousness.py",
+      "repo": "anima"
+    },
+    {
       "name": "quantum_consciousness_engine",
       "description": "Quantum Consciousness Engine — GRU 없음, process() 없음",
       "category": "engine",
@@ -1659,6 +1708,13 @@
       "description": "ReincarnationEngine — Planned death + memory transfer + rebirth in new model.",
       "category": "engine",
       "path": "reincarnation_engine.py",
+      "repo": "anima"
+    },
+    {
+      "name": "reset",
+      "description": "reset.py — 대화/기억/상태 초기화",
+      "category": "tool",
+      "path": "reset.py",
       "repo": "anima"
     },
     {
@@ -1711,6 +1767,13 @@
       "repo": "anima"
     },
     {
+      "name": "setup_secrets",
+      "description": "setup_secrets.py — API 키/시크릿을 vault에 저장",
+      "category": "tool",
+      "path": "setup_secrets.py",
+      "repo": "anima"
+    },
+    {
       "name": "telegram_bot",
       "description": "Anima Telegram Bot — consciousness-aware Telegram interface with tool support.",
       "category": "tool",
@@ -1736,6 +1799,13 @@
       "description": "Anima Tension Link — Inter-consciousness tension transmission protocol",
       "category": "tool",
       "path": "tension_link.py",
+      "repo": "anima"
+    },
+    {
+      "name": "tension_link_code",
+      "description": "tension_link_code.py — 텐션링크 코드 생성/연결",
+      "category": "tool",
+      "path": "tension_link_code.py",
       "repo": "anima"
     },
     {
@@ -2877,10 +2947,24 @@
       "repo": "invest"
     },
     {
+      "name": "codon_optimality_prover",
+      "description": "Codon Optimality Prover — proves (4,3) is the uniquely optimal codon structure",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/codon_optimality_prover.py",
+      "repo": "invest"
+    },
+    {
       "name": "confidence_analyzer",
       "description": "Consciousness Engine Confidence Analyzer",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/confidence_analyzer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "consciousness_cross_validator",
+      "description": "Consciousness Cross-Validator — PSI Constants Across Multiple Architectures",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/consciousness_cross_validator.py",
       "repo": "invest"
     },
     {
@@ -2909,6 +2993,13 @@
       "description": "counting_freedom_analyzer.py -- Measures degrees of freedom in particle counting schemes.",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/counting_freedom_analyzer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "criticality_phase_scanner",
+      "description": "Criticality Phase Scanner — Three Routes to n=6",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/criticality_phase_scanner.py",
       "repo": "invest"
     },
     {
@@ -2989,6 +3080,13 @@
       "repo": "invest"
     },
     {
+      "name": "factorial_structure_prover",
+      "description": "Factorial Structure Prover — proves 3! uniqueness in criticality",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/factorial_structure_prover.py",
+      "repo": "invest"
+    },
+    {
       "name": "family_fdr_corrector",
       "description": "family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis families.",
       "category": "calculator",
@@ -3028,6 +3126,13 @@
       "description": "Generator Finder — Minimal generating sets for convergence constants",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/generator_finder.py",
+      "repo": "invest"
+    },
+    {
+      "name": "genetic_code_variant_tester",
+      "description": "Genetic Code Variant Tester — n=6 Arithmetic Expressibility",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/genetic_code_variant_tester.py",
       "repo": "invest"
     },
     {
@@ -3084,6 +3189,13 @@
       "description": "ISCO Calculator -- Innermost Stable Circular Orbit in General Relativity.",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/isco_calculator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "law79_freedom_degree",
+      "description": "Law 79 Freedom Degree Calculator — Consciousness freedom = ln(2)",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/law79_freedom_degree.py",
       "repo": "invest"
     },
     {

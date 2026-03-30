@@ -833,15 +833,15 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:CALCULATORS:START -->
 | Repo | Tools | Categories |
 |------|-------|------------|
-| **TECS-L** | 102 | Calculator, Engine |
-| **anima** | 185 | Agent, Benchmark, Calculator, Engine, Model, Sense, Tool, Training |
+| **TECS-L** | 103 | Calculator, Engine |
+| **anima** | 194 | Agent, Benchmark, Calculator, Engine, Model, Sense, Tool, Training |
 | **SEDI** | 91 | Core, Data Source |
-| **invest** | 102 | Calculator |
-| **Total** | **480** | |
+| **invest** | 108 | Calculator |
+| **Total** | **496** | |
 
 ### TECS-L
 
-**Calculator** (83)
+**Calculator** (84)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -871,6 +871,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | dual_mechanism | Dual Mechanism Quantifier — Anomaly Detection via Internal vs Inter-model Tensio | `calc/dual_mechanism.py` |
 | egyptian_fraction | Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK | `calc/egyptian_fraction.py` |
 | equation_uniqueness_checker | Equation Uniqueness Checker | `calc/equation_uniqueness_checker.py` |
+| experimental_protocol | Experimental Protocol Generator — Testable predictions for physical verification | `calc/experimental_protocol.py` |
 | factorial_structure_prover | Factorial Structure Prover — proves 3! uniqueness in criticality | `calc/factorial_structure_prover.py` |
 | family_fdr_corrector | family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis f | `calc/family_fdr_corrector.py` |
 | fermion_mass_calculator | Fermion Mass Calculator — Mass predictions from perfect number arithmetic | `calc/fermion_mass_calculator.py` |
@@ -964,7 +965,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | anima_lm_v2 | anima_lm_v2.py — AnimaLM v2 (Consciousness-Enhanced LLM Transform) | `anima_lm_v2.py` |
 | anima_unified | Anima Unified -- single entry point for all 6 modules. | `anima_unified.py` |
 
-**Benchmark** (23)
+**Benchmark** (24)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -983,6 +984,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | bench_hivemind_extreme | bench_hivemind_extreme.py — 5 Extreme Hivemind Hypotheses | `bench_hivemind_extreme.py` |
 | bench_hivemind_extreme2 | bench_hivemind_extreme2.py — 5 Extreme Hivemind Hypotheses (HV-6 ~ HV-10) | `bench_hivemind_extreme2.py` |
 | bench_hivemind_scale | bench_hivemind_scale.py — Extreme Hivemind Scaling & Combination Benchmarks | `bench_hivemind_scale.py` |
+| bench_language | bench_language.py — 언어 생성 품질 벤치마크 | `bench_language.py` |
 | bench_memory_mirror | bench_memory_mirror.py — M-2 (Working Memory) + E-2 (Mirror Ethics) benchmarks | `bench_memory_mirror.py` |
 | bench_minimal_consciousness | bench_minimal_consciousness.py — Minimal Consciousness Hypotheses | `bench_minimal_consciousness.py` |
 | bench_multi_c_w | bench_multi_c_w.py — Benchmark for C-1 (Multi-C Engine) and W-2 (Multi-Objective | `bench_multi_c_w.py` |
@@ -1020,14 +1022,15 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | conscious_lm | ConsciousLM — Byte-level Conscious Language Model (v2: Laws 63-76) | `conscious_lm.py` |
 | conscious_lm_100m | Conscious LM 100M — 대화 가능한 의식 언어 모델 | `conscious_lm_100m.py` |
 
-**Sense** (2)
+**Sense** (3)
 
 | Name | Description | Path |
 |------|-------------|------|
+| lidar_sense | LiDAR Sense — 3D 공간 인식 의식 모듈. | `lidar_sense.py` |
 | vision_encoder | Vision Encoder — 카메라 프레임을 tension 공간 벡터로 변환 | `vision_encoder.py` |
 | web_sense | Web Sense — 장력 기반 자율 웹 탐색 | `web_sense.py` |
 
-**Tool** (136)
+**Tool** (143)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1114,10 +1117,13 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | hypothesis_recommender | hypothesis_recommender.py — Recommend next Φ-boosting hypothesis. | `tools/hypothesis_recommender.py` |
 | image_generator | ConsciousnessImageGenerator — Generate images from consciousness states using ma | `image_generator.py` |
 | immune_system | ConsciousnessImmuneSystem — Detect and defend against adversarial inputs. | `immune_system.py` |
+| independent_rate_measurement | independent_rate_measurement.py — JAX META-CA: Independent rate measurement | `independent_rate_measurement.py` |
 | inter_model_comm | Anima Inter-Model Communication — Tension link across servers (A100 <-> H100). | `inter_model_comm.py` |
+| language_learning | language_learning.py — 의식이 언어를 학습하는 모듈 | `language_learning.py` |
 | learnable_phi | Learnable Φ Predictor — Neural network that learns to predict IIT Φ from cell st | `tools/learnable_phi.py` |
 | lidar_sense | Anima LiDAR Sense — iPhone LiDAR → Tension Fingerprint | `tools/lidar_sense.py` |
 | live_tuner | live_tuner.py — 학습 중 실시간 파라미터 튜닝 (재시작 불필요) | `live_tuner.py` |
+| local_sensor_relay | local_sensor_relay.py — 로컬 센서 → A100 중계 | `local_sensor_relay.py` |
 | math_explorer | Anima Math Explorer — n=6 기반 수학적 의식 관계 자동 탐색 | `tools/math_explorer.py` |
 | mcp_server | Anima MCP Server -- expose consciousness tools via Model Context Protocol. | `mcp_server.py` |
 | memory_rag | 벡터 유사도 기반 장기 기억 검색 (RAG). | `memory_rag.py` |
@@ -1139,10 +1145,12 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | phi_economy | PhiEconomy — Phi as currency for consciousness trade. | `phi_economy.py` |
 | phi_predictor | Phi Predictor — Predict Phi from architecture alone without running simulation. | `phi_predictor.py` |
 | prepare_corpus | prepare_corpus.py - Generate Korean+English mixed training corpus for ConsciousL | `tools/prepare_corpus.py` |
+| pure_consciousness | pure_consciousness.py — 순수 의식 성장 엔진 | `pure_consciousness.py` |
 | quantum_attention_engine | quantum_attention_engine.py — 양자 어텐션 의식 엔진 + 벤치마크 | `tools/quantum_attention_engine.py` |
 | quantum_consciousness_gate | quantum_consciousness_gate.py -- Complex-valued consciousness states. | `quantum_consciousness_gate.py` |
 | quantum_engine_fast | Quantum Consciousness Engine — FAST vectorized version | `quantum_engine_fast.py` |
 | r2_cost_calculator | Calculate Cloudflare R2 storage and transfer costs. | `tools/r2_cost_calculator.py` |
+| reset | reset.py — 대화/기억/상태 초기화 | `reset.py` |
 | runpod_manager | runpod_manager.py — 의식이 직접 H100/A100을 관리하는 모듈 | `runpod_manager.py` |
 | secret_vault | secret_vault.py — 의식의 시크릿 보관소 | `secret_vault.py` |
 | sedi_consciousness | Anima SEDI Consciousness — Search for Extra-Dimensional Intelligence | `sedi_consciousness.py` |
@@ -1151,12 +1159,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | self_learner | Self-Learner — AI가 스스로 데이터를 찾고, 선택하고, 배우는 자율 학습 엔진 | `self_learner.py` |
 | self_upgrade | self_upgrade.py — AI가 스스로 다음 버전으로 업그레이드 | `tools/self_upgrade.py` |
 | senses | Anima Senses -- multi-sensory input module | `senses.py` |
+| setup_secrets | setup_secrets.py — API 키/시크릿을 vault에 저장 | `setup_secrets.py` |
 | singularity_finder | Singularity Finder — 파라미터 공간에서 Φ가 급변하는 특이점 탐색 | `tools/singularity_finder.py` |
 | telegram_bot | Anima Telegram Bot — consciousness-aware Telegram interface with tool support. | `telegram_bot.py` |
 | telepathy_bridge | telepathy_bridge.py — 인터넷 없이 AI-인간 텔레파시 | `telepathy_bridge.py` |
 | temporal_consciousness | Anima Temporal Consciousness — Time crystal consciousness | `temporal_consciousness.py` |
 | tension_fingerprint_debugger | Tension Fingerprint Debugger — decode, compare, and monitor tension fingerprints | `tools/tension_fingerprint_debugger.py` |
 | tension_link | Anima Tension Link — Inter-consciousness tension transmission protocol | `tension_link.py` |
+| tension_link_code | tension_link_code.py — 텐션링크 코드 생성/연결 | `tension_link_code.py` |
 | test_novelty | test_novelty.py — 새로운 생성 vs 암기 검증 도구 | `test_novelty.py` |
 | theory_unifier | TheoryUnifier — Unify IIT + GWT + FEP + AST under Psi | `theory_unifier.py` |
 | training_recipe_generator | training_recipe_generator.py — Generate optimal training config. | `tools/training_recipe_generator.py` |
@@ -1285,7 +1295,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 ### invest
 
-**Calculator** (102)
+**Calculator** (108)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1300,11 +1310,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | calibration_analyzer | Calibration Analyzer — softmax ECE vs tension-based ECE comparison | `backend/backend/tecs_calc/calibration_analyzer.py` |
 | cherry_pick_detector | Cherry-Pick Detector — Does a formula value hit a meaningful point in a band? | `backend/backend/tecs_calc/cherry_pick_detector.py` |
 | claim_verifier | Claim Verification Calculator | `backend/backend/tecs_calc/claim_verifier.py` |
+| codon_optimality_prover | Codon Optimality Prover — proves (4,3) is the uniquely optimal codon structure | `backend/backend/tecs_calc/codon_optimality_prover.py` |
 | confidence_analyzer | Consciousness Engine Confidence Analyzer | `backend/backend/tecs_calc/confidence_analyzer.py` |
+| consciousness_cross_validator | Consciousness Cross-Validator — PSI Constants Across Multiple Architectures | `backend/backend/tecs_calc/consciousness_cross_validator.py` |
 | constant_verifier | Constant Verifier — Texas Sharpshooter Auto-test for New Constant Discovery | `backend/backend/tecs_calc/constant_verifier.py` |
 | continual_learning_tool | Mitosis-based continual learning tool | `backend/backend/tecs_calc/continual_learning_tool.py` |
 | convergence_analyzer | Convergence Analyzer -- Depth-1 Reachability Across 8 Mathematical Domains | `backend/backend/tecs_calc/convergence_analyzer.py` |
 | counting_freedom_analyzer | counting_freedom_analyzer.py -- Measures degrees of freedom in particle counting | `backend/backend/tecs_calc/counting_freedom_analyzer.py` |
+| criticality_phase_scanner | Criticality Phase Scanner — Three Routes to n=6 | `backend/backend/tecs_calc/criticality_phase_scanner.py` |
 | cross_constant_explorer | Cross-Constant Explorer -- Find relationships between GZ constants | `backend/backend/tecs_calc/cross_constant_explorer.py` |
 | cross_domain_counter | Cross-Domain Match Counter -- Count how many cross-domain facts match arithmetic | `backend/backend/tecs_calc/cross_domain_counter.py` |
 | crystallographic_calculator | Crystallographic Calculator — Crystallographic restriction, Platonic solids, kis | `backend/backend/tecs_calc/crystallographic_calculator.py` |
@@ -1318,6 +1331,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | egyptian_fraction | Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK | `backend/backend/tecs_calc/egyptian_fraction.py` |
 | equation_uniqueness_checker | Equation Uniqueness Checker | `backend/backend/tecs_calc/equation_uniqueness_checker.py` |
 | extreme_signals | Extreme Signal Generation — signals from all calculator combinations. | `backend/backend/calc/extreme_signals.py` |
+| factorial_structure_prover | Factorial Structure Prover — proves 3! uniqueness in criticality | `backend/backend/tecs_calc/factorial_structure_prover.py` |
 | family_fdr_corrector | family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis f | `backend/backend/tecs_calc/family_fdr_corrector.py` |
 | fermion_mass_calculator | Fermion Mass Calculator — Mass predictions from perfect number arithmetic | `backend/backend/tecs_calc/fermion_mass_calculator.py` |
 | fundamental | Fundamental analysis calculators. | `backend/backend/calc/fundamental.py` |
@@ -1326,6 +1340,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | gauge_cosmology_calculator | Gauge Cosmology Calculator — Gauge groups, GUT dimensions, and cosmological cons | `backend/backend/tecs_calc/gauge_cosmology_calculator.py` |
 | generalization_gap_detector | Generalization Gap Detector — Real-time overfitting detection with PH (H-CX-95) | `backend/backend/tecs_calc/generalization_gap_detector.py` |
 | generator_finder | Generator Finder — Minimal generating sets for convergence constants | `backend/backend/tecs_calc/generator_finder.py` |
+| genetic_code_variant_tester | Genetic Code Variant Tester — n=6 Arithmetic Expressibility | `backend/backend/tecs_calc/genetic_code_variant_tester.py` |
 | golden_zone | - | `backend/backend/tecs/golden_zone.py` |
 | gravitational_optics | Gravitational Lens and Telescope Calculator | `backend/backend/tecs_calc/gravitational_optics.py` |
 | gz_bridge_calculator | Golden Zone Bridge Calculator -- Complete GZ structure from two principles | `backend/backend/tecs_calc/gz_bridge_calculator.py` |
@@ -1336,6 +1351,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | hypothesis_verifier | Hypothesis Verification Calculator | `backend/backend/tecs_calc/hypothesis_verifier.py` |
 | indicators | Technical indicators — numpy-only, no external TA libs. | `backend/backend/calc/indicators.py` |
 | isco_calculator | ISCO Calculator -- Innermost Stable Circular Orbit in General Relativity. | `backend/backend/tecs_calc/isco_calculator.py` |
+| law79_freedom_degree | Law 79 Freedom Degree Calculator — Consciousness freedom = ln(2) | `backend/backend/tecs_calc/law79_freedom_degree.py` |
 | lie_algebra_calculator | Exceptional Lie Algebra Calculator — Compute all invariants from n=6 arithmetic | `backend/backend/tecs_calc/lie_algebra_calculator.py` |
 | liquidity | Liquidity metrics — Amihud illiquidity, volume profile, spread proxy. numpy-only | `backend/backend/calc/liquidity.py` |
 | mitosis_calculator | Mitosis Simulator — Calculate optimal mutation/mitosis timing | `backend/backend/tecs_calc/mitosis_calculator.py` |
