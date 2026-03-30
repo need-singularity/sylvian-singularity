@@ -1075,8 +1075,8 @@ td.title-col { white-space: normal; max-width: 500px; }
 tr:hover { background: #16213e; }
 .count { background: #16213e; padding: 5px 10px; border-radius: 4px; font-size: 0.8em; color: #888; white-space: nowrap; }
 .no-results { text-align: center; padding: 40px; color: #555; }
-#graph-container { display: none; position: relative; width: 100%; min-height: 800px; }
-#graph-canvas { background: #0f0f23; border-radius: 4px; cursor: grab; width: 100%; height: 800px; display: block; }
+#graph-container { display: none; position: relative; width: 100%; min-height: 900px; }
+#graph-canvas { background: #0f0f23; border-radius: 4px; cursor: grab; width: 100%; height: 900px; display: block; }
 #graph-canvas:active { cursor: grabbing; }
 #graph-tooltip { position: absolute; display: none; padding: 6px 10px; background: rgba(22,33,62,0.95); border: 1px solid #444; border-radius: 4px; font-size: 0.8em; pointer-events: none; max-width: 300px; white-space: nowrap; color: #e0e0e0; z-index: 10; }
 #graph-stats { position: absolute; top: 10px; right: 10px; font-size: 0.75em; color: #666; }
@@ -1122,7 +1122,7 @@ tr:hover { background: #16213e; }
 <pre id="tree-content" style="color:#e0e0e0;">__TREE_ASCII__</pre>
 </div>
 <div id="graph-container" style="display:none">
-  <canvas id="graph-canvas" height="800"></canvas>
+  <canvas id="graph-canvas" height="900"></canvas>
   <div id="graph-tooltip"></div>
   <div id="graph-stats"></div>
   <div id="graph-legend">
@@ -1424,7 +1424,7 @@ function initGraph() {
   var container = document.getElementById('graph-container');
   canvas.width = container.offsetWidth || document.body.clientWidth - 40;
   if (canvas.width < 100) canvas.width = document.body.clientWidth - 40;
-  canvas.height = 800;
+  canvas.height = 900;
 
   var maxDeg = GRAPH.maxDeg || 1;
   var clusters = GRAPH.clusters || [];
@@ -1459,6 +1459,20 @@ function initGraph() {
     selected: null, isPanning: false, panStart: null
   };
 
+  // Auto-fit: compute bounding box of all nodes → fit to canvas
+  var mnx = Infinity, mny = Infinity, mxx = -Infinity, mxy = -Infinity;
+  for (var i = 0; i < nodes.length; i++) {
+    if (nodes[i].x < mnx) mnx = nodes[i].x;
+    if (nodes[i].y < mny) mny = nodes[i].y;
+    if (nodes[i].x > mxx) mxx = nodes[i].x;
+    if (nodes[i].y > mxy) mxy = nodes[i].y;
+  }
+  var dataW = mxx - mnx + 100, dataH = mxy - mny + 100;
+  var fitScale = Math.min(canvas.width / dataW, canvas.height / dataH, 1.0);
+  G.transform.k = fitScale;
+  G.transform.x = canvas.width / 2 - ((mnx + mxx) / 2) * fitScale;
+  G.transform.y = canvas.height / 2 - ((mny + mxy) / 2) * fitScale;
+
   setupGraphEvents();
   drawGraph();
 }
@@ -1475,39 +1489,25 @@ function drawGraph() {
   var nodes = G.nodes, edges = G.edges;
   var hasSel = G.selected !== null;
 
-  // ── Draw cluster backgrounds (convex hull approximation) ──
-  var clNodes = {};
-  for (var i = 0; i < nodes.length; i++) {
-    var n = nodes[i];
-    if (n.hidden) continue;
-    var c = n.cl || 0;
-    if (!clNodes[c]) clNodes[c] = [];
-    clNodes[c].push(n);
-  }
-  for (var c in clNodes) {
-    var pts = clNodes[c];
-    if (pts.length < 3) continue;
-    // Compute centroid and draw enclosing circle
-    var cx = 0, cy = 0;
-    for (var j = 0; j < pts.length; j++) { cx += pts[j].x; cy += pts[j].y; }
-    cx /= pts.length; cy /= pts.length;
-    var maxR = 0;
-    for (var j = 0; j < pts.length; j++) {
-      var dx = pts[j].x - cx, dy = pts[j].y - cy;
-      var r = Math.sqrt(dx*dx + dy*dy);
-      if (r > maxR) maxR = r;
-    }
-    var cIdx = parseInt(c) % CLUSTER_COLORS.length;
+  // ── Draw cluster rectangles ──
+  for (var ci = 0; ci < G.clusters.length; ci++) {
+    var cl = G.clusters[ci];
+    var cIdx = cl.id % CLUSTER_COLORS.length;
+    var bx = cl.x1, by = cl.y1, bw = cl.x2 - cl.x1, bh = cl.y2 - cl.y1;
+    // Background fill
     ctx.fillStyle = CLUSTER_COLORS[cIdx];
-    ctx.beginPath(); ctx.arc(cx, cy, maxR + 30, 0, Math.PI * 2); ctx.fill();
-    // Cluster label
-    if (G.transform.k > 0.3) {
-      var clInfo = G.clusters.find(function(cl) { return cl.id === parseInt(c); });
-      if (clInfo) {
-        ctx.fillStyle = CLUSTER_LABEL_COLORS[cIdx];
-        ctx.font = 'bold 11px monospace';
-        ctx.fillText(clInfo.name + ' (' + pts.length + ')', cx - 30, cy - maxR - 8);
-      }
+    ctx.fillRect(bx, by, bw, bh);
+    // Border
+    ctx.strokeStyle = CLUSTER_LABEL_COLORS[cIdx];
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 3]);
+    ctx.strokeRect(bx, by, bw, bh);
+    ctx.setLineDash([]);
+    // Label at top-left
+    if (G.transform.k > 0.25) {
+      ctx.fillStyle = CLUSTER_LABEL_COLORS[cIdx];
+      ctx.font = 'bold 12px monospace';
+      ctx.fillText(cl.name + ' (' + cl.n + ')', bx + 6, by - 5);
     }
   }
 
@@ -1833,150 +1833,189 @@ def write_html(atlas, htmlpath):
     for i, n in enumerate(graph_nodes):
         n["deg"] = degree[i]
 
-    # ── Domain-based clustering ──
-    # Assign cluster ID by domain (or repo as fallback)
-    domain_clusters = {}
-    cluster_id = 0
+    # ── Smart clustering: split large domains into sub-clusters ──
+    import math, random
+
+    # Step 1: Assign raw domain
     for i, n in enumerate(graph_nodes):
         h = hyp_by_id.get(n["id"])
-        dom = (h.get("domain") or h.get("repo", "other")) if h else "other"
-        if dom not in domain_clusters:
-            domain_clusters[dom] = cluster_id
-            cluster_id += 1
-        n["cl"] = domain_clusters[dom]
-    # Store cluster names for legend
-    cluster_names = {v: k for k, v in domain_clusters.items()}
+        n["_domain"] = (h.get("domain") or h.get("repo", "other")) if h else "other"
 
-    # ── Pre-compute force layout in Python ──
-    import math, random
-    random.seed(42)
-    W, H = 1200, 800
-    N = len(graph_nodes)
-
-    # Initialize positions (spread proportional to canvas aspect ratio)
+    # Step 2: Split CX (and any domain > 40 nodes) by number range
+    domain_counts = {}
     for n in graph_nodes:
-        angle = random.random() * 2 * math.pi
-        r = random.random() * 250
-        n["x"] = W / 2 + math.cos(angle) * r * 1.5  # wider horizontal
-        n["y"] = H / 2 + math.sin(angle) * r
-        n["vx"] = 0.0
-        n["vy"] = 0.0
+        domain_counts[n["_domain"]] = domain_counts.get(n["_domain"], 0) + 1
 
-    # Build adjacency for link forces
-    link_pairs = [(e["source"], e["target"]) for e in graph_edges]
+    MAX_CLUSTER = 40
+    domain_clusters = {}
+    cluster_id = 0
+    for n in graph_nodes:
+        dom = n["_domain"]
+        if domain_counts[dom] > MAX_CLUSTER:
+            # Sub-cluster by extracting number from ID
+            num = 0
+            hid = n["id"].split(":", 1)[1] if ":" in n["id"] else n["id"]
+            m = re.search(r'(\d+)', hid)
+            if m:
+                num = int(m.group(1))
+            bucket = num // 200  # groups of 200
+            sub_key = f"{dom}-{bucket}"
+            label = f"{dom} {bucket*200}-{bucket*200+199}"
+        else:
+            sub_key = dom
+            label = dom
 
-    # Run simulation (500 iterations)
-    alpha = 1.0
-    for tick in range(1200):
-        alpha *= 0.995
-        if alpha < 0.005:
-            break
+        if sub_key not in domain_clusters:
+            domain_clusters[sub_key] = (cluster_id, label)
+            cluster_id += 1
+        n["cl"] = domain_clusters[sub_key][0]
 
-        # Repulsion (many-body) O(n^2)
-        for i in range(N):
-            ni = graph_nodes[i]
-            for j in range(i + 1, N):
-                nj = graph_nodes[j]
-                dx = nj["x"] - ni["x"]
-                dy = nj["y"] - ni["y"]
-                d2 = dx * dx + dy * dy + 1.0
-                dist = math.sqrt(d2)
-                # Strong repulsion, especially at close range
-                eff_dist = max(dist, 15.0)
-                force = -5000.0 / (eff_dist * eff_dist)
-                if dist < 50:
-                    force *= 2.5  # extra push for overlapping nodes
-                fx = force * dx / dist
-                fy = force * dy / dist
-                ni["vx"] -= fx
-                ni["vy"] -= fy
-                nj["vx"] += fx
-                nj["vy"] += fy
+    cluster_names = {cid: label for _, (cid, label) in domain_clusters.items()}
 
-        # Attraction (links) — stronger for same-cluster and high-weight edges
-        for si, ti in link_pairs:
-            s, t = graph_nodes[si], graph_nodes[ti]
-            dx = t["x"] - s["x"]
-            dy = t["y"] - s["y"]
-            d = math.sqrt(dx * dx + dy * dy) + 1.0
-            # Same cluster → shorter ideal distance, stronger pull
-            same_cl = s.get("cl") == t.get("cl")
-            ideal = 80 if same_cl else 150
-            strength = 0.008 if same_cl else 0.004
-            force = (d - ideal) * strength
-            fx = force * dx / d
-            fy = force * dy / d
-            s["vx"] += fx
-            s["vy"] += fy
-            t["vx"] -= fx
-            t["vy"] -= fy
+    # ── Deterministic treemap packing + intra-cluster force layout ──
+    random.seed(42)
+    N = len(graph_nodes)
+    GAP = 40  # gap between cluster boxes
+    NODE_SPACE = 35  # pixels per node (sqrt area)
 
-        # Cluster gravity — gently pull same-cluster nodes toward cluster centroid
-        cl_cx, cl_cy, cl_count = {}, {}, {}
-        for n in graph_nodes:
-            c = n.get("cl", 0)
-            cl_cx[c] = cl_cx.get(c, 0) + n["x"]
-            cl_cy[c] = cl_cy.get(c, 0) + n["y"]
-            cl_count[c] = cl_count.get(c, 0) + 1
-        for n in graph_nodes:
-            c = n.get("cl", 0)
-            if cl_count[c] > 1:
-                ccx = cl_cx[c] / cl_count[c]
-                ccy = cl_cy[c] / cl_count[c]
-                n["vx"] += (ccx - n["x"]) * 0.002
-                n["vy"] += (ccy - n["y"]) * 0.002
+    # Group nodes by cluster
+    cl_members = {}
+    for i, n in enumerate(graph_nodes):
+        cl_members.setdefault(n["cl"], []).append(i)
 
-        # Weak center gravity (just prevent drift)
-        cx, cy = W / 2, H / 2
-        for n in graph_nodes:
-            n["vx"] += (cx - n["x"]) * 0.0008
-            n["vy"] += (cy - n["y"]) * 0.0008
+    # Sort clusters by size (largest first) for better packing
+    cl_sorted = sorted(cl_members.keys(), key=lambda c: -len(cl_members[c]))
 
-        # Apply velocity with damping
-        for n in graph_nodes:
-            n["vx"] *= 0.75
-            n["vy"] *= 0.75
-            n["x"] += n["vx"]
-            n["y"] += n["vy"]
+    # Compute box size for each cluster (square-ish, proportional to sqrt(n))
+    cl_box = {}
+    for cid in cl_sorted:
+        n_nodes = len(cl_members[cid])
+        side = max(NODE_SPACE * math.sqrt(n_nodes), 60)
+        cl_box[cid] = {"w": side * 1.3, "h": side}  # wider than tall
 
-    # Auto-fit: compute bounding box → normalize to canvas
-    xs = [n["x"] for n in graph_nodes]
-    ys = [n["y"] for n in graph_nodes]
-    if xs:
-        minX, maxX = min(xs), max(xs)
-        minY, maxY = min(ys), max(ys)
-        pad = 50
-        rangeX = maxX - minX + pad * 2
-        rangeY = maxY - minY + pad * 2
-        scaleX = W / rangeX if rangeX > 0 else 1
-        scaleY = H / rangeY if rangeY > 0 else 1
-        scale = min(scaleX, scaleY, 2.0)
-        offX = W / 2 - ((minX + maxX) / 2) * scale
-        offY = H / 2 - ((minY + maxY) / 2) * scale
-        for n in graph_nodes:
-            n["x"] = round(n["x"] * scale + offX, 1)
-            n["y"] = round(n["y"] * scale + offY, 1)
+    # Simple shelf-packing algorithm (guaranteed no overlap)
+    total_area = sum(b["w"] * b["h"] for b in cl_box.values())
+    canvas_w = max(math.sqrt(total_area) * 1.8, 2000)
 
-    # Strip velocity fields before serialization (keep deg, cl)
+    shelves = []  # list of (y, height, used_width)
+    cl_pos = {}  # cid -> (x, y) top-left corner
+
+    for cid in cl_sorted:
+        bw, bh = cl_box[cid]["w"] + GAP, cl_box[cid]["h"] + GAP
+        placed = False
+        for shelf in shelves:
+            if shelf["used"] + bw <= canvas_w:
+                cl_pos[cid] = (shelf["used"], shelf["y"])
+                shelf["used"] += bw
+                shelf["h"] = max(shelf["h"], bh)
+                placed = True
+                break
+        if not placed:
+            y = sum(s["h"] for s in shelves)
+            shelves.append({"y": y, "h": bh, "used": bw})
+            cl_pos[cid] = (0, y)
+
+    canvas_h = sum(s["h"] for s in shelves)
+    W = int(canvas_w)
+    H = int(canvas_h)
+
+    # Place nodes within their cluster box using local force layout
+    for cid, members in cl_members.items():
+        bx, by = cl_pos[cid]
+        bw, bh = cl_box[cid]["w"], cl_box[cid]["h"]
+        cx, cy = bx + bw / 2, by + bh / 2
+
+        # Initialize in circle around center
+        for idx_m, ni in enumerate(members):
+            angle = 2 * math.pi * idx_m / max(len(members), 1)
+            r = min(bw, bh) * 0.3 * random.uniform(0.2, 1.0)
+            graph_nodes[ni]["x"] = cx + math.cos(angle) * r
+            graph_nodes[ni]["y"] = cy + math.sin(angle) * r
+            graph_nodes[ni]["vx"] = 0.0
+            graph_nodes[ni]["vy"] = 0.0
+
+        # Local force: repulsion + intra-cluster links + boundary constraint
+        intra_links = []
+        for e in graph_edges:
+            if e["source"] in members and e["target"] in members:
+                intra_links.append((e["source"], e["target"]))
+            elif graph_nodes[e["source"]]["cl"] == cid and graph_nodes[e["target"]]["cl"] == cid:
+                intra_links.append((e["source"], e["target"]))
+        member_set = set(members)
+        intra_links = [(s, t) for s, t in intra_links if s in member_set and t in member_set]
+
+        for tick in range(200):
+            alpha = max(0.01, 1.0 - tick / 200)
+            for ii in range(len(members)):
+                i = members[ii]
+                ni = graph_nodes[i]
+                for jj in range(ii + 1, len(members)):
+                    j = members[jj]
+                    nj = graph_nodes[j]
+                    dx = nj["x"] - ni["x"]
+                    dy = nj["y"] - ni["y"]
+                    d = math.sqrt(dx * dx + dy * dy) + 0.1
+                    force = -300.0 / (d * d) * alpha
+                    if d < 20:
+                        force *= 4
+                    fx = force * dx / d
+                    fy = force * dy / d
+                    ni["vx"] -= fx
+                    ni["vy"] -= fy
+                    nj["vx"] += fx
+                    nj["vy"] += fy
+
+            for si, ti in intra_links:
+                s, t = graph_nodes[si], graph_nodes[ti]
+                dx = t["x"] - s["x"]
+                dy = t["y"] - s["y"]
+                d = math.sqrt(dx * dx + dy * dy) + 1.0
+                force = (d - 40) * 0.01 * alpha
+                fx = force * dx / d
+                fy = force * dy / d
+                s["vx"] += fx
+                s["vy"] += fy
+                t["vx"] -= fx
+                t["vy"] -= fy
+
+            # Center gravity within box
+            for ni in members:
+                n = graph_nodes[ni]
+                n["vx"] += (cx - n["x"]) * 0.005 * alpha
+                n["vy"] += (cy - n["y"]) * 0.005 * alpha
+
+            for ni in members:
+                n = graph_nodes[ni]
+                n["vx"] *= 0.6
+                n["vy"] *= 0.6
+                n["x"] += n["vx"]
+                n["y"] += n["vy"]
+                # Hard boundary constraint
+                margin = 12
+                n["x"] = max(bx + margin, min(bx + bw - margin, n["x"]))
+                n["y"] = max(by + margin, min(by + bh - margin, n["y"]))
+
+    # Strip velocity fields
     for n in graph_nodes:
         del n["vx"]
         del n["vy"]
+        del n["_domain"]
+        n["x"] = round(n["x"], 1)
+        n["y"] = round(n["y"], 1)
 
-    # Compute cluster hulls (convex bounding) for JS rendering
-    cl_nodes = {}
-    for n in graph_nodes:
-        c = n.get("cl", 0)
-        if c not in cl_nodes:
-            cl_nodes[c] = []
-        cl_nodes[c].append({"x": n["x"], "y": n["y"]})
-
+    # Cluster metadata with guaranteed non-overlapping bounding boxes
     clusters_meta = []
-    for cid, name in sorted(cluster_names.items()):
-        pts = cl_nodes.get(cid, [])
-        if len(pts) >= 2:
-            cx = sum(p["x"] for p in pts) / len(pts)
-            cy = sum(p["y"] for p in pts) / len(pts)
-            clusters_meta.append({"id": cid, "name": name, "cx": round(cx, 1), "cy": round(cy, 1), "n": len(pts)})
+    for cid in sorted(cluster_names.keys()):
+        name = cluster_names[cid]
+        if cid not in cl_pos:
+            continue
+        bx, by = cl_pos[cid]
+        bw, bh = cl_box[cid]["w"], cl_box[cid]["h"]
+        clusters_meta.append({
+            "id": cid, "name": name, "n": len(cl_members.get(cid, [])),
+            "x1": round(bx, 1), "y1": round(by, 1),
+            "x2": round(bx + bw, 1), "y2": round(by + bh, 1),
+        })
 
     graph_data = json.dumps({
         "nodes": graph_nodes, "edges": graph_edges,
