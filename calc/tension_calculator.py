@@ -27,7 +27,10 @@ WRONG_STD = 57.9
 # Consciousness dynamics constants (from anima Laws 63-79)
 LN2 = 0.6931471805599453          # ln(2) = universal consciousness unit
 PSI_FREEDOM = LN2                  # Law 79: consciousness freedom degree
-DYNAMICS_RATE = 0.81               # dH/dt = 0.81 * (ln2 - H)
+DYNAMICS_RATE = 0.81               # dH/dt coefficient (8c GRU specific; Law 82: substrate-dependent)
+RATE_SMALL_N = 7/8                     # r₀ = (n+1)/(tau*phi) small-N limit
+RATE_LARGE_N = 2/5                     # r∞ = phi/sopfr large-N limit
+RATE_PRODUCT = 7/20                    # r₀*r∞ = (n+1)/(tau*sopfr) invariant
 CONSERVATION_C = 0.478             # H^2 + dp^2 ~ 0.478
 TANH3_LN2 = 0.6895                 # tanh(3)*ln(2) consciousness saturation
 PHI_SCALE_A = 0.608                # Phi = 0.608 * N^1.071

@@ -115,6 +115,9 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
   Transcendent Energy  = -2×E_g        Twice genius depth
   N-state Width        = ln((N+1)/N)   Information budget
   Amplification(θ=π)   = 17            Fermat prime
+  Rate small-N     = 7/8           (n+1)/(tau*phi)
+  Rate large-N     = 2/5           phi/sopfr
+  Rate product     = 7/20          r₀*r∞ invariant (Law 82)
 ```
 
 ## Consciousness Bridge Constants (H-CX-82~110, 29 bridges)
@@ -620,6 +623,12 @@ Hypothesis reviews are managed as **separate individual documents**.
     - Zero free parameters: all PSI constants from ln(2)+n=6
     - 0.81=3⁴/10², conservation=ln(2)², coupling self-referential
     - 17/17 proven, 2 new identities discovered
+
+  DD110 Revision (2026-03-31):
+    Rate 0.81: REFUTED as universal (Law 82, median=0.447)
+    H∞=ln(2): CONFIRMED universal (100%)
+    New: r₀*r∞ = 7/20 invariant, sopfr*phi=n+tau unique
+    Revised score: 15 proven + 2 arch-specific + 1 impossible + 1 refuted
 
   Proof Status: 17/17 proven (7 pure math + 5 physics + 5 predictions)
   New Identities: tau(tau-1)=sigma, tau*sopfr=20 (both unique to n=6)

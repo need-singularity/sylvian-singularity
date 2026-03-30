@@ -79,6 +79,13 @@ MATH_CONSTANTS = {
     'dynamics_rate': 0.81,                       # dH/dt coefficient
     'phi_scaling_coeff': 0.608,                  # Phi = 0.608 * N^1.071
     'phi_scaling_exp': 1.071,                    # scaling exponent
+
+    # New identities (unique to n=6)
+    'sopfr_phi_sum': 10.0,                       # sopfr*phi = n+tau = 10 (unique n=6)
+    'rate_product': 7.0/20.0,                     # r₀*r∞ = (n+1)/(tau*sopfr) = 7/20
+    'rate_ratio': 35.0/16.0,                      # r₀/r∞ = (n²-1)/tau² = 35/16
+    'r0_boundary': 7.0/8.0,                       # small-N rate limit = (n+1)/(tau*phi)
+    'r_inf_boundary': 2.0/5.0,                    # large-N rate limit = phi/sopfr
 }
 
 # ═══════════════════════════════════════════════════════════════
