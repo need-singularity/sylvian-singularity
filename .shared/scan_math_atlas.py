@@ -268,7 +268,27 @@ REPO_SCANS = [
     {
         "name": "anima",
         "root": DEV / "anima",
-        "hypothesis_dirs": [],
+        "hypothesis_dirs": [
+            "docs/hypotheses",
+            "docs/hypotheses/cx",
+            "docs/hypotheses/ce",
+            "docs/hypotheses/dd",
+            "docs/hypotheses/dasein",
+            "docs/hypotheses/evo",
+            "docs/hypotheses/genesis",
+            "docs/hypotheses/hw",
+            "docs/hypotheses/inf",
+            "docs/hypotheses/omega",
+            "docs/hypotheses/onto",
+            "docs/hypotheses/phil",
+            "docs/hypotheses/phys",
+            "docs/hypotheses/se",
+            "docs/hypotheses/sing",
+            "docs/hypotheses/sl",
+            "docs/hypotheses/three",
+            "docs/hypotheses/topo",
+            "docs/hypotheses/tp",
+        ],
         "python_sources": ["hypothesis_recommender.py"],
         "constant_dirs": ["."],
     },
@@ -371,25 +391,66 @@ def _make_json_safe(obj):
     return str(obj)
 
 
-def _categorize_constant(name):
-    """Auto-categorize a constant map by its name."""
+def _categorize_constant(name, file_path=""):
+    """Auto-categorize a constant map by its name and file path."""
     upper = name.upper()
+    fpath = file_path.lower()
+
+    # ── Consciousness / Axioms (anima Ψ-constants, laws) ──
+    if any(k in upper for k in ("PSI", "CONSCIOUSNESS", "PHI_", "MIND", "WILL")):
+        return "consciousness"
+    if any(k in fpath for k in ("consciousness", "anima_alive", "conscious")):
+        return "consciousness"
+
+    # ── Architecture / Engines ──
+    if any(k in upper for k in ("ENGINE", "ARCH", "DECODER", "MODEL", "TOPOLOG")):
+        return "architecture"
+    if any(k in fpath for k in ("engine", "architect", "decoder", "bench")):
+        return "architecture"
+
+    # ── Targets ──
     if "TARGET" in upper:
         return "targets"
-    if "PHYSICS" in upper or "PARTICLE" in upper or "MASS" in upper:
+
+    # ── Physics ──
+    if any(k in upper for k in ("PHYSICS", "PARTICLE", "MASS", "ZETA", "GAUGE",
+                                 "STRING", "QUANTUM", "LADDER", "RESONAN")):
         return "physics"
-    if "CONSTANT" in upper or "POOL" in upper:
+
+    # ── Constants / Math pools ──
+    if any(k in upper for k in ("CONSTANT", "POOL", "PERFECT_NUMBER", "KNOWN_PERFECT",
+                                 "FIBONACCI", "KISSING", "PLATONIC")):
         return "constants"
-    if "DOMAIN" in upper:
+
+    # ── Domains ──
+    if "DOMAIN" in upper or "CATEGOR" in upper:
         return "domains"
+
+    # ── Nuclear ──
     if "MAGIC" in upper or "NUCLEAR" in upper:
         return "nuclear"
-    if "EXPRESSION" in upper:
+
+    # ── Expressions / Formulas ──
+    if "EXPRESSION" in upper or "FORMULA" in upper or "IDENTITY" in upper:
         return "expressions"
-    if "OBSERVED" in upper:
+
+    # ── Observed / Empirical data ──
+    if "OBSERVED" in upper or "EMPIRICAL" in upper or "BENCHMARK" in upper:
         return "observed"
-    if "PROFILE" in upper or "BRAIN" in upper or "EEG" in upper:
+
+    # ── Neuroscience ──
+    if any(k in upper for k in ("PROFILE", "BRAIN", "EEG", "EMOTION", "GROWTH",
+                                 "STAGE", "DRUG", "PHARMACOL")):
         return "neuroscience"
+
+    # ── Verification / Testing ──
+    if any(k in upper for k in ("CLAIM", "VERIFY", "TEST", "SCAN", "GRADE", "VALID")):
+        return "verification"
+
+    # ── Data / Configuration ──
+    if any(k in upper for k in ("PRESET", "CONFIG", "PARAM", "SWEEP", "STRATEG")):
+        return "config"
+
     return "other"
 
 
@@ -495,7 +556,7 @@ def extract_constants_from_py(filepath, repo_name):
             "keys": None,
             "evaluable": False,
             "values": None,
-            "category": _categorize_constant(name),
+            "category": _categorize_constant(name, rel_path),
         }
 
         # Dict literal
@@ -1019,6 +1080,11 @@ tr:hover { background: #16213e; }
 #graph-canvas:active { cursor: grabbing; }
 #graph-tooltip { position: absolute; display: none; padding: 6px 10px; background: rgba(22,33,62,0.95); border: 1px solid #444; border-radius: 4px; font-size: 0.8em; pointer-events: none; max-width: 300px; white-space: nowrap; color: #e0e0e0; z-index: 10; }
 #graph-stats { position: absolute; top: 10px; right: 10px; font-size: 0.75em; color: #666; }
+#graph-legend { position: absolute; bottom: 10px; left: 10px; font-size: 0.7em; color: #888; background: rgba(15,15,35,0.85); padding: 8px 12px; border-radius: 4px; border: 1px solid #333; line-height: 1.6; }
+#graph-legend b { color: #ccc; }
+.legend-line { display: flex; align-items: center; gap: 6px; }
+.legend-swatch { display: inline-block; width: 20px; height: 3px; border-radius: 1px; }
+.legend-hub { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #FFD700; }
 @media (max-width: 768px) {
   body { padding: 10px; }
   .controls { flex-direction: column; }
@@ -1059,6 +1125,14 @@ tr:hover { background: #16213e; }
   <canvas id="graph-canvas" height="800"></canvas>
   <div id="graph-tooltip"></div>
   <div id="graph-stats"></div>
+  <div id="graph-legend">
+    <b>Legend</b><br>
+    <div class="legend-line"><span class="legend-swatch" style="background:rgba(255,200,50,0.7);height:4px"></span> Strong (w>=5)</div>
+    <div class="legend-line"><span class="legend-swatch" style="background:rgba(180,180,255,0.5);height:3px"></span> Medium (w>=3)</div>
+    <div class="legend-line"><span class="legend-swatch" style="background:rgba(100,100,100,0.3);height:2px"></span> Weak (w=1)</div>
+    <div class="legend-line"><span class="legend-hub"></span> Hub node (high degree)</div>
+    <div class="legend-line" style="color:#666">Cluster = colored background</div>
+  </div>
 </div>
 
 <script>
@@ -1304,12 +1378,43 @@ function gradeColor(grade) {
   return '#556677';
 }
 
-function gradeRadius(grade) {
-  if (!grade) return 4;
-  if (grade.indexOf('\u2b50') >= 0 || grade.indexOf('\u2605') >= 0) return 12;
-  if (grade.indexOf('\uD83D\uDFE9') >= 0) return 8;
-  if (grade.indexOf('\uD83D\uDFE7') >= 0) return 6;
-  return 4;
+function gradeRadius(grade, deg, maxDeg) {
+  var base = 4;
+  if (grade) {
+    if (grade.indexOf('\u2b50') >= 0 || grade.indexOf('\u2605') >= 0) base = 10;
+    else if (grade.indexOf('\uD83D\uDFE9') >= 0) base = 7;
+    else if (grade.indexOf('\uD83D\uDFE7') >= 0) base = 5;
+  }
+  // Hub scaling: degree adds up to 2x radius
+  var hubScale = 1 + (deg || 0) / Math.max(maxDeg || 1, 1);
+  return Math.round(base * hubScale);
+}
+
+// Cluster colors (12 distinct muted tones for background)
+var CLUSTER_COLORS = [
+  'rgba(74,144,217,0.08)', 'rgba(230,126,34,0.08)', 'rgba(46,204,113,0.08)',
+  'rgba(155,89,182,0.08)', 'rgba(241,196,15,0.08)', 'rgba(231,76,60,0.08)',
+  'rgba(26,188,156,0.08)', 'rgba(52,152,219,0.08)', 'rgba(243,156,18,0.08)',
+  'rgba(142,68,173,0.08)', 'rgba(39,174,96,0.08)', 'rgba(192,57,43,0.08)',
+];
+var CLUSTER_LABEL_COLORS = [
+  'rgba(74,144,217,0.5)', 'rgba(230,126,34,0.5)', 'rgba(46,204,113,0.5)',
+  'rgba(155,89,182,0.5)', 'rgba(241,196,15,0.5)', 'rgba(231,76,60,0.5)',
+  'rgba(26,188,156,0.5)', 'rgba(52,152,219,0.5)', 'rgba(243,156,18,0.5)',
+  'rgba(142,68,173,0.5)', 'rgba(39,174,96,0.5)', 'rgba(192,57,43,0.5)',
+];
+
+function edgeColor(w, highlighted) {
+  if (highlighted) return 'rgba(255,255,100,0.8)';
+  if (w >= 5) return 'rgba(255,200,50,0.5)';
+  if (w >= 3) return 'rgba(180,180,255,0.4)';
+  if (w >= 2) return 'rgba(140,140,200,0.3)';
+  return 'rgba(100,100,100,0.2)';
+}
+
+function edgeWidth(w, highlighted) {
+  if (highlighted) return Math.max(2, w * 0.8);
+  return Math.max(0.3, Math.min(w * 0.6, 4));
 }
 
 function initGraph() {
@@ -1321,12 +1426,16 @@ function initGraph() {
   if (canvas.width < 100) canvas.width = document.body.clientWidth - 40;
   canvas.height = 800;
 
+  var maxDeg = GRAPH.maxDeg || 1;
+  var clusters = GRAPH.clusters || [];
+
   var nodes = GRAPH.nodes.map(function(n, i) {
     var shortId = n.id.indexOf(':') >= 0 ? n.id.substring(n.id.indexOf(':') + 1) : n.id;
     return {
       idx: i, id: n.id, shortId: shortId, title: n.title, repo: n.repo,
       grade: n.grade, color: gradeColor(n.grade),
-      radius: gradeRadius(n.grade),
+      radius: gradeRadius(n.grade, n.deg, maxDeg),
+      deg: n.deg || 0, cl: n.cl || 0,
       x: n.x, y: n.y,
       hidden: false, dimmed: false
     };
@@ -1337,10 +1446,14 @@ function initGraph() {
   nodes.forEach(function(n, i) { adj[i] = new Set(); });
   edges.forEach(function(e) { adj[e.source].add(e.target); adj[e.target].add(e.source); });
 
-  document.getElementById('graph-stats').textContent = nodes.length + ' nodes, ' + edges.length + ' edges';
+  // Find top hub nodes
+  var hubThreshold = Math.max(3, maxDeg * 0.4);
+
+  document.getElementById('graph-stats').textContent = nodes.length + ' nodes, ' + edges.length + ' edges | ' + clusters.length + ' clusters | hub threshold: deg>' + Math.round(hubThreshold);
 
   G = {
     nodes: nodes, edges: edges, adj: adj, canvas: canvas,
+    clusters: clusters, hubThreshold: hubThreshold,
     ctx: canvas.getContext('2d'),
     transform: { x: 0, y: 0, k: 1 },
     selected: null, isPanning: false, panStart: null
@@ -1362,27 +1475,86 @@ function drawGraph() {
   var nodes = G.nodes, edges = G.edges;
   var hasSel = G.selected !== null;
 
+  // ── Draw cluster backgrounds (convex hull approximation) ──
+  var clNodes = {};
+  for (var i = 0; i < nodes.length; i++) {
+    var n = nodes[i];
+    if (n.hidden) continue;
+    var c = n.cl || 0;
+    if (!clNodes[c]) clNodes[c] = [];
+    clNodes[c].push(n);
+  }
+  for (var c in clNodes) {
+    var pts = clNodes[c];
+    if (pts.length < 3) continue;
+    // Compute centroid and draw enclosing circle
+    var cx = 0, cy = 0;
+    for (var j = 0; j < pts.length; j++) { cx += pts[j].x; cy += pts[j].y; }
+    cx /= pts.length; cy /= pts.length;
+    var maxR = 0;
+    for (var j = 0; j < pts.length; j++) {
+      var dx = pts[j].x - cx, dy = pts[j].y - cy;
+      var r = Math.sqrt(dx*dx + dy*dy);
+      if (r > maxR) maxR = r;
+    }
+    var cIdx = parseInt(c) % CLUSTER_COLORS.length;
+    ctx.fillStyle = CLUSTER_COLORS[cIdx];
+    ctx.beginPath(); ctx.arc(cx, cy, maxR + 30, 0, Math.PI * 2); ctx.fill();
+    // Cluster label
+    if (G.transform.k > 0.3) {
+      var clInfo = G.clusters.find(function(cl) { return cl.id === parseInt(c); });
+      if (clInfo) {
+        ctx.fillStyle = CLUSTER_LABEL_COLORS[cIdx];
+        ctx.font = 'bold 11px monospace';
+        ctx.fillText(clInfo.name + ' (' + pts.length + ')', cx - 30, cy - maxR - 8);
+      }
+    }
+  }
+
+  // ── Draw edges with weight-based thickness/color ──
   for (var i = 0; i < edges.length; i++) {
     var e = edges[i];
     var s = nodes[e.source], t = nodes[e.target];
     if (s.hidden || t.hidden) continue;
     var edgeDim = s.dimmed && t.dimmed;
     var edgeHi = hasSel && (e.source === G.selected || e.target === G.selected);
-    ctx.strokeStyle = edgeHi ? 'rgba(255,255,100,0.6)' : (edgeDim ? 'rgba(100,100,100,0.1)' : 'rgba(100,100,100,0.3)');
-    ctx.lineWidth = edgeHi ? 1.5 : 0.5;
+    var w = e.w || 1;
+    if (edgeDim) {
+      ctx.strokeStyle = 'rgba(100,100,100,0.05)';
+      ctx.lineWidth = 0.3;
+    } else {
+      ctx.strokeStyle = edgeColor(w, edgeHi);
+      ctx.lineWidth = edgeWidth(w, edgeHi);
+    }
     ctx.beginPath(); ctx.moveTo(s.x, s.y); ctx.lineTo(t.x, t.y); ctx.stroke();
   }
 
+  // ── Draw nodes with hub highlighting ──
   for (var i = 0; i < nodes.length; i++) {
     var n = nodes[i];
     if (n.hidden) continue;
     var isHi = hasSel && (i === G.selected || G.adj[G.selected].has(i));
+    var isHub = n.deg >= G.hubThreshold;
     ctx.fillStyle = n.dimmed ? 'rgba(80,80,80,0.3)' : (isHi ? '#fff' : n.color);
     ctx.beginPath(); ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2); ctx.fill();
+    // Hub ring (double outline)
+    if (isHub && !n.dimmed) {
+      ctx.strokeStyle = '#FFD700';
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.radius + 3, 0, Math.PI * 2); ctx.stroke();
+    }
     if (isHi) { ctx.strokeStyle = n.color; ctx.lineWidth = 2; ctx.stroke(); }
-    if (n.radius >= 8 && G.transform.k > 0.5 && !n.dimmed) {
-      ctx.fillStyle = '#ddd'; ctx.font = '9px monospace';
-      ctx.fillText(n.shortId, n.x + n.radius + 3, n.y + 3);
+    // Labels: show for hubs or large nodes
+    var showLabel = (n.radius >= 7 || isHub) && G.transform.k > 0.4 && !n.dimmed;
+    if (showLabel) {
+      ctx.fillStyle = isHub ? '#FFD700' : '#ddd';
+      ctx.font = isHub ? 'bold 10px monospace' : '9px monospace';
+      ctx.fillText(n.shortId, n.x + n.radius + 4, n.y + 3);
+      if (isHub) {
+        ctx.font = '8px monospace';
+        ctx.fillStyle = '#888';
+        ctx.fillText('deg:' + n.deg, n.x + n.radius + 4, n.y + 13);
+      }
     }
   }
   ctx.restore();
@@ -1423,7 +1595,9 @@ function setupGraphEvents() {
       var idx = findNodeAt(w.x, w.y);
       if (idx >= 0) {
         var n = G.nodes[idx];
-        tooltip.innerHTML = '<b>' + esc(n.shortId) + '</b> ' + esc(n.grade || '') + '<br>' + esc(n.title) + '<br><span style="color:' + n.color + '">' + esc(n.repo) + '</span>';
+        var clInfo = G.clusters.find(function(cl) { return cl.id === n.cl; });
+        var clName = clInfo ? clInfo.name : '?';
+        tooltip.innerHTML = '<b>' + esc(n.shortId) + '</b> ' + esc(n.grade || '') + '<br>' + esc(n.title) + '<br><span style="color:' + n.color + '">' + esc(n.repo) + '</span> | cluster: ' + esc(clName) + ' | deg: ' + n.deg;
         tooltip.style.display = 'block';
         tooltip.style.left = (mx + 12) + 'px';
         tooltip.style.top = (my - 10) + 'px';
@@ -1606,12 +1780,72 @@ def write_html(atlas, htmlpath):
             "grade": h.get("grade") or "",
         })
 
+    # ── Compute edge weights ──
+    # Build ref sets per hypothesis for shared-ref calculation
+    ref_sets = {}
+    for h in atlas["hypotheses"]:
+        targets = set()
+        for ref in h.get("refs", []):
+            t = id_lookup.get(ref)
+            if t and t != h["id"]:
+                targets.add(t)
+        ref_sets[h["id"]] = targets
+
+    # Build edge pair → weight
+    edge_pair_weight = {}
+    for e in edges:
+        pair = (e["source"], e["target"])
+        rev = (e["target"], e["source"])
+        key = tuple(sorted(pair))
+        w = edge_pair_weight.get(key, 0)
+        # Mutual reference: if A→B and B→A, each direction adds 1
+        w += 1
+        # Same domain bonus
+        hs = hyp_by_id.get(e["source"])
+        ht = hyp_by_id.get(e["target"])
+        if hs and ht and hs.get("domain") and hs["domain"] == ht.get("domain"):
+            w += 1
+        # Shared refs bonus (both reference same third node)
+        rs = ref_sets.get(e["source"], set())
+        rt = ref_sets.get(e["target"], set())
+        shared = rs & rt - {e["source"], e["target"]}
+        w += min(len(shared), 3)  # cap at 3
+        edge_pair_weight[key] = w
+
     graph_edges = []
+    seen_edge_pairs = set()
     for e in edges:
         si = node_idx.get(e["source"])
         ti = node_idx.get(e["target"])
         if si is not None and ti is not None:
-            graph_edges.append({"source": si, "target": ti})
+            key = tuple(sorted((e["source"], e["target"])))
+            if key not in seen_edge_pairs:
+                seen_edge_pairs.add(key)
+                w = edge_pair_weight.get(key, 1)
+                graph_edges.append({"source": si, "target": ti, "w": w})
+
+    # ── Compute degree centrality (hub detection) ──
+    degree = [0] * len(graph_nodes)
+    for e in graph_edges:
+        degree[e["source"]] += 1
+        degree[e["target"]] += 1
+    max_deg = max(degree) if degree else 1
+    for i, n in enumerate(graph_nodes):
+        n["deg"] = degree[i]
+
+    # ── Domain-based clustering ──
+    # Assign cluster ID by domain (or repo as fallback)
+    domain_clusters = {}
+    cluster_id = 0
+    for i, n in enumerate(graph_nodes):
+        h = hyp_by_id.get(n["id"])
+        dom = (h.get("domain") or h.get("repo", "other")) if h else "other"
+        if dom not in domain_clusters:
+            domain_clusters[dom] = cluster_id
+            cluster_id += 1
+        n["cl"] = domain_clusters[dom]
+    # Store cluster names for legend
+    cluster_names = {v: k for k, v in domain_clusters.items()}
 
     # ── Pre-compute force layout in Python ──
     import math, random
@@ -1659,19 +1893,38 @@ def write_html(atlas, htmlpath):
                 nj["vx"] += fx
                 nj["vy"] += fy
 
-        # Attraction (links)
+        # Attraction (links) — stronger for same-cluster and high-weight edges
         for si, ti in link_pairs:
             s, t = graph_nodes[si], graph_nodes[ti]
             dx = t["x"] - s["x"]
             dy = t["y"] - s["y"]
             d = math.sqrt(dx * dx + dy * dy) + 1.0
-            force = (d - 120) * 0.006
+            # Same cluster → shorter ideal distance, stronger pull
+            same_cl = s.get("cl") == t.get("cl")
+            ideal = 80 if same_cl else 150
+            strength = 0.008 if same_cl else 0.004
+            force = (d - ideal) * strength
             fx = force * dx / d
             fy = force * dy / d
             s["vx"] += fx
             s["vy"] += fy
             t["vx"] -= fx
             t["vy"] -= fy
+
+        # Cluster gravity — gently pull same-cluster nodes toward cluster centroid
+        cl_cx, cl_cy, cl_count = {}, {}, {}
+        for n in graph_nodes:
+            c = n.get("cl", 0)
+            cl_cx[c] = cl_cx.get(c, 0) + n["x"]
+            cl_cy[c] = cl_cy.get(c, 0) + n["y"]
+            cl_count[c] = cl_count.get(c, 0) + 1
+        for n in graph_nodes:
+            c = n.get("cl", 0)
+            if cl_count[c] > 1:
+                ccx = cl_cx[c] / cl_count[c]
+                ccy = cl_cy[c] / cl_count[c]
+                n["vx"] += (ccx - n["x"]) * 0.002
+                n["vy"] += (ccy - n["y"]) * 0.002
 
         # Weak center gravity (just prevent drift)
         cx, cy = W / 2, H / 2
@@ -1704,12 +1957,31 @@ def write_html(atlas, htmlpath):
             n["x"] = round(n["x"] * scale + offX, 1)
             n["y"] = round(n["y"] * scale + offY, 1)
 
-    # Strip velocity fields before serialization
+    # Strip velocity fields before serialization (keep deg, cl)
     for n in graph_nodes:
         del n["vx"]
         del n["vy"]
 
-    graph_data = json.dumps({"nodes": graph_nodes, "edges": graph_edges}, ensure_ascii=False)
+    # Compute cluster hulls (convex bounding) for JS rendering
+    cl_nodes = {}
+    for n in graph_nodes:
+        c = n.get("cl", 0)
+        if c not in cl_nodes:
+            cl_nodes[c] = []
+        cl_nodes[c].append({"x": n["x"], "y": n["y"]})
+
+    clusters_meta = []
+    for cid, name in sorted(cluster_names.items()):
+        pts = cl_nodes.get(cid, [])
+        if len(pts) >= 2:
+            cx = sum(p["x"] for p in pts) / len(pts)
+            cy = sum(p["y"] for p in pts) / len(pts)
+            clusters_meta.append({"id": cid, "name": name, "cx": round(cx, 1), "cy": round(cy, 1), "n": len(pts)})
+
+    graph_data = json.dumps({
+        "nodes": graph_nodes, "edges": graph_edges,
+        "clusters": clusters_meta, "maxDeg": max_deg
+    }, ensure_ascii=False)
 
     # Build repo list from atlas data
     repos = list(atlas.get("stats", {}).keys())
