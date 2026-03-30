@@ -56,6 +56,16 @@ REPOS = [
         ],
     },
     {
+        "name": "n6-architecture",
+        "root": DEV / "n6-architecture",
+        "scans": [
+            {"path": "tools", "category": "calculator"},
+            {"path": "techniques", "category": "technique"},
+            {"path": "engine", "category": "engine", "exclude": ["__init__"]},
+            {"path": "experiments", "category": "experiment"},
+        ],
+    },
+    {
         "name": "invest",
         "root": DEV / "invest",
         "scans": [

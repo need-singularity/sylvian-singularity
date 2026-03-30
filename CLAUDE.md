@@ -22,7 +22,20 @@
     Dropout ≈ 1/e: REFUTED (MNIST too easy)
     Lottery Ticket: REFUTED (over-parameterized)
 
-  400-hypothesis campaign: 249/400 hits (62.3%), Z≈55σ, 22 domains
+  337-hypothesis extreme campaign (2026-03-30):
+    17 domains, 337 hypotheses, 215 structural (63.8%), Z≈20σ
+    38 key discoveries (⭐), 92 exact (🟩), 85 approximate (🟧)
+    Top: Li-6 fuel cycle, SM=n=6, ISCO=6GM/c², BCS numerator=12
+
+  Perfect Number Universal Expansion (2026-03-30):
+    40 identities classified: 14 UNIVERSAL, 18 P1-ONLY, 8 trivial/none
+    Key: σφ/(nτ) = 2^(p-2)(2^(p-1)-1)/p, equals 1 ONLY at p=2 (n=6)
+    n=6 = unique unity point of exponentially growing Bridge ratio
+    phi/n=1/3 is max deviation from limit 1/2; sigma/phi=6 max from limit 4
+    NEW 🟩⭐⭐: σφ=nτ has NO solution except n=1,6 in [1,10^6] (all integers!)
+    NEW 🟩⭐⭐: σ/φ=n also ONLY at n=1,6 (self-referential fixed point)
+    NEW 🟩: σ/φ = 4+2/(2^(p-1)-1) exact closed form (proven)
+    Calculator: calc/perfect_number_classifier.py
   When writing new hypotheses, always specify Golden Zone dependency.
 ```
 
@@ -201,6 +214,46 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
   math/ — 순수 수학 증명 + 실험
   docs/ — 가설 문서 + 논문 + 스펙
   .shared/ — 크로스 리포 동기화 인프라 + Atlas
+```
+
+## Calculator Creation Rules (Required)
+
+```
+  Language Priority:
+    1. Rust (tecsrs/) — 성능 문제 예상시 반드시 Rust 우선
+       - Monte Carlo, brute-force search, grid scan, large-N 시뮬레이션
+       - 수천~수백만 반복, 행렬 연산, 조합 탐색
+       - 빌드: cd tecsrs && cargo build --release
+       - 실행: cargo run --release -- <args>
+       - Python 바인딩: PyO3/maturin (필요시)
+    2. Python (calc/) — 단순 검증, 수식 확인, 시각화, 프로토타입
+       - 단일 공식 평가, 오차 계산, 테이블 출력
+       - 외부 데이터 fetch, API 호출
+       - NumPy/SciPy 충분한 경우
+
+  Rust 프로젝트 구조:
+    tecsrs/
+    ├── Cargo.toml
+    ├── src/
+    │   ├── lib.rs          ← 공용 모듈
+    │   ├── perfect.rs      ← P1=6 상수 및 산술함수
+    │   ├── search.rs       ← 조합 탐색 엔진
+    │   ├── monte_carlo.rs  ← Monte Carlo 시뮬레이션
+    │   ├── grid.rs         ← Grid scan
+    │   ├── sieves.rs       ← 소수/약수 체
+    │   ├── consciousness.rs← 의식 관련 계산
+    │   ├── atlas.rs        ← Atlas 관련
+    │   └── ode.rs          ← ODE 솔버
+    └── target/
+
+  판단 기준 (Rust vs Python):
+    - 반복 > 10,000회 → Rust
+    - 실행 시간 > 10초 예상 → Rust
+    - 조합 공간 > 10^6 → Rust
+    - Monte Carlo 샘플 > 100,000 → Rust
+    - 단순 수식 검증 → Python
+    - 시각화/출력 포맷팅 → Python
+    - 빠른 프로토타입 → Python (이후 Rust 포팅)
 ```
 
 ## How to Run

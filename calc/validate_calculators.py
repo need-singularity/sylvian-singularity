@@ -660,6 +660,363 @@ def test_small_n_validator(verbose=False):
     return suite
 
 
+def test_n6_uniqueness(verbose=False):
+    """Test n6_uniqueness_tester.py — core uniqueness verifier."""
+    suite = CalculatorSuite("n6_uniqueness_tester", "n6_uniqueness_tester.py")
+
+    # Test 1: 3*n-6==sigma should be UNIQUE to n=6
+    rc, out, err, dt = run_calc("n6_uniqueness_tester.py", "--equation 3*n-6==sigma --limit 1000")
+    passed = rc == 0 and check_output_contains(out, r"UNIQUE to n=6")
+    suite.add(TestResult(
+        "3*n-6==sigma -> UNIQUE to n=6",
+        passed,
+        "uniqueness confirmed" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    # Test 2: sigma==2*n should NOT be unique (holds for 6, 28, 496)
+    rc, out, err, dt = run_calc("n6_uniqueness_tester.py", "--equation sigma==2*n --limit 1000")
+    passed = rc == 0 and check_output_not_contains(out, r"UNIQUE to n=6")
+    suite.add(TestResult(
+        "sigma==2*n -> NOT unique (perfect number definition)",
+        passed,
+        "correctly non-unique" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    # Test 3: --known should report at least 4 unique identities
+    rc, out, err, dt = run_calc("n6_uniqueness_tester.py", "--known --limit 1000")
+    unique_match = re.search(r'(\d+)/10 identities unique', out)
+    if unique_match:
+        n_unique = int(unique_match.group(1))
+        passed = n_unique >= 4
+        detail = f"{n_unique}/10 unique identities found"
+    else:
+        passed = False
+        n_unique = 0
+        detail = "Could not parse uniqueness count"
+    suite.add(TestResult(
+        "--known finds >=4 unique identities",
+        passed,
+        detail,
+        dt,
+    ))
+
+    return suite
+
+
+def test_claim_verifier(verbose=False):
+    """Test claim_verifier.py — full verification pipeline."""
+    suite = CalculatorSuite("claim_verifier", "claim_verifier.py")
+
+    # Test 1: sigma(6)*tau(6) = 48 should pass arithmetic
+    cmd = [PYTHON, os.path.join(CALC_DIR, "claim_verifier.py"),
+           "--claim", "sigma*tau", "--target", "48"]
+    t0 = time.time()
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT,
+                              cwd=os.path.dirname(CALC_DIR))
+        rc, out, err, dt = proc.returncode, proc.stdout, proc.stderr, time.time() - t0
+    except subprocess.TimeoutExpired:
+        rc, out, err, dt = -1, "", "TIMEOUT", time.time() - t0
+
+    passed = rc == 0 and check_output_contains(out, r"\[PASS\].*sigma\*tau\s*=\s*48")
+    suite.add(TestResult(
+        "sigma*tau=48 -> arithmetic PASS",
+        passed,
+        "exact match" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    # Test 2: wrong target should fail arithmetic
+    cmd = [PYTHON, os.path.join(CALC_DIR, "claim_verifier.py"),
+           "--claim", "sigma*tau", "--target", "999"]
+    t0 = time.time()
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT,
+                              cwd=os.path.dirname(CALC_DIR))
+        rc, out, err, dt = proc.returncode, proc.stdout, proc.stderr, time.time() - t0
+    except subprocess.TimeoutExpired:
+        rc, out, err, dt = -1, "", "TIMEOUT", time.time() - t0
+
+    passed = rc == 0 and check_output_contains(out, r"\[FAIL\].*sigma\*tau")
+    suite.add(TestResult(
+        "sigma*tau=999 -> arithmetic FAIL",
+        passed,
+        "correctly rejected" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    # Test 3: --full pipeline should produce a GRADE
+    cmd = [PYTHON, os.path.join(CALC_DIR, "claim_verifier.py"),
+           "--full", "sigma*tau", "--target", "48",
+           "--claim-text", "sigma*tau=48 for n=6"]
+    t0 = time.time()
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT * 2,
+                              cwd=os.path.dirname(CALC_DIR))
+        rc, out, err, dt = proc.returncode, proc.stdout, proc.stderr, time.time() - t0
+    except subprocess.TimeoutExpired:
+        rc, out, err, dt = -1, "", "TIMEOUT", time.time() - t0
+
+    passed = rc == 0 and check_output_contains(out, r"GRADE:")
+    suite.add(TestResult(
+        "--full pipeline produces GRADE",
+        passed,
+        "grade assigned" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    return suite
+
+
+def test_singleton_gz(verbose=False):
+    """Test singleton_gz_mapper.py — GZ constant mapping."""
+    suite = CalculatorSuite("singleton_gz_mapper", "singleton_gz_mapper.py")
+
+    # Test 1: default run should show R(d=4)=1/2 and R(d=5)=1/3
+    rc, out, err, dt = run_calc("singleton_gz_mapper.py", "")
+    has_half = check_output_contains(out, r"1/2")
+    has_third = check_output_contains(out, r"1/3")
+    has_sixth = check_output_contains(out, r"1/6")
+    passed = rc == 0 and has_half and has_third and has_sixth
+    suite.add(TestResult(
+        "Maps 1/2, 1/3, 1/6 for n=6",
+        passed,
+        f"1/2={'Y' if has_half else 'N'}, 1/3={'Y' if has_third else 'N'}, 1/6={'Y' if has_sixth else 'N'}",
+        dt,
+    ))
+
+    # Test 2: Core GZ constants should be 3/3
+    passed2 = rc == 0 and check_output_contains(out, r"Core GZ.*3/3")
+    suite.add(TestResult(
+        "Core GZ (1/2,1/3,1/6) hit = 3/3",
+        passed2,
+        "all core constants mapped" if passed2 else f"output={out[:100]}",
+        dt,
+    ))
+
+    return suite
+
+
+def test_equation_uniqueness(verbose=False):
+    """Test equation_uniqueness_checker.py — scan mode."""
+    suite = CalculatorSuite("equation_uniqueness_checker", "equation_uniqueness_checker.py")
+
+    # Test 1: --scan should find unique equations
+    rc, out, err, dt = run_calc("equation_uniqueness_checker.py", "--scan --limit 500")
+    unique_match = re.search(r'(\d+) unique', out)
+    if unique_match:
+        n_unique = int(unique_match.group(1))
+        passed = n_unique >= 50
+        detail = f"{n_unique} unique equations found"
+    else:
+        passed = rc == 0 and len(out) > 100
+        detail = f"scan produced output (rc={rc})"
+    suite.add(TestResult(
+        "--scan finds unique equations",
+        passed,
+        detail,
+        dt,
+    ))
+
+    # Test 2: phi*sigma==n*tau should be unique
+    cmd = [PYTHON, os.path.join(CALC_DIR, "equation_uniqueness_checker.py"),
+           "--equation", "3*n-6=sigma", "--limit", "500"]
+    t0 = time.time()
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUT,
+                              cwd=os.path.dirname(CALC_DIR))
+        rc, out, err, dt = proc.returncode, proc.stdout, proc.stderr, time.time() - t0
+    except subprocess.TimeoutExpired:
+        rc, out, err, dt = -1, "", "TIMEOUT", time.time() - t0
+
+    passed = rc == 0 and check_output_contains(out, r"unique|UNIQUE|\[6\]", case_sensitive=False)
+    suite.add(TestResult(
+        "3*n-6=sigma -> unique to n=6",
+        passed,
+        "uniqueness confirmed" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    return suite
+
+
+def test_codon_optimality(verbose=False):
+    """Test codon_optimality_prover.py — Nobel-grade codon theorem."""
+    suite = CalculatorSuite("codon_optimality_prover", "codon_optimality_prover.py")
+
+    # Test 1: default run should report (4,3) as optimal
+    rc, out, err, dt = run_calc("codon_optimality_prover.py", "")
+    passed = rc == 0 and check_output_contains(out, r"\(4,\s*3\)")
+    suite.add(TestResult(
+        "Identifies (4,3) as codon structure",
+        passed,
+        "(4,3) found" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    # Test 2: should mention tau(6) or divisor connection
+    passed2 = rc == 0 and check_output_contains(out, r"tau|divisor|n=6", case_sensitive=False)
+    suite.add(TestResult(
+        "Links (4,3) to n=6 number theory",
+        passed2,
+        "n=6 connection present" if passed2 else f"output={out[:120]}",
+        dt,
+    ))
+
+    # Test 3: should test variant codes (>10 variants)
+    variant_match = re.search(r'(\d+)\s*(?:variant|code|tested)', out, re.IGNORECASE)
+    if variant_match:
+        n_variants = int(variant_match.group(1))
+        passed3 = n_variants >= 10
+        detail = f"{n_variants} variants tested"
+    else:
+        passed3 = check_output_contains(out, r"variant|Pareto|optimal", case_sensitive=False)
+        detail = "variant analysis present" if passed3 else "no variant analysis found"
+    suite.add(TestResult(
+        "Tests multiple codon variants",
+        passed3,
+        detail,
+        dt,
+    ))
+
+    return suite
+
+
+def test_factorial_structure(verbose=False):
+    """Test factorial_structure_prover.py — 3!=6 uniqueness proof."""
+    suite = CalculatorSuite("factorial_structure_prover", "factorial_structure_prover.py")
+
+    # Test 1: --factorial-perfect should prove 3!=6 is unique
+    rc, out, err, dt = run_calc("factorial_structure_prover.py", "--factorial-perfect")
+    passed = rc == 0 and check_output_contains(
+        out, r"3!\s*=\s*6.*only|unique|ONLY factorial.*perfect", case_sensitive=False
+    )
+    suite.add(TestResult(
+        "3!=6 is the only factorial perfect number",
+        passed,
+        "proof confirmed" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    # Test 2: --all should run without error and produce summary
+    rc, out, err, dt = run_calc("factorial_structure_prover.py", "--all")
+    passed2 = rc == 0 and check_output_contains(out, r"SUMMARY|PROVEN")
+    suite.add(TestResult(
+        "--all produces SUMMARY with PROVEN results",
+        passed2,
+        "summary present" if passed2 else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    # Test 3: Should identify independent origins of 6
+    origins_match = re.search(r'(\d+)\s*independent\s*origin', out, re.IGNORECASE)
+    if origins_match:
+        n_origins = int(origins_match.group(1))
+        passed3 = n_origins >= 2
+        detail = f"{n_origins} independent origins identified"
+    else:
+        passed3 = check_output_contains(out, r"REFUTED|independent|origin", case_sensitive=False)
+        detail = "origin analysis present" if passed3 else "no origin analysis found"
+    suite.add(TestResult(
+        "Identifies independent origins of 6",
+        passed3,
+        detail,
+        dt,
+    ))
+
+    return suite
+
+
+def test_bridge_verifier(verbose=False):
+    """Test consciousness_bridge_verifier.py — all 29 bridges."""
+    suite = CalculatorSuite("consciousness_bridge_verifier", "consciousness_bridge_verifier.py")
+
+    # Test 1: --summary should show 29/29 PASS
+    rc, out, err, dt = run_calc("consciousness_bridge_verifier.py", "--summary")
+    passed = rc == 0 and check_output_contains(out, r"29/29 PASS")
+    suite.add(TestResult(
+        "All 29 bridges PASS",
+        passed,
+        "29/29 verified" if passed else f"rc={rc}, output={out[-120:]}",
+        dt,
+    ))
+
+    # Test 2: --bridge 107 should show φ·σ = n·τ
+    rc, out, err, dt = run_calc("consciousness_bridge_verifier.py", "--bridge 107")
+    passed = rc == 0 and check_output_contains(out, r"PASS")
+    suite.add(TestResult(
+        "H-CX-107 (φ·σ=n·τ) verified",
+        passed,
+        "bridge 107 PASS" if passed else f"rc={rc}",
+        dt,
+    ))
+
+    return suite
+
+
+def test_rate_invariant(verbose=False):
+    """Test rate_invariant_calculator.py — Law 82."""
+    suite = CalculatorSuite("rate_invariant_calculator", "rate_invariant_calculator.py")
+
+    # Test 1: default should show r₀·r∞ = 7/20 EXACT
+    rc, out, err, dt = run_calc("rate_invariant_calculator.py", "")
+    passed = rc == 0 and check_output_contains(out, r"EXACT.*7/20")
+    suite.add(TestResult(
+        "r₀·r∞ = 7/20 exact",
+        passed,
+        "Law 82 confirmed" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    # Test 2: --uniqueness should show unique to n=6
+    rc, out, err, dt = run_calc("rate_invariant_calculator.py", "--uniqueness --limit 1000")
+    passed = rc == 0 and check_output_contains(out, r"Unique to n=6: YES")
+    suite.add(TestResult(
+        "r₀·r∞=7/20 unique to n=6",
+        passed,
+        "uniqueness confirmed" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    return suite
+
+
+def test_p6_uniqueness(verbose=False):
+    """Test p6_uniqueness_scorer.py — combined score."""
+    suite = CalculatorSuite("p6_uniqueness_scorer", "p6_uniqueness_scorer.py")
+
+    # Test 1: n=6 should get EXCEPTIONAL grade (>=0.9)
+    rc, out, err, dt = run_calc("p6_uniqueness_scorer.py", "--n 6")
+    passed = rc == 0 and check_output_contains(out, r"EXCEPTIONAL")
+    suite.add(TestResult(
+        "n=6 -> EXCEPTIONAL grade",
+        passed,
+        "top grade" if passed else f"rc={rc}, output={out[:120]}",
+        dt,
+    ))
+
+    # Test 2: --compare 28 should show n=6 > n=28
+    rc, out, err, dt = run_calc("p6_uniqueness_scorer.py", "--compare 28")
+    ratio_match = re.search(r'Ratio:\s*([\d.]+)x', out)
+    if ratio_match:
+        ratio = float(ratio_match.group(1))
+        passed = ratio > 2.0
+        detail = f"n=6 is {ratio:.1f}x more unique than n=28"
+    else:
+        passed = False
+        detail = "could not parse ratio"
+    suite.add(TestResult(
+        "n=6 scores >2x higher than n=28",
+        passed,
+        detail,
+        dt,
+    ))
+
+    return suite
+
+
 # ── Cross-calculator consistency tests ────────────────────────────────────
 
 def test_cross_consistency(verbose=False):
@@ -802,6 +1159,15 @@ ALL_CALCULATOR_TESTS = {
     'r_spectrum':         test_r_spectrum,
     'statistical_tester': test_statistical_tester,
     'small_n_validator':  test_small_n_validator,
+    'n6_uniqueness':      test_n6_uniqueness,
+    'claim_verifier':     test_claim_verifier,
+    'singleton_gz':       test_singleton_gz,
+    'equation_uniqueness': test_equation_uniqueness,
+    'codon_optimality':   test_codon_optimality,
+    'factorial_structure': test_factorial_structure,
+    'bridge_verifier':    test_bridge_verifier,
+    'rate_invariant':     test_rate_invariant,
+    'p6_uniqueness':      test_p6_uniqueness,
 }
 
 

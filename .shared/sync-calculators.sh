@@ -124,6 +124,32 @@ if [ -d "$PARENT/invest" ]; then
   cd - > /dev/null
 fi
 
+# n6-architecture — copy relevant N6 calc files + sync README
+N6_CALC="$PARENT/n6-architecture/tools"
+if [ -d "$PARENT/n6-architecture" ]; then
+  echo "[n6-architecture] Syncing TECS-L calculators..."
+  mkdir -p "$N6_CALC"
+  # Copy N6-relevant calculators
+  for f in egyptian_fraction.py perfect_number_generalizer.py perfect_number_physics.py \
+           divisor_field_theory.py n6_uniqueness_tester.py gate_formula_calculator.py \
+           tension_calculator.py convergence_analyzer.py validate_calculators.py; do
+    [ -f "$BASE/calc/$f" ] && cp "$BASE/calc/$f" "$N6_CALC/"
+  done
+  echo "  Copied $(ls "$N6_CALC"/*.py 2>/dev/null | wc -l) calculators"
+  sync_file "$PARENT/n6-architecture/README.md" "n6-architecture"
+  cd "$PARENT/n6-architecture"
+  if ! git diff --quiet 2>/dev/null; then
+    git add tools/ README.md
+    git pull --rebase --quiet 2>/dev/null || true
+    git commit -m "sync: TECS-L calculators from shared registry"
+    git push
+    echo "  Pushed!"
+  else
+    echo "  No changes"
+  fi
+  cd - > /dev/null
+fi
+
 echo ""
 echo "[3/3] Done!"
 echo ""

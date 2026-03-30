@@ -1379,15 +1379,16 @@ function gradeColor(grade) {
 }
 
 function gradeRadius(grade, deg, maxDeg) {
-  var base = 4;
+  var base = 3;
   if (grade) {
-    if (grade.indexOf('\u2b50') >= 0 || grade.indexOf('\u2605') >= 0) base = 10;
-    else if (grade.indexOf('\uD83D\uDFE9') >= 0) base = 7;
-    else if (grade.indexOf('\uD83D\uDFE7') >= 0) base = 5;
+    if (grade.indexOf('\u2b50') >= 0 || grade.indexOf('\u2605') >= 0) base = 6;
+    else if (grade.indexOf('\uD83D\uDFE9') >= 0) base = 5;
+    else if (grade.indexOf('\uD83D\uDFE7') >= 0) base = 4;
   }
-  // Hub scaling: degree adds up to 2x radius
-  var hubScale = 1 + (deg || 0) / Math.max(maxDeg || 1, 1);
-  return Math.round(base * hubScale);
+  // Degree-proportional scaling: sqrt(deg) for visual area proportionality
+  // deg=1 → 1x, deg=10 → ~3.2x, deg=24 → ~5x
+  var degScale = 1 + 2.5 * Math.sqrt((deg || 0) / Math.max(maxDeg || 1, 1));
+  return Math.round(base * degScale);
 }
 
 // Cluster colors (12 distinct muted tones for background)
@@ -1461,7 +1462,9 @@ function initGraph() {
 
   G = {
     nodes: nodes, edges: edges, adj: adj, canvas: canvas,
-    clusters: clusters, categories: categories, hubThreshold: hubThreshold,
+    clusters: clusters, categories: categories,
+    centerX: GRAPH.centerX || 2500, centerY: GRAPH.centerY || 2500,
+    hubThreshold: hubThreshold,
     ctx: canvas.getContext('2d'),
     transform: { x: 0, y: 0, k: 1 },
     selected: null, isPanning: false, panStart: null
@@ -1497,7 +1500,33 @@ function drawGraph() {
   var nodes = G.nodes, edges = G.edges;
   var hasSel = G.selected !== null;
 
-  // ── Draw category boxes (Level 1 — large parent containers) ──
+  // ── Draw center n=6 hub ──
+  var centerX = G.centerX, centerY = G.centerY;
+  // Radial guide lines from center to each category
+  for (var ci = 0; ci < G.categories.length; ci++) {
+    var cat = G.categories[ci];
+    var catCx = cat.x + cat.w / 2, catCy = cat.y + cat.h / 2;
+    ctx.strokeStyle = hexToRgba(cat.color, 0.15);
+    ctx.lineWidth = 1;
+    ctx.setLineDash([6, 4]);
+    ctx.beginPath(); ctx.moveTo(centerX, centerY); ctx.lineTo(catCx, catCy); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  // Center node
+  ctx.fillStyle = '#FFD700';
+  ctx.beginPath(); ctx.arc(centerX, centerY, 18, 0, Math.PI * 2); ctx.fill();
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = 3;
+  ctx.beginPath(); ctx.arc(centerX, centerY, 18, 0, Math.PI * 2); ctx.stroke();
+  if (G.transform.k > 0.2) {
+    ctx.fillStyle = '#000';
+    ctx.font = 'bold 14px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('n=6', centerX, centerY + 5);
+    ctx.textAlign = 'left';
+  }
+
+  // ── Draw category boxes (Level 1) ──
   for (var ci = 0; ci < G.categories.length; ci++) {
     var cat = G.categories[ci];
     // Background
@@ -1511,7 +1540,7 @@ function drawGraph() {
     if (G.transform.k > 0.15) {
       ctx.fillStyle = cat.color;
       ctx.font = 'bold 16px monospace';
-      ctx.fillText(cat.name, cat.x + 10, cat.y + 22);
+      ctx.fillText(cat.name, cat.x + 10, cat.y + 18);
     }
   }
 
@@ -1921,104 +1950,141 @@ def write_html(atlas, htmlpath):
     cluster_names = {cid: label for _, (cid, label, _) in domain_clusters.items()}
     cluster_cat = {cid: cat for _, (cid, _, cat) in domain_clusters.items()}
 
-    # ── Top-down hierarchical tree layout ──
+    # ── Radial tree layout: n=6 at center, categories radiate outward ──
     #
-    #  Level 0 (top):    ATLAS root
-    #  Level 1:          Categories (PURE MATH, PHYSICS, BIO, CONSCIOUSNESS, ...)
-    #  Level 2:          Sub-domains (leaf cluster boxes with nodes inside)
+    #  Center:   n=6 hub node
+    #  Ring 1:   Category sectors (PURE MATH, PHYSICS, BIO, CONSCIOUSNESS, ...)
+    #  Ring 2+:  Sub-domain cluster boxes within each sector
     #
     random.seed(42)
     N = len(graph_nodes)
     NODE_SPACE = 35
-    GAP_H = 30   # horizontal gap between sibling clusters
-    GAP_V = 80   # vertical gap between levels (for tree branches)
-    CAT_PAD = 20  # padding inside category box
 
     # Group clusters by category
     cl_members = {}
     for i, n in enumerate(graph_nodes):
         cl_members.setdefault(n["cl"], []).append(i)
 
-    cat_clusters = {}  # cat_name -> [cid, ...]
+    cat_clusters = {}
     for cid in cl_members:
         cat = cluster_cat.get(cid, "OTHER")
         cat_clusters.setdefault(cat, []).append(cid)
 
-    # Sort categories by total node count (largest left)
+    # Sort categories by total node count (largest gets most angle)
     cat_order = sorted(cat_clusters.keys(),
                        key=lambda c: -sum(len(cl_members[cid]) for cid in cat_clusters[c]))
+    total_nodes = sum(len(cl_members[cid]) for cid in cl_members)
 
     # Compute leaf cluster box sizes
     cl_box = {}
     for cid in cl_members:
         n_nodes = len(cl_members[cid])
-        side = max(NODE_SPACE * math.sqrt(n_nodes), 60)
-        cl_box[cid] = {"w": side * 1.3, "h": side}
+        side = max(NODE_SPACE * math.sqrt(n_nodes), 55)
+        cl_box[cid] = {"w": side * 1.2, "h": side}
 
-    # Layout: position categories left-to-right, clusters within each stacked vertically
-    # Then compute total width/height
-    cat_layout = {}  # cat -> {"x", "y", "w", "h", "clusters": [{cid, x, y, w, h}]}
-    x_cursor = 0
+    # Canvas: large enough for radial spread
+    CX, CY = 2500, 2500  # center point
+    INNER_R = 180   # inner ring start (category labels)
+    CLUSTER_R = 280  # where cluster boxes start
+
+    # Assign angular sectors to categories proportional to node count
+    angle_cursor = -math.pi / 2  # start at top
+    cat_sectors = {}
+    MIN_ANGLE = math.pi / 8  # minimum sector width
 
     for cat in cat_order:
-        cids = sorted(cat_clusters[cat], key=lambda c: -len(cl_members[c]))
-        # Stack clusters vertically within category, with shelf packing for small ones
-        max_cat_w = 0
-        y_cursor = GAP_V + 40  # leave room for category header
-        sub_layouts = []
-
-        # Try to pack small clusters side by side
-        row_x = CAT_PAD
-        row_h = 0
-        row_items = []
-        cat_w_limit = max(cl_box[cids[0]]["w"] + 2 * CAT_PAD if cids else 200,
-                          300) if len(cids) > 2 else 9999
-
-        for cid in cids:
-            bw, bh = cl_box[cid]["w"], cl_box[cid]["h"]
-            if row_x + bw + CAT_PAD > cat_w_limit and row_items:
-                # Finalize current row
-                for item in row_items:
-                    item["y"] = y_cursor
-                    sub_layouts.append(item)
-                y_cursor += row_h + GAP_H
-                row_x = CAT_PAD
-                row_h = 0
-                row_items = []
-            row_items.append({"cid": cid, "x": row_x, "w": bw, "h": bh})
-            row_x += bw + GAP_H
-            row_h = max(row_h, bh)
-            max_cat_w = max(max_cat_w, row_x)
-
-        # Finalize last row
-        for item in row_items:
-            item["y"] = y_cursor
-            sub_layouts.append(item)
-        y_cursor += row_h + CAT_PAD
-
-        cat_w = max(max_cat_w + CAT_PAD, 150)
-        cat_h = y_cursor
-
-        cat_layout[cat] = {
-            "x": x_cursor, "y": 0, "w": cat_w, "h": cat_h,
-            "clusters": sub_layouts,
+        cat_nodes = sum(len(cl_members[cid]) for cid in cat_clusters[cat])
+        angle_span = max((cat_nodes / total_nodes) * 2 * math.pi, MIN_ANGLE)
+        cat_sectors[cat] = {
+            "start": angle_cursor,
+            "span": angle_span,
+            "mid": angle_cursor + angle_span / 2,
         }
-        x_cursor += cat_w + GAP_H * 2
+        angle_cursor += angle_span
 
-    total_w = x_cursor
-    total_h = max((cl["h"] for cl in cat_layout.values()), default=800)
+    # Normalize if total exceeds 2*pi
+    total_angle = sum(s["span"] for s in cat_sectors.values())
+    if total_angle > 2 * math.pi:
+        scale = 2 * math.pi / total_angle
+        a = -math.pi / 2
+        for cat in cat_order:
+            cat_sectors[cat]["span"] *= scale
+            cat_sectors[cat]["start"] = a
+            cat_sectors[cat]["mid"] = a + cat_sectors[cat]["span"] / 2
+            a += cat_sectors[cat]["span"]
 
-    # Now compute absolute positions for each cluster
+    # Place cluster boxes along radial spokes within each sector
     cl_pos = {}
-    for cat, layout in cat_layout.items():
-        for sub in layout["clusters"]:
-            cid = sub["cid"]
-            cl_pos[cid] = (layout["x"] + sub["x"], layout["y"] + sub["y"])
-            cl_box[cid]["w"] = sub["w"]
-            cl_box[cid]["h"] = sub["h"]
+    cat_layout = {}
 
-    W = int(total_w)
-    H = int(total_h)
+    for cat in cat_order:
+        sector = cat_sectors[cat]
+        cids = sorted(cat_clusters[cat], key=lambda c: -len(cl_members[c]))
+        n_cls = len(cids)
+
+        # Distribute clusters within the sector angle range
+        for idx, cid in enumerate(cids):
+            bw, bh = cl_box[cid]["w"], cl_box[cid]["h"]
+            # Angle for this cluster within sector
+            if n_cls == 1:
+                angle = sector["mid"]
+            else:
+                t = idx / (n_cls - 1)
+                angle = sector["start"] + sector["span"] * 0.1 + t * sector["span"] * 0.8
+
+            # Radial distance: further out for more clusters, stagger to avoid overlap
+            row = idx // 3  # max 3 per radial level
+            r = CLUSTER_R + row * (max(bw, bh) + 40)
+
+            # Place box center
+            box_cx = CX + math.cos(angle) * r
+            box_cy = CY + math.sin(angle) * r
+            cl_pos[cid] = (box_cx - bw / 2, box_cy - bh / 2)
+
+        # Category arc info for rendering
+        cat_layout[cat] = {
+            "start": sector["start"], "span": sector["span"],
+            "mid": sector["mid"],
+        }
+
+    # Resolve any remaining overlaps between cluster boxes (greedy push-out)
+    cl_ids_list = list(cl_pos.keys())
+    for iteration in range(100):
+        moved = False
+        for i in range(len(cl_ids_list)):
+            ci = cl_ids_list[i]
+            ax1, ay1 = cl_pos[ci]
+            aw, ah = cl_box[ci]["w"], cl_box[ci]["h"]
+            ax2, ay2 = ax1 + aw, ay1 + ah
+            for j in range(i + 1, len(cl_ids_list)):
+                cj = cl_ids_list[j]
+                bx1, by1 = cl_pos[cj]
+                bw2, bh2 = cl_box[cj]["w"], cl_box[cj]["h"]
+                bx2, by2 = bx1 + bw2, by1 + bh2
+                # Check overlap with gap
+                gap = 15
+                if ax1 - gap < bx2 and ax2 + gap > bx1 and ay1 - gap < by2 and ay2 + gap > by1:
+                    # Push apart along center-to-center vector
+                    ca_x, ca_y = ax1 + aw / 2, ay1 + ah / 2
+                    cb_x, cb_y = bx1 + bw2 / 2, by1 + bh2 / 2
+                    dx = cb_x - ca_x
+                    dy = cb_y - ca_y
+                    d = math.sqrt(dx * dx + dy * dy) + 0.1
+                    # Push outward from center
+                    push = 8
+                    cl_pos[ci] = (ax1 - push * dx / d, ay1 - push * dy / d)
+                    cl_pos[cj] = (bx1 + push * dx / d, by1 + push * dy / d)
+                    moved = True
+        if not moved:
+            break
+
+    # Compute bounding box
+    all_x1 = min(cl_pos[c][0] for c in cl_pos)
+    all_y1 = min(cl_pos[c][1] for c in cl_pos)
+    all_x2 = max(cl_pos[c][0] + cl_box[c]["w"] for c in cl_pos)
+    all_y2 = max(cl_pos[c][1] + cl_box[c]["h"] for c in cl_pos)
+    W = int(all_x2 - all_x1 + 200)
+    H = int(all_y2 - all_y1 + 200)
 
     # Place nodes within their cluster box using local force layout
     for cid, members in cl_members.items():
@@ -2119,7 +2185,7 @@ def write_html(atlas, htmlpath):
             "x2": round(bx + bw, 1), "y2": round(by + bh, 1),
         })
 
-    # Category boxes metadata (for JS to draw parent rectangles)
+    # Category metadata (radial sectors)
     categories_meta = []
     CAT_COLORS = {
         "PURE MATH": "#4A90D9", "PHYSICS": "#E67E22", "BIOLOGY": "#2ECC71",
@@ -2127,15 +2193,27 @@ def write_html(atlas, htmlpath):
     }
     for cat in cat_order:
         layout = cat_layout[cat]
+        cat_cids = cat_clusters[cat]
+        # Bounding box of all clusters in this category
+        if cat_cids:
+            cx1 = min(cl_pos[c][0] for c in cat_cids if c in cl_pos)
+            cy1 = min(cl_pos[c][1] for c in cat_cids if c in cl_pos)
+            cx2 = max(cl_pos[c][0] + cl_box[c]["w"] for c in cat_cids if c in cl_pos)
+            cy2 = max(cl_pos[c][1] + cl_box[c]["h"] for c in cat_cids if c in cl_pos)
+        else:
+            cx1 = cy1 = cx2 = cy2 = 0
+        pad = 25
         categories_meta.append({
             "name": cat, "color": CAT_COLORS.get(cat, "#95A5A6"),
-            "x": round(layout["x"], 1), "y": round(layout["y"], 1),
-            "w": round(layout["w"], 1), "h": round(layout["h"], 1),
+            "x": round(cx1 - pad, 1), "y": round(cy1 - pad - 20, 1),
+            "w": round(cx2 - cx1 + pad * 2, 1), "h": round(cy2 - cy1 + pad * 2 + 20, 1),
+            "mid": round(layout["mid"], 4),
         })
 
     graph_data = json.dumps({
         "nodes": graph_nodes, "edges": graph_edges,
         "clusters": clusters_meta, "categories": categories_meta,
+        "centerX": round(CX, 1), "centerY": round(CY, 1),
         "maxDeg": max_deg
     }, ensure_ascii=False)
 
