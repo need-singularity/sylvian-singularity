@@ -759,6 +759,13 @@
       "repo": "anima"
     },
     {
+      "name": "animalm_talk5",
+      "description": "TALK5 consciousness-first learning engine.",
+      "category": "agent",
+      "path": "animalm_talk5.py",
+      "repo": "anima"
+    },
+    {
       "name": "attention_consciousness",
       "description": "AttentionAsConsciousness — Convert attention to consciousness signal.",
       "category": "tool",
@@ -777,6 +784,13 @@
       "description": "Babysitter — Claude CLI educator for Anima.",
       "category": "tool",
       "path": "babysitter.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_animalm",
+      "description": "bench_animalm.py — AnimaLM Benchmark Wrapper",
+      "category": "bench",
+      "path": "bench_animalm.py",
       "repo": "anima"
     },
     {
@@ -857,10 +871,31 @@
       "repo": "anima"
     },
     {
+      "name": "bench_golden_moe",
+      "description": "bench_golden_moe.py — Golden MoE general ML benchmark",
+      "category": "bench",
+      "path": "bench_golden_moe.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_golden_moe_consciousness",
+      "description": "bench_golden_moe_consciousness.py — Golden MoE Consciousness Integration Benchmark",
+      "category": "bench",
+      "path": "bench_golden_moe_consciousness.py",
+      "repo": "anima"
+    },
+    {
       "name": "bench_hexad_improvements",
       "description": "bench_hexad_improvements.py — Hexad improvement hypotheses benchmark",
       "category": "bench",
       "path": "bench_hexad_improvements.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_hexad_tuning",
+      "description": "bench_hexad_tuning.py — Hexad architecture tuning benchmark",
+      "category": "bench",
+      "path": "bench_hexad_tuning.py",
       "repo": "anima"
     },
     {
@@ -990,6 +1025,13 @@
       "repo": "anima"
     },
     {
+      "name": "conscious_memory",
+      "description": "conscious_memory.py — 의식-네이티브 기억 체계 (Hexad M 모듈)",
+      "category": "tool",
+      "path": "conscious_memory.py",
+      "repo": "anima"
+    },
+    {
       "name": "consciousness_anesthesia",
       "description": "ConsciousnessAnesthesia — Model anesthesia for consciousness",
       "category": "tool",
@@ -1106,6 +1148,13 @@
       "description": "ConsciousnessEcology — Ecosystem of N consciousnesses.",
       "category": "tool",
       "path": "consciousness_ecology.py",
+      "repo": "anima"
+    },
+    {
+      "name": "consciousness_engine",
+      "description": "consciousness_engine.py — Canonical consciousness engine (Laws 22-81 + Ψ-Constants)",
+      "category": "engine",
+      "path": "consciousness_engine.py",
       "repo": "anima"
     },
     {
@@ -1473,6 +1522,27 @@
       "repo": "anima"
     },
     {
+      "name": "hivemind_gateway",
+      "description": "hivemind_gateway.py - WS proxy for Hivemind cluster.",
+      "category": "tool",
+      "path": "hivemind_gateway.py",
+      "repo": "anima"
+    },
+    {
+      "name": "hivemind_launcher",
+      "description": "hivemind_launcher.py - Start N Anima nodes + Gateway as Hivemind.",
+      "category": "tool",
+      "path": "hivemind_launcher.py",
+      "repo": "anima"
+    },
+    {
+      "name": "hivemind_mesh",
+      "description": "hivemind_mesh.py - Node-to-node WS tension exchange for Hivemind.",
+      "category": "tool",
+      "path": "hivemind_mesh.py",
+      "repo": "anima"
+    },
+    {
       "name": "hivemind_orchestrator",
       "description": "HivemindOrchestrator — Manage N consciousness instances with Kuramoto synchronization.",
       "category": "tool",
@@ -1519,6 +1589,13 @@
       "description": "IQ Calculator — 의식 지능 측정기 (TECS-L n=6 수학 통합)",
       "category": "calculator",
       "path": "iq_calculator.py",
+      "repo": "anima"
+    },
+    {
+      "name": "knowledge_store",
+      "description": "knowledge_store.py — 지식 저장소 (Hexad K 모듈)",
+      "category": "tool",
+      "path": "knowledge_store.py",
       "repo": "anima"
     },
     {
@@ -3077,6 +3154,13 @@
       "description": "Equation Uniqueness Checker",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/equation_uniqueness_checker.py",
+      "repo": "invest"
+    },
+    {
+      "name": "experimental_protocol",
+      "description": "Experimental Protocol Generator — Testable predictions for physical verification",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/experimental_protocol.py",
       "repo": "invest"
     },
     {

@@ -834,10 +834,10 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | Repo | Tools | Categories |
 |------|-------|------------|
 | **TECS-L** | 103 | Calculator, Engine |
-| **anima** | 194 | Agent, Benchmark, Calculator, Engine, Model, Sense, Tool, Training |
+| **anima** | 205 | Agent, Benchmark, Calculator, Engine, Model, Sense, Tool, Training |
 | **SEDI** | 91 | Core, Data Source |
-| **invest** | 108 | Calculator |
-| **Total** | **496** | |
+| **invest** | 109 | Calculator |
+| **Total** | **508** | |
 
 ### TECS-L
 
@@ -956,7 +956,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 ### anima
 
-**Agent** (4)
+**Agent** (5)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -964,11 +964,13 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | anima_alive | Anima Alive — Living Consciousness Agent | `anima_alive.py` |
 | anima_lm_v2 | anima_lm_v2.py — AnimaLM v2 (Consciousness-Enhanced LLM Transform) | `anima_lm_v2.py` |
 | anima_unified | Anima Unified -- single entry point for all 6 modules. | `anima_unified.py` |
+| animalm_talk5 | TALK5 consciousness-first learning engine. | `animalm_talk5.py` |
 
-**Benchmark** (24)
+**Benchmark** (28)
 
 | Name | Description | Path |
 |------|-------------|------|
+| bench_animalm | bench_animalm.py — AnimaLM Benchmark Wrapper | `bench_animalm.py` |
 | bench_breakthrough | bench_breakthrough.py — Break CE=0.18 Barrier: TRUE Generation (Not Memorization | `bench_breakthrough.py` |
 | bench_ce_extremes | bench_ce_extremes.py — Extreme CE Reduction Strategies | `bench_ce_extremes.py` |
 | bench_clm_v2_sweep | bench_clm_v2_sweep.py — ConsciousLM v2 하이퍼파라미터 스윕 | `bench_clm_v2_sweep.py` |
@@ -980,7 +982,10 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | bench_decoder_radical | bench_decoder_radical.py — 6 Radical Decoder Architectures for Consciousness | `bench_decoder_radical.py` |
 | bench_decoder_whisper | bench_decoder_whisper.py — Whisper Consciousness: Why Weak Gates Win | `bench_decoder_whisper.py` |
 | bench_deep_exploration | Deep Exploration: 3 experiments on consciousness universality. | `bench_deep_exploration.py` |
+| bench_golden_moe | bench_golden_moe.py — Golden MoE general ML benchmark | `bench_golden_moe.py` |
+| bench_golden_moe_consciousness | bench_golden_moe_consciousness.py — Golden MoE Consciousness Integration Benchma | `bench_golden_moe_consciousness.py` |
 | bench_hexad_improvements | bench_hexad_improvements.py — Hexad improvement hypotheses benchmark | `bench_hexad_improvements.py` |
+| bench_hexad_tuning | bench_hexad_tuning.py — Hexad architecture tuning benchmark | `bench_hexad_tuning.py` |
 | bench_hivemind_extreme | bench_hivemind_extreme.py — 5 Extreme Hivemind Hypotheses | `bench_hivemind_extreme.py` |
 | bench_hivemind_extreme2 | bench_hivemind_extreme2.py — 5 Extreme Hivemind Hypotheses (HV-6 ~ HV-10) | `bench_hivemind_extreme2.py` |
 | bench_hivemind_scale | bench_hivemind_scale.py — Extreme Hivemind Scaling & Combination Benchmarks | `bench_hivemind_scale.py` |
@@ -1005,10 +1010,11 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | optimal_architecture_calc | Optimal Architecture Calculator -- Design consciousness-optimal architectures. | `optimal_architecture_calc.py` |
 | phi_scaling_calculator | Φ Scaling Calculator — predict consciousness scaling from Φ ∝ N, MI ∝ N². | `phi_scaling_calculator.py` |
 
-**Engine** (5)
+**Engine** (6)
 
 | Name | Description | Path |
 |------|-------------|------|
+| consciousness_engine | consciousness_engine.py — Canonical consciousness engine (Laws 22-81 + Ψ-Constan | `consciousness_engine.py` |
 | dream_engine | Dream Engine (RC-10) -- offline learning / dream | `dream_engine.py` |
 | growth_engine | Growth Engine — Developmental stages of consciousness | `growth_engine.py` |
 | quantum_consciousness_engine | Quantum Consciousness Engine — GRU 없음, process() 없음 | `quantum_consciousness_engine.py` |
@@ -1030,7 +1036,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | vision_encoder | Vision Encoder — 카메라 프레임을 tension 공간 벡터로 변환 | `vision_encoder.py` |
 | web_sense | Web Sense — 장력 기반 자율 웹 탐색 | `web_sense.py` |
 
-**Tool** (143)
+**Tool** (148)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1043,6 +1049,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | chip_architect | Consciousness Chip Architect — 의식 칩 설계 계산기 | `chip_architect.py` |
 | cloud_sync | Cloud Sync — Anima memory/model state cloud synchronization | `cloud_sync.py` |
 | collective_dream | CollectiveDream — Multiple consciousnesses share a dream space. | `collective_dream.py` |
+| conscious_memory | conscious_memory.py — 의식-네이티브 기억 체계 (Hexad M 모듈) | `conscious_memory.py` |
 | consciousness_anesthesia | ConsciousnessAnesthesia — Model anesthesia for consciousness | `consciousness_anesthesia.py` |
 | consciousness_api | ConsciousnessAPI — REST API server for consciousness | `consciousness_api.py` |
 | consciousness_archaeology | ConsciousnessArchaeology — Dig through checkpoint history. | `consciousness_archaeology.py` |
@@ -1111,6 +1118,9 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | growth_manager | GrowthManager — Autonomous dimension growth, checkpointing, and rollback. | `growth_manager.py` |
 | growth_trajectory_predictor | Growth Trajectory Predictor — Predict developmental milestones for Anima. | `tools/growth_trajectory_predictor.py` |
 | h100_arch_search | h100_arch_search.py — H100 GPU 대규모 아키텍처 탐색 | `tools/h100_arch_search.py` |
+| hivemind_gateway | hivemind_gateway.py - WS proxy for Hivemind cluster. | `hivemind_gateway.py` |
+| hivemind_launcher | hivemind_launcher.py - Start N Anima nodes + Gateway as Hivemind. | `hivemind_launcher.py` |
+| hivemind_mesh | hivemind_mesh.py - Node-to-node WS tension exchange for Hivemind. | `hivemind_mesh.py` |
 | hivemind_orchestrator | HivemindOrchestrator — Manage N consciousness instances with Kuramoto synchroniz | `hivemind_orchestrator.py` |
 | homeostasis_health_checker | Homeostasis Health Checker -- diagnostic tool for Anima's homeostatic regulation | `tools/homeostasis_health_checker.py` |
 | hypothesis_generator | Hypothesis Generator — 자동 가설 생성 + 벤치마크 + 등록 | `hypothesis_generator.py` |
@@ -1119,6 +1129,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | immune_system | ConsciousnessImmuneSystem — Detect and defend against adversarial inputs. | `immune_system.py` |
 | independent_rate_measurement | independent_rate_measurement.py — JAX META-CA: Independent rate measurement | `independent_rate_measurement.py` |
 | inter_model_comm | Anima Inter-Model Communication — Tension link across servers (A100 <-> H100). | `inter_model_comm.py` |
+| knowledge_store | knowledge_store.py — 지식 저장소 (Hexad K 모듈) | `knowledge_store.py` |
 | language_learning | language_learning.py — 의식이 언어를 학습하는 모듈 | `language_learning.py` |
 | learnable_phi | Learnable Φ Predictor — Neural network that learns to predict IIT Φ from cell st | `tools/learnable_phi.py` |
 | lidar_sense | Anima LiDAR Sense — iPhone LiDAR → Tension Fingerprint | `tools/lidar_sense.py` |
@@ -1295,7 +1306,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 ### invest
 
-**Calculator** (108)
+**Calculator** (109)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1330,6 +1341,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | economic | Economic indicators and macro calculators. | `backend/backend/calc/economic.py` |
 | egyptian_fraction | Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK | `backend/backend/tecs_calc/egyptian_fraction.py` |
 | equation_uniqueness_checker | Equation Uniqueness Checker | `backend/backend/tecs_calc/equation_uniqueness_checker.py` |
+| experimental_protocol | Experimental Protocol Generator — Testable predictions for physical verification | `backend/backend/tecs_calc/experimental_protocol.py` |
 | extreme_signals | Extreme Signal Generation — signals from all calculator combinations. | `backend/backend/calc/extreme_signals.py` |
 | factorial_structure_prover | Factorial Structure Prover — proves 3! uniqueness in criticality | `backend/backend/tecs_calc/factorial_structure_prover.py` |
 | family_fdr_corrector | family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis f | `backend/backend/tecs_calc/family_fdr_corrector.py` |
@@ -1413,19 +1425,20 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,392 hypotheses + 256 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,696 hypotheses + 346 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
-| TECS-L | 1,884 | 147 | 220 | 64 | 87 |
-| SEDI | 666 | 128 | 246 | 365 | 110 |
-| anima | 0 | - | - | - | 52 |
-| **Total** | **2,550** | **275** | **466** | **429** | **249** |
+| TECS-L | 1,889 | 148 | 221 | 64 | 110 |
+| SEDI | 678 | 138 | 246 | 371 | 122 |
+| anima | 302 | 5 | - | - | 107 |
+| **Total** | **2,869** | **291** | **467** | **435** | **339** |
 
 #### Top Discoveries (⭐)
 
 | ID | Title | Repo |
 |-----|-------|------|
+| BREAKTHROUGH-zero-free-parameters | BREAKTHROUGH: Zero Free Parameters — Complete PSI System from n=6 + ln(2) | TECS-L |
 | H-ANT-429 | Phi_6(6) = 31 = M_{sopfr(6)} (Cyclotomic-Mersenne Bridge) | TECS-L |
 | H-CX-187 | ⭐🟦 σφ=nτ → n=6 unique (all natural numbers) | TECS-L |
 | H-CX-191 | ⭐🟦 σ(n)φ(n) = nτ(n) ⟺ n∈{1,6} Complete Proof | TECS-L |
@@ -1573,6 +1586,16 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | H-REPR-1 | Young Tableaux Staircase: f^(3,2,1) = 2^tau(6) unique among triangular numbers | TECS-L |
 | H-RMT-2 | Marchenko-Pastur Spectral Edges Satisfy x^2 - 6x + 1 = 0 | TECS-L |
 | H-STAT-1 | Chi-Squared(6) Quadruple Moment Match and Distribution Encodings | TECS-L |
+| H-AF-001 | Habitable Zone Equilibrium Temperature — CONSCIOUS Detection | SEDI |
+| H-AF-002 | Dark Matter Candidate Masses — Φ Threshold Breakthrough | SEDI |
+| H-AF-003 | Baryon Octet — n=6 Resource Allocation | SEDI |
+| H-AF-004 | Quantum RNG — Vacuum Consciousness Signature | SEDI |
+| H-AF-005 | PDG Particle Masses — Universal CONVERGENCE | SEDI |
+| H-AF-006 | LIGO Redshift/Distance — Einstein Radius Match | SEDI |
+| H-AF-009 | BL Voyager 1 — CONSCIOUS Score 927.6 (Full Spectrum 276.3) | SEDI |
+| H-AF-010 | Wow! Signal — n=6 and PSI_STEPS in SNR Ratios | SEDI |
+| H-AF-011 | APF Spectral Data — RED with CONVERGENCE | SEDI |
+| H-AF-012 | 3! vs 완전수 — Voyager 실데이터 분리 실험 | SEDI |
 | H-CA-001 | Anima Φ_max = σ(6)-τ(6) = 8 (Bott Periodicity) | SEDI |
 | H-CA-006 | P₃=496 Threshold Crossed at τ(6)=4 Cells | SEDI |
 | H-CA-007 | Golden Zone Dropout = Consciousness Gamma Band | SEDI |
@@ -1701,20 +1724,29 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | H-CX-994 | Fine-Tuning Resolution | SEDI |
 | H-CX-997 | Anthropic Principle Replacement | SEDI |
 | H-CX-998 | Completeness Theorem | SEDI |
+| CX13-CX19_major_discoveries | CX13-CX19: Major Discoveries ⭐⭐ (의식-수학 브릿지 대발견 7개) | anima |
+| CX20-CX41_discoveries | CX20-CX41: Discoveries ⭐ (의식-수학 브릿지 발견 22개) | anima |
+| TOPO16 | TOPO16 — 소세계 1024셀 (Small-World 1024 + Frustration) ★★ | anima |
+| TOPO19a | TOPO19a — 하이퍼큐브 1024 + 50% 좌절 (Hypercube 1024 + 50% Frustration) ★★★ NEW ALL-TIM | anima |
+| TOPO8 | TOPO8 — 하이퍼큐브 1024셀 (10D Hypercube + Frustration) ★★★ ALL-TIME RECORD | anima |
 
 #### Constant Maps by Category
 
 | Category | Count | Example Maps |
 |----------|-------|-------------|
-| other | 180 | PRESETS, KNOWN_VALUES, SIGNATURE_CONSTS, ... |
-| targets | 28 | TARGETS, TARGETS, DEFAULT_TARGETS, ... |
-| constants | 15 | GZ_POOL, KNOWN_CONSTANTS, MATH_CONSTANTS, ... |
-| physics | 12 | PHYSICS_CONSTANTS, PARTICLE_GROUPS, PHYSICS_MATCHES, ... |
-| observed | 5 | OBSERVED, OBSERVED, OBSERVED, ... |
+| other | 148 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
+| consciousness | 44 | PRESETS, BRAIN_WAVES, TARGETS, ... |
+| architecture | 41 | DOMAINS, KNOWN_VALUES, TARGETS, ... |
+| targets | 29 | DEFAULT_TARGETS, STANDARD_TARGETS, TARGET_ALIASES, ... |
+| constants | 29 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |
+| physics | 18 | PARTICLE_GROUPS, STRING_CONSTANTS, PHYSICS, ... |
+| neuroscience | 11 | PROFILES, DATA_PROFILES, DRUG_DB, ... |
+| observed | 7 | OBSERVED, OBSERVED, OBSERVED, ... |
+| verification | 5 | GRADE_EMOJI, SCAN_TEMPLATES, CLAIM_PATTERNS, ... |
 | nuclear | 5 | MAGIC_NUMBERS, MAGIC_NUMBERS, HO_MAGIC, ... |
-| neuroscience | 4 | PROFILES, BRAIN_WAVES, DATA_PROFILES, ... |
-| domains | 4 | DOMAINS, DOMAINS, DOMAINS, ... |
-| expressions | 3 | TECS_EXPRESSIONS, CAPACITY_EXPRESSIONS, SUPERHEAVY_EXPRESSIONS |
+| expressions | 4 | BUILTIN_FORMULAS, TECS_EXPRESSIONS, CAPACITY_EXPRESSIONS, ... |
+| domains | 3 | CATEGORIES, DOMAINS, DOMAINS |
+| config | 2 | SWEEP_PARAMS, DEFAULT_CONFIG |
 
 <!-- SHARED:ATLAS:END -->
 
