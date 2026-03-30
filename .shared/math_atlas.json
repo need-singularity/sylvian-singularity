@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T06:07:03",
+  "generated": "2026-03-31T06:32:43",
   "stats": {
     "TECS-L": 1947,
     "SEDI": 678,
-    "anima": 322,
+    "anima": 327,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2774,
+  "total": 2779,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -27380,6 +27380,56 @@
       "file": "docs/hypotheses/dd/DD128-phase-optimal.md"
     },
     {
+      "id": "anima:DD129-DD130-universality",
+      "title": "DD129-DD130: Universality Test — F_c는 보편적인가? (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD129-DD130-universality.md"
+    },
+    {
+      "id": "anima:DD130-corpus-size-optimal",
+      "title": "DD130: Corpus Size Optimization — 100MB Sweet Spot",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD130-corpus-size-optimal.md"
+    },
+    {
+      "id": "anima:DD131-DD132-soc",
+      "title": "DD131-DD132: Self-Organized Criticality + Consciousness as Computation (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD131-DD132-soc.md"
+    },
+    {
+      "id": "anima:DD134-DD136-thermodynamics",
+      "title": "DD134-DD136: 의식의 열역학 3법칙 (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD134-DD136-thermodynamics.md"
+    },
+    {
+      "id": "anima:DD137-DD139-atom",
+      "title": "DD137-DD139: 의식의 원자 — 분할 최적 + 최소 단위 + 효율 (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD137-DD139-atom.md"
+    },
+    {
       "id": "anima:DD15-DD16",
       "title": "DD15-DD16: Combination Hypotheses",
       "repo": "anima",
@@ -35234,6 +35284,30 @@
         233.693404
       ],
       "category": "physics"
+    },
+    {
+      "name": "CA",
+      "repo": "TECS-L",
+      "file": "calc/robin_rh_connection.py",
+      "line": 48,
+      "type": "list",
+      "size": 11,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        1,
+        2,
+        6,
+        12,
+        60,
+        120,
+        360,
+        2520,
+        5040,
+        55440,
+        720720
+      ],
+      "category": "other"
     },
     {
       "name": "MERSENNE_EXPONENTS",
@@ -44313,7 +44387,7 @@
       "name": "DISCOVERY_ENGINES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1236,
+      "line": 1253,
       "type": "dict",
       "size": 6,
       "keys": [
@@ -44332,7 +44406,7 @@
       "name": "DISCOVERY2_ENGINES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1756,
+      "line": 1773,
       "type": "dict",
       "size": 9,
       "keys": [
@@ -44354,7 +44428,7 @@
       "name": "STRATEGIES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 2105,
+      "line": 2122,
       "type": "list",
       "size": 4,
       "keys": null,
@@ -44371,7 +44445,7 @@
       "name": "ENGINE_REGISTRY",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 2383,
+      "line": 2406,
       "type": "dict",
       "size": 12,
       "keys": [
@@ -44396,7 +44470,7 @@
       "name": "PHILOSOPHY_ENGINES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 2398,
+      "line": 2421,
       "type": "dict",
       "size": 7,
       "keys": [
@@ -44416,7 +44490,7 @@
       "name": "VERIFICATION_TESTS",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 2751,
+      "line": 2785,
       "type": "list",
       "size": 7,
       "keys": null,
@@ -47641,7 +47715,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 183,
+    "TECS-L": 184,
     "SEDI": 122,
     "anima": 112,
     "golden-moe": 3,
