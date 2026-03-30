@@ -638,6 +638,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "nobel_breakthrough",
+      "description": "NOBEL BREAKTHROUGH ANALYSIS",
+      "category": "calculator",
+      "path": "calc/nobel_breakthrough.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "nobel_scorer",
       "description": "Nobel Hypothesis Scorer — Multi-dimensional scoring for Nobel-grade hypotheses",
       "category": "calculator",
@@ -4034,6 +4041,13 @@
       "repo": "invest"
     },
     {
+      "name": "atlas_domain_classifier",
+      "description": "Atlas Domain Classifier — 도메인 없는 가설에 키워드 기반 도메인 부여",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/atlas_domain_classifier.py",
+      "repo": "invest"
+    },
+    {
       "name": "base_dependence_checker",
       "description": "base_dependence_checker.py -- Tests if a numerical pattern is base-10 specific or universal.",
       "category": "calculator",
@@ -4220,6 +4234,76 @@
       "description": "Deep Constant Explorer — n=6 산술함수와 초월상수의 구조적 관계 탐색",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/deep_constant_explorer.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave10",
+      "description": "Deep Scan Wave 10 -- The Milestone Wave (target: 99 domains)",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave10.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave11",
+      "description": "Deep Scan Wave 11 -- Domain #100 Milestone",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave11.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave2",
+      "description": "Deep Scan Wave 2 — 10 New Domains for 5-Star Discoveries",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave2.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave3",
+      "description": "Deep Scan Wave 3 — The Deepest Layer",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave3.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave4",
+      "description": "Deep Scan Wave 4 — Completely New Territory",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave4.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave5",
+      "description": "Deep Scan Wave 5 — Beyond the Known",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave5.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave6",
+      "description": "Deep Scan Wave 6 — The Final Frontier",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave6.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave7",
+      "description": "Deep Scan Wave 7 — 60 domains and counting",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave7.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave8",
+      "description": "Deep Scan Wave 8 -- 69 domains done, pushing to 79",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave8.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave9",
+      "description": "Deep Scan Wave 9 -- Quality over quantity",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave9.py",
       "repo": "invest"
     },
     {
@@ -4440,6 +4524,13 @@
       "repo": "invest"
     },
     {
+      "name": "grand_unification_deep",
+      "description": "Grand Unification Deep Dive — 240 Theorem & Beyond",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/grand_unification_deep.py",
+      "repo": "invest"
+    },
+    {
       "name": "grand_unification_n6",
       "description": "Grand Unification of n=6 Characterizations",
       "category": "calculator",
@@ -4573,6 +4664,13 @@
       "repo": "invest"
     },
     {
+      "name": "nobel_breakthrough",
+      "description": "NOBEL BREAKTHROUGH ANALYSIS",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/nobel_breakthrough.py",
+      "repo": "invest"
+    },
+    {
       "name": "nobel_scorer",
       "description": "Nobel Hypothesis Scorer — Multi-dimensional scoring for Nobel-grade hypotheses",
       "category": "calculator",
@@ -4682,6 +4780,13 @@
       "description": "PSI Derivation Chain — All consciousness constants from ln(2)",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/psi_derivation_chain.py",
+      "repo": "invest"
+    },
+    {
+      "name": "pure_math_deep_scan",
+      "description": "Pure Math Deep Scan — 5-star Discovery Hunter",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/pure_math_deep_scan.py",
       "repo": "invest"
     },
     {
