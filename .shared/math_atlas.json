@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T01:08:49",
+  "generated": "2026-03-31T01:13:11",
   "stats": {
-    "TECS-L": 1940,
+    "TECS-L": 1946,
     "SEDI": 678,
     "anima": 307,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2752,
+  "total": 2758,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -15902,6 +15902,16 @@
       "file": "docs/hypotheses/PERFECT-TOPO-001-topological-atlas.md"
     },
     {
+      "id": "TECS-L:PHYS-CALABI-YAU-N6",
+      "title": "PHYS-CALABI-YAU-N6: Calabi-Yau 3-Folds and Mirror Symmetry Encode n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PHYS-CALABI-YAU-N6.md"
+    },
+    {
       "id": "TECS-L:PHYS-CONNES-NCG-N6",
       "title": "PHYS-CONNES-NCG: Standard Model from KO-Dimension 6 = P1",
       "repo": "TECS-L",
@@ -15910,6 +15920,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/PHYS-CONNES-NCG-N6.md"
+    },
+    {
+      "id": "TECS-L:PHYS-FEYNMAN-SM-N6",
+      "title": "PHYS-FEYNMAN-SM-N6: Feynman Diagram Combinatorics, Renormalization, and SM Particle Content Encode n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PHYS-FEYNMAN-SM-N6.md"
     },
     {
       "id": "TECS-L:PHYS-GW-QUADRUPOLE-P6",
@@ -15930,6 +15950,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/PHYS-SELF-REFERENTIAL-LOOP-physics.md"
+    },
+    {
+      "id": "TECS-L:PHYS-THERMODYNAMICS-N6",
+      "title": "PHYS-THERMODYNAMICS-N6: Statistical Mechanics Encodes n=6 at Phase Transitions",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PHYS-THERMODYNAMICS-N6.md"
     },
     {
       "id": "TECS-L:PLASMA-001-020-waves-instabilities-n6",
@@ -16044,6 +16074,26 @@
       "file": "docs/hypotheses/PMATH-GRAND-UNIFICATION-n6.md"
     },
     {
+      "id": "TECS-L:PMATH-INFORMATION-THEORY-N6",
+      "title": "PMATH-INFORMATION-THEORY: Information Theory Fundamentally Encodes n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PMATH-INFORMATION-THEORY-N6.md"
+    },
+    {
+      "id": "TECS-L:PMATH-KNOT-THEORY-N6",
+      "title": "PMATH-KNOT: Knot Invariants Systematically Encode n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PMATH-KNOT-THEORY-N6.md"
+    },
+    {
       "id": "TECS-L:PMATH-MONSTER-MOONSHINE-perfect",
       "title": "PMATH-MONSTER: Monster Group / Monstrous Moonshine and Perfect Numbers",
       "repo": "TECS-L",
@@ -16052,6 +16102,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/PMATH-MONSTER-MOONSHINE-perfect.md"
+    },
+    {
+      "id": "TECS-L:PMATH-PASCAL-PERFECT",
+      "title": "PMATH-PASCAL-PERFECT: Pascal's Triangle Encodes Perfect Number Structure",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PMATH-PASCAL-PERFECT.md"
     },
     {
       "id": "TECS-L:PMATH-PERFECT-CHAIN-bridges",
@@ -31235,6 +31295,23 @@
       "category": "domains"
     },
     {
+      "name": "PERFECT_NUMBERS",
+      "repo": "TECS-L",
+      "file": "calc/feynman_diagrams_n6.py",
+      "line": 124,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        6,
+        28,
+        496,
+        8128
+      ],
+      "category": "constants"
+    },
+    {
       "name": "FUSION_CONSTANTS",
       "repo": "TECS-L",
       "file": "calc/fusion_hypothesis_verifier.py",
@@ -32021,6 +32098,164 @@
         2,
         3
       ],
+      "category": "other"
+    },
+    {
+      "name": "JONES_POLYNOMIALS",
+      "repo": "TECS-L",
+      "file": "calc/knot_theory_n6.py",
+      "line": 55,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "0_1",
+        "3_1",
+        "4_1",
+        "5_1",
+        "5_2",
+        "6_1",
+        "6_2",
+        "6_3",
+        "7_1"
+      ],
+      "evaluable": true,
+      "values": {
+        "0_1": {
+          "0": 1
+        },
+        "3_1": {
+          "-4": -1,
+          "-3": 1,
+          "-1": 1
+        },
+        "4_1": {
+          "2": 1,
+          "1": -1,
+          "0": 1,
+          "-1": -1,
+          "-2": 1
+        },
+        "5_1": {
+          "-10": -1,
+          "-9": 1,
+          "-7": 1,
+          "-6": -1,
+          "-4": 1
+        },
+        "5_2": {
+          "-8": -1,
+          "-7": 1,
+          "-6": -1,
+          "-5": 2,
+          "-4": -1,
+          "-3": 1,
+          "-2": -1
+        },
+        "6_1": {
+          "-4": -1,
+          "-3": 2,
+          "-2": -2,
+          "-1": 3,
+          "0": -2,
+          "1": 2,
+          "2": -1
+        },
+        "6_2": {
+          "-5": 1,
+          "-4": -2,
+          "-3": 3,
+          "-2": -3,
+          "-1": 3,
+          "0": -2,
+          "1": 1
+        },
+        "6_3": {
+          "-3": 1,
+          "-2": -2,
+          "-1": 3,
+          "0": -3,
+          "1": 3,
+          "2": -2,
+          "3": 1
+        },
+        "7_1": {
+          "-16": 1,
+          "-15": -1,
+          "-13": 1,
+          "-12": -1,
+          "-10": 1,
+          "-9": -1,
+          "-7": 1
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "ALEXANDER_POLYNOMIALS",
+      "repo": "TECS-L",
+      "file": "calc/knot_theory_n6.py",
+      "line": 68,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        "0_1",
+        "3_1",
+        "4_1",
+        "5_1",
+        "5_2",
+        "6_1",
+        "6_2",
+        "6_3"
+      ],
+      "evaluable": true,
+      "values": {
+        "0_1": {
+          "0": 1
+        },
+        "3_1": {
+          "1": 1,
+          "0": -1,
+          "-1": 1
+        },
+        "4_1": {
+          "1": -1,
+          "0": 3,
+          "-1": -1
+        },
+        "5_1": {
+          "2": 1,
+          "1": -1,
+          "0": 1,
+          "-1": -1,
+          "-2": 1
+        },
+        "5_2": {
+          "2": -1,
+          "1": 3,
+          "0": -3,
+          "-1": 3,
+          "-2": -1
+        },
+        "6_1": {
+          "1": 2,
+          "0": -5,
+          "-1": 2
+        },
+        "6_2": {
+          "2": -1,
+          "1": 3,
+          "0": -3,
+          "-1": 3,
+          "-2": -1
+        },
+        "6_3": {
+          "2": 1,
+          "1": -3,
+          "0": 5,
+          "-1": -3,
+          "-2": 1
+        }
+      },
       "category": "other"
     },
     {
@@ -35691,6 +35926,45 @@
         ]
       ],
       "category": "verification"
+    },
+    {
+      "name": "PERFECT_NUMBERS",
+      "repo": "TECS-L",
+      "file": "calc/thermodynamics_n6.py",
+      "line": 91,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        6,
+        28,
+        496,
+        8128
+      ],
+      "category": "constants"
+    },
+    {
+      "name": "N6",
+      "repo": "TECS-L",
+      "file": "calc/thermodynamics_n6.py",
+      "line": 92,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "n",
+        "sigma",
+        "phi",
+        "tau",
+        "sopfr",
+        "omega",
+        "M3",
+        "M6",
+        "Bott"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
     },
     {
       "name": "MERSENNE_EXPONENTS",
@@ -46831,7 +47105,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 175,
+    "TECS-L": 180,
     "SEDI": 122,
     "anima": 108,
     "golden-moe": 3,
