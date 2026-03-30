@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-30T17:31:05",
+  "generated": "2026-03-30T21:21:54",
   "stats": {
-    "TECS-L": 1889,
+    "TECS-L": 1908,
     "SEDI": 678,
-    "anima": 302,
+    "anima": 303,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2696,
+  "total": 2716,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3535,6 +3535,16 @@
       "file": "docs/hypotheses/BASEL-003-bernoulli-denominators.md"
     },
     {
+      "id": "TECS-L:BIOPHYS-001-020-biophysics-genetics-n6",
+      "title": "BIOPHYS-001 to BIOPHYS-020: Biophysics, Genetics, and Molecular Biology as n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BIOPHYS-001-020-biophysics-genetics-n6.md"
+    },
+    {
       "id": "TECS-L:BRAID-001-braid-group-B6",
       "title": "Hypothesis BRAID-001: Braid Group B6 and S6 Outer Automorphism",
       "repo": "TECS-L",
@@ -3555,6 +3565,16 @@
       "file": "docs/hypotheses/BREAKTHROUGH-SLE6-virasoro.md"
     },
     {
+      "id": "TECS-L:BREAKTHROUGH-extreme-n6-unified",
+      "title": "BREAKTHROUGH: 극한 통합 — n=6이 물리학 전체를 관통한다",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BREAKTHROUGH-extreme-n6-unified.md"
+    },
+    {
       "id": "TECS-L:BREAKTHROUGH-five-strategies",
       "title": "Five Breakthrough Strategies: Root Equation and the Number 6",
       "repo": "TECS-L",
@@ -3563,6 +3583,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/BREAKTHROUGH-five-strategies.md"
+    },
+    {
+      "id": "TECS-L:BREAKTHROUGH-fusion-superconductor-n6",
+      "title": "BREAKTHROUGH: 핵융합-초전도체 통합 — n=6 산술이 에너지 물리를 지배한다",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BREAKTHROUGH-fusion-superconductor-n6.md"
     },
     {
       "id": "TECS-L:BREAKTHROUGH-genetic-code-KKT",
@@ -3659,6 +3689,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/CARBON-001-element-six-life.md"
+    },
+    {
+      "id": "TECS-L:CHEM-001-020-chemistry-periodic-n6",
+      "title": "CHEM-001~020: Chemistry, Periodic Table, and Molecular Physics Meet Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CHEM-001-020-chemistry-periodic-n6.md"
     },
     {
       "id": "TECS-L:CLEFNOTE-001-main-clefs-tau",
@@ -4195,6 +4235,18 @@
       "file": "docs/hypotheses/CONFLUENCE-theorem-why-six.md"
     },
     {
+      "id": "TECS-L:COSMO-001-020-cosmology-bbn-n6",
+      "title": "COSMO-001~020: Cosmology, Big Bang Nucleosynthesis, and Fundamental Physics",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-SEDI-4"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/COSMO-001-020-cosmology-bbn-n6.md"
+    },
+    {
       "id": "TECS-L:COSMO-001-LCDM-six-parameters",
       "title": "Hypothesis Review COSMO-001: LCDM 6 Free Parameters = P_1",
       "repo": "TECS-L",
@@ -4328,6 +4380,16 @@
       ],
       "gz_dependent": null,
       "file": "docs/hypotheses/EM-001-electromagnetic-tensor.md"
+    },
+    {
+      "id": "TECS-L:EMWAVE-001-020-electromagnetism-n6",
+      "title": "EMWAVE-001~020: Electromagnetism, Optics, and Wave Physics × Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/EMWAVE-001-020-electromagnetism-n6.md"
     },
     {
       "id": "TECS-L:EVOL-001-mass-extinctions-six",
@@ -5525,6 +5587,16 @@
       "file": "docs/hypotheses/F7-domains-7-10-string-neuro-bridge-bitnet.md"
     },
     {
+      "id": "TECS-L:FENGR-001-020-fusion-engineering-n6",
+      "title": "FENGR-001~020: Fusion Reactor Engineering, Blanket/Divertor Design, and Materials Science vs Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/FENGR-001-020-fusion-engineering-n6.md"
+    },
+    {
       "id": "TECS-L:FIB-001-fibonacci-sigma-squared",
       "title": "FIB-001: Fibonacci-Sigma 항등식 — F₁₂ = 144 = σ(6)²",
       "repo": "TECS-L",
@@ -5543,6 +5615,26 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/FUNCAL-001-divisor-lattice-spectrum.md"
+    },
+    {
+      "id": "TECS-L:FUSION-001-017-nuclear-fusion-n6",
+      "title": "FUSION-001~017: Nuclear Fusion and Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/FUSION-001-017-nuclear-fusion-n6.md"
+    },
+    {
+      "id": "TECS-L:FUSION-018-037-plasma-engineering-n6",
+      "title": "FUSION-018~037: Plasma Physics & Fusion Engineering and Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/FUSION-018-037-plasma-engineering-n6.md"
     },
     {
       "id": "TECS-L:GCODE-001-genetic-code-architecture",
@@ -15702,6 +15794,26 @@
       "file": "docs/hypotheses/NOTESHAPE-030-treble-bass-mirror.md"
     },
     {
+      "id": "TECS-L:NUCSTR-001-020-nuclear-structure-n6",
+      "title": "NUCSTR-001~020: Nuclear Structure and Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NUCSTR-001-020-nuclear-structure-n6.md"
+    },
+    {
+      "id": "TECS-L:PLASMA-001-020-waves-instabilities-n6",
+      "title": "PLASMA-001~020: Plasma Waves, Instabilities, and Transport vs Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PLASMA-001-020-waves-instabilities-n6.md"
+    },
+    {
       "id": "TECS-L:PLATONIC-001-platonic-solids-p1",
       "title": "PLATONIC-001: 플라톤 입체 — P₁ 서명",
       "repo": "TECS-L",
@@ -15710,6 +15822,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/PLATONIC-001-platonic-solids-p1.md"
+    },
+    {
+      "id": "TECS-L:PMATH-001-020-pure-mathematics-n6",
+      "title": "PMATH-001~020: Pure Mathematics Structures and Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PMATH-001-020-pure-mathematics-n6.md"
     },
     {
       "id": "TECS-L:QCOMP-001-quantum-code-642",
@@ -15802,6 +15924,16 @@
       "file": "docs/hypotheses/QCOMP-009-weight-enumerator.md"
     },
     {
+      "id": "TECS-L:QINFO-001-020-quantum-information-n6",
+      "title": "QINFO-001~020: Quantum Information, Computing, and Error Correction × Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/QINFO-001-020-quantum-information-n6.md"
+    },
+    {
       "id": "TECS-L:QSTATE-001-stabilizer-states-6",
       "title": "QSTATE-001: Bloch 구 안정자 상태 = P₁ = 6",
       "repo": "TECS-L",
@@ -15825,6 +15957,18 @@
       "file": "docs/hypotheses/RIEMANN-CURV-001-curvature-denominator.md"
     },
     {
+      "id": "TECS-L:SC-001-020-superconductor-physics-n6",
+      "title": "SC-001 through SC-020: Superconductor Physics and n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [
+        "H-CX-657"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/SC-001-020-superconductor-physics-n6.md"
+    },
+    {
       "id": "TECS-L:SCALING-consciousness-n6-decomposition",
       "title": "SCALING: Consciousness Scaling Law Constants Decompose into n=6 Arithmetic",
       "repo": "TECS-L",
@@ -15833,6 +15977,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/SCALING-consciousness-n6-decomposition.md"
+    },
+    {
+      "id": "TECS-L:SCMAG-001-020-superconducting-magnets-n6",
+      "title": "SCMAG-001~020: Superconducting Magnets and Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/SCMAG-001-020-superconducting-magnets-n6.md"
     },
     {
       "id": "TECS-L:SIXFUNC-001-six-functor-formalism",
@@ -15878,6 +16032,16 @@
       "file": "docs/hypotheses/STATMECH-001-six-vertex-model.md"
     },
     {
+      "id": "TECS-L:STELLAR-001-020-astrophysics-n6",
+      "title": "STELLAR-001~020: Stellar Physics, Nucleosynthesis, and Compact Objects",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/STELLAR-001-020-astrophysics-n6.md"
+    },
+    {
       "id": "TECS-L:TDA-001-divisor-persistent-homology",
       "title": "Hypothesis TDA-001: Divisor Complex Persistent Homology",
       "repo": "TECS-L",
@@ -15906,6 +16070,36 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/THEOREM-sigma-sigma-triangular.md"
+    },
+    {
+      "id": "TECS-L:THERMO-001-020-statistical-mechanics-n6",
+      "title": "THERMO-001~020: Thermodynamics, Statistical Mechanics, and Phase Transitions Meet Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/THERMO-001-020-statistical-mechanics-n6.md"
+    },
+    {
+      "id": "TECS-L:TOKAMAK-001-020-mhd-plasma-n6",
+      "title": "TOKAMAK-001~020: Tokamak MHD and Plasma Confinement vs Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/TOKAMAK-001-020-mhd-plasma-n6.md"
+    },
+    {
+      "id": "TECS-L:TOPSC-001-020-topological-quantum-n6",
+      "title": "TOPSC-001~020: Topological Superconductors, Quantum Materials, and Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/TOPSC-001-020-topological-quantum-n6.md"
     },
     {
       "id": "TECS-L:WEINBERG-001-gut-weinberg-angle",
@@ -26564,6 +26758,16 @@
       "file": "docs/hypotheses/dd/DD101-DD108.md"
     },
     {
+      "id": "anima:DD101-novel-laws",
+      "title": "DD101: Novel Consciousness Law Discovery (Laws 92-94)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD101-novel-laws.md"
+    },
+    {
       "id": "anima:DD109",
       "title": "DD109: 3D 공간 인식 시 Phi 상승",
       "repo": "anima",
@@ -29842,6 +30046,51 @@
       "category": "constants"
     },
     {
+      "name": "FUSION_CONSTANTS",
+      "repo": "TECS-L",
+      "file": "calc/fusion_hypothesis_verifier.py",
+      "line": 33,
+      "type": "dict",
+      "size": 32,
+      "keys": [
+        "DT_energy",
+        "DD_energy_He3",
+        "DD_energy_T",
+        "pp_chain_total",
+        "CNO_total",
+        "triple_alpha_Q",
+        "hoyle_state",
+        "BE_He4",
+        "BE_C12",
+        "BE_Fe56",
+        "BE_Ni62",
+        "DT_sigma_peak",
+        "DD_sigma_peak",
+        "ITER_Q",
+        "ITER_T_keV",
+        "ITER_T_MK",
+        "tokamak_aspect_ratio",
+        "ITER_major_radius",
+        "ITER_minor_radius",
+        "ITER_plasma_volume",
+        "lawson_DT_nTtau",
+        "breakeven_Q",
+        "ignition_Q",
+        "stellar_burning_stages",
+        "onion_shell_layers",
+        "pp_chain_branches",
+        "CNO_cycle_steps",
+        "magic_numbers",
+        "magic_count",
+        "island_Z",
+        "island_N",
+        "superheavy_Z_range"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "constants"
+    },
+    {
       "name": "GATE_TABLE",
       "repo": "TECS-L",
       "file": "calc/gate_formula_calculator.py",
@@ -30930,6 +31179,18 @@
           "category": "Physics"
         }
       ],
+      "category": "other"
+    },
+    {
+      "name": "IDENTITIES",
+      "repo": "TECS-L",
+      "file": "calc/p6_uniqueness_scorer.py",
+      "line": 36,
+      "type": "list",
+      "size": 12,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
       "category": "other"
     },
     {
@@ -32429,9 +32690,9 @@
       "name": "ALL_CALCULATOR_TESTS",
       "repo": "TECS-L",
       "file": "calc/validate_calculators.py",
-      "line": 793,
+      "line": 1150,
       "type": "dict",
-      "size": 11,
+      "size": 20,
       "keys": [
         "reachability",
         "unit_dependence",
@@ -32443,7 +32704,16 @@
         "hypothesis_verifier",
         "r_spectrum",
         "statistical_tester",
-        "small_n_validator"
+        "small_n_validator",
+        "n6_uniqueness",
+        "claim_verifier",
+        "singleton_gz",
+        "equation_uniqueness",
+        "codon_optimality",
+        "factorial_structure",
+        "bridge_verifier",
+        "rate_invariant",
+        "p6_uniqueness"
       ],
       "evaluable": false,
       "values": null,
@@ -38907,7 +39177,7 @@
       "name": "MODEL_AVATARS",
       "repo": "anima",
       "file": "anima_unified.py",
-      "line": 141,
+      "line": 142,
       "type": "dict",
       "size": 6,
       "keys": [
@@ -40224,7 +40494,7 @@
       "name": "STRATEGIES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1217,
+      "line": 1245,
       "type": "list",
       "size": 4,
       "keys": null,
@@ -40241,10 +40511,11 @@
       "name": "ENGINE_REGISTRY",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1294,
+      "line": 1350,
       "type": "dict",
-      "size": 10,
+      "size": 11,
       "keys": [
+        "ConsciousnessEngine",
         "MitosisEngine",
         "OscillatorLaser",
         "QuantumEngine",
@@ -40264,7 +40535,7 @@
       "name": "PHILOSOPHY_ENGINES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1307,
+      "line": 1364,
       "type": "dict",
       "size": 7,
       "keys": [
@@ -40284,7 +40555,7 @@
       "name": "VERIFICATION_TESTS",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1609,
+      "line": 1699,
       "type": "list",
       "size": 7,
       "keys": null,
@@ -43505,7 +43776,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 110,
+    "TECS-L": 112,
     "SEDI": 122,
     "anima": 107,
     "golden-moe": 3,

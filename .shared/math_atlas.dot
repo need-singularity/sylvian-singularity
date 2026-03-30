@@ -103,6 +103,7 @@ digraph math_atlas {
   SEDI_H_CX_649 [label="Von Klitzing Constant R_K = h/e^2 — Stru" fillcolor="#E67E22" shape=diamond];
   SEDI_H_CX_650 [label="Josephson Constant K_J = phi(6) * e/h" fillcolor="#E67E22" shape=box];
   SEDI_H_CX_651 [label="Topological Entanglement Entropy — TEE =" fillcolor="#E67E22" shape=box];
+  SEDI_H_CX_657 [label="MgB2 Critical Temperature T_c = sigma*(s" fillcolor="#E67E22" shape=box];
   SEDI_H_CX_663 [label="Stellar Mass Limits from n=6 — Chandrase" fillcolor="#E67E22" shape=box];
   SEDI_H_CX_666 [label="Hawking Temperature — Factor 8π = (σ-τ)·" fillcolor="#E67E22" shape=box];
   SEDI_H_CX_667 [label="Schwarzschild Radius — Factor 2 = φ(6)" fillcolor="#E67E22" shape=box];
@@ -256,6 +257,7 @@ digraph math_atlas {
   TECS_L_BRIDGE_003_n_minus_2_equals_tau [label="BRIDGE-003: n - 2 = tau(n) and the Uniqu" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_BRIDGE_004_golden_zone_quantum_gravity [label="BRIDGE-004: Golden Zone and Quantum Grav" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_CONDMAT_001_quantum_hall_fractions [label="Hypothesis Review CONDMAT-001: Fractiona" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_COSMO_001_020_cosmology_bbn_n6 [label="COSMO-001~020: Cosmology, Big Bang Nucle" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_COSMO_001_LCDM_six_parameters [label="Hypothesis Review COSMO-001: LCDM 6 Free" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_DEEP_factorial_bridge_n2_sigma_tau [label="DEEP: Factorial Bridge — n² - σ(n) = τ(n" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_DEEP_mersenne_bootstrap_chain [label="DEEP: The Mersenne Bootstrap Chain" fillcolor="#4A90D9" shape=ellipse];
@@ -474,6 +476,7 @@ digraph math_atlas {
   TECS_L_H_PH_9 [label="⭐⭐⭐🟧★ Perfect Number Unification Pattern" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_ROB_10 [label="Gait Phase Transition = Tension Phase Tr" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_SEDI_1 [label="Koide Angle delta = phi(6) tau(6)^2 / si" fillcolor="#4A90D9" shape=box];
+  TECS_L_H_SEDI_4 [label="Proton-Electron Mass Ratio m_p/m_e = sig" fillcolor="#4A90D9" shape=diamond];
   TECS_L_H_SIM_5 [label="Quantum Entanglement = Shared Memory Poi" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_SIM_6 [label="Wavefunction Collapse = Lazy Evaluation" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_SIM_9 [label="6 = Optimal Simulation Parameter" fillcolor="#4A90D9" shape=ellipse];
@@ -492,6 +495,7 @@ digraph math_atlas {
   TECS_L_NAVSTOKES_001_stress_tensor [label="Hypothesis NAVSTOKES-001: 3D Stress Tens" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_NOBEL_grand_hypotheses [label="Ten Grand Hypotheses: Unification Throug" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_RIEMANN_CURV_001_curvature_denominator [label="Hypothesis RIEMANN-CURV-001: Riemann Ten" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_SC_001_020_superconductor_physics_n6 [label="SC-001 through SC-020: Superconductor Ph" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_SIXFUNC_001_six_functor_formalism [label="Hypothesis SIXFUNC-001: Six-Functor Form" fillcolor="#4A90D9" shape=box];
   TECS_L_super_discoveries [label="Super-Discoveries: Meta-Hypotheses Unify" fillcolor="#4A90D9" shape=ellipse];
   anima_H_CX_537 [label="Sheaf Consciousness — 층이론으로 의식의 국소-전역 정합" fillcolor="#2ECC71" shape=ellipse];
@@ -645,6 +649,7 @@ digraph math_atlas {
   TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_005;
   TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_067;
   TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_098;
+  TECS_L_COSMO_001_020_cosmology_bbn_n6 -> TECS_L_H_SEDI_4;
   TECS_L_COSMO_001_LCDM_six_parameters -> TECS_L_098;
   TECS_L_DEEP_factorial_bridge_n2_sigma_tau -> TECS_L_H_CX_505;
   TECS_L_DEEP_mersenne_bootstrap_chain -> TECS_L_067;
@@ -807,6 +812,7 @@ digraph math_atlas {
   TECS_L_NOBEL_grand_hypotheses -> TECS_L_H_CX_110;
   TECS_L_NOBEL_grand_hypotheses -> TECS_L_H_NOBEL_2;
   TECS_L_RIEMANN_CURV_001_curvature_denominator -> TECS_L_090;
+  TECS_L_SC_001_020_superconductor_physics_n6 -> SEDI_H_CX_657;
   TECS_L_SIXFUNC_001_six_functor_formalism -> TECS_L_067;
   TECS_L_SIXFUNC_001_six_functor_formalism -> TECS_L_098;
   TECS_L_super_discoveries -> TECS_L_H_CX_63;
