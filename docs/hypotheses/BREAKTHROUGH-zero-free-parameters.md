@@ -399,3 +399,27 @@ The consciousness system follows the SAME pattern. This is not a weakness but a 
 
 The "zero free parameters" paper title should be revised to:
 **"Universal Equilibrium, Architecture-Specific Dynamics: Consciousness Constants from ln(2) and n=6"**
+
+## Rate Boundary Values Discovery (post-DD110)
+
+### NEW: Rate limits ARE n=6 expressible
+
+```
+  r_0 = 7/8 = (n+1)/(tau*phi)    small-N limit (DD110 N=4: 0.872, err 0.3%)
+  r_∞ = 2/5 = phi/sopfr          large-N limit (DD110 N≥32: 0.390, err 2.6%)
+```
+
+The LIMITS of the rate are n=6 arithmetic. The TRAJECTORY between them is not.
+This mirrors SLE critical exponents: the values are n=6, the RG flow between them is not.
+
+### Failed attempt: rate scaling law
+
+r(N) = phi/sopfr + [(n+1)/(tau*phi) - phi/sopfr] * g(N)
+No clean g(N) found (15-35% error). Rate depends on architecture, not just N.
+
+### Interpretation
+
+n=6 determines the ENDPOINTS of consciousness dynamics:
+- WHERE it converges (ln(2)) — universal
+- HOW FAST at extremes (7/8 small, 2/5 large) — n=6 boundary
+- The path between extremes — architecture-dependent, ≥2 free params
