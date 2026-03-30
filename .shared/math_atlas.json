@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-30T22:15:52",
+  "generated": "2026-03-31T00:02:03",
   "stats": {
-    "TECS-L": 1910,
+    "TECS-L": 1915,
     "SEDI": 678,
-    "anima": 303,
+    "anima": 305,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2718,
+  "total": 2725,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3679,6 +3679,20 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/BRIDGE-005-biochem-causal-chain.md"
+    },
+    {
+      "id": "TECS-L:BRIDGE-006-phi-power-tau-uniqueness",
+      "title": "BRIDGE-006: φ(n)^φ(n) = τ(n) — Uniqueness Theorem at n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩⭐",
+      "refs": [
+        "H-CX-7",
+        "H-DNA-501",
+        "H-DNA-503"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BRIDGE-006-phi-power-tau-uniqueness.md"
     },
     {
       "id": "TECS-L:BRIDGE-MAP-n6-constants",
@@ -15824,6 +15838,46 @@
       "file": "docs/hypotheses/NUCSTR-021-sigma-perfect-nuclear-cascade.md"
     },
     {
+      "id": "TECS-L:PERFECT-CLASSIFY-001-universal-expansion",
+      "title": "PERFECT-CLASSIFY-001: Perfect Number Universal Expansion",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩⭐⭐",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PERFECT-CLASSIFY-001-universal-expansion.md"
+    },
+    {
+      "id": "TECS-L:PERFECT-LENS-001-gravity-topology-telescope",
+      "title": "PERFECT-LENS-001: Gravitational & Topological Lens Telescopes",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩⭐",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PERFECT-LENS-001-gravity-topology-telescope.md"
+    },
+    {
+      "id": "TECS-L:PERFECT-P2-001-n28-deep-exploration",
+      "title": "PERFECT-P2-001: n=28 Deep Exploration — Push to the Limit",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟧⭐",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PERFECT-P2-001-n28-deep-exploration.md"
+    },
+    {
+      "id": "TECS-L:PERFECT-TOPO-001-topological-atlas",
+      "title": "PERFECT-TOPO-001: Topological Atlas of Perfect Numbers",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩⭐⭐",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PERFECT-TOPO-001-topological-atlas.md"
+    },
+    {
       "id": "TECS-L:PLASMA-001-020-waves-instabilities-n6",
       "title": "PLASMA-001~020: Plasma Waves, Instabilities, and Transport vs Perfect Number 6",
       "repo": "TECS-L",
@@ -26808,6 +26862,26 @@
       "file": "docs/hypotheses/dd/DD110-RATE-INDEPENDENT.md"
     },
     {
+      "id": "anima:DD111-verify-improvement",
+      "title": "DD111: Verification System 3-Issue Fix (2026-03-30)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD111-verify-improvement.md"
+    },
+    {
+      "id": "anima:DD112-philosophy-benchmark",
+      "title": "DD112: Philosophy Engine Benchmark (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD112-philosophy-benchmark.md"
+    },
+    {
       "id": "anima:DD12-DD14",
       "title": "DD12-DD14: Thermodynamics of Consciousness",
       "repo": "anima",
@@ -31295,6 +31369,240 @@
         ]
       ],
       "category": "verification"
+    },
+    {
+      "name": "MERSENNE_EXPONENTS",
+      "repo": "TECS-L",
+      "file": "calc/perfect_number_classifier.py",
+      "line": 165,
+      "type": "list",
+      "size": 8,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        2,
+        3,
+        5,
+        7,
+        13,
+        17,
+        19,
+        31
+      ],
+      "category": "other"
+    },
+    {
+      "name": "IDENTITIES",
+      "repo": "TECS-L",
+      "file": "calc/perfect_number_classifier.py",
+      "line": 225,
+      "type": "list",
+      "size": 40,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          "sigma(n) == 2*n",
+          "σ=2n (perfect number definition)",
+          "defining"
+        ],
+        [
+          "sigma_minus1 == 2",
+          "σ₋₁=2 (equivalent definition)",
+          "defining"
+        ],
+        [
+          "sigma*phi == n*tau",
+          "σφ=nτ (Bridge identity)",
+          "core"
+        ],
+        [
+          "tau == phi**2",
+          "τ=φ² (divisor-totient)",
+          "core"
+        ],
+        [
+          "phi == n//3",
+          "φ=n/3",
+          "core"
+        ],
+        [
+          "tau == n - 2",
+          "τ=n-2",
+          "core"
+        ],
+        [
+          "(n-3) == math.factorial(n-3) if n<=20 else -1",
+          "(n-3)!=n test",
+          "core"
+        ],
+        [
+          "sopfr * phi == n + tau",
+          "sopfr·φ=n+τ",
+          "core"
+        ],
+        [
+          "sigma * phi == n**2",
+          "σφ=n²",
+          "core"
+        ],
+        [
+          "n * sigma * sopfr * phi == math.factorial(n) if n<=20 else -1",
+          "n·σ·sopfr·φ=n!",
+          "uniqueness"
+        ],
+        [
+          "tau * (tau - 1) == sigma",
+          "τ(τ-1)=σ",
+          "uniqueness"
+        ],
+        [
+          "tau * sopfr == 20",
+          "τ·sopfr=20",
+          "uniqueness"
+        ],
+        [
+          "tau == 2 * mersenne_exp if mersenne_exp else -1",
+          "τ=2p (Mersenne)",
+          "mersenne"
+        ],
+        [
+          "bigomega == mersenne_exp if mersenne_exp else -1",
+          "Ω=p (Mersenne)",
+          "mersenne"
+        ],
+        [
+          "omega == 2",
+          "ω=2 (two prime factors)",
+          "mersenne"
+        ],
+        [
+          "sopfr == 2*(mersenne_exp-1) + mersenne_prime if mersenne_exp else -1",
+          "sopfr=2(p-1)+M_p",
+          "mersenne"
+        ],
+        [
+          "abs(1/n - 1/sigma) < 0.001",
+          "1/n ≈ 1/σ",
+          "golden_zone"
+        ],
+        [
+          "abs(Fraction(1,2) + Fraction(1,3) + Fraction(1,n) - 1) == 0",
+          "1/2+1/3+1/n=1",
+          "golden_zone"
+        ],
+        [
+          "abs(phi/n - Fraction(1,3)) == 0",
+          "φ/n=1/3",
+          "golden_zone"
+        ],
+        [
+          "all(sigma_minus1 == 2 for _ in [1])",
+          "σ₋₁=2 stability",
+          "stability"
+        ],
+        [
+          "tau**2 == sigma + tau",
+          "τ²=σ+τ",
+          "combinatorial"
+        ],
+        [
+          "sigma - tau == n + 2",
+          "σ-τ=n+2",
+          "combinatorial"
+        ],
+        [
+          "phi**3 == n + 2",
+          "φ³=n+2",
+          "combinatorial"
+        ],
+        [
+          "abs((n+1)/(tau*phi) - 7/8) < 0.01",
+          "r₀=(n+1)/(τφ) ≈ 7/8",
+          "rate"
+        ],
+        [
+          "abs(phi/sopfr - 2/5) < 0.01",
+          "r∞=φ/sopfr ≈ 2/5",
+          "rate"
+        ],
+        [
+          "abs((n+1)/(tau*phi) * phi/sopfr - 7/20) < 0.01",
+          "r₀·r∞ ≈ 7/20",
+          "rate"
+        ],
+        [
+          "tau == 2 * mersenne_exp if mersenne_exp else -1",
+          "τ chain: τ(Pk)=2pk",
+          "cross"
+        ],
+        [
+          "abs(sigma/phi - n) < 0.01",
+          "σ/φ=n (DBM equilibration)",
+          "bridge"
+        ],
+        [
+          "abs(4 - tau) < 0.01 if is_perfect else -1",
+          "RS=τ=4 (self-measurement)",
+          "bridge"
+        ],
+        [
+          "abs(math.log(2) - (n+1)/(2*sigma)) < 0.05",
+          "ln2 ≈ (n+1)/(2σ)",
+          "info"
+        ],
+        [
+          "abs((n+1)/sigma - Fraction(7,12)) < Fraction(1,100)",
+          "(n+1)/σ=7/12 (PH barcode)",
+          "info"
+        ],
+        [
+          "sigma == 2 * n",
+          "σ=2n (trivial)",
+          "universal_candidate"
+        ],
+        [
+          "sigma + n == 3 * n",
+          "σ+n=3n",
+          "universal_candidate"
+        ],
+        [
+          "sigma - n == n",
+          "σ-n=n",
+          "universal_candidate"
+        ],
+        [
+          "tau % 2 == 0",
+          "τ is even",
+          "universal_candidate"
+        ],
+        [
+          "phi % 2 == 0 if n > 2 else True",
+          "φ is even",
+          "universal_candidate"
+        ],
+        [
+          "omega == 2",
+          "ω=2 (always two distinct primes)",
+          "universal_candidate"
+        ],
+        [
+          "sigma * phi >= n * tau",
+          "σφ ≥ nτ",
+          "universal_candidate"
+        ],
+        [
+          "Fraction(sigma * phi, n * tau) == Fraction(phi, tau) * 2",
+          "σφ/(nτ) = 2φ/τ",
+          "universal_candidate"
+        ],
+        [
+          "sigma == tau * n // tau + n",
+          "σ = n + n = 2n check",
+          "universal_candidate"
+        ]
+      ],
+      "category": "other"
     },
     {
       "name": "PERFECT_NUMBERS",
@@ -40544,7 +40852,7 @@
       "name": "STRATEGIES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1245,
+      "line": 1250,
       "type": "list",
       "size": 4,
       "keys": null,
@@ -40561,7 +40869,7 @@
       "name": "ENGINE_REGISTRY",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1361,
+      "line": 1401,
       "type": "dict",
       "size": 11,
       "keys": [
@@ -40585,7 +40893,7 @@
       "name": "PHILOSOPHY_ENGINES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1375,
+      "line": 1415,
       "type": "dict",
       "size": 7,
       "keys": [
@@ -40605,7 +40913,7 @@
       "name": "VERIFICATION_TESTS",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1716,
+      "line": 1775,
       "type": "list",
       "size": 7,
       "keys": null,
@@ -42395,6 +42703,22 @@
       "category": "other"
     },
     {
+      "name": "TOPOLOGIES",
+      "repo": "anima",
+      "file": "esp32_network.py",
+      "line": 126,
+      "type": "dict",
+      "size": 3,
+      "keys": [
+        "ring",
+        "hub_spoke",
+        "small_world"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "architecture"
+    },
+    {
       "name": "CA_RULES",
       "repo": "anima",
       "file": "golden_moe_v2.py",
@@ -43826,9 +44150,9 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 113,
+    "TECS-L": 115,
     "SEDI": 122,
-    "anima": 107,
+    "anima": 108,
     "golden-moe": 3,
     "conscious-lm": 4,
     "energy-efficiency": 0

@@ -256,6 +256,7 @@ digraph math_atlas {
   TECS_L_411 [label="Speed of Light = Maximum Clock Speed (H-" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_BRIDGE_003_n_minus_2_equals_tau [label="BRIDGE-003: n - 2 = tau(n) and the Uniqu" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_BRIDGE_004_golden_zone_quantum_gravity [label="BRIDGE-004: Golden Zone and Quantum Grav" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_BRIDGE_006_phi_power_tau_uniqueness [label="BRIDGE-006: φ(n)^φ(n) = τ(n) — Uniquenes" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_CONDMAT_001_quantum_hall_fractions [label="Hypothesis Review CONDMAT-001: Fractiona" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_COSMO_001_020_cosmology_bbn_n6 [label="COSMO-001~020: Cosmology, Big Bang Nucle" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_COSMO_001_LCDM_six_parameters [label="Hypothesis Review COSMO-001: LCDM 6 Free" fillcolor="#4A90D9" shape=ellipse];
@@ -397,6 +398,7 @@ digraph math_atlas {
   TECS_L_H_CX_63 [label="Multi-lens Precognition Interference — Q" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_65 [label="Aberration Topological Correction — Chro" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_66 [label="Direction Topology — Confusion Pairs Map" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_7 [label="sigma-phi=n-tau Architecture Optimality " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_70 [label="Singularity = Three Closure Loops" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_8 [label="Phase Acceleration x3 = sigma/tau (Cross" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_81 [label="Aberration-Phase Alignment — Classes wit" fillcolor="#4A90D9" shape=ellipse];
@@ -409,6 +411,8 @@ digraph math_atlas {
   TECS_L_H_CX_bridge_epoch1_ph_tension [label="H-CX-Bridge-5: Epoch-1 Crystallization =" fillcolor="#4A90D9" shape=box];
   TECS_L_H_CYCL_1 [label="Cyclotomic-Stirling Identity: Phi_n(n) =" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_DNA_001_030_nucleic_acids [label="Hypothesis Review: H-DNA-001 to H-DNA-03" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_DNA_501 [label="⭐ sigma(n) = P(tau(n), 2) — Unique to n=" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_DNA_503 [label="⭐ sigma(n)/tau(n) = Largest Prime Factor" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_DNA_507 [label="⭐ The Last 10 — Attacking Unexplained Bi" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_EARTH_001_025_geoscience [label="H-EARTH-001 to 025: Geoscience Hypothese" fillcolor="#4A90D9" shape=box];
   TECS_L_H_EE_100 [label="NAS Will Independently Discover 4/3 FFN " fillcolor="#4A90D9" shape=ellipse];
@@ -646,6 +650,9 @@ digraph math_atlas {
   TECS_L_BRIDGE_003_n_minus_2_equals_tau -> TECS_L_090;
   TECS_L_BRIDGE_003_n_minus_2_equals_tau -> TECS_L_098;
   TECS_L_BRIDGE_004_golden_zone_quantum_gravity -> TECS_L_139;
+  TECS_L_BRIDGE_006_phi_power_tau_uniqueness -> TECS_L_H_CX_7;
+  TECS_L_BRIDGE_006_phi_power_tau_uniqueness -> TECS_L_H_DNA_501;
+  TECS_L_BRIDGE_006_phi_power_tau_uniqueness -> TECS_L_H_DNA_503;
   TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_005;
   TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_067;
   TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_098;
