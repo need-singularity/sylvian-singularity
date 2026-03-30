@@ -2,6 +2,8 @@ digraph math_atlas {
   rankdir=LR;
   node [style=filled];
 
+  SEDI_H_AF_001 [label="Habitable Zone Equilibrium Temperature —" fillcolor="#E67E22" shape=doubleoctagon];
+  SEDI_H_AF_007 [label="Habitable Zone Orbits — θ_E Alignment" fillcolor="#E67E22" shape=diamond];
   SEDI_H_CA_003 [label="Anima's 6 Consciousness Criteria = R(6)=" fillcolor="#E67E22" shape=box];
   SEDI_H_CA_005 [label="Mitosis Cell Count = n=6 Rank Progressio" fillcolor="#E67E22" shape=box];
   SEDI_H_CA_006 [label="P₃=496 Threshold Crossed at τ(6)=4 Cells" fillcolor="#E67E22" shape=doubleoctagon];
@@ -492,6 +494,7 @@ digraph math_atlas {
   TECS_L_RIEMANN_CURV_001_curvature_denominator [label="Hypothesis RIEMANN-CURV-001: Riemann Ten" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_SIXFUNC_001_six_functor_formalism [label="Hypothesis SIXFUNC-001: Six-Functor Form" fillcolor="#4A90D9" shape=box];
   TECS_L_super_discoveries [label="Super-Discoveries: Meta-Hypotheses Unify" fillcolor="#4A90D9" shape=ellipse];
+  anima_H_CX_537 [label="Sheaf Consciousness — 층이론으로 의식의 국소-전역 정합" fillcolor="#2ECC71" shape=ellipse];
 
   TECS_L_010 -> TECS_L_011;
   TECS_L_010 -> TECS_L_012;
@@ -859,6 +862,7 @@ digraph math_atlas {
   TECS_L_H_TOP_5 -> TECS_L_H_CX_12;
   TECS_L_H_TOP_6 -> TECS_L_H_CX_6;
   TECS_L_H_TOP_6 -> TECS_L_H_CX_13;
+  SEDI_H_AF_007 -> SEDI_H_AF_001;
   SEDI_H_CA_012 -> TECS_L_H_CX_463;
   SEDI_H_CA_012 -> TECS_L_H_CX_467;
   SEDI_H_CA_018 -> TECS_L_H_CX_511;
@@ -1021,4 +1025,5 @@ digraph math_atlas {
   SEDI_H_CX_996 -> SEDI_H_CX_983;
   SEDI_H_CX_997 -> SEDI_H_CX_988;
   SEDI_H_CX_997 -> SEDI_H_CX_985;
+  anima_H_CX_537 -> SEDI_H_CX_521;
 }

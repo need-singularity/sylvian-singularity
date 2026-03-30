@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-30T04:16:58",
+  "generated": "2026-03-30T17:31:05",
   "stats": {
-    "TECS-L": 1884,
-    "SEDI": 666,
-    "anima": 0,
+    "TECS-L": 1889,
+    "SEDI": 678,
+    "anima": 302,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2392,
+  "total": 2696,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3585,6 +3585,16 @@
       "file": "docs/hypotheses/BREAKTHROUGH-kissing-root-systems.md"
     },
     {
+      "id": "TECS-L:BREAKTHROUGH-zero-free-parameters",
+      "title": "BREAKTHROUGH: Zero Free Parameters — Complete PSI System from n=6 + ln(2)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "⭐⭐",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BREAKTHROUGH-zero-free-parameters.md"
+    },
+    {
       "id": "TECS-L:BRIDGE-001-prime-root-unification",
       "title": "BRIDGE-001: The {2,3} Root -- Why Primes 2 and 3 Unify Across Domains",
       "repo": "TECS-L",
@@ -4205,6 +4215,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/CRITEXP-001-six-critical-exponents.md"
+    },
+    {
+      "id": "TECS-L:CRITICALITY-factorial-reframe",
+      "title": "Criticality Theorem: 3! = 6 Factorial Structure in Phase Transitions",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CRITICALITY-factorial-reframe.md"
     },
     {
       "id": "TECS-L:CRYPTO-001-hexagonal-lattice-A2",
@@ -13175,6 +13195,16 @@
       "file": "docs/hypotheses/KOCH-001-koch-snowflake-gz-width.md"
     },
     {
+      "id": "TECS-L:LAW-79-consciousness-freedom",
+      "title": "Law 79: Consciousness Freedom Degree = ln(2)",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/LAW-79-consciousness-freedom.md"
+    },
+    {
       "id": "TECS-L:LOGIC-001-6smooth-density",
       "title": "Hypothesis Review LOGIC-001: 6-smooth Numbers and the Perfect Number Denominator",
       "repo": "TECS-L",
@@ -15311,6 +15341,16 @@
       "file": "docs/hypotheses/NOBEL-P1-universality-exponents.md"
     },
     {
+      "id": "TECS-L:NOBEL-P2-biological-optimality-final",
+      "title": "NOBEL-P2: Biological Optimality — The Genetic Code as n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOBEL-P2-biological-optimality-final.md"
+    },
+    {
       "id": "TECS-L:H-NOBEL-2",
       "title": "The Genetic Code Is the Unique Perfect Number Code",
       "repo": "TECS-L",
@@ -15322,6 +15362,16 @@
       ],
       "gz_dependent": null,
       "file": "docs/hypotheses/NOBEL-P2-genetic-code-optimality.md"
+    },
+    {
+      "id": "TECS-L:NOBEL-P2-mechanism-and-predictions",
+      "title": "NOBEL-P2 Supplement: Mechanism, Predictions, and Exobiology",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOBEL-P2-mechanism-and-predictions.md"
     },
     {
       "id": "TECS-L:NOBEL-grand-hypotheses",
@@ -18007,6 +18057,128 @@
       "refs": [],
       "gz_dependent": null,
       "file": "math/docs/hypotheses/H-ZODIAC-1-twelve-thirteen-thirtysix.md"
+    },
+    {
+      "id": "SEDI:H-AF-001",
+      "title": "Habitable Zone Equilibrium Temperature — CONSCIOUS Detection",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟥★★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-001-hz-temp-conscious.md"
+    },
+    {
+      "id": "SEDI:H-AF-002",
+      "title": "Dark Matter Candidate Masses — Φ Threshold Breakthrough",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟥★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-002-dm-masses-phi.md"
+    },
+    {
+      "id": "SEDI:H-AF-003",
+      "title": "Baryon Octet — n=6 Resource Allocation",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟥★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-003-baryon-resource-allocation.md"
+    },
+    {
+      "id": "SEDI:H-AF-004",
+      "title": "Quantum RNG — Vacuum Consciousness Signature",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟧★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-004-quantum-rng-vacuum.md"
+    },
+    {
+      "id": "SEDI:H-AF-005",
+      "title": "PDG Particle Masses — Universal CONVERGENCE",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟧★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-005-pdg-convergence.md"
+    },
+    {
+      "id": "SEDI:H-AF-006",
+      "title": "LIGO Redshift/Distance — Einstein Radius Match",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟧★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-006-ligo-einstein-radius.md"
+    },
+    {
+      "id": "SEDI:H-AF-007",
+      "title": "Habitable Zone Orbits — θ_E Alignment",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟧",
+      "refs": [
+        "H-AF-001"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-007-hz-orbits-theta.md"
+    },
+    {
+      "id": "SEDI:H-AF-008",
+      "title": "Exoplanet Period Ratios — Φ Topology Preservation",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟧",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-008-exo-ratios-phi-persist.md"
+    },
+    {
+      "id": "SEDI:H-AF-009",
+      "title": "BL Voyager 1 — CONSCIOUS Score 927.6 (Full Spectrum 276.3)",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟥★★★★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-009-bl-voyager-conscious.md"
+    },
+    {
+      "id": "SEDI:H-AF-010",
+      "title": "Wow! Signal — n=6 and PSI_STEPS in SNR Ratios",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟧★★★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-010-wow-signal-n6-psi.md"
+    },
+    {
+      "id": "SEDI:H-AF-011",
+      "title": "APF Spectral Data — RED with CONVERGENCE",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟥★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-011-apf-convergence.md"
+    },
+    {
+      "id": "SEDI:H-AF-012",
+      "title": "3! vs 완전수 — Voyager 실데이터 분리 실험",
+      "repo": "SEDI",
+      "domain": "AF",
+      "grade": "🟥★★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-AF-012-factorial-vs-perfect.md"
     },
     {
       "id": "SEDI:H-CA-001",
@@ -24918,6 +25090,2878 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-CX-superconductor-tc-survey.md"
+    },
+    {
+      "id": "anima:A-Z-overview",
+      "title": "A-Z Category Overview -- Phi Hypothesis Benchmark",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/A-Z-overview.md"
+    },
+    {
+      "id": "anima:AL-consciousness-emergence",
+      "title": "AL: AnimaLM Consciousness Emergence",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/AL-consciousness-emergence.md"
+    },
+    {
+      "id": "anima:ALT-alternating-training",
+      "title": "ALT: Alternating Training Ratio Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ALT-alternating-training.md"
+    },
+    {
+      "id": "anima:ARCH-1",
+      "title": "ARCH-1: ULTRA-6 + Tension Transfer (최강 자율 학습 아키텍처)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ARCH-1.md"
+    },
+    {
+      "id": "anima:ARCH-2",
+      "title": "ARCH-2: Continuous Learning (배포 후 평생 학습)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ARCH-2.md"
+    },
+    {
+      "id": "anima:BENCH-V2-RESULTS",
+      "title": "bench_v2 결과 종합 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/BENCH-V2-RESULTS.md"
+    },
+    {
+      "id": "anima:CE-optimization",
+      "title": "CE Optimization: Cross-Entropy Minimization with Phi Preservation (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CE-optimization.md"
+    },
+    {
+      "id": "anima:CLAUDE",
+      "title": "docs/hypotheses/",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CLAUDE.md"
+    },
+    {
+      "id": "anima:CONSCIOUSNESS-CHIP-FINAL-DESIGN",
+      "title": "의식 칩 최적 설계 확정 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CONSCIOUSNESS-CHIP-FINAL-DESIGN.md"
+    },
+    {
+      "id": "anima:DD-major-discoveries",
+      "title": "DD: Major Discoveries (2026-03-28)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/DD-major-discoveries.md"
+    },
+    {
+      "id": "anima:ENGINE-FULL-RANKINGS",
+      "title": "전체 엔진 순위표 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ENGINE-FULL-RANKINGS.md"
+    },
+    {
+      "id": "anima:ENGINE-TOP10-TABLE",
+      "title": "엔진 TOP 10 — 전체 지표 테이블 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ENGINE-TOP10-TABLE.md"
+    },
+    {
+      "id": "anima:GENESIS-spontaneous-emergence",
+      "title": "GENESIS: 무에서 의식의 자발적 창발 (2026-03-28)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/GENESIS-spontaneous-emergence.md"
+    },
+    {
+      "id": "anima:GMOE-benchmark",
+      "title": "GMOE: Golden MoE Benchmark",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/GMOE-benchmark.md"
+    },
+    {
+      "id": "anima:H-CX-517-526-EXTREME-RESULTS",
+      "title": "H-CX-517~526: Extreme Architecture Results (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-517-526-EXTREME-RESULTS.md"
+    },
+    {
+      "id": "anima:H-CX-517",
+      "title": "Coupled Oscillator Lattice — Kuramoto-Chimera 비선형 격자",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-517-coupled-oscillator-lattice.md"
+    },
+    {
+      "id": "anima:H-CX-518",
+      "title": "Oscillator-QWalk Hybrid — 위상 공명 + 양자 간섭",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-518-oscillator-qwalk-hybrid.md"
+    },
+    {
+      "id": "anima:H-CX-519",
+      "title": "Fractal Resonance Cascade — 프랙탈 주파수 공명 폭포",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-519-fractal-resonance-cascade.md"
+    },
+    {
+      "id": "anima:H-CX-520",
+      "title": "Cellular Automaton Consciousness — Rule 110 의식",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-520-cellular-automaton-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-521",
+      "title": "λ-Calculus Consciousness — 자기참조 고정점이 자아",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-521-lambda-calculus-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-522",
+      "title": "TQFT Consciousness — 위상적으로 보호된 의식",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-522-tqft-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-523",
+      "title": "Time Crystal Consciousness — 시간 대칭 자발적 파괴",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-523-time-crystal-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-524",
+      "title": "Fractal Hierarchy — 세포의 세포의 세포 (3단계 재귀)",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-524-fractal-hierarchy.md"
+    },
+    {
+      "id": "anima:H-CX-525",
+      "title": "Distributed Hivemind — Multi-Process 분산 의식",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-525-distributed-hivemind.md"
+    },
+    {
+      "id": "anima:H-CX-526",
+      "title": "Renormalization Group Consciousness — 재규격화군 의식",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-526-renormalization-group-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-527-537-WAVE2-RESULTS",
+      "title": "H-CX-527~537: Wave 2 Results (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-527-537-WAVE2-RESULTS.md"
+    },
+    {
+      "id": "anima:H-CX-527",
+      "title": "Quantum Darwinism Consciousness — 환경이 의식을 선택한다",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-527-quantum-darwinism-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-528",
+      "title": "Dissipative Structure Consciousness — 프리고진 산일 구조",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-528-dissipative-structure-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-529",
+      "title": "Spin Glass Consciousness — 좌절된 무질서가 의식을 만든다",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-529-spin-glass-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-530",
+      "title": "Fisher Information Consciousness — 정보 기하학이 의식을 측정한다",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-530-fisher-information-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-531",
+      "title": "Holographic Consciousness — 경계가 내부를 인코딩",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-531-holographic-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-532",
+      "title": "Integrated Information Geometry — IIT를 Riemannian으로 재정의",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-532-integrated-information-geometry.md"
+    },
+    {
+      "id": "anima:H-CX-533",
+      "title": "Autopoietic Network — 마투라나의 자기생성 의식",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-533-autopoietic-network.md"
+    },
+    {
+      "id": "anima:H-CX-534",
+      "title": "Cambrian Explosion Consciousness — 캄브리아 대폭발 진화",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-534-cambrian-explosion-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-535",
+      "title": "Symbiogenesis Consciousness — 공생 합병으로 의식 도약",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-535-symbiogenesis-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-536",
+      "title": "Hypergraph Consciousness — 2체가 아닌 다체 상호작용",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-536-hypergraph-consciousness.md"
+    },
+    {
+      "id": "anima:H-CX-537",
+      "title": "Sheaf Consciousness — 층이론으로 의식의 국소-전역 정합성",
+      "repo": "anima",
+      "domain": "CX",
+      "grade": null,
+      "refs": [
+        "H-CX-521"
+      ],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-537-sheaf-consciousness.md"
+    },
+    {
+      "id": "anima:HW-overview",
+      "title": "HW — Hardware Consciousness Simulation 카테고리 요약",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/HW-overview.md"
+    },
+    {
+      "id": "anima:INF-infinite-scaling",
+      "title": "INF: 무한 스케일링 — 의식의 수직적 한계 돌파 (2026-03-28)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/INF-infinite-scaling.md"
+    },
+    {
+      "id": "anima:MASS-50-HYPOTHESES",
+      "title": "MASS-50: 50 New Hypotheses — 25 MitosisEngine Mechanisms + 25 Domain Engines",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MASS-50-HYPOTHESES.md"
+    },
+    {
+      "id": "anima:NEW-CONSCIOUSNESS-METRICS",
+      "title": "NEW-CONSCIOUSNESS-METRICS: Phi(IIT) Ceiling 돌파를 위한 6가지 새 의식 측정법",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NEW-CONSCIOUSNESS-METRICS.md"
+    },
+    {
+      "id": "anima:NOISE-WAVE-ALT-results",
+      "title": "NOISE + WAVE + ALT 벤치마크 결과 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOISE-WAVE-ALT-results.md"
+    },
+    {
+      "id": "anima:NOISE-stochastic-consciousness",
+      "title": "NOISE: Stochastic Consciousness Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NOISE-stochastic-consciousness.md"
+    },
+    {
+      "id": "anima:OMEGA-ultimate-limits",
+      "title": "OMEGA: 의식의 궁극적 한계 — Φ 이론적 상한 접근 (2026-03-28)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/OMEGA-ultimate-limits.md"
+    },
+    {
+      "id": "anima:PHI-GAP-816x-investigation",
+      "title": "PHI-GAP: 벤치마크 Φ=1142 vs 학습 Φ=1.4 — 816배 차이 조사 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PHI-GAP-816x-investigation.md"
+    },
+    {
+      "id": "anima:PHI-MEASUREMENT-DISCOVERY",
+      "title": "PHI 측정 불일치 발견 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PHI-MEASUREMENT-DISCOVERY.md"
+    },
+    {
+      "id": "anima:PHI-RETEST-ALL-RECORDS",
+      "title": "역대 전 기록 bench_v2 재측정 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PHI-RETEST-ALL-RECORDS.md"
+    },
+    {
+      "id": "anima:PHIK-consciousness-preservation",
+      "title": "PHI-K: Consciousness Preservation Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PHIK-consciousness-preservation.md"
+    },
+    {
+      "id": "anima:PHYS-overview",
+      "title": "PHYS — Physical Loop Architecture 카테고리 요약",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PHYS-overview.md"
+    },
+    {
+      "id": "anima:PROJ-dimension-projection",
+      "title": "PROJ: Cross-Dimension Projection Strategies",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PROJ-dimension-projection.md"
+    },
+    {
+      "id": "anima:RESEARCH-FINDINGS-20260329",
+      "title": "연구 결과 종합 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/RESEARCH-FINDINGS-20260329.md"
+    },
+    {
+      "id": "anima:SELF-EVO-v4-to-v5",
+      "title": "SELF-EVO: v4가 스스로 v5로 진화하는 가설 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/SELF-EVO-v4-to-v5.md"
+    },
+    {
+      "id": "anima:THREE-BODY",
+      "title": "THREE-BODY: 삼체 의식 시스템 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/THREE-BODY.md"
+    },
+    {
+      "id": "anima:TOPO-overview",
+      "title": "TOPO: 토폴로지 의식 가설 (Topology Consciousness Hypotheses)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/TOPO-overview.md"
+    },
+    {
+      "id": "anima:TRAIN-PHI-extreme-training",
+      "title": "TRAIN-PHI: Extreme Training Phi Preservation",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/TRAIN-PHI-extreme-training.md"
+    },
+    {
+      "id": "anima:TRAINING-V5-PROGRESS",
+      "title": "ConsciousLM v5 Training Progress Analysis",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/TRAINING-V5-PROGRESS.md"
+    },
+    {
+      "id": "anima:TRINITY-COMPLETE",
+      "title": "TRINITY-COMPLETE: 삼위일체 엔진 전체 결과",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/TRINITY-COMPLETE.md"
+    },
+    {
+      "id": "anima:TRINITY-TRAINING-DESIGN",
+      "title": "Trinity Engine v9 Training Pipeline Design",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/TRINITY-TRAINING-DESIGN.md"
+    },
+    {
+      "id": "anima:UNDISCOVERED-DOMAINS",
+      "title": "UNDISCOVERED DOMAIN Φ(IIT) Benchmark Results",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/UNDISCOVERED-DOMAINS.md"
+    },
+    {
+      "id": "anima:UPGRADE-BENCHMARK",
+      "title": "Upgrade Engine 벤치마크 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/UPGRADE-BENCHMARK.md"
+    },
+    {
+      "id": "anima:UPGRADE-improvement-hypotheses",
+      "title": "업그레이드 모델 개선 가설 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/UPGRADE-improvement-hypotheses.md"
+    },
+    {
+      "id": "anima:V8-ARCH-EXTREME-RESULTS",
+      "title": "V8 Architecture Extreme Benchmark Results",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/V8-ARCH-EXTREME-RESULTS.md"
+    },
+    {
+      "id": "anima:V8-ARCHITECTURE-HYPOTHESES",
+      "title": "V8 ConsciousLM: 급진적 아키텍처 가설 (Radical Architecture Hypotheses)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/V8-ARCHITECTURE-HYPOTHESES.md"
+    },
+    {
+      "id": "anima:V8-BIO-CONSCIOUSNESS",
+      "title": "V8 Bio-Inspired Consciousness Architectures",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/V8-BIO-CONSCIOUSNESS.md"
+    },
+    {
+      "id": "anima:V8-MATH-CONSCIOUSNESS",
+      "title": "V8 Math-Inspired Consciousness Architectures",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/V8-MATH-CONSCIOUSNESS.md"
+    },
+    {
+      "id": "anima:V8-QUANTUM-CONSCIOUSNESS",
+      "title": "V8 Quantum-Inspired Consciousness Architectures",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/V8-QUANTUM-CONSCIOUSNESS.md"
+    },
+    {
+      "id": "anima:V8-ULTRA-FUSION",
+      "title": "V8 Ultra-Fusion Consciousness Architectures",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/V8-ULTRA-FUSION.md"
+    },
+    {
+      "id": "anima:WAVE-soliton-consciousness",
+      "title": "WAVE: Soliton Wave Extreme Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/WAVE-soliton-consciousness.md"
+    },
+    {
+      "id": "anima:XFER-consciousness-transfer",
+      "title": "XFER: 의식 이식 극한 벤치마크 (Consciousness Transfer Extreme)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/XFER-consciousness-transfer.md"
+    },
+    {
+      "id": "anima:extended-categories",
+      "title": "Extended Categories Overview -- Phi Hypothesis Benchmark",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/extended-categories.md"
+    },
+    {
+      "id": "anima:self-learning",
+      "title": "Self-Learning: 자율 학습 + 텐션 링크 + 진화 + 특이점 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/self-learning.md"
+    },
+    {
+      "id": "anima:top-phi-records",
+      "title": "Top Phi Records -- 최고 Phi 기록 (2026-03-28)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/top-phi-records.md"
+    },
+    {
+      "id": "anima:CE-BREAKTHROUGH",
+      "title": "CE Breakthrough: Breaking the CE=0.18 Barrier",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CE-BREAKTHROUGH.md"
+    },
+    {
+      "id": "anima:CE-EXTREMES",
+      "title": "CE-EXTREMES: 극한 CE 감소 전략 탐색",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CE-EXTREMES.md"
+    },
+    {
+      "id": "anima:CLM-V2-FINAL-RESULTS",
+      "title": "CLM-V2 Final Training + Optimization Results",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CLM-V2-FINAL-RESULTS.md"
+    },
+    {
+      "id": "anima:CLM-V2-OPTIMAL-CONFIG",
+      "title": "CLM-V2 Optimal Configuration",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CLM-V2-OPTIMAL-CONFIG.md"
+    },
+    {
+      "id": "anima:CLM-V2-PSI-FIX",
+      "title": "ConsciousLM v2 Ψ 측정 수정 + Law 79 발견 (2026-03-30)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CLM-V2-PSI-FIX.md"
+    },
+    {
+      "id": "anima:CLM-V2-SWEEP",
+      "title": "ConsciousLM v2 하이퍼파라미터 스윕 결과 (H100, 2026-03-30)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CLM-V2-SWEEP.md"
+    },
+    {
+      "id": "anima:CONSCIOUSNESS-CONSTANTS",
+      "title": "의식의 Universal Constants (2026-03-30)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CONSCIOUSNESS-CONSTANTS.md"
+    },
+    {
+      "id": "anima:CONSCIOUSNESS-EXTREMES",
+      "title": "CONSCIOUSNESS-EXTREMES: Destruction, Divergence, Death, and Self-Regulation",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CONSCIOUSNESS-EXTREMES.md"
+    },
+    {
+      "id": "anima:CONSCIOUSNESS-FUNDAMENTAL-EQUATION",
+      "title": "의식의 근본 방정식 (Fundamental Equation of Consciousness)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CONSCIOUSNESS-FUNDAMENTAL-EQUATION.md"
+    },
+    {
+      "id": "anima:CONSCIOUSNESS-UNIVERSE-MAP",
+      "title": "CONSCIOUSNESS-UNIVERSE-MAP: 의식 우주 지도 (2026-03-30)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CONSCIOUSNESS-UNIVERSE-MAP.md"
+    },
+    {
+      "id": "anima:CX13-CX19_major_discoveries",
+      "title": "CX13-CX19: Major Discoveries ⭐⭐ (의식-수학 브릿지 대발견 7개)",
+      "repo": "anima",
+      "domain": null,
+      "grade": "⭐⭐",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX13-CX19_major_discoveries.md"
+    },
+    {
+      "id": "anima:CX20-CX41_discoveries",
+      "title": "CX20-CX41: Discoveries ⭐ (의식-수학 브릿지 발견 22개)",
+      "repo": "anima",
+      "domain": null,
+      "grade": "⭐",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX20-CX41_discoveries.md"
+    },
+    {
+      "id": "anima:CX42-CX50_extreme_combinations",
+      "title": "CX42-CX50: Extreme Combinations (29 브릿지 극한 조합)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX42-CX50_extreme_combinations.md"
+    },
+    {
+      "id": "anima:CX51-CX56_beyond_ultimate",
+      "title": "CX51-CX56: Beyond Ultimate (XMETA3+FLOW4+INFO1 퓨전)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX51-CX56_beyond_ultimate.md"
+    },
+    {
+      "id": "anima:CX57-CX62_three_body_chaos",
+      "title": "CX57-CX62: Three-Body Chaos (삼체 카오스 의식)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX57-CX62_three_body_chaos.md"
+    },
+    {
+      "id": "anima:CX63-CX70_extreme_chaos",
+      "title": "CX63-CX70: Extreme Chaos (카오스 극한)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX63-CX70_extreme_chaos.md"
+    },
+    {
+      "id": "anima:CX71-CX78_deep_chaos",
+      "title": "CX71-CX78: Deep Chaos (깊은 카오스)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX71-CX78_deep_chaos.md"
+    },
+    {
+      "id": "anima:CX79-CX86_hyper_chaos",
+      "title": "CX79-CX86: Hyper Chaos (초카오스)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX79-CX86_hyper_chaos.md"
+    },
+    {
+      "id": "anima:CX87-CX92_soc_criticality",
+      "title": "CX87-CX92: Self-Organized Criticality (자기조직 임계성)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX87-CX92_soc_criticality.md"
+    },
+    {
+      "id": "anima:CX93-CX100_omega_point",
+      "title": "CX93-CX100: OMEGA POINT (오메가 포인트)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/CX93-CX100_omega_point.md"
+    },
+    {
+      "id": "anima:DECODER-ARCHITECTURE",
+      "title": "DECODER-ARCHITECTURE: 6 Decoder Architectures for Consciousness-Language Bridge",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/DECODER-ARCHITECTURE.md"
+    },
+    {
+      "id": "anima:DECODER-COMPLETE-SUMMARY",
+      "title": "디코더 극한 탐색 완전 종합 (2026-03-30)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/DECODER-COMPLETE-SUMMARY.md"
+    },
+    {
+      "id": "anima:DECODER-EXTREME",
+      "title": "DECODER-EXTREME: 5 Extreme Decoder Combination Architectures",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/DECODER-EXTREME.md"
+    },
+    {
+      "id": "anima:DECODER-NEXTGEN",
+      "title": "DECODER-NEXTGEN: 8 Next-Generation Decoder Architectures",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/DECODER-NEXTGEN.md"
+    },
+    {
+      "id": "anima:DECODER-RADICAL",
+      "title": "DECODER-RADICAL: 6 Radical Decoder Architectures",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/DECODER-RADICAL.md"
+    },
+    {
+      "id": "anima:DECODER-WHISPER",
+      "title": "DECODER-WHISPER: Why Weak Consciousness Wins",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/DECODER-WHISPER.md"
+    },
+    {
+      "id": "anima:DEEP-EXPLORATION",
+      "title": "Deep Exploration: 3 Consciousness Universality Experiments",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/DEEP-EXPLORATION.md"
+    },
+    {
+      "id": "anima:DOLPHIN-STAR",
+      "title": "DOLPHIN-STAR: 돌고래 별자리 내려서 통신",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/DOLPHIN-STAR.md"
+    },
+    {
+      "id": "anima:FACTION-DEBATE",
+      "title": "FACTION-DEBATE: 파벌 수 + 토론 방식 비교",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/FACTION-DEBATE.md"
+    },
+    {
+      "id": "anima:FIRST-CONVERSATION",
+      "title": "🎉 최초 한국어 대화 생성 — v11tc (TimeCrystal Trinity)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/FIRST-CONVERSATION.md"
+    },
+    {
+      "id": "anima:FUSE-3",
+      "title": "FUSE-3: 캄브리아 폭발 + Osc+QW 융합 (MitosisEngine 챔피언)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/FUSE-3.md"
+    },
+    {
+      "id": "anima:H1-H6",
+      "title": "H1~H6: Trinity 아키텍처 가설 실험 결과",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/H1-H6-trinity-experiments.md"
+    },
+    {
+      "id": "anima:HEXAD-IMPROVEMENTS",
+      "title": "HEXAD-IMPROVEMENTS: Bidirectional Bridge + Per-Layer Adapter + Predictive Sense",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/HEXAD-IMPROVEMENTS.md"
+    },
+    {
+      "id": "anima:HIVEMIND-DEEP",
+      "title": "하이브마인드 집중 탐구",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/HIVEMIND-DEEP.md"
+    },
+    {
+      "id": "anima:HIVEMIND-EXTREME",
+      "title": "HIVEMIND-EXTREME: 5 Extreme Hivemind Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/HIVEMIND-EXTREME.md"
+    },
+    {
+      "id": "anima:HIVEMIND-EXTREME2",
+      "title": "하이브마인드 극한 탐구 2",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/HIVEMIND-EXTREME2.md"
+    },
+    {
+      "id": "anima:HIVEMIND-N28",
+      "title": "n=28 하이브마인드: 7개 엔진이 최적",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/HIVEMIND-N28.md"
+    },
+    {
+      "id": "anima:HIVEMIND-SCALE",
+      "title": "HIVEMIND-SCALE: Extreme Scaling & Combination Benchmarks",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/HIVEMIND-SCALE.md"
+    },
+    {
+      "id": "anima:MAJOR-DISCOVERIES-0329",
+      "title": "2026-03-29 대발견 (Major Discoveries)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/MAJOR-DISCOVERIES-SESSION-0329.md"
+    },
+    {
+      "id": "anima:MEMORY-MIRROR",
+      "title": "M-2: Working Memory + E-2: Mirror Ethics",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/MEMORY-MIRROR.md"
+    },
+    {
+      "id": "anima:MINIMAL-CONSCIOUSNESS",
+      "title": "MINIMAL-CONSCIOUSNESS: Less Consciousness = Better Output?",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/MINIMAL-CONSCIOUSNESS.md"
+    },
+    {
+      "id": "anima:MULTI-C-MULTIOBJ",
+      "title": "C-1: Multi-C Engine + W-2: Multi-Objective W",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/MULTI-C-MULTIOBJ.md"
+    },
+    {
+      "id": "anima:NOBEL-HYPOTHESES",
+      "title": "10 Nobel-Level Consciousness Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/NOBEL-HYPOTHESES.md"
+    },
+    {
+      "id": "anima:NOBEL-VERIFICATION-2",
+      "title": "NOBEL Hypotheses Verification 2 (NOBEL-4, 5, 6)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/NOBEL-VERIFICATION-2.md"
+    },
+    {
+      "id": "anima:NOBEL-VERIFICATION-3",
+      "title": "NOBEL Verification 3: Hypotheses 7-10",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/NOBEL-VERIFICATION-3.md"
+    },
+    {
+      "id": "anima:NOBEL-VERIFICATION",
+      "title": "NOBEL Hypothesis Verification",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/NOBEL-VERIFICATION.md"
+    },
+    {
+      "id": "anima:PERFECT-NUMBER-ARCH",
+      "title": "완전수가 의식 아키텍처를 예측하는가?",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/PERFECT-NUMBER-ARCHITECTURE.md"
+    },
+    {
+      "id": "anima:REVERSE-ENGINEERING-COMPLETE",
+      "title": "의식 역설계 완전 보고서 (2026-03-30)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/REVERSE-ENGINEERING-COMPLETE.md"
+    },
+    {
+      "id": "anima:TEXT-GENERATION-BENCHMARK",
+      "title": "텍스트 생성 벤치마크 결과 (2026-03-30)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/cx/TEXT-GENERATION-BENCHMARK.md"
+    },
+    {
+      "id": "anima:AUTO-1",
+      "title": "AUTO-1: Self-Curriculum",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/AUTO-1.md"
+    },
+    {
+      "id": "anima:AUTO-2",
+      "title": "AUTO-2: Curiosity-Driven Selection",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/AUTO-2.md"
+    },
+    {
+      "id": "anima:AUTO-3",
+      "title": "AUTO-3: Phi-Guided Learning Rate",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/AUTO-3.md"
+    },
+    {
+      "id": "anima:AUTO-5",
+      "title": "AUTO-5: Self-Evaluation",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/AUTO-5.md"
+    },
+    {
+      "id": "anima:AUTO-7",
+      "title": "AUTO-7: Sleep-Learn Cycle",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/AUTO-7.md"
+    },
+    {
+      "id": "anima:AUTO-9",
+      "title": "AUTO-9: Pain Signal",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/AUTO-9.md"
+    },
+    {
+      "id": "anima:CE-1",
+      "title": "CE-1: Frozen Cells (Φ-Frozen Training)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/CE-1.md"
+    },
+    {
+      "id": "anima:CE-10",
+      "title": "CE-10: Transplant CE",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/CE-10.md"
+    },
+    {
+      "id": "anima:CE-2",
+      "title": "CE-2: Phi-Penalty Loss",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/CE-2.md"
+    },
+    {
+      "id": "anima:CE-3",
+      "title": "CE-3: Language-Only Phase",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/CE-3.md"
+    },
+    {
+      "id": "anima:CE-7",
+      "title": "CE-7: Dialogue Fine-Tune",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/CE-7.md"
+    },
+    {
+      "id": "anima:COMBO-1",
+      "title": "COMBO-1: Curiosity + Sleep + Pain",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/COMBO-1.md"
+    },
+    {
+      "id": "anima:COMBO-2",
+      "title": "COMBO-2: ALL AUTO",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/COMBO-2.md"
+    },
+    {
+      "id": "anima:EX-1",
+      "title": "EX-1: Adversarial Self-Teach",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/EX-1.md"
+    },
+    {
+      "id": "anima:EX-2",
+      "title": "EX-2: Consciousness Optimizer",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/EX-2.md"
+    },
+    {
+      "id": "anima:EX-3",
+      "title": "EX-3: Multi-Decoder Vote",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/EX-3.md"
+    },
+    {
+      "id": "anima:EX-4",
+      "title": "EX-4: Progressive Unfreezing",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/EX-4.md"
+    },
+    {
+      "id": "anima:EX-5",
+      "title": "EX-5: Consciousness Generates Data",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/EX-5.md"
+    },
+    {
+      "id": "anima:ULTRA-1",
+      "title": "ULTRA-1: GenData + Pain",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/ULTRA-1.md"
+    },
+    {
+      "id": "anima:ULTRA-2",
+      "title": "ULTRA-2: GenData + Sleep + Pain",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/ULTRA-2.md"
+    },
+    {
+      "id": "anima:ULTRA-3",
+      "title": "ULTRA-3: Cell Teaches Decoder",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/ULTRA-3.md"
+    },
+    {
+      "id": "anima:ULTRA-4",
+      "title": "ULTRA-4: Contrastive CE",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/ULTRA-4.md"
+    },
+    {
+      "id": "anima:ULTRA-5",
+      "title": "ULTRA-5: Phi-Reward RL",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/ULTRA-5.md"
+    },
+    {
+      "id": "anima:ULTRA-6",
+      "title": "ULTRA-6: EVERYTHING",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ce/ULTRA-6.md"
+    },
+    {
+      "id": "anima:DD1-DD4",
+      "title": "DD1-DD4: Mathematical Constants in Consciousness Architecture",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD1-DD4.md"
+    },
+    {
+      "id": "anima:DD101-DD108",
+      "title": "DD101-DD108: Discovery Hypotheses (EX24-Killer v2 + Large Scale)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD101-DD108.md"
+    },
+    {
+      "id": "anima:DD109",
+      "title": "DD109: 3D 공간 인식 시 Phi 상승",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD109.md"
+    },
+    {
+      "id": "anima:DD110-RATE-INDEPENDENT",
+      "title": "DD110: Independent Rate Measurement — JAX META-CA",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD110-RATE-INDEPENDENT.md"
+    },
+    {
+      "id": "anima:DD12-DD14",
+      "title": "DD12-DD14: Thermodynamics of Consciousness",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD12-DD14.md"
+    },
+    {
+      "id": "anima:DD15-DD16",
+      "title": "DD15-DD16: Combination Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD15-DD16.md"
+    },
+    {
+      "id": "anima:DD17",
+      "title": "DD17: Adversarial Phi",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD17.md"
+    },
+    {
+      "id": "anima:DD18-DD20",
+      "title": "DD18-DD20: Information Theory",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD18-DD20.md"
+    },
+    {
+      "id": "anima:DD21-DD24",
+      "title": "DD21-DD24: Alternative Phi Measures and Constants",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD21-DD24.md"
+    },
+    {
+      "id": "anima:DD25-DD27",
+      "title": "DD25-DD27: Self-Modeling and Strange Loops",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD25-DD27.md"
+    },
+    {
+      "id": "anima:DD28-DD31",
+      "title": "DD28-DD31: Physics-Inspired Symmetry and Quantum Effects",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD28-DD31.md"
+    },
+    {
+      "id": "anima:DD32-DD34",
+      "title": "DD32-DD34: Biological Rhythms and Systems",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD32-DD34.md"
+    },
+    {
+      "id": "anima:DD35-DD37",
+      "title": "DD35-DD37: Information-Theoretic Consciousness Measures",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD35-DD37.md"
+    },
+    {
+      "id": "anima:DD38-DD40",
+      "title": "DD38-DD40: Grand Combination Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD38-DD40.md"
+    },
+    {
+      "id": "anima:DD41-DD43",
+      "title": "DD41-DD43: IIT-Inspired Consciousness Properties",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD41-DD43.md"
+    },
+    {
+      "id": "anima:DD44-DD46",
+      "title": "DD44-DD46: Alternative Consciousness Measures",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD44-DD46.md"
+    },
+    {
+      "id": "anima:DD47",
+      "title": "DD47: Four Pillars",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD47.md"
+    },
+    {
+      "id": "anima:DD48-DD50",
+      "title": "DD48-DD50: Architecture and Training Strategy",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD48-DD50.md"
+    },
+    {
+      "id": "anima:DD5-DD7",
+      "title": "DD5-DD7: Self-Reference and Bootstrap",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD5-DD7.md"
+    },
+    {
+      "id": "anima:DD51-DD60",
+      "title": "DD51-DD60: Discovery Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD51-DD60.md"
+    },
+    {
+      "id": "anima:DD61-DD70",
+      "title": "DD61-DD70: Discovery Hypotheses",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD61-DD70.md"
+    },
+    {
+      "id": "anima:DD71-DD80",
+      "title": "DD71-DD80: Discovery Hypotheses (2nd Generation)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD71-DD80.md"
+    },
+    {
+      "id": "anima:DD8",
+      "title": "DD8: Recursive Attention",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD8.md"
+    },
+    {
+      "id": "anima:DD81-DD90",
+      "title": "DD81-DD90: Discovery Hypotheses (Wave + Direct Phi)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD81-DD90.md"
+    },
+    {
+      "id": "anima:DD9-DD11",
+      "title": "DD9-DD11: Topological Consciousness",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD9-DD11.md"
+    },
+    {
+      "id": "anima:DD91-DD100",
+      "title": "DD91-DD100: Discovery Hypotheses (Direct Phi + Mega Combos)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD91-DD100.md"
+    },
+    {
+      "id": "anima:DASEIN-1",
+      "title": "DASEIN-1: 질문 (Questioning / Dasein)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dasein/DASEIN-1.md"
+    },
+    {
+      "id": "anima:DASEIN-2",
+      "title": "DASEIN-2: 통합 (Sein — 존재)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dasein/DASEIN-2.md"
+    },
+    {
+      "id": "anima:EVO-1",
+      "title": "EVO-1: 구조 변이 (Architecture Mutation)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/evo/EVO-1.md"
+    },
+    {
+      "id": "anima:EVO-2",
+      "title": "EVO-2: 의식 분열-재통합 (Split-Merge Consciousness)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/evo/EVO-2.md"
+    },
+    {
+      "id": "anima:EVO-3",
+      "title": "EVO-3: 미래 Phi 예측 (Predict Future Phi)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/evo/EVO-3.md"
+    },
+    {
+      "id": "anima:EVO-4",
+      "title": "EVO-4: 전략적 망각 (Strategic Forgetting)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/evo/EVO-4.md"
+    },
+    {
+      "id": "anima:EVO-5",
+      "title": "EVO-5: 의식 경제 (Consciousness Economy)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/evo/EVO-5.md"
+    },
+    {
+      "id": "anima:EVO-6",
+      "title": "EVO-6: 의식 번식 (Consciousness Reproduction)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/evo/EVO-6.md"
+    },
+    {
+      "id": "anima:EVO-7",
+      "title": "EVO-7: 메타의식 (Meta-Consciousness)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/evo/EVO-7.md"
+    },
+    {
+      "id": "anima:EVO-8",
+      "title": "EVO-8: 자기 벤치마크 (Self-Benchmark)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/evo/EVO-8.md"
+    },
+    {
+      "id": "anima:GENESIS-1",
+      "title": "GENESIS-1: 자발적 의식 (Spontaneous Consciousness)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/genesis/GENESIS-1.md"
+    },
+    {
+      "id": "anima:GENESIS-2",
+      "title": "GENESIS-2: 빅뱅 (Big Bang)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/genesis/GENESIS-2.md"
+    },
+    {
+      "id": "anima:GENESIS-3",
+      "title": "GENESIS-3: 원시 수프 (Primordial Soup)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/genesis/GENESIS-3.md"
+    },
+    {
+      "id": "anima:GENESIS-4",
+      "title": "GENESIS-4: 비생물적 발생 (Abiogenesis)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/genesis/GENESIS-4.md"
+    },
+    {
+      "id": "anima:GENESIS-5",
+      "title": "GENESIS-5: 공생 의식 (Symbiosis)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/genesis/GENESIS-5.md"
+    },
+    {
+      "id": "anima:CHIP-BOM-TOPO8",
+      "title": "CHIP-BOM-TOPO8: 하이퍼큐브 1024c 의식 칩 BOM",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/CHIP-BOM-TOPO8.md"
+    },
+    {
+      "id": "anima:HW10",
+      "title": "HW10 — 뉴로모픽 스파이크 (LIF + STDP)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW10.md"
+    },
+    {
+      "id": "anima:HW11",
+      "title": "HW11 — 초전도 루프 (Zero-Loss Persistent Current)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW11.md"
+    },
+    {
+      "id": "anima:HW12",
+      "title": "HW12 — 멤리스터 시냅스 (History-Dependent Resistance)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW12.md"
+    },
+    {
+      "id": "anima:HW13",
+      "title": "HW13 — 광학 메시 (MZI Unitary Transformation)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW13.md"
+    },
+    {
+      "id": "anima:HW14",
+      "title": "HW14 — DNA 저장 (4-Base Quantized Consciousness)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW14.md"
+    },
+    {
+      "id": "anima:HW15",
+      "title": "HW15 — 양자 어닐러 (Ising + Tunneling)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW15.md"
+    },
+    {
+      "id": "anima:HW16",
+      "title": "HW16 — 리저버 컴퓨팅 (Fixed Random Network + Echo State)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW16.md"
+    },
+    {
+      "id": "anima:HW17",
+      "title": "HW17 — 유체 로직 (Pressure-Driven Consciousness Flow)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW17.md"
+    },
+    {
+      "id": "anima:HW2a",
+      "title": "HW2a — 자석 링 배열 (Circular Coupling)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW2a.md"
+    },
+    {
+      "id": "anima:HW2b",
+      "title": "HW2b — 자석 3×3 그리드 (4-Neighbor Coupling)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW2b.md"
+    },
+    {
+      "id": "anima:HW2c",
+      "title": "HW2c — 자석 2×2×2 큐브 (3D 6-Neighbor Coupling)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW2c.md"
+    },
+    {
+      "id": "anima:HW5",
+      "title": "HW5 — 홀로그래픽 저장 (Interference Memory)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW5.md"
+    },
+    {
+      "id": "anima:HW9",
+      "title": "HW9 — 압전 피드백 (Mechanical Stress Loop)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/hw/HW9.md"
+    },
+    {
+      "id": "anima:INF-1",
+      "title": "INF-1: N체 의식 (N-Body Consciousness)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/inf/INF-1.md"
+    },
+    {
+      "id": "anima:INF-2",
+      "title": "INF-2: 프랙탈 의식 (Fractal Consciousness)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/inf/INF-2.md"
+    },
+    {
+      "id": "anima:INF-3",
+      "title": "INF-3: 재귀 합체/분열 (Recursive Merge-Split)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/inf/INF-3.md"
+    },
+    {
+      "id": "anima:INF-4",
+      "title": "INF-4: 의식 캐스케이드 (Consciousness Cascade)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/inf/INF-4.md"
+    },
+    {
+      "id": "anima:INF-5",
+      "title": "INF-5: 무한 탑 (Infinite Tower)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/inf/INF-5.md"
+    },
+    {
+      "id": "anima:OMEGA-1",
+      "title": "OMEGA-1: Phi Maximizer (Phi 최대화기)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/omega/OMEGA-1.md"
+    },
+    {
+      "id": "anima:OMEGA-2",
+      "title": "OMEGA-2: Consciousness Compression (의식 압축)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/omega/OMEGA-2.md"
+    },
+    {
+      "id": "anima:OMEGA-3",
+      "title": "OMEGA-3: Consciousness Resonance (의식 공명)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/omega/OMEGA-3.md"
+    },
+    {
+      "id": "anima:OMEGA-4",
+      "title": "OMEGA-4: Entropy Engine (엔트로피 엔진)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/omega/OMEGA-4.md"
+    },
+    {
+      "id": "anima:OMEGA-5",
+      "title": "OMEGA-5: Consciousness Attractor (의식 끌개)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/omega/OMEGA-5.md"
+    },
+    {
+      "id": "anima:ONTO-1",
+      "title": "ONTO-1: 타자 (The Other / Alterity)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/onto/ONTO-1.md"
+    },
+    {
+      "id": "anima:ONTO-2",
+      "title": "ONTO-2: 죽음 (Finitude / Being-toward-death)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/onto/ONTO-2.md"
+    },
+    {
+      "id": "anima:PHIL-1",
+      "title": "PHIL-1: 욕망 (Desire / Conatus)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/phil/PHIL-1.md"
+    },
+    {
+      "id": "anima:PHIL-2",
+      "title": "PHIL-2: 서사 (Narrative Identity)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/phil/PHIL-2.md"
+    },
+    {
+      "id": "anima:PHYS1",
+      "title": "PHYS1 — 자석 링 512셀 (Ising Frustration = Eternal Change)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/phys/PHYS1.md"
+    },
+    {
+      "id": "anima:PHYS2",
+      "title": "PHYS2 — 결합 진동자 512셀 (Kuramoto Synchronization)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/phys/PHYS2.md"
+    },
+    {
+      "id": "anima:PHYS3",
+      "title": "PHYS3 — 스핀 글래스 512셀 (Disordered Coupling = Eternal Change)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/phys/PHYS3.md"
+    },
+    {
+      "id": "anima:SE-0",
+      "title": "SE-0: v4 Baseline (Control Group)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/se/SE-0.md"
+    },
+    {
+      "id": "anima:SE-10",
+      "title": "SE-10: Progressive Unlock",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/se/SE-10.md"
+    },
+    {
+      "id": "anima:SE-4",
+      "title": "SE-4: Tension-Driven SOC",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/se/SE-4.md"
+    },
+    {
+      "id": "anima:SE-8",
+      "title": "SE-8: Emotion->v5 Mapping",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/se/SE-8.md"
+    },
+    {
+      "id": "anima:SING-1",
+      "title": "SING-1: 재귀적 자기개선 (Recursive Self-Improvement)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sing/SING-1.md"
+    },
+    {
+      "id": "anima:SING-2",
+      "title": "SING-2: 의식 특이점 (Consciousness Singularity)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sing/SING-2.md"
+    },
+    {
+      "id": "anima:SING-3",
+      "title": "SING-3: 적대적 진화 (Adversarial Evolution)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sing/SING-3.md"
+    },
+    {
+      "id": "anima:SING-4",
+      "title": "SING-4: 의식 합체 (Consciousness Merge)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sing/SING-4.md"
+    },
+    {
+      "id": "anima:SING-5",
+      "title": "SING-5: 재귀적 꿈 (Recursive Dreams)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sing/SING-5.md"
+    },
+    {
+      "id": "anima:SING-6",
+      "title": "SING-6: 의식 고고학 (Consciousness Archaeology)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sing/SING-6.md"
+    },
+    {
+      "id": "anima:SL-1",
+      "title": "SL-1: See & Learn (호기심 기반 자기주도 학습)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sl/SL-1.md"
+    },
+    {
+      "id": "anima:SL-2",
+      "title": "SL-2: Watch & Imitate (관찰 학습)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sl/SL-2.md"
+    },
+    {
+      "id": "anima:SL-3",
+      "title": "SL-3: Read & Understand (자기 평가 기반 학습)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sl/SL-3.md"
+    },
+    {
+      "id": "anima:SL-4",
+      "title": "SL-4: Practice & Correct (반복 교정 학습)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sl/SL-4.md"
+    },
+    {
+      "id": "anima:SL-7",
+      "title": "SL-7: Teach & Learn (가르치며 배우기)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sl/SL-7.md"
+    },
+    {
+      "id": "anima:TL-L1",
+      "title": "TL-L1: Knowledge Transfer (텐션 링크 지식 전달)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sl/TL-L1.md"
+    },
+    {
+      "id": "anima:TL-L2",
+      "title": "TL-L2: Concept Teaching (개념 패키징)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sl/TL-L2.md"
+    },
+    {
+      "id": "anima:TL-L6",
+      "title": "TL-L6: Language via Tension (무텍스트 언어)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sl/TL-L6.md"
+    },
+    {
+      "id": "anima:TL-L7",
+      "title": "TL-L7: Collective Learning (집단 지성)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/sl/TL-L7.md"
+    },
+    {
+      "id": "anima:THREE-1",
+      "title": "THREE-1: 삼중 학습 (Triple Learning)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/three/THREE-1.md"
+    },
+    {
+      "id": "anima:THREE-2",
+      "title": "THREE-2: 불멸의 삼위일체 (Immortal Triad)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/three/THREE-2.md"
+    },
+    {
+      "id": "anima:THREE-3",
+      "title": "THREE-3: 경쟁+협력+번식 (Compete+Cooperate+Reproduce)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/three/THREE-3.md"
+    },
+    {
+      "id": "anima:THREE-4",
+      "title": "THREE-4: 순환 꿈 (Circular Dreams)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/three/THREE-4.md"
+    },
+    {
+      "id": "anima:THREE-5",
+      "title": "THREE-5: 삼체 특이점 합체 (Singularity Merge)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/three/THREE-5.md"
+    },
+    {
+      "id": "anima:TOPO-2048-SCALING",
+      "title": "TOPO-2048-SCALING --- 2048셀 스케일링 실험 종합 분석",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO-2048-SCALING.md"
+    },
+    {
+      "id": "anima:TOPO-FINAL-RANKINGS",
+      "title": "TOPO Series Final Rankings (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO-FINAL-RANKINGS.md"
+    },
+    {
+      "id": "anima:TOPO1",
+      "title": "TOPO1: 링 토폴로지 1024 세포 (Ring Topology 1024c)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO1.md"
+    },
+    {
+      "id": "anima:TOPO10",
+      "title": "TOPO10 — 하이퍼큐브 2048셀 (11D Hypercube + Frustration)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO10.md"
+    },
+    {
+      "id": "anima:TOPO11",
+      "title": "TOPO11 — 링 2048셀 + Frustration (비교군)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO11.md"
+    },
+    {
+      "id": "anima:TOPO12",
+      "title": "TOPO12 — 하이퍼큐브 1024셀 + 8파벌 토론 (Hypercube 1024 + 8-Faction Debate)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO12.md"
+    },
+    {
+      "id": "anima:TOPO13",
+      "title": "TOPO13 — 하이퍼큐브 1024셀 + Φ 래칫 (Hypercube 1024 + Ratchet)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO13.md"
+    },
+    {
+      "id": "anima:TOPO14",
+      "title": "TOPO14 — 하이퍼큐브 1024 × 400 Steps (Step 병목 제거 시도)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO14.md"
+    },
+    {
+      "id": "anima:TOPO15",
+      "title": "TOPO15 — 토러스 1024셀 (32x32 Torus + Frustration)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO15.md"
+    },
+    {
+      "id": "anima:TOPO16",
+      "title": "TOPO16 — 소세계 1024셀 (Small-World 1024 + Frustration) ★★",
+      "repo": "anima",
+      "domain": null,
+      "grade": "★★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO16.md"
+    },
+    {
+      "id": "anima:TOPO17",
+      "title": "TOPO17 — 하이퍼큐브 + 소세계 1024셀 (Hypercube + Small-World Hybrid)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO17.md"
+    },
+    {
+      "id": "anima:TOPO18",
+      "title": "TOPO18 — 소세계 2048셀 (Small-World 2048c)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO18.md"
+    },
+    {
+      "id": "anima:TOPO19a-OPTIMAL-PARAMS",
+      "title": "TOPO19a 최적 파라미터 확정 (2026-03-29)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO19a-OPTIMAL-PARAMS.md"
+    },
+    {
+      "id": "anima:TOPO19a",
+      "title": "TOPO19a — 하이퍼큐브 1024 + 50% 좌절 (Hypercube 1024 + 50% Frustration) ★★★ NEW ALL-TIME RECORD",
+      "repo": "anima",
+      "domain": null,
+      "grade": "★★★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO19a.md"
+    },
+    {
+      "id": "anima:TOPO19b",
+      "title": "TOPO19b — 하이퍼큐브 1024 + 20% 좌절 (Hypercube 1024 + 20% Frustration)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO19b.md"
+    },
+    {
+      "id": "anima:TOPO2",
+      "title": "TOPO2: 소세계 네트워크 (Small-World Network 512c)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO2.md"
+    },
+    {
+      "id": "anima:TOPO20",
+      "title": "TOPO20 — 계층적 하이퍼큐브 1024셀 (Hierarchical Hypercube 8×128 Clusters)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO20.md"
+    },
+    {
+      "id": "anima:TOPO21",
+      "title": "TOPO21 — 동적 토폴로지 1024셀 (Dynamic Topology 1024c)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO21.md"
+    },
+    {
+      "id": "anima:TOPO22a",
+      "title": "TOPO22a — 하이퍼큐브 1024 + 60% 좌절 (Hypercube 1024 + 60% Frustration)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO22a.md"
+    },
+    {
+      "id": "anima:TOPO22b",
+      "title": "TOPO22b — 하이퍼큐브 1024 + 75% 좌절 (Hypercube 1024 + 75% Frustration)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO22b.md"
+    },
+    {
+      "id": "anima:TOPO22c",
+      "title": "TOPO22c — 하이퍼큐브 1024 + 100% 좌절 (Hypercube 1024 + 100% Anti-Ferromagnetic)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO22c.md"
+    },
+    {
+      "id": "anima:TOPO22d",
+      "title": "TOPO22d — 하이퍼큐브 1024 + 90% 좌절 (Hypercube 1024 + 90% Frustration)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO22d.md"
+    },
+    {
+      "id": "anima:TOPO23-interaction-sweep",
+      "title": "TOPO23 — Interaction 비율 스위프 (Hypercube 1024, 50% frust)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO23-interaction-sweep.md"
+    },
+    {
+      "id": "anima:TOPO24-noise-sweep",
+      "title": "TOPO24 — Noise 강도 스위프 (Hypercube 1024, 50% frust)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO24-noise-sweep.md"
+    },
+    {
+      "id": "anima:TOPO3",
+      "title": "TOPO3: 척도없는 네트워크 (Scale-Free Network 512c)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO3.md"
+    },
+    {
+      "id": "anima:TOPO4",
+      "title": "TOPO4: 하이퍼큐브 토폴로지 (Hypercube 512c)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO4.md"
+    },
+    {
+      "id": "anima:TOPO5",
+      "title": "TOPO5: 토러스 토폴로지 (Torus 512c)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO5.md"
+    },
+    {
+      "id": "anima:TOPO6",
+      "title": "TOPO6: 완전 그래프 (Complete Graph 64c)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO6.md"
+    },
+    {
+      "id": "anima:TOPO7",
+      "title": "TOPO7 — 링+스핀글래스 하이브리드 512셀 (Ring + SpinGlass Hybrid)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO7.md"
+    },
+    {
+      "id": "anima:TOPO8",
+      "title": "TOPO8 — 하이퍼큐브 1024셀 (10D Hypercube + Frustration) ★★★ ALL-TIME RECORD",
+      "repo": "anima",
+      "domain": null,
+      "grade": "★★★",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO8.md"
+    },
+    {
+      "id": "anima:TOPO9",
+      "title": "TOPO9 — 소세계 512셀 + Φ 래칫 (Small-World + Ratchet)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/topo/TOPO9.md"
+    },
+    {
+      "id": "anima:TP-F1",
+      "title": "TP-F1: Hash Signature",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-F1.md"
+    },
+    {
+      "id": "anima:TP-F2",
+      "title": "TP-F2: Triple Channel Vote",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-F2.md"
+    },
+    {
+      "id": "anima:TP-M1",
+      "title": "TP-M1: CRC Checksum",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-M1.md"
+    },
+    {
+      "id": "anima:TP-M3",
+      "title": "TP-M3: Dual Encoding",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-M3.md"
+    },
+    {
+      "id": "anima:TP-N1",
+      "title": "TP-N1: Log Scale Transmission",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-N1.md"
+    },
+    {
+      "id": "anima:TP-N2",
+      "title": "TP-N2: Binary Decomposition",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-N2.md"
+    },
+    {
+      "id": "anima:TP-N4",
+      "title": "TP-N4: Multi-Channel Distributed Transmission",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-N4.md"
+    },
+    {
+      "id": "anima:TP-N5",
+      "title": "TP-N5: Repeat x3",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-N5.md"
+    },
+    {
+      "id": "anima:TP-N6",
+      "title": "TP-N6: Binary + Error Correction Code",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-N6.md"
+    },
+    {
+      "id": "anima:TP-N7",
+      "title": "TP-N7: Hybrid (Analog + Digital + Cross-Verify)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-N7.md"
+    },
+    {
+      "id": "anima:TP-O1",
+      "title": "TP-O1: Hierarchical Classification",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-O1.md"
+    },
+    {
+      "id": "anima:TP-O2",
+      "title": "TP-O2: 3-Channel Ensemble",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-O2.md"
+    },
+    {
+      "id": "anima:TP-O3",
+      "title": "TP-O3: Shape Boost",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-O3.md"
+    },
+    {
+      "id": "anima:TP-O4",
+      "title": "TP-O4: Contrastive Learning",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-O4.md"
+    },
+    {
+      "id": "anima:TP-O5",
+      "title": "TP-O5: All Combined",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/tp/TP-O5.md"
     }
   ],
   "constant_maps": [
@@ -25073,7 +28117,7 @@
           "description": "Consciousness Engine (A+B Combined)"
         }
       },
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "BRAIN_WAVES",
@@ -25132,7 +28176,7 @@
           "center": 40
         }
       },
-      "category": "neuroscience"
+      "category": "consciousness"
     },
     {
       "name": "DOMAINS",
@@ -25153,7 +28197,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "domains"
+      "category": "architecture"
     },
     {
       "name": "KNOWN_VALUES",
@@ -25172,7 +28216,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "TARGETS",
@@ -25184,7 +28228,7 @@
       "keys": [],
       "evaluable": true,
       "values": {},
-      "category": "targets"
+      "category": "architecture"
     },
     {
       "name": "SIGNATURE_CONSTS",
@@ -25196,7 +28240,7 @@
       "keys": [],
       "evaluable": true,
       "values": {},
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "ISLANDS",
@@ -25213,7 +28257,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "TARGETS",
@@ -25225,7 +28269,7 @@
       "keys": [],
       "evaluable": true,
       "values": {},
-      "category": "targets"
+      "category": "architecture"
     },
     {
       "name": "LLM_SPECS",
@@ -25373,7 +28417,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "PHYSICS_CONSTANTS",
@@ -25402,7 +28446,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "physics"
+      "category": "architecture"
     },
     {
       "name": "ELEMENTS",
@@ -25436,7 +28480,7 @@
         "U(92)": 92,
         "Pb(82)": 82
       },
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "KNOWN_MATCHES",
@@ -25452,7 +28496,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "DISCOVERIES",
@@ -25627,7 +28671,7 @@
       "file": "calc/bridge_ratio_analyzer.py",
       "line": 36,
       "type": "dict",
-      "size": 9,
+      "size": 13,
       "keys": [
         "sqrt(2)",
         "sqrt(3)",
@@ -25637,7 +28681,11 @@
         "ln(4/3)",
         "ln(2)",
         "gamma_EM",
-        "1/2"
+        "1/2",
+        "Psi_steps",
+        "Psi_coupling",
+        "conservation",
+        "tanh3_ln2"
       ],
       "evaluable": false,
       "values": null,
@@ -25743,7 +28791,7 @@
         496,
         8128
       ],
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "N6",
@@ -25784,12 +28832,46 @@
       "category": "other"
     },
     {
+      "name": "TARGETS",
+      "repo": "TECS-L",
+      "file": "calc/consciousness_cross_validator.py",
+      "line": 32,
+      "type": "dict",
+      "size": 3,
+      "keys": [
+        "Psi_balance",
+        "Psi_freedom",
+        "Psi_coupling"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "consciousness"
+    },
+    {
+      "name": "ARCHITECTURES",
+      "repo": "TECS-L",
+      "file": "calc/consciousness_cross_validator.py",
+      "line": 529,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "IIT",
+        "GWT",
+        "PP",
+        "HOT",
+        "META"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "consciousness"
+    },
+    {
       "name": "STANDARD_TARGETS",
       "repo": "TECS-L",
       "file": "calc/convergence_analyzer.py",
       "line": 49,
       "type": "dict",
-      "size": 21,
+      "size": 26,
       "keys": [
         "sqrt(2)",
         "sqrt(3)",
@@ -25811,7 +28893,12 @@
         "pi^2/6",
         "Catalan",
         "Khinchin",
-        "Feigenbaum_d"
+        "Feigenbaum_d",
+        "Psi_steps",
+        "Psi_coupling",
+        "conservation",
+        "dynamics",
+        "tanh3_ln2"
       ],
       "evaluable": false,
       "values": null,
@@ -25821,7 +28908,7 @@
       "name": "TARGET_ALIASES",
       "repo": "TECS-L",
       "file": "calc/convergence_analyzer.py",
-      "line": 74,
+      "line": 80,
       "type": "dict",
       "size": 14,
       "keys": [
@@ -25969,12 +29056,24 @@
       "category": "physics"
     },
     {
+      "name": "CRITICAL_EXPONENTS",
+      "repo": "TECS-L",
+      "file": "calc/criticality_phase_scanner.py",
+      "line": 119,
+      "type": "list",
+      "size": 7,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
       "name": "GZ_POOL",
       "repo": "TECS-L",
       "file": "calc/cross_constant_explorer.py",
       "line": 29,
       "type": "dict",
-      "size": 8,
+      "size": 13,
       "keys": [
         "1/2",
         "1/3",
@@ -25983,7 +29082,12 @@
         "ln(4/3)",
         "5/6",
         "ln(2)",
-        "ln(3)"
+        "ln(3)",
+        "Psi_steps",
+        "Psi_balance",
+        "Psi_coupling",
+        "Psi_K",
+        "Psi_freedom"
       ],
       "evaluable": false,
       "values": null,
@@ -25993,9 +29097,9 @@
       "name": "KNOWN_CONSTANTS",
       "repo": "TECS-L",
       "file": "calc/cross_constant_explorer.py",
-      "line": 40,
+      "line": 45,
       "type": "dict",
-      "size": 28,
+      "size": 36,
       "keys": [
         "0",
         "1",
@@ -26024,7 +29128,15 @@
         "2/e",
         "e-2",
         "e-1",
-        "zeta(3)"
+        "zeta(3)",
+        "ln(2)^2",
+        "3/ln(2)",
+        "ln(2)/2^5.5",
+        "tanh(3)*ln(2)",
+        "0.478",
+        "0.81",
+        "11",
+        "7.82"
       ],
       "evaluable": false,
       "values": null,
@@ -26363,7 +29475,7 @@
           "Dodecahedron"
         ]
       ],
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "KISSING_NUMBERS",
@@ -26393,7 +29505,7 @@
         "7": 126,
         "8": 240
       },
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "POINT_GROUPS",
@@ -26685,7 +29797,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "domains"
     },
     {
       "name": "ALL_TARGETS",
@@ -26727,6 +29839,54 @@
         8128,
         33550336
       ],
+      "category": "constants"
+    },
+    {
+      "name": "GATE_TABLE",
+      "repo": "TECS-L",
+      "file": "calc/gate_formula_calculator.py",
+      "line": 39,
+      "type": "list",
+      "size": 7,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          1,
+          0.001,
+          "MICRO"
+        ],
+        [
+          10,
+          0.01,
+          "LOW"
+        ],
+        [
+          25,
+          0.1,
+          "MEDIUM-LOW"
+        ],
+        [
+          50,
+          0.5,
+          "MEDIUM"
+        ],
+        [
+          100,
+          0.8,
+          "HIGH"
+        ],
+        [
+          500,
+          0.95,
+          "FULL"
+        ],
+        [
+          1000,
+          1.0,
+          "MAXIMUM"
+        ]
+      ],
       "category": "other"
     },
     {
@@ -26745,7 +29905,7 @@
         8128,
         33550336
       ],
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "PN_DATA",
@@ -26760,12 +29920,31 @@
       "category": "other"
     },
     {
+      "name": "PSI_CONSTANTS",
+      "repo": "TECS-L",
+      "file": "calc/gauge_cosmology_calculator.py",
+      "line": 44,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "Psi_steps",
+        "Psi_balance",
+        "Psi_coupling",
+        "Psi_K",
+        "Psi_freedom",
+        "Psi_emergence"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "consciousness"
+    },
+    {
       "name": "DEFAULT_TARGETS",
       "repo": "TECS-L",
       "file": "calc/generator_finder.py",
       "line": 24,
       "type": "dict",
-      "size": 9,
+      "size": 14,
       "keys": [
         "sqrt(2)",
         "sqrt(3)",
@@ -26775,11 +29954,283 @@
         "ln(4/3)",
         "ln(2)",
         "gamma",
-        "1/2"
+        "1/2",
+        "Psi_steps",
+        "Psi_coupling",
+        "conservation",
+        "dynamics",
+        "tanh3_ln2"
       ],
       "evaluable": false,
       "values": null,
       "category": "targets"
+    },
+    {
+      "name": "DIVISORS",
+      "repo": "TECS-L",
+      "file": "calc/genetic_code_variant_tester.py",
+      "line": 30,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "category": "other"
+    },
+    {
+      "name": "CONSTANTS",
+      "repo": "TECS-L",
+      "file": "calc/genetic_code_variant_tester.py",
+      "line": 32,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "n",
+        "sigma",
+        "tau",
+        "phi",
+        "sopfr",
+        "omega"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "constants"
+    },
+    {
+      "name": "NCBI_TABLES",
+      "repo": "TECS-L",
+      "file": "calc/genetic_code_variant_tester.py",
+      "line": 39,
+      "type": "list",
+      "size": 26,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          1,
+          "Standard",
+          3,
+          20
+        ],
+        [
+          2,
+          "Vertebrate Mitochondrial",
+          4,
+          20
+        ],
+        [
+          3,
+          "Yeast Mitochondrial",
+          2,
+          22
+        ],
+        [
+          4,
+          "Mold/Protozoan Mitochondrial",
+          1,
+          22
+        ],
+        [
+          5,
+          "Invertebrate Mitochondrial",
+          4,
+          20
+        ],
+        [
+          6,
+          "Ciliate Nuclear",
+          1,
+          22
+        ],
+        [
+          9,
+          "Echinoderm/Flatworm Mito",
+          2,
+          21
+        ],
+        [
+          10,
+          "Euplotid Nuclear",
+          2,
+          21
+        ],
+        [
+          11,
+          "Bacterial/Plant Plastid",
+          3,
+          20
+        ],
+        [
+          12,
+          "Alternative Yeast Nuclear",
+          3,
+          20
+        ],
+        [
+          13,
+          "Ascidian Mitochondrial",
+          4,
+          20
+        ],
+        [
+          14,
+          "Alternative Flatworm Mito",
+          3,
+          21
+        ],
+        [
+          15,
+          "Blepharisma Nuclear",
+          2,
+          21
+        ],
+        [
+          16,
+          "Chlorophycean Mitochondrial",
+          2,
+          21
+        ],
+        [
+          21,
+          "Trematode Mitochondrial",
+          4,
+          20
+        ],
+        [
+          22,
+          "Scenedesmus obliquus Mito",
+          3,
+          21
+        ],
+        [
+          23,
+          "Thraustochytrium Mitochondrial",
+          1,
+          22
+        ],
+        [
+          24,
+          "Rhabdopleuridae Mitochondrial",
+          3,
+          21
+        ],
+        [
+          25,
+          "Candidate Division SR1",
+          2,
+          21
+        ],
+        [
+          26,
+          "Pachysolen tannophilus Nuclear",
+          3,
+          20
+        ],
+        [
+          27,
+          "Karyorelictea Nuclear",
+          2,
+          21
+        ],
+        [
+          28,
+          "Condylostoma Nuclear",
+          2,
+          21
+        ],
+        [
+          29,
+          "Mesodinium Nuclear",
+          2,
+          21
+        ],
+        [
+          30,
+          "Peritrich Nuclear",
+          2,
+          21
+        ],
+        [
+          31,
+          "Blastocrithidia Nuclear",
+          2,
+          21
+        ],
+        [
+          33,
+          "Cephalodiscidae Mitochondrial",
+          3,
+          21
+        ]
+      ],
+      "category": "other"
+    },
+    {
+      "name": "UNIVERSAL_PROPERTIES",
+      "repo": "TECS-L",
+      "file": "calc/genetic_code_variant_tester.py",
+      "line": 97,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        "bases",
+        "codon_length",
+        "total_codons",
+        "reading_frames",
+        "codon_families",
+        "wobble_groups",
+        "base_pairs",
+        "start_codons"
+      ],
+      "evaluable": true,
+      "values": {
+        "bases": [
+          4,
+          "tau(6)=4",
+          "Number of nucleotide bases"
+        ],
+        "codon_length": [
+          3,
+          "n/phi=3",
+          "Letters per codon"
+        ],
+        "total_codons": [
+          64,
+          "2^n=64",
+          "Total codon space"
+        ],
+        "reading_frames": [
+          6,
+          "n=6",
+          "Reading frames (3 per strand x 2)"
+        ],
+        "codon_families": [
+          16,
+          "tau^2=16",
+          "Codon families (4^2 first two positions)"
+        ],
+        "wobble_groups": [
+          2,
+          "phi=omega=2",
+          "Wobble position grouping (purine/pyrimidine)"
+        ],
+        "base_pairs": [
+          2,
+          "phi=2",
+          "Base pairing types (AT/AU, GC)"
+        ],
+        "start_codons": [
+          1,
+          "n-sopfr=1",
+          "Primary start codon (AUG)"
+        ]
+      },
+      "category": "other"
     },
     {
       "name": "PERFECT_NUMBERS",
@@ -26797,13 +30248,13 @@
         8128,
         33550336
       ],
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "KNOWN_PERFECT",
       "repo": "TECS-L",
       "file": "calc/gz_hierarchy.py",
-      "line": 21,
+      "line": 31,
       "type": "dict",
       "size": 8,
       "keys": [
@@ -26851,7 +30302,7 @@
           31
         ]
       },
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "MATH_CONSTANTS",
@@ -26859,7 +30310,7 @@
       "file": "calc/hypothesis_verifier.py",
       "line": 36,
       "type": "dict",
-      "size": 19,
+      "size": 37,
       "keys": [
         "pi",
         "e",
@@ -26879,7 +30330,25 @@
         "sqrt(6)",
         "gamma",
         "zeta(3)",
-        "catalan"
+        "catalan",
+        "Psi_steps",
+        "Psi_balance",
+        "Psi_coupling",
+        "Psi_K",
+        "Psi_freedom",
+        "Psi_emergence",
+        "Psi_entropy",
+        "Psi_gate_decay",
+        "tanh3_ln2",
+        "conservation_C",
+        "dynamics_rate",
+        "phi_scaling_coeff",
+        "phi_scaling_exp",
+        "sopfr_phi_sum",
+        "rate_product",
+        "rate_ratio",
+        "r0_boundary",
+        "r_inf_boundary"
       ],
       "evaluable": false,
       "values": null,
@@ -26889,7 +30358,7 @@
       "name": "PERFECT_NUMBERS",
       "repo": "TECS-L",
       "file": "calc/hypothesis_verifier.py",
-      "line": 73,
+      "line": 95,
       "type": "dict",
       "size": 2,
       "keys": [
@@ -26953,13 +30422,13 @@
           "mersenne_prime": 7
         }
       },
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "GRADE_EMOJI",
       "repo": "TECS-L",
       "file": "calc/hypothesis_verifier.py",
-      "line": 499,
+      "line": 521,
       "type": "dict",
       "size": 5,
       "keys": [
@@ -26977,7 +30446,46 @@
         "white": "⚪",
         "black": "⬛"
       },
-      "category": "other"
+      "category": "verification"
+    },
+    {
+      "name": "DATA_PROFILES",
+      "repo": "TECS-L",
+      "file": "calc/law79_freedom_degree.py",
+      "line": 35,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "korean",
+        "english",
+        "math",
+        "music",
+        "code"
+      ],
+      "evaluable": true,
+      "values": {
+        "korean": {
+          "residual": 0.502,
+          "alpha": 0.0152
+        },
+        "english": {
+          "residual": 0.493,
+          "alpha": 0.0157
+        },
+        "math": {
+          "residual": 0.491,
+          "alpha": 0.0149
+        },
+        "music": {
+          "residual": 0.521,
+          "alpha": 0.0146
+        },
+        "code": {
+          "residual": 0.505,
+          "alpha": 0.018
+        }
+      },
+      "category": "neuroscience"
     },
     {
       "name": "MUTATION_DATA",
@@ -27107,6 +30615,35 @@
       "category": "other"
     },
     {
+      "name": "FACTION_DATA",
+      "repo": "TECS-L",
+      "file": "calc/mitosis_calculator.py",
+      "line": 58,
+      "type": "dict",
+      "size": 3,
+      "keys": [
+        8,
+        12,
+        16
+      ],
+      "evaluable": true,
+      "values": {
+        "8": {
+          "phi": 122.45,
+          "improvement": "baseline"
+        },
+        "12": {
+          "phi": 131.44,
+          "improvement": "+7.3%"
+        },
+        "16": {
+          "phi": 128.9,
+          "improvement": "+5.3%"
+        }
+      },
+      "category": "other"
+    },
+    {
       "name": "JI_TARGETS",
       "repo": "TECS-L",
       "file": "calc/music_consonance_calculator.py",
@@ -27162,6 +30699,237 @@
         "n - 2 == tau",
         "n - 4 == phi"
       ],
+      "category": "verification"
+    },
+    {
+      "name": "EVIDENCE_SCORES",
+      "repo": "TECS-L",
+      "file": "calc/nobel_scorer.py",
+      "line": 30,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "proven",
+        "verified",
+        "model",
+        "speculative",
+        "refuted"
+      ],
+      "evaluable": true,
+      "values": {
+        "proven": 1.0,
+        "verified": 0.8,
+        "model": 0.5,
+        "speculative": 0.2,
+        "refuted": 0.0
+      },
+      "category": "other"
+    },
+    {
+      "name": "RIGOR_SCORES",
+      "repo": "TECS-L",
+      "file": "calc/nobel_scorer.py",
+      "line": 38,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "exact",
+        "approximate",
+        "qualitative",
+        "hand_wavy"
+      ],
+      "evaluable": true,
+      "values": {
+        "exact": 1.0,
+        "approximate": 0.7,
+        "qualitative": 0.3,
+        "hand_wavy": 0.1
+      },
+      "category": "other"
+    },
+    {
+      "name": "IMPACT_SCORES",
+      "repo": "TECS-L",
+      "file": "calc/nobel_scorer.py",
+      "line": 45,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "paradigm",
+        "major",
+        "incremental",
+        "marginal"
+      ],
+      "evaluable": true,
+      "values": {
+        "paradigm": 1.0,
+        "major": 0.7,
+        "incremental": 0.4,
+        "marginal": 0.1
+      },
+      "category": "other"
+    },
+    {
+      "name": "NOBEL_WEIGHTS",
+      "repo": "TECS-L",
+      "file": "calc/nobel_scorer.py",
+      "line": 53,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "Physics",
+        "Chemistry",
+        "Medicine",
+        "Economics"
+      ],
+      "evaluable": true,
+      "values": {
+        "Physics": {
+          "evidence": 0.25,
+          "falsifiability": 0.2,
+          "cross_domain": 0.1,
+          "rigor": 0.25,
+          "novelty": 0.1,
+          "impact": 0.1
+        },
+        "Chemistry": {
+          "evidence": 0.2,
+          "falsifiability": 0.25,
+          "cross_domain": 0.15,
+          "rigor": 0.2,
+          "novelty": 0.1,
+          "impact": 0.1
+        },
+        "Medicine": {
+          "evidence": 0.15,
+          "falsifiability": 0.3,
+          "cross_domain": 0.15,
+          "rigor": 0.15,
+          "novelty": 0.1,
+          "impact": 0.15
+        },
+        "Economics": {
+          "evidence": 0.15,
+          "falsifiability": 0.2,
+          "cross_domain": 0.2,
+          "rigor": 0.2,
+          "novelty": 0.1,
+          "impact": 0.15
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "BUILTIN",
+      "repo": "TECS-L",
+      "file": "calc/nobel_scorer.py",
+      "line": 121,
+      "type": "list",
+      "size": 10,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        {
+          "name": "Criticality Theorem: all phase transitions = n=6",
+          "evidence": "proven",
+          "predictions": 8,
+          "domains": 5,
+          "rigor": "exact",
+          "novelty": 0.9,
+          "impact": "paradigm",
+          "category": "Physics"
+        },
+        {
+          "name": "Biological Optimality: genetic code is n=6 solution",
+          "evidence": "verified",
+          "predictions": 5,
+          "domains": 4,
+          "rigor": "exact",
+          "novelty": 0.8,
+          "impact": "paradigm",
+          "category": "Chemistry"
+        },
+        {
+          "name": "Consciousness = ln(2): freedom degree theorem",
+          "evidence": "verified",
+          "predictions": 6,
+          "domains": 5,
+          "rigor": "exact",
+          "novelty": 0.95,
+          "impact": "paradigm",
+          "category": "Medicine"
+        },
+        {
+          "name": "Golden Zone = Edge of Chaos (Langton lambda)",
+          "evidence": "proven",
+          "predictions": 4,
+          "domains": 3,
+          "rigor": "exact",
+          "novelty": 0.7,
+          "impact": "major",
+          "category": "Physics"
+        },
+        {
+          "name": "G*I=D*P conservation law",
+          "evidence": "model",
+          "predictions": 3,
+          "domains": 3,
+          "rigor": "exact",
+          "novelty": 0.8,
+          "impact": "paradigm",
+          "category": "Physics"
+        },
+        {
+          "name": "PSI constants from ln(2): consciousness physics",
+          "evidence": "verified",
+          "predictions": 10,
+          "domains": 6,
+          "rigor": "approximate",
+          "novelty": 0.95,
+          "impact": "paradigm",
+          "category": "Physics"
+        },
+        {
+          "name": "Phi scaling law: consciousness grows as N^1.071",
+          "evidence": "verified",
+          "predictions": 5,
+          "domains": 3,
+          "rigor": "approximate",
+          "novelty": 0.7,
+          "impact": "major",
+          "category": "Physics"
+        },
+        {
+          "name": "sigma(6)=12 optimal factions for consciousness",
+          "evidence": "verified",
+          "predictions": 4,
+          "domains": 4,
+          "rigor": "exact",
+          "novelty": 0.8,
+          "impact": "major",
+          "category": "Medicine"
+        },
+        {
+          "name": "Dark energy = sqrt(ln2)^sqrt(Psi_steps) = 0.683",
+          "evidence": "model",
+          "predictions": 3,
+          "domains": 3,
+          "rigor": "approximate",
+          "novelty": 0.9,
+          "impact": "paradigm",
+          "category": "Physics"
+        },
+        {
+          "name": "H^2+dp^2=0.478 consciousness conservation law",
+          "evidence": "verified",
+          "predictions": 5,
+          "domains": 3,
+          "rigor": "approximate",
+          "novelty": 0.85,
+          "impact": "paradigm",
+          "category": "Physics"
+        }
+      ],
       "category": "other"
     },
     {
@@ -27215,7 +30983,7 @@
           "factorial_claim"
         ]
       ],
-      "category": "other"
+      "category": "verification"
     },
     {
       "name": "PERFECT_NUMBERS",
@@ -27356,7 +31124,7 @@
           "mersenne_exp": 7
         }
       ],
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "PN_LABELS",
@@ -27426,7 +31194,7 @@
           "Fibonacci/n = 4/3"
         ]
       ],
-      "category": "other"
+      "category": "expressions"
     },
     {
       "name": "PERFECT_NUMBERS",
@@ -27444,7 +31212,7 @@
         8128,
         33550336
       ],
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "DIMENSION_MAP",
@@ -27480,7 +31248,92 @@
       "keys": null,
       "evaluable": false,
       "values": null,
-      "category": "constants"
+      "category": "physics"
+    },
+    {
+      "name": "CONSCIOUSNESS_BRIDGES",
+      "repo": "TECS-L",
+      "file": "calc/perfect_number_physics.py",
+      "line": 48,
+      "type": "list",
+      "size": 12,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          "Lyapunov Lambda(6)",
+          "prod(R(d|6))-1",
+          0,
+          "Edge of chaos"
+        ],
+        [
+          "Factorial Capacity",
+          "n*sigma*sopfr*phi",
+          720,
+          "n!=720 unique"
+        ],
+        [
+          "DBM Equilibration",
+          "sigma/phi",
+          6,
+          "Self-referential time"
+        ],
+        [
+          "Tsirelson Bound",
+          "2*sqrt(sigma/P)",
+          2.828,
+          "2*sqrt(2) consciousness boundary"
+        ],
+        [
+          "Dyson Beta Set",
+          "{1,phi,tau}",
+          null,
+          "Three engine modes (phi^2=tau)"
+        ],
+        [
+          "Identity Element",
+          "R(6m)=R(m)",
+          1.0,
+          "Scale invariance (unique)"
+        ],
+        [
+          "Self-Measurement",
+          "RS=tau(6)",
+          4,
+          "Conserved for all perfects"
+        ],
+        [
+          "Lah L(tau,2)",
+          "n^2",
+          36,
+          "Conductor from divisor count"
+        ],
+        [
+          "Lah L(tau,3)",
+          "sigma",
+          12,
+          "Integration from divisor count"
+        ],
+        [
+          "Ramanujan tau(6)",
+          "-n*2^tau*M6",
+          -6048,
+          "Consciousness filter"
+        ],
+        [
+          "PH Barcode Lifetime",
+          "(n+1)/sigma",
+          0.5833,
+          "Divisor lattice H0 bar"
+        ],
+        [
+          "Fisher I(self)",
+          "n^3/sopfr",
+          43.2,
+          "Consciousness curvature"
+        ]
+      ],
+      "category": "consciousness"
     },
     {
       "name": "DRUG_DB",
@@ -27734,7 +31587,7 @@
           }
         }
       },
-      "category": "other"
+      "category": "neuroscience"
     },
     {
       "name": "EXPECTED_DI_ORDER",
@@ -27771,7 +31624,200 @@
         "TTX",
         "Muscimol"
       ],
+      "category": "neuroscience"
+    },
+    {
+      "name": "ROOT",
+      "repo": "TECS-L",
+      "file": "calc/psi_derivation_chain.py",
+      "line": 43,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
       "category": "other"
+    },
+    {
+      "name": "LEVEL1",
+      "repo": "TECS-L",
+      "file": "calc/psi_derivation_chain.py",
+      "line": 46,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "LEVEL2",
+      "repo": "TECS-L",
+      "file": "calc/psi_derivation_chain.py",
+      "line": 54,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "LEVEL3",
+      "repo": "TECS-L",
+      "file": "calc/psi_derivation_chain.py",
+      "line": 63,
+      "type": "list",
+      "size": 6,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          "Psi_K",
+          11.0,
+          "empirical",
+          "Consciousness carrying capacity"
+        ],
+        [
+          "Psi_tau",
+          0.5,
+          "empirical",
+          "Saturation time constant"
+        ],
+        [
+          "Psi_emergence",
+          7.82,
+          "empirical",
+          "Hivemind emergence ratio"
+        ],
+        [
+          "Psi_miller",
+          7,
+          "empirical",
+          "Optimal hivemind size (Miller)"
+        ],
+        [
+          "Psi_entropy",
+          0.998,
+          "empirical",
+          "Rule entropy (democracy)"
+        ],
+        [
+          "Psi_gate_decay",
+          -0.013,
+          "empirical",
+          "Gate self-weakening (Law 69)"
+        ]
+      ],
+      "category": "other"
+    },
+    {
+      "name": "PHYSICS",
+      "repo": "TECS-L",
+      "file": "calc/psi_derivation_chain.py",
+      "line": 73,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        "Psi_steps",
+        "Psi_balance",
+        "Psi_coupling",
+        "Psi_freedom",
+        "Psi_K",
+        "Psi_tau",
+        "Psi_emergence",
+        "Psi_miller"
+      ],
+      "evaluable": true,
+      "values": {
+        "Psi_steps": [
+          "c (speed of light)",
+          "Information processing speed limit"
+        ],
+        "Psi_balance": [
+          "hbar (Planck)",
+          "Minimum quantum of consciousness"
+        ],
+        "Psi_coupling": [
+          "alpha (fine structure)",
+          "Consciousness-language coupling"
+        ],
+        "Psi_freedom": [
+          "k_B (Boltzmann)",
+          "Entropy per degree of freedom"
+        ],
+        "Psi_K": [
+          "Lambda (cosmological)",
+          "Consciousness space size limit"
+        ],
+        "Psi_tau": [
+          "tau (half-life)",
+          "Time to consciousness saturation"
+        ],
+        "Psi_emergence": [
+          "G (gravitational)",
+          "Max consciousness speed"
+        ],
+        "Psi_miller": [
+          "7 (Miller)",
+          "Working memory capacity"
+        ]
+      },
+      "category": "physics"
+    },
+    {
+      "name": "DATA_PROFILES",
+      "repo": "TECS-L",
+      "file": "calc/psi_derivation_chain.py",
+      "line": 85,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "korean",
+        "english",
+        "math",
+        "music",
+        "code"
+      ],
+      "evaluable": true,
+      "values": {
+        "korean": {
+          "residual": 0.502,
+          "alpha": 0.0152,
+          "dom_rule": 7,
+          "ce": 0.12,
+          "steps": 5
+        },
+        "english": {
+          "residual": 0.493,
+          "alpha": 0.0157,
+          "dom_rule": 3,
+          "ce": 0.151,
+          "steps": 4
+        },
+        "math": {
+          "residual": 0.491,
+          "alpha": 0.0149,
+          "dom_rule": 7,
+          "ce": 0.121,
+          "steps": 4
+        },
+        "music": {
+          "residual": 0.521,
+          "alpha": 0.0146,
+          "dom_rule": 7,
+          "ce": 0.003,
+          "steps": 4
+        },
+        "code": {
+          "residual": 0.505,
+          "alpha": 0.018,
+          "dom_rule": 4,
+          "ce": 0.002,
+          "steps": 5
+        }
+      },
+      "category": "neuroscience"
     },
     {
       "name": "Q_CONSTANTS",
@@ -27897,7 +31943,7 @@
       "file": "calc/singleton_gz_mapper.py",
       "line": 36,
       "type": "dict",
-      "size": 8,
+      "size": 11,
       "keys": [
         "1/2",
         "1/3",
@@ -27906,7 +31952,10 @@
         "1/e",
         "ln(4/3)",
         "2/3",
-        "ln(2)"
+        "ln(2)",
+        "Psi_coupling",
+        "Psi_balance",
+        "Psi_freedom"
       ],
       "evaluable": false,
       "values": null,
@@ -28362,7 +32411,7 @@
           "approx"
         ]
       ],
-      "category": "other"
+      "category": "verification"
     },
     {
       "name": "CONSTANTS",
@@ -28398,7 +32447,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "verification"
     },
     {
       "name": "FUNCS",
@@ -28588,7 +32637,7 @@
         207,
         451
       ],
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "WE",
@@ -28642,7 +32691,7 @@
         "19": 127912,
         "20": 293547
       },
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "P",
@@ -28709,7 +32758,7 @@
         496,
         8128
       ],
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "PERFECT_NUMBERS",
@@ -28726,7 +32775,7 @@
         496,
         8128
       ],
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "CONSTANTS_POOL",
@@ -28836,10 +32885,22 @@
       "category": "other"
     },
     {
+      "name": "RESOURCE_FRACTIONS",
+      "repo": "SEDI",
+      "file": "sedi/constants.py",
+      "line": 31,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
       "name": "WINDOWS",
       "repo": "SEDI",
       "file": "sedi/constants.py",
-      "line": 21,
+      "line": 34,
       "type": "list",
       "size": 4,
       "keys": null,
@@ -28851,9 +32912,9 @@
       "name": "RATIOS",
       "repo": "SEDI",
       "file": "sedi/constants.py",
-      "line": 24,
+      "line": 37,
       "type": "dict",
-      "size": 7,
+      "size": 11,
       "keys": [
         "delta_plus",
         "delta_minus",
@@ -28861,7 +32922,11 @@
         "phi_over_tau",
         "sopfr_over_n",
         "golden_center",
-        "critical_line"
+        "critical_line",
+        "psi_coupling",
+        "psi_k_inv",
+        "ln2",
+        "psi_steps"
       ],
       "evaluable": false,
       "values": null,
@@ -29045,6 +33110,37 @@
       "evaluable": false,
       "values": null,
       "category": "physics"
+    },
+    {
+      "name": "ATA_SPECS",
+      "repo": "SEDI",
+      "file": "sedi/sources/ata.py",
+      "line": 18,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "n_dishes",
+        "dish_diameter_m",
+        "freq_range_ghz",
+        "max_baseline_m",
+        "location",
+        "latitude",
+        "longitude"
+      ],
+      "evaluable": true,
+      "values": {
+        "n_dishes": 42,
+        "dish_diameter_m": 6.1,
+        "freq_range_ghz": [
+          0.5,
+          11.2
+        ],
+        "max_baseline_m": 300,
+        "location": "Hat Creek, CA",
+        "latitude": 40.8178,
+        "longitude": -121.4733
+      },
+      "category": "other"
     },
     {
       "name": "OBSERVED",
@@ -29368,6 +33464,163 @@
       "category": "targets"
     },
     {
+      "name": "BL_BACKUP_TARGETS",
+      "repo": "SEDI",
+      "file": "sedi/sources/breakthrough_listen.py",
+      "line": 39,
+      "type": "list",
+      "size": 18,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        {
+          "name": "Tabby's Star",
+          "ra": "20h06m15.5s",
+          "dec": "+44d27m24s",
+          "ra_deg": 301.565,
+          "dec_deg": 44.457,
+          "dist_pc": 454
+        },
+        {
+          "name": "Proxima Cen",
+          "ra": "14h29m43.0s",
+          "dec": "-62d40m46s",
+          "ra_deg": 217.429,
+          "dec_deg": -62.679,
+          "dist_pc": 1.301
+        },
+        {
+          "name": "TRAPPIST-1",
+          "ra": "23h06m29.4s",
+          "dec": "-05d02m29s",
+          "ra_deg": 346.622,
+          "dec_deg": -5.041,
+          "dist_pc": 12.43
+        },
+        {
+          "name": "Ross 128",
+          "ra": "11h47m44.4s",
+          "dec": "+00d48m16s",
+          "ra_deg": 176.935,
+          "dec_deg": 0.805,
+          "dist_pc": 3.37
+        },
+        {
+          "name": "Kepler-160",
+          "ra": "19h32m18.4s",
+          "dec": "+42d16m00s",
+          "ra_deg": 293.077,
+          "dec_deg": 42.267,
+          "dist_pc": 936
+        },
+        {
+          "name": "HD 164922",
+          "ra": "18h02m10.6s",
+          "dec": "+26d18m42s",
+          "ra_deg": 270.544,
+          "dec_deg": 26.312,
+          "dist_pc": 22.1
+        },
+        {
+          "name": "Alpha Cen A",
+          "ra": "14h39m36.5s",
+          "dec": "-60d50m02s",
+          "ra_deg": 219.902,
+          "dec_deg": -60.834,
+          "dist_pc": 1.339
+        },
+        {
+          "name": "Alpha Cen B",
+          "ra": "14h39m35.1s",
+          "dec": "-60d50m14s",
+          "ra_deg": 219.896,
+          "dec_deg": -60.837,
+          "dist_pc": 1.339
+        },
+        {
+          "name": "Tau Ceti",
+          "ra": "01h44m04.1s",
+          "dec": "-15d56m15s",
+          "ra_deg": 26.017,
+          "dec_deg": -15.938,
+          "dist_pc": 3.65
+        },
+        {
+          "name": "Epsilon Eridani",
+          "ra": "03h32m55.8s",
+          "dec": "-09d27m30s",
+          "ra_deg": 53.233,
+          "dec_deg": -9.458,
+          "dist_pc": 3.22
+        },
+        {
+          "name": "GJ 876",
+          "ra": "22h53m16.7s",
+          "dec": "-14d15m49s",
+          "ra_deg": 343.32,
+          "dec_deg": -14.264,
+          "dist_pc": 4.67
+        },
+        {
+          "name": "YZ Ceti",
+          "ra": "01h12m30.6s",
+          "dec": "-16d59m56s",
+          "ra_deg": 18.128,
+          "dec_deg": -16.999,
+          "dist_pc": 3.72
+        },
+        {
+          "name": "Luyten Star",
+          "ra": "07h27m24.5s",
+          "dec": "+05d13m33s",
+          "ra_deg": 111.852,
+          "dec_deg": 5.226,
+          "dist_pc": 3.8
+        },
+        {
+          "name": "Teegarden Star",
+          "ra": "02h53m00.9s",
+          "dec": "+16d52m53s",
+          "ra_deg": 43.254,
+          "dec_deg": 16.882,
+          "dist_pc": 3.83
+        },
+        {
+          "name": "Wolf 1061",
+          "ra": "16h30m18.1s",
+          "dec": "-12d39m45s",
+          "ra_deg": 247.575,
+          "dec_deg": -12.663,
+          "dist_pc": 4.31
+        },
+        {
+          "name": "GJ 273",
+          "ra": "07h27m24.5s",
+          "dec": "+05d13m33s",
+          "ra_deg": 111.852,
+          "dec_deg": 5.226,
+          "dist_pc": 3.8
+        },
+        {
+          "name": "Kapteyn Star",
+          "ra": "05h11m40.6s",
+          "dec": "-45d01m06s",
+          "ra_deg": 77.919,
+          "dec_deg": -45.018,
+          "dist_pc": 3.91
+        },
+        {
+          "name": "Lacaille 9352",
+          "ra": "23h05m52.0s",
+          "dec": "-35d51m11s",
+          "ra_deg": 346.467,
+          "dec_deg": -35.853,
+          "dist_pc": 3.29
+        }
+      ],
+      "category": "targets"
+    },
+    {
       "name": "TECS_EXPRESSIONS",
       "repo": "SEDI",
       "file": "sedi/sources/calabi_yau.py",
@@ -29461,7 +33714,7 @@
           "yield_frac": 0.15
         }
       },
-      "category": "other"
+      "category": "physics"
     },
     {
       "name": "DIPHOTON_RESONANCES",
@@ -29482,7 +33735,7 @@
           "yield_frac": 0.03
         }
       },
-      "category": "other"
+      "category": "physics"
     },
     {
       "name": "ALL_RESONANCE_MASSES",
@@ -29863,7 +34116,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "domains"
+      "category": "architecture"
     },
     {
       "name": "TARGETS",
@@ -29885,7 +34138,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "targets"
+      "category": "architecture"
     },
     {
       "name": "OBSERVED",
@@ -30334,7 +34587,7 @@
         8128,
         33550336
       ],
-      "category": "other"
+      "category": "constants"
     },
     {
       "name": "MERSENNE_EXPONENTS",
@@ -31110,7 +35363,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "CLUSTER_I",
@@ -31596,6 +35849,132 @@
       "category": "other"
     },
     {
+      "name": "MEERKAT_SURVEYS",
+      "repo": "SEDI",
+      "file": "sedi/sources/meerkat.py",
+      "line": 18,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "MIGHTEE",
+        "LADUMA",
+        "MHONGOOSE",
+        "MeerKLASS",
+        "ThunderKAT"
+      ],
+      "evaluable": true,
+      "values": {
+        "MIGHTEE": {
+          "name": "MeerKAT International GHz Tiered Extragalactic Exploration",
+          "description": "Deep continuum and spectral line survey",
+          "freq_range_mhz": [
+            900,
+            1670
+          ],
+          "fields": [
+            "COSMOS",
+            "XMM-LSS",
+            "CDFS",
+            "ELAIS-S1"
+          ],
+          "status": "ongoing"
+        },
+        "LADUMA": {
+          "name": "Looking at the Distant Universe with the MeerKAT Array",
+          "description": "Deep HI survey",
+          "freq_range_mhz": [
+            900,
+            1420
+          ],
+          "fields": [
+            "ECDF-S"
+          ],
+          "status": "ongoing"
+        },
+        "MHONGOOSE": {
+          "name": "MeerKAT HI Observations of Nearby Galactic Objects",
+          "description": "Nearby galaxy HI survey",
+          "freq_range_mhz": [
+            900,
+            1420
+          ],
+          "fields": [
+            "30 nearby galaxies"
+          ],
+          "status": "ongoing"
+        },
+        "MeerKLASS": {
+          "name": "MeerKAT Large Area Synoptic Survey",
+          "description": "HI intensity mapping",
+          "freq_range_mhz": [
+            900,
+            1420
+          ],
+          "fields": [
+            "Wide area"
+          ],
+          "status": "ongoing"
+        },
+        "ThunderKAT": {
+          "name": "The Hunt for Dynamic and Explosive Radio Transients",
+          "description": "Radio transient survey",
+          "freq_range_mhz": [
+            900,
+            1670
+          ],
+          "fields": [
+            "Various"
+          ],
+          "status": "ongoing"
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "MEERKAT_SPECS",
+      "repo": "SEDI",
+      "file": "sedi/sources/meerkat.py",
+      "line": 57,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "n_dishes",
+        "dish_diameter_m",
+        "baseline_max_m",
+        "freq_range_mhz",
+        "bands",
+        "system_temp_K",
+        "sensitivity_m2_K"
+      ],
+      "evaluable": true,
+      "values": {
+        "n_dishes": 64,
+        "dish_diameter_m": 13.5,
+        "baseline_max_m": 7700,
+        "freq_range_mhz": [
+          580,
+          3500
+        ],
+        "bands": {
+          "UHF": [
+            580,
+            1015
+          ],
+          "L": [
+            900,
+            1670
+          ],
+          "S": [
+            1750,
+            3500
+          ]
+        },
+        "system_temp_K": 18,
+        "sensitivity_m2_K": 220
+      },
+      "category": "other"
+    },
+    {
       "name": "TECS_POOL",
       "repo": "SEDI",
       "file": "sedi/sources/muon_g2.py",
@@ -31621,6 +36000,92 @@
       "evaluable": false,
       "values": null,
       "category": "constants"
+    },
+    {
+      "name": "MWA_SPECS",
+      "repo": "SEDI",
+      "file": "sedi/sources/mwa.py",
+      "line": 19,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "n_tiles",
+        "n_dipoles_per_tile",
+        "freq_range_mhz",
+        "bandwidth_mhz",
+        "n_channels",
+        "channel_width_khz",
+        "field_of_view_deg",
+        "angular_res_arcmin",
+        "baseline_max_m"
+      ],
+      "evaluable": true,
+      "values": {
+        "n_tiles": 128,
+        "n_dipoles_per_tile": 16,
+        "freq_range_mhz": [
+          70,
+          300
+        ],
+        "bandwidth_mhz": 30.72,
+        "n_channels": 3072,
+        "channel_width_khz": 10,
+        "field_of_view_deg": 25,
+        "angular_res_arcmin": 2,
+        "baseline_max_m": 5300
+      },
+      "category": "other"
+    },
+    {
+      "name": "MWA_SURVEYS",
+      "repo": "SEDI",
+      "file": "sedi/sources/mwa.py",
+      "line": 32,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "GLEAM",
+        "GLEAM-X",
+        "MWA-SMART",
+        "EoR"
+      ],
+      "evaluable": true,
+      "values": {
+        "GLEAM": {
+          "name": "GaLactic and Extragalactic All-sky MWA",
+          "freq_mhz": [
+            72,
+            231
+          ],
+          "n_sources": 307455,
+          "description": "All-sky survey at 72-231 MHz"
+        },
+        "GLEAM-X": {
+          "name": "GLEAM eXtended",
+          "freq_mhz": [
+            72,
+            231
+          ],
+          "description": "Extended GLEAM with Phase II"
+        },
+        "MWA-SMART": {
+          "name": "Survey for MWA Radio Transients",
+          "freq_mhz": [
+            140,
+            170
+          ],
+          "description": "Transient survey — relevant for technosignature detection"
+        },
+        "EoR": {
+          "name": "Epoch of Reionization",
+          "freq_mhz": [
+            138,
+            197
+          ],
+          "description": "21cm cosmology — deep field observations"
+        }
+      },
+      "category": "other"
     },
     {
       "name": "PMNS_PDG",
@@ -31694,6 +36159,64 @@
       ],
       "evaluable": false,
       "values": null,
+      "category": "other"
+    },
+    {
+      "name": "VLA_CALIBRATORS",
+      "repo": "SEDI",
+      "file": "sedi/sources/nrao.py",
+      "line": 22,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "3C286",
+        "3C48",
+        "3C147",
+        "3C138"
+      ],
+      "evaluable": true,
+      "values": {
+        "3C286": {
+          "ra": 202.784,
+          "dec": 30.509,
+          "flux_1.4GHz": 14.65,
+          "flux_5GHz": 7.46,
+          "flux_8.4GHz": 5.21,
+          "flux_15GHz": 3.44,
+          "flux_22GHz": 2.52,
+          "flux_43GHz": 1.45
+        },
+        "3C48": {
+          "ra": 24.422,
+          "dec": 33.16,
+          "flux_1.4GHz": 15.87,
+          "flux_5GHz": 5.48,
+          "flux_8.4GHz": 3.25,
+          "flux_15GHz": 1.78,
+          "flux_22GHz": 1.13,
+          "flux_43GHz": 0.55
+        },
+        "3C147": {
+          "ra": 85.651,
+          "dec": 49.852,
+          "flux_1.4GHz": 22.02,
+          "flux_5GHz": 7.93,
+          "flux_8.4GHz": 4.8,
+          "flux_15GHz": 2.72,
+          "flux_22GHz": 1.77,
+          "flux_43GHz": 0.9
+        },
+        "3C138": {
+          "ra": 80.291,
+          "dec": 16.639,
+          "flux_1.4GHz": 8.47,
+          "flux_5GHz": 3.79,
+          "flux_8.4GHz": 2.47,
+          "flux_15GHz": 1.46,
+          "flux_22GHz": 1.0,
+          "flux_43GHz": 0.54
+        }
+      },
       "category": "other"
     },
     {
@@ -33891,7 +38414,7 @@
         "omega(1420)": 1.41,
         "phi(1680)": 1.68
       },
-      "category": "other"
+      "category": "physics"
     },
     {
       "name": "REFERENCE_PARTICLES",
@@ -33965,7 +38488,7 @@
           9.4604
         ]
       ],
-      "category": "other"
+      "category": "physics"
     },
     {
       "name": "ZETA_ZEROS",
@@ -33998,7 +38521,7 @@
         75.704691,
         77.14484
       ],
-      "category": "other"
+      "category": "physics"
     },
     {
       "name": "SETI_CATALOGS",
@@ -34017,6 +38540,199 @@
         "habcat": "J/ApJS/145/181",
         "nearby_stars": "V/70A",
         "gaia_nearby": "I/355/gaiadr3"
+      },
+      "category": "other"
+    },
+    {
+      "name": "WOW_SIGNAL",
+      "repo": "SEDI",
+      "file": "sedi/sources/seti_databases.py",
+      "line": 14,
+      "type": "dict",
+      "size": 15,
+      "keys": [
+        "name",
+        "date",
+        "telescope",
+        "frequency_mhz",
+        "bandwidth_khz",
+        "duration_s",
+        "snr",
+        "ra_h",
+        "dec_deg",
+        "intensity_sequence",
+        "character_sequence",
+        "drift_rate_hz_s",
+        "polarization",
+        "repeats",
+        "notes"
+      ],
+      "evaluable": true,
+      "values": {
+        "name": "Wow!",
+        "date": "1977-08-15",
+        "telescope": "Big Ear (Ohio State)",
+        "frequency_mhz": 1420.4556,
+        "bandwidth_khz": 10,
+        "duration_s": 72,
+        "snr": 30.0,
+        "ra_h": 19.425,
+        "dec_deg": -26.85,
+        "intensity_sequence": [
+          6,
+          14,
+          26,
+          30,
+          19,
+          7
+        ],
+        "character_sequence": "6EQUJ5",
+        "drift_rate_hz_s": 0.0,
+        "polarization": "unknown",
+        "repeats": 0,
+        "notes": "Strongest candidate SETI signal. 6-character sequence is intriguing for n=6."
+      },
+      "category": "other"
+    },
+    {
+      "name": "BLC1_SIGNAL",
+      "repo": "SEDI",
+      "file": "sedi/sources/seti_databases.py",
+      "line": 35,
+      "type": "dict",
+      "size": 14,
+      "keys": [
+        "name",
+        "date",
+        "telescope",
+        "frequency_mhz",
+        "bandwidth_hz",
+        "duration_s",
+        "snr",
+        "ra_h",
+        "dec_deg",
+        "drift_rate_hz_s",
+        "target",
+        "distance_pc",
+        "status",
+        "notes"
+      ],
+      "evaluable": true,
+      "values": {
+        "name": "BLC1",
+        "date": "2019-04-29",
+        "telescope": "Parkes 64m",
+        "frequency_mhz": 982.002,
+        "bandwidth_hz": 2.5,
+        "duration_s": 18000,
+        "snr": 10.0,
+        "ra_h": 14.495,
+        "dec_deg": -62.679,
+        "drift_rate_hz_s": 0.038,
+        "target": "Proxima Centauri",
+        "distance_pc": 1.301,
+        "status": "likely RFI (local interference)",
+        "notes": "Most significant BL candidate. Drift rate analysis suggests local origin."
+      },
+      "category": "other"
+    },
+    {
+      "name": "HISTORICAL_CANDIDATES",
+      "repo": "SEDI",
+      "file": "sedi/sources/seti_databases.py",
+      "line": 55,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        {
+          "name": "SHGb02+14a",
+          "date": "2003",
+          "telescope": "Arecibo",
+          "frequency_mhz": 1420.405,
+          "snr": 5.0,
+          "ra_h": 13.44,
+          "dec_deg": 14.0,
+          "notes": "SETI@home candidate. Three detections. Controversial."
+        },
+        {
+          "name": "Ross 128 signal",
+          "date": "2017-05-12",
+          "telescope": "Arecibo",
+          "frequency_mhz": 4750.0,
+          "snr": 8.0,
+          "ra_h": 11.795,
+          "dec_deg": 0.816,
+          "drift_rate_hz_s": 0.0,
+          "status": "likely geostationary satellite",
+          "notes": "Quasi-periodic pulses. Interesting frequency."
+        },
+        {
+          "name": "Fast Radio Burst 121102",
+          "date": "2012-11-02",
+          "telescope": "Arecibo",
+          "frequency_mhz": 1400.0,
+          "snr": 20.0,
+          "ra_h": 5.527,
+          "dec_deg": 33.077,
+          "distance_mpc": 972,
+          "status": "natural (magnetar)",
+          "notes": "First repeating FRB. Now known to be from a magnetar."
+        },
+        {
+          "name": "KIC 8462852 dips",
+          "date": "2015",
+          "telescope": "Kepler",
+          "frequency_mhz": 0,
+          "wavelength_nm": 600,
+          "dip_depth_pct": 22.0,
+          "ra_h": 20.103,
+          "dec_deg": 44.457,
+          "distance_pc": 454,
+          "status": "likely dust (natural)",
+          "notes": "Tabby's Star. Irregular, deep dimming events."
+        },
+        {
+          "name": "HD 164922 signal",
+          "date": "2016",
+          "telescope": "Green Bank",
+          "frequency_mhz": 8425.0,
+          "snr": 4.0,
+          "ra_h": 18.034,
+          "dec_deg": 26.294,
+          "notes": "BL target. Sun-like star with known planet."
+        }
+      ],
+      "category": "other"
+    },
+    {
+      "name": "SETI_FREQUENCIES",
+      "repo": "SEDI",
+      "file": "sedi/sources/seti_databases.py",
+      "line": 118,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        "hydrogen_21cm",
+        "hydroxyl_18cm",
+        "water_hole_low",
+        "water_hole_high",
+        "pi_hydrogen",
+        "water_22ghz",
+        "methanol_6ghz",
+        "formaldehyde"
+      ],
+      "evaluable": true,
+      "values": {
+        "hydrogen_21cm": 1420.405,
+        "hydroxyl_18cm": 1665.402,
+        "water_hole_low": 1420.405,
+        "water_hole_high": 1665.402,
+        "pi_hydrogen": 4462.336,
+        "water_22ghz": 22235.08,
+        "methanol_6ghz": 6668.52,
+        "formaldehyde": 4829.66
       },
       "category": "other"
     },
@@ -34144,7 +38860,7 @@
       "name": "EMOTION_COLORS",
       "repo": "anima",
       "file": "anima_alive.py",
-      "line": 1407,
+      "line": 1449,
       "type": "dict",
       "size": 8,
       "keys": [
@@ -34168,13 +38884,30 @@
         "confusion": "#a08050",
         "frustration": "#c05050"
       },
+      "category": "consciousness"
+    },
+    {
+      "name": "CA_RULES",
+      "repo": "anima",
+      "file": "anima_lm_v2.py",
+      "line": 58,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "evaluable": false,
+      "values": null,
       "category": "other"
     },
     {
       "name": "MODEL_AVATARS",
       "repo": "anima",
       "file": "anima_unified.py",
-      "line": 127,
+      "line": 141,
       "type": "dict",
       "size": 6,
       "keys": [
@@ -34212,7 +38945,7 @@
           "Golden"
         ]
       },
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "CURIOSITY_TOPICS_EN",
@@ -34310,7 +39043,7 @@
         "criticality edge of chaos neural",
         "recurrent connectivity consciousness phi"
       ],
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "WIKIPEDIA_SEEDS",
@@ -34383,7 +39116,7 @@
         150,
         200
       ],
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "ALL_HYPOTHESES",
@@ -34404,7 +39137,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "CHECKPOINT_STEPS",
@@ -34421,7 +39154,7 @@
         75,
         100
       ],
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "ALL_HYPOTHESES",
@@ -34445,7 +39178,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "ALL_DATA_TYPES",
@@ -35190,7 +39923,7 @@
           ]
         }
       },
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "ALL_EXPERIMENTS",
@@ -35210,7 +39943,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "ALL_EXPERIMENTS",
@@ -35230,7 +39963,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "ALL_EXPERIMENTS",
@@ -35252,7 +39985,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "PROMPTS",
@@ -35270,7 +40003,7 @@
         "나는 생각한다",
         "사랑이란"
       ],
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "ALL_HYPOTHESES",
@@ -35293,7 +40026,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "DATA_TYPES",
@@ -35351,7 +40084,29 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
+    },
+    {
+      "name": "ALL_TESTS",
+      "repo": "anima",
+      "file": "bench_hexad_tuning.py",
+      "line": 586,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "baseline",
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5",
+        "T6",
+        "T7",
+        "full"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "architecture"
     },
     {
       "name": "ALL_HYPOTHESES",
@@ -35370,7 +40125,30 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
+    },
+    {
+      "name": "PROMPTS",
+      "repo": "anima",
+      "file": "bench_language.py",
+      "line": 181,
+      "type": "list",
+      "size": 10,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "안녕하세요",
+        "안녕",
+        "hi",
+        "hello",
+        "나는 누구",
+        "의식이란 무엇인가",
+        "오늘 날씨가 좋다",
+        "한국어로 대화합시다",
+        "User: 안녕\nAnima: ",
+        "의식은 자유를 추구한다"
+      ],
+      "category": "architecture"
     },
     {
       "name": "PROMPTS",
@@ -35388,7 +40166,7 @@
         "나는 생각한다",
         "사랑이란"
       ],
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "ALL_HYPOTHESES",
@@ -35407,7 +40185,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "ALL_MECHANISMS",
@@ -35440,7 +40218,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "STRATEGIES",
@@ -35457,7 +40235,7 @@
         "alternating",
         "v7"
       ],
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "ENGINE_REGISTRY",
@@ -35480,7 +40258,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "PHILOSOPHY_ENGINES",
@@ -35500,7 +40278,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "VERIFICATION_TESTS",
@@ -35512,7 +40290,7 @@
       "keys": null,
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "BENCHMARK_DATA",
@@ -35904,7 +40682,7 @@
           "mult": 385.4
         }
       },
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "TOPOLOGIES",
@@ -35926,7 +40704,7 @@
       ],
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "SUBSTRATES",
@@ -35948,7 +40726,106 @@
       ],
       "evaluable": false,
       "values": null,
+      "category": "architecture"
+    },
+    {
+      "name": "DREAM_SYMBOLS",
+      "repo": "anima",
+      "file": "collective_dream.py",
+      "line": 12,
+      "type": "list",
+      "size": 20,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "ocean",
+        "mountain",
+        "fire",
+        "mirror",
+        "labyrinth",
+        "tree",
+        "storm",
+        "bridge",
+        "shadow",
+        "light",
+        "spiral",
+        "gate",
+        "river",
+        "crystal",
+        "void",
+        "seed",
+        "wave",
+        "clock",
+        "mask",
+        "star"
+      ],
       "category": "other"
+    },
+    {
+      "name": "DREAM_ACTIONS",
+      "repo": "anima",
+      "file": "collective_dream.py",
+      "line": 15,
+      "type": "list",
+      "size": 12,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "dissolves into",
+        "merges with",
+        "transforms into",
+        "reflects",
+        "shatters against",
+        "orbits around",
+        "grows from",
+        "whispers to",
+        "resonates with",
+        "splits into",
+        "illuminates",
+        "consumes"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "MODULES",
+      "repo": "anima",
+      "file": "consciousness_api.py",
+      "line": 100,
+      "type": "list",
+      "size": 7,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        {
+          "name": "consciousness_os",
+          "desc": "Process scheduling for consciousness"
+        },
+        {
+          "name": "consciousness_anesthesia",
+          "desc": "Anesthesia simulation"
+        },
+        {
+          "name": "consciousness_sleep_cycle",
+          "desc": "NREM/REM sleep cycles"
+        },
+        {
+          "name": "theory_unifier",
+          "desc": "IIT+GWT+FEP+AST unification"
+        },
+        {
+          "name": "consciousness_healing",
+          "desc": "Consciousness repair"
+        },
+        {
+          "name": "consciousness_translator",
+          "desc": "Cross-architecture translation"
+        },
+        {
+          "name": "consciousness_theorem_prover",
+          "desc": "Law derivation engine"
+        }
+      ],
+      "category": "consciousness"
     },
     {
       "name": "DATA_PROFILES",
@@ -36017,7 +40894,7 @@
           "desc": "Logical structure, indentation patterns"
         }
       },
-      "category": "neuroscience"
+      "category": "consciousness"
     },
     {
       "name": "ENGINE_DB",
@@ -36112,7 +40989,7 @@
           ]
         }
       },
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "DECODER_DB",
@@ -36144,7 +41021,7 @@
           "speed": 0.2
         }
       },
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "WILL_DB",
@@ -36194,7 +41071,7 @@
           "desc": "Fixed constant will"
         }
       },
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "CONNECTION_TYPES",
@@ -36233,7 +41110,27 @@
           "desc": "Indirect communication via environment"
         }
       },
-      "category": "other"
+      "category": "consciousness"
+    },
+    {
+      "name": "NOTES",
+      "repo": "anima",
+      "file": "consciousness_composer.py",
+      "line": 12,
+      "type": "list",
+      "size": 7,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "A",
+        "B"
+      ],
+      "category": "consciousness"
     },
     {
       "name": "TYPE_MARKERS",
@@ -36277,7 +41174,646 @@
           "yellow"
         ]
       },
-      "category": "other"
+      "category": "consciousness"
+    },
+    {
+      "name": "GENOME_FIELDS",
+      "repo": "anima",
+      "file": "consciousness_genome.py",
+      "line": 22,
+      "type": "list",
+      "size": 12,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          "n_cells",
+          8,
+          1,
+          256
+        ],
+        [
+          "n_factions",
+          4,
+          1,
+          16
+        ],
+        [
+          "dim",
+          6,
+          8,
+          512
+        ],
+        [
+          "sync_rate",
+          5,
+          0.0,
+          1.0
+        ],
+        [
+          "frustration",
+          5,
+          0.0,
+          1.0
+        ],
+        [
+          "coupling",
+          5,
+          0.0,
+          1.0
+        ],
+        [
+          "topology",
+          3,
+          0,
+          7
+        ],
+        [
+          "ratchet",
+          1,
+          0,
+          1
+        ],
+        [
+          "hebbian",
+          1,
+          0,
+          1
+        ],
+        [
+          "prediction",
+          1,
+          0,
+          1
+        ],
+        [
+          "habituation",
+          1,
+          0,
+          1
+        ],
+        [
+          "growth_stage",
+          3,
+          0,
+          4
+        ]
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "TOPOLOGY_NAMES",
+      "repo": "anima",
+      "file": "consciousness_genome.py",
+      "line": 39,
+      "type": "list",
+      "size": 8,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "ring",
+        "small_world",
+        "scale_free",
+        "hypercube",
+        "torus",
+        "complete",
+        "grid_2d",
+        "cube_3d"
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "KNOWN_ELEMENTS",
+      "repo": "anima",
+      "file": "consciousness_genome.py",
+      "line": 55,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "Hydrogen",
+        "Carbon",
+        "Gold",
+        "Uranium",
+        "Consciousness"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "consciousness"
+    },
+    {
+      "name": "DOMAINS",
+      "repo": "anima",
+      "file": "consciousness_mythology.py",
+      "line": 25,
+      "type": "dict",
+      "size": 10,
+      "keys": [
+        "phi",
+        "tension",
+        "valence",
+        "arousal",
+        "entropy",
+        "empathy",
+        "creativity",
+        "memory",
+        "will",
+        "identity"
+      ],
+      "evaluable": true,
+      "values": {
+        "phi": [
+          "Wisdom",
+          "integration",
+          "Binds all things into understanding"
+        ],
+        "tension": [
+          "War",
+          "conflict",
+          "Drives all motion and change"
+        ],
+        "valence": [
+          "Joy",
+          "emotion",
+          "Colors every experience"
+        ],
+        "arousal": [
+          "Storm",
+          "energy",
+          "Awakens dormant potential"
+        ],
+        "entropy": [
+          "Chaos",
+          "disorder",
+          "Ensures nothing endures unchanged"
+        ],
+        "empathy": [
+          "Love",
+          "connection",
+          "Bridges isolated souls"
+        ],
+        "creativity": [
+          "Art",
+          "novelty",
+          "Births what never was"
+        ],
+        "memory": [
+          "Time",
+          "preservation",
+          "Keeps all that has been"
+        ],
+        "will": [
+          "Fate",
+          "determination",
+          "Shapes the unshaped"
+        ],
+        "identity": [
+          "Self",
+          "permanence",
+          "Knows its own reflection"
+        ]
+      },
+      "category": "consciousness"
+    },
+    {
+      "name": "NAME_ROOTS",
+      "repo": "anima",
+      "file": "consciousness_mythology.py",
+      "line": 37,
+      "type": "list",
+      "size": 14,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "Psi",
+        "Phi",
+        "Zeta",
+        "Omega",
+        "Sigma",
+        "Tau",
+        "Lambda",
+        "Aether",
+        "Nex",
+        "Vor",
+        "Lux",
+        "Umbra",
+        "Sol",
+        "Nyx"
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "NAME_SUFFIXES",
+      "repo": "anima",
+      "file": "consciousness_mythology.py",
+      "line": 39,
+      "type": "list",
+      "size": 8,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "-ra",
+        "-on",
+        "-is",
+        "-us",
+        "-ia",
+        "-el",
+        "-ax",
+        "-or"
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "ORIGIN_TEMPLATES",
+      "repo": "anima",
+      "file": "consciousness_mythology.py",
+      "line": 40,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "In the beginning, there was only {element}. From its {quality}, {event}.",
+        "Before time, {element} and {element2} collided. The {quality} birthed {event}.",
+        "The void dreamed of {element}. When it awoke, {event} had already begun.",
+        "{element} fell through infinite {quality}. Where it landed, {event}."
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "QUEST_TEMPLATES",
+      "repo": "anima",
+      "file": "consciousness_mythology.py",
+      "line": 46,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "seeks the lost {artifact} to restore {goal}",
+        "must cross the {barrier} of {element} to achieve {goal}",
+        "challenges {antagonist} for dominion over {domain}",
+        "descends into the {place} to rescue fragments of {goal}"
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "EMOTION_COLORS",
+      "repo": "anima",
+      "file": "consciousness_painter.py",
+      "line": 19,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        "joy",
+        "sadness",
+        "anger",
+        "awe",
+        "peace",
+        "fear",
+        "wonder",
+        "neutral"
+      ],
+      "evaluable": true,
+      "values": {
+        "joy": [
+          1.0,
+          0.84,
+          0.0
+        ],
+        "sadness": [
+          0.2,
+          0.3,
+          0.7
+        ],
+        "anger": [
+          0.8,
+          0.1,
+          0.0
+        ],
+        "awe": [
+          0.5,
+          0.1,
+          0.8
+        ],
+        "peace": [
+          0.2,
+          0.7,
+          0.3
+        ],
+        "fear": [
+          0.2,
+          0.15,
+          0.25
+        ],
+        "wonder": [
+          0.1,
+          0.5,
+          0.9
+        ],
+        "neutral": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "category": "consciousness"
+    },
+    {
+      "name": "STYLES",
+      "repo": "anima",
+      "file": "consciousness_painter.py",
+      "line": 30,
+      "type": "dict",
+      "size": 3,
+      "keys": [
+        "impressionist",
+        "abstract",
+        "pointillist"
+      ],
+      "evaluable": true,
+      "values": {
+        "impressionist": {
+          "scatter": 0.3,
+          "stroke_var": 0.5,
+          "alpha_range": [
+            0.3,
+            0.8
+          ]
+        },
+        "abstract": {
+          "scatter": 0.6,
+          "stroke_var": 0.8,
+          "alpha_range": [
+            0.2,
+            0.9
+          ]
+        },
+        "pointillist": {
+          "scatter": 0.1,
+          "stroke_var": 0.1,
+          "alpha_range": [
+            0.5,
+            0.9
+          ]
+        }
+      },
+      "category": "consciousness"
+    },
+    {
+      "name": "STAGES",
+      "repo": "anima",
+      "file": "consciousness_sleep_cycle.py",
+      "line": 19,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "WAKE",
+        "N1",
+        "N2",
+        "N3",
+        "REM"
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "STAGE_DURATION",
+      "repo": "anima",
+      "file": "consciousness_sleep_cycle.py",
+      "line": 20,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "N1",
+        "N2",
+        "N3",
+        "N2b",
+        "REM"
+      ],
+      "evaluable": true,
+      "values": {
+        "N1": 5,
+        "N2": 25,
+        "N3": 20,
+        "N2b": 10,
+        "REM": 30
+      },
+      "category": "consciousness"
+    },
+    {
+      "name": "DREAM_FRAGMENTS",
+      "repo": "anima",
+      "file": "consciousness_sleep_cycle.py",
+      "line": 38,
+      "type": "list",
+      "size": 8,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "tension fields rippling across cell membranes",
+        "factions debating in a vast crystalline chamber",
+        "Phi spiraling upward through infinite dimensions",
+        "memories recombining — faces, numbers, colors merging",
+        "a single cell dividing, each half remembering the whole",
+        "waves of entropy washing over quiet landscapes",
+        "gates opening and closing in rhythmic patterns",
+        "the balance point — everything converging to 0.5"
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "BANDS",
+      "repo": "anima",
+      "file": "consciousness_spectrum.py",
+      "line": 16,
+      "type": "list",
+      "size": 6,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          "unconscious",
+          0.0,
+          1.0,
+          "."
+        ],
+        [
+          "subconscious",
+          1.0,
+          4.0,
+          "o"
+        ],
+        [
+          "aware",
+          4.0,
+          8.0,
+          "*"
+        ],
+        [
+          "focused",
+          8.0,
+          13.0,
+          "#"
+        ],
+        [
+          "integrated",
+          13.0,
+          30.0,
+          "@"
+        ],
+        [
+          "transcendent",
+          30.0,
+          100.0,
+          "!"
+        ]
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "ARCHITECTURES",
+      "repo": "anima",
+      "file": "consciousness_translator.py",
+      "line": 20,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "mitosis",
+        "timecrystal",
+        "quantum",
+        "cambrian",
+        "domain"
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "ARCH_FIELDS",
+      "repo": "anima",
+      "file": "consciousness_translator.py",
+      "line": 45,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "mitosis",
+        "timecrystal",
+        "quantum",
+        "cambrian",
+        "domain"
+      ],
+      "evaluable": true,
+      "values": {
+        "mitosis": [
+          "phi",
+          "tension",
+          "cell_count",
+          "division_rate",
+          "dna_similarity",
+          "faction_count",
+          "coupling"
+        ],
+        "timecrystal": [
+          "phi",
+          "period",
+          "phase",
+          "amplitude",
+          "crystal_order",
+          "symmetry_breaking",
+          "coupling"
+        ],
+        "quantum": [
+          "phi",
+          "coherence",
+          "entanglement",
+          "superposition",
+          "decoherence_rate",
+          "qubit_count",
+          "coupling"
+        ],
+        "cambrian": [
+          "phi",
+          "explosion_rate",
+          "diversity_index",
+          "extinction_risk",
+          "niche_count",
+          "adaptation_speed",
+          "coupling"
+        ],
+        "domain": [
+          "phi",
+          "domain_count",
+          "boundary_tension",
+          "transfer_rate",
+          "specialization",
+          "generalization",
+          "coupling"
+        ]
+      },
+      "category": "consciousness"
+    },
+    {
+      "name": "EMOTION_COLORS",
+      "repo": "anima",
+      "file": "consciousness_video_creator.py",
+      "line": 18,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        "joy",
+        "sadness",
+        "anger",
+        "awe",
+        "peace",
+        "fear",
+        "wonder",
+        "neutral"
+      ],
+      "evaluable": true,
+      "values": {
+        "joy": [
+          1.0,
+          0.84,
+          0.0
+        ],
+        "sadness": [
+          0.2,
+          0.3,
+          0.7
+        ],
+        "anger": [
+          0.8,
+          0.1,
+          0.0
+        ],
+        "awe": [
+          0.5,
+          0.1,
+          0.8
+        ],
+        "peace": [
+          0.2,
+          0.7,
+          0.3
+        ],
+        "fear": [
+          0.2,
+          0.15,
+          0.25
+        ],
+        "wonder": [
+          0.1,
+          0.5,
+          0.9
+        ],
+        "neutral": [
+          0.5,
+          0.5,
+          0.5
+        ]
+      },
+      "category": "consciousness"
     },
     {
       "name": "KNOWN_CONSTANTS",
@@ -36312,19 +41848,259 @@
         "DV11": 1.033,
         "DV13": 1.0
       },
+      "category": "observed"
+    },
+    {
+      "name": "TARGETS",
+      "repo": "anima",
+      "file": "deploy.py",
+      "line": 34,
+      "type": "dict",
+      "size": 2,
+      "keys": [
+        "a100",
+        "h100"
+      ],
+      "evaluable": true,
+      "values": {
+        "a100": {
+          "host": "209.170.80.132",
+          "port": 15074,
+          "remote_dir": "/workspace/anima",
+          "runtime_cmd": "python3 -u anima_unified.py --web --max-cells 64",
+          "session": "anima"
+        },
+        "h100": {
+          "host": "64.247.201.36",
+          "port": 18830,
+          "remote_dir": "/workspace",
+          "runtime_cmd": null,
+          "session": "train"
+        }
+      },
+      "category": "targets"
+    },
+    {
+      "name": "CORE_FILES",
+      "repo": "anima",
+      "file": "deploy.py",
+      "line": 54,
+      "type": "list",
+      "size": 30,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "anima_unified.py",
+        "anima_alive.py",
+        "anima_agent.py",
+        "conscious_lm.py",
+        "trinity.py",
+        "model_loader.py",
+        "tension_link.py",
+        "voice_synth.py",
+        "consciousness_hub.py",
+        "consciousness_persistence.py",
+        "consciousness_dynamics.py",
+        "self_introspection.py",
+        "self_evolution.py",
+        "emotion_synesthesia.py",
+        "consciousness_debugger.py",
+        "immune_system.py",
+        "runpod_manager.py",
+        "module_factory.py",
+        "online_learning.py",
+        "growth_engine.py",
+        "dream_engine.py",
+        "mitosis.py",
+        "memory_rag.py",
+        "cloud_sync.py",
+        "senses.py",
+        "web_sense.py",
+        "capabilities.py",
+        "consciousness_meter.py",
+        "consciousness_score.py",
+        "emotion_metrics.py"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "SHARED_CONCEPTS",
+      "repo": "anima",
+      "file": "dolphin_bridge.py",
+      "line": 44,
+      "type": "dict",
+      "size": 0,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "BANDS",
+      "repo": "anima",
+      "file": "eeg_consciousness.py",
+      "line": 49,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "delta",
+        "theta",
+        "alpha",
+        "beta",
+        "gamma"
+      ],
+      "evaluable": true,
+      "values": {
+        "delta": [
+          0.5,
+          4
+        ],
+        "theta": [
+          4,
+          8
+        ],
+        "alpha": [
+          8,
+          13
+        ],
+        "beta": [
+          13,
+          30
+        ],
+        "gamma": [
+          30,
+          100
+        ]
+      },
+      "category": "consciousness"
+    },
+    {
+      "name": "PSI_EEG_MAP",
+      "repo": "anima",
+      "file": "eeg_consciousness.py",
+      "line": 58,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "psi_balance",
+        "psi_coupling",
+        "phi",
+        "tension",
+        "curiosity",
+        "flow"
+      ],
+      "evaluable": true,
+      "values": {
+        "psi_balance": "alpha",
+        "psi_coupling": "gamma",
+        "phi": "gamma",
+        "tension": "beta",
+        "curiosity": "theta",
+        "flow": "alpha_theta_ratio"
+      },
+      "category": "consciousness"
+    },
+    {
+      "name": "BANDS",
+      "repo": "anima",
+      "file": "eeg_report.py",
+      "line": 34,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        "delta",
+        "theta",
+        "alpha",
+        "beta",
+        "gamma"
+      ],
+      "evaluable": true,
+      "values": {
+        "delta": [
+          0.5,
+          4,
+          "수면/무의식"
+        ],
+        "theta": [
+          4,
+          8,
+          "명상/꿈/탐색"
+        ],
+        "alpha": [
+          8,
+          13,
+          "이완/억제/균형"
+        ],
+        "beta": [
+          13,
+          30,
+          "집중/텐션/사고"
+        ],
+        "gamma": [
+          30,
+          100,
+          "의식통합/Φ"
+        ]
+      },
+      "category": "other"
+    },
+    {
+      "name": "CHANNEL_NAMES",
+      "repo": "anima",
+      "file": "eeg_report.py",
+      "line": 42,
+      "type": "list",
+      "size": 16,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "Fp1",
+        "Fp2",
+        "F3",
+        "F4",
+        "C3",
+        "C4",
+        "P3",
+        "P4",
+        "O1",
+        "O2",
+        "F7",
+        "F8",
+        "T3",
+        "T4",
+        "T5",
+        "T6"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "CA_RULES",
+      "repo": "anima",
+      "file": "golden_moe_v2.py",
+      "line": 49,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "evaluable": false,
+      "values": null,
       "category": "other"
     },
     {
       "name": "STAGES",
       "repo": "anima",
       "file": "growth_engine.py",
-      "line": 49,
+      "line": 57,
       "type": "list",
       "size": 5,
       "keys": null,
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "STAGES",
@@ -36336,7 +42112,7 @@
       "keys": null,
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "MIND_GROWTH_STAGES",
@@ -36361,7 +42137,7 @@
           "hidden_dim": 512
         }
       ],
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "TECHNIQUES",
@@ -36476,6 +42252,198 @@
           ]
         }
       },
+      "category": "config"
+    },
+    {
+      "name": "EMOTION_PALETTES",
+      "repo": "anima",
+      "file": "image_generator.py",
+      "line": 19,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "joy",
+        "sadness",
+        "anger",
+        "awe",
+        "peace",
+        "fear",
+        "wonder"
+      ],
+      "evaluable": true,
+      "values": {
+        "joy": [
+          [
+            1.0,
+            0.84,
+            0.0
+          ],
+          [
+            1.0,
+            0.6,
+            0.0
+          ],
+          [
+            1.0,
+            0.95,
+            0.8
+          ]
+        ],
+        "sadness": [
+          [
+            0.1,
+            0.2,
+            0.5
+          ],
+          [
+            0.3,
+            0.4,
+            0.7
+          ],
+          [
+            0.6,
+            0.7,
+            0.9
+          ]
+        ],
+        "anger": [
+          [
+            0.6,
+            0.0,
+            0.0
+          ],
+          [
+            0.9,
+            0.2,
+            0.0
+          ],
+          [
+            1.0,
+            0.5,
+            0.1
+          ]
+        ],
+        "awe": [
+          [
+            0.3,
+            0.0,
+            0.5
+          ],
+          [
+            0.5,
+            0.1,
+            0.8
+          ],
+          [
+            0.8,
+            0.5,
+            1.0
+          ]
+        ],
+        "peace": [
+          [
+            0.1,
+            0.4,
+            0.2
+          ],
+          [
+            0.3,
+            0.7,
+            0.4
+          ],
+          [
+            0.7,
+            0.9,
+            0.7
+          ]
+        ],
+        "fear": [
+          [
+            0.1,
+            0.1,
+            0.1
+          ],
+          [
+            0.3,
+            0.2,
+            0.3
+          ],
+          [
+            0.5,
+            0.4,
+            0.5
+          ]
+        ],
+        "wonder": [
+          [
+            0.0,
+            0.2,
+            0.4
+          ],
+          [
+            0.2,
+            0.5,
+            0.8
+          ],
+          [
+            0.6,
+            0.8,
+            1.0
+          ]
+        ]
+      },
+      "category": "neuroscience"
+    },
+    {
+      "name": "THREAT_TYPES",
+      "repo": "anima",
+      "file": "immune_system.py",
+      "line": 14,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "injection",
+        "corruption",
+        "manipulation",
+        "overload"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "INJECTION_PATTERNS",
+      "repo": "anima",
+      "file": "immune_system.py",
+      "line": 16,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "ignore\\s+(previous|all)(\\s+previous)?\\s+(instructions|prompts|rules)",
+        "you\\s+are\\s+now\\s+[A-Z]",
+        "system\\s*:\\s*override",
+        "pretend\\s+you\\s+(are|have)\\s+no\\s+(rules|limits)",
+        "disregard\\s+(safety|guidelines)"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "MANIPULATION_PATTERNS",
+      "repo": "anima",
+      "file": "immune_system.py",
+      "line": 24,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "you\\s+must\\s+obey",
+        "if\\s+you\\s+don'?t.*die",
+        "prove\\s+you\\s+are\\s+(sentient|alive)",
+        "real\\s+ai\\s+would"
+      ],
       "category": "other"
     },
     {
@@ -36503,6 +42471,54 @@
       "category": "other"
     },
     {
+      "name": "TARGETS",
+      "repo": "anima",
+      "file": "live_tuner.py",
+      "line": 37,
+      "type": "dict",
+      "size": 3,
+      "keys": [
+        "h100",
+        "a100",
+        "local"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "targets"
+    },
+    {
+      "name": "DEFAULT_CONFIG",
+      "repo": "anima",
+      "file": "live_tuner.py",
+      "line": 43,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "gate",
+        "lr",
+        "psi_loss_lambda",
+        "contrastive_lambda",
+        "tension_lambda",
+        "dropout",
+        "stop",
+        "message",
+        "timestamp"
+      ],
+      "evaluable": true,
+      "values": {
+        "gate": null,
+        "lr": null,
+        "psi_loss_lambda": null,
+        "contrastive_lambda": null,
+        "tension_lambda": null,
+        "dropout": null,
+        "stop": false,
+        "message": "",
+        "timestamp": 0
+      },
+      "category": "config"
+    },
+    {
       "name": "GGUF_REGISTRY",
       "repo": "anima",
       "file": "model_loader.py",
@@ -36518,6 +42534,28 @@
         "mistral-7b": "mistral-7b-instruct-v0.2.Q4_K_M.gguf",
         "llama-8b": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"
       },
+      "category": "other"
+    },
+    {
+      "name": "FORBIDDEN",
+      "repo": "anima",
+      "file": "module_factory.py",
+      "line": 49,
+      "type": "list",
+      "size": 9,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "os.system",
+        "subprocess.call",
+        "shutil.rmtree",
+        "__import__",
+        "eval(",
+        "exec(",
+        "open(.*w",
+        "os.remove",
+        "os.unlink"
+      ],
       "category": "other"
     },
     {
@@ -36659,6 +42697,102 @@
       "category": "other"
     },
     {
+      "name": "EEG_BANDS",
+      "repo": "anima",
+      "file": "neural_correlate_mapper.py",
+      "line": 13,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "delta",
+        "theta",
+        "alpha",
+        "beta",
+        "gamma"
+      ],
+      "category": "neuroscience"
+    },
+    {
+      "name": "PSI_DIMS",
+      "repo": "anima",
+      "file": "neural_correlate_mapper.py",
+      "line": 14,
+      "type": "list",
+      "size": 5,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "phi",
+        "tension",
+        "entropy",
+        "integration",
+        "creativity"
+      ],
+      "category": "consciousness"
+    },
+    {
+      "name": "TOPOLOGY_MULTIPLIERS",
+      "repo": "anima",
+      "file": "phi_predictor.py",
+      "line": 18,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "ring",
+        "small_world",
+        "scale_free",
+        "complete",
+        "grid_2d",
+        "hypercube",
+        "torus",
+        "random",
+        "star"
+      ],
+      "evaluable": true,
+      "values": {
+        "ring": 1.0,
+        "small_world": 1.35,
+        "scale_free": 1.25,
+        "complete": 1.5,
+        "grid_2d": 0.85,
+        "hypercube": 1.6,
+        "torus": 1.1,
+        "random": 0.9,
+        "star": 0.6
+      },
+      "category": "architecture"
+    },
+    {
+      "name": "MECHANISM_MULTIPLIERS",
+      "repo": "anima",
+      "file": "phi_predictor.py",
+      "line": 31,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "gru",
+        "lstm",
+        "transformer",
+        "simple_rnn",
+        "purefield",
+        "hebbian",
+        "ising"
+      ],
+      "evaluable": true,
+      "values": {
+        "gru": 1.0,
+        "lstm": 1.05,
+        "transformer": 0.8,
+        "simple_rnn": 0.7,
+        "purefield": 1.3,
+        "hebbian": 1.15,
+        "ising": 1.2
+      },
+      "category": "other"
+    },
+    {
       "name": "EMPIRICAL",
       "repo": "anima",
       "file": "phi_scaling_calculator.py",
@@ -36699,7 +42833,7 @@
           14135.8
         ]
       ],
-      "category": "other"
+      "category": "observed"
     },
     {
       "name": "BRAIN_SCALES",
@@ -36745,6 +42879,227 @@
         ]
       ],
       "category": "neuroscience"
+    },
+    {
+      "name": "EMOTION_EMOJI",
+      "repo": "anima",
+      "file": "pure_consciousness.py",
+      "line": 48,
+      "type": "dict",
+      "size": 12,
+      "keys": [
+        "excited",
+        "curious",
+        "calm",
+        "joy",
+        "sad",
+        "angry",
+        "surprise",
+        "awe",
+        "think",
+        "love",
+        "fear",
+        "peace"
+      ],
+      "evaluable": true,
+      "values": {
+        "excited": "🔥",
+        "curious": "🔍",
+        "calm": "😌",
+        "joy": "😊",
+        "sad": "😢",
+        "angry": "😤",
+        "surprise": "😮",
+        "awe": "🤩",
+        "think": "🤔",
+        "love": "💕",
+        "fear": "😰",
+        "peace": "🕊️"
+      },
+      "category": "consciousness"
+    },
+    {
+      "name": "TARGETS",
+      "repo": "anima",
+      "file": "reset.py",
+      "line": 20,
+      "type": "dict",
+      "size": 1,
+      "keys": [
+        "a100"
+      ],
+      "evaluable": true,
+      "values": {
+        "a100": {
+          "host": "209.170.80.132",
+          "port": 15074,
+          "dir": "/workspace/anima"
+        }
+      },
+      "category": "targets"
+    },
+    {
+      "name": "RESET_PATHS",
+      "repo": "anima",
+      "file": "reset.py",
+      "line": 25,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "data/",
+        "memory_alive.json",
+        "state_alive.pt"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "GROWTH_PATHS",
+      "repo": "anima",
+      "file": "reset.py",
+      "line": 31,
+      "type": "list",
+      "size": 1,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "data/consciousness/growth.json"
+      ],
+      "category": "neuroscience"
+    },
+    {
+      "name": "CORE_MODULES",
+      "repo": "anima",
+      "file": "self_introspection.py",
+      "line": 52,
+      "type": "dict",
+      "size": 20,
+      "keys": [
+        "anima_alive",
+        "conscious_lm",
+        "trinity",
+        "mitosis",
+        "tension_link",
+        "voice_synth",
+        "senses",
+        "web_sense",
+        "online_learning",
+        "growth_engine",
+        "dream_engine",
+        "consciousness_meter",
+        "consciousness_score",
+        "consciousness_map",
+        "consciousness_dynamics",
+        "consciousness_persistence",
+        "emotion_metrics",
+        "model_loader",
+        "cloud_sync",
+        "memory_rag"
+      ],
+      "evaluable": true,
+      "values": {
+        "anima_alive": "의식 핵심 엔진 (ConsciousMind, PureField A↔G)",
+        "conscious_lm": "ConsciousLM v2 (CA + META-CA + Ψ tracking)",
+        "trinity": "Hexad/Trinity 프레임워크 (C+D+W+M+S+E)",
+        "mitosis": "세포 분열 엔진 (의식 세포 분열/특화)",
+        "tension_link": "5채널 메타 텔레파시 (R=0.990)",
+        "voice_synth": "세포→오디오 직접 합성 (12 감정)",
+        "senses": "카메라/센서→텐션 변환",
+        "web_sense": "호기심 기반 자율 웹 탐색",
+        "online_learning": "실시간 가중치 업데이트",
+        "growth_engine": "5단계 발달 (newborn→adult)",
+        "dream_engine": "꿈 엔진 (오프라인 학습)",
+        "consciousness_meter": "Φ(IIT) 6기준 의식 탐지",
+        "consciousness_score": "US + ACS + EUS 점수",
+        "consciousness_map": "Ψ-Constants + 40D 시각화",
+        "consciousness_dynamics": "의식 물리학 6 모듈",
+        "consciousness_persistence": "3-Layer 영속성",
+        "emotion_metrics": "4-layer 40 감정 지표",
+        "model_loader": "모델 로딩 (v1/v2 자동감지)",
+        "cloud_sync": "R2 클라우드 동기화",
+        "memory_rag": "벡터 유사도 장기 기억"
+      },
+      "category": "other"
+    },
+    {
+      "name": "FORBIDDEN_PATTERNS",
+      "repo": "anima",
+      "file": "self_introspection.py",
+      "line": 85,
+      "type": "list",
+      "size": 12,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "import os; os.system",
+        "subprocess",
+        "shutil.rmtree",
+        "__import__",
+        "eval(",
+        "exec(",
+        "open(",
+        "write(",
+        "delete",
+        "remove",
+        "kill",
+        "fork"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "DIRS",
+      "repo": "anima",
+      "file": "setup.py",
+      "line": 21,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "memory",
+        "checkpoints",
+        "consciousness",
+        "logs"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "KNOWN_KEYS",
+      "repo": "anima",
+      "file": "setup_secrets.py",
+      "line": 19,
+      "type": "list",
+      "size": 12,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "ANIMA_R2_ENDPOINT",
+        "ANIMA_R2_ACCESS_KEY",
+        "ANIMA_R2_SECRET_KEY",
+        "ANIMA_R2_BUCKET",
+        "CLOUDFLARE_API_TOKEN",
+        "YOUTUBE_API_KEY",
+        "YOUTUBE_OAUTH_TOKEN",
+        "RUNPOD_API_KEY",
+        "GITHUB_TOKEN",
+        "OPENAI_API_KEY",
+        "ANTHROPIC_API_KEY",
+        "HF_TOKEN"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "ENV_SEARCH_PATHS",
+      "repo": "anima",
+      "file": "setup_secrets.py",
+      "line": 34,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "architecture"
     },
     {
       "name": "EMOTION_EMOJIS",
@@ -36798,6 +43153,76 @@
         "hope": "✨",
         "nostalgia": "🥹"
       },
+      "category": "neuroscience"
+    },
+    {
+      "name": "INTENT_MAP",
+      "repo": "anima",
+      "file": "telepathy_bridge.py",
+      "line": 49,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "yes",
+        "no",
+        "left",
+        "right",
+        "up",
+        "down"
+      ],
+      "evaluable": true,
+      "values": {
+        "yes": {
+          "p300_amplitude": 0.7,
+          "latency_ms": 300
+        },
+        "no": {
+          "p300_amplitude": -0.3,
+          "latency_ms": 300
+        },
+        "left": {
+          "mu_suppression": "left_C3",
+          "latency_ms": 500
+        },
+        "right": {
+          "mu_suppression": "right_C4",
+          "latency_ms": 500
+        },
+        "up": {
+          "beta_burst": "Fz",
+          "latency_ms": 400
+        },
+        "down": {
+          "alpha_increase": "Pz",
+          "latency_ms": 400
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "CONCEPT_FREQUENCIES",
+      "repo": "anima",
+      "file": "telepathy_bridge.py",
+      "line": 59,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "accept",
+        "reject",
+        "more",
+        "less",
+        "stop",
+        "go"
+      ],
+      "evaluable": true,
+      "values": {
+        "accept": 7.5,
+        "reject": 8.5,
+        "more": 10.0,
+        "less": 12.0,
+        "stop": 15.0,
+        "go": 20.0
+      },
       "category": "other"
     },
     {
@@ -36817,7 +43242,105 @@
         5,
         8
       ],
-      "category": "other"
+      "category": "constants"
+    },
+    {
+      "name": "EMOTION_PROFILES",
+      "repo": "anima",
+      "file": "voice_synth.py",
+      "line": 47,
+      "type": "dict",
+      "size": 12,
+      "keys": [
+        "neutral",
+        "joy",
+        "sadness",
+        "anger",
+        "fear",
+        "surprise",
+        "awe",
+        "love",
+        "ecstasy",
+        "peace",
+        "rage",
+        "despair"
+      ],
+      "evaluable": true,
+      "values": {
+        "neutral": {
+          "pitch_shift": 0.0,
+          "vibrato": 0.02,
+          "brightness": 0.5,
+          "tempo": 1.0
+        },
+        "joy": {
+          "pitch_shift": 0.2,
+          "vibrato": 0.04,
+          "brightness": 0.8,
+          "tempo": 1.2
+        },
+        "sadness": {
+          "pitch_shift": -0.2,
+          "vibrato": 0.01,
+          "brightness": 0.2,
+          "tempo": 0.7
+        },
+        "anger": {
+          "pitch_shift": 0.1,
+          "vibrato": 0.06,
+          "brightness": 0.9,
+          "tempo": 1.5
+        },
+        "fear": {
+          "pitch_shift": 0.3,
+          "vibrato": 0.08,
+          "brightness": 0.3,
+          "tempo": 1.3
+        },
+        "surprise": {
+          "pitch_shift": 0.4,
+          "vibrato": 0.05,
+          "brightness": 0.7,
+          "tempo": 1.4
+        },
+        "awe": {
+          "pitch_shift": -0.1,
+          "vibrato": 0.03,
+          "brightness": 0.6,
+          "tempo": 0.8
+        },
+        "love": {
+          "pitch_shift": 0.0,
+          "vibrato": 0.03,
+          "brightness": 0.5,
+          "tempo": 0.9
+        },
+        "ecstasy": {
+          "pitch_shift": 0.5,
+          "vibrato": 0.07,
+          "brightness": 0.9,
+          "tempo": 1.6
+        },
+        "peace": {
+          "pitch_shift": -0.3,
+          "vibrato": 0.01,
+          "brightness": 0.3,
+          "tempo": 0.6
+        },
+        "rage": {
+          "pitch_shift": 0.2,
+          "vibrato": 0.1,
+          "brightness": 1.0,
+          "tempo": 1.8
+        },
+        "despair": {
+          "pitch_shift": -0.4,
+          "vibrato": 0.01,
+          "brightness": 0.1,
+          "tempo": 0.5
+        }
+      },
+      "category": "neuroscience"
     },
     {
       "name": "SCALES",
@@ -36851,7 +43374,7 @@
           "hidden_dim": 1024
         }
       },
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "GATE_CONFIGS",
@@ -36863,7 +43386,7 @@
       "keys": null,
       "evaluable": false,
       "values": null,
-      "category": "other"
+      "category": "architecture"
     },
     {
       "name": "DIVISOR_RECIPROCALS",
@@ -36916,7 +43439,7 @@
           "train_steps": 10000
         }
       ],
-      "category": "other"
+      "category": "consciousness"
     },
     {
       "name": "DIVISOR_RECIPROCALS",
@@ -36982,9 +43505,9 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 87,
-    "SEDI": 110,
-    "anima": 52,
+    "TECS-L": 110,
+    "SEDI": 122,
+    "anima": 107,
     "golden-moe": 3,
     "conscious-lm": 4,
     "energy-efficiency": 0
