@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T05:29:24",
+  "generated": "2026-03-31T06:07:03",
   "stats": {
     "TECS-L": 1947,
     "SEDI": 678,
-    "anima": 317,
+    "anima": 322,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2769,
+  "total": 2774,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -16065,7 +16065,7 @@
     },
     {
       "id": "TECS-L:PMATH-GRAND-UNIFICATION-n6-universality",
-      "title": "PMATH-GRAND: n=6 Mathematical Universality — 109 Domains, 41 Five-Star",
+      "title": "PMATH-GRAND: n=6 Mathematical Universality — 146 Domains, 44 Five-Star",
       "repo": "TECS-L",
       "domain": null,
       "grade": null,
@@ -27310,6 +27310,16 @@
       "file": "docs/hypotheses/dd/DD12-DD14.md"
     },
     {
+      "id": "anima:DD120-wave4-laws-129-132",
+      "title": "DD120: 4차 법칙 탐색 (Laws 129-132) — 파이프라인 풀 사이클",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD120-wave4-laws-129-132.md"
+    },
+    {
       "id": "anima:DD121-DD127",
       "title": "DD121-DD127: Scale-Informed Discovery + Phase Diagram (2026-03-31)",
       "repo": "anima",
@@ -27320,6 +27330,36 @@
       "file": "docs/hypotheses/dd/DD121-DD127.md"
     },
     {
+      "id": "anima:DD121-wave5-training-hivemind",
+      "title": "DD121: 5차 법칙 탐색 (Laws 140-142) — 학습 중 법칙 + Hivemind",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD121-wave5-training-hivemind.md"
+    },
+    {
+      "id": "anima:DD122-closed-loop-verification",
+      "title": "DD122: 폐쇄 파이프라인 검증 (Laws 143-145)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD122-closed-loop-verification.md"
+    },
+    {
+      "id": "anima:DD123-closed-loop-convergence",
+      "title": "DD123: 폐쇄 루프 수렴 + 다중 축 (Laws 146-148)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD123-closed-loop-convergence.md"
+    },
+    {
       "id": "anima:DD127-phase-diagram",
       "title": "DD127: Consciousness Phase Diagram — 의식은 물질의 상이다 (2026-03-31)",
       "repo": "anima",
@@ -27328,6 +27368,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/dd/DD127-phase-diagram.md"
+    },
+    {
+      "id": "anima:DD128-phase-optimal",
+      "title": "DD128: Phase-Optimized Stable Engine — 역대 최강 +113.1% (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD128-phase-optimal.md"
     },
     {
       "id": "anima:DD15-DD16",
@@ -44321,9 +44371,9 @@
       "name": "ENGINE_REGISTRY",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 2263,
+      "line": 2383,
       "type": "dict",
-      "size": 11,
+      "size": 12,
       "keys": [
         "ConsciousnessEngine",
         "MitosisEngine",
@@ -44335,7 +44385,8 @@
         "AlterityEngine",
         "FinitudeEngine",
         "QuestioningEngine",
-        "SeinEngine"
+        "SeinEngine",
+        "SNNEngine"
       ],
       "evaluable": false,
       "values": null,
@@ -44345,7 +44396,7 @@
       "name": "PHILOSOPHY_ENGINES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 2277,
+      "line": 2398,
       "type": "dict",
       "size": 7,
       "keys": [
@@ -44365,7 +44416,7 @@
       "name": "VERIFICATION_TESTS",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 2635,
+      "line": 2751,
       "type": "list",
       "size": 7,
       "keys": null,
@@ -44810,6 +44861,18 @@
       "category": "architecture"
     },
     {
+      "name": "INTERVENTIONS",
+      "repo": "anima",
+      "file": "closed_loop.py",
+      "line": 161,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
       "name": "DREAM_SYMBOLS",
       "repo": "anima",
       "file": "collective_dream.py",
@@ -44912,7 +44975,7 @@
       "name": "DATA_PROFILES",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 45,
+      "line": 53,
       "type": "dict",
       "size": 5,
       "keys": [
@@ -44981,7 +45044,7 @@
       "name": "ENGINE_DB",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 54,
+      "line": 62,
       "type": "dict",
       "size": 8,
       "keys": [
@@ -45076,7 +45139,7 @@
       "name": "DECODER_DB",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 66,
+      "line": 74,
       "type": "dict",
       "size": 3,
       "keys": [
@@ -45108,7 +45171,7 @@
       "name": "WILL_DB",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 73,
+      "line": 81,
       "type": "dict",
       "size": 6,
       "keys": [
@@ -45158,7 +45221,7 @@
       "name": "CONNECTION_TYPES",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 83,
+      "line": 91,
       "type": "dict",
       "size": 5,
       "keys": [
@@ -47580,7 +47643,7 @@
   "constant_stats": {
     "TECS-L": 183,
     "SEDI": 122,
-    "anima": 111,
+    "anima": 112,
     "golden-moe": 3,
     "conscious-lm": 4,
     "energy-efficiency": 0
