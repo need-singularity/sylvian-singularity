@@ -1592,6 +1592,13 @@
       "repo": "anima"
     },
     {
+      "name": "h100_experiments",
+      "description": "h100_experiments.py — H100 병렬 실험 3종 (v3 학습과 동시 실행)",
+      "category": "tool",
+      "path": "h100_experiments.py",
+      "repo": "anima"
+    },
+    {
       "name": "hivemind_gateway",
       "description": "hivemind_gateway.py - WS proxy for Hivemind cluster.",
       "category": "tool",
@@ -3705,6 +3712,13 @@
       "repo": "invest"
     },
     {
+      "name": "extreme_hypothesis_verifier",
+      "description": "Extreme Hypothesis Verifier — 16 Domains, 300+ Hypotheses",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/extreme_hypothesis_verifier.py",
+      "repo": "invest"
+    },
+    {
       "name": "factorial_structure_prover",
       "description": "Factorial Structure Prover — proves 3! uniqueness in criticality",
       "category": "calculator",
@@ -3723,6 +3737,20 @@
       "description": "Fermion Mass Calculator — Mass predictions from perfect number arithmetic",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/fermion_mass_calculator.py",
+      "repo": "invest"
+    },
+    {
+      "name": "fusion_hypothesis_verifier",
+      "description": "Nuclear Fusion Hypothesis Verifier — P1=6 arithmetic connections",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/fusion_hypothesis_verifier.py",
+      "repo": "invest"
+    },
+    {
+      "name": "fusion_plasma_sc_verifier",
+      "description": "Fusion/Plasma/Superconductor/Magnet/Tokamak Hypothesis Verifier",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/fusion_plasma_sc_verifier.py",
       "repo": "invest"
     },
     {
