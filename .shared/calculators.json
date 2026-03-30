@@ -225,6 +225,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "deep_scan_wave12_15",
+      "description": "Deep Scan Waves 12-15 (Batch) -- Domains 110-149",
+      "category": "calculator",
+      "path": "calc/deep_scan_wave12_15.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "deep_scan_wave2",
       "description": "Deep Scan Wave 2 — 10 New Domains for 5-Star Discoveries",
       "category": "calculator",

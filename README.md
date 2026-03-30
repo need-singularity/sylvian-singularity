@@ -996,16 +996,16 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:CALCULATORS:START -->
 | Repo | Tools | Categories |
 |------|-------|------------|
-| **TECS-L** | 167 | Calculator, Engine |
+| **TECS-L** | 168 | Calculator, Engine |
 | **anima** | 227 | Agent, Benchmark, Calculator, Engine, Model, Sense, Tool, Training |
 | **SEDI** | 91 | Core, Data Source |
 | **n6-architecture** | 64 | Calculator, Engine, experiment, technique |
 | **invest** | 173 | Calculator |
-| **Total** | **722** | |
+| **Total** | **723** | |
 
 ### TECS-L
 
-**Calculator** (148)
+**Calculator** (149)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1041,6 +1041,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | deep_constant_explorer | Deep Constant Explorer — n=6 산술함수와 초월상수의 구조적 관계 탐색 | `calc/deep_constant_explorer.py` |
 | deep_scan_wave10 | Deep Scan Wave 10 -- The Milestone Wave (target: 99 domains) | `calc/deep_scan_wave10.py` |
 | deep_scan_wave11 | Deep Scan Wave 11 -- Domain #100 Milestone | `calc/deep_scan_wave11.py` |
+| deep_scan_wave12_15 | Deep Scan Waves 12-15 (Batch) -- Domains 110-149 | `calc/deep_scan_wave12_15.py` |
 | deep_scan_wave2 | Deep Scan Wave 2 — 10 New Domains for 5-Star Discoveries | `calc/deep_scan_wave2.py` |
 | deep_scan_wave3 | Deep Scan Wave 3 — The Deepest Layer | `calc/deep_scan_wave3.py` |
 | deep_scan_wave4 | Deep Scan Wave 4 — Completely New Territory | `calc/deep_scan_wave4.py` |
@@ -1825,14 +1826,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,768 hypotheses + 423 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,769 hypotheses + 423 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
 | TECS-L | 1,947 | 153 | 228 | 65 | 183 |
 | SEDI | 678 | 138 | 246 | 371 | 122 |
-| anima | 316 | 5 | - | - | 111 |
-| **Total** | **2,941** | **296** | **474** | **436** | **416** |
+| anima | 317 | 5 | - | - | 111 |
+| **Total** | **2,942** | **296** | **474** | **436** | **416** |
 
 #### Top Discoveries (⭐)
 
