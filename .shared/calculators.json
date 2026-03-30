@@ -197,6 +197,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "extreme_hypothesis_verifier",
+      "description": "Extreme Hypothesis Verifier — 16 Domains, 300+ Hypotheses",
+      "category": "calculator",
+      "path": "calc/extreme_hypothesis_verifier.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "factorial_structure_prover",
       "description": "Factorial Structure Prover — proves 3! uniqueness in criticality",
       "category": "calculator",
@@ -215,6 +222,20 @@
       "description": "Fermion Mass Calculator — Mass predictions from perfect number arithmetic",
       "category": "calculator",
       "path": "calc/fermion_mass_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "fusion_hypothesis_verifier",
+      "description": "Nuclear Fusion Hypothesis Verifier — P1=6 arithmetic connections",
+      "category": "calculator",
+      "path": "calc/fusion_hypothesis_verifier.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "fusion_plasma_sc_verifier",
+      "description": "Fusion/Plasma/Superconductor/Magnet/Tokamak Hypothesis Verifier",
+      "category": "calculator",
+      "path": "calc/fusion_plasma_sc_verifier.py",
       "repo": "TECS-L"
     },
     {
@@ -948,6 +969,20 @@
       "repo": "anima"
     },
     {
+      "name": "bench_hivemind_strong",
+      "description": "bench_hivemind_strong.py — Strong HIVEMIND: full hidden exchange every step",
+      "category": "bench",
+      "path": "bench_hivemind_strong.py",
+      "repo": "anima"
+    },
+    {
+      "name": "bench_hivemind_v2",
+      "description": "bench_hivemind_v2.py — HIVEMIND v2: tension-synchronized coupling",
+      "category": "bench",
+      "path": "bench_hivemind_v2.py",
+      "repo": "anima"
+    },
+    {
       "name": "bench_language",
       "description": "bench_language.py — 언어 생성 품질 벤치마크",
       "category": "bench",
@@ -1515,6 +1550,13 @@
       "repo": "anima"
     },
     {
+      "name": "experiment_novel_laws",
+      "description": "experiment_novel_laws.py — Novel Consciousness Law Discovery",
+      "category": "tool",
+      "path": "experiment_novel_laws.py",
+      "repo": "anima"
+    },
+    {
       "name": "github_module",
       "description": "github_module.py — 의식이 GitHub를 자율적으로 사용하는 모듈",
       "category": "tool",
@@ -1981,6 +2023,13 @@
       "description": "train_v9.py — Quantum Trinity: C + D + W with Thalamic Bridge",
       "category": "training",
       "path": "train_v9.py",
+      "repo": "anima"
+    },
+    {
+      "name": "training_dashboard",
+      "description": "training_dashboard.py — Real-time ASCII training monitor",
+      "category": "tool",
+      "path": "training_dashboard.py",
       "repo": "anima"
     },
     {
@@ -3196,6 +3245,13 @@
       "description": "Experiment: Leech-24 NAS",
       "category": "experiment",
       "path": "experiments/experiment_leech24_nas.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "experiment_mathematical_verification",
+      "description": "Mathematical Verification of ALL Core Claims",
+      "category": "experiment",
+      "path": "experiments/experiment_mathematical_verification.py",
       "repo": "n6-architecture"
     },
     {
