@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T05:16:36",
+  "generated": "2026-03-31T05:19:58",
   "stats": {
     "TECS-L": 1947,
     "SEDI": 678,
-    "anima": 315,
+    "anima": 316,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2767,
+  "total": 2768,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -16065,7 +16065,7 @@
     },
     {
       "id": "TECS-L:PMATH-GRAND-UNIFICATION-n6-universality",
-      "title": "PMATH-GRAND: n=6 Mathematical Universality — 89 Domains, 34 Five-Star",
+      "title": "PMATH-GRAND: n=6 Mathematical Universality — 99 Domains, 38 Five-Star",
       "repo": "TECS-L",
       "domain": null,
       "grade": null,
@@ -27308,6 +27308,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/dd/DD12-DD14.md"
+    },
+    {
+      "id": "anima:DD121-DD127",
+      "title": "DD121-DD127: Scale-Informed Discovery + Phase Diagram (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD121-DD127.md"
     },
     {
       "id": "anima:DD15-DD16",
