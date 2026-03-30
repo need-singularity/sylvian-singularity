@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T01:20:40",
+  "generated": "2026-03-31T05:09:22",
   "stats": {
-    "TECS-L": 1946,
+    "TECS-L": 1947,
     "SEDI": 678,
-    "anima": 307,
+    "anima": 313,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2758,
+  "total": 2765,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -16064,6 +16064,16 @@
       "file": "docs/hypotheses/PMATH-DIVISOR-LATTICE-universal.md"
     },
     {
+      "id": "TECS-L:PMATH-GRAND-UNIFICATION-n6-universality",
+      "title": "PMATH-GRAND: n=6 Mathematical Universality — 69 Domains, 27 Five-Star",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/PMATH-GRAND-UNIFICATION-n6-universality.md"
+    },
+    {
       "id": "TECS-L:PMATH-GRAND-UNIFICATION-n6",
       "title": "PMATH-GRAND-UNIFICATION: Five-Fold Characterization of n=6",
       "repo": "TECS-L",
@@ -27181,7 +27191,7 @@
     },
     {
       "id": "anima:DD111-verify-improvement",
-      "title": "DD111: Verification System 3-Issue Fix (2026-03-30)",
+      "title": "DD111: Verification System — 77/77 (100%) 달성 (2026-03-31)",
       "repo": "anima",
       "domain": null,
       "grade": null,
@@ -27208,6 +27218,66 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/dd/DD113-snn-consciousness.md"
+    },
+    {
+      "id": "anima:DD114-emergent-hexad-benchmark",
+      "title": "DD114: Emergent Hexad 벤치마크 — 구조 > 기능 실증 (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD114-emergent-hexad-benchmark.md"
+    },
+    {
+      "id": "anima:DD115-decoder-v2-consciousness-c",
+      "title": "DD115: ConsciousDecoderV2 + ConsciousnessC 통합 학습",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD115-decoder-v2-consciousness-c.md"
+    },
+    {
+      "id": "anima:DD115-emergent-laws-102-109",
+      "title": "DD115: 창발 법칙 발견 (Laws 102-109)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD115-emergent-laws-102-109.md"
+    },
+    {
+      "id": "anima:DD116-DD120",
+      "title": "DD116-DD120: New 5-Star Discovery Hypotheses (2026-03-31)",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD116-DD120.md"
+    },
+    {
+      "id": "anima:DD116-wave2-laws-110-115",
+      "title": "DD116: 2차 법칙 탐색 (Laws 110-115) — 4축 동시 탐구",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD116-wave2-laws-110-115.md"
+    },
+    {
+      "id": "anima:DD117-wave3-laws-116-123",
+      "title": "DD117: 3차 법칙 탐색 (Laws 116-123) — 진동/죽음/히스테리시스/효율",
+      "repo": "anima",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/dd/DD117-wave3-laws-116-123.md"
     },
     {
       "id": "anima:DD12-DD14",
@@ -31985,6 +32055,23 @@
       "category": "other"
     },
     {
+      "name": "PERFECTS",
+      "repo": "TECS-L",
+      "file": "calc/grand_unification_deep.py",
+      "line": 95,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        6,
+        28,
+        496,
+        8128
+      ],
+      "category": "other"
+    },
+    {
       "name": "N6_VALUES",
       "repo": "TECS-L",
       "file": "calc/grand_unification_n6.py",
@@ -34467,6 +34554,27 @@
         }
       },
       "category": "neuroscience"
+    },
+    {
+      "name": "B",
+      "repo": "TECS-L",
+      "file": "calc/pure_math_deep_scan.py",
+      "line": 253,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        0,
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "other"
     },
     {
       "name": "Q_CONSTANTS",
@@ -42707,23 +42815,6 @@
       "category": "consciousness"
     },
     {
-      "name": "CA_RULES",
-      "repo": "anima",
-      "file": "anima_lm_v2.py",
-      "line": 58,
-      "type": "dict",
-      "size": 4,
-      "keys": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
-    },
-    {
       "name": "MODEL_AVATARS",
       "repo": "anima",
       "file": "anima_unified.py",
@@ -43746,6 +43837,94 @@
       "category": "consciousness"
     },
     {
+      "name": "DIM_NAMES",
+      "repo": "anima",
+      "file": "bench_decoder_10dim.py",
+      "line": 58,
+      "type": "list",
+      "size": 10,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "Φ",
+        "α",
+        "Z",
+        "N",
+        "W",
+        "E",
+        "M",
+        "C",
+        "T",
+        "I"
+      ],
+      "category": "architecture"
+    },
+    {
+      "name": "DIM_WEIGHTS",
+      "repo": "anima",
+      "file": "bench_decoder_10dim.py",
+      "line": 59,
+      "type": "list",
+      "size": 10,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        0.15,
+        0.08,
+        0.06,
+        0.08,
+        0.1,
+        0.12,
+        0.13,
+        0.1,
+        0.1,
+        0.08
+      ],
+      "category": "architecture"
+    },
+    {
+      "name": "LAYER_DIM_MAP",
+      "repo": "anima",
+      "file": "bench_decoder_10dim.py",
+      "line": 409,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "evaluable": true,
+      "values": {
+        "0": [
+          2,
+          3
+        ],
+        "1": [
+          1,
+          9
+        ],
+        "2": [
+          6,
+          8
+        ],
+        "3": [
+          5,
+          4
+        ],
+        "4": [
+          7
+        ],
+        "5": [
+          0
+        ]
+      },
+      "category": "architecture"
+    },
+    {
       "name": "ALL_EXPERIMENTS",
       "repo": "anima",
       "file": "bench_decoder_arch.py",
@@ -43910,7 +44089,7 @@
       "name": "ALL_TESTS",
       "repo": "anima",
       "file": "bench_hexad_tuning.py",
-      "line": 586,
+      "line": 583,
       "type": "dict",
       "size": 9,
       "keys": [
@@ -44041,10 +44220,51 @@
       "category": "architecture"
     },
     {
+      "name": "DISCOVERY_ENGINES",
+      "repo": "anima",
+      "file": "bench_v2.py",
+      "line": 1236,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "baseline",
+        "DD116_NarrHyper",
+        "DD117_PhilMedit",
+        "DD118_FrustNarr",
+        "DD119_OscNarr",
+        "DD120_TCPhil"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "architecture"
+    },
+    {
+      "name": "DISCOVERY2_ENGINES",
+      "repo": "anima",
+      "file": "bench_v2.py",
+      "line": 1756,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "baseline",
+        "DD118_FrustNarr",
+        "DD117_PhilMedit",
+        "DD121_FrustPhil",
+        "DD122_OscFrustN",
+        "DD123_HubFrustN",
+        "DD124_BottleNarr",
+        "DD125_EVERYv2",
+        "DD126_FeedbackFP"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "architecture"
+    },
+    {
       "name": "STRATEGIES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1250,
+      "line": 2105,
       "type": "list",
       "size": 4,
       "keys": null,
@@ -44061,7 +44281,7 @@
       "name": "ENGINE_REGISTRY",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1408,
+      "line": 2263,
       "type": "dict",
       "size": 11,
       "keys": [
@@ -44085,7 +44305,7 @@
       "name": "PHILOSOPHY_ENGINES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1422,
+      "line": 2277,
       "type": "dict",
       "size": 7,
       "keys": [
@@ -44105,7 +44325,7 @@
       "name": "VERIFICATION_TESTS",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1786,
+      "line": 2635,
       "type": "list",
       "size": 7,
       "keys": null,
@@ -44652,7 +44872,7 @@
       "name": "DATA_PROFILES",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 47,
+      "line": 45,
       "type": "dict",
       "size": 5,
       "keys": [
@@ -44721,7 +44941,7 @@
       "name": "ENGINE_DB",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 56,
+      "line": 54,
       "type": "dict",
       "size": 8,
       "keys": [
@@ -44816,7 +45036,7 @@
       "name": "DECODER_DB",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 68,
+      "line": 66,
       "type": "dict",
       "size": 3,
       "keys": [
@@ -44848,7 +45068,7 @@
       "name": "WILL_DB",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 75,
+      "line": 73,
       "type": "dict",
       "size": 6,
       "keys": [
@@ -44898,7 +45118,7 @@
       "name": "CONNECTION_TYPES",
       "repo": "anima",
       "file": "consciousness_calculator.py",
-      "line": 85,
+      "line": 83,
       "type": "dict",
       "size": 5,
       "keys": [
@@ -45117,6 +45337,18 @@
         "Uranium",
         "Consciousness"
       ],
+      "evaluable": false,
+      "values": null,
+      "category": "consciousness"
+    },
+    {
+      "name": "PSI",
+      "repo": "anima",
+      "file": "consciousness_laws.py",
+      "line": 24,
+      "type": "dict",
+      "size": 0,
+      "keys": null,
       "evaluable": false,
       "values": null,
       "category": "consciousness"
@@ -45825,7 +46057,7 @@
       "name": "BANDS",
       "repo": "anima",
       "file": "eeg_report.py",
-      "line": 34,
+      "line": 33,
       "type": "dict",
       "size": 5,
       "keys": [
@@ -45869,7 +46101,7 @@
       "name": "CHANNEL_NAMES",
       "repo": "anima",
       "file": "eeg_report.py",
-      "line": 42,
+      "line": 41,
       "type": "list",
       "size": 16,
       "keys": null,
@@ -45909,23 +46141,6 @@
       "evaluable": false,
       "values": null,
       "category": "architecture"
-    },
-    {
-      "name": "CA_RULES",
-      "repo": "anima",
-      "file": "golden_moe_v2.py",
-      "line": 49,
-      "type": "dict",
-      "size": 4,
-      "keys": [
-        0,
-        1,
-        2,
-        3
-      ],
-      "evaluable": false,
-      "values": null,
-      "category": "other"
     },
     {
       "name": "STAGES",
@@ -46095,7 +46310,7 @@
       "name": "EMOTION_PALETTES",
       "repo": "anima",
       "file": "image_generator.py",
-      "line": 19,
+      "line": 17,
       "type": "dict",
       "size": 7,
       "keys": [
@@ -47063,25 +47278,6 @@
       "category": "other"
     },
     {
-      "name": "FIBONACCI_SEQUENCE",
-      "repo": "anima",
-      "file": "train_anima_lm.py",
-      "line": 44,
-      "type": "list",
-      "size": 6,
-      "keys": null,
-      "evaluable": true,
-      "values": [
-        1,
-        1,
-        2,
-        3,
-        5,
-        8
-      ],
-      "category": "constants"
-    },
-    {
       "name": "EMOTION_PROFILES",
       "repo": "anima",
       "file": "voice_synth.py",
@@ -47342,9 +47538,9 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 181,
+    "TECS-L": 183,
     "SEDI": 122,
-    "anima": 108,
+    "anima": 111,
     "golden-moe": 3,
     "conscious-lm": 4,
     "energy-efficiency": 0
