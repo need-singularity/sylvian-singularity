@@ -277,3 +277,6 @@ fn main() {
     println!("    UT16: Exotic R^n iff n=4=tau(6) (Donaldson)");
     println!("    UT17: Superconformal max dim = 6");
 }
+
+// Additional: sigma/sopfr = 12/5 uniqueness test
+// (appended separately - run with --extended flag)

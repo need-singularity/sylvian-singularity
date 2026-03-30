@@ -57,6 +57,7 @@ REPO_ROOTS = {
     "tecs-l": ROOT,
     "anima": ROOT.parent / "anima",
     "sedi": ROOT.parent / "sedi",
+    "papers": Path.home() / "Dev" / "papers",
 }
 
 

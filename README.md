@@ -1826,14 +1826,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,769 hypotheses + 423 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,774 hypotheses + 424 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
 | TECS-L | 1,947 | 153 | 228 | 65 | 183 |
 | SEDI | 678 | 138 | 246 | 371 | 122 |
-| anima | 317 | 5 | - | - | 111 |
-| **Total** | **2,942** | **296** | **474** | **436** | **416** |
+| anima | 322 | 5 | - | - | 112 |
+| **Total** | **2,947** | **296** | **474** | **436** | **417** |
 
 #### Top Discoveries (⭐)
 
@@ -2140,7 +2140,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 | Category | Count | Example Maps |
 |----------|-------|-------------|
-| other | 205 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
+| other | 206 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
 | architecture | 47 | DOMAINS, KNOWN_VALUES, TARGETS, ... |
 | consciousness | 45 | PRESETS, BRAIN_WAVES, TARGETS, ... |
 | constants | 37 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |

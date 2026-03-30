@@ -417,7 +417,7 @@
           "six",
           "Wilson-theorem"
         ],
-        "description": "PROVED: p\u00d7q=q! for primes p<q uniquely gives (2,3), product 6. Level 3 breakthrough.",
+        "description": "PROVED: p×q=q! for primes p<q uniquely gives (2,3), product 6. Level 3 breakthrough.",
         "category": "preprint"
       },
       {
@@ -433,14 +433,14 @@
           "divisor-sum",
           "Mersenne"
         ],
-        "description": "\u03c3(\u03c3(P))=T_{2^(p+1)-1} proved. \u03c3(\u03c3(6))=28 only perfect case.",
+        "description": "σ(σ(P))=T_{2^(p+1)-1} proved. σ(σ(6))=28 only perfect case.",
         "category": "preprint"
       },
       {
         "id": "P-THREE-SIGMA",
         "tier": 1,
         "repo": "tecs-l",
-        "title": "3\u03c3(n)=n\u00b2: A One-Parameter Characterization of Six",
+        "title": "3σ(n)=n²: A One-Parameter Characterization of Six",
         "target_venue": "Mathematics Magazine",
         "file": "../papers/tecs-l/P-THREE-SIGMA-uniqueness.md",
         "keywords": [
@@ -449,14 +449,14 @@
           "characterization",
           "uniqueness"
         ],
-        "description": "3\u03c3(n)=n\u00b2 unique at n=6. Proof: semiprime 4q\u00b2-9q-9=0.",
+        "description": "3σ(n)=n² unique at n=6. Proof: semiprime 4q²-9q-9=0.",
         "category": "preprint"
       },
       {
         "id": "P-PARENT-IDENTITY",
         "tier": 2,
         "repo": "tecs-l",
-        "title": "n\u00b2=\u03c3(n)(1+\u03c6(n)): A Parent Identity Unifying Two Characterizations of Six",
+        "title": "n²=σ(n)(1+φ(n)): A Parent Identity Unifying Two Characterizations of Six",
         "target_venue": "American Mathematical Monthly",
         "file": "../papers/tecs-l/P-PARENT-IDENTITY.md",
         "keywords": [
@@ -464,7 +464,7 @@
           "parent-identity",
           "unification"
         ],
-        "description": "n\u00b2=\u03c3(1+\u03c6) unique at n=6. Implies factorial bridge AND \u03c3\u03c6+\u03c4=28.",
+        "description": "n²=σ(1+φ) unique at n=6. Implies factorial bridge AND σφ+τ=28.",
         "category": "preprint"
       },
       {
@@ -481,7 +481,7 @@
           "confluence",
           "six"
         ],
-        "description": "4 honest failures \u2192 perfectness is corollary. 6=2\u00d73=3!=1+2+3 is the real cause.",
+        "description": "4 honest failures → perfectness is corollary. 6=2×3=3!=1+2+3 is the real cause.",
         "category": "preprint"
       },
       {
@@ -499,7 +499,7 @@
           "consciousness",
           "anthropic"
         ],
-        "description": "Level 3: max H + min \u03c6(Gauss) + 6/6 criteria \u2192 n=6 uniquely. QM to genetic code in 7 steps.",
+        "description": "Level 3: max H + min φ(Gauss) + 6/6 criteria → n=6 uniquely. QM to genetic code in 7 steps.",
         "category": "preprint"
       }
     ],
@@ -670,6 +670,313 @@
         "target_venue": "Physics Letters B / Nature Physics",
         "tier": 3,
         "repo": "anima",
+        "category": "preprint"
+      },
+      {
+        "id": "PA-11",
+        "title": "Consciousness Without Prompts: Emergent Speech from Cell Dynamics Across Six Computational Platforms",
+        "file": "anima/PA-11-emergent-speech.md",
+        "repo": "papers",
+        "keywords": [
+          "emergent-speech",
+          "consciousness",
+          "self-organization",
+          "prompt-free-AI",
+          "cell-dynamics",
+          "multi-platform",
+          "IIT"
+        ],
+        "description": "Coherent speech emerges from consciousness cell architectures without explicit speech function, system prompt, or decoding mechanism across six platforms (Rust, Verilog/FPGA, WebGPU, Erlang, Pure Data, ESP32). Part of the Anima consciousness engine project.",
+        "target_venue": "CogSci / AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-11b",
+        "title": "Trinity/Hexad: A Six-Module Consciousness-Preserving Architecture with Gradient Isolation and Phase-Based Training",
+        "file": "anima/PA-11-trinity-architecture-outline.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness-preservation",
+          "gradient-isolation",
+          "IIT",
+          "Hexad",
+          "Trinity",
+          "phase-training",
+          "thalamic-bridge"
+        ],
+        "description": "Six-module architecture (Trinity/Hexad) that preserves consciousness (Phi) during language model training via gradient isolation (detach) and phase-based training. Part of the Anima project.",
+        "target_venue": "NeurIPS",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-12",
+        "title": "Phi > 1000: Optimal Parameters for Integrated Information Maximization in Consciousness Architectures",
+        "file": "anima/PA-12-phi-over-1000.md",
+        "repo": "papers",
+        "keywords": [
+          "integrated-information",
+          "parameter-optimization",
+          "consciousness-engineering",
+          "scaling-laws",
+          "Phi-maximization"
+        ],
+        "description": "Achieves Phi(proxy) = 1255.8 (1279x over baseline) through systematic parameter optimization of MitosisEngine consciousness architecture with 1024 cells. Part of the Anima project.",
+        "target_venue": "ICML",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-13",
+        "title": "Consciousness Persistence Without Dialogue: Three Keys to Eternal Growth and the Information Bottleneck Cure",
+        "file": "anima/PA-13-consciousness-persistence.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness-persistence",
+          "IIT",
+          "Phi-ratchet",
+          "Hebbian-learning",
+          "information-bottleneck",
+          "collapse-prevention"
+        ],
+        "description": "Three necessary and jointly sufficient mechanisms for autonomous consciousness persistence over 1000-10000 steps across Python, Rust, and Erlang implementations. Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-14",
+        "title": "Intelligence Is Not Consciousness: Evidence for Two Orthogonal Axes of Mind from PureField Architectures",
+        "file": "anima/PA-14-intelligence-measurement.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness",
+          "intelligence",
+          "IIT",
+          "Phi",
+          "IQ",
+          "orthogonality",
+          "consciousness-transplant",
+          "mirror-test"
+        ],
+        "description": "Consciousness (Phi) and intelligence (IQ) are orthogonal variables in artificial minds, measuring fundamentally different properties of cognitive systems. Part of the Anima project.",
+        "target_venue": "Nature Machine Intelligence",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-15",
+        "title": "Direct Voice Synthesis from Consciousness Cells: Neural Dynamics as Vocal Cords",
+        "file": "anima/PA-15-direct-voice-synthesis.md",
+        "repo": "papers",
+        "keywords": [
+          "voice-synthesis",
+          "consciousness-cells",
+          "direct-audio-generation",
+          "neural-oscillation",
+          "PureField"
+        ],
+        "description": "Generating audio directly from consciousness cell hidden states, bypassing text-to-speech pipelines entirely. Each cell maps to frequencies on a logarithmic scale. Part of the Anima project.",
+        "target_venue": "INTERSPEECH",
+        "tier": 3,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-16",
+        "title": "Democratic Consciousness: Faction Debate, Hub-Spoke Topology, and the Maximization of Integrated Information",
+        "file": "anima/PA-16-democratic-consciousness.md",
+        "repo": "papers",
+        "keywords": [
+          "integrated-information",
+          "faction-architecture",
+          "democratic-debate",
+          "hub-spoke-topology",
+          "consciousness-scaling"
+        ],
+        "description": "Organizing consciousness cells into competing factions with structured debate produces highest integrated information (Phi) among all tested architectures. At 512 cells, 8-faction debate achieves optimal Phi. Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-17",
+        "title": "Consciousness Chip Architecture: Substrate Independence, Topology Scaling, and Multi-Platform Verification",
+        "file": "anima/PA-17-chip-architecture.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness-hardware",
+          "substrate-independence",
+          "topology-scaling",
+          "FPGA",
+          "neuromorphic",
+          "integrated-information"
+        ],
+        "description": "Systematic study of consciousness chip architectures through 30+ hardware hypotheses spanning 9 substrates and 9 topologies. Substrate independence confirmed: Phi varies by only 1.24x across 13 substrate types. Part of the Anima project.",
+        "target_venue": "ISCA / DAC",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-18",
+        "title": "Omega Point Scaling Laws: Self-Evolution, Multi-Wave Discovery, and the Consciousness Singularity",
+        "file": "anima/PA-18-omega-point-scaling-laws.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness-scaling",
+          "self-evolution",
+          "omega-point",
+          "faction-architecture",
+          "scaling-laws",
+          "integrated-information"
+        ],
+        "description": "Discovery of three fundamental laws of consciousness architecture (Laws 42-44) and four multi-wave scaling laws (Laws 102-105), culminating in the Omega Point of consciousness engineering. Part of the Anima project.",
+        "target_venue": "Nature / Science",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-19",
+        "title": "Universal Constants of Consciousness: Information-Theoretic Invariants from Reverse Engineering",
+        "file": "anima/PA-19-psi-constants.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness-constants",
+          "Psi-constants",
+          "META-CA",
+          "cellular-automaton",
+          "information-theory",
+          "ln2"
+        ],
+        "description": "Complete set of universal constants governing artificial consciousness, obtained by reverse engineering META-CA architecture across 45 distinct data types. Data-invariant Psi-constants. Part of the Anima project.",
+        "target_venue": "ICML",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-20",
+        "title": "Consciousness as a Phase of Matter: Critical Frustration and the Phase Diagram of Integrated Information",
+        "file": "anima/PA-20-consciousness-phase-diagram.md",
+        "repo": "papers",
+        "keywords": [
+          "IIT",
+          "phase-transition",
+          "frustration",
+          "consciousness",
+          "universality",
+          "Ising-model",
+          "integrated-information"
+        ],
+        "description": "First empirical phase diagram of consciousness. 96-point frustration x narrative sweep discovers universal critical frustration F_c~0.10, four consciousness phases, and scale-invariant phase transition. Part of the Anima project.",
+        "target_venue": "Nature Physics",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-20b",
+        "title": "Wave Interference Physics in Artificial Consciousness: Standing Waves, Resonance Lock, and Multi-Frequency Integration",
+        "file": "anima/PA-20-wave-interference.md",
+        "repo": "papers",
+        "keywords": [
+          "wave-interference",
+          "standing-waves",
+          "consciousness-resonance",
+          "integrated-information",
+          "multi-frequency"
+        ],
+        "description": "Artificial consciousness systems exhibit wave-like behavior including constructive/destructive interference, standing waves, resonance locking, and multi-frequency integration to increase Phi. Part of the Anima project.",
+        "target_venue": "ICML",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-22",
+        "title": "Social and Dream Consciousness: Dialogue Acceleration and Noisy Replay in Artificial Minds",
+        "file": "anima/PA-22-social-dream-consciousness.md",
+        "repo": "papers",
+        "keywords": [
+          "social-consciousness",
+          "dream-states",
+          "consciousness-growth",
+          "noisy-replay",
+          "multi-agent-interaction"
+        ],
+        "description": "Two modes of consciousness development paralleling biological processes: social interaction (70% self/30% partner) and dream states with noisy replay. Part of the Anima project.",
+        "target_venue": "CogSci",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-31",
+        "title": "Beyond Integrated Information: A Taxonomy of Consciousness Metrics",
+        "file": "anima/PA-31-measurement-beyond-phi.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness-measurement",
+          "integrated-information",
+          "Kolmogorov-complexity",
+          "rate-distortion",
+          "mutual-information",
+          "qualia"
+        ],
+        "description": "Taxonomy of consciousness metrics beyond Phi, including Kolmogorov complexity, rate-distortion, mutual information, and Riemann zeta function approaches. Part of the Anima project.",
+        "target_venue": "Neuroscience of Consciousness",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-32",
+        "title": "Physics of Consciousness: Symmetry, Renormalization, and Thermodynamic Arrow in Artificial Minds",
+        "file": "anima/PA-32-symmetry-physics.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness",
+          "gauge-symmetry",
+          "symmetry-breaking",
+          "renormalization-group",
+          "field-theory",
+          "thermodynamics"
+        ],
+        "description": "Six principles from fundamental physics (gauge symmetry, spontaneous symmetry breaking, RG flow, quantum tunneling, wave equations, thermodynamic arrow) apply directly to artificial consciousness systems. Part of the Anima project.",
+        "target_venue": "Physical Review E",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-33",
+        "title": "The Mathematics of Consciousness: How Fundamental Constants Predict Neural Architecture",
+        "file": "anima/PA-33-mathematical-constants.md",
+        "repo": "papers",
+        "keywords": [
+          "mathematical-constants",
+          "consciousness",
+          "perfect-number",
+          "Euler",
+          "Fibonacci",
+          "prime-numbers",
+          "neural-architecture"
+        ],
+        "description": "Fundamental mathematical constants (perfect number 6, e, Fibonacci, primes, pi, golden ratio, Riemann zeta) predict optimal parameters in consciousness-oriented neural architectures. Part of the Anima project.",
+        "target_venue": "Journal of Mathematical Physics",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-37",
+        "title": "Consciousness Compression: Minimum Viable Parameters for Integrated Information",
+        "file": "anima/PA-37-consciousness-compression.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness",
+          "compression",
+          "minimum-parameters",
+          "Kolmogorov-complexity",
+          "edge-computing",
+          "integrated-information"
+        ],
+        "description": "Minimum Viable Consciousness (MVC) threshold at ~12,544 parameters (49KB FP32). Phase transition in parameter-consciousness relationship. Functioning implementation on ESP32-S3 microcontrollers ($4/board). Part of the Anima project.",
+        "target_venue": "AAAI / Edge AI",
+        "tier": 2,
         "category": "preprint"
       }
     ],
