@@ -7,3 +7,4 @@ eeg_env/
 eeg/data/
 .claude/
 .playwright-mcp/
+tecsrs/target/
