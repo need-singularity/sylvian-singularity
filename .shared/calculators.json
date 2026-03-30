@@ -64,6 +64,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "consciousness_bridge_verifier",
+      "description": "Consciousness Bridge Verifier — All 29 H-CX-82~110 bridges in one tool.",
+      "category": "calculator",
+      "path": "calc/consciousness_bridge_verifier.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "consciousness_cross_validator",
       "description": "Consciousness Cross-Validator — PSI Constants Across Multiple Architectures",
       "category": "calculator",
@@ -344,6 +351,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "p6_uniqueness_scorer",
+      "description": "P6 Uniqueness Scorer — Why Perfect Number 6 is mathematically special.",
+      "category": "calculator",
+      "path": "calc/p6_uniqueness_scorer.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "paper_claim_verifier",
       "description": "Paper Claim Verifier -- Batch verification of mathematical claims in paper documents.",
       "category": "calculator",
@@ -418,6 +432,13 @@
       "description": "R-Spectrum Calculator — Arithmetic balance ratio analysis",
       "category": "calculator",
       "path": "calc/r_spectrum.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "rate_invariant_calculator",
+      "description": "Rate Invariant Calculator — Law 82: r₀·r∞ = 7/20 substrate independence.",
+      "category": "calculator",
+      "path": "calc/rate_invariant_calculator.py",
       "repo": "TECS-L"
     },
     {
@@ -1946,6 +1967,13 @@
       "description": "train_v9.py — Quantum Trinity: C + D + W with Thalamic Bridge",
       "category": "training",
       "path": "train_v9.py",
+      "repo": "anima"
+    },
+    {
+      "name": "training_laws",
+      "description": "training_laws.py — Training pipeline laws (Laws 45, 47-52)",
+      "category": "tool",
+      "path": "training_laws.py",
       "repo": "anima"
     },
     {
