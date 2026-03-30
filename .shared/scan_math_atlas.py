@@ -1404,6 +1404,13 @@ var CLUSTER_LABEL_COLORS = [
   'rgba(142,68,173,0.5)', 'rgba(39,174,96,0.5)', 'rgba(192,57,43,0.5)',
 ];
 
+function hexToRgba(hex, alpha) {
+  var r = parseInt(hex.slice(1,3), 16);
+  var g = parseInt(hex.slice(3,5), 16);
+  var b = parseInt(hex.slice(5,7), 16);
+  return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+}
+
 function edgeColor(w, highlighted) {
   if (highlighted) return 'rgba(255,255,100,0.8)';
   if (w >= 5) return 'rgba(255,200,50,0.5)';
@@ -1428,6 +1435,7 @@ function initGraph() {
 
   var maxDeg = GRAPH.maxDeg || 1;
   var clusters = GRAPH.clusters || [];
+  var categories = GRAPH.categories || [];
 
   var nodes = GRAPH.nodes.map(function(n, i) {
     var shortId = n.id.indexOf(':') >= 0 ? n.id.substring(n.id.indexOf(':') + 1) : n.id;
@@ -1453,7 +1461,7 @@ function initGraph() {
 
   G = {
     nodes: nodes, edges: edges, adj: adj, canvas: canvas,
-    clusters: clusters, hubThreshold: hubThreshold,
+    clusters: clusters, categories: categories, hubThreshold: hubThreshold,
     ctx: canvas.getContext('2d'),
     transform: { x: 0, y: 0, k: 1 },
     selected: null, isPanning: false, panStart: null
@@ -1489,7 +1497,25 @@ function drawGraph() {
   var nodes = G.nodes, edges = G.edges;
   var hasSel = G.selected !== null;
 
-  // ── Draw cluster rectangles ──
+  // ── Draw category boxes (Level 1 — large parent containers) ──
+  for (var ci = 0; ci < G.categories.length; ci++) {
+    var cat = G.categories[ci];
+    // Background
+    ctx.fillStyle = hexToRgba(cat.color, 0.06);
+    ctx.fillRect(cat.x, cat.y, cat.w, cat.h);
+    // Border
+    ctx.strokeStyle = hexToRgba(cat.color, 0.4);
+    ctx.lineWidth = 2;
+    ctx.strokeRect(cat.x, cat.y, cat.w, cat.h);
+    // Category title at top
+    if (G.transform.k > 0.15) {
+      ctx.fillStyle = cat.color;
+      ctx.font = 'bold 16px monospace';
+      ctx.fillText(cat.name, cat.x + 10, cat.y + 22);
+    }
+  }
+
+  // ── Draw cluster rectangles (Level 2 — sub-domain boxes) ──
   for (var ci = 0; ci < G.clusters.length; ci++) {
     var cl = G.clusters[ci];
     var cIdx = cl.id % CLUSTER_COLORS.length;
@@ -1499,15 +1525,15 @@ function drawGraph() {
     ctx.fillRect(bx, by, bw, bh);
     // Border
     ctx.strokeStyle = CLUSTER_LABEL_COLORS[cIdx];
-    ctx.lineWidth = 1.5;
-    ctx.setLineDash([4, 3]);
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3, 2]);
     ctx.strokeRect(bx, by, bw, bh);
     ctx.setLineDash([]);
     // Label at top-left
     if (G.transform.k > 0.25) {
       ctx.fillStyle = CLUSTER_LABEL_COLORS[cIdx];
-      ctx.font = 'bold 12px monospace';
-      ctx.fillText(cl.name + ' (' + cl.n + ')', bx + 6, by - 5);
+      ctx.font = '10px monospace';
+      ctx.fillText(cl.name + ' (' + cl.n + ')', bx + 4, by - 3);
     }
   }
 
@@ -1833,15 +1859,39 @@ def write_html(atlas, htmlpath):
     for i, n in enumerate(graph_nodes):
         n["deg"] = degree[i]
 
-    # ── Smart clustering: split large domains into sub-clusters ──
+    # ── Semantic hierarchical clustering ──
     import math, random
 
-    # Step 1: Assign raw domain
+    # Top-level categories → sub-domains mapping
+    CATEGORY_MAP = {
+        "PURE MATH": ["NT", "ALGGEOM", "COMB", "CYCL", "HARMONIC", "KTHY",
+                       "LATT", "LIE", "MOTIV", "OPERAD", "PACK", "SPEC",
+                       "SPOR", "CF", "CODE", "MP"],
+        "PHYSICS": ["PH", "SIM", "CERN", "GEO", "SLE", "UD", "EN",
+                     "CLIFFORD", "ROB", "SEDI"],
+        "BIOLOGY": ["BIO", "DNA", "CHEM"],
+        "CONSCIOUSNESS": ["CX", "CA", "CS", "AX"],
+        "ENGINEERING": ["EE", "AF", "TOP", "NOBEL"],
+    }
+
+    # Reverse map: domain → category
+    domain_to_cat = {}
+    for cat, doms in CATEGORY_MAP.items():
+        for d in doms:
+            domain_to_cat[d] = cat
+
+    # Step 1: Assign raw domain + category
     for i, n in enumerate(graph_nodes):
         h = hyp_by_id.get(n["id"])
-        n["_domain"] = (h.get("domain") or h.get("repo", "other")) if h else "other"
+        dom = (h.get("domain") or "") if h else ""
+        repo = h.get("repo", "other") if h else "other"
+        # For nodes without domain (TECS-L numbered hypotheses), use repo
+        if not dom:
+            dom = repo
+        n["_domain"] = dom
+        n["_cat"] = domain_to_cat.get(dom, "OTHER")
 
-    # Step 2: Split CX (and any domain > 40 nodes) by number range
+    # Step 2: Build leaf clusters (split large ones by number range)
     domain_counts = {}
     for n in graph_nodes:
         domain_counts[n["_domain"]] = domain_counts.get(n["_domain"], 0) + 1
@@ -1851,73 +1901,124 @@ def write_html(atlas, htmlpath):
     cluster_id = 0
     for n in graph_nodes:
         dom = n["_domain"]
+        cat = n["_cat"]
         if domain_counts[dom] > MAX_CLUSTER:
-            # Sub-cluster by extracting number from ID
-            num = 0
             hid = n["id"].split(":", 1)[1] if ":" in n["id"] else n["id"]
             m = re.search(r'(\d+)', hid)
-            if m:
-                num = int(m.group(1))
-            bucket = num // 200  # groups of 200
-            sub_key = f"{dom}-{bucket}"
+            num = int(m.group(1)) if m else 0
+            bucket = num // 200
+            sub_key = f"{cat}/{dom}-{bucket}"
             label = f"{dom} {bucket*200}-{bucket*200+199}"
         else:
-            sub_key = dom
+            sub_key = f"{cat}/{dom}"
             label = dom
 
         if sub_key not in domain_clusters:
-            domain_clusters[sub_key] = (cluster_id, label)
+            domain_clusters[sub_key] = (cluster_id, label, cat)
             cluster_id += 1
         n["cl"] = domain_clusters[sub_key][0]
 
-    cluster_names = {cid: label for _, (cid, label) in domain_clusters.items()}
+    cluster_names = {cid: label for _, (cid, label, _) in domain_clusters.items()}
+    cluster_cat = {cid: cat for _, (cid, _, cat) in domain_clusters.items()}
 
-    # ── Deterministic treemap packing + intra-cluster force layout ──
+    # ── Top-down hierarchical tree layout ──
+    #
+    #  Level 0 (top):    ATLAS root
+    #  Level 1:          Categories (PURE MATH, PHYSICS, BIO, CONSCIOUSNESS, ...)
+    #  Level 2:          Sub-domains (leaf cluster boxes with nodes inside)
+    #
     random.seed(42)
     N = len(graph_nodes)
-    GAP = 40  # gap between cluster boxes
-    NODE_SPACE = 35  # pixels per node (sqrt area)
+    NODE_SPACE = 35
+    GAP_H = 30   # horizontal gap between sibling clusters
+    GAP_V = 80   # vertical gap between levels (for tree branches)
+    CAT_PAD = 20  # padding inside category box
 
-    # Group nodes by cluster
+    # Group clusters by category
     cl_members = {}
     for i, n in enumerate(graph_nodes):
         cl_members.setdefault(n["cl"], []).append(i)
 
-    # Sort clusters by size (largest first) for better packing
-    cl_sorted = sorted(cl_members.keys(), key=lambda c: -len(cl_members[c]))
+    cat_clusters = {}  # cat_name -> [cid, ...]
+    for cid in cl_members:
+        cat = cluster_cat.get(cid, "OTHER")
+        cat_clusters.setdefault(cat, []).append(cid)
 
-    # Compute box size for each cluster (square-ish, proportional to sqrt(n))
+    # Sort categories by total node count (largest left)
+    cat_order = sorted(cat_clusters.keys(),
+                       key=lambda c: -sum(len(cl_members[cid]) for cid in cat_clusters[c]))
+
+    # Compute leaf cluster box sizes
     cl_box = {}
-    for cid in cl_sorted:
+    for cid in cl_members:
         n_nodes = len(cl_members[cid])
         side = max(NODE_SPACE * math.sqrt(n_nodes), 60)
-        cl_box[cid] = {"w": side * 1.3, "h": side}  # wider than tall
+        cl_box[cid] = {"w": side * 1.3, "h": side}
 
-    # Simple shelf-packing algorithm (guaranteed no overlap)
-    total_area = sum(b["w"] * b["h"] for b in cl_box.values())
-    canvas_w = max(math.sqrt(total_area) * 1.8, 2000)
+    # Layout: position categories left-to-right, clusters within each stacked vertically
+    # Then compute total width/height
+    cat_layout = {}  # cat -> {"x", "y", "w", "h", "clusters": [{cid, x, y, w, h}]}
+    x_cursor = 0
 
-    shelves = []  # list of (y, height, used_width)
-    cl_pos = {}  # cid -> (x, y) top-left corner
+    for cat in cat_order:
+        cids = sorted(cat_clusters[cat], key=lambda c: -len(cl_members[c]))
+        # Stack clusters vertically within category, with shelf packing for small ones
+        max_cat_w = 0
+        y_cursor = GAP_V + 40  # leave room for category header
+        sub_layouts = []
 
-    for cid in cl_sorted:
-        bw, bh = cl_box[cid]["w"] + GAP, cl_box[cid]["h"] + GAP
-        placed = False
-        for shelf in shelves:
-            if shelf["used"] + bw <= canvas_w:
-                cl_pos[cid] = (shelf["used"], shelf["y"])
-                shelf["used"] += bw
-                shelf["h"] = max(shelf["h"], bh)
-                placed = True
-                break
-        if not placed:
-            y = sum(s["h"] for s in shelves)
-            shelves.append({"y": y, "h": bh, "used": bw})
-            cl_pos[cid] = (0, y)
+        # Try to pack small clusters side by side
+        row_x = CAT_PAD
+        row_h = 0
+        row_items = []
+        cat_w_limit = max(cl_box[cids[0]]["w"] + 2 * CAT_PAD if cids else 200,
+                          300) if len(cids) > 2 else 9999
 
-    canvas_h = sum(s["h"] for s in shelves)
-    W = int(canvas_w)
-    H = int(canvas_h)
+        for cid in cids:
+            bw, bh = cl_box[cid]["w"], cl_box[cid]["h"]
+            if row_x + bw + CAT_PAD > cat_w_limit and row_items:
+                # Finalize current row
+                for item in row_items:
+                    item["y"] = y_cursor
+                    sub_layouts.append(item)
+                y_cursor += row_h + GAP_H
+                row_x = CAT_PAD
+                row_h = 0
+                row_items = []
+            row_items.append({"cid": cid, "x": row_x, "w": bw, "h": bh})
+            row_x += bw + GAP_H
+            row_h = max(row_h, bh)
+            max_cat_w = max(max_cat_w, row_x)
+
+        # Finalize last row
+        for item in row_items:
+            item["y"] = y_cursor
+            sub_layouts.append(item)
+        y_cursor += row_h + CAT_PAD
+
+        cat_w = max(max_cat_w + CAT_PAD, 150)
+        cat_h = y_cursor
+
+        cat_layout[cat] = {
+            "x": x_cursor, "y": 0, "w": cat_w, "h": cat_h,
+            "clusters": sub_layouts,
+        }
+        x_cursor += cat_w + GAP_H * 2
+
+    total_w = x_cursor
+    total_h = max((cl["h"] for cl in cat_layout.values()), default=800)
+
+    # Now compute absolute positions for each cluster
+    cl_pos = {}
+    for cat, layout in cat_layout.items():
+        for sub in layout["clusters"]:
+            cid = sub["cid"]
+            cl_pos[cid] = (layout["x"] + sub["x"], layout["y"] + sub["y"])
+            cl_box[cid]["w"] = sub["w"]
+            cl_box[cid]["h"] = sub["h"]
+
+    W = int(total_w)
+    H = int(total_h)
 
     # Place nodes within their cluster box using local force layout
     for cid, members in cl_members.items():
@@ -2003,7 +2104,7 @@ def write_html(atlas, htmlpath):
         n["x"] = round(n["x"], 1)
         n["y"] = round(n["y"], 1)
 
-    # Cluster metadata with guaranteed non-overlapping bounding boxes
+    # Cluster metadata
     clusters_meta = []
     for cid in sorted(cluster_names.keys()):
         name = cluster_names[cid]
@@ -2011,15 +2112,31 @@ def write_html(atlas, htmlpath):
             continue
         bx, by = cl_pos[cid]
         bw, bh = cl_box[cid]["w"], cl_box[cid]["h"]
+        cat = cluster_cat.get(cid, "OTHER")
         clusters_meta.append({
-            "id": cid, "name": name, "n": len(cl_members.get(cid, [])),
+            "id": cid, "name": name, "cat": cat, "n": len(cl_members.get(cid, [])),
             "x1": round(bx, 1), "y1": round(by, 1),
             "x2": round(bx + bw, 1), "y2": round(by + bh, 1),
         })
 
+    # Category boxes metadata (for JS to draw parent rectangles)
+    categories_meta = []
+    CAT_COLORS = {
+        "PURE MATH": "#4A90D9", "PHYSICS": "#E67E22", "BIOLOGY": "#2ECC71",
+        "CONSCIOUSNESS": "#9B59B6", "ENGINEERING": "#1ABC9C", "OTHER": "#95A5A6",
+    }
+    for cat in cat_order:
+        layout = cat_layout[cat]
+        categories_meta.append({
+            "name": cat, "color": CAT_COLORS.get(cat, "#95A5A6"),
+            "x": round(layout["x"], 1), "y": round(layout["y"], 1),
+            "w": round(layout["w"], 1), "h": round(layout["h"], 1),
+        })
+
     graph_data = json.dumps({
         "nodes": graph_nodes, "edges": graph_edges,
-        "clusters": clusters_meta, "maxDeg": max_deg
+        "clusters": clusters_meta, "categories": categories_meta,
+        "maxDeg": max_deg
     }, ensure_ascii=False)
 
     # Build repo list from atlas data
