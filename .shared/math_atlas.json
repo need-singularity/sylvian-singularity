@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "generated": "2026-03-30T21:21:54",
+  "generated": "2026-03-30T21:33:18",
   "stats": {
     "TECS-L": 1908,
     "SEDI": 678,
@@ -30046,6 +30046,36 @@
       "category": "constants"
     },
     {
+      "name": "ALL_DOMAINS",
+      "repo": "TECS-L",
+      "file": "calc/extreme_hypothesis_verifier.py",
+      "line": 298,
+      "type": "dict",
+      "size": 17,
+      "keys": [
+        "FUSION-001~017",
+        "FUSION-018~037",
+        "SC",
+        "SCMAG",
+        "TOKAMAK",
+        "PLASMA",
+        "STELLAR",
+        "TOPSC",
+        "NUCSTR",
+        "FENGR",
+        "COSMO",
+        "THERMO",
+        "QINFO",
+        "CHEM",
+        "BIOPHYS",
+        "PMATH",
+        "EMWAVE"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "domains"
+    },
+    {
       "name": "FUSION_CONSTANTS",
       "repo": "TECS-L",
       "file": "calc/fusion_hypothesis_verifier.py",
@@ -40555,7 +40585,7 @@
       "name": "VERIFICATION_TESTS",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1699,
+      "line": 1705,
       "type": "list",
       "size": 7,
       "keys": null,
@@ -43776,7 +43806,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 112,
+    "TECS-L": 113,
     "SEDI": 122,
     "anima": 107,
     "golden-moe": 3,
