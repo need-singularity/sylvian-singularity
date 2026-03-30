@@ -257,6 +257,7 @@ digraph math_atlas {
   TECS_L_BRIDGE_003_n_minus_2_equals_tau [label="BRIDGE-003: n - 2 = tau(n) and the Uniqu" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_BRIDGE_004_golden_zone_quantum_gravity [label="BRIDGE-004: Golden Zone and Quantum Grav" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_BRIDGE_006_phi_power_tau_uniqueness [label="BRIDGE-006: φ(n)^φ(n) = τ(n) — Uniquenes" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_BRIDGE_PUREMATH_CX_connections [label="BRIDGE: 순수수학 ↔ 의식/물리 연결 가설 (40개)" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_CONDMAT_001_quantum_hall_fractions [label="Hypothesis Review CONDMAT-001: Fractiona" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_COSMO_001_020_cosmology_bbn_n6 [label="COSMO-001~020: Cosmology, Big Bang Nucle" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_COSMO_001_LCDM_six_parameters [label="Hypothesis Review COSMO-001: LCDM 6 Free" fillcolor="#4A90D9" shape=ellipse];
@@ -344,6 +345,7 @@ digraph math_atlas {
   TECS_L_H_CX_3 [label="Binary-Ternary Decomposition — H = 2/3·l" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_30 [label="Math-Consciousness Cross Map Synthesis —" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_310 [label="⭐⭐⭐ Origin of Golden Zone Width = ln(F(P" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_CX_312 [label="⭐⭐⭐ Golden Zone Complete Derivation — Fi" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CX_320 [label="⭐🟩 B₂₂ denominator 138 = σ²-P₁ = univers" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CX_321 [label="⭐⭐⭐ \"12 Reasons Why 6 Is Special\" = σ(6)" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CX_322 [label="🟩 13th Reason = Metacognition = Observer" fillcolor="#4A90D9" shape=box];
@@ -403,6 +405,7 @@ digraph math_atlas {
   TECS_L_H_CX_8 [label="Phase Acceleration x3 = sigma/tau (Cross" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_81 [label="Aberration-Phase Alignment — Classes wit" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_82 [label="Epoch 1 PH = Final Confusion Map" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_H_CX_83 [label="Orthogonality-Topology Integration — Com" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_88 [label="Universal Confusion Topology — PH merge " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_90 [label="Epoch 1 Phase Transition — Confusion Str" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_93 [label="Confusion Eigenstructure — Eigenvectors " fillcolor="#4A90D9" shape=ellipse];
@@ -478,6 +481,7 @@ digraph math_atlas {
   TECS_L_H_PH_35 [label="Higgs Self-Coupling from n=6 Arithmetic" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_PH_6 [label="R-chain and Particle Decay Chains" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_PH_9 [label="⭐⭐⭐🟧★ Perfect Number Unification Pattern" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_RMT_2 [label="Marchenko-Pastur Spectral Edges Satisfy " fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_ROB_10 [label="Gait Phase Transition = Tension Phase Tr" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_SEDI_1 [label="Koide Angle delta = phi(6) tau(6)^2 / si" fillcolor="#4A90D9" shape=box];
   TECS_L_H_SEDI_4 [label="Proton-Electron Mass Ratio m_p/m_e = sig" fillcolor="#4A90D9" shape=diamond];
@@ -498,6 +502,7 @@ digraph math_atlas {
   TECS_L_MUSIC_001_twelve_tone_consonance [label="Hypothesis MUSIC-001: 12-TET = sigma(6) " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_NAVSTOKES_001_stress_tensor [label="Hypothesis NAVSTOKES-001: 3D Stress Tens" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_NOBEL_grand_hypotheses [label="Ten Grand Hypotheses: Unification Throug" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_PMATH_SYMMETRIC_S6_uniqueness [label="PMATH-SYM: Symmetric Group S_6 Uniquenes" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_RIEMANN_CURV_001_curvature_denominator [label="Hypothesis RIEMANN-CURV-001: Riemann Ten" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_SC_001_020_superconductor_physics_n6 [label="SC-001 through SC-020: Superconductor Ph" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_SIXFUNC_001_six_functor_formalism [label="Hypothesis SIXFUNC-001: Six-Functor Form" fillcolor="#4A90D9" shape=box];
@@ -653,6 +658,9 @@ digraph math_atlas {
   TECS_L_BRIDGE_006_phi_power_tau_uniqueness -> TECS_L_H_CX_7;
   TECS_L_BRIDGE_006_phi_power_tau_uniqueness -> TECS_L_H_DNA_501;
   TECS_L_BRIDGE_006_phi_power_tau_uniqueness -> TECS_L_H_DNA_503;
+  TECS_L_BRIDGE_PUREMATH_CX_connections -> TECS_L_H_RMT_2;
+  TECS_L_BRIDGE_PUREMATH_CX_connections -> TECS_L_H_CX_312;
+  TECS_L_BRIDGE_PUREMATH_CX_connections -> TECS_L_H_CX_312;
   TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_005;
   TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_067;
   TECS_L_CONDMAT_001_quantum_hall_fractions -> TECS_L_098;
@@ -818,6 +826,7 @@ digraph math_atlas {
   TECS_L_NOBEL_grand_hypotheses -> TECS_L_H_CX_501;
   TECS_L_NOBEL_grand_hypotheses -> TECS_L_H_CX_110;
   TECS_L_NOBEL_grand_hypotheses -> TECS_L_H_NOBEL_2;
+  TECS_L_PMATH_SYMMETRIC_S6_uniqueness -> TECS_L_H_CX_83;
   TECS_L_RIEMANN_CURV_001_curvature_denominator -> TECS_L_090;
   TECS_L_SC_001_020_superconductor_physics_n6 -> SEDI_H_CX_657;
   TECS_L_SIXFUNC_001_six_functor_formalism -> TECS_L_067;
