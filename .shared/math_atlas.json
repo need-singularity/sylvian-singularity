@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-30T21:46:11",
+  "generated": "2026-03-30T22:15:52",
   "stats": {
-    "TECS-L": 1909,
+    "TECS-L": 1910,
     "SEDI": 678,
     "anima": 303,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2717,
+  "total": 2718,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -15812,6 +15812,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/NUCSTR-001-020-nuclear-structure-n6.md"
+    },
+    {
+      "id": "TECS-L:NUCSTR-021-sigma-perfect-nuclear-cascade",
+      "title": "NUCSTR-021: The Perfect Number Nuclear Cascade",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NUCSTR-021-sigma-perfect-nuclear-cascade.md"
     },
     {
       "id": "TECS-L:PLASMA-001-020-waves-instabilities-n6",
@@ -40551,7 +40561,7 @@
       "name": "ENGINE_REGISTRY",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1350,
+      "line": 1361,
       "type": "dict",
       "size": 11,
       "keys": [
@@ -40575,7 +40585,7 @@
       "name": "PHILOSOPHY_ENGINES",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1364,
+      "line": 1375,
       "type": "dict",
       "size": 7,
       "keys": [
@@ -40595,7 +40605,7 @@
       "name": "VERIFICATION_TESTS",
       "repo": "anima",
       "file": "bench_v2.py",
-      "line": 1705,
+      "line": 1716,
       "type": "list",
       "size": 7,
       "keys": null,
