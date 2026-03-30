@@ -4272,6 +4272,13 @@
       "repo": "invest"
     },
     {
+      "name": "feynman_diagrams_n6",
+      "description": "Feynman Diagrams, Renormalization, and Standard Model — n=6 Connections",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/feynman_diagrams_n6.py",
+      "repo": "invest"
+    },
+    {
       "name": "fusion_hypothesis_verifier",
       "description": "Nuclear Fusion Hypothesis Verifier — P1=6 arithmetic connections",
       "category": "calculator",
@@ -4405,6 +4412,13 @@
       "repo": "invest"
     },
     {
+      "name": "knot_theory_n6",
+      "description": "Knot Theory and n=6 Arithmetic — Systematic verification",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/knot_theory_n6.py",
+      "repo": "invest"
+    },
+    {
       "name": "langlands_perfect",
       "description": "Langlands-Perfect Number Connection Calculator",
       "category": "calculator",
@@ -4472,6 +4486,13 @@
       "description": "Paper Claim Verifier -- Batch verification of mathematical claims in paper documents.",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/paper_claim_verifier.py",
+      "repo": "invest"
+    },
+    {
+      "name": "pascal_perfect",
+      "description": "Pascal's Triangle and Perfect Number 6 — Structural Analysis",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/pascal_perfect.py",
       "repo": "invest"
     },
     {
@@ -4717,6 +4738,13 @@
       "description": "Texas Sharpshooter v2 -- Enhanced statistical validator for GZ campaign",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/texas_sharpshooter_v2.py",
+      "repo": "invest"
+    },
+    {
+      "name": "thermodynamics_n6",
+      "description": "Thermodynamics & Statistical Mechanics n=6 Calculator",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/thermodynamics_n6.py",
       "repo": "invest"
     },
     {
