@@ -1747,14 +1747,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,725 hypotheses + 352 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,753 hypotheses + 412 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
-| TECS-L | 1,915 | 153 | 226 | 65 | 115 |
+| TECS-L | 1,941 | 153 | 228 | 65 | 175 |
 | SEDI | 678 | 138 | 246 | 371 | 122 |
-| anima | 305 | 5 | - | - | 108 |
-| **Total** | **2,898** | **296** | **472** | **436** | **345** |
+| anima | 307 | 5 | - | - | 108 |
+| **Total** | **2,926** | **296** | **474** | **436** | **405** |
 
 #### Top Discoveries (⭐)
 
@@ -2061,16 +2061,16 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 | Category | Count | Example Maps |
 |----------|-------|-------------|
-| other | 151 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
+| other | 201 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
 | consciousness | 44 | PRESETS, BRAIN_WAVES, TARGETS, ... |
 | architecture | 42 | DOMAINS, KNOWN_VALUES, TARGETS, ... |
-| constants | 30 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |
+| constants | 36 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |
 | targets | 29 | DEFAULT_TARGETS, STANDARD_TARGETS, TARGET_ALIASES, ... |
-| physics | 18 | PARTICLE_GROUPS, STRING_CONSTANTS, PHYSICS, ... |
+| physics | 21 | STRING_DIM_TOTAL, PARTICLE_GROUPS, STRING_CONSTANTS, ... |
 | neuroscience | 11 | PROFILES, DATA_PROFILES, DRUG_DB, ... |
 | observed | 7 | OBSERVED, OBSERVED, OBSERVED, ... |
+| nuclear | 6 | MAGIC_DIMS, MAGIC_NUMBERS, MAGIC_NUMBERS, ... |
 | verification | 5 | GRADE_EMOJI, SCAN_TEMPLATES, CLAIM_PATTERNS, ... |
-| nuclear | 5 | MAGIC_NUMBERS, MAGIC_NUMBERS, HO_MAGIC, ... |
 | domains | 4 | CATEGORIES, ALL_DOMAINS, DOMAINS, ... |
 | expressions | 4 | BUILTIN_FORMULAS, TECS_EXPRESSIONS, CAPACITY_EXPRESSIONS, ... |
 | config | 2 | SWEEP_PARAMS, DEFAULT_CONFIG |
