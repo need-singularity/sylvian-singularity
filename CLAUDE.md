@@ -98,6 +98,15 @@
     3. bash .shared/sync-readmes.sh       # 프로젝트 설명
 
   개별 README 마커 구간 직접 수정 금지 — sync 시 덮어씌워짐
+
+  ── 설치 도구 레지스트리 ──
+  중앙 소스: .shared/installed_tools.json
+  내용: CLI 도구, Python 패키지, Rust crate, RunPod 설정, brew 패키지
+  ★ PATH 주의: homebrew는 /opt/homebrew/bin/ (Claude Code PATH에 없음!)
+    gh → /opt/homebrew/bin/gh
+    runpodctl → /opt/homebrew/bin/runpodctl
+    cargo → ~/.cargo/bin/cargo
+    maturin → ~/.cargo/bin/maturin
 ```
 
 ## Project Overview
