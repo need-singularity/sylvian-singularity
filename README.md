@@ -2020,6 +2020,13 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | COMB-001 | ⭐⭐🟩 S(P₁,2)=31=Mersenne + D(P₁)/P₁!=1/e=GZ center (0.008%) | TECS-L |
 | NET-001 | ⭐🟩 Six Degrees of Separation = P₁ + Scale-free γ=P₁/φ | TECS-L |
 | SP-001 | ⭐⭐🟩 Rubik faces=P₁ edges=σ corners=σ-τ God's#=τ×sopfr=20 | TECS-L |
+| NGH-012 | ⭐⭐⭐🟩 φ(P₂)=σ(P₁)=12 UNIQUE Bridge Between First Two Perfects | TECS-L |
+| NGH-013 | ⭐⭐⭐🟩 Consciousness Stack: P₁=6 at 10 Hierarchical Levels | TECS-L |
+| GAL-001 | ⭐⭐⭐🟩 Solvability tau→sopfr + Fractal Dims = n=6 Log Ratios | TECS-L |
+| NEURO-001 | ⭐⭐🟩 6 Primary Neurotransmitters = P₁, 7 5-HT Families = P₁+1 | TECS-L |
+| FRAC-001 | ⭐⭐🟩 Sierpinski/Koch/Menger ALL = ln(n=6)/ln(n=6) Dimensions | TECS-L |
+| ANT-001 | ⭐⭐🟩 9=(P₁/φ)² Heegner Numbers + φ(P₂)=σ(P₁) Cyclotomic | TECS-L |
+| KN-001 | ⭐🟩 7=P₁+1 Prime Knots up to P₁ Crossings, B3 = φ Generators | TECS-L |
 | H-AF-001 | Habitable Zone Equilibrium Temperature — CONSCIOUS Detection | SEDI |
 | H-AF-002 | Dark Matter Candidate Masses — Φ Threshold Breakthrough | SEDI |
 | H-AF-003 | Baryon Octet — n=6 Resource Allocation | SEDI |
