@@ -19,8 +19,4 @@
   - invest        — 투자 관리
   - dotfiles      — 개인 설정
 
-  ARCHIVED REPOS (폐기됨, 기능이 다른 리포로 흡수):
-  - conscious-lm  → anima로 흡수
-  - golden-moe    → TECS-L로 흡수
-  - ph-training   → TECS-L로 흡수
 -->
