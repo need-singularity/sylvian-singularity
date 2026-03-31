@@ -66,15 +66,6 @@ REPOS = [
             {"path": "experiments", "category": "experiment"},
         ],
     },
-    {
-        "name": "invest",
-        "root": DEV / "invest",
-        "scans": [
-            {"path": "backend/backend/calc", "category": "calculator"},
-            {"path": "backend/backend/tecs", "category": "calculator"},
-            {"path": "backend/backend/tecs_calc", "category": "calculator"},
-        ],
-    },
 ]
 
 # ── Category labels ──

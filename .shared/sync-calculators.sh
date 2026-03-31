@@ -102,28 +102,6 @@ commit_and_push "$PARENT/anima" "anima"
 sync_file "$PARENT/SEDI/README.md" "SEDI"
 commit_and_push "$PARENT/SEDI" "SEDI"
 
-# invest — copy TECS-L calc files + sync README
-INVEST_CALC="$PARENT/invest/backend/backend/tecs_calc"
-if [ -d "$PARENT/invest" ]; then
-  echo "[invest] Syncing TECS-L calculators..."
-  mkdir -p "$INVEST_CALC"
-  cp "$BASE/calc/"*.py "$INVEST_CALC/"
-  touch "$INVEST_CALC/__init__.py"
-  echo "  Copied $(ls "$INVEST_CALC"/*.py 2>/dev/null | wc -l) calculators"
-  sync_file "$PARENT/invest/README.md" "invest"
-  cd "$PARENT/invest"
-  if ! git diff --quiet 2>/dev/null; then
-    git add backend/backend/tecs_calc/ README.md
-    git pull --rebase --quiet 2>/dev/null || true
-    git commit -m "sync: TECS-L calculators from shared registry"
-    git push
-    echo "  Pushed!"
-  else
-    echo "  No changes"
-  fi
-  cd - > /dev/null
-fi
-
 # n6-architecture — copy relevant N6 calc files + sync README
 N6_CALC="$PARENT/n6-architecture/tools"
 if [ -d "$PARENT/n6-architecture" ]; then
