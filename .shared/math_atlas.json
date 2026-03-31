@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T22:41:02",
+  "generated": "2026-03-31T22:55:08",
   "stats": {
     "TECS-L": 1980,
     "SEDI": 678,
@@ -34332,6 +34332,39 @@
       "category": "verification"
     },
     {
+      "name": "MERSENNE_EXPONENTS",
+      "repo": "TECS-L",
+      "file": "calc/verify_causal_chain.py",
+      "line": 81,
+      "type": "list",
+      "size": 8,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        2,
+        3,
+        5,
+        7,
+        13,
+        17,
+        19,
+        31
+      ],
+      "category": "other"
+    },
+    {
+      "name": "PERFECT_NUMBERS",
+      "repo": "TECS-L",
+      "file": "calc/verify_causal_chain.py",
+      "line": 89,
+      "type": "dict",
+      "size": 0,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "constants"
+    },
+    {
       "name": "FUNCS",
       "repo": "TECS-L",
       "file": "math/characterization_verifier.py",
@@ -40901,7 +40934,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 200,
+    "TECS-L": 202,
     "SEDI": 122,
     "anima": 0,
     "golden-moe": 3,
