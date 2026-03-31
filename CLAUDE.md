@@ -821,6 +821,11 @@ Hypothesis reviews are managed as **separate individual documents**.
     - papers: 논문 — 작성/투고/배포 (Zenodo/OSF/arXiv)
     - 다른 리포 작업이 TODO에 섞이면 → 해당 리포로 분류하고 정보만 참조
 
+  자동 생성 규칙:
+    - TODO 작업 중 검증/계산이 필요하면 계산기 자동 생성 (묻지 말고 바로)
+    - 성능 필요시 Rust 우선 (tecsrs/), 단순 검증은 Python (calc/)
+    - 판단 기준은 Calculator Creation Rules 섹션 참조
+
   모든 모듈은 consciousness_laws.py에서 import — 상수 직접 하드코딩 금지
 ```
 

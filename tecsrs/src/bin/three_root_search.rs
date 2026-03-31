@@ -7,15 +7,15 @@
 /// as far as possible (target: 10^10).
 ///
 /// Usage:
-///   cargo run --release --bin three_root_search -- --limit 10000000000
-///   cargo run --release --bin three_root_search  (default: 10^9)
+///   cargo run --release --bin three_root_search -- --limit 1000000000000
+///   cargo run --release --bin three_root_search  (default: 10^12)
 
 use rayon::prelude::*;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::Instant;
 
-const DEFAULT_LIMIT: u64 = 1_000_000_000; // 10^9
-const CHUNK_SIZE: u64 = 2_000_000;        // 2M per chunk — fits in L2 cache
+const DEFAULT_LIMIT: u64 = 1_000_000_000_000; // 10^12
+const CHUNK_SIZE: u64 = 4_000_000;            // 4M per chunk — good cache/parallelism balance
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
@@ -70,11 +70,14 @@ fn main() {
             // Update progress
             let prev = progress.fetch_add(hi - lo + 1, Ordering::Relaxed);
             let new_total = prev + (hi - lo + 1);
-            // Print progress roughly every 10^8
-            if new_total / 100_000_000 > prev / 100_000_000 {
+            // Print progress every 10^9 (1000 lines for 10^12 run)
+            if new_total / 1_000_000_000 > prev / 1_000_000_000 {
                 let pct = (new_total as f64 / limit as f64) * 100.0;
-                eprintln!("  Progress: {:.2e} / {:.2e} ({:.1}%) — {:.1?}",
-                         new_total as f64, limit as f64, pct, t0.elapsed());
+                let elapsed_s = t0.elapsed().as_secs_f64();
+                let rate = new_total as f64 / elapsed_s;
+                let eta_s = (limit - new_total) as f64 / rate;
+                eprintln!("  Progress: {:.2e} / {:.2e} ({:.1}%) — {:.1?} elapsed, ETA {:.0}s ({:.1}min)",
+                         new_total as f64, limit as f64, pct, t0.elapsed(), eta_s, eta_s / 60.0);
             }
 
             solutions
@@ -114,11 +117,17 @@ fn main() {
     println!("  Rate:       {:.2e} integers/second", limit as f64 / elapsed.as_secs_f64());
     println!("=====================================================================");
 
-    // Estimate time for 10^10 if current run was smaller
-    if limit < 10_000_000_000 {
-        let est_10b = elapsed.as_secs_f64() * (10_000_000_000.0 / limit as f64);
+    // Estimate time for next milestone
+    if limit < 1_000_000_000_000 {
+        let est = elapsed.as_secs_f64() * (1_000_000_000_000.0 / limit as f64);
         println!();
-        println!("  Estimated time for 10^10: {:.0}s ({:.1} minutes)", est_10b, est_10b / 60.0);
+        println!("  Estimated time for 10^12: {:.0}s ({:.1} minutes, {:.1} hours)",
+                 est, est / 60.0, est / 3600.0);
+    } else if limit < 10_000_000_000_000 {
+        let est = elapsed.as_secs_f64() * (10_000_000_000_000.0 / limit as f64);
+        println!();
+        println!("  Estimated time for 10^13: {:.0}s ({:.1} hours)",
+                 est, est / 3600.0);
     }
 }
 
