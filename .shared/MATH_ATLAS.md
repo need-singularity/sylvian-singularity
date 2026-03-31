@@ -1,15 +1,15 @@
 # Math Atlas
 
-> Auto-generated: 2026-03-31T22:25:17 | 2500 hypotheses | 329 constant maps
+> Auto-generated: 2026-03-31T22:55:08 | 2500 hypotheses | 331 constant maps
 
 ## Summary
 
 | Repo | Hypotheses | Constant Maps |
 |------|-----------|--------------|
-| TECS-L | 1,980 | 200 |
+| TECS-L | 1,980 | 202 |
 | SEDI | 678 | 122 |
 | anima | 0 | 0 |
-| **Total** | **2,658** | **322** |
+| **Total** | **2,658** | **324** |
 
 ### Grade Distribution
 
@@ -2554,7 +2554,7 @@
 
 ## Constant Maps
 
-### TECS-L (200)
+### TECS-L (202)
 
 | # | Name | File | Type | Size | Category | Eval |
 |---|------|------|------|------|----------|------|
@@ -2743,21 +2743,23 @@
 | 183 | MERSENNE_EXPONENTS | calc/theta_perfect_pattern.py:41 | list | 8 | other | Y |
 | 184 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
 | 185 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:1150 | dict | 20 | verification | - |
-| 186 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
-| 187 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
-| 188 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
-| 189 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
-| 190 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
-| 191 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
-| 192 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
-| 193 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
-| 194 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
-| 195 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
-| 196 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
-| 197 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
-| 198 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
-| 199 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
-| 200 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
+| 186 | MERSENNE_EXPONENTS | calc/verify_causal_chain.py:81 | list | 8 | other | Y |
+| 187 | PERFECT_NUMBERS | calc/verify_causal_chain.py:89 | dict | 0 | constants | - |
+| 188 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
+| 189 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
+| 190 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
+| 191 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
+| 192 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
+| 193 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
+| 194 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
+| 195 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
+| 196 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
+| 197 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
+| 198 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
+| 199 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
+| 200 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
+| 201 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
+| 202 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
 
 ### SEDI (122)
 
@@ -2888,7 +2890,7 @@
 
 ---
 
-## Cross-Reference Edges (538)
+## Cross-Reference Edges (540)
 
 | Source | Target |
 |--------|--------|
@@ -3262,6 +3264,8 @@
 | TECS-L:H-PH-35 | TECS-L:H-PH-1 |
 | TECS-L:H-PH-35 | TECS-L:H-PH-9 |
 | TECS-L:H-PH-9 | TECS-L:H-CX-477 |
+| TECS-L:H-PH-9 | TECS-L:H-CX-342 |
+| TECS-L:H-PH-9 | TECS-L:H-CX-342 |
 | TECS-L:H-SPOR-1 | TECS-L:H-CODE-1 |
 | TECS-L:H-TOP-2 | TECS-L:H-GEO-1 |
 | TECS-L:H-TOP-5 | TECS-L:H-CX-12 |
