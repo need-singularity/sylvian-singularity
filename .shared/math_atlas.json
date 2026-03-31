@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T19:55:54",
+  "generated": "2026-03-31T20:40:04",
   "stats": {
     "TECS-L": 1980,
     "SEDI": 678,
@@ -28808,6 +28808,23 @@
       "category": "constants"
     },
     {
+      "name": "DIVS",
+      "repo": "TECS-L",
+      "file": "calc/entanglement_n6_analysis.py",
+      "line": 45,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "category": "other"
+    },
+    {
       "name": "PERFECT_NUMBERS",
       "repo": "TECS-L",
       "file": "calc/exotic_spheres_perfect.py",
@@ -30342,6 +30359,151 @@
       "category": "other"
     },
     {
+      "name": "MONSTER_EXPO",
+      "repo": "TECS-L",
+      "file": "calc/moonshine_deep_analysis.py",
+      "line": 47,
+      "type": "dict",
+      "size": 15,
+      "keys": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        41,
+        47,
+        59,
+        71
+      ],
+      "evaluable": true,
+      "values": {
+        "2": 46,
+        "3": 20,
+        "5": 9,
+        "7": 6,
+        "11": 2,
+        "13": 3,
+        "17": 1,
+        "19": 1,
+        "23": 1,
+        "29": 1,
+        "31": 1,
+        "41": 1,
+        "47": 1,
+        "59": 1,
+        "71": 1
+      },
+      "category": "other"
+    },
+    {
+      "name": "J_COEFF",
+      "repo": "TECS-L",
+      "file": "calc/moonshine_deep_analysis.py",
+      "line": 56,
+      "type": "dict",
+      "size": 22,
+      "keys": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "evaluable": true,
+      "values": {
+        "-1": 1,
+        "0": 744,
+        "1": 196884,
+        "2": 21493760,
+        "3": 864299970,
+        "4": 20245856256,
+        "5": 333202640600,
+        "6": 4252023300096,
+        "7": 44656994071935,
+        "8": 401490886656000,
+        "9": 3176440229784420,
+        "10": 22567393309593600,
+        "11": 146211911499519294,
+        "12": 874313719685775360,
+        "13": 4872010111798142520,
+        "14": 25497827389410525184,
+        "15": 126142916465781843075,
+        "16": 593121772421445058560,
+        "17": 2662842413150775245160,
+        "18": 11459912788444786513920,
+        "19": 47438786801234168813300,
+        "20": 189449976248893390028800
+      },
+      "category": "other"
+    },
+    {
+      "name": "MONSTER_IRREPS",
+      "repo": "TECS-L",
+      "file": "calc/moonshine_deep_analysis.py",
+      "line": 83,
+      "type": "list",
+      "size": 8,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        1,
+        196883,
+        21296876,
+        842609326,
+        18538750076,
+        19360062527,
+        293553734298,
+        3879737672
+      ],
+      "category": "other"
+    },
+    {
+      "name": "MCKAY_E8",
+      "repo": "TECS-L",
+      "file": "calc/moonshine_deep_analysis.py",
+      "line": 99,
+      "type": "list",
+      "size": 9,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        4,
+        2,
+        3
+      ],
+      "category": "other"
+    },
+    {
       "name": "JI_TARGETS",
       "repo": "TECS-L",
       "file": "calc/music_consonance_calculator.py",
@@ -30715,6 +30877,82 @@
         31
       ],
       "category": "other"
+    },
+    {
+      "name": "PERFECT_NUMBERS",
+      "repo": "TECS-L",
+      "file": "calc/perfect_number_P6_analysis.py",
+      "line": 30,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "evaluable": true,
+      "values": {
+        "1": 6,
+        "2": 28,
+        "3": 496,
+        "4": 8128,
+        "5": 33550336,
+        "6": 8589869056
+      },
+      "category": "constants"
+    },
+    {
+      "name": "MERSENNE_EXPONENTS",
+      "repo": "TECS-L",
+      "file": "calc/perfect_number_P6_analysis.py",
+      "line": 40,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "evaluable": true,
+      "values": {
+        "1": 2,
+        "2": 3,
+        "3": 5,
+        "4": 7,
+        "5": 13,
+        "6": 17
+      },
+      "category": "other"
+    },
+    {
+      "name": "PHYSICS_MAP",
+      "repo": "TECS-L",
+      "file": "calc/perfect_number_P6_analysis.py",
+      "line": 42,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        4,
+        6,
+        10,
+        14,
+        26
+      ],
+      "evaluable": true,
+      "values": {
+        "4": "4D spacetime (Minkowski)",
+        "6": "6D Calabi-Yau compactification",
+        "10": "10D superstring (Type I / heterotic)",
+        "14": "14D = dim(G2) fundamental representation",
+        "26": "26D bosonic string theory"
+      },
+      "category": "physics"
     },
     {
       "name": "MERSENNE_EXPONENTS",
@@ -32074,6 +32312,18 @@
         3
       ],
       "category": "other"
+    },
+    {
+      "name": "N6_TARGETS",
+      "repo": "TECS-L",
+      "file": "calc/quark_koide_search.py",
+      "line": 60,
+      "type": "dict",
+      "size": 0,
+      "keys": [],
+      "evaluable": true,
+      "values": {},
+      "category": "targets"
     },
     {
       "name": "RAMSEY_EXACT",
@@ -40319,7 +40569,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 184,
+    "TECS-L": 193,
     "SEDI": 122,
     "anima": 0,
     "golden-moe": 3,
