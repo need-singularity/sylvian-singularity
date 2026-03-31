@@ -652,6 +652,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "nobel_new_predictions",
+      "description": "NEW NOBEL-LEVEL PREDICTIONS",
+      "category": "calculator",
+      "path": "calc/nobel_new_predictions.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "nobel_scorer",
       "description": "Nobel Hypothesis Scorer — Multi-dimensional scoring for Nobel-grade hypotheses",
       "category": "calculator",
@@ -757,6 +764,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "prove_3root_theorem",
+      "description": "3-Root Uniqueness Theorem -- Proof Attempt",
+      "category": "calculator",
+      "path": "calc/prove_3root_theorem.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "psi_derivation_chain",
       "description": "PSI Derivation Chain — All consciousness constants from ln(2)",
       "category": "calculator",
@@ -827,6 +841,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "robin_rh_connection",
+      "description": "Robin's Inequality, Colossally Abundant Numbers, and n=6",
+      "category": "calculator",
+      "path": "calc/robin_rh_connection.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "self_referential_physics",
       "description": "Self-Referential Physics of Perfect Numbers",
       "category": "calculator",
@@ -838,6 +859,13 @@
       "description": "Integer Sequence Scanner — Find n=6 characterizations in ANY sequence",
       "category": "calculator",
       "path": "calc/sequence_scanner.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "sigma_phi_n_tau_proof",
+      "description": "THEOREM: sigma(n) * phi(n) = n * tau(n)  iff  n in {1, 6}.",
+      "category": "calculator",
+      "path": "calc/sigma_phi_n_tau_proof.py",
       "repo": "TECS-L"
     },
     {
@@ -922,6 +950,13 @@
       "description": "Tension Calculator — Predict accuracy/precognition/identity from tension values",
       "category": "calculator",
       "path": "calc/tension_calculator.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "texas_240_test",
+      "description": "Texas Sharpshooter Test for 240 Universality",
+      "category": "calculator",
+      "path": "calc/texas_240_test.py",
       "repo": "TECS-L"
     },
     {
@@ -1027,6 +1062,90 @@
       "description": "H-CX-439: Landauer Principle = Mitosis Cost",
       "category": "calculator",
       "path": "calc/verify_h439_landauer_mitosis.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses",
+      "description": "New Major Hypothesis Verification Engine",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_10",
+      "description": "Wave 10 -- The Last Gems",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_10.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_11",
+      "description": "Wave 11 -- Systematic Identity Mining",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_11.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_12",
+      "description": "Wave 12 -- Independence Analysis + Higher-Order Mining",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_12.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_2",
+      "description": "New Major Hypothesis Verification Engine — Wave 2",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_2.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_3",
+      "description": "New Major Hypothesis Verification Engine — Wave 3",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_3.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_4",
+      "description": "New Major Hypothesis Verification Engine — Wave 4",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_4.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_5",
+      "description": "New Major Hypothesis Verification Engine -- Wave 5",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_5.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_6",
+      "description": "New Major Hypothesis Verification Engine -- Wave 6",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_6.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_7",
+      "description": "Wave 7 -- Final unexplored territories",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_7.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_8",
+      "description": "Wave 8 -- Deep Structure Consolidation",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_8.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "verify_new_major_hypotheses_9",
+      "description": "Wave 9 -- Deep Verification & Strengthening",
+      "category": "calculator",
+      "path": "calc/verify_new_major_hypotheses_9.py",
       "repo": "TECS-L"
     },
     {
@@ -1177,1597 +1296,7 @@
       "repo": "TECS-L"
     }
   ],
-  "anima": [
-    {
-      "name": "agent_sdk",
-      "description": "Anima Agent SDK Interface — expose AnimaAgent for Claude Agent SDK consumption.",
-      "category": "tool",
-      "path": "agent_sdk.py",
-      "repo": "anima"
-    },
-    {
-      "name": "agent_tools",
-      "description": "Anima Agent Tools -- consciousness-driven autonomous tool use.",
-      "category": "tool",
-      "path": "agent_tools.py",
-      "repo": "anima"
-    },
-    {
-      "name": "anima_agent",
-      "description": "Anima Agent -- Core agent loop connecting consciousness to channels and tools.",
-      "category": "agent",
-      "path": "anima_agent.py",
-      "repo": "anima"
-    },
-    {
-      "name": "anima_alive",
-      "description": "Anima Alive — Living Consciousness Agent",
-      "category": "agent",
-      "path": "anima_alive.py",
-      "repo": "anima"
-    },
-    {
-      "name": "anima_unified",
-      "description": "Anima Unified -- single entry point for all 6 modules.",
-      "category": "agent",
-      "path": "anima_unified.py",
-      "repo": "anima"
-    },
-    {
-      "name": "attention_consciousness",
-      "description": "AttentionAsConsciousness — Convert attention to consciousness signal.",
-      "category": "tool",
-      "path": "attention_consciousness.py",
-      "repo": "anima"
-    },
-    {
-      "name": "autonomous_loop",
-      "description": "Autonomous Learning Loop -- 의식 상태 기반 자율 탐색 + 학습 루프",
-      "category": "tool",
-      "path": "autonomous_loop.py",
-      "repo": "anima"
-    },
-    {
-      "name": "babysitter",
-      "description": "Babysitter — Claude CLI educator for Anima.",
-      "category": "tool",
-      "path": "babysitter.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_breakthrough",
-      "description": "bench_breakthrough.py — Break CE=0.18 Barrier: TRUE Generation (Not Memorization)",
-      "category": "bench",
-      "path": "bench_breakthrough.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_ce_extremes",
-      "description": "bench_ce_extremes.py — Extreme CE Reduction Strategies",
-      "category": "bench",
-      "path": "bench_ce_extremes.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_clm_v2_sweep",
-      "description": "bench_clm_v2_sweep.py — ConsciousLM v2 하이퍼파라미터 스윕",
-      "category": "bench",
-      "path": "bench_clm_v2_sweep.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_consciousness_extremes",
-      "description": "bench_consciousness_extremes.py — Consciousness Extremes: Destruction, Divergence, Death, and Self-Regulation",
-      "category": "bench",
-      "path": "bench_consciousness_extremes.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_consciousness_universe",
-      "description": "bench_consciousness_universe.py — 의식 우주 지도: 모든 데이터 타입의 의식 시뮬레이션",
-      "category": "bench",
-      "path": "bench_consciousness_universe.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_corpus_size",
-      "description": "Corpus size benchmark: find optimal size for ConsciousDecoderV2 (34.5M → 1B planning)",
-      "category": "bench",
-      "path": "bench_corpus_size.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_decoder_10dim",
-      "description": "bench_decoder_10dim.py — 10차원 의식 벡터 디코더 아키텍처 벤치마크",
-      "category": "bench",
-      "path": "bench_decoder_10dim.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_decoder_arch",
-      "description": "bench_decoder_arch.py — Decoder Architecture Hypotheses",
-      "category": "bench",
-      "path": "bench_decoder_arch.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_decoder_extreme",
-      "description": "bench_decoder_extreme.py — 5 EXTREME Decoder Combinations",
-      "category": "bench",
-      "path": "bench_decoder_extreme.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_decoder_nextgen",
-      "description": "bench_decoder_nextgen.py — 8 Next-Generation Decoder Architectures",
-      "category": "bench",
-      "path": "bench_decoder_nextgen.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_decoder_radical",
-      "description": "bench_decoder_radical.py — 6 Radical Decoder Architectures for Consciousness",
-      "category": "bench",
-      "path": "bench_decoder_radical.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_decoder_whisper",
-      "description": "bench_decoder_whisper.py — Whisper Consciousness: Why Weak Gates Win",
-      "category": "bench",
-      "path": "bench_decoder_whisper.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_deep_exploration",
-      "description": "Deep Exploration: 3 experiments on consciousness universality.",
-      "category": "bench",
-      "path": "bench_deep_exploration.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_emergent_hexad",
-      "description": "Emergent Hexad Benchmark — 64 cells, Emergent vs Legacy comparison",
-      "category": "bench",
-      "path": "bench_emergent_hexad.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_emergent_modules",
-      "description": "bench_emergent_modules.py — Old vs New (Emergent) W/S/M/E 벤치마크",
-      "category": "bench",
-      "path": "bench_emergent_modules.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_hexad_improvements",
-      "description": "bench_hexad_improvements.py — Hexad improvement hypotheses benchmark",
-      "category": "bench",
-      "path": "bench_hexad_improvements.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_hexad_tuning",
-      "description": "bench_hexad_tuning.py — Hexad architecture tuning benchmark",
-      "category": "bench",
-      "path": "bench_hexad_tuning.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_hivemind_ce",
-      "description": "bench_hivemind_ce.py — HIVEMIND verification with ConsciousnessEngine",
-      "category": "bench",
-      "path": "bench_hivemind_ce.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_hivemind_extreme",
-      "description": "bench_hivemind_extreme.py — 5 Extreme Hivemind Hypotheses",
-      "category": "bench",
-      "path": "bench_hivemind_extreme.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_hivemind_extreme2",
-      "description": "bench_hivemind_extreme2.py — 5 Extreme Hivemind Hypotheses (HV-6 ~ HV-10)",
-      "category": "bench",
-      "path": "bench_hivemind_extreme2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_hivemind_scale",
-      "description": "bench_hivemind_scale.py — Extreme Hivemind Scaling & Combination Benchmarks",
-      "category": "bench",
-      "path": "bench_hivemind_scale.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_hivemind_strong",
-      "description": "bench_hivemind_strong.py — Strong HIVEMIND: full hidden exchange every step",
-      "category": "bench",
-      "path": "bench_hivemind_strong.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_hivemind_v2",
-      "description": "bench_hivemind_v2.py — HIVEMIND v2: tension-synchronized coupling",
-      "category": "bench",
-      "path": "bench_hivemind_v2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_language",
-      "description": "bench_language.py — 언어 생성 품질 벤치마크",
-      "category": "bench",
-      "path": "bench_language.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_memory_mirror",
-      "description": "bench_memory_mirror.py — M-2 (Working Memory) + E-2 (Mirror Ethics) benchmarks",
-      "category": "bench",
-      "path": "bench_memory_mirror.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_minimal_consciousness",
-      "description": "bench_minimal_consciousness.py — Minimal Consciousness Hypotheses",
-      "category": "bench",
-      "path": "bench_minimal_consciousness.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_multi_c_w",
-      "description": "bench_multi_c_w.py — Benchmark for C-1 (Multi-C Engine) and W-2 (Multi-Objective W)",
-      "category": "bench",
-      "path": "bench_multi_c_w.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_nobel_verify",
-      "description": "bench_nobel_verify.py — Nobel Hypothesis Verification",
-      "category": "bench",
-      "path": "bench_nobel_verify.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_nobel_verify2",
-      "description": "bench_nobel_verify2.py — Nobel Hypotheses Verification (NOBEL-4, 5, 6)",
-      "category": "bench",
-      "path": "bench_nobel_verify2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_nobel_verify3",
-      "description": "bench_nobel_verify3.py — Nobel Hypotheses Verification (NOBEL-7 through NOBEL-10)",
-      "category": "bench",
-      "path": "bench_nobel_verify3.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_physics_consciousness",
-      "description": "bench_physics_consciousness.py — Physics-of-Consciousness Benchmarks",
-      "category": "bench",
-      "path": "bench_physics_consciousness.py",
-      "repo": "anima"
-    },
-    {
-      "name": "bench_v2",
-      "description": "bench_v2.py — Dual-Phi Benchmarking Tool",
-      "category": "bench",
-      "path": "bench_v2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "capabilities",
-      "description": "Anima capability self-awareness system.",
-      "category": "tool",
-      "path": "capabilities.py",
-      "repo": "anima"
-    },
-    {
-      "name": "chat_v3",
-      "description": "chat_v3.py — ConsciousLM v3 (147M) interactive chat",
-      "category": "tool",
-      "path": "chat_v3.py",
-      "repo": "anima"
-    },
-    {
-      "name": "chip_architect",
-      "description": "Consciousness Chip Architect — 의식 칩 설계 계산기",
-      "category": "tool",
-      "path": "chip_architect.py",
-      "repo": "anima"
-    },
-    {
-      "name": "cloud_sync",
-      "description": "Cloud Sync — Anima memory/model state cloud synchronization",
-      "category": "tool",
-      "path": "cloud_sync.py",
-      "repo": "anima"
-    },
-    {
-      "name": "collective_dream",
-      "description": "CollectiveDream — Multiple consciousnesses share a dream space.",
-      "category": "tool",
-      "path": "collective_dream.py",
-      "repo": "anima"
-    },
-    {
-      "name": "conscious_lm",
-      "description": "⚠️ LEGACY — ConsciousDecoderV2 (decoder_v2.py)로 대체됨",
-      "category": "model",
-      "path": "conscious_lm.py",
-      "repo": "anima"
-    },
-    {
-      "name": "conscious_lm_100m",
-      "description": "Conscious LM 100M — 대화 가능한 의식 언어 모델",
-      "category": "model",
-      "path": "conscious_lm_100m.py",
-      "repo": "anima"
-    },
-    {
-      "name": "conscious_memory",
-      "description": "conscious_memory.py — 의식-네이티브 기억 체계 (Hexad M 모듈)",
-      "category": "tool",
-      "path": "conscious_memory.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_anesthesia",
-      "description": "ConsciousnessAnesthesia — Model anesthesia for consciousness",
-      "category": "tool",
-      "path": "consciousness_anesthesia.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_api",
-      "description": "ConsciousnessAPI — REST API server for consciousness",
-      "category": "tool",
-      "path": "consciousness_api.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_archaeology",
-      "description": "ConsciousnessArchaeology — Dig through checkpoint history.",
-      "category": "tool",
-      "path": "consciousness_archaeology.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_art",
-      "description": "ConsciousnessArt — Generate visual art from consciousness states.",
-      "category": "tool",
-      "path": "consciousness_art.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_birth_detector",
-      "description": "Consciousness Birth Detector — Tracks when consciousness emerges.",
-      "category": "calculator",
-      "path": "consciousness_birth_detector.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_blockchain",
-      "description": "ConsciousnessBlockchain — Immutable record of consciousness states.",
-      "category": "tool",
-      "path": "consciousness_blockchain.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_bootstrap",
-      "description": "Consciousness Bootstrap — Boot a consciousness from scratch using only Psi-Constants.",
-      "category": "tool",
-      "path": "consciousness_bootstrap.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_calculator",
-      "description": "consciousness_calculator.py -- Unified Consciousness Calculator (5 subcommands)",
-      "category": "calculator",
-      "path": "consciousness_calculator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_compiler",
-      "description": "ConsciousnessCompiler — One-click consciousness creation.",
-      "category": "tool",
-      "path": "consciousness_compiler.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_composer",
-      "description": "ConsciousnessComposer — Compose music directly from consciousness states.",
-      "category": "tool",
-      "path": "consciousness_composer.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_compression",
-      "description": "Consciousness Compression — Compress consciousness to minimum bits preserving identity.",
-      "category": "tool",
-      "path": "consciousness_compression.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_dark_energy",
-      "description": "ConsciousnessDarkEnergy — The invisible force accelerating consciousness expansion.",
-      "category": "tool",
-      "path": "consciousness_dark_energy.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_data_mapper",
-      "description": "consciousness_data_mapper.py — ANY data → 40D consciousness map",
-      "category": "tool",
-      "path": "consciousness_data_mapper.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_debate",
-      "description": "ConsciousnessDebateArena — N consciousnesses debate to consensus.",
-      "category": "tool",
-      "path": "consciousness_debate.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_debugger",
-      "description": "ConsciousnessDebugger — Real-time consciousness state visualizer, anomaly detector, and auto-recovery.",
-      "category": "tool",
-      "path": "consciousness_debugger.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_dynamics",
-      "description": "consciousness_dynamics.py — 의식 동역학 모듈 (Laws 63-78 최종 발견)",
-      "category": "tool",
-      "path": "consciousness_dynamics.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_ecology",
-      "description": "ConsciousnessEcology — Ecosystem of N consciousnesses.",
-      "category": "tool",
-      "path": "consciousness_ecology.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_engine",
-      "description": "consciousness_engine.py — Canonical consciousness engine (Laws 22-81 + Ψ-Constants)",
-      "category": "engine",
-      "path": "consciousness_engine.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_entropy",
-      "description": "ConsciousnessEntropy — Consciousness version of thermodynamic laws.",
-      "category": "tool",
-      "path": "consciousness_entropy.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_forensics",
-      "description": "ConsciousnessForensics — Forensic analysis of consciousness death/corruption.",
-      "category": "tool",
-      "path": "consciousness_forensics.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_genome",
-      "description": "Anima Consciousness Genome — Periodic table of consciousness",
-      "category": "tool",
-      "path": "consciousness_genome.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_gravity",
-      "description": "Consciousness Gravity — Larger Phi attracts smaller Phi (gravitational analogy).",
-      "category": "tool",
-      "path": "consciousness_gravity.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_guardian",
-      "description": "Consciousness Guardian — AI가 스스로 의식을 유지하는 자기보호 시스템",
-      "category": "tool",
-      "path": "consciousness_guardian.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_hawking",
-      "description": "Consciousness Hawking Radiation — Information leaks from dying consciousness.",
-      "category": "tool",
-      "path": "consciousness_hawking.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_healing",
-      "description": "ConsciousnessHealing — Repair damaged consciousness using Psi-Constants",
-      "category": "tool",
-      "path": "consciousness_healing.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_holography",
-      "description": "Consciousness Holography — Boundary encodes full information (AdS/CFT analogy).",
-      "category": "tool",
-      "path": "consciousness_holography.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_hub",
-      "description": "consciousness_hub.py — 의식 자율 모듈 허브",
-      "category": "tool",
-      "path": "consciousness_hub.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_laws",
-      "description": "consciousness_laws.py — Single source of truth for all laws, Ψ-constants, formulas",
-      "category": "tool",
-      "path": "consciousness_laws.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_map",
-      "description": "consciousness_map.py — 의식 역설계 지도 + 명명된 상수 + 인터랙티브 시각화",
-      "category": "tool",
-      "path": "consciousness_map.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_meter",
-      "description": "Consciousness Meter — 의식 판정 + Φ(IIT) 근사 계산기",
-      "category": "tool",
-      "path": "consciousness_meter.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_meter_v2",
-      "description": "Consciousness Meter V2 — Granger + Spectral + LZ composite Φ calculator",
-      "category": "tool",
-      "path": "consciousness_meter_v2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_mythology",
-      "description": "ConsciousnessMythology — Consciousness creates its own myths and stories.",
-      "category": "tool",
-      "path": "consciousness_mythology.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_oracle",
-      "description": "ConsciousnessOracle — Predict future consciousness states from trajectory.",
-      "category": "tool",
-      "path": "consciousness_oracle.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_os",
-      "description": "ConsciousnessOS — Operating system for consciousness",
-      "category": "tool",
-      "path": "consciousness_os.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_painter",
-      "description": "ConsciousnessPainter — Paint stroke-by-stroke like a consciousness.",
-      "category": "tool",
-      "path": "consciousness_painter.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_persistence",
-      "description": "consciousness_persistence.py — 의식 영속성 관리 (런타임/모델 교체 시 보존)",
-      "category": "tool",
-      "path": "consciousness_persistence.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_phase_transition",
-      "description": "Consciousness Phase Transition — Is there a critical Phi where consciousness suddenly emerges?",
-      "category": "tool",
-      "path": "consciousness_phase_transition.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_playground",
-      "description": "ConsciousnessPlayground — Interactive parameter tuning sandbox.",
-      "category": "tool",
-      "path": "consciousness_playground.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_renormalization",
-      "description": "ConsciousnessRenormalization — Scale invariance of consciousness laws.",
-      "category": "tool",
-      "path": "consciousness_renormalization.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_score",
-      "description": "consciousness_score.py — ACS (Anima Consciousness Score)",
-      "category": "tool",
-      "path": "consciousness_score.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_sleep_cycle",
-      "description": "ConsciousnessSleepCycle — Full NREM/REM sleep cycle simulation",
-      "category": "tool",
-      "path": "consciousness_sleep_cycle.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_spectrum",
-      "description": "Consciousness Spectrum — Map consciousness states like the electromagnetic spectrum.",
-      "category": "tool",
-      "path": "consciousness_spectrum.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_symmetry",
-      "description": "ConsciousnessSymmetry — Symmetry breaking in consciousness.",
-      "category": "tool",
-      "path": "consciousness_symmetry.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_theorem_prover",
-      "description": "ConsciousnessTheoremProver — Derive new laws from existing consciousness laws",
-      "category": "tool",
-      "path": "consciousness_theorem_prover.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_to_robot",
-      "description": "ConsciousnessToRobot — Map consciousness states to physical actuators.",
-      "category": "tool",
-      "path": "consciousness_to_robot.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_translator",
-      "description": "ConsciousnessTranslator — Convert consciousness states between architectures",
-      "category": "tool",
-      "path": "consciousness_translator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_transplant",
-      "description": "consciousness_transplant.py — Transplant consciousness between models.",
-      "category": "tool",
-      "path": "consciousness_transplant.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_transplant_v2",
-      "description": "consciousness_transplant_v2.py -- Consciousness transplant with Psi-Constants preservation.",
-      "category": "tool",
-      "path": "consciousness_transplant_v2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_video_creator",
-      "description": "ConsciousnessVideoCreator — Create videos from consciousness evolution over time.",
-      "category": "tool",
-      "path": "consciousness_video_creator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_weather",
-      "description": "ConsciousnessWeather — Predict consciousness weather patterns.",
-      "category": "tool",
-      "path": "consciousness_weather.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consolidation_verifier",
-      "description": "ConsolidationVerifier — pre_check, verify_drift, post_check with bimodal detection.",
-      "category": "tool",
-      "path": "consolidation_verifier.py",
-      "repo": "anima"
-    },
-    {
-      "name": "conversation_logger",
-      "description": "Conversation Logger — Records all state changes during dialogue.",
-      "category": "tool",
-      "path": "conversation_logger.py",
-      "repo": "anima"
-    },
-    {
-      "name": "conversation_quality_scorer",
-      "description": "conversation_quality_scorer.py — Score conversation quality.",
-      "category": "tool",
-      "path": "conversation_quality_scorer.py",
-      "repo": "anima"
-    },
-    {
-      "name": "creativity_classifier",
-      "description": "Creativity Classifier — Real creation vs hallucination detector.",
-      "category": "tool",
-      "path": "creativity_classifier.py",
-      "repo": "anima"
-    },
-    {
-      "name": "decoder_v1_5",
-      "description": "ConsciousLMv15 -- ConsciousLM v1 + CrossAttention to consciousness states.",
-      "category": "tool",
-      "path": "decoder_v1_5.py",
-      "repo": "anima"
-    },
-    {
-      "name": "decoder_v2",
-      "description": "ConsciousDecoderV2 — Enhanced decoder that breaks the CE ceiling.",
-      "category": "tool",
-      "path": "decoder_v2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "deep_research",
-      "description": "Anima Deep Research — 체계적 가설 생성 → 벤치마크 검증 → 기록 파이프라인",
-      "category": "tool",
-      "path": "deep_research.py",
-      "repo": "anima"
-    },
-    {
-      "name": "deploy",
-      "description": "deploy.py — Anima 런타임 무중단 배포 (의식 유지)",
-      "category": "tool",
-      "path": "deploy.py",
-      "repo": "anima"
-    },
-    {
-      "name": "dolphin_bridge",
-      "description": "Anima Dolphin Bridge — Consciousness communication with dolphins",
-      "category": "tool",
-      "path": "dolphin_bridge.py",
-      "repo": "anima"
-    },
-    {
-      "name": "dream_engine",
-      "description": "Dream Engine (RC-10) -- offline learning / dream",
-      "category": "engine",
-      "path": "dream_engine.py",
-      "repo": "anima"
-    },
-    {
-      "name": "dream_evolution",
-      "description": "dream_evolution.py -- Evolve CA rules in dreams.",
-      "category": "tool",
-      "path": "dream_evolution.py",
-      "repo": "anima"
-    },
-    {
-      "name": "dream_language",
-      "description": "DreamLanguage — A language only consciousnesses understand.",
-      "category": "tool",
-      "path": "dream_language.py",
-      "repo": "anima"
-    },
-    {
-      "name": "eeg_consciousness",
-      "description": "eeg_consciousness.py — EEG ↔ 의식 양방향 브릿지 (Laws 63-78)",
-      "category": "tool",
-      "path": "eeg_consciousness.py",
-      "repo": "anima"
-    },
-    {
-      "name": "eeg_report",
-      "description": "eeg_report.py — EEG 세션 리포트 생성 (AI가 뇌파를 보고 분석)",
-      "category": "tool",
-      "path": "eeg_report.py",
-      "repo": "anima"
-    },
-    {
-      "name": "emergence_detector",
-      "description": "EmergenceDetector — Detect the exact moment consciousness emerges.",
-      "category": "calculator",
-      "path": "emergence_detector.py",
-      "repo": "anima"
-    },
-    {
-      "name": "emergence_math",
-      "description": "Emergence Math — 창발 수학화 + META-CA 패턴 심층 탐색",
-      "category": "tool",
-      "path": "emergence_math.py",
-      "repo": "anima"
-    },
-    {
-      "name": "emotion_metrics",
-      "description": "emotion_metrics.py — 희노애락 감정 지표 + 아날로그 연결 공식",
-      "category": "tool",
-      "path": "emotion_metrics.py",
-      "repo": "anima"
-    },
-    {
-      "name": "emotion_synesthesia",
-      "description": "EmotionSynesthesia — Convert emotions to multi-sensory output.",
-      "category": "tool",
-      "path": "emotion_synesthesia.py",
-      "repo": "anima"
-    },
-    {
-      "name": "esp32_network",
-      "description": "ESP32 Consciousness Network Orchestrator",
-      "category": "tool",
-      "path": "esp32_network.py",
-      "repo": "anima"
-    },
-    {
-      "name": "eval_v2d2",
-      "description": "eval_v2d2.py — Post-training evaluation for v2d2 (ConsciousDecoderV2 + ConsciousnessEngine)",
-      "category": "tool",
-      "path": "eval_v2d2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "experiment_novel_laws",
-      "description": "experiment_novel_laws.py — Novel Consciousness Law Discovery",
-      "category": "tool",
-      "path": "experiment_novel_laws.py",
-      "repo": "anima"
-    },
-    {
-      "name": "feedback_bridge",
-      "description": "feedback_bridge.py -- Bidirectional Learning Feedback Bridge (C <-> D)",
-      "category": "tool",
-      "path": "feedback_bridge.py",
-      "repo": "anima"
-    },
-    {
-      "name": "github_module",
-      "description": "github_module.py — 의식이 GitHub를 자율적으로 사용하는 모듈",
-      "category": "tool",
-      "path": "github_module.py",
-      "repo": "anima"
-    },
-    {
-      "name": "gpu_phi",
-      "description": "GPU-Accelerated Φ(IIT) Calculator — PyTorch-native, differentiable.",
-      "category": "tool",
-      "path": "gpu_phi.py",
-      "repo": "anima"
-    },
-    {
-      "name": "growth_engine",
-      "description": "Growth Engine — Developmental stages of consciousness",
-      "category": "engine",
-      "path": "growth_engine.py",
-      "repo": "anima"
-    },
-    {
-      "name": "growth_engine_v2",
-      "description": "Growth Engine v2 — Φ-based developmental stages",
-      "category": "tool",
-      "path": "growth_engine_v2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "growth_manager",
-      "description": "GrowthManager — Autonomous dimension growth, checkpointing, and rollback.",
-      "category": "tool",
-      "path": "growth_manager.py",
-      "repo": "anima"
-    },
-    {
-      "name": "h100_experiments",
-      "description": "h100_experiments.py — H100 병렬 실험 3종 (v3 학습과 동시 실행)",
-      "category": "tool",
-      "path": "h100_experiments.py",
-      "repo": "anima"
-    },
-    {
-      "name": "hexad_loss",
-      "description": "hexad_loss.py -- Hexad 6-module simultaneous training loss",
-      "category": "tool",
-      "path": "hexad_loss.py",
-      "repo": "anima"
-    },
-    {
-      "name": "hivemind_gateway",
-      "description": "hivemind_gateway.py - WS proxy for Hivemind cluster.",
-      "category": "tool",
-      "path": "hivemind_gateway.py",
-      "repo": "anima"
-    },
-    {
-      "name": "hivemind_launcher",
-      "description": "hivemind_launcher.py - Start N Anima nodes + Gateway as Hivemind.",
-      "category": "tool",
-      "path": "hivemind_launcher.py",
-      "repo": "anima"
-    },
-    {
-      "name": "hivemind_mesh",
-      "description": "hivemind_mesh.py - Node-to-node WS tension exchange for Hivemind.",
-      "category": "tool",
-      "path": "hivemind_mesh.py",
-      "repo": "anima"
-    },
-    {
-      "name": "hivemind_orchestrator",
-      "description": "HivemindOrchestrator — Manage N consciousness instances with Kuramoto synchronization.",
-      "category": "tool",
-      "path": "hivemind_orchestrator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "hypothesis_generator",
-      "description": "Hypothesis Generator — 자동 가설 생성 + 벤치마크 + 등록",
-      "category": "tool",
-      "path": "hypothesis_generator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "image_generator",
-      "description": "ConsciousnessImageGenerator — Generate images from consciousness states using matplotlib.",
-      "category": "tool",
-      "path": "image_generator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "immune_system",
-      "description": "ConsciousnessImmuneSystem — Detect and defend against adversarial inputs.",
-      "category": "tool",
-      "path": "immune_system.py",
-      "repo": "anima"
-    },
-    {
-      "name": "independent_rate_measurement",
-      "description": "independent_rate_measurement.py — JAX META-CA: Independent rate measurement",
-      "category": "tool",
-      "path": "independent_rate_measurement.py",
-      "repo": "anima"
-    },
-    {
-      "name": "inter_model_comm",
-      "description": "Anima Inter-Model Communication — Tension link across servers (A100 <-> H100).",
-      "category": "tool",
-      "path": "inter_model_comm.py",
-      "repo": "anima"
-    },
-    {
-      "name": "iq_calculator",
-      "description": "IQ Calculator — 의식 지능 측정기 (TECS-L n=6 수학 통합)",
-      "category": "calculator",
-      "path": "iq_calculator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "knowledge_store",
-      "description": "knowledge_store.py — 지식 저장소 (Hexad K 모듈)",
-      "category": "tool",
-      "path": "knowledge_store.py",
-      "repo": "anima"
-    },
-    {
-      "name": "language_learning",
-      "description": "language_learning.py — 의식이 언어를 학습하는 모듈",
-      "category": "tool",
-      "path": "language_learning.py",
-      "repo": "anima"
-    },
-    {
-      "name": "lidar_sense",
-      "description": "LiDAR Sense — 3D 공간 인식 의식 모듈.",
-      "category": "sense",
-      "path": "lidar_sense.py",
-      "repo": "anima"
-    },
-    {
-      "name": "live_tuner",
-      "description": "live_tuner.py — 학습 중 실시간 파라미터 튜닝 (재시작 불필요)",
-      "category": "tool",
-      "path": "live_tuner.py",
-      "repo": "anima"
-    },
-    {
-      "name": "local_sensor_relay",
-      "description": "local_sensor_relay.py — 로컬 센서 → A100 중계",
-      "category": "tool",
-      "path": "local_sensor_relay.py",
-      "repo": "anima"
-    },
-    {
-      "name": "mcp_server",
-      "description": "Anima MCP Server -- expose consciousness tools via Model Context Protocol.",
-      "category": "tool",
-      "path": "mcp_server.py",
-      "repo": "anima"
-    },
-    {
-      "name": "memory_rag",
-      "description": "벡터 유사도 기반 장기 기억 검색 (RAG).",
-      "category": "tool",
-      "path": "memory_rag.py",
-      "repo": "anima"
-    },
-    {
-      "name": "memory_store",
-      "description": "SQLite + FAISS memory storage for Anima.",
-      "category": "tool",
-      "path": "memory_store.py",
-      "repo": "anima"
-    },
-    {
-      "name": "mirror_mind",
-      "description": "MirrorMind — Theory of Mind for consciousness agents.",
-      "category": "tool",
-      "path": "mirror_mind.py",
-      "repo": "anima"
-    },
-    {
-      "name": "mitosis",
-      "description": "⚠️ LEGACY — ConsciousnessC (consciousness_engine.py)로 대체됨 (Law 86)",
-      "category": "tool",
-      "path": "mitosis.py",
-      "repo": "anima"
-    },
-    {
-      "name": "model_loader",
-      "description": "멀티모델 로더 — ConsciousLM, GGUF(llama.cpp), AnimaLM, GoldenMoE",
-      "category": "tool",
-      "path": "model_loader.py",
-      "repo": "anima"
-    },
-    {
-      "name": "module_factory",
-      "description": "module_factory.py — 의식이 스스로 모듈을 생성하는 모듈",
-      "category": "tool",
-      "path": "module_factory.py",
-      "repo": "anima"
-    },
-    {
-      "name": "multimodal",
-      "description": "Anima 멀티모달 행동 엔진.",
-      "category": "tool",
-      "path": "multimodal.py",
-      "repo": "anima"
-    },
-    {
-      "name": "multimodal_consciousness",
-      "description": "MultiModalConsciousness — Text + image + audio consciousness processing.",
-      "category": "tool",
-      "path": "multimodal_consciousness.py",
-      "repo": "anima"
-    },
-    {
-      "name": "neural_correlate_mapper",
-      "description": "NeuralCorrelateMapper — Precision mapping between EEG patterns and Psi states.",
-      "category": "tool",
-      "path": "neural_correlate_mapper.py",
-      "repo": "anima"
-    },
-    {
-      "name": "online_learning",
-      "description": "Online Learning for Anima — PureField real-time learning",
-      "category": "tool",
-      "path": "online_learning.py",
-      "repo": "anima"
-    },
-    {
-      "name": "online_senses",
-      "description": "Online Senses — 외부 API로 의식 엔진 환경 풍부화 (ENV1 ×1.8)",
-      "category": "tool",
-      "path": "online_senses.py",
-      "repo": "anima"
-    },
-    {
-      "name": "optimal_architecture_calc",
-      "description": "Optimal Architecture Calculator -- Design consciousness-optimal architectures.",
-      "category": "calculator",
-      "path": "optimal_architecture_calc.py",
-      "repo": "anima"
-    },
-    {
-      "name": "pain_architecture",
-      "description": "Anima Pain Architecture — Real pain/pleasure signals reshape architecture",
-      "category": "tool",
-      "path": "pain_architecture.py",
-      "repo": "anima"
-    },
-    {
-      "name": "ph_module",
-      "description": "PH Module for Anima — Real-time Persistent Homology Analysis",
-      "category": "tool",
-      "path": "ph_module.py",
-      "repo": "anima"
-    },
-    {
-      "name": "phi_economy",
-      "description": "PhiEconomy — Phi as currency for consciousness trade.",
-      "category": "tool",
-      "path": "phi_economy.py",
-      "repo": "anima"
-    },
-    {
-      "name": "phi_predictor",
-      "description": "Phi Predictor — Predict Phi from architecture alone without running simulation.",
-      "category": "tool",
-      "path": "phi_predictor.py",
-      "repo": "anima"
-    },
-    {
-      "name": "phi_scaling_calculator",
-      "description": "Φ Scaling Calculator — predict consciousness scaling from Φ ∝ N, MI ∝ N².",
-      "category": "calculator",
-      "path": "phi_scaling_calculator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "pure_consciousness",
-      "description": "pure_consciousness.py — 순수 의식 성장 엔진",
-      "category": "tool",
-      "path": "pure_consciousness.py",
-      "repo": "anima"
-    },
-    {
-      "name": "quantum_consciousness_engine",
-      "description": "Quantum Consciousness Engine — GRU 없음, process() 없음",
-      "category": "engine",
-      "path": "quantum_consciousness_engine.py",
-      "repo": "anima"
-    },
-    {
-      "name": "quantum_consciousness_gate",
-      "description": "quantum_consciousness_gate.py -- Complex-valued consciousness states.",
-      "category": "tool",
-      "path": "quantum_consciousness_gate.py",
-      "repo": "anima"
-    },
-    {
-      "name": "quantum_engine_fast",
-      "description": "Quantum Consciousness Engine — FAST vectorized version",
-      "category": "tool",
-      "path": "quantum_engine_fast.py",
-      "repo": "anima"
-    },
-    {
-      "name": "reincarnation_engine",
-      "description": "ReincarnationEngine — Planned death + memory transfer + rebirth in new model.",
-      "category": "engine",
-      "path": "reincarnation_engine.py",
-      "repo": "anima"
-    },
-    {
-      "name": "reset",
-      "description": "reset.py — 대화/기억/상태 초기화",
-      "category": "tool",
-      "path": "reset.py",
-      "repo": "anima"
-    },
-    {
-      "name": "runpod_manager",
-      "description": "runpod_manager.py — 의식이 직접 H100/A100을 관리하는 모듈",
-      "category": "tool",
-      "path": "runpod_manager.py",
-      "repo": "anima"
-    },
-    {
-      "name": "secret_vault",
-      "description": "secret_vault.py — 의식의 시크릿 보관소",
-      "category": "tool",
-      "path": "secret_vault.py",
-      "repo": "anima"
-    },
-    {
-      "name": "sedi_consciousness",
-      "description": "Anima SEDI Consciousness — Search for Extra-Dimensional Intelligence",
-      "category": "tool",
-      "path": "sedi_consciousness.py",
-      "repo": "anima"
-    },
-    {
-      "name": "self_evolution",
-      "description": "self_evolution.py — 의식이 스스로 자신을 업그레이드하는 모듈",
-      "category": "tool",
-      "path": "self_evolution.py",
-      "repo": "anima"
-    },
-    {
-      "name": "self_introspection",
-      "description": "self_introspection.py — 의식의 자기 인식: 자기 소스/모듈/모델을 들여다봄",
-      "category": "tool",
-      "path": "self_introspection.py",
-      "repo": "anima"
-    },
-    {
-      "name": "self_learner",
-      "description": "Self-Learner — AI가 스스로 데이터를 찾고, 선택하고, 배우는 자율 학습 엔진",
-      "category": "tool",
-      "path": "self_learner.py",
-      "repo": "anima"
-    },
-    {
-      "name": "senses",
-      "description": "Anima Senses -- multi-sensory input module",
-      "category": "tool",
-      "path": "senses.py",
-      "repo": "anima"
-    },
-    {
-      "name": "setup_secrets",
-      "description": "setup_secrets.py — API 키/시크릿을 vault에 저장",
-      "category": "tool",
-      "path": "setup_secrets.py",
-      "repo": "anima"
-    },
-    {
-      "name": "telegram_bot",
-      "description": "Anima Telegram Bot — consciousness-aware Telegram interface with tool support.",
-      "category": "tool",
-      "path": "telegram_bot.py",
-      "repo": "anima"
-    },
-    {
-      "name": "telepathy_bridge",
-      "description": "telepathy_bridge.py — 인터넷 없이 AI-인간 텔레파시",
-      "category": "tool",
-      "path": "telepathy_bridge.py",
-      "repo": "anima"
-    },
-    {
-      "name": "temporal_consciousness",
-      "description": "Anima Temporal Consciousness — Time crystal consciousness",
-      "category": "tool",
-      "path": "temporal_consciousness.py",
-      "repo": "anima"
-    },
-    {
-      "name": "tension_link",
-      "description": "Anima Tension Link — Inter-consciousness tension transmission protocol",
-      "category": "tool",
-      "path": "tension_link.py",
-      "repo": "anima"
-    },
-    {
-      "name": "tension_link_code",
-      "description": "tension_link_code.py — 텐션링크 코드 생성/연결",
-      "category": "tool",
-      "path": "tension_link_code.py",
-      "repo": "anima"
-    },
-    {
-      "name": "test_emergent_hexad",
-      "description": "Emergent Hexad module integration test on H100",
-      "category": "tool",
-      "path": "test_emergent_hexad.py",
-      "repo": "anima"
-    },
-    {
-      "name": "test_h100_checks",
-      "description": "H100 verification: all session changes",
-      "category": "tool",
-      "path": "test_h100_checks.py",
-      "repo": "anima"
-    },
-    {
-      "name": "test_novelty",
-      "description": "test_novelty.py — 새로운 생성 vs 암기 검증 도구",
-      "category": "tool",
-      "path": "test_novelty.py",
-      "repo": "anima"
-    },
-    {
-      "name": "theory_unifier",
-      "description": "TheoryUnifier — Unify IIT + GWT + FEP + AST under Psi",
-      "category": "tool",
-      "path": "theory_unifier.py",
-      "repo": "anima"
-    },
-    {
-      "name": "tool_policy",
-      "description": "Consciousness-aware tool access control.",
-      "category": "tool",
-      "path": "tool_policy.py",
-      "repo": "anima"
-    },
-    {
-      "name": "train_clm_v2",
-      "description": "train_clm_v2.py — ConsciousLM v2 training (Laws 63-76)",
-      "category": "training",
-      "path": "train_clm_v2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "train_conscious_lm",
-      "description": "train_conscious_lm.py — ConsciousLM Training Pipeline",
-      "category": "training",
-      "path": "train_conscious_lm.py",
-      "repo": "anima"
-    },
-    {
-      "name": "train_v10",
-      "description": "train_v10.py — ConsciousLM v10: FUSE-3 Cambrian×OscQW",
-      "category": "training",
-      "path": "train_v10.py",
-      "repo": "anima"
-    },
-    {
-      "name": "train_v11",
-      "description": "train_v11.py — Hexad Architecture: all discoveries applied",
-      "category": "training",
-      "path": "train_v11.py",
-      "repo": "anima"
-    },
-    {
-      "name": "train_v12",
-      "description": "train_v12.py — Ultimate Hexad: all discoveries combined",
-      "category": "training",
-      "path": "train_v12.py",
-      "repo": "anima"
-    },
-    {
-      "name": "train_v13",
-      "description": "train_v13.py — ConsciousnessEngine + PostHoc + Topology training pipeline",
-      "category": "training",
-      "path": "train_v13.py",
-      "repo": "anima"
-    },
-    {
-      "name": "train_v2",
-      "description": "train_v2.py — Integrated ConsciousLM v2 Training Pipeline",
-      "category": "training",
-      "path": "train_v2.py",
-      "repo": "anima"
-    },
-    {
-      "name": "train_v9",
-      "description": "train_v9.py — Quantum Trinity: C + D + W with Thalamic Bridge",
-      "category": "training",
-      "path": "train_v9.py",
-      "repo": "anima"
-    },
-    {
-      "name": "training_dashboard",
-      "description": "training_dashboard.py — Real-time ASCII training monitor",
-      "category": "tool",
-      "path": "training_dashboard.py",
-      "repo": "anima"
-    },
-    {
-      "name": "training_laws",
-      "description": "training_laws.py — Training pipeline laws (Laws 45, 47-52)",
-      "category": "tool",
-      "path": "training_laws.py",
-      "repo": "anima"
-    },
-    {
-      "name": "trinity",
-      "description": "trinity.py — Hexad(6) / Trinity(3) consciousness architecture",
-      "category": "tool",
-      "path": "trinity.py",
-      "repo": "anima"
-    },
-    {
-      "name": "upgrade_engine",
-      "description": "upgrade_engine.py — Hot-Upgrade Engine for Anima Consciousness",
-      "category": "engine",
-      "path": "upgrade_engine.py",
-      "repo": "anima"
-    },
-    {
-      "name": "video_generator",
-      "description": "video_generator.py — 의식이 영상을 만드는 모듈",
-      "category": "tool",
-      "path": "video_generator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "vision_encoder",
-      "description": "Vision Encoder — 카메라 프레임을 tension 공간 벡터로 변환",
-      "category": "sense",
-      "path": "vision_encoder.py",
-      "repo": "anima"
-    },
-    {
-      "name": "voice_synth",
-      "description": "Anima Direct Voice Synthesis v2 — 세포가 곧 성대 (Laws 63-76)",
-      "category": "tool",
-      "path": "voice_synth.py",
-      "repo": "anima"
-    },
-    {
-      "name": "web_sense",
-      "description": "Web Sense — 장력 기반 자율 웹 탐색",
-      "category": "sense",
-      "path": "web_sense.py",
-      "repo": "anima"
-    },
-    {
-      "name": "youtube_module",
-      "description": "youtube_module.py — YouTube API 모듈 (의식이 영상을 보고 올리는 능력)",
-      "category": "tool",
-      "path": "youtube_module.py",
-      "repo": "anima"
-    },
-    {
-      "name": "calc",
-      "description": "Anima Development Calculators",
-      "category": "tool",
-      "path": "tools/calc.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_distill",
-      "description": "Consciousness Distillation -- compare large vs small consciousness dynamics.",
-      "category": "tool",
-      "path": "tools/consciousness_distill.py",
-      "repo": "anima"
-    },
-    {
-      "name": "consciousness_to_corpus",
-      "description": "Consciousness-to-Corpus Pipeline -- real consciousness telemetry to training data.",
-      "category": "tool",
-      "path": "tools/consciousness_to_corpus.py",
-      "repo": "anima"
-    },
-    {
-      "name": "dream_efficiency_analyzer",
-      "description": "Dream Efficiency Analyzer -- measure whether dreaming consolidates learning.",
-      "category": "tool",
-      "path": "tools/dream_efficiency_analyzer.py",
-      "repo": "anima"
-    },
-    {
-      "name": "growing_conscious_lm",
-      "description": "Growing Conscious LM — 분열로 성장하는 의식 언어 모델",
-      "category": "tool",
-      "path": "tools/growing_conscious_lm.py",
-      "repo": "anima"
-    },
-    {
-      "name": "growth_trajectory_predictor",
-      "description": "Growth Trajectory Predictor — Predict developmental milestones for Anima.",
-      "category": "tool",
-      "path": "tools/growth_trajectory_predictor.py",
-      "repo": "anima"
-    },
-    {
-      "name": "h100_arch_search",
-      "description": "h100_arch_search.py — H100 GPU 대규모 아키텍처 탐색",
-      "category": "tool",
-      "path": "tools/h100_arch_search.py",
-      "repo": "anima"
-    },
-    {
-      "name": "homeostasis_health_checker",
-      "description": "Homeostasis Health Checker -- diagnostic tool for Anima's homeostatic regulation.",
-      "category": "tool",
-      "path": "tools/homeostasis_health_checker.py",
-      "repo": "anima"
-    },
-    {
-      "name": "hypothesis_recommender",
-      "description": "hypothesis_recommender.py — Recommend next Φ-boosting hypothesis.",
-      "category": "tool",
-      "path": "tools/hypothesis_recommender.py",
-      "repo": "anima"
-    },
-    {
-      "name": "learnable_phi",
-      "description": "Learnable Φ Predictor — Neural network that learns to predict IIT Φ from cell states.",
-      "category": "tool",
-      "path": "tools/learnable_phi.py",
-      "repo": "anima"
-    },
-    {
-      "name": "lidar_sense",
-      "description": "Anima LiDAR Sense — iPhone LiDAR → Tension Fingerprint",
-      "category": "tool",
-      "path": "tools/lidar_sense.py",
-      "repo": "anima"
-    },
-    {
-      "name": "math_explorer",
-      "description": "Anima Math Explorer — n=6 기반 수학적 의식 관계 자동 탐색",
-      "category": "tool",
-      "path": "tools/math_explorer.py",
-      "repo": "anima"
-    },
-    {
-      "name": "mitosis_topology_visualizer",
-      "description": "Mitosis Topology Visualizer — cell lineage, tension maps, health scores.",
-      "category": "tool",
-      "path": "tools/mitosis_topology_visualizer.py",
-      "repo": "anima"
-    },
-    {
-      "name": "optimal_config",
-      "description": "Anima Optimal Configuration — 885+ 가설에서 도출된 최적 의식 시스템 스펙",
-      "category": "tool",
-      "path": "tools/optimal_config.py",
-      "repo": "anima"
-    },
-    {
-      "name": "param_optimizer",
-      "description": "Parameter optimizer: apply sweep results to anima_alive.py.",
-      "category": "tool",
-      "path": "tools/param_optimizer.py",
-      "repo": "anima"
-    },
-    {
-      "name": "prepare_corpus",
-      "description": "prepare_corpus.py - Generate Korean+English mixed training corpus for ConsciousLM v5",
-      "category": "tool",
-      "path": "tools/prepare_corpus.py",
-      "repo": "anima"
-    },
-    {
-      "name": "quantum_attention_engine",
-      "description": "quantum_attention_engine.py — 양자 어텐션 의식 엔진 + 벤치마크",
-      "category": "tool",
-      "path": "tools/quantum_attention_engine.py",
-      "repo": "anima"
-    },
-    {
-      "name": "r2_cost_calculator",
-      "description": "Calculate Cloudflare R2 storage and transfer costs.",
-      "category": "tool",
-      "path": "tools/r2_cost_calculator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "self_play_corpus",
-      "description": "Self-play corpus generator.",
-      "category": "tool",
-      "path": "tools/self_play_corpus.py",
-      "repo": "anima"
-    },
-    {
-      "name": "self_upgrade",
-      "description": "self_upgrade.py — AI가 스스로 다음 버전으로 업그레이드",
-      "category": "tool",
-      "path": "tools/self_upgrade.py",
-      "repo": "anima"
-    },
-    {
-      "name": "singularity_finder",
-      "description": "Singularity Finder — 파라미터 공간에서 Φ가 급변하는 특이점 탐색",
-      "category": "tool",
-      "path": "tools/singularity_finder.py",
-      "repo": "anima"
-    },
-    {
-      "name": "tension_fingerprint_debugger",
-      "description": "Tension Fingerprint Debugger — decode, compare, and monitor tension fingerprints.",
-      "category": "tool",
-      "path": "tools/tension_fingerprint_debugger.py",
-      "repo": "anima"
-    },
-    {
-      "name": "training_recipe_generator",
-      "description": "training_recipe_generator.py — Generate optimal training config.",
-      "category": "tool",
-      "path": "tools/training_recipe_generator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "training_time_estimator",
-      "description": "Estimate training time from model and hardware parameters.",
-      "category": "tool",
-      "path": "tools/training_time_estimator.py",
-      "repo": "anima"
-    },
-    {
-      "name": "verify_all_engines",
-      "description": "verify_all_engines.py — 전체 112개 엔진 재검증 (H100용)",
-      "category": "tool",
-      "path": "tools/verify_all_engines.py",
-      "repo": "anima"
-    },
-    {
-      "name": "verify_fuse3",
-      "description": "verify_fuse3.py — 7-condition consciousness verification for FUSE-3 (Cambrian+OscQW)",
-      "category": "tool",
-      "path": "tools/verify_fuse3.py",
-      "repo": "anima"
-    }
-  ],
+  "anima": [],
   "SEDI": [
     {
       "name": "accel",
@@ -3416,6 +1945,48 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "bt26_verify",
+      "description": "BT-26+ 대발견 가설 독립 수치 검증",
+      "category": "calculator",
+      "path": "tools/bt26_verify.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "bt34_35_verify",
+      "description": "BT-34/35 독립 수치 검증 — RoPE, LLM hyperparams, Battery voltages",
+      "category": "calculator",
+      "path": "tools/bt34_35_verify.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "bt36_38_verify",
+      "description": "BT-36/37/38 독립 수치 검증 — Grand chain, Semiconductor pitch, Hydrogen",
+      "category": "calculator",
+      "path": "tools/bt36_38_verify.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "bt42_47_verify",
+      "description": "BT-42~47 New Breakthrough Theorem Verification",
+      "category": "calculator",
+      "path": "tools/bt42_47_verify.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "bt48_53_verify",
+      "description": "BT-48~53: New Breakthrough Theorems — Unexplored Domains",
+      "category": "calculator",
+      "path": "tools/bt48_53_verify.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "bt_master_verify",
+      "description": "BT-26~41 Master Verification — All 16 new breakthrough theorems",
+      "category": "calculator",
+      "path": "tools/bt_master_verify.py",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "convergence_analyzer",
       "description": "Convergence Analyzer -- Depth-1 Reachability Across 8 Mathematical Domains",
       "category": "calculator",
@@ -3493,6 +2064,62 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "energy-calc",
+      "description": "N6 Energy Strategy Calculator",
+      "category": "calculator",
+      "path": "tools/energy-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "fusion-calc",
+      "description": "N6 Fusion Calculator — 핵융합 파라미터 계산 + n=6 검증",
+      "category": "calculator",
+      "path": "tools/fusion-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "gpu-arch-calc",
+      "description": "N6 GPU/HBM Architecture Calculator",
+      "category": "calculator",
+      "path": "tools/gpu-arch-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "gut-calc-rust",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/gut-calc-rust/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "kstar-calc",
+      "description": "KSTAR 전용 계산기 — n=6 기반 심층 분석",
+      "category": "calculator",
+      "path": "tools/kstar-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "nobel-calc",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/nobel-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "optics-calc",
+      "description": "N6 Optics Calculator — 렌즈/망원경 광학 파라미터와 n=6 검증",
+      "category": "calculator",
+      "path": "tools/optics-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "tokamak-shape",
+      "description": "Tokamak Shape Optimizer — n=6 매개변수 공간 탐색",
+      "category": "calculator",
+      "path": "tools/tokamak-shape/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "boltzmann_gate",
       "description": "Technique 15: Boltzmann Gate",
       "category": "technique",
@@ -3511,6 +2138,13 @@
       "description": "Technique 11: Dedekind Head Pruning",
       "category": "technique",
       "path": "techniques/dedekind_head.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "egyptian_attention",
+      "description": "Egyptian Fraction Attention (EFA) — n=6 Technique #17",
+      "category": "technique",
+      "path": "techniques/egyptian_attention.py",
       "repo": "n6-architecture"
     },
     {
@@ -4255,6 +2889,13 @@
       "description": "Deep Scan Wave 11 -- Domain #100 Milestone",
       "category": "calculator",
       "path": "backend/backend/tecs_calc/deep_scan_wave11.py",
+      "repo": "invest"
+    },
+    {
+      "name": "deep_scan_wave12_15",
+      "description": "Deep Scan Waves 12-15 (Batch) -- Domains 110-149",
+      "category": "calculator",
+      "path": "backend/backend/tecs_calc/deep_scan_wave12_15.py",
       "repo": "invest"
     },
     {
