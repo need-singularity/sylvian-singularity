@@ -906,9 +906,9 @@ def print_summary(all_results):
         ("PPT complete for dim φ·(φ+1) = P₁",
          "PPT entanglement criterion is complete precisely in\n"
          "         dimension 2×3 = 6 = P₁. Separability boundary = P₁."),
-        ("S₂(div dist) = 2·ln(σ/M₃)",
+        ("S₂(div dist) = ln(σ·P₁/sopfr²) = ln(72/25)",
          "Collision entropy of divisor distribution encodes\n"
-         "         σ(6)=12 and Mersenne prime M₃=7."),
+         "         σ(6)=12, P₁=6, sopfr(6)=5."),
         ("S_Ising/ln(L/ε) = 1/P₁",
          "Ising CFT entanglement coefficient = 1/6 = 1/P₁.\n"
          "         Central charge c=1/2=P₁/σ(P₁)."),

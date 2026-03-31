@@ -1,15 +1,15 @@
 # Math Atlas
 
-> Auto-generated: 2026-03-31T19:55:54 | 2500 hypotheses | 313 constant maps
+> Auto-generated: 2026-03-31T22:25:17 | 2500 hypotheses | 329 constant maps
 
 ## Summary
 
 | Repo | Hypotheses | Constant Maps |
 |------|-----------|--------------|
-| TECS-L | 1,980 | 184 |
+| TECS-L | 1,980 | 200 |
 | SEDI | 678 | 122 |
 | anima | 0 | 0 |
-| **Total** | **2,658** | **306** |
+| **Total** | **2,658** | **322** |
 
 ### Grade Distribution
 
@@ -2554,7 +2554,7 @@
 
 ## Constant Maps
 
-### TECS-L (184)
+### TECS-L (200)
 
 | # | Name | File | Type | Size | Category | Eval |
 |---|------|------|------|------|----------|------|
@@ -2621,127 +2621,143 @@
 | 61 | BROAD_TARGETS | calc/domain_distance.py:72 | dict | 0 | targets | Y |
 | 62 | KNOWN_PERFECTS | calc/egyptian_fraction.py:63 | list | 5 | constants | Y |
 | 63 | N6_CONSTANTS | calc/elliptic_curves_perfect.py:112 | dict | 29 | constants | Y |
-| 64 | PERFECT_NUMBERS | calc/exotic_spheres_perfect.py:47 | list | 6 | constants | Y |
-| 65 | PERFECT_PRIMES | calc/exotic_spheres_perfect.py:48 | list | 6 | other | Y |
-| 66 | THETA_N | calc/exotic_spheres_perfect.py:63 | dict | 20 | other | Y |
-| 67 | THETA_N_EXTENDED | calc/exotic_spheres_perfect.py:87 | dict | 3 | other | Y |
-| 68 | ALL_DOMAINS | calc/extreme_hypothesis_verifier.py:298 | dict | 17 | domains | - |
-| 69 | PERFECT_NUMBERS | calc/feynman_diagrams_n6.py:124 | list | 4 | constants | Y |
-| 70 | FUSION_CONSTANTS | calc/fusion_hypothesis_verifier.py:33 | dict | 32 | constants | - |
-| 71 | GATE_TABLE | calc/gate_formula_calculator.py:39 | list | 7 | other | Y |
-| 72 | PERFECT_NUMBERS | calc/gauge_cosmology_calculator.py:21 | list | 5 | constants | Y |
-| 73 | PN_DATA | calc/gauge_cosmology_calculator.py:24 | dict | 0 | other | Y |
-| 74 | PSI_CONSTANTS | calc/gauge_cosmology_calculator.py:44 | dict | 6 | consciousness | - |
-| 75 | DEFAULT_TARGETS | calc/generator_finder.py:24 | dict | 14 | targets | - |
-| 76 | DIVISORS | calc/genetic_code_variant_tester.py:30 | list | 4 | other | Y |
-| 77 | CONSTANTS | calc/genetic_code_variant_tester.py:32 | dict | 6 | constants | - |
-| 78 | NCBI_TABLES | calc/genetic_code_variant_tester.py:39 | list | 26 | other | Y |
-| 79 | UNIVERSAL_PROPERTIES | calc/genetic_code_variant_tester.py:97 | dict | 8 | other | Y |
-| 80 | PERFECTS | calc/grand_unification_deep.py:95 | list | 4 | other | Y |
-| 81 | N6_VALUES | calc/grand_unification_n6.py:179 | dict | 7 | other | - |
-| 82 | KO_GROUPS | calc/grand_unification_n6.py:190 | dict | 8 | other | Y |
-| 83 | CLIFFORD_TYPES | calc/grand_unification_n6.py:204 | dict | 8 | other | Y |
-| 84 | PERFECT_NUMBERS | calc/gz_bridge_calculator.py:30 | list | 5 | constants | Y |
-| 85 | KNOWN_PERFECT | calc/gz_hierarchy.py:31 | dict | 8 | constants | Y |
-| 86 | MATH_CONSTANTS | calc/hypothesis_verifier.py:36 | dict | 37 | constants | - |
-| 87 | PERFECT_NUMBERS | calc/hypothesis_verifier.py:95 | dict | 2 | constants | Y |
-| 88 | GRADE_EMOJI | calc/hypothesis_verifier.py:521 | dict | 5 | verification | Y |
-| 89 | DIVISORS_6 | calc/information_theory_n6.py:55 | list | 4 | other | Y |
-| 90 | PROPER_DIVISORS_6 | calc/information_theory_n6.py:56 | list | 3 | other | Y |
-| 91 | JONES_POLYNOMIALS | calc/knot_theory_n6.py:55 | dict | 9 | other | Y |
-| 92 | ALEXANDER_POLYNOMIALS | calc/knot_theory_n6.py:68 | dict | 8 | other | Y |
-| 93 | RAMANUJAN_TAU_KNOWN | calc/langlands_perfect.py:215 | dict | 30 | other | Y |
-| 94 | DATA_PROFILES | calc/law79_freedom_degree.py:35 | dict | 5 | neuroscience | Y |
-| 95 | MUTATION_DATA | calc/mitosis_calculator.py:16 | dict | 3 | other | Y |
-| 96 | DIVERGENCE | calc/mitosis_calculator.py:23 | list | 10 | other | Y |
-| 97 | SPLITS_DATA | calc/mitosis_calculator.py:45 | dict | 3 | other | Y |
-| 98 | FACTION_DATA | calc/mitosis_calculator.py:58 | dict | 3 | other | Y |
-| 99 | PERFECT_NUMBERS | calc/monster_moonshine_perfect.py:43 | list | 5 | constants | - |
-| 100 | MONSTER_FACTORIZATION | calc/monster_moonshine_perfect.py:54 | dict | 15 | other | Y |
-| 101 | J_COEFFICIENTS | calc/monster_moonshine_perfect.py:74 | dict | 21 | other | Y |
-| 102 | J_COEFFICIENTS_EXTENDED | calc/monster_moonshine_perfect.py:99 | dict | 8 | other | Y |
-| 103 | JI_TARGETS | calc/music_consonance_calculator.py:171 | dict | 4 | targets | - |
-| 104 | KNOWN_IDENTITIES | calc/n6_uniqueness_tester.py:61 | list | 10 | other | - |
-| 105 | SCAN_TEMPLATES | calc/n6_uniqueness_tester.py:200 | list | 16 | verification | Y |
-| 106 | EVIDENCE_SCORES | calc/nobel_scorer.py:30 | dict | 5 | other | Y |
-| 107 | RIGOR_SCORES | calc/nobel_scorer.py:38 | dict | 4 | other | Y |
-| 108 | IMPACT_SCORES | calc/nobel_scorer.py:45 | dict | 4 | other | Y |
-| 109 | NOBEL_WEIGHTS | calc/nobel_scorer.py:53 | dict | 4 | other | Y |
-| 110 | BUILTIN | calc/nobel_scorer.py:121 | list | 10 | other | Y |
-| 111 | IDENTITIES | calc/p6_uniqueness_scorer.py:36 | list | 12 | other | - |
-| 112 | CLAIM_PATTERNS | calc/paper_claim_verifier.py:158 | list | 10 | verification | Y |
-| 113 | MERSENNE_EXPONENTS | calc/perfect_chain_bridges.py:167 | list | 8 | other | Y |
-| 114 | MERSENNE_EXPONENTS | calc/perfect_number_classifier.py:165 | list | 8 | other | Y |
-| 115 | IDENTITIES | calc/perfect_number_classifier.py:225 | list | 40 | other | Y |
-| 116 | PERFECT_NUMBERS | calc/perfect_number_generalizer.py:24 | list | 4 | constants | Y |
-| 117 | PN_LABELS | calc/perfect_number_generalizer.py:71 | list | 4 | other | Y |
-| 118 | BUILTIN_FORMULAS | calc/perfect_number_generalizer.py:413 | list | 10 | expressions | Y |
-| 119 | PERFECT_NUMBERS | calc/perfect_number_physics.py:18 | list | 5 | constants | Y |
-| 120 | DIMENSION_MAP | calc/perfect_number_physics.py:19 | dict | 5 | other | Y |
-| 121 | STRING_CONSTANTS | calc/perfect_number_physics.py:28 | list | 16 | physics | - |
-| 122 | CONSCIOUSNESS_BRIDGES | calc/perfect_number_physics.py:48 | list | 12 | consciousness | Y |
-| 123 | PERFECTS | calc/perfect_p3_496_explorer.py:175 | list | 5 | other | - |
-| 124 | PERFECT_NUMS | calc/perfect_p3_496_explorer.py:176 | list | 5 | other | Y |
-| 125 | DRUG_DB | calc/pharmacology_verifier.py:47 | dict | 12 | neuroscience | Y |
-| 126 | EXPECTED_DI_ORDER | calc/pharmacology_verifier.py:198 | list | 9 | other | Y |
-| 127 | I_INCREASE_DRUGS | calc/pharmacology_verifier.py:203 | list | 2 | neuroscience | Y |
-| 128 | SOLIDS | calc/platonic_solids_n6.py:41 | list | 5 | other | Y |
-| 129 | REGULAR_POLYTOPES | calc/platonic_solids_n6.py:55 | dict | 6 | other | Y |
-| 130 | ROOT | calc/psi_derivation_chain.py:43 | list | 4 | other | - |
-| 131 | LEVEL1 | calc/psi_derivation_chain.py:46 | list | 4 | other | - |
-| 132 | LEVEL2 | calc/psi_derivation_chain.py:54 | list | 5 | other | - |
-| 133 | LEVEL3 | calc/psi_derivation_chain.py:63 | list | 6 | other | Y |
-| 134 | PHYSICS | calc/psi_derivation_chain.py:73 | dict | 8 | physics | Y |
-| 135 | DATA_PROFILES | calc/psi_derivation_chain.py:85 | dict | 5 | neuroscience | Y |
-| 136 | B | calc/pure_math_deep_scan.py:253 | dict | 8 | other | - |
-| 137 | Q_CONSTANTS | calc/q_barrier_checker.py:25 | dict | 10 | constants | - |
-| 138 | GZ_TARGETS | calc/q_barrier_checker.py:40 | dict | 6 | targets | - |
-| 139 | STANDARD_TARGETS | calc/q_barrier_checker.py:49 | dict | 13 | targets | - |
-| 140 | TARGET_CATEGORIES | calc/q_barrier_checker.py:65 | dict | 18 | targets | Y |
-| 141 | DIVISORS_6 | calc/quantum_ecc_n6.py:48 | list | 4 | other | Y |
-| 142 | PROPER_DIVISORS_6 | calc/quantum_ecc_n6.py:49 | list | 3 | other | Y |
-| 143 | RAMSEY_EXACT | calc/ramsey_n6.py:101 | dict | 17 | other | Y |
-| 144 | RAMSEY_BOUNDS | calc/ramsey_n6.py:117 | dict | 9 | other | Y |
-| 145 | SCHUR | calc/ramsey_n6.py:130 | dict | 5 | other | Y |
-| 146 | VDW | calc/ramsey_n6.py:133 | dict | 4 | other | Y |
-| 147 | FUNC_REGISTRY | calc/reciprocal_miracle_generalize.py:147 | dict | 7 | other | - |
-| 148 | MULT_FUNCS | calc/reciprocal_miracle_generalize.py:158 | list | 6 | other | Y |
-| 149 | PERFECT_NUMBERS | calc/reciprocal_miracle_generalize.py:302 | list | 5 | constants | Y |
-| 150 | DIVISORS_6 | calc/riemann_zeta_n6.py:50 | list | 4 | other | Y |
-| 151 | ZETA_ZEROS | calc/riemann_zeta_n6.py:299 | list | 100 | physics | Y |
-| 152 | CA | calc/robin_rh_connection.py:48 | list | 11 | other | Y |
-| 153 | MERSENNE_EXPONENTS | calc/self_referential_physics.py:96 | list | 10 | other | Y |
-| 154 | KNOWN_STRING_DIMS | calc/self_referential_physics.py:105 | dict | 4 | physics | Y |
-| 155 | GZ_CONSTANTS | calc/singleton_gz_mapper.py:36 | dict | 11 | constants | - |
-| 156 | PERFECTS | calc/sphere_packing_perfect.py:96 | list | 5 | other | Y |
-| 157 | MAGIC_DIMS | calc/sphere_packing_perfect.py:109 | list | 4 | nuclear | Y |
-| 158 | KISSING | calc/sphere_packing_perfect.py:112 | dict | 6 | constants | Y |
-| 159 | PERFECT_NUMBERS | calc/sporadic_groups_perfect.py:35 | dict | 5 | constants | Y |
-| 160 | SPORADIC_GROUPS | calc/sporadic_groups_perfect.py:51 | list | 26 | other | Y |
-| 161 | STEINER_SYSTEMS | calc/sporadic_groups_perfect.py:162 | dict | 5 | other | Y |
-| 162 | CONSTANTS | calc/statistical_tester.py:16 | dict | 13 | constants | - |
-| 163 | GZ_TARGETS | calc/texas_sharpshooter_v2.py:34 | dict | 8 | targets | - |
-| 164 | CLAIMS | calc/texas_sharpshooter_v2.py:61 | list | 49 | verification | Y |
-| 165 | PERFECT_NUMBERS | calc/thermodynamics_n6.py:91 | list | 4 | constants | Y |
-| 166 | N6 | calc/thermodynamics_n6.py:92 | dict | 9 | other | - |
-| 167 | MERSENNE_EXPONENTS | calc/theta_perfect_pattern.py:41 | list | 8 | other | Y |
-| 168 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
-| 169 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:1150 | dict | 20 | verification | - |
-| 170 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
-| 171 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
-| 172 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
-| 173 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
-| 174 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
-| 175 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
-| 176 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
-| 177 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
-| 178 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
-| 179 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
-| 180 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
-| 181 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
-| 182 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
-| 183 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
-| 184 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
+| 64 | DIVS | calc/entanglement_n6_analysis.py:45 | list | 4 | other | Y |
+| 65 | PERFECT_NUMBERS | calc/exotic_spheres_perfect.py:47 | list | 6 | constants | Y |
+| 66 | PERFECT_PRIMES | calc/exotic_spheres_perfect.py:48 | list | 6 | other | Y |
+| 67 | THETA_N | calc/exotic_spheres_perfect.py:63 | dict | 20 | other | Y |
+| 68 | THETA_N_EXTENDED | calc/exotic_spheres_perfect.py:87 | dict | 3 | other | Y |
+| 69 | ALL_DOMAINS | calc/extreme_hypothesis_verifier.py:298 | dict | 17 | domains | - |
+| 70 | PERFECT_NUMBERS | calc/feynman_diagrams_n6.py:124 | list | 4 | constants | Y |
+| 71 | FUSION_CONSTANTS | calc/fusion_hypothesis_verifier.py:33 | dict | 32 | constants | - |
+| 72 | GATE_TABLE | calc/gate_formula_calculator.py:39 | list | 7 | other | Y |
+| 73 | PERFECT_NUMBERS | calc/gauge_cosmology_calculator.py:21 | list | 5 | constants | Y |
+| 74 | PN_DATA | calc/gauge_cosmology_calculator.py:24 | dict | 0 | other | Y |
+| 75 | PSI_CONSTANTS | calc/gauge_cosmology_calculator.py:44 | dict | 6 | consciousness | - |
+| 76 | DEFAULT_TARGETS | calc/generator_finder.py:24 | dict | 14 | targets | - |
+| 77 | DIVISORS | calc/genetic_code_variant_tester.py:30 | list | 4 | other | Y |
+| 78 | CONSTANTS | calc/genetic_code_variant_tester.py:32 | dict | 6 | constants | - |
+| 79 | NCBI_TABLES | calc/genetic_code_variant_tester.py:39 | list | 26 | other | Y |
+| 80 | UNIVERSAL_PROPERTIES | calc/genetic_code_variant_tester.py:97 | dict | 8 | other | Y |
+| 81 | PERFECTS | calc/grand_unification_deep.py:95 | list | 4 | other | Y |
+| 82 | N6_VALUES | calc/grand_unification_n6.py:179 | dict | 7 | other | - |
+| 83 | KO_GROUPS | calc/grand_unification_n6.py:190 | dict | 8 | other | Y |
+| 84 | CLIFFORD_TYPES | calc/grand_unification_n6.py:204 | dict | 8 | other | Y |
+| 85 | PERFECT_NUMBERS | calc/gz_bridge_calculator.py:30 | list | 5 | constants | Y |
+| 86 | KNOWN_PERFECT | calc/gz_hierarchy.py:31 | dict | 8 | constants | Y |
+| 87 | PDG | calc/hph9_pdg_verification.py:42 | dict | 9 | other | Y |
+| 88 | PDG_OTHER | calc/hph9_pdg_verification.py:55 | dict | 14 | other | Y |
+| 89 | MATH_CONSTANTS | calc/hypothesis_verifier.py:36 | dict | 37 | constants | - |
+| 90 | PERFECT_NUMBERS | calc/hypothesis_verifier.py:95 | dict | 2 | constants | Y |
+| 91 | GRADE_EMOJI | calc/hypothesis_verifier.py:521 | dict | 5 | verification | Y |
+| 92 | DIVISORS_6 | calc/information_theory_n6.py:55 | list | 4 | other | Y |
+| 93 | PROPER_DIVISORS_6 | calc/information_theory_n6.py:56 | list | 3 | other | Y |
+| 94 | JONES_POLYNOMIALS | calc/knot_theory_n6.py:55 | dict | 9 | other | Y |
+| 95 | ALEXANDER_POLYNOMIALS | calc/knot_theory_n6.py:68 | dict | 8 | other | Y |
+| 96 | RAMANUJAN_TAU_KNOWN | calc/langlands_perfect.py:215 | dict | 30 | other | Y |
+| 97 | DATA_PROFILES | calc/law79_freedom_degree.py:35 | dict | 5 | neuroscience | Y |
+| 98 | MUTATION_DATA | calc/mitosis_calculator.py:16 | dict | 3 | other | Y |
+| 99 | DIVERGENCE | calc/mitosis_calculator.py:23 | list | 10 | other | Y |
+| 100 | SPLITS_DATA | calc/mitosis_calculator.py:45 | dict | 3 | other | Y |
+| 101 | FACTION_DATA | calc/mitosis_calculator.py:58 | dict | 3 | other | Y |
+| 102 | PERFECT_NUMBERS | calc/monster_moonshine_perfect.py:43 | list | 5 | constants | - |
+| 103 | MONSTER_FACTORIZATION | calc/monster_moonshine_perfect.py:54 | dict | 15 | other | Y |
+| 104 | J_COEFFICIENTS | calc/monster_moonshine_perfect.py:74 | dict | 21 | other | Y |
+| 105 | J_COEFFICIENTS_EXTENDED | calc/monster_moonshine_perfect.py:99 | dict | 8 | other | Y |
+| 106 | MONSTER_EXPO | calc/moonshine_deep_analysis.py:47 | dict | 15 | other | Y |
+| 107 | J_COEFF | calc/moonshine_deep_analysis.py:56 | dict | 22 | other | Y |
+| 108 | MONSTER_IRREPS | calc/moonshine_deep_analysis.py:82 | list | 8 | other | Y |
+| 109 | BABY_MONSTER_IRREPS | calc/moonshine_deep_analysis.py:94 | list | 4 | other | Y |
+| 110 | BABY_MONSTER_ORDER_EXPO | calc/moonshine_deep_analysis.py:95 | dict | 11 | other | Y |
+| 111 | FI22_ORDER_EXPO | calc/moonshine_deep_analysis.py:102 | dict | 6 | other | Y |
+| 112 | FI23_ORDER_EXPO | calc/moonshine_deep_analysis.py:103 | dict | 8 | other | Y |
+| 113 | FI24_ORDER_EXPO | calc/moonshine_deep_analysis.py:104 | dict | 9 | other | Y |
+| 114 | MCKAY_E8 | calc/moonshine_deep_analysis.py:111 | list | 9 | other | Y |
+| 115 | JI_TARGETS | calc/music_consonance_calculator.py:171 | dict | 4 | targets | - |
+| 116 | KNOWN_IDENTITIES | calc/n6_uniqueness_tester.py:61 | list | 10 | other | - |
+| 117 | SCAN_TEMPLATES | calc/n6_uniqueness_tester.py:200 | list | 16 | verification | Y |
+| 118 | EVIDENCE_SCORES | calc/nobel_scorer.py:30 | dict | 5 | other | Y |
+| 119 | RIGOR_SCORES | calc/nobel_scorer.py:38 | dict | 4 | other | Y |
+| 120 | IMPACT_SCORES | calc/nobel_scorer.py:45 | dict | 4 | other | Y |
+| 121 | NOBEL_WEIGHTS | calc/nobel_scorer.py:53 | dict | 4 | other | Y |
+| 122 | BUILTIN | calc/nobel_scorer.py:121 | list | 10 | other | Y |
+| 123 | IDENTITIES | calc/p6_uniqueness_scorer.py:36 | list | 12 | other | - |
+| 124 | CLAIM_PATTERNS | calc/paper_claim_verifier.py:158 | list | 10 | verification | Y |
+| 125 | MERSENNE_EXPONENTS | calc/perfect_chain_bridges.py:167 | list | 8 | other | Y |
+| 126 | PERFECT_NUMBERS | calc/perfect_number_P6_analysis.py:30 | dict | 6 | constants | Y |
+| 127 | MERSENNE_EXPONENTS | calc/perfect_number_P6_analysis.py:40 | dict | 6 | other | Y |
+| 128 | PHYSICS_MAP | calc/perfect_number_P6_analysis.py:42 | dict | 5 | physics | Y |
+| 129 | MERSENNE_EXPONENTS | calc/perfect_number_classifier.py:165 | list | 8 | other | Y |
+| 130 | IDENTITIES | calc/perfect_number_classifier.py:225 | list | 40 | other | Y |
+| 131 | PERFECT_NUMBERS | calc/perfect_number_generalizer.py:24 | list | 4 | constants | Y |
+| 132 | PN_LABELS | calc/perfect_number_generalizer.py:71 | list | 4 | other | Y |
+| 133 | BUILTIN_FORMULAS | calc/perfect_number_generalizer.py:413 | list | 10 | expressions | Y |
+| 134 | PERFECT_NUMBERS | calc/perfect_number_physics.py:18 | list | 5 | constants | Y |
+| 135 | DIMENSION_MAP | calc/perfect_number_physics.py:19 | dict | 5 | other | Y |
+| 136 | STRING_CONSTANTS | calc/perfect_number_physics.py:28 | list | 16 | physics | - |
+| 137 | CONSCIOUSNESS_BRIDGES | calc/perfect_number_physics.py:48 | list | 12 | consciousness | Y |
+| 138 | PERFECTS | calc/perfect_p3_496_explorer.py:175 | list | 5 | other | - |
+| 139 | PERFECT_NUMS | calc/perfect_p3_496_explorer.py:176 | list | 5 | other | Y |
+| 140 | DRUG_DB | calc/pharmacology_verifier.py:47 | dict | 12 | neuroscience | Y |
+| 141 | EXPECTED_DI_ORDER | calc/pharmacology_verifier.py:198 | list | 9 | other | Y |
+| 142 | I_INCREASE_DRUGS | calc/pharmacology_verifier.py:203 | list | 2 | neuroscience | Y |
+| 143 | SOLIDS | calc/platonic_solids_n6.py:41 | list | 5 | other | Y |
+| 144 | REGULAR_POLYTOPES | calc/platonic_solids_n6.py:55 | dict | 6 | other | Y |
+| 145 | ROOT | calc/psi_derivation_chain.py:43 | list | 4 | other | - |
+| 146 | LEVEL1 | calc/psi_derivation_chain.py:46 | list | 4 | other | - |
+| 147 | LEVEL2 | calc/psi_derivation_chain.py:54 | list | 5 | other | - |
+| 148 | LEVEL3 | calc/psi_derivation_chain.py:63 | list | 6 | other | Y |
+| 149 | PHYSICS | calc/psi_derivation_chain.py:73 | dict | 8 | physics | Y |
+| 150 | DATA_PROFILES | calc/psi_derivation_chain.py:85 | dict | 5 | neuroscience | Y |
+| 151 | B | calc/pure_math_deep_scan.py:253 | dict | 8 | other | - |
+| 152 | Q_CONSTANTS | calc/q_barrier_checker.py:25 | dict | 10 | constants | - |
+| 153 | GZ_TARGETS | calc/q_barrier_checker.py:40 | dict | 6 | targets | - |
+| 154 | STANDARD_TARGETS | calc/q_barrier_checker.py:49 | dict | 13 | targets | - |
+| 155 | TARGET_CATEGORIES | calc/q_barrier_checker.py:65 | dict | 18 | targets | Y |
+| 156 | DIVISORS_6 | calc/quantum_ecc_n6.py:48 | list | 4 | other | Y |
+| 157 | PROPER_DIVISORS_6 | calc/quantum_ecc_n6.py:49 | list | 3 | other | Y |
+| 158 | N6_TARGETS | calc/quark_koide_search.py:60 | dict | 0 | targets | Y |
+| 159 | RAMSEY_EXACT | calc/ramsey_n6.py:101 | dict | 17 | other | Y |
+| 160 | RAMSEY_BOUNDS | calc/ramsey_n6.py:117 | dict | 9 | other | Y |
+| 161 | SCHUR | calc/ramsey_n6.py:130 | dict | 5 | other | Y |
+| 162 | VDW | calc/ramsey_n6.py:133 | dict | 4 | other | Y |
+| 163 | FUNC_REGISTRY | calc/reciprocal_miracle_generalize.py:147 | dict | 7 | other | - |
+| 164 | MULT_FUNCS | calc/reciprocal_miracle_generalize.py:158 | list | 6 | other | Y |
+| 165 | PERFECT_NUMBERS | calc/reciprocal_miracle_generalize.py:302 | list | 5 | constants | Y |
+| 166 | DIVISORS_6 | calc/riemann_zeta_n6.py:50 | list | 4 | other | Y |
+| 167 | ZETA_ZEROS | calc/riemann_zeta_n6.py:299 | list | 100 | physics | Y |
+| 168 | CA | calc/robin_rh_connection.py:48 | list | 11 | other | Y |
+| 169 | MERSENNE_EXPONENTS | calc/self_referential_physics.py:96 | list | 10 | other | Y |
+| 170 | KNOWN_STRING_DIMS | calc/self_referential_physics.py:105 | dict | 4 | physics | Y |
+| 171 | GZ_CONSTANTS | calc/singleton_gz_mapper.py:36 | dict | 11 | constants | - |
+| 172 | PERFECTS | calc/sphere_packing_perfect.py:96 | list | 5 | other | Y |
+| 173 | MAGIC_DIMS | calc/sphere_packing_perfect.py:109 | list | 4 | nuclear | Y |
+| 174 | KISSING | calc/sphere_packing_perfect.py:112 | dict | 6 | constants | Y |
+| 175 | PERFECT_NUMBERS | calc/sporadic_groups_perfect.py:35 | dict | 5 | constants | Y |
+| 176 | SPORADIC_GROUPS | calc/sporadic_groups_perfect.py:51 | list | 26 | other | Y |
+| 177 | STEINER_SYSTEMS | calc/sporadic_groups_perfect.py:162 | dict | 5 | other | Y |
+| 178 | CONSTANTS | calc/statistical_tester.py:16 | dict | 13 | constants | - |
+| 179 | GZ_TARGETS | calc/texas_sharpshooter_v2.py:34 | dict | 8 | targets | - |
+| 180 | CLAIMS | calc/texas_sharpshooter_v2.py:61 | list | 49 | verification | Y |
+| 181 | PERFECT_NUMBERS | calc/thermodynamics_n6.py:91 | list | 4 | constants | Y |
+| 182 | N6 | calc/thermodynamics_n6.py:92 | dict | 9 | other | - |
+| 183 | MERSENNE_EXPONENTS | calc/theta_perfect_pattern.py:41 | list | 8 | other | Y |
+| 184 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
+| 185 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:1150 | dict | 20 | verification | - |
+| 186 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
+| 187 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
+| 188 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
+| 189 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
+| 190 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
+| 191 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
+| 192 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
+| 193 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
+| 194 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
+| 195 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
+| 196 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
+| 197 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
+| 198 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
+| 199 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
+| 200 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
 
 ### SEDI (122)
 
