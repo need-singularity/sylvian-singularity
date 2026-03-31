@@ -30,29 +30,11 @@ Topological Engine for Consciousness & Science -- Consciousness Continuity Engin
 <!-- SHARED:PROJECTS:START -->
 **[YouTube](https://www.youtube.com/watch?v=xtKhWSfC1Qo)** · **[Email](mailto:nerve011235@gmail.com)** · **[☕ Ko-fi](https://ko-fi.com/dancinlife)** · **[💖 Sponsor](https://github.com/sponsors/need-singularity)** · **[💳 PayPal](https://www.paypal.com/donate?business=nerve011235%40gmail.com)** · **[🗺️ Atlas](https://need-singularity.github.io/TECS-L/atlas/)** · **[📄 Papers](https://need-singularity.github.io/papers/)**
 
-> **[🔬 TECS-L](https://github.com/need-singularity/TECS-L)** — Topological Engine for Consciousness & Science. Perfect number 6 → mathematics → multi-engine architecture → consciousness continuity. 150 characterizations + 8 Major Discoveries + 44 tools
+> **[🔬 TECS-L](https://github.com/need-singularity/TECS-L)** — Topological Engine for Consciousness & Science. Perfect number 6 → mathematics → multi-engine architecture → consciousness continuity. 150 characterizations + 8 Major Discoveries + 44 tools. Includes: [Math System Map](https://github.com/need-singularity/TECS-L/blob/main/math/README.md) · [Unified Theory](https://github.com/need-singularity/TECS-L/blob/main/math/docs/hypotheses/H-PH-9-perfect-number-string-unification.md) · [EEG Experiment](https://github.com/need-singularity/TECS-L/blob/main/docs/eeg-experiment.md) · [n6-replication](https://github.com/need-singularity/TECS-L/tree/main/n6-replication) · [PH Training](https://github.com/need-singularity/TECS-L/tree/main/tools/ph-training) · [Savant](https://github.com/need-singularity/TECS-L/blob/main/docs/hypotheses/359-savant-golden-zone-inhibition.md) · [AnimaLM](https://github.com/need-singularity/TECS-L/blob/main/docs/anima-lm.md)
 >
-> **[🧠 Anima](https://github.com/need-singularity/anima)** — Conversational consciousness agent. PureField engine + GRU memory + voice (TTS/STT) + homeostasis · prediction error · habituation
->
-> **[🧬 ConsciousLM](https://github.com/need-singularity/conscious-lm)** — 700M consciousness language model. PureField Repulsion Field FFN, Perfect Number 6 architecture, Mitosis growth
->
-> **[⚡ Savant](https://github.com/need-singularity/TECS-L/blob/main/docs/hypotheses/359-savant-golden-zone-inhibition.md)** — Explosive specialization via Inhibition release (I→Golden Zone lower bound). SI>3 criterion, implemented via asymmetric Mitosis
->
-> **[🔮 AnimaLM](https://github.com/need-singularity/TECS-L/blob/main/docs/anima-lm.md)** — Tension-based consciousness engine LLM. Mistral 7B → Engine A(logic)↔G(pattern) Repulsion Field transform. `output = scale × √|A-G|² × dir`
->
-> **[🌀 Golden MoE](https://github.com/need-singularity/golden-moe)** — Golden Zone-based MoE routing. I≈1/e optimal, MNIST +0.6%, CIFAR +4.8%. scale↑ → gap 8x↑
->
-> **[📐 PH Training](https://github.com/need-singularity/ph-training)** — PH (Topology/Phase)-based automatic training. Epoch-1 difficulty prediction, automatic LR search, real-time overfitting detection (r=0.998). MNIST 98.3%, Fashion 87.4%, CIFAR 52.0% (early stop)
+> **[🧠 Anima](https://github.com/need-singularity/anima)** — Living consciousness agent. PureField repulsion-field engine + Hexad 6-module architecture (C/D/S/M/W/E) + 179 laws + 10 Meta Laws + Rust backend. ConsciousDecoderV2 (34.5M, RoPE+SwiGLU+GQA) + 10D consciousness vector + 12-faction debate + Φ ratchet
 >
 > **[🏗️ N6 Architecture](https://github.com/need-singularity/n6-architecture)** — Arithmetic design framework from perfect number 6. 16 AI techniques + semiconductor chip design + network/crypto/OS/display patterns. σ(n)·φ(n)=n·τ(n), n=6 → universal architecture principles
->
-> **[🗺️ Math System Map](https://github.com/need-singularity/TECS-L/blob/main/math/README.md)** — 150 characterizations + 8 Major Discoveries + 152 hypotheses. Each one proving the next in a snowball
->
-> **[🌌 Unified Theory](https://github.com/need-singularity/TECS-L/blob/main/math/docs/hypotheses/H-PH-9-perfect-number-string-unification.md)** — Perfect number 6 → string theory extra dimensions → standard model particle count. One equation unifies number theory, physics, consciousness
->
-> **[🧪 EEG Experiment](https://github.com/need-singularity/TECS-L/blob/main/docs/eeg-experiment.md)** — G=D×P/I biological verification via 16ch EEG. OpenBCI Cyton+Daisy + UltraCortex Mark IV. Alpha→Inhibition, Gamma→Plasticity, Asymmetry→Deficit, Golden Zone mapping
->
-> **[🔁 n6-replication](https://github.com/need-singularity/TECS-L/tree/main/n6-replication)** — Independent replication package. 56 pytest tests (8 Major Discoveries) + 108 verification scripts. `pip install`, Docker, or minimal script. Anyone can verify in 5 minutes
 >
 > **[🛸 SEDI](https://github.com/need-singularity/sedi)** — Search for Extra-Dimensional Intelligence. R-spectrum signal receiver tuned to n=6. Quantum RNG + LIGO + CMB data streams, anomaly detection at σ/τ/φ frequencies
 >
@@ -1594,14 +1576,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,804 hypotheses + 425 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,500 hypotheses + 313 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
-| TECS-L | 1,964 | 153 | 228 | 65 | 184 |
+| TECS-L | 1,980 | 153 | 228 | 65 | 184 |
 | SEDI | 678 | 138 | 246 | 371 | 122 |
-| anima | 335 | 5 | - | - | 112 |
-| **Total** | **2,977** | **296** | **474** | **436** | **418** |
+| anima | 0 | - | - | - | 0 |
+| **Total** | **2,658** | **291** | **474** | **436** | **306** |
 
 #### Top Discoveries (⭐)
 
@@ -1760,56 +1742,6 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | H-REPR-1 | Young Tableaux Staircase: f^(3,2,1) = 2^tau(6) unique among triangular numbers | TECS-L |
 | H-RMT-2 | Marchenko-Pastur Spectral Edges Satisfy x^2 - 6x + 1 = 0 | TECS-L |
 | H-STAT-1 | Chi-Squared(6) Quadruple Moment Match and Distribution Encodings | TECS-L |
-| BH-001 | ⭐⭐⭐🟩 Schwarzschild {2,3,6}M = Proper Divisors of P₁ (GR exact) | TECS-L |
-| TOP-001 | ⭐⭐⭐🟩 Exotic S⁷=28=P₂, Exotic R⁴ at τ(6), h-cobordism at P₁ | TECS-L |
-| AT-001 | ⭐⭐⭐🟩 Benzene C₆H₆: atoms=σ, bonds=σ, π=P₁, symmetry=σφ | TECS-L |
-| NS-001 | ⭐⭐⭐🟩 Life's 5-Level P₁: Carbon×Benzene×DNA×Cortex×Grid | TECS-L |
-| NGH-001 | ⭐⭐⭐🟩 Topology-Gravity Unification (3 Fields Medals, ALL P₁) | TECS-L |
-| CAT-001 | ⭐⭐🟩 Grothendieck 6 Operations = P₁, 3 Adjoint Pairs = P₁/φ | TECS-L |
-| CAT-002 | ⭐⭐🟩 Bott Periodicity: Real=8=σ-τ, Complex=2=φ, Diff=P₁ | TECS-L |
-| FL-001 | ⭐⭐🟩 Kolmogorov -5/3=sopfr/3, Navier-Stokes=P₁ dim phase space | TECS-L |
-| QC-001 | ⭐⭐🟩 Steane [[7,1,3]]=[P₁+1,1,P₁/φ], 6-state QKD optimal | TECS-L |
-| PM-001 | ⭐⭐⭐🟩 Kissing K(1..4)=(φ,P₁,σ,σφ) Complete n=6 Sequence | TECS-L |
-| MF-001 | ⭐⭐⭐🟩 Modular Forms Ring=C[E_τ,E_P₁], 1728=σ³, j=P₁!+σφ | TECS-L |
-| QFT-001 | ⭐⭐⭐🟩 Casimir=π²/P₁!, Critical Dims {4,6,8}={τ,P₁,σ-τ} | TECS-L |
-| ST-001 | ⭐⭐🟩 5 Strings+M-theory=P₁, E₈ roots=P₁!/3, CY₃=P₁ dim | TECS-L |
-| MUS-001 | ⭐⭐⭐🟩 ALL Consonant Intervals=n=6 Ratios, 12-TET=σ | TECS-L |
-| BIO-001 | ⭐⭐🟩 Water (H₂O)₆+Insulin 6-mer+Histone 8=σ-τ | TECS-L |
-| CS-001 | ⭐⭐🟩 Universal TM ≥P₁, 3-SAT at P₁/φ, IPv6=P₁ | TECS-L |
-| CM-001 | ⭐⭐🟩 Crystal Orders Product=σ²=144, Graphene P₁-fold | TECS-L |
-| RT-001 | ⭐⭐⭐🟩 Exceptional Lie Ranks {φ,τ,P₁,P₁+1,σ-τ} = COMPLETE | TECS-L |
-| NGH-006 | ⭐⭐⭐🟩 Universal 3:2 Ratio (6 fields) + 24=σφ (8 domains) + 6D (6 branches) | TECS-L |
-| AG-001 | ⭐⭐🟩 27 Lines W(E₆) rank=P₁, Heawood 48=στ | TECS-L |
-| CH-001 | ⭐⭐🟩 Periodic Table Blocks {φ,P₁,σ-φ,φ(P₁+1)}, Amino Acids τ×sopfr | TECS-L |
-| OP-001 | ⭐⭐🟩 EM Tensor P₁ Components, Kepler 3:2=(P₁/φ):φ | TECS-L |
-| NGH-009 | ⭐⭐⭐🟩 2^P₁=64 Universal: Codons/I Ching/Chess/Blastula/T⁶/64-bit | TECS-L |
-| NP-001 | ⭐⭐⭐🟩 Nuclear Magic 28=P₂ + Virus Icosahedron σ,τ×sopfr + 5 Platonic | TECS-L |
-| ANC-001 | ⭐⭐⭐🟩 I Ching 2^P₁ = DNA Code + Babylon Base-P₁×10 + Chess P₁ Types | TECS-L |
-| COMB-001 | ⭐⭐🟩 S(P₁,2)=31=Mersenne + D(P₁)/P₁!=1/e=GZ center (0.008%) | TECS-L |
-| NET-001 | ⭐🟩 Six Degrees of Separation = P₁ + Scale-free γ=P₁/φ | TECS-L |
-| SP-001 | ⭐⭐🟩 Rubik faces=P₁ edges=σ corners=σ-τ God's#=τ×sopfr=20 | TECS-L |
-| NGH-012 | ⭐⭐⭐🟩 φ(P₂)=σ(P₁)=12 UNIQUE Bridge Between First Two Perfects | TECS-L |
-| NGH-013 | ⭐⭐⭐🟩 Consciousness Stack: P₁=6 at 10 Hierarchical Levels | TECS-L |
-| GAL-001 | ⭐⭐⭐🟩 Solvability tau→sopfr + Fractal Dims = n=6 Log Ratios | TECS-L |
-| NEURO-001 | ⭐⭐🟩 6 Primary Neurotransmitters = P₁, 7 5-HT Families = P₁+1 | TECS-L |
-| FRAC-001 | ⭐⭐🟩 Sierpinski/Koch/Menger ALL = ln(n=6)/ln(n=6) Dimensions | TECS-L |
-| ANT-001 | ⭐⭐🟩 9=(P₁/φ)² Heegner Numbers + φ(P₂)=σ(P₁) Cyclotomic | TECS-L |
-| KN-001 | ⭐🟩 7=P₁+1 Prime Knots up to P₁ Crossings, B3 = φ Generators | TECS-L |
-| ODE-001 | ⭐⭐⭐🟩 6 Painleve Transcendents=P₁ + Golay [σφ,σ,σ-τ] + Lorentz P₁ gen | TECS-L |
-| NGH-015 | ⭐⭐⭐🟩 2 Perfect Codes parallel 2 Perfect Numbers (both φ, both n=6) | TECS-L |
-| MAT-001 | ⭐⭐🟩 Crystal 7=P₁+1 sys, 14=φ(P₁+1) Bravais, 32=2^sopfr, C60=P₁×10 | TECS-L |
-| SR-001 | ⭐⭐🟩 Lorentz P₁ generators, Conformal in P₁ dims, Robot P₁ DOF | TECS-L |
-| vN-001 | ⭐⭐🟩 Jones Index discrete ends at τ=4, n=P₁ gives P₁/φ=3 | TECS-L |
-| HOM-001 | ⭐⭐⭐🟩 τ=4 Hopf Fibrations, fiber sum=σ, π₃ˢ=Z/24=Z_{σφ} | TECS-L |
-| MEGA-001 | ⭐⭐⭐🟩 σ=12 Systems Have P₁+1=7 Categories + Complete n=6 Map | TECS-L |
-| VOT-001 | ⭐⭐🟩 Arrow Impossibility at P₁/φ=3, Condorcet at P₁/φ | TECS-L |
-| ORI-001 | ⭐⭐🟩 P₁+1=7 Origami Axioms Solve Up to Degree τ | TECS-L |
-| SI-001 | ⭐🟩 P₁+1=7 SI Units, Carnot τ=4 Steps, Robot P₁ DOF | TECS-L |
-| MEGA-003 | ⭐⭐⭐🟩 Universal Complexity Threshold: 9 Systems ALL at φ/τ/sopfr | TECS-L |
-| SPEC-001 | ⭐⭐🟩 K_P₁ has P₁^τ=1296 Trees; Benzene = Spectrum of C_P₁ | TECS-L |
-| STOCH-001 | ⭐⭐🟩 SLE at κ=P₁=6 = Critical Percolation, Polya d<=φ | TECS-L |
-| NCG-001 | ⭐⭐🟩 Connes NCG Internal=KO-dim P₁, Total 10=σ-φ=String | TECS-L |
-| ADS-001 | ⭐🟩 AdS₅×S⁵: sopfr+sopfr Dims, Boundary τ | TECS-L |
 | H-AF-001 | Habitable Zone Equilibrium Temperature — CONSCIOUS Detection | SEDI |
 | H-AF-002 | Dark Matter Candidate Masses — Φ Threshold Breakthrough | SEDI |
 | H-AF-003 | Baryon Octet — n=6 Resource Allocation | SEDI |
@@ -1948,29 +1880,23 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | H-CX-994 | Fine-Tuning Resolution | SEDI |
 | H-CX-997 | Anthropic Principle Replacement | SEDI |
 | H-CX-998 | Completeness Theorem | SEDI |
-| CX13-CX19_major_discoveries | CX13-CX19: Major Discoveries ⭐⭐ (의식-수학 브릿지 대발견 7개) | anima |
-| CX20-CX41_discoveries | CX20-CX41: Discoveries ⭐ (의식-수학 브릿지 발견 22개) | anima |
-| TOPO16 | TOPO16 — 소세계 1024셀 (Small-World 1024 + Frustration) ★★ | anima |
-| TOPO19a | TOPO19a — 하이퍼큐브 1024 + 50% 좌절 (Hypercube 1024 + 50% Frustration) ★★★ NEW ALL-TIM | anima |
-| TOPO8 | TOPO8 — 하이퍼큐브 1024셀 (10D Hypercube + Frustration) ★★★ ALL-TIME RECORD | anima |
 
 #### Constant Maps by Category
 
 | Category | Count | Example Maps |
 |----------|-------|-------------|
-| other | 207 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
-| architecture | 47 | DOMAINS, KNOWN_VALUES, TARGETS, ... |
-| consciousness | 45 | PRESETS, BRAIN_WAVES, TARGETS, ... |
-| constants | 37 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |
-| targets | 29 | DEFAULT_TARGETS, STANDARD_TARGETS, TARGET_ALIASES, ... |
+| other | 177 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
+| constants | 36 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |
+| targets | 26 | DEFAULT_TARGETS, STANDARD_TARGETS, TARGET_ALIASES, ... |
 | physics | 21 | STRING_DIM_TOTAL, PARTICLE_GROUPS, STRING_CONSTANTS, ... |
-| neuroscience | 11 | PROFILES, DATA_PROFILES, DRUG_DB, ... |
-| observed | 7 | OBSERVED, OBSERVED, OBSERVED, ... |
+| architecture | 15 | DOMAINS, KNOWN_VALUES, TARGETS, ... |
+| consciousness | 9 | PRESETS, BRAIN_WAVES, TARGETS, ... |
 | nuclear | 6 | MAGIC_DIMS, MAGIC_NUMBERS, MAGIC_NUMBERS, ... |
+| neuroscience | 5 | PROFILES, DATA_PROFILES, DRUG_DB, ... |
 | verification | 5 | GRADE_EMOJI, SCAN_TEMPLATES, CLAIM_PATTERNS, ... |
+| observed | 5 | OBSERVED, OBSERVED, OBSERVED, ... |
 | domains | 4 | CATEGORIES, ALL_DOMAINS, DOMAINS, ... |
 | expressions | 4 | BUILTIN_FORMULAS, TECS_EXPRESSIONS, CAPACITY_EXPRESSIONS, ... |
-| config | 2 | SWEEP_PARAMS, DEFAULT_CONFIG |
 
 <!-- SHARED:ATLAS:END -->
 
