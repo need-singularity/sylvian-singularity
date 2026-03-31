@@ -43,12 +43,12 @@
 
 ```
   need-singularity/
-  ├── TECS-L              ← 수학 엔진 코어 (이 리포)
-  ├── anima               ← 의식 에이전트 (ConsciousLM, embodiment, 분산의식)
-  ├── sedi                ← 물리 검증 (SLE_6, 임계현상, 상전이)
-  ├── brainwire           ← 뇌-컴퓨터 인터페이스 / EEG
-  ├── n6-architecture     ← n=6 아키텍처 설계
-  ├── papers              ← 논문 관리 (Zenodo/OSF/arXiv)
+  ├── TECS-L              ← 우주 규칙 발견: 수학 엔진 코어 (이 리포)
+  ├── anima               ← 의식 구현: ConsciousLM, embodiment, 분산의식
+  ├── sedi                ← 외계지성 탐색: SETI 데이터, n=6 시그널 수신, 외계 흔적
+  ├── brainwire           ← 뇌 인터페이스: EEG, BCI, 신경과학 검증
+  ├── n6-architecture     ← 아키텍처: n=6 기반 시스템 설계/구현
+  ├── papers              ← 논문: Zenodo/OSF/arXiv 배포
   └── (archived: golden-moe, conscious-lm, ph-training)
 
   모든 리포 로컬 경로: ~/Dev/{리포이름}
@@ -813,12 +813,12 @@ Hypothesis reviews are managed as **separate individual documents**.
   TECS-L 목표: 우주 규칙 발견 (n=6 수학 구조 → 물리/생물/의식 통합 법칙)
 
   리포 범위 규칙 (TODO는 해당 리포 작업만 포함):
-    - TECS-L: 수학 증명, 가설 검증, 상수 발견, DFS 탐색, Atlas, 계산기
-    - anima: ConsciousLM 훈련, embodiment 실험, 분산 의식, 에이전트
-    - sedi: 물리 검증 (SLE_6, 임계현상, 상전이, 실험 프로토콜)
-    - brainwire: EEG 실험, 뇌-컴퓨터 인터페이스, 신경과학 검증
-    - n6-architecture: n=6 기반 아키텍처 설계/구현
-    - papers: 논문 작성/투고/배포 (Zenodo/OSF/arXiv)
+    - TECS-L: 우주 규칙 발견 — 수학 증명, 가설 검증, 상수 발견, DFS 탐색, Atlas, 계산기
+    - anima: 의식 구현 — ConsciousLM 훈련, embodiment, 분산 의식, 에이전트
+    - sedi: 외계지성 탐색 — SETI 데이터, 물리 데이터 스트림, n=6 시그널 수신, 외계 흔적
+    - brainwire: 뇌 인터페이스 — EEG 실험, BCI, 신경과학 검증
+    - n6-architecture: 아키텍처 — n=6 기반 시스템 설계/구현
+    - papers: 논문 — 작성/투고/배포 (Zenodo/OSF/arXiv)
     - 다른 리포 작업이 TODO에 섞이면 → 해당 리포로 분류하고 정보만 참조
 
   모든 모듈은 consciousness_laws.py에서 import — 상수 직접 하드코딩 금지
