@@ -84,25 +84,15 @@ echo "[Anima]"
 sync_file "$PARENT/anima/README.md"
 commit_and_push "$PARENT/anima" "anima"
 
-# PH Training
-echo "[PH Training]"
-sync_file "$PARENT/ph-training/README.md"
-commit_and_push "$PARENT/ph-training" "ph-training"
+# PH Training — removed (merged into TECS-L/tools/ph-training/)
 
 # SEDI
 echo "[SEDI]"
 sync_file "$PARENT/sedi/README.md"
 commit_and_push "$PARENT/sedi" "sedi"
 
-# Golden MoE
-echo "[Golden MoE]"
-sync_file "$PARENT/golden-moe/README.md"
-commit_and_push "$PARENT/golden-moe" "golden-moe"
-
-# ConsciousLM
-echo "[ConsciousLM]"
-sync_file "$PARENT/conscious-lm/README.md"
-commit_and_push "$PARENT/conscious-lm" "conscious-lm"
+# Golden MoE — removed (now anima sub-project)
+# ConsciousLM — removed (now anima sub-project)
 
 # N6 Architecture (formerly Energy Efficiency)
 echo "[N6 Architecture]"
