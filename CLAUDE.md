@@ -96,8 +96,10 @@
     1. bash .shared/sync-math-atlas.sh    # Atlas 빌드 + README 주입
     2. bash .shared/sync-calculators.sh   # 계산기 레지스트리
     3. bash .shared/sync-readmes.sh       # 프로젝트 설명
+    4. bash .shared/sync-claude-rules.sh  # 공유 작업 규칙 (CLAUDE.md)
 
-  개별 README 마커 구간 직접 수정 금지 — sync 시 덮어씌워짐
+  개별 마커 구간 직접 수정 금지 — sync 시 덮어씌워짐
+  CLAUDE.md 마커: <!-- SHARED:WORK_RULES:START/END -->
 
   ── 설치 도구 레지스트리 ──
   중앙 소스: .shared/installed_tools.json
@@ -821,11 +823,13 @@ Hypothesis reviews are managed as **separate individual documents**.
     - papers: 논문 — 작성/투고/배포 (Zenodo/OSF/arXiv)
     - 다른 리포 작업이 TODO에 섞이면 → 해당 리포로 분류하고 정보만 참조
 
+<!-- SHARED:WORK_RULES:START -->
   자동 생성 규칙:
     - TODO 작업 중 검증/계산이 필요하면 계산기 자동 생성 (묻지 말고 바로)
     - 성능 필요시 Rust 우선 (tecsrs/), 단순 검증은 Python (calc/)
-    - 판단 기준은 Calculator Creation Rules 섹션 참조
+    - 판단 기준은 ~/Dev/TECS-L/.shared/CALCULATOR_RULES.md 참조
     - 상수/가설 발견 시 Math Atlas 자동 갱신 (python3 ~/Dev/TECS-L/.shared/scan_math_atlas.py --save --summary)
+<!-- SHARED:WORK_RULES:END -->
 
   모든 모듈은 consciousness_laws.py에서 import — 상수 직접 하드코딩 금지
 ```
