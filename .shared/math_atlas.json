@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T22:01:32",
+  "generated": "2026-03-31T22:23:15",
   "stats": {
     "TECS-L": 1980,
     "SEDI": 678,
@@ -29613,6 +29613,195 @@
       "category": "constants"
     },
     {
+      "name": "PDG",
+      "repo": "TECS-L",
+      "file": "calc/hph9_pdg_verification.py",
+      "line": 42,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "electron",
+        "muon",
+        "tau",
+        "up",
+        "down",
+        "strange",
+        "charm",
+        "bottom",
+        "top"
+      ],
+      "evaluable": true,
+      "values": {
+        "electron": {
+          "val": 0.511,
+          "err_up": 0.0,
+          "err_dn": 0.0,
+          "unit": "MeV"
+        },
+        "muon": {
+          "val": 105.6584,
+          "err_up": 0.0001,
+          "err_dn": 0.0001,
+          "unit": "MeV"
+        },
+        "tau": {
+          "val": 1776.86,
+          "err_up": 0.12,
+          "err_dn": 0.12,
+          "unit": "MeV"
+        },
+        "up": {
+          "val": 2.16,
+          "err_up": 0.49,
+          "err_dn": 0.26,
+          "unit": "MeV"
+        },
+        "down": {
+          "val": 4.67,
+          "err_up": 0.48,
+          "err_dn": 0.17,
+          "unit": "MeV"
+        },
+        "strange": {
+          "val": 93.4,
+          "err_up": 8.6,
+          "err_dn": 3.4,
+          "unit": "MeV"
+        },
+        "charm": {
+          "val": 1270.0,
+          "err_up": 20.0,
+          "err_dn": 20.0,
+          "unit": "MeV"
+        },
+        "bottom": {
+          "val": 4180.0,
+          "err_up": 30.0,
+          "err_dn": 20.0,
+          "unit": "MeV"
+        },
+        "top": {
+          "val": 172500.0,
+          "err_up": 700.0,
+          "err_dn": 700.0,
+          "unit": "MeV"
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "PDG_OTHER",
+      "repo": "TECS-L",
+      "file": "calc/hph9_pdg_verification.py",
+      "line": 55,
+      "type": "dict",
+      "size": 14,
+      "keys": [
+        "higgs",
+        "delta",
+        "inv_alpha",
+        "lambda_qcd",
+        "V_us",
+        "rho",
+        "jpsi",
+        "upsilon",
+        "jarlskog",
+        "epsilon_k",
+        "sin2beta",
+        "dm2_31",
+        "dm2_21",
+        "koide_angle"
+      ],
+      "evaluable": true,
+      "values": {
+        "higgs": {
+          "val": 125.1,
+          "err_up": 0.14,
+          "err_dn": 0.14,
+          "unit": "GeV"
+        },
+        "delta": {
+          "val": 1232.0,
+          "err_up": 1.0,
+          "err_dn": 1.0,
+          "unit": "MeV"
+        },
+        "inv_alpha": {
+          "val": 137.036,
+          "err_up": 0.0,
+          "err_dn": 0.0,
+          "unit": ""
+        },
+        "lambda_qcd": {
+          "val": 213.0,
+          "err_up": 8.0,
+          "err_dn": 8.0,
+          "unit": "MeV"
+        },
+        "V_us": {
+          "val": 0.2243,
+          "err_up": 0.0008,
+          "err_dn": 0.0008,
+          "unit": ""
+        },
+        "rho": {
+          "val": 775.26,
+          "err_up": 0.23,
+          "err_dn": 0.23,
+          "unit": "MeV"
+        },
+        "jpsi": {
+          "val": 3096.9,
+          "err_up": 0.006,
+          "err_dn": 0.006,
+          "unit": "MeV"
+        },
+        "upsilon": {
+          "val": 9460.3,
+          "err_up": 0.26,
+          "err_dn": 0.26,
+          "unit": "MeV"
+        },
+        "jarlskog": {
+          "val": 3.18e-05,
+          "err_up": 1.5e-06,
+          "err_dn": 1.5e-06,
+          "unit": ""
+        },
+        "epsilon_k": {
+          "val": 0.002228,
+          "err_up": 1.1e-05,
+          "err_dn": 1.1e-05,
+          "unit": ""
+        },
+        "sin2beta": {
+          "val": 0.699,
+          "err_up": 0.017,
+          "err_dn": 0.017,
+          "unit": ""
+        },
+        "dm2_31": {
+          "val": 0.002525,
+          "err_up": 3.3e-05,
+          "err_dn": 3.3e-05,
+          "unit": "eV^2"
+        },
+        "dm2_21": {
+          "val": 7.53e-05,
+          "err_up": 1.8e-06,
+          "err_dn": 1.8e-06,
+          "unit": "eV^2"
+        },
+        "koide_angle": {
+          "val": 0.2222211,
+          "err_up": 1e-06,
+          "err_dn": 1e-06,
+          "unit": "rad"
+        }
+      },
+      "category": "other"
+    },
+    {
       "name": "MATH_CONSTANTS",
       "repo": "TECS-L",
       "file": "calc/hypothesis_verifier.py",
@@ -30464,7 +30653,7 @@
       "name": "MONSTER_IRREPS",
       "repo": "TECS-L",
       "file": "calc/moonshine_deep_analysis.py",
-      "line": 83,
+      "line": 82,
       "type": "list",
       "size": 8,
       "keys": null,
@@ -30482,10 +30671,151 @@
       "category": "other"
     },
     {
+      "name": "BABY_MONSTER_IRREPS",
+      "repo": "TECS-L",
+      "file": "calc/moonshine_deep_analysis.py",
+      "line": 94,
+      "type": "list",
+      "size": 4,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        1,
+        4371,
+        96255,
+        96256
+      ],
+      "category": "other"
+    },
+    {
+      "name": "BABY_MONSTER_ORDER_EXPO",
+      "repo": "TECS-L",
+      "file": "calc/moonshine_deep_analysis.py",
+      "line": 95,
+      "type": "dict",
+      "size": 11,
+      "keys": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        31,
+        47
+      ],
+      "evaluable": true,
+      "values": {
+        "2": 41,
+        "3": 13,
+        "5": 6,
+        "7": 2,
+        "11": 1,
+        "13": 1,
+        "17": 1,
+        "19": 1,
+        "23": 1,
+        "31": 1,
+        "47": 1
+      },
+      "category": "other"
+    },
+    {
+      "name": "FI22_ORDER_EXPO",
+      "repo": "TECS-L",
+      "file": "calc/moonshine_deep_analysis.py",
+      "line": 102,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "evaluable": true,
+      "values": {
+        "2": 17,
+        "3": 9,
+        "5": 2,
+        "7": 1,
+        "11": 1,
+        "13": 1
+      },
+      "category": "other"
+    },
+    {
+      "name": "FI23_ORDER_EXPO",
+      "repo": "TECS-L",
+      "file": "calc/moonshine_deep_analysis.py",
+      "line": 103,
+      "type": "dict",
+      "size": 8,
+      "keys": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        23
+      ],
+      "evaluable": true,
+      "values": {
+        "2": 18,
+        "3": 13,
+        "5": 2,
+        "7": 1,
+        "11": 1,
+        "13": 1,
+        "17": 1,
+        "23": 1
+      },
+      "category": "other"
+    },
+    {
+      "name": "FI24_ORDER_EXPO",
+      "repo": "TECS-L",
+      "file": "calc/moonshine_deep_analysis.py",
+      "line": 104,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        23,
+        29
+      ],
+      "evaluable": true,
+      "values": {
+        "2": 21,
+        "3": 16,
+        "5": 2,
+        "7": 3,
+        "11": 1,
+        "13": 1,
+        "17": 1,
+        "23": 1,
+        "29": 1
+      },
+      "category": "other"
+    },
+    {
       "name": "MCKAY_E8",
       "repo": "TECS-L",
       "file": "calc/moonshine_deep_analysis.py",
-      "line": 99,
+      "line": 111,
       "type": "list",
       "size": 9,
       "keys": null,
@@ -40569,7 +40899,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 193,
+    "TECS-L": 200,
     "SEDI": 122,
     "anima": 0,
     "golden-moe": 3,
