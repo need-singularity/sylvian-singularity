@@ -2032,6 +2032,11 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | MAT-001 | ⭐⭐🟩 Crystal 7=P₁+1 sys, 14=φ(P₁+1) Bravais, 32=2^sopfr, C60=P₁×10 | TECS-L |
 | SR-001 | ⭐⭐🟩 Lorentz P₁ generators, Conformal in P₁ dims, Robot P₁ DOF | TECS-L |
 | vN-001 | ⭐⭐🟩 Jones Index discrete ends at τ=4, n=P₁ gives P₁/φ=3 | TECS-L |
+| HOM-001 | ⭐⭐⭐🟩 τ=4 Hopf Fibrations, fiber sum=σ, π₃ˢ=Z/24=Z_{σφ} | TECS-L |
+| MEGA-001 | ⭐⭐⭐🟩 σ=12 Systems Have P₁+1=7 Categories + Complete n=6 Map | TECS-L |
+| VOT-001 | ⭐⭐🟩 Arrow Impossibility at P₁/φ=3, Condorcet at P₁/φ | TECS-L |
+| ORI-001 | ⭐⭐🟩 P₁+1=7 Origami Axioms Solve Up to Degree τ | TECS-L |
+| SI-001 | ⭐🟩 P₁+1=7 SI Units, Carnot τ=4 Steps, Robot P₁ DOF | TECS-L |
 | H-AF-001 | Habitable Zone Equilibrium Temperature — CONSCIOUS Detection | SEDI |
 | H-AF-002 | Dark Matter Candidate Masses — Φ Threshold Breakthrough | SEDI |
 | H-AF-003 | Baryon Octet — n=6 Resource Allocation | SEDI |

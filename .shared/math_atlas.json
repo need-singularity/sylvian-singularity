@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T18:07:37",
+  "generated": "2026-03-31T18:10:35",
   "stats": {
-    "TECS-L": 1976,
+    "TECS-L": 1978,
     "SEDI": 678,
     "anima": 335,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2816,
+  "total": 2818,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -13392,6 +13392,16 @@
       "file": "docs/hypotheses/HCP-001-close-packing.md"
     },
     {
+      "id": "TECS-L:HOM-001-hopf-homotopy-mobius",
+      "title": "HOM-001: Hopf Fibrations, Stable Homotopy, Mobius Group",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/HOM-001-hopf-homotopy-mobius.md"
+    },
+    {
       "id": "TECS-L:INFOGEO-001-fisher-divisor-distribution",
       "title": "Hypothesis INFOGEO-001: Fisher Information of Divisor Distribution",
       "repo": "TECS-L",
@@ -13503,6 +13513,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/MASS-GEN-D-consciousness.md"
+    },
+    {
+      "id": "TECS-L:MEGA-001-p1plus1-universality",
+      "title": "MEGA-001: P1+1=7 Universal Classification + Complete n=6 Map",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/MEGA-001-p1plus1-universality.md"
     },
     {
       "id": "TECS-L:MF-001-modular-forms-ring-n6",
