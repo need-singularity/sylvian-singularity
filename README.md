@@ -2037,6 +2037,11 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | VOT-001 | ⭐⭐🟩 Arrow Impossibility at P₁/φ=3, Condorcet at P₁/φ | TECS-L |
 | ORI-001 | ⭐⭐🟩 P₁+1=7 Origami Axioms Solve Up to Degree τ | TECS-L |
 | SI-001 | ⭐🟩 P₁+1=7 SI Units, Carnot τ=4 Steps, Robot P₁ DOF | TECS-L |
+| MEGA-003 | ⭐⭐⭐🟩 Universal Complexity Threshold: 9 Systems ALL at φ/τ/sopfr | TECS-L |
+| SPEC-001 | ⭐⭐🟩 K_P₁ has P₁^τ=1296 Trees; Benzene = Spectrum of C_P₁ | TECS-L |
+| STOCH-001 | ⭐⭐🟩 SLE at κ=P₁=6 = Critical Percolation, Polya d<=φ | TECS-L |
+| NCG-001 | ⭐⭐🟩 Connes NCG Internal=KO-dim P₁, Total 10=σ-φ=String | TECS-L |
+| ADS-001 | ⭐🟩 AdS₅×S⁵: sopfr+sopfr Dims, Boundary τ | TECS-L |
 | H-AF-001 | Habitable Zone Equilibrium Temperature — CONSCIOUS Detection | SEDI |
 | H-AF-002 | Dark Matter Candidate Masses — Φ Threshold Breakthrough | SEDI |
 | H-AF-003 | Baryon Octet — n=6 Resource Allocation | SEDI |
