@@ -217,6 +217,7 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
 ```
 
 ## Calculator Creation Rules (Required)
+> **공유 규칙 파일**: `.shared/CALCULATOR_RULES.md` — 모든 TECS-L family 리포 공통
 
 ```
   Language Priority:

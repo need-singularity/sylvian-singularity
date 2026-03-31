@@ -60,6 +60,7 @@ REPOS = [
         "root": DEV / "n6-architecture",
         "scans": [
             {"path": "tools", "category": "calculator"},
+            {"path": "tools", "glob": "**/main.rs", "category": "calculator", "lang": "rust"},
             {"path": "techniques", "category": "technique"},
             {"path": "engine", "category": "engine", "exclude": ["__init__"]},
             {"path": "experiments", "category": "experiment"},
@@ -119,7 +120,7 @@ def auto_categorize(name):
 
 
 def extract_description(filepath):
-    """Extract first docstring or comment description from a Python file."""
+    """Extract first docstring or comment description from a Python or Rust file."""
     try:
         with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
             lines = f.readlines()[:30]
@@ -127,6 +128,16 @@ def extract_description(filepath):
         return ""
 
     content = "".join(lines)
+
+    # Rust: extract /// doc comments
+    if str(filepath).endswith(".rs"):
+        for line in lines:
+            line = line.strip()
+            if line.startswith("///"):
+                desc = line[3:].strip()
+                if len(desc) > 5:
+                    return desc
+        return ""
 
     # Find triple-quote docstring (""" or ''')
     for quote in ['"""', "'''"]:
@@ -183,7 +194,12 @@ def scan_repo(repo_def):
         for filepath in sorted(scan_dir.glob(glob_pat)):
             if filepath.name.startswith("__"):
                 continue
-            name = filepath.stem
+            # For Rust main.rs files, use parent directory as name
+            lang = scan.get("lang", "python")
+            if lang == "rust" and filepath.name == "main.rs":
+                name = filepath.parent.name
+            else:
+                name = filepath.stem
             if include and name not in include:
                 continue
             if name in exclude:

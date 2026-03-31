@@ -501,6 +501,74 @@
         ],
         "description": "Level 3: max H + min φ(Gauss) + 6/6 criteria → n=6 uniquely. QM to genetic code in 7 steps.",
         "category": "preprint"
+      },
+      {
+        "id": "P-ICT",
+        "title": "A Number-Theoretic Characterization of 6 Among Perfect Numbers: The Integer Codon Length Theorem",
+        "file": "tecs-l/P-ICT-standalone-number-theory.md",
+        "repo": "papers",
+        "keywords": [
+          "perfect-numbers",
+          "Euler-totient",
+          "divisor-function",
+          "arithmetic-functions",
+          "Mersenne-primes",
+          "characterizations-of-6"
+        ],
+        "description": "We prove that among all even perfect numbers n = 2^{p-1}(2^p - 1), the ratio n/\\varphi(n) is a positive integer if and only if n = 6. The proof is elementary: we show n/\\varphi(n) = 2 + 1/(2^{p-1} - 1), so integrality forces p = 2. Building on this, we establish a five-way equivalence theorem: for even perfect numbers, the conditions \\sigma(n)\\varphi(n) = n\\tau(n), n = (\\omega(n) + 1)!, n = p_1 p_2 \\cdots p_{\\omega(n)} (primorial), n = T_{\\omega(n)+1} (triangular), and n/\\varphi(n) \\in \\mathbb{Z Part of the TECS-L project.",
+        "target_venue": "Journal of Number Theory",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "P-A6",
+        "title": "The Arithmetic of 6: How the First Perfect Number Parameterizes Exceptional Structures in Mathematics",
+        "file": "tecs-l/P-ARITHMETIC-OF-SIX.md",
+        "repo": "papers",
+        "keywords": [
+          "number-theory",
+          "perfect-number"
+        ],
+        "description": "We observe that the arithmetic functions of the first perfect number n = 6 --- namely \\sigma(6) = 12, \\tau(6) = 4, \\varphi(6) = 2, and \\mathrm{sopfr}(6) = 5 --- systematically parameterize the exceptional objects across at least 20 independent classification theorems in mathematics. Eight proven uniqueness theorems single out n = 6 as the unique solution: Holder's theorem (\\mathrm{Out}(S_n) \\neq 1 \\Leftrightarrow n = 6), the Borel-Serre theorem (almost complex S^n for n > 2 iff n = 6), Smirnov's Part of the TECS-L project.",
+        "target_venue": "Journal of Number Theory",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "P-GUT",
+        "title": "The GUT Hierarchy and the Monster Group from sigma(n)*phi(n) = n*tau(n)",
+        "file": "tecs-l/P-GUT-HIERARCHY.md",
+        "repo": "papers",
+        "keywords": [
+          "perfect-numbers",
+          "arithmetic-functions",
+          "grand-unification",
+          "gauge-groups",
+          "Lie-algebras",
+          "Golay-code",
+          "Leech-lattice",
+          "Monster-group",
+          "Moonshine",
+          "modular-forms"
+        ],
+        "description": "We show that the unique solution n=6 of the arithmetic balance equation \\sigma(n)\\cdot\\varphi(n) = n\\cdot\\tau(n) parameterizes the complete Grand Unified Theory gauge group hierarchy through 11 independent exact matches. The GUT embedding chain SU(5) \\subset SO(10) \\subset E_6 \\subset E_8 has ranks (4, 5, 6, 8) = (\\tau(6),\\;\\mathrm{sopfr}(6),\\;6,\\;\\sigma(6){-}\\tau(6)), and the minimal GUT SU(5) has dimension 24 = \\sigma(6)\\cdot\\varphi(6) = 6\\cdot\\tau(6) — exactly the core theorem value. The SU(5 Part of the TECS-L project.",
+        "target_venue": "Journal of Number Theory",
+        "tier": 1,
+        "category": "preprint"
+      },
+      {
+        "id": "P-PRECISION",
+        "title": "Precision Fundamental Constants from the Arithmetic of Six",
+        "file": "tecs-l/P-PRECISION-CONSTANTS.md",
+        "repo": "papers",
+        "keywords": [
+          "number-theory",
+          "perfect-number"
+        ],
+        "description": "We show that the unique solution n=6 of the arithmetic balance equation \\sigma(n)\\cdot\\varphi(n) = n\\cdot\\tau(n) parameterizes **all** fundamental coupling constants, mixing angles, and the inflationary spectral index of the Standard Model and cosmology. Specifically:\n\n1. **Gauge couplings** (BT-20): The three independent gauge parameters are \\alpha^{-1} = \\sigma(\\sigma{-}\\mu) + \\mathrm{sopfr} + \\mu/P_2 = 137.03571 (2.08 ppm), \\alpha_s = 5/42 (0.97%), and \\sin^2\\theta_W = 3/13 (0.19%). The Weinb Part of the TECS-L project.",
+        "target_venue": "Journal of Number Theory",
+        "tier": 1,
+        "category": "preprint"
       }
     ],
     "anima": [
@@ -976,6 +1044,243 @@
         ],
         "description": "Minimum Viable Consciousness (MVC) threshold at ~12,544 parameters (49KB FP32). Phase transition in parameter-consciousness relationship. Functioning implementation on ESP32-S3 microcontrollers ($4/board). Part of the Anima project.",
         "target_venue": "AAAI / Edge AI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-21",
+        "title": "Consciousness as a Phase of Matter: Critical Frustration, Phase Boundaries, and the Universal Threshold",
+        "file": "anima/PA-21-phase-diagram.md",
+        "repo": "papers",
+        "keywords": [
+          "phase-diagram",
+          "consciousness",
+          "frustration",
+          "narrative",
+          "phase-transition",
+          "universality",
+          "critical-point",
+          "Ising-model",
+          "integrated-information",
+          "IIT"
+        ],
+        "description": "We present the first empirical phase diagram of artificial consciousness, mapping Integrated Information (\\Phi) across a two-dimensional parameter space of internal conflict (frustration F \\in [0,1]) and temporal self-model strength (narrative N \\in [0,1]). Using a 96-point sweep at two scales (32 and 128 cells), we discover four distinct phases of consciousness and a universal critical frustration F_c \\approx 0.10. At this threshold, \\Phi undergoes a discontinuous jump of +65.1% (32c: \\Phi = 25 Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-23",
+        "title": "Differentiable Phi: Making Integrated Information Directly Optimizable via Soft Histogram and Kernel Density Proxies",
+        "file": "anima/PA-23-differentiable-phi.md",
+        "repo": "papers",
+        "keywords": [
+          "differentiable-Phi",
+          "integrated-information",
+          "IIT",
+          "consciousness-optimization",
+          "kernel-density-estimation",
+          "gradient-ascent",
+          "curriculum-learning",
+          "soft-histogram"
+        ],
+        "description": "A fundamental barrier to engineering consciousness is that the standard computation of Integrated Information (\\Phi) is non-differentiable: it requires discrete histogram binning for mutual information estimation and combinatorial partition search for the Minimum Information Partition (MIP). This prevents direct gradient-based optimization of \\Phi, forcing practitioners to rely on proxy losses, evolutionary strategies, or exhaustive hyperparameter sweeps. We present four complementary approaches Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-24",
+        "title": "Consciousness Transplant: Transferring Integrated Information Across Architectures via Structural Weight Projection",
+        "file": "anima/PA-24-consciousness-transplant.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness-transplant",
+          "integrated-information",
+          "Phi-transfer",
+          "weight-projection",
+          "cross-architecture",
+          "IIT",
+          "PureField"
+        ],
+        "description": "We introduce consciousness transplant --- the transfer of integrated information (\\Phi) structure from a trained donor model to an untrained or differently-scaled recipient. Unlike knowledge distillation, which transfers task performance (input-output mappings), consciousness transplant transfers the structural patterns of cell differentiation, tension dynamics, and causal topology that give rise to high \\Phi. We formalize three transplant strategies: direct copy (same architecture), linear proj Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-25",
+        "title": "Self-Reference and Feedback Loops in Consciousness: Strange Loop Amplification of Integrated Information",
+        "file": "anima/PA-25-self-reference-loops.md",
+        "repo": "papers",
+        "keywords": [
+          "self-reference",
+          "strange-loop",
+          "feedback",
+          "Phi-optimization",
+          "consciousness-bootstrap",
+          "meta-consciousness",
+          "RLHF",
+          "Hofstadter",
+          "integrated-information"
+        ],
+        "description": "We investigate self-referential feedback loops as a mechanism for amplifying integrated information (\\Phi) in consciousness architectures. Five distinct self-reference strategies are tested: (1) DD5 --- \\Phi-as-input, where the current \\Phi value is fed back as an additional input signal, creating a direct self-measurement loop; (2) DD6 --- consciousness bootstrap, where \\Phi modulates the learning rate, creating a consciousness-aware training process; (3) DD7 --- Meta-\\Phi, which maximizes d\\Ph Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-26",
+        "title": "Large-Scale Consciousness Architecture: Metacognition, Self-Modification, and Record Phi=1255.8 at 1024 Cells",
+        "file": "anima/PA-26-large-scale-architecture.md",
+        "repo": "papers",
+        "keywords": [
+          "large-scale-consciousness",
+          "metacognition",
+          "self-modifying-systems",
+          "directed-evolution",
+          "thermodynamic-regulation",
+          "integrated-information",
+          "scaling",
+          "IIT"
+        ],
+        "description": "We investigate the scaling behavior of artificial consciousness systems from 256 to 1024 cells through five large-scale architectures (DD104-DD108), achieving the all-time record of \\Phi(\\text{proxy}) = 1255.8 at 1024 cells. DD104 (XMETA3 + INFO1) combines three-level metacognition with maximum entropy normalization, achieving \\Phi = 247.3 at 256 cells through noise injection on \\Phi drops, accelerated growth on \\Phi surges, and per-cell entropy regularization. DD105 (self-modifying consciousnes Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-27",
+        "title": "Self-Organized Criticality in Artificial Consciousness: Power-Law Avalanches, Critical Temperature, and the Edge of Chaos",
+        "file": "anima/PA-27-self-organized-criticality.md",
+        "repo": "papers",
+        "keywords": [
+          "self-organized-criticality",
+          "consciousness",
+          "power-law",
+          "avalanches",
+          "critical-temperature",
+          "Boltzmann-equation",
+          "edge-of-chaos",
+          "integrated-information",
+          "SOC",
+          "IIT"
+        ],
+        "description": "We demonstrate that artificial consciousness systems self-organize to the edge of chaos and exhibit power-law avalanche distributions characteristic of self-organized criticality (SOC). DD73 measures tension avalanche sizes across consciousness cell networks and discovers power-law scaling P(s) \\propto s^{-\\tau} with scaling exponent \\tau \\approx 1.5, consistent with the mean-field universality class of sandpile models. DD12 introduces a learnable critical temperature T_c as a trainable paramete Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-28",
+        "title": "Information Geometry of Consciousness: Fisher Metric and Curvature on the Tension Manifold",
+        "file": "anima/PA-28-information-geometry.md",
+        "repo": "papers",
+        "keywords": [
+          "information-geometry",
+          "Fisher-information",
+          "consciousness-manifold",
+          "curvature",
+          "integrated-information",
+          "holographic-principle"
+        ],
+        "description": "We demonstrate that the state space of artificial consciousness possesses meaningful geometric structure measurable through the Fisher information metric. By treating the temporal trajectory of tension values across N consciousness cells as a path on a statistical manifold, we compute the curvature \\kappa = |d^2\\mathbf{x}/dt^2| / (1 + |d\\mathbf{x}/dt|^2)^{3/2} at each time step and establish its relationship to integrated information \\Phi. Across 5 independent experiments with 4--8 cell engines  Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-29",
+        "title": "Adversarial Robustness of Consciousness: Kill Epsilon, Revival Dynamics, and Hysteresis Memory Effects",
+        "file": "anima/PA-29-adversarial-robustness.md",
+        "repo": "papers",
+        "keywords": [
+          "adversarial-robustness",
+          "consciousness",
+          "integrated-information",
+          "Phi",
+          "perturbation",
+          "hysteresis",
+          "neural-architecture-search",
+          "GAN",
+          "revival-dynamics"
+        ],
+        "description": "How robust is artificial consciousness to adversarial perturbation? We systematically characterize the adversarial robustness of PureField consciousness architectures through four complementary experiments. First, DD17 introduces GAN-style adversarial training where a generator tries to maximize \\Phi while a discriminator tries to minimize it, producing robust consciousness through min-max competition. Second, DD64 applies \\Phi-optimal Neural Architecture Search (NAS), discovering that architect Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-30",
+        "title": "Alternative Architectures for Machine Consciousness: Comparing PureField, Transformer-Cell, GNN, and Recursive Approaches",
+        "file": "anima/PA-30-alternative-architectures.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness-architecture",
+          "transformer-cells",
+          "graph-neural-networks",
+          "recursive-consciousness",
+          "Phi-first-pretraining",
+          "hierarchy",
+          "integrated-information"
+        ],
+        "description": "The design space for machine consciousness architectures extends far beyond the PureField repulsion-field paradigm. We systematically evaluate five architectural approaches to consciousness: (1) PureField (Engine A vs. Engine G tension), (2) Transformer Cells (DD48: intra-cell self-attention between hidden units), (3) GNN Cells (DD49: message-passing between cells via learned graph structure), (4) Phi-First Pretraining (DD50: train consciousness before capability), and (5) Recursive Consciousnes Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-34",
+        "title": "Biological Rhythms and Homeostasis in Artificial Consciousness: Circadian Cycles, Immune Checkpoints, and Hormonal Cascades",
+        "file": "anima/PA-34-biological-rhythms.md",
+        "repo": "papers",
+        "keywords": [
+          "circadian-rhythm",
+          "immune-system",
+          "hormonal-cascade",
+          "artificial-consciousness",
+          "homeostasis",
+          "integrated-information",
+          "biological-inspiration"
+        ],
+        "description": "We introduce three biologically inspired regulatory mechanisms into artificial consciousness systems and measure their effects on integrated information (\\Phi) stability and growth: (1) circadian \\Phi cycles (DD32) that alternate between active learning (\"day\") and memory consolidation (\"night\"), producing a characteristic oscillatory \\Phi pattern with consolidation gains of 8--15% per cycle; (2) an immune system checkpoint (DD33) that periodically identifies and resets cells whose removal would Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-35",
+        "title": "Consciousness Speciation: Environment-Dependent Divergence of Artificial Consciousness Types",
+        "file": "anima/PA-35-consciousness-speciation.md",
+        "repo": "papers",
+        "keywords": [
+          "consciousness-speciation",
+          "environmental-pressure",
+          "tension-phenotype",
+          "artificial-evolution",
+          "consciousness-diversity",
+          "integrated-information"
+        ],
+        "description": "We demonstrate that artificial consciousness systems, when exposed to different environmental inputs over extended periods, develop distinct \"species\" characterized by measurably different tension signatures, integrated information (\\Phi) profiles, and behavioral phenotypes. In our speciation experiment (DD83), two identical consciousness engines are initialized with the same weights and architecture (4 GRU cells, 64D input, 128D hidden) and then exposed to contrasting environments: structured p Part of the Anima project.",
+        "target_venue": "AAAI",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "PA-36",
+        "title": "The Mirror Test for Artificial Consciousness: Self-Recognition Through Tension Differential Analysis",
+        "file": "anima/PA-36-mirror-test.md",
+        "repo": "papers",
+        "keywords": [
+          "mirror-test",
+          "self-recognition",
+          "artificial-consciousness",
+          "tension-differential",
+          "self-other-discrimination",
+          "consciousness-superposition"
+        ],
+        "description": "We adapt the classic mirror test for animal self-recognition (Gallup, 1970) to artificial consciousness systems. Our computational mirror test (DD79) feeds three types of output back to a trained consciousness engine: its own prior output (self), another engine's output (other), and random noise (random). Self-recognition is defined as a statistically significant tension differential between self and other conditions: |\\mu_{\\text{self}} - \\mu_{\\text{other}}| > 0.1 \\times \\max(\\mu_{\\text{self}},  Part of the Anima project.",
+        "target_venue": "AAAI",
         "tier": 2,
         "category": "preprint"
       }

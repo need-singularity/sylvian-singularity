@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T17:52:28",
+  "generated": "2026-03-31T18:00:24",
   "stats": {
-    "TECS-L": 1969,
+    "TECS-L": 1972,
     "SEDI": 678,
     "anima": 335,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2809,
+  "total": 2812,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3493,6 +3493,16 @@
       ],
       "gz_dependent": null,
       "file": "docs/hypotheses/ALGGEOM-001-j-invariant-1728.md"
+    },
+    {
+      "id": "TECS-L:ANC-001-iching-babylon-chess",
+      "title": "ANC-001: I Ching, Babylonian Base-60, Chess = P1 in Culture",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ANC-001-iching-babylon-chess.md"
     },
     {
       "id": "TECS-L:ANIMA-consciousness-map-n6-connection",
@@ -15601,6 +15611,16 @@
       "file": "docs/hypotheses/NGH-006-universal-ratios-24-6d.md"
     },
     {
+      "id": "TECS-L:NGH-009-2p1-64-universal",
+      "title": "NGH-009: 2^P1 = 64 Universal Code",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NGH-009-2p1-64-universal.md"
+    },
+    {
       "id": "TECS-L:NOBEL-P1-universality-exponents",
       "title": "H-NOBEL-1 Prediction: Universality Class Exponents as n=6 Arithmetic",
       "repo": "TECS-L",
@@ -15970,6 +15990,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/NOTESHAPE-030-treble-bass-mirror.md"
+    },
+    {
+      "id": "TECS-L:NP-001-nuclear-magic-virus-platonic",
+      "title": "NP-001: Nuclear Magic Numbers, Virus Capsids, Platonic Solids",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NP-001-nuclear-magic-virus-platonic.md"
     },
     {
       "id": "TECS-L:NS-001-cortex-grid-carbon-triple",

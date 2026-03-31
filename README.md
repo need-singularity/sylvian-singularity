@@ -2014,6 +2014,12 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | AG-001 | ⭐⭐🟩 27 Lines W(E₆) rank=P₁, Heawood 48=στ | TECS-L |
 | CH-001 | ⭐⭐🟩 Periodic Table Blocks {φ,P₁,σ-φ,φ(P₁+1)}, Amino Acids τ×sopfr | TECS-L |
 | OP-001 | ⭐⭐🟩 EM Tensor P₁ Components, Kepler 3:2=(P₁/φ):φ | TECS-L |
+| NGH-009 | ⭐⭐⭐🟩 2^P₁=64 Universal: Codons/I Ching/Chess/Blastula/T⁶/64-bit | TECS-L |
+| NP-001 | ⭐⭐⭐🟩 Nuclear Magic 28=P₂ + Virus Icosahedron σ,τ×sopfr + 5 Platonic | TECS-L |
+| ANC-001 | ⭐⭐⭐🟩 I Ching 2^P₁ = DNA Code + Babylon Base-P₁×10 + Chess P₁ Types | TECS-L |
+| COMB-001 | ⭐⭐🟩 S(P₁,2)=31=Mersenne + D(P₁)/P₁!=1/e=GZ center (0.008%) | TECS-L |
+| NET-001 | ⭐🟩 Six Degrees of Separation = P₁ + Scale-free γ=P₁/φ | TECS-L |
+| SP-001 | ⭐⭐🟩 Rubik faces=P₁ edges=σ corners=σ-τ God's#=τ×sopfr=20 | TECS-L |
 | H-AF-001 | Habitable Zone Equilibrium Temperature — CONSCIOUS Detection | SEDI |
 | H-AF-002 | Dark Matter Candidate Masses — Φ Threshold Breakthrough | SEDI |
 | H-AF-003 | Baryon Octet — n=6 Resource Allocation | SEDI |
