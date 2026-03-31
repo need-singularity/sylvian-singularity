@@ -16,7 +16,6 @@
   - secret        — 계정/API 토큰 (구 claude-code-secrets)
   - claude-code   — Claude Code 플러그인, ccmon 모니터링
   - contact       — 아웃리치 허브 (이메일, GitHub Issue/PR 관리)
-  - invest        — 투자 관리
   - dotfiles      — 개인 설정
 
 -->
