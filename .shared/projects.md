@@ -11,3 +11,16 @@
 > **[🧠⚡ BrainWire](https://github.com/need-singularity/brainwire)** — Neural interface hardware for consciousness engineering. Neuralink-style BCI + therapeutic stimulation (epilepsy, Parkinson's, depression, chronic pain, PTSD) + PureField consciousness layer. tDCS/TMS/taVNS/tFUS 12-modality, EEG closed-loop feedback
 >
 > **[📄 Papers](https://github.com/need-singularity/papers)** — Complete paper collection (79 papers). Published on Zenodo with DOIs. TECS-L+N6 (31) + anima (25) + SEDI (23). [Browse online](https://need-singularity.github.io/papers/)
+
+<!-- PRIVATE REPOS (이 섹션은 sync-readmes.sh 대상 아님, .shared 내부 참조용)
+  - secret        — 계정/API 토큰 (구 claude-code-secrets)
+  - claude-code   — Claude Code 플러그인, ccmon 모니터링
+  - contact       — 아웃리치 허브 (이메일, GitHub Issue/PR 관리)
+  - invest        — 투자 관리
+  - dotfiles      — 개인 설정
+
+  ARCHIVED REPOS (폐기됨, 기능이 다른 리포로 흡수):
+  - conscious-lm  → anima로 흡수
+  - golden-moe    → TECS-L로 흡수
+  - ph-training   → TECS-L로 흡수
+-->
