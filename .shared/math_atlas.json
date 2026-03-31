@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T18:04:16",
+  "generated": "2026-03-31T18:07:37",
   "stats": {
-    "TECS-L": 1975,
+    "TECS-L": 1976,
     "SEDI": 678,
     "anima": 335,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2815,
+  "total": 2816,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -16060,6 +16060,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/NUCSTR-021-sigma-perfect-nuclear-cascade.md"
+    },
+    {
+      "id": "TECS-L:ODE-001-painleve-golay-lorentz",
+      "title": "ODE-001: Painleve 6, Golay Code, Lorentz Group = n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/ODE-001-painleve-golay-lorentz.md"
     },
     {
       "id": "TECS-L:OP-001-em-tensor-kepler-ratio",

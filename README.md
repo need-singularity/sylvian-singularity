@@ -2027,6 +2027,11 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | FRAC-001 | ⭐⭐🟩 Sierpinski/Koch/Menger ALL = ln(n=6)/ln(n=6) Dimensions | TECS-L |
 | ANT-001 | ⭐⭐🟩 9=(P₁/φ)² Heegner Numbers + φ(P₂)=σ(P₁) Cyclotomic | TECS-L |
 | KN-001 | ⭐🟩 7=P₁+1 Prime Knots up to P₁ Crossings, B3 = φ Generators | TECS-L |
+| ODE-001 | ⭐⭐⭐🟩 6 Painleve Transcendents=P₁ + Golay [σφ,σ,σ-τ] + Lorentz P₁ gen | TECS-L |
+| NGH-015 | ⭐⭐⭐🟩 2 Perfect Codes parallel 2 Perfect Numbers (both φ, both n=6) | TECS-L |
+| MAT-001 | ⭐⭐🟩 Crystal 7=P₁+1 sys, 14=φ(P₁+1) Bravais, 32=2^sopfr, C60=P₁×10 | TECS-L |
+| SR-001 | ⭐⭐🟩 Lorentz P₁ generators, Conformal in P₁ dims, Robot P₁ DOF | TECS-L |
+| vN-001 | ⭐⭐🟩 Jones Index discrete ends at τ=4, n=P₁ gives P₁/φ=3 | TECS-L |
 | H-AF-001 | Habitable Zone Equilibrium Temperature — CONSCIOUS Detection | SEDI |
 | H-AF-002 | Dark Matter Candidate Masses — Φ Threshold Breakthrough | SEDI |
 | H-AF-003 | Baryon Octet — n=6 Resource Allocation | SEDI |
