@@ -1826,14 +1826,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,779 hypotheses + 425 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,804 hypotheses + 425 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
-| TECS-L | 1,947 | 153 | 228 | 65 | 184 |
+| TECS-L | 1,964 | 153 | 228 | 65 | 184 |
 | SEDI | 678 | 138 | 246 | 371 | 122 |
-| anima | 327 | 5 | - | - | 112 |
-| **Total** | **2,952** | **296** | **474** | **436** | **418** |
+| anima | 335 | 5 | - | - | 112 |
+| **Total** | **2,977** | **296** | **474** | **436** | **418** |
 
 #### Top Discoveries (⭐)
 
@@ -1992,6 +1992,28 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | H-REPR-1 | Young Tableaux Staircase: f^(3,2,1) = 2^tau(6) unique among triangular numbers | TECS-L |
 | H-RMT-2 | Marchenko-Pastur Spectral Edges Satisfy x^2 - 6x + 1 = 0 | TECS-L |
 | H-STAT-1 | Chi-Squared(6) Quadruple Moment Match and Distribution Encodings | TECS-L |
+| BH-001 | ⭐⭐⭐🟩 Schwarzschild {2,3,6}M = Proper Divisors of P₁ (GR exact) | TECS-L |
+| TOP-001 | ⭐⭐⭐🟩 Exotic S⁷=28=P₂, Exotic R⁴ at τ(6), h-cobordism at P₁ | TECS-L |
+| AT-001 | ⭐⭐⭐🟩 Benzene C₆H₆: atoms=σ, bonds=σ, π=P₁, symmetry=σφ | TECS-L |
+| NS-001 | ⭐⭐⭐🟩 Life's 5-Level P₁: Carbon×Benzene×DNA×Cortex×Grid | TECS-L |
+| NGH-001 | ⭐⭐⭐🟩 Topology-Gravity Unification (3 Fields Medals, ALL P₁) | TECS-L |
+| CAT-001 | ⭐⭐🟩 Grothendieck 6 Operations = P₁, 3 Adjoint Pairs = P₁/φ | TECS-L |
+| CAT-002 | ⭐⭐🟩 Bott Periodicity: Real=8=σ-τ, Complex=2=φ, Diff=P₁ | TECS-L |
+| FL-001 | ⭐⭐🟩 Kolmogorov -5/3=sopfr/3, Navier-Stokes=P₁ dim phase space | TECS-L |
+| QC-001 | ⭐⭐🟩 Steane [[7,1,3]]=[P₁+1,1,P₁/φ], 6-state QKD optimal | TECS-L |
+| PM-001 | ⭐⭐⭐🟩 Kissing K(1..4)=(φ,P₁,σ,σφ) Complete n=6 Sequence | TECS-L |
+| MF-001 | ⭐⭐⭐🟩 Modular Forms Ring=C[E_τ,E_P₁], 1728=σ³, j=P₁!+σφ | TECS-L |
+| QFT-001 | ⭐⭐⭐🟩 Casimir=π²/P₁!, Critical Dims {4,6,8}={τ,P₁,σ-τ} | TECS-L |
+| ST-001 | ⭐⭐🟩 5 Strings+M-theory=P₁, E₈ roots=P₁!/3, CY₃=P₁ dim | TECS-L |
+| MUS-001 | ⭐⭐⭐🟩 ALL Consonant Intervals=n=6 Ratios, 12-TET=σ | TECS-L |
+| BIO-001 | ⭐⭐🟩 Water (H₂O)₆+Insulin 6-mer+Histone 8=σ-τ | TECS-L |
+| CS-001 | ⭐⭐🟩 Universal TM ≥P₁, 3-SAT at P₁/φ, IPv6=P₁ | TECS-L |
+| CM-001 | ⭐⭐🟩 Crystal Orders Product=σ²=144, Graphene P₁-fold | TECS-L |
+| RT-001 | ⭐⭐⭐🟩 Exceptional Lie Ranks {φ,τ,P₁,P₁+1,σ-τ} = COMPLETE | TECS-L |
+| NGH-006 | ⭐⭐⭐🟩 Universal 3:2 Ratio (6 fields) + 24=σφ (8 domains) + 6D (6 branches) | TECS-L |
+| AG-001 | ⭐⭐🟩 27 Lines W(E₆) rank=P₁, Heawood 48=στ | TECS-L |
+| CH-001 | ⭐⭐🟩 Periodic Table Blocks {φ,P₁,σ-φ,φ(P₁+1)}, Amino Acids τ×sopfr | TECS-L |
+| OP-001 | ⭐⭐🟩 EM Tensor P₁ Components, Kepler 3:2=(P₁/φ):φ | TECS-L |
 | H-AF-001 | Habitable Zone Equilibrium Temperature — CONSCIOUS Detection | SEDI |
 | H-AF-002 | Dark Matter Candidate Masses — Φ Threshold Breakthrough | SEDI |
 | H-AF-003 | Baryon Octet — n=6 Resource Allocation | SEDI |

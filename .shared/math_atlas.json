@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T17:44:11",
+  "generated": "2026-03-31T17:52:28",
   "stats": {
-    "TECS-L": 1964,
+    "TECS-L": 1969,
     "SEDI": 678,
     "anima": 335,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2804,
+  "total": 2809,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -3472,6 +3472,16 @@
       "file": "docs/hypotheses/420-one-over-840-identity.md"
     },
     {
+      "id": "TECS-L:AG-001-27-lines-e6-heawood",
+      "title": "AG-001: 27 Lines, E₆, and Heawood Formula = n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/AG-001-27-lines-e6-heawood.md"
+    },
+    {
       "id": "TECS-L:H-ALGGEOM-001",
       "title": "j-invariant 1728 = sigma(6)^3",
       "repo": "TECS-L",
@@ -3777,6 +3787,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/CAT-002-bott-periodicity-n6.md"
+    },
+    {
+      "id": "TECS-L:CH-001-periodic-table-amino-acids",
+      "title": "CH-001: Periodic Table and Amino Acids = n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/CH-001-periodic-table-amino-acids.md"
     },
     {
       "id": "TECS-L:CHEM-001-020-chemistry-periodic-n6",
@@ -15571,6 +15591,16 @@
       "file": "docs/hypotheses/NGH-001-topology-gravity-unification.md"
     },
     {
+      "id": "TECS-L:NGH-006-universal-ratios-24-6d",
+      "title": "NGH-006: Three Universal Constants — 3:2, 24=σφ, 6D Phase Space",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/NGH-006-universal-ratios-24-6d.md"
+    },
+    {
       "id": "TECS-L:NOBEL-P1-universality-exponents",
       "title": "H-NOBEL-1 Prediction: Universality Class Exponents as n=6 Arithmetic",
       "repo": "TECS-L",
@@ -15970,6 +16000,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/NUCSTR-021-sigma-perfect-nuclear-cascade.md"
+    },
+    {
+      "id": "TECS-L:OP-001-em-tensor-kepler-ratio",
+      "title": "OP-001: EM Field Tensor P₁ Components + Kepler 3:2 Ratio",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/OP-001-em-tensor-kepler-ratio.md"
     },
     {
       "id": "TECS-L:PERFECT-CLASSIFY-001-universal-expansion",
@@ -16507,6 +16547,16 @@
       ],
       "gz_dependent": null,
       "file": "docs/hypotheses/RIEMANN-CURV-001-curvature-denominator.md"
+    },
+    {
+      "id": "TECS-L:RT-001-exceptional-lie-ranks-n6",
+      "title": "RT-001: All 5 Exceptional Lie Algebra Ranks = n=6 Arithmetic",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/RT-001-exceptional-lie-ranks-n6.md"
     },
     {
       "id": "TECS-L:SC-001-020-superconductor-physics-n6",
