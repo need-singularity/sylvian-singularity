@@ -553,7 +553,7 @@ Details: [Pure mathematics](math/) | [Golden Zone model](docs/golden-zone/) | [V
 >
 > | # | Discovery | Scope | Grade |
 > |---|-----------|-------|-------|
-> | 8A | **sigma*phi = n*tau ONLY at n=1,6** (verified to 10^6) | All integers | 🟩⭐⭐ |
+> | 8A | **sigma*phi = n*tau ONLY at n=1,6** (verified to 10^10, Rust 330s) | All integers | 🟩⭐⭐ |
 > | 8B | **sigma/phi = n ONLY at n=1,6** (equivalent, self-referential) | All integers | 🟩⭐⭐ |
 > | 8C | Mersenne exp chain: p1+p2=p3, p1+p3=p4 (P1 bootstraps P2-P4) | Cross-perfect | 🟩 |
 > | 8D | sigma/phi = 4 + 2/(2^(p-1)-1) exact closed form | Universal | 🟩 |
@@ -1576,14 +1576,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,500 hypotheses + 313 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,500 hypotheses + 329 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
-| TECS-L | 1,980 | 153 | 228 | 65 | 184 |
+| TECS-L | 1,980 | 153 | 228 | 65 | 200 |
 | SEDI | 678 | 138 | 246 | 371 | 122 |
 | anima | 0 | - | - | - | 0 |
-| **Total** | **2,658** | **291** | **474** | **436** | **306** |
+| **Total** | **2,658** | **291** | **474** | **436** | **322** |
 
 #### Top Discoveries (⭐)
 
@@ -1885,10 +1885,10 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 | Category | Count | Example Maps |
 |----------|-------|-------------|
-| other | 177 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
-| constants | 36 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |
-| targets | 26 | DEFAULT_TARGETS, STANDARD_TARGETS, TARGET_ALIASES, ... |
-| physics | 21 | STRING_DIM_TOTAL, PARTICLE_GROUPS, STRING_CONSTANTS, ... |
+| other | 190 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
+| constants | 37 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |
+| targets | 27 | DEFAULT_TARGETS, STANDARD_TARGETS, TARGET_ALIASES, ... |
+| physics | 22 | STRING_DIM_TOTAL, PARTICLE_GROUPS, PHYSICS_MAP, ... |
 | architecture | 15 | DOMAINS, KNOWN_VALUES, TARGETS, ... |
 | consciousness | 9 | PRESETS, BRAIN_WAVES, TARGETS, ... |
 | nuclear | 6 | MAGIC_DIMS, MAGIC_NUMBERS, MAGIC_NUMBERS, ... |
