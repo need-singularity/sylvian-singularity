@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T22:25:17",
+  "generated": "2026-03-31T22:41:02",
   "stats": {
     "TECS-L": 1980,
     "SEDI": 678,
@@ -18700,7 +18700,9 @@
       "domain": "PH",
       "grade": "⭐⭐⭐🟧★",
       "refs": [
-        "H-CX-477"
+        "H-CX-477",
+        "H-CX-342",
+        "H-CX-342"
       ],
       "gz_dependent": null,
       "file": "math/docs/hypotheses/H-PH-9-perfect-number-string-unification.md"

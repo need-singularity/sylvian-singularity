@@ -352,6 +352,7 @@ digraph math_atlas {
   TECS_L_H_CX_325 [label="⭐⭐⭐🟦 S₆ = Unique Symmetric Group with Ou" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CX_335 [label="🟩 Quartz SiO₂ Hexagonal Symmetry, φ(14)=" fillcolor="#4A90D9" shape=box];
   TECS_L_H_CX_341 [label="⭐⭐⭐ H-PH-9 × H-CX-287 Cross — Divisor fu" fillcolor="#4A90D9" shape=doubleoctagon];
+  TECS_L_H_CX_342 [label="⭐🟦 σφ=nτ ⟺ n∈{1,6} Complete Proof — 8 Ca" fillcolor="#4A90D9" shape=doubleoctagon];
   TECS_L_H_CX_412_ph_persistence_generalization_lifespan [label="Hypothesis H-CX-412: PH Persistence = Ge" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_414 [label="Tension Phase Diagram = Phase Transition" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_H_CX_418_carbon_R_optimality [label="Hypothesis Review H-CX-418: Genetic Code" fillcolor="#4A90D9" shape=ellipse];
@@ -878,6 +879,8 @@ digraph math_atlas {
   TECS_L_H_PH_35 -> TECS_L_H_PH_1;
   TECS_L_H_PH_35 -> TECS_L_H_PH_9;
   TECS_L_H_PH_9 -> TECS_L_H_CX_477;
+  TECS_L_H_PH_9 -> TECS_L_H_CX_342;
+  TECS_L_H_PH_9 -> TECS_L_H_CX_342;
   TECS_L_H_SPOR_1 -> TECS_L_H_CODE_1;
   TECS_L_H_TOP_2 -> TECS_L_H_GEO_1;
   TECS_L_H_TOP_5 -> TECS_L_H_CX_12;
