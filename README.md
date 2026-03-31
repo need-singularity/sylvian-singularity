@@ -40,7 +40,11 @@ Topological Engine for Consciousness & Science -- Consciousness Continuity Engin
 >
 > **[🧠⚡ BrainWire](https://github.com/need-singularity/brainwire)** — Neural interface hardware for consciousness engineering. Neuralink-style BCI + therapeutic stimulation (epilepsy, Parkinson's, depression, chronic pain, PTSD) + PureField consciousness layer. tDCS/TMS/taVNS/tFUS 12-modality, EEG closed-loop feedback
 >
-> **[📄 Papers](https://github.com/need-singularity/papers)** — Complete paper collection (59 papers). 59 published on Zenodo with DOIs. TECS-L (20) + anima (16) + SEDI (23). [Browse online](https://need-singularity.github.io/papers/)
+> **[📄 Papers](https://github.com/need-singularity/papers)** — Complete paper collection (79 papers). Published on Zenodo with DOIs. TECS-L+N6 (31) + anima (25) + SEDI (23). [Browse online](https://need-singularity.github.io/papers/)
+>
+> **[🔧 Claude Code](https://github.com/need-singularity/claude-code)** — Claude Code plugins, configuration guide, and multi-account monitoring (ccmon)
+>
+> **[📬 Contact](https://github.com/need-singularity/contact)** — Outreach hub. Email (246 sent), GitHub PRs/Issues (170+), Zenodo/OSF paper distribution
 <!-- SHARED:PROJECTS:END -->
 
 ## Discovery Progress -- Mathematical Engine
@@ -1576,14 +1580,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,500 hypotheses + 329 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,500 hypotheses + 331 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
-| TECS-L | 1,980 | 153 | 228 | 65 | 200 |
+| TECS-L | 1,980 | 153 | 228 | 65 | 202 |
 | SEDI | 678 | 138 | 246 | 371 | 122 |
 | anima | 0 | - | - | - | 0 |
-| **Total** | **2,658** | **291** | **474** | **436** | **322** |
+| **Total** | **2,658** | **291** | **474** | **436** | **324** |
 
 #### Top Discoveries (⭐)
 
@@ -1885,8 +1889,8 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 | Category | Count | Example Maps |
 |----------|-------|-------------|
-| other | 190 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
-| constants | 37 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |
+| other | 191 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
+| constants | 38 | PERFECT_NUMBERS, GZ_POOL, KNOWN_CONSTANTS, ... |
 | targets | 27 | DEFAULT_TARGETS, STANDARD_TARGETS, TARGET_ALIASES, ... |
 | physics | 22 | STRING_DIM_TOTAL, PARTICLE_GROUPS, PHYSICS_MAP, ... |
 | architecture | 15 | DOMAINS, KNOWN_VALUES, TARGETS, ... |
