@@ -264,7 +264,7 @@ This equation is the R(6)=1 condition, **"the unique number where gauge and grav
   "Observable universe" + "Hidden dimensions" = "Complete superstring spacetime"
 ```
 
-This expresses the core claim of string theory — "the 4 dimensions we see are part of 10" — 
+This expresses the core claim of string theory — "the 4 dimensions we see are part of 10" —
 as **perfect number addition**.
 
 ### Heterotic Equation
@@ -373,93 +373,6 @@ Similarly:
 
 ---
 
-## 6. Texas Sharpshooter Test
-
-### Test Setup
-
-"When randomly drawing 5 even numbers from {4, 6, ..., 62},
-what's the probability of matching all physics dimensions {4, 6, 10, 14, 26}?"
-
-### Monte Carlo Results (N = 1,000,000)
-
-| Condition | Matches | p-value |
-|-----|--------|---------|
-| 4+ strong matches {4,6,10,26} | 179/1M | **0.000179** |
-| 5/5 all matches | 10/1M | **0.000010** |
-| 4+ strong + additive relation | 179/1M | **0.000179** |
-
-### Precise Combinatorics
-
-```
-  P(4 strong targets + 1 any) = C(26,1) / C(30,5) = 26/142506 = 0.000182
-```
-
-**p < 0.0002 — This mapping is not coincidental.**
-
-### ⭐⭐ Kissing Number = Perfect Number Arithmetic (5/5)
-
-| Dimension d | Kissing number k(d) | Perfect Number Expression | Exact? |
-|--------|-------------------|-----------|---------|
-| 1 | 2 | φ(P₁) | ✅ |
-| 2 | 6 | P₁ | ✅ |
-| 3 | 12 | σ(P₁) | ✅ |
-| 4 | 24 | σ(P₁)×φ(P₁) = τ(P₁)! | ✅ |
-| 8 | 240 | φ(P₃) | ✅ |
-
-**p = 0.000001** (Monte Carlo 1 million runs): Probability of 32 arithmetic values
-containing all 5 kissing numbers = one in a million.
-
-24 = τ(6)! is proven by number theory theorem: 24 is the largest integer where k² ≡ 1 (mod n)
-holds for all gcd(k,n)=1. This is the source of Dedekind η to the 24th power, Leech lattice,
-bosonic string transverse dimensions.
-
-### ⭐⭐ σ(6) Self-Decomposition = SM Gauge Structure
-
-```
-  ┌─────────────────────────────────────────────────┐
-  │  σ(6) = (σ-τ) + (σ/τ) + R                     │
-  │  12   =   8   +   3   + 1                     │
-  │         SU(3)   SU(2)  U(1)                    │
-  │       (strong) (weak) (electromagnetic)                    │
-  │                                                 │
-  │  Subtraction:  σ - τ = 12 - 4 = 8 = dim(SU(3))       │
-  │  Division: σ / τ = 12 / 4 = 3 = dim(SU(2))       │
-  │  Unification:   R(6)           = 1 = dim(U(1))         │
-  └─────────────────────────────────────────────────┘
-```
-
-Three different arithmetic operations (subtraction, division, R-factor) each generate a different gauge group.
-This is the **self-decomposition** of σ(6)=12: the sum of its parts equals itself,
-with each part corresponding to one of the three forces of the Standard Model.
-
-**Mathematical basis**: Condition for self-decomposition is σ(n)(n+φ(n)) = nτ(n)².
-
-```
-  Theorem: σ(n)(n+φ(n)) = nτ(n)²  ⟺  n = 6  (unique for n ≤ 10000)
-
-  n=6:  12×(6+2) = 12×8 = 96 = 6×16 = 6×4²  ✓
-  n=28: 56×(28+12) = 56×40 = 2240 ≠ 28×36 = 1008  ✗
-
-  This equation is a new unique characterization of 6.
-  Why Standard Model gauge structure exists = because n=6 is the unique solution to this equation.
-```
-
-### j-Invariant and Monstrous Moonshine
-
-```
-  j(τ) = 1/q + 744 + 196884q + ...
-
-  744 = 24 × 31 = σ(P₁)φ(P₁) × M₅
-      = (Leech lattice) × (Mersenne prime of P₃)
-      → Connects P₁ and P₃ simultaneously!
-
-  196883 = 47 × 59 × 71
-         = 47 × (47+σ(6)) × (47+σ(6)φ(6))
-         → Prime factors form arithmetic sequence with spacing σ(6)=12!
-```
-
----
-
 ## 7. Overall Structure Diagram
 
 ```
@@ -492,6 +405,8 @@ with each part corresponding to one of the three forces of the Standard Model.
 ```
 
 ---
+
+## Part II: Physics Predictions
 
 ## 8. ⭐⭐⭐ Cosmological Constant = P₁ Arithmetic
 
@@ -619,7 +534,26 @@ K=2/3 is a number-theoretic necessity.
 
 ---
 
-## 11. ⭐⭐ M-theory 11D = (σ(P₂)-σ(P₁))/τ(P₁) (No ad hoc!)
+## 11. ⭐⭐⭐ Koide Angle δ = 2/9 = φτ²/σ² → Three Lepton Masses Fully Determined
+
+```
+  Koide parametrization: √m_k = A(1 + √2 cos(2πk/3 + δ₀))
+
+  δ₀(observed) = 0.2222211
+  2/9       = 0.2222222
+  Difference: 5 ppm (5 parts per million!)
+
+  2/9 = φ(6)×τ(6)² / σ(6)² = 2×16/144
+
+  Input 2 (m_tau=1776, δ₀=2/9) → Output 3:
+    m_e  = 0.5107 MeV (measured 0.5110, error 0.06%)
+    m_mu = 105.60 MeV (measured 105.66, error 0.05%)
+    m_tau = 1776.0 MeV (measured 1776.86, error 0.05%)
+```
+
+---
+
+## 12. ⭐⭐ M-theory 11D = (σ(P₂)-σ(P₁))/τ(P₁) (No ad hoc!)
 
 ```
   D_M = [σ(28) - σ(6)] / τ(6) = [56 - 12] / 4 = 44/4 = 11
@@ -633,7 +567,7 @@ K=2/3 is a number-theoretic necessity.
 
 ---
 
-## 12. Cosmological Constant Λ = 1/(P₁ × P₃^45)
+## 13. Cosmological Constant Λ = 1/(P₁ × P₃^45)
 
 ```
   Λ = 1/(6 × 496^45) = 10^{-122.07}
@@ -649,7 +583,7 @@ Log error 0.06%. Mechanism unknown but numerical match is strong.
 
 ---
 
-## 13. Dark Energy/Matter Fractions
+## 14. Dark Energy/Matter Fractions
 
 ```
   Best model: 1-1/π : (5/6)/π : (1/6)/π
@@ -667,76 +601,7 @@ Average error 3.2%. The three fractions sum to exactly 1.
 
 ---
 
-## 14. Why τ(P_k) = Physical Dimensions — Causal Mechanism
-
-```
-  ═══ 7-Step Causal Chain ═══
-
-  Step 1: Arithmetic of P₁=6 → σ(6)=12, φ(6)=2, τ(6)=4
-  Step 2: σ(6)=12 governs modular forms (SL(2,Z), Δ weight=12)
-     → This is proven (R52-55, Riemann-Roch)
-  Step 3: bc ghosts of string quantization → c_ghost = -26 = -φ(σ+1) = -2×13
-     → Standard CFT result (Polyakov 1981)
-  Step 4: Superstring adds βγ ghosts → c_ghost(super) = -(σ+σ/τ) = -15
-  Step 5: Anomaly cancellation c_total=0:
-     D_bosonic = 26 = τ(P₅)
-     D_super = 10 = τ(P₃)
-  Step 6: Green-Schwarz: D=10 requires dim(G)=496=P₃ (independent derivation!)
-     → τ(P₃) and P₃ point to the same perfect number
-  Step 7: CY compactification: D_obs = τ(P₃)-τ(P₂) = 10-6 = 4 = τ(P₁)
-
-  Key: The appearance of σ(6)=12 in modular forms is a proven fact.
-  This leads to c_ghost=-26, which determines dimensions.
-```
-
----
-
-## 15. Consciousness Engine Connection
-
-```
-  Consciousness = R=1 state = σφ=nτ balance
-
-  Physically:
-    R=1 ↔ "gauge×gravity = coupling×spacetime"
-    → Koide = 2/3 is also derived from R=1
-    → Mass is also derived from perfect numbers
-    → Consciousness operates at R=1 = operates at the source point of physical laws
-```
-
----
-
-## 16. ⭐⭐⭐ Action Principle — Divisor Field Theory
-
-### Action Selecting n=6 as Unique Vacuum
-
-```
-  S(n) = [σ(n)φ(n) - nτ(n)]² + [σ(n)(n+φ(n)) - nτ(n)²]²
-
-  n=6:  S = [12×2 - 6×4]² + [12×8 - 6×16]² = 0² + 0² = 0  ← Unique!
-  n=1:  S = [1-1]² + [1×2 - 1]² = 0 + 1 = 1
-  n=28: S = [56×12-28×6]² + [56×40-28×36]² = 504² + 1232² ≫ 0
-
-  n=6 is the unique S=0 solution for n≤10000. (Proof: condition 2 on even perfect numbers allows only φ=p → only p=2 works)
-```
-
-### Lagrangian
-
-```
-  L = √(-g) [
-    R₄/(16πG)                           ← Gravity (φ=2 DOF)
-    - ¼ F^a_{μν} F^{aμν}  (a=1..12)    ← Gauge (σ=12 bosons)
-    + ψ̄ᵢ(iD̸ - mᵢ)ψᵢ   (i=1..3)      ← Fermions (σ/τ=3 generations)
-    + |D_μΦ|² - V(Φ)                    ← Higgs (R=1 scalar)
-    + λ₁(σφ-nτ)²                        ← Perfect number constraint
-    + λ₂(σ(n+φ)-nτ²)²                  ← Structure constraint
-  ]
-
-  Constraint terms vanish on n=6 shell → Standard Model+GR emerges automatically!
-```
-
----
-
-## 17. ⭐⭐⭐ Prior Predictions (Testable, 2026-2030)
+## 15. ⭐⭐⭐ Prior Predictions (Testable, 2026-2030)
 
 ### Already Confirmed "Predictions" (retrodiction)
 
@@ -759,7 +624,9 @@ Average error 3.2%. The three fractions sum to exactly 1.
 
 ---
 
-## 18. ⭐⭐⭐ σ³ = 1728 = j(i): Origin of Yukawa Couplings
+## Part III: Deeper Structure
+
+## 16. ⭐⭐⭐ σ³ = 1728 = j(i): Origin of Yukawa Couplings
 
 ```
   Why is σ(6)³ = 1728 a mass scale?
@@ -799,7 +666,7 @@ Average error 3.2%. The three fractions sum to exactly 1.
 
 ---
 
-## 19. ⭐⭐ Quantum Corrections: UV Finite + CP Asymmetry
+## 17. ⭐⭐ Quantum Corrections: UV Finite + CP Asymmetry
 
 ### Excitation Spectrum (around vacuum n=6)
 
@@ -838,7 +705,38 @@ Average error 3.2%. The three fractions sum to exactly 1.
 
 ---
 
-## 20. Origin of Spacetime: Divisor Lattice = Minkowski Space
+## 18. ⭐⭐⭐ Action Principle — Divisor Field Theory
+
+### Action Selecting n=6 as Unique Vacuum
+
+```
+  S(n) = [σ(n)φ(n) - nτ(n)]² + [σ(n)(n+φ(n)) - nτ(n)²]²
+
+  n=6:  S = [12×2 - 6×4]² + [12×8 - 6×16]² = 0² + 0² = 0  ← Unique!
+  n=1:  S = [1-1]² + [1×2 - 1]² = 0 + 1 = 1
+  n=28: S = [56×12-28×6]² + [56×40-28×36]² = 504² + 1232² ≫ 0
+
+  n=6 is the unique S=0 solution for n≤10000. (Proof: condition 2 on even perfect numbers allows only φ=p → only p=2 works)
+```
+
+### Lagrangian
+
+```
+  L = √(-g) [
+    R₄/(16πG)                           ← Gravity (φ=2 DOF)
+    - ¼ F^a_{μν} F^{aμν}  (a=1..12)    ← Gauge (σ=12 bosons)
+    + ψ̄ᵢ(iD̸ - mᵢ)ψᵢ   (i=1..3)      ← Fermions (σ/τ=3 generations)
+    + |D_μΦ|² - V(Φ)                    ← Higgs (R=1 scalar)
+    + λ₁(σφ-nτ)²                        ← Perfect number constraint
+    + λ₂(σ(n+φ)-nτ²)²                  ← Structure constraint
+  ]
+
+  Constraint terms vanish on n=6 shell → Standard Model+GR emerges automatically!
+```
+
+---
+
+## 19. Origin of Spacetime: Divisor Lattice = Minkowski Space
 
 ```
   Divisor lattice of n=6:
@@ -861,61 +759,7 @@ Average error 3.2%. The three fractions sum to exactly 1.
     Exactly 1 time + 3 space = (1,3) signature
 ```
 
----
-
-## 21. ⭐⭐⭐ Koide Angle δ = 2/9 = φτ²/σ² → Three Lepton Masses Fully Determined
-
-```
-  Koide parametrization: √m_k = A(1 + √2 cos(2πk/3 + δ₀))
-
-  δ₀(observed) = 0.2222211
-  2/9       = 0.2222222
-  Difference: 5 ppm (5 parts per million!)
-
-  2/9 = φ(6)×τ(6)² / σ(6)² = 2×16/144
-
-  Input 2 (m_tau=1776, δ₀=2/9) → Output 3:
-    m_e  = 0.5107 MeV (measured 0.5110, error 0.06%)
-    m_mu = 105.60 MeV (measured 105.66, error 0.05%)
-    m_tau = 1776.0 MeV (measured 1776.86, error 0.05%)
-```
-
----
-
-## 22. ⭐⭐ Λ_QCD = σ³/dim(SU(3)) = P₁³ MeV
-
-```
-  Λ_QCD = σ(6)³ / (σ-τ) = 1728/8 = 216 MeV = 6³ MeV = P₁³ MeV
-
-  PDG: Λ_QCD^(5) = 213 ± 8 MeV → Within 1σ! (error 1.4%)
-
-  Causal chain:
-    σ(6)=12 → σ³=1728=j(i) → j(i)/dim(SU(3)) = 1728/8 = 216 = Λ_QCD
-    "j-invariant ÷ number of gluons = QCD confinement scale"
-```
-
----
-
-## 23. ⭐⭐⭐ CP Violation = Vacuum Asymmetry A/σ⁴
-
-```
-  A = (S(7)-S(5)) / (S(7)+S(5)) = 5580/8284 = 0.6736
-
-  ┌───────────────────────────────────────────────────────┐
-  │  Observable      Formula       Predicted    Observed  │
-  │  ──────────      ───────       ─────────    ────────  │
-  │  J (Jarlskog)   A/σ⁴          3.25×10⁻⁵   3.18×10⁻⁵ │  2.2%
-  │  ε_K (kaon)     A/(σ²φ)       2.34×10⁻³   2.23×10⁻³ │  5.0%
-  │  sin(2β) (B)    A              0.674        0.699     │  3.6%
-  └───────────────────────────────────────────────────────┘
-
-  Origin of matter-antimatter asymmetry = n=6 vacuum asymmetry of divisor field theory!
-  S(5) ≠ S(7): Below vacuum (n<6) is 5 times shallower than above (n>6).
-```
-
----
-
-## 24. Spacetime Emergence: Divisor Lattice = Minkowski (1,3)
+### Why (1,3) Signature — Divisor Lattice Analysis
 
 ```
        6         d=6: composite(2×3) → emergent space³
@@ -937,6 +781,172 @@ Average error 3.2%. The three fractions sum to exactly 1.
 ```
 
 ---
+
+## 20. ⭐⭐ Λ_QCD = σ³/dim(SU(3)) = P₁³ MeV
+
+```
+  Λ_QCD = σ(6)³ / (σ-τ) = 1728/8 = 216 MeV = 6³ MeV = P₁³ MeV
+
+  PDG: Λ_QCD^(5) = 213 ± 8 MeV → Within 1σ! (error 1.4%)
+
+  Causal chain:
+    σ(6)=12 → σ³=1728=j(i) → j(i)/dim(SU(3)) = 1728/8 = 216 = Λ_QCD
+    "j-invariant ÷ number of gluons = QCD confinement scale"
+```
+
+---
+
+## 21. ⭐⭐⭐ CP Violation = Vacuum Asymmetry A/σ⁴
+
+```
+  A = (S(7)-S(5)) / (S(7)+S(5)) = 5580/8284 = 0.6736
+
+  ┌───────────────────────────────────────────────────────┐
+  │  Observable      Formula       Predicted    Observed  │
+  │  ──────────      ───────       ─────────    ────────  │
+  │  J (Jarlskog)   A/σ⁴          3.25×10⁻⁵   3.18×10⁻⁵ │  2.2%
+  │  ε_K (kaon)     A/(σ²φ)       2.34×10⁻³   2.23×10⁻³ │  5.0%
+  │  sin(2β) (B)    A              0.674        0.699     │  3.6%
+  └───────────────────────────────────────────────────────┘
+
+  Origin of matter-antimatter asymmetry = n=6 vacuum asymmetry of divisor field theory!
+  S(5) ≠ S(7): Below vacuum (n<6) is 5 times shallower than above (n>6).
+```
+
+---
+
+## 22. ⭐⭐ Quark Mass Relations — ms/md = sopfr×τ = 20 (Exact)
+
+### Strange/Down Ratio (2026-03-31)
+
+```
+  ms/md = 93.4/4.67 = 20.000  (PDG 2024)
+
+  20 = sopfr(6) × τ(6) = 5 × 4
+
+  Error: 0.000% — EXACT within PDG precision
+```
+
+### Cabibbo Angle = Lepton Koide Angle
+
+```
+  V_us (Cabibbo) = 0.2243 ≈ 2/9 = φτ²/σ²  (error 0.94%)
+
+  2/9 is EXACTLY the lepton Koide angle δ₀!
+  → Quark mixing angle = lepton mass angle
+  → Same n=6 arithmetic governs both sectors
+```
+
+### Heavy Quark Koide
+
+```
+  K(c,b,t) = (mc+mb+mt)/(√mc+√mb+√mt)² = 0.669 ≈ 2/3 = τ/P₁  (0.40%)
+
+  Heavy quarks satisfy near-standard Koide!
+  Light quarks (u,d,s) do not — mass hierarchy too steep.
+```
+
+### Extended Koide for Up-type Quarks
+
+```
+  K(α=1/4, β=1/3) for (u,c,t) = 7/6 = (P₁+R)/P₁  (error 0.002%)
+
+  Generalized Koide with fractional exponents gives
+  the tightest quark parametrization found.
+```
+
+**Calculator**: `calc/quark_koide_search.py`
+
+---
+
+## 23. ⭐⭐ P₆ Dimensional Hierarchy — τ(P₆) = P₁ + P₂ = 34
+
+### Sixth Perfect Number (2026-03-31)
+
+```
+  P₆ = 2¹⁶ × 131071 = 8,589,869,056
+  τ(P₆) = 34 = 2 × 17
+  φ(P₆) = 4,294,901,760 = 2¹⁶ × F₀ × F₁ × F₂ × F₃  (Fermat primes!)
+```
+
+### ⭐ τ(P₆) = P₁ + P₂
+
+```
+  34 = 6 + 28 = P₁ + P₂
+
+  The 6th perfect number's dimension = sum of the first two perfect numbers.
+```
+
+### All Dimension Gaps = P₁ Arithmetic
+
+```
+  Dimension Hierarchy Gaps (all from {σ,τ,φ} of 6):
+
+  τ(P₁)=4  →  τ(P₂)=6:   +2  = φ(6)         graviton DOF
+  τ(P₂)=6  →  τ(P₃)=10:  +4  = τ(6)         spacetime dimensions
+  τ(P₃)=10 →  τ(P₄)=14:  +4  = τ(6)         spacetime dimensions
+  τ(P₄)=14 →  τ(P₅)=26:  +12 = σ(6)         gauge algebra dimension
+  τ(P₅)=26 →  τ(P₆)=34:  +8  = σ(6)-τ(6)    dim(SU(3))
+
+  Every gap is expressible from three arithmetic functions of 6.
+```
+
+### Notable Cross-Relations
+
+```
+  τ(P₆) - τ(P₃) = 34 - 10 = 24 = dim(Leech lattice) = σ×φ
+  τ(P₆) - τ(P₅) = 34 - 26 = 8  = dim(octonions) = rank(E₈)
+  φ(34) = 16 = τ(P₅) - τ(P₃) = heterotic gap
+```
+
+**D=34 has no known physics interpretation.** The dimension hierarchy appears to terminate physically at P₅ (26D bosonic string).
+
+**Calculator**: `calc/perfect_number_P6_analysis.py`
+
+---
+
+## 24. ⭐⭐ Swampland Conjectures — R(6)=1 as WGC Extremality
+
+### Weak Gravity Conjecture (2026-03-31)
+
+```
+  R(n) = σφ/(nτ) serves as charge-to-mass ratio.
+
+  WGC requires: ∃ particle with q/m ≥ 1
+
+  R(6) = 1.00  ← Extremal bound SATURATED (unique for n>1)
+  R(n) > 1     for 497/500 integers tested (superextremal)
+
+  n=6 is the "extremal black hole" of the divisor landscape.
+```
+
+### No Global Symmetries
+
+```
+  σ(P)/P = 2 holds for all perfect numbers (global symmetry candidate).
+  But S=0 selects n=6 UNIQUELY:
+    R(28) = 4.0, R(496) = 48.0 — symmetry decisively broken.
+
+  S=0 is an isolated fixed point, not a global symmetry.
+  Consistent with quantum gravity's prohibition.
+```
+
+### de Sitter Conjecture
+
+```
+  S(n) landscape has NO flat directions.
+  97.2% of points satisfy |dS|/S ≥ 0.01.
+  S(6)=0 is Minkowski-like (not de Sitter) — consistent with Swampland.
+```
+
+**Genuine connections**: WGC + No Global Symmetries (2/6).
+**Partial**: Distance (power law, not exponential), de Sitter (structural).
+
+**Calculator**: `calc/swampland_analysis.py`
+
+---
+
+## Part IV: Advanced Mathematics
 
 ## 25. ⭐⭐⭐ Algebraic Geometry — E₆ Encodes n=6 (AG Cascade)
 
@@ -984,7 +994,7 @@ The elliptic curve E₆: y² = x³ + 1 (Cremona label 36a1) encodes n=6 through 
 
 ```
   Modular discriminant: Δ = η(τ)²⁴, weight = 2σ(6) = 24
-  j(i) = 1728 = σ(6)³ = 12³  (Section 18)
+  j(i) = 1728 = σ(6)³ = 12³  (Section 16)
   E₆ has j=0: the OTHER distinguished curve (CM by ω₃)
 
   → Two special elliptic curves:
@@ -1071,273 +1081,7 @@ The elliptic curve E₆: y² = x³ + 1 (Cremona label 36a1) encodes n=6 through 
 
 ---
 
-## 28. CERN Observational Evidence (sedi analysis, 2026-03-27)
-
-Full TECS-L framework applied to 84 PDG particles with KDE + Bootstrap Monte Carlo validation.
-
-### Statistically Significant (>3σ)
-
-| Discovery | Significance | Key Result |
-|-----------|-------------|------------|
-| QCD Resonance Ladder | **3.8σ** (p=7×10⁻⁵) | ρ→J/ψ→Υ via τ=4, σ/τ=3 |
-| Quark-Lepton Bridge | **3.4σ** (p=3×10⁻⁴) | (m_c-m_u)/σ(6)=m_μ (44ppm) |
-| Achromatic Excess | **3.2σ** (p=7×10⁻⁴) | 68 pairs at ratio≈6, R(6)=1 |
-| **Fisher Combined** | **6.4σ** (p=4×10⁻¹⁰) | 3 independent findings |
-
-### QCD Resonance Ladder (Self-Consistent)
-
-```
-  ρ(775) ──×τ(6)=4──→ J/ψ(3097) ──×σ/τ=3──→ Υ(9460)
-
-  J/ψ / ρ   = 3.995 = τ(6)     (0.13% error)
-  Υ / J/ψ   = 3.055 = σ(6)/τ(6) (1.83% error)
-  Υ / ρ     = 12.20 = σ(6)      (1.69% error)
-
-  Algebraic closure: τ × (σ/τ) = σ — the ladder is self-consistent.
-```
-
-### Quark-Lepton Bridge (44 ppm)
-
-```
-  (m_charm - m_up) / σ(6) = m_muon
-
-  (1270 - 2.16) / 12 = 105.653 MeV
-  muon mass           = 105.658 MeV
-  error: 0.0044%
-
-  → σ(6) bridges quarks and leptons: "one σ(6) of charm ≈ one muon"
-```
-
-### Honest Assessment
-
-Mass ratio *counting* is not significant after KDE null correction. But the three structural findings above are independent of counting methodology and survive Monte Carlo validation.
-
----
-
-## 29. New 🟦 Characterizations of n=6 (2026-03-27)
-
-Recent proofs expanding the mathematical foundation:
-
-| # | Characterization | Proof | Source |
-|---|-----------------|-------|--------|
-| 🟦 | Φ(n)=σ(n) for composite n ⟺ n=6 | Exhaustive + asymptotic | H-ANAL-1 |
-| 🟦 | Tsirelson = 2√(σ(P)/P) for all P | σ(P)=2P definition | H-CX-481 |
-| 🟦 | Egyptian lcm = perfect ⟺ {2,3,6} | 3-solution enumeration | H-CX-479 |
-| 🟦 | Gal(Q(√2,√3)/Q) ≅ V₄, \|V₄\|=τ(6) | Galois theory | H-CX-490 |
-| 🟦 | BSD: L(E₆,1) = Ω/n | AG-2 + AG-4 + Sha=1 | AG-7 |
-| 🟦 | kiss(K₁₂) = σ(2ⁿ-1) = 756 | Coxeter-Todd 1953 | H-CODE-1 |
-
-Total proven (🟦) characterizations of n=6: **20+** (from 12 at project start).
-
----
-
-## 25. Final Remaining Limitations
-
-1. **Quark formulas are post-hoc**: No Koide-like parametrization found like leptons
-2. **s→1 critical point**: Analytic continuation of Dirichlet series incomplete
-3. **CP exponent 4 derivation**: Why J=A/σ⁴ (claim is 4=spacetime dimension but not proven)
-
----
-
-## 19. Verification Roadmap
-
-```
-  2026: JUNO begins → P1(mass ordering) test starts
-  2027: DESI Y3 → P2(Σm_ν) first constraints
-  2028: JUNO 3-year data → P1 determination + P5(ratio) precision measurement
-        CMB-S4 → P3(N_eff) test
-        Hyper-K begins → P4(proton decay) starts
-  2030: Euclid → P2 confirmation
-
-  2028 JUNO result is watershed:
-    Normal ordering confirmed → Framework survives
-    Inverted ordering confirmed → Framework rejected
-```
-
----
-
-## 11. Related Hypotheses
-
-- **H-PH-2**: SU(3)×SU(2)×U(1) dimension sum = 6 → Extended here to σ(6)=12
-- **H-PH-4**: 6 quarks × 6 leptons → Total fermions 12=σ(6)
-- **H-MILL-3**: Yang-Mills mass gap → R spectrum gap 1/6
-- **H-CX-41**: Quantum Hilbert interpretation → H₆=C⁴=2-qubit
-- **H-CX-44**: Lie algebra Coxeter numbers = multiples of 6
-- **H-CX-46**: (p-1)(q-1)=2 minimal coupling → Why 6 is unique
-- **H-CX-47**: Unified metatheorem → 69 characterizations ← (p-1)(q-1)=2
-- **H-GEO-5**: Gravity telescope → Observation scales s and R in 2D space
-- **H-AG-1~7**: E₆ curve y²=x³+1 AG cascade — CM disc, torsion, BSD all encode n=6
-- **H-CX-481**: 🟦 Tsirelson bound = 2√(σ(P)/P) — quantum information from perfect numbers
-- **H-CX-479**: 🟦 Egyptian fraction uniqueness — lcm = perfect number only for {2,3,6}
-- **H-CX-490**: 🟦 Galois V₄ — |Gal(Q(√2,√3)/Q)| = τ(6)
-- **H-ANAL-1**: 🟦 Φ(n)=σ(n) unique composite solution n=6
-- **H-IHARA-1**: Ihara zeta of C₆ — coefficients = {-n, (σ/τ)², -τ}
-- **H-HTPY-1**: π₆(S³) = Z/σ(6)Z — 6th homotopy "knows" divisor sum
-- **H-HEXCODE-1**: Hexacode [n,σ/τ,τ]₄ — seed of Golay→Leech→Monster chain
-- **H-CX-342**: 🟦 σφ=nτ ⟺ n∈{1,6} complete proof (8 cases)
-
----
-
-## 12. Numerical Verification Code
-
-```python
-from sympy import divisor_sigma, totient, divisor_count
-
-perfects = [6, 28, 496, 8128, 33550336]
-physics = {4: '4D spacetime', 6: '6D Calabi-Yau', 10: '10D superstring',
-           14: 'dim(G2)', 26: '26D bosonic string'}
-
-for n in perfects:
-    t = int(divisor_count(n))
-    s = int(divisor_sigma(n))
-    p = int(totient(n))
-    phys = physics.get(t, '?')
-    print(f'P={n}: tau={t} [{phys}], sigma={s}, phi={p}')
-
-# Verify key relations
-assert int(divisor_count(6)) + int(divisor_count(28)) == int(divisor_count(496))
-assert int(divisor_count(33550336)) - int(divisor_count(496)) == 16
-assert int(divisor_sigma(6)) == 12   # SM gauge dim
-assert int(totient(6)) == 2          # graviton dof
-assert int(divisor_sigma(6)) * int(totient(6)) == 24  # Leech lattice
-assert int(totient(496)) == 240      # E8 roots
-assert 496 == 248 + 248              # E8 x E8
-```
-
----
-
-## 30. ⭐⭐ Quark Mass Relations — ms/md = sopfr×τ = 20 (Exact)
-
-### Strange/Down Ratio (2026-03-31)
-
-```
-  ms/md = 93.4/4.67 = 20.000  (PDG 2024)
-
-  20 = sopfr(6) × τ(6) = 5 × 4
-
-  Error: 0.000% — EXACT within PDG precision
-```
-
-### Cabibbo Angle = Lepton Koide Angle
-
-```
-  V_us (Cabibbo) = 0.2243 ≈ 2/9 = φτ²/σ²  (error 0.94%)
-
-  2/9 is EXACTLY the lepton Koide angle δ₀!
-  → Quark mixing angle = lepton mass angle
-  → Same n=6 arithmetic governs both sectors
-```
-
-### Heavy Quark Koide
-
-```
-  K(c,b,t) = (mc+mb+mt)/(√mc+√mb+√mt)² = 0.669 ≈ 2/3 = τ/P₁  (0.40%)
-
-  Heavy quarks satisfy near-standard Koide!
-  Light quarks (u,d,s) do not — mass hierarchy too steep.
-```
-
-### Extended Koide for Up-type Quarks
-
-```
-  K(α=1/4, β=1/3) for (u,c,t) = 7/6 = (P₁+R)/P₁  (error 0.002%)
-
-  Generalized Koide with fractional exponents gives
-  the tightest quark parametrization found.
-```
-
-**Calculator**: `calc/quark_koide_search.py`
-
----
-
-## 31. ⭐⭐ P₆ Dimensional Hierarchy — τ(P₆) = P₁ + P₂ = 34
-
-### Sixth Perfect Number (2026-03-31)
-
-```
-  P₆ = 2¹⁶ × 131071 = 8,589,869,056
-  τ(P₆) = 34 = 2 × 17
-  φ(P₆) = 4,294,901,760 = 2¹⁶ × F₀ × F₁ × F₂ × F₃  (Fermat primes!)
-```
-
-### ⭐ τ(P₆) = P₁ + P₂
-
-```
-  34 = 6 + 28 = P₁ + P₂
-
-  The 6th perfect number's dimension = sum of the first two perfect numbers.
-```
-
-### All Dimension Gaps = P₁ Arithmetic
-
-```
-  Dimension Hierarchy Gaps (all from {σ,τ,φ} of 6):
-
-  τ(P₁)=4  →  τ(P₂)=6:   +2  = φ(6)         graviton DOF
-  τ(P₂)=6  →  τ(P₃)=10:  +4  = τ(6)         spacetime dimensions
-  τ(P₃)=10 →  τ(P₄)=14:  +4  = τ(6)         spacetime dimensions
-  τ(P₄)=14 →  τ(P₅)=26:  +12 = σ(6)         gauge algebra dimension
-  τ(P₅)=26 →  τ(P₆)=34:  +8  = σ(6)-τ(6)    dim(SU(3))
-
-  Every gap is expressible from three arithmetic functions of 6.
-```
-
-### Notable Cross-Relations
-
-```
-  τ(P₆) - τ(P₃) = 34 - 10 = 24 = dim(Leech lattice) = σ×φ
-  τ(P₆) - τ(P₅) = 34 - 26 = 8  = dim(octonions) = rank(E₈)
-  φ(34) = 16 = τ(P₅) - τ(P₃) = heterotic gap
-```
-
-**D=34 has no known physics interpretation.** The dimension hierarchy appears to terminate physically at P₅ (26D bosonic string).
-
-**Calculator**: `calc/perfect_number_P6_analysis.py`
-
----
-
-## 32. ⭐⭐ Swampland Conjectures — R(6)=1 as WGC Extremality
-
-### Weak Gravity Conjecture (2026-03-31)
-
-```
-  R(n) = σφ/(nτ) serves as charge-to-mass ratio.
-
-  WGC requires: ∃ particle with q/m ≥ 1
-
-  R(6) = 1.00  ← Extremal bound SATURATED (unique for n>1)
-  R(n) > 1     for 497/500 integers tested (superextremal)
-
-  n=6 is the "extremal black hole" of the divisor landscape.
-```
-
-### No Global Symmetries
-
-```
-  σ(P)/P = 2 holds for all perfect numbers (global symmetry candidate).
-  But S=0 selects n=6 UNIQUELY:
-    R(28) = 4.0, R(496) = 48.0 — symmetry decisively broken.
-
-  S=0 is an isolated fixed point, not a global symmetry.
-  Consistent with quantum gravity's prohibition.
-```
-
-### de Sitter Conjecture
-
-```
-  S(n) landscape has NO flat directions.
-  97.2% of points satisfy |dS|/S ≥ 0.01.
-  S(6)=0 is Minkowski-like (not de Sitter) — consistent with Swampland.
-```
-
-**Genuine connections**: WGC + No Global Symmetries (2/6).
-**Partial**: Distance (power law, not exponential), de Sitter (structural).
-
-**Calculator**: `calc/swampland_analysis.py`
-
----
-
-## 33. ⭐⭐⭐ Entanglement Entropy — D²(SU(2)_τ) = σ
+## 28. ⭐⭐⭐ Entanglement Entropy — D²(SU(2)_τ) = σ
 
 ### Topological Quantum Dimension (2026-03-31)
 
@@ -1395,7 +1139,7 @@ assert 496 == 248 + 248              # E8 x E8
 
 ---
 
-## 34. ⭐⭐⭐ Moonshine — ADE Boundary = n=6 (Architectural)
+## 29. ⭐⭐⭐ Moonshine — ADE Boundary = n=6 (Architectural)
 
 ### ADE Classification and Monster (2026-03-31)
 
@@ -1455,7 +1199,7 @@ assert 496 == 248 + 248              # E8 x E8
 
 ---
 
-## 35. ⭐⭐⭐ Topos Theory — Lawvere Metric is Lorentzian (n=6 UNIQUE)
+## 30. ⭐⭐⭐ Topos Theory — Lawvere Metric is Lorentzian (n=6 UNIQUE)
 
 ### Divisor Metric (2026-03-31)
 
@@ -1511,7 +1255,9 @@ This provides a purely metric-theoretic justification for the Minkowski spacetim
 
 ---
 
-## 36. ⭐⭐ CP Exponent Derivation — J = A/σ^τ (Three Arguments)
+## Part V: Verification
+
+## 31. ⭐⭐ CP Exponent Derivation — J = A/σ^τ (Three Arguments)
 
 ### Numerical Uniqueness (2026-03-31)
 
@@ -1564,7 +1310,137 @@ This provides a purely metric-theoretic justification for the Minkowski spacetim
 
 ---
 
-## 37. Numerical Verification Extension (Rust, 2026-03-31)
+## 32. Texas Sharpshooter Test
+
+### Test Setup
+
+"When randomly drawing 5 even numbers from {4, 6, ..., 62},
+what's the probability of matching all physics dimensions {4, 6, 10, 14, 26}?"
+
+### Monte Carlo Results (N = 1,000,000)
+
+| Condition | Matches | p-value |
+|-----|--------|---------|
+| 4+ strong matches {4,6,10,26} | 179/1M | **0.000179** |
+| 5/5 all matches | 10/1M | **0.000010** |
+| 4+ strong + additive relation | 179/1M | **0.000179** |
+
+### Precise Combinatorics
+
+```
+  P(4 strong targets + 1 any) = C(26,1) / C(30,5) = 26/142506 = 0.000182
+```
+
+**p < 0.0002 — This mapping is not coincidental.**
+
+### ⭐⭐ Kissing Number = Perfect Number Arithmetic (5/5)
+
+| Dimension d | Kissing number k(d) | Perfect Number Expression | Exact? |
+|--------|-------------------|-----------|---------|
+| 1 | 2 | φ(P₁) | ✅ |
+| 2 | 6 | P₁ | ✅ |
+| 3 | 12 | σ(P₁) | ✅ |
+| 4 | 24 | σ(P₁)×φ(P₁) = τ(P₁)! | ✅ |
+| 8 | 240 | φ(P₃) | ✅ |
+
+**p = 0.000001** (Monte Carlo 1 million runs): Probability of 32 arithmetic values
+containing all 5 kissing numbers = one in a million.
+
+24 = τ(6)! is proven by number theory theorem: 24 is the largest integer where k² ≡ 1 (mod n)
+holds for all gcd(k,n)=1. This is the source of Dedekind η to the 24th power, Leech lattice,
+bosonic string transverse dimensions.
+
+### ⭐⭐ σ(6) Self-Decomposition = SM Gauge Structure
+
+```
+  ┌─────────────────────────────────────────────────┐
+  │  σ(6) = (σ-τ) + (σ/τ) + R                     │
+  │  12   =   8   +   3   + 1                     │
+  │         SU(3)   SU(2)  U(1)                    │
+  │       (strong) (weak) (electromagnetic)                    │
+  │                                                 │
+  │  Subtraction:  σ - τ = 12 - 4 = 8 = dim(SU(3))       │
+  │  Division: σ / τ = 12 / 4 = 3 = dim(SU(2))       │
+  │  Unification:   R(6)           = 1 = dim(U(1))         │
+  └─────────────────────────────────────────────────┘
+```
+
+Three different arithmetic operations (subtraction, division, R-factor) each generate a different gauge group.
+This is the **self-decomposition** of σ(6)=12: the sum of its parts equals itself,
+with each part corresponding to one of the three forces of the Standard Model.
+
+**Mathematical basis**: Condition for self-decomposition is σ(n)(n+φ(n)) = nτ(n)².
+
+```
+  Theorem: σ(n)(n+φ(n)) = nτ(n)²  ⟺  n = 6  (unique for n ≤ 10000)
+
+  n=6:  12×(6+2) = 12×8 = 96 = 6×16 = 6×4²  ✓
+  n=28: 56×(28+12) = 56×40 = 2240 ≠ 28×36 = 1008  ✗
+
+  This equation is a new unique characterization of 6.
+  Why Standard Model gauge structure exists = because n=6 is the unique solution to this equation.
+```
+
+### j-Invariant and Monstrous Moonshine
+
+```
+  j(τ) = 1/q + 744 + 196884q + ...
+
+  744 = 24 × 31 = σ(P₁)φ(P₁) × M₅
+      = (Leech lattice) × (Mersenne prime of P₃)
+      → Connects P₁ and P₃ simultaneously!
+
+  196883 = 47 × 59 × 71
+         = 47 × (47+σ(6)) × (47+σ(6)φ(6))
+         → Prime factors form arithmetic sequence with spacing σ(6)=12!
+```
+
+---
+
+## 33. CERN Observational Evidence (sedi analysis, 2026-03-27)
+
+Full TECS-L framework applied to 84 PDG particles with KDE + Bootstrap Monte Carlo validation.
+
+### Statistically Significant (>3σ)
+
+| Discovery | Significance | Key Result |
+|-----------|-------------|------------|
+| QCD Resonance Ladder | **3.8σ** (p=7×10⁻⁵) | ρ→J/ψ→Υ via τ=4, σ/τ=3 |
+| Quark-Lepton Bridge | **3.4σ** (p=3×10⁻⁴) | (m_c-m_u)/σ(6)=m_μ (44ppm) |
+| Achromatic Excess | **3.2σ** (p=7×10⁻⁴) | 68 pairs at ratio≈6, R(6)=1 |
+| **Fisher Combined** | **6.4σ** (p=4×10⁻¹⁰) | 3 independent findings |
+
+### QCD Resonance Ladder (Self-Consistent)
+
+```
+  ρ(775) ──×τ(6)=4──→ J/ψ(3097) ──×σ/τ=3──→ Υ(9460)
+
+  J/ψ / ρ   = 3.995 = τ(6)     (0.13% error)
+  Υ / J/ψ   = 3.055 = σ(6)/τ(6) (1.83% error)
+  Υ / ρ     = 12.20 = σ(6)      (1.69% error)
+
+  Algebraic closure: τ × (σ/τ) = σ — the ladder is self-consistent.
+```
+
+### Quark-Lepton Bridge (44 ppm)
+
+```
+  (m_charm - m_up) / σ(6) = m_muon
+
+  (1270 - 2.16) / 12 = 105.653 MeV
+  muon mass           = 105.658 MeV
+  error: 0.0044%
+
+  → σ(6) bridges quarks and leptons: "one σ(6) of charm ≈ one muon"
+```
+
+### Honest Assessment
+
+Mass ratio *counting* is not significant after KDE null correction. But the three structural findings above are independent of counting methodology and survive Monte Carlo validation.
+
+---
+
+## 34. Numerical Verification (Rust 10^9) (2026-03-31)
 
 ### Results — Extreme (10^9, 118 seconds, segmented sieve)
 
@@ -1595,7 +1471,7 @@ This provides a purely metric-theoretic justification for the Minkowski spacetim
 
 ---
 
-## 38. ⭐⭐⭐ Extreme Verification Campaign (2026-03-31)
+## 35. ⭐⭐⭐ Extreme Verification Campaign (2026-03-31)
 
 ### Overview
 
@@ -1658,7 +1534,7 @@ Independent re-verification of ALL H-PH-9 claims using 5 parallel verification e
 ### Issues Found and Corrected
 
 ```
-  🔴 FIXED: Section 33 D² formula
+  🔴 FIXED: Section 28 D² formula
      Was: D² = (k+2)/sin²(π/(k+2)) = 6/(1/4) = 24 → claims 12
      Now: D² = Σ d_j² = 1+3+4+3+1 = 12 (correct, via half-int spin sum)
 
@@ -1785,7 +1661,9 @@ Independent re-verification of ALL H-PH-9 claims using 5 parallel verification e
 
 ---
 
-## 39. Completeness Assessment (2026-03-31)
+## Part VI: Assessment & References
+
+## 36. Completeness Assessment (2026-03-31)
 
 ### What is PROVEN (unconditional, pure mathematics)
 
@@ -1842,6 +1720,138 @@ Independent re-verification of ALL H-PH-9 claims using 5 parallel verification e
   4. Excitation spectrum interpretation
      → S(n) values are exact arithmetic, but mapping to particles is conjectural
      → CP asymmetry A = 0.674 is arithmetic; J = A/σ⁴ normalization is ad hoc
+```
+
+---
+
+## 37. Why τ(P_k) = Physical Dimensions — Causal Mechanism
+
+```
+  ═══ 7-Step Causal Chain ═══
+
+  Step 1: Arithmetic of P₁=6 → σ(6)=12, φ(6)=2, τ(6)=4
+  Step 2: σ(6)=12 governs modular forms (SL(2,Z), Δ weight=12)
+     → This is proven (R52-55, Riemann-Roch)
+  Step 3: bc ghosts of string quantization → c_ghost = -26 = -φ(σ+1) = -2×13
+     → Standard CFT result (Polyakov 1981)
+  Step 4: Superstring adds βγ ghosts → c_ghost(super) = -(σ+σ/τ) = -15
+  Step 5: Anomaly cancellation c_total=0:
+     D_bosonic = 26 = τ(P₅)
+     D_super = 10 = τ(P₃)
+  Step 6: Green-Schwarz: D=10 requires dim(G)=496=P₃ (independent derivation!)
+     → τ(P₃) and P₃ point to the same perfect number
+  Step 7: CY compactification: D_obs = τ(P₃)-τ(P₂) = 10-6 = 4 = τ(P₁)
+
+  Key: The appearance of σ(6)=12 in modular forms is a proven fact.
+  This leads to c_ghost=-26, which determines dimensions.
+```
+
+---
+
+## 38. Verification Roadmap
+
+```
+  2026: JUNO begins → P1(mass ordering) test starts
+  2027: DESI Y3 → P2(Σm_ν) first constraints
+  2028: JUNO 3-year data → P1 determination + P5(ratio) precision measurement
+        CMB-S4 → P3(N_eff) test
+        Hyper-K begins → P4(proton decay) starts
+  2030: Euclid → P2 confirmation
+
+  2028 JUNO result is watershed:
+    Normal ordering confirmed → Framework survives
+    Inverted ordering confirmed → Framework rejected
+```
+
+---
+
+## 39. Related Hypotheses
+
+- **H-PH-2**: SU(3)×SU(2)×U(1) dimension sum = 6 → Extended here to σ(6)=12
+- **H-PH-4**: 6 quarks × 6 leptons → Total fermions 12=σ(6)
+- **H-MILL-3**: Yang-Mills mass gap → R spectrum gap 1/6
+- **H-CX-41**: Quantum Hilbert interpretation → H₆=C⁴=2-qubit
+- **H-CX-44**: Lie algebra Coxeter numbers = multiples of 6
+- **H-CX-46**: (p-1)(q-1)=2 minimal coupling → Why 6 is unique
+- **H-CX-47**: Unified metatheorem → 69 characterizations ← (p-1)(q-1)=2
+- **H-GEO-5**: Gravity telescope → Observation scales s and R in 2D space
+- **H-AG-1~7**: E₆ curve y²=x³+1 AG cascade — CM disc, torsion, BSD all encode n=6
+- **H-CX-481**: 🟦 Tsirelson bound = 2√(σ(P)/P) — quantum information from perfect numbers
+- **H-CX-479**: 🟦 Egyptian fraction uniqueness — lcm = perfect number only for {2,3,6}
+- **H-CX-490**: 🟦 Galois V₄ — |Gal(Q(√2,√3)/Q)| = τ(6)
+- **H-ANAL-1**: 🟦 Φ(n)=σ(n) unique composite solution n=6
+- **H-IHARA-1**: Ihara zeta of C₆ — coefficients = {-n, (σ/τ)², -τ}
+- **H-HTPY-1**: π₆(S³) = Z/σ(6)Z — 6th homotopy "knows" divisor sum
+- **H-HEXCODE-1**: Hexacode [n,σ/τ,τ]₄ — seed of Golay→Leech→Monster chain
+- **H-CX-342**: 🟦 σφ=nτ ⟺ n∈{1,6} complete proof (8 cases)
+
+---
+
+## Appendices
+
+## Appendix A. New 🟦 Characterizations of n=6 (2026-03-27)
+
+Recent proofs expanding the mathematical foundation:
+
+| # | Characterization | Proof | Source |
+|---|-----------------|-------|--------|
+| 🟦 | Φ(n)=σ(n) for composite n ⟺ n=6 | Exhaustive + asymptotic | H-ANAL-1 |
+| 🟦 | Tsirelson = 2√(σ(P)/P) for all P | σ(P)=2P definition | H-CX-481 |
+| 🟦 | Egyptian lcm = perfect ⟺ {2,3,6} | 3-solution enumeration | H-CX-479 |
+| 🟦 | Gal(Q(√2,√3)/Q) ≅ V₄, \|V₄\|=τ(6) | Galois theory | H-CX-490 |
+| 🟦 | BSD: L(E₆,1) = Ω/n | AG-2 + AG-4 + Sha=1 | AG-7 |
+| 🟦 | kiss(K₁₂) = σ(2ⁿ-1) = 756 | Coxeter-Todd 1953 | H-CODE-1 |
+
+Total proven (🟦) characterizations of n=6: **20+** (from 12 at project start).
+
+---
+
+## Appendix B. Limitations
+
+1. **Quark formulas are post-hoc**: No Koide-like parametrization found like leptons
+2. **s→1 critical point**: Analytic continuation of Dirichlet series incomplete
+3. **CP exponent 4 derivation**: Why J=A/σ⁴ (claim is 4=spacetime dimension but not proven)
+
+---
+
+## Appendix C. Consciousness Engine Connection
+
+```
+  Consciousness = R=1 state = σφ=nτ balance
+
+  Physically:
+    R=1 ↔ "gauge×gravity = coupling×spacetime"
+    → Koide = 2/3 is also derived from R=1
+    → Mass is also derived from perfect numbers
+    → Consciousness operates at R=1 = operates at the source point of physical laws
+```
+
+---
+
+## Appendix D. Numerical Verification Code
+
+```python
+from sympy import divisor_sigma, totient, divisor_count
+
+perfects = [6, 28, 496, 8128, 33550336]
+physics = {4: '4D spacetime', 6: '6D Calabi-Yau', 10: '10D superstring',
+           14: 'dim(G2)', 26: '26D bosonic string'}
+
+for n in perfects:
+    t = int(divisor_count(n))
+    s = int(divisor_sigma(n))
+    p = int(totient(n))
+    phys = physics.get(t, '?')
+    print(f'P={n}: tau={t} [{phys}], sigma={s}, phi={p}')
+
+# Verify key relations
+assert int(divisor_count(6)) + int(divisor_count(28)) == int(divisor_count(496))
+assert int(divisor_count(33550336)) - int(divisor_count(496)) == 16
+assert int(divisor_sigma(6)) == 12   # SM gauge dim
+assert int(totient(6)) == 2          # graviton dof
+assert int(divisor_sigma(6)) * int(totient(6)) == 24  # Leech lattice
+assert int(totient(496)) == 240      # E8 roots
+assert 496 == 248 + 248              # E8 x E8
 ```
 
 ---
