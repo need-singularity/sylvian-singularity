@@ -15,10 +15,24 @@
       "repo": "TECS-L"
     },
     {
+      "name": "apply_grades",
+      "description": "Apply n6 grades to ungraded TECS-L hypothesis files.",
+      "category": "calculator",
+      "path": "calc/apply_grades.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "atlas_domain_classifier",
       "description": "Atlas Domain Classifier — 도메인 없는 가설에 키워드 기반 도메인 부여",
       "category": "calculator",
       "path": "calc/atlas_domain_classifier.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "auto_grade_n6",
+      "description": "Auto-grade ungraded hypotheses by detecting n=6 constant matches.",
+      "category": "calculator",
+      "path": "calc/auto_grade_n6.py",
       "repo": "TECS-L"
     },
     {
@@ -722,6 +736,13 @@
       "repo": "TECS-L"
     },
     {
+      "name": "n6_architecture_constants",
+      "description": "n6-architecture Constants Registry — 494 constants for Math Atlas scanning.",
+      "category": "calculator",
+      "path": "calc/n6_architecture_constants.py",
+      "repo": "TECS-L"
+    },
+    {
       "name": "n6_uniqueness_tester",
       "description": "n=6 Uniqueness Tester -- Check if an identity holds only for n=6",
       "category": "calculator",
@@ -1048,6 +1069,13 @@
       "description": "Symmetric Group S_6 Uniqueness Calculator",
       "category": "calculator",
       "path": "calc/symmetric_group_s6.py",
+      "repo": "TECS-L"
+    },
+    {
+      "name": "sync_n6_constants",
+      "description": "sync_n6_constants.py — Extract n6 atlas constants and compare with TECS-L math_atlas.json.",
+      "category": "calculator",
+      "path": "calc/sync_n6_constants.py",
       "repo": "TECS-L"
     },
     {
@@ -2267,10 +2295,24 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "atlas-verifier",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/atlas-verifier/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "battery-dse",
       "description": "HEXA-BATTERY Design Space Exploration (DSE)",
       "category": "calculator",
       "path": "tools/battery-dse/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "carbon-capture-calc",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/carbon-capture-calc/main.rs",
       "repo": "n6-architecture"
     },
     {
@@ -2299,6 +2341,20 @@
       "description": "",
       "category": "calculator",
       "path": "tools/consciousness-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "cross-dse-calc",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/cross-dse-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "crypto-calc",
+      "description": "N6 Crypto / Blockchain / Cryptography Calculator",
+      "category": "calculator",
+      "path": "tools/crypto-calc/main.rs",
       "repo": "n6-architecture"
     },
     {
@@ -2344,6 +2400,13 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "hypothesis-grader",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/hypothesis-grader/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "interconnect-calc",
       "description": "N6 Interconnect Speed Calculator",
       "category": "calculator",
@@ -2386,6 +2449,13 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "quantum-calc",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/quantum-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "robot-dse",
       "description": "N6 궁극의 로봇 DSE — 6단 전수 조합 탐색기",
       "category": "calculator",
@@ -2397,6 +2467,13 @@
       "description": "N6 궁극의 초전도체 DSE — 6단 전수 조합 탐색기",
       "category": "calculator",
       "path": "tools/sc-dse/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "semiconductor-calc",
+      "description": "N6 Semiconductor Process / GPU SM / HBM Ladder Calculator",
+      "category": "calculator",
+      "path": "tools/semiconductor-calc/main.rs",
       "repo": "n6-architecture"
     },
     {
@@ -2589,10 +2666,31 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "blind_verification",
+      "description": "Blind Domain Verification of n=6 Universality (Experiment 4 Implementation)",
+      "category": "experiment",
+      "path": "experiments/blind_verification.py",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "chip_phase_diagram",
       "description": "Chip Phase Diagram -- Computing Paradigms on Power x Performance Axes",
       "category": "experiment",
       "path": "experiments/chip_phase_diagram.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "cross_repo_mining",
+      "description": "Cross-Repo Constant Mining: scan 305 TOML domains for n=6 patterns.",
+      "category": "experiment",
+      "path": "experiments/cross_repo_mining.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "cross_strong_collision",
+      "description": "Cross-reference STRONG hypotheses with constant collision analysis.",
+      "category": "experiment",
+      "path": "experiments/cross_strong_collision.py",
       "repo": "n6-architecture"
     },
     {
@@ -2827,10 +2925,24 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "meta_pattern_discovery",
+      "description": "Meta-Pattern Discovery in DSE Domain Structure",
+      "category": "experiment",
+      "path": "experiments/meta_pattern_discovery.py",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "ppa_model",
       "description": "N6 PPA (Performance, Power, Area) 모델",
       "category": "experiment",
       "path": "experiments/ppa_model.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "unified_verify",
+      "description": "Unified Verification Orchestrator — TECS-L + n6-architecture",
+      "category": "experiment",
+      "path": "experiments/unified_verify.py",
       "repo": "n6-architecture"
     },
     {

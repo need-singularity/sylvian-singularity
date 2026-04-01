@@ -988,21 +988,23 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:CALCULATORS:START -->
 | Repo | Tools | Categories |
 |------|-------|------------|
-| **TECS-L** | 209 | Calculator, Engine |
+| **TECS-L** | 213 | Calculator, Engine |
 | **anima** | 0 |  |
 | **SEDI** | 91 | Core, Data Source |
-| **n6-architecture** | 125 | Calculator, Engine, experiment, technique |
-| **Total** | **425** | |
+| **n6-architecture** | 137 | Calculator, Engine, experiment, technique |
+| **Total** | **441** | |
 
 ### TECS-L
 
-**Calculator** (190)
+**Calculator** (194)
 
 | Name | Description | Path |
 |------|-------------|------|
 | algebra_closure | Algebraic Closure Checker — Relations among convergence points | `calc/algebra_closure.py` |
 | anomaly_scorer | Anomaly Score Calculator — Anomaly Detection via Tension | `calc/anomaly_scorer.py` |
+| apply_grades | Apply n6 grades to ungraded TECS-L hypothesis files. | `calc/apply_grades.py` |
 | atlas_domain_classifier | Atlas Domain Classifier — 도메인 없는 가설에 키워드 기반 도메인 부여 | `calc/atlas_domain_classifier.py` |
+| auto_grade_n6 | Auto-grade ungraded hypotheses by detecting n=6 constant matches. | `calc/auto_grade_n6.py` |
 | base_dependence_checker | base_dependence_checker.py -- Tests if a numerical pattern is base-10 specific o | `calc/base_dependence_checker.py` |
 | bernoulli_perfect_exotic | Bernoulli-Perfect-Exotic Sphere Connection Calculator | `calc/bernoulli_perfect_exotic.py` |
 | bott_periodicity_p6 | Bott Periodicity and P1=6 Connection Explorer | `calc/bott_periodicity_p6.py` |
@@ -1103,6 +1105,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | monster_moonshine_perfect | Monster Moonshine -- Perfect Number Connection Calculator | `calc/monster_moonshine_perfect.py` |
 | moonshine_deep_analysis | Moonshine Deep Analysis -- Monster Group and Perfect Number 6 | `calc/moonshine_deep_analysis.py` |
 | music_consonance_calculator | Music Consonance Calculator -- Euler Gradus Suavitatis, N-TET analysis, circle o | `calc/music_consonance_calculator.py` |
+| n6_architecture_constants | n6-architecture Constants Registry — 494 constants for Math Atlas scanning. | `calc/n6_architecture_constants.py` |
 | n6_uniqueness_tester | n=6 Uniqueness Tester -- Check if an identity holds only for n=6 | `calc/n6_uniqueness_tester.py` |
 | nobel_breakthrough | NOBEL BREAKTHROUGH ANALYSIS | `calc/nobel_breakthrough.py` |
 | nobel_new_predictions | NEW NOBEL-LEVEL PREDICTIONS | `calc/nobel_new_predictions.py` |
@@ -1150,6 +1153,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | statistical_tester | statistical_tester.py -- Unified statistical testing for logout project. | `calc/statistical_tester.py` |
 | swampland_analysis | Swampland Conjecture Analysis for H-PH-9 Divisor Field Theory | `calc/swampland_analysis.py` |
 | symmetric_group_s6 | Symmetric Group S_6 Uniqueness Calculator | `calc/symmetric_group_s6.py` |
+| sync_n6_constants | sync_n6_constants.py — Extract n6 atlas constants and compare with TECS-L math_a | `calc/sync_n6_constants.py` |
 | tension_calculator | Tension Calculator — Predict accuracy/precognition/identity from tension values | `calc/tension_calculator.py` |
 | texas_240_test | Texas Sharpshooter Test for 240 Universality | `calc/texas_240_test.py` |
 | texas_sharpshooter_v2 | Texas Sharpshooter v2 -- Enhanced statistical validator for GZ campaign | `calc/texas_sharpshooter_v2.py` |
@@ -1324,12 +1328,13 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 ### n6-architecture
 
-**Calculator** (46)
+**Calculator** (53)
 
 | Name | Description | Path |
 |------|-------------|------|
 | ai_algorithm_n6_analysis | AI Algorithm n=6 Analysis Calculator | `tools/ai_algorithm_n6_analysis.py` |
 | arch_optimizer | Architecture Optimizer — Find nearest n=6-optimal config for given constraints. | `tools/arch_optimizer.py` |
+| atlas-verifier | - | `tools/atlas-verifier/main.rs` |
 | battery-dse | HEXA-BATTERY Design Space Exploration (DSE) | `tools/battery-dse/main.rs` |
 | bt26_verify | BT-26+ 대발견 가설 독립 수치 검증 | `tools/bt26_verify.py` |
 | bt34_35_verify | BT-34/35 독립 수치 검증 — RoPE, LLM hyperparams, Battery voltages | `tools/bt34_35_verify.py` |
@@ -1337,12 +1342,15 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | bt42_47_verify | BT-42~47 New Breakthrough Theorem Verification | `tools/bt42_47_verify.py` |
 | bt48_53_verify | BT-48~53: New Breakthrough Theorems — Unexplored Domains | `tools/bt48_53_verify.py` |
 | bt_master_verify | BT-26~41 Master Verification — All 16 new breakthrough theorems | `tools/bt_master_verify.py` |
+| carbon-capture-calc | - | `tools/carbon-capture-calc/main.rs` |
 | chinchilla_n6_deep_verify | Chinchilla Scaling Law vs n=6 Arithmetic — Deep Verification Calculator | `tools/chinchilla_n6_deep_verify.py` |
 | chip-n6-calc | N6 Chip Parameter Generator | `tools/chip-n6-calc/main.rs` |
 | chip-perf-calc | - | `tools/chip-perf-calc/main.rs` |
 | chip-power-calc | - | `tools/chip-power-calc/main.rs` |
 | consciousness-calc | - | `tools/consciousness-calc/main.rs` |
 | convergence_analyzer | Convergence Analyzer -- Depth-1 Reachability Across 8 Mathematical Domains | `tools/convergence_analyzer.py` |
+| cross-dse-calc | - | `tools/cross-dse-calc/main.rs` |
+| crypto-calc | N6 Crypto / Blockchain / Cryptography Calculator | `tools/crypto-calc/main.rs` |
 | divisor_field_theory | Divisor Field Theory — Action S(n) uniqueness and spacetime analysis | `tools/divisor_field_theory.py` |
 | dse-calc | N6 Design Space Exploration (DSE) — 전수 조합 탐색기 | `tools/dse-calc/main.rs` |
 | egyptian_fraction | Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK | `tools/egyptian_fraction.py` |
@@ -1352,6 +1360,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | gate_formula_calculator | Gate Formula Calculator — Law 77 adaptive consciousness gate | `tools/gate_formula_calculator.py` |
 | gpu-arch-calc | N6 GPU/HBM Architecture Calculator | `tools/gpu-arch-calc/main.rs` |
 | gut-calc-rust | - | `tools/gut-calc-rust/main.rs` |
+| hypothesis-grader | - | `tools/hypothesis-grader/main.rs` |
 | interconnect-calc | N6 Interconnect Speed Calculator | `tools/interconnect-calc/main.rs` |
 | kstar-barrier4-calc | KSTAR 장벽 4 (전류 구동) 정밀 계산기 | `tools/kstar-barrier4-calc.py` |
 | kstar-calc | KSTAR 전용 계산기 — n=6 기반 심층 분석 | `tools/kstar-calc/main.rs` |
@@ -1366,8 +1375,10 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | perfect_number_generalizer | Perfect Number Generalizer — Test if formulas holding at n=6 generalize to n=28, | `tools/perfect_number_generalizer.py` |
 | perfect_number_physics | Perfect Number Physics — Core arithmetic functions and physics dimension mapping | `tools/perfect_number_physics.py` |
 | photonic-energy-calc | - | `tools/photonic-energy-calc/main.rs` |
+| quantum-calc | - | `tools/quantum-calc/main.rs` |
 | robot-dse | N6 궁극의 로봇 DSE — 6단 전수 조합 탐색기 | `tools/robot-dse/main.rs` |
 | sc-dse | N6 궁극의 초전도체 DSE — 6단 전수 조합 탐색기 | `tools/sc-dse/main.rs` |
+| semiconductor-calc | N6 Semiconductor Process / GPU SM / HBM Ladder Calculator | `tools/semiconductor-calc/main.rs` |
 | solar-dse | HEXA-SOLAR Design Space Exploration (DSE) | `tools/solar-dse/main.rs` |
 | tension_calculator | Tension Calculator — Predict accuracy/precognition/identity from tension values | `tools/tension_calculator.py` |
 | tokamak-shape | Tokamak Shape Optimizer — n=6 매개변수 공간 탐색 | `tools/tokamak-shape/main.rs` |
@@ -1386,11 +1397,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | sedi_training_monitor | SEDI Training Monitor | `engine/sedi_training_monitor.py` |
 | thermodynamic_frame | Thermodynamic Frame | `engine/thermodynamic_frame.py` |
 
-**Experiment** (56)
+**Experiment** (61)
 
 | Name | Description | Path |
 |------|-------------|------|
+| blind_verification | Blind Domain Verification of n=6 Universality (Experiment 4 Implementation) | `experiments/blind_verification.py` |
 | chip_phase_diagram | Chip Phase Diagram -- Computing Paradigms on Power x Performance Axes | `experiments/chip_phase_diagram.py` |
+| cross_repo_mining | Cross-Repo Constant Mining: scan 305 TOML domains for n=6 patterns. | `experiments/cross_repo_mining.py` |
+| cross_strong_collision | Cross-reference STRONG hypotheses with constant collision analysis. | `experiments/cross_strong_collision.py` |
 | experiment_alpha_attack | Experiment: Fine Structure Constant Alpha Attack | `experiments/experiment_alpha_attack.py` |
 | experiment_attractor_curvature | Experiment: Attractor Dimension + Energy Surface Curvature | `experiments/experiment_attractor_curvature.py` |
 | experiment_bitnet_n6 | BitNet b1.58 2B4T — Real Config n=6 Verification Experiment | `experiments/experiment_bitnet_n6.py` |
@@ -1424,7 +1438,9 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | experiment_zeta_connection | Experiment: R(n) = 1 and the Riemann Zeta Function | `experiments/experiment_zeta_connection.py` |
 | h_ee_2_gradient_properties | H-EE-2: Phi6Simple Gradient Properties | `experiments/h_ee_2_gradient_properties.py` |
 | h_ee_3_training_stability | H-EE-3: Phi6Simple Training Stability | `experiments/h_ee_3_training_stability.py` |
+| meta_pattern_discovery | Meta-Pattern Discovery in DSE Domain Structure | `experiments/meta_pattern_discovery.py` |
 | ppa_model | N6 PPA (Performance, Power, Area) 모델 | `experiments/ppa_model.py` |
+| unified_verify | Unified Verification Orchestrator — TECS-L + n6-architecture | `experiments/unified_verify.py` |
 | verify_battery_architecture | HEXA-BATTERY Architecture Verification | `experiments/verify_battery_architecture.py` |
 | verify_battery_cascade | HEXA-BATTERY Cascade Cross-Verification | `experiments/verify_battery_cascade.py` |
 | verify_bt66_73 | Independent verification of BT-66 through BT-73. | `experiments/verify_bt66_73.py` |
