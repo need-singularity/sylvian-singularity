@@ -128,8 +128,47 @@ if [ -d "$PARENT/n6-architecture" ]; then
   cd - > /dev/null
 fi
 
+# ── n6 → TECS-L 역동기화 (자동) ──────────────────────────────
 echo ""
-echo "[3/3] Done!"
+echo "[3/4] Reverse sync: n6 → TECS-L..."
+
+N6_DIR="$PARENT/n6-architecture"
+if [ -d "$N6_DIR" ]; then
+  # DSE TOML 역동기화 (n6 → TECS-L)
+  N6_TOML="$N6_DIR/tools/universal-dse/domains"
+  TECS_TOML="$SCRIPT_DIR/dse/domains"
+  if [ -d "$N6_TOML" ]; then
+    BEFORE=$(ls "$TECS_TOML"/*.toml 2>/dev/null | wc -l)
+    cp "$N6_TOML"/*.toml "$TECS_TOML/" 2>/dev/null
+    AFTER=$(ls "$TECS_TOML"/*.toml 2>/dev/null | wc -l)
+    echo "  DSE TOML: $BEFORE → $AFTER domains"
+  fi
+
+  # Rust 계산기 바이너리 목록 동기화 (n6 tools/ → TECS-L 레지스트리)
+  N6_TOOLS=$(find "$N6_DIR/tools" -name "main.rs" -type f 2>/dev/null | wc -l)
+  echo "  n6 Rust tools detected: $N6_TOOLS"
+
+  # 상수 역동기화 (n6 atlas → TECS-L)
+  if [ -f "$N6_DIR/docs/atlas-constants.md" ]; then
+    cp "$N6_DIR/docs/atlas-constants.md" "$SCRIPT_DIR/n6-atlas-constants.md"
+    echo "  Atlas constants synced"
+  fi
+
+  # TECS-L 커밋 (역동기화분)
+  cd "$BASE"
+  if ! git diff --quiet .shared/ 2>/dev/null; then
+    git add .shared/
+    git commit -m "sync: n6→TECS-L reverse sync (DSE domains + atlas)"
+    git push
+    echo "  Pushed reverse sync!"
+  else
+    echo "  No reverse changes"
+  fi
+  cd - > /dev/null
+fi
+
+echo ""
+echo "[4/4] Done!"
 echo ""
 
 # Summary
