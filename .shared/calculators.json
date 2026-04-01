@@ -2274,6 +2274,27 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "chip-n6-calc",
+      "description": "N6 Chip Parameter Generator",
+      "category": "calculator",
+      "path": "tools/chip-n6-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "chip-perf-calc",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/chip-perf-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "chip-power-calc",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/chip-power-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "consciousness-calc",
       "description": "",
       "category": "calculator",
@@ -2355,6 +2376,13 @@
       "description": "N6 Optics Calculator — 렌즈/망원경 광학 파라미터와 n=6 검증",
       "category": "calculator",
       "path": "tools/optics-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "photonic-energy-calc",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/photonic-energy-calc/main.rs",
       "repo": "n6-architecture"
     },
     {
@@ -2558,6 +2586,13 @@
       "description": "Thermodynamic Frame",
       "category": "engine",
       "path": "engine/thermodynamic_frame.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "chip_phase_diagram",
+      "description": "Chip Phase Diagram -- Computing Paradigms on Power x Performance Axes",
+      "category": "experiment",
+      "path": "experiments/chip_phase_diagram.py",
       "repo": "n6-architecture"
     },
     {
@@ -2841,6 +2876,13 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "verify_chip_n6",
+      "description": "HEXA Chip Family — n=6 수학 검증",
+      "category": "experiment",
+      "path": "experiments/verify_chip_n6.py",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "verify_chip_ultimate",
       "description": "verify_chip_ultimate.py — Ultimate Chip Architecture n=6 Mathematical Verification",
       "category": "experiment",
@@ -2929,6 +2971,13 @@
       "description": "HEXA-WAFER (Level 5) n=6 파라미터 수학적 검증",
       "category": "experiment",
       "path": "experiments/verify_hexa_wafer.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "verify_topological_chip",
+      "description": "Verify BT-90, BT-91, BT-92: Topological Chip Architecture",
+      "category": "experiment",
+      "path": "experiments/verify_topological_chip.py",
       "repo": "n6-architecture"
     }
   ]
