@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-03-31T22:55:08",
+  "generated": "2026-04-01T11:51:31",
   "stats": {
-    "TECS-L": 1980,
+    "TECS-L": 1984,
     "SEDI": 678,
     "anima": 0,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2500,
+  "total": 2503,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -2279,11 +2279,13 @@
     },
     {
       "id": "TECS-L:309",
-      "title": "Mitosis Anomaly Detection Synthesis — Paper-Level Systematic Summary",
+      "title": "Mitosis Anomaly Detection — Systematic Synthesis",
       "repo": "TECS-L",
       "domain": null,
       "grade": null,
-      "refs": [],
+      "refs": [
+        "H-CX-14"
+      ],
       "gz_dependent": null,
       "file": "docs/hypotheses/309-mitosis-anomaly-paper-synthesis.md"
     },
@@ -4462,6 +4464,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/DEEP-sigma-phi-tau-28-geometry-topology.md"
+    },
+    {
+      "id": "TECS-L:DFS-composition-sopfr-phi-omega",
+      "title": "DFS Discovery: sopfr(phi(n)) = omega(n) is Unique to n=6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/DFS-composition-sopfr-phi-omega.md"
     },
     {
       "id": "TECS-L:E6-001-exceptional-lie-algebra",
@@ -11058,6 +11070,26 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/H-DNA-701-consciousness-music-six.md"
+    },
+    {
+      "id": "TECS-L:H-DSE-001",
+      "title": "Universal Design Space Exploration — n=6 설계 끌개",
+      "repo": "TECS-L",
+      "domain": "DSE",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DSE-001-universal-design-space.md"
+    },
+    {
+      "id": "TECS-L:H-DSE-002",
+      "title": "n=6 최적 OS vs Linux/RISC-V 실측 비교",
+      "repo": "TECS-L",
+      "domain": "DSE",
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-DSE-002-n6-os-linux-comparison.md"
     },
     {
       "id": "TECS-L:H-EARTH-001-025-geoscience",
@@ -28663,6 +28695,48 @@
       "category": "targets"
     },
     {
+      "name": "FUNC_NAMES",
+      "repo": "TECS-L",
+      "file": "calc/dfs_n6_composition_miner.py",
+      "line": 124,
+      "type": "list",
+      "size": 7,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "sigma",
+        "tau",
+        "phi",
+        "sopfr",
+        "omega",
+        "Omega",
+        "rad"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "FUNC_NAMES",
+      "repo": "TECS-L",
+      "file": "calc/dfs_n6_identity_miner.py",
+      "line": 182,
+      "type": "list",
+      "size": 9,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "n",
+        "sigma",
+        "tau",
+        "phi",
+        "sopfr",
+        "omega",
+        "Omega",
+        "rad",
+        "aliq"
+      ],
+      "category": "other"
+    },
+    {
       "name": "DATASETS",
       "repo": "TECS-L",
       "file": "calc/direction_analyzer.py",
@@ -30858,7 +30932,7 @@
       "file": "calc/n6_uniqueness_tester.py",
       "line": 61,
       "type": "list",
-      "size": 10,
+      "size": 11,
       "keys": null,
       "evaluable": false,
       "values": null,
@@ -30868,7 +30942,7 @@
       "name": "SCAN_TEMPLATES",
       "repo": "TECS-L",
       "file": "calc/n6_uniqueness_tester.py",
-      "line": 200,
+      "line": 209,
       "type": "list",
       "size": 16,
       "keys": null,
@@ -34363,6 +34437,180 @@
       "evaluable": false,
       "values": null,
       "category": "constants"
+    },
+    {
+      "name": "DIVISOR_RECIPROCALS",
+      "repo": "TECS-L",
+      "file": "calc/verify_h309_mitosis_anomaly.py",
+      "line": 26,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "RESULTS",
+      "repo": "TECS-L",
+      "file": "calc/verify_h309_mitosis_anomaly.py",
+      "line": 34,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        "Breast Cancer",
+        "MNIST (0v1)",
+        "Iris",
+        "Wine",
+        "Sine wave",
+        "ECG-like"
+      ],
+      "evaluable": true,
+      "values": {
+        "Breast Cancer": {
+          "MAD_Inter": 0.836,
+          "MAD_Recon": 0.922,
+          "IForest": 0.974,
+          "OC_SVM": 0.94
+        },
+        "MNIST (0v1)": {
+          "MAD_Inter": 0.671,
+          "MAD_Recon": 0.942,
+          "IForest": 1.0,
+          "OC_SVM": 1.0
+        },
+        "Iris": {
+          "MAD_Inter": 0.839,
+          "MAD_Recon": 0.973,
+          "IForest": 1.0,
+          "OC_SVM": 1.0
+        },
+        "Wine": {
+          "MAD_Inter": 0.944,
+          "MAD_Recon": 0.996,
+          "IForest": 0.998,
+          "OC_SVM": 1.0
+        },
+        "Sine wave": {
+          "MAD_Inter": 1.0,
+          "MAD_Recon": 1.0,
+          "IForest": 1.0,
+          "OC_SVM": 1.0
+        },
+        "ECG-like": {
+          "MAD_Inter": 0.978,
+          "MAD_Recon": 1.0,
+          "IForest": 0.879,
+          "OC_SVM": 0.9
+        }
+      },
+      "category": "other"
+    },
+    {
+      "name": "NWAY_RESULTS",
+      "repo": "TECS-L",
+      "file": "calc/verify_h309_mitosis_anomaly.py",
+      "line": 44,
+      "type": "dict",
+      "size": 5,
+      "keys": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "evaluable": true,
+      "values": {
+        "1": 0.08,
+        "2": 0.82,
+        "4": 0.803,
+        "8": 0.778,
+        "16": 0.726
+      },
+      "category": "other"
+    },
+    {
+      "name": "TEMPORAL_K",
+      "repo": "TECS-L",
+      "file": "calc/verify_h309_mitosis_anomaly.py",
+      "line": 47,
+      "type": "dict",
+      "size": 6,
+      "keys": [
+        0,
+        5,
+        10,
+        20,
+        30,
+        50
+      ],
+      "evaluable": true,
+      "values": {
+        "0": 0.58,
+        "5": 0.72,
+        "10": 0.8,
+        "20": 0.87,
+        "30": 0.91,
+        "50": 0.95
+      },
+      "category": "other"
+    },
+    {
+      "name": "MATRIX_2X2",
+      "repo": "TECS-L",
+      "file": "calc/verify_h309_mitosis_anomaly.py",
+      "line": 50,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        [
+          "Classification",
+          "Internal"
+        ],
+        [
+          "Classification",
+          "Inter"
+        ],
+        [
+          "Reconstruction",
+          "Internal"
+        ],
+        [
+          "Reconstruction",
+          "Inter"
+        ]
+      ],
+      "evaluable": true,
+      "values": {
+        "('Classification', 'Internal')": 0.26,
+        "('Classification', 'Inter')": 0.59,
+        "('Reconstruction', 'Internal')": 0.14,
+        "('Reconstruction', 'Inter')": 0.8
+      },
+      "category": "other"
+    },
+    {
+      "name": "DUAL_MECHANISM",
+      "repo": "TECS-L",
+      "file": "calc/verify_h309_mitosis_anomaly.py",
+      "line": 58,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        "Internal_normal",
+        "Internal_anomaly",
+        "Inter_normal",
+        "Inter_anomaly"
+      ],
+      "evaluable": true,
+      "values": {
+        "Internal_normal": "high",
+        "Internal_anomaly": "low",
+        "Inter_normal": "low",
+        "Inter_anomaly": "high"
+      },
+      "category": "other"
     },
     {
       "name": "FUNCS",
@@ -40934,7 +41182,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 202,
+    "TECS-L": 210,
     "SEDI": 122,
     "anima": 0,
     "golden-moe": 3,

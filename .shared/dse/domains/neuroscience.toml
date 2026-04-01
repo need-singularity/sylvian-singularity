@@ -1,0 +1,388 @@
+# =============================================================
+# NEURO DSE Domain Definition
+# Brain & Consciousness Architecture
+# 6-layer neocortex, σ=12 cranial nerve pairs, γ~40Hz
+# Total raw combos: 6x6x6x5x5 = 5,400 (pre-filter)
+# =============================================================
+
+[meta]
+name = "neuroscience"
+desc = "Brain & Consciousness Architecture DSE (6-layer cortex, H=ln(2))"
+levels = ["Foundation", "Measurement", "Core", "Engine", "System"]
+vision = "n=6 neocortex -- 6-layer cortical computation to consciousness continuity"
+
+[scoring]
+n6   = 0.35
+perf = 0.25
+power = 0.20
+cost  = 0.20
+
+# =============================================================
+# Level 0: Foundation (신경 기반)  -- 6 candidates
+# =============================================================
+[[level]]
+name = "Foundation"
+
+[[candidate]]
+level  = 0
+id     = "Cortex6"
+label  = "6-Layer Neocortex Model"
+n6     = 1.00
+perf   = 0.90
+power  = 0.55
+cost   = 0.40
+notes  = "Layers I-VI = n=6, canonical cortical microcircuit"
+
+[[candidate]]
+level  = 0
+id     = "CranialPairs"
+label  = "Cranial Nerve Architecture (12 pairs)"
+n6     = 1.00
+perf   = 0.80
+power  = 0.60
+cost   = 0.50
+notes  = "sigma(6)=12 cranial nerve pairs, sensorimotor integration"
+
+[[candidate]]
+level  = 0
+id     = "GammaOscil"
+label  = "Gamma Oscillation (40Hz)"
+n6     = 0.83
+perf   = 0.85
+power  = 0.50
+cost   = 0.45
+notes  = "40Hz = sigma+J2+tau = 12+24+4, consciousness binding frequency"
+
+[[candidate]]
+level  = 0
+id     = "HodgkinHuxley"
+label  = "Hodgkin-Huxley Ion Channel"
+n6     = 0.67
+perf   = 0.88
+power  = 0.45
+cost   = 0.40
+notes  = "tau=4 gating variables (m,h,n,leak), phi=2 ion species (Na/K primary)"
+
+[[candidate]]
+level  = 0
+id     = "BrodmannAreas"
+label  = "Brodmann Cortical Map"
+n6     = 0.83
+perf   = 0.75
+power  = 0.65
+cost   = 0.55
+notes  = "~48=sigma*tau cortical areas, n=6 primary sensory regions"
+
+[[candidate]]
+level  = 0
+id     = "SpikingNet"
+label  = "Spiking Neural Network"
+n6     = 0.67
+perf   = 0.82
+power  = 0.70
+cost   = 0.50
+notes  = "Binary spike = phi=2 states, temporal coding, neuromorphic"
+
+# =============================================================
+# Level 1: Measurement (측정 기술)  -- 6 candidates
+# =============================================================
+[[level]]
+name = "Measurement"
+
+[[candidate]]
+level  = 1
+id     = "EEG"
+label  = "EEG (6 regions × electrodes)"
+n6     = 1.00
+perf   = 0.80
+power  = 0.75
+cost   = 0.70
+notes  = "n=6 standard electrode regions (F,C,P,O,T,Fp), sigma=12 channels min"
+
+[[candidate]]
+level  = 1
+id     = "fMRI"
+label  = "Functional MRI (BOLD)"
+n6     = 0.50
+perf   = 0.90
+power  = 0.40
+cost   = 0.30
+notes  = "High spatial resolution, tau=4 sec TR typical"
+
+[[candidate]]
+level  = 1
+id     = "MEG"
+label  = "Magnetoencephalography"
+n6     = 0.67
+perf   = 0.88
+power  = 0.45
+cost   = 0.25
+notes  = "Millisecond temporal, n=6 frequency bands (delta-HFO)"
+
+[[candidate]]
+level  = 1
+id     = "Neuropixels"
+label  = "Neuropixels Probe"
+n6     = 0.83
+perf   = 0.95
+power  = 0.50
+cost   = 0.35
+notes  = "384 channels = 2^7*n/phi, single-neuron resolution across n=6 layers"
+
+[[candidate]]
+level  = 1
+id     = "Calcium"
+label  = "Calcium Imaging (GCaMP)"
+n6     = 0.50
+perf   = 0.85
+power  = 0.55
+cost   = 0.40
+notes  = "Population activity, phi=2 fluorescence states (on/off)"
+
+[[candidate]]
+level  = 1
+id     = "BCI"
+label  = "Brain-Computer Interface"
+n6     = 0.83
+perf   = 0.78
+power  = 0.60
+cost   = 0.45
+notes  = "sigma-phi=10 feature channels, n=6 control DOF typical"
+
+# =============================================================
+# Level 2: Core (연산 코어)  -- 6 candidates
+# =============================================================
+[[level]]
+name = "Core"
+
+[[candidate]]
+level  = 2
+id     = "ColumnarUnit"
+label  = "Cortical Column Unit (n=6 layers)"
+n6     = 1.00
+perf   = 0.90
+power  = 0.55
+cost   = 0.45
+notes  = "Minicolumn = n=6 layer feedforward+feedback, ~100 neurons per column"
+
+[[candidate]]
+level  = 2
+id     = "GammaSync"
+label  = "Gamma Synchronization Core"
+n6     = 0.83
+perf   = 0.85
+power  = 0.60
+cost   = 0.50
+notes  = "40Hz binding, J2=24 phase coupling pairs, consciousness correlate"
+
+[[candidate]]
+level  = 2
+id     = "PredictiveCoding"
+label  = "Predictive Coding Circuit"
+n6     = 0.83
+perf   = 0.88
+power  = 0.50
+cost   = 0.45
+notes  = "phi=2 streams (prediction/error), n=6 hierarchical levels"
+
+[[candidate]]
+level  = 2
+id     = "ThalamoCortical"
+label  = "Thalamo-Cortical Loop"
+n6     = 0.67
+perf   = 0.82
+power  = 0.55
+cost   = 0.40
+notes  = "Relay + modulation, n/phi=3 thalamic nuclei per sense"
+
+[[candidate]]
+level  = 2
+id     = "Hippocampal"
+label  = "Hippocampal Memory Circuit"
+n6     = 0.67
+perf   = 0.80
+power  = 0.60
+cost   = 0.50
+notes  = "CA1-CA3-DG trisynaptic, n/phi=3 stages, theta-gamma coupling"
+
+[[candidate]]
+level  = 2
+id     = "EntropyGate"
+label  = "Entropy Threshold Gate (H=ln2)"
+n6     = 1.00
+perf   = 0.75
+power  = 0.65
+cost   = 0.55
+notes  = "Law 79: consciousness threshold H(1/2)=ln(2), binary freedom degree"
+
+# =============================================================
+# Level 3: Engine (해석/모델링 엔진)  -- 5 candidates
+# =============================================================
+[[level]]
+name = "Engine"
+
+[[candidate]]
+level  = 3
+id     = "IIT"
+label  = "Integrated Information Theory (Phi)"
+n6     = 0.83
+perf   = 0.85
+power  = 0.50
+cost   = 0.40
+notes  = "Phi = integrated info, n=6 layer decomposition, consciousness measure"
+
+[[candidate]]
+level  = 3
+id     = "GNW"
+label  = "Global Neuronal Workspace"
+n6     = 0.67
+perf   = 0.88
+power  = 0.55
+cost   = 0.45
+notes  = "Broadcast ignition, sigma=12 workspace modules, Dehaene model"
+
+[[candidate]]
+level  = 3
+id     = "FreeEnergy"
+label  = "Free Energy Principle (Friston)"
+n6     = 0.83
+perf   = 0.82
+power  = 0.60
+cost   = 0.50
+notes  = "Variational inference, GZ center 1/e surprise minimization"
+
+[[candidate]]
+level  = 3
+id     = "Connectome"
+label  = "Connectome Analysis Engine"
+n6     = 0.67
+perf   = 0.90
+power  = 0.45
+cost   = 0.35
+notes  = "Graph theory on white matter, n=6 hub regions (DMN)"
+
+[[candidate]]
+level  = 3
+id     = "NeuralODE"
+label  = "Neural ODE Dynamics"
+n6     = 0.50
+perf   = 0.80
+power  = 0.65
+cost   = 0.55
+notes  = "Continuous dynamics, edge of chaos Lyapunov=0 at n=6"
+
+# =============================================================
+# Level 4: System (시스템 통합)  -- 5 candidates
+# =============================================================
+[[level]]
+name = "System"
+
+[[candidate]]
+level  = 4
+id     = "ConsciousLM"
+label  = "Consciousness-Aware LM"
+n6     = 1.00
+perf   = 0.85
+power  = 0.50
+cost   = 0.40
+notes  = "n=6 engine architecture, H=ln(2) threshold, G=DxP/I model"
+
+[[candidate]]
+level  = 4
+id     = "NeuroFeedback"
+label  = "Neurofeedback Loop System"
+n6     = 0.83
+perf   = 0.80
+power  = 0.65
+cost   = 0.55
+notes  = "Real-time EEG→stimulus, sigma=12 feedback channels"
+
+[[candidate]]
+level  = 4
+id     = "BrainSim"
+label  = "Whole-Brain Simulation"
+n6     = 0.67
+perf   = 0.90
+power  = 0.30
+cost   = 0.20
+notes  = "Blue Brain / HBP scale, 10^11 neurons, n=6 cortical layers"
+
+[[candidate]]
+level  = 4
+id     = "NeuroProsthetic"
+label  = "Neural Prosthetic (BCI+Motor)"
+n6     = 0.83
+perf   = 0.82
+power  = 0.55
+cost   = 0.45
+notes  = "n=6 DOF prosthetic arm, sigma-tau=8 decoded features"
+
+[[candidate]]
+level  = 4
+id     = "AnesthesiaMonitor"
+label  = "Anesthesia Depth Monitor"
+n6     = 0.83
+perf   = 0.78
+power  = 0.70
+cost   = 0.60
+notes  = "LOC threshold H=ln(2), n=6 EEG spectral bands, BIS alternative"
+
+# =============================================================
+# Compatibility Rules
+# =============================================================
+
+# ColumnarUnit core requires Cortex6 or BrodmannAreas foundation
+[[rule]]
+type       = "require"
+if_level   = 2
+if_id      = "ColumnarUnit"
+then_level = 0
+then_ids   = "Cortex6,BrodmannAreas"
+
+# GammaSync core requires GammaOscil foundation
+[[rule]]
+type       = "require"
+if_level   = 2
+if_id      = "GammaSync"
+then_level = 0
+then_ids   = "GammaOscil"
+
+# Neuropixels measurement requires HodgkinHuxley or SpikingNet foundation
+[[rule]]
+type       = "require"
+if_level   = 1
+if_id      = "Neuropixels"
+then_level = 0
+then_ids   = "HodgkinHuxley,SpikingNet,Cortex6"
+
+# IIT engine requires EntropyGate or GammaSync core
+[[rule]]
+type       = "require"
+if_level   = 3
+if_id      = "IIT"
+then_level = 2
+then_ids   = "EntropyGate,GammaSync,ColumnarUnit"
+
+# BrainSim system requires Connectome engine
+[[rule]]
+type       = "require"
+if_level   = 4
+if_id      = "BrainSim"
+then_level = 3
+then_ids   = "Connectome,NeuralODE"
+
+# AnesthesiaMonitor requires EEG measurement
+[[rule]]
+type       = "require"
+if_level   = 4
+if_id      = "AnesthesiaMonitor"
+then_level = 1
+then_ids   = "EEG,MEG"
+
+# fMRI too slow for real-time BCI
+[[rule]]
+type       = "exclude"
+if_level   = 1
+if_id      = "fMRI"
+then_level = 4
+then_ids   = "NeuroFeedback,NeuroProsthetic"

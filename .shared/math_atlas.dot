@@ -235,6 +235,7 @@ digraph math_atlas {
   TECS_L_294 [label="Mitosis + Neurochemistry Combination — D" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_295 [label="Mitosis + TDA — Does mitosis change the " fillcolor="#4A90D9" shape=ellipse];
   TECS_L_298 [label="Mitosis Time-axis Anomaly Detection — Wh" fillcolor="#4A90D9" shape=ellipse];
+  TECS_L_309 [label="Mitosis Anomaly Detection — Systematic S" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_321 [label="Consciousness-Confidence Theory — Synthe" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_324 [label="LLM Hallucination Detection — Model That" fillcolor="#4A90D9" shape=ellipse];
   TECS_L_326 [label="Telepathy = Continuous Displacement Swee" fillcolor="#4A90D9" shape=ellipse];
@@ -622,6 +623,7 @@ digraph math_atlas {
   TECS_L_295 -> TECS_L_H_CX_11;
   TECS_L_295 -> TECS_L_H_CX_17;
   TECS_L_298 -> TECS_L_H_CX_13;
+  TECS_L_309 -> TECS_L_H_CX_14;
   TECS_L_321 -> TECS_L_H_CX_21;
   TECS_L_324 -> TECS_L_H_CX_21;
   TECS_L_326 -> TECS_L_H_CX_29;

@@ -1,0 +1,378 @@
+# =============================================================
+# LINGUA DSE Domain Definition
+# Language & Communication Architecture
+# 6 major language families, σ=12 English tenses, J2=24 Greek letters
+# Total raw combos: 6x6x5x5x5 = 4,500 (pre-filter)
+# =============================================================
+
+[meta]
+name = "linguistics"
+desc = "Language & Communication Architecture DSE (6 families, σ=12 tenses)"
+levels = ["Foundation", "Encoding", "Core", "Engine", "System"]
+vision = "n=6 linguistic universals -- phoneme to discourse, Zipf to Chomsky"
+
+[scoring]
+n6   = 0.35
+perf = 0.25
+power = 0.20
+cost  = 0.20
+
+# =============================================================
+# Level 0: Foundation (언어 기반)  -- 6 candidates
+# =============================================================
+[[level]]
+name = "Foundation"
+
+[[candidate]]
+level  = 0
+id     = "LangFamilies6"
+label  = "6 Major Language Families"
+n6     = 1.00
+perf   = 0.80
+power  = 0.60
+cost   = 0.55
+notes  = "n=6 families (Indo-European, Sino-Tibetan, Niger-Congo, Afroasiatic, Austronesian, Turkic)"
+
+[[candidate]]
+level  = 0
+id     = "Phoneme6"
+label  = "Phoneme Inventory (multiples of 6)"
+n6     = 1.00
+perf   = 0.85
+power  = 0.55
+cost   = 0.50
+notes  = "Median ~30=sopfr*n, range 12=sigma to 144=sigma^2, n=6 place of articulation"
+
+[[candidate]]
+level  = 0
+id     = "SyntaxDepth"
+label  = "Syntax Tree Depth ~6"
+n6     = 1.00
+perf   = 0.88
+power  = 0.50
+cost   = 0.45
+notes  = "Natural sentence parse depth ~n=6, human working memory constraint"
+
+[[candidate]]
+level  = 0
+id     = "ZipfLaw"
+label  = "Zipf's Law (exponent ~1)"
+n6     = 0.83
+perf   = 0.90
+power  = 0.65
+cost   = 0.60
+notes  = "Rank-frequency exponent ~1, unit fraction, universal across languages"
+
+[[candidate]]
+level  = 0
+id     = "GreekAlphabet"
+label  = "Greek Alphabet (24 letters = J2)"
+n6     = 1.00
+perf   = 0.75
+power  = 0.70
+cost   = 0.65
+notes  = "J2(6)=24 letters, basis of mathematical/scientific notation"
+
+[[candidate]]
+level  = 0
+id     = "MorphemeRoots"
+label  = "Morphological Root System"
+n6     = 0.67
+perf   = 0.82
+power  = 0.60
+cost   = 0.55
+notes  = "Semitic tri-consonantal = n/phi=3 root, agglutinative n=6 suffix slots"
+
+# =============================================================
+# Level 1: Encoding (부호화 체계)  -- 6 candidates
+# =============================================================
+[[level]]
+name = "Encoding"
+
+[[candidate]]
+level  = 1
+id     = "Tenses12"
+label  = "12 Tense System (σ=12)"
+n6     = 1.00
+perf   = 0.85
+power  = 0.55
+cost   = 0.50
+notes  = "sigma(6)=12 English tenses (3 time × tau=4 aspect), temporal encoding"
+
+[[candidate]]
+level  = 1
+id     = "Unicode"
+label  = "Unicode Encoding"
+n6     = 0.50
+perf   = 0.90
+power  = 0.45
+cost   = 0.40
+notes  = "Universal character set, 149K+ chars, phi=2 byte-order marks"
+
+[[candidate]]
+level  = 1
+id     = "IPA"
+label  = "International Phonetic Alphabet"
+n6     = 0.83
+perf   = 0.88
+power  = 0.55
+cost   = 0.50
+notes  = "~107 letters, n=6 manner of articulation, sigma-tau=8 vowel positions"
+
+[[candidate]]
+level  = 1
+id     = "BPE"
+label  = "Byte-Pair Encoding (Tokenizer)"
+n6     = 0.50
+perf   = 0.92
+power  = 0.60
+cost   = 0.55
+notes  = "LLM tokenization, iterative merge, subword units"
+
+[[candidate]]
+level  = 1
+id     = "CaseSystem"
+label  = "6-Case Grammatical System"
+n6     = 1.00
+perf   = 0.78
+power  = 0.65
+cost   = 0.55
+notes  = "n=6 cases (Nom,Acc,Gen,Dat,Abl,Voc) Latin/Sanskrit/Finnish"
+
+[[candidate]]
+level  = 1
+id     = "ToneSystem"
+label  = "Tonal Encoding (4-6 tones)"
+n6     = 0.83
+perf   = 0.80
+power  = 0.60
+cost   = 0.50
+notes  = "Mandarin tau=4 tones, Cantonese n=6 tones, pitch = meaning"
+
+# =============================================================
+# Level 2: Core (구문/의미 코어)  -- 5 candidates
+# =============================================================
+[[level]]
+name = "Core"
+
+[[candidate]]
+level  = 2
+id     = "CFG"
+label  = "Context-Free Grammar"
+n6     = 0.83
+perf   = 0.85
+power  = 0.65
+cost   = 0.55
+notes  = "Chomsky hierarchy level phi=2, parse tree depth ~n=6"
+
+[[candidate]]
+level  = 2
+id     = "DependencyParse"
+label  = "Dependency Parse Tree"
+n6     = 0.83
+perf   = 0.88
+power  = 0.60
+cost   = 0.55
+notes  = "Head-dependent relations, avg depth ~n=6, projective constraint"
+
+[[candidate]]
+level  = 2
+id     = "SemanticRoles"
+label  = "Semantic Role Labeling"
+n6     = 1.00
+perf   = 0.82
+power  = 0.55
+cost   = 0.50
+notes  = "n=6 core thematic roles (Agent,Patient,Theme,Goal,Source,Location)"
+
+[[candidate]]
+level  = 2
+id     = "WordEmbedding"
+label  = "Word Embedding Space"
+n6     = 0.50
+perf   = 0.90
+power  = 0.55
+cost   = 0.50
+notes  = "Distributional semantics, Word2Vec/GloVe, geometric meaning"
+
+[[candidate]]
+level  = 2
+id     = "PragmaticInfer"
+label  = "Pragmatic Inference Engine"
+n6     = 0.67
+perf   = 0.78
+power  = 0.60
+cost   = 0.50
+notes  = "Grice maxims (tau=4), implicature, context-dependent meaning"
+
+# =============================================================
+# Level 3: Engine (언어 처리 엔진)  -- 5 candidates
+# =============================================================
+[[level]]
+name = "Engine"
+
+[[candidate]]
+level  = 3
+id     = "Transformer"
+label  = "Transformer Language Model"
+n6     = 0.83
+perf   = 0.95
+power  = 0.45
+cost   = 0.35
+notes  = "n=6 head attention, sigma=12 layer standard (BERT-base), GPT/BERT"
+
+[[candidate]]
+level  = 3
+id     = "MachineTranslation"
+label  = "Neural Machine Translation"
+n6     = 0.83
+perf   = 0.90
+power  = 0.50
+cost   = 0.45
+notes  = "Seq2seq, n=6 language pairs typical, cross-lingual transfer"
+
+[[candidate]]
+level  = 3
+id     = "SpeechRecog"
+label  = "Speech Recognition (ASR)"
+n6     = 0.67
+perf   = 0.88
+power  = 0.55
+cost   = 0.50
+notes  = "Whisper/Wav2Vec, phoneme→word, n=6 frequency bands (mel)"
+
+[[candidate]]
+level  = 3
+id     = "TextGeneration"
+label  = "Text Generation (GPT-style)"
+n6     = 0.67
+perf   = 0.92
+power  = 0.40
+cost   = 0.35
+notes  = "Autoregressive LM, next-token prediction, temperature sampling"
+
+[[candidate]]
+level  = 3
+id     = "CorpusAnalysis"
+label  = "Statistical Corpus Analysis"
+n6     = 0.83
+perf   = 0.80
+power  = 0.70
+cost   = 0.65
+notes  = "n-gram, Zipf verification, entropy H=ln(2) at optimal compression"
+
+# =============================================================
+# Level 4: System (시스템 통합)  -- 5 candidates
+# =============================================================
+[[level]]
+name = "System"
+
+[[candidate]]
+level  = 4
+id     = "UniversalTranslator"
+label  = "Universal Translation System"
+n6     = 1.00
+perf   = 0.88
+power  = 0.50
+cost   = 0.40
+notes  = "n=6 family bridge, real-time multimodal (text+speech+sign)"
+
+[[candidate]]
+level  = 4
+id     = "DialogueAgent"
+label  = "Conversational AI Agent"
+n6     = 0.67
+perf   = 0.90
+power  = 0.55
+cost   = 0.45
+notes  = "Multi-turn dialogue, n=6 turn context window typical"
+
+[[candidate]]
+level  = 4
+id     = "LangPreservation"
+label  = "Endangered Language Archive"
+n6     = 0.83
+perf   = 0.75
+power  = 0.70
+cost   = 0.60
+notes  = "Digital preservation, sigma=12 documentation levels, ~7000 languages"
+
+[[candidate]]
+level  = 4
+id     = "MultimodalLM"
+label  = "Multimodal Language System"
+n6     = 0.50
+perf   = 0.92
+power  = 0.40
+cost   = 0.35
+notes  = "Text+image+audio, cross-modal attention, VLM integration"
+
+[[candidate]]
+level  = 4
+id     = "ChildLangModel"
+label  = "Child Language Acquisition Model"
+n6     = 0.83
+perf   = 0.78
+power  = 0.65
+cost   = 0.55
+notes  = "n=6 developmental stages (babbling→2-word→syntax→fluency+), UG test"
+
+# =============================================================
+# Compatibility Rules
+# =============================================================
+
+# SemanticRoles core requires SyntaxDepth or CFG foundation/core
+[[rule]]
+type       = "require"
+if_level   = 2
+if_id      = "SemanticRoles"
+then_level = 0
+then_ids   = "SyntaxDepth,MorphemeRoots"
+
+# Transformer engine requires BPE or WordEmbedding
+[[rule]]
+type       = "require"
+if_level   = 3
+if_id      = "Transformer"
+then_level = 1
+then_ids   = "BPE,Unicode"
+
+# SpeechRecog requires IPA or ToneSystem encoding
+[[rule]]
+type       = "require"
+if_level   = 3
+if_id      = "SpeechRecog"
+then_level = 1
+then_ids   = "IPA,ToneSystem"
+
+# UniversalTranslator requires LangFamilies6 foundation
+[[rule]]
+type       = "require"
+if_level   = 4
+if_id      = "UniversalTranslator"
+then_level = 0
+then_ids   = "LangFamilies6,ZipfLaw"
+
+# ChildLangModel requires SyntaxDepth foundation
+[[rule]]
+type       = "require"
+if_level   = 4
+if_id      = "ChildLangModel"
+then_level = 0
+then_ids   = "SyntaxDepth,Phoneme6"
+
+# CaseSystem encoding not compatible with pure isolating language analysis
+[[rule]]
+type       = "exclude"
+if_level   = 1
+if_id      = "CaseSystem"
+then_level = 2
+then_ids   = "WordEmbedding"
+
+# CorpusAnalysis prefers ZipfLaw foundation
+[[rule]]
+type       = "prefer"
+if_level   = 3
+if_id      = "CorpusAnalysis"
+then_level = 0
+then_ids   = "ZipfLaw,LangFamilies6"
