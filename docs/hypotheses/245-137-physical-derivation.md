@@ -1,4 +1,6 @@
 # Hypothesis 245: Exploring the Physical Meaning of 137 = σ(6)² − 7
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 ## Status: Unresolved (Exploratory Hypothesis)
 

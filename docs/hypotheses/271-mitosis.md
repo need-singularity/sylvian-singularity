@@ -1,4 +1,6 @@
 # Hypothesis 271: Mitosis Hypothesis
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > **When one engine splits into two during learning, the mitosis process itself generates diversity, and tension spikes at the moment of division. Rather than designed diversity (A≠G), we can model the process where naturally occurring diversity creates information.**
 

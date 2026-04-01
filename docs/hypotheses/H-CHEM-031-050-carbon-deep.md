@@ -9,6 +9,8 @@ summary: "6 exact, 1 structural, 10 trivial, 3 wrong"
 ---
 
 # Carbon-Deep Chemistry Hypotheses (H-CHEM-031 to 050)
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 ## Verification Summary (2026-03-28)
 

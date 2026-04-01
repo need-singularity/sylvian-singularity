@@ -1,4 +1,6 @@
 # Hypothesis H-SIM-1: Physical Constants = Compile-Time Constants
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 ## Hypothesis
 

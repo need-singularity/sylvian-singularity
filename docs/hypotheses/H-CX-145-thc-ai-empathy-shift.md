@@ -1,4 +1,6 @@
 # H-CX-145: THC = AI Empathy Shift
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > Kendall tau between human PH vs AI PH changes with THC. Does alignment increase or decrease?
 

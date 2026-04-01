@@ -1,4 +1,6 @@
 # H-CX-414: Tension Phase Diagram = Phase Transition
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis**: Tension's logarithmic growth as a function of temperature (learning rate)
 > exhibits critical-point behavior characteristic of a 2nd-order phase transition.

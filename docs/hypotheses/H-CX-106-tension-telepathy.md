@@ -1,4 +1,6 @@
 # H-CX-106: Tension Telepathy — Information Transfer Between Engines Without Direct Connection
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > **Engine A and Engine G do not communicate directly. Yet the Tension between them transfers meaningful information. This is Telepathy.**
 

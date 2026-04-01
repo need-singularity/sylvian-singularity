@@ -1,4 +1,6 @@
 # H-EE-113: Category Theory — n=6 as Terminal Object in Balanced Arithmetic
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

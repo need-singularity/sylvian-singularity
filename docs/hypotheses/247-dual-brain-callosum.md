@@ -1,4 +1,6 @@
 # Hypothesis 247: Dual-Brain + Corpus Callosum Model — Coupling of Two Consciousness Systems
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 ## Status: ⚠️ Under Investigation
 

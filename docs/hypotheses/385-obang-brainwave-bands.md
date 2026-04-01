@@ -1,4 +1,6 @@
 # H-385: Obang Brainwave Bands — Five Directions Map to Five Frequency Bands
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 ## Hypothesis Statement
 

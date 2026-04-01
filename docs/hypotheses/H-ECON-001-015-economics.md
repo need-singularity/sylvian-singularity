@@ -1,4 +1,6 @@
 # Economics & Game Theory Hypotheses (H-ECON-001 to H-ECON-015)
+**n6 Grade: 🟩 EXACT** (auto-graded, 18 unique n=6 constants)
+
 
 ## Summary
 

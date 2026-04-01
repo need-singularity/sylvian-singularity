@@ -1,4 +1,6 @@
 # H-CX-446: Spectral Gap <-> PH H0 <-> Tension Gap — Trinity Bridge
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Status**: NOT SUPPORTED (MNIST-only, fails on Fashion/CIFAR)
 **Golden Zone Dependency**: None

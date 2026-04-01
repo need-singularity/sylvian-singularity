@@ -1,4 +1,6 @@
 # H-CX-444: Complete Graph K_6 and Neural Architecture
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Golden Zone Dependency: PARTIAL** (K_6 properties are pure math; neural bottleneck connection is model-dependent)
 

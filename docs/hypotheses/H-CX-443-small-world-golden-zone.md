@@ -1,4 +1,6 @@
 # H-CX-443: Small World Coefficient in Golden Zone
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 **Golden Zone Dependency: YES** (interpretation depends on Golden Zone model)
 

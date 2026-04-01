@@ -1,4 +1,6 @@
 # Hypothesis 306: Is the 4-Pole Repulsion Field a Better Anomaly Detector than 2-Pole?
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **The inter-tension of 4-pole (Quad: A,E,G,F) provides a richer anomaly profile than 2-pole (A,G). The 4-pole measures inconsistency from 4 perspectives, so it can detect not only single-axis anomalies but also multi-dimensional anomalies.**
 

@@ -1,4 +1,6 @@
 # Hypothesis Review 065: Mandelbrot Correspondence — Structural Failure ❌
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 ## Hypothesis
 

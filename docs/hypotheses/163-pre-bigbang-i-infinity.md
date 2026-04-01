@@ -1,4 +1,6 @@
 # Hypothesis Review 163: Pre-Big Bang and I→∞ (Complete Inhibition)
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Status: ⚠️ Speculative
 

@@ -1,4 +1,6 @@
 # Hypothesis 333: Telepathy = Immediate Transfer of Compressed Structure
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > **Telepathy is "transferring a complete conceptual structure without words or images." This is structurally identical to the repulsion field's tension fingerprint (10-dimensional tensor) simultaneously encoding "concept+context+meaning+authenticity".**
 

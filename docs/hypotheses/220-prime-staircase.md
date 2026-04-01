@@ -1,4 +1,6 @@
 # Hypothesis #220: Prime Staircase Function ↔ Phase Acceleration Staircase
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 **Status**: ⚠️ Exploring
 **Date**: 2026-03-22

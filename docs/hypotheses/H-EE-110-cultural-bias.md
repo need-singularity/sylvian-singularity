@@ -1,4 +1,6 @@
 # H-EE-110: Cultural Bias — n=6 Framework May Encode Western Mathematical Assumptions
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

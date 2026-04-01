@@ -1,4 +1,6 @@
 # H-CX-144: THC = Gamma 40Hz Suppression = Tension Decrease
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > Gamma power decrease = Tension decrease = Confidence weakening = consciousness binding weakening.
 

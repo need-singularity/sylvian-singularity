@@ -1,4 +1,6 @@
 # Hypothesis 305: Contrastive Learning + Mitosis = Best Anomaly Detection
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **After training with contrastive learning to "pull normals together", then applying mitosis, a tighter normal cluster is formed than with reconstruction (MSE), achieving anomaly detection AUROC > 0.85.**
 

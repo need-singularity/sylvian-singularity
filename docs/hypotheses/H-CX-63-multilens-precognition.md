@@ -1,4 +1,6 @@
 # H-CX-63: Multi-lens Precognition Interference — Quad Engine Interference Amplifies Precognition
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > Multi-lens interference (H-GEO-10) is reproduced in PureFieldQuad (4 engines).
 > Precognition AUC is higher in 4 engines (PureFieldQuad) than 2 engines (PureFieldEngine),

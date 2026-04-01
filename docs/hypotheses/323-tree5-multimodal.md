@@ -1,4 +1,6 @@
 # Hypothesis 323: TREE-5 Multimodal Repulsion Field
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

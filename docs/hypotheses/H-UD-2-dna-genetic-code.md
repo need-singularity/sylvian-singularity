@@ -1,4 +1,6 @@
 # H-UD-2: DNA Genetic Code = n=6 Arithmetic
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Grade: ★★**
 **Status: Verified (5/5 match, but small-number caution)**

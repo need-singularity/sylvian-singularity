@@ -1,4 +1,6 @@
 # H-NOBEL-1 Prediction: Universality Class Exponents as n=6 Arithmetic
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 > **Hypothesis**: All critical exponents across universality classes decompose
 > into arithmetic expressions built from number-theoretic functions of n=6

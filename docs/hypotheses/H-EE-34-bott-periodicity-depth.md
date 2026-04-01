@@ -1,4 +1,6 @@
 # H-EE-34: Bott Periodicity sigma(6)-tau(6)=8 as Optimal Network Depth
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

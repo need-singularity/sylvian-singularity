@@ -8,6 +8,8 @@ dependency: Golden Zone model (G=D*P/I), n=6 arithmetic
 ---
 
 # Medical Domain Hypotheses H-MED-001 through H-MED-030
+**n6 Grade: 🟩 EXACT** (auto-graded, 19 unique n=6 constants)
+
 
 > All hypotheses below are Golden Zone dependent and unverified.
 > They connect real physiological constants and medical data

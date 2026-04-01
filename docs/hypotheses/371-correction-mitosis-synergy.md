@@ -1,4 +1,6 @@
 # Hypothesis 371: Calibration+Mitosis Synergy — Overconfidence Calibration Without Forgetting
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > **Combining H317(overconfidence calibration) and H312(mitosis=forgetting prevention) enables overconfidence calibration without forgetting. Specifically: child_a=freeze(memory storage), child_b=confusion pair focused learning(calibration), router=tension-based delegation → overall maintained + ratio→1.0.**
 

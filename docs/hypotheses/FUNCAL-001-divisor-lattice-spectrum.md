@@ -1,4 +1,6 @@
 # Hypothesis Review FUNCAL-001: Divisor Lattice Adjacency Spectrum
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

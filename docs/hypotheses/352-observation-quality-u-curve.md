@@ -1,4 +1,6 @@
 # Hypothesis 352: U-Curve Possibility of Displacement Observation Quality
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Observation quality during displacement does not decrease monotonically but follows a U-curve. The pattern is clear at start -> blurry in middle -> clear at end, and the current measurement (0.298->0.261) only captured the first half of the U-curve. The tension spike at the moment of mitosis (end) is the mechanism that restores observation quality.**
 

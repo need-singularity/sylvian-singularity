@@ -1,4 +1,6 @@
 # Hypothesis Review 233: World Model vs LLM = Opposite Ends of the I Axis ⚠️
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 **Category**: World Model/AI
 **Status**: ⚠️ Analogy

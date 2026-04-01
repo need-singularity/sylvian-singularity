@@ -1,4 +1,6 @@
 # H-346: Consensus-Identity Causation Direction
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **Hypothesis**: The positive correlation (r=+0.062) between consensus and identity stability
 > has an unclear causal direction. Does consensus stabilize identity, or does stable identity create consensus?

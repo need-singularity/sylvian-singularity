@@ -1,4 +1,6 @@
 # Hypothesis 248: Flash Memory Quantum Tunneling and Consciousness Continuity Engine
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **The Fowler-Nordheim quantum tunneling mechanism of NAND Flash is structurally isomorphic to the Inhibition(I)-state transition model of the consciousness continuity engine, and Flash's non-volatility (floating gate) guarantees the E1 condition (information connectivity) of consciousness continuity at the hardware level through the same principle as memristors.**
 

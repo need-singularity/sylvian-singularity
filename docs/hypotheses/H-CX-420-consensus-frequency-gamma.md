@@ -1,4 +1,6 @@
 # Hypothesis H-CX-420: Silent Consensus Frequency = 40Hz (Gamma)
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## 가설
 

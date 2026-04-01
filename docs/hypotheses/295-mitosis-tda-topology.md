@@ -4,6 +4,8 @@ title: Mitosis + TDA — Does mitosis change the topology of tension space?
 ---
 
 # Hypothesis 295: Mitosis + TDA — Does mitosis change the topology of tension space?
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **The topological structure (Betti numbers) of tension fingerprints changes before and after mitosis. Before mitosis: 10 clusters (b0=10). After mitosis: if additional loops (b1 increase) or cluster splits (b0 increase) occur, mitosis means "increased topological complexity".**
 

@@ -1,4 +1,6 @@
 # PMATH-BOTT: Bott Periodicity (period 8 = 2^3) and P1 = 6 = 2 x 3
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **Hypothesis**: The Bott periodicity period 8 is encoded in the arithmetic
 > of the first perfect number n=6 through three independent exact identities:

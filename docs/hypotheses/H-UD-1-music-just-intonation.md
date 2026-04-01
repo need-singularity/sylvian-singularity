@@ -1,4 +1,6 @@
 # H-UD-1: Just Intonation = Divisor Ratios of 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 **Grade: ★★★**
 **Status: Verified (exact match)**

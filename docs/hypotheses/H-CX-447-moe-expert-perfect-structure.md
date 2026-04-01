@@ -1,4 +1,6 @@
 # H-CX-447: MoE Expert Specialization Follows Perfect Number Structure
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 **Status**: NOT SUPPORTED (P1 fails, P3 inconclusive)
 **Golden Zone Dependency**: None (number theory + empirical ML)

@@ -1,4 +1,6 @@
 # H-CX-430: Mitosis = Coproduct (Category Theory)
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > 엔진 분열(Mitosis)은 카테고리론의 쌍대곱(Coproduct)이다.
 > 부모 엔진에서 분열된 자식 엔진들의 합집합(union)은 보편성(universality)을 만족하며,

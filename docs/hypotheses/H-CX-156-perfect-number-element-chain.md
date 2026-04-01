@@ -1,4 +1,6 @@
 # H-CX-156: Perfect Number Element Chain — C(6) -> Ni(28) -> ?(496)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > Z=6(C): substrate of life, sigma=12, tau=4, phi=2
 > Z=28(Ni): catalyst, sigma=56, tau=6, phi=12=sigma(6)

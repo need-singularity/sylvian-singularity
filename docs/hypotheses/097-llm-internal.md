@@ -1,4 +1,6 @@
 # Hypothesis Review 097: LLM Internal Activity Measurement — Mixtral Expert Pattern Analysis
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## Hypothesis
 

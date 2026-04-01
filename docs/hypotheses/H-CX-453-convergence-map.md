@@ -1,4 +1,6 @@
 # H-CX-453: Multi-Domain Convergence Map
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 > **Hypothesis**: Fundamental mathematical constants (√2, √3, e, ζ(3), ln(2), γ) are independently
 > reachable from multiple disjoint mathematical domains, indicating deep structural connections

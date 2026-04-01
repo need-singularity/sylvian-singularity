@@ -1,4 +1,6 @@
 # H-UD-4: Ramsey Numbers Hit Perfect Numbers: R(3,3)=6, R(3,8)=28
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Grade: ★★★**
 **Status: Verified (proven theorems)**

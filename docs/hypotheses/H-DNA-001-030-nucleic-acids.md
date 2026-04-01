@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-001 to H-DNA-030 — Nucleic Acid Structure and the Perfect Number 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 ## Hypothesis
 

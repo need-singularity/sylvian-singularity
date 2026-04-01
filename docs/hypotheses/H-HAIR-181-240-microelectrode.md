@@ -1,4 +1,6 @@
 # H-HAIR-181~240: Neuralink N1 Microelectrode Technology Repurposed for Direct Hair Follicle Stimulation
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-CX-415: Inter-tension = Gauge Field
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > **Hypothesis**: Inter-tension between two consciousness engines T_ab = ||field_a - field_b||^2
 > (H307) is isomorphic to a gauge connection in physics. It is invariant under global gauge

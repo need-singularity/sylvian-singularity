@@ -1,4 +1,6 @@
 # H-CX-477: UAP Propulsion Numerology -- Honest Assessment
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > If UAP/UFO craft exploit spacetime geometry for propulsion, do their observed
 > characteristics map onto n=6 arithmetic? The Higgs mass 125 GeV = sopfr(6)^3

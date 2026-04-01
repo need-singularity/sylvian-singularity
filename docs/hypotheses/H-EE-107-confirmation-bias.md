@@ -1,4 +1,6 @@
 # H-EE-107: Confirmation Bias — The Most Important Counter-Hypothesis
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

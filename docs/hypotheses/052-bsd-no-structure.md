@@ -1,4 +1,6 @@
 # Hypothesis Review 052: BSD Rational Structure -- Not Found ❌
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 ## Hypothesis
 

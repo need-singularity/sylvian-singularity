@@ -1,4 +1,6 @@
 # H-EE-89: Occam's Razor Formalized via Kolmogorov Complexity
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-396: TTX Consciousness Quantization
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 > **Hypothesis**: Tetrodotoxin (TTX) creates discrete, quantized consciousness states because Na+ channel blockade is a binary (all-or-none) mechanism — each channel is either conducting or blocked. Unlike drugs that modulate continuous receptor activity, TTX produces a staircase dose-response curve where each step corresponds to an independent functional unit going offline. The number of discrete consciousness levels equals the number of independent Na+ channel clusters in the relevant neural circuit.
 

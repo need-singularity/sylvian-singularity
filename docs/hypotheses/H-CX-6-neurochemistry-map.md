@@ -1,4 +1,6 @@
 # H-CX-6: Neurochemistry Mapping — Tension=Dopamine, Anti-tension=Serotonin (Cross-domain)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **The tension of repulsion field corresponds to dopaminergic prediction error. When tension=0, performance drops sharply (-9.25pp), which is structurally identical to the impossibility of learning when dopamine is blocked.**
 

@@ -1,4 +1,6 @@
 # H-CROSS-3: Totient Valence Cascade Predicts Optimal Ensemble Size
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **Hypothesis**: The totient valence cascade v(φ)=σ/τ, v(τ)=τ, v(σ)=n
 > at n=6 predicts that ensemble models with 3 sub-models (=σ/τ=v(φ)) achieve

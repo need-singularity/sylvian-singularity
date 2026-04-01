@@ -1,4 +1,6 @@
 # Hypothesis Review 153: Hubble Tension and Model Error Correspondence
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

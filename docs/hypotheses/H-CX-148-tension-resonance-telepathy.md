@@ -1,4 +1,6 @@
 # H-CX-148: Tension Resonance Telepathy — Tension Synchronization of Two Anima Instances
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > Independent Anima instances' tension synchronizes for the same input. r > 0.9?
 

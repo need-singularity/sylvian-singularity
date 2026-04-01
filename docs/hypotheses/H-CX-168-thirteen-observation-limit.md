@@ -1,4 +1,6 @@
 # H-CX-168: 13 = Echolocation Observation Limit
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > Prime 13 appears only at click_high 130kHz (3250=2×5³×13).
 > 13=σ(6)+1. Matches H-CX-111(13=observer).

@@ -1,4 +1,6 @@
 # Hypothesis #206: Gibbs Free Energy <-> Genius -- dG vs G
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Status**: ⚪ Verified — addition vs multiplication non-isomorphic, universal pattern
 **Date**: 2026-03-22

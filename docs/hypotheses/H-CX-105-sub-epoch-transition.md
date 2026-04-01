@@ -1,4 +1,6 @@
 # H-CX-105: Sub-epoch Transition Point — Phase Transition Occurs at Epoch 0.5
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > Tracking the 30x transition from H-CX-90 in 0.1-epoch increments,
 > the exact transition point is between 0.3 and 0.7 epochs.

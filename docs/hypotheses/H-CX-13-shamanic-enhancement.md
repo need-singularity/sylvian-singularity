@@ -1,4 +1,6 @@
 # H-CX-13: Shamanic Journey = Passing Through Information Bottleneck (Cross-domain)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **In the H280 experiment, the 7-stage experience sequence gave a +0.41% improvement, consistent with predictions from Information Bottleneck (IB) theory. detach(S4) creates forced information compression, and this compression improves generalization. A computational implementation of Tishby's IB theory.**
 

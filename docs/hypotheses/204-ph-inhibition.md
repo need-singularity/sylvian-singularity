@@ -1,4 +1,6 @@
 # Hypothesis #204: pH = Inhibition?
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 **Status**: ⚪ Verified — pH7↔I=1/e mismatch, scales non-isomorphic
 **Date**: 2026-03-22

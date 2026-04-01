@@ -1,4 +1,6 @@
 # H-SEDI-10: R-filter on Tension Vectors Detects Anomalies
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Status**: REFUTED
 **Golden Zone Dependency**: Indirect (ratio targets include 1/e, ln(4/3))

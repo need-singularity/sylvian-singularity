@@ -1,4 +1,6 @@
 # H-393: TTX-THC Duality in Consciousness Modulation
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 **Status:** ⬛ Refuted (phi claim disproven) | **Date:** 2026-03-26 | **Corrected:** 2026-03-27 | **Related:** H-386, H-387, H-391, H-199
 

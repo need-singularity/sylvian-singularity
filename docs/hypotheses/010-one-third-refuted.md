@@ -1,4 +1,6 @@
 # Hypothesis Review 010: The 1/3 Law is Not Exactly 1/3 ❌
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

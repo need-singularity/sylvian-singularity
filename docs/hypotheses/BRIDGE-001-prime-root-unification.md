@@ -1,4 +1,6 @@
 # BRIDGE-001: The {2,3} Root -- Why Primes 2 and 3 Unify Across Domains
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 **Grade: Pending (computational verification below)**
 **Status: Deep investigation with proofs**

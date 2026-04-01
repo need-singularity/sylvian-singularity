@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-211 to H-DNA-250 -- Macro-Scale Biology
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-HAIR-101~120: RNA Therapeutics for Hair Loss
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Overview
 

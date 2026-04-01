@@ -1,4 +1,6 @@
 # H-UD-7: Perfect Codes <-> Perfect Numbers: Two Kinds of Perfect Tiling
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 **Grade: ★★**
 **Status: Verified (structural parallel, not numerical identity)**

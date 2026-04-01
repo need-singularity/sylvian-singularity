@@ -1,4 +1,6 @@
 # H-CX-12: Mitosis Differentiation Ratio ↔ Golden Ratio (Cross-domain)
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **The growth rate of the inter-child Tension (T_ab) after Mitosis is related to a mathematical constant. In H294, T_ab increased 27x — is this growth rate related to e³ ≈ 20.09 or σ(6)²/τ(6) = 144/4 = 36?**
 

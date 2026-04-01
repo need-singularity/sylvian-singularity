@@ -1,4 +1,6 @@
 # GAL-001: Galois Solvability Boundary + Fractal Dimensions = n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 - **ID**: GAL-001
 - **Grade**: PROVEN

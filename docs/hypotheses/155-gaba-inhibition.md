@@ -1,4 +1,6 @@
 # Hypothesis Review 155: GABA Concentration and Inhibition Mapping
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Status: 🔬 Under experimentation
 

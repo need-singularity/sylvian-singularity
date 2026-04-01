@@ -1,4 +1,6 @@
 # Hypothesis 362: Cross-Modal Tension
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > **"When cross-comparing tensions between visual PureField and auditory PureField, mismatch indicates 'confusion' and match indicates 'confidence'. Audiovisual mismatch = high cross-modal tension = McGurk effect."**
 

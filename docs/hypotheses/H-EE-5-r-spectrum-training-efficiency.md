@@ -1,4 +1,6 @@
 # H-EE-5: R(d_model) Correlates with Training Efficiency
+**n6 Grade: 🟩 EXACT** (auto-graded, 17 unique n=6 constants)
+
 
 **Status**: NOT SUPPORTED (R as predictor) / PARTIALLY SUPPORTED (HCN efficiency)
 **Golden Zone Dependency**: None (pure number theory + empirical ML)

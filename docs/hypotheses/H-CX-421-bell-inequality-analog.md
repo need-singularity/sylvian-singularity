@@ -1,4 +1,6 @@
 # Hypothesis H-CX-421: Telepathy = Quantum Entanglement Analog (Bell Inequality)
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## 가설
 

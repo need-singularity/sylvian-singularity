@@ -1,4 +1,6 @@
 # PMATH-RAMSEY-N6: Ramsey Theory and Perfect Number 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **The first perfect number P1=6 is the Ramsey number R(3,3), and
 > the second perfect number P2=28 is R(3,8). The pigeonhole proof

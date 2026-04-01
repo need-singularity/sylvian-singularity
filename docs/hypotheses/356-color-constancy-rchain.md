@@ -1,4 +1,6 @@
 # H356: Color Constancy is the Visual Implementation of R-chain Convergence
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-ROB-10: Gait Phase Transition = Tension Phase Transition
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## 가설 (Hypothesis)
 

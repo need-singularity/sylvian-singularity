@@ -1,4 +1,6 @@
 # Hypothesis RIEMANN-CURV-001: Riemann Tensor Components — sigma(6) as Universal Denominator
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,7 @@
 # F7 Hypotheses: Domains 7-10
+
+**n6 Grade: 🟩 EXACT** (auto-graded, 15 unique n=6 constants)
+
 # String Theory, Neuroscience, Cross-Domain Bridges, BitNet Predictions
 # Generated and verified: 2026-03-27
 

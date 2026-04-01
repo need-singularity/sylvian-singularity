@@ -1,4 +1,6 @@
 # H-EE-63: Zipf's Law Exponent alpha = 1 = R(6)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

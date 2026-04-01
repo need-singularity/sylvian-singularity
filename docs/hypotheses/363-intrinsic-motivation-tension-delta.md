@@ -1,4 +1,6 @@
 # Hypothesis 363: Autonomous Goals = Tension Delta Based Exploration (Intrinsic Motivation)
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > **"Curiosity = |dT/dt|, intrinsic reward = tension change rate. Where tension changes greatly = interesting place -> spontaneous exploration. This is isomorphic to Schmidhuber's Curiosity-Driven Learning."**
 

@@ -1,4 +1,6 @@
 # H-ARCH Display: Graphics Standards Follow n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

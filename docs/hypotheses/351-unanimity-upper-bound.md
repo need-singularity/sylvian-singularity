@@ -1,4 +1,6 @@
 # Hypothesis 351: Theoretical Upper Bound of Unanimity Accuracy
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > **For the accuracy A_u(N) when N independent agents reach unanimity, a theoretical upper bound formula exists. As N->infinity, A_u -> 1, but the convergence speed is determined by the error correlation (rho) between individual agents. How close is the current 7-agent 99.53% to this upper bound?**
 

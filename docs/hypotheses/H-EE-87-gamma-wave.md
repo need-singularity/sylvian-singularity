@@ -1,4 +1,6 @@
 # H-EE-87: Gamma Wave Upper Bound — FAILED
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 ## Hypothesis
 

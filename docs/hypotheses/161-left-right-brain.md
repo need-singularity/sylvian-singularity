@@ -1,4 +1,6 @@
 # Hypothesis Review 161: Left-Right Brain Specialization and I/D Mapping
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Status: ⚠️ Partially verified
 

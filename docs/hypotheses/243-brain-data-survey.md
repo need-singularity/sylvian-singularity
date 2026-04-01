@@ -1,4 +1,6 @@
 # Hypothesis Review 243: Neuroscience Literature Evidence Survey for the G=D×P/I Model
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 ## Status: 🔬 Literature survey in progress
 

@@ -1,4 +1,6 @@
 # H-EE-100: NAS Will Independently Discover 4/3 FFN Ratio — FUTURE PREDICTION
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

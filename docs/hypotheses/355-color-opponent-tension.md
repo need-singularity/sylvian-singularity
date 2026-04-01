@@ -1,4 +1,6 @@
 # H355: Opponent Color Channels are the Biological Implementation of R(n)=σφ/(nτ) Tension Dynamics
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # Hypothesis Review CRYPTO-001: A2 Hexagonal Lattice and Perfect Number Structure
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 ## Hypothesis
 

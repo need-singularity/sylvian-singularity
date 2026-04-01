@@ -1,4 +1,6 @@
 # H-408: Operator Algebras and von Neumann Subfactor Theory for n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis**: The arithmetic constants of n=6 (sigma=12, phi=2, tau=4, sopfr=5)
 > are encoded structurally in operator algebra invariants — Jones index, Cuntz K-theory,

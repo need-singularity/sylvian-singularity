@@ -1,4 +1,6 @@
 # H-EE-17: Carmichael LR 2-Cycle Schedule
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

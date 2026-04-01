@@ -1,4 +1,6 @@
 # H-CX-488: Ramanujan tau Function Deep Dive at n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 > **Hypothesis**: The Ramanujan tau function tau(n), generating the Fourier coefficients
 > of the modular discriminant Delta, is *arithmetically native* to the perfect number 6.

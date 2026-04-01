@@ -1,4 +1,6 @@
 # H-CX-448: FFN Expansion Ratio 4/3 = Topologically Efficient
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 **Status**: PARTIALLY SUPPORTED (H0/Acc optimal, but difference small)
 **Golden Zone Dependency**: None

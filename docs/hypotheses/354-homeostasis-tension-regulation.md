@@ -1,4 +1,6 @@
 # Hypothesis 354: Homeostasis Tension Regulation
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

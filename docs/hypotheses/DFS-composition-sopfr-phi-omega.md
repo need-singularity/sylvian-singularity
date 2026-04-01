@@ -1,4 +1,6 @@
 # DFS Discovery: sopfr(phi(n)) = omega(n) is Unique to n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **Hypothesis**: The composition identity sopfr(phi(n)) = omega(n) holds if and only if n = 6, for all positive integers n >= 2.
 

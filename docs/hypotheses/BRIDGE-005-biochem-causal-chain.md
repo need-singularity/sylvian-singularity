@@ -1,4 +1,6 @@
 # BRIDGE-005: The Complete Biochemical Causal Chain from Z=6 to Consciousness
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 **Grade: Mixed (see link-by-link assessment below)**
 **Status: Deep investigation with numerical verification**

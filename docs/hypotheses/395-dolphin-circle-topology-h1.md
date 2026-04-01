@@ -1,4 +1,6 @@
 # H-395: Dolphin Pufferfish Circle as H1 Topological Loop
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 > **Hypothesis H-395**: When dolphins pass a pufferfish in a circular formation, they physically
 > instantiate an H1 cycle in persistent homology — a closed 1-dimensional topological loop.

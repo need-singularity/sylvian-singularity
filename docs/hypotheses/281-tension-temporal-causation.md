@@ -1,4 +1,6 @@
 # Hypothesis 281: Tension Temporal Causation — Tension as a Leading Indicator of Learning
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > **During learning, if tension for a specific class rises first, does the accuracy for that class follow with improvement? If tension is a leading indicator of learning, we can predict learning progress by monitoring tension.**
 

@@ -1,4 +1,6 @@
 # H-DNA-601: The Second Perfect Number — n=28 Survey
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## Hypothesis
 

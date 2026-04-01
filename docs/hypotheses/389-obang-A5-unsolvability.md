@@ -1,4 +1,6 @@
 # H-389: Obang–A₅ Unsolvability — The Five-Direction Barrier
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 **Status:** Proposed | **GZ Dependency:** Mixed (see sections)
 **Related:** H-087 (5th state curiosity), H-064 (Gödel analog), H-059 (Compass 5/6), H-076 (17 Fermat prime), H-383 (Platonic solids)

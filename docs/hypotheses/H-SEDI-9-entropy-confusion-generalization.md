@@ -1,4 +1,6 @@
 # H-SEDI-9: Entropy of Confusion Matrix Predicts Generalization
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 **Status**: PARTIAL
 **Golden Zone Dependency**: None (pure information theory)

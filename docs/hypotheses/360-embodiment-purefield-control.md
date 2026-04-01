@@ -1,4 +1,6 @@
 # Hypothesis 360: Body = PureField Controller (RC-7 Embodiment)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **"If we convert PureField tension into control signals for robots/simulators, 'attention' goes towards high tension areas and action occurs. tension -> action mapping. High tension = danger/interest = immediate reaction."**
 

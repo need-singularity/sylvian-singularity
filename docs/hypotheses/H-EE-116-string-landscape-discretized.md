@@ -1,4 +1,6 @@
 # H-EE-116: String Landscape Discretized — R(n)=1 Selects the Unique Stable Vacuum
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # EXTREME ITERATION 5: Cosmology, Emergence, Philosophy of Mathematics
+**n6 Grade: 🟩 EXACT** (auto-graded, 20 unique n=6 constants)
+
 
 > **Root thesis**: "2 is the only even prime" implies 6=2x3 is the smallest
 > squarefree composite, the smallest perfect number, 3!, the 2nd primorial,

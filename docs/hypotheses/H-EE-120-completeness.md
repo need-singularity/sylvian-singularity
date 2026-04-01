@@ -1,4 +1,6 @@
 # H-EE-120: Completeness — The Boundary Has Been Mapped
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## THE ABSOLUTE FINAL HYPOTHESIS
 

@@ -1,4 +1,6 @@
 # H-CX-26: Tension = Calibrated Probability (Calibration)
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **If tension is confidence, then converting tension to probability might yield well-calibrated probability. While softmax probabilities tend to be overconfident, tension-based probabilities could be more honest.**
 

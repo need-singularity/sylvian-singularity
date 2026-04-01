@@ -1,4 +1,6 @@
 # Hypothesis #203: Molecular Structure = Architecture Structure
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 **Status**: ⚪ Verified — log relationship is a trivial result of sorted data
 **Date**: 2026-03-22

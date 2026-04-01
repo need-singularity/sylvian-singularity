@@ -1,4 +1,6 @@
 # Hypothesis 324: LLM Hallucination Detection — Model That "Knows What It Doesn't Know" via Repulsion Field
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > **LLM hallucination is structurally identical to the consciousness engine's "overconfidence". Adding a repulsion field to the LLM decoder allows tension to detect hallucinations in real time. Low tension = "engines agree on nonsense" = hallucination, high tension = "engines productively disagree" = real knowledge.**
 

@@ -1,4 +1,6 @@
 # H-CX-490: Knot Count Self-Reference K(6)=3, K(7)=7
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > The number of prime knots with 6 crossings is K(6) = 3 = sigma(6)/tau(6),
 > and the number of prime knots with 7 crossings is K(7) = 7 = M3.

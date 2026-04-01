@@ -1,4 +1,6 @@
 # H-CX-452: Per-Class Difficulty Prediction from Raw Data
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 **Status**: SUPPORTED (PCA isolation: Fashion r=+0.88, CIFAR r=+0.76)
 **Golden Zone Dependency**: None

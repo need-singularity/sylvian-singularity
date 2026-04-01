@@ -1,15 +1,16 @@
 # =============================================================
-# LINGUA DSE Domain Definition
-# Language & Communication Architecture
-# 6 major language families, σ=12 English tenses, J2=24 Greek letters
-# Total raw combos: 6x6x5x5x5 = 4,500 (pre-filter)
+# Linguistics DSE Domain Definition
+# 언어학/인지과학 아키텍처 — n=6 기반 언어학
+# Zipf 법칙 + 6 기본 언어 유형 + 음운 체계
+# Based on H-LING-001~015, H-ARCH-languages
+# Total raw combos: 6x6x6x6x5 = 6,480 (pre-filter)
 # =============================================================
 
 [meta]
 name = "linguistics"
-desc = "Language & Communication Architecture DSE (6 families, σ=12 tenses)"
-levels = ["Foundation", "Encoding", "Core", "Engine", "System"]
-vision = "n=6 linguistic universals -- phoneme to discourse, Zipf to Chomsky"
+desc = "Ultimate Linguistics DSE (H-LING-001~015, Zipf/Typology/Phonology)"
+levels = ["Phonology", "Syntax", "Semantics", "Typology", "Computation"]
+vision = "n=6 기반 언어학 — Zipf 법칙 + 6 기본 언어 유형 + 음운 체계"
 
 [scoring]
 n6   = 0.35
@@ -18,361 +19,359 @@ power = 0.20
 cost  = 0.20
 
 # =============================================================
-# Level 0: Foundation (언어 기반)  -- 6 candidates
+# Level 0: Phonology (음운론) -- 6 candidates
 # =============================================================
 [[level]]
-name = "Foundation"
+name = "Phonology"
 
 [[candidate]]
 level  = 0
-id     = "LangFamilies6"
-label  = "6 Major Language Families"
+id     = "VowelN6"
+label  = "모음 6종 기본 /i,e,a,o,u,ə/ n=6 EXACT"
 n6     = 1.00
-perf   = 0.80
-power  = 0.60
+perf   = 0.90
+power  = 0.65
 cost   = 0.55
-notes  = "n=6 families (Indo-European, Sino-Tibetan, Niger-Congo, Afroasiatic, Austronesian, Turkic)"
+notes  = "vowels=6=n EXACT, formants=2=phi EXACT, universal across languages"
 
 [[candidate]]
 level  = 0
-id     = "Phoneme6"
-label  = "Phoneme Inventory (multiples of 6)"
+id     = "ConsonantN12"
+label  = "자음 sigma=12 조음점"
+n6     = 1.00
+perf   = 0.85
+power  = 0.60
+cost   = 0.50
+notes  = "places=12=sigma EXACT, manners=6=n EXACT, voicing=2=phi EXACT"
+
+[[candidate]]
+level  = 0
+id     = "ProsodyN4"
+label  = "운율 tau=4 성조 레벨"
+n6     = 0.75
+perf   = 0.80
+power  = 0.55
+cost   = 0.45
+notes  = "tones=4=tau EXACT, contours=6=n EXACT, stress=2=phi EXACT"
+
+[[candidate]]
+level  = 0
+id     = "SyllableN6"
+label  = "음절 구조 n=6 타입"
+n6     = 1.00
+perf   = 0.82
+power  = 0.58
+cost   = 0.48
+notes  = "types=6=n EXACT (V,CV,CVC,CVCC,CCVC,CCVCC), onset=4=tau EXACT"
+
+[[candidate]]
+level  = 0
+id     = "PhonemeInventory"
+label  = "음소 목록 sigma-tau=8 평균 구분"
+n6     = 0.75
+perf   = 0.78
+power  = 0.62
+cost   = 0.52
+notes  = "features=8=sigma-tau EXACT, categories=6=n EXACT, binary=2=phi"
+
+[[candidate]]
+level  = 0
+id     = "StressPattern"
+label  = "강세 패턴 phi=2 강/약"
+n6     = 0.50
+perf   = 0.75
+power  = 0.68
+cost   = 0.58
+notes  = "levels=2=phi EXACT, feet=4=tau EXACT, window=6=n"
+
+# =============================================================
+# Level 1: Syntax (통사론) -- 6 candidates
+# =============================================================
+[[level]]
+name = "Syntax"
+
+[[candidate]]
+level  = 1
+id     = "UniversalGrammar"
+label  = "보편문법 n=6 원리"
+n6     = 1.00
+perf   = 0.90
+power  = 0.50
+cost   = 0.40
+notes  = "principles=6=n EXACT, parameters=12=sigma EXACT, innate=true"
+
+[[candidate]]
+level  = 1
+id     = "XBarTheory"
+label  = "X-bar 이론 n/phi=3 투사 레벨"
+n6     = 0.75
+perf   = 0.85
+power  = 0.55
+cost   = 0.45
+notes  = "levels=3=n/phi EXACT, specifier=1=mu EXACT, complement=1=mu"
+
+[[candidate]]
+level  = 1
+id     = "DependencyGrammar"
+label  = "의존 문법 sopfr=5 관계 유형"
+n6     = 0.75
+perf   = 0.82
+power  = 0.58
+cost   = 0.48
+notes  = "relations=5=sopfr EXACT, depth=6=n EXACT, projective=true"
+
+[[candidate]]
+level  = 1
+id     = "ConstructionGrammar"
+label  = "구문 문법 sigma=12 구문 유형"
+n6     = 0.75
+perf   = 0.80
+power  = 0.52
+cost   = 0.42
+notes  = "constructions=12=sigma EXACT, inheritance=4=tau EXACT, usage-based=true"
+
+[[candidate]]
+level  = 1
+id     = "MinimalistProgram"
+label  = "최소주의 phi=2 Merge 연산"
+n6     = 0.75
+perf   = 0.88
+power  = 0.48
+cost   = 0.38
+notes  = "operations=2=phi EXACT (Merge+Agree), phases=4=tau EXACT, features=6=n"
+
+[[candidate]]
+level  = 1
+id     = "TreeAdjoining"
+label  = "트리 접합 문법 tau=4 연산"
+n6     = 0.75
+perf   = 0.78
+power  = 0.60
+cost   = 0.50
+notes  = "operations=4=tau EXACT, tree_families=12=sigma EXACT, lexicalized=true"
+
+# =============================================================
+# Level 2: Semantics (의미론) -- 6 candidates
+# =============================================================
+[[level]]
+name = "Semantics"
+
+[[candidate]]
+level  = 2
+id     = "ConceptualN6"
+label  = "개념 n=6 원형 범주"
 n6     = 1.00
 perf   = 0.85
 power  = 0.55
-cost   = 0.50
-notes  = "Median ~30=sopfr*n, range 12=sigma to 144=sigma^2, n=6 place of articulation"
+cost   = 0.45
+notes  = "categories=6=n EXACT, prototypes=12=sigma EXACT, hierarchy=4=tau"
 
 [[candidate]]
-level  = 0
-id     = "SyntaxDepth"
-label  = "Syntax Tree Depth ~6"
+level  = 2
+id     = "FrameSemantics"
+label  = "프레임 의미론 sigma=12 역할"
+n6     = 0.75
+perf   = 0.82
+power  = 0.52
+cost   = 0.42
+notes  = "roles=12=sigma EXACT, frames=6=n EXACT, relations=5=sopfr"
+
+[[candidate]]
+level  = 2
+id     = "CompositionSemantic"
+label  = "합성 의미론 phi=2 원리"
+n6     = 0.75
+perf   = 0.80
+power  = 0.58
+cost   = 0.48
+notes  = "principles=2=phi EXACT (compositionality+context), types=6=n EXACT"
+
+[[candidate]]
+level  = 2
+id     = "MetaphorN6"
+label  = "은유 n=6 원형 은유"
 n6     = 1.00
+perf   = 0.78
+power  = 0.60
+cost   = 0.50
+notes  = "primary=6=n EXACT, mappings=12=sigma EXACT, embodied=true"
+
+[[candidate]]
+level  = 2
+id     = "WordNet"
+label  = "워드넷 sopfr=5 의미 관계"
+n6     = 0.75
+perf   = 0.75
+power  = 0.62
+cost   = 0.52
+notes  = "relations=5=sopfr EXACT (hyper/hypo/mero/holo/antonym), synsets=6=n groups"
+
+[[candidate]]
+level  = 2
+id     = "DistributionalSemantic"
+label  = "분포 의미론 sigma-tau=8 차원 축소"
+n6     = 0.75
 perf   = 0.88
 power  = 0.50
-cost   = 0.45
-notes  = "Natural sentence parse depth ~n=6, human working memory constraint"
-
-[[candidate]]
-level  = 0
-id     = "ZipfLaw"
-label  = "Zipf's Law (exponent ~1)"
-n6     = 0.83
-perf   = 0.90
-power  = 0.65
-cost   = 0.60
-notes  = "Rank-frequency exponent ~1, unit fraction, universal across languages"
-
-[[candidate]]
-level  = 0
-id     = "GreekAlphabet"
-label  = "Greek Alphabet (24 letters = J2)"
-n6     = 1.00
-perf   = 0.75
-power  = 0.70
-cost   = 0.65
-notes  = "J2(6)=24 letters, basis of mathematical/scientific notation"
-
-[[candidate]]
-level  = 0
-id     = "MorphemeRoots"
-label  = "Morphological Root System"
-n6     = 0.67
-perf   = 0.82
-power  = 0.60
-cost   = 0.55
-notes  = "Semitic tri-consonantal = n/phi=3 root, agglutinative n=6 suffix slots"
-
-# =============================================================
-# Level 1: Encoding (부호화 체계)  -- 6 candidates
-# =============================================================
-[[level]]
-name = "Encoding"
-
-[[candidate]]
-level  = 1
-id     = "Tenses12"
-label  = "12 Tense System (σ=12)"
-n6     = 1.00
-perf   = 0.85
-power  = 0.55
-cost   = 0.50
-notes  = "sigma(6)=12 English tenses (3 time × tau=4 aspect), temporal encoding"
-
-[[candidate]]
-level  = 1
-id     = "Unicode"
-label  = "Unicode Encoding"
-n6     = 0.50
-perf   = 0.90
-power  = 0.45
 cost   = 0.40
-notes  = "Universal character set, 149K+ chars, phi=2 byte-order marks"
-
-[[candidate]]
-level  = 1
-id     = "IPA"
-label  = "International Phonetic Alphabet"
-n6     = 0.83
-perf   = 0.88
-power  = 0.55
-cost   = 0.50
-notes  = "~107 letters, n=6 manner of articulation, sigma-tau=8 vowel positions"
-
-[[candidate]]
-level  = 1
-id     = "BPE"
-label  = "Byte-Pair Encoding (Tokenizer)"
-n6     = 0.50
-perf   = 0.92
-power  = 0.60
-cost   = 0.55
-notes  = "LLM tokenization, iterative merge, subword units"
-
-[[candidate]]
-level  = 1
-id     = "CaseSystem"
-label  = "6-Case Grammatical System"
-n6     = 1.00
-perf   = 0.78
-power  = 0.65
-cost   = 0.55
-notes  = "n=6 cases (Nom,Acc,Gen,Dat,Abl,Voc) Latin/Sanskrit/Finnish"
-
-[[candidate]]
-level  = 1
-id     = "ToneSystem"
-label  = "Tonal Encoding (4-6 tones)"
-n6     = 0.83
-perf   = 0.80
-power  = 0.60
-cost   = 0.50
-notes  = "Mandarin tau=4 tones, Cantonese n=6 tones, pitch = meaning"
+notes  = "dim_ratio=8=sigma-tau EXACT, window=5=sopfr EXACT, embedding=true"
 
 # =============================================================
-# Level 2: Core (구문/의미 코어)  -- 5 candidates
+# Level 3: Typology (유형론) -- 6 candidates
 # =============================================================
 [[level]]
-name = "Core"
-
-[[candidate]]
-level  = 2
-id     = "CFG"
-label  = "Context-Free Grammar"
-n6     = 0.83
-perf   = 0.85
-power  = 0.65
-cost   = 0.55
-notes  = "Chomsky hierarchy level phi=2, parse tree depth ~n=6"
-
-[[candidate]]
-level  = 2
-id     = "DependencyParse"
-label  = "Dependency Parse Tree"
-n6     = 0.83
-perf   = 0.88
-power  = 0.60
-cost   = 0.55
-notes  = "Head-dependent relations, avg depth ~n=6, projective constraint"
-
-[[candidate]]
-level  = 2
-id     = "SemanticRoles"
-label  = "Semantic Role Labeling"
-n6     = 1.00
-perf   = 0.82
-power  = 0.55
-cost   = 0.50
-notes  = "n=6 core thematic roles (Agent,Patient,Theme,Goal,Source,Location)"
-
-[[candidate]]
-level  = 2
-id     = "WordEmbedding"
-label  = "Word Embedding Space"
-n6     = 0.50
-perf   = 0.90
-power  = 0.55
-cost   = 0.50
-notes  = "Distributional semantics, Word2Vec/GloVe, geometric meaning"
-
-[[candidate]]
-level  = 2
-id     = "PragmaticInfer"
-label  = "Pragmatic Inference Engine"
-n6     = 0.67
-perf   = 0.78
-power  = 0.60
-cost   = 0.50
-notes  = "Grice maxims (tau=4), implicature, context-dependent meaning"
-
-# =============================================================
-# Level 3: Engine (언어 처리 엔진)  -- 5 candidates
-# =============================================================
-[[level]]
-name = "Engine"
+name = "Typology"
 
 [[candidate]]
 level  = 3
-id     = "Transformer"
-label  = "Transformer Language Model"
-n6     = 0.83
+id     = "WordOrderN6"
+label  = "어순 6유형 SOV/SVO/VSO/VOS/OVS/OSV n=6 EXACT"
+n6     = 1.00
+perf   = 0.90
+power  = 0.55
+cost   = 0.45
+notes  = "orders=6=n EXACT, S/O/V permutations=3!=6=n EXACT, dominant=2=phi"
+
+[[candidate]]
+level  = 3
+id     = "MorphTypeN4"
+label  = "형태 4유형 교착/굴절/고립/포합 tau=4 EXACT"
+n6     = 0.75
+perf   = 0.85
+power  = 0.58
+cost   = 0.48
+notes  = "types=4=tau EXACT, synthesis=2=phi (analytic/synthetic), index=6=n"
+
+[[candidate]]
+level  = 3
+id     = "ToneN4"
+label  = "성조 4유형 tau=4"
+n6     = 0.75
+perf   = 0.78
+power  = 0.60
+cost   = 0.50
+notes  = "levels=4=tau EXACT, register=2=phi EXACT, contour=6=n patterns"
+
+[[candidate]]
+level  = 3
+id     = "CaseN6"
+label  = "격 n=6 기본격 (주/대/속/여/탈/구)"
+n6     = 1.00
+perf   = 0.82
+power  = 0.55
+cost   = 0.45
+notes  = "cases=6=n EXACT (NOM/ACC/GEN/DAT/ABL/INS), markings=12=sigma"
+
+[[candidate]]
+level  = 3
+id     = "GrammaticalRelN6"
+label  = "문법관계 n=6 (S/A/O/IO/OBL/ADJ)"
+n6     = 1.00
+perf   = 0.80
+power  = 0.58
+cost   = 0.48
+notes  = "relations=6=n EXACT, alignment=4=tau types, hierarchy=2=phi"
+
+[[candidate]]
+level  = 3
+id     = "ZipfLaw"
+label  = "Zipf 법칙 기울기 ≈ -1 = -mu"
+n6     = 0.75
+perf   = 0.88
+power  = 0.50
+cost   = 0.40
+notes  = "exponent=-1=-mu EXACT, rank=6=n bands, frequency=12=sigma decades"
+
+# =============================================================
+# Level 4: Computation (계산 언어학) -- 5 candidates
+# =============================================================
+[[level]]
+name = "Computation"
+
+[[candidate]]
+level  = 4
+id     = "NLP_Transformer"
+label  = "NLP 트랜스포머 sigma=12 헤드"
+n6     = 1.00
 perf   = 0.95
 power  = 0.45
 cost   = 0.35
-notes  = "n=6 head attention, sigma=12 layer standard (BERT-base), GPT/BERT"
-
-[[candidate]]
-level  = 3
-id     = "MachineTranslation"
-label  = "Neural Machine Translation"
-n6     = 0.83
-perf   = 0.90
-power  = 0.50
-cost   = 0.45
-notes  = "Seq2seq, n=6 language pairs typical, cross-lingual transfer"
-
-[[candidate]]
-level  = 3
-id     = "SpeechRecog"
-label  = "Speech Recognition (ASR)"
-n6     = 0.67
-perf   = 0.88
-power  = 0.55
-cost   = 0.50
-notes  = "Whisper/Wav2Vec, phoneme→word, n=6 frequency bands (mel)"
-
-[[candidate]]
-level  = 3
-id     = "TextGeneration"
-label  = "Text Generation (GPT-style)"
-n6     = 0.67
-perf   = 0.92
-power  = 0.40
-cost   = 0.35
-notes  = "Autoregressive LM, next-token prediction, temperature sampling"
-
-[[candidate]]
-level  = 3
-id     = "CorpusAnalysis"
-label  = "Statistical Corpus Analysis"
-n6     = 0.83
-perf   = 0.80
-power  = 0.70
-cost   = 0.65
-notes  = "n-gram, Zipf verification, entropy H=ln(2) at optimal compression"
-
-# =============================================================
-# Level 4: System (시스템 통합)  -- 5 candidates
-# =============================================================
-[[level]]
-name = "System"
+notes  = "heads=12=sigma EXACT, layers=6=n EXACT, d_model=512, BT-56 aligned"
 
 [[candidate]]
 level  = 4
-id     = "UniversalTranslator"
-label  = "Universal Translation System"
-n6     = 1.00
+id     = "MachineTranslation"
+label  = "기계번역 phi=2 언어쌍"
+n6     = 0.75
 perf   = 0.88
 power  = 0.50
 cost   = 0.40
-notes  = "n=6 family bridge, real-time multimodal (text+speech+sign)"
+notes  = "pair=2=phi EXACT, enc_layers=6=n EXACT, dec_layers=6=n EXACT"
 
 [[candidate]]
 level  = 4
-id     = "DialogueAgent"
-label  = "Conversational AI Agent"
-n6     = 0.67
-perf   = 0.90
+id     = "SpeechRecognition"
+label  = "음성인식 ASR"
+n6     = 0.50
+perf   = 0.82
 power  = 0.55
 cost   = 0.45
-notes  = "Multi-turn dialogue, n=6 turn context window typical"
+notes  = "features=12=sigma EXACT, frames=4=tau windows, beam=6=n"
 
 [[candidate]]
 level  = 4
-id     = "LangPreservation"
-label  = "Endangered Language Archive"
-n6     = 0.83
-perf   = 0.75
-power  = 0.70
-cost   = 0.60
-notes  = "Digital preservation, sigma=12 documentation levels, ~7000 languages"
+id     = "SentimentN6"
+label  = "감성분석 n=6 감정 (기쁨/슬픔/분노/공포/혐오/놀람)"
+n6     = 1.00
+perf   = 0.80
+power  = 0.58
+cost   = 0.48
+notes  = "emotions=6=n EXACT (Ekman basic), valence=2=phi EXACT, arousal=4=tau"
 
 [[candidate]]
 level  = 4
-id     = "MultimodalLM"
-label  = "Multimodal Language System"
-n6     = 0.50
+id     = "LanguageModel"
+label  = "언어모델 BT-56 Complete"
+n6     = 1.00
 perf   = 0.92
-power  = 0.40
-cost   = 0.35
-notes  = "Text+image+audio, cross-modal attention, VLM integration"
-
-[[candidate]]
-level  = 4
-id     = "ChildLangModel"
-label  = "Child Language Acquisition Model"
-n6     = 0.83
-perf   = 0.78
-power  = 0.65
-cost   = 0.55
-notes  = "n=6 developmental stages (babbling→2-word→syntax→fluency+), UG test"
+power  = 0.42
+cost   = 0.32
+notes  = "d=4096=2^sigma, L=32=2^sopfr, heads=12=sigma EXACT, BT-56 complete n=6"
 
 # =============================================================
 # Compatibility Rules
 # =============================================================
 
-# SemanticRoles core requires SyntaxDepth or CFG foundation/core
+# UniversalGrammar requires VowelN6 or ConsonantN12 (grammar needs phonology)
 [[rule]]
 type       = "require"
-if_level   = 2
-if_id      = "SemanticRoles"
-then_level = 0
-then_ids   = "SyntaxDepth,MorphemeRoots"
-
-# Transformer engine requires BPE or WordEmbedding
-[[rule]]
-type       = "require"
-if_level   = 3
-if_id      = "Transformer"
-then_level = 1
-then_ids   = "BPE,Unicode"
-
-# SpeechRecog requires IPA or ToneSystem encoding
-[[rule]]
-type       = "require"
-if_level   = 3
-if_id      = "SpeechRecog"
-then_level = 1
-then_ids   = "IPA,ToneSystem"
-
-# UniversalTranslator requires LangFamilies6 foundation
-[[rule]]
-type       = "require"
-if_level   = 4
-if_id      = "UniversalTranslator"
-then_level = 0
-then_ids   = "LangFamilies6,ZipfLaw"
-
-# ChildLangModel requires SyntaxDepth foundation
-[[rule]]
-type       = "require"
-if_level   = 4
-if_id      = "ChildLangModel"
-then_level = 0
-then_ids   = "SyntaxDepth,Phoneme6"
-
-# CaseSystem encoding not compatible with pure isolating language analysis
-[[rule]]
-type       = "exclude"
 if_level   = 1
-if_id      = "CaseSystem"
-then_level = 2
-then_ids   = "WordEmbedding"
-
-# CorpusAnalysis prefers ZipfLaw foundation
-[[rule]]
-type       = "prefer"
-if_level   = 3
-if_id      = "CorpusAnalysis"
+if_id      = "UniversalGrammar"
 then_level = 0
-then_ids   = "ZipfLaw,LangFamilies6"
+then_ids   = "VowelN6,ConsonantN12"
+
+# WordOrderN6 is n6=1.0 (already set in candidate) -- no rule needed
+
+# ZipfLaw requires DistributionalSemantic
+[[rule]]
+type       = "require"
+if_level   = 3
+if_id      = "ZipfLaw"
+then_level = 2
+then_ids   = "DistributionalSemantic"
+
+# NLP_Transformer requires UniversalGrammar or MinimalistProgram (needs formal syntax)
+[[rule]]
+type       = "require"
+if_level   = 4
+if_id      = "NLP_Transformer"
+then_level = 1
+then_ids   = "UniversalGrammar,MinimalistProgram"
+
+# SpeechRecognition requires ProsodyN4 or PhonemeInventory (needs phonology detail)
+[[rule]]
+type       = "require"
+if_level   = 4
+if_id      = "SpeechRecognition"
+then_level = 0
+then_ids   = "ProsodyN4,PhonemeInventory,StressPattern"

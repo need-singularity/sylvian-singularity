@@ -1,4 +1,6 @@
 # PHYS-SELF-REFERENTIAL-LOOP: Perfect Numbers Generate String Theory Dimensions
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **Hypothesis**: Every even perfect number P_k = 2^(p-1)(2^p - 1) generates a
 > self-referential loop through gauge theory: dim(SO(2^p)) = P_k. Furthermore, the

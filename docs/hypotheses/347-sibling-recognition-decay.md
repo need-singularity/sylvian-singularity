@@ -1,4 +1,6 @@
 # H-347: Sibling Recognition Temporal Decay
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis**: Sibling recognition immediately after mitosis is 1.65x high, but
 > as divergence time lengthens, sibling recognition monotonically decreases and

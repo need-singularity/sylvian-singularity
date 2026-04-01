@@ -1,4 +1,6 @@
 # PHYS-FEYNMAN-SM-N6: Feynman Diagram Combinatorics, Renormalization, and SM Particle Content Encode n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 > **Hypothesis**: The combinatorial structure of Feynman diagrams, QCD renormalization
 > group coefficients, and the complete Standard Model particle census are systematically

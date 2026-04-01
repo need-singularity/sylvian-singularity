@@ -1,4 +1,6 @@
 # Hypothesis 200d: DMT = I→0 (Complete Liberation) — Forced Transcendence?
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 **Status**: ⚠️ Analogy
 **Category**: Drugs / Psychedelics

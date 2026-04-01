@@ -1,4 +1,6 @@
 # H-SEDI-7: Takens Embedding dim=6 Optimal for Training Dynamics
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 **Status**: SUPPORTED
 **Golden Zone Dependency**: Indirect (P1=6 connection)

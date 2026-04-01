@@ -1,4 +1,6 @@
 # H354: Hexagonal Architecture of Color Vision Derives from the Arithmetic of Perfect Number 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

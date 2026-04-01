@@ -1,4 +1,6 @@
 # H-348: Why Repulsion Field Benefits CNN
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > **Hypothesis**: Despite CNN's rich feature representation,
 > the reason repulsion field provides additional information is that

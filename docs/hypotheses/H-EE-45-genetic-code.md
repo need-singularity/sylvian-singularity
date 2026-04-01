@@ -1,4 +1,6 @@
 # H-EE-45: Genetic Code Structure from n=6 Arithmetic
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

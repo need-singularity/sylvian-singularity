@@ -1,4 +1,6 @@
 # H-EE-76: Monster Group Dominant Primes = Prime Factors of 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

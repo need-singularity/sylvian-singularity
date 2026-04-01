@@ -1,4 +1,6 @@
 # H-381: Obang Compass — Five Directions as 5/6 Upper Bound
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 **Status:** Proposed
 **Dependencies:** Golden Zone (unverified), Compass model

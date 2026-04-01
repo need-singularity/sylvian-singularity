@@ -1,4 +1,6 @@
 # Hypothesis 308: Self-Referential Anomaly Detection — Does Iteration Improve AUROC?
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Does feeding the model's tension back into the input iteratively (T1->T2->T3) improve anomaly detection?**
 

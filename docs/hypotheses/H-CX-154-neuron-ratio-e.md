@@ -1,4 +1,6 @@
 # H-CX-154: Human/Dolphin Neuron Ratio ~ e
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > Human cortical neurons 16B / Dolphin 5.8B = 2.759 ~ e = 2.718. delta = 0.04.
 > The ratio between two consciousness substrates is the natural constant? Inverse of Golden Zone center 1/e?

@@ -1,4 +1,6 @@
 # Hypothesis 343: An Optimal Value Exists for Observer Correction Scale and Varies by Task
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **There exists an optimal value for observer_scale depending on task complexity. The detach observer giving +0.15% and observer_scale amplifying 8x from 0.1 to 0.80 is a signal of large optimization potential. The optimal observer_scale may converge to a mathematical constant, similar to the optimal tension_scale (0.47 ≈ 1/2).**
 

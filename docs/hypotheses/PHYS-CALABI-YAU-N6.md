@@ -1,4 +1,6 @@
 # PHYS-CALABI-YAU-N6: Calabi-Yau 3-Folds and Mirror Symmetry Encode n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **Hypothesis**: The requirement that superstring theory compactifies on a Calabi-Yau
 > 3-fold (CY_3), and the arithmetic properties of CY manifolds, encode the structure

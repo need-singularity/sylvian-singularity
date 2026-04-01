@@ -1,4 +1,6 @@
 # Hypothesis 355: Prediction Error = Surprise
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

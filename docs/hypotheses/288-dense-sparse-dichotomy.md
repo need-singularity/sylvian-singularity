@@ -1,4 +1,6 @@
 # Hypothesis 288: Dense/Sparse Dichotomy — Repulsion Field is Dense Data Exclusive [Confirmed!]
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > **Where repulsion field shows superiority: Images(+0.26~1.04%), Speech(+3.33%), Numbers(+1.17%). Where inferior: Text(-0.52%). Tension information exists in 10 out of 11 types. Repulsion field improves accuracy in "dense/continuous data" and only contains information without improving accuracy in "sparse data".**
 

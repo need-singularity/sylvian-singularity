@@ -1,4 +1,6 @@
 # Hypothesis 358: Attention = Selective Tension (Attention as Selective Tension)
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-EE-43: Proton-Electron Mass Ratio m_p/m_e = 6*pi^5
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

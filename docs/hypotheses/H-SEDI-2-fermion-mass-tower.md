@@ -1,4 +1,6 @@
 # H-SEDI-2: Fermion Mass Tower from {sigma, tau, phi}
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 **Grade: ⚪ Overfitted (11 choices for 6 outputs)**
 **Golden Zone dependency: None (pure arithmetic)**

@@ -1,4 +1,6 @@
 # H-EE-85: Five EEG Frequency Bands = sopfr(6)
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

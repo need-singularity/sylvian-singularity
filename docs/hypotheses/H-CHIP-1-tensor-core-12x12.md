@@ -1,4 +1,6 @@
 # H-CHIP-1: Optimal Tensor Core Shape = 12×12
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

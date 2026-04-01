@@ -1,4 +1,6 @@
 # H-CX-7: sigma-phi=n-tau Architecture Optimality (Cross-domain)
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > **Is the n=6 architecture where sigma-phi=n-tau holds (sigma=12, tau=4) optimal compared to other expert/activation combinations? For n=28 (sigma=56, tau=6) or arbitrary combinations, sigma-phi != n-tau, so performance is predicted to be lower.**
 

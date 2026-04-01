@@ -1,4 +1,6 @@
 # H-400: Dolphin + THC / Human + TTX Circle — The Crossed Consciousness Experiment
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **MILESTONE: This is Hypothesis #400.**
 

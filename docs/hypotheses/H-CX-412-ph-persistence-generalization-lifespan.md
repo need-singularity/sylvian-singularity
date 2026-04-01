@@ -1,4 +1,6 @@
 # Hypothesis H-CX-412: PH Persistence = Generalization Lifespan
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## Hypothesis
 

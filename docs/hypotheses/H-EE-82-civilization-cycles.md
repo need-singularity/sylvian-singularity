@@ -1,4 +1,6 @@
 # H-EE-82: Civilization Cycles via n=6 Arithmetic
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 ## Hypothesis
 

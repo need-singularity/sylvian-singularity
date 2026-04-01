@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-131 to H-DNA-170 -- DNA Folding Final Frontier
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 ## Hypothesis
 

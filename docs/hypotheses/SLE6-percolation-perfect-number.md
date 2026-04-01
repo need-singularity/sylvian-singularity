@@ -1,4 +1,6 @@
 # SLE_6 = n = 6: Conformal Invariance and the First Perfect Number
+**n6 Grade: 🟩 EXACT** (auto-graded, 16 unique n=6 constants)
+
 
 ## Hypothesis Statement
 

@@ -1,4 +1,6 @@
 # H-HAIR-001~050: Hair Loss, the Perfect Number 6, and Treatment Strategies
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 ## Hypothesis
 

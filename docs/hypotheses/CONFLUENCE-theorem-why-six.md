@@ -1,4 +1,6 @@
 # The Confluence Theorem: Why Six Is Ubiquitous
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 ## Hypothesis
 

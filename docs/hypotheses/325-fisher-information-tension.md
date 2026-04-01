@@ -1,4 +1,6 @@
 # Hypothesis 325: Fisher Information Geometry and Tension Manifold (NM-5)
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **The tension fingerprint space forms a statistical manifold, and its curvature is measured by the Fisher information matrix. High tension regions have high Fisher information, corresponding to "informationally rich" inputs. H313 (tension=confidence) and H318 (fingerprint sufficiency) are different cross-sections of this geometric structure.**
 

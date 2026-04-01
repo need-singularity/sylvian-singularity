@@ -1,4 +1,6 @@
 # H-CX-65: Aberration Topological Correction — Chromatic Aberration Correction via PH Barcode
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > Per-class precognition AUC variance (chromatic aberration, H-CX-60) can be corrected
 > using per-class PH persistence (H-CX-62).

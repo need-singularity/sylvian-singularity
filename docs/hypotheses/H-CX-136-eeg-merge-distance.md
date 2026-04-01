@@ -1,4 +1,6 @@
 # H-CX-136: EEG Gamma Pattern Difference = PH merge distance
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > The difference in 40Hz gamma patterns when viewing cat vs dog is
 > proportional to AI's PH merge distance (0.01).

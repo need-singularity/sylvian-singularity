@@ -1,4 +1,6 @@
 # H-CX-8: Phase Acceleration x3 = sigma/tau (Cross-domain)
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > **Phase acceleration coefficient (x3) exactly matches sigma/tau = 12/4 = 3. The x3 jump in throughput when adding meta-learning (T3) may be determined by the "average divisor" of perfect number 6.**
 

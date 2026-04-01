@@ -1,4 +1,6 @@
 # H-ROB-12: Gauge Invariance = Coordinate Independence
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## 가설 (Hypothesis)
 

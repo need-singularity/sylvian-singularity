@@ -1,4 +1,6 @@
 # H-390: Obang Pentagonal Numbers — Perfect Number 6 Encoded in P(n)
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Status:** Proposed — Pure Number Theory
 **Golden Zone Dependency:** NONE (pure arithmetic, eternally true)

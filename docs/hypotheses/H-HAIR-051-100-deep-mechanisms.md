@@ -1,4 +1,6 @@
 # H-HAIR-051~100: Deep Mechanisms, Molecular n=6, and 2024-2026 Pipeline
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 ## PART A: DHT and Androgen Receptor at Molecular Level (H-HAIR-051 to 065)
 

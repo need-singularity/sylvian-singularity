@@ -1,4 +1,6 @@
 # Hypothesis Review 089: Can the System Exceed 1? ❌
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## Hypothesis
 

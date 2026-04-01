@@ -1,4 +1,6 @@
 # H-INST-001 through H-INST-020: Institutional / Law / History Hypotheses
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 ## Hypothesis
 

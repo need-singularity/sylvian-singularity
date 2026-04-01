@@ -1,4 +1,6 @@
 # H-CX-505: Self-Referential Derivation of I^I (Complete Proof Chain)
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 **Grade**: Golden Zone dependent (unverified model)
 **Status**: 100% COMPLETE -- scale invariance closes the 0.2% gap (H-CX-507)

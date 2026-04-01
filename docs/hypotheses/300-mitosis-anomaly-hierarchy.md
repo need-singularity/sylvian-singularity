@@ -1,4 +1,6 @@
 # Hypothesis 300: Hierarchical Mitosis Anomaly Detection — Mitosis Tree Classifies Anomaly "Types"
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **Multi-level mitosis (parent→2→4→8) reflects the hierarchical structure of anomalies. First-generation inter-child tension detects "broad classification" (normal vs anomaly), second-generation detects "middle classification" (anomaly type A vs B), third-generation detects "fine classification". Mitosis tree = anomaly classification tree.**
 

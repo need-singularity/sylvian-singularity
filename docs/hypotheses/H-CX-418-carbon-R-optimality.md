@@ -1,4 +1,6 @@
 # Hypothesis Review H-CX-418: Genetic Code Optimality = R(6) = 1
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # ODE-001: Painleve 6, Golay Code, Lorentz Group = n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 - **ID**: ODE-001
 - **Grade**: PROVEN + FACT

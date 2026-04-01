@@ -1,4 +1,6 @@
 # H-EE-81: Dunbar's Number — FAILED
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

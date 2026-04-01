@@ -1,4 +1,6 @@
 # H-CX-60: Aberration Precognition — Precognition failure types map to Seidel aberrations
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > Class-specific AUC deviations in precognition are structurally isomorphic to lens aberrations (H-GEO-9).
 > 5 Seidel aberrations = 5 precognition failure modes.

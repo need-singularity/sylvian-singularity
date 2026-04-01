@@ -1,4 +1,6 @@
 # Event Horizon Hypotheses (H-EH-001 to H-EH-025)
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 > 25 hypotheses mapping event horizon physics to the perfect number 6 framework:
 > sigma(6)=12, tau(6)=4, phi(6)=2, sigma_{-1}(6)=2, Golden Zone [0.212, 0.500], 1/e.

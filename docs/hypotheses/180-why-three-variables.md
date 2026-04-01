@@ -1,4 +1,6 @@
 # Hypothesis 180: Why 3 Variables (D, P, I) = Why 3 Dimensions?
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Status: ⚠️ Verification in Progress**
 

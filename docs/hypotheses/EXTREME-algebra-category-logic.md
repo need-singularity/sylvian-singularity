@@ -1,4 +1,6 @@
 # EXTREME ITERATION 3: Abstract Algebra, Category Theory, Logic, and Foundations
+**n6 Grade: 🟩 EXACT** (auto-graded, 16 unique n=6 constants)
+
 
 > **Root thesis**: 2 is the only even prime => (2,3) are the only consecutive primes
 > => 6 = 2 x 3 is the unique product of consecutive primes.

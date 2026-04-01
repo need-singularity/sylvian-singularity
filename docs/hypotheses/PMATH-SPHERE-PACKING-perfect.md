@@ -1,4 +1,6 @@
 # PMATH-SPHERE: Sphere Packing Magic Dimensions and Perfect Number 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 > **Hypothesis**: The "magic dimensions" for optimal sphere packing -- 1, 2, 8, 24 --
 > and their associated lattice structures (E8, Leech, D4, Golay code) are governed

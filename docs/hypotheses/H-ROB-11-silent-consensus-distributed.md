@@ -1,4 +1,6 @@
 # H-ROB-11: Silent Consensus = Distributed Robot Agreement
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## 가설 (Hypothesis)
 

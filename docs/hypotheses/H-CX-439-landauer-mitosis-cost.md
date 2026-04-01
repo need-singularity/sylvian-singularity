@@ -1,4 +1,6 @@
 # H-CX-439: Landauer Principle = Mitosis Cost
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis**: Mitosis prevents catastrophic forgetting at a cost.
 > This cost obeys Landauer's principle: the minimum cost to preserve 1 bit

@@ -1,4 +1,6 @@
 # Theorem: Consecutive Prime Factorial Product
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > **Theorem.** Let p and q be primes with p < q. Then p*q = q! if and only if
 > (p, q) = (2, 3). The product is 6.

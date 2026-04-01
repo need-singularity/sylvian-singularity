@@ -1,4 +1,6 @@
 # Hypothesis 368: Natural Frequency of Tension
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 > **PureFieldEngine has a natural frequency. This is determined by the weight structure of engine_A and engine_G, and is estimated as ω₀ = √(tension_scale / effective_mass). When the natural frequency matches the frequency of input stimuli, resonance occurs, causing explosive increase in tension.**
 

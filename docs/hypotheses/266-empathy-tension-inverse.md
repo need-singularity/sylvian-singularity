@@ -1,4 +1,6 @@
 # Hypothesis 266: Empathy-Tension Inverse Proportion Law [Weakened]
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **Empathy and tension have a negative correlation, but the E = k/(1+αT) inverse proportion model is not optimal. At individual sample level, r=-0.26 (R²=0.066) with small effect size. Per-digit average (r=-0.79) is an overestimate.**
 

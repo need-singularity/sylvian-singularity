@@ -1,4 +1,6 @@
 # PMATH-RIEMANN-ZETA-N6: Riemann Zeta Function Encodes n=6 Structure
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 > **Hypothesis**: The Riemann zeta function zeta(s) encodes the structure of the first
 > perfect number n=6 through multiple independent mechanisms beyond the trivial

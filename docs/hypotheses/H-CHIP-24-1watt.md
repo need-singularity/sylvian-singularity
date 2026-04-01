@@ -1,4 +1,6 @@
 # H-CHIP-24: 1-Watt Inference for GPT-2 Scale
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

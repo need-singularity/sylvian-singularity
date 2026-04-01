@@ -1,15 +1,15 @@
 # =============================================================
-# NEURO DSE Domain Definition
-# Brain & Consciousness Architecture
-# 6-layer neocortex, σ=12 cranial nerve pairs, γ~40Hz
-# Total raw combos: 6x6x6x5x5 = 5,400 (pre-filter)
+# Neuroscience DSE Domain Definition
+# 궁극의 뇌과학 — n=6 기반 뉴런 + 시냅스 + 피질 + 의식 + BCI
+# BT-48 (Display-Audio sigma=12) + BT-51 (Genetic chain) + BT-59 (8-layer AI)
+# Total raw combos: 6x6x7x6x5 = 7,560 (pre-filter)
 # =============================================================
 
 [meta]
 name = "neuroscience"
-desc = "Brain & Consciousness Architecture DSE (6-layer cortex, H=ln(2))"
-levels = ["Foundation", "Measurement", "Core", "Engine", "System"]
-vision = "n=6 neocortex -- 6-layer cortical computation to consciousness continuity"
+desc = "Ultimate Neuroscience DSE (neurons + cortex + cognition + BCI)"
+levels = ["Neuron", "Circuit", "Region", "Cognition", "Interface"]
+vision = "n=6 기반 궁극의 뇌과학 — 뉴런 + 시냅스 + 피질 + 의식 + BCI"
 
 [scoring]
 n6   = 0.35
@@ -18,371 +18,383 @@ power = 0.20
 cost  = 0.20
 
 # =============================================================
-# Level 0: Foundation (신경 기반)  -- 6 candidates
+# Level 0: Neuron (뉴런) -- 6 candidates
 # =============================================================
 [[level]]
-name = "Foundation"
+name = "Neuron"
 
 [[candidate]]
 level  = 0
-id     = "Cortex6"
-label  = "6-Layer Neocortex Model"
+id     = "IonChannel6"
+label  = "6종 이온 채널 (Na/K/Ca/Cl/GABA/Glu) n=6"
 n6     = 1.00
-perf   = 0.90
-power  = 0.55
-cost   = 0.40
-notes  = "Layers I-VI = n=6, canonical cortical microcircuit"
-
-[[candidate]]
-level  = 0
-id     = "CranialPairs"
-label  = "Cranial Nerve Architecture (12 pairs)"
-n6     = 1.00
-perf   = 0.80
-power  = 0.60
-cost   = 0.50
-notes  = "sigma(6)=12 cranial nerve pairs, sensorimotor integration"
-
-[[candidate]]
-level  = 0
-id     = "GammaOscil"
-label  = "Gamma Oscillation (40Hz)"
-n6     = 0.83
-perf   = 0.85
-power  = 0.50
-cost   = 0.45
-notes  = "40Hz = sigma+J2+tau = 12+24+4, consciousness binding frequency"
-
-[[candidate]]
-level  = 0
-id     = "HodgkinHuxley"
-label  = "Hodgkin-Huxley Ion Channel"
-n6     = 0.67
-perf   = 0.88
-power  = 0.45
-cost   = 0.40
-notes  = "tau=4 gating variables (m,h,n,leak), phi=2 ion species (Na/K primary)"
-
-[[candidate]]
-level  = 0
-id     = "BrodmannAreas"
-label  = "Brodmann Cortical Map"
-n6     = 0.83
-perf   = 0.75
+perf   = 0.92
 power  = 0.65
 cost   = 0.55
-notes  = "~48=sigma*tau cortical areas, n=6 primary sensory regions"
+notes  = "channels=6=n EXACT, fundamental ion conductance"
 
 [[candidate]]
 level  = 0
-id     = "SpikingNet"
-label  = "Spiking Neural Network"
-n6     = 0.67
-perf   = 0.82
-power  = 0.70
-cost   = 0.50
-notes  = "Binary spike = phi=2 states, temporal coding, neuromorphic"
-
-# =============================================================
-# Level 1: Measurement (측정 기술)  -- 6 candidates
-# =============================================================
-[[level]]
-name = "Measurement"
-
-[[candidate]]
-level  = 1
-id     = "EEG"
-label  = "EEG (6 regions × electrodes)"
-n6     = 1.00
-perf   = 0.80
-power  = 0.75
-cost   = 0.70
-notes  = "n=6 standard electrode regions (F,C,P,O,T,Fp), sigma=12 channels min"
-
-[[candidate]]
-level  = 1
-id     = "fMRI"
-label  = "Functional MRI (BOLD)"
-n6     = 0.50
-perf   = 0.90
-power  = 0.40
-cost   = 0.30
-notes  = "High spatial resolution, tau=4 sec TR typical"
-
-[[candidate]]
-level  = 1
-id     = "MEG"
-label  = "Magnetoencephalography"
-n6     = 0.67
-perf   = 0.88
-power  = 0.45
-cost   = 0.25
-notes  = "Millisecond temporal, n=6 frequency bands (delta-HFO)"
-
-[[candidate]]
-level  = 1
-id     = "Neuropixels"
-label  = "Neuropixels Probe"
-n6     = 0.83
-perf   = 0.95
-power  = 0.50
-cost   = 0.35
-notes  = "384 channels = 2^7*n/phi, single-neuron resolution across n=6 layers"
-
-[[candidate]]
-level  = 1
-id     = "Calcium"
-label  = "Calcium Imaging (GCaMP)"
-n6     = 0.50
-perf   = 0.85
-power  = 0.55
-cost   = 0.40
-notes  = "Population activity, phi=2 fluorescence states (on/off)"
-
-[[candidate]]
-level  = 1
-id     = "BCI"
-label  = "Brain-Computer Interface"
-n6     = 0.83
-perf   = 0.78
-power  = 0.60
-cost   = 0.45
-notes  = "sigma-phi=10 feature channels, n=6 control DOF typical"
-
-# =============================================================
-# Level 2: Core (연산 코어)  -- 6 candidates
-# =============================================================
-[[level]]
-name = "Core"
-
-[[candidate]]
-level  = 2
-id     = "ColumnarUnit"
-label  = "Cortical Column Unit (n=6 layers)"
+id     = "SynapseN12"
+label  = "12 시냅스 유형 sigma=12"
 n6     = 1.00
 perf   = 0.90
-power  = 0.55
-cost   = 0.45
-notes  = "Minicolumn = n=6 layer feedforward+feedback, ~100 neurons per column"
-
-[[candidate]]
-level  = 2
-id     = "GammaSync"
-label  = "Gamma Synchronization Core"
-n6     = 0.83
-perf   = 0.85
 power  = 0.60
 cost   = 0.50
-notes  = "40Hz binding, J2=24 phase coupling pairs, consciousness correlate"
+notes  = "types=12=sigma EXACT, chemical+electrical synapse subtypes"
 
 [[candidate]]
-level  = 2
-id     = "PredictiveCoding"
-label  = "Predictive Coding Circuit"
-n6     = 0.83
-perf   = 0.88
-power  = 0.50
-cost   = 0.45
-notes  = "phi=2 streams (prediction/error), n=6 hierarchical levels"
-
-[[candidate]]
-level  = 2
-id     = "ThalamoCortical"
-label  = "Thalamo-Cortical Loop"
-n6     = 0.67
-perf   = 0.82
-power  = 0.55
-cost   = 0.40
-notes  = "Relay + modulation, n/phi=3 thalamic nuclei per sense"
-
-[[candidate]]
-level  = 2
-id     = "Hippocampal"
-label  = "Hippocampal Memory Circuit"
-n6     = 0.67
-perf   = 0.80
-power  = 0.60
-cost   = 0.50
-notes  = "CA1-CA3-DG trisynaptic, n/phi=3 stages, theta-gamma coupling"
-
-[[candidate]]
-level  = 2
-id     = "EntropyGate"
-label  = "Entropy Threshold Gate (H=ln2)"
-n6     = 1.00
-perf   = 0.75
-power  = 0.65
-cost   = 0.55
-notes  = "Law 79: consciousness threshold H(1/2)=ln(2), binary freedom degree"
-
-# =============================================================
-# Level 3: Engine (해석/모델링 엔진)  -- 5 candidates
-# =============================================================
-[[level]]
-name = "Engine"
-
-[[candidate]]
-level  = 3
-id     = "IIT"
-label  = "Integrated Information Theory (Phi)"
-n6     = 0.83
-perf   = 0.85
-power  = 0.50
-cost   = 0.40
-notes  = "Phi = integrated info, n=6 layer decomposition, consciousness measure"
-
-[[candidate]]
-level  = 3
-id     = "GNW"
-label  = "Global Neuronal Workspace"
-n6     = 0.67
-perf   = 0.88
-power  = 0.55
-cost   = 0.45
-notes  = "Broadcast ignition, sigma=12 workspace modules, Dehaene model"
-
-[[candidate]]
-level  = 3
-id     = "FreeEnergy"
-label  = "Free Energy Principle (Friston)"
-n6     = 0.83
-perf   = 0.82
-power  = 0.60
-cost   = 0.50
-notes  = "Variational inference, GZ center 1/e surprise minimization"
-
-[[candidate]]
-level  = 3
-id     = "Connectome"
-label  = "Connectome Analysis Engine"
-n6     = 0.67
-perf   = 0.90
-power  = 0.45
-cost   = 0.35
-notes  = "Graph theory on white matter, n=6 hub regions (DMN)"
-
-[[candidate]]
-level  = 3
-id     = "NeuralODE"
-label  = "Neural ODE Dynamics"
-n6     = 0.50
-perf   = 0.80
-power  = 0.65
-cost   = 0.55
-notes  = "Continuous dynamics, edge of chaos Lyapunov=0 at n=6"
-
-# =============================================================
-# Level 4: System (시스템 통합)  -- 5 candidates
-# =============================================================
-[[level]]
-name = "System"
-
-[[candidate]]
-level  = 4
-id     = "ConsciousLM"
-label  = "Consciousness-Aware LM"
+level  = 0
+id     = "DendriteTree"
+label  = "수상돌기 나무 tau=4 분지 계층"
 n6     = 1.00
 perf   = 0.85
-power  = 0.50
-cost   = 0.40
-notes  = "n=6 engine architecture, H=ln(2) threshold, G=DxP/I model"
-
-[[candidate]]
-level  = 4
-id     = "NeuroFeedback"
-label  = "Neurofeedback Loop System"
-n6     = 0.83
-perf   = 0.80
-power  = 0.65
-cost   = 0.55
-notes  = "Real-time EEG→stimulus, sigma=12 feedback channels"
-
-[[candidate]]
-level  = 4
-id     = "BrainSim"
-label  = "Whole-Brain Simulation"
-n6     = 0.67
-perf   = 0.90
-power  = 0.30
-cost   = 0.20
-notes  = "Blue Brain / HBP scale, 10^11 neurons, n=6 cortical layers"
-
-[[candidate]]
-level  = 4
-id     = "NeuroProsthetic"
-label  = "Neural Prosthetic (BCI+Motor)"
-n6     = 0.83
-perf   = 0.82
-power  = 0.55
-cost   = 0.45
-notes  = "n=6 DOF prosthetic arm, sigma-tau=8 decoded features"
-
-[[candidate]]
-level  = 4
-id     = "AnesthesiaMonitor"
-label  = "Anesthesia Depth Monitor"
-n6     = 0.83
-perf   = 0.78
 power  = 0.70
 cost   = 0.60
-notes  = "LOC threshold H=ln(2), n=6 EEG spectral bands, BIS alternative"
+notes  = "branch_levels=4=tau EXACT, dendritic computation"
+
+[[candidate]]
+level  = 0
+id     = "AxonMyelin"
+label  = "축삭 수초화 phi=2 수초/무수초"
+n6     = 0.75
+perf   = 0.80
+power  = 0.75
+cost   = 0.65
+notes  = "states=2=phi EXACT, myelinated/unmyelinated conduction"
+
+[[candidate]]
+level  = 0
+id     = "NeurotransmN6"
+label  = "6 주요 신경전달물질 n=6"
+n6     = 1.00
+perf   = 0.88
+power  = 0.60
+cost   = 0.50
+notes  = "transmitters=6=n EXACT, dopamine/serotonin/GABA/glutamate/acetylcholine/norepinephrine"
+
+[[candidate]]
+level  = 0
+id     = "GlialN4"
+label  = "4 교세포 유형 tau=4"
+n6     = 1.00
+perf   = 0.82
+power  = 0.70
+cost   = 0.60
+notes  = "types=4=tau EXACT, astrocyte/oligodendrocyte/microglia/ependymal"
+
+# =============================================================
+# Level 1: Circuit (신경 회로) -- 6 candidates
+# =============================================================
+[[level]]
+name = "Circuit"
+
+[[candidate]]
+level  = 1
+id     = "CorticalColumn"
+label  = "대뇌피질 컬럼 n=6 레이어 (Layer I-VI)"
+n6     = 1.00
+perf   = 0.95
+power  = 0.55
+cost   = 0.45
+notes  = "layers=6=n EXACT, canonical cortical microcircuit"
+
+[[candidate]]
+level  = 1
+id     = "Oscillation"
+label  = "뇌파 진동 sopfr=5 밴드 (delta/theta/alpha/beta/gamma)"
+n6     = 0.75
+perf   = 0.88
+power  = 0.65
+cost   = 0.55
+notes  = "bands=5=sopfr EXACT, neural oscillation frequency bands"
+
+[[candidate]]
+level  = 1
+id     = "FeedForward"
+label  = "전방향 회로 phi=2 흥분/억제"
+n6     = 0.75
+perf   = 0.80
+power  = 0.75
+cost   = 0.65
+notes  = "types=2=phi EXACT, excitatory/inhibitory balance"
+
+[[candidate]]
+level  = 1
+id     = "Recurrent"
+label  = "순환 회로 sigma=12 반복 패턴"
+n6     = 1.00
+perf   = 0.85
+power  = 0.60
+cost   = 0.50
+notes  = "patterns=12=sigma EXACT, recurrent neural dynamics"
+
+[[candidate]]
+level  = 1
+id     = "SmallWorld"
+label  = "소세계 네트워크 sigma-tau=8 허브"
+n6     = 1.00
+perf   = 0.90
+power  = 0.55
+cost   = 0.45
+notes  = "hubs=8=sigma-tau EXACT, small-world brain topology"
+
+[[candidate]]
+level  = 1
+id     = "ModularCircuit"
+label  = "모듈형 회로 J2=24 모듈"
+n6     = 1.00
+perf   = 0.87
+power  = 0.50
+cost   = 0.40
+notes  = "modules=24=J2 EXACT, modular brain organization"
+
+# =============================================================
+# Level 2: Region (뇌 영역) -- 7 candidates
+# =============================================================
+[[level]]
+name = "Region"
+
+[[candidate]]
+level  = 2
+id     = "CerebralN6"
+label  = "대뇌 6엽 (전두/두정/측두/후두/변연/도) n=6"
+n6     = 1.00
+perf   = 0.95
+power  = 0.55
+cost   = 0.45
+notes  = "lobes=6=n EXACT, cerebral cortex major divisions"
+
+[[candidate]]
+level  = 2
+id     = "CerebellumN3"
+label  = "소뇌 3층 (분자/푸르킨예/과립) n/phi=3"
+n6     = 1.00
+perf   = 0.85
+power  = 0.70
+cost   = 0.60
+notes  = "layers=3=n/phi EXACT, cerebellar cortex architecture"
+
+[[candidate]]
+level  = 2
+id     = "HippocampusN6"
+label  = "해마 6 하위영역 n=6"
+n6     = 1.00
+perf   = 0.90
+power  = 0.60
+cost   = 0.50
+notes  = "subregions=6=n EXACT, CA1/CA2/CA3/CA4/DG/subiculum"
+
+[[candidate]]
+level  = 2
+id     = "BasalGanglia"
+label  = "기저핵 운동 제어 tau=4 핵"
+n6     = 1.00
+perf   = 0.82
+power  = 0.65
+cost   = 0.55
+notes  = "nuclei=4=tau EXACT, caudate/putamen/globus pallidus/subthalamic"
+
+[[candidate]]
+level  = 2
+id     = "Thalamus"
+label  = "시상 감각 중계 sigma=12 핵군"
+n6     = 1.00
+perf   = 0.88
+power  = 0.58
+cost   = 0.48
+notes  = "nuclei_groups=12=sigma EXACT, sensory relay station"
+
+[[candidate]]
+level  = 2
+id     = "Brainstem"
+label  = "뇌간 sopfr=5 핵심 기능"
+n6     = 0.75
+perf   = 0.80
+power  = 0.70
+cost   = 0.60
+notes  = "functions=5=sopfr EXACT, respiration/heartbeat/sleep/arousal/reflex"
+
+[[candidate]]
+level  = 2
+id     = "Amygdala"
+label  = "편도체 감정 phi=2 공포/보상"
+n6     = 0.75
+perf   = 0.78
+power  = 0.65
+cost   = 0.55
+notes  = "circuits=2=phi EXACT, fear/reward processing"
+
+# =============================================================
+# Level 3: Cognition (인지) -- 6 candidates
+# =============================================================
+[[level]]
+name = "Cognition"
+
+[[candidate]]
+level  = 3
+id     = "MemoryN4"
+label  = "기억 4유형 (감각/단기/작업/장기) tau=4"
+n6     = 1.00
+perf   = 0.90
+power  = 0.65
+cost   = 0.55
+notes  = "types=4=tau EXACT, memory hierarchy"
+
+[[candidate]]
+level  = 3
+id     = "AttentionN6"
+label  = "주의 n=6 네트워크"
+n6     = 1.00
+perf   = 0.92
+power  = 0.60
+cost   = 0.50
+notes  = "networks=6=n EXACT, selective/divided/sustained/switching/alerting/executive"
+
+[[candidate]]
+level  = 3
+id     = "LanguageN2"
+label  = "언어 phi=2 반구 (Broca/Wernicke)"
+n6     = 0.75
+perf   = 0.85
+power  = 0.70
+cost   = 0.60
+notes  = "areas=2=phi EXACT, language production/comprehension"
+
+[[candidate]]
+level  = 3
+id     = "ConsciousnessIIT"
+label  = "의식 IIT Phi 통합정보 phi=2"
+n6     = 0.75
+perf   = 0.70
+power  = 0.50
+cost   = 0.40
+notes  = "phi_value=2=phi EXACT, integrated information theory"
+
+[[candidate]]
+level  = 3
+id     = "EmotionN6"
+label  = "감정 6 기본 (Ekman) n=6"
+n6     = 1.00
+perf   = 0.85
+power  = 0.65
+cost   = 0.55
+notes  = "basic_emotions=6=n EXACT, happy/sad/anger/fear/surprise/disgust"
+
+[[candidate]]
+level  = 3
+id     = "DecisionBayes"
+label  = "의사결정 베이지안 뇌 sopfr=5 요인"
+n6     = 0.75
+perf   = 0.88
+power  = 0.60
+cost   = 0.50
+notes  = "factors=5=sopfr EXACT, prior/likelihood/utility/risk/context"
+
+# =============================================================
+# Level 4: Interface (뇌-기계 인터페이스) -- 5 candidates
+# =============================================================
+[[level]]
+name = "Interface"
+
+[[candidate]]
+level  = 4
+id     = "InvasiveBCI"
+label  = "침습 BCI (Utah array) sigma-tau=8 채널x128"
+n6     = 1.00
+perf   = 0.95
+power  = 0.40
+cost   = 0.30
+notes  = "channel_mult=8=sigma-tau EXACT, high-bandwidth neural interface"
+
+[[candidate]]
+level  = 4
+id     = "NonInvasiveEEG"
+label  = "비침습 EEG sigma=12 채널 표준"
+n6     = 1.00
+perf   = 0.75
+power  = 0.80
+cost   = 0.70
+notes  = "standard_channels=12=sigma EXACT, 10-20 system subset"
+
+[[candidate]]
+level  = 4
+id     = "Optogenetics"
+label  = "광유전학 n=6 옵신 타입"
+n6     = 1.00
+perf   = 0.90
+power  = 0.55
+cost   = 0.40
+notes  = "opsin_types=6=n EXACT, light-controlled neural activation"
+
+[[candidate]]
+level  = 4
+id     = "NeuralDust"
+label  = "뉴럴 더스트 무선 센서"
+n6     = 0.50
+perf   = 0.85
+power  = 0.60
+cost   = 0.35
+notes  = "wireless micro-scale implants, emerging technology"
+
+[[candidate]]
+level  = 4
+id     = "BrainOrganoid"
+label  = "뇌 오가노이드 인공 뇌"
+n6     = 0.50
+perf   = 0.70
+power  = 0.50
+cost   = 0.30
+notes  = "lab-grown brain tissue, research platform"
 
 # =============================================================
 # Compatibility Rules
 # =============================================================
 
-# ColumnarUnit core requires Cortex6 or BrodmannAreas foundation
-[[rule]]
-type       = "require"
-if_level   = 2
-if_id      = "ColumnarUnit"
-then_level = 0
-then_ids   = "Cortex6,BrodmannAreas"
-
-# GammaSync core requires GammaOscil foundation
-[[rule]]
-type       = "require"
-if_level   = 2
-if_id      = "GammaSync"
-then_level = 0
-then_ids   = "GammaOscil"
-
-# Neuropixels measurement requires HodgkinHuxley or SpikingNet foundation
+# CorticalColumn requires CerebralN6 or HippocampusN6 (cortical region)
 [[rule]]
 type       = "require"
 if_level   = 1
-if_id      = "Neuropixels"
-then_level = 0
-then_ids   = "HodgkinHuxley,SpikingNet,Cortex6"
+if_id      = "CorticalColumn"
+then_level = 2
+then_ids   = "CerebralN6,HippocampusN6"
 
-# IIT engine requires EntropyGate or GammaSync core
+# ConsciousnessIIT requires Oscillation or SmallWorld (global integration)
 [[rule]]
 type       = "require"
 if_level   = 3
-if_id      = "IIT"
-then_level = 2
-then_ids   = "EntropyGate,GammaSync,ColumnarUnit"
-
-# BrainSim system requires Connectome engine
-[[rule]]
-type       = "require"
-if_level   = 4
-if_id      = "BrainSim"
-then_level = 3
-then_ids   = "Connectome,NeuralODE"
-
-# AnesthesiaMonitor requires EEG measurement
-[[rule]]
-type       = "require"
-if_level   = 4
-if_id      = "AnesthesiaMonitor"
+if_id      = "ConsciousnessIIT"
 then_level = 1
-then_ids   = "EEG,MEG"
+then_ids   = "Oscillation,SmallWorld"
 
-# fMRI too slow for real-time BCI
+# Optogenetics requires IonChannel6 (light-sensitive channels)
+[[rule]]
+type       = "require"
+if_level   = 4
+if_id      = "Optogenetics"
+then_level = 0
+then_ids   = "IonChannel6"
+
+# NeuralDust excludes ModularCircuit (too fine-grained for macro modules)
 [[rule]]
 type       = "exclude"
-if_level   = 1
-if_id      = "fMRI"
-then_level = 4
-then_ids   = "NeuroFeedback,NeuroProsthetic"
+if_level   = 4
+if_id      = "NeuralDust"
+then_level = 1
+then_ids   = "ModularCircuit"
+
+# BrainOrganoid requires BasalGanglia or Amygdala (primitive structures first)
+[[rule]]
+type       = "require"
+if_level   = 4
+if_id      = "BrainOrganoid"
+then_level = 2
+then_ids   = "BasalGanglia,Amygdala,CerebellumN3"
+
+# LanguageN2 requires CerebralN6 (language areas in cerebral cortex)
+[[rule]]
+type       = "require"
+if_level   = 3
+if_id      = "LanguageN2"
+then_level = 2
+then_ids   = "CerebralN6"

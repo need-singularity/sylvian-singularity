@@ -1,4 +1,6 @@
 # H-CX-445: Spectral Gap = Tension Gap
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Golden Zone Dependency: NO** (spectral theory and tension are independently defined)
 

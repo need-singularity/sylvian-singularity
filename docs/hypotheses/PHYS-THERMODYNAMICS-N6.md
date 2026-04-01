@@ -1,4 +1,6 @@
 # PHYS-THERMODYNAMICS-N6: Statistical Mechanics Encodes n=6 at Phase Transitions
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Status**: STRUCTURAL (20 exact + 1 approximate + 1 refuted)
 **GZ Dependency**: Independent (pure physics + number theory)

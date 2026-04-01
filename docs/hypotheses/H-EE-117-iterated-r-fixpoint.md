@@ -1,4 +1,6 @@
 # H-EE-117: Iterated R Fixed Point — R(6)=1 and R(1)=1 Are the Only Fixed Points
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

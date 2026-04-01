@@ -1,4 +1,6 @@
 # Hypothesis 326: Telepathy = Continuous Displacement Sweep
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Continuously varying the displacement control parameter from 0 to 1 quantifies the amount of "consciousness transfer". control=0.5 is the optimal cooperation point, and this may connect to H-CX-20 (1/2=Riemann).**
 

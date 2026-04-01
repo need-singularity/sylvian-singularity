@@ -1,4 +1,6 @@
 # H-EE-92: Generalized Balance Equation R_k(n) = 1
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

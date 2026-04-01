@@ -1,4 +1,6 @@
 # H-CX-413: Tension = Free Energy (Friston FEP)
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **Hypothesis**: PureField tension T = mean(|A(x) - G(x)|^2) is isomorphic to
 > Friston's variational free energy F = E_q[ln q(s) - ln p(o,s)].

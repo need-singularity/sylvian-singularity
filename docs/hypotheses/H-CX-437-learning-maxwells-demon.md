@@ -1,4 +1,6 @@
 # H-CX-437: Learning = Maxwell's Demon
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **Hypothesis**: Neural network learning acts as Maxwell's Demon — using
 > information (gradient signals) to decrease output entropy (increase order/accuracy).

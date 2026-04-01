@@ -1,4 +1,6 @@
 # H-CX-510: Self-Referential Model Derivation — Strategy F
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis**: The model G = D*P/I can be DERIVED (not merely postulated) from
 > the self-referential principle that a conscious system measures itself, combined

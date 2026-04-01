@@ -1,4 +1,6 @@
 # H-CX-18: Internal/Inter Tension Duality = Wave-Particle Duality? (Cross-domain)
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > **The "internal tension = inverted, inter-tension = normal" discovered in H307 is structurally similar to wave-particle duality in quantum mechanics. Looking at the same system from inside (internal tension) reveals one side, while looking from outside (inter-tension) reveals the opposite.**
 

@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-171 to H-DNA-210 -- Molecular Biology Saturation
+**n6 Grade: 🟩 EXACT** (auto-graded, 15 unique n=6 constants)
+
 
 ## Hypothesis
 

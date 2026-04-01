@@ -1,4 +1,6 @@
 # H-CX-23: Rejection Improvement Law — improvement ≈ ln(K) × √(error_rate)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **The improvement margin from confidence-based rejection follows ln(K)×√(100-base). Here K=number of classes (10), ln(10)=2.30. This is the same constant as C57 (C48/τ(6)≈ln(10)), and reflects the "information capacity" of 10-class classification.**
 

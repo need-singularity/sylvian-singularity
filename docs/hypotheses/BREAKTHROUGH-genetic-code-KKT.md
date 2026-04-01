@@ -1,4 +1,6 @@
 # BREAKTHROUGH ATTEMPT: Derive sigma(n)=2n from Genetic Code Optimization
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 **Status: FAILED (Level 1 -- numerological coincidence only)**
 **Date: 2026-03-29**

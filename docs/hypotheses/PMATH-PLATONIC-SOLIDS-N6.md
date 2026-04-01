@@ -1,4 +1,6 @@
 # PMATH-PLATONIC-SOLIDS-N6: Platonic Solids and the Arithmetic of n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 **Status**: EXACT (13/13 connections verified)
 **GZ Dependency**: Independent (pure mathematics)

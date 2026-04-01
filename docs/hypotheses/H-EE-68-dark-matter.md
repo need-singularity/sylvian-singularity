@@ -1,4 +1,6 @@
 # H-EE-68: Dark Matter Fraction from N=6 Arithmetic — Open
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

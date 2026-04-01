@@ -1,4 +1,6 @@
 # HOM-001: Hopf Fibrations, Stable Homotopy, Mobius Group
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 - **ID**: HOM-001
 - **Grade**: PROVEN + FACT

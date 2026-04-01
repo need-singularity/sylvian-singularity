@@ -1,4 +1,6 @@
 # H-379: Obang Pentagon Golden Ratio
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Status:** Proposed
 **Golden Zone Dependency:** Partial (pentagon geometry is independent; Golden Zone mapping is GZ-dependent)

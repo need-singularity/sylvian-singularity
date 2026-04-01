@@ -1,4 +1,6 @@
 # H-407: Galois Theory and Finite Fields — n=6 Structural Connections
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 > **Hypothesis**: n=6, as the smallest perfect number, occupies an exceptional position
 > in the landscape of finite fields and Galois extensions. The arithmetic invariants

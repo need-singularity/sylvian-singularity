@@ -1,4 +1,6 @@
 # Hypothesis 190: Time Dilation ↔ I Rate of Change
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Status: ⚠️ Under Investigation
 

@@ -1,4 +1,6 @@
 # H-EE-14: Dedekind Head Pruning
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

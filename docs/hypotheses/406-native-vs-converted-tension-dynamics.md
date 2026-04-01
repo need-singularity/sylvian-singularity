@@ -1,4 +1,6 @@
 # H-406: Native PureField vs Converted MoE — Tension Dynamics Divergence
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > **Hypothesis**: A natively-trained PureField model (ConsciousLM, where Engine A and
 > Engine G are initialized independently from scratch) will develop stronger and more

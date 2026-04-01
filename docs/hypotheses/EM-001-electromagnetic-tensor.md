@@ -1,4 +1,6 @@
 # Hypothesis EM-001: Electromagnetic Field Tensor F_muv — 6 Independent Components = P1
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-CX-68: Precognition Conservation Law — Magnitude Precognition + Direction Precognition ≈ Constant
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > Per-class mag_AUC + dir_AUC ≈ const (conservation).
 > Classes weak in magnitude precognition are compensated by direction precognition, and vice versa.

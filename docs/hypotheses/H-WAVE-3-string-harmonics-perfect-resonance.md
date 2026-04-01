@@ -1,4 +1,6 @@
 # H-WAVE-3/8: Perfect Numbers = Perfectly Resonant Vibrating Bodies
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **Thesis**: 길이 L=6인 진동 현의 배음(harmonic) 파장이 정확히 n=6의
 > 산술 상수 {σ=12, n=6, τ=4, φ=2}이며, 약수 주파수의 역수 합

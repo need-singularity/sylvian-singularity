@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-061 to H-DNA-090 -- DNA Folding Extreme Push
+**n6 Grade: 🟩 EXACT** (auto-graded, 15 unique n=6 constants)
+
 
 ## Hypothesis
 

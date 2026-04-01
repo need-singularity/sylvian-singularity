@@ -1,4 +1,6 @@
 # H-EE-54: Quantum Error Correction Overhead = tau(6)/sigma(6) = 1/3
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

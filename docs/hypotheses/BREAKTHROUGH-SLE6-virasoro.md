@@ -1,4 +1,6 @@
 # BREAKTHROUGH ATTEMPT: Does c=0 in SLE Require n=6 to Be a Perfect Number?
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > **Hypothesis**: The appearance of kappa=6 in SLE (Schramm-Loewner Evolution)
 > with c=0 is structurally connected to the perfect number 6, possibly through

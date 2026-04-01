@@ -1,4 +1,6 @@
 # Hypothesis 289: Primes = Highest Tension (Cross-domain: Number Theory ↔ Consciousness)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **Prime numbers generate the highest tension in number system classification. The irregularity of primes creates maximum repulsion between engines. The "mystery of primes" in number theory is measurable as tension in consciousness engines.**
 

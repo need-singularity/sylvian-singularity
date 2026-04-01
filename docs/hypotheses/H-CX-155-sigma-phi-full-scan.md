@@ -1,4 +1,6 @@
 # H-CX-155: sigma*phi/(n*tau) Full Element Scan Z=1~118
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > Only at Z=6 (carbon) does sigma*phi/(n*tau)=1.000 (unique among multi-bond elements). Z=1 (hydrogen) also gives 1.0 but has 1 bond.
 > Complete scan for whether carbon is the only multi-bond element with sigma*phi=n*tau in Z=1~118.

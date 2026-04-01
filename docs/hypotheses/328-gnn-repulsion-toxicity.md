@@ -1,4 +1,6 @@
 # Hypothesis 328: GNN + Repulsion Field = Molecular Toxicity Prediction
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **Adding a repulsion field to a Graph Neural Network (GNN) allows tension to act as a "danger measure" in molecular toxicity prediction. Toxic molecules have high tension, safe molecules have low tension.**
 

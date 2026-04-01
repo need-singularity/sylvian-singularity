@@ -1,4 +1,6 @@
 # H-EE-119: Optimal Document Size — The System Predicts Its Own Saturation at 144
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis (META, SELF-REFERENTIAL)
 

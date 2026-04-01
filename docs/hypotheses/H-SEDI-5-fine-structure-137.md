@@ -1,4 +1,6 @@
 # H-SEDI-5: Fine Structure 1/alpha = (sigma-tau)*17 + 1 = 137
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 **Grade: ⚪ Ad hoc (+1 correction)**
 **Golden Zone dependency: None (pure arithmetic)**

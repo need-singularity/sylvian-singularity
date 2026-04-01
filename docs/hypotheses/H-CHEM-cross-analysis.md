@@ -8,6 +8,8 @@ script: verify/verify_chem_texas.py
 ---
 
 # Cross-Analysis: 12 GREEN Chemistry Hypotheses
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 > Are the 12 verified chemistry-to-n=6 mappings structurally meaningful,
 > or post-hoc pattern-matching on a rich arithmetic target?

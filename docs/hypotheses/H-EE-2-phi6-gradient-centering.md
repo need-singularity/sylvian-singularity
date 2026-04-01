@@ -1,4 +1,6 @@
 # H-EE-2: Phi6Simple Gradient Centering Properties
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-EE-6: Tensor-Core-Aligned HCN Dimensions
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 **Status**: SUPPORTED
 **Golden Zone Dependency**: None (pure number theory + hardware)

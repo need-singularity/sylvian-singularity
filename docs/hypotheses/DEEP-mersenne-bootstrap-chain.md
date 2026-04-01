@@ -1,4 +1,6 @@
 # DEEP: The Mersenne Bootstrap Chain
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 > **Hypothesis**: The chain M_2=3 -> P_1=6 -> sigma -> 12 -> sigma -> 28=P_2
 > is a unique self-bootstrapping structure in number theory, where the

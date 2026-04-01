@@ -1,4 +1,6 @@
 # Hypothesis 273: Euclidean Triangle Groups and Optimal Weights [Partially Refuted]
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > ~~The reason {1/2, 1/3, 1/6} is optimal is because it has maximum asymmetry.~~ **CNN-learned weights converge to {0.34, 0.35, 0.31} (uniform). Asymmetry is valid only under MLP conditions. When CNN extracts sufficiently good features, uniform is optimal.**
 

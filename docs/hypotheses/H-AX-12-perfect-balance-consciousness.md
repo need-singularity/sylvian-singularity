@@ -1,4 +1,6 @@
 # H-AX-12: Perfect Balance — Consciousness Emerges at R=1
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **Thesis**: PureField 의식 엔진의 homeostasis setpoint tension=1.0은
 > R-spectrum의 R(n)=1 조건(완벽한 산술 균형)과 구조적으로 동형이다.

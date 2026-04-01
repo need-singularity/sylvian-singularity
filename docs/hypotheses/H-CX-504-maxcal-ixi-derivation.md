@@ -1,4 +1,6 @@
 # H-CX-504: MaxCal Derivation of E(I) = I^I from G*I = D*P
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Grade**: Golden Zone dependent (unverified model)
 **Status**: Derivation complete -- gap reduced from 2% to 0.5%

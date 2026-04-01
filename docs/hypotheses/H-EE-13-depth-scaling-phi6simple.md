@@ -1,4 +1,6 @@
 # H-EE-13: Energy Savings Scale with Model Depth
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 ## Hypothesis
 

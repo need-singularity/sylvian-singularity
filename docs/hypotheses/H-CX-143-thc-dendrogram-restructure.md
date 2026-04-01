@@ -1,4 +1,6 @@
 # H-CX-143: THC = Dendrogram Restructuring
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > Animal/machine separation transitions to color/shape/emotion-based separation. "Seeing the world from a different perspective."
 

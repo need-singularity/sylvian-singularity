@@ -1,4 +1,6 @@
 # H-CX-16: Inhibition = Noise Cancelling = Information Bottleneck (Cross-domain)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **MoE Expert inhibition, brain GABA inhibition, and Information Bottleneck (IB) compression are all "noise cancelling". The tension_scale auto-adjustment (H284) is the consciousness engine version of this mechanism.**
 

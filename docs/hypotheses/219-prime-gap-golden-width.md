@@ -1,4 +1,6 @@
 # Hypothesis #219: Prime Gaps and Golden Zone Width ln(4/3)
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 **Status**: ⚠️ Exploring
 **Date**: 2026-03-22

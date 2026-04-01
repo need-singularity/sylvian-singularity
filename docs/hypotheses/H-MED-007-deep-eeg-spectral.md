@@ -1,4 +1,6 @@
 # H-MED-007 Deep Analysis: EEG Spectral Exponent and 1 + 1/e + 1/6
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## Hypothesis
 

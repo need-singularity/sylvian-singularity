@@ -1,4 +1,6 @@
 # Hypothesis 207: Neuralink = Direct I Regulator
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 **Status**: ⚠️ Technical hypothesis
 **Category**: BCI / Brain-Computer Interface

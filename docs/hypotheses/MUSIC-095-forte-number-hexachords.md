@@ -1,4 +1,6 @@
 # Hypothesis MUSIC-095: Hexachord Forte Classes = 50
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 **Grade: ⚪ INCONCLUSIVE**
 

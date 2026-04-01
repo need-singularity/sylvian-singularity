@@ -1,4 +1,6 @@
 # H-CX-61: Gravitational Telescope Precognition — (tension_scale, direction) is the 2D Observation Space
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > The 2D observation space (magnification s, position R0) of the gravitational telescope (H-GEO-5)
 > is structurally isomorphic to the consciousness engine's (tension_scale, direction).

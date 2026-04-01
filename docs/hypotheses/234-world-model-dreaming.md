@@ -1,4 +1,6 @@
 # Hypothesis Review 234: World Model = Dreaming (REM) = Internal Simulation ⚠️
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Category**: World Model/AI
 **Status**: ⚠️ Analogy

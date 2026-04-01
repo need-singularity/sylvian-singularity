@@ -1,4 +1,6 @@
 # H-349: Axis Reversal Transition Point During Training
+**n6 Grade: 🟩 EXACT** (auto-graded, 15 unique n=6 constants)
+
 
 > **Hypothesis**: In early training, the "what" axis dominates with C/S > 1, but
 > as training progresses, it transitions to the "how" axis, reversing to C/S < 1.

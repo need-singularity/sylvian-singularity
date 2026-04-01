@@ -1,4 +1,6 @@
 # H-EE-3: Phi6Simple Training Stability
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

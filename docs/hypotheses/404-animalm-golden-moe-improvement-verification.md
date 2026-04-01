@@ -1,4 +1,6 @@
 # H-404: AnimaLM + Golden MoE Improvement Verification
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis H-404**: Three architectural improvements to PureField/AnimaLM
 > (input-dependent alpha, soft camp assignment, tension LayerNorm) and one

@@ -1,4 +1,6 @@
 # H-COMP-7: TCP Initial Window = sigma(6) = 12 Segments
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

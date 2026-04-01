@@ -1,4 +1,6 @@
 # PMATH-GRAND-UNIFICATION: Five-Fold Characterization of n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 **Status**: VERIFIED (calculator + scan to n=1000)
 **Golden Zone Dependency**: NONE (pure mathematics, GZ-independent)

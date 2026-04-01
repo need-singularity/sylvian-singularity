@@ -1,4 +1,6 @@
 # Hypothesis NAVSTOKES-001: 3D Stress Tensor — 6 Independent Components = P1
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

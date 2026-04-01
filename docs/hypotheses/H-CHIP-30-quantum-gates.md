@@ -1,4 +1,6 @@
 # H-CHIP-30: Universal Quantum Gate Set = 6 Gates
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

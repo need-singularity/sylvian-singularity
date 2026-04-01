@@ -1,4 +1,6 @@
 # H-CX-450: Confusion Topology is Computable from Raw Data (No Training)
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Status**: SUPPORTED (Fashion r=-0.81, MNIST merge r=-0.85, all top-5 3/5)
 **Golden Zone Dependency**: None

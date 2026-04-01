@@ -1,4 +1,6 @@
 # H-EE-7: Head-Dim Diversity Improves Attention
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 **Status**: PARTIALLY SUPPORTED
 **Golden Zone Dependency**: None (pure number theory + empirical ML)

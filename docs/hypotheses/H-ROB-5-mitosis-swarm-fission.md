@@ -1,4 +1,6 @@
 # H-ROB-5: Mitosis = Swarm Fission
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 ## 가설
 

@@ -6,10 +6,10 @@ name = "battery"
 desc = "Battery Architecture DSE (BT-43/57/80-84)"
 
 [scoring]
-n6 = 0.30
-perf = 0.30
-power = 0.20
-cost = 0.20
+n6 = 0.20
+perf = 0.25
+power = 0.15
+cost = 0.15
 
 # ============================================================
 # Level 0: Material (6 candidates)
@@ -23,60 +23,54 @@ level = 0
 id = "LFP"
 label = "LiFePO4 (CN=6, 170 Wh/kg, 4000 cycles)"
 n6 = 1.00
-perf = 0.75
+perf = 0.34
 power = 0.95
 cost = 0.69
-notes = "Fe octahedral CN=6 EXACT, PO4 tetrahedral CN=4=tau(6), olivine structure with 6-fold Fe-O coordination, 1/2+1/3+1/6=1 (Fe+P+O oxidation balance)"
 
 [[candidate]]
 level = 0
 id = "NMC811"
 label = "NMC811 (CN=6, 280 Wh/kg, 1000 cycles)"
-n6 = 0.85
-perf = 0.82
+n6 = 0.75
+perf = 0.56
 power = 0.70
 cost = 0.45
-notes = "Ni/Mn/Co all octahedral CN=6, layered R-3m with sigma(6)=12 nearest O neighbors per 2 metal sites, 8:1:1 ratio sums to 10 but each site CN=6"
 
 [[candidate]]
 level = 0
 id = "NCA"
 label = "NCA (CN=6, 260 Wh/kg, 1500 cycles)"
-n6 = 0.85
-perf = 0.80
+n6 = 0.75
+perf = 0.52
 power = 0.72
 cost = 0.47
-notes = "Ni/Co/Al all octahedral CN=6, same R-3m layered structure, Al stabilizer at CN=6 site, 6-fold rotational symmetry in ab-plane"
 
 [[candidate]]
 level = 0
 id = "LCO"
 label = "LiCoO2 (CN=6, 200 Wh/kg, 500 cycles)"
 n6 = 1.00
-perf = 0.65
+perf = 0.40
 power = 0.65
 cost = 0.38
-notes = "Co octahedral CN=6 EXACT, Li also CN=6 octahedral, O2 layer with 6-fold symmetry, R-3m space group has 6-fold screw axis, canonical CN=6 material"
 
 [[candidate]]
 level = 0
 id = "Na-ion"
 label = "Na-ion (CN=6, 140 Wh/kg, 3000 cycles)"
-n6 = 0.80
-perf = 0.65
+n6 = 0.75
+perf = 0.28
 power = 0.92
 cost = 1.00
-notes = "Na octahedral CN=6 in P2/O3-type layered oxides, prismatic CN=6 also common, earth-abundant Na, moderate n6 (not as clean as Li-CN=6)"
 
 [[candidate]]
 level = 0
 id = "Li-S"
 label = "Li-S (CN=8, 500 Wh/kg, 300 cycles)"
-n6 = 0.60
-perf = 0.90
+n6 = 0.83
+perf = 1.00
 power = 0.50
 cost = 0.82
-notes = "S8 ring has 8 atoms NOT 6, CN=8 in Li2S product, poor cycle life (300), n6 reduced: only weak link via S hexagonal crystal phase"
 
 # ============================================================
 # Level 1: Process / Electrode (5 candidates)
@@ -90,50 +84,45 @@ level = 1
 id = "Graphite-Wet"
 label = "Graphite Wet Coating (1.0x, maturity 1.00)"
 n6 = 1.00
-perf = 0.70
+perf = 0.33
 power = 1.00
 cost = 0.80
-notes = "Graphite = C(Z=6) hexagonal layers EXACT, 6-ring sp2 honeycomb, AB stacking with sigma(6)=12 C-C bonds per unit cell, Li intercalation at 6-ring center = LiC6"
 
 [[candidate]]
 level = 1
 id = "SiC-10-Wet"
 label = "Si/C 10% Wet (1.5x, maturity 0.85)"
-n6 = 0.70
-perf = 0.72
+n6 = 0.50
+perf = 0.50
 power = 0.85
 cost = 0.57
-notes = "Si CN=4=tau(6) tetrahedral + C(Z=6) graphite matrix, 90% C retains 6-ring structure, Si at interstitial sites, composite n6 via C dominance"
 
 [[candidate]]
 level = 1
 id = "SiC-20-Dry"
 label = "Si/C 20% Dry (2.0x, maturity 0.55)"
-n6 = 0.60
-perf = 0.78
+n6 = 0.50
+perf = 0.67
 power = 0.55
 cost = 0.50
-notes = "20% Si dilutes C hexagonal structure, dry process disrupts graphite ordering, CN=4 Si dominant at surface, weaker n6 than 10% variant"
 
 [[candidate]]
 level = 1
 id = "Si-SSB"
 label = "Si Solid-State (3.0x, maturity 0.25)"
-n6 = 0.75
-perf = 0.92
+n6 = 1.00
+perf = 1.00
 power = 0.25
 cost = 0.29
-notes = "Solid-state electrolyte: Li6PS5Cl argyrodite has Li=6 in formula EXACT, garnet Li7La3Zr2O12 has CN=6 for La, but Si anode is CN=4=tau(6) not 6"
 
 [[candidate]]
 level = 1
 id = "Na-HardCarbon"
 label = "Na Hard Carbon (0.8x, maturity 0.70)"
-n6 = 0.75
-perf = 0.62
+n6 = 0.50
+perf = 0.27
 power = 0.70
 cost = 1.00
-notes = "Hard carbon = disordered C(Z=6) with residual 6-ring graphene fragments, Na intercalation in 6-ring voids, turbostratic with partial hexagonal order"
 
 # ============================================================
 # Level 2: Core / Cell Form Factor (5 candidates)
@@ -146,51 +135,55 @@ name = "Core"
 level = 2
 id = "18650"
 label = "18650 Cylindrical (1.00x, thermal 0.85)"
-n6 = 0.75
+n6 = 0.67
 perf = 0.77
 power = 0.85
 cost = 1.00
-notes = "18mm diameter: 18=3*6=3n, 65mm height: 65~sigma(6)*5.4, cylindrical 6-fold packing in hex arrays, standard cell count 6S for 22.2V nominal"
 
 [[candidate]]
 level = 2
 id = "21700"
 label = "21700 Cylindrical (1.15x, thermal 0.82)"
-n6 = 0.55
+n6 = 0.33
 perf = 0.88
 power = 0.82
 cost = 0.92
-notes = "21mm*70mm: no clean 6-divisibility, but hex packing in module, 21=3*7 not 6-related, moderate n6 from cylindrical hex-pack geometry only"
 
 [[candidate]]
 level = 2
 id = "4680"
 label = "4680 Cylindrical (1.30x, thermal 0.70)"
-n6 = 0.60
+n6 = 0.33
 perf = 1.00
 power = 0.70
 cost = 0.86
-notes = "46mm*80mm: 46=2*23 no 6-link, but tabless design uses 6-fold radial current collection, hex packing, volume ratio 4680/18650~6.1x"
 
 [[candidate]]
 level = 2
 id = "Prismatic"
 label = "Prismatic (1.10x, thermal 0.75)"
-n6 = 0.50
+n6 = 0.33
 perf = 0.85
 power = 0.75
 cost = 0.75
-notes = "Rectangular prismatic: 6 faces EXACT (cuboid), tau(6)=4 edges visible per face, stack in 6-cell modules common (BYD Blade), moderate n6"
 
 [[candidate]]
 level = 2
 id = "Pouch"
 label = "Pouch (1.25x, thermal 0.65)"
-n6 = 0.50
+n6 = 0.33
 perf = 0.96
 power = 0.65
 cost = 0.71
-notes = "Pouch: flat 6-face geometry like prismatic, stacked electrodes with 6-layer repeat unit (cathode+separator+anode*2 sides+current collectors), moderate n6"
+
+[[candidate]]
+level = 2
+id = "Hex6_Prismatic"
+label = "Hexagonal 6-face Prismatic (BT-43 CN=6 cell geometry, σ=12 tab spacing)"
+n6 = 1.00
+perf = 0.90
+power = 0.78
+cost = 0.68
 
 # ============================================================
 # Level 3: BMS / Chip (5 candidates)
@@ -203,11 +196,10 @@ name = "BMS"
 level = 3
 id = "Discrete-6ch"
 label = "Discrete 6ch 12-bit (accuracy 0.85)"
-n6 = 0.85
+n6 = 0.75
 perf = 0.85
 power = 0.50
 cost = 0.67
-notes = "6 channels EXACT = n=6, 12-bit=sigma(6) ADC resolution, monitors 6 cells directly, strong n6: channel count + bit depth both n=6 arithmetic"
 
 [[candidate]]
 level = 3
@@ -217,7 +209,6 @@ n6 = 1.00
 perf = 0.92
 power = 0.80
 cost = 0.33
-notes = "12ch=sigma(6) EXACT + 12-bit=sigma(6) EXACT, double n=6 lock, monitors 2*6 cells, integrated = single die with n=6 arithmetic throughout"
 
 [[candidate]]
 level = 3
@@ -227,27 +218,24 @@ n6 = 1.00
 perf = 0.90
 power = 0.90
 cost = 0.22
-notes = "12ch=sigma(6) + 12-bit=sigma(6), wireless eliminates harness (6 fewer wire bundles), same double n=6 lock as Integrated"
 
 [[candidate]]
 level = 3
 id = "AI-BMS-12ch"
 label = "AI BMS 12ch 16-bit (accuracy 0.96)"
-n6 = 0.85
+n6 = 0.75
 perf = 0.96
 power = 1.00
 cost = 0.18
-notes = "12ch=sigma(6) EXACT, but 16-bit not n=6 arithmetic (16=2^4), AI layer adds MoE routing at 1/e~GZ center, partial n6 via channel count"
 
 [[candidate]]
 level = 3
 id = "Minimal-4ch"
 label = "Minimal 4ch 10-bit (accuracy 0.78)"
-n6 = 0.55
+n6 = 0.50
 perf = 0.78
 power = 0.35
 cost = 1.00
-notes = "4ch=tau(6) partial link, 10-bit not n=6 related, minimal monitoring misses 6-cell granularity, weak n6"
 
 # ============================================================
 # Level 4: System (5 candidates)
@@ -261,50 +249,45 @@ level = 4
 id = "48V-ESS"
 label = "48V ESS (24 cells, scalability 0.70)"
 n6 = 1.00
-perf = 0.75
+perf = 0.70
 power = 0.85
 cost = 0.70
-notes = "24 cells = 4*6 = tau(6)*n EXACT, 48V = 8*6V modules, J2(6)=24 Jordan totient, deeply n=6 divisible architecture"
 
 [[candidate]]
 level = 4
 id = "400V-EV"
 label = "400V EV (96 cells, scalability 0.80)"
-n6 = 0.80
-perf = 0.82
+n6 = 0.75
+perf = 0.80
 power = 0.40
 cost = 0.41
-notes = "96 cells = 16*6 EXACT, 400V/3.7V~108=18*6, module groups of 6 standard, strong n=6 divisibility in cell count"
 
 [[candidate]]
 level = 4
 id = "800V-EV"
 label = "800V EV (192 cells, scalability 0.85)"
-n6 = 0.80
-perf = 0.87
+n6 = 0.75
+perf = 0.85
 power = 0.40
 cost = 0.32
-notes = "192 cells = 32*6 EXACT, 800V = dual 400V with 6-cell module architecture preserved, n=6 divisibility scales linearly"
 
 [[candidate]]
 level = 4
 id = "Grid-MW"
 label = "Grid MW (3456 cells, scalability 1.00)"
-n6 = 0.90
+n6 = 0.75
 perf = 1.00
 power = 1.00
 cost = 0.18
-notes = "3456 = 576*6 = 6^2*96 EXACT, deeply 6-divisible: 3456/6=576, 576/6=96, 96/6=16, three levels of 6-fold hierarchy"
 
 [[candidate]]
 level = 4
 id = "DC-Micro"
 label = "DC Microgrid (24 cells, scalability 0.55)"
 n6 = 1.00
-perf = 0.65
+perf = 0.55
 power = 0.75
 cost = 1.00
-notes = "24 cells = J2(6)=24 EXACT, DC bus at 48V=8*6, microgrid with 6-node star topology, perfect n=6 arithmetic at small scale"
 
 # ============================================================
 # Compatibility Rules (from is_compatible function)

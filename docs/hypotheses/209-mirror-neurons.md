@@ -1,4 +1,6 @@
 # Hypothesis #209: Mirror Neurons = Automatic D, P, I Matching System
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Status**: ⚠️ Speculation
 **Date**: 2026-03-22

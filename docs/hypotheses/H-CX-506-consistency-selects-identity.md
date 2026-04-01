@@ -1,4 +1,6 @@
 # H-CX-506: Consistency Selects Identity — Why the Exponent Equals the Base
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis**: In the G=D*P/I system, the self-referential cost function I^I
 > is not an axiom but a **theorem** forced by the intersection of two independent

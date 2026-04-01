@@ -1,4 +1,6 @@
 # H-CX-113: 12 Expert MoE = Perfect MoE
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > σ(6)=12 Expert MoE has "perfect" routing. Performance discontinuity when 13th is added.
 

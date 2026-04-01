@@ -1,4 +1,6 @@
 # H-402: Golden MoE PH-Guided Routing
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis:** Augmenting Golden MoE's gating mechanism with Persistent Homology (PH)
 > of input representations — as topological signatures per expert — will improve routing

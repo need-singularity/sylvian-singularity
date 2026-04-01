@@ -1,4 +1,6 @@
 # H-MED-027 and H-MED-030: Deep Investigation of Clinical Scoring Scales and n=6 Structure
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 > **Hypothesis**: The SOFA score (6 organs, max 24) and Glasgow Coma Scale (range 12, motor max 6)
 > encode perfect number n=6 arithmetic not by design intent but because the underlying clinical

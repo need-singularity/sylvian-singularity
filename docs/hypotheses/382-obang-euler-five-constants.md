@@ -1,4 +1,6 @@
 # H-382: Obang-Euler Five Constants Hypothesis
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **Hypothesis**: The five fundamental constants of Euler's identity (e, i, π, 0, 1)
 > map bijectively onto the five directions of Obang (五方, Five Directions), and Euler's identity

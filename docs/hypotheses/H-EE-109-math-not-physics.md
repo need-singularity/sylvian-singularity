@@ -1,4 +1,6 @@
 # H-EE-109: Mathematical Truth vs Physical Law — R(6)=1 Is Arithmetic, Not Physics
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

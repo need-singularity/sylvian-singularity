@@ -1,4 +1,6 @@
 # H-405: AnimaLM Expert Topological Specialization
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 > **Hypothesis**: In a trained AnimaLM (A-G repulsion field) model, Engine A experts
 > and Engine G experts will develop distinct topological signatures measurable via

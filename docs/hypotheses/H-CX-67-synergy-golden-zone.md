@@ -1,4 +1,6 @@
 # H-CX-67: Optimal Synergy Point — Unified Precognition Synergy Maximized in Golden Zone
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > Unified precognition synergy (unified - max(individual)) is
 > maximized in a specific range of tension distribution, and that range coincides with the Golden Zone (1/e ± ln(4/3)/2).

@@ -1,4 +1,6 @@
 # Hypothesis MUSIC-105: Concert Pitch A440: 440 and n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 **Grade: ⚪ INCONCLUSIVE**
 

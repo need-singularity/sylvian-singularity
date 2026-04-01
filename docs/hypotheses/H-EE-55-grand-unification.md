@@ -1,4 +1,6 @@
 # H-EE-55: N6 Grand Unification — R(n)=1 as Universal Optimization Principle
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-CX-489: Trefoil Knot Invariants = n=6 Arithmetic
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > All invariants of the trefoil knot (simplest non-trivial knot) take values
 > from the set {1, 2, 3, -2}, which can be expressed as n=6 arithmetic

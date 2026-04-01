@@ -1,4 +1,6 @@
 # Ecology / Evolution Hypotheses H-ECO-001 through H-ECO-015
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 ## Hypothesis Bundle
 

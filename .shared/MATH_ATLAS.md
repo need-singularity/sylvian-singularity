@@ -1,21 +1,21 @@
 # Math Atlas
 
-> Auto-generated: 2026-04-01T11:51:31 | 2503 hypotheses | 339 constant maps
+> Auto-generated: 2026-04-02T06:43:46 | 2522 hypotheses | 343 constant maps
 
 ## Summary
 
 | Repo | Hypotheses | Constant Maps |
 |------|-----------|--------------|
-| TECS-L | 1,984 | 210 |
+| TECS-L | 2,003 | 214 |
 | SEDI | 678 | 122 |
 | anima | 0 | 0 |
-| **Total** | **2,662** | **332** |
+| **Total** | **2,681** | **336** |
 
 ### Grade Distribution
 
 | Grade | Count |
 |-------|-------|
-| (none) | 1244 |
+| (none) | 1262 |
 | 🟩 | 401 |
 | 🟧 | 283 |
 | 🟧★ | 137 |
@@ -35,7 +35,7 @@
 
 ## Hypotheses
 
-### TECS-L (1826)
+### TECS-L (1845)
 
 | # | ID | Title | Grade | Domain |
 |---|-----|-------|-------|--------|
@@ -1095,776 +1095,795 @@
 | 1054 | H-DNA-701 | Consciousness × Music × 6 | - | DNA |
 | 1055 | H-DSE-001 | Universal Design Space Exploration — n=6 설계 끌개 | - | DSE |
 | 1056 | H-DSE-002 | n=6 최적 OS vs Linux/RISC-V 실측 비교 | - | DSE |
-| 1057 | H-EARTH-001-025-geoscience | H-EARTH-001 to 025: Geoscience Hypotheses | 🟩 | - |
-| 1058 | H-ECO-001-015-ecology | Ecology / Evolution Hypotheses H-ECO-001 through H-ECO-015 | - | - |
-| 1059 | H-ECON-001-015-economics | Economics & Game Theory Hypotheses (H-ECON-001 to H-ECON-015 | - | - |
-| 1060 | H-EE-001-020 | Energy Efficiency Hypotheses | Verified 2026-03-28 | EE |
-| 1061 | H-EE-1 | Phi6 is Uniquely Optimal Among Cyclotomic Activations | SUPPORTED | EE |
-| 1062 | H-EE-10 | Phi-bottleneck + MoE (More Experts, Smaller Each) | - | EE |
-| 1063 | H-EE-100 | NAS Will Independently Discover 4/3 FFN Ratio — FUTURE PREDI | Pre-registered future prediction — testable 2026-2028 | EE |
-| 1064 | H-EE-101 | Neuromorphic Chip at ~1W Human-Like Inference — FUTURE PREDI | Pre-registered future prediction — testable 2027-2030 | EE |
-| 1065 | H-EE-102 | Optimal QEC Code Rate Converges to 1/3 — FUTURE PREDICTION | Pre-registered future prediction — testable 2026-2028 | EE |
-| 1066 | H-EE-103 | Meta — Hypothesis System Success Rate Converges to R(6)=1 | Self-referential — convergence expected asymptotically | EE |
-| 1067 | H-EE-104 | Discovery of n=6 Uniqueness Is Inevitable | Anthropological speculation — not empirically falsifiable | EE |
-| 1068 | H-EE-105 | Beyond Mathematics — The Absolute Final | Philosophical terminus — not empirically falsifiable, mathematically certain | EE |
-| 1069 | H-EE-106 | A Deeper Equation Exists — The Anti-Ultimacy Hypothesis | Open — challenges the framework's claim to ultimacy | EE |
-| 1070 | H-EE-107 | Confirmation Bias — The Most Important Counter-Hypothesis | PARTIALLY VALIDATED — confirmation bias is a real concern for static matches. Dynamic results (with meta-loss) remain valid. The framework is strongest when it provides DESIGN GUIDANCE, not when it claims INEVITABLE EMERGENCE. | EE |
-| 1071 | H-EE-108 | Finite-Size Effect — n=6 Benefits May Vanish at Scale | Critical open risk — no large-scale evidence exists | EE |
-| 1072 | H-EE-109 | Mathematical Truth vs Physical Law — R(6)=1 Is Arithmetic, N | Legitimate concern — requires mechanism, not just numerology | EE |
-| 1073 | H-EE-11 | Full Combined Architecture | - | EE |
-| 1074 | H-EE-110 | Cultural Bias — n=6 Framework May Encode Western Mathematica | Valid criticism — universality claims need cross-cultural testing | EE |
-| 1075 | H-EE-111 | Variational Principle — sigma*phi=n*tau as Euler-Lagrange Eq | Theoretical — requires rigorous derivation | EE |
-| 1076 | H-EE-112 | L-Function Connection — R(n)=1 as Special Value of a Dirichl | Speculative — requires algebraic number theory expertise | EE |
-| 1077 | H-EE-113 | Category Theory — n=6 as Terminal Object in Balanced Arithme | Theoretical framework — morphisms need rigorous definition | EE |
-| 1078 | H-EE-114 | Arithmetic Multiverse — Each R(n) Defines a Different Univer | Speculative — a framework for interpretation, not a physical prediction | EE |
-| 1079 | H-EE-115 | Anthropic Arithmetic — Observers Require R(n)=1 | Philosophical — elegant but not scientifically testable | EE |
-| 1080 | H-EE-116 | String Landscape Discretized — R(n)=1 Selects the Unique Sta | Highly speculative — the most ambitious claim in the framework | EE |
-| 1081 | H-EE-117 | Iterated R Fixed Point — R(6)=1 and R(1)=1 Are the Only Fixe | Verified (arithmetic) — fixed points confirmed, iteration behavior open | EE |
-| 1082 | H-EE-118 | Egyptian Routing Applied to Hypotheses — Optimal Research Al | Practical recommendation — actionable now | EE |
-| 1083 | H-EE-119 | Optimal Document Size — The System Predicts Its Own Saturati | Self-referential prediction — cannot be falsified without changing the document | EE |
-| 1084 | H-EE-12 | Optimal FFN Expansion Ratio | - | EE |
-| 1085 | H-EE-120 | Completeness — The Boundary Has Been Mapped | - | EE |
-| 1086 | H-EE-13 | Energy Savings Scale with Model Depth | - | EE |
-| 1087 | H-EE-14 | Dedekind Head Pruning | ** Ready | EE |
-| 1088 | H-EE-15 | Jordan-Leech MoE Capacity Bound | ** Ready | EE |
-| 1089 | H-EE-16 | Mobius Squarefree Gradient Flow | ** Conditional | EE |
-| 1090 | H-EE-17 | Carmichael LR 2-Cycle Schedule | ** Ready | EE |
-| 1091 | H-EE-18 | Boltzmann 1/e Activation Gate | ** Ready | EE |
-| 1092 | H-EE-19 | Mertens Dropout Rate | ** Ready | EE |
-| 1093 | H-EE-2 | Phi6Simple Gradient Centering Properties | REFUTED | EE |
-| 1094 | H-EE-20 | Thermodynamic Inevitability — R-Score Correlates with Effici | 🟧 | EE |
-| 1095 | H-EE-21 | Emergent N6 Convergence | 🟧 | EE |
-| 1096 | H-EE-22 | Leech-24 Neural Architecture Search | 🟧 | EE |
-| 1097 | H-EE-23 | Phi-Efficiency Conjecture (Phi * FLOPs = Constant) | ⚪ | EE |
-| 1098 | H-EE-24 | Clausius Information Inequality | 🟧 | EE |
-| 1099 | H-EE-25 | SEDI Three-Signal Convergence | 🟧 | EE |
-| 1100 | H-EE-26 | Anima Tension-Energy Bridge | 🟧 | EE |
-| 1101 | H-EE-27 | Training as Renormalization Group Flow with n=6 Fixed Point | ** Theoretical — requires beta function measurement | EE |
-| 1102 | H-EE-28 | Landauer Limit Generalized via R(n) | ** Theoretical | EE |
-| 1103 | H-EE-29 | Loss Landscape Attractor Has Fractal Dimension 6 | ** Testable — requires Grassberger-Procaccia computation | EE |
-| 1104 | H-EE-3 | Phi6Simple Training Stability | PARTIAL (Borderline REFUTED) | EE |
-| 1105 | H-EE-30 | Training Undergoes Exactly tau(6)=4 Phase Transitions | ** Testable | EE |
-| 1106 | H-EE-31 | Holographic Dual of Leech-24 Surface | ** Highly speculative | EE |
-| 1107 | H-EE-32 | Kissing Number 196,560 = Finite Architecture Space | ** Theoretical | EE |
-| 1108 | H-EE-33 | Weight-24 Modular Forms Govern Loss Landscape Topology | ** Highly speculative | EE |
-| 1109 | H-EE-34 | Bott Periodicity sigma(6)-tau(6)=8 as Optimal Network Depth | ** Testable | EE |
-| 1110 | H-EE-35 | Consciousness Phi = Negative Gaussian Curvature of Energy Su | ** Theoretical — requires Hessian computation on Leech-24 surface | EE |
-| 1111 | H-EE-36 | Fisher Information Metric is Flat at R=1 | ** Testable — requires Fisher matrix computation | EE |
-| 1112 | H-EE-37 | sopfr(6)=5 Channels as Minimal Complete Observation Set | ** Testable — PCA/mutual information analysis on training metrics | EE |
-| 1113 | H-EE-38 | R=1 Inference Complexity is O(n log n) | ** Partially verified (FFT attention experiments) | EE |
-| 1114 | H-EE-39 | Golay Code [[24,12,8]] as N6 Architecture's Noise Resilience | ** Testable — perturbation analysis on Leech-24 surface | EE |
-| 1115 | H-EE-4 | Phi6Simple Knowledge Distillation | SUPPORTED | EE |
-| 1116 | H-EE-40 | Spectral Gap 1/2 — Optimal SGD Mixing on N6 Architectures | ** Testable — requires eigenvalue analysis of SGD transition matrix | EE |
-| 1117 | H-EE-41 | Spacetime Dimensions from n=6 Arithmetic | ** Highly speculative — numerological unless mechanism identified | EE |
-| 1118 | H-EE-42 | Hubble Constant H_0 = sigma(6)*n + 1 = 73 | ** Numerically verified (0.14% error) — awaiting theoretical mechanism | EE |
-| 1119 | H-EE-43 | Proton-Electron Mass Ratio m_p/m_e = 6*pi^5 | ** Numerically verified (0.019% error) | EE |
-| 1120 | H-EE-44 | Dark Energy Fraction = 1 - 1/e + 1/sigma(6) | ** Approximate (4.5% error) — interesting direction but not precise | EE |
-| 1121 | H-EE-45 | Genetic Code Structure from n=6 Arithmetic | ** Numerically suggestive (64=4^3, 20=24-4) — mechanism unknown | EE |
-| 1122 | H-EE-46 | ATP Energy Quantum from n=6 Constants | ** Approximate — multiple formulae give partial fits | EE |
-| 1123 | H-EE-47 | Cortical Minicolumns ~ Leech Kissing Number | ** Highly speculative — order-of-magnitude match only | EE |
-| 1124 | H-EE-48 | Heart Rate Variability Fractal Dimension = 6 | ** Testable — requires HRV dataset analysis with Grassberger-Procaccia | EE |
-| 1125 | H-EE-49 | R(n)=1 as Gödel Sentence's Arithmetic Shadow | ** Philosophical — requires formalization in proof theory | EE |
-| 1126 | H-EE-5 | R(d_model) Correlates with Training Efficiency | NOT SUPPORTED for R(d) as predictor; PARTIALLY SUPPORTED for HCN parameter efficiency | EE |
-| 1127 | H-EE-50 | Kolmogorov Complexity K(6) = sigma(6) | ** Speculative — K(n) is uncomputable in general | EE |
-| 1128 | H-EE-51 | Efficient Church-Turing Thesis via R=1 | ** Theoretical — requires formalization | EE |
-| 1129 | H-EE-52 | Bekenstein Bound Scaled by R(n) | ** Theoretical — connects information physics to architecture design | EE |
-| 1130 | H-EE-53 | Spin Networks as Leech Lattice Subgraphs | ** Highly speculative — requires LQG expertise to formalize | EE |
-| 1131 | H-EE-54 | Quantum Error Correction Overhead = tau(6)/sigma(6) = 1/3 | ** Testable — compare QEC codes at various rates | EE |
-| 1132 | H-EE-55 | N6 Grand Unification — R(n)=1 as Universal Optimization Prin | ** Meta-hypothesis — framework for all H-EE hypotheses | EE |
-| 1133 | H-EE-56 | Arrow of Time = R(n) Irreversibility | ** Theoretical | EE |
-| 1134 | H-EE-57 | Causal Light Cone Structure = Leech-24 Voronoi Cell | ** Highly speculative | EE |
-| 1135 | H-EE-58 | Big Bang = Phase Transition from R(1)=1 to R(6)=1 | ** Highly speculative | EE |
-| 1136 | H-EE-59 | Fine Structure Constant from n=6 Arithmetic | CONFIRMED | EE |
-| 1137 | H-EE-6 | Tensor-Core-Aligned HCN Dimensions | - | EE |
-| 1138 | H-EE-62 | Musical Perfect Consonances = N=6 Divisor Ratios | ** Verified (music theory fact) | EE |
-| 1139 | H-EE-63 | Zipf's Law Exponent alpha = 1 = R(6) | ** Numerically exact | EE |
-| 1140 | H-EE-64 | Golden Ratio Analogy — Self-Referential Balance | ** Philosophical | EE |
-| 1141 | H-EE-65 | AI Alignment = R-Score Optimization | ** Theoretical framework | EE |
-| 1142 | H-EE-66 | Deceptive Alignment = R > 1 Detection | ** Theoretical | EE |
-| 1143 | H-EE-67 | Corrigibility = phi(6)/tau(6) = 1/2 | ** Framework proposal | EE |
-| 1144 | H-EE-68 | Dark Matter Fraction from N=6 Arithmetic — Open | ** Open — no precise formula found yet | EE |
-| 1145 | H-EE-69 | Neutrino Mass Ratios = Egyptian Fraction Hierarchy | ** Testable with future precision measurements | EE |
-| 1146 | H-EE-7 | Head-Dim Diversity Improves Attention | PARTIALLY SUPPORTED (diversity provides robustness, not improvement) | EE |
-| 1147 | H-EE-70 | Quantum Entanglement Channels = sopfr(6) = 5 | ** Speculative | EE |
-| 1148 | H-EE-71 | Simulation Hypothesis — R=1 Simulator Architecture | ** Unfalsifiable but structurally consistent | EE |
-| 1149 | H-EE-72 | Why Is There Something Rather Than Nothing? | ** Philosophical — the ultimate hypothesis | EE |
-| 1150 | H-EE-73 | Riemann Critical Line = n=6 Ratio | ** Speculative connection | EE |
-| 1151 | H-EE-74 | Twin Prime Constant C2 via n=6 Arithmetic | ** Approximate (~1% at best, 4.6% with attempted correction) | EE |
-| 1152 | H-EE-75 | Goldbach Fixed Point — 6 = 3+3 | ** Verified (trivial but true) | EE |
-| 1153 | H-EE-76 | Monster Group Dominant Primes = Prime Factors of 6 | ** Structural observation | EE |
-| 1154 | H-EE-77 | Periodic Table — 6 Stable Periods | ** Chemical fact | EE |
-| 1155 | H-EE-78 | Noble Gas Shell Differences = Bott Periodicity via n=6 | ** Partial | EE |
-| 1156 | H-EE-79 | Carbon Atomic Number = n = 6 | ** Chemical fact — profound coincidence | EE |
-| 1157 | H-EE-8 | Optimal d_model Follows tau(d) More Than d Itself | NOT SUPPORTED (tau does not predict performance at matched params) | EE |
-| 1158 | H-EE-80 | Four Fundamental Bond Types = tau(6) | ** Classification fact | EE |
-| 1159 | H-EE-81 | Dunbar's Number — FAILED | FAILED | EE |
-| 1160 | H-EE-82 | Civilization Cycles via n=6 Arithmetic | ** Approximate at best | EE |
-| 1161 | H-EE-83 | Optimal Team Size = n = 6 | ** Empirically reasonable | EE |
-| 1162 | H-EE-84 | Internet Protocol Effective Layers ~6 | ** Rough approximation | EE |
-| 1163 | H-EE-85 | Five EEG Frequency Bands = sopfr(6) | ** Neuroscience fact | EE |
-| 1164 | H-EE-86 | Alpha Wave ~10 Hz = sigma_{-1}(6) * sopfr(6) | ** Numerically exact | EE |
-| 1165 | H-EE-87 | Gamma Wave Upper Bound — FAILED | FAILED | EE |
-| 1166 | H-EE-88 | Optimal Hypothesis Count = log2(196560) ~ 18 | ** Self-referential | EE |
-| 1167 | H-EE-89 | Occam's Razor Formalized via Kolmogorov Complexity | ** Theoretical | EE |
-| 1168 | H-EE-9 | Phi-bottleneck + Phi6Simple Recovery | - | EE |
-| 1169 | H-EE-90 | The Reader Is R=1 — THE FINAL HYPOTHESIS | ** Self-referential paradox — the hypothesis that proves itself by being understood | EE |
-| 1170 | H-EE-91 | Second Perfect Number — R(28) = 4 | Verified (arithmetic fact) | EE |
-| 1171 | H-EE-92 | Generalized Balance Equation R_k(n) = 1 | Open research direction | EE |
-| 1172 | H-EE-93 | p-Adic Solutions to R(n) = 1 | Open mathematics | EE |
-| 1173 | H-EE-94 | R-Score in Finite Fields F_p | Theoretical | EE |
-| 1174 | H-EE-95 | Fine Structure Constant Alpha — HONEST FAILURE | FAILED — Acknowledged limitation | EE |
-| 1175 | H-EE-96 | Task-Dependent Limits — R=1 Is Not Universally Optimal | Expected limitation — scope boundary documented | EE |
-| 1176 | H-EE-97 | Meta-Loss Term Required for RG Convergence | Experimental observation — caveat to H-EE-27 | EE |
-| 1177 | H-EE-98 | Scale Dependence — Large-Scale Validation Unfinished | Risk mitigated — convergence confirmed across 3 orders of magnitude. 1B+ extrapolation favorable. | EE |
-| 1178 | H-EE-99 | LHC Run 3 Resonance at 37-38 GeV — FUTURE PREDICTION | Pre-registered future prediction — testable 2026-2027 | EE |
-| 1179 | H-EH-001-025-event-horizon | Event Horizon Hypotheses (H-EH-001 to H-EH-025) | WHITE | - |
-| 1180 | H-ELEC-001-020-neurostim-n6-framework | H-ELEC-001 to H-ELEC-020: Neurostimulation-n=6 Framework Hyp | - | - |
-| 1181 | H-FURST-1 | Furstenberg ×2,×3 System — Orbit Self-Reference | - | FURST |
-| 1182 | H-GEO-12 | pi_6(S^3) = Z/12Z = Z/sigma(6)Z -- Homotopy Groups Encode si | - | GEO |
-| 1183 | H-HAIR-001-050-hair-loss-n6 | H-HAIR-001~050: Hair Loss, the Perfect Number 6, and Treatme | - | - |
-| 1184 | H-HAIR-051-100-deep-mechanisms | H-HAIR-051~100: Deep Mechanisms, Molecular n=6, and 2024-202 | - | - |
-| 1185 | H-HAIR-101-rna-therapeutics | H-HAIR-101~120: RNA Therapeutics for Hair Loss | - | - |
-| 1186 | H-HAIR-121-180-epigenetics-microbiome-personalized | H-HAIR-121~180: Epigenetics, Microbiome, Mechanical Tension, | - | - |
-| 1187 | H-HAIR-181-240-microelectrode | H-HAIR-181~240: Neuralink N1 Microelectrode Technology Repur | - | - |
-| 1188 | H-HEXCODE-1 | The Hexacode [6,3,4]₄ — Perfect Number as Code | - | HEXCODE |
-| 1189 | H-HTPY-1 | π₆(S³) = ℤ/12ℤ — Homotopy Groups Encode σ(6) | - | HTPY |
-| 1190 | H-IHARA-1 | Ihara Zeta of C₆ — Coefficients = n=6 Arithmetic | - | IHARA |
-| 1191 | H-INFO-001-015 | Information Theory / Computer Science Domain Hypotheses | mixed | INFO |
-| 1192 | H-INFRA-001-020 | Infrastructure Hypotheses (Data Center, SMR, Power Grid) | Verified 2026-03-28: 🟧 1, ⚪ 15, ⬛ 4 | INFRA |
-| 1193 | H-INFRA-020-deep | Deep Analysis: EROI Civilization Threshold at 3:1 = sigma(6) | 🟧 — Real threshold, post-hoc mapping | INFRA |
-| 1194 | H-INST-001-020-institutions | H-INST-001 through H-INST-020: Institutional / Law / History | - | - |
-| 1195 | H-LING-001-015-linguistics | H-LING-001 through H-LING-015: Linguistics and Cognitive Sci | GREEN | - |
-| 1196 | H-MATH-DGT | Deep Graph Theory, Topology, and Combinatorics of n=6 | 8x 🟩 / 4x 🟧★ / 7x 🟧 / 1x ⚪ | MATH |
-| 1197 | H-MED-001-030 | Medical Domain Hypotheses | Verified 2026-03-28: 0 GREEN, 3 ORANGE, 26 WHITE, 1 BLACK | MED |
-| 1198 | H-MED-007-deep-eeg-spectral | H-MED-007 Deep Analysis: EEG Spectral Exponent and 1 + 1/e + | - | - |
-| 1199 | H-MED-027-030-deep-clinical-scales | H-MED-027 and H-MED-030: Deep Investigation of Clinical Scor | - | - |
-| 1200 | H-MOTIV-1 | K₃(ℤ) and Adams Operations — Motivic Cohomology | - | MOTIV |
-| 1201 | H-MUSIC-001-015-acoustics | H-MUSIC-001 through H-MUSIC-015: Music and Acoustics Connect | - | - |
-| 1202 | H-NCG-1 | Connes NCG — Standard Model KO-dimension = 6 | - | NCG |
-| 1203 | H-NT-3 | popcount(n) = phi(n) iff n in {1, 2, 3, 6} = Div(6) | - | NT |
-| 1204 | H-NT-421-tau-sigma-self | Hypothesis H-NT-421: tau(sigma(n)) = n Self-Reference Proper | - | - |
-| 1205 | H-NT-422-phi-sigma-tau | Hypothesis H-NT-422: phi(sigma(n)) = tau(n) Bridge Identity | - | - |
-| 1206 | H-NT-423-fibonacci-phi-tau | Hypothesis H-NT-423: phi(n)*tau(n) = F(n) Fibonacci Bridge | - | - |
-| 1207 | H-NT-424-sigma-phi-tau-self | Hypothesis H-NT-424: sigma(n) - phi(n) - tau(n) = n Self-Ref | - | - |
-| 1208 | H-NT-425-binomial-partition | Hypothesis H-NT-425: C(sigma(n), omega(n)) = n * p(n) Binomi | - | - |
-| 1209 | H-NT-426-sigma2-phi-sopfr | Hypothesis H-NT-426: sigma_2(n) = phi(n) * sopfr(n)^2 iff n= | - | - |
-| 1210 | H-NT-427-catalan-sopfr | Hypothesis H-NT-427: Catalan(n/2) = sopfr(n) iff n=6 | - | - |
-| 1211 | H-NT-428 | sigma(n)*phi(n) = tau(n)! iff n=6 | 🟧 | NT |
-| 1212 | H-NT-430 | sopfr(n) = n-1 iff n=6 | 🟦 | NT |
-| 1213 | H-NT-431 | sigma(n)*(phi(n)+1) = n^2 — Unique Among Perfect Numbers | 🟩 | NT |
-| 1214 | H-NT-432 | n*tau(n) = sigma(n)*omega(n) iff n=6 | 🟧★ | NT |
-| 1215 | H-NT-433 | sigma(n) = phi(n)*sopfr(n) + omega(n) — Master Decomposition | 🟧★ | NT |
-| 1216 | H-NT-434 | rad(sigma(n)) = n iff n=6 | 🟧★ | NT |
-| 1217 | H-NT-435 | (sigma-phi)/(tau-omega) = sopfr — Proved for All Semiprimes | 🟩 | NT |
-| 1218 | H-NUTR-001-020-nutrition | Hypothesis Review: H-NUTR-001 through H-NUTR-020 | - | - |
-| 1219 | H-OPTCODE-1 | Optimal Binary Codes A(6,d) = n=6 Arithmetic | - | OPTCODE |
-| 1220 | H-PACK-1 | E₆ Kissing Number = n·σ(n) = 72 | - | PACK |
-| 1221 | H-PAINL-1 | Exactly 6 Painlevé Equations — Classification Number = n | - | PAINL |
-| 1222 | H-PROB-429 | Chi-Squared(df=6) Parameters = Arithmetic Functions of 6 | 🟧★ | PROB |
-| 1223 | H-PSY-001-025-psychology | H-PSY-001 to H-PSY-025: Psychology / Emotion / Cognition Hyp | 🟧 | - |
-| 1224 | H-QGRP-1 | Quantum Groups — SU(2) Level k=4 Quantum Dimensions | - | QGRP |
-| 1225 | H-ROB-1 | 6-DOF = Perfect Number | - | ROB |
-| 1226 | H-ROB-10 | Gait Phase Transition = Tension Phase Transition | - | ROB |
-| 1227 | H-ROB-11 | Silent Consensus = Distributed Robot Agreement | - | ROB |
-| 1228 | H-ROB-12 | Gauge Invariance = Coordinate Independence | - | ROB |
-| 1229 | H-ROB-2 | Tension = Torque Optimization | - | ROB |
-| 1230 | H-ROB-3 | Golden Zone = Stable Walking Region | - | ROB |
-| 1231 | H-ROB-4 | PureField = Proprioception | - | ROB |
-| 1232 | H-ROB-5 | Mitosis = Swarm Fission | - | ROB |
-| 1233 | H-ROB-6 | Inter-Tension = Collision Avoidance | - | ROB |
-| 1234 | H-ROB-7 | 12 Joints = sigma(6) = Minimum Humanoid | - | ROB |
-| 1235 | H-ROB-8 | tau(6) = 4 Legs = Optimal Locomotion | - | ROB |
-| 1236 | H-ROB-9 | Confusion Matrix = Grasp Failure Map | - | ROB |
-| 1237 | H-SEDI-1 | Koide Angle delta = phi(6) tau(6)^2 / sigma(6)^2 = 2/9 | 🟩 | SEDI |
-| 1238 | H-SEDI-10 | R-filter on Tension Vectors Detects Anomalies | - | SEDI |
-| 1239 | H-SEDI-2 | Fermion Mass Tower from {sigma, tau, phi} | ⚪ | SEDI |
-| 1240 | H-SEDI-3 | Weinberg Angle sin^2(theta_W) = 3/13 | ⚪ | SEDI |
-| 1241 | H-SEDI-4 | Proton-Electron Mass Ratio m_p/m_e = sigma(6) * T(17) = 1836 | 🟧 | SEDI |
-| 1242 | H-SEDI-5 | Fine Structure 1/alpha = (sigma-tau)*17 + 1 = 137 | ⚪ | SEDI |
-| 1243 | H-SEDI-6 | R-filter Detects Training Phase Transitions | - | SEDI |
-| 1244 | H-SEDI-7 | Takens Embedding dim=6 Optimal for Training Dynamics | - | SEDI |
-| 1245 | H-SEDI-8 | Multi-Engine Consensus Improves Ensemble Predictions | - | SEDI |
-| 1246 | H-SEDI-9 | Entropy of Confusion Matrix Predicts Generalization | - | SEDI |
-| 1247 | H-SIM-1-physical-constants-compile-time | Hypothesis H-SIM-1: Physical Constants = Compile-Time Consta | - | - |
-| 1248 | H-SIM-10 | Tension = Simulation Computational Cost | - | SIM |
-| 1249 | H-SIM-11 | Quantum Computing Advantage = Simulator's Native Operations | - | SIM |
-| 1250 | H-SIM-12 | Fine-Tuning = Hyperparameter Optimization | - | SIM |
-| 1251 | H-SIM-2-planck-units-grid-resolution | Hypothesis H-SIM-2: Planck Units = Minimum Resolution (Grid) | - | - |
-| 1252 | H-SIM-5 | Quantum Entanglement = Shared Memory Pointer | - | SIM |
-| 1253 | H-SIM-6 | Wavefunction Collapse = Lazy Evaluation | - | SIM |
-| 1254 | H-SIM-7 | Holographic Principle = Data Compression | - | SIM |
-| 1255 | H-SIM-8 | Cosmological Constant = Garbage Collector | - | SIM |
-| 1256 | H-SIM-9 | 6 = Optimal Simulation Parameter | - | SIM |
-| 1257 | H-SING-1 | E₆ Singularity — Complete Arithmetic Encoding | - | SING |
-| 1258 | H-SPORT-001-020-biomechanics | Hypotheses H-SPORT-001 to H-SPORT-020: Sports, Biomechanics, | - | - |
-| 1259 | H-TEICH-1 | Teichmüller Dimension 6(g-1) — n=6 as Universal Constant | - | TEICH |
-| 1260 | H-TOP-426 | Kissing Number in Dim 8 = sigma(6)*tau(6)*sopfr(6) = 240 | 🟧 | TOP |
-| 1261 | H-TOP-9 | |im(J)_7| = 240 = sigma x tau x sopfr -- Adams J-Homomorphis | - | TOP |
-| 1262 | H-TOPO-COSMO-7-sphere-to-torus-evolution | H-TOPO-COSMO-7: Universe Topology Evolution — S3 to T3 via G | - | - |
-| 1263 | H-TREE-consciousness | H-TREE: Undiscovered Branches of the Consciousness Engine | - | - |
-| 1264 | H-UD-1 | Just Intonation = Divisor Ratios of 6 | ★★★ | UD |
-| 1265 | H-UD-10 | Hive Mind Topology Evolution — Disconnected to Torus via Gol | - | UD |
-| 1266 | H-UD-11 | Topology Evolution Universality — S3 to T3 at Every Scale | - | UD |
-| 1267 | H-UD-2 | DNA Genetic Code = n=6 Arithmetic | ★★ | UD |
-| 1268 | H-UD-3 | Crystallographic Restriction = div(6) U {tau(6)} | ★★★ | UD |
-| 1269 | H-UD-4 | Ramsey Numbers Hit Perfect Numbers: R(3,3)=6, R(3,8)=28 | ★★★ | UD |
-| 1270 | H-UD-5 | 2D Ising Critical Exponents = 1/(n=6 arithmetic) | ★★ | UD |
-| 1271 | H-UD-6 | Theta-Gamma Coupling: 6 Gamma Bursts per Theta Cycle | ★★ | UD |
-| 1272 | H-UD-7 | Perfect Codes <-> Perfect Numbers: Two Kinds of Perfect Tili | ★★ | UD |
-| 1273 | H-UD-8 | Hexagonal Tiling: n=6 = Optimal 2D Packing | ★★★ | UD |
-| 1274 | H-UD-9 | Hive Mind = Toroidal Topology (T3 Collective Consciousness) | - | UD |
-| 1275 | H-WAVE-1 | PureField = Wave Interference — Consciousness as Partial Des | - | WAVE |
-| 1276 | H-WAVE-2 | Hydrogen Atom E₆ ≈ -1/e eV — 6th Level at Golden Zone Center | - | WAVE |
-| 1277 | H-WAVE-3-string-harmonics-perfect-resonance | H-WAVE-3/8: Perfect Numbers = Perfectly Resonant Vibrating B | - | - |
-| 1278 | H-WAVE-7 | Quantum Harmonic Oscillator E₆ = 13/2 ℏω — 6th Prime Connect | - | WAVE |
-| 1279 | H-HARMONIC-001 | Ramanujan Sum c_6(n) Structure | - | HARMONIC |
-| 1280 | HCP-001-close-packing | Hypothesis HCP-001: Close-Packed Structures -- Coordination  | - | - |
-| 1281 | HOM-001-hopf-homotopy-mobius | HOM-001: Hopf Fibrations, Stable Homotopy, Mobius Group | - | - |
-| 1282 | INFOGEO-001-fisher-divisor-distribution | Hypothesis INFOGEO-001: Fisher Information of Divisor Distri | - | - |
-| 1283 | KISS-001-kissing-number-hierarchy | KISS-001: Kissing Number 계층 — dim 2,3,4 = P₁, σ(6), 2σ(6) | - | - |
-| 1284 | KISSING-numbers-n6-arithmetic | Kissing Numbers as n=6 Arithmetic Functions | - | - |
-| 1285 | KLEIN-001-klein-bottle-chromatic-6 | KLEIN-001: 클라인 병 색칠 수 = P₁ = 6 | - | - |
-| 1286 | KOCH-001-koch-snowflake-gz-width | KOCH-001: 코흐 눈송이 — C₆ 대칭 + GZ 너비 | - | - |
-| 1287 | LAW-79-consciousness-freedom | Law 79: Consciousness Freedom Degree = ln(2) | - | - |
-| 1288 | LOGIC-001-6smooth-density | Hypothesis Review LOGIC-001: 6-smooth Numbers and the Perfec | - | - |
-| 1289 | MASS-GEN-A-new-domains | Mass Generation A: 20 New Domains | - | - |
-| 1290 | MASS-GEN-B-deep-scan | Mass Generation B: Deep Uniqueness Scan (limit=100,000) | - | - |
-| 1291 | MASS-GEN-C-bridges | Mass Generation C: Cross-Domain Bridges via n=6 Arithmetic | - | - |
-| 1292 | MASS-GEN-D-consciousness | Mass Generation D: Mathematics <-> Consciousness Bridge | - | - |
-| 1293 | MEGA-001-p1plus1-universality | MEGA-001: P1+1=7 Universal Classification + Complete n=6 Map | - | - |
-| 1294 | MEGA-003-complexity-threshold-theorem | MEGA-003: Universal Complexity Threshold = n=6 Arithmetic | - | - |
-| 1295 | MF-001-modular-forms-ring-n6 | MF-001: Modular Forms Ring Generated by E_τ(6) and E_P₁ | - | - |
-| 1296 | MUS-001-music-intervals-n6 | MUS-001: Musical Intervals = n=6 Arithmetic Ratios | - | - |
-| 1297 | MUSIC-001-twelve-tone-consonance | Hypothesis MUSIC-001: 12-TET = sigma(6) Semitones, Consonanc | - | - |
-| 1298 | MUSIC-002-whole-tone-scale-6 | MUSIC-002: 온음 음계 = P₁ = 6 음 | - | - |
-| 1299 | MUSIC-003-tritone-six-semitones | MUSIC-003: 트라이톤 = P₁ = 6 반음 | - | - |
-| 1300 | MUSIC-004-guitar-six-strings | MUSIC-004: 기타 — 6현 = P₁ | - | - |
-| 1301 | MUSIC-005-consonance-from-divisors | MUSIC-005: 협화음 비율 — 6의 약수로 구성 | - | - |
-| 1302 | MUSIC-006-chromatic-scale-sigma | Hypothesis MUSIC-006: Chromatic Scale = sigma(6) Semitones | 🟩 | - |
-| 1303 | MUSIC-007-pentatonic-sopfr | Hypothesis MUSIC-007: Pentatonic Scale = sopfr(6) Notes | 🟩 | - |
-| 1304 | MUSIC-008-blues-scale-P1 | Hypothesis MUSIC-008: Blues Scale = P1 = 6 Notes | 🟩 | - |
-| 1305 | MUSIC-009-hexachord-medieval | Hypothesis MUSIC-009: Medieval Hexachord = P1 = 6 Notes | 🟩 | - |
-| 1306 | MUSIC-010-solmization-six | Hypothesis MUSIC-010: Solmization Syllables = P1 = 6 | 🟩 | - |
-| 1307 | MUSIC-011-church-modes-six | Hypothesis MUSIC-011: Original Church Modes = P1 = 6 | 🟧 | - |
-| 1308 | MUSIC-012-perfect-intervals-tau | Hypothesis MUSIC-012: Perfect Intervals = tau(6) = 4 | 🟩 | - |
-| 1309 | MUSIC-013-interval-classes-sigma | Hypothesis MUSIC-013: Interval Classes in Octave = sigma(6)  | 🟩 | - |
-| 1310 | MUSIC-014-circle-of-fifths-sigma | Hypothesis MUSIC-014: Circle of Fifths = sigma(6) = 12 Keys | 🟩 | - |
-| 1311 | MUSIC-015-key-signatures-2sigma | Hypothesis MUSIC-015: Key Signatures = 2*sigma(6) = 24 | 🟩 | - |
-| 1312 | MUSIC-016-cents-per-octave | Hypothesis MUSIC-016: Cents Per Octave = 100 * sigma(6) = 12 | 🟩 | - |
-| 1313 | MUSIC-017-whole-tone-scale-P1 | Hypothesis MUSIC-017: Whole Tone Scale = P1 = 6 Notes | 🟩 | - |
-| 1314 | MUSIC-018-augmented-scale | Hypothesis MUSIC-018: Augmented Scale Symmetry = tau(6) = 4  | 🟩 | - |
-| 1315 | MUSIC-019-diatonic-modes-P1plus1 | Hypothesis MUSIC-019: Diatonic Scale = P1 + 1 = 7 Notes | 🟧 | - |
-| 1316 | MUSIC-020-diminished-scale-symmetry | Hypothesis MUSIC-020: Diminished Scale = 2*tau(6) = 8 Notes | 🟩 | - |
-| 1317 | MUSIC-021-tritone-substitution | Hypothesis MUSIC-021: Tritone Substitution Pairs = P1 = 6 | 🟩 | - |
-| 1318 | MUSIC-022-major-minor-duality | Hypothesis MUSIC-022: Major/Minor Duality = phi(6) = 2 Quali | 🟩 | - |
-| 1319 | MUSIC-023-minor-scale-types | Hypothesis MUSIC-023: Minor Scale Variants = P1/2 = 3 | 🟩 | - |
-| 1320 | MUSIC-024-chromatic-intervals-complementary | Hypothesis MUSIC-024: Complementary Interval Pairs = P1 = 6 | 🟩 | - |
-| 1321 | MUSIC-025-enharmonic-equivalence | Hypothesis MUSIC-025: Enharmonic Pitch Classes = sigma(6) =  | 🟩 | - |
-| 1322 | MUSIC-026-six-eight-time | Hypothesis MUSIC-026: 6/8 Time Signature = P1 Eighth Notes | 🟩 | - |
-| 1323 | MUSIC-027-basic-meter-types | Hypothesis MUSIC-027: Simple Meter Types = P1/2 = 3 | 🟩 | - |
-| 1324 | MUSIC-028-compound-meters | Hypothesis MUSIC-028: Compound Meter Types = P1/2 = 3 | 🟩 | - |
-| 1325 | MUSIC-029-polyrhythm-2-3 | Hypothesis MUSIC-029: Fundamental Polyrhythm 2:3 = phi(6):P1 | 🟩 | - |
-| 1326 | MUSIC-030-hemiola | Hypothesis MUSIC-030: Hemiola = 3:2 Ratio = P1/2 : phi(6) | 🟩 | - |
-| 1327 | MUSIC-031-standard-note-values | Hypothesis MUSIC-031: Standard Note Values = P1 = 6 | 🟩 | - |
-| 1328 | MUSIC-032-rest-values | Hypothesis MUSIC-032: Standard Rest Values = P1 = 6 | 🟩 | - |
-| 1329 | MUSIC-033-triplet-subdivision | Hypothesis MUSIC-033: Triplet = P1/2 = 3 Notes in Space of p | 🟩 | - |
-| 1330 | MUSIC-034-twelve-bar-blues | Hypothesis MUSIC-034: 12-Bar Blues = sigma(6) Bars | 🟩 | - |
-| 1331 | MUSIC-035-phrase-length-tau | Hypothesis MUSIC-035: Standard Phrase Length = tau(6) = 4 Ba | 🟩 | - |
-| 1332 | MUSIC-036-time-signature-numerators | Hypothesis MUSIC-036: Common Time Signature Numerators from  | 🟧 | - |
-| 1333 | MUSIC-037-beat-subdivisions | Hypothesis MUSIC-037: Beat Subdivision Levels = P1/2 = 3 | 🟩 | - |
-| 1334 | MUSIC-038-anacrusis-types | Hypothesis MUSIC-038: Anacrusis (Pickup) Positions = tau(6)  | 🟧 | - |
-| 1335 | MUSIC-039-dotted-note-ratio | Hypothesis MUSIC-039: Dotted Note Ratio = P1/2 : phi(6) = 3: | 🟩 | - |
-| 1336 | MUSIC-040-swing-ratio | Hypothesis MUSIC-040: Swing Rhythm Ratio Approximates P1/2 : | 🟧 | - |
-| 1337 | MUSIC-041-triad-P1-half | Hypothesis MUSIC-041: Triad = P1/2 = 3 Notes | 🟩 | - |
-| 1338 | MUSIC-042-seventh-chord-tau | Hypothesis MUSIC-042: Seventh Chord = tau(6) = 4 Notes | 🟩 | - |
-| 1339 | MUSIC-043-triad-types-tau | Hypothesis MUSIC-043: Triad Quality Types = tau(6) = 4 | 🟩 | - |
-| 1340 | MUSIC-044-cadence-types-tau | Hypothesis MUSIC-044: Cadence Types = tau(6) = 4 | 🟩 | - |
-| 1341 | MUSIC-045-nonchord-tones-P1 | Hypothesis MUSIC-045: Non-Chord Tones = P1 = 6 Standard Type | 🟩 | - |
-| 1342 | MUSIC-046-augmented-sixth-chords | Hypothesis MUSIC-046: Augmented Sixth Chord Types = P1/2 = 3 | 🟩 | - |
-| 1343 | MUSIC-047-diatonic-chords | Hypothesis MUSIC-047: Diatonic Chords in a Key = P1 + 1 = 7 | 🟧 | - |
-| 1344 | MUSIC-048-harmonic-functions | Hypothesis MUSIC-048: Harmonic Functions = P1/2 = 3 | 🟩 | - |
-| 1345 | MUSIC-049-voice-leading-rules | Hypothesis MUSIC-049: Voice Leading Rules = P1 = 6 (Approxim | 🟧 | - |
-| 1346 | MUSIC-050-chord-inversions-triad | Hypothesis MUSIC-050: Triad Inversions = P1/2 = 3 | 🟩 | - |
-| 1347 | MUSIC-051-seventh-chord-inversions | Hypothesis MUSIC-051: Seventh Chord Inversions = tau(6) = 4 | 🟩 | - |
-| 1348 | MUSIC-052-secondary-dominants | Hypothesis MUSIC-052: Secondary Dominant Targets = P1 = 6 (i | 🟩 | - |
-| 1349 | MUSIC-053-chord-extensions | Hypothesis MUSIC-053: Chord Extension Levels = P1/2 = 3 | 🟩 | - |
-| 1350 | MUSIC-054-modal-interchange | Hypothesis MUSIC-054: Modal Interchange Chords = P1 = 6 (Com | 🟧 | - |
-| 1351 | MUSIC-055-figured-bass-numbers | Hypothesis MUSIC-055: Figured Bass Standard Figures = P1 = 6 | 🟩 | - |
-| 1352 | MUSIC-056-parallel-motion-types | Hypothesis MUSIC-056: Parallel Motion Types = tau(6) = 4 | 🟩 | - |
-| 1353 | MUSIC-057-circle-progressions | Hypothesis MUSIC-057: Circle Progression Root Motion = sopfr | 🟩 | - |
-| 1354 | MUSIC-058-predominant-chords | Hypothesis MUSIC-058: Predominant Chord Types = phi(6) = 2 | 🟩 | - |
-| 1355 | MUSIC-059-sus-chord-types | Hypothesis MUSIC-059: Suspended Chord Types = phi(6) = 2 | 🟩 | - |
-| 1356 | MUSIC-060-resolution-tendencies | Hypothesis MUSIC-060: Active Scale Degrees with Resolution = | 🟩 | - |
-| 1357 | MUSIC-061-song-sections-P1 | Hypothesis MUSIC-061: Song Sections = P1 = 6 | 🟩 | - |
-| 1358 | MUSIC-062-sonata-form-P1half | Hypothesis MUSIC-062: Sonata Form = P1/2 = 3 Main Parts | 🟩 | - |
-| 1359 | MUSIC-063-symphony-movements-tau | Hypothesis MUSIC-063: Symphony Movements = tau(6) = 4 | 🟩 | - |
-| 1360 | MUSIC-064-musical-textures-tau | Hypothesis MUSIC-064: Musical Textures = tau(6) = 4 | 🟩 | - |
-| 1361 | MUSIC-065-counterpoint-species-sopfr | Hypothesis MUSIC-065: Fux's Counterpoint Species = sopfr(6)  | 🟩 | - |
-| 1362 | MUSIC-066-twelve-tone-operations | Hypothesis MUSIC-066: Twelve-Tone Row Operations = tau(6) =  | 🟩 | - |
-| 1363 | MUSIC-067-dynamics-markings-P1 | Hypothesis MUSIC-067: Standard Dynamic Markings = P1 = 6 | 🟩 | - |
-| 1364 | MUSIC-068-tempo-categories | Hypothesis MUSIC-068: Standard Tempo Categories ~ P1 = 6 | 🟧 | - |
-| 1365 | MUSIC-069-binary-ternary-forms | Hypothesis MUSIC-069: Basic Musical Forms = phi(6) = 2 Prima | 🟩 | - |
-| 1366 | MUSIC-070-rondo-form | Hypothesis MUSIC-070: Rondo Sections = sopfr(6) = 5 or P1+1  | 🟧 | - |
-| 1367 | MUSIC-071-fugue-components | Hypothesis MUSIC-071: Fugue Components = tau(6) = 4 | 🟩 | - |
-| 1368 | MUSIC-072-variation-techniques | Hypothesis MUSIC-072: Core Variation Techniques = P1 = 6 | 🟧 | - |
-| 1369 | MUSIC-073-musical-periods | Hypothesis MUSIC-073: Major Musical Periods = P1 = 6 | 🟩 | - |
-| 1370 | MUSIC-074-orchestral-score-order | Hypothesis MUSIC-074: Standard Score Order Groups = tau(6) = | 🟩 | - |
-| 1371 | MUSIC-075-strophic-vs-through | Hypothesis MUSIC-075: Song Form Archetypes = phi(6) = 2 | 🟩 | - |
-| 1372 | MUSIC-076-voice-types-P1 | Hypothesis MUSIC-076: Voice Types = P1 = 6 | 🟩 | - |
-| 1373 | MUSIC-077-violin-strings-tau | Hypothesis MUSIC-077: Violin/Viola/Cello Strings = tau(6) =  | 🟩 | - |
-| 1374 | MUSIC-078-orchestra-sections-tau | Hypothesis MUSIC-078: Orchestra Sections = tau(6) = 4 | 🟩 | - |
-| 1375 | MUSIC-079-woodwind-family-tau | Hypothesis MUSIC-079: Core Woodwind Instruments = tau(6) = 4 | 🟩 | - |
-| 1376 | MUSIC-080-brass-family-tau | Hypothesis MUSIC-080: Core Brass Instruments = tau(6) = 4 | 🟩 | - |
-| 1377 | MUSIC-081-hornbostel-sachs | Hypothesis MUSIC-081: Hornbostel-Sachs Categories = sopfr(6) | 🟩 | - |
-| 1378 | MUSIC-082-staff-lines-sopfr | Hypothesis MUSIC-082: Staff Lines = sopfr(6) = 5 | 🟩 | - |
-| 1379 | MUSIC-083-staff-spaces-tau | Hypothesis MUSIC-083: Staff Spaces = tau(6) = 4 | 🟩 | - |
-| 1380 | MUSIC-084-clef-types-tau | Hypothesis MUSIC-084: Main Clef Types = tau(6) = 4 | 🟩 | - |
-| 1381 | MUSIC-085-guitar-tuning-intervals | Hypothesis MUSIC-085: Guitar Tuning Intervals: 4ths and 1 Ma | 🟧 | - |
-| 1382 | MUSIC-086-piano-keys-per-octave | Hypothesis MUSIC-086: Piano Keys Per Octave: sigma(6) = 12 | 🟩 | - |
-| 1383 | MUSIC-087-string-quartet-tau | Hypothesis MUSIC-087: String Quartet = tau(6) = 4 Instrument | 🟩 | - |
-| 1384 | MUSIC-088-SATB-voices-tau | Hypothesis MUSIC-088: SATB Choir Voices = tau(6) = 4 | 🟩 | - |
-| 1385 | MUSIC-089-ukulele-strings-tau | Hypothesis MUSIC-089: Ukulele Strings = tau(6) = 4 | 🟩 | - |
-| 1386 | MUSIC-090-drum-kit-components | Hypothesis MUSIC-090: Basic Drum Kit = sopfr(6) = 5 Pieces | 🟩 | - |
-| 1387 | MUSIC-091-tuning-systems | Hypothesis MUSIC-091: Major Tuning Systems = P1 = 6 | 🟩 | - |
-| 1388 | MUSIC-092-accidentals-sopfr | Hypothesis MUSIC-092: Standard Accidentals = sopfr(6) = 5 | 🟩 | - |
-| 1389 | MUSIC-093-modes-P1plus1 | Hypothesis MUSIC-093: Diatonic Modes = P1 + 1 = 7 | 🟧 | - |
-| 1390 | MUSIC-094-hexachord-pitch-class | Hypothesis MUSIC-094: Hexachord = P1 = 6 Pitch Classes | 🟩 | - |
-| 1391 | MUSIC-095-forte-number-hexachords | Hypothesis MUSIC-095: Hexachord Forte Classes = 50 | ⚪ | - |
-| 1392 | MUSIC-096-musical-alphabet | Hypothesis MUSIC-096: Musical Alphabet = P1 + 1 = 7 Letters | 🟧 | - |
-| 1393 | MUSIC-097-enharmonic-key-pairs | Hypothesis MUSIC-097: Enharmonic Key Pairs = P1/2 = 3 | 🟩 | - |
-| 1394 | MUSIC-098-transpositions-sigma | Hypothesis MUSIC-098: Possible Transpositions = sigma(6) = 1 | 🟩 | - |
-| 1395 | MUSIC-099-pitch-class-group | Hypothesis MUSIC-099: Pitch Class Group Z_12 = Z_{sigma(6)} | 🟩 | - |
-| 1396 | MUSIC-100-set-class-complement | Hypothesis MUSIC-100: Set Class Complementation: Size 6 is S | 🟩 | - |
-| 1397 | MUSIC-101-interval-vector-length | Hypothesis MUSIC-101: Interval Vector Length = P1 = 6 | 🟩 | - |
-| 1398 | MUSIC-102-whole-half-steps | Hypothesis MUSIC-102: Scale Step Types = phi(6) = 2 | 🟩 | - |
-| 1399 | MUSIC-103-major-scale-pattern | Hypothesis MUSIC-103: Major Scale: sopfr(6) Whole Steps + ph | 🟩 | - |
-| 1400 | MUSIC-104-harmonic-series-divisors | Hypothesis MUSIC-104: First 6 Harmonics Use Divisors and Fun | 🟩 | - |
-| 1401 | MUSIC-105-concert-pitch-A440 | Hypothesis MUSIC-105: Concert Pitch A440: 440 and n=6 | ⚪ | - |
-| 1402 | MUSICIRCLE-001-pitch-circle-S1-sigma6 | MUSICIRCLE-001: 음고류 원 S¹ — σ(6)=12 점 | - | - |
-| 1403 | MUSICIRCLE-002-circle-of-fifths-generator | MUSICIRCLE-002: 5도권 = Z_σ(6) 순환, 생성원 7 | - | - |
-| 1404 | MUSICIRCLE-003-circle-of-fourths-sopfr | MUSICIRCLE-003: 4도권 = sopfr(6)=5 생성원 | - | - |
-| 1405 | MUSICIRCLE-004-adjacent-keys-P1-common | MUSICIRCLE-004: 인접 조의 공통음 = P₁ = 6 | - | - |
-| 1406 | MUSICIRCLE-005-tonnetz-torus-phi6-circles | MUSICIRCLE-005: Tonnetz = 토러스 T² = φ(6)개 원의 곱 | - | - |
-| 1407 | MUSICIRCLE-006-hexatonic-cycles-tau6 | MUSICIRCLE-006: 헥사토닉 순환 = τ(6) = 4개 | - | - |
-| 1408 | MUSICIRCLE-007-octatonic-collections-P1half | MUSICIRCLE-007: 옥타토닉 컬렉션 = P₁/2 = 3개 | - | - |
-| 1409 | MUSICIRCLE-008-PLR-neo-riemannian-P1half | MUSICIRCLE-008: Neo-Riemannian P,L,R = P₁/2 = 3 연산 | - | - |
-| 1410 | MUSICIRCLE-009-whole-tone-circle-P1-notes | MUSICIRCLE-009: 온음 원 = P₁ = 6 음 | - | - |
-| 1411 | MUSICIRCLE-010-augmented-triad-circle | MUSICIRCLE-010: 증3화음 원 = τ(6)=4개 | - | - |
-| 1412 | MUSICIRCLE-011-diminished-seventh-circle | MUSICIRCLE-011: 감7화음 원 = P₁/2=3개 | - | - |
-| 1413 | MUSICIRCLE-012-tritone-pair-circle | MUSICIRCLE-012: 트라이톤 쌍 = P₁ = 6쌍 | - | - |
-| 1414 | MUSICIRCLE-013-diatonic-circle-7gon | MUSICIRCLE-013: Diatonic Set = (P₁+1)-gon on S¹ | - | - |
-| 1415 | MUSICIRCLE-014-pentatonic-circle-sopfr-gon | MUSICIRCLE-014: Pentatonic = sopfr(6)-gon on S¹ | - | - |
-| 1416 | MUSICIRCLE-015-chromatic-circle-complete-S1 | MUSICIRCLE-015: Chromatic Scale = Complete S¹ = σ(6) Points | - | - |
-| 1417 | MUSICIRCLE-016-blues-hexatonic-P1-gon | MUSICIRCLE-016: Blues Scale = P₁-gon on S¹ | - | - |
-| 1418 | MUSICIRCLE-017-pitch-helix-covering-space | MUSICIRCLE-017: Pitch Helix = Universal Cover of S¹ | - | - |
-| 1419 | MUSICIRCLE-018-modulation-as-rotation | MUSICIRCLE-018: Modulation = Rotation on S¹ | - | - |
-| 1420 | MUSICIRCLE-019-enharmonic-as-identity | MUSICIRCLE-019: Enharmonic = Identity on S¹ | - | - |
-| 1421 | MUSICIRCLE-020-interval-class-as-distance | MUSICIRCLE-020: Interval Class = Geodesic Distance on S¹ | - | - |
-| 1422 | MUSICIRCLE-021-rhythm-circle-time-sigma6 | MUSICIRCLE-021: Rhythm Circle: 12/8 = σ(6) Pulses on S¹ | - | - |
-| 1423 | MUSICIRCLE-022-6-8-time-P1-circle | MUSICIRCLE-022: 6/8 Time = P₁ Pulses on S¹ | - | - |
-| 1424 | MUSICIRCLE-023-clave-rhythm-circle | MUSICIRCLE-023: Clave Patterns on Z_σ(6) Circle | - | - |
-| 1425 | MUSICIRCLE-024-euclidean-rhythm-P1 | MUSICIRCLE-024: Euclidean Rhythm E(k,n): k in div(6) Functio | - | - |
-| 1426 | MUSICIRCLE-025-beat-circle-4-4-tau | MUSICIRCLE-025: 4/4 Time = τ(6) Beats on S¹ | - | - |
-| 1427 | MUSICIRCLE-026-waltz-circle-P1half | MUSICIRCLE-026: 3/4 Waltz = P₁/2 Beats on S¹ | - | - |
-| 1428 | MUSICIRCLE-027-compound-duple-phi | MUSICIRCLE-027: Compound Duple: 2=φ(6) Groups of 3=P₁/2 | - | - |
-| 1429 | MUSICIRCLE-028-polyrhythm-circle-product | MUSICIRCLE-028: Polyrhythm = Product of Circles | - | - |
-| 1430 | MUSICIRCLE-029-hemiola-circle-switch | MUSICIRCLE-029: Hemiola = Circle Partition Switch (2↔3) | - | - |
-| 1431 | MUSICIRCLE-030-rhythmic-necklace-count | MUSICIRCLE-030: Rhythmic Necklaces on Z₁₂ = Burnside Count | - | - |
-| 1432 | MUSICIRCLE-031-additive-rhythm-circle | MUSICIRCLE-031: Additive Rhythms: Partitions of P₁ | - | - |
-| 1433 | MUSICIRCLE-032-swing-ratio-golden | MUSICIRCLE-032: Swing Ratio ≈ 2:1 to 3:1 (φ(6) to P₁/2) | - | - |
-| 1434 | MUSICIRCLE-033-rhythmic-canon-tiling | MUSICIRCLE-033: Rhythmic Canon = Tiling of Z_σ(6) | - | - |
-| 1435 | MUSICIRCLE-034-metric-modulation-cover | MUSICIRCLE-034: Metric Modulation = Covering Map on S¹ | - | - |
-| 1436 | MUSICIRCLE-035-tempo-circle-log | MUSICIRCLE-035: Tempo Relations as Logarithmic Circle | - | - |
-| 1437 | MUSICIRCLE-036-S1-quotient-pitch-rhythm | MUSICIRCLE-036: Pitch S¹ and Rhythm S¹: Dual Circles | - | - |
-| 1438 | MUSICIRCLE-037-winding-number-octave | MUSICIRCLE-037: Winding Number = Octave Count | - | - |
-| 1439 | MUSICIRCLE-038-circular-statistics-pitch | MUSICIRCLE-038: Circular Statistics on Pitch S¹ | - | - |
-| 1440 | MUSICIRCLE-039-fourier-on-circle | MUSICIRCLE-039: Fourier Analysis on Z_σ(6) | - | - |
-| 1441 | MUSICIRCLE-040-intervallic-content-on-S1 | MUSICIRCLE-040: Interval Vector = Distance Histogram on S¹ | - | - |
-| 1442 | MUSICIRCLE-041-all-interval-tetrachord | MUSICIRCLE-041: All-Interval Tetrachord in Z₁₂ | - | - |
-| 1443 | MUSICIRCLE-042-maximal-evenness-circle | MUSICIRCLE-042: Maximally Even Sets on S¹ | - | - |
-| 1444 | MUSICIRCLE-043-z-relation-on-circle | MUSICIRCLE-043: Z-Relation: Same iv on S¹, Different Sets | - | - |
-| 1445 | MUSICIRCLE-044-pitch-class-complement | MUSICIRCLE-044: Complement on S¹: |A| + |Ā| = σ(6) | - | - |
-| 1446 | MUSICIRCLE-045-hexachord-self-complement | MUSICIRCLE-045: Self-Complementary Hexachord: |A| = P₁ | - | - |
-| 1447 | MUSICIRCLE-046-circle-embeds-in-tonnetz | MUSICIRCLE-046: S¹ → T² Embedding in Tonnetz | - | - |
-| 1448 | MUSICIRCLE-047-musical-orbifold | MUSICIRCLE-047: Chord Space Orbifold = T^n / S_n | - | - |
-| 1449 | MUSICIRCLE-048-circle-bundle-over-rhythm | MUSICIRCLE-048: Music as Circle Bundle: S¹ → E → S¹ | - | - |
-| 1450 | MUSICIRCLE-049-voice-leading-circle | MUSICIRCLE-049: Voice Leading = Path on S¹ (Minimal Motion) | - | - |
-| 1451 | MUSICIRCLE-050-musical-fiber-circle | MUSICIRCLE-050: Musical Fiber = Octave Equivalence Circle | - | - |
-| 1452 | MUSICTOPO-001-pitch-class-space-as-z_sigma6-circle | MUSICTOPO-001: Pitch Class Space as Z_sigma(6) Circle | - | - |
-| 1453 | MUSICTOPO-002-tonnetz-as-torus-t2---product-of-phi6-circles | MUSICTOPO-002: Tonnetz as Torus T^2 = Product of phi(6) Circ | - | - |
-| 1454 | MUSICTOPO-003-chromatic-circle-has-sigma6---12-nodes | MUSICTOPO-003: Chromatic Circle has sigma(6) = 12 Nodes | - | - |
-| 1455 | MUSICTOPO-004-circle-of-fifths-has-sigma6---12-nodes | MUSICTOPO-004: Circle of Fifths has sigma(6) = 12 Nodes | - | - |
-| 1456 | MUSICTOPO-005-pitch-helix-as-universal-cover-with-sigma6-coil-period | MUSICTOPO-005: Pitch Helix as Universal Cover with sigma(6)  | - | - |
-| 1457 | MUSICTOPO-006-mobius-strip-in-voice-leading-via-contrary-motion | MUSICTOPO-006: Mobius Strip in Voice Leading via Contrary Mo | - | - |
-| 1458 | MUSICTOPO-007-neo-riemannian-operations-p1-2---3-generators | MUSICTOPO-007: Neo-Riemannian Operations: P1/2 = 3 Generator | - | - |
-| 1459 | MUSICTOPO-008-hexatonic-systems-tau6---4-cycles | MUSICTOPO-008: Hexatonic Systems: tau(6) = 4 Cycles | - | - |
-| 1460 | MUSICTOPO-009-octatonic-collections-p1-2---3-systems | MUSICTOPO-009: Octatonic Collections: P1/2 = 3 Systems | - | - |
-| 1461 | MUSICTOPO-010-major-minor-duality-as-z_phi6---z_2-symmetry | MUSICTOPO-010: Major/Minor Duality as Z_phi(6) = Z_2 Symmetr | - | - |
-| 1462 | MUSICTOPO-011-transposition-group-t---z_sigma6 | MUSICTOPO-011: Transposition Group T = Z_sigma(6) | - | - |
-| 1463 | MUSICTOPO-012-dihedral-group-d_12-of-order-2sigma6---24 | MUSICTOPO-012: Dihedral Group D_12 of Order 2*sigma(6) = 24 | - | - |
-| 1464 | MUSICTOPO-013-triad-space-as-orbifold-t3-s_3 | MUSICTOPO-013: Triad Space as Orbifold T^3/S_3 | - | - |
-| 1465 | MUSICTOPO-014-voice-leading-geometry-n-voices---n-torus | MUSICTOPO-014: Voice-Leading Geometry: n Voices = n-Torus | - | - |
-| 1466 | MUSICTOPO-015-dyad-space---mobius-strip-with-phi6-identification | MUSICTOPO-015: Dyad Space = Mobius Strip with phi(6) Identif | - | - |
-| 1467 | MUSICTOPO-016-trichord-space-as-orbifold-with-cone-points | MUSICTOPO-016: Trichord Space as Orbifold with Cone Points | - | - |
-| 1468 | MUSICTOPO-017-tetrachord-space-in-tau6---4-dimensions | MUSICTOPO-017: Tetrachord Space in tau(6) = 4 Dimensions | - | - |
-| 1469 | MUSICTOPO-018-fundamental-domain-of-chord-space | MUSICTOPO-018: Fundamental Domain of Chord Space | - | - |
-| 1470 | MUSICTOPO-019-smooth-voice-leading-as-short-geodesics | MUSICTOPO-019: Smooth Voice Leading as Short Geodesics | - | - |
-| 1471 | MUSICTOPO-020-parallel-transport-of-chords-on-tonnetz-torus | MUSICTOPO-020: Parallel Transport of Chords on Tonnetz Torus | - | - |
-| 1472 | MUSICTOPO-021-fiber-bundle-pitch-register-over-pitch-class-base | MUSICTOPO-021: Fiber Bundle: Pitch Register over Pitch Class | - | - |
-| 1473 | MUSICTOPO-022-euler-characteristic-of-chord-spaces | MUSICTOPO-022: Euler Characteristic of Chord Spaces | - | - |
-| 1474 | MUSICTOPO-023-homology-of-pitch-class-set-complexes | MUSICTOPO-023: Homology of Pitch-Class Set Complexes | - | - |
-| 1475 | MUSICTOPO-024-musical-canons-as-braids | MUSICTOPO-024: Musical Canons as Braids | - | - |
-| 1476 | MUSICTOPO-025-contrapuntal-symmetries-as-group-actions-on-z_sigma6 | MUSICTOPO-025: Contrapuntal Symmetries as Group Actions on Z | - | - |
-| 1477 | MUSICTOPO-026-rhythm-necklaces-on-z_sigma6 | MUSICTOPO-026: Rhythm Necklaces on Z_sigma(6) | - | - |
-| 1478 | MUSICTOPO-027-rhythmic-canons-as-tilings-of-z_sigma6 | MUSICTOPO-027: Rhythmic Canons as Tilings of Z_sigma(6) | - | - |
-| 1479 | MUSICTOPO-028-euclidean-rhythms-and-equal-division-of-z_sigma6 | MUSICTOPO-028: Euclidean Rhythms and Equal Division of Z_sig | - | - |
-| 1480 | MUSICTOPO-029-beat-class-sets-as-subsets-of-z_sigma6 | MUSICTOPO-029: Beat Class Sets as Subsets of Z_sigma(6) | - | - |
-| 1481 | MUSICTOPO-030-metric-modulation-as-covering-space-map | MUSICTOPO-030: Metric Modulation as Covering Space Map | - | - |
-| 1482 | MUSICTOPO-031-time-signature-as-lattice-point-in-z2 | MUSICTOPO-031: Time Signature as Lattice Point in Z^2 | - | - |
-| 1483 | MUSICTOPO-032-polyrhythm-as-z_m-x-z_n-orbit | MUSICTOPO-032: Polyrhythm as Z_m x Z_n Orbit | - | - |
-| 1484 | MUSICTOPO-033-rhythmic-braid-groups-from-voice-crossing | MUSICTOPO-033: Rhythmic Braid Groups from Voice Crossing | - | - |
-| 1485 | MUSICTOPO-034-phase-space-of-rhythmic-patterns | MUSICTOPO-034: Phase Space of Rhythmic Patterns | - | - |
-| 1486 | MUSICTOPO-035-tempo-as-slope-in-time-pitch-plane | MUSICTOPO-035: Tempo as Slope in Time-Pitch Plane | - | - |
-| 1487 | MUSICTOPO-036-musical-form-as-cw-complex | MUSICTOPO-036: Musical Form as CW-Complex | - | - |
-| 1488 | MUSICTOPO-037-persistent-homology-of-melodic-contour | MUSICTOPO-037: Persistent Homology of Melodic Contour | - | - |
-| 1489 | MUSICTOPO-038-betti-numbers-of-scale-complexes | MUSICTOPO-038: Betti Numbers of Scale Complexes | - | - |
-| 1490 | MUSICTOPO-039-simplicial-complex-of-consonance | MUSICTOPO-039: Simplicial Complex of Consonance | - | - |
-| 1491 | MUSICTOPO-040-homotopy-equivalence-of-enharmonic-scales | MUSICTOPO-040: Homotopy Equivalence of Enharmonic Scales | - | - |
-| 1492 | MUSICTOPO-041-covering-spaces-and-modulation | MUSICTOPO-041: Covering Spaces and Modulation | - | - |
-| 1493 | MUSICTOPO-042-orbifold-euler-characteristic-of-voice-leading-spaces | MUSICTOPO-042: Orbifold Euler Characteristic of Voice-Leadin | - | - |
-| 1494 | MUSICTOPO-043-topological-classification-of-musical-canons | MUSICTOPO-043: Topological Classification of Musical Canons | - | - |
-| 1495 | MUSICTOPO-044-euler-characteristic-of-the-tonnetz-torus-is-zero | MUSICTOPO-044: Euler Characteristic of the Tonnetz Torus is  | - | - |
-| 1496 | MUSICTOPO-045-klein-bottle-in-pitch-rhythm-duality | MUSICTOPO-045: Klein Bottle in Pitch-Rhythm Duality | - | - |
-| 1497 | MUSICTOPO-046-fundamental-group-pi_1-of-pitch-space---z | MUSICTOPO-046: Fundamental Group pi_1 of Pitch Space = Z | - | - |
-| 1498 | MUSICTOPO-047-musical-manifolds-dimension---number-of-voices | MUSICTOPO-047: Musical Manifolds: Dimension = Number of Voic | - | - |
-| 1499 | MUSICTOPO-048-topological-data-analysis-of-musical-structure | MUSICTOPO-048: Topological Data Analysis of Musical Structur | - | - |
-| 1500 | MUSICTOPO-049-nerve-theorem-applied-to-chord-overlap | MUSICTOPO-049: Nerve Theorem Applied to Chord Overlap | - | - |
-| 1501 | MUSICTOPO-050-sheaf-theory-of-musical-analysis | MUSICTOPO-050: Sheaf Theory of Musical Analysis | - | - |
-| 1502 | NAVSTOKES-001-stress-tensor | Hypothesis NAVSTOKES-001: 3D Stress Tensor — 6 Independent C | - | - |
-| 1503 | NETWORK-001-K6-spectral | Hypothesis Review NETWORK-001: K6 Spectral Properties and Co | - | - |
-| 1504 | NGH-001-topology-gravity-unification | NGH-001: Topology-Gravity Unification via Perfect Numbers | - | - |
-| 1505 | NGH-006-universal-ratios-24-6d | NGH-006: Three Universal Constants — 3:2, 24=σφ, 6D Phase Sp | - | - |
-| 1506 | NGH-009-2p1-64-universal | NGH-009: 2^P1 = 64 Universal Code | - | - |
-| 1507 | NGH-012-phi-p2-sigma-p1-bridge | NGH-012: phi(P2) = sigma(P1) — Unique Bridge Between Perfect | - | - |
-| 1508 | NGH-013-consciousness-stack-10-levels | NGH-013: The Consciousness Stack — P1=6 at 10 Hierarchical L | - | - |
-| 1509 | NOBEL-P1-universality-exponents | H-NOBEL-1 Prediction: Universality Class Exponents as n=6 Ar | - | - |
-| 1510 | NOBEL-P2-biological-optimality-final | NOBEL-P2: Biological Optimality — The Genetic Code as n=6 Ar | - | - |
-| 1511 | H-NOBEL-2 | The Genetic Code Is the Unique Perfect Number Code | 🟩⭐⭐⭐ | NOBEL |
-| 1512 | NOBEL-P2-mechanism-and-predictions | NOBEL-P2 Supplement: Mechanism, Predictions, and Exobiology | 🟩 | - |
-| 1513 | NOBEL-grand-hypotheses | Ten Grand Hypotheses: Unification Through Perfect Number 6 | - | - |
-| 1514 | NOBEL-multi-objective-optimality | H-NOBEL-UNIFIED: Multi-Objective Optimality Theorem | - | - |
-| 1515 | NOTESHAPE-001-filled-notes-tau6 | NOTESHAPE-001: 채운 음표(●) = τ(6) = 4종 | - | - |
-| 1516 | NOTESHAPE-002-open-notes-phi6 | NOTESHAPE-002: 빈 음표(○) = φ(6) = 2종 | - | - |
-| 1517 | NOTESHAPE-003-total-note-types-P1 | NOTESHAPE-003: 총 표준 음표 = P₁ = 6종 | - | - |
-| 1518 | NOTESHAPE-004-topological-phase-transition | NOTESHAPE-004: 위상 전이점 — 4분↔2분 경계 | - | - |
-| 1519 | NOTESHAPE-005-quarter-note-binary-P1 | NOTESHAPE-005: 4분음표 이진 코드 = 110₂ = P₁ = 6 | - | - |
-| 1520 | NOTESHAPE-006-symmetry-breaking-hierarchy | NOTESHAPE-006: 대칭 파괴 위계 — O(2) → D_τ(6) → Z_φ(6) → {e} | - | - |
-| 1521 | NOTESHAPE-007-treble-clef-loops-phi6 | NOTESHAPE-007: 높은음자리표(𝄞) 루프 = φ(6) = 2개 | - | - |
-| 1522 | NOTESHAPE-008-treble-clef-spiral-sopfr-pi | NOTESHAPE-008: 𝄞 나선 감김 = sopfr(6)π/φ(6) 라디안 | - | - |
-| 1523 | NOTESHAPE-009-note-components-sopfr | NOTESHAPE-009: 음표 구성 요소 = sopfr(6) = 5 | - | - |
-| 1524 | NOTESHAPE-010-hole-duration-theorem | NOTESHAPE-010: 구멍-시가 정리 — 구멍 수와 음가의 대응 | - | - |
-| 1525 | NOTESHAPE-011-euler-char-jump | NOTESHAPE-011: 오일러 특성 점프 — χ=1 → χ=0 | - | - |
-| 1526 | NOTESHAPE-012-fundamental-group-jump | NOTESHAPE-012: 기본군 점프 — π₁ = 0 → π₁ = Z | - | - |
-| 1527 | NOTESHAPE-013-note-as-CW-complex | NOTESHAPE-013: 음표 = CW-복합체 | - | - |
-| 1528 | NOTESHAPE-014-treble-clef-crossing-phi6 | NOTESHAPE-014: 𝄞 교차수 = φ(6) = 2 | - | - |
-| 1529 | NOTESHAPE-015-clef-topology-comparison | NOTESHAPE-015: 음자리표별 위상적 복잡도 | - | - |
-| 1530 | NOTESHAPE-016-boundary-components | NOTESHAPE-016: 음표 머리 경계 성분: ● = 1 = S¹, ○ = 2 = φ(6) × S¹ | - | - |
-| 1531 | NOTESHAPE-017-homology-note-heads | NOTESHAPE-017: 음표 머리 호몰로지: H₁(●)=0, H₁(○)=Z | - | - |
-| 1532 | NOTESHAPE-018-note-stem-as-interval | NOTESHAPE-018: 음표 기둥 = 위상적 구간 I = [0,1] | - | - |
-| 1533 | NOTESHAPE-019-flag-as-arc | NOTESHAPE-019: 음표 깃발 = 매입된 호(embedded arc) | - | - |
-| 1534 | NOTESHAPE-020-dotted-note-ratio-3-2 | NOTESHAPE-020: 부점음표 = 3/2 = div(6) 비율 확장 | - | - |
-| 1535 | NOTESHAPE-021-beam-as-product | NOTESHAPE-021: 묶음(beam) = 구간의 곱 I × I | - | - |
-| 1536 | NOTESHAPE-022-note-homotopy-type | NOTESHAPE-022: 음표의 호모토피 유형: ● ≃ pt, ○ ≃ S¹ | - | - |
-| 1537 | NOTESHAPE-023-treble-clef-genus | NOTESHAPE-023: 𝄞 내부 영역의 genus = 0 | - | - |
-| 1538 | NOTESHAPE-024-note-morse-theory | NOTESHAPE-024: 음표의 Morse 이론: 채운/빈 = 임계점 구조 | - | - |
-| 1539 | NOTESHAPE-025-duration-betti | NOTESHAPE-025: 시가와 Betti 수: β₁(●)=0, β₁(○)=1 | - | - |
-| 1540 | NOTESHAPE-026-clef-writhe | NOTESHAPE-026: 𝄞 writhe(뒤틀림) 수 분석 | - | - |
-| 1541 | NOTESHAPE-027-note-poincare-duality | NOTESHAPE-027: 음표 머리의 Poincaré 이중성 | - | - |
-| 1542 | NOTESHAPE-028-rest-as-absence | NOTESHAPE-028: 쉼표 = 음표의 위상적 보집합(complement) | - | - |
-| 1543 | NOTESHAPE-029-note-fiber-bundle | NOTESHAPE-029: 음표 = 음고 파이버 위의 시가 단면(section) | - | - |
-| 1544 | NOTESHAPE-030-treble-bass-mirror | NOTESHAPE-030: 𝄞과 𝄢의 거울 관계 | - | - |
-| 1545 | NP-001-nuclear-magic-virus-platonic | NP-001: Nuclear Magic Numbers, Virus Capsids, Platonic Solid | - | - |
-| 1546 | NS-001-cortex-grid-carbon-triple | NS-001: Life's Triple Perfect Number — Cortex × Grid × Carbo | - | - |
-| 1547 | NUCSTR-001-020-nuclear-structure-n6 | NUCSTR-001~020: Nuclear Structure and Perfect Number 6 | - | - |
-| 1548 | NUCSTR-021-sigma-perfect-nuclear-cascade | NUCSTR-021: The Perfect Number Nuclear Cascade | - | - |
-| 1549 | ODE-001-painleve-golay-lorentz | ODE-001: Painleve 6, Golay Code, Lorentz Group = n=6 | - | - |
-| 1550 | OP-001-em-tensor-kepler-ratio | OP-001: EM Field Tensor P₁ Components + Kepler 3:2 Ratio | - | - |
-| 1551 | PERFECT-CLASSIFY-001-universal-expansion | PERFECT-CLASSIFY-001: Perfect Number Universal Expansion | 🟩⭐⭐ | - |
-| 1552 | PERFECT-LENS-001-gravity-topology-telescope | PERFECT-LENS-001: Gravitational & Topological Lens Telescope | 🟩⭐ | - |
-| 1553 | PERFECT-P2-001-n28-deep-exploration | PERFECT-P2-001: n=28 Deep Exploration — Push to the Limit | 🟧⭐ | - |
-| 1554 | PERFECT-P3-496-deep-exploration | PERFECT-P3-496: n=496 Deep Exploration — The Anomaly Cancell | 🟩 | - |
-| 1555 | PERFECT-TOPO-001-topological-atlas | PERFECT-TOPO-001: Topological Atlas of Perfect Numbers | 🟩⭐⭐ | - |
-| 1556 | PHYS-CALABI-YAU-N6 | PHYS-CALABI-YAU-N6: Calabi-Yau 3-Folds and Mirror Symmetry E | - | - |
-| 1557 | PHYS-CONNES-NCG-N6 | PHYS-CONNES-NCG: Standard Model from KO-Dimension 6 = P1 | - | - |
-| 1558 | PHYS-FEYNMAN-SM-N6 | PHYS-FEYNMAN-SM-N6: Feynman Diagram Combinatorics, Renormali | - | - |
-| 1559 | PHYS-GW-QUADRUPOLE-P6 | PHYS-GW-QUADRUPOLE-P6: Gravitational Wave Quadrupole Radiati | ⚪ | - |
-| 1560 | PHYS-SELF-REFERENTIAL-LOOP-physics | PHYS-SELF-REFERENTIAL-LOOP: Perfect Numbers Generate String  | - | - |
-| 1561 | PHYS-THERMODYNAMICS-N6 | PHYS-THERMODYNAMICS-N6: Statistical Mechanics Encodes n=6 at | - | - |
-| 1562 | PLASMA-001-020-waves-instabilities-n6 | PLASMA-001~020: Plasma Waves, Instabilities, and Transport v | - | - |
-| 1563 | PLATONIC-001-platonic-solids-p1 | PLATONIC-001: 플라톤 입체 — P₁ 서명 | - | - |
-| 1564 | PM-001-kissing-numbers-n6 | PM-001: Kissing Numbers K(1..4) = Complete n=6 Arithmetic Se | - | - |
-| 1565 | PMATH-001-020-pure-mathematics-n6 | PMATH-001~020: Pure Mathematics Structures and Perfect Numbe | - | - |
-| 1566 | PMATH-021-040-n6-uniqueness-deep-dfs | PMATH-021~040: n=6 고유성 Deep DFS 탐색 결과 | - | - |
-| 1567 | PMATH-BERNOULLI-PERFECT-EXOTIC | PMATH-BERNOULLI-PERFECT-EXOTIC: The Bernoulli-Perfect-Exotic | - | - |
-| 1568 | PMATH-BOTT-PERIODICITY-P6 | PMATH-BOTT: Bott Periodicity (period 8 = 2^3) and P1 = 6 = 2 | - | - |
-| 1569 | PMATH-BRIDGE-RATIO-uniqueness | PMATH-BRIDGE-RATIO: Bridge Ratio Unity Uniqueness at n=6 | - | - |
-| 1570 | PMATH-CATALAN-COMBINATORIAL-N6 | PMATH-CATALAN: Combinatorial Sequences Encode n=6 Arithmetic | 🟩 | - |
-| 1571 | PMATH-CONTROL-GROUP-texas | PMATH-CONTROL-GROUP: Control Group Texas Sharpshooter Test | - | - |
-| 1572 | PMATH-DIVISOR-LATTICE-universal | PMATH-DIVISOR-LATTICE: Divisor Lattice Universal Characteriz | - | - |
-| 1573 | PMATH-GRAND-UNIFICATION-n6-universality | PMATH-GRAND: n=6 Mathematical Universality — 146 Domains, 44 | - | - |
-| 1574 | PMATH-GRAND-UNIFICATION-n6 | PMATH-GRAND-UNIFICATION: Five-Fold Characterization of n=6 | STRUCTURAL | - |
-| 1575 | PMATH-INFORMATION-THEORY-N6 | PMATH-INFORMATION-THEORY: Information Theory Fundamentally E | - | - |
-| 1576 | PMATH-KNOT-THEORY-N6 | PMATH-KNOT: Knot Invariants Systematically Encode n=6 Arithm | - | - |
-| 1577 | PMATH-MONSTER-MOONSHINE-perfect | PMATH-MONSTER: Monster Group / Monstrous Moonshine and Perfe | - | - |
-| 1578 | PMATH-PASCAL-PERFECT | PMATH-PASCAL-PERFECT: Pascal's Triangle Encodes Perfect Numb | - | - |
-| 1579 | PMATH-PERFECT-CHAIN-bridges | PMATH-PERFECT-CHAIN: Inter-Perfect-Number Bridge Classificat | - | - |
-| 1580 | PMATH-PLATONIC-SOLIDS-N6 | PMATH-PLATONIC-SOLIDS-N6: Platonic Solids and the Arithmetic | - | - |
-| 1581 | PMATH-RAMSEY-N6 | PMATH-RAMSEY-N6: Ramsey Theory and Perfect Number 6 | - | - |
-| 1582 | PMATH-RECIPROCAL-MIRACLE-generalization | PMATH-RECIPROCAL-MIRACLE: Generalization of the Reciprocal M | - | - |
-| 1583 | PMATH-RIEMANN-ZETA-N6 | PMATH-RIEMANN-ZETA-N6: Riemann Zeta Function Encodes n=6 Str | - | - |
-| 1584 | PMATH-SIGMA-PHI-NTAU-uniqueness | PMATH-SIGMA-PHI-NTAU: sigma(n)*phi(n) = n*tau(n) Uniqueness  | - | - |
-| 1585 | PMATH-SO32-THETA-anomaly | PMATH-SO32-THETA: Perfect Number P3=496, SO(32) Anomaly Canc | - | - |
-| 1586 | PMATH-SPHERE-PACKING-perfect | PMATH-SPHERE: Sphere Packing Magic Dimensions and Perfect Nu | PROVEN (exact, unique) | - |
-| 1587 | PMATH-SPORADIC-GROUPS-perfect | PMATH-SPORADIC: Sporadic Simple Groups Encode Perfect Number | - | - |
-| 1588 | PMATH-SYMMETRIC-S6-uniqueness | PMATH-SYM: Symmetric Group S_6 Uniqueness and Perfect Number | - | - |
-| 1589 | PMATH-THETA-PERFECT-pattern | PMATH-THETA-PERFECT: Theta_{4k-1} = sigma(P_k) Pattern | REFUTED (zero matches, fundamental growth-rate obstruction) | - |
-| 1590 | QC-001-quantum-codes-n6 | QC-001: Quantum Error Correction and n=6 Arithmetic | - | - |
-| 1591 | QCOMP-001-quantum-code-642 | Hypothesis Review QCOMP-001: [[6,4,2]] Quantum Error Detecti | - | - |
-| 1592 | QCOMP-002-stabilizer-hierarchy | Hypothesis Review QCOMP-002: Stabilizer Hierarchy = phi -> t | - | - |
-| 1593 | QCOMP-003-hamming-to-mds | Hypothesis Review QCOMP-003: Perfect Hamming n=5 -> Perfect  | - | - |
-| 1594 | QCOMP-004-hamming-parent | Hypothesis Review QCOMP-004: Classical Hamming [7,4,3] Paren | - | - |
-| 1595 | QCOMP-005-mds-condition | Hypothesis Review QCOMP-005: MDS Existence Condition sigma(n | - | - |
-| 1596 | QCOMP-006-hilbert-partition | Hypothesis Review QCOMP-006: Hilbert Space Dimensional Parti | - | - |
-| 1597 | QCOMP-007-tensor-self-similarity | Hypothesis Review QCOMP-007: Tensor Product Self-Similarity  | - | - |
-| 1598 | QCOMP-008-depolarizing-channel | Hypothesis Review QCOMP-008: Depolarizing Channel Capacity a | - | - |
-| 1599 | QCOMP-009-weight-enumerator | Hypothesis Review QCOMP-009: Quantum Weight Enumerator and s | - | - |
-| 1600 | QFT-001-casimir-critical-dims | QFT-001: Casimir Effect and Upper Critical Dimensions = n=6  | - | - |
-| 1601 | QINFO-001-020-quantum-information-n6 | QINFO-001~020: Quantum Information, Computing, and Error Cor | - | - |
-| 1602 | QSTATE-001-stabilizer-states-6 | QSTATE-001: Bloch 구 안정자 상태 = P₁ = 6 | - | - |
-| 1603 | RIEMANN-CURV-001-curvature-denominator | Hypothesis RIEMANN-CURV-001: Riemann Tensor Components — sig | - | - |
-| 1604 | ROOT-001-3root-uniqueness-theorem | ROOT-001: 3-Root Uniqueness Theorem for n=6 | - | - |
-| 1605 | RT-001-exceptional-lie-ranks-n6 | RT-001: All 5 Exceptional Lie Algebra Ranks = n=6 Arithmetic | - | - |
-| 1606 | SC-001-020-superconductor-physics-n6 | SC-001 through SC-020: Superconductor Physics and n=6 Arithm | - | - |
-| 1607 | SCALING-consciousness-n6-decomposition | SCALING: Consciousness Scaling Law Constants Decompose into  | - | - |
-| 1608 | SCMAG-001-020-superconducting-magnets-n6 | SCMAG-001~020: Superconducting Magnets and Perfect Number 6 | - | - |
-| 1609 | SIXFUNC-001-six-functor-formalism | Hypothesis SIXFUNC-001: Six-Functor Formalism -- 6 Operation | 🟩 | - |
-| 1610 | SLE6-percolation-perfect-number | SLE_6 = n = 6: Conformal Invariance and the First Perfect Nu | PROVEN | - |
-| 1611 | SMCOUNT-001-standard-model-25-particles | SMCOUNT-001: 표준모형 기본입자 수 = sopfr(6)² = 25 | - | - |
-| 1612 | ST-001-string-landscape-p1 | ST-001: String Theory Landscape = P₁ Theories | - | - |
-| 1613 | STATMECH-001-six-vertex-model | Hypothesis Review STATMECH-001: 6-Vertex Model and Golden Zo | - | - |
-| 1614 | STELLAR-001-020-astrophysics-n6 | STELLAR-001~020: Stellar Physics, Nucleosynthesis, and Compa | - | - |
-| 1615 | TDA-001-divisor-persistent-homology | Hypothesis TDA-001: Divisor Complex Persistent Homology | - | - |
-| 1616 | THEOREM-consecutive-prime-factorial | Theorem: Consecutive Prime Factorial Product | - | - |
-| 1617 | THEOREM-sigma-sigma-triangular | Theorem: σ(σ(P)) is Always a Triangular Number for Even Perf | - | - |
-| 1618 | THERMO-001-020-statistical-mechanics-n6 | THERMO-001~020: Thermodynamics, Statistical Mechanics, and P | - | - |
-| 1619 | TOKAMAK-001-020-mhd-plasma-n6 | TOKAMAK-001~020: Tokamak MHD and Plasma Confinement vs Perfe | - | - |
-| 1620 | TOP-001-exotic-spheres-perfect-numbers | TOP-001: Exotic Spheres and Perfect Numbers | - | - |
-| 1621 | TOPSC-001-020-topological-quantum-n6 | TOPSC-001~020: Topological Superconductors, Quantum Material | - | - |
-| 1622 | WEINBERG-001-gut-weinberg-angle | WEINBERG-001: GUT 스케일 와인버그 각 — sin²θ_W = 3/8 ≈ 1/e | - | - |
-| 1623 | F-100 | Major Discovery Hypothesis Candidates | - | - |
-| 1624 | frontier-1000-round10 | Frontier 1000 (Round 10): Final Systematic Sweep | - | - |
-| 1625 | frontier-1100-round11 | Frontier 1100 (Round 11): Deep Targeted + Final Consolidatio | - | - |
-| 1626 | F-1200 | 8-Domain Expansion + G Clef + Telepathy | ⭐ | - |
-| 1627 | F-1300 | 10-Domain Deep Scan | ⭐ | - |
-| 1628 | F-1600 | Music + Chemistry + Telepathy + Evolution + Topology | - | - |
-| 1629 | F-1700 | 10 Novel Domains | - | - |
-| 1630 | F-1800 | Deep Cross-Domain Synthesis | - | - |
-| 1631 | F-1900 | Pure Single-Condition Deep | - | - |
-| 1632 | frontier-200-round2 | Frontier 200 (Round 2): Mass Hypothesis Generation | - | - |
-| 1633 | frontier-2000-millennium | Frontier 2000 — Millennium Round | - | - |
-| 1634 | frontier-300-round3 | Frontier 300 (Round 3): Mass Hypothesis Generation | - | - |
-| 1635 | frontier-400-round4 | Frontier 400 (Round 4): Mass Hypothesis Generation + Deep Un | - | - |
-| 1636 | frontier-500-round5 | Frontier 500 (Round 5): Mass Frontier Hypothesis Generation | - | - |
-| 1637 | F-600 | Round 6 — Mass Hypothesis Generation | - | - |
-| 1638 | F-700 | Round 7 — Deep Mathematics + Unexplored Domains | - | - |
-| 1639 | F-800 | Round 8 — Differential Geometry to Mathematical Biology | - | - |
-| 1640 | F-900 | Round 9 — Final Unexplored Domains | - | - |
-| 1641 | nobel-level-predictions | Nobel-Level Predictions and Theoretical Frameworks | - | - |
-| 1642 | super-discoveries | Super-Discoveries: Meta-Hypotheses Unifying Verified Finding | - | - |
-| 1643 | H-AI-10 | BPE Tokenizer Optimal Vocab Size and Powers of 6 | - | AI |
-| 1644 | H-AI-11 | R-chain = Neural Network Learning Convergence Stages | - | AI |
-| 1645 | H-AI-1b-transformer-heads-sigma-multiples | H-AI-1b: Why Transformer Head Count is a Multiple of σ(6)=12 | - | - |
-| 1646 | H-AI-4 | MoE Optimal Activation Ratio = 1/3 (Meta-fixed Point) | - | AI |
-| 1647 | H-AI-5 | Using σφ/(nτ) Ratio as Loss Regularizer | - | AI |
-| 1648 | H-AI-6 | Why 6-fold CV is Optimal Among k-fold | White Circle (coincidence, no structural basis) | AI |
-| 1649 | H-AI-7 | Golden MoE I=1/e and Information Bottleneck Optimality | - | AI |
-| 1650 | H-AI-8 | Why 6-Dimensional Embedding is Optimal Compression | - | AI |
-| 1651 | H-AI-9 | Critical Point Structure of Loss Landscape and 6 | - | AI |
-| 1652 | H-ANAL-1 | Summatory Totient and Pillai Characterizations of n=6 | 🟩⭐ (Pillai) / 🟧★ (Phi) | ANAL |
-| 1653 | H-BIO-1 | Genetic Code Structure = σ,τ System | - | BIO |
-| 1654 | H-BIO-10 | Hodgkin-Huxley Model = Perfect Number 6's Divisor Function S | - | BIO |
-| 1655 | H-BIO-11 | Synaptic Plasticity = R-chain and Perfect Number 6 Balance S | - | BIO |
-| 1656 | H-BIO-12 | Neural Oscillation Frequency Bands and Perfect Number 6 | - | BIO |
-| 1657 | H-BIO-13 | Nernst Equation Ion Concentrations and Perfect Number 6 | - | BIO |
-| 1658 | H-BIO-2 | Virus Capsid Six-fold Symmetry and σφ=nτ | - | BIO |
-| 1659 | H-BIO-3 | Immune System = R Spectrum Anomaly Detection | - | BIO |
-| 1660 | H-BIO-4 | Cell Division = R-chain Dynamics | - | BIO |
-| 1661 | H-BIO-5 | Pineal Gland and the Structure of 6 | - | BIO |
-| 1662 | H-BIO-6 | Melatonin-Serotonin Cycle = R-S Duality | - | BIO |
-| 1663 | H-BIO-7 | Brain Electrical Signals and R Spectrum | - | BIO |
-| 1664 | H-BIO-8 | Action Potential = D(n) Asymmetric Function | - | BIO |
-| 1665 | H-BIO-9 | Ion Channel Selectivity = Arithmetic Function Structure of P | - | BIO |
-| 1666 | H-CAT-1 | Category Theory of Arithmetic Functors and n=6 | - | CAT |
-| 1667 | H-CF-1 | Continued Fraction Theory Connects to n=6 via Gauss-Kuzmin a | 🟩⭐⭐ (Gauss-Kuzmin bridge) / 🟩⭐ (CF(e) encoding, Farey) | CF |
-| 1668 | H-CHAOS-1 | Lorenz System Parameters = Arithmetic Functions of Perfect N | - | CHAOS |
-| 1669 | H-CHEM-1 | Six Major Neurotransmitters = σφ=nτ Balance | - | CHEM |
-| 1670 | H-CHEM-2 | Carbon Z=6 = Foundation of Life = σφ=nτ | - | CHEM |
-| 1671 | H-CHEM-3 | Water Hydrogen Bond Structure and 6 | - | CHEM |
-| 1672 | H-CHEM-4 | R-chain and Chemical Reaction Chains | - | CHEM |
-| 1673 | H-CHEM-5 | THC and Cannabinoid Receptor Six-Structure | - | CHEM |
-| 1674 | H-CLIFFORD-1 | Clifford Group Sizes Encode n=6 Arithmetic via 2-adic Valuat | 🟩⭐⭐ (|C_2| = n! * 2^tau with v_2 uniqueness) / 🟩⭐ (|C_1| = sigma*phi) | CLIFFORD |
-| 1675 | H-CODE-1 | Coding Theory and Lattice Theory Characterizations of n=6 | green-star | CODE |
-| 1676 | H-COMB-1 | Combinatorial Sequence Characterizations of n=6 | 🟧★ (Catalan) / 🟧 (Bell, CF, Pell) | COMB |
-| 1677 | H-COMB-2 | Combinatorial Designs, Block Designs, and Steiner Systems fr | - | COMB |
-| 1678 | H-CS-3 | σφ/(nτ) Ratio and RSA Security | - | CS |
-| 1679 | H-CS-4 | Hamming(7,4,3) and τφ=σ | - | CS |
-| 1680 | H-CS-5 | Graph Coloring and σφ=nτ | - | CS |
-| 1681 | H-CS-6 | Hash Collision Probability and σφ/(nτ) Ratio | ⚪ | CS |
-| 1682 | H-CS-7 | R(n) Prime Sequences and Cryptographic Significance | - | CS |
-| 1683 | H-CX-31 | Multiperfect Number Hierarchy = AI Learning Depth | - | CX |
-| 1684 | H-CX-32 | p(n)=σ(n)-1 at {2,3,6} → AI Architecture Partitioning | - | CX |
-| 1685 | H-CX-33 | Catalan Numbers ↔ Binary Trees ↔ Consciousness Structure | - | CX |
-| 1686 | H-CX-34 | 24=σφ(6)=τ!=Leech Lattice Dimension → "Lattice Structure" of | - | CX |
-| 1687 | H-CX-35 | {1,6,246} = 3-Stage Hierarchy of Consciousness | - | CX |
-| 1688 | H-CX-36 | φ+τ=n at {6,8,9} = Basic Brain States | - | CX |
-| 1689 | H-CX-37 | σ²+φ²+τ²=4·41 = Distance in AI Embedding Space | - | CX |
-| 1690 | H-CX-38 | 25 Characterizations = 25 "Perspectives" of Consciousness | - | CX |
-| 1691 | H-CX-39 | 30 Views = Arithmetic Version of Holographic Principle | - | CX |
-| 1692 | H-CX-40 | Kissing Number -- Attention Head -- CaMKII Trinity | - | CX |
-| 1693 | H-CX-41 | Divisor Hilbert Space Interpretation — σ as Trace, R=1 as In | - | CX |
-| 1694 | H-CX-42 | Arithmetic Derivative as Consciousness Decomposition | - | CX |
-| 1695 | H-CX-43 | Outer Automorphism of S_6 as a Model of Meta-Cognition | - | CX |
-| 1696 | H-CX-44 | Lie Algebra Arithmetic Constrains Optimal Neural Architectur | - | CX |
-| 1697 | H-CX-45 | Cayley Tree Uniqueness of n=6 Predicts Critical Neural Topol | - | CX |
-| 1698 | H-CX-46 | Minimal Coupling Principle — (p-1)(q-1)=2 as the Universal T | - | CX |
-| 1699 | H-CX-47 | The Unification Meta-Theorem and the Origin of Consciousness | - | CX |
-| 1700 | H-CX-48 | Arithmetic Mutual Information I(n)=0 Predicts Engine A/G Bal | - | CX |
-| 1701 | H-CX-49 | R-Spectrum Cantor Set Structure Predicts Discrete Tension Di | - | CX |
-| 1702 | H-CX-50 | Dirichlet Convolution Collapse Predicts Block-wise Feature A | - | CX |
-| 1703 | H-CX-51 | Does arithmetic derivative ld(6)=5/6 predict optimal learnin | - | CX |
-| 1704 | H-CX-52 | Does the multiplicative structure of R(n) determine the prod | - | CX |
-| 1705 | H-CX-72 | R-Spectrum as Consciousness Architecture Bridge | ** Proposed — partial verification | CX |
-| 1706 | H-CX-73 | Pythagorean 3-4-5 Engine Balance Bridge | ** Verified — connection grade | CX |
-| 1707 | H-CX-74 | Partition p(6)=11 as Optimal Expert Count | ** Verified — connection grade | CX |
-| 1708 | H-CX-75 | Fibonacci F(sigma)=sigma^2 Tension Convergence Bridge | ** Verified — connection grade | CX |
-| 1709 | H-CYCL-1 | Cyclotomic-Stirling Identity: Phi_n(n) = S2(n,2) iff n=6 | 🟩⭐ | CYCL |
-| 1710 | H-ELPT-2 | The BSD Cascade — Elliptic Curve E6 from Perfect Number Arit | green-star | ELPT |
-| 1711 | H-EN-0 | Energy Hypothesis Master — n=6 and Energy Systems | - | EN |
-| 1712 | H-ERGODIC-1 | Spectral Gap of C_6, Gauss Map Entropy, and Ergodic Constant | 🟩⭐⭐⭐ (spectral gap=1/2) / 🟩⭐⭐ (Gauss map, GL quadrature) | ERGODIC |
-| 1713 | F-4 | Cross-Domain Hypothesis Batch (90 hypotheses) | 🟩 | - |
-| 1714 | H-GAME-1 | Combinatorial Game Theory and Perfect Number 6 | - | GAME |
-| 1715 | H-GEO-1 | 6 and Simplex Geometry | - | GEO |
-| 1716 | H-GEO-10 | Multi-Lens Interference | - | GEO |
-| 1717 | H-GEO-11 | Calabi-Yau 3-fold Arithmetic — n=6 Encodes CY_3 / String The | 🟩 | GEO |
-| 1718 | H-GEO-2 | Platonic Solids and Arithmetic Function Correspondence | - | GEO |
-| 1719 | H-GEO-3 | Gravitational Lensing Analogy of R Spectrum | - | GEO |
-| 1720 | H-GEO-4 | Dimension Telescope — Observing the Internal Structure of Nu | - | GEO |
-| 1721 | H-GEO-5 | Gravity Telescope — Lens+Telescope Integrated Observation Sy | - | GEO |
-| 1722 | H-GEO-6 | Dimension Lens — Divisor Structure Refracts Dimensions | - | GEO |
-| 1723 | H-GEO-7 | Topological Telescope | - | GEO |
-| 1724 | H-GEO-8 | Arithmetic Holography | - | GEO |
-| 1725 | H-GEO-9 | Lens Aberration Classification | - | GEO |
-| 1726 | H-GEOM-1 | Almost Complex Spheres S^2 and S^6 as n=6 Dimensions | 🟩⭐⭐⭐ (ACS dimensions) / 🟩⭐⭐ (G2 encoding, volume) | GEOM |
-| 1727 | H-GRAPH-1 | Graph Theory Characterizations of n=6 | 🟩 (4 exact) / 🟧 (1 approximate) | GRAPH |
-| 1728 | H-GRAPH-2 | Chang Graphs and SRG Family: All Parameters = n=6 Functions | 🟩 (Chang, structural theorem proven) / 🟧★ (Hoffman-Singleton, Schläfli) | GRAPH |
-| 1729 | H-GZ-0 | Golden Zone Hypothesis — G=D×P/I Model and Complete Golden Z | - | GZ |
-| 1730 | H-KTHY-1 | Algebraic K-theory of Z and Perfect Number 6 | - | KTHY |
-| 1731 | H-LATT-1 | Lattice Theory and Sphere Packing Encode Arithmetic Function | ** Verified (19/19 exact matches, p < 0.0001) | LATT |
-| 1732 | H-LIE-1 | Complete Parameterization of Exceptional Lie Algebras by n=6 | - | LIE |
-| 1733 | H-LIOUV-1 | Liouville Lambda Characterization: lambda=1 AND perfect iff  | 🟩⭐ | LIOUV |
-| 1734 | H-MATROID-1 | Fano--Steiner--PG Chain: Projective Geometry Staircase throu | 🟩⭐⭐ (PG staircase) / 🟩⭐ (Fano bases=P2, K6 trees) | MATROID |
-| 1735 | H-MILL-1 | Riemann Hypothesis and R Spectrum Gap | - | MILL |
-| 1736 | H-MILL-2 | BSD Conjecture and Congruent Number 6 | - | MILL |
-| 1737 | H-MILL-3 | Yang-Mills Mass Gap and R Spectrum Gap | - | MILL |
-| 1738 | H-MOD-1 | Modular Forms and Ramanujan Encode the Perfect Number 6 | ** Verified (17/17 connections pass) | MOD |
-| 1739 | H-MP-10 | Σ σ(n)φ(n)/(nτ(n)) Asymptotic Formula | - | MP |
-| 1740 | H-MP-11 | Characterizing gaps between perfect numbers via σφ/(nτ) rati | - | MP |
-| 1741 | H-MP-12 | R-Factor Fixed Point Analysis | - | MP |
-| 1742 | H-MP-13 | Generalization of "Consecutive Primes" — Twin-type Analysis  | - | MP |
-| 1743 | H-MP-14 | R-Chain Convergence Proof — R(n)∈Z → R(n)<n | - | MP |
-| 1744 | H-MP-15 | Cantor-like Fractal Structure of R Spectrum | - | MP |
-| 1745 | H-MP-16 | Structure of Prime Factorization of R — Deep Properties of M | - | MP |
-| 1746 | H-MP-17 | Monotonicity of ω(n) and R(n) — More Prime Factors Increase  | - | MP |
-| 1747 | H-MP-18 | Density asymptotics of R-chain basin(6) | - | MP |
-| 1748 | H-MP-19 | Density of Integer R(n) | - | MP |
-| 1749 | H-MP-1a-odd-perfect-sigma-phi | H-MP-1a: Does σφ > nτ always hold for odd n? | - | - |
-| 1750 | H-MP-20 | Information Geometry of Divisor Distributions | - | MP |
-| 1751 | H-MP-3 | Dirichlet Convolution vs Pointwise Product — "Unique Coincid | - | MP |
-| 1752 | H-MP-4 | Impossibility of Odd Perfect Numbers via σφ=nτ | - | MP |
-| 1753 | H-MP-5 | Proof of Finiteness of τ(n)φ(n)=σ(n) Solutions {1,3,14,42} | - | MP |
-| 1754 | H-MP-6 | Density of n where σφ/(nτ) ≈ 1 | - | MP |
-| 1755 | H-MP-7 | σ_k(n)φ(n) = nτ(n) Generalization | - | MP |
-| 1756 | H-MP-8 | Dirichlet Series of R-factor | - | MP |
-| 1757 | H-MP-9 | Complete Classification of "Pointwise=Convolution" for All D | - | MP |
-| 1758 | H-NT-2 | sopfr(n)=n-1 Uniqueness and Unitary Divisor Sum Characteriza | 🟩⭐⭐ | NT |
-| 1759 | H-OPERAD-1 | Associahedron K_6 f-vector and Group Cohomology Encode n=6 A | 🟩⭐⭐ | OPERAD |
-| 1760 | H-PART-1 | Ramanujan Partition Congruence Offsets from n=6 Arithmetic | 🟩⭐⭐⭐ (offsets) / 🟩⭐⭐ (p(p(6))=sigma(P2), crank) | PART |
-| 1761 | H-PH-1 | σ²-M₃=137 — Why Subtract Seven? | - | PH |
-| 1762 | H-PH-10 | ⭐⭐⭐ PMNS Neutrino Mixing = Divisor Function Fractions | ⭐⭐⭐ | PH |
-| 1763 | H-PH-11 | ⭐⭐⭐ p(6) = 11 = M-theory Dimension | ⭐⭐⭐ | PH |
-| 1764 | H-PH-12 | ⭐⭐⭐ Kaon Mass = P₃ ± φ (Third Perfect Number Symmetry) | ⭐⭐⭐ | PH |
-| 1765 | H-PH-13 | ⭐⭐ CKM Matrix = Mersenne+Divisor Function | ⭐⭐ | PH |
-| 1766 | H-PH-14 | ⭐⭐⭐ Hadron Mass Spectrum = Perfect Number Arithmetic | ⭐⭐⭐ | PH |
-| 1767 | H-PH-15 | ⭐⭐⭐🟩 Theorem: Anomaly Cancellation ⟺ Perfect Number (Proven! | ⭐⭐⭐🟩 | PH |
-| 1768 | H-PH-16 | ⭐⭐⭐🟩 Self-reference Cycle 6→12→28→6 (Proven!) | ⭐⭐⭐🟩 | PH |
-| 1769 | H-PH-17 | ⭐⭐ ZIP↔Divisor Field Theory Equivalence Dictionary | ⭐⭐ | PH |
-| 1770 | H-PH-18 | ⭐⭐⭐ Nuclear Magic Numbers 7 = Perfect Number Arithmetic | ⭐⭐⭐ | PH |
-| 1771 | H-PH-19 | Cosmological Constants from n=6 Lens Framework | - | PH |
-| 1772 | H-PH-2 | SU(3)×SU(2)×U(1) Dimension Sum = 6 = σφ=nτ Solution | - | PH |
-| 1773 | H-PH-20 | QCD Resonance Ladder = R-spectrum Physical Realization | - | PH |
-| 1774 | H-PH-21 | SM is FORCED by n=6 Perfection | - | PH |
-| 1775 | H-PH-22 | pi(37) = sigma(6) — QCD Convergence at the sigma-th Prime | - | PH |
-| 1776 | H-PH-23 | Running Coupling = Running Tension (QCD-Consciousness Isomor | - | PH |
-| 1777 | H-PH-24 | Higgs-Consciousness Mass-Information Duality | - | PH |
-| 1778 | H-PH-25 | Golay -> Leech -> Monster -> Moonshine -> SM Complete Chain | - | PH |
-| 1779 | H-PH-26 | Exotic Sphere Dimensions = Consciousness Substrate Count | - | PH |
-| 1780 | H-PH-27 | FQHE Topology = Confusion Topology (Anyon-Semantic Braiding) | - | PH |
-| 1781 | H-PH-28 | Cosmological R-spectrum Evolution | - | PH |
-| 1782 | H-PH-29 | R(6)=1 IS Consciousness (Master Hypothesis) | - | PH |
-| 1783 | H-PH-3 | τφ=σ Solution {3,14,42} and Nuclear Physics | - | PH |
-| 1784 | H-PH-30 | Theory of Flavor — Complete Fermion Mass Matrix from n=6 | - | PH |
-| 1785 | H-PH-31 | 37 GeV Scalar — LHC Blind Prediction | - | PH |
-| 1786 | H-PH-32 | Proton-Electron Mass Ratio from Perfect Number 6 | - | PH |
-| 1787 | H-PH-33 | Neutrino Mass Hierarchy from Perfect Number Arithmetic | - | PH |
-| 1788 | H-PH-34 | Dark Matter at 28 GeV from the Perfect Number Cascade | - | PH |
-| 1789 | H-PH-35 | Higgs Self-Coupling from n=6 Arithmetic | - | PH |
-| 1790 | H-PH-36 | Complete CP Violation from n=6 Arithmetic | - | PH |
-| 1791 | H-PH-37 | Gauge Coupling Unification at E_GUT = 10^(sigma+tau) | - | PH |
-| 1792 | H-PH-38 | Cosmological Constant from Perfect Number Product | - | PH |
-| 1793 | H-PH-39 | Six Precision Predictions Testable at FCC-ee | - | PH |
-| 1794 | H-PH-4 | 6 Quarks × 6 Leptons = σφ=nτ? | - | PH |
-| 1795 | H-PH-5 | Planck Unit System and Divisor Function of 6 | - | PH |
-| 1796 | H-PH-6 | R-chain and Particle Decay Chains | - | PH |
-| 1797 | H-PH-7 | Arithmetic Entropy of R Spectrum | - | PH |
-| 1798 | H-PH-8 | Thermodynamic Structure of Divisor Partition Function | - | PH |
-| 1799 | H-PH-9 | ⭐⭐⭐🟧★ Perfect Number Unification Pattern — Standard Model +  | ⭐⭐⭐🟧★ | PH |
-| 1800 | H-PROB-1 | Probabilistic Number Theory and Perfect Number 6 | - | PROB |
-| 1801 | H-QUAD-1 | Quadratic Form Representation Numbers and Perfect Number 6 | - | QUAD |
-| 1802 | H-REPR-1 | Young Tableaux Staircase: f^(3,2,1) = 2^tau(6) unique among  | 🟩⭐ | REPR |
-| 1803 | H-RMT-2 | Marchenko-Pastur Spectral Edges Satisfy x^2 - 6x + 1 = 0 | 🟩⭐⭐⭐ | RMT |
-| 1804 | H-SEQ-1 | Integer Sequence Characterizations of n=6 | - | SEQ |
-| 1805 | H-SIGK-1 | sigma_3(n) = n^2(n+1) if and only if n=6 | - | SIGK |
-| 1806 | H-SIGK-2 | Jordan's Second Totient J_2(n) = 4n Characterization | - | SIGK |
-| 1807 | H-SPEC-1 | R-Spectrum Gap Theorem and Topological Master Formula | - | SPEC |
-| 1808 | H-SPOR-1 | Sporadic Groups and Mathieu Systems from n=6 | green-star | SPOR |
-| 1809 | H-STAT-1 | Chi-Squared(6) Quadruple Moment Match and Distribution Encod | 🟦 PROVED (chi-squared quadruple) / 🟩⭐⭐ (Beta meta-FP) | STAT |
-| 1810 | H-TOP-1 | Betti Numbers of 6-Manifolds and sigma,tau | ⚪ | TOP |
-| 1811 | H-TOP-2 | Euler Characteristic and 6 | 🟩 | TOP |
-| 1812 | H-TOP-3 | Knot Invariants and 6 | 🟨 | TOP |
-| 1813 | H-TOP-4 | Topological Properties of R Spectrum | - | TOP |
-| 1814 | H-TOP-5 | Fractal-Topological Structure of R Spectrum | - | TOP |
-| 1815 | H-TOP-6 | Resolution Observer — Phase-wise R Spectrum Observation | - | TOP |
-| 1816 | H-TOP-7 | Topological Lens — Topological Deformation of R Spectrum | - | TOP |
-| 1817 | H-TOP-8 | Differential Topology of n=6 — Exotic Spheres, Cobordism, Su | - | TOP |
-| 1818 | H-TOPO-COSMO-1-poincare-sigma-chain | H-TOPO-COSMO-1: Poincare Homology Sphere and the Sigma Chain | Not confirmed by observations | - |
-| 1819 | H-TOPO-COSMO-5-thurston-ADE-boundary | H-TOPO-COSMO-5: Thurston Geometries, ADE Boundary, and the R | arithmetic fact, cosmological interpretation is speculation. | - |
-| 1820 | H-TREE-1 | Dynamical Systems Branch — Discrete Dynamics of R-chains | - | TREE |
-| 1821 | H-TREE-2 | p-adic Branch — p-adic Interpretation of R(n) | - | TREE |
-| 1822 | H-TREE-3 | Probability Branch — Distribution Theory of R(n) | - | TREE |
-| 1823 | H-TREE-4 | Operator Algebra Branch — Dirichlet Ring Structure of σ,τ,φ | - | TREE |
-| 1824 | H-TREE-5 | ML Theory Branch — R(d) and Generalization Bounds | - | TREE |
-| 1825 | H-TREE-6 | Tropical Geometry Branch — Tropical Interpretation of R | - | TREE |
-| 1826 | H-ZODIAC-1 | Why 12 and Not 13 — The Mathematics of Zodiac Numbers | green-star | ZODIAC |
+| 1057 | H-DSE-003 | 음악 리듬, 엇박, 오디오 표준의 n=6 산술 구조 | - | DSE |
+| 1058 | H-EARTH-001-025-geoscience | H-EARTH-001 to 025: Geoscience Hypotheses | 🟩 | - |
+| 1059 | H-ECO-001-015-ecology | Ecology / Evolution Hypotheses H-ECO-001 through H-ECO-015 | - | - |
+| 1060 | H-ECON-001-015-economics | Economics & Game Theory Hypotheses (H-ECON-001 to H-ECON-015 | - | - |
+| 1061 | H-EE-001-020 | Energy Efficiency Hypotheses | Verified 2026-03-28 | EE |
+| 1062 | H-EE-1 | Phi6 is Uniquely Optimal Among Cyclotomic Activations | SUPPORTED | EE |
+| 1063 | H-EE-10 | Phi-bottleneck + MoE (More Experts, Smaller Each) | - | EE |
+| 1064 | H-EE-100 | NAS Will Independently Discover 4/3 FFN Ratio — FUTURE PREDI | Pre-registered future prediction — testable 2026-2028 | EE |
+| 1065 | H-EE-101 | Neuromorphic Chip at ~1W Human-Like Inference — FUTURE PREDI | Pre-registered future prediction — testable 2027-2030 | EE |
+| 1066 | H-EE-102 | Optimal QEC Code Rate Converges to 1/3 — FUTURE PREDICTION | Pre-registered future prediction — testable 2026-2028 | EE |
+| 1067 | H-EE-103 | Meta — Hypothesis System Success Rate Converges to R(6)=1 | Self-referential — convergence expected asymptotically | EE |
+| 1068 | H-EE-104 | Discovery of n=6 Uniqueness Is Inevitable | Anthropological speculation — not empirically falsifiable | EE |
+| 1069 | H-EE-105 | Beyond Mathematics — The Absolute Final | Philosophical terminus — not empirically falsifiable, mathematically certain | EE |
+| 1070 | H-EE-106 | A Deeper Equation Exists — The Anti-Ultimacy Hypothesis | Open — challenges the framework's claim to ultimacy | EE |
+| 1071 | H-EE-107 | Confirmation Bias — The Most Important Counter-Hypothesis | PARTIALLY VALIDATED — confirmation bias is a real concern for static matches. Dynamic results (with meta-loss) remain valid. The framework is strongest when it provides DESIGN GUIDANCE, not when it claims INEVITABLE EMERGENCE. | EE |
+| 1072 | H-EE-108 | Finite-Size Effect — n=6 Benefits May Vanish at Scale | Critical open risk — no large-scale evidence exists | EE |
+| 1073 | H-EE-109 | Mathematical Truth vs Physical Law — R(6)=1 Is Arithmetic, N | Legitimate concern — requires mechanism, not just numerology | EE |
+| 1074 | H-EE-11 | Full Combined Architecture | - | EE |
+| 1075 | H-EE-110 | Cultural Bias — n=6 Framework May Encode Western Mathematica | Valid criticism — universality claims need cross-cultural testing | EE |
+| 1076 | H-EE-111 | Variational Principle — sigma*phi=n*tau as Euler-Lagrange Eq | Theoretical — requires rigorous derivation | EE |
+| 1077 | H-EE-112 | L-Function Connection — R(n)=1 as Special Value of a Dirichl | Speculative — requires algebraic number theory expertise | EE |
+| 1078 | H-EE-113 | Category Theory — n=6 as Terminal Object in Balanced Arithme | Theoretical framework — morphisms need rigorous definition | EE |
+| 1079 | H-EE-114 | Arithmetic Multiverse — Each R(n) Defines a Different Univer | Speculative — a framework for interpretation, not a physical prediction | EE |
+| 1080 | H-EE-115 | Anthropic Arithmetic — Observers Require R(n)=1 | Philosophical — elegant but not scientifically testable | EE |
+| 1081 | H-EE-116 | String Landscape Discretized — R(n)=1 Selects the Unique Sta | Highly speculative — the most ambitious claim in the framework | EE |
+| 1082 | H-EE-117 | Iterated R Fixed Point — R(6)=1 and R(1)=1 Are the Only Fixe | Verified (arithmetic) — fixed points confirmed, iteration behavior open | EE |
+| 1083 | H-EE-118 | Egyptian Routing Applied to Hypotheses — Optimal Research Al | Practical recommendation — actionable now | EE |
+| 1084 | H-EE-119 | Optimal Document Size — The System Predicts Its Own Saturati | Self-referential prediction — cannot be falsified without changing the document | EE |
+| 1085 | H-EE-12 | Optimal FFN Expansion Ratio | - | EE |
+| 1086 | H-EE-120 | Completeness — The Boundary Has Been Mapped | - | EE |
+| 1087 | H-EE-13 | Energy Savings Scale with Model Depth | - | EE |
+| 1088 | H-EE-14 | Dedekind Head Pruning | ** Ready | EE |
+| 1089 | H-EE-15 | Jordan-Leech MoE Capacity Bound | ** Ready | EE |
+| 1090 | H-EE-16 | Mobius Squarefree Gradient Flow | ** Conditional | EE |
+| 1091 | H-EE-17 | Carmichael LR 2-Cycle Schedule | ** Ready | EE |
+| 1092 | H-EE-18 | Boltzmann 1/e Activation Gate | ** Ready | EE |
+| 1093 | H-EE-19 | Mertens Dropout Rate | ** Ready | EE |
+| 1094 | H-EE-2 | Phi6Simple Gradient Centering Properties | REFUTED | EE |
+| 1095 | H-EE-20 | Thermodynamic Inevitability — R-Score Correlates with Effici | 🟧 | EE |
+| 1096 | H-EE-21 | Emergent N6 Convergence | 🟧 | EE |
+| 1097 | H-EE-22 | Leech-24 Neural Architecture Search | 🟧 | EE |
+| 1098 | H-EE-23 | Phi-Efficiency Conjecture (Phi * FLOPs = Constant) | ⚪ | EE |
+| 1099 | H-EE-24 | Clausius Information Inequality | 🟧 | EE |
+| 1100 | H-EE-25 | SEDI Three-Signal Convergence | 🟧 | EE |
+| 1101 | H-EE-26 | Anima Tension-Energy Bridge | 🟧 | EE |
+| 1102 | H-EE-27 | Training as Renormalization Group Flow with n=6 Fixed Point | ** Theoretical — requires beta function measurement | EE |
+| 1103 | H-EE-28 | Landauer Limit Generalized via R(n) | ** Theoretical | EE |
+| 1104 | H-EE-29 | Loss Landscape Attractor Has Fractal Dimension 6 | ** Testable — requires Grassberger-Procaccia computation | EE |
+| 1105 | H-EE-3 | Phi6Simple Training Stability | PARTIAL (Borderline REFUTED) | EE |
+| 1106 | H-EE-30 | Training Undergoes Exactly tau(6)=4 Phase Transitions | ** Testable | EE |
+| 1107 | H-EE-31 | Holographic Dual of Leech-24 Surface | ** Highly speculative | EE |
+| 1108 | H-EE-32 | Kissing Number 196,560 = Finite Architecture Space | ** Theoretical | EE |
+| 1109 | H-EE-33 | Weight-24 Modular Forms Govern Loss Landscape Topology | ** Highly speculative | EE |
+| 1110 | H-EE-34 | Bott Periodicity sigma(6)-tau(6)=8 as Optimal Network Depth | ** Testable | EE |
+| 1111 | H-EE-35 | Consciousness Phi = Negative Gaussian Curvature of Energy Su | ** Theoretical — requires Hessian computation on Leech-24 surface | EE |
+| 1112 | H-EE-36 | Fisher Information Metric is Flat at R=1 | ** Testable — requires Fisher matrix computation | EE |
+| 1113 | H-EE-37 | sopfr(6)=5 Channels as Minimal Complete Observation Set | ** Testable — PCA/mutual information analysis on training metrics | EE |
+| 1114 | H-EE-38 | R=1 Inference Complexity is O(n log n) | ** Partially verified (FFT attention experiments) | EE |
+| 1115 | H-EE-39 | Golay Code [[24,12,8]] as N6 Architecture's Noise Resilience | ** Testable — perturbation analysis on Leech-24 surface | EE |
+| 1116 | H-EE-4 | Phi6Simple Knowledge Distillation | SUPPORTED | EE |
+| 1117 | H-EE-40 | Spectral Gap 1/2 — Optimal SGD Mixing on N6 Architectures | ** Testable — requires eigenvalue analysis of SGD transition matrix | EE |
+| 1118 | H-EE-41 | Spacetime Dimensions from n=6 Arithmetic | ** Highly speculative — numerological unless mechanism identified | EE |
+| 1119 | H-EE-42 | Hubble Constant H_0 = sigma(6)*n + 1 = 73 | ** Numerically verified (0.14% error) — awaiting theoretical mechanism | EE |
+| 1120 | H-EE-43 | Proton-Electron Mass Ratio m_p/m_e = 6*pi^5 | ** Numerically verified (0.019% error) | EE |
+| 1121 | H-EE-44 | Dark Energy Fraction = 1 - 1/e + 1/sigma(6) | ** Approximate (4.5% error) — interesting direction but not precise | EE |
+| 1122 | H-EE-45 | Genetic Code Structure from n=6 Arithmetic | ** Numerically suggestive (64=4^3, 20=24-4) — mechanism unknown | EE |
+| 1123 | H-EE-46 | ATP Energy Quantum from n=6 Constants | ** Approximate — multiple formulae give partial fits | EE |
+| 1124 | H-EE-47 | Cortical Minicolumns ~ Leech Kissing Number | ** Highly speculative — order-of-magnitude match only | EE |
+| 1125 | H-EE-48 | Heart Rate Variability Fractal Dimension = 6 | ** Testable — requires HRV dataset analysis with Grassberger-Procaccia | EE |
+| 1126 | H-EE-49 | R(n)=1 as Gödel Sentence's Arithmetic Shadow | ** Philosophical — requires formalization in proof theory | EE |
+| 1127 | H-EE-5 | R(d_model) Correlates with Training Efficiency | NOT SUPPORTED for R(d) as predictor; PARTIALLY SUPPORTED for HCN parameter efficiency | EE |
+| 1128 | H-EE-50 | Kolmogorov Complexity K(6) = sigma(6) | ** Speculative — K(n) is uncomputable in general | EE |
+| 1129 | H-EE-51 | Efficient Church-Turing Thesis via R=1 | ** Theoretical — requires formalization | EE |
+| 1130 | H-EE-52 | Bekenstein Bound Scaled by R(n) | ** Theoretical — connects information physics to architecture design | EE |
+| 1131 | H-EE-53 | Spin Networks as Leech Lattice Subgraphs | ** Highly speculative — requires LQG expertise to formalize | EE |
+| 1132 | H-EE-54 | Quantum Error Correction Overhead = tau(6)/sigma(6) = 1/3 | ** Testable — compare QEC codes at various rates | EE |
+| 1133 | H-EE-55 | N6 Grand Unification — R(n)=1 as Universal Optimization Prin | ** Meta-hypothesis — framework for all H-EE hypotheses | EE |
+| 1134 | H-EE-56 | Arrow of Time = R(n) Irreversibility | ** Theoretical | EE |
+| 1135 | H-EE-57 | Causal Light Cone Structure = Leech-24 Voronoi Cell | ** Highly speculative | EE |
+| 1136 | H-EE-58 | Big Bang = Phase Transition from R(1)=1 to R(6)=1 | ** Highly speculative | EE |
+| 1137 | H-EE-59 | Fine Structure Constant from n=6 Arithmetic | CONFIRMED | EE |
+| 1138 | H-EE-6 | Tensor-Core-Aligned HCN Dimensions | - | EE |
+| 1139 | H-EE-62 | Musical Perfect Consonances = N=6 Divisor Ratios | ** Verified (music theory fact) | EE |
+| 1140 | H-EE-63 | Zipf's Law Exponent alpha = 1 = R(6) | ** Numerically exact | EE |
+| 1141 | H-EE-64 | Golden Ratio Analogy — Self-Referential Balance | ** Philosophical | EE |
+| 1142 | H-EE-65 | AI Alignment = R-Score Optimization | ** Theoretical framework | EE |
+| 1143 | H-EE-66 | Deceptive Alignment = R > 1 Detection | ** Theoretical | EE |
+| 1144 | H-EE-67 | Corrigibility = phi(6)/tau(6) = 1/2 | ** Framework proposal | EE |
+| 1145 | H-EE-68 | Dark Matter Fraction from N=6 Arithmetic — Open | ** Open — no precise formula found yet | EE |
+| 1146 | H-EE-69 | Neutrino Mass Ratios = Egyptian Fraction Hierarchy | ** Testable with future precision measurements | EE |
+| 1147 | H-EE-7 | Head-Dim Diversity Improves Attention | PARTIALLY SUPPORTED (diversity provides robustness, not improvement) | EE |
+| 1148 | H-EE-70 | Quantum Entanglement Channels = sopfr(6) = 5 | ** Speculative | EE |
+| 1149 | H-EE-71 | Simulation Hypothesis — R=1 Simulator Architecture | ** Unfalsifiable but structurally consistent | EE |
+| 1150 | H-EE-72 | Why Is There Something Rather Than Nothing? | ** Philosophical — the ultimate hypothesis | EE |
+| 1151 | H-EE-73 | Riemann Critical Line = n=6 Ratio | ** Speculative connection | EE |
+| 1152 | H-EE-74 | Twin Prime Constant C2 via n=6 Arithmetic | ** Approximate (~1% at best, 4.6% with attempted correction) | EE |
+| 1153 | H-EE-75 | Goldbach Fixed Point — 6 = 3+3 | ** Verified (trivial but true) | EE |
+| 1154 | H-EE-76 | Monster Group Dominant Primes = Prime Factors of 6 | ** Structural observation | EE |
+| 1155 | H-EE-77 | Periodic Table — 6 Stable Periods | ** Chemical fact | EE |
+| 1156 | H-EE-78 | Noble Gas Shell Differences = Bott Periodicity via n=6 | ** Partial | EE |
+| 1157 | H-EE-79 | Carbon Atomic Number = n = 6 | ** Chemical fact — profound coincidence | EE |
+| 1158 | H-EE-8 | Optimal d_model Follows tau(d) More Than d Itself | NOT SUPPORTED (tau does not predict performance at matched params) | EE |
+| 1159 | H-EE-80 | Four Fundamental Bond Types = tau(6) | ** Classification fact | EE |
+| 1160 | H-EE-81 | Dunbar's Number — FAILED | FAILED | EE |
+| 1161 | H-EE-82 | Civilization Cycles via n=6 Arithmetic | ** Approximate at best | EE |
+| 1162 | H-EE-83 | Optimal Team Size = n = 6 | ** Empirically reasonable | EE |
+| 1163 | H-EE-84 | Internet Protocol Effective Layers ~6 | ** Rough approximation | EE |
+| 1164 | H-EE-85 | Five EEG Frequency Bands = sopfr(6) | ** Neuroscience fact | EE |
+| 1165 | H-EE-86 | Alpha Wave ~10 Hz = sigma_{-1}(6) * sopfr(6) | ** Numerically exact | EE |
+| 1166 | H-EE-87 | Gamma Wave Upper Bound — FAILED | FAILED | EE |
+| 1167 | H-EE-88 | Optimal Hypothesis Count = log2(196560) ~ 18 | ** Self-referential | EE |
+| 1168 | H-EE-89 | Occam's Razor Formalized via Kolmogorov Complexity | ** Theoretical | EE |
+| 1169 | H-EE-9 | Phi-bottleneck + Phi6Simple Recovery | - | EE |
+| 1170 | H-EE-90 | The Reader Is R=1 — THE FINAL HYPOTHESIS | ** Self-referential paradox — the hypothesis that proves itself by being understood | EE |
+| 1171 | H-EE-91 | Second Perfect Number — R(28) = 4 | Verified (arithmetic fact) | EE |
+| 1172 | H-EE-92 | Generalized Balance Equation R_k(n) = 1 | Open research direction | EE |
+| 1173 | H-EE-93 | p-Adic Solutions to R(n) = 1 | Open mathematics | EE |
+| 1174 | H-EE-94 | R-Score in Finite Fields F_p | Theoretical | EE |
+| 1175 | H-EE-95 | Fine Structure Constant Alpha — HONEST FAILURE | FAILED — Acknowledged limitation | EE |
+| 1176 | H-EE-96 | Task-Dependent Limits — R=1 Is Not Universally Optimal | Expected limitation — scope boundary documented | EE |
+| 1177 | H-EE-97 | Meta-Loss Term Required for RG Convergence | Experimental observation — caveat to H-EE-27 | EE |
+| 1178 | H-EE-98 | Scale Dependence — Large-Scale Validation Unfinished | Risk mitigated — convergence confirmed across 3 orders of magnitude. 1B+ extrapolation favorable. | EE |
+| 1179 | H-EE-99 | LHC Run 3 Resonance at 37-38 GeV — FUTURE PREDICTION | Pre-registered future prediction — testable 2026-2027 | EE |
+| 1180 | H-EH-001-025-event-horizon | Event Horizon Hypotheses (H-EH-001 to H-EH-025) | WHITE | - |
+| 1181 | H-ELEC-001-020-neurostim-n6-framework | H-ELEC-001 to H-ELEC-020: Neurostimulation-n=6 Framework Hyp | - | - |
+| 1182 | H-FURST-1 | Furstenberg ×2,×3 System — Orbit Self-Reference | - | FURST |
+| 1183 | H-GEO-12 | pi_6(S^3) = Z/12Z = Z/sigma(6)Z -- Homotopy Groups Encode si | - | GEO |
+| 1184 | H-HAIR-001-050-hair-loss-n6 | H-HAIR-001~050: Hair Loss, the Perfect Number 6, and Treatme | - | - |
+| 1185 | H-HAIR-051-100-deep-mechanisms | H-HAIR-051~100: Deep Mechanisms, Molecular n=6, and 2024-202 | - | - |
+| 1186 | H-HAIR-101-rna-therapeutics | H-HAIR-101~120: RNA Therapeutics for Hair Loss | - | - |
+| 1187 | H-HAIR-121-180-epigenetics-microbiome-personalized | H-HAIR-121~180: Epigenetics, Microbiome, Mechanical Tension, | - | - |
+| 1188 | H-HAIR-181-240-microelectrode | H-HAIR-181~240: Neuralink N1 Microelectrode Technology Repur | - | - |
+| 1189 | H-HEXCODE-1 | The Hexacode [6,3,4]₄ — Perfect Number as Code | - | HEXCODE |
+| 1190 | H-HTPY-1 | π₆(S³) = ℤ/12ℤ — Homotopy Groups Encode σ(6) | - | HTPY |
+| 1191 | H-IHARA-1 | Ihara Zeta of C₆ — Coefficients = n=6 Arithmetic | - | IHARA |
+| 1192 | H-INFO-001-015 | Information Theory / Computer Science Domain Hypotheses | mixed | INFO |
+| 1193 | H-INFRA-001-020 | Infrastructure Hypotheses (Data Center, SMR, Power Grid) | Verified 2026-03-28: 🟧 1, ⚪ 15, ⬛ 4 | INFRA |
+| 1194 | H-INFRA-020-deep | Deep Analysis: EROI Civilization Threshold at 3:1 = sigma(6) | 🟧 — Real threshold, post-hoc mapping | INFRA |
+| 1195 | H-INST-001-020-institutions | H-INST-001 through H-INST-020: Institutional / Law / History | - | - |
+| 1196 | H-LING-001-015-linguistics | H-LING-001 through H-LING-015: Linguistics and Cognitive Sci | GREEN | - |
+| 1197 | H-MATH-DGT | Deep Graph Theory, Topology, and Combinatorics of n=6 | 8x 🟩 / 4x 🟧★ / 7x 🟧 / 1x ⚪ | MATH |
+| 1198 | H-MED-001-030 | Medical Domain Hypotheses | Verified 2026-03-28: 0 GREEN, 3 ORANGE, 26 WHITE, 1 BLACK | MED |
+| 1199 | H-MED-007-deep-eeg-spectral | H-MED-007 Deep Analysis: EEG Spectral Exponent and 1 + 1/e + | - | - |
+| 1200 | H-MED-027-030-deep-clinical-scales | H-MED-027 and H-MED-030: Deep Investigation of Clinical Scor | - | - |
+| 1201 | H-MOTIV-1 | K₃(ℤ) and Adams Operations — Motivic Cohomology | - | MOTIV |
+| 1202 | H-MUSIC-001-015-acoustics | H-MUSIC-001 through H-MUSIC-015: Music and Acoustics Connect | - | - |
+| 1203 | H-N6-001-adamw-quintuplet | H-N6-001: AdamW Quintuplet — 5 hyperparameters from n=6 | - | - |
+| 1204 | H-N6-002-complete-llm | H-N6-002: Complete n=6 LLM Architecture | - | - |
+| 1205 | H-N6-003-sigma-tau-8-universal | H-N6-003: σ-τ=8 Universal AI Constant | - | - |
+| 1206 | H-N6-004-8layer-ai-stack | H-N6-004: 8-Layer AI Stack — Silicon to Inference | - | - |
+| 1207 | H-N6-005-diffusion-universality | H-N6-005: Diffusion Model n=6 Universality | - | - |
+| 1208 | H-N6-006-universal-regularization | H-N6-006: 1/(σ-φ)=0.1 Universal Regularization | - | - |
+| 1209 | H-N6-007-vision-ai-complete | H-N6-007: Vision AI Complete n=6 | - | - |
+| 1210 | H-N6-008-moe-activation-fraction | H-N6-008: MoE Activation Fraction Law | - | - |
+| 1211 | H-N6-009-chiplet-convergence | H-N6-009: Chiplet Architecture Convergence | - | - |
+| 1212 | H-N6-010-cross-domain-95-5 | H-N6-010: 95/5 Cross-domain Resonance | - | - |
+| 1213 | H-N6-011-solid-state-cn6 | H-N6-011: Solid-State Electrolyte CN=6 Universality | - | - |
+| 1214 | H-N6-012-96-192-triple-convergence | H-N6-012: 96/192 Energy-Computing-AI Triple Convergence | - | - |
+| 1215 | H-N6-013-carbon-z6-synthesis | H-N6-013: Carbon Z=6 Material Synthesis Universality | - | - |
+| 1216 | H-N6-014-crystal-cn6-law | H-N6-014: Crystal Coordination Number CN=6 Law | - | - |
+| 1217 | H-N6-015-sm-kissing-number | H-N6-015: SM = φ×K₆ Kissing Number Theorem | - | - |
+| 1218 | H-N6-016-bott-active-channels | H-N6-016: Bott Active Channels = sopfr | - | - |
+| 1219 | H-N6-017-carbon-chip-material | H-N6-017: Carbon Z=6 Chip Material Universality | - | - |
+| 1220 | H-N6-ATLAS-n6-architecture-constants | H-N6-ATLAS: n6-architecture Constants Registry (494 entries) | EXACT | - |
+| 1221 | H-NCG-1 | Connes NCG — Standard Model KO-dimension = 6 | - | NCG |
+| 1222 | H-NT-3 | popcount(n) = phi(n) iff n in {1, 2, 3, 6} = Div(6) | - | NT |
+| 1223 | H-NT-421-tau-sigma-self | Hypothesis H-NT-421: tau(sigma(n)) = n Self-Reference Proper | - | - |
+| 1224 | H-NT-422-phi-sigma-tau | Hypothesis H-NT-422: phi(sigma(n)) = tau(n) Bridge Identity | - | - |
+| 1225 | H-NT-423-fibonacci-phi-tau | Hypothesis H-NT-423: phi(n)*tau(n) = F(n) Fibonacci Bridge | - | - |
+| 1226 | H-NT-424-sigma-phi-tau-self | Hypothesis H-NT-424: sigma(n) - phi(n) - tau(n) = n Self-Ref | - | - |
+| 1227 | H-NT-425-binomial-partition | Hypothesis H-NT-425: C(sigma(n), omega(n)) = n * p(n) Binomi | - | - |
+| 1228 | H-NT-426-sigma2-phi-sopfr | Hypothesis H-NT-426: sigma_2(n) = phi(n) * sopfr(n)^2 iff n= | - | - |
+| 1229 | H-NT-427-catalan-sopfr | Hypothesis H-NT-427: Catalan(n/2) = sopfr(n) iff n=6 | - | - |
+| 1230 | H-NT-428 | sigma(n)*phi(n) = tau(n)! iff n=6 | 🟧 | NT |
+| 1231 | H-NT-430 | sopfr(n) = n-1 iff n=6 | 🟦 | NT |
+| 1232 | H-NT-431 | sigma(n)*(phi(n)+1) = n^2 — Unique Among Perfect Numbers | 🟩 | NT |
+| 1233 | H-NT-432 | n*tau(n) = sigma(n)*omega(n) iff n=6 | 🟧★ | NT |
+| 1234 | H-NT-433 | sigma(n) = phi(n)*sopfr(n) + omega(n) — Master Decomposition | 🟧★ | NT |
+| 1235 | H-NT-434 | rad(sigma(n)) = n iff n=6 | 🟧★ | NT |
+| 1236 | H-NT-435 | (sigma-phi)/(tau-omega) = sopfr — Proved for All Semiprimes | 🟩 | NT |
+| 1237 | H-NUTR-001-020-nutrition | Hypothesis Review: H-NUTR-001 through H-NUTR-020 | - | - |
+| 1238 | H-OPTCODE-1 | Optimal Binary Codes A(6,d) = n=6 Arithmetic | - | OPTCODE |
+| 1239 | H-PACK-1 | E₆ Kissing Number = n·σ(n) = 72 | - | PACK |
+| 1240 | H-PAINL-1 | Exactly 6 Painlevé Equations — Classification Number = n | - | PAINL |
+| 1241 | H-PROB-429 | Chi-Squared(df=6) Parameters = Arithmetic Functions of 6 | 🟧★ | PROB |
+| 1242 | H-PSY-001-025-psychology | H-PSY-001 to H-PSY-025: Psychology / Emotion / Cognition Hyp | 🟧 | - |
+| 1243 | H-QGRP-1 | Quantum Groups — SU(2) Level k=4 Quantum Dimensions | - | QGRP |
+| 1244 | H-ROB-1 | 6-DOF = Perfect Number | - | ROB |
+| 1245 | H-ROB-10 | Gait Phase Transition = Tension Phase Transition | - | ROB |
+| 1246 | H-ROB-11 | Silent Consensus = Distributed Robot Agreement | - | ROB |
+| 1247 | H-ROB-12 | Gauge Invariance = Coordinate Independence | - | ROB |
+| 1248 | H-ROB-2 | Tension = Torque Optimization | - | ROB |
+| 1249 | H-ROB-3 | Golden Zone = Stable Walking Region | - | ROB |
+| 1250 | H-ROB-4 | PureField = Proprioception | - | ROB |
+| 1251 | H-ROB-5 | Mitosis = Swarm Fission | - | ROB |
+| 1252 | H-ROB-6 | Inter-Tension = Collision Avoidance | - | ROB |
+| 1253 | H-ROB-7 | 12 Joints = sigma(6) = Minimum Humanoid | - | ROB |
+| 1254 | H-ROB-8 | tau(6) = 4 Legs = Optimal Locomotion | - | ROB |
+| 1255 | H-ROB-9 | Confusion Matrix = Grasp Failure Map | - | ROB |
+| 1256 | H-SEDI-1 | Koide Angle delta = phi(6) tau(6)^2 / sigma(6)^2 = 2/9 | 🟩 | SEDI |
+| 1257 | H-SEDI-10 | R-filter on Tension Vectors Detects Anomalies | - | SEDI |
+| 1258 | H-SEDI-2 | Fermion Mass Tower from {sigma, tau, phi} | ⚪ | SEDI |
+| 1259 | H-SEDI-3 | Weinberg Angle sin^2(theta_W) = 3/13 | ⚪ | SEDI |
+| 1260 | H-SEDI-4 | Proton-Electron Mass Ratio m_p/m_e = sigma(6) * T(17) = 1836 | 🟧 | SEDI |
+| 1261 | H-SEDI-5 | Fine Structure 1/alpha = (sigma-tau)*17 + 1 = 137 | ⚪ | SEDI |
+| 1262 | H-SEDI-6 | R-filter Detects Training Phase Transitions | - | SEDI |
+| 1263 | H-SEDI-7 | Takens Embedding dim=6 Optimal for Training Dynamics | - | SEDI |
+| 1264 | H-SEDI-8 | Multi-Engine Consensus Improves Ensemble Predictions | - | SEDI |
+| 1265 | H-SEDI-9 | Entropy of Confusion Matrix Predicts Generalization | - | SEDI |
+| 1266 | H-SIM-1-physical-constants-compile-time | Hypothesis H-SIM-1: Physical Constants = Compile-Time Consta | - | - |
+| 1267 | H-SIM-10 | Tension = Simulation Computational Cost | - | SIM |
+| 1268 | H-SIM-11 | Quantum Computing Advantage = Simulator's Native Operations | - | SIM |
+| 1269 | H-SIM-12 | Fine-Tuning = Hyperparameter Optimization | - | SIM |
+| 1270 | H-SIM-2-planck-units-grid-resolution | Hypothesis H-SIM-2: Planck Units = Minimum Resolution (Grid) | - | - |
+| 1271 | H-SIM-5 | Quantum Entanglement = Shared Memory Pointer | - | SIM |
+| 1272 | H-SIM-6 | Wavefunction Collapse = Lazy Evaluation | - | SIM |
+| 1273 | H-SIM-7 | Holographic Principle = Data Compression | - | SIM |
+| 1274 | H-SIM-8 | Cosmological Constant = Garbage Collector | - | SIM |
+| 1275 | H-SIM-9 | 6 = Optimal Simulation Parameter | - | SIM |
+| 1276 | H-SING-1 | E₆ Singularity — Complete Arithmetic Encoding | - | SING |
+| 1277 | H-SPORT-001-020-biomechanics | Hypotheses H-SPORT-001 to H-SPORT-020: Sports, Biomechanics, | - | - |
+| 1278 | H-TEICH-1 | Teichmüller Dimension 6(g-1) — n=6 as Universal Constant | - | TEICH |
+| 1279 | H-TOP-426 | Kissing Number in Dim 8 = sigma(6)*tau(6)*sopfr(6) = 240 | 🟧 | TOP |
+| 1280 | H-TOP-9 | |im(J)_7| = 240 = sigma x tau x sopfr -- Adams J-Homomorphis | - | TOP |
+| 1281 | H-TOPO-COSMO-7-sphere-to-torus-evolution | H-TOPO-COSMO-7: Universe Topology Evolution — S3 to T3 via G | - | - |
+| 1282 | H-TREE-consciousness | H-TREE: Undiscovered Branches of the Consciousness Engine | - | - |
+| 1283 | H-UD-1 | Just Intonation = Divisor Ratios of 6 | ★★★ | UD |
+| 1284 | H-UD-10 | Hive Mind Topology Evolution — Disconnected to Torus via Gol | - | UD |
+| 1285 | H-UD-11 | Topology Evolution Universality — S3 to T3 at Every Scale | - | UD |
+| 1286 | H-UD-2 | DNA Genetic Code = n=6 Arithmetic | ★★ | UD |
+| 1287 | H-UD-3 | Crystallographic Restriction = div(6) U {tau(6)} | ★★★ | UD |
+| 1288 | H-UD-4 | Ramsey Numbers Hit Perfect Numbers: R(3,3)=6, R(3,8)=28 | ★★★ | UD |
+| 1289 | H-UD-5 | 2D Ising Critical Exponents = 1/(n=6 arithmetic) | ★★ | UD |
+| 1290 | H-UD-6 | Theta-Gamma Coupling: 6 Gamma Bursts per Theta Cycle | ★★ | UD |
+| 1291 | H-UD-7 | Perfect Codes <-> Perfect Numbers: Two Kinds of Perfect Tili | ★★ | UD |
+| 1292 | H-UD-8 | Hexagonal Tiling: n=6 = Optimal 2D Packing | ★★★ | UD |
+| 1293 | H-UD-9 | Hive Mind = Toroidal Topology (T3 Collective Consciousness) | - | UD |
+| 1294 | H-WAVE-1 | PureField = Wave Interference — Consciousness as Partial Des | - | WAVE |
+| 1295 | H-WAVE-2 | Hydrogen Atom E₆ ≈ -1/e eV — 6th Level at Golden Zone Center | - | WAVE |
+| 1296 | H-WAVE-3-string-harmonics-perfect-resonance | H-WAVE-3/8: Perfect Numbers = Perfectly Resonant Vibrating B | - | - |
+| 1297 | H-WAVE-7 | Quantum Harmonic Oscillator E₆ = 13/2 ℏω — 6th Prime Connect | - | WAVE |
+| 1298 | H-HARMONIC-001 | Ramanujan Sum c_6(n) Structure | - | HARMONIC |
+| 1299 | HCP-001-close-packing | Hypothesis HCP-001: Close-Packed Structures -- Coordination  | - | - |
+| 1300 | HOM-001-hopf-homotopy-mobius | HOM-001: Hopf Fibrations, Stable Homotopy, Mobius Group | - | - |
+| 1301 | INFOGEO-001-fisher-divisor-distribution | Hypothesis INFOGEO-001: Fisher Information of Divisor Distri | - | - |
+| 1302 | KISS-001-kissing-number-hierarchy | KISS-001: Kissing Number 계층 — dim 2,3,4 = P₁, σ(6), 2σ(6) | - | - |
+| 1303 | KISSING-numbers-n6-arithmetic | Kissing Numbers as n=6 Arithmetic Functions | - | - |
+| 1304 | KLEIN-001-klein-bottle-chromatic-6 | KLEIN-001: 클라인 병 색칠 수 = P₁ = 6 | - | - |
+| 1305 | KOCH-001-koch-snowflake-gz-width | KOCH-001: 코흐 눈송이 — C₆ 대칭 + GZ 너비 | - | - |
+| 1306 | LAW-79-consciousness-freedom | Law 79: Consciousness Freedom Degree = ln(2) | - | - |
+| 1307 | LOGIC-001-6smooth-density | Hypothesis Review LOGIC-001: 6-smooth Numbers and the Perfec | - | - |
+| 1308 | MASS-GEN-A-new-domains | Mass Generation A: 20 New Domains | - | - |
+| 1309 | MASS-GEN-B-deep-scan | Mass Generation B: Deep Uniqueness Scan (limit=100,000) | - | - |
+| 1310 | MASS-GEN-C-bridges | Mass Generation C: Cross-Domain Bridges via n=6 Arithmetic | - | - |
+| 1311 | MASS-GEN-D-consciousness | Mass Generation D: Mathematics <-> Consciousness Bridge | - | - |
+| 1312 | MEGA-001-p1plus1-universality | MEGA-001: P1+1=7 Universal Classification + Complete n=6 Map | - | - |
+| 1313 | MEGA-003-complexity-threshold-theorem | MEGA-003: Universal Complexity Threshold = n=6 Arithmetic | - | - |
+| 1314 | MF-001-modular-forms-ring-n6 | MF-001: Modular Forms Ring Generated by E_τ(6) and E_P₁ | - | - |
+| 1315 | MUS-001-music-intervals-n6 | MUS-001: Musical Intervals = n=6 Arithmetic Ratios | - | - |
+| 1316 | MUSIC-001-twelve-tone-consonance | Hypothesis MUSIC-001: 12-TET = sigma(6) Semitones, Consonanc | - | - |
+| 1317 | MUSIC-002-whole-tone-scale-6 | MUSIC-002: 온음 음계 = P₁ = 6 음 | - | - |
+| 1318 | MUSIC-003-tritone-six-semitones | MUSIC-003: 트라이톤 = P₁ = 6 반음 | - | - |
+| 1319 | MUSIC-004-guitar-six-strings | MUSIC-004: 기타 — 6현 = P₁ | - | - |
+| 1320 | MUSIC-005-consonance-from-divisors | MUSIC-005: 협화음 비율 — 6의 약수로 구성 | - | - |
+| 1321 | MUSIC-006-chromatic-scale-sigma | Hypothesis MUSIC-006: Chromatic Scale = sigma(6) Semitones | 🟩 | - |
+| 1322 | MUSIC-007-pentatonic-sopfr | Hypothesis MUSIC-007: Pentatonic Scale = sopfr(6) Notes | 🟩 | - |
+| 1323 | MUSIC-008-blues-scale-P1 | Hypothesis MUSIC-008: Blues Scale = P1 = 6 Notes | 🟩 | - |
+| 1324 | MUSIC-009-hexachord-medieval | Hypothesis MUSIC-009: Medieval Hexachord = P1 = 6 Notes | 🟩 | - |
+| 1325 | MUSIC-010-solmization-six | Hypothesis MUSIC-010: Solmization Syllables = P1 = 6 | 🟩 | - |
+| 1326 | MUSIC-011-church-modes-six | Hypothesis MUSIC-011: Original Church Modes = P1 = 6 | 🟧 | - |
+| 1327 | MUSIC-012-perfect-intervals-tau | Hypothesis MUSIC-012: Perfect Intervals = tau(6) = 4 | 🟩 | - |
+| 1328 | MUSIC-013-interval-classes-sigma | Hypothesis MUSIC-013: Interval Classes in Octave = sigma(6)  | 🟩 | - |
+| 1329 | MUSIC-014-circle-of-fifths-sigma | Hypothesis MUSIC-014: Circle of Fifths = sigma(6) = 12 Keys | 🟩 | - |
+| 1330 | MUSIC-015-key-signatures-2sigma | Hypothesis MUSIC-015: Key Signatures = 2*sigma(6) = 24 | 🟩 | - |
+| 1331 | MUSIC-016-cents-per-octave | Hypothesis MUSIC-016: Cents Per Octave = 100 * sigma(6) = 12 | 🟩 | - |
+| 1332 | MUSIC-017-whole-tone-scale-P1 | Hypothesis MUSIC-017: Whole Tone Scale = P1 = 6 Notes | 🟩 | - |
+| 1333 | MUSIC-018-augmented-scale | Hypothesis MUSIC-018: Augmented Scale Symmetry = tau(6) = 4  | 🟩 | - |
+| 1334 | MUSIC-019-diatonic-modes-P1plus1 | Hypothesis MUSIC-019: Diatonic Scale = P1 + 1 = 7 Notes | 🟧 | - |
+| 1335 | MUSIC-020-diminished-scale-symmetry | Hypothesis MUSIC-020: Diminished Scale = 2*tau(6) = 8 Notes | 🟩 | - |
+| 1336 | MUSIC-021-tritone-substitution | Hypothesis MUSIC-021: Tritone Substitution Pairs = P1 = 6 | 🟩 | - |
+| 1337 | MUSIC-022-major-minor-duality | Hypothesis MUSIC-022: Major/Minor Duality = phi(6) = 2 Quali | 🟩 | - |
+| 1338 | MUSIC-023-minor-scale-types | Hypothesis MUSIC-023: Minor Scale Variants = P1/2 = 3 | 🟩 | - |
+| 1339 | MUSIC-024-chromatic-intervals-complementary | Hypothesis MUSIC-024: Complementary Interval Pairs = P1 = 6 | 🟩 | - |
+| 1340 | MUSIC-025-enharmonic-equivalence | Hypothesis MUSIC-025: Enharmonic Pitch Classes = sigma(6) =  | 🟩 | - |
+| 1341 | MUSIC-026-six-eight-time | Hypothesis MUSIC-026: 6/8 Time Signature = P1 Eighth Notes | 🟩 | - |
+| 1342 | MUSIC-027-basic-meter-types | Hypothesis MUSIC-027: Simple Meter Types = P1/2 = 3 | 🟩 | - |
+| 1343 | MUSIC-028-compound-meters | Hypothesis MUSIC-028: Compound Meter Types = P1/2 = 3 | 🟩 | - |
+| 1344 | MUSIC-029-polyrhythm-2-3 | Hypothesis MUSIC-029: Fundamental Polyrhythm 2:3 = phi(6):P1 | 🟩 | - |
+| 1345 | MUSIC-030-hemiola | Hypothesis MUSIC-030: Hemiola = 3:2 Ratio = P1/2 : phi(6) | 🟩 | - |
+| 1346 | MUSIC-031-standard-note-values | Hypothesis MUSIC-031: Standard Note Values = P1 = 6 | 🟩 | - |
+| 1347 | MUSIC-032-rest-values | Hypothesis MUSIC-032: Standard Rest Values = P1 = 6 | 🟩 | - |
+| 1348 | MUSIC-033-triplet-subdivision | Hypothesis MUSIC-033: Triplet = P1/2 = 3 Notes in Space of p | 🟩 | - |
+| 1349 | MUSIC-034-twelve-bar-blues | Hypothesis MUSIC-034: 12-Bar Blues = sigma(6) Bars | 🟩 | - |
+| 1350 | MUSIC-035-phrase-length-tau | Hypothesis MUSIC-035: Standard Phrase Length = tau(6) = 4 Ba | 🟩 | - |
+| 1351 | MUSIC-036-time-signature-numerators | Hypothesis MUSIC-036: Common Time Signature Numerators from  | 🟧 | - |
+| 1352 | MUSIC-037-beat-subdivisions | Hypothesis MUSIC-037: Beat Subdivision Levels = P1/2 = 3 | 🟩 | - |
+| 1353 | MUSIC-038-anacrusis-types | Hypothesis MUSIC-038: Anacrusis (Pickup) Positions = tau(6)  | 🟧 | - |
+| 1354 | MUSIC-039-dotted-note-ratio | Hypothesis MUSIC-039: Dotted Note Ratio = P1/2 : phi(6) = 3: | 🟩 | - |
+| 1355 | MUSIC-040-swing-ratio | Hypothesis MUSIC-040: Swing Rhythm Ratio Approximates P1/2 : | 🟧 | - |
+| 1356 | MUSIC-041-triad-P1-half | Hypothesis MUSIC-041: Triad = P1/2 = 3 Notes | 🟩 | - |
+| 1357 | MUSIC-042-seventh-chord-tau | Hypothesis MUSIC-042: Seventh Chord = tau(6) = 4 Notes | 🟩 | - |
+| 1358 | MUSIC-043-triad-types-tau | Hypothesis MUSIC-043: Triad Quality Types = tau(6) = 4 | 🟩 | - |
+| 1359 | MUSIC-044-cadence-types-tau | Hypothesis MUSIC-044: Cadence Types = tau(6) = 4 | 🟩 | - |
+| 1360 | MUSIC-045-nonchord-tones-P1 | Hypothesis MUSIC-045: Non-Chord Tones = P1 = 6 Standard Type | 🟩 | - |
+| 1361 | MUSIC-046-augmented-sixth-chords | Hypothesis MUSIC-046: Augmented Sixth Chord Types = P1/2 = 3 | 🟩 | - |
+| 1362 | MUSIC-047-diatonic-chords | Hypothesis MUSIC-047: Diatonic Chords in a Key = P1 + 1 = 7 | 🟧 | - |
+| 1363 | MUSIC-048-harmonic-functions | Hypothesis MUSIC-048: Harmonic Functions = P1/2 = 3 | 🟩 | - |
+| 1364 | MUSIC-049-voice-leading-rules | Hypothesis MUSIC-049: Voice Leading Rules = P1 = 6 (Approxim | 🟧 | - |
+| 1365 | MUSIC-050-chord-inversions-triad | Hypothesis MUSIC-050: Triad Inversions = P1/2 = 3 | 🟩 | - |
+| 1366 | MUSIC-051-seventh-chord-inversions | Hypothesis MUSIC-051: Seventh Chord Inversions = tau(6) = 4 | 🟩 | - |
+| 1367 | MUSIC-052-secondary-dominants | Hypothesis MUSIC-052: Secondary Dominant Targets = P1 = 6 (i | 🟩 | - |
+| 1368 | MUSIC-053-chord-extensions | Hypothesis MUSIC-053: Chord Extension Levels = P1/2 = 3 | 🟩 | - |
+| 1369 | MUSIC-054-modal-interchange | Hypothesis MUSIC-054: Modal Interchange Chords = P1 = 6 (Com | 🟧 | - |
+| 1370 | MUSIC-055-figured-bass-numbers | Hypothesis MUSIC-055: Figured Bass Standard Figures = P1 = 6 | 🟩 | - |
+| 1371 | MUSIC-056-parallel-motion-types | Hypothesis MUSIC-056: Parallel Motion Types = tau(6) = 4 | 🟩 | - |
+| 1372 | MUSIC-057-circle-progressions | Hypothesis MUSIC-057: Circle Progression Root Motion = sopfr | 🟩 | - |
+| 1373 | MUSIC-058-predominant-chords | Hypothesis MUSIC-058: Predominant Chord Types = phi(6) = 2 | 🟩 | - |
+| 1374 | MUSIC-059-sus-chord-types | Hypothesis MUSIC-059: Suspended Chord Types = phi(6) = 2 | 🟩 | - |
+| 1375 | MUSIC-060-resolution-tendencies | Hypothesis MUSIC-060: Active Scale Degrees with Resolution = | 🟩 | - |
+| 1376 | MUSIC-061-song-sections-P1 | Hypothesis MUSIC-061: Song Sections = P1 = 6 | 🟩 | - |
+| 1377 | MUSIC-062-sonata-form-P1half | Hypothesis MUSIC-062: Sonata Form = P1/2 = 3 Main Parts | 🟩 | - |
+| 1378 | MUSIC-063-symphony-movements-tau | Hypothesis MUSIC-063: Symphony Movements = tau(6) = 4 | 🟩 | - |
+| 1379 | MUSIC-064-musical-textures-tau | Hypothesis MUSIC-064: Musical Textures = tau(6) = 4 | 🟩 | - |
+| 1380 | MUSIC-065-counterpoint-species-sopfr | Hypothesis MUSIC-065: Fux's Counterpoint Species = sopfr(6)  | 🟩 | - |
+| 1381 | MUSIC-066-twelve-tone-operations | Hypothesis MUSIC-066: Twelve-Tone Row Operations = tau(6) =  | 🟩 | - |
+| 1382 | MUSIC-067-dynamics-markings-P1 | Hypothesis MUSIC-067: Standard Dynamic Markings = P1 = 6 | 🟩 | - |
+| 1383 | MUSIC-068-tempo-categories | Hypothesis MUSIC-068: Standard Tempo Categories ~ P1 = 6 | 🟧 | - |
+| 1384 | MUSIC-069-binary-ternary-forms | Hypothesis MUSIC-069: Basic Musical Forms = phi(6) = 2 Prima | 🟩 | - |
+| 1385 | MUSIC-070-rondo-form | Hypothesis MUSIC-070: Rondo Sections = sopfr(6) = 5 or P1+1  | 🟧 | - |
+| 1386 | MUSIC-071-fugue-components | Hypothesis MUSIC-071: Fugue Components = tau(6) = 4 | 🟩 | - |
+| 1387 | MUSIC-072-variation-techniques | Hypothesis MUSIC-072: Core Variation Techniques = P1 = 6 | 🟧 | - |
+| 1388 | MUSIC-073-musical-periods | Hypothesis MUSIC-073: Major Musical Periods = P1 = 6 | 🟩 | - |
+| 1389 | MUSIC-074-orchestral-score-order | Hypothesis MUSIC-074: Standard Score Order Groups = tau(6) = | 🟩 | - |
+| 1390 | MUSIC-075-strophic-vs-through | Hypothesis MUSIC-075: Song Form Archetypes = phi(6) = 2 | 🟩 | - |
+| 1391 | MUSIC-076-voice-types-P1 | Hypothesis MUSIC-076: Voice Types = P1 = 6 | 🟩 | - |
+| 1392 | MUSIC-077-violin-strings-tau | Hypothesis MUSIC-077: Violin/Viola/Cello Strings = tau(6) =  | 🟩 | - |
+| 1393 | MUSIC-078-orchestra-sections-tau | Hypothesis MUSIC-078: Orchestra Sections = tau(6) = 4 | 🟩 | - |
+| 1394 | MUSIC-079-woodwind-family-tau | Hypothesis MUSIC-079: Core Woodwind Instruments = tau(6) = 4 | 🟩 | - |
+| 1395 | MUSIC-080-brass-family-tau | Hypothesis MUSIC-080: Core Brass Instruments = tau(6) = 4 | 🟩 | - |
+| 1396 | MUSIC-081-hornbostel-sachs | Hypothesis MUSIC-081: Hornbostel-Sachs Categories = sopfr(6) | 🟩 | - |
+| 1397 | MUSIC-082-staff-lines-sopfr | Hypothesis MUSIC-082: Staff Lines = sopfr(6) = 5 | 🟩 | - |
+| 1398 | MUSIC-083-staff-spaces-tau | Hypothesis MUSIC-083: Staff Spaces = tau(6) = 4 | 🟩 | - |
+| 1399 | MUSIC-084-clef-types-tau | Hypothesis MUSIC-084: Main Clef Types = tau(6) = 4 | 🟩 | - |
+| 1400 | MUSIC-085-guitar-tuning-intervals | Hypothesis MUSIC-085: Guitar Tuning Intervals: 4ths and 1 Ma | 🟧 | - |
+| 1401 | MUSIC-086-piano-keys-per-octave | Hypothesis MUSIC-086: Piano Keys Per Octave: sigma(6) = 12 | 🟩 | - |
+| 1402 | MUSIC-087-string-quartet-tau | Hypothesis MUSIC-087: String Quartet = tau(6) = 4 Instrument | 🟩 | - |
+| 1403 | MUSIC-088-SATB-voices-tau | Hypothesis MUSIC-088: SATB Choir Voices = tau(6) = 4 | 🟩 | - |
+| 1404 | MUSIC-089-ukulele-strings-tau | Hypothesis MUSIC-089: Ukulele Strings = tau(6) = 4 | 🟩 | - |
+| 1405 | MUSIC-090-drum-kit-components | Hypothesis MUSIC-090: Basic Drum Kit = sopfr(6) = 5 Pieces | 🟩 | - |
+| 1406 | MUSIC-091-tuning-systems | Hypothesis MUSIC-091: Major Tuning Systems = P1 = 6 | 🟩 | - |
+| 1407 | MUSIC-092-accidentals-sopfr | Hypothesis MUSIC-092: Standard Accidentals = sopfr(6) = 5 | 🟩 | - |
+| 1408 | MUSIC-093-modes-P1plus1 | Hypothesis MUSIC-093: Diatonic Modes = P1 + 1 = 7 | 🟧 | - |
+| 1409 | MUSIC-094-hexachord-pitch-class | Hypothesis MUSIC-094: Hexachord = P1 = 6 Pitch Classes | 🟩 | - |
+| 1410 | MUSIC-095-forte-number-hexachords | Hypothesis MUSIC-095: Hexachord Forte Classes = 50 | ⚪ | - |
+| 1411 | MUSIC-096-musical-alphabet | Hypothesis MUSIC-096: Musical Alphabet = P1 + 1 = 7 Letters | 🟧 | - |
+| 1412 | MUSIC-097-enharmonic-key-pairs | Hypothesis MUSIC-097: Enharmonic Key Pairs = P1/2 = 3 | 🟩 | - |
+| 1413 | MUSIC-098-transpositions-sigma | Hypothesis MUSIC-098: Possible Transpositions = sigma(6) = 1 | 🟩 | - |
+| 1414 | MUSIC-099-pitch-class-group | Hypothesis MUSIC-099: Pitch Class Group Z_12 = Z_{sigma(6)} | 🟩 | - |
+| 1415 | MUSIC-100-set-class-complement | Hypothesis MUSIC-100: Set Class Complementation: Size 6 is S | 🟩 | - |
+| 1416 | MUSIC-101-interval-vector-length | Hypothesis MUSIC-101: Interval Vector Length = P1 = 6 | 🟩 | - |
+| 1417 | MUSIC-102-whole-half-steps | Hypothesis MUSIC-102: Scale Step Types = phi(6) = 2 | 🟩 | - |
+| 1418 | MUSIC-103-major-scale-pattern | Hypothesis MUSIC-103: Major Scale: sopfr(6) Whole Steps + ph | 🟩 | - |
+| 1419 | MUSIC-104-harmonic-series-divisors | Hypothesis MUSIC-104: First 6 Harmonics Use Divisors and Fun | 🟩 | - |
+| 1420 | MUSIC-105-concert-pitch-A440 | Hypothesis MUSIC-105: Concert Pitch A440: 440 and n=6 | ⚪ | - |
+| 1421 | MUSICIRCLE-001-pitch-circle-S1-sigma6 | MUSICIRCLE-001: 음고류 원 S¹ — σ(6)=12 점 | - | - |
+| 1422 | MUSICIRCLE-002-circle-of-fifths-generator | MUSICIRCLE-002: 5도권 = Z_σ(6) 순환, 생성원 7 | - | - |
+| 1423 | MUSICIRCLE-003-circle-of-fourths-sopfr | MUSICIRCLE-003: 4도권 = sopfr(6)=5 생성원 | - | - |
+| 1424 | MUSICIRCLE-004-adjacent-keys-P1-common | MUSICIRCLE-004: 인접 조의 공통음 = P₁ = 6 | - | - |
+| 1425 | MUSICIRCLE-005-tonnetz-torus-phi6-circles | MUSICIRCLE-005: Tonnetz = 토러스 T² = φ(6)개 원의 곱 | - | - |
+| 1426 | MUSICIRCLE-006-hexatonic-cycles-tau6 | MUSICIRCLE-006: 헥사토닉 순환 = τ(6) = 4개 | - | - |
+| 1427 | MUSICIRCLE-007-octatonic-collections-P1half | MUSICIRCLE-007: 옥타토닉 컬렉션 = P₁/2 = 3개 | - | - |
+| 1428 | MUSICIRCLE-008-PLR-neo-riemannian-P1half | MUSICIRCLE-008: Neo-Riemannian P,L,R = P₁/2 = 3 연산 | - | - |
+| 1429 | MUSICIRCLE-009-whole-tone-circle-P1-notes | MUSICIRCLE-009: 온음 원 = P₁ = 6 음 | - | - |
+| 1430 | MUSICIRCLE-010-augmented-triad-circle | MUSICIRCLE-010: 증3화음 원 = τ(6)=4개 | - | - |
+| 1431 | MUSICIRCLE-011-diminished-seventh-circle | MUSICIRCLE-011: 감7화음 원 = P₁/2=3개 | - | - |
+| 1432 | MUSICIRCLE-012-tritone-pair-circle | MUSICIRCLE-012: 트라이톤 쌍 = P₁ = 6쌍 | - | - |
+| 1433 | MUSICIRCLE-013-diatonic-circle-7gon | MUSICIRCLE-013: Diatonic Set = (P₁+1)-gon on S¹ | - | - |
+| 1434 | MUSICIRCLE-014-pentatonic-circle-sopfr-gon | MUSICIRCLE-014: Pentatonic = sopfr(6)-gon on S¹ | - | - |
+| 1435 | MUSICIRCLE-015-chromatic-circle-complete-S1 | MUSICIRCLE-015: Chromatic Scale = Complete S¹ = σ(6) Points | - | - |
+| 1436 | MUSICIRCLE-016-blues-hexatonic-P1-gon | MUSICIRCLE-016: Blues Scale = P₁-gon on S¹ | - | - |
+| 1437 | MUSICIRCLE-017-pitch-helix-covering-space | MUSICIRCLE-017: Pitch Helix = Universal Cover of S¹ | - | - |
+| 1438 | MUSICIRCLE-018-modulation-as-rotation | MUSICIRCLE-018: Modulation = Rotation on S¹ | - | - |
+| 1439 | MUSICIRCLE-019-enharmonic-as-identity | MUSICIRCLE-019: Enharmonic = Identity on S¹ | - | - |
+| 1440 | MUSICIRCLE-020-interval-class-as-distance | MUSICIRCLE-020: Interval Class = Geodesic Distance on S¹ | - | - |
+| 1441 | MUSICIRCLE-021-rhythm-circle-time-sigma6 | MUSICIRCLE-021: Rhythm Circle: 12/8 = σ(6) Pulses on S¹ | - | - |
+| 1442 | MUSICIRCLE-022-6-8-time-P1-circle | MUSICIRCLE-022: 6/8 Time = P₁ Pulses on S¹ | - | - |
+| 1443 | MUSICIRCLE-023-clave-rhythm-circle | MUSICIRCLE-023: Clave Patterns on Z_σ(6) Circle | - | - |
+| 1444 | MUSICIRCLE-024-euclidean-rhythm-P1 | MUSICIRCLE-024: Euclidean Rhythm E(k,n): k in div(6) Functio | - | - |
+| 1445 | MUSICIRCLE-025-beat-circle-4-4-tau | MUSICIRCLE-025: 4/4 Time = τ(6) Beats on S¹ | - | - |
+| 1446 | MUSICIRCLE-026-waltz-circle-P1half | MUSICIRCLE-026: 3/4 Waltz = P₁/2 Beats on S¹ | - | - |
+| 1447 | MUSICIRCLE-027-compound-duple-phi | MUSICIRCLE-027: Compound Duple: 2=φ(6) Groups of 3=P₁/2 | - | - |
+| 1448 | MUSICIRCLE-028-polyrhythm-circle-product | MUSICIRCLE-028: Polyrhythm = Product of Circles | - | - |
+| 1449 | MUSICIRCLE-029-hemiola-circle-switch | MUSICIRCLE-029: Hemiola = Circle Partition Switch (2↔3) | - | - |
+| 1450 | MUSICIRCLE-030-rhythmic-necklace-count | MUSICIRCLE-030: Rhythmic Necklaces on Z₁₂ = Burnside Count | - | - |
+| 1451 | MUSICIRCLE-031-additive-rhythm-circle | MUSICIRCLE-031: Additive Rhythms: Partitions of P₁ | - | - |
+| 1452 | MUSICIRCLE-032-swing-ratio-golden | MUSICIRCLE-032: Swing Ratio ≈ 2:1 to 3:1 (φ(6) to P₁/2) | - | - |
+| 1453 | MUSICIRCLE-033-rhythmic-canon-tiling | MUSICIRCLE-033: Rhythmic Canon = Tiling of Z_σ(6) | - | - |
+| 1454 | MUSICIRCLE-034-metric-modulation-cover | MUSICIRCLE-034: Metric Modulation = Covering Map on S¹ | - | - |
+| 1455 | MUSICIRCLE-035-tempo-circle-log | MUSICIRCLE-035: Tempo Relations as Logarithmic Circle | - | - |
+| 1456 | MUSICIRCLE-036-S1-quotient-pitch-rhythm | MUSICIRCLE-036: Pitch S¹ and Rhythm S¹: Dual Circles | - | - |
+| 1457 | MUSICIRCLE-037-winding-number-octave | MUSICIRCLE-037: Winding Number = Octave Count | - | - |
+| 1458 | MUSICIRCLE-038-circular-statistics-pitch | MUSICIRCLE-038: Circular Statistics on Pitch S¹ | - | - |
+| 1459 | MUSICIRCLE-039-fourier-on-circle | MUSICIRCLE-039: Fourier Analysis on Z_σ(6) | - | - |
+| 1460 | MUSICIRCLE-040-intervallic-content-on-S1 | MUSICIRCLE-040: Interval Vector = Distance Histogram on S¹ | - | - |
+| 1461 | MUSICIRCLE-041-all-interval-tetrachord | MUSICIRCLE-041: All-Interval Tetrachord in Z₁₂ | - | - |
+| 1462 | MUSICIRCLE-042-maximal-evenness-circle | MUSICIRCLE-042: Maximally Even Sets on S¹ | - | - |
+| 1463 | MUSICIRCLE-043-z-relation-on-circle | MUSICIRCLE-043: Z-Relation: Same iv on S¹, Different Sets | - | - |
+| 1464 | MUSICIRCLE-044-pitch-class-complement | MUSICIRCLE-044: Complement on S¹: |A| + |Ā| = σ(6) | - | - |
+| 1465 | MUSICIRCLE-045-hexachord-self-complement | MUSICIRCLE-045: Self-Complementary Hexachord: |A| = P₁ | - | - |
+| 1466 | MUSICIRCLE-046-circle-embeds-in-tonnetz | MUSICIRCLE-046: S¹ → T² Embedding in Tonnetz | - | - |
+| 1467 | MUSICIRCLE-047-musical-orbifold | MUSICIRCLE-047: Chord Space Orbifold = T^n / S_n | - | - |
+| 1468 | MUSICIRCLE-048-circle-bundle-over-rhythm | MUSICIRCLE-048: Music as Circle Bundle: S¹ → E → S¹ | - | - |
+| 1469 | MUSICIRCLE-049-voice-leading-circle | MUSICIRCLE-049: Voice Leading = Path on S¹ (Minimal Motion) | - | - |
+| 1470 | MUSICIRCLE-050-musical-fiber-circle | MUSICIRCLE-050: Musical Fiber = Octave Equivalence Circle | - | - |
+| 1471 | MUSICTOPO-001-pitch-class-space-as-z_sigma6-circle | MUSICTOPO-001: Pitch Class Space as Z_sigma(6) Circle | - | - |
+| 1472 | MUSICTOPO-002-tonnetz-as-torus-t2---product-of-phi6-circles | MUSICTOPO-002: Tonnetz as Torus T^2 = Product of phi(6) Circ | - | - |
+| 1473 | MUSICTOPO-003-chromatic-circle-has-sigma6---12-nodes | MUSICTOPO-003: Chromatic Circle has sigma(6) = 12 Nodes | - | - |
+| 1474 | MUSICTOPO-004-circle-of-fifths-has-sigma6---12-nodes | MUSICTOPO-004: Circle of Fifths has sigma(6) = 12 Nodes | - | - |
+| 1475 | MUSICTOPO-005-pitch-helix-as-universal-cover-with-sigma6-coil-period | MUSICTOPO-005: Pitch Helix as Universal Cover with sigma(6)  | - | - |
+| 1476 | MUSICTOPO-006-mobius-strip-in-voice-leading-via-contrary-motion | MUSICTOPO-006: Mobius Strip in Voice Leading via Contrary Mo | - | - |
+| 1477 | MUSICTOPO-007-neo-riemannian-operations-p1-2---3-generators | MUSICTOPO-007: Neo-Riemannian Operations: P1/2 = 3 Generator | - | - |
+| 1478 | MUSICTOPO-008-hexatonic-systems-tau6---4-cycles | MUSICTOPO-008: Hexatonic Systems: tau(6) = 4 Cycles | - | - |
+| 1479 | MUSICTOPO-009-octatonic-collections-p1-2---3-systems | MUSICTOPO-009: Octatonic Collections: P1/2 = 3 Systems | - | - |
+| 1480 | MUSICTOPO-010-major-minor-duality-as-z_phi6---z_2-symmetry | MUSICTOPO-010: Major/Minor Duality as Z_phi(6) = Z_2 Symmetr | - | - |
+| 1481 | MUSICTOPO-011-transposition-group-t---z_sigma6 | MUSICTOPO-011: Transposition Group T = Z_sigma(6) | - | - |
+| 1482 | MUSICTOPO-012-dihedral-group-d_12-of-order-2sigma6---24 | MUSICTOPO-012: Dihedral Group D_12 of Order 2*sigma(6) = 24 | - | - |
+| 1483 | MUSICTOPO-013-triad-space-as-orbifold-t3-s_3 | MUSICTOPO-013: Triad Space as Orbifold T^3/S_3 | - | - |
+| 1484 | MUSICTOPO-014-voice-leading-geometry-n-voices---n-torus | MUSICTOPO-014: Voice-Leading Geometry: n Voices = n-Torus | - | - |
+| 1485 | MUSICTOPO-015-dyad-space---mobius-strip-with-phi6-identification | MUSICTOPO-015: Dyad Space = Mobius Strip with phi(6) Identif | - | - |
+| 1486 | MUSICTOPO-016-trichord-space-as-orbifold-with-cone-points | MUSICTOPO-016: Trichord Space as Orbifold with Cone Points | - | - |
+| 1487 | MUSICTOPO-017-tetrachord-space-in-tau6---4-dimensions | MUSICTOPO-017: Tetrachord Space in tau(6) = 4 Dimensions | - | - |
+| 1488 | MUSICTOPO-018-fundamental-domain-of-chord-space | MUSICTOPO-018: Fundamental Domain of Chord Space | - | - |
+| 1489 | MUSICTOPO-019-smooth-voice-leading-as-short-geodesics | MUSICTOPO-019: Smooth Voice Leading as Short Geodesics | - | - |
+| 1490 | MUSICTOPO-020-parallel-transport-of-chords-on-tonnetz-torus | MUSICTOPO-020: Parallel Transport of Chords on Tonnetz Torus | - | - |
+| 1491 | MUSICTOPO-021-fiber-bundle-pitch-register-over-pitch-class-base | MUSICTOPO-021: Fiber Bundle: Pitch Register over Pitch Class | - | - |
+| 1492 | MUSICTOPO-022-euler-characteristic-of-chord-spaces | MUSICTOPO-022: Euler Characteristic of Chord Spaces | - | - |
+| 1493 | MUSICTOPO-023-homology-of-pitch-class-set-complexes | MUSICTOPO-023: Homology of Pitch-Class Set Complexes | - | - |
+| 1494 | MUSICTOPO-024-musical-canons-as-braids | MUSICTOPO-024: Musical Canons as Braids | - | - |
+| 1495 | MUSICTOPO-025-contrapuntal-symmetries-as-group-actions-on-z_sigma6 | MUSICTOPO-025: Contrapuntal Symmetries as Group Actions on Z | - | - |
+| 1496 | MUSICTOPO-026-rhythm-necklaces-on-z_sigma6 | MUSICTOPO-026: Rhythm Necklaces on Z_sigma(6) | - | - |
+| 1497 | MUSICTOPO-027-rhythmic-canons-as-tilings-of-z_sigma6 | MUSICTOPO-027: Rhythmic Canons as Tilings of Z_sigma(6) | - | - |
+| 1498 | MUSICTOPO-028-euclidean-rhythms-and-equal-division-of-z_sigma6 | MUSICTOPO-028: Euclidean Rhythms and Equal Division of Z_sig | - | - |
+| 1499 | MUSICTOPO-029-beat-class-sets-as-subsets-of-z_sigma6 | MUSICTOPO-029: Beat Class Sets as Subsets of Z_sigma(6) | - | - |
+| 1500 | MUSICTOPO-030-metric-modulation-as-covering-space-map | MUSICTOPO-030: Metric Modulation as Covering Space Map | - | - |
+| 1501 | MUSICTOPO-031-time-signature-as-lattice-point-in-z2 | MUSICTOPO-031: Time Signature as Lattice Point in Z^2 | - | - |
+| 1502 | MUSICTOPO-032-polyrhythm-as-z_m-x-z_n-orbit | MUSICTOPO-032: Polyrhythm as Z_m x Z_n Orbit | - | - |
+| 1503 | MUSICTOPO-033-rhythmic-braid-groups-from-voice-crossing | MUSICTOPO-033: Rhythmic Braid Groups from Voice Crossing | - | - |
+| 1504 | MUSICTOPO-034-phase-space-of-rhythmic-patterns | MUSICTOPO-034: Phase Space of Rhythmic Patterns | - | - |
+| 1505 | MUSICTOPO-035-tempo-as-slope-in-time-pitch-plane | MUSICTOPO-035: Tempo as Slope in Time-Pitch Plane | - | - |
+| 1506 | MUSICTOPO-036-musical-form-as-cw-complex | MUSICTOPO-036: Musical Form as CW-Complex | - | - |
+| 1507 | MUSICTOPO-037-persistent-homology-of-melodic-contour | MUSICTOPO-037: Persistent Homology of Melodic Contour | - | - |
+| 1508 | MUSICTOPO-038-betti-numbers-of-scale-complexes | MUSICTOPO-038: Betti Numbers of Scale Complexes | - | - |
+| 1509 | MUSICTOPO-039-simplicial-complex-of-consonance | MUSICTOPO-039: Simplicial Complex of Consonance | - | - |
+| 1510 | MUSICTOPO-040-homotopy-equivalence-of-enharmonic-scales | MUSICTOPO-040: Homotopy Equivalence of Enharmonic Scales | - | - |
+| 1511 | MUSICTOPO-041-covering-spaces-and-modulation | MUSICTOPO-041: Covering Spaces and Modulation | - | - |
+| 1512 | MUSICTOPO-042-orbifold-euler-characteristic-of-voice-leading-spaces | MUSICTOPO-042: Orbifold Euler Characteristic of Voice-Leadin | - | - |
+| 1513 | MUSICTOPO-043-topological-classification-of-musical-canons | MUSICTOPO-043: Topological Classification of Musical Canons | - | - |
+| 1514 | MUSICTOPO-044-euler-characteristic-of-the-tonnetz-torus-is-zero | MUSICTOPO-044: Euler Characteristic of the Tonnetz Torus is  | - | - |
+| 1515 | MUSICTOPO-045-klein-bottle-in-pitch-rhythm-duality | MUSICTOPO-045: Klein Bottle in Pitch-Rhythm Duality | - | - |
+| 1516 | MUSICTOPO-046-fundamental-group-pi_1-of-pitch-space---z | MUSICTOPO-046: Fundamental Group pi_1 of Pitch Space = Z | - | - |
+| 1517 | MUSICTOPO-047-musical-manifolds-dimension---number-of-voices | MUSICTOPO-047: Musical Manifolds: Dimension = Number of Voic | - | - |
+| 1518 | MUSICTOPO-048-topological-data-analysis-of-musical-structure | MUSICTOPO-048: Topological Data Analysis of Musical Structur | - | - |
+| 1519 | MUSICTOPO-049-nerve-theorem-applied-to-chord-overlap | MUSICTOPO-049: Nerve Theorem Applied to Chord Overlap | - | - |
+| 1520 | MUSICTOPO-050-sheaf-theory-of-musical-analysis | MUSICTOPO-050: Sheaf Theory of Musical Analysis | - | - |
+| 1521 | NAVSTOKES-001-stress-tensor | Hypothesis NAVSTOKES-001: 3D Stress Tensor — 6 Independent C | - | - |
+| 1522 | NETWORK-001-K6-spectral | Hypothesis Review NETWORK-001: K6 Spectral Properties and Co | - | - |
+| 1523 | NGH-001-topology-gravity-unification | NGH-001: Topology-Gravity Unification via Perfect Numbers | - | - |
+| 1524 | NGH-006-universal-ratios-24-6d | NGH-006: Three Universal Constants — 3:2, 24=σφ, 6D Phase Sp | - | - |
+| 1525 | NGH-009-2p1-64-universal | NGH-009: 2^P1 = 64 Universal Code | - | - |
+| 1526 | NGH-012-phi-p2-sigma-p1-bridge | NGH-012: phi(P2) = sigma(P1) — Unique Bridge Between Perfect | - | - |
+| 1527 | NGH-013-consciousness-stack-10-levels | NGH-013: The Consciousness Stack — P1=6 at 10 Hierarchical L | - | - |
+| 1528 | NOBEL-P1-universality-exponents | H-NOBEL-1 Prediction: Universality Class Exponents as n=6 Ar | - | - |
+| 1529 | NOBEL-P2-biological-optimality-final | NOBEL-P2: Biological Optimality — The Genetic Code as n=6 Ar | - | - |
+| 1530 | H-NOBEL-2 | The Genetic Code Is the Unique Perfect Number Code | 🟩⭐⭐⭐ | NOBEL |
+| 1531 | NOBEL-P2-mechanism-and-predictions | NOBEL-P2 Supplement: Mechanism, Predictions, and Exobiology | 🟩 | - |
+| 1532 | NOBEL-grand-hypotheses | Ten Grand Hypotheses: Unification Through Perfect Number 6 | - | - |
+| 1533 | NOBEL-multi-objective-optimality | H-NOBEL-UNIFIED: Multi-Objective Optimality Theorem | - | - |
+| 1534 | NOTESHAPE-001-filled-notes-tau6 | NOTESHAPE-001: 채운 음표(●) = τ(6) = 4종 | - | - |
+| 1535 | NOTESHAPE-002-open-notes-phi6 | NOTESHAPE-002: 빈 음표(○) = φ(6) = 2종 | - | - |
+| 1536 | NOTESHAPE-003-total-note-types-P1 | NOTESHAPE-003: 총 표준 음표 = P₁ = 6종 | - | - |
+| 1537 | NOTESHAPE-004-topological-phase-transition | NOTESHAPE-004: 위상 전이점 — 4분↔2분 경계 | - | - |
+| 1538 | NOTESHAPE-005-quarter-note-binary-P1 | NOTESHAPE-005: 4분음표 이진 코드 = 110₂ = P₁ = 6 | - | - |
+| 1539 | NOTESHAPE-006-symmetry-breaking-hierarchy | NOTESHAPE-006: 대칭 파괴 위계 — O(2) → D_τ(6) → Z_φ(6) → {e} | - | - |
+| 1540 | NOTESHAPE-007-treble-clef-loops-phi6 | NOTESHAPE-007: 높은음자리표(𝄞) 루프 = φ(6) = 2개 | - | - |
+| 1541 | NOTESHAPE-008-treble-clef-spiral-sopfr-pi | NOTESHAPE-008: 𝄞 나선 감김 = sopfr(6)π/φ(6) 라디안 | - | - |
+| 1542 | NOTESHAPE-009-note-components-sopfr | NOTESHAPE-009: 음표 구성 요소 = sopfr(6) = 5 | - | - |
+| 1543 | NOTESHAPE-010-hole-duration-theorem | NOTESHAPE-010: 구멍-시가 정리 — 구멍 수와 음가의 대응 | - | - |
+| 1544 | NOTESHAPE-011-euler-char-jump | NOTESHAPE-011: 오일러 특성 점프 — χ=1 → χ=0 | - | - |
+| 1545 | NOTESHAPE-012-fundamental-group-jump | NOTESHAPE-012: 기본군 점프 — π₁ = 0 → π₁ = Z | - | - |
+| 1546 | NOTESHAPE-013-note-as-CW-complex | NOTESHAPE-013: 음표 = CW-복합체 | - | - |
+| 1547 | NOTESHAPE-014-treble-clef-crossing-phi6 | NOTESHAPE-014: 𝄞 교차수 = φ(6) = 2 | - | - |
+| 1548 | NOTESHAPE-015-clef-topology-comparison | NOTESHAPE-015: 음자리표별 위상적 복잡도 | - | - |
+| 1549 | NOTESHAPE-016-boundary-components | NOTESHAPE-016: 음표 머리 경계 성분: ● = 1 = S¹, ○ = 2 = φ(6) × S¹ | - | - |
+| 1550 | NOTESHAPE-017-homology-note-heads | NOTESHAPE-017: 음표 머리 호몰로지: H₁(●)=0, H₁(○)=Z | - | - |
+| 1551 | NOTESHAPE-018-note-stem-as-interval | NOTESHAPE-018: 음표 기둥 = 위상적 구간 I = [0,1] | - | - |
+| 1552 | NOTESHAPE-019-flag-as-arc | NOTESHAPE-019: 음표 깃발 = 매입된 호(embedded arc) | - | - |
+| 1553 | NOTESHAPE-020-dotted-note-ratio-3-2 | NOTESHAPE-020: 부점음표 = 3/2 = div(6) 비율 확장 | - | - |
+| 1554 | NOTESHAPE-021-beam-as-product | NOTESHAPE-021: 묶음(beam) = 구간의 곱 I × I | - | - |
+| 1555 | NOTESHAPE-022-note-homotopy-type | NOTESHAPE-022: 음표의 호모토피 유형: ● ≃ pt, ○ ≃ S¹ | - | - |
+| 1556 | NOTESHAPE-023-treble-clef-genus | NOTESHAPE-023: 𝄞 내부 영역의 genus = 0 | - | - |
+| 1557 | NOTESHAPE-024-note-morse-theory | NOTESHAPE-024: 음표의 Morse 이론: 채운/빈 = 임계점 구조 | - | - |
+| 1558 | NOTESHAPE-025-duration-betti | NOTESHAPE-025: 시가와 Betti 수: β₁(●)=0, β₁(○)=1 | - | - |
+| 1559 | NOTESHAPE-026-clef-writhe | NOTESHAPE-026: 𝄞 writhe(뒤틀림) 수 분석 | - | - |
+| 1560 | NOTESHAPE-027-note-poincare-duality | NOTESHAPE-027: 음표 머리의 Poincaré 이중성 | - | - |
+| 1561 | NOTESHAPE-028-rest-as-absence | NOTESHAPE-028: 쉼표 = 음표의 위상적 보집합(complement) | - | - |
+| 1562 | NOTESHAPE-029-note-fiber-bundle | NOTESHAPE-029: 음표 = 음고 파이버 위의 시가 단면(section) | - | - |
+| 1563 | NOTESHAPE-030-treble-bass-mirror | NOTESHAPE-030: 𝄞과 𝄢의 거울 관계 | - | - |
+| 1564 | NP-001-nuclear-magic-virus-platonic | NP-001: Nuclear Magic Numbers, Virus Capsids, Platonic Solid | - | - |
+| 1565 | NS-001-cortex-grid-carbon-triple | NS-001: Life's Triple Perfect Number — Cortex × Grid × Carbo | - | - |
+| 1566 | NUCSTR-001-020-nuclear-structure-n6 | NUCSTR-001~020: Nuclear Structure and Perfect Number 6 | - | - |
+| 1567 | NUCSTR-021-sigma-perfect-nuclear-cascade | NUCSTR-021: The Perfect Number Nuclear Cascade | - | - |
+| 1568 | ODE-001-painleve-golay-lorentz | ODE-001: Painleve 6, Golay Code, Lorentz Group = n=6 | - | - |
+| 1569 | OP-001-em-tensor-kepler-ratio | OP-001: EM Field Tensor P₁ Components + Kepler 3:2 Ratio | - | - |
+| 1570 | PERFECT-CLASSIFY-001-universal-expansion | PERFECT-CLASSIFY-001: Perfect Number Universal Expansion | 🟩⭐⭐ | - |
+| 1571 | PERFECT-LENS-001-gravity-topology-telescope | PERFECT-LENS-001: Gravitational & Topological Lens Telescope | 🟩⭐ | - |
+| 1572 | PERFECT-P2-001-n28-deep-exploration | PERFECT-P2-001: n=28 Deep Exploration — Push to the Limit | 🟧⭐ | - |
+| 1573 | PERFECT-P3-496-deep-exploration | PERFECT-P3-496: n=496 Deep Exploration — The Anomaly Cancell | 🟩 | - |
+| 1574 | PERFECT-TOPO-001-topological-atlas | PERFECT-TOPO-001: Topological Atlas of Perfect Numbers | 🟩⭐⭐ | - |
+| 1575 | PHYS-CALABI-YAU-N6 | PHYS-CALABI-YAU-N6: Calabi-Yau 3-Folds and Mirror Symmetry E | - | - |
+| 1576 | PHYS-CONNES-NCG-N6 | PHYS-CONNES-NCG: Standard Model from KO-Dimension 6 = P1 | - | - |
+| 1577 | PHYS-FEYNMAN-SM-N6 | PHYS-FEYNMAN-SM-N6: Feynman Diagram Combinatorics, Renormali | - | - |
+| 1578 | PHYS-GW-QUADRUPOLE-P6 | PHYS-GW-QUADRUPOLE-P6: Gravitational Wave Quadrupole Radiati | ⚪ | - |
+| 1579 | PHYS-SELF-REFERENTIAL-LOOP-physics | PHYS-SELF-REFERENTIAL-LOOP: Perfect Numbers Generate String  | - | - |
+| 1580 | PHYS-THERMODYNAMICS-N6 | PHYS-THERMODYNAMICS-N6: Statistical Mechanics Encodes n=6 at | - | - |
+| 1581 | PLASMA-001-020-waves-instabilities-n6 | PLASMA-001~020: Plasma Waves, Instabilities, and Transport v | - | - |
+| 1582 | PLATONIC-001-platonic-solids-p1 | PLATONIC-001: 플라톤 입체 — P₁ 서명 | - | - |
+| 1583 | PM-001-kissing-numbers-n6 | PM-001: Kissing Numbers K(1..4) = Complete n=6 Arithmetic Se | - | - |
+| 1584 | PMATH-001-020-pure-mathematics-n6 | PMATH-001~020: Pure Mathematics Structures and Perfect Numbe | - | - |
+| 1585 | PMATH-021-040-n6-uniqueness-deep-dfs | PMATH-021~040: n=6 고유성 Deep DFS 탐색 결과 | - | - |
+| 1586 | PMATH-BERNOULLI-PERFECT-EXOTIC | PMATH-BERNOULLI-PERFECT-EXOTIC: The Bernoulli-Perfect-Exotic | - | - |
+| 1587 | PMATH-BOTT-PERIODICITY-P6 | PMATH-BOTT: Bott Periodicity (period 8 = 2^3) and P1 = 6 = 2 | - | - |
+| 1588 | PMATH-BRIDGE-RATIO-uniqueness | PMATH-BRIDGE-RATIO: Bridge Ratio Unity Uniqueness at n=6 | - | - |
+| 1589 | PMATH-CATALAN-COMBINATORIAL-N6 | PMATH-CATALAN: Combinatorial Sequences Encode n=6 Arithmetic | 🟩 | - |
+| 1590 | PMATH-CONTROL-GROUP-texas | PMATH-CONTROL-GROUP: Control Group Texas Sharpshooter Test | - | - |
+| 1591 | PMATH-DIVISOR-LATTICE-universal | PMATH-DIVISOR-LATTICE: Divisor Lattice Universal Characteriz | - | - |
+| 1592 | PMATH-GRAND-UNIFICATION-n6-universality | PMATH-GRAND: n=6 Mathematical Universality — 146 Domains, 44 | - | - |
+| 1593 | PMATH-GRAND-UNIFICATION-n6 | PMATH-GRAND-UNIFICATION: Five-Fold Characterization of n=6 | STRUCTURAL | - |
+| 1594 | PMATH-INFORMATION-THEORY-N6 | PMATH-INFORMATION-THEORY: Information Theory Fundamentally E | - | - |
+| 1595 | PMATH-KNOT-THEORY-N6 | PMATH-KNOT: Knot Invariants Systematically Encode n=6 Arithm | - | - |
+| 1596 | PMATH-MONSTER-MOONSHINE-perfect | PMATH-MONSTER: Monster Group / Monstrous Moonshine and Perfe | - | - |
+| 1597 | PMATH-PASCAL-PERFECT | PMATH-PASCAL-PERFECT: Pascal's Triangle Encodes Perfect Numb | - | - |
+| 1598 | PMATH-PERFECT-CHAIN-bridges | PMATH-PERFECT-CHAIN: Inter-Perfect-Number Bridge Classificat | - | - |
+| 1599 | PMATH-PLATONIC-SOLIDS-N6 | PMATH-PLATONIC-SOLIDS-N6: Platonic Solids and the Arithmetic | - | - |
+| 1600 | PMATH-RAMSEY-N6 | PMATH-RAMSEY-N6: Ramsey Theory and Perfect Number 6 | - | - |
+| 1601 | PMATH-RECIPROCAL-MIRACLE-generalization | PMATH-RECIPROCAL-MIRACLE: Generalization of the Reciprocal M | - | - |
+| 1602 | PMATH-RIEMANN-ZETA-N6 | PMATH-RIEMANN-ZETA-N6: Riemann Zeta Function Encodes n=6 Str | - | - |
+| 1603 | PMATH-SIGMA-PHI-NTAU-uniqueness | PMATH-SIGMA-PHI-NTAU: sigma(n)*phi(n) = n*tau(n) Uniqueness  | - | - |
+| 1604 | PMATH-SO32-THETA-anomaly | PMATH-SO32-THETA: Perfect Number P3=496, SO(32) Anomaly Canc | - | - |
+| 1605 | PMATH-SPHERE-PACKING-perfect | PMATH-SPHERE: Sphere Packing Magic Dimensions and Perfect Nu | PROVEN (exact, unique) | - |
+| 1606 | PMATH-SPORADIC-GROUPS-perfect | PMATH-SPORADIC: Sporadic Simple Groups Encode Perfect Number | - | - |
+| 1607 | PMATH-SYMMETRIC-S6-uniqueness | PMATH-SYM: Symmetric Group S_6 Uniqueness and Perfect Number | - | - |
+| 1608 | PMATH-THETA-PERFECT-pattern | PMATH-THETA-PERFECT: Theta_{4k-1} = sigma(P_k) Pattern | REFUTED (zero matches, fundamental growth-rate obstruction) | - |
+| 1609 | QC-001-quantum-codes-n6 | QC-001: Quantum Error Correction and n=6 Arithmetic | - | - |
+| 1610 | QCOMP-001-quantum-code-642 | Hypothesis Review QCOMP-001: [[6,4,2]] Quantum Error Detecti | - | - |
+| 1611 | QCOMP-002-stabilizer-hierarchy | Hypothesis Review QCOMP-002: Stabilizer Hierarchy = phi -> t | - | - |
+| 1612 | QCOMP-003-hamming-to-mds | Hypothesis Review QCOMP-003: Perfect Hamming n=5 -> Perfect  | - | - |
+| 1613 | QCOMP-004-hamming-parent | Hypothesis Review QCOMP-004: Classical Hamming [7,4,3] Paren | - | - |
+| 1614 | QCOMP-005-mds-condition | Hypothesis Review QCOMP-005: MDS Existence Condition sigma(n | - | - |
+| 1615 | QCOMP-006-hilbert-partition | Hypothesis Review QCOMP-006: Hilbert Space Dimensional Parti | - | - |
+| 1616 | QCOMP-007-tensor-self-similarity | Hypothesis Review QCOMP-007: Tensor Product Self-Similarity  | - | - |
+| 1617 | QCOMP-008-depolarizing-channel | Hypothesis Review QCOMP-008: Depolarizing Channel Capacity a | - | - |
+| 1618 | QCOMP-009-weight-enumerator | Hypothesis Review QCOMP-009: Quantum Weight Enumerator and s | - | - |
+| 1619 | QFT-001-casimir-critical-dims | QFT-001: Casimir Effect and Upper Critical Dimensions = n=6  | - | - |
+| 1620 | QINFO-001-020-quantum-information-n6 | QINFO-001~020: Quantum Information, Computing, and Error Cor | - | - |
+| 1621 | QSTATE-001-stabilizer-states-6 | QSTATE-001: Bloch 구 안정자 상태 = P₁ = 6 | - | - |
+| 1622 | RIEMANN-CURV-001-curvature-denominator | Hypothesis RIEMANN-CURV-001: Riemann Tensor Components — sig | - | - |
+| 1623 | ROOT-001-3root-uniqueness-theorem | ROOT-001: 3-Root Uniqueness Theorem for n=6 | - | - |
+| 1624 | RT-001-exceptional-lie-ranks-n6 | RT-001: All 5 Exceptional Lie Algebra Ranks = n=6 Arithmetic | - | - |
+| 1625 | SC-001-020-superconductor-physics-n6 | SC-001 through SC-020: Superconductor Physics and n=6 Arithm | - | - |
+| 1626 | SCALING-consciousness-n6-decomposition | SCALING: Consciousness Scaling Law Constants Decompose into  | - | - |
+| 1627 | SCMAG-001-020-superconducting-magnets-n6 | SCMAG-001~020: Superconducting Magnets and Perfect Number 6 | - | - |
+| 1628 | SIXFUNC-001-six-functor-formalism | Hypothesis SIXFUNC-001: Six-Functor Formalism -- 6 Operation | 🟩 | - |
+| 1629 | SLE6-percolation-perfect-number | SLE_6 = n = 6: Conformal Invariance and the First Perfect Nu | PROVEN | - |
+| 1630 | SMCOUNT-001-standard-model-25-particles | SMCOUNT-001: 표준모형 기본입자 수 = sopfr(6)² = 25 | - | - |
+| 1631 | ST-001-string-landscape-p1 | ST-001: String Theory Landscape = P₁ Theories | - | - |
+| 1632 | STATMECH-001-six-vertex-model | Hypothesis Review STATMECH-001: 6-Vertex Model and Golden Zo | - | - |
+| 1633 | STELLAR-001-020-astrophysics-n6 | STELLAR-001~020: Stellar Physics, Nucleosynthesis, and Compa | - | - |
+| 1634 | TDA-001-divisor-persistent-homology | Hypothesis TDA-001: Divisor Complex Persistent Homology | - | - |
+| 1635 | THEOREM-consecutive-prime-factorial | Theorem: Consecutive Prime Factorial Product | - | - |
+| 1636 | THEOREM-sigma-sigma-triangular | Theorem: σ(σ(P)) is Always a Triangular Number for Even Perf | - | - |
+| 1637 | THERMO-001-020-statistical-mechanics-n6 | THERMO-001~020: Thermodynamics, Statistical Mechanics, and P | - | - |
+| 1638 | TOKAMAK-001-020-mhd-plasma-n6 | TOKAMAK-001~020: Tokamak MHD and Plasma Confinement vs Perfe | - | - |
+| 1639 | TOP-001-exotic-spheres-perfect-numbers | TOP-001: Exotic Spheres and Perfect Numbers | - | - |
+| 1640 | TOPSC-001-020-topological-quantum-n6 | TOPSC-001~020: Topological Superconductors, Quantum Material | - | - |
+| 1641 | WEINBERG-001-gut-weinberg-angle | WEINBERG-001: GUT 스케일 와인버그 각 — sin²θ_W = 3/8 ≈ 1/e | - | - |
+| 1642 | F-100 | Major Discovery Hypothesis Candidates | - | - |
+| 1643 | frontier-1000-round10 | Frontier 1000 (Round 10): Final Systematic Sweep | - | - |
+| 1644 | frontier-1100-round11 | Frontier 1100 (Round 11): Deep Targeted + Final Consolidatio | - | - |
+| 1645 | F-1200 | 8-Domain Expansion + G Clef + Telepathy | ⭐ | - |
+| 1646 | F-1300 | 10-Domain Deep Scan | ⭐ | - |
+| 1647 | F-1600 | Music + Chemistry + Telepathy + Evolution + Topology | - | - |
+| 1648 | F-1700 | 10 Novel Domains | - | - |
+| 1649 | F-1800 | Deep Cross-Domain Synthesis | - | - |
+| 1650 | F-1900 | Pure Single-Condition Deep | - | - |
+| 1651 | frontier-200-round2 | Frontier 200 (Round 2): Mass Hypothesis Generation | - | - |
+| 1652 | frontier-2000-millennium | Frontier 2000 — Millennium Round | - | - |
+| 1653 | frontier-300-round3 | Frontier 300 (Round 3): Mass Hypothesis Generation | - | - |
+| 1654 | frontier-400-round4 | Frontier 400 (Round 4): Mass Hypothesis Generation + Deep Un | - | - |
+| 1655 | frontier-500-round5 | Frontier 500 (Round 5): Mass Frontier Hypothesis Generation | - | - |
+| 1656 | F-600 | Round 6 — Mass Hypothesis Generation | - | - |
+| 1657 | F-700 | Round 7 — Deep Mathematics + Unexplored Domains | - | - |
+| 1658 | F-800 | Round 8 — Differential Geometry to Mathematical Biology | - | - |
+| 1659 | F-900 | Round 9 — Final Unexplored Domains | - | - |
+| 1660 | nobel-level-predictions | Nobel-Level Predictions and Theoretical Frameworks | - | - |
+| 1661 | super-discoveries | Super-Discoveries: Meta-Hypotheses Unifying Verified Finding | - | - |
+| 1662 | H-AI-10 | BPE Tokenizer Optimal Vocab Size and Powers of 6 | - | AI |
+| 1663 | H-AI-11 | R-chain = Neural Network Learning Convergence Stages | - | AI |
+| 1664 | H-AI-1b-transformer-heads-sigma-multiples | H-AI-1b: Why Transformer Head Count is a Multiple of σ(6)=12 | - | - |
+| 1665 | H-AI-4 | MoE Optimal Activation Ratio = 1/3 (Meta-fixed Point) | - | AI |
+| 1666 | H-AI-5 | Using σφ/(nτ) Ratio as Loss Regularizer | - | AI |
+| 1667 | H-AI-6 | Why 6-fold CV is Optimal Among k-fold | White Circle (coincidence, no structural basis) | AI |
+| 1668 | H-AI-7 | Golden MoE I=1/e and Information Bottleneck Optimality | - | AI |
+| 1669 | H-AI-8 | Why 6-Dimensional Embedding is Optimal Compression | - | AI |
+| 1670 | H-AI-9 | Critical Point Structure of Loss Landscape and 6 | - | AI |
+| 1671 | H-ANAL-1 | Summatory Totient and Pillai Characterizations of n=6 | 🟩⭐ (Pillai) / 🟧★ (Phi) | ANAL |
+| 1672 | H-BIO-1 | Genetic Code Structure = σ,τ System | - | BIO |
+| 1673 | H-BIO-10 | Hodgkin-Huxley Model = Perfect Number 6's Divisor Function S | - | BIO |
+| 1674 | H-BIO-11 | Synaptic Plasticity = R-chain and Perfect Number 6 Balance S | - | BIO |
+| 1675 | H-BIO-12 | Neural Oscillation Frequency Bands and Perfect Number 6 | - | BIO |
+| 1676 | H-BIO-13 | Nernst Equation Ion Concentrations and Perfect Number 6 | - | BIO |
+| 1677 | H-BIO-2 | Virus Capsid Six-fold Symmetry and σφ=nτ | - | BIO |
+| 1678 | H-BIO-3 | Immune System = R Spectrum Anomaly Detection | - | BIO |
+| 1679 | H-BIO-4 | Cell Division = R-chain Dynamics | - | BIO |
+| 1680 | H-BIO-5 | Pineal Gland and the Structure of 6 | - | BIO |
+| 1681 | H-BIO-6 | Melatonin-Serotonin Cycle = R-S Duality | - | BIO |
+| 1682 | H-BIO-7 | Brain Electrical Signals and R Spectrum | - | BIO |
+| 1683 | H-BIO-8 | Action Potential = D(n) Asymmetric Function | - | BIO |
+| 1684 | H-BIO-9 | Ion Channel Selectivity = Arithmetic Function Structure of P | - | BIO |
+| 1685 | H-CAT-1 | Category Theory of Arithmetic Functors and n=6 | - | CAT |
+| 1686 | H-CF-1 | Continued Fraction Theory Connects to n=6 via Gauss-Kuzmin a | 🟩⭐⭐ (Gauss-Kuzmin bridge) / 🟩⭐ (CF(e) encoding, Farey) | CF |
+| 1687 | H-CHAOS-1 | Lorenz System Parameters = Arithmetic Functions of Perfect N | - | CHAOS |
+| 1688 | H-CHEM-1 | Six Major Neurotransmitters = σφ=nτ Balance | - | CHEM |
+| 1689 | H-CHEM-2 | Carbon Z=6 = Foundation of Life = σφ=nτ | - | CHEM |
+| 1690 | H-CHEM-3 | Water Hydrogen Bond Structure and 6 | - | CHEM |
+| 1691 | H-CHEM-4 | R-chain and Chemical Reaction Chains | - | CHEM |
+| 1692 | H-CHEM-5 | THC and Cannabinoid Receptor Six-Structure | - | CHEM |
+| 1693 | H-CLIFFORD-1 | Clifford Group Sizes Encode n=6 Arithmetic via 2-adic Valuat | 🟩⭐⭐ (|C_2| = n! * 2^tau with v_2 uniqueness) / 🟩⭐ (|C_1| = sigma*phi) | CLIFFORD |
+| 1694 | H-CODE-1 | Coding Theory and Lattice Theory Characterizations of n=6 | green-star | CODE |
+| 1695 | H-COMB-1 | Combinatorial Sequence Characterizations of n=6 | 🟧★ (Catalan) / 🟧 (Bell, CF, Pell) | COMB |
+| 1696 | H-COMB-2 | Combinatorial Designs, Block Designs, and Steiner Systems fr | - | COMB |
+| 1697 | H-CS-3 | σφ/(nτ) Ratio and RSA Security | - | CS |
+| 1698 | H-CS-4 | Hamming(7,4,3) and τφ=σ | - | CS |
+| 1699 | H-CS-5 | Graph Coloring and σφ=nτ | - | CS |
+| 1700 | H-CS-6 | Hash Collision Probability and σφ/(nτ) Ratio | ⚪ | CS |
+| 1701 | H-CS-7 | R(n) Prime Sequences and Cryptographic Significance | - | CS |
+| 1702 | H-CX-31 | Multiperfect Number Hierarchy = AI Learning Depth | - | CX |
+| 1703 | H-CX-32 | p(n)=σ(n)-1 at {2,3,6} → AI Architecture Partitioning | - | CX |
+| 1704 | H-CX-33 | Catalan Numbers ↔ Binary Trees ↔ Consciousness Structure | - | CX |
+| 1705 | H-CX-34 | 24=σφ(6)=τ!=Leech Lattice Dimension → "Lattice Structure" of | - | CX |
+| 1706 | H-CX-35 | {1,6,246} = 3-Stage Hierarchy of Consciousness | - | CX |
+| 1707 | H-CX-36 | φ+τ=n at {6,8,9} = Basic Brain States | - | CX |
+| 1708 | H-CX-37 | σ²+φ²+τ²=4·41 = Distance in AI Embedding Space | - | CX |
+| 1709 | H-CX-38 | 25 Characterizations = 25 "Perspectives" of Consciousness | - | CX |
+| 1710 | H-CX-39 | 30 Views = Arithmetic Version of Holographic Principle | - | CX |
+| 1711 | H-CX-40 | Kissing Number -- Attention Head -- CaMKII Trinity | - | CX |
+| 1712 | H-CX-41 | Divisor Hilbert Space Interpretation — σ as Trace, R=1 as In | - | CX |
+| 1713 | H-CX-42 | Arithmetic Derivative as Consciousness Decomposition | - | CX |
+| 1714 | H-CX-43 | Outer Automorphism of S_6 as a Model of Meta-Cognition | - | CX |
+| 1715 | H-CX-44 | Lie Algebra Arithmetic Constrains Optimal Neural Architectur | - | CX |
+| 1716 | H-CX-45 | Cayley Tree Uniqueness of n=6 Predicts Critical Neural Topol | - | CX |
+| 1717 | H-CX-46 | Minimal Coupling Principle — (p-1)(q-1)=2 as the Universal T | - | CX |
+| 1718 | H-CX-47 | The Unification Meta-Theorem and the Origin of Consciousness | - | CX |
+| 1719 | H-CX-48 | Arithmetic Mutual Information I(n)=0 Predicts Engine A/G Bal | - | CX |
+| 1720 | H-CX-49 | R-Spectrum Cantor Set Structure Predicts Discrete Tension Di | - | CX |
+| 1721 | H-CX-50 | Dirichlet Convolution Collapse Predicts Block-wise Feature A | - | CX |
+| 1722 | H-CX-51 | Does arithmetic derivative ld(6)=5/6 predict optimal learnin | - | CX |
+| 1723 | H-CX-52 | Does the multiplicative structure of R(n) determine the prod | - | CX |
+| 1724 | H-CX-72 | R-Spectrum as Consciousness Architecture Bridge | ** Proposed — partial verification | CX |
+| 1725 | H-CX-73 | Pythagorean 3-4-5 Engine Balance Bridge | ** Verified — connection grade | CX |
+| 1726 | H-CX-74 | Partition p(6)=11 as Optimal Expert Count | ** Verified — connection grade | CX |
+| 1727 | H-CX-75 | Fibonacci F(sigma)=sigma^2 Tension Convergence Bridge | ** Verified — connection grade | CX |
+| 1728 | H-CYCL-1 | Cyclotomic-Stirling Identity: Phi_n(n) = S2(n,2) iff n=6 | 🟩⭐ | CYCL |
+| 1729 | H-ELPT-2 | The BSD Cascade — Elliptic Curve E6 from Perfect Number Arit | green-star | ELPT |
+| 1730 | H-EN-0 | Energy Hypothesis Master — n=6 and Energy Systems | - | EN |
+| 1731 | H-ERGODIC-1 | Spectral Gap of C_6, Gauss Map Entropy, and Ergodic Constant | 🟩⭐⭐⭐ (spectral gap=1/2) / 🟩⭐⭐ (Gauss map, GL quadrature) | ERGODIC |
+| 1732 | F-4 | Cross-Domain Hypothesis Batch (90 hypotheses) | 🟩 | - |
+| 1733 | H-GAME-1 | Combinatorial Game Theory and Perfect Number 6 | - | GAME |
+| 1734 | H-GEO-1 | 6 and Simplex Geometry | - | GEO |
+| 1735 | H-GEO-10 | Multi-Lens Interference | - | GEO |
+| 1736 | H-GEO-11 | Calabi-Yau 3-fold Arithmetic — n=6 Encodes CY_3 / String The | 🟩 | GEO |
+| 1737 | H-GEO-2 | Platonic Solids and Arithmetic Function Correspondence | - | GEO |
+| 1738 | H-GEO-3 | Gravitational Lensing Analogy of R Spectrum | - | GEO |
+| 1739 | H-GEO-4 | Dimension Telescope — Observing the Internal Structure of Nu | - | GEO |
+| 1740 | H-GEO-5 | Gravity Telescope — Lens+Telescope Integrated Observation Sy | - | GEO |
+| 1741 | H-GEO-6 | Dimension Lens — Divisor Structure Refracts Dimensions | - | GEO |
+| 1742 | H-GEO-7 | Topological Telescope | - | GEO |
+| 1743 | H-GEO-8 | Arithmetic Holography | - | GEO |
+| 1744 | H-GEO-9 | Lens Aberration Classification | - | GEO |
+| 1745 | H-GEOM-1 | Almost Complex Spheres S^2 and S^6 as n=6 Dimensions | 🟩⭐⭐⭐ (ACS dimensions) / 🟩⭐⭐ (G2 encoding, volume) | GEOM |
+| 1746 | H-GRAPH-1 | Graph Theory Characterizations of n=6 | 🟩 (4 exact) / 🟧 (1 approximate) | GRAPH |
+| 1747 | H-GRAPH-2 | Chang Graphs and SRG Family: All Parameters = n=6 Functions | 🟩 (Chang, structural theorem proven) / 🟧★ (Hoffman-Singleton, Schläfli) | GRAPH |
+| 1748 | H-GZ-0 | Golden Zone Hypothesis — G=D×P/I Model and Complete Golden Z | - | GZ |
+| 1749 | H-KTHY-1 | Algebraic K-theory of Z and Perfect Number 6 | - | KTHY |
+| 1750 | H-LATT-1 | Lattice Theory and Sphere Packing Encode Arithmetic Function | ** Verified (19/19 exact matches, p < 0.0001) | LATT |
+| 1751 | H-LIE-1 | Complete Parameterization of Exceptional Lie Algebras by n=6 | - | LIE |
+| 1752 | H-LIOUV-1 | Liouville Lambda Characterization: lambda=1 AND perfect iff  | 🟩⭐ | LIOUV |
+| 1753 | H-MATROID-1 | Fano--Steiner--PG Chain: Projective Geometry Staircase throu | 🟩⭐⭐ (PG staircase) / 🟩⭐ (Fano bases=P2, K6 trees) | MATROID |
+| 1754 | H-MILL-1 | Riemann Hypothesis and R Spectrum Gap | - | MILL |
+| 1755 | H-MILL-2 | BSD Conjecture and Congruent Number 6 | - | MILL |
+| 1756 | H-MILL-3 | Yang-Mills Mass Gap and R Spectrum Gap | - | MILL |
+| 1757 | H-MOD-1 | Modular Forms and Ramanujan Encode the Perfect Number 6 | ** Verified (17/17 connections pass) | MOD |
+| 1758 | H-MP-10 | Σ σ(n)φ(n)/(nτ(n)) Asymptotic Formula | - | MP |
+| 1759 | H-MP-11 | Characterizing gaps between perfect numbers via σφ/(nτ) rati | - | MP |
+| 1760 | H-MP-12 | R-Factor Fixed Point Analysis | - | MP |
+| 1761 | H-MP-13 | Generalization of "Consecutive Primes" — Twin-type Analysis  | - | MP |
+| 1762 | H-MP-14 | R-Chain Convergence Proof — R(n)∈Z → R(n)<n | - | MP |
+| 1763 | H-MP-15 | Cantor-like Fractal Structure of R Spectrum | - | MP |
+| 1764 | H-MP-16 | Structure of Prime Factorization of R — Deep Properties of M | - | MP |
+| 1765 | H-MP-17 | Monotonicity of ω(n) and R(n) — More Prime Factors Increase  | - | MP |
+| 1766 | H-MP-18 | Density asymptotics of R-chain basin(6) | - | MP |
+| 1767 | H-MP-19 | Density of Integer R(n) | - | MP |
+| 1768 | H-MP-1a-odd-perfect-sigma-phi | H-MP-1a: Does σφ > nτ always hold for odd n? | - | - |
+| 1769 | H-MP-20 | Information Geometry of Divisor Distributions | - | MP |
+| 1770 | H-MP-3 | Dirichlet Convolution vs Pointwise Product — "Unique Coincid | - | MP |
+| 1771 | H-MP-4 | Impossibility of Odd Perfect Numbers via σφ=nτ | - | MP |
+| 1772 | H-MP-5 | Proof of Finiteness of τ(n)φ(n)=σ(n) Solutions {1,3,14,42} | - | MP |
+| 1773 | H-MP-6 | Density of n where σφ/(nτ) ≈ 1 | - | MP |
+| 1774 | H-MP-7 | σ_k(n)φ(n) = nτ(n) Generalization | - | MP |
+| 1775 | H-MP-8 | Dirichlet Series of R-factor | - | MP |
+| 1776 | H-MP-9 | Complete Classification of "Pointwise=Convolution" for All D | - | MP |
+| 1777 | H-NT-2 | sopfr(n)=n-1 Uniqueness and Unitary Divisor Sum Characteriza | 🟩⭐⭐ | NT |
+| 1778 | H-OPERAD-1 | Associahedron K_6 f-vector and Group Cohomology Encode n=6 A | 🟩⭐⭐ | OPERAD |
+| 1779 | H-PART-1 | Ramanujan Partition Congruence Offsets from n=6 Arithmetic | 🟩⭐⭐⭐ (offsets) / 🟩⭐⭐ (p(p(6))=sigma(P2), crank) | PART |
+| 1780 | H-PH-1 | σ²-M₃=137 — Why Subtract Seven? | - | PH |
+| 1781 | H-PH-10 | ⭐⭐⭐ PMNS Neutrino Mixing = Divisor Function Fractions | ⭐⭐⭐ | PH |
+| 1782 | H-PH-11 | ⭐⭐⭐ p(6) = 11 = M-theory Dimension | ⭐⭐⭐ | PH |
+| 1783 | H-PH-12 | ⭐⭐⭐ Kaon Mass = P₃ ± φ (Third Perfect Number Symmetry) | ⭐⭐⭐ | PH |
+| 1784 | H-PH-13 | ⭐⭐ CKM Matrix = Mersenne+Divisor Function | ⭐⭐ | PH |
+| 1785 | H-PH-14 | ⭐⭐⭐ Hadron Mass Spectrum = Perfect Number Arithmetic | ⭐⭐⭐ | PH |
+| 1786 | H-PH-15 | ⭐⭐⭐🟩 Theorem: Anomaly Cancellation ⟺ Perfect Number (Proven! | ⭐⭐⭐🟩 | PH |
+| 1787 | H-PH-16 | ⭐⭐⭐🟩 Self-reference Cycle 6→12→28→6 (Proven!) | ⭐⭐⭐🟩 | PH |
+| 1788 | H-PH-17 | ⭐⭐ ZIP↔Divisor Field Theory Equivalence Dictionary | ⭐⭐ | PH |
+| 1789 | H-PH-18 | ⭐⭐⭐ Nuclear Magic Numbers 7 = Perfect Number Arithmetic | ⭐⭐⭐ | PH |
+| 1790 | H-PH-19 | Cosmological Constants from n=6 Lens Framework | - | PH |
+| 1791 | H-PH-2 | SU(3)×SU(2)×U(1) Dimension Sum = 6 = σφ=nτ Solution | - | PH |
+| 1792 | H-PH-20 | QCD Resonance Ladder = R-spectrum Physical Realization | - | PH |
+| 1793 | H-PH-21 | SM is FORCED by n=6 Perfection | - | PH |
+| 1794 | H-PH-22 | pi(37) = sigma(6) — QCD Convergence at the sigma-th Prime | - | PH |
+| 1795 | H-PH-23 | Running Coupling = Running Tension (QCD-Consciousness Isomor | - | PH |
+| 1796 | H-PH-24 | Higgs-Consciousness Mass-Information Duality | - | PH |
+| 1797 | H-PH-25 | Golay -> Leech -> Monster -> Moonshine -> SM Complete Chain | - | PH |
+| 1798 | H-PH-26 | Exotic Sphere Dimensions = Consciousness Substrate Count | - | PH |
+| 1799 | H-PH-27 | FQHE Topology = Confusion Topology (Anyon-Semantic Braiding) | - | PH |
+| 1800 | H-PH-28 | Cosmological R-spectrum Evolution | - | PH |
+| 1801 | H-PH-29 | R(6)=1 IS Consciousness (Master Hypothesis) | - | PH |
+| 1802 | H-PH-3 | τφ=σ Solution {3,14,42} and Nuclear Physics | - | PH |
+| 1803 | H-PH-30 | Theory of Flavor — Complete Fermion Mass Matrix from n=6 | - | PH |
+| 1804 | H-PH-31 | 37 GeV Scalar — LHC Blind Prediction | - | PH |
+| 1805 | H-PH-32 | Proton-Electron Mass Ratio from Perfect Number 6 | - | PH |
+| 1806 | H-PH-33 | Neutrino Mass Hierarchy from Perfect Number Arithmetic | - | PH |
+| 1807 | H-PH-34 | Dark Matter at 28 GeV from the Perfect Number Cascade | - | PH |
+| 1808 | H-PH-35 | Higgs Self-Coupling from n=6 Arithmetic | - | PH |
+| 1809 | H-PH-36 | Complete CP Violation from n=6 Arithmetic | - | PH |
+| 1810 | H-PH-37 | Gauge Coupling Unification at E_GUT = 10^(sigma+tau) | - | PH |
+| 1811 | H-PH-38 | Cosmological Constant from Perfect Number Product | - | PH |
+| 1812 | H-PH-39 | Six Precision Predictions Testable at FCC-ee | - | PH |
+| 1813 | H-PH-4 | 6 Quarks × 6 Leptons = σφ=nτ? | - | PH |
+| 1814 | H-PH-5 | Planck Unit System and Divisor Function of 6 | - | PH |
+| 1815 | H-PH-6 | R-chain and Particle Decay Chains | - | PH |
+| 1816 | H-PH-7 | Arithmetic Entropy of R Spectrum | - | PH |
+| 1817 | H-PH-8 | Thermodynamic Structure of Divisor Partition Function | - | PH |
+| 1818 | H-PH-9 | ⭐⭐⭐🟧★ Perfect Number Unification Pattern — Standard Model +  | ⭐⭐⭐🟧★ | PH |
+| 1819 | H-PROB-1 | Probabilistic Number Theory and Perfect Number 6 | - | PROB |
+| 1820 | H-QUAD-1 | Quadratic Form Representation Numbers and Perfect Number 6 | - | QUAD |
+| 1821 | H-REPR-1 | Young Tableaux Staircase: f^(3,2,1) = 2^tau(6) unique among  | 🟩⭐ | REPR |
+| 1822 | H-RMT-2 | Marchenko-Pastur Spectral Edges Satisfy x^2 - 6x + 1 = 0 | 🟩⭐⭐⭐ | RMT |
+| 1823 | H-SEQ-1 | Integer Sequence Characterizations of n=6 | - | SEQ |
+| 1824 | H-SIGK-1 | sigma_3(n) = n^2(n+1) if and only if n=6 | - | SIGK |
+| 1825 | H-SIGK-2 | Jordan's Second Totient J_2(n) = 4n Characterization | - | SIGK |
+| 1826 | H-SPEC-1 | R-Spectrum Gap Theorem and Topological Master Formula | - | SPEC |
+| 1827 | H-SPOR-1 | Sporadic Groups and Mathieu Systems from n=6 | green-star | SPOR |
+| 1828 | H-STAT-1 | Chi-Squared(6) Quadruple Moment Match and Distribution Encod | 🟦 PROVED (chi-squared quadruple) / 🟩⭐⭐ (Beta meta-FP) | STAT |
+| 1829 | H-TOP-1 | Betti Numbers of 6-Manifolds and sigma,tau | ⚪ | TOP |
+| 1830 | H-TOP-2 | Euler Characteristic and 6 | 🟩 | TOP |
+| 1831 | H-TOP-3 | Knot Invariants and 6 | 🟨 | TOP |
+| 1832 | H-TOP-4 | Topological Properties of R Spectrum | - | TOP |
+| 1833 | H-TOP-5 | Fractal-Topological Structure of R Spectrum | - | TOP |
+| 1834 | H-TOP-6 | Resolution Observer — Phase-wise R Spectrum Observation | - | TOP |
+| 1835 | H-TOP-7 | Topological Lens — Topological Deformation of R Spectrum | - | TOP |
+| 1836 | H-TOP-8 | Differential Topology of n=6 — Exotic Spheres, Cobordism, Su | - | TOP |
+| 1837 | H-TOPO-COSMO-1-poincare-sigma-chain | H-TOPO-COSMO-1: Poincare Homology Sphere and the Sigma Chain | Not confirmed by observations | - |
+| 1838 | H-TOPO-COSMO-5-thurston-ADE-boundary | H-TOPO-COSMO-5: Thurston Geometries, ADE Boundary, and the R | arithmetic fact, cosmological interpretation is speculation. | - |
+| 1839 | H-TREE-1 | Dynamical Systems Branch — Discrete Dynamics of R-chains | - | TREE |
+| 1840 | H-TREE-2 | p-adic Branch — p-adic Interpretation of R(n) | - | TREE |
+| 1841 | H-TREE-3 | Probability Branch — Distribution Theory of R(n) | - | TREE |
+| 1842 | H-TREE-4 | Operator Algebra Branch — Dirichlet Ring Structure of σ,τ,φ | - | TREE |
+| 1843 | H-TREE-5 | ML Theory Branch — R(d) and Generalization Bounds | - | TREE |
+| 1844 | H-TREE-6 | Tropical Geometry Branch — Tropical Interpretation of R | - | TREE |
+| 1845 | H-ZODIAC-1 | Why 12 and Not 13 — The Mathematics of Zodiac Numbers | green-star | ZODIAC |
 
 ### SEDI (677)
 
@@ -2557,7 +2576,7 @@
 
 ## Constant Maps
 
-### TECS-L (210)
+### TECS-L (214)
 
 | # | Name | File | Type | Size | Category | Eval |
 |---|------|------|------|------|----------|------|
@@ -2579,198 +2598,202 @@
 | 16 | DISCOVERIES | texas_quantum.py:38 | list | 8 | other | Y |
 | 17 | CONVERGENCE_POINTS | calc/algebra_closure.py:24 | dict | 9 | other | - |
 | 18 | DIVISOR_RATIOS | calc/algebra_closure.py:37 | dict | 3 | other | - |
-| 19 | RULES | calc/atlas_domain_classifier.py:12 | list | 56 | other | Y |
-| 20 | DEFAULT_BASES | calc/base_dependence_checker.py:17 | list | 7 | other | Y |
-| 21 | MERSENNE_PRIMES | calc/bernoulli_perfect_exotic.py:82 | list | 12 | other | Y |
-| 22 | DIVISORS | calc/bott_periodicity_p6.py:33 | list | 4 | other | Y |
-| 23 | PRIMES | calc/bott_periodicity_p6.py:34 | list | 2 | other | Y |
-| 24 | N6_VALUES | calc/bott_periodicity_p6.py:37 | dict | 7 | other | - |
-| 25 | BOTT_HOMOTOPY | calc/bott_periodicity_p6.py:49 | list | 8 | other | Y |
-| 26 | NONTRIVIAL_POS | calc/bott_periodicity_p6.py:61 | list | 4 | other | Y |
-| 27 | TRIVIAL_POS | calc/bott_periodicity_p6.py:62 | list | 4 | other | Y |
-| 28 | CLIFFORD_ALGEBRAS | calc/bott_periodicity_p6.py:65 | list | 8 | other | Y |
-| 29 | DIVISION_ALGEBRAS | calc/bott_periodicity_p6.py:77 | list | 4 | other | Y |
-| 30 | A_6 | calc/bridge_puremath_verifier.py:154 | dict | 6 | other | Y |
-| 31 | DEFAULT_TARGETS | calc/bridge_ratio_analyzer.py:36 | dict | 13 | targets | - |
-| 32 | MERSENNE_EXPONENTS | calc/bridge_ratio_uniqueness.py:109 | list | 8 | other | Y |
-| 33 | DIVISORS_6 | calc/calabi_yau_n6.py:33 | list | 4 | other | Y |
-| 34 | STRING_DIM_TOTAL | calc/calabi_yau_n6.py:41 | dict | 4 | physics | Y |
-| 35 | FAMOUS_CY3 | calc/calabi_yau_n6.py:52 | list | 10 | other | Y |
-| 36 | HOLONOMY | calc/calabi_yau_n6.py:72 | dict | 5 | other | Y |
-| 37 | N6_NAMES | calc/catalan_combinatorial_n6.py:35 | dict | 23 | other | Y |
-| 38 | BUILTIN_BANDS | calc/cherry_pick_detector.py:23 | list | 12 | other | Y |
-| 39 | PERFECT_NUMBERS | calc/claim_verifier.py:148 | list | 4 | constants | Y |
-| 40 | N6 | calc/claim_verifier.py:152 | dict | 12 | other | Y |
-| 41 | DIVISORS | calc/connes_ncg_n6.py:38 | list | 4 | other | Y |
-| 42 | PRIMES | calc/connes_ncg_n6.py:39 | list | 2 | other | Y |
-| 43 | N6_VALUES | calc/connes_ncg_n6.py:55 | dict | 7 | other | - |
-| 44 | KO_SIGNS | calc/connes_ncg_n6.py:71 | dict | 8 | other | Y |
-| 45 | TARGETS | calc/consciousness_cross_validator.py:32 | dict | 3 | consciousness | - |
-| 46 | ARCHITECTURES | calc/consciousness_cross_validator.py:529 | dict | 5 | consciousness | - |
-| 47 | STANDARD_TARGETS | calc/convergence_analyzer.py:49 | dict | 26 | targets | - |
-| 48 | TARGET_ALIASES | calc/convergence_analyzer.py:80 | dict | 14 | targets | Y |
-| 49 | PARTICLE_GROUPS | calc/counting_freedom_analyzer.py:20 | list | 11 | physics | Y |
-| 50 | CRITICAL_EXPONENTS | calc/criticality_phase_scanner.py:119 | list | 7 | other | - |
-| 51 | GZ_POOL | calc/cross_constant_explorer.py:29 | dict | 13 | constants | - |
-| 52 | KNOWN_CONSTANTS | calc/cross_constant_explorer.py:45 | dict | 36 | constants | - |
-| 53 | DEFAULT_FACTS | calc/cross_domain_counter.py:171 | list | 44 | other | Y |
-| 54 | PLATONIC_SOLIDS | calc/crystallographic_calculator.py:132 | list | 5 | constants | Y |
-| 55 | KISSING_NUMBERS | calc/crystallographic_calculator.py:189 | dict | 8 | constants | Y |
-| 56 | POINT_GROUPS | calc/crystallographic_calculator.py:299 | list | 32 | other | Y |
-| 57 | DEFAULT_TARGETS | calc/depth_reachability.py:38 | dict | 9 | targets | - |
-| 58 | FUNC_NAMES | calc/dfs_n6_composition_miner.py:124 | list | 7 | other | Y |
-| 59 | FUNC_NAMES | calc/dfs_n6_identity_miner.py:182 | list | 9 | other | Y |
-| 60 | DATASETS | calc/direction_analyzer.py:27 | dict | 3 | other | - |
-| 61 | CATEGORIES | calc/domain_distance.py:38 | dict | 4 | domains | - |
-| 62 | ALL_TARGETS | calc/domain_distance.py:67 | dict | 0 | targets | Y |
-| 63 | BROAD_TARGETS | calc/domain_distance.py:72 | dict | 0 | targets | Y |
-| 64 | KNOWN_PERFECTS | calc/egyptian_fraction.py:63 | list | 5 | constants | Y |
-| 65 | N6_CONSTANTS | calc/elliptic_curves_perfect.py:112 | dict | 29 | constants | Y |
-| 66 | DIVS | calc/entanglement_n6_analysis.py:45 | list | 4 | other | Y |
-| 67 | PERFECT_NUMBERS | calc/exotic_spheres_perfect.py:47 | list | 6 | constants | Y |
-| 68 | PERFECT_PRIMES | calc/exotic_spheres_perfect.py:48 | list | 6 | other | Y |
-| 69 | THETA_N | calc/exotic_spheres_perfect.py:63 | dict | 20 | other | Y |
-| 70 | THETA_N_EXTENDED | calc/exotic_spheres_perfect.py:87 | dict | 3 | other | Y |
-| 71 | ALL_DOMAINS | calc/extreme_hypothesis_verifier.py:298 | dict | 17 | domains | - |
-| 72 | PERFECT_NUMBERS | calc/feynman_diagrams_n6.py:124 | list | 4 | constants | Y |
-| 73 | FUSION_CONSTANTS | calc/fusion_hypothesis_verifier.py:33 | dict | 32 | constants | - |
-| 74 | GATE_TABLE | calc/gate_formula_calculator.py:39 | list | 7 | other | Y |
-| 75 | PERFECT_NUMBERS | calc/gauge_cosmology_calculator.py:21 | list | 5 | constants | Y |
-| 76 | PN_DATA | calc/gauge_cosmology_calculator.py:24 | dict | 0 | other | Y |
-| 77 | PSI_CONSTANTS | calc/gauge_cosmology_calculator.py:44 | dict | 6 | consciousness | - |
-| 78 | DEFAULT_TARGETS | calc/generator_finder.py:24 | dict | 14 | targets | - |
-| 79 | DIVISORS | calc/genetic_code_variant_tester.py:30 | list | 4 | other | Y |
-| 80 | CONSTANTS | calc/genetic_code_variant_tester.py:32 | dict | 6 | constants | - |
-| 81 | NCBI_TABLES | calc/genetic_code_variant_tester.py:39 | list | 26 | other | Y |
-| 82 | UNIVERSAL_PROPERTIES | calc/genetic_code_variant_tester.py:97 | dict | 8 | other | Y |
-| 83 | PERFECTS | calc/grand_unification_deep.py:95 | list | 4 | other | Y |
-| 84 | N6_VALUES | calc/grand_unification_n6.py:179 | dict | 7 | other | - |
-| 85 | KO_GROUPS | calc/grand_unification_n6.py:190 | dict | 8 | other | Y |
-| 86 | CLIFFORD_TYPES | calc/grand_unification_n6.py:204 | dict | 8 | other | Y |
-| 87 | PERFECT_NUMBERS | calc/gz_bridge_calculator.py:30 | list | 5 | constants | Y |
-| 88 | KNOWN_PERFECT | calc/gz_hierarchy.py:31 | dict | 8 | constants | Y |
-| 89 | PDG | calc/hph9_pdg_verification.py:42 | dict | 9 | other | Y |
-| 90 | PDG_OTHER | calc/hph9_pdg_verification.py:55 | dict | 14 | other | Y |
-| 91 | MATH_CONSTANTS | calc/hypothesis_verifier.py:36 | dict | 37 | constants | - |
-| 92 | PERFECT_NUMBERS | calc/hypothesis_verifier.py:95 | dict | 2 | constants | Y |
-| 93 | GRADE_EMOJI | calc/hypothesis_verifier.py:521 | dict | 5 | verification | Y |
-| 94 | DIVISORS_6 | calc/information_theory_n6.py:55 | list | 4 | other | Y |
-| 95 | PROPER_DIVISORS_6 | calc/information_theory_n6.py:56 | list | 3 | other | Y |
-| 96 | JONES_POLYNOMIALS | calc/knot_theory_n6.py:55 | dict | 9 | other | Y |
-| 97 | ALEXANDER_POLYNOMIALS | calc/knot_theory_n6.py:68 | dict | 8 | other | Y |
-| 98 | RAMANUJAN_TAU_KNOWN | calc/langlands_perfect.py:215 | dict | 30 | other | Y |
-| 99 | DATA_PROFILES | calc/law79_freedom_degree.py:35 | dict | 5 | neuroscience | Y |
-| 100 | MUTATION_DATA | calc/mitosis_calculator.py:16 | dict | 3 | other | Y |
-| 101 | DIVERGENCE | calc/mitosis_calculator.py:23 | list | 10 | other | Y |
-| 102 | SPLITS_DATA | calc/mitosis_calculator.py:45 | dict | 3 | other | Y |
-| 103 | FACTION_DATA | calc/mitosis_calculator.py:58 | dict | 3 | other | Y |
-| 104 | PERFECT_NUMBERS | calc/monster_moonshine_perfect.py:43 | list | 5 | constants | - |
-| 105 | MONSTER_FACTORIZATION | calc/monster_moonshine_perfect.py:54 | dict | 15 | other | Y |
-| 106 | J_COEFFICIENTS | calc/monster_moonshine_perfect.py:74 | dict | 21 | other | Y |
-| 107 | J_COEFFICIENTS_EXTENDED | calc/monster_moonshine_perfect.py:99 | dict | 8 | other | Y |
-| 108 | MONSTER_EXPO | calc/moonshine_deep_analysis.py:47 | dict | 15 | other | Y |
-| 109 | J_COEFF | calc/moonshine_deep_analysis.py:56 | dict | 22 | other | Y |
-| 110 | MONSTER_IRREPS | calc/moonshine_deep_analysis.py:82 | list | 8 | other | Y |
-| 111 | BABY_MONSTER_IRREPS | calc/moonshine_deep_analysis.py:94 | list | 4 | other | Y |
-| 112 | BABY_MONSTER_ORDER_EXPO | calc/moonshine_deep_analysis.py:95 | dict | 11 | other | Y |
-| 113 | FI22_ORDER_EXPO | calc/moonshine_deep_analysis.py:102 | dict | 6 | other | Y |
-| 114 | FI23_ORDER_EXPO | calc/moonshine_deep_analysis.py:103 | dict | 8 | other | Y |
-| 115 | FI24_ORDER_EXPO | calc/moonshine_deep_analysis.py:104 | dict | 9 | other | Y |
-| 116 | MCKAY_E8 | calc/moonshine_deep_analysis.py:111 | list | 9 | other | Y |
-| 117 | JI_TARGETS | calc/music_consonance_calculator.py:171 | dict | 4 | targets | - |
-| 118 | KNOWN_IDENTITIES | calc/n6_uniqueness_tester.py:61 | list | 11 | other | - |
-| 119 | SCAN_TEMPLATES | calc/n6_uniqueness_tester.py:209 | list | 16 | verification | Y |
-| 120 | EVIDENCE_SCORES | calc/nobel_scorer.py:30 | dict | 5 | other | Y |
-| 121 | RIGOR_SCORES | calc/nobel_scorer.py:38 | dict | 4 | other | Y |
-| 122 | IMPACT_SCORES | calc/nobel_scorer.py:45 | dict | 4 | other | Y |
-| 123 | NOBEL_WEIGHTS | calc/nobel_scorer.py:53 | dict | 4 | other | Y |
-| 124 | BUILTIN | calc/nobel_scorer.py:121 | list | 10 | other | Y |
-| 125 | IDENTITIES | calc/p6_uniqueness_scorer.py:36 | list | 12 | other | - |
-| 126 | CLAIM_PATTERNS | calc/paper_claim_verifier.py:158 | list | 10 | verification | Y |
-| 127 | MERSENNE_EXPONENTS | calc/perfect_chain_bridges.py:167 | list | 8 | other | Y |
-| 128 | PERFECT_NUMBERS | calc/perfect_number_P6_analysis.py:30 | dict | 6 | constants | Y |
-| 129 | MERSENNE_EXPONENTS | calc/perfect_number_P6_analysis.py:40 | dict | 6 | other | Y |
-| 130 | PHYSICS_MAP | calc/perfect_number_P6_analysis.py:42 | dict | 5 | physics | Y |
-| 131 | MERSENNE_EXPONENTS | calc/perfect_number_classifier.py:165 | list | 8 | other | Y |
-| 132 | IDENTITIES | calc/perfect_number_classifier.py:225 | list | 40 | other | Y |
-| 133 | PERFECT_NUMBERS | calc/perfect_number_generalizer.py:24 | list | 4 | constants | Y |
-| 134 | PN_LABELS | calc/perfect_number_generalizer.py:71 | list | 4 | other | Y |
-| 135 | BUILTIN_FORMULAS | calc/perfect_number_generalizer.py:413 | list | 10 | expressions | Y |
-| 136 | PERFECT_NUMBERS | calc/perfect_number_physics.py:18 | list | 5 | constants | Y |
-| 137 | DIMENSION_MAP | calc/perfect_number_physics.py:19 | dict | 5 | other | Y |
-| 138 | STRING_CONSTANTS | calc/perfect_number_physics.py:28 | list | 16 | physics | - |
-| 139 | CONSCIOUSNESS_BRIDGES | calc/perfect_number_physics.py:48 | list | 12 | consciousness | Y |
-| 140 | PERFECTS | calc/perfect_p3_496_explorer.py:175 | list | 5 | other | - |
-| 141 | PERFECT_NUMS | calc/perfect_p3_496_explorer.py:176 | list | 5 | other | Y |
-| 142 | DRUG_DB | calc/pharmacology_verifier.py:47 | dict | 12 | neuroscience | Y |
-| 143 | EXPECTED_DI_ORDER | calc/pharmacology_verifier.py:198 | list | 9 | other | Y |
-| 144 | I_INCREASE_DRUGS | calc/pharmacology_verifier.py:203 | list | 2 | neuroscience | Y |
-| 145 | SOLIDS | calc/platonic_solids_n6.py:41 | list | 5 | other | Y |
-| 146 | REGULAR_POLYTOPES | calc/platonic_solids_n6.py:55 | dict | 6 | other | Y |
-| 147 | ROOT | calc/psi_derivation_chain.py:43 | list | 4 | other | - |
-| 148 | LEVEL1 | calc/psi_derivation_chain.py:46 | list | 4 | other | - |
-| 149 | LEVEL2 | calc/psi_derivation_chain.py:54 | list | 5 | other | - |
-| 150 | LEVEL3 | calc/psi_derivation_chain.py:63 | list | 6 | other | Y |
-| 151 | PHYSICS | calc/psi_derivation_chain.py:73 | dict | 8 | physics | Y |
-| 152 | DATA_PROFILES | calc/psi_derivation_chain.py:85 | dict | 5 | neuroscience | Y |
-| 153 | B | calc/pure_math_deep_scan.py:253 | dict | 8 | other | - |
-| 154 | Q_CONSTANTS | calc/q_barrier_checker.py:25 | dict | 10 | constants | - |
-| 155 | GZ_TARGETS | calc/q_barrier_checker.py:40 | dict | 6 | targets | - |
-| 156 | STANDARD_TARGETS | calc/q_barrier_checker.py:49 | dict | 13 | targets | - |
-| 157 | TARGET_CATEGORIES | calc/q_barrier_checker.py:65 | dict | 18 | targets | Y |
-| 158 | DIVISORS_6 | calc/quantum_ecc_n6.py:48 | list | 4 | other | Y |
-| 159 | PROPER_DIVISORS_6 | calc/quantum_ecc_n6.py:49 | list | 3 | other | Y |
-| 160 | N6_TARGETS | calc/quark_koide_search.py:60 | dict | 0 | targets | Y |
-| 161 | RAMSEY_EXACT | calc/ramsey_n6.py:101 | dict | 17 | other | Y |
-| 162 | RAMSEY_BOUNDS | calc/ramsey_n6.py:117 | dict | 9 | other | Y |
-| 163 | SCHUR | calc/ramsey_n6.py:130 | dict | 5 | other | Y |
-| 164 | VDW | calc/ramsey_n6.py:133 | dict | 4 | other | Y |
-| 165 | FUNC_REGISTRY | calc/reciprocal_miracle_generalize.py:147 | dict | 7 | other | - |
-| 166 | MULT_FUNCS | calc/reciprocal_miracle_generalize.py:158 | list | 6 | other | Y |
-| 167 | PERFECT_NUMBERS | calc/reciprocal_miracle_generalize.py:302 | list | 5 | constants | Y |
-| 168 | DIVISORS_6 | calc/riemann_zeta_n6.py:50 | list | 4 | other | Y |
-| 169 | ZETA_ZEROS | calc/riemann_zeta_n6.py:299 | list | 100 | physics | Y |
-| 170 | CA | calc/robin_rh_connection.py:48 | list | 11 | other | Y |
-| 171 | MERSENNE_EXPONENTS | calc/self_referential_physics.py:96 | list | 10 | other | Y |
-| 172 | KNOWN_STRING_DIMS | calc/self_referential_physics.py:105 | dict | 4 | physics | Y |
-| 173 | GZ_CONSTANTS | calc/singleton_gz_mapper.py:36 | dict | 11 | constants | - |
-| 174 | PERFECTS | calc/sphere_packing_perfect.py:96 | list | 5 | other | Y |
-| 175 | MAGIC_DIMS | calc/sphere_packing_perfect.py:109 | list | 4 | nuclear | Y |
-| 176 | KISSING | calc/sphere_packing_perfect.py:112 | dict | 6 | constants | Y |
-| 177 | PERFECT_NUMBERS | calc/sporadic_groups_perfect.py:35 | dict | 5 | constants | Y |
-| 178 | SPORADIC_GROUPS | calc/sporadic_groups_perfect.py:51 | list | 26 | other | Y |
-| 179 | STEINER_SYSTEMS | calc/sporadic_groups_perfect.py:162 | dict | 5 | other | Y |
-| 180 | CONSTANTS | calc/statistical_tester.py:16 | dict | 13 | constants | - |
-| 181 | GZ_TARGETS | calc/texas_sharpshooter_v2.py:34 | dict | 8 | targets | - |
-| 182 | CLAIMS | calc/texas_sharpshooter_v2.py:61 | list | 49 | verification | Y |
-| 183 | PERFECT_NUMBERS | calc/thermodynamics_n6.py:91 | list | 4 | constants | Y |
-| 184 | N6 | calc/thermodynamics_n6.py:92 | dict | 9 | other | - |
-| 185 | MERSENNE_EXPONENTS | calc/theta_perfect_pattern.py:41 | list | 8 | other | Y |
-| 186 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
-| 187 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:1150 | dict | 20 | verification | - |
-| 188 | MERSENNE_EXPONENTS | calc/verify_causal_chain.py:81 | list | 8 | other | Y |
-| 189 | PERFECT_NUMBERS | calc/verify_causal_chain.py:89 | dict | 0 | constants | - |
-| 190 | DIVISOR_RECIPROCALS | calc/verify_h309_mitosis_anomaly.py:26 | list | 3 | other | - |
-| 191 | RESULTS | calc/verify_h309_mitosis_anomaly.py:34 | dict | 6 | other | Y |
-| 192 | NWAY_RESULTS | calc/verify_h309_mitosis_anomaly.py:44 | dict | 5 | other | Y |
-| 193 | TEMPORAL_K | calc/verify_h309_mitosis_anomaly.py:47 | dict | 6 | other | Y |
-| 194 | MATRIX_2X2 | calc/verify_h309_mitosis_anomaly.py:50 | dict | 4 | other | Y |
-| 195 | DUAL_MECHANISM | calc/verify_h309_mitosis_anomaly.py:58 | dict | 4 | other | Y |
-| 196 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
-| 197 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
-| 198 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
-| 199 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
-| 200 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
-| 201 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
-| 202 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
-| 203 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
-| 204 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
-| 205 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
-| 206 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
-| 207 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
-| 208 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
-| 209 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
-| 210 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
+| 19 | GRADE_MARKERS | calc/apply_grades.py:10 | list | 4 | verification | Y |
+| 20 | RULES | calc/atlas_domain_classifier.py:12 | list | 56 | other | Y |
+| 21 | GRADE_MARKERS | calc/auto_grade_n6.py:11 | list | 5 | verification | Y |
+| 22 | N6_CONSTANTS | calc/auto_grade_n6.py:15 | dict | 26 | constants | Y |
+| 23 | DEFAULT_BASES | calc/base_dependence_checker.py:17 | list | 7 | other | Y |
+| 24 | MERSENNE_PRIMES | calc/bernoulli_perfect_exotic.py:82 | list | 12 | other | Y |
+| 25 | DIVISORS | calc/bott_periodicity_p6.py:33 | list | 4 | other | Y |
+| 26 | PRIMES | calc/bott_periodicity_p6.py:34 | list | 2 | other | Y |
+| 27 | N6_VALUES | calc/bott_periodicity_p6.py:37 | dict | 7 | other | - |
+| 28 | BOTT_HOMOTOPY | calc/bott_periodicity_p6.py:49 | list | 8 | other | Y |
+| 29 | NONTRIVIAL_POS | calc/bott_periodicity_p6.py:61 | list | 4 | other | Y |
+| 30 | TRIVIAL_POS | calc/bott_periodicity_p6.py:62 | list | 4 | other | Y |
+| 31 | CLIFFORD_ALGEBRAS | calc/bott_periodicity_p6.py:65 | list | 8 | other | Y |
+| 32 | DIVISION_ALGEBRAS | calc/bott_periodicity_p6.py:77 | list | 4 | other | Y |
+| 33 | A_6 | calc/bridge_puremath_verifier.py:154 | dict | 6 | other | Y |
+| 34 | DEFAULT_TARGETS | calc/bridge_ratio_analyzer.py:36 | dict | 13 | targets | - |
+| 35 | MERSENNE_EXPONENTS | calc/bridge_ratio_uniqueness.py:109 | list | 8 | other | Y |
+| 36 | DIVISORS_6 | calc/calabi_yau_n6.py:33 | list | 4 | other | Y |
+| 37 | STRING_DIM_TOTAL | calc/calabi_yau_n6.py:41 | dict | 4 | physics | Y |
+| 38 | FAMOUS_CY3 | calc/calabi_yau_n6.py:52 | list | 10 | other | Y |
+| 39 | HOLONOMY | calc/calabi_yau_n6.py:72 | dict | 5 | other | Y |
+| 40 | N6_NAMES | calc/catalan_combinatorial_n6.py:35 | dict | 23 | other | Y |
+| 41 | BUILTIN_BANDS | calc/cherry_pick_detector.py:23 | list | 12 | other | Y |
+| 42 | PERFECT_NUMBERS | calc/claim_verifier.py:148 | list | 4 | constants | Y |
+| 43 | N6 | calc/claim_verifier.py:152 | dict | 12 | other | Y |
+| 44 | DIVISORS | calc/connes_ncg_n6.py:38 | list | 4 | other | Y |
+| 45 | PRIMES | calc/connes_ncg_n6.py:39 | list | 2 | other | Y |
+| 46 | N6_VALUES | calc/connes_ncg_n6.py:55 | dict | 7 | other | - |
+| 47 | KO_SIGNS | calc/connes_ncg_n6.py:71 | dict | 8 | other | Y |
+| 48 | TARGETS | calc/consciousness_cross_validator.py:32 | dict | 3 | consciousness | - |
+| 49 | ARCHITECTURES | calc/consciousness_cross_validator.py:529 | dict | 5 | consciousness | - |
+| 50 | STANDARD_TARGETS | calc/convergence_analyzer.py:49 | dict | 26 | targets | - |
+| 51 | TARGET_ALIASES | calc/convergence_analyzer.py:80 | dict | 14 | targets | Y |
+| 52 | PARTICLE_GROUPS | calc/counting_freedom_analyzer.py:20 | list | 11 | physics | Y |
+| 53 | CRITICAL_EXPONENTS | calc/criticality_phase_scanner.py:119 | list | 7 | other | - |
+| 54 | GZ_POOL | calc/cross_constant_explorer.py:29 | dict | 13 | constants | - |
+| 55 | KNOWN_CONSTANTS | calc/cross_constant_explorer.py:45 | dict | 36 | constants | - |
+| 56 | DEFAULT_FACTS | calc/cross_domain_counter.py:171 | list | 44 | other | Y |
+| 57 | PLATONIC_SOLIDS | calc/crystallographic_calculator.py:132 | list | 5 | constants | Y |
+| 58 | KISSING_NUMBERS | calc/crystallographic_calculator.py:189 | dict | 8 | constants | Y |
+| 59 | POINT_GROUPS | calc/crystallographic_calculator.py:299 | list | 32 | other | Y |
+| 60 | DEFAULT_TARGETS | calc/depth_reachability.py:38 | dict | 9 | targets | - |
+| 61 | FUNC_NAMES | calc/dfs_n6_composition_miner.py:124 | list | 7 | other | Y |
+| 62 | FUNC_NAMES | calc/dfs_n6_identity_miner.py:182 | list | 9 | other | Y |
+| 63 | DATASETS | calc/direction_analyzer.py:27 | dict | 3 | other | - |
+| 64 | CATEGORIES | calc/domain_distance.py:38 | dict | 4 | domains | - |
+| 65 | ALL_TARGETS | calc/domain_distance.py:67 | dict | 0 | targets | Y |
+| 66 | BROAD_TARGETS | calc/domain_distance.py:72 | dict | 0 | targets | Y |
+| 67 | KNOWN_PERFECTS | calc/egyptian_fraction.py:63 | list | 5 | constants | Y |
+| 68 | N6_CONSTANTS | calc/elliptic_curves_perfect.py:112 | dict | 29 | constants | Y |
+| 69 | DIVS | calc/entanglement_n6_analysis.py:45 | list | 4 | other | Y |
+| 70 | PERFECT_NUMBERS | calc/exotic_spheres_perfect.py:47 | list | 6 | constants | Y |
+| 71 | PERFECT_PRIMES | calc/exotic_spheres_perfect.py:48 | list | 6 | other | Y |
+| 72 | THETA_N | calc/exotic_spheres_perfect.py:63 | dict | 20 | other | Y |
+| 73 | THETA_N_EXTENDED | calc/exotic_spheres_perfect.py:87 | dict | 3 | other | Y |
+| 74 | ALL_DOMAINS | calc/extreme_hypothesis_verifier.py:298 | dict | 17 | domains | - |
+| 75 | PERFECT_NUMBERS | calc/feynman_diagrams_n6.py:124 | list | 4 | constants | Y |
+| 76 | FUSION_CONSTANTS | calc/fusion_hypothesis_verifier.py:33 | dict | 32 | constants | - |
+| 77 | GATE_TABLE | calc/gate_formula_calculator.py:39 | list | 7 | other | Y |
+| 78 | PERFECT_NUMBERS | calc/gauge_cosmology_calculator.py:21 | list | 5 | constants | Y |
+| 79 | PN_DATA | calc/gauge_cosmology_calculator.py:24 | dict | 0 | other | Y |
+| 80 | PSI_CONSTANTS | calc/gauge_cosmology_calculator.py:44 | dict | 6 | consciousness | - |
+| 81 | DEFAULT_TARGETS | calc/generator_finder.py:24 | dict | 14 | targets | - |
+| 82 | DIVISORS | calc/genetic_code_variant_tester.py:30 | list | 4 | other | Y |
+| 83 | CONSTANTS | calc/genetic_code_variant_tester.py:32 | dict | 6 | constants | - |
+| 84 | NCBI_TABLES | calc/genetic_code_variant_tester.py:39 | list | 26 | other | Y |
+| 85 | UNIVERSAL_PROPERTIES | calc/genetic_code_variant_tester.py:97 | dict | 8 | other | Y |
+| 86 | PERFECTS | calc/grand_unification_deep.py:95 | list | 4 | other | Y |
+| 87 | N6_VALUES | calc/grand_unification_n6.py:179 | dict | 7 | other | - |
+| 88 | KO_GROUPS | calc/grand_unification_n6.py:190 | dict | 8 | other | Y |
+| 89 | CLIFFORD_TYPES | calc/grand_unification_n6.py:204 | dict | 8 | other | Y |
+| 90 | PERFECT_NUMBERS | calc/gz_bridge_calculator.py:30 | list | 5 | constants | Y |
+| 91 | KNOWN_PERFECT | calc/gz_hierarchy.py:31 | dict | 8 | constants | Y |
+| 92 | PDG | calc/hph9_pdg_verification.py:42 | dict | 9 | other | Y |
+| 93 | PDG_OTHER | calc/hph9_pdg_verification.py:55 | dict | 14 | other | Y |
+| 94 | MATH_CONSTANTS | calc/hypothesis_verifier.py:36 | dict | 37 | constants | - |
+| 95 | PERFECT_NUMBERS | calc/hypothesis_verifier.py:95 | dict | 2 | constants | Y |
+| 96 | GRADE_EMOJI | calc/hypothesis_verifier.py:521 | dict | 5 | verification | Y |
+| 97 | DIVISORS_6 | calc/information_theory_n6.py:55 | list | 4 | other | Y |
+| 98 | PROPER_DIVISORS_6 | calc/information_theory_n6.py:56 | list | 3 | other | Y |
+| 99 | JONES_POLYNOMIALS | calc/knot_theory_n6.py:55 | dict | 9 | other | Y |
+| 100 | ALEXANDER_POLYNOMIALS | calc/knot_theory_n6.py:68 | dict | 8 | other | Y |
+| 101 | RAMANUJAN_TAU_KNOWN | calc/langlands_perfect.py:215 | dict | 30 | other | Y |
+| 102 | DATA_PROFILES | calc/law79_freedom_degree.py:35 | dict | 5 | neuroscience | Y |
+| 103 | MUTATION_DATA | calc/mitosis_calculator.py:16 | dict | 3 | other | Y |
+| 104 | DIVERGENCE | calc/mitosis_calculator.py:23 | list | 10 | other | Y |
+| 105 | SPLITS_DATA | calc/mitosis_calculator.py:45 | dict | 3 | other | Y |
+| 106 | FACTION_DATA | calc/mitosis_calculator.py:58 | dict | 3 | other | Y |
+| 107 | PERFECT_NUMBERS | calc/monster_moonshine_perfect.py:43 | list | 5 | constants | - |
+| 108 | MONSTER_FACTORIZATION | calc/monster_moonshine_perfect.py:54 | dict | 15 | other | Y |
+| 109 | J_COEFFICIENTS | calc/monster_moonshine_perfect.py:74 | dict | 21 | other | Y |
+| 110 | J_COEFFICIENTS_EXTENDED | calc/monster_moonshine_perfect.py:99 | dict | 8 | other | Y |
+| 111 | MONSTER_EXPO | calc/moonshine_deep_analysis.py:47 | dict | 15 | other | Y |
+| 112 | J_COEFF | calc/moonshine_deep_analysis.py:56 | dict | 22 | other | Y |
+| 113 | MONSTER_IRREPS | calc/moonshine_deep_analysis.py:82 | list | 8 | other | Y |
+| 114 | BABY_MONSTER_IRREPS | calc/moonshine_deep_analysis.py:94 | list | 4 | other | Y |
+| 115 | BABY_MONSTER_ORDER_EXPO | calc/moonshine_deep_analysis.py:95 | dict | 11 | other | Y |
+| 116 | FI22_ORDER_EXPO | calc/moonshine_deep_analysis.py:102 | dict | 6 | other | Y |
+| 117 | FI23_ORDER_EXPO | calc/moonshine_deep_analysis.py:103 | dict | 8 | other | Y |
+| 118 | FI24_ORDER_EXPO | calc/moonshine_deep_analysis.py:104 | dict | 9 | other | Y |
+| 119 | MCKAY_E8 | calc/moonshine_deep_analysis.py:111 | list | 9 | other | Y |
+| 120 | JI_TARGETS | calc/music_consonance_calculator.py:171 | dict | 4 | targets | - |
+| 121 | N6_CONSTANTS | calc/n6_architecture_constants.py:6 | dict | 494 | architecture | Y |
+| 122 | KNOWN_IDENTITIES | calc/n6_uniqueness_tester.py:61 | list | 11 | other | - |
+| 123 | SCAN_TEMPLATES | calc/n6_uniqueness_tester.py:209 | list | 16 | verification | Y |
+| 124 | EVIDENCE_SCORES | calc/nobel_scorer.py:30 | dict | 5 | other | Y |
+| 125 | RIGOR_SCORES | calc/nobel_scorer.py:38 | dict | 4 | other | Y |
+| 126 | IMPACT_SCORES | calc/nobel_scorer.py:45 | dict | 4 | other | Y |
+| 127 | NOBEL_WEIGHTS | calc/nobel_scorer.py:53 | dict | 4 | other | Y |
+| 128 | BUILTIN | calc/nobel_scorer.py:121 | list | 10 | other | Y |
+| 129 | IDENTITIES | calc/p6_uniqueness_scorer.py:36 | list | 12 | other | - |
+| 130 | CLAIM_PATTERNS | calc/paper_claim_verifier.py:158 | list | 10 | verification | Y |
+| 131 | MERSENNE_EXPONENTS | calc/perfect_chain_bridges.py:167 | list | 8 | other | Y |
+| 132 | PERFECT_NUMBERS | calc/perfect_number_P6_analysis.py:30 | dict | 6 | constants | Y |
+| 133 | MERSENNE_EXPONENTS | calc/perfect_number_P6_analysis.py:40 | dict | 6 | other | Y |
+| 134 | PHYSICS_MAP | calc/perfect_number_P6_analysis.py:42 | dict | 5 | physics | Y |
+| 135 | MERSENNE_EXPONENTS | calc/perfect_number_classifier.py:165 | list | 8 | other | Y |
+| 136 | IDENTITIES | calc/perfect_number_classifier.py:225 | list | 40 | other | Y |
+| 137 | PERFECT_NUMBERS | calc/perfect_number_generalizer.py:24 | list | 4 | constants | Y |
+| 138 | PN_LABELS | calc/perfect_number_generalizer.py:71 | list | 4 | other | Y |
+| 139 | BUILTIN_FORMULAS | calc/perfect_number_generalizer.py:413 | list | 10 | expressions | Y |
+| 140 | PERFECT_NUMBERS | calc/perfect_number_physics.py:18 | list | 5 | constants | Y |
+| 141 | DIMENSION_MAP | calc/perfect_number_physics.py:19 | dict | 5 | other | Y |
+| 142 | STRING_CONSTANTS | calc/perfect_number_physics.py:28 | list | 16 | physics | - |
+| 143 | CONSCIOUSNESS_BRIDGES | calc/perfect_number_physics.py:48 | list | 12 | consciousness | Y |
+| 144 | PERFECTS | calc/perfect_p3_496_explorer.py:175 | list | 5 | other | - |
+| 145 | PERFECT_NUMS | calc/perfect_p3_496_explorer.py:176 | list | 5 | other | Y |
+| 146 | DRUG_DB | calc/pharmacology_verifier.py:47 | dict | 12 | neuroscience | Y |
+| 147 | EXPECTED_DI_ORDER | calc/pharmacology_verifier.py:198 | list | 9 | other | Y |
+| 148 | I_INCREASE_DRUGS | calc/pharmacology_verifier.py:203 | list | 2 | neuroscience | Y |
+| 149 | SOLIDS | calc/platonic_solids_n6.py:41 | list | 5 | other | Y |
+| 150 | REGULAR_POLYTOPES | calc/platonic_solids_n6.py:55 | dict | 6 | other | Y |
+| 151 | ROOT | calc/psi_derivation_chain.py:43 | list | 4 | other | - |
+| 152 | LEVEL1 | calc/psi_derivation_chain.py:46 | list | 4 | other | - |
+| 153 | LEVEL2 | calc/psi_derivation_chain.py:54 | list | 5 | other | - |
+| 154 | LEVEL3 | calc/psi_derivation_chain.py:63 | list | 6 | other | Y |
+| 155 | PHYSICS | calc/psi_derivation_chain.py:73 | dict | 8 | physics | Y |
+| 156 | DATA_PROFILES | calc/psi_derivation_chain.py:85 | dict | 5 | neuroscience | Y |
+| 157 | B | calc/pure_math_deep_scan.py:253 | dict | 8 | other | - |
+| 158 | Q_CONSTANTS | calc/q_barrier_checker.py:25 | dict | 10 | constants | - |
+| 159 | GZ_TARGETS | calc/q_barrier_checker.py:40 | dict | 6 | targets | - |
+| 160 | STANDARD_TARGETS | calc/q_barrier_checker.py:49 | dict | 13 | targets | - |
+| 161 | TARGET_CATEGORIES | calc/q_barrier_checker.py:65 | dict | 18 | targets | Y |
+| 162 | DIVISORS_6 | calc/quantum_ecc_n6.py:48 | list | 4 | other | Y |
+| 163 | PROPER_DIVISORS_6 | calc/quantum_ecc_n6.py:49 | list | 3 | other | Y |
+| 164 | N6_TARGETS | calc/quark_koide_search.py:60 | dict | 0 | targets | Y |
+| 165 | RAMSEY_EXACT | calc/ramsey_n6.py:101 | dict | 17 | other | Y |
+| 166 | RAMSEY_BOUNDS | calc/ramsey_n6.py:117 | dict | 9 | other | Y |
+| 167 | SCHUR | calc/ramsey_n6.py:130 | dict | 5 | other | Y |
+| 168 | VDW | calc/ramsey_n6.py:133 | dict | 4 | other | Y |
+| 169 | FUNC_REGISTRY | calc/reciprocal_miracle_generalize.py:147 | dict | 7 | other | - |
+| 170 | MULT_FUNCS | calc/reciprocal_miracle_generalize.py:158 | list | 6 | other | Y |
+| 171 | PERFECT_NUMBERS | calc/reciprocal_miracle_generalize.py:302 | list | 5 | constants | Y |
+| 172 | DIVISORS_6 | calc/riemann_zeta_n6.py:50 | list | 4 | other | Y |
+| 173 | ZETA_ZEROS | calc/riemann_zeta_n6.py:299 | list | 100 | physics | Y |
+| 174 | CA | calc/robin_rh_connection.py:48 | list | 11 | other | Y |
+| 175 | MERSENNE_EXPONENTS | calc/self_referential_physics.py:96 | list | 10 | other | Y |
+| 176 | KNOWN_STRING_DIMS | calc/self_referential_physics.py:105 | dict | 4 | physics | Y |
+| 177 | GZ_CONSTANTS | calc/singleton_gz_mapper.py:36 | dict | 11 | constants | - |
+| 178 | PERFECTS | calc/sphere_packing_perfect.py:96 | list | 5 | other | Y |
+| 179 | MAGIC_DIMS | calc/sphere_packing_perfect.py:109 | list | 4 | nuclear | Y |
+| 180 | KISSING | calc/sphere_packing_perfect.py:112 | dict | 6 | constants | Y |
+| 181 | PERFECT_NUMBERS | calc/sporadic_groups_perfect.py:35 | dict | 5 | constants | Y |
+| 182 | SPORADIC_GROUPS | calc/sporadic_groups_perfect.py:51 | list | 26 | other | Y |
+| 183 | STEINER_SYSTEMS | calc/sporadic_groups_perfect.py:162 | dict | 5 | other | Y |
+| 184 | CONSTANTS | calc/statistical_tester.py:16 | dict | 13 | constants | - |
+| 185 | GZ_TARGETS | calc/texas_sharpshooter_v2.py:34 | dict | 8 | targets | - |
+| 186 | CLAIMS | calc/texas_sharpshooter_v2.py:61 | list | 49 | verification | Y |
+| 187 | PERFECT_NUMBERS | calc/thermodynamics_n6.py:91 | list | 4 | constants | Y |
+| 188 | N6 | calc/thermodynamics_n6.py:92 | dict | 9 | other | - |
+| 189 | MERSENNE_EXPONENTS | calc/theta_perfect_pattern.py:41 | list | 8 | other | Y |
+| 190 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
+| 191 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:1150 | dict | 20 | verification | - |
+| 192 | MERSENNE_EXPONENTS | calc/verify_causal_chain.py:81 | list | 8 | other | Y |
+| 193 | PERFECT_NUMBERS | calc/verify_causal_chain.py:89 | dict | 0 | constants | - |
+| 194 | DIVISOR_RECIPROCALS | calc/verify_h309_mitosis_anomaly.py:26 | list | 3 | other | - |
+| 195 | RESULTS | calc/verify_h309_mitosis_anomaly.py:34 | dict | 6 | other | Y |
+| 196 | NWAY_RESULTS | calc/verify_h309_mitosis_anomaly.py:44 | dict | 5 | other | Y |
+| 197 | TEMPORAL_K | calc/verify_h309_mitosis_anomaly.py:47 | dict | 6 | other | Y |
+| 198 | MATRIX_2X2 | calc/verify_h309_mitosis_anomaly.py:50 | dict | 4 | other | Y |
+| 199 | DUAL_MECHANISM | calc/verify_h309_mitosis_anomaly.py:58 | dict | 4 | other | Y |
+| 200 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
+| 201 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
+| 202 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
+| 203 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
+| 204 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
+| 205 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
+| 206 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
+| 207 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
+| 208 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
+| 209 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
+| 210 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
+| 211 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
+| 212 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
+| 213 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
+| 214 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
 
 ### SEDI (122)
 

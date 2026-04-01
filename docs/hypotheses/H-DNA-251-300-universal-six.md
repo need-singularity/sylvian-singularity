@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-251 to H-DNA-300 -- Universal Six
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 ## Hypothesis
 

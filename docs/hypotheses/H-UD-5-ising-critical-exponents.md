@@ -1,4 +1,6 @@
 # H-UD-5: 2D Ising Critical Exponents = 1/(n=6 arithmetic)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 **Grade: ★★**
 **Status: Verified (exact match, but Z_2 symmetry explanation exists)**

@@ -1,4 +1,6 @@
 # H-CX-491: Baryon-to-Photon Ratio eta = (n + 1/sigma) * 10^(-10)
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > The cosmic baryon-to-photon ratio eta = (6.12 +/- 0.04) * 10^(-10)
 > is approximated by (n + 1/sigma) * 10^(-10) = (6 + 1/12) * 10^(-10)

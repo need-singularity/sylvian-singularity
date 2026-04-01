@@ -1,4 +1,6 @@
 # MEGA-001: P1+1=7 Universal Classification + Complete n=6 Map
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 - **ID**: MEGA-001
 - **Grade**: FACT

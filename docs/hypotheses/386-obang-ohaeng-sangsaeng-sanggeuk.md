@@ -1,4 +1,6 @@
 # H-386: Ohaeng Sangsaeng-Sanggeuk as Tension Dynamics
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > **Hypothesis H-386**: The Five Elements (Ohaeng) system of mutual generation (Sangsaeng) and mutual overcoming (Sanggeuk) is isomorphic to a signed tension dynamics network on the five variables {D, P, G, T, I}. The Sangsaeng cycle forms a directed pentagon (attraction, +1 edges) and the Sanggeuk cycle forms a directed pentagram (repulsion, -1 edges). Together they cover all C(5,2)=10 pairs exactly once, forming a perfectly balanced signed complete graph K₅. The eigenvalues of the combined circulant matrix involve cos(2π/5) = (φ-1)/2, so the golden ratio φ emerges naturally from the Ohaeng structure.
 

@@ -1,4 +1,6 @@
 # NGH-013: The Consciousness Stack — P1=6 at 10 Hierarchical Levels
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 - **ID**: NGH-013
 - **Grade**: FACT

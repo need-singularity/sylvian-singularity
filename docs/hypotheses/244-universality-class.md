@@ -1,4 +1,6 @@
 # Hypothesis Review 244: Golden Zone = Mean-Field Universality Class
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Golden Zone dependence: Yes (unverified)**
 

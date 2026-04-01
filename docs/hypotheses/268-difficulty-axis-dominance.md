@@ -1,4 +1,6 @@
 # Hypothesis 268: Difficulty-Axis Dominance Law — Hard problems are dominated by "how"
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **As task difficulty increases, the dominant axis of the repulsion field shifts from content (what) to structure (how). In MNIST, content tension > structure tension, but in CIFAR, structure tension > content tension reverses.**
 

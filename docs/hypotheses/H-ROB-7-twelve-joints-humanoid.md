@@ -1,4 +1,6 @@
 # H-ROB-7: 12 Joints = sigma(6) = Minimum Humanoid
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 ## 가설 (Hypothesis)
 

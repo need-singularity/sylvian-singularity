@@ -1,4 +1,6 @@
 # H-CX-142: THC = PH Simplification — H0_total Decrease = Boundary Dissolution
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > After THC administration, H0_total decreases = overall decrease in merge distance = topological reality of "feeling everything is connected."
 

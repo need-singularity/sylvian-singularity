@@ -1,4 +1,6 @@
 # PHYS-GW-QUADRUPOLE-P6: Gravitational Wave Quadrupole Radiation and P1=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 **Grade: ⚪ (ISCO=6M proven from GR, P1 connection not significant after Bonferroni p=0.29)**
 **Status: Complete analysis**

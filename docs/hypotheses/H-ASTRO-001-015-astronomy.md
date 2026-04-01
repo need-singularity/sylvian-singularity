@@ -1,4 +1,6 @@
 # Astronomy/Cosmology Hypotheses H-ASTRO-001 through H-ASTRO-015
+**n6 Grade: 🟩 EXACT** (auto-graded, 15 unique n=6 constants)
+
 
 > **Do astronomical structures (solar system, stellar physics, cosmology) exhibit
 > privileged connections to the perfect number n=6 and its arithmetic functions

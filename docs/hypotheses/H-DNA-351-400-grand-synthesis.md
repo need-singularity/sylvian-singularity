@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-351 to H-DNA-400 -- Grand Synthesis
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-409: Game Theory and Social Choice Theory for n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

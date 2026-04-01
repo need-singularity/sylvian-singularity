@@ -1,4 +1,6 @@
 # Hypothesis 277: Feature Quality Threshold — The Boundary Where Architecture Becomes Important
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **When feature extraction quality is below the threshold, weight structure (architecture) determines performance; above the threshold, data determines performance. {1/2,1/3,1/6} being optimal in MLP and worst in CNN shows this.**
 

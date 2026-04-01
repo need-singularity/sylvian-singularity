@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-451 to H-DNA-500 -- Adversarial Stress Test
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 ## Purpose
 

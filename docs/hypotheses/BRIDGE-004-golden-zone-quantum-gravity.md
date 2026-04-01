@@ -1,4 +1,6 @@
 # BRIDGE-004: Golden Zone and Quantum Gravity Constants
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **Hypothesis**: Dimensionless quantum gravity parameters (Barbero-Immirzi,
 > Penrose extraction, spectral dimension ratio) cluster in the Golden Zone

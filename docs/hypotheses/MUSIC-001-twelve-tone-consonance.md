@@ -1,4 +1,6 @@
 # Hypothesis MUSIC-001: 12-TET = sigma(6) Semitones, Consonance = d(6) Ratios
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 ## Hypothesis
 

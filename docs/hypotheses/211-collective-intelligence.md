@@ -1,4 +1,6 @@
 # Hypothesis #211: Collective Intelligence = Resonance of N People's Golden Zone
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 **Status**: ⚠️ Speculation
 **Date**: 2026-03-22

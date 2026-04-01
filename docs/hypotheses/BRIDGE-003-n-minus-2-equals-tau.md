@@ -1,4 +1,6 @@
 # BRIDGE-003: n - 2 = tau(n) and the Uniqueness of n = 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-EE-72: Why Is There Something Rather Than Nothing?
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-ARCH: Industry Architecture Patterns Matching n=6 Arithmetic
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 ## Hypothesis
 

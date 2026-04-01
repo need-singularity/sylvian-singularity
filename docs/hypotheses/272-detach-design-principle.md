@@ -1,4 +1,6 @@
 # Hypothesis 272: detach() Design Principle — See Better When Not Acting
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **detach() (gradient blocking) improves observation accuracy by +7.4%. Separating action and observation improves both. This can be extended to a design principle that adds an observation-only pathway to the repulsion field.**
 

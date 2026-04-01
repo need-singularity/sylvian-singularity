@@ -1,4 +1,6 @@
 # H-EE-41: Spacetime Dimensions from n=6 Arithmetic
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

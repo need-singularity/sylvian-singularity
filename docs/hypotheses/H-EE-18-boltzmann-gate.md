@@ -1,4 +1,6 @@
 # H-EE-18: Boltzmann 1/e Activation Gate
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

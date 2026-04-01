@@ -1,4 +1,6 @@
 # H-EE-86: Alpha Wave ~10 Hz = sigma_{-1}(6) * sopfr(6)
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

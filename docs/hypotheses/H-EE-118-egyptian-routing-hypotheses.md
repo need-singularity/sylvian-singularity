@@ -1,4 +1,6 @@
 # H-EE-118: Egyptian Routing Applied to Hypotheses — Optimal Research Allocation
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis (META)
 

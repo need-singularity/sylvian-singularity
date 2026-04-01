@@ -1,4 +1,6 @@
 # H-DSE-002: n=6 최적 OS vs Linux/RISC-V 실측 비교
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 > **가설**: n=6 산술함수(sigma=12, tau=4, phi=2, sopfr=5)에서 도출된 시스템 파라미터가
 > 실제 Linux 커널 및 RISC-V ISA의 설계 상수와 구조적으로 일치한다.

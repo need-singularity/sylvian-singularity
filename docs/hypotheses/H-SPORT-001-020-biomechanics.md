@@ -1,4 +1,6 @@
 # Hypotheses H-SPORT-001 to H-SPORT-020: Sports, Biomechanics, and Human Body
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-CX-59: Directional Precognition — Direction Vectors Pre-indicate Confusion Classes
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > Precognition predicts not just "right or wrong" but also "which class will be confused with."
 > When direction vectors (H339) point to confusion classes instead of predicted classes, errors occur.

@@ -1,4 +1,6 @@
 # Hypothesis Review 231: World Model = Golden Zone Internal Simulator ⚠️
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 **Category**: World Model/AI
 **Status**: ⚠️ Analogy

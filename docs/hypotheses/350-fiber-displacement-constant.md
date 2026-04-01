@@ -1,4 +1,6 @@
 # Hypothesis 350: Meaning of Fiber Intrinsic Displacement +1.22
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > **The repulsion field's fiber shows a consistent displacement of +1.22 regardless of initialization conditions. This value is the minimum contribution the fiber "intrinsically requires," and combined with MI efficiency C39 (70.5%), the information-theoretic role of the fiber can be quantified.**
 

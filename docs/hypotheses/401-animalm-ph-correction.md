@@ -1,4 +1,6 @@
 # H-401: AnimaLM PH-Corrected Repulsion Field
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 > **Hypothesis H-401**: Applying Persistent Homology (PH) correction to AnimaLM's Repulsion
 > Field transform will improve the A↔G tension dynamics by distinguishing "content tension"

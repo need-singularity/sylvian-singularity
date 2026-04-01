@@ -1,4 +1,6 @@
 # Hypothesis 299: Mitosis Specialization Anomaly Detection — Each Child "Specializes" in Different Normal Patterns
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **When split children learn independently, each specializes in different aspects of normal data. child_a becomes sensitive to features 1-15, child_b to features 16-30. No matter which feature range an anomaly deviates from, at least one child will detect it.**
 

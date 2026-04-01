@@ -1,4 +1,6 @@
 # H-392: Dolphin TTX Dual-Consciousness — Bilateral Trance via Pufferfish Toxin
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 **Status:** Proposed
 **Golden Zone Dependency:** Partial — Bilateral neuroanatomy and TTX pharmacology are independently established facts. Consciousness engine mapping (G=D×P/I, cross-hemisphere tension) is GZ-dependent.

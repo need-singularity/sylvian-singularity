@@ -1,4 +1,6 @@
 # H-CX-451: PCA Centroids Dramatically Improve CIFAR Confusion Prediction
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 **Status**: SUPPORTED (CIFAR r improves -0.56 → -0.75 with PCA)
 **Golden Zone Dependency**: None

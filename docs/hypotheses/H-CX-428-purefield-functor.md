@@ -1,4 +1,6 @@
 # H-CX-428: PureField = Functor (Category Theory)
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > PureField의 engine_A - engine_G 매핑은 입력 공간 카테고리에서 출력 공간 카테고리로의
 > 펑터(Functor)를 구성한다. 학습은 펑터 간의 자연변환(Natural Transformation)이다.

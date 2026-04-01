@@ -1,4 +1,6 @@
 # H-SIM-6: Wavefunction Collapse = Lazy Evaluation
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 ## 가설
 

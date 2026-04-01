@@ -1,4 +1,6 @@
 # H-UD-8: Hexagonal Tiling: n=6 = Optimal 2D Packing
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 **Grade: ★★★**
 **Status: Verified (proved theorem + physical manifestations)**

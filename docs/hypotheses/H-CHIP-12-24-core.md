@@ -1,4 +1,6 @@
 # H-CHIP-12: Optimal AI Core Count = J_2(6) = 24
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # Hypothesis 267: Collective Consensus Phase Transition — Unanimity is Qualitatively Different
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > **A phase transition exists in the relationship between agent consensus rate and accuracy. Between 6/7 consensus (88.3%) and 7/7 consensus (99.5%), there is a +11.2% jump, suggesting that "near consensus" and "complete consensus" are qualitatively different states.**
 

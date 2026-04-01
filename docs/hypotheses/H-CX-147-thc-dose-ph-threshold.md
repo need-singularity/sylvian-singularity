@@ -1,4 +1,6 @@
 # H-CX-147: THC Dose-PH Relationship — Phase Transition at Golden Zone?
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > Dose↑ → H0_total↓ nonlinearly. Phase transition near I=1/e?
 

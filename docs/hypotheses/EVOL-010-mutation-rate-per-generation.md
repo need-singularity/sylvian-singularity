@@ -1,4 +1,6 @@
 # EVOL-010: 돌연변이율 — ~1.2 × 10⁻⁸ per bp per generation
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **가설**: 인간 돌연변이율 ~1.2 × 10⁻⁸/bp/generation에서 지수 -8과 P₁ 구조의 관계를 탐색한다.
 

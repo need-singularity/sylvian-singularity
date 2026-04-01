@@ -1,4 +1,6 @@
 # H-SEDI-8: Multi-Engine Consensus Improves Ensemble Predictions
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 **Status**: SUPPORTED
 **Golden Zone Dependency**: None (pure ensemble method)

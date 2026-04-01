@@ -1,4 +1,6 @@
 # Kissing Numbers as n=6 Arithmetic Functions
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 ## Hypothesis
 

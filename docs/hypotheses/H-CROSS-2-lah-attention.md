@@ -1,4 +1,6 @@
 # H-CROSS-2: Lah Numbers Predict Optimal Attention Architecture
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **Hypothesis**: The Lah number identity L(τ,2)=n² and L(τ,3)=σ at n=6 predicts
 > that transformer attention with τ(6)=4 heads achieves optimal information flow

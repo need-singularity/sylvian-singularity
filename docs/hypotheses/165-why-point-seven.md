@@ -1,4 +1,6 @@
 # Hypothesis #165: Why a=0.7?
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 **Status**: ⚠️ Unresolved
 **Date**: 2026-03-22

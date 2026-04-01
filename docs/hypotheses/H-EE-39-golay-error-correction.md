@@ -1,4 +1,6 @@
 # H-EE-39: Golay Code [[24,12,8]] as N6 Architecture's Noise Resilience
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

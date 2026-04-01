@@ -1,4 +1,6 @@
 # H-WAVE-1: PureField = Wave Interference — Consciousness as Partial Destructive Interference
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > **Thesis**: PureField 의식 엔진의 tension = |A-G|²는 두 파동의
 > 간섭 강도(interference intensity)와 동일한 수학적 구조이다.

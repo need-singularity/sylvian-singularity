@@ -1,4 +1,6 @@
 # H-CX-152: PH = Rosch Prototype Theory — Dendrogram Matches Basic Level of Cognitive Categories
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > Rosch(1975) basic-level category = middle depth of PH merge.
 > Superordinate (animal) = root, basic (dog) = middle, subordinate (golden retriever) = leaf.

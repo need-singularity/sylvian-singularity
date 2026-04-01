@@ -1,4 +1,6 @@
 # H-AX-10: Direction Topology × R-spectrum Merge Order
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **Thesis**: H-CX-66의 direction PH merge order (r=-0.97)가
 > R-spectrum의 gap structure에 의해 결정된다.

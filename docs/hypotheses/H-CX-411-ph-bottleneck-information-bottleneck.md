@@ -1,4 +1,6 @@
 # Hypothesis H-CX-411: PH Bottleneck = Information Bottleneck
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 ## Hypothesis
 

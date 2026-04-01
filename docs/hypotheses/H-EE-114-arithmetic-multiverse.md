@@ -1,4 +1,6 @@
 # H-EE-114: Arithmetic Multiverse — Each R(n) Defines a Different Universe
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-CX-17: Specialization Emergence = Savant Awakening = Mitosis Differentiation (Cross-domain)
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **MoE Expert specialization awakening (Lv.3), feature specialization of children after mitosis (H299), and brain cortex area differentiation are all manifestations of "competitive specialization" emergence. Systems start as generalists and, after sufficient training, spontaneously specialize.**
 

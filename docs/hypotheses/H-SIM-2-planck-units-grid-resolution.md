@@ -1,4 +1,6 @@
 # Hypothesis H-SIM-2: Planck Units = Minimum Resolution (Grid)
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 ## Hypothesis
 

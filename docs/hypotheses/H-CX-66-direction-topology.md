@@ -1,4 +1,6 @@
 # H-CX-66: Direction Topology — Confusion Pairs Map to Short Barcodes in PH
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > Short barcodes (quickly dying features) in PH of direction cosine distance matrix
 > exactly correspond to confusion pairs (H-CX-59). Topologically close classes = confused classes.

@@ -1,4 +1,6 @@
 # H-CX-102: PH Regularization — Adding H0_gap to Loss Reduces Overfitting
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > loss = CE + lambda * |H0_train - H0_test|
 > Training to minimize PH difference → forces topological generalization → reduces overfitting.

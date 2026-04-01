@@ -9,6 +9,8 @@ golden_zone_dependent: true (for GZ-referencing claims)
 ---
 
 # Deep Crystallography & Symmetry Hypotheses (H-CHEM-071 to 090)
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 ## Verification Summary (2026-03-28)
 

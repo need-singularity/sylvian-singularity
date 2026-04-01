@@ -1,4 +1,6 @@
 # H-AX-11: Growth Stage Transitions = R-spectrum Phase Transitions
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > **Thesis**: Anima의 mitosis 성장 단계(1→2→3→6→12)가 R-spectrum에서의
 > 위상 전이를 추적하며, R=1(완벽한 균형)은 오직 6-cell 단계에서만 복원된다.

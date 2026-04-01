@@ -1,4 +1,6 @@
 # H-CX-438: Tension = Gibbs Free Energy
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > **Hypothesis**: PureField tension is isomorphic to Gibbs free energy G = H - TS.
 > Loss = enthalpy (H), learning rate = temperature (T), weight distribution entropy = entropy (S).

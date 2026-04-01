@@ -1,4 +1,6 @@
 # Nobel-Level Predictions and Theoretical Frameworks
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 > 20 testable predictions + 10 theoretical frameworks. Generated 2026-03-27.
 > Honest confidence assessment included. Postdictions flagged separately from blind predictions.

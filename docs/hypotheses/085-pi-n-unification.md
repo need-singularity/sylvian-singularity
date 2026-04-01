@@ -1,4 +1,6 @@
 # Hypothesis Review 085: π/N Unification ❌
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

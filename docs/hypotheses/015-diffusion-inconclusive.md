@@ -1,4 +1,6 @@
 # Hypothesis Review 015: Convergence Speed Diffusion Law τ∝ΔI² — Inconclusive ?
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 ## Hypothesis
 

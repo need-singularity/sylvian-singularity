@@ -1,4 +1,6 @@
 # H-COIN-Ethereum: Ethereum 2.0 Parameters Are n=6 Power-of-2 Ladder
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-CHIP-5: Egyptian Routing as Fixed Resistor Network
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

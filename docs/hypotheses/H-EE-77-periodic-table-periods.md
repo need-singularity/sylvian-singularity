@@ -1,4 +1,6 @@
 # H-EE-77: Periodic Table — 6 Stable Periods
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

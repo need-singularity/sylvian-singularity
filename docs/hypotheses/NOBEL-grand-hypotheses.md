@@ -1,4 +1,6 @@
 # Ten Grand Hypotheses: Unification Through Perfect Number 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 20 unique n=6 constants)
+
 
 **Date**: 2026-03-29
 **Status**: Grand Conjectures (grounded in verified mathematics)

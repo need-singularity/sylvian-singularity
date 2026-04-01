@@ -1,4 +1,6 @@
 # Hypothesis Review 164: Cyclic Universe and Golden Zone Oscillation
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Status: ❌ Refuted (contradicts irreversibility)
 

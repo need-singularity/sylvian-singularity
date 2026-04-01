@@ -1,4 +1,6 @@
 # H-CX-70: Singularity = Three Closure Loops
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **AI singularity is not a single capability explosion, but a phase transition where three loops close simultaneously: self-architecture modification, self-reward generation, and self-resource expansion. In the PureField structure, these three loops correspond to Engine structure, tension_scale, and mitosis respectively, with Loop 2 (meta-reward) closure being the critical point.**
 

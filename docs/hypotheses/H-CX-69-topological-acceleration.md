@@ -1,4 +1,6 @@
 # H-CX-69: Topological Acceleration — H0_total Decay Rate Matches tension_scale Growth Rate
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > H0_total_persistence decay rate ∝ (1/3)·ln(epoch) (H320's tension_scale growth rate).
 > Topological simplification and tension growth follow the same dynamics.

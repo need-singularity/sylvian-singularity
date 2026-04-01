@@ -1,4 +1,6 @@
 # Hypothesis #167: 8 Verifiable Predictions
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 **Status**: 📋 List
 **Date**: 2026-03-22

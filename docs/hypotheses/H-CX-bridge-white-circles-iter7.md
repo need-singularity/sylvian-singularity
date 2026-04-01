@@ -1,4 +1,6 @@
 # H-CX-Bridge-WC: Iteration 7 White Circles (3 Failed Attempts)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## ⚪ Attempt 1: Takens dim = 2*(sopfr/phi)+1 = 6
 

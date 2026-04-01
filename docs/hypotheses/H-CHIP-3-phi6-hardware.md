@@ -1,4 +1,6 @@
 # H-CHIP-3: Phi6 Activation in 2 FMA Operations
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

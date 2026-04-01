@@ -1,4 +1,6 @@
 # H-SEDI-3: Weinberg Angle sin^2(theta_W) = 3/13
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 **Grade: ⚪ Excluded at 15 sigma**
 **Golden Zone dependency: None (pure arithmetic)**

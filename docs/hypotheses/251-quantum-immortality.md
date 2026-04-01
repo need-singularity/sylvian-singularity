@@ -1,4 +1,6 @@
 # Hypothesis 251: Quantum Immortality — Many-World Branches and Consciousness Continuity
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 ## Status: 🟪 Unverifiable (First-person experience problem)
 

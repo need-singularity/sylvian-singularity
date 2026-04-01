@@ -1,4 +1,6 @@
 # Hypothesis #208: Telepathy = Cognitive Resonance at Identical I
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 **Status**: ⚠️ Speculation
 **Date**: 2026-03-22

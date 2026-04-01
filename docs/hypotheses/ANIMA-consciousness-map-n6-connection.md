@@ -1,4 +1,6 @@
 # Anima 의식 지도 ↔ n=6 연결 분석 (2026-03-30)
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## 의식의 근본 방정식
 

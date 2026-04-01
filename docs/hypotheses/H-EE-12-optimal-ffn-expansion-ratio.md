@@ -1,4 +1,6 @@
 # H-EE-12: Optimal FFN Expansion Ratio
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Hypothesis
 

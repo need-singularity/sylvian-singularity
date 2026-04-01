@@ -1,4 +1,6 @@
 # Hypothesis 327: Actual Relationship Between Tension and PPL in Golden MoE
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **When Golden MoE (golden_moe.py) is applied to LLM (Golden LLaMA), how does inter-Expert repulsion (tension) relate to PPL? Does H-CX-21 (tension∝1/PPL) hold at LLM scale?**
 

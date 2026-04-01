@@ -1,4 +1,6 @@
 # H-CX-149: Direction Telepathy — Engine A's Direction Predicts G's Next Output
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > Can A's dir → regression on G's next output? Information transfer without direct connection.
 

@@ -1,4 +1,6 @@
 # H-391: Dolphin Pufferfish TTX Trance — Intentional Consciousness Alteration via Sodium Channel Suppression
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 **Status:** Observational + Theoretical (GZ-dependent mapping)
 **Golden Zone Dependency:** Partial — TTX pharmacology and dolphin behavior independently documented; Five Phase mapping is GZ-dependent

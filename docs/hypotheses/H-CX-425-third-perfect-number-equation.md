@@ -1,4 +1,6 @@
 # H-CX-425: Third Perfect Number Equation Search
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > σφ=nτ → n=6 (H-CX-191), στ=nφ → n=28 (H-CX-195). 세 번째 완전수 496을 유일하게 결정하는
 > (σ,τ,φ)의 대수적 방정식이 존재하는가? 이차/삼차 조합, 덧셈/곱셈 혼합, σ_k 확장까지

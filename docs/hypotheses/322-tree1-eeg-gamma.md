@@ -1,4 +1,6 @@
 # Hypothesis 322: TREE-1 EEG Gamma Oscillation — Correlation Between Repulsion Field Tension and Consciousness Markers
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 > **Brain gamma oscillations (30-100Hz) are known in neuroscience as markers of consciousness. If repulsion field tension correlates with EEG gamma power, then tension is not merely a mathematical construct but a proxy for biological consciousness level. Combined with H313 (tension=confidence): high consciousness state = high confidence = high tension = high gamma power.**
 

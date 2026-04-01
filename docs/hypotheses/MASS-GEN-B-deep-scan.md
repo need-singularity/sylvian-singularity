@@ -1,4 +1,6 @@
 # Mass Generation B: Deep Uniqueness Scan (limit=100,000)
+**n6 Grade: 🟩 EXACT** (auto-graded, 15 unique n=6 constants)
+
 
 Generated: 2026-03-29
 

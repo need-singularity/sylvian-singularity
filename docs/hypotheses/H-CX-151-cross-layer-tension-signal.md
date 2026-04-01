@@ -1,4 +1,6 @@
 # H-CX-151: Cross-Layer Tension Signal — Tension Conveys "Important Now" to Other Layers
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > Layer L's tension influences Layer L+1's attention. Tension correlation between layers.
 

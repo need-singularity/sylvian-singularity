@@ -1,4 +1,6 @@
 # H-EE-16: Mobius Squarefree Gradient Flow
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-ROB-8: tau(6) = 4 Legs = Optimal Locomotion
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## 가설 (Hypothesis)
 

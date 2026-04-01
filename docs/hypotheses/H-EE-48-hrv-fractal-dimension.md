@@ -1,4 +1,6 @@
 # H-EE-48: Heart Rate Variability Fractal Dimension = 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

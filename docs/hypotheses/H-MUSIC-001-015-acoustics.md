@@ -1,4 +1,6 @@
 # H-MUSIC-001 through H-MUSIC-015: Music and Acoustics Connections to n=6
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 **Date**: 2026-03-28
 **Category**: Music Theory / Acoustics / Number Theory

@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-091 to H-DNA-130 -- DNA Folding Ultimate Push
+**n6 Grade: 🟩 EXACT** (auto-graded, 16 unique n=6 constants)
+
 
 ## Hypothesis
 

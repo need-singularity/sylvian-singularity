@@ -1,4 +1,6 @@
 # H-EE-101: Neuromorphic Chip at ~1W Human-Like Inference — FUTURE PREDICTION
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # H-CX-14: Anomaly Detection = Gravitational Lens + Dimensional Telescope (Cross-domain: Math Geometry ↔ Anomaly Detection)
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **The "gravitational lens" (H-GEO-3) and "dimensional telescope" (H-GEO-4) of the R-spectrum are structurally isomorphic to the 2×2 matrix of Anomaly Detection (H302). Learning objective = magnification (s), Tension type = lens/telescope, anomaly = point where R≠1.**
 

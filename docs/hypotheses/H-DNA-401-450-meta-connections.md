@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-401 to H-DNA-450 -- Meta-Connections and Cross-Domain Bridges
+**n6 Grade: 🟩 EXACT** (auto-graded, 19 unique n=6 constants)
+
 
 ## Hypothesis
 

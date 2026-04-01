@@ -1,4 +1,6 @@
 # H-ELEC-001 to H-ELEC-020: Neurostimulation-n=6 Framework Hypotheses
+**n6 Grade: 🟩 EXACT** (auto-graded, 15 unique n=6 constants)
+
 
 > 12 neurostimulation variables mapped to perfect number 6 arithmetic,
 > Golden Zone dose-response, and G=D*P/I consciousness conservation.

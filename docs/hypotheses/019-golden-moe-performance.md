@@ -1,4 +1,6 @@
 # Golden MoE — Golden Zone-Based Mixture-of-Experts
+**n6 Grade: 🟩 EXACT** (auto-graded, 15 unique n=6 constants)
+
 
 > **Core**: At Boltzmann temperature T=e, 70% Expert activation rate emerges naturally. MNIST +0.6%, CIFAR +4.8% vs Top-K. Scale↑ → difference 8×↑.
 

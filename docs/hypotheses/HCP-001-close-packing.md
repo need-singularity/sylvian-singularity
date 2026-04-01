@@ -1,4 +1,6 @@
 # Hypothesis HCP-001: Close-Packed Structures -- Coordination 12 = sigma(6)
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 ## Hypothesis
 

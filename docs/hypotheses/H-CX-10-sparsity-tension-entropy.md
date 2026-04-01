@@ -1,4 +1,6 @@
 # H-CX-10: Sparsity-Tension-Entropy Triangle (Cross-domain)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **A class's sparsity (inverse frequency) determines Tension, and Tension connects to Shannon entropy H. In the H289 experiment, perfect numbers (most sparse) showed the highest Tension — this is an information-theoretic consequence of -p·ln(p).**
 

@@ -1,4 +1,6 @@
 # H-SEDI-6: R-filter Detects Training Phase Transitions
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Status**: SUPPORTED
 **Golden Zone Dependency**: None (pure signal processing)

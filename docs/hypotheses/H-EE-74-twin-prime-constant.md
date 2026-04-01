@@ -1,4 +1,6 @@
 # H-EE-74: Twin Prime Constant C2 via n=6 Arithmetic
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

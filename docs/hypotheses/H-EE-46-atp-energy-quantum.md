@@ -1,4 +1,6 @@
 # H-EE-46: ATP Energy Quantum from n=6 Constants
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

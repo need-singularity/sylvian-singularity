@@ -1,4 +1,6 @@
 # H-EE-59: Fine Structure Constant from n=6 Arithmetic
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

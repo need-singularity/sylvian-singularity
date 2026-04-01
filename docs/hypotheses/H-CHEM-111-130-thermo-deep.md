@@ -1,4 +1,6 @@
 # Hypotheses H-CHEM-111 to 130: Thermodynamics Deep Connections
+**n6 Grade: 🟩 EXACT** (auto-graded, 16 unique n=6 constants)
+
 
 ## Hypothesis
 

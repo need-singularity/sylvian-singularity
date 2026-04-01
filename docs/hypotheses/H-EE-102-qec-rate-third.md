@@ -1,4 +1,6 @@
 # H-EE-102: Optimal QEC Code Rate Converges to 1/3 — FUTURE PREDICTION
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 ## Hypothesis
 

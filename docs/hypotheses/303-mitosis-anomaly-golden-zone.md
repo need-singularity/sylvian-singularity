@@ -1,4 +1,6 @@
 # Hypothesis 303: Does Anomaly Tension Fall Within the Golden Zone?
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **If the center of the tension distribution for normal data falls within the Golden Zone (0.21~0.50) and anomaly data tension lies outside the Golden Zone, then Golden Zone = "normal energy range". Anomaly detection = "detecting deviation from the Golden Zone".**
 

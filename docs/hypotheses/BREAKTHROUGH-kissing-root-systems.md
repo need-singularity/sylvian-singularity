@@ -1,4 +1,6 @@
 # BREAKTHROUGH Investigation: Does Kissing Number Require sigma(n)=2n?
+**n6 Grade: 🟩 EXACT** (auto-graded, 13 unique n=6 constants)
+
 
 ## Hypothesis
 

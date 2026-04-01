@@ -1,4 +1,6 @@
 # Hypothesis Review 232: JEPA = Deficit-Based Learning ⚠️
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 **Category**: World Model/AI
 **Status**: ⚠️ Analogy

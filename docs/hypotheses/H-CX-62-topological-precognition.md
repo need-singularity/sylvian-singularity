@@ -1,4 +1,6 @@
 # H-CX-62: Topological Precognition — Tension Barcodes Predict Learning Trajectories
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 > Applying the Topological Lens (H-TOP-7)'s Persistent Homology barcodes to
 > tension distributions can predict learning trajectories (future accuracy changes).

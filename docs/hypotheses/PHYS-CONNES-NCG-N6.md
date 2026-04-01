@@ -1,4 +1,6 @@
 # PHYS-CONNES-NCG: Standard Model from KO-Dimension 6 = P1
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 > **Hypothesis**: The Standard Model of particle physics, when formulated in
 > Connes' Noncommutative Geometry framework, requires internal KO-dimension

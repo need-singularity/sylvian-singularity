@@ -1,4 +1,6 @@
 # H-387: Obang-THC Five-Element Modulation
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Status**: Proposed | **GZ-Dependency**: Mixed (variable mapping GZ-dependent; neuroscience independently verified)
 **Related**: H-CX-142, H-CX-143, H-CX-144, H-CX-145, H-CX-146, H-CX-147, H-200a (cannabis)

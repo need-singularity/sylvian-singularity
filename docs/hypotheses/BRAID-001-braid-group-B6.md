@@ -1,4 +1,6 @@
 # Hypothesis BRAID-001: Braid Group B6 and S6 Outer Automorphism
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

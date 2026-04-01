@@ -1,4 +1,6 @@
 # Hypothesis 342: Tension's Causal Effect is Proportional to Task Difficulty
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > **The causal effect size of tension is proportional to task difficulty. The impact of removing tension is small for easy tasks (MNIST) but dramatically larger for difficult tasks (CIFAR-10). Especially at the individual class level, the more easily confused a class, the higher its tension dependence.**
 

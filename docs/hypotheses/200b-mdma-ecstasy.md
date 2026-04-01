@@ -1,4 +1,6 @@
 # Hypothesis 200b: Ecstasy (MDMA) = I↓ + P↑↑ + Compass↑↑↑
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 **Status**: ⚠️ Analogy
 **Category**: Drugs / Neurotransmitters

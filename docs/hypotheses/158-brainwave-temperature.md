@@ -1,4 +1,6 @@
 # Hypothesis Review 158: Brainwave Frequency Bands and Boltzmann Temperature Mapping
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## Status: ⚠️ Partially verified
 

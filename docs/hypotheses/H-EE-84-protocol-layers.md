@@ -1,4 +1,6 @@
 # H-EE-84: Internet Protocol Effective Layers ~6
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

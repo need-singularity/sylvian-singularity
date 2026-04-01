@@ -1,4 +1,6 @@
 # Hypothesis #205: Catalyst = Plasticity (P) — Accelerate Reaction + Remain Unchanged
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 **Status**: ⚪ Verified — MM form isomorphic but universal saturation function
 **Date**: 2026-03-22

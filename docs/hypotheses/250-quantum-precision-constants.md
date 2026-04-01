@@ -1,4 +1,6 @@
 # Quantum Mechanics Precision Constants and Formulas Compendium
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 ## Overview
 

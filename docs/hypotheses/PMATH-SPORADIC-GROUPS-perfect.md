@@ -1,4 +1,6 @@
 # PMATH-SPORADIC: Sporadic Simple Groups Encode Perfect Number Structure
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **Hypothesis**: The 26 sporadic simple groups systematically encode perfect
 > number structure through three independent channels: (1) order divisibility

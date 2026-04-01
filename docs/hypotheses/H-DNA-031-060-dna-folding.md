@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-031 to H-DNA-060 -- DNA Folding and the Perfect Number 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 15 unique n=6 constants)
+
 
 ## Hypothesis
 

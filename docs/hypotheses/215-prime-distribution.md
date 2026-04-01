@@ -1,4 +1,6 @@
 # Hypothesis #215: Prime Distribution ↔ Singularity Distribution
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 **Status**: ⚠️ Exploring
 **Date**: 2026-03-22

@@ -1,4 +1,6 @@
 # H-CX-27: tension_scale = ln(4) = 2·ln(2) (Cross-domain: Learning Constant ↔ Mathematics)
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > **The learned tension_scale from MNIST averages 1.3863 ± 0.0132 over 10 trials, matching ln(4) = 2·ln(2) = 1.3863 with 0.0004% error! This is exactly 2× H-CX-2(MI efficiency≈ln(2)), reflecting the "binary pair" information limit of 2-pole (A vs G) repulsion.**
 

@@ -1,4 +1,6 @@
 # PMATH-SO32-THETA: Perfect Number P3=496, SO(32) Anomaly Cancellation, and Theta Series
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 ## Status: PROVEN (Self-referential loop T1-T2) + EXACT (phi bridge E1)
 

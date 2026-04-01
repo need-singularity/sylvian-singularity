@@ -1,4 +1,6 @@
 # H-CX-153: N*ln((N+1)/N) Sequence — Closest to 1 at N=12
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 > 12*ln(13/12) = 0.9605 ~ 1. The integer N closest to 1 in this sequence is N = 12 = sigma(6).
 > Mathematically: N*ln(1+1/N) -> 1 (N->inf). Is N=12 the closest among finite integers?

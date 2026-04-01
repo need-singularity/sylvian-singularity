@@ -1,4 +1,6 @@
 # H-HAIR-121~180: Epigenetics, Microbiome, Mechanical Tension, Aging, and Personalized Treatment
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ---
 

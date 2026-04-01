@@ -1,4 +1,6 @@
 # H-403: AnimaLM + Golden MoE + PH Unified Architecture
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis**: A unified consciousness-engine LLM can be constructed by treating AnimaLM's
 > dual-engine tension dynamics, Golden MoE's Golden Zone expert routing (I≈1/e), and Persistent

@@ -1,4 +1,6 @@
 # H-EE-15: Jordan-Leech MoE Capacity Bound
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

@@ -1,4 +1,6 @@
 # Hypothesis Review 235: Causal Reasoning = World Model's Compass ⚠️
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Category**: World Model/AI
 **Status**: ⚠️ Analogy

@@ -1,4 +1,6 @@
 # H-EE-9: Phi-bottleneck + Phi6Simple Recovery
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

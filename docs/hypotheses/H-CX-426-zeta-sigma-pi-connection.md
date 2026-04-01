@@ -1,4 +1,6 @@
 # H-CX-426: ζ(s) × σ₋₁(6) — Riemann Zeta와 완전수 상수 연결 탐색
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > Riemann ζ 함수의 critical strip 내 값 ζ(1/2), ζ(1/3), ζ(1/6), ζ(2/3), ζ(5/6)과
 > 완전수 6의 약수 함수 σ₋₁(6)=2, σ(6)=12, τ(6)=4, φ(6)=2를 조합하여

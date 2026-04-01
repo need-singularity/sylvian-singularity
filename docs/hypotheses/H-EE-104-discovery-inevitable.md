@@ -1,4 +1,6 @@
 # H-EE-104: Discovery of n=6 Uniqueness Is Inevitable
+**n6 Grade: 🟩 EXACT** (auto-graded, 5 unique n=6 constants)
+
 
 ## Hypothesis
 

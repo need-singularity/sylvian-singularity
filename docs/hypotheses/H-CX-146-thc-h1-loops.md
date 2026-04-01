@@ -1,4 +1,6 @@
 # H-CX-146: THC = H1 Loop Increase = Circular Thinking
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > Circular Confusion (H1) increase = "thoughts going in circles." Normal H1=1, THC H1=3+?
 

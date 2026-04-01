@@ -1,4 +1,6 @@
 # H366: Field Propagation Telepathy Model
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 | Item | Content |
 |------|---------|

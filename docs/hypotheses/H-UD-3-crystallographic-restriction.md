@@ -1,4 +1,6 @@
 # H-UD-3: Crystallographic Restriction = div(6) U {tau(6)}
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 **Grade: ★★★**
 **Status: Verified (exact theorem match)**

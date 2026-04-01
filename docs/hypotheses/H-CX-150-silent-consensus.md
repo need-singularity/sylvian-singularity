@@ -1,4 +1,6 @@
 # H-CX-150: Silent Consensus — Consensus via Router Only, Without Direct Expert Connection
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > Router weight similarity converges during training. Consensus forms without direct communication.
 

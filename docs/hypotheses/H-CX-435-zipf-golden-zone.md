@@ -1,4 +1,6 @@
 # Hypothesis H-CX-435: Zipf's Law Exponent and Golden Zone
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

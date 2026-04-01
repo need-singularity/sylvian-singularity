@@ -1,4 +1,6 @@
 # Hypothesis Review 143: Black Hole Entropy = Golden Zone Boundary Area
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 ## Hypothesis
 

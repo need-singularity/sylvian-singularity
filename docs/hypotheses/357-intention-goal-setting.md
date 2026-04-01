@@ -1,4 +1,6 @@
 # Hypothesis 357: Intention = Goal Setting
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 ## Hypothesis
 

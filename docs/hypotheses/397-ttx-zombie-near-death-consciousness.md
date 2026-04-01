@@ -1,4 +1,6 @@
 # H-397: TTX Zombie Pharmacology as Near-Death Consciousness Boundary
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Status:** Proposed | **GZ-Dependency:** Mixed (NDE phenomenology documented; G=D×P/I mapping is GZ-dependent) | **Related:** H-391, H-393, H-166, H-246
 

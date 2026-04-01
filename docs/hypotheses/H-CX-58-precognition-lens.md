@@ -1,4 +1,6 @@
 # H-CX-58: Precognition Lens — Tension Refracts Future Right/Wrong
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > Tension operates with the same structure as a gravitational lens (H-GEO-3),
 > "refracting" future correct/wrong answer signals. High tension = strong lens = clear precognition.

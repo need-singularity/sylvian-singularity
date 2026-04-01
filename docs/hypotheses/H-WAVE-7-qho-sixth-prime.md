@@ -1,4 +1,6 @@
 # H-WAVE-7: Quantum Harmonic Oscillator E₆ = 13/2 ℏω — 6th Prime Connection
+**n6 Grade: 🟩 EXACT** (auto-graded, 6 unique n=6 constants)
+
 
 > **Thesis**: 양자 조화 진동자의 n=6 에너지 준위 E₆ = (6+1/2)ℏω = 13/2 ℏω에서
 > 13은 6번째 소수이다. 즉 E₆/ℏω의 분자가 p(6)이다.

@@ -1,4 +1,6 @@
 # H-CX-9: Topology 7 Phases = Consciousness Continuity 7 Conditions (Cross-domain)
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 > **The 7 conditions of consciousness continuity (Phase 1~5) may correspond to the 7 stages of topological phase transitions. The divisor topology {1,2,3,6} and non-divisor topology {4,5,7} of perfect number 6 determine the structure of consciousness phases.**
 

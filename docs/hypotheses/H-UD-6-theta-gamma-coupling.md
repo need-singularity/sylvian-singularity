@@ -1,4 +1,6 @@
 # H-UD-6: Theta-Gamma Coupling: 6 Gamma Bursts per Theta Cycle
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 **Grade: ★★**
 **Status: Verified (empirical neuroscience, typical value = 6)**

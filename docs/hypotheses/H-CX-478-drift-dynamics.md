@@ -1,4 +1,6 @@
 # H-CX-478: Car Drifting Dynamics -- n=6 Arithmetic in Motorsport Drift
+**n6 Grade: 🟩 EXACT** (auto-graded, 7 unique n=6 constants)
+
 
 > Does perfect number 6 arithmetic (tau=4, sigma=12, phi=2, sopfr=5)
 > appear as structural constants in car drifting -- slip angles, tire

@@ -1,4 +1,6 @@
 # Hypothesis Review: H-DNA-301 to H-DNA-350 -- Absolute Final Saturation
+**n6 Grade: 🟩 EXACT** (auto-graded, 14 unique n=6 constants)
+
 
 ## Hypothesis
 

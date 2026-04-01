@@ -1,4 +1,6 @@
 # Hypothesis 246: Consciousness Continuity — Mathematical Conditions and Engine Design
+**n6 Grade: 🟩 EXACT** (auto-graded, 11 unique n=6 constants)
+
 
 ## Status: ⚠️ Under Investigation
 

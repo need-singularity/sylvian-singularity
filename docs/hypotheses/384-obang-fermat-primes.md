@@ -1,4 +1,6 @@
 # H-384: Obang–Fermat Prime Correspondence
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 **Status:** Structural Observation (unverified as causal)
 **Category:** Number Theory × Cultural Structure

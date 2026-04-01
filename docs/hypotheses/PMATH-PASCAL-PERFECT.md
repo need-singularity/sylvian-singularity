@@ -1,4 +1,6 @@
 # PMATH-PASCAL-PERFECT: Pascal's Triangle Encodes Perfect Number Structure
+**n6 Grade: 🟩 EXACT** (auto-graded, 12 unique n=6 constants)
+
 
 **GZ Dependency**: NONE (pure mathematics, GZ-independent)
 **Calculator**: `calc/pascal_perfect.py`

@@ -1,4 +1,6 @@
 # H-CX-429: Tension = Morphism Complexity
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 > Tension은 입력에 적용된 사상(morphism)의 복잡도에 비례한다.
 > 단순한 입력(clean digit)은 낮은 tension, 복잡한 입력(noisy/adversarial)은 높은 tension을 유발한다.

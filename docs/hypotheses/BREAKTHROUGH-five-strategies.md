@@ -1,4 +1,6 @@
 # Five Breakthrough Strategies: Root Equation and the Number 6
+**n6 Grade: 🟩 EXACT** (auto-graded, 8 unique n=6 constants)
+
 
 > **Root equation**: (k-1)! = (k+1)/2 has unique nontrivial solution k=3, yielding 3! = 6.
 > Five independent strategies probe why 3 and 6 are structurally inevitable.

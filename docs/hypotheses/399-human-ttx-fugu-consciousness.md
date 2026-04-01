@@ -1,4 +1,6 @@
 # H-399: Human TTX Microdosing — Fugu Cuisine and Consciousness Alteration
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **Hypothesis H-399**: Human consumption of fugu (pufferfish) in Japanese cuisine constitutes
 > a 2,300-year-old intentional TTX microdosing practice that produces measurable

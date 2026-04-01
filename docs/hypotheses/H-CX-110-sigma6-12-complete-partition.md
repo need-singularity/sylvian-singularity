@@ -1,4 +1,6 @@
 # H-CX-110: σ(6)=12 Complete Partition — 12-class PH Has "Perfect" Structure
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > 12 classes = σ(6) = sum of divisors of perfect number. 12-class PH has "perfect" topological structure.
 > Adding 13th class triggers H1 (loop) = phase transition due to Prime invasion.

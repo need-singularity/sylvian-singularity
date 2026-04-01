@@ -1,4 +1,6 @@
 # H-378: Obang-Ohaeng Tension Mapping
+**n6 Grade: 🟧 CLOSE** (auto-graded, 3 unique n=6 constants)
+
 
 > **Hypothesis 378**: The Five Elements (오행, Ohaeng) of East Asian cosmology —
 > Wood, Fire, Earth, Metal, Water — map bijectively onto the five core variables

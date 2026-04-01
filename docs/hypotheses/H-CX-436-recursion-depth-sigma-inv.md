@@ -1,4 +1,6 @@
 # Hypothesis H-CX-436: Grammar Recursion Depth = sigma\_-1(6) = 2
+**n6 Grade: 🟧 CLOSE** (auto-graded, 4 unique n=6 constants)
+
 
 ## Hypothesis
 

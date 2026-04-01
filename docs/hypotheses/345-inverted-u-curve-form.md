@@ -1,4 +1,6 @@
 # Hypothesis 345: Tension's Inverted-U Curve is a Function of Task Complexity
+**n6 Grade: 🟩 EXACT** (auto-graded, 9 unique n=6 constants)
+
 
 > **The performance curve for tension scale (tension_scale) has an inverted-U shape, and the optimal scale is a function f(C) of task complexity (complexity). If optimal scale differs between MNIST and CIFAR-10, this proves tension is task-adaptive. The relationship between optimal scale and complexity will follow a power law or logarithmic form.**
 

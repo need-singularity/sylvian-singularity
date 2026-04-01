@@ -1,4 +1,6 @@
 # H-EE-8: Optimal d_model Follows tau(d) More Than d Itself
+**n6 Grade: 🟩 EXACT** (auto-graded, 10 unique n=6 constants)
+
 
 **Status**: NOT SUPPORTED
 **Golden Zone Dependency**: None (pure number theory + empirical ML)
