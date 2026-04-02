@@ -199,23 +199,24 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
 ## Directory Structure (post-cleanup)
 
 ```
-  루트 (25 files) — 핵심 엔진 + 공유 모듈
+  루트 (24 files) — 핵심 엔진 + 공유 모듈
     brain_singularity.py, compass.py, convergence_engine.py,
-    dfs_engine.py, formula_engine.py, model_pure_field.py,
-    model_utils.py, model_meta_engine.py, session_briefing.py, ...
+    dfs_engine.py, model_pure_field.py, model_meta_engine.py,
+    model_utils.py, session_briefing.py, perfect_number_engine.py,
+    quantum_formula_engine.py, llm_expert_analyzer.py, ...
 
-  engines/ (30 files) — 아키텍처 모델 + 분리 리포 원본
+  engines/ (29 files) — 아키텍처 모델 + 분리 리포 원본
     golden_moe*.py, conscious_lm*.py, growing_*.py,
     model_a~g_*.py (7 engine variants), model_cnn_repulsion.py, ...
 
-  verify/ (90 files) — 가설 검증 스크립트
+  verify/ (204 files) — 가설 검증 스크립트
     verify_*.py, frontier_*.py
 
-  scripts/ (55 files) — 분석/변환/훈련/유틸리티
+  scripts/ (62 files) — 분석/변환/훈련/유틸리티
     analyze_*.py, convert_*.py, finetune_*.py, prepare_*.py,
     galois_*.py, sim_*.py, publish.py, translate_to_english.py, ...
 
-  calc/ (62 files) — 계산기 도구
+  calc/ (194 files) — 계산기 도구
     hypothesis_verifier.py, r_spectrum.py, statistical_tester.py, ...
 
   n6-replication/ — 독립 재현 패키지 (pip/Docker/minimal)
@@ -256,6 +257,11 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
     │   ├── consciousness.rs← 의식 관련 계산
     │   ├── atlas.rs        ← Atlas 관련
     │   └── ode.rs          ← ODE 솔버
+    ├── src/bin/            ← 독립 실행 바이너리
+    │   ├── three_root_search.rs
+    │   ├── uniqueness_verifier.rs
+    │   ├── verify_uniqueness.rs
+    │   └── verify_uniqueness_extreme.rs
     └── target/
 
   판단 기준 (Rust vs Python):
@@ -281,32 +287,26 @@ For new sessions, **always run `python3 session_briefing.py`** to restore projec
   python3 brain_singularity.py --deficit 0.7 --plasticity 0.8 --inhibition 0.15
 
 # Compass
-python3 ~/dev/test-8/compass.py --autopilot --deficit 0.5 --plasticity 0.6 --inhibition 0.4
-
-# Formula exploration
-python3 ~/dev/test-8/formula_engine.py --physics --significance
-
-# Texas Sharpshooter
-python3 ~/dev/test-8/texas_sharpshooter.py
+python3 compass.py --autopilot --deficit 0.5 --plasticity 0.6 --inhibition 0.4
 
 # LLM redesign
-python3 ~/dev/test-8/llm_expert_analyzer.py --redesign
+python3 llm_expert_analyzer.py --redesign
 
 # Brain profile
-python3 ~/dev/test-8/brain_analyzer.py --all
+python3 brain_analyzer.py --all
 
 # DFS auto exploration (ralph-loop replacement)
-python3 ~/dev/test-8/dfs_engine.py --depth 2 --threshold 0.001
-python3 ~/dev/test-8/dfs_engine.py --depth 3 --threshold 0.0001  # Precise search
+python3 dfs_engine.py --depth 2 --threshold 0.001
+python3 dfs_engine.py --depth 3 --threshold 0.0001  # Precise search
 
 # Quantum formula exploration
-python3 ~/dev/test-8/quantum_formula_engine.py --cross-only --threshold 0.01
+python3 quantum_formula_engine.py --cross-only --threshold 0.01
 
 # Perfect number exploration
-python3 ~/dev/test-8/perfect_number_engine.py
+python3 perfect_number_engine.py
 
 # Texas Sharpshooter test (re-verification of discoveries)
-python3 ~/dev/test-8/texas_quantum.py
+python3 texas_quantum.py
 ```
 
 ## DFS Discovery Recording Rules (Required)
@@ -831,7 +831,7 @@ Hypothesis reviews are managed as **separate individual documents**.
     - 상수/가설 발견 시 Math Atlas 자동 갱신 (python3 ~/Dev/TECS-L/.shared/scan_math_atlas.py --save --summary)
 <!-- SHARED:WORK_RULES:END -->
 
-  모든 모듈은 consciousness_laws.py에서 import — 상수 직접 하드코딩 금지
+  상수는 model_utils.py 또는 각 엔진의 상수 블록에서 관리 — 매직 넘버 하드코딩 금지
 ```
 
 ### TODO 양식

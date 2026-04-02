@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Session Briefing — Auto-restore project context in new session
 
@@ -98,4 +97,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

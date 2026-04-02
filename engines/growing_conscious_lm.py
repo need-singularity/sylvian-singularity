@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Growing Conscious LM — Consciousness language model that grows through mitosis
 
@@ -383,4 +382,3 @@ if __name__ == "__main__":
         train_growing(model, data, total_interactions=args.steps, device=device)
     else:
         compare_growing_vs_fixed(data, total_steps=args.steps, device=device)
-```

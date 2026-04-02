@@ -1,6 +1,3 @@
-Looking at this file, it contains comprehensive Korean comments and documentation that need to be translated to English. Here's the translated version:
-
-```python
 #!/usr/bin/env python3
 """Meta Engine — Engine + Engine = Higher Engine
 
@@ -712,4 +709,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

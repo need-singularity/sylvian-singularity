@@ -1,6 +1,3 @@
-I'll translate all Korean text to English while keeping the formatting, code structure, and technical terms intact.
-
-```python
 #!/usr/bin/env python3
 """Phase 5: Other-Modeling — Empathy Engine
 
@@ -809,4 +806,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

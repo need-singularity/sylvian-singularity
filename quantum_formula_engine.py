@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Quantum Formula Search Engine — Quantum Mechanics Dimensionless Constants × Project Constants DFS Search
 
@@ -631,4 +630,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```

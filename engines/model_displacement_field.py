@@ -1,6 +1,3 @@
-I'll translate all Korean text to English in this file:
-
-```python
 #!/usr/bin/env python3
 """Phase 5: Displacement Field — "pushed back while still observing."
 
@@ -811,4 +808,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

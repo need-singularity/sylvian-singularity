@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """CNN-based Repulsion Field — CIFAR-10
 
@@ -565,7 +564,7 @@ def main():
     drift = np.sqrt(sum((a - b) ** 2 for a, b in
                         zip(learned_w, [0.5, 1/3, 1/6])))
     print(f"      L2 drift: {drift:.4f}")
-    print(f"      {'Stable (drift < 0.1)' if drift < 0.1 : 'Significant drift'}")
+    print(f"      {'Stable (drift < 0.1)' if drift < 0.1 else 'Significant drift'}")
 
     # ─────────────────────────────────────────
     # Training curves (ASCII)
@@ -594,4 +593,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

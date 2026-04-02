@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Model G: Shannon Entropy Normalized MoE
 
@@ -247,4 +246,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

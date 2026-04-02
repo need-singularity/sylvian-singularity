@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Hypothesis 126: Golden MoE + Recurrent (LSTM) Combination — MNIST"""
 
@@ -167,4 +166,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

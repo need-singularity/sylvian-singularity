@@ -1,6 +1,3 @@
-Looking at this Python file, I can see it contains extensive Korean comments and docstrings that need to be translated to English. Here's the translated version:
-
-```python
 #!/usr/bin/env python3
 """Fiber Bundle Engine — Higher-dimensional information arrives through geometric connections
 
@@ -848,4 +845,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

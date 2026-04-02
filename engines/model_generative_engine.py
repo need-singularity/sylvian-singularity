@@ -1,6 +1,3 @@
-Looking at this file, I can see it contains Korean text in comments and print statements. I'll translate all the Korean text to English while maintaining the exact same formatting and structure.
-
-```python
 #!/usr/bin/env python3
 """Generative Engine — VAE of Repulsion Field Latent Space
 
@@ -785,4 +782,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

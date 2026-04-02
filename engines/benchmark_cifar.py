@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """CIFAR-10 Benchmark — Testing All Meta Engine Models
 
@@ -184,4 +183,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```

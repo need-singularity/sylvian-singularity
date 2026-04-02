@@ -1,4 +1,3 @@
-```python
 #!/usr/bin/env python3
 """Perfect Number Divisor Function Engine — Automated exploration of physical constants via σ, τ, φ combinations
 
@@ -753,4 +752,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-```
