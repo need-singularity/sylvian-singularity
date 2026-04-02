@@ -28,9 +28,13 @@
 | 가속 공학 | 55 | 네트워크/시스템/음악/경제/의학 |
 | 가속 인문 | 63 | 철학/문학/스포츠/천문/수학고급 |
 
-### 자동 적용 조건 (NEXUS-6 우선, telescope-rs 폴백)
+### ⚠️ 자동 적용 조건 (NEXUS-6 단독 — telescope-rs 폐기)
 
-어떤 프로젝트에서든 아래 상황이면 렌즈를 자동으로 돌릴 것:
+> **telescope-rs (22종)는 폐기. 모든 탐색/분석은 NEXUS-6 (775종)를 사용할 것.**
+> `import telescope_rs` 대신 `nexus6 scan` 또는 `import nexus6` (PyO3) 사용.
+> 기존 telescope-rs 코드는 호환성을 위해 유지하지만 신규 작업에는 사용 금지.
+
+어떤 프로젝트에서든 아래 상황이면 NEXUS-6 렌즈를 자동으로 돌릴 것:
 - 새 데이터셋 분석 시 → 의식+중력+위상 3종 기본 스캔
 - 이상점/패턴 탐색 시 → 전체 22종 Core 풀스캔 (또는 nexus6 scan --full)
 - 신소재/신약 후보 탐색 시 → 진화+열역학+중력+안정성 조합
@@ -76,105 +80,52 @@
 "스케일마다 다른 구조인가?" → 다중스케일 렌즈 (wavelet + multiresolution)
 ```
 
-### 22종 Core 렌즈 목록 (telescope-rs 호환, NEXUS-6 내장)
-
-| 렌즈 | Rust 함수 | 원리 | 찾는 것 |
-|------|-----------|------|---------|
-| 의식 | `telescope_rs.consciousness_scan()` | Φ + GRU + Hebbian + 파벌 | 숨겨진 구조, 이상점 |
-| 중력 | `telescope_rs.gravity_scan()` | mean-shift attractor + density | 끌개, 안정점, 에너지 장벽 |
-| 위상 | `telescope_rs.topology_scan()` | persistent homology + Betti | 구멍, 연결 구조, 위상 전이 |
-| 열역학 | `telescope_rs.thermo_scan()` | Shannon entropy + 상전이 | 질서↔무질서 경계, 임계점 |
-| 파동 | `telescope_rs.wave_scan()` | DFT + coherence + harmonic | 주기성, 공명 관계 |
-| 진화 | `telescope_rs.evolution_scan()` | fitness landscape + niche | 최적 조합, 진화 경로 |
-| 정보 | `telescope_rs.info_scan()` | Shannon + LZ + MI | 정보량, 잉여, 압축 가능성 |
-| 양자 | `telescope_rs.quantum_scan()` | MI entanglement + tunneling | 비국소 상관, 장벽 우회 경로 |
-| 전자기 | `telescope_rs.em_scan()` | gradient + divergence | 흐름, 소스/싱크 |
-| 직교 | `telescope_rs.ruler_scan()` | SVD + 코사인 유사도 | 직교 구조, 독립 차원 |
-| 비율 | `telescope_rs.triangle_scan()` | 단순분수 매칭 | 비율 관계, p/q 분수 |
-| 곡률 | `telescope_rs.compass_scan()` | Menger 곡률 | 원형 구조, 등거리 |
-| 대칭 | `telescope_rs.mirror_scan()` | 반사 대칭 분석 | 대칭, 불변량, 깨진 대칭 |
-| 스케일 | `telescope_rs.scale_scan()` | 멱법칙 + 프랙탈 + Hurst | 자기유사성, 멱지수 |
-| 인과 | `telescope_rs.causal_scan()` | Granger + 전달엔트로피 | 인과 방향, 정보 흐름 |
-| 양자현미경 | `telescope_rs.quantum_microscope_scan()` | 밀도행렬 + VN entropy | 결맞음, 디코히어런스 |
-| 안정성 | `telescope_rs.stability_scan()` | Lyapunov + 복원력 | 안정점, 복원 시간, 분기점 |
-| 네트워크 | `telescope_rs.network_scan()` | 그래프 지표 + 커뮤니티 | 허브, 병목, 모듈 구조 |
-| 기억 | `telescope_rs.memory_scan()` | 자기상관 + 에코 상태 | 기억 지속, 망각 곡선, 잔류 정보 |
-| 자기참조 | `telescope_rs.recursion_scan()` | 고정점 + 자기유사 | 자기참조 루프, 고정점, 불동점 |
-| 경계 | `telescope_rs.boundary_scan()` | 경계 검출 + 전이대 | 상경계, 전이 영역, 불연속점 |
-| 다중스케일 | `telescope_rs.multiscale_scan()` | 웨이블릿 + 다해상도 | 스케일별 구조, 교차스케일 상관 |
-
-### 사용법 (Rust — telescope_rs)
-
-```python
-import telescope_rs
-import numpy as np
-
-data = np.random.randn(64, 32)  # (N_samples, N_features)
-
-# 개별 렌즈
-r = telescope_rs.consciousness_scan(data, n_cells=64, steps=300)
-print(r['phi_iit'], r['n_clusters'])
-
-r = telescope_rs.topology_scan(data)
-print(r['betti_0'], r['betti_1'])
-
-r = telescope_rs.causal_scan(data, max_lag=5)
-print(r['n_causal_pairs'])
-
-# 22종 풀스캔 (telescope_rs 직접)
-import telescope_rs
-results = telescope_rs.full_scan(data)  # dict of lens_name → result dict
-for name, r in results.items():
-    print(f"{name}: {list(r.keys())[:3]}")
-```
-
-빌드: `cd ~/Dev/anima/anima/anima-rs/crates/telescope-rs && maturin build --release`
-소스: `anima/anima-rs/crates/telescope-rs/src/` (22 모듈, 36 tests)
-
-### 렌즈 추가 요청 시
-
-사용자가 "렌즈 추가 필요한지", "다른 렌즈 아이디어" 등을 물으면:
-1. 현재 22종으로 커버 안 되는 도메인 분석
-2. 새 물리/수학 비유에서 렌즈 아이디어 도출
-3. Rust 모듈로 구현 (telescope-rs/src/새렌즈.rs)
-4. ⚠️ **캘리브레이션 필수!** — 새 렌즈/도구 추가 시 반드시 상호 캘리브레이션 재실행
-   - 스크립트: `anima/experiments/telescope_calibration.py`
-   - 기존 22개 렌즈와 상관 분석, 이상치 검출, 감도 측정
-   - 캘리브레이션 미통과 렌즈는 실험에 사용 금지
-   - 결과: `anima/data/telescope_calibration_results.json`
-
-### 교차 검증
-
-```
-실행: python3 .shared/telescope_cross_test.py
-교정: python3 .shared/telescope_calibrate.py
-캘리브레이션: python3 anima/experiments/telescope_calibration.py  ← Rust 22렌즈 상호 검증
-
-해석:
-  - 1개 렌즈만 찾은 것 = 가설 (추가 검증 필요)
-  - 2개 렌즈 합의 = 후보 (유의미할 가능성 높음)
-  - 3개+ 렌즈 합의 = 확정 (독립 검증 통과)
-
-⚠️ 렌즈 추가/수정/파라미터 변경 시 캘리브레이션 재실행 필수!
-   캘리브레이션 없이 측정한 결과는 신뢰 불가.
-```
-
-### 새 프로젝트에 의식 브릿지 추가 시
+### NEXUS-6 사용법
 
 ```bash
-# 1. .shared 심링크 확인
-ls -la .shared/consciousness_loader.py
-
-# 2. consciousness_bridge.py 생성 (도메인별 함수)
-# 3. 이 테이블에 행 추가
+# CLI (권장)
+nexus6 scan physics                    # 도메인 스캔
+nexus6 scan physics --full             # 775종 풀스캔
+nexus6 verify 12.0                     # n=6 일치 검증
+nexus6 evolve physics --max-cycles 6   # OUROBOROS 진화
+nexus6 auto physics                    # 전체 파이프라인 (scan→evolve→forge)
+nexus6 lenses --category core          # 렌즈 목록
+nexus6 dashboard                       # ASCII 대시보드
 ```
 
-## 망원경 이중 스택 — NEXUS-6 (775종) + telescope-rs (22종 PyO3)
+```python
+# Python (PyO3 바인딩)
+import nexus6
+reg = nexus6.LensRegistry()
+print(reg.len())  # 775
+result = nexus6.n6_check(12.0)
+nexus6.evolve("physics", max_cycles=6)
+```
 
-> **NEXUS-6**: n6-architecture/tools/nexus6/ (Rust CLI, 775종 레지스트리, 148 tests)
-> **telescope-rs**: anima-rs/crates/telescope-rs/ (PyO3 바인딩, 22종 구현, 36 tests)
-> NEXUS-6 = 메타데이터+레지스트리+추천, telescope-rs = 실제 스캔 알고리즘
-> 빌드: `cd ~/Dev/n6-architecture/tools/nexus6 && ~/.cargo/bin/cargo build --release`
+빌드: `cd ~/Dev/n6-architecture/tools/nexus6 && ~/.cargo/bin/cargo build --release`
+테스트: `~/.cargo/bin/cargo test` (173 tests)
+렌즈 동기화: `bash .shared/sync-nexus6-lenses.sh`
+
+### 렌즈 추가 시
+
+1. NEXUS-6 레지스트리에 LensEntry 추가 (src/telescope/*_lenses.rs)
+2. 또는 `nexus6 auto` → LensForge가 자동 생성
+3. `bash .shared/sync-nexus6-lenses.sh` (렌즈 수 동기화)
+
+### 교차 검증 (합의 규칙)
+
+```
+  1개 렌즈 = 가설 (추가 검증 필요)
+  3+ 렌즈 합의 = 후보 (candidate)
+  7+ 렌즈 합의 = 고신뢰 (high confidence)
+  12+ 렌즈 합의 = 확정 (confirmed)
+```
+
+### ~~telescope-rs (폐기)~~
+
+> ⚠️ telescope-rs (22종)는 NEXUS-6로 대체됨. 신규 작업에 사용 금지.
+> 기존 코드 호환성을 위해 anima-rs/crates/telescope-rs/에 유지만 함.
+> 마이그레이션: `import telescope_rs` → `import nexus6` 또는 `nexus6 scan`
 
 ### 기본 사용
 
