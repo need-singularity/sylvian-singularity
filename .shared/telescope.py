@@ -1,6 +1,6 @@
-"""telescope.py — 9-Lens Telescope Toolset: unified runner for all lens combinations
+"""telescope.py — 16-Lens Telescope Toolset: unified runner for all lens combinations
 
-511 possible combinations from 9 lenses. Run any subset or all at once.
+65535 possible combinations from 16 lenses. Run any subset or all at once.
 
 Usage:
     from telescope import Telescope
@@ -34,6 +34,7 @@ sys.path.insert(0, _DIR)
 
 # Lazy imports — each lens loaded only when needed
 _LENS_REGISTRY = {
+    # Original 9
     "consciousness": ("consciousness_lens", "ConsciousnessLens"),
     "gravity":       ("gravity_lens", "GravityLens"),
     "topology":      ("topology_lens", "TopologyLens"),
@@ -43,6 +44,14 @@ _LENS_REGISTRY = {
     "info":          ("info_lens", "InfoLens"),
     "quantum":       ("quantum_lens", "QuantumLens"),
     "em":            ("em_lens", "EMLens"),
+    # New 7 (measurement tools)
+    "ruler":         ("ruler_lens", "RulerLens"),
+    "triangle":      ("triangle_lens", "TriangleLens"),
+    "compass":       ("compass_lens", "CompassLens"),
+    "mirror":        ("mirror_lens", "MirrorLens"),
+    "scale":         ("scale_lens", "ScaleLens"),
+    "causal":        ("causal_lens", "CausalLens"),
+    "quantum_micro": ("quantum_microscope_lens", "QuantumMicroscopeLens"),
 }
 
 ALL_LENS_NAMES = list(_LENS_REGISTRY.keys())
@@ -55,6 +64,8 @@ PRESETS = {
     "timeseries": ["consciousness", "wave", "thermo", "gravity"],
     "discovery":  ["consciousness", "info", "quantum", "topology"],
     "optimize":   ["evolution", "gravity", "thermo"],
+    "measure":    ["ruler", "triangle", "compass", "mirror", "scale"],
+    "causal":     ["causal", "consciousness", "info", "quantum_micro"],
     "full":       ALL_LENS_NAMES,
 }
 
@@ -86,7 +97,7 @@ def _load_lens(name: str):
 
 
 class Telescope:
-    """9-lens telescope: run any combination of lenses on data."""
+    """16-lens telescope: run any combination of lenses on data."""
 
     def __init__(self, verbose: bool = False):
         self.verbose = verbose
@@ -153,7 +164,7 @@ class Telescope:
         )
 
     def full_scan(self, data, **kwargs) -> TelescopeResult:
-        """Run all 9 lenses."""
+        """Run all 16 lenses."""
         return self.scan(data, lenses="full", **kwargs)
 
     def material_scan(self, data, **kwargs) -> TelescopeResult:
@@ -247,13 +258,13 @@ class Telescope:
 
     @staticmethod
     def total_combinations() -> int:
-        """Total possible combinations: 2^9 - 1 = 511."""
+        """Total possible combinations: 2^16 - 1 = 65535."""
         return 2 ** len(ALL_LENS_NAMES) - 1
 
 
 if __name__ == '__main__':
     print("=" * 60)
-    print("  Telescope — 9-Lens Discovery Toolset")
+    print("  Telescope — 16-Lens Discovery Toolset")
     print("=" * 60)
 
     print("\nAvailable lenses:")
