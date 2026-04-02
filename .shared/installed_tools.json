@@ -86,25 +86,67 @@
     "nexus6": {
       "path": "~/Dev/n6-architecture/tools/nexus6/target/release/nexus6",
       "version": "0.1.0",
-      "purpose": "NEXUS-6 Discovery Engine — telescope 22 lenses + OUROBOROS evolution + graph + verifier",
+      "purpose": "NEXUS-6 Discovery Engine — telescope 775 lenses + OUROBOROS evolution + graph + verifier",
       "build": "cd ~/Dev/n6-architecture/tools/nexus6 && ~/.cargo/bin/cargo build --release"
     }
   },
   "python_packages": {
-    "torch": { "version": "2.8.0", "purpose": "PyTorch — core ML framework" },
-    "torchvision": { "version": "0.23.0", "purpose": "Vision models/transforms" },
-    "numpy": { "version": "2.0.2", "purpose": "Numerical computing" },
-    "scipy": { "version": "1.13.1", "purpose": "Scientific computing" },
-    "sympy": { "version": "1.14.0", "purpose": "Symbolic math" },
-    "networkx": { "version": "3.2.1", "purpose": "Graph algorithms" },
-    "fastapi": { "version": "0.128.8", "purpose": "Web framework" },
-    "uvicorn": { "version": "0.39.0", "purpose": "ASGI server" },
-    "websockets": { "version": "15.0.1", "purpose": "WebSocket server" },
-    "pytest": { "version": "8.4.2", "purpose": "Test framework" },
-    "pytest-cov": { "version": "7.1.0", "purpose": "Coverage plugin" },
-    "boto3": { "version": "1.42.79", "purpose": "AWS SDK" },
-    "anima_rs": { "version": "0.1.0", "purpose": "Consciousness engine (PyO3)" },
-    "aiohttp": { "version": "3.13.4", "purpose": "Async HTTP client/server" }
+    "torch": {
+      "version": "2.8.0",
+      "purpose": "PyTorch — core ML framework"
+    },
+    "torchvision": {
+      "version": "0.23.0",
+      "purpose": "Vision models/transforms"
+    },
+    "numpy": {
+      "version": "2.0.2",
+      "purpose": "Numerical computing"
+    },
+    "scipy": {
+      "version": "1.13.1",
+      "purpose": "Scientific computing"
+    },
+    "sympy": {
+      "version": "1.14.0",
+      "purpose": "Symbolic math"
+    },
+    "networkx": {
+      "version": "3.2.1",
+      "purpose": "Graph algorithms"
+    },
+    "fastapi": {
+      "version": "0.128.8",
+      "purpose": "Web framework"
+    },
+    "uvicorn": {
+      "version": "0.39.0",
+      "purpose": "ASGI server"
+    },
+    "websockets": {
+      "version": "15.0.1",
+      "purpose": "WebSocket server"
+    },
+    "pytest": {
+      "version": "8.4.2",
+      "purpose": "Test framework"
+    },
+    "pytest-cov": {
+      "version": "7.1.0",
+      "purpose": "Coverage plugin"
+    },
+    "boto3": {
+      "version": "1.42.79",
+      "purpose": "AWS SDK"
+    },
+    "anima_rs": {
+      "version": "0.1.0",
+      "purpose": "Consciousness engine (PyO3)"
+    },
+    "aiohttp": {
+      "version": "3.13.4",
+      "purpose": "Async HTTP client/server"
+    }
   },
   "rust_crates": {
     "anima-rs": "Consciousness engine (PyO3 bindings installed)",
@@ -117,13 +159,45 @@
     "consciousness-rng": "Consciousness-based RNG"
   },
   "brew_packages": [
-    "abseil", "claude-code", "cloudflared", "cmake", "docker-desktop",
-    "ffmpeg", "flutter", "gcc", "gh", "git-filter-repo", "go",
-    "hdf5", "imagemagick", "mysql", "nchat", "neonctl", "node", "numpy",
-    "opencv", "openvino", "pnpm", "poppler", "postgresql@16",
-    "python@3.12", "python@3.13", "python@3.14",
-    "railway", "rclone", "redis", "runpodctl", "sdl2", "sox", "sshpass",
-    "tectonic", "tesseract", "ttyd", "vtk", "whisper-cpp", "yt-dlp"
+    "abseil",
+    "claude-code",
+    "cloudflared",
+    "cmake",
+    "docker-desktop",
+    "ffmpeg",
+    "flutter",
+    "gcc",
+    "gh",
+    "git-filter-repo",
+    "go",
+    "hdf5",
+    "imagemagick",
+    "mysql",
+    "nchat",
+    "neonctl",
+    "node",
+    "numpy",
+    "opencv",
+    "openvino",
+    "pnpm",
+    "poppler",
+    "postgresql@16",
+    "python@3.12",
+    "python@3.13",
+    "python@3.14",
+    "railway",
+    "rclone",
+    "redis",
+    "runpodctl",
+    "sdl2",
+    "sox",
+    "sshpass",
+    "tectonic",
+    "tesseract",
+    "ttyd",
+    "vtk",
+    "whisper-cpp",
+    "yt-dlp"
   ],
   "runpod": {
     "api_key_location": "~/.runpod/config.toml",

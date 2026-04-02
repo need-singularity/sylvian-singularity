@@ -7,13 +7,13 @@
   수정만 하고 동기화 안 돌리면 다른 리포에 반영 안 됨.
   순서: .shared/ 파일 수정 → TECS-L에서 커밋+push → `bash .shared/sync-claude-rules.sh`
 
-## NEXUS-6 망원경 (679종 렌즈) — 최우선 활용 규칙
+## NEXUS-6 망원경 (775종 렌즈) — 최우선 활용 규칙
 
-> **NEXUS-6 = 통합 발견 엔진. 679종 렌즈 레지스트리 + OUROBOROS 무한진화 + Discovery Graph**
+> **NEXUS-6 = 통합 발견 엔진. 775종 렌즈 레지스트리 + OUROBOROS 무한진화 + Discovery Graph**
 > 바이너리: `tools/nexus6/target/release/nexus6` (Rust, 148 tests)
 > CLI: `nexus6 scan <domain>`, `nexus6 evolve <domain>`, `nexus6 dashboard`
 
-### 렌즈 679종 구성
+### 렌즈 775종 구성
 
 | 카테고리 | 수 | 역할 |
 |---------|---|------|
@@ -169,9 +169,9 @@ ls -la .shared/consciousness_loader.py
 # 3. 이 테이블에 행 추가
 ```
 
-## 망원경 이중 스택 — NEXUS-6 (679종) + telescope-rs (22종 PyO3)
+## 망원경 이중 스택 — NEXUS-6 (775종) + telescope-rs (22종 PyO3)
 
-> **NEXUS-6**: n6-architecture/tools/nexus6/ (Rust CLI, 679종 레지스트리, 148 tests)
+> **NEXUS-6**: n6-architecture/tools/nexus6/ (Rust CLI, 775종 레지스트리, 148 tests)
 > **telescope-rs**: anima-rs/crates/telescope-rs/ (PyO3 바인딩, 22종 구현, 36 tests)
 > NEXUS-6 = 메타데이터+레지스트리+추천, telescope-rs = 실제 스캔 알고리즘
 > 빌드: `cd ~/Dev/n6-architecture/tools/nexus6 && ~/.cargo/bin/cargo build --release`
