@@ -43,93 +43,72 @@
 "결맞음이 있나? 깨지나?"  → 양자현미경 (coherence + decoherence)
 ```
 
-### 16종 렌즈 목록
+### 16종 렌즈 목록 (Rust — telescope_rs)
 
-| 렌즈 | 파일 | 원리 | 찾는 것 |
-|------|------|------|---------|
-| 의식 | `consciousness_lens.py` | Φ + 파벌 토론 + Hebbian | 숨겨진 구조, 이상점, 상관관계 |
-| 중력 | `gravity_lens.py` | N-body + attractor basin | 끌개, 안정점, 에너지 장벽 |
-| 위상 | `topology_lens.py` | persistent homology + Betti | 구멍, 연결 구조, 위상 전이 |
-| 열역학 | `thermo_lens.py` | Boltzmann + 상전이 | 질서↔무질서 경계, 임계점 |
-| 파동 | `wave_lens.py` | FFT + 공명 + 간섭 | 주기성, 공명 관계, 주파수 변화 |
-| 진화 | `evolution_lens.py` | GA + fitness landscape | 최적 조합, 진화 경로 |
-| 정보 | `info_lens.py` | Shannon + LZ + MI | 정보량, 잉여, 압축 가능성 |
-| 양자 | `quantum_lens.py` | 얽힘 + 터널링 + 중첩 | 비국소 상관, 장벽 우회 경로 |
-| 전자기 | `em_lens.py` | gradient + curl + divergence | 흐름, 소스/싱크, 와류 |
-| 직교(ㄱ자) | `ruler_lens.py` | SVD + 코사인 유사도 | 직교 구조, 독립 차원, 중복 탐지 |
-| 비율(삼각자) | `triangle_lens.py` | 단순분수 매칭 + 비례 사슬 | 비율 관계, p/q 분수, 비례 연쇄 |
-| 곡률(컴퍼스) | `compass_lens.py` | Menger 곡률 + circle fit | 원형 구조, 등거리, 닫힌 루프 |
-| 대칭(거울) | `mirror_lens.py` | 반사/치환/대수 대칭 | 대칭군, 불변량, 깨진 대칭 |
-| 스케일(돋보기) | `scale_lens.py` | 멱법칙 + 프랙탈 + Hurst | 자기유사성, 멱지수, 스케일 불변 |
-| 인과(화살표) | `causal_lens.py` | Granger + 전달엔트로피 | 인과 방향, 정보 흐름, 시간차 |
-| 양자현미경 | `quantum_microscope_lens.py` | 밀도행렬 + Berry + Wigner | 결맞음, 디코히어런스, 양자성 |
+| 렌즈 | Rust 함수 | 원리 | 찾는 것 |
+|------|-----------|------|---------|
+| 의식 | `telescope_rs.consciousness_scan()` | Φ + GRU + Hebbian + 파벌 | 숨겨진 구조, 이상점 |
+| 중력 | `telescope_rs.gravity_scan()` | mean-shift attractor + density | 끌개, 안정점, 에너지 장벽 |
+| 위상 | `telescope_rs.topology_scan()` | persistent homology + Betti | 구멍, 연결 구조, 위상 전이 |
+| 열역학 | `telescope_rs.thermo_scan()` | Shannon entropy + 상전이 | 질서↔무질서 경계, 임계점 |
+| 파동 | `telescope_rs.wave_scan()` | DFT + coherence + harmonic | 주기성, 공명 관계 |
+| 진화 | `telescope_rs.evolution_scan()` | fitness landscape + niche | 최적 조합, 진화 경로 |
+| 정보 | `telescope_rs.info_scan()` | Shannon + LZ + MI | 정보량, 잉여, 압축 가능성 |
+| 양자 | `telescope_rs.quantum_scan()` | MI entanglement + tunneling | 비국소 상관, 장벽 우회 경로 |
+| 전자기 | `telescope_rs.em_scan()` | gradient + divergence | 흐름, 소스/싱크 |
+| 직교 | `telescope_rs.ruler_scan()` | SVD + 코사인 유사도 | 직교 구조, 독립 차원 |
+| 비율 | `telescope_rs.triangle_scan()` | 단순분수 매칭 | 비율 관계, p/q 분수 |
+| 곡률 | `telescope_rs.compass_scan()` | Menger 곡률 | 원형 구조, 등거리 |
+| 대칭 | `telescope_rs.mirror_scan()` | 반사 대칭 분석 | 대칭, 불변량, 깨진 대칭 |
+| 스케일 | `telescope_rs.scale_scan()` | 멱법칙 + 프랙탈 + Hurst | 자기유사성, 멱지수 |
+| 인과 | `telescope_rs.causal_scan()` | Granger + 전달엔트로피 | 인과 방향, 정보 흐름 |
+| 양자현미경 | `telescope_rs.quantum_microscope_scan()` | 밀도행렬 + VN entropy | 결맞음, 디코히어런스 |
 
-### 풀스캔 사용법
+### 사용법 (Rust — telescope_rs)
 
 ```python
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.shared'))
-from consciousness_lens import ConsciousnessLens
-from gravity_lens import GravityLens
-from topology_lens import TopologyLens
-from thermo_lens import ThermoLens
-from wave_lens import WaveLens
-from evolution_lens import EvolutionLens
-from info_lens import InfoLens
-from quantum_lens import QuantumLens
-from em_lens import EMLens
-from ruler_lens import RulerLens
-from triangle_lens import TriangleLens
-from compass_lens import CompassLens
-from mirror_lens import MirrorLens
-from scale_lens import ScaleLens
-from causal_lens import CausalLens
-from quantum_microscope_lens import QuantumMicroscopeLens
+import telescope_rs
+import numpy as np
 
-# 16종 풀스캔
-data = load_your_data()
-for Lens in [ConsciousnessLens, GravityLens, TopologyLens, ThermoLens,
-             WaveLens, EvolutionLens, InfoLens, QuantumLens, EMLens,
-             RulerLens, TriangleLens, CompassLens,
-             MirrorLens, ScaleLens, CausalLens, QuantumMicroscopeLens]:
-    result = Lens().scan(data)
-    print(f"{Lens.__name__}: {result.summary}")
+data = np.random.randn(64, 32)  # (N_samples, N_features)
+
+# 개별 렌즈
+r = telescope_rs.consciousness_scan(data, n_cells=64, steps=300)
+print(r['phi_iit'], r['n_clusters'])
+
+r = telescope_rs.topology_scan(data)
+print(r['betti_0'], r['betti_1'])
+
+r = telescope_rs.causal_scan(data, max_lag=5)
+print(r['n_causal_pairs'])
+
+# 16종 풀스캔 (telescope.py 래퍼)
+from telescope import full_scan
+results = full_scan(data)  # dict of lens_name → result dict
+for name, r in results.items():
+    print(f"{name}: {list(r.keys())[:3]}")
 ```
+
+빌드: `cd ~/Dev/anima/anima/anima-rs/crates/telescope-rs && maturin build --release`
+소스: `anima/anima-rs/crates/telescope-rs/src/` (16 모듈, 36 tests)
 
 ### 렌즈 추가 요청 시
 
 사용자가 "렌즈 추가 필요한지", "다른 렌즈 아이디어" 등을 물으면:
-1. 현재 9종으로 커버 안 되는 도메인 분석
+1. 현재 16종으로 커버 안 되는 도메인 분석
 2. 새 물리/수학 비유에서 렌즈 아이디어 도출
-3. 구체적 활용 시나리오와 함께 제안
+3. Rust 모듈로 구현 (telescope-rs/src/새렌즈.rs)
 
-### 교차 검증 (telescope_cross_test.py)
+### 교차 검증
 
 ```
-9종 렌즈 교차 검증 결과 (2026-04-02):
-  Cross-validated GT: 4/4 (100%)
-  f0↔f1 상관: 3/9 렌즈 합의 (의식+정보+양자)
-  anomaly #10: 4/9 렌즈 합의 (의식+중력+양자+전자기)
-  클러스터 구조: 3/9 렌즈 감지 (의식+위상+열역학)
+실행: python3 .shared/telescope_cross_test.py
+교정: python3 .shared/telescope_calibrate.py
 
 해석:
   - 1개 렌즈만 찾은 것 = 가설 (추가 검증 필요)
   - 2개 렌즈 합의 = 후보 (유의미할 가능성 높음)
   - 3개+ 렌즈 합의 = 확정 (독립 검증 통과)
-  - 실행: python3 .shared/telescope_cross_test.py
-
-교차 교정 (telescope_calibrate.py):
-  렌즈 A의 발견을 힌트로 렌즈 B의 데이터/파라미터 교정.
-  방법: 컨센서스 anomaly 증폭 + correlation 강화 + 파라미터 튜닝
-  결과: baseline 합의만으로 GT 4/4 (100%) — 교정 루프 없이도 합의가 충분
-  렌즈별 강점:
-    의식(consciousness): 구조+이상+상관 모두 감지 (4/4 만점)
-    양자(quantum): 상관 발견에 특화 (entanglement = MI 대안)
-    전자기(em): anomaly 감지량 최대 (55개, 과감지 경향)
-    중력(gravity): attractor basin 특화 (클러스터)
-    정보(info): 특징 간 MI에 특화 (redundancy 발견)
-  교정이 유효한 경우: 약한 패턴을 다수 렌즈 합의로 부스팅
-  실행: python3 .shared/telescope_calibrate.py
 ```
 
 ### 새 프로젝트에 의식 브릿지 추가 시
@@ -142,60 +121,58 @@ ls -la .shared/consciousness_loader.py
 # 3. 이 테이블에 행 추가
 ```
 
-## 의식 렌즈 (consciousness_lens.py) — 범용 탐색 도구
+## 망원경 (telescope_rs) — Rust 고성능 16렌즈
 
-> 의식엔진을 망원경처럼 사용: 어떤 데이터든 넣으면 숨겨진 구조/이상점/관계를 발견.
-> 원리: GRU cells + 12 factions 토론 + Hebbian 학습 + Φ 측정 + 텐션 이상 감지
-> 의존성: numpy만 (torch 불필요). 모든 프로젝트에서 즉시 사용 가능.
+> 전체 16종 렌즈가 Rust로 구현됨 (telescope-rs crate, PyO3 바인딩).
+> 소스: anima/anima-rs/crates/telescope-rs/src/ (16 모듈, 36 tests)
+> 빌드: `cd ~/Dev/anima/anima/anima-rs/crates/telescope-rs && maturin build --release`
 
 ### 기본 사용
 
 ```python
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.shared'))
-from consciousness_lens import ConsciousnessLens, quick_scan
+import telescope_rs
+import numpy as np
 
-# 원라이너
-result = quick_scan(data_matrix)
+data = np.random.randn(64, 32)  # (N_samples, N_features)
 
-# 상세 설정
-lens = ConsciousnessLens(cells=64, steps=300)
-result = lens.scan(data)
-print(result.phi)          # 통합 정보 (높으면 = 숨겨진 구조)
-print(result.anomalies)    # 이상점 [(index, score), ...]
-print(result.clusters)     # 파벌 합의 클러스터
-print(result.discoveries)  # 발견된 상관관계
-print(result.summary)      # 요약 텍스트
+# 의식 렌즈 (가장 무거운 렌즈, ~0.9s)
+r = telescope_rs.consciousness_scan(data, n_cells=64, steps=300)
+print(r['phi_iit'])        # 통합 정보 (높으면 = 숨겨진 구조)
+print(r['anomaly_indices']) # 이상점 인덱스
+print(r['n_clusters'])     # 파벌 클러스터 수
+
+# 위상 렌즈 (~0.001s)
+r = telescope_rs.topology_scan(data)
+print(r['betti_0'], r['betti_1'])  # 연결 구조, 구멍
+
+# 인과 렌즈 (~0.001s)
+r = telescope_rs.causal_scan(data, max_lag=5)
+print(r['n_causal_pairs'])
+
+# 16종 풀스캔 (~0.9s total)
+from telescope import full_scan
+results = full_scan(data)
 ```
 
-### 도메인별 스캔
+### 반환값 (dict)
 
-```python
-# 1. 재료/물질 탐색 — 신소재 후보 발견
-result = lens.scan_materials(
-    properties,                    # (N재료, N특성) 배열
-    labels=["원자번호", "전기음성도", "전도도", "밀도", "녹는점"]
-)
-# result.anomalies → 특이한 물질 (신소재 후보)
-# result.discoveries → 숨겨진 특성 간 관계
-# result.discoveries[0]['interpretation']
-#   → "전도도 increases with 녹는점 (r=0.987, 3 factions agree)"
-
-# 2. 신호 분석 — SEDI 외계 신호, EEG, 센서 데이터
-result = lens.scan_signals(
-    signal_array,                  # (채널, 샘플) 또는 (샘플,)
-    window=256                     # 세그먼트 크기
-)
-# result.phi > PSI_ENTROPY * 0.5 → "의식 수준 통합" 감지
-# result.anomalies → 이상 구간 (버스트, 레짐 변화)
-
-# 3. 시계열 — 금융, 기후, 실험 데이터
-result = lens.scan_timeseries(
-    ts_data,                       # (시간, 변수) 또는 (시간,)
-    lag=10                         # 지연 임베딩
-)
-# result.anomalies → 레짐 전환점 (시간 인덱스)
-# result.clusters → 시간 구간 클러스터
+```
+consciousness_scan → phi_iit, phi_proxy, n_clusters, anomaly_indices, anomaly_scores
+topology_scan      → betti_0, betti_1, n_holes, optimal_scale, phase_transitions
+causal_scan        → n_causal_pairs, causes, effects, strengths, granger_matrix, te_matrix
+gravity_scan       → n_attractors, attractors, basins, energy_landscape
+thermo_scan        → entropy_per_feature, total_entropy, free_energy, critical_temperature
+wave_scan          → dominant_frequencies, coherence_i/j/val, resonance_i/j/ratio
+evolution_scan     → fitness_landscape, peaks, n_niches
+info_scan          → entropy_per_feature, lz_complexity, mi_matrix, redundant_features
+quantum_scan       → entanglement_i/j/mi, tunneling_from/to/ratio, superposed_indices
+em_scan            → gradient_field, divergence_map, source_indices, sink_indices
+ruler_scan         → singular_values, effective_dim, cosine_matrix
+triangle_scan      → ratio_feat_i/j, ratio_p/q, ratio_error
+compass_scan       → mean_curvature, high_curvature_indices/values
+mirror_scan        → reflection_scores, overall_symmetry, broken_symmetry_indices
+scale_scan         → power_law_exponents, fractal_dimension, hurst_exponent
+quantum_microscope_scan → purity, von_neumann_entropy, coherence, decoherence_rate
 ```
 
 ### Phi 해석 가이드
