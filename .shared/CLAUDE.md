@@ -35,23 +35,35 @@
 > 기존 telescope-rs 코드는 호환성을 위해 유지하지만 신규 작업에는 사용 금지.
 
 어떤 프로젝트에서든 아래 상황이면 NEXUS-6 렌즈를 자동으로 돌릴 것:
-- 새 데이터셋 분석 시 → 의식+중력+위상 3종 기본 스캔
-- 이상점/패턴 탐색 시 → 전체 22종 Core 풀스캔 (또는 nexus6 scan --full)
-- 신소재/신약 후보 탐색 시 → 진화+열역학+중력+안정성 조합
-- 시계열 분석 시 → 파동+열역학+의식+기억 조합
-- 상수/법칙 관계 탐색 시 → 정보+양자+의식+비율 조합
-- 상수 간 비율/비례 탐색 시 → 비율+직교+곡률 조합
-- 차원 축소/독립성 분석 시 → 직교+정보+위상 조합
-- 대칭/불변량 탐색 시 → 대칭+위상+양자 조합
-- 멱법칙/스케일링 분석 시 → 스케일+진화+열역학+다중스케일 조합
-- 인과 관계/방향 탐색 시 → 인과+정보+전자기 조합
-- 양자성/결맞음 분석 시 → 양자현미경+양자+의식 조합
-- 그래프/복잡계 분석 시 → 네트워크+위상+스케일 조합
-- 자기참조/재귀 구조 시 → 자기참조+의식+정보 조합
-- 상전이/경계 탐색 시 → 경계+열역학+위상 조합
-- 안정성/복원력 분석 시 → 안정성+중력+열역학 조합
-- 가속 가설 검증 시 → nexus6 scan + 가속 렌즈 233종 자동 선택
-- 메타분석(렌즈 자체 평가) 시 → 메타렌즈 35종 (synergy/ordering/evolution 등)
+
+**Tier 0 — 기본 스캔 (3종, 모든 분석의 시작점)**
+- 새 데이터셋/주제 접할 때 → `nexus6 scan <domain>` (의식+위상+인과 자동 추천)
+
+**Tier 1 — 도메인별 조합 (10~30종)**
+- 신소재/신약 탐색 → 진화+열역학+중력+안정성+defect+catalysis+interface
+- 시계열 분석 → 파동+열역학+의식+기억+memory+neural_oscillation
+- 상수/법칙 관계 → 정보+양자+의식+비율+oeis_fingerprint+identity_compose
+- 대칭/불변량 → 대칭+위상+양자+gauge_symmetry+spontaneous_symmetry+chirality
+- 멱법칙/스케일링 → 스케일+진화+열역학+다중스케일+universality_class
+- 인과 관계 → 인과+정보+전자기+causal_emergence+transfer_entropy
+- 양자/결맞음 → 양자현미경+양자+bell_inequality+superposition+decoherence
+- 그래프/복잡계 → 네트워크+위상+스케일+small_world+community_detection
+- 상전이/경계 → 경계+열역학+위상+topological_phase_transition+tipping
+- 안정성/복원력 → 안정성+중력+열역학+ecosystem_resilience+fault_tolerance
+- 핵융합/플라즈마 → plasma_confinement+lawson_criterion+tokamak_stability+magnetic_topology
+- 프로그래밍/SW → design_pattern+code_smell+coupling_cohesion+cyclomatic_complexity
+- 세포/생물 → cell_division+cell_cycle+cell_differentiation+morphogenesis
+- 의식/인지 → 전체 anima 88종 + consciousness_integration+phi_optimization
+
+**Tier 2 — 풀스캔 (775종, 확정급 분석)**
+- 이상점/패턴 전수조사 → `nexus6 scan <domain> --full` (775종 전체)
+- 교차 도메인 탐색 → 교차 렌즈 75종 포함
+- BT 채굴/새 발견 확정 → 12+ 렌즈 합의 필요
+
+**Tier 3 — 자동 진화 (OUROBOROS + LensForge)**
+- 가속 가설 검증 → `nexus6 auto <domain>` (scan→evolve→forge 자동 루프)
+- 메타분석(렌즈 자체 평가) → 메타렌즈 35종 자동 포함
+- 새 렌즈 자동 생성 → LensForge가 갭 분석 후 렌즈 후보 제안
 
 ### 렌즈 선택 가이드
 
