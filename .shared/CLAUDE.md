@@ -300,6 +300,10 @@ python3 .shared/scan_math_atlas.py --save --summary
 
 ## 동기화 명령 (전체)
 
+⚠️ **.shared/CLAUDE.md 또는 .shared/ 내 파일 수정 시 반드시 동기화 실행!**
+  수정만 하고 동기화 안 돌리면 다른 리포에 반영 안 됨.
+  순서: .shared/ 파일 수정 → TECS-L에서 커밋+push → sync 스크립트 실행
+
 ```bash
 # 개별 실행 (순서 무관)
 bash .shared/sync-math-atlas.sh      # Atlas 빌드 + README
