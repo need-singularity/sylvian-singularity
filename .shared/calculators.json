@@ -2358,6 +2358,20 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "deep-miner",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/deep-miner/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "discovery-engine",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/discovery-engine/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "dse-calc",
       "description": "N6 Design Space Exploration (DSE) — 전수 조합 탐색기",
       "category": "calculator",
@@ -2369,6 +2383,13 @@
       "description": "N6 Energy Strategy Calculator",
       "category": "calculator",
       "path": "tools/energy-calc/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "formula-miner",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/formula-miner/main.rs",
       "repo": "n6-architecture"
     },
     {
@@ -2666,6 +2687,13 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "anomaly_detection",
+      "description": "N6 Architecture — Anomaly Detection",
+      "category": "experiment",
+      "path": "experiments/anomaly_detection.py",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "blind_verification",
       "description": "Blind Domain Verification of n=6 Universality (Experiment 4 Implementation)",
       "category": "experiment",
@@ -2680,6 +2708,13 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "cross_dse_fusion_5domain",
+      "description": "Cross-DSE: 5-Domain Fusion Analysis",
+      "category": "experiment",
+      "path": "experiments/cross_dse_fusion_5domain.py",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "cross_repo_mining",
       "description": "Cross-Repo Constant Mining: scan 305 TOML domains for n=6 patterns.",
       "category": "experiment",
@@ -2691,6 +2726,13 @@
       "description": "Cross-reference STRONG hypotheses with constant collision analysis.",
       "category": "experiment",
       "path": "experiments/cross_strong_collision.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "discovery_graph_topology",
+      "description": "Discovery Graph Topology Analysis",
+      "category": "experiment",
+      "path": "experiments/discovery_graph_topology.py",
       "repo": "n6-architecture"
     },
     {
@@ -3013,6 +3055,13 @@
       "description": "verify_diffusion_n6.py — Diffusion Model n=6 Pattern Verification",
       "category": "experiment",
       "path": "experiments/verify_diffusion_n6.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "verify_fusion_predictions",
+      "description": "HEXA-FUSION 예측 검증 스크립트",
+      "category": "experiment",
+      "path": "experiments/verify_fusion_predictions.py",
       "repo": "n6-architecture"
     },
     {
