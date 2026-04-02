@@ -104,6 +104,11 @@ echo "[BrainWire]"
 sync_file "$PARENT/brainwire/README.md"
 commit_and_push "$PARENT/brainwire" "brainwire"
 
+# HEXA-LANG
+echo "[HEXA-LANG]"
+sync_file "$PARENT/hexa-lang/README.md"
+commit_and_push "$PARENT/hexa-lang" "hexa-lang"
+
 # Papers
 echo "[Papers]"
 sync_file "$PARENT/papers/README.md"
