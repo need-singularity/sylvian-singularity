@@ -82,9 +82,9 @@ print(r['betti_0'], r['betti_1'])
 r = telescope_rs.causal_scan(data, max_lag=5)
 print(r['n_causal_pairs'])
 
-# 16종 풀스캔 (telescope.py 래퍼)
-from telescope import full_scan
-results = full_scan(data)  # dict of lens_name → result dict
+# 16종 풀스캔 (telescope_rs 직접)
+import telescope_rs
+results = telescope_rs.full_scan(data)  # dict of lens_name → result dict
 for name, r in results.items():
     print(f"{name}: {list(r.keys())[:3]}")
 ```
@@ -150,8 +150,8 @@ r = telescope_rs.causal_scan(data, max_lag=5)
 print(r['n_causal_pairs'])
 
 # 16종 풀스캔 (~0.9s total)
-from telescope import full_scan
-results = full_scan(data)
+import telescope_rs
+results = telescope_rs.full_scan(data)
 ```
 
 ### 반환값 (dict)
