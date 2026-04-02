@@ -993,8 +993,8 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | **TECS-L** | 213 | Calculator, Engine |
 | **anima** | 0 |  |
 | **SEDI** | 91 | Core, Data Source |
-| **n6-architecture** | 150 | Calculator, Engine, experiment, technique |
-| **Total** | **454** | |
+| **n6-architecture** | 152 | Calculator, Engine, experiment, technique |
+| **Total** | **456** | |
 
 ### TECS-L
 
@@ -1330,7 +1330,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 ### n6-architecture
 
-**Calculator** (56)
+**Calculator** (58)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1362,6 +1362,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | formula-miner | - | `tools/formula-miner/main.rs` |
 | fusion-calc | N6 Fusion Calculator — 핵융합 파라미터 계산 + n=6 검증 | `tools/fusion-calc/main.rs` |
 | fusion-dse | N6 Fusion Design Space Exploration (DSE) — 전수 조합 탐색기 | `tools/fusion-dse/main.rs` |
+| fusion-verify | N6 Fusion Comprehensive Verifier — 핵융합 n=6 전수 수치 검증 | `tools/fusion-verify/main.rs` |
 | gate_formula_calculator | Gate Formula Calculator — Law 77 adaptive consciousness gate | `tools/gate_formula_calculator.py` |
 | gpu-arch-calc | N6 GPU/HBM Architecture Calculator | `tools/gpu-arch-calc/main.rs` |
 | gut-calc-rust | - | `tools/gut-calc-rust/main.rs` |
@@ -1385,6 +1386,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | sc-dse | N6 궁극의 초전도체 DSE — 6단 전수 조합 탐색기 | `tools/sc-dse/main.rs` |
 | semiconductor-calc | N6 Semiconductor Process / GPU SM / HBM Ladder Calculator | `tools/semiconductor-calc/main.rs` |
 | solar-dse | HEXA-SOLAR Design Space Exploration (DSE) | `tools/solar-dse/main.rs` |
+| src | - | `tools/nexus6/src/main.rs` |
 | tension_calculator | Tension Calculator — Predict accuracy/precognition/identity from tension values | `tools/tension_calculator.py` |
 | tokamak-shape | Tokamak Shape Optimizer — n=6 매개변수 공간 탐색 | `tools/tokamak-shape/main.rs` |
 | universal-dse | - | `tools/universal-dse/main.rs` |

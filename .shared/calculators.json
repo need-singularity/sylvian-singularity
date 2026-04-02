@@ -2407,6 +2407,13 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "fusion-verify",
+      "description": "N6 Fusion Comprehensive Verifier — 핵융합 n=6 전수 수치 검증",
+      "category": "calculator",
+      "path": "tools/fusion-verify/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "gpu-arch-calc",
       "description": "N6 GPU/HBM Architecture Calculator",
       "category": "calculator",
@@ -2446,6 +2453,13 @@
       "description": "N6 Material Synthesis DSE — 궁극의 물질합성 전수 조합 탐색기",
       "category": "calculator",
       "path": "tools/material-dse/main.rs",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "src",
+      "description": "",
+      "category": "calculator",
+      "path": "tools/nexus6/src/main.rs",
       "repo": "n6-architecture"
     },
     {
