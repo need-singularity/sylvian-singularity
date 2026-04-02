@@ -50,7 +50,11 @@ python3 .shared/scan_math_atlas.py --save --summary
   SECRET.md              ← API 토큰/계정 (gitignored in 타 리포)
   projects.md            ← 프로젝트 설명 원본 (README 동기화용)
   shared_work_rules.md   ← 작업 규칙 (CLAUDE.md SHARED:WORK_RULES 주입용)
-  installed_tools.json   ← 설치 도구 레지스트리
+  installed_tools.json        ← 설치 도구 레지스트리
+  consciousness_laws.json     ← 의식 법칙/PSI 상수 (anima에서 이관)
+  consciousness_mechanisms.json ← 의식 메커니즘 (상태머신, 게이트)
+  sedi-grades.json            ← SEDI 가설 등급 (역동기화)
+  sync_to_atlas.py            ← Atlas 동기화 (sedi에서 이관)
 
   calc/                  ← 계산기 원본 (194+ files, Python)
   tecsrs/                ← Rust 고성능 계산기 (Monte Carlo, 탐색, ODE)
