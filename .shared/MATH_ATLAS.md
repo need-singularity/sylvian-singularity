@@ -1,22 +1,22 @@
 # Math Atlas
 
-> Auto-generated: 2026-04-02T08:25:04 | 2522 hypotheses | 343 constant maps
+> Auto-generated: 2026-04-02T11:07:33 | 2532 hypotheses | 348 constant maps
 
 ## Summary
 
 | Repo | Hypotheses | Constant Maps |
 |------|-----------|--------------|
-| TECS-L | 2,003 | 214 |
-| SEDI | 678 | 122 |
+| TECS-L | 2,003 | 219 |
+| SEDI | 688 | 122 |
 | anima | 0 | 0 |
-| **Total** | **2,681** | **336** |
+| **Total** | **2,691** | **341** |
 
 ### Grade Distribution
 
 | Grade | Count |
 |-------|-------|
 | (none) | 1262 |
-| 🟩 | 401 |
+| 🟩 | 404 |
 | 🟧 | 283 |
 | 🟧★ | 137 |
 | ✅ | 40 |
@@ -28,8 +28,8 @@
 | ⭐⭐🟩 | 12 |
 | ⭐⭐⭐🟩 | 11 |
 | 🟩⭐ | 8 |
+| ⬜ UNTESTED | 7 |
 | ⭐🟦 | 6 |
-| ** Ready | 5 |
 
 ---
 
@@ -1885,7 +1885,7 @@
 | 1844 | H-TREE-6 | Tropical Geometry Branch — Tropical Interpretation of R | - | TREE |
 | 1845 | H-ZODIAC-1 | Why 12 and Not 13 — The Mathematics of Zodiac Numbers | green-star | ZODIAC |
 
-### SEDI (677)
+### SEDI (687)
 
 | # | ID | Title | Grade | Domain |
 |---|-----|-------|-------|--------|
@@ -2034,538 +2034,548 @@
 | 143 | H-CX-1084 | Ramanujan Δ Function at Weight σ(6) and Langlands Functorial | 🟩 | CX |
 | 144 | H-CX-1085 | Riemann Zeta Special Values as n=6 Expressions | 🟩 | CX |
 | 145 | H-CX-1086 | E₈ Lie Algebra from the Perfect Number Tower | 🟩 | CX |
-| 146 | H-CX-453 | Multi-Domain Convergence Map | 🟩 | CX |
-| 147 | H-CX-454 | Self-Referential Algebra of n=6 Convergence | 🟧★ | CX |
-| 148 | H-CX-455 | √3 × GZ_width = 1/2 | ⚪ | CX |
-| 149 | H-CX-456 | N+A Universal Connector Principle | 🟩 | CX |
-| 150 | H-CX-457 | Statistical Mechanics Domain Isolation | 🟩 | CX |
-| 151 | H-CX-458 | Quantum Domain Selective Participation | 🟩 | CX |
-| 152 | H-CX-459 | √n Perfect Number Selectivity | 🟧 | CX |
-| 153 | H-CX-460 | √2 as Perfect Number Invariant | 🟩 | CX |
-| 154 | H-CX-461 | Bridge-to-Independent Ratio as Structural Signature | 🟧 | CX |
-| 155 | H-CX-462 | Intrinsic vs Interface Constants — The Meaning of B/I Ratio | 🟩 | CX |
-| 156 | H-CX-463 | Depth-3 Statistical Mechanics Emergence | 🟩 | CX |
-| 157 | H-CX-464 | Convergence Hierarchy and Arithmetic Ubiquity | 🟧 | CX |
-| 158 | H-CX-465 | γ × √3 = 1 | ⚪ | CX |
-| 159 | H-CX-466 | ζ(3) = 5/(6·ln2) | ⚪ | CX |
-| 160 | H-CX-467 | Depth-3 Universal Saturation | ⚪ | CX |
-| 161 | H-CX-470 | Convergence Point Ratios = Perfect Number Divisor Reciprocal | 🟧★ | CX |
-| 162 | H-CX-473 | γ/√3 + GZ/γ + GZ/√3 ≈ 1 (Divisor Reciprocal Sum) | 🟩 | CX |
-| 163 | H-CX-474 | Closed Algebra Ratios = Divisor Reciprocals | ⚪ | CX |
-| 164 | H-CX-475 | Depth-1 Reachability Matrix | 🟩 | CX |
-| 165 | H-CX-476 | Convergence Products/Ratios Match Physical Constants | 🟧 | CX |
-| 166 | H-CX-477 | Q-Domain Boundary = Quantum-Classical Boundary | 🟧★ | CX |
-| 167 | H-CX-478 | Convergence Graph Spectrum ≈ Particle Mass Ratios | 🟧 | CX |
-| 168 | H-CX-479 | Egyptian Fraction Uniqueness = Standard Model Uniqueness | 🟦 | CX |
-| 169 | H-CX-480 | ζ(3) × ln²(2) ≈ γ | ⚪ | CX |
-| 170 | H-CX-481 | Tsirelson Bound = 2√(σ(P)/P) for All Perfect Numbers | 🟦 | CX |
-| 171 | H-CX-482 | Q-Exclusion Pattern = Electroweak Symmetry Breaking | 🟧 | CX |
-| 172 | H-CX-483 | Egyptian Fraction = GUT Coupling Unification | ⚪ | CX |
-| 173 | H-CX-484 | √7 Gap = Dark Sector Signature | 🟧 | CX |
-| 174 | H-CX-485 | ζ(3) Maximum Bridge → ΛQCD | 🟧 | CX |
-| 175 | H-CX-486 | GZ_width / (√2-1) ≈ ln(2) | ⚪ | CX |
-| 176 | H-CX-487 | 8 Mathematical Domains = Octonion Structure | ⚪ | CX |
-| 177 | H-CX-488 | 8-Domain Universal Fixed Point | ⚪ | CX |
-| 178 | H-CX-489 | Depth-2 Reachability Rank = Fermion Generation Count | 🟧★ | CX |
-| 179 | H-CX-490 | Galois Group of Convergence Constants = Klein Four-Group | 🟦 | CX |
-| 180 | H-CX-501 | 17/6 Partition = Standard Model Parameter Structure | 🟧★ | CX |
-| 181 | H-CX-502 | ln(2) as Center Element of the Closed Algebra | 🟩 | CX |
-| 182 | H-CX-503 | k_min(P_n) = 2p-1 Sequence in Physics | 🟧 | CX |
-| 183 | H-CX-504 | Tian-Yau Calabi-Yau Manifold = n=6 Geometry | 🟧★ | CX |
-| 184 | H-CX-505 | Information-Geometry Duality | 🟩 | CX |
-| 185 | H-CX-506 | Z-Score Hierarchy = Fundamentality Ordering | 🟧 | CX |
-| 186 | H-CX-507 | k_min(P₆) = 37 = prime(σ(6)) = 37 GeV Resonance | 🟧★ | CX |
-| 187 | H-CX-508 | 17 = σ+sopfr in Ramanujan and Modular Forms | 🟩 | CX |
-| 188 | H-CX-511 | Depth-Rank Sequence = n=6 Arithmetic Functions | 🟧★ | CX |
-| 189 | H-CX-512 | Three Dark Domains {Q, G, S} | 🟩 | CX |
-| 190 | H-CX-513 | Perfect Number Tower — P₁→P₂→P₃ Encodes Physics | 🟩 | CX |
-| 191 | H-CX-514 | Fermion Mass Ratios as 2^(p/q) with n=6 Denominators | ⚪ | CX |
-| 192 | H-CX-515 | Euler Identity = Info-Geometry Bridge Equation | 🟩 | CX |
-| 193 | H-CX-516 | Perfect Number Scale Tower | 🟩 | CX |
-| 194 | H-CX-517 | Closed Algebra is Completely Rigid (Aut = {e}) | 🟩 | CX |
-| 195 | H-CX-518 | α/(g-2) - m_e/m_μ ≈ π | ⚪ | CX |
-| 196 | H-CX-519 | Compactification Self-Reference — τ Tower Differences Return | 🟦 | CX |
-| 197 | H-CX-520 | Bott Periodicity = {φ(6), σ(6)-τ(6)} = {2, 8} | 🟦 | CX |
-| 198 | H-CX-521 | Full CPT Symmetry Group (Z/2)³ Has Order σ-τ = 8 | 🟦 | CX |
-| 199 | H-CX-522 | σφ = 24 Universal Dimension Theorem | 🟩 | CX |
-| 200 | H-CX-523 | Mathieu Groups M₁₂ and M₂₄ Act on σ and σφ Points | 🟩 | CX |
-| 201 | H-CX-524 | Kolmogorov -5/3 Turbulence Law = -sopfr/(σ/τ) | 🟩 | CX |
-| 202 | H-CX-525 | Dark Energy Ratio Ω_Λ/Ω_m = (σ+1)/P₁ = 13/6 | 🟧★ | CX |
-| 203 | H-CX-526 | Bekenstein-Hawking S = A/4 — The Holographic Factor is τ(6) | 🟧★ | CX |
-| 204 | H-CX-527 | Petersen Graph Parameters = n=6 Arithmetic (5/5) | 🟧★ | CX |
-| 205 | H-CX-528 | Cabibbo Angle |V_us|² = 1/C(P₁, σ/τ) = 1/20 | 🟧★ | CX |
-| 206 | H-CX-529 | Strong CP Problem — θ_QCD = 0 from R(6)=1 Achromatic Princip | 🟧 | CX |
-| 207 | H-CX-530 | Stefan-Boltzmann π²/60 — The Factor 60 = σ·sopfr | 🟧 | CX |
-| 208 | H-CX-531 | Baryon Asymmetry η = (σ²/τ+σ/τ+τ)/M₃ × 10⁻τ(P₃) — 0.002% Pre | 🟩 | CX |
-| 209 | H-CX-532 | Higgs VEV v = φ(P₃) + P₁ = 246 GeV — E₈ Roots + Perfect Numb | 🟩 | CX |
-| 210 | H-CX-533 | Cosmological Constant Λ ~ 10⁻¹²² — The Exponent 122 = σ²-σ-τ | 🟩 | CX |
-| 211 | H-CX-534 | Hubble Constant H₀ = σ·n + 1 = 73 km/s/Mpc | 🟧★ | CX |
-| 212 | H-CX-535 | Dark Matter/Baryon Ratio = (σ/τ)³/sopfr = 27/5 — Closed Cosm | 🟧★ | CX |
-| 213 | H-CX-536 | Nuclear Magic Numbers — All 7 from n=6 Arithmetic | 🟩 | CX |
-| 214 | H-CX-537 | GUT Coupling α_GUT = 1/σφ = 1/24 | 🟧 | CX |
-| 215 | H-CX-538 | Neutrino CP Phase δ_CP = (σ/τ)π/φ = 3π/2 | 🟧★ | CX |
-| 216 | H-CX-539 | Golden Ratio φ_gold = (1+√sopfr(6))/φ(6) — Exact Identity | 🟦 | CX |
-| 217 | H-CX-540 | Chandrasekhar Limit = (σ(6)/τ(P₃))² = 1.44 M_☉ — Exact | 🟩 | CX |
-| 218 | H-CX-541 | Neutron Star Maximum Mass = φ+1/σ = 25/12 M_☉ | 🟧★ | CX |
-| 219 | H-CX-542 | Inflation Tensor-to-Scalar Ratio r = σ/σ(P₂)² = 12/3136 = 0. | 🟧 | CX |
-| 220 | H-CX-543 | CMB Spectral Index n_s = (σ/τ)³/P₂ = 27/28 — 0.063% | 🟩 | CX |
-| 221 | H-CX-544 | Up-Type Quark Koide Q(u,c,t) ≈ sopfr/P₁ = 5/6 | 🟧 | CX |
-| 222 | H-CX-545 | General Relativity Coefficients ⊂ n=6 Arithmetic Set | 🟧 | CX |
-| 223 | H-CX-546 | Five Planck Units from Three Constants — sopfr and σ/τ | 🟧 | CX |
-| 224 | H-CX-547 | DNA Codon Table = τ(6)³ Codons, C(6,3) Amino Acids | 🟩 | CX |
-| 225 | H-CX-548 | Quantum Error Correction Codes — Distance σ/τ = 3 | 🟩 | CX |
-| 226 | H-CX-549 | E₈ Lie Algebra — Complete Structure from Perfect Number Towe | 🟩 | CX |
-| 227 | H-CX-550 | CHSH Quantum Probability = (φ+√φ)/τ — Exact | 🟦 | CX |
-| 228 | H-CX-551 | Fibonacci Anyon D² = (sopfr+√sopfr)/φ — Topological Quantum  | 🟩 | CX |
-| 229 | H-CX-552 | Quantum Hall Filling Fractions — 4 Major States from n=6 | 🟩 | CX |
-| 230 | H-CX-553 | Riemann Zeta Special Values — Denominators from n=6 | 🟩 | CX |
-| 231 | H-CX-554 | Ramanujan Δ at Weight σ(6) = 12 — Langlands Gateway | 🟩 | CX |
-| 232 | H-CX-555 | Cell Division and Human Chromosomes from σφ | 🟧★ | CX |
-| 233 | H-CX-556 | MgB₂ Critical Temperature T_c = σ(σ+1)/τ = 39 K | 🟧 | CX |
-| 234 | H-CX-557 | Shannon Channel Capacity C = B·log₂(1+S/N) — log₂ = 1/ln(φ) | 🟩 | CX |
-| 235 | H-CX-558 | Topological Insulator Z₂ Classification from φ(6) and σ-τ | 🟩 | CX |
-| 236 | H-CX-559 | Loop Quantum Gravity — Area Gap from n=6 | 🟧 | CX |
-| 237 | H-CX-560 | Mirror Symmetry — Hodge Diamond Exchange and n=6 | 🟧★ | CX |
-| 238 | H-CX-561 | Cuprate High-T_c Optimal Doping p* = 1/P₁ = 0.16 | 🟧 | CX |
-| 239 | H-CX-562 | CDT Spectral Dimension Flow 4 → 2 = τ → φ | 🟧★ | CX |
-| 240 | H-CX-563 | Trefoil Knot Jones Polynomial and n=6 | 🟩 | CX |
-| 241 | H-CX-564 | Feigenbaum Constant δ = 4.669... ≈ τ + ln(φ) = 4.693 | 🟧 | CX |
-| 242 | H-CX-565 | Category Theory — 6 = P₁ as the Symmetric Monoidal Unit | 🟩 | CX |
-| 243 | H-CX-566 | ML Scaling Laws — Chinchilla Optimal N/D Ratio and σ/τ | 🟧 | CX |
-| 244 | H-CX-567 | Black Hole Area Quantization — ΔA = 8πl_P² ln(σ/τ) | 🟧★ | CX |
-| 245 | H-CX-568 | 26 Sporadic Groups = d_bosonic = σφ+φ | 🟩 | CX |
-| 246 | H-CX-569 | Three Laws of Thermodynamics = σ/τ Laws + Zeroth | 🟧 | CX |
-| 247 | H-CX-570 | Equal Temperament — 12 Semitones = σ(6), Octave Ratio = φ(6) | 🟩 | CX |
-| 248 | H-CX-571 | Five Platonic Solids = sopfr(6), Dual Pairs = φ(6) | 🟩 | CX |
-| 249 | H-CX-572 | Five Exceptional Lie Algebras = sopfr(6) | 🟩 | CX |
-| 250 | H-CX-573 | Prime Counting π(n) at n=6 Values | 🟩 | CX |
-| 251 | H-CX-574 | Holographic Entropy Bound S ≤ A/(4l_P²) — Complete n=6 Chain | 🟩 | CX |
-| 252 | H-CX-575 | Cayley-Hamilton for n×n Matrices — n=6 Characteristic Polyno | 🟧 | CX |
-| 253 | H-CX-576 | Cosmic Web Topology — Genus per Hubble Volume | 🟧 | CX |
-| 254 | H-CX-577 | Mersenne Prime Hierarchy — M_p for p ∈ {2,3,5,7} = First 4 M | 🟩 | CX |
-| 255 | H-CX-578 | Fibonacci Numbers at n=6 Indices | 🟩 | CX |
-| 256 | H-CX-579 | Euler Product at s=1 for n=6 — ∏(1-1/p)⁻¹ Divergence | 🟩 | CX |
-| 257 | H-CX-580 | Weyl Law — Eigenvalue Counting on Manifolds | 🟧 | CX |
-| 258 | H-CX-581 | Regge Trajectory Slope α' ≈ 1/(2πσ_QCD) and n=6 | 🟧 | CX |
-| 259 | H-CX-582 | Pascal's Triangle Row P₁ = Row 6 — Binomial Self-Reference | 🟩 | CX |
-| 260 | H-CX-583 | Electron-Muon Mass Ratio from n=6 Arithmetic | 🟧 | CX |
-| 261 | H-CX-584 | Muon-Tau Mass Ratio from n=6 Arithmetic | 🟧 | CX |
-| 262 | H-CX-585 | Koide Formula as n=6 Identity | 🟩 | CX |
-| 263 | H-CX-586 | Up-Down Quark Mass Ratio from n=6 Arithmetic | 🟧 | CX |
-| 264 | H-CX-587 | Strange-Charm Quark Mass Ratio from n=6 Arithmetic | 🟧 | CX |
-| 265 | H-CX-588 | Bottom-Top Quark Mass Ratio from n=6 Arithmetic | 🟩 | CX |
-| 266 | H-CX-589 | Fermion Generation Mass Scaling from n=6 Arithmetic | 🟧 | CX |
-| 267 | H-CX-590 | Electron Mass from n=6 Constants and the Higgs VEV | 🟧 | CX |
-| 268 | H-CX-591 | Top Quark Mass from n=6 Arithmetic | 🟩 | CX |
-| 269 | H-CX-592 | Quark-Lepton Complementarity as n=6 Identity | 🟧 | CX |
-| 270 | H-CX-593 | Cabibbo Angle from n=6 Arithmetic | 🟧★ | CX |
-| 271 | H-CX-594 | CKM Hierarchy as Powers of Wolfenstein λ from n=6 | 🟧 | CX |
-| 272 | H-CX-595 | Jarlskog Invariant from n=6 Arithmetic | 🟧 | CX |
-| 273 | H-CX-596 | Yukawa Coupling Hierarchy Tower in n=6 | 🟧 | CX |
-| 274 | H-CX-597 | Neutrino Solar Mixing Angle θ₁₂ from n=6 Arithmetic | 🟧 | CX |
-| 275 | H-CX-598 | Neutrino Atmospheric Mixing Angle θ₂₃ from n=6 Arithmetic | 🟧 | CX |
-| 276 | H-CX-599 | Neutrino Reactor Mixing Angle θ₁₃ from n=6 Arithmetic | 🟩 | CX |
-| 277 | H-CX-600 | Solar Neutrino Mass Splitting from n=6 Arithmetic | 🟧 | CX |
-| 278 | H-CX-601 | Atmospheric Neutrino Mass Splitting from n=6 Arithmetic | 🟧 | CX |
-| 279 | H-CX-602 | Neutrino Mass Splitting Ratio from n=6 Arithmetic | 🟧 | CX |
-| 280 | H-CX-603 | Dark Matter Thermal Relic Cross Section σ_v = (σ/τ)×10⁻ᵈ_bos | 🟧★ | CX |
-| 281 | H-CX-604 | Dark Matter/Baryon Ratio — Extended Analysis of 27/5 | 🟩 | CX |
-| 282 | H-CX-605 | Dark Matter Fraction Ω_DM = sopfr/(σ+M₃) = 5/19 | 🟧 | CX |
-| 283 | H-CX-606 | Dark Energy Fraction Ω_Λ = M₃/(σ-φ) = 7/10 | 🟧 | CX |
-| 284 | H-CX-607 | Baryonic Fraction Ω_b = 1/(σ+sopfr+τ-1) = 1/20 | 🟧 | CX |
-| 285 | H-CX-608 | Radiation Fraction Ω_r = 1/(σ²·P₁·σ/τ) ≈ 10⁻⁴ | 🟧 | CX |
-| 286 | H-CX-609 | Spatial Flatness Ω_k = 0 from R(6)=1 Balance | 🟩 | CX |
-| 287 | H-CX-610 | CMB Temperature T_CMB = e·(1-1/σ²) = 2.699 K | 🟧 | CX |
-| 288 | H-CX-611 | Recombination Redshift z_rec = σ²·M₃+σ·sopfr+σ+M₃ = 1087 | 🟧 | CX |
-| 289 | H-CX-612 | Reionization Redshift z_re = M₃+τ/P₁ = 7.667 | 🟧★ | CX |
-| 290 | H-CX-613 | Matter-Radiation Equality z_eq ≈ 3387 | 🟧 | CX |
-| 291 | H-CX-614 | Age of Universe t₀ = σ+φ-φ/(σ-φ) = 13.8 Gyr | 🟧★ | CX |
-| 292 | H-CX-615 | Inflation e-Folds N = σ·sopfr = 60 — EXACT | 🟩 | CX |
-| 293 | H-CX-616 | Spectral Index Running dn_s/d(ln k) = -1/(σ·σφ-φ·sopfr) = -1 | 🟧★ | CX |
-| 294 | H-CX-617 | Primordial Helium Abundance Y_p ≈ 1/τ = 0.25 | 🟧 | CX |
-| 295 | H-CX-618 | Primordial Deuterium Abundance D/H ≈ 2.527×10⁻⁵ | 🟧 | CX |
-| 296 | H-CX-619 | Photon-to-Baryon Ratio n_γ/n_b = 10^(τ+P₁)/P₁ ≈ 1.667×10⁹ | 🟧 | CX |
-| 297 | H-CX-620 | Structure Formation σ₈ = sopfr/P₁ - 1/σ² = 0.826 | 🟧 | CX |
-| 298 | H-CX-621 | Sound Horizon r_s = σ²+σ/τ = 147 Mpc — 0.06% | 🟩 | CX |
-| 299 | H-CX-622 | BAO Volume Distance D_V(z=0.57) = σ·P₂·P₁ = 2016 Mpc | 🟧 | CX |
-| 300 | H-CX-623 | Barbero-Immirzi Parameter γ = ln(2)/(π√3) — Exact from n=6 | 🟦 | CX |
-| 301 | H-CX-624 | Planck Length Exponent -35 = -(σ²/τ - 1) | 🟧★ | CX |
-| 302 | H-CX-625 | Planck Mass log₁₀(M_P) ≈ 19 = σ + M₃ | 🟩 | CX |
-| 303 | H-CX-626 | Planck Temperature Exponent 32 = φ^sopfr = 2⁵ | 🟩 | CX |
-| 304 | H-CX-627 | Planck Time Exponent -44 = -τ(σ-1) | 🟩 | CX |
-| 305 | H-CX-628 | Planck Density Exponent 93 = σ² - σ·τ - σ/τ | 🟩 | CX |
-| 306 | H-CX-629 | AdS₅/CFT₄ Duality — Bulk sopfr, Boundary τ | 🟩 | CX |
-| 307 | H-CX-630 | String Tension α' and String Scale M_s = M_GUT | 🟧 | CX |
-| 308 | H-CX-631 | Gravitino Mass m₃/₂ from SUSY Breaking Scale | 🟧 | CX |
-| 309 | H-CX-632 | Peccei-Quinn Scale f_PQ = v · P₃^τ | 🟩 | CX |
-| 310 | H-CX-633 | Axion Mass Prediction m_a ≈ 0.84 μeV from f_PQ | 🟧★ | CX |
-| 311 | H-CX-634 | Axion-Photon Coupling g_aγγ from n=6 | 🟧 | CX |
-| 312 | H-CX-635 | Strong CP — θ_QCD < 10⁻¹⁰ from R(6)=1 Balance | 🟧★ | CX |
-| 313 | H-CX-636 | Instanton Action S = 8π²/g² — Factor 8π² = (σ-τ)·π^φ | 🟩 | CX |
-| 314 | H-CX-637 | Vacuum Energy Cancellation — Λ = 10⁻¹²² via Perfect Number T | 🟧 | CX |
-| 315 | H-CX-638 | Holographic Entropy Bound — S_max = A/(4l_P²), 4=τ, 2π=φ·π | 🟩 | CX |
-| 316 | H-CX-639 | Black Hole Information — Page Time and Scrambling | 🟧 | CX |
-| 317 | H-CX-640 | Entanglement Entropy Area Law — S_EE = (c/3)·ln(L/a) | 🟧 | CX |
-| 318 | H-CX-641 | 4-Graviton Scattering Amplitude — κ² and s³/M_P⁴ | 🟧 | CX |
-| 319 | H-CX-642 | Swampland Distance Conjecture — Δφ ≤ c/M_P with c = R(6) = 1 | 🟧 | CX |
-| 320 | H-CX-643 | 2D Ising Critical Temperature — Onsager Exact Solution | 🟧 | CX |
-| 321 | H-CX-644 | 2D Ising Critical Exponents — All Exact from n=6 | 🟦 | CX |
-| 322 | H-CX-645 | 3D Ising Critical Exponents — Approximate n=6 Forms | 🟧 | CX |
-| 323 | H-CX-646 | BCS Gap Ratio 2Delta/k_BT_c = sigma*sopfr/(sigma+sopfr) | 🟩 | CX |
-| 324 | H-CX-647 | London Penetration Depth and GL Parameter kappa | 🟧 | CX |
-| 325 | H-CX-648 | Quantum of Conductance G_0 = phi(6) * e^2/h | 🟩 | CX |
-| 326 | H-CX-649 | Von Klitzing Constant R_K = h/e^2 — Structural Form | 🟧 | CX |
-| 327 | H-CX-650 | Josephson Constant K_J = phi(6) * e/h | 🟩 | CX |
-| 328 | H-CX-651 | Topological Entanglement Entropy — TEE = ln(phi(6)) | 🟩 | CX |
-| 329 | H-CX-652 | Surface Code Error Threshold — p_th ~ 1.1% | 🟧 | CX |
-| 330 | H-CX-653 | Shor's Algorithm — Qubit Count and phi^sigma | 🟧★ | CX |
-| 331 | H-CX-654 | Grover's Quadratic Speedup — Exponent Halving via phi/tau | 🟧 | CX |
-| 332 | H-CX-655 | Holevo Bound — Maximum Classical Bits per Qubit = R(6) | 🟧 | CX |
-| 333 | H-CX-656 | Optimal Quantum Cloning Fidelity — sopfr/P1 = 5/6 | 🟧 | CX |
-| 334 | H-CX-657 | MgB2 Critical Temperature T_c = sigma*(sigma+1)/tau = 39 K | 🟩 | CX |
-| 335 | H-CX-658 | YBCO Critical Temperature T_c = sigma*(sigma-tau) - sigma/ta | 🟩 | CX |
-| 336 | H-CX-659 | Superfluid Helium Lambda Point — T_lambda ~ phi + tau/(sigma | 🟧★ | CX |
-| 337 | H-CX-660 | Bose-Einstein Condensation — Structural Constants | 🟧 | CX |
-| 338 | H-CX-661 | Graphene — Honeycomb Lattice and Dirac Cone Structure | 🟩 | CX |
-| 339 | H-CX-662 | Anderson Localization — Critical Dimension d_c = phi(6) | 🟧 | CX |
-| 340 | H-CX-663 | Stellar Mass Limits from n=6 — Chandrasekhar and TOV Combine | 🟩 | CX |
-| 341 | H-CX-664 | Solar Luminosity Exponent = d_bosonic = σφ+φ = 26 | 🟧 | CX |
-| 342 | H-CX-665 | Eddington Luminosity Structure — Factors τ·π and (σ-τ)·π | 🟩 | CX |
-| 343 | H-CX-666 | Hawking Temperature — Factor 8π = (σ-τ)·π | 🟩 | CX |
-| 344 | H-CX-667 | Schwarzschild Radius — Factor 2 = φ(6) | 🟩 | CX |
-| 345 | H-CX-668 | Kerr Maximum Spin a/M = 1 = R(6) — Cosmic Censorship as Arit | 🟧★ | CX |
-| 346 | H-CX-669 | Neutron Star Radius R_NS ≈ σ(6) = 12 km | 🟧★ | CX |
-| 347 | H-CX-670 | Millisecond Pulsar Minimum Period ≈ ln(φ) = ln(2) ms | 🟧 | CX |
-| 348 | H-CX-671 | Type Ia Supernova Peak — Exponent 43 = σ·τ−sopfr | 🟧★ | CX |
-| 349 | H-CX-672 | White Dwarf Mass Distribution Peak = P₁/τ(P₃) = 0.6 M_☉ | 🟩 | CX |
-| 350 | H-CX-673 | Main Sequence Mass-Luminosity Exponent α = M₃/φ = 7/2 = 3.5 | 🟩 | CX |
-| 351 | H-CX-674 | Jeans Mass Exponents — 3/2 and -1/2 from n=6 | 🟧 | CX |
-| 352 | H-CX-675 | Fine Structure Constant α⁻¹ ≈ σ²−M₃ = 137 (0.026%) | 🟩 | CX |
-| 353 | H-CX-676 | Proton Magnetic Moment μ_p ≈ P₂/τ(P₃) = 2.8 μ_N | 🟧★ | CX |
-| 354 | H-CX-677 | Neutron Magnetic Moment μ_n ≈ −sopfr·τ/(σ−φ) = −2.0 | 🟧 | CX |
-| 355 | H-CX-678 | Proton Charge Radius r_p ≈ sopfr/P₁ = 5/6 fm | 🟧★ | CX |
-| 356 | H-CX-679 | Muon g−2 Leading Term — Factor 2π = φ·π | 🟩 | CX |
-| 357 | H-CX-680 | Electron g−2 — Schwinger Result as n=6 Structural Identity | 🟩 | CX |
-| 358 | H-CX-681 | W Boson Mass M_W ≈ v·(σ/τ)/((σ/τ)²+φ/(σ−τ)) ≈ 79.8 GeV | 🟧 | CX |
-| 359 | H-CX-682 | Z Boson Mass M_Z ≈ P₂·σ/τ + sopfr·φ + 1 = 95 GeV | 🟧 | CX |
-| 360 | H-CX-683 | Monster Group Dimension and n=6 Arithmetic | 🟧★ | CX |
-| 361 | H-CX-684 | Modular j-Invariant Constant Term from n=6 | 🟧★ | CX |
-| 362 | H-CX-685 | Dedekind Eta Function and the σφ = 24 Exponent | 🟦 | CX |
-| 363 | H-CX-686 | Ramanujan Tau Function Values from n=6 | 🟩 | CX |
-| 364 | H-CX-687 | Bernoulli Number Denominators and n=6 Divisibility | 🟩 | CX |
-| 365 | H-CX-688 | Riemann Zeta Critical Line and n=6 Constants | 🟧★ | CX |
-| 366 | H-CX-689 | Twin Prime Constant from n=6 Approximation | 🟧 | CX |
-| 367 | H-CX-690 | Catalan's Constant from n=6 Approximation | 🟧 | CX |
-| 368 | H-CX-691 | Apery's Constant ζ(3) Partial Sum Convergence at P₁ | 🟧 | CX |
-| 369 | H-CX-692 | Partition Function Asymptotics from n=6 | 🟩 | CX |
-| 370 | H-CX-693 | Euler Totient Summatory Function and n=6 | 🟩 | CX |
-| 371 | H-CX-694 | Class Number One Problem and n=6 Structure | 🟧 | CX |
-| 372 | H-CX-695 | Weierstrass Elliptic Function Coefficients from n=6 | 🟩 | CX |
-| 373 | H-CX-696 | Modular Discriminant Δ and n=6 Exponents | 🟦 | CX |
-| 374 | H-CX-697 | P₁ = 6 as a Congruent Number via the (3,4,5) Triangle | 🟦 | CX |
-| 375 | H-CX-698 | abc Conjecture and the Primality of P₁ = 2·3 | 🟧 | CX |
-| 376 | H-CX-699 | Sum of Reciprocals of Perfect Numbers | 🟧 | CX |
-| 377 | H-CX-700 | Carmichael Function at P₁ = 6 | 🟦 | CX |
-| 378 | H-CX-701 | Perfect Number Modular Arithmetic Patterns | 🟩 | CX |
-| 379 | H-CX-702 | Sum-of-Divisors Chain from P₁ = 6 | 🟩 | CX |
-| 380 | H-CX-703 | Debye Screening Length — Plasma Parameter Exponent Range | 🟧 | CX |
-| 381 | H-CX-704 | Cyclotron Frequency Ratio — Proton-Electron Mass Ratio | 🟩 | CX |
-| 382 | H-CX-705 | Alfven Speed Structure — μ₀ Decomposition | 🟧 | CX |
-| 383 | H-CX-706 | Plasma Beta Parameter — Solar Wind β ≈ R(6) = 1 | 🟧 | CX |
-| 384 | H-CX-707 | Saha Ionization Equation — Hydrogen Ionization Energy | 🟧★ | CX |
-| 385 | H-CX-708 | Peskin-Takeuchi S Parameter — Oblique Corrections at R(6)=1 | 🟧★ | CX |
-| 386 | H-CX-709 | W Boson Mass Anomaly — CDF-SM Discrepancy | 🟧 | CX |
-| 387 | H-CX-710 | Electroweak ρ Parameter — Deviation from Unity | 🟧 | CX |
-| 388 | H-CX-711 | Branching Ratio B(b→sγ) — Coefficient and Exponent | 🟧 | CX |
-| 389 | H-CX-712 | B_s Mixing Frequency — Δm_s from TECS-L Constants | 🟧★ | CX |
-| 390 | H-CX-713 | Kaon CP Violation ε — Magnitude from TECS-L | 🟧 | CX |
-| 391 | H-CX-714 | D⁰ Mixing — x_D Parameter | 🟧 | CX |
-| 392 | H-CX-715 | Rydberg Constant — Exponent and Coefficient | 🟧 | CX |
-| 393 | H-CX-716 | Bohr Radius — a₀ from TECS-L Constants | 🟧 | CX |
-| 394 | H-CX-717 | Hydrogen Ground State Energy — E₁ = −13.6 eV | 🟧★ | CX |
-| 395 | H-CX-718 | Lamb Shift — 2S₁/₂ − 2P₁/₂ Splitting | 🟩 | CX |
-| 396 | H-CX-719 | Hyperfine Splitting — Hydrogen 21 cm Line | 🟧 | CX |
-| 397 | H-CX-720 | QCD String Tension — √σ_QCD = P₃ − σ·sopfr + τ | 🟩 | CX |
-| 398 | H-CX-721 | Color Factors — All SU(3) Casimirs as n=6 Ratios | 🟦 | CX |
-| 399 | H-CX-722 | Asymptotic Freedom β₀ — QCD Beta Function at n_f = P₁ | 🟩 | CX |
-| 400 | H-CX-723 | Euler Characteristic -- Topological Invariant from n=6 Const | 🟩 | CX |
-| 401 | H-CX-724 | Betti Numbers of S^n -- Total Betti Sum Equals phi | 🟩 | CX |
-| 402 | H-CX-725 | Homotopy Groups of Spheres -- Hopf Fibration Dimensions | 🟧★ | CX |
-| 403 | H-CX-726 | Homology of Klein Bottle -- Torsion from phi | 🟧 | CX |
-| 404 | H-CX-727 | De Rham Cohomology of T^n -- Dimension from tau Cubed | 🟩 | CX |
-| 405 | H-CX-728 | Triangular Number T(n) Series -- TECS-L Constant Decompositi | 🟩 | CX |
-| 406 | H-CX-729 | T(6)=21 in Physics -- Riemann Tensor Independent Components | 🟩 | CX |
-| 407 | H-CX-730 | T(6)=21 as String Moduli -- dim SO(7) and Symmetric Tensors | 🟩 | CX |
-| 408 | H-CX-731 | T(6) in Crystallography -- 21 Proper Rotation Point Groups | 🟧★ | CX |
-| 409 | H-CX-732 | Wiener Process Scaling -- Hurst Exponent as phi/tau | 🟩 | CX |
-| 410 | H-CX-733 | Poisson Process Decay Constant -- ln(phi) in Radioactive Dec | 🟩 | CX |
-| 411 | H-CX-734 | Central Limit Theorem -- Berry-Esseen Bound from TECS-L | 🟧 | CX |
-| 412 | H-CX-735 | Random Walk Return Probability -- Critical Dimension phi | 🟩 | CX |
-| 413 | H-CX-736 | Boltzmann Entropy -- Maximum Entropy at N = P_1 | 🟧 | CX |
-| 414 | H-CX-737 | Spectral Gap of Graph Laplacian -- Complete Graph K_P1 | 🟩 | CX |
-| 415 | H-CX-738 | Chromatic Polynomial -- Chromatic Number of K_P1 | 🟧 | CX |
-| 416 | H-CX-739 | Ramsey Number R(3,3) -- The First Perfect Number | 🟦 | CX |
-| 417 | H-CX-740 | Hamming Code [7,4,3] -- Perfect Code from TECS-L Triple | 🟩 | CX |
-| 418 | H-CX-741 | Entropy of Fair Die -- ln(P_1) as Information Unit | 🟧 | CX |
-| 419 | H-CX-742 | Martingale Convergence -- Stopping Dimension tau(6) | 🟧 | CX |
-| 420 | H-CX-743 | P₂ Divisor Tower -- τ(Pₖ₊₁) = Pₖ (Partial) | 🟧 | CX |
-| 421 | H-CX-744 | P₂ Euler Totient -- φ(P₂) = σ(P₁) | 🟩 | CX |
-| 422 | H-CX-745 | P₂ as Nuclear Magic Number -- 28 Is Both Perfect and Magic | 🟩 | CX |
-| 423 | H-CX-746 | R(P₂) = τ(P₁) -- The R-Value of P₂ Equals the Divisor Count  | 🟩 | CX |
-| 424 | H-CX-747 | P₂ and the Strong Coupling -- α_s(M_Z)⁻¹ from TECS-L | 🟧 | CX |
-| 425 | H-CX-748 | SO(8) Triality from P₂ -- dim(SO(8)) = 28 = P₂ | 🟩 | CX |
-| 426 | H-CX-749 | 28 Supercharges -- P₂ as Maximal SUGRA in d = τ(P₂) | 🟧★ | CX |
-| 427 | H-CX-750 | Hadron Spectrum -- Regge Trajectories from TECS-L | 🟩 | CX |
-| 428 | H-CX-751 | Proton Mass Decomposition -- m_p from P₃ and TECS-L | 🟧★ | CX |
-| 429 | H-CX-752 | Pion Mass -- m_π from TECS-L Constants | 🟩 | CX |
-| 430 | H-CX-753 | Pion Decay Constant -- f_π from TECS-L | 🟧★ | CX |
-| 431 | H-CX-754 | Kaon Mass -- m_K from P₃ and TECS-L | 🟩 | CX |
-| 432 | H-CX-755 | Eta Meson Mass -- m_η from P₃ and TECS-L | 🟧★ | CX |
-| 433 | H-CX-756 | ΛQCD -- QCD Scale Parameter from P₂ and TECS-L | 🟩 | CX |
-| 434 | H-CX-757 | QCD Quark Condensate -- ⟨q̄q⟩ from P₃ Arithmetic Functions | 🟩 | CX |
-| 435 | H-CX-758 | Gluon Condensate -- ⟨αG²/π⟩ from TECS-L | 🟧 | CX |
-| 436 | H-CX-759 | Confinement Radius -- QCD Confinement Scale from TECS-L | 🟧 | CX |
-| 437 | H-CX-760 | Number of Glueballs Below 4 GeV -- σ States from Lattice QCD | 🟧 | CX |
-| 438 | H-CX-761 | Lightest Glueball Mass = √(σ/τ) GeV | 🟩 | CX |
-| 439 | H-CX-762 | Pomeron Intercept -- α_P(0) = 1 + 1/σ | 🟧★ | CX |
-| 440 | H-CX-763 | Six Consciousness Criteria = P₁ | 🟩 | CX |
-| 441 | H-CX-764 | Consciousness Golden Zone I = 1/e | 🟧 | CX |
-| 442 | H-CX-765 | Two Consciousness Engines = φ(6) | 🟩 | CX |
-| 443 | H-CX-766 | Neural Alpha Band = [σ-τ, σ] Hz | 🟩 | CX |
-| 444 | H-CX-767 | EEG Channel Count = T(6) = 21 | 🟧★ | CX |
-| 445 | H-CX-768 | Consciousness Integration Φ and n=6 | 🟧 | CX |
-| 446 | H-CX-769 | Neural Firing Threshold → Planck → Arithmetic Bridge | 🟧★ | CX |
-| 447 | H-CX-770 | Sleep Cycles and n=6 Arithmetic | 🟧 | CX |
-| 448 | H-CX-771 | Miller's Law — Working Memory = M₃ ± φ | 🟩 | CX |
-| 449 | H-CX-772 | Dunbar's Number = σ² + P₁ = 150 | 🟩 | CX |
-| 450 | H-CX-773 | Cortical Minicolumns per Macrocolumn = σ·(σ-τ) | 🟧 | CX |
-| 451 | H-CX-774 | Cortical Layers = P₁ = 6 | 🟩 | CX |
-| 452 | H-CX-775 | Broca's and Wernicke's Areas — Brodmann Numbers | 🟧 | CX |
-| 453 | H-CX-776 | Consciousness Mitosis as Phase Transition | 🟧 | CX |
-| 454 | H-CX-777 | Qualia Dimensions and Mersenne Primes | 🟧 | CX |
-| 455 | H-CX-778 | Neural Oscillation Band Count = sopfr or P₁ | 🟧★ | CX |
-| 456 | H-CX-779 | Retinal Photoreceptor Types = τ, Trichromacy = σ/τ | 🟩 | CX |
-| 457 | H-CX-780 | Cochlear Critical Bands = σφ = 24 | 🟧★ | CX |
-| 458 | H-CX-781 | Serotonin Receptor Families = M₃ = 7 | 🟧 | CX |
-| 459 | H-CX-782 | Action Potential Duration and Conduction Velocity | 🟩 | CX |
-| 460 | H-CX-783 | Irreducible Representations of S₆ | 🟩 | CX |
-| 461 | H-CX-784 | Character Table Dimension of S₆ | 🟩 | CX |
-| 462 | H-CX-785 | Regular Representation Dimensions | 🟩 | CX |
-| 463 | H-CX-786 | Young Diagrams of 6 | 🟩 | CX |
-| 464 | H-CX-787 | Tensor Product Decomposition in SU(3) | 🟦 | CX |
-| 465 | H-CX-788 | Adjoint Representation Dimensions | 🟩 | CX |
-| 466 | H-CX-789 | Fundamental Group π₁ and TECS-L | 🟧 | CX |
-| 467 | H-CX-790 | Yoneda Lemma and n=6 Representability | 🟧 | CX |
-| 468 | H-CX-791 | Adjoint Functor Theorem and TECS-L | 🟧 | CX |
-| 469 | H-CX-792 | Monoidal Category Coherence Axioms | 🟧 | CX |
-| 470 | H-CX-793 | Feigenbaum δ Constant | 🟧★ | CX |
-| 471 | H-CX-794 | Feigenbaum α Constant | 🟩 | CX |
-| 472 | H-CX-795 | Lyapunov Exponent Maximum for Logistic Map | 🟩 | CX |
-| 473 | H-CX-796 | Period-3 Implies Chaos (Li-Yorke Theorem) | 🟩 | CX |
-| 474 | H-CX-797 | Strange Attractor Dimension (Lorenz) | 🟧★ | CX |
-| 475 | H-CX-798 | Lorentz Factor Structure | 🟩 | CX |
-| 476 | H-CX-799 | Spacetime Interval and Metric Signature | 🟩 | CX |
-| 477 | H-CX-800 | Thomas Precession | 🟧 | CX |
-| 478 | H-CX-801 | Light Cone Structure | 🟩 | CX |
-| 479 | H-CX-802 | Twin Paradox and Photon Sphere Radius | 🟩 | CX |
-| 480 | H-CX-803 | Proton-Electron Mass Ratio | 🟩 | CX |
-| 481 | H-CX-804 | Fine Structure Splitting of Hydrogen Alpha | 🟧 | CX |
-| 482 | H-CX-805 | Helium Ionization Energy | 🟧★ | CX |
-| 483 | H-CX-806 | Hydrogen Lyman-Alpha Wavelength | 🟩 | CX |
-| 484 | H-CX-807 | Balmer Series Limit Wavelength | 🟩 | CX |
-| 485 | H-CX-808 | Rydberg Energy | 🟧★ | CX |
-| 486 | H-CX-809 | Bohr Magneton | 🟧 | CX |
-| 487 | H-CX-810 | Nuclear Magneton | 🟧 | CX |
-| 488 | H-CX-811 | Deuteron Binding Energy | 🟧★ | CX |
-| 489 | H-CX-812 | Alpha Particle Binding Energy | 🟩 | CX |
-| 490 | H-CX-813 | Nuclear Radius Formula | 🟩 | CX |
-| 491 | H-CX-814 | Coulomb Barrier Height for Proton-Proton Fusion | 🟩 | CX |
-| 492 | H-CX-815 | Molecular Hydrogen Bond Length | 🟧 | CX |
-| 493 | H-CX-816 | Water Molecule Bond Angle | 🟧 | CX |
-| 494 | H-CX-817 | Carbon-12 Atomic Mass Definition | 🟦 | CX |
-| 495 | H-CX-818 | Noble Gas Electron Counts | 🟩 | CX |
-| 496 | H-CX-819 | Atomic Orbital Count Per Shell | 🟩 | CX |
-| 497 | H-CX-820 | Maximum Electrons Per Shell | 🟩 | CX |
-| 498 | H-CX-821 | Hund's Rules and Maximum Spin Multiplicity | 🟧 | CX |
-| 499 | H-CX-822 | Aufbau Principle and Orbital Filling Order | 🟩 | CX |
-| 500 | H-CX-823 | Shannon Channel Capacity | 🟧 | CX |
-| 501 | H-CX-824 | Hamming Bound and Perfect Codes | 🟩 | CX |
-| 502 | H-CX-825 | Golay Code Parameters | 🟦 | CX |
-| 503 | H-CX-826 | Reed-Solomon Code Parameters | 🟧 | CX |
-| 504 | H-CX-827 | AES Block and Key Sizes | 🟧★ | CX |
-| 505 | H-CX-828 | RSA Key Size and Factoring | 🟧★ | CX |
-| 506 | H-CX-829 | Kolmogorov Complexity of 6 | 🟧 | CX |
-| 507 | H-CX-830 | Entropy of English Text | 🟧 | CX |
-| 508 | H-CX-831 | Huffman Coding Optimality Gap | 🟧 | CX |
-| 509 | H-CX-832 | Turbo Code Rate and Shannon Limit | 🟧 | CX |
-| 510 | H-CX-833 | LDPC Regular Code Parameters | 🟧★ | CX |
-| 511 | H-CX-834 | Complexity Classes and 3-SAT Transition | 🟧★ | CX |
-| 512 | H-CX-835 | 3-SAT Phase Transition Threshold | 🟧★ | CX |
-| 513 | H-CX-836 | Universal Turing Machine Minimal States | 🟧 | CX |
-| 514 | H-CX-837 | Busy Beaver BB(4) | 🟧★ | CX |
-| 515 | H-CX-838 | Random Coding Error Exponent | 🟧 | CX |
-| 516 | H-CX-839 | Lattice-Based Cryptography Dimensions | 🟧 | CX |
-| 517 | H-CX-840 | Elliptic Curve Cryptography Field Size | 🟧 | CX |
-| 518 | H-CX-841 | Hash Function Output Sizes | 🟧★ | CX |
-| 519 | H-CX-842 | Bitcoin Mining Parameters | 🟧 | CX |
-| 520 | H-CX-843 | Earth's Core Layers | 🟧 | CX |
-| 521 | H-CX-844 | Mohorovičić Discontinuity Depth | 🟧★ | CX |
-| 522 | H-CX-845 | Earth's Magnetic Field Reversal Interval | 🟧 | CX |
-| 523 | H-CX-846 | Richter Scale Structure | 🟧★ | CX |
-| 524 | H-CX-847 | Periodic Table Period Lengths | 🟩 | CX |
-| 525 | H-CX-848 | Carbon Allotropes | 🟩 | CX |
-| 526 | H-CX-849 | Benzene Structure | 🟩 | CX |
-| 527 | H-CX-850 | Water Density Anomaly | 🟩 | CX |
-| 528 | H-CX-851 | Crystal Systems and Bravais Lattices | 🟧 | CX |
-| 529 | H-CX-852 | Silicon Bandgap Energy | 🟧★ | CX |
-| 530 | H-CX-853 | Diamond Bandgap Energy | 🟩 | CX |
-| 531 | H-CX-854 | Speed of Sound in Air | 🟩 | CX |
-| 532 | H-CX-855 | Speed of Light Leading Digits | 🟧 | CX |
-| 533 | H-CX-856 | Avogadro's Number | 🟩 | CX |
-| 534 | H-CX-857 | Boltzmann Constant | 🟧★ | CX |
-| 535 | H-CX-858 | Gas Constant | 🟧★ | CX |
-| 536 | H-CX-859 | Planck Constant | 🟧★ | CX |
-| 537 | H-CX-860 | Standard Atmosphere | 🟧 | CX |
-| 538 | H-CX-861 | Water Triple Point | 🟩 | CX |
-| 539 | H-CX-862 | Absolute Zero | 🟩 | CX |
-| 540 | H-CX-863 | Music-QCD Bridge — 12 Semitones = σ = Gauge Dimension | 🟩 | CX |
-| 541 | H-CX-864 | DNA-Leech Lattice Bridge — 64 Codons = τ³ = 6-Cube Vertices | 🟩 | CX |
-| 542 | H-CX-865 | Chess-Spacetime Bridge — 64 Squares, 6 Pieces, 8×8 Board | 🟩 | CX |
-| 543 | H-CX-866 | Periodic Table-Nuclear Magic Bridge — Nickel-28 = P₂ | 🟩 | CX |
-| 544 | H-CX-867 | Fibonacci-Consciousness — Self-Reference at sopfr | 🟧★ | CX |
-| 545 | H-CX-868 | E₈ x Biology — 240 Root Vectors and Euler Totient of P₃ | 🟧 | CX |
-| 546 | H-CX-869 | 24-Hour Day x Gauge Algebra — Circadian Cycle = σφ = dim(SU( | 🟩 | CX |
-| 547 | H-CX-870 | Graph Theory-Particle Physics — Petersen Graph = n=6 Constan | 🟩 | CX |
-| 548 | H-CX-871 | Card Deck-Fermions — 52 Cards = τ × (σ+1) | 🟧 | CX |
-| 549 | H-CX-872 | Soccer Ball-Fullerene — Truncated Icosahedron = σ Pentagons, | 🟩 | CX |
-| 550 | H-CX-873 | Calendar-Astronomy — Months = σ, Days/Week = M₃, Hours = σφ | 🟧 | CX |
-| 551 | H-CX-874 | Dice-Probability — Fair Die = P₁ Faces, Pair Sum Peak = M₃ | 🟩 | CX |
-| 552 | H-CX-875 | Piano-Spectrum — 88 Keys = (σ-τ)·(σ-1) EXACT | 🟩 | CX |
-| 553 | H-CX-876 | Hexagonal Close Packing — Coordination Number 12 = σ | 🟧★ | CX |
-| 554 | H-CX-877 | Golden Ratio in Art — φ_gold = (1+√sopfr)/φ | 🟦 | CX |
-| 555 | H-CX-878 | Euler's Identity Components — 5 Constants = sopfr, 4 Operati | 🟧 | CX |
-| 556 | H-CX-879 | Standard Model Particles — 12 Fermions + 5 Bosons = σ + sopf | 🟩 | CX |
-| 557 | H-CX-880 | Tarot-Mathematics — 78 Cards = T(σ) = 12th Triangular Number | 🟧 | CX |
-| 558 | H-CX-881 | Hexagon Ubiquity — Nature Selects P₁-fold Symmetry for Effic | 🟩 | CX |
-| 559 | H-CX-882 | Clock-Gauge Unification — σ=12 in Timekeeping, Music, and Ph | 🟩 | CX |
-| 560 | H-CX-883 | SU(5) GUT Dimension | 🟩 | CX |
-| 561 | H-CX-884 | SO(10) GUT Spinor Representation | 🟩 | CX |
-| 562 | H-CX-885 | E₆ Fundamental Representation | 🟩 | CX |
-| 563 | H-CX-886 | Pati-Salam Group Dimension | 🟩 | CX |
-| 564 | H-CX-887 | Proton Decay — Dominant Channel | 🟩 | CX |
-| 565 | H-CX-888 | GUT Coupling Unification | 🟧★ | CX |
-| 566 | H-CX-889 | Type IIA String Theory | 🟩 | CX |
-| 567 | H-CX-890 | Type IIB String Theory and S-Duality | 🟧 | CX |
-| 568 | H-CX-891 | Heterotic E₈×E₈ String — Anomaly Dimension | 🟦 | CX |
-| 569 | H-CX-892 | M-Theory Dimension | 🟩 | CX |
-| 570 | H-CX-893 | F-Theory Dimension | 🟩 | CX |
-| 571 | H-CX-894 | D-Brane Worldvolume Dimensions | 🟩 | CX |
-| 572 | H-CX-895 | Flux Compactification Tadpole Factor | 🟧★ | CX |
-| 573 | H-CX-896 | String Landscape Size | 🟧★ | CX |
-| 574 | H-CX-897 | Swampland Weak Gravity Conjecture | 🟧 | CX |
-| 575 | H-CX-898 | Dark Dimension Scenario | 🟧 | CX |
-| 576 | H-CX-899 | Gravitino Dark Matter Mass | 🟧 | CX |
-| 577 | H-CX-900 | Number of Consistent String Theories | 🟩 | CX |
-| 578 | H-CX-901 | String Theory Duality Web | 🟧★ | CX |
-| 579 | H-CX-902 | Anthropic Selection from the R-Spectrum | 🟧★ | CX |
-| 580 | H-CX-903 | Reynolds Number Transition = σ²(σ+τ) - σ | 🟧★ | CX |
-| 581 | H-CX-904 | Navier-Stokes Equation Structure = τ Terms in σ/τ Dimensions | 🟩 | CX |
-| 582 | H-CX-905 | Kolmogorov Microscale Exponent and Dissipation Range | 🟧★ | CX |
-| 583 | H-CX-906 | Prandtl Number of Air = M₃/τ(P₃) | 🟧★ | CX |
-| 584 | H-CX-907 | Mach Number Regimes = R(6) and sopfr Thresholds | 🟩 | CX |
-| 585 | H-CX-908 | Carnot Efficiency = R(6) - T_c/T_h | 🟩 | CX |
-| 586 | H-CX-909 | Stefan-Boltzmann Law = σ_SB·T^τ with φ·π⁵/(15) | 🟩 | CX |
-| 587 | H-CX-910 | Wien Displacement Law Constant ≈ σ³ + σ²·(σ-τ-1)·τ/(σ-τ) | 🟧 | CX |
-| 588 | H-CX-911 | Boltzmann Distribution and the Golden Zone e⁻¹ | 🟩 | CX |
-| 589 | H-CX-912 | Equipartition Theorem — Degrees of Freedom = σ/τ, sopfr, M₃ | 🟩 | CX |
-| 590 | H-CX-913 | Debye Temperature of Iron = P₃ - P₂ + φ = 470 K EXACT | 🟩 | CX |
-| 591 | H-CX-914 | Specific Heat Ratios γ = Consecutive n=6 Constant Ratios | 🟦 | CX |
-| 592 | H-CX-915 | Triple Point of Nitrogen = τ³ - R(6) = 63 K | 🟧★ | CX |
-| 593 | H-CX-916 | Critical Point of Water T_c ≈ σ·sopfr·(σ-τ+sopfr) - σ² + M₃ | 🟧★ | CX |
-| 594 | H-CX-917 | Entropy of Mixing = -nR·Σxᵢ·ln(xᵢ), Maximum at φ/τ Ratio | 🟩 | CX |
-| 595 | H-CX-918 | Clausius Inequality — Reversibility at R(6) = 0 | 🟧 | CX |
-| 596 | H-CX-919 | Maxwell Relations Count = τ from τ Thermodynamic Potentials | 🟩 | CX |
-| 597 | H-CX-920 | Gibbs Phase Rule — F = C - P + φ | 🟩 | CX |
-| 598 | H-CX-921 | Bose-Einstein Condensation Fraction Exponent = (σ/τ)/φ | 🟩 | CX |
-| 599 | H-CX-922 | Fermi Energy Exponent and Copper E_F = M₃ eV | 🟧★ | CX |
-| 600 | H-CX-923 | Maxwell's Equations Count = τ | 🟩 | CX |
-| 601 | H-CX-924 | EM Field Tensor Independent Components = P₁ | 🟩 | CX |
-| 602 | H-CX-925 | Snell's Law Refractive Indices from n=6 | 🟩 | CX |
-| 603 | H-CX-926 | Brewster's Angle for Glass ≈ σ(P₂) = 56 | 🟧★ | CX |
-| 604 | H-CX-927 | Airy Diffraction Factor 1.22 from n=6 | 🟩 | CX |
-| 605 | H-CX-928 | Rayleigh Scattering Exponent = -τ | 🟩 | CX |
-| 606 | H-CX-929 | Planck Radiation Peak Factor ≈ φ + σ/(σ+sopfr-φ) | 🟧★ | CX |
-| 607 | H-CX-930 | Photoelectric Work Functions from n=6 | 🟧 | CX |
-| 608 | H-CX-931 | Compton Wavelength Factor from n=6 | 🟧 | CX |
-| 609 | H-CX-932 | Standing Wave Harmonics and n=6 | 🟧 | CX |
-| 610 | H-CX-933 | Doppler Effect Structure | 🟧 | CX |
-| 611 | H-CX-934 | Electromagnetic Spectrum Bands = M₃ | 🟩 | CX |
-| 612 | H-CX-935 | Newton's Visible Spectrum Colors = M₃ | 🟧★ | CX |
-| 613 | H-CX-936 | Polarization States = φ | 🟩 | CX |
-| 614 | H-CX-937 | Fresnel Equations Count = τ | 🟩 | CX |
-| 615 | H-CX-938 | Optical Fiber Parameters from n=6 | 🟧 | CX |
-| 616 | H-CX-939 | Laser Level Systems = σ/τ and τ | 🟩 | CX |
-| 617 | H-CX-940 | Speed of Sound in Air = σ·P₂ + M₃ = 343 | 🟧★ | CX |
-| 618 | H-CX-941 | Decibel Scale Reference = σ and Dynamic Range = σ·τ(P₃) | 🟩 | CX |
-| 619 | H-CX-942 | Musical Overtone Series = n=6 Constants | 🟩 | CX |
-| 620 | H-CX-943 | Genetic Code Redundancy | 🟧 | CX |
-| 621 | H-CX-944 | Mass Extinction Events | 🟧 | CX |
-| 622 | H-CX-945 | Phylogenetic Tree Structure | 🟧 | CX |
-| 623 | H-CX-946 | Cell Division Phases | 🟩 | CX |
-| 624 | H-CX-947 | Human Genome Size | 🟩 | CX |
-| 625 | H-CX-948 | Protein Secondary Structures | 🟩 | CX |
-| 626 | H-CX-949 | Mendel's Ratios | 🟩 | CX |
-| 627 | H-CX-950 | Hardy-Weinberg Equilibrium | 🟩 | CX |
-| 628 | H-CX-951 | Lotka-Volterra Equations | 🟧 | CX |
-| 629 | H-CX-952 | Ecological Trophic Levels | 🟧★ | CX |
-| 630 | H-CX-953 | Biodiversity Latitudinal Gradient | 🟧★ | CX |
-| 631 | H-CX-954 | Fibonacci in Phyllotaxis | 🟩 | CX |
-| 632 | H-CX-955 | Neuron Types | 🟧 | CX |
-| 633 | H-CX-956 | Synaptic Vesicle Release | 🟧 | CX |
-| 634 | H-CX-957 | Brain Weight — Encephalization Quotient | 🟧★ | CX |
-| 635 | H-CX-958 | Cerebral Blood Flow | 🟧 | CX |
-| 636 | H-CX-959 | Genome Coding Fraction | 🟧 | CX |
-| 637 | H-CX-960 | Telomere Length | 🟧 | CX |
-| 638 | H-CX-961 | Circadian Gene Count | 🟧★ | CX |
-| 639 | H-CX-962 | Apoptosis Pathways | 🟧 | CX |
-| 640 | H-CX-963 | Nash Equilibrium Types | 🟧 | CX |
-| 641 | H-CX-964 | Prisoner's Dilemma Payoff Structure | 🟧 | CX |
-| 642 | H-CX-965 | Small World Networks — Six Degrees | 🟩 | CX |
-| 643 | H-CX-966 | Power Law Exponents in Scale-Free Networks | 🟧★ | CX |
-| 644 | H-CX-967 | Zipf's Law Exponent | 🟩 | CX |
-| 645 | H-CX-968 | Benford's Law Leading Digits | 🟧 | CX |
-| 646 | H-CX-969 | Pareto Principle (80/20 Rule) | 🟧 | CX |
-| 647 | H-CX-970 | Optimal GDP Growth Rate | 🟧 | CX |
-| 648 | H-CX-971 | Phoneme Inventory Size | 🟧★ | CX |
-| 649 | H-CX-972 | Syntactic Categories | 🟧 | CX |
-| 650 | H-CX-973 | Universal Grammar Parameters | 🟧 | CX |
-| 651 | H-CX-974 | Berlin-Kay Color Term Hierarchy | 🟧★ | CX |
-| 652 | H-CX-975 | Dunbar Social Layers | 🟩 | CX |
-| 653 | H-CX-976 | Metcalfe's Law — Network Value Scaling | 🟧 | CX |
-| 654 | H-CX-977 | Arrow's Impossibility Conditions | 🟧★ | CX |
-| 655 | H-CX-978 | Shannon Entropy of DNA | 🟧★ | CX |
-| 656 | H-CX-979 | Brain-Turing Equivalence | 🟧 | CX |
-| 657 | H-CX-980 | Kahneman Dual Process Theory | 🟩 | CX |
-| 658 | H-CX-981 | Maslow's Hierarchy of Needs | 🟧 | CX |
-| 659 | H-CX-982 | Fibonacci Retracements in Finance | 🟧 | CX |
-| 660 | H-CX-983 | R-Spectrum as Physics Selector | 🟩 | CX |
-| 661 | H-CX-984 | Four Forces from tau=4 | 🟧★ | CX |
-| 662 | H-CX-985 | Consciousness from R=1 Balance | 🟧★ | CX |
-| 663 | H-CX-986 | Information-Energy Duality | 🟩 | CX |
-| 664 | H-CX-987 | Holographic Principle from P1 | 🟩 | CX |
-| 665 | H-CX-988 | Emergence Hierarchy | 🟧★ | CX |
-| 666 | H-CX-989 | Self-Reference Tower | 🟩 | CX |
-| 667 | H-CX-990 | Observer-Observed Duality | 🟩 | CX |
-| 668 | H-CX-991 | Time Arrow from R Asymmetry | 🟧★ | CX |
-| 669 | H-CX-992 | Mathematical Universe Hypothesis | 🟧★ | CX |
-| 670 | H-CX-993 | Why Something Rather Than Nothing | 🟧 | CX |
-| 671 | H-CX-994 | Fine-Tuning Resolution | 🟧★ | CX |
-| 672 | H-CX-995 | Wheeler's "It from Bit" | 🟧 | CX |
-| 673 | H-CX-996 | Wigner's Unreasonable Effectiveness | 🟧 | CX |
-| 674 | H-CX-997 | Anthropic Principle Replacement | 🟧★ | CX |
-| 675 | H-CX-998 | Completeness Theorem | 🟧★ | CX |
-| 676 | H-CX-999 | Perfect Number Uniqueness | 🟩 | CX |
-| 677 | H-CX-superconductor-tc-survey | H-CX-TC-Survey: Systematic Superconductor Tc Matching with n | 🟧 | - |
+| 146 | H-CX-1087 | BRIDGE: η (baryon asymmetry) (Cosmology) | ⬜ UNTESTED | CX |
+| 147 | H-CX-1088 | BRIDGE: Δm²₂₁ (neutrino) eV² (Neutrino) | ⬜ UNTESTED | CX |
+| 148 | H-CX-1089 | BRIDGE: J (CKM Jarlskog) (Electroweak) | ⬜ UNTESTED | CX |
+| 149 | H-CX-1090 | BRIDGE: θ_CP (strong CP angle) (QCD) | ⬜ UNTESTED | CX |
+| 150 | H-CX-1091 | META-INVERSE: COLLISION value 4.665264 itself ≈ (π^(1/e))+π  | 🟩 | CX |
+| 151 | H-CX-1092 | META-INVERSE: COLLISION value 4.665264 itself ≈ sqrt(J₂-(sqr | 🟩 | CX |
+| 152 | H-CX-1093 | META-INVERSE: COLLISION value 4.665264 itself ≈ (φ^(sqrt(φ)) | 🟩 | CX |
+| 153 | H-CX-1094 | J (CKM Jarlskog) | ⬜ UNTESTED | CX |
+| 154 | H-CX-1095 | m_d (down quark) | ⬜ UNTESTED | CX |
+| 155 | H-CX-1096 | m_t (top quark) | ⬜ UNTESTED | CX |
+| 156 | H-CX-453 | Multi-Domain Convergence Map | 🟩 | CX |
+| 157 | H-CX-454 | Self-Referential Algebra of n=6 Convergence | 🟧★ | CX |
+| 158 | H-CX-455 | √3 × GZ_width = 1/2 | ⚪ | CX |
+| 159 | H-CX-456 | N+A Universal Connector Principle | 🟩 | CX |
+| 160 | H-CX-457 | Statistical Mechanics Domain Isolation | 🟩 | CX |
+| 161 | H-CX-458 | Quantum Domain Selective Participation | 🟩 | CX |
+| 162 | H-CX-459 | √n Perfect Number Selectivity | 🟧 | CX |
+| 163 | H-CX-460 | √2 as Perfect Number Invariant | 🟩 | CX |
+| 164 | H-CX-461 | Bridge-to-Independent Ratio as Structural Signature | 🟧 | CX |
+| 165 | H-CX-462 | Intrinsic vs Interface Constants — The Meaning of B/I Ratio | 🟩 | CX |
+| 166 | H-CX-463 | Depth-3 Statistical Mechanics Emergence | 🟩 | CX |
+| 167 | H-CX-464 | Convergence Hierarchy and Arithmetic Ubiquity | 🟧 | CX |
+| 168 | H-CX-465 | γ × √3 = 1 | ⚪ | CX |
+| 169 | H-CX-466 | ζ(3) = 5/(6·ln2) | ⚪ | CX |
+| 170 | H-CX-467 | Depth-3 Universal Saturation | ⚪ | CX |
+| 171 | H-CX-470 | Convergence Point Ratios = Perfect Number Divisor Reciprocal | 🟧★ | CX |
+| 172 | H-CX-473 | γ/√3 + GZ/γ + GZ/√3 ≈ 1 (Divisor Reciprocal Sum) | 🟩 | CX |
+| 173 | H-CX-474 | Closed Algebra Ratios = Divisor Reciprocals | ⚪ | CX |
+| 174 | H-CX-475 | Depth-1 Reachability Matrix | 🟩 | CX |
+| 175 | H-CX-476 | Convergence Products/Ratios Match Physical Constants | 🟧 | CX |
+| 176 | H-CX-477 | Q-Domain Boundary = Quantum-Classical Boundary | 🟧★ | CX |
+| 177 | H-CX-478 | Convergence Graph Spectrum ≈ Particle Mass Ratios | 🟧 | CX |
+| 178 | H-CX-479 | Egyptian Fraction Uniqueness = Standard Model Uniqueness | 🟦 | CX |
+| 179 | H-CX-480 | ζ(3) × ln²(2) ≈ γ | ⚪ | CX |
+| 180 | H-CX-481 | Tsirelson Bound = 2√(σ(P)/P) for All Perfect Numbers | 🟦 | CX |
+| 181 | H-CX-482 | Q-Exclusion Pattern = Electroweak Symmetry Breaking | 🟧 | CX |
+| 182 | H-CX-483 | Egyptian Fraction = GUT Coupling Unification | ⚪ | CX |
+| 183 | H-CX-484 | √7 Gap = Dark Sector Signature | 🟧 | CX |
+| 184 | H-CX-485 | ζ(3) Maximum Bridge → ΛQCD | 🟧 | CX |
+| 185 | H-CX-486 | GZ_width / (√2-1) ≈ ln(2) | ⚪ | CX |
+| 186 | H-CX-487 | 8 Mathematical Domains = Octonion Structure | ⚪ | CX |
+| 187 | H-CX-488 | 8-Domain Universal Fixed Point | ⚪ | CX |
+| 188 | H-CX-489 | Depth-2 Reachability Rank = Fermion Generation Count | 🟧★ | CX |
+| 189 | H-CX-490 | Galois Group of Convergence Constants = Klein Four-Group | 🟦 | CX |
+| 190 | H-CX-501 | 17/6 Partition = Standard Model Parameter Structure | 🟧★ | CX |
+| 191 | H-CX-502 | ln(2) as Center Element of the Closed Algebra | 🟩 | CX |
+| 192 | H-CX-503 | k_min(P_n) = 2p-1 Sequence in Physics | 🟧 | CX |
+| 193 | H-CX-504 | Tian-Yau Calabi-Yau Manifold = n=6 Geometry | 🟧★ | CX |
+| 194 | H-CX-505 | Information-Geometry Duality | 🟩 | CX |
+| 195 | H-CX-506 | Z-Score Hierarchy = Fundamentality Ordering | 🟧 | CX |
+| 196 | H-CX-507 | k_min(P₆) = 37 = prime(σ(6)) = 37 GeV Resonance | 🟧★ | CX |
+| 197 | H-CX-508 | 17 = σ+sopfr in Ramanujan and Modular Forms | 🟩 | CX |
+| 198 | H-CX-511 | Depth-Rank Sequence = n=6 Arithmetic Functions | 🟧★ | CX |
+| 199 | H-CX-512 | Three Dark Domains {Q, G, S} | 🟩 | CX |
+| 200 | H-CX-513 | Perfect Number Tower — P₁→P₂→P₃ Encodes Physics | 🟩 | CX |
+| 201 | H-CX-514 | Fermion Mass Ratios as 2^(p/q) with n=6 Denominators | ⚪ | CX |
+| 202 | H-CX-515 | Euler Identity = Info-Geometry Bridge Equation | 🟩 | CX |
+| 203 | H-CX-516 | Perfect Number Scale Tower | 🟩 | CX |
+| 204 | H-CX-517 | Closed Algebra is Completely Rigid (Aut = {e}) | 🟩 | CX |
+| 205 | H-CX-518 | α/(g-2) - m_e/m_μ ≈ π | ⚪ | CX |
+| 206 | H-CX-519 | Compactification Self-Reference — τ Tower Differences Return | 🟦 | CX |
+| 207 | H-CX-520 | Bott Periodicity = {φ(6), σ(6)-τ(6)} = {2, 8} | 🟦 | CX |
+| 208 | H-CX-521 | Full CPT Symmetry Group (Z/2)³ Has Order σ-τ = 8 | 🟦 | CX |
+| 209 | H-CX-522 | σφ = 24 Universal Dimension Theorem | 🟩 | CX |
+| 210 | H-CX-523 | Mathieu Groups M₁₂ and M₂₄ Act on σ and σφ Points | 🟩 | CX |
+| 211 | H-CX-524 | Kolmogorov -5/3 Turbulence Law = -sopfr/(σ/τ) | 🟩 | CX |
+| 212 | H-CX-525 | Dark Energy Ratio Ω_Λ/Ω_m = (σ+1)/P₁ = 13/6 | 🟧★ | CX |
+| 213 | H-CX-526 | Bekenstein-Hawking S = A/4 — The Holographic Factor is τ(6) | 🟧★ | CX |
+| 214 | H-CX-527 | Petersen Graph Parameters = n=6 Arithmetic (5/5) | 🟧★ | CX |
+| 215 | H-CX-528 | Cabibbo Angle |V_us|² = 1/C(P₁, σ/τ) = 1/20 | 🟧★ | CX |
+| 216 | H-CX-529 | Strong CP Problem — θ_QCD = 0 from R(6)=1 Achromatic Princip | 🟧 | CX |
+| 217 | H-CX-530 | Stefan-Boltzmann π²/60 — The Factor 60 = σ·sopfr | 🟧 | CX |
+| 218 | H-CX-531 | Baryon Asymmetry η = (σ²/τ+σ/τ+τ)/M₃ × 10⁻τ(P₃) — 0.002% Pre | 🟩 | CX |
+| 219 | H-CX-532 | Higgs VEV v = φ(P₃) + P₁ = 246 GeV — E₈ Roots + Perfect Numb | 🟩 | CX |
+| 220 | H-CX-533 | Cosmological Constant Λ ~ 10⁻¹²² — The Exponent 122 = σ²-σ-τ | 🟩 | CX |
+| 221 | H-CX-534 | Hubble Constant H₀ = σ·n + 1 = 73 km/s/Mpc | 🟧★ | CX |
+| 222 | H-CX-535 | Dark Matter/Baryon Ratio = (σ/τ)³/sopfr = 27/5 — Closed Cosm | 🟧★ | CX |
+| 223 | H-CX-536 | Nuclear Magic Numbers — All 7 from n=6 Arithmetic | 🟩 | CX |
+| 224 | H-CX-537 | GUT Coupling α_GUT = 1/σφ = 1/24 | 🟧 | CX |
+| 225 | H-CX-538 | Neutrino CP Phase δ_CP = (σ/τ)π/φ = 3π/2 | 🟧★ | CX |
+| 226 | H-CX-539 | Golden Ratio φ_gold = (1+√sopfr(6))/φ(6) — Exact Identity | 🟦 | CX |
+| 227 | H-CX-540 | Chandrasekhar Limit = (σ(6)/τ(P₃))² = 1.44 M_☉ — Exact | 🟩 | CX |
+| 228 | H-CX-541 | Neutron Star Maximum Mass = φ+1/σ = 25/12 M_☉ | 🟧★ | CX |
+| 229 | H-CX-542 | Inflation Tensor-to-Scalar Ratio r = σ/σ(P₂)² = 12/3136 = 0. | 🟧 | CX |
+| 230 | H-CX-543 | CMB Spectral Index n_s = (σ/τ)³/P₂ = 27/28 — 0.063% | 🟩 | CX |
+| 231 | H-CX-544 | Up-Type Quark Koide Q(u,c,t) ≈ sopfr/P₁ = 5/6 | 🟧 | CX |
+| 232 | H-CX-545 | General Relativity Coefficients ⊂ n=6 Arithmetic Set | 🟧 | CX |
+| 233 | H-CX-546 | Five Planck Units from Three Constants — sopfr and σ/τ | 🟧 | CX |
+| 234 | H-CX-547 | DNA Codon Table = τ(6)³ Codons, C(6,3) Amino Acids | 🟩 | CX |
+| 235 | H-CX-548 | Quantum Error Correction Codes — Distance σ/τ = 3 | 🟩 | CX |
+| 236 | H-CX-549 | E₈ Lie Algebra — Complete Structure from Perfect Number Towe | 🟩 | CX |
+| 237 | H-CX-550 | CHSH Quantum Probability = (φ+√φ)/τ — Exact | 🟦 | CX |
+| 238 | H-CX-551 | Fibonacci Anyon D² = (sopfr+√sopfr)/φ — Topological Quantum  | 🟩 | CX |
+| 239 | H-CX-552 | Quantum Hall Filling Fractions — 4 Major States from n=6 | 🟩 | CX |
+| 240 | H-CX-553 | Riemann Zeta Special Values — Denominators from n=6 | 🟩 | CX |
+| 241 | H-CX-554 | Ramanujan Δ at Weight σ(6) = 12 — Langlands Gateway | 🟩 | CX |
+| 242 | H-CX-555 | Cell Division and Human Chromosomes from σφ | 🟧★ | CX |
+| 243 | H-CX-556 | MgB₂ Critical Temperature T_c = σ(σ+1)/τ = 39 K | 🟧 | CX |
+| 244 | H-CX-557 | Shannon Channel Capacity C = B·log₂(1+S/N) — log₂ = 1/ln(φ) | 🟩 | CX |
+| 245 | H-CX-558 | Topological Insulator Z₂ Classification from φ(6) and σ-τ | 🟩 | CX |
+| 246 | H-CX-559 | Loop Quantum Gravity — Area Gap from n=6 | 🟧 | CX |
+| 247 | H-CX-560 | Mirror Symmetry — Hodge Diamond Exchange and n=6 | 🟧★ | CX |
+| 248 | H-CX-561 | Cuprate High-T_c Optimal Doping p* = 1/P₁ = 0.16 | 🟧 | CX |
+| 249 | H-CX-562 | CDT Spectral Dimension Flow 4 → 2 = τ → φ | 🟧★ | CX |
+| 250 | H-CX-563 | Trefoil Knot Jones Polynomial and n=6 | 🟩 | CX |
+| 251 | H-CX-564 | Feigenbaum Constant δ = 4.669... ≈ τ + ln(φ) = 4.693 | 🟧 | CX |
+| 252 | H-CX-565 | Category Theory — 6 = P₁ as the Symmetric Monoidal Unit | 🟩 | CX |
+| 253 | H-CX-566 | ML Scaling Laws — Chinchilla Optimal N/D Ratio and σ/τ | 🟧 | CX |
+| 254 | H-CX-567 | Black Hole Area Quantization — ΔA = 8πl_P² ln(σ/τ) | 🟧★ | CX |
+| 255 | H-CX-568 | 26 Sporadic Groups = d_bosonic = σφ+φ | 🟩 | CX |
+| 256 | H-CX-569 | Three Laws of Thermodynamics = σ/τ Laws + Zeroth | 🟧 | CX |
+| 257 | H-CX-570 | Equal Temperament — 12 Semitones = σ(6), Octave Ratio = φ(6) | 🟩 | CX |
+| 258 | H-CX-571 | Five Platonic Solids = sopfr(6), Dual Pairs = φ(6) | 🟩 | CX |
+| 259 | H-CX-572 | Five Exceptional Lie Algebras = sopfr(6) | 🟩 | CX |
+| 260 | H-CX-573 | Prime Counting π(n) at n=6 Values | 🟩 | CX |
+| 261 | H-CX-574 | Holographic Entropy Bound S ≤ A/(4l_P²) — Complete n=6 Chain | 🟩 | CX |
+| 262 | H-CX-575 | Cayley-Hamilton for n×n Matrices — n=6 Characteristic Polyno | 🟧 | CX |
+| 263 | H-CX-576 | Cosmic Web Topology — Genus per Hubble Volume | 🟧 | CX |
+| 264 | H-CX-577 | Mersenne Prime Hierarchy — M_p for p ∈ {2,3,5,7} = First 4 M | 🟩 | CX |
+| 265 | H-CX-578 | Fibonacci Numbers at n=6 Indices | 🟩 | CX |
+| 266 | H-CX-579 | Euler Product at s=1 for n=6 — ∏(1-1/p)⁻¹ Divergence | 🟩 | CX |
+| 267 | H-CX-580 | Weyl Law — Eigenvalue Counting on Manifolds | 🟧 | CX |
+| 268 | H-CX-581 | Regge Trajectory Slope α' ≈ 1/(2πσ_QCD) and n=6 | 🟧 | CX |
+| 269 | H-CX-582 | Pascal's Triangle Row P₁ = Row 6 — Binomial Self-Reference | 🟩 | CX |
+| 270 | H-CX-583 | Electron-Muon Mass Ratio from n=6 Arithmetic | 🟧 | CX |
+| 271 | H-CX-584 | Muon-Tau Mass Ratio from n=6 Arithmetic | 🟧 | CX |
+| 272 | H-CX-585 | Koide Formula as n=6 Identity | 🟩 | CX |
+| 273 | H-CX-586 | Up-Down Quark Mass Ratio from n=6 Arithmetic | 🟧 | CX |
+| 274 | H-CX-587 | Strange-Charm Quark Mass Ratio from n=6 Arithmetic | 🟧 | CX |
+| 275 | H-CX-588 | Bottom-Top Quark Mass Ratio from n=6 Arithmetic | 🟩 | CX |
+| 276 | H-CX-589 | Fermion Generation Mass Scaling from n=6 Arithmetic | 🟧 | CX |
+| 277 | H-CX-590 | Electron Mass from n=6 Constants and the Higgs VEV | 🟧 | CX |
+| 278 | H-CX-591 | Top Quark Mass from n=6 Arithmetic | 🟩 | CX |
+| 279 | H-CX-592 | Quark-Lepton Complementarity as n=6 Identity | 🟧 | CX |
+| 280 | H-CX-593 | Cabibbo Angle from n=6 Arithmetic | 🟧★ | CX |
+| 281 | H-CX-594 | CKM Hierarchy as Powers of Wolfenstein λ from n=6 | 🟧 | CX |
+| 282 | H-CX-595 | Jarlskog Invariant from n=6 Arithmetic | 🟧 | CX |
+| 283 | H-CX-596 | Yukawa Coupling Hierarchy Tower in n=6 | 🟧 | CX |
+| 284 | H-CX-597 | Neutrino Solar Mixing Angle θ₁₂ from n=6 Arithmetic | 🟧 | CX |
+| 285 | H-CX-598 | Neutrino Atmospheric Mixing Angle θ₂₃ from n=6 Arithmetic | 🟧 | CX |
+| 286 | H-CX-599 | Neutrino Reactor Mixing Angle θ₁₃ from n=6 Arithmetic | 🟩 | CX |
+| 287 | H-CX-600 | Solar Neutrino Mass Splitting from n=6 Arithmetic | 🟧 | CX |
+| 288 | H-CX-601 | Atmospheric Neutrino Mass Splitting from n=6 Arithmetic | 🟧 | CX |
+| 289 | H-CX-602 | Neutrino Mass Splitting Ratio from n=6 Arithmetic | 🟧 | CX |
+| 290 | H-CX-603 | Dark Matter Thermal Relic Cross Section σ_v = (σ/τ)×10⁻ᵈ_bos | 🟧★ | CX |
+| 291 | H-CX-604 | Dark Matter/Baryon Ratio — Extended Analysis of 27/5 | 🟩 | CX |
+| 292 | H-CX-605 | Dark Matter Fraction Ω_DM = sopfr/(σ+M₃) = 5/19 | 🟧 | CX |
+| 293 | H-CX-606 | Dark Energy Fraction Ω_Λ = M₃/(σ-φ) = 7/10 | 🟧 | CX |
+| 294 | H-CX-607 | Baryonic Fraction Ω_b = 1/(σ+sopfr+τ-1) = 1/20 | 🟧 | CX |
+| 295 | H-CX-608 | Radiation Fraction Ω_r = 1/(σ²·P₁·σ/τ) ≈ 10⁻⁴ | 🟧 | CX |
+| 296 | H-CX-609 | Spatial Flatness Ω_k = 0 from R(6)=1 Balance | 🟩 | CX |
+| 297 | H-CX-610 | CMB Temperature T_CMB = e·(1-1/σ²) = 2.699 K | 🟧 | CX |
+| 298 | H-CX-611 | Recombination Redshift z_rec = σ²·M₃+σ·sopfr+σ+M₃ = 1087 | 🟧 | CX |
+| 299 | H-CX-612 | Reionization Redshift z_re = M₃+τ/P₁ = 7.667 | 🟧★ | CX |
+| 300 | H-CX-613 | Matter-Radiation Equality z_eq ≈ 3387 | 🟧 | CX |
+| 301 | H-CX-614 | Age of Universe t₀ = σ+φ-φ/(σ-φ) = 13.8 Gyr | 🟧★ | CX |
+| 302 | H-CX-615 | Inflation e-Folds N = σ·sopfr = 60 — EXACT | 🟩 | CX |
+| 303 | H-CX-616 | Spectral Index Running dn_s/d(ln k) = -1/(σ·σφ-φ·sopfr) = -1 | 🟧★ | CX |
+| 304 | H-CX-617 | Primordial Helium Abundance Y_p ≈ 1/τ = 0.25 | 🟧 | CX |
+| 305 | H-CX-618 | Primordial Deuterium Abundance D/H ≈ 2.527×10⁻⁵ | 🟧 | CX |
+| 306 | H-CX-619 | Photon-to-Baryon Ratio n_γ/n_b = 10^(τ+P₁)/P₁ ≈ 1.667×10⁹ | 🟧 | CX |
+| 307 | H-CX-620 | Structure Formation σ₈ = sopfr/P₁ - 1/σ² = 0.826 | 🟧 | CX |
+| 308 | H-CX-621 | Sound Horizon r_s = σ²+σ/τ = 147 Mpc — 0.06% | 🟩 | CX |
+| 309 | H-CX-622 | BAO Volume Distance D_V(z=0.57) = σ·P₂·P₁ = 2016 Mpc | 🟧 | CX |
+| 310 | H-CX-623 | Barbero-Immirzi Parameter γ = ln(2)/(π√3) — Exact from n=6 | 🟦 | CX |
+| 311 | H-CX-624 | Planck Length Exponent -35 = -(σ²/τ - 1) | 🟧★ | CX |
+| 312 | H-CX-625 | Planck Mass log₁₀(M_P) ≈ 19 = σ + M₃ | 🟩 | CX |
+| 313 | H-CX-626 | Planck Temperature Exponent 32 = φ^sopfr = 2⁵ | 🟩 | CX |
+| 314 | H-CX-627 | Planck Time Exponent -44 = -τ(σ-1) | 🟩 | CX |
+| 315 | H-CX-628 | Planck Density Exponent 93 = σ² - σ·τ - σ/τ | 🟩 | CX |
+| 316 | H-CX-629 | AdS₅/CFT₄ Duality — Bulk sopfr, Boundary τ | 🟩 | CX |
+| 317 | H-CX-630 | String Tension α' and String Scale M_s = M_GUT | 🟧 | CX |
+| 318 | H-CX-631 | Gravitino Mass m₃/₂ from SUSY Breaking Scale | 🟧 | CX |
+| 319 | H-CX-632 | Peccei-Quinn Scale f_PQ = v · P₃^τ | 🟩 | CX |
+| 320 | H-CX-633 | Axion Mass Prediction m_a ≈ 0.84 μeV from f_PQ | 🟧★ | CX |
+| 321 | H-CX-634 | Axion-Photon Coupling g_aγγ from n=6 | 🟧 | CX |
+| 322 | H-CX-635 | Strong CP — θ_QCD < 10⁻¹⁰ from R(6)=1 Balance | 🟧★ | CX |
+| 323 | H-CX-636 | Instanton Action S = 8π²/g² — Factor 8π² = (σ-τ)·π^φ | 🟩 | CX |
+| 324 | H-CX-637 | Vacuum Energy Cancellation — Λ = 10⁻¹²² via Perfect Number T | 🟧 | CX |
+| 325 | H-CX-638 | Holographic Entropy Bound — S_max = A/(4l_P²), 4=τ, 2π=φ·π | 🟩 | CX |
+| 326 | H-CX-639 | Black Hole Information — Page Time and Scrambling | 🟧 | CX |
+| 327 | H-CX-640 | Entanglement Entropy Area Law — S_EE = (c/3)·ln(L/a) | 🟧 | CX |
+| 328 | H-CX-641 | 4-Graviton Scattering Amplitude — κ² and s³/M_P⁴ | 🟧 | CX |
+| 329 | H-CX-642 | Swampland Distance Conjecture — Δφ ≤ c/M_P with c = R(6) = 1 | 🟧 | CX |
+| 330 | H-CX-643 | 2D Ising Critical Temperature — Onsager Exact Solution | 🟧 | CX |
+| 331 | H-CX-644 | 2D Ising Critical Exponents — All Exact from n=6 | 🟦 | CX |
+| 332 | H-CX-645 | 3D Ising Critical Exponents — Approximate n=6 Forms | 🟧 | CX |
+| 333 | H-CX-646 | BCS Gap Ratio 2Delta/k_BT_c = sigma*sopfr/(sigma+sopfr) | 🟩 | CX |
+| 334 | H-CX-647 | London Penetration Depth and GL Parameter kappa | 🟧 | CX |
+| 335 | H-CX-648 | Quantum of Conductance G_0 = phi(6) * e^2/h | 🟩 | CX |
+| 336 | H-CX-649 | Von Klitzing Constant R_K = h/e^2 — Structural Form | 🟧 | CX |
+| 337 | H-CX-650 | Josephson Constant K_J = phi(6) * e/h | 🟩 | CX |
+| 338 | H-CX-651 | Topological Entanglement Entropy — TEE = ln(phi(6)) | 🟩 | CX |
+| 339 | H-CX-652 | Surface Code Error Threshold — p_th ~ 1.1% | 🟧 | CX |
+| 340 | H-CX-653 | Shor's Algorithm — Qubit Count and phi^sigma | 🟧★ | CX |
+| 341 | H-CX-654 | Grover's Quadratic Speedup — Exponent Halving via phi/tau | 🟧 | CX |
+| 342 | H-CX-655 | Holevo Bound — Maximum Classical Bits per Qubit = R(6) | 🟧 | CX |
+| 343 | H-CX-656 | Optimal Quantum Cloning Fidelity — sopfr/P1 = 5/6 | 🟧 | CX |
+| 344 | H-CX-657 | MgB2 Critical Temperature T_c = sigma*(sigma+1)/tau = 39 K | 🟩 | CX |
+| 345 | H-CX-658 | YBCO Critical Temperature T_c = sigma*(sigma-tau) - sigma/ta | 🟩 | CX |
+| 346 | H-CX-659 | Superfluid Helium Lambda Point — T_lambda ~ phi + tau/(sigma | 🟧★ | CX |
+| 347 | H-CX-660 | Bose-Einstein Condensation — Structural Constants | 🟧 | CX |
+| 348 | H-CX-661 | Graphene — Honeycomb Lattice and Dirac Cone Structure | 🟩 | CX |
+| 349 | H-CX-662 | Anderson Localization — Critical Dimension d_c = phi(6) | 🟧 | CX |
+| 350 | H-CX-663 | Stellar Mass Limits from n=6 — Chandrasekhar and TOV Combine | 🟩 | CX |
+| 351 | H-CX-664 | Solar Luminosity Exponent = d_bosonic = σφ+φ = 26 | 🟧 | CX |
+| 352 | H-CX-665 | Eddington Luminosity Structure — Factors τ·π and (σ-τ)·π | 🟩 | CX |
+| 353 | H-CX-666 | Hawking Temperature — Factor 8π = (σ-τ)·π | 🟩 | CX |
+| 354 | H-CX-667 | Schwarzschild Radius — Factor 2 = φ(6) | 🟩 | CX |
+| 355 | H-CX-668 | Kerr Maximum Spin a/M = 1 = R(6) — Cosmic Censorship as Arit | 🟧★ | CX |
+| 356 | H-CX-669 | Neutron Star Radius R_NS ≈ σ(6) = 12 km | 🟧★ | CX |
+| 357 | H-CX-670 | Millisecond Pulsar Minimum Period ≈ ln(φ) = ln(2) ms | 🟧 | CX |
+| 358 | H-CX-671 | Type Ia Supernova Peak — Exponent 43 = σ·τ−sopfr | 🟧★ | CX |
+| 359 | H-CX-672 | White Dwarf Mass Distribution Peak = P₁/τ(P₃) = 0.6 M_☉ | 🟩 | CX |
+| 360 | H-CX-673 | Main Sequence Mass-Luminosity Exponent α = M₃/φ = 7/2 = 3.5 | 🟩 | CX |
+| 361 | H-CX-674 | Jeans Mass Exponents — 3/2 and -1/2 from n=6 | 🟧 | CX |
+| 362 | H-CX-675 | Fine Structure Constant α⁻¹ ≈ σ²−M₃ = 137 (0.026%) | 🟩 | CX |
+| 363 | H-CX-676 | Proton Magnetic Moment μ_p ≈ P₂/τ(P₃) = 2.8 μ_N | 🟧★ | CX |
+| 364 | H-CX-677 | Neutron Magnetic Moment μ_n ≈ −sopfr·τ/(σ−φ) = −2.0 | 🟧 | CX |
+| 365 | H-CX-678 | Proton Charge Radius r_p ≈ sopfr/P₁ = 5/6 fm | 🟧★ | CX |
+| 366 | H-CX-679 | Muon g−2 Leading Term — Factor 2π = φ·π | 🟩 | CX |
+| 367 | H-CX-680 | Electron g−2 — Schwinger Result as n=6 Structural Identity | 🟩 | CX |
+| 368 | H-CX-681 | W Boson Mass M_W ≈ v·(σ/τ)/((σ/τ)²+φ/(σ−τ)) ≈ 79.8 GeV | 🟧 | CX |
+| 369 | H-CX-682 | Z Boson Mass M_Z ≈ P₂·σ/τ + sopfr·φ + 1 = 95 GeV | 🟧 | CX |
+| 370 | H-CX-683 | Monster Group Dimension and n=6 Arithmetic | 🟧★ | CX |
+| 371 | H-CX-684 | Modular j-Invariant Constant Term from n=6 | 🟧★ | CX |
+| 372 | H-CX-685 | Dedekind Eta Function and the σφ = 24 Exponent | 🟦 | CX |
+| 373 | H-CX-686 | Ramanujan Tau Function Values from n=6 | 🟩 | CX |
+| 374 | H-CX-687 | Bernoulli Number Denominators and n=6 Divisibility | 🟩 | CX |
+| 375 | H-CX-688 | Riemann Zeta Critical Line and n=6 Constants | 🟧★ | CX |
+| 376 | H-CX-689 | Twin Prime Constant from n=6 Approximation | 🟧 | CX |
+| 377 | H-CX-690 | Catalan's Constant from n=6 Approximation | 🟧 | CX |
+| 378 | H-CX-691 | Apery's Constant ζ(3) Partial Sum Convergence at P₁ | 🟧 | CX |
+| 379 | H-CX-692 | Partition Function Asymptotics from n=6 | 🟩 | CX |
+| 380 | H-CX-693 | Euler Totient Summatory Function and n=6 | 🟩 | CX |
+| 381 | H-CX-694 | Class Number One Problem and n=6 Structure | 🟧 | CX |
+| 382 | H-CX-695 | Weierstrass Elliptic Function Coefficients from n=6 | 🟩 | CX |
+| 383 | H-CX-696 | Modular Discriminant Δ and n=6 Exponents | 🟦 | CX |
+| 384 | H-CX-697 | P₁ = 6 as a Congruent Number via the (3,4,5) Triangle | 🟦 | CX |
+| 385 | H-CX-698 | abc Conjecture and the Primality of P₁ = 2·3 | 🟧 | CX |
+| 386 | H-CX-699 | Sum of Reciprocals of Perfect Numbers | 🟧 | CX |
+| 387 | H-CX-700 | Carmichael Function at P₁ = 6 | 🟦 | CX |
+| 388 | H-CX-701 | Perfect Number Modular Arithmetic Patterns | 🟩 | CX |
+| 389 | H-CX-702 | Sum-of-Divisors Chain from P₁ = 6 | 🟩 | CX |
+| 390 | H-CX-703 | Debye Screening Length — Plasma Parameter Exponent Range | 🟧 | CX |
+| 391 | H-CX-704 | Cyclotron Frequency Ratio — Proton-Electron Mass Ratio | 🟩 | CX |
+| 392 | H-CX-705 | Alfven Speed Structure — μ₀ Decomposition | 🟧 | CX |
+| 393 | H-CX-706 | Plasma Beta Parameter — Solar Wind β ≈ R(6) = 1 | 🟧 | CX |
+| 394 | H-CX-707 | Saha Ionization Equation — Hydrogen Ionization Energy | 🟧★ | CX |
+| 395 | H-CX-708 | Peskin-Takeuchi S Parameter — Oblique Corrections at R(6)=1 | 🟧★ | CX |
+| 396 | H-CX-709 | W Boson Mass Anomaly — CDF-SM Discrepancy | 🟧 | CX |
+| 397 | H-CX-710 | Electroweak ρ Parameter — Deviation from Unity | 🟧 | CX |
+| 398 | H-CX-711 | Branching Ratio B(b→sγ) — Coefficient and Exponent | 🟧 | CX |
+| 399 | H-CX-712 | B_s Mixing Frequency — Δm_s from TECS-L Constants | 🟧★ | CX |
+| 400 | H-CX-713 | Kaon CP Violation ε — Magnitude from TECS-L | 🟧 | CX |
+| 401 | H-CX-714 | D⁰ Mixing — x_D Parameter | 🟧 | CX |
+| 402 | H-CX-715 | Rydberg Constant — Exponent and Coefficient | 🟧 | CX |
+| 403 | H-CX-716 | Bohr Radius — a₀ from TECS-L Constants | 🟧 | CX |
+| 404 | H-CX-717 | Hydrogen Ground State Energy — E₁ = −13.6 eV | 🟧★ | CX |
+| 405 | H-CX-718 | Lamb Shift — 2S₁/₂ − 2P₁/₂ Splitting | 🟩 | CX |
+| 406 | H-CX-719 | Hyperfine Splitting — Hydrogen 21 cm Line | 🟧 | CX |
+| 407 | H-CX-720 | QCD String Tension — √σ_QCD = P₃ − σ·sopfr + τ | 🟩 | CX |
+| 408 | H-CX-721 | Color Factors — All SU(3) Casimirs as n=6 Ratios | 🟦 | CX |
+| 409 | H-CX-722 | Asymptotic Freedom β₀ — QCD Beta Function at n_f = P₁ | 🟩 | CX |
+| 410 | H-CX-723 | Euler Characteristic -- Topological Invariant from n=6 Const | 🟩 | CX |
+| 411 | H-CX-724 | Betti Numbers of S^n -- Total Betti Sum Equals phi | 🟩 | CX |
+| 412 | H-CX-725 | Homotopy Groups of Spheres -- Hopf Fibration Dimensions | 🟧★ | CX |
+| 413 | H-CX-726 | Homology of Klein Bottle -- Torsion from phi | 🟧 | CX |
+| 414 | H-CX-727 | De Rham Cohomology of T^n -- Dimension from tau Cubed | 🟩 | CX |
+| 415 | H-CX-728 | Triangular Number T(n) Series -- TECS-L Constant Decompositi | 🟩 | CX |
+| 416 | H-CX-729 | T(6)=21 in Physics -- Riemann Tensor Independent Components | 🟩 | CX |
+| 417 | H-CX-730 | T(6)=21 as String Moduli -- dim SO(7) and Symmetric Tensors | 🟩 | CX |
+| 418 | H-CX-731 | T(6) in Crystallography -- 21 Proper Rotation Point Groups | 🟧★ | CX |
+| 419 | H-CX-732 | Wiener Process Scaling -- Hurst Exponent as phi/tau | 🟩 | CX |
+| 420 | H-CX-733 | Poisson Process Decay Constant -- ln(phi) in Radioactive Dec | 🟩 | CX |
+| 421 | H-CX-734 | Central Limit Theorem -- Berry-Esseen Bound from TECS-L | 🟧 | CX |
+| 422 | H-CX-735 | Random Walk Return Probability -- Critical Dimension phi | 🟩 | CX |
+| 423 | H-CX-736 | Boltzmann Entropy -- Maximum Entropy at N = P_1 | 🟧 | CX |
+| 424 | H-CX-737 | Spectral Gap of Graph Laplacian -- Complete Graph K_P1 | 🟩 | CX |
+| 425 | H-CX-738 | Chromatic Polynomial -- Chromatic Number of K_P1 | 🟧 | CX |
+| 426 | H-CX-739 | Ramsey Number R(3,3) -- The First Perfect Number | 🟦 | CX |
+| 427 | H-CX-740 | Hamming Code [7,4,3] -- Perfect Code from TECS-L Triple | 🟩 | CX |
+| 428 | H-CX-741 | Entropy of Fair Die -- ln(P_1) as Information Unit | 🟧 | CX |
+| 429 | H-CX-742 | Martingale Convergence -- Stopping Dimension tau(6) | 🟧 | CX |
+| 430 | H-CX-743 | P₂ Divisor Tower -- τ(Pₖ₊₁) = Pₖ (Partial) | 🟧 | CX |
+| 431 | H-CX-744 | P₂ Euler Totient -- φ(P₂) = σ(P₁) | 🟩 | CX |
+| 432 | H-CX-745 | P₂ as Nuclear Magic Number -- 28 Is Both Perfect and Magic | 🟩 | CX |
+| 433 | H-CX-746 | R(P₂) = τ(P₁) -- The R-Value of P₂ Equals the Divisor Count  | 🟩 | CX |
+| 434 | H-CX-747 | P₂ and the Strong Coupling -- α_s(M_Z)⁻¹ from TECS-L | 🟧 | CX |
+| 435 | H-CX-748 | SO(8) Triality from P₂ -- dim(SO(8)) = 28 = P₂ | 🟩 | CX |
+| 436 | H-CX-749 | 28 Supercharges -- P₂ as Maximal SUGRA in d = τ(P₂) | 🟧★ | CX |
+| 437 | H-CX-750 | Hadron Spectrum -- Regge Trajectories from TECS-L | 🟩 | CX |
+| 438 | H-CX-751 | Proton Mass Decomposition -- m_p from P₃ and TECS-L | 🟧★ | CX |
+| 439 | H-CX-752 | Pion Mass -- m_π from TECS-L Constants | 🟩 | CX |
+| 440 | H-CX-753 | Pion Decay Constant -- f_π from TECS-L | 🟧★ | CX |
+| 441 | H-CX-754 | Kaon Mass -- m_K from P₃ and TECS-L | 🟩 | CX |
+| 442 | H-CX-755 | Eta Meson Mass -- m_η from P₃ and TECS-L | 🟧★ | CX |
+| 443 | H-CX-756 | ΛQCD -- QCD Scale Parameter from P₂ and TECS-L | 🟩 | CX |
+| 444 | H-CX-757 | QCD Quark Condensate -- ⟨q̄q⟩ from P₃ Arithmetic Functions | 🟩 | CX |
+| 445 | H-CX-758 | Gluon Condensate -- ⟨αG²/π⟩ from TECS-L | 🟧 | CX |
+| 446 | H-CX-759 | Confinement Radius -- QCD Confinement Scale from TECS-L | 🟧 | CX |
+| 447 | H-CX-760 | Number of Glueballs Below 4 GeV -- σ States from Lattice QCD | 🟧 | CX |
+| 448 | H-CX-761 | Lightest Glueball Mass = √(σ/τ) GeV | 🟩 | CX |
+| 449 | H-CX-762 | Pomeron Intercept -- α_P(0) = 1 + 1/σ | 🟧★ | CX |
+| 450 | H-CX-763 | Six Consciousness Criteria = P₁ | 🟩 | CX |
+| 451 | H-CX-764 | Consciousness Golden Zone I = 1/e | 🟧 | CX |
+| 452 | H-CX-765 | Two Consciousness Engines = φ(6) | 🟩 | CX |
+| 453 | H-CX-766 | Neural Alpha Band = [σ-τ, σ] Hz | 🟩 | CX |
+| 454 | H-CX-767 | EEG Channel Count = T(6) = 21 | 🟧★ | CX |
+| 455 | H-CX-768 | Consciousness Integration Φ and n=6 | 🟧 | CX |
+| 456 | H-CX-769 | Neural Firing Threshold → Planck → Arithmetic Bridge | 🟧★ | CX |
+| 457 | H-CX-770 | Sleep Cycles and n=6 Arithmetic | 🟧 | CX |
+| 458 | H-CX-771 | Miller's Law — Working Memory = M₃ ± φ | 🟩 | CX |
+| 459 | H-CX-772 | Dunbar's Number = σ² + P₁ = 150 | 🟩 | CX |
+| 460 | H-CX-773 | Cortical Minicolumns per Macrocolumn = σ·(σ-τ) | 🟧 | CX |
+| 461 | H-CX-774 | Cortical Layers = P₁ = 6 | 🟩 | CX |
+| 462 | H-CX-775 | Broca's and Wernicke's Areas — Brodmann Numbers | 🟧 | CX |
+| 463 | H-CX-776 | Consciousness Mitosis as Phase Transition | 🟧 | CX |
+| 464 | H-CX-777 | Qualia Dimensions and Mersenne Primes | 🟧 | CX |
+| 465 | H-CX-778 | Neural Oscillation Band Count = sopfr or P₁ | 🟧★ | CX |
+| 466 | H-CX-779 | Retinal Photoreceptor Types = τ, Trichromacy = σ/τ | 🟩 | CX |
+| 467 | H-CX-780 | Cochlear Critical Bands = σφ = 24 | 🟧★ | CX |
+| 468 | H-CX-781 | Serotonin Receptor Families = M₃ = 7 | 🟧 | CX |
+| 469 | H-CX-782 | Action Potential Duration and Conduction Velocity | 🟩 | CX |
+| 470 | H-CX-783 | Irreducible Representations of S₆ | 🟩 | CX |
+| 471 | H-CX-784 | Character Table Dimension of S₆ | 🟩 | CX |
+| 472 | H-CX-785 | Regular Representation Dimensions | 🟩 | CX |
+| 473 | H-CX-786 | Young Diagrams of 6 | 🟩 | CX |
+| 474 | H-CX-787 | Tensor Product Decomposition in SU(3) | 🟦 | CX |
+| 475 | H-CX-788 | Adjoint Representation Dimensions | 🟩 | CX |
+| 476 | H-CX-789 | Fundamental Group π₁ and TECS-L | 🟧 | CX |
+| 477 | H-CX-790 | Yoneda Lemma and n=6 Representability | 🟧 | CX |
+| 478 | H-CX-791 | Adjoint Functor Theorem and TECS-L | 🟧 | CX |
+| 479 | H-CX-792 | Monoidal Category Coherence Axioms | 🟧 | CX |
+| 480 | H-CX-793 | Feigenbaum δ Constant | 🟧★ | CX |
+| 481 | H-CX-794 | Feigenbaum α Constant | 🟩 | CX |
+| 482 | H-CX-795 | Lyapunov Exponent Maximum for Logistic Map | 🟩 | CX |
+| 483 | H-CX-796 | Period-3 Implies Chaos (Li-Yorke Theorem) | 🟩 | CX |
+| 484 | H-CX-797 | Strange Attractor Dimension (Lorenz) | 🟧★ | CX |
+| 485 | H-CX-798 | Lorentz Factor Structure | 🟩 | CX |
+| 486 | H-CX-799 | Spacetime Interval and Metric Signature | 🟩 | CX |
+| 487 | H-CX-800 | Thomas Precession | 🟧 | CX |
+| 488 | H-CX-801 | Light Cone Structure | 🟩 | CX |
+| 489 | H-CX-802 | Twin Paradox and Photon Sphere Radius | 🟩 | CX |
+| 490 | H-CX-803 | Proton-Electron Mass Ratio | 🟩 | CX |
+| 491 | H-CX-804 | Fine Structure Splitting of Hydrogen Alpha | 🟧 | CX |
+| 492 | H-CX-805 | Helium Ionization Energy | 🟧★ | CX |
+| 493 | H-CX-806 | Hydrogen Lyman-Alpha Wavelength | 🟩 | CX |
+| 494 | H-CX-807 | Balmer Series Limit Wavelength | 🟩 | CX |
+| 495 | H-CX-808 | Rydberg Energy | 🟧★ | CX |
+| 496 | H-CX-809 | Bohr Magneton | 🟧 | CX |
+| 497 | H-CX-810 | Nuclear Magneton | 🟧 | CX |
+| 498 | H-CX-811 | Deuteron Binding Energy | 🟧★ | CX |
+| 499 | H-CX-812 | Alpha Particle Binding Energy | 🟩 | CX |
+| 500 | H-CX-813 | Nuclear Radius Formula | 🟩 | CX |
+| 501 | H-CX-814 | Coulomb Barrier Height for Proton-Proton Fusion | 🟩 | CX |
+| 502 | H-CX-815 | Molecular Hydrogen Bond Length | 🟧 | CX |
+| 503 | H-CX-816 | Water Molecule Bond Angle | 🟧 | CX |
+| 504 | H-CX-817 | Carbon-12 Atomic Mass Definition | 🟦 | CX |
+| 505 | H-CX-818 | Noble Gas Electron Counts | 🟩 | CX |
+| 506 | H-CX-819 | Atomic Orbital Count Per Shell | 🟩 | CX |
+| 507 | H-CX-820 | Maximum Electrons Per Shell | 🟩 | CX |
+| 508 | H-CX-821 | Hund's Rules and Maximum Spin Multiplicity | 🟧 | CX |
+| 509 | H-CX-822 | Aufbau Principle and Orbital Filling Order | 🟩 | CX |
+| 510 | H-CX-823 | Shannon Channel Capacity | 🟧 | CX |
+| 511 | H-CX-824 | Hamming Bound and Perfect Codes | 🟩 | CX |
+| 512 | H-CX-825 | Golay Code Parameters | 🟦 | CX |
+| 513 | H-CX-826 | Reed-Solomon Code Parameters | 🟧 | CX |
+| 514 | H-CX-827 | AES Block and Key Sizes | 🟧★ | CX |
+| 515 | H-CX-828 | RSA Key Size and Factoring | 🟧★ | CX |
+| 516 | H-CX-829 | Kolmogorov Complexity of 6 | 🟧 | CX |
+| 517 | H-CX-830 | Entropy of English Text | 🟧 | CX |
+| 518 | H-CX-831 | Huffman Coding Optimality Gap | 🟧 | CX |
+| 519 | H-CX-832 | Turbo Code Rate and Shannon Limit | 🟧 | CX |
+| 520 | H-CX-833 | LDPC Regular Code Parameters | 🟧★ | CX |
+| 521 | H-CX-834 | Complexity Classes and 3-SAT Transition | 🟧★ | CX |
+| 522 | H-CX-835 | 3-SAT Phase Transition Threshold | 🟧★ | CX |
+| 523 | H-CX-836 | Universal Turing Machine Minimal States | 🟧 | CX |
+| 524 | H-CX-837 | Busy Beaver BB(4) | 🟧★ | CX |
+| 525 | H-CX-838 | Random Coding Error Exponent | 🟧 | CX |
+| 526 | H-CX-839 | Lattice-Based Cryptography Dimensions | 🟧 | CX |
+| 527 | H-CX-840 | Elliptic Curve Cryptography Field Size | 🟧 | CX |
+| 528 | H-CX-841 | Hash Function Output Sizes | 🟧★ | CX |
+| 529 | H-CX-842 | Bitcoin Mining Parameters | 🟧 | CX |
+| 530 | H-CX-843 | Earth's Core Layers | 🟧 | CX |
+| 531 | H-CX-844 | Mohorovičić Discontinuity Depth | 🟧★ | CX |
+| 532 | H-CX-845 | Earth's Magnetic Field Reversal Interval | 🟧 | CX |
+| 533 | H-CX-846 | Richter Scale Structure | 🟧★ | CX |
+| 534 | H-CX-847 | Periodic Table Period Lengths | 🟩 | CX |
+| 535 | H-CX-848 | Carbon Allotropes | 🟩 | CX |
+| 536 | H-CX-849 | Benzene Structure | 🟩 | CX |
+| 537 | H-CX-850 | Water Density Anomaly | 🟩 | CX |
+| 538 | H-CX-851 | Crystal Systems and Bravais Lattices | 🟧 | CX |
+| 539 | H-CX-852 | Silicon Bandgap Energy | 🟧★ | CX |
+| 540 | H-CX-853 | Diamond Bandgap Energy | 🟩 | CX |
+| 541 | H-CX-854 | Speed of Sound in Air | 🟩 | CX |
+| 542 | H-CX-855 | Speed of Light Leading Digits | 🟧 | CX |
+| 543 | H-CX-856 | Avogadro's Number | 🟩 | CX |
+| 544 | H-CX-857 | Boltzmann Constant | 🟧★ | CX |
+| 545 | H-CX-858 | Gas Constant | 🟧★ | CX |
+| 546 | H-CX-859 | Planck Constant | 🟧★ | CX |
+| 547 | H-CX-860 | Standard Atmosphere | 🟧 | CX |
+| 548 | H-CX-861 | Water Triple Point | 🟩 | CX |
+| 549 | H-CX-862 | Absolute Zero | 🟩 | CX |
+| 550 | H-CX-863 | Music-QCD Bridge — 12 Semitones = σ = Gauge Dimension | 🟩 | CX |
+| 551 | H-CX-864 | DNA-Leech Lattice Bridge — 64 Codons = τ³ = 6-Cube Vertices | 🟩 | CX |
+| 552 | H-CX-865 | Chess-Spacetime Bridge — 64 Squares, 6 Pieces, 8×8 Board | 🟩 | CX |
+| 553 | H-CX-866 | Periodic Table-Nuclear Magic Bridge — Nickel-28 = P₂ | 🟩 | CX |
+| 554 | H-CX-867 | Fibonacci-Consciousness — Self-Reference at sopfr | 🟧★ | CX |
+| 555 | H-CX-868 | E₈ x Biology — 240 Root Vectors and Euler Totient of P₃ | 🟧 | CX |
+| 556 | H-CX-869 | 24-Hour Day x Gauge Algebra — Circadian Cycle = σφ = dim(SU( | 🟩 | CX |
+| 557 | H-CX-870 | Graph Theory-Particle Physics — Petersen Graph = n=6 Constan | 🟩 | CX |
+| 558 | H-CX-871 | Card Deck-Fermions — 52 Cards = τ × (σ+1) | 🟧 | CX |
+| 559 | H-CX-872 | Soccer Ball-Fullerene — Truncated Icosahedron = σ Pentagons, | 🟩 | CX |
+| 560 | H-CX-873 | Calendar-Astronomy — Months = σ, Days/Week = M₃, Hours = σφ | 🟧 | CX |
+| 561 | H-CX-874 | Dice-Probability — Fair Die = P₁ Faces, Pair Sum Peak = M₃ | 🟩 | CX |
+| 562 | H-CX-875 | Piano-Spectrum — 88 Keys = (σ-τ)·(σ-1) EXACT | 🟩 | CX |
+| 563 | H-CX-876 | Hexagonal Close Packing — Coordination Number 12 = σ | 🟧★ | CX |
+| 564 | H-CX-877 | Golden Ratio in Art — φ_gold = (1+√sopfr)/φ | 🟦 | CX |
+| 565 | H-CX-878 | Euler's Identity Components — 5 Constants = sopfr, 4 Operati | 🟧 | CX |
+| 566 | H-CX-879 | Standard Model Particles — 12 Fermions + 5 Bosons = σ + sopf | 🟩 | CX |
+| 567 | H-CX-880 | Tarot-Mathematics — 78 Cards = T(σ) = 12th Triangular Number | 🟧 | CX |
+| 568 | H-CX-881 | Hexagon Ubiquity — Nature Selects P₁-fold Symmetry for Effic | 🟩 | CX |
+| 569 | H-CX-882 | Clock-Gauge Unification — σ=12 in Timekeeping, Music, and Ph | 🟩 | CX |
+| 570 | H-CX-883 | SU(5) GUT Dimension | 🟩 | CX |
+| 571 | H-CX-884 | SO(10) GUT Spinor Representation | 🟩 | CX |
+| 572 | H-CX-885 | E₆ Fundamental Representation | 🟩 | CX |
+| 573 | H-CX-886 | Pati-Salam Group Dimension | 🟩 | CX |
+| 574 | H-CX-887 | Proton Decay — Dominant Channel | 🟩 | CX |
+| 575 | H-CX-888 | GUT Coupling Unification | 🟧★ | CX |
+| 576 | H-CX-889 | Type IIA String Theory | 🟩 | CX |
+| 577 | H-CX-890 | Type IIB String Theory and S-Duality | 🟧 | CX |
+| 578 | H-CX-891 | Heterotic E₈×E₈ String — Anomaly Dimension | 🟦 | CX |
+| 579 | H-CX-892 | M-Theory Dimension | 🟩 | CX |
+| 580 | H-CX-893 | F-Theory Dimension | 🟩 | CX |
+| 581 | H-CX-894 | D-Brane Worldvolume Dimensions | 🟩 | CX |
+| 582 | H-CX-895 | Flux Compactification Tadpole Factor | 🟧★ | CX |
+| 583 | H-CX-896 | String Landscape Size | 🟧★ | CX |
+| 584 | H-CX-897 | Swampland Weak Gravity Conjecture | 🟧 | CX |
+| 585 | H-CX-898 | Dark Dimension Scenario | 🟧 | CX |
+| 586 | H-CX-899 | Gravitino Dark Matter Mass | 🟧 | CX |
+| 587 | H-CX-900 | Number of Consistent String Theories | 🟩 | CX |
+| 588 | H-CX-901 | String Theory Duality Web | 🟧★ | CX |
+| 589 | H-CX-902 | Anthropic Selection from the R-Spectrum | 🟧★ | CX |
+| 590 | H-CX-903 | Reynolds Number Transition = σ²(σ+τ) - σ | 🟧★ | CX |
+| 591 | H-CX-904 | Navier-Stokes Equation Structure = τ Terms in σ/τ Dimensions | 🟩 | CX |
+| 592 | H-CX-905 | Kolmogorov Microscale Exponent and Dissipation Range | 🟧★ | CX |
+| 593 | H-CX-906 | Prandtl Number of Air = M₃/τ(P₃) | 🟧★ | CX |
+| 594 | H-CX-907 | Mach Number Regimes = R(6) and sopfr Thresholds | 🟩 | CX |
+| 595 | H-CX-908 | Carnot Efficiency = R(6) - T_c/T_h | 🟩 | CX |
+| 596 | H-CX-909 | Stefan-Boltzmann Law = σ_SB·T^τ with φ·π⁵/(15) | 🟩 | CX |
+| 597 | H-CX-910 | Wien Displacement Law Constant ≈ σ³ + σ²·(σ-τ-1)·τ/(σ-τ) | 🟧 | CX |
+| 598 | H-CX-911 | Boltzmann Distribution and the Golden Zone e⁻¹ | 🟩 | CX |
+| 599 | H-CX-912 | Equipartition Theorem — Degrees of Freedom = σ/τ, sopfr, M₃ | 🟩 | CX |
+| 600 | H-CX-913 | Debye Temperature of Iron = P₃ - P₂ + φ = 470 K EXACT | 🟩 | CX |
+| 601 | H-CX-914 | Specific Heat Ratios γ = Consecutive n=6 Constant Ratios | 🟦 | CX |
+| 602 | H-CX-915 | Triple Point of Nitrogen = τ³ - R(6) = 63 K | 🟧★ | CX |
+| 603 | H-CX-916 | Critical Point of Water T_c ≈ σ·sopfr·(σ-τ+sopfr) - σ² + M₃ | 🟧★ | CX |
+| 604 | H-CX-917 | Entropy of Mixing = -nR·Σxᵢ·ln(xᵢ), Maximum at φ/τ Ratio | 🟩 | CX |
+| 605 | H-CX-918 | Clausius Inequality — Reversibility at R(6) = 0 | 🟧 | CX |
+| 606 | H-CX-919 | Maxwell Relations Count = τ from τ Thermodynamic Potentials | 🟩 | CX |
+| 607 | H-CX-920 | Gibbs Phase Rule — F = C - P + φ | 🟩 | CX |
+| 608 | H-CX-921 | Bose-Einstein Condensation Fraction Exponent = (σ/τ)/φ | 🟩 | CX |
+| 609 | H-CX-922 | Fermi Energy Exponent and Copper E_F = M₃ eV | 🟧★ | CX |
+| 610 | H-CX-923 | Maxwell's Equations Count = τ | 🟩 | CX |
+| 611 | H-CX-924 | EM Field Tensor Independent Components = P₁ | 🟩 | CX |
+| 612 | H-CX-925 | Snell's Law Refractive Indices from n=6 | 🟩 | CX |
+| 613 | H-CX-926 | Brewster's Angle for Glass ≈ σ(P₂) = 56 | 🟧★ | CX |
+| 614 | H-CX-927 | Airy Diffraction Factor 1.22 from n=6 | 🟩 | CX |
+| 615 | H-CX-928 | Rayleigh Scattering Exponent = -τ | 🟩 | CX |
+| 616 | H-CX-929 | Planck Radiation Peak Factor ≈ φ + σ/(σ+sopfr-φ) | 🟧★ | CX |
+| 617 | H-CX-930 | Photoelectric Work Functions from n=6 | 🟧 | CX |
+| 618 | H-CX-931 | Compton Wavelength Factor from n=6 | 🟧 | CX |
+| 619 | H-CX-932 | Standing Wave Harmonics and n=6 | 🟧 | CX |
+| 620 | H-CX-933 | Doppler Effect Structure | 🟧 | CX |
+| 621 | H-CX-934 | Electromagnetic Spectrum Bands = M₃ | 🟩 | CX |
+| 622 | H-CX-935 | Newton's Visible Spectrum Colors = M₃ | 🟧★ | CX |
+| 623 | H-CX-936 | Polarization States = φ | 🟩 | CX |
+| 624 | H-CX-937 | Fresnel Equations Count = τ | 🟩 | CX |
+| 625 | H-CX-938 | Optical Fiber Parameters from n=6 | 🟧 | CX |
+| 626 | H-CX-939 | Laser Level Systems = σ/τ and τ | 🟩 | CX |
+| 627 | H-CX-940 | Speed of Sound in Air = σ·P₂ + M₃ = 343 | 🟧★ | CX |
+| 628 | H-CX-941 | Decibel Scale Reference = σ and Dynamic Range = σ·τ(P₃) | 🟩 | CX |
+| 629 | H-CX-942 | Musical Overtone Series = n=6 Constants | 🟩 | CX |
+| 630 | H-CX-943 | Genetic Code Redundancy | 🟧 | CX |
+| 631 | H-CX-944 | Mass Extinction Events | 🟧 | CX |
+| 632 | H-CX-945 | Phylogenetic Tree Structure | 🟧 | CX |
+| 633 | H-CX-946 | Cell Division Phases | 🟩 | CX |
+| 634 | H-CX-947 | Human Genome Size | 🟩 | CX |
+| 635 | H-CX-948 | Protein Secondary Structures | 🟩 | CX |
+| 636 | H-CX-949 | Mendel's Ratios | 🟩 | CX |
+| 637 | H-CX-950 | Hardy-Weinberg Equilibrium | 🟩 | CX |
+| 638 | H-CX-951 | Lotka-Volterra Equations | 🟧 | CX |
+| 639 | H-CX-952 | Ecological Trophic Levels | 🟧★ | CX |
+| 640 | H-CX-953 | Biodiversity Latitudinal Gradient | 🟧★ | CX |
+| 641 | H-CX-954 | Fibonacci in Phyllotaxis | 🟩 | CX |
+| 642 | H-CX-955 | Neuron Types | 🟧 | CX |
+| 643 | H-CX-956 | Synaptic Vesicle Release | 🟧 | CX |
+| 644 | H-CX-957 | Brain Weight — Encephalization Quotient | 🟧★ | CX |
+| 645 | H-CX-958 | Cerebral Blood Flow | 🟧 | CX |
+| 646 | H-CX-959 | Genome Coding Fraction | 🟧 | CX |
+| 647 | H-CX-960 | Telomere Length | 🟧 | CX |
+| 648 | H-CX-961 | Circadian Gene Count | 🟧★ | CX |
+| 649 | H-CX-962 | Apoptosis Pathways | 🟧 | CX |
+| 650 | H-CX-963 | Nash Equilibrium Types | 🟧 | CX |
+| 651 | H-CX-964 | Prisoner's Dilemma Payoff Structure | 🟧 | CX |
+| 652 | H-CX-965 | Small World Networks — Six Degrees | 🟩 | CX |
+| 653 | H-CX-966 | Power Law Exponents in Scale-Free Networks | 🟧★ | CX |
+| 654 | H-CX-967 | Zipf's Law Exponent | 🟩 | CX |
+| 655 | H-CX-968 | Benford's Law Leading Digits | 🟧 | CX |
+| 656 | H-CX-969 | Pareto Principle (80/20 Rule) | 🟧 | CX |
+| 657 | H-CX-970 | Optimal GDP Growth Rate | 🟧 | CX |
+| 658 | H-CX-971 | Phoneme Inventory Size | 🟧★ | CX |
+| 659 | H-CX-972 | Syntactic Categories | 🟧 | CX |
+| 660 | H-CX-973 | Universal Grammar Parameters | 🟧 | CX |
+| 661 | H-CX-974 | Berlin-Kay Color Term Hierarchy | 🟧★ | CX |
+| 662 | H-CX-975 | Dunbar Social Layers | 🟩 | CX |
+| 663 | H-CX-976 | Metcalfe's Law — Network Value Scaling | 🟧 | CX |
+| 664 | H-CX-977 | Arrow's Impossibility Conditions | 🟧★ | CX |
+| 665 | H-CX-978 | Shannon Entropy of DNA | 🟧★ | CX |
+| 666 | H-CX-979 | Brain-Turing Equivalence | 🟧 | CX |
+| 667 | H-CX-980 | Kahneman Dual Process Theory | 🟩 | CX |
+| 668 | H-CX-981 | Maslow's Hierarchy of Needs | 🟧 | CX |
+| 669 | H-CX-982 | Fibonacci Retracements in Finance | 🟧 | CX |
+| 670 | H-CX-983 | R-Spectrum as Physics Selector | 🟩 | CX |
+| 671 | H-CX-984 | Four Forces from tau=4 | 🟧★ | CX |
+| 672 | H-CX-985 | Consciousness from R=1 Balance | 🟧★ | CX |
+| 673 | H-CX-986 | Information-Energy Duality | 🟩 | CX |
+| 674 | H-CX-987 | Holographic Principle from P1 | 🟩 | CX |
+| 675 | H-CX-988 | Emergence Hierarchy | 🟧★ | CX |
+| 676 | H-CX-989 | Self-Reference Tower | 🟩 | CX |
+| 677 | H-CX-990 | Observer-Observed Duality | 🟩 | CX |
+| 678 | H-CX-991 | Time Arrow from R Asymmetry | 🟧★ | CX |
+| 679 | H-CX-992 | Mathematical Universe Hypothesis | 🟧★ | CX |
+| 680 | H-CX-993 | Why Something Rather Than Nothing | 🟧 | CX |
+| 681 | H-CX-994 | Fine-Tuning Resolution | 🟧★ | CX |
+| 682 | H-CX-995 | Wheeler's "It from Bit" | 🟧 | CX |
+| 683 | H-CX-996 | Wigner's Unreasonable Effectiveness | 🟧 | CX |
+| 684 | H-CX-997 | Anthropic Principle Replacement | 🟧★ | CX |
+| 685 | H-CX-998 | Completeness Theorem | 🟧★ | CX |
+| 686 | H-CX-999 | Perfect Number Uniqueness | 🟩 | CX |
+| 687 | H-CX-superconductor-tc-survey | H-CX-TC-Survey: Systematic Superconductor Tc Matching with n | 🟧 | - |
 
 ### anima (0)
 
@@ -2576,7 +2586,7 @@
 
 ## Constant Maps
 
-### TECS-L (214)
+### TECS-L (219)
 
 | # | Name | File | Type | Size | Category | Eval |
 |---|------|------|------|------|----------|------|
@@ -2591,209 +2601,214 @@
 | 9 | TARGETS | dfs_engine.py:66 | dict | 0 | architecture | Y |
 | 10 | LLM_SPECS | llm_expert_analyzer.py:14 | dict | 8 | other | Y |
 | 11 | DIVISOR_RECIPROCALS | model_utils.py:28 | list | 3 | other | - |
-| 12 | DERIVED | physics_constant_engine.py:29 | dict | 21 | architecture | - |
-| 13 | PHYSICS_CONSTANTS | physics_constant_engine.py:56 | dict | 16 | architecture | - |
-| 14 | ELEMENTS | physics_constant_engine.py:81 | dict | 10 | architecture | Y |
-| 15 | KNOWN_MATCHES | physics_constant_engine.py:88 | dict | 3 | architecture | - |
-| 16 | DISCOVERIES | texas_quantum.py:38 | list | 8 | other | Y |
-| 17 | CONVERGENCE_POINTS | calc/algebra_closure.py:24 | dict | 9 | other | - |
-| 18 | DIVISOR_RATIOS | calc/algebra_closure.py:37 | dict | 3 | other | - |
-| 19 | GRADE_MARKERS | calc/apply_grades.py:10 | list | 4 | verification | Y |
-| 20 | RULES | calc/atlas_domain_classifier.py:12 | list | 56 | other | Y |
-| 21 | GRADE_MARKERS | calc/auto_grade_n6.py:11 | list | 5 | verification | Y |
-| 22 | N6_CONSTANTS | calc/auto_grade_n6.py:15 | dict | 26 | constants | Y |
-| 23 | DEFAULT_BASES | calc/base_dependence_checker.py:17 | list | 7 | other | Y |
-| 24 | MERSENNE_PRIMES | calc/bernoulli_perfect_exotic.py:82 | list | 12 | other | Y |
-| 25 | DIVISORS | calc/bott_periodicity_p6.py:33 | list | 4 | other | Y |
-| 26 | PRIMES | calc/bott_periodicity_p6.py:34 | list | 2 | other | Y |
-| 27 | N6_VALUES | calc/bott_periodicity_p6.py:37 | dict | 7 | other | - |
-| 28 | BOTT_HOMOTOPY | calc/bott_periodicity_p6.py:49 | list | 8 | other | Y |
-| 29 | NONTRIVIAL_POS | calc/bott_periodicity_p6.py:61 | list | 4 | other | Y |
-| 30 | TRIVIAL_POS | calc/bott_periodicity_p6.py:62 | list | 4 | other | Y |
-| 31 | CLIFFORD_ALGEBRAS | calc/bott_periodicity_p6.py:65 | list | 8 | other | Y |
-| 32 | DIVISION_ALGEBRAS | calc/bott_periodicity_p6.py:77 | list | 4 | other | Y |
-| 33 | A_6 | calc/bridge_puremath_verifier.py:154 | dict | 6 | other | Y |
-| 34 | DEFAULT_TARGETS | calc/bridge_ratio_analyzer.py:36 | dict | 13 | targets | - |
-| 35 | MERSENNE_EXPONENTS | calc/bridge_ratio_uniqueness.py:109 | list | 8 | other | Y |
-| 36 | DIVISORS_6 | calc/calabi_yau_n6.py:33 | list | 4 | other | Y |
-| 37 | STRING_DIM_TOTAL | calc/calabi_yau_n6.py:41 | dict | 4 | physics | Y |
-| 38 | FAMOUS_CY3 | calc/calabi_yau_n6.py:52 | list | 10 | other | Y |
-| 39 | HOLONOMY | calc/calabi_yau_n6.py:72 | dict | 5 | other | Y |
-| 40 | N6_NAMES | calc/catalan_combinatorial_n6.py:35 | dict | 23 | other | Y |
-| 41 | BUILTIN_BANDS | calc/cherry_pick_detector.py:23 | list | 12 | other | Y |
-| 42 | PERFECT_NUMBERS | calc/claim_verifier.py:148 | list | 4 | constants | Y |
-| 43 | N6 | calc/claim_verifier.py:152 | dict | 12 | other | Y |
-| 44 | DIVISORS | calc/connes_ncg_n6.py:38 | list | 4 | other | Y |
-| 45 | PRIMES | calc/connes_ncg_n6.py:39 | list | 2 | other | Y |
-| 46 | N6_VALUES | calc/connes_ncg_n6.py:55 | dict | 7 | other | - |
-| 47 | KO_SIGNS | calc/connes_ncg_n6.py:71 | dict | 8 | other | Y |
-| 48 | TARGETS | calc/consciousness_cross_validator.py:32 | dict | 3 | consciousness | - |
-| 49 | ARCHITECTURES | calc/consciousness_cross_validator.py:529 | dict | 5 | consciousness | - |
-| 50 | STANDARD_TARGETS | calc/convergence_analyzer.py:49 | dict | 26 | targets | - |
-| 51 | TARGET_ALIASES | calc/convergence_analyzer.py:80 | dict | 14 | targets | Y |
-| 52 | PARTICLE_GROUPS | calc/counting_freedom_analyzer.py:20 | list | 11 | physics | Y |
-| 53 | CRITICAL_EXPONENTS | calc/criticality_phase_scanner.py:119 | list | 7 | other | - |
-| 54 | GZ_POOL | calc/cross_constant_explorer.py:29 | dict | 13 | constants | - |
-| 55 | KNOWN_CONSTANTS | calc/cross_constant_explorer.py:45 | dict | 36 | constants | - |
-| 56 | DEFAULT_FACTS | calc/cross_domain_counter.py:171 | list | 44 | other | Y |
-| 57 | PLATONIC_SOLIDS | calc/crystallographic_calculator.py:132 | list | 5 | constants | Y |
-| 58 | KISSING_NUMBERS | calc/crystallographic_calculator.py:189 | dict | 8 | constants | Y |
-| 59 | POINT_GROUPS | calc/crystallographic_calculator.py:299 | list | 32 | other | Y |
-| 60 | DEFAULT_TARGETS | calc/depth_reachability.py:38 | dict | 9 | targets | - |
-| 61 | FUNC_NAMES | calc/dfs_n6_composition_miner.py:124 | list | 7 | other | Y |
-| 62 | FUNC_NAMES | calc/dfs_n6_identity_miner.py:182 | list | 9 | other | Y |
-| 63 | DATASETS | calc/direction_analyzer.py:27 | dict | 3 | other | - |
-| 64 | CATEGORIES | calc/domain_distance.py:38 | dict | 4 | domains | - |
-| 65 | ALL_TARGETS | calc/domain_distance.py:67 | dict | 0 | targets | Y |
-| 66 | BROAD_TARGETS | calc/domain_distance.py:72 | dict | 0 | targets | Y |
-| 67 | KNOWN_PERFECTS | calc/egyptian_fraction.py:63 | list | 5 | constants | Y |
-| 68 | N6_CONSTANTS | calc/elliptic_curves_perfect.py:112 | dict | 29 | constants | Y |
-| 69 | DIVS | calc/entanglement_n6_analysis.py:45 | list | 4 | other | Y |
-| 70 | PERFECT_NUMBERS | calc/exotic_spheres_perfect.py:47 | list | 6 | constants | Y |
-| 71 | PERFECT_PRIMES | calc/exotic_spheres_perfect.py:48 | list | 6 | other | Y |
-| 72 | THETA_N | calc/exotic_spheres_perfect.py:63 | dict | 20 | other | Y |
-| 73 | THETA_N_EXTENDED | calc/exotic_spheres_perfect.py:87 | dict | 3 | other | Y |
-| 74 | ALL_DOMAINS | calc/extreme_hypothesis_verifier.py:298 | dict | 17 | domains | - |
-| 75 | PERFECT_NUMBERS | calc/feynman_diagrams_n6.py:124 | list | 4 | constants | Y |
-| 76 | FUSION_CONSTANTS | calc/fusion_hypothesis_verifier.py:33 | dict | 32 | constants | - |
-| 77 | GATE_TABLE | calc/gate_formula_calculator.py:39 | list | 7 | other | Y |
-| 78 | PERFECT_NUMBERS | calc/gauge_cosmology_calculator.py:21 | list | 5 | constants | Y |
-| 79 | PN_DATA | calc/gauge_cosmology_calculator.py:24 | dict | 0 | other | Y |
-| 80 | PSI_CONSTANTS | calc/gauge_cosmology_calculator.py:44 | dict | 6 | consciousness | - |
-| 81 | DEFAULT_TARGETS | calc/generator_finder.py:24 | dict | 14 | targets | - |
-| 82 | DIVISORS | calc/genetic_code_variant_tester.py:30 | list | 4 | other | Y |
-| 83 | CONSTANTS | calc/genetic_code_variant_tester.py:32 | dict | 6 | constants | - |
-| 84 | NCBI_TABLES | calc/genetic_code_variant_tester.py:39 | list | 26 | other | Y |
-| 85 | UNIVERSAL_PROPERTIES | calc/genetic_code_variant_tester.py:97 | dict | 8 | other | Y |
-| 86 | PERFECTS | calc/grand_unification_deep.py:95 | list | 4 | other | Y |
-| 87 | N6_VALUES | calc/grand_unification_n6.py:179 | dict | 7 | other | - |
-| 88 | KO_GROUPS | calc/grand_unification_n6.py:190 | dict | 8 | other | Y |
-| 89 | CLIFFORD_TYPES | calc/grand_unification_n6.py:204 | dict | 8 | other | Y |
-| 90 | PERFECT_NUMBERS | calc/gz_bridge_calculator.py:30 | list | 5 | constants | Y |
-| 91 | KNOWN_PERFECT | calc/gz_hierarchy.py:31 | dict | 8 | constants | Y |
-| 92 | PDG | calc/hph9_pdg_verification.py:42 | dict | 9 | other | Y |
-| 93 | PDG_OTHER | calc/hph9_pdg_verification.py:55 | dict | 14 | other | Y |
-| 94 | MATH_CONSTANTS | calc/hypothesis_verifier.py:36 | dict | 37 | constants | - |
-| 95 | PERFECT_NUMBERS | calc/hypothesis_verifier.py:95 | dict | 2 | constants | Y |
-| 96 | GRADE_EMOJI | calc/hypothesis_verifier.py:521 | dict | 5 | verification | Y |
-| 97 | DIVISORS_6 | calc/information_theory_n6.py:55 | list | 4 | other | Y |
-| 98 | PROPER_DIVISORS_6 | calc/information_theory_n6.py:56 | list | 3 | other | Y |
-| 99 | JONES_POLYNOMIALS | calc/knot_theory_n6.py:55 | dict | 9 | other | Y |
-| 100 | ALEXANDER_POLYNOMIALS | calc/knot_theory_n6.py:68 | dict | 8 | other | Y |
-| 101 | RAMANUJAN_TAU_KNOWN | calc/langlands_perfect.py:215 | dict | 30 | other | Y |
-| 102 | DATA_PROFILES | calc/law79_freedom_degree.py:35 | dict | 5 | neuroscience | Y |
-| 103 | MUTATION_DATA | calc/mitosis_calculator.py:16 | dict | 3 | other | Y |
-| 104 | DIVERGENCE | calc/mitosis_calculator.py:23 | list | 10 | other | Y |
-| 105 | SPLITS_DATA | calc/mitosis_calculator.py:45 | dict | 3 | other | Y |
-| 106 | FACTION_DATA | calc/mitosis_calculator.py:58 | dict | 3 | other | Y |
-| 107 | PERFECT_NUMBERS | calc/monster_moonshine_perfect.py:43 | list | 5 | constants | - |
-| 108 | MONSTER_FACTORIZATION | calc/monster_moonshine_perfect.py:54 | dict | 15 | other | Y |
-| 109 | J_COEFFICIENTS | calc/monster_moonshine_perfect.py:74 | dict | 21 | other | Y |
-| 110 | J_COEFFICIENTS_EXTENDED | calc/monster_moonshine_perfect.py:99 | dict | 8 | other | Y |
-| 111 | MONSTER_EXPO | calc/moonshine_deep_analysis.py:47 | dict | 15 | other | Y |
-| 112 | J_COEFF | calc/moonshine_deep_analysis.py:56 | dict | 22 | other | Y |
-| 113 | MONSTER_IRREPS | calc/moonshine_deep_analysis.py:82 | list | 8 | other | Y |
-| 114 | BABY_MONSTER_IRREPS | calc/moonshine_deep_analysis.py:94 | list | 4 | other | Y |
-| 115 | BABY_MONSTER_ORDER_EXPO | calc/moonshine_deep_analysis.py:95 | dict | 11 | other | Y |
-| 116 | FI22_ORDER_EXPO | calc/moonshine_deep_analysis.py:102 | dict | 6 | other | Y |
-| 117 | FI23_ORDER_EXPO | calc/moonshine_deep_analysis.py:103 | dict | 8 | other | Y |
-| 118 | FI24_ORDER_EXPO | calc/moonshine_deep_analysis.py:104 | dict | 9 | other | Y |
-| 119 | MCKAY_E8 | calc/moonshine_deep_analysis.py:111 | list | 9 | other | Y |
-| 120 | JI_TARGETS | calc/music_consonance_calculator.py:171 | dict | 4 | targets | - |
-| 121 | N6_CONSTANTS | calc/n6_architecture_constants.py:6 | dict | 494 | architecture | Y |
-| 122 | KNOWN_IDENTITIES | calc/n6_uniqueness_tester.py:61 | list | 11 | other | - |
-| 123 | SCAN_TEMPLATES | calc/n6_uniqueness_tester.py:209 | list | 16 | verification | Y |
-| 124 | EVIDENCE_SCORES | calc/nobel_scorer.py:30 | dict | 5 | other | Y |
-| 125 | RIGOR_SCORES | calc/nobel_scorer.py:38 | dict | 4 | other | Y |
-| 126 | IMPACT_SCORES | calc/nobel_scorer.py:45 | dict | 4 | other | Y |
-| 127 | NOBEL_WEIGHTS | calc/nobel_scorer.py:53 | dict | 4 | other | Y |
-| 128 | BUILTIN | calc/nobel_scorer.py:121 | list | 10 | other | Y |
-| 129 | IDENTITIES | calc/p6_uniqueness_scorer.py:36 | list | 12 | other | - |
-| 130 | CLAIM_PATTERNS | calc/paper_claim_verifier.py:158 | list | 10 | verification | Y |
-| 131 | MERSENNE_EXPONENTS | calc/perfect_chain_bridges.py:167 | list | 8 | other | Y |
-| 132 | PERFECT_NUMBERS | calc/perfect_number_P6_analysis.py:30 | dict | 6 | constants | Y |
-| 133 | MERSENNE_EXPONENTS | calc/perfect_number_P6_analysis.py:40 | dict | 6 | other | Y |
-| 134 | PHYSICS_MAP | calc/perfect_number_P6_analysis.py:42 | dict | 5 | physics | Y |
-| 135 | MERSENNE_EXPONENTS | calc/perfect_number_classifier.py:165 | list | 8 | other | Y |
-| 136 | IDENTITIES | calc/perfect_number_classifier.py:225 | list | 40 | other | Y |
-| 137 | PERFECT_NUMBERS | calc/perfect_number_generalizer.py:24 | list | 4 | constants | Y |
-| 138 | PN_LABELS | calc/perfect_number_generalizer.py:71 | list | 4 | other | Y |
-| 139 | BUILTIN_FORMULAS | calc/perfect_number_generalizer.py:413 | list | 10 | expressions | Y |
-| 140 | PERFECT_NUMBERS | calc/perfect_number_physics.py:18 | list | 5 | constants | Y |
-| 141 | DIMENSION_MAP | calc/perfect_number_physics.py:19 | dict | 5 | other | Y |
-| 142 | STRING_CONSTANTS | calc/perfect_number_physics.py:28 | list | 16 | physics | - |
-| 143 | CONSCIOUSNESS_BRIDGES | calc/perfect_number_physics.py:48 | list | 12 | consciousness | Y |
-| 144 | PERFECTS | calc/perfect_p3_496_explorer.py:175 | list | 5 | other | - |
-| 145 | PERFECT_NUMS | calc/perfect_p3_496_explorer.py:176 | list | 5 | other | Y |
-| 146 | DRUG_DB | calc/pharmacology_verifier.py:47 | dict | 12 | neuroscience | Y |
-| 147 | EXPECTED_DI_ORDER | calc/pharmacology_verifier.py:198 | list | 9 | other | Y |
-| 148 | I_INCREASE_DRUGS | calc/pharmacology_verifier.py:203 | list | 2 | neuroscience | Y |
-| 149 | SOLIDS | calc/platonic_solids_n6.py:41 | list | 5 | other | Y |
-| 150 | REGULAR_POLYTOPES | calc/platonic_solids_n6.py:55 | dict | 6 | other | Y |
-| 151 | ROOT | calc/psi_derivation_chain.py:43 | list | 4 | other | - |
-| 152 | LEVEL1 | calc/psi_derivation_chain.py:46 | list | 4 | other | - |
-| 153 | LEVEL2 | calc/psi_derivation_chain.py:54 | list | 5 | other | - |
-| 154 | LEVEL3 | calc/psi_derivation_chain.py:63 | list | 6 | other | Y |
-| 155 | PHYSICS | calc/psi_derivation_chain.py:73 | dict | 8 | physics | Y |
-| 156 | DATA_PROFILES | calc/psi_derivation_chain.py:85 | dict | 5 | neuroscience | Y |
-| 157 | B | calc/pure_math_deep_scan.py:253 | dict | 8 | other | - |
-| 158 | Q_CONSTANTS | calc/q_barrier_checker.py:25 | dict | 10 | constants | - |
-| 159 | GZ_TARGETS | calc/q_barrier_checker.py:40 | dict | 6 | targets | - |
-| 160 | STANDARD_TARGETS | calc/q_barrier_checker.py:49 | dict | 13 | targets | - |
-| 161 | TARGET_CATEGORIES | calc/q_barrier_checker.py:65 | dict | 18 | targets | Y |
-| 162 | DIVISORS_6 | calc/quantum_ecc_n6.py:48 | list | 4 | other | Y |
-| 163 | PROPER_DIVISORS_6 | calc/quantum_ecc_n6.py:49 | list | 3 | other | Y |
-| 164 | N6_TARGETS | calc/quark_koide_search.py:60 | dict | 0 | targets | Y |
-| 165 | RAMSEY_EXACT | calc/ramsey_n6.py:101 | dict | 17 | other | Y |
-| 166 | RAMSEY_BOUNDS | calc/ramsey_n6.py:117 | dict | 9 | other | Y |
-| 167 | SCHUR | calc/ramsey_n6.py:130 | dict | 5 | other | Y |
-| 168 | VDW | calc/ramsey_n6.py:133 | dict | 4 | other | Y |
-| 169 | FUNC_REGISTRY | calc/reciprocal_miracle_generalize.py:147 | dict | 7 | other | - |
-| 170 | MULT_FUNCS | calc/reciprocal_miracle_generalize.py:158 | list | 6 | other | Y |
-| 171 | PERFECT_NUMBERS | calc/reciprocal_miracle_generalize.py:302 | list | 5 | constants | Y |
-| 172 | DIVISORS_6 | calc/riemann_zeta_n6.py:50 | list | 4 | other | Y |
-| 173 | ZETA_ZEROS | calc/riemann_zeta_n6.py:299 | list | 100 | physics | Y |
-| 174 | CA | calc/robin_rh_connection.py:48 | list | 11 | other | Y |
-| 175 | MERSENNE_EXPONENTS | calc/self_referential_physics.py:96 | list | 10 | other | Y |
-| 176 | KNOWN_STRING_DIMS | calc/self_referential_physics.py:105 | dict | 4 | physics | Y |
-| 177 | GZ_CONSTANTS | calc/singleton_gz_mapper.py:36 | dict | 11 | constants | - |
-| 178 | PERFECTS | calc/sphere_packing_perfect.py:96 | list | 5 | other | Y |
-| 179 | MAGIC_DIMS | calc/sphere_packing_perfect.py:109 | list | 4 | nuclear | Y |
-| 180 | KISSING | calc/sphere_packing_perfect.py:112 | dict | 6 | constants | Y |
-| 181 | PERFECT_NUMBERS | calc/sporadic_groups_perfect.py:35 | dict | 5 | constants | Y |
-| 182 | SPORADIC_GROUPS | calc/sporadic_groups_perfect.py:51 | list | 26 | other | Y |
-| 183 | STEINER_SYSTEMS | calc/sporadic_groups_perfect.py:162 | dict | 5 | other | Y |
-| 184 | CONSTANTS | calc/statistical_tester.py:16 | dict | 13 | constants | - |
-| 185 | GZ_TARGETS | calc/texas_sharpshooter_v2.py:34 | dict | 8 | targets | - |
-| 186 | CLAIMS | calc/texas_sharpshooter_v2.py:61 | list | 49 | verification | Y |
-| 187 | PERFECT_NUMBERS | calc/thermodynamics_n6.py:91 | list | 4 | constants | Y |
-| 188 | N6 | calc/thermodynamics_n6.py:92 | dict | 9 | other | - |
-| 189 | MERSENNE_EXPONENTS | calc/theta_perfect_pattern.py:41 | list | 8 | other | Y |
-| 190 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
-| 191 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:1150 | dict | 20 | verification | - |
-| 192 | MERSENNE_EXPONENTS | calc/verify_causal_chain.py:81 | list | 8 | other | Y |
-| 193 | PERFECT_NUMBERS | calc/verify_causal_chain.py:89 | dict | 0 | constants | - |
-| 194 | DIVISOR_RECIPROCALS | calc/verify_h309_mitosis_anomaly.py:26 | list | 3 | other | - |
-| 195 | RESULTS | calc/verify_h309_mitosis_anomaly.py:34 | dict | 6 | other | Y |
-| 196 | NWAY_RESULTS | calc/verify_h309_mitosis_anomaly.py:44 | dict | 5 | other | Y |
-| 197 | TEMPORAL_K | calc/verify_h309_mitosis_anomaly.py:47 | dict | 6 | other | Y |
-| 198 | MATRIX_2X2 | calc/verify_h309_mitosis_anomaly.py:50 | dict | 4 | other | Y |
-| 199 | DUAL_MECHANISM | calc/verify_h309_mitosis_anomaly.py:58 | dict | 4 | other | Y |
-| 200 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
-| 201 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
-| 202 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
-| 203 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
-| 204 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
-| 205 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
-| 206 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
-| 207 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
-| 208 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
-| 209 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
-| 210 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
-| 211 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
-| 212 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
-| 213 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
-| 214 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
+| 12 | PERFECT_NUMBERS | perfect_number_engine.py:32 | dict | 4 | architecture | Y |
+| 13 | PHYSICS_TARGETS | perfect_number_engine.py:66 | dict | 10 | architecture | Y |
+| 14 | DERIVED | physics_constant_engine.py:29 | dict | 21 | architecture | - |
+| 15 | PHYSICS_CONSTANTS | physics_constant_engine.py:56 | dict | 16 | architecture | - |
+| 16 | ELEMENTS | physics_constant_engine.py:81 | dict | 10 | architecture | Y |
+| 17 | KNOWN_MATCHES | physics_constant_engine.py:88 | dict | 3 | architecture | - |
+| 18 | PROJECT_CONSTS | quantum_formula_engine.py:33 | dict | 19 | architecture | - |
+| 19 | QUANTUM_CONSTS | quantum_formula_engine.py:58 | dict | 9 | architecture | - |
+| 20 | TARGETS | quantum_formula_engine.py:73 | dict | 20 | architecture | - |
+| 21 | DISCOVERIES | texas_quantum.py:38 | list | 8 | other | Y |
+| 22 | CONVERGENCE_POINTS | calc/algebra_closure.py:24 | dict | 9 | other | - |
+| 23 | DIVISOR_RATIOS | calc/algebra_closure.py:37 | dict | 3 | other | - |
+| 24 | GRADE_MARKERS | calc/apply_grades.py:10 | list | 4 | verification | Y |
+| 25 | RULES | calc/atlas_domain_classifier.py:12 | list | 56 | other | Y |
+| 26 | GRADE_MARKERS | calc/auto_grade_n6.py:11 | list | 5 | verification | Y |
+| 27 | N6_CONSTANTS | calc/auto_grade_n6.py:15 | dict | 26 | constants | Y |
+| 28 | DEFAULT_BASES | calc/base_dependence_checker.py:17 | list | 7 | other | Y |
+| 29 | MERSENNE_PRIMES | calc/bernoulli_perfect_exotic.py:82 | list | 12 | other | Y |
+| 30 | DIVISORS | calc/bott_periodicity_p6.py:33 | list | 4 | other | Y |
+| 31 | PRIMES | calc/bott_periodicity_p6.py:34 | list | 2 | other | Y |
+| 32 | N6_VALUES | calc/bott_periodicity_p6.py:37 | dict | 7 | other | - |
+| 33 | BOTT_HOMOTOPY | calc/bott_periodicity_p6.py:49 | list | 8 | other | Y |
+| 34 | NONTRIVIAL_POS | calc/bott_periodicity_p6.py:61 | list | 4 | other | Y |
+| 35 | TRIVIAL_POS | calc/bott_periodicity_p6.py:62 | list | 4 | other | Y |
+| 36 | CLIFFORD_ALGEBRAS | calc/bott_periodicity_p6.py:65 | list | 8 | other | Y |
+| 37 | DIVISION_ALGEBRAS | calc/bott_periodicity_p6.py:77 | list | 4 | other | Y |
+| 38 | A_6 | calc/bridge_puremath_verifier.py:154 | dict | 6 | other | Y |
+| 39 | DEFAULT_TARGETS | calc/bridge_ratio_analyzer.py:36 | dict | 13 | targets | - |
+| 40 | MERSENNE_EXPONENTS | calc/bridge_ratio_uniqueness.py:109 | list | 8 | other | Y |
+| 41 | DIVISORS_6 | calc/calabi_yau_n6.py:33 | list | 4 | other | Y |
+| 42 | STRING_DIM_TOTAL | calc/calabi_yau_n6.py:41 | dict | 4 | physics | Y |
+| 43 | FAMOUS_CY3 | calc/calabi_yau_n6.py:52 | list | 10 | other | Y |
+| 44 | HOLONOMY | calc/calabi_yau_n6.py:72 | dict | 5 | other | Y |
+| 45 | N6_NAMES | calc/catalan_combinatorial_n6.py:35 | dict | 23 | other | Y |
+| 46 | BUILTIN_BANDS | calc/cherry_pick_detector.py:23 | list | 12 | other | Y |
+| 47 | PERFECT_NUMBERS | calc/claim_verifier.py:148 | list | 4 | constants | Y |
+| 48 | N6 | calc/claim_verifier.py:152 | dict | 12 | other | Y |
+| 49 | DIVISORS | calc/connes_ncg_n6.py:38 | list | 4 | other | Y |
+| 50 | PRIMES | calc/connes_ncg_n6.py:39 | list | 2 | other | Y |
+| 51 | N6_VALUES | calc/connes_ncg_n6.py:55 | dict | 7 | other | - |
+| 52 | KO_SIGNS | calc/connes_ncg_n6.py:71 | dict | 8 | other | Y |
+| 53 | TARGETS | calc/consciousness_cross_validator.py:32 | dict | 3 | consciousness | - |
+| 54 | ARCHITECTURES | calc/consciousness_cross_validator.py:529 | dict | 5 | consciousness | - |
+| 55 | STANDARD_TARGETS | calc/convergence_analyzer.py:49 | dict | 26 | targets | - |
+| 56 | TARGET_ALIASES | calc/convergence_analyzer.py:80 | dict | 14 | targets | Y |
+| 57 | PARTICLE_GROUPS | calc/counting_freedom_analyzer.py:20 | list | 11 | physics | Y |
+| 58 | CRITICAL_EXPONENTS | calc/criticality_phase_scanner.py:119 | list | 7 | other | - |
+| 59 | GZ_POOL | calc/cross_constant_explorer.py:29 | dict | 13 | constants | - |
+| 60 | KNOWN_CONSTANTS | calc/cross_constant_explorer.py:45 | dict | 36 | constants | - |
+| 61 | DEFAULT_FACTS | calc/cross_domain_counter.py:171 | list | 44 | other | Y |
+| 62 | PLATONIC_SOLIDS | calc/crystallographic_calculator.py:132 | list | 5 | constants | Y |
+| 63 | KISSING_NUMBERS | calc/crystallographic_calculator.py:189 | dict | 8 | constants | Y |
+| 64 | POINT_GROUPS | calc/crystallographic_calculator.py:299 | list | 32 | other | Y |
+| 65 | DEFAULT_TARGETS | calc/depth_reachability.py:38 | dict | 9 | targets | - |
+| 66 | FUNC_NAMES | calc/dfs_n6_composition_miner.py:124 | list | 7 | other | Y |
+| 67 | FUNC_NAMES | calc/dfs_n6_identity_miner.py:182 | list | 9 | other | Y |
+| 68 | DATASETS | calc/direction_analyzer.py:27 | dict | 3 | other | - |
+| 69 | CATEGORIES | calc/domain_distance.py:38 | dict | 4 | domains | - |
+| 70 | ALL_TARGETS | calc/domain_distance.py:67 | dict | 0 | targets | Y |
+| 71 | BROAD_TARGETS | calc/domain_distance.py:72 | dict | 0 | targets | Y |
+| 72 | KNOWN_PERFECTS | calc/egyptian_fraction.py:63 | list | 5 | constants | Y |
+| 73 | N6_CONSTANTS | calc/elliptic_curves_perfect.py:112 | dict | 29 | constants | Y |
+| 74 | DIVS | calc/entanglement_n6_analysis.py:45 | list | 4 | other | Y |
+| 75 | PERFECT_NUMBERS | calc/exotic_spheres_perfect.py:47 | list | 6 | constants | Y |
+| 76 | PERFECT_PRIMES | calc/exotic_spheres_perfect.py:48 | list | 6 | other | Y |
+| 77 | THETA_N | calc/exotic_spheres_perfect.py:63 | dict | 20 | other | Y |
+| 78 | THETA_N_EXTENDED | calc/exotic_spheres_perfect.py:87 | dict | 3 | other | Y |
+| 79 | ALL_DOMAINS | calc/extreme_hypothesis_verifier.py:298 | dict | 17 | domains | - |
+| 80 | PERFECT_NUMBERS | calc/feynman_diagrams_n6.py:124 | list | 4 | constants | Y |
+| 81 | FUSION_CONSTANTS | calc/fusion_hypothesis_verifier.py:33 | dict | 32 | constants | - |
+| 82 | GATE_TABLE | calc/gate_formula_calculator.py:39 | list | 7 | other | Y |
+| 83 | PERFECT_NUMBERS | calc/gauge_cosmology_calculator.py:21 | list | 5 | constants | Y |
+| 84 | PN_DATA | calc/gauge_cosmology_calculator.py:24 | dict | 0 | other | Y |
+| 85 | PSI_CONSTANTS | calc/gauge_cosmology_calculator.py:44 | dict | 6 | consciousness | - |
+| 86 | DEFAULT_TARGETS | calc/generator_finder.py:24 | dict | 14 | targets | - |
+| 87 | DIVISORS | calc/genetic_code_variant_tester.py:30 | list | 4 | other | Y |
+| 88 | CONSTANTS | calc/genetic_code_variant_tester.py:32 | dict | 6 | constants | - |
+| 89 | NCBI_TABLES | calc/genetic_code_variant_tester.py:39 | list | 26 | other | Y |
+| 90 | UNIVERSAL_PROPERTIES | calc/genetic_code_variant_tester.py:97 | dict | 8 | other | Y |
+| 91 | PERFECTS | calc/grand_unification_deep.py:95 | list | 4 | other | Y |
+| 92 | N6_VALUES | calc/grand_unification_n6.py:179 | dict | 7 | other | - |
+| 93 | KO_GROUPS | calc/grand_unification_n6.py:190 | dict | 8 | other | Y |
+| 94 | CLIFFORD_TYPES | calc/grand_unification_n6.py:204 | dict | 8 | other | Y |
+| 95 | PERFECT_NUMBERS | calc/gz_bridge_calculator.py:30 | list | 5 | constants | Y |
+| 96 | KNOWN_PERFECT | calc/gz_hierarchy.py:31 | dict | 8 | constants | Y |
+| 97 | PDG | calc/hph9_pdg_verification.py:42 | dict | 9 | other | Y |
+| 98 | PDG_OTHER | calc/hph9_pdg_verification.py:55 | dict | 14 | other | Y |
+| 99 | MATH_CONSTANTS | calc/hypothesis_verifier.py:36 | dict | 37 | constants | - |
+| 100 | PERFECT_NUMBERS | calc/hypothesis_verifier.py:95 | dict | 2 | constants | Y |
+| 101 | GRADE_EMOJI | calc/hypothesis_verifier.py:521 | dict | 5 | verification | Y |
+| 102 | DIVISORS_6 | calc/information_theory_n6.py:55 | list | 4 | other | Y |
+| 103 | PROPER_DIVISORS_6 | calc/information_theory_n6.py:56 | list | 3 | other | Y |
+| 104 | JONES_POLYNOMIALS | calc/knot_theory_n6.py:55 | dict | 9 | other | Y |
+| 105 | ALEXANDER_POLYNOMIALS | calc/knot_theory_n6.py:68 | dict | 8 | other | Y |
+| 106 | RAMANUJAN_TAU_KNOWN | calc/langlands_perfect.py:215 | dict | 30 | other | Y |
+| 107 | DATA_PROFILES | calc/law79_freedom_degree.py:35 | dict | 5 | neuroscience | Y |
+| 108 | MUTATION_DATA | calc/mitosis_calculator.py:16 | dict | 3 | other | Y |
+| 109 | DIVERGENCE | calc/mitosis_calculator.py:23 | list | 10 | other | Y |
+| 110 | SPLITS_DATA | calc/mitosis_calculator.py:45 | dict | 3 | other | Y |
+| 111 | FACTION_DATA | calc/mitosis_calculator.py:58 | dict | 3 | other | Y |
+| 112 | PERFECT_NUMBERS | calc/monster_moonshine_perfect.py:43 | list | 5 | constants | - |
+| 113 | MONSTER_FACTORIZATION | calc/monster_moonshine_perfect.py:54 | dict | 15 | other | Y |
+| 114 | J_COEFFICIENTS | calc/monster_moonshine_perfect.py:74 | dict | 21 | other | Y |
+| 115 | J_COEFFICIENTS_EXTENDED | calc/monster_moonshine_perfect.py:99 | dict | 8 | other | Y |
+| 116 | MONSTER_EXPO | calc/moonshine_deep_analysis.py:47 | dict | 15 | other | Y |
+| 117 | J_COEFF | calc/moonshine_deep_analysis.py:56 | dict | 22 | other | Y |
+| 118 | MONSTER_IRREPS | calc/moonshine_deep_analysis.py:82 | list | 8 | other | Y |
+| 119 | BABY_MONSTER_IRREPS | calc/moonshine_deep_analysis.py:94 | list | 4 | other | Y |
+| 120 | BABY_MONSTER_ORDER_EXPO | calc/moonshine_deep_analysis.py:95 | dict | 11 | other | Y |
+| 121 | FI22_ORDER_EXPO | calc/moonshine_deep_analysis.py:102 | dict | 6 | other | Y |
+| 122 | FI23_ORDER_EXPO | calc/moonshine_deep_analysis.py:103 | dict | 8 | other | Y |
+| 123 | FI24_ORDER_EXPO | calc/moonshine_deep_analysis.py:104 | dict | 9 | other | Y |
+| 124 | MCKAY_E8 | calc/moonshine_deep_analysis.py:111 | list | 9 | other | Y |
+| 125 | JI_TARGETS | calc/music_consonance_calculator.py:171 | dict | 4 | targets | - |
+| 126 | N6_CONSTANTS | calc/n6_architecture_constants.py:6 | dict | 494 | architecture | Y |
+| 127 | KNOWN_IDENTITIES | calc/n6_uniqueness_tester.py:61 | list | 11 | other | - |
+| 128 | SCAN_TEMPLATES | calc/n6_uniqueness_tester.py:209 | list | 16 | verification | Y |
+| 129 | EVIDENCE_SCORES | calc/nobel_scorer.py:30 | dict | 5 | other | Y |
+| 130 | RIGOR_SCORES | calc/nobel_scorer.py:38 | dict | 4 | other | Y |
+| 131 | IMPACT_SCORES | calc/nobel_scorer.py:45 | dict | 4 | other | Y |
+| 132 | NOBEL_WEIGHTS | calc/nobel_scorer.py:53 | dict | 4 | other | Y |
+| 133 | BUILTIN | calc/nobel_scorer.py:121 | list | 10 | other | Y |
+| 134 | IDENTITIES | calc/p6_uniqueness_scorer.py:36 | list | 12 | other | - |
+| 135 | CLAIM_PATTERNS | calc/paper_claim_verifier.py:158 | list | 10 | verification | Y |
+| 136 | MERSENNE_EXPONENTS | calc/perfect_chain_bridges.py:167 | list | 8 | other | Y |
+| 137 | PERFECT_NUMBERS | calc/perfect_number_P6_analysis.py:30 | dict | 6 | constants | Y |
+| 138 | MERSENNE_EXPONENTS | calc/perfect_number_P6_analysis.py:40 | dict | 6 | other | Y |
+| 139 | PHYSICS_MAP | calc/perfect_number_P6_analysis.py:42 | dict | 5 | physics | Y |
+| 140 | MERSENNE_EXPONENTS | calc/perfect_number_classifier.py:165 | list | 8 | other | Y |
+| 141 | IDENTITIES | calc/perfect_number_classifier.py:225 | list | 40 | other | Y |
+| 142 | PERFECT_NUMBERS | calc/perfect_number_generalizer.py:24 | list | 4 | constants | Y |
+| 143 | PN_LABELS | calc/perfect_number_generalizer.py:71 | list | 4 | other | Y |
+| 144 | BUILTIN_FORMULAS | calc/perfect_number_generalizer.py:413 | list | 10 | expressions | Y |
+| 145 | PERFECT_NUMBERS | calc/perfect_number_physics.py:18 | list | 5 | constants | Y |
+| 146 | DIMENSION_MAP | calc/perfect_number_physics.py:19 | dict | 5 | other | Y |
+| 147 | STRING_CONSTANTS | calc/perfect_number_physics.py:28 | list | 16 | physics | - |
+| 148 | CONSCIOUSNESS_BRIDGES | calc/perfect_number_physics.py:48 | list | 12 | consciousness | Y |
+| 149 | PERFECTS | calc/perfect_p3_496_explorer.py:175 | list | 5 | other | - |
+| 150 | PERFECT_NUMS | calc/perfect_p3_496_explorer.py:176 | list | 5 | other | Y |
+| 151 | DRUG_DB | calc/pharmacology_verifier.py:47 | dict | 12 | neuroscience | Y |
+| 152 | EXPECTED_DI_ORDER | calc/pharmacology_verifier.py:198 | list | 9 | other | Y |
+| 153 | I_INCREASE_DRUGS | calc/pharmacology_verifier.py:203 | list | 2 | neuroscience | Y |
+| 154 | SOLIDS | calc/platonic_solids_n6.py:41 | list | 5 | other | Y |
+| 155 | REGULAR_POLYTOPES | calc/platonic_solids_n6.py:55 | dict | 6 | other | Y |
+| 156 | ROOT | calc/psi_derivation_chain.py:43 | list | 4 | other | - |
+| 157 | LEVEL1 | calc/psi_derivation_chain.py:46 | list | 4 | other | - |
+| 158 | LEVEL2 | calc/psi_derivation_chain.py:54 | list | 5 | other | - |
+| 159 | LEVEL3 | calc/psi_derivation_chain.py:63 | list | 6 | other | Y |
+| 160 | PHYSICS | calc/psi_derivation_chain.py:73 | dict | 8 | physics | Y |
+| 161 | DATA_PROFILES | calc/psi_derivation_chain.py:85 | dict | 5 | neuroscience | Y |
+| 162 | B | calc/pure_math_deep_scan.py:253 | dict | 8 | other | - |
+| 163 | Q_CONSTANTS | calc/q_barrier_checker.py:25 | dict | 10 | constants | - |
+| 164 | GZ_TARGETS | calc/q_barrier_checker.py:40 | dict | 6 | targets | - |
+| 165 | STANDARD_TARGETS | calc/q_barrier_checker.py:49 | dict | 13 | targets | - |
+| 166 | TARGET_CATEGORIES | calc/q_barrier_checker.py:65 | dict | 18 | targets | Y |
+| 167 | DIVISORS_6 | calc/quantum_ecc_n6.py:48 | list | 4 | other | Y |
+| 168 | PROPER_DIVISORS_6 | calc/quantum_ecc_n6.py:49 | list | 3 | other | Y |
+| 169 | N6_TARGETS | calc/quark_koide_search.py:60 | dict | 0 | targets | Y |
+| 170 | RAMSEY_EXACT | calc/ramsey_n6.py:101 | dict | 17 | other | Y |
+| 171 | RAMSEY_BOUNDS | calc/ramsey_n6.py:117 | dict | 9 | other | Y |
+| 172 | SCHUR | calc/ramsey_n6.py:130 | dict | 5 | other | Y |
+| 173 | VDW | calc/ramsey_n6.py:133 | dict | 4 | other | Y |
+| 174 | FUNC_REGISTRY | calc/reciprocal_miracle_generalize.py:147 | dict | 7 | other | - |
+| 175 | MULT_FUNCS | calc/reciprocal_miracle_generalize.py:158 | list | 6 | other | Y |
+| 176 | PERFECT_NUMBERS | calc/reciprocal_miracle_generalize.py:302 | list | 5 | constants | Y |
+| 177 | DIVISORS_6 | calc/riemann_zeta_n6.py:50 | list | 4 | other | Y |
+| 178 | ZETA_ZEROS | calc/riemann_zeta_n6.py:299 | list | 100 | physics | Y |
+| 179 | CA | calc/robin_rh_connection.py:48 | list | 11 | other | Y |
+| 180 | MERSENNE_EXPONENTS | calc/self_referential_physics.py:96 | list | 10 | other | Y |
+| 181 | KNOWN_STRING_DIMS | calc/self_referential_physics.py:105 | dict | 4 | physics | Y |
+| 182 | GZ_CONSTANTS | calc/singleton_gz_mapper.py:36 | dict | 11 | constants | - |
+| 183 | PERFECTS | calc/sphere_packing_perfect.py:96 | list | 5 | other | Y |
+| 184 | MAGIC_DIMS | calc/sphere_packing_perfect.py:109 | list | 4 | nuclear | Y |
+| 185 | KISSING | calc/sphere_packing_perfect.py:112 | dict | 6 | constants | Y |
+| 186 | PERFECT_NUMBERS | calc/sporadic_groups_perfect.py:35 | dict | 5 | constants | Y |
+| 187 | SPORADIC_GROUPS | calc/sporadic_groups_perfect.py:51 | list | 26 | other | Y |
+| 188 | STEINER_SYSTEMS | calc/sporadic_groups_perfect.py:162 | dict | 5 | other | Y |
+| 189 | CONSTANTS | calc/statistical_tester.py:16 | dict | 13 | constants | - |
+| 190 | GZ_TARGETS | calc/texas_sharpshooter_v2.py:34 | dict | 8 | targets | - |
+| 191 | CLAIMS | calc/texas_sharpshooter_v2.py:61 | list | 49 | verification | Y |
+| 192 | PERFECT_NUMBERS | calc/thermodynamics_n6.py:91 | list | 4 | constants | Y |
+| 193 | N6 | calc/thermodynamics_n6.py:92 | dict | 9 | other | - |
+| 194 | MERSENNE_EXPONENTS | calc/theta_perfect_pattern.py:41 | list | 8 | other | Y |
+| 195 | CONSTANTS | calc/unit_dependence_tester.py:76 | dict | 0 | constants | Y |
+| 196 | ALL_CALCULATOR_TESTS | calc/validate_calculators.py:1150 | dict | 20 | verification | - |
+| 197 | MERSENNE_EXPONENTS | calc/verify_causal_chain.py:81 | list | 8 | other | Y |
+| 198 | PERFECT_NUMBERS | calc/verify_causal_chain.py:89 | dict | 0 | constants | - |
+| 199 | DIVISOR_RECIPROCALS | calc/verify_h309_mitosis_anomaly.py:26 | list | 3 | other | - |
+| 200 | RESULTS | calc/verify_h309_mitosis_anomaly.py:34 | dict | 6 | other | Y |
+| 201 | NWAY_RESULTS | calc/verify_h309_mitosis_anomaly.py:44 | dict | 5 | other | Y |
+| 202 | TEMPORAL_K | calc/verify_h309_mitosis_anomaly.py:47 | dict | 6 | other | Y |
+| 203 | MATRIX_2X2 | calc/verify_h309_mitosis_anomaly.py:50 | dict | 4 | other | Y |
+| 204 | DUAL_MECHANISM | calc/verify_h309_mitosis_anomaly.py:58 | dict | 4 | other | Y |
+| 205 | FUNCS | math/characterization_verifier.py:109 | dict | 27 | other | - |
+| 206 | KNOWN_CHARS | math/characterization_verifier.py:230 | list | 17 | other | Y |
+| 207 | L | math/combinatorial_designs_n6.py:208 | dict | 6 | other | Y |
+| 208 | WE | math/consciousness_bridge_batch7.py:216 | list | 13 | consciousness | Y |
+| 209 | WE | math/consciousness_bridge_batch8_and_upgrades.py:48 | dict | 20 | consciousness | Y |
+| 210 | P | math/elliptic_curve_6.py:104 | list | 2 | other | - |
+| 211 | FUNCS | math/frontier_1000_verify.py:81 | dict | 8 | other | - |
+| 212 | PERFECTS | math/frontier_1800_verify.py:137 | list | 4 | other | Y |
+| 213 | PERFECT_NUMBERS | math/frontier_500_verify.py:200 | list | 4 | constants | Y |
+| 214 | PERFECT_NUMBERS | math/frontier_600_verify.py:134 | list | 4 | constants | Y |
+| 215 | CONSTANTS_POOL | math/texas_verifier.py:29 | dict | 30 | constants | - |
+| 216 | UNARY_OPS | math/texas_verifier.py:47 | list | 7 | other | - |
+| 217 | BINARY_OPS | math/texas_verifier.py:54 | list | 5 | other | - |
+| 218 | V | math/verify_h_top_3.py:99 | list | 2 | other | Y |
+| 219 | P | math/verify_hph9_hph11.py:94 | list | 6 | other | Y |
 
 ### SEDI (122)
 
