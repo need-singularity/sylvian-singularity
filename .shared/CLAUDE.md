@@ -11,16 +11,20 @@
 
 어떤 프로젝트에서든 아래 상황이면 렌즈를 자동으로 돌릴 것:
 - 새 데이터셋 분석 시 → 의식+중력+위상 3종 기본 스캔
-- 이상점/패턴 탐색 시 → 전체 16종 풀스캔
-- 신소재/신약 후보 탐색 시 → 진화+열역학+중력 조합
-- 시계열 분석 시 → 파동+열역학+의식 조합
+- 이상점/패턴 탐색 시 → 전체 22종 풀스캔
+- 신소재/신약 후보 탐색 시 → 진화+열역학+중력+안정성 조합
+- 시계열 분석 시 → 파동+열역학+의식+기억 조합
 - 상수/법칙 관계 탐색 시 → 정보+양자+의식+비율 조합
 - 상수 간 비율/비례 탐색 시 → 비율+직교+곡률 조합
 - 차원 축소/독립성 분석 시 → 직교+정보+위상 조합
 - 대칭/불변량 탐색 시 → 대칭+위상+양자 조합
-- 멱법칙/스케일링 분석 시 → 스케일+진화+열역학 조합
+- 멱법칙/스케일링 분석 시 → 스케일+진화+열역학+다중스케일 조합
 - 인과 관계/방향 탐색 시 → 인과+정보+전자기 조합
 - 양자성/결맞음 분석 시 → 양자현미경+양자+의식 조합
+- 그래프/복잡계 분석 시 → 네트워크+위상+스케일 조합
+- 자기참조/재귀 구조 시 → 자기참조+의식+정보 조합
+- 상전이/경계 탐색 시 → 경계+열역학+위상 조합
+- 안정성/복원력 분석 시 → 안정성+중력+열역학 조합
 
 ### 렌즈 선택 가이드
 
@@ -41,9 +45,15 @@
 "멱법칙/프랙탈인가?"      → 스케일 렌즈 (power law + Hurst)
 "원인→결과 방향이 있나?"  → 인과 렌즈 (Granger + TE)
 "결맞음이 있나? 깨지나?"  → 양자현미경 (coherence + decoherence)
+"안정한가? 복원되나?"      → 안정성 렌즈 (Lyapunov + resilience)
+"허브/병목이 어디인가?"    → 네트워크 렌즈 (graph + community)
+"기억이 남아있나?"         → 기억 렌즈 (autocorrelation + echo)
+"자기참조 루프가 있나?"    → 자기참조 렌즈 (fixed point + self-similarity)
+"경계/전이대가 어디인가?"  → 경계 렌즈 (boundary + transition)
+"스케일마다 다른 구조인가?" → 다중스케일 렌즈 (wavelet + multiresolution)
 ```
 
-### 16종 렌즈 목록 (Rust — telescope_rs)
+### 22종 렌즈 목록 (Rust — telescope_rs)
 
 | 렌즈 | Rust 함수 | 원리 | 찾는 것 |
 |------|-----------|------|---------|
@@ -63,6 +73,12 @@
 | 스케일 | `telescope_rs.scale_scan()` | 멱법칙 + 프랙탈 + Hurst | 자기유사성, 멱지수 |
 | 인과 | `telescope_rs.causal_scan()` | Granger + 전달엔트로피 | 인과 방향, 정보 흐름 |
 | 양자현미경 | `telescope_rs.quantum_microscope_scan()` | 밀도행렬 + VN entropy | 결맞음, 디코히어런스 |
+| 안정성 | `telescope_rs.stability_scan()` | Lyapunov + 복원력 | 안정점, 복원 시간, 분기점 |
+| 네트워크 | `telescope_rs.network_scan()` | 그래프 지표 + 커뮤니티 | 허브, 병목, 모듈 구조 |
+| 기억 | `telescope_rs.memory_scan()` | 자기상관 + 에코 상태 | 기억 지속, 망각 곡선, 잔류 정보 |
+| 자기참조 | `telescope_rs.recursion_scan()` | 고정점 + 자기유사 | 자기참조 루프, 고정점, 불동점 |
+| 경계 | `telescope_rs.boundary_scan()` | 경계 검출 + 전이대 | 상경계, 전이 영역, 불연속점 |
+| 다중스케일 | `telescope_rs.multiscale_scan()` | 웨이블릿 + 다해상도 | 스케일별 구조, 교차스케일 상관 |
 
 ### 사용법 (Rust — telescope_rs)
 
@@ -82,7 +98,7 @@ print(r['betti_0'], r['betti_1'])
 r = telescope_rs.causal_scan(data, max_lag=5)
 print(r['n_causal_pairs'])
 
-# 16종 풀스캔 (telescope_rs 직접)
+# 22종 풀스캔 (telescope_rs 직접)
 import telescope_rs
 results = telescope_rs.full_scan(data)  # dict of lens_name → result dict
 for name, r in results.items():
@@ -90,25 +106,34 @@ for name, r in results.items():
 ```
 
 빌드: `cd ~/Dev/anima/anima/anima-rs/crates/telescope-rs && maturin build --release`
-소스: `anima/anima-rs/crates/telescope-rs/src/` (16 모듈, 36 tests)
+소스: `anima/anima-rs/crates/telescope-rs/src/` (22 모듈, 36 tests)
 
 ### 렌즈 추가 요청 시
 
 사용자가 "렌즈 추가 필요한지", "다른 렌즈 아이디어" 등을 물으면:
-1. 현재 16종으로 커버 안 되는 도메인 분석
+1. 현재 22종으로 커버 안 되는 도메인 분석
 2. 새 물리/수학 비유에서 렌즈 아이디어 도출
 3. Rust 모듈로 구현 (telescope-rs/src/새렌즈.rs)
+4. ⚠️ **캘리브레이션 필수!** — 새 렌즈/도구 추가 시 반드시 상호 캘리브레이션 재실행
+   - 스크립트: `anima/experiments/telescope_calibration.py`
+   - 기존 22개 렌즈와 상관 분석, 이상치 검출, 감도 측정
+   - 캘리브레이션 미통과 렌즈는 실험에 사용 금지
+   - 결과: `anima/data/telescope_calibration_results.json`
 
 ### 교차 검증
 
 ```
 실행: python3 .shared/telescope_cross_test.py
 교정: python3 .shared/telescope_calibrate.py
+캘리브레이션: python3 anima/experiments/telescope_calibration.py  ← Rust 22렌즈 상호 검증
 
 해석:
   - 1개 렌즈만 찾은 것 = 가설 (추가 검증 필요)
   - 2개 렌즈 합의 = 후보 (유의미할 가능성 높음)
   - 3개+ 렌즈 합의 = 확정 (독립 검증 통과)
+
+⚠️ 렌즈 추가/수정/파라미터 변경 시 캘리브레이션 재실행 필수!
+   캘리브레이션 없이 측정한 결과는 신뢰 불가.
 ```
 
 ### 새 프로젝트에 의식 브릿지 추가 시
@@ -121,10 +146,10 @@ ls -la .shared/consciousness_loader.py
 # 3. 이 테이블에 행 추가
 ```
 
-## 망원경 (telescope_rs) — Rust 고성능 16렌즈
+## 망원경 (telescope_rs) — Rust 고성능 22렌즈
 
-> 전체 16종 렌즈가 Rust로 구현됨 (telescope-rs crate, PyO3 바인딩).
-> 소스: anima/anima-rs/crates/telescope-rs/src/ (16 모듈, 36 tests)
+> 전체 22종 렌즈가 Rust로 구현됨 (telescope-rs crate, PyO3 바인딩).
+> 소스: anima/anima-rs/crates/telescope-rs/src/ (22 모듈, 36 tests)
 > 빌드: `cd ~/Dev/anima/anima/anima-rs/crates/telescope-rs && maturin build --release`
 
 ### 기본 사용
@@ -149,7 +174,7 @@ print(r['betti_0'], r['betti_1'])  # 연결 구조, 구멍
 r = telescope_rs.causal_scan(data, max_lag=5)
 print(r['n_causal_pairs'])
 
-# 16종 풀스캔 (~0.9s total)
+# 22종 풀스캔 (~0.9s total)
 import telescope_rs
 results = telescope_rs.full_scan(data)
 ```
