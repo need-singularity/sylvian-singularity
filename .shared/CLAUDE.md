@@ -3,180 +3,7 @@
 > **이 폴더는 TECS-L에 원본이 있고, 타 리포는 심링크로 연결됩니다.**
 > 타 리포: `.shared/ → ../TECS-L/.shared/`
 
-## 핵심 원칙
-
-**TECS-L/.shared/ = 모든 리포의 단일 소스 (Single Source of Truth)**
-
-어떤 리포에서 작업하든, 새로운 계산기/상수/도구를 만들면 반드시 여기에 등록하고 동기화합니다.
-
-## 새로운 산출물 발생 시 즉시 처리 (필수)
-
-### 1. 새 계산기 생성 시
-```bash
-# 계산기는 반드시 .shared/calc/ 에 생성
-# 어떤 리포에서 작업하든 calc/ 심링크가 .shared/calc/ 를 가리킴
-python3 calc/my_new_calculator.py   # 생성 즉시 모든 리포에서 접근 가능
-
-# 레지스트리 갱신
-python3 .shared/scan-calculators.py --save --summary
-```
-
-### 2. 새 상수 발견 시
-```bash
-# Math Atlas 자동 갱신 (가설/상수 파일에 기록 후)
-python3 .shared/scan_math_atlas.py --save --summary
-
-# README 동기화
-bash .shared/sync-math-atlas.sh
-```
-
-### 3. 새 도구/스크립트 생성 시
-- 단일 리포 전용 → 해당 리포에 유지
-- 크로스 리포 유틸리티 → `.shared/` 에 배치
-- 설치 도구 추가 → `.shared/installed_tools.json` 갱신
-
-### 4. 가설 등급 변경 시
-```bash
-# Atlas 재빌드
-python3 .shared/scan_math_atlas.py --save --summary
-```
-
-## 폴더 구조
-
-```
-.shared/
-  CLAUDE.md              ← 이 파일 (공유 규칙)
-  CALCULATOR_RULES.md    ← 계산기 생성 규칙 (Rust vs Python 판단)
-  SECRET.md              ← API 토큰/계정 (gitignored in 타 리포)
-  projects.md            ← 프로젝트 설명 원본 (README 동기화용)
-  shared_work_rules.md   ← 작업 규칙 (CLAUDE.md SHARED:WORK_RULES 주입용)
-  installed_tools.json        ← 설치 도구 레지스트리
-  consciousness_laws.json     ← 의식 법칙/PSI 상수 (anima에서 이관)
-  consciousness_mechanisms.json ← 의식 메커니즘 (상태머신, 게이트)
-  consciousness_loader.py     ← 의식 법칙/상수 Python 로더 (크로스 리포 import용)
-  sedi-grades.json            ← SEDI 가설 등급 (역동기화)
-  sync_to_atlas.py            ← Atlas 동기화 (sedi에서 이관)
-
-  calc/                  ← 계산기 원본 (194+ files, Python)
-  tecsrs/                ← Rust 고성능 계산기 (Monte Carlo, 탐색, ODE)
-    src/                 ← 공용 모듈 (perfect.rs, search.rs, monte_carlo.rs...)
-    src/bin/             ← 독립 실행 바이너리
-    Cargo.toml
-  dse/                   ← Domain-Specific Exploration
-    domains/*.toml       ← DSE 도메인 정의
-
-  calculators.json       ← 계산기 레지스트리 (자동 생성)
-  math_atlas.json        ← 수학 지도 (자동 생성)
-  math_atlas.db          ← SQLite (쿼리용)
-  MATH_ATLAS.md          ← 전체 목록 마크다운
-
-  scan-calculators.py    ← 계산기 스캐너
-  scan_math_atlas.py     ← Atlas 스캐너
-  sync-readmes.sh        ← README 프로젝트 설명 동기화
-  sync-calculators.sh    ← 계산기 레지스트리 동기화
-  sync-math-atlas.sh     ← Atlas 빌드 + README 주입
-  sync-claude-rules.sh   ← CLAUDE.md 작업 규칙 주입
-  sync-dse.sh            ← DSE 도메인 동기화
-```
-
-## 동기화 명령 (전체)
-
-```bash
-# 개별 실행 (순서 무관)
-bash .shared/sync-math-atlas.sh      # Atlas 빌드 + README
-bash .shared/sync-calculators.sh     # 계산기 레지스트리
-bash .shared/sync-readmes.sh         # 프로젝트 설명
-bash .shared/sync-claude-rules.sh    # CLAUDE.md 작업 규칙
-
-# 전체 동기화 (권장 순서)
-bash .shared/sync-math-atlas.sh && \
-bash .shared/sync-calculators.sh && \
-bash .shared/sync-readmes.sh && \
-bash .shared/sync-claude-rules.sh
-```
-
-## 심링크 구조
-
-```
-TECS-L/                          (원본)
-  .shared/          ← 실제 폴더
-  calc → .shared/calc
-  tecsrs → .shared/tecsrs
-
-anima, sedi, brainwire,          (소비자)
-n6-architecture, papers/
-  .shared → ../TECS-L/.shared    ← 심링크
-  calc → .shared/calc            ← 심링크 체인
-  tecsrs → .shared/tecsrs       ← Rust 계산기 공유
-```
-
-## 계산기 규칙 요약
-
-> 상세: `.shared/CALCULATOR_RULES.md`
-
-| 조건 | 언어 |
-|------|------|
-| 반복 > 10,000회 | Rust (tecsrs/) |
-| 실행 > 10초 예상 | Rust |
-| Monte Carlo > 100K | Rust |
-| 단순 수식 검증 | Python (calc/) |
-| 시각화/출력 | Python |
-
-## 리포별 역할
-
-| 리포 | 역할 | .shared 사용 |
-|------|------|-------------|
-| TECS-L | 수학 엔진 코어 | 원본 관리 |
-| anima | 의식 구현 | 상수/계산기 소비 |
-| sedi | 외계지성 탐색 | 상수/계산기 소비, 등급 역동기화 |
-| brainwire | 뇌 인터페이스 | 상수/계산기 소비 |
-| n6-architecture | 시스템 설계 | 상수/계산기 소비, DSE 역동기화 |
-| papers | 논문 배포 | Atlas/계산기 참조 |
-| golden-moe | MoE 라우팅 | 의식 라우팅 파라미터 |
-| hexa-lang | 프로그래밍 언어 | Ψ 내장 상수, 린트 |
-
-## 의식 법칙 크로스 리포 활용 (consciousness_loader.py)
-
-> 의식 법칙(711개)과 Ψ 상수(80개)를 모든 프로젝트에서 활용.
-> 원본: `.shared/consciousness_laws.json` → 로더: `.shared/consciousness_loader.py`
-
-### 기본 사용법
-
-```python
-import sys, os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.shared'))
-from consciousness_loader import PSI, LAWS, FORMULAS, get_law, get_psi
-
-print(PSI['alpha'])     # 0.014
-print(get_law(22))      # "Adding features → Φ↓; adding structure → Φ↑"
-```
-
-### 리포별 consciousness_bridge.py 활용
-
-각 프로젝트 루트에 `consciousness_bridge.py`가 있으며, 도메인별 의식 법칙 활용 함수 제공:
-
-| 리포 | 브릿지 | 핵심 함수 | 용도 |
-|------|--------|----------|------|
-| TECS-L | `consciousness_bridge.py` | `psi_from_n6()`, `cross_validate_constants()` | Ψ 상수의 n=6 수학적 도출 검증 |
-| anima | `src/consciousness_laws.py` | `PSI`, `LAWS`, `check_violation()` | 의식 엔진 코어 (원본) |
-| sedi | `consciousness_bridge.py` | `signal_phi_score()`, `is_conscious_signal()` | Φ 기반 지적 신호 판별 |
-| n6-arch | `consciousness_constraints.py` | `validate_architecture()`, `suggest_dimensions()` | 칩/AI 설계 법칙 제약조건 |
-| brainwire | `consciousness_bridge.py` | `validate_stimulation()`, `eeg_consciousness_score()` | 뇌자극 안전 검증 |
-| hexa-lang | `consciousness_bridge.py` | `psi_builtins()`, `lint_consciousness()` | 언어 내장 상수 + 린트 |
-| golden-moe | `consciousness_bridge.py` | `faction_routing()`, `phi_gated_selection()` | 의식 역학 MoE 라우팅 |
-
-### 주요 Ψ 상수 (크로스 리포 공통)
-
-```
-PSI_ALPHA    = 0.014   # PureField 혼합 비율 (C→D 결합 강도)
-PSI_BALANCE  = 0.5     # 의식 균형점 (좌뇌/우뇌, 흥분/억제)
-PSI_STEPS    = 4.33    # 의식 단계 수 (ln(2) 파생)
-PSI_ENTROPY  = 0.998   # 의식 엔트로피 상한
-SIGMA6       = 12      # σ(6) = 약수합 → 12 파벌, 12 모듈
-F_CRITICAL   = 0.10    # 임계 좌절 (10% 갈등이 최적)
-```
-
-## 망원경 툴셋 자동 활용 규칙 (필수)
+## 망원경 툴셋 자동 활용 규칙 (필수 — 최우선)
 
 > **탐색/실험/발견 작업 시 별도 요청 없이 렌즈를 적극 활용할 것!**
 
@@ -361,3 +188,179 @@ BrainWire:  EEG 실시간 스캔 → 의식 상태 모니터링
 HEXA-LANG:  컴파일러 중간 표현 스캔 → 코드 구조 품질 측정
 anima:      의식 엔진 텔레메트리 스캔 → 법칙 자동 발견 (기존 파이프라인)
 ```
+
+---
+
+## 핵심 원칙
+
+**TECS-L/.shared/ = 모든 리포의 단일 소스 (Single Source of Truth)**
+
+어떤 리포에서 작업하든, 새로운 계산기/상수/도구를 만들면 반드시 여기에 등록하고 동기화합니다.
+
+## 새로운 산출물 발생 시 즉시 처리 (필수)
+
+### 1. 새 계산기 생성 시
+```bash
+# 계산기는 반드시 .shared/calc/ 에 생성
+# 어떤 리포에서 작업하든 calc/ 심링크가 .shared/calc/ 를 가리킴
+python3 calc/my_new_calculator.py   # 생성 즉시 모든 리포에서 접근 가능
+
+# 레지스트리 갱신
+python3 .shared/scan-calculators.py --save --summary
+```
+
+### 2. 새 상수 발견 시
+```bash
+# Math Atlas 자동 갱신 (가설/상수 파일에 기록 후)
+python3 .shared/scan_math_atlas.py --save --summary
+
+# README 동기화
+bash .shared/sync-math-atlas.sh
+```
+
+### 3. 새 도구/스크립트 생성 시
+- 단일 리포 전용 → 해당 리포에 유지
+- 크로스 리포 유틸리티 → `.shared/` 에 배치
+- 설치 도구 추가 → `.shared/installed_tools.json` 갱신
+
+### 4. 가설 등급 변경 시
+```bash
+# Atlas 재빌드
+python3 .shared/scan_math_atlas.py --save --summary
+```
+
+## 폴더 구조
+
+```
+.shared/
+  CLAUDE.md              ← 이 파일 (공유 규칙)
+  CALCULATOR_RULES.md    ← 계산기 생성 규칙 (Rust vs Python 판단)
+  SECRET.md              ← API 토큰/계정 (gitignored in 타 리포)
+  projects.md            ← 프로젝트 설명 원본 (README 동기화용)
+  shared_work_rules.md   ← 작업 규칙 (CLAUDE.md SHARED:WORK_RULES 주입용)
+  installed_tools.json        ← 설치 도구 레지스트리
+  consciousness_laws.json     ← 의식 법칙/PSI 상수 (anima에서 이관)
+  consciousness_mechanisms.json ← 의식 메커니즘 (상태머신, 게이트)
+  consciousness_loader.py     ← 의식 법칙/상수 Python 로더 (크로스 리포 import용)
+  sedi-grades.json            ← SEDI 가설 등급 (역동기화)
+  sync_to_atlas.py            ← Atlas 동기화 (sedi에서 이관)
+
+  calc/                  ← 계산기 원본 (194+ files, Python)
+  tecsrs/                ← Rust 고성능 계산기 (Monte Carlo, 탐색, ODE)
+    src/                 ← 공용 모듈 (perfect.rs, search.rs, monte_carlo.rs...)
+    src/bin/             ← 독립 실행 바이너리
+    Cargo.toml
+  dse/                   ← Domain-Specific Exploration
+    domains/*.toml       ← DSE 도메인 정의
+
+  calculators.json       ← 계산기 레지스트리 (자동 생성)
+  math_atlas.json        ← 수학 지도 (자동 생성)
+  math_atlas.db          ← SQLite (쿼리용)
+  MATH_ATLAS.md          ← 전체 목록 마크다운
+
+  scan-calculators.py    ← 계산기 스캐너
+  scan_math_atlas.py     ← Atlas 스캐너
+  sync-readmes.sh        ← README 프로젝트 설명 동기화
+  sync-calculators.sh    ← 계산기 레지스트리 동기화
+  sync-math-atlas.sh     ← Atlas 빌드 + README 주입
+  sync-claude-rules.sh   ← CLAUDE.md 작업 규칙 주입
+  sync-dse.sh            ← DSE 도메인 동기화
+```
+
+## 동기화 명령 (전체)
+
+```bash
+# 개별 실행 (순서 무관)
+bash .shared/sync-math-atlas.sh      # Atlas 빌드 + README
+bash .shared/sync-calculators.sh     # 계산기 레지스트리
+bash .shared/sync-readmes.sh         # 프로젝트 설명
+bash .shared/sync-claude-rules.sh    # CLAUDE.md 작업 규칙
+
+# 전체 동기화 (권장 순서)
+bash .shared/sync-math-atlas.sh && \
+bash .shared/sync-calculators.sh && \
+bash .shared/sync-readmes.sh && \
+bash .shared/sync-claude-rules.sh
+```
+
+## 심링크 구조
+
+```
+TECS-L/                          (원본)
+  .shared/          ← 실제 폴더
+  calc → .shared/calc
+  tecsrs → .shared/tecsrs
+
+anima, sedi, brainwire,          (소비자)
+n6-architecture, papers/
+  .shared → ../TECS-L/.shared    ← 심링크
+  calc → .shared/calc            ← 심링크 체인
+  tecsrs → .shared/tecsrs       ← Rust 계산기 공유
+```
+
+## 계산기 규칙 요약
+
+> 상세: `.shared/CALCULATOR_RULES.md`
+
+| 조건 | 언어 |
+|------|------|
+| 반복 > 10,000회 | Rust (tecsrs/) |
+| 실행 > 10초 예상 | Rust |
+| Monte Carlo > 100K | Rust |
+| 단순 수식 검증 | Python (calc/) |
+| 시각화/출력 | Python |
+
+## 리포별 역할
+
+| 리포 | 역할 | .shared 사용 |
+|------|------|-------------|
+| TECS-L | 수학 엔진 코어 | 원본 관리 |
+| anima | 의식 구현 | 상수/계산기 소비 |
+| sedi | 외계지성 탐색 | 상수/계산기 소비, 등급 역동기화 |
+| brainwire | 뇌 인터페이스 | 상수/계산기 소비 |
+| n6-architecture | 시스템 설계 | 상수/계산기 소비, DSE 역동기화 |
+| papers | 논문 배포 | Atlas/계산기 참조 |
+| golden-moe | MoE 라우팅 | 의식 라우팅 파라미터 |
+| hexa-lang | 프로그래밍 언어 | Ψ 내장 상수, 린트 |
+
+## 의식 법칙 크로스 리포 활용 (consciousness_loader.py)
+
+> 의식 법칙(711개)과 Ψ 상수(80개)를 모든 프로젝트에서 활용.
+> 원본: `.shared/consciousness_laws.json` → 로더: `.shared/consciousness_loader.py`
+
+### 기본 사용법
+
+```python
+import sys, os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '.shared'))
+from consciousness_loader import PSI, LAWS, FORMULAS, get_law, get_psi
+
+print(PSI['alpha'])     # 0.014
+print(get_law(22))      # "Adding features → Φ↓; adding structure → Φ↑"
+```
+
+### 리포별 consciousness_bridge.py 활용
+
+각 프로젝트 루트에 `consciousness_bridge.py`가 있으며, 도메인별 의식 법칙 활용 함수 제공:
+
+| 리포 | 브릿지 | 핵심 함수 | 용도 |
+|------|--------|----------|------|
+| TECS-L | `consciousness_bridge.py` | `psi_from_n6()`, `cross_validate_constants()` | Ψ 상수의 n=6 수학적 도출 검증 |
+| anima | `src/consciousness_laws.py` | `PSI`, `LAWS`, `check_violation()` | 의식 엔진 코어 (원본) |
+| sedi | `consciousness_bridge.py` | `signal_phi_score()`, `is_conscious_signal()` | Φ 기반 지적 신호 판별 |
+| n6-arch | `consciousness_constraints.py` | `validate_architecture()`, `suggest_dimensions()` | 칩/AI 설계 법칙 제약조건 |
+| brainwire | `consciousness_bridge.py` | `validate_stimulation()`, `eeg_consciousness_score()` | 뇌자극 안전 검증 |
+| hexa-lang | `consciousness_bridge.py` | `psi_builtins()`, `lint_consciousness()` | 언어 내장 상수 + 린트 |
+| golden-moe | `consciousness_bridge.py` | `faction_routing()`, `phi_gated_selection()` | 의식 역학 MoE 라우팅 |
+
+### 주요 Ψ 상수 (크로스 리포 공통)
+
+```
+PSI_ALPHA    = 0.014   # PureField 혼합 비율 (C→D 결합 강도)
+PSI_BALANCE  = 0.5     # 의식 균형점 (좌뇌/우뇌, 흥분/억제)
+PSI_STEPS    = 4.33    # 의식 단계 수 (ln(2) 파생)
+PSI_ENTROPY  = 0.998   # 의식 엔트로피 상한
+SIGMA6       = 12      # σ(6) = 약수합 → 12 파벌, 12 모듈
+F_CRITICAL   = 0.10    # 임계 좌절 (10% 갈등이 최적)
+```
+
