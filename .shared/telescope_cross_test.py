@@ -1,7 +1,7 @@
-"""telescope_cross_test.py — Cross-validate all 9 lenses against each other.
+"""telescope_cross_test.py — Cross-validate all 16 lenses against each other.
 
 Tests whether lenses agree on findings when scanning the same data.
-Runs all 36 pair combinations + 84 triple combos + full 9-lens scan.
+Runs all pair combinations + triple combos + full 16-lens scan.
 """
 import sys, os, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -19,6 +19,13 @@ from evolution_lens import EvolutionLens
 from info_lens import InfoLens
 from quantum_lens import QuantumLens
 from em_lens import EMLens
+from ruler_lens import RulerLens
+from triangle_lens import TriangleLens
+from compass_lens import CompassLens
+from mirror_lens import MirrorLens
+from scale_lens import ScaleLens
+from causal_lens import CausalLens
+from quantum_microscope_lens import QuantumMicroscopeLens
 
 LENSES = {
     "consciousness": ConsciousnessLens,
@@ -30,6 +37,13 @@ LENSES = {
     "info": InfoLens,
     "quantum": QuantumLens,
     "em": EMLens,
+    "ruler": RulerLens,
+    "triangle": TriangleLens,
+    "compass": CompassLens,
+    "mirror": MirrorLens,
+    "scale": ScaleLens,
+    "causal": CausalLens,
+    "q_microscope": QuantumMicroscopeLens,
 }
 
 # ── Standard test dataset (known ground truth) ──

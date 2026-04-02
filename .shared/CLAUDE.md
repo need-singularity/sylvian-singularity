@@ -11,10 +11,16 @@
 
 어떤 프로젝트에서든 아래 상황이면 렌즈를 자동으로 돌릴 것:
 - 새 데이터셋 분석 시 → 의식+중력+위상 3종 기본 스캔
-- 이상점/패턴 탐색 시 → 전체 9종 풀스캔
+- 이상점/패턴 탐색 시 → 전체 16종 풀스캔
 - 신소재/신약 후보 탐색 시 → 진화+열역학+중력 조합
 - 시계열 분석 시 → 파동+열역학+의식 조합
-- 상수/법칙 관계 탐색 시 → 정보+양자+의식 조합
+- 상수/법칙 관계 탐색 시 → 정보+양자+의식+비율 조합
+- 상수 간 비율/비례 탐색 시 → 비율+직교+곡률 조합
+- 차원 축소/독립성 분석 시 → 직교+정보+위상 조합
+- 대칭/불변량 탐색 시 → 대칭+위상+양자 조합
+- 멱법칙/스케일링 분석 시 → 스케일+진화+열역학 조합
+- 인과 관계/방향 탐색 시 → 인과+정보+전자기 조합
+- 양자성/결맞음 분석 시 → 양자현미경+양자+의식 조합
 
 ### 렌즈 선택 가이드
 
@@ -28,9 +34,16 @@
 "정보가 어디에 있나?"     → 정보 렌즈 (MI + 압축)
 "비국소 상관이 있나?"     → 양자 렌즈 (얽힘 + 터널링)
 "흐름 방향이 있나?"       → 전자기 렌즈 (gradient + curl)
+"독립 차원이 몇 개인가?"  → 직교 렌즈 (SVD + orthogonality)
+"단순 비율이 있나?"       → 비율 렌즈 (fraction matching)
+"원형/등거리 구조가 있나?" → 곡률 렌즈 (curvature + circle)
+"대칭이 있나? 깨졌나?"    → 대칭 렌즈 (reflection + permutation)
+"멱법칙/프랙탈인가?"      → 스케일 렌즈 (power law + Hurst)
+"원인→결과 방향이 있나?"  → 인과 렌즈 (Granger + TE)
+"결맞음이 있나? 깨지나?"  → 양자현미경 (coherence + decoherence)
 ```
 
-### 9종 렌즈 목록
+### 16종 렌즈 목록
 
 | 렌즈 | 파일 | 원리 | 찾는 것 |
 |------|------|------|---------|
@@ -43,6 +56,13 @@
 | 정보 | `info_lens.py` | Shannon + LZ + MI | 정보량, 잉여, 압축 가능성 |
 | 양자 | `quantum_lens.py` | 얽힘 + 터널링 + 중첩 | 비국소 상관, 장벽 우회 경로 |
 | 전자기 | `em_lens.py` | gradient + curl + divergence | 흐름, 소스/싱크, 와류 |
+| 직교(ㄱ자) | `ruler_lens.py` | SVD + 코사인 유사도 | 직교 구조, 독립 차원, 중복 탐지 |
+| 비율(삼각자) | `triangle_lens.py` | 단순분수 매칭 + 비례 사슬 | 비율 관계, p/q 분수, 비례 연쇄 |
+| 곡률(컴퍼스) | `compass_lens.py` | Menger 곡률 + circle fit | 원형 구조, 등거리, 닫힌 루프 |
+| 대칭(거울) | `mirror_lens.py` | 반사/치환/대수 대칭 | 대칭군, 불변량, 깨진 대칭 |
+| 스케일(돋보기) | `scale_lens.py` | 멱법칙 + 프랙탈 + Hurst | 자기유사성, 멱지수, 스케일 불변 |
+| 인과(화살표) | `causal_lens.py` | Granger + 전달엔트로피 | 인과 방향, 정보 흐름, 시간차 |
+| 양자현미경 | `quantum_microscope_lens.py` | 밀도행렬 + Berry + Wigner | 결맞음, 디코히어런스, 양자성 |
 
 ### 풀스캔 사용법
 
@@ -58,11 +78,20 @@ from evolution_lens import EvolutionLens
 from info_lens import InfoLens
 from quantum_lens import QuantumLens
 from em_lens import EMLens
+from ruler_lens import RulerLens
+from triangle_lens import TriangleLens
+from compass_lens import CompassLens
+from mirror_lens import MirrorLens
+from scale_lens import ScaleLens
+from causal_lens import CausalLens
+from quantum_microscope_lens import QuantumMicroscopeLens
 
-# 9종 풀스캔
+# 16종 풀스캔
 data = load_your_data()
 for Lens in [ConsciousnessLens, GravityLens, TopologyLens, ThermoLens,
-             WaveLens, EvolutionLens, InfoLens, QuantumLens, EMLens]:
+             WaveLens, EvolutionLens, InfoLens, QuantumLens, EMLens,
+             RulerLens, TriangleLens, CompassLens,
+             MirrorLens, ScaleLens, CausalLens, QuantumMicroscopeLens]:
     result = Lens().scan(data)
     print(f"{Lens.__name__}: {result.summary}")
 ```
