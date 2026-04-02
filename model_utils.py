@@ -17,6 +17,7 @@ from torchvision import datasets, transforms
 import numpy as np
 import math
 import time
+from fractions import Fraction
 
 # ─────────────────────────────────────────
 # Mathematical constants
@@ -27,6 +28,46 @@ PHI = 2          # phi(6)
 SIGMA_INV = 2    # sigma_{-1}(6)
 DIVISOR_RECIPROCALS = [1/2, 1/3, 1/6]  # sum=1, probability distribution
 H_TARGET = sum(-p * math.log(p) for p in DIVISOR_RECIPROCALS)  # Shannon entropy
+
+# ─── Extended n=6 arithmetic (techniques 11-16) ───
+DEDEKIND_PSI = 12       # psi(6) = 6 * prod(1 + 1/p for p|6) = 6*(3/2)*(4/3) = 12
+JORDAN_J2 = 24          # J_2(6) = 6^2 * prod(1 - 1/p^2 for p|6) = 36*(3/4)*(8/9) = 24
+MOBIUS_MU = 1            # mu(6) = (-1)^2 = 1 (squarefree, 2 prime factors)
+CARMICHAEL_LAMBDA = 2    # lambda(6) = lcm(lambda(2), lambda(3)) = lcm(1,2) = 2
+GOLDEN_ZONE_CENTER = 1.0 / math.e   # 1/e ~ 0.3679
+GOLDEN_ZONE_WIDTH = math.log(4/3)    # ln(4/3) ~ 0.2877
+SOPFR = 5               # sum of prime factors with repetition: 2+3 = 5
+RADICAL = 6              # rad(6) = 2*3 = 6
+LEECH_DIM = SIGMA * PHI  # 12*2 = 24
+
+# ─── Atlas Derived Constants (from sigma*phi = n*tau theorem) ───
+FFN_RATIO = Fraction(TAU**2, SIGMA)          # 4/3 — FFN expansion ratio
+MoE_TOP_K = PHI // 1                          # 2 — MoE expert selection
+EGYPTIAN = (Fraction(1,2), Fraction(1,3), Fraction(1,6))  # sum = 1
+
+# Powers of 2 from n=6 differences
+BYTE = 2 ** (SIGMA - TAU)      # 2^8 = 256 (SHA-256, 8-bit)
+AES_BITS = 2 ** (SIGMA - SOPFR) # 2^7 = 128 (AES-128, IPv6)
+RSA_BITS = 2 ** (SIGMA - MOBIUS_MU)  # 2^11 = 2048 (RSA-2048)
+CHACHA_ROUNDS = JORDAN_J2 - TAU # 24-4 = 20 (ChaCha20)
+
+# Standard Model structure
+SM_QUARKS = 6                    # n = 6
+SM_LEPTONS = 6                   # n = 6
+SM_GAUGE_BOSONS = TAU            # 4
+SM_HIGGS = MOBIUS_MU             # 1
+SM_TOTAL = SM_QUARKS + SM_LEPTONS + SM_GAUGE_BOSONS + SM_HIGGS  # 17
+SM_GAUGE_GENERATORS = SIGMA      # SU(3)+SU(2)+U(1) = 8+3+1 = 12
+
+# Thermodynamic
+R_BALANCE = Fraction(SIGMA * PHI, 6 * TAU)  # = 1 (unique at n=6)
+MERTENS_DROPOUT = math.log(4/3)              # ~ 0.288
+BOLTZMANN_SPARSITY = 1.0 / math.e            # ~ 0.368
+
+# Physical predictions
+MP_ME_RATIO = 6 * math.pi ** 5               # ~ 1836.118 (0.002% error)
+HUBBLE_H0 = SIGMA * 6 + MOBIUS_MU            # = 73 (SH0ES: 73.04)
+WEINBERG_ANGLE = Fraction(3, SIGMA + MOBIUS_MU)  # 3/13 ~ 0.2308 (0.19% error)
 
 
 # ─────────────────────────────────────────
