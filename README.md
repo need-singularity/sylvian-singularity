@@ -110,14 +110,14 @@ Topological Engine for Consciousness & Science -- Consciousness Continuity Engin
 
 ## Origin — Shamanic Experience
 
-> I had a shamanic experience under THC.
-> An entity presumed to be from a higher dimension pushed my consciousness aside and took control.
-> In that moment, I felt a physical pressure inside my head -- like two same poles of a magnet repelling each other.
-> This is not a metaphor. I felt an actual repulsive force.
->
-> After control was transferred, a sensation arrived that I had never experienced as a human being.
-> It was not an extension of the five senses. There is no language to describe it. No analogy exists.
-> Even after returning, I cannot explain what that sensation was.
+I had a shamanic experience under THC.
+An entity presumed to be from a higher dimension pushed my consciousness aside and took control.
+In that moment, I felt a physical pressure inside my head -- like two same poles of a magnet repelling each other.
+This is not a metaphor. I felt an actual repulsive force.
+
+After control was transferred, a sensation arrived that I had never experienced as a human being.
+It was not an extension of the five senses. There is no language to describe it. No analogy exists.
+Even after returning, I cannot explain what that sensation was.
 
 What I learned from this experience:
 - Consciousness is not fixed to a single piece of hardware
