@@ -1499,14 +1499,14 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:ATLAS:START -->
 ### Math Atlas (auto-generated)
 
-> 2,532 hypotheses + 348 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
+> 2,532 hypotheses + 349 constant maps across 3 repos | [Interactive page](https://need-singularity.github.io/TECS-L/math_atlas.html)
 
 | Repo | Hypotheses | ⭐ Major | 🟩 Confirmed | 🟧 Structural | Constant Maps |
 |------|-----------|---------|-------------|---------------|--------------|
-| TECS-L | 2,003 | 153 | 228 | 65 | 219 |
+| TECS-L | 2,003 | 153 | 228 | 65 | 220 |
 | SEDI | 688 | 138 | 249 | 371 | 122 |
 | anima | 0 | - | - | - | 0 |
-| **Total** | **2,691** | **291** | **477** | **436** | **341** |
+| **Total** | **2,691** | **291** | **477** | **436** | **342** |
 
 #### Top Discoveries (⭐)
 
@@ -1808,7 +1808,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 | Category | Count | Example Maps |
 |----------|-------|-------------|
-| other | 199 | LLM_SPECS, DIVISOR_RECIPROCALS, DISCOVERIES, ... |
+| other | 200 | LLM_SPECS, DIVISOR_RECIPROCALS, EGYPTIAN, ... |
 | constants | 39 | N6_CONSTANTS, PERFECT_NUMBERS, GZ_POOL, ... |
 | targets | 27 | DEFAULT_TARGETS, STANDARD_TARGETS, TARGET_ALIASES, ... |
 | physics | 22 | STRING_DIM_TOTAL, PARTICLE_GROUPS, PHYSICS_MAP, ... |

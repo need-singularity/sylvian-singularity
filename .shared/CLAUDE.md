@@ -52,7 +52,11 @@ python3 .shared/scan_math_atlas.py --save --summary
   shared_work_rules.md   ← 작업 규칙 (CLAUDE.md SHARED:WORK_RULES 주입용)
   installed_tools.json   ← 설치 도구 레지스트리
 
-  calc/                  ← 계산기 원본 (194+ files)
+  calc/                  ← 계산기 원본 (194+ files, Python)
+  tecsrs/                ← Rust 고성능 계산기 (Monte Carlo, 탐색, ODE)
+    src/                 ← 공용 모듈 (perfect.rs, search.rs, monte_carlo.rs...)
+    src/bin/             ← 독립 실행 바이너리
+    Cargo.toml
   dse/                   ← Domain-Specific Exploration
     domains/*.toml       ← DSE 도메인 정의
 
@@ -92,11 +96,13 @@ bash .shared/sync-claude-rules.sh
 TECS-L/                          (원본)
   .shared/          ← 실제 폴더
   calc → .shared/calc
+  tecsrs → .shared/tecsrs
 
 anima, sedi, brainwire,          (소비자)
 n6-architecture, papers/
   .shared → ../TECS-L/.shared    ← 심링크
   calc → .shared/calc            ← 심링크 체인
+  tecsrs → .shared/tecsrs       ← Rust 계산기 공유
 ```
 
 ## 계산기 규칙 요약
