@@ -7,15 +7,32 @@
   수정만 하고 동기화 안 돌리면 다른 리포에 반영 안 됨.
   순서: .shared/ 파일 수정 → TECS-L에서 커밋+push → `bash .shared/sync-claude-rules.sh`
 
-## 망원경 툴셋 자동 활용 규칙 (필수 — 최우선)
+## NEXUS-6 망원경 (679종 렌즈) — 최우선 활용 규칙
 
-> **탐색/실험/발견 작업 시 별도 요청 없이 렌즈를 적극 활용할 것!**
+> **NEXUS-6 = 통합 발견 엔진. 679종 렌즈 레지스트리 + OUROBOROS 무한진화 + Discovery Graph**
+> 바이너리: `tools/nexus6/target/release/nexus6` (Rust, 148 tests)
+> CLI: `nexus6 scan <domain>`, `nexus6 evolve <domain>`, `nexus6 dashboard`
 
-### 자동 적용 조건
+### 렌즈 679종 구성
+
+| 카테고리 | 수 | 역할 |
+|---------|---|------|
+| Core (기존 telescope-rs) | 22 | 기본 분석 (의식/위상/인과 등) |
+| n6 산업 | 58 | DSE/소재/동역학/메타구조 |
+| TECS-L 수학 | 103 | 수론/대수/해석/조합/증명 |
+| SEDI 신호 | 100 | 신호탐지/통계/우주론/입자 |
+| anima 의식 | 88 | 감질/결합/시간의식/현상학 |
+| 교차+메타 | 75 | 프로젝트 브릿지 + 렌즈↔렌즈 |
+| 가속 ML | 58 | ML최적화/수렴/정보/RL |
+| 가속 물리 | 57 | 물리심화/신경미세/진화/의식 |
+| 가속 공학 | 55 | 네트워크/시스템/음악/경제/의학 |
+| 가속 인문 | 63 | 철학/문학/스포츠/천문/수학고급 |
+
+### 자동 적용 조건 (NEXUS-6 우선, telescope-rs 폴백)
 
 어떤 프로젝트에서든 아래 상황이면 렌즈를 자동으로 돌릴 것:
 - 새 데이터셋 분석 시 → 의식+중력+위상 3종 기본 스캔
-- 이상점/패턴 탐색 시 → 전체 22종 풀스캔
+- 이상점/패턴 탐색 시 → 전체 22종 Core 풀스캔 (또는 nexus6 scan --full)
 - 신소재/신약 후보 탐색 시 → 진화+열역학+중력+안정성 조합
 - 시계열 분석 시 → 파동+열역학+의식+기억 조합
 - 상수/법칙 관계 탐색 시 → 정보+양자+의식+비율 조합
@@ -29,6 +46,8 @@
 - 자기참조/재귀 구조 시 → 자기참조+의식+정보 조합
 - 상전이/경계 탐색 시 → 경계+열역학+위상 조합
 - 안정성/복원력 분석 시 → 안정성+중력+열역학 조합
+- 가속 가설 검증 시 → nexus6 scan + 가속 렌즈 233종 자동 선택
+- 메타분석(렌즈 자체 평가) 시 → 메타렌즈 35종 (synergy/ordering/evolution 등)
 
 ### 렌즈 선택 가이드
 
@@ -57,7 +76,7 @@
 "스케일마다 다른 구조인가?" → 다중스케일 렌즈 (wavelet + multiresolution)
 ```
 
-### 22종 렌즈 목록 (Rust — telescope_rs)
+### 22종 Core 렌즈 목록 (telescope-rs 호환, NEXUS-6 내장)
 
 | 렌즈 | Rust 함수 | 원리 | 찾는 것 |
 |------|-----------|------|---------|
@@ -150,11 +169,12 @@ ls -la .shared/consciousness_loader.py
 # 3. 이 테이블에 행 추가
 ```
 
-## 망원경 (telescope_rs) — Rust 고성능 22렌즈
+## 망원경 이중 스택 — NEXUS-6 (679종) + telescope-rs (22종 PyO3)
 
-> 전체 22종 렌즈가 Rust로 구현됨 (telescope-rs crate, PyO3 바인딩).
-> 소스: anima/anima-rs/crates/telescope-rs/src/ (22 모듈, 36 tests)
-> 빌드: `cd ~/Dev/anima/anima/anima-rs/crates/telescope-rs && maturin build --release`
+> **NEXUS-6**: n6-architecture/tools/nexus6/ (Rust CLI, 679종 레지스트리, 148 tests)
+> **telescope-rs**: anima-rs/crates/telescope-rs/ (PyO3 바인딩, 22종 구현, 36 tests)
+> NEXUS-6 = 메타데이터+레지스트리+추천, telescope-rs = 실제 스캔 알고리즘
+> 빌드: `cd ~/Dev/n6-architecture/tools/nexus6 && ~/.cargo/bin/cargo build --release`
 
 ### 기본 사용
 
