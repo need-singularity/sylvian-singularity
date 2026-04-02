@@ -993,8 +993,8 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | **TECS-L** | 213 | Calculator, Engine |
 | **anima** | 0 |  |
 | **SEDI** | 91 | Core, Data Source |
-| **n6-architecture** | 144 | Calculator, Engine, experiment, technique |
-| **Total** | **448** | |
+| **n6-architecture** | 150 | Calculator, Engine, experiment, technique |
+| **Total** | **454** | |
 
 ### TECS-L
 
@@ -1391,18 +1391,19 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | validate_calculators | Calculator Validation Suite — Meta-calculator that tests ALL other calculators. | `tools/validate_calculators.py` |
 | vendor-compare-calc | N6 Cross-Vendor Chip Comparison Calculator | `tools/vendor-compare-calc/main.rs` |
 
-**Engine** (6)
+**Engine** (7)
 
 | Name | Description | Path |
 |------|-------------|------|
 | anima_tension_loss | Anima Tension Loss | `engine/anima_tension_loss.py` |
+| consciousness_constraints | consciousness_constraints.py — Consciousness-law design constraints for N6 Archi | `engine/consciousness_constraints.py` |
 | emergent_n6_trainer | Emergent N6 Trainer | `engine/emergent_n6_trainer.py` |
 | leech24_surface | Leech-24 Energy Surface | `engine/leech24_surface.py` |
 | phi_efficiency_bridge | Phi-Efficiency Bridge | `engine/phi_efficiency_bridge.py` |
 | sedi_training_monitor | SEDI Training Monitor | `engine/sedi_training_monitor.py` |
 | thermodynamic_frame | Thermodynamic Frame | `engine/thermodynamic_frame.py` |
 
-**Experiment** (65)
+**Experiment** (67)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1448,9 +1449,11 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | h_ee_3_training_stability | H-EE-3: Phi6Simple Training Stability | `experiments/h_ee_3_training_stability.py` |
 | meta_pattern_discovery | Meta-Pattern Discovery in DSE Domain Structure | `experiments/meta_pattern_discovery.py` |
 | ppa_model | N6 PPA (Performance, Power, Area) 모델 | `experiments/ppa_model.py` |
+| telescope_product_review | telescope_product_review.py — 기존 완성제품 전면 재검토 (망원경 9종 풀스캔) | `experiments/telescope_product_review.py` |
 | unified_verify | Unified Verification Orchestrator — TECS-L + n6-architecture | `experiments/unified_verify.py` |
 | verify_battery_architecture | HEXA-BATTERY Architecture Verification | `experiments/verify_battery_architecture.py` |
 | verify_battery_cascade | HEXA-BATTERY Cascade Cross-Verification | `experiments/verify_battery_cascade.py` |
+| verify_bt105_112 | Verification script for Breakthrough Theorems BT-105 through BT-112. | `experiments/verify_bt105_112.py` |
 | verify_bt66_73 | Independent verification of BT-66 through BT-73. | `experiments/verify_bt66_73.py` |
 | verify_bt66_76 | Independent verification of BT-66 through BT-76 claims. | `experiments/verify_bt66_76.py` |
 | verify_bt77_bitnet | BT-77: BitNet Quantization n=6 Universality — Independent Verification | `experiments/verify_bt77_bitnet.py` |
@@ -1472,7 +1475,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | verify_hexa_wafer | HEXA-WAFER (Level 5) n=6 파라미터 수학적 검증 | `experiments/verify_hexa_wafer.py` |
 | verify_topological_chip | Verify BT-90, BT-91, BT-92: Topological Chip Architecture | `experiments/verify_topological_chip.py` |
 
-**Technique** (17)
+**Technique** (20)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1483,13 +1486,16 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | egyptian_moe | H-EE-18: Egyptian Fraction MoE Routing Verification | `techniques/egyptian_moe.py` |
 | entropy_early_stop | H-SEDI-EE-1: SEDI Entropy Test as Early Stopping Criterion | `techniques/entropy_early_stop.py` |
 | fft_mix_attention | H-SEDI-EE-3: Windowed FFT as Learned Attention Replacement | `techniques/fft_mix_attention.py` |
+| fibonacci_stride | Technique 20: Fibonacci-Strided Attention | `techniques/fibonacci_stride.py` |
 | hcn_dimensions | H-EE-6: Tensor-core-aligned HCN dimensions | `techniques/hcn_dimensions.py` |
 | jordan_leech_moe | Technique 12: Jordan-Leech MoE Capacity Bound | `techniques/jordan_leech_moe.py` |
 | mertens_dropout | Technique 16: Mertens Dropout | `techniques/mertens_dropout.py` |
 | mobius_sparse | Technique 13: Möbius Sparse Flow | `techniques/mobius_sparse.py` |
+| partition_routing | Technique 19: Partition Routing MoE | `techniques/partition_routing.py` |
 | phi6simple | H-EE-1: Cyclotomic Polynomial Activation Comparison | `techniques/phi6simple.py` |
 | phi_bottleneck | H-EE-9: Phi-bottleneck + Phi6Simple activation recovery test | `techniques/phi_bottleneck.py` |
 | phi_moe | H-EE-10: Phi-bottleneck + MoE (more experts, smaller each) | `techniques/phi_moe.py` |
+| radical_norm | Technique 18: Radical Normalization | `techniques/radical_norm.py` |
 | rfilter_phase | H-SEDI-6: R-filter detects training phase transitions. | `techniques/rfilter_phase.py` |
 | takens_dim6 | H-SEDI-7: Takens embedding dim=6 optimal for training dynamics. | `techniques/takens_dim6.py` |
 | zetaln2_activation | H-EE-17 Verification: New activation function from convergence algebra. | `techniques/zetaln2_activation.py` |

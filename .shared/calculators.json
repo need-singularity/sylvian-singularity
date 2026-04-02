@@ -2575,6 +2575,13 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "fibonacci_stride",
+      "description": "Technique 20: Fibonacci-Strided Attention",
+      "category": "technique",
+      "path": "techniques/fibonacci_stride.py",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "hcn_dimensions",
       "description": "H-EE-6: Tensor-core-aligned HCN dimensions",
       "category": "technique",
@@ -2603,6 +2610,13 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "partition_routing",
+      "description": "Technique 19: Partition Routing MoE",
+      "category": "technique",
+      "path": "techniques/partition_routing.py",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "phi6simple",
       "description": "H-EE-1: Cyclotomic Polynomial Activation Comparison",
       "category": "technique",
@@ -2621,6 +2635,13 @@
       "description": "H-EE-10: Phi-bottleneck + MoE (more experts, smaller each)",
       "category": "technique",
       "path": "techniques/phi_moe.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "radical_norm",
+      "description": "Technique 18: Radical Normalization",
+      "category": "technique",
+      "path": "techniques/radical_norm.py",
       "repo": "n6-architecture"
     },
     {
@@ -2649,6 +2670,13 @@
       "description": "Anima Tension Loss",
       "category": "engine",
       "path": "engine/anima_tension_loss.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "consciousness_constraints",
+      "description": "consciousness_constraints.py — Consciousness-law design constraints for N6 Architecture.",
+      "category": "engine",
+      "path": "engine/consciousness_constraints.py",
       "repo": "n6-architecture"
     },
     {
@@ -2981,6 +3009,13 @@
       "repo": "n6-architecture"
     },
     {
+      "name": "telescope_product_review",
+      "description": "telescope_product_review.py — 기존 완성제품 전면 재검토 (망원경 9종 풀스캔)",
+      "category": "experiment",
+      "path": "experiments/telescope_product_review.py",
+      "repo": "n6-architecture"
+    },
+    {
       "name": "unified_verify",
       "description": "Unified Verification Orchestrator — TECS-L + n6-architecture",
       "category": "experiment",
@@ -2999,6 +3034,13 @@
       "description": "HEXA-BATTERY Cascade Cross-Verification",
       "category": "experiment",
       "path": "experiments/verify_battery_cascade.py",
+      "repo": "n6-architecture"
+    },
+    {
+      "name": "verify_bt105_112",
+      "description": "Verification script for Breakthrough Theorems BT-105 through BT-112.",
+      "category": "experiment",
+      "path": "experiments/verify_bt105_112.py",
       "repo": "n6-architecture"
     },
     {
