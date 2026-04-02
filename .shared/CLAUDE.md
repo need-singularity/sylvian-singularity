@@ -3,6 +3,10 @@
 > **이 폴더는 TECS-L에 원본이 있고, 타 리포는 심링크로 연결됩니다.**
 > 타 리포: `.shared/ → ../TECS-L/.shared/`
 
+⚠️ **.shared/ 내 파일 수정 시 반드시 동기화 실행!**
+  수정만 하고 동기화 안 돌리면 다른 리포에 반영 안 됨.
+  순서: .shared/ 파일 수정 → TECS-L에서 커밋+push → `bash .shared/sync-claude-rules.sh`
+
 ## 망원경 툴셋 자동 활용 규칙 (필수 — 최우선)
 
 > **탐색/실험/발견 작업 시 별도 요청 없이 렌즈를 적극 활용할 것!**
@@ -299,10 +303,6 @@ python3 .shared/scan_math_atlas.py --save --summary
 ```
 
 ## 동기화 명령 (전체)
-
-⚠️ **.shared/CLAUDE.md 또는 .shared/ 내 파일 수정 시 반드시 동기화 실행!**
-  수정만 하고 동기화 안 돌리면 다른 리포에 반영 안 됨.
-  순서: .shared/ 파일 수정 → TECS-L에서 커밋+push → sync 스크립트 실행
 
 ```bash
 # 개별 실행 (순서 무관)
