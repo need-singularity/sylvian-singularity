@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "generated": "2026-04-02T11:07:33",
+  "generated": "2026-04-02T14:30:35",
   "stats": {
     "TECS-L": 2003,
     "SEDI": 688,
@@ -26755,7 +26755,19 @@
       "name": "DIVISOR_RECIPROCALS",
       "repo": "TECS-L",
       "file": "model_utils.py",
-      "line": 28,
+      "line": 29,
+      "type": "list",
+      "size": 3,
+      "keys": null,
+      "evaluable": false,
+      "values": null,
+      "category": "other"
+    },
+    {
+      "name": "EGYPTIAN",
+      "repo": "TECS-L",
+      "file": "model_utils.py",
+      "line": 46,
       "type": "list",
       "size": 3,
       "keys": null,
@@ -44804,7 +44816,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 219,
+    "TECS-L": 220,
     "SEDI": 122,
     "anima": 0,
     "golden-moe": 3,
