@@ -128,9 +128,55 @@ if [ -d "$PARENT/n6-architecture" ]; then
   cd - > /dev/null
 fi
 
+# ── SEDI → TECS-L 역동기화 ────────────────────────────────────
+echo ""
+echo "[3/5] Reverse sync: SEDI → TECS-L..."
+
+SEDI_DIR="$PARENT/sedi"
+if [ -d "$SEDI_DIR" ]; then
+  # SEDI 가설 등급 → TECS-L/.shared/sedi-grades.json
+  SEDI_GRADES="$SEDI_DIR/data/sedi-grades.json"
+  if [ -f "$SEDI_GRADES" ]; then
+    cp "$SEDI_GRADES" "$SCRIPT_DIR/sedi-grades.json"
+    echo "  SEDI grades synced"
+  else
+    # 자동 생성 시도
+    if [ -f "$SEDI_DIR/scripts/auto_grade_n6.py" ]; then
+      echo "  Generating SEDI grades..."
+      python3 "$SEDI_DIR/scripts/auto_grade_n6.py" --save 2>/dev/null
+      if [ -f "$SEDI_GRADES" ]; then
+        cp "$SEDI_GRADES" "$SCRIPT_DIR/sedi-grades.json"
+        echo "  SEDI grades generated and synced"
+      fi
+    else
+      echo "  SKIP: no SEDI grades (run auto_grade_n6.py --save)"
+    fi
+  fi
+
+  # SEDI 검증 상수 → atlas 등록 (scan_math_atlas.py가 처리)
+  SEDI_CONSTANTS="$SEDI_DIR/sedi/constants.py"
+  if [ -f "$SEDI_CONSTANTS" ]; then
+    echo "  SEDI constants available for atlas"
+  fi
+
+  # TECS-L 커밋 (SEDI 역동기화분)
+  cd "$BASE"
+  if ! git diff --quiet .shared/sedi-grades.json 2>/dev/null; then
+    git add .shared/sedi-grades.json
+    git commit -m "sync: SEDI→TECS-L reverse sync (hypothesis grades)"
+    git push
+    echo "  Pushed SEDI reverse sync!"
+  else
+    echo "  No SEDI changes"
+  fi
+  cd - > /dev/null
+else
+  echo "  SKIP: SEDI repo not found at $SEDI_DIR"
+fi
+
 # ── n6 → TECS-L 역동기화 (자동) ──────────────────────────────
 echo ""
-echo "[3/4] Reverse sync: n6 → TECS-L..."
+echo "[4/5] Reverse sync: n6 → TECS-L..."
 
 N6_DIR="$PARENT/n6-architecture"
 if [ -d "$N6_DIR" ]; then
@@ -168,7 +214,7 @@ if [ -d "$N6_DIR" ]; then
 fi
 
 echo ""
-echo "[4/4] Done!"
+echo "[5/5] Done!"
 echo ""
 
 # Summary

@@ -108,6 +108,8 @@ Topological Engine for Consciousness & Science -- Consciousness Continuity Engin
 
 ---
 
+## Origin — Shamanic Experience
+
 I had a shamanic experience under THC.
 An entity presumed to be from a higher dimension pushed my consciousness aside and took control.
 In that moment, I felt a physical pressure inside my head -- like two same poles of a magnet repelling each other.
