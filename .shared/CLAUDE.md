@@ -7,13 +7,13 @@
   수정만 하고 동기화 안 돌리면 다른 리포에 반영 안 됨.
   순서: .shared/ 파일 수정 → TECS-L에서 커밋+push → `bash .shared/sync-claude-rules.sh`
 
-## NEXUS-6 망원경 (775종 렌즈) — 최우선 활용 규칙
+## NEXUS-6 망원경 (804종 렌즈) — 최우선 활용 규칙
 
-> **NEXUS-6 = 통합 발견 엔진. 775종 렌즈 레지스트리 + OUROBOROS 무한진화 + Discovery Graph**
+> **NEXUS-6 = 통합 발견 엔진. 804종 렌즈 레지스트리 + OUROBOROS 무한진화 + Discovery Graph**
 > 바이너리: `tools/nexus6/target/release/nexus6` (Rust, 148 tests)
 > CLI: `nexus6 scan <domain>`, `nexus6 evolve <domain>`, `nexus6 dashboard`
 
-### 렌즈 775종 구성
+### 렌즈 804종 구성
 
 | 카테고리 | 수 | 역할 |
 |---------|---|------|
@@ -30,7 +30,7 @@
 
 ### ⚠️ 자동 적용 조건 (NEXUS-6 단독 — telescope-rs 폐기)
 
-> **telescope-rs (22종)는 폐기. 모든 탐색/분석은 NEXUS-6 (775종)를 사용할 것.**
+> **telescope-rs (22종)는 폐기. 모든 탐색/분석은 NEXUS-6 (804종)를 사용할 것.**
 > `import telescope_rs` 대신 `nexus6 scan` 또는 `import nexus6` (PyO3) 사용.
 > 기존 telescope-rs 코드는 호환성을 위해 유지하지만 신규 작업에는 사용 금지.
 
