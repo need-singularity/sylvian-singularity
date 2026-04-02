@@ -1,15 +1,15 @@
 {
   "version": "1.1",
-  "generated": "2026-04-02T08:25:04",
+  "generated": "2026-04-02T11:07:33",
   "stats": {
     "TECS-L": 2003,
-    "SEDI": 678,
+    "SEDI": 688,
     "anima": 0,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2522,
+  "total": 2532,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -20695,6 +20695,106 @@
       "file": "docs/hypotheses/H-CX-1086-e8-perfect-number-tower.md"
     },
     {
+      "id": "SEDI:H-CX-1087",
+      "title": "BRIDGE: η (baryon asymmetry) (Cosmology)",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "⬜ UNTESTED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1087-bridge-baryon-asymmetry-cosmology.md"
+    },
+    {
+      "id": "SEDI:H-CX-1088",
+      "title": "BRIDGE: Δm²₂₁ (neutrino) eV² (Neutrino)",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "⬜ UNTESTED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1088-bridge-m-neutrino-ev-neutrino.md"
+    },
+    {
+      "id": "SEDI:H-CX-1089",
+      "title": "BRIDGE: J (CKM Jarlskog) (Electroweak)",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "⬜ UNTESTED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1089-bridge-j-ckm-jarlskog-electroweak.md"
+    },
+    {
+      "id": "SEDI:H-CX-1090",
+      "title": "BRIDGE: θ_CP (strong CP angle) (QCD)",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "⬜ UNTESTED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1090-bridge-cp-strong-cp-angle-qcd.md"
+    },
+    {
+      "id": "SEDI:H-CX-1091",
+      "title": "META-INVERSE: COLLISION value 4.665264 itself ≈ (π^(1/e))+π (err=0.0000%)",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1091-meta-inverse-collision-value-4-665264-it.md"
+    },
+    {
+      "id": "SEDI:H-CX-1092",
+      "title": "META-INVERSE: COLLISION value 4.665264 itself ≈ sqrt(J₂-(sqrt(sopfr))) (err=0.00",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1092-meta-inverse-collision-value-4-665264-it.md"
+    },
+    {
+      "id": "SEDI:H-CX-1093",
+      "title": "META-INVERSE: COLLISION value 4.665264 itself ≈ (φ^(sqrt(φ)))+φ (err=0.0026%)",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "🟩",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1093-meta-inverse-collision-value-4-665264-it.md"
+    },
+    {
+      "id": "SEDI:H-CX-1094",
+      "title": "J (CKM Jarlskog)",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "⬜ UNTESTED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1094-j-ckm-jarlskog.md"
+    },
+    {
+      "id": "SEDI:H-CX-1095",
+      "title": "m_d (down quark)",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "⬜ UNTESTED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1095-m-d-down-quark.md"
+    },
+    {
+      "id": "SEDI:H-CX-1096",
+      "title": "m_t (top quark)",
+      "repo": "SEDI",
+      "domain": "CX",
+      "grade": "⬜ UNTESTED",
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/H-CX-1096-m-t-top-quark.md"
+    },
+    {
       "id": "SEDI:H-CX-453",
       "title": "Multi-Domain Convergence Map",
       "repo": "SEDI",
@@ -26664,6 +26764,94 @@
       "category": "other"
     },
     {
+      "name": "PERFECT_NUMBERS",
+      "repo": "TECS-L",
+      "file": "perfect_number_engine.py",
+      "line": 32,
+      "type": "dict",
+      "size": 4,
+      "keys": [
+        6,
+        28,
+        496,
+        8128
+      ],
+      "evaluable": true,
+      "values": {
+        "6": {
+          "sigma": 12,
+          "tau": 4,
+          "phi": 2,
+          "prime_factors": [
+            2,
+            3
+          ]
+        },
+        "28": {
+          "sigma": 56,
+          "tau": 6,
+          "phi": 12,
+          "prime_factors": [
+            2,
+            7
+          ]
+        },
+        "496": {
+          "sigma": 992,
+          "tau": 10,
+          "phi": 240,
+          "prime_factors": [
+            2,
+            31
+          ]
+        },
+        "8128": {
+          "sigma": 16256,
+          "tau": 14,
+          "phi": 4096,
+          "prime_factors": [
+            2,
+            127
+          ]
+        }
+      },
+      "category": "architecture"
+    },
+    {
+      "name": "PHYSICS_TARGETS",
+      "repo": "TECS-L",
+      "file": "perfect_number_engine.py",
+      "line": 66,
+      "type": "dict",
+      "size": 10,
+      "keys": [
+        "alpha_inv",
+        "m_p/m_e",
+        "m_mu/m_e",
+        "m_tau/m_e",
+        "sin2_theta_W",
+        "alpha_s",
+        "137",
+        "496",
+        "10",
+        "26"
+      ],
+      "evaluable": true,
+      "values": {
+        "alpha_inv": 137.035999084,
+        "m_p/m_e": 1836.15267343,
+        "m_mu/m_e": 206.768283,
+        "m_tau/m_e": 3477.48,
+        "sin2_theta_W": 0.23122,
+        "alpha_s": 0.1185,
+        "137": 137.0,
+        "496": 496.0,
+        "10": 10.0,
+        "26": 26.0
+      },
+      "category": "architecture"
+    },
+    {
       "name": "DERIVED",
       "repo": "TECS-L",
       "file": "physics_constant_engine.py",
@@ -26771,6 +26959,93 @@
         "1/alpha",
         "m_p/m_e",
         "sin2_thetaW"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "architecture"
+    },
+    {
+      "name": "PROJECT_CONSTS",
+      "repo": "TECS-L",
+      "file": "quantum_formula_engine.py",
+      "line": 33,
+      "type": "dict",
+      "size": 19,
+      "keys": [
+        "1/2",
+        "1/3",
+        "1/6",
+        "5/6",
+        "2",
+        "6",
+        "8",
+        "17",
+        "137",
+        "ln3",
+        "ln4/3",
+        "e",
+        "1/e",
+        "sqrt3",
+        "4/3",
+        "sigma6",
+        "tau6",
+        "28",
+        "496"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "architecture"
+    },
+    {
+      "name": "QUANTUM_CONSTS",
+      "repo": "TECS-L",
+      "file": "quantum_formula_engine.py",
+      "line": 58,
+      "type": "dict",
+      "size": 9,
+      "keys": [
+        "alpha",
+        "1/alpha",
+        "g_e-2",
+        "alpha_s",
+        "sin2_thetaW",
+        "m_e/m_p",
+        "m_e/m_mu",
+        "N_gen",
+        "CMB"
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "architecture"
+    },
+    {
+      "name": "TARGETS",
+      "repo": "TECS-L",
+      "file": "quantum_formula_engine.py",
+      "line": 73,
+      "type": "dict",
+      "size": 20,
+      "keys": [
+        "pi",
+        "pi/2",
+        "pi/3",
+        "pi/4",
+        "pi/6",
+        "sqrt2",
+        "sqrt3",
+        "sqrt5",
+        "ln2",
+        "phi",
+        "Catalan",
+        "zeta3",
+        "gamma_EM",
+        "e^gamma",
+        "1/alpha_exact",
+        "1/2",
+        "1/3",
+        "1/6",
+        "5/6",
+        "1/e"
       ],
       "evaluable": false,
       "values": null,
@@ -44529,7 +44804,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 214,
+    "TECS-L": 219,
     "SEDI": 122,
     "anima": 0,
     "golden-moe": 3,
