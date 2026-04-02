@@ -78,7 +78,7 @@ echo "=== Syncing shared work rules ==="
 echo "Source: $SHARED"
 echo ""
 
-for repo in TECS-L anima sedi n6-architecture brainwire papers; do
+for repo in TECS-L anima sedi n6-architecture brainwire papers hexa-lang; do
   if [ "$repo" = "TECS-L" ]; then
     repo_dir="$BASE"
   else
