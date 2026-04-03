@@ -1,4 +1,5 @@
 """CLI for n6-replication -- run/fetch/report/list subcommands."""
+from __future__ import annotations
 
 import argparse
 import sys

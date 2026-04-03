@@ -1,4 +1,5 @@
 """Execution engine — runs Tier 1 tests via pytest and Tier 2+3 scripts via subprocess."""
+from __future__ import annotations
 
 import json
 import os
