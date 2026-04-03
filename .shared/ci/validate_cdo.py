@@ -29,10 +29,12 @@ def scan_jsons(directory):
             if '.claude/' in rel:
                 continue
             path = os.path.join(root, f)
+            if os.path.islink(path) and not os.path.exists(path):
+                continue  # skip broken symlinks
             try:
                 with open(path) as fh:
                     data = json.load(fh)
-            except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            except (FileNotFoundError, json.JSONDecodeError, UnicodeDecodeError) as e:
                 results['fail'].append((rel, f'parse error: {e}'))
                 continue
             if not isinstance(data, dict):
