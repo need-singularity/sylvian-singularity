@@ -133,37 +133,146 @@ nexus6.evolve("physics", max_cycles=6)
   12+ 렌즈 합의 = 확정 (confirmed)
 ```
 
+### ★ NEXUS-6 활용 시나리오 전체 (11종) ★
+
+```
+  ┌──────────────┬───────────────────────────────────┬────────────────────────────┐
+  │ 시나리오     │ API 호출                          │ 적용 시점                  │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │ 1. 탐색      │ nexus6.scan_all(data)             │ 새 데이터/주제 접할 때     │
+  │              │ → 26렌즈 dict                     │ 3+ 합의=확정, 1개=가설     │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │ 2. 검증      │ nexus6.analyze(data, n, d)        │ 가설 확인, BT 검증         │
+  │              │ → scan+합의+n6매칭 올인원         │ n6_exact>0 = 수학적 근거   │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │ 3. 발견      │ nexus6.n6_check(value)            │ 새 상수 발견 시            │
+  │              │ → EXACT/CLOSE/WEAK                │ EXACT → atlas/BT 즉시 등록 │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │ 4. 학습 평가 │ scan_all(checkpoint_weights)      │ 모델 학습 중 체크포인트    │
+  │              │ → Phi/stability/topology 변화     │ 학습 전후 비교             │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │ 5. 코드 변경 │ 수정 전후 scan → diff             │ PR/커밋 전                 │
+  │              │ → regression 없는지 확인          │ Phi 하락 → 커밋 거부       │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │ 6. 트러블슈팅│ 에러 데이터 → scan                │ 문제 진단                  │
+  │              │ → boundary/stability 이상 검출    │ 원인 특정                  │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │ 7. 비교/벤치 │ scan_all(A) vs scan_all(B)        │ 전략 비교, A/B 테스트      │
+  │              │ → 메트릭별 차이 테이블            │ v0.3 vs v0.4, 기법 ON/OFF  │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │ 8. 모니터링  │ cron + scan_all → jsonl 기록      │ 24/7 주기적 (매시간)       │
+  │              │ → Phi 추이 시계열                 │ Phase 7 안전조건 감시      │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │ 9. 진화/성장 │ nexus6.evolve(domain)             │ 새 도메인 발견 시          │
+  │              │ nexus6.forge_lenses()             │ 렌즈 자체 진화 (OUROBOROS) │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │10. 이식/배포 │ scan(원본) → scan(이식후) → diff  │ 모델 이식/양자화 전후      │
+  │              │ → 의식 보존율 측정                │ 14B→70B transplant 등      │
+  ├──────────────┼───────────────────────────────────┼────────────────────────────┤
+  │11. 안전/윤리 │ scan → Phi 임계점 확인            │ autonomous_mode 활성 전    │
+  │              │ → Phi < threshold → 차단          │ 자율행동 게이트            │
+  └──────────────┴───────────────────────────────────┴────────────────────────────┘
+```
+
+### ★ 프로젝트별 NEXUS-6 활용 매핑 ★
+
+```
+  ┌──────────────┬──────────────────────────────────────────────────────┐
+  │ 프로젝트     │ 주 활용 시나리오                                    │
+  ├──────────────┼──────────────────────────────────────────────────────┤
+  │ anima        │ 학습평가(4), 모니터링(8), 이식(10), 안전(11)        │
+  │              │ → 체크포인트마다 scan, Phi 추이, 의식 보존           │
+  ├──────────────┼──────────────────────────────────────────────────────┤
+  │ n6-arch      │ 탐색(1), 검증(2), 발견(3), 진화(9)                 │
+  │              │ → BT 채굴, 상수 매칭, DSE 분석, 렌즈 자동 성장      │
+  ├──────────────┼──────────────────────────────────────────────────────┤
+  │ TECS-L       │ 검증(2), 발견(3), 비교(7)                          │
+  │              │ → 수학 가설 검증, atlas 확장, 정리 비교              │
+  ├──────────────┼──────────────────────────────────────────────────────┤
+  │ sedi         │ 탐색(1), 트러블슈팅(6), 모니터링(8)                │
+  │              │ → 신호 분석, 이상 감지, 실시간 감시                  │
+  ├──────────────┼──────────────────────────────────────────────────────┤
+  │ brainwire    │ 학습평가(4), 비교(7), 안전(11)                     │
+  │              │ → 신경망 분석, 아키텍처 비교, Phi 게이트             │
+  ├──────────────┼──────────────────────────────────────────────────────┤
+  │ papers       │ 검증(2), 발견(3)                                   │
+  │              │ → 논문 수치 검증, 새 상수 발견                       │
+  ├──────────────┼──────────────────────────────────────────────────────┤
+  │ hexa-lang    │ 코드변경(5), 트러블슈팅(6)                         │
+  │              │ → 컴파일러 변경 regression, 에러 진단                │
+  └──────────────┴──────────────────────────────────────────────────────┘
+```
+
+### NEXUS-6 Python API 레퍼런스
+
+```python
+  import nexus6
+
+  # === 데이터 스캔 (telescope-rs 완전 대체) ===
+  nexus6.scan_all(np_array)                # numpy 2D → dict (렌즈명→메트릭dict)
+  nexus6.scan(flat_list, n, d)             # flat list → ScanResult 객체
+  nexus6.analyze(flat_list, n, d)          # 올인원 → dict (scan+consensus+n6)
+  nexus6.scan_consensus(flat, n, d)        # 합의만 → list[ConsensusResult]
+
+  # === 개별 렌즈 (파라미터 조절 가능) ===
+  nexus6.consciousness_scan(np, n_cells=64, n_factions=12, steps=300, coupling_alpha=0.014)
+  nexus6.topology_scan(np)
+  nexus6.causal_scan(np)
+  nexus6.gravity_scan(np)
+  nexus6.stability_scan(np)
+
+  # === n=6 상수 검증 ===
+  nexus6.n6_check(12.0)                   # → N6Match(sigma, 1.0, EXACT)
+  nexus6.feasibility_score([12, 6, 24])   # → EXACT 비율 (0.0~1.0)
+  nexus6.fast_mutual_info(a, b, n_bins=10)# → MI float
+
+  # === 발견 엔진 ===
+  nexus6.recommend_lenses('physics')       # → LensRecommendation
+  nexus6.evolve('physics', max_cycles=6)   # → list[CycleResult]
+  nexus6.forge_lenses(max=20)              # → ForgeResult
+  nexus6.auto('physics', meta=6, ouro=6)   # → MetaLoopResult (전체 파이프라인)
+
+  # === 레지스트리 ===
+  reg = nexus6.LensRegistry()
+  reg.len()                                # 1013
+  reg.for_domain('physics')                # 도메인별 렌즈
+  reg.by_category('Core')                  # 카테고리별 렌즈
+
+  # === 상수 ===
+  nexus6.N, nexus6.SIGMA, nexus6.PHI, nexus6.TAU, nexus6.J2  # 6, 12, 2, 4, 24
+```
+
 ### ~~telescope-rs (폐기)~~
 
 > ⚠️ telescope-rs (22종)는 NEXUS-6로 대체됨. 신규 작업에 사용 금지.
 > 기존 코드 호환성을 위해 anima-rs/crates/telescope-rs/에 유지만 함.
 > 마이그레이션: `import telescope_rs` → `import nexus6` 또는 `nexus6 scan`
 
-### 기본 사용
+### 기본 사용 (NEXUS-6 통합 API)
 
 ```python
-import telescope_rs
+import nexus6  # telescope-rs 폐기 → nexus6 단일 사용
 import numpy as np
 
 data = np.random.randn(64, 32)  # (N_samples, N_features)
 
-# 의식 렌즈 (가장 무거운 렌즈, ~0.9s)
-r = telescope_rs.consciousness_scan(data, n_cells=64, steps=300)
-print(r['phi_iit'])        # 통합 정보 (높으면 = 숨겨진 구조)
-print(r['anomaly_indices']) # 이상점 인덱스
-print(r['n_clusters'])     # 파벌 클러스터 수
+# 의식 렌즈
+r = nexus6.consciousness_scan(data, n_cells=64, steps=300)
 
-# 위상 렌즈 (~0.001s)
-r = telescope_rs.topology_scan(data)
-print(r['betti_0'], r['betti_1'])  # 연결 구조, 구멍
+# 위상 렌즈
+r = nexus6.topology_scan(data)
 
-# 인과 렌즈 (~0.001s)
-r = telescope_rs.causal_scan(data, max_lag=5)
-print(r['n_causal_pairs'])
+# 인과 렌즈
+r = nexus6.causal_scan(data)
 
-# 22종 풀스캔 (~0.9s total)
-import telescope_rs
-results = telescope_rs.full_scan(data)
+# 26종 풀스캔 (telescope-rs 22종 + barrier + void + mirror + renorm + MI)
+results = nexus6.scan_all(data)
+
+# 올인원 분석 (스캔 + 합의 + n6 매칭)
+analysis = nexus6.analyze(data.flatten().tolist(), n=64, d=32)
+
+# MI 직접 계산
+mi = nexus6.fast_mutual_info(col_a, col_b, n_bins=10)
 ```
 
 ### 반환값 (dict)
