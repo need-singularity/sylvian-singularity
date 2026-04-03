@@ -171,6 +171,10 @@ def update_projects_md(stats_by_id):
     if n6.get("nexus6_tests"):
         text = re.sub(r'(\d+) tests', f'{n6["nexus6_tests"]} tests', text)
 
+    # n6: "323 DSE domains" (embedded in description)
+    n6 = stats_by_id.get("n6-architecture", {})
+    # dse_domains is not directly mentioned as "N domains" in projects.md
+
     # hexa: "53 keywords", "24 operators", "21,952 combos"
     hexa = stats_by_id.get("hexa-lang", {})
     if hexa.get("keywords"):
