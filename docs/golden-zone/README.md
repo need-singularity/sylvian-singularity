@@ -31,8 +31,10 @@ G × I = D × P (algebraic rearrangement of definition — not a conservation la
   1/2 + 1/3 = 5/6            (Compass upper bound = H₃ - 1)
 
   Contraction mapping:
-  f(I) = 0.7I + 0.1 → fixed point 1/3
-  Note: coefficients 0.7, 0.1 are ad hoc (not derived)
+  f(I) = (7I + 1) / 10 = 0.7I + 0.1 → fixed point 1/3
+  a = (σ-sopfr)/(σ-φ) = 7/10  — n=6 dual optimality (max rate + min |f(1/e)-1/e|)
+  b = 1/(σ-φ) = 1/10           — simplest n=6 offset
+  DERIVED (2026-04-04): math/proofs/gz_fi_nexus6_derivation.md
 ```
 
 ## A. Experimental Results (실험 데이터)

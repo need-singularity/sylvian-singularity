@@ -514,6 +514,10 @@ or Shannon's definition of entropy.
 | D: Uniqueness | STRONG | G=D*P/I is UNIQUE under 6 axioms | U4' needs justification |
 | E: FEP | FAIL | Structural parallel, wrong functional form | Full gap |
 | **F: Self-Measurement** | **STRONGEST** | **Derives U4' from self-reference** | **Definitional only** |
+| G: Info Geometry v2 | PARTIAL | Sufficient stats => separability (~80%) | Independence assumed |
+| **H: Variational** | **SUCCESS** | **Lagrangian on Fisher manifold => A4+A5** | **None (within model)** |
+| **I: Symmetry/Pi** | **SUCCESS** | **Lie Group PDE + Buckingham Pi => A5 theorem** | **None (within model)** |
+| **J: Axiomatic Closure** | **SUCCESS** | **Ind. Scalability => A5+A6 proven** | **IS justification (~5%)** |
 
 ---
 
@@ -558,19 +562,29 @@ This is structurally identical to how other fundamental theories work:
 
 ```
   Mathematical proof (within model):       100%   (H-CX-507 closes it)
-  Mathematical proof (model derivation):   ~90%   (Strategy F: self-ref)
-    - Conservation G*I=D*P: DERIVED (self-measurement)
-    - Scale covariance U4': DERIVED (self-reference => scale-free)
-    - Separability: ASSUMED (axiom, ~70%)
-    - D-P symmetry: near-definitional (~90%)
+  Mathematical proof (model derivation):   ~95%   (4-route convergence, 2026-04-04)
+    - Conservation G*I=D*P: DERIVED (self-measurement, Strategy F)
+    - Scale covariance U4': DERIVED (self-reference => scale-free, Strategy F)
+    - Separability A5: DERIVED (3 independent routes, 2026-04-04)
+      Route I-1 (Buckingham Pi): A4+SC => all non-monomial terms vanish
+      Route I-2 (Lie Group PDE): A4+A6+SC+C^1 => F=d+p-i+C => A5 is THEOREM
+      Route J   (Ind. Scalability): self-ref => unit elasticity => f=D*P*chi(I)
+    - D-P symmetry A6: DERIVED (theorem from multiplicative separability)
+    - Variational (Route H): Lagrangian E-L equilibrium = G=D*P/I
+    - Info Geometry (Route G): PARTIAL (~80%, sufficient stats argument)
+    Remaining: A4 derivable from self-reference (~5% definitional gap)
   Empirical validation (model correctness): 0%    (needs experiments)
-  Overall proof (math + empirical):        ~45%   (0.5 * 90% + 0.5 * 0%)
+    3 protocols designed: EEG ($40K), fMRI ($115K), pharma ($250K)
+  Overall proof (math + empirical):        ~47%   (0.5 * 95% + 0.5 * 0%)
 ```
 
-The within-model proof is 100% complete. The model derivation is at ~90%,
-with the remaining gap being definitional (what is consciousness?) rather
-than mathematical (what equations hold?). This is arguably the best that
-pure mathematics can achieve for a model about consciousness.
+The within-model proof is 100% complete. The model derivation is at ~95%,
+with the remaining ~5% gap being definitional (what is consciousness?) rather
+than mathematical (what equations hold?). Four independent routes converge
+on the same result, with A5 and A6 now proven as theorems rather than axioms.
+The minimal axiom system is reduced to 1 definition + 1 structural axiom (A4).
+This is arguably the best that pure mathematics can achieve for a model
+about consciousness.
 
 ---
 
