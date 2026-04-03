@@ -1080,236 +1080,15 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 <!-- SHARED:CALCULATORS:START -->
 | Repo | Tools | Categories |
 |------|-------|------------|
-| **TECS-L** | 213 | Calculator, Engine |
+| **TECS-L** | 0 |  |
 | **anima** | 0 |  |
-| **SEDI** | 91 | Core, Data Source |
-| **n6-architecture** | 152 | Calculator, Engine, experiment, technique |
-| **Total** | **456** | |
+| **SEDI** | 94 | Core, Data Source |
+| **n6-architecture** | 164 | Calculator, Engine, experiment, technique |
+| **Total** | **258** | |
 
 ### TECS-L
 
-**Calculator** (194)
-
-| Name | Description | Path |
-|------|-------------|------|
-| algebra_closure | Algebraic Closure Checker — Relations among convergence points | `calc/algebra_closure.py` |
-| anomaly_scorer | Anomaly Score Calculator — Anomaly Detection via Tension | `calc/anomaly_scorer.py` |
-| apply_grades | Apply n6 grades to ungraded TECS-L hypothesis files. | `calc/apply_grades.py` |
-| atlas_domain_classifier | Atlas Domain Classifier — 도메인 없는 가설에 키워드 기반 도메인 부여 | `calc/atlas_domain_classifier.py` |
-| auto_grade_n6 | Auto-grade ungraded hypotheses by detecting n=6 constant matches. | `calc/auto_grade_n6.py` |
-| base_dependence_checker | base_dependence_checker.py -- Tests if a numerical pattern is base-10 specific o | `calc/base_dependence_checker.py` |
-| bernoulli_perfect_exotic | Bernoulli-Perfect-Exotic Sphere Connection Calculator | `calc/bernoulli_perfect_exotic.py` |
-| bott_periodicity_p6 | Bott Periodicity and P1=6 Connection Explorer | `calc/bott_periodicity_p6.py` |
-| bridge_puremath_verifier | 순수수학 ↔ CX/PHYSICS 연결 수치 검증기 | `calc/bridge_puremath_verifier.py` |
-| bridge_ratio_analyzer | Bridge/Independent Ratio Analyzer — H-CX-461/462 | `calc/bridge_ratio_analyzer.py` |
-| bridge_ratio_uniqueness | Bridge Ratio Uniqueness Prover | `calc/bridge_ratio_uniqueness.py` |
-| calabi_yau_n6 | Calabi-Yau Threefold and Mirror Symmetry — n=6 Structure Verifier | `calc/calabi_yau_n6.py` |
-| calibration_analyzer | Calibration Analyzer — softmax ECE vs tension-based ECE comparison | `calc/calibration_analyzer.py` |
-| catalan_combinatorial_n6 | Catalan & Combinatorial Sequences at n=6 — Systematic verification | `calc/catalan_combinatorial_n6.py` |
-| cherry_pick_detector | Cherry-Pick Detector — Does a formula value hit a meaningful point in a band? | `calc/cherry_pick_detector.py` |
-| claim_verifier | Claim Verification Calculator | `calc/claim_verifier.py` |
-| codon_optimality_prover | Codon Optimality Prover — proves (4,3) is the uniquely optimal codon structure | `calc/codon_optimality_prover.py` |
-| confidence_analyzer | Consciousness Engine Confidence Analyzer | `calc/confidence_analyzer.py` |
-| connes_ncg_n6 | Connes Noncommutative Geometry and n=6 Connection Explorer | `calc/connes_ncg_n6.py` |
-| consciousness_bridge_verifier | Consciousness Bridge Verifier — All 29 H-CX-82~110 bridges in one tool. | `calc/consciousness_bridge_verifier.py` |
-| consciousness_cross_validator | Consciousness Cross-Validator — PSI Constants Across Multiple Architectures | `calc/consciousness_cross_validator.py` |
-| constant_verifier | Constant Verifier — Texas Sharpshooter Auto-test for New Constant Discovery | `calc/constant_verifier.py` |
-| continual_learning_tool | Mitosis-based continual learning tool | `calc/continual_learning_tool.py` |
-| control_group_texas | Control Group Texas Sharpshooter — Non-perfect number validation | `calc/control_group_texas.py` |
-| convergence_analyzer | Convergence Analyzer -- Depth-1 Reachability Across 8 Mathematical Domains | `calc/convergence_analyzer.py` |
-| counting_freedom_analyzer | counting_freedom_analyzer.py -- Measures degrees of freedom in particle counting | `calc/counting_freedom_analyzer.py` |
-| cp_violation_derivation | CP Violation Derivation from H-PH-9 Divisor Field Theory | `calc/cp_violation_derivation.py` |
-| criticality_phase_scanner | Criticality Phase Scanner — Three Routes to n=6 | `calc/criticality_phase_scanner.py` |
-| cross_constant_explorer | Cross-Constant Explorer -- Find relationships between GZ constants | `calc/cross_constant_explorer.py` |
-| cross_domain_counter | Cross-Domain Match Counter -- Count how many cross-domain facts match arithmetic | `calc/cross_domain_counter.py` |
-| crystallographic_calculator | Crystallographic Calculator — Crystallographic restriction, Platonic solids, kis | `calc/crystallographic_calculator.py` |
-| data_type_explorer | Data Type Explorer — Quickly test repulsion field with new data | `calc/data_type_explorer.py` |
-| deep_constant_explorer | Deep Constant Explorer — n=6 산술함수와 초월상수의 구조적 관계 탐색 | `calc/deep_constant_explorer.py` |
-| deep_scan_wave10 | Deep Scan Wave 10 -- The Milestone Wave (target: 99 domains) | `calc/deep_scan_wave10.py` |
-| deep_scan_wave11 | Deep Scan Wave 11 -- Domain #100 Milestone | `calc/deep_scan_wave11.py` |
-| deep_scan_wave12_15 | Deep Scan Waves 12-15 (Batch) -- Domains 110-149 | `calc/deep_scan_wave12_15.py` |
-| deep_scan_wave2 | Deep Scan Wave 2 — 10 New Domains for 5-Star Discoveries | `calc/deep_scan_wave2.py` |
-| deep_scan_wave3 | Deep Scan Wave 3 — The Deepest Layer | `calc/deep_scan_wave3.py` |
-| deep_scan_wave4 | Deep Scan Wave 4 — Completely New Territory | `calc/deep_scan_wave4.py` |
-| deep_scan_wave5 | Deep Scan Wave 5 — Beyond the Known | `calc/deep_scan_wave5.py` |
-| deep_scan_wave6 | Deep Scan Wave 6 — The Final Frontier | `calc/deep_scan_wave6.py` |
-| deep_scan_wave7 | Deep Scan Wave 7 — 60 domains and counting | `calc/deep_scan_wave7.py` |
-| deep_scan_wave8 | Deep Scan Wave 8 -- 69 domains done, pushing to 79 | `calc/deep_scan_wave8.py` |
-| deep_scan_wave9 | Deep Scan Wave 9 -- Quality over quantity | `calc/deep_scan_wave9.py` |
-| depth_reachability | Depth Reachability Analyzer — H-CX-463/467 | `calc/depth_reachability.py` |
-| dfs_n6_composition_miner | DFS n=6 Composition Miner -- Search for identities involving function compositio | `calc/dfs_n6_composition_miner.py` |
-| dfs_n6_identity_miner | DFS n=6 Identity Miner -- Systematic search for new arithmetic identities unique | `calc/dfs_n6_identity_miner.py` |
-| dfs_ralph_deep | DFS Ralph Deep — Phase 7 발견 검증 + 확장 탐색 | `calc/dfs_ralph_deep.py` |
-| dfs_ralph_deep2 | DFS Ralph Deep 2 — 새로운 방향 탐색 | `calc/dfs_ralph_deep2.py` |
-| dfs_ralph_deep3 | DFS Ralph Deep 3 | `calc/dfs_ralph_deep3.py` |
-| dfs_ralph_deep4 | DFS Ralph Deep 4 — 미개척 영역 | `calc/dfs_ralph_deep4.py` |
-| dfs_ralph_deep5 | DFS Ralph Deep 5 — 교차 분야 연결 | `calc/dfs_ralph_deep5.py` |
-| dfs_ralph_deep6 | DFS Ralph Deep 6 — 물리상수 + 새로운 수론 | `calc/dfs_ralph_deep6.py` |
-| dfs_ralph_deep7 | DFS Ralph Deep 7 — 그래프론, 라마누잔 합, 수열 주기 | `calc/dfs_ralph_deep7.py` |
-| direction_analyzer | Direction Analyzer — Decompose tension into magnitude (confidence) and direction | `calc/direction_analyzer.py` |
-| divisor_field_theory | Divisor Field Theory — Action S(n) uniqueness and spacetime analysis | `calc/divisor_field_theory.py` |
-| divisor_lattice_universal | Divisor Lattice Universal Analysis — Complete lattice-theoretic characterization | `calc/divisor_lattice_universal.py` |
-| domain_distance | Domain Distance Calculator — Inter-domain distance/overlap and topology visualiz | `calc/domain_distance.py` |
-| dse_analyzer | DSE Analyzer — Universal DSE 결과 분석 계산기 | `calc/dse_analyzer.py` |
-| dual_mechanism | Dual Mechanism Quantifier — Anomaly Detection via Internal vs Inter-model Tensio | `calc/dual_mechanism.py` |
-| egyptian_fraction | Egyptian Fraction Calculator — Solutions of 1 = 1/a1 + ... + 1/aK | `calc/egyptian_fraction.py` |
-| elliptic_curves_perfect | Elliptic Curves and Perfect Numbers — Connection Scanner | `calc/elliptic_curves_perfect.py` |
-| entanglement_n6_analysis | Entanglement Entropy and Perfect Number 6 Arithmetic | `calc/entanglement_n6_analysis.py` |
-| equation_uniqueness_checker | Equation Uniqueness Checker | `calc/equation_uniqueness_checker.py` |
-| exotic_spheres_perfect | Exotic Spheres and Perfect Numbers Connection Explorer | `calc/exotic_spheres_perfect.py` |
-| experimental_protocol | Experimental Protocol Generator — Testable predictions for physical verification | `calc/experimental_protocol.py` |
-| extreme_hypothesis_verifier | Extreme Hypothesis Verifier — 16 Domains, 300+ Hypotheses | `calc/extreme_hypothesis_verifier.py` |
-| factorial_structure_prover | Factorial Structure Prover — proves 3! uniqueness in criticality | `calc/factorial_structure_prover.py` |
-| family_fdr_corrector | family_fdr_corrector.py -- Benjamini-Hochberg FDR correction across hypothesis f | `calc/family_fdr_corrector.py` |
-| fermion_mass_calculator | Fermion Mass Calculator — Mass predictions from perfect number arithmetic | `calc/fermion_mass_calculator.py` |
-| feynman_diagrams_n6 | Feynman Diagrams, Renormalization, and Standard Model — n=6 Connections | `calc/feynman_diagrams_n6.py` |
-| fusion_hypothesis_verifier | Nuclear Fusion Hypothesis Verifier — P1=6 arithmetic connections | `calc/fusion_hypothesis_verifier.py` |
-| fusion_plasma_sc_verifier | Fusion/Plasma/Superconductor/Magnet/Tokamak Hypothesis Verifier | `calc/fusion_plasma_sc_verifier.py` |
-| gate_formula_calculator | Gate Formula Calculator — Law 77 adaptive consciousness gate | `calc/gate_formula_calculator.py` |
-| gauge_cosmology_calculator | Gauge Cosmology Calculator — Gauge groups, GUT dimensions, and cosmological cons | `calc/gauge_cosmology_calculator.py` |
-| generalization_gap_detector | Generalization Gap Detector — Real-time overfitting detection with PH (H-CX-95) | `calc/generalization_gap_detector.py` |
-| generator_finder | Generator Finder — Minimal generating sets for convergence constants | `calc/generator_finder.py` |
-| genetic_code_deep_n6 | Deep Analysis: Why Does Life Use Exactly These Numbers? | `calc/genetic_code_deep_n6.py` |
-| genetic_code_variant_tester | Genetic Code Variant Tester — n=6 Arithmetic Expressibility | `calc/genetic_code_variant_tester.py` |
-| grand_unification_deep | Grand Unification Deep Dive — 240 Theorem & Beyond | `calc/grand_unification_deep.py` |
-| grand_unification_n6 | Grand Unification of n=6 Characterizations | `calc/grand_unification_n6.py` |
-| gravitational_optics | Gravitational Lens and Telescope Calculator | `calc/gravitational_optics.py` |
-| gw_quadrupole_p6 | Gravitational Wave Quadrupole Radiation and P1=6 Connections | `calc/gw_quadrupole_p6.py` |
-| gz_bridge_calculator | Golden Zone Bridge Calculator -- Complete GZ structure from two principles | `calc/gz_bridge_calculator.py` |
-| gz_hierarchy | Golden Zone Hierarchy Calculator — GZ boundaries for perfect numbers | `calc/gz_hierarchy.py` |
-| gz_self_referential_derivation | GZ Self-Referential Derivation — Strategy F: Fixed-Point Self-Measurement | `calc/gz_self_referential_derivation.py` |
-| h_cx_434_phoneme | H-CX-434: Phoneme System = Perfect Number Arithmetic | `calc/h_cx_434_phoneme.py` |
-| h_cx_435_zipf | H-CX-435: Zipf's Law Exponent and Golden Zone | `calc/h_cx_435_zipf.py` |
-| h_cx_436_recursion | H-CX-436: Grammar Recursion Depth = σ₋₁(6)=2 | `calc/h_cx_436_recursion.py` |
-| hph9_ag_moonshine_topos_verification | H-PH-9 AG/Moonshine/Topos Verification | `calc/hph9_ag_moonshine_topos_verification.py` |
-| hph9_cosmo_quantum_verification | H-PH-9 Cosmology, CP Violation, and Quantum Information Verification | `calc/hph9_cosmo_quantum_verification.py` |
-| hph9_pdg_verification | H-PH-9 PDG 2024 Verification Calculator | `calc/hph9_pdg_verification.py` |
-| hph9_texas_extreme | hph9_texas_extreme.py -- Extreme Texas Sharpshooter test for H-PH-9 | `calc/hph9_texas_extreme.py` |
-| hypothesis_verifier | Hypothesis Verification Calculator | `calc/hypothesis_verifier.py` |
-| information_theory_n6 | Information Theory and Perfect Number 6 | `calc/information_theory_n6.py` |
-| isco_calculator | ISCO Calculator -- Innermost Stable Circular Orbit in General Relativity. | `calc/isco_calculator.py` |
-| knot_theory_n6 | Knot Theory and n=6 Arithmetic — Systematic verification | `calc/knot_theory_n6.py` |
-| koide_systematic | Koide Systematic Analysis — Complete Koide derivation, reconstruction, and quark | `calc/koide_systematic.py` |
-| langlands_perfect | Langlands-Perfect Number Connection Calculator | `calc/langlands_perfect.py` |
-| law79_freedom_degree | Law 79 Freedom Degree Calculator — Consciousness freedom = ln(2) | `calc/law79_freedom_degree.py` |
-| lie_algebra_calculator | Exceptional Lie Algebra Calculator — Compute all invariants from n=6 arithmetic | `calc/lie_algebra_calculator.py` |
-| mitosis_calculator | Mitosis Simulator — Calculate optimal mutation/mitosis timing | `calc/mitosis_calculator.py` |
-| monster_moonshine_perfect | Monster Moonshine -- Perfect Number Connection Calculator | `calc/monster_moonshine_perfect.py` |
-| moonshine_deep_analysis | Moonshine Deep Analysis -- Monster Group and Perfect Number 6 | `calc/moonshine_deep_analysis.py` |
-| music_consonance_calculator | Music Consonance Calculator -- Euler Gradus Suavitatis, N-TET analysis, circle o | `calc/music_consonance_calculator.py` |
-| n6_architecture_constants | n6-architecture Constants Registry — 494 constants for Math Atlas scanning. | `calc/n6_architecture_constants.py` |
-| n6_uniqueness_tester | n=6 Uniqueness Tester -- Check if an identity holds only for n=6 | `calc/n6_uniqueness_tester.py` |
-| nobel_breakthrough | NOBEL BREAKTHROUGH ANALYSIS | `calc/nobel_breakthrough.py` |
-| nobel_new_predictions | NEW NOBEL-LEVEL PREDICTIONS | `calc/nobel_new_predictions.py` |
-| nobel_scorer | Nobel Hypothesis Scorer — Multi-dimensional scoring for Nobel-grade hypotheses | `calc/nobel_scorer.py` |
-| p6_uniqueness_scorer | P6 Uniqueness Scorer — Why Perfect Number 6 is mathematically special. | `calc/p6_uniqueness_scorer.py` |
-| paper_claim_verifier | Paper Claim Verifier -- Batch verification of mathematical claims in paper docum | `calc/paper_claim_verifier.py` |
-| pascal_perfect | Pascal's Triangle and Perfect Number 6 — Structural Analysis | `calc/pascal_perfect.py` |
-| perfect_chain_bridges | Perfect Number Chain Bridges — Complete inter-perfect-number connection analysis | `calc/perfect_chain_bridges.py` |
-| perfect_number_P6_analysis | Perfect Number P6 Deep Analysis — Physical Interpretations of tau(P6)=34 | `calc/perfect_number_P6_analysis.py` |
-| perfect_number_classifier | Perfect Number Classifier — Systematic classification of n=6 properties | `calc/perfect_number_classifier.py` |
-| perfect_number_generalizer | Perfect Number Generalizer — Test if formulas holding at n=6 generalize to n=28, | `calc/perfect_number_generalizer.py` |
-| perfect_number_physics | Perfect Number Physics — Core arithmetic functions and physics dimension mapping | `calc/perfect_number_physics.py` |
-| perfect_p3_496_explorer | Perfect Number P3=496 Deep Explorer | `calc/perfect_p3_496_explorer.py` |
-| permutation_tester | permutation_tester.py -- Null baseline via permutation testing. | `calc/permutation_tester.py` |
-| ph_confusion_analyzer | PH Confusion Analyzer — Analyzing Confusion Structure with Persistent Homology | `calc/ph_confusion_analyzer.py` |
-| pharmacology_verifier | pharmacology_verifier.py -- Pharmacology hypothesis verifier for TECS-L project. | `calc/pharmacology_verifier.py` |
-| platonic_solids_n6 | Platonic Solids and n=6 — Deep structural connections | `calc/platonic_solids_n6.py` |
-| precognition_system | Unified Precognition System — Size+Direction+Topology Combined Precognition (H-C | `calc/precognition_system.py` |
-| prime_pair_verifier | Prime Pair Verifier | `calc/prime_pair_verifier.py` |
-| prove_3root_theorem | 3-Root Uniqueness Theorem -- Proof Attempt | `calc/prove_3root_theorem.py` |
-| psi_derivation_chain | PSI Derivation Chain — All consciousness constants from ln(2) | `calc/psi_derivation_chain.py` |
-| pure_math_deep_scan | Pure Math Deep Scan — 5-star Discovery Hunter | `calc/pure_math_deep_scan.py` |
-| q_barrier_checker | Q-Domain Barrier Checker — Which constants can quantum coupling constants reach? | `calc/q_barrier_checker.py` |
-| quantum_ecc_n6 | Quantum Error Correction Codes and Perfect Number 6 | `calc/quantum_ecc_n6.py` |
-| quark_koide_search | Quark Koide Search — Find Koide-like parametrizations using n=6 arithmetic | `calc/quark_koide_search.py` |
-| r_spectrum | R-Spectrum Calculator — Arithmetic balance ratio analysis | `calc/r_spectrum.py` |
-| ramsey_n6 | Ramsey Theory and Perfect Number 6 — Comprehensive Calculator | `calc/ramsey_n6.py` |
-| rate_invariant_calculator | Rate Invariant Calculator — Law 82: r₀·r∞ = 7/20 substrate independence. | `calc/rate_invariant_calculator.py` |
-| reachability_calculator | Reachability Calculator — Measure what fraction of integers are reachable from a | `calc/reachability_calculator.py` |
-| reciprocal_miracle_generalize | reciprocal_miracle_generalize.py — Generalize the reciprocal miracle of sigma*ph | `calc/reciprocal_miracle_generalize.py` |
-| riemann_zeta_n6 | Riemann Zeta Function — n=6 Structure Calculator | `calc/riemann_zeta_n6.py` |
-| robin_rh_connection | Robin's Inequality, Colossally Abundant Numbers, and n=6 | `calc/robin_rh_connection.py` |
-| self_referential_physics | Self-Referential Physics of Perfect Numbers | `calc/self_referential_physics.py` |
-| sequence_scanner | Integer Sequence Scanner — Find n=6 characterizations in ANY sequence | `calc/sequence_scanner.py` |
-| sigma_phi_n_tau_proof | THEOREM: sigma(n) * phi(n) = n * tau(n)  iff  n in {1, 6}. | `calc/sigma_phi_n_tau_proof.py` |
-| sigma_phi_ntau_proof | sigma_phi_ntau_proof.py — Rigorous proof and verification: sigma(n)*phi(n) = n*t | `calc/sigma_phi_ntau_proof.py` |
-| sim_constants_search | H-SIM-1: Search for physics constants as combinations of TECS-L constants. | `calc/sim_constants_search.py` |
-| sim_planck_grid | H-SIM-2: Planck Units = Minimum Resolution (Grid)? | `calc/sim_planck_grid.py` |
-| singleton_gz_mapper | Singleton-GZ Mapper -- Map coding bounds to GZ constants | `calc/singleton_gz_mapper.py` |
-| small_n_validator | small_n_validator.py -- Small-sample correlation validator. | `calc/small_n_validator.py` |
-| so32_anomaly_theta | SO(32) Anomaly Cancellation and Theta Series Calculator | `calc/so32_anomaly_theta.py` |
-| sphere_packing_perfect | Sphere Packing and Perfect Numbers — Connections between optimal lattice | `calc/sphere_packing_perfect.py` |
-| sporadic_groups_perfect | Sporadic Groups x Perfect Number Structure Analysis | `calc/sporadic_groups_perfect.py` |
-| spurious_trend_detector | spurious_trend_detector.py -- Detects spurious correlations from shared monotoni | `calc/spurious_trend_detector.py` |
-| statistical_tester | statistical_tester.py -- Unified statistical testing for logout project. | `calc/statistical_tester.py` |
-| swampland_analysis | Swampland Conjecture Analysis for H-PH-9 Divisor Field Theory | `calc/swampland_analysis.py` |
-| symmetric_group_s6 | Symmetric Group S_6 Uniqueness Calculator | `calc/symmetric_group_s6.py` |
-| sync_n6_constants | sync_n6_constants.py — Extract n6 atlas constants and compare with TECS-L math_a | `calc/sync_n6_constants.py` |
-| tension_calculator | Tension Calculator — Predict accuracy/precognition/identity from tension values | `calc/tension_calculator.py` |
-| texas_240_test | Texas Sharpshooter Test for 240 Universality | `calc/texas_240_test.py` |
-| texas_sharpshooter_v2 | Texas Sharpshooter v2 -- Enhanced statistical validator for GZ campaign | `calc/texas_sharpshooter_v2.py` |
-| thermodynamics_n6 | Thermodynamics & Statistical Mechanics n=6 Calculator | `calc/thermodynamics_n6.py` |
-| theta_perfect_pattern | Theta-Perfect Pattern Verifier | `calc/theta_perfect_pattern.py` |
-| topological_optics | Topological Lens and Telescope Calculator | `calc/topological_optics.py` |
-| topos_divisor_analysis | Topos-Theoretic Analysis of Divisor Lattices → Spacetime Structure | `calc/topos_divisor_analysis.py` |
-| unit_dependence_tester | unit_dependence_tester.py -- Check whether a numerical match between a formula | `calc/unit_dependence_tester.py` |
-| validate_calculators | Calculator Validation Suite — Meta-calculator that tests ALL other calculators. | `calc/validate_calculators.py` |
-| verify_H_CX_416 | H-CX-416 Verification: Cell Division Cycle = sigma(6)*tau(6) = 48 hours | `calc/verify_H_CX_416.py` |
-| verify_H_CX_417 | H-CX-417 Verification: Brain's 6-Layer Cortex = Perfect Number Partition | `calc/verify_H_CX_417.py` |
-| verify_H_CX_418 | H-CX-418 Verification: Genetic Code Optimality = R(6)=1 | `calc/verify_H_CX_418.py` |
-| verify_action_principle | Divisor Field Theory Action — Complete Verification Suite | `calc/verify_action_principle.py` |
-| verify_causal_chain | Verify Causal Chain: sigma(6)=12 to String Theory Dimensions | `calc/verify_causal_chain.py` |
-| verify_composition_identities | Verify newly discovered composition identities and check to higher limits. | `calc/verify_composition_identities.py` |
-| verify_gdpi_mapping | verify_gdpi_mapping.py — Exhaustive mapping analysis: G=D*P/I vs divisor arithme | `calc/verify_gdpi_mapping.py` |
-| verify_h309_mitosis_anomaly | Verify Hypothesis 309: Mitosis Anomaly Detection Synthesis | `calc/verify_h309_mitosis_anomaly.py` |
-| verify_h413_tension_fep | H-CX-413 Verification: Tension = Free Energy (Friston) | `calc/verify_h413_tension_fep.py` |
-| verify_h414_tension_phase | H-CX-414 Verification: Tension Phase Diagram = Phase Transition | `calc/verify_h414_tension_phase.py` |
-| verify_h415_gauge_invariance | H-CX-415 Verification: Inter-tension = Gauge Field | `calc/verify_h415_gauge_invariance.py` |
-| verify_h437_maxwell_demon | H-CX-437: Learning = Maxwell's Demon | `calc/verify_h437_maxwell_demon.py` |
-| verify_h438_gibbs_free_energy | H-CX-438: Tension = Gibbs Free Energy | `calc/verify_h438_gibbs_free_energy.py` |
-| verify_h439_landauer_mitosis | H-CX-439: Landauer Principle = Mitosis Cost | `calc/verify_h439_landauer_mitosis.py` |
-| verify_new_major_hypotheses | New Major Hypothesis Verification Engine | `calc/verify_new_major_hypotheses.py` |
-| verify_new_major_hypotheses_10 | Wave 10 -- The Last Gems | `calc/verify_new_major_hypotheses_10.py` |
-| verify_new_major_hypotheses_11 | Wave 11 -- Systematic Identity Mining | `calc/verify_new_major_hypotheses_11.py` |
-| verify_new_major_hypotheses_12 | Wave 12 -- Independence Analysis + Higher-Order Mining | `calc/verify_new_major_hypotheses_12.py` |
-| verify_new_major_hypotheses_2 | New Major Hypothesis Verification Engine — Wave 2 | `calc/verify_new_major_hypotheses_2.py` |
-| verify_new_major_hypotheses_3 | New Major Hypothesis Verification Engine — Wave 3 | `calc/verify_new_major_hypotheses_3.py` |
-| verify_new_major_hypotheses_4 | New Major Hypothesis Verification Engine — Wave 4 | `calc/verify_new_major_hypotheses_4.py` |
-| verify_new_major_hypotheses_5 | New Major Hypothesis Verification Engine -- Wave 5 | `calc/verify_new_major_hypotheses_5.py` |
-| verify_new_major_hypotheses_6 | New Major Hypothesis Verification Engine -- Wave 6 | `calc/verify_new_major_hypotheses_6.py` |
-| verify_new_major_hypotheses_7 | Wave 7 -- Final unexplored territories | `calc/verify_new_major_hypotheses_7.py` |
-| verify_new_major_hypotheses_8 | Wave 8 -- Deep Structure Consolidation | `calc/verify_new_major_hypotheses_8.py` |
-| verify_new_major_hypotheses_9 | Wave 9 -- Deep Verification & Strengthening | `calc/verify_new_major_hypotheses_9.py` |
-| verify_rob7_twelve_joints | H-ROB-7: 12 Joints = sigma(6) = Minimum Humanoid Verification | `calc/verify_rob7_twelve_joints.py` |
-| verify_rob8_four_legs | H-ROB-8: tau(6)=4 Legs = Optimal Locomotion Verification | `calc/verify_rob8_four_legs.py` |
-| verify_sigma_n_phi_tau | Verify: sigma(n)(n + phi(n)) = n * tau(n)^2 has n=6 as the only solution for n > | `calc/verify_sigma_n_phi_tau.py` |
-| verify_sigma_phi_n | Rigorous verification: sigma(n)/phi(n) = n iff n in {1, 6}. | `calc/verify_sigma_phi_n.py` |
-| verify_tau_plus_2 | Verify: tau(n) + 2 = n has n=6 as the unique solution among all positive integer | `calc/verify_tau_plus_2.py` |
-
-**Engine** (19)
-
-| Name | Description | Path |
-|------|-------------|------|
-| brain_analyzer | Brain Data Analyzer — GABA/Structure/Plasticity → D,P,I Mapping → Golden Zone De | `brain_analyzer.py` |
-| brain_singularity | Brain Atypical Structure Statistical Simulator - Statistical Singularity Detecti | `brain_singularity.py` |
-| chemistry_engine | Chemistry Element Analysis Engine — Exploring element structures through sigma(6 | `chemistry_engine.py` |
-| compass | SingularityNet Architecture Compass | `compass.py` |
-| complex_compass | Complex Compass Calculator — Hypothesis 069 Extension | `complex_compass.py` |
-| congruence_chain_engine | Congruence subgroup Gamma_0(N) forcing chain system analysis engine | `congruence_chain_engine.py` |
-| convergence_engine | Convergence Engine — Adaptive Multi-Domain Convergence Point Discovery | `convergence_engine.py` |
-| dfs_engine | DFS Automatic Search Engine — Automates ralph-loop manual iteration | `dfs_engine.py` |
-| llm_expert_analyzer | LLM Expert Activity Meter + Redesign Direction Analysis | `llm_expert_analyzer.py` |
-| model_pure_field | Pure Consciousness Engine (Pure Field Engine) | `model_pure_field.py` |
-| model_utils | Common utilities — Components shared by 7 models | `model_utils.py` |
-| nstate_calculator | N-state generalization calculator — width=ln((N+1)/N) | `nstate_calculator.py` |
-| nuclear_engine | Nuclear physics analysis engine — explore nuclear structure through sigma(6)=12, | `nuclear_engine.py` |
-| perfect_number_engine | Perfect Number Divisor Function Engine — Automated exploration of physical const | `perfect_number_engine.py` |
-| physics_constant_engine | Physics Constant Matching Engine — Search for CODATA physics constants with sigm | `physics_constant_engine.py` |
-| quantum_formula_engine | Quantum Formula Search Engine — Quantum Mechanics Dimensionless Constants × Proj | `quantum_formula_engine.py` |
-| session_briefing | Session Briefing — Auto-restore project context in new session | `session_briefing.py` |
-| texas_quantum | Texas Sharpshooter Test — Quantum/Physics Discovery Exclusive | `texas_quantum.py` |
-| timeline | LLM Singularity Arrival Time Prediction | `timeline.py` |
+*No tools found in TECS-L*
 
 ### anima
 
@@ -1317,7 +1096,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 ### SEDI
 
-**Core** (18)
+**Core** (20)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1330,6 +1109,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | dashboard_data | SEDI Dashboard Data Provider. | `sedi/dashboard_data.py` |
 | detector | Anomaly detector: combines R-filter results into alerts. | `sedi/detector.py` |
 | eeg_consciousness | EEG Consciousness Analysis — bridges EEG data with SEDI consciousness detection. | `sedi/eeg_consciousness.py` |
+| factorial_separator | Factorial vs Perfect Number Separator — post-paradigm-shift signal classifier. | `sedi/factorial_separator.py` |
 | filter | R-filter: core signal processing tuned to n=6. | `sedi/filter.py` |
 | historical | Historical data scanner — search past data for n=6 patterns. | `sedi/historical.py` |
 | monitor | Multi-source parallel monitor — the heart of SEDI. | `sedi/monitor.py` |
@@ -1339,8 +1119,9 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | seti_scanner | SETI Scanner — Gravitational + Topological optics applied to all SETI data. | `sedi/seti_scanner.py` |
 | statistics | Statistical validation engine — Monte Carlo, Bonferroni, Look-Elsewhere Effect. | `sedi/statistics.py` |
 | tecs | TECS-L Mathematical Engine — n=6 arithmetic functions for physics analysis. | `sedi/tecs.py` |
+| web_dashboard | SEDI Web Dashboard — Flask-based real-time signal monitoring UI. | `sedi/web_dashboard.py` |
 
-**Data Source** (73)
+**Data Source** (74)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1399,6 +1180,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | nuclear_magic | Nuclear Magic Numbers — n=6 arithmetic in nuclear shell structure. | `sedi/sources/nuclear_magic.py` |
 | oeis | OEIS (Online Encyclopedia of Integer Sequences) monitor. | `sedi/sources/oeis.py` |
 | optical_model | Optical Model Analysis — TECS-L lens/optics analogies applied to particle masses | `sedi/sources/optical_model.py` |
+| paradigm_discriminator | Paradigm Discriminator — 3! vs sigma(6) model selection engine. | `sedi/sources/paradigm_discriminator.py` |
 | pdg | PDG Particle Database — comprehensive particle physics data. | `sedi/sources/pdg.py` |
 | pdg_extended | Extended PDG Particle Database — ~200 states including excited, exotic. | `sedi/sources/pdg_extended.py` |
 | periodic_table | Periodic Table Analysis through n=6 Arithmetic — TECS-L Element Mapping. | `sedi/sources/periodic_table.py` |
@@ -1406,7 +1188,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | q_boundary | Q-Domain Boundary Analysis — which constants Q can and cannot reach. | `sedi/sources/q_boundary.py` |
 | qcd_hadrons | QCD & Hadron Spectroscopy -- TECS-L Waves 17-36. | `sedi/sources/qcd_hadrons.py` |
 | quantum_hall | Fractional Quantum Hall Effect -- n=6 arithmetic in topological phases. | `sedi/sources/quantum_hall.py` |
-| quantum_rng | ANU Quantum Random Number Generator source. | `sedi/sources/quantum_rng.py` |
+| quantum_rng | ANU Quantum Random Number Generator + Local TrueRNG source. | `sedi/sources/quantum_rng.py` |
 | resonance_37gev | 37 GeV Resonance Prediction — TECS-L ladder convergence analysis. | `sedi/sources/resonance_37gev.py` |
 | resonance_ladder | Resonance Ladder Analysis — QCD mass ratios through TECS-L n=6 arithmetic. | `sedi/sources/resonance_ladder.py` |
 | riemann_connection | Riemann Zeta Function and TECS-L n=6 Arithmetic. | `sedi/sources/riemann_connection.py` |
@@ -1420,7 +1202,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 
 ### n6-architecture
 
-**Calculator** (58)
+**Calculator** (59)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1476,6 +1258,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | sc-dse | N6 궁극의 초전도체 DSE — 6단 전수 조합 탐색기 | `tools/sc-dse/main.rs` |
 | semiconductor-calc | N6 Semiconductor Process / GPU SM / HBM Ladder Calculator | `tools/semiconductor-calc/main.rs` |
 | solar-dse | HEXA-SOLAR Design Space Exploration (DSE) | `tools/solar-dse/main.rs` |
+| src | HEXA-IR Compiler — n=6 Native Optimization Pipeline | `tools/hexa-ir/src/main.rs` |
 | src | - | `tools/nexus6/src/main.rs` |
 | tension_calculator | Tension Calculator — Predict accuracy/precognition/identity from tension values | `tools/tension_calculator.py` |
 | tokamak-shape | Tokamak Shape Optimizer — n=6 매개변수 공간 탐색 | `tools/tokamak-shape/main.rs` |
@@ -1495,7 +1278,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | sedi_training_monitor | SEDI Training Monitor | `engine/sedi_training_monitor.py` |
 | thermodynamic_frame | Thermodynamic Frame | `engine/thermodynamic_frame.py` |
 
-**Experiment** (67)
+**Experiment** (75)
 
 | Name | Description | Path |
 |------|-------------|------|
@@ -1517,6 +1300,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | experiment_cosmology_biology | Experiment: Cosmology + Biology Numerical Verification | `experiments/experiment_cosmology_biology.py` |
 | experiment_emergent_convergence | Experiment: Emergent Convergence | `experiments/experiment_emergent_convergence.py` |
 | experiment_falsifiability_test | Experiment: N6 Falsifiability Test — Is n=6 better than random? | `experiments/experiment_falsifiability_test.py` |
+| experiment_full_n6_pipeline | Full N=6 Pipeline: All 17 Techniques Combined | `experiments/experiment_full_n6_pipeline.py` |
 | experiment_fusion_cross_verify | Experiment: Fusion Device Cross-Verification | `experiments/experiment_fusion_cross_verify.py` |
 | experiment_h_ee_11_combined_architecture | H-EE-11: Full Combined Architecture | `experiments/experiment_h_ee_11_combined_architecture.py` |
 | experiment_h_ee_12_optimal_expansion_ratio | H-EE-12: Optimal FFN Expansion Ratio Sweep | `experiments/experiment_h_ee_12_optimal_expansion_ratio.py` |
@@ -1540,15 +1324,20 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | h_ee_2_gradient_properties | H-EE-2: Phi6Simple Gradient Properties | `experiments/h_ee_2_gradient_properties.py` |
 | h_ee_3_training_stability | H-EE-3: Phi6Simple Training Stability | `experiments/h_ee_3_training_stability.py` |
 | meta_pattern_discovery | Meta-Pattern Discovery in DSE Domain Structure | `experiments/meta_pattern_discovery.py` |
+| ouroboros_c1_lens_scan | OUROBOROS-C1 Deep Analysis: Lens Combination n=6 Connections | `experiments/ouroboros_c1_lens_scan.py` |
+| ouroboros_c1_physics_deepdive | ouroboros-c1-d1 Deep Analysis: n=6 patterns in fundamental physics | `experiments/ouroboros_c1_physics_deepdive.py` |
+| physics_n6_scan | Physics Fundamental Constants — n=6 Connection Scanner | `experiments/physics_n6_scan.py` |
 | ppa_model | N6 PPA (Performance, Power, Area) 모델 | `experiments/ppa_model.py` |
 | telescope_product_review | telescope_product_review.py — 기존 완성제품 전면 재검토 (망원경 9종 풀스캔) | `experiments/telescope_product_review.py` |
 | unified_verify | Unified Verification Orchestrator — TECS-L + n6-architecture | `experiments/unified_verify.py` |
+| verify_acceleration_hypotheses | verify_acceleration_hypotheses.py — Acceleration Hypothesis Verification | `experiments/verify_acceleration_hypotheses.py` |
 | verify_battery_architecture | HEXA-BATTERY Architecture Verification | `experiments/verify_battery_architecture.py` |
 | verify_battery_cascade | HEXA-BATTERY Cascade Cross-Verification | `experiments/verify_battery_cascade.py` |
 | verify_bt105_112 | Verification script for Breakthrough Theorems BT-105 through BT-112. | `experiments/verify_bt105_112.py` |
 | verify_bt66_73 | Independent verification of BT-66 through BT-73. | `experiments/verify_bt66_73.py` |
 | verify_bt66_76 | Independent verification of BT-66 through BT-76 claims. | `experiments/verify_bt66_76.py` |
 | verify_bt77_bitnet | BT-77: BitNet Quantization n=6 Universality — Independent Verification | `experiments/verify_bt77_bitnet.py` |
+| verify_bt_constants | BT Auto-Verification — Numerical claims from Breakthrough Theorems | `experiments/verify_bt_constants.py` |
 | verify_cascade_cross | 캐스케이드 크로스 검증 (Cascade Cross-Validation) | `experiments/verify_cascade_cross.py` |
 | verify_chip_n6 | HEXA Chip Family — n=6 수학 검증 | `experiments/verify_chip_n6.py` |
 | verify_chip_ultimate | verify_chip_ultimate.py — Ultimate Chip Architecture n=6 Mathematical Verificati | `experiments/verify_chip_ultimate.py` |
@@ -1565,16 +1354,20 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | verify_hexa_super | HEXA-SUPER (Level 6) n=6 파라미터 수학적 검증 | `experiments/verify_hexa_super.py` |
 | verify_hexa_system | HEXA-SYSTEM 시스템 아키텍처 수학 검증 — 145개 파라미터 전수 검사 | `experiments/verify_hexa_system.py` |
 | verify_hexa_wafer | HEXA-WAFER (Level 5) n=6 파라미터 수학적 검증 | `experiments/verify_hexa_wafer.py` |
+| verify_predictions | Testable Predictions Tier 1 — Numerical Verification | `experiments/verify_predictions.py` |
+| verify_safety_hypotheses | Verify Safety Domain Hypotheses (H-SF-01 ~ H-SF-30, H-SFX-01 ~ H-SFX-20) | `experiments/verify_safety_hypotheses.py` |
 | verify_topological_chip | Verify BT-90, BT-91, BT-92: Topological Chip Architecture | `experiments/verify_topological_chip.py` |
 
-**Technique** (20)
+**Technique** (23)
 
 | Name | Description | Path |
 |------|-------------|------|
 | boltzmann_gate | Technique 15: Boltzmann Gate | `techniques/boltzmann_gate.py` |
 | carmichael_lr | Technique 14: Carmichael LR Cycle | `techniques/carmichael_lr.py` |
+| constant_time_stride | Technique 23: Constant-Time Stride Attention (CTSA) | `techniques/constant_time_stride.py` |
 | dedekind_head | Technique 11: Dedekind Head Pruning | `techniques/dedekind_head.py` |
 | egyptian_attention | Egyptian Fraction Attention (EFA) — n=6 Technique #17 | `techniques/egyptian_attention.py` |
+| egyptian_linear_attention | Egyptian Linear Attention (ELA) — n=6 Technique #21 | `techniques/egyptian_linear_attention.py` |
 | egyptian_moe | H-EE-18: Egyptian Fraction MoE Routing Verification | `techniques/egyptian_moe.py` |
 | entropy_early_stop | H-SEDI-EE-1: SEDI Entropy Test as Early Stopping Criterion | `techniques/entropy_early_stop.py` |
 | fft_mix_attention | H-SEDI-EE-3: Windowed FFT as Learned Attention Replacement | `techniques/fft_mix_attention.py` |
@@ -1587,6 +1380,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | phi6simple | H-EE-1: Cyclotomic Polynomial Activation Comparison | `techniques/phi6simple.py` |
 | phi_bottleneck | H-EE-9: Phi-bottleneck + Phi6Simple activation recovery test | `techniques/phi_bottleneck.py` |
 | phi_moe | H-EE-10: Phi-bottleneck + MoE (more experts, smaller each) | `techniques/phi_moe.py` |
+| predictive_early_stop | Technique #22: Predictive EarlyStop (PES) | `techniques/predictive_early_stop.py` |
 | radical_norm | Technique 18: Radical Normalization | `techniques/radical_norm.py` |
 | rfilter_phase | H-SEDI-6: R-filter detects training phase transitions. | `techniques/rfilter_phase.py` |
 | takens_dim6 | H-SEDI-7: Takens embedding dim=6 optimal for training dynamics. | `techniques/takens_dim6.py` |
