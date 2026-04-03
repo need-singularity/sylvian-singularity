@@ -70,6 +70,13 @@ commit_and_push() {
 BASE="$(cd "$(dirname "$SHARED")/.." && pwd)"
 PARENT="$(cd "$BASE/.." && pwd)"
 
+echo "=== JSON SSOT → README auto-sync (all repos) ==="
+SHARED_DIR="$(cd "$(dirname "$0")" && pwd)"
+if [ -f "$SHARED_DIR/sync_readme_all.py" ]; then
+  python3 "$SHARED_DIR/sync_readme_all.py" --apply
+fi
+echo ""
+
 echo "=== Syncing project descriptions ==="
 echo "Source: $SHARED"
 echo ""
@@ -81,11 +88,6 @@ commit_and_push "$BASE" "TECS-L"
 
 # Anima
 echo "[Anima]"
-# JSON SSOT → README 자동 반영 (sync_readme.py)
-if [ -f "$PARENT/anima/scripts/sync_readme.py" ]; then
-  echo "  Running sync_readme.py..."
-  python3 "$PARENT/anima/scripts/sync_readme.py" --apply
-fi
 sync_file "$PARENT/anima/README.md"
 commit_and_push "$PARENT/anima" "anima"
 
