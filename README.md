@@ -2144,6 +2144,7 @@ Genetics/genetic code, Classical geometry (Platonic solids)**
 | P-bridge-theorem | The Bridge Theorem: Golden Zone Center from Variational Principle | arXiv math.NT / cs.IT | Draft | I^I minimization → 1/e, φσ=nτ uniqueness, 400-hypothesis campaign (249/400, Z≈55σ) |
 | **P-DNA-A** | **100 Unique Identities of the First Perfect Number** | **JIS / Integers** | **Draft v1.0** | **σ=τ(τ-1) unique, cryst=d(6)∪{τ(6)}, 8 constraints, ∞ families** |
 | **P-DNA-B** | **The Ubiquity of Six: 500-Hypothesis Survey** | **arXiv math-ph** | **Draft v1.0** | **66 GREEN, p<10⁻²⁵, 3 root theorems, 100% explained** |
+| **P-369** | **Tesla's 3,6,9: From Numerology to Number Theory** | **arXiv math.NT** | **Draft v1.0** | **369 Theorem PROVEN (Fermat LT), 69 identities, Z=15 cross-domain, 78% structural** |
 
 ## Document Structure
 
