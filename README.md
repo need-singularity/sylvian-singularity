@@ -2145,6 +2145,7 @@ Genetics/genetic code, Classical geometry (Platonic solids)**
 | **P-DNA-A** | **100 Unique Identities of the First Perfect Number** | **JIS / Integers** | **Draft v1.0** | **σ=τ(τ-1) unique, cryst=d(6)∪{τ(6)}, 8 constraints, ∞ families** |
 | **P-DNA-B** | **The Ubiquity of Six: 500-Hypothesis Survey** | **arXiv math-ph** | **Draft v1.0** | **66 GREEN, p<10⁻²⁵, 3 root theorems, 100% explained** |
 | **P-369** | **Tesla's 3,6,9: From Numerology to Number Theory** | **arXiv math.NT** | **Draft v1.0** | **369 Theorem PROVEN (Fermat LT), 69 identities, Z=15 cross-domain, 78% structural** |
+| **P-FTL** | **FTL Tribunal: 15 Mechanisms + n=6 Analysis** | **arXiv gr-qc** | **Draft v1.0** | **15 FTL mechanisms judged, GR coefficients {2,3,6}=divisors(6), Z=3.39, honest gaps** |
 
 ## Document Structure
 
