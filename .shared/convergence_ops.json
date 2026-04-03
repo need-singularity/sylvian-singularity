@@ -44,22 +44,40 @@
       "ok": 12,
       "in_progress": 7,
       "convergence_pct": "63%",
+      "ci": "ci.yml (syntax+tests+rust+bench+CDO)",
       "exemplar": "runpod.json v2.0 (12 rules, 15 issues, 0 violations)"
     },
     "TECS-L": {
       "json_count": "TBD",
       "convergence_pct": "TBD",
-      "note": "convergence_ops.json이 원본"
+      "ci": "ci.yml (syntax+tier1+rust+CDO)",
+      "note": "convergence_ops.json origin"
     },
     "n6-architecture": {
       "json_count": "TBD",
       "convergence_pct": "TBD",
-      "note": "NEXUS-6 usage.json 등"
+      "ci": "ci.yml (syntax+nexus6-rust+CDO)"
     },
-    "sedi": { "json_count": "TBD", "convergence_pct": "TBD" },
-    "brainwire": { "json_count": "TBD", "convergence_pct": "TBD" },
-    "papers": { "json_count": "TBD", "convergence_pct": "TBD" },
-    "hexa-lang": { "json_count": "TBD", "convergence_pct": "TBD" }
+    "sedi": {
+      "json_count": "TBD",
+      "convergence_pct": "TBD",
+      "ci": "ci.yml (rust+python+graph+CDO)"
+    },
+    "brainwire": {
+      "json_count": "TBD",
+      "convergence_pct": "TBD",
+      "ci": "ci.yml (syntax+tests+CDO)"
+    },
+    "papers": {
+      "json_count": "TBD",
+      "convergence_pct": "TBD",
+      "ci": "ci.yml (markdown+manifest+CDO)"
+    },
+    "hexa-lang": {
+      "json_count": "TBD",
+      "convergence_pct": "TBD",
+      "ci": "TBD (repo structure TBD)"
+    }
   },
 
   "adoption_checklist": [
@@ -68,6 +86,8 @@
     "3. 이슈가 있으면 troubleshooting_log 형태로 정리",
     "4. 반복 이슈는 absolute_rules로 승격",
     "5. convergence 추적 필드 추가",
-    "6. 수렴 목표: 100% (모든 이슈 resolved, 모든 규칙 violations=0)"
+    "6. 수렴 목표: 100% (모든 이슈 resolved, 모든 규칙 violations=0)",
+    "7. CI 파이프라인 활성화 (ci.yml: syntax + tests + CDO validate)",
+    "8. CI 실패 시 troubleshooting 주석 즉시 추가 (재발 방지)"
   ]
 }
