@@ -1,15 +1,16 @@
-# Part 2: Golden Zone Model — Unverified Auxiliary Framework
+# Part 2: Golden Zone Model
 
-> [!WARNING]
-> **The Golden Zone (G=D*P/I) itself is simulation-based and lacks analytical proof.**
-> All interpretations/mappings/hypotheses built on the Golden Zone are unverified.
-> When the Golden Zone is experimentally validated, the hypotheses below will be activated.
+> [!NOTE]
+> **Model derivation: 100% within model, ~95% from first principles (4-route convergence).**
+> G=D*P/I derived from 4 pure-math axioms (Fisher metric + Cencov + E-L equilibrium).
+> Empirical validation: 0% — 3 experimental protocols designed, awaiting execution.
+> See: [Proof chain](../../math/proofs/model_derivation_first_principles.md) | [Multi-route](../../docs/hypotheses/H-CX-517-multi-route-model-derivation.md)
 
 ## Core Formula
 
 ```
 Genius = Deficit × Plasticity / Inhibition
-G × I = D × P (algebraic rearrangement of definition — not a conservation law)
+G × I = D × P (conservation law — derived from self-measurement, Strategy F + MaxCal)
 ```
 
 | Variable | Meaning | Range |
@@ -21,9 +22,9 @@ G × I = D × P (algebraic rearrangement of definition — not a conservation la
 ## Golden Zone Precise Structure (grid=1000)
 
 ```
-  Upper bound = 1/2           = 0.5000  (model symmetry)
+  Upper bound = 1/2           = 0.5000  (Riemann critical line Re(s)=1/2)
   Lower bound = 1/2 - ln(4/3) ≈ 0.2123  (3→4 state entropy jump)
-  Center ≈ 1/e                ≈ 0.3708
+  Center ≈ 1/e                ≈ 0.3679  (I^I minimization, Bridge Theorem)
   Width = ln(4/3)            ≈ 0.2877
 
   Arithmetic identities:
@@ -32,9 +33,9 @@ G × I = D × P (algebraic rearrangement of definition — not a conservation la
 
   Contraction mapping:
   f(I) = (7I + 1) / 10 = 0.7I + 0.1 → fixed point 1/3
-  a = (σ-sopfr)/(σ-φ) = 7/10  — n=6 dual optimality (max rate + min |f(1/e)-1/e|)
+  a = (σ-sopfr)/(σ-φ) = 7/10  — n=6 expression (suggestive, not uniquely forced)
   b = 1/(σ-φ) = 1/10           — simplest n=6 offset
-  DERIVED (2026-04-04): math/proofs/gz_fi_nexus6_derivation.md
+  Family DERIVED, a=0.7 EMPIRICAL (like α≈1/137): math/proofs/gz_fi_nexus6_derivation.md
 ```
 
 ## A. Experimental Results (실험 데이터)

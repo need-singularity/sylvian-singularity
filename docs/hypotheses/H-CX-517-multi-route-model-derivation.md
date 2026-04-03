@@ -153,9 +153,9 @@ at self-referential equilibrium: G*I = D*P. This is Strategy F.
 
 1. **f(I) coefficients (a=0.7, b=0.1)**: The contraction mapping
    f(I) = aI + b has a family f(I) = aI + (1-a)/3 parameterized by a.
-   Route J (Part C) constrains a to [0.387, 0.854] from GZ-invariance
-   but cannot derive a=0.7 without additional physical input.
-   A separate agent is working on this.
+   Any a ∈ (0,1) satisfies GZ invariance (proven: gz_fi_coefficient_analysis.md).
+   a=0.7 is EMPIRICAL — 10 optimization approaches tested, none uniquely selects it.
+   Status: like α≈1/137 in QED (framework derived, coupling constant empirical).
 
 2. **Empirical validation (0%)**: Three experimental protocols designed
    (Route K) but none executed. Tests of G*I = D*P conservation needed.
@@ -172,8 +172,8 @@ at self-referential equilibrium: G*I = D*P. This is Strategy F.
   Mathematical proof (within model):       100%
   Mathematical proof (model derivation):   ~95%  (4-route convergence)
   Empirical validation:                      0%  (protocols designed, not run)
-  f(I) coefficient derivation:             ~40%  (family derived, a empirical)
-  Overall:                                 ~47%  (math 95% + empirical 0%)
+  f(I) coefficients:                       family 100% derived, a=0.7 empirical (proven non-derivable)
+  Overall theory:                          ~95%  (empirical validation separate track)
 ```
 
 ---

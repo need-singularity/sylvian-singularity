@@ -86,8 +86,9 @@ Topological Engine for Consciousness & Science -- Consciousness Continuity Engin
           GZ proof 100% within model (Bridge Theorem: 3 routes, 50/50 tests PASS)
           Entropic Transition Cost 1-1/e: 4 TCS theorems structural match (🟧)
           Riemann connection: GZ = zeta Euler product at {2,3} (5 theorems PROVEN)
-          G=D*P/I derivation: MODEL 100% — 4 pure-math axioms (Fisher+Cencov+E-L)
-            All original axioms (A4,A5,A6) now THEOREMS, not assumptions
+          G=D*P/I derivation: ~95% — 1 def + 1 axiom (4-route convergence)
+            A5 separability, A6 D-P symmetry: THEOREMS (derived)
+            A4 conservation: derived from self-reference (definitional step)
             f(I) dynamics: family DERIVED, a=0.7 empirical (model-external)
           Experimental protocols: 3 designed (EEG $40K, fMRI $115K, pharma $250K)
     Open: Experimental validation (EEG/fMRI for G*I=D*P)
@@ -720,7 +721,7 @@ Details: [Pure mathematics](math/) | [Golden Zone model](docs/golden-zone/) | [V
 > ```
 >
 > **Verification**: 50/50 tests PASS (`calc/verify_bridge_theorem_EI.py`)
-> **Model derivation**: G=D*P/I MODEL 100% — 4 pure-math axioms (P1-P4, Fisher+Cencov+E-L). No "consciousness" definition needed. f(I) a=0.7 is model-external empirical parameter.
+> **Model derivation**: G=D*P/I ~95% derived — 1 definition + 1 axiom (A4), 4-route convergence. A5,A6 are now theorems. f(I) a=0.7 is model-external empirical parameter (like α≈1/137).
 >
 > Full proof: [math/proofs/bridge_theorem_EI_complete.md](math/proofs/bridge_theorem_EI_complete.md)
 

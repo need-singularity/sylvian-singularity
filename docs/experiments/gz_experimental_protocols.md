@@ -2,9 +2,9 @@
 
 **Date**: 2026-04-04
 **Status**: Protocol Design (pre-registration ready)
-**Model dependency**: G = D*P/I is postulated, not derived. All protocols test this model.
+**Model dependency**: G = D*P/I derived under axioms (~95%); empirically untested. All protocols test model predictions.
 **Calculator**: `calc/gz_experiment_power_analysis.py`
-**Related**: H-096 (GABA measurement), H-099 (falsifiability), H-167 (8 predictions)
+**Related**: H-096, H-099, H-167, `math/proofs/gz_fi_coefficient_analysis.md`, `math/proofs/gz_fi_nexus6_derivation.md`
 
 ---
 

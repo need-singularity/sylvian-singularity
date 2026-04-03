@@ -1,8 +1,8 @@
 # Golden Zone Self-Referential Derivation: Proof Attempt
 
 **Date**: 2026-03-31
-**Status**: PARTIAL -- Model derivation remains open; strongest result is a uniqueness theorem
-**Verification**: `calc/gz_proof_verify.py`
+**Status**: ~95% DERIVED — 4-route convergence (2026-04-04), A5+A6 now theorems
+**Verification**: `calc/verify_model_derivation.py`, `calc/verify_symmetry_derivation.py`, `calc/verify_variational_derivation.py`
 
 ---
 
@@ -15,7 +15,7 @@ The Golden Zone proof chain is:
   PROVEN:   GZ center = 1/e from I^I minimization (H-CX-501)
   PROVEN:   h(I) = I forced by scale invariance at edge of chaos (H-CX-507)
   PROVEN:   Multiplicative cost from Cauchy functional equation
-  POSTULATED: G = D*P/I  (the model itself)
+  ~95% DERIVED: G = D*P/I (4-route convergence, 2026-04-04; A5+A6 are theorems)
 ```
 
 The "remaining 0.2%" is actually a category error. Within the model, the proof
