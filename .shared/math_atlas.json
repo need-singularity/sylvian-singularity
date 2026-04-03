@@ -1,20 +1,15 @@
 {
-  "_meta": {
-    "description": "Math Atlas — 2500+ hypotheses across all repos, auto-scanned",
-    "updated": "2026-04-03",
-    "schema_version": "1.0"
-  },
   "version": "1.1",
-  "generated": "2026-04-03T03:35:59",
+  "generated": "2026-04-03T18:48:49",
   "stats": {
-    "TECS-L": 2003,
+    "TECS-L": 2004,
     "SEDI": 688,
     "anima": 0,
     "golden-moe": 0,
     "conscious-lm": 0,
     "energy-efficiency": 0
   },
-  "total": 2532,
+  "total": 2533,
   "hypotheses": [
     {
       "id": "TECS-L:002",
@@ -16999,6 +16994,16 @@
       "refs": [],
       "gz_dependent": null,
       "file": "docs/hypotheses/TDA-001-divisor-persistent-homology.md"
+    },
+    {
+      "id": "TECS-L:TESLA-369-theorem",
+      "title": "TESLA-369 Theorem: The 369 Triad of Perfect Number 6",
+      "repo": "TECS-L",
+      "domain": null,
+      "grade": null,
+      "refs": [],
+      "gz_dependent": null,
+      "file": "docs/hypotheses/TESLA-369-theorem.md"
     },
     {
       "id": "TECS-L:THEOREM-consecutive-prime-factorial",
@@ -37514,6 +37519,462 @@
       "category": "constants"
     },
     {
+      "name": "VALUE_RANGE",
+      "repo": "TECS-L",
+      "file": "calc/tesla_369_crossdomain.py",
+      "line": 25,
+      "type": "list",
+      "size": 2,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        1,
+        30
+      ],
+      "category": "other"
+    },
+    {
+      "name": "CATALOG",
+      "repo": "TECS-L",
+      "file": "calc/tesla_369_crossdomain.py",
+      "line": 29,
+      "type": "list",
+      "size": 48,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        [
+          "Particle Physics",
+          "Color charges (QCD)",
+          3,
+          3,
+          true,
+          "SU(3) color: n/phi(n)=6/2=3"
+        ],
+        [
+          "Particle Physics",
+          "Quark flavors",
+          6,
+          6,
+          true,
+          "n=6 directly; 3 generations x 2"
+        ],
+        [
+          "Particle Physics",
+          "Lepton flavors",
+          6,
+          6,
+          true,
+          "n=6 directly; 3 generations x 2"
+        ],
+        [
+          "Particle Physics",
+          "Fermion generations",
+          3,
+          3,
+          true,
+          "tau(6)=4 divisors, but 3 generations = n/2"
+        ],
+        [
+          "Particle Physics",
+          "Gluons",
+          8,
+          null,
+          false,
+          "SU(3) adjoint = 3^2-1 = 8, NOT 9"
+        ],
+        [
+          "Particle Physics",
+          "Gauge generators (SM)",
+          12,
+          null,
+          false,
+          "sigma(6)=12, match but not {3,6,9}"
+        ],
+        [
+          "Genetic Code",
+          "Codon length (bases per codon)",
+          3,
+          3,
+          true,
+          "tau(6)=4 bases, n/phi=3 per codon; (4,3) unique pair"
+        ],
+        [
+          "Genetic Code",
+          "Carbon atomic number Z",
+          6,
+          6,
+          true,
+          "n=6 = basis of organic chemistry"
+        ],
+        [
+          "Genetic Code",
+          "DNA nucleotide bases",
+          4,
+          null,
+          false,
+          "tau(6)=4; match to n=6 but value=4 not in {3,6,9}"
+        ],
+        [
+          "Genetic Code",
+          "Stop codons (standard)",
+          3,
+          3,
+          true,
+          "3 stop codons = n/phi(6)"
+        ],
+        [
+          "Crystallography",
+          "3-fold rotational symmetry",
+          3,
+          3,
+          true,
+          "Triangular lattice, hexagonal sublattice"
+        ],
+        [
+          "Crystallography",
+          "6-fold rotational symmetry",
+          6,
+          6,
+          true,
+          "Hexagonal lattice = 2D kissing number = n=6"
+        ],
+        [
+          "Crystallography",
+          "Crystal systems",
+          7,
+          null,
+          false,
+          "7 crystal systems, not {3,6,9}"
+        ],
+        [
+          "Crystallography",
+          "Bravais lattices",
+          14,
+          null,
+          false,
+          "14 Bravais lattices, not {3,6,9}"
+        ],
+        [
+          "Music Theory",
+          "Triad chord (notes)",
+          3,
+          3,
+          false,
+          "Convention: root+third+fifth; arguably structural (overtone series)"
+        ],
+        [
+          "Music Theory",
+          "Hexatonic scale (notes)",
+          6,
+          6,
+          false,
+          "Whole-tone, augmented, etc. Cultural convention"
+        ],
+        [
+          "Music Theory",
+          "Chromatic scale (semitones)",
+          12,
+          null,
+          false,
+          "sigma(6)=12 match, but value not in {3,6,9}"
+        ],
+        [
+          "Information Theory",
+          "Ternary base",
+          3,
+          3,
+          false,
+          "Base-3 numeral system; arbitrary choice"
+        ],
+        [
+          "Information Theory",
+          "Optimal radix (natural log base)",
+          3,
+          3,
+          true,
+          "e~2.718, nearest integer=3; information-theoretic optimum"
+        ],
+        [
+          "Critical Phenomena",
+          "SLE kappa_c (percolation)",
+          6,
+          6,
+          true,
+          "SLE_6 PROVEN theorem (Smirnov 2001, Fields Medal)"
+        ],
+        [
+          "Critical Phenomena",
+          "Ising model dimension upper critical",
+          4,
+          null,
+          false,
+          "d_c=4, not {3,6,9}"
+        ],
+        [
+          "Critical Phenomena",
+          "Potts model q_c (2D)",
+          4,
+          null,
+          false,
+          "q_c=4 for 2D Potts, not {3,6,9}"
+        ],
+        [
+          "Nuclear Physics",
+          "Triple-alpha process (He nuclei)",
+          3,
+          3,
+          true,
+          "3 alpha particles -> C-12; 3=n/2, 12=sigma(6)"
+        ],
+        [
+          "Nuclear Physics",
+          "Lithium-6 (mass number)",
+          6,
+          6,
+          true,
+          "Li-6: key fusion fuel, mass=n=6"
+        ],
+        [
+          "Nuclear Physics",
+          "Beryllium-9 (mass number)",
+          9,
+          9,
+          false,
+          "Be-9 only stable Be isotope; 9=3^2 but not directly from n=6"
+        ],
+        [
+          "Nuclear Physics",
+          "ISCO radius (Schwarzschild)",
+          6,
+          6,
+          true,
+          "r_ISCO = 6GM/c^2, exact GR result"
+        ],
+        [
+          "Geometry",
+          "Triangle (sides/vertices)",
+          3,
+          3,
+          true,
+          "Minimal polygon; n/2=3"
+        ],
+        [
+          "Geometry",
+          "Hexagon (sides)",
+          6,
+          6,
+          true,
+          "Regular hexagon tiles plane; 2D kissing number"
+        ],
+        [
+          "Geometry",
+          "2D kissing number",
+          6,
+          6,
+          true,
+          "Exact: 6 circles around 1; equals n=6"
+        ],
+        [
+          "Chemistry",
+          "Classical states of matter",
+          3,
+          3,
+          false,
+          "Solid/liquid/gas — conventional classification"
+        ],
+        [
+          "Chemistry",
+          "Benzene carbon ring",
+          6,
+          6,
+          true,
+          "C6H6: hexagonal ring, foundation of organic chemistry"
+        ],
+        [
+          "Biology",
+          "Domains of life",
+          3,
+          3,
+          false,
+          "Archaea/Bacteria/Eukarya — taxonomy convention"
+        ],
+        [
+          "Biology",
+          "Viral capsid symmetry (icosahedral T=1)",
+          6,
+          6,
+          false,
+          "5-fold and 6-fold symmetry in capsids; partial match"
+        ],
+        [
+          "Cosmology",
+          "Spatial dimensions",
+          3,
+          3,
+          true,
+          "3 spatial dims; deep connection to cross product, SU(2)"
+        ],
+        [
+          "Cosmology",
+          "Calabi-Yau compact dimensions",
+          6,
+          6,
+          true,
+          "String theory: 10-4=6 compact dims; n=6"
+        ],
+        [
+          "Cosmology",
+          "M-theory total dimensions",
+          11,
+          null,
+          false,
+          "11 dimensions, not {3,6,9}"
+        ],
+        [
+          "Computing",
+          "9's complement (decimal)",
+          9,
+          9,
+          false,
+          "Arithmetic trick for base-10; convention"
+        ],
+        [
+          "Computing",
+          "Octal base",
+          8,
+          null,
+          false,
+          "Base-8, not {3,6,9}"
+        ],
+        [
+          "String Theory",
+          "Compact dimensions (CY)",
+          6,
+          6,
+          true,
+          "Same as cosmology CY; n=6"
+        ],
+        [
+          "String Theory",
+          "Superstring theories",
+          5,
+          null,
+          false,
+          "5 consistent theories, not {3,6,9}"
+        ],
+        [
+          "Thermodynamics",
+          "Laws of thermodynamics",
+          4,
+          null,
+          false,
+          "0th+1st+2nd+3rd = 4 laws, NOT 3"
+        ],
+        [
+          "Thermodynamics",
+          "Degrees of freedom (ideal monatomic)",
+          3,
+          3,
+          true,
+          "3 translational DOF = spatial dims"
+        ],
+        [
+          "Graph Theory",
+          "Complete graph K3 (triangle)",
+          3,
+          3,
+          true,
+          "Smallest complete graph with cycle"
+        ],
+        [
+          "Graph Theory",
+          "Ramsey R(3,3)",
+          6,
+          6,
+          true,
+          "R(3,3)=6 PROVEN; minimum for guaranteed monochromatic triangle"
+        ],
+        [
+          "Graph Theory",
+          "S6 outer automorphism (unique)",
+          6,
+          6,
+          true,
+          "S_n has outer automorphism ONLY at n=6 (proven)"
+        ],
+        [
+          "Number Theory",
+          "Smallest odd prime",
+          3,
+          3,
+          true,
+          "3 = n/2 = phi(6)"
+        ],
+        [
+          "Number Theory",
+          "First perfect number",
+          6,
+          6,
+          true,
+          "6 = 1+2+3 = 1x2x3; DEFINITION of our framework"
+        ],
+        [
+          "Number Theory",
+          "3^2 = 9",
+          9,
+          9,
+          true,
+          "9 = phi(6)^2; square of Euler totient"
+        ]
+      ],
+      "category": "other"
+    },
+    {
+      "name": "FUNC_NAMES",
+      "repo": "TECS-L",
+      "file": "calc/tesla_369_dfs.py",
+      "line": 147,
+      "type": "list",
+      "size": 12,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "n",
+        "sigma",
+        "tau",
+        "phi",
+        "sopfr",
+        "rad",
+        "omega",
+        "bigomega",
+        "lambda",
+        "|mu|",
+        "psi",
+        "J2"
+      ],
+      "category": "other"
+    },
+    {
+      "name": "ALL_OPS",
+      "repo": "TECS-L",
+      "file": "calc/tesla_369_dfs.py",
+      "line": 213,
+      "type": "list",
+      "size": 6,
+      "keys": null,
+      "evaluable": true,
+      "values": [
+        "+",
+        "-",
+        "*",
+        "/",
+        "^",
+        "mod"
+      ],
+      "category": "other"
+    },
+    {
       "name": "GZ_TARGETS",
       "repo": "TECS-L",
       "file": "calc/texas_sharpshooter_v2.py",
@@ -38250,6 +38711,91 @@
         "Inter_anomaly": "high"
       },
       "category": "other"
+    },
+    {
+      "name": "VERDICTS",
+      "repo": "TECS-L",
+      "file": "calc/vortex_math_verifier.py",
+      "line": 34,
+      "type": "dict",
+      "size": 7,
+      "keys": [
+        "PROVEN",
+        "TRIVIAL",
+        "CHERRY-PICK",
+        "COINCIDENCE",
+        "OVER-INTERPRETED",
+        "MIXED",
+        "NON-SCIENTIFIC"
+      ],
+      "evaluable": true,
+      "values": {
+        "PROVEN": "Mathematically true (often trivially)",
+        "TRIVIAL": "True but obvious, no deep insight",
+        "CHERRY-PICK": "Selectively chosen, ignoring counterexamples",
+        "COINCIDENCE": "Numerological pattern, no causal mechanism",
+        "OVER-INTERPRETED": "Real math kernel + unfounded claims",
+        "MIXED": "Part real science, part cherry-pick",
+        "NON-SCIENTIFIC": "Unfalsifiable or purely poetic"
+      },
+      "category": "other"
+    },
+    {
+      "name": "CLAIM_TITLES",
+      "repo": "TECS-L",
+      "file": "calc/vortex_math_verifier.py",
+      "line": 44,
+      "type": "dict",
+      "size": 10,
+      "keys": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "evaluable": true,
+      "values": {
+        "1": "2^n mod 9 cycle never contains 3,6,9",
+        "2": "3↔6 oscillation, 9→9 self-loop under doubling mod 9",
+        "3": "\"3,6,9 = key to universe\" (Tesla quote)",
+        "4": "360° digit root = 9",
+        "5": "DNA and 3,6,9",
+        "6": "432Hz / 528Hz healing frequencies",
+        "7": "Fibonacci mod 9 pattern (Pisano period)",
+        "8": "Triangle(3) / hexagon(6) geometry",
+        "9": "Vortex torus / Rodin coil energy claims",
+        "10": "\"3=pattern, 6=inversion, 9=energy\" labels"
+      },
+      "category": "verification"
+    },
+    {
+      "name": "CLAIM_FUNCTIONS",
+      "repo": "TECS-L",
+      "file": "calc/vortex_math_verifier.py",
+      "line": 634,
+      "type": "dict",
+      "size": 10,
+      "keys": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "evaluable": false,
+      "values": null,
+      "category": "verification"
     },
     {
       "name": "FUNCS",
@@ -44821,7 +45367,7 @@
     }
   ],
   "constant_stats": {
-    "TECS-L": 220,
+    "TECS-L": 227,
     "SEDI": 122,
     "anima": 0,
     "golden-moe": 3,
