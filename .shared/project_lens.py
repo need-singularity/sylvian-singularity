@@ -7,6 +7,8 @@ project_lens.py — 프로젝트 인프라 망원경 (3 렌즈)
   🔄 동기화 렌즈  — 리포 간 stats/마커/숫자 불일치 감지
   📋 JSON 렌즈   — JSON 무결성 (카운트 불일치, 참조 깨짐, stale 상태, 하드코딩)
   🔗 하드코딩 렌즈 — .py 코드 내 매직넘버 ↔ JSON 미연결 감지
+  🎯 CDO 렌즈    — 수렴 기반 운영 (이슈→해결→규칙 승격→재발 0)
+  📌 SSOT 렌즈   — 동일 데이터 다중 참조 감지, JSON 원본 미연결
 
 사용법:
   python3 .shared/project_lens.py              # 전체 스캔
@@ -15,6 +17,8 @@ project_lens.py — 프로젝트 인프라 망원경 (3 렌즈)
   python3 .shared/project_lens.py --sync       # 동기화만
   python3 .shared/project_lens.py --json       # JSON만
   python3 .shared/project_lens.py --hardcode   # 하드코딩만
+  python3 .shared/project_lens.py --cdo        # CDO만
+  python3 .shared/project_lens.py --ssot       # SSOT만
   python3 .shared/project_lens.py --fix        # 자동 수정 (sync-readmes.sh 호출)
 """
 
@@ -465,6 +469,222 @@ def scan_hardcode():
 
 
 # ═══════════════════════════════════════════════════════════════
+# 🎯 CDO 렌즈 — 수렴 기반 운영 (이슈→규칙 승격→재발 0)
+# ═══════════════════════════════════════════════════════════════
+
+def scan_cdo():
+    findings = []
+
+    # 1. JSON에 troubleshooting 섹션 존재 확인
+    cdo_jsons = {
+        "acceleration_flow.json": PARENT / "anima" / "anima" / "config" / "acceleration_flow.json",
+        "runpod.json": PARENT / "anima" / "anima" / "config" / "runpod.json",
+        "training_safety.json": PARENT / "anima" / "anima" / "config" / "training_safety.json",
+    }
+
+    for name, path in cdo_jsons.items():
+        data = load_json(path)
+        if not data:
+            findings.append(Finding("cdo", "🟡", "anima",
+                f"{name} 없음 — CDO 트러블슈팅 기록 불가"))
+            continue
+
+        # _meta + absolute_rules + troubleshooting_log 구조 확인
+        has_meta = "_meta" in data
+        has_rules = "absolute_rules" in data or "rules" in data or "bf16_master_rule" in data
+        has_trouble = ("troubleshooting" in data or "troubleshooting_log" in data
+                       or "known_issues" in data)
+
+        if not has_meta:
+            findings.append(Finding("cdo", "🟡", name,
+                "_meta 섹션 없음 — CDO 구조 미준수"))
+        if not has_rules:
+            findings.append(Finding("cdo", "🟡", name,
+                "absolute_rules 섹션 없음 — 규칙 승격 불가"))
+        if not has_trouble:
+            findings.append(Finding("cdo", "🟡", name,
+                "troubleshooting 섹션 없음 — 이슈 기록 불가"))
+
+        if has_meta and has_rules and has_trouble:
+            # 규칙 수 카운트
+            rules = data.get("absolute_rules", data.get("rules", data.get("bf16_master_rule", {})))
+            n_rules = len(rules) if isinstance(rules, (dict, list)) else 0
+            findings.append(Finding("cdo", "🟢", name,
+                f"CDO 구조 완비 (규칙 {n_rules}개)"))
+
+    # 2. convergence_ops.json 존재 확인
+    cdo_ops = SHARED_DIR / "convergence_ops.json"
+    if cdo_ops.exists():
+        ops = load_json(cdo_ops)
+        convergence = ops.get("convergence", {})
+        total = convergence.get("total_configs", 0)
+        converged = convergence.get("converged", 0)
+        pct = convergence.get("convergence_pct", 0)
+        findings.append(Finding("cdo", "🟢" if pct >= 90 else "🟡", "shared",
+            f"CDO 수렴: {converged}/{total} ({pct}%)"))
+    else:
+        findings.append(Finding("cdo", "🟡", "shared",
+            "convergence_ops.json 없음"))
+
+    # 3. CLAUDE.md에 Troubleshooting 섹션 존재 확인
+    for name, repo in REPOS.items():
+        claude = repo / "CLAUDE.md"
+        if not claude.exists():
+            continue
+        text = claude.read_text(encoding="utf-8", errors="ignore")
+        has_ts = "Troubleshooting" in text or "troubleshooting" in text or "트러블슈팅" in text
+        if not has_ts:
+            findings.append(Finding("cdo", "🟡", name,
+                "CLAUDE.md에 Troubleshooting 섹션 없음 — 재발 방지 규칙 누락 가능"))
+
+    # 4. 동일 이슈 반복 감지 (known_issues에 같은 키워드)
+    runpod = load_json(PARENT / "anima" / "anima" / "config" / "runpod.json")
+    known = runpod.get("known_issues", {})
+    if isinstance(known, dict):
+        unresolved = [k for k, v in known.items()
+                      if isinstance(v, dict) and not v.get("resolution")]
+        if unresolved:
+            findings.append(Finding("cdo", "🔴", "anima",
+                f"미해결 이슈 {len(unresolved)}건: {', '.join(unresolved[:3])}",
+                "resolution 필드 비어있음 — CDO 위반"))
+
+    accel = load_json(PARENT / "anima" / "anima" / "config" / "acceleration_flow.json")
+    trouble = accel.get("troubleshooting", {})
+    if isinstance(trouble, dict):
+        no_prevention = [k for k, v in trouble.items()
+                         if isinstance(v, dict) and not v.get("prevention")]
+        if no_prevention:
+            findings.append(Finding("cdo", "🟡", "anima",
+                f"재발 방지 미등록 {len(no_prevention)}건",
+                "prevention 필드 비어있음"))
+
+    return findings
+
+
+# ═══════════════════════════════════════════════════════════════
+# 📌 SSOT 렌즈 — 동일 데이터 다중 참조 감지
+# ═══════════════════════════════════════════════════════════════
+
+def scan_ssot():
+    findings = []
+
+    # 1. 동일 숫자가 여러 파일에 하드코딩된 경우 감지
+    #    (한 곳에서만 참조되면 OK, 2곳 이상이면 JSON 원본 필요)
+    stat_patterns = {
+        "laws": r'(\d+)\s*laws',
+        "hypotheses": r'(\d+)\s*hypothes[ei]s',
+        "tests": r'(\d+)\s*tests?',
+        "tools": r'(\d+)\s*tools',
+        "papers": r'(\d+)\s*papers',
+    }
+
+    # 각 리포의 README + CLAUDE.md에서 숫자 수집
+    value_locations = {}  # {("laws", 1030): ["anima/README.md", "anima/CLAUDE.md"]}
+
+    for name, repo in REPOS.items():
+        for doc_name in ["README.md", "CLAUDE.md"]:
+            doc = repo / doc_name
+            if not doc.exists():
+                # anima 하위 CLAUDE.md도 체크
+                doc = repo / "anima" / doc_name
+                if not doc.exists():
+                    continue
+
+            text = doc.read_text(encoding="utf-8", errors="ignore")
+
+            # AUTO/SHARED 마커 안은 제외 (이미 자동화됨)
+            for marker in ["BADGE", "STATS", "ARCH", "ASSETS", "ROADMAP", "EVO"]:
+                s = f"<!-- AUTO:{marker}:START -->"
+                e = f"<!-- AUTO:{marker}:END -->"
+                si, ei = text.find(s), text.find(e)
+                if si != -1 and ei != -1:
+                    text = text[:si] + text[ei + len(e):]
+            s, e = "<!-- SHARED:PROJECTS:START -->", "<!-- SHARED:PROJECTS:END -->"
+            si, ei = text.find(s), text.find(e)
+            if si != -1 and ei != -1:
+                text = text[:si] + text[ei + len(e):]
+
+            for stat_name, pattern in stat_patterns.items():
+                matches = re.findall(pattern, text)
+                for m in matches:
+                    val = int(m)
+                    if val > 10:
+                        key = (stat_name, val)
+                        if key not in value_locations:
+                            value_locations[key] = []
+                        value_locations[key].append(f"{name}/{doc_name}")
+
+    # 2곳 이상에 같은 값이 등장하면 SSOT 위반
+    for (stat_name, val), locations in value_locations.items():
+        if len(locations) >= 2:
+            # AUTO 마커로 관리되는지 확인
+            findings.append(Finding("ssot", "🟡", "cross-repo",
+                f"{stat_name}={val} 이 {len(locations)}곳에 하드코딩",
+                f"{', '.join(locations[:4])} — JSON 원본 필요"))
+
+    # 2. projects.md의 숫자가 JSON에서 오는지 확인
+    pm = SHARED_DIR / "projects.md"
+    if pm.exists():
+        pm_text = pm.read_text()
+        pj = load_json(BASE / "shared" / "projects.json")
+
+        for proj in pj.get("projects", []):
+            pid = proj["id"]
+            stats = proj.get("stats", {})
+            for key, val in stats.items():
+                if isinstance(val, int) and val > 10:
+                    if str(val) in pm_text:
+                        pass  # OK — JSON에서 반영됨
+                    # description 안에 다른 값이 있는지
+                    desc = proj.get("description", "")
+                    old_matches = re.findall(r'(\d+)', desc)
+                    for om in old_matches:
+                        om_val = int(om)
+                        if om_val > 10 and om_val != val and key in desc.lower():
+                            findings.append(Finding("ssot", "🔴", pid,
+                                f"projects.json description에 {key} 구값 {om_val} (실제 {val})",
+                                "description 텍스트와 stats 불일치"))
+
+    # 3. JSON 간 교차 참조 — 같은 데이터의 다중 원본
+    #    consciousness_laws.json의 total_laws vs CLAUDE.md의 "N 의식 법칙"
+    laws = load_json(PARENT / "anima" / "anima" / "config" / "consciousness_laws.json")
+    actual_laws = laws.get("_meta", {}).get("total_laws", 0)
+
+    for name, repo in REPOS.items():
+        for claude_path in [repo / "CLAUDE.md", repo / "anima" / "CLAUDE.md"]:
+            if not claude_path.exists():
+                continue
+            text = claude_path.read_text(encoding="utf-8", errors="ignore")
+            law_matches = re.findall(r'(\d+)\s*의식 법칙', text)
+            for m in law_matches:
+                val = int(m)
+                if val != actual_laws and val > 50:
+                    findings.append(Finding("ssot", "🔴", name,
+                        f"CLAUDE.md: {val} 의식 법칙 (실제 {actual_laws})",
+                        "consciousness_laws.json이 SSOT — CLAUDE.md 갱신 필요"))
+
+    # 4. README 뱃지와 JSON 원본 일치 확인
+    for name, repo in REPOS.items():
+        readme = repo / "README.md"
+        if not readme.exists():
+            continue
+        text = readme.read_text()
+
+        # AUTO 마커 없는 뱃지 (수동 관리)
+        badge_start = text.find("<!-- AUTO:BADGE:START -->")
+        if badge_start == -1:
+            # 뱃지가 있는데 AUTO 마커가 없음 = SSOT 미연결
+            shield_matches = re.findall(r'shields\.io/badge/.*?-(\d+)', text)
+            if shield_matches:
+                for m in shield_matches:
+                    findings.append(Finding("ssot", "🟡", name,
+                        f"뱃지 숫자 {m} — AUTO 마커 없이 수동 관리 중",
+                        "JSON → AUTO:BADGE 연결 권장"))
+
+    return findings
+
+
+# ═══════════════════════════════════════════════════════════════
 # 리포트
 # ═══════════════════════════════════════════════════════════════
 
@@ -489,8 +709,8 @@ def report(findings, lens_name="all"):
     for f in findings:
         if f.lens != current_lens:
             current_lens = f.lens
-            icon = {"loop": "🔁", "auto": "⚙️", "sync": "🔄", "json": "📋", "hardcode": "🔗"}.get(f.lens, "?")
-            label = {"loop": "루프", "auto": "자동화", "sync": "동기화", "json": "JSON", "hardcode": "하드코딩"}.get(f.lens, "?")
+            icon = {"loop": "🔁", "auto": "⚙️", "sync": "🔄", "json": "📋", "hardcode": "🔗", "cdo": "🎯", "ssot": "📌"}.get(f.lens, "?")
+            label = {"loop": "루프", "auto": "자동화", "sync": "동기화", "json": "JSON", "hardcode": "하드코딩", "cdo": "CDO", "ssot": "SSOT"}.get(f.lens, "?")
             print(f"\n  {icon} {label} 렌즈:")
         print(f)
 
@@ -502,14 +722,16 @@ def main():
     parser.add_argument("--sync", action="store_true", help="동기화 렌즈만")
     parser.add_argument("--json", action="store_true", help="JSON 렌즈만")
     parser.add_argument("--hardcode", action="store_true", help="하드코딩 렌즈만")
+    parser.add_argument("--cdo", action="store_true", help="CDO 렌즈만")
+    parser.add_argument("--ssot", action="store_true", help="SSOT 렌즈만")
     parser.add_argument("--fix", action="store_true", help="자동 수정 (sync-readmes.sh)")
     args = parser.parse_args()
 
-    run_all = not (args.loop or args.auto or args.sync or args.json or args.hardcode)
+    run_all = not (args.loop or args.auto or args.sync or args.json or args.hardcode or args.cdo or args.ssot)
     findings = []
 
     print("  ════════════════════════════════════════════")
-    print("  🔭 프로젝트 인프라 망원경 (5 렌즈)")
+    print("  🔭 프로젝트 인프라 망원경 (7 렌즈)")
     print("  ════════════════════════════════════════════")
 
     if run_all or args.loop:
@@ -531,6 +753,14 @@ def main():
     if run_all or args.hardcode:
         print("  🔗 하드코딩 렌즈 스캔 중...")
         findings.extend(scan_hardcode())
+
+    if run_all or args.cdo:
+        print("  🎯 CDO 렌즈 스캔 중...")
+        findings.extend(scan_cdo())
+
+    if run_all or args.ssot:
+        print("  📌 SSOT 렌즈 스캔 중...")
+        findings.extend(scan_ssot())
 
     report(findings)
 
