@@ -16,6 +16,11 @@
 #     - n6-replication/tests/tier1/ conftest.py 가 fractions/math 만 사용
 #       → 외부 dep은 requirements.txt (pytest, numpy, scipy, sympy, mpmath, jinja2)
 #
+# 2026-04-03: test_atlas_parser.py — test_extract_constants 로컬 경로 실패
+#   원인: /Users/ghost/Dev/SEDI/sedi/tecs.py 하드코딩 → CI에서 파일 없음
+#   해결: @skipUnless(os.path.exists(path)) 데코레이터 추가
+#   규칙: 외부 리포 파일 참조 테스트는 skipUnless로 보호할 것
+#
 # [ignore 목록 관리 규칙]
 #   - 루트 .py 파일: 구문 오류 있는 파일 다수 → syntax check 대상 제외
 #   - n6-replication/, tests/: clean 상태 유지 필수 → syntax check 대상

@@ -1,5 +1,5 @@
 """Tests for math atlas hypothesis parser."""
-import sys, os, json, tempfile, sqlite3
+import sys, os, json, tempfile, sqlite3, unittest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '.shared'))
 
 from scan_math_atlas import parse_hypothesis_md
@@ -163,7 +163,11 @@ def test_write_dot():
 
 from scan_math_atlas import extract_constants_from_py
 
+_SEDI_TECS = "/Users/ghost/Dev/SEDI/sedi/tecs.py"
+_skip_no_sedi = unittest.skipUnless(os.path.exists(_SEDI_TECS), "SEDI repo not available")
 
+
+@_skip_no_sedi
 def test_extract_constants():
     """Test constant extraction from a known file."""
     results = extract_constants_from_py(
@@ -179,6 +183,7 @@ def test_extract_constants():
     assert tb["category"] == "targets"
 
 
+@_skip_no_sedi
 def test_extract_constants_evaluable():
     """Test that simple dicts with only literals are evaluable."""
     results = extract_constants_from_py(
@@ -197,6 +202,7 @@ def test_extract_constants_evaluable():
     assert tb["keys"] is not None
 
 
+@_skip_no_sedi
 def test_extract_constants_non_evaluable():
     """Test that dicts with expressions are marked non-evaluable."""
     results = extract_constants_from_py(
@@ -209,6 +215,7 @@ def test_extract_constants_non_evaluable():
         assert dm["keys"] is not None
 
 
+@_skip_no_sedi
 def test_extract_constants_skips_lowercase():
     """Test that lowercase and non-constant names are skipped."""
     results = extract_constants_from_py(
@@ -220,6 +227,7 @@ def test_extract_constants_skips_lowercase():
         assert name == name.upper() or name.replace("_", "").isupper()
 
 
+@_skip_no_sedi
 def test_extract_constants_list():
     """Test extraction of list constants."""
     results = extract_constants_from_py(
