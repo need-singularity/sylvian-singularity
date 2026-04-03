@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "description": "Convergence-Driven Operations (CDO) — 전 프로젝트 공통 운영 원칙",
+    "schema_version": "1.0",
+    "updated": "2026-04-03",
+    "applies_to": ["anima", "TECS-L", "n6-architecture", "sedi", "brainwire", "papers", "hexa-lang"]
+  },
+
+  "principles": {
+    "P1": "모든 문제는 한 번만 겪는다",
+    "P2": "해결되면 절대 규칙으로 승격",
+    "P3": "위반 횟수 0 유지",
+    "P4": "수렴률 100% 목표",
+    "P5": "실패할 때마다 강해지는 시스템 (Antifragile)"
+  },
+
+  "json_schema_standard": {
+    "_description": "모든 config JSON은 이 구조를 따름",
+    "required_fields": {
+      "_meta": {
+        "description": "string — 파일 목적",
+        "updated": "YYYY-MM-DD — 마지막 수정일",
+        "schema_version": "string — 구조 버전"
+      }
+    },
+    "optional_fields": {
+      "convergence": "{ total, resolved, rules, violations, pct } — 수렴 추적",
+      "absolute_rules": "{ R01: { rule, reason, action } } — 위반 금지 규칙",
+      "troubleshooting_log": "[ { id, date, severity, title, symptom, fix, rule } ] — 이슈 로그",
+      "pipeline": "{ stages, promotion_rules } — 단계별 승격 기준"
+    },
+    "lifecycle": {
+      "issue_occurs": "troubleshooting_log에 기록",
+      "issue_resolved": "fix 필드 채움",
+      "pattern_detected": "absolute_rules로 승격 (rule 필드 연결)",
+      "rule_violation": "convergence.violations++ (목표: 항상 0)",
+      "all_resolved": "convergence.pct = 100%"
+    }
+  },
+
+  "per_project_status": {
+    "anima": {
+      "json_count": 19,
+      "ok": 12,
+      "in_progress": 7,
+      "convergence_pct": "63%",
+      "exemplar": "runpod.json v2.0 (12 rules, 15 issues, 0 violations)"
+    },
+    "TECS-L": {
+      "json_count": "TBD",
+      "convergence_pct": "TBD",
+      "note": "convergence_ops.json이 원본"
+    },
+    "n6-architecture": {
+      "json_count": "TBD",
+      "convergence_pct": "TBD",
+      "note": "NEXUS-6 usage.json 등"
+    },
+    "sedi": { "json_count": "TBD", "convergence_pct": "TBD" },
+    "brainwire": { "json_count": "TBD", "convergence_pct": "TBD" },
+    "papers": { "json_count": "TBD", "convergence_pct": "TBD" },
+    "hexa-lang": { "json_count": "TBD", "convergence_pct": "TBD" }
+  },
+
+  "adoption_checklist": [
+    "1. 프로젝트 내 모든 config JSON 목록화",
+    "2. 각 JSON에 _meta (description, updated, schema_version) 추가",
+    "3. 이슈가 있으면 troubleshooting_log 형태로 정리",
+    "4. 반복 이슈는 absolute_rules로 승격",
+    "5. convergence 추적 필드 추가",
+    "6. 수렴 목표: 100% (모든 이슈 resolved, 모든 규칙 violations=0)"
+  ]
+}

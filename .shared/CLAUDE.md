@@ -7,6 +7,11 @@
   수정만 하고 동기화 안 돌리면 다른 리포에 반영 안 됨.
   순서: .shared/ 파일 수정 → TECS-L에서 커밋+push → `bash .shared/sync-claude-rules.sh`
 
+★ **Convergence-Driven Operations (CDO) — 전 프로젝트 공통 원칙**
+  이슈 발생 → 해결 → 규칙 승격 → 재발 방지 → 100% 수렴
+  모든 config JSON은 CDO 구조 준수: _meta + absolute_rules + troubleshooting_log
+  상세: .shared/convergence_ops.json
+
 ## NEXUS-6 망원경 (1013종 렌즈) — 최우선 활용 규칙
 
 > **NEXUS-6 = 통합 발견 엔진. 1013종 렌즈 레지스트리 + OUROBOROS 무한진화 + Discovery Graph**
