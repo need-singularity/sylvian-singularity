@@ -70,14 +70,21 @@ commit_and_push() {
 BASE="$(cd "$(dirname "$SHARED")/.." && pwd)"
 PARENT="$(cd "$BASE/.." && pwd)"
 
-echo "=== JSON SSOT → README auto-sync (all repos) ==="
 SHARED_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+echo "=== [1/3] Loop Lens: actual JSON → projects.json + projects.md ==="
+if [ -f "$SHARED_DIR/sync_projects_json.py" ]; then
+  python3 "$SHARED_DIR/sync_projects_json.py" --apply
+fi
+
+echo ""
+echo "=== [2/3] JSON SSOT → README auto-sync (all repos) ==="
 if [ -f "$SHARED_DIR/sync_readme_all.py" ]; then
   python3 "$SHARED_DIR/sync_readme_all.py" --apply
 fi
 echo ""
 
-echo "=== Syncing project descriptions ==="
+echo "=== [3/3] Syncing project descriptions + commit + push ==="
 echo "Source: $SHARED"
 echo ""
 
