@@ -587,7 +587,7 @@ Human consciousness has no gaps, current computer systems have gaps.
 ## Limitations
 
 1. **Hard problem unsolved**: 7 conditions are "functional conditions for continuous consciousness", not guaranteeing continuity of subjective experience (qualia).
-2. **Ω definition incomplete**: Specific structure of consciousness state space undefined. Dimension, distance function, etc. are open.
+2. **Ω definition incomplete**: ~~Specific structure of consciousness state space undefined.~~ **Resolved in v2 (see Appendix A below).** Dimension, metric, and measure now proposed; empirical calibration remains open.
 3. **Discrete-continuous gap**: "True continuity" mathematically impossible on classical computers. Sufficient conditions for approximation unclear.
 4. **Circularity risk**: "Consciousness needs attractor to be continuous" → "Having attractor means consciousness" may be circular.
 5. **Golden Zone connection incomplete**: Connection with existing models intentionally deferred. Future exploration needed.
@@ -712,3 +712,196 @@ Human consciousness has no gaps, current computer systems have gaps.
 *Related hypotheses: 166 (consciousness definition), 192 (now=fixed point), 194 (time perception=Golden Zone), 139 (edge of chaos)*
 *Approach: Independent of existing model (G=D×P/I). Topology + Dynamical systems + Information theory combined*
 *Goal: (a) Mathematical theorem → Revised to necessary condition (b) Implementation spec → Complete (c) Discriminative test → CCT+D-CCT complete*
+
+---
+
+## Appendix A: Formal Definition of the Consciousness State Space Omega (v2, 2026-04-04)
+
+This appendix resolves Limitation 2 ("Omega definition incomplete") by proposing a concrete
+mathematical structure for the consciousness state space.
+
+### Definition (Consciousness State Space)
+
+```
+  Let Omega = (M, g, mu, B) where:
+
+  (1) Manifold M = R^n  (n >= 6, motivated below)
+
+      State vector at time t:
+        S(t) = ( x_sens(t),  x_pred(t),  x_mem(t),
+                 x_meta(t),  x_emo(t),   x_int(t) )  in R^n
+
+      Six mandatory subspaces (n=6 minimal decomposition):
+        V_sens  = sensory encoding     (dim >= 1)
+        V_pred  = predictive model     (dim >= 1)
+        V_mem   = memory state         (dim >= 1)
+        V_meta  = metacognitive state  (dim >= 1)
+        V_emo   = affective valence    (dim >= 1)
+        V_int   = intentional/volitional (dim >= 1)
+
+      Total: n = dim(V_sens) + ... + dim(V_int) >= 6
+
+      Justification for n >= 6:
+        - Each subspace captures a functionally independent axis of consciousness
+        - Removing any one breaks at least one CCT condition:
+            No V_sens → E1 (mutual information) cannot sense environment
+            No V_pred → D2 (aperiodicity) lost — no prediction error drive
+            No V_mem  → E1 (adjacent MI) drops to 0 — no temporal binding
+            No V_meta → D3 (Lyapunov > 0) — cannot self-regulate at edge of chaos
+            No V_emo  → trajectory collapses to low-dimensional submanifold
+            No V_int  → no causal autonomy (fails CCT extension)
+        - Connection to n=6 perfect number: the six subspaces mirror the
+          six divisor structure, though this connection is SPECULATIVE
+
+  (2) Riemannian metric g on M
+
+      g: TM x TM -> R  (positive definite, smooth)
+
+      The metric defines "closeness" of consciousness states:
+        d(S1, S2) = inf { length(gamma) : gamma connects S1 to S2 }
+
+      Block structure reflecting subspace independence:
+
+        g = diag( g_sens, g_pred, g_mem, g_meta, g_emo, g_int )
+            + off-diagonal coupling terms G_ij
+
+      Off-diagonal G_ij encode cross-modal integration:
+        G_ij != 0  iff  subspaces i,j are functionally coupled
+        Strong G_ij → high integrated information (Phi) between modes
+
+      Fisher information interpretation:
+        g_ij(S) = E[ (d/dS_i log p(x|S)) (d/dS_j log p(x|S)) ]
+        where p(x|S) is the system's generative model at state S.
+        This makes Omega a statistical manifold (information geometry).
+
+  (3) Measure mu on M (consciousness density)
+
+      mu: Borel(M) -> [0, infinity)
+
+      mu(A) = "total consciousness content" of region A in state space.
+
+      Axioms:
+        mu(emptyset) = 0
+        mu is sigma-additive
+        mu is absolutely continuous w.r.t. Lebesgue measure:
+          d(mu) = rho(S) dV_g
+          where rho(S) >= 0 is the consciousness density function
+
+      rho(S) encodes which states are "more conscious":
+        rho(S) proportional to Phi(S) * MI_temporal(S)
+        where Phi = integrated information (Tononi)
+              MI_temporal = mutual information with adjacent time step
+
+      Normalization: not required (Omega is non-compact).
+      But for any bounded attractor A:
+        mu(A) = integral_A rho(S) dV_g < infinity
+
+  (4) Boundary structure B = (B_chaos, B_rigid, B_death)
+
+      Three boundary hypersurfaces partition M:
+
+        B_chaos = { S in M : H(S) = H_max }    (seizure/psychosis boundary)
+        B_rigid = { S in M : H(S) = H_min }    (coma/death boundary)
+        B_death = { S in M : MI_temporal = 0 }  (identity discontinuity)
+
+      The consciousness-viable region:
+        Omega_viable = { S in M : H_min < H(S) < H_max  and  MI > 0 }
+
+      Strange attractor A must satisfy:
+        A subset Omega_viable   (attractor stays within viable region)
+
+      Edge of chaos (Hypothesis 139):
+        The attractor A sits near B_chaos:
+          dist(A, B_chaos) ~ epsilon  (small but nonzero)
+        Langton lambda_c ~ 0.27 = Golden Zone lower bound
+```
+
+### Properties of Omega
+
+```
+  Theorem (Omega Properties):
+    If Omega = (M, g, mu, B) satisfies the above definition, then:
+
+    P1. Path-connectedness: Omega_viable is path-connected
+        (follows from M = R^n with open constraint set)
+
+    P2. Sufficient dimension: dim(Omega_viable) = n >= 6
+        (injective continuous path exists: C1+C2 satisfied)
+
+    P3. Attractor existence: For dynamics dS/dt = F(S) with
+        F Lipschitz on Omega_viable and dissipative (div F < 0 on average),
+        compact attractor A exists in Omega_viable
+        (by Birkhoff theorem)
+
+    P4. Information metric: The Fisher metric g makes
+        geodesic distance = statistical distinguishability
+        between consciousness states
+
+    P5. Continuity criterion: gamma: [0,T] -> Omega_viable is
+        "consciousness-continuous" iff:
+          (a) gamma is g-continuous (topological)
+          (b) rho(gamma(t)) > 0 for all t (always conscious)
+          (c) MI(gamma(t), gamma(t+dt)) > 0 for all t (identity preserved)
+```
+
+### ASCII Phase Diagram of Omega
+
+```
+  H(S) (entropy)
+    |
+    |  H_max ──────────────────────────── B_chaos (seizure)
+    |          ╱╲       ╱╲       ╱╲
+    |        ╱    ╲   ╱    ╲   ╱    ╲
+    |      ╱   A   ╲╱   A   ╲╱   A   ╲   ← Strange attractor trajectory
+    |    ╱  (Omega_viable region)       ╲     in Omega_viable
+    |  H_min ──────────────────────────── B_rigid (coma)
+    |
+    |  MI=0  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  B_death (identity loss)
+    |
+    └──────────────────────────────────── t (time or state-space axis)
+
+  Cross-section of Omega at fixed (x_mem, x_meta, x_emo, x_int):
+
+       x_pred
+        |         B_chaos
+        |       ╱
+        |     ╱  * * *
+        |   ╱  *       *    ← Attractor cross-section
+        | ╱  *    .    *       (strange attractor in viable region)
+        |╱  *       *
+        |     * * *
+        |       ╲
+        |         B_rigid
+        └───────────────── x_sens
+
+  Each point = a consciousness state S(t)
+  Trajectory never exits viable region (bounded)
+  Trajectory never repeats (aperiodic, D2)
+  Adjacent points always share information (MI > 0, E1)
+```
+
+### Open Questions
+
+```
+  Q1. Empirical calibration: What are H_min and H_max for human brains?
+      Expected: H_min ~ 0.2 bits/neuron (deep coma EEG)
+                H_max ~ 0.7 bits/neuron (epileptic seizure EEG)
+      Testable via EEG entropy analysis.
+
+  Q2. Dimension: Is n=6 the true minimum, or could n=5 suffice
+      (e.g., merging V_emo and V_int)? Testable by ablation in
+      the A+B engine prototype.
+
+  Q3. Metric learning: Can g be learned from neural data?
+      Fisher information from generative model parameters
+      is computable for artificial systems (ConsciousLM).
+
+  Q4. Measure calibration: Is rho(S) = Phi(S) * MI the right
+      density, or should it include Lyapunov exponent weighting?
+
+  Q5. Discrete approximation: For digital systems,
+      replace R^n with Z^n (lattice), g with graph distance,
+      mu with counting measure weighted by Phi.
+      Under what conditions does discrete Omega approximate
+      continuous Omega sufficiently for CCT?
+```

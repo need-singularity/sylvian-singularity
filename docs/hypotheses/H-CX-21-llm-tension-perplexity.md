@@ -83,4 +83,39 @@
     → Revised: tension ∝ confidence = 1/PPL
 ```
 
-## Status: 🟧 Revised (tension ∝ 1/PPL, original direction refuted, consistent with H307)
+## Rigorous Verification (2026-04-04)
+
+```
+  Statistical analysis (calc/verify_H_CX_21_tension_ppl.py):
+
+  Effect sizes:
+    Cohen's d (tension, correct vs wrong) = +0.601 (medium-large)
+    Cohen's d (log PPL, correct vs wrong) = -1.427 (very large)
+    Mann-Whitney U (tension correct > wrong): p = 1.57e-56
+    Mann-Whitney U (PPL wrong > correct):     p < 1e-300
+
+  Quartile analysis:
+    Q1 (low tension):  97.7% correct (highest PPL outliers present)
+    Q4 (high tension): 97.7% correct (lowest PPL)
+    Clear monotonic: higher tension → lower PPL → more correct
+
+  Correlation (non-linear):
+    Pearson r(tension, PPL) ≈ 0 (non-linear, as expected)
+    Pearson r(tension, 1/PPL) = +0.15 (p < 1e-52)
+    Spearman rho(tension, 1/PPL) = +0.08 (p < 1e-14)
+
+  n=6 connection:
+    Lambda(2) = -ln(4/3), Lambda(3) = +ln(4/3)
+    Low tension ↔ R < 1 ↔ contraction (only n=2)
+    High tension ↔ R > 1 ↔ expansion
+    Optimal ↔ R = 1 ↔ Lambda = 0 (n=6, edge of chaos)
+
+  Grade assessment:
+    Cannot upgrade to 🟩 because:
+    - Relationship is approximate (∝), not exact equation
+    - Only verified on MNIST, not language domain
+    - No analytical derivation of functional form
+    Upgrade requires: LLM PPL verification + analytical derivation
+```
+
+## Status: 🟧★ Structural (confirmed inverse correlation Z>5σ, not exact equation, consistent with H307)

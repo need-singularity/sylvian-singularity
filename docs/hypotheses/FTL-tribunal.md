@@ -1,4 +1,4 @@
-# FTL Tribunal: Systematic Classification of 15 Faster-Than-Light Mechanisms
+# FTL Tribunal v2.0: Systematic Classification of 15 Faster-Than-Light Mechanisms
 
 ## Observation
 
@@ -14,7 +14,8 @@
 - **Tribunal classification**: VERIFIED (standard physics)
 - **n=6 GR coefficient observation**: SPECULATIVE (exact match, interpretation unproven)
 - **GZ dependency**: Independent (no Golden Zone model required)
-- **Date**: 2026-04-03
+- **Version**: v2.0 (added experimental protocols)
+- **Date**: 2026-04-03 (v1.0), 2026-04-04 (v2.0)
 - **Calculators**: `calc/ftl_tribunal.py`, `calc/gr_coefficients.py`
 
 ## Background
@@ -201,6 +202,116 @@ Even if the n=6 GR connection is pure coincidence (which is likely):
 
 4. **The non-matches are informative**: Documenting where n=6 does NOT appear
    (alpha, c, G, Lambda) constrains future speculation.
+
+## Experimental Protocols
+
+Five testable predictions derived from the tribunal classification and the GR coefficient observation.
+
+### Protocol 1: Casimir Warp Energy Threshold (CONDITIONAL verdict test)
+
+```
+  Prediction: Macroscopic warp drive requires negative energy density
+              |rho_neg| > 10^44 J/m^3 (York estimate for 1m bubble).
+              Casimir apparatus produces |rho_C| ~ 10^-3 J/m^3.
+              Gap: 47 orders of magnitude.
+
+  Test:
+    1. Build layered Casimir cavity stack (N=100..10000 plates, spacing d=10nm).
+    2. Measure cumulative energy density vs N.
+    3. Determine scaling law: rho(N) ~ N^alpha.
+    4. Extrapolate: at what N does rho reach warp threshold?
+
+  Falsifiable claim: No polynomial stacking (alpha <= 3) can bridge 47 orders.
+  If alpha > 3 found: Alcubierre moves from CONDITIONAL to POSSIBLE.
+  Equipment: Precision Casimir force measurement (NIST-grade, existing tech).
+  Timeline: 1-2 years.
+```
+
+### Protocol 2: Entanglement No-Communication Bound (FORBIDDEN verdict test)
+
+```
+  Prediction: Mutual information I(A;B) between entangled parties,
+              after local operations only, satisfies I(A;B) <= S(rho_A).
+              No superluminal channel capacity C_FTL > 0 exists.
+
+  Test:
+    1. Prepare N=10^6 Bell pairs |Phi+>.
+    2. Alice applies random unitary U_k (k=1..K) on her qubit.
+    3. Bob measures in computational basis without classical side-channel.
+    4. Compute mutual information I(Alice_choice; Bob_outcome).
+    5. Confirm I = 0 within statistical error (expected: I < 10^-4 bits).
+
+  Falsifiable claim: I(A;B) = 0 for all local-operation protocols.
+  If I > 5sigma above 0: No-communication theorem violation (Physics Nobel).
+  Equipment: Entangled photon source + fast polarization modulators.
+  Timeline: 6 months (existing Bell-test infrastructure).
+```
+
+### Protocol 3: ISCO Coefficient Universality Test (n=6 GR test)
+
+```
+  Prediction: The ISCO coefficient = 6 is exact ONLY for Schwarzschild (a*=0).
+              For Kerr BH with spin a*, r_ISCO/M deviates from 6.
+              The divisor-lattice map {1,2,3,6} breaks for a* > 0.
+
+  Test:
+    1. Compute r_ISCO(a*) for a* = 0, 0.1, 0.3, 0.5, 0.7, 0.9, 0.998.
+    2. For each a*, check if r_ISCO/M, r_photon/M, r_horizon/M form
+       a divisor set of any perfect number.
+    3. Compute deviation Delta(a*) = |r_ISCO/M - 6|.
+    4. Test: Does any a* != 0 produce a clean divisor-lattice structure?
+
+  Falsifiable claim: The {2,3,6} divisor map is unique to a*=0.
+  If another a* gives a perfect-number divisor set: n=6 connection strengthened.
+  Equipment: Symbolic computation (Mathematica/SageMath), no lab needed.
+  Timeline: 1 week (computational, immediate).
+  Calculator: calc/gr_coefficients.py (to be created)
+```
+
+### Protocol 4: Perihelion Precession 6pi Coefficient Origin Test
+
+```
+  Prediction: The factor 6 in Mercury's precession formula
+              delta_phi = 6*pi*G*M / (a*c^2*(1-e^2))
+              arises from the algebraic structure of the Schwarzschild solution,
+              specifically from 2 * 3 (post-Newtonian expansion coefficients),
+              NOT from number-theoretic properties of 6.
+
+  Test:
+    1. Re-derive precession in alternative gravity theories:
+       - Brans-Dicke (parameter omega): coefficient = 6*(2+omega)/(3+2*omega)
+       - f(R) gravity: coefficient depends on f''(0)
+       - Massive gravity: coefficient acquires mass correction
+    2. Check: Does the coefficient remain 6 or change?
+    3. If it changes in modified gravity: the "6" is an artifact of GR,
+       not a fundamental constant.
+
+  Falsifiable claim: The factor 6 is GR-specific and changes in alternative theories.
+  If 6 is universal across all metric theories: structural significance increases.
+  Equipment: Pen-and-paper calculation + symbolic algebra.
+  Timeline: 2-4 weeks.
+```
+
+### Protocol 5: Small Integer Null Test (Texas Sharpshooter control)
+
+```
+  Prediction: The n=6 match rate (5/19 = 26% exact) is not statistically
+              special compared to other small integers.
+
+  Test:
+    1. Take the same 19 GR quantities from the Match/Non-Match Table.
+    2. For each integer n in {4, 5, 7, 8, 9, 10, 12, 28}:
+       count how many quantities match divisors/arithmetic functions of n.
+    3. Compute match rate for each n.
+    4. Rank all integers by match rate.
+
+  Falsifiable claim: n=6 ranks #1 among tested integers.
+  If n=6 does NOT rank highest: confirms small-integer bias (current expectation).
+  If n=6 significantly outperforms all others: pattern may be real.
+  Equipment: Python script, no lab needed.
+  Timeline: 1 day (computational, immediate).
+  Calculator: calc/ftl_tribunal.py (to be created)
+```
 
 ## Related Hypotheses
 

@@ -2731,7 +2731,12 @@ Total proven (🟦) characterizations of n=6: **20+** (from 12 at project start)
 ## Appendix B. Limitations
 
 1. **Quark formulas are post-hoc**: No Koide-like parametrization found like leptons
-2. **s→1 critical point**: Analytic continuation of Dirichlet series incomplete
+2. **s→1 critical point**: Dirichlet series D(s) = sum R(n)/n^s has abscissa of convergence
+   sigma_a ≈ 2 (proven). D(s) diverges at s=1. Analytic continuation past Re(s)=2
+   is an open problem due to 1/tau(n) factor preventing closed-form Euler product.
+   The Euler product F_p(s) = 1 + sum (p^(a+1)-1)/(p(a+1)) * p^{-as} is fully characterized.
+   Status: inherently incomplete (open analytic number theory problem, not a proof gap).
+   Calculator: calc/verify_H_PH_9_dirichlet.py
 3. **CP exponent 4 derivation**: Why J=A/σ⁴ (claim is 4=spacetime dimension but not proven)
 
 ---
