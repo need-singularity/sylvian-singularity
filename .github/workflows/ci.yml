@@ -21,6 +21,11 @@
 #   해결: @skipUnless(os.path.exists(path)) 데코레이터 추가
 #   규칙: 외부 리포 파일 참조 테스트는 skipUnless로 보호할 것
 #
+# 2026-04-03: cdo-validate 실패 — E_precog_lens_cross_results.json 깨진 JSON
+#   원인: 실험 결과 JSON 파일이 중간에 잘려서 파싱 실패
+#   해결: 잘린 부분을 null + _truncated로 정리하여 유효한 JSON으로 복구
+#   규칙: 실험 결과 JSON 생성 시 반드시 json.dump 완료 후 flush/close 확인
+#
 # [ignore 목록 관리 규칙]
 #   - 루트 .py 파일: 구문 오류 있는 파일 다수 → syntax check 대상 제외
 #   - n6-replication/, tests/: clean 상태 유지 필수 → syntax check 대상

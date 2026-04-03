@@ -735,4 +735,8 @@
       "cv_dir": 0.04412857216353753,
       "cv_product": 0.18463357846721107,
       "cv_sum": 0.08044519947319617,
-      "conserved": 
+      "conserved": null,
+      "_truncated": true
+    }
+  }
+}
