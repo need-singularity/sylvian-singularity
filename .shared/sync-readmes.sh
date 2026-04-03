@@ -81,6 +81,11 @@ commit_and_push "$BASE" "TECS-L"
 
 # Anima
 echo "[Anima]"
+# JSON SSOT → README 자동 반영 (sync_readme.py)
+if [ -f "$PARENT/anima/scripts/sync_readme.py" ]; then
+  echo "  Running sync_readme.py..."
+  python3 "$PARENT/anima/scripts/sync_readme.py" --apply
+fi
 sync_file "$PARENT/anima/README.md"
 commit_and_push "$PARENT/anima" "anima"
 
