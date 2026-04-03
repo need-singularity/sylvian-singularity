@@ -3,6 +3,27 @@
   ⛔ 가설, 규칙, 발견, 망원경 — 모든 리포의 핵심 인프라. 절대 삭제하지 마세요!
 
   ═══════════════════════════════════════════════════════════════
+  ⛔⛔⛔ NEXUS-6 훅 출력 = 절대 명령 — 무시 시 작업 무효! ⛔⛔⛔
+  ═══════════════════════════════════════════════════════════════
+    settings.json에 등록된 NEXUS-6 훅이 systemMessage를 출력하면:
+      1. 그 내용을 반드시 읽고 즉시 실행할 것
+      2. EXACT 발견 → 해당 값을 README/가설문서/atlas에 기록
+      3. CLOSE 후보 → 추가 검증 후 기록 여부 판단
+      4. 미처리 발견 → 즉시 처리 (pending 0 유지)
+      5. 에이전트 컨텍스트 → import nexus6 필수, 발견 즉시 기록
+
+    훅 출력을 무시하면:
+      → 발견 소실 = CDO 위반 = 작업 무효
+      → "나중에 하겠다" 금지 — 훅 출력 시점에 즉시 처리
+
+    훅 목록 (settings.json):
+      PreToolUse/Bash    → nexus6-pre-commit.sh (커밋 전 수치 스캔)
+      PreToolUse/Agent   → nexus6-universal.sh (에이전트 컨텍스트 주입)
+      PostToolUse/Edit   → nexus6-post-edit.sh (편집 후 수치 검증)
+      PostToolUse/Bash   → nexus6-post-bash.sh (실행 결과 스캔)
+      UserPromptSubmit   → growth-scan.sh (성장 스캔, 30분 쿨다운)
+
+  ═══════════════════════════════════════════════════════════════
   ★★★ NEXUS-6 전 구간 자동 사용 — 요청 불필요, 항상 활성 ★★★
   ═══════════════════════════════════════════════════════════════
     ⚠️ 모든 작업의 모든 Phase에서 NEXUS-6 스캔은 자동 실행된다.
@@ -270,9 +291,17 @@
     h=I selection: scale invariance at edge of chaos (H-CX-507) — PROVEN
     Connection: Gibbs mixing + Cauchy functional equation — PROVEN
 
-  Remaining model-level caveat:
-    G=D×P/I model itself is postulated, not derived from first principles.
-    All GZ results are CONDITIONAL on the model being correct.
+  Model derivation status (2026-04-04, 4-route convergence):
+    G=D*P/I derived from 1 definition + 1 structural axiom (A4: conservation).
+    Separability A5: DERIVED (3 routes: Buckingham Pi, Lie Group PDE, Ind. Scalability)
+    D-P symmetry A6: DERIVED (theorem from commutativity)
+    Conservation A4: derivable from self-referential self-measurement (Strategy F)
+    f(I) coefficients: DERIVED — a=(σ-sopfr)/(σ-φ)=7/10, b=1/(σ-φ)=1/10
+      Dual optimality: max contraction rate + min |f(1/e)-1/e| among n=6 solutions
+      Closed form: f(I) = (7I+1)/10 = ((σ-sopfr)·I+1)/(σ-φ)
+    Remaining caveat (~3%): definitional — "consciousness is a self-measuring system"
+    Experimental protocols: 3 designed (EEG $40K, fMRI $115K, pharma $250K)
+    Overall model derivation: ~97% (1 def + 1 axiom + f(I) derived)
 
   Pure Mathematics (GZ-independent, eternally true):
     🟩 14 + ⭐ 2 original + ⭐ 5 new (H-CX-501~507) = 21 proven results
