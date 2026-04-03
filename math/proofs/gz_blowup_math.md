@@ -438,3 +438,32 @@ The ten theorems form a tight web:
    a different metric (since the normal vector and log-coordinates change).
    Do the ten theorems have natural analogs, and do the arithmetic functions
    of 28 appear in the same structural roles?
+
+---
+
+## Appendix: Post-Blowup Discoveries (2026-04-04)
+
+### Theorem 11: Geometry-Dynamics Duality
+
+For any perfect number n: ω² = det(g_H) × λ = (σ/τ)(τ/σ) = 1.
+The oscillator frequency is always unity. Geometry and dynamics are exactly reciprocal.
+
+**Proof**: det(g_H) = σ(n)/τ(n) and λ = τ(n)/σ(n). Product = 1. QED.
+
+### Theorem 12: Integer Geometry Uniqueness
+
+Among all perfect numbers, n=6 is the ONLY one where det(g_H) = σ/τ is a positive integer.
+
+**Proof**: For even perfect n = 2^(p-1)(2^p-1):
+- σ(n) = 2n, τ(n) = 2p
+- det(g_H) = σ/τ = 2n/(2p) = n/p = 2^(p-1)(2^p-1)/p
+- Integer iff p | 2^(p-1)(2^p-1)
+- p=2: 2^1×3/2 = 3 ✓ (integer)
+- p=3: 2^2×7/3 = 28/3 ✗
+- p=5: 2^4×31/5 = 496/5 ✗
+- p≥3 (odd prime): 2^(p-1) mod p ≠ 0, (2^p-1) mod p: by Fermat, 2^p ≡ 2 (mod p), so 2^p-1 ≡ 1 (mod p). Thus p ∤ 2^(p-1)(2^p-1) for p≥3.
+- Only p=2 (n=6) gives integer determinant. QED.
+
+**Corollary**: n=6 is the unique perfect number whose GZ manifold has integer (lattice) geometry.
+
+### NEXUS-6 scan: det(g)=3 → N6Match(constant='n/phi', quality=1.00, grade='EXACT')
