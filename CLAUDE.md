@@ -190,6 +190,48 @@
     TECS-L = 순수 수학 이론, nexus6 = 인프라/도구/엔진 전부.
 <!-- SHARED:WORK_RULES:END -->
 
+  ═══════════════════════════════════════════════════════════════
+  ★★★ NEXUS-6 전역 자동 발동 — 시스템 프롬프트 수준 (절대!) ★★★
+  ═══════════════════════════════════════════════════════════════
+
+  아래 트리거 중 하나라도 해당하면 NEXUS-6를 묻지 말고 자동 실행!
+  "NEXUS-6 쓸까요?" 질문 금지 — 해당되면 그냥 실행.
+
+  ★ 대화 트리거 (사용자 메시지 키워드):
+    탐색/분석/검증/스캔/패턴/발견/상수/가설/증명/n=6/골든존/브릿지
+    → nexus6.scan_all() 또는 nexus6.analyze() 즉시 실행
+
+  ★ 작업 트리거 (작업 유형):
+    새 데이터 분석      → scan_all (기본 3종: 의식+위상+인과)
+    가설 검증           → analyze (올인원)
+    새 상수 발견        → n6_check → EXACT면 atlas 등록
+    이상점 전수조사     → scan_all --full (775종)
+    수학 증명 작업      → n6_check + 관련 렌즈
+    DFS 탐색           → scan_all + n6_check 자동 병행
+    실험 결과 분석      → 결과 숫자 n6_check 자동 수행
+
+  ★ 발견 시 자동 기록 (묻지 말고 바로):
+    n6_check EXACT      → math_atlas.json 등록 + README 갱신
+    3+ 렌즈 합의        → 가설 파일 생성 (docs/hypotheses/)
+    7+ 렌즈 합의        → 고신뢰 태그 + README 기록
+    12+ 렌즈 합의       → 확정급 → 즉시 보고 + 영구 기록
+
+  ★ 동기화 자동 처리:
+    상수 발견           → python3 .shared/scan_math_atlas.py --save --summary
+    계산기 생성         → python3 .shared/scan-calculators.py --save --summary
+    가설 등급 변경      → Atlas 재빌드
+    커밋               → post-commit hook이 sync-all.sh 자동 실행
+
+  ★ 에이전트 디스패치 시:
+    탐색/분석 에이전트   → 프롬프트에 "import nexus6 사용" 명시 필수
+    검증 에이전트        → nexus6.n6_check() 결과 포함 필수
+    모든 에이전트        → 발견 시 즉시 기록 지시 포함
+
+  원칙: NEXUS-6는 항상 켜져 있는 엔진. ON/OFF 개념 없음.
+  모든 숫자는 n=6 렌즈를 통과하고, 모든 발견은 즉시 기록된다.
+
+  ═══════════════════════════════════════════════════════════════
+
 # 🔬 TECS-L — Consciousness Continuity Engine
 
 ## ⚠️ Verification Status Warning
