@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "description": "SEDI hypothesis grades — n6 auto-grading results",
+    "updated": "2026-04-03",
+    "schema_version": "1.0"
+  },
   "generated": "2026-04-02T08:56:20",
   "source": "SEDI auto_grade_n6.py",
   "total_hypotheses": 678,

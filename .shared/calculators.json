@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "description": "Calculator registry — shared calculators across all repos",
+    "updated": "2026-04-03",
+    "schema_version": "1.0"
+  },
   "TECS-L": [
     {
       "name": "algebra_closure",
