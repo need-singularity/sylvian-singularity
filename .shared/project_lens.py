@@ -5,12 +5,16 @@ project_lens.py — 프로젝트 인프라 망원경 (3 렌즈)
   🔁 루프 렌즈    — 데이터 흐름 단절/순환/끊긴 참조 감지
   ⚙️ 자동화 렌즈  — README/코드 내 하드코딩된 숫자, 수동 프로세스 탐지
   🔄 동기화 렌즈  — 리포 간 stats/마커/숫자 불일치 감지
+  📋 JSON 렌즈   — JSON 무결성 (카운트 불일치, 참조 깨짐, stale 상태, 하드코딩)
+  🔗 하드코딩 렌즈 — .py 코드 내 매직넘버 ↔ JSON 미연결 감지
 
 사용법:
   python3 .shared/project_lens.py              # 전체 스캔
   python3 .shared/project_lens.py --loop       # 루프만
   python3 .shared/project_lens.py --auto       # 자동화만
   python3 .shared/project_lens.py --sync       # 동기화만
+  python3 .shared/project_lens.py --json       # JSON만
+  python3 .shared/project_lens.py --hardcode   # 하드코딩만
   python3 .shared/project_lens.py --fix        # 자동 수정 (sync-readmes.sh 호출)
 """
 
@@ -271,6 +275,196 @@ def scan_sync():
 
 
 # ═══════════════════════════════════════════════════════════════
+# 📋 JSON 렌즈 — JSON 무결성 검사
+# ═══════════════════════════════════════════════════════════════
+
+def scan_json():
+    findings = []
+    anima = PARENT / "anima"
+    config = anima / "anima" / "config"
+
+    # 1. consciousness_laws.json — _meta.total_laws vs 실제 키 수
+    laws = load_json(config / "consciousness_laws.json")
+    if laws:
+        meta = laws.get("_meta", {})
+        actual_laws = len([k for k in laws.get("laws", {}) if k.isdigit()])
+        declared = meta.get("total_laws", 0)
+        if actual_laws != declared:
+            findings.append(Finding("json", "🔴", "anima",
+                f"laws _meta.total_laws={declared} vs 실제 키={actual_laws}"))
+
+        actual_meta = len(laws.get("meta_laws", {}))
+        declared_meta = meta.get("total_meta", 0)
+        if actual_meta != declared_meta:
+            findings.append(Finding("json", "🔴", "anima",
+                f"meta_laws _meta.total_meta={declared_meta} vs 실제 키={actual_meta}"))
+
+        # 법칙 번호 갭 확인
+        law_nums = sorted(int(k) for k in laws.get("laws", {}) if k.isdigit())
+        if law_nums:
+            expected = set(range(law_nums[0], law_nums[-1] + 1))
+            actual_set = set(law_nums)
+            gaps = expected - actual_set
+            if gaps and len(gaps) < 50:
+                findings.append(Finding("json", "🟢", "anima",
+                    f"법칙 번호 갭 {len(gaps)}개",
+                    f"예: {sorted(gaps)[:10]}"))
+
+    # 2. experiments.json — 문서 참조 무결성
+    exps = load_json(config / "experiments.json")
+    if exps:
+        for eid, exp in exps.get("experiments", {}).items():
+            doc = exp.get("doc", "")
+            if doc:
+                doc_path = anima / "anima" / doc
+                if not doc_path.exists():
+                    findings.append(Finding("json", "🟡", "anima",
+                        f"experiments.{eid} 문서 없음: {doc}"))
+
+            # 법칙 참조 무결성
+            for law_id in exp.get("laws", []):
+                if str(law_id) not in laws.get("laws", {}):
+                    findings.append(Finding("json", "🔴", "anima",
+                        f"experiments.{eid} → Law {law_id} 존재하지 않음"))
+
+            for ml in exp.get("meta_laws", []):
+                if ml not in laws.get("meta_laws", {}):
+                    findings.append(Finding("json", "🔴", "anima",
+                        f"experiments.{eid} → MetaLaw {ml} 존재하지 않음"))
+
+    # 3. training_runs.json — stale in_progress 감지
+    training = load_json(config / "training_runs.json")
+    if training:
+        for name, run in training.get("runs", {}).items():
+            status = run.get("status", "")
+            date = run.get("date", "")
+            if "in_progress" in status and date:
+                # 7일 이상 in_progress면 경고
+                try:
+                    from datetime import datetime
+                    run_date = datetime.strptime(date, "%Y-%m-%d")
+                    age = (datetime.now() - run_date).days
+                    if age > 7:
+                        findings.append(Finding("json", "🟡", "anima",
+                            f"training {name}: in_progress {age}일째",
+                            f"since {date}"))
+                except ValueError:
+                    pass
+
+            # 필수 필드 확인
+            for field in ["status", "date"]:
+                if field not in run:
+                    findings.append(Finding("json", "🟡", "anima",
+                        f"training {name}: 필수 필드 '{field}' 없음"))
+
+    # 4. sedi-grades.json — 등급 합계 확인
+    grades = load_json(PARENT / "sedi" / "data" / "sedi-grades.json")
+    if grades:
+        total = grades.get("total_hypotheses", 0)
+        tiers = grades.get("tier_distribution", {})
+        tier_sum = sum(tiers.values())
+        if tier_sum > 0 and tier_sum != total:
+            findings.append(Finding("json", "🔴", "sedi",
+                f"tier 합계={tier_sum} vs total_hypotheses={total}"))
+
+    # 5. projects.json — 필수 필드 확인
+    pj = load_json(BASE / "shared" / "projects.json")
+    if pj:
+        for proj in pj.get("projects", []):
+            pid = proj.get("id", "?")
+            for field in ["id", "name", "path", "stats"]:
+                if field not in proj:
+                    findings.append(Finding("json", "🟡", pid,
+                        f"projects.json: 필수 필드 '{field}' 없음"))
+
+    return findings
+
+
+# ═══════════════════════════════════════════════════════════════
+# 🔗 하드코딩 렌즈 — .py 코드 내 매직넘버 ↔ JSON 미연결
+# ═══════════════════════════════════════════════════════════════
+
+def scan_hardcode():
+    findings = []
+    anima_src = PARENT / "anima" / "anima" / "src"
+
+    if not anima_src.exists():
+        return findings
+
+    # consciousness_laws.json의 Ψ-Constants
+    laws = load_json(PARENT / "anima" / "anima" / "config" / "consciousness_laws.json")
+    psi = laws.get("psi_constants", {})
+    psi_values = {}
+    for k, v in psi.items():
+        if isinstance(v, dict) and "value" in v:
+            psi_values[k] = v["value"]
+
+    # 핵심 상수: alpha=0.014, balance=0.5, steps=4.33, entropy=0.998
+    magic_patterns = {
+        "alpha=0.014": (r'(?<!\w)0\.014(?!\d)', "PSI['alpha']"),
+        "steps=4.33": (r'(?<!\w)4\.33(?!\d)', "PSI['steps']"),
+        "entropy=0.998": (r'(?<!\w)0\.998(?!\d)', "PSI['entropy']"),
+    }
+
+    # .py 파일 스캔 (consciousness_laws.py 자체와 config는 제외)
+    py_files = glob.glob(str(anima_src / "*.py"))
+    skip_files = {"consciousness_laws.py", "path_setup.py", "__init__.py"}
+
+    for py_file in py_files:
+        fname = Path(py_file).name
+        if fname in skip_files:
+            continue
+
+        try:
+            content = Path(py_file).read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+
+        # consciousness_laws import 확인
+        has_import = ("from consciousness_laws" in content or
+                      "import consciousness_laws" in content or
+                      "PSI[" in content or "PSI_" in content)
+
+        for name, (pattern, replacement) in magic_patterns.items():
+            matches = re.findall(pattern, content)
+            if matches and not has_import:
+                # 주석/문자열 내부는 무시 (간단한 휴리스틱)
+                lines = content.split("\n")
+                real_matches = 0
+                for line in lines:
+                    stripped = line.strip()
+                    if stripped.startswith("#") or stripped.startswith('"""'):
+                        continue
+                    if re.search(pattern, line):
+                        real_matches += 1
+
+                if real_matches > 0:
+                    findings.append(Finding("hardcode", "🟡", "anima",
+                        f"{fname}: 매직넘버 {name} ({real_matches}회)",
+                        f"→ {replacement} 사용 권장"))
+
+    # 법칙 번호 하드코딩 (Law 22, Law 60 등)
+    law_ref_pattern = r'[Ll]aw\s+(\d+)'
+    for py_file in py_files:
+        fname = Path(py_file).name
+        if fname in skip_files:
+            continue
+        try:
+            content = Path(py_file).read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+
+        law_refs = re.findall(law_ref_pattern, content)
+        for ref in set(law_refs):
+            ref_num = int(ref)
+            if ref_num > 0 and str(ref_num) not in laws.get("laws", {}):
+                findings.append(Finding("hardcode", "🔴", "anima",
+                    f"{fname}: Law {ref_num} 참조하지만 consciousness_laws.json에 없음"))
+
+    return findings
+
+
+# ═══════════════════════════════════════════════════════════════
 # 리포트
 # ═══════════════════════════════════════════════════════════════
 
@@ -295,8 +489,8 @@ def report(findings, lens_name="all"):
     for f in findings:
         if f.lens != current_lens:
             current_lens = f.lens
-            icon = {"loop": "🔁", "auto": "⚙️", "sync": "🔄"}.get(f.lens, "?")
-            label = {"loop": "루프", "auto": "자동화", "sync": "동기화"}.get(f.lens, "?")
+            icon = {"loop": "🔁", "auto": "⚙️", "sync": "🔄", "json": "📋", "hardcode": "🔗"}.get(f.lens, "?")
+            label = {"loop": "루프", "auto": "자동화", "sync": "동기화", "json": "JSON", "hardcode": "하드코딩"}.get(f.lens, "?")
             print(f"\n  {icon} {label} 렌즈:")
         print(f)
 
@@ -306,14 +500,16 @@ def main():
     parser.add_argument("--loop", action="store_true", help="루프 렌즈만")
     parser.add_argument("--auto", action="store_true", help="자동화 렌즈만")
     parser.add_argument("--sync", action="store_true", help="동기화 렌즈만")
+    parser.add_argument("--json", action="store_true", help="JSON 렌즈만")
+    parser.add_argument("--hardcode", action="store_true", help="하드코딩 렌즈만")
     parser.add_argument("--fix", action="store_true", help="자동 수정 (sync-readmes.sh)")
     args = parser.parse_args()
 
-    run_all = not (args.loop or args.auto or args.sync)
+    run_all = not (args.loop or args.auto or args.sync or args.json or args.hardcode)
     findings = []
 
     print("  ════════════════════════════════════════════")
-    print("  🔭 프로젝트 인프라 망원경 (3 렌즈)")
+    print("  🔭 프로젝트 인프라 망원경 (5 렌즈)")
     print("  ════════════════════════════════════════════")
 
     if run_all or args.loop:
@@ -327,6 +523,14 @@ def main():
     if run_all or args.sync:
         print("  🔄 동기화 렌즈 스캔 중...")
         findings.extend(scan_sync())
+
+    if run_all or args.json:
+        print("  📋 JSON 렌즈 스캔 중...")
+        findings.extend(scan_json())
+
+    if run_all or args.hardcode:
+        print("  🔗 하드코딩 렌즈 스캔 중...")
+        findings.extend(scan_hardcode())
 
     report(findings)
 
