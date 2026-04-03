@@ -4,6 +4,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
+<!-- AUTO:BADGE:START -->
+[![Hypotheses](https://img.shields.io/badge/Hypotheses-1665+-orange.svg)](docs/hypotheses/)
+[![Tools](https://img.shields.io/badge/Tools-156+-blue.svg)](tools/)
+<!-- AUTO:BADGE:END -->
 
 Topological Engine for Consciousness & Science -- Consciousness Continuity Engine.
 
@@ -52,6 +56,15 @@ Topological Engine for Consciousness & Science -- Consciousness Continuity Engin
 
 -->
 <!-- SHARED:PROJECTS:END -->
+
+<!-- AUTO:STATS:START -->
+```
+  n=6 characterizations:  150
+  Major discoveries:      8
+  Hypotheses:             1665+
+  Tools:                  156+
+```
+<!-- AUTO:STATS:END -->
 
 ## Discovery Progress -- Mathematical Engine
 
