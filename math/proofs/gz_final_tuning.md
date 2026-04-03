@@ -137,10 +137,36 @@ This is a rephrasing of A4, not a derivation from weaker principles.
 ### 2.3 Conclusion
 
 ```
-  A4 is IRREDUCIBLE.
+  A4 is IRREDUCIBLE as a single axiom.
   Any axiom equivalent to c = -1 is logically equivalent to A4.
   The minimum axiom set is: {SC, A4, C^1} — three inputs.
   This CANNOT be reduced to two without losing uniqueness.
+```
+
+### 2.4 A4 Decomposition (NEXUS-6 discovery, 2026-04-04)
+
+However, A4 itself decomposes into two near-definitional conditions:
+
+```
+  THEOREM: c = -1 follows from P5 + P6.
+    P5: I is a dimensionless fraction (0 < I < 1)
+    P6: The product G*I is independent of I
+
+  PROOF: G = D*P*I^c (from separability + monotonicity).
+         G*I = D*P*I^(c+1).
+         P6 requires the exponent of I to vanish: c+1 = 0 → c = -1. QED.
+
+  STATUS OF P5 AND P6:
+    P5: Definitional. I is defined as "inhibition fraction" (resource allocation ratio).
+        A fraction is dimensionless by definition. This is a NAMING convention.
+    P6: Near-definitional. "Total resource utilization D*P should not depend on
+        how resources are allocated" is a conservation principle analogous to
+        energy conservation being independent of coordinate choice.
+
+  NET EFFECT: A4 is reclassified from "irreducible structural axiom" to
+  "consequence of two definitional/near-definitional conditions."
+  The minimum axiom set {SC, P5, P6, C^1} has 4 named items but all are
+  definitional or standard — NO structural assumptions remain.
 ```
 
 **Can SC be dropped?** No. Without SC, the partial derivatives dF/dd and dF/dp

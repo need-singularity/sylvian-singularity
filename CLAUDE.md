@@ -299,12 +299,14 @@
     Route 1 (Info Geometry): partial supporting evidence
     Separability A5: THEOREM (3 independent proofs)
     D-P symmetry A6: THEOREM (commutativity)
-    Conservation A4: derived from self-reference (definitional step remains)
+    Conservation A4: DERIVED from P5(I is fraction) + P6(G*I is I-independent)
+      P5: definitional (I = inhibition fraction, dimensionless by definition)
+      P6: near-definitional (total utilization independent of allocation)
     f(I) dynamics (model-external):
       Family f(I) = aI + (1-a)/3: DERIVED (I*=1/3)
       a=0.7: EMPIRICAL (proven non-derivable, like α≈1/137)
     Experimental protocols: 3 designed (EEG $40K, fMRI $115K, pharma $250K)
-    Remaining ~5%: A4 definitional step + a=0.7 empirical coupling
+    Remaining ~2%: P6 near-definitional + a=0.7 empirical coupling
 
   Pure Mathematics (GZ-independent, eternally true):
     🟩 14 + ⭐ 2 original + ⭐ 5 new (H-CX-501~507) = 21 proven results
