@@ -1,14 +1,14 @@
 {
-  "interaction_count": 20,
+  "interaction_count": 28,
   "stage_index": 0,
   "stage_name": "seed",
   "stats": {
     "hypotheses_total": 1673,
     "calcs_total": 0,
-    "atlas_entries": 2533,
+    "atlas_entries": 687,
     "discoveries": 0,
-    "last_scan": "2026-04-04T08:19:20",
+    "last_scan": "2026-04-04T08:20:50",
     "last_delta": 7,
-    "last_tick": "2026-04-04T08:19:26"
+    "last_tick": "2026-04-04T08:20:53"
   }
 }
