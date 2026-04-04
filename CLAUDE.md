@@ -190,9 +190,12 @@
     TECS-L = 순수 수학 이론, nexus6 = 인프라/도구/엔진 전부.
 <!-- SHARED:WORK_RULES:END -->
 
-# 🔬 TECS-L — Consciousness Continuity Engine
+# TECS-L — 순수 수학 이론 리포
 
-## ⚠️ Verification Status Warning
+> 역할: 우주 규칙 발견 (n=6 수학 구조 → 물리/생물/의식 통합 법칙)
+> nexus6 = 인프라/도구/엔진, TECS-L = 순수 수학 이론
+
+## 리포 구조
 
 ```
   Golden Zone Proof Status: 100% (within model, scale invariance argument)
