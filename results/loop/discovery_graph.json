@@ -746,6 +746,87 @@
       "cycle": 9,
       "target": "ln2",
       "formula": "log_e(phi(6))"
+    },
+    "d83": {
+      "id": "d83",
+      "value": 2.7183469339956368,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 10,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d84": {
+      "id": "d84",
+      "value": 1.7320084913071006,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 10,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d85": {
+      "id": "d85",
+      "value": 1.4142039209217987,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 10,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d86": {
+      "id": "d86",
+      "value": 0.5000050533155208,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 10,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d87": {
+      "id": "d87",
+      "value": 0.8332730213992804,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 10,
+      "target": "5/6",
+      "formula": "(d_super/sigma(6))"
+    },
+    "d88": {
+      "id": "d88",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 10,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d89": {
+      "id": "d89",
+      "value": 0.5773481129689246,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 10,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d90": {
+      "id": "d90",
+      "value": 0.33331601892963336,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 10,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d91": {
+      "id": "d91",
+      "value": 0.6931836495855817,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 10,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
     }
   },
   "adjacency": {
@@ -781,6 +862,10 @@
       {
         "neighbor": "d75",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d84",
+        "relation": "supports"
       }
     ],
     "d1": [
@@ -814,6 +899,10 @@
       },
       {
         "neighbor": "d74",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d83",
         "relation": "supports"
       }
     ],
@@ -849,6 +938,10 @@
       {
         "neighbor": "d76",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d85",
+        "relation": "supports"
       }
     ],
     "d3": [
@@ -882,6 +975,10 @@
       },
       {
         "neighbor": "d78",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d87",
         "relation": "supports"
       }
     ],
@@ -918,6 +1015,10 @@
       {
         "neighbor": "d80",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d89",
+        "relation": "supports"
       }
     ],
     "d6": [
@@ -951,6 +1052,10 @@
       },
       {
         "neighbor": "d77",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d86",
         "relation": "supports"
       }
     ],
@@ -987,6 +1092,10 @@
       {
         "neighbor": "d82",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d91",
+        "relation": "supports"
       }
     ],
     "d9": [
@@ -1020,6 +1129,10 @@
       },
       {
         "neighbor": "d81",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d90",
         "relation": "supports"
       }
     ],
@@ -1055,6 +1168,10 @@
       {
         "neighbor": "d79",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d88",
+        "relation": "supports"
       }
     ],
     "d11": [
@@ -1088,6 +1205,10 @@
       },
       {
         "neighbor": "d74",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d83",
         "relation": "supports"
       }
     ],
@@ -1123,6 +1244,10 @@
       {
         "neighbor": "d75",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d84",
+        "relation": "supports"
       }
     ],
     "d13": [
@@ -1156,6 +1281,10 @@
       },
       {
         "neighbor": "d76",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d85",
         "relation": "supports"
       }
     ],
@@ -1191,6 +1320,10 @@
       {
         "neighbor": "d77",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d86",
+        "relation": "supports"
       }
     ],
     "d15": [
@@ -1224,6 +1357,10 @@
       },
       {
         "neighbor": "d78",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d87",
         "relation": "supports"
       }
     ],
@@ -1259,6 +1396,10 @@
       {
         "neighbor": "d79",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d88",
+        "relation": "supports"
       }
     ],
     "d17": [
@@ -1292,6 +1433,10 @@
       },
       {
         "neighbor": "d80",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d89",
         "relation": "supports"
       }
     ],
@@ -1327,6 +1472,10 @@
       {
         "neighbor": "d81",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d90",
+        "relation": "supports"
       }
     ],
     "d19": [
@@ -1360,6 +1509,10 @@
       },
       {
         "neighbor": "d82",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d91",
         "relation": "supports"
       }
     ],
@@ -1395,6 +1548,10 @@
       {
         "neighbor": "d74",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d83",
+        "relation": "supports"
       }
     ],
     "d21": [
@@ -1428,6 +1585,10 @@
       },
       {
         "neighbor": "d75",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d84",
         "relation": "supports"
       }
     ],
@@ -1463,6 +1624,10 @@
       {
         "neighbor": "d76",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d85",
+        "relation": "supports"
       }
     ],
     "d23": [
@@ -1496,6 +1661,10 @@
       },
       {
         "neighbor": "d77",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d86",
         "relation": "supports"
       }
     ],
@@ -1531,6 +1700,10 @@
       {
         "neighbor": "d78",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d87",
+        "relation": "supports"
       }
     ],
     "d25": [
@@ -1564,6 +1737,10 @@
       },
       {
         "neighbor": "d79",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d88",
         "relation": "supports"
       }
     ],
@@ -1599,6 +1776,10 @@
       {
         "neighbor": "d80",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d89",
+        "relation": "supports"
       }
     ],
     "d27": [
@@ -1632,6 +1813,10 @@
       },
       {
         "neighbor": "d81",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d90",
         "relation": "supports"
       }
     ],
@@ -1667,6 +1852,10 @@
       {
         "neighbor": "d82",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d91",
+        "relation": "supports"
       }
     ],
     "d29": [
@@ -1700,6 +1889,10 @@
       },
       {
         "neighbor": "d74",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d83",
         "relation": "supports"
       }
     ],
@@ -1735,6 +1928,10 @@
       {
         "neighbor": "d75",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d84",
+        "relation": "supports"
       }
     ],
     "d31": [
@@ -1768,6 +1965,10 @@
       },
       {
         "neighbor": "d76",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d85",
         "relation": "supports"
       }
     ],
@@ -1803,6 +2004,10 @@
       {
         "neighbor": "d77",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d86",
+        "relation": "supports"
       }
     ],
     "d33": [
@@ -1836,6 +2041,10 @@
       },
       {
         "neighbor": "d78",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d87",
         "relation": "supports"
       }
     ],
@@ -1871,6 +2080,10 @@
       {
         "neighbor": "d79",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d88",
+        "relation": "supports"
       }
     ],
     "d35": [
@@ -1904,6 +2117,10 @@
       },
       {
         "neighbor": "d80",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d89",
         "relation": "supports"
       }
     ],
@@ -1939,6 +2156,10 @@
       {
         "neighbor": "d81",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d90",
+        "relation": "supports"
       }
     ],
     "d37": [
@@ -1972,6 +2193,10 @@
       },
       {
         "neighbor": "d82",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d91",
         "relation": "supports"
       }
     ],
@@ -2007,6 +2232,10 @@
       {
         "neighbor": "d74",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d83",
+        "relation": "supports"
       }
     ],
     "d39": [
@@ -2040,6 +2269,10 @@
       },
       {
         "neighbor": "d75",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d84",
         "relation": "supports"
       }
     ],
@@ -2075,6 +2308,10 @@
       {
         "neighbor": "d76",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d85",
+        "relation": "supports"
       }
     ],
     "d41": [
@@ -2108,6 +2345,10 @@
       },
       {
         "neighbor": "d77",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d86",
         "relation": "supports"
       }
     ],
@@ -2143,6 +2384,10 @@
       {
         "neighbor": "d78",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d87",
+        "relation": "supports"
       }
     ],
     "d43": [
@@ -2176,6 +2421,10 @@
       },
       {
         "neighbor": "d79",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d88",
         "relation": "supports"
       }
     ],
@@ -2211,6 +2460,10 @@
       {
         "neighbor": "d80",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d89",
+        "relation": "supports"
       }
     ],
     "d45": [
@@ -2244,6 +2497,10 @@
       },
       {
         "neighbor": "d81",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d90",
         "relation": "supports"
       }
     ],
@@ -2279,6 +2536,10 @@
       {
         "neighbor": "d82",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d91",
+        "relation": "supports"
       }
     ],
     "d47": [
@@ -2312,6 +2573,10 @@
       },
       {
         "neighbor": "d74",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d83",
         "relation": "supports"
       }
     ],
@@ -2347,6 +2612,10 @@
       {
         "neighbor": "d75",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d84",
+        "relation": "supports"
       }
     ],
     "d49": [
@@ -2380,6 +2649,10 @@
       },
       {
         "neighbor": "d76",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d85",
         "relation": "supports"
       }
     ],
@@ -2415,6 +2688,10 @@
       {
         "neighbor": "d77",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d86",
+        "relation": "supports"
       }
     ],
     "d51": [
@@ -2448,6 +2725,10 @@
       },
       {
         "neighbor": "d78",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d87",
         "relation": "supports"
       }
     ],
@@ -2483,6 +2764,10 @@
       {
         "neighbor": "d79",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d88",
+        "relation": "supports"
       }
     ],
     "d53": [
@@ -2516,6 +2801,10 @@
       },
       {
         "neighbor": "d80",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d89",
         "relation": "supports"
       }
     ],
@@ -2551,6 +2840,10 @@
       {
         "neighbor": "d81",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d90",
+        "relation": "supports"
       }
     ],
     "d55": [
@@ -2584,6 +2877,10 @@
       },
       {
         "neighbor": "d82",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d91",
         "relation": "supports"
       }
     ],
@@ -2619,6 +2916,10 @@
       {
         "neighbor": "d74",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d83",
+        "relation": "supports"
       }
     ],
     "d57": [
@@ -2652,6 +2953,10 @@
       },
       {
         "neighbor": "d75",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d84",
         "relation": "supports"
       }
     ],
@@ -2687,6 +2992,10 @@
       {
         "neighbor": "d76",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d85",
+        "relation": "supports"
       }
     ],
     "d59": [
@@ -2720,6 +3029,10 @@
       },
       {
         "neighbor": "d77",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d86",
         "relation": "supports"
       }
     ],
@@ -2755,6 +3068,10 @@
       {
         "neighbor": "d78",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d87",
+        "relation": "supports"
       }
     ],
     "d61": [
@@ -2788,6 +3105,10 @@
       },
       {
         "neighbor": "d79",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d88",
         "relation": "supports"
       }
     ],
@@ -2823,6 +3144,10 @@
       {
         "neighbor": "d80",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d89",
+        "relation": "supports"
       }
     ],
     "d63": [
@@ -2856,6 +3181,10 @@
       },
       {
         "neighbor": "d81",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d90",
         "relation": "supports"
       }
     ],
@@ -2891,6 +3220,10 @@
       {
         "neighbor": "d82",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d91",
+        "relation": "supports"
       }
     ],
     "d65": [
@@ -2924,6 +3257,10 @@
       },
       {
         "neighbor": "d74",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d83",
         "relation": "supports"
       }
     ],
@@ -2959,6 +3296,10 @@
       {
         "neighbor": "d75",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d84",
+        "relation": "supports"
       }
     ],
     "d67": [
@@ -2992,6 +3333,10 @@
       },
       {
         "neighbor": "d76",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d85",
         "relation": "supports"
       }
     ],
@@ -3027,6 +3372,10 @@
       {
         "neighbor": "d77",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d86",
+        "relation": "supports"
       }
     ],
     "d69": [
@@ -3060,6 +3409,10 @@
       },
       {
         "neighbor": "d78",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d87",
         "relation": "supports"
       }
     ],
@@ -3095,6 +3448,10 @@
       {
         "neighbor": "d79",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d88",
+        "relation": "supports"
       }
     ],
     "d71": [
@@ -3128,6 +3485,10 @@
       },
       {
         "neighbor": "d80",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d89",
         "relation": "supports"
       }
     ],
@@ -3163,6 +3524,10 @@
       {
         "neighbor": "d81",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d90",
+        "relation": "supports"
       }
     ],
     "d73": [
@@ -3196,6 +3561,10 @@
       },
       {
         "neighbor": "d82",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d91",
         "relation": "supports"
       }
     ],
@@ -3231,6 +3600,10 @@
       {
         "neighbor": "d65",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d83",
+        "relation": "supports"
       }
     ],
     "d75": [
@@ -3264,6 +3637,10 @@
       },
       {
         "neighbor": "d66",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d84",
         "relation": "supports"
       }
     ],
@@ -3299,6 +3676,10 @@
       {
         "neighbor": "d67",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d85",
+        "relation": "supports"
       }
     ],
     "d77": [
@@ -3332,6 +3713,10 @@
       },
       {
         "neighbor": "d68",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d86",
         "relation": "supports"
       }
     ],
@@ -3367,6 +3752,10 @@
       {
         "neighbor": "d69",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d87",
+        "relation": "supports"
       }
     ],
     "d79": [
@@ -3400,6 +3789,10 @@
       },
       {
         "neighbor": "d70",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d88",
         "relation": "supports"
       }
     ],
@@ -3435,6 +3828,10 @@
       {
         "neighbor": "d71",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d89",
+        "relation": "supports"
       }
     ],
     "d81": [
@@ -3468,6 +3865,10 @@
       },
       {
         "neighbor": "d72",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d90",
         "relation": "supports"
       }
     ],
@@ -3503,8 +3904,354 @@
       {
         "neighbor": "d73",
         "relation": "supports"
+      },
+      {
+        "neighbor": "d91",
+        "relation": "supports"
+      }
+    ],
+    "d83": [
+      {
+        "neighbor": "d1",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d11",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d20",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d29",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d38",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d47",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d56",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d65",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d74",
+        "relation": "supports"
+      }
+    ],
+    "d84": [
+      {
+        "neighbor": "d0",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d12",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d21",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d30",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d39",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d48",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d57",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d66",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d75",
+        "relation": "supports"
+      }
+    ],
+    "d85": [
+      {
+        "neighbor": "d2",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d13",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d22",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d31",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d40",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d49",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d58",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d67",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d76",
+        "relation": "supports"
+      }
+    ],
+    "d86": [
+      {
+        "neighbor": "d6",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d14",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d23",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d32",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d41",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d50",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d59",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d68",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d77",
+        "relation": "supports"
+      }
+    ],
+    "d87": [
+      {
+        "neighbor": "d3",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d15",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d24",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d33",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d42",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d51",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d60",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d69",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d78",
+        "relation": "supports"
+      }
+    ],
+    "d88": [
+      {
+        "neighbor": "d10",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d16",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d25",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d34",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d43",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d52",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d61",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d70",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d79",
+        "relation": "supports"
+      }
+    ],
+    "d89": [
+      {
+        "neighbor": "d5",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d17",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d26",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d35",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d44",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d53",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d62",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d71",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d80",
+        "relation": "supports"
+      }
+    ],
+    "d90": [
+      {
+        "neighbor": "d9",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d18",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d27",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d36",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d45",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d54",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d63",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d72",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d81",
+        "relation": "supports"
+      }
+    ],
+    "d91": [
+      {
+        "neighbor": "d8",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d19",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d28",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d37",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d46",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d55",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d64",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d73",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d82",
+        "relation": "supports"
       }
     ]
   },
-  "next_id": 83
+  "next_id": 92
 }
