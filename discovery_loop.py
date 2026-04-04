@@ -1156,8 +1156,8 @@ def run_cycle(cycle, growth, tracker, engines=None, auto_paper=False, graph=None
 REPORT_FILE = os.path.join(RESULTS_DIR, 'report.txt')
 
 
-def print_dashboard(cycle, growth, tracker, graph, engines_used):
-    """Print periodic dashboard report (anima-style). Also saves to report.txt."""
+def _render_dashboard(cycle, growth, tracker, graph, engines_used):
+    """Build dashboard lines list. Used by both print and file save."""
     now = datetime.now().strftime('%Y-%m-%d %H:%M')
     stage = growth.stage['name']
     total = tracker.total_discoveries
@@ -1168,100 +1168,146 @@ def print_dashboard(cycle, growth, tracker, graph, engines_used):
     hubs = graph.get_hubs(min_edges=3) if graph else []
     status = tracker.status
 
-    # Grade counts
     all_d = growth.all_discoveries
     n_exact = sum(1 for d in all_d if d.grade == '🟩')
     n_struct = sum(1 for d in all_d if d.grade == '🟧')
     n_weak = sum(1 for d in all_d if d.grade == '⚪')
 
-    # Stage progress bar
-    stages = [s['name'] for s in GrowthEngine.STAGES]
+    # Stage progress
     stage_bars = []
-    for i, sn in enumerate(stages):
+    for i, s in enumerate(GrowthEngine.STAGES):
+        sn = s['name'][:4]
         if i < growth.stage_idx:
-            stage_bars.append(f'{sn[:4]} ████ ✅')
+            stage_bars.append(f'{sn} ████ ✅')
         elif i == growth.stage_idx:
-            stage_bars.append(f'{sn[:4]} ██░░ 🔄')
+            stage_bars.append(f'{sn} ██░░ 🔄')
         else:
-            stage_bars.append(f'{sn[:4]} ░░░░   ')
+            stage_bars.append(f'{sn} ░░░░   ')
 
     # Discovery trend (last 6 cycles)
     hist = tracker.history[-6:]
     max_d = max((h[1] for h in hist), default=1) or 1
-    trend_lines = []
-    for h in hist:
-        bar_len = int(h[1] / max_d * 20)
-        trend_lines.append(f'    C{h[0]:>2} |{"█" * bar_len}{"░" * (20 - bar_len)}| {h[1]:>3} ({h[2]} novel)')
 
     # Engine stats
     eng_counts = defaultdict(int)
     for d in all_d:
         eng_counts[d.engine] += 1
 
+    # Top discoveries (novel, highest grade)
+    top_discs = sorted(
+        [d for d in all_d if d.is_novel and d.grade in ('🟩', '🟧')],
+        key=lambda d: (d.grade == '🟩', -d.error), reverse=True
+    )[:5]
+
     # Bridge stats
     bridge = _get_bridge()
-    bridge_info = ""
+    bridge_stage = bridge_pts = bridge_active = ""
     if bridge:
         try:
             bs = bridge.status()
-            bridge_info = f'{bs["stage"]} | {bs["growth_points"]:,} pts | {bs["active"]} active'
+            bridge_stage = bs.get("stage", "?")
+            bridge_pts = f'{bs.get("growth_points", 0):,}'
+            bridge_active = str(bs.get("active", 0))
         except Exception:
-            bridge_info = "connected"
+            pass
 
-    w = 65
-    print(f'\n  ┌{"─" * w}┐')
-    print(f'  │  🔬 TECS-L Discovery Loop — {now:<{w - 34}}│')
-    print(f'  ├{"─" * w}┤')
-    print(f'  │{"":>{w}}│')
-    print(f'  │  ■ 발견 루프{"":>{w - 15}}│')
-    print(f'  │  Cycle: {cycle} | Stage: {stage} | Status: {status:<{w - 38}}│')
-    print(f'  │  Discoveries: {total} (🟩{n_exact} 🟧{n_struct} ⚪{n_weak}) | Novel: {novel:<{w - 58 - len(str(total)) - len(str(n_exact)) - len(str(n_struct)) - len(str(n_weak)) - len(str(novel))}}│')
-    print(f'  │  Injected: {injected} | Graph: {n_nodes}n/{n_edges}e | Hubs: {len(hubs):<{w - 50}}│')
-    # Stage progress
-    print(f'  │  {"─" * (w - 2)}│')
-    print(f'  │  📈 발달 단계:{"":>{w - 17}}│')
-    row1 = '  '.join(stage_bars[:3])
-    row2 = '  '.join(stage_bars[3:])
-    print(f'  │  {row1:<{w - 2}}│')
-    print(f'  │  {row2:<{w - 2}}│')
-    # Discovery trend
-    print(f'  │{"":>{w}}│')
-    print(f'  │  📊 발견 추이:{"":>{w - 17}}│')
-    for tl in trend_lines:
-        print(f'  │  {tl:<{w - 2}}│')
-    if not trend_lines:
-        print(f'  │  {"(no data yet)":<{w - 2}}│')
-    # Engine breakdown
-    print(f'  │{"":>{w}}│')
-    print(f'  │  ⚙️  엔진별:{"":>{w - 14}}│')
+    # Git status
+    git_hash = git_msg = git_dirty = ""
+    try:
+        r = subprocess.run(['git', 'log', '--oneline', '-1'], capture_output=True,
+                           text=True, cwd=SCRIPT_DIR, timeout=5)
+        if r.returncode == 0:
+            parts = r.stdout.strip().split(' ', 1)
+            git_hash = parts[0]
+            git_msg = parts[1] if len(parts) > 1 else ""
+        r2 = subprocess.run(['git', 'status', '--porcelain'], capture_output=True,
+                            text=True, cwd=SCRIPT_DIR, timeout=5)
+        if r2.returncode == 0:
+            n_dirty = len([l for l in r2.stdout.strip().split('\n') if l.strip()])
+            git_dirty = f'{n_dirty} files' if n_dirty else 'clean'
+    except Exception:
+        pass
+
+    w = 67
+    sep = '─' * w
+    L = []
+
+    def line(content=''):
+        if content:
+            # Pad to width
+            vis_len = len(content)
+            padding = w - 2 - vis_len
+            if padding < 0:
+                padding = 0
+            L.append(f'  │  {content}{" " * padding}│')
+        else:
+            L.append(f'  │{" " * w}│')
+
+    def sep_line():
+        L.append(f'  │  {"─" * (w - 2)}│')
+
+    L.append(f'  ┌{sep}┐')
+    L.append(f'  │  🔬 TECS-L Discovery Loop — {now:<{w - 34}}│')
+    L.append(f'  ├{sep}┤')
+    line()
+    line(f'■ 발견 루프 — {stage} {"🏔️" if stage == "cosmos" else "🌱" if stage == "seed" else "🌿"}')
+    line(f'Cycle: {cycle} | Stage: {stage} | Status: {status}')
+    line(f'Discoveries: {total} (🟩{n_exact} 🟧{n_struct} ⚪{n_weak}) | Novel: {novel}')
+    line(f'Injected: {injected} | Graph: {n_nodes}n/{n_edges}e | Hubs: {len(hubs)}')
+    sep_line()
+    line('📈 발달 단계:')
+    line('  '.join(stage_bars[:3]))
+    line('  '.join(stage_bars[3:]))
+    line()
+
+    # Engine breakdown with bars
+    line('■ 엔진별 발견')
+    sep_line()
+    max_eng = max(eng_counts.values(), default=1) or 1
     for eng, cnt in sorted(eng_counts.items(), key=lambda x: -x[1]):
-        print(f'  │    {eng:<15} {cnt:>4} discoveries{"":>{w - 28 - len(eng)}}│')
+        bar_len = int(cnt / max_eng * 10)
+        bar = '━' * bar_len + '░' * (10 - bar_len)
+        line(f'  {eng:<16} {bar} {cnt:>5,}')
+    line()
+
+    # Top discoveries
+    if top_discs:
+        line('■ 주요 발견 (Top 5)')
+        sep_line()
+        for d in top_discs:
+            line(f'  {d.grade} {d.formula[:35]:<35} → {d.target}')
+        line()
+
+    # Discovery trend chart
+    line('📊 발견 추이:')
+    for h in hist:
+        bar_len = int(h[1] / max_d * 20)
+        line(f'  C{h[0]:>2} |{"█" * bar_len}{"░" * (20 - bar_len)}| {h[1]:>3} ({h[2]} novel)')
+    if not hist:
+        line('  (no data yet)')
+    line()
+
     # Bridge
-    if bridge_info:
-        print(f'  │{"":>{w}}│')
-        print(f'  │  🌉 NEXUS-BRIDGE: {bridge_info:<{w - 20}}│')
-    print(f'  │{"":>{w}}│')
-    print(f'  └{"─" * w}┘')
+    if bridge_stage:
+        line(f'■ NEXUS-BRIDGE 🌉 {bridge_stage}')
+        line(f'Growth: {bridge_pts} pts | {bridge_active} active')
+    line()
 
-    # Auto-save to file for cross-session access
-    import io, contextlib
-    buf = io.StringIO()
-    # Re-render into buffer (reuse locals already computed)
-    lines = []
-    lines.append(f'  ┌{"─" * w}┐')
-    lines.append(f'  │  🔬 TECS-L Discovery Loop — {now:<{w - 34}}│')
-    lines.append(f'  ├{"─" * w}┤')
-    lines.append(f'  │  Cycle: {cycle} | Stage: {stage} | Status: {status}')
-    lines.append(f'  │  Discoveries: {total} (🟩{n_exact} 🟧{n_struct} ⚪{n_weak}) | Novel: {novel}')
-    lines.append(f'  │  Injected: {injected} | Graph: {n_nodes}n/{n_edges}e | Hubs: {len(hubs)}')
-    lines.append(f'  │  Stages: {" → ".join(stage_bars)}')
-    for tl in trend_lines:
-        lines.append(f'  │  {tl}')
-    for eng, cnt in sorted(eng_counts.items(), key=lambda x: -x[1]):
-        lines.append(f'  │  {eng}: {cnt}')
-    if bridge_info:
-        lines.append(f'  │  🌉 NEXUS-BRIDGE: {bridge_info}')
-    lines.append(f'  └{"─" * w}┘')
+    # Git
+    if git_hash:
+        line(f'■ Git: {git_hash} {git_msg[:45]}')
+        line(f'■ Dirty: {git_dirty}')
+        line()
+
+    L.append(f'  └{sep}┘')
+    return L
+
+
+def print_dashboard(cycle, growth, tracker, graph, engines_used):
+    """Print periodic dashboard report. Also saves to report.txt."""
+    lines = _render_dashboard(cycle, growth, tracker, graph, engines_used)
+    print('\n' + '\n'.join(lines))
+
     try:
         with open(REPORT_FILE, 'w') as f:
             f.write('\n'.join(lines) + '\n')
