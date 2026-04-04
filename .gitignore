@@ -8,3 +8,5 @@ eeg/data/
 .claude/
 .playwright-mcp/
 tecsrs/target/
+.growth/
+.growth/
