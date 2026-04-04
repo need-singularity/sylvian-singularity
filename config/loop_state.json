@@ -2,18 +2,283 @@
   "_meta": {
     "description": "TECS-L discovery loop state — cycle tracking + discovery buffer",
     "schema_version": "1.0.0",
-    "updated": "2026-04-04T18:45:53.442900"
+    "updated": "2026-04-04T19:08:03.762215"
   },
   "loop": {
     "cycle": 10,
-    "mode": "dfs",
+    "mode": "pair",
     "consecutive_failures": 0,
     "max_failures": 3,
     "total_discoveries": 95,
     "last_run": "2026-04-04T18:45:49.627274",
     "status": "idle"
   },
-  "discovery_buffer": [],
+  "discovery_buffer": [
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "A",
+      "domain": "A",
+      "content": "[CROSS:N->A] value=0.5773481129689246",
+      "value": 0.5773481129689246,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "A",
+      "domain": "A",
+      "content": "[CROSS:N->A] value=1.0",
+      "value": 1.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "A",
+      "domain": "A",
+      "content": "[CROSS:N->A] value=0.33331601892963336",
+      "value": 0.33331601892963336,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "A",
+      "domain": "A",
+      "content": "[CROSS:N->A] value=3.0",
+      "value": 3.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "A",
+      "domain": "A",
+      "content": "[CROSS:N->A] value=2.0",
+      "value": 2.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "A",
+      "domain": "A",
+      "content": "[CROSS:N->A] value=0.6931836495855817",
+      "value": 0.6931836495855817,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "G",
+      "domain": "G",
+      "content": "[CROSS:N->G] value=0.5773481129689246",
+      "value": 0.5773481129689246,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "G",
+      "domain": "G",
+      "content": "[CROSS:N->G] value=1.0",
+      "value": 1.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "G",
+      "domain": "G",
+      "content": "[CROSS:N->G] value=0.33331601892963336",
+      "value": 0.33331601892963336,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "G",
+      "domain": "G",
+      "content": "[CROSS:N->G] value=3.0",
+      "value": 3.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "G",
+      "domain": "G",
+      "content": "[CROSS:N->G] value=2.0",
+      "value": 2.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "G",
+      "domain": "G",
+      "content": "[CROSS:N->G] value=0.6931836495855817",
+      "value": 0.6931836495855817,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "T",
+      "domain": "T",
+      "content": "[CROSS:N->T] value=0.5773481129689246",
+      "value": 0.5773481129689246,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "T",
+      "domain": "T",
+      "content": "[CROSS:N->T] value=1.0",
+      "value": 1.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "T",
+      "domain": "T",
+      "content": "[CROSS:N->T] value=0.33331601892963336",
+      "value": 0.33331601892963336,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "T",
+      "domain": "T",
+      "content": "[CROSS:N->T] value=3.0",
+      "value": 3.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "T",
+      "domain": "T",
+      "content": "[CROSS:N->T] value=2.0",
+      "value": 2.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "T",
+      "domain": "T",
+      "content": "[CROSS:N->T] value=0.6931836495855817",
+      "value": 0.6931836495855817,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "C",
+      "domain": "C",
+      "content": "[CROSS:N->C] value=0.5773481129689246",
+      "value": 0.5773481129689246,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "C",
+      "domain": "C",
+      "content": "[CROSS:N->C] value=1.0",
+      "value": 1.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "C",
+      "domain": "C",
+      "content": "[CROSS:N->C] value=0.33331601892963336",
+      "value": 0.33331601892963336,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "C",
+      "domain": "C",
+      "content": "[CROSS:N->C] value=3.0",
+      "value": 3.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "C",
+      "domain": "C",
+      "content": "[CROSS:N->C] value=2.0",
+      "value": 2.0,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    },
+    {
+      "type": "cross_pollinate",
+      "source_domain": "N",
+      "target_domain": "C",
+      "domain": "C",
+      "content": "[CROSS:N->C] value=0.6931836495855817",
+      "value": 0.6931836495855817,
+      "timestamp": "2026-04-04T19:07:16.670039",
+      "mode": "pollinate",
+      "validated": false
+    }
+  ],
   "publish_history": [
     {
       "paper_id": "TECS-AUTO-20260404-181446",
@@ -112,5 +377,11 @@
     "pair",
     "backtrack"
   ],
-  "mode_stagnation_trigger": 3
+  "mode_stagnation_trigger": 3,
+  "wall_breaks": {
+    "depth": 3,
+    "threshold": 0.0001,
+    "breaks_count": 1,
+    "last_break": "2026-04-04T19:08:03.762215"
+  }
 }

@@ -997,7 +997,7 @@ def bridge_sync():
 # STATE PERSISTENCE
 # ═════════════════════════════════════════════════════════════════
 
-def save_state(cycle, growth, tracker, graph=None):
+def save_state(cycle, growth, tracker, graph=None, breaker=None):
     """Save loop state for resumption."""
     state = {
         'cycle': cycle,
@@ -1007,6 +1007,8 @@ def save_state(cycle, growth, tracker, graph=None):
         'total_discoveries': len(growth.all_discoveries),
         'timestamp': datetime.now().isoformat(),
     }
+    if breaker is not None:
+        state['wall_breaker'] = breaker.to_dict()
     with open(STATE_FILE, 'w') as f:
         json.dump(state, f, indent=2)
     # Persist discovery graph alongside state
@@ -1333,6 +1335,306 @@ def forge_new_constants(growth, tracker):
         return False
 
 
+# ═════════════════════════════════════════════════════════════════
+# WALL BREAKERS — 6 mechanisms to prevent permanent saturation
+# ═════════════════════════════════════════════════════════════════
+
+class WallBreaker:
+    """Detects walls and breaks through them. Prevents loop from dying."""
+
+    WALLS = [
+        'domain_forge',      # #1: auto-create new domains
+        'cross_pollinate',   # #2: cross-domain injection
+        'domain_split',      # #3: split overcrowded domains
+        'wall_depth_up',     # #4: increase depth on stagnation
+        'keyword_absorb',    # #5: extract keywords from discoveries
+        'engine_chain',      # #6: chain engine outputs
+    ]
+
+    def __init__(self):
+        self.walls_broken = defaultdict(int)  # wall_name -> times broken
+        self.stagnant_cycles = 0
+        self.forged_domains = {}  # name -> {'constants': [...], 'source': ...}
+        self.absorbed_keywords = set()
+        self.chain_buffer = []  # discoveries from previous engine in chain
+
+    def detect_walls(self, cycle, growth, tracker):
+        """Detect which walls are blocking progress. Returns list of wall names."""
+        walls = []
+        hist = tracker.history
+
+        # Wall 1: Fixed domains — all discoveries from same domains
+        if len(hist) >= 3:
+            recent_domains = set()
+            for d in growth.all_discoveries[-50:]:
+                recent_domains.update(d.domains)
+            if len(recent_domains) <= 2:
+                walls.append('domain_forge')
+
+        # Wall 2: Single engine — no diversity
+        recent_engines = set()
+        for d in growth.all_discoveries[-30:]:
+            recent_engines.add(d.engine)
+        if len(recent_engines) <= 1 and len(hist) >= 2:
+            walls.append('cross_pollinate')
+            walls.append('engine_chain')
+
+        # Wall 3: Domain overcrowding — one domain has 90%+ discoveries
+        domain_counts = defaultdict(int)
+        for d in growth.all_discoveries:
+            for dom in d.domains:
+                domain_counts[dom] += 1
+        total_d = max(len(growth.all_discoveries), 1)
+        for dom, cnt in domain_counts.items():
+            if cnt / total_d > 0.8:
+                walls.append('domain_split')
+                break
+
+        # Wall 4: Stagnation — 3+ cycles with 0 novel
+        if len(hist) >= 3:
+            last3_novel = [h[2] for h in hist[-3:]]
+            if all(n == 0 for n in last3_novel):
+                self.stagnant_cycles += 1
+                walls.append('wall_depth_up')
+            else:
+                self.stagnant_cycles = 0
+
+        # Wall 5: Fixed keywords — no new patterns discovered
+        if len(hist) >= 4:
+            recent_formulas = {d.formula for d in growth.all_discoveries[-20:]}
+            old_formulas = {d.formula for d in growth.all_discoveries[:-20]}
+            new_patterns = recent_formulas - old_formulas
+            if len(new_patterns) < 2:
+                walls.append('keyword_absorb')
+
+        return walls
+
+    def break_wall(self, wall_name, growth, tracker):
+        """Execute wall-breaking strategy. Returns True if something changed."""
+        method = getattr(self, f'_break_{wall_name}', None)
+        if method is None:
+            return False
+        result = method(growth, tracker)
+        if result:
+            self.walls_broken[wall_name] += 1
+            print(f"  🧱→💥 Wall broken: {wall_name} "
+                  f"(#{self.walls_broken[wall_name]})")
+        return result
+
+    def _break_domain_forge(self, growth, tracker):
+        """#1: Create new domain from discovery clusters that don't fit existing ones."""
+        # Cluster discoveries by value proximity
+        orphans = [d for d in growth.all_discoveries
+                   if d.is_novel and d.grade in ('🟩', '🟧') and len(d.domains) <= 1]
+        if len(orphans) < 3:
+            return False
+
+        # Group orphans by value range
+        orphans.sort(key=lambda d: d.value)
+        clusters = []
+        current = [orphans[0]]
+        for d in orphans[1:]:
+            if abs(d.value - current[-1].value) < 0.5:
+                current.append(d)
+            else:
+                if len(current) >= 2:
+                    clusters.append(current)
+                current = [d]
+        if len(current) >= 2:
+            clusters.append(current)
+
+        if not clusters:
+            return False
+
+        # Create new domain from largest cluster
+        cluster = max(clusters, key=len)
+        domain_id = f'F{len(self.forged_domains)}'
+        domain_name = f'Forged_{domain_id}'
+        values = {f'{domain_id}_{i}': d.value for i, d in enumerate(cluster)}
+
+        self.forged_domains[domain_name] = {
+            'constants': values,
+            'source': [d.formula for d in cluster[:5]],
+            'center': np.mean([d.value for d in cluster]),
+        }
+
+        # Inject into ISLANDS
+        ISLANDS[domain_id] = values
+        DOMAINS[domain_id] = domain_name
+
+        print(f"  🌐 Domain Forge: created '{domain_name}' with "
+              f"{len(values)} constants (center={self.forged_domains[domain_name]['center']:.4f})")
+        return True
+
+    def _break_cross_pollinate(self, growth, tracker):
+        """#2: Inject domain A discoveries as search targets for domain B."""
+        # Get discoveries grouped by engine
+        by_engine = defaultdict(list)
+        for d in growth.all_discoveries:
+            if d.grade in ('🟩', '🟧') and d.is_novel:
+                by_engine[d.engine].append(d)
+
+        if len(by_engine) < 1:
+            return False
+
+        # Take top discoveries from each engine and cross-inject as targets
+        new_targets = {}
+        for eng, discs in by_engine.items():
+            for d in discs[:SOPFR]:  # top 5 per engine
+                for other_eng in by_engine:
+                    if other_eng != eng:
+                        key = f'xpoll_{eng}→{other_eng}_{d.target}'
+                        if key not in TARGETS:
+                            new_targets[key] = d.value
+
+        if new_targets:
+            TARGETS.update(new_targets)
+            print(f"  🌸 Cross-Pollinate: {len(new_targets)} cross-engine targets")
+            return True
+        return False
+
+    def _break_domain_split(self, growth, tracker):
+        """#3: Split overcrowded domain into sub-domains."""
+        domain_counts = defaultdict(list)
+        for d in growth.all_discoveries:
+            for dom in d.domains:
+                domain_counts[dom].append(d)
+
+        split_done = False
+        for dom, discs in domain_counts.items():
+            if len(discs) < 50:
+                continue
+            # Split by value range into 3 sub-domains
+            discs.sort(key=lambda d: d.value)
+            n = len(discs)
+            thirds = [discs[:n//3], discs[n//3:2*n//3], discs[2*n//3:]]
+            suffixes = ['_lo', '_mid', '_hi']
+
+            for chunk, suffix in zip(thirds, suffixes):
+                sub_id = f'{dom}{suffix}'
+                if sub_id not in ISLANDS:
+                    values = {f'{sub_id}_{i}': d.value for i, d in enumerate(chunk[:10])}
+                    ISLANDS[sub_id] = values
+                    DOMAINS[sub_id] = f'{DOMAINS.get(dom, dom)}{suffix}'
+                    split_done = True
+
+            if split_done:
+                print(f"  🔀 Domain Split: '{dom}' → "
+                      f"{dom}_lo, {dom}_mid, {dom}_hi ({len(discs)} discoveries)")
+                break
+
+        return split_done
+
+    def _break_wall_depth_up(self, growth, tracker):
+        """#4: Increase search depth and tighten threshold on stagnation."""
+        current_stage = growth.stage
+        old_depth = current_stage['depth']
+        old_thresh = current_stage['threshold']
+
+        # Increase depth by 1 (max 4)
+        new_depth = min(old_depth + 1, 4)
+        # Tighten threshold by 10x
+        new_thresh = old_thresh * 0.1
+
+        if new_depth == old_depth and new_thresh >= old_thresh:
+            return False
+
+        # Apply to current stage
+        current_stage['depth'] = new_depth
+        current_stage['threshold'] = new_thresh
+
+        print(f"  🔽 Depth Up: depth {old_depth}→{new_depth}, "
+              f"threshold {old_thresh:.1e}→{new_thresh:.1e}")
+        return True
+
+    def _break_keyword_absorb(self, growth, tracker):
+        """#5: Extract keywords from discovery formulas to expand classifier."""
+        new_keywords = set()
+        for d in growth.all_discoveries:
+            if d.grade not in ('🟩', '🟧'):
+                continue
+            # Extract function names and constant names from formulas
+            import re
+            tokens = re.findall(r'[a-zA-Z_]\w+', d.formula)
+            for tok in tokens:
+                if tok not in self.absorbed_keywords and len(tok) > 2:
+                    new_keywords.add(tok)
+
+        if not new_keywords:
+            return False
+
+        self.absorbed_keywords.update(new_keywords)
+
+        # Inject absorbed keywords as new search hints
+        for kw in list(new_keywords)[:SIGMA]:  # cap at 12
+            for name, val in KNOWN_VALUES.items():
+                if kw.lower() in name.lower():
+                    key = f'absorb_{kw}_{name}'
+                    if key not in TARGETS:
+                        TARGETS[key] = val
+
+        print(f"  🧲 Keyword Absorb: {len(new_keywords)} new keywords "
+              f"(total: {len(self.absorbed_keywords)})")
+        return True
+
+    def _break_engine_chain(self, growth, tracker):
+        """#6: Chain engines — output of one becomes input of next."""
+        # Collect recent high-grade discoveries
+        recent = [d for d in growth.all_discoveries[-20:]
+                  if d.grade in ('🟩', '🟧')]
+        if not recent:
+            return False
+
+        # Create chain targets: each discovery value becomes target for next engine
+        chain_targets = {}
+        for d in recent:
+            # Create compound targets by combining with n=6 constants
+            for name, c in [('sigma', SIGMA), ('tau', TAU), ('phi', PHI)]:
+                if d.value != 0:
+                    chain_targets[f'chain_{d.target}*{name}'] = d.value * c
+                    chain_targets[f'chain_{d.target}/{name}'] = d.value / c
+                    chain_targets[f'chain_{name}/{d.target}'] = c / d.value
+
+        if chain_targets:
+            # Only add novel chain targets
+            novel_chains = {k: v for k, v in chain_targets.items()
+                           if k not in TARGETS and 1e-6 < abs(v) < 1e8}
+            TARGETS.update(dict(list(novel_chains.items())[:JORDAN_J2]))
+            self.chain_buffer = recent
+            print(f"  🔗 Engine Chain: {len(novel_chains)} chained targets from "
+                  f"{len(recent)} discoveries")
+            return True
+        return False
+
+    def break_all_walls(self, cycle, growth, tracker):
+        """Detect and break all walls. Returns number of walls broken."""
+        walls = self.detect_walls(cycle, growth, tracker)
+        if not walls:
+            return 0
+
+        print(f"\n  🧱 Walls detected at cycle {cycle}: {', '.join(walls)}")
+        broken = 0
+        for wall in walls:
+            if self.break_wall(wall, growth, tracker):
+                broken += 1
+
+        return broken
+
+    def to_dict(self):
+        return {
+            'walls_broken': dict(self.walls_broken),
+            'stagnant_cycles': self.stagnant_cycles,
+            'forged_domains': self.forged_domains,
+            'absorbed_keywords': list(self.absorbed_keywords),
+        }
+
+    def from_dict(self, d):
+        self.walls_broken = defaultdict(int, d.get('walls_broken', {}))
+        self.stagnant_cycles = d.get('stagnant_cycles', 0)
+        self.forged_domains = d.get('forged_domains', {})
+        self.absorbed_keywords = set(d.get('absorbed_keywords', []))
+
+
 def cmd_report():
     """Print current loop status from saved state (no loop needed)."""
     state = load_state()
@@ -1397,6 +1699,7 @@ def main():
     growth = GrowthEngine()
     tracker = ConvergenceTracker()
     graph = DiscoveryGraph()
+    breaker = WallBreaker()
 
     # Resume if requested
     start_cycle = 1
@@ -1407,6 +1710,8 @@ def main():
             growth.stage_idx = state.get('stage_idx', 0)
             growth.injected_constants = state.get('injected_constants', {})
             tracker.history = state.get('convergence_history', [])
+            if 'wall_breaker' in state:
+                breaker.from_dict(state['wall_breaker'])
             print(f"  Resumed from cycle {start_cycle - 1}, "
                   f"stage={growth.stage['name']}, "
                   f"{len(growth.injected_constants)} injected constants")
@@ -1421,7 +1726,9 @@ def main():
 
     max_cycles = args.cycles if args.cycles > 0 else 10000
     forge_attempts = 0
-    max_forge = TAU  # max τ=4 forge attempts before true halt
+    max_forge = N * TAU  # n=6 × τ=4 = 24 forge attempts before true halt
+    wall_break_rounds = 0
+    max_wall_rounds = SIGMA  # σ=12 wall-breaking rounds
 
     for cycle in range(start_cycle, start_cycle + max_cycles):
         discoveries = run_cycle(cycle, growth, tracker,
@@ -1432,17 +1739,33 @@ def main():
         status = tracker.status
         if status == 'saturated':
             print(f"\n  ⚠️  SATURATED at cycle {cycle}")
+
+            # Step 1: Try standard forge
             if forge_attempts < max_forge:
                 forged = forge_new_constants(growth, tracker)
                 if forged:
                     forge_attempts += 1
                     print(f"  → Forge attempt {forge_attempts}/{max_forge}, continuing...")
                     continue
+
+            # Step 2: Wall breakers — the singularity mechanism
+            if wall_break_rounds < max_wall_rounds:
+                broken = breaker.break_all_walls(cycle, growth, tracker)
+                if broken > 0:
+                    wall_break_rounds += 1
+                    # Reset tracker so it doesn't immediately re-saturate
+                    tracker.history.append((cycle, 0, 0))
+                    print(f"  → Wall break round {wall_break_rounds}/{max_wall_rounds}, "
+                          f"{broken} walls broken, continuing...")
+                    continue
+
             print(f"\n  🏁 LOOP COMPLETE — truly saturated after "
-                  f"{forge_attempts} forge attempts")
+                  f"{forge_attempts} forges + {wall_break_rounds} wall breaks")
             break
         elif status == 'converging':
             print(f"  📉 Convergence detected — discovery rate declining")
+            # Proactive wall detection even before full saturation
+            breaker.break_all_walls(cycle, growth, tracker)
 
     # Final summary
     print(f"\n{'='*70}")
@@ -1454,6 +1777,9 @@ def main():
     print(f"  Final stage: {growth.stage['name']}")
     print(f"  Injected constants: {len(growth.injected_constants)}")
     print(f"  Forge attempts: {forge_attempts}")
+    print(f"  Wall breaks: {wall_break_rounds} ({dict(breaker.walls_broken)})")
+    print(f"  Forged domains: {len(breaker.forged_domains)}")
+    print(f"  Absorbed keywords: {len(breaker.absorbed_keywords)}")
     print(f"  Status: {tracker.status}")
     n_edges = sum(len(e) for e in graph.adjacency.values()) // 2
     print(f"  Graph: {len(graph.nodes)} nodes, {n_edges} edges, "

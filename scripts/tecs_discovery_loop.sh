@@ -66,6 +66,25 @@ while [[ "$RUNNING" == true ]] && [[ $CYCLE -lt $MAX_CYCLES ]]; do
     CYCLE=$((CYCLE + 1))
     log "── Cycle $CYCLE/$MAX_CYCLES ──"
 
+    # Step 0: WALL-BREAK (auto-evolve on plateau)
+    log "Step 0: Wall detection + domain evolution..."
+
+    # 0a: Wall detect + depth adjustment
+    WALL_OUT=$(python3 "$SCRIPTS/tecs_wall.py" 2>&1) || true
+    log "Wall: $WALL_OUT"
+
+    # 0b: Domain forge (create new domains from clusters)
+    FORGE_OUT=$(python3 "$SCRIPTS/tecs_forge.py" 2>&1) || true
+    log "Forge: $FORGE_OUT"
+
+    # 0c: Domain split (split oversized domains)
+    SPLIT_OUT=$(python3 "$SCRIPTS/tecs_split.py" 2>&1) || true
+    log "Split: $SPLIT_OUT"
+
+    # 0d: Keyword absorb (expand classifiers from discoveries)
+    ABSORB_OUT=$(python3 "$SCRIPTS/tecs_absorb.py" 2>&1) || true
+    log "Absorb: $ABSORB_OUT"
+
     # Step 1: MEASURE
     log "Step 1: Measuring domain health..."
     MEASURE_OUT=$(python3 "$SCRIPTS/tecs_measure.py" 2>&1) || {
@@ -122,6 +141,11 @@ with open('$CONFIG/loop_state.json') as f:
         log "RECORD failed: $RECORD_OUT"
     }
     log "Record result: $RECORD_OUT"
+
+    # Step 4b: Cross-pollinate (inject discoveries across domains)
+    log "Step 4b: Cross-pollinating discoveries..."
+    POLLINATE_OUT=$(python3 "$SCRIPTS/tecs_pollinate.py" 2>&1) || true
+    log "Pollinate: $POLLINATE_OUT"
 
     # Step 5: BRIDGE (nexus-bridge sync)
     log "Step 5: Syncing via nexus-bridge..."
