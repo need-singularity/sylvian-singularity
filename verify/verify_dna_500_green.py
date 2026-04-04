@@ -193,7 +193,7 @@ def verify_geometry():
     print(f"\n  H-DNA-478: Euler → trivalent planar tiling average face = 6")
     print(f"  For d=3 vertices: 1/d + 1/<f> = 1/2 → 1/3 + 1/<f> = 1/2")
     avg_f = 1 / (1/2 - 1/3)
-    print(f"  <f> = 1/(1/2 - 1/3) = 1/(1/6) = {avg_f:.1f}: {'✓ GREEN' if avg_f == 6.0 else '✗ FAIL'}")
+    print(f"  <f> = 1/(1/2 - 1/3) = 1/(1/6) = {avg_f:.1f}: {'✓ GREEN' if abs(avg_f - 6.0) < 1e-9 else '✗ FAIL'}")
 
     # H-DNA-300: Honeycomb theorem — perimeter comparison
     print(f"\n  H-DNA-300: Honeycomb optimality (perimeter per unit area)")
