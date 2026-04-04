@@ -156,6 +156,9 @@ with open('$CONFIG/loop_state.json') as f:
         log "BRAKE: $MAX_FAIL consecutive discovery failures. Mode may rotate next cycle."
     fi
 
+    # Report (every cycle)
+    python3 "$SCRIPTS/tecs_report.py" 2>/dev/null | tee -a "$LOG_FILE"
+
     log "── Cycle $CYCLE complete. Sleeping ${INTERVAL}s ──"
     # Interruptible sleep
     sleep "$INTERVAL" &
@@ -163,4 +166,8 @@ with open('$CONFIG/loop_state.json') as f:
 done
 
 log "═══ TECS-L Discovery Loop finished ($CYCLE cycles) ═══"
+
+# Final report
+python3 "$SCRIPTS/tecs_report.py" 2>/dev/null | tee -a "$LOG_FILE"
+
 rm -f "$PID_FILE"
