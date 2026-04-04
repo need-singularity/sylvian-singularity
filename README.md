@@ -5,8 +5,8 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 <!-- AUTO:BADGE:START -->
-[![Hypotheses](https://img.shields.io/badge/Hypotheses-1665+-orange.svg)](docs/hypotheses/)
-[![Tools](https://img.shields.io/badge/Tools-156+-blue.svg)](tools/)
+[![Hypotheses](https://img.shields.io/badge/Hypotheses-2711-orange.svg)](docs/hypotheses/)
+[![Tools](https://img.shields.io/badge/Tools-203-blue.svg)](calc/)
 <!-- AUTO:BADGE:END -->
 
 Topological Engine for Consciousness & Science -- Consciousness Continuity Engine.
@@ -59,10 +59,12 @@ Topological Engine for Consciousness & Science -- Consciousness Continuity Engin
 
 <!-- AUTO:STATS:START -->
 ```
-  n=6 characterizations:  150
+  n=6 characterizations:  206
   Major discoveries:      8
-  Hypotheses:             1665+
-  Tools:                  156+
+  Hypotheses:             2,711
+  Tools:                  203
+  Constant maps:          300+
+  Papers (Zenodo):        49
 ```
 <!-- AUTO:STATS:END -->
 
