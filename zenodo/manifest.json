@@ -1655,6 +1655,442 @@
         "tier": 1,
         "venue": "Epilepsia"
       }
+    ],
+    "n6-architecture": [
+      {
+        "id": "N6-BATTERY",
+        "title": "Perfect Number Electrochemistry: Universal n=6 Encoding in Battery Architecture, Power Grids, and Energy Systems",
+        "file": "docs/paper/n6-battery-energy-paper.md",
+        "existing": [],
+        "keywords": [
+          "battery",
+          "energy",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Perfect Number Electrochemistry: Universal n=6 Encoding in Battery Architecture, Power Grids, and Energy Systems",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-BIOLOGY",
+        "title": "The Perfect Number in Life: Universal $n = 6$ Encoding from Genetic Code to Clinical Medicine",
+        "file": "docs/paper/n6-biology-medical-paper.md",
+        "existing": [],
+        "keywords": [
+          "biology",
+          "medical",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: The Perfect Number in Life: Universal $n = 6$ Encoding from Genetic Code to Clinical Medicine",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-CARBON",
+        "title": "Carbon Z=6: N6 Arithmetic Design of CO2 Capture Architecture",
+        "file": "docs/paper/n6-carbon-capture-paper.md",
+        "existing": [],
+        "keywords": [
+          "carbon-capture",
+          "environment",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Carbon Z=6: N6 Arithmetic Design of CO2 Capture Architecture",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-CHIP-CONS",
+        "title": "ANIMA-6: A Consciousness-Aware Processor Architecture Derived from Perfect Number Arithmetic",
+        "file": "docs/paper/n6-consciousness-chip-paper.md",
+        "existing": [],
+        "keywords": [
+          "consciousness",
+          "chip",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: ANIMA-6: A Consciousness-Aware Processor Architecture Derived from Perfect Number Arithmetic",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-SOC-CONS",
+        "title": "ANIMA-SOC: A Three-Phase Consciousness Processor on Unified SoC with Hardware Tension Measurement",
+        "file": "docs/paper/n6-consciousness-soc-paper.md",
+        "existing": [],
+        "keywords": [
+          "soc",
+          "consciousness",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: ANIMA-SOC: A Three-Phase Consciousness Processor on Unified SoC with Hardware Tension Measurement",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-CRYSTAL",
+        "title": "The Perfect Number in Crystal Structure: Universal n=6 Encoding from Space Groups to Self-Assembly",
+        "file": "docs/paper/n6-crystallography-materials-paper.md",
+        "existing": [],
+        "keywords": [
+          "crystallography",
+          "materials",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: The Perfect Number in Crystal Structure: Universal n=6 Encoding from Space Groups to Self-Assembly",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-DRAM",
+        "title": "The Perfect Number in Memory: How DDR5/LPDDR6 Architecture Converges to n=6 Arithmetic (35/35 EXACT)",
+        "file": "docs/paper/n6-dram-paper.md",
+        "existing": [],
+        "keywords": [
+          "dram",
+          "memory",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: The Perfect Number in Memory: How DDR5/LPDDR6 Architecture Converges to n=6 Arithmetic (35/35 EXACT)",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-ENERGY-EFF",
+        "title": "N6 Arithmetic Framework: 17 Techniques for 50--70% AI Energy Reduction from Perfect Number Theory",
+        "file": "docs/paper/n6-energy-efficiency-paper.md",
+        "existing": [],
+        "keywords": [
+          "energy-efficiency",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: N6 Arithmetic Framework: 17 Techniques for 50--70% AI Energy Reduction from Perfect Number Theory",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-ENV-THERMAL",
+        "title": "Perfect Number Thermodynamics: Universal $n=6$ Encoding in Environmental Protection, Carbon Capture, and Thermal Managem",
+        "file": "docs/paper/n6-environment-thermal-paper.md",
+        "existing": [],
+        "keywords": [
+          "environment",
+          "thermal",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Perfect Number Thermodynamics: Universal $n=6$ Encoding in Environmental Protection, Carbon Capture, and Thermal Managem",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-EXYNOS",
+        "title": "The n=6 Mobile SoC: How Exynos Core Allocation {1,3,2,4}={mu,n/phi,phi,tau} Follows Perfect Number Arithmetic (32/32 EXA",
+        "file": "docs/paper/n6-exynos-paper.md",
+        "existing": [],
+        "keywords": [
+          "exynos",
+          "chip",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: The n=6 Mobile SoC: How Exynos Core Allocation {1,3,2,4}={mu,n/phi,phi,tau} Follows Perfect Number Arithmetic (32/32 EXA",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-HEXA-3D",
+        "title": "HEXA-3D: 3D Compute-on-Memory with Through-Silicon Vias from n=6 Number Theory",
+        "file": "docs/paper/n6-hexa-3d-paper.md",
+        "existing": [],
+        "keywords": [
+          "3d",
+          "display",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: HEXA-3D: 3D Compute-on-Memory with Through-Silicon Vias from n=6 Number Theory",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-HEXA-PHOTON",
+        "title": "HEXA-PHOTON: Photonic Matrix Multiply Engine with n=6 Interferometric Mesh",
+        "file": "docs/paper/n6-hexa-photon-paper.md",
+        "existing": [],
+        "keywords": [
+          "photon",
+          "display",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: HEXA-PHOTON: Photonic Matrix Multiply Engine with n=6 Interferometric Mesh",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-HEXA-PIM",
+        "title": "HEXA-PIM: Processing-in-Memory Architecture Derived from Perfect Number 6 Arithmetic",
+        "file": "docs/paper/n6-hexa-pim-paper.md",
+        "existing": [],
+        "keywords": [
+          "pim",
+          "memory",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: HEXA-PIM: Processing-in-Memory Architecture Derived from Perfect Number 6 Arithmetic",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-HEXA-SUPER",
+        "title": "HEXA-SUPER: Superconducting Logic Processor at $\\sigma^2 = 144$ GHz with n=6 Cryogenic Architecture",
+        "file": "docs/paper/n6-hexa-super-paper.md",
+        "existing": [],
+        "keywords": [
+          "hexa",
+          "super",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: HEXA-SUPER: Superconducting Logic Processor at $\\sigma^2 = 144$ GHz with n=6 Cryogenic Architecture",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-HEXA-WAFER",
+        "title": "HEXA-WAFER: Wafer-Scale Engine with $\\sigma^4 = 20{,}736$ Streaming Multiprocessors",
+        "file": "docs/paper/n6-hexa-wafer-paper.md",
+        "existing": [],
+        "keywords": [
+          "wafer",
+          "chip",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: HEXA-WAFER: Wafer-Scale Engine with $\\sigma^4 = 20{,}736$ Streaming Multiprocessors",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-ISOCELL",
+        "title": "From Pixels to Packets: n=6 Arithmetic Unifies Image Sensors and 5G Communications (60/60 EXACT)",
+        "file": "docs/paper/n6-isocell-comms-paper.md",
+        "existing": [],
+        "keywords": [
+          "isocell",
+          "communications",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: From Pixels to Packets: n=6 Arithmetic Unifies Image Sensors and 5G Communications (60/60 EXACT)",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-PARTICLE",
+        "title": "Perfect Number Encoding in Fundamental Physics: From Standard Model Particle Census to Cosmological Parameters",
+        "file": "docs/paper/n6-particle-cosmology-paper.md",
+        "existing": [],
+        "keywords": [
+          "particle-physics",
+          "cosmology",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Perfect Number Encoding in Fundamental Physics: From Standard Model Particle Census to Cosmological Parameters",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-PERF-CHIP",
+        "title": "N6 Ultimate: An Arithmetically Optimal AI Accelerator with Zero Arbitrary Constants",
+        "file": "docs/paper/n6-performance-chip-paper.md",
+        "existing": [],
+        "keywords": [
+          "chip",
+          "performance",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: N6 Ultimate: An Arithmetically Optimal AI Accelerator with Zero Arbitrary Constants",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-PLASMA-FUSION",
+        "title": "Complete n=6 Encoding of Plasma Confinement and Nuclear Fusion: From Lawson Criterion to Stellar Nucleosynthesis",
+        "file": "docs/paper/n6-plasma-fusion-deep-paper.md",
+        "existing": [],
+        "keywords": [
+          "plasma",
+          "fusion",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Complete n=6 Encoding of Plasma Confinement and Nuclear Fusion: From Lawson Criterion to Stellar Nucleosynthesis",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-PURE-MATH",
+        "title": "Six as Universal Constant: From SLE Critical Exponents to Modular Forms and E₆ Lie Algebra",
+        "file": "docs/paper/n6-pure-mathematics-paper.md",
+        "existing": [],
+        "keywords": [
+          "mathematics",
+          "number-theory",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Six as Universal Constant: From SLE Critical Exponents to Modular Forms and E₆ Lie Algebra",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-ROBOTICS",
+        "title": "Six Degrees of Freedom: Universal n=6 Encoding in Robotics, Transportation, and Aerospace Engineering",
+        "file": "docs/paper/n6-robotics-transport-paper.md",
+        "existing": [],
+        "keywords": [
+          "robotics",
+          "transport",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Six Degrees of Freedom: Universal n=6 Encoding in Robotics, Transportation, and Aerospace Engineering",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-SOFTWARE",
+        "title": "Perfect Number Architecture in Software Engineering: Universal n=6 Encoding from SOLID Principles to AES Encryption",
+        "file": "docs/paper/n6-software-crypto-paper.md",
+        "existing": [],
+        "keywords": [
+          "software",
+          "cryptography",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Perfect Number Architecture in Software Engineering: Universal n=6 Encoding from SOLID Principles to AES Encryption",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-SUPERCONDUCTOR",
+        "title": "Perfect Number Arithmetic in Superconductor Physics: Universal $n=6$ Encoding from BCS Theory to Topological Classificat",
+        "file": "docs/paper/n6-superconductor-paper.md",
+        "existing": [],
+        "keywords": [
+          "superconductor",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Perfect Number Arithmetic in Superconductor Physics: Universal $n=6$ Encoding from BCS Theory to Topological Classificat",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-UNIFIED-SOC",
+        "title": "HEXA-1: A Unified SoC Architecture Where Every Parameter Derives from Perfect Number 6",
+        "file": "docs/paper/n6-unified-soc-paper.md",
+        "existing": [],
+        "keywords": [
+          "soc",
+          "unified",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: HEXA-1: A Unified SoC Architecture Where Every Parameter Derives from Perfect Number 6",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-VNAND",
+        "title": "SLC to PLC: The Complete n=6 Hierarchy in NAND Flash (55/55 EXACT)",
+        "file": "docs/paper/n6-vnand-paper.md",
+        "existing": [],
+        "keywords": [
+          "vnand",
+          "memory",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: SLC to PLC: The Complete n=6 Hierarchy in NAND Flash (55/55 EXACT)",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-PAPER1",
+        "title": "N6 Inevitability Engine: Energy-Efficient Neural Architectures from Perfect Number Arithmetic",
+        "file": "docs/paper/paper1-ai-efficiency.md",
+        "existing": [],
+        "keywords": [
+          "ai",
+          "efficiency",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: N6 Inevitability Engine: Energy-Efficient Neural Architectures from Perfect Number Arithmetic",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-PAPER2",
+        "title": "The Unique Arithmetic Balance: $\\sigma(n)\\cdot\\varphi(n) = n\\cdot\\tau(n)$ and the Number 6",
+        "file": "docs/paper/paper2-cross-domain.md",
+        "existing": [],
+        "keywords": [
+          "cross-domain",
+          "universality",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: The Unique Arithmetic Balance: $\\sigma(n)\\cdot\\varphi(n) = n\\cdot\\tau(n)$ and the Number 6",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-PAPER3",
+        "title": "Numerical Patterns of the Perfect Number 6 in Tokamak Physics: Observation, Verification, and Honest Limits",
+        "file": "docs/paper/paper3-tokamak-physics.md",
+        "existing": [],
+        "keywords": [
+          "tokamak",
+          "fusion",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: Numerical Patterns of the Perfect Number 6 in Tokamak Physics: Observation, Verification, and Honest Limits",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      },
+      {
+        "id": "N6-PAPER4",
+        "title": "The GUT Hierarchy and the Monster Group from $\\sigma(n)\\cdot\\varphi(n) = n\\cdot\\tau(n)$",
+        "file": "docs/paper/paper4-gut-monster.md",
+        "existing": [],
+        "keywords": [
+          "gut",
+          "monster-group",
+          "n=6"
+        ],
+        "description": "N=6 architecture paper: The GUT Hierarchy and the Monster Group from $\\sigma(n)\\cdot\\varphi(n) = n\\cdot\\tau(n)$",
+        "target_venue": "Zenodo/OSF",
+        "tier": 2,
+        "category": "preprint"
+      }
     ]
-  }
+  },
+  "_meta": {}
 }
