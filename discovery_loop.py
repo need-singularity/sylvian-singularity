@@ -87,6 +87,8 @@ PAPER_DIR = os.path.join(SCRIPT_DIR, 'docs', 'papers', 'auto')
 NEXUS_ROOT = os.path.expanduser('~/Dev/nexus6')
 GROWTH_BUS = os.path.join(NEXUS_ROOT, 'shared', 'growth_bus.jsonl')
 DISCOVERY_LOG = os.path.join(NEXUS_ROOT, 'shared', 'discovery_log.jsonl')
+DSE_BIN = os.path.join(NEXUS_ROOT, 'shared', 'dse', 'universal-dse')
+DSE_DOMAINS_DIR = os.path.join(NEXUS_ROOT, 'shared', 'dse', 'domains')
 
 os.makedirs(RESULTS_DIR, exist_ok=True)
 os.makedirs(PAPER_DIR, exist_ok=True)
@@ -114,6 +116,7 @@ class Discovery:
         self.consensus = 0  # n lenses agreeing (3-way validation)
         self.validate_externally = False  # flag: needs WebSearch novelty check
         self.external_validated = False   # True after Claude confirms novelty via WebSearch
+        self.synergy_score = None  # DSE cross-domain synergy (0-1), None if not evaluated
 
     def to_dict(self):
         return {
@@ -125,6 +128,7 @@ class Discovery:
             'paper_worthy': self.paper_worthy, 'consensus': self.consensus,
             'validate_externally': self.validate_externally,
             'external_validated': self.external_validated,
+            'synergy_score': self.synergy_score,
         }
 
     @classmethod
@@ -137,6 +141,7 @@ class Discovery:
         disc.consensus = d.get('consensus', 0)
         disc.validate_externally = d.get('validate_externally', False)
         disc.external_validated = d.get('external_validated', False)
+        disc.synergy_score = d.get('synergy_score')
         return disc
 
 
@@ -890,6 +895,216 @@ def validate_3way(discoveries):
     if n_validated:
         print(f"  [3-WAY] Validated {n_validated}/{len(discoveries)} discoveries "
               f"(max consensus: {max((d.consensus for d in discoveries), default=0)})")
+
+    return discoveries
+
+
+# ═════════════════════════════════════════════════════════════════
+# DSE (Domain Synergy Engine) — cross-domain validation
+# ═════════════════════════════════════════════════════════════════
+
+# Map TECS-L discovery domain names → DSE .toml filenames (without extension)
+_DSE_DOMAIN_MAP = {
+    'Number Theory':         'number-theory-deep',
+    'Analysis':              'pure-mathematics',
+    'Algebra/Groups':        'pure-mathematics',
+    'Topology/Geometry':     'topology',
+    'Combinatorics':         'pure-mathematics',
+    'Quantum Mechanics':     'quantum',
+    'Quantum Information':   'quantum-computing',
+    'Statistical Mechanics': 'statistical-mechanics',
+    'Physics':               'physics-fundamental',
+    'Cosmology':             'cosmology-particle',
+    'Neuroscience':          'neuroscience',
+    'Biology':               'biology',
+    'Chemistry':             'chemistry-synthesis',
+    'Consciousness':         'anima-consciousness',
+    'Information':           'information-theory',
+}
+
+
+def _dse_toml_path(domain_name):
+    """Resolve a TECS-L domain name to a DSE .toml file path, or None."""
+    slug = _DSE_DOMAIN_MAP.get(domain_name)
+    if slug:
+        path = os.path.join(DSE_DOMAINS_DIR, f'{slug}.toml')
+        if os.path.isfile(path):
+            return path
+    # Fallback: try lowercase-hyphenated match
+    slug = domain_name.lower().replace('/', '-').replace(' ', '-')
+    path = os.path.join(DSE_DOMAINS_DIR, f'{slug}.toml')
+    if os.path.isfile(path):
+        return path
+    return None
+
+
+def _parse_cross_score_from_output(output):
+    """Extract the best cross-domain Score from universal-dse stdout.
+
+    Looks for the cross-DSE table section and parses the top-1 Score value.
+    Returns float in [0,1] or None.
+    """
+    in_cross = False
+    for line in output.splitlines():
+        if '--- Cross:' in line:
+            in_cross = True
+            continue
+        if in_cross and line.strip().startswith('1 |'):
+            # Row format: "  1 | domain_a | domain_b | n6% | Perf | Power | Cost | Score"
+            parts = [p.strip() for p in line.split('|')]
+            try:
+                return float(parts[-1])
+            except (ValueError, IndexError):
+                pass
+    return None
+
+
+def _fallback_toml_synergy(toml_a, toml_b):
+    """Python fallback: compute a basic synergy score from two .toml files.
+
+    Reads [scoring] weights and [[candidate]] rows, averages the top
+    candidates' weighted scores across both domains.  Lightweight
+    approximation of the Rust binary's cross-domain scoring.
+    """
+    try:
+        # Minimal TOML parser — only needs scoring weights + candidate scores
+        def _parse_domain_scores(path):
+            weights = {'n6': 0.35, 'perf': 0.25, 'power': 0.20, 'cost': 0.20}
+            candidates = []
+            text = open(path, 'r').read()
+
+            # Parse [scoring] section
+            in_scoring = False
+            for line in text.splitlines():
+                stripped = line.strip()
+                if stripped == '[scoring]':
+                    in_scoring = True
+                    continue
+                if in_scoring:
+                    if stripped.startswith('[') or stripped.startswith('[['):
+                        in_scoring = False
+                        continue
+                    if '=' in stripped and not stripped.startswith('#'):
+                        k, v = stripped.split('=', 1)
+                        k = k.strip()
+                        if k in weights:
+                            try:
+                                weights[k] = float(v.strip())
+                            except ValueError:
+                                pass
+
+            # Parse [[candidate]] entries
+            current = {}
+            for line in text.splitlines():
+                stripped = line.strip()
+                if stripped == '[[candidate]]':
+                    if current and 'n6' in current:
+                        candidates.append(current)
+                    current = {}
+                    continue
+                if '=' in stripped and not stripped.startswith('#') and not stripped.startswith('['):
+                    k, v = stripped.split('=', 1)
+                    k, v = k.strip(), v.strip().strip('"')
+                    if k in ('n6', 'perf', 'power', 'cost'):
+                        try:
+                            current[k] = float(v)
+                        except ValueError:
+                            pass
+            if current and 'n6' in current:
+                candidates.append(current)
+
+            # Score each candidate
+            scored = []
+            for c in candidates:
+                s = sum(weights.get(k, 0) * c.get(k, 0) for k in weights)
+                scored.append(s)
+            return sorted(scored, reverse=True)
+
+        scores_a = _parse_domain_scores(toml_a)
+        scores_b = _parse_domain_scores(toml_b)
+
+        if not scores_a or not scores_b:
+            return None
+
+        # Cross-domain synergy: average of top-5 from each domain
+        top_n = 5
+        avg_a = sum(scores_a[:top_n]) / min(top_n, len(scores_a))
+        avg_b = sum(scores_b[:top_n]) / min(top_n, len(scores_b))
+        # Weighted combination matching Rust formula
+        return 0.40 * ((avg_a + avg_b) / 2) + 0.30 * ((avg_a + avg_b) / 2) \
+             + 0.20 * ((avg_a + avg_b) / 2) + 0.10 * ((avg_a + avg_b) / 2)
+
+    except Exception:
+        return None
+
+
+def dse_validate(discoveries):
+    """DSE cross-domain synergy validation.
+
+    For discoveries involving 2+ domains, runs the universal-dse binary
+    (or Python fallback) to compute synergy scores between domain pairs.
+
+    Scoring effects:
+      - synergy > 0.85: boost confidence (paper_worthy if also consensus >= 3)
+      - synergy < 0.70: flag for review (does NOT downgrade grade)
+
+    Returns discoveries (modified in-place).
+    """
+    # Filter to multi-domain discoveries
+    multi = [d for d in discoveries if len(d.domains) >= 2]
+    if not multi:
+        return discoveries
+
+    use_binary = os.path.isfile(DSE_BIN) and os.access(DSE_BIN, os.X_OK)
+
+    n_scored = 0
+    for d in multi:
+        # Resolve first two domains to TOML paths
+        toml_paths = []
+        for dom in d.domains[:2]:
+            p = _dse_toml_path(dom)
+            if p:
+                toml_paths.append(p)
+        if len(toml_paths) < 2:
+            continue
+        # Deduplicate: skip if both map to same file
+        if toml_paths[0] == toml_paths[1]:
+            continue
+
+        score = None
+
+        # Try the Rust binary first
+        if use_binary:
+            try:
+                result = subprocess.run(
+                    [DSE_BIN, toml_paths[0], toml_paths[1]],
+                    capture_output=True, text=True, timeout=10,
+                )
+                if result.returncode == 0:
+                    score = _parse_cross_score_from_output(result.stdout)
+            except (subprocess.TimeoutExpired, OSError):
+                pass
+
+        # Python fallback if binary failed or unavailable
+        if score is None:
+            score = _fallback_toml_synergy(toml_paths[0], toml_paths[1])
+
+        if score is not None:
+            d.synergy_score = round(score, 4)
+            n_scored += 1
+
+            # Confidence adjustments
+            if score > 0.85:
+                if d.consensus >= 3:
+                    d.paper_worthy = True
+            elif score < 0.70:
+                d.validate_externally = True  # flag for review
+
+    if n_scored:
+        high = sum(1 for d in multi if d.synergy_score is not None and d.synergy_score > 0.85)
+        low = sum(1 for d in multi if d.synergy_score is not None and d.synergy_score < 0.70)
+        print(f"  [DSE] Scored {n_scored}/{len(multi)} cross-domain discoveries "
+              f"(high synergy: {high}, flagged: {low})")
 
     return discoveries
 
@@ -1897,6 +2112,9 @@ def run_cycle(cycle, growth, tracker, engines=None, auto_paper=False, graph=None
 
     # 3-way validation: lens consensus adjusts grades
     all_new = validate_3way(all_new)
+
+    # DSE cross-domain synergy validation
+    all_new = dse_validate(all_new)
 
     # Flag high-grade novel discoveries for external WebSearch novelty check
     all_new = flag_for_external_validation(all_new)
