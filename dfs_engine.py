@@ -14,105 +14,20 @@ Usage:
 import numpy as np
 import argparse
 import os
+import sys
 from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
 import tecsrs
 
 # ─────────────────────────────────────────
-# Configuration: Constants (color classification + island designation)
+# Constants — from nexus6 SSOT
 # ─────────────────────────────────────────
+_shared = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.shared')
+if _shared not in sys.path:
+    sys.path.insert(0, _shared)
 
-# Island classification:
-#   A = Rational numbers (Golden Zone fractions)    greens
-#   B = Integers/Fine structure          stars
-#   C = Log/Entropy          blues
-#   D = Transcendental (e, pi)          transcendental
-
-ISLANDS = {
-    'A': {  # greens — Rational/fractions
-        '1/2':   0.5,
-        '1/3':   1/3,
-        '1/6':   1/6,
-        '5/6':   5/6,
-        '2/3':   2/3,
-    },
-    'B': {  # stars — Integer/structural constants
-        'I*':    0.212073,          # Golden Zone lower bound
-        'sigma': 12.0,             # sigma(6)
-        'tau':   4.0,              # tau(6)
-        'eH':    2**(2/3) * 3**(1/2),  # Hardy-Ramanujan constant
-        '17':    17.0,             # Fermat prime
-        '137':   137.0,            # Fine structure constant
-        '8':     8.0,              # SU(3)
-        '6':     6.0,              # Perfect number
-    },
-    'C': {  # blues — Log/Entropy
-        'ln(4/3)':  np.log(4/3),   # Entropy jump
-        'ln2':      np.log(2),
-        'ln3':      np.log(3),
-        'ln17':     np.log(17),
-        'ln137':    np.log(137),
-    },
-    'D': {  # transcendental — Transcendental numbers
-        'e':     np.e,
-        '1/e':   1/np.e,
-        'pi':    np.pi,
-        'phi':   (1 + np.sqrt(5)) / 2,
-    },
-}
-
-# Target constants: considered discoveries when matched
-TARGETS = {}
-
-# Mathematical constants
-_math = {
-    'pi':         np.pi,
-    'pi/2':       np.pi / 2,
-    'pi/4':       np.pi / 4,
-    'pi/6':       np.pi / 6,
-    'pi^2/6':     np.pi**2 / 6,
-    'e':          np.e,
-    '1/e':        1 / np.e,
-    'e^2':        np.e**2,
-    'phi':        (1 + np.sqrt(5)) / 2,
-    'sqrt(2)':    np.sqrt(2),
-    'sqrt(3)':    np.sqrt(3),
-    'sqrt(5)':    np.sqrt(5),
-    'ln2':        np.log(2),
-    'ln3':        np.log(3),
-    'ln10':       np.log(10),
-    'gamma_EM':   0.5772156649,     # Euler-Mascheroni
-    'zeta(3)':    1.2020569031,     # Apery
-    'Catalan_G':  0.9159655941,     # Catalan
-    'Khinchin':   2.6854520011,     # Khinchin
-}
-
-# Integers (1~20)
-for i in range(1, 21):
-    _math[str(i)] = float(i)
-
-# Simple fractions
-for a in range(1, 13):
-    for b in range(a + 1, 13):
-        key = f'{a}/{b}'
-        if key not in _math:
-            _math[key] = a / b
-
-# Physical constants
-_phys = {
-    '1/alpha':    137.036,
-    'alpha':      1/137.036,
-    'alpha_s':    0.118,
-    'sin2_thetaW': 0.231,
-    'T_CMB':      2.72548,
-    'Omega_DE':   0.683,
-    'Omega_DM':   0.268,
-    'Omega_b':    0.049,
-}
-
-TARGETS.update(_math)
-TARGETS.update(_phys)
+from n6_constants import ISLANDS, TARGETS
 
 
 # ─────────────────────────────────────────

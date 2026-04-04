@@ -19,6 +19,7 @@ Usage:
 
 import argparse
 import os
+import sys
 import warnings
 from collections import defaultdict
 from datetime import datetime
@@ -28,216 +29,18 @@ import numpy as np
 
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 
+# Constants — from nexus6 SSOT
+_shared = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.shared')
+if _shared not in sys.path:
+    sys.path.insert(0, _shared)
+
 RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 
 # ═════════════════════════════════════════════════════════════════
 # 8 DOMAINS — ~80 constants with domain tags
 # ═════════════════════════════════════════════════════════════════
 
-DOMAINS = {
-    "N": {  # Number Theory
-        "name": "Number Theory",
-        "constants": {
-            "sigma(6)":  12.0,        # sum of divisors
-            "tau(6)":    4.0,         # number of divisors
-            "phi(6)":    2.0,         # Euler totient
-            "s(6)":      6.0,         # aliquot sum (=n, perfect)
-            "sopfr(6)":  5.0,         # sum of prime factors with multiplicity
-            "mu(6)":     1.0,         # Mobius function
-            "sigma_-1(6)": 2.0,      # sum of reciprocal divisors
-            "6":         6.0,         # first perfect number
-            "28":        28.0,        # second perfect number
-            "496":       496.0,       # third perfect number
-            "sigma(28)": 56.0,
-            "tau(28)":   6.0,
-            "phi(28)":   12.0,
-            "1/2":       0.5,         # 1/sigma_-1(6)
-            "1/3":       1/3,         # reciprocal of smallest odd prime
-            "1/6":       1/6,         # reciprocal of P1
-            "5/6":       5/6,         # H3 - 1
-        },
-    },
-    "A": {  # Analysis
-        "name": "Analysis",
-        "constants": {
-            "e":         np.e,
-            "1/e":       1/np.e,
-            "pi":        np.pi,
-            "pi/2":      np.pi/2,
-            "pi/6":      np.pi/6,
-            "gamma_EM":  0.5772156649,   # Euler-Mascheroni
-            "zeta(3)":   1.2020569031,   # Apery constant
-            "pi^2/6":    np.pi**2/6,     # zeta(2)
-            "ln(2)":     np.log(2),
-            "ln(3)":     np.log(3),
-            "ln(4/3)":   np.log(4/3),    # entropy jump
-            "sqrt(2)":   np.sqrt(2),
-            "sqrt(3)":   np.sqrt(3),
-            "phi_gold":  (1+np.sqrt(5))/2,  # golden ratio
-        },
-    },
-    "G": {  # Algebra / Group Theory
-        "name": "Algebra/Groups",
-        "constants": {
-            "dim_SU2":   3.0,         # SU(2) dimension
-            "dim_SU3":   8.0,         # SU(3) dimension
-            "dim_SU5":   24.0,        # SU(5) GUT
-            "dim_SO10":  45.0,        # SO(10) dimension
-            "dim_E6":    78.0,        # E6 dimension
-            "dim_E7":    133.0,       # E7 dimension
-            "dim_E8":    248.0,       # E8 dimension
-            "rank_E8":   8.0,         # E8 rank
-            "Out_S6":    2.0,         # |Out(S6)| unique outer automorphism
-        },
-    },
-    "T": {  # Topology / Geometry
-        "name": "Topology/Geometry",
-        "constants": {
-            "kissing_3":  12.0,       # 3D kissing number
-            "kissing_4":  24.0,       # 4D kissing number
-            "kissing_8":  240.0,      # 8D kissing number (E8 lattice)
-            "kissing_24": 196560.0,   # 24D kissing number (Leech)
-            "chi_S2":     2.0,        # Euler characteristic of S^2
-            "d_bosonic":  26.0,       # bosonic string dimension
-            "d_super":    10.0,       # superstring dimension
-            "d_M":        11.0,       # M-theory dimension
-        },
-    },
-    "C": {  # Combinatorics
-        "name": "Combinatorics",
-        "constants": {
-            "F(6)":      8.0,         # Fibonacci(6)
-            "F(7)":      13.0,        # Fibonacci(7)
-            "C(6,3)":    20.0,        # binomial
-            "Catalan_3":  5.0,        # 3rd Catalan number
-            "Bell_3":     5.0,        # 3rd Bell number
-            "T(6)":      21.0,        # 6th triangular number
-            "4/3":       4/3,         # F(6)/6 ratio
-            "Feigenbaum_delta": 4.66920160910299,  # Feigenbaum delta
-            "Feigenbaum_alpha": 2.50290787509589,  # Feigenbaum alpha
-        },
-    },
-    "Q": {  # Quantum Mechanics
-        "name": "Quantum Mechanics",
-        "constants": {
-            "1/alpha":   137.035999084,   # inverse fine structure
-            "alpha":     1/137.035999084,  # fine structure
-            "alpha_s":   0.1185,          # strong coupling (Z mass)
-            "sin2_thetaW": 0.23122,       # weak mixing angle
-            "g_e-2":     0.00231930436256, # electron anomalous magnetic moment
-            "m_e/m_p":   1/1836.15267343, # electron/proton mass ratio
-            "m_e/m_mu":  1/206.7682830,   # electron/muon mass ratio
-            "N_gen":     3.0,             # number of generations
-            "CMB":       2.7255,          # CMB temperature
-            "17":        17.0,            # Fermat prime (amplification theta=pi)
-        },
-    },
-    "I": {  # Quantum Information
-        "name": "Quantum Information",
-        "constants": {
-            "ln2_info":  np.log(2),       # 1 bit = ln(2) nats
-            "log2_e":    np.log2(np.e),   # nats to bits conversion
-            "S_qubit":   np.log(2),       # max entropy of qubit
-            "S_qutrit":  np.log(3),       # max entropy of qutrit
-            "2ln2":      2*np.log(2),     # Landauer at T=2
-        },
-    },
-    "S": {  # Statistical Mechanics
-        "name": "Statistical Mechanics",
-        "constants": {
-            "lambda_c":  0.2700,          # Langton lambda_c (edge of chaos)
-            "Onsager_Tc": 2/np.log(1+np.sqrt(2)),  # 2D Ising critical T
-            "nu_3D":     0.6301,          # 3D Ising correlation length exponent
-            "beta_3D":   0.3265,          # 3D Ising order parameter exponent
-            "gamma_3D":  1.2372,          # 3D Ising susceptibility exponent
-            "delta_3D":  4.789,           # 3D Ising critical isotherm exponent
-        },
-    },
-}
-
-
-# ═════════════════════════════════════════════════════════════════
-# KNOWN DISCOVERIES (for novelty scoring & target backtracking)
-# ═════════════════════════════════════════════════════════════════
-
-KNOWN_VALUES = {
-    "GZ_upper":    0.5,
-    "GZ_center":   1/np.e,
-    "GZ_lower":    0.5 - np.log(4/3),
-    "GZ_width":    np.log(4/3),
-    "meta_fixed":  1/3,
-    "compass_upper": 5/6,
-}
-
-
-# ═════════════════════════════════════════════════════════════════
-# TARGET CONSTANTS (matching targets for all strategies)
-# ═════════════════════════════════════════════════════════════════
-
-TARGETS = {}
-
-# Mathematical constants
-_math = {
-    "pi":        np.pi,
-    "pi/2":      np.pi/2,
-    "pi/3":      np.pi/3,
-    "pi/4":      np.pi/4,
-    "pi/6":      np.pi/6,
-    "pi^2/6":    np.pi**2/6,
-    "e":         np.e,
-    "1/e":       1/np.e,
-    "e^2":       np.e**2,
-    "phi_gold":  (1+np.sqrt(5))/2,
-    "sqrt(2)":   np.sqrt(2),
-    "sqrt(3)":   np.sqrt(3),
-    "sqrt(5)":   np.sqrt(5),
-    "ln(2)":     np.log(2),
-    "ln(3)":     np.log(3),
-    "ln(10)":    np.log(10),
-    "gamma_EM":  0.5772156649,
-    "zeta(3)":   1.2020569031,
-    "Catalan_G": 0.9159655941,
-    "Khinchin":  2.6854520011,
-}
-
-# Integers 1-20
-for i in range(1, 21):
-    _math[str(i)] = float(i)
-
-# Simple fractions
-for a in range(1, 10):
-    for b in range(a+1, 10):
-        key = f"{a}/{b}"
-        if key not in _math:
-            _math[key] = a/b
-
-# Physics constants
-_phys = {
-    "1/alpha":    137.035999084,
-    "alpha":      1/137.035999084,
-    "alpha_s":    0.118,
-    "sin2_thetaW": 0.231,
-    "T_CMB":      2.72548,
-    "Omega_DE":   0.683,
-    "Omega_DM":   0.268,
-    "Omega_b":    0.049,
-    "m_p/m_e":    1836.15267343,
-    "m_mu/m_e":   206.7682830,
-}
-
-# Project known values
-_proj = {
-    "GZ_upper":     0.5,
-    "GZ_width":     np.log(4/3),
-    "GZ_lower":     0.5 - np.log(4/3),
-    "GZ_center":    1/np.e,
-    "meta_fixed":   1/3,
-    "compass_upper": 5/6,
-}
-
-TARGETS.update(_math)
-TARGETS.update(_phys)
-TARGETS.update(_proj)
+from n6_constants import DOMAINS, KNOWN_VALUES, TARGETS
 
 
 # ═════════════════════════════════════════════════════════════════
