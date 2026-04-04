@@ -1259,7 +1259,42 @@ def forge_new_constants(growth, tracker):
         return False
 
 
+def cmd_report():
+    """Print current loop status from saved state (no loop needed)."""
+    state = load_state()
+    if not state:
+        print("  No loop state found. Run the loop first.")
+        return
+
+    growth = GrowthEngine()
+    growth.stage_idx = state.get('stage_idx', 0)
+    growth.injected_constants = state.get('injected_constants', {})
+
+    tracker = ConvergenceTracker()
+    tracker.history = state.get('convergence_history', [])
+
+    graph = DiscoveryGraph()
+    graph.load()
+
+    # Reconstruct discovery list from JSONL
+    if os.path.exists(DISCOVERIES_FILE):
+        with open(DISCOVERIES_FILE) as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    growth.all_discoveries.append(Discovery.from_dict(json.loads(line)))
+
+    cycle = state.get('cycle', 0)
+    engines = list({d.engine for d in growth.all_discoveries}) or ['convergence']
+    print_dashboard(cycle, growth, tracker, graph, engines)
+
+
 def main():
+    # Handle subcommands: report
+    if len(sys.argv) > 1 and sys.argv[1] == 'report':
+        cmd_report()
+        return
+
     parser = argparse.ArgumentParser(
         description='Discovery Loop — TECS-L Infinite Self-Improving Engine')
     parser.add_argument('--cycles', type=int, default=N,
