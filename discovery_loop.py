@@ -1933,6 +1933,123 @@ def _make_slug(formula: str) -> str:
     return slug[:60] if slug else 'unknown'
 
 
+def _verification_directions_for_engine(engine: str) -> dict:
+    """Return verification directions keyed by engine type.
+
+    Each entry contains:
+      methods   - mathematical tools/methods that could verify the hypothesis
+      connects  - known results or theorems it connects to
+      experiments - suggested computational experiments
+    """
+    directions = {
+        'dfs': {
+            'methods': [
+                'Symbolic algebra (SymPy/Mathematica) to simplify and verify the formula algebraically',
+                'Interval arithmetic to bound rounding error and confirm exact match',
+                'Exhaustive enumeration of alternative expressions at the same depth',
+            ],
+            'connects': [
+                'Number-theoretic identities for sigma, tau, phi, sopfr on highly composite numbers',
+                'Known closed-form expressions in OEIS for the target constant',
+            ],
+            'experiments': [
+                'Evaluate the formula to 100+ decimal digits using mpmath and compare with the target',
+                'Search for the formula in the Inverse Symbolic Calculator (ISC)',
+                'Test generalization: does the pattern hold for n=28 (next perfect number)?',
+            ],
+        },
+        'convergence': {
+            'methods': [
+                'Check if independent arithmetic domains converge to the same value (cross-domain validation)',
+                'Compute confidence intervals via bootstrap over the converging paths',
+                'Apply Texas Sharpshooter correction: estimate p-value under random search null model',
+            ],
+            'connects': [
+                'Universality phenomena in number theory (e.g., Euler product convergence)',
+                'Central limit theorem for sums of arithmetic functions',
+                'Known multi-domain identities in the TECS-L constant atlas',
+            ],
+            'experiments': [
+                'Increase convergence cluster threshold from 1e-4 to 1e-8 and check survival',
+                'Randomize island values and measure false-positive rate (Monte Carlo null test)',
+                'Plot convergence paths and check monotonicity / rate of convergence',
+            ],
+        },
+        'quantum': {
+            'methods': [
+                'Verify the quantum formula coefficient matrix has physical meaning (unitarity, hermiticity)',
+                'Check if the formula survives perturbation of input constants by +/-1%',
+                'Algebraic simplification to see if it reduces to a known identity',
+            ],
+            'connects': [
+                'Quantum information identities (von Neumann entropy, channel capacity)',
+                'Spectral properties of number-theoretic matrices (Redheffer, GCD matrices)',
+                'Connections to modular forms if the formula involves tau or eta functions',
+            ],
+            'experiments': [
+                'Sweep all 6-constant combinations and rank by error to assess uniqueness',
+                'Compute the formula for n=6, 28, 496 and check if a pattern emerges',
+                'Test sensitivity: partial derivatives of formula w.r.t. each constant',
+            ],
+        },
+        'perfect': {
+            'methods': [
+                'Verify the divisor-sum identity sigma(n)=2n for the perfect number involved',
+                'Check if the relationship is a consequence of the Euclid-Euler theorem',
+                'Use modular arithmetic to prove or refute the identity analytically',
+            ],
+            'connects': [
+                'Euclid-Euler characterization of even perfect numbers: 2^(p-1)(2^p - 1)',
+                'Mersenne prime properties and their arithmetic function values',
+                'Multiply-perfect and multiperfect number generalizations',
+            ],
+            'experiments': [
+                'Evaluate for all known perfect numbers (6, 28, 496, 8128, ...) and check pattern',
+                'Compare with analogous expressions for abundant and deficient numbers',
+                'Compute the formula modulo small primes to detect structural constraints',
+            ],
+        },
+    }
+    # Default for unknown or composite engine types
+    default = {
+        'methods': [
+            'Independent numerical verification to full precision (mpmath, 50+ digits)',
+            'Algebraic simplification via computer algebra system',
+            'Statistical significance test (Texas Sharpshooter / Bonferroni correction)',
+        ],
+        'connects': [
+            'Cross-reference with OEIS, ISC, and Wolfram MathWorld for known identities',
+            'Check related hypotheses in the TECS-L discovery graph',
+        ],
+        'experiments': [
+            'Generalize to n=28 (next perfect number) and check if the pattern holds',
+            'Monte Carlo null model: randomize constants and measure false-positive rate',
+            'Sensitivity analysis: perturb each input constant and measure error response',
+        ],
+    }
+    # Handle composite engine names like "bridge:xxx" or "nexus6-hooks"
+    base_engine = engine.split(':')[0] if ':' in engine else engine
+    return directions.get(base_engine, default)
+
+
+def _write_verification_directions(f, d):
+    """Write engine-specific verification directions into a hypothesis stub."""
+    dirs = _verification_directions_for_engine(d.engine)
+
+    f.write("### Mathematical tools / methods\n\n")
+    for m in dirs['methods']:
+        f.write(f"- {m}\n")
+
+    f.write(f"\n### Connections to known results\n\n")
+    for c in dirs['connects']:
+        f.write(f"- {c}\n")
+
+    f.write(f"\n### Suggested computational experiments\n\n")
+    for e in dirs['experiments']:
+        f.write(f"- [ ] {e}\n")
+    f.write("\n")
+
+
 def _write_hypothesis_stub(path: str, d):
     """Write a minimal hypothesis document for a discovery."""
     with open(path, 'w') as f:
@@ -1961,8 +2078,8 @@ def _write_hypothesis_stub(path: str, d):
         f.write(f"*TODO: Add interpretation and connections to other hypotheses.*\n\n")
         f.write(f"## Limitations\n\n")
         f.write(f"*TODO: Identify where this could be wrong.*\n\n")
-        f.write(f"## Next Steps\n\n")
-        f.write(f"*TODO: Define verification direction.*\n")
+        f.write(f"## Verification Directions\n\n")
+        _write_verification_directions(f, d)
 
 
 # ═════════════════════════════════════════════════════════════════

@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-"""Batch translate Korean to English using Claude API. Hybrid: Opus for .md, Sonnet for .py"""
+"""Batch translate Korean to English using Claude API. Hybrid: Opus for .md, Sonnet for .py
+
+Prerequisites:
+    pip install anthropic
+    export ANTHROPIC_API_KEY=sk-...
+
+Usage:
+    python3 scripts/translate_to_english.py
+"""
 
 import os
 import re
@@ -15,8 +23,11 @@ OPUS = "claude-opus-4-20250514"
 SONNET = "claude-sonnet-4-20250514"
 MAX_WORKERS = 2
 MAX_RETRIES = 10
-ROOT = Path("/Users/ghost/Dev/logout")
-SKIP_FILES = {"docs/kaist-eeg-collaboration-proposal.md"}
+ROOT = Path("/Users/ghost/Dev/TECS-L")
+SKIP_FILES = {
+    "docs/kaist-eeg-collaboration-proposal.md",
+    "CLAUDE.md",  # project instructions — keep bilingual
+}
 PROGRESS_FILE = ROOT / ".translate_progress.json"
 
 SKIP_DIRS = {".git", ".local", ".claude", "node_modules", "__pycache__", "serve", "math/.claude"}
