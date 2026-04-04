@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "description": "TECS-L discovery loop state — cycle tracking + discovery buffer",
+    "schema_version": "1.0.0",
+    "updated": "2026-04-04T17:51:47.222842"
+  },
+  "loop": {
+    "cycle": 1,
+    "mode": "dfs",
+    "consecutive_failures": 1,
+    "max_failures": 3,
+    "total_discoveries": 0,
+    "last_run": "2026-04-04T17:51:47.222842",
+    "status": "idle"
+  },
+  "discovery_buffer": [],
+  "publish_history": [],
+  "publish_threshold": 6,
+  "mode_rotation": [
+    "dfs",
+    "pair",
+    "backtrack"
+  ],
+  "mode_stagnation_trigger": 3
+}
