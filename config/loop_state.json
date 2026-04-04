@@ -2,16 +2,23 @@
   "_meta": {
     "description": "TECS-L discovery loop state — cycle tracking + discovery buffer",
     "schema_version": "1.0.0",
-    "updated": "2026-04-04T19:08:03.762215"
+    "updated": "2026-04-04T20:10:16.617738"
   },
   "loop": {
-    "cycle": 10,
+    "cycle": 19,
     "mode": "pair",
     "consecutive_failures": 0,
     "max_failures": 3,
-    "total_discoveries": 95,
-    "last_run": "2026-04-04T18:45:49.627274",
-    "status": "idle"
+    "total_discoveries": 9140,
+    "last_run": "2026-04-04T20:10:16.617865",
+    "status": "converging",
+    "novel_discoveries": 2685,
+    "stage": "tree",
+    "injected_constants": 261,
+    "forge_attempts": 1,
+    "wall_breaks": 0,
+    "graph_nodes": 9140,
+    "graph_edges": 327335
   },
   "discovery_buffer": [
     {

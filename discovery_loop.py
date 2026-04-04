@@ -51,11 +51,13 @@ import argparse
 import json
 import math
 import os
+import re
 import signal
 import subprocess
 import sys
 import time
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
 import numpy as np
@@ -84,6 +86,7 @@ DISCOVERIES_FILE = os.path.join(RESULTS_DIR, 'discoveries.jsonl')
 PAPER_DIR = os.path.join(SCRIPT_DIR, 'docs', 'papers', 'auto')
 NEXUS_ROOT = os.path.expanduser('~/Dev/nexus6')
 GROWTH_BUS = os.path.join(NEXUS_ROOT, 'shared', 'growth_bus.jsonl')
+DISCOVERY_LOG = os.path.join(NEXUS_ROOT, 'shared', 'discovery_log.jsonl')
 
 os.makedirs(RESULTS_DIR, exist_ok=True)
 os.makedirs(PAPER_DIR, exist_ok=True)
@@ -109,6 +112,8 @@ class Discovery:
         self.is_novel = True
         self.paper_worthy = False
         self.consensus = 0  # n lenses agreeing (3-way validation)
+        self.validate_externally = False  # flag: needs WebSearch novelty check
+        self.external_validated = False   # True after Claude confirms novelty via WebSearch
 
     def to_dict(self):
         return {
@@ -118,6 +123,8 @@ class Discovery:
             'grade': self.grade, 'cycle': self.cycle,
             'timestamp': self.timestamp, 'is_novel': self.is_novel,
             'paper_worthy': self.paper_worthy, 'consensus': self.consensus,
+            'validate_externally': self.validate_externally,
+            'external_validated': self.external_validated,
         }
 
     @classmethod
@@ -128,6 +135,8 @@ class Discovery:
         disc.is_novel = d.get('is_novel', True)
         disc.paper_worthy = d.get('paper_worthy', False)
         disc.consensus = d.get('consensus', 0)
+        disc.validate_externally = d.get('validate_externally', False)
+        disc.external_validated = d.get('external_validated', False)
         return disc
 
 
@@ -430,7 +439,16 @@ def mutate_targets(discoveries, existing_targets):
 # ═════════════════════════════════════════════════════════════════
 
 def run_with_timeout(func, timeout=30):
-    """Run function with timeout — prevents engine blocking."""
+    """Run function with timeout — prevents engine blocking.
+
+    signal.alarm only works in the main thread; when called from a
+    ThreadPoolExecutor worker, skip the alarm and run without timeout.
+    """
+    import threading
+    if threading.current_thread() is not threading.main_thread():
+        # Cannot use signal.alarm in non-main thread — run directly
+        return func()
+
     def handler(signum, frame):
         raise TimeoutError(f"Engine timed out after {timeout}s")
 
@@ -447,27 +465,135 @@ def run_with_timeout(func, timeout=30):
     return result
 
 
+def _dfs_python_fallback(depth, threshold, augmented_islands=None):
+    """Pure Python DFS search fallback when tecsrs.DfsEngine is unavailable.
+
+    Performs brute-force constant combination search over ISLANDS/TARGETS,
+    mirroring what the Rust DfsEngine does but slower.
+    """
+    islands = augmented_islands if augmented_islands else ISLANDS
+    # Flatten all constants
+    all_consts = {}
+    island_map = {}  # name -> island_id
+    for isl_id, consts in islands.items():
+        for name, val in consts.items():
+            all_consts[name] = float(val)
+            island_map[name] = isl_id
+
+    names = list(all_consts.keys())
+    vals = [all_consts[n] for n in names]
+    matches = []
+
+    def _ops(na, va, nb, vb):
+        """Binary operations between two constants."""
+        results = []
+        results.append((va + vb, f"({na}+{nb})"))
+        results.append((va - vb, f"({na}-{nb})"))
+        results.append((vb - va, f"({nb}-{na})"))
+        results.append((va * vb, f"({na}*{nb})"))
+        if vb != 0:
+            results.append((va / vb, f"({na}/{nb})"))
+        if va != 0:
+            results.append((vb / va, f"({nb}/{na})"))
+        if va > 0 and abs(vb) < 20:
+            try:
+                results.append((va ** vb, f"({na}^{nb})"))
+            except (OverflowError, ValueError):
+                pass
+        if vb > 0 and abs(va) < 20:
+            try:
+                results.append((vb ** va, f"({nb}^{na})"))
+            except (OverflowError, ValueError):
+                pass
+        return results
+
+    def _check(val, expr, used_names):
+        for t_name, t_val in TARGETS.items():
+            if t_val == 0:
+                continue
+            try:
+                rel_err = abs(val - float(t_val)) / abs(float(t_val))
+            except (TypeError, ZeroDivisionError):
+                continue
+            if rel_err < threshold:
+                used_islands = set(island_map.get(n, '?') for n in used_names)
+                matches.append({
+                    'target': t_name,
+                    'target_val': float(t_val),
+                    'formula': expr,
+                    'formula_val': val,
+                    'error': rel_err,
+                    'error_pct': rel_err * 100,
+                    'islands': list(used_islands),
+                    'n_islands': len(used_islands),
+                    'significance': 1.0 / max(rel_err, 1e-15),
+                    'is_exact': rel_err < 1e-12,
+                })
+
+    # depth-1: single constants
+    for i, (n, v) in enumerate(zip(names, vals)):
+        if np.isfinite(v):
+            _check(v, n, [n])
+
+    # depth-2: binary combinations
+    if depth >= 2:
+        for i in range(len(names)):
+            for j in range(i, len(names)):
+                na, va = names[i], vals[i]
+                nb, vb = names[j], vals[j]
+                if not (np.isfinite(va) and np.isfinite(vb)):
+                    continue
+                for val, expr in _ops(na, va, nb, vb):
+                    if np.isfinite(val) and abs(val) < 1e15:
+                        _check(val, expr, [na, nb])
+
+    print(f"  [DFS-py] {len(matches):,} matches found (Python fallback, depth={depth})")
+    return matches
+
+
 def run_dfs(depth, threshold, augmented_islands=None):
     """Run DFS engine and return discoveries."""
+    # Try Rust-powered DFS first, fall back to pure Python
+    rust_available = False
     try:
-        import tecsrs  # noqa: F401
-    except ImportError:
-        print("  [DFS] tecsrs not available, skipping")
-        return []
+        import tecsrs
+        tecsrs.DfsEngine  # check attribute exists
+        rust_available = True
+    except (ImportError, AttributeError):
+        pass
 
-    try:
-        from dfs_engine import build_level, check_targets, filter_best, verify_all
-    except ImportError as e:
-        print(f"  [DFS] Import error: {e}")
-        return []
+    if rust_available:
+        try:
+            from dfs_engine import build_level, check_targets, filter_best, verify_all
+        except ImportError as e:
+            print(f"  [DFS] Import error: {e}")
+            rust_available = False
 
     def _run():
-        expr_count = build_level(depth)
-        matches = check_targets(depth, threshold=threshold)
+        if rust_available:
+            expr_count = build_level(depth)
+            matches = check_targets(depth, threshold=threshold)
+        else:
+            matches = _dfs_python_fallback(depth, threshold, augmented_islands)
+
         if not matches:
             return []
-        filtered = filter_best(matches, top_per_target=TAU)
-        filtered = verify_all(filtered)
+
+        # Sort and keep best per target
+        by_target = {}
+        for m in matches:
+            key = m['target']
+            if key not in by_target:
+                by_target[key] = []
+            by_target[key].append(m)
+        filtered = []
+        for key, group in by_target.items():
+            group.sort(key=lambda x: (-x.get('n_islands', 0), x.get('error', 1)))
+            filtered.extend(group[:TAU])
+
+        if rust_available:
+            from dfs_engine import verify_all
+            filtered = verify_all(filtered)
 
         discoveries = []
         for m in filtered:
@@ -574,7 +700,7 @@ def run_perfect(depth, threshold):
         return []
 
     def _run():
-        atoms, _ = build_atom_pool()
+        atoms = build_atom_pool()
         targets_pn = {k: v for k, v in TARGETS.items()
                       if isinstance(v, (int, float)) and 0.001 < abs(v) < 1e6}
         matches, total = pn_search(targets_pn, depth=depth, threshold=threshold)
@@ -631,6 +757,61 @@ def deduplicate(new_discoveries, all_previous):
 
 
 # ═════════════════════════════════════════════════════════════════
+# EXTERNAL NOVELTY VALIDATION (WebSearch-assisted)
+# ═════════════════════════════════════════════════════════════════
+
+def novelty_search_query(d):
+    """Build a web search query string for checking if a discovery is already known.
+
+    Returns a query suitable for Claude Code's WebSearch tool.
+    Example: '"sigma(6) = 12" perfect number identity number theory'
+
+    The loop itself does NOT call WebSearch (pure Python).
+    Instead, Claude should use this query with WebSearch during review.
+    """
+    # Core: the formula in quotes for exact matching
+    parts = [f'"{d.formula}"']
+    # Add the target constant for context
+    if d.target:
+        parts.append(d.target)
+    # Add domain keywords
+    if d.domains:
+        parts.extend(d.domains[:2])
+    else:
+        parts.append('number theory')
+    # Always scope to math
+    parts.append('identity OR theorem OR known result')
+    return ' '.join(parts)
+
+
+def flag_for_external_validation(discoveries):
+    """Flag high-grade novel discoveries that should be web-searched for novelty.
+
+    Criteria for flagging (all must be true):
+      - is_novel == True
+      - grade is exact or structural (not coincidence)
+      - not yet externally validated
+
+    Flagged discoveries get validate_externally=True and a search query
+    accessible via novelty_search_query(d).
+
+    After the loop, Claude should:
+      1. Read discoveries with validate_externally=True
+      2. For each, run WebSearch with novelty_search_query(d)
+      3. If the result is already well-known, set is_novel=False
+      4. If novel, set external_validated=True
+    """
+    flagged = 0
+    for d in discoveries:
+        if d.is_novel and d.grade in ('🟩', '🟧') and not d.external_validated:
+            d.validate_externally = True
+            flagged += 1
+    if flagged:
+        print(f"  [NOVELTY] {flagged} discoveries flagged for external WebSearch validation")
+    return discoveries
+
+
+# ═════════════════════════════════════════════════════════════════
 # 3-WAY VALIDATION (nexus6 lens consensus)
 # ═════════════════════════════════════════════════════════════════
 
@@ -671,8 +852,9 @@ def validate_3way(discoveries):
     for d in discoveries:
         try:
             # Build a small array around the discovery value for scan
+            # nexus6 Rust expects 2D PyArray, so reshape to column vector
             val = float(d.value)
-            arr = np.array([val, val * 1.001, val * 0.999, val])
+            arr = np.array([[val], [val * 1.001], [val * 0.999], [val]], dtype=np.float64)
             scan_result = n6.scan_all(arr)
 
             # Count lenses that flagged significance
@@ -731,7 +913,8 @@ def nexus_scan_batch(discoveries, context="batch"):
         if not values:
             return None
 
-        arr = np.array(values)
+        # nexus6 Rust expects 2D PyArray, so reshape to column vector
+        arr = np.array(values, dtype=np.float64).reshape(-1, 1)
         scan_result = n6.scan_all(arr)
 
         # Check for anomalies
@@ -834,6 +1017,27 @@ def maybe_generate_paper(growth, cycle, force=False):
     else:
         lines.append("No cross-engine convergence found yet.")
 
+    # External validation section: discoveries needing WebSearch novelty check
+    pending_ext = [d for d in growth.all_discoveries
+                   if d.validate_externally and not d.external_validated]
+    if pending_ext:
+        lines.extend([
+            f"",
+            f"## Pending External Novelty Validation",
+            f"",
+            f"The following discoveries are flagged for WebSearch novelty verification.",
+            f"Claude should run `novelty_search_query(d)` with WebSearch for each.",
+            f"If the identity is already well-known, set `is_novel=False`.",
+            f"",
+            f"| # | Formula | Target | Grade | Suggested Query |",
+            f"|---|---------|--------|-------|-----------------|",
+        ])
+        for i, d in enumerate(pending_ext[:30], 1):
+            query = novelty_search_query(d)
+            lines.append(
+                f"| {i} | `{d.formula[:40]}` | {d.target} | {d.grade} | "
+                f"`{query[:60]}` |")
+
     lines.extend([
         f"",
         f"## Growth Trajectory",
@@ -890,6 +1094,291 @@ def auto_publish(paper_path, cycle):
             print(f"  📤 OSF: ❌ {e}")
 
     return results
+
+
+# ═════════════════════════════════════════════════════════════════
+# HYPOTHESIS DOC GENERATOR (auto-generate docs/hypotheses/ files)
+# ═════════════════════════════════════════════════════════════════
+
+HYPOTHESES_DIR = os.path.join(SCRIPT_DIR, 'docs', 'hypotheses')
+
+
+def _sanitize_name(formula):
+    """Convert a formula string into a safe filename fragment."""
+    s = formula.lower()
+    for ch in ['+', '-', '*', '/', '(', ')', '^', '=', ' ', '.', ',', "'", '"']:
+        s = s.replace(ch, '-')
+    while '--' in s:
+        s = s.replace('--', '-')
+    return s.strip('-')[:60]
+
+
+def _error_bar_ascii(error_pct, width=40):
+    """Generate an ASCII bar showing error magnitude on a log scale."""
+    if error_pct <= 0:
+        error_pct = 1e-15
+    log_min, log_max = -12, 1  # log10 of percent
+    log_val = math.log10(max(error_pct, 1e-15))
+    pos = max(0, min(width, int((log_val - log_min) / (log_max - log_min) * width)))
+
+    bar = '#' * pos + '.' * (width - pos)
+    lines = [
+        f"  Error magnitude (log scale)",
+        f"  exact                              poor",
+        f"  |{'=' * width}|",
+        f"  |{bar}| {error_pct:.2e}%",
+        f"  1e-12%          0.01%         10%",
+    ]
+    return '\n'.join(lines)
+
+
+def _grade_label(grade):
+    """Human-readable label for a grade emoji."""
+    return {
+        '\U0001f7e9': 'Exact / Proven',
+        '\U0001f7e7': 'Structural',
+        '\u26aa':     'Coincidence',
+        '\u2b1b':     'Refuted',
+    }.get(grade, grade)
+
+
+def generate_hypothesis_doc(discovery, doc_id):
+    """Generate a hypothesis document file for a Discovery.
+
+    Args:
+        discovery: Discovery object (formula, value, target, error, grade,
+                   domains, engine, cycle, is_novel, timestamp).
+        doc_id: String identifier, e.g. 'H-CX-600' or 'DL-001'.
+
+    Returns:
+        Absolute file path of the generated document.
+    """
+    os.makedirs(HYPOTHESES_DIR, exist_ok=True)
+
+    safe_name = _sanitize_name(discovery.formula)
+    filename = f"{doc_id}-{safe_name}.md"
+    filepath = os.path.join(HYPOTHESES_DIR, filename)
+
+    d = discovery
+    error_pct = d.error * 100 if d.error is not None else 0.0
+    is_exact = d.error is not None and d.error < 1e-12
+    grade_text = _grade_label(d.grade)
+    domains_str = ', '.join(d.domains) if d.domains else 'general'
+    date_str = d.timestamp[:10] if d.timestamp and len(d.timestamp) >= 10 else \
+        datetime.now().strftime('%Y-%m-%d')
+
+    # Resolve target numerical value
+    target_num = None
+    if d.target in TARGETS:
+        target_num = float(TARGETS[d.target])
+    elif d.target in KNOWN_VALUES:
+        target_num = float(KNOWN_VALUES[d.target])
+    target_val_str = f"{target_num:.12g}" if target_num is not None else str(d.target)
+    abs_error = abs(d.value - target_num) if target_num is not None else 0.0
+
+    # Build document
+    lines = []
+
+    # Title
+    lines.append(f"# Hypothesis {doc_id}: {d.formula} = {d.target}")
+    lines.append("")
+
+    # Hypothesis statement (> block quote)
+    lines.append("## Hypothesis")
+    lines.append("")
+    if is_exact:
+        lines.append(f"> The identity `{d.formula} = {d.target}` holds exactly "
+                     f"and is structurally grounded in n=6 arithmetic.")
+    else:
+        lines.append(f"> The expression `{d.formula}` approximates `{d.target}` "
+                     f"(error {error_pct:.4f}%), suggesting a structural connection "
+                     f"in n=6 arithmetic.")
+    lines.append("")
+
+    # Background/context
+    lines.append("## Background")
+    lines.append("")
+    lines.append(f"Discovered by the **{d.engine}** engine during Discovery Loop "
+                 f"cycle {d.cycle}.")
+    lines.append(f"Domains: {domains_str}.")
+    lines.append("")
+    lines.append("```")
+    lines.append(f"  Context:")
+    lines.append(f"  - n=6 is the smallest perfect number (sigma(6) = 12 = 2*6)")
+    lines.append(f"  - Core arithmetic: N=6, sigma=12, tau=4, phi=2, sopfr=5")
+    lines.append(f"  - Golden Zone: [{GZ_LOWER:.4f}, {GZ_UPPER:.4f}], "
+                 f"center=1/e={GZ_CENTER:.4f}")
+    lines.append(f"  - This identity connects: {domains_str}")
+    lines.append("```")
+    lines.append("")
+
+    # Formula / mapping (ASCII table)
+    lines.append("## Formula and Mapping")
+    lines.append("")
+    lines.append("```")
+    lines.append(f"  +-------------------------------------------------+")
+    lines.append(f"  |  Formula:  {d.formula:<39s}|")
+    lines.append(f"  |  Target:   {str(d.target):<39s}|")
+    lines.append(f"  |  Value:    {d.value:<39.12g}|")
+    lines.append(f"  |  Expected: {target_val_str:<39s}|")
+    lines.append(f"  |  Error:    {error_pct:<39.6f}|")
+    lines.append(f"  |  Grade:    {d.grade} {grade_text:<36s}|")
+    lines.append(f"  +-------------------------------------------------+")
+    lines.append("```")
+    lines.append("")
+
+    # ASCII graph (error bar) -- minimum 1 graph required
+    lines.append("## Error Magnitude (ASCII Graph)")
+    lines.append("")
+    lines.append("```")
+    lines.append(_error_bar_ascii(error_pct))
+    lines.append("")
+    lines.append(f"  Grade thresholds:")
+    lines.append(f"  |-- exact  (< 1e-10%):  {'<<< HERE' if error_pct < 1e-10 else ''}")
+    lines.append(f"  |-- proven (< 0.1%):    {'<<< HERE' if 1e-10 <= error_pct < 0.1 else ''}")
+    lines.append(f"  |-- struct (< 1%):      {'<<< HERE' if 0.1 <= error_pct < 1.0 else ''}")
+    lines.append(f"  |-- weak   (< 5%):      {'<<< HERE' if 1.0 <= error_pct < 5.0 else ''}")
+    lines.append(f"  +-- noise  (>= 5%):     {'<<< HERE' if error_pct >= 5.0 else ''}")
+    lines.append("```")
+    lines.append("")
+
+    # Verification results
+    lines.append("## Verification Results")
+    lines.append("")
+    lines.append("```")
+    lines.append(f"  Numerical verification:")
+    lines.append(f"  +------------------+-------------------------------+")
+    lines.append(f"  | Computed value   | {d.value:<30.12g}|")
+    lines.append(f"  | Target value     | {target_val_str:<30s}|")
+    lines.append(f"  | Absolute error   | {abs_error:<30.2e}|")
+    lines.append(f"  | Relative error   | {error_pct:<30.6f}|")
+    lines.append(f"  | Exact match      | {'YES' if is_exact else 'NO':<30s}|")
+    lines.append(f"  | Engine           | {d.engine:<30s}|")
+    lines.append(f"  | Cycle            | {d.cycle:<30d}|")
+    lines.append(f"  | Novel            | {'YES' if d.is_novel else 'NO':<30s}|")
+    lines.append(f"  +------------------+-------------------------------+")
+    lines.append("```")
+    lines.append("")
+
+    # Interpretation
+    lines.append("## Interpretation")
+    lines.append("")
+    if is_exact:
+        lines.append(f"This is an **exact identity** connecting `{d.formula}` to the "
+                     f"known constant `{d.target}`. The zero error confirms this is not "
+                     f"a numerical coincidence but a provable algebraic relationship.")
+    else:
+        lines.append(f"The expression `{d.formula}` approximates `{d.target}` with "
+                     f"{error_pct:.4f}% error. This level of accuracy "
+                     f"{'strongly suggests structural origin' if error_pct < 0.1 else 'may indicate a deeper relationship'}.")
+    lines.append("")
+    if d.domains:
+        lines.append(f"Domain connections ({domains_str}) suggest this identity may "
+                     f"bridge multiple areas of mathematics/physics through n=6 arithmetic.")
+    lines.append("")
+
+    # Limitations
+    lines.append("## Limitations")
+    lines.append("")
+    lines.append(f"1. Discovery is automated (engine: {d.engine}) -- manual proof required")
+    if not is_exact:
+        lines.append(f"2. Error of {error_pct:.4f}% -- not exact, could be numerical artifact")
+        lines.append(f"3. Texas Sharpshooter risk: combinatorial search may inflate matches")
+    else:
+        lines.append(f"2. Algebraic proof needed to confirm this is not a tautology")
+        lines.append(f"3. Generalization to other perfect numbers (28, 496) not yet tested")
+    lines.append(f"4. Strong Law of Small Numbers warning: constants involved are small")
+    lines.append("")
+
+    # Next steps
+    lines.append("## Next Steps")
+    lines.append("")
+    lines.append(f"- [ ] Verify algebraically (manual proof or CAS)")
+    lines.append(f"- [ ] Test generalization: does the identity hold for n=28?")
+    lines.append(f"- [ ] Texas Sharpshooter test with Bonferroni correction")
+    lines.append(f"- [ ] Cross-validate with other engines")
+    if d.domains:
+        lines.append(f"- [ ] Explore domain connections: {domains_str}")
+    lines.append("")
+
+    # Footer
+    lines.append("---")
+    lines.append("")
+    lines.append(f"*Auto-generated by Discovery Loop on {date_str} "
+                 f"(engine: {d.engine}, cycle: {d.cycle})*")
+
+    with open(filepath, 'w') as f:
+        f.write('\n'.join(lines))
+
+    return filepath
+
+
+def auto_generate_docs(discoveries):
+    """Auto-generate hypothesis docs for novel exact discoveries.
+
+    Filters for novel grade-exact (grade 🟩) discoveries, checks which
+    already have hypothesis docs (by formula matching in existing files),
+    and generates new ones with sequential DL-NNN identifiers.
+
+    Args:
+        discoveries: list of Discovery objects.
+
+    Returns:
+        Number of documents generated.
+    """
+    candidates = [d for d in discoveries
+                  if d.is_novel and d.grade == '\U0001f7e9']  # 🟩
+
+    if not candidates:
+        return 0
+
+    # Scan existing hypothesis docs for already-documented formulas
+    existing_formulas = set()
+    if os.path.isdir(HYPOTHESES_DIR):
+        for fname in os.listdir(HYPOTHESES_DIR):
+            if not fname.endswith('.md'):
+                continue
+            fpath = os.path.join(HYPOTHESES_DIR, fname)
+            try:
+                with open(fpath, 'r') as f:
+                    content = f.read(2000)
+                for line in content.split('\n'):
+                    if '`' in line:
+                        parts = line.split('`')
+                        for i in range(1, len(parts), 2):
+                            existing_formulas.add(parts[i].strip())
+            except (OSError, UnicodeDecodeError):
+                continue
+
+    to_generate = [d for d in candidates if d.formula not in existing_formulas]
+
+    if not to_generate:
+        return 0
+
+    # Find next available DL doc ID
+    existing_dl_ids = []
+    if os.path.isdir(HYPOTHESES_DIR):
+        for fname in os.listdir(HYPOTHESES_DIR):
+            if fname.startswith('DL-') and fname.endswith('.md'):
+                try:
+                    num = int(fname.split('-')[1])
+                    existing_dl_ids.append(num)
+                except (ValueError, IndexError):
+                    pass
+    next_id = max(existing_dl_ids, default=0) + 1
+
+    generated = 0
+    for d in to_generate:
+        doc_id = f"DL-{next_id:03d}"
+        filepath = generate_hypothesis_doc(d, doc_id)
+        print(f"  \U0001f4dd Hypothesis doc: {filepath}")
+        next_id += 1
+        generated += 1
+
+    if generated:
+        print(f"  -> {generated} hypothesis doc(s) generated in {HYPOTHESES_DIR}")
+
+    return generated
 
 
 # ═════════════════════════════════════════════════════════════════
@@ -979,6 +1468,56 @@ def bridge_import():
     return imported
 
 
+def import_nexus_discoveries():
+    """Import unprocessed constant discoveries from nexus6 hooks discovery_log."""
+    if not os.path.exists(DISCOVERY_LOG):
+        return []
+
+    imported = []
+    lines = []
+    modified = False
+    try:
+        with open(DISCOVERY_LOG) as f:
+            lines = f.readlines()
+
+        for i, raw in enumerate(lines):
+            raw = raw.strip()
+            if not raw:
+                continue
+            entry = json.loads(raw)
+            if entry.get('processed', False):
+                continue
+
+            grade_map = {'EXACT': '\U0001f7e9', 'CLOSE': '\U0001f7e7'}  # 🟩 / 🟧
+            grade = grade_map.get(entry.get('grade', ''), '\u26aa')      # ⚪ fallback
+
+            d = Discovery(
+                formula=f"nexus6-hook:{entry.get('constant', entry.get('value', '?'))}",
+                value=float(entry.get('value', 0)),
+                target=str(entry.get('constant', '')),
+                error=0.0,
+                engine='nexus6-hooks',
+                grade=grade,
+            )
+            d.consensus = 0
+            imported.append(d)
+
+            # Mark processed
+            entry['processed'] = True
+            lines[i] = json.dumps(entry) + '\n'
+            modified = True
+
+        if modified:
+            with open(DISCOVERY_LOG, 'w') as f:
+                f.writelines(lines)
+
+        if imported:
+            print(f"  \U0001f50d Nexus6 hooks: imported {len(imported)} new constant discoveries")
+    except Exception as e:
+        print(f"  \U0001f50d Nexus6 hooks import error: {e}")
+    return imported
+
+
 def bridge_sync():
     """Trigger nexus-bridge sync after loop completion."""
     bridge = _get_bridge()
@@ -991,6 +1530,224 @@ def bridge_sync():
     except Exception as e:
         print(f"  \U0001f309 Bridge sync error: {e}")
 
+
+# ═════════════════════════════════════════════════════════════════
+# POST-LOOP SSOT SYNC
+# ═════════════════════════════════════════════════════════════════
+
+CONFIG_LOOP_STATE = os.path.join(SCRIPT_DIR, 'config', 'loop_state.json')
+HYPOTHESES_DIR = os.path.join(SCRIPT_DIR, 'docs', 'hypotheses')
+
+
+def post_loop_sync(growth, tracker, graph, breaker, forge_attempts, wall_break_rounds):
+    """Run SSOT sync after loop completes: JSON updates, atlas, README markers, hypothesis stubs.
+
+    Called once at the end of main(), after FINAL SUMMARY.
+    """
+    print(f"\n{'='*70}")
+    print(f"  POST-LOOP SSOT SYNC")
+    print(f"{'='*70}")
+
+    sync_report = {}
+
+    # ── 1. Update config/loop_state.json (SSOT) ──────────────────
+    try:
+        if os.path.exists(CONFIG_LOOP_STATE):
+            with open(CONFIG_LOOP_STATE) as f:
+                cfg = json.load(f)
+        else:
+            cfg = {"_meta": {}, "loop": {}, "discovery_buffer": []}
+
+        cfg["_meta"]["description"] = "TECS-L discovery loop state — cycle tracking + discovery buffer"
+        cfg["_meta"]["updated"] = datetime.now().isoformat()
+
+        cfg["loop"]["cycle"] = len(tracker.history)
+        cfg["loop"]["total_discoveries"] = tracker.total_discoveries
+        cfg["loop"]["novel_discoveries"] = tracker.total_novel
+        cfg["loop"]["stage"] = growth.stage["name"]
+        cfg["loop"]["injected_constants"] = len(growth.injected_constants)
+        cfg["loop"]["forge_attempts"] = forge_attempts
+        cfg["loop"]["wall_breaks"] = wall_break_rounds
+        cfg["loop"]["status"] = tracker.status
+        cfg["loop"]["last_run"] = datetime.now().isoformat()
+
+        n_edges = sum(len(e) for e in graph.adjacency.values()) // 2
+        cfg["loop"]["graph_nodes"] = len(graph.nodes)
+        cfg["loop"]["graph_edges"] = n_edges
+
+        os.makedirs(os.path.dirname(CONFIG_LOOP_STATE), exist_ok=True)
+        with open(CONFIG_LOOP_STATE, 'w') as f:
+            json.dump(cfg, f, indent=2, ensure_ascii=False)
+        sync_report["config/loop_state.json"] = "updated"
+    except Exception as e:
+        sync_report["config/loop_state.json"] = f"ERROR: {e}"
+
+    # ── 2. Rebuild math atlas if new discoveries found ────────────
+    novel_count = tracker.total_novel
+    if novel_count > 0:
+        atlas_script = os.path.join(_shared, 'scan_math_atlas.py')
+        if os.path.exists(atlas_script):
+            try:
+                result = subprocess.run(
+                    [sys.executable, atlas_script, '--save', '--summary'],
+                    capture_output=True, text=True, timeout=120,
+                    cwd=SCRIPT_DIR,
+                )
+                if result.returncode == 0:
+                    sync_report["math_atlas"] = f"rebuilt ({novel_count} novel discoveries)"
+                else:
+                    sync_report["math_atlas"] = f"ERROR (rc={result.returncode}): {result.stderr[:200]}"
+            except subprocess.TimeoutExpired:
+                sync_report["math_atlas"] = "ERROR: timeout (120s)"
+            except Exception as e:
+                sync_report["math_atlas"] = f"ERROR: {e}"
+        else:
+            sync_report["math_atlas"] = "SKIP: scan_math_atlas.py not found"
+    else:
+        sync_report["math_atlas"] = "SKIP: no novel discoveries"
+
+    # ── 3. Run sync-readmes.sh to update README markers ───────────
+    sync_readmes = os.path.join(_shared, 'sync-readmes.sh')
+    if os.path.exists(sync_readmes):
+        try:
+            result = subprocess.run(
+                ['bash', sync_readmes],
+                capture_output=True, text=True, timeout=60,
+                cwd=SCRIPT_DIR,
+            )
+            if result.returncode == 0:
+                sync_report["sync-readmes"] = "OK"
+            else:
+                sync_report["sync-readmes"] = f"ERROR (rc={result.returncode}): {result.stderr[:200]}"
+        except Exception as e:
+            sync_report["sync-readmes"] = f"ERROR: {e}"
+    else:
+        sync_report["sync-readmes"] = "SKIP: sync-readmes.sh not found"
+
+    # ── 4. Auto-generate hypothesis stubs for novel exact discoveries ──
+    novel_exact = [d for d in growth.all_discoveries
+                   if d.grade == '\U0001f7e9' and d.is_novel]
+    generated_stubs = []
+    if novel_exact:
+        os.makedirs(HYPOTHESES_DIR, exist_ok=True)
+        existing = set(os.listdir(HYPOTHESES_DIR))
+        for d in novel_exact:
+            # Build a slug from the formula
+            slug = _make_slug(d.formula)
+            fname = f"LOOP-{d.cycle:03d}-{slug}.md"
+            if fname in existing:
+                continue
+            fpath = os.path.join(HYPOTHESES_DIR, fname)
+            try:
+                _write_hypothesis_stub(fpath, d)
+                generated_stubs.append(fname)
+                existing.add(fname)
+            except Exception:
+                pass  # best-effort
+        if generated_stubs:
+            sync_report["hypothesis_stubs"] = f"{len(generated_stubs)} generated"
+        else:
+            sync_report["hypothesis_stubs"] = f"SKIP: all {len(novel_exact)} already have files"
+    else:
+        sync_report["hypothesis_stubs"] = "SKIP: no novel exact discoveries"
+
+    # ── 5. Auto-commit + push ────────────────────────────────────
+    if novel_count > 0:
+        try:
+            stage_patterns = [
+                'results/loop/',
+                'config/loop_state.json',
+                'docs/hypotheses/LOOP-*',
+                'docs/papers/auto/',
+            ]
+            for pat in stage_patterns:
+                subprocess.run(
+                    ['git', 'add', pat],
+                    capture_output=True, text=True, timeout=10,
+                    cwd=SCRIPT_DIR,
+                )
+            subprocess.run(
+                ['git', 'add', '-u'],
+                capture_output=True, text=True, timeout=10,
+                cwd=SCRIPT_DIR,
+            )
+            r = subprocess.run(
+                ['git', 'diff', '--cached', '--quiet'],
+                capture_output=True, timeout=10,
+                cwd=SCRIPT_DIR,
+            )
+            if r.returncode != 0:
+                cycle_num = len(tracker.history)
+                msg = (f"loop: cycle {cycle_num} — "
+                       f"{novel_count} novel / {tracker.total_discoveries} total, "
+                       f"stage={growth.stage['name']}")
+                subprocess.run(
+                    ['git', 'commit', '-m', msg],
+                    capture_output=True, text=True, timeout=30,
+                    cwd=SCRIPT_DIR,
+                )
+                r_push = subprocess.run(
+                    ['git', 'push'],
+                    capture_output=True, text=True, timeout=60,
+                    cwd=SCRIPT_DIR,
+                )
+                if r_push.returncode == 0:
+                    sync_report["git"] = f"committed + pushed ({msg})"
+                else:
+                    sync_report["git"] = f"committed, push FAILED: {r_push.stderr[:100]}"
+            else:
+                sync_report["git"] = "SKIP: nothing to commit"
+        except Exception as e:
+            sync_report["git"] = f"ERROR: {e}"
+    else:
+        sync_report["git"] = "SKIP: no novel discoveries"
+
+    # ── 6. Print sync summary ─────────────────────────────────────
+    print()
+    max_key = max(len(k) for k in sync_report) if sync_report else 0
+    for key, status in sync_report.items():
+        print(f"  {key:<{max_key+2}} {status}")
+    print(f"{'='*70}\n")
+
+
+def _make_slug(formula: str) -> str:
+    """Convert a formula string to a filesystem-safe slug."""
+    slug = formula.lower()
+    slug = re.sub(r'[^a-z0-9]+', '-', slug)
+    slug = slug.strip('-')
+    return slug[:60] if slug else 'unknown'
+
+
+def _write_hypothesis_stub(path: str, d):
+    """Write a minimal hypothesis document for a discovery."""
+    with open(path, 'w') as f:
+        f.write(f"# Discovery: {d.formula}\n\n")
+        f.write(f"> **Auto-generated by discovery_loop.py** (cycle {d.cycle})\n\n")
+        f.write(f"## Hypothesis\n\n")
+        f.write(f"> {d.formula} = {d.target} (error: {d.error:.2e})\n\n")
+        f.write(f"## Details\n\n")
+        f.write(f"| Field | Value |\n")
+        f.write(f"|-------|-------|\n")
+        f.write(f"| Value | {d.value} |\n")
+        f.write(f"| Target | {d.target} |\n")
+        f.write(f"| Error | {d.error:.2e} |\n")
+        f.write(f"| Engine | {d.engine} |\n")
+        f.write(f"| Domains | {', '.join(d.domains) if d.domains else 'N/A'} |\n")
+        f.write(f"| Grade | {d.grade} |\n")
+        f.write(f"| Cycle | {d.cycle} |\n")
+        f.write(f"| Timestamp | {d.timestamp} |\n")
+        f.write(f"| Consensus | {d.consensus} lenses |\n\n")
+        f.write(f"## Verification\n\n")
+        f.write(f"- [ ] Arithmetic re-check\n")
+        f.write(f"- [ ] Generalization to n=28\n")
+        f.write(f"- [ ] Texas Sharpshooter p-value\n")
+        f.write(f"- [ ] Ad-hoc correction check\n\n")
+        f.write(f"## Interpretation\n\n")
+        f.write(f"*TODO: Add interpretation and connections to other hypotheses.*\n\n")
+        f.write(f"## Limitations\n\n")
+        f.write(f"*TODO: Identify where this could be wrong.*\n\n")
+        f.write(f"## Next Steps\n\n")
+        f.write(f"*TODO: Define verification direction.*\n")
 
 
 # ═════════════════════════════════════════════════════════════════
@@ -1059,10 +1816,19 @@ def run_cycle(cycle, growth, tracker, engines=None, auto_paper=False, graph=None
             growth.absorb(novel_bridged)
             all_new.extend(novel_bridged)
 
-    # Run each engine
-    for eng in engines:
+    # Import constant discoveries from nexus6 hooks
+    nexus_disc = import_nexus_discoveries()
+    if nexus_disc:
+        nexus_disc = deduplicate(nexus_disc, growth.all_discoveries)
+        novel_nexus = [d for d in nexus_disc if d.is_novel]
+        if novel_nexus:
+            growth.absorb(novel_nexus)
+            all_new.extend(novel_nexus)
+
+    # ── Engine dispatch helper ──
+    def _dispatch_engine(eng):
+        """Run a single engine, return (eng_name, discoveries, elapsed)."""
         t0 = time.time()
-        print(f"\n  [{eng.upper()}] Running...")
         try:
             if eng == 'dfs':
                 discoveries = run_dfs(depth, threshold,
@@ -1078,15 +1844,50 @@ def run_cycle(cycle, growth, tracker, engines=None, auto_paper=False, graph=None
         except Exception as e:
             print(f"  [{eng.upper()}] Error: {e}")
             discoveries = []
+        elapsed = time.time() - t0
+        return eng, discoveries, elapsed
+
+    # ── Parallel execution (ThreadPoolExecutor) with sequential fallback ──
+    engine_results = {}  # eng -> (discoveries, elapsed)
+    parallel_ok = False
+    t_wall_start = time.time()
+
+    try:
+        with ThreadPoolExecutor(max_workers=len(engines)) as executor:
+            print(f"\n  >> Parallel dispatch: {', '.join(e.upper() for e in engines)}")
+            futures = {executor.submit(_dispatch_engine, eng): eng for eng in engines}
+            for future in as_completed(futures):
+                eng_name, discoveries, elapsed = future.result()
+                engine_results[eng_name] = (discoveries, elapsed)
+        parallel_ok = True
+    except Exception as e:
+        print(f"  >> Parallel failed ({e}), falling back to sequential...")
+        engine_results = {}
+        for eng in engines:
+            eng_name, discoveries, elapsed = _dispatch_engine(eng)
+            engine_results[eng_name] = (discoveries, elapsed)
+
+    t_wall_total = time.time() - t_wall_start
+
+    # ── Collect results (preserve engine order) ──
+    sum_sequential = 0.0
+    for eng in engines:
+        discoveries, elapsed = engine_results.get(eng, ([], 0.0))
+        sum_sequential += elapsed
 
         # Grade and tag
         for d in discoveries:
             d.cycle = cycle
             grade_discovery(d)
 
-        dt = time.time() - t0
-        print(f"  [{eng.upper()}] {len(discoveries)} discoveries in {dt:.1f}s")
+        print(f"  [{eng.upper()}] {len(discoveries)} discoveries in {elapsed:.1f}s")
         all_new.extend(discoveries)
+
+    # ── Timing comparison ──
+    mode = "parallel" if parallel_ok else "sequential(fallback)"
+    speedup = sum_sequential / t_wall_total if t_wall_total > 0 else 1.0
+    print(f"\n  >> Timing [{mode}]: wall={t_wall_total:.1f}s, "
+          f"sum={sum_sequential:.1f}s, speedup={speedup:.2f}x")
 
     # Deduplicate against all previous
     all_new = deduplicate(all_new, growth.all_discoveries)
@@ -1096,6 +1897,9 @@ def run_cycle(cycle, growth, tracker, engines=None, auto_paper=False, graph=None
 
     # 3-way validation: lens consensus adjusts grades
     all_new = validate_3way(all_new)
+
+    # Flag high-grade novel discoveries for external WebSearch novelty check
+    all_new = flag_for_external_validation(all_new)
 
     n_novel = sum(1 for d in all_new if d.is_novel)
     n_exact = sum(1 for d in all_new if d.grade == '🟩' and d.is_novel)
@@ -1258,8 +2062,31 @@ def _render_dashboard(cycle, growth, tracker, graph, engines_used):
     line(f'Injected: {injected} | Graph: {n_nodes}n/{n_edges}e | Hubs: {len(hubs)}')
     sep_line()
     line('📈 발달 단계:')
-    line('  '.join(stage_bars[:3]))
-    line('  '.join(stage_bars[3:]))
+    # Show detailed progress per stage with stats
+    for i, s in enumerate(GrowthEngine.STAGES):
+        sn = s['name']
+        min_d = s['min_discoveries']
+        bar_total = 12
+        if i < growth.stage_idx:
+            bar = '█' * bar_total
+            marker = '✅'
+            detail = f'{min_d}+ disc'
+        elif i == growth.stage_idx:
+            if i + 1 < len(GrowthEngine.STAGES):
+                next_min = GrowthEngine.STAGES[i + 1]['min_discoveries']
+            else:
+                next_min = min_d + 1000
+            progress = min(1.0, (total - min_d) / max(1, next_min - min_d))
+            filled = int(progress * bar_total)
+            bar = '█' * filled + '░' * (bar_total - filled)
+            marker = '🔄'
+            detail = f'{total}/{next_min} disc'
+        else:
+            bar = '░' * bar_total
+            marker = '  '
+            detail = f'@{min_d}'
+        line(f'  {sn:<8} {bar} {marker} ({detail})')
+    line()
     line()
 
     # Engine breakdown with bars
@@ -1280,7 +2107,7 @@ def _render_dashboard(cycle, growth, tracker, graph, engines_used):
             line(f'  {d.grade} {d.formula[:35]:<35} → {d.target}')
         line()
 
-    # Discovery trend chart
+    # Discovery trend — horizontal bar + ASCII line graph
     line('📊 발견 추이:')
     for h in hist:
         bar_len = int(h[1] / max_d * 20)
@@ -1289,11 +2116,53 @@ def _render_dashboard(cycle, growth, tracker, graph, engines_used):
         line('  (no data yet)')
     line()
 
+    # ASCII line graph (novel discoveries curve)
+    if len(hist) >= 2:
+        novel_vals = [h[2] for h in hist]
+        g_max = max(novel_vals) or 1
+        g_rows = 5  # graph height
+        line('📉 Novel 발견 곡선:')
+        for row in range(g_rows, -1, -1):
+            threshold = g_max * row / g_rows
+            label = f'{int(threshold):>5}' if row in (0, g_rows, g_rows // 2) else '     '
+            chars = []
+            for i, v in enumerate(novel_vals):
+                prev_v = novel_vals[i - 1] if i > 0 else v
+                cur_level = v >= threshold
+                prev_level = prev_v >= threshold if i > 0 else cur_level
+                if cur_level and not prev_level:
+                    chars.append('╭──')
+                elif not cur_level and prev_level:
+                    chars.append('╯  ')
+                elif cur_level:
+                    chars.append('───')
+                else:
+                    chars.append('   ')
+            line(f'  {label}│{"".join(chars)}')
+        line(f'       └{"───" * len(novel_vals)}── Cycle')
+        cycle_labels = ''.join(f'C{h[0]:<2}' for h in hist)
+        line(f'        {cycle_labels}')
+        line()
+
     # Bridge
     if bridge_stage:
         line(f'■ NEXUS-BRIDGE 🌉 {bridge_stage}')
         line(f'Growth: {bridge_pts} pts | {bridge_active} active')
     line()
+
+    # External validation pending
+    pending_ext = [d for d in all_d
+                   if d.validate_externally and not d.external_validated]
+    validated_ext = sum(1 for d in all_d if d.external_validated)
+    if pending_ext or validated_ext:
+        line(f'■ External Novelty Check (WebSearch)')
+        sep_line()
+        line(f'  Pending: {len(pending_ext)} | Validated: {validated_ext}')
+        for d in pending_ext[:3]:
+            line(f'  → {d.grade} {d.formula[:40]}')
+        if len(pending_ext) > 3:
+            line(f'  ... and {len(pending_ext) - 3} more')
+        line()
 
     # Git
     if git_hash:
@@ -1636,7 +2505,8 @@ class WallBreaker:
 
 
 def cmd_report():
-    """Print current loop status from saved state (no loop needed)."""
+    """Print current loop status from saved state (no loop needed).
+    Fully reconstructs growth/tracker/graph from persisted files."""
     state = load_state()
     if not state:
         print("  No loop state found. Run the loop first.")
@@ -1652,17 +2522,35 @@ def cmd_report():
     graph = DiscoveryGraph()
     graph.load()
 
-    # Reconstruct discovery list from JSONL
+    # Reconstruct full discovery list from JSONL
     if os.path.exists(DISCOVERIES_FILE):
         with open(DISCOVERIES_FILE) as f:
-            for line in f:
-                line = line.strip()
-                if line:
-                    growth.all_discoveries.append(Discovery.from_dict(json.loads(line)))
+            for ln in f:
+                ln = ln.strip()
+                if ln:
+                    try:
+                        growth.all_discoveries.append(Discovery.from_dict(json.loads(ln)))
+                    except Exception:
+                        pass
+
+    # Re-check stage based on actual discovery count
+    growth.check_stage_up()
 
     cycle = state.get('cycle', 0)
     engines = list({d.engine for d in growth.all_discoveries}) or ['convergence']
+
+    # Print full dashboard
     print_dashboard(cycle, growth, tracker, graph, engines)
+
+    # Also print quick summary for session chat
+    n_exact = sum(1 for d in growth.all_discoveries if d.grade == '🟩')
+    n_struct = sum(1 for d in growth.all_discoveries if d.grade == '🟧')
+    n_novel = sum(1 for d in growth.all_discoveries if d.is_novel)
+    pending_ext = sum(1 for d in growth.all_discoveries
+                      if d.validate_externally and not d.external_validated)
+    print(f"\n  Quick: {len(growth.all_discoveries)} disc "
+          f"(🟩{n_exact} 🟧{n_struct}) | Novel: {n_novel} | "
+          f"WebSearch pending: {pending_ext}")
 
 
 def main():
@@ -1793,6 +2681,9 @@ def main():
 
     # Sync nexus-bridge (readmes + atlas)
     bridge_sync()
+
+    # Post-loop SSOT sync: update JSONs, rebuild atlas, generate hypothesis stubs
+    post_loop_sync(growth, tracker, graph, breaker, forge_attempts, wall_break_rounds)
 
     print(f"\n  Results: {RESULTS_DIR}")
     print(f"  Discoveries: {DISCOVERIES_FILE}")
