@@ -1329,7 +1329,7 @@ python3 dfs_engine.py --depth 2 --threshold 0.001
 | physics_n6_scan | Physics Fundamental Constants — n=6 Connection Scanner | `experiments/physics_n6_scan.py` |
 | ppa_model | N6 PPA (Performance, Power, Area) 모델 | `experiments/ppa_model.py` |
 | telescope_product_review | telescope_product_review.py — 기존 완성제품 전면 재검토 (망원경 9종 풀스캔) | `experiments/telescope_product_review.py` |
-| ufo_nexus6_scan | NEXUS-6 UFO Domain Full Scan -- aerospace/aviation/space constants n=6 matching | `experiments/ufo_nexus6_scan.py` |
+| ufo_nexus6_scan | NEXUS-6 Aerospace Domain Full Scan -- aerospace/aviation/space constants n=6 mat | `experiments/ufo_nexus6_scan.py` |
 | unified_verify | Unified Verification Orchestrator — TECS-L + n6-architecture | `experiments/unified_verify.py` |
 | verify_acceleration_hypotheses | verify_acceleration_hypotheses.py — Acceleration Hypothesis Verification | `experiments/verify_acceleration_hypotheses.py` |
 | verify_battery_architecture | HEXA-BATTERY Architecture Verification | `experiments/verify_battery_architecture.py` |
