@@ -1153,8 +1153,11 @@ def run_cycle(cycle, growth, tracker, engines=None, auto_paper=False, graph=None
     return all_new
 
 
+REPORT_FILE = os.path.join(RESULTS_DIR, 'report.txt')
+
+
 def print_dashboard(cycle, growth, tracker, graph, engines_used):
-    """Print periodic dashboard report (anima-style)."""
+    """Print periodic dashboard report (anima-style). Also saves to report.txt."""
     now = datetime.now().strftime('%Y-%m-%d %H:%M')
     stage = growth.stage['name']
     total = tracker.total_discoveries
@@ -1239,6 +1242,31 @@ def print_dashboard(cycle, growth, tracker, graph, engines_used):
         print(f'  │  🌉 NEXUS-BRIDGE: {bridge_info:<{w - 20}}│')
     print(f'  │{"":>{w}}│')
     print(f'  └{"─" * w}┘')
+
+    # Auto-save to file for cross-session access
+    import io, contextlib
+    buf = io.StringIO()
+    # Re-render into buffer (reuse locals already computed)
+    lines = []
+    lines.append(f'  ┌{"─" * w}┐')
+    lines.append(f'  │  🔬 TECS-L Discovery Loop — {now:<{w - 34}}│')
+    lines.append(f'  ├{"─" * w}┤')
+    lines.append(f'  │  Cycle: {cycle} | Stage: {stage} | Status: {status}')
+    lines.append(f'  │  Discoveries: {total} (🟩{n_exact} 🟧{n_struct} ⚪{n_weak}) | Novel: {novel}')
+    lines.append(f'  │  Injected: {injected} | Graph: {n_nodes}n/{n_edges}e | Hubs: {len(hubs)}')
+    lines.append(f'  │  Stages: {" → ".join(stage_bars)}')
+    for tl in trend_lines:
+        lines.append(f'  │  {tl}')
+    for eng, cnt in sorted(eng_counts.items(), key=lambda x: -x[1]):
+        lines.append(f'  │  {eng}: {cnt}')
+    if bridge_info:
+        lines.append(f'  │  🌉 NEXUS-BRIDGE: {bridge_info}')
+    lines.append(f'  └{"─" * w}┘')
+    try:
+        with open(REPORT_FILE, 'w') as f:
+            f.write('\n'.join(lines) + '\n')
+    except Exception:
+        pass
 
 
 def forge_new_constants(growth, tracker):
