@@ -1,0 +1,3510 @@
+{
+  "nodes": {
+    "d0": {
+      "id": "d0",
+      "value": 1.7317748053325315,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d1": {
+      "id": "d1",
+      "value": 2.7183733482652843,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d2": {
+      "id": "d2",
+      "value": 1.4141714397501424,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d3": {
+      "id": "d3",
+      "value": 0.8328841325314081,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "5/6",
+      "formula": "ln(2)^(1/phi(6))"
+    },
+    "d4": {
+      "id": "d4",
+      "value": 1.2013284090715264,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "zeta(3)",
+      "formula": "(mu(6)*zeta(3))"
+    },
+    "d5": {
+      "id": "d5",
+      "value": 0.5774197392371705,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d6": {
+      "id": "d6",
+      "value": 0.50001554036729,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d7": {
+      "id": "d7",
+      "value": 1.0114419883319816,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "1",
+      "formula": "sigma(6)^(1/kissing_8)"
+    },
+    "d8": {
+      "id": "d8",
+      "value": 0.693220618356647,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
+    },
+    "d9": {
+      "id": "d9",
+      "value": 0.3333262988911611,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d10": {
+      "id": "d10",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 1,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d11": {
+      "id": "d11",
+      "value": 2.7183469339956368,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 2,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d12": {
+      "id": "d12",
+      "value": 1.7320084913071006,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 2,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d13": {
+      "id": "d13",
+      "value": 1.4142039209217987,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 2,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d14": {
+      "id": "d14",
+      "value": 0.5000050533155208,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 2,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d15": {
+      "id": "d15",
+      "value": 0.8332730213992804,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 2,
+      "target": "5/6",
+      "formula": "(d_super/sigma(6))"
+    },
+    "d16": {
+      "id": "d16",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 2,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d17": {
+      "id": "d17",
+      "value": 0.5773481129689246,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 2,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d18": {
+      "id": "d18",
+      "value": 0.33331601892963336,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 2,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d19": {
+      "id": "d19",
+      "value": 0.6931836495855817,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 2,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
+    },
+    "d20": {
+      "id": "d20",
+      "value": 2.7183469339956368,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 3,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d21": {
+      "id": "d21",
+      "value": 1.7320084913071006,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 3,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d22": {
+      "id": "d22",
+      "value": 1.4142039209217987,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 3,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d23": {
+      "id": "d23",
+      "value": 0.5000050533155208,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 3,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d24": {
+      "id": "d24",
+      "value": 0.8332730213992804,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 3,
+      "target": "5/6",
+      "formula": "(d_super/sigma(6))"
+    },
+    "d25": {
+      "id": "d25",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 3,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d26": {
+      "id": "d26",
+      "value": 0.5773481129689246,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 3,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d27": {
+      "id": "d27",
+      "value": 0.33331601892963336,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 3,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d28": {
+      "id": "d28",
+      "value": 0.6931836495855817,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 3,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
+    },
+    "d29": {
+      "id": "d29",
+      "value": 2.7183469339956368,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 4,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d30": {
+      "id": "d30",
+      "value": 1.7320084913071006,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 4,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d31": {
+      "id": "d31",
+      "value": 1.4142039209217987,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 4,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d32": {
+      "id": "d32",
+      "value": 0.5000050533155208,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 4,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d33": {
+      "id": "d33",
+      "value": 0.8332730213992804,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 4,
+      "target": "5/6",
+      "formula": "(d_super/sigma(6))"
+    },
+    "d34": {
+      "id": "d34",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 4,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d35": {
+      "id": "d35",
+      "value": 0.5773481129689246,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 4,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d36": {
+      "id": "d36",
+      "value": 0.33331601892963336,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 4,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d37": {
+      "id": "d37",
+      "value": 0.6931836495855817,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 4,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
+    },
+    "d38": {
+      "id": "d38",
+      "value": 2.7183469339956368,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 5,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d39": {
+      "id": "d39",
+      "value": 1.7320084913071006,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 5,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d40": {
+      "id": "d40",
+      "value": 1.4142039209217987,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 5,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d41": {
+      "id": "d41",
+      "value": 0.5000050533155208,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 5,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d42": {
+      "id": "d42",
+      "value": 0.8332730213992804,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 5,
+      "target": "5/6",
+      "formula": "(d_super/sigma(6))"
+    },
+    "d43": {
+      "id": "d43",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 5,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d44": {
+      "id": "d44",
+      "value": 0.5773481129689246,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 5,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d45": {
+      "id": "d45",
+      "value": 0.33331601892963336,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 5,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d46": {
+      "id": "d46",
+      "value": 0.6931836495855817,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 5,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
+    },
+    "d47": {
+      "id": "d47",
+      "value": 2.7183469339956368,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 6,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d48": {
+      "id": "d48",
+      "value": 1.7320084913071006,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 6,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d49": {
+      "id": "d49",
+      "value": 1.4142039209217987,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 6,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d50": {
+      "id": "d50",
+      "value": 0.5000050533155208,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 6,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d51": {
+      "id": "d51",
+      "value": 0.8332730213992804,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 6,
+      "target": "5/6",
+      "formula": "(d_super/sigma(6))"
+    },
+    "d52": {
+      "id": "d52",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 6,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d53": {
+      "id": "d53",
+      "value": 0.5773481129689246,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 6,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d54": {
+      "id": "d54",
+      "value": 0.33331601892963336,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 6,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d55": {
+      "id": "d55",
+      "value": 0.6931836495855817,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 6,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
+    },
+    "d56": {
+      "id": "d56",
+      "value": 2.7183469339956368,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 7,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d57": {
+      "id": "d57",
+      "value": 1.7320084913071006,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 7,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d58": {
+      "id": "d58",
+      "value": 1.4142039209217987,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 7,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d59": {
+      "id": "d59",
+      "value": 0.5000050533155208,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 7,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d60": {
+      "id": "d60",
+      "value": 0.8332730213992804,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 7,
+      "target": "5/6",
+      "formula": "(d_super/sigma(6))"
+    },
+    "d61": {
+      "id": "d61",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 7,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d62": {
+      "id": "d62",
+      "value": 0.5773481129689246,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 7,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d63": {
+      "id": "d63",
+      "value": 0.33331601892963336,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 7,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d64": {
+      "id": "d64",
+      "value": 0.6931836495855817,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 7,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
+    },
+    "d65": {
+      "id": "d65",
+      "value": 2.7183469339956368,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 8,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d66": {
+      "id": "d66",
+      "value": 1.7320084913071006,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 8,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d67": {
+      "id": "d67",
+      "value": 1.4142039209217987,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 8,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d68": {
+      "id": "d68",
+      "value": 0.5000050533155208,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 8,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d69": {
+      "id": "d69",
+      "value": 0.8332730213992804,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 8,
+      "target": "5/6",
+      "formula": "(d_super/sigma(6))"
+    },
+    "d70": {
+      "id": "d70",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 8,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d71": {
+      "id": "d71",
+      "value": 0.5773481129689246,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 8,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d72": {
+      "id": "d72",
+      "value": 0.33331601892963336,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 8,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d73": {
+      "id": "d73",
+      "value": 0.6931836495855817,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 8,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
+    },
+    "d74": {
+      "id": "d74",
+      "value": 2.7183469339956368,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 9,
+      "target": "e",
+      "formula": "phi(6)^(1/ln(2))"
+    },
+    "d75": {
+      "id": "d75",
+      "value": 1.7320084913071006,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 9,
+      "target": "sqrt(3)",
+      "formula": "(mu(6)/gamma_EM)"
+    },
+    "d76": {
+      "id": "d76",
+      "value": 1.4142039209217987,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 9,
+      "target": "sqrt(2)",
+      "formula": "(phi(6)/sqrt(2))"
+    },
+    "d77": {
+      "id": "d77",
+      "value": 0.5000050533155208,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 9,
+      "target": "1/2",
+      "formula": "log_phi(6)(sqrt(2))"
+    },
+    "d78": {
+      "id": "d78",
+      "value": 0.8332730213992804,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 9,
+      "target": "5/6",
+      "formula": "(d_super/sigma(6))"
+    },
+    "d79": {
+      "id": "d79",
+      "value": 0.2876820724517808,
+      "grade": "🟧",
+      "engine": "convergence",
+      "cycle": 9,
+      "target": "2/7",
+      "formula": "(mu(6)*ln(4/3))"
+    },
+    "d80": {
+      "id": "d80",
+      "value": 0.5773481129689246,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 9,
+      "target": "gamma_EM",
+      "formula": "(mu(6)*gamma_EM)"
+    },
+    "d81": {
+      "id": "d81",
+      "value": 0.33331601892963336,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 9,
+      "target": "1/3",
+      "formula": "(gamma_EM^phi(6))"
+    },
+    "d82": {
+      "id": "d82",
+      "value": 0.6931836495855817,
+      "grade": "🟩",
+      "engine": "convergence",
+      "cycle": 9,
+      "target": "ln2",
+      "formula": "log_e(phi(6))"
+    }
+  },
+  "adjacency": {
+    "d0": [
+      {
+        "neighbor": "d12",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d21",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d30",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d39",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d48",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d57",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d66",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d75",
+        "relation": "supports"
+      }
+    ],
+    "d1": [
+      {
+        "neighbor": "d11",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d20",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d29",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d38",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d47",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d56",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d65",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d74",
+        "relation": "supports"
+      }
+    ],
+    "d2": [
+      {
+        "neighbor": "d13",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d22",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d31",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d40",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d49",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d58",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d67",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d76",
+        "relation": "supports"
+      }
+    ],
+    "d3": [
+      {
+        "neighbor": "d15",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d24",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d33",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d42",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d51",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d60",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d69",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d78",
+        "relation": "supports"
+      }
+    ],
+    "d4": [],
+    "d5": [
+      {
+        "neighbor": "d17",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d26",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d35",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d44",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d53",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d62",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d71",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d80",
+        "relation": "supports"
+      }
+    ],
+    "d6": [
+      {
+        "neighbor": "d14",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d23",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d32",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d41",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d50",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d59",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d68",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d77",
+        "relation": "supports"
+      }
+    ],
+    "d7": [],
+    "d8": [
+      {
+        "neighbor": "d19",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d28",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d37",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d46",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d55",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d64",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d73",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d82",
+        "relation": "supports"
+      }
+    ],
+    "d9": [
+      {
+        "neighbor": "d18",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d27",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d36",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d45",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d54",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d63",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d72",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d81",
+        "relation": "supports"
+      }
+    ],
+    "d10": [
+      {
+        "neighbor": "d16",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d25",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d34",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d43",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d52",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d61",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d70",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d79",
+        "relation": "supports"
+      }
+    ],
+    "d11": [
+      {
+        "neighbor": "d1",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d20",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d29",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d38",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d47",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d56",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d65",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d74",
+        "relation": "supports"
+      }
+    ],
+    "d12": [
+      {
+        "neighbor": "d0",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d21",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d30",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d39",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d48",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d57",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d66",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d75",
+        "relation": "supports"
+      }
+    ],
+    "d13": [
+      {
+        "neighbor": "d2",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d22",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d31",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d40",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d49",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d58",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d67",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d76",
+        "relation": "supports"
+      }
+    ],
+    "d14": [
+      {
+        "neighbor": "d6",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d23",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d32",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d41",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d50",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d59",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d68",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d77",
+        "relation": "supports"
+      }
+    ],
+    "d15": [
+      {
+        "neighbor": "d3",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d24",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d33",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d42",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d51",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d60",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d69",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d78",
+        "relation": "supports"
+      }
+    ],
+    "d16": [
+      {
+        "neighbor": "d10",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d25",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d34",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d43",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d52",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d61",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d70",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d79",
+        "relation": "supports"
+      }
+    ],
+    "d17": [
+      {
+        "neighbor": "d5",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d26",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d35",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d44",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d53",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d62",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d71",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d80",
+        "relation": "supports"
+      }
+    ],
+    "d18": [
+      {
+        "neighbor": "d9",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d27",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d36",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d45",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d54",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d63",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d72",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d81",
+        "relation": "supports"
+      }
+    ],
+    "d19": [
+      {
+        "neighbor": "d8",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d28",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d37",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d46",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d55",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d64",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d73",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d82",
+        "relation": "supports"
+      }
+    ],
+    "d20": [
+      {
+        "neighbor": "d1",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d11",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d29",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d38",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d47",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d56",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d65",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d74",
+        "relation": "supports"
+      }
+    ],
+    "d21": [
+      {
+        "neighbor": "d0",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d12",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d30",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d39",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d48",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d57",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d66",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d75",
+        "relation": "supports"
+      }
+    ],
+    "d22": [
+      {
+        "neighbor": "d2",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d13",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d31",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d40",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d49",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d58",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d67",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d76",
+        "relation": "supports"
+      }
+    ],
+    "d23": [
+      {
+        "neighbor": "d6",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d14",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d32",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d41",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d50",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d59",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d68",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d77",
+        "relation": "supports"
+      }
+    ],
+    "d24": [
+      {
+        "neighbor": "d3",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d15",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d33",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d42",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d51",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d60",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d69",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d78",
+        "relation": "supports"
+      }
+    ],
+    "d25": [
+      {
+        "neighbor": "d10",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d16",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d34",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d43",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d52",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d61",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d70",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d79",
+        "relation": "supports"
+      }
+    ],
+    "d26": [
+      {
+        "neighbor": "d5",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d17",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d35",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d44",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d53",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d62",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d71",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d80",
+        "relation": "supports"
+      }
+    ],
+    "d27": [
+      {
+        "neighbor": "d9",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d18",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d36",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d45",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d54",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d63",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d72",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d81",
+        "relation": "supports"
+      }
+    ],
+    "d28": [
+      {
+        "neighbor": "d8",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d19",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d37",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d46",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d55",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d64",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d73",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d82",
+        "relation": "supports"
+      }
+    ],
+    "d29": [
+      {
+        "neighbor": "d1",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d11",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d20",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d38",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d47",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d56",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d65",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d74",
+        "relation": "supports"
+      }
+    ],
+    "d30": [
+      {
+        "neighbor": "d0",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d12",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d21",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d39",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d48",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d57",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d66",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d75",
+        "relation": "supports"
+      }
+    ],
+    "d31": [
+      {
+        "neighbor": "d2",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d13",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d22",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d40",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d49",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d58",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d67",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d76",
+        "relation": "supports"
+      }
+    ],
+    "d32": [
+      {
+        "neighbor": "d6",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d14",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d23",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d41",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d50",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d59",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d68",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d77",
+        "relation": "supports"
+      }
+    ],
+    "d33": [
+      {
+        "neighbor": "d3",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d15",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d24",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d42",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d51",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d60",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d69",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d78",
+        "relation": "supports"
+      }
+    ],
+    "d34": [
+      {
+        "neighbor": "d10",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d16",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d25",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d43",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d52",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d61",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d70",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d79",
+        "relation": "supports"
+      }
+    ],
+    "d35": [
+      {
+        "neighbor": "d5",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d17",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d26",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d44",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d53",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d62",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d71",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d80",
+        "relation": "supports"
+      }
+    ],
+    "d36": [
+      {
+        "neighbor": "d9",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d18",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d27",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d45",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d54",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d63",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d72",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d81",
+        "relation": "supports"
+      }
+    ],
+    "d37": [
+      {
+        "neighbor": "d8",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d19",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d28",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d46",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d55",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d64",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d73",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d82",
+        "relation": "supports"
+      }
+    ],
+    "d38": [
+      {
+        "neighbor": "d1",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d11",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d20",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d29",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d47",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d56",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d65",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d74",
+        "relation": "supports"
+      }
+    ],
+    "d39": [
+      {
+        "neighbor": "d0",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d12",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d21",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d30",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d48",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d57",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d66",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d75",
+        "relation": "supports"
+      }
+    ],
+    "d40": [
+      {
+        "neighbor": "d2",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d13",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d22",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d31",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d49",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d58",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d67",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d76",
+        "relation": "supports"
+      }
+    ],
+    "d41": [
+      {
+        "neighbor": "d6",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d14",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d23",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d32",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d50",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d59",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d68",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d77",
+        "relation": "supports"
+      }
+    ],
+    "d42": [
+      {
+        "neighbor": "d3",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d15",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d24",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d33",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d51",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d60",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d69",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d78",
+        "relation": "supports"
+      }
+    ],
+    "d43": [
+      {
+        "neighbor": "d10",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d16",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d25",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d34",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d52",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d61",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d70",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d79",
+        "relation": "supports"
+      }
+    ],
+    "d44": [
+      {
+        "neighbor": "d5",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d17",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d26",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d35",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d53",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d62",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d71",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d80",
+        "relation": "supports"
+      }
+    ],
+    "d45": [
+      {
+        "neighbor": "d9",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d18",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d27",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d36",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d54",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d63",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d72",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d81",
+        "relation": "supports"
+      }
+    ],
+    "d46": [
+      {
+        "neighbor": "d8",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d19",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d28",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d37",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d55",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d64",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d73",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d82",
+        "relation": "supports"
+      }
+    ],
+    "d47": [
+      {
+        "neighbor": "d1",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d11",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d20",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d29",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d38",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d56",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d65",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d74",
+        "relation": "supports"
+      }
+    ],
+    "d48": [
+      {
+        "neighbor": "d0",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d12",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d21",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d30",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d39",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d57",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d66",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d75",
+        "relation": "supports"
+      }
+    ],
+    "d49": [
+      {
+        "neighbor": "d2",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d13",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d22",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d31",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d40",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d58",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d67",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d76",
+        "relation": "supports"
+      }
+    ],
+    "d50": [
+      {
+        "neighbor": "d6",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d14",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d23",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d32",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d41",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d59",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d68",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d77",
+        "relation": "supports"
+      }
+    ],
+    "d51": [
+      {
+        "neighbor": "d3",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d15",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d24",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d33",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d42",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d60",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d69",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d78",
+        "relation": "supports"
+      }
+    ],
+    "d52": [
+      {
+        "neighbor": "d10",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d16",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d25",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d34",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d43",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d61",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d70",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d79",
+        "relation": "supports"
+      }
+    ],
+    "d53": [
+      {
+        "neighbor": "d5",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d17",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d26",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d35",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d44",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d62",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d71",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d80",
+        "relation": "supports"
+      }
+    ],
+    "d54": [
+      {
+        "neighbor": "d9",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d18",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d27",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d36",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d45",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d63",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d72",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d81",
+        "relation": "supports"
+      }
+    ],
+    "d55": [
+      {
+        "neighbor": "d8",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d19",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d28",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d37",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d46",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d64",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d73",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d82",
+        "relation": "supports"
+      }
+    ],
+    "d56": [
+      {
+        "neighbor": "d1",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d11",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d20",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d29",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d38",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d47",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d65",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d74",
+        "relation": "supports"
+      }
+    ],
+    "d57": [
+      {
+        "neighbor": "d0",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d12",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d21",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d30",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d39",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d48",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d66",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d75",
+        "relation": "supports"
+      }
+    ],
+    "d58": [
+      {
+        "neighbor": "d2",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d13",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d22",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d31",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d40",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d49",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d67",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d76",
+        "relation": "supports"
+      }
+    ],
+    "d59": [
+      {
+        "neighbor": "d6",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d14",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d23",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d32",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d41",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d50",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d68",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d77",
+        "relation": "supports"
+      }
+    ],
+    "d60": [
+      {
+        "neighbor": "d3",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d15",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d24",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d33",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d42",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d51",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d69",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d78",
+        "relation": "supports"
+      }
+    ],
+    "d61": [
+      {
+        "neighbor": "d10",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d16",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d25",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d34",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d43",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d52",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d70",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d79",
+        "relation": "supports"
+      }
+    ],
+    "d62": [
+      {
+        "neighbor": "d5",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d17",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d26",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d35",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d44",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d53",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d71",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d80",
+        "relation": "supports"
+      }
+    ],
+    "d63": [
+      {
+        "neighbor": "d9",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d18",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d27",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d36",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d45",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d54",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d72",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d81",
+        "relation": "supports"
+      }
+    ],
+    "d64": [
+      {
+        "neighbor": "d8",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d19",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d28",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d37",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d46",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d55",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d73",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d82",
+        "relation": "supports"
+      }
+    ],
+    "d65": [
+      {
+        "neighbor": "d1",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d11",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d20",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d29",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d38",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d47",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d56",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d74",
+        "relation": "supports"
+      }
+    ],
+    "d66": [
+      {
+        "neighbor": "d0",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d12",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d21",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d30",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d39",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d48",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d57",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d75",
+        "relation": "supports"
+      }
+    ],
+    "d67": [
+      {
+        "neighbor": "d2",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d13",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d22",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d31",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d40",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d49",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d58",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d76",
+        "relation": "supports"
+      }
+    ],
+    "d68": [
+      {
+        "neighbor": "d6",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d14",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d23",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d32",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d41",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d50",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d59",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d77",
+        "relation": "supports"
+      }
+    ],
+    "d69": [
+      {
+        "neighbor": "d3",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d15",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d24",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d33",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d42",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d51",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d60",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d78",
+        "relation": "supports"
+      }
+    ],
+    "d70": [
+      {
+        "neighbor": "d10",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d16",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d25",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d34",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d43",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d52",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d61",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d79",
+        "relation": "supports"
+      }
+    ],
+    "d71": [
+      {
+        "neighbor": "d5",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d17",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d26",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d35",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d44",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d53",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d62",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d80",
+        "relation": "supports"
+      }
+    ],
+    "d72": [
+      {
+        "neighbor": "d9",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d18",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d27",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d36",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d45",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d54",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d63",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d81",
+        "relation": "supports"
+      }
+    ],
+    "d73": [
+      {
+        "neighbor": "d8",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d19",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d28",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d37",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d46",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d55",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d64",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d82",
+        "relation": "supports"
+      }
+    ],
+    "d74": [
+      {
+        "neighbor": "d1",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d11",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d20",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d29",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d38",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d47",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d56",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d65",
+        "relation": "supports"
+      }
+    ],
+    "d75": [
+      {
+        "neighbor": "d0",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d12",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d21",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d30",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d39",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d48",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d57",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d66",
+        "relation": "supports"
+      }
+    ],
+    "d76": [
+      {
+        "neighbor": "d2",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d13",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d22",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d31",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d40",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d49",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d58",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d67",
+        "relation": "supports"
+      }
+    ],
+    "d77": [
+      {
+        "neighbor": "d6",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d14",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d23",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d32",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d41",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d50",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d59",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d68",
+        "relation": "supports"
+      }
+    ],
+    "d78": [
+      {
+        "neighbor": "d3",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d15",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d24",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d33",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d42",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d51",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d60",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d69",
+        "relation": "supports"
+      }
+    ],
+    "d79": [
+      {
+        "neighbor": "d10",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d16",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d25",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d34",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d43",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d52",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d61",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d70",
+        "relation": "supports"
+      }
+    ],
+    "d80": [
+      {
+        "neighbor": "d5",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d17",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d26",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d35",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d44",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d53",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d62",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d71",
+        "relation": "supports"
+      }
+    ],
+    "d81": [
+      {
+        "neighbor": "d9",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d18",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d27",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d36",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d45",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d54",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d63",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d72",
+        "relation": "supports"
+      }
+    ],
+    "d82": [
+      {
+        "neighbor": "d8",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d19",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d28",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d37",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d46",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d55",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d64",
+        "relation": "supports"
+      },
+      {
+        "neighbor": "d73",
+        "relation": "supports"
+      }
+    ]
+  },
+  "next_id": 83
+}

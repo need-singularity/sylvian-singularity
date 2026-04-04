@@ -2,7 +2,7 @@
   "_meta": {
     "description": "TECS-L 8-domain health registry for discovery loop",
     "schema_version": "1.0.0",
-    "updated": "2026-04-04T17:51:46.962473"
+    "updated": "2026-04-04T18:42:20.888158"
   },
   "domains": {
     "N": {
@@ -15,7 +15,7 @@
       "gap": 0.0,
       "impact_weight": 0.15,
       "target_exact_rate": 0.6,
-      "stagnant_cycles": 1
+      "stagnant_cycles": 0
     },
     "A": {
       "name": "Analysis",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TECS-L Discovery Action — runs convergence/proof engine on target domain."""
+"""TECS-L Discovery Action — runs discovery_loop.py (4 engines) and harvests results."""
 
 import json
 import os
@@ -8,16 +8,19 @@ import subprocess
 from datetime import datetime
 
 TECS_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(TECS_ROOT, '.shared'))
 
 LOOP_STATE_PATH = os.path.join(TECS_ROOT, 'config', 'loop_state.json')
 REGISTRY_PATH = os.path.join(TECS_ROOT, 'config', 'domain_registry.json')
 
-# Mode → convergence_engine strategy mapping
-MODE_STRATEGY = {
-    'dfs': '1',        # S1: Open Search DFS
-    'pair': '2',       # S2: Pair Scan
-    'backtrack': '3',  # S3: Target Backtrack
+# discovery_loop.py outputs here
+DISC_LOOP_JSONL = os.path.join(TECS_ROOT, 'results', 'loop', 'discoveries.jsonl')
+DISC_LOOP_STATE = os.path.join(TECS_ROOT, 'results', 'loop', 'loop_state.json')
+
+# Mode → engine selection
+MODE_ENGINES = {
+    'dfs': ['dfs', 'convergence'],
+    'pair': ['convergence', 'quantum'],
+    'backtrack': ['convergence', 'perfect'],
 }
 
 
@@ -31,109 +34,118 @@ def save_json(path, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-def run_convergence_engine(domain_code, mode):
-    """Run convergence_engine.py with specified strategy and domain filter."""
-    engine_path = os.path.join(TECS_ROOT, '.shared', 'convergence_engine.py')
-    if not os.path.isfile(engine_path):
-        return {'success': False, 'error': 'convergence_engine.py not found'}
+def count_jsonl_lines(path):
+    """Count lines in a JSONL file."""
+    if not os.path.isfile(path):
+        return 0
+    with open(path) as f:
+        return sum(1 for _ in f)
 
-    strategy = MODE_STRATEGY.get(mode, '1')
+
+def read_jsonl_tail(path, skip=0):
+    """Read JSONL entries after skip lines."""
+    entries = []
+    if not os.path.isfile(path):
+        return entries
+    with open(path) as f:
+        for i, line in enumerate(f):
+            if i >= skip:
+                try:
+                    entries.append(json.loads(line.strip()))
+                except json.JSONDecodeError:
+                    pass
+    return entries
+
+
+def run_discovery_loop(mode):
+    """Run discovery_loop.py --cycles 1 --resume with mode-appropriate engines."""
+    engine_path = os.path.join(TECS_ROOT, 'discovery_loop.py')
+    if not os.path.isfile(engine_path):
+        return {'success': False, 'error': 'discovery_loop.py not found'}
+
+    engines = MODE_ENGINES.get(mode, ['dfs', 'convergence', 'quantum', 'perfect'])
+
     cmd = [
         sys.executable, engine_path,
-        '--strategy', strategy,
-        '--domain', domain_code,
-        '--max-results', '10',
-        '--json-output',
-    ]
+        '--cycles', '1',
+        '--resume',
+        '--engines',
+    ] + engines
+
     try:
         result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120,
+            cmd, capture_output=True, text=True, timeout=300,
             cwd=TECS_ROOT
         )
-        if result.returncode == 0 and result.stdout.strip():
-            try:
-                findings = json.loads(result.stdout.strip())
-                return {'success': True, 'findings': findings}
-            except json.JSONDecodeError:
-                # Engine may output non-JSON — parse lines as discoveries
-                lines = [l.strip() for l in result.stdout.strip().split('\n') if l.strip()]
-                return {'success': True, 'findings': lines}
+        if result.returncode == 0:
+            return {'success': True, 'stdout': result.stdout[-1000:]}
         else:
             return {
                 'success': False,
-                'error': result.stderr[:500] if result.stderr else 'no output',
+                'error': (result.stderr or result.stdout or 'unknown')[:500],
             }
     except subprocess.TimeoutExpired:
-        return {'success': False, 'error': 'timeout (120s)'}
-    except Exception as e:
-        return {'success': False, 'error': str(e)}
-
-
-def run_proof_engine(domain_code):
-    """Run proof_engine.py to tier-classify unverified hypotheses."""
-    engine_path = os.path.join(TECS_ROOT, '.shared', 'proof_engine.py')
-    if not os.path.isfile(engine_path):
-        return {'success': False, 'error': 'proof_engine.py not found'}
-
-    cmd = [
-        sys.executable, engine_path,
-        '--domain', domain_code,
-        '--json-output',
-    ]
-    try:
-        result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120,
-            cwd=TECS_ROOT
-        )
-        if result.returncode == 0 and result.stdout.strip():
-            try:
-                return {'success': True, 'proofs': json.loads(result.stdout.strip())}
-            except json.JSONDecodeError:
-                lines = [l.strip() for l in result.stdout.strip().split('\n') if l.strip()]
-                return {'success': True, 'proofs': lines}
-        return {'success': False, 'error': result.stderr[:500] if result.stderr else 'no output'}
-    except subprocess.TimeoutExpired:
-        return {'success': False, 'error': 'timeout (120s)'}
+        return {'success': False, 'error': 'timeout (300s)'}
     except Exception as e:
         return {'success': False, 'error': str(e)}
 
 
 def act(domain_code, mode):
-    """Execute discovery action on target domain with current mode."""
+    """Execute discovery action: run 1 cycle of discovery_loop, harvest new discoveries."""
     state = load_json(LOOP_STATE_PATH)
-
-    # Run both engines
-    conv_result = run_convergence_engine(domain_code, mode)
-    proof_result = run_proof_engine(domain_code)
-
-    discoveries = []
     now = datetime.now().isoformat()
 
-    if conv_result['success'] and conv_result.get('findings'):
-        findings = conv_result['findings']
-        if isinstance(findings, list):
-            for f in findings[:6]:  # cap at n=6
-                discoveries.append({
-                    'type': 'convergence',
-                    'domain': domain_code,
-                    'content': f if isinstance(f, str) else json.dumps(f),
-                    'timestamp': now,
-                    'mode': mode,
-                    'validated': False,
-                })
+    # Count existing discoveries before running
+    before_count = count_jsonl_lines(DISC_LOOP_JSONL)
 
-    if proof_result['success'] and proof_result.get('proofs'):
-        proofs = proof_result['proofs']
-        if isinstance(proofs, list):
-            for p in proofs[:6]:
-                discoveries.append({
-                    'type': 'proof',
-                    'domain': domain_code,
-                    'content': p if isinstance(p, str) else json.dumps(p),
-                    'timestamp': now,
-                    'mode': mode,
-                    'validated': False,
-                })
+    # Run discovery_loop.py --cycles 1 --resume
+    loop_result = run_discovery_loop(mode)
+
+    # Harvest new discoveries from JSONL
+    discoveries = []
+    if loop_result['success']:
+        new_entries = read_jsonl_tail(DISC_LOOP_JSONL, skip=before_count)
+        for entry in new_entries[:12]:  # cap at σ=12
+            # Map discovery_loop format to our buffer format
+            content_parts = []
+            if entry.get('formula'):
+                content_parts.append(entry['formula'])
+            if entry.get('target'):
+                content_parts.append(f"= {entry['target']}")
+            if entry.get('value') is not None:
+                content_parts.append(f"({entry['value']})")
+            if entry.get('error') is not None:
+                content_parts.append(f"err={entry['error']}")
+            content = ' '.join(content_parts) or json.dumps(entry)
+
+            # Classify domain from entry
+            disc_domains = entry.get('domains', [])
+            disc_domain = domain_code
+            if disc_domains:
+                # Map discovery_loop domain names to our codes
+                domain_map = {
+                    'number': 'N', 'analysis': 'A', 'algebra': 'G',
+                    'topology': 'T', 'combinat': 'C', 'quantum': 'Q',
+                    'information': 'I', 'statistic': 'S',
+                }
+                for dd in disc_domains:
+                    for key, code in domain_map.items():
+                        if key in dd.lower():
+                            disc_domain = code
+                            break
+
+            discoveries.append({
+                'type': entry.get('engine', 'discovery_loop'),
+                'domain': disc_domain,
+                'content': content,
+                'timestamp': entry.get('timestamp', now),
+                'mode': mode,
+                'validated': False,
+                'grade_raw': entry.get('grade', ''),
+                'error': entry.get('error'),
+                'value': entry.get('value'),
+                'consensus': entry.get('consensus', 0),
+            })
 
     # Update state
     if discoveries:
@@ -170,6 +182,8 @@ def act(domain_code, mode):
         'mode': state['loop']['mode'],
         'consecutive_failures': state['loop']['consecutive_failures'],
         'buffer_size': len(state['discovery_buffer']),
+        'engine_success': loop_result['success'],
+        'engine_error': loop_result.get('error', ''),
     }
 
 

@@ -2,19 +2,110 @@
   "_meta": {
     "description": "TECS-L discovery loop state — cycle tracking + discovery buffer",
     "schema_version": "1.0.0",
-    "updated": "2026-04-04T17:51:47.222842"
+    "updated": "2026-04-04T18:42:19.840266"
   },
   "loop": {
-    "cycle": 1,
+    "cycle": 9,
     "mode": "dfs",
-    "consecutive_failures": 1,
+    "consecutive_failures": 0,
     "max_failures": 3,
-    "total_discoveries": 0,
-    "last_run": "2026-04-04T17:51:47.222842",
+    "total_discoveries": 86,
+    "last_run": "2026-04-04T18:42:16.873664",
     "status": "idle"
   },
   "discovery_buffer": [],
-  "publish_history": [],
+  "publish_history": [
+    {
+      "paper_id": "TECS-AUTO-20260404-181446",
+      "paper_path": "/Users/ghost/Dev/TECS-L/zenodo/auto-papers/TECS-AUTO-20260404-181446.md",
+      "timestamp": "2026-04-04T18:14:46.916730",
+      "discovery_count": 11,
+      "cumulative_discoveries": 11,
+      "zenodo": {
+        "success": false,
+        "error": "no zenodo token"
+      },
+      "osf": {
+        "success": false,
+        "error": "no osf token"
+      }
+    },
+    {
+      "paper_id": "TECS-AUTO-20260404-181452",
+      "paper_path": "/Users/ghost/Dev/TECS-L/zenodo/auto-papers/TECS-AUTO-20260404-181452.md",
+      "timestamp": "2026-04-04T18:14:52.582297",
+      "discovery_count": 12,
+      "cumulative_discoveries": 23,
+      "zenodo": {
+        "success": false,
+        "error": "no zenodo token"
+      },
+      "osf": {
+        "success": false,
+        "error": "no osf token"
+      }
+    },
+    {
+      "paper_id": "TECS-AUTO-20260404-181457",
+      "paper_path": "/Users/ghost/Dev/TECS-L/zenodo/auto-papers/TECS-AUTO-20260404-181457.md",
+      "timestamp": "2026-04-04T18:14:57.737439",
+      "discovery_count": 9,
+      "cumulative_discoveries": 32,
+      "zenodo": {
+        "success": false,
+        "error": "no zenodo token"
+      },
+      "osf": {
+        "success": false,
+        "error": "no osf token"
+      }
+    },
+    {
+      "paper_id": "TECS-AUTO-20260404-181503",
+      "paper_path": "/Users/ghost/Dev/TECS-L/zenodo/auto-papers/TECS-AUTO-20260404-181503.md",
+      "timestamp": "2026-04-04T18:15:03.033508",
+      "discovery_count": 9,
+      "cumulative_discoveries": 41,
+      "zenodo": {
+        "success": false,
+        "error": "no zenodo token"
+      },
+      "osf": {
+        "success": false,
+        "error": "no osf token"
+      }
+    },
+    {
+      "paper_id": "TECS-AUTO-20260404-181508",
+      "paper_path": "/Users/ghost/Dev/TECS-L/zenodo/auto-papers/TECS-AUTO-20260404-181508.md",
+      "timestamp": "2026-04-04T18:15:08.266814",
+      "discovery_count": 9,
+      "cumulative_discoveries": 50,
+      "zenodo": {
+        "success": false,
+        "error": "no zenodo token"
+      },
+      "osf": {
+        "success": false,
+        "error": "no osf token"
+      }
+    },
+    {
+      "paper_id": "TECS-AUTO-20260404-181513",
+      "paper_path": "/Users/ghost/Dev/TECS-L/zenodo/auto-papers/TECS-AUTO-20260404-181513.md",
+      "timestamp": "2026-04-04T18:15:13.359546",
+      "discovery_count": 9,
+      "cumulative_discoveries": 59,
+      "zenodo": {
+        "success": false,
+        "error": "no zenodo token"
+      },
+      "osf": {
+        "success": false,
+        "error": "no osf token"
+      }
+    }
+  ],
   "publish_threshold": 6,
   "mode_rotation": [
     "dfs",
